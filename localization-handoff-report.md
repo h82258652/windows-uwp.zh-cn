@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/debug-test-perf/test-with-the-emulator.md) | HandedOffSuccess | [Details](#dfdddd4a42530d0b84af88370ee659a365ea47d11931)
+ [windows-apps-src\monetize\select-and-manage-your-ad-networks.md](https://github.com/Microsoft/windows-apps/blob/9891dbeb9733f8a1093f122bc6740cd6d0996980/windows-apps-src/monetize/select-and-manage-your-ad-networks.md) | HandedOffSuccess | [Details](#a7226e22ff1bbde27949868d6548d0378a73be3c3139)
 
 ## Item Details
-##### <a name='dfdddd4a42530d0b84af88370ee659a365ea47d11931'></a> Source: [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/d03e316b9f6f415c8ad864bb984cfcd2f8430ffe/windows-apps-src/debug-test-perf/test-with-the-emulator.md)
+##### <a name='a7226e22ff1bbde27949868d6548d0378a73be3c3139'></a> Source: [windows-apps-src\monetize\select-and-manage-your-ad-networks.md](https://github.com/Microsoft/windows-apps/blob/9891dbeb9733f8a1093f122bc6740cd6d0996980/windows-apps-src/monetize/select-and-manage-your-ad-networks.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/87c0605fad2b47eafcd627092b9b3316e8a072a8/ol-handoff/Microsoft/windows-apps.zh-cn/master/test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.zh-cn.xlf)
-* Handoff Datetime: 2016-03-15 22:52:30
+* Handoff File: [select-and-manage-your-ad-networks.982177b3e83790340b3b8fd5a9e270779f76b670.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/d7c92437249aeb918d8c7d6538b8f6d8a6ddec1e/ol-handoff/Microsoft/windows-apps.zh-cn/master/select-and-manage-your-ad-networks.982177b3e83790340b3b8fd5a9e270779f76b670.zh-cn.xlf)
+* Handoff Datetime: 2016-03-16 16:25:20
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
