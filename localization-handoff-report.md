@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\account-types-locations-and-fees.md](https://github.com/Microsoft/windows-apps/blob/5adfc59d4d1d1c289ac4d723ad103d088aae12c3/windows-apps-src/publish/account-types-locations-and-fees.md) | HandedOffSuccess | [Details](#22f1983bdc028657552d8144bffa9071a352606a3332)
+ [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/1dbef34613db39a8508bf22bbcb7b3f50e0d84f6/windows-apps-src/xbox-apps/known-issues.md) | HandedOffSuccess | [Details](#236ad62b6b114b04f8a23c1d75513f55f4509d053699)
 
 ## Item Details
-##### <a name='22f1983bdc028657552d8144bffa9071a352606a3332'></a> Source: [windows-apps-src\publish\account-types-locations-and-fees.md](https://github.com/Microsoft/windows-apps/blob/5adfc59d4d1d1c289ac4d723ad103d088aae12c3/windows-apps-src/publish/account-types-locations-and-fees.md)
+##### <a name='236ad62b6b114b04f8a23c1d75513f55f4509d053699'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/1dbef34613db39a8508bf22bbcb7b3f50e0d84f6/windows-apps-src/xbox-apps/known-issues.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/4e2d9cf8f4371916dbc5b507f8ecb5eca6b9c681/ol-handoff/Microsoft/windows-apps.zh-cn/master/account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.zh-cn.xlf)
-* Handoff Datetime: 2016-04-01 15:53:38
+* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/5b8fbf8981a6ed1e8d5e72d09ac773c961227965/ol-handoff/Microsoft/windows-apps.zh-cn/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-cn.xlf)
+* Handoff Datetime: 2016-04-01 16:18:57
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
