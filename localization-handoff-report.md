@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/ec3ba5402ab4dc42e9f584e6956fe23487a36f3e/windows-apps-src/security/companion-device-unlock.md) | HandedOffSuccess | [Details](#e073ddda47d9461a687bdf277e60a20dc103e3fd3449)
+ [windows-apps-src\monetize\launch-feedback-hub-from-your-app.md](https://github.com/Microsoft/windows-apps/blob/264b13a3abd266da3a7212fa8926d74dd15f3873/windows-apps-src/monetize/launch-feedback-hub-from-your-app.md) | HandedOffSuccess | [Details](#d8a64552426e5ea60619bb2c3f7da71cf4deda523230)
 
 ## Item Details
-##### <a name='e073ddda47d9461a687bdf277e60a20dc103e3fd3449'></a> Source: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/ec3ba5402ab4dc42e9f584e6956fe23487a36f3e/windows-apps-src/security/companion-device-unlock.md)
+##### <a name='d8a64552426e5ea60619bb2c3f7da71cf4deda523230'></a> Source: [windows-apps-src\monetize\launch-feedback-hub-from-your-app.md](https://github.com/Microsoft/windows-apps/blob/264b13a3abd266da3a7212fa8926d74dd15f3873/windows-apps-src/monetize/launch-feedback-hub-from-your-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/06443c20f03a28b2a2b559fd3deeb307a08f4ce9/ol-handoff/Microsoft/windows-apps.zh-cn/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.zh-cn.xlf)
-* Handoff Datetime: 2016-04-08 23:09:01
+* Handoff File: [launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/fc17c4e55cc1c81d3e8bbab50bae6212f9d51f37/ol-handoff/Microsoft/windows-apps.zh-cn/master/launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.zh-cn.xlf)
+* Handoff Datetime: 2016-04-11 16:10:42
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
