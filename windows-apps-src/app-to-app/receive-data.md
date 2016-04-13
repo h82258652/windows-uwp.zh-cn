@@ -1,0 +1,147 @@
+---
+description: 本文介绍如何接收使用“共享”合约从另一个应用共享的通用 Windows 平台 (UWP) 应用中的内容。 此“共享”合约允许在用户调用“共享”时，将你的应用表示为一个选项。
+title: 接收数据
+ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
+author: awkoren
+---
+
+# 接收数据
+
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+
+本文介绍如何接收使用“共享”合约从另一个应用共享的通用 Windows 平台 (UWP) 应用中的内容。 此“共享”合约允许在用户调用“共享”时，将你的应用表示为一个选项。
+
+## 将应用声明为共享目标
+
+在用户调用“共享”时，系统将显示可能的目标应用列表。 为了显示在列表中，你的应用需要声明它支持“共享”合约。 这让系统知道你的应用可用于接收内容。
+
+1.  打开清单文件。 该文件的名称类似 **package.appxmanifest**。
+2.  打开“声明”****选项卡。
+3.  从“可用声明”****列表中，选择“共享目标”****，并单击“添加”****。
+
+## 选择文件类型和格式
+
+接下来，确定你支持的文件类型和数据格式。 共享 API 支持多种标准格式，如文本、HTML 和位图。 你还可以指定自定义文件类型和数据格式。 指定时，请记住源应用必须明确这些类型和格式，否则它们无法使用这些格式来共享数据。
+
+仅注册你的应用可以处理的格式。 当用户调用“共享”时，仅显示支持正在共享的数据的目标应用。
+
+若要设置文件类型：
+
+1.  打开清单文件。 该文件的名称类似 **package.appxmanifest**。
+2.  在“声明”页的“支持的文件类型”****部分，****单击“新增”****。
+3.  键入要支持的文件扩展名。 例如，.docx。 你需要包括句点。 如果希望支持所有文件类型，请选中**“SupportsAnyFileType”**框。
+
+若要设置数据格式：
+
+1.  打开清单文件。
+2.  打开“声明”****页的“数据格式”****部分，单击“新增”****。
+3.  键入支持的数据格式的名称。 例如，“文本”。
+
+## 处理共享激活
+
+当用户选择你的应用时（通常从共享 UI 中可用目标应用的列表中进行选择），将引发 [**Application.OnShareTargetActivated**] [OnShareTargetActivated] 事件。 你的应用需要处理此事件来处理用户要共享的数据。
+
+请注意，如果你的应用在激活为“共享”目标时处于运行状态，应用的现有实例将终止，并将启动应用的新实例以处理该合约。
+
+<!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
+```cs
+protected override async void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
+{
+    // Code to handle activation goes here. 
+} 
+```
+
+用户要共享的数据包含在一个 ShareOperation 对象中。 你可以使用该对象来检查所包含的数据格式。
+
+```cs
+ShareOperation shareOperation = args.ShareOperation;
+if (shareOperation.Data.Contains(StandardDataFormats.Text))
+{
+    string text = await shareOperation.Data.GetTextAsync();
+
+    // To output the text from this example, you need a TextBlock control
+    // with a name of &quot;sharedContent&quot;.
+    sharedContent.Text = &quot;Text: &quot; + text;
+} 
+```
+
+## 报告共享状态
+
+在某些情况下，你的应用可能需要花费一定时间来处理要共享的数据。 示例包括用户共享文件或图像的集合。 这些项目比简单的文本字符串大，因此处理时间较长。
+
+```cs
+shareOperation.ReportDataRetreived(); 
+```
+
+在调用 [**ReportStarted**][ReportStarted] 之后，将不再有任何与你的应用所进行的用户交互。 因此，你不应该调用它，除非你的应用处于可以由用户关闭的位置。
+
+使用扩展共享，用户有可能会在你的应用获得来自 DataPackage 对象的所有数据之前关闭源应用。 因此，我们建议你让系统知道你的应用何时已获得它所需的数据。 这样，系统可以根据需要暂停或终止源应用。
+
+```cs
+shareOperation.ReportSubmittedBackgroundTask(); 
+```
+
+如果发生错误，调用 [**ReportStarted**][ReportStarted] 向系统发送一条错误消息。 用户在检查共享的状态时将看到该消息。 此时，你的应用将关闭并且共享将结束。 用户将需要再次启动才能将内容共享到你的应用。 根据你的方案，你可能确定某个特殊错误并不严重，不足以结束共享操作。 在这种情况下，你可以选择不调用 **ReportError** 并且继续此共享。
+
+```cs
+shareOperation.ReportError(&quot;Could not reach the server! Try again later.&quot;); 
+```
+
+最后，当你的应用成功处理好共享内容之后，你应当调用 [**ReportCompleted**][ReportCompleted] 来通知系统。
+
+```cs
+shareOperation.ReportCompleted();
+```
+
+在使用这些方法时，通常按照所述的顺序来进行调用，不要多次调用它们。 然而在某些时候，目标应用可能会在调用 [**ReportStarted**][ReportStarted] 之前调用 [**ReportDataRetrieved**][ReportDataRetrieved]。 例如，应用可能在激活处理程序中执行任务时检索数据，但不调用 **ReportStarted**，直到用户单击“共享”按钮之后才调用。
+
+## 如果共享成功，则返回 QuickLink
+
+当用户选择你的应用来接收内容时，我们建议你创建一个 [**QuickLink**][QuickLink]。 **QuickLink** 类似于快捷方式，可让用户更轻松地使用你的应用共享信息。 例如，你可以创建一个 **QuickLink**，用来打开预配置了好友电子邮件地址的新邮件。
+
+**QuickLink** 必须包含标题、图标和 ID。 当用户点击“共享”超级按钮时，会显示标题（类似“Email Mom”）和图标。 你的应用使用 ID 来访问任何自定义信息，如电子邮件地址或登录凭据。 当你的应用创建 **QuickLink** 时，该应用会通过调用 [**ReportCompleted**][ReportCompleted]，将 **QuickLink** 返回到系统。
+
+**QuickLink** 实际上并不存储数据。 而是包含一个标识符，如果选中该标识符，则会将该标识符发送至你的应用。 你的应用负责存储 **QuickLink** 的 ID 及相应的用户数据。 当用户点击 **QuickLink** 时，你可以通过 [**ShareOperation.QuickLinkId**][QuickLInkId] 属性获取其 ID。
+
+```cs
+async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, string quickLinkTitle)
+{
+    QuickLink quickLinkInfo = new QuickLink
+    {
+        Id = quickLinkId,
+        Title = quickLinkTitle,
+
+        // For quicklinks, the supported FileTypes and DataFormats are set 
+        // independently from the manifest
+        SupportedFileTypes = { &quot;*&quot; },
+        SupportedDataFormats = { StandardDataFormats.Text, StandardDataFormats.Uri, 
+                StandardDataFormats.Bitmap, StandardDataFormats.StorageItems }
+    };
+
+    StorageFile iconFile = await Windows.ApplicationModel.Package.Current.InstalledLocation.CreateFileAsync(
+            &quot;assets\\user.png&quot;, CreationCollisionOption.OpenIfExists);
+    quickLinkInfo.Thumbnail = RandomAccessStreamReference.CreateFromFile(iconFile);
+    shareOperation.ReportCompleted(quickLinkInfo);
+}
+```
+
+## 相关主题
+* [共享数据](share-data.md)
+ 
+<!-- LINKS -->
+* [OnShareTargetActivated](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
+* [ReportStarted](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
+* [ReportError](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reporterror.aspx)
+* [ReportCompleted](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportecompleted.aspx)
+* [ReportDataRetrieved](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportdataretrieved.aspx)
+* [ReportStarted](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
+* [QuickLink](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
+* [QuickLInkId](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
+
+
+
+
+<!--HONumber=Mar16_HO5-->
+
+
