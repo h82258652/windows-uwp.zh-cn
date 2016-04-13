@@ -1,6 +1,6 @@
 ---
-Marble Maze 示例基础
-本文档介绍了 Marble Maze 项目的基本特征，例如它如何在 WIndows 运行时环境中使用 Visual C++、如何创建和构造它，以及如何生成它。
+title: Marble Maze 示例基础
+description: 本文档介绍了 Marble Maze 项目的基本特征，例如它如何在 WIndows 运行时环境中使用 Visual C++、如何创建和构造它，以及如何生成它。
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 ---
 

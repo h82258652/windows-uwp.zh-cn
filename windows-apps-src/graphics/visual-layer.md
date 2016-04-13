@@ -1,7 +1,7 @@
 ---
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
-可视化层
-Windows.UI.Composition API 使你能够访问框架层 (XAML) 和图形层 (DirectX) 之间的合成层。
+title: 可视化层
+description: Windows.UI.Composition API 使你能够访问框架层 (XAML) 和图形层 (DirectX) 之间的合成层。
 ---
 # 可视化层
 

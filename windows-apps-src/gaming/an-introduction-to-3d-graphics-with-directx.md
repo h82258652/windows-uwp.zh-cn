@@ -1,6 +1,6 @@
 ---
-DirectX 游戏的基本 3D 图形
-我们将介绍如何使用 DirectX 编程来实现 3D 图形的基本概念。
+title: DirectX 游戏的基本 3D 图形
+description: 我们将介绍如何使用 DirectX 编程来实现 3D 图形的基本概念。
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
 ---
 

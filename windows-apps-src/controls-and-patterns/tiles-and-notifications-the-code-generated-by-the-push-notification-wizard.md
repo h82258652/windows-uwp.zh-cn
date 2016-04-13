@@ -1,8 +1,8 @@
 ---
-通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的移动服务生成推送通知。
-由推送通知向导生成的代码
+Description: 通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的移动服务生成推送通知。
+title: 由推送通知向导生成的代码
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
-待定
+label: 待定
 template: detail.hbs
 ---
 

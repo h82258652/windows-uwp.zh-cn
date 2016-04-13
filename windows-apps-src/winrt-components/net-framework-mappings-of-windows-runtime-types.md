@@ -1,6 +1,6 @@
 ---
-Windows 运行时类型的.NET framework 映射
-下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。
+title: Windows 运行时类型的.NET framework 映射
+description: 下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 ---
 

@@ -1,11 +1,11 @@
 ---
-XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。
+Description: XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。
 MS-HAID：“dev\_ctrl\_layout\_txt.xaml\_theme\_resources”
 MSHAttr：“PreferredLib:/library/windows/apps”
 Search.Product: eADQiWindows 10XVcnh
-XAML 主题资源
+title: XAML 主题资源
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
-XAML 主题资源
+label: XAML 主题资源
 template: detail.hbs
 ---
 

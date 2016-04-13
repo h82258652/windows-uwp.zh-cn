@@ -1,6 +1,6 @@
 ---
-Windows.ApplicationModel.Contacts 命名空间提供了多个用来选择联系人的选项。
-选择联系人
+description: Windows.ApplicationModel.Contacts 命名空间提供了多个用来选择联系人的选项。
+title: 选择联系人
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
 关键字：联系人, 选择
 关键字：选择单个联系人

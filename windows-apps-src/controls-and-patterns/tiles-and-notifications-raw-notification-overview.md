@@ -1,8 +1,8 @@
 ---
-原始通知是简短的通用推送通知。
-原始通知概述
+Description: 原始通知是简短的通用推送通知。
+title: 原始通知概述
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
-待定
+label: 待定
 template: detail.hbs
 ---
 

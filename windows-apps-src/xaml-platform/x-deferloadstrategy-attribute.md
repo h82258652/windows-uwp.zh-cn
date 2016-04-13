@@ -1,6 +1,6 @@
 ---
-xDeferLoadStrategy 属性
-xDeferLoadStrategy 会延迟元素及其子元素的创建，这将减少启动时间，不过内存使用量会略有增加。 每个受影响的元素将向内存使用量添加大约 600 个字节。
+title: xDeferLoadStrategy 属性
+description: xDeferLoadStrategy 会延迟元素及其子元素的创建，这将减少启动时间，不过内存使用量会略有增加。 每个受影响的元素将向内存使用量添加大约 600 个字节。
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ---
 

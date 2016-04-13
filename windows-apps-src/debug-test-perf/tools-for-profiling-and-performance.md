@@ -1,7 +1,7 @@
 ---
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
-用于分析和性能的工具
-Microsoft 提供多种有助于提高通用 Windows 平台 (UWP) 应用性能的工具。
+title: 用于分析和性能的工具
+description: Microsoft 提供多种有助于提高通用 Windows 平台 (UWP) 应用性能的工具。
 ---
 # 用于分析和性能的工具
 

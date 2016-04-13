@@ -1,7 +1,7 @@
 ---
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
-传感器方向
-来自 Accelerometer、Gyrometer、Compass、Inclinometer 和 OrientationSensor 类的传感器数据由其参考轴定义。 这些轴由设备的横向方向定义，并在用户转动设备时与其一起旋转。
+title: 传感器方向
+description: 来自 Accelerometer、Gyrometer、Compass、Inclinometer 和 OrientationSensor 类的传感器数据由其参考轴定义。 这些轴由设备的横向方向定义，并在用户转动设备时与其一起旋转。
 ---
 # 传感器方向
 

@@ -1,6 +1,6 @@
 ---
-与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。
-针对 I/O、设备和应用模型将 Windows Phone Silverlight 移植到 UWP
+description: 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。
+title: 针对 I/O、设备和应用模型将 Windows Phone Silverlight 移植到 UWP
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
 ---
 

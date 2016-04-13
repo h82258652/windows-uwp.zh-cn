@@ -1,6 +1,6 @@
 ---
-创建和显示基本网格
-3D 通用 Windows 平台游戏通常使用多边形来表示游戏中的对象和图面。
+title: 创建和显示基本网格
+description: 3D 通用 Windows 平台游戏通常使用多边形来表示游戏中的对象和图面。
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
 ---
 

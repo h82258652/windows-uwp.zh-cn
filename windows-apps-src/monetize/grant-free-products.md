@@ -1,7 +1,7 @@
 ---
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-在 Windows 应用商店购买 API 中使用此方法，以向给定用户授予免费应用或应用内产品 (IAP)。
-授予免费产品
+description: 在 Windows 应用商店购买 API 中使用此方法，以向给定用户授予免费应用或应用内产品 (IAP)。
+title: 授予免费产品
 ---
 
 # 授予免费产品

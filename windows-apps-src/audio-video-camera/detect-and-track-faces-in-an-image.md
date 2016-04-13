@@ -1,7 +1,7 @@
 ---
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
-本主题介绍如何使用 FaceDetector 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 FaceTracker。
-检测图像或视频中的人脸
+description: 本主题介绍如何使用 FaceDetector 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 FaceTracker。
+title: 检测图像或视频中的人脸
 ---
 
 # 检测图像或视频中的人脸

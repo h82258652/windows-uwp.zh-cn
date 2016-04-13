@@ -1,6 +1,6 @@
 ---
-添加声音
-在此步骤中，我们将探讨射击游戏示例如何使用 XAudio2 API 创建声音播放对象。
+title: 添加声音
+description: 在此步骤中，我们将探讨射击游戏示例如何使用 XAudio2 API 创建声音播放对象。
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ---
 

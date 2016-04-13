@@ -1,8 +1,8 @@
 ---
-了解如何在基本的两页对等通用 Windows 平台 (UWP) 应用中导航。
-两个页面之间的对等导航
+Description: 了解如何在基本的两页对等通用 Windows 平台 (UWP) 应用中导航。
+title: 两个页面之间的对等导航
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
-两个页面之间的对等导航
+label: 两个页面之间的对等导航
 template: detail.hbs
 ---
 

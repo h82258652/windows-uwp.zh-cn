@@ -1,6 +1,6 @@
 ---
-如果你有一个通用 8.1 应用（无论它是面向 Windows 8.1、Windows Phone 8.1 还是同时面向这两者），你会发现你的源代码和技能将顺利地移植到 Windows 10。
-从 Windows 运行时 8.x 移动到 UWP
+description: 如果你有一个通用 8.1 应用（无论它是面向 Windows 8.1、Windows Phone 8.1 还是同时面向这两者），你会发现你的源代码和技能将顺利地移植到 Windows 10。
+title: 从 Windows 运行时 8.x 移动到 UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ---
 

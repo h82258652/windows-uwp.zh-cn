@@ -1,6 +1,6 @@
 ---
-作为一名通用 Windows 平台 (UWP) 应用开发人员，你可以将 Windows.Networking.Sockets 与 Winsock 结合使用，以与其他设备通信。
-套接字
+description: 作为一名通用 Windows 平台 (UWP) 应用开发人员，你可以将 Windows.Networking.Sockets 与 Winsock 结合使用，以与其他设备通信。
+title: 套接字
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ---
 

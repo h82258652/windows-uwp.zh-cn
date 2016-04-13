@@ -1,7 +1,7 @@
 ---
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
-本文向你显示了如何使用 MediaProcessingTrigger 和后台任务在后台处理媒体文件。
-在后台处理媒体文件
+description: 本文向你显示了如何使用 MediaProcessingTrigger 和后台任务在后台处理媒体文件。
+title: 在后台处理媒体文件
 ---
 
 # 在后台处理媒体文件

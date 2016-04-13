@@ -1,7 +1,7 @@
 ---
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
-创建 NFC 智能卡应用
-Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。
+title: 创建 NFC 智能卡应用
+description: Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。
 ---
 # 创建 NFC 智能卡应用
 

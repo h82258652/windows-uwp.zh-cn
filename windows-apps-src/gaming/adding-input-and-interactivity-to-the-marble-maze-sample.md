@@ -1,6 +1,6 @@
 ---
-向 Marble Maze 添加输入和交互性示例
-通用 Windows 平台 (UWP) 应用游戏可在广泛的设备上运行，如台式计算机、笔记本电脑和平板电脑。
+title: 向 Marble Maze 添加输入和交互性示例
+description: 通用 Windows 平台 (UWP) 应用游戏可在广泛的设备上运行，如台式计算机、笔记本电脑和平板电脑。
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 ---
 

@@ -1,6 +1,6 @@
 ---
-操作实例：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
-此移植练习显示了如何将一个简单的呈现框架从 Direct3D 9 移植到 Direct3D 11 和通用 Windows 平台 (UWP)。
+title: 操作实例：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
+description: 此移植练习显示了如何将一个简单的呈现框架从 Direct3D 9 移植到 Direct3D 11 和通用 Windows 平台 (UWP)。
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ---
 

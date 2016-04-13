@@ -1,7 +1,7 @@
 ---
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
-本文介绍了如何将自适应流式处理多媒体内容的播放添加到通用 Windows 平台 (UWP) 应用。 此功能当前支持 Http 实时流 (HLS) 和 HTTP 动态流 (DASH) 内容的播放。
-自适应流式处理
+description: 本文介绍了如何将自适应流式处理多媒体内容的播放添加到通用 Windows 平台 (UWP) 应用。 此功能当前支持 Http 实时流 (HLS) 和 HTTP 动态流 (DASH) 内容的播放。
+title: 自适应流式处理
 ---
 
 # 自适应流式处理

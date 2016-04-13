@@ -1,6 +1,6 @@
 ---
-处理应用预启动
-了解如何通过替代 OnLaunched 方法来处理应用预启动。
+title: 处理应用预启动
+description: 了解如何通过替代 OnLaunched 方法来处理应用预启动。
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ---
 

@@ -1,6 +1,6 @@
 ---
-使用后台传输 API 以通过网络可靠地复制文件。
-后台传输
+description: 使用后台传输 API 以通过网络可靠地复制文件。
+title: 后台传输
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 ---
 

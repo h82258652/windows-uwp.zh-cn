@@ -1,6 +1,6 @@
 ---
-诊断 Windows 运行时组件错误条件
-本文提供有关对使用托管代码编写的 Windows 运行时组件的限制的其他信息。
+title: 诊断 Windows 运行时组件错误条件
+description: 本文提供有关对使用托管代码编写的 Windows 运行时组件的限制的其他信息。
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ---
 

@@ -1,8 +1,8 @@
 ---
-Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。
-Windows 推送通知服务 (WNS) 概述
+Description: Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。
+title: Windows 推送通知服务 (WNS) 概述
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
-待定
+label: 待定
 template: detail.hbs
 ---
 

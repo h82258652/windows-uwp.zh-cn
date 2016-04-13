@@ -1,6 +1,6 @@
 ---
-移植游戏循环
-介绍如何实现通用 Windows 平台 (UWP) 游戏的窗口，以及如何显示游戏循环，包括如何构建 IFrameworkView 来控制全屏 CoreWindow。
+title: 移植游戏循环
+description: 介绍如何实现通用 Windows 平台 (UWP) 游戏的窗口，以及如何显示游戏循环，包括如何构建 IFrameworkView 来控制全屏 CoreWindow。
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ---
 

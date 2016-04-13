@@ -1,6 +1,6 @@
 ---
-BasicReaderWriter 的完整代码
-一般用来读取和写入二进制数据文件的类和方法的完整代码。
+title: BasicReaderWriter 的完整代码
+description: 一般用来读取和写入二进制数据文件的类和方法的完整代码。
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 ---
 

@@ -1,6 +1,6 @@
 ---
-在提交 IAP 时，“属性”页面上的选项有助于确定在提供给客户时 IAP 的行为。
-输入 IAP 属性
+Description: 在提交 IAP 时，“属性”页面上的选项有助于确定在提供给客户时 IAP 的行为。
+title: 输入 IAP 属性
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ---
 

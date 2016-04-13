@@ -1,6 +1,6 @@
 ---
-唯一标识作为资源被创建和引用的元素，这些资源存在于一个 ResourceDictionary 中。
-xKey 属性
+description: 唯一标识作为资源被创建和引用的元素，这些资源存在于一个 ResourceDictionary 中。
+title: xKey 属性
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ---
 

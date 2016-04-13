@@ -1,7 +1,7 @@
 ---
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
-你可以使用 Windows.Media.Transcoding API 将视频文件代码从一种格式转换为另一种格式。
-转换媒体文件代码
+description: 你可以使用 Windows.Media.Transcoding API 将视频文件代码从一种格式转换为另一种格式。
+title: 转换媒体文件代码
 ---
 
 # 转换媒体文件代码

@@ -1,8 +1,8 @@
 ---
-通过使用 Windows 提供的各种语言和区域设置，控制 Windows 如何选择 UI 资源和设置应用的 UI 元素的格式。
-管理语言和区域
+Description: 通过使用 Windows 提供的各种语言和区域设置，控制 Windows 如何选择 UI 资源和设置应用的 UI 元素的格式。
+title: 管理语言和区域
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
-管理语言和区域
+label: 管理语言和区域
 template: detail.hbs
 ---
 

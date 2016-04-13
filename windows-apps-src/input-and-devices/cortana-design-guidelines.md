@@ -1,8 +1,8 @@
 ---
-使用语音命令，将你的应用提供的功能加入到 Cortana 中以对其进行扩展。
-Cortana 设计指南
+Description: 使用语音命令，将你的应用提供的功能加入到 Cortana 中以对其进行扩展。
+title: Cortana 设计指南
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
-指南
+label: 指南
 template: detail.hbs
 ---
 

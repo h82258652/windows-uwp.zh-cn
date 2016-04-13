@@ -1,6 +1,6 @@
 ---
-图形诊断工具
-了解如何在 Visual Studio 中获取和使用图形诊断功能，包括图形调试、图形框架分析和 GPU 使用率。
+title: 图形诊断工具
+description: 了解如何在 Visual Studio 中获取和使用图形诊断功能，包括图形调试、图形框架分析和 GPU 使用率。
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
 ---
 

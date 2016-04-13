@@ -1,6 +1,6 @@
 ---
-本主题介绍了在编写使用 C++、C# 或 Visual Basic 的 Windows 运行时应用并为 UI 使用 XAML 定义时可用的依赖属性系统。
-依赖属性概述
+description: 本主题介绍了在编写使用 C++、C# 或 Visual Basic 的 Windows 运行时应用并为 UI 使用 XAML 定义时可用的依赖属性系统。
+title: 依赖属性概述
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ---
 

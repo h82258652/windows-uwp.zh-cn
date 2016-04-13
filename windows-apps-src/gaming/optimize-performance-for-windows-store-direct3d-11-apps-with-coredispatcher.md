@@ -1,6 +1,6 @@
 ---
-优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
-输入延迟会大大影响游戏体验，将其优化可使游戏感觉更完美。
+title: 优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
+description: 输入延迟会大大影响游戏体验，将其优化可使游戏感觉更完美。
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ---
 

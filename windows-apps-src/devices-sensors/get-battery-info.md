@@ -1,7 +1,7 @@
 ---
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
-获取电池信息
-了解如何使用 Windows.Devices.Power 命名空间中的 API 获取电池的详细信息。
+title: 获取电池信息
+description: 了解如何使用 Windows.Devices.Power 命名空间中的 API 获取电池的详细信息。
 ---
 # 获取电池信息
 

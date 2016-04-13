@@ -1,8 +1,8 @@
 ---
-标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
-标识输入设备
+Description: 标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
+title: 标识输入设备
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
-标识输入设备
+label: 标识输入设备
 template: detail.hbs
 ---
 

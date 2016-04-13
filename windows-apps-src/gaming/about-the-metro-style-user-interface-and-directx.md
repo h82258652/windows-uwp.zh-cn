@@ -1,6 +1,6 @@
 ---
-应用对象和 DirectX
-使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。
+title: 应用对象和 DirectX
+description: 使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 ---
 

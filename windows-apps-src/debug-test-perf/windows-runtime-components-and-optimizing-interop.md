@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
-通用 Windows 平台组件和优化互操作
-创建使用 UWP 组件的通用 Windows 平台 (UWP) 应用并在本机和托管类型之间进行互操作，同时避免互操作性能问题。
+title: 通用 Windows 平台组件和优化互操作
+description: 创建使用 UWP 组件的通用 Windows 平台 (UWP) 应用并在本机和托管类型之间进行互操作，同时避免互操作性能问题。
 ---
 # 通用 Windows 平台组件和优化互操作
 

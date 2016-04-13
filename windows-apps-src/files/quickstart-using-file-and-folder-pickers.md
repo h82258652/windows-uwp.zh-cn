@@ -1,7 +1,7 @@
 ---
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
-使用选取器打开文件和文件夹
-通过让用户与选取器交互来访问文件和文件夹。 你可以使用 FileOpenPicker 和 FileSavePicker 类获取对文件的访问权限，并使用 FolderPicker 获取对文件夹的访问权限。
+title: 使用选取器打开文件和文件夹
+description: 通过让用户与选取器交互来访问文件和文件夹。 你可以使用 FileOpenPicker 和 FileSavePicker 类获取对文件的访问权限，并使用 FolderPicker 获取对文件夹的访问权限。
 ---
 
 # 使用选取器打开文件和文件夹

@@ -1,6 +1,6 @@
 ---
-通过 Windows.ApplicationModel.Appointments 命名空间，你可以在用户的日历应用中创建和管理约会。
-管理约会
+description: 通过 Windows.ApplicationModel.Appointments 命名空间，你可以在用户的日历应用中创建和管理约会。
+title: 管理约会
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
 ---
 

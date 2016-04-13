@@ -1,7 +1,7 @@
 ---
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
-使用 C# 或 Visual Basic 调用异步 API
-通用 Windows 平台 (UWP) 包含许多异步 API，可确保应用在执行可能花费大量时间的任务时仍能保持响应。
+title: 使用 C# 或 Visual Basic 调用异步 API
+description: 通用 Windows 平台 (UWP) 包含许多异步 API，可确保应用在执行可能花费大量时间的任务时仍能保持响应。
 ---
 # 使用 C# 或 Visual Basic 调用异步 API
 

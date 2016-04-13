@@ -1,6 +1,6 @@
 ---
-Binding 标记扩展会在 XAML 加载时转换为 Binding 类的实例。
-Binding 标记扩展'
+description: Binding 标记扩展会在 XAML 加载时转换为 Binding 类的实例。
+title: Binding 标记扩展'
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ---
 

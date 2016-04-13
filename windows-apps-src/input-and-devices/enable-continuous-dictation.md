@@ -1,8 +1,8 @@
 ---
-了解如何捕获和识别较长的连续听写语音输入。
-启用连续听写
+Description: 了解如何捕获和识别较长的连续听写语音输入。
+title: 启用连续听写
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
-连续听写
+label: 连续听写
 template: detail.hbs
 ---
 

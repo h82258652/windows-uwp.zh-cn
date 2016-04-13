@@ -1,6 +1,6 @@
 ---
-了解 XAML 中使用的空格处理规则。
-XAML 与空格
+description: 了解 XAML 中使用的空格处理规则。
+title: XAML 与空格
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ---
 

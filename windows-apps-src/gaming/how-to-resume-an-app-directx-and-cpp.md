@@ -1,6 +1,6 @@
 ---
-如何恢复应用（DirectX 和 C++）
-本主题介绍了系统在恢复通用 Windows 平台 (UWP) DirectX 应用时，如何还原重要的应用程序数据。
+title: 如何恢复应用（DirectX 和 C++）
+description: 本主题介绍了系统在恢复通用 Windows 平台 (UWP) DirectX 应用时，如何还原重要的应用程序数据。
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 ---
 

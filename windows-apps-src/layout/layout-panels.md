@@ -1,8 +1,8 @@
 ---
-使用布局面板来为应用中的 UI 元素排列和分组。
-通用 Windows 平台 (UWP) 应用的布局面板
+Description: 使用布局面板来为应用中的 UI 元素排列和分组。
+title: 通用 Windows 平台 (UWP) 应用的布局面板
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
-布局面板
+label: 布局面板
 template: detail.hbs
 ---
 # 布局面板

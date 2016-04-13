@@ -1,8 +1,8 @@
 ---
-通过处理用于触摸和笔输入的相同基本指针事件在应用中响应鼠标输入。
-鼠标交互
+Description: 通过处理用于触摸和笔输入的相同基本指针事件在应用中响应鼠标输入。
+title: 鼠标交互
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
-鼠标
+label: 鼠标
 template: detail.hbs
 ---
 

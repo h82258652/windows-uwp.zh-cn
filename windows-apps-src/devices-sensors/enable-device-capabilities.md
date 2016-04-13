@@ -1,7 +1,7 @@
 ---
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
-启用设备功能
-本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。
+title: 启用设备功能
+description: 本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。
 ---
 # 启用设备功能
 

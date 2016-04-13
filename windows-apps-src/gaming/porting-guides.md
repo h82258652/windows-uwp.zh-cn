@@ -1,6 +1,6 @@
 ---
-游戏移植指南
-提供将现有游戏移植到 Direct3D 11、通用 Windows 平台 (UWP) 和 Windows 10 的指南。
+title: 游戏移植指南
+description: 提供将现有游戏移植到 Direct3D 11、通用 Windows 平台 (UWP) 和 Windows 10 的指南。
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
 ---
 

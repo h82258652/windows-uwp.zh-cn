@@ -1,6 +1,6 @@
 ---
-xPhase 属性
-将 xPhase 与 xBind 标记扩展结合使用，以便能以增量方式呈现 ListView 和 GridView 项并改进平移体验。
+title: xPhase 属性
+description: 将 xPhase 与 xBind 标记扩展结合使用，以便能以增量方式呈现 ListView 和 GridView 项并改进平移体验。
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ---
 

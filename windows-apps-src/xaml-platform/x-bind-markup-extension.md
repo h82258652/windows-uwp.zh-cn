@@ -1,6 +1,6 @@
 ---
-xBind 标记扩展是 Binding 的备用选项。 虽然 xBind 缺少 Binding 中的一些功能，但它运行时所花费的时间和使用的内存量均比 Binding 要少，且支持更好的调试。
-xBind 标记扩展
+description: xBind 标记扩展是 Binding 的备用选项。 虽然 xBind 缺少 Binding 中的一些功能，但它运行时所花费的时间和使用的内存量均比 Binding 要少，且支持更好的调试。
+title: xBind 标记扩展
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ---
 

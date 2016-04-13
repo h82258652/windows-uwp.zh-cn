@@ -1,7 +1,7 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-此案例研究（基于 Bookstore1 中提供的信息生成）首先研究通用 8.1 应用，该应用可在 SemanticZoom 控件中显示分组数据。
-Windows 运行时 8.x 到 UWP 案例研究：Bookstore2
+description: 此案例研究（基于 Bookstore1 中提供的信息生成）首先研究通用 8.1 应用，该应用可在 SemanticZoom 控件中显示分组数据。
+title: Windows 运行时 8.x 到 UWP 案例研究：Bookstore2
 ---
 
 # Windows 运行时 8.x 到 UWP 案例研究：Bookstore2

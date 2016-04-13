@@ -1,6 +1,6 @@
 ---
-请求地图身份验证密钥
-通用 Windows 应用必须先经过身份验证，然后才能在 Windows.Services.Maps 命名空间中使用 MapControl 和地图服务。
+title: 请求地图身份验证密钥
+description: 通用 Windows 应用必须先经过身份验证，然后才能在 Windows.Services.Maps 命名空间中使用 MapControl 和地图服务。
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ---
 

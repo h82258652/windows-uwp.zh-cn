@@ -1,8 +1,8 @@
 ---
-Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Edge 呈现引擎来呈现 Web 内容。 超链接也可以在 Web 视图控件中显示并正常工作。
-Web 视图
+Description: Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Edge 呈现引擎来呈现 Web 内容。 超链接也可以在 Web 视图控件中显示并正常工作。
+title: Web 视图
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
-Web 视图
+label: Web 视图
 template: detail.hbs
 ---
 

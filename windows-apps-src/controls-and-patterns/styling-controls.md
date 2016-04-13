@@ -1,11 +1,11 @@
 ---
-通过样式可以设置控件属性，并重复使用这些设置，以便保持多个控件具有一致的外观。
+Description: 通过样式可以设置控件属性，并重复使用这些设置，以便保持多个控件具有一致的外观。
 MS-HAID：“dev\_ctrl\_layout\_txt.styling\_controls”
 MSHAttr：“PreferredLib:/library/windows/apps”
 Search.Product：eADQiWindows 10XVcnh
-设置控件的样式
+title: 设置控件的样式
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
-设置控件的样式
+label: 设置控件的样式
 template: detail.hbs
 ---
 

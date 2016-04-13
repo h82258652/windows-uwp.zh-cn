@@ -1,7 +1,7 @@
 ---
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
-MediaSource 类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。
-使用 MediaSource 的媒体播放
+description: MediaSource 类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。
+title: 使用 MediaSource 的媒体播放
 ---
 
 # 使用 MediaSource 的媒体播放

@@ -1,6 +1,6 @@
 ---
-游戏网络
-了解如何在你的 DirectX 游戏中开发并融入联网功能。
+title: 游戏网络
+description: 了解如何在你的 DirectX 游戏中开发并融入联网功能。
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ---
 

@@ -1,8 +1,8 @@
 ---
-了解如何管理由音频输入质量所导致的语音识别准确度的问题。
-管理音频输入问题
+Description: 了解如何管理由音频输入质量所导致的语音识别准确度的问题。
+title: 管理音频输入问题
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
-管理音频输入问题
+label: 管理音频输入问题
 template: detail.hbs
 ---
 

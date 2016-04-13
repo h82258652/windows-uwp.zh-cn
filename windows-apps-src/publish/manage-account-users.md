@@ -1,6 +1,6 @@
 ---
-你可以使用 Azure Active Directory 将用户添加到开发人员中心帐户。
-管理帐户用户
+Description: 你可以使用 Azure Active Directory 将用户添加到开发人员中心帐户。
+title: 管理帐户用户
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ---
 

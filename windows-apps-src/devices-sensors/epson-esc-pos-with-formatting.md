@@ -1,7 +1,7 @@
 ---
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
-Epson ESC/POS（可进行格式设置）
-了解如何使用 ESC/POS 命令语言来为服务点打印机设置文本的格式（如粗体和双倍大小字符）。
+title: Epson ESC/POS（可进行格式设置）
+description: 了解如何使用 ESC/POS 命令语言来为服务点打印机设置文本的格式（如粗体和双倍大小字符）。
 ---
 # Epson ESC/POS（可进行格式设置）
 

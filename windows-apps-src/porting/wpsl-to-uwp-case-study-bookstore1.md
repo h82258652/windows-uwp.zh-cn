@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-本主题介绍将一个非常简单的 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
-从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1
+description: 本主题介绍将一个非常简单的 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
+title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1
 ---
 
 # 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1

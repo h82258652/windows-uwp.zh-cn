@@ -1,8 +1,8 @@
 ---
-了解如何选择要用于语音识别的安装语言。
-指定语音识别器语言
+Description: 了解如何选择要用于语音识别的安装语言。
+title: 指定语音识别器语言
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
-指定语音识别器语言
+label: 指定语音识别器语言
 template: detail.hbs
 ---
 

@@ -1,6 +1,6 @@
 ---
-通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 ResourceDictionary 中定义，而 StaticResource 用法则在 ResourceDictionary 中引用该资源的键。
-StaticResource 标记扩展
+description: 通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 ResourceDictionary 中定义，而 StaticResource 用法则在 ResourceDictionary 中引用该资源的键。
+title: StaticResource 标记扩展
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ---
 

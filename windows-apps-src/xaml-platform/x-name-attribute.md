@@ -1,6 +1,6 @@
 ---
-唯一标识对象元素，可方便从代码隐藏或一般代码中访问已实例化的对象。
-xName 属性
+description: 唯一标识对象元素，可方便从代码隐藏或一般代码中访问已实例化的对象。
+title: xName 属性
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ---
 

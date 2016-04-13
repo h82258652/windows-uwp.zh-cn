@@ -1,8 +1,8 @@
 ---
-将你的 UI 中的字符串资源放入资源文件中。 随后你可从代码或标记中引用这些字符串。
-将 UI 字符串放入资源中
+Description: 将你的 UI 中的字符串资源放入资源文件中。 随后你可从代码或标记中引用这些字符串。
+title: 将 UI 字符串放入资源中
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
-将 UI 字符串放入资源中
+label: 将 UI 字符串放入资源中
 template: detail.hbs
 ---
 

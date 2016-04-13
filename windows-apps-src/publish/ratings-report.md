@@ -1,6 +1,6 @@
 ---
-Windows 开发人员中心仪表板中的“评分”报告可使你查看客户在 Windows 应用商店中为你的应用评分的分布情况。
-评分报告
+Description: Windows 开发人员中心仪表板中的“评分”报告可使你查看客户在 Windows 应用商店中为你的应用评分的分布情况。
+title: 评分报告
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 ---
 

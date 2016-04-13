@@ -1,8 +1,8 @@
 ---
-切换开关表示用户用于打开或关闭选项的物理开关。
-切换开关控件指南
+Description: 切换开关表示用户用于打开或关闭选项的物理开关。
+title: 切换开关控件指南
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
-切换开关
+label: 切换开关
 template: detail.hbs
 ---
 # 切换开关

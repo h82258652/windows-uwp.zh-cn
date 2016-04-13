@@ -1,6 +1,6 @@
 ---
-通用 Windows 平台 (UWP) 应用的游戏技术
-在此指南中，你将了解可用于开发通用 Windows 平台 (UWP) 游戏的技术。
+title: 通用 Windows 平台 (UWP) 应用的游戏技术
+description: 在此指南中，你将了解可用于开发通用 Windows 平台 (UWP) 游戏的技术。
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
 ---
 

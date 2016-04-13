@@ -1,6 +1,6 @@
 ---
-DirectX 11 移植常见问题
-有关将游戏移植到通用 Windows 平台 (UWP) 的常见问题的解答。
+title: DirectX 11 移植常见问题
+description: 有关将游戏移植到通用 Windows 平台 (UWP) 的常见问题的解答。
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
 ---
 

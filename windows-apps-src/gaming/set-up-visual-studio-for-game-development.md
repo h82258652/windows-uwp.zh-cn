@@ -1,6 +1,6 @@
 ---
-用于游戏编程的 Visual Studio 工具
-概要介绍了 Visual Studio 中提供的 DirectX 特定工具。
+title: 用于游戏编程的 Visual Studio 工具
+description: 概要介绍了 Visual Studio 中提供的 DirectX 特定工具。
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ---
 

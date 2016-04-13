@@ -1,8 +1,8 @@
 ---
-你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的富文本文档。 你可以通过将 IsReadOnly 属性设置为 true，将 RichEditBox 设置为只读。
-RichEditBox
+Description: 你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的富文本文档。 你可以通过将 IsReadOnly 属性设置为 true，将 RichEditBox 设置为只读。
+title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
-富编辑框
+label: 富编辑框
 template: detail.hbs
 ---
 # 富编辑框

@@ -1,8 +1,8 @@
 ---
-将 RichTextBlock 与 RichTextBlockOverflow 元素结合使用以创建高级文本布局。
-RichTextBlock
+Description: 将 RichTextBlock 与 RichTextBlockOverflow 元素结合使用以创建高级文本布局。
+title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
-富文本块
+label: 富文本块
 template: detail.hbs
 ---
 # RichTextBlock

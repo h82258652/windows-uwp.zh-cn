@@ -1,7 +1,7 @@
 ---
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
-异步编程
-本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C\+\+ 组件扩展 (C\+\+/CX) 和 JavaScript 中的表示形式。
+title: 异步编程
+description: 本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C\+\+ 组件扩展 (C\+\+/CX) 和 JavaScript 中的表示形式。
 ---
 # 异步编程
 

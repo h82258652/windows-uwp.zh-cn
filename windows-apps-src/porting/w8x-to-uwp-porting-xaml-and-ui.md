@@ -1,6 +1,6 @@
 ---
-以声明性 XAML 标记的形式定义 UI 的做法非常好地将通用 8.1 应用转换为通用 Windows 平台 (UWP) 应用。
-将 Windows 运行时 8.x XAML 和 UI 移植到 UWP
+description: 以声明性 XAML 标记的形式定义 UI 的做法非常好地将通用 8.1 应用转换为通用 Windows 平台 (UWP) 应用。
+title: 将 Windows 运行时 8.x XAML 和 UI 移植到 UWP
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ---
 

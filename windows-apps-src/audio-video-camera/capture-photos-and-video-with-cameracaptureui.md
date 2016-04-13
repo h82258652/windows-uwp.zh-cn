@@ -1,7 +1,7 @@
 ---
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-本文将介绍如何使用 CameraCaptureUI 类来使用内置于 Windows 的相机 UI 捕获照片或视频。
-使用 CameraCaptureUI 捕获照片和视频
+description: 本文将介绍如何使用 CameraCaptureUI 类来使用内置于 Windows 的相机 UI 捕获照片或视频。
+title: 使用 CameraCaptureUI 捕获照片和视频
 ---
 
 # 使用 CameraCaptureUI 捕获照片和视频

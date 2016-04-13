@@ -1,6 +1,6 @@
 ---
-从 DirectX 9 移植到通用 Windows 平台 (UWP)
-本部分包含有关将 DirectX 9 游戏移植到通用 Windows 平台 (UWP) 的文章、概述以及操作实例。
+title: 从 DirectX 9 移植到通用 Windows 平台 (UWP)
+description: 本部分包含有关将 DirectX 9 游戏移植到通用 Windows 平台 (UWP) 的文章、概述以及操作实例。
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-创建“Hello, world”应用 (JS)
-本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。
+title: 创建“Hello, world”应用 (JS)
+description: 本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。
 ---
 # 创建“Hello, world”应用 (JS)
 

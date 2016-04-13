@@ -1,8 +1,8 @@
 ---
-语义式缩放控件可使用户在同一数据集的两个不同语义式视图之间缩放。
-语义式缩放
+Description: 语义式缩放控件可使用户在同一数据集的两个不同语义式视图之间缩放。
+title: 语义式缩放
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
-语义式缩放
+label: 语义式缩放
 template: detail.hbs
 ---
 

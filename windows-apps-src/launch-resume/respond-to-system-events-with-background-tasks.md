@@ -1,6 +1,6 @@
 ---
-使用后台任务响应系统事件
-了解如何创建响应 SystemTrigger 事件的后台任务。
+title: 使用后台任务响应系统事件
+description: 了解如何创建响应 SystemTrigger 事件的后台任务。
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 ---
 

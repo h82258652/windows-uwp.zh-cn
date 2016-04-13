@@ -1,6 +1,6 @@
 ---
-将一个控件模板中的属性值链接到模板控件上的某个其他公开的属性的值。 TemplateBinding 只能在 XAML 中的 ControlTemplate 定义中使用。
-TemplateBinding 标记扩展
+description: 将一个控件模板中的属性值链接到模板控件上的某个其他公开的属性的值。 TemplateBinding 只能在 XAML 中的 ControlTemplate 定义中使用。
+title: TemplateBinding 标记扩展
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 ---
 

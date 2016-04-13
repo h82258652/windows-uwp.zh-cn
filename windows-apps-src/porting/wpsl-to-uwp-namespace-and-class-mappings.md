@@ -1,6 +1,6 @@
 ---
-本主题提供 Windows Phone Silverlight API 到其通用 Windows 平台 (UWP) 等效项的全面映射。
-Windows Phone Silverlight 到 UWP 命名空间和类映射
+description: 本主题提供 Windows Phone Silverlight API 到其通用 Windows 平台 (UWP) 等效项的全面映射。
+title: Windows Phone Silverlight 到 UWP 命名空间和类映射
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ---
 

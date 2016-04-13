@@ -1,6 +1,6 @@
 ---
-为标记元素提供一个唯一标识符。 对于通用 Windows 平台 (UWP) XAML，这个唯一标识符供 XAML 本地化过程和工具使用（例如，使用 .resw 资源文件中的资源）。
-xUid 指令
+description: 为标记元素提供一个唯一标识符。 对于通用 Windows 平台 (UWP) XAML，这个唯一标识符供 XAML 本地化过程和工具使用（例如，使用 .resw 资源文件中的资源）。
+title: xUid 指令
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 ---
 

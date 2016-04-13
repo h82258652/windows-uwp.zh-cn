@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
-使用此方法续订 Windows 应用商店密钥。
-续订 Windows 应用商店 ID 密钥
+description: 使用此方法续订 Windows 应用商店密钥。
+title: 续订 Windows 应用商店 ID 密钥
 ---
 
 # 续订 Windows 应用商店 ID 密钥

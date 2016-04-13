@@ -1,8 +1,8 @@
 ---
-使用 Windows.Globalization.DateTimeFormatting API 和自定义模式严格按照所需模式显示日期和时间。
-使用模式设置日期和时间的格式
+Description: 使用 Windows.Globalization.DateTimeFormatting API 和自定义模式严格按照所需模式显示日期和时间。
+title: 使用模式设置日期和时间的格式
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
-使用模式设置日期和时间的格式
+label: 使用模式设置日期和时间的格式
 template: detail.hbs
 ---
 

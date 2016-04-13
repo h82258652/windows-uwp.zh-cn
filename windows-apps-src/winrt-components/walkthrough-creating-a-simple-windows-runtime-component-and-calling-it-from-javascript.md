@@ -1,6 +1,6 @@
 ---
-创建简单的 Windows 运行时组件并通过 JavaScript 调用它
-本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何使用 JavaScript 调用针对 Windows 生成的通用 Windows 应用中的组件。
+title: 创建简单的 Windows 运行时组件并通过 JavaScript 调用它
+description: 本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何使用 JavaScript 调用针对 Windows 生成的通用 Windows 应用中的组件。
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 ---
 

@@ -1,6 +1,6 @@
 ---
-在 Windows 开发人员中心仪表板中提交 IAP（应用内产品）的第一步
-设置你的 IAP 产品 ID
+Description: 在 Windows 开发人员中心仪表板中提交 IAP（应用内产品）的第一步
+title: 设置你的 IAP 产品 ID
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ---
 

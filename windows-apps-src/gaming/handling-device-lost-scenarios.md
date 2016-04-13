@@ -1,6 +1,6 @@
 ---
-在 Direct3D 11 中处理设备删除方案
-本主题介绍了图形适配器被删除或重新初始化时，如何重新创建 Direct3D 和 DXGI 的设备界面链。
+title: 在 Direct3D 11 中处理设备删除方案
+description: 本主题介绍了图形适配器被删除或重新初始化时，如何重新创建 Direct3D 和 DXGI 的设备界面链。
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 ---
 

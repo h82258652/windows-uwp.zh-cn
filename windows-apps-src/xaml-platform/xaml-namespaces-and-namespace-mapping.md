@@ -1,6 +1,6 @@
 ---
-本主题将介绍大部分 XAML 文件的根元素中存在的 XML/XAML 命名空间 (xmlns) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。
-XAML 命名空间和命名空间映射
+description: 本主题将介绍大部分 XAML 文件的根元素中存在的 XML/XAML 命名空间 (xmlns) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。
+title: XAML 命名空间和命名空间映射
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 ---
 

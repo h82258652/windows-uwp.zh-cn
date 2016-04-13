@@ -1,6 +1,6 @@
 ---
-业务和数据层位于你的 UI 之后。
-将 Windows Phone Silverlight 业务和数据层移植到 UWP
+description: 业务和数据层位于你的 UI 之后。
+title: 将 Windows Phone Silverlight 业务和数据层移植到 UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 ---
 

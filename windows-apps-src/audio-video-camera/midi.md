@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
-本文向你演示了如何枚举 MIDI（乐器数字接口）设备以及从通用 Windows 应用发送和接收 MIDI 消息。
-MIDI
+description: 本文向你演示了如何枚举 MIDI（乐器数字接口）设备以及从通用 Windows 应用发送和接收 MIDI 消息。
+title: MIDI
 ---
 
 # MIDI

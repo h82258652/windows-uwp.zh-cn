@@ -1,7 +1,7 @@
 ---
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
-本文介绍了如何创建可在后台播放音频的通用 Windows 平台 (UWP) 应用。
-后台音频
+description: 本文介绍了如何创建可在后台播放音频的通用 Windows 平台 (UWP) 应用。
+title: 后台音频
 ---
 
 # 后台音频

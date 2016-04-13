@@ -1,6 +1,6 @@
 ---
-分配托管的 Windows 运行时组件
-你可以通过文件副本分配 Windows 运行时组件。
+title: 分配托管的 Windows 运行时组件
+description: 你可以通过文件副本分配 Windows 运行时组件。
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 ---
 

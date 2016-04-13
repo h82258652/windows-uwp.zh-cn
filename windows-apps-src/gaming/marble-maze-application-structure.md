@@ -1,6 +1,6 @@
 ---
-Marble Maze 应用程序结构
-DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。
+title: Marble Maze 应用程序结构
+description: DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 ---
 

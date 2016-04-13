@@ -1,6 +1,6 @@
 ---
-IAP 通过 Windows 开发人员中心仪表板发布。
-IAP 提交
+Description: IAP 通过 Windows 开发人员中心仪表板发布。
+title: IAP 提交
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ---
 

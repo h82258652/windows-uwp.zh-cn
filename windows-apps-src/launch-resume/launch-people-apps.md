@@ -1,6 +1,6 @@
 ---
-启动“人脉”应用
-本主题介绍了 ms-people URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。
+title: 启动“人脉”应用
+description: 本主题介绍了 ms-people URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 ---
 

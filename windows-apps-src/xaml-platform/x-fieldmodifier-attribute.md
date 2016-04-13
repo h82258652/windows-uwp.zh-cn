@@ -1,6 +1,6 @@
 ---
-修改 XAML 编译行为，使指定对象引用的字段被定义有“public”访问权限而不是默认的“private”行为。
-xFieldModifier 属性
+description: 修改 XAML 编译行为，使指定对象引用的字段被定义有“public”访问权限而不是默认的“private”行为。
+title: xFieldModifier 属性
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
 ---
 

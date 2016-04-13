@@ -1,6 +1,6 @@
 ---
-我们将介绍在使用 C#、Visual Basic 或 Visual C++ 组件扩展 (C++/CX) 作为编程语言并使用 XAML 进行 UI 定义时，针对 Windows 运行时应用中事件的编程概念。
-事件和路由事件概述
+description: 我们将介绍在使用 C#、Visual Basic 或 Visual C++ 组件扩展 (C++/CX) 作为编程语言并使用 XAML 进行 UI 定义时，针对 Windows 运行时应用中事件的编程概念。
+title: 事件和路由事件概述
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ---
 

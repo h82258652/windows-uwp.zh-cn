@@ -1,7 +1,7 @@
 ---
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-创建“Hello, world”应用 (XAML)
-本教程指导你如何使用 Extensible Application Markup Language (XAML) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。
+title: 创建“Hello, world”应用 (XAML)
+description: 本教程指导你如何使用 Extensible Application Markup Language (XAML) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。
 ---
 
 # 创建“Hello, world”应用 (XAML)

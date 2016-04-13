@@ -1,8 +1,8 @@
 ---
-本主题介绍用于选择和操作文本、图像和控件的新的 Windows UI，并提供在 Windows 应用商店应用中使用这些新的选择和操作机制时应该考虑的用户体验指南。
-选择文本和图像
+Description: 本主题介绍用于选择和操作文本、图像和控件的新的 Windows UI，并提供在 Windows 应用商店应用中使用这些新的选择和操作机制时应该考虑的用户体验指南。
+title: 选择文本和图像
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
-选择文本和图像
+label: 选择文本和图像
 template: detail.hbs
 ---
 

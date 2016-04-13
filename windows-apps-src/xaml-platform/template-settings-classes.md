@@ -1,6 +1,6 @@
 ---
-模板设置类
-模板设置类
+description: 模板设置类
+title: 模板设置类
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ---
 

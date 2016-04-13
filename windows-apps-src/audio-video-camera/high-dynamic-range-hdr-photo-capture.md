@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-AdvancedPhotoCapture 类允许你捕获高动态范围 (HDR) 照片。
-高动态范围 (HDR) 照片捕获
+description: AdvancedPhotoCapture 类允许你捕获高动态范围 (HDR) 照片。
+title: 高动态范围 (HDR) 照片捕获
 ---
 
 # 高动态范围 (HDR) 照片捕获

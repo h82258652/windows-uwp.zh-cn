@@ -1,6 +1,6 @@
 ---
-使用维护触发器
-了解如何在插入设备的情况下使用 MaintenanceTrigger 类在后台运行轻型代码。
+title: 使用维护触发器
+description: 了解如何在插入设备的情况下使用 MaintenanceTrigger 类在后台运行轻型代码。
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 ---
 

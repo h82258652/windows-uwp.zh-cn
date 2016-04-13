@@ -1,7 +1,7 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-此案例研究以 Bookstore 中所提供的信息为基础，首先研究可显示 LongListSelector 中的分组数据的 Windows Phone Silverlight 应用。
-从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
+description: 此案例研究以 Bookstore 中所提供的信息为基础，首先研究可显示 LongListSelector 中的分组数据的 Windows Phone Silverlight 应用。
+title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 ---
 
 # 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2

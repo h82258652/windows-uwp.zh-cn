@@ -1,6 +1,6 @@
 ---
-将 OpenGL ES 2.0 映射到 Direct3D 11
-首次开始将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 的过程时，你需要自行熟悉一下 API 之间的主要差别。
+title: 将 OpenGL ES 2.0 映射到 Direct3D 11
+description: 首次开始将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 的过程时，你需要自行熟悉一下 API 之间的主要差别。
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 ---
 

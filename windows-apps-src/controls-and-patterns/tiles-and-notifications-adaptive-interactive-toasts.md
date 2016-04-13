@@ -1,8 +1,8 @@
 ---
-自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。
-自适应和交互式 Toast 通知
+Description: 自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。
+title: 自适应和交互式 Toast 通知
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
-自适应和交互式 Toast 通知
+label: 自适应和交互式 Toast 通知
 template: detail.hbs
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: F912161D-3767-4F35-88C0-E1ECDED692A2
-提高垃圾回收性能
-使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。
+title: 提高垃圾回收性能
+description: 使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。
 ---
 # 提高垃圾回收性能
 

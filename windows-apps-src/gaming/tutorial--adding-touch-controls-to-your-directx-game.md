@@ -1,6 +1,6 @@
 ---
-游戏的触摸控件
-了解如何将基本触摸控件添加到使用 DirectX 的通用 Windows 平台 (UWP) C++ 游戏。
+title: 游戏的触摸控件
+description: 了解如何将基本触摸控件添加到使用 DirectX 的通用 Windows 平台 (UWP) C++ 游戏。
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ---
 

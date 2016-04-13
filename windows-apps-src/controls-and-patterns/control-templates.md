@@ -1,11 +1,11 @@
 ---
-可通过在 XAML 框架中创建控件模板，自定义控件的可视结构和可视行为。
+Description: 可通过在 XAML 框架中创建控件模板，自定义控件的可视结构和可视行为。
 MS-HAID：“dev\_ctrl\_layout\_txt.control\_templates”
 MSHAttr：“PreferredLib:/library/windows/apps”
 Search.Product：eADQiWindows 10XVcnh
-控件模板
+title: 控件模板
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
-控件模板
+label: 控件模板
 template: detail.hbs
 ---
 

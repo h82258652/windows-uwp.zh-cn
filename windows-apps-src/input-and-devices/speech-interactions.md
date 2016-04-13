@@ -1,8 +1,8 @@
 ---
-使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。
-语音交互
+Description: 使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。
+title: 语音交互
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
-语音交互
+label: 语音交互
 template: detail.hbs
 ---
 

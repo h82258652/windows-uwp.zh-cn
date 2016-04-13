@@ -1,8 +1,8 @@
 ---
-Windows.UI.Text.Core 命名空间中的核心文本 API 支持通用 Windows 平台 (UWP) 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。
-自定义文本输入概述
+Description: Windows.UI.Text.Core 命名空间中的核心文本 API 支持通用 Windows 平台 (UWP) 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。
+title: 自定义文本输入概述
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
-自定义文本输入
+label: 自定义文本输入
 template: detail.hbs
 ---
 

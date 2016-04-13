@@ -1,8 +1,8 @@
 ---
-让用户在给定的范围内设置值。
-滑块
+Description: 让用户在给定的范围内设置值。
+title: 滑块
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
-滑块
+label: 滑块
 template: detail.hbs
 ---
 # 滑块

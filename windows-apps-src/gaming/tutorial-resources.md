@@ -1,6 +1,6 @@
 ---
-扩展游戏示例
-恭喜你！ 此时，你已了解了基本 Windows 通用 (UWP) DirectX 3D 游戏的关键组件。
+title: 扩展游戏示例
+description: 恭喜你！ 此时，你已了解了基本 Windows 通用 (UWP) DirectX 3D 游戏的关键组件。
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 关键字：["DirectX, XAML"]
 ---

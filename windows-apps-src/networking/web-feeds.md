@@ -1,6 +1,6 @@
 ---
-使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源通过 Windows.Web.Syndication 命名空间中的功能根据 RSS 和 Atom 标准生成。
-RSS/Atom 订阅源
+description: 使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源通过 Windows.Web.Syndication 命名空间中的功能根据 RSS 和 Atom 标准生成。
+title: RSS/Atom 订阅源
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ---
 

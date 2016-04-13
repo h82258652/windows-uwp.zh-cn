@@ -1,11 +1,11 @@
 ---
-“介绍如何定义 ResourceDictionary 元素和键控资源，以及 XAML 资源与你定义为应用或应用包一部分的其他资源有何关系。”
+Description: “介绍如何定义 ResourceDictionary 元素和键控资源，以及 XAML 资源与你定义为应用或应用包一部分的其他资源有何关系。”
 MS-HAID：“dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references”
 MSHAttr：“PreferredLib:/library/windows/apps”
 Search.Product：eADQiWindows 10XVcnh
-ResourceDictionary 和 XAML 资源引用
+title: ResourceDictionary 和 XAML 资源引用
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
-ResourceDictionary 和 XAML 资源引用
+label: ResourceDictionary 和 XAML 资源引用
 template: detail.hbs
 ---
 

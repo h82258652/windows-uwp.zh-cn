@@ -1,6 +1,6 @@
 ---
-使用后台任务更新动态磁贴
-使用后台任务，以最新内容更新应用的动态磁贴。
+title: 使用后台任务更新动态磁贴
+description: 使用后台任务，以最新内容更新应用的动态磁贴。
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ---

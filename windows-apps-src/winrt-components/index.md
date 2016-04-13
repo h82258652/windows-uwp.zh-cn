@@ -1,6 +1,6 @@
 ---
-Windows 运行时组件
-Windows 运行时组件是自包含对象，可将其实例化，并可采用任一语言使用它，包括 C#、Visual Basic、JavaScript 和 C++。
+title: Windows 运行时组件
+description: Windows 运行时组件是自包含对象，可将其实例化，并可采用任一语言使用它，包括 C#、Visual Basic、JavaScript 和 C++。
 ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 ---
 

@@ -1,6 +1,6 @@
 ---
-pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心。
-pubCenter 开发人员中心集成
+Description: pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心。
+title: pubCenter 开发人员中心集成
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
 ---
 

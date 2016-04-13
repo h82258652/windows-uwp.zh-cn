@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
-本文指导你完成针对各种部署和调试目标的步骤。
-部署和调试通用 Windows 平台 (UWP) 应用
+description: 本文指导你完成针对各种部署和调试目标的步骤。
+title: 部署和调试通用 Windows 平台 (UWP) 应用
 ---
 
 # 部署和调试通用 Windows 平台 (UWP) 应用

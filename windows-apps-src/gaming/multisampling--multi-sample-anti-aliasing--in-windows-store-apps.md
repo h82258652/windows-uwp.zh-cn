@@ -1,6 +1,6 @@
 ---
-通用 Windows 平台 (UWP) 应用中的多重采样
-了解如何在使用 Direct3D 生成的通用 Windows 平台 (UWP) 应用中使用多重采样。
+title: 通用 Windows 平台 (UWP) 应用中的多重采样
+description: 了解如何在使用 Direct3D 生成的通用 Windows 平台 (UWP) 应用中使用多重采样。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ---
 

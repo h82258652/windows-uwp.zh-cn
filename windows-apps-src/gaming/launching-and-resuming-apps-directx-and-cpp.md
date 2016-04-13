@@ -1,6 +1,6 @@
 ---
-启动和恢复应用（DirectX 和 C++）
-了解如何启动、暂停和恢复你的通用 Windows 平台 (UWP) DirectX 应用。
+title: 启动和恢复应用（DirectX 和 C++）
+description: 了解如何启动、暂停和恢复你的通用 Windows 平台 (UWP) DirectX 应用。
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 ---
 

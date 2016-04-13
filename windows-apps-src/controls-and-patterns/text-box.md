@@ -1,6 +1,6 @@
 ---
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-文本框
+label: 文本框
 template: detail.hbs
 ---
 # 文本框

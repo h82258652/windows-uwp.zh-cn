@@ -1,7 +1,7 @@
 ---
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
-本文向你演示如何使用 IMediaEncodingProperties 界面设置相机预览流和已捕获照片和视频的分辨率和帧速率。
-设置媒体编码属性
+description: 本文向你演示如何使用 IMediaEncodingProperties 界面设置相机预览流和已捕获照片和视频的分辨率和帧速率。
+title: 设置媒体编码属性
 ---
 
 # 设置媒体编码属性

@@ -1,6 +1,6 @@
 ---
-如何暂停应用（DirectX 和 C++）
-本主题介绍了系统在暂停通用 Windows 平台 (UWP) DirectX 应用时，如何保存重要系统状态和应用数据。
+title: 如何暂停应用（DirectX 和 C++）
+description: 本主题介绍了系统在暂停通用 Windows 平台 (UWP) DirectX 应用时，如何保存重要系统状态和应用数据。
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ---
 

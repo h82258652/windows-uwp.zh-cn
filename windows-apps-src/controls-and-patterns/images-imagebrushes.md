@@ -1,8 +1,8 @@
 ---
-了解如何将图像集成到应用中，包括如何使用以下两个主要 XAML 类的 API：Image 和 ImageBrush。
-图像和图像画笔
+Description: 了解如何将图像集成到应用中，包括如何使用以下两个主要 XAML 类的 API：Image 和 ImageBrush。
+title: 图像和图像画笔
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
-图像和图像画笔
+label: 图像和图像画笔
 template: detail.hbs
 ---
 # 图像和图像画笔

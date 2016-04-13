@@ -1,6 +1,6 @@
 ---
-从后台任务访问传感器和设备
-DeviceUseTrigger 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。
+title: 从后台任务访问传感器和设备
+description: DeviceUseTrigger 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 ---
 

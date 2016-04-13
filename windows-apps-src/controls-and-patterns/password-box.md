@@ -1,9 +1,9 @@
 ---
-密码框是指出于隐私目的隐藏所键入的字符的文本输入框。
-密码框指南
+Description: 密码框是指出于隐私目的隐藏所键入的字符的文本输入框。
+title: 密码框指南
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid：4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
-密码框
+label: 密码框
 template: detail.hbs
 ---
 # 密码框

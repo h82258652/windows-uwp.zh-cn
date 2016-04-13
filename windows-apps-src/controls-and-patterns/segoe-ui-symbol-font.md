@@ -1,9 +1,9 @@
 ---
-本文列出并提供了随附 Segoe MDL2 资源字体的字形使用指南。
+Description: 本文列出并提供了随附 Segoe MDL2 资源字体的字形使用指南。
 Search.Refinement.TopicID: 184
-Segoe MDL2 图标指南
+title: Segoe MDL2 图标指南
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-Segoe MDL2 图标
+label: Segoe MDL2 图标
 template: detail.hbs
 ---
 

@@ -1,8 +1,8 @@
 ---
-以下是用于创建自适应磁贴的元素和属性。
-自适应磁贴架构和模板
+Description: 以下是用于创建自适应磁贴的元素和属性。
+title: 自适应磁贴架构和模板
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
-自适应磁贴架构和模板
+label: 自适应磁贴架构和模板
 template: detail.hbs
 ---
 

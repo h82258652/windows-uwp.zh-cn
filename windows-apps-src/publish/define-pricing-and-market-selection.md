@@ -1,6 +1,6 @@
 ---
-Windows 应用商店的客户遍及世界 200 多个国家和地区。
-定义价格和市场选择
+Description: Windows 应用商店的客户遍及世界 200 多个国家和地区。
+title: 定义价格和市场选择
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ---
 

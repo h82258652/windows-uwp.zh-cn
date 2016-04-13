@@ -1,6 +1,6 @@
 ---
-从 OpenGL ES 2.0 移植的操作实例示例
-这一组主题介绍了一些复杂程度不同的 OpenGL ES 2.0 图形管道移植方案。
+title: 从 OpenGL ES 2.0 移植的操作实例示例
+description: 这一组主题介绍了一些复杂程度不同的 OpenGL ES 2.0 图形管道移植方案。
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ---
 

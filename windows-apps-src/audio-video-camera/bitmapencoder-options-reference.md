@@ -1,7 +1,7 @@
 ---
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
-本文列出了可用于 BitmapEncoder 的编码选项。
-BitmapEncoder 选项参考
+description: 本文列出了可用于 BitmapEncoder 的编码选项。
+title: BitmapEncoder 选项参考
 ---
 
 # BitmapEncoder 选项参考

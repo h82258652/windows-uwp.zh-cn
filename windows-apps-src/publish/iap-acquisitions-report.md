@@ -1,6 +1,6 @@
 ---
-通过 Windows 开发人员中心仪表板中的“IAP 购置”报告，你可以查看你已售出多少 IAP 以及客户统计数据和平台详细信息。
-IAP 购置报告
+Description: 通过 Windows 开发人员中心仪表板中的“IAP 购置”报告，你可以查看你已售出多少 IAP 以及客户统计数据和平台详细信息。
+title: IAP 购置报告
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ---
 

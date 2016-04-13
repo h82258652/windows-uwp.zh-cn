@@ -1,6 +1,6 @@
 ---
-适用于游戏的项目模板和工具
-向你显示开始为通用 Windows 平台 (UWP) 编写 DirectX 游戏所需的内容。
+title: 适用于游戏的项目模板和工具
+description: 向你显示开始为通用 Windows 平台 (UWP) 编写 DirectX 游戏所需的内容。
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
 ---
 

@@ -1,6 +1,6 @@
 ---
-DirectX 和 XAML 互操作
-你可以在通用 Windows 平台 (UWP) 游戏中同时使用 Extensible Application Markup Language (XAML) 和 Microsoft DirectX。
+title: DirectX 和 XAML 互操作
+description: 你可以在通用 Windows 平台 (UWP) 游戏中同时使用 Extensible Application Markup Language (XAML) 和 Microsoft DirectX。
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ---
 

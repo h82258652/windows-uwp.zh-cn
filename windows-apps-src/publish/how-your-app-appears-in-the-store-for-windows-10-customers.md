@@ -1,6 +1,6 @@
 ---
-如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，则客户同样也可以通过 Windows 10 设备获取这些应用。
-你的应用如何显示在面向 Windows 10 客户的应用商店中
+Description: 如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，则客户同样也可以通过 Windows 10 设备获取这些应用。
+title: 你的应用如何显示在面向 Windows 10 客户的应用商店中
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 ---
 

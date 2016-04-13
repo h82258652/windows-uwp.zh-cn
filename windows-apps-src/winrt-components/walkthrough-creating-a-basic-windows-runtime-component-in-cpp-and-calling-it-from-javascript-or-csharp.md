@@ -1,6 +1,6 @@
 ---
-使用 C++ 创建一个基本 Windows 运行时组件并通过 JavaScript 或 C 调用此组件#
-本演练演示了如何创建一个可通过 JavaScript、C# 或 Visual Basic 调用的基本 Windows 运行时组件 DLL。
+title: 使用 C++ 创建一个基本 Windows 运行时组件并通过 JavaScript 或 C 调用此组件#
+description: 本演练演示了如何创建一个可通过 JavaScript、C# 或 Visual Basic 调用的基本 Windows 运行时组件 DLL。
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ---
 

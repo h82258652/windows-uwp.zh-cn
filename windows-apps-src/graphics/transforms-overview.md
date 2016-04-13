@@ -1,7 +1,7 @@
 ---
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
-转换概述
-了解如何通过更改 UI 中元素的相对坐标系，在 Windows 运行时&\#160;API 中使用转换。
+title: 转换概述
+description: 了解如何通过更改 UI 中元素的相对坐标系，在 Windows 运行时&\#160;API 中使用转换。
 ---
 
 # 转换概述

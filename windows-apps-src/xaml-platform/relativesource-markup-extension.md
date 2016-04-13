@@ -1,6 +1,6 @@
 ---
- 提供一种方式，在运行时对象图中以相对关系形式指定绑定来源。
-RelativeSource 标记扩展
+description:  提供一种方式，在运行时对象图中以相对关系形式指定绑定来源。
+title: RelativeSource 标记扩展
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 ---
 

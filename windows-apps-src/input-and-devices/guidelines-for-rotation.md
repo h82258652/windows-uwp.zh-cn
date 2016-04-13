@@ -1,8 +1,8 @@
 ---
-本主题介绍用于旋转的新 Windows UI，并提供在 Windows 应用商店应用中使用这个新交互机制时应该考虑的用户体验指南。
-旋转
+Description: 本主题介绍用于旋转的新 Windows UI，并提供在 Windows 应用商店应用中使用这个新交互机制时应该考虑的用户体验指南。
+title: 旋转
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
-旋转
+label: 旋转
 template: detail.hbs
 ---
 

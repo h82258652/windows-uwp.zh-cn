@@ -1,6 +1,6 @@
 ---
-熟悉 Visual Studio 环境
-熟悉 Visual Studio 环境
+description: 熟悉 Visual Studio 环境
+title: 熟悉 Visual Studio 环境
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ---
 

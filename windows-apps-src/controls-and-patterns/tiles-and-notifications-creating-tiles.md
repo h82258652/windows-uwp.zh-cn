@@ -1,8 +1,8 @@
 ---
-磁贴是应用在“开始”菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的通用 Windows 平台 (UWP) 应用项目时，它将包含显示应用名称和徽标的默认磁贴。
-磁贴
+Description: 磁贴是应用在“开始”菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的通用 Windows 平台 (UWP) 应用项目时，它将包含显示应用名称和徽标的默认磁贴。
+title: 磁贴
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
-磁贴
+label: 磁贴
 template: detail.hbs
 ---
 

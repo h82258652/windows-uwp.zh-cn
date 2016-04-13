@@ -1,7 +1,7 @@
 ---
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-确定 Microsoft OneDrive 文件的可用性
-使用 StorageFile.IsAvailable 属性确定 Microsoft OneDrive 文件是否可用。
+title: 确定 Microsoft OneDrive 文件的可用性
+description: 使用 StorageFile.IsAvailable 属性确定 Microsoft OneDrive 文件是否可用。
 ---
 # 确定 Microsoft OneDrive 文件的可用性
 

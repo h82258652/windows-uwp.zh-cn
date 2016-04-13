@@ -1,7 +1,7 @@
 ---
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
-动画概述
-使用 Windows 运行时动画库中的动画将 Windows 外观集成到你的应用中。
+title: 动画概述
+description: 使用 Windows 运行时动画库中的动画将 Windows 外观集成到你的应用中。
 ---
 # 动画概述
 

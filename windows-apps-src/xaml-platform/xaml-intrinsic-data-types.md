@@ -1,6 +1,6 @@
 ---
-列出用于 Windows 运行时的 XAML 中对公共语言运行时 (CLR) 或 C++ 等其他编程语言中某些数据类型的语言级支持。
-XAML 固有数据类型
+description: 列出用于 Windows 运行时的 XAML 中对公共语言运行时 (CLR) 或 C++ 等其他编程语言中某些数据类型的语言级支持。
+title: XAML 固有数据类型
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
 ---
 

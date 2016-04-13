@@ -1,8 +1,8 @@
 ---
-平移和滚动使用户可以获取超出屏幕边界的内容。
-滚动条指南
+Description: 平移和滚动使用户可以获取超出屏幕边界的内容。
+title: 滚动条指南
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
-滚动栏
+label: 滚动栏
 template: detail.hbs
 ---
 # 滚动栏

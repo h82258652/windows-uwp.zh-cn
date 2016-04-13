@@ -1,6 +1,6 @@
 ---
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
-文本块
+label: 文本块
 template: detail.hbs
 ---
 # 文本块

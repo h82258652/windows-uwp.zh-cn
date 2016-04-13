@@ -1,7 +1,7 @@
 ---
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
-获取文件属性
-获取由 StorageFile 对象表示的文件属性&\#8212;顶级、基本和扩展&\#8212;。
+title: 获取文件属性
+description: 获取由 StorageFile 对象表示的文件属性&\#8212;顶级、基本和扩展&\#8212;。
 ---
 # 获取文件属性
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
-创建、写入和读取文件
-使用 StorageFile 对象读取和写入文件。
+title: 创建、写入和读取文件
+description: 使用 StorageFile 对象读取和写入文件。
 ---
 
 # 创建、写入和读取文件

@@ -1,6 +1,6 @@
 ---
-DirectX 游戏项目模板
-了解用于创建通用 Windows 平台 (UWP) 和 DirectX 游戏的模板。
+title: DirectX 游戏项目模板
+description: 了解用于创建通用 Windows 平台 (UWP) 和 DirectX 游戏的模板。
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 ---
 

@@ -1,6 +1,6 @@
 ---
-向 Marble Maze 添加音频示例
-本文档介绍了在使用音频时要考虑的重要实践，并展示了 Marble Maze 如何应用这些实践。
+title: 向 Marble Maze 添加音频示例
+description: 本文档介绍了在使用音频时要考虑的重要实践，并展示了 Marble Maze 如何应用这些实践。
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ---
 

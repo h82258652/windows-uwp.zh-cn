@@ -1,6 +1,6 @@
 ---
-打包你的通用 Windows 平台 (UWP) DirectX 游戏
-较大的通用 Windows 平台 (UWP) 游戏可能会轻易地膨胀得很大，尤其是那些支持具有特定于区域的资源的多语言游戏或具有可选的高清晰度资源的游戏。
+title: 打包你的通用 Windows 平台 (UWP) DirectX 游戏
+description: 较大的通用 Windows 平台 (UWP) 游戏可能会轻易地膨胀得很大，尤其是那些支持具有特定于区域的资源的多语言游戏或具有可选的高清晰度资源的游戏。
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 ---
 

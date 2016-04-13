@@ -1,7 +1,7 @@
 ---
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
-本文介绍了如何使用 SceneAnalysisEffect 和 FaceDetectionEffect 分析媒体捕获预览流的内容。
-媒体捕获的场景分析
+description: 本文介绍了如何使用 SceneAnalysisEffect 和 FaceDetectionEffect 分析媒体捕获预览流的内容。
+title: 媒体捕获的场景分析
 ---
 
 # 媒体捕获的场景分析

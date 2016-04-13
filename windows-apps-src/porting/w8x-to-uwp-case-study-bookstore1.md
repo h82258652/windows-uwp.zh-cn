@@ -1,7 +1,7 @@
 ---
-Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
+title: Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-本主题介绍将一个非常简单的通用 8.1 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
+description: 本主题介绍将一个非常简单的通用 8.1 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
 ---
 
 # Windows 运行时 8.x 到 UWP 案例研究：Bookstore1

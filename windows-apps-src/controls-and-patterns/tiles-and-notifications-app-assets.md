@@ -1,8 +1,8 @@
 ---
-应用图标资源（它以各种形式出现在整个 Windows 10 操作系统中）是通用 Windows 平台 (UWP) 应用的调用卡。
-磁贴和图标资源
+Description: 应用图标资源（它以各种形式出现在整个 Windows 10 操作系统中）是通用 Windows 平台 (UWP) 应用的调用卡。
+title: 磁贴和图标资源
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
-磁贴和图标资源
+label: 磁贴和图标资源
 template: detail.hbs
 ---
 

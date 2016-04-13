@@ -1,6 +1,6 @@
 ---
-如何将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11
-作为首个移植练习，我们将从最基本的内容开始：将旋转且顶点着色的立方体的简单呈现器从 OpenGL ES 2.0 移植到 Direct3D 中，以便它与 Visual Studio 2015 中的 DirectX 11 应用（通用 Windows）模板相匹配。
+title: 如何将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11
+description: 作为首个移植练习，我们将从最基本的内容开始：将旋转且顶点着色的立方体的简单呈现器从 OpenGL ES 2.0 移植到 Direct3D 中，以便它与 Visual Studio 2015 中的 DirectX 11 应用（通用 Windows）模板相匹配。
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 ---
 

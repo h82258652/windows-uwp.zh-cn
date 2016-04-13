@@ -1,7 +1,7 @@
 ---
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-本部分包含解释普遍适用于你编写的任何应用的编程概念的主题。
-XAML 平台
+description: 本部分包含解释普遍适用于你编写的任何应用的编程概念的主题。
+title: XAML 平台
 ---
 
 # XAML 平台

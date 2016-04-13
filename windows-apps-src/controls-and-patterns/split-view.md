@@ -1,8 +1,8 @@
 ---
-拆分视图
+title: 拆分视图
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-拆分视图控件具有一个可展开/可折叠的窗格和一个内容区域。
-拆分视图
+description: 拆分视图控件具有一个可展开/可折叠的窗格和一个内容区域。
+label: 拆分视图
 template: detail.hbs
 ---
 

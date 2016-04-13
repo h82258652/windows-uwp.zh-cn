@@ -1,6 +1,6 @@
 ---
-通过 Windows 开发人员中心仪表板，你可以在同一位置针对 Windows 设备管理和提交你的所有应用。
-使用 Windows 开发人员中心仪表板
+Description: 通过 Windows 开发人员中心仪表板，你可以在同一位置针对 Windows 设备管理和提交你的所有应用。
+title: 使用 Windows 开发人员中心仪表板
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 ---
 

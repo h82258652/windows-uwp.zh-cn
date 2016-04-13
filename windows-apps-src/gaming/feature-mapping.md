@@ -1,6 +1,6 @@
 ---
-将 DirectX 9 功能映射到 DirectX 11 API
-了解 Direct3D 9 游戏使用的功能如何转换到 Direct3D 11 和通用 Windows 平台 (UWP)。
+title: 将 DirectX 9 功能映射到 DirectX 11 API
+description: 了解 Direct3D 9 游戏使用的功能如何转换到 Direct3D 11 和通用 Windows 平台 (UWP)。
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 ---
 

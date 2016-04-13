@@ -1,8 +1,8 @@
 ---
-本主题介绍使用接触几何图形来确定触摸目标并提供在 Windows 运行时应用中确定目标的最佳实践。
-目标
+Description: 本主题介绍使用接触几何图形来确定触摸目标并提供在 Windows 运行时应用中确定目标的最佳实践。
+title: 目标
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
-目标
+label: 目标
 template: detail.hbs
 ---
 

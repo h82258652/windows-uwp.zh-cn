@@ -1,6 +1,6 @@
 ---
-以声明性 XAML 标记的形式定义 UI 的做法非常好地将 Windows Phone Silverlight 转换为通用 Windows 平台 (UWP) 应用。
-将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
+description: 以声明性 XAML 标记的形式定义 UI 的做法非常好地将 Windows Phone Silverlight 转换为通用 Windows 平台 (UWP) 应用。
+title: 将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 ---
 
