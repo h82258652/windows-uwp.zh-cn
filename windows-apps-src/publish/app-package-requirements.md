@@ -1,6 +1,6 @@
 ---
-按照以下指南准备要提交到 Windows 应用商店的应用包。
-应用包要求
+Description: 按照以下指南准备要提交到 Windows 应用商店的应用包。
+title: 应用包要求
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ---
 

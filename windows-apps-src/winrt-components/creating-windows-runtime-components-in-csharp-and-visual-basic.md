@@ -1,6 +1,6 @@
 ---
-使用 C# 和 Visual Basic 创建 Windows 运行时组件
-从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。
+title: 使用 C# 和 Visual Basic 创建 Windows 运行时组件
+description: 从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ---
 

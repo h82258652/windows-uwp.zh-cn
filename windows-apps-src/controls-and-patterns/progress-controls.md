@@ -1,8 +1,8 @@
 ---
-进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。
-进度控件指南
+Description: 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。
+title: 进度控件指南
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
-进度控件
+label: 进度控件
 template: detail.hbs
 ---
 # 进度控件

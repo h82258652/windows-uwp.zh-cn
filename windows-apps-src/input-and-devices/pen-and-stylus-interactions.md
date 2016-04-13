@@ -1,8 +1,8 @@
 ---
-生成支持使用笔和触笔设备进行自定义交互（包括用于自然书写和绘图体验的数字墨迹）的通用 Windows 平台 (UWP) 应用。
-笔和触笔交互
+Description: 生成支持使用笔和触笔设备进行自定义交互（包括用于自然书写和绘图体验的数字墨迹）的通用 Windows 平台 (UWP) 应用。
+title: 笔和触笔交互
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
-笔和触笔
+label: 笔和触笔
 template: detail.hbs
 ---
 

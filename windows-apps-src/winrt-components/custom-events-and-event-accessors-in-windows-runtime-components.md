@@ -1,6 +1,6 @@
 ---
-Windows 运行时组件中的自定义事件和事件访问器
-对 Windows 运行时组件的 .NET Framework 支持使声明事件组件变得简单，方法是通过隐藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之间的差异。
+title: Windows 运行时组件中的自定义事件和事件访问器
+description: 对 Windows 运行时组件的 .NET Framework 支持使声明事件组件变得简单，方法是通过隐藏通用 Windows 平台 (UWP) 事件模式和 .NET Framework 事件模式之间的差异。
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 ---
 

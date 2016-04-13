@@ -1,6 +1,6 @@
 ---
-提交 IAP 时，在 s 步骤中输入的信息将显示给你应用的客户。
-创建 IAP 描述
+Description: 提交 IAP 时，在 s 步骤中输入的信息将显示给你应用的客户。
+title: 创建 IAP 描述
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ---
 

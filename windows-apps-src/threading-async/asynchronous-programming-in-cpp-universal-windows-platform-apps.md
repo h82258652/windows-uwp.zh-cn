@@ -1,7 +1,7 @@
 ---
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-本文介绍了在 Visual C++ 组件扩展 (C++/CX) 中，通过使用在 ppltasks.h 中的 concurrency 命名空间中定义的 task 类来使用异步方法的推荐方式。
-使用 C++ 进行异步编程
+description: 本文介绍了在 Visual C++ 组件扩展 (C++/CX) 中，通过使用在 ppltasks.h 中的 concurrency 命名空间中定义的 task 类来使用异步方法的推荐方式。
+title: 使用 C++ 进行异步编程
 ---
 
 # 使用 C++ 进行异步编程

@@ -1,8 +1,8 @@
 ---
-列表显示并启用与基于集合的内容交互。
-列表
+Description: 列表显示并启用与基于集合的内容交互。
+title: 列表
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
-列表
+label: 列表
 template: detail.hbs
 ---
 # 列表

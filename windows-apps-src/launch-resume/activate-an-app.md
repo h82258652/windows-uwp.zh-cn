@@ -1,6 +1,6 @@
 ---
-处理应用激活
-了解如何通过替代 OnLaunched 方法来处理应用激活。
+title: 处理应用激活
+description: 了解如何通过替代 OnLaunched 方法来处理应用激活。
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ---
 

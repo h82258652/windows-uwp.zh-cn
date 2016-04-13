@@ -1,6 +1,6 @@
 ---
-将 EGL 代码与 DXGI 和 Direct3D 进行比较
-DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用与 EGL 相同。 本主题帮助你从 EGL 的角度了解 DXGI 和 Direct3D 11。
+title: 将 EGL 代码与 DXGI 和 Direct3D 进行比较
+description: DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用与 EGL 相同。 本主题帮助你从 EGL 的角度了解 DXGI 和 Direct3D 11。
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
 ---
 

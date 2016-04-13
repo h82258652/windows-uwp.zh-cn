@@ -1,7 +1,7 @@
 ---
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
-合成画笔
-画笔通过其输出绘制 Visual 的区域。 不同的画笔具有不同的输出类型。
+title: 合成画笔
+description: 画笔通过其输出绘制 Visual 的区域。 不同的画笔具有不同的输出类型。
 ---
 # 合成画笔
 

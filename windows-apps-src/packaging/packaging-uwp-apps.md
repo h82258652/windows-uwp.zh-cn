@@ -1,7 +1,7 @@
 ---
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
-打包 UWP 应用
-若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要为其创建一个 appxupload 程序包。
+title: 打包 UWP 应用
+description: 若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要为其创建一个 appxupload 程序包。
 ---
 # 打包 UWP 应用
 

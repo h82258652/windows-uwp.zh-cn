@@ -1,7 +1,7 @@
 ---
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
-合成效果
-效果 API 使开发人员可以自定义其 UI 的呈现方式。
+title: 合成效果
+description: 效果 API 使开发人员可以自定义其 UI 的呈现方式。
 ---
 # 合成效果
 

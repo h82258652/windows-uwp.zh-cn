@@ -1,8 +1,8 @@
 ---
-了解如何为语音识别定义和使用自定义约束。
-定义自定义识别约束
+Description: 了解如何为语音识别定义和使用自定义约束。
+title: 定义自定义识别约束
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
-定义自定义识别约束
+label: 定义自定义识别约束
 template: detail.hbs
 ---
 

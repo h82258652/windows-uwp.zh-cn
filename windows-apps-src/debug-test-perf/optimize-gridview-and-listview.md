@@ -1,7 +1,7 @@
 ---
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
-ListView 和 GridView UI 优化
-通过 UI 虚拟化、元素减少和项目的进度更新来改进 ListView 和 GridView 性能和启动时间。
+title: ListView 和 GridView UI 优化
+description: 通过 UI 虚拟化、元素减少和项目的进度更新来改进 ListView 和 GridView 性能和启动时间。
 ---
 # ListView 和 GridView UI 优化
 

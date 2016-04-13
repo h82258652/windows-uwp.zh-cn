@@ -1,7 +1,7 @@
 ---
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
-通过网络枚举设备
-除了发现本地连接的设备以外，还可以使用 Windows.Devices.Enumeration API 通过无线和网络协议来枚举设备。
+title: 通过网络枚举设备
+description: 除了发现本地连接的设备以外，还可以使用 Windows.Devices.Enumeration API 通过无线和网络协议来枚举设备。
 ---
 # 通过网络枚举设备
 

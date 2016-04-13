@@ -1,6 +1,6 @@
 ---
-通过计算对来源于自定义资源查找实现的资源的引用，为任何 XAML 属性提供值。 资源查找是通过 CustomXamlResourceLoader 类实现执行的。
-CustomResource 标记扩展
+description: 通过计算对来源于自定义资源查找实现的资源的引用，为任何 XAML 属性提供值。 资源查找是通过 CustomXamlResourceLoader 类实现执行的。
+title: CustomResource 标记扩展
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 ---
 

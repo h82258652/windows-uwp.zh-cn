@@ -1,6 +1,6 @@
 ---
-从 OpenGL ES 2.0 移植到 Direct3D 11
-包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及操作实例。
+title: 从 OpenGL ES 2.0 移植到 Direct3D 11
+description: 包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及操作实例。
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 ---
 

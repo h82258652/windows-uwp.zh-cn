@@ -1,7 +1,7 @@
 ---
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-本文介绍了如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。
-使用 PlayReady 的自适应流式处理
+description: 本文介绍了如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。
+title: 使用 PlayReady 的自适应流式处理
 ---
 
 # 使用 PlayReady 的自适应流式处理

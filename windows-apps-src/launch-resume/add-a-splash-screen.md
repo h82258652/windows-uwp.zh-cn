@@ -1,6 +1,6 @@
 ---
-添加初始屏幕
-使用 Microsoft Visual Studio 2015 设置你的应用的初始屏幕图像和背景色。
+title: 添加初始屏幕
+description: 使用 Microsoft Visual Studio 2015 设置你的应用的初始屏幕图像和背景色。
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 ---
 

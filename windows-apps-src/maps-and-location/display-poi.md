@@ -1,6 +1,6 @@
 ---
-“在地图上显示目标点 (POI)”
-使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。
+title: “在地图上显示目标点 (POI)”
+description: 使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ---
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
-配对设备
-某些设备需要先进行配对，然后才能使用。 Windows.Devices.Enumeration 命名空间支持使用三种不同方式的配对设备。
+title: 配对设备
+description: 某些设备需要先进行配对，然后才能使用。 Windows.Devices.Enumeration 命名空间支持使用三种不同方式的配对设备。
 ---
 # 配对设备
 

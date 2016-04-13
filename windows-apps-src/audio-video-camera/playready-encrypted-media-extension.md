@@ -1,7 +1,7 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-本部分介绍了如何修改 PlayReady Web 应用以支持从以前的 Windows 8.1 版本到 Windows 10 版本所做的更改。
-PlayReady 加密媒体扩展
+description: 本部分介绍了如何修改 PlayReady Web 应用以支持从以前的 Windows 8.1 版本到 Windows 10 版本所做的更改。
+title: PlayReady 加密媒体扩展
 ---
 
 # PlayReady 加密媒体扩展

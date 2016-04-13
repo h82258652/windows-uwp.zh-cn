@@ -1,9 +1,9 @@
 ---
-全球化就是在无需做任何更改或自定义的情况下设计和开发你的应用以便适应不同的国际市场的过程。
+Description: 全球化就是在无需做任何更改或自定义的情况下设计和开发你的应用以便适应不同的国际市场的过程。
 Search.SourceType：视频
-全球化和本地化
+title: 全球化和本地化
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
-简介
+label: 简介
 template: detail.hbs
 ---
 

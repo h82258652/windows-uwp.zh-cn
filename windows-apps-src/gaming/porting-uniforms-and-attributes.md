@@ -1,6 +1,6 @@
 ---
-将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较
-在从 OpenGL ES 2.0 移植到 Direct3D 11 的过程中，必须更改用于在应用和着色器程序之间传递数据的语法和 API 行为。
+title: 将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较
+description: 在从 OpenGL ES 2.0 移植到 Direct3D 11 的过程中，必须更改用于在应用和着色器程序之间传递数据的语法和 API 行为。
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ---
 

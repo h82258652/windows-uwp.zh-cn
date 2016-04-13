@@ -1,6 +1,6 @@
 ---
-将 OpenGL ES 2.0 着色器管道与 Direct3D 进行比较
-从概念上来说，Direct3D 11 着色器管道与 OpenGL ES 2.0 中的着色器管道非常相似。
+title: 将 OpenGL ES 2.0 着色器管道与 Direct3D 进行比较
+description: 从概念上来说，Direct3D 11 着色器管道与 OpenGL ES 2.0 中的着色器管道非常相似。
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 ---
 

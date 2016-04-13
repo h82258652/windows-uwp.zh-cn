@@ -1,8 +1,8 @@
 ---
-通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。
-通用 Windows 平台 (UWP) 应用的导航设计基础知识
+Description: 通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。
+title: 通用 Windows 平台 (UWP) 应用的导航设计基础知识
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
-导航设计基础知识
+label: 导航设计基础知识
 template: detail.hbs
 ---
 
