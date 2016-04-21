@@ -1,40 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\accessibility\accessibility.md](https://github.com/Microsoft/windows-apps/blob/824fa91ae98c3f752e261e203b20d26553db01ff/windows-apps-src/accessibility/accessibility.md) | OutofSyncHandedBackSuccess | [Details](#2a2b247c5b17f73b4ae62a7d077b61ccd06ae9749)
- [windows-apps-src\layout\test.md](https://github.com/Microsoft/windows-apps/blob/f5fd6d719beb5f34d8b2969b931d42ee49bfbd9e/windows-apps-src/layout/test.md) | HandedOffSuccess | [Details](#f14347012d412c87329ff71da33113863ffd00e93175)
+ [windows-apps-src\publish\link-to-your-app.md](https://github.com/Microsoft/windows-apps/blob/d36f14604bd8c2ce0d5778a67f5b5b9460d9fbf3/windows-apps-src/publish/link-to-your-app.md) | OutofSyncHandedBackSuccess | [Details](#891b99b52f7e3b347c0e2f9d298f144313cc7b2d3470)
 
 ## Item Details
-##### <a name='2a2b247c5b17f73b4ae62a7d077b61ccd06ae9749'></a> Source: [windows-apps-src\accessibility\accessibility.md](https://github.com/Microsoft/windows-apps/blob/824fa91ae98c3f752e261e203b20d26553db01ff/windows-apps-src/accessibility/accessibility.md)
+##### <a name='891b99b52f7e3b347c0e2f9d298f144313cc7b2d3470'></a> Source: [windows-apps-src\publish\link-to-your-app.md](https://github.com/Microsoft/windows-apps/blob/d36f14604bd8c2ce0d5778a67f5b5b9460d9fbf3/windows-apps-src/publish/link-to-your-app.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [accessibility.c5af33aaf4b5c1afcbdc516d45cbba0978a332da.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/b5a60be90b1e5b5f1a47b136646b22ce9c9857e8/ol-handoff/Microsoft/windows-apps.zh-cn/master/accessibility.c5af33aaf4b5c1afcbdc516d45cbba0978a332da.zh-cn.xlf)
-* Handoff Datetime: 2016-04-21 23:15:51
+* Handoff File: [link-to-your-app.258affb37b4b82fa419eab4e1167dcb730638941.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/635404fe028a48a3c44b6776957555193f80ce78/ol-handoff/Microsoft/windows-apps.zh-cn/master/link-to-your-app.258affb37b4b82fa419eab4e1167dcb730638941.zh-cn.xlf)
+* Handoff Datetime: 2016-04-21 23:45:54
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\accessibility\accessibility.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/528f0417fbd7a9f463907c5d4655aa29068b0a4e/windows-apps-src/accessibility/accessibility.md)
-* Current Handback File: [accessibility.c5af33aaf4b5c1afcbdc516d45cbba0978a332da.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/fdce37552d804660c10c63cc0eafd981d65d103d/ol-handback/Microsoft/windows-apps.zh-cn/master/accessibility.c5af33aaf4b5c1afcbdc516d45cbba0978a332da.zh-cn.xlf)
-* Current Handback Datetime: 2016-04-13 20:47:58
-* [Back to Top](#report-top)
-
-##### <a name='f14347012d412c87329ff71da33113863ffd00e93175'></a> Source: [windows-apps-src\layout\test.md](https://github.com/Microsoft/windows-apps/blob/f5fd6d719beb5f34d8b2969b931d42ee49bfbd9e/windows-apps-src/layout/test.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [test.cdcf91b592fe1e9eb688524669174320f25c7f54.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/b5a60be90b1e5b5f1a47b136646b22ce9c9857e8/ol-handoff/Microsoft/windows-apps.zh-cn/master/test.cdcf91b592fe1e9eb688524669174320f25c7f54.zh-cn.xlf)
-* Handoff Datetime: 2016-04-21 23:15:51
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\link-to-your-app.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/2df1ee2c7294e678466e80875dfab2d8eabd32ae/windows-apps-src/publish/link-to-your-app.md)
+* Current Handback File: [link-to-your-app.258affb37b4b82fa419eab4e1167dcb730638941.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/490b527037c13243a6dddc25993a26279c7d0e64/ol-handback/Microsoft/windows-apps.zh-cn/master/link-to-your-app.258affb37b4b82fa419eab4e1167dcb730638941.zh-cn.xlf)
+* Current Handback Datetime: 2016-04-13 21:21:32
 * [Back to Top](#report-top)
 
 
