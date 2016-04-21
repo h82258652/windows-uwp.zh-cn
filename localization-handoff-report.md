@@ -1,24 +1,43 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\automate-launching-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/27e28881402453f0b2d105d56168732f83ad57f5/windows-apps-src/xbox-apps/automate-launching-uwp-apps.md) | HandedOffSuccess | [Details](#e25fcd0c0e07b022eb42b5fb2f890eb8379c9e613745)
+ [windows-apps-src\publish\create-your-app-by-reserving-a-name.md](https://github.com/Microsoft/windows-apps/blob/3b65bbaf2498dde7484c055ff86ed09e89bf3405/windows-apps-src/publish/create-your-app-by-reserving-a-name.md) | OutofSyncHandedBackSuccess | [Details](#5e4933be456bc76eb5923f5c081e8376c43c118b3451)
+ [windows-apps-src\publish\manage-app-names.md](https://github.com/Microsoft/windows-apps/blob/48952b5d4f2565d06ec79475f88fbabf93fd0f70/windows-apps-src/publish/manage-app-names.md) | OutofSyncHandedBackSuccess | [Details](#e03e99b5de2142c2bcf46ee2aad4a76bb87ee4e53473)
 
 ## Item Details
-##### <a name='e25fcd0c0e07b022eb42b5fb2f890eb8379c9e613745'></a> Source: [windows-apps-src\xbox-apps\automate-launching-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/27e28881402453f0b2d105d56168732f83ad57f5/windows-apps-src/xbox-apps/automate-launching-uwp-apps.md)
-* Status: HandedOffSuccess
+##### <a name='5e4933be456bc76eb5923f5c081e8376c43c118b3451'></a> Source: [windows-apps-src\publish\create-your-app-by-reserving-a-name.md](https://github.com/Microsoft/windows-apps/blob/3b65bbaf2498dde7484c055ff86ed09e89bf3405/windows-apps-src/publish/create-your-app-by-reserving-a-name.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f064d3907cdd1e1985bde8b4fb6fd057db402897/ol-handoff/Microsoft/windows-apps.zh-cn/master/automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.zh-cn.xlf)
-* Handoff Datetime: 2016-04-21 20:44:03
+* Handoff File: [create-your-app-by-reserving-a-name.7e01dc9d2c9ba68a62c4962ef74bc447ce075b6e.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/cf0916ab1f6157c299570234f3ba76cb17787d7c/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-your-app-by-reserving-a-name.7e01dc9d2c9ba68a62c4962ef74bc447ce075b6e.zh-cn.xlf)
+* Handoff Datetime: 2016-04-21 21:43:09
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\create-your-app-by-reserving-a-name.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/2df1ee2c7294e678466e80875dfab2d8eabd32ae/windows-apps-src/publish/create-your-app-by-reserving-a-name.md)
+* Current Handback File: [create-your-app-by-reserving-a-name.7e01dc9d2c9ba68a62c4962ef74bc447ce075b6e.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/490b527037c13243a6dddc25993a26279c7d0e64/ol-handback/Microsoft/windows-apps.zh-cn/master/create-your-app-by-reserving-a-name.7e01dc9d2c9ba68a62c4962ef74bc447ce075b6e.zh-cn.xlf)
+* Current Handback Datetime: 2016-04-13 21:21:32
+* [Back to Top](#report-top)
+
+##### <a name='e03e99b5de2142c2bcf46ee2aad4a76bb87ee4e53473'></a> Source: [windows-apps-src\publish\manage-app-names.md](https://github.com/Microsoft/windows-apps/blob/48952b5d4f2565d06ec79475f88fbabf93fd0f70/windows-apps-src/publish/manage-app-names.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [manage-app-names.0f3b592f24bb2975cdbb3aad17495d9d6e942b93.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/cf0916ab1f6157c299570234f3ba76cb17787d7c/ol-handoff/Microsoft/windows-apps.zh-cn/master/manage-app-names.0f3b592f24bb2975cdbb3aad17495d9d6e942b93.zh-cn.xlf)
+* Handoff Datetime: 2016-04-21 21:43:09
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\manage-app-names.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/528f0417fbd7a9f463907c5d4655aa29068b0a4e/windows-apps-src/publish/manage-app-names.md)
+* Current Handback File: [manage-app-names.0f3b592f24bb2975cdbb3aad17495d9d6e942b93.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/fdce37552d804660c10c63cc0eafd981d65d103d/ol-handback/Microsoft/windows-apps.zh-cn/master/manage-app-names.0f3b592f24bb2975cdbb3aad17495d9d6e942b93.zh-cn.xlf)
+* Current Handback Datetime: 2016-04-13 20:47:58
 * [Back to Top](#report-top)
 
 
