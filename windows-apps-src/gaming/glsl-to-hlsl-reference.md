@@ -203,7 +203,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </ul></li>
 </ul>
 <p>有关详细信息，请参阅 [Vector Type](https://msdn.microsoft.com/library/windows/desktop/bb509707) 和 [Keywords](https://msdn.microsoft.com/library/windows/desktop/bb509568)。</p>
-<p>还可以将 vector 定义为 float4 类型 (typedef vector <float, 4> vector;)。 有关详细信息，请参阅 [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
+<p>还可以将 vector 定义为 float4 类型 (typedef vector &lt;float, 4&gt; vector;)。 有关详细信息，请参阅 [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>矩阵类型</p>
