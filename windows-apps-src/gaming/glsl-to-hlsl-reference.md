@@ -227,8 +227,8 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </ul></li>
 </ul>
 <p>也可以使用 [matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623) 来定义矩阵。</p>
-<p>例如：matrix <float, 2, 2> fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>还可以将 matrix 定义为 float4x4 类型 (typedef matrix <float, 4, 4> matrix;)。 有关详细信息，请参阅 [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
+<p>例如：matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
+<p>还可以将 matrix 定义为 float4x4 类型 (typedef matrix &lt;float, 4, 4&gt; matrix;)。 有关详细信息，请参阅 [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>float、int、sampler 的精度限定符</p>
@@ -324,7 +324,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>颜色附件 n 的片段颜色</p></td>
 <td align="left"><p>SV_Target[n]</p>
 <p>该语义为 <strong>float4</strong> 类型。</p>
-<p>n 呈现目标中存储的像素着色器输出值，其中 0 <= n <= 7。</p></td>
+<p>n 呈现目标中存储的像素着色器输出值，其中 0 &lt;= n &lt;= 7。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>gl_FragCoord</strong></p>
