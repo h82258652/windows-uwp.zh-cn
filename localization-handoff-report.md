@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md](https://github.com/Microsoft/windows-apps/blob/386c5b1cfacb341e8ad3060354490026181ba1e9/windows-apps-src/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) | OutofSyncHandedBackSuccess | [Details](#bf900aac732fb012a39d2e2e6c5312ccb5a65cee3283)
+ [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/2e646aca576b248ae9c940af980b18a3f24bd4df/windows-apps-src/security/companion-device-unlock.md) | OutofSyncHandedBackSuccess | [Details](#a262c06fec086ab6a37e7033f4d6b19607722b443511)
 
 ## Item Details
-##### <a name='bf900aac732fb012a39d2e2e6c5312ccb5a65cee3283'></a> Source: [windows-apps-src\monetize\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md](https://github.com/Microsoft/windows-apps/blob/386c5b1cfacb341e8ad3060354490026181ba1e9/windows-apps-src/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)
+##### <a name='a262c06fec086ab6a37e7033f4d6b19607722b443511'></a> Source: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/2e646aca576b248ae9c940af980b18a3f24bd4df/windows-apps-src/security/companion-device-unlock.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/593f1450f9b38e0952f93671228d97a29232c429/ol-handoff/Microsoft/windows-apps.zh-cn/master/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.zh-cn.xlf)
-* Handoff Datetime: 2016-04-25 17:41:33
+* Handoff File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/cc7b2e4256696453c10e51c5c690d3bc5ef05553/ol-handoff/Microsoft/windows-apps.zh-cn/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.zh-cn.xlf)
+* Handoff Datetime: 2016-04-25 18:40:20
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/528f0417fbd7a9f463907c5d4655aa29068b0a4e/windows-apps-src/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)
-* Current Handback File: [monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/fdce37552d804660c10c63cc0eafd981d65d103d/ol-handback/Microsoft/windows-apps.zh-cn/master/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.zh-cn.xlf)
+* Current Target File: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/528f0417fbd7a9f463907c5d4655aa29068b0a4e/windows-apps-src/security/companion-device-unlock.md)
+* Current Handback File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/fdce37552d804660c10c63cc0eafd981d65d103d/ol-handback/Microsoft/windows-apps.zh-cn/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.zh-cn.xlf)
 * Current Handback Datetime: 2016-04-13 20:47:58
 * [Back to Top](#report-top)
 
