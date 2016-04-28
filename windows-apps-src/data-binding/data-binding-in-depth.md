@@ -23,7 +23,7 @@ description: 数据绑定是你的应用 UI 用来显示数据的一种方法，
 当 UI首次显示时，你可以使用数据绑定以仅显示来自数据源的值，但不会对这些值中的更改做出响应。 这称为一次性绑定，非常适合在运行时期间其值不会更改的数据。 或者，你可以选择“观察”值并在其更改时更新 UI。 这称为单向绑定，非常适合只读数据。 最后，你可以选择观察并更新，以便用户在 UI 中对值所做的更改能自动传回数据源。 这称为双向绑定，非常适合读写数据。 下面是一些示例。
 
 -   你可以使用一次性绑定，将 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 绑定到当前用户的照片。
--   你可以使用单向绑定，将 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 绑定到按报纸剪辑分组的实时新闻报道的集锦。
+-   你可以使用单向绑定，将 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 绑定到按报纸剪辑分组的实时新闻报道的集合。
 -   你可以使用双向绑定，将 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 绑定到表单中的客户名称。
 
 有两种类型的绑定，它们通常都在 UI 标记中进行声明。 你既可以选用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，也可以选用 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 还可以在同一应用中（甚至是同一 UI 元素上）混合使用这两个标记扩展。 {x:Bind} 是 Windows 10 的新增内容，且具备更好的性能。 {Binding} 具有更多功能。 除非另有明确说明，否则本主题中介绍的所有详细信息均适用于这两种绑定。
@@ -604,13 +604,11 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 {x:Bind} 和 {Binding} 功能比较
 ------------------------------------------
+
 | 功能 | {x:Bind} | {Binding} | 注释 |
 |---------|----------|-----------|-------|
 | Path 为默认属性 | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
-| Path 属性 | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | 在 x:Bind 中，Path 默认位于 Page 的根处，而非 DataContext。 | 
-| 索引器 | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | 绑定到集合中的指定项。 仅支持基于整数的索引。 | 
-| 附加属性 | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | 附加属性用括号进行指定。 如果未在 XAML 命名空间中声明该属性，则在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。 |
-| 强制转换 | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | 不需要< | 强制转换用括号进行指定。 如果未在 XAML 命名空间中声明该属性，则在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。 | 
+| Path 属性 | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | 在 x:Bind 中，Path 默认位于 Page 的根处，而非 DataContext。 | | 索引器 | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | 绑定到集合中的指定项。 仅支持基于整数的索引。 | | 附加属性 | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | 附加属性用括号进行指定。 如果未在 XAML 命名空间中声明该属性，则在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。 | | 强制转换 | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | 不需要< | 强制转换用括号进行指定。 如果未在 XAML 命名空间中声明该属性，则在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。 | 
 | 转换器 | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | 转换器必须在 Page/ResourceDictionary 的根目录处或在 App.xaml 中进行声明。 | 
 | ConverterParameter, ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | 转换器必须在 Page/ResourceDictionary 的根目录处或在 App.xaml 中进行声明。 | 
 | TargetNullValue | `{x:Bind Name, TargetNullValue=0}` | `{Binding Name, TargetNullValue=0}` | 在绑定表达式的叶为 null 时使用。 对于字符串值，应使用单引号。 | 
