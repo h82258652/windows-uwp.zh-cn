@@ -1,43 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\data-binding\data-binding-in-depth.md](https://github.com/Microsoft/windows-apps/blob/a82771a46e55020e371fd05ef3263e4b9cc1673b/windows-apps-src/data-binding/data-binding-in-depth.md) | OutofSyncHandedBackSuccess | [Details](#790f998bd1f6dc5861711dd285e82c18c0bdec5e1889)
- [windows-apps-src\debug-test-perf\improve-garbage-collection-performance.md](https://github.com/Microsoft/windows-apps/blob/436373db47c41aef5f2c145619850528f9d7dbfd/windows-apps-src/debug-test-perf/improve-garbage-collection-performance.md) | OutofSyncHandedBackSuccess | [Details](#4e849fa9e5c00cec592cadefb995e0d2aa7f9fba1960)
+ [windows-apps-src\debug-test-perf\optimize-gridview-and-listview.md](https://github.com/Microsoft/windows-apps/blob/6842e70c2ba8bb9d6e9b6a78c81a0bcc3bc347ce/windows-apps-src/debug-test-perf/optimize-gridview-and-listview.md) | OutofSyncHandedBackSuccess | [Details](#e8ae83964d3ee157974f0e4e8763cc2eaacc72311967)
 
 ## Item Details
-##### <a name='790f998bd1f6dc5861711dd285e82c18c0bdec5e1889'></a> Source: [windows-apps-src\data-binding\data-binding-in-depth.md](https://github.com/Microsoft/windows-apps/blob/a82771a46e55020e371fd05ef3263e4b9cc1673b/windows-apps-src/data-binding/data-binding-in-depth.md)
+##### <a name='e8ae83964d3ee157974f0e4e8763cc2eaacc72311967'></a> Source: [windows-apps-src\debug-test-perf\optimize-gridview-and-listview.md](https://github.com/Microsoft/windows-apps/blob/6842e70c2ba8bb9d6e9b6a78c81a0bcc3bc347ce/windows-apps-src/debug-test-perf/optimize-gridview-and-listview.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [data-binding-in-depth.3b92e12492dfc9e544aad2db2ce4b7efc65e4516.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/621981b674923480206c2e3d85705f9c35852596/ol-handoff/Microsoft/windows-apps.zh-cn/master/data-binding-in-depth.3b92e12492dfc9e544aad2db2ce4b7efc65e4516.zh-cn.xlf)
-* Handoff Datetime: 2016-05-02 17:50:32
+* Handoff File: [optimize-gridview-and-listview.19e7310a7160264d74416602b0f81975d63f8ed1.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/03fd2e815f949cd14c70ee478819a77f2524c0a2/ol-handoff/Microsoft/windows-apps.zh-cn/master/optimize-gridview-and-listview.19e7310a7160264d74416602b0f81975d63f8ed1.zh-cn.xlf)
+* Handoff Datetime: 2016-05-02 18:18:42
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\data-binding\data-binding-in-depth.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/4c8f790e2a24594368f43a76c8a1f4b9cb869fc5/windows-apps-src/data-binding/data-binding-in-depth.md)
-* Current Handback File: [data-binding-in-depth.3b92e12492dfc9e544aad2db2ce4b7efc65e4516.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/fa1ee4989901c6315dc1b9225418d3a7e6c47f00/ol-handback/Microsoft/windows-apps.zh-cn/master/data-binding-in-depth.3b92e12492dfc9e544aad2db2ce4b7efc65e4516.zh-cn.xlf)
-* Current Handback Datetime: 2016-04-28 14:10:06
-* [Back to Top](#report-top)
-
-##### <a name='4e849fa9e5c00cec592cadefb995e0d2aa7f9fba1960'></a> Source: [windows-apps-src\debug-test-perf\improve-garbage-collection-performance.md](https://github.com/Microsoft/windows-apps/blob/436373db47c41aef5f2c145619850528f9d7dbfd/windows-apps-src/debug-test-perf/improve-garbage-collection-performance.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [improve-garbage-collection-performance.fdd828e59372c7f49d2851254f234d8efe2fc7b4.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/621981b674923480206c2e3d85705f9c35852596/ol-handoff/Microsoft/windows-apps.zh-cn/master/improve-garbage-collection-performance.fdd828e59372c7f49d2851254f234d8efe2fc7b4.zh-cn.xlf)
-* Handoff Datetime: 2016-05-02 17:50:32
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\debug-test-perf\improve-garbage-collection-performance.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/528f0417fbd7a9f463907c5d4655aa29068b0a4e/windows-apps-src/debug-test-perf/improve-garbage-collection-performance.md)
-* Current Handback File: [improve-garbage-collection-performance.fdd828e59372c7f49d2851254f234d8efe2fc7b4.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/fdce37552d804660c10c63cc0eafd981d65d103d/ol-handback/Microsoft/windows-apps.zh-cn/master/improve-garbage-collection-performance.fdd828e59372c7f49d2851254f234d8efe2fc7b4.zh-cn.xlf)
-* Current Handback Datetime: 2016-04-13 20:47:58
+* Current Target File: [windows-apps-src\debug-test-perf\optimize-gridview-and-listview.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/2df1ee2c7294e678466e80875dfab2d8eabd32ae/windows-apps-src/debug-test-perf/optimize-gridview-and-listview.md)
+* Current Handback File: [optimize-gridview-and-listview.19e7310a7160264d74416602b0f81975d63f8ed1.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/490b527037c13243a6dddc25993a26279c7d0e64/ol-handback/Microsoft/windows-apps.zh-cn/master/optimize-gridview-and-listview.19e7310a7160264d74416602b0f81975d63f8ed1.zh-cn.xlf)
+* Current Handback Datetime: 2016-04-13 21:21:32
 * [Back to Top](#report-top)
 
 
