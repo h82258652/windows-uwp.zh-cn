@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\security\microsoft-passport-login.md](https://github.com/Microsoft/windows-apps/blob/af8ae79f67d77195d5ed4801d040b2f1aafe8a97/windows-apps-src/security/microsoft-passport-login.md) | OutofSyncHandedBackSuccess | [Details](#d28f0b9ea08d35a220cdb58367f03af95966e2823592)
+ [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps/blob/7973c504f749317ca16b626aab1eb8d84e7c2c81/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md) | OutofSyncHandedBackSuccess | [Details](#5294f0e3286c9eaa0060dfaa933f1a2c57f75e263364)
 
 ## Item Details
-##### <a name='d28f0b9ea08d35a220cdb58367f03af95966e2823592'></a> Source: [windows-apps-src\security\microsoft-passport-login.md](https://github.com/Microsoft/windows-apps/blob/af8ae79f67d77195d5ed4801d040b2f1aafe8a97/windows-apps-src/security/microsoft-passport-login.md)
+##### <a name='5294f0e3286c9eaa0060dfaa933f1a2c57f75e263364'></a> Source: [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps/blob/7973c504f749317ca16b626aab1eb8d84e7c2c81/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/33352cf3474387d2578f818548482bd34e86324a/ol-handoff/Microsoft/windows-apps.zh-cn/master/microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.zh-cn.xlf)
-* Handoff Datetime: 2016-05-02 23:49:13
+* Handoff File: [desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/29f7d715bfa4df8d5e2febd6e189bc1bc71d60e2/ol-handoff/Microsoft/windows-apps.zh-cn/master/desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.zh-cn.xlf)
+* Handoff Datetime: 2016-05-03 15:50:00
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\microsoft-passport-login.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/528f0417fbd7a9f463907c5d4655aa29068b0a4e/windows-apps-src/security/microsoft-passport-login.md)
-* Current Handback File: [microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/fdce37552d804660c10c63cc0eafd981d65d103d/ol-handback/Microsoft/windows-apps.zh-cn/master/microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.zh-cn.xlf)
-* Current Handback Datetime: 2016-04-13 20:47:58
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/2fbef4729da4c39483274b3611b70220f17c723a/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md)
+* Current Handback File: [desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/65e93a438a03fe2b923b76a94fa1c8079e06cd73/ol-handback/Microsoft/windows-apps.zh-cn/master/desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.zh-cn.xlf)
+* Current Handback Datetime: 2016-04-13 17:59:28
 * [Back to Top](#report-top)
 
 
