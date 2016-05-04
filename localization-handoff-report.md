@@ -1,27 +1,43 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xaml-platform\themeresource-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/9c657f906e6dedb259b8a98373f56ac5a63bd845/windows-apps-src/xaml-platform/themeresource-markup-extension.md) | OutofSyncHandedBackSuccess | [Details](#246c991bbdbc95e73ea8d4884cd4d617592bfc513787)
+ [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/dfb123aaad4705185771b74e999481f7d98f82b5/windows-apps-src/gaming/e2e.md) | OutofSyncHandedBackSuccess | [Details](#7d2e70a79e6f542616a97be236c80fd8c680ef482110)
+ [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/901598c53bfd99efb059262e89f2c24632b3576c/windows-apps-src/publish/payout-summary.md) | OutofSyncHandedBackSuccess | [Details](#f9f5f43dbca8b1f675459ac524263fbc168c4f923515)
 
 ## Item Details
-##### <a name='246c991bbdbc95e73ea8d4884cd4d617592bfc513787'></a> Source: [windows-apps-src\xaml-platform\themeresource-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/9c657f906e6dedb259b8a98373f56ac5a63bd845/windows-apps-src/xaml-platform/themeresource-markup-extension.md)
+##### <a name='7d2e70a79e6f542616a97be236c80fd8c680ef482110'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/dfb123aaad4705185771b74e999481f7d98f82b5/windows-apps-src/gaming/e2e.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [themeresource-markup-extension.1a19518a0f3da2f625793df3668c17ad6d82afc4.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/37954a8122699fe1fa57e4e4873a3b0e4d9955dc/ol-handoff/Microsoft/windows-apps.zh-cn/master/themeresource-markup-extension.1a19518a0f3da2f625793df3668c17ad6d82afc4.zh-cn.xlf)
-* Handoff Datetime: 2016-05-04 21:19:24
+* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/2b1101c368fbb07ef414b02debe5ac844e9fc283/ol-handoff/Microsoft/windows-apps.zh-cn/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf)
+* Handoff Datetime: 2016-05-04 22:20:28
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xaml-platform\themeresource-markup-extension.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/528f0417fbd7a9f463907c5d4655aa29068b0a4e/windows-apps-src/xaml-platform/themeresource-markup-extension.md)
-* Current Handback File: [themeresource-markup-extension.1a19518a0f3da2f625793df3668c17ad6d82afc4.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/fdce37552d804660c10c63cc0eafd981d65d103d/ol-handback/Microsoft/windows-apps.zh-cn/master/themeresource-markup-extension.1a19518a0f3da2f625793df3668c17ad6d82afc4.zh-cn.xlf)
+* Current Target File: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/528f0417fbd7a9f463907c5d4655aa29068b0a4e/windows-apps-src/gaming/e2e.md)
+* Current Handback File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/fdce37552d804660c10c63cc0eafd981d65d103d/ol-handback/Microsoft/windows-apps.zh-cn/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf)
 * Current Handback Datetime: 2016-04-13 20:47:58
+* [Back to Top](#report-top)
+
+##### <a name='f9f5f43dbca8b1f675459ac524263fbc168c4f923515'></a> Source: [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/901598c53bfd99efb059262e89f2c24632b3576c/windows-apps-src/publish/payout-summary.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/2b1101c368fbb07ef414b02debe5ac844e9fc283/ol-handoff/Microsoft/windows-apps.zh-cn/master/payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf)
+* Handoff Datetime: 2016-05-04 22:20:28
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/2df1ee2c7294e678466e80875dfab2d8eabd32ae/windows-apps-src/publish/payout-summary.md)
+* Current Handback File: [payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/490b527037c13243a6dddc25993a26279c7d0e64/ol-handback/Microsoft/windows-apps.zh-cn/master/payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf)
+* Current Handback Datetime: 2016-04-13 21:21:32
 * [Back to Top](#report-top)
 
 
