@@ -1,74 +1,67 @@
 ---
+author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
-title: 合成可视化树
-description: 合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
+title: Composition visual tree
+description: Composition Visuals make up the visual tree structure which all other features of the composition API use and build on. The API allows developers to define and create one or many visual objects each representing a single node in a visual tree.
 ---
-# 合成可视化树
+# Composition visual tree
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。
+Composition Visuals make up the visual tree structure which all other features of the composition API use and build on. The API allows developers to define and create one or many visual objects each representing a single node in a visual tree.
 
-## 视觉对象
+## Visuals
 
-可视树结构的组成部分包括以下三种视觉类型，以及影响视觉对象内容的多个子类的基本画笔类：
+There are three visual types that make up the visual tree structure plus a base brush class with multiple subclasses that affect the content of a visual:
 
--   [
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
--   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，并添加了创建子视觉对象的功能。
--   [
-            **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) 并添加了关联画笔的功能，以便视觉对象可以呈现像素，包括图像、效果或纯色。
--   [
-            **CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – 允许应用程序在可视对象的内容上创建某种效果。 存在大量 CompositionBrush 的子类。
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – base object, the majority of the properties are here, and inherited by the other Visual objects.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – derives from [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), and adds the ability to create children.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – Derives from [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) and adds the ability to associate a brush so that the Visual can render pixels including images, effects or a solid color.
+-   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – Allows the application of an effect on the content of a Visual. There are a number of subclasses of CompositionBrush.
 
-## CompositionVisual 示例
+## The CompositionVisual Sample
 
-在该示例中，提供大量可以在屏幕上单击和拖动的纯色正方形。 在单击某一正方形后它将凸显， 将其旋转 45 度，然后在拖动该正方形时它将变为不透明。
+In the sample there are a number of solid color squares that can be clicked on and dragged about the screen. When a square is clicked on, it will come to the front, rotate 45 degrees, and become opaque when dragged about.
 
-此处显示了大量关于使用 API 的基本概念，其中包括：
+This shows a number of basic concepts for working with the API including:
 
--   创建合成器
--   使用 ColorBrush 创建 SpriteVisual
--   剪裁可视对象
--   旋转可视对象
--   设置不透明度
--   更改集合中视觉对象的位置。
+-   Creating a compositor
+-   Creating a SpriteVisual with a ColorBrush
+-   Clipping a Visual
+-   Rotating a Visual
+-   Setting Opacity
+-   Changing the Visual’s position in the collection.
 
-在该示例中，也会提供三种不同的正在工作的视觉对象：
+In the sample there are also three different Visuals at work:
 
--   [
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
--   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自视觉对象，并添加了创建子视觉对象的功能。
--   [
-            **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自视觉对象并添加了关联画笔的功能，以便视觉对象可以呈现像素，包括图像、效果或纯色。
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – base object, the majority of the properties are here, and inherited by the other Visual objects.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – derives from Visual, and adds the ability to create children.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – Derives from Visual and adds the ability to associate a brush so that the Visual can render pixels including images, effects or a solid color.
 
-尽管此示例不介绍诸如动画或更复杂的效果等概念，但它包含所有这些系统需要使用的构成要素。
+While this sample doesn’t cover concepts like Animations or more complex effects, it contains the building blocks that all of those systems use.
 
-## 创建合成器
+## Creating a Compositor
 
-创建 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 并存储它以用作某一变量中的工厂对象是一项简单的任务。 以下代码段演示了如何创建新的 **Compositor**：
+Creating a [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) and storing it for use as a factory in a variable is a simple task. The following snippet shows creating a new **Compositor**:
 
 ```cs
 _compositor = new Compositor();
 ```
 
-## 创建 SpriteVisual 和 ColorBrush
+## Creating a SpriteVisual and ColorBrush
 
-使用 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 可随时根据需要轻松创建对象， 如 [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) 和 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399)：
+Using the [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) it's easy to create objects whenever you need them, such as a [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) and a [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399):
 
 ```cs
 var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-虽然该代码段只有几行代码，但它演示了一个强大的概念，即 [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) 对象，此类对象是效果系统的核心。 在创建颜色、图形和效果方面，**SpriteVisual** 具有出色的灵活性和互动性。 **SpriteVisual** 是单一视觉对象类型，该对象可以使用画笔填充 2D 矩形；在本示例中为纯色。
+While this is only a few lines of code it demonstrates a powerful concept, [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) objects are the heart of the effects system. The **SpriteVisual** allows for great flexibility and interplay in color, image and effect creation. The **SpriteVisual** is a single visual type that can fill a 2D rectangle with a brush, in this case a solid color.
 
-## 剪裁可视对象
+## Clipping a Visual
 
-[
-            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 还可以用于创建 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的剪裁。 下面的例子来自于使用 [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 剪裁可视对象每一侧的示例：
+The [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) can also be used to create clips to a [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858). Below is an example from the sample of using the [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) to trim each side of the visual:
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -79,42 +72,41 @@ clip.BottomInset = 1.0f;
 _currentVisual.Clip = clip;
 ```
 
-注意：与 API 中的其他对象一样，[**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 也可以将动画应用到其属性。
+Note: Like other objects in the API [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) can have animations applied to its properties.
 
-## <span id="Rotating_a_Clip"> </span> <span id="rotating_a_clip"> </span> <span id="ROTATING_A_CLIP"> </span>旋转剪裁
+## <span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Rotating a Clip
 
-[
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 可以通过旋转进行转换。 请注意，[**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) 同时支持弧度和度数。 其默认采用弧度为单位，不过也可以轻松指定以度数为单位，如以下代码段中所示：
+A [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) can be transformed with a rotation. Note that [**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) supports both radians and degrees. It defaults to radians, but it’s easy to specify degrees as shown in the following snippet:
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
 ```
 
-Rotation 仅仅是 API 提供一组转换组件以供简化这些任务的示例之一。 此外，还包括 Offset、Scale、Orientation、RotationAxis 和 4x4 TransformMatrix。
+Rotation is just one example of a set of transform components provided by the API to make these tasks easier. Others include Offset, Scale, Orientation, RotationAxis and a 4x4 TransformMatrix.
 
-## 设置不透明度
+## Setting Opacity
 
-使用浮点值可轻松设置视觉对象的不透明度。 例如，在该示例中所有正方形的不透明度一开始都为 .8：
+Setting the opacity of a visual is a simple operation using a float value. For example, in the sample all the squares start at .8 opacity:
 
 ```cs
 visual.Opacity = 0.8f;
 ```
 
-与 Rotation 一样，[**Opacity**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.opacity) 属性也进行动画处理。
+Like rotation, the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.opacity) property can be animated.
 
-## 更改集合中视觉对象的位置
+## Changing the Visual's position in the collection
 
-借助合成 API，可以采用多种方式在 [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) 中更改视觉对象的位置： 使用 [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove) 可将该对象放置在其他视觉对象的上方、使用 [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow) 可放置在下方、 使用 [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) 可移动到顶部，而使用 [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom) 可移动到底部。
+The Composition API allows for a Visual's position in a [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) to be changed in a number of ways, it can be placed above another Visual with [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove), placed below with [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow), move to the top with [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) or the bottom with [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom).
 
-在示例中，如果在 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 对象上单击，该对象将排列到顶部：
+In the sample a [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) that has been clicked on is sorted to the top:
 
 ```cs
 parent.Children.InsertAtTop(_currentVisual);
 ```
 
-## 完整示例
+## Full Example
 
-在完整示例中，上述所有概念可一起用于构造和浏览 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 对象的一个简单树，以便可以在不使用 XAML、WWA 或 DirectX 的情况下更改不透明度。 此示例显示了如何创建和添加子 **Visual** 对象，以及如何更改属性。
+In the full sample, all of the concepts above are used together to construct and walk a simple tree of [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) objects to change opacity without using XAML, WWA, or DirectX. This sample shows how child **Visual** objects are created and added and how properties are changed.
 
 ```cs
 using System;
@@ -502,15 +494,10 @@ namespace compositionvisual
 }
 ```
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

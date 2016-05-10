@@ -1,55 +1,50 @@
 ---
-Description: 了解如何为语音识别定义和使用自定义约束。
-title: 定义自定义识别约束
+author: Karl-Bridge-Microsoft
+Description: Learn how to define and use custom constraints for speech recognition.
+title: Define custom recognition constraints
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
-label: 定义自定义识别约束
+label: Define custom recognition constraints
 template: detail.hbs
 ---
 
-# 定义自定义识别约束
+# Define custom recognition constraints
 
+Learn how to define and use custom constraints for speech recognition.
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-了解如何为语音识别定义和使用自定义约束。
-
-**重要的 API**
+**Important APIs**
 
 -   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)
 -   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)
 -   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 
-语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用通用 Windows 应用的预定义听写语法。 请参阅[语音识别](speech-recognition.md)。
+Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, the predefined dictation grammar of Universal Windows apps is used. See [Speech recognition](speech-recognition.md).
 
 
-## <span id="Add_constraints"> </span> <span id="add_constraints"> </span> <span id="ADD_CONSTRAINTS"> </span>添加约束
+## <span id="Add_constraints"></span><span id="add_constraints"></span><span id="ADD_CONSTRAINTS"></span>Add constraints
 
 
-使用 [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 属性向语音识别器添加约束。
+Use the [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) property to add constraints to a speech recognizer.
 
-我们在此处介绍三种可在应用内使用的语音识别约束。 （有关语音命令约束，请参阅[在 Cortana 中使用语音命令启动前台应用](launch-a-foreground-app-with-voice-commands-in-cortana.md)。）
+Here, we cover the three kinds of speech recognition constraints used from within an app. (For voice command constraints, see [Launch a foreground app with voice commands in Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
 
--   [
-            **SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) - 基于预定义语法的约束（听写或 Web 搜索）。
--   [
-            **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) - 基于字词或短语列表的约束。
--   [
-            **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) - 在语音识别语法规范 (SRGS) 文件中定义的约束。
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)—A constraint based on a predefined grammar (dictation or web search).
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)—A constraint based on a list of words or phrases.
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)—A constraint defined in a Speech Recognition Grammar Specification (SRGS) file.
 
-每个语音识别器都可具有一个约束集合。 只有以下约束组合有效：
+Each speech recognizer can have one constraint collection. Only these combinations of constraints are valid:
 
--   单个主题的约束，也称预定义语法（听写或 Web 搜索）。 不允许使用其他约束。
--   列表约束和/或语法文件约束的组合。
+-   A single-topic constraint, or predefined grammar (dictation or web search). No other constraints are allowed.
+-   A combination of list constraints and/or grammar-file constraints.
 
-**记住：**先调用 [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 方法编译约束，然后再开始识别过程。
+**Remember:  **Call the [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) method to compile the constraints before starting the recognition process.
 
-## <span id="Specify_a_web-search_grammar__SpeechRecognitionTopicConstraint_"> </span> <span id="specify_a_web-search_grammar__speechrecognitiontopicconstraint_"> </span> <span id="SPECIFY_A_WEB-SEARCH_GRAMMAR__SPEECHRECOGNITIONTOPICCONSTRAINT_"> </span>指定 Web 搜索语法 (SpeechRecognitionTopicConstraint)
+## <span id="Specify_a_web-search_grammar__SpeechRecognitionTopicConstraint_"></span><span id="specify_a_web-search_grammar__speechrecognitiontopicconstraint_"></span><span id="SPECIFY_A_WEB-SEARCH_GRAMMAR__SPEECHRECOGNITIONTOPICCONSTRAINT_"></span>Specify a web-search grammar (SpeechRecognitionTopicConstraint)
 
 
-必须将主题约束（听写或 Web 搜索语法）添加到语音识别器的约束集合。
+Topic constraints (dictation or web-search grammar) must be added to the constraints collection of a speech recognizer.
 
-我们在此处将 Web 搜索语法添加到约束集合。
+Here, we add a web-search grammar to the constraints collection.
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -81,17 +76,17 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Specify_a_programmatic_list_constraint__SpeechRecognitionListConstraint_"> </span> <span id="specify_a_programmatic_list_constraint__speechrecognitionlistconstraint_"> </span> <span id="SPECIFY_A_PROGRAMMATIC_LIST_CONSTRAINT__SPEECHRECOGNITIONLISTCONSTRAINT_"> </span>指定编程列表约束 (SpeechRecognitionListConstraint)
+## <span id="Specify_a_programmatic_list_constraint__SpeechRecognitionListConstraint_"></span><span id="specify_a_programmatic_list_constraint__speechrecognitionlistconstraint_"></span><span id="SPECIFY_A_PROGRAMMATIC_LIST_CONSTRAINT__SPEECHRECOGNITIONLISTCONSTRAINT_"></span>Specify a programmatic list constraint (SpeechRecognitionListConstraint)
 
 
-必须将列表约束添加到语音识别器的约束集合。
+List constraints must be added to the constraints collection of a speech recognizer.
 
-请牢记以下几点：
+Keep the following points in mind:
 
--   你可以将多个列表约束添加到约束集合。
--   你可以使用为该字符串值实现 **IIterable<String>** 的任何集合。
+-   You can add multiple list constraints to a constraints collection.
+-   You can use any collection that implements **IIterable&lt;String&gt;** for the string values.
 
-我们在此处以编程方式将一组字词指定为列表约束，并将其添加到语音识别器的约束集合中。
+Here, we programmatically specify an array of words as a list constraint and add it to the constraints collection of a speech recognizer.
 
 ```CSharp
 private async void YesOrNo_Click(object sender, RoutedEventArgs e)
@@ -121,32 +116,32 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Specify_an_SRGS_grammar_constraint__SpeechRecognitionGrammarFileConstraint_"> </span> <span id="specify_an_srgs_grammar_constraint__speechrecognitiongrammarfileconstraint_"> </span> <span id="SPECIFY_AN_SRGS_GRAMMAR_CONSTRAINT__SPEECHRECOGNITIONGRAMMARFILECONSTRAINT_"> </span>指定 SRGS 语法约束 (SpeechRecognitionGrammarFileConstraint)
+## <span id="Specify_an_SRGS_grammar_constraint__SpeechRecognitionGrammarFileConstraint_"></span><span id="specify_an_srgs_grammar_constraint__speechrecognitiongrammarfileconstraint_"></span><span id="SPECIFY_AN_SRGS_GRAMMAR_CONSTRAINT__SPEECHRECOGNITIONGRAMMARFILECONSTRAINT_"></span>Specify an SRGS grammar constraint (SpeechRecognitionGrammarFileConstraint)
 
 
-必须将 SRGS 语法文件添加到语音识别器的约束集合。
+SRGS grammar files must be added to the constraints collection of a speech recognizer.
 
-SRGS 版本 1.0 是用于为语音识别创建 XML 格式语法的行业标准标记语言。 尽管 Universal Windows App 为创建语音识别提供了使用 SRGS 的替代项，但是你可能会发现，使用 SRGS 创建语法产生的结果最好，尤其是对较复杂的语音识别方案。
+The SRGS Version 1.0 is the industry-standard markup language for creating XML-format grammars for speech recognition. Although Universal Windows apps provide alternatives to using SRGS for creating speech-recognition grammars, you might find that using SRGS to create grammars produces the best results, particularly for more involved speech recognition scenarios.
 
-SRGS 提供一组完整的功能，可帮助你为应用构建复杂的语音交互。 例如，你可以使用 SRGS 语法执行以下操作：
+SRGS grammars provide a full set of features to help you architect complex voice interaction for your apps. For example, with SRGS grammars you can:
 
--   指定字词和短语必须说出的顺序以供识别。
--   从多个列表和短语组合字词以供识别。
--   链接到其他语法。
--   对替代字词或短语分配权重以增加或减少它将被用于匹配语音输入的可能性。
--   包括可选字词或短语。
--   使用帮助筛选掉未指定或非预期输入（例如不匹配语法的随机语音或背景噪音）的特殊规则。
--   使用语义定义语音识别对你的应用的意义。
--   在语法中以内联方式或通过指向词典的链接来指定发音。
+-   Specify the order in which words and phrases must be spoken to be recognized.
+-   Combine words from multiple lists and phrases to be recognized.
+-   Link to other grammars.
+-   Assign a weight to an alternative word or phrase to increase or decrease the likelihood that it will be used to match speech input.
+-   Include optional words or phrases.
+-   Use special rules that help filter out unspecified or unanticipated input, such as random speech that doesn't match the grammar, or background noise.
+-   Use semantics to define what speech recognition means to your app.
+-   Specify pronunciations, either inline in a grammar or via a link to a lexicon.
 
-有关 SRGS 元素和属性的详细信息，请参阅 [SRGS 语法 XML 参考](http://go.microsoft.com/fwlink/p/?LinkID=269886)。 若要开始创建 SRGS 语法，请参阅[如何创建基本的 XML 语法](http://go.microsoft.com/fwlink/p/?LinkID=269887)。
+For more info about SRGS elements and attributes, see the [SRGS Grammar XML Reference](http://go.microsoft.com/fwlink/p/?LinkID=269886) . To get started creating an SRGS grammar, see [How to Create a Basic XML Grammar](http://go.microsoft.com/fwlink/p/?LinkID=269887).
 
-请牢记以下几点：
+Keep the following points in mind:
 
--   你可以将多个语法文件约束添加到约束集合。
--   为符合 SRGS 规则的基于 XML 的语法文件使用 .grxml 文件扩展名。
+-   You can add multiple grammar-file constraints to a constraints collection.
+-   Use the .grxml file extension for XML-based grammar documents that conform to SRGS rules.
 
-该示例使用在名为 srgs.grxml 的文件（稍后说明）中定义的 SRGS 语法。 在文件属性中，“数据包操作”****设置为“内容”，“复制到输出目录”则设置为“始终复制”。************
+This example uses an SRGS grammar defined in a file named srgs.grxml (described later). In the file properties, the **Package Action** is set to **Content** with **Copy to Output Directory** set to **Copy always**:
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)
@@ -173,9 +168,9 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 语法必须符合万维网联合会 (W3C) [用于语音识别的语义翻译 (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) 规范。
+This SRGS file (srgs.grxml) includes semantic interpretation tags. These tags provide a mechanism for returning grammar match data to your app. Grammars must conform to the World Wide Web Consortium (W3C) [Semantic Interpretation for Speech Recognition (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) specification.
 
-我们在此处侦听“是”和“否”的变体。
+Here, we listen for variants of "yes" and "no".
 
 ```CSharp
 <grammar xml:lang="en-US" 
@@ -212,35 +207,30 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 </grammar>
 ```
 
-## <span id="Manage_constraints"> </span> <span id="manage_constraints"> </span> <span id="MANAGE_CONSTRAINTS"> </span>管理约束
+## <span id="Manage_constraints"></span><span id="manage_constraints"></span><span id="MANAGE_CONSTRAINTS"></span>Manage constraints
 
 
-在加载约束集合以供识别后，你的应用可以通过将约束的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 属性设置为 **true** 或 **false** 来管理启用哪些约束以供识别操作。 默认设置为 **true**。
+After a constraint collection is loaded for recognition, your app can manage which constraints are enabled for recognition operations by setting the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) property of a constraint to **true** or **false**. The default setting is **true**.
 
-通常，相比为每次识别操作加载、卸载和编译约束，加载一次约束并按需启用或禁用它们更有效率。 按照需要使用 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 属性。
+It's usually more efficient to load constraints once, enabling and disabling them as needed, rather than to load, unload, and compile constraints for each recognition operation. Use the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) property, as required.
 
-限制约束数量可以限制语音识别器针对语音输入进行搜索和匹配所需的数据量。 这既可以提高性能，又可以增加语音识别的准确性。
+Restricting the number of constraints serves to limit the amount of data that the speech recognizer needs to search and match against the speech input. This can improve both the performance and the accuracy of speech recognition.
 
-根据应用在当前识别操作的上下文中预期的短语，决定启用哪些约束。 例如，如果当前的应用上下文是显示一种颜色，那么你可能无需启用识别动物名称的约束。
+Decide which constraints are enabled based on the phrases that your app can expect in the context of the current recognition operation. For example, if the current app context is to display a color, you probably don't need to enable a constraint that recognizes the names of animals.
 
-要提示用户可说的内容，你可以使用 [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) 和 [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) 属性，这些属性通过 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 属性的方法进行设置。 预先提示用户在识别操作期间可说的内容可以提高他们说出的短语匹配可用约束的几率。
+To prompt the user for what can be spoken, use the [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) and [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) properties, which are set by means of the [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) property. Preparing users for what they can say during the recognition operation increases the likelihood that they will speak a phrase that can be matched to an active constraint.
 
-## <span id="related_topics"> </span>相关文章
-
-
-* [语音交互](speech-interactions.md)
-
-**示例**
-* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
+## <span id="related_topics"></span>Related articles
 
 
+* [Speech interactions](speech-interactions.md)
+
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+ 
+
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

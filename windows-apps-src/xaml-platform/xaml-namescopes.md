@@ -1,57 +1,56 @@
 ---
-description: XAML 名称范围存储 XAML 定义的对象名称和它们的对等实例之间的关系。 此概念类似于其他编程语言和技术中的术语“名称范围”的更广泛的含义。
-title: XAML 名称范围
+author: jwmsft
+description: A XAML namescope stores relationships between the XAML-defined names of objects and their instance equivalents. This concept is similar to the wider meaning of the term namescope in other programming languages and technologies.
+title: XAML namescopes
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ---
 
-# XAML 名称范围
+# XAML namescopes
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-*XAML 名称范围*存储 XAML 定义的对象名称和它们的对等实例之间的关系。 此概念类似于其他编程语言和技术中的术语*名称范围*的更广泛的含义。
+A *XAML namescope* stores relationships between the XAML-defined names of objects and their instance equivalents. This concept is similar to the wider meaning of the term *namescope* in other programming languages and technologies.
 
-## 定义 XAML 名称范围的方式
+## How XAML namescopes are defined
 
-XAML 名称范围中的名称使用户代码能够引用最初在 XAML 中声明的对象。 分析 XAML 的内部结果是，运行时创建一组对象，保留这些对象在 XAML 声明中拥有的部分或所有关系。 这些关系作为所创建对象的特定对象属性来维护，或者向编程模型 API 中的实用工具方法公开。
+Names in XAML namescopes enable user code to reference the objects that were initially declared in XAML. The internal result of parsing XAML is that the runtime creates a set of objects that retain some or all of the relationships these objects had in the XAML declarations. These relationships are maintained as specific object properties of the created objects, or are exposed to utility methods in the programming model APIs.
 
-对于 XAML 名称范围中的名称，最典型的用途是作为对象实例的直接引用，由标记编译过程以一种项目生成操作的形式，结合分部类模板中生成的 **InitializeComponent** 方法来实现。
+The most typical use of a name in a XAML namescope is as a direct reference to an object instance, which is enabled by the markup compile pass as a project build action, combined with a generated **InitializeComponent** method in the partial class templates.
 
-你也可以在运行时自行使用实用工具方法 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 返回对象的引用，该对象使用 XAML 标记中的名称定义。
+You can also use the utility method [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) yourself at run time to return a reference to objects that were defined with a name in the XAML markup.
 
-### 有关生成操作和 XAML 的详细信息
+### More about build actions and XAML
 
-从技术上讲，所发生的事情是，在 XAML 和它为代码隐藏定义的分部类一起编译时，XAML 本身也会经历标记编译器过程。 每个在标记中定义了 **Name** 或 [x:Name 属性](x-name-attribute.md)的对象元素都会生成一个内部字段，该字段的名称与 XAML 名称相匹配。 此字段最初没有内容。 然后，该类生成一个 **InitializeComponent** 方法，只有在加载了所有 XAML 之后才会调用该方法。 在 **InitializeComponent** 逻辑内，然后会向每个内部字段填充每个等效名称字符串的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 返回值。 要自行查看此基础结构，可以在编译后查看 Windows 运行时应用项目的 /obj 子文件夹中为每个 XAML 页面创建的“.g”（生成的）文件。 如果反射你最终的程序集或检查它们的接口语言内容，也可以看到字段和 **InitializeComponent** 方法是这些结果程序集的成员。
+What happens technically is that the XAML itself undergoes a markup compiler pass at the same time that the XAML and the partial class it defines for code-behind are compiled together. Each object element with a **Name** or [x:Name attribute](x-name-attribute.md) defined in the markup generates an internal field with a name that matches the XAML name. This field is initially empty. Then the class generates an **InitializeComponent** method that is called only after all the XAML is loaded. Within the **InitializeComponent** logic, each internal field is then populated with the [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) return value for the equivalent name string. You can observe this infrastructure for yourself by looking at the ".g" (generated) files that are created for each XAML page in the /obj subfolder of a Windows Runtime app project after compilation. You can also see the fields and **InitializeComponent** method as members of your resulting assemblies if you reflect over them or otherwise examine their interface language contents.
 
-**注意** 特别是对于 Visual C++ 组件扩展 (C++/CX) 应用，不会为 XAML 文件的根元素创建 **x:Name** 引用的支持字段。 如果你需要从 C++/CX 代码隐藏来引用根对象，请使用其他 API 或树形遍历。 例如，你可以为已知的命名子元素调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，然后调用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
+**Note**  Specifically for Visual C++ component extensions (C++/CX) apps, a backing field for an **x:Name** reference is not created for the root element of a XAML file. If you need to reference the root object from C++/CX code-behind, use other APIs or tree traversal. For example you can call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) for a known named child element and then call [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
 
-## 在运行时使用 XamlReader.Load 创建对象
+## Creating objects at run time with XamlReader.Load
 
-XAML 也可用作 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 方法的字符串输入，该方法的行为类似于最初的 XAML 源代码分析操作。 **XamlReader.Load** 在运行时创建一个断开连接的新对象树。 然后可将断开连接的树附加到主要对象树上的某个点。 必须显式连接你创建的对象树，无论是通过将它添加到一个内容属性集合（例如 **Children**），还是设置其他某个接受对象值的属性（例如为 [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) 属性值加载一个新的 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101)）。
+XAML can be also be used as the string input for the [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) method, which acts analogously to the initial XAML source parse operation. **XamlReader.Load** creates a new disconnected tree of objects at run time. The disconnected tree can then be attached to some point on the main object tree. You must explicitly connect your created object tree, either by adding it to a content property collection such as **Children**, or by setting some other property that takes an object value (for example, loading a new [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) for a [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) property value).
 
-### XamlReader.Load 对 XAML 名称范围的意义
+### XAML namescope implications of XamlReader.Load
 
-[
-            **XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 创建的新对象树所定义的初步 XAML 名称范围会在所提供的 XAML 中计算任何已定义的名称，以确定其是否唯一。 如果所提供的 XAML 中的名称此时在内部不是唯一的，**XamlReader.Load** 会抛出一个异常。 如果或当断开连接的对象树连接到主要应用程序对象树时，它不会尝试将它的 XAML 名称范围与主要应用程序 XAML 名称范围合并。 连接树后，你的应用有一个统一的对象树，但该树中具有离散 XAML 名称范围。 这种分歧发生在对象之间的连接点上，你在这些连接点将一个属性设置为从一个 **XamlReader.Load** 调用返回的值。
+The preliminary XAML namescope defined by the new object tree created by [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) evaluates any defined names in the provided XAML for uniqueness. If names in the provided XAML are not internally unique at this point, **XamlReader.Load** throws an exception. The disconnected object tree does not attempt to merge its XAML namescope with the main application XAML namescope, if or when it is connected to the main application object tree. After you connect the trees, your app has a unified object tree, but that tree has discrete XAML namescopes within it. The divisions occur at the connection points between objects, where you set some property to be the value returned from a **XamlReader.Load** call.
 
-拥有离散且断开连接的 XAML 名称范围的复杂性在于，调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 方法以及直接管理的对象引用不再针对统一的 XAML 名称范围执行。 对其调用 **FindName** 的特定对象将指定范围，该范围就是调用对象所在的 XAML 名称范围。 在直接管理的对象引用情况中，该范围由代码所在的类指定。 通常，用于一个应用内容“页面”的运行时交互的代码隐藏位于支持根“页面”的分部类中，因此 XAML 名称范围是根 XAML 名称范围。
+The complication of having discrete and disconnected XAML namescopes is that calls to the [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) method as well as direct managed object references no longer operate against a unified XAML namescope. Instead, the particular object that **FindName** is called on implies the scope, with the scope being the XAML namescope that the calling object is within. In the direct managed object reference case, the scope is implied by the class where the code exists. Typically, the code-behind for run-time interaction of a "page" of app content exists in the partial class that backs the root "page", and therefore the XAML namescope is the root XAML namescope.
 
-如果调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 获得根 XAML 名称范围中的一个命名对象，该方法不会找到来自 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 创建的离散 XAML 名称范围的对象。 相反，如果调用的 **FindName** 来自从该离散 XAML 名称范围获得的对象，该方法不会找到根 XAML 名称范围中的命名对象。
+If you call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) to get a named object in the root XAML namescope, the method will not find the objects from a discrete XAML namescope created by [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048). Conversely, if you call **FindName** from an object obtained from out of the discrete XAML namescope, the method will not find named objects in the root XAML namescope.
 
-这个离散 XAML 名称范围问题只会影响在使用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 调用时按 XAML 名称范围中的名称查找对象的操作。
+This discrete XAML namescope issue only affects finding objects by name in XAML namescopes when using the [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) call.
 
-要获得在不同 XAML 名称范围中定义的对象的引用，你可以使用多种技术：
+To get references to objects that are defined in a different XAML namescope, you can use several techniques:
 
--   使用 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) 和/或已知存在于你的对象树结构中的集合属性（例如 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 返回的集合）在离散的步骤中遍历整个树。
--   如果从一个离散 XAML 名称范围调用并且希望使用根 XAML 名称范围，始终可轻松获得当前显示的主要窗口的引用。 只需使用一行包含调用 `Window.Current.Content` 的代码，即可获得当前应用程序窗口的可视根（根 XAML 元素，也称为内容源）。 然后可转换为 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 并从此范围调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)。
--   如果从根 XAML 名称范围调用并且希望一个离散 XAML 名称范围中的对象，最好在你的代码中提前计划，保留对 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 返回并随后添加到主要对象树的对象的引用。 此对象现在是一个可在离散 XAML 名称范围中调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 的有效对象。 你可以保持此对象用作全局变量，或者使用方法参数传递它。
--   你可以通过检查可视树来完全避免名称和 XAML 名称范围考虑因素。 [
-            **VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API 支持单独基于位置和索引，遍历可视树以查找父对象和子集合。
+-   Walk the entire tree in discrete steps with [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) and/or collection properties that are known to exist in your object tree structure (such as the collection returned by [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514)).
+-   If you are calling from a discrete XAML namescope and want the root XAML namescope, it is always easy to get a reference to the main window currently displayed. You can get the visual root (the root XAML element, also known as the content source) from the current application window in one line of code with the call `Window.Current.Content`. You can then cast to [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) and call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) from this scope.
+-   If you are calling from the root XAML namescope and want an object within a discrete XAML namescope, the best thing to do is to plan ahead in your code and retain a reference to the object that was returned by [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) and then added to the main object tree. This object is now a valid object for calling [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) within the discrete XAML namescope. You could keep this object available as a global variable or otherwise pass it by using method parameters.
+-   You can avoid names and XAML namescope considerations entirely by examining the visual tree. The [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API enables you to traverse the visual tree in terms of parent objects and child collections, based purely on position and index.
 
-## 模板中的 XAML 名称范围
+## XAML namescopes in templates
 
-XAML 中的模板提供了以一种直观方式重用和重新应用内容的能力，但模板可能还包含各种元素，这些元素具有在模板级别定义的名称。 该名称模板可在一个页面中多次使用。 出于此原因，模板定义它们自己的 XAML 名称范围，不依赖于样式或模板所应用到的包含页面。 考虑此示例：
+Templates in XAML provide the ability to reuse and reapply content in a straightforward way, but templates might also include elements with names defined at the template level. That same template might be used multiple times in a page. For this reason, templates define their own XAML namescopes, independent of the containing page where the style or template is applied. Consider this example:
 
-```xaml
+```xml
 <Page
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  >
@@ -68,21 +67,16 @@ XAML 中的模板提供了以一种直观方式重用和重新应用内容的能
 </Page>
 ```
 
-此处同一个模板被应用于两个不同的控件。 如果模板没有离散 XAML 名称范围，模板中使用的“MyTextBlock”名称将导致名称冲突。 模板的每次实例化都拥有自己的 XAML 名称范围，所以在本例中，每个已实例化模板的 XAML 名称范围将仅包含一个名称。 但是，根 XAML 名称范围不包含来自每个模板的名称。
+Here, the same template is applied to two different controls. If templates did not have discrete XAML namescopes, the "MyTextBlock" name used in the template would cause a name collision. Each instantiation of the template has its own XAML namescope, so in this example each instantiated template's XAML namescope would contain exactly one name. However, the root XAML namescope does not contain the name from either template.
 
-由于采用了不同的 XAML 名称范围，需要一种不同技术来从一个模板所应用到的页面范围中查找该模板内的指定元素。 无需在对象树中的某个对象上调用 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)，你首先获得已应用了模板的对象，然后调用 [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416)。 如果你是一位控件作者并且正在生成一种约定，其中已应用的模板中一个特定的命名元素是控件本身所定义的一种行为的目标，你可以使用你的控件实现代码中的 **GetTemplateChild** 方法。 **GetTemplateChild** 方法是受保护的，所以只有控件作者能够访问它。 另外，控件作者应该遵守一些约定来命名各部分和为各部分创建模板，并以应用到控件类的属性值的形式报告这些部分。 此技术使重要部分的名称可供那些可能希望应用不同模板的控件用户发现，这将需要替换已命名的部分才能维护控件功能。
+Because of the separate XAML namescopes, finding named elements within a template from the scope of the page where the template is applied requires a different technique. Rather than calling [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) on some object in the object tree, you first obtain the object that has the template applied, and then call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416). If you are a control author and you are generating a convention where a particular named element in an applied template is the target for a behavior that is defined by the control itself, you can use the **GetTemplateChild** method from your control implementation code. The **GetTemplateChild** method is protected, so only the control author has access to it. Also, there are conventions that control authors should follow in order to name parts and template parts and report these as attribute values applied to the control class. This technique makes the names of important parts discoverable to control users who might wish to apply a different template, which would need to replace the named parts in order to maintain control functionality.
 
-## 相关主题
+## Related topics
 
-* [XAML 概述](xaml-overview.md)
-* [x:Name 属性](x-name-attribute.md)
-* [快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [XAML overview](xaml-overview.md)
+* [x:Name attribute](x-name-attribute.md)
+* [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
- 
-
-
-
-<!--HONumber=Mar16_HO1-->
-
+ 
 

@@ -1,100 +1,87 @@
 ---
-Description: 本主题介绍了应用中的文本的最佳辅助功能做法：确保颜色和背景满足必需的对比率。
-title: 辅助文本要求
+author: Xansky
+Description: This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio.
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
-label: Text requirements
+title: Accessible text requirements
+label: Accessible text requirements
 template: detail.hbs
 ---
 
-辅助文本要求
-=============================================================================================
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+# Accessible text requirements  
 
 
-本主题介绍了应用中的文本的最佳辅助功能做法：确保颜色和背景满足必需的对比率。 本主题还讨论了通用 Windows 平台 (UWP) 应用中的文本元素可以具有的 Microsoft UI 自动化角色，以及图形中的文本的最佳做法。
 
-<span id="contrast_rations"> </span> <span id="CONTRAST_RATIONS"> </span>对比率
--------------------------------------------------------------------------------------
 
-尽管用户始终可以选择切换到高对比度模式，但是你的应用的文本设计应当将该选项视为最后的方法。 更好的做法是确保应用文本满足某些为文本及其背景之间对比度级别制定的指导准则。 对比度级别基于不考虑色调的确定性技术进行评估。 例如，如果文本为红色，而背景为绿色，则具有色盲障碍的用户可能无法读取该文本。 检查和更正对比率可以防止出现这些类型的辅助功能问题。
+This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a Universal Windows Platform (UWP) app can have, and best practices for text in graphics.
 
-此处记录的文本对比度建议基于 Web 辅助功能标准 [G18：确保文本（和文本的图像）和文本后面的背景之间的对比率至少为 4.5:1](http://go.microsoft.com/fwlink/p/?linkid=221823)。 该指南在 *WCAG 2.0 的 W3C 技术*规范中有说明。
+<span id="contrast_rations"/>
+<span id="CONTRAST_RATIONS"/>
+## Contrast ratios  
+Although users always have the option to switch to a high-contrast mode, your app design for text should regard that option as a last resort. A much better practice is to make sure that your app text meets certain established guidelines for the level of contrast between text and its background. Evaluation of the level of contrast is based on deterministic techniques that do not consider color hue. For example, if you have red text on a green background, that text might not be readable to someone with a color blindness impairment. Checking and correcting the contrast ratio can prevent these types of accessibility issues.
 
-为了考虑辅助功能，可见文本与背景的发光度对比率必须最低为 4.5:1。 例外情况包括徽标和附带文本，例如作为非活动 UI 组件一部分的文本。
+The recommendations for text contrast documented here are based on a web accessibility standard, [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](http://go.microsoft.com/fwlink/p/?linkid=221823). This guidance exists in the *W3C Techniques for WCAG 2.0* specification.
 
-装饰性文本且未传递任何信息的文本除外。 例如，如果使用随机字词创建背景，且这些字词可以在不改变含义的情况下进行重新整理或取代，则会将这些字词视为装饰性文本且无需符合此条件。
+To be considered accessible, visible text must have a minimum luminosity contrast ratio of 4.5:1 against the background. Exceptions include logos and incidental text, such as text that is part of an inactive UI component.
 
-使用颜色对比工具验证可见文本的对比度是否可接受。 请参阅 [WCAG 2.0 G18 的技术（“资源”部分）](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)了解可以测试对比率的工具。
+Text that is decorative and conveys no information is excluded. For example, if random words are used to create a background, and the words can be rearranged or substituted without changing meaning, the words are considered to be decorative and do not need to meet this criterion.
 
-**注意** WCAG 2.0 G18 的技术列出的某些工具无法与 UWP 应用交互使用。 你可能需要在工具中手动输入前景和背景颜色值，或者屏幕捕获应用 UI，然后对屏幕捕获图像运行对比率工具。
+Use color contrast tools to verify that the visible text contrast ratio is acceptable. See [Techniques for WCAG 2.0 G18 (Resources section)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) for tools that can test contrast ratios.
 
- 
+> [!NOTE]
+> Some of the tools listed by Techniques for WCAG 2.0 G18 can't be used interactively with a UWP app. You may need to enter foreground and background color values manually in the tool, or make screen captures of app UI and then run the contrast ratio tool over the screen capture image.
 
-<span id="Text_element_roles"> </span> <span id="text_element_roles"> </span> <span id="TEXT_ELEMENT_ROLES"> </span>文本元素角色
----------------------------------------------------------------------------------------------------------------------------------
+<span id="Text_element_roles"/>
+<span id="text_element_roles"/>
+<span id="TEXT_ELEMENT_ROLES"/>
+## Text element roles  
+A UWP app can use these default elements (commonly called *text elements* or *textedit controls*):
 
-UWP 应用可以使用以下默认元素（通常称为 *text 元素*或 *textedit 控件*）：
+* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): role is [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683): role is [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) (and overflow class [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/BR227565overflow)): role is [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548): role is [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
--   [
-            **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)：角色为 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
--   [
-            **TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)：角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
--   [
-            **RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)（溢出类 [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/BR227565overflow)）：角色为 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
--   [
-            **RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548)：角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+When a control reports that is has a role of [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182), assistive technologies assume that there are ways for users to change the values. So if you put static text in a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), you are misreporting the role and thus misreporting the structure of your app to the accessibility user.
 
-当控件报告它的角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182) 时，辅助技术假设用户可通过多种方法更改这些值。 因此，如果你在 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 中放置静态文本，则说明你向辅助功能用户报告的角色和应用结构有误。
+In the text models for XAML, there are two elements that are primarily used for static text, [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) and [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565). Neither of these are a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) subclass, and as such neither of them are keyboard-focusable or can appear in the tab order. But that does not mean that assistive technologies can't or won't read them. Screen readers are typically designed to support multiple modes of reading the content in an app, including a dedicated reading mode or navigation patterns that go beyond focus and the tab order, like a "virtual cursor". So don't put your static text into focusable containers just so that tab order gets the user there. Assistive technology users expect that anything in the tab order is interactive, and if they encounter static text there, that is more confusing than helpful. You should test this out yourself with Narrator to get a sense of the user experience with your app when using a screen reader to examine your app's static text.
 
-在 XAML 的文本模型中，针对静态文本，主要使用 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 和 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) 两种元素。 这两种元素均非 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 子类，因此两者均不可通过键盘聚焦，也不可按 Tab 键顺序显示。 但是，这并不意味着辅助技术现在和将来无法读取它们。 屏幕阅读器的设计通常支持多种读取应用内容的模式，包括摆脱聚焦和 Tab 键顺序限制的专用阅读模式或导航模式，例如“虚拟光标”。 因此，不要为能通过 Tab 键顺序向用户显示静态文本而将静态文本输入到可聚焦容器中。 辅助技术用户预期按 Tab 键顺序显示的所有内容均可交互，如果他们在这里看到静态文本，这不但起不到帮助作用，还会令其感到不解。 你应该通过“讲述人”功能亲自测试，在使用屏幕阅读器检查应用的静态文本时，感受用户在你的应用上获得的体验。
+<span id="Text_in_graphics"/>
+<span id="text_in_graphics"/>
+<span id="TEXT_IN_GRAPHICS"/>
+## Text in graphics  
+Whenever possible, avoid including text in a graphic. For example, any text that you include in the image source file that is displayed in the app as an [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) element is not automatically accessible or readable by assistive technologies. If you must use text in graphics, make sure that the [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) value that you provide as the equivalent of "alt text" includes that text or a summary of the text's meaning. Similar considerations apply if you are creating text characters from vectors as part of a [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355), or by using [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921).
 
-<span id="Text_in_graphics"> </span> <span id="text_in_graphics"> </span> <span id="TEXT_IN_GRAPHICS"> </span>图形中的文本
--------------------------------------------------------------------------------------------------------------------------
+<span id="Text_font_size"/>
+<span id="text_font_size"/>
+<span id="TEXT_FONT_SIZE"/>
+## Text font size  
+Many readers have difficulty reading text in an app when that text is using a text font size that's simply too small for them to read. You can prevent this issue by making the text in your app's UI reasonably large in the first place. There are also assistive technologies that are part of Windows, and these enable users to change the view sizes of apps, or the display in general.
 
-请尽可能避免在图形中包括文本。 例如，图像源文件中所包括的、在应用中显示为 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素的任何文本不会自动供辅助技术访问或读取。 如果必须在图形中使用文本，确保你提供为“alt text”的等效值的 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 值包括该文本或者该文本的含义汇总。 如果要从矢量创建作为 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 一部分的文本字符，或者要使用 [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921) 创建文本字符，也可以遵循类似的注意事项。
+* Some users change dots per inch (dpi) values of their primary display as an accessibility option. That option is available from **Make things on the screen larger** in **Ease of Access**, which redirects to a **Control Panel** UI for **Appearance and Personalization** / **Display**. Exactly which sizing options are available can vary because this depends on the capabilities of the display device.
+* The Magnifier tool can enlarge a selected area of the UI. However, it's difficult to use the Magnifier tool for reading text.
 
-<span id="Text_font_size"> </span> <span id="text_font_size"> </span> <span id="TEXT_FONT_SIZE"> </span>文本字号
------------------------------------------------------------------------------------------------------------------
+<span id="Text_scale_factor"/>
+<span id="text_scale_factor"/>
+<span id="TEXT_SCALE_FACTOR"/>
+## Text scale factor  
+Various text elements and controls have an [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209652_istextscalefactorenabled) property. This property has the value **true** by default. When its value is **true**, the setting called **Text scaling** on the phone (**Settings &gt; Ease of access**), causes the text size of text in that element to be scaled up. The scaling will affect text that has a small **FontSize** to a greater degree than it will affect text that has a large **FontSize**. But you can disable that automatic enlargement by setting an element's **IsTextScaleFactorEnabled** property to **false**. Try this markup, adjust the **Text size** setting on the phone, and see what happens to the **TextBlock**s:
 
-如果应用中的文本使用的文本字号太小而导致难以阅读，许多读者都会难以阅读该文本。 你可以通过使应用 UI 中的文本在首次出现时合理变大来避免发生此问题。 Windows 中还包含辅助技术，这些技术通过可使用户更改应用或显示器的视图大小。
+XAML
+```xml
+<TextBlock Text="In this case, IsTextScaleFactorEnabled has been left set to its default value of true."
+    Style="{StaticResource BodyTextBlockStyle}"/>
 
--   某些用户可使用辅助功能选项更改其主显示器的每英寸点数 (dpi) 值。 该选项可从**“轻松使用”**的**“放大屏幕上显示的内容”**中获得，可重定向到**“外观和个性化”**/**“显示器”**的**“控制面板”**UI。 究竟有哪些大小设置选项可用可能有所不同，因为这取决于显示设备的功能。
--   “放大镜”工具可以放大 UI 的选定区域。 但是，很难使用“放大镜”工具阅读文本。
+<TextBlock Text="In this case, IsTextScaleFactorEnabled has been set to false."
+    Style="{StaticResource BodyTextBlockStyle}" IsTextScaleFactorEnabled="False"/>
+```  
 
-<span id="Text_scale_factor"> </span> <span id="text_scale_factor"> </span> <span id="TEXT_SCALE_FACTOR"> </span>文本缩放比例
------------------------------------------------------------------------------------------------------------------------------
+Please don't disable automatic enlargement routinely, though, because scaling UI text universally across all apps is an important accessibility experience for users and they will expect it to work in your app too.
 
-各种文本元素和控件都具有 [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209652_istextscalefactorenabled) 属性。 默认情况下，此属性的值为 **true**。 当它的值为 **true** 时，手机上称为**“文本缩放”**的设置（**“设置”>“轻松使用”**）将使该元素中文本的文本大小放大。 此缩放对具有较小 **FontSize** 的文本的影响程度比对具有较大 **FontSize** 的文本的影响更大。 但是你可以通过将元素的 **IsTextScaleFactorEnabled** 属性设置为 **false** 来禁用自动放大。 试用此标记、调整手机上的**文本大小**设置，然后查看 **TextBlock** 会发生什么情况：
+You can also use the [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) event and the [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) property to find out about changes to the **Text size** setting on the phone. Here’s how:
 
-<span codelanguage=""></span>
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><pre><code>&lt;TextBlock Text=&quot;In this case, IsTextScaleFactorEnabled has been left set to its default value of true.&quot; 
-    Style=&quot;{StaticResource BodyTextBlockStyle}&quot;/&gt;
-
-&lt;TextBlock Text=&quot;In this case, IsTextScaleFactorEnabled has been set to false.&quot; 
-    Style=&quot;{StaticResource BodyTextBlockStyle}&quot; IsTextScaleFactorEnabled=&quot;False&quot;/&gt;</code></pre></td>
-</tr>
-</tbody>
-</table>
-
-不要例行禁用自动放大，因为通常跨所有应用缩放 UI 文本对于用户而言是一项重要的辅助功能体验，他们会以为在你的应用中也有这项功能。
-
-你还可以使用 [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) 事件和 [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) 属性查明对手机上的**“文本大小”**设置的更改。 以下是操作方法：
-
-<span codelanguage=""></span>
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><pre><code>{
+C#
+```csharp
+{
     ...
     var uiSettings = new Windows.UI.ViewManagement.UISettings();
     uiSettings.TextScaleFactorChanged += UISettings_TextScaleFactorChanged;
@@ -103,42 +90,25 @@ UWP 应用可以使用以下默认元素（通常称为 *text 元素*或 *texted
 
 private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.UISettings sender, object args)
 {
-    var messageDialog = new Windows.UI.Popups.MessageDialog(string.Format(&quot;It&#39;s now {0}&quot;, sender.TextScaleFactor), &quot;The text scale factor has changed&quot;);
+    var messageDialog = new Windows.UI.Popups.MessageDialog(string.Format("It's now {0}", sender.TextScaleFactor), "The text scale factor has changed");
     await messageDialog.ShowAsync();
-}</code></pre></td>
-</tr>
-</tbody>
-</table>
+}
+```
 
-**TextScaleFactor** 的值是个双数，范围是 \[1,2\]。 最小的文本通过此数量放大。 例如，你可以使用此值缩放图像以匹配文本。 但是请记住，并非所有文本都通过相同的系数来缩放。 一般来说，开始时的文本越大，它受缩放的影响越小。
+The value of **TextScaleFactor** is a double in the range \[1,2\]. The smallest text is scaled up by this amount. You might be able to use the value to, say, scale graphics to match the text. But remember that not all text is scaled by the same factor. Generally speaking, the larger text is to begin with, the less it’s affected by scaling.
 
-这些类型具有 **IsTextScaleFactorEnabled** 属性：
+These types have an **IsTextScaleFactorEnabled** property:  
+* [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
+* [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) and derived classes
+* [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
+* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
+* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
+* [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) and derived classes
 
--   [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
--   [
-            **Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 和派生的类
--   [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
--   [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
--   [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
--   [
-            **TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) 和派生的类
-
-<span id="related_topics"> </span>相关主题
------------------------------------------------
-
-* [辅助功能](accessibility.md)
-* [基本的辅助功能信息](basic-accessibility-information.md)
-* [XAML 文本显示示例](http://go.microsoft.com/fwlink/p/?linkid=238579)
-* [XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?linkid=251417)
-* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
- 
-
- 
-
-
-
-
-
-<!--HONumber=Mar16_HO3-->
-
-
+<span id="related_topics"/>
+## Related topics  
+* [Accessibility](accessibility.md)
+* [Basic accessibility information](basic-accessibility-information.md)
+* [XAML text display sample](http://go.microsoft.com/fwlink/p/?linkid=238579)
+* [XAML text editing sample](http://go.microsoft.com/fwlink/p/?linkid=251417)
+* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)

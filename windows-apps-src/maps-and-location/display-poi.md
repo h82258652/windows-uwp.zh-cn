@@ -1,42 +1,43 @@
 ---
-title: “在地图上显示目标点 (POI)”
-description: 使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。
+author: PatrickFarley
+title: 'Display points of interest (POI) on a map'
+description: Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements.
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ---
 
-# 在地图上显示目标点 (POI)
+# Display points of interest (POI) on a map
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。 POI 是地图上表示对某事物感兴趣的特殊的点。 例如，企业、城市或好友的位置。
+Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements. A POI is a specific point on the map that represents something of interest. For example, the location of a business, city, or friend.
 
-**提示** 若要了解有关在你的应用上显示 POI 的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)下载以下示例。
+**Tip** To learn more about displaying POI on your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-通过将 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)、[**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) 和 [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) 对象添加到地图控件的 [**MapElements**](https://msdn.microsoft.com/library/windows/apps/dn637033) 集合，在地图上显示图钉、图像和图形。 以编程方式使用数据绑定或添加项目；你无法以声明方式在 XAML 标记中绑定到你的 **MapElements** 集合。
+Display pushpins, images, and shapes on the map by adding [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103), and [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) objects to the [**MapElements**](https://msdn.microsoft.com/library/windows/apps/dn637033) collection of the map control. Use data binding or add items programmatically; you can't bind to the **MapElements** collection declaratively in your XAML markup.
 
-通过将 XAML 用户界面元素（例如，[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)、[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 或 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)）添加为 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008)，在地图上显示它们。 你也可以将它们添加到 [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094)，或将 **MapItemsControl** 绑定到项目集合。
+Display XAML user interface elements such as a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), a [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), or a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) on the map by adding them as [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). You can also add them to the [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094), or bind the **MapItemsControl** to a collection of items.
 
-总结：
+In summary:
 
--   [向地图添加 MapIcon](#mapicon) 以显示图像（例如，图钉）和可选文本。
--   [向地图添加 MapPolygon](#mappolygon) 以显示多点图形。
--   [向地图添加 MapPolyline](#mappolyline) 以在地图上显示线条。
--   [向地图添加 XAML](#mapxaml) 以显示自定义 UI 元素。
+-   [Add a MapIcon to the map](#mapicon) to display an image such as a pushpin with optional text.
+-   [Add a MapPolygon to the map](#mappolygon) to display a multi-point shape.
+-   [Add a MapPolyline to the map](#mappolyline) to display lines on the map.
+-   [Add XAML to the map](#mapxaml) to display custom UI elements.
 
-如果你想要将大量元素放置在地图上，请考虑[在地图上覆盖平铺图像](overlay-tiled-images.md)。 若要在地图上显示道路，请参阅[显示路线和方向](routes-and-directions.md)。
+If you have a large number of elements to place on the map, consider [overlaying tiled images on the map](overlay-tiled-images.md). To display roads on the map, see [Display routes and directions](routes-and-directions.md).
 
-## 添加 MapIcon
+## Add a MapIcon
 
 
-通过使用 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 类在地图上显示图像（例如图钉）和可选文本。 可以接受默认图像或通过使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) 属性提供自定义图像。 以下图像显示了未为 [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) 属性指定任何值、具有短标题、具有长标题和具有非常长的标题的 **MapIcon** 的默认图像。
+Display an image such a pushpin, with optional text, on the map by using the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) class. You can accept the default image or provide a custom image by using the [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) property. The following image displays the default image for a **MapIcon** with no value specified for the [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) property, with a short title, with a long title, and with a very long title.
 
-![具有不同长度的磁贴的 MapIcon 示例。](images/mapctrl-mapicons.png)
+![sample mapicon with titles of different lengths.](images/mapctrl-mapicons.png)
 
-下面的示例显示了西雅图市的地图并添加了一个带默认图像和可选标题的 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)，可指示 Space Needle 的位置。 地图还以该图标为中心并放大。 有关使用地图控件的常规信息，请参阅[以 2D、3D 和街景视图方式显示地图](display-maps.md)。
+The following example shows a map of the city of Seattle and adds a [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) with the default image and an optional title to indicate the location of the Space Needle. It also centers the map over the icon and zooms in. For general info about using the map control, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
 
 ```csharp
       private void displayPOIButton_Click(object sender, RoutedEventArgs e)
@@ -61,32 +62,30 @@ ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
       }
 ```
 
-本示例在地图上显示以下 POI（以默认图像为中心）。
+This example displays the following POI on the map (the default image in the center).
 
-![带 MapIcon 的地图](images/displaypoidefault.png)
+![map with mapicon](images/displaypoidefault.png)
 
-下面的代码行将显示 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 和保存在项目“资源”文件夹中的自定义图像。 **MapIcon** 的 [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) 属性需要类型 [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) 的值。 此类型需要 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) 命名空间的 **using** 声明。
+The following line of code displays the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) with a custom image saved in the Assets folder of the project. The [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) property of the **MapIcon** expects a value of type [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813). This type requires a **using** statement for the [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) namespace.
 
-**提示** 如果将同一图像用于多个地图图标，请声明页面级别或应用级别的 [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) 以获得最佳性能。
+**Tip** If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) at the page or app level for the best performance.
 
 ```csharp
     MapIcon1.Image =
         RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/customicon.png"));
 ```
 
-使用 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 类时，请记住以下注意事项：
+Keep these considerations in mind when working with the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) class:
 
--   [
-            **Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) 属性支持的最大图像大小为 2048×2048 像素。
--   默认情况下，不一定会显示地图图标的图像。 当它挡住地图上其他元素或标签时，它可能会隐藏。 若要保持可见，将地图图标的 [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) 属性设置为 [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314)。
--   [
-            **MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 的可选 [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) 并不一定会显示。 如果你没有看到此文本，通过减少 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 属性的值来缩小显示。
--   当你显示指向地图上特定位置的 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 图像时（例如，图钉或箭头），考虑将 [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) 属性的值设置为图像上指针的大致位置。 如果你将 **NormalizedAnchorPoint** 的值保留为默认值 (0, 0)（表示图像的左上角），地图的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 中的更改可能会导致图像指向其他位置。
+-   The [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) property supports a maximum image size of 2048×2048 pixels.
+-   By default, the map icon's image is not guaranteed to be shown. It may be hidden when it obscures other elements or labels on the map. To keep it visible, set the map icon's [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) property to [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314).
+-   The optional [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) of the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) is not guaranteed to be shown. If you don't see the text, zoom out by decreasing the value of the [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+-   When you display a [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) image that points to a specific location on the map - for example, a pushpin or an arrow - consider setting the value of the [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) property to the approximate location of the pointer on the image. If you leave the value of **NormalizedAnchorPoint** at its default value of (0, 0), which represents the upper left corner of the image, changes in the [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) of the map may leave the image pointing to a different location.
 
-## 添加 MapPolygon
+## Add a MapPolygon
 
 
-通过使用 [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) 类在地图上显示多点形状。 以下 [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例将在地图上显示一个具有蓝色边框的红色框。
+Display a multi-point shape on the map by using the [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) class. The following example, from the [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977), displays a red box with blue border on the map.
 
 ```csharp
 private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -111,10 +110,10 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
 }
 ```
 
-## 添加 MapPolyline
+## Add a MapPolyline
 
 
-通过使用 [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) 类在地图上显示线条。 以下 [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例将在地图上显示一条虚线。
+Display a line on the map by using the [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) class. The following example, from the [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977), displays a dashed line on the map.
 
 ```csharp
 private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -134,15 +133,15 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
 }
 ```
 
-## 添加 XAML
+## Add XAML
 
 
-通过使用 XAML 在地图上显示自定义 UI 元素。 通过指定 XAML 的位置和标准化的定位点在地图上放置 XAML。
+Display custom UI elements on the map using XAML. Position XAML on the map by specifying the location and normalized anchor point of the XAML.
 
--   通过调用 [**SetLocation**](https://msdn.microsoft.com/library/windows/desktop/ms704369) 在地图上设置要放置 XAML 的位置。
--   通过调用 [**SetNormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637050) 在 XAML 上设置对应于指定位置的相对位置。
+-   Set the location on the map where the XAML is placed by calling [**SetLocation**](https://msdn.microsoft.com/library/windows/desktop/ms704369).
+-   Set the relative location on the XAML that corresponds to the specified location by calling [**SetNormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637050).
 
-下面的示例显示了西雅图市的地图并添加了一个 XAML [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 控件，以指示 Space Needle 的位置。 地图还以该区域为中心并放大。 有关使用地图控件的常规信息，请参阅[以 2D、3D 和街景视图方式显示地图](display-maps.md)。
+The following example shows a map of the city of Seattle and adds a XAML [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) control to indicate the location of the Space Needle. It also centers the map over the area and zooms in. For general info about using the map control, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
 
 ```csharp
 private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
@@ -171,24 +170,24 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-本示例在地图上显示蓝色边框。
+This example displays a blue border on the map.
 
 ![](images/displaypoixaml.png)
 
-接下来的示例介绍如何使用数据绑定在页面的 XAML 标记中直接添加 XAML UI 元素。 与显示内容的其他 XAML 元素一样，[**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) 是 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的默认内容属性并且无需在 XAML 标记中进行显式指定。
+The next examples show how to add XAML UI elements directly in the XAML markup of the page using data binding. As with other XAML elements that display content, [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) is the default content property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and does not have to be specified explicitly in XAML markup.
 
-此示例介绍如何将两个 XAML 控件显示为 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的隐式子对象。
+This example shows how to display two XAML controls as implicit children of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-```xaml
+```xml
 <maps:MapControl>
     <TextBox Text="Seattle" maps:MapControl.Location="{Binding SeattleLocation}"/>
     <TextBox Text="Bellevue" maps:MapControl.Location="{Binding BellevueLocation}"/>
 </maps:MapControl>
 ```
 
-此示例介绍如何显示 [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) 中包含的两个 XAML 控件。
+This example shows how to display two XAML controls contained within a [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094).
 
-```xaml
+```xml
 <maps:MapControl>
   <maps:MapItemsControl>
     <TextBox Text="Seattle" maps:MapControl.Location="{Binding SeattleLocation}"/>
@@ -197,9 +196,9 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 </maps:MapControl>
 ```
 
-此示例显示绑定到 [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) 的 XAML 元素的集合。
+This example displays a collection of XAML elements bound to a [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094).
 
-```xaml
+```xml
 <maps:MapControl x:Name="MapControl" MapTapped="MapTapped" MapDoubleTapped="MapTapped" MapHolding="MapTapped">
   <maps:MapItemsControl ItemsSource="{Binding StateOverlays}">
     <maps:MapItemsControl.ItemTemplate>
@@ -213,20 +212,15 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 </maps:MapControl>
 ```
 
-## 相关主题
+## Related topics
 
-* [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

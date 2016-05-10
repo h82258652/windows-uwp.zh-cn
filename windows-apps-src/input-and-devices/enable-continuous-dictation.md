@@ -1,199 +1,131 @@
 ---
-Description: 了解如何捕获和识别较长的连续听写语音输入。
-title: 启用连续听写
+author: Karl-Bridge-Microsoft
+Description: Learn how to capture and recognize long-form, continuous dictation speech input.
+title: Enable continuous dictation
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
-label: 连续听写
+label: Continuous dictation
 template: detail.hbs
 ---
 
-# 连续听写
+# Continuous dictation
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-了解如何捕获和识别较长的连续听写语音输入。
 
-**重要的 API**
+Learn how to capture and recognize long-form, continuous dictation speech input.
+
+**Important APIs**
 
 -   [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)
 -   [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
 
 
-在[语音识别](speech-recognition.md)中，你已了解如何使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 对象的 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 方法捕获和识别相对较短的语音输入。例如，撰写短信 (SMS) 或进行提问时。
+In [Speech recognition](speech-recognition.md), you learned how to capture and recognize relatively short speech input using the [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) or [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) methods of a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) object, for example, when composing a short message service (SMS) message or when asking a question.
 
-对于较长的连续语音识别会话（例如听写或电子邮件），则使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) 属性以获取 [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) 对象。
-
-
-
-## <span id="Set_up"> </span> <span id="set_up"> </span> <span id="SET_UP"> </span>设置
+For longer, continuous speech recognition sessions, such as dictation or email, use the [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property of a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) to obtain a [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) object.
 
 
-若要管理连续听写会话，你的应用需要几个对象：
 
--   [
-            **SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 对象的示例。
--   对要在听写期间更新 UI 的 UI 调度程序的引用。
--   用于跟踪用户累积说出的字词的方式。
+## <span id="Set_up"></span><span id="set_up"></span><span id="SET_UP"></span>Set up
 
-此处，我们将一个 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 实例声明为代码隐藏类的私有字段。 如果你希望连续听写在单个可扩展应用程序标记语言 (XAML) 页面之后持续，则你的应用需要将引用存储在其他位置。
+
+Your app needs a few objects to manage a continuous dictation session:
+
+-   An instance of a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) object.
+-   A reference to a UI dispatcher to update the UI during dictation.
+-   A way to track the accumulated words spoken by the user.
+
+Here, we declare a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) instance as a private field of the code-behind class. Your app needs to store a reference elsewhere if you want continuous dictation to persist beyond a single Extensible Application Markup Language (XAML) page.
 
 ```CSharp
-private SpeechRecognizer speechRecognizer;</code></pre></td>
-</tr>
-</tbody>
-</table>
+private SpeechRecognizer speechRecognizer;
 ```
 
-在听写期间，识别器会从后台线程引发事件。 由于后台线程不能直接在 XAML 中更新 UI，你的应用必须使用调度程序才能更新 UI 以响应识别事件。
+During dictation, the recognizer raises events from a background thread. Because a background thread cannot directly update the UI in XAML, your app must use a dispatcher to update the UI in response to recognition events.
 
-此处，我们声明一个私有字段，它将在之后通过 UI 调度程序进行初始化。
+Here, we declare a private field that will be initialized later with the UI dispatcher.
 
-<span codelanguage="CSharp"></span>
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
 // Speech events may originate from a thread other than the UI thread.
 // Keep track of the UI thread dispatcher so that we can update the
 // UI in a thread-safe manner.
 private CoreDispatcher dispatcher;
 ```
 
-若要跟踪用户说出的内容，你需要处理由语音识别器所引发的识别事件。 这些事件提供用户话语块的识别结果。
+To track what the user is saying, you need to handle recognition events raised by the speech recognizer. These events provide the recognition results for chunks of user utterances.
 
-此处，我们使用 [**StringBuilder**](https://msdn.microsoft.com/library/system.text.stringbuilder.aspx) 对象保留在会话期间获取的所有识别结果。 新结果将在处理后追加到 **StringBuilder**。
+Here, we use a [**StringBuilder**](https://msdn.microsoft.com/library/system.text.stringbuilder.aspx) object to hold all the recognition results obtained during the session. New results are appended to the **StringBuilder** as they are processed.
 
 ```CSharp
-private StringBuilder dictatedTextBuilder;</code></pre></td>
-</tr>
-</tbody>
-</table>
+private StringBuilder dictatedTextBuilder;
 ```
 
-## <span id="Initialization"> </span> <span id="initialization"> </span> <span id="INITIALIZATION"> </span>初始化
+## <span id="Initialization"></span><span id="initialization"></span><span id="INITIALIZATION"></span>Initialization
 
 
-在连续语音识别初始化期间，必须执行以下操作：
+During the initialization of continuous speech recognition, you must:
 
--   提取 UI 线程的调度程序（如果在连续识别事件处理程序中更新你的应用的 UI）。
--   初始化语音识别器。
--   编译内置的听写语法。
-    **注意** 语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用预定义的听写语法。 请参阅[语音识别](speech-recognition.md)。
+-   Fetch the dispatcher for the UI thread if you update the UI of your app in the continuous recognition event handlers.
+-   Initialize the speech recognizer.
+-   Compile the built-in dictation grammar.
+    **Note**   Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, a predefined dictation grammar is used. See [Speech recognition](speech-recognition.md).
+-   Set up the event listeners for recognition events.
 
-     
+In this example, we initialize speech recognition in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) page event.
 
--   为识别事件设置事件侦听器。
+1.  Because events raised by the speech recognizer occur on a background thread, create a reference to the dispatcher for updates to the UI thread. [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) is always invoked on the UI thread.
+```    CSharp
+this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
+```
 
-我们在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 页面事件中初始化语音识别。
+2.  We then initialize the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) instance.
+```    CSharp
+this.speechRecognizer = new SpeechRecognizer();
+```
 
-1.  因为由语音识别器引发的事件在后台线程上发生，所以请创建一个对调度程序的引用以更新 UI 线程。 [
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 始终在 UI 线程上调用。
+3.  We then add and compile the grammar that defines all of the words and phrases that can be recognized by the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226).
+
+    If you don't specify a grammar explicitly, a predefined dictation grammar is used by default. Typically, the default grammar is best for general dictation.
+
+    Here, we call [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) immediately without adding a grammar.
 
     <span codelanguage="CSharp"></span>
 ```    CSharp
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">C#</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;</code></pre></td>
-    </tr>
-    </tbody>
-    </table>
-```
-
-2.  然后，我们初始化 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 实例。
-
-    <span codelanguage="CSharp"></span>
-```    CSharp
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">C#</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-this.speechRecognizer = new SpeechRecognizer();</code></pre></td>
-    </tr>
-    </tbody>
-    </table>
-```
-
-3.  我们再添加和编译语法，该语法定义所有可通过 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 识别的字词和短语。
-
-    如果未显式指定语法，则默认使用预定义听写语法。 通常，默认语法最适用于常规听写。
-
-    此处，我们立即调用 [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 而无需添加语法。
-
-    <span codelanguage="CSharp"></span>
-```    CSharp
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">C#</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
 SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## <span id="Handle_recognition_events"> </span> <span id="handle_recognition_events"> </span> <span id="HANDLE_RECOGNITION_EVENTS"> </span>处理识别事件
+## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>Handle recognition events
 
 
-在这里，你可以通过调用 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 捕获单一、简要的话语或短语。 但是，我们想要捕获较长的连续识别会话。
+You can capture a single, brief utterance or phrase by calling [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) or [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245). 
 
-为此，我们将指定在用户说话时要在后台运行的事件侦听器，并定义处理程序以构建听写字符串。
+However, to capture a longer, continuous recognition session, we specify event listeners to run in the background as the user speaks and define handlers to build the dictation string.
 
-然后，我们使用识别器的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) 属性来获取 [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) 对象，该对象提供用于管理连续识别会话的方法和事件。
+We then use the [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property of our recognizer to obtain a [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) object that provides methods and events for managing a continuous recognition session.
 
-两个事件尤其关键：
+Two events in particular are critical:
 
--   [
-            **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)，在识别器已生成一些结果时发生。
--   [
-            **Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899)，在连续识别会话已结束时发生。
+-   [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900), which occurs when the recognizer has generated some results.
+-   [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899), which occurs when the continuous recognition session has ended.
 
-当用户说话时引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。 识别器持续侦听用户，并定期引发一个传递语音输入块的事件。 你必须使用事件参数的 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 属性检查语音输入，并在事件处理程序中采取相应操作，例如将文本追加到 StringBuilder 对象。
+The [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event is raised as the user speaks. The recognizer continuously listens to the user and periodically raises an event that passes a chunk of speech input. You must examine the speech input, using the [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) property of the event argument, and take appropriate action in the event handler, such as appending the text to a StringBuilder object.
 
-作为 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 的实例，[**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 属性可用于确定是否希望接受语音输入：
+As an instance of [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), the [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) property is useful for determining whether you want to accept the speech input. A [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) provides two properties for this:
+-   [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) indicates whether the recognition was successful. Recognition can fail for a variety of reasons.
+-   [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) indicates the relative confidence that the recognizer understood the correct words.
 
--   [
-            **Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 指示识别是否成功。 识别失败的原因有多种。
--   [
-            **Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 指示识别器正确理解字词的相对置信度。
+Here are the basic steps for supporting continuous recognition:  
 
-1.  此处，我们在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 页面事件中注册 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 连续识别事件的处理程序。
-
+1.  Here, we register the handler for the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) continuous recognition event in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) page event.
 ```    CSharp
 speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
         ContinuousRecognitionSession_ResultGenerated;
 ```
 
-2.  然后检查 [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 属性。 如果 Confidence 的值是 [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) 或更好，我们便将文本追加到 StringBuilder。 我们还在收集输入时更新 UI。
+2.  We then check the [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) property. If the value of Confidence is [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) or better, we append the text to the StringBuilder. We also update the UI as we collect input.
 
-    **注意** [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件在不能直接更新 UI 的后台线程上引发。 如果一个处理程序需要更新 UI（如同 \[语音和 TTS 示例\] 那样），则必须通过调度程序的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法调度对 UI 线程的更新。
-
-     
-
+    **Note**  the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event is raised on a background thread that cannot update the UI directly. If a handler needs to update the UI (as the \[Speech and TTS sample\] does), you must dispatch the updates to the UI thread through the [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) method of the dispatcher.
 ```    CSharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -221,23 +153,19 @@ private async void ContinuousRecognitionSession_ResultGenerated(
       }
 ```
 
-3.  然后处理 [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) 事件，该事件指示连续听写的结尾。
+3.  We then handle the [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) event, which indicates the end of continuous dictation.
 
-    当你调用 [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) 或 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 方法时会话结束（在下一部分介绍）。 在发生错误或用户停止说话时，会话也可以结束。 检查事件参数的 [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 属性以确定会话结束的原因 ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433))。
+    The session ends when you call the [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) or [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) methods (described the next section). The session can also end when an error occurs, or when the user has stopped speaking. Check the [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) property of the event argument to determine why the session ended ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433)).
 
-    此处，我们在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 页面事件中注册 [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) 连续识别事件的处理程序。
-
+    Here, we register the handler for the [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) continuous recognition event in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) page event.
 ```    CSharp
 speechRecognizer.ContinuousRecognitionSession.Completed +=
       ContinuousRecognitionSession_Completed;
 ```
 
-4.  事件处理程序检查“Status”属性，以确定识别是否成功。 它还可处理用户已停止说话的情况。 通常，将 [**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) 视为成功的识别，因为这意味着用户已结束说话。 你应该在代码中对这种情况进行处理以提供良好体验。
+4.  The event handler checks the Status property to determine whether the recognition was successful. It also handles the case where the user has stopped speaking. Often, a [**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) is considered successful recognition as it means the user has finished speaking. You should handle this case in your code for a good experience.
 
-    **注意** [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件在不能直接更新 UI 的后台线程上引发。 如果一个处理程序需要更新 UI（如同 \[语音和 TTS 示例\] 那样），则必须通过调度程序的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法调度对 UI 线程的更新。
-
-     
-
+    **Note**  the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event is raised on a background thread that cannot update the UI directly. If a handler needs to update the UI (as the \[Speech and TTS sample\] does), you must dispatch the updates to the UI thread through the [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) method of the dispatcher.
 ```    CSharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -272,16 +200,16 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## <span id="Provide_ongoing_recognition_feedback"> </span> <span id="provide_ongoing_recognition_feedback"> </span> <span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK"> </span>提供正在进行的识别反馈
+## <span id="Provide_ongoing_recognition_feedback"></span><span id="provide_ongoing_recognition_feedback"></span><span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK"></span>Provide ongoing recognition feedback
 
 
-当用户对话时，他们通常需要依赖上下文才能完全理解所说内容。 同样，语音识别器通常需要上下文才能提供高可信度的识别结果。 例如，除非可从前后的词语中收集到更多的上下文，否则词语“包含”和“包涵”本身是无法区分的。 除非识别器已具有一定的置信度来确保字词已正确识别，否则它将不会引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。
+When people converse, they often rely on context to fully understand what is being said. Similarly, the speech recognizer often needs context to provide high-confidence recognition results. For example, by themselves, the words "weight" and "wait" are indistinguishable until more context can be gleaned from surrounding words. Until the recognizer has some confidence that a word, or words, have been recognized correctly, it will not raise the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
 
-这可能会导致不理想的用户体验，因为他们仍在继续说话，但在识别器不足以具有能够引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件的置信度之前，不会提供任何结果。
+This can result in a less than ideal experience for the user as they continue speaking and no results are provided until the recognizer has high enough confidence to raise the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
 
-处理 [**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914) 事件以改进这种明显的响应缺乏问题。 只要识别器为要处理的字词生成一组新的潜在匹配，就会引发此事件。 事件参数提供包含当前匹配的 [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911) 属性。 在用户继续说话时向其展示这些匹配，向他们保证处理仍在进行。 当置信度较高并已确定识别结果时，使用 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件中提供的最终 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 替换临时的 **Hypothesis** 结果。
+Handle the [**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914) event to improve this apparent lack of responsiveness. This event is raised whenever the recognizer generates a new set of potential matches for the word being processed. The event argument provides an [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911) property that contains the current matches. Show these to the user as they continue speaking and reassure them that processing is still active. Once confidence is high and a recognition result has been determined, replace the interim **Hypothesis** results with the final [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) provided in the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
 
-此处，我们将假设文本和一个省略号（“…”）追加到输出 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 的当前值。 从生成新的假设直到从 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件获取最终结果后，文本框内容才会更新。
+Here, we append the hypothetical text and an ellipsis ("…") to the current value of the output [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683). The contents of the text box are updated as new hypotheses are generated and until the final results are obtained from the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
 
 ```CSharp
 private async void SpeechRecognizer_HypothesisGenerated(
@@ -300,12 +228,12 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## <span id="Start_and_stop_recognition"> </span> <span id="start_and_stop_recognition"> </span> <span id="START_AND_STOP_RECOGNITION"> </span>启动和停止识别
+## <span id="Start_and_stop_recognition"></span><span id="start_and_stop_recognition"></span><span id="START_AND_STOP_RECOGNITION"></span>Start and stop recognition
 
 
-启动识别会话之前，检查语音识别器 [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) 属性的值。 语音识别器必须处于 [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227) 状态。
+Before starting a recognition session, check the value of the speech recognizer [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) property. The speech recognizer must be in an [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227) state.
 
-在检查语音识别器的状态之后，我们通过调用语音识别器的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) 属性的 [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn913901) 方法启动会话。
+After checking the state of the speech recognizer, we start the session by calling the [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn913901) method of the speech recognizer's [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property.
 
 ```CSharp
 if (speechRecognizer.State == SpeechRecognizerState.Idle)
@@ -314,14 +242,12 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 }
 ```
 
-可以采用两种方法停止识别：
+Recognition can be stopped in two ways:
 
--   [
-            **StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908)允许任何挂起的识别事件完成（直到所有识别操作完成之前，都将继续引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)）
--   [
-            **CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898)立即终止识别会话并放弃任何挂起的结果。
+-   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) lets any pending recognition events complete ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) continues to be raised until all pending recognition operations are complete).
+-   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) terminates the recognition session immediately and discards any pending results.
 
-在检查语音识别器的状态之后，我们通过调用语音识别器的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) 属性的 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 方法停止会话。
+After checking the state of the speech recognizer, we stop the session by calling the [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) method of the speech recognizer's [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property.
 
 ```CSharp
 if (speechRecognizer.State != SpeechRecognizerState.Idle)
@@ -330,32 +256,24 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 }
 ```
 
-**注意**  
-[
-            **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件可在调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 后发生。
+[!NOTE]  
+A [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event can occur after a call to [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898).  
+Because of multithreading, a [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event might still remain on the stack when [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) is called. If so, the **ResultGenerated** event still fires.  
+If you set any private fields when canceling the recognition session, always confirm their values in the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) handler. For example, don't assume a field is initialized in your handler if you set them to null when you cancel the session.
 
-由于多线程处理，当调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 时，[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件可能仍保留在堆栈上。 如果如此，则仍引发 **ResultGenerated** 事件。
+ 
 
-如果在取消识别会话时设置任何私有字段，请始终在 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 处理程序中确认它们的值。 例如，如果在取消会话时将字段设置为 null，请勿假定字段在处理程序中进行初始化。
-
- 
-
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>Related articles
 
 
-* [语音交互](speech-interactions.md)
+* [Speech interactions](speech-interactions.md)
 
-**示例**
-* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

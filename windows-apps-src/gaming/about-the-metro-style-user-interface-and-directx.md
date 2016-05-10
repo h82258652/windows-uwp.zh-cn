@@ -1,20 +1,21 @@
 ---
-title: 应用对象和 DirectX
-description: 使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。
+author: mtoepke
+title: The app object and DirectX
+description: Universal Windows Platform (UWP) with DirectX games don't use many of the Windows UI user interface elements and objects.
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 ---
 
-# 应用对象和 DirectX
+# The app object and DirectX
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。 相反，因为它们在 Windows 运行时堆栈中的较低级别上运行，所以它们必须以更加基本的方式与用户界面框架互操作： 直接访问应用对象并与之互操作。 了解何时以及如何执行此互操作，以及作为 DirectX 开发人员， 你可以如何在 UWP 应用的开发中高效使用此模型。
+Universal Windows Platform (UWP) with DirectX games don't use many of the Windows UI user interface elements and objects. Rather, because they run at a lower level in the Windows Runtime stack, they must interoperate with the user interface framework in a more fundamental way: by accessing and interoperating with the app object directly. Learn when and how this interoperation occurs, and how you, as a DirectX developer, can effectively use this model in the development of your UWP app.
 
-## 重要的核心用户界面命名空间
+## The important core user interface namespaces
 
 
-首先，让我们看一下必须包含（使用 **using**）在 UWP 应用中的 Windows 运行时命名空间。 获取更多详细信息。
+First, let's note the Windows Runtime namespaces that you must include (with **using**) in your UWP app. We get into the details in a bit.
 
 -   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865)
 -   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766)
@@ -22,96 +23,94 @@ ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **注意** 如果你未开发 UWP 应用，使用特定于 JavaScript 或 XAML 的库和命名空间中提供的用户界面组件，而不是这些命名空间中提供的类型。
+> **Note**   If you are not developing a UWP app, use the user interface components provided in the JavaScript- or XAML-specific libraries and namespaces instead of the types provided in these namespaces.
 
- 
+ 
 
-## Windows 运行时应用对象
-
-
-在你的 UWP 应用中，你希望获得一个窗口和一个视图提供程序，你可从该提供程序获得一个视图，也可将你的交换链（显示缓冲区）连接到该提供程序。 你也可以将此视图连接到正在运行的应用的特定于窗口的事件中。 要获得应用对象的父窗口（由 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 类型定义），可以创建一个实现 [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) 的类型，就像我们在上一个代码段中所做的一样。
-
-以下是使用核心用户界面框架获得一个窗口的一组基本步骤：
-
-1.  创建实现 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 的类型。 这是你的视图。
-
-    在此类型中，定义：
-
-    -   一个 [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) 方法，它接受一个 [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 实例作为参数。 你可调用 [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) 来获取此类型的实例。 应用对象在应用启动时调用它。
-    -   一个 [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) 方法，它接受一个 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例作为参数。 你可以访问你的新 [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 实例上的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 属性来获得此类型的实例。
-    -   一个 [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501) 方法，它接受一个表示入口点的字符串作为唯一的参数。 应用对象在你调用此方法时提供入口点字符串。 这是设置资源的地方。 你在这里创建设备资源。 应用对象在应用启动时调用它。
-    -   一个 [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法，它激活 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象并启动窗口事件调度程序。 应用对象在应用的进程启动时调用它。
-    -   一个 [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523) 方法，它清除在对 [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501) 的调用中设置的资源。 应用对象在应用关闭时调用此方法。
-
-2.  创建实现 [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) 的类型。 这是你的视图提供程序。
-
-    在此类型中，定义：
-
-    -   一个名为 [**CreateView**](https://msdn.microsoft.com/library/windows/apps/hh700491) 的方法，可返回你的 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 实现（在步骤 1 中创建）的实例。
-
-3.  将视图提供程序的一个实例从 **main** 传递到 [**CoreApplication.Run**](https://msdn.microsoft.com/library/windows/apps/hh700469)。
-
-掌握了这些基础知识之后，让我们看一下扩展此方法所需的更多选项。
-
-## 核心用户界面类型
+## The Windows Runtime app object
 
 
-以下是 Windows 运行时中可能对你有帮助的其他核心用户界面类型：
+In your UWP app, you want to get a window and a view provider from which you can get a view and to which you can connect your swap chain (your display buffers). You can also hook this view into the window-specific events for your running app. To get the parent window for the app object, defined by the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type, create a type that implements [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482), as we did in the previous code snippet.
+
+Here's the basic set of steps to get a window using the core user interface framework:
+
+1.  Create a type that implements [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). This is your view.
+
+    In this type, define:
+
+    -   An [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method that takes an instance of [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) as a parameter. You can get an instance of this type by calling [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278). The app object calls it when the app is launched.
+    -   A [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) method that takes an instance of [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) as a parameter. You can get an instance of this type by accessing the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) property on your new [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) instance.
+    -   A [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501) method that takes a string for an entry point as the sole parameter. The app object provides the entry point string when you call this method. This is where you set up resources. You create your device resources here. The app object calls it when the app is launched.
+    -   A [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method that activates the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object and starts the window event dispatcher. The app object calls it when the app's process starts.
+    -   An [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523) method that cleans up the resources set up in the call to [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501). The app object calls this method when the app is closed.
+
+2.  Create a type that implements [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482). This is your view provider.
+
+    In this type, define:
+
+    -   A method named [**CreateView**](https://msdn.microsoft.com/library/windows/apps/hh700491) that returns an instance of your [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) implementation, as created in Step 1.
+
+3.  Pass an instance of the view provider to [**CoreApplication.Run**](https://msdn.microsoft.com/library/windows/apps/hh700469) from **main**.
+
+With those basics in mind, let's look at more options you have to extend this approach.
+
+## Core user interface types
+
+
+Here are other core user interface types in the Windows Runtime that you might find helpful:
 
 -   [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 -   [**Windows.UI.Core.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
 -   [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)
 
-你可以使用这些类型访问应用的视图（具体来讲，访问绘制应用父窗口内容的位），并处理为该窗口引发的事件。 应用窗口的进程是一个*应用程序单线程单元* (ASTA)，它是隔离的并处理所有回调。
+You can use these types to access your app's view, specifically, the bits that draw the contents of the app's parent window, and handle the events fired for that window. The app window's process is an *application single-threaded apartment* (ASTA) that is isolated and that handles all callbacks.
 
-你的应用的视图由你的应用窗口的视图提供程序生成，并且在大多数情况下将由特定框架包或系统本身实现，因此你不需要亲自实现它。 如前所述，对于 DirectX，你需要实现一个精简视图提供程序。 以下组件和行为之间存在特定的 1 对 1 关系：
+Your app's view is generated by the view provider for your app window, and in most cases will be implemented by a specific framework package or the system itself, so you don't need to implement it yourself. For DirectX, you need to implement a thin view provider, as discussed previously. There is a specific 1-to-1 relationship between the following components and behaviors:
 
--   应用的视图，由 [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 类型表示，并定义用于更新窗口的方法。
--   ASTA，定义应用的线程行为的属性。 你不能在 ASTA 上创建 COM STA 属性类型的实例。
--   视图提供程序，由你的应用从系统获取或由你实现。
--   父窗口，由 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 类型表示。
--   获取所有激活事件的源。 视图和窗口都有单独的激活事件。
+-   An app's view, which is represented by the [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) type, and which defines the method(s) for updating the window.
+-   An ASTA, the attribution of which defines the threading behavior of the app. You cannot create instances of COM STA-attributed types on an ASTA.
+-   A view provider, which your app obtains from the system or which you implement.
+-   A parent window, which is represented by the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type.
+-   Sourcing for all activation events. Both views and windows have separate activation events.
 
-总之，应用对象提供了一个视图提供程序工厂。 它创建一个视图提供程序并为应用实例化一个父窗口。 视图提供程序定义应用的父窗口的视图。 现在，让我们谈谈视图和父窗口的具体细节。
+In summary, the app object provides a view provider factory. It creates a view provider and instantiates a parent window for the app. The view provider defines the app's view for the parent window of the app. Now, let's discuss the specifics of the view and the parent window.
 
-## CoreApplicationView 行为和属性
-
-
-[
-            **CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 表示当前的应用视图。 应用单一实例在初始化期间创建应用视图，但在激活之前，视图将保持休眠。 你可获得 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，可访问它之上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 属性来显示视图，你也可以向 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件注册委托来处理视图的激活和停用事件。
-
-## CoreWindow 行为和属性
+## CoreApplicationView behaviors and properties
 
 
-在应用对象初始化时，会创建父窗口（一个 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例）并传递给视图提供程序。 如果应用有一个窗口要显示，它会显示它，否则它会初始化视图。
+[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) represents the current app view. The app singleton creates the app view during initialization, but the view remains dormant until it is activated. You can get the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that displays the view by accessing the [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) property on it, and you can handle activation and deactivation events for the view by registering delegates with the [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event.
 
-[
-            **CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 提供了许多特定于输入和基本窗口行为的事件。 你可以向这些事件注册自己的委托来处理它们。
-
-你也可以访问 [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) 属性来获得窗口的窗口事件调度程序，该属性提供了一个 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 实例。
-
-## CoreDispatcher 行为和属性
+## CoreWindow behaviors and properties
 
 
-你可以确定为具有 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 类型的窗口调度的事件线程行为。 在此类型中，有一个特别重要的方法：即 [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 方法，该方法启动窗口事件处理。 使用应用的错误选项调用此方法可能导致各种异常的事件处理行为。
+The parent window, which is a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance, is created and passed to the view provider when the app object initializes. If the app has a window to display, it displays it; otherwise, it simply initializes the view.
 
-| CoreProcessEventsOption 选项                                                           | 说明                                                                                                                                                                                                                                  |
+[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) provides a number of events specific to input and basic window behaviors. You can handle these events by registering your own delegates with them.
+
+You can also obtain the window event dispatcher for the window by accessing the [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) property, which provides an instance of [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211).
+
+## CoreDispatcher behaviors and properties
+
+
+You can determine the threading behavior of event dispatching for a window with the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) type. On this type, there's one particularly important method: the [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) method, which starts window event processing. Calling this method with the wrong option for your app can lead to all sorts of unexpected event processing behaviors.
+
+| CoreProcessEventsOption option                                                           | Description                                                                                                                                                                                                                                  |
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**CoreProcessEventsOption.ProcessOneAndAllPending**](https://msdn.microsoft.com/library/windows/apps/br208217) | 调度队列中所有当前可用的事件。 如果没有正在等待的事件，则等待下一个新事件。                                                                                                                                 |
-| [**CoreProcessEventsOption.ProcessOneIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | 如果在队列中有正在等待的事件，则调度一个事件。 如果没有正在等待的事件，则不等待引发新事件，而是立即返回。                                                                                          |
-| [**CoreProcessEventsOption.ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217)        | 等待新事件并调度所有可用事件。 继续此行为，直到窗口关闭或者应用程序调用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例上的 [**Close**](https://msdn.microsoft.com/library/windows/apps/br208260) 方法为止。 |
-| [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | 调度队列中所有当前可用的事件。 如果没有正在等待的事件，则立即返回。                                                                                                                                          |
+| [**CoreProcessEventsOption.ProcessOneAndAllPending**](https://msdn.microsoft.com/library/windows/apps/br208217) | Dispatch all currently available events in the queue. If no events are pending, wait for the next new event.                                                                                                                                 |
+| [**CoreProcessEventsOption.ProcessOneIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | Dispatch one event if it is pending in the queue. If no events are pending, don't wait for a new event to be raised but instead return immediately.                                                                                          |
+| [**CoreProcessEventsOption.ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217)        | Wait for new events and dispatch all available events. Continue this behavior until the window is closed or the application calls the [**Close**](https://msdn.microsoft.com/library/windows/apps/br208260) method on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance. |
+| [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | Dispatch all currently available events in the queue. If no events are pending, return immediately.                                                                                                                                          |
 
- 
+ 
 
-使用 DirectX 的 UWP 应使用 [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) 选项来防止可能中断图形更新的阻止行为。
+UWP using DirectX should use the [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) option to prevent blocking behaviors that might interrupt graphics updates.
 
-## DirectX 开发中与 ASTA 有关的注意事项
+## ASTA considerations for DirectX devs
 
 
-用于定义 UWP 和 DirectX 应用的运行时表示形式的应用对象使用名为应用程序单线程单元 (ASTA) 的线程模型来托管你的应用的 UI 视图。 如果要开发 UWP 和 DirectX 应用，需要熟悉 ASTA 的属性，因为从 UWP 和 DirectX 应用调度的任何线程都必须使用 [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642) API 或使用 [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)。 （你可以通过从应用中调用 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 来获取 ASTA 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象。）
+The app object that defines the run-time representation of yourUWP and DirectX app uses a threading model called Application Single-Threaded Apartment (ASTA) to host your app’s UI views. If you are developing a UWP and DirectX app, you're familiar with the properties of an ASTA, because any thread you dispatch from your UWP and DirectX app must use the [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642) APIs, or use [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). (You can get the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object for the ASTA by calling [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) from your app.)
 
-作为 UWP DirectX 应用的开发人员，你需要注意的最重要的事是必须通过在 **main()** 上设置 **Platform::MTAThread** 使你的应用线程可以调度 MTA 线程。
+The most important thing for you to be aware of, as a developer of a UWP DirectX app, is that you must enable your app thread to dispatch MTA threads by setting **Platform::MTAThread** on **main()**.
 
 ```cpp
 [Platform::MTAThread]
@@ -123,35 +122,30 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-当 UWP DirectX 应用的应用对象激活时，它会创建将用于 UI 视图的 ASTA。 新的 ASTA 线程将调用到视图提供程序工厂中（以为应用对象创建视图提供程序），因此你的视图提供程序代码将在该 ASTA 线程上运行。
+When the app object for your UWP DirectX app activates, it creates the ASTA that will be used for the UI view. The new ASTA thread calls into your view provider factory, to create the view provider for your app object, and as a result, your view provider code will run on that ASTA thread.
 
-同样，从 ASTA 分离的任何线程都必须位于 MTA 中。 请注意，所分离的任何 MTA 线程仍可能会产生重新进入问题并导致死锁。
+Also, any thread that you spin off from the ASTA must be in an MTA. Be aware that any MTA threads that you spin off can still create reentrancy issues and result in a deadlock.
 
-如果你要移植要在 ASTA 线程上运行的现有代码，请牢记以下注意事项：
+If you're porting existing code to run on the ASTA thread, keep these considerations in mind:
 
--   等待基元（如 [**CoWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/desktop/hh404144)）在 ASTA 中的行为与在 STA 中不同。
--   COM 调用模式循环在 ASTA 中以不同的方式运行。 当传出调用在进行中时，你可以不再接收不相关的调用。 例如，以下行为将从 ASTA 创建死锁（并立即使应用崩溃）：
-    1.  ASTA 调用 MTA 对象并传递接口指针 P1。
-    2.  稍后，ASTA 调用相同的 MTA 对象。 MTA 对象在其返回到 ASTA 之前调用 P1。
-    3.  P1 无法进入 ASTA，因为它在进行不相关的调用时被阻止。 但是，MTA 线程在尝试对 P1 进行调用时被阻止。
+-   Wait primitives, such as [**CoWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/desktop/hh404144), behave differently in an ASTA than in an STA.
+-   The COM call modal loop operates differently in an ASTA. You can no longer receive unrelated calls while an outgoing call is in progress. For example, the following behavior will create a deadlock from an ASTA (and immediately crash the app):
+    1.  The ASTA calls an MTA object and passes an interface pointer P1.
+    2.  Later, the ASTA calls the same MTA object. The MTA object calls P1 before it returns to the ASTA.
+    3.  P1 cannot enter the ASTA as it's blocked making an unrelated call. However, the MTA thread is blocked as it tries to make the call to P1.
 
-    你可以通过执行以下操作来解决此问题：
-    -   使用在并行模式库 (PPLTasks.h) 中定义的 **async** 模式
-    -   尽快从应用的 ASTA（应用的主线程）调用 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 以允许任意调用。
+    You can resolve this by :
+    -   Using the **async** pattern defined in the Parallel Patterns Library (PPLTasks.h)
+    -   Calling [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's ASTA (the main thread of your app) as soon as possible to allow arbitrary calls.
 
-    也就是说，你不能依赖于将无关调用立即提交到你的应用的 ASTA。 有关异步调用的详细信息， 请阅读[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
+    That said, you cannot rely on immediate delivery of unrelated calls to your app's ASTA. For more info about async calls, read [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
-总的来说，在设计 UWP 应用时，使用应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 和 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 来处理所有 UI 线程，而不要尝试自行创建和管理 MTA 线程。 当你需要一个不能用 **CoreDispatcher** 处理的单独线程时，请使用异步模式，并按照前面提到的指南操作以避免出现重新进入问题。
+Overall, when designing your UWP app, use the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for your app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) and [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) to handle all UI threads rather than trying to create and manage your MTA threads yourself. When you need a separate thread that you cannot handle with the **CoreDispatcher**, use async patterns and follow the guidance mentioned earlier to avoid reentrancy issues.
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

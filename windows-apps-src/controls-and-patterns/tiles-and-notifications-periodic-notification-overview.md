@@ -1,113 +1,106 @@
 ---
-Description: 定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。
-title: 定期通知概述
+author: mijacobs
+Description: Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.
+title: Periodic notification overview
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
-label: 待定
+label: TBD
 template: detail.hbs
 ---
 
-# 定期通知概述
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。 若要使用定期通知，客户端应用代码需要提供两部分信息：
-
--   Windows 为你的应用轮询磁贴或锁屏提醒更新的 Web 位置的统一资源标识符 (URI)
--   URI 的轮询频率
-
-定期通知让你的应用只需极少的云服务和客户端投资即可提供动态磁贴更新。 定期通知是向广泛受众分配相同内容的出色传递方法。
-
-**注意** 可以通过下载适用于 Windows 8.1 的[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)并在 Windows 10 应用中重复使用其源代码来了解详细信息。
-
- 
-
-## <span id="How_it_works"> </span> <span id="how_it_works"> </span> <span id="HOW_IT_WORKS"> </span>工作原理
-
-
-定期通知要求你的应用托管云服务。 该服务将由所有安装了该应用的用户定期进行轮询。 Windows 在每个轮询间隔（例如一小时一次）向 URI 发送 HTTP GET 请求，下载响应请求而提供的磁贴或锁屏提醒内容（如 XML），并在应用磁贴上显示此内容。
-
-请注意，定期更新不能与 Toast 通知配合使用。 Toast 最好通过[计划](https://msdn.microsoft.com/library/windows/apps/hh465417)或[推送](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)通知传递。
-
-## <span id="URI_location_and_XML_content"> </span> <span id="uri_location_and_xml_content"> </span> <span id="URI_LOCATION_AND_XML_CONTENT"> </span>URI 位置和 XML 内容
-
-
-任何有效的 HTTP 或 HTTPS 网址均可用作要轮询的 URI。
-
-云服务器的响应包括已下载的内容。 从 URI 返回的内容必须符合[磁贴](tiles-and-notifications-adaptive-tiles-schema.md)或[锁屏提醒](https://msdn.microsoft.com/library/windows/apps/br212851) XML 架构规格，并且必须为 UTF-8 编码。 你可使用已定义的 HTTP 标头来指定通知的[到期时间](#expiry)或[标记](#taggo)。
-
-## <span id="Polling_Behavior"> </span> <span id="polling_behavior"> </span> <span id="POLLING_BEHAVIOR"> </span>轮询行为
-
-
-调用以下方法之一可开始轮询：
-
--   [
-            **StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684)（磁贴）
--   [
-            **StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611)（锁屏提醒）
--   [
-            **StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945)（磁贴）
-
-调用一个方法时，URI 将立即进行轮询，且磁贴或锁屏提醒将根据所接收的内容进行更新。 初次轮询后，Windows 继续按照所要求的间隔提供更新。 轮询不断进行，直到（使用 [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697)）将其显式阻止、卸载应用或删除磁贴（适用于辅助磁贴的情况）。 否则，即使应用永远不再启动，Windows 也将继续轮询磁贴或锁屏提醒更新。
-
-### <span id="The_recurrence_interval"> </span> <span id="the_recurrence_interval"> </span> <span id="THE_RECURRENCE_INTERVAL"> </span>重复出现的间隔
-
-指定重复出现的间隔，作为上面所列方法的一个参数。 请注意，虽然 Windows 尽量根据请求进行轮询，但此间隔不是很准确。 所请求的轮询间隔最长可能延迟 15 分钟，具体取决于 Windows。
-
-### <span id="The_start_time"> </span> <span id="the_start_time"> </span> <span id="THE_START_TIME"> </span>开始时间
-
-你可以选择指定一天中的某个特定时间开始轮询。 考虑应用一天仅更改一次磁贴内容。 在此情况下，我们建议你将轮询开始时间设置为接近更新云服务的时间。 例如，如果一家日常购物网站每天早上 8 点发布当日的商品与服务，则在早上 8 点不久之后轮询新磁贴内容。
-
-如果提供开始时间，则首次调用该方法时即会立即轮询内容。 然后，在所提供的开始时间 15 分钟之内开始定期轮询。
-
-### <span id="Automatic_retry_behavior"> </span> <span id="automatic_retry_behavior"> </span> <span id="AUTOMATIC_RETRY_BEHAVIOR"> </span>自动重试行为
-
-仅在设备联机时轮询 URI。 如果网络可用，但因某种原因无法联系 URI，则轮询间隔此次迭代将被跳过，并将在下个间隔再次轮询 URI。 如果达到轮询间隔时，该设备处于关闭、睡眠或休眠状态，则设备从关闭或睡眠状态返回时，将轮询 URI。
-
-## <span id="expiry"> </span> <span id="EXPIRY"> </span>磁贴和锁屏提醒通知到期时间
-
-
-默认情况下，定期磁贴和锁屏提醒通知在从下载时间算起的三天后过期。 通知到期时，此内容将从锁屏提醒、磁贴或队列中删除，且不再向用户显示。 最佳做法是，使用一个对于你的应用或通知合理的时间，在所有定期磁贴和锁屏提醒通知上设置显式过期时间，以确保该内容不会在它不相关时仍存在。 对于具有已定义的使用寿命的内容来说，一个显式过期时间是必需的。 它还可确保在无法连接云服务或用户长时间断开网络时删除过时的内容。
-
-你的云服务通过在响应负载中包括 X-WNS-Expires HTTP 标头来为通知设置过期日期和时间。 X-WNS-Expires HTTP 标头符合 [HTTP-date 格式](http://go.microsoft.com/fwlink/p/?linkid=253706)。 有关详细信息，请参阅 [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) 或 [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945)。
-
-例如，股票市场活跃交易日期间，你可将股票价格更新到期时间设置为轮询间隔的两倍（例如，如果是每半小时轮询一次，则将股票价格更新到期时间设置为一小时）。 另一个示例是，资讯应用可确定每日新闻磁贴更新的适当到期时间为一天。
-
-## <span id="taggo"> </span> <span id="TAGGO"> </span>通知队列中的定期通知
-
-
-你可将定期磁贴更新与[通知循环](https://msdn.microsoft.com/library/windows/apps/hh781199)结合使用。 默认情况下，“开始”屏幕中的磁贴会显示单条通知的内容，直到有新的通知替换当前的通知。 启用循环之后，队列中最多会保留 5 条通知，磁贴会循环显示这些通知。
-
-如果队列达到了 5 条通知的容量上限，则下一条新通知将替换队列中最早的通知。 但是，通过在通知上设置标记，你可以影响队列的替换策略。 标记是特定于应用的字符串，区分大小写，最多包含 16 个字母数字字符，可在响应负载的 [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP 标头中指定。 Windows 将传入通知的标记与队列中已存在的所有通知的标记进行比较。 如果发现匹配，则新通知将替换队列中标记相同的通知。 如果发现不匹配，则应用默认替换规则，新通知将替换队列中最早的通知。
-
-你可使用通知队列和标记来实现各种丰富的通知方案。 例如，股票应用可发送 5 条通知，每条通知关注一支不同的股票并以相应股票的名称作为标记。 这可以防止队列包含两条有关同一股票的通知，其中较早的通知为过时通知。
-
-有关详细信息，请参阅[使用通知队列](https://msdn.microsoft.com/library/windows/apps/hh781199)。
-
-### <span id="Enabling_the_notification_queue"> </span> <span id="enabling_the_notification_queue"> </span> <span id="ENABLING_THE_NOTIFICATION_QUEUE"> </span>启用通知队列
-
-若要实现通知队列，请首先启用磁贴队列（请参阅[如何使用具有本地通知的通知队列](https://msdn.microsoft.com/library/windows/apps/hh465429)）。 在应用的生命周期内只需完成一次启用队列的调用，但在每次启动应用时均调用一次也无妨。
-
-### <span id="Polling_for_more_than_one_notification_at_a_time"> </span> <span id="polling_for_more_than_one_notification_at_a_time"> </span> <span id="POLLING_FOR_MORE_THAN_ONE_NOTIFICATION_AT_A_TIME"> </span>一次轮询多条通知
-
-你必须为希望 Windows 为磁贴下载的每条通知提供唯一的 URI。 你可使用 [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) 方法一次最多提供五个 URI 与通知队列配合使用。 将在相同时间或接近该时间轮询每个 URI 以获得单个通知负载。 每个轮询的 URL 还可以返回各自的到期时间和标记值。
-
-## <span id="related_topics"> </span>相关主题
-
-
-* [定期通知指南](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [如何为锁屏提醒设置定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [如何为磁贴设置定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
- 
-
- 
+# Periodic notification overview
 
 
 
 
 
+Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service. To use periodic notifications, your client app code needs to provide two pieces of information:
 
-<!--HONumber=Mar16_HO1-->
+-   The Uniform Resource Identifier (URI) of a web location for Windows to poll for tile or badge updates for your app
+-   How often that URI should be polled
+
+Periodic notifications enable your app to get live tile updates with minimal cloud service and client investment. Periodic notifications are a good delivery method for distributing the same content to a wide audience.
+
+**Note**   You can learn more by downloading the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?linkid=231476) for Windows 8.1 and re-using its source code in your Windows 10 app.
+
+ 
+
+## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>How it works
+
+
+Periodic notifications require that your app hosts a cloud service. The service will be polled periodically by all users who have the app installed. At each polling interval, such as once an hour, Windows sends an HTTP GET request to the URI, downloads the requested tile or badge content (as XML) that is supplied in response to the request, and displays the content on the app's tile.
+
+Note that periodic updates cannot be used with toast notifications. Toast is best delivered through [scheduled](https://msdn.microsoft.com/library/windows/apps/hh465417) or [push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252) notifications.
+
+## <span id="URI_location_and_XML_content"></span><span id="uri_location_and_xml_content"></span><span id="URI_LOCATION_AND_XML_CONTENT"></span>URI location and XML content
+
+
+Any valid HTTP or HTTPS web address can be used as the URI to be polled.
+
+The cloud server's response includes the downloaded content. The content returned from the URI must conform to the [Tile](tiles-and-notifications-adaptive-tiles-schema.md) or [Badge](https://msdn.microsoft.com/library/windows/apps/br212851) XML schema specification, and must be UTF-8 encoded. You can use defined HTTP headers to specify the [expiration time](#expiry) or [tag](#taggo) for the notification.
+
+## <span id="Polling_Behavior"></span><span id="polling_behavior"></span><span id="POLLING_BEHAVIOR"></span>Polling Behavior
+
+
+Call one of these methods to begin polling:
+
+-   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) (Tile)
+-   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611) (Badge)
+-   [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) (Tile)
+
+When you call one of these methods, the URI is immediately polled and the tile or badge is updated with the received contents. After this initial poll, Windows continues to provide updates at the requested interval. Polling continues until you explicitly stop it (with [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697)), your app is uninstalled, or, in the case of a secondary tile, the tile is removed. Otherwise, Windows continues to poll for updates to your tile or badge even if your app is never launched again.
+
+### <span id="The_recurrence_interval"></span><span id="the_recurrence_interval"></span><span id="THE_RECURRENCE_INTERVAL"></span>The recurrence interval
+
+You specify the recurrence interval as a parameter of the methods listed above. Note that while Windows makes a best effort to poll as requested, the interval is not precise. The requested poll interval can be delayed by up to 15 minutes at the discretion of Windows.
+
+### <span id="The_start_time"></span><span id="the_start_time"></span><span id="THE_START_TIME"></span>The start time
+
+You optionally can specify a particular time of day to begin polling. Consider an app that changes its tile content just once a day. In such a case, we recommend that you poll close to the time that you update your cloud service. For example, if a daily shopping site publishes the day's offers at 8 AM, poll for new tile content shortly after 8 AM.
+
+If you provide a start time, the first call to the method polls for content immediately. Then, regular polling starts within 15 minutes of the provided start time.
+
+### <span id="Automatic_retry_behavior"></span><span id="automatic_retry_behavior"></span><span id="AUTOMATIC_RETRY_BEHAVIOR"></span>Automatic retry behavior
+
+The URI is polled only if the device is online. If the network is available but the URI cannot be contacted for any reason, this iteration of the polling interval is skipped, and the URI will be polled again at the next interval. If the device is in an off, sleep, or hibernated state when a polling interval is reached, the URI is polled when the device returns from its off or sleep state.
+
+## <span id="expiry"></span><span id="EXPIRY"></span>Expiration of tile and badge notifications
+
+
+By default, periodic tile and badge notifications expire three days from the time they are downloaded. When a notification expires, the content is removed from the badge, tile, or queue and is no longer shown to the user. It is a best practice to set an explicit expiration time on all periodic tile and badge notifications, using a time that makes sense for your app or notification, to ensure that the content does not persist longer than it is relevant. An explicit expiration time is essential for content with a defined life span. It also assures the removal of stale content if your cloud service becomes unreachable, or if the user disconnects from the network for an extended period of time.
+
+Your cloud service sets an expiration date and time for a notification by including the X-WNS-Expires HTTP header in the response payload. The X-WNS-Expires HTTP header conforms to the [HTTP-date format](http://go.microsoft.com/fwlink/p/?linkid=253706). For more information, see [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) or [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945).
+
+For example, during a stock market's active trading day, you can set the expiration for a stock price update to twice that of your polling interval (such as one hour after receipt if you are polling every half-hour). As another example, a news app might determine that one day is an appropriate expiration time for a daily news tile update.
+
+## <span id="taggo"></span><span id="TAGGO"></span>Periodic notifications in the notification queue
+
+
+You can use periodic tile updates with [notification cycling](https://msdn.microsoft.com/library/windows/apps/hh781199). By default, a tile on the Start screen shows the content of a single notification until it is replaced by a new notification. When you enable cycling, up to five notifications are maintained in a queue and the tile cycles through them.
+
+If the queue has reached its capacity of five notifications, the next new notification replaces the oldest notification in the queue. However, by setting tags on your notifications, you can affect the queue's replacement policy. A tag is an app-specific, case-insensitive string of up to 16 alphanumeric characters, specified in the [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP header in the response payload. Windows compares the tag of an incoming notification with the tags of all notifications already in the queue. If a match is found, the new notification replaces the queued notification with the same tag. If no match is found, the default replacement rule is applied and the new notification replaces the oldest notification in the queue.
+
+You can use notification queuing and tagging to implement a variety of rich notification scenarios. For example, a stock app could send five notifications, each about a different stock and each tagged with a stock name. This prevents the queue from ever containing two notifications for the same stock, the older of which is out of date.
+
+For more information, see [Using the notification queue](https://msdn.microsoft.com/library/windows/apps/hh781199).
+
+### <span id="Enabling_the_notification_queue"></span><span id="enabling_the_notification_queue"></span><span id="ENABLING_THE_NOTIFICATION_QUEUE"></span>Enabling the notification queue
+
+To implement a notification queue, first enable the queue for your tile (see [How to use the notification queue with local notifications](https://msdn.microsoft.com/library/windows/apps/hh465429)). The call to enable the queue needs to be done only once in your app's lifetime, but there is no harm in calling it each time your app is launched.
+
+### <span id="Polling_for_more_than_one_notification_at_a_time"></span><span id="polling_for_more_than_one_notification_at_a_time"></span><span id="POLLING_FOR_MORE_THAN_ONE_NOTIFICATION_AT_A_TIME"></span>Polling for more than one notification at a time
+
+You must provide a unique URI for each notification that you'd like Windows to download for your tile. By using the [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) method, you can provide up to five URIs at once for use with the notification queue. Each URI is polled for a single notification payload, at or near the same time. Each polled URI can return its own expiration and tag value.
+
+## <span id="related_topics"></span>Related topics
+
+
+* [Guidelines for periodic notifications](https://msdn.microsoft.com/library/windows/apps/hh761461)
+* [How to set up periodic notifications for badges](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [How to set up periodic notifications for tiles](https://msdn.microsoft.com/library/windows/apps/hh761476)
+ 
+
+ 
+
+
 
 

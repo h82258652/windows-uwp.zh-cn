@@ -1,89 +1,85 @@
 ---
+author: mcleblanc
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
-description: 本文指导你完成针对各种部署和调试目标的步骤。
-title: 部署和调试通用 Windows 平台 (UWP) 应用
+description: This article guides you through the steps to target various deployment and debugging targets.
+title: Deploying and debugging Universal Windows Platform (UWP) apps
 ---
 
-# 部署和调试通用 Windows 平台 (UWP) 应用
+# Deploying and debugging Universal Windows Platform (UWP) apps
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本文指导你完成针对各种部署和调试目标的步骤。
+This article guides you through the steps to target various deployment and debugging targets.
 
-Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试通用 Windows 平台 (UWP) 应用。 Visual Studio 将处理在目标设备上生成和注册应用程序的过程。
+Microsoft Visual Studio allows you to deploy and debug your Universal Windows Platform (UWP) apps on a variety of Windows 10 devices. Visual Studio will handle the process of building and registering the application on the target device.
 
-## 选取部署目标
+## Picking a deployment target
 
-若要选取目标，请导航到**“开始调试”**按钮旁边的调试目标下拉列表，然后选择你想要将应用程序部署到的目标。 选取目标后，选择**“开始调试 (F5)”**以在该目标上进行部署和调试，或者按**“Ctrl+F5”**以仅对该目标进行部署。
+To pick a target, navigate to the debug target dropdown next to the **Start Debugging** button and select which target you want to deploy your application to. After the target is selected, choose **Start Debugging (F5)** to deploy and debug on that target, or press **Ctrl+F5** to just deploy to that target.
 
 ![](images/debug-device-target-list.png)
 
--   **“本地计算机”**会将应用程序部署到当前开发计算机。 仅当你的应用程序的**“目标平台最小版本”**小于或等于你的开发计算机操作系统版本时，此选项才可用。
--   **“仿真器”**会将应用程序部署到当前开发计算机上的仿真环境。 仅当你的应用程序的**“目标平台最小版本”**小于或等于你的开发计算机操作系统版本时，此选项才可用。
--   **“设备”**会将应用程序部署到 USB 连接设备。 该设备必须已针对开发人员解锁，并且已解锁屏幕。
--   “仿真器”****目标会使用名称中指定的配置将应用程序启动并部署到仿真器。 仿真器仅适用于运行 Windows 8.1 或更高版本且支持 Hyper-V 的计算机。
--   **“远程计算机”**允许你指定要部署应用程序的远程目标。 可以在[指定远程设备](#specifying-a-remote-device)中找到有关部署到远程计算机的详细信息。
+-   **Local Machine** will deploy the application to your current development machine. This option is only available if your application's **Target Platform Min. Version** is less than or equal to the operating system on your development machine.
+-   **Simulator** will deploy the application to a simulated environment on your current development machine. This option is only available if your application's **Target Platform Min. Version** is less than or equal to the operating system on your development machine.
+-   **Device** will deploy the application to a USB connected device. The device must be developer unlocked and have the screen unlocked.
+-   An **Emulator** target will boot up and deploy the application to an emulator with the configuration specified in the name. Emulators are only available on Hyper-V enabled machines running Windows 8.1 or beyond.
+-   **Remote Machine** will let you specify a remote target to deploy the application. More information about deploying to a remote machine can be found in [Specifying a remote device](#specifying-a-remote-device).
 
-## 指定远程设备
+## Specifying a remote device
 
-### C# 和 Microsoft Visual Basic
+### C# and Microsoft Visual Basic
 
-若要指定适用于 C# 或 Microsoft Visual Basic 应用的远程计算机，请在调试目标下拉列表中选择**“远程计算机”**。 **“远程连接”**对话框将会出现，这将允许你指定 IP 地址或选择一台已发现的设备。 默认情况下，选择**“通用”**身份验证模式。 若要确定要使用的身份验证模式，请参阅[身份验证模式](#authentication-modes)。
+To specify a remote machine for C# or Microsoft Visual Basic apps, select **Remote Machine** in the debug target dropdown. The **Remote Connections** dialog will appear which will let you specify an IP Address or select a discovered device. By default, the **Universal** authentication mode is selected. To determine which authentication mode to use, see [Authentication modes](#authentication-modes).
 
 ![](images/debug-remote-connections.png)
 
-若要返回到此对话框，可以打开项目属性，然后导航到**“调试”**选项卡。 从此处，选择“远程计算机:”****旁边的“查找...”****
+To return to this dialog, you can open project properties and navigate to the **Debug** tab. From there, select **Find…** next to **Remote machine:**
 
 ![](images/debug-remote-machine-config.png)
 
-若要将应用程序部署到远程电脑，你还需要在目标电脑上下载并安装 Visual Studio 远程工具。 有关完整说明，请参阅[远程电脑说明](#remote-pc-instructions)。
+To deploy an application to a remote PC, you will also need to download and install the Visual Studio Remote Tools on the target PC. See [Remote PC instructions](#remote-pc-instructions) for full instructions.
 
-### C++ 和 JavaScript
+### C++ and JavaScript
 
-若要指定适用于 C++ 或 JavaScript UWP 应用的远程计算机目标，通过右键单击**“解决方案资源管理器”**中的项目并单击**“属性”**来转到项目属性。 导航到**“调试”**设置，并将**“要启动的调试器”**更改为**“远程计算机”**。 然后填写**“计算机名称”**（或单击**“定位...”**以查找计算机），并设置**“身份验证类型”**属性。
+To specify a remote machine target for a C++ or JavaScript UWP app, go to project properties by right clicking on the project in the **Solution Explorer**, and clicking **Properties**. Navigate to **Debugging** settings and change **Debugger to launch** to **Remote Machine**. Then fill in the **Machine Name** (or click **Locate…** to find one) and set the **Authentication Type** property.
 
 ![](images/debug-property-pages.png)
-指定计算机后，可以在调试目标下拉列表中选择**“远程计算机”**，以返回到指定的计算机。 一次只能选择一台远程计算机。
+After the machine is specified, you can select **Remote Machine** in the debug target dropdown to return to that specified machine. Only one remote machine can be selected at a time.
 
-### 远程电脑说明
+### Remote PC instructions
 
-若要部署到远程电脑，目标电脑上必须已安装 Visual Studio 远程工具。 远程电脑上运行的 Windows 版本还必须大于或等于你的应用**“目标平台最小版本”**属性。 在安装了远程工具之后，还必须启动目标电脑上的远程调试器。 若要执行此操作，请在**“开始”**菜单中搜索**“远程调试器”**、启动它，然后在系统提示时允许该调试器配置你的防火墙设置。 默认情况下，调试器启动时会执行 Windows 身份验证。 如果两台电脑上的登录用户不是同一人，会要求用户提供凭据。 若要将它更改为**“无身份验证”**，请在**“远程调试器”**中转到**“工具”**->**“选项”**，然后将它设置为**“无身份验证”**。 远程调试器完成设置后，可以从开发计算机进行部署。
+To deploy to a remote PC, the target PC must have the Visual Studio Remote Tools installed. The remote PC must also be running a version of Windows that is greater than or equal to your apps **Target Platform Min. Version** property. Once you have installed the remote tools, you must launch the remote debugger on the target PC. To do this, search for **Remote Debugger** in the **Start** menu launch it, and if prompted allow the debugger to configure your firewall settings. By default, the debugger launches with Windows authentication. This will require user credentials if the logged in user is not the same on both PCs. To change it to **No authentication**, go to **Tools** -&gt; **Options** in the **Remote Debugger** and set it to **No Authentication**. Once the remote debugger is setup, you can deploy from your development machine.
 
-有关详细信息，请参阅[Visual Studio 远程工具]( http://go.microsoft.com/fwlink/?LinkId=717039)下载页。
+For more information see the [Remote Tools for Visual Studio]( http://go.microsoft.com/fwlink/?LinkId=717039) download page.
 
-## 身份验证模式
+## Authentication modes
 
-有三个身份验证模式可用于远程计算机部署：
+There are three authentication modes for remote machine deployment:
 
-- “通用(未加密协议)”****：只要部署到的远程设备不是 Windows 电脑（台式机或笔记本电脑），就使用此身份验证模式。 当前，仅限 IoT 设备。 仅应在信任的网络上使用通用（未加密协议）。 调试连接对于恶意用户来说容易遭受攻击，这些用户可以截获和更改在开发与远程计算机之间传递的数据。
-- “Windows”****：此身份验证模式仅适用于远程电脑部署（台式机或笔记本电脑）。 当你有权访问目标计算机的登录用户的凭据时，使用此身份验证模式。 这是适用于远程部署的最安全通道。
-- “无”****：此身份验证模式仅适用于远程电脑部署（台式机或笔记本电脑）。 当在登录测试帐户的环境中设置测试计算机并且无法输入凭据时，使用此身份验证模式。 确保远程调试器设置已设置为接受“无身份验证”。
+- **Universal (Unencrypted Protocol)**: Use this authentication mode whenever you are deploying to a remote device that is not a Windows PC (desktop or laptop). Currently, this is only IoT devices. Universal (Unencrypted Protocol) should only be used on trusted networks. The debugging connection is vulnerable to malicious users who could intercept and change data being passed between the development and remote machine.
+- **Windows**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have access to the credentials of the logged in user of the target machine. This is the most secure channel for remote deployment.
+- **None**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have a test machine setup in an environment that has a test account logged in and you cannot enter the credentials. Make sure the remote debugger settings are set to accept no authentication.
 
-## 调试选项
+## Debugging options
 
-在 Windows 10 中，通过使用称为[预启动](https://msdn.microsoft.com/library/windows/apps/Mt593297)的技术主动启动应用并随后暂停该应用来改进 UWP 应用的启动性能。 许多应用程序不需要执行任何特殊操作就可在此模式下工作，但某些应用程序可能需要调整它们的行为。 若要帮助调试这些代码路径中的任何问题，你可以从 Visual Studio 中在预启动模式下开始调试该应用。 在 Visual Studio 项目（**“调试”**->**“其他调试目标”**->**“调试通用 Windows 应用预启动”**）和计算机上已安装的应用（**“调试”**->**“其他调试目标”**->**”调试安装的应用包”**，并选中**“激活具有预启动的应用”**复选框）中都支持调试。 有关详细信息，请阅读有关如何[调试 UWP 预启动]( http://go.microsoft.com/fwlink/?LinkId=717245)的信息。
+On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](https://msdn.microsoft.com/library/windows/apps/Mt593297). Many applications will not need to do anything special to work in this mode, but some applications may need to adjust their behavior. To help debug any issues in these code paths you can start debugging the app from Visual Studio in prelaunch mode. Debugging is supported both from a Visual Studio project (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Universal Windows App Prelaunch**), and for apps already installed on the machine (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Installed App Package**, and check the box for **Activate app with Prelaunch**). For more information read about how to [Debug UWP Prelaunch]( http://go.microsoft.com/fwlink/?LinkId=717245).
 
-可以在启动项目的**“调试”**属性页上设置以下部署选项。
+You can set the following deployment options on the **Debug** property page of the startup project.
 
-**允许网络环回**
+**Allow Network Loopback**
 
-出于安全原因，以标准方式安装的 UWP 应用不允许对安装了它的设备进行网络调用。 默认情况下，Visual Studio 部署针对已部署应用从此规则创建豁免。 此豁免允许你在单台计算机上测试通信过程。 将你的应用提交至 Windows 应用商店之前，应对不具有豁免的应用进行测试。
+For security reasons, a UWP app that is installed in the standard manner is not allowed to make network calls to the device it is installed on. By default, Visual Studio deployment creates an exemption from this rule for the deployed app. This exemption allows you to test communication procedures on a single machine. Before submitting your app to the Windows Store, you should test your app without the exemption.
 
-若要从应用中删除网络环回豁免：
+To remove the network loopback exemption from the app:
 
--   在 C# 和 Visual Basic**“调试”**属性页上，清除**“允许网络环回”**复选框。
--   在 JavaScript 和 C++**“调试”**属性页上，将**“允许网络环回”**值设置为**“否”**。
+-   On the C# and Visual Basic **Debug** property page, clear the **Allow Network Loopback** check box.
+-   On the JavaScript and C++ **Debugging** property page, set the **Allow Network Loopback** value to **No**.
 
-**不启动，但在开始时调试我的代码（C# 和 Visual Basic）/启动应用（JavaScript 和 C++）**
+**Do not launch, but debug my code when it starts (C# and Visual Basic) / Launch App (JavaScript and C++)**
 
-若要将部署配置为启动应用时自动开始一个调试会话：
+To configure the deployment to automatically start a debugging session when the app is launched:
 
--   在 C# 和 Visual Basic**“调试”**属性页上，选中**“不启动，但在开始时调试我的代码”**复选框。
--   在 JavaScript 和 C++**“调试”**属性页上，将**“启动应用程序”**值设置为**“是”**。
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+-   On the C# and Visual Basic **Debug** property page, check the **Do not launch, but debug my code when it starts** check box.
+-   On the JavaScript and C++ **Debugging** property page, set the **Launch Application** value to **Yes**.
 
 

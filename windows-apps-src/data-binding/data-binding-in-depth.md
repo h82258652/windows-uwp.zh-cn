@@ -1,59 +1,58 @@
 ---
+author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
-title: 深入了解数据绑定
-description: 数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。
+title: Data binding in depth
+description: Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data.
 ---
-# 深入了解数据绑定
+# Data binding in depth
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+** Important APIs **
 
--   [**Binding 类**](https://msdn.microsoft.com/library/windows/apps/BR209820)
+-   [**Binding class**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-**注意** 本主题将详细介绍数据绑定功能。 有关既简短又实用的简介，请参阅[数据绑定概述](data-binding-quickstart.md)。
+**Note**  This topic describes data binding features in detail. For a short, practical introduction, see [Data binding overview](data-binding-quickstart.md).
 
- 
+ 
 
-数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。 借助数据绑定，你可以将关注的数据从关注的 UI 中分离开来，从而可形成一个更简易的概念模型，并且使你的应用拥有更好的可读性、可测试性和可维护性。
+Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data. Data binding allows you to separate the concern of data from the concern of UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app.
 
-当 UI首次显示时，你可以使用数据绑定以仅显示来自数据源的值，但不会对这些值中的更改做出响应。 这称为一次性绑定，非常适合在运行时期间其值不会更改的数据。 或者，你可以选择“观察”值并在其更改时更新 UI。 这称为单向绑定，非常适合只读数据。 最后，你可以选择观察并更新，以便用户在 UI 中对值所做的更改能自动传回数据源。 这称为双向绑定，非常适合读写数据。 下面是一些示例。
+You can use data binding to simply display values from a data source when the UI is first shown, but not to respond to changes in those values. This is called one-time binding, and it works well for data whose values don't change during run-time. Additionally, you can choose to "observe" the values and to update the UI when they change. This is called one-way binding, and it works well for read-only data. Ultimately, you can choose to both observe and update, so that changes that the user makes to values in the UI are automatically pushed back into the data source. This is called two-way binding, and it works well for read-write data. Here are some examples.
 
--   你可以使用一次性绑定，将 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 绑定到当前用户的照片。
--   你可以使用单向绑定，将 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 绑定到按报纸剪辑分组的实时新闻报道的集合。
--   你可以使用双向绑定，将 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 绑定到表单中的客户名称。
+-   You could use one-time binding to bind an [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) to the current user's photo.
+-   You could use one-way binding to bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to a collection of real-time news articles grouped by newspaper section.
+-   You could use two-way binding to bind a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) to a customer's name in a form.
 
-有两种类型的绑定，它们通常都在 UI 标记中进行声明。 你既可以选用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，也可以选用 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 还可以在同一应用中（甚至是同一 UI 元素上）混合使用这两个标记扩展。 {x:Bind} 是 Windows 10 的新增内容，且具备更好的性能。 {Binding} 具有更多功能。 除非另有明确说明，否则本主题中介绍的所有详细信息均适用于这两种绑定。
+There are two kinds of binding, and they're both typically declared in UI markup. You can choose to use either the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783) or the [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782). And you can even use a mixture of the two in the same app—even on the same UI element. {x:Bind} is new for Windows 10 and it has better performance. {Binding} has more features. All the details described in this topic apply to both kinds of binding unless we explicitly say otherwise.
 
-**用于演示 {x:Bind} 的应用示例**
+**Sample apps that demonstrate {x:Bind}**
 
--   [{x:Bind} 示例](http://go.microsoft.com/fwlink/p/?linkid=619989)。
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)。
--   [XAML UI 基本示例](http://go.microsoft.com/fwlink/p/?linkid=619992)。
+-   [{x:Bind} sample](http://go.microsoft.com/fwlink/p/?linkid=619989).
+-   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
+-   [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?linkid=619992).
 
-**用于演示 {Binding} 的应用示例**
+**Sample apps that demonstrate {Binding}**
 
--   下载 [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) 应用。
--   下载 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 应用。
+-   Download the [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) app.
+-   Download the [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) app.
 
-每个绑定均由以下部分构成
-------------------------------------
+## Every binding involves these pieces
 
--   *绑定源*。 这是用于绑定的数据源，它可以是任意类的实例，其中该类具有其值要显示在 UI 中的成员。
--   *绑定目标*。 这是显示数据的 UI 中 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)。
--   *绑定对象*。 这是用于将数据值从绑定源传递给绑定目标（或从绑定目标传递回绑定源）的组件。 绑定对象通过 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 或 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 标记扩展在 XAML 加载时进行创建。
+-   A *binding source*. This is the source of the data for the binding, and it can be an instance of any class that has members whose values you want to display in your UI.
+-   A *binding target*. This is a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362) of the [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) in your UI that displays the data.
+-   A *binding object*. This is the piece that transfers data values from the source to the target, and optionally from the target back to the source. The binding object is created at XAML load time from your [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) or [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) markup extension.
 
-在以下部分中，我们将进一步探讨绑定源、绑定目标和绑定对象。 我们将这些部分与关于将按钮内容绑定到名为 **NextButtonText** 的字符串属性（这属于名为 **HostViewModel** 的类）的示例链接在一起。
+In the following sections, we'll take a closer look at the binding source, the binding target, and the binding object. And we'll link the sections together with the example of binding a button's content to a string property named **NextButtonText**, which belongs to a class named **HostViewModel**.
 
-绑定源
---------------
+### Binding source
 
-下面是一个非常基础的可用作绑定源的类实现。
+Here's a very rudimentary implementation of a class that we could use as a binding source.
 
-**注意** 如果要将 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 与 Visual C++ 组件扩展 (C++/CX) 结合使用，你需要将 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 属性添加到你的绑定源类。 如果使用的是 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，则不需要该属性。 有关代码段的信息，请参阅[添加详细信息视图](data-binding-quickstart.md#adding-a-details-view)。
+**Note**  If you're using [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) with Visual C++ component extensions (C++/CX) then you'll need to add the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute to your binding source class. If you're using [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) then you don't need that attribute. See [Adding a details view](data-binding-quickstart.md#adding-a-details-view) for a code snippet.
 
 ```csharp
 public class HostViewModel
@@ -67,13 +66,13 @@ public class HostViewModel
 }
 ```
 
-**HostViewModel** 及其属性 **NextButtonText** 的实现仅适用于一次性绑定。 而单向绑定和双向绑定也极为常见，在这两种绑定中，UI 会自动更新以响应绑定源的数据值的更改。 为了让这些类型的绑定能正常工作，需要使绑定源对绑定对象“可观察”。 因此在我们的示例中，如果我们希望单向或双向绑定到 **NextButtonText** 属性，则该属性值在运行时所发生的任何更改均需对绑定对象可观察。
+That implementation of **HostViewModel**, and its property **NextButtonText**, are only appropriate for one-time binding. But one-way and two-way bindings are extremely common, and in those kinds of binding the UI automatically updates in response to changes in the data values of the binding source. In order for those kinds of binding to work correctly, you need to make your binding source "observable" to the binding object. So in our example, if we want to one-way or two-way bind to the **NextButtonText** property, then any changes that happen at run-time to the value of that property need to be made observable to the binding object.
 
-执行此操作的方法之一是，从 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356) 派生代表绑定源的类，并通过 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362) 公开数据值。 以上就是 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 成为可观察绑定源的方式。 **FrameworkElements** 即时可用，是很好的绑定源。
+One way of doing that is to derive the class that represents your binding source from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356), and expose a data value through a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362). That's how a [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) becomes observable. **FrameworkElements** are good binding sources right out of the box.
 
-让类成为可观察绑定源，以及成为类（已拥有基类）的必需项的更便捷方法是实现 [**System.ComponentModel.INotifyPropertyChanged**](T:System.ComponentModel.INotifyPropertyChanged)。 实际上，这仅涉及到实现一个名为 **PropertyChanged** 的事件。 下面展示了使用 **HostViewModel** 的示例。
+A more lightweight way of making a class observable—and a necessary one for classes that already have a base class—is to implement [**System.ComponentModel.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx). This really just involves implementing a single event named **PropertyChanged**. An example using **HostViewModel** is below.
 
-**注意** 对于 C++/CX，应实现 [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)，并且绑定源类必须具有 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 或实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。
+**Note**  For C++/CX, you implement [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), and the binding source class must either have the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) or implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
 
 ``` csharp
 public class HostViewModel : INotifyPropertyChanged
@@ -105,9 +104,9 @@ public class HostViewModel : INotifyPropertyChanged
 }
 ```
 
-现在，**NextButtonText** 属性可供观察。 当创作到该属性的单向或双向绑定（将在稍后介绍操作方法）时，生成的绑定对象将订阅 **PropertyChanged** 事件。 引发该事件后，绑定对象的处理程序将接收一个包含已更改的属性名的参数。 这是绑定对象知道已更改和重新读取的属性值的方式。
+Now the **NextButtonText** property is observable. When you author a one-way or a two-way binding to that property (we'll show how later), the resulting binding object subscribes to the **PropertyChanged** event. When that event is raised, the binding object's handler receives an argument containing the name of the property that has changed. That's how the binding object knows which property's value to go and read again.
 
-这样你便无需多次实现上面所示的模式，只需从 [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) 示例（位于“Common”文件夹中）提供的 **BindableBase** 基类派生即可。 下面是具体操作的一个示例。
+So that you don't have to implement the pattern shown above multiple times, you can just derive from the **BindableBase** bass class that you'll find in the [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) sample (in the "Common" folder). Here's an example of how that looks.
 
 ``` csharp
 public class HostViewModel : BindableBase
@@ -127,39 +126,37 @@ public class HostViewModel : BindableBase
 }
 ```
 
-通过使用 [**String.Empty**](T:System.String) 或 **null** 参数引发 **PropertyChanged** 事件，以指示对象上的所有非索引器属性应重新读取。 可以通过将“Item\[*indexer*\]”的参数用于特定索引器（其中 *indexer* 是索引值），或将“Item\[\]”的值用于所有索引器，引发该事件以指示对象上的索引器属性已更改。
+Raising the **PropertyChanged** event with an argument of [**String.Empty**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.empty.aspx) or **null** indicates that all non-indexer properties on the object should be re-read. You can raise the event to indicate that indexer properties on the object have changed by using an argument of "Item\[*indexer*\]" for specific indexers (where *indexer* is the index value), or a value of "Item\[\]" for all indexers.
 
-可以将绑定源视为其属性中包含数据的单个对象或一些对象的集合。 在 C# 和 Visual Basic 代码中，可以一次性绑定到实现 [**List(Of T)**](T:System.Collections.Generic.List%601) 的对象，以显示运行时未更改的集合。 对于可观察集合（在将项添加到集合或从集合中删除时进行观察），应改为单向绑定到 [**ObservableCollection(Of T)**](T:System.Collections.ObjectModel.ObservableCollection%601)。 在 C++ 代码中，对于可观察集合和不可观察集合，均可绑定到 [**Vector<T>**](https://msdn.microsoft.com/en-us/library/dn858385.aspx)。 若要绑定到你自己的集合类，请按照下表中的指南进行操作。
+A binding source can be treated either as a single object whose properties contain data, or as a collection of objects. In C# and Visual Basic code, you can one-time bind to an object that implements [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx) to display a collection that does not change at run-time. For an observable collection (observing when items are added to and removed from the collection), one-way bind to [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) instead. In C++ code, you can bind to [**Vector&lt;T&gt;**](https://msdn.microsoft.com/library/dn858385.aspx) for both observable and non-observable collections. To bind to your own collection classes, use the guidance in the following table.
 
-| 方案                                                        | C# 和 VB (CLR)                                                                                                                                                                                                                                                                                                                                                                                                                   | C++/CX                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Scenario                                                        | C# and VB (CLR)                                                                                                                                                                                                                                                                                                                                                                                                                   | C++/CX                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 绑定到对象。                                              | 可以为任何对象。                                                                                                                                                                                                                                                                                                                                                                                                                 | 对象必须具有 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 或实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。                                                                                                                                                                                                                                                                                                             |
-| 从绑定对象中获取属性更改更新。                | 对象必须实现 [**System.ComponentModel. INotifyPropertyChanged**](T:System.ComponentModel.INotifyPropertyChanged)。                                                                                                                                                                                                                                                                                                         | 对象必须实现 [**Windows.UI.Xaml.Data. INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)。                                                                                                                                                                                                                                                                                                                                                           |
-| 绑定到集合。                                           | [**List(Of T)**](T:System.Collections.Generic.List%601)                                                                                                                                                                                                                                                                                                                                                                            | [**Platform::Collections::Vector<T>**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
-| 从绑定集合中获取集合更改更新。          | [**ObservableCollection(Of T)**](T:System.Collections.ObjectModel.ObservableCollection%601)                                                                                                                                                                                                                                                                                                                                        | [**Platform::Collections::Vector<T>**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
-| 实现支持绑定的集合。                   | 扩展 [**List(Of T)**](T:System.Collections.Generic.List%601) 或者实现 [**IList**](T:System.Collections.IList)、[**IList**](T:System.Collections.Generic.IList%601)(Of [**Object**](T:System.Object))、[**IEnumerable**](T:System.Collections.IEnumerable) 或 [**IEnumerable**](T:System.Collections.Generic.IEnumerable%601)(Of **Object**)。 绑定到通用 **IList(Of T)** 和 **IEnumerable(Of T)** 的操作不受支持。 | 实现 [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979)、[**IBindableIterable**](https://msdn.microsoft.com/library/windows/apps/Hh701957)、[**IVector**](https://msdn.microsoft.com/library/windows/apps/BR206631)<[**Object**](T:System.Object)^>、[**IIterable**](https://msdn.microsoft.com/library/windows/apps/BR226024)<**Object**^>、**IVector**<[**IInspectable**](https://msdn.microsoft.com/library/BR205821)\*> 或 **IIterable**<**IInspectable**\*>。 绑定到通用 **IVector<T>** 和 **IIterable<T>** 的操作不受支持。 |
-| 实现支持集合更改更新的集合。 | 扩展 [**ObservableCollection(Of T)**](T:System.Collections.ObjectModel.ObservableCollection%601) 或实现（非通用）[**IList**](T:System.Collections.IList) 和 [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged)。                                                                                                                                                               | 实现 [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979) 和 [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974)。                                                                                                                                                                                                                                                                                                                       |
-| 实现支持增量加载的集合。       | 扩展 [**ObservableCollection(Of T)**](T:System.Collections.ObjectModel.ObservableCollection%601) 或实现（非通用）[**IList**](T:System.Collections.IList) 和 [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged)。 此外，还实现 [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)。                                                          | 实现 [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979)、[**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974) 和 [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)。                                                                                                                                                                                                                                         |
+| Bind to an object.                                              | Can be any object.                                                                                                                                                                                                                                                                                                                                                                                                                 | Object must have [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) or implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).                                                                                                                                                                                                                                                                                                             |
+| Get property change updates from a bound object.                | Object must implement [**System.ComponentModel. INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx).                                                                                                                                                                                                                                                                                                         | Object must implement [**Windows.UI.Xaml.Data. INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899).                                                                                                                                                                                                                                                                                                                                                           |
+| Bind to a collection.                                           | [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx)                                                                                                                                                                                                                                                                                                                                                                            | [**Platform::Collections::Vector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
+| Get collection change updates from a bound collection.          | [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)                                                                                                                                                                                                                                                                                                                                        | [**Platform::Collections::Vector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
+| Implement a collection that supports binding.                   | Extend [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx) or implement [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx), [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/5y536ey6.aspx)(Of [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx)), [**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ienumerable.aspx), or [**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/9eekhta0.aspx)(Of **Object**). Binding to generic **IList(Of T)** and **IEnumerable(Of T)** is not supported. | Implement [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979), [**IBindableIterable**](https://msdn.microsoft.com/library/windows/apps/Hh701957), [**IVector**](https://msdn.microsoft.com/library/windows/apps/BR206631)&lt;[**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx)^&gt;, [**IIterable**](https://msdn.microsoft.com/library/windows/apps/BR226024)&lt;**Object**^&gt;, **IVector**&lt;[**IInspectable**](https://msdn.microsoft.com/library/BR205821)\*&gt;, or **IIterable**&lt;**IInspectable**\*&gt;. Binding to generic **IVector&lt;T&gt;** and **IIterable&lt;T&gt;** is not supported. |
+| Implement a collection that supports collection change updates. | Extend [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) or implement (non-generic) [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) and [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx).                                                                                                                                                               | Implement [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979) and [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974).                                                                                                                                                                                                                                                                                                                       |
+| Implement a collection that supports incremental loading.       | Extend [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) or implement (non-generic) [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) and [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx). Additionally, implement [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916).                                                          | Implement [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979), [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974), and [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916).                                                                                                                                                                                                                                         |
 
- 
-你可以使用增量加载将列表控件绑定到任意的大型数据源，且仍获得高性能。 例如，你可以将列表控件绑定到必应图像查询结果，而无需一次性加载所有结果。 你只需立即加载部分结果，再根据需要加载其他结果。 为支持增量加载，你必须在支持集合更改通知的数据源上实现 [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)。 当数据绑定引擎请求更多数据时，你的数据源必须发出相应的请求、集成结果，然后发送相应的通知以更新 UI。
+ 
+You can bind list controls to arbitrarily large data sources, and still achieve high performance, by using incremental loading. For example, you can bind list controls to Bing image query results without having to load all the results at once. Instead, you load only some results immediately, and load additional results as needed. To support incremental loading, you must implement [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) on a data source that supports collection change notification. When the data binding engine requests more data, your data source must make the appropriate requests, integrate the results, and then send the appropriate notifications in order to update the UI.
 
-绑定目标
---------------
+### Binding target
 
-在下面的两个示例中，**Button.Content** 属性是绑定目标，并且其值已设置为用于声明绑定对象的标记扩展。 首先显示的是 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，然后是 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 在标记中声明绑定这一做法很常见（其既便捷、易读又很实用）。 不过，应避免标记和以命令性方式（编程方式）创建 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 类的实例（除非需要）。
+In the two examples below, the **Button.Content** property is the binding target, and its value is set to a markup extension which declares the binding object. First [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) is shown, and then [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Declaring bindings in markup is the common case (it's convenient, readable, and toolable). But you can avoid markup and imperatively (programmatically) create an instance of the [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) class instead if you need to.
 
 <!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
 ``` xml
-<Button Content="{x:Bind ...}" ... /> 
+<Button Content="{x:Bind ...}" ... />
 ```
 
 ``` xml
-<Button Content="{Binding ...}" ... /> 
+<Button Content="{Binding ...}" ... />
 ```
 
-Binding object declared using {x:Bind}
---------------------------------------
+### Binding object declared using {x:Bind}
 
 There's one step we need to do before we author our [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) markup. We need to expose our binding source class from the class that represents our page of markup. We do that by adding a property (of type **HostViewModel** in this case) to our **HostView** page class.
 
@@ -177,7 +174,9 @@ namespace QuizGame.View
         public HostViewModel ViewModel { get; set; }
     }
 }
-``` 该操作完成后，即可立即仔细查看声明绑定对象的标记。 下面的示例使用与前面“绑定目标”部分中所使用的相同 **Button.Content** 绑定目标，并演示了将其绑定到 **HostViewModel.NextButtonText** 属性。
+```
+
+That done, we can now take a closer look at the markup that declares the binding object. The example below uses the same **Button.Content** binding target we used in the "Binding target" section earlier, and shows it being bound to the **HostViewModel.NextButtonText** property.
 
 ``` xml
 <Page x:Class="QuizGame.View.HostView" ... >
@@ -187,9 +186,9 @@ namespace QuizGame.View
 
 Notice the value that we specify for **Path**. This value is interpreted in the context of the page itself, and in this case the path begins by referencing the **ViewModel** property that we just added to the **HostView** page. That property returns a **HostViewModel** instance, and so we can dot into that object to access the **HostViewModel.NextButtonText** property. And we specify **Mode**, to override the [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) default of one-time.
 
-The [**Path**](https://msdn.microsoft.com/library/windows/apps/BR209820-path) property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586). Binding to string indexers gives you the effect of binding to dynamic properties without having to implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). For other settings, see [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783).
+The [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586). Binding to string indexers gives you the effect of binding to dynamic properties without having to implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). For other settings, see [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783).
 
-**Note**  Changes to [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/BR209683-text) are sent to a two-way bound source when the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) loses focus, and not after every user keystroke.
+**Note**  Changes to [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) are sent to a two-way bound source when the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) loses focus, and not after every user keystroke.
 
 **DataTemplate and x:DataType**
 
@@ -208,15 +207,17 @@ Inside a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR24
 
 Consider for example that you have a type named SampleDataGroup, which implements a string property named Title. And you have a property MainPage.SampleDataGroupAsObject, which is of type object but which actually returns an instance of SampleDataGroup. The binding `<TextBlock Text="{x:Bind SampleDataGroupAsObject.Title}"/>` will result in a compile error because the Title property is not found on the type object. The remedy for this is to add a cast to your Path syntax like this: `<TextBlock Text="{x:Bind SampleDataGroupAsObject.(data:SampleDataGroup.Title)}"/>`. Here's another example where Element is declared as object but is actually a TextBlock: `<TextBlock Text="{x:Bind Element.Text}"/>`. And a cast remedies the issue: `<TextBlock Text="{x:Bind Element.(TextBlock.Text)}"/>`.
 
-**如果你的数据异步加载** 编译时会为你的页面在分部类中生成支持 **{x:Bind}** 的代码。 可以在 `obj` 文件夹中找到这些文件，其名称类似于（适用于 C#）“<view name>.g.cs`. The generated code includes a handler for your page's [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706-loading) event, and that handler calls the **Initialize** method on a generated class that represent's your page's bindings. **Initialize** in turn calls **Update** to begin moving data between the binding source and the target. **Loading** is raised just before the first measure pass of the page or user control. So if your data is loaded asynchronously it may not be ready by the time **Initialize** is called. So, after you've loaded data, you can force one-time bindings to be initialized by calling `this->Bindings->Update();”。 如果只需针对异步加载的数据执行一次性绑定，则使用此方法对其进行初始化比使用以下方法方便：首先进行单向绑定，然后侦听更改。 如果你的数据未经过细微的更改并且它可能作为某个特定操作的一部分进行更新，则你可以执行一次性绑定，并且通过对 **Update** 的调用随时强制执行手动更新。
+**If your data loads asynchronously**
 
-**限制** 
+Code to support **{x:Bind}** is generated at compile-time in the partial classes for your pages. These files can be found in your `obj` folder, with names like (for C#) `<view name>.g.cs`. The generated code includes a handler for your page's [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) event, and that handler calls the **Initialize** method on a generated class that represent's your page's bindings. **Initialize** in turn calls **Update** to begin moving data between the binding source and the target. **Loading** is raised just before the first measure pass of the page or user control. So if your data is loaded asynchronously it may not be ready by the time **Initialize** is called. So, after you've loaded data, you can force one-time bindings to be initialized by calling `this->Bindings->Update();`. If you only need one-time bindings for asynchronously-loaded data then it’s much cheaper to initialize them this way than it is to have one-way bindings and to listen for changes. If your data does not undergo fine-grained changes, and if it's likely to be updated as part of a specific action, then you can make your bindings one-time, and force a manual update at any time with a call to **Update**.
 
-**{x:Bind}** 既不适用于后期绑定方案（例如导航 JSON 对象的字典结构），也不适用于鸭子类型，该类型是基于属性名称的词法匹配的一种较弱形式的类型（“如果它的走路方式、游泳方式和叫声像鸭子，那么它就是一只鸭子”）。 借助鸭子类型，与 Age 属性的绑定将会同样满足 Person 或 Wine 对象。 对于这些方案，请使用 **{Binding}**。
+**Limitations**
 
-默认情况下，使用 {Binding} ---------------------------------------
+**{x:Bind}** is not suited to late-bound scenarios, such as navigating the dictionary structure of a JSON object, nor duck typing which is a weak form of typing based on lexical matches on property names ("if it walks, swims, and quacks like a duck then it's a duck"). With duck typing, a binding to the Age property would be equally satisfied with a Person or a Wine object. For these scenarios, use **{Binding}**.
 
-[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 声明的绑定对象假定绑定到标记页面的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)。 因此，我们将页面的 **DataContext** 设置为绑定源类（本例中为 **HostViewModel** 类型）的实例。 下面的示例展示了用于声明绑定对象的标记。 我们使用了与前面“绑定目标”部分中所使用的相同 **Button.Content** 绑定目标，并绑定到 **HostViewModel.NextButtonText** 属性。
+### Binding object declared using {Binding}
+
+[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) assumes, by default, that you're binding to the [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) of your markup page. So we'll set the **DataContext** of our page to be an instance of our binding source class (of type **HostViewModel** in this case). The example below shows the markup that declares the binding object. We use the same **Button.Content** binding target we used in the "Binding target" section earlier, and we bind to the **HostViewModel.NextButtonText** property.
 
 ``` xml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
@@ -245,16 +246,15 @@ Inside a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR24
   </DataTemplate>
 ```
 
-**Note**  By default, changes to [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/BR209683-text) are sent to a two-way bound source when the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) loses focus. To cause changes to be sent after every user keystroke, set **UpdateSourceTrigger** to **PropertyChanged** on the binding in markup. You can also completely take control of when changes are sent to the source by setting **UpdateSourceTrigger** to **Explicit**. You then handle events on the text box (typically [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683-textchanged)), call [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/BR208706-getbindingexpression) on the target to get a [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/BR209820expression) object, and finally call [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/BR209820expression-updatesource) to programmatically update the data source.
+**Note**  By default, changes to [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) are sent to a two-way bound source when the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) loses focus. To cause changes to be sent after every user keystroke, set **UpdateSourceTrigger** to **PropertyChanged** on the binding in markup. You can also completely take control of when changes are sent to the source by setting **UpdateSourceTrigger** to **Explicit**. You then handle events on the text box (typically [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), call [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) on the target to get a [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) object, and finally call [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) to programmatically update the data source.
 
-The [**Path**](https://msdn.microsoft.com/library/windows/apps/BR209820-path) property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586). Binding to string indexers gives you the effect of binding to dynamic properties without having to implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). The [**ElementName**](https://msdn.microsoft.com/library/windows/apps/BR209820-elementname) property is useful for element-to-element binding. The [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/BR209820-relativesource) property has several uses, one of which is as a more powerful alternative to template binding inside a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391). For other settings, see [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782) and the [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) class.
+The [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586). Binding to string indexers gives you the effect of binding to dynamic properties without having to implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). The [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) property is useful for element-to-element binding. The [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) property has several uses, one of which is as a more powerful alternative to template binding inside a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391). For other settings, see [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782) and the [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) class.
 
-What if the source and the target are not the same type?
---------------------------------------------------------
+## What if the source and the target are not the same type?
 
 If you want to control the visibility of a UI element based on the value of a boolean property, or if you want to render a UI element with a color that's a function of a numeric value's range or trend, or if you want to display a date and/or time value in a UI element property that expects a string, then you'll need to convert values from one type to another. There will be cases where the right solution is to expose another property of the right type from your binding source class, and keep the conversion logic encapsulated and testable there. But that isn't flexible nor scalable when you have large numbers, or large combinations, of source and target properties. In that case you'll want to use something known as a value converter. This section describes how to implement and consume a value converter.
 
-Here's a value converter, suitable for a one-time or a one-way binding, that converts a [**DateTime**](T:System.DateTime) value to a string value containing the month. The class implements [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
+Here's a value converter, suitable for a one-time or a one-way binding, that converts a [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) value to a string value containing the month. The class implements [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
 
 ``` csharp
 public class DateToStringConverter : IValueConverter
@@ -331,7 +331,9 @@ Public Class DateToStringConverter
 
     End Function
 End Class
-``` 下面介绍了如何在绑定对象标记中使用该值转换器。
+```
+
+And here's how you consume that value converter in your binding object markup.
 
 ``` xml
 <UserControl.Resources>
@@ -347,18 +349,17 @@ End Class
   Text="{Binding Month, Converter={StaticResource Converter1}}"/>
 ```
 
-The binding engine calls the [**Convert**](https://msdn.microsoft.com/library/windows/apps/BR209903-convert) and [**ConvertBack**](https://msdn.microsoft.com/library/windows/apps/BR209903-convertback) methods if the [**Converter**](https://msdn.microsoft.com/library/windows/apps/BR209820-converter) parameter is defined for the binding. When data is passed from the source, the binding engine calls **Convert** and passes the returned data to the target. When data is passed from the target (for a two-way binding), the binding engine calls **ConvertBack** and passes the returned data to the source.
+The binding engine calls the [**Convert**](https://msdn.microsoft.com/library/windows/apps/hh701934) and [**ConvertBack**](https://msdn.microsoft.com/library/windows/apps/hh701938) methods if the [**Converter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converter) parameter is defined for the binding. When data is passed from the source, the binding engine calls **Convert** and passes the returned data to the target. When data is passed from the target (for a two-way binding), the binding engine calls **ConvertBack** and passes the returned data to the source.
 
-The converter also has optional parameters: [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/BR209820-converterlanguage), which allows specifying the language to be used in the conversion, and [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/BR209820-converterparameter), which allows passing a parameter for the conversion logic. For an example that uses a converter parameter, see [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
+The converter also has optional parameters: [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage), which allows specifying the language to be used in the conversion, and [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter), which allows passing a parameter for the conversion logic. For an example that uses a converter parameter, see [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
 
-**Note**  If there is an error in the conversion, do not throw an exception. Instead, return [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/BR242362-unsetvalue), which will stop the data transfer.
+**Note**  If there is an error in the conversion, do not throw an exception. Instead, return [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), which will stop the data transfer.
 
 To display a default value to use whenever the binding source cannot be resolved, set the **FallbackValue** property on the binding object in markup. This is useful to handle conversion and formatting errors. It is also useful to bind to source properties that might not exist on all objects in a bound collection of heterogeneous types.
 
-If you bind a text control to a value that is not a string, the data binding engine will convert the value to a string. If the value is a reference type, the data binding engine will retrieve the string value by calling [**ICustomPropertyProvider.GetStringRepresentation**](https://msdn.microsoft.com/library/windows/apps/BR209878-getstringrepresentation) or [**IStringable.ToString**](https://msdn.microsoft.com/library/Dn302136) if available, and will otherwise call [**Object.ToString**](M:System.Object.ToString). Note, however, that the binding engine will ignore any **ToString** implementation that hides the base-class implementation. Subclass implementations should override the base class **ToString** method instead. Similarly, in native languages, all managed objects appear to implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) and [**IStringable**](https://msdn.microsoft.com/library/Dn302135). However, all calls to **GetStringRepresentation** and **IStringable.ToString** are routed to **Object.ToString** or an override of that method, and never to a new **ToString** implementation that hides the base-class implementation.
+If you bind a text control to a value that is not a string, the data binding engine will convert the value to a string. If the value is a reference type, the data binding engine will retrieve the string value by calling [**ICustomPropertyProvider.GetStringRepresentation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.icustompropertyprovider.getstringrepresentation) or [**IStringable.ToString**](https://msdn.microsoft.com/library/Dn302136) if available, and will otherwise call [**Object.ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx). Note, however, that the binding engine will ignore any **ToString** implementation that hides the base-class implementation. Subclass implementations should override the base class **ToString** method instead. Similarly, in native languages, all managed objects appear to implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) and [**IStringable**](https://msdn.microsoft.com/library/Dn302135). However, all calls to **GetStringRepresentation** and **IStringable.ToString** are routed to **Object.ToString** or an override of that method, and never to a new **ToString** implementation that hides the base-class implementation.
 
-Resource dictionaries with {x:Bind}
------------------------------------
+## Resource dictionaries with {x:Bind}
 
 The [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783) depends on code generation, so it needs a code-behind file containing a constructor that calls **InitializeComponent** (to initialize the generated code). You re-use the resource dictionary by instantiating its type (so that **InitializeComponent** is called) instead of referencing its filename. Here's an example of what to do if you have an existing resource dictionary and you want to use {x:Bind} in it.
 
@@ -393,7 +394,11 @@ namespace ExampleNamespace
         }
     }
 }
-``` MainPage.xaml ``` xml
+```
+
+MainPage.xaml
+
+``` xml
 <Page x:Class="ExampleNamespace.MainPage"
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
@@ -409,8 +414,7 @@ namespace ExampleNamespace
 </Page>
 ```
 
-Event binding and ICommand
---------------------------
+## Event binding and ICommand
 
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) supports a feature called event binding. With this feature, you can specify the handler for an event using a binding, which is an additional option on top of handling events with a method on the code-behind file. Let's say you have a **RootFrame** property on your **MainPage** class.
 
@@ -420,7 +424,9 @@ Event binding and ICommand
         ....    
         public Frame RootFrame { get { return Window.Current.Content as Frame; } }
     }
-``` 然后，你可以将按钮的 **Click** 事件绑定到由 **RootFrame** 属性返回的 **Frame** 对象上的方法，如下所示。 注意，我们还将按钮的 **IsEnabled** 属性绑定到同一 **Frame** 的另一成员。
+```
+
+You can then bind a button's **Click** event to a method on the **Frame** object returned by the **RootFrame** property like this. Note that we also bind the button's **IsEnabled** property to another member of the same **Frame**.
 
 ``` xml
     <AppBarButton Icon="Forward" IsCompact="True"
@@ -457,20 +463,23 @@ You can use the APIs in the [**Windows.Storage**](https://msdn.microsoft.com/lib
             var dataSource = fif.GetVirtualizedFilesVector();
             this.PicturesListView.ItemsSource = dataSource;
         }
-``` 通常，需要使用此方法来创建文件和文件夹信息的只读视图。 可以创建到文件和文件夹属性的双向绑定，例如，让用户在音乐视图中对歌曲进行评级。 然而，任何更改都不会永久保留，除非你调用相应的 **SavePropertiesAsync** 方法（例如，[**MusicProperties.SavePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/BR207760)）。 当项目失去焦点时，你应该提交更改，因为这样可以触发选择重置。
+```
 
-注意，使用此技术的双向绑定仅适用于索引位置（例如“音乐”）。 你可以通过调用 [**FolderInformation.GetIndexedStateAsync**](https://msdn.microsoft.com/library/windows/apps/BR207627) 方法来确定是否索引某个位置。
+You will typically use this approach to create a read-only view of file and folder info. You can create two-way bindings to the file and folder properties, for example to let users rate a song in a music view. However, any changes are not persisted until you call the appropriate **SavePropertiesAsync** method (for example, [**MusicProperties.SavePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/BR207760)). You should commit changes when the item loses focus because this triggers a selection reset.
 
-还请注意，某个虚拟化矢量可能会在填充其值之前为某些项目返回 **null**。 例如，应该首先检查 **null**，然后才能使用绑定到虚拟化矢量的列表控件的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 值，或者改为使用 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/BR209768)。
+Note that two-way binding using this technique works only with indexed locations, such as Music. You can determine whether a location is indexed by calling the [**FolderInformation.GetIndexedStateAsync**](https://msdn.microsoft.com/library/windows/apps/BR207627) method.
 
-绑定到按键分组的数据 -------------------------------- 如果获取项的简单集合（例如，由 **BookSku** 类表示的书籍）并通过将某一常见属性（例如，**BookSku.AuthorName** 属性）用作键来对项进行分组，则将该结果称为分组数据。 当对数据进行分组时，它将不再是简单集合。 分组数据是组对象的集合，其中每个组对象都具有 a) 一个键和 b) 一个其属性与该键匹配的项集合。 再以书籍为例，按作者名称对书籍进行分组的结果即为作者名称组的集合，其中每组都具有 a) 一个键（这是作者名称）和 b) 一个其 **AuthorName** 属性与组键匹配的 **BookSku** 集合。
+Note also that a virtualized vector can return **null** for some items before it populates their value. For example, you should check for **null** before you use the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) value of a list control bound to a virtualized vector, or use [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/BR209768) instead.
 
-通常情况下，若要显示集合，可将项目控件（例如 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)）的 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) 直接绑定到返回集合的属性。 如果这是项的简单集合，则无需执行任何特殊操作。 但是，如果它是组对象的集合（像在绑定到分组数据时一样），则需要使用一个名为 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 的中间对象，该对象位于项目控件和绑定源之间。 先将 **CollectionViewSource** 绑定到返回分组数据的属性，然后将项目控件绑定到 **CollectionViewSource**。 **CollectionViewSource** 的额外增值功能可用于跟踪当前项，以便你可以通过将多个项目控件全都绑定到同一 **CollectionViewSource** 来使其保持同步。 也可以通过 [**CollectionViewSource.View**](https://msdn.microsoft.com/library/windows/apps/BR209833-view) 属性返回的对象的 [**ICollectionView.CurrentItem**](https://msdn.microsoft.com/library/windows/apps/BR209857) 属性，以编程方式访问当前项。
+## Binding to data grouped by a key
 
-若要激活 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 的分组功能，请将 [**IsSourceGrouped**](https://msdn.microsoft.com/library/windows/apps/BR209833-issourcegrouped) 设置为 **true**。 是否还需要设置 [**ItemsPath**](https://msdn.microsoft.com/library/windows/apps/BR209833-itemspath) 属性完全取决于你的组对象的创作方式。 组对象的创作方式有以下两种：“属于组”模式和“包含组”模式。 在“属于组”模式中，组对象派生自集合类型（例如，**List<T>**），因此事实上组对象本身就是项目组。 使用此模式，无需设置 **ItemsPath**。 在“包含组”模式中，组对象具有一个或多个集合类型属性（例如 **List<T>**），因此“包含组”的单个项目组采用单个属性的形式（而多个项目组则采用多个属性的形式）。 使用此模式，需要将 **ItemsPath** 设置为包含项目组的属性名。
+If you take a flat collection of items—books, for example, represented by a **BookSku** class—and you group the items by using a common property as a key—the **BookSku.AuthorName** property, for example—then the result is called grouped data. When you group data, it is no longer a flat collection. Grouped data is a collection of group objects, where each group object has a) a key and b) a collection of items whose property matches that key. To take the books example again, the result of grouping the books by author name results in a collection of author name groups where each group has a) a key, which is an author name, and b) a collection of the **BookSku**s whose **AuthorName** property matches the group's key.
 
-下面的示例阐述了“包含组”模式。 页面类有一个名为 [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的属性，该属性将返回我们的视图模型的实例。 [
-            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 绑定到视图模型的 **Authors** 属性（**Authors** 是组对象的集合），还指定了它是包含分组项目的 **Author.BookSkus** 属性。 最后，[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 绑定到 **CollectionViewSource** 且具有其已定义的组样式，这样它便可以采用分组形式呈现项目。
+In general, to display a collection, you bind the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) of an items control (such as [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)) directly to a property that returns a collection. If that's a flat collection of items then you don't need to do anything special. But if it's a collection of group objects (as it is when binding to grouped data) then you need the services of an intermediary object called a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) which sits between the items control and the binding source. You bind the **CollectionViewSource** to the property that returns grouped data, and you bind the items control to the **CollectionViewSource**. An extra value-add of a **CollectionViewSource** is that it keeps track of the current item, so you can keep more than one items control in sync by binding them all to the same **CollectionViewSource**. You can also access the current item programmatically through the [**ICollectionView.CurrentItem**](https://msdn.microsoft.com/library/windows/apps/BR209857) property of the object returned by the [**CollectionViewSource.View**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.view) property.
+
+To activate the grouping facility of a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), set [**IsSourceGrouped**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.issourcegrouped) to **true**. Whether you also need to set the [**ItemsPath**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.itemspath) property depends on exactly how you author your group objects. There are two ways to author a group object: the "is-a-group" pattern, and the "has-a-group" pattern. In the "is-a-group" pattern, the group object derives from a collection type (for example, **List&lt;T&gt;**), so the group object actually is itself the group of items. With this pattern you do not need to set **ItemsPath**. In the "has-a-group" pattern, the group object has one or more properties of a collection type (such as **List&lt;T&gt;**), so the group "has a" group of items in the form of a property (or several groups of items in the form of several properties). With this pattern you need to set **ItemsPath** to the name of the property that contains the group of items.
+
+The example below illustrates the "has-a-group" pattern. The page class has a property named [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713), which returns an instance of our view model. The [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) binds to the **Authors** property of the view model (**Authors** is the collection of group objects) and also specifies that it's the **Author.BookSkus** property that contains the grouped items. Finally, the [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) is bound to the **CollectionViewSource**, and has its group style defined so that it can render the items in groups.
 
 ``` csharp
     <Page.Resources>
@@ -493,16 +502,18 @@ You can use the APIs in the [**Windows.Storage**](https://msdn.microsoft.com/lib
 
 Note that the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) must use [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) (and not [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) because it needs to set the **Source** property to a resource. To see the above example in the context of the complete app, download the [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) sample app. Unlike the markup shown above, [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) uses {Binding} exclusively.
 
-You can implement the "is-a-group" pattern in one of two ways. One way is to author your own group class. Derive the class from **List&lt;T&gt;** (where *T* is the type of the items). For example, `public class Author : List<BookSku>`. 另一种方式是，使用 [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) 表达式，从诸如 **BookSku** 项目的属性值等动态创建组对象（以及组类）。 此方法（仅维护项目的简单列表并将其动态分组在一起）是从云服务访问数据的应用的典型用法。 可以灵活地按作者或流派对书籍进行分组，而无需特殊组类，如 **Author** 和 **Genre**。
+You can implement the "is-a-group" pattern in one of two ways. One way is to author your own group class. Derive the class from **List&lt;T&gt;** (where *T* is the type of the items). For example, `public class Author : List<BookSku>`. The second way is to use a [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) expression to dynamically create group objects (and a group class) from like property values of the **BookSku** items. This approach—maintaining only a flat list of items and grouping them together on the fly—is typical of an app that accesses data from a cloud service. You get the flexibility to group books by author or by genre (for example) without needing special group classes such as **Author** and **Genre**.
 
-下面的示例使用 [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) 阐述了“属于组”模式。 在本示例中我们按流派对书籍进行分组，并在组标题中显示流派名。 这由引用组 [**Key**](P:System.Linq.IGrouping%602.Key) 的值的“Key”属性路径进行指示。
+The example below illustrates the "is-a-group" pattern using [LINQ](http://msdn.microsoft.com/library/bb397926.aspx). This time we group books by genre, displayed with the genre name in the group headers. This is indicated by the "Key" property path in reference to the group [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx) value.
 
 ``` csharp
     using System.Linq;
 
     ...
 
-    private IOrderedEnumerable<IGrouping<string, BookSku>> genres; public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
+    private IOrderedEnumerable<IGrouping<string, BookSku>> genres;
+
+    public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
     {
         get
         {
@@ -514,7 +525,8 @@ You can implement the "is-a-group" pattern in one of two ways. One way is to aut
             }
             return this.genres;
         }
-    } ```
+    }
+```
 
 Remember that when using [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) with data templates we need to indicate the type being bound to by setting an **x:DataType** value. If the type is generic then we can't express that in markup so we need to use [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) instead in the group style header template.
 
@@ -548,23 +560,21 @@ A [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/Hh702601) c
 
 When you bind to hierarchical data—such as subcategories within categories—you can choose to display the hierarchical levels in your UI with a series of items controls. A selection in one items control determines the contents of subsequent items controls. You can keep the lists synchronized by binding each list to its own [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) and binding the **CollectionViewSource** instances together in a chain. This is called a master/details (or list/details) view. For more info, see [How to bind to hierarchical data and create a master/details view](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md).
 
-Diagnosing and debugging data binding problems
------------------------------------------------
+## Diagnosing and debugging data binding problems
 
 Your binding markup contains the names of properties (and, for C#, sometimes fields and methods). So when you rename a property, you'll also need to change any binding that references it. Forgetting to do that leads to a typical example of a data binding bug, and your app either won't compile or won't run correctly.
 
-The binding objects created by [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) and [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) are largely functionally equivalent. But {x:Bind} has type information for the binding source, and it generates source code at compile-time. With {x:Bind} you get the same kind of problem detection that you get with the rest of your code. That includes compile-time validation of your binding expressions, and debugging by setting breakpoints in the source code generated as the partial class for your page. These classes can be found in the files in your `obj` folder, with names like (for C#) `<view name>.g.cs`)。 如果你有绑定方面的问题，请打开 Microsoft Visual Studio 调试器中的**出现未处理的异常时中断**。 该调试器将在该点处中断执行，以便你可以调试哪里出现了问题。 对于绑定源节点图形的每个部分，{x:Bind} 生成的代码均遵循相同的模式，你可以使用**“调用堆栈”**窗口中的信息来帮助确定导致该问题出现的调用顺序。
+The binding objects created by [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) and [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) are largely functionally equivalent. But {x:Bind} has type information for the binding source, and it generates source code at compile-time. With {x:Bind} you get the same kind of problem detection that you get with the rest of your code. That includes compile-time validation of your binding expressions, and debugging by setting breakpoints in the source code generated as the partial class for your page. These classes can be found in the files in your `obj` folder, with names like (for C#) `<view name>.g.cs`). If you have a problem with a binding then turn on **Break On Unhandled Exceptions** in the Microsoft Visual Studio debugger. The debugger will break execution at that point, and you can then debug what has gone wrong. The code generated by {x:Bind} follows the same pattern for each part of the graph of binding source nodes, and you can use the info in the **Call Stack** window to help determine the sequence of calls that led up to the problem.
 
-[
-            {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 不具有绑定源的类型信息。 但在通过附加的调试器运行你的应用时，Visual Studio 中的**“输出”**窗口中将显示所有绑定错误。
+[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) does not have type information for the binding source. But when you run your app with the debugger attached, any binding errors appear in the **Output** window in Visual Studio.
 
-使用代码创建绑定 -------------------------
+## Creating bindings in code
 
-**注意** 由于不能使用代码创建 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 绑定，因此本部分仅适用于 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 不过，使用 [**DependencyProperty.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/BR242356-registerpropertychangedcallback) 同样可以获得 {x:Bind} 的某些相同优势，这使你可以在任何依赖属性上注册更改通知。
+**Note**  This section only applies to [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), because you can't create [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) bindings in code. However, some of the same benefits of {x:Bind} can be achieved with [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx), which enables you to register for change notifications on any dependency property.
 
-还可以使用规程代码而不是 XAML 来将 UI 元素连接到数据。 为此，请创建一个新 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 对象，设置相应的属性，然后调用 [**FrameworkElement.SetBinding**](https://msdn.microsoft.com/library/windows/apps/BR208706-setbinding) 或 [**BindingOperations.SetBinding**](https://msdn.microsoft.com/library/windows/apps/BR209820operations-setbinding)。 如果你希望在运行时选择绑定属性值或在多个控件中共享单个绑定，则以编程方式创建绑定将十分有用。 但是请注意，调用 **SetBinding** 后，无法更改绑定属性值。
+You can also connect UI elements to data using procedural code instead of XAML. To do this, create a new [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) object, set the appropriate properties, then call [**FrameworkElement.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257.aspx) or [**BindingOperations.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244376.aspx). Creating bindings programmatically is useful when you want to choose the binding property values at run-time or share a single binding among multiple controls. Note, however, that you cannot change the binding property values after you call **SetBinding**.
 
-以下示例演示了如何使用代码实现绑定。
+The following example shows how to implement a binding in code.
 
 ``` xml
 <TextBox x:Name="MyTextBox" Text="Text"/>
@@ -602,27 +612,24 @@ Dim binding As New Binding() With {.Path = New PropertyPath("Brush1")}
 MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 ```
 
-{x:Bind} 和 {Binding} 功能比较
-------------------------------------------
+## {x:Bind} and {Binding} feature comparison
 
-| 功能 | {x:Bind} | {Binding} | 注释 |
+| Feature | {x:Bind} | {Binding} | Notes |
 |---------|----------|-----------|-------|
-| Path 为默认属性 | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
-| Path 属性 | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | 在 x:Bind 中，Path 默认位于 Page 的根处，而非 DataContext。 | | 索引器 | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | 绑定到集合中的指定项。 仅支持基于整数的索引。 | | 附加属性 | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | 附加属性用括号进行指定。 如果未在 XAML 命名空间中声明该属性，则在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。 | | 强制转换 | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | 不需要< | 强制转换用括号进行指定。 如果未在 XAML 命名空间中声明该属性，则在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。 | 
-| 转换器 | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | 转换器必须在 Page/ResourceDictionary 的根目录处或在 App.xaml 中进行声明。 | 
-| ConverterParameter, ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | 转换器必须在 Page/ResourceDictionary 的根目录处或在 App.xaml 中进行声明。 | 
-| TargetNullValue | `{x:Bind Name, TargetNullValue=0}` | `{Binding Name, TargetNullValue=0}` | 在绑定表达式的叶为 null 时使用。 对于字符串值，应使用单引号。 | 
-| FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | 在绑定的路径的任何部分（叶除外）为 null 时使用。 | 
-| ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | 使用 {x:Bind}，绑定到某一字段；Path 默认位于 Page 的根处，以便任意命名的元素均可通过其字段进行访问。 | 
+| Path is the default property | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
+| Path property | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | In x:Bind, Path is rooted at the Page by default, not the DataContext. | 
+| Indexer | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | Binds to the specified item in the collection. Only integer-based indexes are supported. | 
+| Attached properties | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | Attached properties are specified using parentheses. If the property is not declared in a XAML namespace, then prefix it with an xml namespace, which should be mapped to a code namespace at the head of the document. | 
+| Casting | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Not needed< | Casts are specified using parentheses. If the property is not declared in a XAML namespace, then prefix it with an xml namespace, which should be mapped to a code namespace at the head of the document. | 
+| Converter | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | Converters must be declared at the root of the Page/ResourceDictionary, or in App.xaml. | 
+| ConverterParameter, ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | Converters must be declared at the root of the Page/ResourceDictionary, or in App.xaml. | 
+| TargetNullValue | `{x:Bind Name, TargetNullValue=0}` | `{Binding Name, TargetNullValue=0}` | Used when the leaf of the binding expression is null. Use single quotes for a string value. | 
+| FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | Used when any part of the path for the binding (except for the leaf) is null. | 
+| ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | With {x:Bind} you're binding to a field; Path is rooted at the Page by default, so any named element can be accessed via its field. | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | With {x:Bind}, name the element and use its name in Path. | 
-| RelativeSource: TemplatedParent | Not supported | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | 在大多数情况下，常规模板绑定可在控件模板中使用。 但在使用 TemplatedParent 时，需要使用转换器或双向绑定。< | 
-| 绑定源 | 不支持 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | For {x:Bind} use a property or a static path instead. | 
+| RelativeSource: TemplatedParent | Not supported | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Regular template binding can be used in control templates for most uses. But use TemplatedParent where you need to use a converter, or a two-way binding.< | 
+| Source | Not supported | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | For {x:Bind} use a property or a static path instead. | 
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode can be OneTime, OneWay, or TwoWay. {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
-| UpdateSourceTrigger | Not supported | `<Binding UpdateSourceTrigger="[Default | PropertyChanged | Explicit]"/>` | {x:Bind} 可在除 TextBox.Text 等待失去焦点来更新绑定源之外的所有情况下使用 PropertyChanged 行为。 | 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+| UpdateSourceTrigger | Not supported | `<Binding UpdateSourceTrigger="Default [or] PropertyChanged [or] Explicit"/>` | {x:Bind} uses PropertyChanged behavior for all cases except TextBox.Text where it waits for lost focus to update the source. | 
 
 

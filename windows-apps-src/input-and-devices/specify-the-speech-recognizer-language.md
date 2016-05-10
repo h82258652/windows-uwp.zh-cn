@@ -1,49 +1,50 @@
 ---
-Description: 了解如何选择要用于语音识别的安装语言。
-title: 指定语音识别器语言
+author: Karl-Bridge-Microsoft
+Description: Learn how to select an installed language to use for speech recognition.
+title: Specify the speech recognizer language
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
-label: 指定语音识别器语言
+label: Specify the speech recognizer language
 template: detail.hbs
 ---
 
-# 指定语音识别器语言
+# Specify the speech recognizer language
 
 
-了解如何选择要用于语音识别的安装语言。
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+Learn how to select an installed language to use for speech recognition.
 
 
-**重要的 API**
+
+
+**Important APIs**
 
 -   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)
 -   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)
--   [**语言**](https://msdn.microsoft.com/library/windows/apps/br206804)
+-   [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
-此处，我们枚举了已安装在系统上的语言，标识了默认语言，并选择了不同的语言以供识别。
+Here, we enumerate the languages installed on a system, identify which is the default language, and select a different language for recognition.
 
-**先决条件：**
+**Prerequisites:  **
 
-本主题围绕[语音识别](speech-recognition.md)展开。
+This topic builds on [Speech recognition](speech-recognition.md).
 
-你应该已经大致了解了语音识别和识别约束。
+You should have a basic understanding of speech recognition and recognition constraints.
 
-如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
+If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 
--   [创建你的第一个应用](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   借助[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)了解事件
+-   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**用户体验指南：**
+**User experience guidelines:  **
 
-有关设计出既实用又有吸引力且支持语音的应用的有用提示，请参阅[语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)。
+For helpful tips about designing a useful and engaging speech-enabled app, see [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) .
 
-## <span id="Identify_the_default_language"> </span> <span id="identify_the_default_language"> </span> <span id="IDENTIFY_THE_DEFAULT_LANGUAGE"> </span>识别默认语言
+## <span id="Identify_the_default_language"></span><span id="identify_the_default_language"></span><span id="IDENTIFY_THE_DEFAULT_LANGUAGE"></span>Identify the default language
 
 
-语音识别器使用系统语音语言作为其默认识别语言。 此语言由用户在设备“设置”>“系统”>“语音”>“语音语言”屏幕上设置。
+A speech recognizer uses the system speech language as its default recognition language. This language is set by the user on the device Settings &gt; System &gt; Speech &gt; Speech Language screen.
 
-我们通过查看 [**SystemSpeechLanguage**](https://msdn.microsoft.com/library/windows/apps/dn653252) 静态属性来识别默认语言。
+We identify the default language by checking the [**SystemSpeechLanguage**](https://msdn.microsoft.com/library/windows/apps/dn653252) static property.
 
 ```CSharp
 var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
@@ -52,29 +53,27 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 </table>
 ```
 
-## <span id="Confirm_an_installed_language"> </span> <span id="confirm_an_installed_language"> </span> <span id="CONFIRM_AN_INSTALLED_LANGUAGE"> </span>确认已安装的语言
+## <span id="Confirm_an_installed_language"></span><span id="confirm_an_installed_language"></span><span id="CONFIRM_AN_INSTALLED_LANGUAGE"></span>Confirm an installed language
 
 
-已安装的语言在不同的设备之间可能会不同。 如果对于特定的约束你依赖于某种语言，你应验证是否存在该语言。
+Installed languages can vary between devices. You should verify the existence of a language if you depend on it for a particular constraint.
 
-**注意** 在安装新的语言包后，必须重新启动。 如果指定的语言不受支持或未完成安装过程，将引发异常，其错误代码为 SPERR\_NOT\_FOUND (0x8004503a)。
+**Note**  A reboot is required after a new language pack is installed. An exception with error code SPERR\_NOT\_FOUND (0x8004503a) is raised if the specified language is not supported or has not finished installing.
 
- 
+ 
 
-通过检查 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 类的下列两种静态属性之一，来确定设备上受支持的语言：
+Determine the supported languages on a device by checking one of two static properties of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) class:
 
--   [
-            **SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251) - 可与预定义的听写语法和 Web 搜索语法一起使用的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象的集合。
+-   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)—The collection of [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) objects used with predefined dictation and web search grammars.
 
--   [
-            **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250) - 可与列表约束或语音识别语法规范 (SRGS) 文件一起使用的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象的集合。
+-   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)—The collection of [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) objects used with a list constraint or a Speech Recognition Grammar Specification (SRGS) file.
 
-## <span id="Specify_a_language"> </span> <span id="specify_a_language"> </span> <span id="SPECIFY_A_LANGUAGE"> </span>指定语言
+## <span id="Specify_a_language"></span><span id="specify_a_language"></span><span id="SPECIFY_A_LANGUAGE"></span>Specify a language
 
 
-要指定一种语言，请将 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象传入 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 构造函数。
+To specify a language, pass a [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) object in the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) constructor.
 
-此处，我们将“en-US”指定为识别语言。
+Here, we specify "en-US" as the recognition language.
 
 <span codelanguage="CSharp"></span>
 ```CSharp
@@ -92,33 +91,28 @@ var language = new Windows.Globalization.Language(“en-US”);
 var recognizer = new SpeechRecognizer(language); 
 ```
 
-## <span id="Remarks"> </span> <span id="remarks"> </span> <span id="REMARKS"> </span>备注
+## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>Remarks
 
 
-可对主题约束进行配置，方法是将 [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) 添加到 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 的 [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 集合，然后调用 [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240)。 如果识别器未使用支持的主题语言进行初始化，则将返回 **TopicLanguageNotSupported** 的 [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433)。
+A topic constraint can be configured by adding a [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) to the [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) collection of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) and then calling [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). A [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) of **TopicLanguageNotSupported** is returned if the recognizer is not initialized with a supported topic language.
 
-可对列表约束进行配置，方法是将 [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) 添加到 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 的 [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 集合，然后调用 [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240)。 你无法直接指定自定义列表的语言。 该列表将改为使用识别器的语言进行处理。
+A list constraint is configured by adding a [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) to the [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) collection of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) and then calling [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). You cannot specify the language of a custom list directly. Instead, the list will be processed using the language of the recognizer.
 
-SRGS 语法是由 [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) 类表示的开放式标准 XML 格式。 与自定义列表不同，你可以在 SRGS 标记中指定语法语言。 如果识别器未使用与 SRGS 标记相同的语言进行初始化，[**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 将失败并返回 **TopicLanguageNotSupported** 的 [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433)。
+An SRGS grammar is an open-standard XML format represented by the [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) class. Unlike custom lists, you can specify the language of the grammar in the SRGS markup. [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) fails with a [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) of **TopicLanguageNotSupported** if the recognizer is not initialized to the same language as the SRGS markup.
 
-## <span id="related_topics"> </span>相关文章
-
-
-**开发人员**
-* [语音交互](speech-interactions.md)
-**设计人员**
-* [语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**示例**
-* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
+## <span id="related_topics"></span>Related articles
 
 
+**Developers**
+* [Speech interactions](speech-interactions.md)
+**Designers**
+* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+ 
+
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

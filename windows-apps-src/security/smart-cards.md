@@ -1,27 +1,27 @@
 ---
-title: 智能卡
-description: 本主题介绍了通用 Windows 平台 (UWP) 应用如何使用智能卡将用户连接到安全网络服务，包括如何访问物理智能卡读卡器、创建虚拟智能卡、与智能卡通信、对用户进行身份验证、重置用户 PIN 及移除智能卡或断开智能卡连接。
+title: Smart cards
+description: This topic explains how Universal Windows Platform (UWP) apps can use smart cards to connect users to secure network services, including how to access physical smart card readers, create virtual smart cards, communicate with smart cards, authenticate users, reset user PINs, and remove or disconnect smart cards.
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
 ---
 
-# 智能卡
+# Smart cards
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本主题介绍了通用 Windows 平台 (UWP) 应用如何使用智能卡将用户连接到安全网络服务，包括如何访问物理智能卡读卡器、创建虚拟智能卡、与智能卡通信、对用户进行身份验证、重置用户 PIN 及移除智能卡或断开智能卡连接。
+This topic explains how Universal Windows Platform (UWP) apps can use smart cards to connect users to secure network services, including how to access physical smart card readers, create virtual smart cards, communicate with smart cards, authenticate users, reset user PINs, and remove or disconnect smart cards.
 
-## 配置应用清单
-
-
-必须先在项目 Package.appxmanifest 文件中设置“共享的用户证书”****功能，应用才可以使用智能卡或虚拟智能卡对用户进行身份验证。
-
-## 访问连接的卡读取器和智能卡
+## Configure the app manifest
 
 
-你可以通过向 [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) 方法传递设备 ID（在 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 中指定）来查询读取器和连接的智能卡。 若要访问当前连接到返回的读取器设备的智能卡，请调用 [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887)。
+Before your app can authenticate users using smart cards or virtual smart cards, you must set the **Shared User Certificates** capability in the project Package.appxmanifest file.
+
+## Access connected card readers and smart cards
+
+
+You can query for readers and attached smart cards by passing the device ID (specified in [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)) to the [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) method. To access the smart cards currently attached to the returned reader device, call [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887).
 
 ```cs
 string selector = SmartCardReader.GetDeviceSelector();
@@ -41,7 +41,7 @@ foreach (DeviceInformation device in devices)
 }
 ```
 
-你还应当通过实现处理插卡上的应用行为的方法使你的应用能够观察 [**CardAdded**](https://msdn.microsoft.com/library/windows/apps/dn263866) 事件。
+You should also enable your app to observe for [**CardAdded**](https://msdn.microsoft.com/library/windows/apps/dn263866) events by implementing a method to handle app behavior on card insertion.
 
 ```cs
 private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
@@ -50,16 +50,16 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 }
 ```
 
-然后你可以将每个返回的 [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) 对象传递到 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 以访问使你的应用可以访问并自定义其配置的方法。
+You can then pass each returned [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) object to [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) to access the methods that allow your app to access and customize its configuration.
 
-## 创建虚拟智能卡
+## Create a virtual smart card
 
 
-若要使用 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 创建虚拟智能卡，你的应用将首先需要提供一个昵称、一个管理员密钥和一个 [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)。 昵称一般向应用提供，但你的应用将仍需要提供一个管理员密钥并生成一个当前 **SmartCardPinPolicy** 的实例，然后才能将所有三个值传递到 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)。
+To create a virtual smart card using [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801), your app will first need to provide a friendly name, an admin key, and a [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642). The friendly name is generally something provided to the app, but your app will still need to provide an admin key and generate an instance of the current **SmartCardPinPolicy** before passing all three values to [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
 
-1.  新建 [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642) 的实例
-2.  通过调用由该服务或管理工具提供的管理密钥值上的 [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) 来生成管理密钥值。
-3.  将这些值与 *FriendlyNameText* 字符串一起传递到 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)。
+1.  Create a new instance of a [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)
+2.  Generate the admin key value by calling [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) on the admin key value provided by the service or management tool.
+3.  Pass these values along with the *FriendlyNameText* string to [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
 
 ```cs
 SmartCardPinPolicy pinPolicy = new SmartCardPinPolicy();
@@ -74,15 +74,14 @@ SmartCardProvisioning provisioning = await
           pinPolicy);
 ```
 
-[
-            **RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) 返回关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象之后，将设置虚拟智能卡并且为使用做好准备。
+Once [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) has returned the associated [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object, the virtual smart card is provisioned and ready for use.
 
-## 处理身份验证质询
+## Handle authentication challenges
 
 
-要使用智能卡或虚拟智能卡进行身份验证，你的应用必须提供行为以完成存储在卡上的管理密钥数据和由身份验证服务器或管理工具维护的管理密钥数据之间的质询。
+To authenticate with smart cards or virtual smart cards, your app must provide the behavior to complete challenges between the admin key data stored on the card, and the admin key data maintained by the authentication server or management tool.
 
-以下代码显示了如何支持服务的智能卡身份验证或者物理或虚拟卡详细信息修改。 如果使用卡上的管理员密钥生成的数据（“challenge”）与由服务器或管理工具提供的管理员密钥数据（“adminkey”）相同，则身份验证成功。
+The following code shows how to support smart card authentication for services or modification of physical or virtual card details. If the data generated using the admin key on the card ("challenge") is the same as the admin key data provided by the server or management tool ("adminkey"), authentication is successful.
 
 ```cs
 static class ChallengeResponseAlgorithm
@@ -102,18 +101,18 @@ static class ChallengeResponseAlgorithm
 }
 ```
 
-你将看到这个在本主题的剩余部分中被多次引用的代码是我们审查如何完成身份验证操作以及如何将更改应用到智能卡和虚拟智能卡信息。
+You will see this code referenced throughout the remainder of this topic was we review how to complete an authentication action, and how to apply changes to smart card and virtual smart card information.
 
-## 验证智能卡或虚拟智能卡身份验证响应
+## Verify smart card or virtual smart card authentication response
 
 
-现在我们已定义了身份验证质询的逻辑，我们可以与读取器进行通信以访问智能卡，或者访问虚拟智能卡进行身份验证。
+Now that we have the logic for authentication challenges defined, we can communicate with the reader to access the smart card, or alternatively, access a virtual smart card for authentication.
 
-1.  要开始质询，请从与智能卡关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象调用 [**GetChallengeContextAsync**](https://msdn.microsoft.com/library/windows/apps/dn263811)。 这将生成一个 [**SmartCardChallengeContext**](https://msdn.microsoft.com/library/windows/apps/dn297570) 的实例，此实例包含卡的 [**Challenge**](https://msdn.microsoft.com/library/windows/apps/dn297578) 值。
+1.  To begin the challenge, call [**GetChallengeContextAsync**](https://msdn.microsoft.com/library/windows/apps/dn263811) from the [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object associated with the smart card. This will generate an instance of [**SmartCardChallengeContext**](https://msdn.microsoft.com/library/windows/apps/dn297570), which contains the card's [**Challenge**](https://msdn.microsoft.com/library/windows/apps/dn297578) value.
 
-2.  接着，将由服务或管理工具提供的卡的质询值和管理员密钥传递到我们在之前示例中定义的 **ChallengeResponseAlgorithm** 中。
+2.  Next, pass the card's challenge value and the admin key provided by the service or management tool to the **ChallengeResponseAlgorithm** that we defined in the previous example.
 
-3.  如果身份验证成功，[**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) 将返回 **true**。
+3.  [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) will return **true** if authentication is successful.
 
 ```cs
 bool verifyResult = false;
@@ -132,14 +131,14 @@ using (SmartCardChallengeContext context =
 }
 ```
 
-## 更改或重置用户 PIN
+## Change or reset a user PIN
 
 
-更改与智能卡关联的 PIN 的步骤：
+To change the PIN associated with a smart card:
 
-1.  访问该卡并生成关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象。
-2.  调用 [**RequestPinChangeAsync**](https://msdn.microsoft.com/library/windows/apps/dn263823) 来向用户显示 UI 以完成此操作。
-3.  如果 PIN 成功更改，调用将返回 **true**。
+1.  Access the card and generate the associated [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object.
+2.  Call [**RequestPinChangeAsync**](https://msdn.microsoft.com/library/windows/apps/dn263823) to display a UI to the user to complete this operation.
+3.  If the PIN was successfully changed the call will return **true**.
 
 ```cs
 SmartCardProvisioning provisioning =
@@ -148,13 +147,12 @@ SmartCardProvisioning provisioning =
 bool result = await provisioning.RequestPinChangeAsync();
 ```
 
-请求 PIN 重置的步骤：
+To request a PIN reset:
 
-1.  调用 [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 以启动操作。 此调用包括一个表示智能卡和 PIN 重置请求的 [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 方法。
-2.  [
-            **SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 提供我们的 **ChallengeResponseAlgorithm**（包装在 [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) 调用中）用于比较卡的质询值和由服务或管理工具提供的管理员密钥的信息，以便对请求进行身份验证。
+1.  Call [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) to initiate the operation. This call includes a [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) method that represents the smart card and the pin reset request.
+2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) provides information that our **ChallengeResponseAlgorithm**, wrapped in a [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) call, uses to compare the card's challenge value and the admin key provided by the service or management tool to authenticate the request.
 
-3.  如果质询成功，[**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 调用将完成；如果成功重置 PIN，将返回 **true**。
+3.  If the challenge is successful, the [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) call is completed; returning **true** if the PIN was successfully reset.
 
 ```cs
 SmartCardProvisioning provisioning =
@@ -182,25 +180,21 @@ bool result = await provisioning.RequestPinResetAsync(
 }
 ```
 
-## 删除智能卡或虚拟智能卡
+## Remove a smart card or virtual smart card
 
 
-当删除物理智能卡时，[**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875) 事件将在删除卡时引发。
+When a physical smart card is removed a [**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875) event will fire when the card is deleted.
 
-使用将应用在卡或读取器删除上的行为定义为事件处理程序的方法，将此事件的引发与卡读取器关联。 此行为可以与向用户提供卡已删除的通知同样简单。
+Associate the firing of this event with the card reader with the method that defines your app's behavior on card or reader removal as an event handler. This behavior can be something as simply as providing notification to the user that the card was removed.
 
 ```cs
 reader = card.Reader;
 reader.CardRemoved += HandleCardRemoved;
 ```
 
-虚拟智能卡的删除以编程方式处理，方法是先检索卡，然后从 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 返回的对象调用 [**RequestVirtualSmartCardDeletionAsync**](https://msdn.microsoft.com/library/windows/apps/dn263850)。
+The removal of a virtual smart card is handled programmatically by first retrieving the card and then calling [**RequestVirtualSmartCardDeletionAsync**](https://msdn.microsoft.com/library/windows/apps/dn263850) from the [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) returned object.
 
 ```cs
 bool result = await SmartCardProvisioning
     .RequestVirtualSmartCardDeletionAsync(card);
 ```
-
-<!--HONumber=Mar16_HO5-->
-
-

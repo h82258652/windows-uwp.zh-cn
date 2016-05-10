@@ -1,76 +1,63 @@
 ---
-Description: 提供了一个可帮助你确保你的通用 Windows 平台 (UWP) 应用是辅助应用的清单。
-title: 辅助功能清单
+author: Xansky
+Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
-label: Checklist
+title: Accessibility checklist
+label: Accessibility checklist
 template: detail.hbs
 ---
 
-辅助功能清单
-===================================================================================
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-提供了一个可帮助你确保你的通用 Windows 平台 (UWP) 应用是辅助应用的清单。
-
-我们在此提供了一个清单，你可以用它来确保你的应用是辅助应用。
-
-1.  为应用中的内容和交互 UI 元素设置辅助名称（必选）和辅助说明（可选）。
-
-    辅助名称是屏幕阅读器用于述说 UI 元素的简短且具有描述性的文本字符串。 一些 UI 元素（如 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 和 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)）将其文本内容提升为默认辅助名称；请参阅[基本辅助功能信息](basic-accessibility-information.md#name_from_inner_text)。
-
-    你应当为图像或没有将内部文本内容提升为隐式辅助名称的其他控件明确设置辅助名称。 你应当针对窗体元素使用标签，以便标签文本可以用作 Microsoft UI 自动化模型中的 [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) 目标来将标签与输入相关联。 如果你想要为用户提供的 UI 指南比辅助名称中通常包括的指南多，则可以使用辅助说明和工具提示来帮助用户了解 UI。
-
-    有关详细信息，请参阅[辅助名称](basic-accessibility-information.md#accessible_name)和[辅助说明](basic-accessibility-information.md)。
-
-2.  实现键盘辅助功能：
+# Accessibility checklist
 
 
-    -   Test the default tab index order for a UI. Adjust the tab index order if necessary, which may require enabling or disabling certain controls, or changing the default values of [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) on some of the UI elements.
-    -   Use controls that support arrow-key navigation for composite elements. For default controls, the arrow-key navigation is typically already implemented.
-    -   Use controls that support keyboard activation. For default controls, particularly those that support the UI Automation [**Invoke**](https://msdn.microsoft.com/library/windows/apps/BR242582) pattern, keyboard activation is typically available; check the documentation for that control.
-    -   Set access keys or implement accelerator keys for specific parts of the UI that support interaction.
-    -   For any custom controls that you use in your UI, verify that you have implemented these controls with correct [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) support for activation, and defined overrides for key handling as needed to support activation, traversal and access or accelerator keys.
+
+Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+
+Here we provide a checklist you can use to ensure that your app is accessible.
+
+1.  Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.
+
+    An accessible name is a short, descriptive text string that a screen reader uses to announce a UI element. Some UI elements such as [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) and [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) promote their text content as the default accessible name; see [Basic accessibility information](basic-accessibility-information.md#name_from_inner_text).
+
+    You should set the accessible name explicitly for images or other controls that do not promote inner text content as an implicit accessible name. You should use labels for form elements so that the label text can be used as a [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) target in the Microsoft UI Automation model for correlating labels and inputs. If you want to provide more UI guidance for users than is typically included in the accessible name, accessible descriptions and tooltips help users understand the UI.
+
+    For more info, see [Accessible name](basic-accessibility-information.md#accessible_name) and [Accessible description](basic-accessibility-information.md).
+
+2.  Implement keyboard accessibility:
+
+    * Test the default tab index order for a UI. Adjust the tab index order if necessary, which may require enabling or disabling certain controls, or changing the default values of [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) on some of the UI elements.
+    * Use controls that support arrow-key navigation for composite elements. For default controls, the arrow-key navigation is typically already implemented.
+    * Use controls that support keyboard activation. For default controls, particularly those that support the UI Automation [**Invoke**](https://msdn.microsoft.com/library/windows/apps/BR242582) pattern, keyboard activation is typically available; check the documentation for that control.
+    * Set access keys or implement accelerator keys for specific parts of the UI that support interaction.
+    * For any custom controls that you use in your UI, verify that you have implemented these controls with correct [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) support for activation, and defined overrides for key handling as needed to support activation, traversal and access or accelerator keys.
 
     For more info, see [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/Mt185607).
 
-3.  以直观方式验证你的 UI 以确保文本对比度足够大，元素以高对比度主题正确呈现以及使用了正确的颜色。
+3.  Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
 
-    -   使用可调节屏幕的每英寸点数 (dpi) 值的系统屏幕选项，并确保当该 dpi 值发生更改时，你的应用 UI 可正确缩放。 （某些用户可使用辅助功能选项更改 dpi 值，该选项可从**“轻松访问”**中获得。）
-    -   使用颜色分析器工具验证视觉文本对比度至少为 4.5:1。
-    -   切换到高对比度主题并验证应用的 UI 可读且可用。
-    -   确保你的 UI 未将颜色用作传递信息的唯一方式。
+    * Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access**.)
+    * Use a color analyzer tool to verify that the visual text contrast ratio is at least 4.5:1.
+    * Switch to a high contrast theme and verify that the UI for your app is readable and usable.
+    * Ensure that your UI doesn’t use color as the only way to convey information.
 
-    有关详细信息，请参阅[高对比度主题](high-contrast-themes.md)和[辅助文本要求](accessible-text-requirements.md)。
+    For more info, see [High-contrast themes](high-contrast-themes.md) and [Accessible text requirements](accessible-text-requirements.md).
 
-4.  运行辅助功能工具，解决报告的问题以及验证屏幕读取体验。
+4.  Run accessibility tools, address reported issues, and verify the screen reading experience.
 
-    使用 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 之类的工具验证编程访问，运行诊断工具（如 [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985)）发现常见错误以及使用讲述人验证屏幕读取体验。
+    Use tools such as [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) to verify programmatic access, run diagnostic tools such as [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) to discover common errors, and verify the screen reading experience with Narrator.
 
-    有关详细信息，请参阅[辅助功能测试](accessibility-testing.md)。
+    For more info, see [Accessibility testing](accessibility-testing.md).
 
-5.  确保你的应用清单设置遵循辅助功能指南。
+5.  Make sure your app manifest settings follow accessibility guidelines.
 
-6.  在 Windows 应用商店中将你的应用声明为辅助应用。
+6.  Declare your app as accessible in the Windows Store.
 
-    如果已实现基线辅助功能支持，则在 Windows 应用商店中将应用声明为辅助应用有助于获得更多客户并获取一些额外好评。
+    If you implemented the baseline accessibility support, declaring your app as accessible in the Windows Store can help reach more customers and get some additional good ratings.
 
-    有关详细信息，请参阅[应用商店中的辅助功能](accessibility-in-the-store.md)。
+    For more info, see [Accessibility in the Store](accessibility-in-the-store.md).
 
-<span id="related_topics"> </span>相关主题
------------------------------------------------
-
-* [辅助功能](accessibility.md)
-* [辅助功能设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [要避免的做法](practices-to-avoid.md)
- 
-
- 
-
-
-
-
-
-<!--HONumber=Mar16_HO3-->
-
-
+<span id="related_topics"/>
+## Related topics  
+* [Accessibility](accessibility.md)
+* [Design for accessibility](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [Practices to avoid](practices-to-avoid.md)

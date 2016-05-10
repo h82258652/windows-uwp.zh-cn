@@ -1,26 +1,27 @@
 ---
-title: 设置地理围栏
-description: 在你的应用中设置地理围栏并了解如何处理前台和后台中的通知。
+author: PatrickFarley
+title: Set up a geofence
+description: Set up a Geofence in your app, and learn how to handle notifications in the foreground and background.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ---
 
-# 设置地理围栏
+# Set up a geofence
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-在你的应用中设置 [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) 并了解如何处理前台和后台中的通知。
+Set up a [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) in your app, and learn how to handle notifications in the foreground and background.
 
-**提示** 若要了解有关在你的应用中访问位置的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)下载以下示例。
+**Tip** To learn more about accessing location in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## 启用位置功能
+## Enable the location capability
 
 
-1.  在“解决方案资源管理器”****中，双击“package.appxmanifest”****并选择“功能”****选项卡。
-2.  在**“功能”**列表中，选中**“位置”**。 这将向程序包清单文件中添加 `Location` 设备功能。
+1.  In **Solution Explorer**, double-click on **package.appxmanifest** and select the **Capabilities** tab.
+2.  In the **Capabilities** list, check **Location**. This adds the `Location` device capability to the package manifest file.
 
 ```xml
   <Capabilities>
@@ -29,12 +30,12 @@ ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
   </Capabilities>
 ```
 
-## 设置地理围栏
+## Set up a geofence
 
 
-### 步骤 1：请求访问用户的位置
+### Step 1: Request access to the user's location
 
-**重要提示** 在尝试访问用户的位置之前，必须通过使用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法请求对该位置的访问权限。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。
+**Important** You must request access to the user's location by using the [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) method before attempting to access the user's location. You must call the **RequestAccessAsync** method from the UI thread and your app must be in the foreground. Your app will not be able to access the user's location information until after the user grants permission to your app.
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -42,14 +43,13 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-[
-            **RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法提示用户提供访问其位置的权限。 仅提示用户一次（每个应用）。 在他们第一次授予或拒绝授予权限之后，此方法不会再提示用户提供权限。 若要在提示之后帮助用户更改位置权限，我们建议提供位置设置的链接，如本主题中后面部分所示。
+The [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) method prompts the user for permission to access their location. The user is only prompted once (per app). After the first time they grant or deny permission, this method no longer prompts the user for permission. To help the user change location permissions after they've been prompted, we recommend that you provide a link to the location settings as demonstrated later in this topic.
 
-### 步骤 2：注册地理围栏状态和位置权限的更改
+### Step 2: Register for changes in geofence state and location permissions
 
-在本示例中，将一个 **switch** 语句与 **accessStatus**（来自上一示例）一起使用，以便仅在允许访问用户位置时进行操作。 如果允许访问用户的位置，代码将访问当前地理围栏、注册地理围栏状态更改并注册位置权限的更改。
+In this example, a **switch** statement is used with **accessStatus** (from the previous example) to act only when access to the user's location is allowed. If access to the user's location is allowed, the code accesses the current geofences, registers for geofence state changes, and registers for changes in location permissions.
 
-**提示** 在使用地理围栏时，使用 GeofenceMonitor 类中的 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) 事件监视位置权限的更改，而不使用 Geolocator 类中的 StatusChanged 事件。 **Disabled** 的 [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599) 等效于已禁用的 [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)，两者都指示该应用没有访问用户位置的权限。
+**Tip** When using a geofence, monitor changes in location permissions using the [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) event from the GeofenceMonitor class instead of the StatusChanged event from the Geolocator class. A [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599) of **Disabled** is equivalent to a disabled [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599) - both indicate that the app does not have permission to access the user's location.
 
 ```csharp
 switch (accessStatus)
@@ -75,7 +75,7 @@ switch (accessStatus)
 }
 ```
 
-然后，当导航离开前台应用时，取消注册事件侦听器。
+Then, when navigating away from your foreground app, unregister the event listeners.
 
 ```csharp
 protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -87,9 +87,9 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 }
 ```
 
-### 步骤 3：创建地理围栏
+### Step 3: Create the geofence
 
-现在，你可以随时定义和设置 [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) 对象。 有多个不同的构造函数重载可供选择，具体取决于你的需求。 在最基本的地理围栏构造函数中，仅指定 [**Id**](https://msdn.microsoft.com/library/windows/apps/dn263724) 和 [**Geoshape**](https://msdn.microsoft.com/library/windows/apps/dn263718)，如下所示。
+Now, you are ready to define and set up a [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) object. There are several different constructor overloads to choose from, depending on your needs. In the most basic geofence constructor, specify only the [**Id**](https://msdn.microsoft.com/library/windows/apps/dn263724) and the [**Geoshape**](https://msdn.microsoft.com/library/windows/apps/dn263718) as shown here.
 
 ```csharp
 // Set the fence ID.
@@ -109,18 +109,13 @@ Geocircle geocircle = new Geocircle(position, radius);
 Geofence geofence = new Geofence(fenceId, geocircle);
 ```
 
-你可以使用其他构造函数之一来进一步微调地理围栏。 在下一个示例中，地理围栏构造函数将指定这些其他参数：
+You can fine-tune your geofence further by using one of the other constructors. In the next example, the geofence constructor specifies these additional parameters:
 
--   [
-            **MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) - 指示你想要哪些地理围栏事件来接收有关输入定义的区域、保留定义的区域或者删除地理围栏的通知。
--   [
-            **SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) - 在满足监视地理围栏的所有状态后，将删除地理围栏。
--   [
-            **DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) - 指示在触发进入/退出事件之前，用户必须位于所定义区域之内/之外的时间。
--   [
-            **StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) - 指示何时开始监视地理围栏。
--   [
-            **Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) - 指示监视地理围栏的时段。
+-   [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) - Indicates what geofence events you want to receive notifications for entering the defined region, leaving the defined region, or removal of the geofence.
+-   [**SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) - Removes the geofence once all the states the geofence is being monitored for have been met.
+-   [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) - Indicates how long the user must be in or out of the defined area before the enter/exit events are triggered.
+-   [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) - Indicates when to start monitoring the geofence.
+-   [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) - Indicates the period for which to monitor the geofence.
 
 ```csharp
 // Set the fence ID.
@@ -158,10 +153,9 @@ DateTimeOffset startTime = DateTime.Now;
 Geofence geofence = new Geofence(fenceId, geocircle, monitoredStates, singleUse, dwellTime, startTime, duration);
 ```
 
-### 步骤 4：处理位置权限的更改
+### Step 4: Handle changes in location permissions
 
-[
-            **GeofenceMonitor**](https://msdn.microsoft.com/library/windows/apps/dn263595) 对象触发 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) 事件以指示用户位置设置已更改。 该事件通过参数的 **sender.Status** 属性（类型为 [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)）传递相应的状态。 请注意，此方法不是从 UI 线程中调用的，并且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 对象调用了 UI 更改。
+The [**GeofenceMonitor**](https://msdn.microsoft.com/library/windows/apps/dn263595) object triggers the [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) event to indicate that the user's location settings changed. That event passes the corresponding status via the argument's **sender.Status** property (of type [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)). Note that this method is not called from the UI thread and the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) object invokes the UI changes.
 
 ```csharp
 using Windows.UI.Core;
@@ -211,20 +205,20 @@ public async void OnGeofenceStatusChanged(GeofenceMonitor sender, object e)
 }
 ```
 
-## 设置前台通知
+## Set up foreground notifications
 
 
-在创建地理围栏后，必须添加逻辑，以便处理发生地理围栏事件时所发生的情况。 按照你设置的 [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728)，你可能会在以下情况下收到事件：
+After your geofences are created, you must add the logic to handle what happens when a geofence event occurs. Depending on the [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) that you have set up, you may receive an event when:
 
--   用户进入关注的区域。
--   用户离开关注的区域。
--   地理围栏已过期或者被删除。 请注意，删除事件并不能激活后台应用。
+-   The user enters a region of interest.
+-   The user leaves a region of interest.
+-   The geofence has expired or been removed. Note that a background app is not activated for a removal event.
 
-当应用正在运行时，你可以直接从应用中侦听事件，或者注册一个后台任务，以便在发生事件时接收后台通知。
+You can listen for events directly from your app when it is running or register for a background task so that you receive a background notification when an event occurs.
 
-### 步骤 1：注册地理围栏状态更改事件
+### Step 1: Register for geofence state change events
 
-为了让你的应用能够收到地理围栏状态更改的前台通知，必须注册一个事件处理程序。 这通常需要在创建地理围栏时进行设置。
+For your app to receive a foreground notification of a geofence state change, you must register an event handler. This is typically set up when you create the geofence.
 
 ```csharp
 private void Initialize()
@@ -236,9 +230,9 @@ private void Initialize()
 
 ```
 
-### 步骤 2：实现地理围栏事件处理程序
+### Step 2: Implement the geofence event handler
 
-下一步是实现事件处理程序。 此处采取的措施取决于你的应用使用地理围栏的意图。
+The next step is to implement the event handlers. The action taken here depends on what your app is using the geofence for.
 
 ```csharp
 public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
@@ -282,32 +276,32 @@ public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
 
 ```
 
-## 设置后台通知
+## Set up background notifications
 
 
-在创建地理围栏后，必须添加逻辑，以便处理发生地理围栏事件时所发生的情况。 按照你设置的 [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728)，你可能会在以下情况下收到事件：
+After your geofences are created, you must add the logic to handle what happens when a geofence event occurs. Depending on the [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) that you have set up, you may receive an event when:
 
--   用户进入关注的区域。
--   用户离开关注的区域。
--   地理围栏已过期或者被删除。 请注意，删除事件并不能激活后台应用。
+-   The user enters a region of interest.
+-   The user leaves a region of interest.
+-   The geofence has expired or been removed. Note that a background app is not activated for a removal event.
 
-侦听后台的地理围栏事件
+To listen for a geofence event in the background
 
--   在应用清单中声明后台任务。
--   在应用中注册后台任务。 如果你的应用需要 Internet 访问权限（例如要访问云服务），你可以在触发事件时为其设置标记。 你还可以设置一个标记以确保当触发事件时用户在场，这样就可以保证用户收到通知。
--   如果应用在前台运行，则应提示用户授予应用位置权限。
+-   Declare the background task in your app’s manifest.
+-   Register the background task in your app. If your app needs internet access, say for accessing a cloud service, you can set a flag for that when the event is triggered. You can also set a flag to make sure that the user is present when the event is triggered so that you are sure that the user gets notified.
+-   While your app is running in the foreground, prompt the user to grant your app location permissions.
 
-### 步骤 1：注册地理围栏状态更改事件
+### Step 1: Register for geofence state change events
 
-在应用清单的“声明”****选项卡下，为位置后台任务添加一个声明。 执行此操作的步骤：
+In your app's manifest, under the **Declarations** tab, add a declaration for a location background task. To do this:
 
--   添加“后台任务”类型****的声明。
--   设置“位置”类型****的属性任务。
--   在应用中设置一个入口点，以便在事件被触发时调用。
+-   Add a declaration of type **Background Tasks**.
+-   Set a property task type of **Location**.
+-   Set an entry point into your app to call when the event is triggered.
 
-### 步骤 2：注册后台任务
+### Step 2: Register the background task
 
-本步骤中的代码将注册地理围栏后台任务。 请注意，在创建地理围栏时，我们已经检查了位置权限。 有关详细信息，请参阅[设置地理围栏](#setup)。
+The code in this step registers the geofencing background task. Remember that when the geofence was created, we checked for location permissions. For more info, see [Set up a geofence](#setup).
 
 ```csharp
 async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
@@ -357,9 +351,9 @@ async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
 
 ```
 
-### 步骤 3：处理后台通知
+### Step 3: Handling the background notification
 
-应用的状态决定了通知用户时所要采取的具体措施，不过，你可以显示一个 Toast 通知、播放一段声音或者更新一个动态磁贴。 本步骤中的代码处理通知。
+The action that you take to notify the user depends on what your app does, but you can display a toast notification, play an audio sound, or update a live tile. The code in this step handles the notification.
 
 ```csharp
 async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTaskCompletedEventArgs e)
@@ -400,13 +394,13 @@ async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTas
 
 ```
 
-## 更改隐私设置
+## Change the privacy settings
 
 
-如果位置隐私设置不允许你的应用访问用户位置，我们建议提供一个指向**“设置”**应用中的**“位置隐私设置”**的便捷链接。 在此示例中，“超链接”控件用于导航到 `ms-settings:privacy-location` URI。
+If the location privacy settings don't allow your app to access the user's location, we recommend that you provide a convenient link to the **location privacy settings** in the **Settings** app. In this example, a Hyperlink control is used navigate to the `ms-settings:privacy-location` URI.
 
-```xaml
-<!--Set Visibility to Visible when access to the user&#39;s location is denied. -->  
+```xml
+<!--Set Visibility to Visible when access to the user's location is denied. -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
           <Run Text="This app is not able to access Location. Go to " />
@@ -417,7 +411,7 @@ async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTas
 </TextBlock>
 ```
 
-此外，你的应用可以调用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以从代码启动**“设置”**应用。 有关详细信息，请参阅[启动 Windows 设置应用](https://msdn.microsoft.com/library/windows/apps/mt228342)。
+Alternatively, your app can call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app from code. For more info, see [Launch the Windows Settings app](https://msdn.microsoft.com/library/windows/apps/mt228342).
 
 ```csharp
 using Windows.System;
@@ -425,55 +419,50 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
 ```
 
-## 测试和调试应用
+## Test and debug your app
 
 
-测试和调试地理围栏应用非常具有挑战性，因为它们取决于设备的位置。 我们在此处概述了用于测试前台和后台地理围栏的几种方法。
+Testing and debugging geofencing apps can be a challenge because they depend on a device's location. Here, we outline several methods for testing both foreground and background geofences.
 
-**调试地理围栏应用**
+**To debug a geofencing app**
 
-1.  以物理方式将设备移动到新位置。
-2.  通过创建一个包含当前物理位置的地理围栏区域来测试是否进入地理围栏，因此你已进入地理围栏中并将立即触发“已进入地理围栏”事件。
-3.  使用 Microsoft Visual Studio 仿真器模拟设备的位置。
+1.  Physically move the device to new locations.
+2.  Test entering a geofence by creating a geofence region that includes your current physical location, so you're already inside the geofence and the "geofence entered" event is triggered immediately.
+3.  Use the Microsoft Visual Studio emulator to simulate locations for the device.
 
-### 测试和调试在前台运行的地理围栏应用
+### Test and debug a geofencing app that is running in the foreground
 
-**测试在前台运行的地理围栏应用**
+**To test your geofencing app that is running the foreground**
 
-1.  在 Visual Studio 中生成应用。
-2.  在 Visual Studio 模拟器中启动你的应用。
-3.  使用这些工具模拟地理围栏区域内外的各种位置。 确保在 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 属性指定的时间过后等待足够长的时间以触发事件。 请注意，你必须接受启用应用的位置权限提示。 有关模拟位置的详细信息，请参阅[设置设备的模拟地理位置](http://go.microsoft.com/fwlink/p/?LinkID=325245)。
-4.  你还可以使用仿真器来估计围栏的大小以及以不同的速度进行检测所需的大致停留时间。
+1.  Build your app in Visual Studio.
+2.  Launch your app in the Visual Studio emulator.
+3.  Use these tools to simulate various locations inside and outside of your geofence region. Be sure to wait long enough past the time specified by the [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) property to trigger the event. Note that you must accept the prompt to enable location permissions for the app. For more info about simulating locations, see [Set the simulated geolocation of the device](http://go.microsoft.com/fwlink/p/?LinkID=325245).
+4.  You can also use the emulator to estimate the size of fences and dwell times approximately needed to be detected at different speeds.
 
-### 测试和调试在后台运行的地理围栏应用
+### Test and debug a geofencing app that is running in the background
 
-**测试在后台运行的地理围栏应用**
+**To test your geofencing app that is running the background**
 
-1.  在 Visual Studio 中生成应用。 请注意，你的应用应该设置“位置”****后台任务类型。
-2.  先在本地部署应用。
-3.  关闭在本地运行的应用。
-4.  在 Visual Studio 模拟器中启动你的应用。 请注意，模拟器一次仅支持在一个应用上模拟后台地理围栏。 不要在模拟器中启动多个地理围栏应用。
-5.  在模拟器中，模拟地理围栏区域内外的各种位置。 确保在 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 后等待足够长的时间以触发事件。 请注意，你必须接受提示才能启用应用的位置权限。
-6.  使用 Visual Studio 触发位置后台任务。 有关在 Visual Studio 中触发后台任务的详细信息，请参阅[如何触发后台任务](http://go.microsoft.com/fwlink/p/?LinkID=325378)。
+1.  Build your app in Visual Studio. Note that your app should set the **Location** background task type.
+2.  Deploy the app locally first.
+3.  Close your app that is running locally.
+4.  Launch your app in the Visual Studio emulator. Note that background geofencing simulation is supported on only one app at a time within the emulator. Do not launch multiple geofencing apps within the emulator.
+5.  From the emulator, simulate various locations inside and outside of your geofence region. Be sure to wait long enough past the [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) to trigger the event. Note that you must accept the prompt to enable location permissions for the app.
+6.  Use Visual Studio to trigger the location background task. For more info about triggering background tasks in Visual Studio, see [How to trigger background tasks](http://go.microsoft.com/fwlink/p/?LinkID=325378).
 
-## 应用疑难解答
-
-
-在你的应用可以访问位置之前，必须在设备上启用**“位置”**。 在**“设置”**应用中，检查以下**“位置隐私设置”**是否已打开：
-
--   **“此设备的位置...”** 已**“打开”**（在 Windows 10 移动版中不适用）
--   位置服务设置（**“位置”**）已**“打开”**
--   在**“选择可以使用你的位置的应用”**下，你的应用已设置为**“打开”**
-
-## 相关主题
-
-* [UWP 地理位置示例](http://go.microsoft.com/fwlink/p/?linkid=533278)
-* [地理围栏设计指南](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [位置感知应用设计指南](https://msdn.microsoft.com/library/windows/apps/hh465148)
+## Troubleshoot your app
 
 
+Before your app can access location, **Location** must be enabled on the device. In the **Settings** app, check that the following **location privacy settings** are turned on:
 
+-   **Location for this device...** is turned **on** (not applicable in Windows 10 Mobile)
+-   The location services setting, **Location**, is turned **on**
+-   Under **Choose apps that can use your location**, your app is set to **on**
 
-<!--HONumber=Mar16_HO1-->
+## Related topics
+
+* [UWP geolocation sample](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Design guidelines for geofencing](https://msdn.microsoft.com/library/windows/apps/dn631756)
+* [Design guidelines for location-aware apps](https://msdn.microsoft.com/library/windows/apps/hh465148)
 
 

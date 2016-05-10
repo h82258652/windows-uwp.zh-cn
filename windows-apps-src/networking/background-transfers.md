@@ -1,87 +1,88 @@
 ---
-description: 使用后台传输 API 以通过网络可靠地复制文件。
-title: 后台传输
+author: DelfCo
+description: Use the background transfer API to copy files reliably over the network.
+title: Background transfers
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 ---
 
-# 后台传输
+# Background transfers
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要的 API**
+**Important APIs**
 
 -   [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
 -   [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
-使用后台传输 API 以通过网络可靠地复制文件。 后台传输 API 提供应用暂停期间在后台运行的高级上载和下载功能，并持续至应用终止。 API 监视网络状态，并在连接丢失时自动暂停和恢复传输，并且传输还具有流量感知和电量感知功能，这意味着可以根据当前连接和设备电池状态调整下载活动。 该 API 适用于使用 HTTP 上载和下载较大文件。 还支持 FTP，但只能用于下载。
+Use the background transfer API to copy files reliably over the network. The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination. The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status. The API is ideal for uploading and downloading large files using HTTP(S). FTP is also supported, but only for downloads.
 
-后台传输独立于调用应用单独运行，主要是针对资源（如视频、音乐和大型图像）的长期传输操作设计的。 对于这些应用场景，使用后台传输非常必要，因为即使应用已暂停，下载仍会继续进行。
+Background Transfer runs separately from the calling app and is primarily designed for long-term transfer operations for resources like video, music, and large images. For these scenarios, using Background Transfer is essential because downloads continue to progress even when the app is suspended.
 
-如果你下载的是可能快速完成的小型资源，应该使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API 而不是后台传输。
+If you are downloading small resources that are likely to complete quickly, you should use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) APIs instead of Background Transfer.
 
-## 使用 Windows.Networking.BackgroundTransfer
+## Using Windows.Networking.BackgroundTransfer
 
 
-### 后台传输功能如何工作？
+### How does the Background Transfer feature work?
 
-当应用使用后台传输来启动传输时，该请求将使用 [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) 或 [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 类对象进行配置和初始化。 每个传输操作都由系统单独处理，并与正在调用的应用分开。 如果你希望在应用 UI 中向用户提供状态，系统提供了进程信息；在发生传输时，你的应用可以暂停、恢复和取消传输，甚至可以读取数据。 这种由系统处理的传输方式可以促进智能化的电源使用，并防止应用在联网状态下因遇到类似如下事件而可能带来的问题：应用挂起、终止或网络状态突然更改。
+When an app uses Background Transfer to initiate a transfer, the request is configured and initialized using [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) or [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) class objects. Each transfer operation is handled individually by the system and separate from the calling app. Progress information is available if you want to give status to the user in your app's UI, and your app can pause, resume, cancel, or even read from the data while the transfer is occurring. The way transfers are handled by the system promotes smart power usage and prevents problems that can arise when a connected app encounters events such as app suspension, termination, or sudden network status changes.
 
-### 使用后台传输执行经过身份验证的文件请求
+### Performing authenticated file requests with Background Transfer
 
-后台传输可提供支持基本的服务器和代理凭据、cookie 的方法，并且还支持每个传输操作使用自定义的 HTTP 头（通过 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)）。
+Background Transfer provides methods that support basic server and proxy credentials, cookies, and the use of custom HTTP headers (via [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) for each transfer operation.
 
-### 此功能如何适应网络状态更改或意外关机？
+### How does this feature adapt to network status changes or unexpected shutdowns?
 
-当网络状态发生更改时，后台传输功能可保持每个传输操作的一致性体验，从而智能地利用[连接](https://msdn.microsoft.com/library/windows/apps/hh452990)功能提供的连接和运营商流量套餐状态信息。 为了定义不同网络方案的行为，应用使用 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 定义的值为每个操作设置一个成本策略。
+The Background Transfer feature maintains a consistent experience for each transfer operation when network status changes occur, by intelligently leveraging connectivity and carrier data-plan status information provided by the [Connectivity](https://msdn.microsoft.com/library/windows/apps/hh452990) feature. To define behavior for different network scenarios, an app sets a cost policy for each operation using values defined by [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138).
 
-例如，为某个操作定义的成本策略可以指示该操作应在设备使用按流量计费的网络时自动暂停。 然后，当建立到“无限制”网络的连接时，自动恢复（或自动启动）传输。 有关如何按成本定义网络的更多信息，请参阅 [**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292)。
+For example, the cost policy defined for an operation can indicate that the operation should be paused automatically when the device is using a metered network. The transfer is then automatically resumed (or restarted) when a connection to an "unrestricted" network has been established. For more information on how networks are defined by cost, see [**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292).
 
-虽然后台传输功能具备其自己的处理网络状态更改的机制，但对于使用网络连接功能的应用还有其他需要考虑的常规连接因素。 有关其他信息，请阅读[利用可用的网络连接信息](https://msdn.microsoft.com/library/windows/apps/hh452983)。
+While the Background Transfer feature has its own mechanisms for handling network status changes, there are other general connectivity considerations for network-connected apps. Read [Leveraging available network connection information](https://msdn.microsoft.com/library/windows/apps/hh452983) for additional info.
 
-> **注意** 对于在移动设备上运行的应用，存在一些允许用户监控和限制根据连接类型、漫游状态和用户的流量套餐传输的数据量的功能。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 表示传输应该继续，仍可在电话上暂停后台传输。
+> **Note**  For apps running on mobile devices, there are features that allow the user to monitor and restrict the amount of data that is transferred based on the type of connection, roaming status, and the user's data plan. Because of this, background transfers may be paused on the phone even when the [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) indicates that the transfer should proceed.
 
-下表指示在电话的当前给定状态下，对于每个 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 值，允许在电话上进行后台传输的时间。 你可以使用 [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) 类确定电话的当前状态。
+The following table indicates when background transfers are allowed on the phone for each [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) value, given the current state of the phone. You can use the [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) class to determine the phone's current state.
 
-| 设备状态                                                                                                                      | UnrestrictedOnly | 默认值 | 始终 |
+| Device State                                                                                                                      | UnrestrictedOnly | Default | Always |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
-| 已连接到 WiFi                                                                                                                 | 允许            | 允许   | 允许  |
-| 按流量计费的连接、未漫游、受数据限制、计划不超出限制                                                   | 拒绝             | 允许   | 允许  |
-| 按流量计费的连接、未漫游、受数据限制、计划超出限制                                                       | 拒绝             | 拒绝    | 允许  |
-| 按流量计费的连接、漫游、受数据限制                                                                                     | 拒绝             | 拒绝    | 允许  |
-| 按流量计费的连接、不受数据限制。 仅当用户在“流量管理”UI 中启用“限制后台数据”时，才会发生该状态。 | 拒绝             | 拒绝    | 拒绝   |
+| Connected to WiFi                                                                                                                 | Allow            | Allow   | Allow  |
+| Metered Connection, not roaming, under data limit, on track to stay under limit                                                   | Deny             | Allow   | Allow  |
+| Metered Connection, not roaming, under data limit, on track to exceed limit                                                       | Deny             | Deny    | Allow  |
+| Metered Connection, roaming, under data limit                                                                                     | Deny             | Deny    | Allow  |
+| Metered Connection, over data limit. This state only occurs when the user enables "Restrict background data in the Data Sense UI. | Deny             | Deny    | Deny   |
 
- 
+ 
 
-## 上载文件
+## Uploading files
 
 
-如果使用后台传输，上传作为 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 存在，该对象具有一系列用于重新启动或取消操作的控制方法。 系统根据 **UploadOperation** 自动处理应用事件（如暂停或终止）和连接更改；在应用暂停期间或暂停时，上传会继续运行，并且在应用终止后，仍然保持运行。 此外，正确设置 [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) 可指示在对 Internet 连接使用按流量计费的网络时，应用是否将开始上传。
+When using Background Transfer an upload exists as an [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) that exposes a number of control methods that are used to restart or cancel the operation. App events (e.g. suspension or termination) and connectivity changes are handled automatically by the system per **UploadOperation**; uploads will continue during app suspension periods or pause and persist beyond app termination. Additionally, setting the [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) property will indicate whether or not your app will start uploads while a metered network is being used for Internet connectivity.
 
-以下示例将指导你完成基本上传的创建和初始化，以及如何枚举和重新引入以前应用会话中保持的操作。
+The following examples will walk you through the creation and initialization of a basic upload and how to enumerate and reintroduce operations persisted from a previous app session.
 
-### 上载单个文件
+### Uploading a single file
 
-创建上传从 [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 开始。 该类用于提供使应用能够在创建结果 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 之前配置上传的方法。 以下示例说明如何使用所需的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 和 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象执行该操作。
+The creation of an upload begins with [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). This class is used to provide the methods that enable your app to configure the upload before creating the resultant [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224). The following example shows how to do this with the required [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) and [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) objects.
 
-**标识文件和目标以供上传**
+**Identify the file and destination for the upload**
 
-我们首先需要识别要上传的目标位置的 URI 和要上传的文件，然后才能开始创建 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224)。 在以下示例中，*uriString* 值使用 UI 输入的字符串进行填充，*file* 值使用 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 操作返回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象进行填充。
+Before we can begin with the creation of an [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), we first need to identify the URI of the location to upload to, and the file that will be uploaded. In the following example, the *uriString* value is populated using a string from UI input, and the *file* value using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object returned by a [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) operation.
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "Identify the file and destination for the upload")]
 
-**创建和初始化上传操作**
+**Create and initialize the upload operation**
 
-在上一步中，*uriString* 和 *file* 值会传递给下一个示例 UploadOp 的实例，在该示例中，这些值用于配置和启动新的上传操作。 首先，解析 *uriString* 来创建所需的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 对象。
+In the previous step the *uriString* and *file* values are passed to an instance of our next example, UploadOp, where they are used to configure and start the new upload operation. First, *uriString* is parsed to create the required [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) object.
 
-接下来，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 使用提供的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (*file*) 的属性来填充请求头并使用 **StorageFile** 对象设置 *SourceFile* 属性。 然后，调用 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) 方法以插入文件名（以字符串形式提供）和 [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220) 属性。
+Next, the properties of the provided [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (*file*) are used by [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) to populate the request header and set the *SourceFile* property with the **StorageFile** object. The [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) method is then called to insert the file name, provided as a string, and the [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220) property.
 
-最后，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 会创建 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*)。
+Finally, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) creates the [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*).
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "Create and initialize the upload operation")]
 
-请注意使用 JavaScript Promise 定义的异步方法调用。 查看上一示例中的一行：
+Note the asynchronous method calls defined using JavaScript promises. Looking at a line from the last example:
 
 ```javascript
 promise = upload.startAsync().then(complete, error, progress);
@@ -89,9 +90,9 @@ promise = upload.startAsync().then(complete, error, progress);
 
     The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
-### 上传多个文件
+### Uploading multiple files
 
-**标识文件和目标以供上传**
+**Identify the files and destination for the upload**
 
     In a scenario involving multiple files transferred with a single [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), the process begins as it usually does by first providing the required destination URI and local file information. Similar to the example in the previous section, the URI is provided as a string by the end-user and [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) can be used to provide the ability to indicate files through the user interface as well. However, in this scenario the app should instead call the [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) method to enable the selection of multiple files through the UI.
 
@@ -116,7 +117,7 @@ function uploadFiles() {
     }
 ```
 
-**创建给定参数的对象**
+**Create objects for the provided parameters**
 
     The next two examples use code contained in a single example method, **startMultipart**, which was called at the end of the last step. For the purpose of instruction the code in the method that creates an array of [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects has been split from the code that creates the resultant [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224).
 
@@ -136,7 +137,7 @@ upload.startMultipart = function (uriString, files) {
             });
 ```
 
-**创建和初始化分段上传操作**
+**Create and initialize the multi-part upload operation**
 
     With our contentParts array populated with all of the [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects representing each [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) for upload, we are ready to call [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) using the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) to indicate where the request will be sent.
 
@@ -155,71 +156,71 @@ upload.startMultipart = function (uriString, files) {
      };
 ```
 
-### 重新启动中断的上传操作
+### Restarting interrupted upload operations
 
-在完成或取消 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 时，将释放所有关联的系统资源。 然而，如果在发生这些操作之前终止应用，将中止任何活动操作，并仍将占有与每个操作相关的资源。 如果未枚举这些操作并且未重新引入下一个应用会话，那么它们将不会完成并将继续占有设备资源。
+On completion or cancellation of an [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), any associated system resources are released. However, if your app is terminated before either of these things can occur, any active operations are paused and the resources associated with each remain occupied. If these operations are not enumerated and re-introduced to the next app session, they will not be completed and will continue to occupy device resources.
 
-1.  在定义枚举保持的操作的函数之前，我们需要创建包含将返回的 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 对象的数组：
+1.  Before defining the function that enumerates persisted operations, we need to create an array that will contain the [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) objects that it will return:
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "Restart interrupted upload operation")]
 
-2.  接下来，我们定义函可枚举保持的操作并将其存储到数组中的函数。 请注意，为将回调重新分配到 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 而调用的 **load** 方法（如果它在应用终止后仍然保持）在本部分的后面部分中定义的 UploadOp 类中。
+2.  Next we define the function that enumerates persisted operations and stores them in our array. Note that the **load** method called to re-assign callbacks to the [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), should it persist through app termination, is in the UploadOp class we define later in this section.
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "Enumerate persisted operations")]
 
-## 下载文件
+## Downloading files
 
-如果使用后台传输，每个下载作为 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 存在，该对象公开一系列用于暂停、恢复、重新启动和取消操作的控制方法。 系统根据 **DownloadOperation** 自动处理应用事件（如暂停或终止）和连接更改；在应用挂起期间或暂停时，下载会继续运行，并且在应用终止后，仍然保持运行。 对于移动网络情况，设置 [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) 属性可指示在对 Internet 连接使用按流量计费的网络时，应用是否将开始或继续下载。
+When using Background Transfer, each download exists as a [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) that exposes a number of control methods used to pause, resume, restart, and cancel the operation. App events (e.g. suspension or termination) and connectivity changes are handled automatically by the system per **DownloadOperation**; downloads will continue during app suspension periods or pause and persist beyond app termination. For mobile network scenarios, setting the [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) property will indicate whether or not your app will begin or continue downloads while a metered network is being used for Internet connectivity.
 
-如果你下载的是可能快速完成的小型资源，应该使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API 而不是后台传输。
+If you are downloading small resources that are likely to complete quickly, you should use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) APIs instead of Background Transfer.
 
-以下示例将指导你完成基本下载的创建和初始化，以及如何枚举和重新引入以前应用会话中保持的操作。
+The following examples will walk you through the creation and initialization of a basic download, and how to enumerate and reintroduce operations persisted from a previous app session.
 
-### 配置和启动后台传输文件下载
+### Configure and start a Background Transfer file download
 
-以下示例演示如何使用表示 URI 和文件名的字符串来创建 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 对象和包含所请求文件的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)。 在本示例中，新文件会自动放置在预定义的位置中。 此外，可使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 来允许用户指示要在设备上保存文件的位置。 请注意，为将回调重新分配到 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 而调用的 **load** 方法（如果它在应用终止后仍然保持）在本部分后面部分中定义的 DownloadOp 类中。
+The following example demonstrates how strings representing a URI and a file name can be used to create a [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) object and the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that will contain the requested file. In this example, the new file is automatically placed in a pre-defined location. Alternatively, [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) can be used allow users to indicate where to save the file on the device. Note that the **load** method called to re-assign callbacks to the [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154), should it persist through app termination, is in the DownloadOp class defined later in this section.
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_A)]
 
-请注意使用 JavaScript Promise 定义的异步方法调用。 查看上一代码示例中的第 17 行：
+Note the asynchronous method calls defined using JavaScript promises. Looking at line 17 from the previous code example:
 
 ```javascript
 promise = download.startAsync().then(complete, error, progress);
 ```
 
-异步方法调用后跟一个 then 语句，它指示从异步方法调用返回结果时调用的方法（由应用定义）。 有关此编程模式的详细信息，请参阅[在 JavaScript 中使用 Promise 进行异步编程](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)。
+The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
-### 添加其他操作控制方法
+### Adding additional operation control methods
 
-控制级别可通过实现附加的 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 方法来进行提升。 例如，将以下代码添加到上述示例将引入取消下载的功能。
+The level of control can be increased by implementing additional [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) methods. For example, adding the following code to the example above will introduce the ability to cancel the download.
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_B)]
 
-### 在启动时枚举保持的操作
+### Enumerating persisted operations at start-up
 
-在完成或取消 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 时，将释放任何关联的系统资源。 不过，如果你的应用在任一事件发生之前停止，下载将暂停并在后台保持。 下例演示了如何将保持的下载重新引入新的应用会话。
+On completion or cancellation of a [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154), any associated system resources are released. However, if your app is terminated before either of these events occur, downloads will pause and persist in the background. The following examples demonstrate how to re-introduce persisted downloads into a new app session.
 
-1.  在定义枚举保持的操作的函数之前，我们需要创建包含将返回的 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 对象的数组：
+1.  Before defining the function that enumerates persisted operations, we need to create an array that will contain the [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) objects that it will return:
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
 
-2.  接下来，我们定义函可枚举保持的操作并将其存储到数组中的函数。 请注意，为将回调重新分配到 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 而调用的 **load** 方法在本部分后面部分中定义的 DownloadOp 示例中。
+2.  Next we define the function that enumerates persisted operations and stores them in our array. Note that the **load** method called to re-assign callbacks for a persisted [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) is in the DownloadOp example we define later in this section.
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_E)]
 
-3.  现在可以使用填充的列表重新启动挂起的操作。
+3.  You can now use the populated list to restart pending operations.
 
-## 后处理
+## Post-processing
 
-Windows 10 中的新功能可以在完成后台传输时运行应用程序代码，即使该应用未在运行。 例如，你的应用可能希望在电影结束下载后更新电影的可用列表，而不是在每次启动应用时让应用扫描新电影。 或者，你的应用可能希望通过再次尝试使用不同的服务器或端口来处理已失败的文件传输。 针对成功的传输和失败的传输，均会调用后处理，以便你可以使用它来实现自定义错误处理和重试逻辑。
+A new feature in Windows 10 is the ability to run application code at the completion of a background transfer even when the app is not running. For example, your app might want to update a list of available movies after a movie has finished downloading, rather than have your app scan for new movies every time it starts. Or your app might want to handle a failed file transfer by trying again using a different server or port. Post-processing is invoked for both successful and failed transfers, so you can use it to implement custom error-handling and retry logic.
 
-后处理使用现有的后台任务基础结构。 创建后台任务，并在开始传输前将后台任务与传输关联。 然后传输在后台执行，并在它们完成时，调用后台任务以执行后处理。
+Postprocessing uses the existing background task infrastructure. You create a background task and associate it with your transfers before you start the transfers. The transfers are then executed in the background, and when they are complete, your background task is called to perform post-processing.
 
-后处理使用新的类 [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209)。 此类类似于现有的 [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030)，它允许你将后台传输一起分组，但 **BackgroundTransferCompletionGroup** 新增了一个功能，该功能可以指定要在传输完成时运行的后台任务。
+Post-processing uses a new class, [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209). This class is similar to the existing [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030) in that it allows you to group background transfers together, but **BackgroundTransferCompletionGroup** adds the ability to designate a background task to be run when the transfer is complete.
 
-使用后处理启动后台传输，如下所示。
+You initiate a background transfer with post-processing as follows.
 
-1.  创建 [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) 对象。 然后，创建 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象。 将生成器对象的 **Trigger** 属性设置为完成组对象，并将生成器的 **TaskEngtyPoint** 属性设置为应该在传输完成时执行的后台任务的入口点。 最后，调用 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法以注册后台任务。 请注意，许多完成组可以共享一个后台任务入口点，但是每个后台任务注册只能有一个完成组。
+1.  Create a [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) object. Then, create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. Set the **Trigger** property of the builder object to the completion group object, and the **TaskEngtyPoint** property of the builder to the entry point of the background task that should execute on transfer completion. Finally, call the [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method to register your background task. Note that many completion groups can share one background task entry point, but you can have only one completion group per background task registration.
 
    ```csharp
     var completionGroup = new BackgroundTransferCompletionGroup();
@@ -273,7 +274,7 @@ There are two primary connection timeout scenarios to take into consideration:
 
 -   After a connection has been established, an HTTP request message that has not received a response within two minutes is aborted.
 
-> **Note**  In either scenario, assuming there is Internet connectivity, Background Transfer will retry a request up to three times automatically. In the event Internet connectivity is not detected, additional requests will wait until it is.
+> **Note**  In either scenario, assuming there is Internet connectivity, Background Transfer will retry a request up to three times automatically. In the event Internet connectivity is not detected, additional requests will wait until it is.
 
 ## Debugging guidance
 
@@ -297,7 +298,7 @@ To work around this issue, completely uninstall all versions of the app and re-d
 
 An exception is thrown when an invalid string for a the Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) object.
 
-**.NET:  **The [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) type appears as [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) in C# and VB.
+**.NET:  **The [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) type appears as [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) in C# and VB.
 
 In C# and Visual Basic, this error can be avoided by using the [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) class in the .NET 4.5 and one of the [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) methods to test the string received from the app user before the URI is constructed.
 
@@ -308,9 +309,4 @@ The [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/libra
 An error encountered on an asynchronous method in the [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) namespace is returned as an **HRESULT** value. The [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) method is used to convert a network error from a background transfer operation to a [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) enumeration value. Most of the **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP or FTP client operation. An app can filter on specific **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
 
 For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
-
-
-
-<!--HONumber=Mar16_HO1-->
-
 

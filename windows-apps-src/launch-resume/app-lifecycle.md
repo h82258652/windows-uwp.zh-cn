@@ -1,213 +1,198 @@
 ---
-title: 应用生命周期
-description: 本主题介绍通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。
+author: mcleblanc
+title: App lifecycle
+description: This topic describes the lifecycle of a Universal Windows Platform (UWP) app, from the time it is activated until it is closed.
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ---
 
-# 应用生命周期
+# App lifecycle
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要的 API**
+**Important APIs**
 
--   [**Windows.UI.Xaml.Application 类**](https://msdn.microsoft.com/library/windows/apps/br242324)
--   [**Windows.ApplicationModel.Activation 命名空间**](https://msdn.microsoft.com/library/windows/apps/br224766)
+-   [**Windows.UI.Xaml.Application class**](https://msdn.microsoft.com/library/windows/apps/br242324)
+-   [**Windows.ApplicationModel.Activation namespace**](https://msdn.microsoft.com/library/windows/apps/br224766)
 
-本主题介绍通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。 许多用户将他们的工作和娱乐分散在多个设备和应用上。 用户现在期望你的应用能够在他们在设备上执行多任务时记住其状态。 例如，他们期望页面滚动到与之前相同的位置，并且所有控件处于与之前相同的状态。 通过了解启动、暂停和恢复的应用程序生命周期，你可以提供这种无缝行为。
+This topic describes the lifecycle of a Universal Windows Platform (UWP) app, from the time it is activated until it is closed. Many users spread their work and play across multiple devices and apps. Users now expect your app to remember its state as they multitask on their device. For example, they expect the page to be scrolled to the same position and all of the controls to be in the same state as before. By understanding the application lifecycle of launching, suspending, and resuming, you can provide this kind of seamless behavior.
 
-## 应用执行状态
-
-
-此图表现了应用执行状态之间的转换。 我们在后面几部分中介绍了这些状态和事件。 有关每个状态转换以及你的应用应如何响应的详细信息，请参阅有关 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考文档。
-
-![显示应用执行状态之间转换的状态图](images/state-diagram.png)
-
-## 部署
+## App execution state
 
 
-为了使应用能够激活，必须先对其进行部署。 当用户安装你的应用时，或者当你使用 Visual Studio 在开发和测试期间生成并运行你的应用时，将部署你的应用。 有关此部署以及高级部署方案的详细信息，请参阅[应用包和部署](https://msdn.microsoft.com/library/windows/apps/hh464929)。
+This illustration represents the transitions between app execution states. We describe these states and events in the next several sections. For more info about each state transition and what your app should do in response, see the reference for the [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) enumeration.
 
-## 应用启动
+![state diagram showing transitions between app execution states](images/state-diagram.png)
 
-
-当应用处于 **NotRunning** 状态并且用户点击“开始”屏幕或应用程序列表上的应用磁贴时，将启动应用。 也可以通过预启动常用应用来优化响应（请参阅[处理应用预启动](handle-app-prelaunch.md)）。 应用可能处于 **NotRunning** 状态，原因有：它从未启动、它运行后出现了故障，或者它在暂停后无法保留在内存中而被系统终止。 启动与激活不同。 激活是指通过合约或扩展（例如“搜索”合约）激活你的应用。
-
-当启动应用时（包括当应用当前在内存中暂停时），调用 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法。 [
-            **LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 参数包含你的应用之前的状态和激活参数。
-
-当用户切换到终止的应用时，系统将发送 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 参数，其中 [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 设置为 **Launch**，[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 设置为 **Terminated** 或 **ClosedByUser**。 应用应该加载其保存的应用程序数据并刷新其显示的内容。
-
-如果 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 的值为 **NotRunning**，应用应重新启动，就好像初次启动它一样。
-
-当应用启动时，Windows 显示应用的初始屏幕。 若要配置初始屏幕，请参阅[添加初始屏幕](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331)。
-
-当显示初始屏幕时，你的应用应使其用户界面准备就绪。 应用的主要任务是注册事件处理程序和设置它加载初始页面所需的任何自定义 UI。 这些任务仅应占用几秒的时间。 如果某个应用需要从网络请求数据或者需要从磁盘检索大量的数据，这些活动应在激活以外完成。 在应用等待这些长期运行的操作结束的同时，它可以使用自己的自定义加载 UI 或扩展的初始屏幕。 有关详细信息，请参阅[延长显示初始屏幕的时间](create-a-customized-splash-screen.md)和[初始屏幕示例](http://go.microsoft.com/fwlink/p/?linkid=234889)。 应用完成激活后，它将进入 **Running** 状态，初始屏幕也将消失（并将清除其所有资源和对象）。
-
-## 应用激活
+## Deployment
 
 
-用户可通过各种扩展和合约（例如“共享”合约）激活应用。 有关可激活应用的方法的列表，请参阅 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)。
+In order for an app to be activated it must first be deployed. You app is deployed when a user installs your app or when you use Visual Studio to build and run your app during development and testing. For more info on this and on advanced deployment scenarios, see [App packages and deployment](https://msdn.microsoft.com/library/windows/apps/hh464929).
 
-[
-            **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义了为处理各种激活类型而可以替代的一些方法。 多种激活类型具有可替代的特定方法，例如 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336) 等。对于其他激活类型，请替代 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)方法。
+## App launch
 
-你的应用的激活代码可以通过测试了解其激活原因以及是否已经处于 **Running** 状态。
 
-当操作系统终止你的应用，随后用户重新启动它时，你的应用可以在激活期间还原之前保存的数据。 Windows 在应用暂停后可能出于一些原因而终止。 用户可以手动关闭你的应用或者注销，否则系统的资源可能不足。 如果用户在 Windows 终止你的应用之后启动它，该应用将收到一个 [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 回调，并且用户将看到应用的初始屏幕，直到该应用激活。 你可以通过此事件确定你的应用是否需要还原其在上次暂停时保存的数据，或者是否必须加载应用的默认数据。 由于初始屏幕已出现，因此你的应用代码可以在不明显拖延用户时间的情况下花费一些处理时间来完成此激活操作，尽管在重新启动或继续该操作时前面所提到的关于运行时间较长的操作的问题仍然存在。
+An app is launched when it is in the **NotRunning** state and the user taps the app tile on the start screen or on the application list. Frequently used apps may also be prelaunched to optimize responsiveness (see [Handle app prelaunch](handle-app-prelaunch.md)). An app could be in the **NotRunning** state because it has never been launched, because it was running but then crashed, or because it was suspended but then couldn't be kept in memory and was terminated by the system. Launching is different then activation. Activation is when your app is activated via a contract or extension such as the Search contract.
 
-[
-            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件数据包括一个 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 属性，用于告诉你应用在激活之前处于哪种状态。 此属性是 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举中的值之一：
+The [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method is called when an app is launched— including when the app is currently suspended in memory. The [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) parameter contains the previous state of your app and the activation arguments.
 
-| 终止原因                                                        | [
-            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 属性的值 | 采取的操作          |
+When the user switches to your terminated app, the system sends the [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) args with [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) set to **Launch** and [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) set to **Terminated** or **ClosedByUser**. The app should load its saved application data and refresh its displayed content.
+
+If the value of [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) is **NotRunning**, the app should start over as if it were being initially launched.
+
+When an app is launched, Windows displays a splash screen for the app. To configure the splash screen, see [Adding a splash screen](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331).
+
+While the splash screen is displayed, your app should ready its user interface. The primary tasks for the app are to register event handlers and set up any custom UI it needs for loading the initial page. These tasks should only take a few seconds. If an app needs to request data from the network or needs to retrieve large amounts of data from disk, these activities should be completed outside of activation. An app can use its own custom loading UI or an extended splash screen while it waits for these long running operations to finish. See [Display a splash screen for more time](create-a-customized-splash-screen.md) and the [Splash screen sample](http://go.microsoft.com/fwlink/p/?linkid=234889) for more info. After the app completes activation, it enters the **Running** state and the splash screen disappears (and all its resources and objects are cleared).
+
+## App activation
+
+
+An app can be activated by the user through a variety of extensions and contracts such as the Share contract. For a list of ways your app can be activated, see [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693).
+
+The [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) class defines methods you can override to handle the various activation types. Several of the activation types have a specific method that you can override such as such as [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336), etc. For the other activation types, override the [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) method.
+
+Your app's activation code can test to see why it was activated and whether it was already in the **Running** state.
+
+Your app can restore previously saved data during activation in the event that the operating system terminated your app, and the user subsequently re-launched it. Windows may terminate your app after it has been suspended for a number of reasons. The user may manually close your app, or sign out, or the system may be running low on resources. If the user launches your app after Windows has terminated it, the app receives an [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) callback and the user sees your app's splash screen until the app is activated. You can use this event to determine whether your app needs to restore the data which it had saved when it was last suspended, or whether you must load your app’s default data. Because the splash screen is up, your app code can invest some processing time to get this done without there being any apparent delay to the user although previously-mentioned concerns about long-running operations also apply if you're restarting or continuing.
+
+The [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event data includes a [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) property that tells you which state your app was in before it was activated. This property is one of the values from the [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) enumeration:
+
+| Reason for termination                                                        | Value of [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) property | Action to take          |
 |-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------|
-| 已由系统终止（例如，因为资源限制）       | **Terminated**                                                                                          | 还原会话数据    |
-| 被用户关闭或被用户终止进程                             | **ClosedByUser**                                                                                        | 使用默认数据启动 |
-| 意外终止，或者应用在*当前用户会话*期间未运行 | **NotRunning**                                                                                          | 使用默认数据启动 |
+| Terminated by the system (for example, because of resource constraints)       | **Terminated**                                                                                          | Restore session data    |
+| Closed by the user, or process-terminated by user                             | **ClosedByUser**                                                                                        | Start with default data |
+| Unexpectedly terminated, or app has not run during the *current user session* | **NotRunning**                                                                                          | Start with default data |
 
- 
+ 
 
-**注意** *当前用户会话*基于 Windows 登录。 只要当前用户未显式注销、关闭当前用户会话，或者 Windows 未出于其他原因而重新启动它，该会话便可以保留在诸如锁屏界面身份验证、切换用户的多个事件中。
+**Note**  *Current user session* is based on Windows logon. So long as the current user hasn't explicitly logged off, shut down, or Windows hasn't restarted for other reasons, the current user session persists across events such as lock screen authentication, switch-user and so on.
 
- 
+ 
 
-[
-            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 还可能有 **Running** 或 **Suspended** 值，但在这些情况下，你的应用之前未终止，因此你无需还原任何数据，因为所有数据都已经在内存中。
+[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) could also have a value of **Running** or **Suspended**, but in these cases your app was not previously terminated and therefore you don’t have to restore any data because everything is already in memory.
 
-**注意**  
+**Note**  
 
-如果你使用计算机的管理员帐户登录，则你将无法激活任何 UWP 应用。
+If you log on using the computer's Administrator account, you can't activate any UWP apps.
 
-有关详细信息，请参阅[应用扩展](https://msdn.microsoft.com/library/windows/apps/hh464906)。
+For more info, see [App extensions](https://msdn.microsoft.com/library/windows/apps/hh464906).
 
-### **OnActivated** 与特定激活
+### **OnActivated** versus specific activations
 
-[
-            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 方法旨在处理所有可能的激活类型。 但是，更常见的做法是使用不同的方法来处理最常见的激活类型，而对于不太常见的激活类型，则仅使用 **OnActivated** 作为回滚方法。 例如，[**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 具有 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法，用于在 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 是 **Launch** 时作为回调进行调用，这是适用于大多数应用的典型激活方法。 有超过 6 种 **On\*** 方法可用于特定的激活：[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)。 XAML 应用的起始模板具有 **OnLaunched** 的实现和 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 的处理程序。
+The [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) method is the means to handle all possible activation types. However, it's more common to use different methods to handle the most common activation types, and use **OnActivated** only as the fallback method for the less common activation types. For example, [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) has an [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method that's invoked as a callback whenever [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) is **Launch**, and this is the typical activation for most apps. There are 6 more **On\*** methods for specific activations: [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797), [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331), [**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799), [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336), [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806). Starting templates for a XAML app have an implementation for **OnLaunched** and a handler for [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341).
 
-## 应用暂停
+## App suspend
 
 
-每当用户切换到其他应用、桌面或“开始”屏幕时，系统都会暂停你的应用。 当设备进入低功耗状态时，可能也会暂停你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。
+The system suspends your app whenever the user switches to another app or to the desktop or Start screen. You app may also be suspended when the device enters a low power state. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background.
 
-当用户将一个应用移动到后台时，Windows 将等待几秒，以查看用户是否打算立即返回该应用，以便在用户有此打算时快速切换。 如果用户在此时间段内没有切换回，Windows 将暂停该应用。
+When the user moves an app to the background, Windows waits a few seconds to see whether the user will immediately switch back to the app so that the transition will be fast if they do. If the user does not switch back within this time window, Windows suspends the app.
 
-如果在应用暂停期间，你需要执行一些异步工作，则需要将暂停完成时间延迟到工作完成之后。 你可以使用 [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) 对象（可通过事件参数获取）上的 [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) 方法将暂停完成时间延迟到你对所返回的 [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) 对象调用 [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 方法之后。
+If you need to do asynchronous work when your app is being suspended you will need to defer completion of suspend until after your work completes. You can use the [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) method on the [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) object (available via the event args) to delay completion of suspend until after you call the [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) method on the returned [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) object.
 
-当你的应用被暂停后，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保存在内存里，则将终止你的应用。 应用不会收到它们被终止的通知，所以你保存应用数据的唯一机会是在暂停期间。 当应用确定它在终止后被激活时，它应该加载它在暂停期间保存的应用程序数据，以使应用处于与其暂停之前相同的状态。 当用户切换回已终止的暂停应用时，该应用应该在其 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中还原其应用程序数据。 当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且当在终止后又激活应用时还原这些内容。
+The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. Apps don't receive a notification that they are being terminated, so the only opportunity you have to save your app's data is during suspension. When an app determines that it has been activated after being terminated, it should load the application data that it saved during suspend so that the app is in the same state as if was before it was suspended. When the user switches back to a suspended app that has been terminated, the app should restore its application data in its [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method. The system doesn't notify an app when it's terminated, so your app must save its application data and release exclusive resources and file handles when it's suspended, and restore them when the app is activated after termination.
 
-如果应用已经为 [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件注册一个事件处理程序，则即将暂停应用前调用此代码。 你可以使用事件处理程序保存应用和用户数据。 我们建议使用应用程序数据 API 完成此目的，因为它们可保证在应用进入 **Suspended** 状态之前完成工作。 有关详细信息，请参阅[存储和检索设置以及其他应用数据](https://msdn.microsoft.com/library/windows/apps/mt299098)。
+If an app has registered an event handler for the [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, this code is called immediately before the app is suspended. You can use the event handler to save app and user data. We recommended that you use the application data APIs for this purpose because they are guaranteed to complete before the app enters the **Suspended** state. For more info, see [Store and retrieve settings and other app data](https://msdn.microsoft.com/library/windows/apps/mt299098).
 
-你还应释放独占资源和文件句柄，以便在你的应用没有使用它们时其他应用可以访问它们。 独占资源的示例包括相机、I/O 设备、外部设备以及网络资源。 显式释放独占资源和文件句柄有助于确保你的应用未使用它们时其他应用可以访问它们。 当在终止后又激活应用时，它应该重新打开其独占资源和文件句柄。
+You should also release exclusive resources and file handles so that other apps can access them while your app isn't using them. Examples of exclusive resources include cameras, I/O devices, external devices, and network resources. Explicitly releasing exclusive resources and file handles helps to ensure that other apps can access them while your app isn't using them. When the app is activated after termination, it should reopen its exclusive resources and file handles.
 
-通常，你的应用应该在处理暂停事件时立即保存其状态并释放其资源和文件句柄，并且此代码最多只需 1 秒便可完成工作。 如果应用未在数秒内从暂停事件中返回，则 Windows 假设应用已停止响应并终止该应用。
+Generally, your app should save its state and release its resources and file handles immediately when handling the suspending event, and the code should not take more than a second to complete. If an app does not return from the suspending event within a few seconds, Windows assumes that the app has stopped responding and terminates it.
 
-有些应用必须继续运行才能完成后台任务。 例如，你的应用可以在后台继续播放音频；有关详细信息，请参阅[后台音频](https://msdn.microsoft.com/library/windows/apps/mt282140)）。 此外，即使你的应用暂停甚至终止，后台传输操作仍将继续；有关详细信息，请参阅[如何下载文件](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)）。
+There are some app scenarios where the app must continue to run to complete background tasks. For example, your app can continue to play audio in the background; for more info, see [Background Audio](https://msdn.microsoft.com/library/windows/apps/mt282140)). Also, background transfer operations continue even if your app is suspended or even terminated; for more info, see [How to download a file](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)).
 
-有关指南，请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
+For guidelines, see [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088).
 
-**有关使用 Visual Studio 进行调试的注释：**Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保“调试位置”****工具栏正在显示，然后单击“暂停”****图标。
+**A note about debugging using Visual Studio:  **Visual Studio prevents Windows from suspending an app that is attached to the debugger. This is to allow the user to view the Visual Studio debug UI while the app is running. When you're debugging an app, you can send it a suspend event using Visual Studio. Make sure the **Debug Location** toolbar is being shown, then click the **Suspend** icon.
 
-## 应用可见性
+## App visibility
 
 
-当用户从你的应用切换到其他应用时，你的应用将不再可见，但仍保持 **Running** 状态，直到 Windows 暂停它。 如果用户离开你的应用，但在暂停它之前又激活或切换回该应用，它会保持 **Running** 状态。
+When the user switches from your app to another app, your app is no longer visible but remains in the **Running** state until Windows suspends it. If the user switches away from your app but activates or switches back to it before it can suspended, the app remains in the **Running** state.
 
-当应用可见性更改时，你的应用不会收到激活事件，因为该应用仍处于运行状态。 Windows 只需根据需要来回切换应用即可。 如果应用在用户切换离开和返回时需要执行某个操作，请处理 [**Window.VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) 事件。
+Your app doesn't receive an activation event when its visibility changes because the app is still running. Windows simply switches to and from the app as necessary. If your app needs to do something when the user switches away and back, handle the [**Window.VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) event.
 
-不要依靠这些事件的特定排序。
+Do not rely on a specific ordering of these events.
 
-## 应用恢复
+## App resume
 
 
-当用户切换到应用或当设备从低功耗状态恢复时该应用是活动的应用时，将恢复暂停的应用。
+A suspended app is resumed when the user switches to it or when it is the active app when the device comes out of a low power state.
 
-有关应用在恢复时所处状态的枚举，请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694)。 应用从 **Suspended** 状态恢复时，它会进入 **Running** 状态并从暂停的位置和时间处继续运行。 不会丢失存储在内存中的任何应用数据。 因此，大多数应用在恢复时不需要执行任何操作。 但是，应用可能暂停数小时甚至数天。 如果应用具有可能已过时的内容或网络连接，这些内容或网络连接应该在应用恢复时刷新。 如果应用已经为 [**Application.Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件注册了一个事件处理程序，则在应用从 **Suspended** 状态恢复时调用它。 你可以使用该事件处理程序刷新应用内容和数据。
+For an enumeration of the states that your app can be in when your app is resumed, see [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694). When an app is resumed from the **Suspended** state, it enters the **Running** state and continues from where it was when it was suspended. No app data stored in memory is lost. Therefore, most apps don't need to do anything when they are resumed. However, the app could have been suspended for hours or even days. If your app has content or network connections that may have gone stale, these should be refreshed when the app resumes. If an app registered an event handler for the [**Application.Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, it is called when the app is resumed from the **Suspended** state. You can refresh your app content and data using this event handler.
 
-如果激活暂停的应用以加入一个应用合约或扩展，它会首先收到 **Resuming** 事件，然后收到 **Activated** 事件。
+If a suspended app is activated to participate in an app contract or extension, it receives the **Resuming** event first, then the **Activated** event.
 
-当应用暂停时，它不会收到它注册接收的任何网络事件。 这些网络事件没有排队，它们只是丢失了。 因此，你的应用应该在恢复时测试网络状态。
+While en an app is suspended, it does not receive any of the network events that it registered to receive. These network events are not queued, they are simply missed. Therefore, your app should test the network status when it is resumed.
 
-**注意** 由于 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件未从 UI 线程中引发，因此如果恢复处理程序中的代码与 UI 通信，则必须使用调度程序。
+**Note**  Because the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is not raised from the UI thread, a dispatcher must be used if the code in your resume handler communicates with your UI.
 
- 
+ 
 
-有关指南，请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
+For guidelines, see [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088).
 
-## 应用关闭
+## App close
 
 
-通常，用户不需要关闭应用，他们可以让 Windows 管理它们。 但是，用户可以选择以下方法来关闭应用：使用关闭手势，在 Windows 上按 Alt+F4，或在 Windows Phone 上使用任务切换器。
+Generally, users don't need to close apps, they can let Windows manage them. However, users can choose to close an app using the close gesture or by pressing Alt+F4 on Windows or by using the task switcher on Windows Phone.
 
-没有任何特殊事件指示用户关闭了应用。
+There's no special event to indicate that the user closed the app.
 
-在用户关闭应用之后，它将首先暂停然后终止，之后进入 **NotRunning** 状态。
+After an app has been closed by the user, it's first suspended and then terminated, and enters the **NotRunning** state.
 
-在 Windows 8.1 和更高版本中，在用户关闭应用之后，该应用将从屏幕和切换列表中删除，但不显式终止。
+In Windows 8.1 and later, after an app has been closed by the user, the app is removed from the screen and switch list but not explicitly terminated.
 
-如果应用已经为 **Suspending** 事件注册了一个事件处理程序，当应用暂停时将调用该处理程序。 你可以使用此事件处理程序将相关应用程序和用户数据保存到持久性存储中。
+If an app has registered an event handler for the **Suspending** event, it is called when the app is suspended. You can use this event handler to save relevant application and user data to persistent storage.
 
-**用户关闭行为：**如果应用在被用户关闭时需要执行与被 Windows 关闭时不同的操作，你可以使用激活事件处理程序确定应用是被用户还是被 Windows 终止的。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
+**Closed-by-user behavior:  **If your app needs to do something different when it is closed by the user than when it is closed by Windows, you can use the activation event handler to determine whether the app was terminated by the user or by Windows. See the descriptions of **ClosedByUser** and **Terminated** states in the reference for the [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) enumeration.
 
-我们建议，应用不要以编程方式自行关闭，除非绝对必要。 例如，如果应用检测到内存泄漏，它可以关闭自己来确保用户个人数据的安全。 当你以编程方式关闭应用时，系统会将此视为应用崩溃。
+We recommend that apps not close themselves programmatically unless absolutely necessary. For example, if an app detects a memory leak, it can close itself to ensure the security of the user's personal data. When you close an app programmatically, the system treats it as an app crash.
 
-## 应用故障
+## App crash
 
 
-系统故障体验旨在使用户尽快返回他们当时正在执行的操作。 不应提供警告对话框或其他通知，因为这会给用户带来延迟。
+The system crash experience is designed to get users back to what they were doing as quickly as possible. You shouldn't provide a warning dialog or other notification because that will delay the user.
 
-如果应用出现故障、停止响应或者发生意外，系统将通过用户的[反馈和诊断设置](http://go.microsoft.com/fwlink/p/?LinkID=614828)向 Microsoft 发送问题报告。 Microsoft 在问题报告中向你提供错误数据的一个子集，这样你可以使用这些数据改进你的应用。 你可以在“仪表板”中应用的“质量”页面中看到此数据。
+If your app crashes, stops responding, or generates an exception, a problem report is sent to Microsoft per the user's [feedback and diagnostics settings](http://go.microsoft.com/fwlink/p/?LinkID=614828). Microsoft provides a subset of the error data in the problem report to you so that you can use it to improve your app. You'll be able to see this data in your app's Quality page in your Dashboard.
 
-当用户在应用发生崩溃之后激活该应用时，其激活事件处理程序将收到 **NotRunning** 的 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 值，并且应显示其初始 UI 和数据。 崩溃后，不要经常使用原本将用于 **Resuming** 和 **Suspended** 的应用数据，因为该数据可能已损坏；请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
+When the user activates an app after it crashes, its activation event handler receives an [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) value of **NotRunning**, and should display its initial UI and data. After a crash, don't routinely use the app data you would have used for **Resuming** with **Suspended** because that data could be corrupt; see [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088).
 
-## 应用删除
+## App removal
 
 
-当用户删除你的应用时，会一同删除应用及其所有本地数据。 删除应用不会影响存储在公用位置的用户数据，例如“文档”或“图片库”。
+When a user deletes your app, the app is removed, along with all its local data. Removing an app doesn't affect the user's data that was stored in common locations such as the Documents or Pictures libraries.
 
-## 应用生命周期和 Visual Studio 项目模板
+## App lifecycle and the Visual Studio project templates
 
 
-在起始 Visual Studio 项目模板中提供了与应用生命周期相关的基本代码。 基本应用可处理启动激活、为你提供还原应用数据的位置，甚至可以在你添加任何你自己的代码之前显示主要 UI。 有关详细信息，请参阅[适用于应用的 C#、VB 和 C++ 项目模板](https://msdn.microsoft.com/library/windows/apps/hh768232)。
+The basic code that is relevant to the app lifecycle is provided in the starting Visual Studio project templates. The basic app handles launch activation, provides a place for you to restore your app data, and displays the primary UI even before you've added any of your own code. For more info, see [C#, VB, and C++ project templates for apps](https://msdn.microsoft.com/library/windows/apps/hh768232).
 
-## 应用程序生命周期中的关键 API
+## Application lifecycle key APIs
 
 
--   [
-            **Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 命名空间
--   [
-            **Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) 命名空间
--   [
-            **Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) 命名空间
--   [
-            **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类 (XAML)
--   [
-            **Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 类 (XAML)
+-   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) namespace
+-   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) namespace
+-   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) namespace
+-   [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) class (XAML)
+-   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) class (XAML)
 
-**注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
+ 
 
-## 相关主题
+## Related topics
 
 
-* [应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [处理应用预启动](handle-app-prelaunch.md)
-* [处理应用激活](activate-an-app.md)
-* [处理应用暂停](suspend-an-app.md)
-* [处理应用恢复](resume-an-app.md)
+* [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [Handle app prelaunch](handle-app-prelaunch.md)
+* [Handle app activation](activate-an-app.md)
+* [Handle app suspend](suspend-an-app.md)
+* [Handle app resume](resume-an-app.md)
 
- 
+ 
 
- 
+ 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 
