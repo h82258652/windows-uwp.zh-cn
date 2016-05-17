@@ -1,53 +1,57 @@
 ---
 author: PatrickFarley
-title: Display routes and directions on a map
-description: Request routes and directions, and display them in your app.
+title: 在地图上显示路线和方向
+description: 请求路线和方向并在应用中显示它们。
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ---
 
-# Display routes and directions on a map
+# 在地图上显示路线和方向
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Request routes and directions, and display them in your app.
+请求路线和方向并在应用中显示它们。
 
-**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
+**提示** 若要了解有关在你的应用中使用地图的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)下载以下示例。
 
--   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-**Tip**  If mapping isn't a core feature of your app, consider launching the Windows Maps app instead. You can use the `bingmaps:`, `ms-drive-to:`, and `ms-walk-to:` URI schemes to launch the Windows Maps app to specific maps and turn-by-turn directions. For more info, see [Launch the Windows Maps app](https://msdn.microsoft.com/library/windows/apps/mt228341).
+**提示** 如果映射不是你的应用的核心功能，请考虑改为启动 Windows 地图应用。 你可以使用 `bingmaps:`、`ms-drive-to:` 和 `ms-walk-to:` URI 方案来将 Windows 地图应用启动为特定的地图和路线规划。 有关详细信息，请参阅[启动 Windows 地图应用](https://msdn.microsoft.com/library/windows/apps/mt228341)
 
- 
+ 
 
-## An intro to MapRouteFinder results
-
-
-Here's how the classes for routes and directions are related:
-
--   The [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) class has methods that get routes and directions.
--   These methods return a [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939).
--   The [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) contains a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) object. Access this object through the [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) property of the **MapRouteFinderResult**.
--   The [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) contains a collection of [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) objects. Access this collection through the [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) property of the **MapRoute**.
--   Each [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) contains a collection of [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) objects. Access this collection through the [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) property of the **MapRouteLeg**.
-
-## Display directions
+## MapRouteFinder 结果简介
 
 
-Get a driving or walking route and directions by calling the methods of the [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) class—for example, [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) or [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953). The [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) object contains a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) object that you can access through its [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) property.
+下面介绍了路线的类如何与方向的类相关联：
 
-When you request a route, you can specify the following things:
+-   [
+            **MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 类提供了获取路线和方向的方法。
+-   这些方法将返回一个 [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939)
+-   [
+            **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 包含一个 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 对象。 通过 **MapRouteFinderResult** 的 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 属性访问该对象。
+-   [
+            **MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 包含 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 对象的集合。 通过 **MapRoute** 的 [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) 属性访问该集合。
+-   每个 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 都包含一个 [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) 对象的集合。 通过 **MapRouteLeg** 的 [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) 属性访问该集合。
 
--   You can provide a start point and end point only, or you can provide a series of waypoints to compute the route.
--   You can specify optimizations - for example, minimize the distance.
--   You can specify restrictions - for example, avoid highways.
+## 显示路线
 
-The computed [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) has properties that provide the time to traverse the route, the length of the route, and the collection of [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) objects that contain the legs of the route. Each **MapRouteLeg** object contains a collection of [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) objects. The **MapRouteManeuver** object contains directions that you can access through its [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964) property.
 
-**Important**  You must specify a maps authentication key before you can use map services. For more info, see [Request a maps authentication key](authentication-key.md).
+通过调用 [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 类（例如，[**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) 或 [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953)）的方法，获取驾车或步行路线和方向。 [
+            **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 对象包含一个 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 对象，你可以通过其 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 属性访问该对象。
 
- 
+在请求路线时，你可以指定以下操作：
+
+-   你可以仅提供起点和终点，或者你可以提供一系列的经过点来计算该路线。
+-   你可以指定优化项，例如，最小化距离。
+-   你可以指定限制项，例如，避开高速公路。
+
+计算的 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 具有多个属性，可提供遍历该路线所需的时间、路线的长度以及包含路线段的 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 对象的集合。 每个 **MapRouteLeg** 对象都包含 [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) 对象的集合。 **MapRouteManeuver** 对象包含可以通过其 [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964) 属性进行访问的路线。
+
+**重要提示** 必须先指定地图身份验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)
+
+ 
 
 ```csharp
 using System;
@@ -104,7 +108,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-This example displays the following results to the `tbOutputText` text box.
+此示例向 `tbOutputText` 文本框显示以下结果。
 
 ``` syntax
 Total estimated time (minutes) = 18.4833333333333
@@ -122,14 +126,14 @@ Turn right onto James St.
 You have reached your destination.
 ```
 
-## Display routes
+## 显示路线
 
 
-To display a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) on a [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), construct a [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) with the **MapRoute**. Then, add the **MapRouteView** to the [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) collection of the **MapControl**.
+若要在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 上显示 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937)，请使用 **MapRoute** 构建一个 [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122)。 然后，将 **MapRouteView** 添加到 **MapControl** 的 [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) 集合
 
-**Important**  You must specify a maps authentication key before you can use map services or the map control. For more info, see [Request a maps authentication key](authentication-key.md).
+**重要提示** 必须先指定地图身份验证密钥，然后才能使用地图服务或地图控件。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)
 
- 
+ 
 
 ```csharp
 using System;
@@ -176,15 +180,20 @@ private async void ShowRouteOnMap()
 }
 ```
 
-This example displays the following on a [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) named **MapWithRoute**.
+此示例在名为 **MapWithRoute** 的 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 上显示以下内容。
 
-![map control with route displayed.](images/routeonmap.png)
+![显示路线的地图控件。](images/routeonmap.png)
 
-## Related topics
+## 相关主题
 
-* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [必应地图开发人员中心](https://www.bingmapsportal.com/)
+* [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+
+
+
+<!--HONumber=May16_HO2-->
+
 

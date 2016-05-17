@@ -1,46 +1,51 @@
 ---
 author: Jwmsft
-title: Key-frame animations and easing function animations
+title: 关键帧动画以及缓动函数动画
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
-description: Linear key-frame animations, key-frame animations with a KeySpline value, or easing functions are three different techniques for approximately the same scenario.
+description: 线性关键帧动画、具有 KeySpline 值的关键帧动画或缓动函数对于大致相同的情况是三种不同的技术。
 ---
-# Key-frame animations and easing function animations
+# 关键帧动画以及缓动函数动画
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Linear key-frame animations, key-frame animations with a **KeySpline** value, or easing functions are three different techniques for approximately the same scenario: creating a storyboarded animation that's a bit more complex, and that uses a nonlinear animation behavior from a starting state to an end state.
+线性关键帧动画、具有 **KeySpline** 值的关键帧动画或缓动函数对于大致相同的情况是三种不同的技术：创建从某个起始状态到结束状态使用非线性动画行为的更为复杂的情节提要动画。
 
-## Prerequisites
+## 先决条件
 
-Make sure you've read the [Storyboarded animations](storyboarded-animations.md) topic. This topic builds on the animation concepts that were explained in [Storyboarded animations](storyboarded-animations.md) and won't go over them again. For example, [Storyboarded animations](storyboarded-animations.md) describes how to target animations, storyboards as resources, the [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) property values such as [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration), [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior), and so on.
+确保你已经阅读[情节提要动画](storyboarded-animations.md)主题。 本主题在[情节提要动画](storyboarded-animations.md)中解释过的动画概念的基础上生成，并且不会重新复习这些概念。 例如，[情节提要动画](storyboarded-animations.md)介绍了如何定位动画、作为资源的情节提要、[**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 属性值（例如 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration)、[**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)）等。
 
-## Animating using key-frame animations
+## 使用关键帧动画创建动画
 
-Key-frame animations permit more than one target value that is reached at a point along the animation timeline. In other words each key frame can specify a different intermediate value, and the last key frame reached is the final animation value. By specifying multiple values to animate, you can make more complex animations. Key-frame animations also enable different interpolation logic, which are each implemented as a different **KeyFrame** subclass per animation type. Specifically, each key-frame animation type has a **Discrete**, **Linear**, **Spline** and **Easing** variation of its **KeyFrame** class for specifying its key frames. For example, to specify an animation that targets a [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) and uses key frames, you could declare key frames with [**DiscreteDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243130), [**LinearDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210316), [**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446), and [**EasingDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210269). You can use any and all of these types within a single **KeyFrames** collection, to change the interpolation each time a new key frame is reached.
+关键帧动画允许沿动画时间线到达一个点的多个目标值。 换句话说，每个关键帧可以指定一个不同的中间值，并且到达的最后一个关键帧为最终动画值。 通过指定多个值来创建动画，你可以做出更复杂的动画。 关键帧动画还会启用不同的内插逻辑，每个内插逻辑根据动画类型作为不同的 **KeyFrame** 子类实现。 确切地说，每个关键帧动画类型具有其 **KeyFrame** 类的 **Discrete**、**Linear**、**Spline** 和 **Easing** 变体，用于指定其关键帧。 例如，若要指定以 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 为目标并使用关键帧的动画，可声明具有 [**DiscreteDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243130)、[**LinearDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210316)、[**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446) 和 [**EasingDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210269) 的关键帧。 你可以在一个 **KeyFrames** 集合中使用任一和所有这些类型，以更改每次新关键帧到达时的内插。
 
-For interpolation behavior, each key frame controls the interpolation until its **KeyTime** time is reached. Its **Value** is reached at that time also. If there are more key frames beyond, the value then becomes the starting value for the next key frame in a sequence.
+对于内插行为，每个关键帧控制该内插，直至到达其 **KeyTime** 时间。 其 **Value** 也会在该时间到达。 如果有更多关键帧超出范围，则该值将成为序列中下一个关键帧的起始值。
 
-At the start of the animation, if no key frame with **KeyTime** of "0:0:0" exists, the starting value is whatever the non-animated value of the property is. This is similar to how a **From**/**To**/**By** animation acts if there is no **From**.
+在动画开始时，如果不存在 **KeyTime** 为“0:0:0”的关键帧，则起始值为该属性的任意非动画值。 这种情况下的行为与 **From**/**To**/**By** 动画在没有 **From** 的情况下的行为类似
 
-The duration of a key-frame animation is implicitly the duration equal to the highest **KeyTime** value set in any of its key frames. You can set an explicit [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) if you want, but be careful it's not shorter than a **KeyTime** in your own key frames or you'll cut off part of the animation.
+关键帧动画的持续时间为隐式持续时间，它等于其任一关键帧中设置的最高 **KeyTime** 值。 如果需要，你可以设置一个显式 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration)，但应注意该值不应小于你自己的关键帧中的 **KeyTime**，否则将会截断部分动画。
 
-In addition to [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration), you can set all the [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) based properties on a key-frame animation, like you can with a **From**/**To**/**By** animation, because the key-frame animation classes also derive from **Timeline**. These are:
+除了 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration)，你还可以在关键帧动画上设置所有基于 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 的属性，例如，你可以设置具有 **From**/**To**/**By** 的动画，因为关键帧动画类也派生自 **Timeline**。 它们是：
 
--   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse): once the last key frame is reached, the frames are repeated in reverse order from the end. This doubles the apparent duration of the animation.
--   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime): delays the start of the animation. The timeline for the **KeyTime** values in the frames doesn't start counting until **BeginTime** is reached, so there's no risk of cutting off frames
--   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior): controls what happens when the last key frame is reached. **FillBehavior** has no effect on any intermediate key frames.
--   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
-    -   If set to **Forever**, then the key frames and their timeline repeat infinitely.
-    -   If set to an iteration count, the timeline repeats that many times.
-    -   If set to a [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377), the timeline repeats until that time is reached. This might truncate the animation part way through the key frame sequence, if it's not an integer factor of the timeline's implicit duration.
--   [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (not commonly used)
+-   [
+            **AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse)：在到达最后一个关键帧后，从结束位置开始反向重复帧。 这使得动画的显示持续时间加倍。
+-   [
+            **BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime)：延迟动画的起始部分。 帧内 **KeyTime** 值的时间线在 **BeginTime** 到达前不开始计数，因此不存在截断帧的风险
+-   [
+            **FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)：控制当到达最后一帧时发生的操作。 **FillBehavior** 不会对任何中间关键帧产生任何影响。
+-   [
+            **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)：
+    -   如果设置为 **Forever**，则关键帧及其时间线将一直重复。
+    -   如果设置为一个迭代计数，则时间线将重复该计数多次。
+    -   如果设置为 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)，则时间线在到达该时间前一直重复。 如果该数不是时间线的隐式持续时间的整数倍数，则这可能会截断关键帧序列中的部分动画。
+-   [
+            **SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty)（不常使用）
 
-### Linear key frames
+### 线性关键帧
 
-Linear key frames result in a simple linear interpolation of the value until the frame's **KeyTime** is reached. This interpolation behavior is the most similar to the simpler **From**/**To**/**By** animations described in the [Storyboarded animations](storyboarded-animations.md) topic.
+线性关键帧在帧的 **KeyTime** 达到前，产生该值的简单线性内插。 此内插行为与[情节提要动画](storyboarded-animations.md)主题中介绍的更为简单的 **From**/**To**/**By** 动画非常相似。
 
-Here's how to use a key-frame animation to scale the render height of a rectangle, using linear key frames. This example runs an animation where the height of the rectangle increases slightly and linearly for the first 4 seconds, then scales rapidly for the last second until the rectangle is double the starting height.
+下面介绍了如何使用关键帧动画来通过线性关键帧缩放矩形的呈现高度。 此示例运行的动画如下：其中矩形的高度在前 4 秒内缓慢地以线性方式增长，然后在最后一秒迅速增长，直至矩形的高度增长至初始高度的两倍。
 
 ```xml
 <StackPanel>
@@ -58,19 +63,19 @@ Here's how to use a key-frame animation to scale the render height of a rectangl
 </StackPanel>
 ```
 
-### Discrete key frames
+### 离散式关键帧
 
-Discrete key frames don't use any interpolation at all. When a **KeyTime** is reached, the new **Value** is simply applied. Depending on which UI property is being animated, this often produces an animation that appears to "jump". Be certain that this is the aesthetic behavior that you really want. You can minimize the apparent jumps by increasing the number of key frames you declare, but if a smooth animation is your goal, you might be better off using linear or spline key frames instead.
+离散式关键帧根本不使用任何内插。 在 **KeyTime** 到达后，只是简单地应用新的 **Value**。 根据要创建动画的 UI 属性，这种方式常常会产生动画仿佛在“跳”的感觉。 请确保这正是你确实需要的艺术行为。 你可以通过增加声明的关键帧数目来最大程度地减少明显的跳跃感，但如果你需要流畅的动画效果，最好是改为使用线性或样条关键帧。
 
-**Note**  Discrete key frames are the only way to animate a value that isn't of type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870), and [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723), with a [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132). We'll discuss this in more detail later in this topic.
+**注意** 离散式关键帧是为其类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 和 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 的值（具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)）创建动画的唯一方法。 我们将在本主题的后面部分更详细地讨论此方法。
 
- 
+ 
 
-### Spline key frames
+### 样条关键帧
 
-A spline key frame create a variable transition between values according to the value of the **KeySpline** property. This property specifies the first and second control points of a Bezier curve, which describes the acceleration of the animation. Basically a [**KeySpline**](https://msdn.microsoft.com/library/windows/apps/BR210307) defines a function over time relationship where the function-time graph is the shape of that Bezier curve. Typically you specify a **KeySpline** value in a XAML shorthand attribute string that has four [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) values separated by spaces or commas. These values are "X,Y" pairs for two control points of the Bezier curve. "X" is time and "Y" is the function modifier to the value. Each value should always be between 0 and 1 inclusive. Without control point modification to a **KeySpline**, the straight line from 0,0 to 1,1 is the representation of a function over time for a linear interpolation. Your control points change the shape of that curve and thus the behavior of the function over time for the spline animation. It's probably best to see this visually as a graph. You can run the [Silverlight key-spline visualizer sample](http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample) in a browser to see how the control points modify the curve and how a sample animation runs when using it as a **KeySpline** value.
+样条关键帧根据 **KeySpline** 属性的值在值之间创建可变的过渡。 此属性指定贝塞尔曲线的第一个控制点和第二个控制点，可描述动画的加速。 基本上，[**KeySpline**](https://msdn.microsoft.com/library/windows/apps/BR210307) 定义了一个时间函数关系，其中函数-时间图形采用贝塞尔曲线的形状。 通常，你在 XAML 速记属性字符串中指定一个 **KeySpline** 值，该字符串具有四个以空格或逗号分隔的 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值。 这些值是用作贝塞尔曲线的两个控制点的“X,Y”对。 “X”是时间，而“Y”是对值的函数修饰符。 每个值应始终介于 0 到 1 之间（包含这两个值）。 如果不将控制点修改为 **KeySpline**，则从 0,0 到 1,1 的直线是线性内插的时间函数的表示形式。 控制点更改该曲线的形状，并因此更改样条动画的时间函数的行为。 最好是在图形上以可视化方式查看此方法。 你可以在浏览器中运行 [Silverlight 主曲线可视化工具示例](http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample)以查看控制点如何修改曲线以及示例动画在将其用作 **KeySpline** 值时如何运行。
 
-This next example shows three different key frames applied to an animation, with the last one being a key spline animation for a [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) value ([**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446)). Note the string "0.6,0.0 0.9,0.00" applied for **KeySpline**. This produces a curve where the animation appears to run slowly at first but then rapidly reaches the value just before the **KeyTime** is reached.
+此下一示例展示应用于一个动画的三个不同关键帧，其最后一帧为 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值的主曲线动画 ([**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446))。 请注意应用于 **KeySpline** 的字符串“0.6,0.0 0.9,0.00”。 这会生成一条曲线，其中动画在开始时缓慢运行，但随后在刚刚到达 **KeyTime** 前快速到达该值。
 
 ```xml
 <Storyboard x:Name="myStoryboard">
@@ -136,39 +141,51 @@ This example applies a [**CubicEase**](https://msdn.microsoft.com/library/window
         </Storyboard>
 ```
 
-This is just one easing function example. We'll cover more in the next section.
+这仅仅是一个缓动函数示例。 我们将在下一节对此进行更多讨论。
 
-## Easing functions
+## 缓动函数
 
-Easing functions allow you to apply custom mathematical formulas to your animations. Mathematical operations are often useful to produce animations that simulate real-world physics in a 2-D coordinate system. For example, you may want an object to realistically bounce or behave as though it were on a spring. You could use key frame or even **From**/**To**/**By** animations to approximate these effects but it would take a significant amount of work and the animation would be less accurate than using a mathematical formula.
+缓动函数支持你将自定义数学公式应用到动画。 数学运算通常对于制作在 2-D 坐标系中模拟真实物理效果的动画非常有用。 例如，你可能想要某个对象以理想的方式弹跳或表现，就好像在弹簧上运动一样。 你可以使用关键帧或 **From**/**To**/**By** 动画来模拟这些效果，但是这样工作量很大，而且动画比起使用数学公式来说准确性要低。
 
-Easing functions can be applied to animations in three ways:
+缓动函数可以以三种方式应用于动画：
 
--   By using an easing keyframe in a keyframe animation, as described in the previous section. Use [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267), [**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx), or [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279).
--   By setting the **EasingFunction** property on one of the **From**/**To**/**By** animation types. Use [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075), [**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) or [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354).
--   By setting [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) as part of a [**VisualTransition**](https://msdn.microsoft.com/library/windows/apps/BR209034). This is specific to defining visual states for controls; for more info, see [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) or [Storyboards for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
+-   按照上一节中的说明，通过在关键帧动画中使用缓动关键帧。 使用 [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267)、[**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx) 或 [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279)
+-   通过在 **From**/**To**/**By** 动画类型之一上设置 **EasingFunction** 属性。 使用 [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075)、[**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 或 [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354)
+-   通过将 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 设置为 [**VisualTransition**](https://msdn.microsoft.com/library/windows/apps/BR209034) 的一部分。 这种方式专用于定义控件的视觉状态；对于详细信息，请参阅 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 或[视觉状态的情节提要](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
 
-Here is a list of the easing functions:
+下面是缓动函数的列表：
 
--   [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049): Retracts the motion of an animation slightly before it begins to animate in the path indicated.
--   [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057): Creates a bouncing effect.
--   [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063): Creates an animation that accelerates or decelerates using a circular function.
--   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126): Creates an animation that accelerates or decelerates using the formula f(t) = t3.
--   [**ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282): Creates an animation that resembles a spring oscillating back and forth until it comes to rest.
--   [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294): Creates an animation that accelerates or decelerates using an exponential formula.
--   [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399): Creates an animation that accelerates or decelerates using the formula f(t) = tp where p is equal to the [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) property.
--   [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403): Creates an animation that accelerates or decelerates using the formula f(t) = t2.
--   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405): Creates an animation that accelerates or decelerates using the formula f(t) = t4.
--   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407): Create an animation that accelerates or decelerates using the formula f(t) = t5.
--   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439): Creates an animation that accelerates or decelerates using a sine formula.
+-   [
+            **BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049)：动画开始在指定路径上运动前稍微收缩动画的运行。
+-   [
+            **BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057)：创建回弹效果。
+-   [
+            **CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063)：使用圆函数创建加速或减速的动画。
+-   [
+            **CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)：使用函数 f(t) = t3 创建加速或减速的动画。
+-   [
+            **ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282)：创建一个动画，模拟弹簧的来回振荡运动，直到它达到停止状态。
+-   [
+            **ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)：使用指数公式创建加速或减速的动画。
+-   [
+            **PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399)：使用公式 f(t) = tp 创建加速或减速的动画，其中 p 等于 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 属性。
+-   [
+            **QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403)：使用函数 f(t) = t2 创建加速或减速的动画。
+-   [
+            **QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405)：使用函数 f(t) = t4 创建加速或减速的动画。
+-   [
+            **QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407)：使用函数 f(t) = t5 创建加速或减速的动画。
+-   [
+            **SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439)：使用正弦公式创建加速或减速的动画。
 
-Some of the easing functions have their own properties. For example, [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) has two properties [**Bounces**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) and [**Bounciness**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx) that modify the function-over-time behavior of that particular **BounceEase**. Other easing functions such as [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126) don't have properties other than the [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) property that all easing functions share, and always produce the same function-over-time behavior.
+某些缓动函数具有其自己的属性。 例如，[**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) 具有两个属性（[**Bounces**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) 和 [**Bounciness**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx)），用于修改该特定 **BounceEase** 的时间函数行为。 其他缓动函数（例如 [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)）不具有除所有缓动函数共享的 [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) 属性之外的任何属性，并且始终产生相同的时间函数行为。
 
-Some of these easing functions have a bit of overlap, depending on how you set properties on the easing functions that have properties. For example, [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) is exactly the same as a [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) with [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) equal to 2. And [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) is basically a default-value [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294).
+根据你在具有多个属性的缓动函数上设置的属性，这些缓动函数中的某些函数会部分重叠。 例如，[**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) 与其 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 等于 2 的 [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) 完全相同。 并且，基本上 [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) 就是具有默认值的 [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)
 
-The [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) easing function is unique because it can change the value outside of the normal range as set by **From**/**To** or values of key frames. It starts the animation by changing the value in the opposite direction as would be expected from a normal **From**/**To** behavior, goes back to the **From** or starting value again, and then runs the animation as normal.
+[
+            **BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) 缓动函数是唯一的，因为它可以更改正常范围之外的值（在由 **From**/**To** 设置时）或关键帧的值。 它通过更改相反方向的值启动动画，按照预期从正常的 **From**/**To** 行为开始，再次返回至 **From** 或起始值，然后按正常行为运行动画。
 
-In an earlier example, we showed how to declare an easing function for a key-frame animation. This next sample applies an easing function to a **From**/**To**/**By** animation.
+在前面的示例中，我们展示了如何为关键帧动画声明缓动函数。 下一示例会将缓动函数应用到 **From**/**To**/**By** 动画。
 
 ```xml
 <StackPanel x:Name="LayoutRoot" Background="White">
@@ -188,15 +205,16 @@ In an earlier example, we showed how to declare an easing function for a key-fra
 </StackPanel>
 ```
 
-When an easing function is applied to a **From**/**To**/**By** animation, it's changing the function- over-time characteristics of how the value interpolates between the **From** and **To** values over the [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) of the animation. Without an easing function, that would be a linear interpolation.
+当缓动函数应用到 **From**/**To**/**By** 动画时，它会更改时间函数的特性，该特性确定值如何随着动画的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) 内插到 **From** 与 **To** 值之间。 如果没有缓动函数，则该内插将为线性内插。
 
-## <span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>Discrete object value animations
+## <span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>离散式对象值动画
 
-One type of animation deserves special mention because it's the only way you can apply an animated value to properties that aren't of type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870), or [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). This is the key-frame animation [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320). Animating using [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) values is different because there's no possibility of interpolating the values between the frames. When the frame's [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) is reached, the animated value is immediately set to the value specified in the key frame's **Value**. Because there's no interpolation, there's only one key frame you use in the **ObjectAnimationUsingKeyFrames** key frames collection: [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132).
+有一种类型的动画值得特别提出，因为它是可以将动画化的值应用于其类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 的属性的唯一方法。 它就是关键帧动画 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)。 使用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 值的动画非常不同，因为不可能在帧之间内插值。 当帧的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) 到达时，动画化的值将立即设置为关键帧的 **Value** 中指定的值。 由于没有任何内插，因此只有一种关键帧用于 **ObjectAnimationUsingKeyFrames** 关键帧集合：[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)
 
-The [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) of a [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) is often set using property element syntax, because the object value you are trying to set often is not expressible as a string to fill **Value** in attribute syntax. You can still use attribute syntax if you use a reference such as [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588).
+[
+            **DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 的 [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) 通常使用属性元素语法设置，因为你尝试设置的对象值通常不可表示为字符串以采用属性语法填充 **Value**。 如果你使用引用，例如 [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588)，则仍可以使用属性语法
 
-One place you'll see an [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) used in the default templates is when a template property references a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) resource. These resources are [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) objects, not just a [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) value, and they use resources that are defined as system themes ([**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/BR208807)). They can be assigned directly to a **Brush**-type value such as [**TextBlock.Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) and don't need to use indirect targeting. But because a **SolidColorBrush** is not [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870), or **Color**, you have to use a **ObjectAnimationUsingKeyFrames** to use the resource.
+你将发现默认模板中使用的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) 的一个情况是在模板属性引用 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 资源时。 这些资源是 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 对象，而不仅仅是 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 值，并且它们使用定义为系统主题 ([**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/BR208807)) 的资源。 可以将它们直接分配给 **Brush** 类型的值，例如 [**TextBlock.Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665)，并且不需要使用间接目标。 但由于 **SolidColorBrush** 不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 **Color**，因此你必须使用 **ObjectAnimationUsingKeyFrames** 才能使用该资源。
 
 ```xml
 <Style x:Key="TextButtonStyle" TargetType="Button">
@@ -261,18 +279,23 @@ You also might use [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.co
 </Style>
 ```
 
-You can use more than one [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) for an [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) frame set. This might be an interesting way to create a "slide show" animation by animating the value of [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760), as an example scenario for where multiple object values might be useful.
+你可以将多个 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 用于一个 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) 帧集。 作为其中多个对象值可能有用的示例方案，这是通过创建 [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) 的值的动画来创建“幻灯片放映”动画的一种有趣方法。
 
- ## Related topics
+ ## 相关主题
 
-* [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586)
-* [Dependency properties overview](https://msdn.microsoft.com/library/windows/apps/Mt185583)
-* [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
+* [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)
+* [依赖关系属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)
+* [**情节提要**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

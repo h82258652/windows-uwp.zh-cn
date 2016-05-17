@@ -1,20 +1,20 @@
 ---
 author: mcleblanc
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
-title: Optimize your XAML markup
-description: Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app.
+title: 优化 XAML 标记
+description: 在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以采取以下措施为你的应用提高 XAML 标记分析和加载时间以及内存效率。
 ---
-# Optimize your XAML markup
+# 优化 XAML 标记
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app.
+在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以采取以下措施为你的应用提高 XAML 标记分析和加载时间效率以及内存效率。
 
-At app startup, limit the XAML markup that is loaded to only what you need for your initial UI. Examine the markup in your initial page and confirm it contains nothing that it doesn't need. If a page references a user control or a resource defined in a different file, then the framework parses that file, too.
+在应用启动时进行限制，即仅加载初始 UI 所需的 XAML 标记。 检查初始页面中的标记，确认该页面不包含任何不需要的内容。 如果页面引用在其他文件中定义的用户控件或资源，则框架还会分析该文件。
 
-In this example, because InitialPage.xaml uses one resource from ExampleResourceDictionary.xaml, the whole of ExampleResourceDictionary.xaml must be parsed at startup.
+在此示例中，因为 InitialPage.xaml 使用了 ExampleResourceDictionary.xaml 中的一个资源，因此在启动时必须分析整个 ExampleResourceDictionary.xaml。
 
-**InitialPage.xaml.**
+**InitialPage.xaml。**
 
 ```xml
 <Page x:Class="ExampleNamespace.InitialPage" ...> 
@@ -32,7 +32,7 @@ In this example, because InitialPage.xaml uses one resource from ExampleResource
 </Page>
 ```
 
-**ExampleResourceDictionary.xaml.**
+**ExampleResourceDictionary.xaml。**
 
 ```xml
 <ResourceDictionary>
@@ -43,9 +43,9 @@ In this example, because InitialPage.xaml uses one resource from ExampleResource
 </ResourceDictionary>
 ```
 
-If you use a resource on many pages throughout your app, then storing it in App.xaml is a good practice, and avoids duplication. But App.xaml is parsed at app startup so any resource that is used in only one page (unless that page is the initial page) should be put into the page's local resources. This counter-example shows App.xaml containing resources that are used by only one page (that's not the initial page). This needlessly increases app startup time.
+如果在应用中的许多页面上都使用了某个资源，将其存储在 App.xaml 中是一个很好的方法，并且可以避免重复。 但 App.xaml 将在启动时进行分析，因此任何仅在一个页面（除非该页面是初始页面）中使用的资源都应放置于页面的本地资源中。 此计数器示例演示的 App.xaml 包含仅由一个页面（非初始页面）使用的资源。 这会不必要地增加了应用启动时间。
 
-**InitialPage.xaml.**
+**InitialPage.xaml。**
 
 ```xml
 <Page ...>  <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->   
@@ -55,7 +55,7 @@ If you use a resource on many pages throughout your app, then storing it in App.
 </Page> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**SecondPage.xaml.**
+**SecondPage.xaml。**
 
 ```xml
 <Page ...>  <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -78,15 +78,15 @@ If you use a resource on many pages throughout your app, then storing it in App.
 </Application> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-The way to make the above counter-example more efficient is to move `SecondPageTextBrush` into SecondPage.xaml and to move `ThirdPageTextBrush` into ThirdPage.xaml. `InitialPageTextBrush` can remain in App.xaml because application resources must be parsed at app startup in any case.
+若要使上述计数器示例更有效率，可以将 `SecondPageTextBrush` 移动到 SecondPage.xaml 中，然后将 `ThirdPageTextBrush` 移动到 ThirdPage.xaml 中。 `InitialPageTextBrush` 可以保留在 App.xaml 中，因为在任何情况下，应用程序资源都必须在应用启动时进行分析。
 
-## Minimize element count
+## 最大程度减少元素计数
 
-Although the XAML platform is capable of displaying large numbers of elements, you can make your app lay out and render faster by using the fewest number of elements to achieve the visuals you want.
+尽管 XAML 平台能够显示大量元素，但你可以使用最少数量的元素实现所需的视觉效果，从而使应用布局设置和呈现速度更快。
 
--   Layout panels have a [**Background**](https://msdn.microsoft.com/library/windows/apps/BR227512) property so there's no need to put a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) in front of a Panel just to color it.
+-   布局面板具有 [**Background**](https://msdn.microsoft.com/library/windows/apps/BR227512) 属性，因此无需只是为了将面板着色而将 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 置于 Panel 前。
 
-**Inefficient.**
+**低效。**
 
 ```xml
 <Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -94,19 +94,19 @@ Although the XAML platform is capable of displaying large numbers of elements, y
     </Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Efficient.**
+**高效。**
 
 ```xml
 <Grid Background="Black"/>
 ```
 
--   If you reuse the same vector-based element enough times, it becomes more efficient to use an [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) element instead. Vector-based elements can be more expensive because the CPU must create each individual element separately. The image file needs to be decoded only once.
+-   如果重用同一基于矢量的元素的次数足够多，则改为使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素将会更加高效。 基于矢量的元素更加耗费资源，因为 CPU 必须分别创建每个单独的元素。 图像文件仅需要解码一次。
 
-## Consolidate multiple brushes that look the same into one resource
+## 将看起来相同的多个画笔整合到一个资源中
 
-The XAML platform tries to cache commonly-used objects so that they can be reused as often as possible. But XAML cannot easily tell if a brush declared in one piece of markup is the same as a brush declared in another. The example here uses [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) to demonstrate, but the case is more likely and more important with [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068).
+XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这些对象。 但是，XAML 难以判断在一部分标记中声明的画笔是否与在另一部分的标记中声明的画笔相同。 此处的示例使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 进行演示，但使用 [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068) 的情况可能性更大也更为重要
 
-**Inefficient.**
+**低效。**
 
 ```xml
 <Page ... > <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -125,9 +125,9 @@ The XAML platform tries to cache commonly-used objects so that they can be reuse
 </Page> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-Also check for brushes that use predefined colors: `"Orange"` and `"#FFFFA500"` are the same color. To fix the duplication, define the brush as a resource. If controls in other pages use the same brush, move it to App.xaml.
+还需检查使用预定义颜色的画笔：`"Orange"` 和 `"#FFFFA500"` 是同一颜色。 若要解决重复问题，请将画笔定义为资源。 如果 其他页面中的控件使用了同一画笔，请将该画笔移动到 App.xaml 中。
 
-**Efficient.**
+**高效。**
 
 ```xml
 <Page ... >
@@ -142,14 +142,14 @@ Also check for brushes that use predefined colors: `"Orange"` and `"#FFFFA500"` 
 </Page>
 ```
 
-## Minimize overdrawing
+## 尽量减少过度绘制
 
-Overdrawing is where more than one object is drawn in the same screen pixels. Note that there is sometimes a trade-off between this guidance and the desire to minimize element count.
+过度绘制是指采用同一屏幕像素绘制多个对象。 请注意，有时本指南与最大程度减少元素数目的需求之间会存在权衡关系。
 
--   If an element isn't visible because it's transparent or hidden behind other elements, and it's not contributing to layout, then delete it. If the element is not visible in the initial visual state but it is visible in other visual states then set [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) to **Collapsed** on the element itself and change the value to **Visible** in the appropriate states. There will be exceptions to this heuristic: in general, the value a property has in the major of visual states is best set locally on the element.
--   Use a composite element instead of layering multiple elements to create an effect. In this example, the result is a two-toned shape where the top half is black (from the background of the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) and the bottom half is gray (from the semi-transparent white [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) alpha-blended over the black background of the **Grid**). Here, 150% of the pixels necessary to achieve the result are being filled.
+-   如果元素由于透明或隐藏在其他元素之后的原因而不可见，并且它不会对布局产生影响，请将其删除。 如果元素在初始的视觉状态中不可见，但在其他视觉状态中可见，请将元素本身的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) 设置为 **Collapsed**，并将该值更改为相应状态中的 **Visible**。 此类启发式方法存在例外情况：通常情况下，主要的视觉状态中属性所具有的值最好在元素上本地设置。
+-   使用合成元素，而不是通过将多个元素分层来创建某个效果。 在此示例中，结果是双色的形状，上半部分是黑色（来自 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 的背景），而下半部分是灰色（来自 **Grid** 黑色背景上的半透明白色 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) Alpha 混合）。 此处填充了实现效果所需的 150% 的像素。
 
-**Inefficient.**
+**低效。**
     
 ```xml
     <Grid Background="Black"> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -161,7 +161,7 @@ Overdrawing is where more than one object is drawn in the same screen pixels. No
     </Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Efficient.**
+**高效。**
 
 ```xml
     <Grid>
@@ -174,9 +174,9 @@ Overdrawing is where more than one object is drawn in the same screen pixels. No
     </Grid>
 ```
 
--   A layout panel can have two purposes: to color an area, and to lay out child elements. If an element further back in z-order is already coloring an area then a layout panel in front does not need to paint that area: instead it can just focus on laying out its children. Here's an example.
+-   布局面板可以有两个目的：为区域着色，以及设置子元素的布局。 如果 Z 顺序中较为后面的元素已经为区域着色，则前面的布局面板无需再绘制该区域：它可以只专注于设置其子元素的布局。 下面提供了一个示例。
 
-**Inefficient.**
+**低效。**
 
 ```xml
     <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -189,7 +189,7 @@ Overdrawing is where more than one object is drawn in the same screen pixels. No
     </GridView> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Efficient.**
+**高效。**
 
 ```xml
     <GridView Background="Blue">  
@@ -201,11 +201,11 @@ Overdrawing is where more than one object is drawn in the same screen pixels. No
     </GridView> 
 ```
 
-If the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) has to be hit-testable then set a background value of transparent on it.
+如果 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 必须进行点击测试，请对它设置透明背景值。
 
--   Use a [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209253) element to draw a border around an object. In this example, a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) is used as a makeshift border around a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683). But all the pixels in the center cell are overdrawn.
+-   使用 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209253) 元素绘制对象周围的边框。 在此示例中，[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 用作 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 周围的临时边框。 但中心单元的所有像素要进行过度绘制。
 
-**Inefficient.**
+**低效。**
 
 ```xml
     <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -224,7 +224,7 @@ If the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) has 
     </Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Efficient.**
+**高效。**
 
 ```xml
     <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
@@ -232,15 +232,15 @@ If the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) has 
     </Border>
 ```
 
--   Be aware of margins. Two neighboring elements will overlap (possibly accidentally) if negative margins extend into another’s render bounds and cause overdrawing.
+-   请注意边距。 如果负边距扩展到另一方的呈现边界并引起过度绘制，则两个相邻元素将（可能意外）重叠。
 
-Use [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) as a visual diagnostic. You may find objects being drawn that you weren't aware were in the scene.
+将 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) 用作视觉诊断。 你可能会在场景中发现你未注意到的要进行绘制的对象。
 
-## Cache static content
+## 缓存静态内容
 
-Another source of overdrawing is a shape made from many overlapping elements. If you set [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) to **BitmapCache** on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) that contains the composite shape then the platform renders the element to a bitmap once and then uses that bitmap each frame instead of overdrawing.
+过度绘制的另一个来源是由许多重叠元素形成的形状。 如果针对包含合成形状的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，将 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) 设置为 **BitmapCache**，平台会将该元素作为位图呈现一次，然后每帧使用该位图而不是过度绘制。
 
-**Inefficient.**
+**低效。**
 
 ```xml
 <Canvas Background="White">
@@ -250,13 +250,13 @@ Another source of overdrawing is a shape made from many overlapping elements. If
 </Canvas>
 ```
 
-![Venn diagram with three solid circles](images/solidvenn.png)
+![包含三个实心圆的维恩图](images/solidvenn.png)
 
-The image above is the result, but here's a map of the overdrawn regions. Darker red indicates higher amounts of overdraw.
+上面的图像是结果，而此处为过度绘制区域的示意图。 红色越深，指示过度绘制程度越高。
 
-![Venn diagram that shows overlapping areas](images/translucentvenn.png)
+![显示重叠区域的维恩图](images/translucentvenn.png)
 
-**Efficient.**
+**高效。**
 
 ```xml
 <Canvas Background="White" CacheMode="BitmapCache">
@@ -266,21 +266,26 @@ The image above is the result, but here's a map of the overdrawn regions. Darker
 </Canvas>
 ```
 
-Note the use of [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084). Don't use this technique if any of the sub-shapes animate because the bitmap cache will likely need to be regenerated every frame, defeating the purpose.
+请注意 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) 的使用。 如果任意子形状具有动画效果，请不要使用此技术，因为可能需要在每一帧重新生成位图缓存，这违背了原本目的。
 
-## ResourceDictionaries
+## ResourceDictionary
 
-ResourceDictionaries are generally used to store your resources at a somewhat global level. Resources that your app wants to reference in multiple places. For example, styles, brushes, templates, and so on. In general, we have optimized ResourceDictionaries to not instantiate resources unless they're asked for. But there are few places where you need to be a little careful.
+ResourceDictionary 通常用于存储几乎全局级别的资源。 你的应用想要在多个位置引用的资源。 例如，样式、画笔、模板等等。 一般情况下，我们优化了 ResourceDictionary，以便不实例化资源（除非另有要求）。 但是有一些你需要注意的地方。
 
-**Resource with x:Name**. Any resource with x:Name will not benefit from the platform optimization, but instead it will be instantiated as soon as the ResourceDictionary is created. This happens because x:Name tells the platform that your app needs field access to this resource, so the platform needs to create something to create a reference to.
+**具有 x:Name 的资源**。 具有 x:Name 的任何资源都不会受益于平台优化，但是只要创建 ResourceDictionary，就会立即对其进行实例化。 之所以出现这种情况是因为 x:Name 会告诉平台你的应用需要对此资源的字段访问权限，因此平台需要创建某些内容来创建相关引用。
 
-**ResourceDictionaries in a UserControl**. ResourceDictionaries defined inside of a UserControl carry a penalty. The platform will create a copy of such a ResourceDictionary for every instance of the UserControl. If you have a UserControl that is used a lot, then move the ResourceDictionary out of the UserControl and put it the page level.
+**UserControl 中的 ResourceDictionary**。 在 UserControl 内部定义的 ResourceDictionary 会产生负面影响。 平台将为 UserControl 的每个实例创建此类 ResourceDictionary 的副本。 如果你有经常使用的 UserControl，那么请将ResourceDictionary 移出 UserControl，并将其放在页面级别。
 
-## Use XBF2
+## 使用 XBF2
 
-XBF2 is a binary representation of XAML markup that avoids all text-parsing costs at runtime. It also optimizes your binary for load and tree creation, and allows "fast-path" for XAML types to improve heap and object creation costs, for example VSM, ResourceDictionary, Styles, and so on. It is completely memory-mapped so there is no heap footprint for loading and reading a XAML Page. In addition, it reduces the disk footprint of stored XAML pages in an appx. XBF2 is a more compact representation and it can reduce disk footprint of comparative XAML/XBF1 files by up to 50%. For example, the built-in Photos app saw around a 60% reduction after conversion to XBF2 dropping from around ~1mb of XBF1 assets to ~400kb of XBF2 assets. We have also seen apps benefit anywhere from 15 to 20% in CPU and 10 to 15% in Win32 heap.
+XBF2 是在运行时避免所有文本分析成本的 XAML 标记的二进制表示形式。 它还为加载和树创建优化了你的二进制文件，并允许适用于 XAML 类型的“快速路径”改进堆和对象创建成本，例如 VSM、ResourceDictionary、Styles 等。 由于它完全由内存映射，因此没有可用于加载和读取 XAML 页面的堆占用。 此外，它可以减少以 appx 格式存储的 XAML 页面的磁盘占用。 XBF2 是更紧凑的表示形式，并且它可以减少多达 50%的比较 XAML/XBF1 文件的磁盘占用。 例如，在转换为 XBF2 后，内置的“照片”应用会减少大约 60%，即从约 ~1MB 的 XBF1 资源下降到约 ~400KB 的 XBF2 资源。 我们还看到了应用在 CPU 方面受益了 15% 到 20%，在 Win32 堆方面受益了 10% 到 15%。
 
-XAML built-in controls and dictionaries that the framework provides are already fully XBF2-enabled. For your own app, ensure that your project file declares TargetPlatformVersion 8.2 or later.
+框架提供的 XAML 内置控件和字典已完全支持 XBF2。 对于你自己的应用，请确保你的项目文件可声明 TargetPlatformVersion 8.2 或更高版本。
 
-To check whether you have XBF2, open your app in a binary editor; the 12th and 13th bytes are 00 02 if you have XBF2.
+若要检查你是否具有 XBF2，请在二进制编辑器中打开你的应用；如果有 XBF2，则第 12 个和第 13 个字节为 00 02。
+
+
+
+<!--HONumber=May16_HO2-->
+
 

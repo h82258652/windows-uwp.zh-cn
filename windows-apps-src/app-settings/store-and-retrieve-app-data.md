@@ -1,58 +1,60 @@
 ---
 author: mijacobs
-Description: Learn how to store and retrieve local, roaming, and temporary app data.
-title: Store and retrieve settings and other app data
+Description: 了解如何存储和检索本地、漫游和临时应用数据。
+title: 存储和检索设置以及其他应用数据
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
 ---
 
-# Store and retrieve settings and other app data
+# 存储和检索设置以及其他应用数据
 
 
 
 
 
-*App data* is mutable data that is specific to a particular app. It includes runtime state, user preferences, and other settings. App data is different from *user data*, data that the user creates and manages when using an app. User data includes document or media files, email or communication transcripts, or database records holding content created by the user. User data may be useful or meaningful to more than one app. Often, this is data that the user wants to manipulate or transmit as an entity independent of the app itself, such as a document.
+*应用数据*是特定于具体应用的可变数据。 它包含运行时状态、用户首选项和其他设置。 应用数据不同于*用户数据*，它是用户使用应用时创建和管理的数据。 用户数据包含文档或媒体文件、电子邮件或通信脚本或保留用户所创建内容的数据库记录。 用户数据可能对于多个应用都非常有用或有意义。 通常此为用户要操作或作为独立于应用自身的实体进行传输的数据，例如文档。
 
-**Important note about app data:  **The lifetime of the app data is tied to the lifetime of the app. If the app is removed, all of the app data will be lost as a consequence. Don't use app data to store user data or anything that users might perceive as valuable and irreplaceable. We recommend that the user's libraries and Microsoft OneDrive be used to store this sort of information. App data is ideal for storing app-specific user preferences, settings, and favorites.
+**有关应用数据的重要说明：**应用数据的生命周期与应用的生命周期相关联。 如果应用被删除，则会丢失所有应用数据。 不要使用应用数据存储用户数据或用户可能视作有价值和不可替代内容的任何数据。 我们建议使用用户的库和 Microsoft OneDrive 存储此类信息。 应用数据非常适合存储特定于应用的用户首选项、设置和收藏夹。
 
-## <span id="Types_of_app_data"></span><span id="types_of_app_data"></span><span id="TYPES_OF_APP_DATA"></span>Types of app data
-
-
-There are two types of app data: settings and files.
-
--   **Settings**
-
-    Use settings to store user preferences and application state info. The app data API enables you to easily create and retrieve settings (we'll show you some examples later in this article).
-
-    Here are data types you can use for app settings:
-
-    -   **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
-    -   **Boolean**
-    -   **Char16**, **String**
-    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
-    -   **GUID**, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588): A set of related app settings that must be serialized and deserialized atomically. Use composite settings to easily handle atomic updates of interdependent settings. The system ensures the integrity of composite settings during concurrent access and roaming. Composite settings are optimized for small amounts of data, and performance can be poor if you use them for large data sets.
--   **Files**
-
-    Use files to store binary data or to enable your own, customized serialized types.
-
-## <span id="Storing_app_data_in_the_app_data_stores"></span><span id="storing_app_data_in_the_app_data_stores"></span><span id="STORING_APP_DATA_IN_THE_APP_DATA_STORES"></span>Storing app data in the app data stores
+## <span id="Types_of_app_data"></span><span id="types_of_app_data"></span><span id="TYPES_OF_APP_DATA"></span>应用数据类型
 
 
-When an app is installed, the system gives it its own per-user data stores for settings and files. You don't need to know where or how this data exists, because the system is responsible for managing the physical storage, ensuring that the data is kept isolated from other apps and other users. The system also preserves the contents of these data stores when the user installs an update to your app and removes the contents of these data stores completely and cleanly when your app is uninstalled.
+应用数据有两类：设置和文件。
 
-Within its app data store, each app has system-defined root directories: one for local files, one for roaming files, and one for temporary files. Your app can add new files and new containers to each of these root directories.
+-   **设置**
 
-## <span id="Local_app_data"></span><span id="local_app_data"></span><span id="LOCAL_APP_DATA"></span>Local app data
+    使用设置存储用户首选项和应用程序状态信息。 应用数据 API 使你能够轻松创建和检索设置（我们将稍后在本文中介绍一些相应示例）。
+
+    以下是可以用于应用设置的数据类型：
+
+    -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
+    -   **布尔值**
+    -   **Char16**、**String**
+    -   [
+            **DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
+    -   **GUID**、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
+    -   [
+            **ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)：一组必须按原子方式序列化和反序列化的相关应用设置。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
+-   **文件**
+
+    使用文件存储二进制数据，或支持自己的自定义序列化类型。
+
+## <span id="Storing_app_data_in_the_app_data_stores"></span><span id="storing_app_data_in_the_app_data_stores"></span><span id="STORING_APP_DATA_IN_THE_APP_DATA_STORES"></span>在应用数据存储中存储应用数据
 
 
-Local app data should be used for any information that needs to be preserved between app sessions and is not suitable for roaming app data. Data that is not applicable on other devices should be stored here as well. There is no general size restriction on local data stored. Use the local app data store for data that it does not make sense to roam and for large data sets.
+安装应用时，系统会为设置和文件提供它自己的每用户数据存储。 你不需要知道这些数据位于何处或如何存储，因为系统会负责管理物理存储工作，这样可确保数据与其他应用和用户保持隔离状态。 系统还在用户向应用安装更新时保留这些数据存储的内容，并在卸载应用时完全且干净地删除这些数据存储的内容。
 
-### <span id="Retrieve_the_local_app_data_store"></span><span id="retrieve_the_local_app_data_store"></span><span id="RETRIEVE_THE_LOCAL_APP_DATA_STORE"></span>Retrieve the local app data store
+在每个应用的应用数据存储中，该应用拥有系统定义的根目录：一个用于本地文件，一个用于漫游文件，还有一个用于临时文件。 应用可以向这些根目录添加新文件和新容器。
 
-Before you can read or write local app data, you must retrieve the local app data store. To retrieve the local app data store, use the [**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) property to get the app's local settings as an [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) object. Use the [**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) property to get the files in a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) object. Use the [**ApplicationData.LocalCacheFolder**](https://msdn.microsoft.com/library/windows/apps/dn633825) property to get the folder in the local app data store where you can save files that are not included in backup and restore.
+## <span id="Local_app_data"></span><span id="local_app_data"></span><span id="LOCAL_APP_DATA"></span>本地应用数据
+
+
+本地应用数据应用于需要在应用会话之间予以保留但不适合于漫游应用数据的任何信息。 不适用于其他设备的数据也应存储在此处。 存储的本地数据没有总大小限制。 使用本地应用数据存储来存储对漫游没有用的数据和大型数据集。
+
+### <span id="Retrieve_the_local_app_data_store"></span><span id="retrieve_the_local_app_data_store"></span><span id="RETRIEVE_THE_LOCAL_APP_DATA_STORE"></span>检索本地应用数据存储
+
+在读取或编写本地应用数据前，必须检索本地应用数据存储。 若要检索本地应用数据存储，请使用 [**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 属性获取应用作为 [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) 对象的本地设置。 使用 [**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 属性可以获取 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 对象中的文件。 使用 [**ApplicationData.LocalCacheFolder**](https://msdn.microsoft.com/library/windows/apps/dn633825) 属性来获取保存不包括在备份和还原中的文件的本地应用数据存储中的文件夹。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -61,9 +63,9 @@ Windows.Storage.StorageFolder localFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
 ```
 
-### <span id="Create_and_retrieve_a_simple_local_setting"></span><span id="create_and_retrieve_a_simple_local_setting"></span><span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING"></span>Create and retrieve a simple local setting
+### <span id="Create_and_retrieve_a_simple_local_setting"></span><span id="create_and_retrieve_a_simple_local_setting"></span><span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING"></span>创建和检索简单的本地设置
 
-To create or write a setting, use the [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property to access the settings in the `localSettings` container we got in the previous step. This example creates a setting named `exampleSetting`.
+若要创建或编写设置，请使用 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 属性访问我们在上一步中获取的 `localSettings` 容器中的设置。 此示例会创建一个设置，名为
 
 ```CSharp
 // Simple setting
@@ -71,16 +73,16 @@ To create or write a setting, use the [**ApplicationDataContainer.Values**](http
 localSettings.Values["exampleSetting"] = "Hello Windows";
 ```
 
-To retrieve the setting, you use the same [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property that you used to create the setting. This example shows how to retrieve the setting we just created.
+若要检索该设置，请使用同一个用于创建设置的 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 属性。 此示例显示了如何检索刚创建的设置。
 
 ```CSharp
 // Simple setting
 Object value = localSettings.Values["exampleSetting"];
 ```
 
-### <span id="Create_and_retrieve_a_local_composite_value"></span><span id="create_and_retrieve_a_local_composite_value"></span><span id="CREATE_AND_RETRIEVE_A_LOCAL_COMPOSITE_VALUE"></span>Create and retrieve a local composite value
+### <span id="Create_and_retrieve_a_local_composite_value"></span><span id="create_and_retrieve_a_local_composite_value"></span><span id="CREATE_AND_RETRIEVE_A_LOCAL_COMPOSITE_VALUE"></span>创建和检索本地复合值
 
-To create or write a composite value, create an [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588) object. This example creates a composite setting named `exampleCompositeSetting` and adds it to the `localSettings` container.
+若要创建或编写复合值，请创建 [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588) 对象。 此示例会创建一个名为 `exampleCompositeSetting` 的复合设置并将它添加到 `localSettings` 容器中。
 
 ```CSharp
 // Composite setting
@@ -93,7 +95,7 @@ composite["strVal"] = "string";
 localSettings.Values["exampleCompositeSetting"] = composite;
 ```
 
-This example shows how to retrieve the composite value we just created.
+此示例显示了如何检索刚创建的复合值。
 
 ```CSharp
 // Composite setting
@@ -111,9 +113,10 @@ else
 }
 ```
 
-### <span id="Create_and_read_a_local_file"></span><span id="create_and_read_a_local_file"></span><span id="CREATE_AND_READ_A_LOCAL_FILE"></span>Create and read a local file
+### <span id="Create_and_read_a_local_file"></span><span id="create_and_read_a_local_file"></span><span id="CREATE_AND_READ_A_LOCAL_FILE"></span>创建和读取本地文件
 
-To create and update a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `localFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
+若要创建和更新本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)。 此示例会在 `localFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [
+            **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 ```CSharp
 async void WriteTimestamp()
@@ -127,7 +130,7 @@ async void WriteTimestamp()
 }
 ```
 
-To open and read a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+若要打开本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 和 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)
 
 ```CSharp
 async void ReadTimestamp()
@@ -145,67 +148,68 @@ async void ReadTimestamp()
 }
 ```
 
-## <span id="Roaming_data"></span><span id="roaming_data"></span><span id="ROAMING_DATA"></span>Roaming data
+## <span id="Roaming_data"></span><span id="roaming_data"></span><span id="ROAMING_DATA"></span>漫游数据
 
 
-If you use roaming data in your app, your users can easily keep your app's app data in sync across multiple devices. If a user installs your app on multiple devices, the OS keeps the app data in sync, reducing the amount of setup work that the user needs to do for your app on their second device. Roaming also enables your users to continue a task, such as composing a list, right where they left off even on a different device. The OS replicates roaming data to the cloud when it is updated, and synchronizes the data to the other devices on which the app is installed.
+如果在应用中使用漫游数据，用户可轻松地在多个设备之间保持应用的应用数据同步。 如果用户在多个设备上安装了你的应用，操作系统将保持应用数据同步，减少用户需要在他们的第二个设备上为你的应用所做的设置工作量。 漫游还支持用户甚至在不同的设备上从他们离开的位置继续执行任务，例如撰写列表。 OS 在漫游数据更新时将它复制到云，并将该数据同步到已安装应用的其他设备。
 
-The OS limits the size of the app data that each app may roam. See [**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625). If the app hits this limit, none of the app's app data will be replicated to the cloud until the app's total roamed app data is less than the limit again. For this reason, it is a best practice to use roaming data only for user preferences, links, and small data files.
+操作系统限制了每个应用可漫游的应用数据大小。 请参阅 [**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)。 如果应用达到这一限制，在应用的总漫游应用数据再次少于该限制之前，不会将应用的任何应用数据复制到云。 出于此原因，最好的做法是仅为用户首选项、链接和小型数据文件使用漫游数据。
 
-Roaming data for an app is available in the cloud as long as it is accessed by the user from some device within the required time interval. If the user does not run an app for longer than this time interval, its roaming data is removed from the cloud. If a user uninstalls an app, its roaming data isn't automatically removed from the cloud, it's preserved. If the user reinstalls the app within the time interval, the roaming data is synchronized from the cloud.
+只要用户可在所需的时间间隔内从某个设备访问应用的漫游数据，这些数据就将存在于云中。 如果用户不会在比此时间间隔更长的时间内运行应用，它的漫游数据将从云中删除。 如果用户卸载应用，它的漫游数据不会自动从云中删除，将会保留。 如果用户在该时间间隔内重新安装该应用，则会从云中同步漫游数据。
 
-### Roaming data do's and don'ts
+### 漫游数据应做事项和禁止事项
 
--   Use roaming for user preferences and customizations, links, and small data files. For example, use roaming to preserve a user's background color preference across all devices.
--   Use roaming to let users continue a task across devices. For example, roam app data like the contents of an drafted email or the most recently viewed page in a reader app.
--   Handle the [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) event by updating app data. This event occurs when app data has just finished syncing from the cloud.
--   Roam references to content rather than raw data. For example, roam a URL rather than the content of an online article.
--   For important, time critical settings, use the *HighPriority* setting associated with [**RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624).
--   Don't roam app data that is specific to a device. Some info is only pertinent locally, such as a path name to a local file resource. If you do decide to roam local information, make sure that the app can recover if the info isn't valid on the secondary device.
--   Don't roam large sets of app data. There's a limit to the amount of app data an app may roam; use [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) property to get this maximum. If an app hits this limit, no data can roam until the size of the app data store no longer exceeds the limit. When you design your app, consider how to put a bound on larger data so as to not exceed the limit. For example, if saving a game state requires 10KB each, the app might only allow the user store up to 10 games.
--   Don't use roaming for data that relies on instant syncing. Windows doesn't guarantee an instant sync; roaming could be significantly delayed if a user is offline or on a high latency network. Ensure that your UI doesn't depend on instant syncing.
--   Don't use roam frequently changing data. For example, if your app tracks frequently changing info, such as the position in a song by second, don't store this as roaming app data. Instead, pick a less frequent representation that still provides a good user experience, like the currently playing song.
+-   将漫游用于用户首选项和自定义、链接以及小型数据文件。 例如，使用漫游在所有设备上保留用户的背景颜色首选项。
+-   使用漫游以允许用户跨设备继续执行任务。 例如，诸如草稿电子邮件的内容或阅读器应用中最近查看的页面的漫游应用数据。
+-   通过更新应用数据处理 [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) 事件。 当应用数据从云中完成同步时，会发生该事件。
+-   漫游会引用内容而不是原始数据。 例如，漫游 URL 而不是联机文章的内容。
+-   对于重要的、对时间敏感的设置，使用与 [**RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) 相关联的 *HighPriority* 设置
+-   不要漫游特定于设备的应用数据。 某些信息仅在本地才合理，例如指向本地文件资源的路径名。 如果你决定漫游本地信息，请确保信息在第二台设备上无效时该应用可以进行恢复。
+-   不要漫游较大的应用数据集。 应用可以漫游的应用数据量存在限制；使用 [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) 属性获取这个最大值。 如果应用达到该上限，在应用数据存储的大小不再超过该限制之前，不能漫游任何数据。 在你设计应用时，必须考虑如何为较大数据设置一个限制以免超过此限值。 例如，如果每保存一个游戏状态需要 10KB，则应用可能仅允许用户最多储存 10 个游戏。
+-   不要为依赖即时同步的数据使用漫游。 Windows 不保证实现即时同步；如果用户脱机或在严重延迟的网络上，漫游可能会大大延迟。 请确保你的 UI 不依赖即时同步。
+-   不要使用漫游频繁更改数据。 例如，如果你的应用跟踪频繁更改信息（例如歌曲中每秒的进度位置），则不要将此类信息存储为漫游应用数据。 相反，选取较不频繁但仍提供良好用户体验的表示形式，例如当前播放的歌曲。
 
-### <span id="Roaming_pre-requisites"></span><span id="roaming_pre-requisites"></span><span id="ROAMING_PRE-REQUISITES"></span>Roaming pre-requisites
+### <span id="Roaming_pre-requisites"></span><span id="roaming_pre-requisites"></span><span id="ROAMING_PRE-REQUISITES"></span>漫游先决条件
 
-Any user can benefit from roaming app data if they use a Microsoft account to log on to their device. However, users and group policy administrators can switch off roaming app data on a device at any time. If a user chooses not to use a Microsoft account or disables roaming data capabilities, she will still be able to use your app, but app data be local to each device.
+如果用户使用 Microsoft 帐户登录相应的设备，则任何用户都可以享受到漫游应用数据的益处。 但是，用户和组策略管理员可以随时在设备上关闭漫游应用数据。 如果用户选择不使用 Microsoft 帐户或者禁用漫游数据功能，她仍可以使用你的应用，但应用数据都将留在每台设备本地。
 
-Data stored in the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) will only transition if a user has made a device “trusted”. If a device isn't trusted, data secured in this vault will not roam.
+[
+            **PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 中存储的数据仅将在用户使设备成为“受信任”设备的情况下传输。 如果设备不受信任，则不会漫游在该保管库中安全存储的数据。
 
-### <span id="Conflict_resolution"></span><span id="conflict_resolution"></span><span id="CONFLICT_RESOLUTION"></span>Conflict resolution
+### <span id="Conflict_resolution"></span><span id="conflict_resolution"></span><span id="CONFLICT_RESOLUTION"></span>冲突解决
 
-Roaming app data is not intended for simultaneous use on more than one device at a time. If a conflict arises during synchronization because a particular data unit was changed on two devices, the system will always favor the value that was written last. This ensures that the app utilizes the most up-to-date information. If the data unit is a setting composite, conflict resolution will still occur on the level of the setting unit, which means that the composite with the latest change will be synchronized.
+漫游应用数据不适合在多个设备上同时使用。 如果在同步期间由于两台设备的特定数据单位已更改而导致冲突，系统将始终倾向于最后写入的值。 这将确保应用使用的是最新信息。 如果该数据单元是一个设置组合，则还会在设置单元级别解决冲突，这意味着具有最新更改的组合将被同步。
 
-### <span id="When_to_write_data"></span><span id="when_to_write_data"></span><span id="WHEN_TO_WRITE_DATA"></span>When to write data
+### <span id="When_to_write_data"></span><span id="when_to_write_data"></span><span id="WHEN_TO_WRITE_DATA"></span>何时写入数据
 
-Depending on the expected lifetime of the setting, data should be written at different times. Infrequently or slowly changing app data should be written immediately. However, app data that changes frequently should only be written periodically at regular intervals (such as once every 5 minutes), as well as when the app is suspended. For example, a music app might write the “current song” settings whenever a new song starts to play, however, the actual position in the song should only be written on suspend.
+数据应在不同时间写入，具体取决于设置的预期生命周期。 更改较少且较慢的应用数据应立即写入。 然而，频繁更改的应用数据应每隔一定时间（例如每 5 分钟一次）定期写入，以及在应用暂停时写入。 例如，开始播放新歌曲时，音乐应用就可立即写入“当前歌曲”设置，不过，歌曲中的实际位置则仅应在应用暂停时写入。
 
-### <span id="Excessive_usage_protection"></span><span id="excessive_usage_protection"></span><span id="EXCESSIVE_USAGE_PROTECTION"></span>Excessive usage protection
+### <span id="Excessive_usage_protection"></span><span id="excessive_usage_protection"></span><span id="EXCESSIVE_USAGE_PROTECTION"></span>过度使用保护
 
-The system has various protection mechanisms in place to avoid inappropriate use of resources. If app data does not transition as expected, it is likely that the device has been temporarily restricted. Waiting for some time will usually resolve this situation automatically and no action is required.
+系统具有各种保护机制，以避免资源使用不当。 如果应用数据没有如期传输，可能是因为设备暂时受限。 等待一段时间，系统通常可以自动解决此情况，无需进行任何操作。
 
-### <span id="Versioning"></span><span id="versioning"></span><span id="VERSIONING"></span>Versioning
+### <span id="Versioning"></span><span id="versioning"></span><span id="VERSIONING"></span>版本控制
 
-App data can utilize versioning to upgrade from one data structure to another. The version number is different from the app version and can be set at will. Although not enforced, it is highly recommended that you use increasing version numbers, since undesirable complications (including data loss)could occur if you try to transition to a lower data version number that represents newer data.
+应用数据可利用版本控制功能，从一个数据结构升级至另一数据结构。 此版本编号不同于应用版本，可随意设置。 虽不强制遵循，但强烈建议你使用递增的版本编号，因为如果你尝试向表示更新数据的较低数据版本编号传输，可能发生不良的并发情况（包括数据丢失）。
 
-App data only roams between installed apps with the same version number. For example, devices on version 2 will transition data between each other and devices on version 3 will do the same, but no roaming will occur between a device running version 2 and a device running version 3. If you install a new app that utilized various version numbers on other devices, the newly installed app will sync the app data associated with the highest version number.
+应用数据仅在版本编号相同的已安装应用之间漫游。 例如，版本 2 的设备彼此之间可传输数据，版本 3 的设备同样如此，但运行版本 2 和版本 3 的设备之间不能进行漫游。 如果你安装了在其他设备上使用各种版本编号的新应用，新安装的应用将同步与最高版本编号相关联的应用数据。
 
-### <span id="Testing_and_tools"></span><span id="testing_and_tools"></span><span id="TESTING_AND_TOOLS"></span>Testing and tools
+### <span id="Testing_and_tools"></span><span id="testing_and_tools"></span><span id="TESTING_AND_TOOLS"></span>测试和工具
 
-Developers can lock their device in order to trigger a synchronization of roaming app data. If it seems that the app data does not transition within a certain time frame, please check the following items and make sure that:
+开发人员可锁定自己的设备，以触发漫游应用数据的同步。 如果应用数据看起来没有在特定时段进行传输，请检查以下项目并确保：
 
--   Your roaming data does not exceed the maximum size (see [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) for details).
--   Your files are closed and released properly.
--   There are at least two devices running the same version of the app.
+-   你的漫游数据未超过最大大小（有关详细信息，请参阅 [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)）。
+-   你的文件已关闭且发布正确。
+-   至少存在两台运行相同应用版本的设备。
 
 
-### <span id="Register_to_receive_notification_when_roaming_data_changes"></span><span id="register_to_receive_notification_when_roaming_data_changes"></span><span id="REGISTER_TO_RECEIVE_NOTIFICATION_WHEN_ROAMING_DATA_CHANGES"></span>Register to receive notification when roaming data changes
+### <span id="Register_to_receive_notification_when_roaming_data_changes"></span><span id="register_to_receive_notification_when_roaming_data_changes"></span><span id="REGISTER_TO_RECEIVE_NOTIFICATION_WHEN_ROAMING_DATA_CHANGES"></span>进行注册以在漫游数据发生更改时收到通知
 
-To use roaming app data, you need to register for roaming data changes and retrieve the roaming data containers so you can read and write settings.
+若要使用漫游应用数据，需要对漫游数据更改进行注册，并且检索漫游数据容器，以便可以读取和写入设置。
 
-1.  Register to receive notification when roaming data changes.
+1.  进行注册以在漫游数据发生更改时收到通知。
 
-    The [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) event notifies you when roaming data changes. This example sets `DataChangeHandler` as the handler for roaming data changes.
+    在漫游数据发生更改时，[**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) 事件将通知你。 此示例将 `DataChangeHandler` 设置为用于漫游数据更改的处理程序。
 
 ```    CSharp
 void InitHandlers()
@@ -220,9 +224,9 @@ void InitHandlers()
     }
 ```
 
-2.  Get the containers for the app's settings and files.
+2.  获取应用的设置和文件容器。
 
-    Use the [**ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) property to get the settings and the [**ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) property to get the files.
+    使用 [**ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) 属性可以获取设置，使用 [**ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) 属性可以获取文件。
 
 ```    CSharp
 Windows.Storage.ApplicationDataContainer roamingSettings = 
@@ -231,9 +235,9 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
         Windows.Storage.ApplicationData.Current.RoamingFolder;
 ```
 
-### <span id="Create_and_retrieve_roaming_settings"></span><span id="create_and_retrieve_roaming_settings"></span><span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS"></span>Create and retrieve roaming settings
+### <span id="Create_and_retrieve_roaming_settings"></span><span id="create_and_retrieve_roaming_settings"></span><span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS"></span>创建和检索漫游设置
 
-Use the [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property to access the settings in the `roamingSettings` container we got in the previous section. This example creates a simple setting named `exampleSetting` and a composite value named `composite`.
+使用 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 属性访问我们在前一部分中获取的 `roamingSettings` 容器中的设置。 此示例将创建一个简单设置和一个复合值，名称分别为 `exampleSetting` 和
 
 ```CSharp
 // Simple setting
@@ -253,7 +257,7 @@ roamingSettings.Values["exampleCompositeSetting"] = composite;
 
 ```
 
-This example retrieves the settings we just created.
+此示例将检索刚创建的设置。
 
 ```CSharp
 // Simple setting
@@ -275,9 +279,10 @@ else
 }
 ```
 
-### <span id="Create_and_retrieve_roaming_files"></span><span id="create_and_retrieve_roaming_files"></span><span id="CREATE_AND_RETRIEVE_ROAMING_FILES"></span>Create and retrieve roaming files
+### <span id="Create_and_retrieve_roaming_files"></span><span id="create_and_retrieve_roaming_files"></span><span id="CREATE_AND_RETRIEVE_ROAMING_FILES"></span>创建和检索漫游文件
 
-To create and update a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `roamingFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
+若要在漫游应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)）。 此示例会在 `roamingFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [
+            **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 ```CSharp
 async void WriteTimestamp()
@@ -291,7 +296,7 @@ async void WriteTimestamp()
 }
 ```
 
-To open and read a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous section and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+若要在漫游应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 和 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)）。 此示例会打开在前一部分中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)
 
 ```CSharp
 async void ReadTimestamp()
@@ -310,14 +315,14 @@ async void ReadTimestamp()
 ```
 
 
-## <span id="Temporary_app_data"></span><span id="temporary_app_data"></span><span id="TEMPORARY_APP_DATA"></span>Temporary app data
+## <span id="Temporary_app_data"></span><span id="temporary_app_data"></span><span id="TEMPORARY_APP_DATA"></span>临时应用数据
 
 
-The temporary app data store works like a cache. Its files do not roam and could be removed at any time. The System Maintenance task can automatically delete data stored at this location at any time. The user can also clear files from the temporary data store using Disk Cleanup. Temporary app data can be used for storing temporary information during an app session. There is no guarantee that this data will persist beyond the end of the app session as the system might reclaim the used space if needed. The location is available via the [**temporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property.
+临时应用数据存储类似于缓存。 它的文件不会漫游，随时可以删除。 系统维护任务可以随时自动删除存储在此位置的数据。 用户还可以使用“磁盘清理”清除临时数据存储中的文件。 临时应用数据可用于存储应用会话期间的临时信息。 无法保证超出应用会话结束时间后仍将保留此数据，因为如有需要，系统可能回收已使用的空间。 位置通过 [**temporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) 属性提供。
 
-### <span id="Retrieve_the_temporary_data_container"></span><span id="retrieve_the_temporary_data_container"></span><span id="RETRIEVE_THE_TEMPORARY_DATA_CONTAINER"></span>Retrieve the temporary data container
+### <span id="Retrieve_the_temporary_data_container"></span><span id="retrieve_the_temporary_data_container"></span><span id="RETRIEVE_THE_TEMPORARY_DATA_CONTAINER"></span>检索临时数据容器
 
-Use the [**ApplicationData.TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property to get the files. The next steps use the `temporaryFolder` variable from this step.
+使用 [**ApplicationData.TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) 属性获取文件。 后续步骤使用此步骤中的 `temporaryFolder` 变量。
 
 ```CSharp
 Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;</code></pre></td>
@@ -326,9 +331,10 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 </table>
 ```
 
-### <span id="Create_and_read_temporary_files"></span><span id="create_and_read_temporary_files"></span><span id="CREATE_AND_READ_TEMPORARY_FILES"></span>Create and read temporary files
+### <span id="Create_and_read_temporary_files"></span><span id="create_and_read_temporary_files"></span><span id="CREATE_AND_READ_TEMPORARY_FILES"></span>创建和读取临时文件
 
-To create and update a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `temporaryFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
+若要在临时应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)）。 此示例会在 `temporaryFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [
+            **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 <span codelanguage="CSharp"></span>
 ```CSharp
@@ -353,7 +359,7 @@ async void WriteTimestamp()
 }
 ```
 
-To open and read a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+若要在临时应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 和 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)）。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)
 
 ```CSharp
 async void ReadTimestamp()
@@ -371,12 +377,13 @@ async void ReadTimestamp()
 }
 ```
 
-## <span id="Organize_app_data_with_containers"></span><span id="organize_app_data_with_containers"></span><span id="ORGANIZE_APP_DATA_WITH_CONTAINERS"></span>Organize app data with containers
+## <span id="Organize_app_data_with_containers"></span><span id="organize_app_data_with_containers"></span><span id="ORGANIZE_APP_DATA_WITH_CONTAINERS"></span>使用容器组织应用数据
 
 
-To help you organize your app data settings and files, you create containers (represented by [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) objects) instead of working directly with directories. You can add containers to the local, roaming, and temporary app data stores. Containers can be nested up to 32 levels deep.
+若要帮助你组织应用数据设置和文件，请创建容器（由 [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) 对象表示），而不是直接使用目录。 你可以向本地、漫游和临时应用数据存储添加容器。 容器的嵌套深度可达 32 层。
 
-To create a settings container, call the [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) method. This example creates a local settings container named `exampleContainer` and adds a setting named `exampleSetting`. The **Always** value from the [**ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) enumeration indicates that the container is created if it doesn't already exist.
+若要创建设置容器，请调用 [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) 方法。 此示例将创建一个名为 `exampleContainer` 的本地设置容器并添加一个名为 `exampleSetting` 的设置。 [
+            **ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) 枚举中的 **Always** 值指示已创建容器（如果尚不存在的话）。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -394,10 +401,10 @@ if (localSettings.Containers.ContainsKey("exampleContainer"))
 }
 ```
 
-## <span id="Delete_app_settings_and_containers"></span><span id="delete_app_settings_and_containers"></span><span id="DELETE_APP_SETTINGS_AND_CONTAINERS"></span>Delete app settings and containers
+## <span id="Delete_app_settings_and_containers"></span><span id="delete_app_settings_and_containers"></span><span id="DELETE_APP_SETTINGS_AND_CONTAINERS"></span>删除应用设置和容器
 
 
-To delete a simple setting that your app no longer needs, use the [**ApplicationDataContainerSettings.Remove**](https://msdn.microsoft.com/library/windows/apps/br241608) method. This example deletesthe `exampleSetting` local setting that we created earlier.
+若要删除应用不再需要的简单设置，请使用 [**ApplicationDataContainerSettings.Remove**](https://msdn.microsoft.com/library/windows/apps/br241608) 方法。 此示例将删除之前创建的 `exampleSetting` 本地设置。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -410,7 +417,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleSetting");
 ```
 
-To delete a composite setting, use the [**ApplicationDataCompositeValue.Remove**](https://msdn.microsoft.com/library/windows/apps/br241597) method. This example deletes the local `exampleCompositeSetting` composite setting we created in an earlier example.
+若要删除复合设置，请使用 [**ApplicationDataCompositeValue.Remove**](https://msdn.microsoft.com/library/windows/apps/br241597) 方法。 此示例将删除在之前示例中创建的本地 `exampleCompositeSetting` 复合设置。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -423,7 +430,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleCompositeSetting");
 ```
 
-To delete a container, call the [**ApplicationDataContainer.DeleteContainer**](https://msdn.microsoft.com/library/windows/apps/br241612) method. This example deletes the local `exampleContainer` settings container we created earlier.
+若要删除容器，请调用 [**ApplicationDataContainer.DeleteContainer**](https://msdn.microsoft.com/library/windows/apps/br241612) 方法。 此示例将删除之前创建的本地 `exampleContainer` 设置容器。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -436,17 +443,22 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.DeleteContainer("exampleContainer");
 ```
 
-## <span id="Versioning_your_app_data"></span><span id="versioning_your_app_data"></span><span id="VERSIONING_YOUR_APP_DATA"></span>Versioning your app data
+## <span id="Versioning_your_app_data"></span><span id="versioning_your_app_data"></span><span id="VERSIONING_YOUR_APP_DATA"></span>对应用数据进行版本控制
 
 
-You can optionally version the app data for your app. This would enable you to create a future version of your app that changes the format of its app data without causing compatibility problems with the previous version of your app. The app checks the version of the app data in the data store, and if the version is less than the version the app expects, the app should update the app data to the new format and update the version. For more info, see the[**Application.Version**](https://msdn.microsoft.com/library/windows/apps/br241630) property and the [**ApplicationData.SetVersionAsync**](https://msdn.microsoft.com/library/windows/apps/hh701429) method.
+视情况，也可以对应用的应用数据进行版本控制。 这将使你能够创建应用的未来版本，更改它的应用数据的格式，而不会导致与以前应用版本出现兼容性问题。 应用将检查数据存储中的应用数据版本，如果该版本低于应用想要的版本，应用应该将应用数据更新为新格式并更新该版本。 有关详细信息，请参阅 [**Application.Version**](https://msdn.microsoft.com/library/windows/apps/br241630) 属性和 [**ApplicationData.SetVersionAsync**](https://msdn.microsoft.com/library/windows/apps/hh701429) 方法。
 
-## Related articles
+## 相关文章
 
 * [**Windows.Storage.ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587)
 * [**Windows.Storage.ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624)
 * [**Windows.Storage.ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623)
 * [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)
 * [**Windows.Storage.ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

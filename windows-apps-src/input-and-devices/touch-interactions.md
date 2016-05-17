@@ -1,20 +1,20 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
-title: Touch interactions
+Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行优化，但在不同的输入设备上功能一致。
+title: 触控交互
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 ---
 
-# Touch interactions
+# 触控交互
 
 
-Design your app with the expectation that touch will be the primary input method of your users. If you use UWP controls, support for touchpad, mouse, and pen/stylus requires no additional programming, because UWP apps provide this for free.
+以“触摸将是用户的主要输入方法”为初衷设计应用。 如果你使用 UWP 控件，不要求额外编程，即可支持触摸板、鼠标和笔/触笔，因为 UWP 应用免费提供此类支持。
 
-However, keep in mind that a UI optimized for touch is not always superior to a traditional UI. Both provide advantages and disadvantages that are unique to a technology and application. In the move to a touch-first UI, it is important to understand the core differences between touch (including touchpad), pen/stylus, mouse, and keyboard input.
+但是请记住，针对触摸优化的 UI 并非总是优于传统 UI。 两者都具有特定于技术和应用的优缺点。 在转换到主要使用触摸的 UI 时，了解触摸（包括触摸板）、笔/触笔、鼠标和键盘输入之间的核心差别很重要。
 
-**Important APIs**
+**重要的 API**
 
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 -   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
@@ -22,221 +22,223 @@ However, keep in mind that a UI optimized for touch is not always superior to a 
 
 
 
-Many devices have multi-touch screens that support using one or more fingers (or touch contacts) as input. The touch contacts, and their movement, are interpreted as touch gestures and manipulations to support various user interactions.
+许多设备具有多点触摸屏幕，它们支持使用一根或多根手指（或触摸接触）作为输入。 触摸接触以及其移动会被解释为触摸手势和操作，以支持各种用户交互。
 
-The Universal Windows Platform (UWP) includes a number of different mechanisms for handling touch input, enabling you to create an immersive experience that your users can explore with confidence. Here, we cover the basics of using touch input in a UWP app.
+通用 Windows 平台 (UWP) 包括多种处理触摸输入的不同机制，从而你可以创建用户能够放心浏览的沉浸式体验。 下面我们将介绍在 UWP 应用中使用触摸输入的基本知识。
 
-Touch interactions require three things:
+触摸交互需要满足以下三项：
 
--   A touch-sensitive display.
--   The direct contact (or proximity to, if the display has proximity sensors and supports hover detection) of one or more fingers on that display.
--   Movement of the touch contacts (or lack thereof, based on a time threshold).
+-   触摸式屏幕。
+-   单指或多指直接接触该屏幕（或近距离接触，如果显示器具有邻近感应传感器并支持悬停检测）。
+-   触摸接触时移动（或不移动，具体取决于时间阈值）。
 
-The input data provided by the touch sensor can be:
+触摸传感器提供的输入数据可以：
 
--   Interpreted as a physical gesture for direct manipulation of one or more UI elements (such as panning, rotating, resizing, or moving). In contrast, interacting with an element through its properties window, dialog box, or other UI affordance is considered indirect manipulation.
--   Recognized as an alternative input method, such as mouse or pen.
--   Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.
+-   解释为直接操作一个或多个 UI 元素的物理手势（例如平移、旋转、调整大小或移动）。 相比之下，通过某个元素属性窗口、对话框或其他 UI 提示与该元素交互被认为是间接操作。
+-   作为另一种输入方法识别，例如鼠标或笔。
+-   用于补充或修改其他输入方法的方面，例如涂抹用笔绘制的笔划墨迹。
 
-Touch input typically involves the direct manipulation of an element on the screen. The element responds immediately to any touch contact within its hit test area, and reacts appropriately to any subsequent movement of the touch contacts, including removal.
+触摸输入通常涉及屏幕上元素的直接操作。 该元素会立即响应其点击测试区内的任何触摸接触，并相应地响应该触摸接触的任何后续移动，包括删除。
 
-Custom touch gestures and interactions should be designed carefully. They should be intuitive, responsive, and discoverable, and they should let users explore your app with confidence.
+应该仔细设计自定义触摸手势和交互。 它们应该是直观、响应且易于发现的，并且应让用户放心浏览你的应用。
 
-Ensure that app functionality is exposed consistently across every supported input device type. If necessary, use some form of indirect input mode, such as text input for keyboard interactions, or UI affordances for mouse and pen.
+确保应用功能在每个受支持的输入设备类型上显示一致。 如有必要，请使用某种形式的间接输入模式，例如用于键盘交互的文本输入，或用于鼠标和笔的 UI 提示。
 
-Remember that traditional input devices (such as mouse and keyboard), are familiar and appealing to many users. They can offer speed, accuracy, and tactile feedback that touch might not.
+请记住，传统输入设备（例如鼠标和键盘）为许多用户所熟悉并且具有吸引力。 它们可以提供快速、准确的触觉反馈，这是触摸无法提供的。
 
-Providing unique and distinctive interaction experiences for all input devices will support the widest range of capabilities and preferences, appeal to the broadest possible audience, and attract more customers to your app.
+为所有输入设备提供独特鲜明的交互体验将支持最广泛的功能和首选项、吸引尽可能最多的受众，并为你的应用吸引更多客户。
 
-## Compare touch interaction requirements
+## 对比触摸交互要求
 
-The following table shows some of the differences between input devices that you should consider when you design touch-optimized UWP apps.
+下表显示了设计为触摸而优化的 UWP 应用时应该考虑的一些输入设备之间的不同。
 
 <table>
-<tbody><tr><th>Factor</th><th>Touch interactions</th><th>Mouse, keyboard, pen/stylus interactions</th><th>Touchpad</th></tr>
-<tr><td rowspan="3">Precision</td><td>The contact area of a fingertip is greater than a single x-y coordinate, which increases the chances of unintended command activations.</td><td>The mouse and pen/stylus supply a precise x-y coordinate.</td><td>Same as mouse.</td></tr>
-<tr><td>The shape  of the contact area changes throughout the movement.  </td><td>Mouse movements and pen/stylus strokes supply precise x-y coordinates. Keyboard focus is explicit.</td><td>Same as mouse.</td></tr>
-<tr><td>There is no mouse cursor to assist with targeting.</td><td>The mouse cursor, pen/stylus cursor, and keyboard focus all assist with targeting.</td><td>Same as mouse.</td></tr>
-<tr><td rowspan="3">Human anatomy</td><td>Fingertip movements are imprecise, because a straight-line motion with one or more fingers is difficult. This is due to the curvature of hand joints and the number of joints involved in the motion.</td><td>It's easier to perform a straight-line motion with the mouse or pen/stylus because the hand that controls them travels a shorter physical distance than the cursor on the screen.</td><td>Same as mouse.</td></tr>
-<tr><td>Some areas on the touch surface of a display device can be difficult to reach due to finger posture and the user's grip on the device.</td><td>The mouse and pen/stylus can reach any part of the screen while any control should be accessible by the keyboard through tab order. </td><td>Finger posture and grip can be an issue.</td></tr>
-<tr><td>Objects might be obscured by one or more fingertips or the user's hand. This is known as occlusion.</td><td>Indirect input devices do not cause  occlusion.</td><td>Same as mouse.</td></tr>
-<tr><td>Object state</td><td>Touch uses a two-state model: the touch surface of a display device  is either touched (on) or not (off). There is no hover state that can trigger additional visual feedback.</td><td>
-<p>A mouse, pen/stylus, and keyboard all expose a three-state model: up (off), down (on), and hover (focus).</p>
-<p>Hover lets users explore and learn through tooltips  associated with UI elements. Hover and focus effects  can relay which objects are interactive and also help with targeting. 
+<tbody><tr><th>因素</th><th>触摸交互</th><th>鼠标、键盘、笔/触笔交互</th><th>触摸板</th></tr>
+<tr><td rowspan="3">精度</td><td>指尖的接触区域大于单个 x-y 坐标，这样便增加了无意中激活命令的几率。</td><td>鼠标和笔/触笔提供了精确的 x-y 坐标。</td><td>与鼠标相同。</td></tr>
+<tr><td>接触区域的形状在整个移动过程中不断变化。  </td><td>鼠标移动和笔/触笔笔划都提供精确的 x-y 坐标。 键盘焦点非常清晰。</td><td>与鼠标相同。</td></tr>
+<tr><td>没有鼠标光标来帮助确定目标。</td><td>鼠标光标、笔/触笔光标以及键盘焦点都可以帮助确定目标。</td><td>与鼠标相同。</td></tr>
+<tr><td rowspan="3">人体解剖学</td><td>指尖移动并不精确，因为使用一个或多个手指沿直线移动非常困难。 这是由于手关节的曲率和运动涉及的关节数量导致的。</td><td>使用鼠标或笔/触笔进行直线移动就很容易，因为控制它们的手所移动的物理距离要比光标在屏幕上移动的物理距离短。</td><td>与鼠标相同。</td></tr>
+<tr><td>由于手指的姿势以及用户对设备的控制，显示设备触摸表面上的某些区域可能很难接触到。</td><td>鼠标和笔/触笔可以达到屏幕的任何一个部分，同时任何控件都应该可以通过键盘按照 Tab 键顺序进行访问。 </td><td>手指姿势和抓握可能产生问题。</td></tr>
+<tr><td>一个或多个指尖或用户的手可能会遮住对象。 这称为封闭。</td><td>间接输入设备不会造成封闭。</td><td>与鼠标相同。</td></tr>
+<tr><td>对象状态</td><td>触摸使用两个状态的模型：显示设备的触摸表面为已触摸（打开）或未触摸（关闭）。 没有可以触发其他视觉反馈的悬停状态。</td><td>
+<p>鼠标、笔/触笔以及键盘全都显示三种状态的模型：向上（关闭）、向下（打开）以及悬停（聚焦）。</p>
+<p>悬停允许用户通过与 UI 元素关联的工具提示来了解信息。 悬停和聚焦效果都可以传达哪些对象是交互对象，并且还可以帮助确定目标。 
 </p>
-</td><td>Same as mouse.</td></tr>
-<tr><td rowspan="2">Rich interaction</td><td>Supports multi-touch: multiple input points (fingertips) on a touch surface.</td><td>Supports a single input point.</td><td>Same as touch.</td></tr>
-<tr><td>Supports direct manipulation of objects through gestures such as tapping, dragging, sliding, pinching, and rotating.</td><td>No support for direct manipulation as mouse, pen/stylus, and keyboard are indirect input devices.</td><td>Same as mouse.</td></tr>
+</td><td>与鼠标相同。</td></tr>
+<tr><td rowspan="2">丰富交互</td><td>支持多点触摸：触摸表面上的多个输入点（指尖）。</td><td>支持单一输入点。</td><td>与触摸相同。</td></tr>
+<tr><td>通过手势（点击、拖动、滑动、收缩和旋转）支持对象的直接操作。</td><td>不支持直接操作，因为鼠标、笔/触笔以及键盘为间接输入设备。</td><td>与鼠标相同。</td></tr>
 </tbody></table>
 
 
 
-**Note**  
-Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.
+**注意**  
+非直接输入的优点是已经过 25 年的优化。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
 
- 
+ 
 
-## Use touch feedback
+## 用户触摸反馈
 
-Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and Windows 8. Visual feedback can indicate successful interactions, relay system status, improve the sense of control, reduce errors, help users understand the system and input device, and encourage interaction.
+与应用交互期间适当的视觉反馈可帮助用户识别、了解以及适应应用和 Windows 8 解释其交互的方式。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
 
-Visual feedback is critical when the user relies on touch input for activities that require accuracy and precision based on location. Display feedback whenever and wherever touch input is detected, to help the user understand any custom targeting rules that are defined by your app and its controls.
-
-
-## Targeting
-
-Targeting is optimized through:
-
--   Touch target sizes
-
-    Clear size guidelines ensure that applications provide a comfortable UI that contains objects and controls that are easy and safe to target.
-
--   Contact geometry
-
-    The entire contact area of the finger determines the most likely target object.
-
--   Scrubbing
-
-    Items within a group are easily re-targeted by dragging the finger between them (for example, radio buttons). The current item is activated when the touch is released.
-
--   Rocking
-
-    Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a tooltip or the status bar and is activated when the touch is released.
-
-## Accuracy
-
-Design for sloppy interactions by using:
-
--   Snap-points that can make it easier to stop at desired locations when users interact with content.
--   Directional "rails" that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see [Guidelines for panning](guidelines-for-panning.md).
-
-## Occlusion
-
-Finger and hand occlusion is avoided through:
-
--   Size and positioning of UI
-
-    Make UI elements big enough so that they cannot be completely covered by a fingertip contact area.
-
-    Position menus and pop-ups above the contact area whenever possible.
-
--   Tooltips
-
-    Show tooltips when a user maintains finger contact on an object. This is useful for describing object functionality. The user can drag the fingertip off the object to avoid invoking the tooltip.
-
-    For small objects, offset tooltips so they are not covered by the fingertip contact area. This is helpful for targeting.
-
--   Handles for precision
-
-    Where precision is required (for example, text selection), provide selection handles that are offset to improve accuracy. For more information, see [Guidelines for selecting text and images (Windows Runtime apps)](guidelines-for-textselection.md).
-
-## Timing
-
-Avoid timed mode changes in favor of direct manipulation. Direct manipulation simulates the direct, real-time physical handling of an object. The object responds as the fingers are moved.
-
-A timed interaction, on the other hand, occurs after a touch interaction. Timed interactions typically depend on invisible thresholds like time, distance, or speed to determine what command to perform. Timed interactions have no visual feedback until the system performs the action.
-
-Direct manipulation provides a number of benefits over timed interactions:
-
--   Instant visual feedback during interactions make users feel more engaged, confident, and in control.
--   Direct manipulations make it safer to explore a system because they are reversible—users can easily step back through their actions in a logical and intuitive manner.
--   Interactions that directly affect objects and mimic real world interactions are more intuitive, discoverable, and memorable. They don't rely on obscure or abstract interactions.
--   Timed interactions can be difficult to perform, as users must reach arbitrary and invisible thresholds.
-
-In addition, the following are strongly recommended:
-
--   Manipulations should not be distinguished by the number of fingers used.
--   Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.
--   Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
-
-    **Note**  An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
-
-     
-
--   Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.
+当用户依赖触摸屏输入来进行要求基于位置的准确活动时，视觉反馈非常重要。 无论何时何地检测到触摸输入都显示反馈，以帮助用户了解应用及其控件定义的任何自定义定向规则。
 
 
-## <span id="App_views"></span><span id="app_views"></span><span id="APP_VIEWS"></span>App views
+## 定向
+
+通过以下方式优化目标：
+
+-   触摸目标大小
+
+    清晰的大小指南确保应用程序提供舒适的 UI，即 UI 中包含的对象和控件都很容易确定目标并且非常安全。
+
+-   接触几何图形
+
+    手指的整个接触区域可以确定最可能的目标对象。
+
+-   推移
+
+    通过将手指在组中的项之间拖动可以很容易改变目标（例如，单选按钮）。 释放触摸时激活当前项。
+
+-   摇摆
+
+    密集项目（如超链接）可以通过下压手指（无滑动），然后来回摇摆并停在项目上方来轻松改变目标。 由于存在封闭，当前项通过工具提示或状态栏来标识，并且释放触摸时会被激活。
+
+## 准确性
+
+使用以下方式设计草率交互：
+
+-   用户与内容交互时使用吸附点可以轻松在所需位置停止。
+-   使用方向“围栏”可帮助进行垂直或水平平移，甚至手出现轻微弧度的移动时都可以。 有关详细信息，请参阅[平移指南](guidelines-for-panning.md)
+
+## 封闭
+
+通过以下方式避免出现手指和手封闭：
+
+-   UI 的大小和位置
+
+    使 UI 元素足够大，以便指尖接触区域无法完全覆盖。
+
+    将菜单和弹出窗口尽可能放在接触区域上方。
+
+-   工具提示
+
+    当用户在对象上保持手指接触时，显示工具提示。 这对于描述对象功能非常有用。 用户可将指尖拖动到对象外，以避免调用工具提示。
+
+    对于小型对象，偏移工具提示以便指尖接触区域不会将对象覆盖。 这对于确定目标非常有用。
+
+-   精确句柄
+
+    如果对精度有要求（例如文本选择），请提供偏移选择句柄以提高准确性。 有关详细信息，请参阅[选择文本和图像的指南（Windows 运行时应用）](guidelines-for-textselection.md)
+
+## 定时
+
+在直接操作时，避免定时模式更改。 直接操作模拟对象的直接、实时的物理处理。 对象随着手指移动作出响应。
+
+另一方面，定时交互发生在触摸交互之后。 定时交互通常依赖看不见的阈值（如时间、距离或速度）来确定要执行的命令。 定时交互在系统执行操作之前没有视觉反馈。
+
+与定时交互相比，直接操作提供了很多优势：
+
+-   交互期间即时视觉反馈使用户感觉更吸引人、更自信并且控制力更好。
+-   直接操作比浏览系统更安全，因为这些操作是可逆的—用户可以采用逻辑和直观的方式轻松倒退其操作。
+-   直接影响对象的交互以及模拟现实的交互更直观、更容易发现并且更不容易忘记。 它们不依赖于模糊或抽象的交互。
+-   定时交互可能难以执行，因为用户数量必须达到任意且不可见的阈值。
+
+此外，还强烈建议遵循以下规则：
+
+-   不应该按使用的手指数量来区分操作。
+-   交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
+-   不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
+
+    **注意** 其中的一个例外是使用特定的定时交互来帮助了解和探究（如长按）。
+
+     
+
+-   正确的描述以及视觉提示对高级交互的使用有巨大影响。
 
 
-Tweak the user interaction experience through the pan/scroll and zoom settings of your app views. An app view dictates how a user accesses and manipulates your app and its content. Views also provide behaviors such as inertia, content boundary bounce, and snap points.
-
-Pan and scroll settings of the [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) control dictate how users navigate within a single view, when the content of the view doesn't fit within the viewport. A single view can be, for example, a page of a magazine or book, the folder structure of a computer, a library of documents, or a photo album.
-
-Zoom settings apply to both optical zoom (supported by the [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) control) and the [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) control. Semantic Zoom is a touch-optimized technique for presenting and navigating large sets of related data or content within a single view. It works by using two distinct modes of classification, or zoom levels. This is analogous to panning and scrolling within a single view. Panning and scrolling can be used in conjunction with Semantic Zoom.
-
-Use app views and events to modify the pan/scroll and zoom behaviors. This can provide a smoother interaction experience than is possible through the handling of pointer and gesture events.
-
-For more info about app views, see [Controls, layouts, and text](https://msdn.microsoft.com/library/windows/apps/mt228348).
-
-## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>Custom touch interactions
+## <span id="App_views"></span><span id="app_views"></span><span id="APP_VIEWS"></span>应用视图
 
 
-If you implement your own interaction support, keep in mind that users expect an intuitive experience involving direct interaction with the UI elements in your app. We recommend that you model your custom interactions on the platform control libraries to keep things consistent and discoverable. The controls in these libraries provide the full user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. Create custom interactions only if there is a clear, well-defined requirement and basic interactions don't support your scenario.
+通过应用视图的平移/滚动和缩放设置来调整用户交互体验。 应用视图指示用户访问和操作你的应用及其内容的方式。 视图还提供一些行为，如惯性、内容边界回弹和吸附点。
 
-To provide customized touch support, you can handle various [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) events. These events are grouped into three levels of abstraction.
+[
+            **ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控件的平移和滚动设置指示用户在视图内容太多而无法放在视口中时，如何在单个视图内进行导航。 例如，单个视图可以是杂志或书的某一页、计算机的文件夹结构、文档库，也可以是某个相册。
 
--   Static gesture events are triggered after an interaction is complete. Gesture events include [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985), [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922), [**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984), and [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928).
+缩放设置适用于光学缩放（受 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控件支持）和 [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件。 语义式缩放是一种触摸优化技术，它在一个视图内呈现和导航大量的相关数据或内容集。 它使用两个不同的分类模式（或缩放级别）进行工作。 这类似于在单个视图中平移和滚动。 平移和滚动可以与语义式缩放一起使用。
 
-    You can disable gesture events on specific elements by setting [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939), [**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931), [**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937), and [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) to **false**.
+使用应用视图和事件来修改平移/滚动和缩放行为。 这可以比处理指针和手势事件提供更流畅的交互体验。
 
--   Pointer events such as [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) and [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) provide low-level details for each touch contact, including pointer motion and the ability to distinguish press and release events.
+有关应用视图的详细信息，请参阅[控件、布局和文本](https://msdn.microsoft.com/library/windows/apps/mt228348)
 
-    A pointer is a generic input type with a unified event mechanism. It exposes basic info, such as screen position, on the active input source, which can be touch, touchpad, mouse, or pen.
+## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>自定义触摸交互
 
--   Manipulation gesture events, such as [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950), indicate an ongoing interaction. They start firing when the user touches an element and continue until the user lifts their finger(s), or the manipulation is canceled.
 
-    Manipulation events include multi-touch interactions such as zooming, panning, or rotating, and interactions that use inertia and velocity data such as dragging. The information provided by the manipulation events doesn't identify the form of the interaction that was performed, but rather includes data such as position, translation delta, and velocity. You can use this touch data to determine the type of interaction that should be performed.
+如果你实现自己的交互支持，请记住，用户期望获得直观的体验，包括直接与应用中的 UI 元素交互。 我们建议你根据“平台控件库”创建自定义交互的模型，以使内容保持一致且易于发现。 这些库中的控件提供完整的用户交互体验，包括标准交互、动态显示的物理效果、视觉反馈和辅助功能。 仅当要求清楚、定义良好且基本交互不支持你的方案时才创建自定义交互。
 
-Here is the basic set of touch gestures supported by the UWP.
+若要提供自定义触摸支持，应处理各种 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件。 这些事件分组为三个抽象级别。
 
-| Name           | Type                 | Description                                                                            |
+-   静态手势事件在交互完成之后触发。 手势事件包括 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)、[**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)、[**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) 和 [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928)
+
+    可以通过将 [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939)、[**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931)、[**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937) 和 [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) 设置为 **false** 来禁用针对特定元素的手势事件
+
+-   诸如 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 和 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 的指针事件会提供每个触摸接触的低级别详细信息，包括指针动作以及区分按下和释放事件的能力。
+
+    指针是具有统一事件机制的通用输入类型。 它将显示活动输入源（触摸屏、触摸板、鼠标或笔）的基本信息，例如屏幕位置。
+
+-   [
+            **ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 等操作手势事件表明一个持续的交互。 它们在用户触摸元素时开始引发，一直持续到用户抬起手指或者操作被取消时。
+
+    操作事件包括多点触控交互（例如，缩放、平移或旋转）和使用惯性和速度数据的交互（例如拖动）。 操作事件提供的信息并不标识所执行的交互的形式，而是包括诸如位置、转换增量和速度等数据。 你可以使用此触摸数据来确定应执行的交互类型。
+
+下面是一组基本的受 UWP 支持的触摸手势。
+
+| 名称           | 类型                 | 描述                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
-| Tap            | Static gesture       | One finger touches the screen and lifts up.                                            |
-| Press and hold | Static gesture       | One finger touches the screen and stays in place.                                      |
-| Slide          | Manipulation gesture | One or more fingers touch the screen and move in the same direction.                   |
-| Swipe          | Manipulation gesture | One or more fingers touch the screen and move a short distance in the same direction.  |
-| Turn           | Manipulation gesture | Two or more fingers touch the screen and move in a clockwise or counter-clockwise arc. |
-| Pinch          | Manipulation gesture | Two or more fingers touch the screen and move closer together.                         |
-| Stretch        | Manipulation gesture | Two or more fingers touch the screen and move farther apart.                           |
+| 点击            | 静态手势       | 用一个手指触摸屏幕，然后抬起手指。                                            |
+| 长按 | 静态手势       | 用一个手指触摸屏幕并保持不动。                                      |
+| 滑动          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动。                   |
+| 轻扫          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动较短距离。  |
+| 转动           | 操作手势 | 用两个或多个手指触摸屏幕并沿着顺时针或逆时针的弧线移动。 |
+| 收缩          | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指并拢在一起。                         |
+| 拉伸        | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指分开。                           |
 
- 
+ 
 
 <!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
 -->
 
-## <span id="gestures"></span><span id="GESTURES"></span>Gesture events
+## <span id="gestures"></span><span id="GESTURES"></span>手势事件
 
 
-For details about individual controls, see [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406).
+有关个别控件的详细信息，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)
 
-## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>Pointer events
+## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>指针事件
 
 
-Pointer events are raised by a variety of active input sources, including touch, touchpad, pen, and mouse (they replace traditional mouse events.)
+指针事件由各种活动输入源引发，包括触摸、触摸板、笔和鼠标（它们替代传统的鼠标事件）。
 
-Pointer events are based on a single input point (finger, pen tip, mouse cursor) and do not support velocity-based interactions.
+指针事件基于单一输入点（手指、笔尖、鼠标光标），但不支持基于速度的交互。
 
-Here is a list of pointer events and their related event argument.
+下面提供指针事件列表及其相关的事件参数。
 
-| Event or class                                                       | Description                                                   |
+| 事件或类                                                       | 说明                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
-| [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)             | Occurs when a single finger touches the screen.               |
-| [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)           | Occurs when that same touch contact is lifted.                |
-| [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)                 | Occurs when the pointer is dragged across the screen.         |
-| [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)             | Occurs when a pointer enters the hit test area of an element. |
-| [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)               | Occurs when a pointer exits the hit test area of an element.  |
-| [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)           | Occurs when a touch contact is abnormally lost.               |
-| [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)     | Occurs when a pointer capture is taken by another element.    |
-| [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | Occurs when the delta value of a mouse wheel changes.         |
-| [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | Provides data for all pointer events.                         |
+| [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)             | 在单根手指触摸屏幕时发生。               |
+| [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)           | 在该同一触摸接触抬起时发生。                |
+| [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)                 | 在屏幕上拖动指针时发生。         |
+| [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)             | 在指针进入元素的点击测试区时发生。 |
+| [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)               | 在指针退出元素的点击测试区时发生。  |
+| [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)           | 在异常丢失触摸接触时发生。               |
+| [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)     | 在另一个元素进行指针捕获时发生。    |
+| [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | 在鼠标滚轮的增量值更改时发生。         |
+| [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | 为所有指针事件提供数据。                         |
 
- 
+ 
 
-The following example shows how to use the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events to handle a tap interaction on a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) object.
+以下示例显示如何使用 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件来处理 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 对象上的点击交互。
 
-First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) named `touchRectangle` is created in Extensible Application Markup Language (XAML).
+首先，在 Extensible Application Markup Language (XAML) 中创建名为 `touchRectangle` 的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371)。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -259,7 +261,7 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
 </Grid>
 ```
 
-Next, listeners for the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events are specified.
+接下来，指定用于 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件的侦听器。
 
 ```ManagedCPlusPlus
 MainPage::MainPage()
@@ -299,7 +301,7 @@ Public Sub New()
 End Sub
 ```
 
-Finally, the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event handler increases the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), while the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) event handlers set the **Height** and **Width** back to their starting values.
+最后，[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件处理程序增加 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)，同时 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件处理程序将 **Height** 和 **Width** 设置回其初始值。
 
 ```ManagedCPlusPlus
 // Handler for pointer exited event.
@@ -420,42 +422,42 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## <span id="using_manipulation_events"></span><span id="USING_MANIPULATION_EVENTS"></span>Manipulation events
+## <span id="using_manipulation_events"></span><span id="USING_MANIPULATION_EVENTS"></span>操作事件
 
 
-Use manipulation events if you need to support multiple finger interactions in your app, or interactions that require velocity data.
+如果你需要在应用中支持多个手指交互或需要速度数据的交互，请使用操作事件。
 
-You can use manipulation events to detect interactions such as drag, zoom, and hold.
+你可以使用操作事件来检测拖动、缩放和按住之类的交互。
 
-Here is a list of manipulation events and related event arguments.
+下面提供操作事件列表及其相关的事件参数。
 
-| Event or class                                                                                               | Description                                                                                                                               |
+| 事件或类                                                                                               | 说明                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [**ManipulationStarting event**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | Occurs when the manipulation processor is first created.                                                                                  |
-| [**ManipulationStarted event**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | Occurs when an input device begins a manipulation on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                            |
-| [**ManipulationDelta event**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | Occurs when the input device changes position during a manipulation.                                                                      |
-| [**ManipulationInertiaStarting event**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | Occurs when the input device loses contact with the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) object during a manipulation and inertia begins. |
-| [**ManipulationCompleted event**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | Occurs when a manipulation and inertia on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) are complete.                                          |
-| [**ManipulationStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702132)               | Provides data for the [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951) event.                                         |
-| [**ManipulationStartedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702101)                 | Provides data for the [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) event.                                           |
-| [**ManipulationDeltaRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702051)                     | Provides data for the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event.                                               |
-| [**ManipulationInertiaStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702074) | Provides data for the [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947) event.                           |
-| [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | Describes the speed at which manipulations occur.                                                                                         |
-| [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | Provides data for the [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) event.                                       |
+| [**ManipulationStarting 事件**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | 在首次创建操作处理器时发生。                                                                                  |
+| [**ManipulationStarted 事件**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | 在输入设备在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 上开始操作时发生。                                            |
+| [**ManipulationDelta 事件**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | 在输入设备在操作期间更改位置时发生。                                                                      |
+| [**ManipulationInertiaStarting 事件**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | 在输入设备在操作期间与 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 对象失去联系和延迟开始时发生。 |
+| [**ManipulationCompleted 事件**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | 在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 上的操作和延迟完成时发生。                                          |
+| [**ManipulationStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702132)               | 提供 [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951) 事件的数据。                                         |
+| [**ManipulationStartedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702101)                 | 提供 [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 事件的数据。                                           |
+| [**ManipulationDeltaRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702051)                     | 提供 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件的数据。                                               |
+| [**ManipulationInertiaStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702074) | 提供 [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947) 事件的数据。                           |
+| [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | 描述操作发生的速度。                                                                                         |
+| [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | 提供 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件的数据。                                       |
 
- 
+ 
 
-A gesture consists of a series of manipulation events. Each gesture starts with a [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) event, such as when a user touches the screen.
+手势由一系列操作事件组成。 每个手势都从 [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 事件开始，如用户触摸屏幕时。
 
-Next, one or more [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) events are fired. For example, if you touch the screen and then drag your finger across the screen. Finally, a [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) event is raised when the interaction finishes.
+接下来，引发一个或多个 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件。 例如，先触摸屏幕，然后在屏幕上拖动手指。 最后，在完成交互时引发 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件。
 
-**Note**  If you don't have a touch-screen monitor, you can test your manipulation event code in the simulator using a mouse and mouse wheel interface.
+**注意** 如果你没有触摸屏监视器，则可以使用鼠标和鼠标滚轮界面在模拟器中测试你的操作事件代码。
 
- 
+ 
 
-The following example shows how to use the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) events to handle a slide interaction on a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) and move it across the screen.
+以下示例演示如何使用 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件来处理 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 上的滑动交互以及在屏幕上移动它。
 
-First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) named `touchRectangle` is created in XAML with a [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of 200.
+首先，采用 XAML 格式创建一个名为 `touchRectangle` 的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371)，其 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 为 200。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -481,7 +483,7 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
 </Grid>
 ```
 
-Next, a global [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) named `dragTranslation` is created for translating the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371). A [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event listener is specified on the **Rectangle**, and `dragTranslation` is added to the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) of the **Rectangle**.
+接下来，创建一个名为 `dragTranslation` 的全局 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027)，用于转换 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371)。 在 **Rectangle** 上指定一个 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件侦听器，并将 `dragTranslation` 添加到 **Rectangle** 的 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980)
 
 ```ManagedCPlusPlus
 // Global translation transform used for changing the position of 
@@ -552,7 +554,7 @@ Public Sub New()
 End Sub
 ```
 
-Finally, in the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event handler, the position of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) is updated by using the [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) on the [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) property.
+最后，在 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件处理程序中，使用 [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) 属性上的 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) 更新 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 的位置。
 
 ```ManagedCPlusPlus
 // Handler for the ManipulationDelta event.
@@ -596,41 +598,44 @@ Private Sub testRectangle_ManipulationDelta(
 End Sub
 ```
 
-## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>Routed events
+## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>路由事件
 
 
-All of the pointer events, gesture events and manipulation events mentioned here are implemented as *routed events*. This means that the event can potentially be handled by objects other than the one that originally raised the event. Successive parents in an object tree, such as the parent containers of a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) or the root [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) of your app, can choose to handle these events even if the original element does not. Conversely, any object that does handle the event can mark the event handled so that it no longer reaches any parent element. For more info about the routed event concept and how it affects how you write handlers for routed events, see [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/hh758286).
+此处提及的所有指针事件、手势事件和操作事件都将作为*路由事件*实现。 这意味着该事件可能由对象（而不是最初引起该事件的对象）处理。 对象树中的连续父对象（例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 元素的父容器或你的应用的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)）可以选择处理这些对象，即使原始元素未执行此操作也是如此。 相反，处理该事件的任何对象都可以标记处理的事件，以使其不再达到任何父元素。 有关路由事件概念以及它如何影响你为路由事件编写处理程序的方式的详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/hh758286)
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos and don'ts
-
-
--   Design applications with touch interaction as the primary expected input method.
--   Provide visual feedback for interactions of all types (touch, pen, stylus, mouse, etc.)
--   Optimize targeting by adjusting touch target size, contact geometry, scrubbing and rocking.
--   Optimize accuracy through the use of snap points and directional "rails".
--   Provide tooltips and handles to help improve touch accuracy for tightly packed UI items.
--   Don't use timed interactions whenever possible (example of appropriate use: touch and hold).
--   Don't use the number of fingers used to distinguish the manipulation whenever possible.
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>注意事项
 
 
-## <span id="related_topics"></span>Related articles
-
-* [Handle pointer input](handle-pointer-input.md)
-* [Identify input devices](identify-input-devices.md)
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Archive Samples**
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
-
- 
+-   设计将触摸交互作为预期的主要输入方法的应用程序。
+-   为所有类型的交互（触摸、笔、触笔和鼠标等）提供视觉反馈
+-   通过调整触摸目标大小、接触几何体、清理和摇动来优化定位。
+-   使用吸附点和带方向性的“围栏”优化精确度。
+-   对于紧凑的 UI 项目，提供工具提示和句柄以帮助提高触摸精确度。
+-   尽量不要使用计时的交互（适当使用的示例：长按）。
+-   尽量不要使用用于区别操作的手指个数。
 
 
+## <span id="related_topics"></span>相关文章
+
+* [处理指针输入](handle-pointer-input.md)
+* 标识输入设备
+* [示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* 用户交互模式示例
+* [焦点视觉效果示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [存档示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 
