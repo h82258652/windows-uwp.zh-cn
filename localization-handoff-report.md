@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/84090d73ea9373736723a9bd69d11166ab8645bc/windows-apps-src/xbox-apps/index.md) | HandedOffSuccess | [Details](#1d0ea4c67b996b2e8bc7280a25dfdca7189c7e503872)
+ [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps/blob/6fc1885c5663d7daadbd67a66cb740df40dbf47f/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md) | HandedOffSuccess | [Details](#7660cc04dbee27b523144e5d03b6b2dbd4dd37553493)
 
 ## Item Details
-##### <a name='1d0ea4c67b996b2e8bc7280a25dfdca7189c7e503872'></a> Source: [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/84090d73ea9373736723a9bd69d11166ab8645bc/windows-apps-src/xbox-apps/index.md)
+##### <a name='7660cc04dbee27b523144e5d03b6b2dbd4dd37553493'></a> Source: [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps/blob/6fc1885c5663d7daadbd67a66cb740df40dbf47f/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/16fd82beebf3f40f496c686fc80f81357b0aa87b/ol-handoff/Microsoft/windows-apps.zh-cn/master/index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.zh-cn.xlf)
-* Handoff Datetime: 2016-05-26 14:54:37
+* Handoff File: [create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/49b7f0362d820bd87a1e2e1c87903198236033b5/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.zh-cn.xlf)
+* Handoff Datetime: 2016-05-26 17:53:23
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
