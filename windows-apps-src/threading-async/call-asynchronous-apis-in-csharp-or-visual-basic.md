@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: 使用 C# 或 Visual Basic 调用异步 API
 description: 通用 Windows 平台 (UWP) 包含许多异步 API，可确保应用在执行可能花费大量时间的任务时仍能保持响应。
@@ -19,13 +20,12 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 按照惯例，异步方法的名称应以“Async”结尾。 通常调用异步 API 是为了响应用户的操作，如在用户单击某个按钮时。 在事件处理程序中调用异步方法是使用异步 API 的最简单方法之一。 下面使用 **await** 运算符作为一个示例。
 
-假设你拥有一个应用，该应用列出了某个位置中博客文章的标题。 该应用具有一个 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)，用户单击该按钮即可获取标题。 标题显示在 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)中。 当用户单击该按钮时，该应用仍然保持响应，同时等待获取博客文章的信息，这一点非常重要。 为了确保此响应，UWP 提供了一个用于下载源的异步方法 [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)。
+假设你拥有一个应用，该应用列出了某个位置中博客文章的标题。 该应用具有一个 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)，用户单击该按钮即可获取标题。 标题显示在 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 中。 当用户单击该按钮时，该应用仍然保持响应，同时等待获取博客文章的信息，这一点非常重要。 为了确保此响应，UWP 提供了一个用于下载源的异步方法 [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)。
 
 以下示例通过调用异步方法 [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 并等待结果，从某一博客获取博客文章列表。
 
-> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
-[!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
+> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"] [!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
+          [!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
 有关该示例，有几个重要事项。 首先，对异步方法 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 的调用，行 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 使用 **await** 运算符。 你可以将 **await** 运算符视为告知编译器你正在调用某个异步方法，该方法会导致编译器执行某些额外的工作，以便你无需进行这些工作。 接下来，事件处理程序的声明包含关键字 **async**。 必须将该关键字包含在其中使用 **await** 运算符的任何方法的方法声明中。
 
@@ -42,10 +42,10 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 当你使用异步方法时，可检查签名以查看你将在等待由该方法返回的值后得到的内容。 UWP 中的所有异步 API 均可返回以下类型之一：
 
--   [**IAsyncOperation<TResult>**](https://msdn.microsoft.com/library/windows/apps/BR206598)
--   [**IAsyncOperationWithProgress<TResult, TProgress>**](https://msdn.microsoft.com/library/windows/apps/BR206594)
+-   [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)
+-   [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)
 -   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
--   [**IAsyncActionWithProgress<TProgress>**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)
+-   [**IAsyncActionWithProgress&lt;TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)
 
 异步方法的结果类型与 `      TResult` 类型参数相同。 没有 `TResult` 的类型没有结果。 你可以将结果视为 **void**。 在 Visual Basic 中，[Sub](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/831f9wka.aspx) 过程等同于返回类型为 **void** 的方法。
 
@@ -53,17 +53,17 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 | 异步方法                                                                           | 返回类型                                                                                                                                        | 结果类型                                       |
 |-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)     | [**IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress>**](https://msdn.microsoft.com/library/windows/apps/BR206594)                                 | [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) |
-| [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation<StorageFile>**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
+| [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed, RetrievalProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)                                 | [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) |
+| [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
 | [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)                                                                                                           | **void**                                          |
-| [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress<UInt64>**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)                                                                   | **void**                                          |
+| [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)                                                                   | **void**                                          |
 | [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [
-            **DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)，实现 **IAsyncOperation<UInt32>** 的自定义结果类。 | [**UInt32**](T:System.UInt32)                     |
+            **DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)，实现 **IAsyncOperation&lt;UInt32&gt;** 的自定义结果类。 | [**UInt32**](T:System.UInt32)                     |
 
  
 
 [
-            **适用于 UWP 应用的 .NET**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) 中定义的异步方法的返回类型为 [**Task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task<TResult>**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd321424.aspx)。 返回 **Task** 的方法与 UWP 中返回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) 的异步方法类似。 在任何情况下，异步方法的结果均为 **void**。 返回类型 **Task<TResult>** 类似于 [**IAsyncOperation<TResult>**](https://msdn.microsoft.com/library/windows/apps/BR206598)，因为在运行任务时，异步方法的结果与 `TResult` 类型参数的类型相同。 有关使用**适用于 UWP 应用的 .NET** 和任务的详细信息，请参阅[用于 Windows 运行时应用的 .NET 概述](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230302.aspx)。
+            **适用于 UWP 应用的 .NET**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) 中定义的异步方法的返回类型为 [**Task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd321424.aspx)。 返回 **Task** 的方法与 UWP 中返回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) 的异步方法类似。 在任何情况下，异步方法的结果均为 **void**。 返回类型 **Task&lt;TResult&gt;** 类似于 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)，因为在运行任务时，异步方法的结果与 `TResult` 类型参数的类型相同。 有关使用**适用于 UWP 应用的 .NET** 和任务的详细信息，请参阅[用于 Windows 运行时应用的 .NET 概述](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230302.aspx)。
 
 ## 处理错误
 
@@ -72,7 +72,7 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 当异步方法调用其他异步方法时，所有引发异常的异步方法都将被传播到外部方法。 这意味着你可以将一个 **try/catch** 块放在最外层的方法中，以便为嵌套异步方法捕获错误。 这同样与你为同步方法捕获异常的方式类似。 但不能在 **catch** 块中使用 **await**。
 
-**提示**从 Microsoft Visual Studio 2005 中的 C# 开始，可以在 **catch** 块中使用 **await**。
+**提示** 从 Microsoft Visual Studio 2005 中的 C# 开始，可以在 **catch** 块中使用 **await**。
 
 ## 摘要和后续步骤
 
@@ -109,6 +109,6 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
