@@ -1,20 +1,23 @@
 ---
-Description: 有关开发辅助通用 Windows 平台 (UWP) 应用的路线图。
-title: 开发非独占 Windows 应用
+author: Xansky
+Description: 了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
-label: Developing inclusive Windows apps
+title: 开发非独占 Windows 10 应用
+label: Developing inclusive Windows 10 apps
 template: detail.hbs
 ---
 
-开发非独占 Windows 应用
-=================================
+# 开发非独占 Windows 应用  
+
+了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
+
 本文讨论了如何开发辅助通用 Windows 平台 (UWP) 应用。 具体而言，它假定你了解如何为应用设计逻辑层次结构。  
 
 如果你尚未了解，请首先阅读[设计非独占软件](designing-inclusive-software.md)。
 
 为了确保你的应用是辅助应用，你应执行以下三项操作：
 1. 向[编程访问](#programmatic-access)公开你的 UI 元素。
-2. 确保你的应用对无法使用鼠标或触摸屏的用户支持[键盘导航](#keyboard-navigation)。
+2. 确保你的应用针对无法使用鼠标或触摸屏的用户支持[键盘导航](#keyboard-navigation)。
 3. 确保你的应用支持辅助[颜色和对比度](#color-and-contrast)设置。
 
 ## 编程访问  
@@ -37,12 +40,13 @@ template: detail.hbs
 
 若要了解有关 UI 元素之间的键盘导航的详细信息，请参阅[键盘辅助功能](keyboard-accessibility.md)。  
 
-此外，[针对辅助功能设计软件](https://www.microsoft.com/en-us/download/details.aspx?id=19262)电子图书包含有关此主题的出色章节，标题为_设计逻辑层次结构_。
+此外，[针对辅助功能设计软件](https://www.microsoft.com/en-us/download/details.aspx?id=19262)电子书包含有关此主题的出色章节，标题为_设计逻辑层次结构_。
 
 ## 颜色和对比度  
 Windows 中的内置辅助功能之一是高对比度模式，该模式可增强计算机屏幕上的文本和图像的颜色对比度。 对于某些人来说，增加颜色对比度可以降低眼睛疲劳并且更易于阅读。 当你在高对比度下验证 UI 时，你要检查是否已使用系统颜色（而不是硬编码颜色）为控件一致编码，以确保他们能够在屏幕上看到不使用高对比度的用户所看到的所有控件。  
 
-```XAML
+XAML
+```xml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
 有关使用系统颜色和资源的详细信息，请参阅 [XAML 主题资源](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-theme-resources)。
@@ -57,7 +61,7 @@ Windows 中的内置辅助功能之一是高对比度模式，该模式可增强
 
 **颜色组合** - 大约 7% 的男性（和小于 1 % 的女性）具有某种形式的色觉障碍。 色盲用户难以区分某些颜色，因此在应用程序中永远不单独使用颜色来传达状态或意义，这一点很重要。 对于装饰性图像（如图标或背景），应尽量选择能够使色盲用户识别图像的颜色组合。  
 
-## 辅助功能清单 ##
+## 辅助功能清单  
 下面是简化版的辅助功能清单：  
 1. 为应用中的内容和交互式 UI 元素设置辅助名称（必选）和描述（可选）。
 2. 实现键盘辅助功能。
@@ -68,13 +72,14 @@ Windows 中的内置辅助功能之一是高对比度模式，该模式可增强
 
 有关更多详细信息，请参阅完整的[辅助功能清单](accessibility-checklist.md)主题。
 
-## 另请参阅 ##
+## 相关主题  
 * [设计非独占软件](designing-inclusive-software.md)  
 * [非独占设计](http://design.microsoft.com/inclusive)
+* [要避免的辅助功能做法](practices-to-avoid.md)
 * [针对辅助功能设计软件](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
 * [Microsoft 辅助功能开发人员中心](https://msdn.microsoft.com/enable)
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 
