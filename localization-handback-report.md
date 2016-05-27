@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 252
+ Total Files | 257
 
 ## File List
  Source File | Status | Details 
@@ -258,6 +258,11 @@
  [windows-apps-src\globalizing\prepare-your-app-for-localization.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/globalizing/prepare-your-app-for-localization.md) | InSyncHandedBackSuccess | [Details](#e52a5322767677859e32ccbecf4951745c49f36f2575)
  [windows-apps-src\globalizing\put-ui-strings-into-resources.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/globalizing/put-ui-strings-into-resources.md) | InSyncHandedBackSuccess | [Details](#b44d9235e34b8d4c75f663029d1dde3f87bd0eb72576)
  [windows-apps-src\globalizing\use-global-ready-formats.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/globalizing/use-global-ready-formats.md) | InSyncHandedBackSuccess | [Details](#77b5e7bd412936dd5d8c4bc252771631d6b884cf2577)
+ [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps/blob/b3d198af0c46ec7a2041a7417bccd56c05af760e/windows-apps-src/graphics/composition-animation.md) | InSyncHandedBackSuccess | [Details](#fa2ec8e05d92e1f667dec947348f29ff883968b12581)
+ [windows-apps-src\graphics\composition-effects.md](https://github.com/Microsoft/windows-apps/blob/b3d198af0c46ec7a2041a7417bccd56c05af760e/windows-apps-src/graphics/composition-effects.md) | InSyncHandedBackSuccess | [Details](#10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a72583)
+ [windows-apps-src\graphics\composition-native-interop.md](https://github.com/Microsoft/windows-apps/blob/b3d198af0c46ec7a2041a7417bccd56c05af760e/windows-apps-src/graphics/composition-native-interop.md) | InSyncHandedBackSuccess | [Details](#b5308c8023990996a93277dd1bcfb8298c0bbf4f2584)
+ [windows-apps-src\graphics\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/graphics/index.md) | InSyncHandedBackSuccess | [Details](#d46498e6e584d85cfce0be237878aff68dee9c502611)
+ [windows-apps-src\graphics\using-brushes.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/graphics/using-brushes.md) | InSyncHandedBackSuccess | [Details](#a4063ee2372d69289fca74c81a4c7645909c7f372615)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -3283,6 +3288,66 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-global-ready-formats.6531e2d9b18b1925558c73b7c79c23f77cbb862a.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/561e0114c7e0dc1ec57a449626b790ab70526391/ol-handback/Microsoft/windows-apps.zh-cn/master/globalizing/use-global-ready-formats.6531e2d9b18b1925558c73b7c79c23f77cbb862a.zh-cn.xlf)
 * Handback Datetime: 2016-05-27 20:27:41
+* [Back to Top](#report-top)
+
+##### <a name='fa2ec8e05d92e1f667dec947348f29ff883968b12581'></a> Source: [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps/blob/b3d198af0c46ec7a2041a7417bccd56c05af760e/windows-apps-src/graphics/composition-animation.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/499d8408e11f442c5e1c5721ff678f514f6437cf/windows-apps-src/graphics/composition-animation.md)
+* Handoff File: [composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0607049bfa018cc6bec72fd2d79d3c6fd08f0f65/ol-handoff/Microsoft/windows-apps.zh-cn/master/composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-cn.xlf)
+* Handoff Datetime: 2016-05-12 02:26:30
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/2a244d6313046c535415ce752072c4f44b7e4e55/ol-handback/Microsoft/windows-apps.zh-cn/master/graphics/composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-cn.xlf)
+* Handback Datetime: 2016-05-27 20:27:49
+* [Back to Top](#report-top)
+
+##### <a name='10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a72583'></a> Source: [windows-apps-src\graphics\composition-effects.md](https://github.com/Microsoft/windows-apps/blob/b3d198af0c46ec7a2041a7417bccd56c05af760e/windows-apps-src/graphics/composition-effects.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\graphics\composition-effects.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/499d8408e11f442c5e1c5721ff678f514f6437cf/windows-apps-src/graphics/composition-effects.md)
+* Handoff File: [composition-effects.edede44d930f977b680649c1d498ceca2c092923.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0607049bfa018cc6bec72fd2d79d3c6fd08f0f65/ol-handoff/Microsoft/windows-apps.zh-cn/master/composition-effects.edede44d930f977b680649c1d498ceca2c092923.zh-cn.xlf)
+* Handoff Datetime: 2016-05-12 02:26:30
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [composition-effects.edede44d930f977b680649c1d498ceca2c092923.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/2a244d6313046c535415ce752072c4f44b7e4e55/ol-handback/Microsoft/windows-apps.zh-cn/master/graphics/composition-effects.edede44d930f977b680649c1d498ceca2c092923.zh-cn.xlf)
+* Handback Datetime: 2016-05-27 20:27:49
+* [Back to Top](#report-top)
+
+##### <a name='b5308c8023990996a93277dd1bcfb8298c0bbf4f2584'></a> Source: [windows-apps-src\graphics\composition-native-interop.md](https://github.com/Microsoft/windows-apps/blob/b3d198af0c46ec7a2041a7417bccd56c05af760e/windows-apps-src/graphics/composition-native-interop.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\graphics\composition-native-interop.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/499d8408e11f442c5e1c5721ff678f514f6437cf/windows-apps-src/graphics/composition-native-interop.md)
+* Handoff File: [composition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0607049bfa018cc6bec72fd2d79d3c6fd08f0f65/ol-handoff/Microsoft/windows-apps.zh-cn/master/composition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.zh-cn.xlf)
+* Handoff Datetime: 2016-05-12 02:26:30
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [composition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/2a244d6313046c535415ce752072c4f44b7e4e55/ol-handback/Microsoft/windows-apps.zh-cn/master/graphics/composition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.zh-cn.xlf)
+* Handback Datetime: 2016-05-27 20:27:49
+* [Back to Top](#report-top)
+
+##### <a name='d46498e6e584d85cfce0be237878aff68dee9c502611'></a> Source: [windows-apps-src\graphics\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/graphics/index.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\graphics\index.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/499d8408e11f442c5e1c5721ff678f514f6437cf/windows-apps-src/graphics/index.md)
+* Handoff File: [index.f06140b7412f92706eab63b2b9567e65268c3d9d.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0607049bfa018cc6bec72fd2d79d3c6fd08f0f65/ol-handoff/Microsoft/windows-apps.zh-cn/master/index.f06140b7412f92706eab63b2b9567e65268c3d9d.zh-cn.xlf)
+* Handoff Datetime: 2016-05-12 02:26:30
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [index.f06140b7412f92706eab63b2b9567e65268c3d9d.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/2a244d6313046c535415ce752072c4f44b7e4e55/ol-handback/Microsoft/windows-apps.zh-cn/master/graphics/index.f06140b7412f92706eab63b2b9567e65268c3d9d.zh-cn.xlf)
+* Handback Datetime: 2016-05-27 20:27:49
+* [Back to Top](#report-top)
+
+##### <a name='a4063ee2372d69289fca74c81a4c7645909c7f372615'></a> Source: [windows-apps-src\graphics\using-brushes.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/graphics/using-brushes.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\graphics\using-brushes.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/499d8408e11f442c5e1c5721ff678f514f6437cf/windows-apps-src/graphics/using-brushes.md)
+* Handoff File: [using-brushes.2c18aee45eb1712689bc9ebd652e0345ed3c4cff.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0607049bfa018cc6bec72fd2d79d3c6fd08f0f65/ol-handoff/Microsoft/windows-apps.zh-cn/master/using-brushes.2c18aee45eb1712689bc9ebd652e0345ed3c4cff.zh-cn.xlf)
+* Handoff Datetime: 2016-05-12 02:26:30
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [using-brushes.2c18aee45eb1712689bc9ebd652e0345ed3c4cff.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/2a244d6313046c535415ce752072c4f44b7e4e55/ol-handback/Microsoft/windows-apps.zh-cn/master/graphics/using-brushes.2c18aee45eb1712689bc9ebd652e0345ed3c4cff.zh-cn.xlf)
+* Handback Datetime: 2016-05-27 20:27:49
 * [Back to Top](#report-top)
 
 
