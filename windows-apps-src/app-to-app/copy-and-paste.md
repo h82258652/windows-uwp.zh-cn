@@ -49,7 +49,7 @@ Clipboard.SetContent(dataPackage);
 ```
 ## 粘贴
 
-要获取剪贴板的内容，需调用静态 [**Clipboard.GetContent**[GetContent] 方法。 此方法将返回一个包含该内容的 [**DataPackageView**][DataPackageView]。 该对象几乎与 [**DataPackage**][DataPackage] 对象完全相同，只不过其内容为只读。 通过该对象，你可以使用 [**AvailableFormats**][AvailableFormats] 或 [**Contains**][Contains] 方法来确定哪些格式可用。 然后，你可以调用相应的 **DataPackageView** 方法来获取数据。
+若要获取剪贴板的内容，请调用静态 [**Clipboard.GetContent**[GetContent] 方法。 此方法将返回一个包含该内容的 [**DataPackageView**][DataPackageView]。 该对象几乎与 [**DataPackage**][DataPackage] 对象完全相同，只不过其内容为只读。 通过该对象，你可以使用 [**AvailableFormats**][AvailableFormats] 或 [**Contains**][Contains] 方法来确定哪些格式可用。 然后，你可以调用相应的 **DataPackageView** 方法来获取数据。
 
 ```cs
 DataPackageView dataPackageView = Clipboard.GetContent();
@@ -97,6 +97,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

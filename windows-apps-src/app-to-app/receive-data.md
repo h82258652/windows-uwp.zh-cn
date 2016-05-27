@@ -16,7 +16,7 @@ author: awkoren
 
 在用户调用“共享”时，系统将显示可能的目标应用列表。 为了显示在列表中，你的应用需要声明它支持“共享”合约。 这让系统知道你的应用可用于接收内容。
 
-1.  打开清单文件。 该文件的名称类似 **package.appxmanifest**。
+1.  打开清单文件。 该文件的名称应类似 **package.appxmanifest**。
 2.  打开“声明”****选项卡。
 3.  从“可用声明”****列表中，选择“共享目标”****，并单击“添加”****。
 
@@ -28,9 +28,9 @@ author: awkoren
 
 若要设置文件类型：
 
-1.  打开清单文件。 该文件的名称类似 **package.appxmanifest**。
-2.  在“声明”页的“支持的文件类型”****部分，****单击“新增”****。
-3.  键入要支持的文件扩展名。 例如，.docx。 你需要包括句点。 如果希望支持所有文件类型，请选中**“SupportsAnyFileType”**框。
+1.  打开清单文件。 该文件的名称应类似 **package.appxmanifest**。
+2.  在“声明”****页的“支持的文件类型”****部分，单击“新增”****。
+3.  键入要支持的文件扩展名。 例如，.docx。 你需要包括句点。 如果希望支持所有文件类型，请选中“SupportsAnyFileType”****框。
 
 若要设置数据格式：
 
@@ -41,8 +41,6 @@ author: awkoren
 ## 处理共享激活
 
 当用户选择你的应用时（通常从共享 UI 中可用目标应用的列表中进行选择），将引发 [**Application.OnShareTargetActivated**] [OnShareTargetActivated] 事件。 你的应用需要处理此事件来处理用户要共享的数据。
-
-请注意，如果你的应用在激活为“共享”目标时处于运行状态，应用的现有实例将终止，并将启动应用的新实例以处理该合约。
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -61,8 +59,8 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
     string text = await shareOperation.Data.GetTextAsync();
 
     // To output the text from this example, you need a TextBlock control
-    // with a name of &quot;sharedContent&quot;.
-    sharedContent.Text = &quot;Text: &quot; + text;
+    // with a name of "sharedContent".
+    sharedContent.Text = "Text: " + text;
 } 
 ```
 
@@ -85,7 +83,7 @@ shareOperation.ReportSubmittedBackgroundTask();
 如果发生错误，调用 [**ReportStarted**][ReportStarted] 向系统发送一条错误消息。 用户在检查共享的状态时将看到该消息。 此时，你的应用将关闭并且共享将结束。 用户将需要再次启动才能将内容共享到你的应用。 根据你的方案，你可能确定某个特殊错误并不严重，不足以结束共享操作。 在这种情况下，你可以选择不调用 **ReportError** 并且继续此共享。
 
 ```cs
-shareOperation.ReportError(&quot;Could not reach the server! Try again later.&quot;); 
+shareOperation.ReportError("Could not reach the server! Try again later."); 
 ```
 
 最后，当你的应用成功处理好共享内容之后，你应当调用 [**ReportCompleted**][ReportCompleted] 来通知系统。
@@ -114,13 +112,13 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
         // For quicklinks, the supported FileTypes and DataFormats are set 
         // independently from the manifest
-        SupportedFileTypes = { &quot;*&quot; },
+        SupportedFileTypes = { "*" },
         SupportedDataFormats = { StandardDataFormats.Text, StandardDataFormats.Uri, 
                 StandardDataFormats.Bitmap, StandardDataFormats.StorageItems }
     };
 
     StorageFile iconFile = await Windows.ApplicationModel.Package.Current.InstalledLocation.CreateFileAsync(
-            &quot;assets\\user.png&quot;, CreationCollisionOption.OpenIfExists);
+            "assets\\user.png", CreationCollisionOption.OpenIfExists);
     quickLinkInfo.Thumbnail = RandomAccessStreamReference.CreateFromFile(iconFile);
     shareOperation.ReportCompleted(quickLinkInfo);
 }
@@ -142,6 +140,6 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

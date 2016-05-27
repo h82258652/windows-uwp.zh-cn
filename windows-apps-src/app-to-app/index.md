@@ -28,6 +28,6 @@ author: awkoren
 | [使用 EDP 保护在应用之间传输的企业数据](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | 本主题演示了实现一些与数据传输相关的最常见企业数据保护 (EDP) 方案所需的编码任务示例。 |
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

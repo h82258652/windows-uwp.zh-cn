@@ -15,11 +15,11 @@ author: awkoren
 
 添加 [**DataRequested**][DataRequested] 事件处理程序以在用户每次调用共享时调用。 这种情况既会在用户点击应用中的控件（例如按钮或应用栏命令）时发生，也会在特定情况下（例如，如果用户完成某一关并获得了较高分数）自动发生。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+[!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
-当发生 [**DataRequested**][DataRequested] 事件时，你的应用会收到 [**DataRequest**][DataRequest] 对象。 该对象包含 [**DataPackage**][DataPackage]，可用来提供用户要共享的内容。 你必须提供标题和要共享的数据。 描述是可选的，但建议提供。
+当发生 [**DataRequested**][DataRequested] 事件时，你的应用会收到 [**DataRequest**][DataRequest] 对象。 该对象包含 [**DataPackage**][DataPackage]，可用来提供用户要共享的内容。 必须提供标题和要共享的数据。 描述是可选的，但建议提供。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+[!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
 ## 选择数据
 
@@ -37,21 +37,21 @@ author: awkoren
 [
             **DataPackage**][DataPackage] 对象可以包含其中一种或多种格式（可任意组合）。 下面的示例演示了如何共享文本。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+[!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## 设置属性
 
-当你打包数据进行共享时，可以给出各种可提供与共享内容相关的其他信息的属性。 这些属性帮助目标应用改善用户体验。 例如，当用户通过多个应用共享内容时，可提供说明帮助。 共享图像或指向网页的链接时，添加一个缩略图为用户提供直观的参考。 有关详细信息，请参阅 [**DataPackage.DataPackagePropertySet**][DataPackagePropertySet]。
+当你打包数据进行共享时，可以给出各种可提供与共享内容相关的其他信息的属性。 这些属性帮助目标应用改善用户体验。 例如，当用户通过多个应用共享内容时，可提供说明帮助。 共享图像或指向网页的链接时，添加一个缩略图可为用户提供直观的参考。 有关详细信息，请参阅 [**DataPackage.DataPackagePropertySet**][DataPackagePropertySet]。
 
-除了 Title，所有属性都是可选的。 Title 属性是强制性的，必须进行设置。
+除了 Title，所有属性都是可选的。 Title 属性具有强制性，必须进行设置。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+[!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
 ## 启动共享 UI
 
 用于共享的 UI 由系统提供。 若要启动它，请调用 [**ShowShareUI**][ShowShareUi] 方法。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+[!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## 处理错误
 
@@ -103,6 +103,6 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
