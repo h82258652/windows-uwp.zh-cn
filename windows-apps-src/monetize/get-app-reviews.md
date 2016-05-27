@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: 使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的评价数据。
 title: 获取应用评价
@@ -37,7 +38,7 @@ title: 获取应用评价
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** <*token*>。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。 |
 
  
 
@@ -62,7 +63,7 @@ title: 获取应用评价
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">字符串</td>
-<td align="left">要检索评价数据的应用的产品 ID。 产品 ID 嵌入应用的一览链接中，该链接在开发人员中心仪表板的 [App identity page](https://msdn.microsoft.com/library/windows/apps/mt148561) 上提供。 产品 ID 的一个示例为 9WZDNCRFJ3Q8。</td>
+<td align="left">要检索评价数据的应用的产品 ID。 产品 ID 嵌入应用的一览链接中，该链接在开发人员中心仪表板的[应用标识页](https://msdn.microsoft.com/library/windows/apps/mt148561)上提供。 产品 ID 的一个示例为 9WZDNCRFJ3Q8。</td>
 <td align="left">是</td>
 </tr>
 <tr class="even">
@@ -92,7 +93,7 @@ title: 获取应用评价
 <tr class="even">
 <td align="left">filter</td>
 <td align="left">字符串</td>
-<td align="left">在响应中筛选行的一条或多条语句。 有关详细信息，请参阅下面的 [filter fields](#filter-fields) 部分。</td>
+<td align="left">在响应中筛选行的一条或多条语句。 有关详细信息，请参阅下面的[筛选器字段](#filter-fields)部分。</td>
 <td align="left">否</td>
 </tr>
 <tr class="odd">
@@ -218,7 +219,7 @@ title: 获取应用评价
 <tr class="even">
 <td align="left">deviceScreenResolution</td>
 <td align="left">eq, ne</td>
-<td align="left">“<em>width</em> x <em>height</em>”形式的设备屏幕分辨率。</td>
+<td align="left">设备屏幕分辨率采用&quot;<em>宽度</em> x <em>高度</em>&quot;格式。</td>
 </tr>
 <tr class="odd">
 <td align="left">isTouchEnabled</td>
@@ -284,7 +285,7 @@ title: 获取应用评价
 
 以下示例演示用于获取评价数据的多个请求。 将 *applicationId* 值替换为你的应用的产品 ID。
 
-```
+```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
@@ -320,7 +321,7 @@ Authorization: Bearer <your access token>
 | packageVersion         | 字符串  | 已评价的应用程序包版本。                                                                                                                                                                                    |
 | deviceModel            | 字符串  | 应用已评价的设备的类型。                                                                                                                                                                                    |
 | productFamily          | 字符串  | 设备系列名称。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                                         |
-| deviceScreenResolution | 字符串  | “*宽度* x *高度*”格式的设备屏幕分辨率。                                                                                                                                                                     |
+| deviceScreenResolution | 字符串  | 设备屏幕分辨率采用“*宽度* x *高度*”格式。                                                                                                                                                                     |
 | isTouchEnabled         | 布尔值 | 值为 **true** 表示触摸受支持；否则为 **false**。                                                                                                                                                             |
 | reviewerName           | 字符串  | 评价者昵称。                                                                                                                                                                                                                   |
 | helpfulCount           | 数字  | 评价标记为有用的次数。                                                                                                                                                                                   |
@@ -382,6 +383,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

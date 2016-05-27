@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 772DEBF2-1578-4330-9C14-70BCC6F55005
 description: Microsoft 提供广告中介支持，使你可以通过调解来自多个广告网络的横幅广告请求来提高应用内广告收益。
 title: 使用广告中介使收益最大化
@@ -49,6 +50,6 @@ Microsoft 提供广告中介支持，使你可以通过调解来自多个广告�
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

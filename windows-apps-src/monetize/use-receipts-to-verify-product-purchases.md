@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: 每个成功购买产品的 Windows 应用商店交易都可以选择返回交易收据。
 title: 使用收据验证产品购买
@@ -7,7 +8,7 @@ title: 使用收据验证产品购买
 # 使用收据验证产品购买
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -154,7 +155,7 @@ namespace ReceiptVerificationSample
                 // We are attempting to retrieve the following url. The getAppReceiptAsync website at 
                 // http://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.getappreceiptasync.aspx
                 // lists the following format for the certificate url.
-                String certificateUrl = String.Format("https://go.microsoft.com/fwlink/?LinkId=246509&amp;cid={0}", certificateId);
+                String certificateUrl = String.Format("https://go.microsoft.com/fwlink/?LinkId=246509&cid={0}", certificateId);
 
                 // Make an HTTP GET request for the certificate
                 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(certificateUrl);
@@ -238,6 +239,6 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

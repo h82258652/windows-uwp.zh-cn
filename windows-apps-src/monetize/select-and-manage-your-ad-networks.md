@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 86D9D3CF-8FDC-4B67-881B-DF33A1BEE8BF
 description: 在使用广告中介前，你将需要为要在应用中使用的每个广告网络设置帐户。
 title: 选择和管理广告网络
@@ -37,7 +38,7 @@ title: 选择和管理广告网络
 
 ### Microsoft
 
-| 网站                        | 若要配置广告网络参数，请使用 [Windows 开发人员中心仪表板](https://dev.windows.com/overview)上的[使用广告盈利](https://msdn.microsoft.com/library/windows/apps/mt170658)页面。   |
+| 网站                        | 若要配置广告网络参数，请使用 [Windows 开发人员中心仪表板](https://dev.windows.com/overview)上的[利用广告来盈利](https://msdn.microsoft.com/library/windows/apps/mt170658)页面。   |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | SDK 位置                   | [Microsoft 官方商城协定和盈利 SDK](http://aka.ms/store-em-sdk)。                                                                                                                                                                                                                         |
 | 使应用上架              | 将广告中介控件添加到应用中，然后将该应用提交到 Windows 开发中心仪表板。                                                                                                                                                                                                            |
@@ -101,13 +102,13 @@ title: 选择和管理广告网络
 
 除所需参数外，每个广告网络也具有通过应用代码设置的其他可选参数。 有关可选参数的完整列表，请参阅每个广告网络提供的文档。 若要在你的代码中设置这些可选参数，请使用 **AdMediatorControl** 对象的 **AdSdkOptionalParameters** 属性。
 
-以下示例展示如何设置 Microsoft Advertising 的 **CountryOrRegion** 参数。
+以下示例展示如何将 Microsoft Advertising 的 [CountryOrRegion](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.countryorregion.aspx) 属性设置为用户的双字母国家或地区代码。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["CountryOrRegion"] = "IN";
 ```
 
-以下示例展示如何设置 Smaato 的 **Width** 和 **Height** 参数。
+以下示例演示如何设置 Smaato 的 **Width** 和 **Height** 参数。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Width"] = 300;
@@ -125,6 +126,6 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 250;
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,10 +1,11 @@
 ---
+author: mcleanbyron
 Description: 你可以使用 Microsoft 官方商城协定和盈利 SDK 提供的库和工具来将这些功能添加到你的应用，这可帮助你赚取更多的利益并赢得客户。
-title: 使用 Microsoft 官方商城协定和盈利 SDK 来获取应用收益并吸引客户
+title: Microsoft 官方商城协定和盈利 SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ---
 
-# 使用 Microsoft 官方商城协定和盈利 SDK 来获取应用收益并吸引客户
+# Microsoft 官方商城协定和盈利 SDK
 
 Microsoft 官方商城协定和盈利 SDK 提供的库和工具可帮助你赚取更多的利益并赢得客户，例如在你的应用中显示广告并通过 A/B 测试运行实验。 此 SDK 将替代 Microsoft 通用广告客户端 SDK，并且它会随着时间的推移包含新的协定和盈利功能。
 
@@ -15,15 +16,17 @@ Microsoft 官方商城协定和盈利 SDK 提供的库和工具可支持以下�
 
 ### 通过 A/B 测试运行 UWP 应用的实验
 
-在你的通用 Windows 平台 (UWP) 应用上运行 A/B 测试以为某些客户测量这些功能的有效性，之后再将它们发布给每位用户。 在你的开发人员中心仪表板中定义某个实验后，请使用 [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.engagementclient.aspx) 类在你的应用中为实验获取变体、使用该数据修改正在测试的功能的性能，然后使用 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) 方法将视图事件和转换事件发送到开发人员中心。 最后，使用你的仪表板查看结果并管理实验。
+在你的通用 Windows 平台 (UWP) 应用上运行 A/B 测试以为某些客户测量这些功能的有效性，之后再将它们发布给每位用户。 在你的开发人员中心仪表板中定义某个实验后，请使用 [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.aspx) 类在你的应用中为实验获取变体、使用该数据修改正在测试的功能的性能，然后使用 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) 方法将视图事件和转换事件发送到开发人员中心。 最后，使用你的仪表板查看结果并管理实验。
 
 有关详细信息，请参阅[通过 A/B 测试运行实验](run-app-experiments-with-a-b-testing.md)。
 
 ### UWP 应用的应用反馈
 
-使用 UWP 应用中的 [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) 类来指导“反馈中心”的 Windows 10 客户，他们可以在其中提交问题、提出建议并进行投票。 然后，在开发人员中心仪表板的[“反馈报告”](../publish/feedback-report.md)中管理此反馈。
+使用 UWP 应用中的 [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) 类来指导“反馈中心”的 Windows 10 客户，他们可以在其中提交问题、提出建议并进行投票。 然后，在开发人员中心仪表板的[反馈报告](../publish/feedback-report.md)中管理此反馈。
 
 有关详细信息，请参阅[从应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)。
+
+>**注意** **反馈**报告当前仅向已加入[开发人员中心预览体验计划](../publish/dev-center-insider-program.md)的开发者帐户提供。
 
 ### 在应用中显示广告
 
@@ -31,7 +34,7 @@ Microsoft 官方商城协定和盈利 SDK 提供的库和工具可支持以下�
 
 有关详细信息，请参阅[在应用中显示广告](display-ads-in-your-app.md)。
 
->**注意** 以前版本的通用广告客户端 SDK、广告中介扩展和 Microsoft 广告 SDK 中的广告功能现在都包含在 Microsoft 官方商城盈利和协定 SDK 中。
+>**注意** 以前版本的通用广告客户端 SDK、广告中介扩展和 Microsoft Advertising SDK 中的广告功能现在都包含在 Microsoft 官方商城盈利和协定 SDK 中。
 
 ### API 参考
 
@@ -72,6 +75,6 @@ SDK 中的其他库（包括其他目标平台的 Microsoft.Advertising.dll 和�
 * [从应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

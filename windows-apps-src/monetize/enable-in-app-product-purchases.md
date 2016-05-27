@@ -1,13 +1,6 @@
 ---
-Description: 无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 下面我们显示了如何在应用中启用这些产品。
-title: 启用应用内产品购买
-ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
-关键字：应用内付费内容
-关键字：应用内购买
-关键字：应用内产品
-关键字：如何支持应用内
-关键字：应用内购买代码示例
-关键字：应用内付费内容代码示例
+Description&#58; 作者：mcleanbyron 无论你的应用是否免费，你都可以直接在应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关卡）。 下面我们显示了如何在应用中启用这些产品。
+title&#58; 启用应用内产品购买 ms.assetid：D158E9EB-1907-4173-9889-66507957BD6B 关键字：应用内付费 关键字：应用内购买 关键字：应用内产品 关键字：如何支持应用内 关键字：应用内购买代码示例 关键字：应用内付费代码示例
 ---
 
 # 启用应用内产品购买
@@ -21,7 +14,7 @@ ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 ## 先决条件
 
 -   可添加供客户购买的功能的 Windows 应用。
--   首次编码和测试新的应用内产品时，必须使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 对象而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 若要实现此目的，需要在 %userprofile%\\AppData\\local\\packages\\<程序包名称>\\LocalState\\Microsoft\\Windows Store\\ApiData 中自定义名为“WindowsStoreProxy.xml”的文件。 Microsoft Visual Studio 仿真程序会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)。
+-   首次编码和测试新应用内产品时，必须使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 对象而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 若要实现此目的，需要在 %userprofile%\\AppData\\local\\packages\\&lt;程序包名称&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData 中自定义名为“WindowsStoreProxy.xml”的文件。 Microsoft Visual Studio 仿真器会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)。
 -   本主题还参考了[应用商店示例](http://go.microsoft.com/fwlink/p/?LinkID=627610)中提供的代码示例。 若要获得为通用 Windows 平台 (UWP) 应用提供的不同货币化选项的实际体验，此示例是一个不错的选择。
 
 ## 步骤 1：为你的应用初始化许可证信息
@@ -62,7 +55,7 @@ void AppInit()
 
     必须将与应用内产品关联的每个功能的代码都放在条件块中，从而进行测试以查看客户是否有使用该功能的许可证。
 
-    举例说明如何在许可证特定的条件块中编码名为 **featureName** 的产品功能。 字符串 **featureName** 是在应用中唯一标识此产品的标记，它也用于在应用商店中标识此产品。
+    下面的示例介绍了如何在特定于许可证的条件块中编码名为 **featureName** 的产品功能。 字符串 **featureName** 是在应用中唯一标识此产品的标记，它也用于在应用商店中标识此产品。
 
     ```    CSharp
     if (licenseInformation.ProductLicenses["featureName"].IsActive) 
@@ -116,7 +109,7 @@ void AppInit()
 
 ## 备注
 
-如果你对向客户提供可消费应用内产品选项（可购买、用完，然后按照需要再次购买的项目）感兴趣，请参阅[启用可消费应用内产品购买](enable-consumable-in-app-product-purchases.md)主题。
+如果你对向客户提供可消费应用内产品选项（可购买、用完，然后根据需要再次购买的项目）感兴趣，请参阅[启用可消费应用内产品购买](enable-consumable-in-app-product-purchases.md)主题。
 
 如果你需要使用收据来验证用户是否进行了应用内购买，请务必查看[使用收据验证产品购买](use-receipts-to-verify-product-purchases.md)。
 
@@ -136,6 +129,6 @@ void AppInit()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

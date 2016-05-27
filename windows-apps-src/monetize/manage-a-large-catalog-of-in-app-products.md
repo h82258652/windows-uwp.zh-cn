@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
 description: 如果你的应用提供较大的应用内产品目录，你可以选择按照本主题中描述的过程来帮助管理你的目录。
 title: 管理应用内产品的大目录
@@ -20,7 +21,7 @@ title: 管理应用内产品的大目录
 ## 先决条件
 
 -   本主题介绍应用商店对于使用应用商店中列出的单个应用内产品表现多个应用内付费内容的支持。 如果你不熟悉应用内购买，请查看[启用应用内产品购买](enable-in-app-product-purchases.md)，以了解许可证信息以及如何在应用商店中恰当地列出你的应用内产品。
--   首次编码和测试新应用内付费内容时，必须使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 对象而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 若要实现此目的，需要在 %userprofile%\\AppData\\local\\packages\\<程序包名称>\\LocalState\\Microsoft\\Windows Store\\ApiData 中自定义名为“WindowsStoreProxy.xml”的文件。 Microsoft Visual Studio 仿真器会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅 **CurrentAppSimulator**。
+-   首次编码和测试新应用内付费内容时，必须使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 对象而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 若要实现此目的，需要在 %userprofile%\\AppData\\local\\packages\\&lt;程序包名称&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData 中自定义名为“WindowsStoreProxy.xml”的文件。 Microsoft Visual Studio 仿真器会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅 **CurrentAppSimulator**。
 -   本主题还参考了[应用商店示例](http://go.microsoft.com/fwlink/p/?LinkID=627610)中提供的代码示例。 若要获得为通用 Windows 平台 (UWP) 应用提供的不同货币化选项的实际体验，此示例是一个不错的选择。
 
 ## 提出针对应用内产品的购买请求
@@ -112,6 +113,6 @@ switch (result)
 * [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263384)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

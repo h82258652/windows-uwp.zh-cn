@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: 在 Windows 应用商店购买 API 中使用此方法，以向给定用户授予免费应用或应用内产品 (IAP)。
 title: 授予免费产品
@@ -6,7 +7,7 @@ title: 授予免费产品
 
 # 授予免费产品
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 在 Windows 应用商店购买 API 中使用此方法，以向给定用户授予免费应用或应用内产品 (IAP)。
 
@@ -36,7 +37,7 @@ title: 授予免费产品
 
 | 标头         | 类型   | 说明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** <*token*>。                           |
+| 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **collections.mp.microsoft.com**。                                            |
 | Content-Length | 数字 | 请求正文的长度。                                                                       |
 | Content-Type   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
@@ -53,7 +54,7 @@ title: 授予免费产品
 | language       | 字符串 | 用户的语言。                                                                                                                                                                                                                                                                                              | 是      |
 | market         | 字符串 | 用户的市场。                                                                                                                                                                                                                                                                                                | 是      |
 | orderId        | GUID   | 为订单生成的 GUID。 此值对用户而言是唯一的，但不 要求对所有订单都唯一。                                                                                                                                                                                              | 是      |
-| productId      | 字符串 | Windows 应用商店目录中的产品 ID。 若要获取产品 ID，请在 Windows 开发人员中心仪表板中导航到你的应用、转到**“应用管理”**>**“应用标识”**页面，然后检索显示在**“用于 Windows 10 的 URL”**字段中的字符串的后缀。 产品 ID 的一个示例为“9WZDNCRFJ3Q8”。 | 是      |
+| productId      | 字符串 | Windows 应用商店目录中的产品 ID。 若要获取产品 ID，请在 Windows 开发人员中心仪表板中导航到你的应用、转到“应用管理”****&gt;“应用标识”****页面，然后检索显示在“用于 Windows 10 的 URL”****字段中的字符串的后缀。 产品 ID 的一个示例为“9WZDNCRFJ3Q8”。 | 是      |
 | quantity       | int    | 要购买的数量。 当前，唯一受支持的值为 1。 如果未指定，默认值为 1。                                                                                                                                                                                                                | 否       |
 | skuId          | 字符串 | Windows 应用商店目录中的 SKU ID。 SKU ID 的一个示例为“0010”。                                                                                                                                                                                                                                                | 是      |
 
@@ -61,7 +62,7 @@ title: 授予免费产品
 
 ### 请求示例
 
-```
+```syntax
 POST https://purchase.mp.microsoft.com/v6.0/purchases/grant HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJK……
 Content-Length: 1863
@@ -93,8 +94,8 @@ Content-Type: application/json
 | language                  | 字符串                      | 订单的语言 ID（例如“en”）。                                                                                                       | 是      |
 | market                    | 字符串                      | 订单的市场 ID（例如“US”）。                                                                                                         | 是      |
 | orderId                   | 字符串                      | 标识特定用户的订单的 ID。                                                                                                   | 是      |
-| orderLineItems            | 列表<OrderLineItemV6> | 订单的行项列表。 每个订单通常有 1 个行项。                                                                          | 是      |
-| orderState                | 字符串                      | 订单的状态。 有效状态为 **Editing**、 **CheckingOut**、**Pending**、**Purchased**、**Refunded**、 **ChargedBack** 和 **Cancelled**。 | 是      |
+| orderLineItems            | list&lt;OrderLineItemV6&gt; | 订单的行项列表。 每个订单通常有 1 个行项。                                                                          | 是      |
+| orderState                | 字符串                      | 订单的状态。 有效状态为 **Editing**、**CheckingOut**、**Pending**、**Purchased**、**Refunded**、**ChargedBack** 和 **Cancelled**。 | 是      |
 | orderValidityEndTime      | 字符串                      | 在提交前，订单定价 有效期的结束时间。 不适用于免费应用。                                                                      | 是      |
 | orderValidityStartTime    | 字符串                      | 在提交前，订单定价 有效期的开始时间。 不适用于免费应用。                                                                     | 是      |
 | 购买者                 | IdentityV6                  | 描述购买者标识的对象。                                                                                                  | 是      |
@@ -149,14 +150,14 @@ IdentityV6 对象包含以下参数。
 
 | 参数     | 类型   | 说明                                                                        | 必需 |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
-| IdentityType  | 字符串 | 包含值 **"pub"**。                                                      | 是      |
+| IdentityType  | 字符串 | 包含值**“pub”**。                                                      | 是      |
 | identityValue | 字符串 | 指定的 Windows 应用商店 ID 密钥的 *publisherUserId* 字符串值。 | 是      |
 
  
 
 ### 响应示例
 
-```
+```syntax
 Content-Length: 1203
 Content-Type: application/json
 MS-CorrelationId: fb2e69bc-f26a-4aab-a823-7586c19f5762
@@ -242,6 +243,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: 使用 Windows 开发人员中心仪表板通过 A/B 测试运行通用 Windows 平台 (UWP) 应用的实验。
 title: 通过 A/B 测试运行应用实验
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
@@ -43,12 +44,12 @@ Windows 开发人员中心中的 A/B 测试仅受 UWP 应用支持。
 
 ## 相关主题
 
-* [在开发人员中心仪表板中定义你的实验](define-your-experiment-in-the-dev-center-dashboard.md)
+* [在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)
 * [针对实验为你的应用编码](code-your-experiment-in-your-app.md)
 * [在开发人员中心仪表板中管理你的实验](manage-your-experiment.md)
 * [通过 A/B 测试创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

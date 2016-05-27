@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 54ECD653-7FC2-4A95-AC5A-972C4FB5A54B
 description: 在提交你的应用之前，我们建议测试你的广告中介实现。
 title: 测试广告中介实现
@@ -20,7 +21,7 @@ title: 测试广告中介实现
 
 将显示测试广告（针对支持它们的广告网络）。 请注意，测试广告有时看起来像错误。 确保查看你的事件以确定错误是否已发生。
 
-**注意** 在测试 Windows Phone Silverlight 应用时，由于 Google AdMob 不使用测试元数据，因此它将始终返回**“无效请求”**错误。 若要验证 Google AdMob 实现，你必须输入必需参数，如下一节中所述。
+> **注意** 在测试 Windows Phone Silverlight 应用时，由于 Google AdMob 不使用测试元数据，因此它将始终返回**“无效请求”**错误。 若要验证 Google AdMob 实现，你必须输入必需参数，如下一节中所述。
 
  
 
@@ -48,9 +49,6 @@ title: 测试广告中介实现
  
 
 
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

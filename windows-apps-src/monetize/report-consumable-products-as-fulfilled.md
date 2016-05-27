@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: 使用 Windows 应用商店收集 API 中的此方法，以面向给定客户将可消费产品报告为已完成。 在用户可以重新购买可消费产品前，你的应用或服务必须面向该用户将可消费产品报告为已完成。
 title: 将可消费产品报告为已完成。
@@ -39,9 +40,9 @@ title: 将可消费产品报告为已完成。
 
 ### 请求标头
 
-| 标头         | 类型   | 描述                                                                                           |
+| 标头         | 类型   | 说明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** <*token*>。                           |
+| 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **collections.mp.microsoft.com**。                                            |
 | Content-Length | 数字 | 请求正文的长度。                                                                       |
 | Content-Type   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
@@ -50,7 +51,7 @@ title: 将可消费产品报告为已完成。
 
 ### 请求正文
 
-| 参数     | 类型         | 描述         | 必需 |
+| 参数     | 类型         | 说明         | 必需 |
 |---------------|--------------|---------------------|----------|
 | 受益人   | UserIdentity | 正在使用此项目的用户。                                                                                                                                                                                                                                                                 | 是      |
 | ItemID        | 字符串       | [查询产品](query-for-products.md)返回的 itemID 值。 将此参数与 trackingId 一起使用                                                                                                                                                                                                  | 否       |
@@ -65,7 +66,7 @@ title: 将可消费产品报告为已完成。
 
 UserIdentity 对象包含以下参数。
 
-| 参数            | 类型   | 描述                                                                                                                                 | 必需 |
+| 参数            | 类型   | 说明                                                                                                                                 | 必需 |
 |----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | IdentityType         | 字符串 | 指定字符串值 **b2b**。                                                                                                           | 是      |
 | identityValue        | 字符串 | Windows 应用商店 ID 密钥的字符串值。                                                                                                   | 是      |
@@ -77,7 +78,7 @@ UserIdentity 对象包含以下参数。
 
 以下示例使用 *itemId* 和 *trackingId*。
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/consume HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1…..
 Host: collections.mp.microsoft.com
@@ -97,7 +98,7 @@ Content-Type: application/json
 
 以下示例使用 *productId* 和 *transactionId*。
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/consume HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1……
 Content-Length: 1880
@@ -122,7 +123,7 @@ Host: collections.md.mp.microsoft.com
 
 ### 响应示例
 
-```
+```syntax
 HTTP/1.1 204 No Content
 Content-Length: 0
 MS-CorrelationId: 386f733d-bc66-4bf9-9b6f-a1ad417f97f0
@@ -157,6 +158,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

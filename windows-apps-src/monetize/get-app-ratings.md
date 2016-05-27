@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: 使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据。
 title: 获取应用评分
@@ -37,7 +38,7 @@ title: 获取应用评分
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** <*token*>。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。 |
 
  
 
@@ -62,7 +63,7 @@ title: 获取应用评分
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">字符串</td>
-<td align="left">要检索其评分数据的应用的产品 ID。 产品 ID 嵌入应用的一览链接中，该链接在开发人员中心仪表板的 [App identity page](https://msdn.microsoft.com/library/windows/apps/mt148561) 上提供。 产品 ID 的一个示例为 9WZDNCRFJ3Q8。</td>
+<td align="left">要检索其评分数据的应用的产品 ID。 产品 ID 嵌入应用的一览链接中，该链接在开发人员中心仪表板的[应用标识页](https://msdn.microsoft.com/library/windows/apps/mt148561)上提供。 产品 ID 的一个示例为 9WZDNCRFJ3Q8。</td>
 <td align="left">是</td>
 </tr>
 <tr class="even">
@@ -92,7 +93,7 @@ title: 获取应用评分
 <tr class="even">
 <td align="left">filter</td>
 <td align="left">字符串</td>
-<td align="left">在响应中筛选行的一条或多条语句。 有关详细信息，请参阅下面的 [filter fields](#filter-fields) 部分。</td>
+<td align="left">在响应中筛选行的一条或多条语句。 有关详细信息，请参阅下面的[筛选器字段](#filter-fields)部分。</td>
 <td align="left">否</td>
 </tr>
 <tr class="odd">
@@ -185,7 +186,7 @@ title: 获取应用评分
 
 以下示例演示用于获取评分数据的多个请求。 将 *applicationId* 值替换为你的应用的产品 ID。
 
-```
+```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
@@ -265,6 +266,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

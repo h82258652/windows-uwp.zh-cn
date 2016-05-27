@@ -1,14 +1,6 @@
 ---
-Description: 通过应用商店商业平台提供可消费应用内产品（这些项目可以进行购买、使用和再次购买），以便为客户提供强大可靠的购买体验。
-title: 启用可消费应用内产品购买
-ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
-关键字：应用内付费内容
-关键字：可消费
-关键字：应用内购买
-关键字：应用内产品
-关键字：如何支持应用内
-关键字：应用内购买代码示例
-关键字：应用内付费内容代码示例
+Description&#58; 作者：mcleanbyron 通过应用商店商业平台提供可消费应用内产品&amp;\#8212;这些项目可以进行购买、使用和再次购买&amp;\#8212;，以便为客户提供强大可靠的购买体验。
+title&#58; 启用可消费应用内产品购买 ms.assetid：F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 关键字：应用内付费 关键字：可消费 关键字：应用内购买 关键字：应用内产品 关键字：如何支持应用内 关键字：应用内购买代码示例 关键字：应用内付费代码示例
 ---
 
 # 启用可消费应用内产品购买
@@ -20,8 +12,8 @@ ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
 
 ## 先决条件
 
--   本主题介绍可消费应用内产品的购买和实施报告。 如果你不熟悉应用内产品，请查看[启用应用内产品购买](enable-in-app-product-purchases.md)，了解许可证信息以及如何在应用商店中恰当地列出应用内产品。
--   首次编码和测试新应用内产品时，必须使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 对象而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 若要实现此目的，需要在 %userprofile%\\AppData\\local\\packages\\<程序包名称>\\LocalState\\Microsoft\\Windows Store\\ApiData 中自定义名为“WindowsStoreProxy.xml”的文件。 Microsoft Visual Studio 仿真器会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅 **CurrentAppSimulator**。
+-   本主题介绍可消费应用内产品的购买和实施报告。 如果你不熟悉应用内产品，请查看[启用应用内产品购买](enable-in-app-product-purchases.md)，了解许可证相关信息以及如何在应用商店中恰当地列出应用内产品。
+-   首次编码和测试新应用内产品时，必须使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 对象而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 若要实现此目的，需要在 %userprofile%\\AppData\\local\\packages\\&lt;程序包名称&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData 中自定义名为“WindowsStoreProxy.xml”的文件。 Microsoft Visual Studio 仿真器会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅 **CurrentAppSimulator**。
 -   本主题还参考了[应用商店示例](http://go.microsoft.com/fwlink/p/?LinkID=627610)中提供的代码示例。 若要获得为通用 Windows 平台 (UWP) 应用提供的不同货币化选项的实际体验，此示例是一个不错的选择。
 
 ## 步骤 1：提出购买请求
@@ -57,7 +49,7 @@ switch (purchaseResults.Status)
 
 **重要提示** 应用负责向应用商店准确报告实施情况。 对于维护客户公平、可靠的购买体验来说，此步骤非常重要。
 
-以下示例说明了使用上一步骤中 [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) 调用的 [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392) 属性，标识要实施的已购买产品。 使用一个数组将产品信息存储在可供稍后引用的位置中，以便确认成功完成本地的实施。
+以下示例说明了使用上一步骤中 [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) 调用的 [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392) 属性，以标识要实施的已购买产品。 使用一个数组将产品信息存储在可供稍后引用的位置中，以便确认成功完成本地的实施。
 
 ```CSharp
 private void GrantFeatureLocally(string productId, Guid transactionId)
@@ -79,7 +71,7 @@ private void GrantFeatureLocally(string productId, Guid transactionId)
 ```CSharp
 private Boolean IsLocallyFulfilled(string productId, Guid transactionId)
 {
-    return grantedConsumableTransactionIds.ContainsKey(productId) &amp;&amp; grantedConsumableTransactionIds[productId].Contains(transactionId);
+    return grantedConsumableTransactionIds.ContainsKey(productId) && grantedConsumableTransactionIds[productId].Contains(transactionId);
 }
 ```
 
@@ -127,6 +119,6 @@ private async void GetUnfulfilledConsumables()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

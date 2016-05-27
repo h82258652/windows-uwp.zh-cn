@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: 使用 Windows 应用商店分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。
 title: 使用 Windows 应用商店服务访问分析数据
@@ -49,13 +50,13 @@ title: 使用 Windows 应用商店服务访问分析数据
 
 若要获取访问令牌，请按照[使用客户端凭据的服务到服务调用](https://msdn.microsoft.com/library/azure/dn645543.aspx)中的说明将 HTTP POST 发送到以下 Azure AD 终结点。
 
-```
+```syntax
 https://login.microsoftonline.com/<tenant id>/oauth2/token
 ```
 
 -   若要获取租户 ID，请登录[“Azure 管理门户”](http://manage.windowsazure.com/)、导航到**“Active Directory”**，然后单击已链接到开发人员中心帐户的目录。 此目录的租户 ID 已嵌入此页面的 URL 中，如以下示例中的 *your\_tenant\_ID* 字符串所示。
 
-  ```
+  ```syntax
   https://manage.windowsazure.com/@<your_tenant_name>#Workspaces/ActiveDirectoryExtension/Directory/<your_tenant_ID>/directoryQuickStart
   ```
 
@@ -236,6 +237,6 @@ Windows 应用商店分析 API 会在 JSON 对象中返回含有错误代码和�
  
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

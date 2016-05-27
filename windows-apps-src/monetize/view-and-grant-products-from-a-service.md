@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: 如果你有应用和应用内产品 (IAP) 的目录，你可以使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API 来访问你的服务中的这些产品的所有权信息。
 title: 从服务查看和授予产品
@@ -7,7 +8,7 @@ title: 从服务查看和授予产品
 # 从服务查看和授予产品
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 如果你有应用和应用内产品 (IAP) 的目录，你可以使用 *Windows 应用商店收集 API* 和 *Windows 应用商店购买 API* 来访问你的服务中的这些产品的所有权信息。
@@ -33,10 +34,10 @@ Windows 应用商店收集 API 和购买 API 使用 Azure Active Directory (Azur
 ### 步骤 1：在 Azure AD 中配置 Web 应用程序
 
 1.  按照[将应用程序与 Azure Active Directory 集成](http://go.microsoft.com/fwlink/?LinkId=722502)中的说明将 Web 应用程序添加到 Azure AD。
-    **注意** 在**“向我们说明你的应用程序页”**上，确保你已选择**“Web 应用程序和/或 Web API”**。 这是必需的，以便你可以为你的应用程序获取密钥（也称为*客户端密码*）。 若要调用 Windows 应用商店收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
-2.  在 [Azure 管理门户](http://manage.windowsazure.com/)中，导航到**“Active Directory”**。 选择你的目录、单击顶部的“应用程序”****选项卡，然后选择你的应用程序。
-3.  单击**“配置”**选项卡。 在此选项卡上，为你的应用程序获取客户端 ID 并请求密钥（这在稍后的步骤中称为*客户端密码*）。
-4.  在屏幕底部，单击**“管理清单”**。 下载你的 Azure AD 应用程序清单并使用以下文本替换 `"identifierUris"` 部分。
+    **注意** **在向我们说明你的应用程序页**上，确保你已选择“Web 应用程序和/或 Web API”****。 这是必需的，以便你可以为你的应用程序获取密钥（也称为*客户端密码*）。 若要调用 Windows 应用商店收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
+2.  在 [Azure 管理门户](http://manage.windowsazure.com/)中，导航到“Active Directory”****。 选择你的目录、单击顶部的“应用程序”****选项卡，然后选择你的应用程序。
+3.  单击“配置”****选项卡。 在此选项卡上，为你的应用程序获取客户端 ID 并请求密钥（这在稍后的步骤中称为*客户端密码*）。
+4.  在屏幕底部，单击“管理清单”****。 下载你的 Azure AD 应用程序清单并使用以下文本替换 `"identifierUris"` 部分。
 
     ```json
     "identifierUris" : [                                
@@ -55,7 +56,7 @@ Windows 应用商店收集 API 和购买 API 使用 Azure Active Directory (Azur
 Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客户端 ID 关联的应用和 IAP 的用户所有权信息的访问权限。
 
 1.  登录 [Windows 开发人员中心仪表板](https://dev.windows.com/overview)并选择你的应用。
-2.  转到**“服务”**>**“产品收集和购买”**页，然后将你的 Azure AD 客户端 ID 输入到可用字段之一。
+2.  转到“服务”****&gt;“产品收集和购买”****页并将你的 Azure AD 客户端 ID 输入到可用字段之一。
 
 ### 步骤 3：从 Azure AD 检索访问令牌
 
@@ -136,7 +137,7 @@ Windows 应用商店 ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想�
 
 以下是一个解码的 Windows 应用商店 ID 密钥标头的示例。
 
-```
+```json
 { 
     "typ":"JWT", 
     "alg":"RS256", 
@@ -146,7 +147,7 @@ Windows 应用商店 ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想�
 
 以下是一个解码的 Windows 应用商店 ID 密钥声明集的示例。
 
-```
+```json
 { 
     "http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId": "1d5773695a3b44928227393bfef1e13d", 
     "http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload": "ZdcOq0/N2rjytCRzCHSqnfczv3f0343wfSydx7hghfu0snWzMqyoAGy5DSJ5rMSsKoQFAccs1iNlwlGrX+/eIwh/VlUhLrncyP8c18mNAzAGK+lTAd2oiMQWRRAZxPwGrJrwiq2fTq5NOVDnQS9Za6/GdRjeiQrv6c0x+WNKxSQ7LV/uH1x+IEhYVtDu53GiXIwekltwaV6EkQGphYy7tbNsW2GqxgcoLLMUVOsQjI+FYBA3MdQpalV/aFN4UrJDkMWJBnmz3vrxBNGEApLWTS4Bd3cMswXsV9m+VhOEfnv+6PrL2jq8OZFoF3FUUpY8Fet2DfFr6xjZs3CBS1095J2yyNFWKBZxAXXNjn+zkvqqiVRjjkjNajhuaNKJk4MGHfk2rZiMy/aosyaEpCyncdisHVSx/S4JwIuxTnfnlY24vS0OXy7mFiZjjB8qL03cLsBXM4utCyXSIggb90GAx0+EFlVoJD7+ZKlm1M90xO/QSMDlrzFyuqcXXDBOnt7rPynPTrOZLVF+ODI5HhWEqArkVnc5MYnrZD06YEwClmTDkHQcxCvU+XUEvTbEk69qR2sfnuXV4cJRRWseUTfYoGyuxkQ2eWAAI1BXGxYECIaAnWF0W6ThweL5ZZDdadW9Ug5U3fZd4WxiDlB/EZ3aTy8kYXTW4Uo0adTkCmdLibw=", 
@@ -177,6 +178,6 @@ Windows 应用商店 ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

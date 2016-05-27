@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: 必须先在开发人员中心仪表板中定义实验后，才能在具有 A/B 测试的通用 Windows 平台 (UWP) 应用中运行实验。
 title: 在开发人员中心仪表板中定义你的实验
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
@@ -68,8 +69,8 @@ API 密钥是将你的应用与开发人员中心帐户中的实验关联起来�
 ## 后续步骤
 
 在开发人员中心仪表板定义你的实验后，你就已经准备好进行以下步骤：
-1. [针对实验为应用编码](code-your-experiment-in-your-app.md)。 在 Microsoft 官方商城协定和盈利 SDK 中使用 API 获取实验的变体设置，使用此数据来修改你正在测试的该功能的行为，并将视图事件和转换事件发送到开发人员中心。
-2. [在开发人员中心仪表板中运行和管理实验](manage-your-experiment.md) 使用仪表板查看实验结果，并完成实验。
+1. [针对实验为应用编码](code-your-experiment-in-your-app.md)。 在 Microsoft 官方商城协定和盈利 SDK 中使用 API 获取实验的变体设置、使用此数据来修改你正在测试的该功能的行为，并将视图事件和转换事件发送到开发人员中心。
+2. [在开发人员中心仪表板中运行和管理实验](manage-your-experiment.md)。 使用仪表板查看实验结果，并完成实验。
 
 ## 相关主题
 
@@ -79,6 +80,6 @@ API 密钥是将你的应用与开发人员中心帐户中的实验关联起来�
   * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

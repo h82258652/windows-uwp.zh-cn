@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: 使用此方法续订 Windows 应用商店密钥。
 title: 续订 Windows 应用商店 ID 密钥
@@ -45,7 +46,7 @@ title: 续订 Windows 应用商店 ID 密钥
 
 ### 请求正文
 
-| 参数     | 类型   | 描述                       | 必需 |
+| 参数     | 类型   | 说明                       | 必需 |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | 字符串 | Azure AD 访问令牌。        | 是      |
 | 密钥           | 字符串 | 过期的 Windows 应用商店 ID 密钥。 | 否       |
@@ -54,7 +55,7 @@ title: 续订 Windows 应用商店 ID 密钥
 
 ### 请求示例
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
 Content-Length: 2774
 Content-Type: application/json
@@ -71,7 +72,7 @@ Host: collections.mp.microsoft.com
 
 ### 响应正文
 
-| 参数 | 类型   | 描述                                                                                                            | 必需 |
+| 参数 | 类型   | 说明                                                                                                            | 必需 |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
 | 密钥       | 字符串 | 已刷新的 Windows 应用商店密钥，可在对 Windows 应用商店收集 API 或购买 API 的将来调用中使用。 | 否       |
 
@@ -79,7 +80,7 @@ Host: collections.mp.microsoft.com
 
 ### 响应示例
 
-```
+```syntax
 HTTP/1.1 200 OK
 Content-Length: 1646
 Content-Type: application/json
@@ -114,6 +115,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

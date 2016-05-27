@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: 在本演练中，通过 A/B 测试创建和运行你的第一个实验。
 title: 通过 A/B 测试创建和运行你的第一个实验
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
@@ -159,7 +160,7 @@ private string apiKey = "F48AC670-4472-4387-AB7D-D65B095153FB";
 2. 在**实验**部分中，单击**“活动”**筛选器，然后单击**“优化按钮单击”**以转到此实验页面。
 3. 确认在**结果摘要**和**结果详细信息**部分中显示的结果与你期望看到的结果相匹配。 有关这些部分的详细信息，请参阅 [Manage your experiment in the Dev Center dashboard（在开发人员中心仪表板中管理你的实验）](manage-your-experiment.md#review-the-results-of-your-experiment)。
 
-  >**注意** 开发人员中心中在 24 小时时间段内向每位用户仅报告第一个转换事件。 如果用户在 24 小时时间段内触发多个转换事件，则将仅报告第一个转换事件。 这是为了帮助防止触发很多转换事件的单个用户扭曲一组示例用户得出的实验结果。
+  >**注意** 开发人员中心中在 24 小时时间段内向每位用户仅报告第一个转换事件。 如果用户在 24 小时时段内在应用中触发多个转换事件，则将仅报告第一个转换事件。 这是为了帮助防止触发很多转换事件的单个用户扭曲一组示例用户得出的实验结果。
 
 4. 现在，你已准备好结束实验了。 在**结果摘要**部分的**变体 B** 列中，单击**“切换”**。 这会将应用的所有用户切换到蓝色按钮。
 5. 单击**“确定”**以确认你想要结束该实验。
@@ -168,12 +169,12 @@ private string apiKey = "F48AC670-4472-4387-AB7D-D65B095153FB";
 
 ## 相关主题
 
-  * [在开发人员中心仪表板中定义你的实验](define-your-experiment-in-the-dev-center-dashboard.md)
+  * [在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)
   * [针对实验为你的应用编码](code-your-experiment-in-your-app.md)
   * [在开发人员中心仪表板中管理你的实验](manage-your-experiment.md)
   * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
