@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
 description: Entity Framework (EF) 是一个对象关系映射程序，支持使用特定于域的对象处理关系数据。
 title: C# 应用的带有 SQLite 的 Entity Framework 7
@@ -23,6 +24,6 @@ Entity Framework (EF) 是一个对象关系映射程序，支持使用特定于�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
