@@ -1,5 +1,6 @@
 ---
-title: Windows 运行时类型的.NET framework 映射
+author: martinekuan
+title: Windows 运行时类型的 .NET Framework 映射
 description: 下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 ---
@@ -7,11 +8,11 @@ ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 # Windows 运行时类型的.NET framework 映射
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。 在使用托管代码编写的通用 Windows 应用中，IntelliSense 将显示 .NET Framework 类型而不是 UWP 类型。 例如，如果 Windows 运行时方法采用类型 IVector<string> 的参数，IntelliSense 将显示类型 IList<string> 的参数。 同样，在使用托管代码编写的 Windows 运行时组件中，你将使用成员签名中的 .NET Framework 类型。 当 [Windows 运行时元数据导出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 生成 Windows 运行时组件时，.NET Framework 类型将变为相应的 UWP 类型。
+下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。 在使用托管代码编写的通用 Windows 应用中，IntelliSense 将显示 .NET Framework 类型而不是 UWP 类型。 例如，如果 Windows 运行时方法采用类型 IVector&lt;string&gt; 的参数，IntelliSense 将显示类型 IList&lt;string&gt; 的参数。 同样，在使用托管代码编写的 Windows 运行时组件中，你将使用成员签名中的 .NET Framework 类型。 当 [Windows 运行时元数据导出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 生成 Windows 运行时组件时，.NET Framework 类型将变为相应的 UWP 类型。
 
 ## 映射表
 
@@ -27,19 +28,19 @@ ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 | AttributeUsageAttribute (Windows.Foundation.Metadata)         | AttributeUsageAttribute (System)                                       | System.Runtime.dll                                |
 | AttributeTargets (Windows.Foundation.Metadata)                | AttributeTargets (System)                                              | System.Runtime.dll                                |
 | DateTime (Windows.Foundation)                                 | DateTimeOffset (System)                                                | System.Runtime.dll                                |
-| EventHandler<T> (Windows.Foundation)                    | EventHandler<T> (System)                                         | System.Runtime.dll                                |
+| EventHandler&lt;T&gt; (Windows.Foundation)                    | EventHandler&lt;T&gt; (System)                                         | System.Runtime.dll                                |
 | EventRegistrationToken (Windows.Foundation)                   | EventRegistrationToken (System.Runtime.InteropServices.WindowsRuntime) | System.Runtime.InteropServices.WindowsRuntime.dll |
 | HResult (Windows.Foundation)                                  | Exception (System)                                                     | System.Runtime.dll                                |
-| IReference<T> (Windows.Foundation)                      | Nullable<T> (System)                                             | System.Runtime.dll                                |
+| IReference&lt;T&gt; (Windows.Foundation)                      | Nullable&lt;T&gt; (System)                                             | System.Runtime.dll                                |
 | TimeSpan (Windows.Foundation)                                 | TimeSpan (System)                                                      | System.Runtime.dll                                |
 | Uri (Windows.Foundation)                                      | Uri (System)                                                           | System.Runtime.dll                                |
 | IClosable (Windows.Foundation)                                | IDisposable (System)                                                   | System.Runtime.dll                                |
-| IIterable<T> (Windows.Foundation.Collections)           | IEnumerable<T> (System.Collections.Generic)                      | System.Runtime.dll                                |
-| IVector<T> (Windows.Foundation.Collections)             | IList<T> (System.Collections.Generic)                            | System.Runtime.dll                                |
-| IVectorView<T> (Windows.Foundation.Collections)         | IReadOnlyList<T> (System.Collections.Generic)                    | System.Runtime.dll                                |
-| IMap<K,V> (Windows.Foundation.Collections)              | IDictionary<TKey,TValue> (System.Collections.Generic)            | System.Runtime.dll                                |
-| IMapView<K,V> (Windows.Foundation.Collections)          | IReadOnlyDictionary<TKey,TValue> (System.Collections.Generic)    | System.Runtime.dll                                |
-| IKeyValuePair<K,V> (Windows.Foundation.Collections)     | KeyValuePair<TKey,TValue> (System.Collections.Generic)           | System.Runtime.dll                                |
+| IIterable&lt;T&gt; (Windows.Foundation.Collections)           | IEnumerable&lt;T&gt; (System.Collections.Generic)                      | System.Runtime.dll                                |
+| IVector&lt;T&gt; (Windows.Foundation.Collections)             | IList&lt;T&gt; (System.Collections.Generic)                            | System.Runtime.dll                                |
+| IVectorView&lt;T&gt; (Windows.Foundation.Collections)         | IReadOnlyList&lt;T&gt; (System.Collections.Generic)                    | System.Runtime.dll                                |
+| IMap&lt;K,V&gt; (Windows.Foundation.Collections)              | IDictionary&lt;TKey,TValue&gt; (System.Collections.Generic)            | System.Runtime.dll                                |
+| IMapView&lt;K,V&gt; (Windows.Foundation.Collections)          | IReadOnlyDictionary&lt;TKey,TValue&gt; (System.Collections.Generic)    | System.Runtime.dll                                |
+| IKeyValuePair&lt;K,V&gt; (Windows.Foundation.Collections)     | KeyValuePair&lt;TKey,TValue&gt; (System.Collections.Generic)           | System.Runtime.dll                                |
 | IBindableIterable (Windows.UI.Xaml.Interop)                   | IEnumerable (System.Collections)                                       | System.Runtime.dll                                |
 | IBindableVector (Windows.UI.Xaml.Interop)                     | IList (System.Collections)                                             | System.Runtime.dll                                |
 | INotifyCollectionChanged (Windows.UI.Xaml.Interop)            | INotifyCollectionChanged (System.Collections.Specialized)              | System.ObjectModel.dll                            |
@@ -83,6 +84,6 @@ ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

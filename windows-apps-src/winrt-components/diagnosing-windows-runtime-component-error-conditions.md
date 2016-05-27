@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 诊断 Windows 运行时组件错误条件
 description: 本文提供有关对使用托管代码编写的 Windows 运行时组件的限制的其他信息。
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
@@ -7,7 +8,7 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 # 诊断 Windows 运行时组件错误条件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
@@ -18,7 +19,7 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ## 实现异步接口的错误消息提供错误类型
 
 
-托管的 Windows 运行时组件无法实现表示异步操作的通用 Windows 平台 (UWP) 接口（[IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress<TProgress>](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation<TResult>](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) 或 [IAsyncOperationWithProgress<TResult, TProgress>](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)）。 相反，.NET Framework 为在 Windows 运行时组件中生成异步操作提供 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 类。 Winmdexp.exe 在你错误地尝试实现异步接口时显示的错误消息使用之前的名称 AsyncInfoFactory 引用此类。 .NET Framework 不再包括 AsyncInfoFactory 类。
+托管的 Windows 运行时组件无法实现表示异步操作的通用 Windows 平台 (UWP) 接口（[IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) 或 [IAsyncOperationWithProgress&lt;TResult、TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)）。 相反，.NET Framework 提供用于在 Windows 运行时组件中生成异步操作的 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 类。 Winmdexp.exe 在你错误地尝试实现异步接口时显示的错误消息使用之前的名称 AsyncInfoFactory 引用此类。 .NET Framework 不再包括 AsyncInfoFactory 类。
 
 | 错误编号 | 消息文本                                                                                                                                                                                                                                                          |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -33,7 +34,7 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ## 缺少对 mscorlib.dll 或 System.Runtime.dll 的引用
 
 
-此问题仅在从命令行使用 Winmdexp.exe 时发生。 我们建议使用 /reference 选项包括对 .NET Framework 核心引用程序集中的 mscorlib.dll 和 System.Runtime.dll 的引用，这些引用位于“%ProgramFiles(x86)%\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5”（在 32 位计算机上位于“%ProgramFiles%\...”）中 。
+此问题仅在从命令行使用 Winmdexp.exe 时发生。 我们建议使用 /reference 选项包括对 .NET Framework 核心引用程序集的 mscorlib.dll 和 System.Runtime.dll 的引用，这些引用位于“%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5”（在 32 位计算机上位于“%ProgramFiles%\...”）中。
 
 | 错误编号 | 消息文本                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -85,7 +86,7 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 
 在通用 Windows 平台中，Windows 元数据 (.winmd) 文件中的所有公共类型必须位于共享 .winmd 文件名的命名空间或文件名的子命名空间中。 例如，如果你的 Visual Studio 项目名称为 A.B（即，Windows 运行时组件为 A.B.winmd），它可以包含公共类 A.B.Class1 和 A.B.C.Class2，但无法包含 A.Class3 (WME0006) 或 D.Class4 (WME1044)。
 
-> **注意** 这些限制仅适用于公共类型，而不适用于在实现中使用的私有类型。
+> **注意** 这些限制仅适用于公共类型，而不适用于在实现中使用的专用类型。
 
  
 
@@ -119,13 +120,13 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 
 组件的公共接口必须仅公开 UWP 类型。 但是，.NET Framework 为许多在 .NET Framework 和 UWP 中稍有不同的常用类型提供映射。 这使 .NET Framework 开发人员可以使用熟悉的类型，而无需了解新类型。 你可以在组件的公共接口中使用这些映射的 .NET Framework 类型。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和 [Windows 运行时类型的.NET Framework 映射](net-framework-mappings-of-windows-runtime-types.md)中的“在 Windows 运行时组件中声明类型”和“将通用 Windows 平台类型传递到托管代码”。
 
-其中许多映射都是接口。 例如，[IList<T>](https://msdn.microsoft.com/library/5y536ey6.aspx) 映射到 UWP 接口 [IVector<T>](https://msdn.microsoft.com/library/windows/apps/br206631.aspx)。 如果将 List<string>（在 Visual Basic 中是 `List(Of String)`）而非 IList<string> 用作参数类型，Winmdexp.exe 会提供包括所有由 List<T> 实现的映射接口的备用项列表。 如果使用嵌套的泛型类型，例如 List<Dictionary<int, string>>（在 Visual Basic 中是 List(Of Dictionary(Of Integer, String))），Winmdexp.exe 会针对每个嵌套级别提供选项。 这些列表会非常长。
+其中许多映射都是接口。 例如，[IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) 映射到 UWP 接口 [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx)。 如果将 List&lt;string&gt;（在 Visual Basic 中是 `List(Of String)`）而非 IList&lt;string&gt; 用作参数类型，Winmdexp.exe 会提供包括所有由 List&lt;T&gt; 实现的映射接口的备用项列表。 如果使用嵌套的泛型类型，例如 List&lt;Dictionary&lt;int, string&gt;&gt;（在 Visual Basic 中是 List(Of Dictionary(Of Integer, String))），Winmdexp.exe 会提供有关每个级别的嵌套的选项。 这些列表会非常长。
 
-通常情况下，最好选择最接近类型的接口。 例如，对于 Dictionary<int, string>，最好选择最接近的 IDictionary<int, string>。
+通常情况下，最好选择最接近类型的接口。 例如，对于 Dictionary&lt;int, string&gt;，最好选择最接近的 IDictionary&lt;int, string&gt;。
 
-> **重要提示** JavaScript 使用最先显示在托管类型实现的接口列表中的接口。 例如，如果你将 Dictionary<int, string> 返回到 JavaScript 代码，它会显示为 IDictionary<int, string>，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+> **重要提示** JavaScript 使用最先显示在托管类型实现的接口列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
-> **警告** 如果 JavaScript 将使用你的组件，请避免使用非泛型的 [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) 和 [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) 接口。 这两个接口分别映射到 [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) 和 [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx)。 它们支持绑定 XAML 控件，并对 JavaScript 不可见。 JavaScript 提出运行时错误“函数‘X’签名无效且无法调用。”
+> **警告** 如果 JavaScript 将使用你的组件，请避免使用非泛型 [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) 和 [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) 接口。 这些接口分别映射到 [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) 和 [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx)。 它们支持绑定 XAML 控件，并对 JavaScript 不可见。 JavaScript 提出运行时错误“函数‘X’签名无效且无法调用。”
 
  
 
@@ -152,7 +153,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>方法“{0}”在其签名中具有类型“{1}”的参数。 尽管此泛型类型并非有效的 Windows 运行时类型，但类型或其泛型参数可以实现作为有效的 Windows 运行时类型的接口。 {2}</p>
-> **注意** 对于 {2}，Winmdexp.exe 会附加备用项列表，例如“请考虑改为将方法签名中的类型‘System.Collections.Generic.List<T>’更改为以下类型之一：‘System.Collections.Generic.IList<T>、System.Collections.Generic.IReadOnlyList<T>、System.Collections.Generic.IEnumerable<T>’。”
+> **注意** 对于 {2}，Winmdexp.exe 会附加备用项列表，例如“请考虑改为将方法签名中的类型‘System.Collections.Generic.List&lt;T&gt;’更改为以下类型之一：‘System.Collections.Generic.IList&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;’。”
 </td>
 </tr>
 <tr class="even">
@@ -247,6 +248,6 @@ JavaScript 代码可以按照名称访问方法的输出参数，包括返回值
 * [Winmdexp.exe（Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

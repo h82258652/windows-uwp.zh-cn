@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 使用 C# 和 Visual Basic 创建 Windows 运行时组件
 description: 从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
@@ -7,14 +8,14 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 # 使用 C# 和 Visual Basic 创建 Windows 运行时组件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
 从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。 你可以将通用 Windows 平台 (UWP) 应用与 C++、JavaScript、Visual Basic 或 C# 一起使用。 本文概述了用于创建组件的规则，并讨论了有关 Windows 运行时的 .NET Framework 支持的一些方面。 一般情况下，该支持设计为对 .NET Framework 程序员透明可见。 但是，在你创建要与 JavaScript 或 C++ 一起使用的组件时，需要意识到这些语言支持 Windows 运行时的方法差异。
 
-如果你要创建仅在 UWP 应用中与 Visual Basic 或 C# 一起使用的组件，并且该组件不包含 UWP 控件，请考虑使用**“类库”**模板而非**“Windows 运行时组件”**模板。 简单类库所受限制较少。
+如果你要创建仅在 UWP 应用中与 Visual Basic 或 C# 一起使用的组件，并且该组件不包含 UWP 控件，请考虑使用“类库”****模板而非“Windows 运行时组件”****模板。 简单类库所受限制较少。
 
 本文包含以下部分：
 
@@ -25,9 +26,9 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 
 -   组件中的所有公共类型和成员的字段、参数和返回值必须是 Windows 运行时类型。
 
-    此限制包括你创建的 Windows 运行时类型以及 Windows 运行时本身提供的类型。 它还包括许多 .NET Framework 类型。 包括这些类型是支持 .NET Framework 在托管代码中自然使用 Windows 运行时的一部分：你的代码看起来像使用熟悉的 .NET Framework 类型，而非基本的 Windows 运行时类型。 例如，你可以使用 .NET Framework 基元类型（例如 Int32 和双精度型）、某些基本类型（例如 DateTimeOffset 和 Uri）以及一些常用的泛型接口类型（例如 IEnumerable<T>，这在 Visual Basic 中是 IEnumerable(Of T) 和 IDictionary<TKey,TValue>）。 （请注意，这些泛型类型的类型参数必须是 Windows 运行时类型。）这将在本文后面的“将 Windows 运行时类型传递到托管代码和将托管代码传递到 Windows 运行时”部分中讨论。
+    此限制包括你创建的 Windows 运行时类型以及 Windows 运行时本身提供的类型。 它还包括许多 .NET Framework 类型。 包括这些类型是支持 .NET Framework 在托管代码中自然使用 Windows 运行时的一部分：你的代码看起来像使用熟悉的 .NET Framework 类型，而非基本的 Windows 运行时类型。 例如，你可以使用 .NET Framework 基元类型（例如 Int32 和双精度型）、某些基本类型（例如 DateTimeOffset 和 Uri）以及一些常用的泛型接口类型（例如 IEnumerable&lt;T&gt;，这在 Visual Basic 中是 IEnumerable(Of T) 和 IDictionary&lt;TKey,TValue&gt;）。 （请注意，这些泛型类型的类型参数必须是 Windows 运行时类型。）这将在本文后面的“将 Windows 运行时类型传递到托管代码”和“将托管代码传递到 Windows 运行时”部分中讨论。
 
--   公共类和接口可以包含方法、属性和事件。 你可以为事件声明委派或使用 EventHandler<T> 委派。 公共类或接口无法：
+-   公共类和接口可以包含方法、属性和事件。 你可以为事件声明委托或使用 EventHandler&lt;T&gt; 委托。 公共类或接口无法：
 
     -   具有泛型性。
     -   实现不是 Windows 运行时接口的接口。 （但是，你可以创建并实现自己的 Windows 运行时接口。）
@@ -48,18 +49,18 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 
 ## **调试本机 C++ 代码和托管代码**
 
-1.  打开 Visual C++ 项目的快捷方式菜单，并选择“属性”****。
-2.  在属性页中的“配置属性”****下，选择“调试”****。
-3.  选择**“调试器类型”**，并在下拉列表框中将**“仅限本机”**更改为**“混合(托管和本机)”**。 选择“确定”****。
+1.  打开 Visual C++ 项目的快捷菜单，并选择“属性”****。
+2.  在属性页面的“配置属性”****下，选择“调试”****。
+3.  选择“调试器类型”****，并在下拉列表框中将“仅限本机”****更改为“混合(托管和本机)”****。 选择“确定”****。
 4.  在本机代码和托管代码中设置断点。
 
 如果要作为使用 JavaScript 的通用 Windows 应用的一部分测试你的组件，解决方案默认处于 JavaScript 调试模式下。 在 Visual Studio 中，无法同时调试 JavaScript 和托管代码。
 
 ## **调试托管代码而非 JavaScript**
 
-1.  打开 JavaScript 项目的快捷方式菜单，并选择“属性”****。
-2.  在属性页中的“配置属性”****下，选择“调试”****。
-3.  选择**“调试器类型”**，并在下拉列表框中将**“仅限脚本”**更改为**“仅限托管”**。 选择“确定”****。
+1.  打开 JavaScript 项目的快捷菜单，并选择“属性”****。
+2.  在属性页面的“配置属性”****下，选择“调试”****。
+3.  选择“调试器类型”****，并在下拉列表框中将“仅限脚本”****更改为“仅限托管”****。 选择“确定”****。
 4.  在托管代码中设置断点，并像往常一样调试。
 
 ## 将 Windows 运行时类型传递到托管代码
@@ -82,12 +83,12 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 
 | Windows 运行时                                  | .NET Framework                                    |
 |--------------------------------------------------|---------------------------------------------------|
-| IIterable<T>                               | IEnumerable<T>                              |
-| IVector<T>                                 | IList<T>                                    |
-| IVectorView<T>                             | IReadOnlyList<T>                            |
-| IMap<K, V>                                 | IDictionary<TKey, TValue>                   |
-| IMapView<K, V>                             | IReadOnlyDictionary<TKey, TValue>           |
-| IKeyValuePair<K, V>                        | KeyValuePair<TKey, TValue>                  |
+| IIterable&lt;T&gt;                               | IEnumerable&lt;T&gt;                              |
+| IVector&lt;T&gt;                                 | IList&lt;T&gt;                                    |
+| IVectorView&lt;T&gt;                             | IReadOnlyList&lt;T&gt;                            |
+| IMap&lt;K, V&gt;                                 | IDictionary&lt;TKey, TValue&gt;                   |
+| IMapView&lt;K, V&gt;                             | IReadOnlyDictionary&lt;TKey, TValue&gt;           |
+| IKeyValuePair&lt;K, V&gt;                        | KeyValuePair&lt;TKey, TValue&gt;                  |
 | IBindableIterable                                | IEnumerable                                       |
 | IBindableVector                                  | IList                                             |
 | Windows.UI.Xaml.Data.INotifyPropertyChanged      | System.ComponentModel.INotifyPropertyChanged      |
@@ -96,13 +97,13 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 
  
 
-在某种类型实现多个接口时，你可以将所实现的任意接口用作成员的参数类型或返回类型。 例如，你可以将 Dictionary<int, string>（在 Visual Basic 中是 Dictionary(Of Integer, String)）传递或返回为 IDictionary<int, string>、IReadOnlyDictionary<int, string> 或 IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>。
+在某种类型实现多个接口时，你可以将所实现的任意接口用作成员的参数类型或返回类型。 例如，你可以将 Dictionary&lt;int, string&gt;（在 Visual Basic 中是 Dictionary(Of Integer, String)）传递或返回为 IDictionary&lt;int, string&gt;、IReadOnlyDictionary&lt;int, string&gt; 或 IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;。
 
-**重要提示** JavaScript 使用最先显示在托管类型实现的接口列表中的接口。 例如，如果你将 Dictionary<int, string> 返回到 JavaScript 代码，它会显示为 IDictionary<int, string>，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+**重要提示** JavaScript 使用最先显示在托管类型实现的接口列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
-在 Windows 运行时中，IMap<K, V> 和 IMapView<K, V> 使用 IKeyValuePair 进行迭代。 在将它们传递到托管代码时，它们显示为 IDictionary<TKey, TValue> 和 IReadOnlyDictionary<TKey, TValue>，所以自然而然地，你会使用 System.Collections.Generic.KeyValuePair<TKey, TValue> 枚举它们。
+在 Windows 运行时中，IMap&lt;K, V&gt; 和 IMapView&lt;K, V&gt; 使用 IKeyValuePair 进行迭代。 在将它们传递到托管代码时，它们显示为 IDictionary&lt;TKey, TValue&gt; 和 IReadOnlyDictionary&lt;TKey, TValue&gt;，所以自然而然地，你会使用 System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; 枚举它们。
 
-接口在托管代码中的显示方式影响实现这些接口的类型的显示方式。 例如，PropertySet 类实现 IMap<K, V>，而它在托管代码中显示为 IDictionary<TKey, TValue>。 PropertySet 看上去好像实现了 IDictionary<TKey, TValue> 而非 IMap<K, V>，所以在托管代码中，它似乎具有 Add 方法，其行为类似于 .NET Framework 字典上的 Add 方法。 它不会显示为具有 Insert 方法。 你可以在文章[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)中查看此示例。
+接口在托管代码中的显示方式影响实现这些接口的类型的显示方式。 例如，PropertySet 类实现 IMap&lt;K, V&gt;，而它在托管代码中显示为 IDictionary&lt;TKey, TValue&gt;。 PropertySet 显示为好像实现了 IDictionary&lt;TKey, TValue&gt; 而非 IMap&lt;K, V&gt;，所以在托管代码中，它似乎具有 Add 方法，其行为类似于 .NET Framework 字典上的 Add 方法。 它不会显示为具有 Insert 方法。 你可以在文章[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)中查看此示例。
 
 ## 将托管的类型传递到 Windows 运行时
 
@@ -179,13 +180,13 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ## 异步操作
 
 
-若要在组件中实现异步方法，请将“Async”添加到方法名称的末尾并返回一个表示异步操作的 Windows 运行时接口：IAsyncAction、IAsyncActionWithProgress<TProgress>、IAsyncOperation<TResult> 或 IAsyncOperationWithProgress<TResult, TProgress>。
+若要在组件中实现异步方法，请将“Async”添加到方法名称的末尾并返回一个表示异步操作的 Windows 运行时接口：IAsyncAction、IAsyncActionWithProgress&lt;TProgress&gt;、IAsyncOperation&lt;TResult&gt; 或 IAsyncOperationWithProgress&lt;TResult, TProgress&gt;。
 
-你可以使用 .NET Framework 任务（[Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 类和泛型 [Task<TResult>](https://msdn.microsoft.com/library/dd321424.aspx) 类）实现异步方法。 必须返回表示操作正在运行的任务，例如从使用 C# 或 Visual Basic 编写的异步方法返回的任务或从 [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) 方法返回的任务。 如果你使用构造函数创建任务，必须在返回它之前调用其 [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) 方法。
+你可以使用 .NET Framework 任务（[Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 类和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 类）实现异步方法。 必须返回表示操作正在运行的任务，例如从使用 C# 或 Visual Basic 编写的异步方法返回的任务或从 [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) 方法返回的任务。 如果你使用构造函数创建任务，必须在返回它之前调用其 [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) 方法。
 
-使用 await（在 Visual Basic 中是 Await）的方法需要 **async** 关键字（在 Visual Basic 中是 **Async**）。 如果从 Windows 运行时组件公开此类方法，请将 **async** 关键字应用于传递到 Run 方法的委派。
+使用 await（在 Visual Basic 中是 Await）的方法需要 **async** 关键字（在 Visual Basic 中是 **Async**）。 如果从 Windows 运行时组件公开此类方法，请将 **async** 关键字应用于传递到 Run 方法的委托。
 
-对于不支持取消和进度报告的异步操作，你可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) 或 [AsAsyncOperation<TResult>](https://msdn.microsoft.com/library/hh779745.aspx) 扩展方法来在相应的接口中打包任务。 例如，以下代码通过使用 Task.Run<TResult> 方法启动任务来实现异步方法。 AsAsyncOperation<TResult> 扩展方法将任务返回为 Windows 运行时异步操作。
+对于不支持取消和进度报告的异步操作，你可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) 或 [AsAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779745.aspx) 扩展方法来在相应的接口中打包任务。 例如，以下代码通过使用 Task.Run&lt;TResult&gt; 方法启动任务来实现异步方法。 AsAsyncOperation&lt;TResult&gt; 扩展方法将任务返回为 Windows 运行时异步操作。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -224,7 +225,7 @@ function asyncExample(id) {
 
 对于支持取消和进度报告的异步操作，请使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 类生成启动的任务，并将任务的取消和进度报告功能与相应的 Windows 运行时接口的取消和进度报告功能连接起来。 有关支持取消和进度报告的示例，请参阅[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
-请注意，即使异步方法不支持取消或进度报告，也可以使用 AsyncInfo 类的方法。 如果你使用 Visual Basic lambda 函数或 C# 匿名方法，请勿为令牌和 [IProgress<T>](https://msdn.microsoft.com/library/hh138298.aspx) 接口提供参数。 如果你使用 C# lambda 函数，则提供令牌参数，但忽略它。 在改为使用 [AsyncInfo.Run<TResult>(Func<CancellationToken, Task<TResult>>](https://msdn.microsoft.com/library/hh779740.aspx)) 方法重载时，使用了 AsAsyncOperation<TResult> 方法的上一示例与此类似：
+请注意，即使异步方法不支持取消或进度报告，也可以使用 AsyncInfo 类的方法。 如果你使用 Visual Basic lambda 函数或 C# 匿名方法，则不要为令牌和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 接口提供参数。 如果你使用 C# lambda 函数，则提供令牌参数，但忽略它。 在改为使用 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) 方法重载时，使用了 AsAsyncOperation&lt;TResult&gt; 方法的上一示例与此类似：
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -249,7 +250,7 @@ function asyncExample(id) {
 > End Function
 > ```
 
-如果你创建可以选择支持取消或进度报告的异步方法，请考虑添加缺少取消令牌或 IProgress<T> 接口的参数的重载。
+如果你创建可以选择支持取消或进度报告的异步方法，请考虑添加缺少取消令牌或 IProgress&lt;T&gt; 接口的参数的重载。
 
 ## 引发异常
 
@@ -271,9 +272,9 @@ function asyncExample(id) {
 
 ## 声明和引发事件
 
-在你声明类型以保留事件数据时，请从 Object 而非 EventArgs 派生，因为 EventArgs 不属于 Windows 运行时类型。 使用 [EventHandler<TEventArgs>](https://msdn.microsoft.com/library/db0etb8x.aspx) 作为事件类型，并将事件参数类型用作泛型类型参数。 就像在 .NET Framework 应用程序中一样引发该事件。
+在你声明类型以保留事件数据时，请从 Object 而非 EventArgs 派生，因为 EventArgs 不属于 Windows 运行时类型。 使用 [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) 作为事件类型，并将事件参数类型用作泛型类型参数。 就像在 .NET Framework 应用程序中一样引发该事件。
 
-在通过 JavaScript 或 C++ 使用 Windows 运行时组件时，事件遵循这些语言期望的 Windows 运行时事件模式。 在通过 C# 或 Visual Basic 使用组件时，事件显示为普通的 .NET Framework 事件。 [演练：用 C# 或 Visual Basic 创建一个简单的组件，然后从 JavaScript 中调用该组件]()中提供了示例。
+在通过 JavaScript 或 C++ 使用 Windows 运行时组件时，事件遵循这些语言期望的 Windows 运行时事件模式。 在通过 C# 或 Visual Basic 使用组件时，事件显示为普通的 .NET Framework 事件。 [演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它]()中提供了示例。
 
 如果要实现自定义事件访问器（在 Visual Basic 中通过 **Custom** 关键字声明事件），必须在实现中遵循 Windows 运行时事件模式。 请参阅 [Windows 运行时组件中的自定义事件和事件访问器](custom-events-and-event-accessors-in-windows-runtime-components.md)。 请注意，在通过 C# 或 Visual Basic 代码处理事件时，它仍显示为普通的 .NET Framework 事件。
 
@@ -293,6 +294,6 @@ function asyncExample(id) {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

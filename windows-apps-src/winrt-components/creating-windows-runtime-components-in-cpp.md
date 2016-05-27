@@ -1,14 +1,15 @@
 ---
-title: 在 C++ 中创建 Windows 运行时组件
+author: martinekuan
+title: 使用 C++ 创建 Windows 运行时组件
 description: 本文介绍如何使用 C++ 创建 Windows 运行时组件，该组件是从使用 JavaScript、C#、Visual Basic 或 C++ 生成的通用 Windows 应用调用的 DLL。
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ---
 
 
-# 在 C++ 中创建 Windows 运行时组件
+# 使用 C++ 创建 Windows 运行时组件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
@@ -84,9 +85,9 @@ Windows 运行时组件可以包含多个公共的可激活类以及其他仅为
 
 就像对任意类一样，客户端代码使用 **new**（在 Visual Basic 中是 **New**）关键字创建组件实例。
 
-可激活类必须声明为 **public ref class sealed**。 **ref class** 关键字告知编译器将类创建为 Windows 运行时兼容类型，而密封关键字指定该类无法继承。 Windows 运行时当前无法支持一般化的继承模型；有限的继承模型支持创建自定义 XAML 控件。 有关详细信息，请参阅 [Ref 类和结构 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx)。
+可激活类必须声明为 **public ref class sealed**。 **ref class** 关键字告知编译器将类创建为 Windows 运行时兼容类型，而 sealed 关键字指定该类无法继承。 Windows 运行时当前无法支持一般化的继承模型；有限的继承模型支持创建自定义 XAML 控件。 有关详细信息，请参阅 [Ref 类和结构 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx)。
 
-对于 C++，所有数字基元均在默认命名空间中定义。 [平台](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx)命名空间包含特定于 Windows 运行时类型系统的 C++ 类。 这些类包括 [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) 类和 [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) 类。 诸如 [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) 类和 [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) 类的具体集合类型在 [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) 命名空间中定义。 这些类型实现的公共接口在 [Windows::Foundation::Collections 命名空间 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx) 中定义。 JavaScript、C# 和 Visual Basic 使用的正是这些接口类型。 有关详细信息，请参阅[类型系统 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
+对于 C++，所有数字基元均在默认命名空间中定义。 [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 命名空间包含特定于 Windows 运行时类型系统的 C++ 类。 这些类包括 [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) 类和 [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) 类。 诸如 [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) 类和 [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) 类的具体集合类型在 [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) 命名空间中定义。 这些类型实现的公共接口在 [Windows::Foundation::Collections 命名空间 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx) 中定义。 JavaScript、C# 和 Visual Basic 使用的正是这些接口类型。 有关详细信息，请参阅[类型系统 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
 
 ## 返回内置类型值的方法
 
@@ -217,7 +218,7 @@ document.getElementById('P4').innerHTML = num;
 
 ## DateTime
 
-在 Windows 运行时中，[Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) 对象仅是一个 64 位有符号的整数，代表 1601 年 1 月 1 日前后 100 纳秒间隔的数字。 Windows:Foundation::DateTime 对象上没有方法。 相反，每种语言按照源于该语言的方法投射 DateTime：JavaScript 中的 Date 对象和 .NET Framework 中的 System.DateTime 和 System.DateTimeOffset 类型。
+在 Windows 运行时中，[Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) 对象仅是一个 64 位有符号的整数，代表 1601 年 1 月 1 日前或后 100 纳秒间隔的数字。 Windows:Foundation::DateTime 对象上没有方法。 相反，每种语言按照源于该语言的方法投射 DateTime：JavaScript 中的 Date 对象和 .NET Framework 中的 System.DateTime 和 System.DateTimeOffset 类型。
 
 ```cpp
 public  ref class MyDateClass sealed
@@ -303,7 +304,7 @@ for (var i = 0; i < outVector.length; i++)
 document.getElementById('P6').innerHTML = result;
 ```
 
-.NET 语言将 IVector<T> 视为 IList<T>。
+.NET 语言将 IVector&lt;T&gt; 视为 IList&lt;T&gt;。
 
 ```csharp
 private void SortListItems()
@@ -351,7 +352,7 @@ var mStr = "Map result:" + outputMap.lookup(1) + outputMap.lookup(2)
 document.getElementById('P7').innerHTML = mStr;
 ```
 
-.NET 语言查看 IMap 和 IDictionary<K, V>。
+.NET 语言查看 IMap 和 IDictionary&lt;K, V&gt;。
 
 ```csharp
 private void GetDictionary()
@@ -572,7 +573,7 @@ C# 和 Visual Basic 均支持枚举语言。 这些语言将 C++ 公共枚举类
 
 若要使用其他 Windows 运行时对象公开的异步方法，请使用[任务类（并发运行时）](https://msdn.microsoft.com/library/hh750113.aspx)。 有关详细信息，请参阅[任务并行度（并发运行时）](https://msdn.microsoft.com/library/dd492427.aspx)。
 
-若要使用 C++ 实现异步方法，请使用在 ppltasks.h 中定义的 [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) 函数。 有关详细信息，请参阅[用 C++ 为 Windows 应用商店应用程序创建异步操作](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)。 有关示例，请参阅[演练：用 C++ 创建一个基本的 Windows 运行时组件，然后从 JavaScript 或 C# 中调用该组件](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 语言会像使用任何在 .NET Framework 中定义的异步方法一样使用 C++ 异步方法。
+若要使用 C++ 实现异步方法，请使用在 ppltasks.h 中定义的 [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) 函数。 有关详细信息，请参阅[使用 C++ 为 Windows 应用商店应用创建异步操作](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)。 有关示例，请参阅[演练：使用 C++ 创建基本的 Windows 运行时组件并通过 JavaScript 或 C# 调用它](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 语言会像使用任何在 .NET Framework 中定义的异步方法一样使用 C++ 异步方法。
 
 ## 异常
 
@@ -596,6 +597,6 @@ C# 和 Visual Basic 均支持枚举语言。 这些语言将 C++ 公共枚举类
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

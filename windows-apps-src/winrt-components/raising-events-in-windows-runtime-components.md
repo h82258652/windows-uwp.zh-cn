@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 在 Windows 运行时组件中引发事件
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 
@@ -7,7 +8,7 @@ description:
 # 在 Windows 运行时组件中引发事件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
@@ -15,7 +16,7 @@ description:
 如果你的 Windows 运行时组件在后台线程（工作线程）中引发了用户定义的委托类型的事件，并且你希望 JavaScript 能够接收该事件，则可以使用以下方法之一实现和/或引发它：
 
 -   （选项 1）通过 [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) 引发该事件，以便将该事件封送到 JavaScript 线程上下文。 尽管通常情况下，这是最佳选项，但在某些情况中，它可能不会提供最快性能。
--   （选项 2）使用 [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)<Object>，但会丢失类型信息（即丢失事件类型信息）。 如果选项 1 不可行或者其性能不够，这将是不错的第二选项（如果可接受丢失类型信息）。
+-   （选项 2）使用 [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt;，但会丢失类型信息（即丢失事件类型信息）。 如果选项 1 不可行或者其性能不够，这将是不错的第二选项（如果可接受丢失类型信息）。
 -   （选项 3）为组件创建你自己的代理和存根。 此选项是最难以实现的选项，但它会保留类型信息，并且在需要的情况下，可能提供比选项 1 更为出色的性能。
 
 如果你只是在后台线程中引发了一个事件而不使用其中任一选项，JavaScript 客户端将不会接收该事件。
@@ -25,12 +26,12 @@ description:
 
 所有 Windows 运行时组件和应用基本都是 COM 对象，不管你使用哪种语言创建它们。 在 Windows API 中，大多数组件都是敏捷的 COM 对象，它们可以与后台线程和 UI 线程上的对象很好地进行对等通信。 如果 COM 对象无法变得敏捷，那么它需要帮助程序对象（即代理和存根）来与跨 UI 线程后台的线程边界的其他 COM 对象进行通信。 （就 COM 而言，这称为线程单元之间的通信。）
 
-Windows API 中的大多数对象是敏捷对象，或者内置了代理和存根。 但是，无法为泛型类型创建代理和存根，例如 Windows.Foundation.[TypedEventHandler<TSender, TResult>](https://msdn.microsoft.com/library/windows/apps/br225997.aspx)，因为它们在提供类型参数之前都不是完整的类型。 这只是缺少代理或存根的 JavaScript 客户端问题，但如果你希望从 JavaScript 以及 C++ 或 .NET 语言中都可以使用你的组件，则必须使用以下三个选项之一。
+Windows API 中的大多数对象是敏捷对象，或者内置了代理和存根。 但是，无法为泛型类型创建代理和存根，例如 Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx)，因为它们在提供类型参数之前都不是完整的类型。 这只是缺少代理或存根的 JavaScript 客户端问题，但如果你希望从 JavaScript 以及 C++ 或 .NET 语言中都可以使用你的组件，则必须使用以下三个选项之一。
 
 ## （选项 1）通过 CoreDispatcher 引发事件
 
 
-你可以通过使用 [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) 来发送任何用户定义的委派类型的事件，而且 JavaScript 也能够接收它们。 如果你不确定使用哪个选项，可以先尝试这个选项。 如果在事件引发和事件处理之间出现延迟问题，请尝试另外一个选项。
+你可以通过使用 [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) 来发送任何用户定义的委托类型的事件，而且 JavaScript 也能够接收它们。 如果你不确定使用哪个选项，可以先尝试这个选项。 如果在事件引发和事件处理之间出现延迟问题，请尝试另外一个选项。
 
 以下示例演示了如何使用 CoreDispatcher 引发强类型的事件。 请注意，类型参数为 Toast，而不是 Object。
 
@@ -67,12 +68,12 @@ public void MakeToastWithDispatcher(string message)
 }
 ```
 
-## （选项 2）使用 EventHandler<Object>，但会丢失类型信息。
+## （选项 2）使用 EventHandler&lt;Object&gt;，但会丢失类型信息。
 
 
-另外一种从后台线程发送事件的方法是使用 [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)<Object> 作为事件的类型。 Windows 提供了此泛型类型的具体实例化，并为其提供了一个代理和存根。 缺点是会丢失事件参数和发送者的类型信息。 C++ 和 .NET 客户端必须通过文档了解在收到事件时要转换回的类型。 JavaScript 客户端不需要原始类型信息。 它们会根据元数据中的名称查找参数属性。
+另外一种从后台线程发送事件的方法是使用 [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; 作为事件的类型。 Windows 提供了此泛型类型的具体实例化，并为其提供了一个代理和存根。 缺点是会丢失事件参数和发送者的类型信息。 C++ 和 .NET 客户端必须通过文档了解在收到事件时要转换回的类型。 JavaScript 客户端不需要原始类型信息。 它们会根据元数据中的名称查找参数属性。
 
-本示例演示了如何在 C# 中使用 Windows.Foundation.EventHandler<Object>：
+本示例演示了如何在 C# 中使用 Windows.Foundation.EventHandler&lt;Object&gt;：
 
 ```csharp
 public sealed Class1
@@ -119,11 +120,11 @@ toastCompletedEventHandler: function (event) {
 
 若要在类型信息保留完整的用户定义的事件类型上获取潜在的性能，你需要创建自己的代理和存根对象，并将它们嵌入你的应用包中。 通常，只有在另外两个选项都不合适时（这种情况很少出现），你才需要使用此选项。 另外，无法保证此选项会提供比另外两个选项更好的性能。 实际性能取决于多种因素。 使用 Visual Studio 探查器或其他分析工具来测量应用程序中的实际性能，并确定该事件是否真的影响性能。
 
-本文的其余部分演示如何使用 C# 创建基本 Windows 运行时组件，然后使用 C++ 为代理和存根创建 DLL，从而使 JavaScript 可以在异步操作中使用由组件引发的 Windows.Foundation.TypedEventHandler<TSender, TResult> 事件。 （你也可以使用 C++ 或 Visual Basic 来创建组件。 与创建代理和存根相关的步骤都相同。）本演练基于创建 Windows 运行时进程内组件示例 (C++/CX)，并帮助说明其目的。
+本文的其余部分演示如何使用 C# 创建基本 Windows 运行时组件，然后使用 C++ 为代理和存根创建 DLL，从而使 JavaScript 可以在异步操作中使用由组件引发的 Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt; 事件。 （你也可以使用 C++ 或 Visual Basic 来创建组件。 与创建代理和存根相关的步骤都相同。）本演练基于创建 Windows 运行时进程内组件示例 (C++/CX)，并帮助说明其目的。
 
 本演练包含以下部分：
 
--   你将在此处创建两个基本 Windows 运行时类。 一个类显示类型 [Windows.Foundation.TypedEventHandler<TSender, TResult>](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) 的事件，而另一个类是作为 TValue 的参数返回到 JavaScript 的类型。 这些类在你完成后面的步骤之前无法与 JavaScript 通信。
+-   你将在此处创建两个基本 Windows 运行时类。 一个类显示类型 [Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) 的事件，而另一个类是作为 TValue 的参数返回到 JavaScript 的类型。 这些类在你完成后面的步骤之前无法与 JavaScript 通信。
 -   此应用会激活主类对象、调用方法并处理由 Windows 运行时组件引发的事件。
 -   生成代理和存根类的工具需要这些内容。
 -   然后，你使用 IDL 文件为代理和存根生成 C 源代码。
@@ -131,10 +132,10 @@ toastCompletedEventHandler: function (event) {
 
 ## 创建 Windows 运行时组件
 
-1.  在 Visual Studio 的菜单栏上，依次选择**“文件”>“新建项目”**。 在**“新建项目”**对话框中，依次展开**“JavaScript”>“通用 Windows”**，然后选择**“空白应用”**。 将该项目命名为 ToasterApplication，然后选择**“确定”**按钮。
-2.  向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择**“添加”>“新建项目”**。 依次展开**“Visual C#”>“Windows 应用商店”**，然后选择**“Windows 运行时组件”**。 将该项目命名为 ToasterComponent，然后选择**“确定”**按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
+1.  在 Visual Studio 的菜单栏上，依次选择“文件”&gt;“新建项目”****。 在“新建项目”****对话框中，依次展开“JavaScript”&gt;“通用 Windows”****，然后选择“空白应用”****。 将该项目命名为 ToasterApplication，然后选择“确定”****按钮。
+2.  向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加”&gt;“新建项目”****。 依次展开“Visual C#”&gt;“Windows 应用商店”****，然后选择“Windows 运行时组件”****。 将该项目命名为 ToasterComponent，然后选择“确定”****按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
 
-    在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后选择**“属性”**。 在**“属性页”**对话框中，选择左侧窗格中的**“配置属性”**，然后在该对话框顶部，将**“配置”**设置为**“调试”**以及将**“平台”**设置为 x86、x64 或 ARM。 选择**“确定”**按钮。
+    在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后选择“属性”****。 在“属性页”****对话框中，选择左侧窗格中的“配置属性”****，然后在该对话框顶部，将“配置”****设置为“调试”****以及将“平台”****设置为 x86、x64 或 ARM。 选择“确定”****按钮。
 
     > **重要提示** 平台 = 所有 CPU 都停止工作，因为它对你将要在稍后添加到解决方案的本机代码 Win32 DLL 无效。
 
@@ -142,13 +143,13 @@ toastCompletedEventHandler: function (event) {
 4.  在 .cs 文件中，添加适用于 Windows.Foundation 命名空间的 using 指令以便将 TypedEventHandler 引入到作用域。
 5.  当你需要代理和存根时，你的组件必须使用接口来显示其公共成员。 在 ToasterComponent.cs 中，为 Toaster 定义一个接口，并为该 Toaster 生成的 Toast 定义另一个接口。
 
-    > **注意** 在 C# 中，你可以跳过此步骤。 而是先创建一个类，然后打开其快捷菜单并依次选择**“重构”>“提取接口”**。 在生成的代码中，手动提供接口公共辅助功能。
+    > **注意** 在 C# 中，你可以跳过此步骤。 改为先创建一个类，然后打开其快捷菜单并依次选择“重构”&gt;“提取接口”****。 在生成的代码中，手动提供接口公共辅助功能。
 
     ```csharp
     public interface IToaster
         {
             void MakeToast(String message);
-            event TypedEventHandler&lt;Toaster, Toast> ToastCompletedEvent;
+            event TypedEventHandler<Toaster, Toast> ToastCompletedEvent;
 
         }
         public interface IToast
@@ -181,7 +182,7 @@ toastCompletedEventHandler: function (event) {
         }
         public sealed class Toaster : IToaster
         {
-            public event TypedEventHandler&lt;Toaster, Toast> ToastCompletedEvent;
+            public event TypedEventHandler<Toaster, Toast> ToastCompletedEvent;
 
             private void OnToastCompleted(Toast args)
             {
@@ -294,7 +295,7 @@ toastCompletedEventHandler: function (event) {
 2.  Paste the GUID just before the IToaster interface definition. After you paste, the GUID should resemble the following example. (Don't use the GUID in the example. Every unique interface should have its own GUID.)
 
     ```cpp 
-      <Extensions> <!—Use your own GUIDs!!!-->
+      <Extensions> <!--Use your own GUIDs!!!-->
         <Extension Category="windows.activatableClass.proxyStub">
           <ProxyStub ClassId="1ecafeff-1ee1-504a-9af5-a68c6fb2b47d">
             <Path>Proxies.dll</Path>
@@ -326,6 +327,6 @@ toastCompletedEventHandler: function (event) {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

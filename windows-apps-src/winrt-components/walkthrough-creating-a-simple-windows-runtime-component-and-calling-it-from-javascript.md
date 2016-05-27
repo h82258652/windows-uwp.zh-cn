@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 创建简单的 Windows 运行时组件并通过 JavaScript 调用它
 description: 本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何使用 JavaScript 调用针对 Windows 生成的通用 Windows 应用中的组件。
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
@@ -30,22 +31,22 @@ ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 
 本部分将创建为使用 JavaScript 的 Windows 生成的通用 Windows 应用，并添加 Visual Basic 或 C# Windows 运行时组件项目。 它演示了如何定义托管的 Windows 运行时类型、创建 JavaScript 中类型的实例并调用静态和实例成员。 特意将示例应用的视觉显示设置为单调效果，从而重点关注组件。 可以随意设置使其更加美观。
 
-1.  在 Visual Studio 中，创建新的 JavaScript 项目：在菜单栏上，依次选择**“文件”、“新建”、“项目”**。 在**“新建项目”**对话框的**“已安装模板”**部分中，依次选择**“JavaScript”**、**“Windows”**和**“通用”**。 （如果 Windows 不可用，请确保使用的是 Windows 8 或更高版本。）选择**“空白应用程序”**模板，然后输入 SampleApp 作为项目名称。
-2.  创建组件项目：在“解决方案资源管理器”中，打开 SampleApp 解决方案的快捷菜单，然后依次选择**“添加”**、**“新建项目”**将新的 C# 或 Visual Basic 项目添加到解决方案。 在**“添加新项目”**对话框的**“已安装模板”**部分中，选择**“Visual Basic”**或**“Visual C#”**，然后依次选择**“Windows”**、**“通用”**。 选择**“Windows 运行时组件”**模板，然后输入 **SampleComponent** 作为项目名称。
+1.  在 Visual Studio 中，创建新的 JavaScript 项目：在菜单栏上，依次选择“文件”、“新建”、“项目”****。 在“新建项目”****对话框的“已安装模板”****部分中，依次选择“JavaScript”****、“Windows”****和“通用”****。 （如果 Windows 不可用，请确保使用的是 Windows 8 或更高版本。）选择“空白应用程序”****模板，然后输入 SampleApp 作为项目名称。
+2.  创建组件项目：在“解决方案资源管理器”中，打开 SampleApp 解决方案的快捷菜单，然后依次选择“添加”****、“新建项目”****将新的 C# 或 Visual Basic 项目添加到解决方案。 在“添加新项目”****对话框的“已安装模板”****部分中，选择“Visual Basic”****或“Visual C#”****，然后依次选择“Windows”****、“通用”****。 选择“Windows 运行时组件”****模板，然后输入 **SampleComponent** 作为项目名称。
 3.  将类名更改为 **Example**。 请注意，该类在默认情况下标记为 **public sealed**（Visual Basic 中为 **Public NotInheritable**）。 必须封装通过你的组件公开的所有 Windows 运行时类。
 4.  将两个简单的成员添加到类：**static** 方法（Visual Basic 中为 **Shared** 方法）和实例属性：
 
     > [!div class="tabbedCodeSnippets"]
-    > ```cpp 
+    > ```cpp
     > namespace SampleComponent
     > {
     >     public sealed class Example
     >     {
-    >         public static string GetAnswer() 
-    >         { 
-    >             return "The answer is 42."; 
+    >         public static string GetAnswer()
+    >         {
+    >             return "The answer is 42.";
     >         }
-    > 
+    >
     >         public int SampleProperty { get; set; }
     >     }
     > }
@@ -55,13 +56,13 @@ ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
     >     Public Shared Function GetAnswer() As String
     >         Return "The answer is 42."
     >     End Function
-    > 
+    >
     >     Public Property SampleProperty As Integer
     > End Class
     > ```
 
-5.  可选：若要为新添加的成员启用 IntelliSense，请在“解决方案资源管理器”中打开 SampleComponent 项目的快捷菜单，然后选择**“生成”**。
-6.  在“解决方案资源管理器”的 JavaScript 项目中，打开**“引用”**的快捷菜单，然后选择**“添加引用”**打开**“引用管理器”**。 依次选择**“项目”**和**“解决方案”**。 选中 SampleComponent 项目的复选框，然后选择**“确定”**来添加引用。
+5.  可选：若要为新添加的成员启用 IntelliSense，请在“解决方案资源管理器”中打开 SampleComponent 项目的快捷菜单，然后选择“生成”****。
+6.  在“解决方案资源管理器”的 JavaScript 项目中，打开“引用”****的快捷菜单，然后选择“添加引用”****打开“引用管理器”****。 依次选择“项目”****和“解决方案”****。 选中 SampleComponent 项目的复选框，然后选择“确定”****来添加引用。
 
 ## 通过 JavaScript 调用组件
 
@@ -77,7 +78,7 @@ function basics1() {
 
     ex = new SampleComponent.Example();
 
-   document.getElementById('output').innerHTML += "<br/>" + 
+   document.getElementById('output').innerHTML += "<br/>" +
        ex.sampleProperty;
 
 }
@@ -190,12 +191,12 @@ Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows �
 
  
 
-在 SampleComponent 项目中，添加名为 PropertySetStats 的新**“public sealed”**类（Visual Basic 中为 **Public NotInheritable** 类）。 该类封装了 PropertySet 集合并处理其 MapChanged 事件。 事件处理程序将跟踪所发生的每种类型的更改数目，并且 DisplayStats 方法将生成格式为 HTML 的报告。 请注意附加的 **using** 语句（Visual Basic 中为 **Imports** 语句）；请谨慎地将其添加到现有 **using** 语句中，而不是覆盖它们。
+在 SampleComponent 项目中，添加名为 PropertySetStats 的新 **public sealed** 类（Visual Basic 中为 **Public NotInheritable** 类）。 该类封装了 PropertySet 集合并处理其 MapChanged 事件。 事件处理程序将跟踪所发生的每种类型的更改数目，并且 DisplayStats 方法将生成格式为 HTML 的报告。 请注意附加的 **using** 语句（Visual Basic 中为 **Imports** 语句）；请谨慎地将其添加到现有 **using** 语句中，而不是覆盖它们。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
 > using Windows.Foundation.Collections;
-> 
+>
 > namespace SampleComponent
 > {
 >     public sealed class PropertySetStats
@@ -206,16 +207,16 @@ Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows �
 >             _ps = new PropertySet();
 >             _ps.MapChanged += this.MapChangedHandler;
 >         }
-> 
+>
 >         public PropertySet PropertySet { get { return _ps; } }
-> 
+>
 >         int[] counts = { 0, 0, 0, 0 };
 >         private void MapChangedHandler(IObservableMap<string, object> sender,
 >             IMapChangedEventArgs<string> args)
 >         {
 >             counts[(int)args.CollectionChange] += 1;
 >         }
-> 
+>
 >         public string DisplayStats()
 >         {
 >             StringBuilder report = new StringBuilder("<br/>Number of changes:<ul>");
@@ -230,39 +231,39 @@ Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows �
 > ```
 > ```vb
 > Imports System.Text
-> 
+>
 > Public NotInheritable Class PropertySetStats
 >     Private _ps As PropertySet
 >     Public Sub New()
 >         _ps = New PropertySet()
 >         AddHandler _ps.MapChanged, AddressOf Me.MapChangedHandler
 >     End Sub
-> 
+>
 >     Public ReadOnly Property PropertySet As PropertySet
 >         Get
 >             Return _ps
 >         End Get
 >     End Property
-> 
+>
 >     Dim counts() As Integer = {0, 0, 0, 0}
 >     Private Sub MapChangedHandler(ByVal sender As IObservableMap(Of String, Object),
 >         ByVal args As IMapChangedEventArgs(Of String))
-> 
+>
 >         counts(CInt(args.CollectionChange)) += 1
 >     End Sub
-> 
+>
 >     Public Function DisplayStats() As String
 >         Dim report As New StringBuilder("<br/>Number of changes:<ul>")
 >         For i As Integer = 0 To counts.Length - 1
->             report.Append("<li>" &amp; CType(i, CollectionChange).ToString() &amp;
->                           ": " &amp; counts(i) &amp; "</li>")
+>             report.Append("<li>" & CType(i, CollectionChange).ToString() &
+>                           ": " & counts(i) & "</li>")
 >         Next
->         Return report.ToString() &amp; "</ul>"
+>         Return report.ToString() & "</ul>"
 >     End Function
 > End Class
 > ```
 
-事件处理程序遵循熟悉的 .NET Framework 事件模式，除了事件的发送程序（在此情况下为 PropertySet 对象）将强制转换为 IObservableMap<string, object> 接口（Visual Basic 中为 IObservableMap(Of String, Object)），后者是 Windows 运行时接口 [IObservableMap<K, V>](https://msdn.microsoft.com/library/windows/apps/br226050.aspx) 的实例化。 （如有必要，你可以将发送程序强制转换为其类型）。此外，事件参数将呈现为接口而非对象。
+事件处理程序遵循熟悉的 .NET Framework 事件模式，除了事件的发送程序（在此情况下为 PropertySet 对象）将强制转换为 IObservableMap&lt;string, object&gt; 接口（在 Visual Basic 中为 IObservableMap(Of String, Object)），后者是 Windows 运行时接口 [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx) 的实例化。（如有必要，你可以将发送程序强制转换为其类型。）此外，事件参数将呈现为接口而非对象。
 
 在 default.js 文件中添加 Runtime1 函数，如下所示。 此代码会创建一个 PropertySetStats 对象、获取其 PropertySet 集合，然后添加自己的事件处理程序 onMapChanged 函数以处理 MapChanged 事件。 对集合进行更改之后，runtime1 调用 DisplayStats 方法显示更改类型的摘要。
 
@@ -295,7 +296,7 @@ function onMapChanged(change) {
             result = "All properties cleared";
             break;
         case Windows.Foundation.Collections.CollectionChange.itemInserted:
-            result = "Inserted " + change.key + ": '" + 
+            result = "Inserted " + change.key + ": '" +
                 change.target.lookup(change.key) + "'";
             break;
         case Windows.Foundation.Collections.CollectionChange.itemRemoved:
@@ -403,9 +404,9 @@ runtimeButton2.addEventListener("click", runtime2, false);
 > End Function
 > ```
 
-请注意，字典必须作为由 [Dictionary<TKey, TValue>](https://msdn.microsoft.com/library/xfhwa508.aspx) 实现且映射到 Windows 运行时接口的接口返回。 在此情况下，接口为 IDictionary<int, string>（Visual Basic 中为 IDictionary(Of Integer, String)）。 当 Windows 运行时类型 IMap<int, string> 传递到托管代码时，它显示为 IDictionary<int, string>，反之当托管类型传递到 JavaScript 时也是如此。
+请注意，字典必须作为由 [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) 实现且映射到 Windows 运行时接口的接口返回。 在此情况下，接口为 IDictionary&lt;int, string&gt;（在 Visual Basic 中为 IDictionary(Of Integer, String)）。 当 Windows 运行时类型 IMap&lt;int, string&gt; 传递到托管代码时，它显示为 IDictionary&lt;int, string&gt;，相反地当托管类型传递到 JavaScript 时也是如此。
 
-**重要提示** 当托管类型实现多个接口时，JavaScript 使用最先显示在列表中的接口。 例如，如果你将 Dictionary<int, string> 返回到 JavaScript 代码，它会显示为 IDictionary<int, string>，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+**重要提示** 当托管类型实现多个接口时，JavaScript 使用最先显示在列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
  
 
@@ -454,11 +455,11 @@ var returnsButton2 = document.getElementById("returnsButton2");
 returnsButton2.addEventListener("click", returns2, false);
 ```
 
-还有一些有趣的内容可观察有关这段 JavaScript 代码的信息。 首先，它包含一个 showMap 函数，用于在 HTML 中显示字典的内容。 在 showMap 的代码中，注意迭代模式。 在 .NET Framework 中，泛型 IDictionary 接口上不存在 First 方法，并且大小由 Count 属性而非 Size 方法返回。 对于 JavaScript，IDictionary<int, string> 显示为 Windows 运行时类型 IMap<int, string>。 （请参阅 [IMap<K,V>](https://msdn.microsoft.com/library/windows/apps/br226042.aspx) 接口。）
+还有一些有趣的内容可观察有关这段 JavaScript 代码的信息。 首先，它包含一个 showMap 函数，用于在 HTML 中显示字典的内容。 在 showMap 的代码中，注意迭代模式。 在 .NET Framework 中，泛型 IDictionary 接口上不存在 First 方法，并且大小由 Count 属性而非 Size 方法返回。 对于 JavaScript，IDictionary&lt;int, string&gt; 显示为 Windows 运行时类型 IMap&lt;int, string&gt;。 （请参阅 [IMap&lt;K,V&gt;](https://msdn.microsoft.com/library/windows/apps/br226042.aspx) 接口。）
 
-在 returns2 函数中，如前面的示例所示，JavaScript 将调用 Insert 方法（JavaScript 中为 insert）向字典添加项。
+在 returns2 函数中，如前面的示例所示，JavaScript 将调用 Insert 方法（在 JavaScript 中为 insert）向字典添加项目。
 
-若要运行应用，请选择 F5 键。 若要创建和显示字典的初始内容，请选择**“Returns 1”**按钮。 若要向字典添加两个以上的条目，请选择**“Returns 2”**按钮。 请注意条目将按插入顺序显示，正如你对 Dictionary<TKey, TValue> 的期望一样。 如果你希望对它们进行排序，可以通过 GetMapOfNames 返回 SortedDictionary<int, string>。 （前面示例使用的 PropertySet 类与 Dictionary<TKey, TValue> 所具有的内部组织不同。）
+若要运行应用，请选择 F5 键。 若要创建和显示字典的初始内容，请选择“Returns 1”****按钮。 若要向字典添加两个以上的条目，请选择“Returns 2”****按钮。 请注意，条目将按插入顺序显示，正如你对 Dictionary&lt;TKey, TValue&gt; 的期望一样。 如果你希望对它们进行排序，可以从 GetMapOfNames 返回 Dictionary&lt;TKey, TValue&gt;。 （前面示例使用的 PropertySet 类与 Dictionary&lt;TKey, TValue&gt; 所具有的内部组织不同。）
 
 当然，JavaScript 不是强类型语言，因此使用强类型的泛型集合可能会导致意料之外的结果。 再次选择“Returns 2”****按钮。 JavaScript 帮助你将“7”强制转换为数值 7，并将存储在 ct 中的数值 7 强制转换为字符串。 它还将字符串“forty”强制转换为零。 但这只是开始。 再选择几次“Returns 2”****按钮。 在托管代码中，Add 方法将生成重复键异常，即使值已强制转换为正确类型也是如此。 相比之下，Insert 方法将更新与现有键关联的值，并返回一个布尔值，用于指示新键是否已添加到字典中。 这是与键 7 关联的值保持变化的原因。
 
@@ -483,12 +484,12 @@ returnsButton2.addEventListener("click", returns2, false);
 > End Function
 > ```
 
-List<T> implements IList<T>，在 JavaScript 中显示为 Windows 运行时类型 IVector<T>。
+List&lt;T&gt; 实现 IList&lt;T&gt;，这在 JavaScript 中显示为 Windows 运行时类型 IVector&lt;T&gt;。
 
 ## 声明事件
 
 
-你可以使用标准 .NET Framework 事件模型或 Windows 运行时使用的其他模型声明事件。 .NET Framework 支持 System.EventHandler<TEventArgs> 委托与 Windows 运行时 EventHandler<T> 委托之间的等价性，因此使用 EventHandler<TEventArgs> 是实现标准 .NET Framework 模式的好方法。 若要查看此工作原理，请向 SampleComponent 项目添加以下两个类：
+你可以使用标准 .NET Framework 事件模式或 Windows 运行时使用的其他模式声明事件。 .NET Framework 支持 System.EventHandler&lt;TEventArgs&gt; 委托与 Windows 运行时 EventHandler&lt;T&gt; 委托之间的等价性，因此使用 EventHandler&lt;TEventArgs&gt; 是实现标准 .NET Framework 模式的好方法。 若要查看此工作原理，请向 SampleComponent 项目添加以下两个类：
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -510,7 +511,7 @@ List<T> implements IList<T>，在 JavaScript 中显示为 Windows 运行时类�
 >             }
 >         }
 >     }
-> 
+>
 >     public sealed class TestEventArgs
 >     {
 >         public string Value1 { get; set; }
@@ -528,7 +529,7 @@ List<T> implements IList<T>，在 JavaScript 中显示为 Windows 运行时类�
 >                             })
 >     End Sub
 > End Class
-> 
+>
 > Public NotInheritable Class TestEventArgs
 >     Public Property Value1 As String
 >     Public Property Value2 As Long
@@ -537,7 +538,7 @@ List<T> implements IList<T>，在 JavaScript 中显示为 Windows 运行时类�
 
 在 Windows 运行时中公开某个事件时，该事件参数类将继承自 System.Object。 它不会从 System.EventArgs 继承，如同在 .NET Framework 中一样，因为 EventArgs 不是 Windows 运行时类型。
 
-如果为事件声明自定义事件访问器（Visual Basic 中为 **Custom** 关键字），则必须使用 Windows 运行时事件模式。 请参阅 [Windows 运行时组件中的自定义事件和事件访问器](custom-events-and-event-accessors-in-windows-runtime-components.md)。
+如果为事件声明自定义事件访问器（在 Visual Basic 中为 **Custom** 关键字），则必须使用 Windows 运行时事件模式。 请参阅 [Windows 运行时组件中的自定义事件和事件访问器](custom-events-and-event-accessors-in-windows-runtime-components.md)。
 
 若要处理 Test 事件，请将 events1 函数添加到 default.js。 events1 函数为 Test 事件创建事件处理程序函数，并立即调用 OnTest 方法引发事件。 如果你在事件处理程序的主体中放置一个断点，你可以看到传递到单个参数的对象包含了源对象和 TestEventArgs 的两个成员。
 
@@ -564,36 +565,29 @@ events1Button.addEventListener("click", events1, false);
 ## 公开异步操作
 
 
-.NET Framework 具有一组丰富的工具，用于基于 Task 和泛型 [Task<TResult>](https://msdn.microsoft.com/library/dd321424.aspx) 类进行异步处理和并行处理。 若要在 Windows 运行时组件中公开基于任务的异步处理，请使用 Windows 运行时接口 [IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress<TProgress>](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation<TResult>](https://msdn.microsoft.com/library/br205802.aspx) 和 [IAsyncOperationWithProgress<TResult, TProgress>](https://msdn.microsoft.com/library/br205807.aspx)。 （在 Windows 运行时中，操作会返回结果，但执行不会。）
+.NET Framework 具有一组丰富的工具，用于基于 Task 和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 类进行异步处理和并行处理。 若要在 Windows 运行时组件中公开基于任务的异步处理，请使用 Windows 运行时接口 [IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/br205802.aspx) 和 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/br205807.aspx)。 （在 Windows 运行时中，操作会返回结果，但执行不会。）
 
-此部分演示了一个可取消的用于报告进度和返回结果的异步操作。 GetPrimesInRangeAsync 方法使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 类生成一个任务并将其取消和进度报告功能连接到 WinJS.Promise 对象。 首先将以下 **using** 语句（Visual Basic 中为 **Imports**）添加到 Example 类：
+此部分演示了一个可取消的用于报告进度和返回结果的异步操作。 GetPrimesInRangeAsync 方法使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 类生成一个任务并将其取消和进度报告功能连接到 WinJS.Promise 对象。 首先将 GetPrimesInRangeAsync 方法添加到示例类：
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
 > using System.Runtime.InteropServices.WindowsRuntime;
 > using Windows.Foundation;
-> ```
-> ```vb
-> Imports System.Runtime.InteropServices.WindowsRuntime
-> ```
-> 
-> 现在将 GetPrimesInRangeAsync 方法添加到 Example 类：
-> 
-> > [!div class="tabbedCodeSnippets"]
-> ```csharp
-> public static IAsyncOperationWithProgress<IList<long>, double> GetPrimesInRangeAsync(long start, long count)
+>
+> public static IAsyncOperationWithProgress<IList<long>, double>
+> GetPrimesInRangeAsync(long start, long count)
 > {
 >     if (start < 2 || count < 1) throw new ArgumentException();
-> 
+>
 >     return AsyncInfo.Run<IList<long>, double>((token, progress) =>
-> 
+>
 >         Task.Run<IList<long>>(() =>
 >         {
 >             List<long> primes = new List<long>();
 >             double onePercent = count / 100;
 >             long ctProgress = 0;
 >             double nextProgress = onePercent;
-> 
+>
 >             for (long candidate = start; candidate < start + count; candidate++)
 >             {
 >                 ctProgress += 1;
@@ -612,7 +606,7 @@ events1Button.addEventListener("click", events1, false);
 >                     }
 >                 }
 >                 if (isPrime) primes.Add(candidate);
-> 
+>
 >                 token.ThrowIfCancellationRequested();
 >             }
 >             progress.Report(100.0);
@@ -622,10 +616,13 @@ events1Button.addEventListener("click", events1, false);
 > }
 > ```
 > ```vb
-> Public Shared Function GetPrimesInRangeAsync(ByVal start As Long, ByVal count As Long) As IAsyncOperationWithProgress(Of IList(Of Long), Double)
-> 
+> Imports System.Runtime.InteropServices.WindowsRuntime
+>
+> Public Shared Function GetPrimesInRangeAsync(ByVal start As Long, ByVal count As Long)
+> As IAsyncOperationWithProgress(Of IList(Of Long), Double)
+>
 >     If (start < 2 Or count < 1) Then Throw New ArgumentException()
-> 
+>
 >     Return AsyncInfo.Run(Of IList(Of Long), Double)( _
 >         Function(token, prog)
 >             Return Task.Run(Of IList(Of Long))( _
@@ -634,15 +631,15 @@ events1Button.addEventListener("click", events1, false);
 >                     Dim onePercent As Long = count / 100
 >                     Dim ctProgress As Long = 0
 >                     Dim nextProgress As Long = onePercent
-> 
+>
 >                     For candidate As Long = start To start + count - 1
 >                         ctProgress += 1
-> 
+>
 >                         If ctProgress >= nextProgress Then
 >                             prog.Report(ctProgress / onePercent)
 >                             nextProgress += onePercent
 >                         End If
-> 
+>
 >                         Dim isPrime As Boolean = True
 >                         For i As Long = 2 To CLng(Math.Sqrt(candidate))
 >                             If (candidate Mod i) = 0 Then
@@ -650,9 +647,9 @@ events1Button.addEventListener("click", events1, false);
 >                                 Exit For
 >                             End If
 >                         Next
-> 
+>
 >                         If isPrime Then primes.Add(candidate)
-> 
+>
 >                         token.ThrowIfCancellationRequested()
 >                     Next
 >                     prog.Report(100.0)
@@ -665,21 +662,21 @@ events1Button.addEventListener("click", events1, false);
 GetPrimesInRangeAsync 是非常简单的质数查找程序，通过设计实现。 此处的重点是实现异步操作，因此简单性非常重要，并且当我们演示取消时，较慢的实现很有优势。 GetPrimesInRangeAsync 通过暴力方式查找质数：它将候选数除以所有小于或等于其平方根的整数，而不是只使用质数。 逐步执行此代码：
 
 -   在开始异步操作之前执行整理活动，例如验证参数和针对无效输入引发异常。
--   此实现的关键在于 [AsyncInfo.Run<TResult, TProgress>(Func<CancellationToken, IProgress<TProgress>, Task<TResult>](https://msdn.microsoft.com/library/hh779740.aspx)>) 方法，以及作为该方法唯一参数的委托。 委托必须接受取消令牌和报告进度的接口，并且必须返回使用这些参数的启动任务。 当 JavaScript 调用 GetPrimesInRangeAsync 方法时，将执行以下步骤（不一定按照此处提供的顺序）：
+-   此实现的关键是 [AsyncInfo.Run&lt;TResult, TProgress&gt;(Func&lt;CancellationToken, IProgress&lt;TProgress&gt;, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)&gt;) 方法，以及作为该方法唯一参数的委托。 委托必须接受取消令牌和报告进度的接口，并且必须返回使用这些参数的启动任务。 当 JavaScript 调用 GetPrimesInRangeAsync 方法时，将执行以下步骤（不一定按照此处提供的顺序）：
 
     -   [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) 对象提供用于处理返回结果、响应取消和处理进度报告的函数。
-    -   AsyncInfo.Run 方法创建一个取消源和一个实现 IProgress<T> 接口的对象。 对于委托，它将同时传递取消源中的 [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) 令牌，以及 [IProgress<T>](https://msdn.microsoft.com/library/hh138298.aspx) 接口。
+    -   AsyncInfo.Run 方法创建一个取消源和一个实现 IProgress&lt;T&gt; 接口的对象。 对于委托，它将同时传递取消源中的 [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) 令牌，以及 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 接口。
 
-        > **注意** 如果 Promise 对象未提供响应取消的函数，AsyncInfo.Run 仍会传递可取消的令牌，且取消仍可能会发生。 如果 Promise 对象未提供处理进度更新的函数，AsyncInfo.Run 仍会提供实现 IProgress<T> 的对象，但将忽略其报告。
+        > **注意** 如果 Promise 对象未提供响应取消的函数，AsyncInfo.Run 仍会传递可取消的令牌，且取消仍可能会发生。 如果 Promise 对象未提供处理进度更新的函数，AsyncInfo.Run 仍提供实现 IProgress&lt;T&gt; 的对象，但将忽略报告。
 
-    -   委托使用 [Task.Run<TResult>(Func<TResult>, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) 方法创建使用令牌和进度接口的启动任务。 启动任务的委托由计算所需结果的 lambda 函数提供。 稍后对此进行详细讨论。
-    -   AsyncInfo.Run 方法创建实现 [IAsyncOperationWithProgress<TResult, TProgress>](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) 接口的对象、将 Windows 运行时取消机制与令牌源连接，并将 Promise 对象的进度报告函数与 IProgress<T> 接口连接。
-    -   IAsyncOperationWithProgress<TResult, TProgress> 接口将返回到 JavaScript。
+    -   委托使用 [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) 方法创建使用令牌和进度接口的启动任务。 启动任务的委托由计算所需结果的 lambda 函数提供。 稍后对此进行详细讨论。
+    -   AsyncInfo.Run 方法创建实现 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) 接口的对象、将 Windows 运行时取消机制与令牌源连接，并将 Promise 对象的进度报告函数与 IProgress&lt;T&gt; 接口连接。
+    -   IAsyncOperationWithProgress&lt;TResult, TProgress&gt; 接口将返回到 JavaScript。
 
 -   由启动任务表示的 lambda 函数不使用任何参数。 由于它是 lambda 函数，它将有权访问令牌和 IProgress 接口。 每次计算候选数量时，lambda 函数将执行以下操作：
 
-    -   查看是否已到达进度的下一百分点。 如果已达到，lambda 函数将调用 IProgress<T>.Report 方法，并且百分比将传递到 Promise 对象为报告进度指定的函数。
-    -   如果操作已取消，使用取消令牌引发异常。 如果 [IAsyncInfo.Cancel](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel.aspx) 方法（即 IAsyncOperationWithProgress<TResult, TProgress> 接口继承的方法）已调用，AsyncInfo.Run 方法设置的连接将确保取消令牌收到通知。
+    -   查看是否已达到进度的下一百分点。 如果已达到，lambda 函数将调用 IProgress&lt;T&gt;.Report 方法，并且百分比将传递到 Promise 对象为报告进度指定的函数。
+    -   如果操作已取消，使用取消令牌引发异常。 如果 [IAsyncInfo.Cancel](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel.aspx) 方法（IAsyncOperationWithProgress&lt;TResult, TProgress&gt; 接口继承的方法）已调用，AsyncInfo.Run 方法设置的连接将确保取消令牌收到通知。
 -   当 lambda 函数返回质数列表时，该列表将传递给 WinJS.Promise 对象为处理结果所指定的函数。
 
 若要创建 JavaScript Promise 并设置取消机制，请将 asyncRun 和 asyncCancel 函数添加到 default.js。
@@ -729,7 +726,7 @@ btnCancel.addEventListener("click", asyncCancel, false);
 
 asyncCancel 函数只调用 WinJS.Promise 对象的取消方法。
 
-若要运行应用，请选择 F5 键。 若要启动异步操作，请选择“异步”****按钮。 下一步将发生什么情况取决于你的计算机速度有多快。 如果进度栏快速完成以至于你来不及看到此过程，请按十的一个或多个因数增加传递到 GetPrimesInRangeAsync 的起始数字大小。 你可以通过增加或减少要测试的数字计数，以微调操作的持续时间，但在起始数字的中间添加零将会产生更大的影响。 若要取消操作，请选择**“取消异步”**按钮。
+若要运行应用，请选择 F5 键。 若要启动异步操作，请选择“异步”****按钮。 下一步将发生什么情况取决于你的计算机速度有多快。 如果进度栏快速完成以至于你来不及看到此过程，请按十的一个或多个因数增加传递到 GetPrimesInRangeAsync 的起始数字大小。 你可以通过增加或减少要测试的数字计数，以微调操作的持续时间，但在起始数字的中间添加零将会产生更大的影响。 若要取消操作，请选择“取消异步”****按钮。
 
 ## 相关主题
 
@@ -738,7 +735,6 @@ asyncCancel 函数只调用 WinJS.Promise 对象的取消方法。
 * [演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

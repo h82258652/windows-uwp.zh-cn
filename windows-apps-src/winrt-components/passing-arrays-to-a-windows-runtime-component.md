@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: 将数组传递到 Windows 运行时组件
 description: 在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
@@ -62,6 +63,6 @@ ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
