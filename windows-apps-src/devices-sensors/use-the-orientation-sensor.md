@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
 title: 使用方向传感器
 description: 了解如何使用方向传感器确定设备方向。
@@ -42,7 +43,7 @@ description: 了解如何使用方向传感器确定设备方向。
 
 ###  说明
 
--   创建新项目，从 **Visual C#** 项目模板中选择**空白应用(通用 Windows)**。
+-   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
 
 -   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
@@ -117,7 +118,7 @@ description: 了解如何使用方向传感器确定设备方向。
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“OrientationSensorCS”**的项目，则使用 `namespace OrientationSensorCS` 替换 `namespace App1`。
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为 **OrientationSensorCS** 的项目，则使用 `namespace OrientationSensorCS` 替换 `namespace App1`。
 
 -   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
@@ -163,15 +164,15 @@ description: 了解如何使用方向传感器确定设备方向。
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“OrientationSensorCS”**的项目，则使用 `x:Class="OrientationSensorCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:OrientationSensorCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为 **OrientationSensorCS** 的项目，则使用 `x:Class="OrientationSensorCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:OrientationSensorCS"` 替换 `xmlns:local="using:App1"`。
 
--   按 F5 或选择**“调试”**>**“启动调试”**来生成、部署并运行应用。
+-   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
 
 应用运行后，你可以通过移动设备或使用仿真器工具更改方向。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或选择“调试”****>“停止调试”****来停止应用。
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-###  说明
+###  描述
 
 前面的示例演示了，只需要写入极少的代码即可将方向传感器输入集成到你的应用。
 
@@ -204,7 +205,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
 ### 说明
 
--   创建新项目，从 **Visual C#** 项目模板中选择**空白应用(通用 Windows)**。
+-   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
 
 -   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
@@ -287,7 +288,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“SimpleOrientationCS”**的项目，则使用 `namespace SimpleOrientationCS` 替换 `namespace App1`。
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为 **SimpleOrientationCS** 的项目，则使用 `namespace SimpleOrientationCS` 替换 `namespace App1`。
 
 -   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
@@ -309,15 +310,15 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“SimpleOrientationCS”**的项目，则使用 `x:Class="SimpleOrientationCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:SimpleOrientationCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为 **SimpleOrientationCS** 的项目，则使用 `x:Class="SimpleOrientationCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:SimpleOrientationCS"` 替换 `xmlns:local="using:App1"`。
 
--   按 F5 或选择**“调试”**>**“启动调试”**来生成、部署并运行应用。
+-   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
 
 应用运行后，你可以通过移动设备或使用仿真器工具更改方向。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或选择“调试”****>“停止调试”****来停止应用。
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-### 说明
+### 描述
 
 前面的示例演示了，只需要写入极少的代码即可在应用中集成简单方向传感器输入。
 
@@ -349,6 +350,6 @@ SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

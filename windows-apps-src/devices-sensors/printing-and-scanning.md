@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
 title: 打印和扫描
 description: 本部分介绍了如何从你的通用 Windows 应用进行打印和扫描。
@@ -25,6 +26,6 @@ description: 本部分介绍了如何从你的通用 Windows 应用进行打印�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

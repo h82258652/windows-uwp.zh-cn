@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
 title: 从应用扫描
 description: 在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。
 ---
 # 从应用扫描
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** 重要的 API **
 
@@ -15,7 +16,7 @@ description: 在此处了解如何通过使用平板扫描仪、送纸器或自�
 
 在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。
 
-**重要提示** [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API 是桌面 [设备系列](https://msdn.microsoft.com/library/windows/apps/Dn894631) 的一部分。 应用仅可以在桌面版的 Windows 10 上使用这些 API。
+**重要提示** [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API 是桌面[设备系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 应用仅可以在桌面版的 Windows 10 上使用这些 API。
 
 若要从你的应用进行扫描，你必须首先声明一个新的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象并获取 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 类型，以此来列出可用的扫描仪。 仅列出并向应用提供带有 WIA 驱动程序的本地安装的扫描仪。
 
@@ -54,9 +55,9 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
        await
        MainPage.Current.Dispatcher.RunAsync(
              Windows.UI.Core.CoreDispatcherPriority.Normal,
-             () =&gt;
+             () =>
              {
-                MainPage.Current.NotifyUser(String.Format(&quot;Scanner with device id {0} has been added&quot;, deviceInfo.Id), NotifyType.StatusMessage);
+                MainPage.Current.NotifyUser(String.Format("Scanner with device id {0} has been added", deviceInfo.Id), NotifyType.StatusMessage);
 
                 // search the device list for a device with a matching device id
                 ScannerDataItem match = FindInList(deviceInfo.Id);
@@ -122,7 +123,7 @@ Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与�
 ```csharp
 if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
 {
-    rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
+    rootPage.NotifyUser("Scanning", NotifyType.StatusMessage);
                 // Scan API call to get preview from the flatbed.
                 var result = await myScanner.ScanPreviewToStreamAsync(
                     ImageScannerScanSource.Flatbed, stream);
@@ -159,8 +160,8 @@ cancellationToken = new CancellationTokenSource();
 2.  设置进度事件处理程序并获取扫描的进度。
 
 ```csharp
-    rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
-    var progress = new Progress&lt;UInt32&gt;(ScanProgress);
+    rootPage.NotifyUser("Scanning", NotifyType.StatusMessage);
+    var progress = new Progress<UInt32>(ScanProgress);
 ```
 
 ## 扫描到图片库
@@ -169,6 +170,6 @@ cancellationToken = new CancellationTokenSource();
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

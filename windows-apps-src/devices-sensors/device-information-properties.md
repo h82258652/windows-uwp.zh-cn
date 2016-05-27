@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: 设备信息属性
 description: 每台设备都具有相关联的 DeviceInformation 属性，在你需要特定的信息或生成设备选择器时可以使用这些属性。
@@ -162,6 +163,6 @@ description: 每台设备都具有相关联的 DeviceInformation 属性，在你
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

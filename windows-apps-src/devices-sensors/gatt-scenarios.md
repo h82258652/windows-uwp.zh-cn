@@ -1,13 +1,14 @@
 ---
+author: DBirtolo
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
-title: Bluetooth GATT
+title: 蓝牙 GATT
 description: 本文提供用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性配置文件 (GATT) API 概述，以及用于三个常见 GATT 方案的示例代码。
 ---
-# Bluetooth GATT
+# 蓝牙 GATT
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API
+** 重要的 API **
 
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
@@ -43,7 +44,7 @@ description: 本文提供用于通用 Windows 平台 (UWP) 应用的蓝牙通用
 
 在本示例中，应用使用来自蓝牙设备的温度度量，可实现蓝牙 LE 健康温度计服务。 应用指定其希望在新的温度度量可用时收到通知。 通过为“温度计特征值更改”事件注册事件处理程序，应用将在前台运行时收到特征值更改事件通知。
 
-请注意，当应用暂停时，它必须释放所有设备资源；并且当它返回时，它必须重新执行设备枚举和初始化。
+请注意，当应用暂停时，它必须释放所有设备资源；并且当它返回时，它必须重新执行设备枚举和初始化。 如果需要在后台执行设备交互，请查看 [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) 或 [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx)。 通常，DeviceUseTrigger 更适合处理高频事件；反之，GattCharacteristicNotificationTrigger 更适合处理低频率事件。  
 
 ```csharp
 double convertTemperatureData(byte[] temperatureData)
@@ -132,7 +133,7 @@ void MainPage::Initialize()
                 ref new TypedEventHandler<
                     GattCharacteristic^, 
                     GattValueChangedEventArgs^>(
-                        this, &amp;MainPage::TemperatureMeasurementChanged);
+                        this, &MainPage::TemperatureMeasurementChanged);
 
             create_task(thermometerCharacteristic->
                 WriteClientCharacteristicConfigurationDescriptorAsync(
@@ -354,7 +355,7 @@ void MainPage::Initialize()
                 ref new TypedEventHandler<
                     GattCharacteristic^, 
                     GattValueChangedEventArgs^>
-                    (this, &amp;MainPage::BatteryLevelChanged);
+                    (this, &MainPage::BatteryLevelChanged);
 
             create_task(batteryLevelCharacteristic
                 ->WriteClientCharacteristicConfigurationDescriptorAsync(
@@ -395,6 +396,6 @@ void MainPage::BatteryLevelChanged(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

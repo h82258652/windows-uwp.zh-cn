@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
 title: 设备、传感器和电源
 description: 为了向用户提供丰富的体验，你可能会发现有必要将外部设备或传感器集成到你的应用中。
@@ -16,6 +17,7 @@ description: 为了向用户提供丰富的体验，你可能会发现有必要�
 | 主题 | 说明 |
 |-------|-------------|
 | [启用设备功能](enable-device-capabilities.md) | 本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。 | 
+| [为 Windows IoT 启用用户模式访问](enable-usermode-access.md) | 本教程介绍如何对 Windows 10 IoT 核心版上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。 |
 | [枚举设备](enumerate-devices.md) | 枚举命名空间可以让你找到内部连接到系统的、外部连接的或通过无线或网络协议可检测到的设备。 |
 | [设备配对](pair-devices.md) | 某些设备需要先进行配对，然后才能使用。 [
             <strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空间支持三种配对设备的不同方式。 |
@@ -29,6 +31,6 @@ description: 为了向用户提供丰富的体验，你可能会发现有必要�
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

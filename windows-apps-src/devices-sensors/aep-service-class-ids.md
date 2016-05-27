@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: AEP 服务类 ID
 description: 关联终结点 (AEP) 服务为设备通过给定协议支持的服务提供编程合约。 其中多个服务具有现成的标识符，应在引用它们时使用。
 ---
 # AEP 服务类 ID
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 <span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
@@ -125,6 +126,6 @@ System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

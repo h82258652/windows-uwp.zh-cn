@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
 title: 获取电池信息
 description: 了解如何使用 Windows.Devices.Power 命名空间中的 API 获取电池的详细信息。
@@ -124,7 +125,7 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 
 ## 示例：基本电池应用
 
-通过在 Microsoft Visual Studio 中生成下列基本电池应用来测试这些 API。 在 Visual Studio 开始页上，单击**“新建项目”**，然后在**“Visual C#”>“Windows”>“通用”**模板下，使用**“空白应用”**模板创建一个新应用。
+通过在 Microsoft Visual Studio 中生成下列基本电池应用来测试这些 API。 在 Visual Studio 开始页上，单击“新建项目”****，然后在“Visual C#”&gt;“Windows”&gt;“通用”****模板下，使用“空白应用”****模板创建一个新应用。
 
 接下来，打开文件 **MainPage.xaml**，并将下列 XML 复制到此文件中（替换其原始内容）。
 
@@ -154,7 +155,7 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 </Page>
 ```
 
-如果你的应用未命名为**“App1”**，将需要使用应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果创建了一个名为**“BasicBatteryApp”**的项目，请将 `x:Class="App1.MainPage"` 替换为 `x:Class="BasicBatteryApp.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:BasicBatteryApp"`。
+如果你的应用未命名为 **App1**，将需要使用应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果创建了一个名为 **BasicBatteryApp** 的项目，请将 `x:Class="App1.MainPage"` 替换为 `x:Class="BasicBatteryApp.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:BasicBatteryApp"`。
 
 下一步，打开你项目的 **MainPage.xaml.cs** 文件，用下列内容替换现有的代码。
 
@@ -251,7 +252,7 @@ namespace App1
             TextBlock txt5 = new TextBlock { Text = "Fully-charged energy capacity (mWh): " + report.FullChargeCapacityInMilliwattHours.ToString() };
             TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + report.RemainingCapacityInMilliwattHours.ToString() };
 
-            // Create energy capacity progress bar &amp; labels
+            // Create energy capacity progress bar & labels
             TextBlock pbLabel = new TextBlock { Text = "Percent remaining energy capacity" };
             pbLabel.Margin = new Thickness(0,10, 0, 5);
             pbLabel.FontFamily = new FontFamily("Segoe UI");
@@ -324,16 +325,16 @@ namespace App1
 }
 ```
 
-如果你的应用未命名为**“App1”**，将需要用你命名项目的名称为以上示例中的命名空间重命名。 例如，如果你创建了一个名为**“BasicBatteryApp”**的项目，请将命名空间 `App1` 替换为命名空间 `BasicBatteryApp`。
+如果你的应用未命名为 **App1**，将需要用你命名项目的名称为以上示例中的命名空间重命名。 例如，如果你创建了一个名为 **BasicBatteryApp** 的项目，请将命名空间 `App1` 替换为命名空间 `BasicBatteryApp`。
 
-最后，若要运行此基本电池应用：在**“调试”**菜单上，单击**“启动调试”**以测试该解决方案。
+最后，若要运行此基本电池应用：在“调试”****菜单上，单击“开始调试”****以测试该解决方案。
 
-**提示** 若要从 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象接收数值，请在**“本地计算机”**或外部**“设备”**（如 Windows Phone）上调试你的应用。 在设备仿真器上调试时，**BatteryReport** 对象会将 **null** 返回到容量和比率属性。
+**提示** 若要从 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象接收数值，请在**本地计算机**或外部**设备**（如 Windows Phone）上调试你的应用。 在设备仿真器上调试时，**BatteryReport** 对象会将 **null** 返回到容量和比率属性。
 
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

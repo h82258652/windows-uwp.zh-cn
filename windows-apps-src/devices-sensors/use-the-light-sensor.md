@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: 使用光传感器
 description: 了解如何使用氛围光传感器检测照明变化。
@@ -28,7 +29,7 @@ description: 了解如何使用氛围光传感器检测照明变化。
 
 ###  说明
 
--   创建新项目，从 **Visual C#** 项目模板中选择**空白应用(通用 Windows)**。
+-   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
 
 -   打开项目的 BlankPage.xaml.cs 文件，然后使用下列内容替换现有的代码。
 
@@ -96,7 +97,7 @@ description: 了解如何使用氛围光传感器检测照明变化。
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“LightingCS”**的项目，则使用 `namespace LightingCS` 替换 `namespace App1`。
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为 **LightingCS** 的项目，则使用 `namespace LightingCS` 替换 `namespace App1`。
 
 -   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
@@ -120,15 +121,15 @@ description: 了解如何使用氛围光传感器检测照明变化。
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“LightingCS”**的项目，则使用 `x:Class="LightingCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:LightingCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为 **LightingCS** 的项目，则使用 `x:Class="LightingCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:LightingCS"` 替换 `xmlns:local="using:App1"`。
 
--   按 F5 或选择**“调试”**>**“启动调试”**来生成、部署并运行应用。
+-   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
 
 应用运行后，你可以通过更改可射入传感器的光线或使用仿真器工具更改光线传感器的值。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或选择“调试”****>“停止调试”****来停止应用。
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-###  说明
+###  描述
 
 前面的示例演示了，只需要写入极少的代码即可将光传感器输入集成到你的应用。
 
@@ -166,6 +167,6 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

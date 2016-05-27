@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: 使用指南针
 description: 了解如何使用指南针确定当前方位。
@@ -30,7 +31,7 @@ description: 了解如何使用指南针确定当前方位。
 
 ### 说明
 
--   创建新项目，从 **Visual C#** 项目模板中选择**空白应用(通用 Windows)**。
+-   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
 
 -   打开你项目的 MainPage.xaml.cs 文件，用下列内容替换现有的代码。
 
@@ -121,15 +122,15 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“CompassCS”**的项目，则使用 `x:Class="CompassCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:CompassCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为 **CompassCS** 的项目，则使用 `x:Class="CompassCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:CompassCS"` 替换 `xmlns:local="using:App1"`。
 
--   按 F5 或选择**“调试”**>**“启动调试”**来生成、部署并运行应用。
+-   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
 
 应用运行后，你可以通过移动设备或使用仿真器工具更改指南针的值。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或选择“调试”****>“停止调试”****来停止应用。
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-### 说明
+### 描述
 
 前面的示例演示了，只需要写入极少的代码即可将指南针输入集成到你的应用。
 
@@ -175,6 +176,6 @@ CompassReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

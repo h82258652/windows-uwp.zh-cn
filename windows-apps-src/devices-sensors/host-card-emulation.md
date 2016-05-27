@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: 创建 NFC 智能卡应用
 description: Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。
@@ -160,7 +161,7 @@ void BgTask::HandleHceActivation()
         if (Windows::Phone::System::SystemProtection::ScreenLocked)
         {
             auto denyIfLocked = Windows::Storage::ApplicationData::Current->RoamingSettings->Values->Lookup("DenyIfPhoneLocked");
-            if (denyIfLocked != nullptr &amp;&amp; (bool)denyIfLocked == true)
+            if (denyIfLocked != nullptr && (bool)denyIfLocked == true)
             {
                 // The phone is locked, and our current user setting is to deny transactions while locked so let the user know
                 // Denied
@@ -176,7 +177,7 @@ void BgTask::HandleHceActivation()
         }
 
         m_emulator->ApduReceived += ref new TypedEventHandler<SmartCardEmulator^, SmartCardEmulatorApduReceivedEventArgs^>(
-            this, &amp;BgTask::ApduReceived);
+            this, &BgTask::ApduReceived);
 
         m_emulator->ConnectionDeactivated += ref new TypedEventHandler<SmartCardEmulator^, SmartCardEmulatorConnectionDeactivatedEventArgs^>(
                 [this](
@@ -228,7 +229,7 @@ public static byte[] AID_OTHER =
         {
             (byte)'1', (byte)'2', (byte)'3', (byte)'4',
             (byte)'5', (byte)'6', (byte)'7', (byte)'8',
-            (byte)'O', (byte)'T', (byte)'H', (byte)'E', (byte)'R’
+            (byte)'O', (byte)'T', (byte)'H', (byte)'E', (byte)'R'
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
@@ -374,12 +375,12 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 ```
 
 ** 重要提示 **  
-Windows Phone 8.1 中的传统二进制短信拦截已删除并替换为 Windows 10 移动版中更广泛的短信支持，但任何依赖于前者的传统 Windows Phone 8.1 应用都必须更新为使用新的 Windows 10 移动版短信 API。
+Windows Phone 8.1 中的传统二进制短信拦截已删除并替换为 Windows 10 移动版中更广泛的新短信支持，但任何依赖于前者的传统 Windows Phone 8.1 应用都必须更新为使用新的 Windows 10 移动版短信 API。
 
 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: 传感器方向
 description: 来自 Accelerometer、Gyrometer、Compass、Inclinometer 和 OrientationSensor 类的传感器数据由其参考轴定义。 这些轴由设备的横向方向定义，并在用户转动设备时与其一起旋转。
 ---
 # 传感器方向
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** 重要的 API **
 
@@ -152,11 +153,9 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 必须采用不同的方式更改 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 数据。 请考虑逆时针旋转到 Z 轴时的不同方向，因此我们需要反向旋转以重新获取用户的方向。 对于四元数数据，我们可以使用欧拉公式定义参考四元数的旋转，也可以使用参考旋转矩阵。
 
-![欧拉公式](images/eulers-formula.png)
-若要获取所需的相对方向，请用参考对象乘以绝对对象。 请注意，此数学算法不可应用交换律。
+![欧拉公式](images/eulers-formula.png) 若要获取所需的相对方向，请用参考对象乘以绝对对象。 请注意，此数学算法不可应用交换律。
 
-![用参考对象乘以绝对对象](images/orientation-formula.png)
-在之前的表达式中，绝对对象由传感器数据返回。
+![用参考对象乘以绝对对象](images/orientation-formula.png) 在之前的表达式中，绝对对象由传感器数据返回。
 
 | 显示方向  | 围绕 Z 进行逆时针旋转 | 参考四元数（反向旋转） | 参考旋转矩阵（反向旋转） | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
@@ -167,6 +166,6 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: 从应用打印
 description: 了解如何从通用 Windows 应用中打印文档。 本主题还介绍了如何打印特定页面。
 ---
 # 从应用打印
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** 重要的 API **
@@ -172,7 +173,7 @@ protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs 
 
    // We know there are more pages to be added as long as the last RichTextBoxOverflow added to a print preview
    // page has extra content
-   while (lastRTBOOnPage.HasOverflowContent &amp;&amp; lastRTBOOnPage.Visibility == Windows.UI.Xaml.Visibility.Visible)
+   while (lastRTBOOnPage.HasOverflowContent && lastRTBOOnPage.Visibility == Windows.UI.Xaml.Visibility.Visible)
    {
          lastRTBOOnPage = AddOnePrintPreviewPage(lastRTBOOnPage, pageDescription);
    }
@@ -277,7 +278,7 @@ printDetailedOptions.OptionChanged += printDetailedOptions_OptionChanged;
 ```
 
 [
-            **CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) 方法会创建**“范围”**文本框。 用户将在此文本框中输入在他们选择**“打印范围”**选项时希望打印的特定页面。
+            **CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) 方法会创建“范围”****文本框。 用户将在此文本框中输入在他们选择“打印范围”****选项时希望打印的特定页面。
 
 ## 处理打印选项更改
 
@@ -379,6 +380,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

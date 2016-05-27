@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: 传感器
 description: 传感器使你的应用了解它周围的设备和外界之间的关系。 传感器可以告知你的应用设备的方向、定位和移动。
@@ -136,6 +137,6 @@ description: 传感器使你的应用了解它周围的设备和外界之间的�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
