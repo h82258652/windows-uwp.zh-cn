@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: 获取文件属性
-description: 获取由 StorageFile 对象表示的文件属性&\#8212;顶级、基本和扩展&\#8212;。
+description: 获取由 StorageFile 对象表示的文件属性&amp;\#8212;顶级、基本和扩展&amp;\#8212;。
 ---
 # 获取文件属性
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** 重要的 API **
@@ -135,6 +136,6 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

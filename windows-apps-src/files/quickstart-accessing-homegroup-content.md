@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: 访问家庭组内容
 description: 访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。
 ---
 # 访问家庭组内容
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 ** 重要的 API **
@@ -34,7 +35,7 @@ description: 访问存储在用户的“家庭组”文件夹中的内容，包�
 
 -   **了解文件和文件夹查询**
 
-    你可以使用查询来枚举家庭组中的文件和文件夹。 要了解有关文件和文件夹查询的信息，请参阅[枚举和查询文件和文件夹](quickstart-listing-files-and-folders.md)。
+    你可以使用查询来枚举家庭组中的文件和文件夹。 若要了解有关文件和文件夹查询的信息，请参阅[枚举和查询文件和文件夹](quickstart-listing-files-and-folders.md)。
 
 ## 在家庭组打开文件选取器
 
@@ -210,6 +211,6 @@ description: 访问存储在用户的“家庭组”文件夹中的内容，包�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

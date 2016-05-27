@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: 跟踪最近使用的文件和文件夹
 description: 通过将用户经常访问的文件添加到你的应用的最近使用列表 (MRU) 中来跟踪这些文件。
@@ -94,7 +95,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 -   [
             **FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 最多可保留 1000 个项。 请记住：它可以保留文件夹以及文件，所以有很多文件夹。
--   平台永远不会为你从 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 删除项。 当你达到 1000 个项的限制时你就无法添加另一个项，直到你采用 [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497) 方法腾出空间。
+-   平台永远不会为你从 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 删除项。 当你达到 1000 个项的限制时，你就无法添加另一个项，直到你采用 [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497) 方法腾出空间。
 
  
 
@@ -105,6 +106,6 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
