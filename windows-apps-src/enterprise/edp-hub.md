@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 Description: '此中心主题涉及企业数据保护 (EDP) 如何关联到文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护的完整开发人员蓝图。'
 MS-HAID: 'dev\_enterprise.edp\_hub'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -8,7 +9,7 @@ title: '企业数据保护 (EDP)'
 
 # 企业数据保护 (EDP)
 
-__注意__ 在版本 1511（版本 10586）或更早版本的 Windows 10 上无法应用企业数据保护 (EDP) 策略。
+__注意__ 在版本 1511（内部版本 10586）或更早版本的 Windows 10 上无法应用企业数据保护 (EDP) 策略。
 
 此中心主题涉及企业数据保护 (EDP) 如何关联到文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护的完整开发人员蓝图。
 
@@ -105,7 +106,7 @@ else
 **设备策略管理。**
 
 -   应用可以查询正管理设备的标识（企业或组织）。
--   应用可以通过将标识与问题数据关联来防止用户无意泄漏数据。
+-   应用可以通过将标识与相关数据关联来防止用户无意泄漏数据。
 -   应用可以通过检查企业所拥有的网络终结点连接（服务器、IP 范围）和将数据关联到托管（即，MDM 注册的）标识，来保护网络上的企业资源。
 -   EDP API 仅适用于在设备上已定义 EDP 策略的托管标识。 如果标识不受托管，则 API 在必要时会向应用程序指示该标识。
 
@@ -178,7 +179,7 @@ private void SwitchMailbox(Mailbox targetMailbox)
 通过处理这两个事件，该应用可以确保使用 [**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/dn706017) 保护内存中的任何敏感内容。 它还应关闭对其受保护文件打开的任何文件流，以确保系统不会在内存中缓存任何敏感数据。 可以通过多种方式之一完成此操作。 若要关闭从 **StorageFile** 的 Open 方法返回的文件流，可以调用该流上的 **Dispose** 方法。 可以使用 using 语句（C\# 或 VB）设置流的使用范围。 或者，可以将 **DataReader** 或 **DataWriter** 对象环绕在该流周围，并将 **Dispose** 方法或 using 语句与该对象结合使用。
 
 **注意**  
-在未配置 DPL 策略的环境中，会引发 [**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) 事件时，但不会引发 [**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) 事件。 在代码中应注意到这一点，并且注意不要假定每个系统中事件总是会成对出现，也不要假定你总是可以使用事件确定设备的锁定/解锁状态。 你可以在此处的代码示例中看到：我们尽量不假定有关当前所显示的电子邮件的任何内容，也不假定数据库文件流的打开状态的任何内容。
+在未配置 DPL 策略的环境中，会引发 [**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) 事件，但不会引发 [**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) 事件。 在代码中应注意到这一点，并且注意不要假定每个系统中事件总是会成对出现，也不要假定你总是可以使用事件确定设备的锁定/解锁状态。 你可以在此处的代码示例中看到：我们尽量不假定有关当前所显示的电子邮件的任何内容，也不假定数据库文件流的打开状态的任何内容。
 
 此外，请注意，在未配置 DPL 策略的设备上从锁定恢复时，[**ProtectedAccessResumedEventArgs.Identities**](https://msdn.microsoft.com/library/windows/apps/dn705772) 为空集合。
 
@@ -207,7 +208,7 @@ private DisplayedMail currentlyDisplayedMail = new DisplayedMail()
 // Gets the app's protected mail database file, then opens and stores a stream on it.
 private async void OpenMailDatabase()
 {
-    // Only attempt to open the database file stream if we know it&#39;s closed.
+    // Only attempt to open the database file stream if we know it's closed.
     if (this.mailDatabaseStream == null)
     {
         StorageFolder appDataStorageFolder = ApplicationData.Current.LocalFolder;
@@ -233,7 +234,7 @@ private void AppSetup()
 // Background work called when the app receives an email.
 private async void AppMailReceived(string fauxEmail)
 {
-    // Only attempt to write to the database file stream if we know it&#39;s open.
+    // Only attempt to write to the database file stream if we know it's open.
     if (this.mailDatabaseStream != null)
     {
         IBuffer emailAsBuffer = CryptographicBuffer.ConvertStringToBinary
@@ -339,7 +340,7 @@ private string mailIdentity = "contoso.com";
 void MailAppSetup()
 {
     ProtectionPolicyManager.ProtectedContentRevoked += ProtectionPolicyManager_ProtectedContentRevoked;
-    // Code goes here to set up mailbox for &#39;mailIdentity&#39;.
+    // Code goes here to set up mailbox for 'mailIdentity'.
 }
 
 private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, ProtectedContentRevokedEventArgs e)
@@ -351,7 +352,7 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
         return;
     }
 
-    // Code goes here to delete any metadata associated with &#39;mailIdentity&#39;.
+    // Code goes here to delete any metadata associated with 'mailIdentity'.
 }
 ```
 
@@ -372,6 +373,6 @@ Windows.Security.EnterpriseData.ProtectionPolicyManager.RevokeContent("contoso.c
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -24,7 +24,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 | 主题 | 说明 |
 |-------|-------------|
 | [安全 Windows 应用开发简介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 本入门文章介绍各个身份验证阶段、未送达数据和静止数据的各种 Windows 安全功能。 它还介绍如何将这些阶段集成到应用中。 它涵盖大量主题，主要旨在帮助应用架构师更好地了解可使创建通用 Windows 平台应用变得快捷的 Windows 功能。 |
-| [身份验证和用户身份](https://msdn.microsoft.com/library/windows/apps/mt270184) | 对于本文中所述的用户身份验证，UWP 应用具有多个选项。 对于企业，强烈建议使用新的 Microsoft Passport 功能。 Microsoft Passport 使用强双重身份验证 (2FA) 来替换密码，方法是验证现有凭据和创建一个受用户手势（基于生物识别或 PIN）保护的特定于设备的凭据，从而创造既便利又高度安全的体验。 |
+| [身份验证和用户身份](https://msdn.microsoft.com/library/windows/apps/mt270184) | 对于本文中所述的用户身份验证，UWP 应用具有多个选项。 对于企业，强烈建议使用新的 Microsoft Passport 功能。 Microsoft Passport 使用强双因素身份验证 (2FA) 来替换密码，方法是验证现有凭据和创建一个受用户手势（基于生物识别或 PIN）保护的特定于设备的凭据，从而创造既便利又高度安全的体验。 |
 | [加密](https://msdn.microsoft.com/library/windows/apps/mt270191) | 加密部分概述 UWP 应用可用的加密功能。 文章的范围从有关如何轻松加密敏感业务数据的初级操作实例，一直到操作加密密钥以及使用 MAC、哈希和签名之类的高级主题。 |
 | [企业数据保护 (EDP)](edp-hub.md) | 此中心主题涉及企业数据保护 (EDP) 如何关联到文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护的完整开发人员蓝图。 |
 
@@ -99,7 +99,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 ## 模式和实践
 
 
-大规模的企业级应用的基本代码可能变得不实用。 Prism 是用于在 WPF、Windows 10 UWP 和 Xamarin Forms 中生成松散耦合、可操作且可测试的 XAML 应用程序的框架。 Prism 提供设计模式集合的实现，有助于编写结构完善且可维护的 XAML 应用程序，包括 MVVM、依赖关系注入、命令、EventAggregator 等。
+大规模的企业级应用的基本代码可能变得不实用。 Prism 是用于在 WPF、Windows 10 UWP 和 Xamarin Forms 中生成松散耦合、可维护且可测试的 XAML 应用程序的框架。 Prism 提供设计模式集合的实现，有助于编写结构完善且可维护的 XAML 应用程序，包括 MVVM、依赖关系注入、命令、EventAggregator 等。
 
 有关 Prism 的详细信息，请参阅 [GitHub 存储库](https://github.com/PrismLibrary/Prism)。
 
@@ -111,6 +111,6 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
