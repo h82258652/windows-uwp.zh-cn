@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 了解当你认为其他应用正在侵犯你的知识产权时可以采取的措施。
 title: 商标和版权保护
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
@@ -63,6 +64,6 @@ Microsoft 强烈建议您不要这样做。 但是如果商业上确实有必要
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

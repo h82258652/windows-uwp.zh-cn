@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 除了创建将在 Windows 应用中运行的应用的广告市场活动外，你还可以使用其他渠道推广你的应用。
 title: 创建自定义应用促销活动
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
@@ -82,7 +83,7 @@ ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 string campaignId = await CurrentApp.GetAppPurchaseCampaignIdAsync();
 ```
 
-``` ManagedCPlusPlus
+``` cpp
 HString campaignId;
 HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf());
 ```
@@ -130,6 +131,6 @@ HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

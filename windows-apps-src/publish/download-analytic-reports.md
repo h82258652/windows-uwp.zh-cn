@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 你可以下载包含分析数据的文件，以便你可以脱机查看统计数据和信息。
 title: 下载分析报告
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
@@ -22,6 +23,6 @@ ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 4.  单击“下载报告”****按钮，然后保存或打开 .tsv 文件。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

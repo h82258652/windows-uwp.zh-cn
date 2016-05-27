@@ -1,5 +1,6 @@
 ---
-Description: 若要了解有关价格选择、付款含义和税收责任的税收注意事项，请在下面的表格中查看分发的国家/地区。
+author: jnHs
+Description: 若要了解有关价格选择、付款含义和税收责任的税收注意事项，请在下面的表格中查看分配的国家/地区。
 title: 付费应用的税收明细
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ---
@@ -11,7 +12,7 @@ ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 
 > **注意** 商业扩张调整可能在一些限定的国家/地区中具有付款含义。 有关商业扩张调整的进一步详细信息及其适用的市场，请参阅[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)和[受影响国家/地区](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)的列表。
 
-> **主题** 税率可能随时改变。 Microsoft 不能保证下表中的税率始终准确。
+> **注意** 税率可能随时改变。 Microsoft 不能保证下表中的税率始终准确。
 
  
 
@@ -277,6 +278,6 @@ ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

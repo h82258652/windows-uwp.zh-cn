@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 一旦你的应用在 Windows 应用商店中上架，就应该向尽可能多的客户推广该应用。
 title: 应用推广和客户参与度
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
@@ -27,6 +28,6 @@ ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

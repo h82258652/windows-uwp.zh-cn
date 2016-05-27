@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果你已经提供面向不同操作系统的程序包，你可以选择为不同的目标操作系统自定义部分描述。
 title: 创建特定于平台的提要
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
@@ -44,6 +45,6 @@ ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

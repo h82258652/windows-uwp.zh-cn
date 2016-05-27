@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 查看此列表以帮助避免频繁地阻止应用通过认证的问题，或者在发布应用后，可能在点检查过程中标识的问题。
 title: 避免常见的认证失败
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
@@ -39,6 +40,6 @@ ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

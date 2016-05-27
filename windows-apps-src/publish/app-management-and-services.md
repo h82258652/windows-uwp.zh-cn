@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 你可以在 Windows 开发人员中心仪表板中管理和查看与你的每一个应用相关的详细信息，并配置如推送通知和地图等服务。
 title: 应用管理和服务
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
@@ -77,6 +78,6 @@ ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

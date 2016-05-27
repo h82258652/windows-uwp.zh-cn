@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: IAP 通过 Windows 开发人员中心仪表板发布。
 title: IAP 提交
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
@@ -62,6 +63,6 @@ IAP 提交过程的第一步是通过[定义其产品 ID](set-your-iap-product-i
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

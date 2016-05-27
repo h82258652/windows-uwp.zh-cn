@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 将你的应用列在正确的类别和子类别中，可帮助客户找到你的应用，并且更好地了解它。
 title: 类别和子类别表
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
@@ -58,6 +59,6 @@ Windows 应用商店将应用整理为以下类别和子类别。
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

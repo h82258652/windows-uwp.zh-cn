@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果你的开发者帐户已获取相应权限，你可以生成并下载预安装程序包，OEM 可使用它们将你的应用包含在其映像中。
 title: 生成适用于 OEM 的预安装程序包
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
@@ -45,6 +46,6 @@ ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

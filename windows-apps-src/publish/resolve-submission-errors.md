@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果将应用提交到应用商店后遇到错误，必须解决这些错误才能继续进行认证过程。
 title: 解决提交错误
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
@@ -40,6 +41,6 @@ ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

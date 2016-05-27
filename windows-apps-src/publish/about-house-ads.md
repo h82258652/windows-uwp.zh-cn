@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 你可以创建一则广告以在你的其他应用中免费推广你的某个应用。 我们将其称为自家广告。
 title: 关于自家广告
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
@@ -31,6 +32,6 @@ ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

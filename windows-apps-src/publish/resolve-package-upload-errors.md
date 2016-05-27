@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果在应用提交过程中上传应用包时遇到错误，必须先解决错误，然后才能将应用提交到应用商店。
 title: 解决程序包上传错误
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
@@ -36,6 +37,6 @@ ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

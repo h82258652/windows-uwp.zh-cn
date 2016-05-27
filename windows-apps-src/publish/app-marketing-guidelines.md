@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 了解如何推广你的应用和 Windows 应用商店中的内容。 这些指南涉及如何使用可用资源以及有关在打印、电视、社交媒体和数字广告中推广应用的建议。
 title: Windows 应用商店应用营销指南
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
@@ -52,6 +53,6 @@ Microsoft 是 Microsoft 标志及相关商誉的唯一所有者，也是使用 M
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

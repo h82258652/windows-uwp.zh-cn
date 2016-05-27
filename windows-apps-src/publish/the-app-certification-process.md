@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 当你完成应用提交的创建并单击“提交到应用商店”时，就会进入认证步骤。
 title: 应用认证过程
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
@@ -50,6 +51,6 @@ ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

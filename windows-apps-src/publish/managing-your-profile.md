@@ -1,4 +1,5 @@
 ---
+author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: 管理你的帐户设置和个人资料信息
 description: 你可以在统一 Windows 开发人员中心仪表板的“帐户设置”部分中，查看和更新你的开发者帐户设置和个人资料信息。
@@ -31,6 +32,6 @@ description: 你可以在统一 Windows 开发人员中心仪表板的“帐户�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

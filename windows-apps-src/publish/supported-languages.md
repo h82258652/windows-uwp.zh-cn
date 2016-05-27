@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 你可以用 100 多种语言向 Windows 应用商店提交应用。
 title: 支持的语言
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
@@ -133,6 +134,6 @@ ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

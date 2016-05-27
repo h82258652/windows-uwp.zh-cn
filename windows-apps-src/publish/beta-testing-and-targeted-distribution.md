@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows 开发人员中心仪表板为你提供仅向指定人员提供应用的选项，以便可以让测试人员在你向公众提供应用之前试用它。
 title: Beta 测试和目标分发
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
@@ -80,6 +81,6 @@ ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 -   测试人员下载应用后，你无法撤销对该应用的访问权限。 一旦他们下载了应用，他们便可以继续使用它并且将获取你提交的任何更新。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

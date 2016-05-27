@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 应用提交过程的定价和可用性页可让你确定你的应用价格应为多少钱、是否提供免费试用版以及向客户提供的方式、时间和地点。
 title: 设置应用定价和可用性
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
@@ -97,6 +98,6 @@ ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

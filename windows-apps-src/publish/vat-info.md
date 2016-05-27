@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果在开发人员中心注册过程中要求你提供 VAT ID 号码，可通过下面的信息来了解该号码。
 title: VAT 信息
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
@@ -245,6 +246,6 @@ ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

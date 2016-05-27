@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 在提交过程中，你可以在“应用属性”页面的“应用声明”部分中提供有关你的应用的附加信息。
 title: 应用声明
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
@@ -61,6 +62,6 @@ ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

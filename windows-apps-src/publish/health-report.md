@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 你可以通过 Windows 开发人员中心仪表板中的“运行状况”报告获取有关应用性能和质量的数据，包括崩溃和无响应事件。
 title: 运行状况报告
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
@@ -58,6 +59,6 @@ ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,20 +1,21 @@
 ---
-Description: 如果你的应用使用广告中介，或者显示来自 Microsoft Advertising 的横幅或视频间隙广告，请使用“盈利”>“使用广告盈利”页面来管理你的广告的使用。
-title: 使用广告盈利
+author: jnHs
+Description: 如果你的应用使用广告中介，或者显示来自 Microsoft Advertising 的横幅或间隙视频广告，请使用“盈利”&gt;“利用广告来盈利”页面管理你的广告的使用。
+title: 通过广告盈利
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ---
 
-# 使用广告盈利
+# 通过广告盈利
 
 
-如果你的应用使用 **AdMediatorControl**、**AdControl** 或者 **InterstitialAd** 控件来显示横幅或视频间隙广告，请使用**“盈利”**>**“使用广告盈利”**页面来管理你的广告的使用。
+如果你的应用使用 **AdMediatorControl**、**AdControl** 或者 **InterstitialAd** 控件来显示横幅或间隙视频广告，请使用“盈利”****&gt;“利用广告来盈利”****页面管理你的广告的使用。
 
 ## Windows 广告中介
 
 
 如果你的应用使用广告中介，可以使用本部分配置中介设置，并为每个你的应用使用的广告网络添加所需的参数。 有关此部分中的选项的详细信息，请参阅[提交应用和配置广告中介](https://msdn.microsoft.com/library/windows/apps/mt219689)。
 
-广告中介使你可以通过调解来自多个广告网络的横幅广告请求来优化你的应用内广告收益。 有关广告中介的详细信息，请参阅[使用广告中介最大限度提高收益](https://msdn.microsoft.com/library/windows/apps/mt219691)。
+广告中介使你可以通过调解来自多个广告网络的横幅广告请求来优化你的应用内广告收益。 有关广告中介的详细信息，请参阅[使用广告中介使收益最大化](https://msdn.microsoft.com/library/windows/apps/mt219691)。
 
 ## COPPA 合规性
 
@@ -41,19 +42,19 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 使用此部分来创建 Microsoft Advertising 广告单元。 只需要在以下场景中创建广告单元：
 
 -   你的应用通过使用 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 对象显示来自 Microsoft Advertising 的横幅广告。
--   你的应用通过使用 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 对象显示来自 Microsoft Advertising 的视频间隙广告。
+-   你的应用通过使用 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 对象显示来自 Microsoft Advertising 的间隙视频广告。
 
 创建适用于以下场景的广告单元：
 
 1.  即，所谓的广告单元。
-2.  选择广告单元类型（“横幅”****或“视频间隙”****）。
+2.  选择广告单元类型（“横幅”****或“间隙视频”****）。
 3.  选择设备类型（“移动设备”****或“PC/平板电脑”****）。
 4.  单击“创建广告单元”****。
 
 你的广告单元将显示在本部分底部的表格中。 你将会看到每个广告单元的“应用程序 ID”****和“广告单元 ID”****。 若要在应用中显示广告，需要在你的代码中使用这些值：
 
 -   如果你的应用显示横幅广告，请将这些值分配给 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 对象的 [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) 属性。
--   如果你的应用显示视频间隙广告，请将这些值传递给 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 对象的 [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) 方法。
+-   如果你的应用显示间隙视频广告，请将这些值传递给 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 对象的 [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) 方法。
 
 > **注意** 如果你的应用使用广告中介显示来自 Microsoft Advertising 的横幅广告（即，它使用 **AdMediatorControl** 对象），你不需要请求广告单元。 在此情况下，将为你自动生成 Microsoft Advertising 广告单元。
 
@@ -64,6 +65,6 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

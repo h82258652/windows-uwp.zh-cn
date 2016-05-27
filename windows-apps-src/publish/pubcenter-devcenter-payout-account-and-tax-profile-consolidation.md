@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 如果之前已为你的 Microsoft Advertising 收入设置 pubCenter 付款帐户，则从 2016 年 4 月1 日开始，该帐户将不再用于付款。 现在将通过你的开发人员中心付款帐户进行付款。
 title: pubCenter-DevCenter 付款帐户和税务资料整合
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
@@ -7,22 +8,17 @@ ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 # pubCenter-DevCenter 付款帐户和税务资料整合
 
 
-如果之前已为你的 Microsoft Advertising 收入设置 pubCenter 付款帐户，则从 2016 年 4 月1 日开始，该帐户将不再用于付款。 现在将通过你的开发人员中心付款帐户进行付款。
+如果之前已为你的 Microsoft Advertising 收入设置 pubCenter 付款帐户，则从 2016 年 4 月1 日开始，该帐户将不再用于付款。 现已通过你的开发人员中心付款帐户付款。
 
-若要确保按时提交所有应付款项，请在 2016 年 3 月 31 日之前登录到你的开发人员中心仪表板，并确认你的[付款帐户和税务资料](setting-up-your-payout-account-and-tax-forms.md)已正确设置并且是最新的。
+若要确保按时提交所有应付款项，请登录到你的开发人员中心仪表板，并确认你的[付款帐户和税务资料](setting-up-your-payout-account-and-tax-forms.md)已正确设置并且是最新的。
 
-> **重要提示** 如果你从未在开发人员中心中设置你的付款帐户或税务资料，需要在 2016 年 3 月 31 日之前执行此操作。 有关详细信息，请参阅[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。
+> **重要提示** 如果你从未在开发人员中心中设置你的付款帐户或税务资料，需要立即执行此操作。 有关详细信息，请参阅[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。
 
 有关开发人员中心中的付款的详细信息，请参阅[付款摘要](payout-summary.md)。 有关在不同国家和地区用于付款的货币的信息，请参阅[开发者帐户和应用提交市场](account-types-locations-and-fees.md#account_markets)。
 
 我们还建议查看以下常见问题以了解有关特定方案的详细信息。
 
 ## 常见问题
-
-
-### 将用于我的 2016 年 3 月付款的帐户是什么？
-
-在 2016 年 3 月，我们将仍然使用在 pubCenter 中设置的付款帐户和税务资料。 这将是最后一次使用该信息。 从 2016 年 4 月 1 日开始，将向在开发人员中心中设置的 PayPal 或银行帐户支付你的 Microsoft Advertising 收入。
 
 ### 我在同一国家/地区使用相同的 Microsoft 帐户注册 pubCenter 和 DevCenter 帐户。 我将如何收到我的金额？
 
@@ -84,6 +80,6 @@ ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

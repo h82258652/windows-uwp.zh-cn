@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows 应用商店强制执行某些与版本号相关的规则，它们在不同的 OS 版本中的工作方式略有不同。
 title: 程序包版本编号
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
@@ -76,6 +77,6 @@ Windows 10 使你能够编写一个可在任意位置上运行的单个基本代
 > **注意** 与 .appx 程序包不同，当确定向给定客户提供哪个程序包时，不考虑任何 .xap 程序包中的版本号。 若要将客户从一个 .xap 程序包更新到较新的程序包，请确保在新提交中删除旧的 .xap 程序包。
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

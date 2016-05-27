@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心。
 title: pubCenter 开发人员中心集成
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
@@ -9,7 +10,7 @@ ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
 
 **重要提示**
 
--   从 2016 年 4 月 1 日开始，将向在开发人员中心中设置的付款帐户支付你的 Microsoft Advertising 收入。 你现在应该仅在开发人员中心中管理对付款帐户和税务资料的任何更新或更改。 请确保在 2016 年 3 月 31 日之前进行所有必要的更新。 有关详细信息，请参阅 [pubCenter-DevCenter 付款帐户和税务资料整合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
+-   从 2016 年 4 月 1 日开始，将向在开发人员中心中设置的付款帐户支付你的 Microsoft Advertising 收入。 你现在应该仅在开发人员中心中管理对付款帐户和税务资料的任何更新或更改。 有关详细信息，请参阅 [pubCenter-DevCenter 付款帐户和税务资料整合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
 -   从 2015 年 12 月 1 日开始，[你的 pubCenter 帐户必须链接到开发人员中心帐户](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts)才能收到付款。
 -   你的付款历史记录将不再在 pubCenter 中更新。 若要最新的付款历史记录，请[将你的 pubCenter 帐户链接到开发人员中心帐户](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts)，然后访问开发人员中心仪表板中的[付款摘要](payout-summary.md)页。
 
@@ -25,7 +26,7 @@ pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心�
 **结果**：你的 pubCenter 帐户已自动链接到你的开发人员中心帐户。 你不需要执行任何操作。
 
 -   pubCenter 中的所有现有广告单元的报告将在开发人员中心上的[广告性能报告](advertising-performance-report.md)中提供，报告位于它们所属的应用下。
--   如果您无法在[广告性能报告](advertising-performance-report.md)上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 如果你的应用在开发人员中心和 pubCenter 中命名不一致，则可能发生这种情况。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请访问帐户级**广告性能**报告并选择 pubCenter 应用名称。 若要访问帐户级**广告性能**报告，请转到仪表板概述页，然后单击导航窗格中的**“广告性能”**。
+-   如果你无法在[广告性能报告](advertising-performance-report.md)上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 如果你的应用在开发人员中心和 pubCenter 中命名不一致，则可能发生这种情况。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请访问帐户级“广告性能”****报告并选择 pubCenter 应用名称。 若要访问帐户级“广告性能”****报告，请转到仪表板概述页，然后单击导航窗格中的“广告性能”****。
 -   若要从现有 pubCenter 帐户管理付款方法和税收详细信息，则必须使用 pubCenter。
 -   在开发人员中心中使用的付款方式和税收详细信息将同样用于 pubCenter 付款。 仅可以从开发人员中心编辑你的付款方式和税收详细信息。 这意味着：
     -   如果开发人员中心和 pubCenter 中的付款方式不同，你可能会开始通过不同的银行帐户接收 pubCenter 付款。
@@ -34,7 +35,7 @@ pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心�
 -   你的开发人员中心帐户现在提供你的付款报告。 有关开发人员中心中的付款报告的详细信息，请参阅[付款摘要](payout-summary.md)。
 -   现在，所有应用促销市场活动已与开发人员中心帐户关联，你可以从开发人员中心直接管理它们。
 
-> **注意** 你在 pubCenter 中将不再可以创建广告单元或新的应用促销市场活动。 有关如何在开发人员中心中创建广告单元的信息，请参阅[使用广告盈利](monetize-with-ads.md)。 有关如何在开发人员中心中创建应用促销市场活动的信息，请参阅[为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
+> **注意** 你在 pubCenter 中将不再可以创建广告单元或新的应用促销市场活动。 有关如何在开发人员中心中创建广告单元的信息，请参阅[利用广告来盈利](monetize-with-ads.md)。 有关如何在开发人员中心中创建应用促销市场活动的信息，请参阅[为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
 
 ## 方案 \#2：你拥有使用相同的 Microsoft 帐户的开发人员中心帐户和 pubCenter 帐户（但在不同的国家/地区注册）
 
@@ -44,7 +45,7 @@ pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心�
 **结果**：你的 pubCenter 帐户已自动链接到你的开发人员中心帐户。 你不需要执行任何操作。
 
 -   pubCenter 中的所有现有广告单元的报告将在开发人员中心上的[广告性能报告](advertising-performance-report.md)中提供，报告位于它们所属的应用下。
--   如果您无法在[广告性能报告](advertising-performance-report.md)上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 如果你的应用在开发人员中心和 pubCenter 中命名不一致，则可能发生这种情况。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请访问帐户级**广告性能**报告并选择 pubCenter 应用名称。 若要访问帐户级**广告性能**报告，请转到仪表板概述页，然后单击导航窗格中的**“广告性能”**。
+-   如果你无法在[广告性能报告](advertising-performance-report.md)上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 如果你的应用在开发人员中心和 pubCenter 中命名不一致，则可能发生这种情况。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请访问帐户级“广告性能”****报告并选择 pubCenter 应用名称。 若要访问帐户级“广告性能”****报告，请转到仪表板概述页，然后单击导航窗格中的“广告性能”****。
 -   你的 pubCenter 收入数据将转换为开发人员中心货币，并在开发人员中心中报告。 但是，你的 pubCenter 付款将继续按 pubCenter 帐户的货币进行。
 -   若要从现有 pubCenter 帐户管理付款方法和税收详细信息，则必须使用 pubCenter。
 -   对于任何在开发人员中心中新建的广告单元，收入将按你的开发人员中心帐户的货币计入、报告和支付，并且这些新的广告单元的收入将使用你的开发人员中心付款方式和税收详细信息。
@@ -52,7 +53,7 @@ pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心�
 -   你的开发人员中心帐户现在提供你的付款报告。 有关开发人员中心中的付款报告的详细信息，请参阅[付款摘要](payout-summary.md)。
 -   现在，所有应用促销市场活动已与开发人员中心帐户关联，你可以从开发人员中心直接管理它们。
 
-> **注意** 你在 pubCenter 中将不再可以创建广告单元或新的应用促销市场活动。 有关如何在开发人员中心中创建广告单元的信息，请参阅[使用广告盈利](monetize-with-ads.md)。 有关如何在开发人员中心中创建应用促销市场活动的信息，请参阅[为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
+> **注意** 你在 pubCenter 中将不再可以创建广告单元或新的应用促销市场活动。 有关如何在开发人员中心中创建广告单元的信息，请参阅[利用广告来盈利](monetize-with-ads.md)。 有关如何在开发人员中心中创建应用促销市场活动的信息，请参阅[为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
 
 ## 方案 \#3：你拥有使用不同的 Microsoft 帐户注册的开发人员中心帐户和 pubCenter 帐户
 
@@ -70,22 +71,22 @@ pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心�
 4.  登录你的[开发人员中心帐户](https://dev.windows.com/)。
 5.  在开发人员中心仪表板中，单击左侧窗格中的“广告性能”****，然后单击“链接 pubCenter 帐户”****。
 6.  输入与 pubCenter 帐户关联的电子邮件地址和帐户链接代码。
-7.  单击**“链接帐户”**，然后会将 pubCenter 帐户链接到你的开发人员中心帐户。
+7.  单击“链接帐户”****，然后会将 pubCenter 帐户链接到你的开发人员中心帐户。
 
     > **注意** 你可以将一个或多个 pubCenter 帐户链接到你的开发人员中心帐户。 但是，每个 pubCenter 帐户只可以链接到一个开发人员中心帐户。
 
 在你的 pubCenter 帐户链接到开发人员中心帐户后：
 
 -   你的 pubCenter 帐户数据将在 24 小时内开始出现在链接的开发人员中心帐户中。
--   如果您无法在[广告性能报告](advertising-performance-report.md)上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 如果你的应用在开发人员中心和 pubCenter 中命名不一致，则可能发生这种情况。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请访问帐户级**广告性能**报告并选择 pubCenter 应用名称。 若要访问帐户级**广告性能**报告，请转到仪表板概述页，然后单击导航窗格中的**“广告性能”**。
+-   如果你无法在[广告性能报告](advertising-performance-report.md)上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 如果你的应用在开发人员中心和 pubCenter 中命名不一致，则可能发生这种情况。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请访问帐户级“广告性能”****报告并选择 pubCenter 应用名称。 若要访问帐户级“广告性能”****报告，请转到仪表板概述页，然后单击导航窗格中的“广告性能”****。
 -   如果你注册 pubCenter 帐户的国家/地区与注册开发人员中心帐户的不同，则你的收入数据在报告中将转换为开发人员中心货币。
--   来自 pubCenter 帐户的收入将不再使用 pubCenter 中设置的付款方式和税收详细信息进行支付。 如果需要对你的付款方式或税收详细信息进行更改，你需要在开发人员中心中执行此操作。 有关详细信息，请参阅 [pubCenter-DevCenter 付款帐户和税务资料整合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)息。
--   若要收到在开发人员中心中创建的新广告单元上获得的收入，你必须在开发人员中心中设置付款和税收方式。 有关详细信息，请参阅 [pubCenter-DevCenter 付款帐户和税务资料整合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)息。
--   来自任何你在开发人员中心中创建的新广告单元的收入将使用你的开发人员中心付款方式和税收详细信息进行支付。 有关在开发人员中心中管理付款方式和税收详细信息的详细信息，请参阅[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。
+-   来自 pubCenter 帐户的收入将不再使用 pubCenter 中设置的付款方式和税收详细信息进行支付。 如果需要对你的付款方式或税收详细信息进行更改，你需要在开发人员中心中执行此操作。 有关详细信息，请参阅 [pubCenter-DevCenter 付款帐户和税务资料整合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
+-   若要收到在开发人员中心中创建的新广告单元上获得的收入，你必须在开发人员中心中设置付款和税收方式。 有关详细信息，请参阅 [pubCenter-DevCenter 付款帐户和税务资料整合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
+-   来自任何你在开发人员中心中创建的新广告单元的收入将使用你的开发人员中心付款方式和税收详细信息进行支付。 有关在开发人员中心中管理付款方式和税收详细信息的更多信息，请参阅[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。
 -   你的开发人员中心帐户中现在提供你的 pubCenter 付款报告。 有关开发人员中心中的付款报告的详细信息，请参阅[付款摘要](payout-summary.md)。
 -   所有在 pubCenter 中设置的应用促销活动将会自动暂停。 接下来，请在开发人员中心中创建新的市场活动。
 
-> **注意** 你在 pubCenter 中将不再可以创建广告单元或新的应用促销市场活动。 有关如何在开发人员中心中创建广告单元的信息，请参阅[使用广告盈利](monetize-with-ads.md)。 有关如何在开发人员中心中创建应用促销市场活动的信息，请参阅[为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
+> **注意** 你在 pubCenter 中将不再可以创建广告单元或新的应用促销市场活动。 有关如何在开发人员中心中创建广告单元的信息，请参阅[利用广告来盈利](monetize-with-ads.md)。 有关如何在开发人员中心中创建应用促销市场活动的信息，请参阅[为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
 
 ## 其他说明和建议
 
@@ -109,11 +110,11 @@ pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心�
 有关详细信息，请参阅 [pubCenter-DevCenter 付款帐户和税务资料整合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
 ### 我无法在 pubCenter 中创建新的广告单元。 这是怎么回事？
 
-pubCenter 中不再支持创建新的广告单位。 如果你已将 Microsoft 广告中介控件集成到应用中，当你将应用上载到 Windows 应用商店时，将在后端自动创建一个广告单元。 或者，你还可以从应用的“通过广告盈利”****页在开发人员中心中手动创建新的独立广告单元。
+pubCenter 中不再支持创建新的广告单位。 如果你已将 Microsoft 广告中介控件集成到应用中，当你将应用上载到 Windows 应用商店时，将在后端自动创建一个广告单元。 或者，你还可以从应用的“利用广告来盈利”****页在开发人员中心中手动创建新的独立广告单元。
 
 ### 如何在开发人员中心中创建广告单元？
 
-从开发人员中心中的应用页面，依次单击**“盈利”**>**“使用广告盈利”**。 有关在开发人员中心中创建广告单元的详细信息，请参阅[使用广告盈利](monetize-with-ads.md)。
+从开发人员中心中的应用页面，依次单击“盈利”****&gt;“利用广告来盈利”****。 有关在开发人员中心中创建广告单元的详细信息，请参阅[利用广告来盈利](monetize-with-ads.md)。
 
 ### 我已安装了广告中介扩展的最新版本，并已将广告中介控件添加到我的应用。 我是否还需要转到 pubCenter 并创建一个新的广告中介单元？
 
@@ -121,7 +122,7 @@ pubCenter 中不再支持创建新的广告单位。 如果你已将 Microsoft �
 
 ### 我仍然在应用中使用较早版本的广告中介控件，并且需要获取一个新的广告单元 ID。 如何创建广告单元？
 
-你可以在开发人员仪表板中为你的应用创建新的广告单元。 从开发人员中心中的应用页面，依次单击**“盈利”**>**“使用广告盈利”**。 有关在开发人员中心中创建广告单元的详细信息，请参阅[使用广告盈利](monetize-with-ads.md)。
+你可以在开发人员中心仪表板中为你的应用创建新的广告单元。 从开发人员中心中的应用页面，依次单击“盈利”****&gt;“利用广告来盈利”****。 有关在开发人员中心中创建广告单元的详细信息，请参阅[利用广告来盈利](monetize-with-ads.md)。
 
 ### 我的广告单元是自动创建的，因为我使用了广告中介控件，并且我确认了正在提供广告。 我还从开发人员中心手动创建了多个其他广告单元。 是否需要执行额外操作才能收到这些广告单元收益的付款？
 
@@ -133,11 +134,11 @@ pubCenter 中不再支持创建新的广告单位。 如果你已将 Microsoft �
 
 ### 如何在开发人员中心中创建应用促销市场活动？
 
-从开发人员中心中的应用页面，依次单击**“盈利”**>**“推广你的应用”**。 有关如何在开发人员中心中为应用创建广告市场活动的详细信息，请参阅[为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
+从开发人员中心中的应用页面，依次单击“盈利”****&gt;“推广你的应用”****。 有关如何在开发人员中心中为应用创建广告市场活动的详细信息，请参阅[为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
 
 ### 可以在哪里查看开发人员中心中的性能数据？
 
-从开发人员中心中的应用页面，依次单击**“分析”**>**“Microsoft Advertising 性能”**。 有关详细信息，请参阅[广告性能报告](advertising-performance-report.md)。
+从开发人员中心中的应用页面，依次单击“分析”****&gt;“Microsoft Advertising 性能”****。 有关详细信息，请参阅[广告性能报告](advertising-performance-report.md)。
 
 ### 如何在开发人员中心中管理我的付款方式和税收详细信息？
 
@@ -149,11 +150,11 @@ pubCenter 中不再支持创建新的广告单位。 如果你已将 Microsoft �
 
 ### 我已将我的 pubCenter 帐户链接到我的开发人员中心帐户，但无法在我使用广告单元的应用下找到它们。 可以在哪里找到它们？
 
-如果您无法在[广告性能报告](advertising-performance-report.md)上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 如果你在多个应用中使用了该广告单元、你在不属于同一个开发人员中心帐户的应用中使用了该广告单元，或者该广告单元在过去几天内未提供任何广告，则可能发生这种情况。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请访问帐户级**广告性能**报告并选择 pubCenter 应用名称。 若要访问帐户级**广告性能**报告，请转到仪表板概述页，然后单击导航窗格中的**“广告性能”**。
+如果你无法在[广告性能报告](advertising-performance-report.md)上找到特定 pubCenter 广告单元，我们可能未能成功将该广告单元链接到开发人员中心中的应用。 如果你在多个应用中使用了该广告单元、你在不属于同一个开发人员中心帐户的应用中使用了该广告单元，或者该广告单元在过去几天内未提供任何广告，则可能发生这种情况。 若要查看我们未能成功链接到开发人员中心中的应用的广告单元，请访问帐户级“广告性能”****报告并选择 pubCenter 应用名称。 若要访问帐户级“广告性能”****报告，请转到仪表板概述页，然后单击导航窗格中的“广告性能”****。
 
 ### 我曾经在开发人员中心帐户中的应用下看到过我的广告单元，但我现在找不到它们了。 这是怎么回事？
 
-如果你的广告单元在几天内未提供任何广告，则可能发生这种情况。 请转到开发人员中心中的帐户级**广告性能**报告，并查找这些广告单元的数据。
+如果你的广告单元在几天内未提供任何广告，则可能发生这种情况。 请转到开发人员中心中的帐户级“广告性能”****报告，并查找这些广告单元的数据。
 
 ### 如果查明我的 pubCenter 帐户是否已成功链接到我的开发人员中心帐户？
 
@@ -180,6 +181,6 @@ pubCenter 中不再支持创建新的广告单位。 如果你已将 Microsoft �
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

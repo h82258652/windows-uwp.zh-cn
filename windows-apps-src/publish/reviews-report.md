@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 通过 Windows 开发人员中心仪表板中的“评价”报告可以查看客户在应用商店中对你的应用进行评分时提供的评论。
 title: 评价报告
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
@@ -78,6 +79,6 @@ ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

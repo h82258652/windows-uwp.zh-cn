@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows 应用商店为支持此功能的移动运营商提供移动运营商结算作为付款方式。
 title: 移动运营商结算
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
@@ -43,7 +44,7 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 | 澳大利亚            | Telstra                                                            |
 | 奥地利              | A1 Telekom、T-Mobile                                               |
 | 巴林              | Zain、VIVA                                                         |
-| 比利时              | BASE、 Mobistar                                                     |
+| 比利时              | BASE、Mobistar、Proximus                                                     |
 | 巴西               | Claro                                                              |
 | 保加利亚             | Telenor                                                            |
 | 加拿大               | Fido、Rogers、Telus                                                |
@@ -64,7 +65,7 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 | 匈牙利              | Telenor、T-Mobile                                                  |
 | 印度                | Idea                                                               |
 | 印度尼西亚            | Indosat、Telkomsel、XL Axiata、AXIS                                |
-| 爱尔兰              | O2、Vodafone                                                       |
+| 爱尔兰              | O2、Vodafone、Three                                                      |
 | 意大利                | Telecom Italia、Vodafone、Wind、3 Italia                           |
 | 约旦               | Zain、Umniah                                                       |
 | 肯尼亚                | Safaricom                                                          |
@@ -82,7 +83,7 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 | 波兰               | T-Mobile、Orange、Polkomtel (Plus)                                 |
 | 波多黎各          | Claro                                                              |
 | 罗马尼亚              | Orange、Vodafone                                                   |
-| 俄罗斯               | Beeline                                                            |
+| 俄罗斯               | Beeline、MTS                                                          |
 | 沙特阿拉伯         | Zain                                                               |
 | 新加坡            | M1、SingTel、StarHub                                               |
 | 斯洛伐克             | T-Mobile                                                           |
@@ -94,7 +95,7 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 | 泰国             | DTAC                                                               |
 | 阿拉伯联合酋长国 | Etisalat、Du                                                       |
 | 英国       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
-| 美国        | AT&T、Sprint、T-Mobile、Verizon                                    |
+| 美国        | AT&amp;T、Sprint、T-Mobile、Verizon                                    |
 | 越南              | Viettel、Vietnamobile、Vinaphone、Mobifone                         |
 
  
@@ -110,6 +111,6 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

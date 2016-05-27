@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows 开发人员中心仪表板中的“使用情况报告”可使你查看客户如何使用你的应用。
 title: 使用情况报告
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
@@ -65,6 +66,6 @@ Windows 开发人员中心仪表板中的“使用情况”****报告可使你�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 了解如何向你的客户提供应用的程序包，以及如何管理特定的程序包方案。
 title: 应用包管理指南
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
@@ -133,6 +134,6 @@ ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

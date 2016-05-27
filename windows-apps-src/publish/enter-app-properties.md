@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 应用提交过程的“应用属性”页允许你定义应用类别并指示硬件首选项或其他声明。
 title: 输入应用属性
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
@@ -39,6 +40,6 @@ ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 有关详细信息，请参阅[应用声明](app-declarations.md)。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

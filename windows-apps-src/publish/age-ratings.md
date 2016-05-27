@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 应用提交进程的年龄分级页面允许你提供有关应用的信息，以便它可以从国际年龄分级联盟 (IARC) 收到相应的年龄分级。
 title: 年龄分级
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
@@ -44,6 +45,6 @@ ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 | 18+（适合成人）            | 此年龄分级的游戏可能包含仅适合成人用户的激烈、粗俗或特定暴力、血腥内容。 所有内容都必须符合[内容策略](https://msdn.microsoft.com/library/windows/apps/dn764944)标准。                                                                                                                                                            |
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

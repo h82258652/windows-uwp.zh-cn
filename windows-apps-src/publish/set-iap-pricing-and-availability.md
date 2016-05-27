@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 在提交 IAP 时，“定价和可用性”页上的选项决定了你的 IAP 的付费内容以及应向客户提供它的方式。
 title: 设置 IAP 的定价和可用性
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
@@ -50,6 +51,6 @@ ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
