@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: 使用画笔
 description: Brush 对象用于绘制形状、文本和控件各个部分的内部或轮廓，以便所绘制的对象在 UI 中可见。
@@ -52,7 +53,7 @@ description: Brush 对象用于绘制形状、文本和控件各个部分的内�
 </StackPanel>
 ```
 
-### <span id="Property_element_syntax__"> </span> <span id="property_element_syntax__"> </span> <span id="PROPERTY_ELEMENT_SYNTAX__"> </span>属性元素语法
+### <span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>属性元素语法
 
 你可以使用属性元素语法来定义 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)。 此语法比前面的方法更详细，但是，你可以针对元素指定其他属性值（如 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx)）。 有关 XAML 语法的详细信息（包括属性元素语法），请参阅 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595)和 [XAML 语法指南](https://msdn.microsoft.com/library/windows/apps/Mt185596)。
 
@@ -66,7 +67,7 @@ description: Brush 对象用于绘制形状、文本和控件各个部分的内�
 </Rectangle>
 ```
 
-## <span id="Linear_gradient_brushes_"> </span> <span id="linear_gradient_brushes_"> </span> <span id="LINEAR_GRADIENT_BRUSHES_"> </span>线性渐变画笔
+## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>线性渐变画笔
 
 [
             **LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 使用沿着直线定义的渐变绘制一个区域。 这条直线称为*渐变轴*。 你可以使用 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 对象沿着渐变轴来指定渐变颜色及其位置。 默认情况下，渐变轴从画笔绘制区域的左上角到右下角，这会产生对角底纹。
@@ -97,20 +98,19 @@ description: Brush 对象用于绘制形状、文本和控件各个部分的内�
 
 渐变停点之间每个点的颜色均以两个边界渐变停点指定的颜色组合呈线性相互融合。 该图突出显示了上述示例中的渐变停点。 圆圈标出了渐变停点的位置，虚线显示的是渐变轴。
 
-![渐变停点](images/linear-gradients-stops.png)
-你可以通过将 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 和 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 属性设置为不同于 `(0,0)` 和 `(1,1)` 起始默认值的值，来更改渐变停点所在的直线。 通过更改 **StartPoint** 和 **EndPoint** 坐标值，可以创建水平或垂直渐变，颠倒渐变方向，或者加快渐变速度以便应用于比整个绘制区域小的范围。 若要加快渐变，必须将 **StartPoint** 和/或 **EndPoint** 的值设置为 0 到 1 之间的值。 例如，如果你需要一个水平渐变，该渐变所有的淡化都发生在画笔的左半部分，画笔的右侧是纯色且与上一个 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 颜色相同，请将 **StartPoint** 指定为 `(0,0)`，将 **EndPoint** 指定为 `(0.5,0)`。
+![渐变停点](images/linear-gradients-stops.png) 你可以通过将 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 和 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 属性设置为不同于 `(0,0)` 和 `(1,1)` 起始默认值的值，更改渐变停点所在的直线。 通过更改 **StartPoint** 和 **EndPoint** 坐标值，可以创建水平或垂直渐变，颠倒渐变方向，或者加快渐变速度以便应用于比整个绘制区域小的范围。 若要加快渐变，必须将 **StartPoint** 和/或 **EndPoint** 的值设置为 0 到 1 之间的值。 例如，如果你需要一个水平渐变，该渐变所有的淡化都发生在画笔的左半部分，画笔的右侧是纯色且与上一个 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 颜色相同，请将 **StartPoint** 指定为 `(0,0)`，将 **EndPoint** 指定为 `(0.5,0)`。
 
-### <span id="Use_tools_to_make_gradients"> </span> <span id="use_tools_to_make_gradients"> </span> <span id="USE_TOOLS_TO_MAKE_GRADIENTS"> </span>使用工具创建渐变
+### <span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>使用工具创建渐变
 
-既然你知道了线性渐变的工作原理，你可以使用 Visual Studio 或 Blend 简化创建这些渐变的工作。 若要创建一个渐变，请在设计图面或 XAML 视图中选择要应用渐变的对象。 展开**笔画**并选择“线性渐变”****选项卡（请参阅下一张屏幕截图）。
+既然你知道了线性渐变的工作原理，你可以使用 Visual Studio 或 Blend 简化创建这些渐变的工作。 若要创建一个渐变，请在设计图面或 XAML 视图中选择要应用渐变的对象。 展开“笔画”****并选择“线性渐变”****选项卡（请参阅下一张屏幕截图）。
 
 ![使用 Visual Studio 创建线性渐变。](images/tool-gradient-brush-1.png)
 
 现在你可以更改梯度停止点的颜色，并使用底部的栏滑动其位置。 也可以通过单击该栏添加新的梯度停止点，并通过将停止点拖离该栏来删除它们（请参阅下一张屏幕截图）。
 
-![控制渐变停点的栏位于属性窗口底部。](images/tool-gradient-brush-2.png)
+![控制梯度停止点的属性窗口的底部的栏。](images/tool-gradient-brush-2.png)
 
-## <span id="Image_brushes"> </span> <span id="image_brushes"> </span> <span id="IMAGE_BRUSHES"> </span>图像画笔
+## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>图像画笔
 
 [
             **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 绘制一个包含一个图像的区域，要绘制的图像来自图像文件源。 你可以使用要加载的图像的路径来设置 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) 属性。 通常，图像源来自 **Content** 项目，该项目是应用资源的一部分。
@@ -182,6 +182,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

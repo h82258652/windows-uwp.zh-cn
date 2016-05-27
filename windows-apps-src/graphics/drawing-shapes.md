@@ -1,6 +1,7 @@
 ---
+author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
-title: 绘制形状
+title: 绘制图形
 description: 了解如何绘制形状，如椭圆、矩形、多边形以及路径。 Path 类是在 XAML UI 中可视化基于相当复杂矢量的绘图语言的方法；例如，可以绘制贝塞尔曲线。
 ---
 # 绘制形状
@@ -42,7 +43,7 @@ description: 了解如何绘制形状，如椭圆、矩形、多边形以及路�
 <Ellipse Fill="SteelBlue" Height="200" Width="200" />
 ```
 
-此处是显示的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343)。
+此处是呈现的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343)。
 
 ![显示的椭圆。](images/shapes-ellipse.jpg)
 
@@ -52,7 +53,7 @@ description: 了解如何绘制形状，如椭圆、矩形、多边形以及路�
 
 6 个 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 元素为一个组，它们属于 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) 控件的控件模板，并且 2 个同心 **Ellipse** 元素属于 [**RadioButton**](https://msdn.microsoft.com/library/windows/apps/BR227544)。
 
-## <span id="Rectangle"> </span> <span id="rectangle"> </span> <span id="RECTANGLE"> </span>Rectangle
+## <span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Rectangle
 
 [
             **Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 形状有四个边而且相对的两个边相等。 若要创建基本的 **Rectangle**，请指定 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 和 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
@@ -109,12 +110,12 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 不要使用 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值指定 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 形状，而应针对 [**X1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx)、[**Y1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx)、[**X2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) 和 [**Y2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx) 使用离散的 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值。 这会使得横线或竖线的标记最少。 例如，`<Line Stroke="Red" X2="400"/>` 定义一条长为 400 个像素的横线。 另一对 X,Y 属性在默认情况下为 0，因此，从点的角度看，此 XAML 将绘制一条从 `(0,0)` 到 `(400,0)` 的直线。 如果你希望它从 (0,0) 之外的任意点开始，则可以使用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 移动整个 **Line**。
 
-## <span id="_Polyline"> </span> <span id="_polyline"> </span> <span id="_POLYLINE"> </span>Polyline
+## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
 
 [
             **Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 与 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 类似，该形状的边也是通过一组点来进行定义，只不过 **Polyline** 的最后一个点不与第一个点相连。
 
-**注意** 你可以在 [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 中为 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 明确设置相同的起点和终点，但是，在这种情况下，你可能以改用 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)。
+**注意** 你可以在 [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 中为 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 明确设置相同的起点和终点，但是，在这种情况下，你可能已改用 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)。
 
  
 
@@ -146,7 +147,7 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 此示例显示了一个 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)，它是由以下操作生成的：使用 Blend for Visual Studio 生成少数几个矢量形状，然后将结果另存为 XAML。 整个 **Path** 由一条贝塞尔曲线和一条线段组成。 此示例主要是为了举例说明 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 序列化格式中存在的元素以及各个数字所代表的含义。
 
-此 [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 从 move 命令（由 “M”指示）开始，该命令为此路径指定起点的绝对值。
+此 [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 从 move 命令（由“M”指示）开始，该命令为此路径指定起点的绝对值。
 
 第一段是三次方贝塞尔曲线，起点为 `(100,200)`，终点为 `(400,175)`，通过两个控制点 `(100,25)` 和 `(400,350)` 绘制而成。 这一段由 [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 属性字符串中的“C”命令指示。
 
@@ -191,7 +192,7 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
           </Path>
 ```
 
-你可以将 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) 用于各种部分的一个原因是，每个部件具有你可能用于 UI 动画的 **Double** 和 **Point** 属性。 你不能使用 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 的序列化格式执行此操作。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。
+你可以将 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) 用于各个部分的一个原因是，每个部分具有你可能用于 UI 动画的 **Double** 和 **Point** 属性。 你不能使用 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 的序列化格式执行此操作。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。
 
  
 
@@ -202,6 +203,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

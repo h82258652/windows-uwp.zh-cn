@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: 动画概述
 description: 使用 Windows 运行时动画库中的动画将 Windows 外观集成到你的应用中。
@@ -375,6 +376,6 @@ XAML（可以在其中定义自定义情节提要动画）中应用 UI 定义的
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

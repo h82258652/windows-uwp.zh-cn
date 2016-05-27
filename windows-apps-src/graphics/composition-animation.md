@@ -1,4 +1,5 @@
 ---
+author: scottmill
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: 合成动画
 description: 许多合成对象和效果属性均可使用关键帧和表达式动画设置动画，以便 UI 元素的属性可以随时间变化或基于计算发生变化。
@@ -122,7 +123,7 @@ animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f), easeIn);
 常规语法和示例如下：
 
 ```cs
-targetVisual.StartAnimation(“Offset”, animation);
+targetVisual.StartAnimation("Offset", animation);
 ```
 
 在启动动画后，仍然能够使其停止和断开连接。 这将通过使用 [**StopAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590841) 方法和指定需要停止设置动画的属性来实现。
@@ -130,7 +131,7 @@ targetVisual.StartAnimation(“Offset”, animation);
 例如：
 
 ```cs
-targetVisual.StopAnimation(“Offset”);
+targetVisual.StopAnimation("Offset");
 ```
 
 ### 动画完成事件
@@ -167,7 +168,7 @@ myScopedBatch.End();
 
 ```cs
 myScopedBatch = _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
-Visual.StartAnimation(“Opacity”, myAnimation);
+Visual.StartAnimation("Opacity", myAnimation);
 myScopedBatch.End();
 ```
 
@@ -192,7 +193,7 @@ myCommitBatch = _compositor.GetCommitBatch(CompositionBatchTypes.Animation);
 若要创建你的表达式，请在 Compositor 对象上调用 [**CreateExpressionAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt187002) 并 指定你想要使用的表达式：
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“INSERT_EXPRESSION_STRING”)
+var expression = _compositor.CreateExpressionAnimation("INSERT_EXPRESSION_STRING")
 ```
 
 ### 运算符、优先级和结合性
@@ -229,8 +230,8 @@ ChildVisual.Offset.X / ParentVisual.Offset.Y
 在上述表达式字符串中，我们需要创建两个参数来定义两个视觉对象：
 
 ```cs
-Expression.SetReferenceParameter(“ChildVisual”, childVisual);
-Expression.SetReferenceParameter(“ParentVisual”, parentVisual);
+Expression.SetReferenceParameter("ChildVisual", childVisual);
+Expression.SetReferenceParameter("ParentVisual", parentVisual);
 ```
 
 ### 表达式 Helper 函数
@@ -244,7 +245,7 @@ Expression.SetReferenceParameter(“ParentVisual”, parentVisual);
 下面是一个使用 Clamp Helper 函数的更复杂的表达式字符串示例：
 
 ```cs
-Clamp((scroller.Offset.y * -1.0) – container.Offset.y, 0, container.Size.y – header.Size.y)
+Clamp((scroller.Offset.y * -1.0) - container.Offset.y, 0, container.Size.y - header.Size.y)
 ```
 
 ### 启动和停止表达式动画
@@ -264,14 +265,14 @@ _sharedProperties = _compositor.CreatePropertySet();
 在创建属性集后，你可以使用 [**CompositionPropertySet**](https://msdn.microsoft.com/library/windows/apps/Dn706772) 的 **Insert\*** 方法向其中添加属性和值。 例如：
 
 ```cs
-_sharedProperties.InsertVector3(“NewOffset”, offset);
+_sharedProperties.InsertVector3("NewOffset", offset);
 ```
 
 在创建表达式动画后，你可以使用某一引用参数从表达式字符串中的属性集引用属性。 例如：
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“sharedProperties.NewOffset”);
-expression.SetReferenceParameter(“sharedProperties”, _sharedProperties);
+var expression = _compositor.CreateExpressionAnimation("sharedProperties.NewOffset");
+expression.SetReferenceParameter("sharedProperties", _sharedProperties);
 ```
 
 ### 表达式关键帧
@@ -291,7 +292,7 @@ expression.SetReferenceParameter(“sharedProperties”, _sharedProperties);
 
 ```cs
 var animation = _compositor.CreateScalarKeyFrameAnimation();
-animation.InsertExpressionKeyFrame(0.25, “VisualBOffset.X / VisualAOffset.Y”);
+animation.InsertExpressionKeyFrame(0.25, "VisualBOffset.X / VisualAOffset.Y");
 animation.InsertKeyFrame(1.00f, 0.8f);
 ```
 
@@ -305,7 +306,7 @@ animation.InsertKeyFrame(1.00f, 0.8f);
 在表达式关键帧中使用上述值的示例如下：
 
 ```cs
-animation.InsertExpressionKeyFrame(0.0f, “this.CurrentValue + delta”);
+animation.InsertExpressionKeyFrame(0.0f, "this.CurrentValue + delta");
 ```
 
 ### 条件表达式
@@ -334,7 +335,7 @@ animation.InsertExpressionKeyFrame(0.0f, “this.CurrentValue + delta”);
 以下代码段显示了在表达式中使用条件语句的示例：
 
 ```cs
-var expression = _compositor.CreateExpressionAnimation(“target.Offset.x > 50 ? 0.0f +   (target.Offset.x / parent.Offset.x) : 1.0f”);
+var expression = _compositor.CreateExpressionAnimation("target.Offset.x > 50 ? 0.0f +   (target.Offset.x / parent.Offset.x) : 1.0f");
 ```
 
  
@@ -346,6 +347,6 @@ var expression = _compositor.CreateExpressionAnimation(“target.Offset.x > 50 ?
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
