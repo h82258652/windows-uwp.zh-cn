@@ -1,24 +1,30 @@
 ---
-title: Xbox One 开发人员预览版上的 UWP 已知问题
+author: Mtoepke
+title: Xbox One 开发者预览版上的 UWP 已知问题
 description: 
 area: Xbox
 ---
 
-# Xbox One 开发人员预览版上的 UWP 已知问题
+# Xbox 开发者预览版上的 UWP 已知问题
 
-Xbox 开发人员预览版系统更新将包括实验性的软件和提前预发布的软件。 
+本主题介绍 Xbox 开发者预览版上的 UWP 的已知问题。 
+有关此开发者预览版的详细信息，请参阅 [Xbox 上的 UWP](index.md)。 
+
+\[如果你通过某个 API 参考主题中的链接转到此处，并且要查找通用设备系列 API 信息，请参阅 [Xbox 上尚不支持的 UWP 功能](http://go.microsoft.com/fwlink/?LinkID=760755)。\]
+
+Xbox 开发者预览版系统更新将包括实验性的软件和提前预发布的软件。 
 这意味着某些热门游戏和应用将无法按预期运行，并且可能会遇到偶发的崩溃和数据丢失。 
 当你退出开发者预览版时，主机将恢复出厂设置，使得你必须重新安装所有游戏、应用和内容。
 
 对于开发人员而言，这意味着并非所有开发人员工具和 API 都能按预期运行。 
-这也意味着，并非所有适用于最终版本的功能都包含在内或都具有发行质量。 
-**特别是，这意味着此预览版中的系统性能并不反映最终版本的系统性能。**
+并非所有适用于最终版本的功能都包含在内或都具有发行质量。 
+**特别是，此预览版中的系统性能并不反映最终版本的系统性能。**
 
-下表重点介绍你可能在此版本中遇到的某些已知问题，但该列表并不详尽。 
+下表重点介绍你可能在此版本中遇到的某些已知问题，但该列表并没有包括所有问题。 
 
 **我们希望收到你的反馈**，因此请在[开发通用 Windows 应用](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)论坛上报告你发现的任何问题。 
 
-如果你遇到问题，请查看此处的[常见问题](frequently-asked-questions.md)，并通过论坛寻求帮助。
+如果遇到问题，请阅读本主题中的信息、参阅[常见问题](frequently-asked-questions.md)以及使用论坛来寻求帮助。
 
 
 ## 开发游戏
@@ -37,7 +43,11 @@ Xbox 开发人员预览版系统更新将包括实验性的软件和提前预发
 
 我们已测试一些热门游戏引擎，但未对所有游戏引擎进行测试，并且我们对此预览版的测试覆盖并不全面。 
 实际效果可能会有所不同。 
-我们希望收到你发现的问题的反馈。 
+
+以下游戏引擎已确认可以运行：
+* [Construct 2](https://www.scirra.com/)
+
+其他引擎可能也可以运行。 我们希望收到你发现的问题的反馈。 
 请通过论坛报告你发现的任何问题。
 
 ### DirectX 12 支持
@@ -47,6 +57,25 @@ DirectX 12 在此情况下不受支持。
 Xbox One（类似于所有的传统游戏主机）是一个专门的硬件，需要特定 SDK 才可以充分发挥其潜能。 
 如果你正在开发需要最大限度发挥 Xbox One 硬件潜能的游戏，你可以注册 [ID@XBOX](http://www.xbox.com/en-us/Developers/id) 计划来获取该 SDK 的访问权限（包括 DirectX 12 支持）。
 
+### Xbox One 开发者预览版禁用 Windows 10 的游戏流式传输。
+
+在主机上激活 Xbox One 开发者预览版阻止你将游戏从 Xbox One 流式传输到 Windows 10 上的 Xbox 应用，即使主机设置为零售模式也不行。 若要还原游戏流式传输功能，则必须退出开发者预览版。
+
+### 电视安全区域的已知问题
+
+默认情况下，Xbox 上适用于 UWP 应用的屏幕区域应插入电视安全区域。 但是，Xbox One 开发者预览版包含一个已知 Bug，会导致电视安全区域在 \[0, 0\] 启动，而非在\ [_offset_, _offset_\] 启动。
+
+有关电视安全区域的详细信息，请参阅 [https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv)。 
+
+解决此问题的最简单方式是禁用电视安全区域，如以下 JavaScript 示例所示。
+
+    var applicationView = Windows.UI.ViewManagement.ApplicationView.getForCurrentView();
+
+    applicationView.setDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.useCoreWindow);
+
+### 尚不支持鼠标模式
+
+\[https://msdn.microsoft.com/zh-cn/windows/uwp/input-and-devices/designing-for-tv\] \(https://msdn.microsoft.com/zh-cn/windows/uwp/input-and-devices/designing-for-tv?f=255&amp;MSPPError=-2147217396#mouse-mode\) 主题中介绍的_鼠标模式_功能在 Xbox One 开发者预览版中尚不受支持。
 
 ## Xbox One 上 UWP 应用和游戏的系统资源
 
@@ -64,7 +93,7 @@ Xbox One 上运行的 UWP 应用和游戏与系统和其他应用共享资源，
 ## UWP API 覆盖范围
 
 在此预览版中，并非所有 UWP API 在 Xbox 上都能按预期工作。 
-有关已知的不工作的 API 列表，请参阅 [Xbox 上 UWP 设备系列功能区域限制](http://go.microsoft.com/fwlink/p/?LinkId=760755)。 
+有关我们已知不起作用的 API 列表，请参阅 [Xbox 上尚不支持的 UWP 功能](http://go.microsoft.com/fwlink/p/?LinkId=760755)。 
 如果你发现其他 API 的问题，请通过论坛报告它们。 
 
 ## XAML 控件的外观或行为不同于 Xbox One shell 中的控件
@@ -86,7 +115,7 @@ Xbox One 上运行的 UWP 应用和游戏与系统和其他应用共享资源，
 
 如果遇到此问题，在 Xbox One 的集合应用中卸载你的应用通常可以解决该问题。
 
-> **注意** 从 Windows Device Portal (WDP) 中卸载你的应用无法解决此问题。
+> **注意** &nbsp;&nbsp;从 Windows Device Portal (WDP) 中卸载你的应用无法解决此问题。
 
 如果问题仍然存在，请在集合应用中卸载你的应用或游戏、退出开发人员模式、重新启动到零售模式，然后切换回开发人员模式。
 
@@ -107,7 +136,7 @@ Xbox One 上运行的 UWP 应用和游戏与系统和其他应用共享资源，
 
 ### 从“开发人员主页”启动 WDP 会导致“开发人员主页”崩溃
 
-如果已在“开发人员主页”中启动了 WDP，在你输入用户名和密码并选择**“保存”**后，将导致“开发人员主页”崩溃。 
+如果已在“开发人员主页”中启动了 WDP，在你输入用户名和密码并选择“保存”****后，将导致“开发人员主页”崩溃。 
 凭据将保存，但 WDP 无法启动。 
 可以通过重新启动 Xbox One 来启动 WDP。 
 
@@ -115,13 +144,13 @@ Xbox One 上运行的 UWP 应用和游戏与系统和其他应用共享资源，
 
 如果在“开发人员主页”中禁用 WDP，将关闭 WDP。 
 然而，当重新启动你的 Xbox One 时，将再次启动 WDP。 
-可以通过使用**“重置并保留我的游戏和应用”**删除 Xbox One 上存储的任何状态来解决此问题。 
-转到“设置”>“系统”>“主机信息和更新”>“重置主机”，然后选择**“重置并保留我的游戏和应用”**按钮。
+可以通过使用“重置并保留我的游戏和应用”****删除 Xbox One 上存储的任何状态来解决此问题。 
+转到“设置”&gt;“系统”&gt;“主机信息和更新”&gt;“重置主机”，然后选择“重置并保留我的游戏和应用”****按钮。
 
-> **警告** 执行此操作将删除 Xbox One 上保存的所有设置，包括无线设置、用户帐户和尚未保存到云存储的任何游戏进度。
+> **警告** &nbsp;&nbsp;执行此操作将删除 Xbox One 上保存的所有设置，包括无线设置、用户帐户和尚未保存到云存储的任何游戏进度。
 
-> **警告** 请勿选择**“重置和删除所有内容”**按钮。
-这将删除你的所有游戏、应用、设置和内容、停用开发人员模式，然后从开发人员预览版组中删除你的主机。
+> **警告** &nbsp;&nbsp;不要选择“重置和删除所有内容”****按钮。
+这将删除你的所有游戏、应用、设置和内容、停用开发人员模式，然后从开发者预览版组中删除你的主机。
 
 ### “正在运行的应用”表中的列不会以可预见的方式进行更新。 
 
@@ -134,13 +163,13 @@ Xbox One 上运行的 UWP 应用和游戏与系统和其他应用共享资源，
 
 ### 导航到 WDP 导致证书警告
 
-你将收到关于已提供的证书的警告（与以下屏幕截图中的内容类似）， 
-因为由你的 Xbox One 主机签名的安全证书不被视为已知的受信任发布者。 
+你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 主机签名的安全证书不被视为众所周知的受信任发布者。 
 单击“继续浏览此网站”可访问 Windows Device Portal。
 
 ![网站安全证书警告](images/security_cert_warning.jpg)
 
 ## 开发人员主页
+
 有时，在“开发人员主页”中选择“管理 Windows Device Portal”选项将导致“开发人员主页”无提示地退出到主屏幕。 
 主机上的 WDP 基础结构中的故障会导致该问题，可通过重新启动该主机来解决该问题。
 
@@ -149,6 +178,6 @@ Xbox One 上运行的 UWP 应用和游戏与系统和其他应用共享资源，
 - [Xbox One 上的 UWP](index.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

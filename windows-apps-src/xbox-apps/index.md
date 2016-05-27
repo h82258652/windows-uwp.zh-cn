@@ -1,4 +1,5 @@
 ---
+author: Mtoepke
 title: Xbox One 上的 UWP
 description: 如何在 Xbox One 上生成适用于通用 Windows 平台 (UWP) 的应用。
 area: Xbox
@@ -21,17 +22,18 @@ area: Xbox
 |[Xbox One 工具简介](introduction-to-xbox-tools.md)| 介绍了 Xbox One 特定工具_“开发人员主页”_、使用 Windows Device Portal 以及设置 Visual Studio 以供开发，并且指导新开发人员完成第一个 Xbox UWP 应用程序。 |
 |[在 Xbox 开发环境上设置你的 UWP](development-environment-setup.md)| 介绍了设置和测试 Xbox One 开发环境的步骤。 |
 |[用于 Xbox One 上 UWP 应用和游戏的系统资源](system-resource-allocation.md)| 介绍了应用程序在 Xbox One 上运行时可用的资源。 | 
-|[10 英尺设计指南](..\input-and-devices\designing-for-tv.md)| 介绍了有关设计可在电视上看到并将控制器用于输入的应用的最佳做法。 |  
+|[针对 Xbox 和电视进行设计](http://go.microsoft.com/fwlink/?LinkID=760736)| 介绍了有关设计可在电视上看到并将控制器用于输入的应用的最佳做法。 |  
 |[多用户应用程序简介](multi-user-applications.md)| 介绍了 Xbox One 上的多用户应用程序 (MUA)。 |
 |[示例](samples.md)| TVHelpers 是面向 github 位置的指针，可以在这里找到有用的 XAML 和 JavaScript 示例以开始针对 Xbox 进行开发。 示例包括完整的 XAML 媒体应用模板以及自动控制器导航、丰富的媒体播放和基于 Web 技术的搜索。 |
 |[在 Xbox One 上禁用开发人员模式](devkit-deactivation.md)| 解释如何在 Xbox One 上禁用开发人员模式。 |
 |[Xbox One 上尚不支持的 UWP 功能](http://go.microsoft.com/fwlink/?LinkId=760755)|  介绍了在 Xbox One 上尚不能正常运行的 UWP 功能区域。|  
 
 ## 另请参阅
-- [Xbox One 上的 UWP 应用概述](http://go.microsoft.com/fwlink/?LinkId=780786)  
+- [Xbox One 上的 UWP 应用概述](http://go.microsoft.com/fwlink/?LinkId=780786) 
+- [自动启动 Windows 10 UWP 应用](automate-launching-uwp-apps.md)
   
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

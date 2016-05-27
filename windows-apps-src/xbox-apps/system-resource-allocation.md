@@ -1,4 +1,5 @@
 ---
+author: Mtoepke
 title: Xbox One 上 UWP 应用和游戏的系统资源
 description: Xbox 上的 UWP 系统资源
 area: Xbox
@@ -19,14 +20,12 @@ Xbox One 上运行的 UWP 应用和游戏与系统和其他应用共享资源。
 
 * Xbox One 上的 UWP 支持 DirectX 11 功能级别 10。 DirectX 12 在此情况下不受支持。 
 
-有关**应用程序开发**，请务必记住，相对于标准电脑，可用的资源可能会受到限制。
+对于**应用程序开发**，请务必记住，相对于标准电脑，可用的资源可能会受到限制。
 
-有关**游戏开发**，请务必记住 Xbox One（就像其他游戏控制台一样） 
-是一个专门的硬件，它需要专门的基于硬件的开发工具来访问其全部潜能。 
-如果你在需要访问 Xbox One 硬件最大潜能的游戏上运行， 
-你可以注册 [ID@Xbox](http://www.xbox.com/en-us/Developers/id) 计划，以获取 Xbox One 开发工具包的访问权限，其中包括 DirectX 12 支持。
+对于**游戏开发**，请务必记住，Xbox One 与其他游戏主机一样，是一个专业化的硬件，它需要专门的基于硬件的开发工具来访问其全部潜能。 
+如果你正在开发需要最大限度发挥 Xbox One 硬件潜能的游戏，你可以注册 [ID@Xbox](http://www.xbox.com/en-us/Developers/id) 计划来获取 Xbox One 开发工具包的访问权限（包括 DirectX 12 支持）。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
