@@ -1,24 +1,20 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 本主题介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
 title: 视觉缩放和调整大小指南
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
-label: 视觉缩放和调整大小
+label: Optical zoom and resizing
 template: detail.hbs
 ---
 
 # 视觉缩放和调整大小
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+本文介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
 
 **重要的 API**
 
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-本文介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
-
 
 
 使用视觉缩放，用户可以放大内容区域中内容的视图（在内容区域自身上执行），而使用调整大小，用户则可以更改一个或多个对象的相对大小，而不更改内容区域的视图（在内容区域中的对象上执行）。
@@ -40,7 +36,7 @@ template: detail.hbs
 
  
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>注意事项
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
 对支持调整大小或视觉缩放的应用使用以下指南：
@@ -69,7 +65,7 @@ template: detail.hbs
 
      
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 **示例**
@@ -77,6 +73,7 @@ template: detail.hbs
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **存档示例**
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -95,6 +92,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

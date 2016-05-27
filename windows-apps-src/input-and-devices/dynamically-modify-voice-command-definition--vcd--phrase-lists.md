@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 了解如何在运行时使用语音识别结果，在语音命令定义 (VCD) 文件中访问和更新支持的短语列表（PhraseList 元素）。
 title: 动态修改 VCD 短语列表
 ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
@@ -9,7 +10,7 @@ template: detail.hbs
 # 动态修改 VCD 短语列表
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要的 API**
@@ -21,13 +22,13 @@ template: detail.hbs
 
 如果语音命令特定于涉及一些用户定义或临时应用数据的任务，则在运行时动态修改短语列表会非常有用。 
 
-例如，假设你有一个旅行应用（用户可以在其中输入目的地），并且你希望用户能够通过在说出应用名称后紧接着说出“显示到 <目的地> 的旅行”来启动该应用。 在 **ListenFor** 元素本身中，你可以指定如下内容：`<ListenFor> Show trip to {destination}  </ListenFor>`，其中“destination”是 **PhraseList** 的 **Label** 属性值。
+例如，假设你有一个旅行应用（用户可以在其中输入目的地），并且你希望用户能够通过在说出“显示旅行&lt;目的地&gt;”后紧接着说出该应用名称来启动它。 在 **ListenFor** 元素本身中，你可以指定如下内容：`<ListenFor> Show trip to {destination}  </ListenFor>`，其中“destination”是 **PhraseList** 的 **Label** 属性值。
 
 在运行时更新该短语列表无需为每个可能的目的地创建单独的 **ListenFor** 元素。 相反，当用户输入他们的行程时，你可以使用用户指定的目的地动态填充 **PhraseList**。 
 
 有关 **PhraseList** 和其他 VCD 元素的详细信息，请参阅 [**VCD 元素和属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593) 参考。
 
-**先决条件：**
+**先决条件：  **
 
 本主题基于[在 Cortana 中使用语音命令启动前台应用](launch-a-foreground-app-with-voice-commands-in-cortana.md)生成。 在这里，我们将继续通过名为 **Adventure Works** 的旅行规划和管理应用演示相关功能。
 
@@ -36,11 +37,11 @@ template: detail.hbs
 -   [创建你的第一个应用](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   借助[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)了解事件
 
-**用户体验指南：**
+**用户体验指南：  **
 
 有关如何将你的应用与 **Cortana** 集成的信息，请参阅 [Cortana 设计指南](https://msdn.microsoft.com/library/windows/apps/dn974233)；有关设计出既实用又有吸引力且支持语音的应用的有用提示，请参阅[语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)。
 
-## <span id="Identify_the_command"> </span> <span id="identify_the_command"> </span> <span id="IDENTIFY_THE_COMMAND"> </span>标识命令和更新短语列表
+## <span id="Identify_the_command"></span><span id="identify_the_command"></span><span id="IDENTIFY_THE_COMMAND"></span>标识命令和更新短语列表
 
 下面是一个 VCD 文件示例，该文件定义了 **Command**“showTripToDestination”和 **PhraseList**，后者定义的三个选项用于我们的 **Adventure Works** 旅行应用中的目的地。 当用户在该应用中保存和删除目的地时，该应用将更新 **PhraseList** 中的相应选项。
 
@@ -92,7 +93,7 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 }
 ```
 
-## <span id="Remarks"> </span> <span id="remarks"> </span> <span id="REMARKS"> </span>备注
+## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 
 
 使用 **PhraseList** 限制识别适用于一组相对较小的单词。 当单词组过大（例如数百个单词）或者根本不应受限时，请使用 **PhraseTopic** 元素和 **Subject** 元素来优化语音识别结果的相关性，从而增强可扩展性。
@@ -126,7 +127,7 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
   </CommandSet>
 ```
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 **开发人员**
@@ -150,6 +151,6 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

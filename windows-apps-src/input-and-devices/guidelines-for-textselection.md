@@ -1,8 +1,9 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 本主题介绍用于选择和操作文本、图像和控件的新的 Windows UI，并提供在 Windows 应用商店应用中使用这些新的选择和操作机制时应该考虑的用户体验指南。
 title: 选择文本和图像
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
-label: 选择文本和图像
+label: Selecting text and images
 template: detail.hbs
 ---
 
@@ -10,7 +11,7 @@ template: detail.hbs
 
 本文介绍了选择和操作文本、图像和控件，并提供了将这些机制用于应用中时应考虑的用户体验指南。
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要的 API**
@@ -19,7 +20,7 @@ template: detail.hbs
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>注意事项
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
 -   在实现自己的控制手柄 UI 时使用字体字形。 控制手柄是系统范围内提供的两个 Segoe UI 字体的组合。 使用字体资源可以简化不同的 dpi 下的呈现问题，而且适用于各种 UI 缩放平台。 在实现自己的控制手柄时，应当共享下面的 UI 特征：
@@ -35,7 +36,7 @@ template: detail.hbs
 
 -   不允许选择控件、标签、图像、专有内容等 UI 元素。 通常，Windows 应用程序仅允许在特定控件内进行选择。 诸如按钮、标签和徽标之类的控件不能选择。 评估选择是否是你应用的一个问题，如果是，请标识应该禁止选择的 UI 区域。 
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指南
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
 
 文本选择和操作对触摸交互引入的用户体验问题有特别影响。 鼠标、笔/笔触以及键盘输入高度细化：鼠标单击或笔/笔触触点通常映射到单个像素，某个键已按下或未按下。 触控输入并未细化；将指尖的整个表面映射到屏幕上某个特定的 x-y 位置以精确放置文本插入点比较困难。
@@ -99,17 +100,19 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 *具有修剪控制手柄的图像编辑器。*
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 
 **对于开发人员**
 * [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/mt185599)
+
 **示例**
 * [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **存档示例**
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -128,6 +131,6 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

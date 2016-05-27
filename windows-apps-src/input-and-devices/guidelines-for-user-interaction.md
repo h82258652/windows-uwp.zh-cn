@@ -1,23 +1,24 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行了优化，但在不同的输入设备上功能一致。
 title: 触摸设计指南
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
-label: 触摸设计指南
+label: Touch design guidelines
 template: detail.hbs
 ---
 
 # 触摸设计指南
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行了优化，但在不同的输入设备上功能一致。
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>注意事项
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
--   设计将触摸交互作为主要预期输入方法的应用程序。
+-   设计将触摸交互作为预期的主要输入方法的应用程序。
 -   为所有类型的交互（触摸、笔、触笔和鼠标等）提供视觉反馈
 -   通过调整触摸目标大小、接触几何体、清理和摇动来优化定位。
 -   使用吸附点和带方向性的“围栏”优化精确度。
@@ -25,7 +26,7 @@ template: detail.hbs
 -   尽量不要使用计时的交互（适当使用的示例：长按）。
 -   尽量不要使用用于区别操作的手指数量。
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指南
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
 
 首先，以“触摸将是用户的主要输入方法”的初衷设计应用。 如果你使用平台控件，不要求额外编程，即可支持触摸板、鼠标和笔/触笔，因为 Windows 8 免费提供此类支持。
@@ -38,12 +39,7 @@ template: detail.hbs
 
 下表显示了设计为触摸而优化的 Windows 应用商店应用时应该考虑的一些输入设备之间的不同。
 
-因素
-触摸交互
-鼠标、键盘、笔/触笔交互
-触摸板
-精度
-指尖的接触区域大于单个 x-y 坐标，这样便增加了无意中激活命令的几率。
+因素 触摸交互 鼠标、键盘、笔/触笔交互 触摸板精度 指尖的接触区域大于单个 x-y 坐标，这样便增加了无意中激活命令的几率。
 鼠标和笔/触笔提供了精确的 x-y 坐标。
 与鼠标相同。
 接触区域的形状在整个移动过程中不断变化。
@@ -52,8 +48,7 @@ template: detail.hbs
 没有鼠标光标来帮助确定目标。
 鼠标光标、笔/触笔光标以及键盘焦点都可以帮助确定目标。
 与鼠标相同。
-人体解剖学
-指尖移动并不精确，因为使用一个或多个手指沿直线移动非常困难。 这是由于手关节的曲率和运动涉及的关节数量导致的。
+人体解剖学 指尖移动并不精确，因为使用一根或多根手指沿直线移动非常困难。 这是由于手关节的曲率和运动涉及的关节数量导致的。
 使用鼠标或笔/触笔进行直线移动就很容易，因为控制它们的手所移动的物理距离要比光标在屏幕上移动的物理距离短。
 与鼠标相同。
 由于手指的姿势以及用户对设备的控制，显示设备触摸表面上的某些区域可能很难接触到。
@@ -62,15 +57,13 @@ template: detail.hbs
 一个或多个指尖或用户的手可能会遮住对象。 这称为封闭。
 间接输入设备不会造成封闭。
 与鼠标相同。
-对象状态
-触摸使用两个状态的模型：显示设备的触摸表面为已触摸（打开）或未触摸（关闭）。 没有可以触发其他视觉反馈的悬停状态。
+对象状态 触摸使用两个状态的模型：显示设备的触摸表面为已触摸（打开）或未触摸（关闭）。 没有可以触发其他视觉反馈的悬停状态。
 鼠标、笔/触笔以及键盘全都显示三种状态的模型：向上（关闭）、向下（打开）以及悬停（聚焦）。
 
 悬停允许用户通过与 UI 元素关联的工具提示来了解信息。 悬停和聚焦效果都可以传达哪些对象是交互对象，并且还可以帮助确定目标。
 
 与鼠标相同。
-丰富交互
-支持多点触摸：触摸表面上的多个输入点（指尖）。
+丰富交互 支持多点触摸：触摸表面上的多个输入点（指尖）。
 支持单一输入点。
 与触摸相同。
 通过手势（点击、拖动、滑动、收缩和旋转）支持对象的直接操作。
@@ -165,9 +158,9 @@ template: detail.hbs
 
 -   正确的描述以及视觉提示对高级交互的使用有巨大影响。
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
-**面向开发人员 (XAML)**
+**对于开发人员 (XAML)**
 * [触控交互](https://msdn.microsoft.com/library/windows/apps/mt185617)
 * [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/mt185599)
  
@@ -179,6 +172,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

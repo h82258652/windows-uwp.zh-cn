@@ -1,15 +1,14 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 通过处理用于触摸和笔输入的相同基本指针事件在应用中响应鼠标输入。
 title: 鼠标交互
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
-label: 鼠标
+label: Mouse
 template: detail.hbs
 ---
 
 # 鼠标交互
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 针对触摸输入优化通用 Windows 平台 (UWP) 应用设计，并在默认情况下获得基本的鼠标支持。
 
@@ -23,9 +22,9 @@ template: detail.hbs
 
 鼠标输入和触摸输入的不同之处在于，触摸可以通过对这些对象执行物理手势（如轻扫、滑动、拖动、旋转等）更逼真地模拟直接操作 UI 元素。 操作鼠标通常要求提供其他一些 UI，例如可调整对象大小或对其进行旋转的句柄的使用。
 
-本主题介绍了鼠标交互的设计注意事项。
+本主题介绍鼠标交互的设计注意事项。
 
-## <span id="The_UWP_app_mouse_language"> </span> <span id="the_uwp_app_mouse_language"> </span> <span id="THE_UWP_APP_MOUSE_LANGUAGE"> </span>UWP 应用鼠标语言
+## <span id="The_UWP_app_mouse_language"></span><span id="the_uwp_app_mouse_language"></span><span id="THE_UWP_APP_MOUSE_LANGUAGE"></span>UWP 应用鼠标语言
 
 
 一组在整个系统中通用的简单鼠标交互功能。
@@ -98,7 +97,7 @@ template: detail.hbs
 
 - [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## <span id="Guidelines_for_visual_feedback"> </span> <span id="guidelines_for_visual_feedback"> </span> <span id="GUIDELINES_FOR_VISUAL_FEEDBACK"> </span>视觉反馈指南
+## <span id="Guidelines_for_visual_feedback"></span><span id="guidelines_for_visual_feedback"></span><span id="GUIDELINES_FOR_VISUAL_FEEDBACK"></span>视觉反馈指南
 
 
 -   当（通过移动或悬停事件）检测到鼠标时，显示特定于鼠标的 UI 以指示元素显示的功能。 如果鼠标在一定的时间段内没有移动，或者如果用户启动了触摸交互，则让鼠标 UI 逐渐淡出。 这会使 UI 干净整洁。
@@ -108,10 +107,10 @@ template: detail.hbs
 -   对于所有代表相同输入目标的元素，同时显示视觉反馈。
 -   提供用来模拟基于触摸的操作 （如平移、旋转、缩放等）提供按钮（如 + 和 -）。
 
-有关视觉反馈的更多常规指南，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
+有关视觉反馈的更一般指南，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
 
-## <span id="Cursors"> </span> <span id="cursors"> </span> <span id="CURSORS"> </span>光标
+## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>光标
 
 
 为鼠标指针提供了一组标准光标。 它们用来表示元素的主要操作。
@@ -124,9 +123,9 @@ template: detail.hbs
 -   对于可选择文本，使用文本光标（![文本光标](images/cursor-text.png)）。
 -   当主要操作是移动（如拖动或裁剪）时，使用移动光标（![移动光标](images/cursor-move.png)）。 对于主要操作是导航的元素（如“开始”菜单磁贴），不使用移动光标。
 -   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png)， ![水平调整光标](images/cursor-horizontal.png)， ![对角调整光标（左下和右上）](images/cursor-diagonal2.png)， ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
--   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)）。
+-   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 * [处理指针输入](handle-pointer-input.md)
 * [标识输入设备](identify-input-devices.md)
@@ -152,6 +151,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

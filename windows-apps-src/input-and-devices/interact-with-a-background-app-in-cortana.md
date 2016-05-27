@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 了解用户如何在执行语音命令期间通过 Cortana 语音和画布与后台应用交互。
 title: 与后台应用交互
 ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
@@ -8,8 +9,8 @@ template: detail.hbs
 
 # 使用 Cortana 与后台应用交互
 
+在执行语音命令的同时，支持用户通过 **Cortana** 画布中的语音和文本输入来与后台应用交互。
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -17,7 +18,6 @@ template: detail.hbs
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
 -   [**语音命令定义 (VCD) 元素和属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-在执行语音命令的同时，支持用户通过 **Cortana** 画布中的语音和文本输入来与后台应用交互。
 
 Cortana 支持应用完整的逐向工作流。 此工作流由应用定义，并且可以支持如下功能： 
 
@@ -37,17 +37,17 @@ Cortana 支持应用完整的逐向工作流。 此工作流由应用定义，�
 -   [创建你的第一个应用](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   借助[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)了解事件
 
-**用户体验指南：**
+**用户体验指南：  **
 
 有关如何将你的应用与 **Cortana** 集成的信息，请参阅 [Cortana 设计指南](https://msdn.microsoft.com/library/windows/apps/dn974233)；有关设计出既实用又有吸引力且支持语音的应用的有用提示，请参阅[语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)。
 
-## <span id="Feedback_strings"> </span> <span id="feedback_strings"> </span> <span id="FEEDBACK_STRINGS"> </span>反馈字符串
+## <span id="Feedback_strings"></span><span id="feedback_strings"></span><span id="FEEDBACK_STRINGS"></span>反馈字符串
 
 撰写由 **Cortana** 显示并说出的反馈字符串。
 
 [Cortana 设计指南](https://msdn.microsoft.com/library/windows/apps/dn974233)提供有关撰写 **Cortana** 字符串的建议。
 
-## <span id="Feedback_strings"> </span> <span id="feedback_strings"> </span> <span id="FEEDBACK_STRINGS"> </span>反馈字符串
+## <span id="Feedback_strings"></span><span id="feedback_strings"></span><span id="FEEDBACK_STRINGS"></span>反馈字符串
 
 内容卡可以为用户提供额外的上下文，并且有助于使反馈字符串保持简洁。
 
@@ -66,7 +66,7 @@ Cortana 支持应用完整的逐向工作流。 此工作流由应用定义，�
 
 你还可以让用户通过点击卡或应用的文本链接，在前台启动你的应用。
 
-## <span id="Completion_screen"> </span> <span id="completion_screen"> </span> <span id="COMPLETION_SCREEN"> </span>完成屏幕
+## <span id="Completion_screen"></span><span id="completion_screen"></span><span id="COMPLETION_SCREEN"></span>完成屏幕
 
 完成屏幕将向用户提供有关已完成的语音命令任务的信息。
 
@@ -174,7 +174,7 @@ private async Task SendCompletionMessageForDestination(string destination)
 }
 ```
 
-## <span id="Hand-off_screen"> </span> <span id="hand-off_screen"> </span> <span id="HAND-OFF_SCREEN"> </span>交付屏幕
+## <span id="Hand-off_screen"></span><span id="hand-off_screen"></span><span id="HAND-OFF_SCREEN"></span>交付屏幕
 
 识别语音命令后，**Cortana** 必须在大约 500 毫秒内调用 ReportSuccessAsync 和显示反馈。 如果应用服务无法在 500 毫秒内完成语音命令指定的操作，则 **Cortana** 将呈现一直显示到应用调用 ReportSuccessAsync 或最长 5 秒的交付屏幕。
 
@@ -185,7 +185,7 @@ private async Task SendCompletionMessageForDestination(string destination)
 ![Cortana 后台应用交付屏幕](images/cortana-backgroundapp-progress-result.png)
 
 
-## <span id="Progress_screen"> </span> <span id="progress_screen"> </span> <span id="PROGRESS_SCREEN"> </span>进度屏幕
+## <span id="Progress_screen"></span><span id="progress_screen"></span><span id="PROGRESS_SCREEN"></span>进度屏幕
 
 
 如果应用服务调用 ReportSuccessAsync 的时间不止 500 毫秒，**Cortana** 将向用户提供进度屏幕。 将显示应用图标，并且你必须同时提供 GUI 和 TTS 进度字符串，以指示正在主动处理该任务。
@@ -216,7 +216,7 @@ private async Task ShowProgressScreen(string message)
 }
 ```
 
-## <span id="Confirmation_screen"> </span> <span id="confirmation_screen"> </span> <span id="CONFIRMATION_SCREEN"> </span>确认屏幕
+## <span id="Confirmation_screen"></span><span id="confirmation_screen"></span><span id="CONFIRMATION_SCREEN"></span>确认屏幕
 
 
 应用服务可以在以下情况下请求确认：语音命令指定的操作不可更改，该操作具有重大的影响力，或者识别置信度不太高。
@@ -343,10 +343,10 @@ private async Task SendCompletionMessageForCancellation(string destination)
 }
 ```
 
-## <span id="Disambiguation_screen"> </span> <span id="disambiguation_screen"> </span> <span id="DISAMBIGUATION_SCREEN"> </span>消除歧义屏幕
+## <span id="Disambiguation_screen"></span><span id="disambiguation_screen"></span><span id="DISAMBIGUATION_SCREEN"></span>消除歧义屏幕
 
 
-当语音命令指定的操作具有多个可能的结果时，应用服务可以向用户请求更多信息。
+当语音命令指定的操作具有多个可能的结果时，应用服务可以通过用户请求更多信息。
 
 下面是一个 **Adventure Works** 应用的消除歧义屏幕示例。 在此示例中，用户已通过 **Cortana** 指示应用服务取消拉斯维加斯之旅。 但是，用户的拉斯维加斯之旅有两个日期不同的行程，并且应用服务必须在用户选定预定行程的情况下才能完成操作。
 
@@ -428,7 +428,7 @@ private async Task<Model.Trip> DisambiguateTrips(IEnumerable<Model.Trip> trips, 
 }
 ```
 
-## <span id="Error_screen"> </span> <span id="error_screen"> </span> <span id="ERROR_SCREEN"> </span>错误屏幕
+## <span id="Error_screen"></span><span id="error_screen"></span><span id="ERROR_SCREEN"></span>错误屏幕
 
 
 当语音命令指定的操作无法完成时，应用服务可能会提供一个错误屏幕。
@@ -450,7 +450,7 @@ var userMessage = new VoiceCommandUserMessage();
     await voiceServiceConnection.ReportFailureAsync(response);
 ```
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 **开发人员**
@@ -472,6 +472,6 @@ var userMessage = new VoiceCommandUserMessage();
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,16 +1,15 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
 title: 标识输入设备
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
-label: 标识输入设备
+label: Identify input devices
 template: detail.hbs
 ---
 
 # 标识输入设备
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
 
 **重要的 API**
 
@@ -18,10 +17,8 @@ template: detail.hbs
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
-标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
 
-
-## <span id="Retrieve_mouse_properties"> </span> <span id="retrieve_mouse_properties"> </span> <span id="RETRIEVE_MOUSE_PROPERTIES"> </span>检索鼠标属性
+## <span id="Retrieve_mouse_properties"></span><span id="retrieve_mouse_properties"></span><span id="RETRIEVE_MOUSE_PROPERTIES"></span>检索鼠标属性
 
 
 [
@@ -45,7 +42,7 @@ private void GetMouseProperties()
 }
 ```
 
-## <span id="Retrieve_keyboard_properties"> </span> <span id="retrieve_keyboard_properties"> </span> <span id="RETRIEVE_KEYBOARD_PROPERTIES"> </span>检索键盘属性
+## <span id="Retrieve_keyboard_properties"></span><span id="retrieve_keyboard_properties"></span><span id="RETRIEVE_KEYBOARD_PROPERTIES"></span>检索键盘属性
 
 
 [
@@ -61,7 +58,7 @@ private void GetKeyboardProperties()
 }
 ```
 
-## <span id="Retrieve_touch_properties"> </span> <span id="retrieve_touch_properties"> </span> <span id="RETRIEVE_TOUCH_PROPERTIES"> </span>检索触摸属性
+## <span id="Retrieve_touch_properties"></span><span id="retrieve_touch_properties"></span><span id="RETRIEVE_TOUCH_PROPERTIES"></span>检索触摸属性
 
 
 [
@@ -82,7 +79,7 @@ private void GetTouchProperties()
 }
 ```
 
-## <span id="Retrieve_pointer_properties"> </span> <span id="retrieve_pointer_properties"> </span> <span id="RETRIEVE_POINTER_PROPERTIES"> </span>检索指针属性
+## <span id="Retrieve_pointer_properties"></span><span id="retrieve_pointer_properties"></span><span id="RETRIEVE_POINTER_PROPERTIES"></span>检索指针属性
 
 
 [
@@ -179,13 +176,14 @@ private void GetPointerDevices()
     }
 ```
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 **示例**
 * [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+
 **存档示例**
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
  
@@ -197,6 +195,6 @@ private void GetPointerDevices()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: TODO
 title: 游戏板和遥控器交互
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
@@ -17,16 +18,16 @@ UWP 应用应针对这些输入设备类型进行优化，就像针对电脑上�
 
 若要使你的 UWP 应用在使用游戏板或遥控器时提供成功且有愉快的体验，你应考虑以下事项：
 
-* [硬件按钮](designing-for-tv.md#hardware-buttons) -
+* [硬件按钮](designing-for-tv.md#hardware-buttons)  -
 游戏板和遥控器提供截然不同的按钮和配置。
 
-* [XY 焦点导航和交互](designing-for-tv.md#xy-focus-navigation-and-interaction) -
+* [XY 焦点导航和交互](designing-for-tv.md#xy-focus-navigation-and-interaction)  -
 XY 焦点导航使用户可以在应用 UI 中四处导航。
 
-* [鼠标模式](designing-for-tv.md#mouse-mode) -
+* [鼠标模式](designing-for-tv.md#mouse-mode)  -
 当 XY 焦点导航有所不足时，鼠标模式可使你的应用模拟鼠标体验。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

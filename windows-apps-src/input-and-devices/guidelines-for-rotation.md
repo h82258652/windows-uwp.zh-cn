@@ -1,15 +1,13 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 本主题介绍用于旋转的新 Windows UI，并提供在 Windows 应用商店应用中使用这个新交互机制时应该考虑的用户体验指南。
 title: 旋转
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
-label: 旋转
+label: Rotation
 template: detail.hbs
 ---
 
 # 旋转
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文介绍用于旋转的新 Windows UI，并提供在 UWP 应用中使用这个新交互机制时应该考虑的用户体验指南。
 
@@ -19,12 +17,12 @@ template: detail.hbs
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>注意事项
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
 -   使用旋转可帮助用户直接旋转 UI 元素。
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指南
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
 
 **旋转概述**
@@ -85,7 +83,7 @@ Windows 8 支持三种类型的旋转：自由、受限以及组合。
 </tr>
 <tr class="odd">
 <td align="left">组合旋转</td>
-<td align="left"><p>组合旋转支持包含区域（类似于 [Guidelines for panning](guidelines-for-panning.md) 中的围栏）的自由旋转，这些区域位于受限旋转强制的每个 90 度吸附点处。 如果用户在其中一个 90 度区域之外释放对象，则对象仍然在该位置；否则，对象会自动旋转到一个对齐点。</p>
+<td align="left"><p>组合旋转支持包含区域（类似于[平移指南](guidelines-for-panning.md)中的围栏）的自由旋转，这些区域位于受限旋转强制的每个 90 度对齐点上。 如果用户在其中一个 90 度区域之外释放对象，则对象仍然在该位置；否则，对象会自动旋转到一个对齐点。</p>
 <div class="alert">
 <strong>注意</strong> 用户界面围栏是目标周围的某个区域限制向特定值或位置的移动，从而影响其选择的一项功能。
 </div>
@@ -98,7 +96,7 @@ Windows 8 支持三种类型的旋转：自由、受限以及组合。
 
  
 
-## <span id="related_topics"> </span>相关主题
+## <span id="related_topics"></span>相关主题
 
 
 **示例**
@@ -106,6 +104,7 @@ Windows 8 支持三种类型的旋转：自由、受限以及组合。
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **存档示例**
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -124,6 +123,6 @@ Windows 8 支持三种类型的旋转：自由、受限以及组合。
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

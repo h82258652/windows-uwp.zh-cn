@@ -1,15 +1,16 @@
 ---
-Description: 使用横向滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
-title: 横向滑动指南
+author: mijacobs
+Description: 使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
+title: 交叉滑动指南
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
-label: 横向滑动
+label: Cross-slide
 template: detail.hbs
 ---
 
-# 十字滑块指南
+# 交叉滑动指南
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -18,16 +19,16 @@ template: detail.hbs
 -   [**CrossSlideThresholds**](https://msdn.microsoft.com/library/windows/apps/br241941)
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
-使用横向滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
+使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>注意事项
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
 -   对在单个方向上滚动的列表或集合使用横向滑动。
 -   当点击交互用于其他目的时，可为项目选择使用横向滑动。
--   请勿使用横向滑动将项目添加到队列。
+-   不要使用横向滑动将项目添加到队列。
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指南
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
 
 仅在可以沿一个方向（垂直或水平）平移的内容区域内进行选择和拖动。 要使任何交互发挥效果，必须锁定一个平移方向，并且必须在垂直于该平移方向的方向上执行手势。
@@ -123,15 +124,15 @@ template: detail.hbs
 
 如果需要移动多个对象，则让用户选择多个项，然后同时拖动所有选中项。
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 **示例**
 * [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**存档示例**
+* [焦点视觉效果示例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **存档示例**
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [输入：触摸点击测试示例](http://go.microsoft.com/fwlink/p/?linkid=231590)
@@ -149,6 +150,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

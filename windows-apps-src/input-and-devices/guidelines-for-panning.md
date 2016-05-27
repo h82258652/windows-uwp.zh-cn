@@ -1,25 +1,24 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
 title: 平移
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
-label: 平移
+label: Panning
 template: detail.hbs
 ---
 
 # 平移指南
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
 
 **重要的 API**
 
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
 
-## <span id="Dos_and_don_ts"> </span> <span id="dos_and_don_ts"> </span> <span id="DOS_AND_DON_TS"> </span>注意事项
+
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
 **平移指示器和滚动条**
@@ -70,7 +69,7 @@ template: detail.hbs
 
     ![演示与其容器沿同一方向滚动的嵌入式可平移区域的图像。](images/scrolling-embedded3.png)
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他用法指南
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
 
 与使用鼠标滚动类似，通过一个或多个手指轻扫或滑动，以使用触控进行平移。 平移交互与滚动鼠标滚轮或滑动滚动框而不是单击滚动条最为相似。 除了在 API 中进行区别，或受到特定于设备的 Windows UI 要求以为，我们将两种交互都称为平移。
@@ -100,8 +99,7 @@ Windows 8 支持三种类型的平移：
 
 平移的交互体验对于每种输入装置有所不同，但提供类似的功能。
 
-**可平移的区域**
-可平移的区域将在开发人员设计使用 JavaScript 的 Windows 应用商店应用时通过级联样式表 (CSS) 进行展示。
+**可平移的区域** 开发人员将在设计时通过级联样式表 (CSS)将可平移的区域公开到使用 JavaScript 的 Windows 应用商店应用。
 
 基于检测到的输入设备，存在两种平移显示模式：
 
@@ -112,16 +110,14 @@ Windows 8 支持三种类型的平移：
 
  
 
-**平移指示器**
-平移指示器类似于滚动条中的滚动框。 它们指示所显示内容与全部可平移区域的比例以及所显示内容在可平移区域中的相对位置。
+**平移指示器** 平移指示器类似于滚动条中的滚动框。 它们指示所显示内容与全部可平移区域的比例以及所显示内容在可平移区域中的相对位置。
 
 下图显示了两个长度不同的可平移区域及其平移指示器。
 
 ![显示两个长度不同的可平移区域及其平移指示器的图像。](images/scrolling-indicators.png)
 
-**平移行为**
-**吸附点**
-在抬起触摸接触时，使用轻扫手势平移可以将惯性行为引入交互。 无需用户直接输入，内容将借助惯性继续平移，直到达到某些距离阈值为止。 使用吸附点修改此类惯性行为。
+**平移行为** 
+           **吸附点** 在抬起触摸接触时，使用轻扫手势平移可以将惯性行为引入交互。 无需用户直接输入，内容将借助惯性继续平移，直到达到某些距离阈值为止。 使用吸附点修改此类惯性行为。
 
 吸附点可以在你的应用内容中指定逻辑停止。 从认知的角度看，在较大的可平移区域中，吸附点为用户充当分页机制，并尽量减少因过度滑动或轻扫而带来的疲劳。 借助它们，你可以处理不精确的用户输入，并确保在视口中显示内容或关键信息的特定子集。
 
@@ -141,8 +137,7 @@ Windows 8 支持三种类型的平移：
 
  
 
-**围栏**
-内容可能宽于和高于屏幕设备的尺寸和分辨率。 因此，经常需要进行二维平移（水平和垂直）。 在此类情况下，围栏可以通过强调沿运动轴（垂直或水平）平移来改善用户体验。
+**围栏** 内容可能宽于和高于屏幕设备的尺寸和分辨率。 因此，经常需要进行二维平移（水平和垂直）。 在此类情况下，围栏可以通过强调沿运动轴（垂直或水平）平移来改善用户体验。
 
 下图演示了围栏的概念。
 
@@ -164,17 +159,19 @@ Windows 8 支持三种类型的平移：
 
 本指南也可用于相册或地图应用，这些应用支持在单个图像或地图中进行不受约束的平移，同时还支持相册中的单轴平移（转到上一个或下一个图像）或详细信息区域中的单轴平移。 在提供对应自由形式的平移图像或地图的详细信息或选项区域的应用中，我们建议使用详细信息和选项区域开始进行页面布局，因为图像或地图的不受约束的平移区域可能会干扰向详细信息区域平移。
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 * [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/mt185599)
 * [优化 ListView 和 GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
 * [键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/mt244347)
+
 **示例**
 * [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **存档示例**
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -193,6 +190,6 @@ Windows 8 支持三种类型的平移：
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

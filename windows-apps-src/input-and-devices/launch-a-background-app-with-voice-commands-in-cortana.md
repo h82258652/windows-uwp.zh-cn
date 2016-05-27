@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 除了在 Cortana 内使用语音命令访问系统功能外，你还可以使用可指定要在应用内执行的操作或命令的语音命令，通过后台应用中的特性和功能扩展 Cortana。
 title: 在 Cortana 中使用语音命令启动后台应用
 ms.assetid: DF5B530C-57DD-4CA5-B3BE-1A0B3695C9C6
@@ -8,16 +9,14 @@ template: detail.hbs
 
 # 通过 Cortana 使用语音命令激活后台应用
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+除了在 **Cortana** 内使用语音命令访问系统功能外，你还可以使用可指定要执行的操作或命令的语音命令，通过应用（作为后台任务）中的特性和功能扩展 **Cortana**。 当应用在后台处理语音命令时，它不会获得焦点。 相反，它会通过 **Cortana** 画布和 **Cortana** 语音返回所有反馈和结果。
 
 **重要的 API**
 
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
 -   [**VCD 元素和属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-除了在 **Cortana** 内使用语音命令访问系统功能外，你还可以使用可指定要执行的操作或命令的语音命令，通过应用（作为后台任务）中的特性和功能扩展 **Cortana**。 当应用在后台处理语音命令时，它不会获得焦点。 相反，它会通过 **Cortana** 画布和 **Cortana** 语音返回所有反馈和结果。
+
 
 应用可以在前台激活（应用获取焦点），也可以在后台激活（**Cortana** 保留焦点），具体取决于交互的复杂程度。 例如，需要其他上下文或用户输入（例如将消息发送给特定联系人）的语音命令最好通过前台应用处理，而基本命令（如列出即将到来的旅行）可以通过后台应用使用 **Cortana** 处理。
 
@@ -50,48 +49,48 @@ template: detail.hbs
 4.  处理应用服务的后台激活和语音命令的执行。
 5.  在 **Cortana** 内显示并说出对语音命令的相应反馈。
 
-**先决条件：**
+**先决条件：  **
 
 如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请仔细阅读这些主题来熟悉此处讨论的技术。
 
 -   [创建你的第一个应用](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   借助[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)了解事件
 
-**用户体验指南：**
+**用户体验指南：  **
 
 有关如何将你的应用与 **Cortana** 集成的信息，请参阅 [Cortana 设计指南](https://msdn.microsoft.com/library/windows/apps/dn974233)；有关设计出既实用又有吸引力且支持语音的应用的有用提示，请参阅[语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)。
 
-## <span id="Create_a_new_solution_with_a_primary_project_in_Visual_Studio"> </span> <span id="create_a_new_solution_with_a_primary_project_in_visual_studio"> </span> <span id="CREATE_A_NEW_SOLUTION_WITH_A_PRIMARY_PROJECT_IN_VISUAL_STUDIO"> </span>使用主项目在 Visual Studio 中创建一个新解决方案
+## <span id="Create_a_new_solution_with_a_primary_project_in_Visual_Studio"></span><span id="create_a_new_solution_with_a_primary_project_in_visual_studio"></span><span id="CREATE_A_NEW_SOLUTION_WITH_A_PRIMARY_PROJECT_IN_VISUAL_STUDIO"></span>使用主项目在 Visual Studio 中创建一个新解决方案
 
 
 1.  启动 Microsoft Visual Studio 2015。
 
     将出现 Visual Studio 2015 起始页。
 
-2.  在“文件”****菜单上，依次选择“新建”****>“项目”****。
+2.  在“文件”****菜单上，依次选择“新建”**** > “项目”****。
 
     会出现“新建项目”****对话框。 可以在对话框的左侧窗格中选择要显示模板的类型。
 
-3.  在左侧窗格中，依次展开**“已安装”>“模板”>“Visual C\#”>“Windows”**，然后选取**“通用”**模板组。 对话框的中心窗格会显示适用于通用 Windows 平台 (UWP) 应用的项目模板的列表。
+3.  在左侧窗格中，依次展开**“已安装”&gt;“模板”&gt;“Visual C\#”&gt;“Windows”**，然后选取**“通用”**模板组。 对话框的中心窗格会显示适用于通用 Windows 平台 (UWP) 应用的项目模板的列表。
 4.  在中心窗格中，选择“空白应用(通用 Windows)”****模板。
 
     “空白应用”****模板会创建一个最基本的 UWP 应用，该应用可以编译和运行，但不包含任何用户界面控件或数据。 本教程将指导你向该应用添加控件。
 
 5.  在**“名称”**文本框中，键入项目名称。 在此示例中，我们使用“AdventureWorks”。
-6.  单击**“确定”**可创建项目。
+6.  单击“确定”****可创建项目。
 
-    Microsoft Visual Studio 将创建项目并在**“解决方案资源管理器”**中显示该项目。
+    Microsoft Visual Studio 将创建项目并在“解决方案资源管理器”****中显示该项目。
 
 
-## <span id="Add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"> </span> <span id="add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"> </span> <span id="ADD_IMAGE_ASSETS_TO_PRIMARY_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"> </span>将图像资源添加到主项目，并在应用清单中指定它们
+## <span id="Add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"></span><span id="add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"></span><span id="ADD_IMAGE_ASSETS_TO_PRIMARY_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"></span>将图像资源添加到主项目，并在应用清单中指定它们
       
 UWP 应用可以基于特定设置和设备功能（高对比度、有效像素、区域设置等）自动选择最合适的图像。 你只需提供图像，并确保在不同资源版本的应用项目中使用相应的命名约定和文件夹组织。 如果未能提供推荐的资源版本，辅助功能、本地化和图像质量将受到影响，具体取决于用户首选项、功能、设备类型和位置。
 
-有关高对比度和比例系数的图像资源的更多详细信息，请参阅[磁贴和图标资源指南](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)。
+有关高对比度和比例系数的图像资源的更多详细信息，请参阅[磁贴和图标资源指南](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)。
 
 使用限定符命名资源。 资源限定符是一种文件夹和文件名修饰符，可标识应使用一种特定资源版本的上下文。
 
-标准命名约定是 `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`。 例如，`images/en-US/logo.scale-100_contrast-white.png`，可以在代码中仅使用根文件夹和文件名指代：`images/logo.png`。 请参阅[如何使用限定符命名资源](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965324.aspx)。
+标准命名约定是 `foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext`。 例如，`images/en-US/logo.scale-100_contrast-white.png`，可以在代码中仅使用根文件夹和文件名指代：`images/logo.png`。 请参阅[如何使用限定符命名资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx)。
 
 我们建议在字符串资源文件（如 `en-US\resources.resw`）上标记默认语言，在图像（如 `logo.scale-100.png`）上标记默认比例系数，即使你当前不计划提供本地化或多种分辨率的资源也是如此。 但是，我们建议你至少为 100、200 和 400 比例系数提供资源。
 
@@ -119,26 +118,26 @@ destinationTile.Image =
     new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
 ```
 
-## <span id="Create_an_app_service_project"> </span> <span id="create_an_app_service_project"> </span> <span id="CREATE_AN_APP_SERVICE_PROJECT"> </span>创建应用服务项目
+## <span id="Create_an_app_service_project"></span><span id="create_an_app_service_project"></span><span id="CREATE_AN_APP_SERVICE_PROJECT"></span>创建应用服务项目
 
 <ol>
     <li>
-    Right-click your Solution name, select **New > Project**.
+    右键单击解决方案名称，然后依次选择“新建”&gt;“项目”****。
     </li>
     <li>
-    Under **Installed > Templates > Visual C# > Windows > Universal**, select **Windows Runtime Component**. This is the component that implements the app service (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**).
+    在“已安装”&gt;“模板”&gt;“Visual C#”&gt;“Windows”&gt;“通用”****下，选择“Windows 运行时组件”****。 这是实现应用服务的组件 (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**)。
     </li>
     <li>
-    Type a name for the project (for example, "VoiceCommandService") and click **OK**.
+    键入项目的名称（例如“VoiceCommandService”），然后单击“确定”****。
     </li>
     <li>
-    In **Solution Explorer**, select the "VoiceCommandService" project and rename the "Class1.cs" file generated by Visual Studio. For the **Adventure Works** example we use "AdventureWorksVoiceCommandService.cs".
+    在“解决方案资源管理器”****中，选择“VoiceCommandService”项目，并为 Visual Studio 生成的“Class1.cs”文件重命名。 对于 **Adventure Works** 示例，我们使用“AdventureWorksVoiceCommandService.cs”。
     </li>
     <li>
-    Click **Yes** when asked if you want to rename all occurrences of "Class1.cs". 
+    在询问你是否要重命名“Class1.cs”的所有实例时，单击“是”****。 
     </li>
     <li>
-    In the "AdventureWorksVoiceCommandService.cs" file:
+    在“AdventureWorksVoiceCommandService.cs”文件中：
         <ol type="i">
  <li>
  添加以下 using 指令。  
@@ -151,7 +150,7 @@ destinationTile.Image =
  在“解决方案资源管理器”中，右键单击该应用服务项目名称，然后选择**“属性”**。 
  </li>
  <li>
- 在**“库”**选项卡上，使用此相同值更新**“默认命名空间”**字段（在此示例中为“AdventureWorks.VoiceCommands”）。 
+ 在“库”****选项卡上，使用此相同值更新“默认命名空间”****字段（在此示例中为“AdventureWorks.VoiceCommands”）。 
  </li>
  <li>
  创建一个用于实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的新类。 此类需要一个 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法，该方法是 Cortana 识别语音命令时的入口点。 
@@ -161,7 +160,7 @@ destinationTile.Image =
 </ol>
 
 以下是 **Adventure Works** 应用中的基本后台任务类。 稍后我们将补充更多详细信息。
-> **注意**   
+> **注意**    
 > 后台任务类本身和后台任务项目中的所有其他类都需要是密封公共类。
  
 ``` csharp
@@ -184,7 +183,7 @@ namespace AdventureWorks.VoiceCommands
         /// Background tasks must respond to activation by Cortana within 0.5 seconds, and must 
         /// report progress to Cortana every 5 seconds (unless Cortana is waiting for user
         /// input). There is no execution time limit on the background task managed by Cortana,
-        /// but developers should use plmdebug (https://msdn.microsoft.com/en-us/library/windows/hardware/jj680085%28v=vs.85%29.aspx)
+        /// but developers should use plmdebug (https://msdn.microsoft.com/library/windows/hardware/jj680085%28v=vs.85%29.aspx)
         /// on the Cortana app package in order to prevent Cortana timing out the task during
         /// debugging.
         /// 
@@ -211,36 +210,36 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="7">
     <li>
-    Declare your background task as an **AppService** in the app manifest.
+    在应用清单中将后台任务声明为 **AppService**。
     <ol type="i">
         <li>
-        In **Solution Explorer**, right click the "Package.appxmanifest" file and select **View Code**. 
+        在“解决方案资源管理器”****中，右键单击“Package.appxmanifest”文件，然后选择“查看代码”****。 
         </li>
         <li>
-        Find the [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) element.
+        找到 [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 元素。
         </li>
         <li>
-        Add an [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) element to the [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) element.
+        将 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 元素添加到 [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 元素。
         </li>
         <li>
-        Add a [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) element to the [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) element.
+        将 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素添加到 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 元素。
         </li>
         <li>将 **Category** 属性添加到 **uap:Extension** 元素，并将 **Category** 属性的值设置为“windows.appService”。
         </li>
         <li>
-        Add an **EntryPoint** attribute to the **uap:Extension** element and set the value of the **EntryPoint** attribute to the name of the class that implements [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), in this case "AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService".
+        将 **EntryPoint** 属性添加到 **uap:Extension** 元素，并将 **EntryPoint** 属性的值设置为实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 的类的名称，在本例中为“AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService”。
         </li>
         <li>
-        Add a [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) element to the **uap:Extension** element.
+        将 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素添加到 **uap:Extension** 元素。
         </li>
         <li>
-        Add a **Name** attribute to the [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) element and set the value of the **Name** attribute to a name for the app service, in this case "AdventureWorksVoiceCommandService".
+        将 **Name** 属性添加到 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素，并将 **Name** 属性的值设置为应用服务的名称，在本例中为“AdventureWorksVoiceCommandService”。
         </li>
         <li>
-        Add a second [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) element to [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
+        将第二个 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素添加到 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720)。
         </li>
         <li>
-        Add a **Category** attribute to this [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) element and set the value of the **Category** attribute to "windows.personalAssistantLaunch".
+        将 **Category** 属性添加到此 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素，并将 **Category** 属性的值设置为“windows.personalAssistantLaunch”。
         </li>
     </li> 
     </ol>
@@ -268,42 +267,42 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="8">
     <li>
-    Add this app service project as a reference in the primary project. 
+    在主项目中将此应用服务项目添加为引用。 
     <ol type="i">
         <li>
-        Right click **References**. 
+        右键单击“引用”****。 
         </li>
         <li>
-        Select **Add Reference...** 
+        选择“添加引用...”**** 
         </li>
         <li>
-        In the **Reference Manager** dialog, expand **Projects** and select the app service project. 
+        在“引用管理器”****对话框中，展开“项目”****并选择应用服务项目。 
         </li>
         <li>
-        Click OK. 
+        单击“确定”。 
         </li>
     </ol>
     </li>
 </ol>
 
-## <span id="Create_a_VCD_file"> </span> <span id="create_a_vcd_file"> </span> <span id="CREATE_A_VCD_FILE"> </span>创建 VCD 文件
+## <span id="Create_a_VCD_file"></span><span id="create_a_vcd_file"></span><span id="CREATE_A_VCD_FILE"></span>创建 VCD 文件
 
 
-1. 在 Visual Studio 中，右键单击你的主项目名称，然后依次选择**“添加”>“新建项目”**。 添加 **XML 文件**。
+1. 在 Visual Studio 中，右键单击你的主项目名称，然后依次选择“添加”&gt;“新建项目”****。 添加 **XML 文件**。
 2. 为 [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 文件键入名称（在本示例中为“AdventureWorksCommands.xml”），然后单击“添加”。 
-3. 在**“解决方案资源管理器”**中，选择 [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 文件。
-4.  在**“属性”**窗口中，将**“生成操作”**设置为**“内容”**，然后将**“复制到输出目录”**设置为**“如果较新则复制”**。
+3. 在“解决方案资源管理器”****中，选择 [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 文件。
+4.  在“属性”****窗口中，将“生成操作”****设置为“内容”****，然后将“复制到输出目录”****设置为“如果较新则复制”****。
 
-## <span id="Edit_the_VCD_file"> </span> <span id="edit_the_vcd_file"> </span> <span id="EDIT_THE_VCD_FILE"> </span>编辑 VCD 文件
+## <span id="Edit_the_VCD_file"></span><span id="edit_the_vcd_file"></span><span id="EDIT_THE_VCD_FILE"></span>编辑 VCD 文件
 
-1. 添加一个带有指向“http://schemas.microsoft.com/voicecommands/1.2”的 **xmlns** 属性的 **VoiceCommands** 元素。
+1. 添加带有 **xmlns** 属性的 **VoiceCommands** 元素，该属性指向 `http://schemas.microsoft.com/voicecommands/1.2`。
 
 2. 针对你的应用支持的每种语言，创建一个包含你的应用支持的语音命令的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 元素。
 
   你可以声明多个 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 元素，每个都带有不同的 [**xml:lang**](https://msdn.microsoft.com/library/windows/apps/dn722331) 属性以使你的应用可用于不同的市场。 例如，用于美国的应用可能有一个英语版本的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 和一个西班牙语版本的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331)。
 
   >  **注意**  
-  为了激活应用并使用语音命令启动操作，该应用必须注册一个 VCD 文件，此文件包含带有与用户为其设备选择的语音语言相匹配的语言的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331)。 语音语言位于**“设置”>“系统”>“语音”>“语音语言”**中。
+  为了激活应用并使用语音命令启动操作，该应用必须注册一个 VCD 文件，此文件包含带有与用户为其设备选择的语音语言相匹配的语言的 [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331)。 语音语言位于“设置”&gt;“系统”&gt;“语音”&gt;“语音语言”****中。
 
 3. 为要支持的每个命令添加 **Command** 元素。
 
@@ -311,7 +310,7 @@ namespace AdventureWorks.VoiceCommands
             **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) 文件中声明的每个 **Command** 都必须包含以下信息：
 
   - 你的应用程序用于在运行时标识语音命令的 **Name** 属性。 
-  - **Example** 元素，其中包含一个描述用户可以如何调用命令的短语。 当用户说“我能说什么？”、“帮助”或当他们点击**“查看详细信息”**时，**Cortana** 会显示此示例。    
+  - **Example** 元素，其中包含一个描述用户可以如何调用命令的短语。 当用户说“我能说什么？”、“帮助”或当他们点击“查看详细信息”****时，**Cortana** 会显示此示例。    
   -   **ListenFor** 元素，其中包含你的应用识别为命令的字词或短语。 每个 **ListenFor** 元素都可以包含对一个或多个包含与该命令相关的特定字词的 **PhraseList** 元素的引用。
   > **注意**  
   **ListenFor** 元素无法以编程方式修改。 但是，与 **ListenFor** 元素相关联的 **PhraseList** 元素可以以编程方式修改。 应用程序应该基于用户在使用应用时所生成的数据集在运行时修改 **PhraseList** 的内容。 请参阅[动态修改语音命令定义 (VCD) 短语列表](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)。
@@ -366,7 +365,7 @@ namespace AdventureWorks.VoiceCommands
   </CommandSet>
 ```
 
-## <span id="Install_the_VCD_commands"> </span> <span id="install_the_vcd_commands"> </span> <span id="INSTALL_THE_VCD_COMMANDS"> </span>安装 VCD 命令
+## <span id="Install_the_VCD_commands"></span><span id="install_the_vcd_commands"></span><span id="INSTALL_THE_VCD_COMMANDS"></span>安装 VCD 命令
 
 你的应用必须运行一次才能安装 VCD。 
 
@@ -411,33 +410,34 @@ try
 catch (Exception ex)
 {
   System.Diagnostics.Debug.WriteLine("Installing Voice Commands Failed: " + ex.ToString());
-}```
+}
+```
 
-## <span id="Handle_activation_and_execute_voice_commands"></span><span id="handle_activation_and_execute_voice_commands"></span><span id="HANDLE_ACTIVATION_AND_EXECUTE_VOICE_COMMANDS"></span>Handle activation
+## <span id="Handle_activation_and_execute_voice_commands"></span><span id="handle_activation_and_execute_voice_commands"></span><span id="HANDLE_ACTIVATION_AND_EXECUTE_VOICE_COMMANDS"></span>处理激活
 
-Specify how your app responds to subsequent voice command activations (after it has been launched at least once and the voice command sets have been installed).
+指定你的应用如何响应后续语音命令激活（至少启动一次应用并安装语音命令集之后）。
 
-1.  Confirm that your app was activated by a voice command.
+1.  确认你的应用已通过语音命令激活。
 
-    Override the [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event and check whether [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) is [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693).
+    替代 [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件并检查 [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 是否是 [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693)。
 
-2.  Determine the name of the command and what was spoken.
+2.  确定命令名称和说出的内容。
 
-    Get a reference to a [**VoiceCommandActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn609755) object from the [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727) and query the [**Result**](https://msdn.microsoft.com/library/windows/apps/dn609758) property for a [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) object.
+    从 [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727) 中获取对 [**VoiceCommandActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn609755) 对象的引用并查询 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 对象的 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn609758) 属性。
 
-    To determine what the user said, check the value of [**Text**](https://msdn.microsoft.com/library/windows/apps/dn631441) or the semantic properties of the recognized phrase in the [**SpeechRecognitionSemanticInterpretation**](https://msdn.microsoft.com/library/windows/apps/dn631443) dictionary.
+    若要确定用户说出的内容，请在 [**SpeechRecognitionSemanticInterpretation**](https://msdn.microsoft.com/library/windows/apps/dn631443) 字典中检查 [**Text**](https://msdn.microsoft.com/library/windows/apps/dn631441) 的值或已识别短语的语义式属性。
 
-3.  Take the appropriate action in your app, such as navigating to the desired page.
+3.  在应用中执行相应的操作，如导航到所需页面。
 
-For this example, we refer back to the VCD in Step 3: Edit the VCD file.
+对于此示例，我们可重新参考“步骤 3：编辑 VCD 文件”中的 VCD。
 
-Once we get the speech-recognition result for the voice command, we get the command name from the first value in the [**RulePath**](https://msdn.microsoft.com/library/windows/apps/dn631438) array. As the VCD file defined more than one possible voice command, we need to compare the value against the command names in the VCD and take the appropriate action.
+一旦我们得到语音命令对应的语音识别结果，我们会从 [**RulePath**](https://msdn.microsoft.com/library/windows/apps/dn631438) 数组中的第一个值获取命令名称。 由于 VCD 文件定义了多个可能的语音命令，因此我们需要将该值与 VCD 中的命令名称进行比较，并执行相应的操作。
 
-The most common action an application can take is to navigate to a page with content relevant to the context of the voice command. For this example, we navigate to a **TripPage** page and pass in the value of the voice command, how the command was input, and the recognized "destination" phrase (if applicable). Alternatively, the app could send a navigation parameter to the [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) when navigating to the page.
+应用程序可执行的最常见操作是导航到带有与该语音命令的上下文相关的内容的页面。 对于此示例，我们导航到“TripPage”****页面并提交语音命令的值、输入命令的方式以及已识别的“目标”短语（如果适用）。 此外，应用可在导航到该页面时将导航参数发送到 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432)。
 
-You can find out whether the voice command that launched your app was actually spoken, or whether it was typed in as text, from the [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.microsoft.com/library/windows/apps/dn631445) dictionary using the **commandMode** key. The value of that key will be either "voice" or "text". If the value of the key is "voice", consider using speech synthesis ([**Windows.Media.SpeechSynthesis**](https://msdn.microsoft.com/library/windows/apps/dn278951)) in your app to provide the user with spoken feedback.
+你可以查明实际是否已说出已启动应用的语音命令，或者是否已使用 **commandMode** 注册表项从 [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.microsoft.com/library/windows/apps/dn631445) 字典中以文本形式将其键入。 该注册表项的值将为“voice”或“text”。 如果该注册表项的值为“voice”，请考虑在应用中使用语音合成 ([**Windows.Media.SpeechSynthesis**](https://msdn.microsoft.com/library/windows/apps/dn278951)) 向用户提供语音反馈。
 
-Use the [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.microsoft.com/library/windows/apps/dn631445) to find out the content spoken in the **PhraseList** or **PhraseTopic** constraints of a **ListenFor** element. The dictionary key is the value of the **Label** attribute of the **PhraseList** or **PhraseTopic** element. Here, we show how to access the value of **{destination}** phrase.
+使用 [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.microsoft.com/library/windows/apps/dn631445) 找出在 **ListenFor** 元素的 **PhraseList** 或 **PhraseTopic** 约束中说出的内容。 该字典密钥是 **PhraseList** 或 **PhraseTopic** 元素的 **Label** 属性的值。 下面我们介绍如何访问 **{destination}** 短语的值。
 
 ``` csharp
 /// <summary>
@@ -565,7 +565,7 @@ private string SemanticInterpretation(string interpretationKey, SpeechRecognitio
 }
 ```
 
-## <span id="Handle_the_voice_command_in_the_app_service"> </span> <span id="handle_the_voice_command_in_the_app_service"> </span> <span id="HANDLE_THE_VOICE_COMMAND_IN_THE_APP_SERVICE"> </span>在应用服务中处理语音命令
+## <span id="Handle_the_voice_command_in_the_app_service"></span><span id="handle_the_voice_command_in_the_app_service"></span><span id="HANDLE_THE_VOICE_COMMAND_IN_THE_APP_SERVICE"></span>在应用服务中处理语音命令
 
 
 在应用服务中处理语音命令。
@@ -740,7 +740,7 @@ public sealed class VoiceCommandService : IBackgroundTask
 
 ![在后台使用 Adventure Works 应用的进度基本查询和结果屏幕](images/cortana-backgroundapp-progress-result.png)
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 **开发人员**
@@ -768,6 +768,6 @@ public sealed class VoiceCommandService : IBackgroundTask
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

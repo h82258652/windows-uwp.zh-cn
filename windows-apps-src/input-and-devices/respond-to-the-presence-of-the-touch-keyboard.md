@@ -1,15 +1,15 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 了解如何在显示或隐藏触摸键盘时定制你的应用 UI。
 title: 响应触摸键盘的存在
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
-label: 响应触摸键盘的存在
+label: Respond to the presence of the touch keyboard
 template: detail.hbs
 ---
 
 # 响应触摸键盘的存在
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+了解如何在显示或隐藏触摸键盘时定制你的应用 UI。
 
 
 **重要的 API**
@@ -17,11 +17,11 @@ template: detail.hbs
 -   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
 -   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
 
-了解如何在显示或隐藏触摸键盘时定制你的应用 UI。
+
 
 ![默认布局模式中的触摸键盘](images/touchkeyboard-standard.png)
 
-<sup>\\默认\\布局\\模式\\中的\\触摸\\键盘</sup>
+<sup>\\ 默认\\ 布局\\ 模式中\\ 的触摸\\ 键盘\\</sup>
 
 对于支持触摸的设备，触摸键盘支持文本输入。 当用户点击可编辑的输入字段时，通用 Windows 平台 (UWP) 文本输入控件会默认调用触摸键盘。 当用户在表单的控件之间导航时，触摸键盘通常保持可见，不过此行为可能因表单内其他控件类型的不同而有所不同。
 
@@ -29,7 +29,7 @@ template: detail.hbs
 
 在此支持添加到你的自定义控件后，你便可以对触摸键盘的存在做出适当的响应。
 
-**先决条件：**
+**先决条件：  **
 
 本主题基于[键盘交互](keyboard-interactions.md)生成。
 
@@ -40,14 +40,14 @@ template: detail.hbs
 -   [创建你的第一个应用](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   借助[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)了解事件
 
-**用户体验指南：**
+**用户体验指南：  **
 
 有关于设计出既实用又有吸引力且已针对键盘输入进行优化的应用的有用提示，请参阅[键盘设计指南](https://msdn.microsoft.com/library/windows/apps/hh972345)。
 
-## <span id="Touch_keyboard_and_a_custom_UI"> </span> <span id="touch_keyboard_and_a_custom_ui"> </span> <span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"> </span>触摸键盘和自定义 UI
+## <span id="Touch_keyboard_and_a_custom_UI"></span><span id="touch_keyboard_and_a_custom_ui"></span><span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"></span>触摸键盘和自定义 UI
 
 
-下面是关于自定义文本输入控件的一些基本建议。
+下面是关于自定义的文本输入控件的一些基本建议。
 
 -   在与表单的整个交互中显示触摸键盘。
 
@@ -67,7 +67,7 @@ template: detail.hbs
 
     ![包含应始终位于视图中的区域的表单](images/touch-keyboard-pan2.png)
 
-## <span id="handling_events"> </span> <span id="HANDLING_EVENTS"> </span>处理 Showing 和 Hiding 事件
+## <span id="handling_events"></span><span id="HANDLING_EVENTS"></span>处理 Showing 和 Hiding 事件
 
 
 下面是关于附加触摸键盘的 [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) 和 [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) 事件的事件处理程序的示例。
@@ -120,9 +120,7 @@ public class MyApplication
 }
 ```
 
-## <span id="related_topics"> </span>相关文章
-
-
+## <span id="related_topics"></span>相关文章
 
 * [键盘交互](keyboard-interactions.md)
 * [键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -143,6 +141,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

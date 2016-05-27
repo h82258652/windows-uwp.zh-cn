@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 通过语音命令扩展 Cortana 的基本功能，这些命令用于在外部应用程序中启动并执行一个单独操作。
 title: Cortana 交互
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
@@ -9,7 +10,7 @@ template: detail.hbs
 # UWP 应用中的 Cortana 交互
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 通过语音命令扩展 **Cortana** 的基本功能，这些命令用于在外部应用程序中启动并执行一个单独操作。 
 
@@ -41,36 +42,36 @@ template: detail.hbs
 <thead>
 <tr class="header">
 <th align="left">文章</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Design guidelines](cortana-design-guidelines.md)</p></td>
+<td align="left"><p>[设计指南](cortana-design-guidelines.md)</p></td>
 <td align="left"><p>这些指南和建议描述了你的应用可以如何充分利用 **Cortana** 与用户交互、帮助他们完成任务，以及清楚地表明一切是如何发生的。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Launch a foreground app with voice commands](launch-a-foreground-app-with-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>[使用语音命令启动前台应用](launch-a-foreground-app-with-voice-commands-in-cortana.md)</p></td>
 <td align="left"><p>除了在 <strong>Cortana</strong> 内使用语音命令访问系统功能以外，你还可以通过 <strong>Cortana</strong> 使用语音命令启动前台应用并在应用内指定某个要执行的操作或命令。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Dynamically modify VCD phrase lists](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)</p></td>
+<td align="left"><p>[动态修改 VCD 短语列表](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)</p></td>
 <td align="left"><p>了解如何在运行时使用语音识别结果的 VCD 文件中访问和更新受支持短语（<strong>PhraseList</strong> 元素）的列表。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Launch a background app with voice commands](launch-a-background-app-with-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>[使用语音命令启动后台应用](launch-a-background-app-with-voice-commands-in-cortana.md)</p></td>
 <td align="left"><p>除了在 <strong>Cortana</strong> 内使用语音命令访问系统功能，你还可以使用可指定要在应用内执行的操作或命令的语音命令，通过后台应用中的特性和功能扩展 <strong>Cortana</strong>。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Interact with a background app](interact-with-a-background-app-in-cortana.md)</p></td>
+<td align="left"><p>[与后台应用交互](interact-with-a-background-app-in-cortana.md)</p></td>
 <td align="left"><p>了解用户如何在执行语音命令期间通过 <strong>Cortana</strong> 语音和 Canvas 与后台应用交互。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Deep link to a background app](deep-link-into-your-app-from-cortana.md)</p></td>
+<td align="left"><p>[到后台应用的深层链接](deep-link-into-your-app-from-cortana.md)</p></td>
 <td align="left"><p>从 <strong>Cortana</strong> 中的后台应用服务提供深层链接，以便在特定状态或上下文中将应用启动到前台。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Support natural language voice commands](support-natural-language-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>[支持自然语言形式的语音命令](support-natural-language-voice-commands-in-cortana.md)</p></td>
 <td align="left"><p>了解如何使用更灵活、更自然的语音命令扩展 <strong>Cortana</strong>，以便用户可以在命令中的任何位置说出应用名称。</p></td>
 </tr>
 </tbody>
@@ -78,7 +79,7 @@ template: detail.hbs
 
  
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 * [**VCD 元素和属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
@@ -98,6 +99,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

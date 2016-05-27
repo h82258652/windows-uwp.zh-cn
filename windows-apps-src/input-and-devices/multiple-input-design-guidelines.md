@@ -1,16 +1,13 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 正如人们在彼此交流时会结合使用语音和手势，在与应用交互时也会用到多种类型和模式的输入。
 title: 多个输入设计指南
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
-label: 多个输入
+label: Multiple inputs
 template: detail.hbs
 ---
 
 # 多个输入
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 正如人们在彼此交流时会结合使用语音和手势，在与应用交互时也会用到多种类型和模式的输入。
 
@@ -23,26 +20,26 @@ template: detail.hbs
 -   所有输入方式都一直受支持吗？ 需使用某些控件？ 需在特定时间或环境下使用？
 -   是否有输入法优先？
 
-## <span id="Single__or_exclusive_-mode_interactions_"> </span> <span id="single__or_exclusive_-mode_interactions_"> </span> <span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"> </span>单一（或独占）模式交互
+## <span id="Single__or_exclusive_-mode_interactions_"></span><span id="single__or_exclusive_-mode_interactions_"></span><span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"></span>单一（或独占）模式交互
 
 
-借助单一模式交互，可支持多种输入类型，但每个操作只能使用一种。 例如，将语音识别用于命令，而将手势用于导航；或者将触摸或手势用于文本输入，具体取决于邻近感应。
+借助单一模式交互，可支持多种输入类型，但每次操作只能使用一种。 例如，将语音识别用于命令，而将手势用于导航；或者将触摸或手势用于文本输入，具体取决于邻近感应。
 
-## <span id="Multimodal_interactions"> </span> <span id="multimodal_interactions"> </span> <span id="MULTIMODAL_INTERACTIONS"> </span>多模式交互
+## <span id="Multimodal_interactions"></span><span id="multimodal_interactions"></span><span id="MULTIMODAL_INTERACTIONS"></span>多模式交互
 
 
 借助多模式交互，多个输入法将依次用于完成某一操作。
 
-<span id="Speech___gesture"> </span> <span id="speech___gesture"> </span> <span id="SPEECH___GESTURE"> </span>语音 + 手势  
+<span id="Speech___gesture"></span><span id="speech___gesture"></span><span id="SPEECH___GESTURE"></span>语音 + 手势  
 用户指向某一产品，然后说出“添加到购物车”。
 
-<span id="Speech___touch"> </span> <span id="speech___touch"> </span> <span id="SPEECH___TOUCH"> </span>语音 + 触摸  
+<span id="Speech___touch"></span><span id="speech___touch"></span><span id="SPEECH___TOUCH"></span>语音 + 触摸  
 用户通过长按选择照片，然后说出“发送照片”。
 
 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

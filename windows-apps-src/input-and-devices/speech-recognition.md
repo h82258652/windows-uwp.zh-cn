@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 使用语音识别提供输入内容、指定操作或命令并完成任务。
 title: 语音识别
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
@@ -8,8 +9,6 @@ template: detail.hbs
 
 # 语音识别
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用语音识别提供输入内容、指定操作或命令并完成任务。
 
@@ -22,16 +21,16 @@ template: detail.hbs
 语音识别由以下部分构成：语音运行时、用于为运行时编程的识别 API、用于听写和 Web 搜索的现成语法，以及帮助用户发现和使用语音识别功能的默认系统 UI。
 
 
-## <span id="Set_up_the_audio_feed"> </span> <span id="set_up_the_audio_feed"> </span> <span id="SET_UP_THE_AUDIO_FEED"> </span>设置音频源
+## <span id="Set_up_the_audio_feed"></span><span id="set_up_the_audio_feed"></span><span id="SET_UP_THE_AUDIO_FEED"></span>设置音频源
 
 
 确保你的设备具有麦克风或等效硬件。
 
-在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474)（**package.appxmanifest** 文件）中设置**“麦克风”**设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
+在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474)（**package.appxmanifest** 文件）中设置“麦克风”****设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
 
 请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
-## <span id="Recognize_speech_input"> </span> <span id="recognize_speech_input"> </span> <span id="RECOGNIZE_SPEECH_INPUT"> </span>识别语音输入
+## <span id="Recognize_speech_input"></span><span id="recognize_speech_input"></span><span id="RECOGNIZE_SPEECH_INPUT"></span>识别语音输入
 
 
 *约束*可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，它除了能提高语音识别准确度，还能为你的应用带来其他优势。
@@ -50,13 +49,13 @@ template: detail.hbs
 
      
 
-    These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require a connection to a network.
+    可以使用这些预定义语法识别长达 10 秒的语音输入，并且不要求你进行任何创作。 然而，它们确实需要连接到网络。
 
-    To use web-service constraints, speech input and dictation support must be enabled in **Settings** by turning on the "Get to know me" option in the Settings -&gt; Privacy -&gt; Speech, inking, and typing page.
+    若要使用 Web 服务约束，必须在“设置”****中启用语音输入和听写支持，方法是在“设置”-&gt;“隐私”-&gt;“语音、墨迹书写和键入”页面中打开“了解我”选项。
 
-    Here, we show how to test whether speech input is enabled and open the Settings -&gt; Privacy -&gt; Speech, inking, and typing page, if not.
+    下面我们将介绍如何测试是否已启用语音输入，如果未启用，则打开“设置”-&gt;“隐私”-&gt;“语音、墨迹书写和键入”页面。
 
-    First, we initialize a global variable (HResultPrivacyStatementDeclined) to the HResult value of 0x80045509. See [Exception handling for in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
+    首先，我们将全局变量 (HResultPrivacyStatementDeclined) 初始化为 0x80045509 的 HResult 值。 请参阅[采用 C\# 或 Visual Basic 的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -99,13 +98,13 @@ catch (Exception exception)
     }
 ```
 
-2.  **编程列表约束** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)).
+2.  **编程列表约束** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421))。
 
     编程列表约束提供一种轻型方法，用于使用字词或短语的列表创建一种简单的语法。 列表约束非常适用于识别清晰的短语。 因为语音识别引擎仅须处理语音即可确认匹配，所以采用某种语法明确指定所有字词也可提高识别准确度。 也可以以编程方式更新该列表。
 
     列表约束由字符串数组组成，此数组表示你的应用将为识别操作接受的语音输入。 你可以通过创建语音识别列表约束对象并传递字符串数组在应用中创建列表约束。 然后，将该对象添加到识别器的约束集合。 当语音识别器识别数组中的任何一个字符串时，识别成功。
 
-3.  **SRGS 语法** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)).
+3.  **SRGS 语法** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412))。
 
     语音识别语法规范 (SRGS) 语法是一个静态文档，与编程列表约束不同，它使用由 [SRGS 版本 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302) 定义的 XML 格式。 SRGS 语法提供了对语音识别体验的最大控制，方法是让你在单个识别中捕获多个语义含义。
 
@@ -144,7 +143,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Customize_the_recognition_UI"> </span> <span id="customize_the_recognition_ui"> </span> <span id="CUSTOMIZE_THE_RECOGNITION_UI"> </span>自定义识别 UI
+## <span id="Customize_the_recognition_UI"></span><span id="customize_the_recognition_ui"></span><span id="CUSTOMIZE_THE_RECOGNITION_UI"></span>自定义识别 UI
 
 
 当你的应用通过调用 [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 来尝试进行语音识别时，多个屏幕将按以下顺序显示。
@@ -169,7 +168,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 ![基于 sgrs 语法文件的约束的最终识别屏幕](images/speech-listening-complete.png)
 
-**Listening** 屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 属性获取）自定义“侦听”****屏幕上的内容。
+“侦听”****屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 属性获取）自定义“侦听”****屏幕上的内容。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -201,14 +200,14 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 **开发人员**
-* [语音交互](speech-interactions.md)
-**设计人员**
-* [语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**示例**
+* [语音交互](speech-interactions.md) 
+           **设计人员**
+* [语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121) 
+           **示例**
 * [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -219,6 +218,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

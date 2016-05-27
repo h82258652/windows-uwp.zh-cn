@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 在通用 Windows 平台 (UWP) 应用中接收、处理和管理来自指针设备的输入数据，例如触摸、鼠标、笔/触笔和触摸板。
 title: 处理指针输入
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
@@ -7,10 +8,6 @@ template: detail.hbs
 ---
 
 # 处理指针输入
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 在通用 Windows 平台 (UWP) 应用中接收、处理和管理来自指针设备的输入数据，例如触摸、鼠标、笔/触笔和触摸板。
 
@@ -22,10 +19,10 @@ template: detail.hbs
 
 
 **重要提示**  
-如果你实现自己的交互支持，请记住，用户期望获得直观的体验，包括直接与应用中的 UI 元素交互。 我们建议你在[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)上生成你的自定义交互的模型以保持内容一致和易于发现。 平台控件提供完整的通用 Windows 平台 (UWP) 用户交互体验，包括标准交互、动态显示的物理效果、视觉反馈和辅助功能。 仅当存在清楚、明确定义的要求且基本交互不支持你的方案时，才创建自定义交互。
+如果你实现自己的交互支持，请记住，用户期望获得直观的体验，包括直接与应用中的 UI 元素交互。 我们建议你在[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)上生成你的自定义交互的模型以保持内容一致和易于发现。 平台控件提供完整的通用 Windows 平台 (UWP) 用户交互体验，包括标准交互、动态显示的物理效果、视觉反馈和辅助功能。 仅当要求清楚、定义良好且基本交互不支持你的方案时才创建自定义交互。
 
 
-## <span id="Pointers"> </span> <span id="pointers"> </span> <span id="POINTERS"> </span>指针
+## <span id="Pointers"></span><span id="pointers"></span><span id="POINTERS"></span>指针
 
 
 许多交互体验涉及到用户通过使用输入设备（如触摸、鼠标、笔/触笔和触摸板）指向要与其进行交互的对象来标识该对象。 由于这些输入设备所提供的原始人体学接口设备 (HID) 数据包括许多常用属性，因此该信息升级为一个统一的输入堆栈，并公开为经过整合的、独立于设备的指针数据。 然后，你的 UWP 应用可以使用此数据，而无需担心所使用的输入设备。
@@ -34,12 +31,12 @@ template: detail.hbs
 
  
 
-输入堆栈上的每个输入点（或接触点）通过由各种指针事件提供的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 参数公开的 [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) 对象表示。 在多笔或多触摸输入的情况下，每个接触点都视为一个唯一输入点。
+输入堆栈上的每个输入点（或接触点）通过由各种指针事件提供的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 参数公开的 [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) 对象表示。 在多笔或多触摸输入的情况下，每个接触点都视为一个唯一的输入点。
 
-## <span id="Pointer_events"> </span> <span id="pointer_events"> </span> <span id="POINTER_EVENTS"> </span>指针事件
+## <span id="Pointer_events"></span><span id="pointer_events"></span><span id="POINTER_EVENTS"></span>指针事件
 
 
-指针事件可公开诸如检测状态（在范围中或在接触点中）和设备类型等基本信息，以及诸如位置、压力和接触几何图形等扩展信息。 此外，还提供特定设备属性，例如用户按了哪一个鼠标按钮或是否正在使用笔尖橡皮擦。 如果你的应用需要在输入设备与其功能之间进行区分，请参阅[标识输入设备](identify-input-devices.md)。
+指针事件可公开诸如检测状态（在范围中或在接触点中）和设备类型之类的基本信息，以及诸如位置、压力和接触几何图形之类的扩展信息。 此外，还提供特定设备属性，例如用户按了哪一个鼠标按钮或是否正在使用笔尖橡皮擦。 如果你的应用需要在输入设备与其功能之间进行区分，请参阅[标识输入设备](identify-input-devices.md)。
 
 UWP 应用可以侦听以下指针事件：
 
@@ -60,7 +57,7 @@ UWP 应用可以侦听以下指针事件：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="PointerCanceled"></span><span id="pointercanceled"></span><span id="POINTERCANCELED"></span>[<strong>PointerCanceled</strong>](https://msdn.microsoft.com/library/windows/apps/br208964)</p></td>
+<td align="left"><p><span id="PointerCanceled"></span><span id="pointercanceled"></span><span id="POINTERCANCELED"></span>\[<strong>PointerCanceled</strong>\](https://msdn.microsoft.com/library/windows/apps/br208964)</p></td>
 <td align="left"><p>在指针由平台取消时发生。</p>
 <ul>
 <li>当在输入图面的范围内检测到笔时，将取消触摸指针。</li>
@@ -71,7 +68,7 @@ UWP 应用可以侦听以下指针事件：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerCaptureLost"></span><span id="pointercapturelost"></span><span id="POINTERCAPTURELOST"></span>[<strong>PointerCaptureLost</strong>](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
+<td align="left"><p><span id="PointerCaptureLost"></span><span id="pointercapturelost"></span><span id="POINTERCAPTURELOST"></span>\[<strong>PointerCaptureLost</strong>\](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
 <td align="left"><p>当另一个 UI 元素捕获该指针、释放该指针、或以编程方式捕获另一个指针时发生。</p>
 <div class="alert">
 <strong>注意</strong> 不存在相应的指针捕获事件。
@@ -81,57 +78,57 @@ UWP 应用可以侦听以下指针事件：
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerEntered"></span><span id="pointerentered"></span><span id="POINTERENTERED"></span>[<strong>PointerEntered</strong>](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
+<td align="left"><p><span id="PointerEntered"></span><span id="pointerentered"></span><span id="POINTERENTERED"></span>\[<strong>PointerEntered</strong>\](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
 <td align="left"><p>在指针进入元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触才能引发此事件，无论是从对元素直接触摸按下还是移动到该元素的绑定区域。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔通过对元素直接按下笔或移动到该元素的绑定区域来引发此事件。 但是，笔还有悬停状态 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977))，可在为 true 时引发此事件。</li>
+<li>和触摸一样，笔通过对元素直接按下笔或移动到该元素的绑定区域来引发此事件。 但是，笔还有悬停状态 \(\[<strong>IsInRange</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br227977\)\)，可在为 true 时引发此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerExited"></span><span id="pointerexited"></span><span id="POINTEREXITED"></span>[<strong>PointerExited</strong>](https://msdn.microsoft.com/library/windows/apps/br208969)</p></td>
+<td align="left"><p><span id="PointerExited"></span><span id="pointerexited"></span><span id="POINTEREXITED"></span>\[<strong>PointerExited</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208969\)</p></td>
 <td align="left"><p>在指针离开元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触，并在指针移出该元素的绑定区域时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔在移出该元素的绑定区域时引发此事件。 但是，笔还有悬停状态 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977))，可在状态从 ture 更改为 false 时引发此事件。</li>
+<li>和触摸一样，笔在移出该元素的绑定区域时引发此事件。 但是，笔还有悬停状态 \(\[<strong>IsInRange</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br227977\)\)，可在状态从 ture 更改为 false 时引发此事件。</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerMoved"></span><span id="pointermoved"></span><span id="POINTERMOVED"></span>[<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970)</p></td>
+<td align="left"><p><span id="PointerMoved"></span><span id="pointermoved"></span><span id="POINTERMOVED"></span>\[<strong>PointerMoved</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208970\)</p></td>
 <td align="left"><p>在指针更改元素的绑定区域内的坐标、按钮状态、压力、倾斜或接触几何图形（例如宽度和高度）时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触，并且仅在与该元素的绑定区域接触时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔在与该元素的绑定区域接触时引发此事件。 但是，笔还有悬停状态 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977))，可在为 true 且在元素的绑定区域内时引发此事件。</li>
+<li>和触摸一样，笔在与该元素的绑定区域接触时引发此事件。 但是，笔还有悬停状态 \(\[<strong>IsInRange</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br227977\)\)，可在为 true 且在元素的绑定区域内时引发此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerPressed"></span><span id="pointerpressed"></span><span id="POINTERPRESSED"></span>[<strong>PointerPressed</strong>](https://msdn.microsoft.com/library/windows/apps/br208971)</p></td>
+<td align="left"><p><span id="PointerPressed"></span><span id="pointerpressed"></span><span id="POINTERPRESSED"></span>\[<strong>PointerPressed</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208971\)</p></td>
 <td align="left"><p>在指针指示元素的绑定区域内发生按下操作（例如触摸按下、鼠标按钮按下、笔按下或触摸板按钮按下）时发生。</p>
-<p>[<strong>CapturePointer</strong>](https://msdn.microsoft.com/library/windows/apps/br208918) 必须从此事件的处理程序调用。</p></td>
+<p>\[<strong>CapturePointer</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208918\) 必须从此事件的处理程序调用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerReleased"></span><span id="pointerreleased"></span><span id="POINTERRELEASED"></span>[<strong>PointerReleased</strong>](https://msdn.microsoft.com/library/windows/apps/br208972)</p></td>
+<td align="left"><p><span id="PointerReleased"></span><span id="pointerreleased"></span><span id="POINTERRELEASED"></span>\[<strong>PointerReleased</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208972\)</p></td>
 <td align="left"><p>在指针指示元素的绑定区域内发生释放事件（例如触摸抬起、鼠标按钮抬起、笔抬起或触摸板按钮抬起）时或在绑定区域外捕获到该指针时发生。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerWheelChanged"></span><span id="pointerwheelchanged"></span><span id="POINTERWHEELCHANGED"></span>[<strong>PointerWheelChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208973)</p></td>
+<td align="left"><p><span id="PointerWheelChanged"></span><span id="pointerwheelchanged"></span><span id="POINTERWHEELCHANGED"></span>\[<strong>PointerWheelChanged</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208973\)</p></td>
 <td align="left"><p>在旋转鼠标滚轮时发生。</p>
-<p>鼠标输入与第一次检测到鼠标输入时分配的单个指针相关联。 单击鼠标按钮（左键、滚轮或右键）会通过 [<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970) 事件在指针和该按钮之间创建一个辅助关联。</p></td>
+<p>鼠标输入与第一次检测到鼠标输入时分配的单个指针相关联。 单击鼠标按钮（左键、滚轮或右键）会通过 \[<strong>PointerMoved</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208970\) 事件在指针和该按钮之间创建一个辅助关联。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Example"> </span> <span id="example"> </span> <span id="EXAMPLE"> </span>示例
+## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
 
 
 以下是一些来自基本指针跟踪应用的代码示例，演示了如何侦听和处理指针事件并获取活动指针的各种属性。
 
-### <span id="Create_the_UI"> </span> <span id="create_the_ui"> </span> <span id="CREATE_THE_UI"> </span>创建 UI
+### <span id="Create_the_UI"></span><span id="create_the_ui"></span><span id="CREATE_THE_UI"></span>创建 UI
 
 对于此示例，我们使用一个矩形 (`targetContainer`) 作为指针输入的目标对象。 当指针状态更改时，目标的颜色也将更改。
 
@@ -194,7 +191,7 @@ UWP 应用可以侦听以下指针事件：
 </Page>
 ```
 
-### <span id="Listen_for_pointer_events"> </span> <span id="listen_for_pointer_events"> </span> <span id="LISTEN_FOR_POINTER_EVENTS"> </span>侦听指针事件
+### <span id="Listen_for_pointer_events"></span><span id="listen_for_pointer_events"></span><span id="LISTEN_FOR_POINTER_EVENTS"></span>侦听指针事件
 
 在大多数情况下，我们建议你通过事件处理程序的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 获取指针信息。
 
@@ -243,7 +240,7 @@ UWP 应用可以侦听以下指针事件：
 
 ```
 
-### <span id="Handle_pointer_events"> </span> <span id="handle_pointer_events"> </span> <span id="HANDLE_POINTER_EVENTS"> </span>处理指针事件
+### <span id="Handle_pointer_events"></span><span id="handle_pointer_events"></span><span id="HANDLE_POINTER_EVENTS"></span>处理指针事件
 
 接下来，我们使用 UI 反馈来演示基本的指针事件处理程序。
 
@@ -555,9 +552,9 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
-### <span id="Get_pointer_properties"> </span> <span id="get_pointer_properties"> </span> <span id="GET_POINTER_PROPERTIES"> </span>获取指针属性
+### <span id="Get_pointer_properties"></span><span id="get_pointer_properties"></span><span id="GET_POINTER_PROPERTIES"></span>获取指针属性
 
-如前面所述，你必须从通过 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 和 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法获取的 [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 对象获取大部分扩展指针信息。
+如前面所述，你必须从通过 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 和 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法获取的 [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 对象获取最扩展的指针。
 
 -   首先，我们为每个指针创建一个新的 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)。
 
@@ -651,7 +648,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
              }
 ```
 
-### <span id="Complete_example"> </span> <span id="complete_example"> </span> <span id="COMPLETE_EXAMPLE"> </span>完整示例
+### <span id="Complete_example"></span><span id="complete_example"></span><span id="COMPLETE_EXAMPLE"></span>完整示例
 
 下面是此示例的 C\# 代码。 有关更复杂示例的链接，请参阅此页面底部的相关文章。
 
@@ -1079,7 +1076,7 @@ namespace PointerInput
 }
 ```
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 **示例**
@@ -1087,6 +1084,7 @@ namespace PointerInput
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **存档示例**
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -1103,6 +1101,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

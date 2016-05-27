@@ -1,16 +1,15 @@
 ---
-Description: 了解如何管理由音频输入质量所导致的语音识别准确度的问题。
+author: Karl-Bridge-Microsoft
+Description: 了解如何管理由音频输入的质量所导致的语音识别准确度的问题。
 title: 管理音频输入问题
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
-label: 管理音频输入问题
+label: Manage audio input issues
 template: detail.hbs
 ---
 
 # 管理音频输入问题
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+了解如何管理由音频输入的质量所导致的语音识别准确度的问题。
 
 **重要的 API**
 
@@ -18,17 +17,17 @@ template: detail.hbs
 -   [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)
 -   [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
-了解如何管理由音频输入质量所导致的语音识别准确度的问题。
 
 
-## <span id="Assess_audio-input_quality"> </span> <span id="assess_audio-input_quality"> </span> <span id="ASSESS_AUDIO-INPUT_QUALITY"> </span>评估音频输入质量
+
+## <span id="Assess_audio-input_quality"></span><span id="assess_audio-input_quality"></span><span id="ASSESS_AUDIO-INPUT_QUALITY"></span>评估音频输入质量
 
 
 当语音识别处于活动状态时，使用语音识别器的 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件，确定一个或多个音频问题是否会干扰语音输入。 事件参数 ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) 可提供 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 属性，该属性描述了检测到的音频输入问题。
 
 背景噪音太大、麦克风设为静音以及扬声器的音量或语速都可能会影响语音识别。
 
-在此处，我们配置一个语音识别器并开始侦听 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件。
+在此情况下，我们可以配置一个语音识别器并开始侦听 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -60,7 +59,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Manage_the_speech-recognition_experience"> </span> <span id="manage_the_speech-recognition_experience"> </span> <span id="MANAGE_THE_SPEECH-RECOGNITION_EXPERIENCE"> </span>管理语音识别体验
+## <span id="Manage_the_speech-recognition_experience"></span><span id="manage_the_speech-recognition_experience"></span><span id="MANAGE_THE_SPEECH-RECOGNITION_EXPERIENCE"></span>管理语音识别体验
 
 
 使用由 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 属性提供的说明可帮助用户改善识别的条件。
@@ -100,7 +99,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 * [语音交互](speech-interactions.md)
@@ -116,6 +115,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

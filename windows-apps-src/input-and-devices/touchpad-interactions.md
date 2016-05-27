@@ -1,15 +1,14 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸板进行了优化，但在不同的输入设备上功能一致。
 title: 触摸板交互
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
-label: 触摸板交互
+label: Touchpad interactions
 template: detail.hbs
 ---
 
 # 触摸板设计指南
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 设计你的应用，以便用户可以通过触摸板与其交互。 触摸板将间接式多点触控输入和定位设备（如鼠标）的精确输入结合起来。 这种结合使触摸板既适用于触摸优化的 UI，也适用于效率应用的较小目标。
 
@@ -39,12 +38,12 @@ template: detail.hbs
 
 本主题中讨论的手势和指南可以帮助确保你的应用使用最少的代码无缝支持触摸板输入。
 
-## <span id="The_touchpad_language"> </span> <span id="the_touchpad_language"> </span> <span id="THE_TOUCHPAD_LANGUAGE"> </span>触摸板语言
+## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>触摸板语言
 
 
 一组在整个系统中通用的简单触摸板交互功能。 针对触摸和鼠标输入优化应用，这种语言可以使用户快速熟悉应用，提升他们的信心，使其更容易了解和使用应用。
 
-用户可以设置远比标准触摸板更多的精确式触摸板手势和交互行为。 这两张图分别显示了不同于标准触摸板和精确触摸板的“设置”>“设备”>“鼠标”>“触摸板”的触摸板设置页面。
+用户可以设置远比标准触摸板更多的精确式触摸板手势和交互行为。 这两张图分别显示了不同于标准触摸板和精确式触摸板的“设置”&gt;“设备”&gt;“鼠标和触摸板”的触摸板设置页面。
 
 ![标准触摸板设置](images/mouse-touchpad-settings-standard.png)
 
@@ -70,7 +69,7 @@ template: detail.hbs
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>三指点击</p></td>
-<td align="left"><p>使用 <strong>Cortana</strong> 搜索或显示<strong>“操作中心”</strong>的用户首选项。</p></td>
+<td align="left"><p>使用 <strong>Cortana</strong> 搜索或显示“操作中心”<strong></strong>的用户首选项。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>三指滑动</p></td>
@@ -109,14 +108,14 @@ template: detail.hbs
 
  
 
-## <span id="Hardware"> </span> <span id="hardware"> </span> <span id="HARDWARE"> </span>硬件
+## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>硬件
 
 
 查询鼠标设备功能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) 以确定触摸板硬件可以直接访问你的应用 UI 的哪些方面。 我们建议提供适用于触摸和鼠标输入的 UI。
 
 有关查询设备功能的详细信息，请参阅[标识输入设备](identify-input-devices.md)。
 
-## <span id="Visual_feedback"> </span> <span id="visual_feedback"> </span> <span id="VISUAL_FEEDBACK"> </span>视觉反馈
+## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>视觉反馈
 
 
 -   当（通过移动或悬停事件）检测到触摸板光标时，显示特定于鼠标的 UI 以指示元素显示的功能。 如果触摸板光标在一定的时间段内没有移动，或者如果用户启动了触摸交互，则让触摸板 UI 逐渐淡出。 这会使 UI 干净整洁。
@@ -127,7 +126,7 @@ template: detail.hbs
 
 有关视觉反馈的更常规的指南，请参阅[视觉反馈指南](https://msdn.microsoft.com/library/windows/apps/hh465342)。
 
-## <span id="Cursors"> </span> <span id="cursors"> </span> <span id="CURSORS"> </span>光标
+## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>光标
 
 
 为触摸板指针提供了一组标准光标。 它们用来表示元素的主要操作。
@@ -142,17 +141,17 @@ template: detail.hbs
 -   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png)， ![水平调整光标](images/cursor-horizontal.png)， ![对角调整光标（左下和右上）](images/cursor-diagonal2.png)， ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
 -   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)）。
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 * [处理指针输入](handle-pointer-input.md)
-* [标识输入设备](identify-input-devices.md)
-**示例**
+* [标识输入设备](identify-input-devices.md) 
+           **示例**
 * [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**存档示例**
+* [焦点视觉效果示例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **存档示例**
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -163,6 +162,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

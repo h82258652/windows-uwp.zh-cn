@@ -1,13 +1,14 @@
 ---
-Description: 使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。
+author: Karl-Bridge-Microsoft
+description: 使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。
 title: 语音交互
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
-label: 语音交互
+label: Speech interactions
 template: detail.hbs
 ---
 
 # 语音交互
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 将语音识别和文本到语音转换（又称 TTS 或语音合成）直接集成到你的应用的用户体验中。
 
@@ -19,16 +20,15 @@ template: detail.hbs
 
 **语音识别：**对于文本听写，将用户说出的话语转换为用于表单输入的文本，从而指定操作或命令并完成任务。 既支持用于自由文本听写和 Web 搜索的预定义语法，也支持使用语音识别语法规范 (SRGS) 版本 1.0 创作的自定义语法。
 
-**TTS：**使用语音合成引擎（语言）可将文本字符串转换为语音字词。 输入字符串既可以是基本的未经处理的文本，也可以是更复杂的语音合成标记语言 (SSML)。 SSML 提供用于控制语音输出特征（例如发音、音量、音调、音速和重读）的标准方式。
+**TTS：**使用语音合成引擎（语音）可将文本字符串转换为语音字词。 输入字符串既可以是基本的未经处理的文本，也可以是更复杂的语音合成标记语言 (SSML)。 SSML 提供用于控制语音输出特征（例如发音、音量、音调、音速和重读）的标准方式。
 
-**注意** 通过使用 **Cortana** 和自定义语音命令，你的应用可以在前台启动（应用获取焦点，正如通过“开始”菜单启动一样），或作为后台服务激活（**Cortana** 保留焦点，但提供来自应用的结果）。 需要额外上下文或用户输入（例如将消息发送给特定联系人）的命令最好通过前台应用处理，而基本命令可以通过后台应用使用 **Cortana** 处理。
-如果要使用 **Cortana** UI 通过语音命令将功能作为后台服务公开，请参阅 [Cortana 设计指南](cortana-design-guidelines.md)。
-
- 
+> [!NOTE] 通过使用 **Cortana** 和自定义语音命令，你的应用可以在前台启动（应用获取焦点，正如通过“开始”菜单启动一样），或作为后台服务激活（**Cortana** 保留焦点，但提供来自应用的结果）。 
+> 需要额外上下文或用户输入（例如将消息发送给特定联系人）的命令最好通过前台应用处理，而基本命令可以通过后台应用使用 **Cortana** 处理。
+> 如果要使用 **Cortana** UI 通过语音命令将功能作为后台服务公开，请参阅 [Cortana 设计指南](cortana-design-guidelines.md)。
 
 经过周密地设计和实现，语音可以成为用户与应用交互的可靠而愉快的方式，补充甚至替代键盘、鼠标、触摸和手势。
 
-## <span id="Speech_interaction_design"> </span> <span id="speech_interaction_design"> </span> <span id="SPEECH_INTERACTION_DESIGN"> </span>语音交互设计
+## <span id="Speech_interaction_design"></span><span id="speech_interaction_design"></span><span id="SPEECH_INTERACTION_DESIGN"></span>语音交互设计
 
 
 这些指南和建议将介绍如何以最佳方式将语音识别和 TTS 都集成到你的应用的交互体验中。
@@ -45,7 +45,7 @@ template: detail.hbs
 -   你的应用上下文是否需要自定义词汇或有限词汇（如医学、科学或区域设置）？
 -   是否需要网络连接？
 
-## <span id="Text_input"> </span> <span id="text_input"> </span> <span id="TEXT_INPUT"> </span>文本输入
+## <span id="Text_input"></span><span id="text_input"></span><span id="TEXT_INPUT"></span>文本输入
 
 
 用于文本输入的语音包括简短形式（单个词或短语）和较长形式（连续听写）。 简短形式输入的长度必须小于 10 秒，而较长形式的输入会话最长可达两分钟。 （较长格式输入可以重新启动而无需用户干预，给人连续听写的印象。）
@@ -62,7 +62,7 @@ template: detail.hbs
 
 如果网络连接不可用，则禁用所有连续识别 UI 并终止识别会话。 连续识别需要网络连接。
 
-## <span id="Commanding"> </span> <span id="commanding"> </span> <span id="COMMANDING"> </span>命令
+## <span id="Commanding"></span><span id="commanding"></span><span id="COMMANDING"></span>命令
 
 
 语音输入可以启动操作、调用命令和完成任务。
@@ -107,14 +107,14 @@ template: detail.hbs
 
 ![基于 sgrs 语法文件的约束的最终识别屏幕](images/speech/speech-listening-complete.png)
 
-## <span id="Always_listening"> </span> <span id="always_listening"> </span> <span id="ALWAYS_LISTENING"> </span>始终聆听
+## <span id="Always_listening"></span><span id="always_listening"></span><span id="ALWAYS_LISTENING"></span>始终聆听
 
 
 只要应用已启动，你的应用就可以聆听和识别语音输入，无需用户干预。
 
 你应该基于应用上下文自定义语法约束。 这可使语音识别体验具有很高的针对性，始终与当前任务保持相关，并最大程度地减少错误。
 
-## <span id="What_can_I_say_"> </span> <span id="what_can_i_say_"> </span> <span id="WHAT_CAN_I_SAY_"> </span>“我可以说什么？”
+## <span id="What_can_I_say_"></span><span id="what_can_i_say_"></span><span id="WHAT_CAN_I_SAY_"></span>“我可以说什么？”
 
 
 启用语音输入后，帮助用户了解可以准确理解哪些内容，以及可以执行哪些操作十分重要。
@@ -123,7 +123,7 @@ template: detail.hbs
 
 如果语音识别始终处于打开状态，请考虑将短语“我可以说什么？” 添加到每个页面上。 当用户说出此短语时，显示当前上下文支持的所有单词和短语。 使用此短语将为用户在系统上发现语音功能提供一种一致的方式。
 
-## <span id="Recognition_failures"> </span> <span id="recognition_failures"> </span> <span id="RECOGNITION_FAILURES"> </span>识别失败
+## <span id="Recognition_failures"></span><span id="recognition_failures"></span><span id="RECOGNITION_FAILURES"></span>识别失败
 
 
 语音识别将失败。 在音频质量较差、仅识别出一部分短语或根本没有检测到任何输入时，将发生故障。
@@ -142,25 +142,23 @@ template: detail.hbs
 
 聆听并尝试改正音频输入问题。 语音识别器可以检测音频质量问题，该问题可反作用于语音识别准确度。 你可以使用语音识别器提供的信息，将该问题告知用户并让其采取改正措施（如果可以）。 例如，如果麦克风的音量设置太低，则可以提示用户说话声应更响亮或调高音量。
 
-## <span id="Constraints"> </span> <span id="constraints"> </span> <span id="CONSTRAINTS"> </span>约束
+## <span id="Constraints"></span><span id="constraints"></span><span id="CONSTRAINTS"></span>约束
 
 
 约束（或语法）定义语音识别器可匹配的语音字词和短语。 你可以指定一种预定义 Web 服务语法，也可以创建一种随你的应用一起安装的自定义语法。
 
-### <span id="Predefined_grammars"> </span> <span id="predefined_grammars"> </span> <span id="PREDEFINED_GRAMMARS"> </span>预定义的语法
+### <span id="Predefined_grammars"></span><span id="predefined_grammars"></span><span id="PREDEFINED_GRAMMARS"></span>预定义的语法
 
 预定义的听写和 Web 搜索语法在无需你创作语法的情况下为你的应用提供语音识别。 使用这些语法时，语音识别由远程 Web 服务执行，并且结果将返回到设备
 
 -   默认自由文本听写语法可以识别用户以特定语言说出的大部分字词或短语，并且为识别短语进行了优化。 当你不希望限制用户可说内容的种类时，自由文本听写非常有用。 典型用法包括为一条消息创建笔记或听写其内容。
 -   诸如听写语法等 Web 搜索语法包含了用户可能说出的大量字词和短语。 但是，优化它的目的是识别用户搜索 Web 时通常使用的术语。
 
-**注意** 由于预定义的听写和 Web 搜索语法可能很大，而且处于联机状态（不在设备上），性能可能不如安装在设备上的自定义语法快。
-
- 
+> [!NOTE] 由于预定义的听写和 Web 搜索语法可能很大，而且处于联机状态（不在设备上），性能可能不如安装在设备上的自定义语法快。
 
 可以使用这些预定义语法识别长达 10 秒的语音输入，并且不要求你进行任何创作。 然而，它们确实需要连接到网络。
 
-### <span id="Custom_grammars"> </span> <span id="custom_grammars"> </span> <span id="CUSTOM_GRAMMARS"> </span>自定义语法
+### <span id="Custom_grammars"></span><span id="custom_grammars"></span><span id="CUSTOM_GRAMMARS"></span>自定义语法
 
 自定义语法由你设计和创作，随你的应用一起安装。 使用自定义约束的语音识别是在设备上执行的。
 
@@ -176,11 +174,10 @@ template: detail.hbs
     -   尽量避免在语法中定义只包含一个音节的短语。 对于包含两个或更多音节的短语，识别往往更为准确。
     -   避免使用听起来相似的短语。 例如，“hello”、“bellow”和“fellow”等短语可使识别引擎难以分辨，从而导致较差的识别准确度。
 
-**注意** 使用哪种类型的约束类型取决于待创建识别体验的复杂程度。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
+> [!NOTE]
+> 使用哪种类型的约束类型取决于待创建识别体验的复杂程度。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
 
- 
-
-### <span id="Custom_pronunciations"> </span> <span id="custom_pronunciations"> </span> <span id="CUSTOM_PRONUNCIATIONS"> </span>自定义的发音
+### <span id="Custom_pronunciations"></span><span id="custom_pronunciations"></span><span id="CUSTOM_PRONUNCIATIONS"></span>自定义发音
 
 如果你的应用包含了带有不常见或虚构字词的专用词汇或带有罕见发音的字词，你可能能够通过定义自定义发音来提高对这些字词的识别性能。
 
@@ -188,14 +185,14 @@ template: detail.hbs
 
 对于包含字词和短语的较大列表，或包含常用字词和短语的列表，可以创建单独的发音词典文档。 有关详细信息，请参阅[关于词典和音标字母](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx)。
 
-## <span id="Testing"> </span> <span id="testing"> </span> <span id="TESTING"> </span>测试
+## <span id="Testing"></span><span id="testing"></span><span id="TESTING"></span>测试
 
 
 通过应用目标受众测试语音识别准确度以及任何支持的 UI。 这是确定应用的语音交互体验有效性的最佳方式。 例如，用户是否因你的应用无法聆听常见短语而获得了较差的识别结果？
 
 可以修改语法以支持此短语，或者为用户提供受支持短语的列表。 如果已提供受支持短语列表，请确保它易被发现。
 
-## <span id="Text-to-speech__TTS_"> </span> <span id="text-to-speech__tts_"> </span> <span id="TEXT-TO-SPEECH__TTS_"> </span>文本到语音转换 (TTS)
+## <span id="Text-to-speech__TTS_"></span><span id="text-to-speech__tts_"></span><span id="TEXT-TO-SPEECH__TTS_"></span>文本到语音转换 (TTS)
 
 
 TTS 从纯文本或 SSML 生成语音输出。
@@ -213,55 +210,21 @@ TTS 从纯文本或 SSML 生成语音输出。
 
 将 SSML 而不是将纯文本用作语音合成器的输入可以解决这两种问题。 有关 SSML 的详细信息，请参阅[使用 SSML 控制合成的语音](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)和[语音合成标记语言参考](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)。
 
-## 本部分中的其他文章 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">主题</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>[Speech recognition](speech-recognition.md)</p></td>
-<td align="left"><p>使用语音识别提供输入内容、指定操作或命令并完成任务。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[Specify the speech recognizer language](specify-the-speech-recognizer-language.md)</p></td>
-<td align="left"><p>了解如何选择要用于语音识别的安装语言。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[Define custom recognition constraints](define-custom-recognition-constraints.md)</p></td>
-<td align="left"><p>了解如何为语音识别定义和使用自定义约束。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[Enable continuous dictation](enable-continuous-dictation.md)</p></td>
-<td align="left"><p>了解如何捕获和识别较长的连续听写语音输入。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[Manage issues with audio input](manage-issues-with-audio-input.md)</p></td>
-<td align="left"><p>了解如何管理由音频输入的质量所导致的语音识别准确度的问题。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[Set speech recognition timeouts](set-speech-recognition-timeouts.md)</p></td>
-<td align="left"><p>设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。</p></td>
-</tr>
-</tbody>
-</table>
+## <span id="Other_articles"></span><span id="other_articles"></span><span id="OTHER_ARTICLES"></span>本部分中的其他文章 
+| 主题 | 描述 |
+| --- | --- |
+| [语音识别](speech-recognition.md) | 使用语音识别提供输入内容、指定操作或命令并完成任务。 |
+| [指定语音识别器语言](specify-the-speech-recognizer-language.md) | 了解如何选择要用于语音识别的安装语言。 |
+| [定义自定义识别约束](define-custom-recognition-constraints.md) | 了解如何为语音识别定义和使用自定义约束。 |
+| [启用连续听写](enable-continuous-dictation.md) |了解如何捕获和识别较长的连续听写语音输入。 |
+| [管理音频输入问题](manage-issues-with-audio-input.md) | 了解如何管理由音频输入质量所导致的语音识别准确度的问题。 |
+| [设置语音识别超时](set-speech-recognition-timeouts.md) | 设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。 |
 
- 
-
-
-## <span id="related_topics"> </span>相关文章
-
+## <span id="related_topics"></span>相关文章
 
 * [语音交互](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Cortana 交互](https://msdn.microsoft.com/library/windows/apps/mt185598)
- **示例**
+* [Cortana 交互](https://msdn.microsoft.com/library/windows/apps/mt185598) 
+            **示例**
 * [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -271,6 +234,6 @@ TTS 从纯文本或 SSML 生成语音输出。
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

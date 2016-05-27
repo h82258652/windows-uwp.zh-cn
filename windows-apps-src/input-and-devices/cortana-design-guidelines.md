@@ -1,17 +1,13 @@
 ---
-Description: 使用语音命令，将你的应用提供的功能加入到 Cortana 中以对其进行扩展。
+author: Karl-Bridge-Microsoft
+Description: 通过语音命令，使用你的应用提供的功能扩展 Cortana。
 title: Cortana 设计指南
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
-label: 指南
+label: Guidelines
 template: detail.hbs
 ---
 
 # Cortana 设计指南
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
 
 
 这些指南和建议描述了你的应用可以如何充分利用 **Cortana** 与用户交互、帮助他们完成任务，以及清楚地表明一切是如何发生的。
@@ -20,11 +16,11 @@ template: detail.hbs
 
 虽然用户应该感觉到 **Cortana** 有助于使该过程尽可能轻而易举，但是你可能希望 **Cortana** 也表明完成该任务的是你的应用。
 
-我们使用此处显示的旅行规划和管理应用（名称为 **Adventure Works** 且集成到 **Cortana** UI）来展示所讨论的许多概念和功能。
+我们使用此处显示的旅行规划和管理应用（名为 **Adventure Works** 且集成到 **Cortana** UI）来展示所讨论的许多概念和功能。
 
 ![Cortana 画布概述](images/speech/cortana-overview.png)
 
-## <span id="Conversational_writing_"> </span> <span id="conversational_writing_"> </span> <span id="CONVERSATIONAL_WRITING_"> </span>对话编写
+## <span id="Conversational_writing_"></span><span id="conversational_writing_"></span><span id="CONVERSATIONAL_WRITING_"></span>对话编写
 
 
 成功的 **Cortana** 交互要求你在创建文本到语音转换 (TTS) 和 GUI 字符串时，遵循一些基本原则。
@@ -70,7 +66,7 @@ template: detail.hbs
 <dd><p>避免混淆。 使用日常生活语言，而不是技术行话。</p>
 </dd>
 </dl></td>
-<td align="left"><p>没有“到拉斯维加斯的旅行”的查询结果。</p></td>
+<td align="left"><p>查询&quot;到拉斯维加斯的旅行&quot;没有结果。</p></td>
 <td align="left"><p>我找不到任何到拉斯维加斯的旅行。</p></td>
 </tr>
 <tr class="even">
@@ -106,10 +102,10 @@ template: detail.hbs
 
 通过从备用响应的集合中进行循环或随机选择，在你的响应中使用稍有变化的措辞。 例如“你想要看哪部电影？” 和“你想看什么电影？” 这将使你的应用听起来更自然、更独特。
 
-## <span id="Localization_"> </span> <span id="localization_"> </span> <span id="LOCALIZATION_"> </span>本地化
+## <span id="Localization_"></span><span id="localization_"></span><span id="LOCALIZATION_"></span>本地化
 
 
-若要使用语音命令启动某项操作，你的应用必须使用用户在其设备上所选的语言（“设置”>“系统”>“语音”>“语音语言”）注册语音命令。
+若要使用语音命令启动某项操作，你的应用必须使用用户在其设备上所选的语言（“设置”&gt;“系统”&gt;“语音”&gt;“语音语言”）注册语音命令。
 
 你应该将你的应用所对应的语音命令和所有 TTS 和 GUI 字符串都本地化。
 
@@ -117,7 +113,7 @@ template: detail.hbs
 
 有关详细信息，请参阅[全球化和本地化部分](../globalizing/globalizing-portal.md)。
 
-## <span id="Image_resources_and_scaling"> </span> <span id="image_resources_and_scaling"> </span> <span id="IMAGE_RESOURCES_AND_SCALING"> </span>图像资源和缩放
+## <span id="Image_resources_and_scaling"></span><span id="image_resources_and_scaling"></span><span id="IMAGE_RESOURCES_AND_SCALING"></span>图像资源和缩放
 
 
 通用 Windows 平台 (UWP) 应用可以基于特定设置和设备功能（高对比度、有效像素、区域设置等）自动选择最合适的应用徽标图像。 你只需提供图像，并确保在不同资源版本的应用项目中使用相应的命名约定和文件夹组织。 如果未能提供推荐的资源版本，辅助功能、本地化和图像质量将受到影响，具体取决于用户首选项、功能、设备类型和位置。
@@ -131,19 +127,37 @@ template: detail.hbs
 我们建议在字符串资源文件（如“en-US\\resources.resw”）上标记默认语言，在图像（如“logo.scale-100.png”）上标记默认比例系数，即使你当前不计划提供本地化或多种分辨率的资源也是如此。 但是，我们建议你至少为 100、200 和 400 比例系数提供资源。
 
 **重要提示**  
-在 Cortana 画布的标题区域使用的应用图标是在“Package.appxmanifest”文件中指定的 44x44 方形徽标图标。 
+在 Cortana 画布的标题区域中使用的应用图标是在“Package.appxmanifest”文件中指定的 44x44 方形徽标图标。 
 
-你还可以在 Cortana 画布的内容区域显示的查询中指定每个结果的图标。 结果图标的有效图像大小为：
+你还可以为用户查询的每个结果磁贴指定一个图标。 结果图标的有效图像大小为：
 
 -   68w x 68h
 -   68w x 92h
 -   280w x 140h
 
+## <span id="Result_tile_templates"></span><span id="result_tile_templates"></span><span id="RESULT_TILE_TEMPLATES"></span>结果磁贴模板
 
-## <span id="Example"> </span> <span id="example"> </span> <span id="EXAMPLE"> </span>示例
+为 Cortana 画布上显示的结果磁贴提供了一组模板。 使用这些模板指定磁贴标题，并指定磁贴是否包含文本和结果图标图像。 每个磁贴最多可以包含三行文本和一张图像，具体取决于指定的模板。
+
+下面是支持的模板（及示例）：
+
+| 名称 | 示例 |
+| --- | --- |
+| 仅标题  | ![仅标题](images/cortana/voicecommandcontenttiletype_titleonly_small.png) |
+| 带有文本的标题   | ![带有文本的标题](images/cortana/voicecommandcontenttiletype_titlewithtext_small.png) |
+| 带有 68x68 图标的标题   | 无图像 |
+| 带有 68x68 图标和文本的标题   | ![带有 68x68 图标和文本的标题](images/cortana/voicecommandcontenttiletype_titlewith68x68iconandtext_small.png) |
+| 带有 68x92 图标的标题   | 无图像 |
+| 带有 68x92 图标和文本的标题    | ![带有 68x92 图标和文本的标题](images/cortana/voicecommandcontenttiletype_titlewith68x92iconandtext_small.png) |
+| 带有 280x140 图标的标题   | 无图像 |
+| 带有 280x140 图标和文本的标题    | ![带有 280x140 图标和文本的标题](images/cortana/voicecommandcontenttiletype_titlewith280x140iconandtext_small.png) |
+
+有关 Cortana 模板的详细信息，请参阅 [VoiceCommandContentTileType](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttiletype.aspx)。
+
+## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>示例
 
 
-此示例演示了在 **Cortana** 中的后台应用的端到端任务流。 我们将使用 **Adventure Works** 应用取消拉斯维加斯之旅。
+此示例演示了 **Cortana** 中的后台应用的端到端任务流。 我们将使用 **Adventure Works** 应用取消拉斯维加斯之旅。 此示例使用“带有 68x68 图标和文本的标题”模板。
 
 ![端到端的 Cortana 后台应用流](images/speech/e2e-canceltrip.png)
 
@@ -151,7 +165,7 @@ template: detail.hbs
 
 1.  用户点击麦克风启动 **Cortana**。
 2.  用户说出“取消 Adventure Works 拉斯维加斯之旅”，启动后台中的 **Adventure Works** 应用。 应用同时使用 **Cortana** 语音和画布与用户进行交互。
-3.  **Cortana** 转换到可为用户提供确认反馈（“我将通知 Adventure Works 进行处理。”）、状态栏和取消按钮的切换屏幕。
+3.  **Cortana** 转换到可为用户提供确认反馈（“我将通知 Adventure Works 进行处理。”）、状态栏和取消按钮的交付屏幕。
 4.  在此情况下，用户具有多个与查询相匹配的行程，因此该应用将提供一个列出了所有匹配结果的歧义消除屏幕，然后询问：“你想要取消哪一个？”
 5.  用户指定“拉斯维加斯技术大会”项。
 6.  由于取消不能撤消，该应用将提供一个确认屏幕，要求用户确认其意图。
@@ -160,22 +174,21 @@ template: detail.hbs
 
 我们可以在此处详细了解这些步骤。
 
-### <span id="Handoff"> </span> <span id="handoff"> </span> <span id="HANDOFF"> </span>切换
+### <span id="Handoff"></span><span id="handoff"></span><span id="HANDOFF"></span>切换
 
-|                                                                                                          |
-|----------------------------------------------------------------------------------------------------------|
-| ![端到端：不使用切换屏幕查找行程 ](images/speech/cortana-backgroundapp-result.png)              |
-| 不使用切换屏幕查找行程                                                                              |
+| ![端到端：不使用交付屏幕查找行程 ](images/speech/cortana-backgroundapp-result.png) |
+|--- |
+| 不使用切换屏幕查找行程 |
+
 | ![端到端：使用切换屏幕取消行程。 ](images/speech/cortana-backgroundapp-progress-result.png) |
-| 使用切换屏幕取消行程                                                                          |
-
- 
+|--- |
+| 使用切换屏幕取消行程 | 
 
 使应用响应耗时不超过 500 毫秒、不要求用户提供额外信息、可以在 **Cortana** 不进一步参与的情况下完成而不显示完成屏幕的任务。
 
-如果你的应用程序需要超过 500 毫秒才能响应，**Cortana** 将提供切换屏幕。 将显示应用图标和名称，并且必须同时提供 GUI 和 TTS 切换字符串，以指示已正确理解语音命令。 切换屏幕最多将显示 5 秒；如果你的应用在此期间内没有响应，**Cortana** 将显示一般性错误屏幕。
+如果你的应用程序需要超过 500 毫秒才能响应，**Cortana** 将提供交付屏幕。 将显示应用图标和名称，并且必须同时提供 GUI 和 TTS 切换字符串，以指示已正确理解语音命令。 交付屏幕最多将显示 5 秒；如果你的应用在此期间内没有响应，**Cortana** 将显示一般性错误屏幕。
 
-### <span id="GUI_and_TTS_guidelines_for_handoff_screens"> </span> <span id="gui_and_tts_guidelines_for_handoff_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_HANDOFF_SCREENS"> </span>适用于切换屏幕的 GUI 和 TTS 指南
+### <span id="GUI_and_TTS_guidelines_for_handoff_screens"></span><span id="gui_and_tts_guidelines_for_handoff_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_HANDOFF_SCREENS"></span>适用于交付屏幕的 GUI 和 TTS 指南
 
 清晰地指示任务正在进行中。
 
@@ -192,18 +205,15 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 | TTS                                                    | GUI                                 |
 |--------------------------------------------------------|-------------------------------------|
 | 查找你的下一个 Adventure Works 行程。            | 正在查找你的下一个行程…         |
-| 在 Adventure Works 中搜索你的瀑布之城之旅。 | 正在搜索到瀑布之城的旅行... |
+| 在 Adventure Works 中搜索你的瀑布之城之旅。 | 正在搜索瀑布之城之旅... |
 
  
 
-### <span id="Progress"> </span> <span id="progress"> </span> <span id="PROGRESS"> </span>进度
+### <span id="Progress"></span><span id="progress"></span><span id="PROGRESS"></span>进度
 
-|                                                                                             |
-|---------------------------------------------------------------------------------------------|
 | ![端到端：使用进度屏幕取消行程 ](images/speech/e2e-canceltrip-progress.png) |
-| 使用进度屏幕取消行程                                                            |
-
- 
+| --- |
+| 使用进度屏幕取消行程 |  
 
 当两个步骤之间的某个任务花费了一些时间时，你的应用需要介入，并向用户通知进度屏幕上所发生情况的最新进展。 将显示应用图标，并且你必须同时提供 GUI 和 TTS 进度字符串，以指示该任务正在进行中。
 
@@ -218,7 +228,7 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 -   消除歧义
 -   完成
 
-### <span id="GUI_and_TTS_guidelines_for_progress_screens"> </span> <span id="gui_and_tts_guidelines_for_progress_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_PROGRESS_SCREENS"> </span>进度屏幕的 GUI 和 TTS 指南
+### <span id="GUI_and_TTS_guidelines_for_progress_screens"></span><span id="gui_and_tts_guidelines_for_progress_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_PROGRESS_SCREENS"></span>适用于进度屏幕的 GUI 和 TTS 指南
 
 使用现在时。
 
@@ -236,14 +246,11 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 
  
 
-### <span id="Confirmation"> </span> <span id="confirmation"> </span> <span id="CONFIRMATION"> </span>确认
+### <span id="Confirmation"></span><span id="confirmation"></span><span id="CONFIRMATION"></span>确认
 
-|                                                                                                     |
-|-----------------------------------------------------------------------------------------------------|
 | ![端到端：使用确认屏幕取消行程 ](images/speech/e2e-canceltrip-confirmation.png) |
-| 使用确认屏幕取消行程                                                                |
-
- 
+| --- |
+| 使用确认屏幕取消行程 | 
 
 某些任务可根据用户命令的性质隐式确认；其他任务可能更为敏感，需要显式确认。 下面是有关何时使用隐式和显式确认的一些指南。
 
@@ -265,7 +272,7 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 -   任务需要快速执行（例如，在忘记之前快速捕获想法）
 -   准确性较高（例如简单菜单）
 
-### <span id="GUI_and_TTS_guidelines_for_confirmation_screens"> </span> <span id="gui_and_tts_guidelines_for_confirmation_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_CONFIRMATION_SCREENS"> </span>适用于确认屏幕的 GUI 和 TTS 指南
+### <span id="GUI_and_TTS_guidelines_for_confirmation_screens"></span><span id="gui_and_tts_guidelines_for_confirmation_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_CONFIRMATION_SCREENS"></span>适用于确认屏幕的 GUI 和 TTS 指南
 
 使用现在时。
 
@@ -287,14 +294,11 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 
  
 
-### <span id="Disambiguation"> </span> <span id="disambiguation"> </span> <span id="DISAMBIGUATION"> </span>消除歧义
+### <span id="Disambiguation"></span><span id="disambiguation"></span><span id="DISAMBIGUATION"></span>消除歧义
 
-|                                                                                                        |
-|--------------------------------------------------------------------------------------------------------|
 | ![端到端：使用消除歧义屏幕取消行程](images/speech/cortana-disambiguation-screen.png) |
-| 使用消除歧义屏幕取消行程                                                                 |
-
- 
+| --- |
+| 使用消除歧义屏幕取消行程 | 
 
 某些任务可能会要求用户从实体列表做出选择，以完成任务。
 
@@ -302,7 +306,7 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 
 客户响应消除歧义问题后，你的应用程序必须在 500 毫秒内提供下一个屏幕，以避免转到进度屏幕。
 
-### <span id="GUI_and_TTS_guidelines_for_disambiguation_screens"> </span> <span id="gui_and_tts_guidelines_for_disambiguation_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_DISAMBIGUATION_SCREENS"> </span>适用于消除歧义屏幕的 GUI 和 TTS 指南
+### <span id="GUI_and_TTS_guidelines_for_disambiguation_screens"></span><span id="gui_and_tts_guidelines_for_disambiguation_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_DISAMBIGUATION_SCREENS"></span>适用于消除歧义屏幕的 GUI 和 TTS 指南
 
 使用现在时。
 
@@ -326,12 +330,11 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 
  
 
-### <span id="Completion"> </span> <span id="completion"> </span> <span id="COMPLETION"> </span>完成
+### <span id="Completion"></span><span id="completion"></span><span id="COMPLETION"></span>完成
 
-|                                                                                                 |
-|-------------------------------------------------------------------------------------------------|
 | ![端到端：使用完成屏幕取消行程 ](images/speech/e2e-canceltrip-completion.png) |
-| 使用完成屏幕取消行程                                                              |
+| --- |
+| 使用完成屏幕取消行程 |
 
  
 
@@ -341,7 +344,7 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 
 你应该向你的应用提供一个包含启动参数的链接，以在适当的状态下启动该应用。 这样，用户便可以自行查看或完成任务。 **Cortana** 提供链接文本（如“转到 Adventure Works”）。
 
-### <span id="GUI_and_TTS_guidelines_for_completion_screens"> </span> <span id="gui_and_tts_guidelines_for_completion_screens"> </span> <span id="GUI_AND_TTS_GUIDELINES_FOR_COMPLETION_SCREENS"> </span>适用于完成屏幕的 GUI 和 TTS 指南
+### <span id="GUI_and_TTS_guidelines_for_completion_screens"></span><span id="gui_and_tts_guidelines_for_completion_screens"></span><span id="GUI_AND_TTS_GUIDELINES_FOR_COMPLETION_SCREENS"></span>适用于完成屏幕的 GUI 和 TTS 指南
 
 使用过去时。
 
@@ -356,12 +359,11 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 
  
 
-### <span id="Error"> </span> <span id="error"> </span> <span id="ERROR"> </span>错误
+### <span id="Error"></span><span id="error"></span><span id="ERROR"></span>错误
 
-|                                                                                      |
-|--------------------------------------------------------------------------------------|
 | ![端到端：使用错误屏幕取消行程](images/speech/e2e-canceltrip-error.png) |
-| 使用错误屏幕取消行程                                                        |
+| --- |
+| 使用错误屏幕取消行程 |
 
  
 
@@ -369,12 +371,13 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 
 -   应用服务意外终止。
 -   **Cortana** 无法与应用服务进行通信。
--   在 **Cortana** 显示切换屏幕或进度屏幕 5 秒钟后，应用无法提供屏幕。
+-   在 **Cortana** 显示交付屏幕或进度屏幕 5 秒钟后，应用无法提供屏幕。
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
-* [语音交互](speech-interactions.md)
+* [语音交互](speech-interactions.md)  
+
 **开发人员**
 * [Cortana 交互](https://msdn.microsoft.com/library/windows/apps/mt185598)
 * [语音交互](https://msdn.microsoft.com/library/windows/apps/mt185614)
@@ -387,6 +390,6 @@ GUI 和 TTS 字符串可以相同，但这不是必需的。 尝试使 GUI 字�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
