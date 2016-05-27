@@ -1,4 +1,5 @@
 ---
+author: QuinnRadich
 Description: 设计说明性用户界面 (UI)，可向用户解释如何使用你的 Windows 应用商店应用。
 title: 设计说明性 UI 指南
 label: Instructional UI
@@ -11,7 +12,7 @@ template: detail.hbs
 
 在某些情况下，向用户解释应用中他们不熟悉的功能（例如特定的触摸交互）会很有用。 在这些情况下，你需要通过用户界面 (UI) 向用户显示说明，以便他们可以使用可能错过的这些功能。
 
-## <span id="when_to_use_instructional_ui"> </span> <span id="WHEN_TO_USE_INSTRUCTIONAL_UI"> </span>何时使用说明性 UI
+## <span id="when_to_use_instructional_ui"></span><span id="WHEN_TO_USE_INSTRUCTIONAL_UI"></span>何时使用说明性 UI
 
 说明性 UI 必须谨慎使用。 如果过度使用，它很容易被忽略或使用户感到厌烦，从而导致效率很低。
 
@@ -19,7 +20,7 @@ template: detail.hbs
 
 除非应用依赖触摸手势，否则说明性 UI 不应用于向用户解释应用的基本功能。
 
-## <span id="writing_instructional_ui"> </span> <span id="WRITING_INSTRUCTIONAL_UI"> </span>编写说明性 UI 的原则
+## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>编写说明性 UI 的原则
 
 好的说明性 UI 与用户息息相关，并对用户有教育意义，还能增强用户体验。 它应该：
 
@@ -39,7 +40,7 @@ template: detail.hbs
 -   **强制用户参与：**用户应能够忽略说明性 UI 并仍能继续使用应用。
 -   **显示重复信息：**不要让说明性 UI 给用户造成困扰，即使在他们第一次忽略此 UI 时也是如此。 添加用于重新显示说明性 UI 的设置是更好的解决方案。
 
-## <span id="examples_of_instructional_ui"> </span> <span id="EXAMPLES_OF_INSTRUCTIONAL_UI"> </span>说明性 UI 的示例
+## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>说明性 UI 的示例
 
 下面提供一些实例，其中的说明性 UI 可帮助你的用户了解：
 
@@ -51,21 +52,21 @@ template: detail.hbs
 
     ![影音时光应用的启动屏幕](images/instructional-ui-movie.png)
 
--   **指导用户在复杂的任务中采取下一步骤。** 在“Windows 邮件”应用中，收件箱底部的提示将用户指向**“设置”**以访问较早的消息。
+-   **指导用户在复杂的任务中采取下一步骤。** 在“Windows 邮件”应用中，收件箱底部的提示将用户指向“设置”****以访问较早的消息。
 
     ![显示说明性 UI 消息的“Windows 邮件”应用的裁剪屏幕截图](images/instructional-ui-mail-inbox.png)
 
-    在用户单击该消息时，应用的**“设置”**浮出控件会立即显示在屏幕的右侧，以便用户完成该任务。 下面的屏幕截图显示了当用户单击说明性 UI 消息之前和之后的“邮件”应用。
+    在用户单击该消息时，应用的“设置”****浮出控件会立即显示在屏幕的右侧，以便用户完成该任务。 下面的屏幕截图显示了当用户单击说明性 UI 消息之前和之后的“邮件”应用。
 
     | 之前                                                               | 调整后的文本                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
     | ![“Windows 邮件”应用的屏幕截图](images/instructional-ui-mail.png) | ![带有扩展设置浮出控件的 Windows 邮件应用的屏幕截图](images/instructional-ui-mail-flyout.png) |
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 * [应用帮助指南](guidelines-for-app-help.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
