@@ -6,19 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\launch-maps-app.md](https://github.com/Microsoft/windows-apps/blob/8283ec944e0df127a10d8af90ded46541542967e/windows-apps-src/launch-resume/launch-maps-app.md) | HandedOffSuccess | [Details](#c04307dbe76eb44bf9331d8beb7c0ccccef324202941)
+ [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/e19b36e39e4e664efc7f8d5d1d045e7d61cbe9cb/windows-apps-src/gaming/e2e.md) | OutofSyncHandedBackSuccess | [Details](#ab40d0fb462338b35eed64f732b6c6f2fcb5fc0b2115)
 
 ## Item Details
-##### <a name='c04307dbe76eb44bf9331d8beb7c0ccccef324202941'></a> Source: [windows-apps-src\launch-resume\launch-maps-app.md](https://github.com/Microsoft/windows-apps/blob/8283ec944e0df127a10d8af90ded46541542967e/windows-apps-src/launch-resume/launch-maps-app.md)
-* Status: HandedOffSuccess
+##### <a name='ab40d0fb462338b35eed64f732b6c6f2fcb5fc0b2115'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/e19b36e39e4e664efc7f8d5d1d045e7d61cbe9cb/windows-apps-src/gaming/e2e.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [launch-maps-app.4c53ae19a43a4989c42d509c2657de322f2161fe.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/862a62e25c6586d07a50ee9399fd1728e79db9a5/ol-handoff/Microsoft/windows-apps.zh-cn/master/launch-maps-app.4c53ae19a43a4989c42d509c2657de322f2161fe.zh-cn.xlf)
-* Handoff Datetime: 2016-05-27 16:54:21
+* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/66fabb33d156b32bf399bb9f1ddcf38a48f009dd/ol-handoff/Microsoft/windows-apps.zh-cn/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf)
+* Handoff Datetime: 2016-05-27 17:53:22
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/e4950dfadec3ed05da353865094db86aa5da2532/windows-apps-src/gaming/e2e.md)
+* Current Handback File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/eac7704e2d2e18f3bef46b3eb8e5f94908c5e366/ol-handback/Microsoft/windows-apps.zh-cn/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf)
+* Current Handback Datetime: 2016-05-17 11:33:09
 * [Back to Top](#report-top)
 
 
