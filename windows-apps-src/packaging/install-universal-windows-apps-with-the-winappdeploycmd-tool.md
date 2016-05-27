@@ -1,4 +1,5 @@
 ---
+author: msatranjr
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: 使用 WinAppDeployCmd.exe 工具安装应用
 description: Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将通用 Windows 平台 (UWP) 应用从 Windows 10 计算机部署到任意 Windows 10 移动版设备。
@@ -68,13 +69,13 @@ WinAppDeployCmd command -option <argument> ...
 
 |                        |                                                                              |
 |------------------------|------------------------------------------------------------------------------|
-| **参数**           | **说明**                                                              |
-| <x>              | 超时（以秒为单位）。 （默认值为 10 秒）                                          |
-| <address>        | 目标设备的 IP 地址或唯一标识符。                        |
-| <a><b>... | 每个程序包依赖项的依赖项路径。                    |
-| <p>              | 在设备设置中显示的用于建立连接的字母数字引脚。 |
-| <path>           | 文件系统路径。                                                            |
-| <name>           | 要卸载的应用包的完整程序包名称。                          |
+| **参数**           | **描述**                                                              |
+| &lt;x&gt;              | 超时（以秒为单位）。 （默认值为 10 秒）                                          |
+| &lt;地址&gt;        | 目标设备的 IP 地址或唯一标识符。                        |
+| &lt;a&gt;&lt;b&gt; ... | 每个应用包依赖项的依赖项路径。                    |
+| &lt;p&gt;              | 在设备设置中显示的用于建立连接的字母数字引脚。 |
+| &lt;路径&gt;           | 文件系统路径。                                                            |
+| &lt;名称&gt;           | 要卸载的应用包的完整程序包名称。                          |
 
  
 ## WinAppDeployCmd.exe 示例
@@ -107,6 +108,6 @@ WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

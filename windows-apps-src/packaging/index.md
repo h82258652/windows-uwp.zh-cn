@@ -1,4 +1,5 @@
 ---
+author: msatranjr
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: 打包应用
 description: 本部分包含或链接到有关打包通用 Windows 平台 (UWP) 应用的文章。
@@ -20,6 +21,6 @@ description: 本部分包含或链接到有关打包通用 Windows 平台 (UWP) 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
