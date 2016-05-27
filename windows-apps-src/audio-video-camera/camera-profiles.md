@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
 description: 本文讨论了如何使用相机配置文件来发现和管理不同视频捕获设备的功能。
 title: 相机配置文件
@@ -12,7 +13,7 @@ title: 相机配置文件
 本文讨论了如何使用相机配置文件来发现和管理不同视频捕获设备的功能。
 
 **注意**  
-本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
+本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码生成，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
  
 
@@ -104,6 +105,6 @@ title: 相机配置文件
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

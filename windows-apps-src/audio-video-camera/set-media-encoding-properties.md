@@ -1,6 +1,7 @@
 ---
+author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
-description: 本文向你演示如何使用 IMediaEncodingProperties 界面设置相机预览流和已捕获照片和视频的分辨率和帧速率。
+description: 本文向你演示如何使用 IMediaEncodingProperties 界面设置相机预览流以及已捕获照片和视频的分辨率和帧速率。
 title: 设置媒体编码属性
 ---
 
@@ -9,14 +10,14 @@ title: 设置媒体编码属性
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文向你演示如何使用 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 界面设置相机预览流和已捕获照片和视频的分辨率和帧速率。 还将演示如何确保预览流的纵横比与已捕获媒体的纵横比相匹配。
+本文向你演示如何使用 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 界面设置相机预览流以及已捕获照片和视频的分辨率和帧速率。 还将演示如何确保预览流的纵横比与已捕获媒体的纵横比相匹配。
 
 相机配置文件提供发现和设置相机流属性的更高级方法，但并非所有设备均支持这些文件。 有关详细信息，请参阅[相机配置文件](camera-profiles.md)。
 
 本文中的代码源自 [CameraResolution 示例](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409)。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
 **注意**  
-本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
+本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码生成，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
 ## 媒体编码属性帮助程序类
 
@@ -24,11 +25,11 @@ title: 设置媒体编码属性
 
 **警告**  
 [
-            **VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) 方法获取 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 枚举的成员（例如 **VideoRecord** 或 **Photo**），并返回 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 对象列表，这些对象可传达流编码设置，例如已拍摄照片或视频的分辨率。 调用 **GetAvailableMediaStreamProperties** 的结果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，不论指定的 **MediaStreamType** 值是什么。 出于此原因，在尝试访问任何属性值之前，你都应始终查看每个返回的值的类型并将其转换到相应类型。
+            **VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) 方法获取 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 枚举的成员（例如 **VideoRecord** 或 **Photo**），并返回 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 对象的列表，这些对象可传达流编码设置，例如已拍摄照片或视频的分辨率。 调用 **GetAvailableMediaStreamProperties** 的结果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，不论指定的 **MediaStreamType** 值是什么。 出于此原因，在尝试访问任何属性值之前，你都应始终查看每个返回的值的类型并将其转换到相应类型。
 
 以下定义的帮助程序类为 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 处理类型检查和转换，因此你的应用代码无需分辨这两种类型。 除此之外，此帮助程序类还会公开属性的纵横比属性、帧速率（仅适用于视频编码属性）以及使在应用 UI 中显示编码属性变得更简单的友好名称。
 
-必须将 [**Windows.Media.MediaProperties**](https://msdn.microsoft.com/library/windows/apps/hh701296) 命名空间包含在帮助程序类的源文件内。
+必须将 [**Windows.Media.MediaProperties**](https://msdn.microsoft.com/library/windows/apps/hh701296) 命名空间包含在帮助程序类的源文件中。
 
 [!code-cs[MediaEncodingPropertiesUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaEncodingPropertiesUsing)]
 
@@ -58,7 +59,7 @@ title: 设置媒体编码属性
 
 [!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
 
-## 匹配预览和捕获流的纵横比
+## 匹配预览流和捕获流的纵横比
 
 典型相机应用会为用户提供用于选择视频或照片捕获分辨率的 UI，但会以编程方式设置预览分辨率。 有以下几种不同的策略可用于选择最适合你的应用的预览流分辨率：
 
@@ -85,6 +86,6 @@ title: 设置媒体编码属性
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

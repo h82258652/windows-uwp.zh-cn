@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: 本文介绍如何访问和使用设备灯（如果存在）。 灯功能通过设备的相机和相机闪光灯功能单独管理。
 title: 独立于相机的手电筒
@@ -74,6 +75,6 @@ title: 独立于相机的手电筒
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

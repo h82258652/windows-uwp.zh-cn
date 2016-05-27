@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: 本主题介绍如何使用 FaceDetector 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 FaceTracker。
 title: 检测图像或视频中的人脸
@@ -11,7 +12,7 @@ title: 检测图像或视频中的人脸
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-本主题介绍如何使用 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 检测图像中的人脸。 在视频帧序列中，将随着时间的推移针对人脸跟踪优化 [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150)。
+本主题介绍如何使用 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150)。
 
 有关使用 [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 跟踪人脸的替代方法，请参阅[媒体捕获的场景分析](scene-analysis-for-media-capture.md)。
 
@@ -20,7 +21,7 @@ title: 检测图像或视频中的人脸
 ## 检测单张图像中的人脸
 
 [
-            **FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 类与允许你检测静止图像中的一个或多个人脸。
+            **FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 类允许你检测静止图像中的一张或多张人脸。
 
 此示例使用来自以下命名空间的 API。
 
@@ -34,11 +35,11 @@ title: 检测图像或视频中的人脸
 
 [!code-cs[Picker](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
 
-使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 类将图像文件解码为 **SoftwareBitmap**。 人脸检测过程在处理较小的图像时速度更快，因此你可能希望将源图像缩小为较小的大小。 可以在解码期间执行此操作，方法是创建一个 [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) 对象、设置 [**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) 和 [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) 属性，并将其传递给对 [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) 的调用中，后者返回解码和缩放的 **SoftwareBitmap**。
+使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 类将图像文件解码为 **SoftwareBitmap**。 人脸检测过程在处理较小的图像时速度更快，因此你可能希望将源图像缩小为较小的大小。 可以在解码期间执行此操作，方法是创建一个 [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) 对象、设置 [**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) 和 [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) 属性，并将其传递到对 [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) 的调用中，后者返回解码和缩放的 **SoftwareBitmap**。
 
 [!code-cs[Decode](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
 
-在当前版本中，**FaceDetector** 类仅支持 Gray8 或 Nv12 格式的图像。 **SoftwareBitmap** 类提供了 [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) 方法，可将位图从一种格式转换为另一种格式。 此示例将源图像转换为 Gray8 像素格式（如果它尚未采用该格式）。 如果你愿意，可以使用 [**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) 和 [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) 方法在运行时确定某个像素格式是否受支持，以免在将来的版本中扩展受支持的格式集。
+在当前版本中，**FaceDetector** 类仅支持 Gray8 或 Nv12 格式的图像。 **SoftwareBitmap** 类提供了 [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) 方法，可将位图从一种格式转换为另一种格式。 此示例将源图像转换为 Gray8 像素格式（如果它尚未采用该格式）。 如果需要，可以使用 [**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) 和 [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) 方法在运行时确定某个像素格式是否受支持，以免在将来的版本中扩展受支持的格式集。
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
@@ -60,7 +61,7 @@ title: 检测图像或视频中的人脸
 
 在 **ShowDetectedFaces** 帮助程序方法中，将创建新的 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) 并将源设置为从表示源图像的 **SoftwareBitmap** 创建的 [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854)。 XAML **Canvas** 控件的背景设置为图像画笔。
 
-如果传递到帮助程序方法中的人脸列表不为空，循环访问列表中的每个人脸，并使用 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 类的 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性来确定包含人脸的图像内的矩形位置和大小。 由于 **Canvas** 控件很可能采用与源图像不同的大小，你应该将 X 和 Y 坐标以及 **FaceBox** 的宽度和高度乘以缩放值，该值是源图像大小与 **Canvas** 控件的实际大小之比。
+如果传递到帮助程序方法中的人脸列表不为空，循环访问列表中的每张人脸，并使用 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 类的 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性来确定包含人脸的图像内的矩形位置和大小。 由于 **Canvas** 控件很可能采用与源图像不同的大小，你应该将 X 和 Y 坐标以及 **FaceBox** 的宽度和高度乘以缩放值，该值是源图像大小与 **Canvas** 控件的实际大小之比。
 
 [!code-cs[ShowDetectedFaces](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetShowDetectedFaces)]
 
@@ -97,6 +98,6 @@ title: 检测图像或视频中的人脸
 * [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

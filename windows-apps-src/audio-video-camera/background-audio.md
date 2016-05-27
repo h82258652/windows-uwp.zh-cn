@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
 description: 本文介绍了如何创建可在后台播放音频的通用 Windows 平台 (UWP) 应用。
 title: 后台音频
@@ -136,6 +137,6 @@ title: 后台音频
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

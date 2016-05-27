@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
 description: 本文向你介绍了视频设备控件如何实现增强的照片和视频捕获方案，包括光学图像防抖动和平滑缩放。
 title: 用于照片和视频捕获的捕获设备控件
@@ -21,7 +22,7 @@ title: 用于照片和视频捕获的捕获设备控件
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-## 曝光
+## Exposure
 
 [
             **ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) 允许你设置照片或视频捕获期间所使用的快门速度。
@@ -163,9 +164,9 @@ title: 用于照片和视频捕获的捕获设备控件
 
 **重要提示** 当实现点击对焦时，操作顺序很重要。 我们按照以下顺序调用这些 API：
 
-**1.** [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
-**2.** [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
-**3.** [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
+**1.** [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) 
+           **2.** [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) 
+           **3.** [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
@@ -173,7 +174,7 @@ title: 用于照片和视频捕获的捕获设备控件
 
 [!code-cs[TapUnfocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapUnfocus)]
 
-**GetPreviewStreamRectInControl** 帮助程序方法使用预览流的分辨率和设备方向，来确定包含预览流的预览元素内的矩形并修去上下黑边形式的填充，以便控件可以保持该流的纵横比。 此方法使用基本媒体捕获示例代码中定义的类成员变量，该代码可从[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中获取。
+**GetPreviewStreamRectInControl** 帮助程序方法使用预览流的分辨率和设备方向，确定包含预览流的预览元素内的矩形并修去上下黑边形式的填充，以便控件可以保持该流的纵横比。 此方法使用基本媒体捕获示例代码中定义的类成员变量，该代码可从[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中获取。
 
 [!code-cs[GetPreviewStreamRectInControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetGetPreviewStreamRectInControl)]
 
@@ -331,6 +332,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 * [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
 
-<!--HONumber=Mar16_HO2-->
+
+<!--HONumber=May16_HO2-->
 
 

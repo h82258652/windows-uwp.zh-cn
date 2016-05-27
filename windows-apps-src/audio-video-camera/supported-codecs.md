@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: 本文将列出 UWP 应用的音频和视频编解码器以及格式支持。
 title: 支持的编解码器
@@ -2691,6 +2692,6 @@ title: 支持的编解码器
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: 本文介绍了如何使用 BitmapDecoder 和 BitmapEncoder 加载和保存图像文件，以及如何使用 SoftwareBitmap 对象表示位图图像。
 title: 图像处理
@@ -24,7 +25,7 @@ title: 图像处理
 
 本文中的示例代码使用以下命名空间中的 API。
 
-[!code-cs[Namespaces](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
+[!code-cs[命名空间](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
 
 ## 使用 BitmapDecoder 从图像文件中创建 SoftwareBitmap
 
@@ -57,7 +58,7 @@ title: 图像处理
 
 ## 使用带有 XAML 图像控件的 SoftwareBitmap
 
-若要使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 控件在 XAML 页面内显示图像，首先要在你的 XAML 页面中定义 **Image** 控件。
+若要使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 控件在 XAML 页面内显示图像，首先在你的 XAML 页面中定义 **Image** 控件。
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
 
@@ -91,7 +92,7 @@ title: 图像处理
 
 [!code-cs[CreateNewSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateNewSoftwareBitmap)]
 
-因为此方法可访问含有基础 Windows 运行时类型的原始缓冲区，所以必须使用 **unsafe** 关键字进行声明。 你还必须使用 Microsoft Visual Studio 配置你的项目，以允许通过以下操作编译不安全的代码：打开项目的**“属性”**页面、单击**“生成”**属性页，然后选中**“允许不安全代码”**复选框。
+因为此方法可访问含有基础 Windows 运行时类型的原始缓冲区，所以必须使用 **unsafe** 关键字进行声明。 你还必须使用 Microsoft Visual Studio 配置你的项目，以允许通过以下操作编译不安全的代码：打开项目的“属性”****页面、单击“生成”****属性页，然后选中“允许不安全代码”****复选框。
 
 ## 从 Direct3D 图面创建 SoftwareBitmap
 
@@ -107,7 +108,7 @@ title: 图像处理
 
 **SoftwareBitmap** 类提供静态方法 [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362)，该方法允许你轻松创建一个使用从现有 **SoftwareBitmap** 指定的像素格式和 alpha 模式的新 **SoftwareBitmap**。 请注意，新创建的位图具有图像数据的单独副本。 修改新位图将不会影响源位图。
 
-[!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
+[!code-cs[转换](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 
 ## 转换图像文件的代码
 
@@ -128,6 +129,6 @@ title: 图像处理
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

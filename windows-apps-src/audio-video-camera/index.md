@@ -1,6 +1,7 @@
 ---
+author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-description: 本部分将提供有关创建可捕获、播放编辑照片、视频或音频的通用 Windows 应用的信息。
+description: 本部分将提供有关创建可捕获、播放或编辑照片、视频或音频的通用 Windows 应用的信息。
 title: 音频、视频和相机
 ---
 
@@ -15,10 +16,12 @@ title: 音频、视频和相机
 | [使用 CameraCaptureUI 捕获照片和视频](capture-photos-and-video-with-cameracaptureui.md) | 本文将介绍如何使用 [CameraCaptureUI](capture-photos-and-video-with-cameracaptureui.md) 类来使用内置于 Windows 的相机 UI 捕获照片或视频。                                                                                                            |
 | [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)       | 本文将介绍使用 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124) API 捕获照片和视频的操作步骤，包括初始化和关闭 MediaCapture 以及处理设备方向的更改。                                  |
 | [检测图像或视频中的人脸](detect-and-track-faces-in-an-image.md)                         | 本主题介绍如何使用 [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150)，该功能针对随视频帧序列中的时间推移跟踪人脸进行了优化。                                                                                                               |
-| [媒体合成和编辑](media-compositions-and-editing.md)                               | [Microsoft 媒体基础](https://msdn.microsoft.com/library/windows/desktop/ms694197) API 中的 API。                                                                                                                                                                                 |
+| [媒体合成和编辑](media-compositions-and-editing.md)                               | 本文向你介绍如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空间中的 API 来快速开发应用，从而使用户从音频和视频源文件创建媒体合成。                                    |
+                                                                                                                                        | [自定义视频效果](custom-video-effects.md)                               | 本文将介绍如何创建可实现 IBasicVideoEffect 接口的 Windows 运行时组件，以允许你为视频流创建自定义效果。                                                                                                                                |
 | [图像处理](imaging.md)                                                                             | 本文介绍了如何使用 [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象加载和保存图像文件以表示位图图像。                                                                                                                     |
-| [转换媒体文件代码](transcode-media-files.md)                                                 | 你可以使用 [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) API 将视频文件代码从一种格式转换为另一种格式。                                                                                                                                |
-| [在后台处理媒体文件](process-media-files-in-the-background.md)                 | 本文将向你介绍如何使用 [MediaProcessingTrigger](https://msdn.microsoft.com/library/windows/apps/dn806005) 和后台任务在后台处理媒体文件。                                                                                                       |
+| [音频设备信息属性](audio-device-information-properties.md)                                                                             | 本文列出了与音频设备相关的设备信息属性。                                                                                                                      |
+| [转换媒体文件的代码](transcode-media-files.md)                                                 | 你可以使用 [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) API 将视频文件代码从一种格式转换为另一种格式。                                                                                                                                |
+| [在后台处理媒体文件](process-media-files-in-the-background.md)                 | 本文将向你介绍如何使用 [MediaProcessingTrigger](https://msdn.microsoft.com/library/windows/apps/dn806005) 和后台任务在后台处理媒体文件。                                                                                             |
 | [使用 MediaSource 的媒体播放](media-playback-with-mediasource.md)                             | [MediaSource](https://msdn.microsoft.com/library/windows/apps/dn930905) 类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。  |
 | [自适应流](adaptive-streaming.md)                                                       | 本文介绍如何将自适应流多媒体内容的播放添加到通用 Windows 平台 (UWP) 应用。 此功能当前支持 Http 实时流 (HLS) 和 HTTP 动态流 (DASH) 内容的播放。                                          |
 | [后台音频](background-audio.md)                                                           | 本文介绍如何创建可在后台播放音频的 UWP 应用。                                                                                                                                                                                                               |
@@ -42,6 +45,6 @@ title: 音频、视频和相机
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

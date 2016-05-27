@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: 本文介绍了如何将自适应流式处理多媒体内容的播放添加到通用 Windows 平台 (UWP) 应用。 此功能当前支持 Http 实时流 (HLS) 和 HTTP 动态流 (DASH) 内容的播放。
 title: 自适应流式处理
@@ -22,13 +23,13 @@ title: 自适应流式处理
 
 ## 使用 AdaptiveMediaSource 的自适应流式处理
 
-如果你的应用需要更多高级自适应流功能（如提供自定义 HTTP 标头、监视当前下载和播放比特率或调整用于确定系统何时切换自适应流的比特率的时间），请使用 [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) 对象。
+如果你的应用需要更多高级自适应流式处理功能（如提供自定义 HTTP 标头、监视当前下载和播放比特率或调整用于确定系统何时切换自适应流的比特率的时间），请使用 [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) 对象。
 
 在 [**Windows.Media.Streaming.Adaptive**](https://msdn.microsoft.com/library/windows/apps/dn931279) 命名空间中可以找到自适应流式处理 API。
 
 [!code-cs[AdaptiveStreamingUsing](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAdaptiveStreamingUsing)]
 
-通过调用 [**CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261) 来使用自适应流式处理清单文件的 URI 初始化 **AdaptiveMediaSource**。 从此方法返回的 [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) 值可使你知道媒体源是否已成功创建。 如果成功，你可以通过调用 [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) 来将该对象设置为你的 **MediaElement** 的流源。 在此示例中，将查询 [**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) 属性来确定此流的受支持的最大比特率，然后将该值设置为初始比特率。 本示例还为 [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272)、[**DownloadBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931269) 和 [**PlaybackBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931278) 事件注册处理程序，这些事件将在本文的后面部分进行讨论。
+通过调用 [**CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261) 来使用自适应流式处理清单文件的 URI 初始化 **AdaptiveMediaSource**。 从此方法返回的 [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) 值可使你知道媒体源是否已成功创建。 如果成功，你可以通过调用 [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) 来将该对象设置为你的 **MediaElement** 的流源。 在此示例中，将查询 [**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) 属性来确定此流的受支持的最大比特率，然后将该值设置为初始比特率。 本示例还为 [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272)、[**DownloadBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931269) 和 [**PlaybackBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931278) 事件注册处理程序，这些事件将在本文后面进行讨论。
 
 [!code-cs[InitializeAMS](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetInitializeAMS)]
 
@@ -40,7 +41,7 @@ title: 自适应流式处理
 
 你可以通过更新事件参数所提供的 [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942) 对象的属性来使用 **DownloadRequested** 事件处理程序修改资源请求。 在以下示例中，将从中检索资源的 URI 通过更新结果对象的 [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250) 属性来进行修改。
 
-通过设置结果对象的 [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943) 或 [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249) 属性，你可以替代所请求的资源的内容。 在以下示例中，清单资源的内容通过设置 **Buffer** 属性来替换。 请注意，如果要使用以异步方式获取的数据更新资源请求（如从远程服务器或异步用户身份验证检索数据），必须调用 [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936) 来获取延迟，然后在操作完成时调用 [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934) 以向系统发送下载请求操作可以继续的信号。
+通过设置结果对象的 [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943) 或 [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249) 属性，你可以替代所请求的资源的内容。 在以下示例中，清单资源的内容通过设置 **Buffer** 属性来替换。 请注意，如果要使用以异步方式获取的数据更新资源请求（如从远程服务器或异步用户身份验证检索数据），必须调用 [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936) 来获取延迟，然后在操作完成时调用 [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934) 以向系统发出下载请求操作可以继续的信号。
 
 [!code-cs[AMSDownloadRequested](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAMSDownloadRequested)]
 
@@ -57,6 +58,6 @@ title: 自适应流式处理
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: 本文向你演示了如何将媒体从通用 Windows 应用转换到远程设备。
 title: 媒体转换
@@ -39,7 +40,7 @@ title: 媒体转换
 
 ## 通过 CastingDevicePicker 的媒体转换
 
-将媒体转换到设备的第二个方法是使用 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525)。 若要使用此类，请在你的项目中包括 [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) 命名空间。
+将媒体转换到设备的第二个方法是使用 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525)。 若要使用此类型，请在项目中包括 [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) 命名空间。
 
 [!code-cs[CastingNamespace](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastingNamespace)]
 
@@ -150,6 +151,6 @@ title: 媒体转换
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

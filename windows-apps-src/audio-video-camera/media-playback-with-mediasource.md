@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: MediaSource 类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。
 title: 使用 MediaSource 的媒体播放
@@ -35,7 +36,7 @@ title: 使用 MediaSource 的媒体播放
 
 你将需要包含 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 和 [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空间才能完成此方案。
 
-[!code-cs[Using](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
+[!code-cs[使用](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
 
 声明类型 **MediaSource** 的变量。 对于本文中的示例，媒体源声明为类成员，以便可以从多个位置访问它。
 
@@ -92,7 +93,7 @@ title: 使用 MediaSource 的媒体播放
 
 [!code-cs[TimedMetadataTrackschanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedMetadataTrackschanged)]
 
-由于多个元数据轨可以同时处于活动状态，因此你不仅要设置元数据轨列表的活动索引。 而且还要调用 **MediaPlaybackItem** 对象的 [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) 方法，从而传入你希望切换的轨的索引，然后从 [**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016) 枚举中提供一个值。 你选择的演示模式取决于你的应用的实现。 在此示例中，元数据轨在启用时设置为 **PlatformPresented**。 对于基于文本的轨，这意味着系统将在该轨中自动显示文本提示。 当关闭切换按钮时，演示模式设置为**“已禁用”**，这意味着不显示任何文本，并且不引发任何提示事件。 将在本文的后面部分讨论提示事件。
+由于多个元数据轨可以同时处于活动状态，因此你不仅要设置元数据轨列表的活动索引。 而且还要调用 **MediaPlaybackItem** 对象的 [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) 方法，从而传入你希望切换的轨的索引，然后从 [**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016) 枚举中提供一个值。 你选择的演示模式取决于你的应用的实现。 在此示例中，元数据轨在启用时设置为 **PlatformPresented**。 对于基于文本的轨，这意味着系统将在该轨中自动显示文本提示。 当关闭切换按钮时，演示模式设置为“已禁用”****，这意味着不显示任何文本，并且不引发任何提示事件。 将在本文的后面部分讨论提示事件。
 
 [!code-cs[ToggleChecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleChecked)]
 
@@ -126,7 +127,7 @@ title: 使用 MediaSource 的媒体播放
 
 [!code-cs[AddDataTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddDataTrack)]
 
-当已达到提示的开始时间时，将引发 **CueEntered** 事件，前提是相关联的轨具有 **ApplicationPresented**、**Hidden** 或 **PlatformPresented.** 的演示模式。对于元数据轨，当轨的演示模式为**“已禁用”**时，不会引发提示事件。 此示例仅将与该提示相关联的自定义数据输出到调试窗口。
+当已达到提示的开始时间时，将引发 **CueEntered** 事件，前提是相关联的轨具有 **ApplicationPresented**、**Hidden** 或 **PlatformPresented.** 的演示模式。 对于元数据轨，当轨的演示模式为“已禁用”****时，不会引发提示事件。 此示例仅将与该提示相关联的自定义数据输出到调试窗口。
 
 [!code-cs[DataCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDataCueEntered)]
 
@@ -178,6 +179,6 @@ title: 使用 MediaSource 的媒体播放
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

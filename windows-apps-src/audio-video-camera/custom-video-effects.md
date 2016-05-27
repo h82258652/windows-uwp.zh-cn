@@ -1,238 +1,245 @@
 ---
-Description: 'This article describes how to create a Windows Runtime Compontent that implements the IBasicVideoEffect interface to allows you to create custom effects for video streams.'
+author: drewbatgit
+Description: '本文将介绍如何创建可实现 IBasicVideoEffect 接口的 Windows 运行时组件以允许你为视频流创建自定义效果。'
 MS-HAID: 'dev\_audio\_vid\_camera.custom\_video\_effects'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-title: Custom video effects
+title: 自定义视频效果
 ---
 
-# Custom video effects
+# 自定义视频效果
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-This article describes how to create a Windows Runtime Compontent that implements the [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) interface to allows you to create custom effects for video streams. Custom effects can be used with several different Windows Runtime APIs including [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), which provides access to a device's camera, and [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), which allows you to create complex compositions out of media clips.
+本文将介绍如何创建可实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 接口的 Windows 运行时组件以允许你为视频流创建自定义效果。 自定义效果可以与若干不同的 Windows 运行时 API 一起使用，包括提供设备相机的访问权限的 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124) 和允许你创建复杂的媒体剪辑合成的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。
 
-## Add a custom effect to your app
+## 将自定义效果添加到应用
 
 
-A custom video effect is defined in a class that implements the [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) interface. This class can't be included directly in your app's project. Instead, you must use a Windows Runtime Component to host your video effect class.
+自定义视频效果在实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 接口的类中定义。 此类不能直接包含在应用的项目中。 必须改用 Windows 运行时组件才能托管视频效果类。
 
-**Add a Windows Runtime Component for your video effect**
+**为视频效果添加 Windows 运行时组件**
 
-1.  In Microsoft Visual Studio, with your solution open, go to the **File** menu and select **Add-&gt;New Project....**
-2.  Select the **Windows Runtime Component (Universal Windows)** project type.
-3.  For this example, name the project "VideoEffectComponent". This name will be referenced in code later.
-4.  Click **OK**.
-5.  The project template creates a class called Class1.cs. In **Solution Explorer**, right-click the icon for Class1.cs and select **Rename**.
-6.  Rename the file to "ExampleVideoEffect.cs". Visual Studio will show a prompt asking if you want to update all references to the new name. Click **Yes**.
-7.  Open "ExampleVideoEffect.cs" and update the class definition to implement the [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) interface.
+1.  在 Microsoft Visual Studio 中，打开解决方案后，转到“文件”****菜单并依次选择“添加”-&gt;“新建项目...”****。
+2.  选择“Windows 运行时组件(通用 Windows)”****项目类型。
+3.  对于此示例，将项目命名为“VideoEffectComponent”。 此名称稍后将在代码中引用。
+4.  单击“确定”****。
+5.  项目模板将创建一个名为 Class1.cs 的类。 在“解决方案资源管理器”****中，右键单击 Class1.cs 的图标并选择“重命名”****。
+6.  将文件重命名为“ExampleVideoEffect.cs”。 Visual Studio 将显示一条提示，询问你是否想要更新对新名称的所有引用。 单击“是”****。
+7.  打开“ExampleVideoEffect.cs”，并更新类定义以实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 接口。
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
 
 
-You need to include the following namespaces in your effect class file in order to access all of the types used in the examples in this article.
+你需要在效果类文件中包含以下命名空间，以便访问本文中示例所使用的所有类型。
 
 [!code-cs[EffectUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetEffectUsing)]
 
 
-## Implement the IBasicVideoEffect interface using software processing
+## 使用软件处理实现 IBasicVideoEffect 接口
 
 
-Your video effect must implement all of the methods and properties of the [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) interface. This section walks you through a simple implementation of this interface that uses software processing.
+你的视频效果必须实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 接口的所有方法和属性。 本部分将引导你完成使用软件处理简单实现该接口的过程。
 
-### Close method
+### Close 方法
 
-The system will call the [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) method on your class when the effect should shut down. You should use this method to dispose of any resources you have created. The argument to the method is a MediaEffectClosedReason that lets you know whether the effect was closed normally, if an error occurred, or if the effect does not support the required encoding format.
+当效果关闭时，系统将对你的类调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 方法。 你应当使用此方法来释放你创建的任何资源。 该方法的参数是 MediaEffectClosedReason，它使你能够了解效果是否正常关闭、是否发生错误或者效果是否不支持所需的编码格式。
 
 [!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
 
 
-### DiscardQueuedFrames method
+### DiscardQueuedFrames 方法
 
-The [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) method is called when your effect should reset. A typical scenario for this is if your effect stores previously processed frames to use in processing the current frame. When this method is called, you should dispose of the set of previous frames you have saved. Although this method can be used to reset any state related to previous frames, not only accumulated video frames.
+当效果应重置时，将调用 [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) 方法。 通常会在你的效果存储了之前处理的帧以便用于处理当前帧的情况下调用此方法。 当调用此方法时，你应当释放保存的上一组帧。 尽管此方法可以用来重置与之前的帧（而不仅仅是累计的视频帧）相关的任何状态。
 
 
 [!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
 
 
 
-### IsReadOnly property
+### IsReadOnly 属性
 
-The [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) property lets the system know if your effect will write to the output of the effect. If your app does not modify the video frames - for example, an effect that only performs analysis of the video frames - then you should set this property to true, which will cause the system to efficiently copy the frame input to the frame output for you.
+[
+            **IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 属性使系统能够知道你的效果是否将写入效果的输出。 如果你的应用未修改视频帧（例如，一种仅执行分析该视频帧的效果），那么你应当将此属性设置为 true，这样将使系统能够为你有效地将帧输入复制到帧输出。
 
-**Tip**  When the [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) property is set to true, the system copies the input frame to the output frame before [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) is called. Setting the **IsReadOnly** property to true does not restrict you from writing to the effect's output frames in **ProcessFrame**.
+**提示** 当 [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 属性设置为 true 时，系统会在调用 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 之前，将输入帧复制到输出帧。 将 **IsReadOnly** 属性设置为 true 不会限制你在 **ProcessFrame** 中对效果的输出帧执行写入操作。
 
 [!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)] 
 
 
-### SetEncodingProperties method
+### SetEncodingProperties 方法
 
-The system calls [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) on your effect to let you know the encoding properties for the video stream upon which the effect is operating. This method also provides a reference to the Direct3D device used for hardware rendering. The usage of this device is shown in the hardware processing example later in this article.
+系统会对你的效果调用 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884)，以便让你知道要应用该效果的视频流的编码属性。 此方法还提供了对用于硬件呈现的 Direct3D 设备的引用。 此设备的用法会在本文后面的硬件处理示例中介绍。
 
 [!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
 
 
-### SupportedEncodingProperties property
+### SupportedEncodingProperties 属性
 
-The system checks the [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) property to determine which encoding properties are supported by your effect. Note that if the consumer of your effect can't encode video using the properties you specify, it will call [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) on your effect and will remove your effect from the video pipeline.
+系统将检查 [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) 属性以确定你的效果支持哪些编码属性。 请注意，如果你的效果的使用者无法使用你指定的属性对视频进行编码，它将对你的效果调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 并且会从视频管道中删除你的效果。
 
 
 [!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
 
 
-**Note**  If you return an empty list of [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) objects from **SupportedEncodingProperties**, the system will default to ARGB32 encoding.
+**注意** 如果你从 **SupportedEncodingProperties** 返回空的 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 对象的空白列表，系统将默认为 ARGB32 编码。
 
  
 
-### SupportedMemoryTypes property
+### SupportedMemoryTypes 属性
 
-The system checks the [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) property to determine whether your effect will access video frames in software memory or in hardware (GPU) memory. If you return [**MediaMemoryTypes.Cpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), your effect will be passed input and output frames that contain image data in [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) objects. If you return **MediaMemoryTypes.Gpu**, your effect will be passed input and output frames that contain image data in [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) objects.
+系统将检查 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 属性以确定你的效果是否将访问软件内存或硬件 (GPU) 内存中的视频帧。 如果你返回 [**MediaMemoryTypes.Cpu**](https://msdn.microsoft.com/library/windows/apps/dn764822)，系统会将使图像数据包含在 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象中的输入和输出帧传递给你的效果。 如果你返回 **MediaMemoryTypes.Gpu**，系统会将使图像数据包含在 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 对象中的输入和输出帧传递给你的效果。
 
 [!code-cs[SupportedMemoryTypes](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedMemoryTypes)]
 
 
-**Note**  If you specify [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), the system will use either GPU or system memory, whichever is more efficient for the pipeline. When using this value, you must check in the [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) method to see whether the [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) or [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) passed into the method contains data and then process the frame accordingly.
+**注意** 如果你指定 [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822)，系统将使用 GPU 或系统内存，无论哪一个对管道更有效。 在使用此值时，必须检查 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法，以查看传入到该方法的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 或 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 是否包含数据，然后相应地处理帧。
 
  
 
-### TimeIndependent property
+### TimeIndependent 属性
 
-The [**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) property lets the system know whether your effect requires uniform timing. When set to true, the system can use optimizations that enhance effect performance.
+[
+            **TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) 属性使系统能够知道你的效果是否需要统一计时。 当设置为 true 时，系统可以使用优化功能以增强效果性能。
 
 [!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
 
-### SetProperties method
+### SetProperties 方法
 
-The [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) method allows the app that is using your effect to adjust effect parameters. Properties are passed as an [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) map of property names and values.
+[
+            **SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允许正在使用你的效果的应用调整效果参数。 属性将作为属性名称和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 映射传递。
 
 
 [!code-cs[SetProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetProperties)]
 
 
-This simple example will dim the pixels in each video frame according to a specified value. A property is declared and TryGetValue is used to get the value set by the calling app. If no value was set, a default value of .5 is used.
+此简单示例将根据指定值使每个视频帧中的像素变暗。 已声明了某个属性，并已使用 TryGetValue 来获取通过调用应用设置的值。 如果未设置任何值，使用默认值 0.5。
 
 [!code-cs[FadeValue](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetFadeValue)]
 
 
-### ProcessFrame method
+### ProcessFrame 方法
 
-The [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) method is where your effect modifies the image data of the video. The method is called once per frame and is passed a [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) object. This object contains an input [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) object that contains the incoming frame to be processed and an output **VideoFrame** object to which you write image data that will be passed on to rest of the video pipeline. Each of these **VideoFrame** objects has a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) property and a [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) property, but which of these can be used is determined by the value you returned from the [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) property.
+[
+            **ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法是你的效果修改视频图像数据的位置。 针对每一帧调用一次该方法，并将 [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) 对象传递给它。 此对象包含一个输入 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 对象（包含要处理的传入帧）和一个你要向其写入图像数据（将传递到剩余的视频管道）的输出 **VideoFrame** 对象。 其中每个 **VideoFrame** 对象都有一个 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 属性和一个 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 属性，但是使用其中哪个对象，则由你从 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 属性返回的值确定。
 
-This example shows a simple implementation of the **ProcessFrame** method using software processing. For more information on working with [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) objects, see [Imaging](imaging.md). An example **ProcessFrame** implementation using hardware processing is shown later in this article.
+此示例将介绍如何使用软件处理简单实现 **ProcessFrame** 方法。 有关使用 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象的详细信息，请参阅[图像处理](imaging.md)。 使用硬件处理的 **ProcessFrame** 实现示例将在本文后面介绍。
 
-Accessing the data buffer of a **SoftwareBitmap** requires COM interop, so you should include the **System.Runtime.InteropServices** namespace in your effect class file.
+访问 **SoftwareBitmap** 的数据缓冲区需要 COM 互操作，所以你应当在效果类文件中包含 **System.Runtime.InteropServices** 命名空间。
 
 [!code-cs[COMUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMUsing)]
 
 
-Add the following code inside the namespace for your effect to import the interface for accessing the image buffer.
+在该命名空间内为你的效果添加以下代码，以导入访问该图像缓冲区的接口。
 
 [!code-cs[COMImport](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMImport)]
 
 
-**Note**  Because this technique accesses a native, unmanaged image buffer, you will need to configure your project to allow unsafe code.
-1.  In Solution Explorer, right-click the VideoEffectComponent project and select Properties....
-2.  Select the Build tab.
-3.  Check the checkbox for "Allow unsafe code"
+**注意** 由于此技术访问本机非托管的图像缓冲区，所以你需要将项目配置为允许不安全的代码。
+1.  在“解决方案资源管理器”中，右键单击“VideoEffectComponent”项目，并选择“属性...”。
+2.  选择“生成”选项卡。
+3.  选中“允许不安全代码”复选框
 
  
 
-Now you can add the **ProcessFrame** method implementation. First, this method obtains a [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) object from both the input and output software bitmaps. Note that the output frame is opened for writing and the input for reading. Next, an [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671) is obtained for each buffer by calling [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046). Then, the actual data buffer is obtained by casting the **IMemoryBufferReference** objects as the COM interop interface defined above, **IMemoryByteAccess**, and then calling **GetBuffer**.
+现在，你可以添加 **ProcessFrame** 方法实现。 首先，此方法将从输入和输出软件位图中获取 [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) 对象。 请注意，输出帧和输入帧均已打开，分别用于写入和读取。 接下来，通过调用 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) 为每个缓冲区获取 [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671)。 然后，通过将 **IMemoryBufferReference** 转换为上述定义的 COM 互操作接口 **IMemoryByteAccess**，接着调用 **GetBuffer**，获取实际数据缓冲区。
 
-Now that the data buffers have been obtained, you can read from the input buffer and write to the output buffer. The layout of the buffer is obtained by calling [**GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330), which provides information on the width, stride, and initial offset of the buffer. The bits per pixel is determined by the encoding properties set previously with the [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) method. The buffer format information is used to find the index into the buffer for each pixel. The pixel value from the source buffer is copied into the target buffer, with the color values being multiplied by the FadeValue property defined for this effect to dim them by the specified amount.
+现在已获取数据缓冲区，你可以从输入缓冲区进行读取，并对输出缓冲区进行写入。 通过调用 [**GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) 获取缓冲区的布局，它提供了有关缓冲区的宽度、步幅和初始偏移的信息。 每像素位数由与之前通过 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) 方法设置的编码属性确定。 缓冲区格式信息用于查找每个像素的缓冲区中的索引。 源缓冲区的像素值已复制到目标缓冲区中，并且颜色值乘以为此效果定义的 FadeValue 属性，以使其按指定的量变暗。
 
 [!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
 
 
-## Implement the IBasicVideoEffect interface using hardware processing
+## 使用硬件处理实现 IBasicVideoEffect 接口
 
 
-Creating a custom video effect using hardware (GPU) processing is almost identical to using software processing as described above. This section will show the few differences in an effect that uses hardware processing. This example uses the Win2D Windows Runtime API. For more information on using Win2D, see the [Win2D documentation](http://go.microsoft.com/fwlink/?LinkId=519078).
+创建使用硬件 (GPU) 处理的自定义视频效果与上述使用软件处理几乎完全相同。 本部分将介绍使用硬件处理的效果中几点不同之处。 此示例使用 Win2D Windows 运行时 API。 有关使用 Win2D 的详细信息，请参阅 [Win2D 文档](http://go.microsoft.com/fwlink/?LinkId=519078)。
 
-Use the following steps to add the Win2D NuGet package to the project you created as described in the [Add a custom effect to your app](#addacustomeffect) section at the beginning of this article.
+使用以下步骤将 Win2D NuGet 程序包添加到你创建的项目，如本文开头的[向应用添加自定义效果](#addacustomeffect)部分中所述。
 
-**Add the Win2D NuGet package to your effect project**
+**将 Win2D NuGet 程序包添加到你的效果项目**
 
-1.  In **Solution Explorer**, right-click the **VideoEffectComponent** project and select **Manage NuGet Packages...**
-2.  At the top of the window, select the **Browse** tab.
-3.  In the search box, type "Win2D".
-4.  Click on **Win2D.uwp** and the click Install in the right pane.
-5.  The **Review Changes** dialog shows you the package to be installed. Click **OK**.
-6.  Accept the package license.
+1.  在“解决方案资源管理器”****中，右键单击“VideoEffectComponent”****项目，并选择“管理 NuGet 程序包...”****。
+2.  在窗口顶部，选择“浏览”****选项卡。
+3.  在搜索框中，键入“Win2D”。
+4.  单击“Win2D.uwp”****，然后单击右侧窗格中的“安装”。
+5.  “查看更改”****对话框将向你显示要安装的程序包。 单击“确定”****。
+6.  接受程序包许可证。
 
-In addition to the namespaces included in the basic project setup, you will need to include the following namespaces provided by Win2D.
+除了基本项目设置中包含的命名空间外，你还需要包含 Win2D 提供的以下命名空间。
 
 [!code-cs[UsingWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetUsingWin2D)]
 
 
-Because this effect will use GPU memory for operating on the image data, you should return [**MediaMemoryTypes.Gpu**](https://msdn.microsoft.com/library/windows/apps/dn764822) from the [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) property.
+由于此效果将使用 GPU 内存来处理图像数据，因此你应当从 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 属性返回 [**MediaMemoryTypes.Gpu**](https://msdn.microsoft.com/library/windows/apps/dn764822)。
 
 [!code-cs[SupportedMemoryTypesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedMemoryTypesWin2D)]
 
 
-Set the encoding properties your effect will support with the [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) property. When working with Win2D, you must use ARGB32 encoding.
+使用 [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) 属性来设置你的效果将支持的编码属性。 当处理 Win2D 时，必须使用 ARGB32 编码。
 
 [!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
 
 
-Use the [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) method to create a new Win2D **CanvasDevice** object from the [**IDirect3DDevice**](https://msdn.microsoft.com/library/windows/apps/dn895092) passed into the method.
+使用 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) 方法，从传入到该方法中的 [**IDirect3DDevice**](https://msdn.microsoft.com/library/windows/apps/dn895092) 创建新的 Win2D **CanvasDevice** 对象。
 
 [!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
 
 
-The [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) implementation is identical to the software processing example above. This example uses a **BlurAmount** property to configure a Win2D blur effect.
+[
+            **SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 实现与上述软件处理示例相同。 此示例使用 **BlurAmount** 属性配置 Win2D 模糊效果。
 
 [!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
 
 [!code-cs[BlurAmountWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetBlurAmountWin2D)]
 
 
-The last step is to implement the [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) method that actually processes the image data.
+最后一步是实现实际处理图像数据的 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法。
 
-Using Win2D APIs, a **CanvasBitmap** is created from the input frame's [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) property. A **CanvasRenderTarget** is created from the output frame's **Direct3DSurface** and a **CanvasDrawingSession** is created from this render target. A new Win2D **GaussianBlurEffect** is initialized, using the **BlurAmount** property our effect exposes via [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986). Finally, the **CanvasDrawingSession.DrawImage** method is called to draw the input bitmap to the render target using the blur effect.
+使用 Win2D API，从输入帧的 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 属性创建 **CanvasBitmap**。 从输出帧的 **Direct3DSurface** 创建一个 **CanvasRenderTarget**，从此呈现目标创建一个 **CanvasDrawingSession**。 新的 Win2D **GaussianBlurEffect** 已使用我们的效果通过 [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 公开的 **BlurAmount** 属性进行了初始化。 最后，调用 **CanvasDrawingSession.DrawImage** 方法，使用模糊效果将输入位图绘制到呈现目标。
 
 [!code-cs[ProcessFrameWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetProcessFrameWin2D)]
 
 
-## Adding your custom effect to your app
+## 向应用添加自定义效果
 
 
-In order to use your video effect from your app, you must add a reference to the effect project to your app.
+若要从应用中使用你的视频效果，必须向应用添加对效果项目的引用。
 
-1.  In Solution Explorer, under your app project, right-click References and select Add reference...
-2.  Expand the Projects tab, click Solution, and select the checkbox for your effect project name. For this example, the name is VideoEffectComponent.
-3.  Click OK.
+1.  在“解决方案资源管理器”中，在你的项目下，右键单击“引用”，然后选择“添加引用...”
+2.  展开“项目”选项卡、单击“解决方案”，然后选中效果项目名称的复选框。 对于此示例，名称为 VideoEffectComponent。
+3.  单击“确定”。
 
-### Add your custom effect to a camera video stream
+### 向相机视频流添加自定义效果
 
-You can set up a simple preview stream from the camera by following the steps in the article [Simple camera preview access](simple-camera-preview-access.md). Following those steps will provide you with an initialized [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) object that is used to access the camera's video stream.
+你可以按照[简单的相机预览访问](simple-camera-preview-access.md)文章中的步骤，从相机设置一个简单的预览流。 按照这些步骤操作将为你提供一个已初始化的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象，该对象用于访问相机的视频流。
 
-To add your custom video effect to a camera stream, first create a new [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) object, passing in the namespace and class name for your effect. Next call the **MediaCapture** object's [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) method to add your effect to the specified stream. This example uses the [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) value to specify that the effect should be added to the preview stream. If your app supports video capture, you could also use **MediaStreamType.VideoRecord** to add the effect to the capture stream. **AddVideoEffect** returns an [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985) object representing your custom effect. You can use the SetProperties method to set the configuration for your effect.
+若要将你的自定义视频效果添加到相机流，首先要创建一个新的 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 对象，从而为你的效果传入命名空间和类名称。 接下来，调用 **MediaCapture** 对象的 [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) 方法，以将你的效果添加到指定的流。 此示例使用 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 值来指定是否应将效果添加到预览流。 如果你的应用支持视频捕获，你也可以使用 **MediaStreamType.VideoRecord** 将效果添加到捕获流。 **AddVideoEffect** 将返回表示你的自定义效果的 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985) 对象。 你可以使用 SetProperties 方法设置效果的配置。
 
-Once the effect has been added, [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) is called to start the preview stream.
+添加效果后，将调用 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 来启动预览流。
 
 [!code-cs[AddVideoEffectAsync](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddVideoEffectAsync)]
 
 
 
-### Add your custom effect to a clip in a MediaComposition
+### 向 MediaComposition 中的一段剪辑添加自定义效果
 
-For general guidance oncreating media compositions from video clips, see [Media compositions and editing](media-compositions-and-editing.md). The following code snippet shows the creation of a simple media composition with using a custom video effect. A [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) object is created by calling [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607), passing in a video file that was selected by the user with a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and the clip is added to a new [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646). Next a new [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) object is created, passing in the namespace and class name for your effect to the constructor. Finally, the effect definition is added to the [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) collection of the **MediaClip** object.
+有关从视频剪辑创建媒体合成的一般指南，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。 以下代码片段展示了使用自定义视频效果创建简单媒体合成的过程。 [
+            **MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 对象已通过调用 [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607)、传入用户通过 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 选择的视频文件创建，并且该剪辑已添加到新的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。 接下来，创建新 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 对象，从而将效果的命名空间和类名称传入到构造函数。 最后，将效果定义添加到 **MediaClip** 对象的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 集合。
 
 
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
-## Related topics
+## 相关主题
 
 
-[Simple camera preview access](simple-camera-preview-access.md)
-[Media compositions and editing](media-compositions-and-editing.md)
-[Win2D documentation](http://go.microsoft.com/fwlink/?LinkId=519078)
+[简单的相机预览访问](simple-camera-preview-access.md) 
+           [媒体合成与编辑](media-compositions-and-editing.md) 
+           [Win2D 文档](http://go.microsoft.com/fwlink/?LinkId=519078)
  
 
  
@@ -241,6 +248,6 @@ For general guidance oncreating media compositions from video clips, see [Media 
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
 description: 本主题向你介绍如何从媒体捕获预览流获取预览帧。
 title: 获取预览帧
@@ -11,7 +12,7 @@ title: 获取预览帧
 本主题向你介绍如何从媒体捕获预览流获取预览帧。
 
 **注意**  
-本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉本文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例，并且你有一个带有活动视频预览流的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278)。
+本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码生成，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉本文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例，并且你有一个带有活动视频预览流的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278)。
 
 除了基本媒体捕获所需的命名空间，捕获预览帧还需要以下命名空间。
 
@@ -58,6 +59,6 @@ title: 获取预览帧
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

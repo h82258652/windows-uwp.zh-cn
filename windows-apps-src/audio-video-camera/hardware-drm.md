@@ -1,4 +1,5 @@
 ---
+author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: 本主题将概述如何向通用 Windows 平台 (UWP) 应用添加基于 PlayReady 硬件的数字版权管理 (DRM)。
 title: 硬件 DRM
@@ -19,7 +20,7 @@ title: 硬件 DRM
 
 本主题简要概述了 Windows 10 如何实现受信任的执行环境。
 
-Windows TEE 实现的详细信息已超出本文档范围。 但是，简要讨论标准移植工具包 TEE 端口和 Windows 端口之间的区别将非常有益。 Windows 可实现 OEM 代理层，并将序列化 PRITEE 函数调用传输到 Windows Media Foundation 子系统中的用户模式驱动程序。 这将最终传送至 Windows TrEE（受信任的执行环境）驱动程序或 OEM 图形驱动程序。 有关这些方法的详细信息已超出了本文档范围。 下图显示了 Windows 端口的常规组件交互。 如果要开发 Windows PlayReady TEE 实现，可以联系 <WMLA@Microsoft.com>。
+Windows TEE 实现的详细信息已超出本文档范围。 但是，简要讨论标准移植工具包 TEE 端口和 Windows 端口之间的区别将非常有益。 Windows 可实现 OEM 代理层，并将序列化 PRITEE 函数调用传输到 Windows Media Foundation 子系统中的用户模式驱动程序。 这将最终传送至 Windows TrEE（受信任的执行环境）驱动程序或 OEM 图形驱动程序。 有关这些方法的详细信息已超出了本文档范围。 下图显示了 Windows 端口的常规组件交互。 如果想要开发 Windows PlayReady TEE 实现，可以联系 <WMLA@Microsoft.com>。
 
 ![Windows TEE 组件图](images/windowsteecomponentdiagram720.jpg)
 
@@ -53,21 +54,21 @@ Windows TEE 实现的详细信息已超出本文档范围。 但是，简要讨�
 
 以下示例将说明如何选择退出硬件 DRM。 只需在切换之前执行此操作。 此外，还要确保内存中没有任何 PlayReady 对象，否则行为将是未定义行为。
 
-``` syntax
+```js
 var applicationData = Windows.Storage.ApplicationData.current;
-var localSettings = applicationData.localSettings.createContainer(“PlayReady”, Windows.Storage.ApplicationDataCreateDisposition.always);
-localSettings.values[“SoftwareOverride”] = 1;
+var localSettings = applicationData.localSettings.createContainer("PlayReady", Windows.Storage.ApplicationDataCreateDisposition.always);
+localSettings.values["SoftwareOverride"] = 1;
 ```
 
 若要切换回硬件 DRM，请将 **SoftwareOverride** 值设置为 **0**。
 
 对于每一次媒体播放，都需要将 **MediaProtectionManager** 设置为：
 
-``` syntax
-mediaProtectionManager.properties[“Windows.Media.Protection.UseSoftwareProtectionLayer”] = true;
+```js
+mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-辨别使用的是硬件 DRM 还是软件 DRM 的最佳方法是查看 C:\\Users\\<username>\\AppData\\Local\\Packages\\<application name>\\LocalState\\PlayReady\\\*
+辨别使用的是硬件 DRM 还是软件 DRM 的最佳方法是查看 C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\*
 
 -   如果存在 mspr.hds 文件，则使用的是软件 DRM。
 -   如果你具有另一个 \*.hds 文件，则使用的是硬件 DRM。
@@ -79,7 +80,7 @@ mediaProtectionManager.properties[“Windows.Media.Protection.UseSoftwareProtect
 
 可以使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法确定系统是否支持特定硬件数字版权管理 (DRM) 功能。 例如：
 
-``` syntax
+```cpp
 boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
 ```
 
@@ -90,6 +91,6 @@ boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures en
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

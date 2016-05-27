@@ -1,4 +1,5 @@
 ---
+author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: 本部分介绍了如何修改 PlayReady Web 应用以支持从以前的 Windows 8.1 版本到 Windows 10 版本所做的更改。
 title: PlayReady 加密媒体扩展
@@ -28,11 +29,11 @@ title: PlayReady 加密媒体扩展
 
     可结合多个密钥标识符 (KeyID) 使用 PlayReady 对象（与在 Windows 8.1 中一样），或结合多个 KeyID 使用[内容解密模型数据 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)。
 
-    **注意** 在 Windows 10 中，CDMData 中的 <KeyID> 支持多个密钥标识符。
+    **注意** 在 Windows 10 中，CDMData 中的 &lt;KeyID&gt; 支持多个密钥标识符。
 
      
 
--   添加了实时到期支持，或有限持续时间许可证 (LDL)。
+-   添加了实时过期支持，或有限持续时间许可证 (LDL)。
 
     提供在许可证上设置实时过期时间的功能。
 
@@ -97,7 +98,7 @@ title: PlayReady 加密媒体扩展
 
 以下示例将演示如何在 Web 应用中使用安全停止：
 
-``` syntax
+```JavaScript
 // JavaScript source code
 
 var g_prkey = null;
@@ -299,6 +300,6 @@ function foo() {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
 description: 本主题介绍专用于视频捕获方案的效果。 其中包括视频防抖动效果。
 title: 视频捕获的效果
@@ -11,7 +12,7 @@ title: 视频捕获的效果
 本主题介绍专用于视频捕获方案的效果。 其中包括视频防抖动效果。
 
 **注意**  
-本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
+本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码生成，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
 ## 视频防抖动效果
 
@@ -29,7 +30,7 @@ title: 视频捕获的效果
 
 [!code-cs[DeclareVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
-在本文[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中所述的基本视频捕获实现中，媒体编码配置文件对象将分配给局部变量，因为不会在代码的其他位置使用它。 对于此方案，你应该将该对象分配给成员变量以便以后进行访问。
+在本文[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中所述的基本视频捕获实现中，媒体编码配置文件对象将分配给本地变量，因为不会在代码的其他位置使用它。 对于此方案，你应该将该对象分配给成员变量以便以后进行访问。
 
 [!code-cs[EncodingProfileMember](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
 
@@ -37,7 +38,7 @@ title: 视频捕获的效果
 
 在初始化 **MediaCapture** 对象后，创建 [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) 对象的新实例。 调用 [**MediaCapture.AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) 将该效果添加到视频管道，并检索 [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) 类的一个实例。 指定 [**MediaStreamType.VideoRecord**](https://msdn.microsoft.com/library/windows/apps/br226640) 以指示该效果应该应用到视频录制流。
 
-注册 [**EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) 事件的事件处理程序并调用帮助程序方法 **SetUpVideoStabilizationRecommendationAsync**，这两个将在本文稍后部分讨论。 最后，将该效果的 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) 属性设置为 True 以启用该效果。
+注册 [**EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) 事件的事件处理程序并调用帮助程序方法 **SetUpVideoStabilizationRecommendationAsync**，两者将在本文稍后部分讨论。 最后，将该效果的 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) 属性设置为 True 以启用该效果。
 
 [!code-cs[CreateVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateVideoStabilizationEffect)]
 
@@ -59,8 +60,8 @@ title: 视频捕获的效果
 
 ### 处理禁用的视频防抖动效果
 
-如果像素吞吐量对于要处理的该效果太高，或如果检测到该效果运行缓慢，则系统可以自动禁用该视频防抖动效果。 如果发生这种情况，将引发 EnabledChanged 事件。 *sender* 参数中的 **VideoStabilizationEffect** 实例指示该效果的新状态：启用或禁用。 [
-            **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) 具有表明启用或禁用该效果原因的 [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) 值。 请注意，如果你以编程方式启用或禁用该效果，在原因是 **Programmatic** 的情况下，也会引发此事件。
+如果像素吞吐量对于要处理的该效果太高，或如果检测到该效果运行缓慢，则系统可以自动禁用该视频防抖动效果。 如果发生这种情况，将引发 EnabledChanged 事件。 *sender* 参数中的 **VideoStabilizationEffect** 实例指示该效果的新状态：已启用或已禁用。 [
+            **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) 具有表明已启用或已禁用该效果原因的 [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) 值。 请注意，如果你以编程方式启用或禁用该效果，在原因是 **Programmatic** 的情况下，也会引发此事件。
 
 通常使用此事件来调节应用的 UI 以指示视频防抖动的当前状态。
 
@@ -84,6 +85,6 @@ title: 视频捕获的效果
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
