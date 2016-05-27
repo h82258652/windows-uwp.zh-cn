@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 处理应用预启动
 description: 了解如何通过替代 OnLaunched 方法来处理应用预启动。
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
@@ -7,7 +8,7 @@ ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 # 处理应用预启动
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -33,7 +34,7 @@ ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ## 检测和处理预启动
 
 
-应用在激活期间接收 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 标志。 使用此标志确定是否要执行仅应在用户显式启动应用时执行的操作，如以下 [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 摘录中所示。
+在激活期间，应用会收到 [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) 标志。 使用此标志确定是否执行仅在用户显式启动应用（如在 [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 中的以下摘录中所示）时应执行的操作。
 
 ```cs
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -58,7 +59,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
             // TODO: This is not a prelaunch activation. Perform operations which
             // assume that the user explicitly launched the app such as updating
             // the online presence of the user on a social network, updating a 
-            // what&#39;s new feed, etc.
+            // what's new feed, etc.
         }
 
         // Place the frame in the current Window
@@ -67,7 +68,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
     if (rootFrame.Content == null)
     {
-        // When the navigation stack isn&#39;t restored navigate to the first page,
+        // When the navigation stack isn't restored navigate to the first page,
         // configuring the new page by passing required information as a navigation parameter
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
     }
@@ -98,7 +99,7 @@ public sealed partial class MainPage : Page
     void WindowVisibilityChangedEventHandler(System.Object sender, Windows.UI.Core.VisibilityChangedEventArgs e)
     {
         // Perform operations that should take place when the application becomes visible rather than 
-        // when it is prelaunched, such as building a what&#39;s new feed 
+        // when it is prelaunched, such as building a what's new feed 
     }
 }
 ```
@@ -114,7 +115,7 @@ public sealed partial class MainPage : Page
     -   一个性能含义的示例是，你可能会等到用户切换到应用时才检索当前天气信息（而非在应用预启动时加载该信息），并且需要在应用可见时重新加载该信息，以确保该信息是最新的。
 -   如果你的应用在启动时清除动态磁贴，请将此操作延迟到执行可见性更改事件时。
 -   应用的遥测应可以区分正常磁贴激活和预启动激活，以便可以标识发生问题的方案。
--   如果你拥有 Microsoft Visual Studio 2015 Update 1 和 Windows 10 版本 1511，可以在 Visual Studio 2015 中模拟应用预启动，方法是依次选择**“调试”**>**“其他调试目标”**>**“调试 Windows 通用应用预启动”**。
+-   如果你拥有 Microsoft Visual Studio 2015 Update 1 和 Windows 10 版本 1511，则可以在 Visual Studio 2015 中模拟应用预启动，方法是依次选择“调试”****&gt;“其他调试目标”****&gt;“调试 Windows 通用应用预启动”****。
 
 ## 相关主题
 
@@ -128,6 +129,6 @@ public sealed partial class MainPage : Page
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

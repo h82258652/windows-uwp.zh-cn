@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 从后台任务访问传感器和设备
 description: DeviceUseTrigger 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
@@ -11,14 +12,14 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 
 
 [
-            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 例如，根据应用运行所在的位置，它可以使用后台任务将数据与设备或监视器传感器同步。 为了帮助维持电池使用寿命并确保相应的用户同意，使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 需遵循在本主题中描述的策略。
+            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 例如，根据应用运行所在的位置，它可以使用后台任务将数据与设备或监视器传感器同步。 为了帮助延长电池使用时间并确保相应的用户同意，使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 需遵循本主题中所述的策略。
 
 若要访问后台中的传感器或外围设备，请创建一个使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
 
 ## 设备后台任务概述
 
 
-当你的应用不再对用户可见时，Windows 会暂停或终止应用以回收内存和 CPU 资源。 这允许其他应用在前台运行并减少电池消耗。 出现这种情况时，如未获得后台任务的帮助，正在进行的数据事件将丢失。 Windows 提供了后台任务触发器 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)，让你的应用从后台安全地在设备和传感器上执行长时间运行的同步和监视操作，即使你的应用已暂停也是如此。 有关应用生命周期的详细信息，请参阅[启动、恢复和后台任务](index.md)。 有关后台任务的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+当你的应用不再对用户可见时，Windows 会暂停或终止应用以回收内存和 CPU 资源。 这允许其他应用在前台运行并减少电池消耗。 出现这种情况时，如未获得后台任务的帮助，正在进行的数据事件将丢失。 Windows 提供了后台任务触发器 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)，让你的应用从后台安全地在设备和传感器上执行长时间运行的同步和监视操作，即使你的应用暂停也是如此。 有关应用生命周期的详细信息，请参阅[启动、恢复和后台任务](index.md)。 有关后台任务的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
 **注意** 在通用 Windows 应用中，在后台同步设备需要用户批准你的应用执行后台同步。 设备还必须通过活动 I/O 连接到电脑或与电脑配对，最长允许执行 10 分钟的后台活动。 本主题后面将介绍有关策略实施的更多详细信息。
 
@@ -48,7 +49,7 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 ## 在应用包清单中注册后台任务
 
 
-你的应用将在运行后台任务期间以代码的形式执行同步和更新操作。 此代码已嵌入实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 的 Windows 运行时类（或嵌入 JavaScript 应用的专用 JavaScript 页）。 要使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务，你的应用必须在前台应用的应用部件清单文件中声明该任务，这一点与系统触发的后台任务类似。
+你的应用将在运行后台任务期间以代码的形式执行同步和更新操作。 此代码嵌入在可实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 的 Windows 运行时类中（或 JavaScript 应用的专用 JavaScript 页中）。 若要使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务，你的应用必须在前台应用的应用部件清单文件中声明该任务，这一点与系统触发的后台任务类似。
 
 在应用包清单文件的这一示例中，**DeviceLibrary.SyncContent** 是使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务的入口点。
 
@@ -68,7 +69,7 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 若要使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)，请执行以下基本步骤。 有关后台任务的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
 1.  你的应用在应用清单中注册其后台任务，并在实现 IBackgroundTask 的 Windows 运行时类或 JavaScript 应用的专用 JavaScript 页中嵌入后台任务代码。
-2.  当你的应用启动时，它将创建并配置类型 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的触发器对象，然后存储触发器实例以供将来使用。
+2.  当你的应用启动时，它将创建并配置类型为 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的触发器对象，然后存储触发器实例以供将来使用。
 3.  你的应用检查先前是否已经注册该后台任务，如未注册，则针对该触发器注册后台任务。 请注意，不允许你的应用为与此触发器关联的任务设置条件。
 4.  当你的应用需要触发后台任务时，它必须先调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能检查该应用是否能够请求后台任务。
 5.  如果你的应用可以请求后台任务，它将在设备触发器对象上调用 [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn297341) 激活方法。
@@ -80,7 +81,7 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 **重要提示**  
 使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 时，请考虑以下几个要点：
 
--   首次在 Windows 8.1 和 Windows Phone 8.1 中引入了通过编程方式触发使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务功能。
+-   首次在 Windows 8.1 和 Windows Phone 8.1 中引入了通过编程方式触发可使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务功能。
 
 -   Windows 会强制执行某些策略，从而确保获得用户同意才能更新电脑上的外围设备。
 
@@ -194,6 +195,6 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

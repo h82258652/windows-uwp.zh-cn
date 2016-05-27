@@ -1,13 +1,14 @@
 ---
+author: mcleblanc
 title: 延长显示初始屏幕的时间
-description: 通过为你的应用创建延长的初始屏幕，使初始屏幕显示的时间更长。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。
+description: 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ---
 
 # 延长显示初始屏幕的时间
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -56,7 +57,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 
 添加以下代码以在 ExtendedSplash.xaml 中定义 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 和 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 元素以及 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控件：
 
-```xaml
+```xml
     <Grid Background="#464646">
         <Canvas>
             <Image x:Name="extendedSplashImage" Source="Assets/SplashScreen.png"/>
@@ -120,7 +121,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
         if (splash != null)
         {
             // Register an event handler to be executed when the splash screen has been dismissed.
-            splash.Dismissed += new TypedEventHandler&lt;SplashScreen, Object&gt;(DismissedEventHandler);
+            splash.Dismissed += new TypedEventHandler<SplashScreen, Object>(DismissedEventHandler);
 
             // Retrieve the window coordinates of the splash screen image.
             splashImageRect = splash.ImageLocation;
@@ -168,7 +169,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
     在 ExtendedSplash.xaml.cs 中，通过将 `dismissed` 类变量设置为 true，在发生 [**SplashScreen.Dismissed**](https://msdn.microsoft.com/library/windows/apps/br224764) 事件时进行响应。 如果你的应用包含设置操作，请将它们添加到事件处理程序。
 
     ```cs
-    // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application&#39;s first view).
+    // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
     void DismissedEventHandler(SplashScreen sender, object e)
     {
         dismissed = true;
@@ -222,7 +223,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
     {
         if (loadState)
         {
-             // code to load your app&#39;s state here 
+             // code to load your app's state here 
         }
     }
     ```
@@ -261,7 +262,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ExtendedSplash.xaml：此示例包含一个 `DismissSplash` 按钮，因为它没有要加载的应用资源。 在你的应用中，如果你的应用已完成资源加载或已准备好其初始 UI，将自动忽略延长的初始屏幕。
 
-```xaml
+```xml
 <Page
     x:Class="SplashScreenExample.ExtendedSplash"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -385,7 +386,7 @@ namespace SplashScreenExample
             }
         }
 
-        // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application&#39;s first view).
+        // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
         void DismissedEventHandler(SplashScreen sender, object e)
         {
             dismissed = true;
@@ -492,7 +493,7 @@ namespace SplashScreenExample
 
             if (rootFrame.Content == null)
             {
-                // When the navigation stack isn&#39;t restored navigate to the first page,
+                // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
@@ -548,6 +549,6 @@ namespace SplashScreenExample
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 启动“人脉”应用
 description: 本主题介绍了 ms-people URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
@@ -38,36 +39,39 @@ ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 <tr class="odd">
 <td align="left">允许其他应用通过搜索的结果页提供将启动“人脉”应用的搜索字符串。
 <div class="alert">
-**注意** <p>参数区分大小写。</p>
+**注意**  
+<p>参数区分大小写。</p>
 <p>如果未正确输入语法或缺少搜索字符串值，默认行为是返回未经过任何筛选的联系人的完整列表。</p>
 </div>
 <div>
  
 </div></td>
-<td align="left">ms-people:search?SearchString=<contactsearchinfo></td>
+<td align="left">ms-people:search?SearchString=&lt;contactsearchinfo&gt;</td>
 </tr>
 <tr class="even">
 <td align="left">如果找到该联系人，将启动到现有的联系人卡片。 或者，如果未找到联系人，将启动到临时的联系人卡片。 如果未提供输入参数，我们将启动带有联系人列表的“人脉”应用。
 <div class="alert">
-**注意** <p>参数区分大小写。</p>
+**注意**  
+<p>参数区分大小写。</p>
 <p>参数的顺序无关紧要。</p>
 <p>如果存在多个匹配，我们将返回匹配的第一个联系人。</p>
 </div>
 <div>
  
 </div></td>
-<td align="left">ms-people:viewcontact:?ContactId=<contactid>&amp;AggregatedId=<aggid>&amp;PhoneNumber= <phonenum>&amp;Email=<email>&amp;ContactName=<name>&amp;Contact=<contactobj></td>
+<td align="left">ms-people:viewcontact:?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">启动到“人脉”应用内的保存联系人页面，以使用提供的电话号码或电子邮件地址保存给定的联系人。
 <div class="alert">
-**注意** <p>参数区分大小写。</p>
+**注意**  
+<p>参数区分大小写。</p>
 <p>参数的顺序无关紧要。</p>
 </div>
 <div>
  
 </div></td>
-<td align="left">ms-people:savetocontact?PhoneNumber= <phonenum>&amp;Email=<email>&amp;ContactName=<name></td>
+<td align="left">ms-people:savetocontact?PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;</td>
 </tr>
 </tbody>
 </table>
@@ -203,6 +207,6 @@ ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 启动 Windows 应用商店应用
 description: 本主题介绍了 ms-windows-store URI 方案。 你的应用可以使用此 URI 方案将 Windows 应用商店应用启动到应用商店中的特定页面。
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
@@ -26,11 +27,11 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 </td>
 </tr>
 <tr>
-<td rowspan="4">启动产品的产品详细信息 页面 (PDP)。 <p>产品 ID 建议用于使用 Windows 10 的客户，但仍可使用操作它的较早方法 (ex: PFN)。</p>
-<p>可以在每个应用的应用管理部分中<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">“应用标识”</a>页面上的 Windows 开发人员中心仪表板中找到这些值。</p>
+<td rowspan="4">启动产品的产品详细信息页面 (PDP)。 <p>应用商店 ID 已向所有使用 Windows 10 的客户推荐，并且将适用于所有操作系统版本，但执行此操作的早期方法（例如：PFN）仍受支持。</p>
+<p>可以在每个应用的应用管理部分中“应用标识”<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx"></a>页面上的 Windows 开发人员中心仪表板中找到这些值。</p>
 </td>
 <td>
-产品 ID <p>（建议）</p>
+应用商店 ID <p>（建议）</p>
 </td>
 <td>
 <p>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</p>
@@ -38,7 +39,7 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 </tr>
 <tr>
 <td>程序包系列名称 (PFN)</td>
-<td>ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe 
+<td>ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe
 </td>
 </tr>
 <tr>
@@ -47,17 +48,17 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 </tr>
 <tr>
 <td>产品 ID (Windows 8.x)</td>
-<td>ms-windows-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117 
+<td>ms-windows-store://pdp/?AppId=f022389f-f3a6-417e-ad23-704fbdf57117
 </td>
 </tr>
 <tr>
 <td rowspan="4">启动产品的写评论体验。</td>
-<td>产品 ID <p>（建议）</p></td>
+<td>应用商店 ID <p>（建议）</p></td>
 <td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL </td>
 </tr>
 <tr>
 <td>程序包系列名称 (PFN)</td>
-<td>ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe 
+<td>ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe
 </td>
 </tr>
 <tr>
@@ -71,7 +72,7 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 <tr>
 <td>启动与文件扩展名关联的产品的搜索。 </td>
 <td />
-<td>ms-windows-store://assoc/?FileExt=pdf 
+<td>ms-windows-store://assoc/?FileExt=pdf
 </td>
 </tr>
 <tr>
@@ -107,7 +108,7 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 <td>启动指定的发布者中产品的搜索。 允许名称中存在空格。 
 </td>
 <td />
-<td>ms-windows-store://publisher/?name=Microsoft Corporation 
+<td>ms-windows-store://publisher/?name=Microsoft Corporation
 </td>
 </tr>
 <tr><td>启动下载和 更新页面。</td>
@@ -129,6 +130,6 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

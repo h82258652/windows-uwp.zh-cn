@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 使用后台任务响应系统事件
 description: 了解如何创建响应 SystemTrigger 事件的后台任务。
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
@@ -7,7 +8,7 @@ ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 # 使用后台任务响应系统事件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -75,7 +76,7 @@ ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 
 应用可以注册响应 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 和 [**NetworkOperatorNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/br224831) 事件的后台任务，从而使这些事件可以提供与用户的实时通信，即使该应用不在前台也是如此。 有关详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 ## 相关主题
@@ -107,6 +108,6 @@ ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

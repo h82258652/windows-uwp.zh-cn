@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 保留文件和 URI 方案名称
 description: 当另一个应用启动特定的 URI 方案时，你可以使用 URI 关联自动启动你的应用。
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
@@ -125,6 +126,6 @@ ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

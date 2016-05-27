@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 处理应用激活
 description: 了解如何通过替代 OnLaunched 方法来处理应用激活。
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
@@ -7,7 +8,7 @@ ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 # 处理应用激活
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -25,7 +26,7 @@ ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 
 为你的应用程序定义类。
 
-```xaml
+```xml
 <Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
              x:Class="AppName.App" >
@@ -182,6 +183,6 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

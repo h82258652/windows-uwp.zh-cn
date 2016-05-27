@@ -1,5 +1,6 @@
 ---
-title: 处理应用挂起
+author: mcleblanc
+title: 处理应用暂停
 description: 了解当系统挂起你的应用时如何保存重要的应用程序数据。
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ---
@@ -7,7 +8,7 @@ ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 # 处理应用暂停
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -58,7 +59,7 @@ MainPage::MainPage()
 {
    InitializeComponent();
    Application::Current->Suspending += 
-       ref new SuspendingEventHandler(this, &amp;MainPage::App_Suspending);
+       ref new SuspendingEventHandler(this, &MainPage::App_Suspending);
 }
 ```
 
@@ -129,6 +130,6 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

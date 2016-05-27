@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 处理应用恢复
 description: 了解当系统恢复你的应用时如何刷新显示的内容。
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
@@ -7,7 +8,7 @@ ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 # 处理应用恢复
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -51,7 +52,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
     Application::Current->Resuming += 
-        ref new EventHandler<Platform::Object^>(this, &amp;MainPage::App_Resuming);
+        ref new EventHandler<Platform::Object^>(this, &MainPage::App_Resuming);
 }
 ```
 
@@ -94,9 +95,9 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 
 每当用户切换到桌面或其他应用时，系统都会挂起你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。 但是，应用可能已暂停很长一段时间，因此，它应当刷新在应用暂停之后可能已发生更改的任何显示内容（如新闻源或用户位置）。
 
-如果你的应用没有任何需要刷新的显示内容，则它无需处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件。
+如果你的应用没有任何要刷新的显示内容，则它无需处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件。
 
-**使用 Visual Studio 进行调试时要注意：**当你的应用连接到 Visual Studio 调试程序时，你可以向你的应用发送一个 **Resume** 事件。 确保**“调试位置”**工具栏显示出来，然后单击**“暂停”**图标旁边的下拉列表。 然后选择**“恢复”**。
+**使用 Visual Studio 进行调试时要注意：**当你的应用连接到 Visual Studio 调试程序时，你可以向你的应用发送一个 **Resume** 事件。 确保“调试位置”****工具栏显示出来，然后单击“暂停”****图标旁边的下拉列表。 然后选择“恢复”****。
 
 > **注意** 对于 Windows Phone 应用商店应用，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件之后始终跟着 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 事件，即使你的应用当前已暂停且用户从主要磁贴或应用列表中重新启动它也是如此。 如果当前窗口上已有内容集，则应用可跳过初始化。 你可以检查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 属性以确定该应用是从主要磁贴启动还是从辅助磁贴启动，并可根据该信息，确定是应显示新的应用体验还是应恢复应用体验。
 
@@ -110,6 +111,6 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

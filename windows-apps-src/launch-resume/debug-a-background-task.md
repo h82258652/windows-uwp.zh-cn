@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 调试后台任务
 description: 了解如何调试后台任务，包括后台任务激活和调试 Windows 事件日志中的跟踪。
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
@@ -7,7 +8,7 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 # 调试后台任务
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -30,9 +31,9 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 
 通过 Microsoft Visual Studio，可以手动触发后台任务。 然后可以单步执行代码并对其进行调试。
 
-1.  在 C# 中，在后台类的 Run 方法中放置一个断点，并/或通过使用 [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx) 编写调试输出。
+1.  在 C# 中，在后台类的 Run 方法中放置一个断点，和/或通过使用 [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx) 编写调试输出。
 
-    在 C++ 中，在后台类的 Run 函数中放置一个断点，并/或通过使用 [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362) 编写调试输出。
+    在 C++ 中，在后台类的 Run 函数中放置一个断点，和/或通过使用 [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362) 编写调试输出。
 
 2.  在调试器中运行你的应用程序，然后使用“生命周期事件”****工具栏中的暂停下拉菜单触发后台任务。 此下拉菜单显示可以由 Visual Studio 激活的后台任务的名称。
 
@@ -68,9 +69,9 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
     如果你遵循此过程，但事件日志显示后台任务的入口点或触发器有误，则你的应用无法正确注册后台任务。 有关此任务的帮助，请参阅[注册后台任务](register-a-background-task.md)。
 
     1.  通过转到“开始”屏幕并搜索 eventvwr.exe 来打开事件查看器。
-    2.  在事件查看器中转到**“应用程序和服务日志”**->**“Microsoft”**->**“Windows”**->**“BackgroundTaskInfrastructure”**。
-    3.  在操作窗格中，选择**“查看”**->**“显示分析和调试日志”**以启用诊断日志记录。
-    4.  选择**“诊断日志”**并单击**“启用日志”**。
+    2.  在事件查看器中转到“应用程序和服务日志”**** -&gt;**Microsoft** -&gt;**Windows** -&gt;**BackgroundTaskInfrastructure**。
+    3.  在操作窗格中，选择“查看”**** -&gt;“显示分析和调试日志”****以启用诊断日志记录。
+    4.  选择“诊断日志”****并单击“启用日志”****。
     5.  现在尝试使用你的应用再次注册并激活后台任务。
     6.  查看诊断日志以了解更详细的错误信息。 这将包括为后台任务注册的入口点。
 
@@ -112,6 +113,6 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 启动 URI 的默认应用
 description: 了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
@@ -7,7 +8,7 @@ ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
 # 启动 URI 的默认应用
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -223,6 +224,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

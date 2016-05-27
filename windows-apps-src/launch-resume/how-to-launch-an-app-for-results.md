@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 针对结果启动应用
 description: 了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是针对结果启动应用。
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
@@ -7,7 +8,7 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 # 针对结果启动应用
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -24,7 +25,7 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ## 步骤 1：注册将在针对结果所启动的应用中处理的协议
 
 
-在启动应用的 Package.appxmanifest 文件中，将协议扩展添加到 **<Application>** 部分。 下面的示例使用了一个名为 **test-app2app** 的虚构协议。
+在启动应用的 Package.appxmanifest 文件中，将协议扩展添加到 **&lt;Application&gt;** 部分。 下面的示例使用了一个名为 **test-app2app** 的虚构协议。
 
 协议扩展中的 **ReturnResults** 属性接受以下值之一：
 
@@ -34,7 +35,7 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 
 在此协议扩展示例中，应用只能针对结果进行启动。 这将简化 **OnActivated** 方法（将在下面进行讨论）内部的逻辑，因为我们只需要处理“针对结果启动”的情况，而无需处理可激活应用的其他方式。
 
-```xaml
+```xml
 <Applications>
    <Application ...>
 
@@ -94,7 +95,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 ## 步骤 4：重写针对结果启动的应用中的 OnNavigatedTo()
 
 
-重写页面（该页面将在针对结果启动应用时显示）上的 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法。 如果此方法尚未存在，请在 <pagename>.xaml.cs 中为该页面定义的类内创建它。 确保以下 **using** 语句包含在该文件的顶部：
+重写页面（该页面将在针对结果启动应用时显示）上的 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法。 如果此方法尚未存在，请为页面在 &lt;pagename&gt;.xaml.cs 中定义的类内创建它。 确保以下 **using** 语句包含在该文件顶部：
 
 ```cs
 using Windows.ApplicationModel.Activation
@@ -155,8 +156,8 @@ async Task<string> LaunchAppForResults()
 
     string theResult = "";
     LaunchUriResult result = await Windows.System.Launcher.LaunchUriForResultsAsync(testAppUri, options, inputData);
-    if (result.Status == LaunchUriStatus.Success &amp;&amp;
-        result.Result != null &amp;&amp;
+    if (result.Status == LaunchUriStatus.Success &&
+        result.Result != null &&
         result.Result.ContainsKey("ReturnedData"))
     {
         ValueSet theValues = result.Result;
@@ -202,6 +203,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

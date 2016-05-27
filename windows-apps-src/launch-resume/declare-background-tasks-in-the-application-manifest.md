@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 在应用程序清单中声明后台任务
 description: 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
@@ -7,7 +8,7 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 # 在应用程序清单中声明后台任务
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -91,16 +92,16 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
                     <Task Type="pushNotification" />
                   </BackgroundTasks>
                 </Extension>
-                ```
+    ```
 
-    > **Note**  Normally, an app will run in a special process called "BackgroundTaskHost.exe". It is possible to add an Executable element to the Extension element, allowing the background task to run in the context of the app. Only use the Executable element with background tasks that require it, such as the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).    
+    > **注意** 正常情况下，应用将在名为“BackgroundTaskHost.exe”的特殊进程中运行。 这可能会将一个 Executable 元素添加到 Extension 元素，从而可以在应用上下文中运行后台任务。 仅将 Executable 元素与需要它的后台任务结合使用，例如 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。    
 
-## Add Additional Background Task Extensions
+## 添加其他后台任务扩展
 
 
-Repeat step 2 for each additional background task class registered by your app.
+对你的应用注册的每个额外的后台任务类重复步骤 2。
 
-The following example is the complete Application element from the [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509). This shows the use of 2 background task classes with a total of 3 trigger types. Copy the Extensions section of this example, and modify it as needed, to declare background tasks in your application manifest.
+下面的示例是来自[后台任务示例]( http://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 它显示使用了两个后台任务类，触发器类型总数为 3。 复制此示例的“扩展”部分，并根据需要进行修改，以在应用程序清单中声明后台任务。
 
 ```xml
 <Applications>
@@ -112,7 +113,7 @@ The following example is the complete Application element from the [background t
           Square150x150Logo="Assets\StoreLogo-sdk.png"
           Square44x44Logo="Assets\SmallTile-sdk.png"
           Description="BackgroundTask"
-          
+
           BackgroundColor="#00b2f0">
           <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\smalltile-Windows-sdk.png" />
             <uap:SplashScreen Image="Assets\Splash-sdk.png" />
@@ -147,14 +148,7 @@ The following example is the complete Application element from the [background t
 * [注册后台任务](register-a-background-task.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
 
- 
 
- 
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

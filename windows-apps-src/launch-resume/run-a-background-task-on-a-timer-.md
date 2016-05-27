@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 在计时器上运行后台任务
 description: 了解如何计划一次性后台任务，或运行定期后台任务。
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
@@ -7,7 +8,7 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 # 在计时器上运行后台任务
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -36,7 +37,7 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
      
 
-    For example, this trigger will cause a background task to run once an hour:
+    例如，该触发器将导致后台任务每小时运行一次：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -83,14 +84,14 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
-    > string entryPoint = “Tasks.ExampleBackgroundTaskClass”;
-    > string taskName   = “Example hourly background task”;
+    > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > string taskName   = "Example hourly background task";
     > 
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     > ```cpp
-    > String ^ entryPoint = “Tasks.ExampleBackgroundTaskClass”;
-    > String ^ taskName   = “Example hourly background task”;
+    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > String ^ taskName   = "Example hourly background task";
     > 
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
@@ -102,7 +103,7 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
 > **注意** 从 Windows 10 开始，用户无须再将你的应用添加到锁屏界面，即可利用后台任务。 有关后台任务触发器类型的指南，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 
 ## 相关主题
@@ -130,6 +131,6 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
