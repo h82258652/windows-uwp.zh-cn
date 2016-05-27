@@ -1,15 +1,16 @@
 ---
-Description: 将你的 UI 中的字符串资源放入资源文件中。 随后你可从代码或标记中引用这些字符串。
+author: DelfCo
+Description: 将你的 UI 的字符串资源放入资源文件中。 随后你可从代码或标记中引用这些字符串。
 title: 将 UI 字符串放入资源中
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
-label: 将 UI 字符串放入资源中
+label: Put UI strings into resources
 template: detail.hbs
 ---
 
 # 将 UI 字符串放入资源中
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要的 API**
@@ -19,35 +20,33 @@ template: detail.hbs
 
 将你的 UI 中的字符串资源放入资源文件中。 随后你可从代码或标记引用这些字符串。
 
-本主题介绍了将多个语言字符串资源添加到通用 Windows 应用的步骤以及简短测试它的方法。
+本主题介绍将多个语言字符串资源添加到通用 Windows 应用的步骤以及简短测试它的方法。
 
-## <span id="put_strings_into_resource_files__instead_of_putting_them_directly_in_code_or_markup."> </span> <span id="PUT_STRINGS_INTO_RESOURCE_FILES__INSTEAD_OF_PUTTING_THEM_DIRECTLY_IN_CODE_OR_MARKUP."> </span>将字符串放入资源文件中，而不是直接将它们放入代码或标记中。
+## <span id="put_strings_into_resource_files__instead_of_putting_them_directly_in_code_or_markup."></span><span id="PUT_STRINGS_INTO_RESOURCE_FILES__INSTEAD_OF_PUTTING_THEM_DIRECTLY_IN_CODE_OR_MARKUP."></span>将字符串放入资源文件中，而不是直接将它们放入代码或标记中。
 
 
 1.  在 Visual Studio 中打开你的解决方案（或创建新解决方案）。
 
-2.  在 Visual Studio 中打开 package.appxmanifest、转到**“应用程序”**选项卡，然后（在此示例中）将默认语言设置为“en-US”。 如果解决方案中有多个 package.appxmanifest 文件，请针对每个文件执行此操作。
+2.  在 Visual Studio 中打开 package.appxmanifest、转到“应用程序”****选项卡，然后（在此示例中）将默认语言设置为“en-US”。 如果解决方案中有多个 package.appxmanifest 文件，请针对每个文件执行此操作。
     <br>**注意** 这将为项目指定默认语言。 如果用户的首选语言或显示语言与应用程序中提供的语言资源不匹配，将使用默认语言资源。
 3.  创建用于包含资源文件的文件夹。
-    1.  在“解决方案资源管理器”中，右键单击该项目（如果你的解决方案包含多个项目，则为共享的项目），然后依次选择**“添加”**>**“新文件夹”**。
+    1.  在“解决方案资源管理器”中，右键单击该项目（如果你的解决方案包含多个项目，则为共享的项目），然后依次选择“添加”****&gt;“新建文件夹”****。
     2.  将新文件夹命名为“Strings”。
-    3.  如果没有在解决方案资源管理器中看见新文件夹，请在选中该项目时从 Microsoft Visual Studio 菜单中依次选择**“项目”**>**“显示所有文件”**。
+    3.  如果未在“解决方案资源管理器”中看见新文件夹，请在该项目仍然处于选中状态时从 Microsoft Visual Studio 菜单中依次选择“项目”****&gt;“显示所有文件”****。
 
 4.  创建一个子文件夹和用于英语(美国)的资源文件。
     1.  右键单击“Strings”文件夹，并在它下面添加新文件夹。 将它命名为“en-US”。 资源文件将放置在已为 [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) 语言标记命名的文件夹中。 有关语言限定符以及常用语言标记列表的详细信息，请参阅[如何使用限定符命名资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)。
-    2.  右键单击 en-US 文件夹，然后依次选择**“添加”**>**“新建项目…”**。
+    2.  右键单击 en-US 文件夹，然后依次选择“添加”****&gt;“新建项…”****。
     3.  **XAML：**选择“资源文件 (.resw)”。
         <br>**HTML：**选择“资源文件 (.resjson)”。
 
-    4.  单击**“添加”**。 这将添加一个带有默认名称“Resources.resw”（对于 **XAML**）或“resources.rejson”（对于 **HTML**）的资源文件。 建议使用该默认文件名。 虽然应用可能会在其他文件内将其资源分区，但你必须谨慎地正确引用它们（请参阅[如何加载字符串资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)）。
-    5.  **仅 XAML：**如果你的 .resx 文件仅具有来自之前 .NET 项目的字符串资源，请依次选择**“添加”**>**“现有项目…”**、添加 .resx 文件，然后将其重命名为 .resw。
+    4.  单击“添加”****。 这将添加一个带有默认名称“Resources.resw”（对于 **XAML**）或“resources.rejson”（对于 **HTML**）的资源文件。 建议使用该默认文件名。 虽然应用可能会在其他文件内将其资源分区，但你必须谨慎地正确引用它们（请参阅[如何加载字符串资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)）。
+    5.  **仅 XAML：**如果你的 .resx 文件仅具有来自之前 .NET 项目的字符串资源，请依次选择“添加”****&gt;“现有项目…”****、添加 .resx 文件，然后将其重命名为 .resw。
     6.  打开该文件并使用编辑器来添加这些资源：
 
         **XAML：**
 
-        Strings/en-US/Resources.resw
-        ![添加资源, 英语](images/addresource-en-us.png)
-        在此示例中，“Greeting.Text”和“Farewell”标识要显示的字符串。 “Greeting.Width”标识“Greeting”字符串的 Width 属性。 注释是为将字符串本地化为其他语言的翻译人员提供任何特殊说明的理想位置。
+        Strings/en-US/Resources.resw ![add resource, english](images/addresource-en-us.png) 在此示例中，“Greeting.Text”和“Farewell”标识要显示的字符串。 “Greeting.Width”标识“Greeting”字符串的 Width 属性。 注释是为将字符串本地化为其他语言的翻译人员提供任何特殊说明的理想位置。
 
         **HTML：**
 
@@ -67,14 +66,14 @@ template: detail.hbs
 
         这是严格的 JavaScript 对象表示法 (JSON) 语法，其中每个名称/值对后面都必须放置一个逗号（最后一对除外）。 在此示例中，“greeting”和“farewell”将标识要显示的字符串。 其他对（“\_greeting.comment”和“\_farewell.comment”）是用于描述字符串的注释。 注释是为将字符串本地化为其他语言的翻译人员提供任何特殊说明的理想位置。
 
-## <span id="associate_controls_to_resources."> </span> <span id="ASSOCIATE_CONTROLS_TO_RESOURCES."> </span>将控件关联到资源。
+## <span id="associate_controls_to_resources."></span><span id="ASSOCIATE_CONTROLS_TO_RESOURCES."></span>将控件关联到资源。
 
 
 **仅 XAML：**
 
 需要将每个需要进行文本本地化的控件与 .resw 文件关联。 可以使用如下 XAML 元素的 **x:Uid** 属性执行此操作：
 
-```XAML
+```XML
 <TextBlock x:Uid="Greeting" Text="" />
 ```
 
@@ -82,11 +81,11 @@ template: detail.hbs
 
 请注意，附加属性在 resw 文件中的处理方式会有所不同（如 AutomationPeer.Name）。 你需要明确写出命名空间，如下所示：
 
-```XAML
+```XML
 MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
 ```
 
-## <span id="add_string_resource_identifiers_to_code_and_markup."> </span> <span id="ADD_STRING_RESOURCE_IDENTIFIERS_TO_CODE_AND_MARKUP."> </span>向代码和标记中添加字符串资源标识符。
+## <span id="add_string_resource_identifiers_to_code_and_markup."></span><span id="ADD_STRING_RESOURCE_IDENTIFIERS_TO_CODE_AND_MARKUP."></span>向代码和标记中添加资源标识符。
 
 
 **XAML：**
@@ -100,7 +99,7 @@ var str = loader.GetString("Farewell");
 ```
 
 **C++**
-```ManagedCPlusPlus
+```cpp
 auto loader = ref new Windows::ApplicationModel::Resources::ResourceLoader();
 auto str = loader->GetString("Farewell");
 ```
@@ -109,7 +108,7 @@ auto str = loader->GetString("Farewell");
 
 1.  将对 Windows JavaScript 库的引用添加到你的 HTML 文件（如果其中还没有这些引用）。
 
-    **注意** 以下代码显示的是你在 Visual Studio 中创建新的**“空白应用(通用 Windows)”**JavaScript 项目时所生成的 Windows 项目的 default.html 文件 HTML。 请注意，该文件已经包含了对于 WinJS 的引用。
+    **注意** 以下代码显示的是你在 Visual Studio 中创建新的“空白应用(通用 Windows)”****JavaScript 项目时所生成的 Windows 项目的 default.html 文件 HTML。 请注意，该文件已经包含了对于 WinJS 的引用。
 
     ```    HTML
     <!-- WinJS references -->
@@ -168,7 +167,7 @@ auto str = loader->GetString("Farewell");
     el.setAttribute('lang', res.lang);
     ```
 
-## <span id="add_folders_and_resource_files_for_two_additional_languages."> </span> <span id="ADD_FOLDERS_AND_RESOURCE_FILES_FOR_TWO_ADDITIONAL_LANGUAGES."> </span>为其他两种语言添加文件夹和资源文件。
+## <span id="add_folders_and_resource_files_for_two_additional_languages."></span><span id="ADD_FOLDERS_AND_RESOURCE_FILES_FOR_TWO_ADDITIONAL_LANGUAGES."></span>为其他两种语言添加文件夹和资源文件。
 
 
 1.  为德语在 Strings 文件夹下添加另一个文件夹。 将德语（德国）的文件夹命名为“de-DE”。
@@ -198,8 +197,7 @@ auto str = loader->GetString("Farewell");
 
     **XAML：**
 
-    strings/fr-FR/Resources.resw
-    ![添加资源, 法语](images/addresource-fr-fr.png)
+    strings/fr-FR/Resources.resw ![add resource, french](images/addresource-fr-fr.png)
     **HTML：**
 
     strings/fr-FR/resources.resjson
@@ -214,7 +212,7 @@ auto str = loader->GetString("Farewell");
     }
     ```
 
-## <span id="build_and_run_the_app."> </span> <span id="BUILD_AND_RUN_THE_APP."> </span>生成并运行应用
+## <span id="build_and_run_the_app."></span><span id="BUILD_AND_RUN_THE_APP."></span>构建并运行应用。
 
 
 为默认显示语言测试应用。
@@ -232,7 +230,7 @@ auto str = loader->GetString("Farewell");
 5.  如果你的计算机上没有这三种语言，通过单击“添加语言”****并将其添加到列表中来添加缺少的语言。
 6.  若要使用其他语言测试该应用，请在列表中选择该语言并单击“设置为默认值”****（或在手机或手机仿真器上，在列表中长按该语言，然后点击“向上移动”****直到它位于顶部）。 然后运行应用。
 
-## <span id="related_topics"> </span>相关主题
+## <span id="related_topics"></span>相关主题
 
 
 * [如何使用限定符命名资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
@@ -246,6 +244,6 @@ auto str = loader->GetString("Farewell");
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

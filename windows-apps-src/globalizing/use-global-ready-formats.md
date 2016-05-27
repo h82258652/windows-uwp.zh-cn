@@ -1,15 +1,16 @@
 ---
+author: DelfCo
 Description: 通过适当设置日期、时间、数字和货币的格式，开发全球通用的应用。
 title: 使用全球通用的格式
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
-label: 使用全球通用的格式
+label: Use global-ready formats
 template: detail.hbs
 ---
 
-# <span id="dev_globalizing.use_global-ready_formats"> </span>使用全球通用的格式
+# <span id="dev_globalizing.use_global-ready_formats"></span>使用全球通用的格式
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要的 API**
@@ -20,25 +21,25 @@ template: detail.hbs
 
 通过适当设置日期、时间、数字和货币的格式，开发全球通用的应用。 你可以在以后对此进行调整，以适应全球市场中更多的文化、区域和语言。
 
-## <span id="Introduction"> </span> <span id="introduction"> </span> <span id="INTRODUCTION"> </span>简介
+## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>简介
 
 
-许多应用开发者在创建他们的应用时，通常只考虑了他们自己的语言和文化。 但当应用开始发展到其他市场时，使应用适应新语言和区域可能非常困难。 例如，日期、时间、数字、日历、货币、电话号码、度量单位和纸张大小的显示都会因文化或语言的不同而有所不同。
+许多应用开发者在创建他们的应用时，自然只考虑了他们自己的语言和文化。 但当应用开始发展到其他市场时，使应用适应新语言和区域可能非常困难。 例如，日期、时间、数字、日历、货币、电话号码、度量单位和纸张大小的显示都会因文化或语言的不同而有所不同。
 
 如果在开发应用时考虑一些事项，则能够简化适应新市场的过程。
 
-## <span id="Prerequisites"> </span> <span id="prerequisites"> </span> <span id="PREREQUISITES"> </span>先决条件
+## <span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>先决条件
 
 
 [针对全球市场进行规划](https://msdn.microsoft.com/library/windows/apps/hh465405)
-## <span id="Tasks"> </span> <span id="tasks"> </span> <span id="TASKS"> </span>任务
+## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>任务
 
 
 1.  **设置相应的日期和时间格式。**
 
     有很多不同的显示日期和时间的方法。 不同区域和文化在以下方面的使用惯例不同：日期中的日和月顺序、时间中的小时和分钟的分隔，甚至用作分隔符的标点符号。 此外，可以采用各种长格式（“星期三，2012 年 3 月 28 日”）或短格式（“12/3/28”）显示日期，这些格式因文化而异。 当然，年份中的星期和月份的名称和缩写也因语言而异。
 
-    如果你需要允许用户选择日期或选择时间，请使用标准的[“日期和时间选取器”](https://msdn.microsoft.com/library/windows/apps/hh465466)控件。 它们将会自动针对用户的首选语言和区域使用日期和时间格式。
+    如果你需要允许用户选择日期或选择时间，请使用标准的[日期和时间选取器](https://msdn.microsoft.com/library/windows/apps/hh465466)控件。 它们将会自动针对用户的首选语言和区域使用日期和时间格式。
 
     如果你需要自己显示日期或时间，则使用 [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) 和 [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) 格式化程序来自动显示用户首选的日期、时间和数字格式。 以下代码将使用首选语言和区域设置给定 DateTime 的格式。 例如，如果当前日期为 2012 年 6 月 3 日，则格式化程序将生成“6/3/2012”（如果用户首选英语(美国)），但如果用户首选德语(德国)，则为“03.06.2012”：
 
@@ -117,7 +118,7 @@ template: detail.hbs
 
     // Results for display.
     var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user&#39;s default currency: " + currencyDefault + "\n" +
+                  "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
@@ -149,7 +150,7 @@ template: detail.hbs
 
     // Results for display.
     var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user&#39;s default currency: " + currencyDefault + "\n" +
+                  "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
@@ -164,7 +165,7 @@ template: detail.hbs
 
     对于基于用户的语言、区域或文化首选项提供不同功能的方案，Windows 为你提供了一种访问这些首选项的方法：通过 [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825)。 需要时，使用 **GlobalizationPreferences** 类获取用户当前地理区域、首选语言、首选货币等项目的值。
 
-## <span id="related_topics"> </span>相关主题
+## <span id="related_topics"></span>相关主题
 
 
 * [针对全球市场进行规划](https://msdn.microsoft.com/library/windows/apps/hh465405)
@@ -189,6 +190,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

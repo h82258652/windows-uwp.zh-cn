@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 Description: 开发你的应用来支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。
 title: 调整布局和字体并支持 RTL
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
@@ -9,23 +10,23 @@ template: detail.hbs
 # 调整布局和字体并支持 RTL
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 开发你的应用来支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。
 
-## <span id="Layout_guidelines"> </span> <span id="layout_guidelines"> </span> <span id="LAYOUT_GUIDELINES"> </span>布局指南
+## <span id="Layout_guidelines"></span><span id="layout_guidelines"></span><span id="LAYOUT_GUIDELINES"></span>布局指南
 
 
-某些语言（如德语和芬兰语）的文本所需的空间比其对应的英语文本所需的空间更多。 一些语言（如日语）的字体需要更高的高度。 还有一些语言（如阿拉伯语和希伯来语）要求文本布局和应用布局必须采用从右到左 (RTL) 的读取顺序。
+一些语言（如德语和芬兰语）的文本所需的空间比其对应的英语文本所需的空间更多。 一些语言（如日语）的字体需要更高的高度。 还有一些语言（如阿拉伯语和希伯来语）要求文本布局和应用布局必须采用从右到左 (RTL) 的读取顺序。
 
-使用灵活的布局机制，而不要使用绝对定位、固定宽度或固定高度。 必要时可以根据语言来调整特定 UI 元素。
+使用灵活的布局机制，而不要使用绝对定位、固定宽度或固定高度。 可以根据语言来调整特定 UI 元素（如果必要）。
 
-### <span id="XAML"> </span> <span id="xaml"> </span>XAML
+### <span id="XAML"></span><span id="xaml"></span>XAML
 
 为元素指定 **Uid**：
 
-```XAML
+```XML
 <TextBlock x:Uid="Block1">
 ```
 
@@ -37,13 +38,13 @@ XAML 布局控件（例如 [**Grid**](https://msdn.microsoft.com/library/windows
 
 为应用的主页指定 **Uid**：
 
-```XAML
+```XML
 <Page x:Uid="MainPage">
 ```
 
 确保你的应用的 **ResW** 文件具有 MainPage.FlowDirection 的资源，你可以为要本地化为该语言的每种语言设置该资源。
 
-### <span id="HTML"> </span> <span id="html"> </span>HTML
+### <span id="HTML"></span><span id="html"></span>HTML
 
 对于使用 JavaScript 的 Windows 应用商店应用，请使用[级联样式表 (CSS)](https://msdn.microsoft.com/library/ms531209) 布局机制，例如 [-ms-grid](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#g_section) 和 [–ms-box](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#f_section)。 使用对称填充和边距，以便针对各种布局方向进行本地化。
 
@@ -69,14 +70,14 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 
 使用 [**writing-mode**](https://msdn.microsoft.com/library/ms531187) 属性在 CSS 中支持垂直文本布局。
 
-## <span id="Mirroring_images"> </span> <span id="mirroring_images"> </span> <span id="MIRRORING_IMAGES"> </span>镜像图像
+## <span id="Mirroring_images"></span><span id="mirroring_images"></span><span id="MIRRORING_IMAGES"></span>镜像图像
 
 
-### <span id="XAML"> </span> <span id="xaml"> </span>XAML
+### <span id="XAML"></span><span id="xaml"></span>XAML
 
 如果应用具有必须针对 RTL 进行镜像的图像（即可以翻转相同图像），则可以应用 [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 属性：
 
-```XAML
+```XML
 <!-- en-US\localized.xaml -->
 <Image ... FlowDirection="LeftToRight" />
 
@@ -84,9 +85,9 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 <Image ... FlowDirection="RightToLeft" />
 ```
 
-### <span id="HTML"> </span> <span id="html"> </span>HTML
+### <span id="HTML"></span><span id="html"></span>HTML
 
-如果应用具有必须针对 RTL 进行镜像的图像（即可以翻转相同图像），则可以使用 CSS 变换在呈现时对图像进行镜像，方法是通过将 .mirrorable 类添加到元素并添加以下 CSS 类：
+如果应用具有必须针对 RTL 进行镜像的图像（即可以翻转相同图像），则可以使用 CSS 变换在呈现时对图像进行镜像，方法是将 .mirrorable 类添加到元素并添加以下 CSS 类：
 
 ```CSS
 .mirrorable { transform: scaleX(-1); }
@@ -94,12 +95,12 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 
 **对于 XAML 和 HTML：**如果应用需要其他图像来正确翻转该图像，则可以将资源管理系统与 [layoutdir 限定符](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)结合使用。 当[应用程序语言](manage-language-and-region.md)设置为 RTL 语言时，系统会选择名为 file.layoutdir-rtl.png 的图像。 当图像的某一部分翻转而其他部分不翻转时，可能必须使用此方法。
 
-## <span id="Fonts"> </span> <span id="fonts"> </span> <span id="FONTS"> </span>字体
+## <span id="Fonts"></span><span id="fonts"></span><span id="FONTS"></span>字体
 
 
 **对于 XAML 和 HTML：**使用 [**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) 字体映射 API 以编程方式访问为特定语言建议的字体系列、大小、粗细和样式。 **LanguageFont** 对象提供了对各种类别内容的正确字体信息的访问，这些信息包括 UI 标头、通知、正文文本和用户可编辑的文档正文字体。
 
-### <span id="HTML"> </span> <span id="html"> </span>HTML
+### <span id="HTML"></span><span id="html"></span>HTML
 
 使用 JavaScript 的 Windows 应用商店应用（可使用 ui-light.css 或 ui-dark.css 样式表）可以根据应用语言将其字体自动设置为最适合的字体。 应用托管进程将根元素的 **lang** 属性设置为应用语言。
 
@@ -114,6 +115,6 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 Description: 在将你的应用全球化使其适用于更广泛的用户以及将你的应用本地化使其适用于特定市场时，请遵循这些最佳做法。
 Search.Refinement.TopicID: 180
 title: 全球化和本地化指南
@@ -10,7 +11,7 @@ template: detail.hbs
 # 全球化和本地化的应做事项和禁止事项
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要的 API**
@@ -25,7 +26,7 @@ template: detail.hbs
 
 
 
-## <span id="guidelines_for_internationalization"> </span> <span id="GUIDELINES_FOR_INTERNATIONALIZATION"> </span>全球化
+## <span id="guidelines_for_internationalization"></span><span id="GUIDELINES_FOR_INTERNATIONALIZATION"></span>全球化
 
 准备好你的应用，使其轻松适应不同的市场，方法包括：为你的 UI 选择在全球范围都适合的字词和图像、使用 [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) API 格式化应用数据，以及避免基于位置或语言的假设。
 
@@ -73,7 +74,7 @@ template: detail.hbs
 </tr>
 <tr class="even">
 <td align="left"><p>请勿使用俗语和比喻。</p></td>
-<td align="left"><p>特定于某种人群的语言（如文化和年龄）很难理解或翻译，因为只有属于该类人群的人才会使用该语言。 同样，比喻可能对于一个人而言有意义，而对其他人而言没有意义。 例如，“蓝鸟”对于了解滑雪文化的人而言表示特定意义，但对于不了解该文化的人而言则没有意义。 如果计划本地化你的应用并且采用的是口语化的语言或语气，则确保你向本地化者充分解释要翻译的意义和语言。</p></td>
+<td align="left"><p>特定于某种人群的语言（如文化和年龄）很难理解或翻译，因为只有属于该类人群的人才会使用该语言。 同样，比喻可能对于一个人而言有意义，而对其他人而言没有意义。 例如，&quot;蓝鸟&quot;对于了解滑雪文化的人而言表示特定意义，但对于不了解该文化的人而言则没有意义。 如果计划本地化你的应用并且采用的是口语化的语言或语气，则确保你向本地化者充分解释要翻译的意义和语言。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>请勿使用技术行话、缩写或缩略语。</p></td>
@@ -85,7 +86,7 @@ template: detail.hbs
 </tr>
 <tr class="odd">
 <td align="left"><p>在地图中或在涉及地理区域时避免政治冒犯。</p></td>
-<td align="left"><p>地图可能包含有争议的地理区域或国界，并且这是引起政治冲突的常见原因。 请务必小心用于选择国家/地区的任何 UI，应将其称为“国家/地区”。 将有争议的领土置于标记为“国家/地区”的列表中（例如地址表单中）可能会导致纠纷。</p></td>
+<td align="left"><p>地图可能包含有争议的地理区域或国界，并且这是引起政治冲突的常见原因。 请务必小心用于选择国家/地区的任何 UI，应将其称为&quot;国家/地区&quot;。 将有争议的领土置于标记为&quot;国家/地区&quot;的列表中（例如地址表单中）可能会导致纠纷。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>请勿使用与自身比较的字符串来比较语言标记。</p></td>
@@ -101,7 +102,7 @@ template: detail.hbs
 
  
 
-## <span id="guidelines_for_localization"> </span> <span id="GUIDELINES_FOR_LOCALIZATION"> </span>本地化
+## <span id="guidelines_for_localization"></span><span id="GUIDELINES_FOR_LOCALIZATION"></span>本地化
 
 <table>
 <colgroup>
@@ -165,15 +166,15 @@ template: detail.hbs
 <td align="left"><p>通过避免在图像中使用文本或在音频文件中使用语音来降低本地化成本。 如果要本地化为与你本身语言的读取方向不同的语言，请使用对称图像和效果，以便可以更容易地支持镜像。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>请勿在不同的上下文中重复使用字符串。</p></td>
-<td align="left"><p>请勿在不同的上下文中重复使用字符串，因为即使是简单的词（例如“on”和“off”）也可能具有不同的翻译，翻译结果依赖于上下文。</p></td>
+<td align="left"><p>不要在不同的上下文中重复使用字符串。</p></td>
+<td align="left"><p>不要在不同的上下文中重复使用字符串，因为即使是简单的词（例如 &quot;on&quot; 和 &quot;off&quot;）都可能具有不同的翻译，翻译结果依赖于上下文。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 
 **示例**
@@ -187,6 +188,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 
