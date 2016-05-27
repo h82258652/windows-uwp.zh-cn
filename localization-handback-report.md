@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 257
+ Total Files | 258
 
 ## File List
  Source File | Status | Details 
@@ -263,6 +263,7 @@
  [windows-apps-src\graphics\composition-native-interop.md](https://github.com/Microsoft/windows-apps/blob/b3d198af0c46ec7a2041a7417bccd56c05af760e/windows-apps-src/graphics/composition-native-interop.md) | InSyncHandedBackSuccess | [Details](#b5308c8023990996a93277dd1bcfb8298c0bbf4f2584)
  [windows-apps-src\graphics\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/graphics/index.md) | InSyncHandedBackSuccess | [Details](#d46498e6e584d85cfce0be237878aff68dee9c502611)
  [windows-apps-src\graphics\using-brushes.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/graphics/using-brushes.md) | InSyncHandedBackSuccess | [Details](#a4063ee2372d69289fca74c81a4c7645909c7f372615)
+ [windows-apps-src\in-app-help\guidelines-for-app-help.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/in-app-help/guidelines-for-app-help.md) | InSyncHandedBackSuccess | [Details](#35011081981ce9bb5c8408329c9be627f60ee8412619)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -3348,6 +3349,18 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [using-brushes.2c18aee45eb1712689bc9ebd652e0345ed3c4cff.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/2a244d6313046c535415ce752072c4f44b7e4e55/ol-handback/Microsoft/windows-apps.zh-cn/master/graphics/using-brushes.2c18aee45eb1712689bc9ebd652e0345ed3c4cff.zh-cn.xlf)
 * Handback Datetime: 2016-05-27 20:27:49
+* [Back to Top](#report-top)
+
+##### <a name='35011081981ce9bb5c8408329c9be627f60ee8412619'></a> Source: [windows-apps-src\in-app-help\guidelines-for-app-help.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/in-app-help/guidelines-for-app-help.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\in-app-help\guidelines-for-app-help.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/36c5586e1ac69630364b19ba08e61f02f6655b54/windows-apps-src/in-app-help/guidelines-for-app-help.md)
+* Handoff File: [guidelines-for-app-help.aaa49aa381d556c0b965721ea6a7c1b8bc21ceaf.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0607049bfa018cc6bec72fd2d79d3c6fd08f0f65/ol-handoff/Microsoft/windows-apps.zh-cn/master/guidelines-for-app-help.aaa49aa381d556c0b965721ea6a7c1b8bc21ceaf.zh-cn.xlf)
+* Handoff Datetime: 2016-05-12 02:26:30
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [guidelines-for-app-help.aaa49aa381d556c0b965721ea6a7c1b8bc21ceaf.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/2430fae259da51b0c3d57b16c018fae220289334/ol-handback/Microsoft/windows-apps.zh-cn/master/in-app-help/guidelines-for-app-help.aaa49aa381d556c0b965721ea6a7c1b8bc21ceaf.zh-cn.xlf)
+* Handback Datetime: 2016-05-27 20:27:55
 * [Back to Top](#report-top)
 
 
