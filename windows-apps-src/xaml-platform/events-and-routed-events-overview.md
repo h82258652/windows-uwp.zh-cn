@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 我们将介绍在使用 C#、Visual Basic 或 Visual C++ 组件扩展 (C++/CX) 作为编程语言并使用 XAML 进行 UI 定义时，针对 Windows 运行时应用中事件的编程概念。
 title: 事件和路由事件概述
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
@@ -6,13 +7,13 @@ ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 
 # 事件和路由事件概述
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
 -   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
-我们将介绍在使用 C#、Visual Basic 或 Visual C++ 组件扩展 (C++/CX) 作为编程语言并使用 XAML 进行 UI 定义时，针对 Windows 运行时应用中事件的编程概念。 你可以在 XAML 中的 UI 元素声明中为事件分配处理程序，或者在代码中添加处理程序。 Windows 运行时支持路由事件**：借助此功能，某些输入事件和数据事件可由引发该事件的对象以外的对象来处理。 在定义控件模板或使用页面或版式容器时，路由事件十分有用。
+我们将介绍在使用 C#、Visual Basic 或 Visual C++ 组件扩展 (C++/CX) 作为编程语言并使用 XAML 进行 UI 定义时，针对 Windows 运行时应用中事件的编程概念。 你可以在 XAML 中的 UI 元素声明中为事件分配处理程序，或者在代码中添加处理程序。 Windows 运行时支持*路由事件*：借助此功能，某些输入事件和数据事件可由引发该事件的对象以外的对象来处理。 在定义控件模板或使用页面或版式容器时，路由事件十分有用。
 
 ## 事件即编程概念
 
@@ -20,7 +21,7 @@ ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 
 当你使用 C#、Visual Basic 或 C++/CX 作为编程语言时，UI 是通过标记 (XAML) 定义的。 对于 XAML 标记语法，将事件与标记元素和运行时代码实体联系起来的某些原则与其他 Web 技术（例如 ASP.NET 或 HTML5）类似。
 
-**注意** 为 XAML 定义的 UI 提供运行时逻辑的代码常常称为*“代码隐藏”*或代码隐藏文件。 在 Microsoft Visual Studio 解决方案视图中，此关系以图形方式显示，同时代码隐藏文件是一个独立、嵌套的文件，而不是它引用的 XAML 页面。
+**注意** 为 XAML 定义的 UI 提供运行时逻辑的代码常常称为*代码隐藏*或代码隐藏文件。 在 Microsoft Visual Studio 解决方案视图中，此关系以图形方式显示，同时代码隐藏文件是一个独立、嵌套的文件，而不是它引用的 XAML 页面。
 
 ## 按钮.单击：事件和 XAML 简介
 
@@ -30,7 +31,7 @@ Windows 运行时应用的一个最常见的编程任务是捕获用户在 UI �
 
 要连接 XAML 中的事件，需指定已在代码隐藏中定义或稍后定义的处理程序方法的字符串形式名称。 例如，该 XAML 会在其他属性（[x:Name 属性](x-name-attribute.md)，[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)）分配为特性的情况下定义 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 对象，并通过引用名为 `showUpdatesButton_Click` 的方法为该按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件连接一个处理程序：
 
-```XAML
+```XML
 <Button x:Name="showUpdatesButton"
   Content="{Binding ShowUpdatesText}"
   Click="showUpdatesButton_Click"/>
@@ -38,7 +39,7 @@ Windows 运行时应用的一个最常见的编程任务是捕获用户在 UI �
 
 **提示** *事件连接*是一个编程术语。 它是指进程或代码，凭此你可以指示某个事件的出现应调用命名处理程序方法。 在大部分过程代码模型中，事件连接是隐式或显式的“AddHandler”代码，用于命名事件和方法并通常涉及目标对象实例。 在 XAML 中，“AddHandler”是隐式的，事件连接完全由将事件命名为对象元素的属性名称和将处理程序命名为该属性的值组成。
 
-然后，使用编程语言（用于你所有应用的代码和代码隐藏的语言）编写实际的处理程序。 通过属性 `Click="showUpdatesButton_Click"`，你创建了一个合约：在对 XAML 进行标记编译和分析时，IDE 生成操作中的 XAML 标记编译步骤和应用加载时的最终 XAML 分析都能够找到名为 `showUpdatesButton_Click` 的方法作为该应用代码的一部分。 `showUpdatesButton_Click` 必须是一个方法，并且该方法要为 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何处理程序都实现一个兼容的方法签名（基于一个委托）。 例如，此代码定义 `showUpdatesButton_Click` 处理程序。
+然后，使用编程语言（用于你所有应用的代码和代码隐藏的语言）编写实际的处理程序。 在属性 `Click="showUpdatesButton_Click"` 中，你创建了一个合约：当对 XAML 进行标记编译和分析时，IDE 的生成操作和最终应用加载时 XAML 分析操作中的 XAML 标记编译步骤都可以找到一个作为该应用的代码的一部分且名为 `showUpdatesButton_Click` 的方法。 `showUpdatesButton_Click` 必须是一个方法，并且该方法要为 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何处理程序都实现一个兼容的方法签名（基于一个委托）。 例如，此代码定义 `showUpdatesButton_Click` 处理程序。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -62,7 +63,7 @@ void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, W
 
 此例中，`showUpdatesButton_Click` 方法基于 [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) 委托。 由于该委托以 MSDN 参考页面上 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 方法的语法进行命名，你便可确认该委托为待使用的委托。
 
-**提示** Visual Studio 提供了一种便捷方式，以供你在编辑 XAML 时命名事件处理程序和定义处理程序方法。 当在 XAML 文本编辑器中提供事件的属性名称时，稍等片刻就会显示 Microsoft IntelliSense 列表。 单击该列表中的**“<新建事件处理程序>”**时，Microsoft Visual Studio 将基于元素的 **x:Name**（或类型名）、事件名称和数字后缀建议一个方法名称。 然后可以右键单击所选的事件处理程序名称，并单击**“导航到事件处理程序”**。 此操作将直接导航到新插入的事件处理程序定义，如 XAML 页面代码隐藏文件的代码编辑器中所示。 事件处理程序已拥有正确的签名，包括 *sender* 参数和该事件所使用的事件数据类。 另外，如果代码隐藏文件中已存在一个具有正确签名的处理程序方法，该方法的名称会与**“<新建事件处理程序>”**选项一起显示在自动完成下拉列表中。 此外，也可按下 Tab 键（快捷方式）来代替单击 IntelliSense 列表项。
+**提示** Visual Studio 提供了一种便捷方式，以供你在编辑 XAML 时命名事件处理程序和定义处理程序方法。 当在 XAML 文本编辑器中提供事件的属性名称时，稍等片刻就会显示 Microsoft IntelliSense 列表。 如果单击该列表中的**&lt;新建事件处理程序&gt;**，Microsoft Visual Studio 将基于元素的 **x:Name**（或类型名）、事件名称和数字后缀建议一个方法名称。 然后可以右键单击所选的事件处理程序名称，并单击“导航到事件处理程序”****。 此操作将直接导航到新插入的事件处理程序定义，如 XAML 页面代码隐藏文件的代码编辑器中所示。 事件处理程序已拥有正确的签名，包括 *sender* 参数和该事件所使用的事件数据类。 另外，如果代码隐藏文件中已存在一个具有正确签名的处理程序方法，该方法的名称会与**&lt;新建事件处理程序&gt;**选项一起显示在自动完成下拉列表中。 此外，也可按下 Tab 键（作为快捷方式）来代替单击 IntelliSense 列表项。
 
 ## 定义事件处理程序
 
@@ -74,7 +75,7 @@ void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, W
 
 为事件编写的处理程序可以访问两个值，这两个值对于调用处理程序的每种情况都可以用作输入。 第一个值是 *sender*，它是处理程序所附加到的对象的引用。 *sender* 参数的类型设置为基础 **Object** 类型。 一种常见技术是将 *sender* 转换为一种更准确的类型。 如果期望检查或更改 *sender* 对象本身的状态，此技术很有用。 基于你自己的应用设计，你通常知道可将 *sender* 安全地转换到哪种类型（根据处理程序的附加位置或其他设计细节）。
 
-第二个值为事件数据，它通常在语法定义中显示为 *e* 参数。 你可以通过查看委派（分配给你正在处理的特定事件）的 *e* 参数，然后使用 Visual Studio 中的 IntelliSense 或对象浏览器，发现事件数据的哪些属性可用。 或者可以使用 Windows 运行时参考文档。
+第二个值为事件数据，它通常在语法定义中显示为 *e* 参数。 你可以通过查看委托（分配给你正在处理的特定事件）的 *e* 参数，然后使用 Visual Studio 中的 IntelliSense 或对象浏览器，发现事件数据的哪些属性可用。 或者可以使用 Windows 运行时参考文档。
 
 对于一些事件，事件数据的具体属性值与知道已发生该事件同样重要。 这对于输入事件尤其如此。 对于指针事件，在事件发生时指针的位置可能很重要。 对于键盘事件，所有可能的按键都会引发 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 和 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件。 要确定用户按下了哪个键，必须访问可供事件处理程序使用的 [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072)。 有关处理输入事件的详细信息，请参阅[键盘交互](https://msdn.microsoft.com/library/windows/apps/mt185607)和[处理指针输入](https://msdn.microsoft.com/library/windows/apps/mt404610)。 输入事件和输入场景常常涉及到本文未介绍的其他考虑因素，例如针对指针事件的指针捕获，以及针对键盘事件的修改键和平台键代码。
 
@@ -92,7 +93,7 @@ XAML 不是向对象分配事件处理程序的唯一方式。 要在代码中�
 
 如果使用代码向运行时 UI 中显示的对象添加事件处理程序，一种常见的做法是添加这些处理程序来响应对象生存期事件或回调，例如 [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) 或 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737)，这可使相关对象上的事件处理程序在运行时准备好处理用户发起的事件。 该示例展示了页面结构的 XAML 概括，同时提供了用于将事件处理程序添加到对象的 C# 语言语法。
 
-```xaml
+```xml
 <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
   <StackPanel>
     <TextBlock Name="textBlock1">Put the pointer over this text</TextBlock>
@@ -139,12 +140,12 @@ End Sub
 
 ```cpp
 textBlock1->PointerEntered += 
-ref new PointerEventHandler(this,&amp;BlankPage::textBlock1_PointerExited);
+ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerExited);
 ```
 
 ### 在代码中删除事件处理程序
 
-通常不需要删除代码中的事件处理程序，即便事件处理程序是你在代码中添加的也是如此。 对于大多数 Windows 运行时对象（如页面和控件）来说，当它们从主 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 及其可视化树断开连接时，它们的对象生存期行为将销毁对象，而且任何委派引用也将被销毁。 .NET 通过垃圾收集完成此操作，并且采用 C++/CX 的 Windows 运行时默认情况下使用弱引用。
+通常不需要删除代码中的事件处理程序，即便事件处理程序是你在代码中添加的也是如此。 对于大多数 Windows 运行时对象（如页面和控件）来说，当它们从主 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 及其可视化树断开连接时，它们的对象生存期行为将销毁对象，而且任何委托引用也将被销毁。 .NET 通过垃圾收集完成此操作，并且采用 C++/CX 的 Windows 运行时默认情况下使用弱引用。
 
 在极少数情况下，你希望明确删除事件处理程序。 其中包括：
 
@@ -239,7 +240,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 ## 点击测试和输入事件
 
-确定某个元素是否对鼠标、触摸和触笔输入可见以及其在 UI 中的位置为“点击测试”**。 对于触摸操作以及特定于交互的事件或一个触摸操作引起的操作事件，一个元素必须对点击测试可见，以用作事件源并触发与该操作关联的事件。 否则，该操作会通过该元素传递到可与该输入交互的可视化树中的任意基础元素或父元素。 影响点击测试的因素有很多，但你可以通过检查给定元素的 [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) 属性来确定该元素是否会引发输入事件。 只有当该元素符合以下条件时，该属性才返回 **true**：
+确定某个元素是否对鼠标、触摸和触笔输入可见以及其在 UI 中的位置称为*点击测试*。 对于触摸操作以及特定于交互的事件或一个触摸操作引起的操作事件，一个元素必须对点击测试可见，以用作事件源并触发与该操作关联的事件。 否则，该操作会通过该元素传递到可与该输入交互的可视化树中的任意基础元素或父元素。 影响点击测试的因素有很多，但你可以通过检查给定元素的 [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) 属性来确定该元素是否会引发输入事件。 只有当该元素符合以下条件时，该属性才返回 **true**：
 
 -   元素的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 属性值为 [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006)。
 -   元素的 **Background** 或 **Fill** 属性值不是 **null**。 **null**[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 值会导致透明性和点击测试不可见。 （若要使元素透明而且可执行点击测试，可使用 [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) 画笔代替 **null**。）
@@ -259,7 +260,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 ## 命令处理
 
-少量 UI 元素支持命令处理**。 命令处理在其基础实现中使用了与输入相关的路由事件，支持通过调用单个命令处理程序来处理相关的 UI 输入（某种指针操作，一种特定的加速键）。 如果命令处理可用于 UI 元素，可以考虑使用它的命令处理 API 代替任何具体的输入事件。 你通常将 **Binding** 引用用于为数据定义视图模型的类属性。 这些属性将保留可实现特定于语言的 **ICommand** 命令操作模式的命名命令。 有关详细信息，请参阅 [**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740)。
+少量 UI 元素支持*命令处理*。 命令处理在其基础实现中使用了与输入相关的路由事件，支持通过调用单个命令处理程序来处理相关的 UI 输入（某种指针操作，一种特定的加速键）。 如果命令处理可用于 UI 元素，可以考虑使用它的命令处理 API 代替任何具体的输入事件。 你通常将 **Binding** 引用用于为数据定义视图模型的类属性。 这些属性将保留可实现特定于语言的 **ICommand** 命令操作模式的命名命令。 有关详细信息，请参阅 [**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740)。
 
 ## Windows 运行时中的自定义事件
 
@@ -289,6 +290,6 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 将一个控件模板中的属性值链接到模板控件上的某个其他公开的属性的值。 TemplateBinding 只能在 XAML 中的 ControlTemplate 定义中使用。
 title: TemplateBinding 标记扩展
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
@@ -6,7 +7,7 @@ ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 
 # {TemplateBinding} 标记扩展
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 将一个控件模板中的属性值链接到模板控件上的某个其他公开的属性的值。 **TemplateBinding** 只能在 XAML 中的 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定义中使用。
 
@@ -33,9 +34,9 @@ ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 
 如果你是自定义控件的作者或者要替换现有控件的控件模板，使用 **TemplateBinding** 是如何定义控件模板的基础部分。 有关详细信息，请参阅[快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
 
-*propertyName* 和 *targetProperty* 常常使用相同的属性名称。 在此情况下，一个控件可以在自身定义一个属性，并将该属性转发到其组件部分之一的直观命名的现有属性。 例如，一个在其结构中合并了 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的控件（用于显示控件自己的 **Text** 属性）可能包含此 XAML 作为控件模板的一部分：`<TextBlock Text="{TemplateBinding Text}" .... />`
+*propertyName* 和 *targetProperty* 常常使用相同的属性名称。 在此情况下，一个控件可以在自身定义一个属性，并将该属性转发到其组件部分之一的直观命名的现有属性。 例如，一个在其结构中合并了 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的控件（用于显示控件自己的 **Text** 属性）可能包含此 XAML 作为控件模板的一部分： `<TextBlock Text="{TemplateBinding Text}" .... />`
 
-用作源属性值和目标属性值的类型必须匹配。 使用 **TemplateBinding** 时，无法引入转换器。 解析 XAML 时，无法匹配值将导致错误。 如果你需要一个转换器，可将详细语法用于模板绑定，例如：`{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
+用作源属性值和目标属性值的类型必须匹配。 使用 **TemplateBinding** 时，无法引入转换器。 解析 XAML 时，无法匹配值将导致错误。 如果你需要一个可将详细语法用于模板绑定的转换器，例如： `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
 
 尝试在 XAML 中的 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定义外使用 **TemplateBinding** 将导致分析器错误。
 
@@ -58,6 +59,6 @@ ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

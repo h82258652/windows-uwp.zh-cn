@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 本主题将介绍大部分 XAML 文件的根元素中存在的 XML/XAML 命名空间 (xmlns) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。
 title: XAML 命名空间和命名空间映射
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
@@ -6,7 +7,7 @@ ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 
 # XAML 命名空间和命名空间映射
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题将介绍大部分 XAML 文件的根元素中存在的 XML/XAML 命名空间 (**xmlns**) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。
 
@@ -29,11 +30,11 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 ## 默认和 XAML 语言 XAML 命名空间声明
 
-在大多数 XAML 文件的根元素中，有两个 **xmlns** 声明。 第一个声明将一个 XAML 命名空间映射为默认命名空间：`xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"`
+在大多数 XAML 文件的根元素中，有两个 **xmlns** 声明。 第一个声明将一个 XAML 命名空间映射为默认命名空间： `xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"`
 
 这是多个也使用 XAML 作为 UI 定义标记格式的预处理器 Microsoft 技术中使用的相同 XAML 命名空间标识符。 使用相同的标识符是经过深思熟虑的，在将以前定义的 UI 迁移到使用 C++、C# 或 Visual Basic 的 Windows 运行时应用时很有用。
 
-第二个声明映射 XAML 定义的语言元素的一个独立的 XAML 命名空间，（通常）将它映射到”x:”前缀：`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
+第二个声明映射 XAML 定义的语言元素的一个独立的 XAML 命名空间，（通常）将它映射到“x:”前缀： `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
 
 此 **xmlns** 值和它所映射到的“x:”前缀对于在多个使用 XAML 的前置任务 Microsoft 技术中使用的定义也是相同的。
 
@@ -45,7 +46,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 除了默认命名空间和 XAML 语言 XAML 命名空间“x:”，你也可能在 Microsoft Visual Studio 生成的应用的初始默认 XAML 中看到其他的已映射 XAML 命名空间。
 
-### **d: (http://schemas.microsoft.com/expression/blend/2008)**
+### **d: (`http://schemas.microsoft.com/expression/blend/2008`)**
 
 “d:”XAML 命名空间旨在提供设计器支持，尤其是 Microsoft Visual Studio 的 XAML 设计界面中的设计器支持。 “d:”XAML 命名空间支持 XAML 元素上的设计器或设计时特性。 这些设计器特性只影响 XAML 行为的设计方面。 如果 Windows 运行时 XAML 分析器在一个应用运行时加载相同的 XAML，设计器特性会被忽略。 一般而言，设计器特性在任何 XAML 元素上是有效的，但在实际情况中，只有某些场景适合应用设计器特性。 具体来讲，许多设计器特性是为了在你开发使用数据绑定的 XAML 和代码时，提供一种与数据上下文和数据源交互的更好体验。
 
@@ -57,13 +58,13 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 -   **d:DesignSource 特性：**为 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 指定设计时数据源，并替代 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835)。
 -   **d:DesignInstance 和 d:DesignData 标记扩展：**这些标记扩展用于为 **d:DataContext** 或 **d:DesignSource** 提供设计时数据资源。 在这里，我们不会完全记录如何使用设计时数据源资源。 有关详细信息，请参阅[设计时特性](http://go.microsoft.com/fwlink/p/?LinkId=272504)。 有关一些使用示例，请参阅[设计面图以及用于原型制作的示例数据](https://msdn.microsoft.com/library/windows/apps/mt517866)。
 
-### **mc: (http://schemas.openxmlformats.org/markup-compatibility/2006) **
+### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
 “mc:”表示并支持读取 XAML 的标记兼容性模式。 通常，“d:”前缀与特性 **mc:Ignorable** 相关联。 此技术使运行时 XAML 分析器忽略“d:”中的设计特性。
 
 ### **local:** 和 **common:**
 
-“local:”是一个前缀，通常会在模板化 Windows 应用商店应用项目的 XAML 页面中为你映射它。 它映射为引用相同的命名空间，该命名空间旨在包含 [x:Class 特性](x-class-attribute.md)和所有 XAML 文件（包括 app.xaml）的代码。 只要你在此相同命名空间中定义你要在 XAML 中使用的任何自定义类，你就可以使用 **local:** 前缀在 XAML 中引用你的自定义类型。 来自模板化的 Windows 应用商店应用项目的相关前缀是 **common:**。 此前缀引用包含实用程序类（例如转换器和命令）的嵌套“Common”命名空间，你可以在**“解决方案资源管理器”**视图的“Common”文件夹中找到定义。
+“local:”是一个前缀，通常会在模板化 Windows 应用商店应用项目的 XAML 页面中为你映射它。 它映射为引用相同的命名空间，该命名空间旨在包含 [x:Class 特性](x-class-attribute.md)和所有 XAML 文件（包括 app.xaml）的代码。 只要你在此相同命名空间中定义你要在 XAML 中使用的任何自定义类，你就可以使用 **local:** 前缀在 XAML 中引用你的自定义类型。 来自模板化的 Windows 应用商店应用项目的相关前缀是 **common:**。 此前缀引用包含实用程序类（例如转换器和命令）的嵌套“Common”命名空间，你可以在“解决方案资源管理器”****视图的“Common”文件夹中找到定义。
 
 ### **vsm:**
 
@@ -75,7 +76,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 **xmlns** 定义包含一个值以及前缀命名。 该值是一个包含在引号内的字符串，后跟一个等号。 一种常见的 XML 约定是将 XML 命名空间与一个统一资源标识符 (URI) 相关联，这样就实现了唯一性和标识约定。 你也可以在默认 XAML 命名空间和 XAML 语言 XAML 命名空间中看到此约定，也可以在 Windows 运行时 XAML 所使用的且不太常见的 XAML 命名空间中看到此约定。 对于映射自定义类型（而不是指定一个 URI）的 XAML 命名空间，你可以为定义添加令牌“using:”作为前缀。 在“using:”令牌后，可命名代码命名空间。
 
-例如，要映射一个允许你引用“CustomClasses”命名空间的“custom1”前缀，并使用来自该命名空间或程序集的类作为 XAML 中的前缀，你的 XAML 页面应在根元素上包含以下映射：`xmlns:custom1="using:CustomClasses"`
+例如，要映射一个允许你引用“CustomClasses”命名空间的“custom1”前缀，并使用来自该命名空间或程序集的类作为 XAML 中的前缀，你的 XAML 页面应在根元素上包含以下映射： `xmlns:custom1="using:CustomClasses"`
 
 不需要映射同一页面范围中的分部类。 例如，不需要前缀即可引用你为处理来自页面的 XAML UI 定义的事件而定义的任何事件处理程序。 另外，Visual Studio 生成的使用 C++、C# 或 Visual Basic 的 Windows 运行时应用项目的许多起始 XAML 页面已映射“local:”前缀，它引用项目指定的默认命名空间和分部类定义所使用的命名空间。
 
@@ -108,6 +109,6 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

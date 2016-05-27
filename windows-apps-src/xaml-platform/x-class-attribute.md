@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: 配置 XAML 编译，在标记和代码隐藏之间连接分部类。 代码分部类在一个独立的代码文件中定义，标记分部类由代码生成过程在 XAML 编译期间创建。
-title: x:Class 属性
+title: x&#58;Class 属性
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ---
 
-# x:Class 属性
+# x&#58;Class 属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -40,6 +41,6 @@ ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

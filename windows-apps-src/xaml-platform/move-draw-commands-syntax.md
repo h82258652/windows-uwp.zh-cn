@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 了解移动和绘制命令（小型语言），可用于将路径几何图形指定为 XAML 属性值。
 title: 移动和绘制命令语法
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
@@ -16,7 +17,7 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 在 Windows 运行时中存在两种可使用字符串表示移动和绘制命令的属性：[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 和 [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723)。 如果你通过指定移动和绘制命令设置其中一个属性，通常会将其设置为 XAML 属性值以及该元素的其他所需属性。 在未获取细节的情况下，如此处所示：
 
-```xaml
+```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
@@ -68,8 +69,7 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | 术语 | 说明 |
 |------|-------------|
-| _startPoint_ | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新图形的起点。|
+| _startPoint_ | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新图形的起点。|
 
 大写 **M** 指示 *startPoint* 是绝对坐标；小写 **m** 指示 *startPoint* 是上一个点的偏移或 (0,0)（如果没有上一个点）。
 
@@ -93,8 +93,7 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | 术语 | 说明 |
 |------|-------------|
-| endPoint | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>直线的端点。|
+| endPoint | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>直线的端点。|
 
 **横线命令**
 
@@ -106,8 +105,7 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | 术语 | 说明 |
 |------|-------------|
-| x | [
-            **Double**](T:System.Double) <br/> 直线端点的 x 坐标。 |
+| x | [**双面**](T:System.Double) <br/> 直线端点的 x 坐标。 |
 
 **竖线命令**
 
@@ -119,8 +117,7 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | 术语 | 说明 |
 |------|-------------|
-| *y* | [
-            **Double**](T:System.Double) <br/> 直线端点的 y 坐标。 |
+| *y* | [**双面**](T:System.Double) <br/> 直线端点的 y 坐标。 |
 
 **三次方贝塞尔曲线命令**
 
@@ -132,12 +129,9 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | 术语 | 说明 |
 |------|-------------|
-| *controlPoint1* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的第一个控制点可确定曲线的开始切线。 |
-| *controlPoint2* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的第二个控制点可确定曲线的结束切线。 |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制曲线的点。 | 
+| *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的第一个控制点，可确定曲线的开始切线。 |
+| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的第二个控制点，可确定曲线的结束切线。 |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制曲线的点。 | 
 
 **二次方贝塞尔曲线命令**
 
@@ -149,10 +143,8 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | 术语 | 说明 |
 |------|-------------|
-| *controlPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的控制点可确定曲线的开始切线和结束切线。 |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
+| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的控制点，可确定曲线的开始切线和结束切线。 |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
 
 **平滑三次方贝塞尔曲线命令**
 
@@ -164,10 +156,8 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | 术语 | 说明 |
 |------|-------------|
-| *controlPoint2* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的控制点可确定曲线的结束切线。 |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
+| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的控制点，可确定曲线的结束切线。 |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
 
 **平滑二次方贝塞尔曲线命令**
 
@@ -179,10 +169,8 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | 术语 | 说明 |
 |------|-------------|
-| *controlPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲线的控制点可确定曲线的开始切线。 |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
+| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲线的控制点，可确定曲线的开始切线。 |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
 
 **椭圆弧命令**
 
@@ -194,14 +182,11 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | 术语 | 说明 |
 |------|-------------|
-| *size* | [
-            **Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>圆弧的 x 半径和 y 半径。 |
-| *rotationAngle* | [
-            **Double**](T:System.Double) <br/> 椭圆的旋转角度（以度为单位）。 |
+| *大小* | [**大小**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>圆弧的 x 半径和 y 半径。 |
+| *rotationAngle* | [**双面**](T:System.Double) <br/> 椭圆的旋转角度（以度为单位）。 |
 | *isLargeArcFlag* | 如果圆弧的角度应为 180 度或更大，则设置为 1；否则，设置为 0。 |
 | *sweepDirectionFlag* | 如果圆弧以正角方向绘制，则设置为 1；否则，设置为 0。 |
-| *endPoint* | [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制圆弧的点。|
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制圆弧的点。|
  
 **关闭命令**
 
@@ -211,7 +196,7 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 |--------|
 | `Z` <br/> - 或 - <br/> `z ` |
 
-**Point 语法**
+**点语法**
 
 介绍了某个点的 x 坐标和 y 坐标。 另请参阅 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)。
 
@@ -221,10 +206,8 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 | 术语 | 说明 |
 |------|-------------|
-| *x* | [
-            **Double**](T:System.Double) <br/> 点的 x 坐标。 |
-| *y* | [
-            **Double**](T:System.Double) <br/> 点的 y 坐标。 |
+| *x* | [**双面**](T:System.Double) <br/> 点的 x 坐标。 |
+| *y* | [**双面**](T:System.Double) <br/> 点的 y 坐标。 |
 
 **其他说明**
 
@@ -253,6 +236,6 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

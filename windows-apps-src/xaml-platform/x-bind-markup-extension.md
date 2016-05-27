@@ -1,12 +1,13 @@
 ---
+author: jwmsft
 description: xBind 标记扩展是 Binding 的备用选项。 虽然 xBind 缺少 Binding 中的一些功能，但它运行时所花费的时间和使用的内存量均比 Binding 要少，且支持更好的调试。
 title: xBind 标记扩展
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ---
 
-# {x:Bind} 标记扩展
+# {x&#58;Bind} 标记扩展
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **注意** 有关将应用中的数据绑定与 **{x:Bind}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
@@ -36,7 +37,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 |------|-------------|
 | _propertyPath_ | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
 | _bindingProperties_ |
-| _propName_=_value_\[, _propName_=_value_\]* | 使用一个名称/值对语法指定的一个或多个绑定属性。 |
+| _propName_ = _value_\[, _propName_=_value_\]* | 使用一个名称/值对语法指定的一个或多个绑定属性。 |
 | _propName_ | 要在绑定对象上设置的属性的字符串名称。 例如，“Converter”。 | 
 | _value_ | 要将属性设置为的值。 参数的语法取决于要设置的属性。 下面是 _propName_=_value_ 用法的示例，其中该值本身就是一个标记扩展：`Converter={StaticResource myConverterClass}`。 有关详细信息，请参阅下面的[可使用 {x:Bind} 设置的属性](#properties-you-can-set)部分。 | 
 
@@ -52,7 +53,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 如果数据源是一个集合，则属性路径可以按照位置或索引来指定集合中的项目。 例如“Teams\[0\].Players”，其中文本“\[\]”中包含“0”，用以请求从零开始编制索引的集合中的第一个项目。
 
-若要使用索引器，该模型需要在将编入索引的属性类型上实现 **IList<T>** 或 **IVector<T>**。 如果已编入索引的属性类型支持 **INotifyCollectionChanged** 或 **IObservableVector** 且绑定是单向或双向，则它将针对这些接口上的更改通知进行注册和侦听。 更改检测逻辑将基于所有集合更改进行更新，即使这不会影响特定的索引值也是如此。 这是因为侦听逻辑在集合的所有实例中是通用的。
+若要使用索引器，该模型需要在将编入索引的属性类型上实现 **IList&lt;T&gt;** 或 **IVector&lt;T&gt;**。 如果已编入索引的属性类型支持 **INotifyCollectionChanged** 或 **IObservableVector** 且绑定是单向或双向，则它将针对这些接口上的更改通知进行注册和侦听。 更改检测逻辑将基于所有集合更改进行更新，即使这不会影响特定的索引值也是如此。 这是因为侦听逻辑在集合的所有实例中是通用的。
 
 若要绑定到附加属性，你需要将类和属性名称放入点号后面的括号内。 例如 **Text="{x:Bind Button22.(Grid.Row)}"**。 如果未在 Xaml 命名空间中声明该属性，你需要在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。
 
@@ -112,7 +113,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 ## 示例
 
-```XAML
+```XML
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -120,7 +121,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 本示例中 XAML 会将 **{x:Bind}** 与 **ListView.ItemTemplate** 属性结合使用。 请注意 **x:DataType** 值的声明。
 
-```XAML
+```XML
   <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -131,6 +132,6 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

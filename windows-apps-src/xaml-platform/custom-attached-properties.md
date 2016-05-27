@@ -1,5 +1,6 @@
 ---
-description: 介绍如何将一个 XAML 附加属性实现为依赖属性，如何定义让附加属性可用于 XAML 所必需的访问器约定。
+author: jwmsft
+description: 介绍如何将一个 XAML 附加属性实现为依赖属性，以及如何定义让附加属性可用于 XAML 所必需的访问器约定。
 title: 自定义附加属性
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 ---
@@ -12,11 +13,11 @@ ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 
 ## 先决条件
 
-我们假设你能从现有依赖属性的用户角度理解依赖属性，并且已阅读了[依赖属性概述](dependency-properties-overview.md)。 你还应该已阅读了[附加属性概述](attached-properties-overview.md)。 要理解本主题中的示例，你还应该理解 XAML，知道如何编写使用 C++、C# 或 Visual Basic 的基本 Windows 运行时应用。
+我们假设你能从现有依赖属性的客户角度理解依赖属性，并且已阅读了[依赖属性概述](dependency-properties-overview.md)。 你还应该阅读了[附加属性概述](attached-properties-overview.md)。 要理解本主题中的示例，你还应该理解 XAML，知道如何编写使用 C++、C# 或 Visual Basic 的基本 Windows 运行时应用。
 
 ## 附加属性的使用场景
 
-除了定义类，如果有理由提供其他属性设置机制，则可以创建一个附加属性。 最常见的情况是布局和服务支持。 现有布局属性的示例包括 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772)。 在布局场景中，以布局控制元素的子元素形式存在的元素可单独向其父元素表达布局需求，每个元素设置一个被其父元素定义为附加属性的属性值。 Windows 运行时 API 中服务支持场景的一个例子是 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的一组附加属性，例如 [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561)。
+除了定义类，如果有理由提供其他属性设置机制，则可以创建一个附加属性。 最常见的情况是布局和服务支持。 现有布局属性的示例包括 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772)。 在布局场景中，以布局控制元素的子元素形式存在的元素可单独向其父元素表达布局需求，每个元素设置一个被其父元素定义为附加属性的属性值。 Windows 运行时 API 中服务支持方案的一个示例是 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的一组附加属性，例如 [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561)。
 
 **警告** Windows 运行时 XAML 实现的一个现有限制是，你无法为自定义附加属性创建动画。
 
@@ -26,29 +27,29 @@ ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 
 要将附加属性定义为依赖属性，可声明一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 类型的 **public****static****readonly** 属性。 你可以使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法的返回值来定义此属性。 属性名称必须与你指定为 **RegisterAttached***name* 参数的附加属性名称相匹配，并在末尾添加字符串“Property”。 这是相对于其表示的属性来命名依赖属性标识符的既有约定。
 
-定义自定义附加属性与自定义依赖属性的主要区别在定义访问器或包装器的方式上。 并不使用[自定义依赖属性](custom-dependency-properties.md)中介绍的包装器技术，并且你还必须提供静态的 **Get***PropertyName* 和 **Set***PropertyName* 方法作为附加属性的访问器。 访问器多数供 XAML 分析器使用，但任何其他调用方也可以使用它们来设置非 XAML 场景中的值。
+定义自定义附加属性与自定义依赖属性的主要区别在定义访问器或包装器的方式上。 并不使用[自定义依赖属性](custom-dependency-properties.md)中介绍的包装器技术，你还必须提供静态的 **Get***PropertyName* 和 **Set***PropertyName* 方法作为附加属性的访问器。 访问器多数供 XAML 分析器使用，但任何其他调用方也可以使用它们来设置非 XAML 场景中的值。
 
 **重要提示** 如果未正确定义访问器，XAML 处理器将无法访问你的附加属性，尝试使用它的任何人都可能会得到一个 XAML 分析器错误。 另外，在引用的程序集中遇到自定义依赖属性时，设计和编码工具常常依赖于“\*Property”约定来命名标识符。
 
 ## 访问器
 
-**Get**_PropertyName_ 访问器的签名必须是这样的。
+**Get**_PropertyName_ 访问器的签名必须如下所示。
 
 `public static` _valueType_ **Get** _PropertyName_ `(DependencyObject target)`
 
-对于 Microsoft Visual Basic，它是这样的。
+对于 Microsoft Visual Basic，如下所示。
 
-` Public Shared Function Get` _PropertyName_ `(ByVal target As DependencyObject) As ` _valueType_ `)`
+` Public Shared Function Get`_PropertyName_ `(ByVal target As DependencyObject) As ` _valueType_`)`
 
 *target* 对象可以是你的实现中一种更为具体的类型，但必须派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *valueType* 返回值也可以是你的实现中一种更为具体的类型。 基本的 **Object** 类型也可接受，但通常希望附加属性执行类型安全性。 getter 和 setter 签名中对类型的使用是一种推荐的类型安全技术。
 
-**Set***PropertyName* 访问器的签名必须是这样的。
+**Set***PropertyName* 访问器的签名必须如下所示。
 
-`  public static void Set` _PropertyName_ ` (DependencyObject target , ` _valueType_ ` value)`
+`  public static void Set`_PropertyName_ ` (DependencyObject target , ` _valueType_` value)`
 
-对于 Visual Basic，它是这样的。
+对于 Visual Basic，如下所示。
 
-`Public Shared Sub Set` _PropertyName_ ` (ByVal target As DependencyObject, ByVal value As ` _valueType_ `)`
+`Public Shared Sub Set`_PropertyName_ ` (ByVal target As DependencyObject, ByVal value As ` _valueType_`)`
 
 *target* 对象可以是你的实现中一种更为具体的类型，但必须派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *value* 对象和它的 *valueType* 可以是你的实现中一种更为具体的类型。 请记住，此方法的值是 XAML 处理器在标记中遇到你的附加属性时提供的输入。 你使用的类型必须具有类型转换或现有的标记扩展支持，这样才能通过该特性值（最终是一个字符串）创建合适的类型。 基本的 **Object** 类型也可接受，但通常希望进一步增强类型安全性。 为此，请在取值函数中增加类型增强措施。
 
@@ -100,7 +101,7 @@ Public Class GameService
 End Class
 ```
 
-在 C++ 中定义附加属性要更为复杂。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C++ 中，必须显式定义这种属性-字段关系，而不是依赖于 .NET **readonly** 关键字和简单属性的隐式支持。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的 helper 函数中执行附加属性的注册操作。 为所有依赖关系或附加属性调用属性注册 helper 函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
+在 C++ 中定义附加属性要更为复杂。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C++ 中，必须显式定义这种属性-字段关系，而不是依赖于 .NET **readonly** 关键字和简单属性的隐式支持。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的帮助程序函数中执行附加属性的注册操作。 为所有依赖属性或附加属性调用属性注册帮助程序函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
 
 ```cpp
 //
@@ -173,9 +174,9 @@ GameService::RegisterDependencyProperties() {
 
 定义附加属性并将它的支持成员包含在一个自定义类型中后，你必须让这些定义可供 XAML 使用。 为此，你必须映射一个 XAML 命名空间，它将引用其中包含相关类的代码命名空间。 如果在一个库中定义了附加属性，必须将该库包含在应用的应用程序包中。
 
-XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 例如，对于命名空间 `UserAndCustomControls` 中有一个名为 `GameService` 的类，它包含前面代码段中所示的附加属性定义，映射类似于这样。
+XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 例如，对于命名空间 `UserAndCustomControls` 中有一个名为 `GameService` 的类，它包含前面代码段中所示的附加属性定义，映射与此类似。
 
-```XAML
+```XML
 <UserControl
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:uc="using:UserAndCustomControls"
@@ -185,30 +186,14 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 
 使用映射，你可以在任何与目标定义相匹配的元素（包括 Windows 运行时定义的一种现有类型）上设置 `GameService.IsMovable` 附加属性。
 
-```XAML
-<Image uc:GameService.IsMovable="true" .../></code></pre></td>
-</tr>
-</tbody>
-</table>
+```XML
+<Image uc:GameService.IsMovable="true" .../>
 ```
 
-如果在一个元素上设置附加属性并且该元素包含在同一个映射的 XML 命名空间中，则必须在附加属性名称中包含该前缀。 这是因为该前缀限定了所有者类型。 不能假设附加属性的特性与包含该特性的元素位于相同的 XML 命名空间中，尽管按照正常的 XML 规则，特性可从元素继承命名空间。 例如，如果在一种自定义类型 `ImageWithLabelControl`（未给出定义）上设置 `GameService.IsMovable`，即使二者都在映射到同一个前缀的同一个代码命名空间中定义，XAML 仍将是这样的。
+如果在一个元素上设置附加属性并且该元素包含在同一个映射的 XML 命名空间中，则必须在附加属性名称中包含该前缀。 这是因为该前缀限定了所有者类型。 不能假设附加属性的特性与包含该特性的元素位于相同的 XML 命名空间中，尽管按照正常的 XML 规则，特性可从元素继承命名空间。 例如，如果在一种自定义类型 `ImageWithLabelControl`（未给出定义）上设置 `GameService.IsMovable`，即使二者都在映射到同一个前缀的同一个代码命名空间中定义，XAML 仍是如此。
 
-```XAML
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XAML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../></code></pre></td>
-</tr>
-</tbody>
-</table>
+```XML
+<uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../>
 ```
 
 **注意** 如果使用 C++ 编写 XAML UI，只要一个 XAML 页面使用一种自定义类型，就必须包含定义附加属性的该类型的标头文件。 每个 XAML 页面都有一个与之关联的 .xaml.h 代码隐藏标头文件。 你应该在这里包含（使用 **\#include**）附加属性的所有者类型定义的标头文件。
@@ -258,6 +243,6 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

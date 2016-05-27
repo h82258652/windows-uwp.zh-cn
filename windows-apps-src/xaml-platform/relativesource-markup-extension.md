@@ -1,5 +1,6 @@
 ---
-description:  提供一种方式，在运行时对象图中以相对关系形式指定绑定来源。
+author: jwmsft
+description: 提供一种方式，在运行时对象图中以相对关系形式指定绑定来源。
 title: RelativeSource 标记扩展
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 ---
@@ -28,9 +29,7 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 
 ## XAML 值
 
-| 术语 |描述 |
-| {RelativeSource Self} | 生成值为 <strong>Self</strong> 的 [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915)。 目标元素应用作此绑定的来源。 这对于将一个元素的属性绑定到相同元素上的另一个属性很有用。 |
-| {RelativeSource TemplatedParent} | 生成已应用的 [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391)，它是此绑定的来源。 这对于在模板级别向绑定应用运行时信息很有用。 | 
+| Term | Description | | {RelativeSource Self} | 生成值为 <strong>Self</strong> 的 [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915)。 目标元素应用作此绑定的来源。 这对于将一个元素的属性绑定到相同元素上的另一个属性很有用。 | | {RelativeSource TemplatedParent} | 生成已应用的 [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391)，它是此绑定的来源。 这对于在模板级别向绑定应用运行时信息很有用。 | 
 
 ## 备注
 
@@ -43,14 +42,14 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 
 下面提供了一个示例。 此 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 使用 [{Binding} 标记扩展](binding-markup-extension.md)，以便 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 始终相等，并以正方形形式呈现它。 仅将 Height 设置为固定值。 对于此 **Rectangle**，其默认 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 是 **null**，而不是 **this**。 因此，若要创建将成为对象本身的数据上下文源（并支持绑定到它的其他属性），我们使用 {Binding} 标记扩展用法中的 `RelativeSource={RelativeSource Self}` 参数。
 
-```XAML
+```XML
 <Rectangle
   Fill="Orange" Width="200"
   Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}"
 />
 ```
 
-其他可能有用的技术是将 `RelativeSource={RelativeSource Self}` 用作将对象的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 设置为其本身的一种方式，其中使用了已为其自身的数据绑定提供可用的视图模型的自定义属性扩展 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 类。 你可以在某些 SDK 示例中查看此技术：`<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
+其他可能有用的技术是将 `RelativeSource={RelativeSource Self}` 用作将对象的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 设置为其本身的一种方式，其中使用了已为其自身的数据绑定提供可用视图模型的自定义属性扩展 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 类。 你可以在某些 SDK 示例中查看此技术： `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
 **注意** **RelativeSource** 的 XAML 用法仅显示它应有的用法：作为绑定表达式的一部分，在 XAML 中设置 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 的值。 在理论上，如果将一个属性的值设置为 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)，也可能还有其他用法。
 
@@ -64,6 +63,6 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

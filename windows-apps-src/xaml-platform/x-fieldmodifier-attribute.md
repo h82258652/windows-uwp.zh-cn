@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: 修改 XAML 编译行为，使指定对象引用的字段被定义有“public”访问权限而不是默认的“private”行为。
 title: xFieldModifier 属性
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
 ---
 
-# x:FieldModifier 属性
+# x&#58;FieldModifier 属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -32,6 +33,6 @@ ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

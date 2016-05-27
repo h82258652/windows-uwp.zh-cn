@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: 在 XAML 标记中，为属性指定 null 值。
 title: xNull 标记扩展
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 ---
 
-# {x:Null} 标记扩展
+# {x&#58;Null} 标记扩展
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -32,6 +33,6 @@ ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

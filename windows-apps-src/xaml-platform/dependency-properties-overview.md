@@ -1,5 +1,6 @@
 ---
-description: 本主题介绍了在编写使用 C++、C# 或 Visual Basic 的 Windows 运行时应用并为 UI 使用 XAML 定义时可用的依赖属性系统。
+author: jwmsft
+description: 本主题介绍了在使用 C++、C# 或 Visual Basic 编写 Windows 运行时应用以及 UI 的 XAML 定义时可用的依赖属性系统。
 title: 依赖属性概述
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ---
@@ -34,7 +35,7 @@ ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 
 ## 依赖属性和 Windows 运行时属性
 
-依赖属性提供一种全局内部属性存储来在运行时支持应用内的所有依赖属性，从而扩展基本的 Windows 运行时属性功能。 这种方法可以替代为具有专用字段的属性（在属性定义类中为专用）提供支持的标准模式。 你可以将此内部属性存储视为任何特定对象的一组属性标识符和值（只要该对象是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 即可）。 属性存储中的每个属性均通过 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 实例（而不是通过名称）进行标识。 但是，大多数情况下，属性系统会隐藏该实现详细信息：你可以使用简单名称（你所使用的代码语言中的可编程属性名称，或是在编写 XAML 时使用的属性名称）频繁访问依赖属性。
+依赖属性提供一种全局内部属性存储来在运行时支持应用内的所有依赖属性，从而扩展基本的 Windows 运行时属性功能。 这种方法可以替代为具有专用字段的属性（在属性定义类中为专用）提供支持的标准模式。 你可以将此内部属性存储视为任何特定对象的一组属性标识符和值（只要该对象是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 即可）。 存储中的每个属性均通过 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 实例（而不是通过名称）进行标识。 但是，大多数情况下，属性系统会隐藏该实现详细信息：你可以使用简单名称（你所使用的代码语言中的可编程属性名称，或是在编写 XAML 时使用的属性名称）频繁访问依赖属性。
 
 提供依赖属性系统支持的基类型为 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 **DependencyObject** 定义可访问依赖属性的方法，并且 **DependencyObject** 派生类的实例在内部支持我们之前提及的属性存储概念。
 
@@ -67,7 +68,7 @@ public bool IsSpinning
 }
 ```
 
-**注意** 前面的示例不是演示如何创建自定义依赖属性的完整示例。 它旨在为希望通过代码学习概念的人说明依赖属性概念。 有关更为完整的示例，请参阅[自定义的依赖属性](custom-dependency-properties.md)。
+**注意** 前面的示例不是演示如何创建自定义依赖属性的完整示例。 它旨在为希望通过代码学习概念的人说明依赖属性概念。 有关更为完整的示例，请参阅[自定义依赖属性](custom-dependency-properties.md)。
 
 ## 依赖属性值优先级
 
@@ -118,12 +119,12 @@ public bool IsSpinning
 
 即使并未在依赖属性的元数据中显式定义默认值，依赖属性仍然具有这些默认值。 除非 Windows 运行时依赖属性的默认值由元数据进行更改，否则它们通常都是以下属性之一：
 
--   使用运行时对象或基本 **Object** 类型（一种*引用类型*）的属性的默认值为 **null**。 例如，在特意设置 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 或被继承之前，其值一直会是 **null**。
+-   使用运行时对象或基本 **Object** 类型（一种*引用类型*）的属性的默认值为 **null**。 例如，在特意设置 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 或被继承之前，它的值一直会是 **null**。
 -   使用数字或布尔值（一种*值类型*）等基值的属性会使用预期的默认值作为该值。 例如，使用 0 作为整数和浮点数，使用 **false** 作为布尔值。
 -   使用 Windows 运行时结构的属性通过调用该结构的隐式默认构造函数获得默认值。 该构造函数会在结构中的每一个基值字段中使用默认值。 例如，[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 值的默认值会通过其 **X** 和 **Y** 值初始化为 0。
 -   使用枚举的属性以该枚举中首个定义成员的值为默认值。 检查特定枚举的引用，以查明默认值。
 -   使用字符串的属性（用于 .NET 的 [**System.String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)，用于 C++/CX 的 [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx)）以空字符串 (**""**) 为默认值。
--   集合属性通常不会实现为依赖属性，本主题进一步讨论了其原因。 但是如果你实现了自定义集合属性，并且你想使其成为依赖属性，请避免*意外的 singleton*，如[自定义依赖属性](custom-dependency-properties.md)结尾部分所述。
+-   集合属性通常不会实现为依赖属性，本主题进一步讨论了其原因。 但是如果你实现了自定义集合属性，并且你希望使其成为依赖属性，请避免*意外的 singleton*，如[自定义依赖属性](custom-dependency-properties.md)结尾部分所述。
 
 ## 依赖属性提供的属性功能
 
@@ -133,7 +134,7 @@ public bool IsSpinning
 
 以下示例使用 XAML 中的绑定设置 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 值。 该绑定使用继承的数据上下文和对象数据源。 （这个简短示例中没有展示这些方面；有关展示上下文和来源的更完整示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。）
 
-```XAML
+```XML
 <Canvas>
   <TextBlock Text="{Binding Team.TeamName}"/>
 </Canvas>
@@ -147,11 +148,11 @@ public bool IsSpinning
 
 要作为绑定的来源，属性不需要是依赖属性，一般可以使用任何属性作为绑定来源，不过这取决于你的编程语言，而且每个属性都具有特定的边缘方案。 但是，要作为绑定的目标，该属性必须是依赖属性。
 
-如果在代码中创建绑定，请注意 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) API 仅为 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 而定义。 但是，也可以使用 [**BindingOperations**](https://msdn.microsoft.com/library/windows/apps/br209823) 创建绑定定义，进而引用任何 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 属性。
+如果在代码中创建绑定，请注意 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) API 仅为 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 定义。 但是，也可以使用 [**BindingOperations**](https://msdn.microsoft.com/library/windows/apps/br209823) 创建绑定定义，从而引用任何 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 属性。
 
 对于代码或 XAML，请记住 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 是一个 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 属性。 通过使用一种父子属性继承的形式（通常在 XAML 标记中建立），绑定系统可解析父元素上存在的 **DataContext**。 即使子对象（具有目标属性）不是 **FrameworkElement** 并且因此没有自身的 **DataContext** 值，此继承也可以进行评估。 但是，所继承的父元素必须是一个 **FrameworkElement**，才能设置和具有 **DataContext**。 否则，你必须定义绑定，这样它才可以使用 **DataContext** 的 **null** 值。
 
-对于大部分数据绑定方案，连接绑定并不是唯一需要的。 要让单向或双向绑定生效，来源属性必须支持能够传播到绑定系统并进而传播到目标的更改通知。 对于自定义绑定源，这意味着该属性必须支持 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。 集合应该支持 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。 某些类在其实现中支持这些接口，以便它们可在数据绑定方案中用作基类；这种类的一个示例是 [**ObservableCollection<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)。 有关数据绑定和数据绑定与属性系统之间关系的详细信息，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+对于大部分数据绑定方案，连接绑定并不是唯一需要的。 要让单向或双向绑定生效，来源属性必须支持能够传播到绑定系统并进而传播到目标的更改通知。 对于自定义绑定源，这意味着该属性必须支持 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。 集合应支持 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。 某些类在其实现中支持这些接口，以便它们可在数据绑定方案中用作基类；这种类的一个示例是 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)。 有关数据绑定和数据绑定与属性系统之间关系的详细信息，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 **注意** 此处所列的类型支持 Microsoft .NET 数据源。 C++/CX 数据源可针对更改通知或可观察行为使用不同的接口，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
@@ -165,7 +166,7 @@ public bool IsSpinning
 
 你可以使用情节提要动画对依赖属性的值进行动画处理。 Windows 运行时中的情节提要动画不仅仅是视觉装饰。 更有用的做法是将动画视为一种状态机技术，你可以通过该技术设置单个属性或所有属性的值以及控件的视觉效果，并可在日后更改这些值。
 
-若要创建动画，动画的目标属性必须是一个依赖属性。 另外，要创建动画，目标属性的值类型必须受现有 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) 派生的动画类型之一支持。 [
+若要创建动画，动画的目标属性必须是一个依赖属性。 此外，若要创建动画，目标属性的值类型必须受现有 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) 派生的动画类型之一支持。 [
             **Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](T:System.Double) 和 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 的值可使用内插或关键帧技术实现动画效果。 大部分其他值都可以使用离散式 **Object** 关键帧实现动画效果。
 
 当应用并运行一个动画时，动画值操作的优先级比该属性使用的任何其他值（例如本地值）更高。 动画还有一个可选的 [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 行为，该行为可能导致动画应用于属性值，即使动画在视觉上已停止也是如此。
@@ -180,14 +181,14 @@ public bool IsSpinning
 
 一个依赖属性可在其属性元数据中定义一个默认值。 对于依赖属性而言，在首次对该属性进行设置之后，其默认值并不会完全失效。 只要值优先级中其他某个决定因素消失，就可以在运行时再次应用默认值。 （依赖属性值优先级将在下一节中讨论。）例如，你可能特意删除适用于属性的样式值或动画，但希望在执行此操作后有用作合理默认值的值。 依赖属性默认值可以提供此值，无需将专门设置每个属性的值作为额外步骤。
 
-即使已使用本地值设置某个属性，你仍可以特意将其设置为默认值。 若要再次将属性值重置为默认值，而且启用优先级中其他可能会替代默认值（而非本地值）的其他参与者，则可以调用 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 方法（引用该属性以作为方法参数清除）。 有时你可能并不希望属性固定使用默认值，但是清除本地值并还原为默认值可能会启用优先级中需要立即执行的其他项目，例如使用来自控制模板中样式资源库的值。
+即使已使用本地值设置某个属性，你仍可以特意将其设置为默认值。 若要再次将属性值重置为默认值，并且启用优先级中其他可能会替代默认值（而非本地值）的其他参与者，可以调用 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 方法（引用该属性以作为方法参数清除）。 有时你可能并不希望属性固定使用默认值，但是清除本地值并还原为默认值可能会启用优先级中需要立即执行的其他项目，例如使用来自控制模板中样式资源库的值。
 
 ## **DependencyObject** 和线程处理
 
 所有 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 实例都必须在与 Windows 运行时应用所显示的当前 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 相关联的 UI 线程上创建。 虽然每个 **DependencyObject** 都必须在主 UI 线程上创建，但可以通过访问 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) 属性从其他线程使用调度程序引用来访问这些对象。 然后，你可以在 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 对象上调用诸如 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的方法，并在 UI 线程上遵循线程限制规则执行你的代码。
 
 [
-            **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的线程处理特性很重要，因为这通常意味着只有那些在 UI 线程上运行的代码才能更改甚至是读取依赖属性的值。 在正确使用 **async** 模式和后台工作线程的典型 UI 代码中，通常可以避免线程处理问题。 通常，如果你定义自己的 **DependencyObject** 类型并尝试将这些类型用于 **DependencyObject** 未必适宜的数据源或其他场方案，只会遇到与 **DependencyObject** 相关的线程处理问题。
+            **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的线程处理特性很重要，因为这通常意味着只有那些在 UI 线程上运行的代码才能更改甚至读取依赖属性的值。 在正确使用 **async** 模式和后台工作线程的典型 UI 代码中，通常可以避免线程处理问题。 通常，如果你定义自己的 **DependencyObject** 类型并尝试将这些类型用于 **DependencyObject** 未必适宜的数据源或其他场方案，只会遇到与 **DependencyObject** 相关的线程处理问题。
 
 ## 相关主题
 
@@ -197,13 +198,13 @@ public bool IsSpinning
 * [深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [XAML 用户和自定义控件示例](http://go.microsoft.com/fwlink/p/?linkid=238581)
-**与依赖属性相关的 API**
+* [XAML 用户和自定义控件示例](http://go.microsoft.com/fwlink/p/?linkid=238581) 
+           **与依赖属性相关的 API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

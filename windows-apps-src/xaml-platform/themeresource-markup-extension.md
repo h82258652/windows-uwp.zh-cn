@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 使用根据当前处于活动状态的主题检索不同资源的附加系统逻辑，通过计算对某个资源的引用来为任何 XAML 属性提供值。
 title: ThemeResource 标记扩展
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
@@ -6,7 +7,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 # {ThemeResource} 标记扩展
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用根据当前处于活动状态的主题检索不同资源的附加系统逻辑，通过计算对某个资源的引用来为任何 XAML 属性提供值。 与 [{StaticResource} 标记扩展](staticresource-markup-extension.md)类似，资源在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定义，并且 **ThemeResource** 用法引用 **ResourceDictionary** 中的该资源的键。
 
@@ -20,7 +21,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 | 术语 | 说明 |
 |------|-------------|
-| 键 | 所请求资源的键。 此键最初通过 [**ResourceDictionary**>](https://msdn.microsoft.com/library/windows/apps/br208794) 分配。 资源键可以是在 XamlName 语法中定义的任何字符串。 |
+| 键 | 所请求资源的键。 此键最初通过 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 分配。 资源键可以是以 XamlName 语法定义的任何字符串。 |
  
 ## 备注
 
@@ -37,7 +38,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 尝试为无法解析的键指定 **ThemeResource** 会在运行时引发 XAML 分析异常。 设计工具还可能会提供警告或错误。
 
-在 Windows 运行时 XAML 处理器实现中，没有针对 **ThemeResource** 的后备类表示。 在代码中最接近的等效项是使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的集合 API，例如调用 [**Contains**](https://msdn.microsoft.com/library/windows/apps/jj635925) 或 [**TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj603139)。
+在 Windows 运行时 XAML 处理器实现中，没有针对 **ThemeResource** 的后备类表示。 在代码中最接近的等效体是使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的集合 API，例如调用 [**Contains**](https://msdn.microsoft.com/library/windows/apps/jj635925) 或 [**TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj603139)。
 
 **ThemeResource** 是一个标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 XAML 中的所有标记扩展在其属性语法中都使用“{”和“}”字符，通过此约定，XAML 处理器可以知道标记扩展必须处理属性。
 
@@ -73,7 +74,7 @@ Windows 运行时提供了专门由 **ThemeResource** 引用的资源集。 这�
 
 下面是摘自默认的 generic.xaml 和 themeresources.xaml 文件的某个示例 XAML，它展示了如何使用 **ThemeResource**。 我们将只查看一个模板（默认的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)）并了解如何将两个属性（[**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)）声明为对主题更改做出响应。
 
-```xaml
+```xml
     <!-- Default style for Windows.UI.Xaml.Controls.Button -->
     <Style TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}" />
@@ -86,7 +87,7 @@ Windows 运行时提供了专门由 **ThemeResource** 引用的资源集。 这�
 [
             **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的某些可视状态也调整这些相同的属性。 值得注意的是，当单击某个按钮时，背景颜色会更改。 另外，可视状态情节提要中的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 动画使用 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 对象和对以 **ThemeResource** 作为关键帧值的画笔的引用。
 
-```xaml
+```xml
 <VisualState x:Name="Pressed">
   <Storyboard>
     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
@@ -103,7 +104,7 @@ Windows 运行时提供了专门由 **ThemeResource** 引用的资源集。 这�
 
 其中每个画笔都在 generic.xaml 中较早定义：必须在任何使用它们的模板之前定义它们以避免 XAML 前向引用。 下面是针对“Default”主题字典的定义。
 
-```xaml
+```xml
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
 ... 
@@ -117,7 +118,7 @@ Windows 运行时提供了专门由 **ThemeResource** 引用的资源集。 这�
 
 然后，每个其他主题字典也定义了这些画笔，例如：
 
-```xaml
+```xml
         <ResourceDictionary x:Key="HighContrast">
             <!-- High Contrast theme resources -->
 ...
@@ -139,7 +140,7 @@ Windows 8 不支持 **ThemeResource** 标记扩展，该扩展从 Windows 8.1 �
 
 当你在 XAML 页面中使用 **{ThemeResource}** 标记扩展时，Microsoft Visual Studio 2013 可在 Microsoft IntelliSense 下拉菜单中包含可能的键值。 例如，键入“{ThemeResource”时会立即显示来自 [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)的任何资源键。
 
-在资源键作为任何 **{ThemeResource}** 用法的一部分存在后，**转到定义** (F12) 功能可以解析该资源并向你显示设计时 generic.xaml、定义主题资源的位置。 由于多次定义了主题资源（每个主题），**“转到定义”**会将你转到文件中找到的第一个定义（**Default** 的定义）。 如果你需要其他定义，可以在该文件中搜索键名并找到其他主题的定义。
+在资源键作为任何 **{ThemeResource}** 用法的一部分存在后，**转到定义** (F12) 功能可以解析该资源并向你显示设计时 generic.xaml、定义主题资源的位置。 由于多次定义了主题资源（每个主题），“转到定义”****会将你转到文件中找到的第一个定义（**Default** 的定义）。 如果你需要其他定义，可以在该文件中搜索键名并找到其他主题的定义。
 
 ## 相关主题
 
@@ -151,6 +152,6 @@ Windows 8 不支持 **ThemeResource** 标记扩展，该扩展从 Windows 8.1 �
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

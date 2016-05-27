@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 ResourceDictionary 中定义，而 StaticResource 用法则在 ResourceDictionary 中引用该资源的键。
 title: StaticResource 标记扩展
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
@@ -18,7 +19,7 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 
 ## XAML 值
 
-| 术语 | 描述 |
+| 术语 | 说明 |
 |------|-------------|
 | 键 | 所请求资源的键。 此键最初通过 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 分配。 资源键可以是以 XamlName 语法定义的任何字符串。 |
 
@@ -45,7 +46,7 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 
 以下示例 XAML 摘自 [XAML 数据绑定示例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
 
-```xaml
+```xml
 <StackPanel Margin="5">
     <!-- Add converter as a resource to reference it from a Binding. --> 
     <StackPanel.Resources>
@@ -70,7 +71,7 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 
 当你在 XAML 页面中使用 **{StaticResource}** 标记扩展时，Microsoft Visual Studio 2013 可在 Microsoft IntelliSense 下拉菜单中包含可能的键值。 例如，只要键入“{StaticResource”，来自当前查找作用域的任何资源键就会显示在 IntelliSense 下拉菜单中。 除了你在页面级别 ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) 和应用级别 ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) 上具有的典型资源外，你还可以查看 [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)以及你的项目正在使用的任何扩展中的资源。
 
-在资源键作为任何 **{StaticResource}** 用法的一部分存在后，**“转至定义”**(F12) 功能可以解析该资源并向你显示其定义所在的字典。 若要获取主题资源，请转到设计时 generic.xaml。
+在资源键作为任何 **{StaticResource}** 用法的一部分存在后，“转至定义”****(F12) 功能可以解析该资源并向你显示其定义所在的字典。 若要获取主题资源，请转到设计时 generic.xaml。
 
 ## 相关主题
 
@@ -81,6 +82,6 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

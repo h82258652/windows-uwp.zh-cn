@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: 唯一标识对象元素，可方便从代码隐藏或一般代码中访问已实例化的对象。
 title: xName 属性
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ---
 
-# x:Name 属性
+# x&#58;Name 属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -30,7 +31,7 @@ ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 XamlName ::= NameStartChar (NameChar)*
 NameStartChar ::= LetterCharacter | '_'
 NameChar ::= NameStartChar | DecimalDigit
-LetterCharacter ::= ('a'-'z') | ('A'–'Z')
+LetterCharacter ::= ('a'-'z') | ('A'-'Z')
 DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
@@ -65,6 +66,6 @@ UWP XAML 中使用的一些类型还具有一个名为 **Name** 的属性。 例
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

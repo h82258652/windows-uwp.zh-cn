@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 介绍 XAML 中的附加属性概念，并提供一些示例。
 title: 附加属性概述
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
@@ -6,7 +7,7 @@ ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 
 # 附加属性概述
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 *附加属性*是一种 XAML 概念。 它在概念上类似于可在 XAML 中的任何对象元素上设置的全局属性。 附加属性通常定义为一种专门形式的依赖属性，在所有者类型的对象模型中没有传统的属性包装器。
 
@@ -18,7 +19,7 @@ ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 
 附加属性之所以存在，主要是由于它们启用了一种 XAML 语法。 在 XAML 中，可使用语法 _AttachedPropertyProvider.PropertyName_ 设置附加属性。 以下是如何在 XAML 中设置 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 的一个示例。
 
-```XAML
+```XML
 <Canvas>
   <Button Canvas.Left="50">Hello</Button>
 </Canvas>
@@ -118,6 +119,6 @@ XAML 处理器必须能够在将 XAML 分析为对象树时设置附加属性值
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

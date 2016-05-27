@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 了解 XAML 中使用的空格处理规则。
 title: XAML 与空格
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
@@ -6,7 +7,7 @@ ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 
 # XAML 与空格
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解 XAML 中使用的空格处理规则。
 
@@ -48,6 +49,6 @@ ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

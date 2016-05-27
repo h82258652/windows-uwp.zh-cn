@@ -1,6 +1,7 @@
 ---
+author: jwmsft
 description: Binding 标记扩展会在 XAML 加载时转换为 Binding 类的实例。
-title: Binding 标记扩展'
+title: Binding 标记扩展&#39;
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ---
 
@@ -36,8 +37,8 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 
 | 术语 | 说明 |
 |------|-------------|
-| *propertyPath* | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
-| *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>使用一个名称/值对语法指定的一个或多个绑定属性。 |
+| *propertyPath* | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了详细信息。 |
+| *bindingProperties* | *propName* = *value*\[, *propName*=*value*\]*<br/>使用一个名称/值对语法指定的一个或多个绑定属性。 |
 | *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 对象上设置的属性的字符串名称。 例如，“Converter”。 | 
 | *value* | 要将属性设置为的值。 参数的语法取决于下面的[可使用 {Binding} 设置的 Binding 类的属性](#properties-of-binding)部分的属性。 |
 
@@ -73,7 +74,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 | [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定要在无法解析源或路径时显示的值。 | 
 | [**模式**](https://msdn.microsoft.com/library/windows/apps/br209829) | 将绑定模式指定为以下字符串之一：“OneTime”、“OneWay”或“TwoWay”。 这些模式对应于 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 枚举的常量名称。 默认值取决于绑定目标，但在大多数情况下，该值为“OneWay”。 请注意，该值不是 **{x:Bind}** 的默认值，而是“OneTime”。 | 
 | [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | 通过描述绑定来源的位置相对于绑定目标的位置来指定数据源。 这通过运行时对象图表的方式表示，例如指定对象的父级。 设置 [{RelativeSource} 标记扩展](relativesource-markup-extension.md)。 |
-| [**源**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定对象数据源。 在 **Binding** 标记扩展内，[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
+| [**源**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定对象数据源。 在 **Binding** 标记扩展中，[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) 属性需要一个对象引用，例如 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用。 如果未指定此属性，则操作数据上下文指定来源。 更加常见的做法是不在单个绑定中指定 Source 值，而是依赖于共享的 **DataContext** 进行多个绑定。 有关详细信息，请参阅 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx) 或[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | 指定要在源值解析但并非显式 **null** 时显示的值。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | 指定绑定源更新的定时。 如果没有指定，则默认值为 **Default**。 |
 
@@ -89,7 +90,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 
 ## 示例
 
-```XAML
+```XML
 <!-- binding a UI element to a view model -->    
 <Page ... >
     <Page.DataContext>
@@ -100,7 +101,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 </Page>
 ```
 
-```XAML
+```XML
 <!-- binding a UI element to another UI element -->
 <Page ... >
     <Page.Resources>
@@ -120,12 +121,12 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 
 ## 工具支持
 
-当在 XAML 标记编辑器中创作 **{Binding}** 时，Microsoft Visual Studio 中的 Microsoft IntelliSense 将显示数据上下文的相关属性。 只要你键入“{Binding”，适合 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的数据上下文属性便会显示在下拉列表中。 IntelliSense 对 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的其他属性也能起到帮助作用。 为实现此操作，你必须在标记页中设置数据上下文或设计时数据上下文。 **“转到定义”**(F12) 也适用于 **{Binding}**。 或者，你也可以使用数据绑定对话框。
+当在 XAML 标记编辑器中创作 **{Binding}** 时，Microsoft Visual Studio 中的 Microsoft IntelliSense 将显示数据上下文的相关属性。 只要你键入“{Binding”，适合 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的数据上下文属性便会显示在下拉列表中。 IntelliSense 对 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的其他属性也能起到帮助作用。 为实现此操作，你必须在标记页中设置数据上下文或设计时数据上下文。 “转到定义”****(F12) 也适用于 **{Binding}**。 或者，你也可以使用数据绑定对话框。
 
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

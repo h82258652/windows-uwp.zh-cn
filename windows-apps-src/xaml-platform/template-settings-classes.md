@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 模板设置类
 title: 模板设置类
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
@@ -6,7 +7,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 # 模板设置类
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## 先决条件
 
@@ -16,7 +17,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 **TemplateSettings** 类提供一组可在为控件定义新控件模板时使用的属性。 这些属性具有诸如特定 UI 元素部件大小的像素度量之类的值。 这些值有时是来自于通常难以覆盖甚至访问的控件逻辑的经计算的值。 其中一些属性旨在作为控制部件的过渡和动画的 **From** **To** 值，因此也是成对出现的相关 **TemplateSettings** 属性。
 
-有多个 **TemplateSettings** 类。 它们全部位于 [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空间中。 下面是类的列表，以及指向相关控件的 **TemplateSettings** 属性的链接。 此 **TemplateSettings** 属性是你访问控件的 **TemplateSettings** 值的方式，并且可以建立对其属性的模板绑定：
+有多个 **TemplateSettings** 类。 它们全部都在 [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空间中。 下面是类的列表，以及指向相关控件的 **TemplateSettings** 属性的链接。 此 **TemplateSettings** 属性是你访问控件的 **TemplateSettings** 值的方式，并且可以建立对其属性的模板绑定：
 
 -   [
             **ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752)：[**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364) 的值
@@ -41,7 +42,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 下面是来自初始默认 XAML 控件模板的示例。 此特定的示例来自 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的默认模板：
 
-```xaml
+```xml
 <Ellipse
     x:Name="E1"
     Style="{StaticResource ProgressRingEllipseStyle}"
@@ -57,7 +58,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 [
             **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 模板的完整 XAML 有数百行，因此这只是一个小小的摘要。 此 XAML 定义作为 6 个 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 元素之一的控件部件，此元素描绘不确定进度的旋转动画。 作为开发人员，你可能不喜欢圆形，而且可能针对动画处理方式使用不同的图形基元或不同的基本形状。 例如，你可能撰写一个改用一组以方形排列的[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 元素的 **ProgressRing**。 如果是这样，则你的新模板的单个 **Rectangle** 组件可能如下所示：
 
-```xaml
+```xml
 <Rectangle
     x:Name="R1"
     Width="{Binding RelativeSource={RelativeSource TemplatedParent}, 
@@ -73,7 +74,7 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 下面是另一个来自默认 XAML 控件模板的示例用法，这次显示作为动画的 **From** 和 **To** 的属性集之一。 它来自 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) 默认模板：
 
-```xaml
+```xml
 <VisualStateGroup x:Name="DropDownStates">
     <VisualState x:Name="Opened">
         <Storyboard>
@@ -105,6 +106,6 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 title: xPhase 属性
 description: 将 xPhase 与 xBind 标记扩展结合使用，以便能以增量方式呈现 ListView 和 GridView 项并改进平移体验。
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ---
 
-# x:Phase 属性
+# x&#58;Phase 属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -32,7 +33,7 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 ## 示例
 
-```xaml
+```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
     <Grid Width="200" Height="80">
         <Grid.ColumnDefinitions>
@@ -75,6 +76,6 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

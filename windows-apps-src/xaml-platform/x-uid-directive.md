@@ -1,10 +1,11 @@
 ---
+author: jwmsft
 description: 为标记元素提供一个唯一标识符。 对于通用 Windows 平台 (UWP) XAML，这个唯一标识符供 XAML 本地化过程和工具使用（例如，使用 .resw 资源文件中的资源）。
 title: xUid 指令
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 ---
 
-# x:Uid 指令
+# x&#58;Uid 指令
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -44,6 +45,6 @@ UWP XAML 在 **x:Uid** 唯一性上使用的规则不同于以前利用 XAML 的
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
