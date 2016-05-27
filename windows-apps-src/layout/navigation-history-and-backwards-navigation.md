@@ -1,17 +1,14 @@
 ---
+author: mijacobs
 Description: 通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。
 title: 通用 Windows 平台 (UWP) 应用的导航设计基础知识
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
-isNew：true
-label: 历史记录和向后导航
+isNew: true
+label: History and backwards navigation
 template: detail.hbs
 ---
 
 #  导航历史记录和向后导航
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 在 Web 上，个别网站提供其自己的导航系统，如内容表、按钮、菜单、链接的简单列表等。 不同网站上的导航体验可能截然不同。 但是，有一个一致的导航体验：后退。 无论使用何种网站，大多数浏览器都提供运作方式相同的后退按钮。
 
@@ -97,7 +94,7 @@ template: detail.hbs
 当你的应用在手机、平板电脑上或者在支持系统后退功能的 PC 或笔记本电脑上运行时，系统会在按下“后退”按钮时通知你的应用。 用户预期后退按钮导航到应用导航历史记录中的上一个位置。 由你来决定要将哪些导航操作添加到导航历史记录以及如何响应后退按钮按下操作。
 
 
-## <span id="Enable_system_back_navigation_support"> </span> <span id="enable_system_back_navigation_support"> </span> <span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"> </span>如何启用系统后退导航支持
+## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>如何启用系统后退导航支持
 
 
 应用必须启用所有硬件和软件系统后退按钮的后退导航。 执行此操作的方法是注册 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件的侦听器并定义相应处理程序。
@@ -156,10 +153,10 @@ private void App_BackRequested(object sender,
     }
 }
 ```
-## <span id="Enable_the_title_bar_back_button"> </span> <span id="enable_the_title_bar_back_button"> </span> <span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"> </span>如何启用标题栏后退按钮
+## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>如何启用标题栏后退按钮
 
 
-支持桌面模式并启用了设置（**“设置”>“系统”>“平板电脑模式”**）的设备（通常是 PC 和笔记本电脑，但也有一些平板电脑）不提供带有系统后退按钮的全局导航栏。
+支持桌面模式（通常是 PC 和笔记本电脑，但也有一些平板电脑）并启用了设置（“设置”&gt;“系统”&gt;“平板电脑模式”****）的设备不提供带有系统后退按钮的全局导航栏。
 
 在桌面模式下，每个应用都在带有标题栏的窗口中运行。 你可以为在此标题栏中显示的应用提供备用后退按钮。
 
@@ -256,43 +253,50 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>页面到页面，不同的对等组</strong></p></td>
-<td align="left"><strong>是</strong><p>在此图中，用户从应用的级别 1 导航到级别 2，并且跨对等组，因此该导航将添加到导航历史记录。</p>
+<td align="left"><strong>是</strong>
+<p>在此图中，用户从应用的级别 1 导航到级别 2，并且跨对等组，因此该导航将添加到导航历史记录。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
 <p>在下图中，用户在两个同级别的对等组之间导航，并且再次跨对等组，因此该导航将添加到导航历史记录。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>页面到页面，同一对等组，无屏幕导航元素</strong></p>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 没有始终存在的导航元素（例如表/透视表或停靠的导航窗格）可提供到两个页面的直接导航。</p></td>
-<td align="left"><strong>是</strong><p>在下图中，用户在同一对等组中的两个页面之间导航。 这些页面不使用表或停靠的导航窗格，因此该导航将添加到导航历史记录。</p>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 没有始终存在的导航元素（例如选项卡/透视表或停靠的导航窗格）可提供到两个页面的直接导航。</p></td>
+<td align="left"><strong>是</strong>
+<p>在下图中，用户在同一对等组中的两个页面之间导航。 这些页面不使用表或停靠的导航窗格，因此该导航将添加到导航历史记录。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>页面到页面，同一对等组，带有屏幕导航元素</strong></p>
-<p>用户从一个页面导航到同一对等组内的另一个页面。 两个页面显示在相同的导航元素中。 例如，两个页面使用相同的表/透视表元素，或者两个页面都显示在停靠的导航窗格中。</p></td>
-<td align="left"><strong>否</strong><p>当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。</p>
+<p>用户从一个页面导航到同一对等组内的另一个页面。 两个页面显示在相同的导航元素中。 例如，两个页面使用相同的选项卡/透视表元素，或者两个页面都显示在停靠的导航窗格中。</p></td>
+<td align="left"><strong>否</strong>
+<p>当用户按下后退时，将在用户导航到当前对等组之前返回到上一个页面。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>显示瞬态 UI</strong><p>应用显示弹出窗口或子窗口（例如对话框、初始屏幕或屏幕键盘），或应用进入特殊模式（例如多重选择模式）。</p></td>
-<td align="left"><strong>否</strong><p>当用户按下后退按钮时，取消瞬态 UI（隐藏屏幕键盘、取消对话框等）并返回到生成瞬态 UI 的页面。</p>
+<td align="left"><strong>显示瞬态 UI</strong>
+<p>应用显示弹出窗口或子窗口（例如对话框、初始屏幕或屏幕键盘），或应用进入特殊模式（例如多重选择模式）。</p></td>
+<td align="left"><strong>否</strong>
+<p>当用户按下后退按钮时，取消瞬态 UI（隐藏屏幕键盘、取消对话框等）并返回到生成瞬态 UI 的页面。</p>
 <p><img src="images/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>枚举项目</strong><p>应用显示屏幕项目的内容，例如大纲/细节列表中的选定项目的详细信息。</p></td>
-<td align="left"><strong>否。</strong><p>枚举项目与在对等组内导航类似。 当用户按下后退时，导航到位于当前页面前面的具有项目枚举的页面。</p>
+<td align="left"><strong>枚举项目</strong>
+<p>应用显示屏幕项目的内容，例如大纲/细节列表中的选定项目的详细信息。</p></td>
+<td align="left"><strong>否</strong>
+<p>枚举项目与在对等组内导航类似。 当用户按下后退时，导航到位于当前页面前面的具有项目枚举的页面。</p>
 <img src="images/nav/nav-enumerate.png" alt="Iterm enumeration" /></td>
 </tr>
 </tbody>
 </table>
 
 
-### <span id="Resuming"> </span> <span id="resuming"> </span> <span id="RESUMING"> </span>恢复
+### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>恢复中
 
 当用户切换到其他应用并返回到你的应用时，我们建议返回到导航历史记录中的最后一页。
 
 
-\[本文包含特定于 UWP 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 
 
@@ -303,6 +307,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

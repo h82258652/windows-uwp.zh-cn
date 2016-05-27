@@ -1,15 +1,13 @@
 ---
+author: Jwmsft
 Description: 了解如何在基本的两页对等通用 Windows 平台 (UWP) 应用中导航。
 title: 两个页面之间的对等导航
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
-label: 两个页面之间的对等导航
+label: Peer-to-peer navigation between two pages
 template: detail.hbs
 ---
 
-# <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"> </span>两个页面之间的对等导航
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+# <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"></span>两个页面之间的对等导航
 
 了解如何在基本的两页对等通用 Windows 平台 (UWP) 应用中导航。
 
@@ -23,36 +21,36 @@ template: detail.hbs
 -   [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)
 
 
-## <span id="Create_the_blank_app"> </span> <span id="create_the_blank_app"> </span> <span id="CREATE_THE_BLANK_APP"> </span>创建空白应用
+## <span id="Create_the_blank_app"></span><span id="create_the_blank_app"></span><span id="CREATE_THE_BLANK_APP"></span>创建空白应用
 
 
-1.  在 Microsoft Visual Studio 菜单上，依次选择**“文件”>“新建项目”**。
-2.  在**“新建项目”**对话框的左侧窗格中，依次选择**“Visual C#”->“Windows”->“通用”**节点，或者依次选择**“Visual C++”->“Windows”->“通用”**节点。
-3.  在中心窗格中，选择**“空白应用”**。
-4.  在“名称”****框中，输入 **NavApp1**，然后选择“确定”按钮。****
+1.  在 Microsoft Visual Studio 菜单上，依次选择“文件”&gt;“新建项目”****。
+2.  在“新建项目”****对话框的左侧窗格中，依次选择“Visual C#”-&gt;“Windows”-&gt;“通用”****节点，或者依次选择“Visual C++”-&gt;“Windows”-&gt;“通用”****节点。
+3.  在中心窗格中，选择“空白应用”****。
+4.  在“名称”****框中，输入 **NavApp1**，然后选择“确定”****按钮。
 
-    解决方案已创建并且项目文件显示在**“解决方案资源管理器”**中。
+    解决方案已创建并且项目文件显示在“解决方案资源管理器”****中。
 
     **重要提示** 首次运行 Visual Studio 时，它会提示你获取开发人员许可证。 有关详细信息，请参阅[启用设备进行开发](https://msdn.microsoft.com/library/windows/apps/dn706236)。
 
      
 
-5.  若要运行程序，请从菜单中依次选择**“调试”**>**“启动调试”**，或按 F5。
+5.  若要运行程序，请从菜单中依次选择“调试”****&gt;“开始调试”****，或按 F5。
 
-    随即将显示一个空白页面。
+    将显示一个空白页面。
 
-6.  按 Shift+F5 可停止调试并返回到 Visual Studio。
+6.  按 Shift + F5 可停止调试并返回到 Visual Studio。
 
-## <span id="Add_basic_pages"> </span> <span id="add_basic_pages"> </span> <span id="ADD_BASIC_PAGES"> </span>添加基本页面
+## <span id="Add_basic_pages"></span><span id="add_basic_pages"></span><span id="ADD_BASIC_PAGES"></span>添加基本页面
 
 
 接下来，将两个内容页面添加到项目。
 
 执行以下步骤两次可添加两个要在其间导航的页面。
 
-1.  在**“解决方案资源管理器”**中，右键单击**“BlankApp”**项目节点以打开快捷菜单。
-2.  从快捷菜单中依次选择**“添加”**>**“新建项目”**。
-3.  在**“添加新项”**对话框中，选择中间窗格中的**“空白页面”**。
+1.  在“解决方案资源管理器”****中，右键单击“BlankApp”****项目节点以打开快捷菜单。
+2.  从快捷菜单中依次选择“添加”****&gt;“新建项”****。
+3.  在“添加新项”****对话框中，选择中间窗格中的“空白页面”****。
 4.  在“名称”****框中，输入 **Page1**（或 **Page2**）并按“添加”****按钮。
 
 这些文件现在应列为 NavApp1 项目的一部分。
@@ -84,7 +82,8 @@ template: detail.hbs
 <li>Page2.xaml.cpp</li>
 <li>Page2.xaml.h
 <div class="alert">
-<strong>注意</strong><p>函数在标头 (.h) 文件中声明，并在代码隐藏文件 (.cpp) 中实现。</p>
+<strong>注意</strong>  
+<p>函数在标头 (.h) 文件中声明，并在代码隐藏文件 (.cpp) 中实现。</p>
 </div>
 <div>
  
@@ -317,10 +316,10 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 现在，生成并运行应用。 单击显示“单击以转到第 2 页”的链接。 在顶部显示“第 2 页”的第二个页面应加载并显示在框架中。
 
-## <span id="Frame_and_Page_classes"> </span> <span id="frame_and_page_classes"> </span> <span id="FRAME_AND_PAGE_CLASSES"> </span>Frame 和 Page 类
+## <span id="Frame_and_Page_classes"></span><span id="frame_and_page_classes"></span><span id="FRAME_AND_PAGE_CLASSES"></span>Frame 和 Page 类
 
 
-在将更多功能添加到应用中之前，让我们来看看我们所添加的页面如何为应用提供导航支持。
+在将更多功能添加到我们的应用之前，让我们来看看我们所添加的页面如何为应用提供导航支持。
 
 首先，为 App.xaml 代码隐藏文件的 `App.OnLaunched` 方法中的应用创建一个 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`)。 [
             **Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 方法用于在此 **Frame** 中显示内容。
@@ -337,10 +336,10 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 当页面加载到框架中时，该页面作为 [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) 添加到 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) 的 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) 或 [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547)。
 
-## <span id="Pass_information_between_pages"> </span> <span id="pass_information_between_pages"> </span> <span id="PASS_INFORMATION_BETWEEN_PAGES"> </span>在页面之间传递信息
+## <span id="Pass_information_between_pages"></span><span id="pass_information_between_pages"></span><span id="PASS_INFORMATION_BETWEEN_PAGES"></span>在页面之间传递信息
 
 
-我们的应用可在两个页面之间导航，但它还没有什么真正有趣的内容。 当一个应用包含多个页面时，这些页面经常需要共享信息。 让我们将一些信息从第一页传递到第二页。
+我们的应用可在两个页面之间导航，但它还没有什么真正有趣的功能。 当一个应用包含多个页面时，这些页面经常需要共享信息。 让我们将一些信息从第一页传递到第二页。
 
 在 Page1.xaml 中，将你之前添加的 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 替换为以下 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。
 
@@ -402,9 +401,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-运行应用、在文本框中键入你的名字，然后单击显示文字**“单击以转到第 2 页”**的链接。 如果你已在 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件中调用 `this.Frame.Navigate(typeof(Page2), tb1.Text)`，`name.Text` 属性将传递给 `Page2`，并且事件数据中的值将用于在页面上显示的消息。
+运行应用、在文本框中键入你的名字，然后单击显示“单击以转到第 2 页”****的链接。 如果你已在 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件中调用 `this.Frame.Navigate(typeof(Page2), tb1.Text)`，`name.Text` 属性将传递给 `Page2`，并且事件数据中的值将用于在页面上显示的消息。
 
-## <span id="Cache_a__page"> </span> <span id="cache_a__page"> </span> <span id="CACHE_A__PAGE"> </span>缓存页面
+## <span id="Cache_a__page"></span><span id="cache_a__page"></span><span id="CACHE_A__PAGE"></span>缓存页面
 
 
 默认情况下不缓存页面内容和状态，因此你必须在应用的每个页面中启用它。
@@ -435,7 +434,7 @@ public Page1()
 }
 ```
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 * [UWP 应用的导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)
 * [表和透视表指南](https://msdn.microsoft.com/library/windows/apps/dn997788)
@@ -449,6 +448,6 @@ public Page1()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

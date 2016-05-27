@@ -1,16 +1,13 @@
 ---
-Description: 本文将从设计角度介绍通用 Windows 平台 (UWP) 的功能、优势和要求。 了解平台为你免费提供了哪些内容，以及可供你支配的工具。
+author: mijacobs
+Description: 此文章将从设计角度介绍通用 Windows 平台 (UWP) 的功能、优点和要求。 了解平台为你免费提供了哪些内容，以及可供你支配的工具。
 title: 通用 Windows 平台 (UWP) 应用设计简介
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-label: UWP 应用设计简介
+label: Intro to UWP app design
 template: detail.hbs
 ---
 
 #  UWP 应用设计简介 
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 通用 Windows 平台 (UWP) 应用可以在任何基于 Windows 的设备（从手机到平板电脑或 PC）上运行。
 
@@ -102,15 +99,15 @@ UWP 还提供了一些有用的构建基块，可使针对多个设备系列设�
 <tr class="odd">
 <td align="left"><p><img src="images/1895065-hig-anatomyofanapp-02.png" alt="Navigation, command, and content areas of an address book app" /></p>
 <p></p></td>
-<td align="left"><strong>导航元素</strong><p>导航元素帮助用户选择他们希望显示的内容。 导航元素示例包括 [tabs and pivots](../controls-and-patterns/tabs-pivot.md)、[hyperlinks](../controls-and-patterns/hyperlinks.md) 和 [nav panes](../controls-and-patterns/nav-pane.md)。</p>
-<p>[
-            Navigation design basics](navigation-basics.md) 文章中详细介绍了导航元素。</p>
-<strong>命令元素</strong><p>命令元素启动操作，例如处理、保存或共享内容。 命令元素示例包括 [button](../controls-and-patterns/buttons.md) 和 [command bar](../controls-and-patterns/app-bars.md)。 命令元素还可以包括屏幕上实际不可见的键盘快捷方式。</p>
-<p>[
-            Command design basics](commanding-basics.md) 文章中详细介绍了命令元素。</p>
-<strong>内容元素</strong><p>内容元素显示应用内容。 对于绘画应用，内容可能是一个图形；对于资讯应用，内容可能是一篇新闻报道。</p>
-<p>[
-            Content design basics](content-basics.md) 文章中详细介绍了内容元素。</p></td>
+<td align="left"><strong>导航元素</strong>
+<p>导航元素帮助用户选择他们希望显示的内容。 导航元素示例包括[表和透视表](../controls-and-patterns/tabs-pivot.md)、[超链接](../controls-and-patterns/hyperlinks.md)和[导航窗格](../controls-and-patterns/nav-pane.md)。</p>
+<p>[导航设计基础知识](navigation-basics.md)文章中详细介绍了导航元素。</p>
+<strong>命令元素</strong>
+<p>命令元素启动操作，例如处理、保存或共享内容。 命令元素示例包括[按钮](../controls-and-patterns/buttons.md)和[命令栏](../controls-and-patterns/app-bars.md)。 命令元素还可以包括屏幕上实际不可见的键盘快捷方式。</p>
+<p>[命令设计基础知识](commanding-basics.md)文章中详细介绍了命令元素。</p>
+<strong>内容元素</strong>
+<p>内容元素显示应用内容。 对于绘画应用，内容可能是一个图形；对于资讯应用，内容可能是一篇新闻报道。</p>
+<p>[内容设计基础知识](content-basics.md)文章中详细介绍了内容元素。</p></td>
 </tr>
 </tbody>
 </table>
@@ -121,7 +118,7 @@ UWP 还提供了一些有用的构建基块，可使针对多个设备系列设�
 
 在为你的应用决定正确的 UI 元素时，可能还要考虑将要运行应用的设备和屏幕大小。
 
-## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"> </span> <span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"> </span> <span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"> </span>针对特定设备和屏幕大小定制你的应用。
+## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>针对特定设备和屏幕大小定制你的应用。
 
 
 UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所有支持 Windows 的设备上使用。 那么，为什么你还想要针对特定设备系列自定义应用 UI 呢？
@@ -145,14 +142,14 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 
     通用控件库适用于所有输入类型（触摸、触笔、键盘、鼠标），但你仍然可以通过重新排列 UI 元素来优化某些输入类型。 例如，如果将导航元素放置在屏幕底部，则手机用户将更容易访问它们，但大多数电脑用户希望在屏幕顶部看到导航元素。
 
-## <span id="Responsive_design_techniques"> </span> <span id="responsive_design_techniques"> </span> <span id="RESPONSIVE_DESIGN_TECHNIQUES"> </span>响应式设计技术
+## <span id="Responsive_design_techniques"></span><span id="responsive_design_techniques"></span><span id="RESPONSIVE_DESIGN_TECHNIQUES"></span>响应式设计技术
 
 
 在针对特定屏幕宽度优化应用 UI 时，假设你要创建一个响应式设计。 下面是可用于自定义应用 UI 的六个响应式设计技术。
 
-### <span id="Reposition"> </span> <span id="reposition"> </span> <span id="REPOSITION"> </span>重新定位
+### <span id="Reposition"></span><span id="reposition"></span><span id="REPOSITION"></span>重新放置
 
-你可以修改应用 UI 元素的位置和定位，以充分利用每台设备。 在此示例中，手机或平板手机上的纵向视图需要一个滚动 UI，因为一次只显示一个完整的框架。 当将应用转换到屏幕上允许两个完整框架的设备时，无论是在纵向模式还是横向模式下，框架 B 都可以占用一个专用空间。 如果你要将网格用于定位，则可以继续使用重新定位 UI 元素时的同一网格。
+你可以修改应用 UI 元素的位置和放置方式，以充分利用每台设备。 在此示例中，手机或平板手机上的纵向视图需要一个滚动 UI，因为一次只显示一个完整的框架。 当将应用转换到屏幕上允许两个完整框架的设备时，无论是在纵向模式还是横向模式下，框架 B 都可以占用一个专用空间。 如果你要将网格用于定位，则可以继续使用重新定位 UI 元素时的同一网格。
 
 ![重新定位](images/rsp-design/rspd-reposition.png)
 
@@ -160,13 +157,13 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 
 ![在较大的屏幕上重新定位内容的应用设计](images/rsp-design/rspd-reposition-type1.png)
 
-### <span id="Resize"> </span> <span id="resize"> </span> <span id="RESIZE"> </span>调整大小
+### <span id="Resize"></span><span id="resize"></span><span id="RESIZE"></span>调整大小
 
 可以通过调整 UI 元素的边距和大小来优化框架大小。 如以下示例所示，这可能使你只需通过增加内容框架即可改善在较大屏幕上的阅读体验。
 
 ![调整设计元素大小](images/rsp-design/rspd-resize.png)
 
-### <span id="Reflow"> </span> <span id="reflow"> </span> <span id="REFLOW"> </span>重新排列
+### <span id="Reflow"></span><span id="reflow"></span><span id="REFLOW"></span>重新排列
 
 通过根据设备和方向更改 UI 元素的排列，你的应用可以以最佳方式呈现内容。 例如，在转到较大屏幕时，可能可以切换较大的容器、添加列，以及采用不同的方式生成列表项。
 
@@ -174,7 +171,7 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 
 ![重新排列设计元素](images/rsp-design/rspd-reflow.png)
 
-### <span id="_____________Reveal___________"> </span> <span id="_____________reveal___________"> </span> <span id="_____________REVEAL___________"> </span>显示
+### <span id="_____________Reveal___________"></span><span id="_____________reveal___________"></span><span id="_____________REVEAL___________"></span> 显示
 
 你可以基于屏幕空间显示 UI，或在设备支持附加功能、特定情况或首选屏幕方向时显示 UI。
 
@@ -188,17 +185,17 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 -   在音乐应用中，你可以显示有关专辑或歌手的详细信息。
 -   在视频应用中，你可以显示有关电影或节目的详细信息，例如显示演职人员详细信息。
 -   在任一应用中，都可以使各列分解并显示更多详细信息。
--   在任一应用中，都可以获取垂直堆叠的内容并使之以水平方式布局。 当从手机或平板手机转至较大的设备时，堆叠的列表项可以更改为显示多行列表项和多列元数据。
+-   在任一应用中，都可以获取垂直堆叠的内容并使之以水平方式布局。 当从手机或平板手机转至较大型设备时，堆叠的列表项可以更改为显示多行列表项和多列元数据。
 
-### <span id="Replace"> </span> <span id="replace"> </span> <span id="REPLACE"> </span>替换
+### <span id="Replace"></span><span id="replace"></span><span id="REPLACE"></span>替换
 
 通过这种技术，你可以针对特定设备大小级别或方向来切换用户界面。 在此示例中，瞬态 UI（导航窗格及其精简版）适用于较小的设备，但在较大设备上，最好选择使用选项卡。
 
 ![替换设计元素](images/rsp-design/rspd-replace.png)
 
-### <span id="_____________Re-architect___________"> </span> <span id="_____________re-architect___________"> </span> <span id="_____________RE-ARCHITECT___________"> </span>重新构建
+### <span id="_____________Re-architect___________"></span><span id="_____________re-architect___________"></span><span id="_____________RE-ARCHITECT___________"></span> 重新构建
 
-可以折叠或拆分应用的体系结构，以更好地定向特定设备。 在此示例中，从左侧设备转到右侧设备将显示页面的接合。
+可以折叠或拆分应用的体系结构，以更好地适应特定设备。 在此示例中，从左侧设备转到右侧设备将显示页面的接合。
 
 ![重新构建用户界面的示例](images/rsp-design/rspd-rearchitect.png)
 
@@ -218,6 +215,6 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

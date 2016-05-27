@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 使用布局面板来为应用中的 UI 元素排列和分组。
 title: 通用 Windows 平台 (UWP) 应用的布局面板
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
-label: 布局面板
+label: Layout panels
 template: detail.hbs
 ---
 # 布局面板
@@ -30,7 +31,7 @@ template: detail.hbs
 
 有关附加属性的详细信息，请参阅[附加属性概述](../xaml-platform/attached-properties-overview.md)。
 
-> **注意** 附加属性是一个 XAML 概念，需要特殊语法才能从代码中获取或设置。 若要在代码中使用附加属性，请参阅*附加属性概述*文章的*代码中的附加属性*部分。
+> **注意** &nbsp;&nbsp;附加属性是一个 XAML 概念，需要特殊语法才能从代码中获取或设置。 若要在代码中使用附加属性，请参阅*附加属性概述*文章的*代码中的附加属性*部分。
 
 **面板边框**
 
@@ -101,7 +102,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 [
             **StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) 是简单的布局面板，它将其子元素排列成一条水平或垂直方向的直线。 如果你需要在页面 UI 中排列一个小的子部分，通常使用 StackPanel 控件。
 
-你可以使用 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx) 属性来指定子元素的方向。 默认方向为 [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx)。
+你可以使用 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx) 属性来指定子元素的方向。 默认方向是 [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx)。
 
 以下 XAML 显示了如何创建项目的垂直 StackPanel。
 
@@ -225,6 +226,6 @@ Canvas 不对其子素的大小进行任何调整。 每个元素都必须指定
 存在多种只能用作 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) 来显示 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) 中的项的特殊用途面板。 它们是 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx)、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx)、[**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) 和 [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx)。 你无法将这些面板用于常规 UI 布局。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,16 +1,13 @@
 ---
+author: Jwmsft
 Description: 通过让用户在单独窗口中查看应用的多个独立部分，可帮助他们提高效率。
 title: 显示应用的多个视图
 ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
-label: 显示应用的多个视图
+label: Show multiple views for an app
 template: detail.hbs
 ---
 
 # 显示应用的多个视图
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 通过让用户在单独窗口中查看应用的多个独立部分，你可以帮助他们提高效率。 一个典型示例就是电子邮件应用，其中主 UI 显示电子邮件列表以及所选电子邮件的预览。 但是，用户还可以在单独窗口中打开消息，并排查看它们。
 
@@ -21,7 +18,7 @@ template: detail.hbs
 
 如果你为应用创建多个窗口，每个窗口都独立运作。 任务栏会分别显示每个窗口。 用户可以独立地移动、调整大小、显示和隐藏应用窗口，并且可以在应用窗口间切换，就像它们是单独的应用一样。 每个窗口都在它自己的线程中运行。
 
-## <span id="What_is_a_view_"> </span> <span id="what_is_a_view_"> </span> <span id="WHAT_IS_A_VIEW_"> </span>什么是视图？
+## <span id="What_is_a_view_"></span><span id="what_is_a_view_"></span><span id="WHAT_IS_A_VIEW_"></span>什么是视图？
 
 
 应用视图是指将线程与应用用来显示内容的窗口进行 1:1 配对。 它由 [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 对象表示。
@@ -32,7 +29,7 @@ template: detail.hbs
 
 而且，XAML 框架会将 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象包装在 [**Windows.UI.XAML.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 对象中。 在 XAML 应用中，你通常会与 **Window** 对象交互，而不是直接使用 **CoreWindow**。
 
-## <span id="Show_a_new_view"> </span> <span id="show_a_new_view"> </span> <span id="SHOW_A_NEW_VIEW"> </span>显示新视图
+## <span id="Show_a_new_view"></span><span id="show_a_new_view"></span><span id="SHOW_A_NEW_VIEW"></span>显示新视图
 
 
 在继续进行操作之前，让我们看看创建新视图的步骤。 在此处，启动新视图以响应按钮单击。
@@ -134,14 +131,14 @@ bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewI
     </table>
 ```
 
-## <span id="The_main_view"> </span> <span id="the_main_view"> </span> <span id="THE_MAIN_VIEW"> </span>主视图
+## <span id="The_main_view"></span><span id="the_main_view"></span><span id="THE_MAIN_VIEW"></span>主视图
 
 
 应用启动时创建的第一个视图称为*主视图*。 此视图存储于 [**CoreApplication.MainView**](https://msdn.microsoft.com/library/windows/apps/hh700465) 属性中，而且其 [**IsMain**](https://msdn.microsoft.com/library/windows/apps/hh700452) 属性为 True。 不要创建此视图；应用会创建它。 主视图的线程可充当应用的管理器，而且所有应用激活事件都会在此线程上传送。
 
 如果打开了辅助视图，主视图的窗口可以隐藏（例如，通过单击窗口标题栏中的关闭 (x) 按钮），但它的线程仍保持活动状态。 在主视图的 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 上调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/br209049) 会导致 **InvalidOperationException** 发生。 （使用 [**Application.Exit**](https://msdn.microsoft.com/library/windows/apps/br242327) 关闭你的应用。）如果主视图的线程终止，则应用关闭。
 
-## <span id="Secondary_views"> </span> <span id="secondary_views"> </span> <span id="SECONDARY_VIEWS"> </span>辅助视图
+## <span id="Secondary_views"></span><span id="secondary_views"></span><span id="SECONDARY_VIEWS"></span>辅助视图
 
 
 其他视图都是辅助视图，包括你通过调用应用代码中的 [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) 创建的所有视图。 主视图和辅助视图均存储于 [**CoreApplication.Views**](https://msdn.microsoft.com/library/windows/apps/br205861) 集合中。 通常情况下，创建辅助视图以响应用户操作。 在某些情况中，系统会为你的应用创建辅助视图。
@@ -150,10 +147,10 @@ bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewI
 
  
 
-## <span id="Switch_from_one_view_to_another"> </span> <span id="switch_from_one_view_to_another"> </span> <span id="SWITCH_FROM_ONE_VIEW_TO_ANOTHER"> </span>从一个视图切换到另一个视图
+## <span id="Switch_from_one_view_to_another"></span><span id="switch_from_one_view_to_another"></span><span id="SWITCH_FROM_ONE_VIEW_TO_ANOTHER"></span>从一个视图切换到另一个视图
 
 
-你必须为用户提供一种途径来从辅助窗口导航回主窗口。 要执行此操作，请使用 [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) 方法。 从要从中切换的窗口的线程调用此方法，并传递要切换到的窗口的视图 ID。
+必须为用户提供一种途径来从辅助窗口导航回主窗口。 要执行此操作，请使用 [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) 方法。 从要从中切换的窗口的线程调用此方法，并传递要切换到的窗口的视图 ID。
 
 <span codelanguage="CSharp"></span>
 ```CSharp
@@ -184,6 +181,6 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);</code></pre></td>
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

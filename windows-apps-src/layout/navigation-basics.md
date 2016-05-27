@@ -1,16 +1,13 @@
 ---
+author: mijacobs
 Description: 通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。
 title: 通用 Windows 平台 (UWP) 应用的导航设计基础知识
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
-label: 导航设计基础知识
+label: Navigation design basics
 template: detail.hbs
 ---
 
 #  UWP 应用的导航设计基础知识
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。 它们配合使用以提供在应用、页面和内容之间移动的各种直观用户体验。
 
@@ -30,10 +27,10 @@ template: detail.hbs
 
     若要提供感觉直观的一致体验，请以可预测的方式响应系统级导航功能。
 
-## <span id="Build_the_right_navigation_structure"> </span> <span id="build_the_right_navigation_structure"> </span> <span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"> </span>构建正确的导航结构
+## <span id="Build_the_right_navigation_structure"></span><span id="build_the_right_navigation_structure"></span><span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"></span>生成正确的导航结构
 
 
-让我们将应用视为多组页面的集合，其中每个页面包含一组唯一的内容或功能。 例如，照片应用可能具有一个用于拍摄照片的页面、一个用于图像编辑的页面以及另一个用于管理图像库的页面。 你将这些页面排列成组的方式定义了应用的导航结构。 排列一组页面有两种常见方法：
+让我们将应用视作多组页面的集合，其中每个页面包含一组唯一的内容和功能。 例如，照片应用可能具有一个用于拍摄照片的页面、一个用于图像编辑的页面以及另一个用于管理图像库的页面。 你将这些页面排列成组的方式定义了应用的导航结构。 排列一组页面有两种常见方法：
 
 <table>
 <colgroup>
@@ -93,12 +90,12 @@ template: detail.hbs
 
  
 
-## <span id="Use_the_right_navigation_elements"> </span> <span id="use_the_right_navigation_elements"> </span> <span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"> </span>使用正确的导航元素
+## <span id="Use_the_right_navigation_elements"></span><span id="use_the_right_navigation_elements"></span><span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"></span>使用正确的导航元素
 
 
 导航元素可以提供两种服务：它们可以帮助用户访问所需的内容，而且某些元素还可让用户知道他们在应用内所处的位置。 但是，它们也会占用应用本来可用于内容或命令元素的空间，因此使用适合应用结构的导航元素非常重要。
 
-### <span id="Peer-to-peer_navigation_elements"> </span> <span id="peer-to-peer_navigation_elements"> </span> <span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"> </span>对等导航元素
+### <span id="Peer-to-peer_navigation_elements"></span><span id="peer-to-peer_navigation_elements"></span><span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"></span>对等导航元素
 
 对等导航元素支持在同一个子树的相同级别中的页面之间导航。
 
@@ -119,7 +116,7 @@ template: detail.hbs
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Tabs and pivot](../controls-and-patterns/tabs-pivot.md)</p>
+<td align="left"><p>[表和透视表](../controls-and-patterns/tabs-pivot.md)</p>
 <p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
 <td align="left">显示指向同级别页面的持久链接列表。
 <p>在以下情况下使用选项卡/透视表：</p>
@@ -132,7 +129,7 @@ template: detail.hbs
 <p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Nav pane](../controls-and-patterns/nav-pane.md)</p>
+<td align="left"><p>[导航窗格](../controls-and-patterns/nav-pane.md)</p>
 <p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
 <td align="left">显示指向顶级页面的链接列表。
 <p>在以下情况下使用导航窗格：</p>
@@ -158,7 +155,7 @@ template: detail.hbs
 
 ![具有两个子树的应用](images/nav/nav-subtrees2.png)
 
-### <span id="Hierarchical_navigation_elements"> </span> <span id="hierarchical_navigation_elements"> </span> <span id="HIERARCHICAL_NAVIGATION_ELEMENTS"> </span>分层导航元素
+### <span id="Hierarchical_navigation_elements"></span><span id="hierarchical_navigation_elements"></span><span id="HIERARCHICAL_NAVIGATION_ELEMENTS"></span>分层导航元素
 
 分层导航元素提供父页面及其子页面之间的导航。
 
@@ -177,7 +174,7 @@ template: detail.hbs
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Hub](../controls-and-patterns/hub.md)</p>
+<td align="left"><p>[中心](../controls-and-patterns/hub.md)</p>
 <p><img src="images/higsecone-hub-thumb.png" alt="Hub" /></p></td>
 <td align="left">中心是特殊类型的导航控件，可提供其子页面的预览/摘要。 与导航窗格或选项卡不同，它通过嵌入页面本身的链接和章节标题来提供对这些子页面的导航。
 <p>在以下情况下使用中心：</p>
@@ -188,7 +185,7 @@ template: detail.hbs
 <p></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Master/details](../controls-and-patterns/master-details.md)</p>
+<td align="left"><p>[大纲/细节](../controls-and-patterns/master-details.md)</p>
 <p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
 <td align="left">显示项目摘要的列表（大纲视图）。 通过选择项目，可在细节部分中显示其相应的项目页面。
 <p>在以下情况下使用大纲/细节元素：</p>
@@ -205,7 +202,7 @@ template: detail.hbs
 
  
 
-### <span id="Historical_navigation_elements"> </span> <span id="historical_navigation_elements"> </span> <span id="HISTORICAL_NAVIGATION_ELEMENTS"> </span>历史导航元素
+### <span id="Historical_navigation_elements"></span><span id="historical_navigation_elements"></span><span id="HISTORICAL_NAVIGATION_ELEMENTS"></span>历史导航元素
 
 <table>
 <colgroup>
@@ -221,14 +218,14 @@ template: detail.hbs
 <tbody>
 <tr class="odd">
 <td align="left">返回</td>
-<td align="left"><p>让用户遍历应用内和应用之间（具体取决于设备）的导航历史记录。 有关详细信息，请参阅本文后面显示的 [Make your app work well with system-level navigation features](#backnavigation) 部分。</p></td>
+<td align="left"><p>让用户遍历应用内和应用之间（具体取决于设备）的导航历史记录。 有关详细信息，请参阅本文后面显示的[使你的应用与系统级导航功能良好协作](#backnavigation)部分。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Content-embedded_navigation_elements"> </span> <span id="content-embedded_navigation_elements"> </span> <span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"> </span>嵌入内容的导航元素
+### <span id="Content-embedded_navigation_elements"></span><span id="content-embedded_navigation_elements"></span><span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"></span>嵌入内容的导航元素
 
 <table>
 <colgroup>
@@ -251,12 +248,12 @@ template: detail.hbs
 
  
 
-### <span id="Combining_navigation_elements"> </span> <span id="combining_navigation_elements"> </span> <span id="COMBINING_NAVIGATION_ELEMENTS"> </span>合并导航元素
+### <span id="Combining_navigation_elements"></span><span id="combining_navigation_elements"></span><span id="COMBINING_NAVIGATION_ELEMENTS"></span>合并导航元素
 
 你可以通过合并导航元素来创建适合你的应用的导航体验。 例如，你的应用可使用导航窗格来提供对顶级页面的访问，而使用选项卡来提供对二级页面的访问。
 
 
-\[本文包含特定于 UWP 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 
 
@@ -267,6 +264,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

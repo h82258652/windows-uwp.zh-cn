@@ -1,17 +1,13 @@
 ---
+author: mijacobs
 title: '响应式设计的屏幕大小和断点'
-description: .
+description: 。
 ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
 label: Screen sizes and break points
 template: detail.hbs
 ---
 
 #  响应式设计的屏幕大小和断点
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
 
 Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，无法针对每台设备来优化你的 UI。 我们建议应针对一些关键的宽度（也称为“断点”）进行设计：360、640、1024 和 1366 epx。
 
@@ -40,9 +36,9 @@ Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，
 <tbody>
 <tr class="odd">
 <td align="left">典型屏幕大小（对角线）</td>
-<td align="left">4 英寸到 6 英寸</td>
-<td align="left">7 英寸到 12 英寸，或者电视</td>
-<td align="left">13 英寸及更大</td>
+<td align="left">4&quot; 到 6&quot;</td>
+<td align="left">7&quot; 到 12&quot;，或电视</td>
+<td align="left">13&quot; 以及更大</td>
 </tr>
 <tr class="even">
 <td align="left">典型设备</td>
@@ -67,28 +63,28 @@ Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，
 <td align="left" valign="top"><ul>
 <li>中心选项卡元素。</li>
 <li>将左右窗口边距设置为 12px 以在应用窗口的左侧和右侧边缘之间创建一个可视间隔。</li>
-<li>窗口底部的扩展坞 [app bars](../controls-and-patterns/app-bars.md) 用于改进可访问性</li>
+<li>窗口底部的扩展坞[应用栏](../controls-and-patterns/app-bars.md)用于改进可访问性</li>
 <li>一次使用一个列/区域</li>
 <li>使用图标表示搜索（不显示搜索框）。</li>
-<li>使 [navigation pane](../controls-and-patterns/nav-pane.md) 处于覆盖模式，以节省屏幕空间。</li>
-<li>如果你使用的是 [master details pattern](../controls-and-patterns/master-details.md)，请使用堆叠演示模式来节省屏幕空间。</li>
+<li>使[导航窗格](../controls-and-patterns/nav-pane.md)处于覆盖模式，以节省屏幕空间。</li>
+<li>如果你使用的是[大纲细节模式](../controls-and-patterns/master-details.md)，请使用堆叠演示模式来节省屏幕空间。</li>
 </ul></td>
 <td align="left" valign="top"><ul>
 <li>使选项卡元素左对齐。</li>
 <li>将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建一个可视间隔。</li>
-<li>将命令元素（如 [app bars](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。</li>
+<li>将命令元素（如[应用栏](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。</li>
 <li>最多两个列/区域</li>
 <li>显示搜索框。</li>
-<li>使 [navigation pane](../controls-and-patterns/nav-pane.md) 处于长条模式，以便始终显示窄带的图标。</li>
-
+<li>使[导航窗格](../controls-and-patterns/nav-pane.md)处于长条模式，以便始终显示窄带的图标。</li>
+<li>请考虑针对[电视体验](http://go.microsoft.com/fwlink/?LinkId=760736)进行进一步定制。</li>
 </ul></td>
 <td align="left" valign="top"><ul>
 <li>使选项卡元素左对齐。</li>
 <li>将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建一个可视间隔。</li>
-<li>将命令元素（如 [app bars](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。</li>
+<li>将命令元素（如[应用栏](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。</li>
 <li>最多三个列/区域</li>
 <li>显示搜索框。</li>
-<li>使 [navigation pane](../controls-and-patterns/nav-pane.md) 处于停靠模式，以使其始终显示。</li>
+<li>使[导航窗格](../controls-and-patterns/nav-pane.md)处于停靠模式，以使其始终显示。</li>
 </ul></td>
 </tr>
 </tbody>
@@ -99,6 +95,6 @@ Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，
  
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 
