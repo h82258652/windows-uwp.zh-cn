@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "0a4a9496caa9ddb655a36d3988bf6e4e78ce8554",
-  "LastTranslatedCommit": "b0326fac293342599468c9de4fbc37606ff75a74",
+  "LastTranslatedCommit": "1fee43b17f1ab6b5b1bb7e31f2b34bb8b51828c3",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
       "FileHash": "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3",
@@ -796,7 +796,7 @@
       "TargetFilePath": null,
       "HandbackFilePath": null,
       "HandbackFileCommit": null,
-      "HandbackDateTime": "2016-05-27T20:25:23.3467588Z",
+      "HandbackDateTime": "2016-05-27T20:56:26.6877799Z",
       "HandbackException": {
         "internal_error_code": "handback_transform_failed",
         "internal_error_message": "Handback file: C:\\ol\\master\\WDG.handback\\e0cdf7\\ol-handback\\Microsoft\\windows-apps.zh-cn\\master\\app-settings\\guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.zh-cn.xlf failed.",
@@ -806,7 +806,7 @@
         "stack_trace": "   at Microsoft.OpenLocalization.Transformer.MarkdownJavascriptTransformer.XliffToMarkdownCore(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\Transformer\\MarkdownJavascriptTransformer.cs:line 119\r\n   at Microsoft.OpenLocalization.Transformer.XliffTransformerExtensions.XliffToMarkdown(IMarkdownTransformer markdownTransformer, Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\XliffTransformerExtensions.cs:line 109\r\n   at Microsoft.OpenLocalization.Transformer.XliffTransformerExtensions.XliffToMarkdown(IMarkdownTransformer markdownTransformer, String xliffFile, String skeletonFile, String markdownFile) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\XliffTransformerExtensions.cs:line 206\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 42\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 424",
         "extended_information": null
       },
-      "HandbackFailureTimes": 1,
+      "HandbackFailureTimes": 2,
       "UpdatedDateTime": "0001-01-01T00:00:00",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
