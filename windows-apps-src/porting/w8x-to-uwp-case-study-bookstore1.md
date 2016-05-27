@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: 本主题介绍将一个非常简单的通用 8.1 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
@@ -6,11 +7,11 @@ description: 本主题介绍将一个非常简单的通用 8.1 应用移植到 W
 
 # Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题介绍将一个非常简单的通用 8.1 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。 通用 8.1 应用是为 Windows 8.1 生成一个应用包，并为 Windows Phone 8.1 生成另一个应用包的应用。 在 Windows 10 中，你可以创建可供客户安装到种类广泛的设备上的单个应用包，而这正是我们要在此案例研究中实现的目标。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面图像已将**“生成操作”**设置为**“内容”**，并将**“复制到输出目录”**设置为**“不要复制”**。
+我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将“生成操作”****设置为“内容”****，并将“复制到输出目录”****设置为“不要复制”****。
 
 本部分中之前的主题介绍了平台之间的差异，并且提供有关将应用的各个方面从 XAML 标记移植到访问数据（通过绑定到视图模型）这一过程的详细信息和指南。 案例研究旨在通过在真实示例中实际显示指南来补充该指南。 案例研究假设你已阅读该指南，因此不会重复该指南。
 
@@ -56,7 +57,7 @@ Bookstore1\_81 解决方案是 8.1 通用应用项目，它包含以下项目。
 
 -   复制 BookstoreStyles.xaml。 我们将使用此文件作为一个合适的起始点，因为此文件中的所有资源键都将在 Windows 10 应用中解析；而等效的 WindowsPhone 文件中的某些资源键不会解析。
 
-编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1\_81 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用**“在文件中替换”**功能。 视图模型中和任何其他强制性代码中都不需要更改任何代码。 但为了更易于查看应用正在运行哪个版本，请将 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 属性返回的值从“BOOKSTORE1\_81”更改为“BOOKSTORE1UNIVERSAL\_10”。
+编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1\_81 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用“在文件中替换”****功能。 视图模型中和任何其他强制性代码中都不需要更改任何代码。 但为了更易于查看应用正在运行哪个版本，请将 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 属性返回的值从“BOOKSTORE1\_81”更改为“BOOKSTORE1UNIVERSAL\_10”。
 
 现在，你可以执行生成和运行操作。 新的 UWP 应用的外观如下，当前尚未完成任何明确的工作以将其移植到 Windows 10。
 
@@ -123,6 +124,6 @@ Bookstore1\_81 应用使用了两个不同的资源词典 (BookstoreStyles.xaml)
 下一个案例研究是 [Bookstore2](w8x-to-uwp-case-study-bookstore2.md)，我们将从中了解访问和显示分组数据。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

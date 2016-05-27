@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: 此案例研究（基于 Bookstore1 中提供的信息生成）首先研究通用 8.1 应用，该应用可在 SemanticZoom 控件中显示分组数据。
 title: Windows 运行时 8.x 到 UWP 案例研究：Bookstore2
@@ -106,7 +107,7 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 -   在 Bookstore2\_81.WindowsPhone 项目中，打开 BookstoreStyles.xaml。 从此文件中，复制这三个相同的资源（如上所述）、两个跳转列表项转换器以及命名空间前缀声明 Windows\_UI\_Xaml\_Controls\_Primitives，然后将它们全部粘贴到新项目的 BookstoreStyles.xaml 中。
 -   最后，在新项目的 SeZoUC.xaml 中，将相应的视觉状态管理器标记添加到你在上面添加的 **Grid**。
 
-```xaml
+```xml
     <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -168,6 +169,6 @@ Bookstore2\_81 解决方案是一个 8.1 通用应用项目。 Bookstore2\_81.Wi
 下一个案例研究是 [QuizGame](w8x-to-uwp-case-study-quizgame.md)，我们将从中了解有关访问和显示分组数据的信息。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

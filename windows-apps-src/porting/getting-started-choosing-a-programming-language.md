@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 选择编程语言
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: 选择编程语言
@@ -139,6 +140,6 @@ C# 是一种简单易学的语言，并附带构成 .NET 的许多支持类和�
 [入门：熟悉 Visual Studio 环境](getting-started-getting-around-in-visual-studio.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

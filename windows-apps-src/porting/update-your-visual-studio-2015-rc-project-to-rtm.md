@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: 如果你具有使用 Visual Studio 2015 RC 创建的 Windows 10 项目，则你在将项目文件更新为适合 Visual Studio 2015 RTM 的格式时拥有两个选项。
 title: 将 UWP Microsoft Visual Studio 2015 RC 项目更新为 RTM
 ms.assetid: 104E36CE-36DE-4E9C-A944-711C200B44EF
@@ -36,6 +37,6 @@ Visual Studio 2015 RC 和 Visual Studio 2015 RTM 之间的 Windows 10 项目格�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

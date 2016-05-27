@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 动画入门
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: 在此项目中，我们将移动一个矩形、应用淡出效果，然后再使其显示在视图中。
@@ -62,7 +63,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 如果打开 MainPage.xaml 文件，则会在**“XAML”**视图中看到当你在设计器中工作时 Blend 为你添加的 XAML 代码。 特别是要查看 `<Storyboard>` 和 `<Rectangle>` 元素中的代码。 下面的代码显示了一个示例。 为简便起见，椭圆形表示省略的不相关代码，并且为提高代码可读性，添加了换行符。
 
-```xaml
+```xml
 ...
 <Storyboard 
         x:Name="Storyboard1" 
@@ -125,6 +126,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 [入门：下一步是什么？](getting-started-what-next.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

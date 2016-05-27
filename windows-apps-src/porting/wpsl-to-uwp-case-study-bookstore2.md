@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: 此案例研究以 Bookstore 中所提供的信息为基础，首先研究可显示 LongListSelector 中的分组数据的 Windows Phone Silverlight 应用。
 title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
@@ -6,7 +7,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
 # 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此案例研究以 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 中所提供的信息为基础，首先研究可显示 **LongListSelector** 中的分组数据的 Windows Phone Silverlight 应用。 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **LongListSelector** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 我们将分步演示将应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的步骤。
 
@@ -34,7 +35,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
 我们可以将 Visual Studio 生成的 App.xaml 和 App.xaml.cs 保存在 Windows 10 项目中。
 
-编辑你刚刚复制的源代码和标记文件，并将对 Bookstore2WPSL8 命名空间的任何引用更改为 Bookstore2Universal\_10。 执行此操作的快速方法是使用**“在文件中替换”**功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改。
+编辑你刚刚复制的源代码和标记文件，并将对 Bookstore2WPSL8 命名空间的任何引用更改为 Bookstore2Universal\_10。 执行此操作的快速方法是使用“在文件中替换”****功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改。
 
 -   将 `System.ComponentModel.DesignerProperties` 更改为 `DesignMode`，然后对其使用 **Resolve** 命令。 删除 `IsInDesignTool` 属性并使用 IntelliSense 添加正确的属性名称：`DesignModeEnabled`。
 -   对 `ImageSource` 使用 **Resolve** 命令。
@@ -61,7 +62,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
 将 **LongListSelector** 替换为 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件需要几个步骤，让我们开始吧。 **LongListSelector** 将直接绑定到分组的数据源，但 **SemanticZoom** 中包含 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 控件，它们将通过 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 适配器间接绑定到数据。 **CollectionViewSource** 必须以资源形式存在于标记中，因此，让我们先将其添加到 `<Page.Resources>` 内 MainPage.xaml 的标记中。
 
-```xaml
+```xml
     <CollectionViewSource
         x:Name="AuthorHasACollectionOfBookSku"
         Source="{Binding Authors}"
@@ -72,7 +73,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
 接下来，用此标记来替换 `phone:LongListSelector`，这将向我们提供一个可使用的初步 **SemanticZoom**。
 
-```xaml
+```xml
     <SemanticZoom>
         <SemanticZoom.ZoomedInView>
             <ListView
@@ -97,7 +98,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
 我们不再需要 `AuthorNameJumpListStyle`，至少不需要它的所有部分。 我们只需要缩小视图中的组（在此应用中即作者）的数据模板。 因此，我们删除 `AuthorNameJumpListStyle` 样式并将其替换为此数据模板。
 
-```xaml
+```xml
    <DataTemplate x:Key="ZoomedOutAuthorTemplate">
         <Border Margin="9.6,0.8" Background="{Binding Converter={StaticResource JumpListItemBackgroundConverter}}">
             <TextBlock Margin="9.6,0,9.6,4.8" Text="{Binding Group.Name}" Style="{StaticResource SubtitleTextBlockStyle}"
@@ -140,7 +141,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 -   将 `AuthorGroupHeaderTemplateWide` 中的内容替换为 `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`。
 -   将 `ZoomedOutAuthorTemplateWide` 中的内容替换为：
 
-```xaml
+```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250" >
         <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"/>
         <StackPanel VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
@@ -153,7 +154,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
 -   将 `BookTemplateWide` 中的内容替换为：
 
-```xaml
+```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250">
         <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"/>
         <Image Source="{Binding CoverImage}" Stretch="UniformToFill"/>
@@ -171,7 +172,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
 -   对于宽状态，在放大视图中的组的周围将需要多留出一些垂直空间。 创建和引用项目面板模板将为我们提供想要的结果。 下面是标记的外观。
 
-```xaml
+```xml
    <ItemsPanelTemplate x:Key="ZoomedInItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal" GroupPadding="0,0,0,20"/>
     </ItemsPanelTemplate>
@@ -187,7 +188,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
 -   最后，添加相应的视觉状态管理器标记作为 `LayoutRoot` 的第一个子项。
 
-```xaml
+```xml
     <Grid x:Name="LayoutRoot" ... >
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -214,7 +215,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 -   在 `AuthorGroupHeaderTemplate` 和 `ZoomedOutAuthorTemplate` 中，将 `FontWeight="SemiBold"` 添加到 **TextBlock**。
 -   在 `narrowSeZo` 中，缩小视图中的组标题和作者是左对齐而不是拉伸的，那么让我们开始吧。 我们通过将 [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) 设置为 `Stretch`，为放大视图创建 [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841)。 并且将为包含同一 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 的缩小视图创建 [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817)。 其外观如下所示。
 
-```xaml
+```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
     </Style>
@@ -245,8 +246,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
 ![在桌面设备上运行的已移植的 Windows 10 应用，放大视图，两个窗口大小](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-在桌面设备上运行的已移植的 Windows 10 应用，放大视图，两个窗口大小
- 
+在桌面设备上运行的已移植的 Windows 10 应用，放大视图，两个窗口大小 
 ![在桌面设备上运行的已移植的 Windows 10 应用，缩小视图，两个窗口大小](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
 在桌面设备上运行的已移植的 Windows 10 应用，缩小视图，两个窗口大小
@@ -261,16 +261,16 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
 ## 使视图模型更灵活
 
-本部分包含多种设施的示例，这些设施是由于移动我们的应用以使用 UWP 而对我们开放的。 下面介绍一些可选步骤，你可以利用它们在通过 **CollectionViewSource** 访问视图模型时使之更灵活。 我们从 Windows Phone Silverlight 应用 Bookstore2WPSL8 移植的视图模型（源文件位于 ViewModel\\BookstoreViewModel.cs 中）中包含一个派生自 **List<T>** 名为 Author 的类，其中 **T** 是 BookSku。 这意味着，Author 类*是一*组 BookSku。
+本部分包含多种设施的示例，这些设施是由于移动我们的应用以使用 UWP 而对我们开放的。 下面介绍一些可选步骤，你可以利用它们在通过 **CollectionViewSource** 访问视图模型时使之更灵活。 我们从 Windows Phone Silverlight 应用 Bookstore2WPSL8 移植的视图模型（源文件位于 ViewModel\\BookstoreViewModel.cs 中）包含一个派生自 **List&lt;T&gt;** 的名为 Author 的类，其中 **T** 是 BookSku。 这意味着，Author 类*是一*组 BookSku。
 
 当我们将 **CollectionViewSource.Source** 绑定到 Authors 时，我们要传达的唯一信息是 Authors 中的每个 Author 都是一个包含*某些内容*的组。 我们将其保留为 **CollectionViewSource**，以确定在此情况下 Author 确实是一组 BookSku。 该方法可用：但是不灵活。 如果我们希望 Author *既属于*一组 BookSku *又属于*一组作者的住址呢？ Author 不可能同时*属于*这两个组。 但 Author 可以*包含*任意数量的组。 而这就是解决方案：使用*包含组*模式而不是我们当前在使用的*属于组*模式。 操作方法如下：
 
--   更改 Author，这样它不再派生自 **List<T>**。
+-   更改 Author，这样它就不再从 **List&lt;T&gt;** 派生。
 -   将此字段添加到 Author：`private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`。
 -   将此属性添加到 Author：`public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`。
 -   当然，我们可以重复上述两个步骤，向 Author 添加所需数量的组。
--   将 AddBookSku 方法的实现更改为 `this.BookSkus.Add(bookSku);`。
--   既然 Author *包含*至少一个组，我们需要向 **CollectionViewSource** 表明它应该使用其中的哪个组。 为此，请将此属性添加到 **CollectionViewSource**：`ItemsPath="BookSkus"`
+-   将 AddBookSku 方法的实现更改 `this.BookSkus.Add(bookSku);`。
+-   既然 Author *包含*至少一个组，我们需要向 **CollectionViewSource** 表明它应该使用其中的哪个组。 为此，请将此属性添加到 **CollectionViewSource**： `ItemsPath="BookSkus"`
 
 这些更改将使此应用在功能上保持不变，但现在你已知道可以如何扩展 Author 和 **CollectionViewSource**（如果需要）。 让我们对 Author 做出最后一项更改，以便如果我们在*没有*指定 **CollectionViewSource.ItemsPath** 的情况下使用它，我们将使用一个包含所选项的默认组：
 
@@ -297,6 +297,6 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 经发现，Windows Phone Silverlight **LongListSelector** 的所有设施和概念以及其他更多内容都可以采用 **SemanticZoom**、**ListView**、**GridView** 和 **CollectionViewSource** 的形式供 UWP 应用使用。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

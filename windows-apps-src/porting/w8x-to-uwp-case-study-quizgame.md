@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
 description: 本主题介绍了一个将正在运行的对等测验游戏 WinRT 8.1 示例应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
 title: Windows 运行时 8.x 到 UWP 案例研究，QuizGame 对等示例应用
@@ -7,7 +8,7 @@ title: Windows 运行时 8.x 到 UWP 案例研究，QuizGame 对等示例应用
 # Windows 运行时 8.x 到 UWP 案例研究：QuizGame 对等示例应用
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主题介绍了一个将正在运行的对等测验游戏 WinRT 8.1 示例应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
@@ -59,7 +60,7 @@ QuizGame（我们将移植的应用）的外观如下。
 
 测验主持人单击“开始游戏”****，然后主机应用显示一个问题和可能的答案（它还以正常字体粗细和灰色显示已加入玩家的列表）。 同时，答案显示在已加入客户端设备的按钮上。 Joan 点击上面带有答案“1975”的按钮，此时她的所有按钮都变为禁用状态。 在主机应用上，Joan 的名字被涂成绿色（并且变为粗体），以此示意已收到她的答案。 Maxwell 也给出了答案。 测验主持人注意到所有玩家的名字都变为绿色后，单击“下一个问题”****。
 
-以这一相同的循环方式继续提出问题和回答问题。 当最后一个问题显示在主机应用上时，按钮的内容是**“显示结果”**，而不是**“下一个问题”**。 当单击**“显示结果”**时，将显示结果。 通过单击**“返回大厅”**可返回到游戏开始时的状态，只是已加入的玩家仍然保持加入状态。 但是返回大厅为新玩家提供了加入的机会，甚至为已加入的玩家提供了便于离开的时间（尽管已加入玩家可随时通过点击**“离开游戏”**离开）。
+以这一相同的循环方式继续提出问题和回答问题。 当最后一个问题显示在主机应用上时，按钮的内容是“显示结果”****，而不是“下一个问题”****。 当单击“显示结果”****时，将显示结果。 通过单击“返回大厅”****可返回到游戏开始时的状态，只是已加入的玩家仍然保持加入状态。 但是返回大厅为新玩家提供了加入的机会，甚至为已加入的玩家提供了便于离开的时间（尽管已加入玩家可随时通过点击“离开游戏”****离开）。
 
 ## 本地测试模式
 
@@ -82,11 +83,11 @@ QuizGame 具有以下部分。
 
 **QuizGame10 解决方案**
 
--   创建一个新的解决方案（**“新建项目”**>**“其他项目类型”**>**“Visual Studio 解决方案”**）并将其命名为 QuizGame10。
+-   创建一个新的解决方案（“新建项目”****&gt;“其他项目类型”****&gt;“Visual Studio 解决方案”****）并将其命名为 QuizGame10。
 
 **P2PHelper**
 
--   在解决方案中，创建一个新的 Windows 10 类库项目（**“新建项目”**>**“Windows 通用”**>**“类库 (Windows 通用)”**）并将其命名为 P2PHelper。
+-   在解决方案中，创建一个新的 Windows 10 类库项目（“新建项目”****&gt;“Windows 通用”****&gt;“类库(Windows 通用)”****）并将其命名为 P2PHelper。
 -   从新项目中删除 Class1.cs。
 -   将 P2PSession.cs、P2PSessionClient.cs 和 P2PSessionHost.cs 复制到新项目的文件夹中，并在新项目中包括已复制的文件。
 -   该项目无需其他更改即可构建。
@@ -98,9 +99,9 @@ QuizGame 具有以下部分。
 
 **QuizGameHost**
 
--   创建一个新的 Windows 10 应用项目（**“添加”**>**“新建项目”**>**“Windows 通用”**>**“空白应用程序(Windows 通用)”**），并将其命名为 QuizGameHost。
--   添加对 P2PHelper 的引用（**“添加引用”**>**“项目”**>**“解决方案”**>**“P2PHelper”**）。
--   在**“解决方案资源管理器”**中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后单击**“添加”**>**“现有项”**并向上导航到文件夹。 打开相应的共享文件夹、选择所有文件，然后单击**“添加为链接”**。
+-   创建一个新的 Windows 10 应用项目（“添加”****&gt;“新建项目”****&gt;“Windows 通用”****&gt;“空白应用程序(Windows 通用)”****）并将其命名为 QuizGameHost。
+-   添加对 P2PHelper 的引用（“添加引用”****&gt;“项目”****&gt;“解决方案”****&gt;“P2PHelper”****）。
+-   在“解决方案资源管理器”****中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后依次单击“添加”****&gt;“现有项”****并向上导航文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”****。
 -   将 MainPage.xaml 从 \\QuizGame.Windows\\ 复制到 \\QuizGameHost\\ ，并将命名空间更改为 QuizGameHost。
 -   将 App.xaml 从 \\QuizGame.Shared\\ 复制到 \\QuizGameHost\\，并将命名空间更改为 QuizGameHost。
 -   我们会将该版本保留在新项目中，并只进行一个定向更改以支持本地测试模式，而不是覆盖 app.xaml.cs。 在 app.xaml.cs 中，将此行代码
@@ -119,15 +120,15 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 #endif
 ```
 
--   在**“属性”**>**“生成”**>**“条件编译符号”**中，添加 LOCALTESTMODEON。
+-   在“属性”****&gt;“生成”****&gt;“条件编译符号”****中，添加 LOCALTESTMODEON。
 -   现在可以返回到你向 app.xaml.cs 添加的代码并解析 TestView 类型。
 -   在 package.appxmanifest 中，将功能名称从 internetClient 更改为 internetClientServer。
 
 **QuizGameClient**
 
--   创建一个新的 Windows 10 应用项目（**“添加”**>**“新建项目”**>**“Windows 通用”**>**“空白应用程序 (Windows 通用)”**），并将其命名为 QuizGameHost。
--   添加对 P2PHelper 的引用（**“添加引用”**>**“项目”**>**“解决方案”**>**“P2PHelper”**）。
--   在**“解决方案资源管理器”**中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后单击**“添加”**>**“现有项”**并向上导航到文件夹。 打开相应的共享文件夹、选择所有文件，然后单击**“添加为链接”**。
+-   创建一个新的 Windows 10 应用项目（“添加”****&gt;“新建项目”****&gt;“Windows 通用”****&gt;“空白应用程序(Windows 通用)”****）并将其命名为 QuizGameClient。
+-   添加对 P2PHelper 的引用（“添加引用”****&gt;“项目”****&gt;“解决方案”****&gt;“P2PHelper”****）。
+-   在“解决方案资源管理器”****中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后依次单击“添加”****&gt;“现有项”****并向上导航文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”****。
 -   将 MainPage.xaml 从 \\QuizGame.WindowsPhone\\ 复制到 \\QuizGameClient\\，并将命名空间更改为 QuizGameClient。
 -   将 App.xaml 从 \\QuizGame.Shared\\ 复制到 \\QuizGameClient\\，并将命名空间更改为 QuizGameClient。
 -   在 package.appxmanifest 中，将功能名称从 internetClient 更改为 internetClientServer。
@@ -149,7 +150,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 -   在 `OptionContentControlStyle` 中，将 **FontSize** 资源库的值更改为“20”。 此步骤和上一个步骤将为我们提供一个可在所有设备上良好工作的良好字型渐变。 这些大小比我们为 Windows 8.1 应用使用的“30”要灵活很多。
 -   最后，将相应的视觉状态管理器标记添加到根 **Grid**。
 
-```xaml
+```xml
 <VisualStateManager.VisualStateGroups>
     <VisualStateGroup>
         <VisualState x:Name="WideState">
@@ -171,7 +172,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 你会注意到在 Windows 10 中，按钮不具有其模板中面向触摸的相同填充。 可以通过两个小更改修复该问题。 第一，将此标记添加到 QuizGameHost 和 QuizGameClient 中的 app.xaml。
 
-```xaml
+```xml
 <Style TargetType="Button">
     <Setter Property="Margin" Value="12"/>
 </Style>
@@ -179,7 +180,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 第二，将此资源库添加到 \\View\\ClientView.xaml 中的 `OptionButtonStyle`。
 
-```xaml
+```xml
 <Setter Property="Margin" Value="6"/>
 ```
 
@@ -190,6 +191,6 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 我们在此案例研究中移植的应用是涉及到多个项目、一个类库以及大量代码和用户界面的相对复杂的应用。 即便如此，该移植仍然很简单。 移植的一些便利之处可以直接归功于 Windows 10 开发人员平台与 Windows 8.1 和 Windows Phone 8.1 平台之间的相似性。 另一些是由于原始应用的设计方式使模型、视图模型和视图保持分离。
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

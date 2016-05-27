@@ -1,16 +1,17 @@
 ---
+author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: 本主题介绍将一个非常简单的 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
+description: 本主题介绍将一个非常简单的将 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
 title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1
 ---
 
 # 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题介绍将一个非常简单的将 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。 在 Windows 10 中，你可以创建可供客户安装到种类广泛的设备上的单个应用包，而这正是我们要在此案例研究中实现的目标。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面图像已将**“生成操作”**设置为**“内容”**，并将**“复制到输出目录”**设置为**“不要复制”**。
+我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将“生成操作”****设置为“内容”****，并将“复制到输出目录”****设置为“不要复制”****。
 
 本部分中之前的主题介绍了平台之间的差异，并且提供有关将应用的各个方面从 XAML 标记移植到访问数据（通过绑定到视图模型）这一过程的详细信息和指南。 案例研究旨在通过在真实示例中实际显示指南来补充该指南。 案例研究假设你已阅读该指南，因此不会重复该指南。
 
@@ -38,7 +39,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 
 我们可以将 Visual Studio 生成的 App.xaml 和 App.xaml.cs 保存在 Windows 10 项目中。
 
-编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1WPSL8 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用**“在文件中替换”**功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改：
+编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1WPSL8 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用“在文件中替换”****功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改：
 
 -   将 `System.ComponentModel.DesignerProperties` 更改为 `DesignMode`，然后对其使用 **Resolve** 命令。 删除 `IsInDesignTool` 属性并使用 IntelliSense 添加正确的属性名称：`DesignModeEnabled`。
 -   对 `ImageSource` 使用 **Resolve** 命令。
@@ -68,7 +69,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 
 ## 支付债务项和一些初始样式设置
 
-默认情况下，支持所有方向。 但是，Windows Phone Silverlight 应用将自身明确约束为仅限纵向，因此债务项 \#1 和 \#2 通过转到新项目中的应用包清单中并选中**“支持的方向”**下的**“纵向”**来支付。
+默认情况下，支持所有方向。 但是，Windows Phone Silverlight 应用将自身明确约束为仅限纵向，因此债务项 \#1 和 \#2 通过转到新项目中的应用包清单中并选中“支持的方向”****下的“纵向”****来支付。
 
 对于此应用，项 \#3 不是债务，因为默认情况下会显示状态栏（以前称为系统托盘）。 对于项 \#4 和 \#5，我们需要找到与已在使用的 Windows Phone Silverlight 样式相对应的四个通用 Windows 平台 (UWP) **TextBlock** 样式。 可以在仿真器中运行 Windows Phone Silverlight 应用并将其与[文本](wpsl-to-uwp-porting-xaml-and-ui.md#text)部分中的图示并排比较。 通过执行该操作以及查看 Windows Phone Silverlight 系统样式的属性，我们可以生成此表。
 
@@ -79,7 +80,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，而无需键入任何内容。 若要执行该操作，请右键单击 **TextBlock**，然后依次单击**“编辑样式”**>**“应用资源”**。 若要对项模板中的 **TextBlock** 执行该操作，请右键单击 **ListBox**，然后依次单击**“编辑其他模板”**>**“编辑生成的项 (ItemTemplate)”**。
+若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，而无需键入任何内容。 若要执行该操作，右键单击 **TextBlock**，然后依次单击“编辑样式”****&gt;“应用资源”****。 若要对项模板中的 **TextBlock** 执行该操作，右键单击 **ListBox**，然后依次单击“编辑其他模板”****&gt;“编辑生成的项 (ItemTemplate)”****。
 
 项目后有一个 80% 不透明的白色背景，因为 **ListBox** 控件的默认样式将其背景设置为 `ListBoxBackgroundThemeBrush` 系统资源。 在 **ListBox** 上设置 `Background="Transparent"` 以清除该背景。 若要使项模板中的 **TextBlock** 向左对齐，请采用上述的相同方式再次编辑它，并在两个 **TextBlock** 上都设置 `"9.6,0"` 的 **Margin**。
 
@@ -130,6 +131,6 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 下一个案例研究是 [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md)，我们将从中了解访问和显示分组数据。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

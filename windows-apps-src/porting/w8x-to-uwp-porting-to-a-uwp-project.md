@@ -1,24 +1,25 @@
 ---
+author: mcleblanc
 description: 在开始移植过程时，你有两个选择。
-title: 将 Windows 运行时 8.x 项目移植到 UWP 项目
+title: 将 Windows 运行时 8.x 项目移植到 UWP 项目&#39;
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 ---
 
 # 将 Windows 运行时 8.x 项目移植到 UWP 项目
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中有关更新项目文件的信息）。 另一个是在 Visual Studio 中创建一个新的 Windows 10 项目，并将你的文件复制到其中。 本主题的第一部分描述了第二个选择，但本主题的其余部分提供了同时适用于这两个选择的其他信息。 你还可以选择将新的 Windows 10 项目保留在与你的现有项目相同的解决方案中，并使用已共享的项目共享源代码文件。 或者，你也可以将新项目保留在它自己的解决方案中，并使用 Visual Studio 中链接的文件功能共享源代码文件。
 
 ## 创建项目并向其复制文件
 
-这些步骤侧重于以下内容：在 Visual Studio 中创建一个新的 Windows 10 项目，并将你的文件复制到其中。 某些围绕着所创建的项目数和要复制的文件展开的特定步骤，将依赖于[“如果你有一个通用 8.1 应用”](w8x-to-uwp-root.md#if-you-have-an-81-universal-windows-app)及其后的部分中所述的规格和决策。 这些步骤中假设了最简单的应用场景。
+这些步骤侧重于以下内容：在 Visual Studio 中创建一个新的 Windows 10 项目，并将你的文件复制到其中。 某些围绕着所创建的项目数和要复制的文件展开的特定步骤，将依赖于[如果你有一个通用 8.1 应用](w8x-to-uwp-root.md#if-you-have-an-81-universal-windows-app)及其后的部分中所述的规格和决策。 这些步骤中假设了最简单的应用场景。
 
 1.  启动 Microsoft Visual Studio 2015 并创建新的空白应用程序（Windows 通用）项目。 有关详细信息，请参阅[使用模板（C#、C++、Visual Basic）快速启动 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/hh768232)。 新建项目会构建一个可在所有设备系统上运行的应用包（appx 文件）。
 2.  在 Universal 8.1 App 项目中，标识要重用的所有源代码文件和视觉资产文件。 通过使用文件资源管理器，将数据模型、视图模型、视觉资产、资源词典，文件夹结构和想要重用的任何其他内容复制到新项目中。 根据需要在磁盘上复制或创建子文件夹。
 3.  还可以将视图（例如，MainPage.xaml 和 MainPage.xaml.cs）复制到新项目中。 同样，也可根据需要创建新的子文件夹，并从项目中删除现有视图。 但在覆盖或删除 Visual Studio 生成的视图之前，请保留一份副本，因为在以后引用它时，这可能会很有用。 移植通用 8.1 应用的第一个阶段侧重于使其在某一设备系列上正常显示并良好运行。 之后，将侧重点转到确保视图能自行适应所有外观规格，也可以选择添加任何自适应代码以最大程度地利用特定的设备系列。
-4.  在**“解决方案资源管理器”**中，请确保将**“显示所有文件”**切换为打开。 选择要复制的文件，右键单击这些文件，然后单击“包括在项目中”****。 这将自动包括其所包含的文件夹。 然后，可根据需要将**“显示所有文件”**切换为关闭。 备用工作流（如果选择）旨在使用**“添加现有项”**命令，以便在 Visual Studio**“解决方案资源管理器”**中创建任何必要子文件夹。 仔细检查可见资源是否已将**“生成操作”**设置为**“内容”**，并将**“复制到输出目录”**设置为**“不复制”**。
+4.  在“解决方案资源管理器”****中，请确保将“显示所有文件”****切换为打开。 选择要复制的文件，右键单击这些文件，然后单击“包括在项目中”****。 这将自动包括其所包含的文件夹。 然后，可根据需要将**“显示所有文件”**切换为关闭。 备用工作流（如果选择）旨在使用**“添加现有项”**命令，以便在 Visual Studio**“解决方案资源管理器”**中创建任何必要子文件夹。 仔细检查可见资源是否已将“生成操作”****设置为“内容”****，并将“复制到输出目录”****设置为“不复制”****。
 5.  你很可能会在此阶段看到一些生成错误。 不过，如果你知道需要更改哪些内容，则可以使用 Visual Studio 的 **Find and Replace** 命令批量更改源代码；并且可以在 Visual Studio 的强制性代码编辑器中，使用上下文菜单上的 **Resolve** 和 **Organize Usings** 命令了解更多目标更改。
 
 ## 最大程度地重新使用标记和代码
@@ -39,7 +40,7 @@ ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 
 如果你收到有关找不到命名空间、类型或成员的编译错误，这很可能是导致此类错误出现的原因。 打开 API 参考文档中的 API 主题并导航到“要求”部分：你可以从中了解到设备系列实现的内容。 如果这不是你的目标设备系列，但需要使相应 API 适用于你的项目，你将需要一个对该设备系列的扩展 SDK 的引用。
 
-依次单击**“项目”**>**“添加引用”**>**“Windows 通用”**>**“扩展”**，然后选择相应的扩展 SDK。 例如，如果要调用的 API 仅在移动设备系列中可用，且它们已在版本 10.0.x.y 中引入，请选择**“适用于 UWP 的 Windows 移动版扩展”**。
+依次单击“项目”****&gt;“添加引用”****&gt;“Windows 通用”****&gt;“扩展”****，然后选择相应的扩展 SDK。 例如，如果要调用的 API 仅在移动设备系列中可用，且它们已在版本 10.0.x.y 中引入，请选择“适用于 UWP 的 Windows 移动版扩展”****。
 
 这将向你的项目文件添加以下引用：
 
@@ -78,7 +79,7 @@ ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 由于 Windows 10 在 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API 上融合，因此可对你的代码作如下简化：
 
 ```csharp
-    // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync</code></pre></td>
+    // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
 ```
 
 在此示例中，我们将处理硬件后退按钮，但仅在 Windows Phone 上才进行处理。
@@ -158,7 +159,7 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 你的项目中的设置（包括任何扩展 SDK 引用）决定了你的应用可以调用的 API 图面区域。 但是，你的应用包清单决定了你的客户可以从应用商店将你的应用安装在哪些实际的设备集上。 有关详细信息，请参阅 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 中的相关示例。
 
-你可以编辑应用包清单以设置各种声明、功能和某些功能所需的其他设置。 你可以使用 Visual Studio 应用包清单编辑器来编辑它。 如果未显示**“解决方案资源管理器”**，请从**“视图”**菜单中选择它。 双击 **Package.appxmanifest**。 此时会打开“清单编辑器”窗口。 选择要更改的相应选项卡，然后进行保存。
+你可以编辑应用包清单以设置各种声明、功能和某些功能所需的其他设置。 你可以使用 Visual Studio 应用包清单编辑器来编辑它。 如果未显示“解决方案资源管理器”****，请从“视图”****菜单中选择它。 双击“Package.appxmanifest”****。 此时会打开“清单编辑器”窗口。 选择要更改的相应选项卡，然后进行保存。
 
 下一主题为[疑难解答](w8x-to-uwp-troubleshooting.md)。
 
@@ -171,6 +172,6 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
