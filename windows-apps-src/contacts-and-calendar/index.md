@@ -1,4 +1,5 @@
 ---
+author: Xansky
 description: 如何在 UWP 应用中使用联系人和日历信息。
 title: 联系人和日历
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
@@ -33,6 +34,6 @@ ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
