@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DirectX 游戏项目模板
 description: 了解用于创建通用 Windows 平台 (UWP) 和 DirectX 游戏的模板。
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
@@ -71,7 +72,7 @@ DirectX 通用 Windows 模板包含以下文件：
 -   [开发 Marble Maze，一款使用 C++ 和 DirectX 的通用 Windows 平台游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
 > **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -84,6 +85,6 @@ DirectX 通用 Windows 模板包含以下文件：
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

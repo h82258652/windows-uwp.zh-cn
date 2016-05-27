@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 游戏和 DirectX
 description: 通用 Windows 平台 (UWP) 提供了创建、分配游戏以及通过游戏获益的新机会。 了解有关启动新游戏或移植现有游戏的信息。
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
@@ -42,7 +43,7 @@ ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
  
 
 > **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发， 请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -62,6 +63,6 @@ ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

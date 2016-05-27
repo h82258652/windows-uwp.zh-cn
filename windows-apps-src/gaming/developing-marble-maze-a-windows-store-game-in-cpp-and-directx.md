@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏
 description: 文档的这部分介绍了如何使用 DirectX 和 Visual C++ 创建 3D 通用 Windows 平台 (UWP) 游戏。
 ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
@@ -100,6 +101,6 @@ Marble Maze 还使用 [DirectXMath](https://msdn.microsoft.com/library/windows/d
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

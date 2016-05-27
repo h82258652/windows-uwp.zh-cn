@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 转换呈现框架
 description: 介绍如何将简单的呈现框架从 Direct3D 9 转换到 Direct3D 11，包括如何移植几何图形缓冲区、如何编译和加载 HLSL 着色器程序以及如何在 Direct3D 11 中实现呈现链。
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
@@ -16,7 +17,7 @@ ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
 -   [第 3 部分：移植游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-介绍如何将简单的呈现框架从 Direct3D 9 转换到 Direct3D 11，包括如何移植几何图形缓冲区、如何编译和加载 HLSL 着色器程序以及如何在 Direct3D 11 中实现呈现链。 [将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 操作实例的第 2 部分。
+介绍如何将简单的呈现框架从 Direct3D 9 转换到 Direct3D 11，包括如何移植几何图形缓冲区、如何编译和加载 HLSL 着色器程序以及如何在 Direct3D 11 中实现呈现链。 [将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 演练的第 2 部分。
 
 ## 将效果转换到 HLSL 着色器
 
@@ -227,9 +228,9 @@ m_d3dDevice->CreateVertexShader(
     );
 ```
 
-若要在编译的应用程序包中包含着色器字节码，只需将 HLSL 文件添加到 Visual Studio 项目。 Visual Studio 将使用[效果编译器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) 将 HLSL 文件编译到编译的着色器对象（.CSO 文件）中，并将其包含在应用程序包中。
+若要在编译的应用程序包中包含着色器字节码，只需将 HLSL 文件添加到 Visual Studio 项目。 Visual Studio 将使用[效果编译器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) 将 HLSL 文件编译到编译的着色器对象（.CSO 文件）中，并将其包含在应用包中。
 
-> **注意** 确保为 HLSL 编译器设置正确的目标功能级别；在 Visual Studio 中右键单击 HLSL 源文件，选择“属性”并在**“HLSL 编译器 -> 常规”**下更改**“着色器模型”**设置。 当你的应用创建 Direct3D 着色器资源时，Direct3D 会针对硬件功能检查此属性。
+> **注意** 请确保为 HLSL 编译器设置正确的目标功能级别；在 Visual Studio 中右键单击 HLSL 源文件，选择“属性”并在“HLSL 编译器”-&gt;“常规”****下更改“着色器模型”****设置。 当你的应用创建 Direct3D 着色器资源时，Direct3D 会针对硬件功能检查此属性。
 
  
 
@@ -476,7 +477,7 @@ m_d3dContext->DrawIndexed(
 m_swapChain->Present(1, 0);
 ```
 
-将从在 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中实现的游戏循环调用我们刚刚创建的呈现链。 [第 3 部分：视区和游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)中对此进行了介绍。
+将从在 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中实现的游戏循环调用我们刚刚创建的呈现链。 [第 3 部分：视口和游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)中对此进行了介绍。
 
  
 
@@ -487,6 +488,6 @@ m_swapChain->Present(1, 0);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

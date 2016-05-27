@@ -1,6 +1,7 @@
 ---
-title: 向 Marble Maze 添加音频示例
-description: 本文档介绍了在使用音频时要考虑的重要实践，并展示了 Marble Maze 如何应用这些实践。
+author: mtoepke
+title: 向 Marble Maze 示例添加音频
+description: 本文档介绍了在使用音频时要考虑的重要做法，并展示了 Marble Maze 如何应用这些做法。
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ---
 
@@ -40,7 +41,7 @@ XAudio2 是一个专门用于支持游戏音频的 Windows 低级别音频库。
 -   子混合语音处理音频数据。 这种处理可能包括更改音频流或将多个流组合为一个。 Marble Maze 使用子混合来创建混响效果。
 -   主语音组合来自来源和子混合语音的数据，并将该数据发送给音频硬件。
 -   音频图包含每种有效声音的一个源语音，零或多个子混合语音，以及单个主语音。
--   回调可通知客户端代码，一个语音或引擎对象中发生了某个事件。 使用回调，可在 XAudio2 完成时通过缓冲区重用内存，在音频设备更改时（例如连接耳机或连接断开时）做出反应等。 本文后面[处理耳机和设备更改](#phones)一节将介绍 Marble Maze 如何使用此机制处理设备更改。
+-   回调可通知客户端代码，一个语音或引擎对象中发生了某个事件。 使用回调，可在 XAudio2 完成时通过缓冲区重用内存，在音频设备更改时（例如连接耳机或连接断开时）做出反应等。 本文后面的[处理耳机和设备更改](#phones)一节将介绍 Marble Maze 如何使用此机制处理设备更改。
 
 Marble Maze 使用两个音频引擎（换言之，两个 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 对象）处理音频。 一个引擎处理背景音乐，另一个引擎处理游戏声音。
 
@@ -53,13 +54,13 @@ Marble Maze 还必须为每个引擎创建一个主语音。 回想一下，主�
 ## 初始化音频资源
 
 
-Marble Maze 使用 Windows Media 音频 (.wma) 文件作为背景音乐，使用 WAV (.wav) 文件作为游戏声音。 媒体基础支持这些格式。 尽管 .wav 文件格式受 XAudio2 本机支持，但游戏需要手动解析文件格式，以填充合适的 XAudio2 数据结构。 Marble Maze 使用媒体基础可更轻松地处理 .wav 文件。 有关媒体基础支持的媒体格式的完整列表， 请参阅[媒体基础中支持的媒体格式](https://msdn.microsoft.com/library/windows/desktop/dd757927)。 Marble Maze 不使用独立的设计时和运行时音频格式，也不使用 XAudio2 ADPCM 压缩支持。 有关 XAudio2 中的 ADPCM 压缩的详细信息，请参阅 [ADPCM 概述](https://msdn.microsoft.com/library/windows/desktop/ee415711)。
+Marble Maze 使用 Windows Media 音频 (.wma) 文件作为背景音乐，使用 WAV (.wav) 文件作为游戏声音。 媒体基础支持这些格式。 尽管 .wav 文件格式受 XAudio2 本机支持，但游戏需要手动解析文件格式，以填充合适的 XAudio2 数据结构。 Marble Maze 使用媒体基础可更轻松地处理 .wav 文件。 有关媒体基础支持的媒体格式的完整列表，请参阅[媒体基础中支持的媒体格式](https://msdn.microsoft.com/library/windows/desktop/dd757927)。 Marble Maze 不使用独立的设计时和运行时音频格式，也不使用 XAudio2 ADPCM 压缩支持。 有关 XAudio2 中的 ADPCM 压缩的详细信息，请参阅 [ADPCM 概述](https://msdn.microsoft.com/library/windows/desktop/ee415711)。
 
 **Audio::CreateResources** 方法（从 **MarbleMaze::CreateDeviceIndependentResources** 调用）从文件加载音频流、初始化 XAudio2 引擎对象，并创建源、子混合和主语音。
 
 ###  创建 XAudio2 引擎
 
-回想一下，Marble Maze 创建一个 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 对象来表示它使用的每个音频引擎。 要创建音频引擎，可调用 [**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) 函数。 以下示例展示了 Marble Maze 如何创建可处理背景音乐的音频引擎。
+回想一下，Marble Maze 创建一个 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 对象来表示它使用的每个音频引擎。 若要创建音频引擎，请调用 [**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) 函数。 以下示例展示了 Marble Maze 如何创建可处理背景音乐的音频引擎。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -97,11 +98,11 @@ DX::ThrowIfFailed(
 );
 ```
 
-**Audio::CreateResources** 方法执行类似的步骤为游戏声音创建主语音，但它为 *StreamCategory* 参数指定了 **AudioCategory\_GameEffects**，这是默认设置。 Marble Maze 为背景音乐指定了 **AudioCategory\_GameMedia**，以便用户在玩游戏时可通过不同的应用程序听音乐。 当音乐应用运行时，Windows 会将 **AudioCategory\_GameMedia** 选项创建的所有语音设置为静音。 用户仍会听到游戏声音，因为它们是通过 **AudioCategory\_GameEffects** 选项创建的。 有关音频类别的详细信息，请参阅 [**AUDIO\_STREAM\_CATEGORY**](https://msdn.microsoft.com/library/windows/desktop/hh404178) 枚举。
+**Audio::CreateResources** 方法执行类似的步骤为游戏开始声音创建主语音，但它为 *StreamCategory* 参数指定了 **AudioCategory\_GameEffects**，这是默认设置。 Marble Maze 为背景音乐指定了 **AudioCategory\_GameMedia**，以便用户在玩游戏时可通过不同的应用程序听音乐。 当音乐应用运行时，Windows 会将 **AudioCategory\_GameMedia** 选项创建的所有语音设置为静音。 用户仍会听到游戏开始声音，因为它们是通过 **AudioCategory\_GameEffects** 选项创建的。 有关音频类别的详细信息，请参阅 [**AUDIO\_STREAM\_CATEGORY**](https://msdn.microsoft.com/library/windows/desktop/hh404178) 枚举。
 
 ###  创建混响效果
 
-对于每种语音，可使用 XAudio2 创建处理音频的效果序列。 这种序列称为效果链。 希望向一个语音应用一种或多种效果时，可使用效果链。 效果链可能是破坏性的；也就是说，链中的每个效果可能覆盖音频缓冲区。 此属性很重要，因为 XAudio2 无法保证输出缓冲区最初是静音的。 效果对象在 XAudio2 中由跨平台音频处理对象 (XAPO) 表示。 有关 XAPO 的详细信息，请参阅 [XAPO 概述](o:microsoft.directx_sdk.xapo.audio_overview_xapo)。
+对于每种语音，可使用 XAudio2 创建处理音频的效果序列。 这种序列称为效果链。 希望向一个语音应用一种或多种效果时，可使用效果链。 效果链可能是破坏性的；也就是说，链中的每个效果可能覆盖音频缓冲区。 此属性很重要，因为 XAudio2 无法保证输出缓冲区最初是静音的。 效果对象在 XAudio2 中由跨平台音频处理对象 (XAPO) 表示。 有关 XAPO 的详细信息，请参阅 [XAPO 概述](https://msdn.microsoft.com/library/windows/desktop/ee415735)。
 
 创建效果链时，执行以下步骤：
 
@@ -130,7 +131,7 @@ soundEffectdescriptor.pEffect = soundEffectXAPO.Get();
 ```
 
 如果效果链有多个效果，则每个效果需要一个对象。 [
-            **XAUDIO2\_EFFECT\_CHAIN**](https://msdn.microsoft.com/library/windows/desktop/ee419235) 结构包含参与该效果的 [**XAUDIO2\_EFFECT\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419236) 对象数组。 以下示例展示了 **Audio::CreateReverb** 方法如何指定一种实现混响的效果。
+            **XAUDIO2\_EFFECT\_CHAIN**](https://msdn.microsoft.com/library/windows/desktop/ee419235) 结构包含参与该效果的 [**XAUDIO2\_EFFECT\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419236) 对象的数组。 以下示例展示了 **Audio::CreateReverb** 方法如何指定一种实现混响的效果。
 
 ```cpp
 soundEffectChain.EffectCount = 1;
@@ -324,7 +325,7 @@ m_maxStreamLengthInBytes = (m_maxStreamLengthInBytes + 3) / 4 * 4;
 
 ### 创建源语音
 
-Marble Maze 创建 XAudio2 源语音来播放源语音中的每种游戏声音和音乐。 **Audio** 类为背景音乐定义 [**IXAudio2SourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415914) 对象，并定义 **SoundEffectData** 对象数组来保留游戏声音。 **SoundEffectData** 结构保留效果的 **IXAudio2SourceVoice** 对象，还定义了其他与效果相关的数据，例如音频缓冲区。 Audio.h 定义 **SoundEvent** 枚举。 Marble Maze 使用此枚举识别每种游戏声音。 Audio 类也使用此枚举来为 **SoundEffectData** 对象数组建立索引。
+Marble Maze 创建 XAudio2 源语音来播放源语音中的每种游戏声音和音乐。 **Audio** 类为背景音乐定义 [**IXAudio2SourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415914) 对象，并定义 **SoundEffectData** 对象数组来保留游戏声音。 **SoundEffectData** 结构保留效果的 **IXAudio2SourceVoice** 对象，还定义了其他与效果相关的数据，例如音频缓冲区。 Audio.h 定义 **SoundEvent** 枚举。 Marble Maze 使用此枚举识别每种游戏声音。 Audio 类也使用此枚举来为 **SoundEffectData** 对象数组编制索引。
 
 ```cpp
 enum SoundEvent
@@ -525,7 +526,7 @@ void MediaStreamer::Restart()
 }
 ```
 
-要为单个缓冲区（或一个完全加载到内存中的完整声音）实现音频循环，可在初始化声音时将 **LoopCount** 字段设置为 **XAUDIO2\_LOOP\_INFINITE**。 Marble Maze 使用此技术播放弹珠的滚动声音。
+若要为单个缓冲区（或一个完全加载到内存中的完整声音）实现音频循环，可在初始化声音时将 **LoopCount** 字段设置为 **XAUDIO2\_LOOP\_INFINITE**。 Marble Maze 使用此技术播放弹珠的滚动声音。
 
 ```cpp
 if(sound == RollingEvent)
@@ -666,7 +667,7 @@ void Audio::SuspendAudio()
 }
 ```
 
-**Audio::ResumeAudio** 方法在游戏恢复时调用。 此方法使用 [**IXAudio2::StartEngine**](https://msdn.microsoft.com/library/windows/desktop/ee418626) 方法来重新启动音频。 因为对 [**IXAudio2::StopEngine**](https://msdn.microsoft.com/library/windows/desktop/ee418628) 的调用保留音频图及其效果参数，所以音频输出会从上次停止的地方恢复。
+**Audio::ResumeAudio** 方法在游戏恢复时调用。 此方法使用 [**IXAudio2::StartEngine**](https://msdn.microsoft.com/library/windows/desktop/ee418626) 方法来重启音频。 因为对 [**IXAudio2::StopEngine**](https://msdn.microsoft.com/library/windows/desktop/ee418628) 的调用保留音频图及其效果参数，所以音频输出会从上次停止的地方恢复。
 
 ```cpp
 // Restarts the audio streams. A call to this method must match a previous call  
@@ -721,7 +722,7 @@ public :
 ```
 
 [
-            **IXAudio2EngineCallback**](https://msdn.microsoft.com/library/windows/desktop/ee415910) 接口使你的代码在发生音频处理事件时和引擎遇到致命错误时获得通知。 要注册回调，Marble Maze 在为音乐引擎创建 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 对象后调用 [**IXAudio2::RegisterForCallbacks**](https://msdn.microsoft.com/library/windows/desktop/ee418620) 方法。
+            **IXAudio2EngineCallback**](https://msdn.microsoft.com/library/windows/desktop/ee415910) 接口使你的代码在发生音频处理事件时和引擎遇到致命错误时获得通知。 若要注册回调，Marble Maze 在为音乐引擎创建 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 对象后调用 [**IXAudio2::RegisterForCallbacks**](https://msdn.microsoft.com/library/windows/desktop/ee418620) 方法。
 
 ```cpp
 m_musicEngineCallback.Initialize(this);
@@ -788,6 +789,6 @@ Marble Maze 还使用 **m\_engineExperiencedCriticalError** 标志以防止在�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 在许多硬件上支持阴影图
 description: 在速度更快的设备上更高保真度地呈现阴影，在功能不够强大的设备上更快地呈现阴影。
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
@@ -114,7 +115,7 @@ return float4(input.color * (light + shadow), 1.f);
 
 着色器的线性筛选版本的项目文件条目定义 LINEAR：
 
-```
+```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Pixel</ShaderType>
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Pixel</ShaderType>
@@ -143,7 +144,7 @@ return float4(input.color * (light + shadow), 1.f);
 
 着色器的线性筛选版本的项目文件条目不包括预处理器定义：
 
-```
+```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Pixel</ShaderType>
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Pixel</ShaderType>
@@ -173,6 +174,6 @@ return float4(input.color * (light + shadow), 1.f);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

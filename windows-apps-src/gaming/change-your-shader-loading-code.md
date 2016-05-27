@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 将 OpenGL ES 2.0 着色器管道与 Direct3D 进行比较
 description: 从概念上来说，Direct3D 11 着色器管道与 OpenGL ES 2.0 中的着色器管道非常相似。
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
@@ -7,7 +8,7 @@ ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 # 将 OpenGL ES 2.0 着色器管道与 Direct3D 进行比较
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -32,8 +33,7 @@ Direct3D 11 图形管道由 [**ID3D11DeviceContext1**](https://msdn.microsoft.co
 -   [像素着色器阶段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage) - 像素着色器阶段接收基元的插值数据并生成每像素数据，如颜色。 支持此阶段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法的前缀为“PS”。
 -   [输出合并器阶段](https://msdn.microsoft.com/library/windows/desktop/bb205120) - 输出合并器阶段将各种类型的输出数据（像素着色器值、深度和模具信息）与呈现器目标的内容以及深度/模具缓冲区组合在一起，以生成最终的管道结果。 支持此阶段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法的前缀为“OM”。
 
-（还有针对几何图形着色器、外壳着色器、曲面细分以及域着色器的阶段，但由于在 OpenGL ES 2.0 中这些阶段没有类似内容，因此我们不会在这里讨论它们。）
-有关这些阶段的完整方法列表，请参阅 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 参考页面。 **ID3D11DeviceContext1** 扩展了 Direct3D 11 的 **ID3D11DeviceContext**。
+（还有针对几何图形着色器、外壳着色器、曲面细分以及域着色器的阶段，但由于在 OpenGL ES 2.0 中这些阶段没有类似内容，因此我们不会在这里讨论它们。）有关适用于这些阶段的方法的完整列表，请参阅 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 参考页面。 **ID3D11DeviceContext1** 扩展了 Direct3D 11 的 **ID3D11DeviceContext**。
 
 ## 创建着色器
 
@@ -146,7 +146,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 ## 配置像素着色器
 
 
-在 Direct3D 11 中配置像素着色器是在加载该着色器时完成的。 使用 [**ID3D11DeviceContext1::PSSetConstantBuffers1.**](https://msdn.microsoft.com/library/windows/desktop/hh404649) 将 Uniform 作为常量缓冲区传递
+在 Direct3D 11 中配置像素着色器是在加载该着色器时完成的。 使用 [**ID3D11DeviceContext1::PSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404649) 将 Uniform 作为常量缓冲区传递。
 
 | OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
@@ -249,6 +249,6 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

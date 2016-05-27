@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 创建着色器和绘制基元
 description: 在此处，我们将向你介绍如何使用 HLSL 源文件来编译和创建着色器，这些着色器可用于在显示器上绘制基元。
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
@@ -290,6 +291,6 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

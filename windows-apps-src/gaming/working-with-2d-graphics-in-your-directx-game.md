@@ -1,13 +1,14 @@
 ---
-title: DirectX 游戏的二维图形
-description: 我们将讨论二维位图图形的使用和效果，以及如何在游戏中使用它们。
+author: mtoepke
+title: DirectX 游戏的 2D 图形
+description: 我们将讨论 2D 位图图形的使用和效果，以及如何在游戏中使用它们。
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ---
 
-# DirectX 游戏的二维图形
+# DirectX 游戏的 2D 图形
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 我们将讨论二维位图图形的使用和效果，以及如何在游戏中使用它们。
 
@@ -53,7 +54,7 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 -   [Direct2D 和 Direct3D 互操作性概述](https://msdn.microsoft.com/library/windows/desktop/dd370966)
 
 > **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -66,6 +67,6 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

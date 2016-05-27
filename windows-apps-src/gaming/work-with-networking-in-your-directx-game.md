@@ -1,5 +1,6 @@
 ---
-title: 游戏网络
+author: mtoepke
+title: 游戏联网
 description: 了解如何在你的 DirectX 游戏中开发并融入联网功能。
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ---
@@ -396,6 +397,6 @@ using namespace Windows::Web::Http;
 * [StreamSocket 示例](http://go.microsoft.com/fwlink/p/?linkid=243037)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

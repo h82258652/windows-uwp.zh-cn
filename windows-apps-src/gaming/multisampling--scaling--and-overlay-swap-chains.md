@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 交换链缩放和覆盖
 description: 了解如何创建已缩放的交换链以提高在移动设备上的呈现速度，以及如何使用覆盖交换链（可用时）来提高视觉质量。
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
@@ -158,7 +159,7 @@ Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的
 
     > **注意** 每次调整交换链大小时都重新设置 [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076)。
 
-     ```cpp
+    ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
         2, // Double-buffered swap chain.
         static_cast<UINT>(m_d3dRenderTargetSize.Width),
@@ -323,6 +324,6 @@ Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

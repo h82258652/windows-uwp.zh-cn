@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 设置游戏项目
 description: 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
@@ -7,7 +8,7 @@ ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 # 设置游戏项目
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。 通过使用正确的模板和专门为游戏开发配置项目，可以节省大量的时间和减少不必要的麻烦。 我们将指导你完成设置和配置简单游戏项目的步骤。
 
@@ -26,11 +27,11 @@ ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 
 Visual Studio 模板是一个设置和代码文件集合，专用于基于首选语言和技术的特定类型的应用。 在 Microsoft Visual Studio 2015 中，你可以找到许多模板，这可以大大简化游戏和图形应用的开发。 如果不使用模板，则必须亲自开发大量的基本图形呈现和显示框架，这对于游戏开发新手而言可能是一件苦差事。
 
-适用于本教程的模板是标题为 DirectX 11 应用（通用 Windows）的模板。 在 Visual Studio 2015 中，依次单击**“文件...”**>**“新建项目”**，然后：
+适用于本教程的模板是标题为 DirectX 11 应用（通用 Windows）的模板。 在 Visual Studio 2015 中，依次单击“文件...”****&gt;“新建项目”****，然后：
 
-1.  从**“模板”**中，依次选择**“Visual C++”**、**“Windows”**、**“通用”**。
+1.  从“模板”****中，依次选择“Visual C++”****、“Windows”****、“通用”****。
 2.  在中心窗格中，选择“DirectX 11 应用（通用 Windows）”****。
-3.  为你的游戏项目命名，并单击**“确定”**。
+3.  为你的游戏项目命名，并单击“确定”****。
 
 ![选择“Direct3D 应用程序”模板](images/simple-dx-game-vs-new-proj.png)
 
@@ -120,15 +121,15 @@ void App::Run()
 
 代码文件并不是模板的全部内容。 **package.appxmanifest** 文件包含有关项目的元数据，这些元数据用于打包和启动游戏以及提交到 Windows 应用商店。 它还包含玩家系统用于提供对运行游戏所需的系统资源的访问权限的重要信息。
 
-通过在**“解决方案资源管理器”**中双击 **package.appxmanifest** 文件启动**“清单设计器”**。 你可以看到此视图：
+通过在“解决方案资源管理器”****中双击 **package.appxmanifest** 文件启动“清单设计器”****。 你可以看到此视图：
 
 ![package.appx 清单编辑器。](images/simple-dx-game-vs-app-manifest.png)
 
-有关 **package.appxmanifest** 文件和打包的详细信息，请参阅[清单设计器](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)。 现在，请看一下**“功能”**选项卡并查看提供的选项。
+有关 **package.appxmanifest** 文件和打包的详细信息，请参阅[清单设计器](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)。 现在，请看一下“功能”****选项卡并查看提供的选项。
 
 ![Direct3D 应用的默认功能。](images/simple-dx-game-vs-capabilities.png)
 
-如果不选择游戏使用的功能（如用于全球高分榜的**“Internet”**），你将无法访问相应的资源或功能。 在创建新游戏时，请确保选择了运行游戏所需的功能！
+如果不选择游戏使用的功能（如用于全球高分榜的“Internet”****），你将无法访问相应的资源或功能。 在创建新游戏时，请确保选择了运行游戏所需的功能！
 
 现在，我们看一下 **DirectX 11 应用（通用 Windows）**模板附带的其他文件。
 
@@ -163,6 +164,6 @@ void App::Run()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

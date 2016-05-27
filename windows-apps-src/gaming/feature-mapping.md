@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 将 DirectX 9 功能映射到 DirectX 11 API
 description: 了解 Direct3D 9 游戏使用的功能如何转换到 Direct3D 11 和通用 Windows 平台 (UWP)。
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
@@ -45,8 +46,8 @@ Direct2D 在 Direct3D 上运行，因此可以使用任一 API 实现 2D 游戏�
 
 D3DX 和 DXUT 已弃用，并且不能由 UWP 游戏使用。 这些帮助程序库为诸如纹理加载和网格加载之类的任务提供了资源。
 
--   [从 Direct3D 9 到 UWP 的简单移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)操作实例演示了如何设置窗口、 初始化 Direct3D 以及执行基本的 3D 呈现。
--   [使用 DirectX 编写简单的 UWP 游戏](tutorial--create-your-first-metro-style-directx-game.md)演示了常见游戏编程任务，包括图形、 加载文件、UI、控件以及声音。
+-   [从 Direct3D 9 到 UWP 的简单移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)操作实例演示了如何设置窗口、初始化 Direct3D 以及执行基本的 3D 呈现。
+-   [使用 DirectX 编写简单的 UWP 游戏](tutorial--create-your-first-metro-style-directx-game.md)演示了常见游戏编程任务，包括图形、加载文件、UI、控件以及声音。
 -   [DirectX 工具包](http://go.microsoft.com/fwlink/p/?LinkID=248929)社区项目提供用于 Direct3D 11 和 UWP 应用的 帮助程序类。
 
 ## 将 FX 中的着色器程序移动到 HLSL
@@ -126,105 +127,104 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DDevice9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174336)</p></td>
-<td align="left"><p>[<strong>ID3D11Device2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280493)</p>
-<p>[<strong>ID3D11DeviceContext2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280498)</p>
-<p>[
-            Graphics Pipeline](https://msdn.microsoft.com/library/windows/desktop/ff476882)中描述了各个图形管道阶段。</p></td>
+<td align="left"><p>\[<strong>IDirect3DDevice9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174336\)</p></td>
+<td align="left"><p>\[<strong>ID3D11Device2</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/dn280493\)</p>
+<p>\[<strong>ID3D11DeviceContext2</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/dn280498\)</p>
+<p>[图形管道](https://msdn.microsoft.com/library/windows/desktop/ff476882)中描述了各个图形管道阶段。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3D9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174300)</p></td>
-<td align="left"><p>[<strong>IDXGIFactory2</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404556)</p>
-<p>[<strong>IDXGIAdapter2</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404537)</p>
-<p>[<strong>IDXGIDevice3</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280345)</p></td>
+<td align="left"><p>\[<strong>IDirect3D9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174300\)</p></td>
+<td align="left"><p>\[<strong>IDXGIFactory2</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/hh404556\)</p>
+<p>\[<strong>IDXGIAdapter2</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/hh404537\)</p>
+<p>\[<strong>IDXGIDevice3</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/dn280345\)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DDevice9::Present</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174423)</p></td>
-<td align="left"><p>[<strong>IDXGISwapChain1::Present1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446797)</p></td>
+<td align="left"><p>\[<strong>IDirect3DDevice9::Present</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174423\)</p></td>
+<td align="left"><p>\[<strong>IDXGISwapChain1::Present1</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/hh446797\)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DDevice9::TestCooperativeLevel</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174472)</p></td>
-<td align="left"><p>调用带有 DXGI_PRESENT_TEST 标志集的 [<strong>IDXGISwapChain1::Present1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446797)。</p></td>
+<td align="left"><p>\[<strong>IDirect3DDevice9::TestCooperativeLevel</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174472\)</p></td>
+<td align="left"><p>调用带有 DXGI_PRESENT_TEST 标志集的\[<strong>IDXGISwapChain1::Present1</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/hh446797\)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DBaseTexture9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174322)</p>
-<p>[<strong>IDirect3DTexture9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205909)</p>
-<p>[<strong>IDirect3DCubeTexture9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174329)</p>
-<p>[<strong>IDirect3DVolumeTexture9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205941)</p>
-<p>[<strong>IDirect3DIndexBuffer9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205865)</p>
-<p>[<strong>IDirect3DVertexBuffer9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205915)</p></td>
-<td align="left"><p>[<strong>ID3D11Buffer</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476351)</p>
-<p>[<strong>ID3D11Texture1D</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476633)</p>
-<p>[<strong>ID3D11Texture2D</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476635)</p>
-<p>[<strong>ID3D11Texture3D</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476637)</p>
-<p>[<strong>ID3D11ShaderResourceView</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476628)</p>
-<p>[<strong>ID3D11RenderTargetView</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476582)</p>
-<p>[<strong>ID3D11DepthStencilView</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476377)</p></td>
+<td align="left"><p>\[<strong>IDirect3DBaseTexture9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174322\)</p>
+<p>\[<strong>IDirect3DTexture9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb205909\)</p>
+<p>\[<strong>IDirect3DCubeTexture9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174329\)</p>
+<p>\[<strong>IDirect3DVolumeTexture9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb205941\)</p>
+<p>\[<strong>IDirect3DIndexBuffer9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb205865\)</p>
+<p>\[<strong>IDirect3DVertexBuffer9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb205915\)</p></td>
+<td align="left"><p>\[<strong>ID3D11Buffer</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476351\)</p>
+<p>\[<strong>ID3D11Texture1D</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476633\)</p>
+<p>\[<strong>ID3D11Texture2D</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476635\)</p>
+<p>\[<strong>ID3D11Texture3D</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476637\)</p>
+<p>\[<strong>ID3D11ShaderResourceView</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476628\)</p>
+<p>\[<strong>ID3D11RenderTargetView</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476582\)</p>
+<p>\[<strong>ID3D11DepthStencilView</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476377\)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DVertexShader9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205922)</p>
-<p>[<strong>IDirect3DPixelShader9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205869)</p></td>
-<td align="left"><p>[<strong>ID3D11VertexShader</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476641)</p>
-<p>[<strong>ID3D11PixelShader</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476576)</p></td>
+<td align="left"><p>\[<strong>IDirect3DVertexShader9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb205922\)</p>
+<p>\[<strong>IDirect3DPixelShader9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb205869\)</p></td>
+<td align="left"><p>\[<strong>ID3D11VertexShader</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476641\)</p>
+<p>\[<strong>ID3D11PixelShader</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476576\)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DVertexDeclaration9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205919)</p></td>
-<td align="left"><p>[<strong>ID3D11InputLayout</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476575)</p></td>
+<td align="left"><p>\[<strong>IDirect3DVertexDeclaration9</strong>\](https://msdn.microsoft.com/library/windows/desktop/bb205919)</p></td>
+<td align="left"><p>\[<strong>ID3D11InputLayout</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476575\)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DDevice9::SetRenderState</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205805)</p>
-<p>[<strong>IDirect3DDevice9::SetSamplerState</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205806)</p></td>
-<td align="left"><p>[<strong>ID3D11BlendState1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404571)</p>
-<p>[<strong>ID3D11DepthStencilState</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476375)</p>
-<p>[<strong>ID3D11RasterizerState1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446828)</p>
-<p>[<strong>ID3D11SamplerState</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476588)</p></td>
+<td align="left"><p>\[<strong>IDirect3DDevice9::SetRenderState</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb205805\)</p>
+<p>\[<strong>IDirect3DDevice9::SetSamplerState</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb205806\)</p></td>
+<td align="left"><p>\[<strong>ID3D11BlendState1</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/hh404571\)</p>
+<p>\[<strong>ID3D11DepthStencilState</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476375\)</p>
+<p>\[<strong>ID3D11RasterizerState1</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/hh446828\)</p>
+<p>\[<strong>ID3D11SamplerState</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476588\)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DDevice9::DrawIndexedPrimitive</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174369)</p>
-<p>[<strong>IDirect3DDevice9::DrawPrimitive</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174371)</p></td>
-<td align="left"><p>[<strong>ID3D11DeviceContext::Draw</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476407)</p>
-<p>[<strong>ID3D11DeviceContext::DrawIndexed</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476409)</p>
-<p>[<strong>ID3D11DeviceContext::DrawIndexedInstanced</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173566)</p>
-<p>[<strong>ID3D11DeviceContext::DrawInstanced</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173567)</p>
-<p>[<strong>ID3D11DeviceContext::IASetPrimitiveTopology</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173590)</p>
-<p>[<strong>ID3D11DeviceContext::DrawAuto</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173564)</p></td>
+<td align="left"><p>\[<strong>IDirect3DDevice9::DrawIndexedPrimitive</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174369\)</p>
+<p>\[<strong>IDirect3DDevice9::DrawPrimitive</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174371\)</p></td>
+<td align="left"><p>\[<strong>ID3D11DeviceContext::Draw</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476407\)</p>
+<p>\[<strong>ID3D11DeviceContext::DrawIndexed</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476409\)</p>
+<p>\[<strong>ID3D11DeviceContext::DrawIndexedInstanced</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb173566\)</p>
+<p>\[<strong>ID3D11DeviceContext::DrawInstanced</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb173567\)</p>
+<p>\[<strong>ID3D11DeviceContext::IASetPrimitiveTopology</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb173590\)</p>
+<p>\[<strong>ID3D11DeviceContext::DrawAuto</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb173564\)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DDevice9::BeginScene</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174350)</p>
-<p>[<strong>IDirect3DDevice9::EndScene</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174375)</p>
-<p>[<strong>IDirect3DDevice9::DrawPrimitiveUP</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174372)</p>
-<p>[<strong>IDirect3DDevice9::DrawIndexedPrimitiveUP</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174370)</p></td>
+<td align="left"><p>\[<strong>IDirect3DDevice9::BeginScene</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174350\)</p>
+<p>\[<strong>IDirect3DDevice9::EndScene</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174375\)</p>
+<p>\[<strong>IDirect3DDevice9::DrawPrimitiveUP</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174372\)</p>
+<p>\[<strong>IDirect3DDevice9::DrawIndexedPrimitiveUP</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174370\)</p></td>
 <td align="left"><p>无直接等效项</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DDevice9::ShowCursor</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174470)</p>
-<p>[<strong>IDirect3DDevice9::SetCursorPosition</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174429)</p>
-<p>[<strong>IDirect3DDevice9::SetCursorProperties</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174430)</p></td>
+<td align="left"><p>\[<strong>IDirect3DDevice9::ShowCursor</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174470\)</p>
+<p>\[<strong>IDirect3DDevice9::SetCursorPosition</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174429\)</p>
+<p>\[<strong>IDirect3DDevice9::SetCursorProperties</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174430\)</p></td>
 <td align="left"><p>使用标准光标 API。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DDevice9::Reset</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174425)</p></td>
-<td align="left"><p>LOST 设备和 POOL_MANAGED 不再存在。 [<strong>IDXGISwapChain1::Present1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446797) 可能会失败，返回值为 [<strong>DXGI_ERROR_DEVICE_REMOVED</strong>](https://msdn.microsoft.com/library/windows/desktop/bb509553)。</p></td>
+<td align="left"><p>\[<strong>IDirect3DDevice9::Reset</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174425\)</p></td>
+<td align="left"><p>LOST 设备和 POOL_MANAGED 不再存在。 \[<strong>IDXGISwapChain1::Present1</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/hh446797\) 可能会失败，返回值为 \[<strong>DXGI_ERROR_DEVICE_REMOVED</strong>\](https://msdn.microsoft.com/library/windows/desktop/bb509553)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DDevice9:DrawRectPatch</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174373)</p>
-<p>[<strong>IDirect3DDevice9:DrawTriPatch</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174374)</p>
-<p>[<strong>IDirect3DDevice9:LightEnable</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174421)</p>
-<p>[<strong>IDirect3DDevice9:MultiplyTransform</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174422)</p>
-<p>[<strong>IDirect3DDevice9:SetLight</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205798)</p>
-<p>[<strong>IDirect3DDevice9:SetMaterial</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174437)</p>
-<p>[<strong>IDirect3DDevice9:SetNPatchMode</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174438)</p>
-<p>[<strong>IDirect3DDevice9:SetTransform</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174463)</p>
-<p>[<strong>IDirect3DDevice9:SetFVF</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174433)</p>
-<p>[<strong>IDirect3DDevice9:SetTextureStageState</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174462)</p></td>
+<td align="left"><p>\[<strong>IDirect3DDevice9:DrawRectPatch</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174373\)</p>
+<p>\[<strong>IDirect3DDevice9:DrawTriPatch</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174374\)</p>
+<p>\[<strong>IDirect3DDevice9:LightEnable</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174421\)</p>
+<p>\[<strong>IDirect3DDevice9:MultiplyTransform</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174422\)</p>
+<p>\[<strong>IDirect3DDevice9:SetLight</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb205798\)</p>
+<p>\[<strong>IDirect3DDevice9:SetMaterial</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174437\)</p>
+<p>\[<strong>IDirect3DDevice9:SetNPatchMode</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174438\)</p>
+<p>\[<strong>IDirect3DDevice9:SetTransform</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174463\)</p>
+<p>\[<strong>IDirect3DDevice9:SetFVF</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174433\)</p>
+<p>\[<strong>IDirect3DDevice9:SetTextureStageState</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174462\)</p></td>
 <td align="left"><p>固定函数管道已被弃用。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DDevice9:CheckDepthStencilMatch</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174308)</p>
-<p>[<strong>IDirect3DDevice9:CheckDeviceFormat</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174309)</p>
-<p>[<strong>IDirect3DDevice9:GetDeviceCaps</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174320)</p>
-<p>[<strong>IDirect3DDevice9:ValidateDevice</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205859)</p></td>
-<td align="left"><p>功能位已被替换为功能级别。 对于任何给定的功能级别，只有几个格式和功能用例是可选的。 可以使用 [<strong>ID3D11Device::CheckFeatureSupport</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476497) 和 [<strong>ID3D11Device::CheckFormatSupport</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173536) 对这些功能和格式进行检查。</p></td>
+<td align="left"><p>\[<strong>IDirect3DDevice9:CheckDepthStencilMatch</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174308\)</p>
+<p>\[<strong>IDirect3DDevice9:CheckDeviceFormat</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174309\)</p>
+<p>\[<strong>IDirect3DDevice9:GetDeviceCaps</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174320\)</p>
+<p>\[<strong>IDirect3DDevice9:ValidateDevice</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb205859\)</p></td>
+<td align="left"><p>功能位已被替换为功能级别。 对于任何给定的功能级别，只有几个格式和功能用例是可选的。 可以使用 \[<strong>ID3D11Device::CheckFeatureSupport</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/ff476497\) 和 \[<strong>ID3D11Device::CheckFormatSupport</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb173536\) 对这些功能和格式进行检查。</p></td>
 </tr>
 </tbody>
 </table>
@@ -413,11 +413,11 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_DXT1</p></td>
-<td align="left"><p>DXGI_FORMAT_BC1_UNORM & DXGI_FORMAT_BC1_UNORM_SRGB</p></td>
+<td align="left"><p>DXGI_FORMAT_BC1_UNORM &amp; DXGI_FORMAT_BC1_UNORM_SRGB</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_DXT2</p></td>
-<td align="left"><p>DXGI_FORMAT_BC1_UNORM & DXGI_FORMAT_BC1_UNORM_SRGB</p>
+<td align="left"><p>DXGI_FORMAT_BC1_UNORM &amp; DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
 <strong>注意</strong> 从 API/硬件的角度来看，DXT1 和 DXT2 相同。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
 </div>
@@ -427,11 +427,11 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_DXT3</p></td>
-<td align="left"><p>DXGI_FORMAT_BC2_UNORM & DXGI_FORMAT_BC2_UNORM_SRGB</p></td>
+<td align="left"><p>DXGI_FORMAT_BC2_UNORM &amp; DXGI_FORMAT_BC2_UNORM_SRGB</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_DXT4</p></td>
-<td align="left"><p>DXGI_FORMAT_BC2_UNORM & DXGI_FORMAT_BC2_UNORM_SRGB</p>
+<td align="left"><p>DXGI_FORMAT_BC2_UNORM &amp; DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
 <strong>注意</strong> 从 API/硬件的角度来看，DXT3 和 DXT4 相同。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
 </div>
@@ -441,10 +441,10 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_DXT5</p></td>
-<td align="left"><p>DXGI_FORMAT_BC3_UNORM & DXGI_FORMAT_BC3_UNORM_SRGB</p></td>
+<td align="left"><p>DXGI_FORMAT_BC3_UNORM &amp; DXGI_FORMAT_BC3_UNORM_SRGB</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>D3DFMT_D16 & D3DFMT_D16_LOCKABLE</p></td>
+<td align="left"><p>D3DFMT_D16 &amp; D3DFMT_D16_LOCKABLE</p></td>
 <td align="left"><p>DXGI_FORMAT_D16_UNORM</p></td>
 </tr>
 <tr class="odd">
@@ -669,6 +669,6 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

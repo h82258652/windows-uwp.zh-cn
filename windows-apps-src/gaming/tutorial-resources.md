@@ -1,14 +1,15 @@
 ---
+author: mtoepke
 title: 扩展游戏示例
-description: 恭喜你！ 此时，你已了解了基本 Windows 通用 (UWP) DirectX 3D 游戏的关键组件。
+description: 恭喜你！ 此时，你已了解了基本通用 Windows 平台 (UWP) DirectX 3D 游戏的关键组件。
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
-关键字：["DirectX, XAML"]
+keywords: ["DirectX, XAML"]
 ---
 
 # 扩展游戏示例
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 恭喜你！ 此时，你已了解了基本 Windows 通用 (UWP) DirectX 3D 游戏的关键组件。 你可以设置游戏的框架，包括视图提供程序和呈现管道，并实现基本的游戏循环。 还可以创建基本的用户界面覆盖层以及合并声音和控件。 你正在创建一个专属游戏， 这里提供了一些资源可使你进一步了解 DirectX 游戏开发。
 
@@ -30,7 +31,7 @@ ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 
 可在 **Main.app.xaml** 文件中为 **SwapChainBackgroundPanel** 声明 XAML，如下所示：
 
-```xaml
+```xml
 <Page
     x:Name="DXMainPage"
     x:Class="Simple3DGameXaml.MainPage"
@@ -863,7 +864,7 @@ void App::ResetGame()
 
 MainPage.xaml
 
-```xaml
+```xml
 <SwapChainBackgroundPanel
     x:Name="DXSwapChainPanel"
     x:Class="Simple3DGameXaml.MainPage"
@@ -1514,6 +1515,6 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

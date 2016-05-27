@@ -1,13 +1,14 @@
 ---
-title: 操作实例：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
+author: mtoepke
+title: 演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
 description: 此移植练习显示了如何将一个简单的呈现框架从 Direct3D 9 移植到 Direct3D 11 和通用 Windows 平台 (UWP)。
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ---
 
-# 操作实例：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
+# 演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此移植练习显示了如何将一个简单的呈现框架从 Direct3D 9 移植到 Direct3D 11 和通用 Windows 平台 (UWP)。
 ## 
@@ -19,20 +20,20 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)</p></td>
+<td align="left"><p>[初始化 Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)</p></td>
 <td align="left"><p>介绍如何将 Direct3D 9 初始化代码转换为 Direct3D 11，包括如何获取 Direct3D 设备和设备上下文的句柄以及如何使用 DXGI 设置交换链。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)</p></td>
+<td align="left"><p>[转换呈现框架](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)</p></td>
 <td align="left"><p>介绍如何将简单的呈现框架从 Direct3D 9 转换到 Direct3D 11，包括如何移植几何图形缓冲区、如何编译和加载 HLSL 着色器程序以及如何在 Direct3D 11 中实现呈现链。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)</p></td>
+<td align="left"><p>[移植游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)</p></td>
 <td align="left"><p>介绍如何实现 UWP 游戏的窗口，以及如何显示游戏循环，包括如何生成 [<strong>IFrameworkView</strong>](https://msdn.microsoft.com/library/windows/apps/hh700478) 来控制全屏 [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/apps/br208225)。</p></td>
 </tr>
 </tbody>
@@ -62,31 +63,30 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 
 应该[为 UWP DirectX 游戏开发准备开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 尚不需要模板，但需要 Microsoft Visual Studio 2015 来加载此操作实例的代码示例。
 
-访问[移植概念和注意事项](porting-considerations.md)，以便更好地了解此操作实例中显示的 DirectX 11 和 UWP 编程概念。
+访问[移植概念和注意事项](porting-considerations.md)，以便更好地了解此演练中显示的 DirectX 11 和 UWP 编程概念。
 
 ## 相关主题
 
 
-**Direct3D**
-[在 Direct3D 9 中编写 HLSL 着色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+**Direct3D** 
+           [在 Direct3D 9 中编写 HLSL 着色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 
 [创建适用于 UWP 的新的 DirectX 11 项目](user-interface.md)
 
-**Windows 应用商店**
-[
-            **Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+**Windows 应用商店** 
+           [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 
-[**对象句柄运算符 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
-
- 
+[**对象运算符的句柄 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
 
  
 
+ 
 
 
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+<!--HONumber=May16_HO2-->
 
 

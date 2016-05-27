@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 规划 DirectX 移植
 description: 规划从 DirectX 9 到 DirectX 11 和通用 Windows 平台 (UWP) 的游戏移植项目 - 升级图形代码并将游戏放置到 Windows 运行时环境中。
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
@@ -50,7 +51,7 @@ UWP 应用的生命周期与桌面应用的生命周期大相径庭。 需要经
 
 有两个概念供你经常使用：
 
--   托管参考 ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) 和 [**managed classes**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx)（ref 类）都是 Windows 运行时的基本组成部分。 你需要使用托管 ref 类与 Windows 运行时组件交互，例如 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)（操作实例中有关于此内容的详细信息）。
+-   托管参考 ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) 和 [**托管类**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx)（ref 类）都是 Windows 运行时的基本组成部分。 你需要使用托管 ref 类与 Windows 运行时组件交互，例如 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)（演练中有关于此内容的详细信息）。
 -   使用 Direct3D 11 COM 接口时，使用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 模板类型以使 COM 指针更易于使用。
 
  
@@ -62,6 +63,6 @@ UWP 应用的生命周期与桌面应用的生命周期大相径庭。 需要经
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

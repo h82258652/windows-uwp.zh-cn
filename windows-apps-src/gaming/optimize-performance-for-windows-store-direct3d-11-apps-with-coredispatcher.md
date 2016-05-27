@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
 description: 输入延迟会大大影响游戏体验，将其优化可使游戏感觉更完美。
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
@@ -244,7 +245,7 @@ DirectX 游戏通过更新用户在屏幕上看到的内容来响应用户输入
 
 ![图 2 DirectX 中的输入延迟可等待](images/input-latency2.png)
 
-我们可从以上图表中看出，如果这些游戏可以在 16.7 毫秒的预算时间（由屏幕的刷新频率定义）内呈现和呈现每帧画面，就有可能缩短整整 2 帧的延迟。 七巧板示例通过调用 ` m_deviceResources->SetMaximumFrameLatency(1);` 使用可等待的交换链并控制 Present 队列限制
+我们可从以上图表中看出，如果这些游戏可以在 16.7 毫秒的预算时间（由屏幕的刷新频率定义）内渲染和呈现每帧画面，就有可能缩短整整 2 帧的输入延迟。 七巧板示例使用可等待的交换链并控制 Present 队列限制，方法是调用：` m_deviceResources->SetMaximumFrameLatency(1);`
 
  
 
@@ -255,6 +256,6 @@ DirectX 游戏通过更新用户在屏幕上看到的内容来响应用户输入
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

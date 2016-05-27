@@ -1,6 +1,7 @@
 ---
+author: mtoepke
 title: 从 OpenGL ES 2.0 移植到 Direct3D 11
-description: 包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及操作实例。
+description: 包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及演练。
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 ---
 
@@ -23,20 +24,20 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Map OpenGL ES 2.0 to Direct3D 11.1](map-concepts-and-infrastructure.md)</p></td>
+<td align="left"><p>[将 OpenGL ES 2.0 映射到 Direct3D 11.1](map-concepts-and-infrastructure.md)</p></td>
 <td align="left"><p>首次开始将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 的过程时，你需要自行熟悉各个 API 之间的主要差别。 本部分中的主题将帮助你规划你的移植策略以及将图形处理移动到 Direct3D 时必须进行的 API 更改。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Walkthrough sample ports from OpenGL ES 2.0](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
-<td align="left"><p>这一组主题介绍了一些不同复杂程度的 OpenGL ES 2.0 图形管道移植方案。</p></td>
+<td align="left"><p>[从 OpenGL ES 2.0 移植的演练示例](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
+<td align="left"><p>这一组主题介绍了一些复杂程度不同的 OpenGL ES 2.0 图形管道移植方案。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[OpenGL ES 2.0 to Direct3D 11.1 reference](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
+<td align="left"><p>[OpenGL ES 2.0 到 Direct3D 11.1 参考](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
 <td align="left"><p>当从 OpenGL ES 2.0 移植到 Direct3D 11 时，使用这些参考主题查找 API 映射和简短的代码示例。</p></td>
 </tr>
 </tbody>
@@ -45,7 +46,7 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
  
 
 > **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -58,6 +59,6 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

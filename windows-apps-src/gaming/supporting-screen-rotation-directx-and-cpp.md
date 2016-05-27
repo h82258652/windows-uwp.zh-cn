@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 支持屏幕方向（DirectX 和 C++）
 description: 下面我们将讨论在你的 UWP DirectX 应用中处理屏幕旋转的最佳做法，以便有效地使用 Windows 10 设备的图形硬件。
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
@@ -552,6 +553,6 @@ m_constantBufferData.projection = mul(m_constantBufferData.projection, m_rotatio
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 移植顶点缓冲区和数据
 description: 在此步骤中，你将定义将包含网格的顶点缓冲区以及允许着色器按照指定的顺序遍历顶点的索引缓冲区。
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
@@ -7,7 +8,7 @@ ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 # 移植顶点缓冲区和数据
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -312,6 +313,6 @@ m_d3dContext->DrawIndexed(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

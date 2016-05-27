@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 移植 GLSL
 description: 转到创建和配置缓冲区及着色器对象的代码之后，应该将这些着色器中的代码从 OpenGL ES 2.0 的 GL 着色器语言 (GLSL) 移植到 Direct3D 11 的高级着色器语言 (HLSL)。
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
@@ -7,7 +8,7 @@ ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 # 移植 GLSL
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -148,12 +149,10 @@ float4 main(PixelShaderInput input) : SV_TARGET
 ## 上一步
 
 
-[移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md)
-下一步
+[移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md) 下一步
 ---------
 
-[绘制到屏幕](draw-to-the-screen.md)
-备注
+[绘制到屏幕](draw-to-the-screen.md) 备注
 -------
 
 了解 HLSL 语义以及常量缓冲区的打包可以为你省去调试的麻烦，并且还可以提供优化机会。 如果有机会，请通读[变量语法 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)、[Direct3D 11 中的缓冲区简介](https://msdn.microsoft.com/library/windows/desktop/ff476898)以及[如何创建常量缓冲区](https://msdn.microsoft.com/library/windows/desktop/ff476896)。 如果没有机会通读这些内容，那么请记住下面这些有关语义和常量缓冲区的开始提示：
@@ -185,6 +184,6 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

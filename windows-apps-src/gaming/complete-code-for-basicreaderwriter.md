@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: BasicReaderWriter 的完整代码
 description: 一般用来读取和写入二进制数据文件的类和方法的完整代码。
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
@@ -7,7 +8,7 @@ ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 # BasicReaderWriter 的完整代码
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 一般用来读取和写入二进制数据文件的类和方法的完整代码。 由 [BasicLoader](complete-code-for-basicloader.md) 类使用。
 
@@ -25,19 +26,14 @@ ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 
 ## 技术
 
-|                       |                 |
-|-----------------------|-----------------|
-| 编程语言 | C++             |
-| 编程模型    | Windows 运行时 |
+**编程语言** - C++  
+**编程模型** - Windows 运行时
 
 
 ## 要求
 
-| 最低受支持的客户端 | Windows 10                            |
-|--------------------------|---------------------------------------|
-| 最低受支持的服务器 | Windows Server 2016 Technical Preview |
-| 所需的最低 SDK 版本     |                                       |
-
+ **最低受支持的客户端** - Windows 10       
+ **最低受支持的服务器** - Windows Server 2016 Technical Preview 
 
 ## 查看代码 (C++)
 
@@ -265,6 +261,6 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 装配呈现框架
 description: 现在，我们开始讨论示例游戏如何使用该结构和状态显示其图形。
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
@@ -7,7 +8,7 @@ ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 # 装配呈现框架
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 到目前为止，你已经了解如何生成使用 Windows 运行时的通用 Windows 平台 (UWP) 游戏，以及如何定义状态机来处理游戏流。 现在，我们开始讨论该示例游戏如何使用该结构和状态显示其图形。 下面我们通过演示屏幕的图形对象看看如何实现呈现框架、 如何实现从初始化图形设备开始操作。
 
@@ -16,7 +17,7 @@ ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 
 -   了解如何设置基本呈现框架，以为 UWP DirectX 游戏显示图形输出。
 
-> **注意** 此处不讨论以下代码文件，但提供本主题（及其代码示例）中引用的类和方法，并[在本主题末尾以代码形式提供](#code_sample)：
+> **注意** 此处不讨论以下代码文件，但提供本主题中引用的类和方法，并[在本主题末尾以代码形式提供](#code_sample)：
 -   **Animate.h/.cpp**。
 -   **BasicLoader.h/.cpp**。 提供同步和异步加载网格、着色器和纹理的方法。 非常有用！
 -   **MeshObject.h/.cpp**、**SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp** 和 **WorldMesh.h/.cpp**。 包含游戏中使用的对象基元的定义，如弹药球体、圆柱和圆锥障碍以及射击场的墙壁。 （本主题中简单介绍了 **GameObject.cpp**，它包含呈现这些基元的方法。）
@@ -691,7 +692,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 `              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `。
 
--   `M(model-to-world)` 是模型坐标到世界坐标的转换矩阵。 这由基元提供。 （我们将在有关基元的部分中介绍此处此内容。）
+-   `M(model-to-world)` 是模型坐标到世界坐标的转换矩阵。 这由基元提供。 （我们将在有关基元的部分中介绍此内容，位于此处。）
 -   `M(world-to-view)` 是世界坐标到视图坐标的转换矩阵。 这由相机的视图矩阵提供。
 -   `M(view-to-device)` 是视图坐标到设备坐标的转换矩阵。 这由相机的投影提供。
 
@@ -853,7 +854,7 @@ void Camera::SetProjParams(
 
 **MeshObject.h/.cpp** 定义所有网格对象的基类。 **SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp** 和 **WorldMesh.h/.cpp** 文件包含的代码使用定义基元几何图形的顶点和顶点法线数据填充每个基元的常量缓冲区。 如果你希望了解如何在自己的游戏应用中创建 Direct3D 基元，这些代码文件是很好的资源，但我们在这里不介绍这些内容，因为它们太有针对性而不适合此游戏的实现。 目前，我们假定已经填充了每个基元的顶点缓冲区，并了解了该游戏示例如何处理这些缓冲区来更新游戏本身。
 
-从游戏角度表示基元的对象的基类在 **GameObject.h./.cpp.** 中定义。**GameObject** 类为跨所有基元的共同行为定义字段和方法。 每个基元对象类型都从它派生。 下面我们看一下它是如何定义的：
+从游戏角度表示基元的对象的基类在 **GameObject.h./.cpp.** 中定义 **GameObject** 类为跨所有基元的共同行为定义字段和方法。 每个基元对象类型都从它派生。 下面我们看一下它是如何定义的：
 
 ```cpp
 ref class GameObject
@@ -6320,6 +6321,6 @@ void Material::RenderSetup(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 添加用户界面
 description: 你已经了解示例游戏如何实现主游戏对象以及基本呈现框架。
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
@@ -1487,6 +1488,6 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

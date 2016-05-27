@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 将 OpenGL ES 2.0 映射到 Direct3D 11
 description: 首次开始将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 的过程时，你需要自行熟悉一下 API 之间的主要差别。
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
@@ -19,24 +20,24 @@ ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Plan your port from OpenGL ES 2.0 to Direct3D](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
-<td align="left"><p>如果你要移植 iOS 或 Android 平台中的游戏，你可能需要在 OpenGL ES 2.0 方面进行大量投资。 如果你准备将你的图形管道代码库移动到 Direct3D 11 和 Windows 运行时，在开始之前你应该考虑以下事项。</p></td>
+<td align="left"><p>[规划从 OpenGL ES 2.0 到 Direct3D 的移植](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
+<td align="left"><p>如果你移植 iOS 或 Android 平台中的游戏，那么你可能需要在 OpenGL ES 2.0 方面进行大量投资。 如果你准备将你的图形管道代码库移动到 Direct3D 11 和 Windows 运行时，那么在开始之前你应该考虑以下事项。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Compare EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md)</p></td>
+<td align="left"><p>[将 EGL 代码与 DXGI 和 Direct3D 进行比较](moving-from-egl-to-dxgi.md)</p></td>
 <td align="left"><p>DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用与 EGL 相同。 本主题帮助你从 EGL 的角度了解 DXGI 和 Direct3D 11。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D](porting-uniforms-and-attributes.md)</p></td>
+<td align="left"><p>[将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较](porting-uniforms-and-attributes.md)</p></td>
 <td align="left"><p>在从 OpenGL ES 2.0 移植到 Direct3D 11 的过程中，必须更改用于在应用和着色器程序之间传递数据的语法和 API 行为。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Compare the OpenGL ES 2.0 shader pipeline to Direct3D](change-your-shader-loading-code.md)</p></td>
+<td align="left"><p>[将 OpenGL ES 2.0 着色器管道与 Direct3D 进行比较](change-your-shader-loading-code.md)</p></td>
 <td align="left"><p>从概念上来说，Direct3D 11 着色器管道与 OpenGL ES 2.0 中的着色器管道非常相似。 但是，就 API 设计而言，用于创建和管理着色器阶段的主要组件是两个主要接口 [<strong>ID3D11Device1</strong>] (https://msdn.microsoft.com/library/windows/desktop/hh404575) 和 [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598) 的一部分。 本主题尝试在这些接口中将常用的 OpenGL ES 2.0 着色器管道 API 模式映射到 Direct3D 11 同等模式。</p></td>
 </tr>
 </tbody>
@@ -58,6 +59,6 @@ ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较
 description: 在从 OpenGL ES 2.0 移植到 Direct3D 11 的过程中，必须更改用于在应用和着色器程序之间传递数据的语法和 API 行为。
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
@@ -7,7 +8,7 @@ ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 # 将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -296,6 +297,6 @@ struct VertexShaderInput
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

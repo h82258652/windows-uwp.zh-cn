@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: GLSL 到 HLSL 参考
 description: 将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 11 以便创建适用于通用 Windows 平台 (UWP) 的游戏时，需要将 OpenGL 着色器语言 (GLSL) 代码移植到 Microsoft 高级着色器语言 (HLSL) 代码。
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
@@ -54,8 +55,8 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">面向对象，以数据为中心（如 C++）</td>
 </tr>
 <tr class="even">
-<td align="left">着色器编译已集成到图形 API 中</td>
-<td align="left">HLSL 编译器[将着色器编译为compiles the shader](https://msdn.microsoft.com/library/windows/desktop/bb509633)中间二进制表示，然后 Direct3D 将其传递给驱动程序。
+<td align="left">着色器编译被集成到了图形 API 中</td>
+<td align="left">HLSL 编译器[将着色器编译为](https://msdn.microsoft.com/library/windows/desktop/bb509633)中间二进制表示，然后 Direct3D 将其传递给驱动程序。
 <div class="alert">
 <strong>注意</strong> 此二进制表示与硬件无关。 通常在应用生成时对其进行编译，而不是在应用运行时编译。
 </div>
@@ -64,12 +65,11 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">[
-            Variable](#variables) 存储修饰符</td>
+<td align="left">[可变](#variables)存储修饰符</td>
 <td align="left">通过输入布局声明进行常量缓冲区和数据传输</td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Types](#types)</p>
+<td align="left"><p>[类型](#types)</p>
 <p>典型的矢量类型：vec2/3/4</p>
 <p>lowp、mediump、highp</p></td>
 <td align="left"><p>典型的矢量类型：float2/3/4</p>
@@ -77,19 +77,17 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </tr>
 <tr class="odd">
 <td align="left">texture2D [Function]</td>
-<td align="left">[
-            texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [datatype.Function]</td>
+<td align="left">[texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [datatype.Function]</td>
 </tr>
 <tr class="even">
 <td align="left">sampler2D [datatype]</td>
-<td align="left">[
-            Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [datatype]</td>
+<td align="left">[Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [datatype]</td>
 </tr>
 <tr class="odd">
 <td align="left">行主序矩阵（默认设置）</td>
 <td align="left">列主序矩阵（默认设置）
 <div class="alert">
-<strong>注意</strong> 使用 <strong>row_major</strong> 类型修饰符来更改一个变量的布局。 有关详细信息，请参阅 [Variable Syntax](https://msdn.microsoft.com/library/windows/desktop/bb509706)。 还可以指定编译器标志或 pragma 来更改全局默认设置。
+<strong>注意</strong> 使用 <strong>row_major</strong> 类型修饰符来更改一个变量的布局。 有关详细信息，请参阅[变量语法](https://msdn.microsoft.com/library/windows/desktop/bb509706)。 还可以指定编译器标志或 pragma 来更改全局默认设置。
 </div>
 <div>
  
@@ -132,7 +130,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>将 uniform 变量从应用代码传递到顶点着色器和分段着色器或传递到两者。 必须在使用这些着色器绘制任何三角形之前，设置所有 uniform 的值，以便它们的值在绘制三角形网格的整个过程中保持不变。 这些值都是 uniform。 一些 uniform 是针对整个帧设置的，另一些 uniform 唯一对应于一个特定的顶点像素着色器对。</p>
 <p>uniform 变量是每个多边形的变量。</p></td>
 <td align="left"><p>使用常量缓冲区。</p>
-<p>请参阅 [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896) 和 [Shader Constants](https://msdn.microsoft.com/library/windows/desktop/bb509581)。</p></td>
+<p>请参阅[如何：创建常量缓冲区](https://msdn.microsoft.com/library/windows/desktop/ff476896)和[着色器常量](https://msdn.microsoft.com/library/windows/desktop/bb509581)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>varying</strong></p>
@@ -142,11 +140,11 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <tr class="odd">
 <td align="left"><p><strong>属性</strong></p>
 <p>attribute 只是你从应用代码传递到顶点着色器的顶点描述的一部分。 与 uniform 不同，你为每个顶点设置每个 attribute 的值，但却允许每个顶点拥有不同的值。 attribute 变量是每个顶点的变量。</p></td>
-<td align="left"><p>在 Direct3D 应用代码中定义顶点缓冲区并将其与顶点着色器中定义的顶点输入相匹配。 也可以定义索引缓冲区。 请参阅 [How to: Create a Vertex Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476899) 和 [How to: Create an Index Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476897)。</p>
-<p>在 Direct3D 应用代码中创建输入布局并将语义值与顶点输入中的值相匹配。 请参阅 [Create the input layout](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout)。</p></td>
+<td align="left"><p>在 Direct3D 应用代码中定义顶点缓冲区并将其与顶点着色器中定义的顶点输入相匹配。 也可以定义索引缓冲区。 请参阅[如何：创建顶点缓冲区](https://msdn.microsoft.com/library/windows/desktop/ff476899)和[如何：创建索引缓冲区](https://msdn.microsoft.com/library/windows/desktop/ff476897)。</p>
+<p>在 Direct3D 应用代码中创建输入布局并将语义值与顶点输入中的值相匹配。 请参阅[创建输入布局](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>常量</strong></p>
+<td align="left"><p><strong>const</strong></p>
 <p>常量编译到着色器中，从不更改。</p></td>
 <td align="left">使用 <strong>static const</strong>。 <strong>static</strong> 表示未向常量缓冲区显示该值，<strong>const</strong> 表示着色器无法更改该值。 因此，在编译时我们根据它的初始值来了解该值。</td>
 </tr>
@@ -180,7 +178,7 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">标量类型：float、int、bool</td>
 <td align="left"><p>标量类型：float、int、bool</p>
 <p>also、uint、double</p>
-<p>有关详细信息，请参阅 [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646)。</p></td>
+<p>有关详细信息，请参阅[标量类型](https://msdn.microsoft.com/library/windows/desktop/bb509646)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>矢量类型</p>
@@ -202,8 +200,8 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>有关详细信息，请参阅 [Vector Type](https://msdn.microsoft.com/library/windows/desktop/bb509707) 和 [Keywords](https://msdn.microsoft.com/library/windows/desktop/bb509568)。</p>
-<p>还可以将 vector 定义为 float4 类型 (typedef vector &lt;float, 4&gt; vector;)。 有关详细信息，请参阅 [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
+<p>有关详细信息，请参阅[矢量类型](https://msdn.microsoft.com/library/windows/desktop/bb509707)和[关键字](https://msdn.microsoft.com/library/windows/desktop/bb509568)。</p>
+<p>vector 是定义为 float4 的 also 类型 (typedef vector &lt;float, 4&gt; vector;)。 有关详细信息，请参阅[用户定义的类型](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>矩阵类型</p>
@@ -226,17 +224,17 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>也可以使用 [matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623) 来定义矩阵。</p>
+<p>也可以使用[矩阵类型](https://msdn.microsoft.com/library/windows/desktop/bb509623)来定义矩阵。</p>
 <p>例如：matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>还可以将 matrix 定义为 float4x4 类型 (typedef matrix &lt;float, 4, 4&gt; matrix;)。 有关详细信息，请参阅 [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
+<p>matrix 是定义为 float4x4 的 also 类型 (typedef matrix &lt;float, 4, 4&gt; matrix;)。 有关详细信息，请参阅[用户定义的类型](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>float、int、sampler 的精度限定符</p>
 <ul>
 <li><p>highp</p>
 <p>该限定符提供最低精度要求，该要求大于 min16float 提供的要求，但小于完整的 32 位浮点。 HLSL 中的等效内容为：</p>
-<p>highp float -> float</p>
-<p>highp int -> int</p></li>
+<p>highp float -&gt; float</p>
+<p>highp int -&gt; int</p></li>
 <li><p>mediump</p>
 <p>该限定符应用于 float 和 int，它等效于 HLSL 中的 min16float 和 min12int。 最低 10 位尾数，与 min10float 不同。</p></li>
 <li><p>lowp</p>
@@ -249,10 +247,10 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <p>最低固定点有符号 2.8 位值（2 位整数和 8 位小数部分）。 8 位小数部分可以包括 1，而非排除 1，目的是为它提供完整的包含范围 -2 到 2。</p></li>
 <li>min16int：最低 16 位有符号整数</li>
 <li><p>min12int：最低 12 位有符号整数</p>
-<p>该类型用于 10Level9 ([9_x feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876))，其中整数由浮点数来表示。 这是在使用 16 位浮点数模拟整数时可以获得的精度。</p></li>
+<p>该类型用于 10Level9（[9_x 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876)），其中整数由浮点数来表示。 这是在使用 16 位浮点数模拟整数时可以获得的精度。</p></li>
 <li>min16uint：最低 16 位无符号整数</li>
 </ul>
-<p>有关详细信息，请参阅 [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646) 和 [Using HLSL minimum precision](https://msdn.microsoft.com/library/windows/desktop/hh968108)。</p></td>
+<p>有关详细信息，请参阅[标量类型](https://msdn.microsoft.com/library/windows/desktop/bb509646)和[使用 HLSL 最低精度](https://msdn.microsoft.com/library/windows/desktop/hh968108)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
@@ -547,7 +545,7 @@ m_d3dDeviceContext->PSSetShader(pixelShader.Get(),nullptr,0);
 m_d3dDeviceContext->IASetInputLayout(inputLayout.Get());
 m_d3dDeviceContext->IASetVertexBuffers(0, 1, vertexBuffer.GetAddressOf(), &stride, &offset);
 
-// Set the primitive’s topology.
+// Set the primitive's topology.
 m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 // Draw a triangle with 3 vertices. triangleVertices is an array of 3 vertices.
@@ -568,6 +566,6 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

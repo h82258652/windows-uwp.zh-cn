@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 向 Marble Maze 添加可视内容示例
 description: 本文档介绍了 Marble Maze 游戏如何在通用 Windows 平台 (UWP) 应用环境中使用 Direct3D 和 Direct2D，以便你可了解相关模式并在处理自己的游戏内容时调整它们。
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
@@ -10,7 +11,7 @@ ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文档介绍了 Marble Maze 游戏如何在通用 Windows 平台 (UWP) 应用环境中使用 Direct3D 和 Direct2D，以便你可了解相关模式并在处理自己的游戏内容时调整它们。 若要了解可视游戏组件如何融入 Marble Maze 的总体应用程序结构中， 请参阅 [Marble Maze 应用程序结构](marble-maze-application-structure.md)。
+本文档介绍了 Marble Maze 游戏如何在通用 Windows 平台 (UWP) 应用环境中使用 Direct3D 和 Direct2D，以便你可了解相关模式并在处理自己的游戏内容时调整它们。 若要了解可视游戏组件如何融入 Marble Maze 的总体应用程序结构中，请参阅 [Marble Maze 应用程序结构](marble-maze-application-structure.md)。
 
 我们在开发 Marble Maze 的可视方面时遵循以下基本步骤：
 
@@ -47,7 +48,7 @@ Marble Maze 使用 Direct3D 11.1 渲染 3D 游戏资产，也就是弹珠和迷�
 
 游戏开发需要规划。 如果不熟悉 DirectX 图形，我们建议你阅读“创建 DirectX 游戏”，自行熟悉创建 UWP DirectX 游戏的基本概念。 在阅读本文档和浏览 Marble Maze 源代码时，你可参阅以下资源来了解 DirectX 图形的更多深入信息。
 
--   [Direct3D 11 图形](https://msdn.microsoft.com/library/windows/desktop/ff476080) 介绍 Direct3D 11，一种强大的、硬件加速的 3D 图形 API，用于在 Windows 平台上渲染 3D 几何图形。
+-   [Direct3D 11 图形](https://msdn.microsoft.com/library/windows/desktop/ff476080)介绍 Direct3D 11，一种强大的、硬件加速的 3D 图形 API，用于在 Windows 平台上渲染 3D 几何图形。
 -   [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) 介绍 Direct2D，一种硬件加速的 2D 图形 API，为 2D 几何图形、位图和文本提供了高性能、高质量的渲染。
 -   [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) 介绍 DirectWrite，它支持高质量文本渲染。
 -   [Windows 图像处理组件](https://msdn.microsoft.com/library/windows/desktop/ee719902) 介绍 WIC，一个可扩展的平台，提供了低级别 API 来处理数字图像。
@@ -242,7 +243,7 @@ DX::ThrowIfFailed(
 
 **DeviceResources::CreateWindowSizeDependentResources** 方法以一种适合大部分游戏的方式初始化图形资源。
 
-> **注意** 术语*视图*在 Windows 运行时中的含义与 Direct3D 中的不同。 在 Windows 运行时中，视图指的是应用的用户界面设置集合，包括显示区域和输入行为及其用于处理的线程。 指定你在创建视图时需要的配置和设置。 设置应用视图的过程将在 [Marble Maze 应用结构](marble-maze-application-structure.md)中介绍。 在 Direct3D 中，术语“视图”有多种含义。 首先，资源视图定义一种资源可访问的子资源。 例如，将一个纹理对象与一个着色器资源视图关联后，该着色器可访问该纹理。 资源视图的一个优点是，你可在呈现管道中的不同阶段以不同方式解释数据。 有关资源视图的详细信息，请参阅[纹理视图 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 在视图转换或视图转换矩阵的上下文中使用时，视图指的是相机的位置和方向。 视图转换会在围绕相机的位置和方向的世界中重新定位各个对象。 有关视图转换的详细信息，请参阅[视图转换 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342)。 本主题将详细介绍 Marble Maze 如何使用资源和矩阵视图。
+> **注意** 术语*视图*在 Windows 运行时中的含义与 Direct3D 中的不同。 在 Windows 运行时中，视图指的是应用的用户界面设置集合，包括显示区域和输入行为及其用于处理的线程。 指定你在创建视图时需要的配置和设置。 设置应用视图的过程将在 [Marble Maze 应用程序结构](marble-maze-application-structure.md)中介绍。 在 Direct3D 中，术语“视图”有多种含义。 首先，资源视图定义一种资源可访问的子资源。 例如，将一个纹理对象与一个着色器资源视图关联后，该着色器可访问该纹理。 资源视图的一个优点是，你可在呈现管道中的不同阶段以不同方式解释数据。 有关资源视图的详细信息，请参阅[纹理视图 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 在视图转换或视图转换矩阵的上下文中使用时，视图指的是相机的位置和方向。 视图转换会在围绕相机的位置和方向的世界中重新定位各个对象。 有关视图转换的详细信息，请参阅[视图转换 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342)。 本主题将详细介绍 Marble Maze 如何使用资源和矩阵视图。
 
  
 
@@ -441,7 +442,7 @@ sPSInput main(sVSInput input)
 
 有关输入装配阶段状态的详细信息，请参阅[输入装配器阶段](https://msdn.microsoft.com/library/windows/desktop/bb205116)和[输入装配器阶段入门](https://msdn.microsoft.com/library/windows/desktop/bb205117)。
 
-使用顶点和像素着色器渲染场景的过程将在本文后面的[渲染场景](#rendering_the_scene)一节介绍。
+使用顶点和像素着色器呈现场景的过程将在本文后面的[呈现场景](#rendering_the_scene)一节介绍。
 
 ### 创建常量缓冲区
 
@@ -600,7 +601,7 @@ void UserInterface::Update(float timeTotal, float timeDelta)
 }
 ```
 
-派生自 **ElementBase** 的类实现 **Update** 方法来执行特定的行为。 例如，**StopwatchTimer::Update** 方法通过所提供的时间量来更新已经过的时间，并更新它稍后将显示的文本。
+派生自 **ElementBase** 的类通过实现 **Update** 方法来执行特定的行为。 例如，**StopwatchTimer::Update** 方法通过所提供的时间量来更新已经过去的时间，并更新它稍后将显示的文本。
 
 ```cpp
 void StopwatchTimer::Update(float timeTotal, float timeDelta)
@@ -800,7 +801,7 @@ m_mazeMesh.Render(m_d3dContext.Get(), 0, INVALID_SAMPLER_SLOT, INVALID_SAMPLER_S
 
 **MarbleMaze::Render** 方法执行类似的步骤来呈现弹珠。
 
-如本文档前面所述，**SDKMesh** 类仅用于演示用途，我们不建议将它用于生产质量的游戏中。 但是请注意，**SDKMesh::RenderMesh** 方法（由 **SDKMesh::Render** 调用）使用  [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 方法来设置可定义网格的当前顶点和索引缓冲区，使用 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476410) 方法绘制缓冲区。 有关如何使用顶点和索引缓冲区的详细信息，请参阅 [Direct3D 11 中的缓冲区简介](https://msdn.microsoft.com/library/windows/desktop/ff476898)。
+如本文档前面所述，**SDKMesh** 类仅用于演示用途，我们不建议将它用于生产质量游戏中。 但是请注意，**SDKMesh::RenderMesh** 方法（由 **SDKMesh::Render** 调用）使用 [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 方法来设置可定义网格的当前顶点和索引缓冲区，使用 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476410) 方法绘制缓冲区。 有关如何使用顶点和索引缓冲区的详细信息，请参阅 [Direct3D 11 中的缓冲区简介](https://msdn.microsoft.com/library/windows/desktop/ff476898)。
 
 ### 绘制用户界面和覆盖
 
@@ -903,6 +904,6 @@ else
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

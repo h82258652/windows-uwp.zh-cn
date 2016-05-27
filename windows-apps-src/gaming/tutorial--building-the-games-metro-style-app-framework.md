@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 定义游戏的通用 Windows 平台 (UWP) 应用框架
 description: 为通用 Windows 平台 (UWP) DirectX 游戏进行编码的第一部分是生成使游戏对象与 Windows 交互的框架。
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
@@ -7,7 +8,7 @@ ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 #  定义游戏的通用 Windows 平台 (UWP) 应用框架
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 为通用 Windows 平台 (UWP) DirectX 游戏进行编码的第一部分是生成使游戏对象与 Windows 交互的框架。 这包括 Windows 运行时属性，如暂停/恢复事件处理、窗口焦点和贴靠，以及用户界面的事件、交互和过渡。 我们将了解该示例游戏是如何构建的，以及它如何为玩家与系统交互定义高级状态机。
 
@@ -21,7 +22,7 @@ ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 
 在任何 UWP DirectX 游戏中，必须获取应用单一实例（即定义运行应用的实例的 Windows 运行时对象） 能够访问其所需图形资源的视图提供程序。 通过 Windows 运行时，你的应用可以直接与图形界面连接，但需要指定所需的资源和处理资源的方式。
 
-如我们在[设置游戏项目](tutorial--setting-up-the-games-infrastructure.md)中所述，Microsoft Visual Studio 2015 在 **Sample3DSceneRenderer.cpp** 文件中提供了 DirectX 的基本呈现器的实现，该文件在你选取**“DirectX 11 应用(通用 Windows)”**模板时提供。
+如我们在[设置游戏项目](tutorial--setting-up-the-games-infrastructure.md)中所述，Microsoft Visual Studio 2015 在 **Sample3DSceneRenderer.cpp** 文件中提供了 DirectX 的基本呈现器的实现，该文件在你选取“DirectX 11 应用(通用 Windows)”****模板时提供。
 
 有关理解和创建视图提供程序和呈现器的更多详细信息，请参阅[如何设置使用 C++ 和 DirectX 的 UWP 以显示 DirectX 视图](https://msdn.microsoft.com/library/windows/apps/hh465077)。
 
@@ -289,7 +290,7 @@ void App::InitializeGameState()
 
 我们的示例代码为 **Initialize**、**SetWindow** 和 **Load** 中的特定事件注册了大量处理程序。 你可能猜到这些是重要的事件，因为代码示例在转到任何游戏机或图形开发之前运行状况良好。 你猜对了！ 这些事件是获得正确的 UWP 应用体验的基础，由于 UWP 应用可随时激活、停用、调整大小、贴靠、取消贴靠、暂停 或恢复，因此游戏必须尽快注册这些事件，并且处理这些事件的方式应保证玩家获得流畅和可预期的体验。
 
-下面是示例中的事件处理程序，以及它们处理的事件。 你可以在[此部分的完整代码](#code_sample)中找到这些事件处理程序的完整代码
+下面是示例中的事件处理程序，以及它们处理的事件。 你可以在[此部分的完整代码](#code_sample)中找到这些事件处理程序的完整代码。
 
 <table>
 <colgroup>
@@ -1421,6 +1422,6 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Marble Maze 示例基础
 description: 本文档介绍了 Marble Maze 项目的基本特征，例如它如何在 WIndows 运行时环境中使用 Visual C++、如何创建和构造它，以及如何生成它。
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
@@ -31,7 +32,7 @@ ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 
 当我们为 Marble Maze 创建了 Visual Studio 项目时，我们从一个现有项目开始。 但是，如果现有的项目没有提供你的 DirectX UWP 游戏所需的基本功能，建议你基于 Visual Studio **DirectX 11 应用（通用 Windows）**模板创建一个 项目，因为它提供了基本的有效 3D 应用程序。
 
-**DirectX 11 应用（通用 Windows）**模板中一个重要的项目设置是 **/ZW** 选项， 它使程序能够使用 Windows 运行时语言扩展。 在使用 Visual Studio 模板时默认已启用此选项。
+**DirectX 11 应用（通用 Windows）**模板中一个重要的项目设置是 **/ZW** 选项，它使程序能够使用 Windows 运行时语言扩展。 在使用 Visual Studio 模板时默认已启用此选项。
 
 > **注意** **/ZW** 选项与 **/clr** 等选项不兼容。对于 **/clr**，这意味着无法同时针对 .NET Framework 和 Windows 运行时开发同一个 Visual C++ 项目。
 
@@ -42,11 +43,11 @@ ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 ##  生成、部署和运行游戏
 
 
-像生成标准项目一样生成 UWP 应用项目。 （在菜单栏上，选择**“生成”、“生成解决方案”**。）此生成步骤会编译代码，还会打包它以用作 UWP 应用。
+像生成标准项目一样生成 UWP 应用项目。 （在菜单栏上，选择“生成”、“生成解决方案”****。）此生成步骤会编译代码，还会打包它以用作 UWP 应用。
 
-生成项目后，你必须部署它。（在菜单栏上，选择**“生成”、“部署解决方案”**。）当你从调试程序运行游戏时，Visual Studio 也会部署该项目。
+生成项目后，你必须部署它。（在菜单栏上，选择“生成”、“部署解决方案”****。）当你从调试程序运行游戏时，Visual Studio 也会部署该项目。
 
-部署项目后，选取 Marble Maze 磁贴以运行游戏。 也可以从 Visual Studio 的菜单栏中选择“调试”****>“启动调试”。
+部署项目后，选取 Marble Maze 磁贴以运行游戏。 也可以从 Visual Studio 的菜单栏中选择“调试”、“开始调试”****。
 
 ###  控制游戏
 
@@ -117,7 +118,7 @@ void LoadMesh(
     );
 ```
 
-若要在应用上执行代码分析，在菜单栏上选择**“生成”、“对解决方案运行代码分析”**。 有关代码分析的详细信息，请参阅[使用代码分析分析 C/C++ 代码质量](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx)。
+若要在应用上执行代码分析，在菜单栏上选择“生成”、“对解决方案运行代码分析”****。 有关代码分析的详细信息，请参阅[使用代码分析分析 C/C++ 代码质量](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx)。
 
 可用注释的完整列表在 sal.h 中定义。 有关详细信息，请参阅 [SAL 注释](https://msdn.microsoft.com/library/windows/apps/ms235402.aspx)。
 
@@ -141,6 +142,6 @@ void LoadMesh(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

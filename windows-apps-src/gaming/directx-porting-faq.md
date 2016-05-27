@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DirectX 11 移植常见问题
 description: 有关将游戏移植到通用 Windows 平台 (UWP) 的常见问题的解答。
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
@@ -135,6 +136,6 @@ Microsoft Visual Studio 2015 包含针对 DirectX 图形的诊断工具。 请�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

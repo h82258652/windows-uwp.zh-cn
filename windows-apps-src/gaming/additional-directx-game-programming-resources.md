@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 游戏编程资源
 description: 有关在 Windows 上进行游戏编程的详细信息，请查看以下资源。
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
@@ -79,6 +80,6 @@ ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

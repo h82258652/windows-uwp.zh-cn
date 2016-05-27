@@ -1,15 +1,16 @@
 ---
+author: mtoepke
 title: 通用 Windows 平台 (UWP) 应用中的多重采样
 description: 了解如何在使用 Direct3D 生成的通用 Windows 平台 (UWP) 应用中使用多重采样。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ---
 
-# <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"> </span> 通用 Windows 平台 (UWP) 应用中的多重采样
+# <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> 通用 Windows 平台 (UWP) 应用中的多重采样
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-了解如何在使用 Direct3D 生成的通用 Windows 平台 (UWP) 应用中使用多重采样。 多重采样（也称为多重采样抗锯齿）是一种图形技术，用于减少锯齿边缘的显示。 它的工作方式是绘制比最终渲染目标中包含的实际像素更多的像素，然后取平均值以保留某些像素的“局部”边缘的显示。 有关多重采样在 Direct3D 中的实际工作方式的详细说明， 请参阅[多重采样抗锯齿光栅化规则](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample)。
+了解如何在使用 Direct3D 生成的通用 Windows 平台 (UWP) 应用中使用多重采样。 多重采样（也称为多重采样抗锯齿）是一种图形技术，用于减少锯齿边缘的显示。 它的工作方式是绘制比最终渲染目标中包含的实际像素更多的像素，然后取平均值以保留某些像素的“局部”边缘的显示。 有关多重采样在 Direct3D 中的实际工作方式的详细说明，请参阅[多重采样抗锯齿光栅化规则](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample)。
 
 ## 多重采样和翻转模型交换链
 
@@ -204,6 +205,6 @@ Direct3D 功能级别保证支持特定的最小样本计数功能，并保证�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

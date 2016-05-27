@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: 游戏的移动观看控件
 description: 了解如何向你的 DirectX 游戏添加传统的鼠标和键盘移动观看控件（也称为鼠标观看控件）。
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 ---
 
-# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"> </span>游戏的移动观看控件
+# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>游戏的移动观看控件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何向你的 DirectX 游戏添加传统的鼠标和键盘移动观看控件（也称为鼠标观看控件）。
 
@@ -173,7 +174,7 @@ internal:
 -   **Initialize**。 应用调用此事件处理程序来初始化控件，并将其附加到描述显示窗口的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象。
 -   **SetPosition**。 应用调用此方法以在场景空间中设置控件的（x、y 和 z）坐标。
 -   **SetOrientation**。 应用调用此方法以设置相机的俯仰和偏航。
--   **get\_Position**. 应用访问此属性来获取相机在场景空间中的当前位置。 使用此属性作为当前相机位置与应用进行通信的方法。
+-   **get\_Position**。 应用访问此属性来获取相机在场景空间中的当前位置。 使用此属性作为当前相机位置与应用进行通信的方法。
 -   **get\_LookPoint**。 应用访问此属性来获取控制器相机面向的当前点。
 -   **Update**。 读取移动和观看控制器的状态并更新相机位置。 从应用的主循环中不断调用此方法可刷新相机控制器数据和相机在场景空间中的位置。
 
@@ -567,10 +568,10 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-恭喜你！ 你已经在游戏中为触摸屏和键盘/鼠标输入触摸控件实现了基本的移动观看控件。
+恭喜你！ 你已经在游戏中为触摸屏和键盘/鼠标输入触摸控件实现了基本的移动观看控件！
 
 > **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -583,6 +584,6 @@ myFirstPersonCamera->SetViewParameters(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

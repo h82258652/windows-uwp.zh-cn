@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 在 DirectX 游戏中加载资源
 description: 大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（着色器、纹理、预先定义的网络或其他图形数据）。
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
@@ -42,20 +43,20 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 <thead>
 <tr class="header">
 <th align="left">主题</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Complete code for BasicLoader](complete-code-for-basicloader.md)</p></td>
+<td align="left"><p>[BasicLoader 的完整代码](complete-code-for-basicloader.md)</p></td>
 <td align="left"><p>转换图形网格对象并将其加载到内存中的类和方法的完整代码。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
+<td align="left"><p>[BasicReaderWriter 的完整代码](complete-code-for-basicreaderwriter.md)</p></td>
 <td align="left"><p>一般用来读取和写入二进制数据文件的类和方法的完整代码。 由 [BasicLoader](complete-code-for-basicloader.md) 类使用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
+<td align="left"><p>[DDSTextureLoader 的完整代码](complete-code-for-ddstextureloader.md)</p></td>
 <td align="left"><p>从内存中加载 DDS 纹理的类和方法的完整代码。</p></td>
 </tr>
 </tbody>
@@ -71,7 +72,7 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 
 `task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`。
 
-可以使用 **.then()** 语法将任务链接在一起，以便当一个操作完成后，可以运行依赖之前操作的结果的另一个异步操作。 这样，你便可以在单独的线程上加载、转换和管理复杂的资源，而这种方式玩家几乎看不到。
+可以使用 **.then\(\)** 语法将任务链接在一起，以便当一个操作完成后，可以运行依赖之前操作的结果的另一个异步操作。 这样，你便可以在单独的线程上加载、转换和管理复杂的资源，而这种方式玩家几乎看不到。
 
 有关更多详细信息，请阅读[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
@@ -183,7 +184,7 @@ void ResourceLoading::CreateDeviceResources()
 }
 ```
 
-请注意，使用 && 运算符聚合任务，以便设置加载完成标识的 lambda 仅在完成所有任务时触发。 注意，如果你拥有多个标志，则可能会出现争用的情况。 例如，如果 lambda 将两个标志连续设置为同一个值，那么当在设置第二个标志之前进行检查时，另一个线程可能只能看到设置的第一个标志。
+请注意，使用 &amp;&amp; 运算符聚合任务，以便设置加载完成标识的 lambda 仅在完成所有任务时触发。 注意，如果你拥有多个标志，则可能会出现争用的情况。 例如，如果 lambda 将两个标志连续设置为同一个值，那么当在设置第二个标志之前进行检查时，另一个线程可能只能看到设置的第一个标志。
 
 你已经了解如何异步加载资源文件。 同步文件加载更简单，你可以在 [BasicReaderWriter 的完整代码](complete-code-for-basicreaderwriter.md)和 [BasicLoader 的完整代码](complete-code-for-basicloader.md)中找到它们的示例。
 
@@ -199,10 +200,10 @@ void ResourceLoading::CreateDeviceResources()
 
 让我们从网格文件中获取字节数据。 该示例中的格式假定该文件是后缀为 .vbo 的示例特定格式。 （而且，该格式不同于 OpenGL 的 VBO 格式。）每个顶点本身都会映射到 **BasicVertex** 类型，这是在 obj2vbo 转换器工具的代码中定义的结构。 .vbo 文件中顶点数据的布局如下所示：
 
--   数据流的第一个 32 位（4 个字节）包含网格中的顶点数量 (numVertices)，表示为 uint32 值。
--   数据流的下一个 32 位（4 个字节）包含网格中的索引数量 (numIndices)，表示为 uint32 值。
--   此后，后续的位 (numVertices \* sizeof(**BasicVertex**)) 包含顶点数据。
--   最后一个数据位 (numIndices \* 16) 包含索引数据，表示为 uint16 值序列。
+-   数据流的第一个 32 位（4 个字节）包含网格中的顶点数量 \(numVertices\)，表示为 uint32 值。
+-   数据流的下一个 32 位（4 个字节）包含网格中的索引数量 \(numIndices\)，表示为 uint32 值。
+-   此后，后续的位 \(numVertices \* sizeof\(**BasicVertex**\)\) 包含顶点数据。
+-   最后一个数据位 \(numIndices \* 16\) 包含索引数据，表示为 uint16 值序列。
 
 重点是要知道你加载的网格数据的位级布局。 而且还要确保你符合字节序。 所有 Windows 8 平台都是低字节序。
 
@@ -308,7 +309,7 @@ Direct3D 提供对 DXT 纹理压缩算法的支持，但在玩家的图形硬件
 
 DDS 文件是包含以下信息的二进制文件：
 
--   包含四个字符代码值“DDS ”(0x20534444) 的 DWORD（幻数）。
+-   包含四个字符代码值“DDS ”\(0x20534444\) 的 DWORD（幻数）。
 
 -   文件中数据的描述。
 
@@ -363,7 +364,7 @@ task<void> BasicLoader::LoadTextureAsync(
 }
 ```
 
-在上面的代码段中，lambda 查看文件名是否具有“dds”扩展名。 如果有，则认为它是 DDS 纹理。 如果没有，则使用 Windows 图像处理组件 (WIC) API 发现该格式并将数据解码为位图。 无论采用哪种方法，结果都是 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 位图（或错误）。
+在上面的代码段中，lambda 查看文件名是否具有“dds”扩展名。 如果有，则认为它是 DDS 纹理。 如果没有，则使用 Windows 图像处理组件 \(WIC\) API 发现该格式并将数据解码为位图。 无论采用哪种方法，结果都是 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 位图（或错误）。
 
 ```cpp
 void BasicLoader::CreateTexture(
@@ -511,7 +512,7 @@ void BasicLoader::CreateTexture(
 
 ### 加载着色器
 
-着色器是编译的高级着色器语言 (HLSL) 文件，这些文件加载到内存中并在图形管道的特定阶段进行调用。 最常用和最基本的着色器是顶点和像素着色器，它们在场景的视区中分别处理网格和想色的各个顶点。 执行 HLSL 代码可转换几何体、应用照明效果和纹理，以及对呈现的场景执行后期处理。
+着色器是编译的高级着色器语言 \(HLSL\) 文件，这些文件加载到内存中并在图形管道的特定阶段进行调用。 最常用和最基本的着色器是顶点和像素着色器，它们在场景的视区中分别处理网格和想色的各个顶点。 执行 HLSL 代码可转换几何体、应用照明效果和纹理，以及对呈现的场景执行后期处理。
 
 Direct3D 游戏可以包含很多不同的着色器，每个着色器编译成一个单独的 CSO（编译的着色器对象，.cso）文件。 正常情况下，你没有这么多需要动态加载它们的着色器，在大多数情况下，只需在游戏启动时加载它们，或者按级别加载（如下雨效果的着色器）。
 
@@ -543,7 +544,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-在该示例中，你使用 **BasicReaderWriter** 实例 (**m\_basicReaderWriter**) 以字节流的形式读取所提供的编译的着色器对象 (.cso) 文件。 该任务完成后，lambda 使用从文件加载的字节数据调用 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)。 你的回调必须设置某些指示加载成功的标志，并且你的代码必须在运行着色器之前检查该标志。
+在该示例中，你使用 **BasicReaderWriter** 实例 \(**m\_basicReaderWriter**\) 以字节流的形式读取所提供的编译的着色器对象 \(.cso\) 文件。 该任务完成后，lambda 使用从文件加载的字节数据调用 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)。 你的回调必须设置某些指示加载成功的标志，并且你的代码必须在运行着色器之前检查该标志。
 
 顶点着色器稍微有点复杂。 对于顶点着色器，你还要加载一个单独的定义顶点数据的输入布局。 可以使用下列代码来异步加载顶点着色器以及自定义顶点输入布局。 确保你从网格加载的顶点信息可以由该输入布局正确表示！
 
@@ -589,9 +590,9 @@ void BasicLoader::CreateInputLayout(
 
 在这个特殊的布局中，每个顶点都拥有由顶点着色器处理的下列数据：
 
--   模型的坐标空间中的 3D 坐标位置 (x, y, z) 表示为一个 32 位浮点值的三元组。
+-   模型的坐标空间中的 3D 坐标位置 \(x, y, z\) 表示为一个 32 位浮点值的三元组。
 -   顶点的法线向量还表示为三个 32 位浮点值。
--   转换后的 2D 纹理坐标值 (u, v) 表示为一个 32 位浮点值对。
+-   转换后的 2D 纹理坐标值 \(u, v\) 表示为一个 32 位浮点值对。
 
 这些每个顶点的输入元素称为 [HLSL 语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)，并且它们是 一组定义的注册，用于在编译的着色器对象之间来回传递数据。 你的管道为加载的网格中的每个顶点运行一次顶点着色器。 语义定义运行时顶点着色器的输入（以及输出），并且在着色器的 HLSL 代码中为每个顶点的计算提供该数据。
 
@@ -704,6 +705,6 @@ task<void> BasicLoader::LoadShaderAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

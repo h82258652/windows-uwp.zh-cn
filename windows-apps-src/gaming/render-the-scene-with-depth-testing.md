@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 通过深度测试呈现场景
 description: 通过向顶点（或几何图形）着色器和像素着色器中添加深度测试来创建阴影效果。
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
@@ -159,6 +160,6 @@ return float4(input.color * ambient, 1.f);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

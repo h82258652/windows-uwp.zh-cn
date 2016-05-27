@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 用于游戏编程的 Visual Studio 工具
 description: 概要介绍了 Visual Studio 中提供的 DirectX 特定工具。
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
@@ -146,6 +147,6 @@ Visual Studio 提供特定于图形的调试工具。 可使用这些工具来�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

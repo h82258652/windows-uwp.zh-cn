@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 如何激活应用（DirectX 和 C++）
 description: 本主题介绍了如何为通用 Windows 平台 (UWP) DirectX 应用定义激活体验。
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
@@ -89,6 +90,6 @@ void App::Run()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

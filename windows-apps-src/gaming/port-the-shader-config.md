@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 移植着色器对象
 description: 移植 OpenGL ES 2.0 中的简单呈现器时，第一步是在 Direct3D 11 中设置等效的顶点着色器和片段着色器对象，并且确保在编译之后主程序能够与着色器对象进行通信。
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
@@ -7,7 +8,7 @@ ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 # 移植着色器对象
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -317,6 +318,6 @@ m_d3dContext->UpdateSubresource(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

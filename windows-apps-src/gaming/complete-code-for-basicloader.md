@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: BasicLoader 的完整代码
 description: 转换并加载常用图形资源（如网格、纹理以及各种着色器对象）的类和方法的完整代码。
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
@@ -7,7 +8,7 @@ ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 # BasicLoader 的完整代码
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 转换并加载常用图形资源（如网格、纹理以及各种着色器对象）的类和方法的完整代码。
 
@@ -25,17 +26,14 @@ ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 
 ## 技术
 
-|                       |                 |
-|-----------------------|-----------------|
-| 编程语言 | C++             |
-| 编程模型    | Windows 运行时 |
+**编程语言** - C++  
+**编程模型** - Windows 运行时
 
 ## 要求
 
-| 最低受支持的客户端 | Windows 10                            |
-|--------------------------|---------------------------------------|
-| 最低受支持的服务器 | Windows Server 2016 Technical Preview |
-| 所需的最低 SDK 版本     |                                       |
+**最低受支持的客户端** - Windows 10                              
+**最低受支持的服务器** - Windows Server 2016 Technical Preview 
+
 
 ## 查看代码 (C++)
 
@@ -1108,6 +1106,6 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

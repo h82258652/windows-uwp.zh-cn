@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DirectX 游戏的基本 3D 图形
 description: 我们将介绍如何使用 DirectX 编程来实现 3D 图形的基本概念。
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
@@ -38,7 +39,7 @@ ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
 -   剔除隐藏的表面
 
 > **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发， 请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -62,6 +63,6 @@ ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

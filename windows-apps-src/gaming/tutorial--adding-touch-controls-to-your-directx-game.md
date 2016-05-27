@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 游戏的触摸控件
 description: 了解如何将基本触摸控件添加到使用 DirectX 的通用 Windows 平台 (UWP) C++ 游戏。
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
@@ -7,7 +8,7 @@ ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 # 游戏的触摸控件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何将基本触摸控件添加到使用 DirectX 的通用 Windows 平台 (UWP) C++ 游戏。 我们将介绍如何添加基于触摸的控件以便在 Direct3D 环境中（使用手指或触笔在其中拖动来改变相机视角） 移动固定平面相机。
 
@@ -115,7 +116,7 @@ public:
 -   **SetPosition** 是一个方法，应用调用此方法在场景空间中设置控件的（x、y 和 z）坐标。 注意，z 坐标在整个教程中始终为 0。
 -   **get_Position** 是一个属性，应用访问此属性来获取相机在场景空间中的当前位置。 使用此属性作为当前相机位置与应用进行通信的方法。
 -   **get\_FixedLookPoint** 是一个属性，应用访问此属性来获取控制器相机面对的当前点。 在本示例中，它通常锁定到 x-y 平面。
--   **Update** 是一个方法，用于读取控制器状态和更新相机位置。 从应用的主循环中不断调用此 <something> 可刷新相机控制器数据和相机在场景空间中的位置。
+-   **Update** 是一个方法，用于读取控制器状态和更新相机位置。 从应用的主循环中不断调用此 &lt;方法&gt; 可刷新相机控制器数据和相机在场景空间中的位置。
 
 现在，你拥有了实现触摸控件所需的全部组件。 你可以检测触摸或鼠标指针事件发生的时间和位置，以及操作是什么。 你可以相对于场景空间设置相机的位置和方向，并跟踪更改。 最后，你可以将新相机位置传达给执行调用的应用。
 
@@ -231,7 +232,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** 将指向该应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例的引用作为参数提供，并在该 **CoreWindow** 上注册我们已开发的相应事件处理程序。
+**Initialize** 将指向该应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例的引用作为参数提供，并在该 **CoreWindow** 上注册我们已开发的相应事件的事件处理程序。
 
 ## 获取并设置相机控制器的位置
 
@@ -334,7 +335,7 @@ void CameraPanController::Update( CoreWindow ^window )
 恭喜你！ 你已在游戏中实现了一组简单的相机平移触摸控件。
 
 > **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -347,6 +348,6 @@ void CameraPanController::Update( CoreWindow ^window )
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
