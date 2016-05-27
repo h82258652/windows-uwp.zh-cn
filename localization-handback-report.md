@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 8
+ Total Files | 9
 
 ## File List
  Source File | Status | Details 
@@ -14,6 +14,7 @@
  [windows-apps-src\app-help-guidelines\guidelines-for-app-help.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/app-help-guidelines/guidelines-for-app-help.md) | InSyncHandedBackSuccess | [Details](#1e1e5e118eb44f6b491669dbd274fae05d92685b22)
  [windows-apps-src\app-help-guidelines\in-app-help.md](https://github.com/Microsoft/windows-apps/blob/c183f7390c5b4f99cf0f31426c1431066e1bc96d/windows-apps-src/app-help-guidelines/in-app-help.md) | InSyncHandedBackSuccess | [Details](#7edad75b1639768023eb8add1e23fe0aafb0b67428)
  [windows-apps-src\app-help-guidelines\instructional-ui.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/app-help-guidelines/instructional-ui.md) | InSyncHandedBackSuccess | [Details](#1c8ab97a5625243a50fa3b40ae93f5928dc7d85129)
+ [windows-apps-src\app-settings\guidelines-for-app-settings.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/app-settings/guidelines-for-app-settings.md) | HandedBackFailed | [Details](#aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e431)
 
 ## Item Details
 ##### <a name='71071c989ca4aaa727d18d3ec25d8642517c4b2613'></a> Source: [windows-apps-src\accessibility\control-patterns-and-interfaces.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/accessibility/control-patterns-and-interfaces.md)
@@ -112,7 +113,26 @@
 * Handback Datetime: 2016-05-27 20:25:19
 * [Back to Top](#report-top)
 
+##### <a name='aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e431'></a> Source: [windows-apps-src\app-settings\guidelines-for-app-settings.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/app-settings/guidelines-for-app-settings.md)
+* Status: HandedBackFailed
+* Target File: 
+* Handoff File: [guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0607049bfa018cc6bec72fd2d79d3c6fd08f0f65/ol-handoff/Microsoft/windows-apps.zh-cn/master/guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.zh-cn.xlf)
+* Handoff Datetime: 2016-05-12 02:26:30
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Error: [handback_transform_failed](#aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e431handback_transform_failed)
+* [Back to Top](#report-top)
+
 
 ## Error Details
+##### <a name='aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e431handback_transform_failed'></a> Source: [windows-apps-src\app-settings\guidelines-for-app-settings.md](#aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e431)
+* Error Code: handback_transform_failed
+* Error Message: Handback file: C:\ol\master\WDG.handback\e0cdf7\ol-handback\Microsoft\windows-apps.zh-cn\master\app-settings\guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.zh-cn.xlf failed.
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_transform_failed","internal_error_message":"Handback file: C:\\ol\\master\\WDG.handback\\e0cdf7\\ol-handback\\Microsoft\\windows-apps.zh-cn\\master\\app-settings\\guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.zh-cn.xlf failed.","internal_error_retriable":false,"exception_message":"worker error: Error: Unmatched closing tag: xliff\nLine: 414\nColumn: 8\nChar: >","exception_type":"System.Net.Http.HttpRequestException","stack_trace":"   at Microsoft.OpenLocalization.Transformer.MarkdownJavascriptTransformer.XliffToMarkdownCore(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\Transformer\\MarkdownJavascriptTransformer.cs:line 119\r\n   at Microsoft.OpenLocalization.Transformer.XliffTransformerExtensions.XliffToMarkdown(IMarkdownTransformer markdownTransformer, Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\XliffTransformerExtensions.cs:line 109\r\n   at Microsoft.OpenLocalization.Transformer.XliffTransformerExtensions.XliffToMarkdown(IMarkdownTransformer markdownTransformer, String xliffFile, String skeletonFile, String markdownFile) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\XliffTransformerExtensions.cs:line 206\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 42\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 424","extended_information":null}
+
 
 Generated by OpenLocalization.
