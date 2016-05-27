@@ -219,7 +219,7 @@ private async Task ValidateSSLRoot()
         await httpClient.GetAsync(bingUri);
 
     // Get the list of certificates that were used to
-    // validate the server&#39;s identity
+    // validate the server's identity
     IReadOnlyList<Certificate> serverCertificates = response.RequestMessage.TransportInformation.ServerIntermediateCertificates;
   
     // Perform validation
@@ -342,7 +342,7 @@ private PasswordCredential GetCredentialFromLocker()
     else if (credentialList.Count > 0)
     {
         // When there are multiple usernames,
-        // retrieve the default username. If one doesn’t
+        // retrieve the default username. If one doesn't
         // exist, then display UI to have the user select
         // a default username.
         defaultUserName = GetDefaultUserNameUI();
@@ -468,7 +468,7 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 -   [加密密钥](cryptographic-keys.md)
 -   [数据保护](data-protection.md)
 -   [MAC、哈希以及签名](macs-hashes-and-signatures.md)
--   [有关加密的导出限制](export-restrictions-on-cryptography.md)
+-   [有关加密的出口限制](export-restrictions-on-cryptography.md)
 -   [常见的加密任务](common-cryptography-tasks.md)
 
 ### 6.2 代码示例
@@ -498,6 +498,6 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 -   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://msdn.microsoft.com/library/windows/apps/hh701506)
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

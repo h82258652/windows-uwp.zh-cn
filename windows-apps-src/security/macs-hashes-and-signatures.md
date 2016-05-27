@@ -189,6 +189,6 @@ public void SampleReusableHash()
 
 你可以使用 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 对象枚举可用的签名算法以及生成或导入密钥对。 你可以在 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 类上使用静态方法对消息进行签名或验证签名。
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

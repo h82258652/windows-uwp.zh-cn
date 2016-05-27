@@ -8,11 +8,11 @@ author: awkoren
 # Web 身份验证代理
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。 [
-            **AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供商，并取回描述应用有权访问的提供商资源的访问令牌。
+            **AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供者，并取回描述应用有权访问的提供者资源的访问令牌。
 
 **注意** 有关完整的有效代码示例，请克隆 [GitHub 上的 WebAuthenticationBroker 存储库](http://go.microsoft.com/fwlink/p/?LinkId=620622)。
 
@@ -33,7 +33,7 @@ author: awkoren
 下例介绍如何建立请求 URI。
 
 ```cs
-string startURL = "https://<providerendpoint>?client_id=<clientid>&amp;scope=<scopes>&amp;response_type=token";
+string startURL = "https://<providerendpoint>?client_id=<clientid>&scope=<scopes>&response_type=token";
 string endURL = "http://<appendpoint>";
 
 System.Uri startURI = new System.Uri(startURL);
@@ -43,7 +43,7 @@ System.Uri endURI = new System.Uri(endURL);
 ## 连接到联机提供商
 
 
-调用 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法以连接到联机标识提供商并获取访问令牌。 该方法将上一步骤中构建的 URI 用作 *requestUri* 参数，并将你希望用户被重定向到的 URI 用作 *callbackUri* 参数。
+调用 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法以连接到联机标识提供者并获取访问令牌。 该方法将上一步骤中构建的 URI 用作 *requestUri* 参数，并将你希望用户被重定向到的 URI 用作 *callbackUri* 参数。
 
 ```cs
 string result;
@@ -84,7 +84,7 @@ catch (Exception ex)
 ## 使用单一登录 (SSO) 连接。
 
 
-默认情况下，Web 身份验证代理不允许保留 cookie。 正因为如此，所以即使应用用户指示他们希望保留登录状态（例如，通过选择提供商的登录对话框中的复选框），他们也必须在每次希望访问该提供商的资源时登录。 若要使用 SSO 登录，则联机提供商必须为 Web 身份验证代理启用 SSO，而你的应用必须调用未获取 *callbackUri* 参数的 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) 的重载。
+默认情况下，Web 身份验证代理不允许保留 cookie。 正因为如此，所以即使应用用户指示他们希望保留登录状态（例如，通过选择提供商的登录对话框中的复选框），他们也必须在每次希望访问该提供商的资源时登录。 若要使用 SSO 登录，则联机标识提供者必须为 Web 身份验证代理启用 SSO，而你的应用必须调用未获取 *callbackUri* 参数的 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) 的重载。
 
 若要支持 SSO，联机提供商必须允许你采用 `ms-app://`*appSID* 形式注册重定向 URI，其中 *appSID* 为应用的 SID。 可从应用开发人员页面中为应用找到应用的 SID，或通过调用 [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) 方法（也可以达到此目的）。
 
@@ -149,12 +149,12 @@ Fiddler Web 调试程序可与应用一起使用。
 
 1.  由于 AuthHost 在自己的应用容器中运行以实现它的私有网络功能，所以必须设置注册表项：Windows 注册表编辑器版本 5.00
 
-    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE** \\ **SOFTWARE** \\ **Microsoft** \\ **Windows NT** \\ **CurrentVersion** \\ **Image File Execution Options** \\ **authhost.exe** \\ **EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
 
-2.  为 AuthHost 添加规则，因为这是传出流量的来源。
+2.  为 AuthHost 添加规则，因为这是出站流量的来源。
     ```syntax
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.a.p_8wekyb3d8bbwe
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.sso.p_8wekyb3d8bbwe
@@ -174,6 +174,6 @@ Fiddler Web 调试程序可与应用一起使用。
 
 3.  针对传入 Fiddler 的流量添加防火墙规则。
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -18,7 +18,7 @@ author: awkoren
 
  
 
-有关 美国商务部工业与安全局的详细信息，请参阅[关于工业与安全局](http://go.microsoft.com/fwlink/p/?LinkID=245644)。
+有关美国商务部工业与安全局的详细信息，请参阅[关于工业与安全局](http://go.microsoft.com/fwlink/p/?LinkID=245644)。
 
 有关监管技术出口（包括加密）的出口管理条例 (EAR) 的信息，请参阅[对使用加密的项进行 EAR 控制](http://go.microsoft.com/fwlink/p/?LinkID=245645)。
 
@@ -55,6 +55,6 @@ author: awkoren
 如果没有 ECCN，请参阅 [ECCN 问题与答案](http://go.microsoft.com/fwlink/p/?LinkID=245646)。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

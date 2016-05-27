@@ -53,7 +53,7 @@ author: awkoren
     -   包含 Microsoft Passport 状态的 TextBlock。
     -   用于解释登录页的 TextBlock（当没有任何后端或已配置的用户时）。
 
-    ```xaml
+    ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <StackPanel Orientation="Vertical">
         <TextBlock Text="Login" FontSize="36" Margin="4" TextAlignment="Center"/>
@@ -64,7 +64,7 @@ author: awkoren
         <TextBox x:Name="UsernameTextBox" Margin="4" Width="250"/>
         <Button x:Name="PassportSignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
             Click="PassportSignInButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20"/>
-        <TextBlock Text="Don&#39;t have an account?"
+        <TextBlock Text="Don't have an account?"
                     TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
         <TextBlock x:Name="RegisterButtonTextBlock" Text="Register now"
                    PointerPressed="RegisterButtonTextBlock_OnPointerPressed"
@@ -76,7 +76,7 @@ author: awkoren
                  Margin="4" TextAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
         </Border>
         <TextBlock x:Name="LoginExplaination" FontSize="24" TextAlignment="Center" TextWrapping="Wrap" 
-            Text="Please Note: To demonstrate a login, validation will only occur using the default username &#39;sampleUsername&#39;"/>
+            Text="Please Note: To demonstrate a login, validation will only occur using the default username 'sampleUsername'"/>
       </StackPanel>
     </Grid>
     ```
@@ -489,9 +489,9 @@ author: awkoren
 
 在本练习中，你将从上一练习继续操作。 当用户成功登录时，他们应该进入可从中注销或删除其帐户的欢迎页。 当 Passport 为每台计算机创建密钥时，将创建一个用户选择屏幕，该屏幕上将显示已登录这台计算机的所有用户。 然后，用户可以选择这些帐户之一并直接转至欢迎屏幕，而无需重新输入密码，因为已针对这些用户进行身份验证，以便访问该计算机。
 
--   1. 在 Views 文件夹中，添加名为“Welcome.xaml”的新空白页。 添加以下 XAML 来完成用户界面。 这将显示一个标题、登录的用户名以及两个按钮。 其中一个按钮将向后导航到用户列表（将在稍后创建），另一个按钮将处理忘记此用户的情况。
+-   在 Views 文件夹中，添加名为“Welcome.xaml”的新空白页。 添加以下 XAML 来完成用户界面。 这将显示一个标题、登录的用户名以及两个按钮。 其中一个按钮将向后导航到用户列表（将在稍后创建），另一个按钮将处理忘记此用户的情况。
 
-    ```xaml
+    ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <StackPanel Orientation="Vertical">
         <TextBlock x:Name="Title" Text="Welcome" FontSize="40" TextAlignment="Center"/>
@@ -624,7 +624,7 @@ author: awkoren
 
 -   在 Views 文件夹中，创建名为“UserSelection.xaml”的新空白页，然后添加以下 XAML 来定义用户界面。 此页面将包含一个用于在本地帐户列表中显示所有用户的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)，以及一个用于导航到登录页的 Button，从而让用户可以添加其他帐户。
 
-    ```xaml
+    ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <StackPanel Orientation="Vertical">
         <TextBlock x:Name="Title" Text="Select a User" FontSize="36" Margin="4" TextAlignment="Center" HorizontalAlignment="Center"/>
@@ -830,7 +830,7 @@ author: awkoren
             }
         }
 
-        // Can&#39;t use Passport right now, try again later
+        // Can't use Passport right now, try again later
         return false;
     }
     ```
@@ -877,7 +877,7 @@ author: awkoren
 
 -   在 Views 文件夹中，创建名为“PassportRegister.xaml”的新空白页。 在 XAML 中，添加以下内容来设置用户界面。 此处的界面类似于登录页。
 
-    ```xaml
+    ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <StackPanel Orientation="Vertical">
         <TextBlock x:Name="Title" Text="Register New Passport User" FontSize="24" Margin="4" TextAlignment="Center"/>
@@ -968,6 +968,6 @@ author: awkoren
 * [Microsoft Passport 和 Windows Hello](microsoft-passport.md)
 * [Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
