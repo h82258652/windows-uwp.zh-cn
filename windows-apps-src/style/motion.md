@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 精心设计的有针对性的动画可以使应用变得更丰富，并且使体验感觉精良和完美。 帮助用户理解上下文更改，将体验与视觉转换紧密相连。
 title: UWP 应用中的动作和动画
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
@@ -8,9 +9,9 @@ template: detail.hbs
 
 # 适用于 UWP 应用的动作
 
-精心设计的有针对性的动画可以使应用变得更丰富，并且使体验感觉精良和完美。 帮助用户理解上下文更改，将体验与视觉转换紧密相连。
+精心设计的有针对性的动画可以使应用变得更丰富，并且使体验感觉精良和完美。 帮助用户理解上下文环境变动，将体验与视觉转换紧密相连。
 
-## <span id="Benefits_of_animation"> </span> <span id="benefits_of_animation"> </span> <span id="BENEFITS_OF_ANIMATION"> </span>动画的优势
+## <span id="Benefits_of_animation"></span><span id="benefits_of_animation"></span><span id="BENEFITS_OF_ANIMATION"></span>动画的优势
 
 
 动画不仅仅是让物体移动。 动画是一种用于创建物理生态系统的工具，用户可在该系统内驻留并通过触摸进行操作。 体验的质量取决于应用对用户的响应程度以及 UI 传达了怎样的个性。
@@ -43,53 +44,53 @@ template: detail.hbs
 
     动画可用于让用户了解手机正在处理任务、没有冻结，并且它可以被动地显示用户可能感兴趣的新信息。
 
-<h2>本节内容</h2>
+## 本节内容
 <table>
 <thead>
 <tr class="header">
 <th align="left">动画类型</th>
-<th align="left">说明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
     <tr>
-        <td>[Add and delete](motion-list.md)
+        <td>[添加和删除](motion-list.md)
         </td>
         <td>列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
         </td>
     </tr> 
     <tr>
-        <td>[Drag and drop](motion-dragdrop.md)
+        <td>[拖放](motion-dragdrop.md)
         </td>
         <td>当用户移动对象时，使用拖放动画，例如在列表中移动项目，或将项目放在其他列表顶部。
         </td>
     </tr>
     <tr>
-        <td>[Edge](motion-edgebased.md)
+        <td>[边缘](motion-edgebased.md)
         </td>
         <td>基于边缘的动画显示或隐藏源自屏幕边缘的 UI。 显示和隐藏动画可以由用户或应用启动。 此 UI 可以覆盖应用，也可以作为主屏表面的一部分。 如果此 UI 是应用图面的一部分，那么应用的其余部分可能需要相应调整大小。
         </td>
     </tr>   
     <tr>
-        <td>[Fade](motion-fade.md)
+        <td>[淡化](motion-fade.md)
         </td>
         <td>使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
         </td>
     </tr>   
     <tr>
-        <td>[Pointer](motion-pointer.md)
+        <td>[指针](motion-pointer.md)
         </td>
         <td>指针动画向用户提供用户点击某个项目时的视觉反馈。 当第一次点击某个项目时，指针向下动画会略微缩小和倾斜所按的项目，并且会进行播放。 当用户释放指针时，会播放指针向上动画，这会将该项目还原到其原始位置。
         </td>
     </tr>   
     <tr>
-        <td>[Pop-up animations](motion-popup-animations.md)
+        <td>[弹出动画](motion-popup-animations.md)
         </td>
         <td>使用弹出动画显示和隐藏浮出控件或自定义弹出 UI 元素的弹出 UI。 弹出元素是显示在应用内容上方的容器，并且将在用户点击或单击弹出元素外部时取消。
         </td>
     </tr>     
     <tr>
-        <td>[Reposition](motion-reposition.md)
+        <td>[重新定位](motion-reposition.md)
         </td>
         <td>将元素移动到新位置。
         </td>
@@ -109,6 +110,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

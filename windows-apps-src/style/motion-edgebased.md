@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。
 title: UWP 应用中基于边缘的 UI 动画
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
@@ -9,7 +10,7 @@ template: detail.hbs
 # 基于边缘的 UI 动画
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。 显示和隐藏动画可以由用户或应用启动。 此 UI 可以覆盖应用，也可以作为主屏表面的一部分。 如果此 UI 是应用图面的一部分，那么应用的其余部分可能需要相应调整大小。
 
@@ -54,6 +55,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

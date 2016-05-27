@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 使用弹出动画显示和隐藏浮出控件或自定义弹出 UI 元素的弹出 UI。 弹出元素是显示在应用内容上方的容器，并且将在用户点击或单击弹出元素外部时取消。
 title: UWP 应用中的弹出 UI 动画
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
@@ -10,7 +11,7 @@ template: detail.hbs
 
 使用弹出动画显示和隐藏浮出控件或自定义弹出 UI 元素的弹出 UI。 弹出元素是显示在应用内容上方的容器，并且将在用户点击或单击弹出元素外部时取消。
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要的 API**
@@ -46,6 +47,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

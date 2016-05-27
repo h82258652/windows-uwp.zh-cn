@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 良好的图标会与版式和设计语言的其余部分相协调。 它们不会混合隐喻，并且会尽快且尽量简单地仅交流所需内容。 
 title: 图标
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
@@ -82,7 +83,7 @@ template: detail.hbs
     </tr>  
 </table>
 
-### 示例
+<p>下面提供了一些示例：</p>
 
 <table>
     <tr>
@@ -152,9 +153,7 @@ template: detail.hbs
 
 <table>
 <tr><td>绿色 - #128B44</td><td>蓝色 - #2C71B9</td><td>黄色 - #FDC214</td></tr>
-<tr><td>积极：结束、 
-已完成 </td><td>中性：帮助、 
-通知 </td><td>警告：警报、警告 </td></tr>
+<tr><td>积极：完结、完成 </td><td>中性：帮助、通知 </td><td>警告：警报、警告 </td></tr>
 <tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
 <td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
 </table>
@@ -172,6 +171,7 @@ template: detail.hbs
 
 * [磁贴和图标资源指南](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 

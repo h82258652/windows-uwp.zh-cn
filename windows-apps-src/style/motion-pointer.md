@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 使用指针动画向用户提供用户点击某个项目时的视觉反馈。
 title: UWP 应用中的指针单击动画
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
@@ -10,7 +11,7 @@ template: detail.hbs
 
 使用指针动画向用户提供用户点击某个项目时的视觉反馈。 当第一次点击某个项目时，指针向下动画会略微缩小和倾斜所按的项目，并且会进行播放。 当用户释放指针时，会播放指针向上动画，这会将该项目还原到其原始位置。
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 **重要的 API**
@@ -43,6 +44,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

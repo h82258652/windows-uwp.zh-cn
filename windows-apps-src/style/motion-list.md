@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
 title: 添加和删除 UWP 应用中的动画
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
@@ -9,7 +10,7 @@ template: detail.hbs
 # 添加和删除动画
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
 
@@ -28,7 +29,7 @@ template: detail.hbs
 -   不要使用列表动画来显示或删除容器。 这些动画面向已经显示的集合的成员。 使用弹出动画在应用图面的顶部显示或隐藏暂时容器。 使用内容过渡动画显示或替换作为应用图面一部分的容器。
 -   不要在整个项目集上使用列表动画。 使用内容过渡动画添加或删除容器中的整个集合。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
@@ -48,6 +49,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

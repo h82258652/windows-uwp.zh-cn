@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 当用户移动对象时，使用拖放动画，例如在列表中移动项目，或将项目放在其他列表顶部。
 title: 在 UWP 应用中拖动动画
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
@@ -9,7 +10,7 @@ template: detail.hbs
 # 拖动动画
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 当用户移动对象时，使用拖放动画，例如在列表中移动项目，或将项目放在其他列表顶部。
 
@@ -65,6 +66,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 
