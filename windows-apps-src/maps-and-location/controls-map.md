@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 Description: 地图控件可以显示道路地图和鸟瞰图、路线、搜索结果和交通。
 title: 地图指南
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
@@ -68,6 +69,6 @@ ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

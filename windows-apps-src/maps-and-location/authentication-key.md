@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: 请求地图身份验证密钥
 description: 通用 Windows 应用必须先经过身份验证，然后才能在 Windows.Services.Maps 命名空间中使用 MapControl 和地图服务。
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
@@ -65,7 +66,7 @@ ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 
 -   此示例将 **MapServiceToken** 设置为 XAML 标记中的身份验证密钥的值。
 
-    ```xaml
+    ```xml
     <Maps:MapControl x:Name="MapControl1" MapServiceToken="abcdef-abcdefghijklmno"/>
     ```
 
@@ -90,6 +91,6 @@ ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

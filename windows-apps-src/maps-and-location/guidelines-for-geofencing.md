@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 Description: 在应用中遵循这些适用于地理围栏的最佳做法。
 title: 地理围栏应用指南
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
@@ -7,7 +8,7 @@ ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 # 地理围栏应用指南
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -121,7 +122,7 @@ function onVisibilityChanged() {
 * [设置地理围栏](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [获取当前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 位置示例（地理位置）](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  
@@ -131,6 +132,6 @@ function onVisibilityChanged() {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

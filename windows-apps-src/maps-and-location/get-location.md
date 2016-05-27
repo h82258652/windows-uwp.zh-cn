@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: 获取用户位置
 description: 查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
@@ -229,7 +230,7 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 
 如果位置隐私设置不允许你的应用访问用户位置，我们建议提供一个指向**“设置”**应用中的**“位置隐私设置”**的便捷链接。 在此示例中，“超链接”控件用于导航到 `ms-settings:privacy-location` URI。
 
-```xaml
+```xml
 <!--Set Visibility to Visible when access to location is denied -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
@@ -267,6 +268,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

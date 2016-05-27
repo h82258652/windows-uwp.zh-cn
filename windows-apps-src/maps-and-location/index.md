@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: 地图和位置概述
 description: 本部分介绍如何在应用中显示地图、使用地图服务、查找位置和设置地理围栏。 本部分还向你显示如何将 Windows 地图应用启动到特定地图、路线或一组逐向路线。
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
@@ -25,12 +26,12 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 | 主题 | 说明 |
 |-------|-------------|
-| [请求地图验证密钥](authentication-key.md) | 应用必须先经过验证，然后才能在 [Windows.Services.Maps](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用 [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务。 要验证应用，你必须指定一个地图验证密钥。 本文介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图身份验证密钥并将其添加到应用。 |
-| [使用 2D、3D 和街景视图方式显示地图](display-maps.md) | 通过使用 [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) 类，在应用中显示可自定义的地图。 本主题还介绍了鸟瞰图 3D 视图和街景视图。 |
+| [请求地图身份验证密钥](authentication-key.md) | 应用必须先进行身份验证，然后才能在 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务。 若要对你的应用进行身份验证，你必须指定地图身份验证密钥。 本文介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图身份验证密钥并将其添加到应用。 |
+| [地图设计指南](controls-map.md) | 地图控件可以显示路线图和鸟瞰图、路线、搜索结果和路况。 |
+| [使用 2D、3D 和街景视图显示地图](display-maps.md) | 通过使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 类，在应用中显示可自定义的地图。 本主题还介绍了鸟瞰图 3D 视图和街景视图。 |
 | [在地图上显示兴趣点 (POI)](display-poi.md) | 使用图钉、图像、图形和 XAML UI 元素向地图添加兴趣点 (POI)。 |
-| [覆盖地图上的平铺图像](overlay-tiled-images.md) | 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。 |
-| [地图设计指南](controls-map.md) | 地图控件可以显示道路地图和鸟瞰图、路线、搜索结果和路况。 |
-| [位置感知应用设计指南](guidelines-and-checklist-for-detecting-location.md) | 需要访问用户位置信息的应用的性能指南。 |
+| [覆盖地图上的平铺图像](overlay-tiled-images.md) | 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据），或者使用磁贴源替换所有默认地图。 |
+
 
 
 ## 访问地图服务
@@ -39,8 +40,10 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 | 主题 | 说明 |
 |-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [请求地图身份验证密钥](authentication-key.md) | 应用必须先进行身份验证，然后才能在 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务。 若要对你的应用进行身份验证，你必须指定地图身份验证密钥。 本文介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图身份验证密钥并将其添加到应用。 |
+| [在地图上显示目标点 (POI)](display-poi.md) | 使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。 |
 | [显示路线和方向](routes-and-directions.md) | 请求路线和方向并在应用中显示它们。 |
-| [执行地理编码和反向地理编码](geocoding.md) | 通过调用 [Windows.Services.Maps](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中 [MapLocationFinder](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的方法将地址转换为地理位置（地理编码）以及将地理位置转换为地址（反向地理编码）。 |
+| [执行地理编码和反向地理编码](geocoding.md) | 通过调用 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的方法将地址转换为地理位置（地理编码）以及将地理位置转换为地址（反向地理编码）。 |
 
 
 ## 获取用户的位置
@@ -50,13 +53,11 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 | 主题 | 说明 |
 |-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [请求地图验证密钥](authentication-key.md) | 应用必须先经过验证，然后才能在 [Windows.Services.Maps](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用 [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务。 要验证应用，你必须指定一个地图验证密钥。 本文介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图身份验证密钥并将其添加到应用。 |
-| [执行地理编码和反向地理编码](geocoding.md) | 通过调用 MapLocationFinder 类的方法将地址转换为地理位置（地理编码）以及将地理位置转换为地址（反向地理编码）。 |
-| [使用 2D、3D 和街景视图方式显示地图](display-maps.md) | 通过使用 [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) 类，在应用中显示可自定义的地图。 本主题还介绍了鸟瞰图 3D 视图和街景视图。 |
-| [地图](controls-map.md) | 地图控件可以显示道路地图和鸟瞰图、路线、搜索结果和路况。 |
-| [在地图上显示目标点 (POI)](display-poi.md) | 使用图钉、图像、图形和 XAML UI 元素向地图添加兴趣点 (POI)。 |
-| [覆盖地图上的平铺图像](overlay-tiled-images.md) | 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。 |
-| [设置地理围栏](set-up-a-geofence.md) | 在你的应用中设置 Geofence 并了解如何处理前台和后台中的通知。 |
+| [请求地图身份验证密钥](authentication-key.md) | 应用必须先进行身份验证，然后才能在 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务。 若要对你的应用进行身份验证，你必须指定地图身份验证密钥。 本文介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图身份验证密钥并将其添加到应用。 |
+| [位置感知应用设计指南](guidelines-and-checklist-for-detecting-location.md) | 需要访问用户位置的应用的性能指南。 |
+| [获取用户的位置](get-location.md) | 获取对用户位置的访问权限，然后检索该位置。 |
+| [地理围栏设计指南](guidelines-for-geofencing.md) | 使用地理围栏功能的应用的性能指南。 |
+| [设置地理围栏](set-up-a-geofence.md) | 在你的应用中设置地理围栏并了解如何处理前台和后台中的通知。 |
 
 ## 启动 Windows 地图应用
 
@@ -80,6 +81,6 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

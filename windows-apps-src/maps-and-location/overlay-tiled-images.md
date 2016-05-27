@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: 覆盖地图上的平铺图像
 description: 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
@@ -53,7 +54,7 @@ ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 
     ```cs
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-          "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+          "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
 2.  实例化并配置 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144)。 指定 [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141)，它在之前的步骤中已配置为 **MapTileSource** 的 [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149)。
@@ -89,7 +90,7 @@ ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
         http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Web 服务必须支持包含可替换参数 {x}、{y} 和 {zoomlevel} 的 Uri。 大多数 Web 服务（例如，Nokia、必应和 Google）支持这种格式的 URI。 如果 Web 服务需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) 事件创建并返回自定义的 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#customuri) 部分。
+    Web 服务必须支持包含可替换参数 {x}、{y} 和 {zoomlevel} 的 Uri。 大多数 Web 服务（例如，Nokia、必应和 Google）支持这种格式的 URI。 如果 Web 服务需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) 事件创建并返回自定义 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#customuri) 部分。
 
 3.  然后，按照之前在[平铺图像概述](#tileintro)中介绍的剩余步骤操作。
 
@@ -111,7 +112,7 @@ ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
             // Create an HTTP data source.
             // This example retrieves tiles from a fictitious web service.
             HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-                "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+                "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
             // Optionally, add custom HTTP headers if the web service requires them.
             dataSource.AdditionalRequestHeaders.Add("header name", "header value");
@@ -130,7 +131,7 @@ void MainPage::AddHttpMapTileSource()
        GeoboundingBox^ boundingBox = ref new GeoboundingBox(northWest, southEast);
 
        auto dataSource = ref new Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource(
-             "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+             "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
        dataSource->AdditionalRequestHeaders->Insert("header name", "header value");
 
@@ -153,7 +154,7 @@ void MainPage::AddHttpMapTileSource()
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    如果文件名的格式需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) 事件创建并返回自定义的 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#customuri) 部分。
+    如果文件名的格式需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) 事件创建并返回自定义 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#customuri) 部分。
 
 3.  然后，按照之前在[平铺图像概述](#tileintro)中介绍的剩余步骤操作。
 
@@ -218,7 +219,7 @@ using System.Threading.Tasks;
             MapTileUriRequestedEventArgs args)
         {
             // Get a deferral to do something asynchronously.
-            // Omit this line if you don&#39;t have to do something asynchronously.
+            // Omit this line if you don't have to do something asynchronously.
             var deferral = args.Request.GetDeferral();
 
             // Get the custom Uri.
@@ -228,7 +229,7 @@ using System.Threading.Tasks;
             args.Request.Uri = uri;
 
             // Notify the app that the custom Uri is ready.
-            // Omit this line also if you don&#39;t have to do something asynchronously.
+            // Omit this line also if you don't have to do something asynchronously.
             deferral.Complete();
         }
 
@@ -309,7 +310,7 @@ using System.Threading.Tasks;
         }
 ```
 
-```ManagedCPlusPlus
+```cpp
 InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 {
        int pixelHeight = 256;
@@ -366,6 +367,6 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
