@@ -1,8 +1,9 @@
 ---
-Description: 中心控件使用分层导航模式支持具有关系信息体系结构的应用。
+author: Jwmsft
+Description: 中心控件使用分层导航模式支持具有相关信息体系结构的应用。
 title: 中心控件
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
-label: 中心
+label: Hub
 template: detail.hbs
 ---
 # 中心控件/模式
@@ -67,8 +68,8 @@ template: detail.hbs
 ![垂直平移中心示例](images/controls_hub_vertical_pan.png)
 **通过垂直滚动列表/网格的水平平移**
 
-![通过垂直滚动列表的水平平移中心示例](images/controls_hub_horizontal_vertical_scroll.png)
-**通过水平滚动列表/网格的垂直平移**
+![通过垂直滚动列表来水平平移中心的示例](images/controls_hub_horizontal_vertical_scroll.png)
+**水平滚动列表/网格的垂直平移**
 
 ![水平平移中心示例](images/controls_hub_vertical_horizontal_scroll.png)
 
@@ -99,21 +100,16 @@ template: detail.hbs
     -   标题和内容中的文本样式和大小
     -   背景、区域、区域标题和区域内容的颜色
 
-\[此文章包含特定于 UWP 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
------------------------------------------------
 
-**对于设计人员**
 - [导航基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)
-
-**对于开发人员 (XAML)**
-- [分层导航详细信息](https://msdn.microsoft.com/library/windows/apps/xaml/dn440585)
 - [**Windows.UI.Xaml.Controls Hub 类**](https://msdn.microsoft.com/library/windows/apps/dn251843)
 - [XAML 中心控件示例](http://go.microsoft.com/fwlink/p/?LinkID=310072)
 - [使用中心](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

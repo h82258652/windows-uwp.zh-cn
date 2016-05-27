@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 平移和滚动使用户可以获取超出屏幕边界的内容。
 title: 滚动条指南
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
-label: 滚动栏
+label: Scroll bars
 template: detail.hbs
 ---
 # 滚动栏
@@ -90,6 +91,6 @@ ScrollViewer 定义以下 XAML 附加属性：
 * [**ScrollViewer 类**](https://msdn.microsoft.com/library/windows/apps/br209527)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

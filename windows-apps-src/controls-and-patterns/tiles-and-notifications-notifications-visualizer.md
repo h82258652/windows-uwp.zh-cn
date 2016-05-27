@@ -1,20 +1,21 @@
 ---
+author: mijacobs
 Description: 通知可视化工具是应用商店中一款新的通用 Windows 平台 (UWP) 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。
 title: 通知可视化工具
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
-label: 待定
+label: TBD
 template: detail.hbs
 ---
 
 # 通知可视化工具
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 通知可视化工具是[应用商店](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)中一款新的通用 Windows 平台 (UWP) 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。
 
-## <span id="Overview"> </span> <span id="overview"> </span> <span id="OVERVIEW"> </span>概述
+## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概述
 
 
 通知可视化工具应用会在你进行编辑时提供磁贴的即时可视预览，类似于 Visual Studio 的 XAML 编辑器/设计视图。 该应用还会检查错误，从而确保你可以创建有效的磁贴负载。
@@ -31,10 +32,10 @@ template: detail.hbs
 
  
 
-## <span id="Features"> </span> <span id="features"> </span> <span id="FEATURES"> </span>功能
+## <span id="Features"></span><span id="features"></span><span id="FEATURES"></span>功能
 
 
-通知可视化工具附带许多示例负载，可展示自适应动态磁贴的功能，并帮助你入门。 你可以对所有不同的文本选项、组/子组、背景图像进行试验，而且可以看到磁贴如何适应不同的设备和屏幕。 在进行更改之后，你可以将已更新的负载保存到文件以供将来使用。
+通知可视化工具附带许多示例负载，可展示自适应动态磁贴的功能，并且帮助你开始操作。 你可以对所有不同的文本选项、组/子组、背景图像进行试验，而且可以看到磁贴如何适应不同的设备和屏幕。 在进行更改之后，你可以将已更新的负载保存到文件以供将来使用。
 
 编辑器可提供实时错误和警告。 例如，如果你的应用负载限制为小于 5 KB（平台限制），通知可视化工具会在负载超出该限制时向你发出警告。 如果存在不正确的属性名或值，它将向你发出警告，这有助于你调试视觉问题。
 
@@ -46,7 +47,7 @@ template: detail.hbs
 
  
 
-## <span id="related_topics"> </span>相关主题
+## <span id="related_topics"></span>相关主题
 
 
 * [在应用商店中获取通知可视化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
@@ -63,6 +64,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

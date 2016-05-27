@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 要求用户执行操作之前，使用工具提示显示有关控件的详细信息。
 title: 工具提示
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
@@ -9,7 +10,7 @@ template: detail.hbs
 
 # 工具提示
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 工具提示是链接到另一个控件或对象的简短描述。 工具提示可帮助用户了解未在 UI 中直接描述的不熟悉的对象。 它们会在用户将焦点移动到控件、长按控件或将鼠标指针停在控件上时自动显示。 几秒钟后或者当用户移动手指、指针或键盘/游戏板焦点时，工具提示将消失。
 
@@ -63,12 +64,12 @@ template: detail.hbs
 -   不要在工具提示内部放置交互式控件。
 -   不要将看上去像交互式控件的图像放在工具提示内部。
 
-<span id="related_topics"> </span>相关主题
+<span id="related_topics"></span>相关主题
 -----------------------------------------------
 
 * [**ToolTip 类**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

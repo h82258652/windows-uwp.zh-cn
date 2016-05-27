@@ -1,24 +1,23 @@
 ---
+author: Jwmsft
 Description: 搜索是用户可以在你的应用中查找内容的最常用方法之一。 本文中的指南介绍搜索体验、搜索范围、实现的要素，以及在上下文中搜索的示例。
 title: 搜索和在页面中查找
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
-label: 搜索
+label: Search
 template: detail.hbs
 ---
 
 # 搜索和在页面中查找
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+搜索是用户可以在你的应用中查找内容的最常用方法之一。 本文中的指南介绍搜索体验、搜索范围、实现的要素，以及在上下文中搜索的示例。
 
 **重要的 API**
 
--   [**AutoSuggestBox 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)
+-   [**AutoSuggestBox class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
-搜索是用户可以在你的应用中查找内容的最常用方法之一。 本文中的指南介绍搜索体验、搜索范围、实现的要素，以及在上下文中搜索的示例。
 
-## <span id="Elements_of_the_search_experience"> </span> <span id="elements_of_the_search_experience"> </span> <span id="ELEMENTS_OF_THE_SEARCH_EXPERIENCE"> </span>搜索体验的要素
+
+## <span id="Elements_of_the_search_experience"></span><span id="elements_of_the_search_experience"></span><span id="ELEMENTS_OF_THE_SEARCH_EXPERIENCE"></span>搜索体验的要素
 
 
 **输入。**  文本是最常见的搜索输入模式，并且是本指南的重点。 其他常见的输入模式包括语音和相机，但这些输入模式通常要求能够与设备硬件相连接，并且在应用内可能需要其他控件或自定义 UI。
@@ -41,14 +40,14 @@ template: detail.hbs
 
 结果集可以采用任何形式显示，只要能够最好地表达内容即可。 [列表视图](lists.md)提供相当大的灵活性，非常适合于大多数搜索。 网格视图适用于图像或其他媒体，而地图可用于表达空间分布。
 
-## <span id="Search_scopes"> </span> <span id="search_scopes"> </span> <span id="SEARCH_SCOPES"> </span>搜索范围
+## <span id="Search_scopes"></span><span id="search_scopes"></span><span id="SEARCH_SCOPES"></span>搜索范围
 
 
 搜索是一种常见功能，用户会在外壳程序和很多应用内遇到搜索 UI。 虽然搜索入口点往往会以类似方式可视化，但它们可用于访问结果，包括大范围搜索结果（Web 或设备搜索）和小范围搜索结果（用户的联系人列表）。 搜索入口点应与要搜索的内容并置。
 
 一些常见的搜索范围包括：
 
-**全局**和**上下文/精确。**跨多个云源及本地内容进行搜索。 各种结果，包括 URL、文档、媒体、操作、应用等。
+**全局**和**上下文/精确。**  跨多个云源以及本地内容进行搜索。 各种结果，包括 URL、文档、媒体、操作、应用等。
 
 **Web。**  搜索 Web 索引。 结果包括页面、条目和解答。
 
@@ -72,7 +71,7 @@ template: detail.hbs
 
 通过有效表达搜索输入点的范围，你可以帮助确保你所执行的搜索功能能够满足用户期望并降低不良用户体验的可能性。
 
-## <span id="Implementation"> </span> <span id="implementation"> </span> <span id="IMPLEMENTATION"> </span>实现
+## <span id="Implementation"></span><span id="implementation"></span><span id="IMPLEMENTATION"></span>实现
 
 
 对于大部分应用，最好是将文本输入区域作为搜索入口点，从而提供醒目的视觉印记。 此外，提示文本帮助有助于提高可发现性并表达搜索范围。 当搜索更常作为辅助操作时，或当空间受到限制时，搜索图标可以充当不带附属输入区域的入口点。 可视化为图标之后，请确保已为模式搜索框留出空间，如以下示例所示。
@@ -97,9 +96,9 @@ template: detail.hbs
 
 在使用滚动列表时，使搜索输入始终可见将很有帮助。 我们建议使搜索输入粘滞并使内容在其后滚动。
 
-零输入和查询规范化功能可选用于上下文/精确搜索，其中列表将通过用户输入进行实时筛选。 例外情况包括查询格式化建议可能可用的情况，例如收件箱筛选选项（收件人：<输入字符串>、发件人：<输入字符串>、主题：<输入字符串> 等）。
+零输入和查询规范化功能可选用于上下文/精确搜索，其中列表将通过用户输入进行实时筛选。 例外情况包括查询格式化建议可能可用的情况，例如收件箱筛选选项（收件人：&lt;输入字符串&gt;、发件人：&lt;输入字符串&gt;、主题：&lt;输入字符串&gt;等）。
 
-## <span id="examples"> </span> <span id="EXAMPLES"> </span>示例
+## <span id="examples"></span><span id="EXAMPLES"></span>示例
 
 
 此部分中的示例演示置于上下文中的搜索。
@@ -132,10 +131,10 @@ template: detail.hbs
 
 “在页面中查找”可使用户能够找到当前文本正文中的匹配文本。 文档查看器、阅读器和浏览器是提供“在页面中查找”的最为典型的应用。
 
-## <span id="Recommendations"> </span> <span id="recommendations"> </span> <span id="RECOMMENDATIONS"> </span>建议
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>建议
 
 
--   在具有“在页面中查找”功能的应用中放置命令栏，以使用户能搜索页面上的文本。 有关放置详细信息，请参阅“示例”部分。
+-   在 具有“在页面中查找”功能的应用中放置命令栏，以使用户能搜索页面上的文本。 有关放置详细信息，请参阅“示例”部分。
 
     -   提供“在页面中查找”的应用应该在命令栏中具有所有必要的控件。
     -   如果你的应用包含除“在页面中查找”之外的大量功能，你可以在顶层命令栏中提供一个“查找”****按钮，将此按钮作为到另一个命令栏（该命令栏包含所有“在页面中查找”控件）的入口。
@@ -158,10 +157,10 @@ template: detail.hbs
 -   包含匹配计数器，以便向用户指示页面上的文本匹配数目。
 -   启用键盘快捷方式 (CTRL+F)。
 
-## <span id="Examples"> </span> <span id="examples"> </span> <span id="EXAMPLES"> </span>示例
+## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>示例
 
 
-提供访问在页面中查找功能的简便方法。 在此移动 UI 上的示例中，“在页面上查找”在可扩展菜单中位于两个“添加到...”命令之后 ：
+提供访问在页面中查找功能的简便方法。 在此移动 UI 上的示例中，“在页面上查找”在可扩展菜单中位于两个“添加到...”命令之后：
 
 ![在页面上查找示例 1](images/findinpage-01.png)
 
@@ -203,7 +202,7 @@ template: detail.hbs
 
 
 
-## <span id="related_topics"> </span>相关文章
+## <span id="related_topics"></span>相关文章
 
 * [**自动建议框**](auto-suggest-box.md)
 
@@ -217,6 +216,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

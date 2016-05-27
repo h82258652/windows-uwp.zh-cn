@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 了解如何将图像集成到应用中，包括如何使用以下两个主要 XAML 类的 API：Image 和 ImageBrush。
 title: 图像和图像画笔
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
-label: 图像和图像画笔
+label: Images and image brushes
 template: detail.hbs
 ---
 # 图像和图像画笔
@@ -140,20 +141,10 @@ template: detail.hbs
 
 如果要使用代码定义一个 Image 或 ImageBrush，请使用默认的构造函数，然后设置相关的源属性（[**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 或 [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)）。 在你使用代码设置源属性时，它们需要 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx)（而非 URI）。 如果源是一个流，请使用 [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) 方法来初始化该值。 如果源是一个 URI（其中包含应用中使用 **ms-appx** 或 **ms-resource** 方案的内容），请使用获取 URI 的 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) 构造函数。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) 事件。 有关示例代码，请参阅 [XAML 图像示例](http://go.microsoft.com/fwlink/p/?linkid=238575)。
 
-> **注意** 如果你使用代码建立图像，则可以使用对具有当前规模和文化限定符的非限定资源的访问的自动处理，或者可以使用具有文化和规模限定符的 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 来直接获取资源。 有关详细信息，请参阅[资源管理系统](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
-
-## 建议
+> **注意** &nbsp;&nbsp;如果你使用代码建立图像，则可以使用对具有当前规模和文化限定符的非限定资源的访问的自动处理，或者可以使用具有文化和规模限定符的 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 来直接获取资源。 有关详细信息，请参阅[资源管理系统](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
 
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
 
-## 相关文章
-
-**对于设计人员**
-
-**对于开发人员 (XAML)**
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

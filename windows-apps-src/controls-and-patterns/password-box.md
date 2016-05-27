@@ -1,9 +1,10 @@
 ---
+author: Jwmsft
 Description: 密码框是指出于隐私目的隐藏所键入的字符的文本输入框。
 title: 密码框指南
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
-dev.assetid：4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
-label: 密码框
+dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
+label: Password box
 template: detail.hbs
 ---
 # 密码框
@@ -109,9 +110,9 @@ PasswordBox 具有内置按钮，用户按下该按钮可显示密码文本。 �
 
 默认情况下，会显示密码显示按钮（或“速览”按钮）。 用户必须持续按住按钮来查看密码，以便保持较高级别的安全性。
 
-[PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) 属性值不是确定用户能否看到密码显示按钮的唯一因素。 其他因素包括控件所示宽度是否大于最小值、PasswordBox 是否具有焦点以及文本输入字段是否至少包含一个字符。 密码显示按钮仅在 PasswordBox 首次接收焦点并且在用户输入一个字符后显示。 如果 PasswordBox 失去焦点后又重新获得焦点，除非已清除密码并从头开始输入字符，否则显示按钮将不会再显示。
+[PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) 属性值不是确定用户能否看到密码显示按钮的唯一因素。 其他因素包括控件所示宽度是否大于最小值、PasswordBox 是否具有焦点以及文本输入字段是否至少包含一个字符。 密码显示按钮仅在 PasswordBox 首次接收焦点并且在用户输入一个字符后显示。 如果 PasswordBox 失去焦点后又重新获得焦点，除非已清除密码并从头开始输入字符，否则显示按钮将不会再次显示。
 
-> **注意** 在 Windows 10 之前，密码显示按钮在默认情况下不显示。 如果应用安全要求始终掩盖密码，请务必将 PasswordRevealMode 设置为 Hidden。
+> **注意** &nbsp;&nbsp;在 Windows 10 之前，密码显示按钮在默认情况下不显示。 如果应用安全要求始终掩盖密码，请务必将 PasswordRevealMode 设置为 Hidden。
 
 ### 隐藏和可见模式
 
@@ -166,7 +167,7 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 -   仅为登录显示单个密码框。
 -   当密码框用于输入 PIN 时，请考虑在输入最后一个数字后立即提供即时响应，而不是使用确认按钮。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
@@ -177,7 +178,7 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文本输入指南](text-controls.md)
 
-**对于开发人员 (XAML)**
+**面向开发人员 (XAML)**
 - [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
@@ -186,6 +187,6 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 - [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

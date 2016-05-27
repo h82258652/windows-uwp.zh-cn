@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 日期和时间控件使你可以查看并设置日期和时间。 本文提供设计指南，并帮助你选取正确的控件。
 title: 日期和时间控件指南
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
@@ -32,7 +33,7 @@ template: detail.hbs
 
 ### 日历视图
 
-**日历视图**让用户查看可按月份、年份或十年期浏览的日历，并与之交互。 用户可以选择一个日期或日期范围。 它没有选取器图面，并且日历始终可见。
+**CalendarView** 让用户查看可按月份、年份或十年期浏览的日历，并与之交互。 用户可以选择一个日期或日期范围。 它没有选取器图面，并且日历始终可见。
 
 日历视图中包含 3 个单独的视图：月视图、年视图和十年视图。 默认情况下，它通过打开月视图启动，但你可以将其他视图指定为启动视图。
 
@@ -95,9 +96,9 @@ XAML 日期和时间控件中所使用的日期对象具有不同的表示形式
 
 相关概念是 Calendar 类，它对在上下文中解释日期的方式产生影响。 所有 Windows 运行时应用都可以使用 [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) 类。 C# 和 Visual Basic 应用还可以使用 [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) 类，该类具有非常类似的功能。 （Windows 运行时应用可使用 .NET 日历基类而非诸如 GregorianCalendar 的特定实现。）
 
-.NET 还支持名为 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 的类型，该类型可隐式转换为 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)。 因此，可能会看到要在 .NET 代码中用于设置实际上是 DateTimeOffset 的值的“DateTime”类型。 有关 DateTime 和 DateTimeOffset 之间的区别的详细信息，请参阅 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 类中的备注。
+.NET 还支持名为 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 的类型，该类型可隐式转换为 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)。 因此，可能会看到要在 .NET 代码中用于设置实际上是 DateTimeOffset 的值的“DateTime”类型。 有关 DateTime 和 DateTimeOffset 之间的区别的详细信息，请参阅 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 类中的“备注”。
 
-> **注意**&nbsp;&nbsp;获取日期对象的属性不可以设置为 XAML 属性字符串，因为 Windows 运行时 XAML 解析器不具有用于将字符串转换为日期（作为 DateTime/DateTimeOffset 对象）的转换逻辑。 通常使用代码设置这些值。 另一个可行的方法是定义可用作数据对象或在数据上下文中可用的日期，然后将该属性设置为引用 [\{Binding\} 标记扩展](../xaml-platform/binding-markup-extension.md)表达式的 XAML 属性，以便可以作为数据访问该日期。
+> **注意** &nbsp;&nbsp;获取日期对象的属性不可以设置为 XAML 属性字符串，因为 Windows 运行时 XAML 解析器不具有用于将字符串转换为日期（作为 DateTime/DateTimeOffset 对象）的转换逻辑。 通常使用代码设置这些值。 另一个可行的方法是定义可用作数据对象或在数据上下文中可用的日期，然后将该属性设置为引用 [\{Binding\} 标记扩展](../xaml-platform/binding-markup-extension.md)表达式的 XAML 属性，以便可以作为数据访问该日期。
 
 
 ## 相关主题
@@ -109,6 +110,6 @@ XAML 日期和时间控件中所使用的日期对象具有不同的表示形式
 - [**TimePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn299280)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

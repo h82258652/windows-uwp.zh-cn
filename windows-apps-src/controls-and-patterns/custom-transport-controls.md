@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 媒体播放器具有管理音频和视频内容控件的可自定义 XAML 传输控件。
 title: 创建自定义媒体传输控件
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
-label: 创建自定义媒体传输控件
+label: Create custom media transport controls
 template: detail.hbs
 ---
 # 创建自定义传输控件
@@ -11,7 +12,7 @@ MediaElement 具有可自定义的 XAML 传输控件来管理通用 Windows 平�
 
 在开始操作之前，你应当先熟悉 MediaElement 和 MediaTransportControls 类。 有关详细信息，请参阅 MediaElement 控件指南。 
 
-> **提示** 本主题中的示例基于[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)。 你可以下载该示例来查看和运行完整代码。
+> **提示** &nbsp;&nbsp;本主题中的示例基于[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)。 你可以下载该示例来查看和运行完整代码。
 
 <span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
 
@@ -31,7 +32,7 @@ MediaElement 具有可自定义的 XAML 传输控件来管理通用 Windows 平�
 
 通过修改默认模板可以自定义控件的外观。 若要修改控件的行为或添加新的命令，可以创建从 MediaTransportControls 派生的自定义控件。
 
->**提示** 可自定义控件模板是 XAML 平台的一项强大功能，但你还应当考虑所产生的后果。 当你自定义模板时，它会成为你的应用的静态部分，因此它将不会接收到 Microsoft 对该模板进行的任何平台更新。 如果已由 Microsoft 进行模板更新，你应采用新模板并将其重新修改，以便获取已更新模板所带来的好处。
+>**提示** &nbsp;&nbsp;可自定义控件模板是 XAML 平台的一项强大功能，但你还应当考虑所产生的后果。 当你自定义模板时，它会成为你的应用的静态部分，因此它将不会接收到 Microsoft 对该模板进行的任何平台更新。 如果已由 Microsoft 进行模板更新，你应采用新模板并将其重新修改，以便获取已更新模板所带来的好处。
 
 ## 模板结构
 
@@ -41,7 +42,7 @@ MediaElement 具有可自定义的 XAML 传输控件来管理通用 Windows 平�
 - 第二部分定义 MediaTransportControls 所使用的各个视觉状态。
 - 第三部分包含将各种 MediaTransportControls 元素保存在一起并定义组件布局方式的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)。
 
-> **注意** 有关修改模板的详细信息，请参阅[控件模板]()。 可以在 IDE 中使用文本编辑器或类似编辑器打开 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 文件。 每个控件的默认样式和模板都在 **generic.xaml** 文件中定义。 你可以通过搜索“MediaTransportControls”找到 generic.xaml 中的 MediaTransportControls 模板。
+> **提示** &nbsp;&nbsp;有关修改模板的详细信息，请参阅[控件模板]()。 可以在 IDE 中使用文本编辑器或类似编辑器打开 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 文件。 每个控件的默认样式和模板都在 **generic.xaml** 文件中定义。 你可以通过搜索“MediaTransportControls”找到 generic.xaml 中的 MediaTransportControls 模板。
 
 在以下部分中，你将了解如何自定义传输控件的几个主要元素： 
 - [
@@ -82,7 +83,7 @@ MediaElement 具有可自定义的 XAML 传输控件来管理通用 Windows 平�
 
 **创建一个派生自 MediaTransportControls 的新类**
 1. 向你的项目中添加一个新类文件。
-    - 在 Visual Studio 中，选择“项目”>“添加类”。 随即打开“添加新项”对话框。
+    - 在 Visual Studio 中，选择“项目”&gt;“添加类”。 随即打开“添加新项”对话框。
     - 在“添加新项”对话框中，输入类文件的名称，然后单击“添加”。 （在媒体传输控件示例中，该类命名为 `CustomMediaTransportControls`。）
 2. 修改类代码以从 MediaTransportControls 类进行派生。
 ```csharp
@@ -160,7 +161,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 3. 若要使用命令填充此菜单，请剪切所需的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) 对象的 XAML 并将其从 PrimaryCommands 粘贴到 SecondaryCommands。 在此示例中，我们将 `PlaybackRateButton` 移动到溢出菜单。
 
 4. 为按钮添加标签并删除样式设置信息，如下所示。
-由于“溢出”菜单由文本按钮组成，因此必须为按钮添加文本标签，另外还要删除设置按钮高度和宽度的样式。 否则，它不会在“溢出”菜单中正确显示。
+由于“溢出”菜单由文本按钮组成，因此必须为按钮添加文本标签，另外还要删除设置按钮高度和宽度的样式。 否则，它不会在溢出菜单中正确显示。
 ```xaml
 <CommandBar.SecondaryCommands>
     <AppBarButton x:Name='PlaybackRateButton'
@@ -169,7 +170,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 </CommandBar.SecondaryCommands>
 ```
 
-> **重要提示** 必须仍然使按钮可见并启用它，才能在“溢出”菜单中使用它。 在此示例中，PlaybackRateButton 元素在“溢出”菜单中不可见，除非 IsPlaybackRateButtonVisible 属性是 true。 只有 IsPlaybackRateEnabled 属性是 true，才可启用它。 如上一节所示设置这些属性。
+> **重要提示** &nbsp;&nbsp;必须仍然使按钮可见并启用它，才能在溢出菜单中使用它。 在此示例中，PlaybackRateButton 元素在溢出菜单中不可见，除非 IsPlaybackRateButtonVisible 属性是 true。 只有 IsPlaybackRateEnabled 属性是 true，才可启用它。 如上一节所示设置这些属性。
 
 ### 添加自定义按钮
 
@@ -257,13 +258,13 @@ private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
 }
 ```
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
 - [媒体播放](media-playback.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

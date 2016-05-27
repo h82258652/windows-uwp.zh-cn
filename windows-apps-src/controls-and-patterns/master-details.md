@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 大纲/细节模式可显示主列表和当前选定项的详细信息。 此模式通常用于电子邮件和联系人列表/通讯簿。
 title: 大纲/细节
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
-label: 大纲/细节
+label: Master/details
 template: detail.hbs
 ---
 # 大纲/细节模式
@@ -71,7 +72,7 @@ template: detail.hbs
 
 ![使用大纲/细节模式的应用（桌面版）的示例](images/uap-finance-desktop700.png)
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
@@ -81,6 +82,6 @@ template: detail.hbs
 - [**ListView 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,23 +1,24 @@
 ---
+author: mijacobs
 Description: 磁贴是应用在“开始”菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的通用 Windows 平台 (UWP) 应用项目时，它将包含显示应用名称和徽标的默认磁贴。
 title: 磁贴
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
-label: 磁贴
+label: Tiles
 template: detail.hbs
 ---
 
 # 适用于 UWP 应用的磁贴
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-*磁贴*是应用在“开始”菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的通用 Windows 平台 (UWP) 应用项目时，它将包含显示应用名称和徽标的默认磁贴。 应用首次安装时，Windows 将显示此磁贴。 应用安装后，可通过通知更改磁贴内容；例如，可更改磁贴以向用户传达新信息（如头条新闻或最近未读邮件的主题）。
 
-## <span id="Configure_the_default_tile"> </span> <span id="configure_the_default_tile"> </span> <span id="CONFIGURE_THE_DEFAULT_TILE"> </span>配置默认磁贴
+*磁贴*是应用在“开始”菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的通用 Windows 平台 (UWP) 应用项目时，它将包含显示应用名称和徽标的默认磁贴。 应用首次安装时，Windows 将显示此磁贴。 应用安装后，可通过通知更改磁贴内容，例如，可更改磁贴以将新信息传递给用户（如头条新闻或最近未读邮件的主题）。
+
+## <span id="Configure_the_default_tile"></span><span id="configure_the_default_tile"></span><span id="CONFIGURE_THE_DEFAULT_TILE"></span>配置默认磁贴
 
 
-当在 Visual Studio 中创建新项目时，它将创建可显示应用名称和徽标的简单默认磁贴。
+当在 Visual Studio 中创建新项目时，它将创建显示应用名称和徽标的简单默认磁贴。
 
 ```XML
   <Applications>
@@ -46,16 +47,17 @@ template: detail.hbs
 
     缩放的图像应遵循此命名约定：
     
-    *<image name>*.scale-*<scale factor>*.*<image file extension>* 
+    *
+            &lt;image name&gt;*.scale-*&lt;scale factor&gt;*.*&lt;image file extension&gt;* 
 
 
      
 
-    For example: SmallLogo.scale-100.png
+    例如：SmallLogo.scale-100.png
 
-    When you refer to the image, you refer to it as *&lt;image name&gt;*.*&lt;image file extension&gt;* ("SmallLogo.png" in this example). The system will automatically select the appropriate scaled image for the device from the images you've provided.
+    在引用图像时，将其引用为 *&lt;image name&gt;*.*&lt;image file extension&gt;*（在此示例中是“SmallLogo.png”）。 系统将自动从你提供的图像中为设备选择相应的缩放图像。
 
--   虽然不是必须的，但我们强烈建议你提供适用于宽磁贴和大磁贴的徽标，以便用户可以将应用磁贴重新调整到这些大小。 若要提供这些附加图像，可创建 `DefaultTile` 元素并使用 `Wide310x150Logo` 和 `Square310x310Logo` 属性指定附加图像：
+-   虽然不是必须的，但我们强烈建议你提供适用于宽磁贴和大磁贴的徽标，以便用户可以将应用磁贴大小调整到这些大小。 若要提供这些附加图像，可创建 `DefaultTile` 元素并使用 `Wide310x150Logo` 和 `Square310x310Logo` 属性指定附加图像：
 ```    XML
   <Applications>
         <Application Id="App"
@@ -77,7 +79,7 @@ template: detail.hbs
       </Applications>
 ```
 
-## <span id="Use_notifications_to_customize_your_tile"> </span> <span id="use_notifications_to_customize_your_tile"> </span> <span id="USE_NOTIFICATIONS_TO_CUSTOMIZE_YOUR_TILE"> </span>使用通知自定义磁贴
+## <span id="Use_notifications_to_customize_your_tile"></span><span id="use_notifications_to_customize_your_tile"></span><span id="USE_NOTIFICATIONS_TO_CUSTOMIZE_YOUR_TILE"></span>使用通知自定义磁贴
 
 
 应用安装后，可使用通知自定义磁贴。 可在首次启动应用或响应某个事件（如推送通知）时执行此操作。
@@ -104,6 +106,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

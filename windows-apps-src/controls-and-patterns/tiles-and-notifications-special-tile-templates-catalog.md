@@ -1,29 +1,30 @@
 ---
+author: mijacobs
 Description: 特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。
 title: 特殊磁贴模板
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
-label: 待定
+label: TBD
 template: detail.hbs
 ---
 
 # 特殊磁贴模板
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。 每个特殊磁贴模板均专为 Windows 10 而生成，除了图标磁贴模板，它是针对 Windows 10 进行更新的经典特殊模板。 本文介绍了三种特殊磁贴模板：图标、照片和人脉。
 
-## <span id="Iconic_tile_template"> </span> <span id="iconic_tile_template"> </span> <span id="ICONIC_TILE_TEMPLATE"> </span>图标磁贴模板
+## <span id="Iconic_tile_template"></span><span id="iconic_tile_template"></span><span id="ICONIC_TILE_TEMPLATE"></span>图标磁贴模板
 
 
 图标模板（也称为“IconWithBadge”模板）允许你在磁贴中心显示较小的图像。 Windows 10 在手机和平板电脑/台式机上都支持该模板。
 
 ![小邮件磁贴和中邮件磁贴](images/iconic-template-mail-2sizes.png)
 
-### <span id="How_to_create_an_iconic_tile"> </span> <span id="how_to_create_an_iconic_tile"> </span> <span id="HOW_TO_CREATE_AN_ICONIC_TILE"> </span>如何创建图标磁贴
+### <span id="How_to_create_an_iconic_tile"></span><span id="how_to_create_an_iconic_tile"></span><span id="HOW_TO_CREATE_AN_ICONIC_TILE"></span>如何创建图标磁贴
 
-以下步骤介绍了创建适用于 Windows 10 的图标磁贴所需的所有内容。 具体而言，你首先需要图标图像资源，然后使用图标模板向磁贴发送通知，最后发送锁屏提醒通知以提供要在磁贴上显示的数目。
+以下步骤介绍了要创建适用于 Windows 10 的图标磁贴所需的所有内容。 具体而言，你首先需要图标图像资源，然后使用图标模板向磁贴发送通知，最后发送锁屏提醒通知以提供要在磁贴上显示的数目。
 
 ![图标磁贴的开发人员流程](images/iconic-template-dev-flow.png)
 
@@ -82,20 +83,20 @@ template: detail.hbs
 
 **步骤 5：组织到一起**
 
-下图说明了如何将各个 API 和负载与图标磁贴模板的每个方面关联在一起。 [磁贴通知](https://msdn.microsoft.com/library/windows/apps/hh779724)（包含那些 <binding> 元素）用于指定图标模板和图像资源；[锁屏提醒通知](https://msdn.microsoft.com/library/windows/apps/hh779719)指定数值；磁贴属性控制磁贴的显示名称、颜色等。
+下图说明了如何将各个 API 和负载与图标磁贴模板的每个方面关联在一起。 [磁贴通知](https://msdn.microsoft.com/library/windows/apps/hh779724)（包含那些 &lt;binding&gt; 元素）用于指定图标模板和图像资源；[锁屏提醒通知](https://msdn.microsoft.com/library/windows/apps/hh779719)指定数值；磁贴属性控制你的磁贴的显示名称、颜色等。
 
 ![与图标磁贴模板关联的 API 和负载](images/iconic-template-properties-info.png)
 
-## <span id="Photos_tile_template"> </span> <span id="photos_tile_template"> </span> <span id="PHOTOS_TILE_TEMPLATE"> </span>照片磁贴模板
+## <span id="Photos_tile_template"></span><span id="photos_tile_template"></span><span id="PHOTOS_TILE_TEMPLATE"></span>照片磁贴模板
 
 
 照片磁贴模板允许你在动态磁贴上显示照片的幻灯片。 该模板受所有磁贴大小（包括小磁贴）的支持，并且对于每个磁贴大小的行为都相同。 下面的示例演示了使用照片模板的具有五个画面的中等磁贴。 该模板具有在选定的照片之间无限循环的缩放和交叉淡入淡出动画。
 
-![使用照片磁贴模板的图像幻灯片](images/photo-tile-template-image01.jpg)
+![使用照片磁贴模板的图像幻灯片放映](images/photo-tile-template-image01.jpg)
 
-### <span id="How_to_use_the_photos_template"> </span> <span id="how_to_use_the_photos_template"> </span> <span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE"> </span>如何使用照片模板
+### <span id="How_to_use_the_photos_template"></span><span id="how_to_use_the_photos_template"></span><span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE"></span>如何使用照片模板
 
-如果你已安装 [Windows 10 版本的 NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)，使用照片模板将非常简单。 尽管你可以使用原始的 XML，但我们强烈建议使用 NotificationExtensions，这样你便无需担心生成有效的 XML 或 XML 转义内容。
+如果你已安装 [Windows 10 版本的 NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)，使用图片模板将非常简单。 尽管你可以使用原始的 XML，但我们强烈建议使用 NotificationExtensions，这样你便无需担心生成有效的 XML 或 XML 转义内容。
 
 Windows Phone 最多在幻灯片中显示 9 张照片；平板电脑、笔记本电脑和台式机最多显示 12 张。
 
@@ -177,10 +178,10 @@ TileContent content = new TileContent()
 };
 ```
 
-## <span id="People_tile_template"> </span> <span id="people_tile_template"> </span> <span id="PEOPLE_TILE_TEMPLATE"> </span>“人脉”磁贴模板
+## <span id="People_tile_template"></span><span id="people_tile_template"></span><span id="PEOPLE_TILE_TEMPLATE"></span>“人脉”磁贴模板
 
 
-Windows 10 中的“人脉”应用使用特殊的磁贴模板，该模板显示一系列在磁贴上垂直或水平滚动的圆形图像。 这种磁贴模板自 Windows 10 版本 10572 起推出，任何人都可随意在其应用中使用该模板。
+Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在磁贴上垂直或水平滚动的圆形图像。 这种磁贴模板自 Windows 10 版本 10572 起推出，任何人都可随意在其应用中使用该模板。
 
 “人脉”磁贴模板可用于以下大小的磁贴：
 
@@ -265,7 +266,7 @@ TileContent content = new TileContent()
 
 若要发送通知，请参阅[选择通知传递方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)。
 
-## <span id="related_topics"> </span>相关主题
+## <span id="related_topics"></span>相关主题
 
 
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-people-tile-template)
@@ -282,6 +283,6 @@ TileContent content = new TileContent()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

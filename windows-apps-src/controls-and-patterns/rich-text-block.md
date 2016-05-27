@@ -1,12 +1,13 @@
 ---
+author: Jwmsft
 Description: 将 RichTextBlock 与 RichTextBlockOverflow 元素结合使用以创建高级文本布局。
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
-label: 富文本块
+label: Rich text block
 template: detail.hbs
 ---
-# RichTextBlock
-富文本块提供了多种适用于高级文本布局的功能，你可以在需要支持段落、内联 UI 元素或复杂文本布局时使用。
+# RTF 块
+RTF 块提供了多种适用于高级文本布局的功能，你可以在需要支持段落、内联 UI 元素或复杂文本布局时使用。
 
 
 <span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
@@ -127,7 +128,7 @@ RichTextBlock 支持：
 
 请参阅版式和字体指南。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
@@ -138,7 +139,7 @@ RichTextBlock 支持：
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文本输入指南](text-controls.md)
 
-**对于开发人员 (XAML)**
+**面向开发人员 (XAML)**
 - [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
@@ -147,6 +148,6 @@ RichTextBlock 支持：
 - [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,8 +1,9 @@
 ---
-Description: 请考虑我们在日常生活中阅读文字的频率 - 电子邮件、图书、路标、菜单上的价格、胎压指示或街道标牌上的海报。
+author: Jwmsft
+Description: 请考虑我们在日常生活中阅读文本的频率 - 电子邮件、图书、路标、菜单上的价格、胎压指示或街道标牌上的海报。
 title: 文本控件
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
-label: 文本控件
+label: Text controls
 template: detail.hbs
 ---
 # 文本控件
@@ -35,7 +36,7 @@ TextBlock 相比 RichTextBlock 通常更易于使用，并且提供更好的文�
 
 如果你需要支持多段落、多列文本或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。 RichTextBlock 提供适用于高级文本布局的若干功能。
 
-RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) 属性，它通过 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素支持基于段落的文本。 它没有可以用于轻松访问应用中控件的文本内容的 **Text** 属性。  
+RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) 属性，它通过 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素支持基于段落的文本。 它没有可以用来轻松访问应用中控件的文本内容的 **Text** 属性。  
 
 ### 文本输入
 
@@ -55,14 +56,14 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 
 有多种在应用中获取用户输入的方法。 这些问题将有助于回答最适合用于获取用户输入的是标准文本输入框之一还是其他控件。
 
--   **高效枚举所有有效值是否实际？**如果是，请考虑使用选择控件之一，例如[复选框](checkbox.md)、[下拉列表](lists.md)、列表框、[单选按钮](radio-button.md)、[滑块](slider.md)、[切换开关](toggles.md)、[日期选取器](date-and-time.md)或时间选取器。
--   **有效值集是否非常小？**如果是，请考虑使用[下拉列表](lists.md)或列表框，尤其是在值的长度超过几个字符的情况下。
--   **有效数据是否完全不受限制？或者有效数据是否仅受格式限制（长度或字符类型受限制）？**如果是，请使用文本输入控件。 你可以限制可输入的字符数，并且可以在应用代码中验证格式。
--   **该值是否表示具有常见专用控件的数据类型？**如果是，请使用相应的控件，而不要使用文本输入控件。 例如，使用 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681)（而非文本输入控件）接受日期输入。
+-   **高效枚举所有有效值是否可行？** 如果是，请考虑使用选择控件之一，例如[复选框](checkbox.md)、[下拉列表](lists.md)、列表框、[单选按钮](radio-button.md)、[滑块](slider.md)、[切换开关](toggles.md)、[日期选取器](date-and-time.md)或时间选取器。
+-   **有效值集是否非常小？** 如果是，请考虑使用[下拉列表](lists.md)或列表框，在值的长度超过几个字符的情况下尤其如此。
+-   **有效数据是否完全不受限制？ 或者有效数据是否仅受格式限制（长度或字符类型受限制）？** 如果是，请使用文本输入控件。 你可以限制可输入的字符数，并且可以在应用代码中验证格式。
+-   **该值是否表示具有常见专用控件的数据类型？** 如果是，请使用相应的控件，而不要使用文本输入控件。 例如，使用 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681)（而非文本输入控件）接受日期输入。
 -   如果数据完全为数值：
-    -   **输入的值是否为近似值，并且/或者与同一页面的另一个数量相关？**如果是，请使用[滑块](slider.md)。
-    -   **用户是否将受益于即时反馈对设置更改的效果？**如果是，请使用[滑块](slider.md)及其可能的随附控件。
-    -   **输入的值是否很可能在观察结果后得到调整（例如，调节音量或屏幕亮度）？**如果是，请使用[滑块](slider.md)。
+    -   **输入的值是否为近似值，并且/或者与同一页面的另一个数量相关？** 如果是，请使用[滑块](slider.md)。
+    -   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用[滑块](slider.md)（可能带有随附控件）。
+    -   **输入的值是否很可能在观察结果后得到调整（例如，调节音量或屏幕亮度）？** 如果是，请使用[滑块](slider.md)。
     
 ## 示例
 
@@ -102,12 +103,11 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 
 若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。
 
->提示 
->此信息仅适用于 SIP。 它不适用于硬件键盘或 Windows“轻松使用”选项中提供的屏幕键盘。
+>提示 此信息仅适用于 SIP。 它不适用于硬件键盘或 Windows“轻松使用”选项中提供的屏幕键盘。
 
 当你的应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为与你期望用户输入的数据类型匹配，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
 
-例如，如果文本框仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
+例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
 >重要提示  
 >输入范围不会导致任何输入验证的执行，并且不会阻止用户通过硬件键盘或其他输入设备提供任何输入。 你仍然负责按需在代码中验证输入。
@@ -144,7 +144,7 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 你的应用可以在文本段落之间插入段分隔符。 使用此分隔符，可以创建可在不同操作系统上使用不同行宽度设置格式的纯文本文件。 目标系统可忽略任何行分隔符，并且仅在段分隔符处分段。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
@@ -160,6 +160,6 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length.aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

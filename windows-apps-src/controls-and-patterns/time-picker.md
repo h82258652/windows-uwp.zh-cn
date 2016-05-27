@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 时间选取器提供了一种标准化途径，可使用户使用触摸、鼠标或键盘输入选取时间值。
 title: 时间选取器
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
-label: 时间选取器
+label: Time picker
 template: detail.hbs
 ---
 
@@ -43,9 +44,9 @@ arrivalTimePicker.Header = "Arrival time";
 
 ![时间选取器示例](images/time-picker-closed.png)
 
-> **注意**：有关日期和时间值的重要信息，请参阅*日期和时间控件*文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> **注意** &nbsp;&nbsp;有关日期和时间值的重要信息，请参阅*日期和时间控件*文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关主题
 
@@ -55,6 +56,6 @@ arrivalTimePicker.Header = "Arrival time";
 - [日期选取器](date-picker.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

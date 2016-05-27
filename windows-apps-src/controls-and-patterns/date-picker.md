@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 日期选取器向你提供了一种标准化方式，可使用户通过触摸、鼠标或键盘输入选取本地化格式的日期值。 
 title: 日期选取器
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
@@ -44,7 +45,7 @@ birthDatePicker.Header = "Date of birth";
 
 ![日期选取器示例](images/date-picker-closed.png)
 
-> **注意** 对于日期值的重要信息，请参阅“日期和时间控件”文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> **注意** &nbsp;&nbsp;有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
 
 
@@ -56,6 +57,6 @@ birthDatePicker.Header = "Date of birth";
 - [时间选取器](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,18 +1,19 @@
 ---
+author: mijacobs
 Description: 原始通知是简短的通用推送通知。
 title: 原始通知概述
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
-label: 待定
+label: TBD
 template: detail.hbs
 ---
 
 # 原始通知概述
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-原始通知是简短的通用推送通知。 原始通知有严格的指令，不包含 UI 组件。 与其他推送通知一样，Windows 推送通知服务 (WNS) 功能提供从云服务到应用的原始通知。
+
+原始通知是简短的一般用途的推送通知。 原始通知有严格的指令，不包含 UI 组件。 与其他推送通知一样，Windows 推送通知服务 (WNS) 功能提供从云服务到应用的原始通知。
 
 你可以将原始通知用于各种用途，其中包括触发应用以运行后台任务（如果用户已给予如此操作的应用权限）。 通过使用 WNS 与应用通信，可以避免创建持久的套接字连接、发送 HTTP GET 消息以及其他服务到应用连接的处理开销。
 
@@ -22,26 +23,26 @@ template: detail.hbs
 
 与 Toast、磁贴和锁屏提醒推送通知一样，原始通知从应用的云服务通过分配的通道统一资源标识符 (URI) 推送到 WNS。 WNS 反过来将通知传送到与该通道关联的设备和用户帐户。 与其他推送通知不同，原始通知没有指定的格式。 负载的内容完全由应用定义。
 
-以一个从原始通知获益的应用为例，让我们看一个理论上的文档协作应用。 请考虑两名用户正在同时编辑同一个文档。 托管共享文档的云服务可以使用原始通知在其他用户进行更改时通知每个用户。 原始通知没必要包含对文档的更改，但用信号通知每个用户的应用副本联系中心位置并同步可用的更改。 通过使用原始通知，应用及其云服务可以节省在整个文档打开期间维持持续连接的开销。
+以一个从原始通知获益的应用为例，让我们看一个理论上的文档协作应用。 请考虑两名用户正在同时编辑同一个文档。 托管共享文档的云服务可以使用原始通知在其他用户进行更改时通知每个用户。 原始通知没必要包含对文档的更改，但用信号通知每个用户的应用副本联系中心位置并同步可用的更改。 通过使用原始通知，应用及其云服务可以不必在文档打开期间一直保持持久连接。
 
-## <span id="How_raw_notifications_work"> </span> <span id="how_raw_notifications_work"> </span> <span id="HOW_RAW_NOTIFICATIONS_WORK"> </span>原始通知的工作原理
+## <span id="How_raw_notifications_work"></span><span id="how_raw_notifications_work"></span><span id="HOW_RAW_NOTIFICATIONS_WORK"></span>原始通知的工作原理
 
 
 所有原始通知都是推送通知。 因此，发送和接收推送通知所需的设置也适用于原始通知：
 
 -   必须具有有效的 WNS 通道才能发送原始通知。 有关获取推送通知通道的详细信息，请参阅[如何请求、创建和保存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)。
--   必须在应用的清单中包含 **Internet** 功能。 在 Microsoft Visual Studio 清单编辑器中，你可以在**“功能”**选项卡下看到此选项，即**“Internet (客户端)”**。 有关详细信息，请参阅[**功能**](https://msdn.microsoft.com/library/windows/apps/br211422)。
+-   必须在应用的清单中包含 **Internet** 功能。 在 Microsoft Visual Studio 清单编辑器中，你可以在“功能”****选项卡下看到此选项，即“Internet (客户端)”****。 有关详细信息，请参阅[**功能**](https://msdn.microsoft.com/library/windows/apps/br211422)。
 
 通知的正文采用应用定义的格式。 客户端收到只需应用理解的以 null 终止的字符串 (**HSTRING**) 形式的数据。
 
 如果客户端处于离线状态，则仅当通知中包含 [X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) 标头时 WNS 才会缓存原始通知。 但是，将只缓存一个原始通知，并且在设备变回联机后传递。
 
-要使原始通知呈现在客户端上只有三种可能的途径：通过通知传递事件将通知传递给正在运行的应用、发送给后台任务或丢弃。 因此，如果客户端处于离线状态并且 WNS 尝试传递原始通知，则将丢弃通知。
+要使原始通知呈现在客户端上只有三种可能的途径：通过通知传递事件将通知传递给正在运行的应用、发送给后台任务或丢弃。 因此，如果客户端脱机并且 WNS 尝试传递原始通知，则会丢弃通知。
 
-## <span id="Creating_a_raw_notification"> </span> <span id="creating_a_raw_notification"> </span> <span id="CREATING_A_RAW_NOTIFICATION"> </span>创建原始通知
+## <span id="Creating_a_raw_notification"></span><span id="creating_a_raw_notification"></span><span id="CREATING_A_RAW_NOTIFICATION"></span>创建原始通知
 
 
-发送原始通知与发送磁贴、Toast 或锁屏提醒推送通知类似，但有以下区别：
+发送原始通知与发送磁贴、Toast 或锁屏提醒推送通知类似，但有以下不同：
 
 -   HTTP Content-Type 标头必须设置为“application/octet-stream”。
 -   HTTP [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) 标头必须设置为“wns/raw”。
@@ -51,10 +52,10 @@ template: detail.hbs
 
 有关发送推送通知的详细信息，请参阅[快速入门：发送推送通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)。
 
-## <span id="Receiving_a_raw_notification"> </span> <span id="receiving_a_raw_notification"> </span> <span id="RECEIVING_A_RAW_NOTIFICATION"> </span>接收原始通知
+## <span id="Receiving_a_raw_notification"></span><span id="receiving_a_raw_notification"></span><span id="RECEIVING_A_RAW_NOTIFICATION"></span>接收原始通知
 
 
-你的应用可通过两种途径接收原始通知：
+有两种方法可通过应用接收原始通知：
 
 -   当应用程序正在运行时通过[通知传递事件](#notification_delivery_events)。
 -   当应用支持允许后台任务时，通过[原始通知触发的后台任务](#bg_tasks)。
@@ -64,9 +65,9 @@ template: detail.hbs
 -   如果应用正在运行，则通知传递事件将优先于后台任务，并且应用将获得最先处理通知的机会。
 -   通知传递事件处理程序可以通过将事件的 [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) 属性设置为 **true** 来指定处理程序退出后不应将原始通知传递给它的后台任务。 如果 **Cancel** 属性设置为 **false** 或者未设置（默认值为 **false**），则原始通知将在通知传递事件处理程序完成其工作后触发后台任务。
 
-### <span id="notification_delivery_events"> </span> <span id="NOTIFICATION_DELIVERY_EVENTS"> </span>通知传递事件
+### <span id="notification_delivery_events"></span><span id="NOTIFICATION_DELIVERY_EVENTS"></span>通知传递事件
 
-你的应用可以使用通知传递事件 ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) 在应用处于使用状态时接收原始通知。 当云服务发送原始通知时，正在运行的应用可以通过在通道 URI 上处理通知传递事件来接收该通知。
+你的应用可以使用通知传递事件 ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) 以在应用使用时接收原始通知。 当云服务发送原始通知时，正在运行的应用可以通过在通道 URI 上处理通知传递事件来接收该通知。
 
 如果应用未运行并且未使用[后台任务](#bg_tasks)，则 WNS 会在接收时丢弃发送给该应用的任何原始通知。 若要避免浪费云服务的资源，则应考虑在服务上实现逻辑以跟踪应用是否处于活动状态。 存在此信息的两种源：应用可以显式告知服务它已准备好开始接收通知，并且 WNS 可以告知服务何时停止。
 
@@ -82,7 +83,7 @@ template: detail.hbs
 
     有关详细信息，请参阅[推送通知服务请求和响应头](https://msdn.microsoft.com/library/windows/apps/hh465435)
 
-### <span id="bg_tasks"> </span> <span id="BG_TASKS"> </span>原始通知触发的后台任务
+### <span id="bg_tasks"></span><span id="BG_TASKS"></span>原始通知触发的后台任务
 
 **重要提示** 在使用原始通知后台任务前，必须通过 [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 向应用授予后台访问权限。
 
@@ -103,12 +104,12 @@ template: detail.hbs
 
 对于每个应用，一次只能运行一个后台任务。 如果为已在运行后台任务的应用触发后台任务，则必须先完成第一个后台任务，然后才能运行新的后台任务。
 
-## <span id="Other_resources"> </span> <span id="other_resources"> </span> <span id="OTHER_RESOURCES"> </span>其他资源
+## <span id="Other_resources"></span><span id="other_resources"></span><span id="OTHER_RESOURCES"></span>其他资源
 
 
 你可以通过下载适用于 Windows 8.1 的[原始通知示例](http://go.microsoft.com/fwlink/p/?linkid=241553)和适用于 Windows 8.1 的[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?LinkId=231476)并在 Windows 10 应用中重复使用其源代码来了解详细信息。
 
-## <span id="related_topics"> </span>相关主题
+## <span id="related_topics"></span>相关主题
 
 
 * [原始通知指南](https://msdn.microsoft.com/library/windows/apps/hh761463)
@@ -125,6 +126,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

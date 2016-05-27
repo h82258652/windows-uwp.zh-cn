@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 在选择字体并指定字体大小和颜色时，应遵循以下指南。
 title: 字体
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
@@ -8,10 +9,6 @@ template: detail.hbs
 
 # 字体指南
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
 **重要的 API**
 
 -   [**FontFamily 属性**](https://msdn.microsoft.com/library/windows/apps/br209655)
@@ -20,7 +17,7 @@ template: detail.hbs
 
 如果你要查找 Segoe UI Symbol 图标列表，请参阅 [**Segoe UI Symbol 图标指南**](segoe-ui-symbol-font.md)。
 
-## <span id="The_Windows_10_type_ramp"> </span> <span id="the_windows_10_type_ramp"> </span> <span id="THE_WINDOWS_10_TYPE_RAMP"> </span>Windows 10 类型渐变
+## <span id="The_Windows_10_type_ramp"></span><span id="the_windows_10_type_ramp"></span><span id="THE_WINDOWS_10_TYPE_RAMP"></span>Windows 10 类型渐变
 
 
 类型渐变建立了从标题行到正文文本的关键设计关系，并确保不同层次之间具有清晰和易于理解的层次结构。 用户可以立即了解在何处找到信息以及如何分析页面。
@@ -39,7 +36,7 @@ template: detail.hbs
 
  
 
-## <span id="Recommended_fonts"> </span> <span id="recommended_fonts"> </span> <span id="RECOMMENDED_FONTS"> </span>建议的字体
+## <span id="Recommended_fonts"></span><span id="recommended_fonts"></span><span id="RECOMMENDED_FONTS"></span>建议的字体
 
 
 你无需将 Segoe UI 字体用于所有内容。 你可以将其他字体用于特定应用场景，例如阅读，或使用非英语语言显示文本的情况。
@@ -269,13 +266,12 @@ template: detail.hbs
 
  
 
-## <span id="related_topics"> </span>相关主题
-
+## <span id="related_topics"></span>相关主题
 
 **面向设计人员**
 * [标签（或文本块）](labels.md)
-* [Segoe UI Symbol 图标](segoe-ui-symbol-font.md)
-**对于开发人员 (XAML)**
+* [Segoe UI Symbol 图标](segoe-ui-symbol-font.md) 
+           **对于开发人员 (XAML)**
 * [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [设置应用页面的布局](https://msdn.microsoft.com/library/windows/apps/hh872191)
 * [Segoe UI Symbol 图标](segoe-ui-symbol-font.md)
@@ -294,6 +290,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

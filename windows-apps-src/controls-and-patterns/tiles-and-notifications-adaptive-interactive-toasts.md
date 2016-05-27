@@ -1,15 +1,16 @@
 ---
+author: mijacobs
 Description: 自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。
 title: 自适应和交互式 Toast 通知
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
-label: 自适应和交互式 Toast 通知
+label: Adaptive and interactive toast notifications
 template: detail.hbs
 ---
 
 # 自适应和交互式 Toast 通知
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。
@@ -24,14 +25,14 @@ template: detail.hbs
 
  
 
-## <span id="toast_structure"> </span> <span id="TOAST_STRUCTURE"> </span>Toast 通知结构
+## <span id="toast_structure"></span><span id="TOAST_STRUCTURE"></span>Toast 通知结构
 
 
 Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
--   <visual> 涵盖可供用户从视觉上查看的内容，包括文本和图像
--   <actions> 包含开发人员希望在通知内添加的按钮/输入
--   <audio> 指定在通知弹出时播放的声音
+-   &lt;visual&gt; 涵盖可供用户从视觉上查看的内容，包括文本和图像
+-   &lt;actions&gt; 包含开发人员希望在通知内添加的按钮/输入
+-   &lt;audio&gt; 指定在通知弹出时播放的声音
 
 下面是代码示例：
 
@@ -56,9 +57,9 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
 ![Toast 通知结构](images/adaptivetoasts-structure.jpg)
 
-### <span id="Visual"> </span> <span id="visual"> </span> <span id="VISUAL"> </span>视觉
+### <span id="Visual"></span><span id="visual"></span><span id="VISUAL"></span>视觉
 
-在视觉元素内，你必须正好有一个包含 Toast 的可视内容的绑定元素。
+在视觉元素内，你必须正好有一个包含 Toast 的视觉内容的绑定元素。
 
 通用 Windows 平台 (UWP) 应用中的磁贴通知支持基于不同磁贴大小的多个模板。 但是，Toast 通知只有一个模板名称：**ToastGeneric**。 只有一个模板名称意味着：
 
@@ -67,16 +68,16 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
 有关视觉部分及其子元素中受支持的所有属性，请参阅下面的“架构”部分。 有关更多示例，请参阅下面的 XML 示例部分。
 
-### <span id="Actions"> </span> <span id="actions"> </span> <span id="ACTIONS"> </span>操作
+### <span id="Actions"></span><span id="actions"></span><span id="ACTIONS"></span>操作
 
-在 UWP 应用中，你可以将按钮和其他输入添加到 Toast 通知，这可使用户在应用外执行更多操作。 这些操作在 <actions> 元素下指定，其中有两个可以指定的类型：
+在 UWP 应用中，你可以将按钮和其他输入添加到 Toast 通知，这可使用户在应用外执行更多操作。 这些操作在 &lt;actions&gt; 元素下指定，其中有两个可以指定的类型：
 
--   <action> 这将显示为桌面和移动设备上的按钮。 你可以在 Toast 通知内指定最多五个自定义或系统操作。
--   <input> 这允许用户提供输入，如对消息的快速回复或从下拉菜单中选择一个选项。
+-   &lt;action&gt; 这将显示为桌面和移动设备上的按钮。 你可以在 Toast 通知内指定最多五个自定义或系统操作。
+-   &lt;input&gt; 这允许用户提供输入，如对消息的快速回复或从下拉菜单中选择一个选项。
 
-<action> 和 <input> 在 Windows 设备系列内均为自适应。 例如，在移动或桌面设备上，面向用户的 <action> 是可点击/单击的按钮。 文本 <input> 是用户可使用物理键盘或屏幕键盘输入文本的框。 这些元素还会适应将来的交互方案，如通过语音宣布的操作或通过听写获取的文本输入。
+&lt;action&gt; 和 &lt;input&gt; 在 Windows 设备系列内均是自适应的。 例如，在移动或桌面设备上，面向用户的 &lt;action&gt; 是可点击/单击的按钮。 文本 &lt;input&gt; 是用户可使用物理键盘或屏幕键盘输入文本的框。 这些元素还会适应将来的交互方案，如通过语音宣布的操作或通过听写获取的文本输入。
 
-当用户采取某个操作时，你可以通过在 <action> 元素内指定 [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) 属性来执行以下操作之一：
+当用户采用某个操作时，你可以通过在 &lt;action&gt; 元素内指定 [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) 属性来执行以下操作之一：
 
 -   使用特定于操作的参数在前台激活应用，该参数可用于导航到特定页面/上下文。
 -   在不影响用户的情况下激活应用的后台任务。
@@ -85,7 +86,7 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
 有关视觉部分及其子元素中受支持的所有属性，请参阅下面的“架构”部分。 有关更多示例，请参阅下面的 XML 示例部分。
 
-### <span id="Audio"> </span> <span id="audio"> </span> <span id="AUDIO"> </span>音频
+### <span id="Audio"></span><span id="audio"></span><span id="AUDIO"></span>音频
 
 自定义声音当前在面向桌面平台的 UWP 应用上不受支持；相反，你可以为你的桌面上的应用从 ms-winsoundevents 列表中进行选择。 移动平台上的 UWP 应用支持 ms-winsoundevents 以及采用以下格式的自定义声音：
 
@@ -94,17 +95,16 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
 有关 Toast 通知中的音频的信息（其中包括 ms-winsoundevents 的完整列表），请参阅[音频架构页面](https://msdn.microsoft.com/library/windows/apps/br230842)。
 
-## <span id="Alarms__reminders__and_incoming_calls"> </span> <span id="alarms__reminders__and_incoming_calls"> </span> <span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"> </span>闹钟、提醒和来电
+## <span id="Alarms__reminders__and_incoming_calls"></span><span id="alarms__reminders__and_incoming_calls"></span><span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"></span>闹钟、提醒和来电
 
 
 你可以将 Toast 通知用于闹钟、提醒和来电。 这些特殊 Toasts 具有与标准 Toast 一致的外观，尽管特殊 Toast 具有某些自定义、基于方案的 UI 和模式：
 
 -   提醒 Toast 通知将保留在屏幕上，直到用户取消它或执行操作。 在 Windows 移动版上，提醒 Toast 通知还会以预先展开的形式显示。
 -   除了与提醒通知共享上述行为，闹钟通知还会自动播放循环音频。
--   来电通知将在 Windows Mobile 设备上全屏显示。 这通过在 Toast 通知的根元素内指定方案属性来实现 - <toast>：
-    <toast scenario=" { default | alarm | reminder | incomingCall } " >
+-   来电通知将在 Windows Mobile 设备上全屏显示。 这通过在 Toast 通知的根元素内指定方案属性来实现 - &lt;toast&gt;：&lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
 
-## <span id="xml_examples"> </span> <span id="XML_EXAMPLES"> </span>XML 示例
+## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>XML 示例
 
 
 **注意** 这些示例的 Toast 通知屏幕截图取自桌面上的应用。 在移动设备上，Toast 通知可在弹出时处于折叠状态，并且 Toast 底部带有用于展开它的捕获器。
@@ -286,7 +286,7 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
  
 
-## <span id="Activation_samples"> </span> <span id="activation_samples"> </span> <span id="ACTIVATION_SAMPLES"> </span>激活示例
+## <span id="Activation_samples"></span><span id="activation_samples"></span><span id="ACTIVATION_SAMPLES"></span>激活示例
 
 
 如上所述，Toast 中的正文和操作能够以不同方式激活应用。 下面的示例向你介绍如何处理 Toast 正文和/或 Toast 操作中的不同类型的激活。
@@ -348,7 +348,7 @@ namespace ToastNotificationTask
 }
 ```
 
-## <span id="Schemas___visual__and__audio_"> </span> <span id="schemas___visual__and__audio_"> </span> <span id="SCHEMAS___VISUAL__AND__AUDIO_"> </span>架构：<visual> 和 <audio>
+## <span id="Schemas___visual__and__audio_"></span><span id="schemas___visual__and__audio_"></span><span id="SCHEMAS___VISUAL__AND__AUDIO_"></span>架构：&lt;visual&gt; 和 &lt;audio&gt;
 
 
 在以下架构中，“?”后缀表示属性为可选属性。
@@ -368,7 +368,7 @@ namespace ToastNotificationTask
 </toast>
 ```
 
-**<toast> 中的属性**
+**&lt;toast 中的属性&gt;**
 
 launch?
 
@@ -378,7 +378,7 @@ launch?
 -   根据 activationType 的值，此值可由前台中的应用在后台任务内接收或由从原始应用协议启动的另一个应用接收。
 -   此字符串的格式和内容由应用根据其自身用途定义。
 -   当用户点击或单击 Toast 来启动其关联应用时，启动字符串会向应用提供上下文，以允许该应用向用户显示与 Toast 内容相关的视图，而不是以其默认方式启动。
--   如果由于用户单击某个操作（而不是 Toast 的正文）而发生激活，开发人员会检索回在该 <action> 标记中预定义的“arguments”，而不是在 <toast> 标记中预定义的“launch”。
+-   如果由于用户单击某个操作（而不是 Toast 的正文）而发生激活，开发人员会检索回在该 &lt;action&gt; 标记中预定义的“arguments”，而不是在 &lt;toast&gt; 标记中预定义的“launch”。
 
 duration?
 
@@ -400,12 +400,12 @@ scenario?
 -   你不需要此属性，除非你的方案是弹出警报、提醒或来电。
 -   不要将此属性仅用于使通知持续显示在屏幕上。
 
-**<visual> 中的属性**
+**&lt;visual 中的属性&gt;**
 
 version?
 
 -   version? = nonNegativeInteger
--   由于 <visual> 上将弃用版本控制，因此无需此属性。 敬请期待从更高层次结构指定的新版本控制模型（如果需要）。
+-   由于 &lt;visual&gt; 上将弃用版本控制，因此无需此属性。 敬请期待从更高层次结构指定的新版本控制模型（如果需要）。
 
 lang?
 
@@ -419,7 +419,7 @@ addImageQuery?
 
 -   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
-**<binding> 中的属性**
+**&lt;binding 中的属性&gt;**
 
 template?
 
@@ -439,13 +439,13 @@ addImageQuery?
 
 -   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
-**<text> 中的属性**
+**&lt;text 中的属性&gt;**
 
 lang?
 
 -   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
-**<image> 中的属性**
+**&lt;image 中的属性&gt;**
 
 src
 
@@ -474,7 +474,7 @@ hint-crop?
 -   “none”是默认值，表示没有裁剪。
 -   “circle”将图像裁剪为圆形。 将此属性用于联系人的头像、用户图像等。
 
-**<audio> 中的属性**
+**&lt;audio 中的属性&gt;**
 
 src?
 
@@ -488,7 +488,7 @@ silent?
 
 -   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230842)。
 
-## <span id="Schemas___action_"> </span> <span id="schemas___action_"> </span> <span id="SCHEMAS___ACTION_"> </span>架构：<action>
+## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>架构：&lt;action&gt;
 
 
 在以下架构中，“?”后缀表示属性为可选属性。
@@ -507,7 +507,7 @@ silent?
 </toast>
 ```
 
-**<input> 中的属性**
+**&lt;input 中的属性&gt;**
 
 id
 
@@ -540,7 +540,7 @@ defaultInput?
 -   如果输入类型是“text”，将其视为字符串输入。
 -   如果输入类型是“selection”，这应是此输入的元素内的可用选择之一的 id。
 
-**<selection> 中的属性**
+**&lt;selection 中的属性&gt;**
 
 id
 
@@ -550,7 +550,7 @@ content
 
 -   此属性是必需的。 它为此选择元素提供要显示的字符串。
 
-**<action> 中的属性**
+**&lt;action 中的属性&gt;**
 
 content
 
@@ -580,10 +580,10 @@ hint-inputId
 -   此值需要是要关联的输入元素的 id。
 -   在移动和桌面中，这会将按钮放置在输入框的右侧。
 
-## <span id="Attributes_for_system-handled_actions"> </span> <span id="attributes_for_system-handled_actions"> </span> <span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"> </span>系统处理操作的属性
+## <span id="Attributes_for_system-handled_actions"></span><span id="attributes_for_system-handled_actions"></span><span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"></span>用于系统处理的操作的属性
 
 
-如果你不希望应用将通知的推迟/重新计划作为后台任务处理，则系统可以处理推迟和取消通知的操作。 系统处理的操作可以组合（或单独指定），但我们不建议在没有取消操作的情况下实现推迟操作。
+如果你不希望应用将通知的推迟/重新计划作为后台任务处理，系统可以处理推迟和取消通知的操作。 系统处理的操作可以组合（或单独指定），但我们不建议在没有取消操作的情况下实现推迟操作。
 
 系统命令组合：SnoozeAndDismiss
 
@@ -622,16 +622,16 @@ hint-inputId
 -   Specify activationType = "system"
 -   Specify arguments = "snooze" | "dismiss"
 -   指定内容：
-    -   如果你希望“snooze”和“dismiss”的本地化字符串在操作上显示，请将内容指定为空字符串：<action content = ""/>
-    -   如果你需要自定义字符串，只需提供其值：<action content="Remind me later" />
+    -   如果你希望“snooze”和“dismiss”的本地化字符串在操作上显示，请将内容指定为空字符串：&lt;action content = ""/&gt;
+    -   如果你需要自定义字符串，只需提供其值：&lt;action content="Remind me later" /&gt;
 -   指定输入：
-    -   如果你不希望用户选择推迟间隔，而只是希望你的通知仅在系统定义的时间间隔内推迟一次（这在整个操作系统上都一致），则不要构建任何 <input>。
+    -   如果你不希望用户选择推迟间隔，而只是希望你的通知仅在系统定义的时间间隔内推迟一次（这在整个操作系统上都一致），则不要构建任何 &lt;input&gt;。
     -   如果你希望提供推迟间隔选择：
         -   在推迟操作中指定 hint-inputId
-        -   将输入的 id 与推迟操作的 hint-inputId 相匹配：<input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/>
-        -   将选择 id 指定为以分钟为单位表示推迟间隔的 nonNegativeInteger：<selection id="240" /> 表示推迟 4 小时
-        -   请确保 <input> 中的 defaultInput 值与 <selection> 子元素的 id 之一相匹配
-        -   提供最多（但不多于）5 个 <selection> 值
+        -   将输入的 id 与推迟操作的 hint-inputId 相匹配：&lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
+        -   将选择 id 指定为以分钟为单位表示推迟间隔的 nonNegativeInteger：&lt;selection id="240" /&gt; 表示推迟 4 小时
+        -   请确保 &lt;input&gt; 中的 defaultInput 值与 &lt;selection&gt; 子元素的 id 之一相匹配
+        -   提供最多（但不多于）5 个 &lt;selection&gt; 值
 
  
 
@@ -642,6 +642,6 @@ hint-inputId
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

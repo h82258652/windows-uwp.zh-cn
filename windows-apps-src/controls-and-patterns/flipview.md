@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 显示集锦中的图像（例如相册中的照片或产品详细信息页中的项目），一次显示一张图像。
 title: 翻转视图控件指南
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
@@ -85,7 +86,7 @@ flipView1.SelectionChanged += FlipView_SelectionChanged;
 stackPanel1.Children.Add(flipView1);
 ```
 
-还可以将 ItemsSource 属性绑定到 XAML 中的集合。 有关更多信息，请参阅[使用 XAML 进行数据绑定](../data-binding/data-binding-quickstart.md)。
+还可以将 ItemsSource 属性绑定到 XAML 中的集合。 有关详细信息，请参阅[使用 XAML 进行数据绑定](../data-binding/data-binding-quickstart.md)。
 
 在下面的代码中，ItemsSource 绑定到名为 `itemsViewSource` 的 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx)。 
 
@@ -101,7 +102,7 @@ stackPanel1.Children.Add(flipView1);
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**注意** 可以通过将项添加到其 Items 集合或设置其 ItemsSource 属性来填充翻转视图，但不能同时使用这两种方式。 如果 ItemsSource 属性已设置且使用 XAML 添加项，则会忽略该项。 如果 ItemsSource 属性已设置且使用代码向项集合中添加项，则会引发异常。
+>**注意** &nbsp;&nbsp;可以通过将项添加到其 Items 集合或设置其 ItemsSource 属性来填充翻转视图，但不能同时使用这两种方式。 如果 ItemsSource 属性已设置且使用 XAML 添加项，则会忽略该项。 如果 ItemsSource 属性已设置且使用代码向项集合中添加项，则会引发异常。
 
 ### 指定项目的外观
 
@@ -201,11 +202,11 @@ stackPanel1.Children.Add(flipView1);
 
 ## 相关文章
 
-[列表指南](https://msdn.microsoft.com/library/windows/apps/mt186889)
+- [列表指南](https://msdn.microsoft.com/library/windows/apps/mt186889)
 - [**FlipView 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
 - [**CarouselPanel 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

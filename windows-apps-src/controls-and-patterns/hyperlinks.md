@@ -1,8 +1,9 @@
 ---
-Description: 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定统一资源标识符 (URI)。
+author: Jwmsft
+Description: 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。
 title: 超链接
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
-label: 超链接
+label: Hyperlinks
 template: detail.hbs
 ---
 # 超链接
@@ -49,7 +50,7 @@ template: detail.hbs
 
 ![作为文本元素的超链接示例](images/controls_hyperlink-element.png) 
 
-> **提示** 当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在 Hyperlink 和其他元素之间保留空白区域。
+> **提示** &nbsp;&nbsp;当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
 
 ## 创建 HyperlinkButton
 
@@ -80,7 +81,7 @@ template: detail.hbs
 
 若要使用超链接导航到 URI，请设置 NavigateUri 属性。 当用户单击或点击超链接时，指定的 URI 将在默认浏览器中打开。 默认浏览器将在独立于应用的进程中运行。
 
-> **注意** 无需使用 http: 或 https: 方案。 你可以使用诸如 ms-appx:、ms-appdata: 或 ms-resources: 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 file: 方案。 有关详细信息，请参阅 [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
+> **注意** &nbsp;&nbsp;无需使用 http: 或 https: 方案。 你可以使用诸如 ms-appx:、ms-appdata: 或 ms-resources: 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 file: 方案。 有关详细信息，请参阅 [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
 
 > 当用户单击超链接时，NavigateUri 属性的值传递到 URI 类型和方案的系统处理程序。 然后，系统启动针对为 NavigateUri 提供的 URI 的方案注册的应用。
 
@@ -137,13 +138,11 @@ template: detail.hbs
 -   使离散型超链接具有足够的间隔，以便用户可以区分它们，并且可以轻松地选择每个超链接。
 -   将工具提示添加到可指示用户将被定向到的位置的超链接中。 如果用户将被定向到外部站点，则将顶级域名包含在工具提示中，并将文本样式设置为辅助字体颜色。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
-[文本控件](text-controls.md)
-
-**对于设计人员**
+- [文本控件](text-controls.md)
 - [工具提示指南](tooltips.md)
 
 **对于开发人员 (XAML)**
@@ -151,6 +150,6 @@ template: detail.hbs
 - [**Windows.UI.Xaml.Controls.HyperlinkButton 类**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

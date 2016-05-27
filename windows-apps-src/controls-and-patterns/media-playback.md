@@ -1,11 +1,11 @@
 ---
+author: Jwmsft
 Description: 媒体播放器用于观看和收听视频、音频和图像。
 title: 媒体播放器
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
-author: mijacobs
 ---
 # 媒体播放器
 
@@ -70,7 +70,7 @@ MediaElement 具有内置传输控件，用于处理播放、停止、暂停、�
 ### 设置媒体源
 若要播放网络上的文件或嵌入在应用中的文件，请将 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 属性设置为该文件的路径。
 
-**提示** 若要打开 Internet 中的文件，需要在应用的清单 (Package.appxmanifest) 中声明 **Internet（客户端）**功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
+**提示** 若要打开 Internet 中的文件，需要在应用的清单 (Package.appxmanifest) 中声明 “Internet(客户端)”****功能。 有关声明功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
  
 
@@ -345,8 +345,7 @@ private void FullWindow_Click(object sender, object e)
 -   [
             **Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) 填充整个空间，但不保持纵横比。 图像不会被裁剪，但可能会发生拉伸。 这类似于拉伸模式。
 
-![拉伸枚举值](images/Image_Stretch.jpg)
-在此处，使用 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 循环访问 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 选项。 **switch** 语句会检查 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 属性的当前状态并将其设置为 **Stretch** 枚举中的下一个值。 这使用户可以循环访问不同的拉伸状态。
+![拉伸枚举值](images/Image_Stretch.jpg) 在此处，使用 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 循环访问 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 选项。 **switch** 语句会检查 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 属性的当前状态并将其设置为 **Stretch** 枚举中的下一个值。 这使用户可以循环访问不同的拉伸状态。
 
 ```xaml
 <AppBarButton Icon="Switch" 
@@ -407,14 +406,12 @@ mediaPlayer.RealTimePlayback = true;
 -   尽量不要使控件栏承载过多选项。
 -   不要将媒体时间线压缩到小于默认最小大小，这会严重限制其有效性。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
-
 ## 相关文章
 
 - [UWP 应用的命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [UWP 应用的内容设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958434)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

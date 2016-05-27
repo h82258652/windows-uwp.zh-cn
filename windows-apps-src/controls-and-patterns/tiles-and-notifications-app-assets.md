@@ -1,29 +1,30 @@
 ---
+author: mijacobs
 Description: 应用图标资源（它以各种形式出现在整个 Windows 10 操作系统中）是通用 Windows 平台 (UWP) 应用的调用卡。
 title: 磁贴和图标资源
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
-label: 磁贴和图标资源
+label: Tile and icon assets
 template: detail.hbs
 ---
 
 # 磁贴和图标资源指南
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 应用图标资源（它以各种形式出现在整个 Windows 10 操作系统中）是通用 Windows 平台 (UWP) 应用的调用卡。 这些指南详细介绍应用图标资源在系统中的显示位置，并提供有关如何创建最完美图标的深入设计提示。
 
 ![Windows 10“开始”菜单和磁贴](images/assetguidance01.jpg)
 
-## <span id="Adaptive_scaling"> </span> <span id="adaptive_scaling"> </span> <span id="ADAPTIVE_SCALING"> </span>自适应缩放
+## <span id="Adaptive_scaling"></span><span id="adaptive_scaling"></span><span id="ADAPTIVE_SCALING"></span>自适应缩放
 
 
-首先，简要概述自适应缩放可以更好地了解缩放如何处理资源。 Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外，还有一系列统一的比例系数，用于在各种屏幕大小和显示分辨率中为 UI 元素提供一致的大小。 比例系数还与其他操作系统（如 iOS 和 Android）的比例系数兼容，这使在这些平台之间共享资源变得更容易。
+首先，简要概述自适应缩放可以更好地了解缩放如何与资源一起使用。 Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外，还有一系列统一的比例系数，用于在各种屏幕大小和显示分辨率中为 UI 元素提供一致的大小。 比例系数还与其他操作系统（如 iOS 和 Android）的比例系数兼容，这使在这些平台之间共享资源变得更容易。
 
 应用商店选择要下载的资源在一定程序上取决于设备的 DPI。 仅下载最匹配设备的资源。
 
-## <span id="Tile_elements"> </span> <span id="tile_elements"> </span> <span id="TILE_ELEMENTS"> </span>磁贴元素
+## <span id="Tile_elements"></span><span id="tile_elements"></span><span id="TILE_ELEMENTS"></span>磁贴元素
 
 
 “开始”菜单磁贴的基本组件由背板、图标、品牌栏、边距和应用标题构成：
@@ -62,10 +63,10 @@ template: detail.hbs
 
  
 
-## <span id="Tile_assets"> </span> <span id="tile_assets"> </span> <span id="TILE_ASSETS"></span>磁贴资源
+## <span id="Tile_assets"></span><span id="tile_assets"></span><span id="TILE_ASSETS"></span>磁贴资源
 
 
-每个磁贴资源的大小与放置它的磁贴大小相同。 可以通过两种不同的资源表示形式标记你的应用磁贴的品牌：
+每个磁贴资源的大小与在其上放置的磁贴大小相同。 可以通过两种不同的资源表示形式标记你的应用磁贴的品牌：
 
 1. 通过填充居中的图标或徽标。 这使背板颜色可隐约显示：
 
@@ -131,7 +132,7 @@ template: detail.hbs
 
 ![带有过紧边距的全出血磁贴](images/assetguidance15.png)
 
-## <span id="Tile_assets_in_list_views"> </span> <span id="tile_assets_in_list_views"> </span> <span id="TILE_ASSETS_IN_LIST_VIEWS"> </span>列表视图中的磁贴资源
+## <span id="Tile_assets_in_list_views"></span><span id="tile_assets_in_list_views"></span><span id="TILE_ASSETS_IN_LIST_VIEWS"></span>列表视图中的磁贴资源
 
 
 磁贴也可以显示在列表视图中。 显示在列表视图中的磁贴资源大小调整指南与之前所述的磁贴资源略有不同。 本节详细介绍这些大小调整细节。
@@ -158,10 +159,10 @@ template: detail.hbs
 
 ![对于磁贴而言太小的图标](images/assetguidance20b.png)
 
-## <span id="Target-based_assets"> </span> <span id="target-based_assets"> </span> <span id="TARGET-BASED_ASSETS"> </span>基于目标的资源
+## <span id="Target-based_assets"></span><span id="target-based_assets"></span><span id="TARGET-BASED_ASSETS"></span>基于目标的资源
 
 
-基于目标的资源用于显示在 Windows 任务栏、任务视图、ALT+TAB、贴靠助手和“开始”菜单磁贴的右下角的图标和磁贴。 无需向这些资源添加填充；Windows 会根据需要添加填充。 这些资源应占据最少 16 pixel 的占用空间。 以下是这些资源在 Windows 任务栏上的图标中显示时的示例：
+基于目标的资源是指显示在以下位置的图标和磁贴：Windows 任务栏、任务视图、ALT+TAB、贴靠助手和“开始”磁贴的右下角。 无需向这些资源添加填充；Windows 会根据需要添加填充。 这些资源应占据最少 16 pixel 的占用空间。 以下是这些资源在 Windows 任务栏上的图标中显示时的示例：
 
 ![Windows 任务栏中的资源](images/assetguidance21.png)
 
@@ -175,7 +176,7 @@ template: detail.hbs
 
 **图标模板应用资源**
 
-图标模板（也称为“IconWithBadge”模板）允许你在磁贴中心显示较小的图像。 Windows 10 的手机版和平板电脑/桌面版都支持该模板。 （在[特殊磁贴模板文章](tiles-and-notifications-special-tile-templates-catalog.md)中了解创建图标磁贴。）
+图标模板（也称为“IconWithBadge”模板）允许你在磁贴中心显示较小的图像。 Windows 10 的手机版和平板电脑/桌面版都支持该模板。 （在[特殊磁贴模板文章](tiles-and-notifications-special-tile-templates-catalog.md)中了解如何创建图标磁贴。）
 
 使用图标模板的应用（如消息、手机和应用商店）具有的基于目标的资源可以展示锁屏提醒（带有动态计数器）。 与其他基于目标的资源一样，不需要进行填充。 图标资源不是应用清单的一部分，但是动态磁贴负载的一部分。 缩放资源以使其适合 3:2 比率的容器并居中放置：
 
@@ -191,7 +192,7 @@ template: detail.hbs
 
 ![非方形资源大小调整（带有和不带有锁屏提醒）](images/assetguidance26b.png)
 
-## <span id="Splash_screen_assets"> </span> <span id="splash_screen_assets"> </span> <span id="SPLASH_SCREEN_ASSETS"> </span>初始屏幕资源
+## <span id="Splash_screen_assets"></span><span id="splash_screen_assets"></span><span id="SPLASH_SCREEN_ASSETS"></span>初始屏幕资源
 
 
 初始屏幕图像可以作为指向图像文件的直接路径或作为资源提供。 通过使用资源引用，你可以提供不同比例的图像，以便 Windows 可以选择适合设备和屏幕分辨率的最佳大小。 你还可以提供辅助功能的高对比度图像和本地化图像，以匹配不同的 UI 语言。
@@ -207,9 +208,9 @@ template: detail.hbs
 
 初始屏幕资源会在显示它的任何设备上居中放置：
 
-![调整初始屏幕资源的大小调整](images/assetguidance27.png)
+![初始屏幕资源的大小调整](images/assetguidance27.png)
 
-## <span id="High-contrast_assets"> </span> <span id="high-contrast_assets"> </span> <span id="HIGH-CONTRAST_ASSETS"> </span>高对比度资源
+## <span id="High-contrast_assets"></span><span id="high-contrast_assets"></span><span id="HIGH-CONTRAST_ASSETS"></span>高对比度资源
 
 
 高对比度模式将单独的资源集用于高对比度白（白色背景搭配黑色文本）和高对比度黑（黑色背景搭配白色文本）。 如果未向你的应用提供高对比度资源，将使用标准资源。
@@ -218,9 +219,9 @@ template: detail.hbs
 
 ![高对比度比率资源示例](images/assetguidance28.png)
 
-如果你决定提供高对比度资源，需要包含两组 - 黑底白字和白底黑字。 在将这些资源包含在你的程序包后，可以为黑底白字资源创建“contrast-black”文件夹，为白底黑字资源创建“contrast-white”文件夹。
+如果你决定提供高对比度资源，需要包含两组 - 黑底白字和白底黑字。 在将这些资源包含在你的程序包后，可以为上白下黑资源创建“contrast-black”文件夹，并为上黑下白资源创建“contrast-white”文件夹。
 
-## <span id="Asset_size_tables"> </span> <span id="asset_size_tables"> </span> <span id="ASSET_SIZE_TABLES"> </span>资源大小表
+## <span id="Asset_size_tables"></span><span id="asset_size_tables"></span><span id="ASSET_SIZE_TABLES"></span>资源大小表
 
 
 我们强烈建议你至少为 100、200 和 400 比例系数提供资源。 为所有比例系数提供资源将提供最佳的用户体验。
@@ -288,7 +289,7 @@ template: detail.hbs
 
 \* 提交这些资源大小作为基线
 
-## <span id="Asset_types"> </span> <span id="asset_types"> </span> <span id="ASSET_TYPES"> </span>资源类型
+## <span id="Asset_types"></span><span id="asset_types"></span><span id="ASSET_TYPES"></span>资源类型
 
 
 此处列出所有资源类型、用途和建议的文件名。
@@ -367,9 +368,9 @@ template: detail.hbs
 -   使用：
     -   图标磁贴
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
 
-## <span id="related_topics"> </span>相关主题
+
+## <span id="related_topics"></span>相关主题
 
 
 
@@ -383,6 +384,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

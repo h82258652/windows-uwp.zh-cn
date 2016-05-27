@@ -1,31 +1,30 @@
 ---
+author: Jwmsft
 Description: 本文列出并提供了随附 Segoe MDL2 资源字体的字形使用指南。
 Search.Refinement.TopicID: 184
 title: Segoe MDL2 图标指南
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-label: Segoe MDL2 图标
+label: Segoe MDL2 icons
 template: detail.hbs
 ---
 
-# Segoe MDL2 图标指南
+# Segoe MDL2 图标的指南
 
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+本文列出并提供了随附 Segoe MDL2 资源字体的字形使用指南。 若要获取该字体，必须安装 Windows 10。
 
 **重要的 API**
 
 -   [**Symbol 枚举 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 -   [**AppBarIcon 枚举 (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh770557)
 
-本文列出并提供了随附 Segoe MDL2 资源字体的字形使用指南。 若要获取该字体，必须安装 Windows 10。
 
-## <span id="Recommendations"> </span> <span id="recommendations"> </span> <span id="RECOMMENDATIONS"> </span>建议
+
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>建议
 
 
 -   仅当你能够显式指定 **Segoe MDL2 Assets** 字体时，才使用这些字形。
 
-## <span id="Additional_usage_guidance"> </span> <span id="additional_usage_guidance"> </span> <span id="ADDITIONAL_USAGE_GUIDANCE"> </span>其他使用指南
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
 
 Windows 8/8.1 **Segoe UI Symbol** 图标字体已替换为适用于 Windows 10 版本的 **Segoe MDL2 Assets** 字体。 可采用与较旧的字体大致相同的方式来使用该字体，但许多字形已根据字体指标集在 Windows 10 图标样式中进行了重绘，以便图标能与字体的 Em 方形内的方格（而非版式基线）对齐。
@@ -54,7 +53,7 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
 还须记住，**Segoe MDL2 Assets** 字体中包含的图标远不止此处显示的这些。 其中许多图标都是专为实现某种特殊目的而设计的，通常不作它用。
 
-## <span id="Hearts"> </span> <span id="hearts"> </span> <span id="HEARTS"> </span>红心大战
+## <span id="Hearts"></span><span id="hearts"></span><span id="HEARTS"></span>红心大战
 
 
 <table>
@@ -108,7 +107,7 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
  
 
-## <span id="Rating_stars"> </span> <span id="rating_stars"> </span> <span id="RATING_STARS"> </span>星形评级
+## <span id="Rating_stars"></span><span id="rating_stars"></span><span id="RATING_STARS"></span>星形评级
 
 
 <table>
@@ -167,14 +166,14 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 <td align="left"><p>U+E7C7</p></td>
 <td align="left"><img src="images/halfstarright.png" alt="HalfStarRight" /></td>
 <td align="left">HalfStarRight</td>
-<td align="left">半星形，右半侧</td>
+<td align="left">半星形, 右半侧</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Checkbox_components"> </span> <span id="checkbox_components"> </span> <span id="CHECKBOX_COMPONENTS"> </span>复选框组件
+## <span id="Checkbox_components"></span><span id="checkbox_components"></span><span id="CHECKBOX_COMPONENTS"></span>复选框组件
 
 
 |        |                                                                                |                                 |                         |
@@ -197,7 +196,7 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
  
 
-## <span id="Miscellaneous"> </span> <span id="miscellaneous"> </span> <span id="MISCELLANEOUS"> </span>杂项
+## <span id="Miscellaneous"></span><span id="miscellaneous"></span><span id="MISCELLANEOUS"></span>杂项
 
 
 <table>
@@ -341,7 +340,7 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
  
 
-## <span id="Scroll_bar_arrows"> </span> <span id="scroll_bar_arrows"> </span> <span id="SCROLL_BAR_ARROWS"> </span>滚动条箭头
+## <span id="Scroll_bar_arrows"></span><span id="scroll_bar_arrows"></span><span id="SCROLL_BAR_ARROWS"></span>滚动条箭头
 
 
 | 代码   | 符号                                                                   | 枚举                         |
@@ -357,7 +356,7 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
  
 
-## <span id="Back_buttons"> </span> <span id="back_buttons"> </span> <span id="BACK_BUTTONS"> </span>后退按钮
+## <span id="Back_buttons"></span><span id="back_buttons"></span><span id="BACK_BUTTONS"></span>后退按钮
 
 
 后退按钮的旧版字形提供了 2 种不同大小，以便外环的权重在为 20pt 和 42pt 时保持一致。 还提供两个新的比例镶边后退按钮。 这些字形设计用于支持分层。
@@ -373,7 +372,7 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
  
 
-## <span id="Back_arrows_for_HTML"> </span> <span id="back_arrows_for_html"> </span> <span id="BACK_ARROWS_FOR_HTML"> </span>HTML 的后退箭头
+## <span id="Back_arrows_for_HTML"></span><span id="back_arrows_for_html"></span><span id="BACK_ARROWS_FOR_HTML"></span>HTML 的后退箭头
 
 
 添加其他代码以创建环绕这些字形的圆环。
@@ -385,7 +384,7 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
  
 
-## <span id="AppBar_glyphs"> </span> <span id="appbar_glyphs"> </span> <span id="APPBAR_GLYPHS"> </span>应用栏字形
+## <span id="AppBar_glyphs"></span><span id="appbar_glyphs"></span><span id="APPBAR_GLYPHS"></span>应用栏字形
 
 
 针对 [**AppBar**](https://msdn.microsoft.com/library/windows/apps/br229670) 使用以下列表中的字形。 依照约定，这些字形通过其枚举名称进行引用。 并且它们均设计为 20x20px 的图标，且其周围未环绕圆环。
@@ -1551,7 +1550,7 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
  
 
-## <span id="Battery_icons"> </span> <span id="battery_icons"> </span> <span id="BATTERY_ICONS"> </span>电池图标
+## <span id="Battery_icons"></span><span id="battery_icons"></span><span id="BATTERY_ICONS"></span>电池图标
 
 
 | 代码 | 符号                                             | 枚举              | 代码 | 符号                                                  | 枚举                |
@@ -1593,13 +1592,13 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
  
 
-## <span id="related_topics"> </span>相关主题
+## <span id="related_topics"></span>相关主题
 
 
 **对于设计人员**
 * [字体指南](fonts.md)
-* [用 W3C 上的哪种语言编写了从右到左文本 (RTL)？](http://www.i18nguy.com/temp/rtl.mdl)
-**对于开发人员 (XAML)**
+* [用 W3C 上的哪种语言编写了从右到左文本 (RTL)？](http://www.i18nguy.com/temp/rtl.mdl) 
+           **对于开发人员 (XAML)**
 * [**Symbol 枚举**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 
 
@@ -1610,6 +1609,6 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

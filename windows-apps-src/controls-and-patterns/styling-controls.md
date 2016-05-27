@@ -1,17 +1,18 @@
 ---
+author: Jwmsft
 Description: 通过样式可以设置控件属性，并重复使用这些设置，以便保持多个控件具有一致的外观。
-MS-HAID：“dev\_ctrl\_layout\_txt.styling\_controls”
-MSHAttr：“PreferredLib:/library/windows/apps”
-Search.Product：eADQiWindows 10XVcnh
-title: 设置控件的样式
+MS-HAID: 'dev\_ctrl\_layout\_txt.styling\_controls'
+MSHAttr: 'PreferredLib:/library/windows/apps'
+Search.Product: eADQiWindows 10XVcnh
+title: 设置控件样式
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
-label: 设置控件的样式
+label: Styling controls
 template: detail.hbs
 ---
 
-# 设置控件的样式
+# 设置控件样式
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 可以使用 XAML 框架通过多种方式自定义应用的外观。 通过样式可以设置控件属性，并重复使用这些设置，以便保持多个控件具有一致的外观。
 
@@ -136,7 +137,7 @@ template: detail.hbs
 
 ## 使用工具轻松处理样式
 
-将样式应用到控件的一种快捷方式是，在 Microsoft Visual Studio XAML 设计界面上，右键单击控件并选择**“编辑样式”**或**“编辑模板”**（取决于右键单击的控件）。 然后，通过选择**“应用资源”**来应用现有样式，或通过选择**“创建空项”**来定义一个新样式。 如果创建空白样式，则可以使用相应的选项在该页面、App.xaml 文件或一个单独的资源字典中进行定义。
+将样式应用到控件的一种快捷方式是，在 Microsoft Visual Studio XAML 设计界面上，右键单击控件并选择“编辑样式”****或“编辑模板”****（取决于右键单击的控件）。 然后，通过选择“应用资源”****来应用现有样式，或通过选择“创建空项”****来定义一个新样式。 如果创建空白样式，则可以使用相应的选项在该页面、App.xaml 文件或一个单独的资源字典中进行定义。
 
 ## 修改默认系统样式
 
@@ -146,10 +147,8 @@ template: detail.hbs
 
 样式 setter 可用于 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 的 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 属性，实际上，此样式构成了多数典型的 XAML 样式和应用的 XAML 资源。 此内容将在主题[控件模板](control-templates.md)中更详细地讨论。
 
-**注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

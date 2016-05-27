@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 用于选择或取消选择操作项目。 可以用于单个列表项目或多个列表项目。
 title: 复选框
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
@@ -18,13 +19,13 @@ template: detail.hbs
 
 ## 这是正确的控件吗？
 
-将**单个复选框**用于二元是/否选项，例如“记住我？” 登录方案或服务协议的条款选项。
+将“单个复选框”****用于二元是/否选项，例如“记住我？” 登录方案或服务协议的条款选项。
 
 ![为单个选项使用的单个复选框](images/checkbox1.png)
 
-对于二元选项，在**复选框**和**切换开关**之间的主要差别是：复选框用于表示状态，而切换开关用于表示操作。 你可以延迟提交复选框交互（例如作为表单提交的一部分），然而应该立即提交切换开关交互。 另外，仅复选框允许多选。
+对于二元选项，在“复选框”****和“切换开关”****之间的主要差别是：复选框用于表示状态，而切换开关用于表示操作。 你可以延迟提交复选框交互（例如作为表单提交的一部分），然而应该立即提交切换开关交互。 另外，仅复选框允许多选。
 
-使用多选方案的**多个复选框**，在这些方案中，用户从非相互排斥的选项组中选择一个或多个项目。
+使用多选方案的“多个复选框”****，在这些方案中，用户从非相互排斥的选项组中选择一个或多个项目。
 
 当用户需要选择任何选项组合时创建一组复选框。
 
@@ -34,7 +35,7 @@ template: detail.hbs
 
 ![用于显示混合选项的复选框](images/checkbox3.png)
 
-**复选框**和**单选按钮**控件都能让用户选择选项列表中的内容。 复选框让用户选择选项组合。 相比之下，单选按钮允许用户在相互排斥的选项中选择单个选项。 当存在多个选项，但只能选择一个选项时，应使用单选按钮。
+“复选框”****和“单选按钮”****控件都能让用户选择选项列表中的内容。 复选框让用户选择选项组合。 相比之下，单选按钮允许用户在相互排斥的选项中选择单个选项。 当存在多个选项，但只能选择一个选项时，应使用单选按钮。
 
 ## 示例
 
@@ -70,7 +71,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 在本示例中，同意服务条款的复选框的 **IsChecked** 属性绑定到了“提交”按钮的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 属性。 “提交”按钮仅在服务条款得到同意时才启用。
 
-> 注意 我们在此仅显示相关代码。 有关数据绑定和值转换器的详细信息，请参阅 [Data binding overview（数据绑定概述）](../data-binding/data-binding-quickstart.md)。
+> 注意&nbsp;&nbsp;我们仅在此处显示相关代码。 有关数据绑定和值转换器的详细信息，请参阅[数据绑定概述](../data-binding/data-binding-quickstart.md)。
 
 ```xaml
 ...
@@ -164,7 +165,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 ### 使用不确定状态
 
-CheckBox 控件集成自 [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx)，可拥有三种状态： 
+CheckBox 控件继承自 [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx)，可拥有三种状态： 
 
 状态 | 属性 | 值
 ------|----------|------
@@ -287,6 +288,6 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

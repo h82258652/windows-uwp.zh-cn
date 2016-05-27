@@ -1,6 +1,7 @@
 ---
+author: Jwmsft
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
-label: 文本块
+label: Text block
 template: detail.hbs
 ---
 # 文本块
@@ -43,7 +44,7 @@ textBlock1.Text = "Hello, world!";
 
 ### 内容模型
 
-你可以使用两种属性将内容添加到 TextBlock： [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) 和 [Inlines](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)。
+你可以使用两种属性将内容添加到 TextBlock：[Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) 和 [Inlines](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)。
 
 显示文本的最常用方法是将 Text 属性设置为字符串值，如在之前示例中所示。
 
@@ -75,11 +76,11 @@ XAML 应尽可能地使用更有效的布局文本的代码路径。 此快速�
 
 你可以在调试期间将 [DebugSettings.IsTextPerformanceVisualizationEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) 属性设置为 **true** 来确定文本是否正在使用快速路径呈现。 当此属性设置为 true 时，快速路径上的文本将显示为亮绿色。 
 
->**提示** 版本 2015 的此会议 [XAML 性能：最大程度提升使用 XAML 生成的通用 Windows 应用体验的技术](https://channel9.msdn.com/Events/Build/2015/3-698)深入介绍了此功能。
+>**提示** &nbsp;&nbsp;此功能将在 Build 2015 的这一会话- [XAML 性能：关于最大程度地提升使用 XAML 生成的通用 Windows 应用体验的技术](https://channel9.msdn.com/Events/Build/2015/3-698)中作深入介绍。
 
  
 
-通常，通过在 App.xaml 的隐藏页中使用 [OnLaunched](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onlaunched.aspx) 方法重写来设置调试设置，如下所示。
+通常，通过在 App.xaml 的代码隐藏页中使用 [OnLaunched](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onlaunched.aspx) 方法重写来设置调试设置，如下所示。
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
@@ -107,18 +108,18 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ![在调试模式下呈现的文本](images/text-block-rendering-performance.png)
 
->**警告** 不在快速路径上的文本颜色不会更改。 如果应用中有颜色指定为亮绿色的文本，则它在较慢的呈现路径上时仍然显示为亮绿色。 请注意，勿因为调试设置而将应用中设置为绿色的文本与在快速路径上设置为绿色的文本混淆。
+>**注意** &nbsp;&nbsp;快速路径之外的文本颜色不会更改。 如果应用中有颜色指定为亮绿色的文本，则它在较慢的呈现路径上时仍然显示为亮绿色。 请注意，勿因为调试设置而将应用中设置为绿色的文本与在快速路径上设置为绿色的文本混淆。
 
 ## 设置文本格式
 
-虽然 Text 属性存储纯文本，但你可以将各种格式设置选项应用到 TextBlock 控件以自定义文本在应用中的呈现方式。 你可以设置标准控件属性（如 FontFamily、FontSize、FontStyle、Foreground 和 CharacterSpacing）来更改文本外观。 你还可以使用内联文本元素和 Typography 附加属性来设置文本格式。 这些选项仅影响 TextBlock 在本地显示文本的方式，所以举例来说，如果你将文本复制并粘贴到格式文本控件，则不会应用任何格式。
+虽然 Text 属性存储纯文本，但你可以将各种格式设置选项应用到 TextBlock 控件以自定义文本在应用中的呈现方式。 你可以设置标准控件属性（如 FontFamily、FontSize、FontStyle、Foreground 和 CharacterSpacing）来更改文本外观。 你还可以使用内联文本元素和 Typography 附加属性来设置文本格式。 这些选项仅影响 TextBlock 在本地显示文本的方式，所以举例来说，如果你将文本复制并粘贴到 RTF 控件，则不会应用任何格式。
 
->**注意** 请记住，如在上一节中所述，内联文本元素和非默认版式值不会呈现在快速路径上。
+>**注意** &nbsp;&nbsp;请记住，如在上一节中所述，内联文本元素和非默认版式值不会呈现在快速路径上。
  
 
 ### 内联元素
 
-[Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) 命名空间提供可用于设置文本格式的内联文本元素，如 Bold、Italic、Run、Span 和 LineBreak。 
+[Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) 命名空间提供可用于设置文本格式的各种内联文本元素，如 Bold、Italic、Run、Span 和 LineBreak。 
 
 你可以在 TextBlock 中显示一系列字符串，其中每个字符串都具有不同的格式。 为此，你可以使用 Run 元素来显示具有各自格式的每个字符串，并使用 LineBreak 元素来分隔每个 Run 元素。
 
@@ -146,7 +147,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ### 版式
 
-[Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) 类的附加属性提供对 Microsoft OpenType 版式属性集的访问权限。 你可以在 TextBlock 或个别内联文本元素上设置这些附加属性。 这些示例展示了这两种操作。
+[Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) 类的附加属性提供针对 Microsoft OpenType 版式属性集的访问权限。 你可以在 TextBlock 或个别内联文本元素上设置这些附加属性。 这些示例展示了这两种操作。
 ```xaml
 <TextBlock Text="Hello, world!"
            Typography.Capitals="SmallCaps"
@@ -164,17 +165,12 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 <TextBlock>12 x <Run Typography.Fraction="Slashed">1/3</Run> = 4.</TextBlock>
 ```
 
-## 建议
-
-
-
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
 
 ## 相关文章
 
 [文本控件](text-controls.md)
 
-**面向设计人员**
+**对于设计人员**
 - [拼写检查指南](spell-checking-and-prediction.md)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文本输入指南](text-controls.md)
@@ -184,10 +180,10 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 - [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**面向开发人员（其他）**
+**对于开发人员（其他）**
 - [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

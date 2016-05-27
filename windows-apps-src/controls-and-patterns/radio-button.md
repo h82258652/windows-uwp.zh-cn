@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 单选按钮允许用户从两个或多个选项中选择一个选项。
 title: 单选按钮指南
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
-label: 单选按钮
+label: Radio buttons
 template: detail.hbs
 ---
 # 单选按钮
@@ -53,7 +54,7 @@ Microsoft Edge 浏览器设置中的单选按钮。
 - 将它们放在同一个父容器内。
 - 在每个单选按钮上将 [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 属性设置为相同的值。
 
-> **注意** 通过键盘访问时，一组单选按钮的行为类似于单个控件。 只有选定选项可以使用 Tab 键访问，但用户可以使用箭头键循环浏览该组。
+> **注意** &nbsp;&nbsp;通过键盘访问时，一组单选按钮的行为类似于单个控件。 只有选定选项可以使用 Tab 键访问，但用户可以使用箭头键循环浏览该组。
 
 在此示例中，单选按钮的第一组在相同的堆栈面板中进行隐式分组。 第二组分为两个堆栈面板，它们按照 GroupName 进行显式分组。
 
@@ -179,6 +180,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 - [**Windows.UI.Xaml.Controls RadioButton 类**](https://msdn.microsoft.com/library/windows/apps/br227544)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

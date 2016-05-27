@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 带有内容区域和命令区域的单视图应用或模式体验模式，例如照片查看器/编辑器、文档查看器、地图、绘画或使用自由滚动视图的其他应用。
 title: 活动画布模式指南
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
@@ -28,13 +29,13 @@ template: detail.hbs
 
 **命令区域。**  如果你要放置大量命令，可以使用可根据屏幕大小做出响应的命令栏。 如果不放置那么多命令，并且不涉及响应式 UI，则节省空间按钮也行之有效。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
 -   [**应用栏和命令栏**](app-bars.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

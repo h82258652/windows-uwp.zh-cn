@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 label: Buttons
 template: detail.hbs
 ---
@@ -135,7 +136,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   避免将窄、短、高命令按钮与文本内容一起使用。
 -   请使用默认字体，除非你的品牌指南告诉你使用不同的字体。
 -   对于需要在应用的多个页面上提供的操作，请考虑使用[底部应用栏](app-bars.md)，而不要在多个页面上重复设置按钮。
--   一次仅向用户显示一两个按钮，例如，“接受”和“取消”。 如果你需要为用户显示更多操作，请考虑使用[复选框](checkbox.md)或[单选按钮](radio-button.md) 用户可从中选择操作，并通过一个命令按钮来触发这些操作。
+-   一次仅向用户显示一两个按钮，例如，“接受”和“取消”。 如果你需要为用户显示更多操作，请考虑使用用户可从中选择操作的[复选框](checkbox.md)或[单选按钮](radio-button.md)，并通过一个命令按钮来触发这些操作。
 -   使用默认命令按钮指示最常见或最受推荐的操作。
 -   考虑自定义你的按钮。 默认情况下，按钮的形状为矩形，但你可以自定义构成按钮外观的视觉对象。 按钮的内容通常是文本（例如，“接受”或“取消”），但你可以使用图标或使用图标加文本来替代文本。
 -   确认在用户与按钮交互时，该按钮将改变状态和外观以向用户提供反馈。 按钮状态的例子包括正常、已按和已禁用。
@@ -150,44 +151,39 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 导航历史记录的范围（应用内或全局）取决于设备和设备模式。
 
-## <span id="examples"> </span> <span id="EXAMPLES"> </span>示例
+## <span id="examples"></span><span id="EXAMPLES"></span>示例
 
 
-系统后退按钮的 UI 将针对每台设备和输入类型进行优化，但设备和通用 Windows 平台 (UWP) 应用上的导航体验却具有全局性和一致性。 这些不同的体验包括：
+系统后退按钮的 UI 将针对每种设备和输入类型进行优化，但设备和通用 Windows 平台 (UWP) 应用上的导航体验却具有全局性和一致性。 这些不同的体验包括：
 
-设备
-手机
-![手机上的系统后退功能](images/nav-back-phone.png)
+手机设备 ![手机上的系统后退功能](images/nav-back-phone.png)
 -   始终显示。
 -   设备底部的软件或硬件按钮。
 -   应用内和应用间的全局后退导航。
 
-<span id="Tablet"> </span> <span id="tablet"> </span> <span id="TABLET"> </span>平板电脑
-![平板电脑上的系统后退功能（在平板电脑模式下）](images/nav-back-tablet.png)
+<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>平板电脑 ![平板电脑上的系统后退功能（在平板电脑模式下）](images/nav-back-tablet.png)
 -   始终在平板电脑模式下显示。
 
     在桌面模式下不可用。 但可启用标题栏后退按钮。 请参阅[PC、笔记本电脑、平板电脑](#PC)。
 
-    用户可以在平板电脑模式下运行和桌面模式下运行之间切换，方法是转到**“设置”&gt;“系统”&gt;“平板电脑模式”**，然后设置**“在将设备用作平板电脑时使 Windows 更易于触摸”**。
+    用户可以在平板电脑模式下运行和桌面模式下运行之间切换，方法是转到“设置”&gt;“系统”&gt;“平板电脑模式”****，然后设置“在将设备用作平板电脑时使 Windows 更易于触摸”****。
 
 -   设备底部的导航栏中的软件按钮。
 -   应用内和应用间的全局后退导航。
 
-<span id="PC"> </span> <span id="pc"> </span>电脑、笔记本电脑、平板电脑
-![电脑或笔记本电脑上的系统后退功能](images/nav-back-pc.png)
+<span id="PC"></span><span id="pc"></span>PC、笔记本电脑、平板电脑 ![PC 或笔记本电脑上的系统后退功能](images/nav-back-pc.png)
 -   在桌面模式下可选。
 
     在平板电脑模式下不可用。 请参阅[平板电脑](#Tablet)。
 
     默认情况下处于禁用状态。 必须选择启用它。
 
-    用户可以在平板电脑模式下运行和桌面模式下运行之间切换，方法是转到**“设置”&gt;“系统”&gt;“平板电脑模式”**，然后设置**“在将设备用作平板电脑时使 Windows 更易于触摸”**。
+    用户可以在平板电脑模式下运行和桌面模式下运行之间切换，方法是转到“设置”&gt;“系统”&gt;“平板电脑模式”****，然后设置“在将设备用作平板电脑时使 Windows 更易于触摸”****。
 
--   应用的标题栏中的软件按钮。
+-   应用标题栏中的软件按钮。
 -   仅应用内的后退导航。 不支持应用间的导航。
 
-Surface Hub
-![Surface Hub 上的系统后退功能](images/nav-back-surfacehub.png)
+Surface Hub ![Surface Hub 上的系统后退功能](images/nav-back-surfacehub.png)
 -   始终显示。
 -   设备底部的软件按钮。
 -   应用内和应用间的后退导航。
@@ -229,6 +225,6 @@ Surface Hub
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

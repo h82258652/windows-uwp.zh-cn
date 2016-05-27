@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 日历日期选取器是一个下拉式控件，该控件已针对从日历视图中选取某个日期进行了优化，尤其是能够显示诸如星期几或丰富的日历信息等上下文信息。
 title: 日历日期选取器
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
@@ -16,7 +17,7 @@ template: detail.hbs
 -   [**Time 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
 
 ## 这是正确的控件吗？
-使用**日历日期选取器**，让用户从上下文日历视图中选取某个日期。 将它用于选择约会或出发日期等事项。
+使用“日历日期选取器”****，让用户从上下文日历视图中选取某个日期。 将它用于选择约会或出发日期等事项。
 
 若要让用户选取日历上下文不重要的已知日期，例如生日，请考虑使用[**日期选取器**](date-picker.md)。
 
@@ -63,11 +64,11 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 
 你可以处理 [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) 事件，以在 Date 值更改时收到通知。
 
-> **注意**：对于日期值的重要信息，请参阅 Date 和时间控件文章中的 [DateTime 和日历值](date-and-time.md#datetime-and-calendar-values)。
+> **注意** &nbsp;&nbsp;有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
 ### 设置标题和占位符文本
 
-你可以将 [**Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx)（或标签）和 [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx)（或水印）添加到日历日期选取器，以向用户指示其用途。 若要自定义标题外观，可设置 [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) 属性而非 Header。
+你可以将 [**Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx)（或标签）和 [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx)（或水位线）添加到日历日期选取器，以向用户指示其用途。 若要自定义标题外观，可设置 [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) 属性而非 Header。
 
 默认占位符文本是“选择日期”。 你可以通过将 PlaceholderText 属性设置为空字符串来删除此文本，或提供自定义文本，如下所示。
 
@@ -84,6 +85,6 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 - [时间选取器](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
 ---
@@ -46,7 +47,9 @@ Windows Phone 的 Outlook 日历中的命令栏。
 ![关闭的命令栏](images/commandbar_anatomy_open.png)
 
 命令栏分为 4 个主要区域：
-- “查看更多”\[•••\] 按钮显示在该栏的右侧。 按“查看更多”\[•••\] 按钮具有两种效果：显示主要命令按钮上的标签，以及在存在辅助命令的情况下打开溢出菜单。 
+- “查看更多”\[•••\] 按钮显示在该栏的右侧。 按“查看更多”\[•••\] 按钮具有两种效果：显示主要命令按钮上的标签，以及在存在辅助命令的情况下打开溢出菜单。 当不存在任何辅助命令和隐藏标签时，该按钮将不可见。 [
+            `OverflowButtonVisibility`
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) 属性允许应用更改此默认自动隐藏行为。
 - 内容区域与栏的左侧对齐。 如果填充了 `Content` 属性，将显示该区域。
 - 主要命令区域与栏的右侧对齐，位于“查看更多”\[•••\] 按钮的旁边。 如果填充了 `PrimaryCommands` 属性，将显示该区域。  
 - 仅在命令栏处于打开状态并且填充了 `SecondaryCommands` 属性时才显示溢出菜单。 
@@ -97,6 +100,17 @@ PrimaryCommands 和 SecondaryCommands 都只能使用[**AppBarButton**](https://
 
 应用栏按钮控件以一个图标和关联标签为特征。 它们有两种大小；正常和精简。 默认情况下，显示文本标签。 当 [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.iscompact.aspx) 属性设置为 **true** 时，将隐藏文本标签。 在 CommandBar 控件中使用时，命令栏随着命令栏打开和关闭而自动覆盖按钮的 IsCompact 属性。
 
+若要将应用栏按钮标签放到其图标的右侧，应用可以使用 CommandBar 的新 [`DefaultLabelPosition`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) 属性。 单独的应用栏按钮无法移动其标签位置，此操作必须作为一个整体在命令栏上完成。
+```xaml
+<CommandBar DefaultLabelPosition="Right">
+    <AppBarToggleButton Icon="Shuffle" Label="Shuffle"/>
+    <AppBarToggleButton Icon="RepeatAll" Label="Repeat"/>
+</CommandBar>
+```
+
+下面是应用绘制的上述代码片段的外观。
+
+![标签位于右侧的命令栏](images/app-bar-labels-on-right.png)
 
 在溢出菜单中放置应用栏按钮 (SecondaryCommands) 时，它仅显示为文本。 下面是作为主要命令（顶部）在操作空间中显示以及作为辅助命令（底部）在溢出区域中显示的相同应用栏切换按钮。
 
@@ -124,8 +138,6 @@ PrimaryCommands 和 SecondaryCommands 都只能使用[**AppBarButton**](https://
 当同时存在主要命令和内容时，主要命令优先，并且可能导致内容进行裁剪。 
 
 当 [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) 为 **Compact** 时，如果内容大于命令栏的精简大小，则可能会剪裁内容。 你应处理 [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) 和 [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) 事件以在内容区域中显示或隐藏部分 UI，以使它们不会进行剪裁。 有关详细信息，请参阅[打开和关闭状态](#open-and-closed-states)部分。
-
-
 
 ## 打开和关闭状态
 
@@ -196,7 +208,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->**注意** 编辑命令的实现不在本示例范围内。 有关详细信息，请参阅 [RichEditBox](rich-edit-box.md) 文章。
+>**注意** &nbsp;&nbsp;编辑命令的实现不在本示例范围内。 有关详细信息，请参阅 [RichEditBox](rich-edit-box.md) 文章。
 
 尽管最小和隐藏模式在某些情况下很有用，但请记住，隐藏所有操作可能会使用户困惑。
 
@@ -216,7 +228,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 -   对于较小的手持设备，我们建议将命令栏定位在屏幕底部以易于操作。
 -   对于拥有较大屏幕的设备，如果你只放置一个命令栏，我们建议将其靠近窗口顶部放置。
-使用 [**DiagonalSizeInInches**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) API 确定物理屏幕大小。
+使用 [**DiagonalSizeInInches**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) API 确定物理屏幕大小。
 
 命令栏可以放置在单视图屏幕（左边的示例）和多视图屏幕（右边的示例）上的以下屏幕区域中。 内联命令栏可以放置在操作空间中的任意位置。
 
@@ -238,7 +250,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ### 命令栏浮出控件
 
-考虑对这些命令进行逻辑分组，例如将“答复”、“全部答复”和“转发”置于“响应”菜单中。 虽然一个应用栏按钮通常激活单个按钮，但应用栏按钮可用于显示有自定义内容的 [**MenuFlyout**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) 或 [**Flyout**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.flyout.aspx)。
+考虑对这些命令进行逻辑分组，例如将“答复”、“全部答复”和“转发”置于“响应”菜单中。 虽然一个应用栏按钮通常激活单个按钮，但应用栏按钮可用于显示有自定义内容的 [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) 或 [**Flyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx)。
 
 ![命令栏浮出控件示例](images/AppbarGuidelines_Flyouts.png)
 
@@ -258,16 +270,17 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 -   对于较大的屏幕，将应用栏靠近窗口顶部放置会使它们更为醒目，并且更易于发现。
 -   通过定位断点，你可以随着窗口大小的更改将操作移入和移出菜单。
 -   通过定位屏幕对角线，你可以根据设备屏幕大小来修改应用栏位置。
+-   请考虑将标签移动到应用栏按钮图标的右侧，以改善可读性。 底部的标签需要用户打开命令栏才会显示，而右侧的标签在命令栏关闭的情况下也可见。 此优化在较大的窗口上运行良好。
 
 ## 相关文章
 
-**对于设计人员**
-[UWP 应用的命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
+**对于设计人员** 
+           [UWP 应用的命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
 
-**对于开发人员 (XAML)**
-[**CommandBar（命令栏）**](https://msdn.microsoft.com/library/windows/apps/dn279427)
+**对于开发人员 (XAML)** 
+           [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

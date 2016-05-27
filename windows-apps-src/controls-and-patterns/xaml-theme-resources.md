@@ -1,17 +1,16 @@
 ---
+author: Jwmsft
 Description: XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。
-MS-HAID：“dev\_ctrl\_layout\_txt.xaml\_theme\_resources”
-MSHAttr：“PreferredLib:/library/windows/apps”
+MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_theme\_resources'
+MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
 title: XAML 主题资源
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
-label: XAML 主题资源
+label: XAML theme resources
 template: detail.hbs
 ---
 
 # XAML 主题资源
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。 XAML 框架支持三种主题：“浅色”、“深色”和“高对比度”。
 
@@ -30,9 +29,9 @@ XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪
 ## 主题资源以及它们嵌入资源字典结构中的位置。
 
 
-每个主题资源都是 XAML 文件 themeresources.xaml 的一部分。 出于设计目的，themeresources.xaml 在 Windows 软件开发工具包 (SDK) 安装中的 \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\<SDK version>\\Generic folder 文件夹中提供。 themeresources.xaml 中的资源字典还在同一目录中的 generic.xaml 中重现。
+每个主题资源都是 XAML 文件 themeresources.xaml 的一部分。 出于设计目的，themeresources.xaml 在 Windows 软件开发工具包 (SDK) 安装中的 \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic 文件夹中提供。 themeresources.xaml 中的资源字典还在同一目录中的 generic.xaml 中重现。
 
-> **注意** Windows 运行时不使用这些物理文件进行运行时查找。 这就是它们专门用于 DesignTime 文件夹，并且在默认情况下未复制到应用中的原因。 这些资源字典在内存中作为 Windows 运行时本身的一部分存在，并且你的应用的对主题资源（或系统资源）的 XAML 资源引用将在运行时在该处进行解析。
+> **注意** &nbsp;&nbsp;Windows 运行时不使用这些物理文件进行运行时查找。 这就是它们专门用于 DesignTime 文件夹，并且在默认情况下未复制到应用中的原因。 这些资源字典在内存中作为 Windows 运行时本身的一部分存在，并且你的应用的对主题资源（或系统资源）的 XAML 资源引用将在运行时在该处进行解析。
 
  ## 使用主题资源指南
 
@@ -118,7 +117,7 @@ XAML 框架提供了一个已命名的 [**Color**](https://msdn.microsoft.com/li
 
 除了系统高对比度主题颜色外，通过使用键 `SystemAccentColor`，系统主题色还会作为特定的颜色资源提供。 在运行时，该资源获取用户已在 Windows 个性化设置中指定为主题色的颜色。
 
-> **注意** 可以通过使用相同名称创建资源来替代高对比度颜色和主题色的系统颜色资源，但最好是遵循用户所选的颜色（尤其是对于高对比度设置）。
+> **注意** &nbsp;&nbsp;可以通过使用相同名称创建资源来替代高对比度颜色和主题色的系统颜色资源，但最好是遵循用户所选的颜色（尤其是对于高对比度设置）。
 
 ### 依赖于主题的画笔
 
@@ -146,7 +145,7 @@ XAML 框架提供了一个已命名的 [**Color**](https://msdn.microsoft.com/li
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **注意** 并非 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 的每个组合都作为画笔资源提供。
+> **注意** &nbsp;&nbsp;并非 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 的每个组合都作为画笔资源提供。
 
 ## XAML 类型渐变
 
@@ -307,7 +306,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-> **注意** [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 样式不具有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 包含的所有文本渐变样式，主要原因是适用于 **RichTextBlock** 的基于块的文档对象模型使在单独文本元素上设置属性更为简单。 同样，使用 XAML 内容属性设置 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 将出现以下情况：没有要设置样式的文本元素，因此你需要设置容器样式。 对于 **RichTextBlock**，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) ）中，你可能在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
+> **注意** &nbsp;&nbsp; [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 样式不具有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 包含的所有文本渐变样式，主要原因是适用于 **RichTextBlock** 的基于块的文档对象模型使在单独文本元素上设置属性更为简单。 同样，使用 XAML 内容属性设置 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 将出现以下情况：没有要设置样式的文本元素，因此你需要设置容器样式。 对于 **RichTextBlock**，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)）中，你可能在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
 
 ## 其他命名样式
 
@@ -365,7 +364,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 ## 主题资源疑难解答
 
 
-如果你不遵循[使用主题资源指南](#guidelines_for_using_theme_resources)，你可能会看到与你的应用中的主题相关的意外行为。
+如果你不遵循[使用主题资源指南](#guidelines_for_using_theme_resources)，你可能会看到与你的应用中的主题相关的意外行为。主题
 
 例如，当你打开浅色主题的浮出控件时，深色主题的应用的某些部分也会更改，就好像在浅色主题中一样。 或者如果你导航至浅色主题的页面，然后再导航回来，此时原始的深色主题页面（或部分页面）看起来仍像在浅色主题中一样。
 
@@ -436,10 +435,9 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 请注意，[{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)仍在“HighContrast”字典而不是 [{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)中使用。 此情况属于在指南中的前面部分所给定的异常情况。 用于“高对比度”主题的大多数画笔值使用由系统全局控制的颜色选择，但会作为特别命名的资源暴露给 XAML（名称中带有“SystemColor”前缀）。 系统使用户可以通过“轻松访问中心”设置应该用于其高对比度设置的特定颜色。 这些颜色选择将应用于特殊命名的资源中。 当 XAML 框架检测到画笔在系统级别上发生更改时，它也将使用相同的主题更改事件更新这些画笔。 这就是在此处使用 {ThemeResource} 标记扩展的原因。
 
-> **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 
-<!--HONumber=Mar16_HO1-->
+
+<!--HONumber=May16_HO2-->
 
 

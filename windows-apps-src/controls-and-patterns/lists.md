@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 列表显示并启用与基于集合的内容交互。
 title: 列表
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
-label: 列表
+label: Lists
 template: detail.hbs
 ---
 # 列表
@@ -18,9 +19,9 @@ template: detail.hbs
 
 ## 重要的 API
 
--   [**ListView 类**](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**GridView 类**](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**ComboBox 类**](https://msdn.microsoft.com/library/windows/apps/br209348)
+-   [**ListView 类 **](https://msdn.microsoft.com/library/windows/apps/br242878)
+-   [**GridView 类 **](https://msdn.microsoft.com/library/windows/apps/br242705)
+-   [**ComboBox 类 **](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 ## 列表视图
@@ -174,7 +175,6 @@ template: detail.hbs
 
 ## 相关文章
 
-**对于设计人员**
 - [中心](hub.md)
 - [大纲/细节](master-details.md)
 - [导航窗格](nav-pane.md)
@@ -189,6 +189,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

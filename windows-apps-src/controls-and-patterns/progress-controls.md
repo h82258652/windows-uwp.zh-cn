@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。
 title: 进度控件指南
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
-label: 进度控件
+label: Progress controls
 template: detail.hbs
 ---
 # 进度控件
@@ -297,6 +298,6 @@ stackPanel1.Children.Add(progressRing1);
 - [如何为 Windows Phone 创建自定义不确定进度栏](http://go.microsoft.com/fwlink/p/?LinkID=392426)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

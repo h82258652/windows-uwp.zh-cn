@@ -1,14 +1,15 @@
 ---
+author: Jwmsft
 Description: 语义式缩放控件可使用户在同一数据集的两个不同语义式视图之间缩放。
 title: 语义式缩放
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
-label: 语义式缩放
+label: Semantic zoom
 template: detail.hbs
 ---
 
 # 语义式缩放
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 语义式缩放控件使用户能够在相同内容的两个不同视图之间进行缩放，以便它们可以通过大型数据集进行快速导航。 放大视图是内容的主视图。 你可以在此视图中显示完整的数据集。 缩小视图是同一内容的更高级别的视图。 通常，你会在此视图中显示分组数据集的组标头。 例如，查看通讯簿时，用户可以放大一个字母，并查看与该字母关联的名称。 
 
@@ -41,7 +42,7 @@ template: detail.hbs
 -   对分组集合中的项使用组名称。
 -   对未分组但已排好序的集合使用分类次序（如按日期时间先后排序或名称列表字母排序）。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
@@ -64,6 +65,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

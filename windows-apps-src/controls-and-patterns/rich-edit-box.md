@@ -1,11 +1,12 @@
 ---
-Description: 你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的富文本文档。 你可以通过将 IsReadOnly 属性设置为 true，将 RichEditBox 设置为只读。
+author: Jwmsft
+Description: 你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的 RTF 文档。 你可以通过将 IsReadOnly 属性设置为 true，将 RichEditBox 设置为只读。
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
-label: 富编辑框
+label: Rich edit box
 template: detail.hbs
 ---
-# 富编辑框
+# 可编辑对话框
 你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的富文本文档。 你可以通过将 IsReadOnly 属性设置为 **true**，从而将 RichEditBox 设置为只读。
 
 <span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
@@ -189,11 +190,11 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 -   使文本控件的高度足够大，以便容纳典型输入。
 -   不要让文本输入控件在用户键入时增加高度。
 -   当用户仅需要一行时，不要使用多行文本框。
--   如果纯文本控件足够使用，不要使用格式文本控件。
+-   如果纯文本控件足够使用，不要使用 RTF 控件。
 
 
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
@@ -204,15 +205,12 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文本输入指南](text-controls.md)
 
-**对于开发人员 (XAML)**
+**面向开发人员 (XAML)**
 - [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**对于开发人员（其他）**
-- [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

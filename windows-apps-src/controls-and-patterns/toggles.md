@@ -1,8 +1,9 @@
 ---
-Description: 切换开关表示用户用于打开或关闭选项的物理开关。
+author: Jwmsft
+Description: 切换开关表示允许用户打开或关闭选项的物理开关。
 title: 切换开关控件指南
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
-label: 切换开关
+label: Toggle switches
 template: detail.hbs
 ---
 # 切换开关
@@ -156,6 +157,6 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 - [**ToggleSwitch 类**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

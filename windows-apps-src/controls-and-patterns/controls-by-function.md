@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 提供了按功能列出的可在应用中使用的某些控件列表。
 title: 按功能列出控件
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
-label: 按功能列出控件
+label: Controls by function
 template: detail.hbs
 ---
 # 按功能列出控件
@@ -97,7 +98,7 @@ template: detail.hbs
 设计和操作方法：[超链接控件指南](hyperlinks.md)
 
 ### 重复按钮
-从按下到释放为止重复引发 **Click** 事件的一种按钮。 
+从按下到释放为止重复引发 **Click** 事件的按钮。 
 
 ![重复按钮控件](images/controls/repeat-button.png) 
 
@@ -551,7 +552,7 @@ template: detail.hbs
 
 参考：[Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
 
-设计和操作方法：[选项卡和透视控件指南](tabs-pivot.md) 
+设计和操作方法：[表和透视表控件指南](tabs-pivot.md) 
 
 示例代码：[透视表示例](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
 
@@ -571,7 +572,7 @@ template: detail.hbs
 
 参考：[SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
 
-设计和操作方法：[语义缩放控件指南](semantic-zoom.md) 
+设计和操作方法：[语义式缩放控件指南](semantic-zoom.md) 
 
 示例代码：[XAML GridView 组和 SemanticZoom 示例](http://go.microsoft.com/fwlink/p/?linkid=226564)
 
@@ -593,7 +594,7 @@ template: detail.hbs
 
 参考：[SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
 
-设计和操作方法：[翻转视图控件指南](split-view.md)
+设计和操作方法：[拆分视图控件指南](split-view.md)
 
 ### Web 视图
 可托管 Web 内容的容器控件。
@@ -688,7 +689,7 @@ template: detail.hbs
 
 参考：[RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 
 
-设计和操作方法：[文本控件](text-controls.md)、[富编辑框控件指南](rich-edit-box.md)
+设计和操作方法：[文本控件](text-controls.md)、[可编辑对话框控件指南](rich-edit-box.md)
 
 示例代码：[XAML 文本示例](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
@@ -712,7 +713,7 @@ template: detail.hbs
 
 参考：[TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx) 
 
-设计和操作方法：[文本控件](text-controls.md)、[文本块控件指南](text-block.md)、[富文本块控件指南](rich-text-block.md)
+设计和操作方法：[文本控件](text-controls.md)、[文本块控件指南](text-block.md)、[RTF 块控件指南](rich-text-block.md)
 
 示例代码：[XAML 文本示例](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
@@ -728,7 +729,7 @@ template: detail.hbs
 
 参考：[TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
 
-设计和操作方法：[文本控件](text-controls.md)、[文本控件指南](text-box.md) 
+设计和操作方法：[文本控件](text-controls.md)、[文本框控件指南](text-box.md) 
 
 示例代码：[XAML 文本示例](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
@@ -843,6 +844,6 @@ template: detail.hbs
 设计和操作方法：[切换控件指南](toggles.md) 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

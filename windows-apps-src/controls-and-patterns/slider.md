@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 让用户在给定的范围内设置值。
 title: 滑块
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
-label: 滑块
+label: Sliders
 template: detail.hbs
 ---
 # 滑块
@@ -27,11 +28,11 @@ template: detail.hbs
 
 下面是决定是否使用滑块时要考虑的一些其他因素：
 
--   **此设置看上去是否为相对数量？**如果不是，请使用[单选按钮](radio-button.md)或[列表框](lists.md)。
--   **设置是否为确切知道的数值？**如果是，请使用数值[文本框](text-box.md)。
--   **用户是否会得到设置更改效果的即时反馈？**如果是，请使用滑块。 例如，用户可以通过立即查看色调、饱和度或亮度值更改的效果，从而更加轻松地选择颜色。
--   **该设置是否包含四个或更多个值？**如果不是，请使用[单选按钮](radio-button.md)。
--   **用户是否可以更改该值？**滑块用于用户交互。 如果用户无法更改该值，请改为使用只读文本。
+-   **该设置是否是相对数量？** 如果不是，使用[单选按钮](radio-button.md)或[列表框](lists.md)。
+-   **该设置是否为确切的已知数值？** 如果是，请使用数值[文本框](text-box.md)。
+-   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用滑块。 例如，用户可以通过立即查看色调、饱和度或亮度值更改的效果，从而更加轻松地选择颜色。
+-   **该设置是否包含四个或更多值？** 如果不是，请使用[单选按钮](radio-button.md)。
+-   **用户是否可以更改该值？** 滑块用于用户交互。 如果用户无法更改该值，请改为使用只读文本。
 
 如果你在滑块和数值文本框之间进行选择，请在以下情况下使用数值文本框：
 
@@ -162,11 +163,11 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 ## 相关主题
 
 **对于设计人员**
-- [切换开关指南](toggles.md)
-**对于开发人员 (XAML)**
+- [切换开关指南](toggles.md) 
+           **对于开发人员 (XAML)**
 - [**Slider 类**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

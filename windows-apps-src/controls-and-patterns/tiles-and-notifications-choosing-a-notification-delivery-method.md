@@ -1,20 +1,21 @@
 ---
-Description: 本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项：本地、计划、定期和推送。
+author: mijacobs
+Description: 本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项&amp;\#8212;本地、计划、定期和推送&amp;\#8212;。
 title: 选择通知传递方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
-label: 选择通知传递方法
+label: Choose a notification delivery method
 template: detail.hbs
 ---
 
 # 选择通知传递方法
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项：本地、计划、定期和推送。 当用户未直接与你的应用交互时，磁贴或 Toast 通知可以将信息传达给用户。 应用特性和内容以及希望传递的信息有助于确定最适合你的方案的一个或多个通知方法。
 
-## <span id="Notification_delivery_methods__overview"> </span> <span id="notification_delivery_methods__overview"> </span> <span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"> </span>通知传递方法概述
+本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项：本地、计划、定期和推送。 当用户未直接与你的应用交互时，磁贴或 Toast 通知可以将信息传达给用户。 应用特性和内容以及希望传递的信息可帮助你确定最适合你的方案的通知方法。
+
+## <span id="Notification_delivery_methods__overview"></span><span id="notification_delivery_methods__overview"></span><span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"></span>通知传递方法概述
 
 
 应用可使用 4 种机制传递通知：
@@ -47,7 +48,7 @@ template: detail.hbs
 <td align="left">磁贴、锁屏提醒、Toast</td>
 <td align="left">一组在应用运行时发送通知的 API 调用，直接更新磁贴或锁屏提醒，或者发送 Toast 通知。</td>
 <td align="left"><ul>
-<li>音乐应用更新其磁贴以显示“正在播放”的内容。</li>
+<li>音乐应用更新其磁贴以显示&quot;正在播放&quot;的内容。</li>
 <li>用户离开游戏时，游戏应用使用用户的最高分更新其磁贴。</li>
 <li>启动应用时，将清除字形指示应用中有新信息的锁屏提醒。</li>
 </ul></td>
@@ -66,7 +67,7 @@ template: detail.hbs
 <td align="left">以固定的时间间隔，通过轮询云服务查找新内容来定期更新磁贴和锁屏提醒。</td>
 <td align="left"><ul>
 <li>天气应用以 30 分钟的间隔更新它的磁贴，可显示天气预报。</li>
-<li>“每日交易”站点每天早上更新它的每日交易。</li>
+<li>&quot;每日交易&quot;站点每天早上更新它的每日交易。</li>
 <li>用于显示直到某个事件每天半夜更新所显示的倒计时为止的天数的磁贴。</li>
 </ul></td>
 </tr>
@@ -78,7 +79,7 @@ template: detail.hbs
 <li>购物应用发送一个 Toast 通知，让用户了解它们查看的商品的销量。</li>
 <li>新闻应用在爆炸新闻发生时使用它更新其磁贴。</li>
 <li>体育应用在一场比赛进行期间不断更新它的磁贴。</li>
-<li>通信应用提供有关传入的消息或电话呼叫的提醒。</li>
+<li>通信应用提供有关传入的消息或电话的提醒。</li>
 </ul></td>
 </tr>
 </tbody>
@@ -86,10 +87,10 @@ template: detail.hbs
 
  
 
-## <span id="Local_notifications"> </span> <span id="local_notifications"> </span> <span id="LOCAL_NOTIFICATIONS"> </span>本地通知
+## <span id="Local_notifications"></span><span id="local_notifications"></span><span id="LOCAL_NOTIFICATIONS"></span>本地通知
 
 
-在应用正在运行时更新应用磁贴或锁屏提醒或者发出一个 Toast 通知是最简单的通知传递机制；它只需要本地 API 调用。 每个应用都具有要显示在磁贴上的有用或有趣的信息，即使该内容仅在用户启动应用并与其交互后更改也是如此。 即使你还使用了其他三种通知机制中的一种，本地通知也是保持应用磁贴最新的好方法。 例如，照片应用磁贴可以显示来自最近添加的相册的照片。
+在应用正在运行时更新应用磁贴或锁屏提醒或者发出一个 Toast 通知，这是最简单的通知传递机制；它仅需要本地 API 调用。 每个应用都具有要显示在磁贴上的有用或有趣的信息，即使该内容仅在用户启动应用并与其交互后更改也是如此。 即使你还使用了其他三种通知机制中的一种，本地通知也是保持应用磁贴最新的好方法。 例如，照片应用磁贴可以显示来自最近添加的相册的照片。
 
 建议你的应用在第一次启动时本地更新其磁贴，或至少在用户进行你的应用会在磁贴上正常反映的更改后立即更新其磁贴。 直到用户离开应用才能看到此更新，但是通过在使用该应用时做出这一更改可确保磁贴在用户离开时已是最新状态。
 
@@ -105,10 +106,10 @@ template: detail.hbs
 -   [发送本地磁贴通知](tiles-and-notifications-sending-a-local-tile-notification.md)
 -   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Scheduled_notifications"> </span> <span id="scheduled_notifications"> </span> <span id="SCHEDULED_NOTIFICATIONS"> </span>计划通知
+## <span id="Scheduled_notifications"></span><span id="scheduled_notifications"></span><span id="SCHEDULED_NOTIFICATIONS"></span>计划通知
 
 
-计划通知是本地通知的子集，可以指定应更新磁贴或显示 Toast 通知的准确时间。 计划通知是已提前知道更新内容等情况的理想选择，例如会议邀请。 如果不能提前知道通知内容，应该使用推送或定期通知。
+计划通知是本地通知的子集，可以指定应该更新磁贴或显示 Toast 通知的准确时间。 计划通知是已提前知道更新内容等情况的理想选择，例如会议邀请。 如果不能提前知道通知内容，应该使用推送或定期通知。
 
 默认情况下，计划通知在从推送时刻算起的三天后过期。 如果需要，你可以使用明确的过期时间替代此默认设置。
 
@@ -117,7 +118,7 @@ template: detail.hbs
 -   [计划通知指南](https://msdn.microsoft.com/library/windows/apps/hh761464)
 -   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Periodic_notifications"> </span> <span id="periodic_notifications"> </span> <span id="PERIODIC_NOTIFICATIONS"> </span>定期通知
+## <span id="Periodic_notifications"></span><span id="periodic_notifications"></span><span id="PERIODIC_NOTIFICATIONS"></span>定期通知
 
 
 定期通知只需极少的云服务和客户端投资即可提供动态磁贴更新。 它们也是向大量访问群体分发相同内容的出色方法。 你的客户端代码指定 Windows 将轮询磁贴或锁屏提醒更新的云位置 URL，以及应该轮询该位置的频率。 在每个轮询间隔，Windows 访问该 URL 以下载指定的 XML 内容并在磁贴上显示它。
@@ -131,7 +132,7 @@ template: detail.hbs
 -   [定期通知概述](tiles-and-notifications-periodic-notification-overview.md)
 -   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Push_notifications"> </span> <span id="push_notifications"> </span> <span id="PUSH_NOTIFICATIONS"> </span>推送通知
+## <span id="Push_notifications"></span><span id="push_notifications"></span><span id="PUSH_NOTIFICATIONS"></span>推送通知
 
 
 当与实时数据或用户个性化的数据通信时，推送通知是理想之选。 推送通知用于在无法预测的时间生成内容，例如爆炸性新闻、社交网络更新或即时消息。 推送通知也可用于数据具有时效性且不适合使用定期通知的情况，例如游戏期间的比赛计分。
@@ -146,12 +147,8 @@ template: detail.hbs
 -   [推送通知指南](https://msdn.microsoft.com/library/windows/apps/hh761462)
 -   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-**注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
-
-## <span id="related_topics"> </span>相关主题
+## <span id="related_topics"></span>相关主题
 
 
 * [发送本地磁贴通知](tiles-and-notifications-sending-a-local-tile-notification.md)
@@ -170,6 +167,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

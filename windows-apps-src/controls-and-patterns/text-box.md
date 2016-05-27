@@ -1,6 +1,7 @@
 ---
+author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-label: 文本框
+label: Text box
 template: detail.hbs
 ---
 # 文本框
@@ -24,7 +25,7 @@ TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置�
 
 使用 [**AutoSuggestBox**](auto-suggest-box.md) 控件允许用户输入搜索词或向用户显示建议列表以供他们在键入时从其中选择。
 
-使用 [**RichEditBox**](rich-edit-box.md) 显示和编辑格式文本文件。
+使用 [**RichEditBox**](rich-edit-box.md) 显示和编辑 RTF 文件。
 
 有关选择正确文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
@@ -89,7 +90,7 @@ IsEnabled
 - 若要使文本框允许和显示新行或返回字符，请将 [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 属性设置为 **true**。
 - 若要启用文本换行，请将 [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 属性设置为 **Wrap**。 这会导致文本在其到达文本框边缘时独立于行分隔符换行。
 
-> **注意** TextBox 和 RichEditBox 不支持其 TextWrapping 属性的 **WrapWholeWords** 值。 如果你尝试使用 WrapWholeWords 作为 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，将引发无效参数异常。
+> **注意** &nbsp;&nbsp;TextBox 和 RichEditBox 不支持其 TextWrapping 属性的 **WrapWholeWords** 值。 如果你尝试使用 WrapWholeWords 作为 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，将引发无效参数异常。
 
 在输入文本时多行 TextBox 将持续在垂直方向上增长，除非它受到其 [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 或 [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) 属性或父容器的约束。 你应测试多行文本框是否会增长到其可见区域之外，如果确实如此，则约束其增长。 我们建议你始终为多行文本框指定相应的高度，使其在用户键入时高度不会增长。 
 
@@ -205,9 +206,9 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 当你的应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为与你期望用户输入的数据类型匹配，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
 
-例如，如果文本框仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
+例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
-> **重要提示** 输入范围不会导致任何输入验证的执行，并且不会阻止用户通过硬件键盘或其他输入设备提供任何输入。 你仍然负责按需在代码中验证输入。
+> **重要提示** &nbsp;&nbsp;输入范围不会导致任何输入验证的执行，并且不会阻止用户通过硬件键盘或其他输入设备提供任何输入。 你仍然负责按需在代码中验证输入。
 
 影响触摸键盘的其他属性是 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx)、[IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) 和 [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx)。 （IsSpellCheckEnabled 还会在使用硬件键盘时影响 TextBox。） 
 
@@ -254,15 +255,15 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 -   不要让文本输入控件在用户键入时增加高度。
 -   当用户仅需要一行时，不要使用多行文本框。
--   如果纯文本控件足够使用，不要使用格式文本控件。
+-   如果纯文本控件足够使用，不要使用 RTF 控件。
 
-\[本文包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## 相关文章
 
 [文本控件](text-controls.md)
 
-**面向设计人员**
+**对于设计人员**
 - [拼写检查指南](spell-checking-and-prediction.md)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文本输入指南](text-controls.md)
@@ -272,10 +273,10 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**面向开发人员（其他）**
+**对于开发人员（其他）**
 - [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

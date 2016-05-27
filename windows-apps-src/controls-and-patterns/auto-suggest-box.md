@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 在用户键入时提供建议的文本输入框。
 title: 自动建议框指南
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
@@ -62,7 +63,7 @@ Groove 音乐应用中的自动建议框。
 
 你可以设置 [TextMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textmemberpath.aspx) 属性以选择数据对象中的哪个属性要显示在文本框中。 如果指定 TextMemberPath，文本框将自动更新。 通常应该为 DisplayMemberPath 和 TextMemberPath 指定相同的值，以便使建议列表和文本框中的文本相同。
 
-如果你需要显示多个简单属性，请处理 [SuggestionChosen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx) 事件以根据所选项使用自定义文本填充文本框。
+如果你需要显示多个简单属性，请处理 [SuggestionChosen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx) 事件以根据所选项目使用自定义文本填充文本框。
 
 ### 提交的查询
 
@@ -151,6 +152,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 
