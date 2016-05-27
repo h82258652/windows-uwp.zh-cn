@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
 title: Beta 测试
 description: Beta 测试使你有机会根据来自你的应用开发团队之外的个人的反馈来改进你的应用，这些个人在其自己的设备上试用你的未发布应用。
@@ -44,6 +45,6 @@ description: Beta 测试使你有机会根据来自你的应用开发团队之�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

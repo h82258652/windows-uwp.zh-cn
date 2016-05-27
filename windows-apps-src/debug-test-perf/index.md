@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: 调试、测试和性能
 description: 使用 Microsoft Visual Studio 调试和测试应用。 若要使应用为 Windows 应用商店认证过程做好准备，请使用 Windows 应用认证工具包。
@@ -21,6 +22,6 @@ description: 使用 Microsoft Visual Studio 调试和测试应用。 若要使�
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

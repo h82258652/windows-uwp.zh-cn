@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: 适用于移动设备的 Device Portal
 description: 了解 Windows Device Portal 是如何支持你远程配置和管理你的移动设备。
@@ -11,7 +12,7 @@ description: 了解 Windows Device Portal 是如何支持你远程配置和管�
 
 ![Device Portal 设置](images/device-portal/mob-dev-mode-options.png)
 
-## 在 Window Phone 上设置 Device Portal
+## 在 Windows Phone 上设置 Device Portal
 
 ### 打开设备发现和配对
 
@@ -27,19 +28,19 @@ description: 了解 Windows Device Portal 是如何支持你远程配置和管�
 
 1. 在浏览器中，针对使用的连接类型输入地址，如下所示。
 
-    - USB：`http://127.0.0.1:10080`
+    - USB： `http://127.0.0.1:10080`
 
-    当手机通过 USB 连接到电脑时，使用此地址。 两台设备必须具有版本 1511 或更高版本的 Windows 10。
+    当手机通过 USB 连接连接到电脑时，使用此地址。 两台设备必须具有版本 1511 或更高版本的 Windows 10。
     
-    - 本地主机：`http://127.0.0.1`
+    - Localhost： `http://127.0.0.1`
 
     使用此地址，可通过手机上的 Windows 10 移动版 Microsoft Edge 以本地方式查看 Device Portal。
     
-    - 本地网络：`https://<The IP address of the phone>`
+    - 本地网络： `https://<The IP address of the phone>`
 
-    使用此地址，可通过本地网络进行连接。
+    使用此地址通过本地网络进行连接。
 
-    手机的 IP 地址显示在其 Device Portal 设置中。 身份验证和安全通信要求使用 HTTPS。 主机名（可在“设置”>“系统”>“关于”中进行编辑）还可用于访问本地网络（例如 http://Phone360）上的 Device Portal，这对于可能频繁更改网络或 IP 地址的设备或者需要共享的设备非常有用。 
+    手机的 IP 地址显示在其 Device Portal 设置中。 身份验证和安全通信要求使用 HTTPS。 主机名\（可在“设置”&gt;“系统”&gt;“关于”中进行编辑\）还可用于访问本地网络\（例如 http://Phone360\）上的 Device Portal，这对于可能频繁更改网络或 IP 地址的设备或者需要共享的设备非常有用。 
 
 2. 在手机上按“配对”按钮以生成和显示所需的安全代码
 
@@ -65,12 +66,12 @@ Windows 移动版 Device Portal 中并未包含可以终止任意进程的功能
 - 应用
 - 进程
 - 性能
-- Windows 事件跟踪 (ETW)
+- Windows 事件跟踪 \(ETW\)
 - 性能跟踪
 - 设备
 - 网络
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

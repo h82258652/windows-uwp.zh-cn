@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
 title: 优化暂停/恢复
 description: 创建通用 Windows 平台 (UWP) 应用，以简化其生存期系统的使用过程，从而在暂停或终止后高效地恢复。
@@ -51,12 +52,12 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
 
 ### 使用 C# 和 Visual Basic 序列化数据
 
-对于 .NET 应用，可供选择的序列化技术有 [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx)、[**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) 和 [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx) 类。
+对于 .NET 应用，可供选择的序列化技术有 [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx)、[**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) 和 [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx) 类。
 
-从性能角度看，我们建议使用 [**XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) 类。 **XmlSerializer** 的序列化和反序列化时间最短，并保持很低的内存占用。 **XmlSerializer** 对 .NET 框架的依赖很少；这意味着与其他序列化技术相比较，使用 **XmlSerializer** 时需要加载到你的应用中的模块会更少。
+从性能角度看，我们建议使用 [**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) 类。 **XmlSerializer** 的序列化和反序列化时间最短，并保持很低的内存占用。 **XmlSerializer** 对 .NET 框架的依赖很少；这意味着与其他序列化技术相比较，使用 **XmlSerializer** 时需要加载到你的应用中的模块会更少。
 
 [
-            **DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) 使自定义类序列化更加容易，尽管它具有比 **XmlSerializer** 更高的性能影响。 如果需要更好的性能，请考虑切换。 一般情况下，不应加载多个序列化程序，并且应首选 **XmlSerializer**，除非需要使用其他序列化程序的功能。
+            **DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) 使自定义类序列化更加容易，尽管它具有比 **XmlSerializer** 更高的性能影响。 如果需要更好的性能，请考虑切换。 一般情况下，不应加载多个序列化程序，并且应首选 **XmlSerializer**，除非需要使用其他序列化程序的功能。
 
 ### 减少内存占用
 
@@ -87,6 +88,6 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

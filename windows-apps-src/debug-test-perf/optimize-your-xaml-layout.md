@@ -1,11 +1,12 @@
 ---
+author: mcleblanc
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: 优化 XAML 布局
 description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 CPU 使用率还是内存开销方面。 以下是可为提高 XAML 应用的布局性能而采取的步骤。
 ---
 # 优化 XAML 布局
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -66,7 +67,7 @@ description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 
 [
             **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 增加了一些复杂性，但仅使用单个面板元素。
 
-```
+```xml
   <Grid>
   <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
@@ -83,7 +84,7 @@ description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 
   </Grid.ColumnDefinitions>
   <TextBlock Text="Options:" Grid.ColumnSpan="2" />
   <CheckBox Content="Power User" Grid.Row="1" Grid.ColumnSpan="2" />
-  <CheckBox Content="Admin" Margin="150,0,0,0” Grid.Row="1" Grid.ColumnSpan="2" />
+  <CheckBox Content="Admin" Margin="150,0,0,0" Grid.Row="1" Grid.ColumnSpan="2" />
   <TextBlock Text="Basic information:" Grid.Row="2" Grid.ColumnSpan="2" />
   <TextBlock Text="Name:" Width="75" Grid.Row="3" />
   <TextBox Width="200" Grid.Row="3" Grid.Column="1" />
@@ -126,7 +127,7 @@ description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 
 
 常见的 UI 要求是具有元素互相重叠的布局。 通常填充、边距、对齐和转换用于以这种方式定位元素。 已优化 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 控件以提高重叠元素的布局性能。
 
-**重要提示** 若要查看改进，请使用单个单元 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 不要定义 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-columndefinitions)。
+**重要提示** 若要查看改进，请使用单个单元 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 不要定义 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
 
 ### 示例
 
@@ -169,12 +170,12 @@ description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 
 ## 使用 **SizeChanged** 事件响应布局更改
 
 [
-            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 类公开两个相似的事件，用于响应布局更改：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged)。 当在布局期间调整元素大小时，你可能正在使用其中一个事件接收通知。 两个事件的语义是不同的，因为在两者之间进行选择时有重要的性能注意事项。
+            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 类公开两个相似的事件，用于响应布局更改：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged)。 当在布局期间调整元素大小时，你可能正在使用其中一个事件接收通知。 两个事件的语义是不同的，因为在两者之间进行选择时有重要的性能注意事项。
 
-若要获取良好性能，选择 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) 在大多数情况下都没有错。 **SizeChanged** 具有直观的语义。 当 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的大小已更新时，将在布局期间引发它。
+若要获取良好性能，选择 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) 在大多数情况下都没有错。 **SizeChanged** 具有直观的语义。 当 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的大小已更新时，将在布局期间引发它。
 
 [
-            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) 还会在布局期间引发，但它具有全局语义，无论何时更新元素，都会将其引发。 通常只在事件处理程序中进行本地处理，在此情况下将以多于必需的频率运行代码。 仅当你需要知道元素何时在不更改大小的情况下重新定位（此情况不常见）时使用 **LayoutUpdated**。
+            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 还会在布局期间引发，但它具有全局语义，无论何时更新元素，都会将其引发。 通常只在事件处理程序中进行本地处理，在此情况下将以多于必需的频率运行代码。 仅当你需要知道元素何时在不更改大小的情况下重新定位（此情况不常见）时使用 **LayoutUpdated**。
 
 ## 在面板之间选择
 
@@ -184,6 +185,6 @@ description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

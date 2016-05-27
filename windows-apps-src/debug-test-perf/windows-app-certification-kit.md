@@ -1,11 +1,12 @@
 ---
+author: mcleblanc
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows 应用认证工具包
 description: 若要为你的应用提供最好的机会从而在 Windows 应用商店中发布，或通过 Windows 认证，请在提交应用进行认证之前先在本地进行验证和测试。 本主题显示了如何安装并运行 Windows 应用认证工具包。
 ---
 # Windows 应用认证工具包
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 若要为你的应用提供最好的机会从而[在 Windows 应用商店中发布](https://msdn.microsoft.com/library/windows/apps/Hh694062)，或通过 [Windows 认证](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)，请在提交应用进行认证之前先在本地进行验证和测试。 本主题演示了如何安装并运行 [Windows 应用认证工具包](http://go.microsoft.com/fwlink/p/?LinkID=309666)。
@@ -25,7 +26,7 @@ description: 若要为你的应用提供最好的机会从而在 Windows 应用�
 
 ## 以交互方式使用 Windows 应用认证工具包验证 Windows 应用
 
-1.  从“开始”****菜单中，搜索“应用”****，找到“Windows 工具包”****，然后单击“Windows 应用认证工具包”****。
+1.  从“开始”****菜单中，搜索“应用”****、找到“Windows 工具包”****，然后单击“Windows 应用认证工具包”****。
 
 2.  从“Windows 应用认证工具包”中，选择你希望执行的验证类别。 例如，如果你要验证 Windows 应用，请选择“验证 Windows 应用”****。
 
@@ -94,6 +95,6 @@ Windows 应用认证工具包的性能测试阈值基于低能耗电脑的性能
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

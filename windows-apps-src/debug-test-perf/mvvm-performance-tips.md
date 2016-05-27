@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
 title: MVVM 和语言性能提示
 description: 本主题讨论了一些与选择软件设计模式和编程语言相关的性能注意事项。
@@ -39,6 +40,6 @@ Model-View-ViewModel (MVVM) 模式在许多 XAML 应用中很常见。 （MVVM �
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
