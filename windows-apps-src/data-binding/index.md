@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 83b4be37-6613-4d00-a48a-0451a24a30fb
 title: 数据绑定
 description: 数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。
@@ -19,6 +20,6 @@ description: 数据绑定是你的应用 UI 用来显示数据的一种方法，
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
