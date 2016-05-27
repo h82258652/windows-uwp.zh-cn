@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 Description: '本主题介绍了如何在企业数据保护 (EDP) 方案中创建网络连接之前创建受保护的线程上下文。'
 MS-HAID: 'dev\_networking.tagging\_network\_connections\_with\_edp\_identity'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -25,7 +26,7 @@ __注意__ 在版本 1511（版本 10586）或更早版本的 Windows 10 上无�
 
 -   **致力于生成企业启发式应用**
 
-    自发确保企业数据处于管理企业控制之下的应用称为企业启发式应用。 启发式应用比未启发式应用更强大、更智能、更灵活，也更受信赖。 你的应用可以通过声明受限的 **enterpriseDataPolicy** 功能向系统宣布它为启发式应用。 但要实现启发式的应用比要设置功能的应用多。 若要了解详细信息，请参阅[企业启发式应用](../enterprise/edp-hub.md#enterprise-enlightened-apps)。
+    自发确保企业数据处于管理企业控制之下的应用称为企业启发式应用。 启发式应用比未启发式应用更强大、更智能、更灵活，也更受信赖。 你的应用可以通过声明受限的 **enterpriseDataPolicy** 功能向系统声明它为启发式应用。 但要实现启发式的应用比要设置功能的应用多。 若要了解详细信息，请参阅[企业启发式应用](../enterprise/edp-hub.md#enterprise-enlightened-apps)。
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
@@ -105,7 +106,7 @@ public static async void SyncMailbox(string identity)
 }
 ```
 
-**注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+**注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 
 
@@ -124,6 +125,6 @@ public static async void SyncMailbox(string identity)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 description: 作为一名通用 Windows 平台 (UWP) 应用开发人员，你可以将 Windows.Networking.Sockets 与 Winsock 结合使用，以与其他设备通信。
 title: 套接字
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
@@ -6,7 +7,7 @@ ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 
 # 套接字
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -14,6 +15,8 @@ ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 -   [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
 作为一名通用 Windows 平台 (UWP) 应用开发人员，你可以将 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 与 [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) 结合使用，以与其他设备通信。 关于使用 **Windows.Networking.Sockets** 命名空间执行网络操作的详细指南，请参阅本主题。
+
+>**注意** 作为[网络隔离](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)的一部分，系统禁止在通过本地环回地址 (127.0.0.0) 或明确指定本地 IP 地址运行于同一台计算机的两个 UWP 应用之间建立套接字连接（Sockets 或 WinSock）。 这意味着你无法使用套接字在两个 UWP 应用之间进行通信。 UWP 提供了其他可用于应用间通信的机制。 请参阅[应用到应用的通信](https://msdn.microsoft.com/windows/uwp/app-to-app/index)以了解详细信息。
 
 ## 基本的 TCP 套接字操作
 
@@ -297,6 +300,6 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

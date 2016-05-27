@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 description: 使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源通过 Windows.Web.Syndication 命名空间中的功能根据 RSS 和 Atom 标准生成。
 title: RSS/Atom 订阅源
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
@@ -6,7 +7,7 @@ ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 
 # RSS/Atom 订阅源
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -86,7 +87,7 @@ var uri = null;
 try {
     uri = new Windows.Foundation.Uri(uriString);
 } catch (error) {
-    WinJS.log &amp;&amp; WinJS.log("Error: Invalid URI");
+    WinJS.log && WinJS.log("Error: Invalid URI");
     return;
 }
 ```
@@ -126,7 +127,7 @@ catch (Exception ex)
 ```
 ```javascript
 function onError(err) {
-    WinJS.log &amp;&amp; WinJS.log(err, "sample", "error");
+    WinJS.log && WinJS.log(err, "sample", "error");
 
     // Match error number with a ErrorStatus value.
     // Use Windows.Web.WebErrorStatus.getStatus() to retrieve HTTP error status codes.
@@ -147,7 +148,7 @@ function retreiveFeed(uri) {
     client.retrieveFeedAsync(uri).done(function (feed) {
         currentFeed = feed;
 
-        WinJS.log &amp;&amp; WinJS.log("Feed download complete.", "sample", "status");
+        WinJS.log && WinJS.log("Feed download complete.", "sample", "status");
 
         var title = "(no title)";
         if (currentFeed.title) {
@@ -256,6 +257,6 @@ function displayCurrentItem() {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

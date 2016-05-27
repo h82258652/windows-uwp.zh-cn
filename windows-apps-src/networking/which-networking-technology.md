@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
 description: 适用于 UWP 开发人员的网络技术概述，以及关于如何选择适合自己应用的技术的建议。
 title: 选择哪一种网络技术？
@@ -143,6 +144,6 @@ Windows 10 向广大开发人员受众公开了一些之前只公开给设备制
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

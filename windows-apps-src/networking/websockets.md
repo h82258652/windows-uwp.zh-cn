@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 description: WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信。
 title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
@@ -348,6 +349,6 @@ MessageWebSocket 和 StreamWebSocket 类使用内部系统服务，发送 WebSoc
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

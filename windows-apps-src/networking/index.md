@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: 用于访问网络和 Web 服务的技术。
 title: 网络和 Web 服务
@@ -22,6 +23,7 @@ title: 网络和 Web 服务
 | [后台传输](background-transfers.md)                                         | 使用后台传输 API 以通过网络可靠地复制文件。           |
 | [使用 EDP 标识标记网络连接](tagging_network_connections_with_edp_identity.md) | 本主题介绍了如何在企业数据保护 (EDP) 方案中创建网络连接之前创建受保护的线程上下文。 |
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 
