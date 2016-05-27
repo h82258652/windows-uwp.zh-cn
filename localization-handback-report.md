@@ -1,7 +1,7 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 570
+ Total Files | 572
 
 ## File List
  Source File | Status | Details 
@@ -263,7 +263,9 @@
  [windows-apps-src\graphics\composition-native-interop.md](https://github.com/Microsoft/windows-apps/blob/b3d198af0c46ec7a2041a7417bccd56c05af760e/windows-apps-src/graphics/composition-native-interop.md) | InSyncHandedBackSuccess | [Details](#b5308c8023990996a93277dd1bcfb8298c0bbf4f2584)
  [windows-apps-src\graphics\index.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/graphics/index.md) | InSyncHandedBackSuccess | [Details](#d46498e6e584d85cfce0be237878aff68dee9c502611)
  [windows-apps-src\graphics\using-brushes.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/graphics/using-brushes.md) | InSyncHandedBackSuccess | [Details](#a4063ee2372d69289fca74c81a4c7645909c7f372615)
+ [windows-apps-src\home.md](https://github.com/Microsoft/windows-apps/blob/9be74892a98765a8a45482ce3f5cc5151ab772b1/windows-apps-src/home.md) | InSyncHandedBackSuccess | [Details](#5d0cca643c26458165c388215d34eec76dfe8cf62617)
  [windows-apps-src\in-app-help\guidelines-for-app-help.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/in-app-help/guidelines-for-app-help.md) | InSyncHandedBackSuccess | [Details](#35011081981ce9bb5c8408329c9be627f60ee8412619)
+ [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/753a917c0ecbf445560203dbc1406acae52e5265/windows-apps-src/index.md) | InSyncHandedBackSuccess | [Details](#97e016047c864026fe0c72e4b7cb819f0fc807482628)
  [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/077fcc6ff462a771ed56f875d960e46e6f4420fc/windows-apps-src/input-and-devices/convert-ink-to-text.md) | InSyncHandedBackSuccess | [Details](#bdc431d15742261d96b88b97d256b14156f2088c2629)
  [windows-apps-src\input-and-devices\cortana-design-guidelines.md](https://github.com/Microsoft/windows-apps/blob/077fcc6ff462a771ed56f875d960e46e6f4420fc/windows-apps-src/input-and-devices/cortana-design-guidelines.md) | InSyncHandedBackSuccess | [Details](#31442ed17b9b463cbf10cecb564278b86086bbf22630)
  [windows-apps-src\input-and-devices\cortana-interactions.md](https://github.com/Microsoft/windows-apps/blob/a4e9a90edd2aae9d2fd5d7bead948422d43dad59/windows-apps-src/input-and-devices/cortana-interactions.md) | InSyncHandedBackSuccess | [Details](#d55ece0112e5360c1de4e194c6dd326c15404f9e2631)
@@ -3663,6 +3665,18 @@
 * Handback Datetime: 2016-05-27 20:27:49
 * [Back to Top](#report-top)
 
+##### <a name='5d0cca643c26458165c388215d34eec76dfe8cf62617'></a> Source: [windows-apps-src\home.md](https://github.com/Microsoft/windows-apps/blob/9be74892a98765a8a45482ce3f5cc5151ab772b1/windows-apps-src/home.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\home.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/b0326fac293342599468c9de4fbc37606ff75a74/windows-apps-src/home.md)
+* Handoff File: [home.c2e75b5d0f1c7d5d476b0f47240addd323d5103c.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0607049bfa018cc6bec72fd2d79d3c6fd08f0f65/ol-handoff/Microsoft/windows-apps.zh-cn/master/home.c2e75b5d0f1c7d5d476b0f47240addd323d5103c.zh-cn.xlf)
+* Handoff Datetime: 2016-05-12 02:26:30
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [home.c2e75b5d0f1c7d5d476b0f47240addd323d5103c.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/f46416dacd65b5b573877e38e5cc2fcf60896323/ol-handback/Microsoft/windows-apps.zh-cn/master/home.c2e75b5d0f1c7d5d476b0f47240addd323d5103c.zh-cn.xlf)
+* Handback Datetime: 2016-05-27 20:30:50
+* [Back to Top](#report-top)
+
 ##### <a name='35011081981ce9bb5c8408329c9be627f60ee8412619'></a> Source: [windows-apps-src\in-app-help\guidelines-for-app-help.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/in-app-help/guidelines-for-app-help.md)
 * Status: InSyncHandedBackSuccess
 * Target File: [windows-apps-src\in-app-help\guidelines-for-app-help.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/36c5586e1ac69630364b19ba08e61f02f6655b54/windows-apps-src/in-app-help/guidelines-for-app-help.md)
@@ -3673,6 +3687,18 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [guidelines-for-app-help.aaa49aa381d556c0b965721ea6a7c1b8bc21ceaf.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/2430fae259da51b0c3d57b16c018fae220289334/ol-handback/Microsoft/windows-apps.zh-cn/master/in-app-help/guidelines-for-app-help.aaa49aa381d556c0b965721ea6a7c1b8bc21ceaf.zh-cn.xlf)
 * Handback Datetime: 2016-05-27 20:27:55
+* [Back to Top](#report-top)
+
+##### <a name='97e016047c864026fe0c72e4b7cb819f0fc807482628'></a> Source: [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps/blob/753a917c0ecbf445560203dbc1406acae52e5265/windows-apps-src/index.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\index.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/b0326fac293342599468c9de4fbc37606ff75a74/windows-apps-src/index.md)
+* Handoff File: [index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0607049bfa018cc6bec72fd2d79d3c6fd08f0f65/ol-handoff/Microsoft/windows-apps.zh-cn/master/index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.zh-cn.xlf)
+* Handoff Datetime: 2016-05-12 02:26:30
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/f46416dacd65b5b573877e38e5cc2fcf60896323/ol-handback/Microsoft/windows-apps.zh-cn/master/index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.zh-cn.xlf)
+* Handback Datetime: 2016-05-27 20:30:50
 * [Back to Top](#report-top)
 
 ##### <a name='bdc431d15742261d96b88b97d256b14156f2088c2629'></a> Source: [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/077fcc6ff462a771ed56f875d960e46e6f4420fc/windows-apps-src/input-and-devices/convert-ink-to-text.md)
