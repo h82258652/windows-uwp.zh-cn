@@ -1,6 +1,6 @@
 ---
-Description: Windows 10 版本 1511 和开发人员工具更新继续提供受通用 Windows 平台支持的工具、功能和体验。
-title: Windows 10 版本 1511 中面向开发人员的新增功能：2015 年 11 月
+Description&#58; 作者：QuinnRadich Windows 10 版本 1511 和开发人员工具更新继续提供受通用 Windows 平台支持的工具、功能和体验。
+title&#58; Windows 10 版本 1511 中面向开发人员的新增功能：2015 年 11 月
 ---
 
 # Windows 10 版本 1511 中面向开发人员的新增功能：2015 年 11 月
@@ -25,7 +25,7 @@ Windows 10 版本 1511 和开发人员工具更新继续提供受通用 Windows 
                                         
     支持输入跨进程链接的新指针事件。    
                                         
-* <a href="https://msdn.microsoft.com/library/windows/desktop/mt622165(v=vs.85).aspx">适用于经典桌面应用的墨迹表示器</a>
+* <a href="https://msdn.microsoft.com/library/windows/desktop/mt622165(v=vs.85).aspx">适用于经典桌面应用的墨迹演示器</a>
                                         
     墨迹表示器 API 使 Microsoft Win32 应用能够通过插入应用的 <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371(v=vs.85).aspx">DirectComposition</a> 可视化树中的 <a href="https://msdn.microsoft.com/library/windows/desktop/windows.ui.input.inking.inkpresenter.aspx">InkPresenter</a> 对象管理墨迹输入（标准和改良）的输入、处理和呈现。    
                                     
@@ -83,6 +83,6 @@ Windows 应用认证工具包已通过改进的测试进行了更新。 有关�
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
