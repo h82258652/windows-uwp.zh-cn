@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 准备工作
 description: 准备工作比想像中的简单。 按照以下说明开始为 Windows 10 创建通用 Windows 平台 (UWP) 应用。
@@ -50,6 +51,6 @@ Microsoft Visual Studio 2015 可帮助你设计、编码、测试和调试应用
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

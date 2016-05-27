@@ -1,11 +1,8 @@
 ---
-ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
-title: 后续步骤是什么？
-description: 既然你已经创建了你的第一个应用，你便可以查看开发人员中心的其他部分了。 以下是它所包含的其他部分的简介。
-关键字：开发人员中心, 教程
-关键字：开发人员中心, 入门
+description&#58; 作者：martinekuan ms.assetid：4288E511-581C-49DC-A2F2-1CB832C4A676 标题：后续步骤？现在你已经创建了你的第一个应用，请查看开发人员中心中的剩余部分。 以下是它所包含的其他部分的简介。
+关键字：开发人员中心, 教程 关键字：开发人员中心, 入门
 ---
-# 后续步骤是什么？
+# 后续步骤？
 
 既然你已经创建了你的第一个应用，你便可以查看开发人员中心的其他部分了。 以下是开发人员中心所包含的其他部分的简介。
 
@@ -35,7 +32,7 @@ Windows 应用商店可使你能够接触到使用 Microsoft Windows 的数百�
 
 本部分包含有关以下内容的详细信息：类、属性、方法、事件、样式以及可用于创建通用 Windows 平台 (UWP) 应用的其他 API。
 
-转至 [API 参考](https://msdn.microsoft.com/en-us/library/windows/apps/br211369.aspx)。
+转至[API 参考](https://msdn.microsoft.com/en-us/library/windows/apps/br211369.aspx)。
 
 ## 语言参考
 
@@ -67,6 +64,6 @@ Windows 应用商店可使你能够接触到使用 Microsoft Windows 的数百�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

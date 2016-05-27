@@ -1,12 +1,13 @@
 ---
+author: martinekuan
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: 创建“Hello, world”应用 (XAML)
-description: 本教程指导你如何使用 Extensible Application Markup Language (XAML) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。
+title: 创建“Hello, world”应用 \(XAML\)
+description: 本教程指导你如何使用 Extensible Application Markup Language \(XAML\) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。
 ---
 
-# 创建“Hello, world”应用 (XAML)
+# 创建“Hello, world”应用 \(XAML\)
 
-本教程指导你如何使用 Extensible Application Markup Language (XAML) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。 借助 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 Windows 10 设备上运行的应用。 这里我们侧重于创建可在桌面和移动设备上正常运行的应用。
+本教程指导你如何使用 Extensible Application Markup Language \(XAML\) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 \(UWP\) 的简单“Hello, world”应用。 借助 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 Windows 10 设备上运行的应用。 这里我们侧重于创建可在桌面和移动设备上正常运行的应用。
 
 **重要提示** 本教程适用于 Microsoft Visual Studio 2015 和 Windows 10。 它在早期版本中无法正常运行。
 
@@ -31,35 +32,35 @@ description: 本教程指导你如何使用 Extensible Application Markup Langua
 
 1.  启动 Visual Studio 2015。
 
-   将出现 Visual Studio 2015 起始页。 （从现在开始，我们将 Visual Studio 2015 简称为 Visual Studio 。）
+   将出现 Visual Studio 2015 起始页。 （从现在开始，我们将 Visual Studio 2015 简称为 Visual Studio。）
 
-2.  在“文件”****菜单上，选择“新建”****>“项目”****。
+2.  在“文件”****菜单上，依次选择“新建”**** > “项目”****。
 
    会出现“新建项目”****对话框。 可以在对话框的左侧窗格中选择要显示模板的类型。
 
-3.  在左侧窗格中，展开“已安装”>“模板”>“Visual C#”>“Windows”****，然后选取“通用”****模板组。 对话框的中心窗格会显示一系列用于通用 Windows 平台 (UWP) 应用的项目模板。
+3.  在左侧窗格中，依次展开“已安装”&gt;“模板”&gt;“Visual C#”&gt;“Windows”****，然后选取“通用”****模板组。 对话框的中心窗格会显示一系列用于通用 Windows 平台 \(UWP\) 应用的项目模板。
 
    ![“新建项目”窗口 ](images/newproject-cs.png)
 
-4.  在中心窗格中，选择“空白应用(通用 Windows)”****模板。
+4.  在中心窗格中，选择“空白应用\(通用 Windows\)”****模板。
 
    “空白应用”****模板会创建一个最基本的 UWP 应用，该应用可以编译和运行，但不包含任何用户界面控件或数据。 本教程将指导你向该应用添加控件。
 
 5.  在**“名称”**文本框中，键入“HelloWorld”。
-6.  单击**“确定”**以创建项目。
+6.  单击“确定”****以创建项目。
 
    Visual Studio 会创建项目并在“解决方案资源管理器”****中显示该项目。
 
    ![适用于 HelloWorld 项目的 Visual Studio 解决方案资源管理器](images/solutionexplorer-cs.png)
 
-尽管**“空白应用程序”**为最基本的模板，但该模板仍包含很多文件：
+尽管“空白应用”****为最基本的模板，但该模板仍包含很多文件：
 
--   清单文件 (Package.appxmanifest)，介绍应用（其名称、描述、磁贴、起始页等等）并列出应用包含的文件。
+-   清单文件 \(Package.appxmanifest\)，介绍应用（其名称、描述、磁贴、起始页等等）并列出应用包含的文件。
 -   用于在“开始”菜单中显示的一组徽标图像（Assets/Square150x150Logo.scale-200.png、Assets/Square44x44Logo.scale-200.png 和 Assets/Wide310x150Logo.scale-200.png）。
--   表示应用位于 Windows 应用商店的图像 (Assets/StoreLogo.png)。
--   用于在应用启动时显示的初始屏幕 (Assets/SplashScreen.scale-200.png)。
+-   表示应用位于 Windows 应用商店的图像 \(Assets/StoreLogo.png\)。
+-   用于在应用启动时显示的初始屏幕 \(Assets/SplashScreen.scale-200.png\)。
 -   应用的 XAML 和代码文件（App.xaml 和 App.xaml.cs）。
--   起始页 (MainPage.xaml) 和附带的代码文件 (MainPage.xaml.cs)，这些文件在应用启动时运行。
+-   起始页 \(MainPage.xaml\) 和附带的代码文件 \(MainPage.xaml.cs\)，这些文件在应用启动时运行。
 
 这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
 
@@ -127,7 +128,7 @@ namespace HelloWorld
 
 **修改起始页**
 
-1.  在**“解决方案资源管理器”**中双击 MainPage.xaml 以将其打开。
+1.  在“解决方案资源管理器”****中双击 MainPage.xaml 以将其打开。
 2.  在 XAML 编辑器中，为 UI 添加控件。
 
    在根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 中，添加此 XAML。 它包含一个标题为 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 的 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、一个询问用户名称的 **TextBlock**、一个用于接受用户名称的 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 元素、一个 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)，以及另一个用于显示问候的 **TextBlock**。 其中一些控件有名称，因此稍后你可以在代码中引用它们。
@@ -138,7 +139,7 @@ namespace HelloWorld
         <TextBlock Text="What' s your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
             <TextBox x:Name="nameInput" Width="280" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say &amp;quot;Hello&amp;quot;"/>
+            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;"/>
         </StackPanel>
         <TextBlock x:Name="greetingOutput"/>
     </StackPanel>
@@ -168,19 +169,19 @@ namespace HelloWorld
 
    -或者-
 
-   在**“调试”**菜单中，单击**“开始调试”**。
+   在“调试”****菜单中，单击“开始调试”****。
 
    -或者-
 
    按 F5。
 
-应用将在窗口中打开，并且将首先显示默认初始屏幕。 初始屏幕由一个图像 (SplashScreen.png) 和背景色（在应用的清单文件中指定）定义。
+应用将在窗口中打开，并且将首先显示默认初始屏幕。 初始屏幕由一个图像 \(SplashScreen.png\) 和背景色（在应用的清单文件中指定）定义。
 
 初始屏幕会消失，然后会出现你的应用。 它的外观如下所示。
 
 ![初始应用屏幕](images/helloworld-1-cs.png)
 
-按 Windows 键以打开**“开始”**菜单，然后显示所有应用。 请注意，本地部署应用会将其磁贴添加到**“开始”**菜单。 若要再次运行该应用（不是在调试模式下），请在**“开始”**菜单中点击或单击其磁贴。
+按 Windows 键以打开“开始”****菜单，然后显示所有应用。 请注意，本地部署应用会将其磁贴添加到**“开始”**菜单。 若要再次运行该应用（不是在调试模式下），请在**“开始”**菜单中点击或单击其磁贴。
 
 它还无法执行很多操作，但祝贺你已构建了第一个 UWP 应用！
 
@@ -190,7 +191,7 @@ namespace HelloWorld
 
    -或者-
 
-   在**“调试”**菜单中，单击**“停止调试”**。
+   在“调试”****菜单中，单击“停止调试”****。
 
    -或者-
 
@@ -207,15 +208,15 @@ namespace HelloWorld
 -   **仿真器 <SDK version> WVGA 4 英寸 1GB**
 -   等（采用其他配置的各种仿真器）
 
-最好在带有小型屏幕和有限内存的设备上测试应用，因此请使用**“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”**选项。
+最好在带有小型屏幕和有限内存的设备上测试应用，因此请使用“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****选项。
 **在移动设备仿真器上开始调试**
 
-1.  在**“标准”**工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取**仿真器 10.0.10240.0 WVGA 4 英寸 512MB**。
-2.  单击工具栏中的**“开始调试”**按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
+1.  在“标准”****工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****。
+2.  单击工具栏中的“开始调试”****按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
 
    -或者-
 
-   在**“调试”**菜单中，单击**“开始调试”**。
+   在“调试”****菜单中，单击“开始调试”****。
 
    -或者-
 
@@ -234,7 +235,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 XAML 元素可以在出现某些事件时发送消息。 这些事件消息为你提供了可以采取一些操作响应事件的机会。 将用于响应事件的代码放在事件处理程序方法中。 多个应用中最常见事件之一为用户单击 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)。
 
-我们来为按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件创建事件处理程序。 事件处理程序会从 `nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控件获取用户名并使用该用户名向 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 输出问候。
+让我们为按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件创建事件处理程序。 事件处理程序会从 `nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控件获取用户名并使用该用户名向 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 输出问候。
 
 ### 使用用于触控、鼠标和笔输入的事件
 
@@ -243,7 +244,7 @@ XAML 元素可以在出现某些事件时发送消息。 这些事件消息为�
 **添加事件处理程序**
 
 1.  在 XAML 或设计视图中，选择已添加到 MainPage.xaml 的“Say Hello”[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)。
-2.  在**“属性窗口”**中，单击“事件”按钮（![“事件”按钮](images/eventsbutton.png)）。
+2.  在“属性窗口”****中，单击“事件”按钮（![“事件”按钮](images/eventsbutton.png)）。
 3.  在事件列表的顶部查找 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件。 在事件的文本框中，键入处理 **Click** 事件的函数名称。 对于本示例，请键入“Button\_Click”。
 
    ![属性窗口中的事件列表](images/xaml-hw-event.png)
@@ -253,7 +254,7 @@ XAML 元素可以在出现某些事件时发送消息。 这些事件消息为�
     在 XAML 编辑器中，更新 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 的 XAML 以声明 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件处理程序，如下所示。
 
 ```xml   
-   <Button x:Name="inputButton" Content="Say &amp;quot;Hello&amp;quot;" Click="Button_Click"/>
+   <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
 ```    
 
 5.  向在代码隐藏页面中创建的事件处理程序添加代码。 在事件处理程序中，从 `nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控件检索用户名并使用该用户名创建问候语。 使用 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 显示相关结果。
@@ -317,6 +318,6 @@ XAML 元素可以在出现某些事件时发送消息。 这些事件消息为�
 祝贺你，你已创建了自己的第一个适用于 Windows 10 和 UWP 的应用！
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

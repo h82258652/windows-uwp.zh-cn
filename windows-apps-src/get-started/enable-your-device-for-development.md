@@ -1,11 +1,6 @@
 ---
-ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
-title: 启用设备进行开发
-description: 可使用不同的方法针对 Windows 10 设备进行开发。
-关键字：开始使用
-关键字：开发人员许可证
-关键字：Visual Studio, 开发人员许可证
-关键字：启用设备
+description&#58; 作者：martinekuan ms.assetid：54973C62-9669-4988-934E-9273FB0425FD 标题：启用设备进行开发 可使用不同的方法针对 Windows 10 设备进行开发。
+关键字：开始使用 关键字：开发人员许可证 关键字：Visual Studio、开发人员许可证 关键字：启用设备
 ---
 # 启用设备进行开发
 
@@ -21,7 +16,7 @@ description: 可使用不同的方法针对 Windows 10 设备进行开发。
 
 ![启用在 Visual Studio 中显示的开发人员模式对话框](images/latestenabledialog.png)
 
-当你看到此对话框时，请单击**“开发人员设置”**以直接转到**“更新和安全”**页面，如下所示。 或者，单击“确定”****，然后按照以下步骤启用 Windows 10 设备以进行开发。
+当你看到此对话框时，请单击“开发人员设置”以直接转到“更新和安全”页面，如下所示。 或者，单击“确定”，然后按照以下步骤启用 Windows 10 设备以进行开发。
 
 ### 启用 Windows 10 设备
 
@@ -30,13 +25,13 @@ description: 可使用不同的方法针对 Windows 10 设备进行开发。
 -   *旁加载*是指安装未经 Windows 应用商店认证的应用，然后对其进行运行或测试的过程。 例如，仅限公司内部使用的应用。
 -   借助*开发人员模式*，你不仅可以旁加载应用，还可以在调试模式下从 Visual Studio 运行应用。
 
-**注意** 如果旁加载应用，你仍然应该仅从受信任的源安装应用。 安装未经 Windows 应用商店认证的旁加载应用时，即表明你同意已获取旁加载应用所需的所有权限，并且你对任何由安装和运行应用引发的损害负全责。 请参阅此[隐私声明](http://go.microsoft.com/fwlink/?LinkId=521839)的“Windows”>“Windows 应用商店”部分。
+**注意** 如果旁加载应用，你仍然应该仅从受信任的源安装应用。 安装未经 Windows 应用商店认证的旁加载应用时，即表明你同意已获取旁加载应用所需的所有权限，并且你对任何由安装和运行应用引发的损害负全责。 请参阅 Windows &gt; 此[隐私声明](http://go.microsoft.com/fwlink/?LinkId=521839)的 Windows 应用商店部分。
 
 **使用开发人员功能**
 
-1.  在要启用的设备上，转到**“设置”**。 依次选择“更新和安全”****和“面向开发人员”****。
-2.  选择所需的访问级别。 有关选项的详细信息，请参阅[应选择哪些设置：旁加载应用还是开发人员模式？](#WhichSettings)
-3.  阅读所选设置的免责声明，然后单击“是”****以接受更改。
+1.  在要启用的设备上，转到“设置”。 依次选择“更新和安全”和“对于开发人员”。
+2.  选择所需的访问级别。 有关选项的更多详细信息，请参阅[应选择哪些设置：旁加载应用还是开发人员模式？](#WhichSettings)
+3.  阅读所选设置的免责声明，然后单击“是”以接受更改。
 
 下面是桌面设备系列的设置页。
 
@@ -82,7 +77,7 @@ description: 可使用不同的方法针对 Windows 10 设备进行开发。
 有多个工具可用来将应用从 Windows 10 电脑部署到 Windows 10 移动设备。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。 所列的任意一种方法仅会安装应用包 (.appx)，不安装证书。
 
 -   使用 Windows 10 应用程序部署 (WinAppDeployCmd) 工具。 了解有关 [WinAppDeployCmd 工具](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx)的详细信息。
--   从版本 1511 的 Windows 10 开始，你可以使用 [Device Portal](#device_portal) 从浏览器部署到运行版本 1511 或更高版本的 Windows 10 的移动设备。 在 Device Portal (<IP>/appmanager.md) 中使用**“应用”**页上载应用包 (.appx) 并在设备上安装它。
+-   从版本 1511 的 Windows 10 开始，你可以使用 [Device Portal](#device_portal) 从浏览器部署到运行版本 1511 或更高版本的 Windows 10 的移动设备。 在 Device Portal (&lt;IP&gt;/appmanager.md) 中使用“应用”页上载应用包 (.appx) 并在设备上安装它。
 
  
 
@@ -97,7 +92,7 @@ description: 可使用不同的方法针对 Windows 10 设备进行开发。
 **使用 gpedit 启用设备**
 
 1.  运行 **Gpedit.msc**。
-2.  转到“本地计算机策略”>“计算机配置”>“管理模板”>“Windows 组件”>“应用包部署”
+2.  转到“本地计算机策略”&gt;“计算机配置”&gt;“管理模板”&gt;“Windows 组件”&gt;“应用包部署”
 3.  若要启用旁加载，请编辑策略以启用以下项：
 
     -   **允许安装所有受信任的应用**
@@ -113,7 +108,7 @@ description: 可使用不同的方法针对 Windows 10 设备进行开发。
 
 **使用 regedit 启用设备**
 
-1.  运行“regedit”****。
+1.  运行 **regedit**。
 2.  若要启用旁加载，请将此 DWORD 的值设置为 1：
 
     -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
@@ -129,23 +124,23 @@ description: 可使用不同的方法针对 Windows 10 设备进行开发。
 1.  使用管理员权限运行 PowerShell。
 2.  若要启用旁加载，请运行此命令：
 
-    -   **PS C:\\WINDOWS\\system32> reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
 
-    - 或：
+    - 或 -
 
     若要启用开发人员模式，请运行此命令：
 
-    -   **PS C:\\WINDOWS\\system32> reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
+    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
 
 ## 开发人员模式功能
 
-对于每个设备系列，可能会提供其他开发人员功能。 仅当在设备上启用了**“开发人员模式”**时这些功能才可用，并且可能会因操作系统版本的不同而有所不同。
+对于每个设备系列，可能会提供其他开发人员功能。 仅当在设备上启用了“开发人员模式”时这些功能才可用，并且可能会因操作系统版本的不同而有所不同。
 
 此图显示了适用于版本 1511 Windows 10 移动设备系列的开发人员功能。
 
 ![适用于移动设备的开发人员模式选项](images/devmode-mob-options.png)
 
-### <span id="device-discovery-and-pairing"> </span>设备发现和 Device Portal
+### <span id="device-discovery-and-pairing"></span>设备发现和 Device Portal
 
 若要了解有关设备发现和 Device Portal 的详细信息，请参阅 [Windows Device Portal 概述](../debug-test-perf/device-portal.md)。
 
@@ -177,6 +172,6 @@ description: 可使用不同的方法针对 Windows 10 设备进行开发。
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 
