@@ -1,6 +1,6 @@
 ---
-Description&#58; 作者：jnHs 通过保留名称创建应用后，你可以开始着手其发布工作。 第一步是创建提交。
-title&#58; 应用提交 ms.assetid：363BB9E4-4437-4238-A80F-ABDFC70D96E4 关键字：提交应用关键字：必需的信息关键字：必填的字段关键字：必需的数据关键字：清单
+Description: author:jnHs 通过保留名称创建应用后，你可以开始着手其发布工作。 第一步是创建提交。
+title: 应用提交 ms.assetid：363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywords:提交应用keywords&#58;必需的信息keywords&#58;必填的字段keywords&#58;必需的数据keywords&#58;清单
 ---
 
 # 应用提交
