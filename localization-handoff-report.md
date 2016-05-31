@@ -1,75 +1,43 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\app-to-app\copy-and-paste.md](https://github.com/Microsoft/windows-apps/blob/bd2df770211332e2f6dba0bed0b1184836b81446/windows-apps-src/app-to-app/copy-and-paste.md) | OutofSyncHandedBackSuccess | [Details](#ff4fc70743b329fca2cec564976b4b512eee61ef128)
- [windows-apps-src\app-to-app\drag-and-drop.md](https://github.com/Microsoft/windows-apps/blob/bd2df770211332e2f6dba0bed0b1184836b81446/windows-apps-src/app-to-app/drag-and-drop.md) | OutofSyncHandedBackSuccess | [Details](#b88f3ab7ed4fc5db2508235aaa310a0dd7b4cec4129)
- [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps/blob/bd2df770211332e2f6dba0bed0b1184836b81446/windows-apps-src/app-to-app/receive-data.md) | OutofSyncHandedBackSuccess | [Details](#3853ccd58cbf48c8d39431ca5f5398bb80923c41131)
- [windows-apps-src\app-to-app\share-data.md](https://github.com/Microsoft/windows-apps/blob/bd2df770211332e2f6dba0bed0b1184836b81446/windows-apps-src/app-to-app/share-data.md) | OutofSyncHandedBackSuccess | [Details](#6c41466b2104240137ca3b375a92ca1f7fde4301132)
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/a0a111a7a210ed7dac41deb494626ca6100c4880/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | OutofSyncHandedBackSuccess | [Details](#8ab8f1dd641741c149a1ea8605d39bb0d8d4c3533373)
+ [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps/blob/4fba6a4e5fe05e78b9f181c57f890e2f4deb2eb9/windows-apps-src/security/index.md) | OutofSyncHandedBackSuccess | [Details](#cc81ca4f88b237f144c995b85639eeaed9045f323627)
 
 ## Item Details
-##### <a name='ff4fc70743b329fca2cec564976b4b512eee61ef128'></a> Source: [windows-apps-src\app-to-app\copy-and-paste.md](https://github.com/Microsoft/windows-apps/blob/bd2df770211332e2f6dba0bed0b1184836b81446/windows-apps-src/app-to-app/copy-and-paste.md)
+##### <a name='8ab8f1dd641741c149a1ea8605d39bb0d8d4c3533373'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/a0a111a7a210ed7dac41deb494626ca6100c4880/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [copy-and-paste.09a42c146ca62f211b673e6729a19fb8952dc83f.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f28ac3715eafd5d1e83d5d3f7a08dbc8ca8f4226/ol-handoff/Microsoft/windows-apps.zh-cn/master/copy-and-paste.09a42c146ca62f211b673e6729a19fb8952dc83f.zh-cn.xlf)
-* Handoff Datetime: 2016-05-31 21:40:46
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/bfe441d5877c02fa97ff7e61b0754e7b689524ae/ol-handoff/Microsoft/windows-apps.zh-cn/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-cn.xlf)
+* Handoff Datetime: 2016-05-31 22:41:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\app-to-app\copy-and-paste.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/daed17bd353d327ac2655ae6db272c280a595786/windows-apps-src/app-to-app/copy-and-paste.md)
-* Current Handback File: [copy-and-paste.09a42c146ca62f211b673e6729a19fb8952dc83f.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/a833beb0f28391c4ba20fc9b9a8dde9dee63fa72/ol-handback/Microsoft/windows-apps.zh-cn/master/app-to-app/copy-and-paste.09a42c146ca62f211b673e6729a19fb8952dc83f.zh-cn.xlf)
-* Current Handback Datetime: 2016-05-27 20:25:30
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/27e8131e3efa1512e560128405237a2ae1b73379/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7c2695059dc5b4a9ec011dc6f23dd5d79941adc5/ol-handback/Microsoft/windows-apps.zh-cn/master/porting/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-cn.xlf)
+* Current Handback Datetime: 2016-05-27 20:29:18
 * [Back to Top](#report-top)
 
-##### <a name='b88f3ab7ed4fc5db2508235aaa310a0dd7b4cec4129'></a> Source: [windows-apps-src\app-to-app\drag-and-drop.md](https://github.com/Microsoft/windows-apps/blob/bd2df770211332e2f6dba0bed0b1184836b81446/windows-apps-src/app-to-app/drag-and-drop.md)
+##### <a name='cc81ca4f88b237f144c995b85639eeaed9045f323627'></a> Source: [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps/blob/4fba6a4e5fe05e78b9f181c57f890e2f4deb2eb9/windows-apps-src/security/index.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [drag-and-drop.691a174bd4bab63c05fbd6093e6a7ed72f7b0a97.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f28ac3715eafd5d1e83d5d3f7a08dbc8ca8f4226/ol-handoff/Microsoft/windows-apps.zh-cn/master/drag-and-drop.691a174bd4bab63c05fbd6093e6a7ed72f7b0a97.zh-cn.xlf)
-* Handoff Datetime: 2016-05-31 21:40:46
+* Handoff File: [index.36c19658e673067b86aba619b12635d8359c4091.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/bfe441d5877c02fa97ff7e61b0754e7b689524ae/ol-handoff/Microsoft/windows-apps.zh-cn/master/index.36c19658e673067b86aba619b12635d8359c4091.zh-cn.xlf)
+* Handoff Datetime: 2016-05-31 22:41:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\app-to-app\drag-and-drop.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/daed17bd353d327ac2655ae6db272c280a595786/windows-apps-src/app-to-app/drag-and-drop.md)
-* Current Handback File: [drag-and-drop.691a174bd4bab63c05fbd6093e6a7ed72f7b0a97.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/a833beb0f28391c4ba20fc9b9a8dde9dee63fa72/ol-handback/Microsoft/windows-apps.zh-cn/master/app-to-app/drag-and-drop.691a174bd4bab63c05fbd6093e6a7ed72f7b0a97.zh-cn.xlf)
-* Current Handback Datetime: 2016-05-27 20:25:30
-* [Back to Top](#report-top)
-
-##### <a name='3853ccd58cbf48c8d39431ca5f5398bb80923c41131'></a> Source: [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps/blob/bd2df770211332e2f6dba0bed0b1184836b81446/windows-apps-src/app-to-app/receive-data.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f28ac3715eafd5d1e83d5d3f7a08dbc8ca8f4226/ol-handoff/Microsoft/windows-apps.zh-cn/master/receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.zh-cn.xlf)
-* Handoff Datetime: 2016-05-31 21:40:46
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/daed17bd353d327ac2655ae6db272c280a595786/windows-apps-src/app-to-app/receive-data.md)
-* Current Handback File: [receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/a833beb0f28391c4ba20fc9b9a8dde9dee63fa72/ol-handback/Microsoft/windows-apps.zh-cn/master/app-to-app/receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.zh-cn.xlf)
-* Current Handback Datetime: 2016-05-27 20:25:30
-* [Back to Top](#report-top)
-
-##### <a name='6c41466b2104240137ca3b375a92ca1f7fde4301132'></a> Source: [windows-apps-src\app-to-app\share-data.md](https://github.com/Microsoft/windows-apps/blob/bd2df770211332e2f6dba0bed0b1184836b81446/windows-apps-src/app-to-app/share-data.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [share-data.3ba4e53db66d4053e5d3aa87a62f6a200831a1c4.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f28ac3715eafd5d1e83d5d3f7a08dbc8ca8f4226/ol-handoff/Microsoft/windows-apps.zh-cn/master/share-data.3ba4e53db66d4053e5d3aa87a62f6a200831a1c4.zh-cn.xlf)
-* Handoff Datetime: 2016-05-31 21:40:46
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\app-to-app\share-data.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/daed17bd353d327ac2655ae6db272c280a595786/windows-apps-src/app-to-app/share-data.md)
-* Current Handback File: [share-data.3ba4e53db66d4053e5d3aa87a62f6a200831a1c4.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/a833beb0f28391c4ba20fc9b9a8dde9dee63fa72/ol-handback/Microsoft/windows-apps.zh-cn/master/app-to-app/share-data.3ba4e53db66d4053e5d3aa87a62f6a200831a1c4.zh-cn.xlf)
-* Current Handback Datetime: 2016-05-27 20:25:30
+* Current Target File: [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/5361562fdb8c87a6d957c047c8015ce476c7b4ca/windows-apps-src/security/index.md)
+* Current Handback File: [index.36c19658e673067b86aba619b12635d8359c4091.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/bb55c4aeb53f295bc48204b2dfdda3bfb276157c/ol-handback/Microsoft/windows-apps.zh-cn/master/security/index.36c19658e673067b86aba619b12635d8359c4091.zh-cn.xlf)
+* Current Handback Datetime: 2016-05-27 20:29:52
 * [Back to Top](#report-top)
 
 
