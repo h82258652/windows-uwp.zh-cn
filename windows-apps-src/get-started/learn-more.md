@@ -1,6 +1,6 @@
 ---
-description&#58; 作者：martinekuan ms.assetid：4288E511-581C-49DC-A2F2-1CB832C4A676 标题：后续步骤？现在你已经创建了你的第一个应用，请查看开发人员中心中的剩余部分。 以下是它所包含的其他部分的简介。
-关键字：开发人员中心, 教程 关键字：开发人员中心, 入门
+description: author:martinekuan ms.assetid：4288E511-581C-49DC-A2F2-1CB832C4A676 title:后续步骤？现在你已经创建了你的第一个应用，请查看开发人员中心中的剩余部分。 以下是它所包含的其他部分的简介。
+keywords:开发人员中心, 教程 keywords:开发人员中心, 入门
 ---
 # 后续步骤？
 

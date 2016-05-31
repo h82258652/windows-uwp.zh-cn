@@ -1,6 +1,6 @@
 ---
-description&#58; 作者：martinekuan ms.assetid：54973C62-9669-4988-934E-9273FB0425FD 标题：启用设备进行开发 可使用不同的方法针对 Windows 10 设备进行开发。
-关键字：开始使用 关键字：开发人员许可证 关键字：Visual Studio、开发人员许可证 关键字：启用设备
+description: author: martinekuan ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD title: 启用设备进行开发 可使用不同的方法针对 Windows 10 设备进行开发。
+keywords: 开始使用 keywords: 开发人员许可证 keywords: Visual Studio、开发人员许可证 keywords: 启用设备
 ---
 # 启用设备进行开发
 
