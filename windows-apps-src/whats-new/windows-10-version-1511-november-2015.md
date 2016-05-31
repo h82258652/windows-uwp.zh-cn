@@ -1,6 +1,6 @@
 ---
-Description&#58; 作者：QuinnRadich Windows 10 版本 1511 和开发人员工具更新继续提供受通用 Windows 平台支持的工具、功能和体验。
-title&#58; Windows 10 版本 1511 中面向开发人员的新增功能：2015 年 11 月
+Description: author:QuinnRadich Windows 10 版本 1511 和开发人员工具更新继续提供受通用 Windows 平台支持的工具、功能和体验。
+title: Windows 10 版本 1511 中面向开发人员的新增功能：2015 年 11 月
 ---
 
 # Windows 10 版本 1511 中面向开发人员的新增功能：2015 年 11 月
