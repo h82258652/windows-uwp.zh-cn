@@ -1,6 +1,6 @@
 ---
-Description&#58; 作者：mcleanbyron 通过应用商店商业平台提供可消费应用内产品&amp;\#8212;这些项目可以进行购买、使用和再次购买&amp;\#8212;，以便为客户提供强大可靠的购买体验。
-title&#58; 启用可消费应用内产品购买 ms.assetid：F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 关键字：应用内付费 关键字：可消费 关键字：应用内购买 关键字：应用内产品 关键字：如何支持应用内 关键字：应用内购买代码示例 关键字：应用内付费代码示例
+Description: author:mcleanbyron 通过应用商店商业平台提供可消费应用内产品&amp;\#8212;这些项目可以进行购买、使用和再次购买&amp;\#8212;，以便为客户提供强大可靠的购买体验。
+title: 启用可消费应用内产品购买 ms.assetid：F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 keywords:应用内付费 keywords:可消费 keywords:应用内购买 keywords:应用内产品 keywords:如何支持应用内 keywords:应用内购买代码示例 keywords:应用内付费代码示例
 ---
 
 # 启用可消费应用内产品购买
