@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "a59d999ac36e04fbfa53d5b8992b235bff2d3818",
+  "LastProcessedCommit": "21dd3938f09df6f19cba1bbe2e0e696603f92b84",
   "LastTranslatedCommit": "88c8b56ed0bcef1db209e70ca6e3b948ed1d3ee6",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -67177,6 +67177,36 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.zh-cn\\master\\tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.zh-cn.xlf",
       "HandoffFileCommit": "c4424e058507a2672fb6bb8970cb8b16e110c715",
       "HandoffDateTime": "2016-05-31T18:43:05.9733624Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "479b900ca14497712f25a7825fde6775a3c1ab60": {
+      "FileHash": "479b900ca14497712f25a7825fde6775a3c1ab60",
+      "SourceFileCommit": "60e328ca8652baeb226e78f5a9d99fbf8c4f5208",
+      "SourceFilePath": "windows-apps-src\\xaml-platform\\xaml-intrinsic-data-types.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\xaml-platform\\xaml-intrinsic-data-types.md"
+      ],
+      "HasMetadata": true,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.zh-cn\\master\\xaml-intrinsic-data-types.fb0de19cdad63c788add66ad9b4077bd0bf29c8f.zh-cn.xlf",
+      "HandoffFileCommit": "7ee265d005523465fbe4129db178b3bd2d6cb9b3",
+      "HandoffDateTime": "2016-05-31T19:12:29.4363058Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
