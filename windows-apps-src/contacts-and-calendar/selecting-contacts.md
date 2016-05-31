@@ -1,6 +1,6 @@
 ---
-description&#58; 作者：Xansky Windows.ApplicationModel.Contacts 命名空间提供了多个用于选择联系人的选项。
-title&#58; 选择联系人 ms.assetid：35FEDEE6-2B0E-4391-84BA-5E9191D4E442 关键字：联系人, 选择 关键字：选择单个联系人 关键字：选择多个联系人 关键字：联系人, 选择多个 关键字：选择特定联系人数据 关键字：联系人, 选择特定数据 关键字：联系人, 选择特定字段
+description: author: Xansky Windows.ApplicationModel.Contacts 命名空间提供了多个用于选择联系人的选项。
+title: 选择联系人 ms.assetid：35FEDEE6-2B0E-4391-84BA-5E9191D4E442 keywords:联系人, 选择 keywords:选择单个联系人 keywords:选择多个联系人 keywords:联系人, 选择多个 keywords:选择特定联系人数据 keywords:联系人, 选择特定数据 keywords:联系人, 选择特定字段
 ---
 
 # 选择联系人
