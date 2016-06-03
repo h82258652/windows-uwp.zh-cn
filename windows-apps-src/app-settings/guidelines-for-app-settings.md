@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 本文将介绍有关创建和显示应用设置的最佳做法。
 title: 应用设置指南
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
@@ -10,14 +11,14 @@ template: detail.hbs
 # 应用设置指南
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 
 应用设置是应用的用户可自定义部分，并位于应用设置页面内。 例如，新闻阅读器应用中的应用设置可以让用户指定要显示的新闻源或屏幕上要显示的列数，而天气应用的设置则可以让用户在摄氏度和华氏度之间选择默认的测量单位。 本文将介绍有关创建和显示应用设置的最佳做法。
 
 ![设置窗格的示例](images/app-settings.png)
 
-## <span id="Should_I_include_a_settings_page_in_my_app_"> </span> <span id="should_i_include_a_settings_page_in_my_app_"> </span> <span id="SHOULD_I_INCLUDE_A_SETTINGS_PAGE_IN_MY_APP_"> </span>应用中应该包含设置页面吗？
+## <span id="Should_I_include_a_settings_page_in_my_app_"></span><span id="should_i_include_a_settings_page_in_my_app_"></span><span id="SHOULD_I_INCLUDE_A_SETTINGS_PAGE_IN_MY_APP_"></span>应用中应该包含设置页面吗？
 
 以下是属于应用设置页面的应用选项的示例： 
 
@@ -27,7 +28,7 @@ template: detail.hbs
 
 包含在典型应用工作流中的命令（例如在艺术应用中更改画笔大小）不应该位于设置页面中。 若要了解有关命令放置的详细信息，请参阅[命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)。
 
-## <span id="general_principles"> </span> <span id="GENERAL_PRINCIPLES"> </span>常规建议
+## <span id="general_principles"></span><span id="GENERAL_PRINCIPLES"></span>常规建议
 
 
 -   保持设置页面简洁，并使用二进制（开/关）控件。 通常，[切换开关](../controls-and-patterns/toggles.md)是二进制设置的最佳控件。
@@ -35,9 +36,9 @@ template: detail.hbs
 -   在应用设置页面为所有应用设置创建入口点。
 -   保持设置简单化。 定义智能默认值，并使设置数保持最少。
 -   当用户更改设置时，应用应当立即反映所做的更改。
--   请勿包括属于常见应用工作流的命令。
+-   不要包括属于常见应用工作流的命令。
 
-## <span id="Entry_point"> </span> <span id="entry_point"> </span> <span id="ENTRY_POINT"> </span>入口点
+## <span id="Entry_point"></span><span id="entry_point"></span><span id="ENTRY_POINT"></span>入口点
 
 
 用户进入应用设置页面的方式应取决于应用的布局。
@@ -66,7 +67,7 @@ template: detail.hbs
 
 与其将应用设置入口点深埋在大纲-细节窗格中，不如将其设置为高级大纲窗格上的最后一个固定项。
 
-## <span id="Layout"> </span> <span id="layout"> </span> <span id="LAYOUT"> </span>布局
+## <span id="Layout"></span><span id="layout"></span><span id="LAYOUT"></span>布局
 
 
 在桌面版和移动版上，应用设置窗口都应该全屏填满整个窗口。 如果应用设置菜单拥有最多 4 个高级组，这些组应该叠在一列上。
@@ -79,7 +80,7 @@ template: detail.hbs
 
 ![手机上应用设置页面的布局](images/appsettings-layout-navpane-mobile.png)
 
-## <span id="_About__section_and__Give_feedback__button"> </span> <span id="_about__section_and__give_feedback__button"> </span> <span id="_ABOUT__SECTION_AND__GIVE_FEEDBACK__BUTTON"> </span>“关于”部分和“提供反馈”按钮
+## <span id="_About__section_and__Give_feedback__button"></span><span id="_about__section_and__give_feedback__button"></span><span id="_ABOUT__SECTION_AND__GIVE_FEEDBACK__BUTTON"></span>“关于”部分和“提供反馈”按钮
 
 
 如果你的应用需要“关于此应用”部分，请专门为之创建一个应用设置页面。 如果你需要“提供反馈”按钮，请将该按钮放置在“关于此应用”页面的底部。
@@ -88,10 +89,10 @@ template: detail.hbs
 
 ![附带“提供反馈”按钮的“关于此应用”部分](images/appsettings-about.png)
 
-## <span id="dos_and_donts"> </span> <span id="DOS_AND_DONTS"> </span>建议
+## <span id="dos_and_donts"></span><span id="DOS_AND_DONTS"></span>建议
 
 
-## <span id="add_entry_points"> </span> <span id="ADD_ENTRY_POINTS"> </span>应用设置页面内容
+## <span id="add_entry_points"></span><span id="ADD_ENTRY_POINTS"></span>应用设置页面内容
 
 
 如果你有一个要包括在应用设置页面中的项目列表，请考虑以下指南：
@@ -104,7 +105,7 @@ template: detail.hbs
 -   将不太常用的设置组合到一个入口中，以便每个更常见的设置都有其各自的入口。 将仅包含信息的内容或链接放入“关于”设置。
 -   不要复制“权限”窗格中的功能。 默认情况下，Windows 提供此窗格，你无法修改它。
 
-## <span id="add_settings_to_flyouts"> </span> <span id="ADD_SETTINGS_TO_FLYOUTS"> </span> 向“设置”浮出控件添加设置内容
+## <span id="add_settings_to_flyouts"></span><span id="ADD_SETTINGS_TO_FLYOUTS"></span> 向“设置”浮出控件添加设置内容
 
 
 -   在单个列中从上至下展示内容，支持滚动（如果需要）。 滚动限制的最大值是屏幕高度的两倍。
@@ -124,18 +125,18 @@ template: detail.hbs
 
 \[此文章包含特定于通用 Windows 平台 (UWP) 应用和 Windows 10 的信息。 有关 Windows 8.1 指南，请下载 [Windows 8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
 
-## <span id="related_topics"> </span>相关主题
+## <span id="related_topics"></span>相关主题
 
 * [命令设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [进度控件指南](https://msdn.microsoft.com/library/windows/apps/hh465469)
-**对于开发人员 (XAML)**
+* [进度控件指南](https://msdn.microsoft.com/library/windows/apps/hh465469) 
+           **对于开发人员 (XAML)**
 * [存储和检索应用数据](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
-�
+* [
+            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
 
 �
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 
