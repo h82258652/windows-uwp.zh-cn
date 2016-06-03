@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\app-settings\guidelines-for-app-settings.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/app-settings/guidelines-for-app-settings.md) | InSyncHandedBackSuccess | [Details](#aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e431)
 
 ## Item Details
-##### <a name='aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e431'></a> Source: [windows-apps-src\app-settings\guidelines-for-app-settings.md](https://github.com/Microsoft/windows-apps/blob/59e02840c72d8bccda7e318197e4bf45ed667fa4/windows-apps-src/app-settings/guidelines-for-app-settings.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\app-settings\guidelines-for-app-settings.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/b512000da19db97373f5a9891709896b34284b6e/windows-apps-src/app-settings/guidelines-for-app-settings.md)
-* Handoff File: [guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0607049bfa018cc6bec72fd2d79d3c6fd08f0f65/ol-handoff/Microsoft/windows-apps.zh-cn/master/guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.zh-cn.xlf)
-* Handoff Datetime: 2016-05-12 02:26:30
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/faa1f3fb611f666282a9c8d6b3c7e34c64cdbe7f/ol-handback/Microsoft/windows-apps.zh-cn/master/guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.zh-cn.xlf)
-* Handback Datetime: 2016-06-03 14:40:22
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
