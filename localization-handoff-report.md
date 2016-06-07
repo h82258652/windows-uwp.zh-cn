@@ -1,11 +1,29 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/37d4c8ef6178fe78c7333c47848177b5185c6d61/windows-apps-src/porting/desktop-to-uwp-root.md) | OutofSyncHandedBackSuccess | [Details](#16d75ebd2499e56af742c1c9994fd92cc320c22b3374)
 
 ## Item Details
+##### <a name='16d75ebd2499e56af742c1c9994fd92cc320c22b3374'></a> Source: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/37d4c8ef6178fe78c7333c47848177b5185c6d61/windows-apps-src/porting/desktop-to-uwp-root.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/27a09da0695f80a72ad241f958790f9bf59a42d3/ol-handoff/Microsoft/windows-apps.zh-cn/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.zh-cn.xlf)
+* Handoff Datetime: 2016-06-07 18:48:50
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/4f196ad7f85c0cb9f9d6696ca52ed8c12ae59640/windows-apps-src/porting/desktop-to-uwp-root.md)
+* Current Handback File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/560b453c22c2fa63f9714ae86e484f1bc42f4b40/ol-handback/Microsoft/windows-apps.zh-cn/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.zh-cn.xlf)
+* Current Handback Datetime: 2016-06-01 19:43:45
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
