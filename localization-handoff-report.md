@@ -1,26 +1,39 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/836ffd3f1bc3a9d9be4fa510d5188b565972c130/windows-apps-src/publish/dev-center-insider-program.md) | OutofSyncHandedBackSuccess | [Details](#64b9327258d6116922d3e4cc097ed3dda08b541b3509)
+ [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps/blob/b038886ff0dfe1e2f6d93e9393062faa253f5130/windows-apps-src/porting/desktop-to-uwp-signing.md) | HandedOffSuccess | [Details](#30efa290f3fbf169666e16247be8d116f23ab02d3383)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/866b95bcf2faf48d279ca250d494ae0ae84206f0/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#a816f1e992c7e2731ba8d1779c26ff3d87b99cd03780)
 
 ## Item Details
-##### <a name='64b9327258d6116922d3e4cc097ed3dda08b541b3509'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/836ffd3f1bc3a9d9be4fa510d5188b565972c130/windows-apps-src/publish/dev-center-insider-program.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='30efa290f3fbf169666e16247be8d116f23ab02d3383'></a> Source: [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps/blob/b038886ff0dfe1e2f6d93e9393062faa253f5130/windows-apps-src/porting/desktop-to-uwp-signing.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/c337f523dc1fa7ba734e455d8e1970f51ee2b383/ol-handoff/Microsoft/windows-apps.zh-cn/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf)
-* Handoff Datetime: 2016-06-15 20:06:50
+* Handoff File: [desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f13c79b8f549041d3e7f32bb53ce81abb6075bbb/ol-handoff/Microsoft/windows-apps.zh-cn/master/desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.zh-cn.xlf)
+* Handoff Datetime: 2016-06-15 22:22:47
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/4f196ad7f85c0cb9f9d6696ca52ed8c12ae59640/windows-apps-src/publish/dev-center-insider-program.md)
-* Current Handback File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/560b453c22c2fa63f9714ae86e484f1bc42f4b40/ol-handback/Microsoft/windows-apps.zh-cn/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf)
+* [Back to Top](#report-top)
+
+##### <a name='a816f1e992c7e2731ba8d1779c26ff3d87b99cd03780'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/866b95bcf2faf48d279ca250d494ae0ae84206f0/windows-apps-src/TOC.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f13c79b8f549041d3e7f32bb53ce81abb6075bbb/ol-handoff/Microsoft/windows-apps.zh-cn/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf)
+* Handoff Datetime: 2016-06-15 22:22:47
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/4f196ad7f85c0cb9f9d6696ca52ed8c12ae59640/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/560b453c22c2fa63f9714ae86e484f1bc42f4b40/ol-handback/Microsoft/windows-apps.zh-cn/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf)
 * Current Handback Datetime: 2016-06-01 19:43:45
 * [Back to Top](#report-top)
 
