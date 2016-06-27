@@ -1,8 +1,11 @@
 ---
 author: jwmsft
-description: 了解移动和绘制命令（小型语言），可用于将路径几何图形指定为 XAML 属性值。
-title: 移动和绘制命令语法
+description: "了解移动和绘制命令（小型语言），可用于将路径几何图形指定为 XAML 属性值。"
+title: "移动和绘制命令语法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+ms.sourcegitcommit: e1399a25b0455c9a79dcb217c5df1a397420d1f3
+ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
+
 ---
 
 # 移动和绘制命令语法
@@ -221,11 +224,11 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 ## 用于生成移动和绘制命令的设计工具
 
-在 Blend for Microsoft Visual Studio 2013 中使用**笔**工具和其他绘图工具通常会生成一个具有移动和绘制命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 对象。
+在 Blend for Microsoft Visual Studio 2015 中使用**笔**工具和其他绘图工具通常会生成一个具有移动和绘制命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 对象。
 
 你可能在某些控件部件中看到现有移动和绘制命令数据，这些部件已在控件的 Windows 运行时 XAML 默认模板中定义。 例如，某些控件将已定义数据的 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) 用作移动和绘制命令。
 
-为其他常用矢量图形设计工具提供了输出程序或插件，这些工具用于采用 XAML 格式输出矢量。 它们通常使用 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的移动和绘制命令在布局容器中创建 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 对象。 XAML 中可能存在多个 **Path** 元素，因此可以应用不同的画笔。 这些输出程序或插件最初是为 Windows Presentation Foundation (WPF) XAML 编写的，但 XAML 语法的这一方面与 Windows 运行时 XAML 一致。 你可以使用来自输出程序的 XAML 区块，并将其正确粘贴到 Windows 运行时 XAML 页面中。 （但是，如果 **RadialGradientBrush** 是已转换的 XAML 的一部分，你将无法使用它，因为 Windows 运行时 XAML 不支持该画笔。）
+为其他常用矢量图形设计工具提供了输出程序或插件，这些工具用于采用 XAML 格式输出矢量。 它们通常使用 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的移动和绘制命令在布局容器中创建 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 对象。 XAML 中可能存在多个 **Path** 元素，因此可以应用不同的画笔。 许多此类导出程序或插件最初是为 Windows Presentation Foundation (WPF) XAML 或 Silverlight 编写的，但 XAML 路径语法与 Windows 运行时 XAML 一致。 通常，你可以使用来自导出程序的 XAML 区块，并将其正确粘贴到 Windows 运行时 XAML 页面中。 （但是，如果 **RadialGradientBrush** 是已转换的 XAML 的一部分，你将无法使用它，因为 Windows 运行时 XAML 不支持该画笔。）
 
 ## 相关主题
 
@@ -236,6 +239,7 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

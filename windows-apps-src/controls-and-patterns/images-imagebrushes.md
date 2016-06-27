@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 了解如何将图像集成到应用中，包括如何使用以下两个主要 XAML 类的 API：Image 和 ImageBrush。
-title: 图像和图像画笔
+Description: "了解如何将图像集成到应用中，包括如何使用以下两个主要 XAML 类的 API：Image 和 ImageBrush。"
+title: "图像和图像画笔"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
+
 ---
 # 图像和图像画笔
 
@@ -145,6 +148,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

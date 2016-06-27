@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 本主题介绍用于选择和操作文本、图像和控件的新的 Windows UI，并提供在 Windows 应用商店应用中使用这些新的选择和操作机制时应该考虑的用户体验指南。
-title: 选择文本和图像
+Description: "本主题介绍用于选择和操作文本、图像和控件的新的 Windows UI，并提供在 Windows 应用商店应用中使用这些新的选择和操作机制时应该考虑的用户体验指南。"
+title: "选择文本和图像"
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: a47b48f9315c51505b2c487c140011e053105556
+
 ---
 
 # 选择文本和图像
@@ -131,6 +134,7 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

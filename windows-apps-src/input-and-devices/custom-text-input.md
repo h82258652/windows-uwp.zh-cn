@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Windows.UI.Text.Core 命名空间中的核心文本 API 支持通用 Windows 平台 (UWP) 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。
-title: 自定义文本输入概述
+Description: "Windows.UI.Text.Core 命名空间中的核心文本 API 支持通用 Windows 平台 (UWP) 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。"
+title: "自定义文本输入概述"
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
+
 ---
 
 # 自定义文本输入
@@ -62,7 +65,7 @@ template: detail.hbs
 
 ### <span id="Insertion_point"></span><span id="insertion_point"></span><span id="INSERTION_POINT"></span>插入点
 
-通常称为插入点的当前插入光标位置通过将 **StartCaretPosition** 设置为等于 **EndCaretPosition** 来表示
+通常称为插入点的当前插入光标位置通过将 **StartCaretPosition** 设置为等于 **EndCaretPosition** 来表示。
 
 ### <span id="Noncontiguous_selection"></span><span id="noncontiguous_selection"></span><span id="NONCONTIGUOUS_SELECTION"></span>非连续选择
 
@@ -70,93 +73,94 @@ template: detail.hbs
 
 例如，考虑此文本流：
 
-![示例文本流图示 存在两个选择：\[0, 1\] 和 \[6, 11\]。
+![示例文本流图示](images/coretext/stream-2.png) 有两种选择：\[0, 1\] 和 \[6, 11\]。 编辑控件必须仅报告其中一个选择：\[0, 1\] 或 \[6, 11\]。
 
-## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>编辑控件必须仅报告其中一个选择：\[0, 1\] 或 \[6, 11\]。
+## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>使用文本
 
-
-使用文本
 
 [
             **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 类通过 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件和 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法支持 Windows 和编辑控件之间的文本流。
 
 你的编辑控件通过 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件接收文本，这些事件在用户与文本输入法（如键盘、语音或 IME）交互时生成。
 
-当在你的编辑控件中更改文本时（例如，通过将文本粘贴到该控件中），需要通过调用 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 来通知 Windows 如果文本服务需要新的文本，将引发 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件。
+当在你的编辑控件中更改文本时（例如，通过将文本粘贴到该控件中），需要通过调用 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 来通知 Windows。
 
-### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>必须在 **TextRequested** 事件处理程序中提供新的文本。
+如果文本服务需要新的文本，将引发 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件。 必须在 **TextRequested** 事件处理程序中提供新的文本。
 
-接受文本更新 由于文本更新请求表示用户想要输入的文本，因此你的编辑控件通常应接受这些请求。
+### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>接受文本更新
 
-1.  在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件处理程序中，这些操作按你的编辑控件要求进行：
-2.  将 [**CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) 中指定的文本插入 [**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) 中指定的位置
-3.  将选定内容放置在 [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) 中指定的位置
+由于文本更新请求表示用户想要输入的文本，因此你的编辑控件通常应接受这些请求。 在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件处理程序中，这些操作按你的编辑控件要求进行：
 
-通知系统更新已成功，方法为将 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237) 例如，这是编辑控件在用户键入“d”之前的状态。
+1.  将 [**CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) 中指定的文本插入 [**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) 中指定的位置。
+2.  将选定内容放置在 [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) 中指定的位置。
+3.  通知系统更新已成功，方法为将 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237)。
 
-![该插入点位于 \[10, 10\]。
+例如，这是编辑控件在用户键入“d”之前的状态。 该插入点位于 \[10, 10\]。
 
--   示例文本流图示
--   当用户键入“d”时，将引发 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件并带有以下 [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) 数据：
+![示例文本流图示](images/coretext/stream-3.png) 当用户键入“d”时，将引发 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件并带有以下 [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) 数据：
+
 -   [
             **Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
-
-[
-            **Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d" [
+-   [
+            **Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [
             **NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
-![在你的编辑控件中，应用指定的更改并将 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 **Succeeded**。](images/coretext/stream-4.png)
-### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>下面是该控件在应用更改后的状态。
+在你的编辑控件中，应用指定的更改并将 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 **Succeeded**。 下面是该控件在应用更改后的状态。
 
-示例文本流图示 拒绝文本更新 由于请求的范围是不应进行更改的编辑控件区域，因此有时无法应用文本更新。
+![示例文本流图示](images/coretext/stream-4.png)
+### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>拒绝文本更新
 
-在这种情况下，不应该应用任何更改。 而应通知系统更新失败，方法为将 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237)
+由于请求的范围是不应进行更改的编辑控件区域，因此有时无法应用文本更新。 在这种情况下，不应该应用任何更改。 相反，应通知系统更新失败，方法为将 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237)。
 
-### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>例如，请考虑只接受电子邮件地址的编辑控件。
+例如，请考虑只接受电子邮件地址的编辑控件。 由于电子邮件地址不能含有空格，因此应拒绝空格；以便在针对空格键引发 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件时，只需在你的编辑控件中将 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 **Failed**。
 
-由于电子邮件地址不能含有空格，因此应拒绝空格；以便在针对空格键引发 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件时，只需在你的编辑控件中将 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 **Failed**。 通知文本更改
+### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>通知文本更改
 
 有时，你的编辑控件会对文本进行更改，例如在粘贴或自动更正文本时。 在这些情况下，必须通过调用 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法向文本服务通知这些更改。
 
-![例如，这是编辑控件在用户粘贴“World”之前的状态。
+例如，这是编辑控件在用户粘贴“World”之前的状态。 该插入点位于 \[6, 6\]。
 
-![该插入点位于 \[6, 6\]。
+![示例文本流图示](images/coretext/stream-5.png) 用户执行粘贴操作，编辑控件结束时会带有以下文本：
 
--   示例文本流图示
--   用户执行粘贴操作，编辑控件结束时会带有以下文本：
--   示例文本流图示
+![示例文本流图示](images/coretext/stream-4.png) 当发生此情况时，应调用带有以下参数的 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
 
-当发生此情况时，应调用带有以下参数的 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
+-   *modifiedRange* = \[6, 6\]
+-   *newLength* = 5
+-   *newSelection* = \[11, 11\]
 
-### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>*modifiedRange* = \[6, 6\]
+按顺序处理陆续生成的一个或多个 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件以更新文本服务所使用的文本。
 
-*newLength* = 5
+### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>覆盖文本更新
 
-*newSelection* = \[11, 11\] 按顺序处理陆续生成的一个或多个 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件以更新文本服务所使用的文本。 覆盖文本更新
+在你的编辑控件中，你可能希望覆盖文本更新以提供自动更正功能。
 
-![在你的编辑控件中，你可能希望覆盖文本更新以提供自动更正功能。 例如，请考虑提供支持形式化缩略的更正功能的编辑控件。 这是编辑控件在用户键入空格键以触发更正之前的状态。 该插入点位于 \[3, 3\]。
+例如，请考虑提供支持形式化缩略的更正功能的编辑控件。 这是编辑控件在用户键入空格键以触发更正之前的状态。 该插入点位于 \[3, 3\]。
 
-![示例文本流图示 用户按空格键，将引发相应的 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件。 编辑控件将接受文本更新。
+![示例文本流图示](images/coretext/stream-6.png) 用户按空格键，将引发相应的 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件。 编辑控件将接受文本更新。 这是编辑控件在完成更正之前所处的短暂状态。 该插入点位于 \[4, 4\]。
 
-![这是编辑控件在完成更正之前所处的短暂状态。
+![示例文本流图示](images/coretext/stream-7.png) 在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件处理程序之外，编辑控件将进行以下更正。 这是编辑控件在完成更正之后的状态。 该插入点位于 \[5, 5\]。
 
--   该插入点位于 \[4, 4\]。
--   示例文本流图示
--   在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件处理程序之外，编辑控件将进行以下更正。
+![示例文本流图示](images/coretext/stream-8.png) 当发生此情况时，应调用带有以下参数的 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
 
-这是编辑控件在完成更正之后的状态。
+-   *modifiedRange* = \[1, 2\]
+-   *newLength* = 2
+-   *newSelection* = \[5, 5\]
 
-### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>该插入点位于 \[5, 5\]。
+按顺序处理陆续生成的一个或多个 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件以更新文本服务所使用的文本。
 
-示例文本流图示 当发生此情况时，应调用带有以下参数的 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172)：
+### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>提供请求的文本
 
-*modifiedRange* = \[1, 2\] *newLength* = 2 *newSelection* = \[5, 5\]
+请务必确保文本服务具有正确的文本，特别是已存在于编辑控件中的文本（例如，通过加载文档，或由编辑控件插入的文本（如前面的部分所述），以便提供诸如自动更正或预测的功能。 因此，每当引发 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件时，都必须向当前在你的编辑控件中的文本提供指定范围。
 
-## <span id="related_topics"></span>按顺序处理陆续生成的一个或多个 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件以更新文本服务所使用的文本。
+[
+            **CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) 中的 [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) 可以多次指定你的编辑控件不能按原样容纳的某个范围。 例如，**Range** 大于发生 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件时的编辑控件的大小，或者 **Range** 的末尾超出范围。 在这些情况下，应返回有意义的任何范围，该范围通常是请求的范围的子集。
+
+## <span id="related_topics"></span>相关文章
 
 
-**提供请求的文本**
-* [请务必确保文本服务具有正确的文本，特别是已存在于编辑控件中的文本（例如，通过加载文档，或由编辑控件插入的文本（如前面的部分所述），以便提供诸如自动更正或预测的功能。](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+**存档示例**
+* [XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  
@@ -166,6 +170,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

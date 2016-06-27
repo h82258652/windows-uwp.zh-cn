@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 中心控件使用分层导航模式支持具有相关信息体系结构的应用。
-title: 中心控件
+Description: "中心控件使用分层导航模式支持具有相关信息体系结构的应用。"
+title: "中心控件"
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
+
 ---
 # 中心控件/模式
 
@@ -110,6 +113,7 @@ template: detail.hbs
 - [使用中心](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

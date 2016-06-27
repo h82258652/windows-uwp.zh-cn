@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 从 Cortana 的后台应用服务提供深层链接，以便在特定状态或上下文中将应用启动到前台。
-title: Cortana 到后台应用的深层链接
+Description: "从 Cortana 的后台应用服务提供深层链接，以便在特定状态或上下文中将应用启动到前台。"
+title: "Cortana 到后台应用的深层链接"
 ms.assetid: BE811A87-8821-476A-90E4-2E20D37E4043
 label: Deep link to a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: b89aa43dffa69d092615e1b408feac77d0caa87c
+
 ---
 
 # Cortana 到后台应用的深层链接
@@ -65,11 +68,11 @@ template: detail.hbs
 
 可以为此链接提供在与应用服务类似的上下文中打开应用的启动参数。 如果未提供启动参数，则应用将启动到主屏幕。
 
-在 **AdventureWorks** 样例的 AdventureWorksVoiceCommandService.cs 示例中，我们将指定目标传递到 SendCompletionMessageForDestination 方法，该方法可检索所有匹配的行程并提供应用的深层链接。
+在来自 **AdventureWorks** 示例的 AdventureWorksVoiceCommandService.cs 的此示例中，我们将指定目标 (`destination`) 字符串传递到 SendCompletionMessageForDestination 方法，该方法可检索所有匹配的行程并提供应用的深层链接。
 
 首先，我们创建由 **Cortana** 说出并在 **Cortana** 画布上显示的 [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```)。 然后创建 [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) 列表对象以在该画布上显示结果卡集合。 
 
-稍后这两个对象对传递到 [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) 对象 (```response```) 的 [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) 方法。 然后我们将设置语音命令目标值的 [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) 属性值。
+稍后这两个对象对传递到 [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) 对象 (`response`) 的 [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) 方法。 然后，我们将响应对象的 [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) 属性值设置为传递给此函数的 `destination` 的值。 当用户点击 Cortana 画布上的内容磁贴时，参数值将通过响应对象传递到应用。
 
 最后，我们调用 [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) 的 [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) 方法。
 
@@ -288,6 +291,7 @@ if (args.Kind == ActivationKind.Protocol)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

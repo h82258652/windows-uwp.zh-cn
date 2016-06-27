@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 正如人们在彼此交流时会结合使用语音和手势，在与应用交互时也会用到多种类型和模式的输入。
-title: 多个输入设计指南
+Description: "正如人们在彼此交流时会结合使用语音和手势，在与应用交互时也会用到多种类型和模式的输入。"
+title: "多个输入设计指南"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
+
 ---
 
 # 多个输入
@@ -40,6 +43,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

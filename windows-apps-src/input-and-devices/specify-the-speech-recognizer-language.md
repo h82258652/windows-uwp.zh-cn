@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何选择要用于语音识别的安装语言。
-title: 指定语音识别器语言
+Description: "了解如何选择要用于语音识别的安装语言。"
+title: "指定语音识别器语言"
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 24393ef52d72aa08f9aab2d541e65ccb5f2aceed
+
 ---
 
 # 指定语音识别器语言
@@ -26,7 +29,7 @@ template: detail.hbs
 
 **先决条件：  **
 
-本主题围绕[语音识别](speech-recognition.md)展开
+本主题围绕[语音识别](speech-recognition.md)展开。
 
 你应该已经大致了解了语音识别和识别约束。
 
@@ -37,7 +40,7 @@ template: detail.hbs
 
 **用户体验指南：  **
 
-有关设计出既实用又有吸引力且支持语音的应用的有用提示，请参阅[语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)
+有关设计出既实用又有吸引力且支持语音的应用的有用提示，请参阅[语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)。
 
 ## <span id="Identify_the_default_language"></span><span id="identify_the_default_language"></span><span id="IDENTIFY_THE_DEFAULT_LANGUAGE"></span>识别默认语言
 
@@ -106,9 +109,11 @@ SRGS 语法是由 [**SpeechRecognitionGrammarFileConstraint**](https://msdn.micr
 
 
 **开发人员**
-* 语音交互
-* 设计人员
-* [语音设计指南](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [语音交互](speech-interactions.md) 
+           **设计人员**
+* [语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121) 
+           **示例**
+* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -118,6 +123,7 @@ SRGS 语法是由 [**SpeechRecognitionGrammarFileConstraint**](https://msdn.micr
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

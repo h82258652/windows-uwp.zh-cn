@@ -1,11 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 生成支持使用笔和触笔设备进行自定义交互（包括用于自然书写和绘图体验的数字墨迹）的通用 Windows 平台 (UWP) 应用。
-title: UWP 应用中的笔和触笔交互
+Description: "生成支持使用笔和触笔设备进行自定义交互（包括用于自然书写和绘图体验的数字墨迹）的通用 Windows 平台 (UWP) 应用。"
+title: "UWP 应用中的笔和触笔交互"
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen and stylus interactions in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
+
 ---
 
 # UWP 应用中的笔和触笔交互
@@ -77,7 +80,7 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 | 带有背景图的空白 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。 | 带有笔划墨迹的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。 | 擦除了一条笔划的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)（注意如何在整条笔划而非某个部分上执行擦除）。 |
 
 [
-            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件支持的墨迹书写功能由名为 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的代码隐藏对象提供
+            **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件支持的墨迹书写功能由名为 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的代码隐藏对象提供。
 
 对于基本墨迹书写，你不必考虑 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011)。 但是，若要在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上自定义和配置墨迹书写行为，则必须访问其相应的 **InkPresenter** 对象。
 
@@ -96,7 +99,7 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 
  
 
-我们在此处将 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹。 我们还将设置一些用于将笔划呈现到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 的初始笔划墨迹属性
+我们在此处将 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹。 我们还将设置一些用于将笔划呈现到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 的初始墨迹笔划属性。
 
 ```CSharp
 public MainPage()
@@ -152,7 +155,7 @@ public MainPage()
 </Grid>
 ```
 
-然后处理对所选颜色的更改并相应地更新笔划墨迹属性。
+然后处理对所选颜色的更改并相应地更新墨迹笔划属性。
 
 ```CSharp
 // Update ink stroke color for new strokes.
@@ -183,7 +186,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 }
 ```
 
-这些图像显示了 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 如何处理和自定义笔输入
+这些图像显示了 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 如何处理和自定义笔输入。
 
 | ![具有默认的黑色笔划墨迹的 inkcanvas](images/ink-basic-custom-1-small.png) | ![具有用户选择的红色笔划墨迹的 inkcanvas](images/ink-basic-custom-2-small.png) |
 | --- | -- |
@@ -243,9 +246,9 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
     private Rect boundingRect;
 ```
 
-3.  接下来，我们配置 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 以将来自笔和鼠标的输入数据解释为笔划墨迹，然后设置一些用于将笔划呈现到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 的初始笔划墨迹属性
+3.  接下来，我们配置 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 以将来自笔和鼠标的输入数据解释为墨迹笔划，然后设置一些用于将笔划呈现到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 的初始墨迹笔划属性。
 
-    最重要的是，我们使用 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**InputProcessingConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948764) 属性指示任何修改的输入均应由应用进行处理。 通过向 **InputProcessingConfiguration.RightDragAction** 分配值 [**InkInputRightDragAction.LeaveUnprocessed**](https://msdn.microsoft.com/library/windows/apps/dn948760)
+    最重要的是，我们使用 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**InputProcessingConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948764) 属性指示任何修改的输入均应由应用进行处理。 通过向 **InputProcessingConfiguration.RightDragAction** 分配值 [**InkInputRightDragAction.LeaveUnprocessed**](https://msdn.microsoft.com/library/windows/apps/dn948760) 指定修改的输入。
 
     然后，我们为由 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 传递的未经处理的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712)、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) 事件分配侦听器。 所有选择功能均在这些事件的处理程序中实现。
 
@@ -295,7 +298,7 @@ public MainPage()
     }
 ```
 
-4.  然后，我们为由 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 传递的未经处理的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712)、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) 事件定义处理程序
+4.  然后，我们为由 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 传递的未经处理的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712)、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) 事件定义处理程序。
 
     所有选择功能（包括套索笔划和边界矩形）均在这些处理程序中实现。
 
@@ -430,7 +433,7 @@ public MainPage()
 
 通过调用 [**ActivateCustomDrying**](https://msdn.microsoft.com/library/windows/apps/dn922012)（在加载 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 之前），应用创建 [**InkSynchronizer**](https://msdn.microsoft.com/library/windows/apps/dn903979) 对象以自定义如何向 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 或 [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) 呈现墨迹已干的笔划墨迹。 例如，笔划墨迹可以光栅化并集成到应用程序内容中，而非作为单独的 **InkCanvas** 图层。
 
-有关该功能的完整示例，请参阅[复杂墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+有关该功能的完整示例，请参阅[复杂墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620314)。
 
 
 ## 本部分中的其他文章 
@@ -489,6 +492,7 @@ public MainPage()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 通过处理用于触摸和笔输入的相同基本指针事件在应用中响应鼠标输入。
-title: 鼠标交互
+Description: "通过处理用于触摸和笔输入的相同基本指针事件在应用中响应鼠标输入。"
+title: "鼠标交互"
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
+
 ---
 
 # 鼠标交互
@@ -151,6 +154,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸板进行了优化，但在不同的输入设备上功能一致。
-title: 触摸板交互
+Description: "创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸板进行了优化，但在不同的输入设备上功能一致。"
+title: "触摸板交互"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
+
 ---
 
 # 触摸板设计指南
@@ -69,7 +72,7 @@ template: detail.hbs
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>三指点击</p></td>
-<td align="left"><p>使用 <strong>Cortana</strong> 搜索或显示“操作中心”<strong></strong>的用户首选项。</p></td>
+<td align="left"><p>使用 <strong>Cortana</strong> 搜索或显示<strong>“操作中心”</strong>的用户首选项。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>三指滑动</p></td>
@@ -139,7 +142,7 @@ template: detail.hbs
 -   对于可选择文本，使用文本光标（![文本光标](images/cursor-text.png)）。
 -   当主要操作是移动（如拖动或裁剪）时，使用移动光标（![移动光标](images/cursor-move.png)）。 对于主要操作是导航的元素（如“开始”菜单磁贴），不使用移动光标。
 -   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png)， ![水平调整光标](images/cursor-horizontal.png)， ![对角调整光标（左下和右上）](images/cursor-diagonal2.png)， ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
--   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)）。
+-   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
 
 ## <span id="related_topics"></span>相关文章
 
@@ -162,6 +165,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 启动 URI 的默认应用
-description: 了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。
+author: TylerMSFT
+title: "启动 URI 的默认应用"
+description: "了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。"
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: b593a43bc5b95dd0880af972ca1514e657bbd9e3
+
 ---
 
 # 启动 URI 的默认应用
@@ -96,7 +99,7 @@ var options = new Windows.System.LauncherOptions();
 options.PreferredApplicationPackageFamilyName = "Contoso.URIApp_8wknc82po1e";
 options.PreferredApplicationDisplayName = "Contoso URI Ap";
 
-// Launch the URI and pass in the recommended app 
+// Launch the URI and pass in the recommended app
 // in case the user has no apps installed to handle the URI
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
@@ -114,7 +117,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 var options = new Windows.System.LauncherOptions();
 options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseLess;
 
-// Launch the URI 
+// Launch the URI
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
 
@@ -170,7 +173,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 | ms-chat:                                 | 启动“Messaging”应用。                                                                                                                                                            |
 | ms-chat:?ContactID={contacted}           | 允许使用特定联系人的信息启动消息应用程序。                                                                                               |
 | ms-chat:?Body={body}                     | 允许使用要用作消息内容的字符串启动消息应用程序。                                                                                    |
-| ms-chat:?Addresses={address}&Body={body} | 允许使用特定地址的信息以及要用作消息内容的字符串启动消息应用程序。 注意：可以串联地址。 |
+| ms-chat:?Addresses={address}&amp;Body={body} | 允许使用特定地址的信息以及要用作消息内容的字符串启动消息应用程序。 注意：可以串联地址。 |
 | ms-chat:?TransportId={transportId}       | 允许使用特定传输 ID 启动消息应用程序。                                                                                                        |
 
  
@@ -205,7 +208,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 方案                                            | 结果                                                                               |
 |-------------------------------------------------------|---------------------------------------------------------------------------------------|
-| ms-yellowpage:?input=\[keyword\]&method=\[String|T9\] | 启动已安装的支持此新 URI 的目标点 (POI) 搜索应用。 |
+| ms-yellowpage:?input=\[keyword\]&amp;method=\[String|T9\] | 启动已安装的支持此新 URI 的目标点 (POI) 搜索应用。 |
 
  
 
@@ -222,8 +225,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

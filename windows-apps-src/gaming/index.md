@@ -1,8 +1,11 @@
 ---
 author: mtoepke
-title: 游戏和 DirectX
-description: 通用 Windows 平台 (UWP) 提供了创建、分配游戏以及通过游戏获益的新机会。 了解有关启动新游戏或移植现有游戏的信息。
+title: "游戏和 DirectX"
+description: "通用 Windows 平台 (UWP) 提供了创建、分配游戏以及通过游戏获益的新机会。 了解有关启动新游戏或移植现有游戏的信息。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
+
 ---
 
 # 游戏和 DirectX
@@ -63,6 +66,7 @@ ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

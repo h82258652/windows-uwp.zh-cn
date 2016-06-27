@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 显示集锦中的图像（例如相册中的照片或产品详细信息页中的项目），一次显示一张图像。
-title: 翻转视图控件指南
+Description: "显示集锦中的图像（例如相册中的照片或产品详细信息页中的项目），一次显示一张图像。"
+title: "翻转视图控件指南"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
+
 ---
 # 翻转视图
 
@@ -207,6 +210,7 @@ stackPanel1.Children.Add(flipView1);
 - [**CarouselPanel 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

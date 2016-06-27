@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何在运行时使用语音识别结果，在语音命令定义 (VCD) 文件中访问和更新支持的短语列表（PhraseList 元素）。
-title: 动态修改 VCD 短语列表
+Description: "了解如何在运行时使用语音识别结果，在语音命令定义 (VCD) 文件中访问和更新支持的短语列表（PhraseList 元素）。"
+title: "动态修改 VCD 短语列表"
 ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
 label: Modify VCD phrase lists
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 623243b94cf8ef6b276f8f2971af7bbdbdece81c
+
 ---
 
 # 动态修改 VCD 短语列表
@@ -151,6 +154,7 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

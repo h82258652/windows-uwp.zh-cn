@@ -1,8 +1,11 @@
 ---
 author: Mtoepke
-title: Xbox One 工具简介
-description: 特定于 Xbox One 且使用 Windows Device Portal 的工具“开发人员主页”。
+title: "Xbox One 工具简介"
+description: "特定于 Xbox One 且使用 Windows Device Portal 的工具“开发人员主页”。"
 area: Xbox
+ms.sourcegitcommit: 4872ac9587b3e2e14860cb152bf33536faccc48d
+ms.openlocfilehash: c975cb07aa9b7f0d30a9905cbceba11e89c8f7df
+
 ---
 
 # Xbox One 工具简介
@@ -86,10 +89,6 @@ area: Xbox
 ## Windows Device Portal
 Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 OneCore 设备管理工具。
 
-> **注意** &nbsp;&nbsp;在此开发者预览版中，如果已在开发人员主页中启动 WDP，在你输入用户名和密码并单击“保存”****后，开发人员主页将发生崩溃。
-保存凭据，但不启动 WDP。
-可以通过重新启动 Xbox One 来启动 WDP。
-
 若要在 Xbox One 控制台上启用 WDP：
 
 1. 在主屏幕上选择“开发人员主页”磁贴。
@@ -118,6 +117,7 @@ Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 One
 ----
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

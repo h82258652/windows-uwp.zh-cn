@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何使用更灵活、更自然的语音命令扩展 Cortana，以便用户可以在命令中的任何位置说出应用名称。
-title: 在 Cortana 中支持自然语言形式的语音命令
+Description: "了解如何使用更灵活、更自然的语音命令扩展 Cortana，以便用户可以在命令中的任何位置说出应用名称。"
+title: "在 Cortana 中支持自然语言形式的语音命令"
 ms.assetid: 281E068A-336A-4A8D-879A-D8715C817911
 label: Support natural language voice commands
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: c9cd6894c61f3d6cfe770d197317a97a804b4119
+
 ---
 
 # 在 Cortana 中支持自然语言形式的语音命令
@@ -130,7 +133,7 @@ template: detail.hbs
 
 如果支持用户在 **Cortana** 中说出语音命令时采用更多变化形式，那么通常也会增加你的应用的使用率。
 
-避免将“Hey \[应用名]”作为你的 **AppName** 或 **CommandPrefix**。 用户很有可能会说出“你好小娜”，以通过语音激活来调用 Cortana，然而在语音中包含“你好 \[应用名]”会使声音听起来不太自然。 例如，“你好小娜，在‘你好 Adventure Works’上显示我的下一个拉斯维加斯之旅”。
+避免将“Hey \[应用名\]”作为你的 AppName 或 CommandPrefix。 用户很有可能会说出“你好小娜”，以通过语音激活来调用 Cortana，然而在语音中包含“你好 \[应用名\]”会使声音听起来不太自然。 例如，“你好小娜，在‘你好 Adventure Works’上显示我的下一个拉斯维加斯之旅”。
 
 请考虑向现有语音命令添加中缀/后缀变体。 如此处所示，无需执行大量操作即可将一个附加属性添加到你的现有 **ListenFor** 元素并支持后缀变体。 与“你好小娜，Adventure Works，显示我的下一个拉斯维加斯之旅”相比，说出“你好小娜，在 Adventure Works 上显示我的下一个拉斯维加斯之旅”显得更为自然。
 
@@ -209,6 +212,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

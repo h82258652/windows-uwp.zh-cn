@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解用户如何在执行语音命令期间通过 Cortana 语音和画布与后台应用交互。
-title: 与后台应用交互
+Description: "了解用户如何在执行语音命令期间通过 Cortana 语音和画布与后台应用交互。"
+title: "与后台应用交互"
 ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
 label: Interact with a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: 675553f5c3954597982360900e965b2a756d7f63
+
 ---
 
 # 使用 Cortana 与后台应用交互
@@ -180,7 +183,9 @@ private async Task SendCompletionMessageForDestination(string destination)
 
 如果应用服务未调用 ReportSuccessAsync 或任何其他 VoiceCommandServiceConnection 方法，则用户会收到一条错误消息并且该应用服务调用将会取消。
 
-以下是 **Adventure Works** 应用的交付屏幕的一个示例。 在本示例中，用户已通过 **Cortana** 查询即将到来的旅行。 交付屏幕包含应用服务名称、图标和 VCD 文件中声明的 **Feedback** 字符串所自定义的消息。
+以下是 **Adventure Works** 应用的交付屏幕的一个示例。 在本示例中，用户已通过 **Cortana** 查询即将到来的旅行。 交付屏幕包含应用服务名称所定义的消息、图标和 **Feedback** 字符串。 
+
+[!NOTE] 你可以在 VCD 文件中声明 **Feedback** 字符串。 此字符串不会影响在 Cortana 画布上显示的 UI 文本，它仅影响 **Cortana** 说出的文本。
 
 ![Cortana 后台应用交付屏幕](images/cortana-backgroundapp-progress-result.png)
 
@@ -472,6 +477,7 @@ var userMessage = new VoiceCommandUserMessage();
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

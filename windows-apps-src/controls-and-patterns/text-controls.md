@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 请考虑我们在日常生活中阅读文本的频率 - 电子邮件、图书、路标、菜单上的价格、胎压指示或街道标牌上的海报。
-title: 文本控件
+Description: "请考虑我们在日常生活中阅读文本的频率 - 电子邮件、图书、路标、菜单上的价格、胎压指示或街道标牌上的海报。"
+title: "文本控件"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 1fec4bf13567507087eef08feea0a3ebc255b43f
+
 ---
 # 文本控件
 文本控件由文本输入框、密码框、自动建议框和文本块组成。 XAML 框架提供用于呈现、输入和编辑文本的多个控件，以及一组用于设置文本格式的属性。
@@ -160,6 +163,7 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 - [String.Length 属性](https://msdn.microsoft.com/library/system.string.length.aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

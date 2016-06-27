@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
-title: 动画概述
-description: 使用 Windows 运行时动画库中的动画将 Windows 外观集成到你的应用中。
+title: "动画概述"
+description: "使用 Windows 运行时动画库中的动画将 Windows 外观集成到你的应用中。"
+ms.sourcegitcommit: c8ba7f6303a05b8de03aa29199aaa444abf75827
+ms.openlocfilehash: 2a70d73a5e714aaf1096fed5d08ec4844edd66a6
+
 ---
 # 动画概述
 
@@ -23,6 +26,8 @@ Windows 运行时中的动画可通过添加动作和交互性来增强你的应
 
 该动画库不会为每个可能方案提供动画。 在某些情况下，你可能希望采用 XAML 创建自定义动画。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。
 
+此外，对于根据 ScrollViewer 的滚动位置设置项目动画等某些高级方案，开发人员可能希望使用可视化层互操作来实现自定义动画。 有关详细信息，请参阅[可视化层](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)。
+
 ## 动画类型
 
 Windows 运行时动画系统和动画库实现了更大的目标，即允许控件和 UI 的其他部分具备动画行为。 以下是几个不同类型的动画。
@@ -30,12 +35,13 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 -   *主题过渡*会在 UI 中的某些条件（其中涉及预定义 Windows 运行时 XAML UI 类型的控件或元素）更改时自动应用。 这些称为*“主题过渡”*，原因是动画支持 Windows 外观，并且定义所有应用从一个交互模式更改为另一个交互模式时为特定 UI 方案执行的操作。 主题过渡是动画库的一部分。
 -   *“主题动画”*是具备预定义 Windows 运行时 XAML UI 类型一个或多个属性的动画。 主题动画与主题过渡不同，因为主题动画面向一个特定元素并存在于控件中的特定视觉状态，而主题过渡将分配到存在于视觉状态外部的控件属性并影响这些状态之间的过渡。 许多 Windows 运行时 XAML 控件在情节提要中包含主题动画，这些主题动画是其控件模板的一部分且包含由视觉状态引发的动画。 只要你未修改模板，你都可以将这些内置主题动画用于 UI 中的控件。 但是，如果你替换了模板，则也将删除内置控件主题动画。 若要重新获取它们，你必须在视觉状态的控件集中定义包含主题动画的情节提要。 你也可以从不在视觉状态中的情节提要运行主题动画，并通过 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491) 方法开始运行，但这并不常见。 主题动画是动画库的一部分。
 -   *“视觉转换”*会在控件从其定义的视觉状态之一转换到其他状态时应用。 这些是你编写的自定义动画，通常与为控件编写的自定义模板和该模板中的视觉状态定义相关。 该动画仅在两个状态之间的时间运行，这个时间通常很短，最多几秒钟。 有关详细信息，请参阅[视觉状态的情节提要动画的“视觉转换”部分](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition)。
--   *情节提要动画*会在由你的应用代码或附带组件（如已包含的控件）的代码专门启动时应用。 情节提要动画可以随时间更改任何 Windows 运行时依赖属性的值。 情节提要动画不限于 UI 方案；事实上，如果你熟悉该概念，将这些动画视为状态机技术将很有用。 情节提要动画不限于在两个视觉状态之间的转换时间运行；它可以在任意时间运行，不论控件状态是否更改，并且该动画可能会连续运行。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。 有关依赖属性及其所处位置的详细信息，请参阅[依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)。
+-   *情节提要动画*可以随时间推移设置 Windows 运行时依赖属性的值的动画。 情节提要可以定义为可视化过渡的一部分，或者在运行时由应用程序触发。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。 有关依赖属性及其所处位置的详细信息，请参阅[依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)。
 
 ## 库中提供的动画
 
 动画库提供以下动画。 单击动画的名称即可了解有关其主要使用方案、这些方案的定义方式的详细信息，还可以查看动画示例。
 
+-   [页面过渡](./animations-overview.md#page-transition)：在 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 中设置页面过渡动画。
 -   [内容和进入过渡](./animations-overview.md#content-transition-and-entrance-transition)：让一条或一组内容以动画方式进入或退出视图。
 -   [淡入/淡出和交叉进出](./animations-overview.md#fade-in-out-and-crossfade)：显示过渡元素或控件，或者刷新内容区域。
 -   [指针向上/向下](./animations-overview.md#pointer-up-down)：提供点击或单击磁贴的视觉反馈。
@@ -44,13 +50,22 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 -   [显示/隐藏边缘 UI](./animations-overview.md#show-hide-edge-ui)：将基于边缘的 UI（包括诸如面板的较大 UI）滑入或滑出视图。
 -   [列表项更改](./animations-overview.md#list-item-changes)：从列表中添加或删除某个项目，或者重新排序项目。
 -   [拖放](./animations-overview.md#drag-drop)：在拖放操作期间提供视觉反馈。
--   [轻扫手势](./animations-overview.md#swipe-gestures)：提示磁贴支持轻扫交互，或者指示轻扫选中的状态
+
+### 页面过渡
+
+使用页面过渡，在应用中设置导航动画。 由于几乎所有应用均会使用某种类型的导航，所以页面过渡动画是应用使用的最常见主题动画类型。 有关页面过渡 API 的详细信息，请参阅 [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation. Therenavigationthemetransition)。
+
+
 
 ### 内容过渡和进入过渡
 
 使用内容过渡动画 ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103)) 可以将一条或一组内容移入或移出当前视图。 例如，内容过渡动画显示在首次加载页面时或者在更改页面某部分的内容时，不准备显示的内容。
 
-XAML 动画库不具有某个动画的概念，该动画在加载页面时将应用到整个页面，但是它具有单独的过渡 ([**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288))，该过渡在首次加载包含内容的页面并呈现该部分内容时可以应用到该内容。 这样，首次出现的内容可以提供不同于对内容的更改的反馈。
+[
+            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 表示可以在首次加载页面或大部分 UI 时应用到内容的动作。 这样，首次出现的内容可以提供不同于对内容的更改的反馈。 [
+            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 等同于具有默认参数的 [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)，但可在 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 外部使用。
+ 
+ 
 
 ### 淡入/淡出和交叉进出
 
@@ -64,7 +79,7 @@ XAML 动画库不具有某个动画的概念，该动画在加载页面时将应
 
 ### 重新定位
 
-使用重新定位动画（[**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) 或 [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)）可以将某个元素移动到新位置。 例如，在标题项控件中移动标题将使用重新定位动画。
+使用重新定位动画（[**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) 或 [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)）可以将某个元素移动到新位置。 例如，在项目控件中移动标题将使用重新定位动画。
 
 ### 显示/隐藏弹出元素
 
@@ -83,17 +98,13 @@ XAML 动画库不具有某个动画的概念，该动画在加载页面时将应
 
 还存在一个当某个项目在列表中更改位置时应用的单独 [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409)。 创建该过渡动画与使用关联的删除/添加动画删除某个项和将其添加到新位置中不同。
 
+请注意，这些动画包括在默认 [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 模板中，因此如果你已使用这些控件，则无需手动添加这些动画。
+
 ### 拖放
 
 使用拖动动画（[**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173)、[**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177)）和放置动画 ([**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185)) 可以在用户拖放一个项时提供视觉反馈。
 
 在激活时，动画将向用户显示该列表可以在放置的项目周围重新排列。 如果用户需要知道在当前位置放下该项目时会将该项目置于列表中的何处，则这样会很有帮助。 动画会提供视觉反馈，表明正在拖动的项目可以放到列表中的其他两个项目之间，以及这些项目将腾出空间。
-
-### 轻扫手势
-
-使用 [**SwipeHintThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702489) 动画可以显示磁贴支持轻扫交互。 用户可以向下轻扫以选择磁贴。 如果用户不知道他们是否可以在磁贴上轻扫，磁贴上的长按手势将播放轻扫提示动画，以建议用户应该通过轻扫与磁贴交互。
-
-使用 [**SwipeBackThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702477) 动画以显示磁贴已选中并将磁贴返回到其停留位置。
 
 ## 将动画与自定义控件结合使用
 
@@ -277,8 +288,9 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 
 在对 UI 元素进行添加、删除、重新排序等操作时，可用多个过渡效果在 UI 元素上创建动画。 这些 API 的名称都包含“ThemeTransition”：
 
-| API | 说明 |
+| API | 描述 |
 |-----|-------------|
+| [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) | 在 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 中提供用于页面导航的 Windows 个性化动画。 |
 | [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) | 为控件添加或删除子对象或内容的情况提供动画过渡表现方式。 通常，控件是项目容器。 |
 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103) | 为控件的内容发生更改的情况提供动画过渡表现方式。 可以在应用 [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) 后再应用它。 |
 | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) | 为（较小）边缘 UI 过渡提供动画过渡表现方式。 |
@@ -352,10 +364,10 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) | 控件的弹入组件显示时应用到它们的预配置动画。 此动画结合了不透明度和转换。 |
 | [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) | 控件的弹入组件关闭或删除时应用到它们的预配置动画。 此动画结合了不透明度和转换。 |
 | [**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) | 对象重新放置时该对象的预配置动画。 |
-| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | 使用拆分动画隐藏目标 UI 的预配置动画。 |
-| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | 使用拆分动画显示目标 UI 的预配置动画。 |
-| [**SwipeBackThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702477) | 元素在轻扫交互后滑动回其布局槽时应用到控件的预配置动画。 |
-| [**SwipeHintThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702489) | 表示现在可进行轻扫手势的预配置动画。 |
+| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | 使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) 打开和关闭样式的动画隐藏目标 UI 的预配置动画。 |
+| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | 使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) 打开和关闭样式的动画显示目标 UI 的预配置动画。 |
+| [**DrillInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | 表示在用户在逻辑层次结构中前进（如从主页到详细信息页）时运行的预配置动画。 |
+| [**DrillOutThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | 表示在用户在逻辑层次结构中后退（如从详细信息页到主页）时运行的预配置动画。 |
 
  
 
@@ -365,7 +377,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 为了创建动画，要动画显示的属性必须是*依赖属性*。 有关依赖属性的详细信息，请参阅[依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)。 有关创建自定义情节提要动画的详细信息，包括如何确定动画目标以及控制动画，请参阅[情节提要动画](storyboarded-animations.md)。
 
-XAML（可以在其中定义自定义情节提要动画）中应用 UI 定义的最大领域是在 XAML 中定义控件的视觉状态。 你执行此操作的原因有两个：你要创建一个新控件类；或者你要重新创建现有控件的模板，且该控件的控件模板中具有视觉状态。 有关详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。 这些动画通常根本不会随时间而改变，它们瞬时发生，并且更大程度上是为状态定义一组属性更改的技术。 尽管你将看到控件的视觉状态通常包括库动画本身，但它们不必将视觉动画的表现方式应用到 UI。 在此情况下，主题动画应用随时间而进行的更改，尽管它通常持续很短时间。
+XAML（可以在其中定义自定义情节提要动画）中应用 UI 定义的最大领域是在 XAML 中定义控件的视觉状态。 你执行此操作的原因有两个：你要创建一个新控件类；或者你要重新创建现有控件的模板，且该控件的控件模板中具有视觉状态。 有关详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
  
 
@@ -376,6 +388,7 @@ XAML（可以在其中定义自定义情节提要动画）中应用 UI 定义的
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

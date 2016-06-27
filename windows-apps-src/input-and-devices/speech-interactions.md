@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-description: 使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。
-title: 语音交互
+description: "使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。"
+title: "语音交互"
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
+ms.sourcegitcommit: bcc401c515cdba899fb2202ddddf5bd98b64aecd
+ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
+
 ---
 
 # 语音交互
@@ -234,6 +237,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

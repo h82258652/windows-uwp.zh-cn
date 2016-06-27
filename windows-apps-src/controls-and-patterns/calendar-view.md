@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 日历视图让用户查看可按月份、年份或十年期浏览的日历，并与之交互。
-title: 日历视图
+Description: "日历视图让用户查看可按月份、年份或十年期浏览的日历，并与之交互。"
+title: "日历视图"
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 7b9d4773cba5c6ebb770e27dd20ba5c6fb40ff75
+
 ---
 
 # 日历视图
@@ -191,6 +194,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 - [时间选取器](time-picker.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

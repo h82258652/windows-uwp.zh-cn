@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 除了在 Cortana 内使用语音命令访问系统功能外，你还可以使用可指定要在应用内执行的操作或命令的语音命令，通过后台应用中的特性和功能扩展 Cortana。
-title: 在 Cortana 中使用语音命令启动后台应用
+Description: "除了在 Cortana 内使用语音命令访问系统功能外，你还可以使用可指定要在应用内执行的操作或命令的语音命令，通过后台应用中的特性和功能扩展 Cortana。"
+title: "在 Cortana 中使用语音命令启动后台应用"
 ms.assetid: DF5B530C-57DD-4CA5-B3BE-1A0B3695C9C6
 label: Launch a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: c65abdda905a390567d3c2b199a891c0c3067df1
+
 ---
 
 # 通过 Cortana 使用语音命令激活后台应用
@@ -37,7 +40,7 @@ template: detail.hbs
 
 若要在没有 **Cortana** 的情况下查看 **Adventure Works** 旅行，用户需要启动该应用并导航到**“新旅行”**页面。
 
-使用语音命令通过 **Cortana** 在后台启动应用，用户只需说出“Adventure Works，我去拉斯维加斯的旅行是什么时候？”。 应用将处理命令，然后 **Cortana** 将显示结果以及应用图标和其他应用信息（如果提供）。 以下是一个基本旅行查询和 **Cortana** 结果屏幕的示例，屏幕同时显示并说出“你下次到拉斯维加斯的旅行在八月一日”。
+使用语音命令通过 **Cortana** 在后台启动应用，用户只需说出“Adventure Works，我去拉斯维加斯的旅行是什么时候？”。 应用将处理命令，然后 **Cortana** 将显示结果以及应用图标和其他应用信息（如果提供）。 以下是一个基本旅行查询和 **Cortana** 结果屏幕的示例，屏幕同时显示并说出“你下次到拉斯维加斯的旅行在 2015 年 7 月 31 日星期五”。
 
 ![在后台使用 Adventure Works 应用的基本查询和结果屏幕](images/cortana-backgroundapp-result.png)
 
@@ -122,38 +125,37 @@ destinationTile.Image =
 
 <ol>
     <li>
-    右键单击解决方案名称，然后依次选择“新建”&gt;“项目”****。
+右键单击解决方案名称，然后依次选择“新建”&gt;“项目”****。
     </li>
     <li>
-    在“已安装”&gt;“模板”&gt;“Visual C#”&gt;“Windows”&gt;“通用”****下，选择“Windows 运行时组件”****。 这是实现应用服务的组件 (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**)。
+在“已安装”&gt;“模板”&gt;“Visual C#”&gt;“Windows”&gt;“通用”****下，选择“Windows 运行时组件”****。 这是实现应用服务的组件 (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**)。
     </li>
     <li>
-    键入项目的名称（例如“VoiceCommandService”），然后单击“确定”****。
+键入项目的名称（例如“VoiceCommandService”），然后单击“确定”****。
     </li>
     <li>
-    在“解决方案资源管理器”****中，选择“VoiceCommandService”项目，并为 Visual Studio 生成的“Class1.cs”文件重命名。 对于 **Adventure Works** 示例，我们使用“AdventureWorksVoiceCommandService.cs”。
+在“解决方案资源管理器”****中，选择“VoiceCommandService”项目，并为 Visual Studio 生成的“Class1.cs”文件重命名。 对于 **Adventure Works** 示例，我们使用“AdventureWorksVoiceCommandService.cs”。
     </li>
     <li>
-    在询问你是否要重命名“Class1.cs”的所有实例时，单击“是”****。 
+在询问你是否要重命名“Class1.cs”的所有实例时，单击“是”****。 
     </li>
     <li>
-    在“AdventureWorksVoiceCommandService.cs”文件中：
-        <ol type="i">
+在“AdventureWorksVoiceCommandService.cs”文件中： <ol type="i">
  <li>
- 添加以下 using 指令。  
+添加以下 using 指令。  
  ```using Windows.ApplicationModel.Background;```
  </li>
  <li>
- 当你创建新项目时，项目名称将用作所有文件中的默认根命名空间。 重命名该命名空间以将应用服务代码嵌套在主项目下。 例如，`namespace AdventureWorks.VoiceCommands`。 
+当你创建新项目时，项目名称将用作所有文件中的默认根命名空间。 重命名该命名空间以将应用服务代码嵌套在主项目下。 例如，`namespace AdventureWorks.VoiceCommands`。 
  </li>
  <li>
- 在“解决方案资源管理器”中，右键单击该应用服务项目名称，然后选择**“属性”**。 
+在“解决方案资源管理器”中，右键单击该应用服务项目名称，然后选择**“属性”**。 
  </li>
  <li>
- 在“库”****选项卡上，使用此相同值更新“默认命名空间”****字段（在此示例中为“AdventureWorks.VoiceCommands”）。 
+在“库”****选项卡上，使用此相同值更新“默认命名空间”****字段（在此示例中为“AdventureWorks.VoiceCommands”）。 
  </li>
  <li>
- 创建一个用于实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的新类。 此类需要一个 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法，该方法是 Cortana 识别语音命令时的入口点。 
+创建一个用于实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的新类。 此类需要一个 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法，该方法是 Cortana 识别语音命令时的入口点。 
  </li>
         </ol>
     </li>
@@ -210,36 +212,36 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="7">
     <li>
-    在应用清单中将后台任务声明为 **AppService**。
+在应用清单中将后台任务声明为 **AppService**。
     <ol type="i">
         <li>
-        在“解决方案资源管理器”****中，右键单击“Package.appxmanifest”文件，然后选择“查看代码”****。 
+在“解决方案资源管理器”****中，右键单击“Package.appxmanifest”文件，然后选择“查看代码”****。 
         </li>
         <li>
-        找到 [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 元素。
+找到 [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 元素。
         </li>
         <li>
-        将 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 元素添加到 [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 元素。
+将 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 元素添加到 [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 元素。
         </li>
         <li>
-        将 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素添加到 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 元素。
+将 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素添加到 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 元素。
         </li>
         <li>将 **Category** 属性添加到 **uap:Extension** 元素，并将 **Category** 属性的值设置为“windows.appService”。
         </li>
         <li>
-        将 **EntryPoint** 属性添加到 **uap:Extension** 元素，并将 **EntryPoint** 属性的值设置为实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 的类的名称，在本例中为“AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService”。
+将 **EntryPoint** 属性添加到 **uap:Extension** 元素，并将 **EntryPoint** 属性的值设置为实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 的类的名称，在本例中为“AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService”。
         </li>
         <li>
-        将 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素添加到 **uap:Extension** 元素。
+将 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素添加到 **uap:Extension** 元素。
         </li>
         <li>
-        将 **Name** 属性添加到 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素，并将 **Name** 属性的值设置为应用服务的名称，在本例中为“AdventureWorksVoiceCommandService”。
+将 **Name** 属性添加到 [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 元素，并将 **Name** 属性的值设置为应用服务的名称，在本例中为“AdventureWorksVoiceCommandService”。
         </li>
         <li>
-        将第二个 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素添加到 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720)。
+将第二个 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素添加到 [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720)。
         </li>
         <li>
-        将 **Category** 属性添加到此 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素，并将 **Category** 属性的值设置为“windows.personalAssistantLaunch”。
+将 **Category** 属性添加到此 [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 元素，并将 **Category** 属性的值设置为“windows.personalAssistantLaunch”。
         </li>
     </li> 
     </ol>
@@ -267,19 +269,19 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="8">
     <li>
-    在主项目中将此应用服务项目添加为引用。 
+在主项目中将此应用服务项目添加为引用。 
     <ol type="i">
         <li>
-        右键单击“引用”****。 
+右键单击“引用”****。 
         </li>
         <li>
-        选择“添加引用...”**** 
+选择“添加引用...”**** 
         </li>
         <li>
-        在“引用管理器”****对话框中，展开“项目”****并选择应用服务项目。 
+在“引用管理器”****对话框中，展开“项目”****并选择应用服务项目。 
         </li>
         <li>
-        单击“确定”。 
+单击“确定”。 
         </li>
     </ol>
     </li>
@@ -768,6 +770,7 @@ public sealed class VoiceCommandService : IBackgroundTask
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

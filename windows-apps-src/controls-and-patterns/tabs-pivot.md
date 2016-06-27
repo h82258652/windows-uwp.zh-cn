@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: 利用表和透视表，用户可以在经常访问的内容之间导航。
-title: 表和透视表
+Description: "利用表和透视表，用户可以在经常访问的内容之间导航。"
+title: "表和透视表"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6585a75f08a64b7bb8f27fd32a227fa49bb0f3f4
+
 ---
 # 透视表和表
 
@@ -107,6 +110,7 @@ Cortana 提醒中的默认透视表控件。
 [导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

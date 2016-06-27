@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何为语音识别定义和使用自定义约束。
-title: 定义自定义识别约束
+Description: "了解如何为语音识别定义和使用自定义约束。"
+title: "定义自定义识别约束"
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7d91cef0955dbf8544f658369ee488c47aaef787
+
 ---
 
 # 定义自定义识别约束
@@ -18,7 +21,7 @@ template: detail.hbs
 -   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 
-语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用通用 Windows 应用的预定义听写语法。 请参阅[语音识别](speech-recognition.md)
+语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用通用 Windows 应用的预定义听写语法。 请参阅[语音识别](speech-recognition.md)。
 
 
 ## <span id="Add_constraints"></span><span id="add_constraints"></span><span id="ADD_CONSTRAINTS"></span>添加约束
@@ -26,7 +29,7 @@ template: detail.hbs
 
 使用 [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 属性向语音识别器添加约束。
 
-我们在此处介绍三种可在应用内使用的语音识别约束。 （有关语音命令约束，请参阅[在 Cortana 中使用语音命令启动前台应用](launch-a-foreground-app-with-voice-commands-in-cortana.md)
+我们在此处介绍三种可在应用内使用的语音识别约束。 （有关语音命令约束，请参阅[在 Cortana 中使用语音命令启动前台应用](launch-a-foreground-app-with-voice-commands-in-cortana.md)。）
 
 -   [
             **SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) - 基于预定义语法的约束（听写或 Web 搜索）。
@@ -137,7 +140,7 @@ SRGS 提供一组完整的功能，可帮助你为应用构建复杂的语音交
 -   使用语义定义语音识别对你的应用的意义。
 -   在语法中以内联方式或通过指向词典的链接来指定发音。
 
-有关 SRGS 元素和属性的详细信息，请参阅 [SRGS 语法 XML 参考](http://go.microsoft.com/fwlink/p/?LinkID=269886)。 若要开始创建 SRGS 语法，请参阅[如何创建基本的 XML 语法](http://go.microsoft.com/fwlink/p/?LinkID=269887)
+有关 SRGS 元素和属性的详细信息，请参阅 [SRGS 语法 XML 参考](http://go.microsoft.com/fwlink/p/?LinkID=269886)。 若要开始创建 SRGS 语法，请参阅[如何创建基本的 XML 语法](http://go.microsoft.com/fwlink/p/?LinkID=269887)。
 
 请牢记以下几点：
 
@@ -213,7 +216,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 ## <span id="Manage_constraints"></span><span id="manage_constraints"></span><span id="MANAGE_CONSTRAINTS"></span>管理约束
 
 
-在加载约束集合以供识别后，你的应用可以通过将约束的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 属性设置为 **true** 或 **false** 来管理启用哪些约束以供识别操作。 默认设置为 **true**
+在加载约束集合以供识别后，你的应用可以通过将约束的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 属性设置为 **true** 或 **false** 来管理启用哪些约束以供识别操作。 默认设置为 **true**。
 
 通常，相比为每次识别操作加载、卸载和编译约束，加载一次约束并按需启用或禁用它们更有效率。 按照需要使用 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 属性。
 
@@ -239,6 +242,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

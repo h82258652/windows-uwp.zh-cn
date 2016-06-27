@@ -1,8 +1,11 @@
 ---
 author: jwmsft
-description: 介绍如何为使用 C++、C# 或 Visual Basic 的 Windows 运行时应用定义和实现自定义依赖属性。
-title: 自定义依赖属性
+description: "介绍如何为使用 C++、C# 或 Visual Basic 的 Windows 运行时应用定义和实现自定义依赖属性。"
+title: "自定义依赖属性"
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 63301870ab53f4061cac9b9ad87a5fb75e8c48da
+
 ---
 
 # 自定义依赖属性
@@ -19,17 +22,15 @@ ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ## 什么是依赖属性？
 
 
-依赖属性是通过调用 [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 方法向 Windows 运行时属性系统注册，并通过定义类上的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 标识符成员来标识的属性。 你可以将一种公共语言运行时 (CLR) 或 C++ 属性实现为依赖属性，以支持样式设置、数据绑定、动画和默认值。 依赖属性只能由 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 类型使用。 但 **DependencyObject** 位于类层次结构中很高的级别，所以大部分用于 UI 和演示支持的类都能支持依赖属性。 有关依赖属性以及本文档中用于描述它们的一些术语和约定的详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)
+依赖属性是通过调用 [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 方法向 Windows 运行时属性系统注册，并通过定义类上的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 标识符成员来标识的属性。 你可以将一种公共语言运行时 (CLR) 或 C++ 属性实现为依赖属性，以支持样式设置、数据绑定、动画和默认值。 依赖属性只能由 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 类型使用。 但 **DependencyObject** 位于类层次结构中很高的级别，所以大部分用于 UI 和演示支持的类都能支持依赖属性。 有关依赖属性以及本文档中用于描述它们的一些术语和约定的详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)。
 
-Windows 运行时中的依赖属性示例有 [**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 和 [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702) 等。 一个类公开的每个依赖属性都有一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 类型的相应 **public**
-          **static**
-          **readonly** 属性，该属性在同一个类上公开并且是依赖属性的标识符。 标识符的名称遵循以下约定：首先是依赖属性的名称，将字符串“Property”添加到名称末尾。 例如，**Control.Background** 属性对应的 **DependencyProperty** 标识符是 [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396)。 标识符在注册依赖属性时存储依赖属性的信息，然后可用于其他涉及依赖属性的操作，例如调用 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
+Windows 运行时中的依赖属性示例有 [**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 和 [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702) 等。 一个类公开的每个依赖属性都有一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 类型的相应 **public****static****readonly** 属性，该属性在同一个类上公开并是依赖属性的标识符。 标识符的名称遵循以下约定：首先是依赖属性的名称，将字符串“Property”添加到名称末尾。 例如，**Control.Background** 属性对应的 **DependencyProperty** 标识符是 [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396)。 标识符在注册依赖属性时存储依赖属性的信息，然后可用于其他涉及依赖属性的操作，例如调用 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)。
 
 ##  属性包装器
 
 依赖属性通常有一个包装器实现。 没有包装器，获取或设置属性的唯一方式就是使用依赖属性实用程序方法 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 和 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 并将标识符作为参数传递给它们。 从表面上看，这是一个明显很奇怪的属性用法。 但有了包装器，你的代码和任何其他引用依赖属性的代码都可使用一种直观的对象-属性语法，这对你所使用的语言而言显得很正常。
 
-如果自行实现一个自定义依赖属性，并且希望它是公共的且易于调用，也可定义属性包装器。 属性包装器对向反射或静态分析流程报告有关依赖属性的基本信息也很有用。 具体来讲，包装器是放置特性（例如 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011)）的地方
+如果自行实现一个自定义依赖属性，并且希望它是公共的且易于调用，也可定义属性包装器。 属性包装器对向反射或静态分析流程报告有关依赖属性的基本信息也很有用。 具体来讲，包装器是放置特性（例如 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011)）的地方。
 
 ## 何时将属性实现为依赖属性
 
@@ -50,25 +51,21 @@ Windows 运行时中的依赖属性示例有 [**Control.Background**](https://ms
 
 一个依赖属性的定义可视为一组概念。 这些概念不一定是顺序步骤，因为在实现的一行代码中可解决多个概念。 这个列表只是提供了简短概述。 我们将在本主题后面更详细地介绍每个概念，并且将给出多种语言形式的示例代码。
 
--   （可选）创建依赖属性的属性元数据。 只有希望属性已更改的行为或一个可通过调用 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 来还原的基于元数据的默认值时，才需要属性元数据
+-   （可选）创建依赖属性的属性元数据。 只有希望属性已更改的行为或一个可通过调用 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 来还原的基于元数据的默认值时，才需要属性元数据。
 -   向属性系统注册属性名称（调用 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)），指定所有者类型和属性值的类型。 [
             **Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 有一个必需的参数需要使用属性元数据。 为此参数指定 **null**，或者如果声明了任何属性元数据，则指定实际的属性元数据。
--   将一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 标识符定义为所有者类型上的一个 **public**
-          **static**
-          **readonly** 属性成员。
+-   将一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 标识符定义为所有者类型上的一个 **public****static****readonly** 属性成员。
 -   按照你正在实现的语言中所用的属性访问器模型，定义一个包装器属性。 包装器属性名称应该与 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 中使用的 *name* 字符串匹配。 实现 **get** 和 **set** 访问器将包装器与它包装的依赖属性相连接，方法是调用 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 和 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 并将你自己的属性标识符作为一个参数传递。
 -   （可选）将 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) 等特性放在包装器上。
 
-**注意** 如果定义一个自定义附加属性，一般会省略包装器。 而是编写一种可供 XAML 处理器使用的不同访问器样式。 请参阅[自定义附加属性](custom-attached-properties.md) 
+**注意** 如果定义一个自定义附加属性，一般会省略包装器。 而是编写一种可供 XAML 处理器使用的不同访问器样式。 查看[自定义附加属性](custom-attached-properties.md)。 
 
 ## 注册属性
 
 你的属性要成为依赖属性，必须将该属性注册到由 Windows 运行时属性系统所维护的一个属性存储中。 必须为属性提供一个唯一的标识符，以后将其用作属性系统操作的限定符。 这些操作可以是内部操作，或者你自己的调用属性系统 API 的代码。 要注册属性，请调用 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 方法。
 
 对于 Microsoft .NET 语言（C# 和 Microsoft Visual Basic），你可以在类的主体中调用 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)（在类中，但在任何成员定义外部）。 该标识符也由 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 方法调用以返回值的形式提供。 [
-            **Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用通常在其他成员定义外部执行，因为你要在类中使用返回值分配并创建一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 类型的 **public**
-          **static**
-          **readonly** 属性。 此属性会变成你的依赖属性的标识符。 以下是 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用的一些示例。
+            **Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用通常在其他成员定义外部执行，因为你要在类中使用返回值分配并创建一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 类型的 **public** **static** **readonly** 属性。 此属性会变成你的依赖属性的标识符。 以下是 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用的一些示例。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -89,8 +86,7 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
 
 **注意** 在类主体中注册依赖属性是典型的实现方式，但也可以在类静态构造函数中注册依赖属性。 如果需要多行代码来初始化依赖属性，此方法可能很有用。
 
-对于 C++，你可以选择在标头文件和代码文件之间拆分实现的方式。 典型的拆分方式是在标头文件中将标识符本身声明为 **public**
-          **static** 属性，它具有一个 **get** 实现但没有 **set**。 **get** 实现引用一个私有字段，该字段是一个未初始化的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 实例。 你也可以声明包装器和包装器的 **get** 和 **set** 实现。 在此情况下，标头文件包含一些极小的实现。 如果包装器需要归属于 Windows 运行时，标头文件中的特性也需要。 将 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用放置在代码文件内仅在应用首次初始化时运行的 helper 函数中。 使用 **Register** 的返回值填充你在标头文件中声明的静态但未初始化的标识符，你最初已在实现文件的根作用域上将其设置为 **nullptr**。
+对于 C++，你可以选择在标头文件和代码文件之间拆分实现的方式。 典型的拆分方式是在标头文件中将标识符本身声明为 **public****static** 属性，它具有一个 **get** 实现但没有 **set**。 **get** 实现引用一个私有字段，该字段是一个未初始化的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 实例。 你也可以声明包装器和包装器的 **get** 和 **set** 实现。 在此情况下，标头文件包含一些极小的实现。 如果包装器需要归属于 Windows 运行时，标头文件中的特性也需要。 将 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用放置在代码文件内仅在应用首次初始化时运行的 helper 函数中。 使用 **Register** 的返回值填充你在标头文件中声明的静态但未初始化的标识符，你最初已在实现文件的根作用域上将其设置为 **nullptr**。
 
 ```cpp
 //.h file
@@ -133,13 +129,13 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 }
 ```
 
-**注意** 对于 C++ 代码，有一个私有字段和一个包装 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 的公共只读属性的原因是，这样可让使用你的依赖属性的其他调用方也可以使用需要使该标识符公有的属性系统实用程序 API。 如果保持标识符为私有，人们将无法使用这些实用程序 API。 此类 API 示例和场景包括 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 或 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 和 [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) 等。 不能将公共字段用于此用途，因为 Windows 运行时编译规则不支持使用诸如 **DependencyProperty** 等引用类型的公共数据成员
+**注意** 对于 C++ 代码，有一个私有字段和一个包装 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 的公共只读属性的原因是，这样可让使用你的依赖属性的其他调用方也可以使用需要使该标识符公有的属性系统实用程序 API。 如果保持标识符为私有，人们将无法使用这些实用程序 API。 此类 API 示例和场景包括 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 或 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 和 [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) 等。 不能将公共字段用于此用途，因为 Windows 运行时编译规则不支持使用诸如 **DependencyProperty** 等引用类型的公共数据成员。
 
 ## 依赖属性名称约定
 
 依赖属性具有命名约定；需要在除一些例外情况外的所有情形中遵循这些约定。 依赖属性本身有一个基本名称（上一个示例中的“Label”），它作为 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 的第一个参数提供。 该名称必须在每个注册类型中是唯一的，这种唯一性需求也适用于任何继承的成员。 通过基础类型继承的依赖属性已被视为注册类型的一部分；不能再次注册继承属性的名称。
 
-**警告** 尽管你在此处提供的名称可以是在你选择的编程语言中有效的任何字符串标识符，但通常你也希望能够在 XAML 中设置依赖属性。 要在 XAML 中设置，你选择的属性名称必须是有效的 XAML 名称。 有关详细信息，请参阅 [XAML 概述](xaml-overview.md)
+**警告** 尽管你在此处提供的名称可以是在你选择的编程语言中有效的任何字符串标识符，但通常你也希望能够在 XAML 中设置依赖属性。 要在 XAML 中设置，你选择的属性名称必须是有效的 XAML 名称。 有关详细信息，请参阅 [XAML 概述](xaml-overview.md)。
 
 创建标识符属性时，将你注册属性时的属性名称与后缀“Property”结合在一起（例如“LabelProperty”）。 此属性是依赖属性的标识符，并且它用作你在自己的属性包装器中执行的 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 和 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 调用的输入。 它还供属性系统并且可能供 XAML 处理器使用。
 
@@ -193,7 +189,7 @@ public:
 
 在调用 [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 的先前示例中，我们为 *propertyMetadata* 参数传递了一个 Null 值。 要使依存关系属性能够提供一个默认值，或使用某个属性已更改的回调，必须定义一个提供其中一项或全部两项功能的 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 实例。
 
-通常，你将在 [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 的参数内提供一个 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771)，作为一个内联创建的参数
+通常，你将在 [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 的参数内提供一个 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771)，作为一个内联创建的参数。
 
 **注意** 如果你要定义某个 [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) 实现，必须使用实用程序方法 [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099)，而不是调用 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 构造函数来定义该 **PropertyMetadata** 实例。
 
@@ -245,7 +241,7 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
 
 ### 属性已更改回调方法
 
-你可以定义一个属性已更改回调方法来定义你的属性与其他依赖属性的交互，或者设置一个内部属性或该属性更改时的对象状态。 如果调用该回调，则表明属性系统已断定发生了有效的属性值更改。 因为回调方法是静态的，所以回调的 *d* 参数很重要，因为它会告诉你类的哪个实例报告了更改情况。 典型的实现使用事件数据的 [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) 属性并以某种方式处理该值，通常是在作为 *d* 传递的对象上执行其他某种更改。 对属性更改的其他响应包括拒绝 **NewValue** 报告的值，还原 [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365)，或者将该值设置为应用于 **NewValue** 的编程约束
+你可以定义一个属性已更改回调方法来定义你的属性与其他依赖属性的交互，或者设置一个内部属性或该属性更改时的对象状态。 如果调用该回调，则表明属性系统已断定发生了有效的属性值更改。 因为回调方法是静态的，所以回调的 *d* 参数很重要，因为它会告诉你类的哪个实例报告了更改情况。 典型的实现使用事件数据的 [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) 属性并以某种方式处理该值，通常是在作为 *d* 传递的对象上执行其他某种更改。 对属性更改的其他响应包括拒绝 **NewValue** 报告的值，还原 [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365)，或者将该值设置为应用于 **NewValue** 的编程约束。
 
 下一个示例展示了一种 [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) 实现。 它实现你在前面的 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 示例中引用的方法，作为 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 构造参数的一部分。 此回调解决的场景是，该类也有一个名为“HasLabelValue”的计算只读属性（未给出实现）。 只要重新计算了“Label”属性，就会调用此回调方法，该回调使依赖的计算值与依赖属性的更改保持同步。
 
@@ -323,10 +319,10 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 ### DependencyObject 和线程处理
 
-所有 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 实例都必须在与 Windows 运行时应用所显示的当前 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 相关联的 UI 线程上创建。 虽然每个 **DependencyObject** 都必须在主 UI 线程上创建，但可以通过调用 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) 从其他线程使用调度程序引用来访问这些对象
+所有 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 实例都必须在与 Windows 运行时应用所显示的当前 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 相关联的 UI 线程上创建。 虽然每个 **DependencyObject** 都必须在主 UI 线程上创建，但可以通过调用 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) 从其他线程使用调度程序引用来访问这些对象。
 
 [
-            **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的线程处理特性很重要，因为这通常意味着只有那些在 UI 线程上运行的代码才能更改甚至是读取依赖属性的值。 在正确使用 **async** 模式和后台工作线程的典型 UI 代码中，通常可以避免线程处理问题。 通常，如果你定义自己的 **DependencyObject** 类型并尝试将这些类型用于 **DependencyObject** 未必适宜的数据源或其他场景，只会遇到与 **DependencyObject** 相关的线程处理问题。
+            **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的线程处理特性很重要，因为这通常意味着只有那些在 UI 线程上运行的代码才能更改或读取依赖属性的值。 在正确使用 **async** 模式和后台工作线程的典型 UI 代码中，通常可以避免线程处理问题。 通常，如果你定义自己的 **DependencyObject** 类型并尝试将这些类型用于 **DependencyObject** 未必适宜的数据源或其他场景，只会遇到与 **DependencyObject** 相关的线程处理问题。
 
 ### 避免意外的单一实例
 
@@ -342,8 +338,8 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 -   你通常不会为集合制作动画。
 -   你通常不会使用样式或模板预先填充集合中的各项。
--   尽管绑定到集合是一种主要的场景，但集合不需要将依赖属性用作绑定来源。 对于绑定目标，更典型的用法是使用 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 的子类来支持集合项，或使用视图-模型模式。 有关绑定到集合和从集合绑定的详细信息，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
--   集合更改通知问题最好通过 **INotifyPropertyChanged** 或 **INotifyCollectionChanged** 等接口，或通过从 [**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601) 派生的集合类型来解决
+-   尽管绑定到集合是一种主要的场景，但集合不需要将依赖属性用作绑定来源。 对于绑定目标，更典型的用法是使用 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 的子类来支持集合项，或使用视图-模型模式。 有关绑定到集合和从集合绑定的详细信息，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+-   集合更改通知问题最好通过 **INotifyPropertyChanged** 或 **INotifyCollectionChanged** 等接口，或通过从 [**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601) 派生的集合类型来解决。
 
 但是，有些场景确实需要集合类型依赖属性。 接下来的 3 节提供了有关如何实现集合类型依赖属性的一些指南。
 
@@ -353,7 +349,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 ### 更改通知
 
-将集合定义为依赖属性时，不会通过调用“PropertyChanged”回调方法的属性系统自动为集合中的各项提供更改通知。 如果想要集合或集合项的通知（例如用于数据绑定场景），可实现 **INotifyPropertyChanged** 或 **INotifyCollectionChanged** 接口。 有关详细信息，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
+将集合定义为依赖属性时，不会通过调用“PropertyChanged”回调方法的属性系统自动为集合中的各项提供更改通知。 如果想要集合或集合项的通知（例如用于数据绑定场景），可实现 **INotifyPropertyChanged** 或 **INotifyCollectionChanged** 接口。 有关详细信息，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 ### 依赖属性安全注意事项
 
@@ -369,7 +365,7 @@ Windows 运行时没有提供将自定义依赖属性注册为只读的方式。
 
 ### 注册 C++/CX 应用的依赖属性
 
-由于分为标头文件和实现文件以及在实现文件的作用域上进行初始化是错误做法，所以在 C++/CX 中注册属性的实现比在 C#C# 中实现更为复杂。 （Visual C++ 组件扩展 (C++/CX) 将静态初始化器代码从根作用域直接放置在 **DllMain** 中，而 C# 编译器将静态初始化器分配到类，从而避免 **DllMain** 加载锁定问题。） 此处执行的最佳做法是为某个类声明可注册所有依赖属性的 helper 函数，一个类对应一个函数。 然后，对于你的应用使用的每个自定义类，必须引用要使用的每个自定义类公开的帮助程序注册函数。 在 `InitializeComponent` 之前，调用每个帮助程序注册函数以作为 [**Application constructor**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`) 的一部分。 例如，该构造函数仅在首次引用应用时运行，如果恢复暂停的应用，该构造函数不会再次运行。 同样，如之前 C++ 注册示例所示，每个 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用周围的 **nullptr** 标识非常重要：它确保该函数的任何调用方均不能注册此属性两次。 第二次注册调用可能会导致没有此类标识的应用崩溃，因为属性名称可能重复。 如果你要查找 C++/CX 版本示例的代码，请参阅 [XAML 用户和自定义控件示例](http://go.microsoft.com/fwlink/p/?linkid=238581)中的这一实现模式。
+由于分为标头文件和实现文件以及在实现文件的作用域上进行初始化是错误做法，所以在 C++/CX 中注册属性的实现比在 C#C# 中实现更为复杂。 （Visual C++ 组件扩展 (C++/CX) 将静态初始化器代码从根作用域直接放置在 **DllMain** 中，而 C# 编译器将静态初始化器分配到类，从而避免 **DllMain** 加载锁定问题。） 此处执行的最佳做法是为某个类声明可注册所有依赖属性的 helper 函数，一个类对应一个函数。 然后，对于你的应用使用的每个自定义类，必须引用要使用的每个自定义类公开的 helper 注册函数。 在 `InitializeComponent` 之前，调用每个 helper 注册函数以作为 [**Application constructor**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`) 的一部分。 例如，该构造函数仅在首次引用应用时运行，如果恢复暂停的应用，该构造函数不会再次运行。 同样，如之前 C++ 注册示例所示，每个 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 调用周围的 **nullptr** 标识非常重要：它确保该函数的任何调用方均不能注册此属性两次。 第二次注册调用可能会导致没有此类标识的应用崩溃，因为属性名称可能重复。 如果你要查找 C++/CX 版本示例的代码，请参阅 [XAML 用户和自定义控件示例](http://go.microsoft.com/fwlink/p/?linkid=238581)中的这一实现模式。
 
 ## 相关主题
 
@@ -381,6 +377,7 @@ Windows 运行时没有提供将自定义依赖属性注册为只读的方式。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 了解如何捕获和识别较长的连续听写语音输入。
-title: 启用连续听写
+Description: "了解如何捕获和识别较长的连续听写语音输入。"
+title: "启用连续听写"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: a142592f878fa539d6c40ea2abfcbf834b2de34d
+
 ---
 
 # 连续听写
@@ -69,7 +72,7 @@ private StringBuilder dictatedTextBuilder;
 -   提取 UI 线程的调度程序（如果在连续识别事件处理程序中更新你的应用的 UI）。
 -   初始化语音识别器。
 -   编译内置的听写语法。
-    **注意** 语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用预定义的听写语法。 请参阅[语音识别](speech-recognition.md)
+    **注意** 语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用预定义的听写语法。 请参阅[语音识别](speech-recognition.md)。
 -   为识别事件设置事件侦听器。
 
 在此示例中，我们将在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 页面事件中初始化语音识别。
@@ -85,7 +88,7 @@ this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 this.speechRecognizer = new SpeechRecognizer();
 ```
 
-3.  我们再添加和编译语法，该语法定义所有可通过 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 识别的字词和短语
+3.  我们再添加和编译语法，该语法定义所有可通过 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 识别的字词和短语。
 
     如果未显式指定语法，则默认使用预定义听写语法。 通常，默认语法最适用于常规听写。
 
@@ -100,7 +103,7 @@ SpeechRecognitionCompilationResult result =
 ## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>处理识别事件
 
 
-你可以通过调用 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 捕获单一、简要的话语或短语 
+你可以通过调用 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 捕获单一、简要的话语或短语。 
 
 但是，为了捕获较长的连续识别会话，我们将指定在用户说话时要在后台运行的事件侦听器，并定义处理程序以构建听写字符串。
 
@@ -162,7 +165,7 @@ private async void ContinuousRecognitionSession_ResultGenerated(
 
 3.  然后处理 [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) 事件，该事件指示连续听写的结尾。
 
-    当你调用 [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) 或 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 方法时会话结束（在下一部分介绍）。 在发生错误或用户停止说话时，会话也可以结束。 检查事件参数的 [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 属性以确定会话结束的原因 ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433))
+    当你调用 [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) 或 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 方法时会话结束（在下一部分介绍）。 在发生错误或用户停止说话时，会话也可以结束。 检查事件参数的 [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 属性以确定会话结束的原因 ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433))。
 
     此处，我们在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 页面事件中注册 [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) 连续识别事件的处理程序。
 ```    CSharp
@@ -267,7 +270,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 [!NOTE]  
 [
-            **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件可在调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 后发生  
+            **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件可在调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 后发生。  
 由于多线程处理，当调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 时，[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件可能仍保留在堆栈上。 如果如此，则仍引发 **ResultGenerated** 事件。  
 如果在取消识别会话时设置任何私有字段，请始终在 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 处理程序中确认它们的值。 例如，如果在取消会话时将字段设置为 null，请勿假定字段在处理程序中进行初始化。
 
@@ -289,6 +292,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

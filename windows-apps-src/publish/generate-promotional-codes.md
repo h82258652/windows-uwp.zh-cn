@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: 你可以为已在 Windows 应用商店中发布的应用和应用内产品生成促销充值码。
-title: 生成促销充值码
+Description: "你可以为已在 Windows 应用商店中发布的应用和应用内产品生成促销充值码。"
+title: "生成促销充值码"
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4001f374a80cd7c62df6230a9429dd5b5a19d2b2
+
 ---
 
 # 生成促销充值码
@@ -130,6 +133,7 @@ ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

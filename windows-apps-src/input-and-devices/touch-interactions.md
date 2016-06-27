@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行优化，但在不同的输入设备上功能一致。
-title: 触控交互
+Description: "创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行优化，但在不同的输入设备上功能一致。"
+title: "触控交互"
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
+
 ---
 
 # 触控交互
@@ -108,7 +111,7 @@ template: detail.hbs
 使用以下方式设计草率交互：
 
 -   用户与内容交互时使用吸附点可以轻松在所需位置停止。
--   使用方向“围栏”可帮助进行垂直或水平平移，甚至手出现轻微弧度的移动时都可以。 有关详细信息，请参阅[平移指南](guidelines-for-panning.md)
+-   使用方向“围栏”可帮助进行垂直或水平平移，甚至手出现轻微弧度的移动时都可以。 有关详细信息，请参阅[平移指南](guidelines-for-panning.md)。
 
 ## 封闭
 
@@ -128,7 +131,7 @@ template: detail.hbs
 
 -   精确句柄
 
-    如果对精度有要求（例如文本选择），请提供偏移选择句柄以提高准确性。 有关详细信息，请参阅[选择文本和图像的指南（Windows 运行时应用）](guidelines-for-textselection.md)
+    如果对精度有要求（例如文本选择），请提供偏移选择句柄以提高准确性。 有关详细信息，请参阅[选择文本和图像的指南（Windows 运行时应用）](guidelines-for-textselection.md)。
 
 ## 定时
 
@@ -168,7 +171,7 @@ template: detail.hbs
 
 使用应用视图和事件来修改平移/滚动和缩放行为。 这可以比处理指针和手势事件提供更流畅的交互体验。
 
-有关应用视图的详细信息，请参阅[控件、布局和文本](https://msdn.microsoft.com/library/windows/apps/mt228348)
+有关应用视图的详细信息，请参阅[控件、布局和文本](https://msdn.microsoft.com/library/windows/apps/mt228348)。
 
 ## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>自定义触摸交互
 
@@ -177,9 +180,9 @@ template: detail.hbs
 
 若要提供自定义触摸支持，应处理各种 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件。 这些事件分组为三个抽象级别。
 
--   静态手势事件在交互完成之后触发。 手势事件包括 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)、[**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)、[**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) 和 [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928)
+-   静态手势事件是在交互完成之后触发的。 手势事件包括 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)、[**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)、[**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) 和 [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928)。
 
-    可以通过将 [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939)、[**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931)、[**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937) 和 [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) 设置为 **false** 来禁用针对特定元素的手势事件
+    可以通过将 [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939)、[**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931)、[**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937) 和 [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) 设置为 **false** 来禁用针对特定元素的手势事件。
 
 -   诸如 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 和 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 的指针事件会提供每个触摸接触的低级别详细信息，包括指针动作以及区分按下和释放事件的能力。
 
@@ -211,7 +214,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 ## <span id="gestures"></span><span id="GESTURES"></span>手势事件
 
 
-有关个别控件的详细信息，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)
+有关个别控件的详细信息，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
 ## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>指针事件
 
@@ -483,7 +486,7 @@ End Sub
 </Grid>
 ```
 
-接下来，创建一个名为 `dragTranslation` 的全局 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027)，用于转换 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371)。 在 **Rectangle** 上指定一个 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件侦听器，并将 `dragTranslation` 添加到 **Rectangle** 的 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980)
+接下来，创建一个名为 `dragTranslation` 的全局 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027)，用于转换 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371)。 在 **Rectangle** 上指定一个 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件侦听器，并将 `dragTranslation` 添加到 **Rectangle** 的 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980)。
 
 ```ManagedCPlusPlus
 // Global translation transform used for changing the position of 
@@ -601,9 +604,9 @@ End Sub
 ## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>路由事件
 
 
-此处提及的所有指针事件、手势事件和操作事件都将作为*路由事件*实现。 这意味着该事件可能由对象（而不是最初引起该事件的对象）处理。 对象树中的连续父对象（例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 元素的父容器或你的应用的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)）可以选择处理这些对象，即使原始元素未执行此操作也是如此。 相反，处理该事件的任何对象都可以标记处理的事件，以使其不再达到任何父元素。 有关路由事件概念以及它如何影响你为路由事件编写处理程序的方式的详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/hh758286)
+此处提及的所有指针事件、手势事件和操作事件都将作为*路由事件*实现。 这意味着该事件可能由对象（而不是最初引起该事件的对象）处理。 对象树中的连续父对象（例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 元素的父容器或你的应用的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)）可以选择处理这些对象，即使原始元素未执行此操作也是如此。 相反，处理该事件的任何对象都可以标记处理的事件，以使其不再达到任何父元素。 有关路由事件概念以及它如何影响你为路由事件编写处理程序的方式的详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/hh758286)。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>注意事项
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
 -   设计将触摸交互作为预期的主要输入方法的应用程序。
@@ -618,15 +621,17 @@ End Sub
 ## <span id="related_topics"></span>相关文章
 
 * [处理指针输入](handle-pointer-input.md)
-* 标识输入设备
-* [示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* 用户交互模式示例
-* [焦点视觉效果示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [存档示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [标识输入设备](identify-input-devices.md) 
+           **示例**
+* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦点视觉效果示例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **存档示例**
+* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  
@@ -636,6 +641,7 @@ End Sub
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

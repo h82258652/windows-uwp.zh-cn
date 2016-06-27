@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 在通用 Windows 平台 (UWP) 应用中接收、处理和管理来自指针设备的输入数据，例如触摸、鼠标、笔/触笔和触摸板。
-title: 处理指针输入
+Description: "在通用 Windows 平台 (UWP) 应用中接收、处理和管理来自指针设备的输入数据，例如触摸、鼠标、笔/触笔和触摸板。"
+title: "处理指针输入"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
+
 ---
 
 # 处理指针输入
@@ -57,7 +60,7 @@ UWP 应用可以侦听以下指针事件：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="PointerCanceled"></span><span id="pointercanceled"></span><span id="POINTERCANCELED"></span>\[<strong>PointerCanceled</strong>\](https://msdn.microsoft.com/library/windows/apps/br208964)</p></td>
+<td align="left"><p><span id="PointerCanceled"></span><span id="pointercanceled"></span><span id="POINTERCANCELED"></span>[<strong>PointerCanceled</strong>](https://msdn.microsoft.com/library/windows/apps/br208964)</p></td>
 <td align="left"><p>在指针由平台取消时发生。</p>
 <ul>
 <li>当在输入图面的范围内检测到笔时，将取消触摸指针。</li>
@@ -68,7 +71,7 @@ UWP 应用可以侦听以下指针事件：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerCaptureLost"></span><span id="pointercapturelost"></span><span id="POINTERCAPTURELOST"></span>\[<strong>PointerCaptureLost</strong>\](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
+<td align="left"><p><span id="PointerCaptureLost"></span><span id="pointercapturelost"></span><span id="POINTERCAPTURELOST"></span>[<strong>PointerCaptureLost</strong>](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
 <td align="left"><p>当另一个 UI 元素捕获该指针、释放该指针、或以编程方式捕获另一个指针时发生。</p>
 <div class="alert">
 <strong>注意</strong> 不存在相应的指针捕获事件。
@@ -83,38 +86,38 @@ UWP 应用可以侦听以下指针事件：
 <ul>
 <li>触摸需要手指接触才能引发此事件，无论是从对元素直接触摸按下还是移动到该元素的绑定区域。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔通过对元素直接按下笔或移动到该元素的绑定区域来引发此事件。 但是，笔还有悬停状态 \(\[<strong>IsInRange</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br227977\)\)，可在为 true 时引发此事件。</li>
+<li>和触摸一样，笔通过对元素直接按下笔或移动到该元素的绑定区域来引发此事件。 但是，笔还有悬停状态 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977))，可在为 true 时引发此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerExited"></span><span id="pointerexited"></span><span id="POINTEREXITED"></span>\[<strong>PointerExited</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208969\)</p></td>
+<td align="left"><p><span id="PointerExited"></span><span id="pointerexited"></span><span id="POINTEREXITED"></span>[<strong>PointerExited</strong>](https://msdn.microsoft.com/library/windows/apps/br208969)</p></td>
 <td align="left"><p>在指针离开元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触，并在指针移出该元素的绑定区域时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔在移出该元素的绑定区域时引发此事件。 但是，笔还有悬停状态 \(\[<strong>IsInRange</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br227977\)\)，可在状态从 ture 更改为 false 时引发此事件。</li>
+<li>和触摸一样，笔在移出该元素的绑定区域时引发此事件。 但是，笔还有悬停状态 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977))，可在状态从 ture 更改为 false 时引发此事件。</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerMoved"></span><span id="pointermoved"></span><span id="POINTERMOVED"></span>\[<strong>PointerMoved</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208970\)</p></td>
+<td align="left"><p><span id="PointerMoved"></span><span id="pointermoved"></span><span id="POINTERMOVED"></span>[<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970)</p></td>
 <td align="left"><p>在指针更改元素的绑定区域内的坐标、按钮状态、压力、倾斜或接触几何图形（例如宽度和高度）时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触，并且仅在与该元素的绑定区域接触时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔在与该元素的绑定区域接触时引发此事件。 但是，笔还有悬停状态 \(\[<strong>IsInRange</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br227977\)\)，可在为 true 且在元素的绑定区域内时引发此事件。</li>
+<li>和触摸一样，笔在与该元素的绑定区域接触时引发此事件。 但是，笔还有悬停状态 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977))，可在为 true 且在元素的绑定区域内时引发此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerPressed"></span><span id="pointerpressed"></span><span id="POINTERPRESSED"></span>\[<strong>PointerPressed</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208971\)</p></td>
+<td align="left"><p><span id="PointerPressed"></span><span id="pointerpressed"></span><span id="POINTERPRESSED"></span>[<strong>PointerPressed</strong>](https://msdn.microsoft.com/library/windows/apps/br208971)</p></td>
 <td align="left"><p>在指针指示元素的绑定区域内发生按下操作（例如触摸按下、鼠标按钮按下、笔按下或触摸板按钮按下）时发生。</p>
-<p>\[<strong>CapturePointer</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208918\) 必须从此事件的处理程序调用。</p></td>
+<p>[<strong>CapturePointer</strong>](https://msdn.microsoft.com/library/windows/apps/br208918) 必须从此事件的处理程序调用。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerReleased"></span><span id="pointerreleased"></span><span id="POINTERRELEASED"></span>\[<strong>PointerReleased</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208972\)</p></td>
+<td align="left"><p><span id="PointerReleased"></span><span id="pointerreleased"></span><span id="POINTERRELEASED"></span>[<strong>PointerReleased</strong>](https://msdn.microsoft.com/library/windows/apps/br208972)</p></td>
 <td align="left"><p>在指针指示元素的绑定区域内发生释放事件（例如触摸抬起、鼠标按钮抬起、笔抬起或触摸板按钮抬起）时或在绑定区域外捕获到该指针时发生。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerWheelChanged"></span><span id="pointerwheelchanged"></span><span id="POINTERWHEELCHANGED"></span>\[<strong>PointerWheelChanged</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208973\)</p></td>
+<td align="left"><p><span id="PointerWheelChanged"></span><span id="pointerwheelchanged"></span><span id="POINTERWHEELCHANGED"></span>[<strong>PointerWheelChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208973)</p></td>
 <td align="left"><p>在旋转鼠标滚轮时发生。</p>
 <p>鼠标输入与第一次检测到鼠标输入时分配的单个指针相关联。 单击鼠标按钮（左键、滚轮或右键）会通过 \[<strong>PointerMoved</strong>\]\(https://msdn.microsoft.com/library/windows/apps/br208970\) 事件在指针和该按钮之间创建一个辅助关联。</p></td>
 </tr>
@@ -1101,6 +1104,7 @@ namespace PointerInput
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 
