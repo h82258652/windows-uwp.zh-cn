@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\enter-iap-properties.md](https://github.com/Microsoft/windows-apps/blob/3cc9a18124b7be93ab45456c1a35a3b65d3f0deb/windows-apps-src/publish/enter-iap-properties.md) | HandedBackFailed | [Details](#6f6052508118c77fd85a30c09d8aefe0a9a7f33b3602)
+ [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/5cae0870142282eaf2f3db05e0e202db7e74ef26/windows-apps-src/audio-video-camera/playready-client-sdk.md) | HandedBackFailed | [Details](#eef128afc0da6f55a76b8c664f9049dc1ec48da1487)
 
 ## Item Details
-##### <a name='6f6052508118c77fd85a30c09d8aefe0a9a7f33b3602'></a> Source: [windows-apps-src\publish\enter-iap-properties.md](https://github.com/Microsoft/windows-apps/blob/3cc9a18124b7be93ab45456c1a35a3b65d3f0deb/windows-apps-src/publish/enter-iap-properties.md)
+##### <a name='eef128afc0da6f55a76b8c664f9049dc1ec48da1487'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/5cae0870142282eaf2f3db05e0e202db7e74ef26/windows-apps-src/audio-video-camera/playready-client-sdk.md)
 * Status: HandedBackFailed
 * Target File: 
-* Handoff File: [enter-iap-properties.1d1427a4c394ed66d9e4c6609a4c81c403ca6375.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/aef38fa0a908a2f20a6d09eace5bd670baa8eae9/ol-handoff/Microsoft/windows-apps.zh-cn/master/enter-iap-properties.1d1427a4c394ed66d9e4c6609a4c81c403ca6375.zh-cn.xlf)
-* Handoff Datetime: 2016-06-28 23:57:40
+* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/972a0c7c61b6d0411e6f315335971a90a3b066d5/ol-handoff/Microsoft/windows-apps.zh-cn/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-cn.xlf)
+* Handoff Datetime: 2016-06-29 00:51:40
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
