@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 处理应用激活
-description: 了解如何通过替代 OnLaunched 方法来处理应用激活。
+author: TylerMSFT
+title: "处理应用激活"
+description: "了解如何通过替代 OnLaunched 方法来处理应用激活。"
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
+ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
+ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
+
 ---
 
 # 处理应用激活
@@ -28,7 +31,7 @@ ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 
 ```xml
 <Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="AppName.App" >
 ```
 
@@ -38,66 +41,66 @@ ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 **注意** 对于 Windows Phone 应用商店应用，每次用户从“开始”磁贴或应用列表启动应用时都会调用此方法，即使该应用当前在内存中已暂停也是如此。 在 Windows 上，从“开始”磁贴或应用列表启动暂停的应用不会调用此方法。
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-using System;
-using Windows.ApplicationModel.Activation;
-using Windows.UI.Xaml;
-
-namespace AppName
-{
-   public partial class App
-   {
-      async protected override void OnLaunched(LaunchActivatedEventArgs args)
-      {
-         EnsurePageCreatedAndActivate();
-      }
-      
-      // Creates the MainPage if it isn't already created.  Also activates
-      // the window so it takes foreground and input focus.
-      private MainPage EnsurePageCreatedAndActivate()
-      {
-         if (Window.Current.Content == null)
-         {
-             Window.Current.Content = new MainPage();
-         }
-         
-         Window.Current.Activate();
-         return Window.Current.Content as MainPage;
-      }
-   }
-}
-```
-```vb
-Class App
-   Protected Overrides Sub OnLaunched(args As LaunchActivatedEventArgs)
-      Window.Current.Content = New MainPage()
-      Window.Current.Activate()
-   End Sub
-End Class
-```
-```cpp
-using namespace Windows::ApplicationModel::Activation;
-using namespace Windows::Foundation;
-using namespace Windows::UI::Xaml;
-using namespace AppName;
-void App::OnLaunched(LaunchActivatedEventArgs^ args)
-{
-   EnsurePageCreatedAndActivate();
-}
-
-// Creates the MainPage if it isn't already created.  Also activates
-// the window so it takes foreground and input focus.
-void App::EnsurePageCreatedAndActivate()
-{
-    if (_mainPage == nullptr)
-    {
-        // Save the MainPage for use if we get activated later
-        _mainPage = ref new MainPage();
-    }
-    Window::Current->Content = _mainPage;
-    Window::Current->Activate();
-}
-```
+> ```cs
+> using System;
+> using Windows.ApplicationModel.Activation;
+> using Windows.UI.Xaml;
+>
+> namespace AppName
+> {
+>    public partial class App
+>    {
+>       async protected override void OnLaunched(LaunchActivatedEventArgs args)
+>       {
+>          EnsurePageCreatedAndActivate();
+>       }
+>
+>       // Creates the MainPage if it isn't already created.  Also activates
+>       // the window so it takes foreground and input focus.
+>       private MainPage EnsurePageCreatedAndActivate()
+>       {
+>          if (Window.Current.Content == null)
+>          {
+>              Window.Current.Content = new MainPage();
+>          }
+>
+>          Window.Current.Activate();
+>          return Window.Current.Content as MainPage;
+>       }
+>    }
+> }
+> ```
+> ```vb
+> Class App
+>    Protected Overrides Sub OnLaunched(args As LaunchActivatedEventArgs)
+>       Window.Current.Content = New MainPage()
+>       Window.Current.Activate()
+>    End Sub
+> End Class
+> ```
+> ```cpp
+> using namespace Windows::ApplicationModel::Activation;
+> using namespace Windows::Foundation;
+> using namespace Windows::UI::Xaml;
+> using namespace AppName;
+> void App::OnLaunched(LaunchActivatedEventArgs^ args)
+> {
+>    EnsurePageCreatedAndActivate();
+> }
+>
+> // Creates the MainPage if it isn't already created.  Also activates
+> // the window so it takes foreground and input focus.
+> void App::EnsurePageCreatedAndActivate()
+> {
+>     if (_mainPage == nullptr)
+>     {
+>         // Save the MainPage for use if we get activated later
+>         _mainPage = ref new MainPage();
+>     }
+>     Window::Current->Content = _mainPage;
+>     Window::Current->Activate();
+> }
+> ```
 
 ## 在应用暂停而后终止时还原应用程序数据
 
@@ -105,57 +108,57 @@ void App::EnsurePageCreatedAndActivate()
 当用户切换到终止的应用时，系统将发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，其中 [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 设置为 **Launch**，[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 设置为 **Terminated** 或 **ClosedByUser**。 应用应该加载其保存的应用程序数据并刷新其显示的内容。
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-async protected override void OnLaunched(LaunchActivatedEventArgs args)
-{
-   if (args.PreviousExecutionState == ApplicationExecutionState.Terminated ||
-       args.PreviousExecutionState == ApplicationExecutionState.ClosedByUser)
-   {
-      // TODO: Populate the UI with the previously saved application data
-   }
-   else
-   {
-      // TODO: Populate the UI with defaults
-   }
-   
-   EnsurePageCreatedAndActivate();
-}
-```
-```vb
-Protected Overrides Sub OnLaunched(args As Windows.ApplicationModel.Activation.LaunchActivatedEventArgs)
-   Dim restoreState As Boolean = False
-
-   Select Case args.PreviousExecutionState
-      Case ApplicationExecutionState.Terminated
-         ' TODO: Populate the UI with the previously saved application data
-         restoreState = True
-      Case ApplicationExecutionState.ClosedByUser
-         ' TODO: Populate the UI with the previously saved application data
-         restoreState = True
-      Case Else
-         ' TODO: Populate the UI with defaults
-   End Select
-
-   Window.Current.Content = New MainPage(restoreState)
-   Window.Current.Activate()
-End Sub
-```
-```cpp
-void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ args)
-{
-   if (args->PreviousExecutionState == ApplicationExecutionState::Terminated ||
-       args->PreviousExecutionState == ApplicationExecutionState::ClosedByUser)
-   {
-      // TODO: Populate the UI with the previously saved application data
-   }
-   else
-   {
-      // TODO: Populate the UI with defaults
-   }
-
-   EnsurePageCreatedAndActivate();
-}
-```
+> ```cs
+> async protected override void OnLaunched(LaunchActivatedEventArgs args)
+> {
+>    if (args.PreviousExecutionState == ApplicationExecutionState.Terminated ||
+>        args.PreviousExecutionState == ApplicationExecutionState.ClosedByUser)
+>    {
+>       // TODO: Populate the UI with the previously saved application data
+>    }
+>    else
+>    {
+>       // TODO: Populate the UI with defaults
+>    }
+>
+>    EnsurePageCreatedAndActivate();
+> }
+> ```
+> ```vb
+> Protected Overrides Sub OnLaunched(args As Windows.ApplicationModel.Activation.LaunchActivatedEventArgs)
+>    Dim restoreState As Boolean = False
+>
+>    Select Case args.PreviousExecutionState
+>       Case ApplicationExecutionState.Terminated
+>          ' TODO: Populate the UI with the previously saved application data
+>          restoreState = True
+>       Case ApplicationExecutionState.ClosedByUser
+>          ' TODO: Populate the UI with the previously saved application data
+>          restoreState = True
+>       Case Else
+>          ' TODO: Populate the UI with defaults
+>    End Select
+>
+>    Window.Current.Content = New MainPage(restoreState)
+>    Window.Current.Activate()
+> End Sub
+> ```
+> ```cpp
+> void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ args)
+> {
+>    if (args->PreviousExecutionState == ApplicationExecutionState::Terminated ||
+>        args->PreviousExecutionState == ApplicationExecutionState::ClosedByUser)
+>    {
+>       // TODO: Populate the UI with the previously saved application data
+>    }
+>    else
+>    {
+>       // TODO: Populate the UI with defaults
+>    }
+>
+>    EnsurePageCreatedAndActivate();
+> }
+> ```
 
 如果 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 的值为 **NotRunning**，则应用无法成功保存其应用程序数据，应用应该如同初始启动一样重新启动。
 
@@ -181,8 +184,6 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

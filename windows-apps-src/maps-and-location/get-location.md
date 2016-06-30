@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: 获取用户位置
-description: 查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。
+title: "获取用户位置"
+description: "查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。"
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: d35bf3ef13e2b36dfed6613a00f65d19b9013464
+
 ---
 
 # 获取用户位置
@@ -268,6 +272,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

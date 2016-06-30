@@ -1,8 +1,11 @@
 ---
 author: drewbatgit
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
-description: 本文介绍了如何创建可在后台播放音频的通用 Windows 平台 (UWP) 应用。
-title: 后台音频
+description: "本文介绍了如何创建可在后台播放音频的通用 Windows 平台 (UWP) 应用。"
+title: "后台音频"
+ms.sourcegitcommit: 99d1ffa637fd8beca5d1e829cc7cacc18a9c21e9
+ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
+
 ---
 
 # 后台音频
@@ -65,6 +68,9 @@ title: 后台音频
             **SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) 和 [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) 方法分别调用相应进程中的事件。 消息可通过订阅 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 和 [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) 事件来接收。
 
 可将数据作为参数传递给发送消息方法，这些方法随后会传入消息接收的事件处理程序中。 使用 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 类传递数据。 此类是一个字典，包含了作为键的字符串和作为值的其他值类型。 你可以传递整数、字符串和布尔值等简单的值类型。
+
+**注意**  
+当前台应用运行时，应用应仅调用 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533)。 在前台应用未运行时尝试调用此方法将引发异常。 应用负责将前台应用状态传递给后台进程。 这可以通过使用应用生命周期事件、保存在本地存储中的状态值和进程之间的消息来完成。 
 
 ## 后台任务生命周期
 
@@ -137,6 +143,7 @@ title: 后台音频
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

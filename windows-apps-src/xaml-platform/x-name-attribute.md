@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 唯一标识对象元素，可方便从代码隐藏或一般代码中访问已实例化的对象。
-title: xName 属性
+description: "唯一标识对象元素，可方便从代码隐藏或一般代码中访问已实例化的对象。"
+title: "xName 属性"
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 442c2fa103e1e968ef47ea990bfe8e166daec88b
+
 ---
 
 # x&#58;Name 属性
@@ -66,6 +70,7 @@ UWP XAML 中使用的一些类型还具有一个名为 **Name** 的属性。 例
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: 本部分介绍了如何在通用 Windows 平台 (UWP) 应用之间共享数据，包括如何使用“共享”合约、复制和粘贴以及拖放。
-title: 应用到应用的通信
+description: "本部分介绍了如何在通用 Windows 平台 (UWP) 应用之间共享数据，包括如何使用“共享”合约、复制和粘贴以及拖放。"
+title: "应用到应用的通信"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: dcd542257761083f3ec04eb0da2b13d5d68a19e2
+ms.openlocfilehash: 63550064b6f31b85cd3b6fa2a09bac4b7cfcf895
+
 ---
 
 # 应用到应用的通信
@@ -28,6 +32,7 @@ author: awkoren
 | [使用 EDP 保护在应用之间传输的企业数据](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | 本主题演示了实现一些与数据传输相关的最常见企业数据保护 (EDP) 方案所需的编码任务示例。 |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

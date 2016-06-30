@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 下面是一些重要信息，你将需要使用它们来确保你会收到对你的应用和应用内产品 (IAP) 的付款以及 Microsoft Advertising 收入。
-title: 获取付款
+Description: "下面是一些重要信息，你将需要使用它们来确保你会收到对你的应用和应用内产品 (IAP) 的付款以及 Microsoft Advertising 收入。"
+title: "获取付款"
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b7c9bcf36aaee0344c6916fcc81aca189ef0f481
+
 ---
 
 # 获取付款
@@ -56,6 +60,7 @@ Windows 应用商店费用适用于通过 Windows 应用商店收到的所有应
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

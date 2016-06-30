@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
-title: 绑定分层数据和创建大纲/细节视图
-description: 你可以通过将项目控件绑定到 CollectionViewSource 实例（它们绑定在同一个链中），来生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。
+title: "绑定分层数据和创建大纲/细节视图"
+description: "你可以通过将项目控件绑定到 CollectionViewSource 实例（它们绑定在同一个链中），来生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。"
+translationtype: Human Translation
+ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
+ms.openlocfilehash: 2ff66a1d6a80bb085f54dec8e35371ba0c9e6b27
+
 ---
 # 绑定分层数据和创建大纲/细节视图
 
@@ -221,6 +225,7 @@ namespace MasterDetailsBinding
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

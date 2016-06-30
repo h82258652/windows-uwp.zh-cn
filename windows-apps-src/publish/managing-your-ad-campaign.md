@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 若要管理应用的广告市场活动，请在 Windows 开发人员中心仪表板的应用页面中依次单击“盈利”&gt;“推广你的应用”。
-title: 管理广告市场活动
+Description: "若要管理应用的广告市场活动，请在 Windows 开发人员中心仪表板的应用页面中依次单击“盈利”&gt;“推广你的应用”。"
+title: "管理广告市场活动"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
+
 ---
 
 # 管理广告市场活动
@@ -46,6 +50,7 @@ ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

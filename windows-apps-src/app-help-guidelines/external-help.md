@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: 针对有关你的应用的详细说明和建议设计外部帮助页。
-title: 设计外部帮助页指南
+Description: "针对有关你的应用的详细说明和建议设计外部帮助页。"
+title: "设计外部帮助页指南"
 label: External help
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 03ef3fc34d2018c0ec712977065377a9c52cd8b2
+
 ---
 
 # 外部帮助页
@@ -38,6 +42,7 @@ template: detail.hbs
 * [应用帮助指南](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

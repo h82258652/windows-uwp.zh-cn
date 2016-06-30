@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
-title: 传感器
-description: 传感器使你的应用了解它周围的设备和外界之间的关系。 传感器可以告知你的应用设备的方向、定位和移动。
+title: "传感器"
+description: "传感器使你的应用了解它周围的设备和外界之间的关系。 传感器可以告知你的应用设备的方向、定位和移动。"
+translationtype: Human Translation
+ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
+ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
+
 ---
 # 传感器
 
@@ -76,7 +80,7 @@ description: 传感器使你的应用了解它周围的设备和外界之间的�
 ## 指南针
 
 [
-            **Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) 传感器基于地球的水平面返回与磁北相关的二维方向。 不应该将指南针传感器用于确定特定设备方向或用于表示三维空间中的任何内容。 地理功能可导致方向出现自然偏差，因此某些系统同时支持 [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingmagneticnorth) 和 [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingtruenorth)。 考虑你的应用将首选哪一个值，但要记住并非所有系统都会报告真北值。 陀螺测试仪和磁力计（测量磁场强度大小的设备）传感器组合其数据以生成指南针方向，该方向具有稳定数据的有效效应（由于电力系统组件，磁场强度非常不稳定）。
+            **Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) 传感器基于地球的水平面返回与磁北相关的二维方向。 不应该将指南针传感器用于确定特定设备方向或用于表示三维空间中的任何内容。 地理功能可导致方向出现自然偏差，因此某些系统同时支持 [**HeadingMagneticNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) 和 [**HeadingTrueNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx)。 考虑你的应用将首选哪一个值，但要记住并非所有系统都会报告真北值。 陀螺测试仪和磁力计（测量磁场强度大小的设备）传感器组合其数据以生成指南针方向，该方向具有稳定数据的有效效应（由于电力系统组件，磁场强度非常不稳定）。
 
 ![有关磁北极的指南针读数](images/compass.png)
 
@@ -127,7 +131,7 @@ description: 传感器使你的应用了解它周围的设备和外界之间的�
 ## 简单方向
 
 [
-            **SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206399sensor) 将检测指定设备的当前象限方向或其朝上方向或朝下方向。 它具有六个可能的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) 状态（**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**）。
+            **SimpleOrientationSensor**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) 将检测指定设备的当前象限方向或其朝上方向或朝下方向。 它具有六个可能的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) 状态（**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**）。
 
 可根据平行或垂直于地面的设备更改其显示的阅读器应用将使用 SimpleOrientationSensor 中的值，以确定如何定位该设备。
 
@@ -137,6 +141,7 @@ description: 传感器使你的应用了解它周围的设备和外界之间的�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

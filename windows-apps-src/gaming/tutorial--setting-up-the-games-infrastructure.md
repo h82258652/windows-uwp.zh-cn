@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 设置游戏项目
-description: 装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。
+title: "设置游戏项目"
+description: "装配游戏的第一步是在 Microsoft Visual Studio 中设置项目，以便最大限度减少需要执行的代码基础结构工作量。"
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d4d7864f9689df0919b53ee70b8e18f8d812b2b0
+
 ---
 
 # 设置游戏项目
@@ -164,6 +168,7 @@ void App::Run()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

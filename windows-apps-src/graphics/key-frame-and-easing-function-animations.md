@@ -1,8 +1,12 @@
 ---
 author: Jwmsft
-title: 关键帧动画以及缓动函数动画
+title: "关键帧动画以及缓动函数动画"
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
-description: 线性关键帧动画、具有 KeySpline 值的关键帧动画或缓动函数对于大致相同的情况是三种不同的技术。
+description: "线性关键帧动画、具有 KeySpline 值的关键帧动画或缓动函数对于大致相同的情况是三种不同的技术。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f2c6d6c0e1d11fee40440cae06d68907313f62dc
+
 ---
 # 关键帧动画以及缓动函数动画
 
@@ -21,7 +25,7 @@ description: 线性关键帧动画、具有 KeySpline 值的关键帧动画或�
 
 对于内插行为，每个关键帧控制该内插，直至到达其 **KeyTime** 时间。 其 **Value** 也会在该时间到达。 如果有更多关键帧超出范围，则该值将成为序列中下一个关键帧的起始值。
 
-在动画开始时，如果不存在 **KeyTime** 为“0:0:0”的关键帧，则起始值为该属性的任意非动画值。 这种情况下的行为与 **From**/**To**/**By** 动画在没有 **From** 的情况下的行为类似
+在动画开始时，如果不存在 **KeyTime** 为“0:0:0”的关键帧，则起始值为该属性的任意非动画值。 这种情况下的行为与 **From**/**To**/**By** 动画在没有 **From** 的情况下的行为类似。
 
 关键帧动画的持续时间为隐式持续时间，它等于其任一关键帧中设置的最高 **KeyTime** 值。 如果需要，你可以设置一个显式 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration)，但应注意该值不应小于你自己的关键帧中的 **KeyTime**，否则将会截断部分动画。
 
@@ -33,8 +37,7 @@ description: 线性关键帧动画、具有 KeySpline 值的关键帧动画或�
             **BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime)：延迟动画的起始部分。 帧内 **KeyTime** 值的时间线在 **BeginTime** 到达前不开始计数，因此不存在截断帧的风险
 -   [
             **FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior)：控制当到达最后一帧时发生的操作。 **FillBehavior** 不会对任何中间关键帧产生任何影响。
--   [
-            **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)：
+-   [ **RepeatBehavior** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
     -   如果设置为 **Forever**，则关键帧及其时间线将一直重复。
     -   如果设置为一个迭代计数，则时间线将重复该计数多次。
     -   如果设置为 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)，则时间线在到达该时间前一直重复。 如果该数不是时间线的隐式持续时间的整数倍数，则这可能会截断关键帧序列中的部分动画。
@@ -149,9 +152,9 @@ This example applies a [**CubicEase**](https://msdn.microsoft.com/library/window
 
 缓动函数可以以三种方式应用于动画：
 
--   按照上一节中的说明，通过在关键帧动画中使用缓动关键帧。 使用 [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267)、[**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx) 或 [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279)
--   通过在 **From**/**To**/**By** 动画类型之一上设置 **EasingFunction** 属性。 使用 [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075)、[**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 或 [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354)
--   通过将 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 设置为 [**VisualTransition**](https://msdn.microsoft.com/library/windows/apps/BR209034) 的一部分。 这种方式专用于定义控件的视觉状态；对于详细信息，请参阅 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 或[视觉状态的情节提要](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
+-   按照上一节中的说明，通过在关键帧动画中使用缓动关键帧。 使用 [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267)、[**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx) 或 [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279)。
+-   通过在 **From**/**To**/**By** 动画类型之一上设置 **EasingFunction** 属性。 使用 [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075)、[**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 或 [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354)。
+-   通过将 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 设置为 [**VisualTransition**](https://msdn.microsoft.com/library/windows/apps/BR209034) 的一部分。 这种方式专用于定义控件的视觉状态；对于详细信息，请参阅 [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) 或[视觉状态的情节提要](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
 下面是缓动函数的列表：
 
@@ -180,7 +183,7 @@ This example applies a [**CubicEase**](https://msdn.microsoft.com/library/window
 
 某些缓动函数具有其自己的属性。 例如，[**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) 具有两个属性（[**Bounces**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) 和 [**Bounciness**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx)），用于修改该特定 **BounceEase** 的时间函数行为。 其他缓动函数（例如 [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126)）不具有除所有缓动函数共享的 [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) 属性之外的任何属性，并且始终产生相同的时间函数行为。
 
-根据你在具有多个属性的缓动函数上设置的属性，这些缓动函数中的某些函数会部分重叠。 例如，[**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) 与其 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 等于 2 的 [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) 完全相同。 并且，基本上 [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) 就是具有默认值的 [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)
+根据你在具有多个属性的缓动函数上设置的属性，这些缓动函数中的某些函数会部分重叠。 例如，[**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) 与其 [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) 等于 2 的 [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) 完全相同。 并且，基本上 [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) 就是具有默认值的 [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294)。
 
 [
             **BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) 缓动函数是唯一的，因为它可以更改正常范围之外的值（在由 **From**/**To** 设置时）或关键帧的值。 它通过更改相反方向的值启动动画，按照预期从正常的 **From**/**To** 行为开始，再次返回至 **From** 或起始值，然后按正常行为运行动画。
@@ -209,10 +212,10 @@ This example applies a [**CubicEase**](https://msdn.microsoft.com/library/window
 
 ## <span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>离散式对象值动画
 
-有一种类型的动画值得特别提出，因为它是可以将动画化的值应用于其类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 的属性的唯一方法。 它就是关键帧动画 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)。 使用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 值的动画非常不同，因为不可能在帧之间内插值。 当帧的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) 到达时，动画化的值将立即设置为关键帧的 **Value** 中指定的值。 由于没有任何内插，因此只有一种关键帧用于 **ObjectAnimationUsingKeyFrames** 关键帧集合：[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)
+有一种类型的动画值得特别提出，因为它是可以将动画化的值应用于其类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 的属性的唯一方法。 它就是关键帧动画 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)。 使用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 值的动画非常不同，因为不可能在帧之间内插值。 当帧的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) 到达时，动画化的值将立即设置为关键帧的 **Value** 中指定的值。 由于没有任何内插，因此只有一种关键帧用于 **ObjectAnimationUsingKeyFrames** 关键帧集合：[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)。
 
 [
-            **DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 的 [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) 通常使用属性元素语法设置，因为你尝试设置的对象值通常不可表示为字符串以采用属性语法填充 **Value**。 如果你使用引用，例如 [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588)，则仍可以使用属性语法
+            **DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 的 [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) 通常使用属性元素语法设置，因为你尝试设置的对象值通常不可表示为字符串以采用属性语法填充 **Value**。 如果你使用引用，例如 [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588)，则仍可以使用属性语法。
 
 你将发现默认模板中使用的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) 的一个情况是在模板属性引用 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 资源时。 这些资源是 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 对象，而不仅仅是 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 值，并且它们使用定义为系统主题 ([**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/BR208807)) 的资源。 可以将它们直接分配给 **Brush** 类型的值，例如 [**TextBlock.Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665)，并且不需要使用间接目标。 但由于 **SolidColorBrush** 不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 **Color**，因此你必须使用 **ObjectAnimationUsingKeyFrames** 才能使用该资源。
 
@@ -296,6 +299,7 @@ You also might use [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.co
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

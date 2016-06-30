@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 从 Direct3D 9 到 Direct3D 11 的重要更改
-description: 本主题介绍 DirectX 9 和 DirectX 11 之间更高级别的差异。
+title: "从 Direct3D 9 到 Direct3D 11 的重要更改"
+description: "本主题介绍 DirectX 9 和 DirectX 11 之间更高级别的差异。"
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d63aebaf656b62481675eebf7c0bf9ea51784a8
+
 ---
 
 # 从 Direct3D 9 到 Direct3D 11 的重要更改
@@ -111,6 +115,7 @@ Direct3D 9 使用 SetVertexShaderConstant 和 SetPixelShaderConstant 为采用�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

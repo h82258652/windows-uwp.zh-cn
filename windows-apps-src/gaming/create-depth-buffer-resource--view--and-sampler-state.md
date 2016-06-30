@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 创建深度缓冲区设备资源
-description: 了解如何创建支持阴影卷的深度测试所需的 Direct3D 设备资源。
+title: "创建深度缓冲区设备资源"
+description: "了解如何创建支持阴影卷的深度测试所需的 Direct3D 设备资源。"
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f0aedb99832ecd10da547cf73a074070008a4344
+
 ---
 
 # 创建深度缓冲区设备资源
@@ -260,6 +264,7 @@ m_shadowViewport.MaxDepth = 1.f;
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

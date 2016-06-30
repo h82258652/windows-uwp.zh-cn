@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: "绘制图形"
 description: "了解如何绘制形状，如椭圆、矩形、多边形以及路径。 Path 类是在 XAML UI 中可视化基于相当复杂矢量的绘图语言的方法；例如，可以绘制贝塞尔曲线。"
-ms.sourcegitcommit: 04a3c2dabc4b115faf4b06aa3d3a59c5c38ab95f
-ms.openlocfilehash: 42514e5119b646d196e0a1c7d3099ebed2225c69
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 20bac4421c2f307932bd5a8a4c462b1ef13fe09b
 
 ---
 # 绘制形状
@@ -146,7 +146,7 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 定义其路径具有 [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 属性的几何图形。 可使用两种技术设置 **Data**：
 
 -   你可以在 XAML 中为 [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 定义字符串值。 在这种形状中，**Path.Data** 值对于图形采用序列化格式。 在首次设置了该值后，你通常无需以字符串对该值进行文本编辑。 而是应当使用能够在图面上的设计或绘制标记中工作的设计工具。 然后，可以保存或导出输出内容，系统会为你提供一个包含 **Path.Data** 信息的 XAML 文件或 XAML 字符串片段。
--   可以将 [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 属性设置为单个 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) 对象。 这可以通过在代码或在 XAML 中来完成。 这个 **Geometry** 通常是充当容器的 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/BR210041group)，该容器可以将多个几何图形定义组合到单个对象中以形成对象模型。 这样做最常见的理由是，你希望使用一个或多个可以定义为 [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) 的 [**Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164) 值（例如 [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/BR228068)）的曲线和复杂形状。
+-   可以将 [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 属性设置为单个 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) 对象。 这可以通过在代码或在 XAML 中来完成。 这个 **Geometry** 通常是充当容器的 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup)，该容器可以将多个几何图形定义组合到单个对象中以形成对象模型。 这样做最常见的理由是，你希望使用一个或多个可以定义为 [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) 的 [**Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164) 值（例如 [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/BR228068)）的曲线和复杂形状。
 
 此示例显示了一个 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)，它是由以下操作生成的：使用 Blend for Visual Studio 生成少数几个矢量形状，然后将结果另存为 XAML。 整个 **Path** 由一条贝塞尔曲线和一条线段组成。 此示例主要是为了举例说明 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 序列化格式中存在的元素以及各个数字所代表的含义。
 
@@ -166,7 +166,7 @@ Here's the rendered [**Path**](https://msdn.microsoft.com/library/windows/apps/B
 
 ![A rendered Path.](images/shapes-path.jpg)
 
-The next example shows a usage of the other technique we discussed: a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/BR210041group) with a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168). This example exercises some of the contributing geometry types that can be used as part of a **PathGeometry**: [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) and the various elements that can be a segment in [**PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164).
+The next example shows a usage of the other technique we discussed: a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup) with a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168). This example exercises some of the contributing geometry types that can be used as part of a **PathGeometry**: [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) and the various elements that can be a segment in [**PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164).
 
 ```xml
 <Path Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">
@@ -207,6 +207,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

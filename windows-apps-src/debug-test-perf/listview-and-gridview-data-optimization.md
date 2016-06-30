@@ -1,25 +1,29 @@
 ---
 author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
-title: ListView 和 GridView 数据虚拟化
-description: 通过数据虚拟化改进 ListView 和 GridView 性能和启动时间。
+title: "ListView 和 GridView 数据虚拟化"
+description: "通过数据虚拟化改进 ListView 和 GridView 性能和启动时间。"
+translationtype: Human Translation
+ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
+ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
+
 ---
 # ListView 和 GridView 数据虚拟化
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**注意** 有关详细信息，请参阅 //build/ 会话：[当用户与 GridView 和 ListView 中的大量数据交互时可以显著提高性能](https://channel9.msdn.com/Events/Build/2013/3-158)
+**注意** 有关详细信息，请参阅 //build/ 会议：[当用户与 GridView 和 ListView 中的大量数据交互时可以显著提高性能](https://channel9.msdn.com/Events/Build/2013/3-158)。
 
-通过数据虚拟化改进 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 有关 UI 虚拟化、元素缩减和项目的进度更新，请参阅 [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md)
+通过数据虚拟化改进 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 有关 UI 虚拟化、元素缩减和项目的进度更新，请参阅 [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md)。
 
-数据虚拟化的方法为此类数据集所需：容量过大以至于无法或不应一次全部存储在内存中。 将初始部分加载到内存中（从本地磁盘、网络或云），然后为此部分数据集应用 UI 虚拟化。 你可以稍后根据需要以增量方式或从主数据集中的任意点（随机访问）加载数据。 数据虚拟化是否适合你取决于许多因素。
+数据虚拟化的方法 为此类数据集所需：容量过大以至于无法或不应一次全部存储在内存中。 将初始部分加载到内存中（从本地磁盘、网络或云），然后为此部分数据集应用 UI 虚拟化。 你可以稍后根据需要以增量方式或从主数据集中的任意点（随机访问）加载数据。 数据虚拟化是否适合你取决于许多因素。
 
 -   数据集的大小
 -   每个项目的大小
 -   数据集的来源（本地磁盘、网络或云）
 -   应用的总内存消耗。
 
-**注意** 当用户快速平移/滚动时，默认启用显示临时占位符视觉效果的 ListView 和 GridView 的功能。 加载数据时，这些占位符视觉效果将替换为你的项模板。 你可以通过将 [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 设置为 false 来关闭此功能，但是如果你这样做，我们建议你使用 x:Phase 属性在项模板中逐步呈现元素。 请参阅[逐步更新 ListView 和 GridView 项](optimize-gridview-and-listview.md#update-items-incrementally)
+**注意** 当用户快速平移/滚动时，默认启用显示临时占位符视觉效果的 ListView 和 GridView 的功能。 加载数据时，这些占位符视觉效果将替换为你的项模板。 你可以通过将 [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 设置为 false 来关闭此功能，但是如果你这样做，我们建议你使用 x:Phase 属性在项模板中逐步呈现元素。 请参阅[逐步更新 ListView 和 GridView 项](optimize-gridview-and-listview.md#update-items-incrementally)。
 
 下面是有关增量和随机访问数据虚拟化技术的更多详细信息。
 
@@ -63,7 +67,7 @@ description: 通过数据虚拟化改进 ListView 和 GridView 性能和启动�
     -   如果内存中提供该项目，则将其返回。
     -   如果没有该项目，则返回 null 或占位符项。
     -   使用对项目的请求（或者来自 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 的范围信息）了解所需项目，并以异步方式从后端获取项目的数据。 检索数据后，通过 [**INotifyCollectionChanged**]((https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引发变更通知，以使项目控件了解新项目。
--   （可选）当项目控件的视口更改时，通过实现 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 来标识需要使用数据源中的哪些项目
+-   （可选）当项目控件的视口更改时，通过实现 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 来标识需要使用数据源中的哪些项目。
 
 除此之外，对于加载数据项目的时间、加载数目、在内存中所保留项目的策略，取决于你的应用程序。 需要记住的一些常规注意事项：
 
@@ -81,6 +85,7 @@ description: 通过数据虚拟化改进 ListView 和 GridView 性能和启动�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

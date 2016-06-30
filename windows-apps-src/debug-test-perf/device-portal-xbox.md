@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: 适用于 Xbox 的 Device Portal
-description: 了解如何启用适用于 Xbox One 的 Device Portal。
+title: "适用于 Xbox 的 Device Portal"
+description: "了解如何启用适用于 Xbox One 的 Device Portal。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e1bfdf8e4ee4ed1f88c514acb9ef555c07fd0746
+
 ---
 # 适用于 Xbox 的 Device Portal
 
@@ -33,6 +37,7 @@ XBox 上的 Device Portal 提供了一组标准页面。 有关详细说明，�
 - 网络
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

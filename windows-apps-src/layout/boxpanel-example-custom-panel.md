@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: '学习为自定义 Panel 类编写代码、实现 ArrangeOverride 和 MeasureOverride 方法，以及使用 Children 属性。'
-MS-HAID: 'dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "学习为自定义 Panel 类编写代码、实现 ArrangeOverride 和 MeasureOverride 方法，以及使用 Children 属性。"
+MS-HAID: dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 'BoxPanel，一个自定义面板示例'
+title: "BoxPanel，一个自定义面板示例"
 ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
 label: BoxPanel, an example custom panel
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: e03a4c9d2116d779545cb1fb8e87fa86a632bca8
+
 ---
 
 # BoxPanel，一个自定义面板示例
@@ -32,7 +36,7 @@ template: detail.hbs
 -   面板何时在其自己的空间中有约束
 -   面板的逻辑如何确定最终呈现子元素的 UI 布局的所有度量、放置、位置和大小
 
-基于这一点，此处显示的 `BoxPanel` 适用于特定方案。 为了保持代码在此示例中的重要性，我们将不详细解释方案，而是专注于所需的步骤和编码模式。 如果你希望首先了解有关方案的详细信息，则跳到[适用于 `BoxPanel` 的方案](#scenario)，然后返回到代码。
+基于这一点，此处显示的 `BoxPanel` 适用于特定方案。 为了保持代码在此示例中的重要性，我们将不详细解释方案，而是专注于所需的步骤和编码模式。 如果你希望首先了解有关方案的详细信息，则跳到[“适用于 `BoxPanel` 的方案”](#scenario)，然后返回到代码。
 
 ## 由从 **Panel** 派生开始
 
@@ -228,6 +232,7 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 [对齐、边距和填充](alignment-margin-padding.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 69E05E56-B5F0-4D4C-A1FF-B6EAFF5D0E28
-description: 在提交过程中，你可以配置你希望看到的广告中介行为。 稍后你可以调整它，而无需进行代码更改或提交新程序包。
-title: 提交应用和配置广告中介
+description: "在提交过程中，你可以配置你希望看到的广告中介行为。 稍后你可以调整它，而无需进行代码更改或提交新程序包。"
+title: "提交应用和配置广告中介"
+translationtype: Human Translation
+ms.sourcegitcommit: ec7ce299545de8e5c167e1934fb9a0b4f4370948
+ms.openlocfilehash: 13dd6a9c38d85ead29a43f470b7c0f63d025d612
+
 ---
 
 # 提交应用和配置广告中介
@@ -164,6 +168,7 @@ title: 提交应用和配置广告中介
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

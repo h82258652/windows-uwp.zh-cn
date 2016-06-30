@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。
-title: 通用 Windows 平台 (UWP) 应用的导航设计基础知识
+Description: "通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。"
+title: "通用 Windows 平台 (UWP) 应用的导航设计基础知识"
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6926d70c7140b1545a8b5492981d6d0b61af3784
+
 ---
 
 #  UWP 应用的导航设计基础知识
@@ -264,6 +268,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

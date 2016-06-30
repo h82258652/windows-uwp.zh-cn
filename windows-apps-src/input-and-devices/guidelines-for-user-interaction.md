@@ -1,10 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行了优化，但在不同的输入设备上功能一致。
-title: 触摸设计指南
+Description: "创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行了优化，但在不同的输入设备上功能一致。"
+title: "触摸设计指南"
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 67b851ce854c803934c2b97dbe7519e2916383a3
+
 ---
 
 # 触摸设计指南
@@ -172,6 +176,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: "自定义文本输入概述"
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 ---
 
@@ -22,14 +22,14 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 -   [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 
-## <span id="Why_use_core_text_APIs_"></span><span id="why_use_core_text_apis_"></span><span id="WHY_USE_CORE_TEXT_APIS_"></span>为什么使用核心文本 API？
+## 为什么使用核心文本 API？
 
 
 对于许多应用而言，XAML 或 HTML 文本框控件对于文本输入和编辑已够用。 然而，如果你的应用需要处理复杂文本方案（如字处理应用），你可能需要自定义文本编辑控件的灵活性。 你可以使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 键盘 API 来创建你的文本编辑控件，但是这些控件无法提供某种方式来接收基于合成的文本输入（它需要支持东亚语言）。
 
 在你需要创建自定义文本编辑控件时，请改用 [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API。 这些 API 旨在向你提供处理文本输入时以及在任何语言方面的大量灵活性，并提供最适合你的应用的文本体验。 使用核心文本 API 生成的文本输入和编辑控件可以接收来自 Windows 设备上的所有现有文本输入法的文本输入，从电脑上基于[文本服务框架](https://msdn.microsoft.com/library/windows/desktop/ms629032)的输入法编辑器 (IME) 和手写输入到移动设备上的 WordFlow 键盘（该键盘可以提供自动更正、预测和听写）。
 
-## <span id="Architecture"></span><span id="architecture"></span><span id="ARCHITECTURE"></span>体系结构
+## 体系结构
 
 
 下面简单介绍了文本输入系统。
@@ -40,17 +40,17 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 ![核心文本体系结构图示](images/coretext/architecture.png)
 
-## <span id="Text_ranges_and_selection"></span><span id="text_ranges_and_selection"></span><span id="TEXT_RANGES_AND_SELECTION"></span>文本范围和选择
+## 文本范围和选择
 
 
 编辑控件提供的空间可用于文本输入，并且用户可在此空间的任意位置编辑文本。 我们将在此处介绍核心文本 API 所使用的文本定位系统，以及范围和选定在此系统中的表示方式。
 
-### <span id="Application_caret_position"></span><span id="application_caret_position"></span><span id="APPLICATION_CARET_POSITION"></span>应用程序插入光标位置
+### 应用程序插入光标位置
 
 与核心文本 API 一起使用的文本范围以插入光标位置的形式表示。 “应用程序插入光标位置 (ACP)”是从零开始的数字，表示紧接插入光标前的文本流从头开始算起的字符数，如下面所示。
 
 ![示例文本流图示](images/coretext/stream-1.png)
-### <span id="Text_ranges_and_selection"></span><span id="text_ranges_and_selection"></span><span id="TEXT_RANGES_AND_SELECTION"></span>文本范围和选择
+### 文本范围和选择
 
 文本范围和选择由包含两个字段的 [**CoreTextRange**](https://msdn.microsoft.com/library/windows/apps/dn958201) 结构表示：
 
@@ -63,11 +63,11 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 例如，在前面显示的文本范围中，范围 \[0, 5\] 可指定单词 “Hello”。 **StartCaretPosition** 必须始终小于或等于 **EndCaretPosition**。 范围 \[5, 0\] 无效。
 
-### <span id="Insertion_point"></span><span id="insertion_point"></span><span id="INSERTION_POINT"></span>插入点
+### 插入点
 
 通常称为插入点的当前插入光标位置通过将 **StartCaretPosition** 设置为等于 **EndCaretPosition** 来表示。
 
-### <span id="Noncontiguous_selection"></span><span id="noncontiguous_selection"></span><span id="NONCONTIGUOUS_SELECTION"></span>非连续选择
+### 非连续选择
 
 一些编辑控件支持非连续选择。 例如，Microsoft Office 应用支持多个任意选择，并且许多源代码编辑器支持列选择。 但是，核心文本 API 并不支持非连续选择。 编辑控件必须仅报告单个连续选择（通常是非连续选择的活动子范围）。
 
@@ -75,7 +75,7 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 ![示例文本流图示](images/coretext/stream-2.png) 有两种选择：\[0, 1\] 和 \[6, 11\]。 编辑控件必须仅报告其中一个选择：\[0, 1\] 或 \[6, 11\]。
 
-## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>使用文本
+## 使用文本
 
 
 [
@@ -87,7 +87,7 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 如果文本服务需要新的文本，将引发 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件。 必须在 **TextRequested** 事件处理程序中提供新的文本。
 
-### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>接受文本更新
+### 接受文本更新
 
 由于文本更新请求表示用户想要输入的文本，因此你的编辑控件通常应接受这些请求。 在 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件处理程序中，这些操作按你的编辑控件要求进行：
 
@@ -103,19 +103,18 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
             **Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
 -   [
             **Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
--   [
-            **NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
+-   [ **NewSelection** ](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 在你的编辑控件中，应用指定的更改并将 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 **Succeeded**。 下面是该控件在应用更改后的状态。
 
 ![示例文本流图示](images/coretext/stream-4.png)
-### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>拒绝文本更新
+### 拒绝文本更新
 
 由于请求的范围是不应进行更改的编辑控件区域，因此有时无法应用文本更新。 在这种情况下，不应该应用任何更改。 相反，应通知系统更新失败，方法为将 [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237)。
 
 例如，请考虑只接受电子邮件地址的编辑控件。 由于电子邮件地址不能含有空格，因此应拒绝空格；以便在针对空格键引发 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件时，只需在你的编辑控件中将 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 **Failed**。
 
-### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>通知文本更改
+### 通知文本更改
 
 有时，你的编辑控件会对文本进行更改，例如在粘贴或自动更正文本时。 在这些情况下，必须通过调用 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法向文本服务通知这些更改。
 
@@ -131,7 +130,7 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 按顺序处理陆续生成的一个或多个 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件以更新文本服务所使用的文本。
 
-### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>覆盖文本更新
+### 覆盖文本更新
 
 在你的编辑控件中，你可能希望覆盖文本更新以提供自动更正功能。
 
@@ -149,14 +148,14 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 按顺序处理陆续生成的一个或多个 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件以更新文本服务所使用的文本。
 
-### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>提供请求的文本
+### 提供请求的文本
 
 请务必确保文本服务具有正确的文本，特别是已存在于编辑控件中的文本（例如，通过加载文档，或由编辑控件插入的文本（如前面的部分所述），以便提供诸如自动更正或预测的功能。 因此，每当引发 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件时，都必须向当前在你的编辑控件中的文本提供指定范围。
 
 [
             **CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) 中的 [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) 可以多次指定你的编辑控件不能按原样容纳的某个范围。 例如，**Range** 大于发生 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件时的编辑控件的大小，或者 **Range** 的末尾超出范围。 在这些情况下，应返回有意义的任何范围，该范围通常是请求的范围的子集。
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 
 **存档示例**
@@ -171,6 +170,6 @@ ms.openlocfilehash: fc2dadfbca30fc74362d7665022b1f41f23c3304
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

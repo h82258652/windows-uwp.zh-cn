@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
-title: 适用于 HoloLens 的 Device Portal API 参考
-description: 了解适用于 HoloLens 的 Windows Device Portal REST API，该 API 可用于访问数据和以编程方式控制设备。
+title: "适用于 HoloLens 的 Device Portal API 参考"
+description: "了解适用于 HoloLens 的 Windows Device Portal REST API，该 API 可用于访问数据和以编程方式控制设备。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5ed8ffe0a409569777fbf4e56a90ab3b80cd395c
+
 ---
 # 适用于 HoloLens 的 Device Portal API 参考
 
@@ -1410,6 +1414,7 @@ loopback   | （**可选**）指示是否捕获应用程序音频。 应为 **tr
 - 标准状态代码。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

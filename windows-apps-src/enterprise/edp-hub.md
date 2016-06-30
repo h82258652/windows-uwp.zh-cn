@@ -1,10 +1,14 @@
 ---
 author: mcleblanc
-Description: '此中心主题涉及企业数据保护 (EDP) 如何关联到文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护的完整开发人员蓝图。'
-MS-HAID: 'dev\_enterprise.edp\_hub'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "此中心主题涉及企业数据保护 (EDP) 如何关联到文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护的完整开发人员蓝图。"
+MS-HAID: dev\_enterprise.edp\_hub
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: '企业数据保护 (EDP)'
+title: "企业数据保护 (EDP)"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 97bdbce8360fabad63f9fe7e85e5172ccd83f403
+
 ---
 
 # 企业数据保护 (EDP)
@@ -179,7 +183,7 @@ private void SwitchMailbox(Mailbox targetMailbox)
 通过处理这两个事件，该应用可以确保使用 [**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/dn706017) 保护内存中的任何敏感内容。 它还应关闭对其受保护文件打开的任何文件流，以确保系统不会在内存中缓存任何敏感数据。 可以通过多种方式之一完成此操作。 若要关闭从 **StorageFile** 的 Open 方法返回的文件流，可以调用该流上的 **Dispose** 方法。 可以使用 using 语句（C\# 或 VB）设置流的使用范围。 或者，可以将 **DataReader** 或 **DataWriter** 对象环绕在该流周围，并将 **Dispose** 方法或 using 语句与该对象结合使用。
 
 **注意**  
-在未配置 DPL 策略的环境中，会引发 [**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) 事件，但不会引发 [**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) 事件。 在代码中应注意到这一点，并且注意不要假定每个系统中事件总是会成对出现，也不要假定你总是可以使用事件确定设备的锁定/解锁状态。 你可以在此处的代码示例中看到：我们尽量不假定有关当前所显示的电子邮件的任何内容，也不假定数据库文件流的打开状态的任何内容。
+在未配置 DPL 策略的环境中，会引发 [**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786)事件，但不会引发 [**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) 事件。 在代码中应注意到这一点，并且注意不要假定每个系统中事件总是会成对出现，也不要假定你总是可以使用事件确定设备的锁定/解锁状态。 你可以在此处的代码示例中看到：我们尽量不假定有关当前所显示的电子邮件的任何内容，也不假定数据库文件流的打开状态的任何内容。
 
 此外，请注意，在未配置 DPL 策略的设备上从锁定恢复时，[**ProtectedAccessResumedEventArgs.Identities**](https://msdn.microsoft.com/library/windows/apps/dn705772) 为空集合。
 
@@ -373,6 +377,7 @@ Windows.Security.EnterpriseData.ProtectionPolicyManager.RevokeContent("contoso.c
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

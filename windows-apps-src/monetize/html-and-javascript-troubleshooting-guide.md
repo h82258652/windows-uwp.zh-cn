@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
-description: 阅读 JavaScript/HTML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
-title: HTML 和 JavaScript 疑难解答指南
+description: "阅读 JavaScript/HTML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。"
+title: "HTML 和 JavaScript 疑难解答指南"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
+
 
 ---
 
@@ -221,7 +225,7 @@ title: HTML 和 JavaScript 疑难解答指南
 <span id="js-adcontrolnotappearing"/>
 ### AdControl 不显示
 
-1.  确保在 Package.appxmanifest 中已选择“Internet(客户端)”****功能。
+1.  确保在 Package.appxmanifest 中选择“Internet (客户端)”****功能。
 
 2.  确保 **AdControl** 已实例化。 如果 **AdControl** 未实例化。 它将不可用。
 
@@ -277,7 +281,7 @@ title: HTML 和 JavaScript 疑难解答指南
 
 5.  查看 **AdControl** 的父元素。 父元素必须处于活动状态并且可见。
 
-6.  **ApplicationId** 和 **AdUnitId** 的实时值不应在仿真器中测试。 若要确保 **AdControl** 像预期那样运行，请使用在[测试模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的测试 ID。
+6.  **ApplicationId** 和 **AdUnitId** 的动态值不应在仿真器中测试。 若要确保 **AdControl** 像预期那样运行，请使用在[测试模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的测试 ID。
 
 <span id="js-blackboxblinksdisappears"/>
 ### 黑盒闪烁和消失
@@ -378,6 +382,7 @@ title: HTML 和 JavaScript 疑难解答指南
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

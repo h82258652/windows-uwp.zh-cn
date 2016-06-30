@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
-title: 数据访问
-description: 本部分讨论在专用数据库中存储设备上的数据，并在通用 Windows 平台 (UWP) 应用中使用对象关系映射。
+title: "数据访问"
+description: "本部分讨论在专用数据库中存储设备上的数据，并在通用 Windows 平台 (UWP) 应用中使用对象关系映射。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 007e07d05f4f89771f6a0b93fb4279783ca170f6
+
 ---
 # 数据访问
 
@@ -19,6 +23,7 @@ SQLite 包括在 UWP SDK 中。 Entity Framework 7 在 UWP 应用中可与 SQLit
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

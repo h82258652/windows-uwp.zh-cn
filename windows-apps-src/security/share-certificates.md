@@ -1,8 +1,12 @@
 ---
-title: 在应用之间共享证书
-description: 要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。
+title: "在应用之间共享证书"
+description: "要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。"
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
+
 ---
 
 # 在应用之间共享证书
@@ -200,6 +204,7 @@ author: awkoren
 
 可使用这些步骤创建多个应用，这些应用使用同一个用户证书访问相同或不同的安全 Web 服务。
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

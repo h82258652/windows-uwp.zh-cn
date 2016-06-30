@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 游戏移植指南
-description: 提供将现有游戏移植到 Direct3D 11、通用 Windows 平台 (UWP) 和 Windows 10 的指南。
+title: "游戏移植指南"
+description: "提供将现有游戏移植到 Direct3D 11、通用 Windows 平台 (UWP) 和 Windows 10 的指南。"
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0cf7f4e6679d362691cea8ccbd45786176715cad
+
 ---
 
 # 游戏移植指南
@@ -37,7 +41,7 @@ ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
 
  
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -50,6 +54,7 @@ ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

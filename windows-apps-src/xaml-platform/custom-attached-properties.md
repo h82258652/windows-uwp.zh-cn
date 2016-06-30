@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 介绍如何将一个 XAML 附加属性实现为依赖属性，以及如何定义让附加属性可用于 XAML 所必需的访问器约定。
-title: 自定义附加属性
+description: "介绍如何将一个 XAML 附加属性实现为依赖属性，以及如何定义让附加属性可用于 XAML 所必需的访问器约定。"
+title: "自定义附加属性"
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
+translationtype: Human Translation
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: cf6ca169623311e515f02a174224d57652afc753
+
 ---
 
 # 自定义附加属性
@@ -174,7 +178,7 @@ GameService::RegisterDependencyProperties() {
 
 定义附加属性并将它的支持成员包含在一个自定义类型中后，你必须让这些定义可供 XAML 使用。 为此，你必须映射一个 XAML 命名空间，它将引用其中包含相关类的代码命名空间。 如果在一个库中定义了附加属性，必须将该库包含在应用的应用程序包中。
 
-XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 例如，对于命名空间 `UserAndCustomControls` 中有一个名为 `GameService` 的类，它包含前面代码段中所示的附加属性定义，映射与此类似。
+XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 例如，对于命名空间 `UserAndCustomControls` 中有一个名为 `GameService` 的类，它包含前面代码段中所示的附加属性定义，映射类似于这样。
 
 ```XML
 <UserControl
@@ -190,7 +194,7 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 <Image uc:GameService.IsMovable="true" .../>
 ```
 
-如果在一个元素上设置附加属性并且该元素包含在同一个映射的 XML 命名空间中，则必须在附加属性名称中包含该前缀。 这是因为该前缀限定了所有者类型。 不能假设附加属性的特性与包含该特性的元素位于相同的 XML 命名空间中，尽管按照正常的 XML 规则，特性可从元素继承命名空间。 例如，如果在一种自定义类型 `ImageWithLabelControl`（未给出定义）上设置 `GameService.IsMovable`，即使二者都在映射到同一个前缀的同一个代码命名空间中定义，XAML 仍是如此。
+如果在一个元素上设置附加属性并且该元素包含在同一个映射的 XML 命名空间中，则必须在附加属性名称中包含该前缀。 这是因为该前缀限定了所有者类型。 不能假设附加属性的特性与包含该特性的元素位于相同的 XML 命名空间中，尽管按照正常的 XML 规则，特性可从元素继承命名空间。 例如，如果在一种自定义类型 `ImageWithLabelControl`（未给出定义）上设置 `GameService.IsMovable`，即使二者都在映射到同一个前缀的同一个代码命名空间中定义，XAML 仍将是这样的。
 
 ```XML
 <uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../>
@@ -243,6 +247,7 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

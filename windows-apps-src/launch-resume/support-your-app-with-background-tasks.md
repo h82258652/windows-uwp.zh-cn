@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 使用后台任务支持应用
-description: 本部分中的主题展示如何通过响应具有后台任务的触发器在后台运行你自己的轻型代码。
+author: TylerMSFT
+title: "使用后台任务支持应用"
+description: "本部分中的主题展示如何通过响应具有后台任务的触发器在后台运行你自己的轻型代码。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
+
 ---
 
 # 使用后台任务支持应用
@@ -15,7 +18,7 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 
 后台任务是实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的单独的类。 通过使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
 
-若要快速开始使用后台任务，请参阅[创建和注册后台任务](create-and-register-a-background-task.md)
+若要快速开始使用后台任务，请参阅[创建和注册后台任务](create-and-register-a-background-task.md)。
 
 **提示** 从 Windows 10 开始，你不再需要将应用放置在锁屏界面上即可注册后台任务。
 
@@ -24,7 +27,7 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ## 系统事件的后台任务
 
 
-应用可以通过使用 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 类注册后台任务来响应系统生成的事件。 应用可以使用以下任意系统事件触发器（在 [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 中定义
+应用可以通过使用 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 类注册后台任务来响应系统生成的事件。 应用可以使用以下任意系统事件触发器（在 [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 中定义）
 
 | 触发器名称                     | 描述                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
@@ -36,7 +39,7 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 
  
 
-有关详细信息，请参阅[使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
+有关详细信息，请参阅[使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)。
 
 ## 后台任务的条件
 
@@ -54,12 +57,12 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 
  
 
-有关详细信息，请参阅[设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
+有关详细信息，请参阅[设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)。
 
 ## 应用程序清单要求
 
 
-在应用可以成功注册后台任务前，必须在应用程序清单中声明该任务。 有关详细信息，请参阅[在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
+在应用可以成功注册后台任务前，必须在应用程序清单中声明该任务。 有关详细信息，请参阅[在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)。
 
 ## 后台任务
 
@@ -68,7 +71,7 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 
 **控制通道：**后台任务通过使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 可以使连接保持活动状态，在控制通道上接收消息。 如果你的应用正在侦听套接字，你可以使用套接字代理而不是 **ControlChannelTrigger**。 有关使用套接字代理的详细信息，请参阅 [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009)。 **ControlChannelTrigger** 在 Windows Phone 上不受支持。
 
-**计时器：**后台任务运行的频率可以为每 15 分钟一次，并且可以通过使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 将它们设置在特定时间运行。 有关详细信息，请参阅[通过计时器运行后台任务](run-a-background-task-on-a-timer-.md)
+**计时器：**后台任务运行的频率可以为每 15 分钟一次，并且可以通过使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 将它们设置在特定时间运行。 有关详细信息，请参阅[通过计时器运行后台任务](run-a-background-task-on-a-timer-.md)。
 
 **推送通知：**后台任务响应 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 以接收原始推送通知。
 
@@ -76,7 +79,7 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 
 通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
 
-若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)
+若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
 ## 系统事件触发器
 
@@ -132,7 +135,7 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ## 维护触发
 
 
-维护任务仅在设备插入到交流电源时才会运行。 有关详细信息，请参阅[使用维护触发器](use-a-maintenance-trigger.md)
+维护任务仅在设备插入到交流电源时才会运行。 有关详细信息，请参阅[使用维护触发器](use-a-maintenance-trigger.md)。
 
 ## 传感器和设备的后台任务
 
@@ -151,7 +154,7 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 
 **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -186,8 +189,6 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

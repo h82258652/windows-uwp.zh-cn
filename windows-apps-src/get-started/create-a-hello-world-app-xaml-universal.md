@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: 创建“Hello, world”应用 \(XAML\)
-description: 本教程指导你如何使用 Extensible Application Markup Language \(XAML\) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。
+title: "创建“Hello, world”应用 \\(XAML\\)"
+description: "本教程指导你如何使用 Extensible Application Markup Language \\(XAML\\) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 0d6b6421b4f5ebc01c865e80db96d1158b9bd825
+
 ---
 
 # 创建“Hello, world”应用 \(XAML\)
@@ -318,6 +322,7 @@ XAML 元素可以在出现某些事件时发送消息。 这些事件消息为�
 祝贺你，你已创建了自己的第一个适用于 Windows 10 和 UWP 的应用！
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

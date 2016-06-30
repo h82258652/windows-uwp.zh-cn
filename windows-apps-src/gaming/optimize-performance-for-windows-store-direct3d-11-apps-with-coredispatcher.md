@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
-description: 输入延迟会大大影响游戏体验，将其优化可使游戏感觉更完美。
+title: "优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟"
+description: "输入延迟会大大影响游戏体验，将其优化可使游戏感觉更完美。"
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 19bcf043f3fc8c729f5f9fbbeee237bd1749443d
+
 ---
 
 #  优化通用 Windows 平台 (UWP) DirectX 游戏的输入延迟
@@ -256,6 +260,7 @@ DirectX 游戏通过更新用户在屏幕上看到的内容来响应用户输入
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

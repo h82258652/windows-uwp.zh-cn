@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: 适用于 HoloLens 的 Device Portal
-description: 了解适用于 HoloLens 的 Windows Device Portal 是如何支持你远程配置和管理你的 HoloLens 设备。
+title: "适用于 HoloLens 的 Device Portal"
+description: "了解适用于 HoloLens 的 Windows Device Portal 是如何支持你远程配置和管理你的 HoloLens 设备。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: bd1ae8ccdd81f319fc36ca04b8b839cb313b2854
+
 ---
 # 适用于 HoloLens 的 Device Portal
 
@@ -54,7 +58,7 @@ description: 了解适用于 HoloLens 的 Windows Device Portal 是如何支持�
 5. 输入密码并进行确认。 密码长度必须至少为七个字符。 无需使用 MSA 密码或域密码作为密码。
 6. 单击“配对”以连接到 HoloLens 上的 Windows Device Portal。
 
-如果你希望随时更改此用户名或密码，可通过以下方式访问设备的安全页面来重复此过程：单击右上角的“安全”链接或导航到 `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`。
+如果你希望能随时更改此用户名和密码，可通过以下方式访问设备的安全页面来重复此过程：单击右上角的“安全”链接或导航到 `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`。
 
 ### 安全证书 
 
@@ -166,6 +170,7 @@ HoloLens 上的“系统性能”工具有 3 个可以记录的附加指标。
 单击或点击虚拟键盘下的区域，即可将键击发送到 HoloLens。 在“输入文本”文本框中键入，然后单击或点击“发送”以将键击发送到活动应用。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

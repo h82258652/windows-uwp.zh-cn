@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: 针对任何支持网络的应用的必做事项。
-title: 网络基础知识
+description: "针对任何支持网络的应用的必做事项。"
+title: "网络基础知识"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 96c6617595b49c48ee77bec87b6aa87ae1634ed9
+
 ---
 
 # 网络基础知识
@@ -47,12 +51,12 @@ ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 
 在一些应用场景中，这两种触发器均适宜。 当你选择要在应用中使用的触发器类型时，请考虑以下建议。
 
--   如果你使用的是 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 或 [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638)，则必须使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
+-   如果你使用的是 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 或 [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638)，则必须使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
 -   如果使用的是已启用推送的 **StreamSockets**，则可以使用控制通道触发器，不过应该首选 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。 当目前未使用连接时，选择后者允许系统释放内存并会降低电源要求。
 -   如果你想要在当前没有服务网络请求时最大程度减少你的应用的内存占用，则首选 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)（如果可能）。
--   如果你希望你的应用能够在系统处于连接待机模式下时接收数据，应使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
+-   如果你希望你的应用能够在系统处于连接待机模式下时接收数据，应使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。
 
-有关如何使用套接字代理的详细信息和示例，请参阅[后台网络通信](network-communications-in-the-background.md)
+有关如何使用套接字代理的详细信息和示例，请参阅[后台网络通信](network-communications-in-the-background.md)。
 
 ## 安全连接
 
@@ -80,16 +84,16 @@ ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
             **ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 可用于建立与网络服务的初始连接，并随后立即协商对所有通信使用 SSL/TLS。 有两种 **ConnectAsync** 方法支持传递 *protectionLevel* 参数：
 
 -   [
-            **ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象上启动异步操作以连接到指定为 [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) 对象和 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 的远程网络目标
+            **ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象上启动异步操作以连接到指定为 [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) 对象和 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 的远程网络目标。
 -   [
-            **ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象上启动异步操作以连接到由远程主机名、远程服务名和 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 所指定的远程目标
+            **ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象上启动异步操作以连接到由远程主机名、远程服务名和 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 所指定的远程目标。
 
 如果 *protectionLevel* 参数设置为 **Windows.Networking.Sockets.SocketProtectionLevel.Ssl**，当调用上述任一 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法时，必须建立 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 才能使用 SSL/TLS 进行加密。 此值需要加密而且绝不允许使用 NULL 密码。
 
 一般来说，使用这些 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法的顺序都是相同的。
 
--   创建 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)
--   如果需要在套接字上使用高级选项，请使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 属性获取与 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象相关联的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 实例。 针对 **StreamSocketControl** 设置一个属性
+-   创建一个 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)。
+-   如果需要在套接字上使用高级选项，请使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 属性获取与 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象相关联的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 实例。 针对 **StreamSocketControl** 设置一个属性。
 -   调用上述 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法之一以启动连接到远程目标的操作，并立即协商使用 SSL/TLS。
 -   实际上使用 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 协商得到的 SSL 强度可在异步操作成功完成后通过获取 [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) 属性来确定。
 
@@ -176,8 +180,8 @@ using Windows::Networking::Sockets;
 
 一般来说，使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法的顺序都是：
 
--   创建 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)
--   如果需要在套接字上使用高级选项，请使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 属性获取与 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象相关联的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 实例。 针对 **StreamSocketControl** 设置一个属性
+-   创建一个 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)。
+-   如果需要在套接字上使用高级选项，请使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 属性获取与 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象相关联的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 实例。 针对 **StreamSocketControl** 设置一个属性。
 -   如果任何数据需要以不加密的形式进行发送和接收，则立即发送。
 -   调用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法以启动将连接升级为使用 SSL/TLS 的操作。
 -   实际上使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 协商得到的 SSL 强度可在异步操作成功完成后通过获取 [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) 属性来确定。
@@ -361,7 +365,7 @@ using Windows::Storage::Streams;
 
 与传统套接字连接相同，为 Windows 应用商店应用使用 Windows 8 中的 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 和 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 功能时，使用传输层安全性 (TLS)/安全套接字层 (SSL) 也可以加密 WebSocket 连接。 一般来说，你希望使用安全的 WebSocket 连接。 这会提高连接成功的可能性，因为许多代理会拒绝未加密的 WebSocket 连接。
 
-有关如何创建或升级到网络服务的安全套接字连接的示例，请参阅[如何借助 TLS/SSL 确保 WebSocket 连接的安全](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399)
+有关如何创建或升级到网络服务的安全套接字连接的示例，请参阅[如何借助 TLS/SSL 确保 WebSocket 连接的安全](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399)。
 
 除了 TLS/SSL 加密之外，服务器可能需要 **Sec-WebSocket-Protocol** 标头值才能完成初始握手。 该值由 [**StreamWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701514) 和 [**MessageWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701358) 属性表示，用于指示连接的协议版本，并让服务器可以正确解释开始握手和随后交换的数据。 如果服务器在任何时刻无法以可关闭连接的安全方式解释传入数据，则使用此协议信息。
 
@@ -428,6 +432,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

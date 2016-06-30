@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 本主题将介绍大部分 XAML 文件的根元素中存在的 XML/XAML 命名空间 (xmlns) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。
-title: XAML 命名空间和命名空间映射
+description: "本主题将介绍大部分 XAML 文件的根元素中存在的 XML/XAML 命名空间 (xmlns) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。"
+title: "XAML 命名空间和命名空间映射"
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
+translationtype: Human Translation
+ms.sourcegitcommit: 3ca9492b334bf4b3d4f0fcab8fca5625f4e23fa5
+ms.openlocfilehash: fe24a66836d85e8d102ebc6b23b42c32a687c593
+
 ---
 
 # XAML 命名空间和命名空间映射
@@ -109,6 +113,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

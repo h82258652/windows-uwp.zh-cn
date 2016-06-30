@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Edge 呈现引擎来呈现 Web 内容。 超链接也可以在 Web 视图控件中显示并正常工作。
-title: Web 视图
+Description: "Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Edge 呈现引擎来呈现 Web 内容。 超链接也可以在 Web 视图控件中显示并正常工作。"
+title: "Web 视图"
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dd947d0b55dad56fdd6c684ae236f1c31ac8da86
+
 ---
 
 # Web 视图
@@ -40,13 +44,13 @@ Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Ed
 
 尽管 WebView 不是控件子类，但它可接收键盘输入焦点，并加入 Tab 键序列。 它提供 [**Focus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx) 方法，以及 [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx) 和 [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx) 事件，但它不具有 Tab 键相关属性。 它在 Tab 键序列中的位置与在 XAML 文档顺序中的位置相同。 Tab 键序列包括 Web 视图内容中的所有元素，这些元素可以接收输入焦点。 
 
-如 [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 类页上的“事件”表中所示，Web 视图不支持继承自 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) 的大部分用户输入事件，如 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx)、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx) 和 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx)。 你可以改为将 [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) 与 JavaScript **eval** 函数结合使用来使用 HTML 事件处理程序，并通过 HTML 事件处理程序中的 **window.external.notify** 以使用 [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) 通知应用程序
+如 [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 类页上的“事件”表中所示，Web 视图不支持继承自 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) 的大部分用户输入事件，如 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx)、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx) 和 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx)。 你可以改为将 [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) 与 JavaScript **eval** 函数结合使用来使用 HTML 事件处理程序，并通过 HTML 事件处理程序中的 **window.external.notify** 以使用 [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) 通知应用程序。
 
 ### 导航到内容
 
 Web 视图提供多个 API 以进行基本导航：[**GoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx)、[**Refresh**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx)、[**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx) 和 [**CanGoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx)。 这些 API 可用于向你的应用添加典型的 Web 浏览功能。 
 
-若要设置 Web 视图的初始内容，请设置 XAML 中的 [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx) 属性。 XAML 分析程序会自动将字符串转换为 [**Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx) 
+若要设置 Web 视图的初始内容，请设置 XAML 中的 [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx) 属性。 XAML 分析程序会自动将字符串转换为 [**Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx)。 
 
 ```xaml
 <!-- Source file is on the web. -->
@@ -69,15 +73,15 @@ webView1.Navigate("http://www.contoso.com");
 
 若要使用 POST 请求和 HTTP 标头导航到 URI，请使用 [**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) 方法。 此方法仅支持针对 [**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) 属性值的 [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) 和 [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx)。 
 
-若要加载应用的 [**LocalFolder**]() 或 [**TemporaryFolder**]() 数据存储中的未压缩和未加密内容，请将 **Navigate** 方法与使用 [ms-appdata scheme]() 的 **Uri** 结合使用。 Web 视图对此方案的支持要求你将子文件夹中的内容置于本地文件夹或临时文件夹下。 这样便可以导航到 URI，例如 ms-appdata:///local/*folder*/*file*.html 和 ms-appdata:///temp/*folder*/*file*.html。 （若要加载压缩或加密文件，请参阅 [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) 
+若要加载应用的 [**LocalFolder**]() 或 [**TemporaryFolder**]() 数据存储中的未压缩和未加密内容，请将 **Navigate** 方法与使用 [ms-appdata scheme]() 的 **Uri** 结合使用。 Web 视图对此方案的支持要求你将子文件夹中的内容置于本地文件夹或临时文件夹下。 这样便可以导航到 URI，例如 ms-appdata:///local/*folder*/*file*.html 和 ms-appdata:///temp/*folder*/*file*.html。 （若要加载压缩或加密文件，请参阅 [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx)。） 
 
-其中的每个第一级别的子文件夹均独立于其他第一级别子文件夹中的内容。 例如，可以导航到 ms-appdata:///temp/folder1/file.html，但在此文件中不能链接到 ms-appdata:///temp/folder2/file.html。 但仍可以使用 **ms-appx-web scheme** 链接到应用程序包中的 HTML 内容，也可以使用 **http** 和 **https** URI 方案链接到 Web 内容。
+其中的每个第一级别的子文件夹独立于其他第一级别子文件夹中的内容。 例如，可以导航到 ms-appdata:///temp/folder1/file.html，但在此文件中不能链接到 ms-appdata:///temp/folder2/file.html。 但仍可以使用 **ms-appx-web scheme** 链接到应用程序包中的 HTML 内容，也可以使用 **http** 和 **https** URI 方案链接到 Web 内容。
 
 ```csharp
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 ```
 
-若要加载来自应用程序包中内容，请将 **Navigate** 方法与使用 [**ms-appx-web scheme**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web) 的 **Uri** 结合使用 
+若要加载来自应用程序包中内容，请将 **Navigate** 方法与使用 [**ms-appx-web scheme**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web) 的 **Uri** 结合使用。 
 
 ```csharp
 webView1.Navigate("ms-appx-web:///help/about.html");
@@ -228,7 +232,7 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 }
 ```
 
-如果你的应用需要用户输入或其他异步操作来响应权限请求，则使用 [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) 的 [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) 方法创建一个可以稍后执行的 [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx)。 请参阅 [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) 
+如果你的应用需要用户输入或其他异步操作来响应权限请求，则使用 [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) 的 [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) 方法创建一个可以稍后执行的 [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx)。 请参阅 [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx)。 
 
 如果用户必须安全地注销 Web 视图中承载的网站，或在其他安全性非常重要的情况下，请调用静态方法 [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) 清除 Web 视图会话中本地缓存的内容。 这可以防止恶意用户访问敏感数据。 
 
@@ -248,7 +252,7 @@ string returnValue = await webView1.InvokeScriptAsync("setDate", args);
 
 你可以将 **InvokeScriptAsync** 与 JavaScript **eval** 函数结合使用，以便将内容注入到 Web 页面。
 
-此处，XAML 文本框中的文本 (`nameTextBox.Text`) 将写入承载 HTML 页面中的 div 
+此处，XAML 文本框中的文本 (`nameTextBox.Text`) 将写入 `webView1` 中承载的 HTML 页面中的 div。 
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -260,7 +264,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Web 视图内容中的脚本可以使用带有字符串参数的 **window.external.notify** 将信息发送回你的应用。 若要接收这些消息，请处理 [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) 事件。 
 
-若要在调用 window.external.notify 时，允许外部网页引发 **ScriptNotify** 事件，必须在应用清单的 **ApplicationContentUriRules** 部分包含该页面的 URI。 （你可以在 Microsoft Visual Studio 中的 Package.appxmanifest 设计器的“内容 URI”选项卡上执行此操作。）此列表中的 URI 必须使用 HTTPS，可以包含子域通配符（例如 `https://*.microsoft.com`），但不能包含域通配符（例如 `https://*.com` 和 `https://*.*`）。 该部件清单要求不适用于源自应用包的内容、使用 ms-local-stream:// URI 的内容或使用 [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) 加载的内容 
+若要在调用 window.external.notify 时，允许外部网页引发 **ScriptNotify** 事件，必须在应用清单的 **ApplicationContentUriRules** 部分包含该页面的 URI。 （你可以在 Microsoft Visual Studio 中的 Package.appxmanifest 设计器的“内容 URI”选项卡上执行此操作。）此列表中的 URI 必须使用 HTTPS，可以包含子域通配符（例如 `https://*.microsoft.com`），但不能包含域通配符（例如 `https://*.com` 和 `https://*.*`）。 该部件清单要求不适用于源自应用包的内容、使用 ms-local-stream:// URI 的内容或使用 [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) 加载的内容。 
 
 ### 访问 Web 视图中的 Windows 运行时
 
@@ -278,7 +282,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 }
 ```
 
-有关详细信息，请参阅 [**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) 
+有关详细信息，请参阅 [**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx)。 
 
 此外，还可以允许 Web 视图中受信任的 JavaScript 内容直接访问 Windows 运行时 API。 这为 Web 视图中承载的 Web 应用提供了强大的本机功能。 若要启用此功能，必须在 Package.appxmanifest 中将受信任内容的 URI 列入应用的 ApplicationContentUriRules 中的白名单，并且明确地将 WindowsRuntimeAccess 设置为“all”。 
 
@@ -335,6 +339,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

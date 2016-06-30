@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: 有关广告市场活动的常见问题
-title: 有关广告市场活动的常见问题
+Description: "有关广告市场活动的常见问题"
+title: "有关广告市场活动的常见问题"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
+ms.sourcegitcommit: 3f0664e0387e206c432ce92aa221bb5c604bb675
+ms.openlocfilehash: c61866aa6fb71d41d4c6150cfe6af449da21a1da
+
 ---
 
 # 有关广告市场活动的常见问题
@@ -39,7 +42,9 @@ ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 
 ## 何时开始计费？
 
-将在下月初针对任一给定月份进行计费。
+对于你的帐户的所有付费市场活动，每次你的帐户获得 50 美元的费用（或以你的市场或地区的当地货币为单位的等价金额）时，都将对你计费。
+
+如果你的帐户在你的最后计费日期之后的 30 天时间内获得小于 50 美元的费用，将在下个月月初针对这些费用对你计费。 这有助于确保你的帐户不会维持广告市场活动费用的收支状态超过一个月。
 
 ## 如何删除信用卡或编辑信用卡详细信息？
 
@@ -54,6 +59,7 @@ ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 * [应用安装广告报告](app-install-ads-reports.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

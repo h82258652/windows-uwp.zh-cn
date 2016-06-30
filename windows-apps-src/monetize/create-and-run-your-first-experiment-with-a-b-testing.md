@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 在本演练中，通过 A/B 测试创建和运行你的第一个实验。
-title: 通过 A/B 测试创建和运行你的第一个实验
+Description: "在本演练中，通过 A/B 测试创建和运行你的第一个实验。"
+title: "通过 A/B 测试创建和运行你的第一个实验"
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0f889c22b8999408341f4c12387602b344f49439
+
 ---
 
 # 通过 A/B 测试创建和运行你的第一个实验
@@ -175,6 +179,7 @@ private string apiKey = "F48AC670-4472-4387-AB7D-D65B095153FB";
   * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

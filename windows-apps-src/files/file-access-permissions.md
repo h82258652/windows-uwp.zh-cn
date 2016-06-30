@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
-title: 文件访问权限
-description: 默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或通过声明功能访问其他位置。
+title: "文件访问权限"
+description: "默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或通过声明功能访问其他位置。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
+
 ---
 # 文件访问权限
 
@@ -163,6 +167,7 @@ description: 默认情况下，应用可以访问特定文件系统位置。 应
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mijacobs
-Description: 内容过渡动画可让你更改屏幕区域的内容，同时保持容器或背景不变。 新的内容将淡入。 如果存在要替换的现有内容，则该内容将淡出。
-title: 内容过渡动画指南
+Description: "内容过渡动画可让你更改屏幕区域的内容，同时保持容器或背景不变。 新的内容将淡入。 如果存在要替换的现有内容，则该内容将淡出。"
+title: "内容过渡动画指南"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dc233ef821259701eb93c09d1bdefcfa3d9bb69f
+
 ---
 
 # 内容过渡动画
@@ -48,6 +52,7 @@ ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

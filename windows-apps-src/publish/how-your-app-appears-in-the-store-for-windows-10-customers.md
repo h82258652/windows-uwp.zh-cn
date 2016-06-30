@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，客户同样也可以通过 Windows 10 设备获取这些应用。
-title: 你的应用如何显示在面向 Windows 10 客户的应用商店中
+Description: "如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，客户同样也可以通过 Windows 10 设备获取这些应用。"
+title: "你的应用如何显示在面向 Windows 10 客户的应用商店中"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
+
 ---
 
 # 你的应用如何显示在面向 Windows 10 客户的应用商店中
@@ -117,6 +121,7 @@ ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 | 游戏 &gt; 赛车           | 游戏 &gt; 赛车 + 飞行类           |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

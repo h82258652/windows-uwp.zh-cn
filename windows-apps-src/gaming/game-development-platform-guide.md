@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 通用 Windows 平台 (UWP) 应用的游戏技术
-description: 在此指南中，你将了解可用于开发通用 Windows 平台 (UWP) 游戏的技术。
+title: "通用 Windows 平台 (UWP) 应用的游戏技术"
+description: "在此指南中，你将了解可用于开发通用 Windows 平台 (UWP) 游戏的技术。"
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3c7807d0b46a32bfe90c79b7eee3111039ca94ab
+
 ---
 
 # 通用 Windows 平台 (UWP) 应用的游戏技术
@@ -351,6 +355,7 @@ Windows 10 即将推出 Xbox Live 功能集，包括 Xbox 跨平台联机、成�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

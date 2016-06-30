@@ -5,19 +5,20 @@ title: "日历日期选取器"
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 75f6bb925db63838e4985df15b50977b93805ffe
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 7ae444d9e096834daa2eef71c691b9bb8b86d7c4
 
 ---
 
 # 日历日期选取器
 
-日历日期选取器是一个下拉式控件，该控件已针对从日历视图中选取某个日期进行了优化，尤其是能够显示诸如星期几或丰富的日历信息等上下文信息。 你可以修改日历以提供其他上下文或限制可用日期。
+日历日期选取器是一个下拉式控件，该控件已针对从日历视图中选取某个日期进行了优化，尤其是能够显示诸如星期几或丰富的日历信息等上下文信息。 可以修改日历以提供其他上下文或限制可用日期。
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
 
--   [**TimePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
--   [**Time 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
+
+-   [**CalendarDatePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
+-   [**Date 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)
+-   [**DateChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx)
 
 ## 这是正确的控件吗？
 使用“日历日期选取器”****，让用户从上下文日历视图中选取某个日期。 将它用于选择约会或出发日期等事项。
@@ -76,7 +77,8 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 默认占位符文本是“选择日期”。 你可以通过将 PlaceholderText 属性设置为空字符串来删除此文本，或提供自定义文本，如下所示。
 
 ```xaml
-<CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" PlaceholderText="Choose your arrival date"/>
+<CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" 
+                    PlaceholderText="Choose your arrival date"/>
 ```
 
 
@@ -89,6 +91,6 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 你可以使用 Microsoft 官方商城协定和盈利 SDK 提供的库和工具来将这些功能添加到你的应用，这可帮助你赚取更多的利益并赢得客户。
-title: Microsoft 官方商城协定和盈利 SDK
+Description: "你可以使用 Microsoft 官方商城协定和盈利 SDK 提供的库和工具来将这些功能添加到你的应用，这可帮助你赚取更多的利益并赢得客户。"
+title: "Microsoft 官方商城协定和盈利 SDK"
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
+translationtype: Human Translation
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: 481cf2aab806a1f9ce368256a9df8930cbc756c1
+
 ---
 
 # Microsoft 官方商城协定和盈利 SDK
@@ -75,6 +79,7 @@ SDK 中的其他库（包括其他目标平台的 Microsoft.Advertising.dll 和�
 * [从应用启动“反馈中心”](launch-feedback-hub-from-your-app.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

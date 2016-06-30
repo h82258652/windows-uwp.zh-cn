@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 5efb4f40-a021-4dd2-82b4-7c95c3849485
-description: 请完整地阅读最终用户许可协议 (EULA) 以获取重要信息。
-title: 重要提示 - EULA
+description: "请完整地阅读最终用户许可协议 (EULA) 以获取重要信息。"
+title: "重要提示 - EULA"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 89af54f5b8cf52366100b4751ed37ddd7a7bacb7
+
 ---
 
 # 重要提示 - EULA
@@ -25,6 +29,7 @@ EULA 可在扩展 SDK 所在的文件夹中找到。 此文件夹可能不同，
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

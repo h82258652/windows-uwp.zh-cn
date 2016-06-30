@@ -1,8 +1,11 @@
 ---
 author: mtoepke
-title: 从 OpenGL ES 2.0 移植到 Direct3D 11
-description: 包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及演练。
+title: "从 OpenGL ES 2.0 移植到 Direct3D 11"
+description: "包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及演练。"
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
+ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
+ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
+
 ---
 
 # 从 OpenGL ES 2.0 移植到 Direct3D 11
@@ -33,8 +36,8 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 <td align="left"><p>首次开始将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 的过程时，你需要自行熟悉各个 API 之间的主要差别。 本部分中的主题将帮助你规划你的移植策略以及将图形处理移动到 Direct3D 时必须进行的 API 更改。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[从 OpenGL ES 2.0 移植的演练示例](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
-<td align="left"><p>这一组主题介绍了一些复杂程度不同的 OpenGL ES 2.0 图形管道移植方案。</p></td>
+<td align="left"><p>[如何：将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11.1](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)</p></td>
+<td align="left"><p>对于本次移植练习，我们将从最基本的内容开始：将旋转且顶点着色的立方体的简单呈现器从 OpenGL ES 2.0 移植到 Direct3D 中，以便它与 Visual Studio 2015 中的 DirectX 11 应用（通用 Windows）模板相匹配。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[OpenGL ES 2.0 到 Direct3D 11.1 参考](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
@@ -59,6 +62,7 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-description: 本文介绍如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。
-title: 使用 PlayReady 的自适应流式处理
+description: "本文介绍如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。"
+title: "使用 PlayReady 的自适应流式处理"
+translationtype: Human Translation
+ms.sourcegitcommit: 176f8989aea5402106e3c14144948cec87a5dc27
+ms.openlocfilehash: d76f50e97f16699f34f138fcd25af8a90696085a
+
 ---
 
 # 使用 PlayReady 的自适应流式处理
@@ -297,6 +301,7 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

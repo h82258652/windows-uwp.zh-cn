@@ -1,8 +1,12 @@
 ---
 author: Mtoepke
-title: Xbox One 上的 UWP 示例
-description: 示例和库可帮助你生成出色的 Xbox One 和电视体验。
+title: "Xbox One 上的 UWP 示例"
+description: "示例和库可帮助你生成出色的 Xbox One 和电视体验。"
 area: Xbox
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6f38f5aabb6a409fab894bf7127ad4011162f7c6
+
 ---
 
 # Xbox One 上的 UWP 示例
@@ -16,6 +20,7 @@ TVHelpers 是一套 JavaScript 和 XAML/C# 示例和库，可帮助你使用 Jav
 - [Xbox One 上的 UWP](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

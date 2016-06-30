@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 你可以下载包含分析数据的文件，以便你可以脱机查看统计数据和信息。
-title: 下载分析报告
+Description: "你可以下载包含分析数据的文件，以便你可以脱机查看统计数据和信息。"
+title: "下载分析报告"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e
+
 ---
 
 # 下载分析报告
@@ -23,6 +27,7 @@ ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 4.  单击“下载报告”****按钮，然后保存或打开 .tsv 文件。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

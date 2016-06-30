@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 了解如何存储和检索本地、漫游和临时应用数据。
-title: 存储和检索设置以及其他应用数据
+Description: "了解如何存储和检索本地、漫游和临时应用数据。"
+title: "存储和检索设置以及其他应用数据"
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 433cda6432d1e695bacb338e68012bcc9c837eb6
+
 ---
 
 # 存储和检索设置以及其他应用数据
@@ -65,7 +69,7 @@ Windows.Storage.StorageFolder localFolder =
 
 ### <span id="Create_and_retrieve_a_simple_local_setting"></span><span id="create_and_retrieve_a_simple_local_setting"></span><span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING"></span>创建和检索简单的本地设置
 
-若要创建或编写设置，请使用 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 属性访问我们在上一步中获取的 `localSettings` 容器中的设置。 此示例会创建一个设置，名为
+若要创建或编写设置，请使用 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 属性访问我们在上一步中获取的 `localSettings` 容器中的设置。 此示例会创建一个名为 `exampleSetting` 的设置。
 
 ```CSharp
 // Simple setting
@@ -130,7 +134,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要打开本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 和 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)
+若要打开本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 和 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)。
 
 ```CSharp
 async void ReadTimestamp()
@@ -162,8 +166,8 @@ async void ReadTimestamp()
 -   将漫游用于用户首选项和自定义、链接以及小型数据文件。 例如，使用漫游在所有设备上保留用户的背景颜色首选项。
 -   使用漫游以允许用户跨设备继续执行任务。 例如，诸如草稿电子邮件的内容或阅读器应用中最近查看的页面的漫游应用数据。
 -   通过更新应用数据处理 [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) 事件。 当应用数据从云中完成同步时，会发生该事件。
--   漫游会引用内容而不是原始数据。 例如，漫游 URL 而不是联机文章的内容。
--   对于重要的、对时间敏感的设置，使用与 [**RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) 相关联的 *HighPriority* 设置
+-   漫游会引用内容而不是原始数据。 例如，会漫游 URL 而不是联机文章的内容。
+-   对于重要的、对时间敏感的设置，使用与 [**RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) 相关联的 *HighPriority* 设置。
 -   不要漫游特定于设备的应用数据。 某些信息仅在本地才合理，例如指向本地文件资源的路径名。 如果你决定漫游本地信息，请确保信息在第二台设备上无效时该应用可以进行恢复。
 -   不要漫游较大的应用数据集。 应用可以漫游的应用数据量存在限制；使用 [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) 属性获取这个最大值。 如果应用达到该上限，在应用数据存储的大小不再超过该限制之前，不能漫游任何数据。 在你设计应用时，必须考虑如何为较大数据设置一个限制以免超过此限值。 例如，如果每保存一个游戏状态需要 10KB，则应用可能仅允许用户最多储存 10 个游戏。
 -   不要为依赖即时同步的数据使用漫游。 Windows 不保证实现即时同步；如果用户脱机或在严重延迟的网络上，漫游可能会大大延迟。 请确保你的 UI 不依赖即时同步。
@@ -237,7 +241,7 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 
 ### <span id="Create_and_retrieve_roaming_settings"></span><span id="create_and_retrieve_roaming_settings"></span><span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS"></span>创建和检索漫游设置
 
-使用 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 属性访问我们在前一部分中获取的 `roamingSettings` 容器中的设置。 此示例将创建一个简单设置和一个复合值，名称分别为 `exampleSetting` 和
+使用 [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) 属性访问我们在前一部分中获取的 `roamingSettings` 容器中的设置。 此示例将创建名为 `exampleSetting` 的简单设置和名为 `composite` 的复合值。
 
 ```CSharp
 // Simple setting
@@ -296,7 +300,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在漫游应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 和 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)）。 此示例会打开在前一部分中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)
+若要在漫游应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 和 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)）。 此示例会打开在前一部分中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)。
 
 ```CSharp
 async void ReadTimestamp()
@@ -359,7 +363,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在临时应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 和 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)）。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)
+若要在临时应用数据存储中打开和读取文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) 和 [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482)）。 此示例打开在上一步中创建的 `dataFile.txt` 文件并从该文件中读取日期。 有关从多个位置加载文件资源的详细信息，请参阅[如何加载文件资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)。
 
 ```CSharp
 async void ReadTimestamp()
@@ -459,6 +463,7 @@ localSettings.DeleteContainer("exampleContainer");
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

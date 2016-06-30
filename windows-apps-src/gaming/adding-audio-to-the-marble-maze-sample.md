@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 向 Marble Maze 示例添加音频
-description: 本文档介绍了在使用音频时要考虑的重要做法，并展示了 Marble Maze 如何应用这些做法。
+title: "向 Marble Maze 示例添加音频"
+description: "本文档介绍了在使用音频时要考虑的重要做法，并展示了 Marble Maze 如何应用这些做法。"
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
+translationtype: Human Translation
+ms.sourcegitcommit: c663692e31a62fdf40df9d706070d0d2ce0e1cdd
+ms.openlocfilehash: 0b2a0cb240431a49ef2bdb82a188f3dcb0294fc5
+
 ---
 
 # 向 Marble Maze 添加音频示例
@@ -789,6 +793,7 @@ Marble Maze 还使用 **m\_engineExperiencedCriticalError** 标志以防止在�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

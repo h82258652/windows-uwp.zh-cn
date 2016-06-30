@@ -1,8 +1,11 @@
 ---
-author: DBirtolo
+author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
-title: 创建 NFC 智能卡应用
-description: Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。
+title: "创建 NFC 智能卡应用"
+description: "Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。"
+ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
+ms.openlocfilehash: f47303826b9d2d2040a2bd2f2dbd5e2da3dd3cd0
+
 ---
 # 创建 NFC 智能卡应用
 
@@ -381,6 +384,7 @@ Windows Phone 8.1 中的传统二进制短信拦截已删除并替换为 Windows
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

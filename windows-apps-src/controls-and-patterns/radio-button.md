@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 单选按钮允许用户从两个或多个选项中选择一个选项。
-title: 单选按钮指南
+Description: "单选按钮允许用户从两个或多个选项中选择一个选项。"
+title: "单选按钮指南"
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 317df548e72f9aff475ba0959668b6441ac29d3d
+
 ---
 # 单选按钮
 单选按钮允许用户从两个或多个选项中选择一个选项。 每个选项都表示为一个单选按钮；用户只能选择单选按钮组中的一个单选按钮。
@@ -180,6 +184,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 - [**Windows.UI.Xaml.Controls RadioButton 类**](https://msdn.microsoft.com/library/windows/apps/br227544)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

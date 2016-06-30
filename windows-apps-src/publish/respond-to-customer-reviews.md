@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 可以直接回复应用的相关评价，让客户知道你正在听取他们的反馈。
-title: 回复客户评价
+Description: "可以直接回复应用的相关评价，让客户知道你正在听取他们的反馈。"
+title: "回复客户评价"
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 06228d7816f371f669ad4e6db7310e903f5f0683
+
 ---
 
 # 回复客户评价
@@ -47,6 +51,7 @@ Microsoft 保留出于任何原因（包括以下情形：你的回复引发了�
 聆听和回复客户仅仅是开始而已。 针对他们的反馈采取行动也很关键。 如果你进行了重大的改进，请通过[创建新提交](app-submissions.md)更新应用，然后自信地在应用商店中进行展示。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

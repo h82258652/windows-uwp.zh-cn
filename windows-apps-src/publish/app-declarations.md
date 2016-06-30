@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 在提交过程中，你可以在“应用属性”页面的“应用声明”部分中提供有关你的应用的附加信息。
-title: 应用声明
+Description: "在提交过程中，你可以在“应用属性”页面的“应用声明”部分中提供有关你的应用的附加信息。"
+title: "应用声明"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
+
 ---
 
 # 应用声明
@@ -62,6 +66,7 @@ ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

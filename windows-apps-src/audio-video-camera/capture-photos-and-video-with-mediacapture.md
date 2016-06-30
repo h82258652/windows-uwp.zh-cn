@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 1361E82A-202F-40F7-9239-56F00DFCA54B
-description: 本文将介绍使用 MediaCapture API 捕获照片和视频的操作步骤，包括初始化和关闭 MediaCapture 以及处理设备方向的更改。
-title: 使用 MediaCapture 捕获照片和视频
+description: "本文将介绍使用 MediaCapture API 捕获照片和视频的操作步骤，包括初始化和关闭 MediaCapture 以及处理设备方向的更改。"
+title: "使用 MediaCapture 捕获照片和视频"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
+
 ---
 
 # 使用 MediaCapture 捕获照片和视频
@@ -12,7 +16,7 @@ title: 使用 MediaCapture 捕获照片和视频
 
 本文将介绍使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) API 捕获照片和视频的操作步骤，包括初始化和关闭 **MediaCapture** 以及处理设备方向的更改。
 
-提供 **MediaCapture** 以便支持那些要求对媒体捕获过程进行低级别控制的应用以及需要高级捕获功能的实现方案。 使用 **MediaCapture** 还要求你提供自己的捕获 UI。 如果你的应用仅需要捕获照片或视频，并且不关心高级捕获技术，则只需几行代码，[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 即可使其轻松捕获照片或视频。 有关详细信息，请参阅[使用 CameraCaptureUI 捕获照片和视频](capture-photos-and-video-with-cameracaptureui.md)
+提供 **MediaCapture** 以便支持那些要求对媒体捕获过程进行低级别控制的应用以及需要高级捕获功能的实现方案。 使用 **MediaCapture** 还要求你提供自己的捕获 UI。 如果你的应用仅需要捕获照片或视频，并且不关心高级捕获技术，则只需几行代码，[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 即可使其轻松捕获照片或视频。 有关详细信息，请参阅[使用 CameraCaptureUI 捕获照片和视频](capture-photos-and-video-with-cameracaptureui.md)。
 
 本文中的代码源自 [CameraStarterKit 示例](http://go.microsoft.com/fwlink/?LinkId=619479)。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
@@ -26,8 +30,8 @@ title: 使用 MediaCapture 捕获照片和视频
 
 1.  在 Microsoft Visual Studio 的“解决方案资源管理器”****中，通过双击“package.appxmanifest”****项，打开应用程序清单的设计器。
 2.  选择“功能”****选项卡。
-3.  选中“摄像头”****框和“麦克风”****框
-4.  若要访问图片库和视频库，请选中“图片库”****框和“视频库”****框
+3.  选中“摄像头”****框和“麦克风”****框。
+4.  若要访问图片库和视频库，请选中“图片库”****框和“视频库”****框。
 
 ### 添加用于媒体捕获相关的 API 的 using 指令
 
@@ -46,7 +50,7 @@ title: 使用 MediaCapture 捕获照片和视频
 
 [!code-cs[PreviewVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewVariables)]
 
-以下示例方法将初始化媒体捕获对象。 首先，该代码搜索可以用于媒体捕获的视频捕获设备。 找到后，初始化 **MediaCapture** 对象并注册其事件的处理程序。 下一步，使用视频捕获设备的 ID 创建 [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/desktop/hh802710) 对象。 然后调用 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 初始化 **MediaCapture**
+以下示例方法将初始化媒体捕获对象。 首先，该代码搜索可以用于媒体捕获的视频捕获设备。 找到后，初始化 **MediaCapture** 对象并注册其事件的处理程序。 下一步，使用视频捕获设备的 ID 创建 [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/desktop/hh802710) 对象。 然后调用 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 初始化 **MediaCapture**。
 
 [!code-cs[InitializeCameraAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitializeCameraAsync)]
 
@@ -77,7 +81,7 @@ title: 使用 MediaCapture 捕获照片和视频
 
 [!code-cs[DisplayRequest](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayRequest)]
 
-以下方法启动媒体捕获预览。 首先，它通过调用 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 上的 [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) 来请求将屏幕保持活动状态。 接下来，通过调用 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 启动预览
+以下方法启动媒体捕获预览。 首先，它通过调用 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 上的 [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) 来请求将显示保持活动状态。 接下来，通过调用 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 启动预览。
 
 [!code-cs[StartPreviewAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
@@ -162,9 +166,9 @@ title: 使用 MediaCapture 捕获照片和视频
 
 [!code-cs[ReencodeAndSavePhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetReencodeAndSavePhotoAsync)]
 
--   设置“System.Photo.Orientation”位图属性会将照片的方向编码到文件的元数据。 它不会导致以不同的方式编码实际图像数据。 有关将元数据嵌入到图像文件中的详细信息，请参阅[图像元数据](image-metadata.md)
+-   设置“System.Photo.Orientation”位图属性会将照片的方向编码到文件的元数据。 它不会导致以不同的方式编码实际图像数据。 有关将元数据嵌入到图像文件中的详细信息，请参阅[图像元数据](image-metadata.md)。
 
--   有关处理图像（包括编码和解码图像）的详细信息，请参阅[图像处理](imaging.md)
+-   有关处理图像（包括编码和解码图像）的详细信息，请参阅[图像处理](imaging.md)。
 
 ## 捕获视频
 
@@ -172,7 +176,7 @@ title: 使用 MediaCapture 捕获照片和视频
 
 [!code-cs[StartRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartRecordingAsync)]
 
-若要停止录制，只需调用 [**MediaCapture.StopRecordAsync**](https://msdn.microsoft.com/library/windows/apps/br226623)
+若要停止录制，只需调用 [**MediaCapture.StopRecordAsync**](https://msdn.microsoft.com/library/windows/apps/br226623)。
 
 [!code-cs[StopRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStopRecordingAsync)]
 
@@ -182,11 +186,11 @@ title: 使用 MediaCapture 捕获照片和视频
 
 ## 暂停和恢复视频捕获
 
-在某些情况下，你可能想要暂停和继续正在进行的视频捕获，而不是停止该捕获并启动一个新的捕获。 若要暂停录制，请调用 [**PauseRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858102)。 如果指定了 [**MediaCapturePauseBehavior.RetainHardwareResources**](https://msdn.microsoft.com/library/windows/apps/dn926686)，那么在不支持同时进行视频和照片捕获的设备上，该应用将不能在暂停视频时捕获照片。 有关确定设备是否支持同时进行照片和视频捕获的信息，请参阅[相机配置文件](camera-profiles.md)
+在某些情况下，你可能想要暂停和继续正在进行的视频捕获，而不是停止该捕获并启动一个新的捕获。 若要暂停录制，请调用 [**PauseRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858102)。 如果指定了 [**MediaCapturePauseBehavior.RetainHardwareResources**](https://msdn.microsoft.com/library/windows/apps/dn926686)，那么在不支持同时进行视频和照片捕获的设备上，该应用将不能在暂停视频时捕获照片。 有关确定设备是否支持同时进行照片和视频捕获的信息，请参阅[相机配置文件](camera-profiles.md)。
 
 [!code-cs[PauseRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPauseRecordingAsync)]
 
-若要恢复先前暂停的视频捕获，请调用 [**ResumeRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858103)
+若要恢复先前暂停的视频捕获，请调用 [**ResumeRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858103)。
 
 [!code-cs[ResumeRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResumeRecordingAsync)]
 
@@ -222,107 +226,108 @@ title: 使用 MediaCapture 捕获照片和视频
 
 在 **Application.Suspending** 事件的处理程序中，应注销屏幕和设备方向事件的处理程序，并关闭 **MediaCapture** 对象。 本文中稍后介绍的另一个应用程序生命周期相关的任务将需要此处注销的 [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) 事件。
 
-注意 必须通过在暂停事件处理程序的开头处调用 [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) 来请求暂停延迟。 这要求系统在关闭你的应用之前等待你发出操作已完成的信号。 这是必须的，因为 **MediaCapture** 关闭操作异步执行，以便 **Application.Suspending** 事件处理程序可以在正确关闭相机之前完成。
+**警告** 必须通过在暂停事件处理程序的开头处调用 [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) 来请求暂停延迟。 这要求系统在关闭你的应用之前等待你发出操作已完成的信号。 这是必须的，因为 **MediaCapture** 关闭操作异步执行，以便 **Application.Suspending** 事件处理程序可以在正确关闭相机之前完成。 处于等待状态的异步调用完成后，应通过调用 [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 释放延迟。
 
-[!code-cs[处于等待状态的异步调用完成后，应通过调用 [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 释放延迟](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
+[!code-cs[暂停中](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
 
-暂停中
+在 **Application.Resuming** 事件的处理程序中，应该为屏幕和设备方向事件注册处理程序、注册 **SystemMediaTransportControls.PropertyChanged** 事件并初始化 **MediaCapture** 对象。
 
-[!code-cs[在 **Application.Resuming** 事件的处理程序中，应该为屏幕和设备方向事件注册处理程序、注册 **SystemMediaTransportControls.PropertyChanged** 事件并初始化 **MediaCapture** 对象。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
+[!code-cs[恢复中](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
 
-恢复中
+[
+            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 事件提供一个机会，以便为屏幕和设备方向事件初始注册处理程序，并初始化 **MediaCapture** 对象。
 
-[!code-cs[[
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 事件提供一个机会，以便为屏幕和设备方向事件初始注册处理程序，并初始化 **MediaCapture** 对象。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
+[!code-cs[OnNavigatedTo](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
 
-OnNavigatedTo
+如果应用有多个页面，应在 [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) 事件处理程序中清理媒体捕获对象。
 
-[!code-cs[如果应用有多个页面，应在 [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) 事件处理程序中清理媒体捕获对象。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
+[!code-cs[OnNavigatingFrom](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
 
-OnNavigatingFrom 对于要在支持多个同步窗口的设备上正常表现的应用，当最小化或恢复应用时必须立即响应。 若要执行此操作，必须处理 [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) 事件。
+对于要在支持多个同步窗口的设备上正常表现的应用，当最小化或恢复应用时必须立即响应。 若要执行此操作，必须处理 [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) 事件。 初始化成员变量，以便为你的应用存储对 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 对象的引用。
 
-[!code-cs[初始化成员变量，以便为你的应用存储对 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 对象的引用。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
+[!code-cs[DeclareSystemMediaTransportControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
 
-DeclareSystemMediaTransportControls 应将用于注册和注销 **PropertyChanged** 事件的代码添加到上述示例中显示的应用生命周期事件中。 在该事件的处理程序中，检查以查看触发该事件的属性更改是否是 [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721) 属性。 如果由该属性的更改触发，请检查该属性的值。 如果该值是 [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852)，则已最小化你的应用，并且你应相应清理你的媒体捕获资源。 否则，该事件指示已还原你的应用窗口，并且应重新初始化媒体捕获资源。
+应将用于注册和注销 **PropertyChanged** 事件的代码添加到上述示例中显示的应用生命周期事件中。 在该事件的处理程序中，检查以查看触发该事件的属性更改是否是 [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721) 属性。 如果由该属性的更改触发，请检查该属性的值。 如果该值是 [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852)，则已最小化你的应用，并且你应相应清理你的媒体捕获资源。 否则，该事件指示已还原你的应用窗口，并且应重新初始化媒体捕获资源。 只有在 UI 线程上才可以访问 **SoundLevel** 属性，因此此方法中的代码包含在对 [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的调用中。
 
-[!code-cs[只有在 UI 线程上才可以访问 **SoundLevel** 属性，因此此方法中的代码包含在对 [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的调用中](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
+[!code-cs[SystemMediaControlsPropertyChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
 
-## SystemMediaControlsPropertyChanged
+## 媒体捕获的其他 UI 注意事项
 
-### 媒体捕获的其他 UI 注意事项
+### 设置自动旋转首选项
 
-设置自动旋转首选项 如有关旋转预览流的上一节中所述，某些设备支持设置 [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) 以防止页面（包括显示该预览的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278)）随设备旋转而旋转。 这可在支持它的设备上提供良好的用户体验。 当你的应用启动或当你开始显示预览时，请设置此值。
+如有关旋转预览流的上一节中所述，某些设备支持设置 [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) 以防止页面（包括显示该预览的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278)）随设备旋转而旋转。 这可在支持它的设备上提供良好的用户体验。 当你的应用启动或当你开始显示预览时，请设置此值。 请注意，仍应为不支持自动旋转首选项的设备实现预览旋转。
 
-[!code-cs[请注意，仍应为不支持自动旋转首选项的设备实现预览旋转。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
+[!code-cs[SetAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
 
-### SetAutoRotationPreferences
+### 处理 UI 元素方向
 
-处理 UI 元素方向 用户通常希望相机应用中的 UI 元素（如启动照片或视频捕获的按钮）跟随视频预览旋转。 以下方法演示如何使用先前定义的方向帮助程序方法来正确定位相机 UI 中的按钮。 应从 [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 和 [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) 事件处理程序和首次启动你的应用时调用此方法。
+用户通常希望相机应用中的 UI 元素（如启动照片或视频捕获的按钮）跟随视频预览旋转。 以下方法演示如何使用先前定义的方向帮助程序方法来正确定位相机 UI 中的按钮。 应从 [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 和 [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) 事件处理程序和首次启动你的应用时调用此方法。 你的实现可能因应用的 UI 而有所不同。
 
-[!code-cs[你的实现可能因应用的 UI 而有所不同。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
+[!code-cs[UpdateButtonOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
 
-UpdateButtonOrientation
+当正在关闭你的应用时，或如果你导航到与媒体捕获无关的页面时，请将自动旋转首选项设置为 [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) 以允许 UI 正常旋转。
 
-[!code-cs[当正在关闭你的应用时，或如果你导航到与媒体捕获无关的页面时，请将自动旋转首选项设置为 [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) 以允许 UI 正常旋转。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
+[!code-cs[RevertAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
 
-### RevertAutoRotationPreferences
+### 支持同时进行照片和视频捕获
 
-支持同时进行照片和视频捕获 [
-            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API 允许你在支持它的设备上同时捕获照片和视频。 为简化起见，此示例使用 [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) 属性来确定是否支持同时捕获视频和照片，但是执行此操作的更可靠且建议的方法是使用相机配置文件。
+[
+            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API 允许你在支持它的设备上同时捕获照片和视频。 为简化起见，此示例使用 [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) 属性来确定是否支持同时捕获视频和照片，但是执行此操作的更可靠且建议的方法是使用相机配置文件。 有关详细信息，请参阅[相机配置文件](camera-profiles.md)。
 
-有关详细信息，请参阅[相机配置文件](camera-profiles.md) 以下帮助程序方法更新应用的控件以匹配该应用的当前捕获状态。
+以下帮助程序方法更新应用的控件以匹配该应用的当前捕获状态。 每当你的应用的捕获状态更改时（如启动或停止视频捕获时），请调用此方法。
 
-[!code-cs[每当你的应用的捕获状态更改时（如启动或停止视频捕获时），请调用此方法。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
+[!code-cs[UpdateCaptureControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
 
-### UpdateCaptureControls
+### 支持特定于移动的 UI 功能
 
-支持特定于移动的 UI 功能 本文中显示的所有代码将在通用 Windows 应用中使用。 使用其他几行代码，你可以利用仅适用于移动设备的特殊 UI 功能。
+本文中显示的所有代码将在通用 Windows 应用中使用。 使用其他几行代码，你可以利用仅适用于移动设备的特殊 UI 功能。 若要使用这些功能，你必须将对适用于通用应用平台的 Microsoft 移动扩展 SDK 的引用添加到你的项目中。
 
-**若要使用这些功能，你必须将对适用于通用应用平台的 Microsoft 移动扩展 SDK 的引用添加到你的项目中。**
+**添加对硬件相机按钮支持的移动扩展 SDK 的引用**
 
-1.  添加对硬件相机按钮支持的移动扩展 SDK 的引用
+1.  在“解决方案资源管理器”****中，右键单击“引用”****，然后选择“添加引用...”****
 
-2.  在“解决方案资源管理器”****中，右键单击“引用”****，然后选择“添加引用...”****
+2.  展开“Windows 通用”****节点，然后选择“扩展”****。
 
-3.  展开“Windows 通用”****节点，然后选择“扩展”****
+3.  单击“适用于通用应用平台的 Microsoft 移动扩展 SDK”****旁边的复选框。
 
-单击“适用于通用应用平台的 Microsoft 移动扩展 SDK”****旁边的复选框 移动设备具有向用户提供有关设备的状态信息的 [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) 控件。 此控件占用屏幕上的空间，这可能会干扰媒体捕获 UI。 你可以通过调用 [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) 来隐藏状态栏，但你必须从你使用 [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) 方法以确定 API 是否在其中可用的条件块内执行此调用。 此方法将仅在支持状态栏的移动设备上返回 True。
+移动设备具有向用户提供有关设备的状态信息的 [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) 控件。 此控件占用屏幕上的空间，这可能会干扰媒体捕获 UI。 你可以通过调用 [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) 来隐藏状态栏，但你必须从你使用 [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) 方法以确定 API 是否在其中可用的条件块内执行此调用。 此方法将仅在支持状态栏的移动设备上返回 True。 当应用启动时或当你开始从相机预览时，应该隐藏状态栏。
 
-[!code-cs[当应用启动时或当你开始从相机预览时，应该隐藏状态栏。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
+[!code-cs[HideStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
 
-HideStatusBar
+当应用关闭时或者当用户导航离开应用的媒体捕获页面时，使该控件再次可见。
 
-[!code-cs[当应用关闭时或者当用户导航离开应用的媒体捕获页面时，使该控件再次可见。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
+[!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-ShowStatusBar 某些移动设备具有专用的硬件相机按钮，比起屏幕上的控件来说，一些用户更喜欢使用它们。 若要在按下硬件相机按钮时收到通知，请注册 [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) 事件的处理程序。
+某些移动设备具有专用的硬件相机按钮，比起屏幕上的控件来说，一些用户更喜欢使用它们。 若要在按下硬件相机按钮时收到通知，请注册 [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) 事件的处理程序。 由于此 API 仅适用于移动设备，必须再次使用 **IsTypePresent** 以确保在尝试访问该 API 之前，它在当前设备上受支持。
 
-[!code-cs[由于此 API 仅适用于移动设备，必须再次使用 **IsTypePresent** 以确保在尝试访问该 API 之前，它在当前设备上受支持。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
+[!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
 
-[!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
+[!code-cs[RegisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
 
-RegisterCameraButtonHandler
+在 **CameraPressed** 事件的处理程序中，你可以启动照片捕获。
 
-[!code-cs[在 **CameraPressed** 事件的处理程序中，你可以启动照片捕获。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
+[!code-cs[CameraPressed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
 
-CameraPressed
+当应用关闭或者用户离开应用的媒体捕获页面时，请注销该硬件按钮处理程序。
 
-[!code-cs[当应用关闭或者用户离开应用的媒体捕获页面时，请注销该硬件按钮处理程序。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
+[!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-UnregisterCameraButtonHandler **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。
+**注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)
+## 相关主题
 
-* [相关主题](camera-profiles.md)
-* [相机配置文件](high-dynamic-range-hdr-photo-capture.md)
-* [高动态范围 (HDR) 照片捕获](capture-device-controls-for-photo-and-video-capture.md)
-* [用于照片和视频捕获的捕获设备控件](capture-device-controls-for-video-capture.md)
-* [用于视频捕获的捕获设备控件](effects-for-video-capture.md)
-* [视频捕获的效果](scene-analysis-for-media-capture.md)
-* [媒体捕获的场景分析](variable-photo-sequence.md)
-* [可变照片序列](get-a-preview-frame.md)
-* [获取预览帧](http://go.microsoft.com/fwlink/?LinkId=619479)
+* [相机配置文件](camera-profiles.md)
+* [高动态范围 (HDR) 照片捕获](high-dynamic-range-hdr-photo-capture.md)
+* [用于照片和视频捕获的捕获设备控件](capture-device-controls-for-photo-and-video-capture.md)
+* [用于视频捕获的捕获设备控件](capture-device-controls-for-video-capture.md)
+* [视频捕获的效果](effects-for-video-capture.md)
+* [媒体捕获的场景分析](scene-analysis-for-media-capture.md)
+* [可变照片序列](variable-photo-sequence.md)
+* [获取预览帧](get-a-preview-frame.md)
+* [CameraStarterKit 示例](http://go.microsoft.com/fwlink/?LinkId=619479)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

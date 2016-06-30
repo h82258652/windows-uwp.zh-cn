@@ -1,12 +1,15 @@
 ---
 author: mijacobs
-Description: 颜色提供查找应用的各种级别的信息的直观方法，并用作强化交互模型的重要工具。
-title: 颜色
+Description: "颜色提供查找应用的各种级别的信息的直观方法，并用作强化交互模型的重要工具。"
+title: "颜色"
 ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
-
 label: Color
 template: detail.hbs
 extraBodyClass: style-color
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
+
 ---
 
 # 颜色
@@ -50,7 +53,7 @@ extraBodyClass: style-color
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            在 XAML 中，主要主题色显示为名为 `SystemAccentColor` 的[主题资源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 这些色调可用作 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 和 `SystemAccentColorDark3`。 也可以通过 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 和 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 枚举，以编程方式获得。
+在 XAML 中，主要主题色显示为名为 `SystemAccentColor` 的[主题资源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 这些色调可用作 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 和 `SystemAccentColorDark3`。 也可以通过 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 和 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 枚举，以编程方式获得。
     </div>
 </aside>
 
@@ -90,7 +93,7 @@ extraBodyClass: style-color
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            每种颜色都可用作遵循 `System*Color` 命名约定（`SystemChromeHighColor` 除外）的 XAML [主题资源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes)。 你可以通过 [Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx) 或 [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx) 控制你的应用的主题。
+每种颜色都可用作遵循 `System*Color` 命名约定（`SystemChromeHighColor` 除外）的 XAML [主题资源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes)。 你可以通过 [Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx) 或 [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx) 控制你的应用的主题。
     </div>
 </aside>
 
@@ -99,6 +102,7 @@ extraBodyClass: style-color
 我们的调色板已经过优化，可在屏幕上使用。 我们建议文本与背景保持 4.5:1 的对比率，以达到最佳可读性。 有许多免费工具可用于测试你的颜色是否可行，如[对比率](http://leaverou.github.io/contrast-ratio/)。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

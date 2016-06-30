@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 出色的提要可以让你的应用在 Windows 应用商店中脱颖而出，并有助于鼓励用户下载它。
-title: 编写出色的应用提要
+Description: "出色的提要可以让你的应用在 Windows 应用商店中脱颖而出，并有助于鼓励用户下载它。"
+title: "编写出色的应用提要"
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
+translationtype: Human Translation
+ms.sourcegitcommit: 17e7724eaa8a33f17360eb6e24fcc22068c5d477
+ms.openlocfilehash: 56b8492fea59c9a744c948d27e728e2305388cf8
+
 ---
 
 # 编写出色的应用提要
@@ -35,6 +39,7 @@ ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 如果你的应用使用广告中介，或者显示来自 Microsoft Advertising 的横幅或间隙视频广告，请使用“盈利”&gt;“利用广告来盈利”页面管理你的广告的使用。
-title: 通过广告盈利
+Description: "如果你的应用使用广告中介，或者显示来自 Microsoft Advertising 的横幅或间隙视频广告，请使用“盈利”&gt;“利用广告来盈利”页面管理你的广告的使用。"
+title: "通过广告盈利"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
+
 ---
 
 # 通过广告盈利
@@ -65,6 +69,7 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

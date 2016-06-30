@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 9165f709-71d7-42cf-9b30-3190fe029fb4
-description: 了解 Microsoft Advertising 库中的 AdControl 类与广告中介库中的 AdMediatorControl 类之间的区别。
-title: 区别是什么 - AdMediatorControl 或 AdControl
+description: "了解 Microsoft Advertising 库中的 AdControl 类与广告中介库中的 AdMediatorControl 类之间的区别。"
+title: "区别是什么 - AdMediatorControl 或 AdControl"
+translationtype: Human Translation
+ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
+ms.openlocfilehash: 291e1c4d707e8987d29ae5840248918543d7d12a
+
 ---
 
 # 区别是什么：AdMediatorControl 或 AdControl
@@ -42,6 +46,7 @@ Microsoft Advertising 库和广告中介库均包含在 Microsoft 官方商城�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

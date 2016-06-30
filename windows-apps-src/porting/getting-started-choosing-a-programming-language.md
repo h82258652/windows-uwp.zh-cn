@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: 选择编程语言
+title: "选择编程语言"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
-description: 选择编程语言
+description: "选择编程语言"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
+
 ---
 
 # 入门：选择编程语言
@@ -140,6 +144,7 @@ C# 是一种简单易学的语言，并附带构成 .NET 的许多支持类和�
 [入门：熟悉 Visual Studio 环境](getting-started-getting-around-in-visual-studio.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 设置后台任务的运行条件
-description: 了解如何设置控制何时运行后台任务的条件。
+author: TylerMSFT
+title: "设置后台任务的运行条件"
+description: "了解如何设置控制何时运行后台任务的条件。"
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
+
 ---
 
 # 设置后台任务的运行条件
@@ -184,6 +187,7 @@ ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

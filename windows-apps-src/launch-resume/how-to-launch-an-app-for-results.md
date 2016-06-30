@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 针对结果启动应用
-description: 了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是针对结果启动应用。
+author: TylerMSFT
+title: "针对结果启动应用"
+description: "了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是针对结果启动应用。"
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
+
 ---
 
 # 针对结果启动应用
@@ -113,8 +116,8 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     var protocolForResultsArgs = e.Parameter as ProtocolForResultsActivatedEventArgs;
     // Set the ProtocolForResultsOperation field.
-    _operation = protocolForResultsArgs.ProtocolForResultsOperation; 
-    
+    _operation = protocolForResultsArgs.ProtocolForResultsOperation;
+
     if (protocolForResultsArgs.Data.ContainsKey("TestData"))
     {
         string dataFromCaller = protocolForResultsArgs.Data["TestData"] as string;
@@ -201,8 +204,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

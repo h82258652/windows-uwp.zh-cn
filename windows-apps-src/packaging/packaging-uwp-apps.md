@@ -1,8 +1,12 @@
 ---
 author: msatranjr
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
-title: 打包 UWP 应用
-description: 若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要为其创建一个 appxupload 程序包。
+title: "打包 UWP 应用"
+description: "若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要为其创建一个 appxupload 程序包。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a77e441cbd1b6826e06064dbd4be449813754b25
+
 ---
 # 打包 UWP 应用
 
@@ -136,6 +140,7 @@ Visual Studio 可以将你的程序包与应用商店相关联。 当执行此�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

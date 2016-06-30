@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: 使用 Windows 应用商店分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。
-title: 使用 Windows 应用商店服务访问分析数据
+description: "使用 Windows 应用商店分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。"
+title: "使用 Windows 应用商店服务访问分析数据"
+ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
+ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
+
 ---
 
 # 使用 Windows 应用商店服务访问分析数据
@@ -35,18 +38,18 @@ title: 使用 Windows 应用商店服务访问分析数据
 
 1.  在开发人员中心中，转到**“帐户设置”**、单击**“管理用户”**，然后将你组织的开发人员中心帐户与 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/library/windows/apps/mt489008)。 可选择从你的组织的 Azure AD 目录添加其他用户，因此他们同样也可以访问开发人员中心帐户。
 
-    **注意** 仅一个开发人员中心帐户可与 Azure Active Directory 相关联。 同样地，仅一个 Azure Active Directory 可与开发人员中心帐户相关联。 建立此关联后，你将无法在不联系支持人员的情况下删除它。
+    > **注意** 仅一个开发人员中心帐户可与 Azure Active Directory 相关联。 同样地，仅一个 Azure Active Directory 可与开发人员中心帐户相关联。 建立此关联后，你将无法在不联系支持人员的情况下删除它。
 
      
 
-2.  在**“管理用户”**页面上，单击**“添加 Azure AD 应用程序”**、添加将用于访问你的开发人员中心帐户的分析数据的 Azure AD 应用程序，然后为其分配**“管理者”**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**“添加 Azure AD 应用程序”**上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**“添加 Azure AD 应用程序”**页面创建新的 Azure AD 应用程序。 有关详细信息，请参阅[管理帐户用户](https://msdn.microsoft.com/library/windows/apps/mt489008)中有关管理 Azure AD 应用程序的部分。
+2.  在“管理用户”****页面中，单击“添加 Azure AD 应用程序”****、添加表示应用或服务并且将用于访问你的开发人员中心帐户的分析数据的 Azure AD 应用程序，然后为其分配“管理者”****角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在“添加 Azure AD 应用程序”****页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**“添加 Azure AD 应用程序”**页面创建新的 Azure AD 应用程序。 有关详细信息，请参阅[管理帐户用户](https://msdn.microsoft.com/library/windows/apps/mt489008)中有关管理 Azure AD 应用程序的部分。
 
 3.  返回到**“管理用户”**页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后单击**“添加新密钥”**。 在接下来的屏幕上，记下**“客户端 ID”**和**“密钥”**值。 有关详细信息，请参阅[管理帐户用户](https://msdn.microsoft.com/library/windows/apps/mt489008)中有关管理 Azure AD 应用程序的部分。 你需要这些客户端 ID 和密钥来获取 Azure AD 访问令牌，以供在调用 Windows 应用商店分析 API 时使用。 在离开此页面后，你将无法再访问该信息。
 
 
 ### 获取 Azure AD 访问令牌
 
-在将 Azure AD 应用程序与你的开发人员中心帐户关联并对该应用程序检索客户端 ID 和密钥后，可使用该信息来获取 Azure AD 访问令牌。 在调用 Windows 应用商店分析 API 中的任何方法之前，你需要一个访问令牌。
+在将 Azure AD 应用程序与你的开发人员中心帐户关联并对该应用程序检索客户端 ID 和密钥后，可使用该信息来获取 Azure AD 访问令牌。 在调用 Windows 应用商店分析 API 中的任何方法之前，你需要一个访问令牌。 创建访问令牌后，在其到期前，你有 60 分钟时间来使用它。
 
 若要获取访问令牌，请按照[使用客户端凭据的服务到服务调用](https://msdn.microsoft.com/library/azure/dn645543.aspx)中的说明将 HTTP POST 发送到以下 Azure AD 终结点。
 
@@ -108,9 +111,9 @@ namespace TestAnalyticsAPI
                     clientSecret,
                     scope).Result;
 
-            // This is your app's product ID. This ID is embedded in the app's listing link
-            // on the App identity page of the Dev Center dashboard.
-            string appID = "<your app's product ID>";
+            // This is your app's Store ID. This ID is available on
+            // the App identity page of the Dev Center dashboard.
+            string appID = "<your app's Store ID>";
 
             DateTime startDate = DateTime.Parse("08-01-2015");
             DateTime endDate = DateTime.Parse("11-01-2015");
@@ -237,6 +240,7 @@ Windows 应用商店分析 API 会在 JSON 对象中返回含有错误代码和�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

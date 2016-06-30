@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 将你的应用列在正确的类别和子类别中，可帮助客户找到你的应用，并且更好地了解它。
-title: 类别和子类别表
+Description: "将你的应用列在正确的类别和子类别中，可帮助客户找到你的应用，并且更好地了解它。"
+title: "类别和子类别表"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
+
 ---
 
 # 类别和子类别表
@@ -59,6 +63,7 @@ Windows 应用商店将应用整理为以下类别和子类别。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 定义主游戏对象
-description: 现在，我们将了解游戏示例主对象的详细信息，以及如何将其实现的规则转换与游戏世界的交互。
+title: "定义主游戏对象"
+description: "现在，我们将了解游戏示例主对象的详细信息，以及如何将其实现的规则转换与游戏世界的交互。"
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 66e40c150b5eb4f57c9cddfaf472c56601b3fa0b
+
 ---
 
 # 定义主游戏对象
@@ -3620,6 +3624,7 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

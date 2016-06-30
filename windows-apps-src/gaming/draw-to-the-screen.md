@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 绘制到屏幕
-description: 最终，我们会移植可将旋转立方体绘制到屏幕的代码。
+title: "绘制到屏幕"
+description: "最终，我们会移植可将旋转立方体绘制到屏幕的代码。"
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1b7431c20e25173a0aa3f8d6ee0d407be869d60a
+
 ---
 
 # 绘制到屏幕
@@ -64,7 +68,7 @@ Direct3D 运行时为 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/w
 
 Direct3D 设备和设备上下文以及呈现目标的初始化和配置可以在 Direct3D 模板的自定义 **CreateDeviceResources** 和 **CreateWindowSizeDependentResources** 方法中找到。
 
-当 Direct3D 设备上下文与 EGL 和 EGLContext 类型相关时有关该上下文的详细信息，请参阅[将 EGL 代码移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)
+当 Direct3D 设备上下文与 EGL 和 EGLContext 类型相关时有关该上下文的详细信息，请参阅[将 EGL 代码移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)。
 
 ## 说明
 
@@ -118,17 +122,17 @@ void Render(GraphicsContext *drawContext)
 }
 ```
 
-在 Direct3D 11 中，该过程非常相似。 （我们假定你使用 Direct3D 模板中的视区和呈现目标配置。
+在 Direct3D 11 中，该过程非常相似。 （我们假定你使用 Direct3D 模板中的视区和呈现目标配置。）
 
--   通过调用 [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) 更新常量缓冲区（在本例中为 model-view-projection 矩阵）
--   通过 [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 设置顶点缓冲区
--   通过 [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 设置索引缓冲区
--   通过 [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 设置特定的三角形拓扑（三角形列表）
--   通过 [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 设置顶点缓冲区的输入布局
--   通过 [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 绑定顶点着色器
--   通过 [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 绑定片段着色器
--   通过着色器发送索引的顶点，并通过 [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 将颜色结果输出到呈现目标缓冲区
--   通过 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 显示呈现目标缓冲区
+-   通过调用 [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) 更新常量缓冲区（在本例中为 model-view-projection 矩阵）。
+-   通过 [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 设置顶点缓冲区。
+-   通过 [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 设置索引缓冲区。
+-   通过 [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 设置特定的三角形拓扑（三角形列表）。
+-   通过 [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 设置顶点缓冲区的输入布局。
+-   通过 [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 绑定顶点着色器。
+-   通过 [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 绑定片段着色器。
+-   通过着色器发送索引的顶点，并通过 [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) 将颜色结果输出到呈现目标缓冲区。
+-   通过 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 显示呈现目标缓冲区。
 
 Direct3D 11：呈现用于显示的帧
 
@@ -221,6 +225,7 @@ void RenderObject::Render()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

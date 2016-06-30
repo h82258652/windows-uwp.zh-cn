@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 处理 URI 激活
-description: 了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。
+author: TylerMSFT
+title: "处理 URI 激活"
+description: "了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。"
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
+ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
+ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
+
 ---
 
 # 处理 URI 激活
@@ -32,7 +35,7 @@ ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 1.  在“解决方案资源管理器”****中，双击 package.appxmanifest 以打开清单设计器。 选择“声明”****选项卡，并在“可用声明”****下拉列表中选择“协议”****，然后单击“添加”****。
 
     以下是该协议的清单设计器中每个可以填写的字段的简短描述（有关详细信息，请参阅 [**AppX 程序包清单**](https://msdn.microsoft.com/library/windows/apps/dn934791)）：
-    
+
 | 字段 | 说明 |
 |-------|-------------|
 | **徽标** | 指定用于标识“控制面板”****的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中 URI 方案名称的徽标。 如果未指定徽标，则使用应用的小徽标。 |
@@ -41,9 +44,6 @@ ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 |  | **注意**“名称”必须全部为小写字母。 |
 |  | **保留和禁止的文件类型** 请参阅[保留 URI 方案名称和文件类型](reserved-uri-scheme-names.md)以获取不能注册为 UWP 应用的 URI 方案（因为它们是保留或禁止的文件类型）的字母顺序列表。 |
 | **可执行文件** | 为该协议指定默认的启动可执行文件。 如果未指定，将使用应用的可执行文件。 如果已指定，字符串长度必须是 1 到 256 个字符、必须以“.exe”结尾，并且不能包含以下字符：&gt;、&lt;、:、"、&#124;、? 或 \*。 如果已指定，还将使用“入口点”****。 如果未指定“入口点”****，将使用为应用定义的入口点。 |
-       
-| 术语 | 说明 |
-|------|-------------|
 | **入口点** | 指定用于处理协议扩展的任务。 这通常是 Windows 运行时类型的完全命名空间限定名称。 如果未指定，将使用应用的入口点。 |
 | **“开始”页面** | 处理扩展点的网页。 |
 | **资源组** | 可用于一起分组扩展激活以实现资源管理目的的标记。 |
@@ -82,43 +82,43 @@ ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
             **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件处理程序接收所有激活事件。 **Kind** 属性指示激活事件的类型。 此示例设置为处理 [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) 激活事件。
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-public partial class App
-{
-   protected override void OnActivated(IActivatedEventArgs args)
-   {
-      if (args.Kind == ActivationKind.Protocol)
-      {
-         ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
-         // TODO: Handle URI activation
-         // The received URI is eventArgs.Uri.AbsoluteUri
-      }
-   }
-}
-```
-```vb
-Protected Overrides Sub OnActivated(ByVal args As Windows.ApplicationModel.Activation.IActivatedEventArgs)
-   If args.Kind = ActivationKind.Protocol Then
-      ProtocolActivatedEventArgs eventArgs = args As ProtocolActivatedEventArgs
-      
-      ' TODO: Handle URI activation
-      ' The received URI is eventArgs.Uri.AbsoluteUri
-   End If
-End Sub
-```
-```cpp
-void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ args)
-{
-   if (args->Kind == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
-   {
-      Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^ eventArgs = 
-          dynamic_cast<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^>(args);
-      
-      // TODO: Handle URI activation  
-      // The received URI is eventArgs->Uri->RawUri
-   } 
-}
-```
+> ```cs
+> public partial class App
+> {
+>    protected override void OnActivated(IActivatedEventArgs args)
+>   {
+>       if (args.Kind == ActivationKind.Protocol)
+>       {
+>          ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs;
+>          // TODO: Handle URI activation
+>          // The received URI is eventArgs.Uri.AbsoluteUri
+>       }
+>    }
+> }
+> ```
+> ```vb
+> Protected Overrides Sub OnActivated(ByVal args As Windows.ApplicationModel.Activation.IActivatedEventArgs)
+>    If args.Kind = ActivationKind.Protocol Then
+>       ProtocolActivatedEventArgs eventArgs = args As ProtocolActivatedEventArgs
+>       
+>       ' TODO: Handle URI activation
+>       ' The received URI is eventArgs.Uri.AbsoluteUri
+>  End If
+> End Sub
+> ```
+> ```cpp
+> void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ args)
+> {
+>    if (args->Kind == Windows::ApplicationModel::Activation::ActivationKind::Protocol)
+>    {
+>       Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^ eventArgs =
+>           dynamic_cast<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs^>(args);
+>       
+>       // TODO: Handle URI activation  
+>       // The received URI is eventArgs->Uri->RawUri
+>    }
+> }
+> ```
 
 > **注意** 通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。
 
@@ -176,8 +176,6 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

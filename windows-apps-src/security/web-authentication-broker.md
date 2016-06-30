@@ -1,8 +1,12 @@
 ---
-title: Web 身份验证代理
-description: 本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。
+title: "Web 身份验证代理"
+description: "本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。"
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd
+
 ---
 
 # Web 身份验证代理
@@ -174,6 +178,7 @@ Fiddler Web 调试程序可与应用一起使用。
 
 3.  针对传入 Fiddler 的流量添加防火墙规则。
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

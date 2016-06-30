@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: 可通过在 XAML 框架中创建控件模板，自定义控件的可视结构和可视行为。
-MS-HAID: 'dev\_ctrl\_layout\_txt.control\_templates'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "可通过在 XAML 框架中创建控件模板，自定义控件的可视结构和可视行为。"
+MS-HAID: dev\_ctrl\_layout\_txt.control\_templates
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 控件模板
+title: "控件模板"
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 071ba59af02b860e9fe58133eb5f1c2a7207ed2b
+
 ---
 
 # 控件模板
@@ -26,7 +30,7 @@ template: detail.hbs
 
 在默认情况下，[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控件将其内容（字符串或 **CheckBox** 旁的对象）放在选择框的右侧，并使用复选标记来表示用户已选中 **CheckBox**。 这些特性表示 **CheckBox** 的可视结构和可视行为。
 
-下面是分别在 `Unchecked`、`Checked` 和 `Indeterminate` 状态下显示的使用默认 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 的 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)。
+下面是分别在 `Unchecked`、`Checked` 和 `Indeterminate` 状态下使用默认 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 的 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)。
 
 ![默认 CheckBox 模板](images/templates-checkbox-states-default.png)
 
@@ -104,8 +108,7 @@ template: detail.hbs
 使用 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 对象可指定控件在某种状态下的外观。 **VisualState** 包含可更改 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 中元素外观的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053)。 当控件进入 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) 属性指定的状态时，将应用 **Setter** 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 中的属性更改。 当控件退出该状态时，这些更改将会删除。 你可以将 **VisualState** 对象添加到 [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 对象。 还可以将 **VisualStateGroup** 对象添加到 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加属性，这些对象在 **ControlTemplate** 的根 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 上设置。
 
 以下 XAML 介绍在 `Checked`、`Unchecked` 和 `Indeterminate` 状态下的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 对象。 该示例在 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 上设置 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加属性，它是 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 的根元素。 `Checked`
-            **VisualState** 指定名为 `CheckGlyph` 的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355)（已在前面的示例中介绍）的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 为 1。 `Indeterminate`
-            **VisualState** 指定名为 `IndeterminateGlyph` 的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 的 **Opacity** 为 1。 `Unchecked`
+            **VisualState** 指定名为 `CheckGlyph` 的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355)（已在前面的示例中介绍）的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 为 1。 `Indeterminate` **VisualState** 指定名为 `IndeterminateGlyph` 的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 的 **Opacity** 为 1。 `Unchecked`
             **VisualState** 没有 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)，因此 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 将返回到其默认外观。
 
 ```XAML
@@ -169,7 +172,7 @@ template: detail.hbs
 </ControlTemplate>
 ```
 
-为了更深入地了解 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 对象的工作原理，请考虑当 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 从 `Unchecked` 状态切换到 `Checked` 状态，随后切换到 `Indeterminate` 状态，然后又恢复为 `Unchecked` 状态时，会发生什么。 下表介绍了这些转换。
+为了更深入地了解 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 对象的工作原理，请考虑当 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 从 `Unchecked` 状态切换到 `Checked` 状态，然后切换到 `Indeterminate` 状态，然后又恢复为 `Unchecked` 状态时，会发生什么。 下表介绍了这些转换。
 
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -214,6 +217,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

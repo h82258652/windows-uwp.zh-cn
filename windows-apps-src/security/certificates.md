@@ -1,8 +1,12 @@
 ---
-title: 证书简介
-description: 本文将讨论在通用 Windows 平台 (UWP) 应用中的证书使用情况。
+title: "证书简介"
+description: "本文将讨论在通用 Windows 平台 (UWP) 应用中的证书使用情况。"
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 84596f70a5deee6cebb5f4bac442a6aaca8210cd
+
 ---
 
 # 证书简介
@@ -95,6 +99,7 @@ X.509 版本 3 证书包含版本 1 和版本 2 中定义的字段并添加了�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

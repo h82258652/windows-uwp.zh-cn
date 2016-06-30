@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 应用对象和 DirectX
-description: 使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。
+title: "应用对象和 DirectX"
+description: "使用 DirectX 的通用 Windows 平台 (UWP) 游戏不会使用许多 Windows UI 用户界面元素和对象。"
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
+
 ---
 
 # 应用对象和 DirectX
@@ -50,9 +54,9 @@ ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 
     -   一个名为 [**CreateView**](https://msdn.microsoft.com/library/windows/apps/hh700491) 的方法，可返回你的 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 实现（在步骤 1 中创建）的实例。
 
-3.  将视图提供程序的一个实例从 **main** 传递到 [**CoreApplication.Run**](https://msdn.microsoft.com/library/windows/apps/hh700469)
+3.  将视图提供程序的一个实例从 **main** 传递到 [**CoreApplication.Run**](https://msdn.microsoft.com/library/windows/apps/hh700469)。
 
-掌握了这些基础知识之后，让我们看一下扩展此方法的更多选项。
+掌握了这些基础知识之后，让我们看一下扩展此方法所需的更多选项。
 
 ## 核心用户界面类型
 
@@ -87,9 +91,9 @@ ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 在应用对象初始化时，会创建父窗口（一个 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例）并传递给视图提供程序。 如果应用有一个窗口要显示，它会显示它，否则它会初始化视图。
 
 [
-            **CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 提供了许多特定于输入和基本窗口行为的事件。 你可以通过向这些事件注册自己的委托来处理它们。
+            **CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 提供了许多特定于输入和基本窗口行为的事件。 你可以向这些事件注册自己的委托来处理它们。
 
-你也可以访问 [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) 属性来获得窗口的窗口事件调度程序，该属性提供了一个 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 实例
+你也可以访问 [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) 属性来获得窗口的窗口事件调度程序，该属性提供了一个 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 实例。
 
 ## CoreDispatcher 行为和属性
 
@@ -112,7 +116,7 @@ ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 
 用于定义 UWP 和 DirectX 应用的运行时表示形式的应用对象使用名为应用程序单线程单元 (ASTA) 的线程模型来托管你的应用的 UI 视图。 如果要开发 UWP 和 DirectX 应用，需要熟悉 ASTA 的属性，因为从 UWP 和 DirectX 应用调度的任何线程都必须使用 [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642) API 或使用 [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)。 （你可以通过从应用中调用 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 来获取 ASTA 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象。）
 
-作为 UWP DirectX 应用的开发人员，你需要注意的最重要的事是必须通过在 **main()** 上设置 **Platform::MTAThread** 使你的应用线程可以调度 MTA 线程
+作为 UWP DirectX 应用的开发人员，你需要注意的最重要的事是必须通过在 **main()** 上设置 **Platform::MTAThread** 使你的应用线程可以调度 MTA 线程。
 
 ```cpp
 [Platform::MTAThread]
@@ -140,19 +144,20 @@ int main(Platform::Array<Platform::String^>^)
     -   使用在并行模式库 (PPLTasks.h) 中定义的 **async** 模式
     -   尽快从应用的 ASTA（应用的主线程）调用 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 以允许任意调用。
 
-    也就是说，你不能依赖于将无关调用立即提交到应用的 ASTA。 有关异步调用的详细信息，请阅读[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)
+    也就是说，你不能依赖于将无关调用立即提交到你的应用的 ASTA。 有关异步调用的详细信息， 请阅读[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
-总的来说，在设计 UWP 应用时，应将 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 用于应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 和 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 来处理所有 UI 线程，而不要尝试自行创建和管理 MTA 线程。 当你需要一个不能用 **CoreDispatcher** 处理的单独线程时，请使用异步模式，并按照前面提到的指南操作以避免出现重新进入问题。
-
- 
+总的来说，在设计 UWP 应用时，使用应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 和 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 来处理所有 UI 线程，而不要尝试自行创建和管理 MTA 线程。 当你需要一个不能用 **CoreDispatcher** 处理的单独线程时，请使用异步模式，并按照前面提到的指南操作以避免出现重新进入问题。
 
  
 
+ 
 
 
 
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

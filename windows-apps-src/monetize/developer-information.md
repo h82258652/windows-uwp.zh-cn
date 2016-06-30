@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: 获取有关 Microsoft 官方商城协定和盈利 SDK 中的 Microsoft Advertising 库的一般开发人员信息。
-title: 有关 Microsoft Advertising 库的开发人员信息
+description: "获取有关 Microsoft 官方商城协定和盈利 SDK 中的 Microsoft Advertising 库的一般开发人员信息。"
+title: "有关 Microsoft Advertising 库的开发人员信息"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
+
 
 ---
 
@@ -34,6 +38,7 @@ title: 有关 Microsoft Advertising 库的开发人员信息
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

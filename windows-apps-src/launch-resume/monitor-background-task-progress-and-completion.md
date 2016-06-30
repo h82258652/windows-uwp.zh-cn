@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 监视后台任务进度和完成
-description: 了解应用如何识别后台任务报告的进度和完成情况。
+author: TylerMSFT
+title: "监视后台任务进度和完成"
+description: "了解应用如何识别后台任务报告的进度和完成情况。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
+
 ---
 
 # 监视后台任务进度和完成情况
@@ -41,7 +44,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 >      // TODO: Add code that deals with background task completion.
 >  };
 >  ```
-    
+
 2.  向处理后台任务完成的事件处理程序中添加代码。
 
     例如，[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)更新 UI。
@@ -84,7 +87,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
     例如，[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)使用通过 *args* 参数传递的进度状态更新 UI：
 
     > [!div class="tabbedCodeSnippets"] ```cs private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args) { var progress = "Progress: " + args.Progress + "%"; BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
-    > 
+    >
     >         UpdateUI();
     >     }
     >     ```
@@ -93,7 +96,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
     >     {
     >         auto progress = "Progress: " + args->Progress + "%";
     >         BackgroundTaskSample::SampleBackgroundTaskProgress = progress;
-    > 
+    >
     >         UpdateUI();
     >     };
     >     ```
@@ -114,15 +117,15 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
     >     ```
     >  ```cpp void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task) { auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
     >            { auto progress = "Progress: " + args-&gt;Progress + "%"; BackgroundTaskSample::SampleBackgroundTaskProgress = progress; UpdateUI(); };
-    > 
+    >
     >         task->Progress += ref new BackgroundTaskProgressEventHandler(progress);
     >         
-    > 
+    >
     >         auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
     >         {
     >             UpdateUI();
     >         };
-    > 
+    >
     >         task->Completed += ref new BackgroundTaskCompletedEventHandler(completed);
     >     }
     >     ```
@@ -132,7 +135,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
     例如，[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)在导航到 SampleBackgroundTask 页面时使用以下代码附加事件处理程序：
 
     > \[!div class="tabbedCodeSnippets"\] ```cs protected override void OnNavigatedTo(NavigationEventArgs e) { foreach (var task in BackgroundTaskRegistration.AllTasks) { if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName) { AttachProgressAndCompletedHandlers(task.Value); BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true); } }
-    > 
+    >
     >         UpdateUI();
     >     }
     >     ```
@@ -142,7 +145,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
     >         // A pointer back to the main page.  This is needed if you want to call methods in MainPage such
     >         // as NotifyUser()
     >         rootPage = MainPage::Current;
-    > 
+    >
     >         //
     >         // Attach progress and completed handlers to any existing tasks.
     >         //
@@ -151,16 +154,16 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
     >         while (hascur)
     >         {
     >             auto cur = iter->Current->Value;
-    > 
+    >
     >             if (cur->Name == SampleBackgroundTaskName)
     >             {
     >                 AttachProgressAndCompletedHandlers(cur);
     >                 break;
     >             }
-    > 
+    >
     >             hascur = iter->MoveNext();
     >         }
-    > 
+    >
     >         UpdateUI();
     >     }
     >     ```
@@ -192,8 +195,6 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
-title: 有关加密的出口限制
-description: 使用此信息可以确定应用使用加密的方式是否可能会阻止它被列在 Windows 应用商店中。
+title: "有关加密的出口限制"
+description: "使用此信息可以确定应用使用加密的方式是否可能会阻止它被列在 Windows 应用商店中。"
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 37d6131891e93d73021c860df45d1b5fdd7cfa53
+
 ---
 
 # 有关加密的出口限制
@@ -55,6 +59,7 @@ author: awkoren
 如果没有 ECCN，请参阅 [ECCN 问题与答案](http://go.microsoft.com/fwlink/p/?LinkID=245646)。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 在文本输入和编辑过程中，拼写检查通过使用红色波形曲线突出显示拼写错误的字词来通知用户，并提供一种供用户纠正拼写错误的方法。
-title: 拼写检查和文本预测
+Description: "在文本输入和编辑过程中，拼写检查通过使用红色波形曲线突出显示拼写错误的字词来通知用户，并提供一种供用户纠正拼写错误的方法。"
+title: "拼写检查和文本预测"
 ms.assetid: B867C956-5AB2-4207-A8DE-179CE7871180
 label: Spell checking and text prediction
 template: detail.hbs
+redirect_url: text-controls
+ms.sourcegitcommit: 08f982f5c54d596a7624fe63528f91375e7761ca
+ms.openlocfilehash: 8954b14a84241686a7c784c3d250f197bed7c8b6
+
 ---
 
 # 拼写检查指南
@@ -64,6 +68,7 @@ Windows 应用商店应用为多行和单行文本输入框，以及 **contentEd
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

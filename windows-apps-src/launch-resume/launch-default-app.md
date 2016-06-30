@@ -3,8 +3,8 @@ author: TylerMSFT
 title: "启动 URI 的默认应用"
 description: "了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。"
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: b593a43bc5b95dd0880af972ca1514e657bbd9e3
+ms.sourcegitcommit: 9011d2e2e1e51edc89851e815d31e13390c24f96
+ms.openlocfilehash: d454317d135e2b2b952c16fb00685e34b489865c
 
 ---
 
@@ -45,7 +45,7 @@ URI 方案允许你通过单击超链接来打开应用。 正如可以使用 **
 
 使用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法启动 URI。 调用此方法时，你的应用必须是前台应用，即对于用户必须是可见的。 此要求有助于确保用户保持控制。 为满足此要求，请确保将 URI 的所有启动都直接绑定到到应用的 UI 中。 用户必须总是采取某种操作来发起 URI 启动。 如果尝试启动 URI 并且你的应用不在前台运行，则启动将失败，且会调用错误回调。
 
-首先创建 [**System.Uri**](T:System.Uri) 对象来表示 URI，然后将其传递给 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法。 使用返回结果以查看调用是否成功，如以下示例所示。
+首先创建 [**System.Uri**](https://msdn.microsoft.com/en-us/library/windows/apps/system.uri.aspx) 对象来表示 URI，然后将其传递给 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法。 使用返回结果以查看调用是否成功，如以下示例所示。
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -225,6 +225,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

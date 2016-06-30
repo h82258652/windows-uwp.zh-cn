@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: 使用后台传输 API 以通过网络可靠地复制文件。
-title: 后台传输
+description: "使用后台传输 API 以通过网络可靠地复制文件。"
+title: "后台传输"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
+
 ---
 
 # 后台传输
@@ -35,9 +39,9 @@ ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 
 ### 此功能如何适应网络状态更改或意外关机？
 
-当网络状态发生更改时，后台传输功能可保持每个传输操作的一致性体验，从而智能地利用[连接](https://msdn.microsoft.com/library/windows/apps/hh452990)功能提供的连接和运营商流量套餐状态信息。 为了定义不同网络方案的行为，应用使用 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 定义的值为每个操作设置一个成本策略
+当网络状态发生更改时，后台传输功能可保持每个传输操作的一致性体验，从而智能地利用[连接](https://msdn.microsoft.com/library/windows/apps/hh452990)功能提供的连接和运营商流量套餐状态信息。 为了定义不同网络方案的行为，应用使用 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 定义的值为每个操作设置一个成本策略。
 
-例如，为某个操作定义的成本策略可以指示该操作应在设备使用按流量计费的网络时自动暂停。 然后，当建立到“无限制”网络的连接时，自动恢复（或自动启动）传输。 有关如何按成本定义网络的更多信息，请参阅 [**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292)
+例如，为某个操作定义的成本策略可以指示该操作应在设备使用按流量计费的网络时自动暂停。 然后，当建立到“无限制”网络的连接时，自动恢复（或自动启动）传输。 有关如何按成本定义网络的更多信息，请参阅 [**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292)。
 
 虽然后台传输功能具备其自己的处理网络状态更改的机制，但对于使用网络连接功能的应用还有其他需要考虑的常规连接因素。 有关其他信息，请阅读[利用可用的网络连接信息](https://msdn.microsoft.com/library/windows/apps/hh452983)。
 
@@ -78,7 +82,7 @@ ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 
 接下来，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 使用提供的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (*file*) 的属性来填充请求头并使用 **StorageFile** 对象设置 *SourceFile* 属性。 然后，调用 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) 方法以插入文件名（以字符串形式提供）和 [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220) 属性。
 
-最后，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 将创建 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*
+最后，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 会创建 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*)。
 
 [!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "创建和初始化上传操作")]
 
@@ -188,7 +192,7 @@ upload.startMultipart = function (uriString, files) {
 promise = download.startAsync().then(complete, error, progress);
 ```
 
-异步方法调用后跟一个 then 语句，它指示从异步方法调用返回结果时调用的方法（由应用定义）。 有关此编程模式的详细信息，请参阅[在 JavaScript 中使用 Promise 进行异步编程](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)
+异步方法调用后跟一个 then 语句，它指示从异步方法调用返回结果时调用的方法（由应用定义）。 有关此编程模式的详细信息，请参阅[在 JavaScript 中使用 Promise 进行异步编程](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)。
 
 ### 添加其他操作控制方法
 
@@ -310,10 +314,11 @@ Windows 10 中的新功能可以在完成后台传输时运行应用程序代码
 在 [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空间中的异步方法上发生的错误返回为 **HRESULT** 值。 [
             **BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) 方法用于将来自后台传送操作的网络错误转化为 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 或 FTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
 
-对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误的详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**
+对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误的详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

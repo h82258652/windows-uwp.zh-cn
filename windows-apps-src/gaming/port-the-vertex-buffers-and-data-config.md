@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 移植顶点缓冲区和数据
-description: 在此步骤中，你将定义将包含网格的顶点缓冲区以及允许着色器按照指定的顺序遍历顶点的索引缓冲区。
+title: "移植顶点缓冲区和数据"
+description: "在此步骤中，你将定义将包含网格的顶点缓冲区以及允许着色器按照指定的顺序遍历顶点的索引缓冲区。"
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9692b33303099f9d1193b93ab458a19a5d95abe3
+
 ---
 
 # 移植顶点缓冲区和数据
@@ -313,6 +317,7 @@ m_d3dContext->DrawIndexed(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

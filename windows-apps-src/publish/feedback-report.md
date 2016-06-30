@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 使用 Windows 开发人员中心仪表板中的反馈报告，你可以看到 Windows 10 客户通过“反馈中心”提交的问题、建议和投票。
-title: 反馈报告
+Description: "使用 Windows 开发人员中心仪表板中的反馈报告，你可以看到 Windows 10 客户通过“反馈中心”提交的问题、建议和投票。"
+title: "反馈报告"
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
+translationtype: Human Translation
+ms.sourcegitcommit: 4e857ec7ee98459afdd0d8ec85b5ec3a761049f3
+ms.openlocfilehash: 9ad3025f7890de3677801b309b6714b1b46a0607
+
 ---
 
 # 反馈报告
@@ -52,6 +56,7 @@ ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 如上所述，我们建议直接将“反馈中心”的链接包含你的应用中，以便鼓励客户提供反馈。 有关详细信息，请参阅[从应用启动“反馈中心”](../monetize/launch-feedback-hub-from-your-app.md)。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

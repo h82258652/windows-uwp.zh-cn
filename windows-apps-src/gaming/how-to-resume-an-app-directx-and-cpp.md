@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 如何恢复应用（DirectX 和 C++）
-description: 本主题介绍了系统在恢复通用 Windows 平台 (UWP) DirectX 应用时，如何还原重要的应用程序数据。
+title: "如何恢复应用（DirectX 和 C++）"
+description: "本主题介绍了系统在恢复通用 Windows 平台 (UWP) DirectX 应用时，如何还原重要的应用程序数据。"
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d5383da7332c80d4337f0e0b3eef0a6851fcd527
+
 ---
 
 # 如何恢复应用（DirectX 和 C++）
@@ -95,6 +99,7 @@ void App::Run()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 添加控件
-description: 现在，我们了解该游戏示例如何在 3D 游戏中实现移动观看控件，以及如何开发基本的触摸、鼠标和游戏控制器控件。
+title: "添加控件"
+description: "现在，我们了解该游戏示例如何在 3D 游戏中实现移动观看控件，以及如何开发基本的触摸、鼠标和游戏控制器控件。"
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b3297ffd92d9a61d73c574def7e8101dc9196a69
+
 ---
 
 # 添加控件
@@ -24,7 +28,7 @@ ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 
 此示例支持所有这三种设备。 这是一个简单的第一人称射击游戏，适用于此类游戏的标准移动观看控件对于这三种形式的输入很容易实现。
 
-有关控件 （尤其是移动观看控件）的详细信息， 请参阅[适用于游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md) 和[适用于游戏的触摸控件](tutorial--adding-touch-controls-to-your-directx-game.md)
+有关控件 （尤其是移动观看控件）的详细信息， 请参阅[适用于游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md) 和[适用于游戏的触摸控件](tutorial--adding-touch-controls-to-your-directx-game.md)。
 
 ## 常用控件行为
 
@@ -198,7 +202,7 @@ bool MoveLookController::IsFiring()
 
 如果玩家将指针移出游戏主窗口或者按下暂停按钮（P 键或 Xbox 控制器开始按钮），则游戏必须暂停。 **MoveLookController** 已注册点按操作，并在它调用 **IsPauseRequested** 方法时通知游戏循环。 此时，如果 **IsPauseRequested** 返回 **true**，游戏循环将对 **MoveLookController** 调用 **WaitForPress** 以将控制器转入 **WaitForInput** 状态。 然后，**MoveLookController** 等待玩家选择菜单项之一来加载、继续或退出游戏，并停止处理游戏播放输入事件，直到它返回 **Active** 状态。
 
-请参阅[本部分的完整代码示例](#code_sample)
+请参阅[本部分的完整代码示例](#code_sample)。
 
 现在，我们将较为详细地讨论这三种控件类型中每个类型的实现。
 
@@ -809,9 +813,9 @@ void MoveLookController::UpdateGameController()
 ## 后续步骤
 
 
-我们已经学习了 UWP DirectX 游戏的每个主要组件，但还未学习音频。 对于任何游戏而言，音乐和声音效果都非常重要，下面我们讨论[添加声音](tutorial--adding-sound.md)
+我们已查看了 UWP DirectX 游戏的每个主要组件，但音频除外！ 对于任何游戏而言，音乐和声音效果都非常重要， 下面我们讨论[添加声音](tutorial--adding-sound.md)！
 
-## 此部分的完整示例代码
+## 这部分的完整示例代码
 
 
 MoveLookController.h
@@ -1902,7 +1906,7 @@ void MoveLookController::UpdateGameController()
 ```
 
 > **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -1920,6 +1924,7 @@ void MoveLookController::UpdateGameController()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

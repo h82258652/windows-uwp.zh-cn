@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 启动 Windows 地图应用
-description: 了解如何从你的应用启动 Windows 地图应用。
+author: TylerMSFT
+title: "启动 Windows 地图应用"
+description: "了解如何从你的应用启动 Windows 地图应用。"
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 0dcd15c7d04ed452f69208ad1e68a8949baf40dd
+
 ---
 
 # 启动 Windows 地图应用
@@ -16,7 +19,6 @@ ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 **提示** 若要了解有关从你的应用启动 Windows 地图应用的详细信息，请从 GitHub 上的 [Windows 通用示例存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
 ## URI 简介
-
 
 URI 方案允许你通过单击超链接（或在你的应用中以编程方式）打开应用。 正如可以使用 **mailto:** 打开新的电子邮件或使用 **http:** 打开 Web 浏览器，你还可以使用 **bingmaps:**、**ms-drive-to:** 和 **ms-walk-to:** 打开 Windows 地图应用。
 
@@ -66,9 +68,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 若要控制视图类型，请使用 *ss*（街景）和 *sty*（样式）参数。 *ss* 参数将地图置于街景视图。 *sty* 参数允许你在路线图、鸟瞰图和 3D 视图之间切换。 使用 3D 样式时，可以使用 *hdg*、*pit* 和 *rad* 参数指定 3D 视图。 *hdg* 指定视图的方位，*pit* 指定视图的俯仰以及 *rad* 指定与要显示在视图中的中心点之间的间距。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps)。
 
-| 示例 Uri                                                                 | 结果                                                                                                                                                                                                   |
+| 示例 URI                                                                 | 结果                                                                                                                                                                                                   |
 |----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:                                                                  | 打开地图应用。                                                                                                                                                                                       |
+| bingmaps:?                                                                 | 打开地图应用。                                                                                                                                                                                       |
 | bingmaps:?cp=40.726966~-74.006076                                          | 显示以纽约市为中心的地图。                                                                                                                                                               |
 | bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | 使用缩放级别 10 显示以纽约市为中心的地图。                                                                                                                                       |
 | bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | 通过将屏幕的大小作为边界框来显示纽约市的地图。                                                                                                                          |
@@ -88,7 +90,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 我们建议在使用 *q* 参数进行商家搜索时，尽可能使用特定搜索词，并将其与 *cp* 或 *where* 参数之一结合使用以指定位置。 如果用户未向地图应用授予可使用其位置的权限，并且未为商家搜索指定位置，则可能会在国家/地区级别执行该搜索且不会返回有意义的结果。 搜索结果将显示在最合适的地图视图中，因此除非需要设置 *lvl*（缩放级别），否则我们建议将决定权交给地图应用。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps)。
 
-| 示例 Uri                                                    | 结果                                                                                                                                         |
+| 示例 URI                                                    | 结果                                                                                                                                         |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | bingmaps:?where=1600%20Pennsylvania%20Ave,%20Washington,%20DC | 显示地图并搜索位于华盛顿哥伦比亚特区的白宫的地址。                                                              |
 | bingmaps:?cp=40.726966~-74.006076&amp;lvl=10&amp;where=New%20York     | 在指定中心点的附近搜索纽约、在地图上显示结果，并将缩放级别设置为 10。                            |
@@ -103,7 +105,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 使用 *collection* 参数在地图上显示一组自定义的点。 如果存在多个点，将显示点的列表。 一个集合中最多可以包含 25 个点，它们按所提供的顺序列出。 集合优先于搜索和路线请求。 有关此参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps)。
 
-| 示例 Uri                                                                                                                                                         | 结果                                                                                                                   |
+| 示例 URI                                                                                                                                                         | 结果                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
 | bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | 搜索拉斯维加斯的恺撒王宫酒店，并在地图上以最佳的地图视图显示结果。                         |
 | bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&amp;lvl=16                                                                                         | 显示名为恺撒王宫酒店（位于拉斯维加斯）的图钉，缩放级别为 16。                                               |
@@ -120,7 +122,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ![路线的示例](images/windowsmapgcdirections.png)
 
-| 示例 Uri                                                                                                              | 结果                                                                                                                                                         |
+| 示例 URI                                                                                                              | 结果                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | bingmaps:?rtp=pos.44.9160\_-110.4158~pos.45.0475\_-109.4187                                                             | 显示带有点对点路线的地图。 因为未指定 *mode*，所以将使用交通首选项的用户的模式提供路线。 |
 | bingmaps:?cp=43.0332~-87.9167&amp;trfc=1                                                                                    | 显示以威斯康辛州的密尔沃基市为中心的地图以及路况。                                                                                                        |
@@ -144,7 +146,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ![路线规划的示例](images/windowsmapsappdirections.png)
 
-| 示例 Uri                                                                                                | 结果                                                                                       |
+| 示例 URI                                                                                                | 结果                                                                                       |
 |-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | ms-drive-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake | 显示地图以及从你的当前位置到 Green Lake 的驾车路线规划。 |
 | ms-walk-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake  | 显示地图以及从你的当前位置到 Green Lake 的行走路线规划。 |
@@ -155,7 +157,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 **ms-settings:** URI 方案可使你直接启动到“设置”应用中的特定页面。 尽管 **ms-settings:** URI 方案不会启动到“地图”应用中，但它允许你直接启动到“设置”应用中的“离线地图”页面，并显示下载“地图”应用所使用的离线地图的确认对话框。 URI 方案接受由纬度和经度指定的点，并自动确定是否存在可用于包含该点的离线地图。  如果经过的纬度和经度恰好落在多个下载区域内，确认对话框将让用户选取要下载其中哪一个区域。 如果离线地图不适用于包含该点的区域，则“设置”应用中的“离线地图”页面将显示一个错误对话框。
 
-| 示例 Uri                                                                                                | 结果                                                                                       |
+| 示例 URI                                                                                                | 结果                                                                                       |
 |-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | 将“设置”应用打开到显示确认对话框的“离线地图”页面，以便下载包含指定经纬度点的区域的地图。 |
  
@@ -286,7 +288,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>ss = "ss=" BIT</p>
 <p>示例：</p>
 <p>ss=1</p></td>
-<td align="left"><p>指示街道级图像显示的时间 <code>ss=1</code>。 省略 **ss** 参数将产生相同的结果 <code>ss=0</code>。 通过与 **cp** 参数结合使用，指定街道级视图的位置。</p>
+<td align="left"><p>指示在 <code>ss=1</code> 时所显示的街景图像。 省略 **ss** 参数将产生与 <code>ss=0</code> 相同的结果。 通过与 **cp** 参数结合使用，指定街道级视图的位置。</p>
 <div class="alert">
 > **注意** 并不是所有地区都提供街道级图像。
 </div>
@@ -300,7 +302,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>trfc = "trfc=" BIT</p>
 <p>示例：</p>
 <p>trfc=1</p></td>
-<td align="left"><p>指定地图上是否包含路况信息。 省略 trfc 参数将产生相同的结果 <code>trfc=0</code>。</p>
+<td align="left"><p>指定地图上是否包含路况信息。 省略 trfc 参数将产生与 <code>trfc=0</code> 时相同的结果。</p>
 <div class="alert">
 > **注意** 并不是所有地区都提供路况数据。
 </div>
@@ -325,9 +327,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
 <td align="left"><p>定义要在地图上绘制的路线起点和终点，由波形符 (**~**) 分隔。 每个经过点可能是通过使用纬度和经度的位置定义的，也可能是通过可选标题或地址标识符定义的。</p>
-<p>一条完整的路线正好包含两个经过点。 例如，包含两个经过点的路线已定义 <code>rtp="A"~"B"</code>。</p>
-<p>还可以指定不完整的路线。 例如，你可以仅定义路线起点 <code>rtp="A"~</code>。 在此情况下，显示路线输入时将在“出发地”****字段中带有所提供的经过点，并且“目的地”****字段具有焦点。</p>
-<p>如果仅指定了路线终点，同样 <code>rtp=~"B"</code>，显示路线面板时将在“目的地”****字段中带有所提供的经过点。 如果提供精确的当前位置，当前位置将预先填写在具有焦点的“出发地”****字段中。</p>
+<p>一条完整的路线正好包含两个经过点。 例如，包含两个经过点的路线由 <code>rtp="A"~"B"</code> 定义。</p>
+<p>还可以指定不完整的路线。 例如，你可以仅定义包含 <code>rtp="A"~</code> 的路线起点。 在此情况下，显示路线输入时将在“出发地”****字段中带有所提供的经过点，并且“目的地”****字段具有焦点。</p>
+<p>如果指定路线终点，与 <code>rtp=~"B"</code> 相同，路线面板上的“目的地”****字段中将显示所提供的经过点。 如果提供精确的当前位置，当前位置将预先填写在具有焦点的“出发地”****字段中。</p>
 <p>如果给出一条不完整的路线，则不会绘制任何路线。</p>
 <p>通过与 **mode** 参数结合使用，指定交通的模式（驾车、公交或步行）。 如果未指定 **mode**，将使用交通首选项的用户的模式提供路线。</p>
 <div class="alert">
@@ -383,7 +385,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## ms-drive-to: 参数引用
 
 
-用于启动逐向导航驾驶路线请求的 Uri 无需编码，并且具有以下格式。
+用于启动逐向导航驾驶路线请求的 URI 无需编码，并且具有以下格式。
 
 > **注意** 不在此 URI 方案中指定起点。 起点将始终假定为当前位置。 如果你需要指定不同于当前位置的起点，请参阅[显示路线和路况](#directions)。
 
@@ -400,7 +402,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## ms-walk-to: 参数引用
 
 
-用于启动逐向导航步行路线请求的 Uri 无需编码，并且具有以下格式。
+用于启动逐向导航步行路线请求的 URI 无需编码，并且具有以下格式。
 
 > **注意** 不在此 URI 方案中指定起点。 起点将始终假定为当前位置。 如果你需要指定不同于当前位置的起点，请参阅[显示路线和路况](#directions)。
 
@@ -428,6 +430,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

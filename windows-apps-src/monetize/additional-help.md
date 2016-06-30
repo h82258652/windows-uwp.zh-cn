@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 15d8cc6c-80f9-49b7-8036-0abf80ffebba
-description: 了解用于开发带有广告的应用的其他资源
-title: 其他帮助
+description: "了解用于开发带有广告的应用的其他资源"
+title: "其他帮助"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 5229cf7ebb4133052c3e960fe1c81d6edeef8e57
+
 ---
 
 # 其他帮助
@@ -29,6 +33,7 @@ title: 其他帮助
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
-title: 异步编程
-description: 本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C\+\+ 组件扩展 (C\+\+/CX) 和 JavaScript 中的表示形式。
+title: "异步编程"
+description: "本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C\\+\\+ 组件扩展 (C\\+\\+/CX) 和 JavaScript 中的表示形式。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
+
 ---
 # 异步编程
 
@@ -77,6 +81,7 @@ description: 本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项&amp;\#8212;本地、计划、定期和推送&amp;\#8212;。
-title: 选择通知传递方法
+Description: "本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项&amp;\\#8212;本地、计划、定期和推送&amp;\\#8212;。"
+title: "选择通知传递方法"
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: b79a6f771afe63c9a42567875db5ef8107611afc
+
 ---
 
 # 选择通知传递方法
@@ -167,6 +171,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

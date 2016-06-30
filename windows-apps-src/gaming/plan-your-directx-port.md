@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 规划 DirectX 移植
-description: 规划从 DirectX 9 到 DirectX 11 和通用 Windows 平台 (UWP) 的游戏移植项目 - 升级图形代码并将游戏放置到 Windows 运行时环境中。
+title: "规划 DirectX 移植"
+description: "规划从 DirectX 9 到 DirectX 11 和通用 Windows 平台 (UWP) 的游戏移植项目 - 升级图形代码并将游戏放置到 Windows 运行时环境中。"
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 929ad82ce057754ee04f1f27537e03520e95157a
+
 ---
 
 # 规划 DirectX 移植
@@ -63,6 +67,7 @@ UWP 应用的生命周期与桌面应用的生命周期大相径庭。 需要经
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

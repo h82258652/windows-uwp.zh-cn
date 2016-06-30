@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows 开发人员中心仪表板中的“通道和转换”报告可让你查看 Windows 10 客户找到你的应用一览的方式。
-title: 通道和转换报告
+Description: "Windows 开发人员中心仪表板中的“通道和转换”报告可让你查看 Windows 10 客户找到你的应用一览的方式。"
+title: "通道和转换报告"
 ms.assetid: C359B9FB-A17B-4A8E-B8EE-19F2F98AA4FF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e82299f156a7e4f82e9219dc9b0ef6171e72c74e
+
 ---
 
 # 通道和转换报告
@@ -93,6 +97,7 @@ Windows 开发人员中心仪表板中的**“通道和转换”**报告可让�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

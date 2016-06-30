@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 异步编程（DirectX 和 C++）
-description: 本主题介绍在你使用 DirectX 进行异步编程和线程处理时需要考虑的各种注意事项。
+title: "异步编程（DirectX 和 C++）"
+description: "本主题介绍在你使用 DirectX 进行异步编程和线程处理时需要考虑的各种注意事项。"
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 67a75e9d1324e7ac50e0575bfd7bda870a87efb2
+
 ---
 
 # 异步编程（DirectX 和 C++）
@@ -63,6 +67,7 @@ ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

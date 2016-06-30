@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 在应用程序清单中声明后台任务
-description: 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。
+author: TylerMSFT
+title: "在应用程序清单中声明后台任务"
+description: "通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。"
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
+
 ---
 
 # 在应用程序清单中声明后台任务
@@ -149,6 +152,7 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 * [后台任务指南](guidelines-for-background-tasks.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

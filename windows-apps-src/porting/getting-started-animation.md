@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: 动画入门
+title: "动画入门"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
-description: 在此项目中，我们将移动一个矩形、应用淡出效果，然后再使其显示在视图中。
+description: "在此项目中，我们将移动一个矩形、应用淡出效果，然后再使其显示在视图中。"
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
+
 ---
 
 # 入门：动画
@@ -126,6 +130,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 [入门：下一步是什么？](getting-started-what-next.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

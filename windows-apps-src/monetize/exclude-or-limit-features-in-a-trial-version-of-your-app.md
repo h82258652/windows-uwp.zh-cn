@@ -1,6 +1,13 @@
 ---
-Description: author:mcleanbyron 如果允许客户在试用期内免费使用你的应用，则可以通过排除或限制试用期内的某些功能，吸引客户升级到完整版本的应用。
-title: 排除或限制试用版中的功能 ms.assetid：1B62318F-9EF5-432A-8593-F3E095CA7056 keywords:免费试用版 keywords:免费试用期 keywords:免费试用代码示例 keywords:免费试用代码示例
+author: mcleanbyron
+Description: "如果允许客户在试用期内免费使用你的应用，则可以通过排除或限制试用期内的某些功能，吸引客户升级到完整版应用。"
+title: "排除或限制试用版中的功能"
+ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
+keywords: free trial code sample
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9c38784325f4dc51052f70a819012508f2a0bdbb
+
 ---
 
 # 排除或限制试用版中的功能
@@ -162,8 +169,7 @@ void DisplayTrialVersionExpirationTime()
 现在，使用对许可证服务器的模拟调用测试你的应用。 在 JavaScript、C#、Visual Basic 或 Visual C++ 中，在应用的初始化代码中将对 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 的引用替换为 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)。
 
 [
-              **CurrentAppSimulator**
-            ](https://msdn.microsoft.com/library/windows/apps/hh779766) 从称为“WindowsStoreProxy.xml”的 XML 文件（位于 %userprofile%\\AppData\\local\\packages\\&lt;程序包名称&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData）中获取测试特定的许可信息。 如果此路径和文件不存在，则必须在安装或运行时期间创建它们。 如果尝试在 WindowsStoreProxy.xml 未出现在特定位置的情况下访问 [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) 属性，则会出现错误。
+            **CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 从称为“WindowsStoreProxy.xml”的 XML 文件（位于 %userprofile%\\AppData\\local\\packages\\&lt;程序包名称&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData）中获取测试特定的许可信息。 如果此路径和文件不存在，则必须在安装或运行时期间创建它们。 如果尝试在 WindowsStoreProxy.xml 未出现在特定位置的情况下访问 [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) 属性，则会出现错误。
 
 此示例说明如何将代码添加到你的应用，以在不同的许可状态下测试它。
 
@@ -230,6 +236,7 @@ void appInit()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

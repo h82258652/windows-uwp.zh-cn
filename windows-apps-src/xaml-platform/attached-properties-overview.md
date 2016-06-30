@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 介绍 XAML 中的附加属性概念，并提供一些示例。
-title: 附加属性概述
+description: "介绍 XAML 中的附加属性概念，并提供一些示例。"
+title: "附加属性概述"
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
+
 ---
 
 # 附加属性概述
@@ -34,7 +38,8 @@ ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 使用附加属性，可以避开可能会防止一个关系中的不同对象在运行时相互传递信息的编码约定。 一定可以针对常见的基类设置属性，以便每个对象只需获取和设置该属性即可。 但是，你可能希望在很多情况下这样做，这会使你的基类最终充斥着大量可共享的属性。 它甚至可能会引入以下情况：在数百个后代中，只有两个后代尝试使用一个属性。 这样的类设计很糟糕。 为了解决此问题，我们使用附加属性概念来允许对象为不是由它自己的类结构定义的属性赋值。 在创建对象树中的各个相关对象之后，在运行时从子对象读取此值。
 
 例如，子元素可使用附加属性通知父元素它们如何在 UI 中显示。 [
-            **Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 附加属性就属于此情况。 **Canvas.Left** 创建为一个附加属性，因为它在 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 元素内包含的元素上设置，而不是在 **Canvas** 本身上设置。 然后，任何可能的子元素使用 **Canvas.Left** 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) 在 **Canvas** 布局容器父元素中指定它的布局偏移。 附加属性使这一场景的实现成为可能，而无需将基础元素的对象模型与大量属性聚集在一起，并且每个属性仅应用于许多可能的布局容器中的一种。 相反，许多布局容器实现它们自己的附加属性集。
+              **Canvas.Left**
+            ](https://msdn.microsoft.com/library/windows/apps/hh759771) 附加属性就属于此情况。 **Canvas.Left** 创建为一个附加属性，因为它在 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 元素内包含的元素上设置，而不是在 **Canvas** 本身上设置。 然后，任何可能的子元素使用 **Canvas.Left** 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) 在 **Canvas** 布局容器父元素中指定它的布局偏移。 附加属性使这一场景的实现成为可能，而无需将基础元素的对象模型与大量属性聚集在一起，并且每个属性仅应用于许多可能的布局容器中的一种。 相反，许多布局容器实现它们自己的附加属性集。
 
 为了实现附加属性，[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 类定义一个名为 [**Canvas.LeftProperty**](https://msdn.microsoft.com/library/windows/apps/br209272) 的静态 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 字段。 然后，**Canvas** 提供 [**SetLeft**](https://msdn.microsoft.com/library/windows/apps/br209273) 和 [**GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) 方法作为附加属性的公共访问器，以同时支持 XAML 设置和运行时值访问。 对于 XAML 和依赖属性系统，这组 API 实现了一种模式，支持为附加属性使用特定的 XAML 语法并将值存储在依赖属性存储中。
 
@@ -50,7 +55,7 @@ ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 
 ## 代码中的附加属性
 
-与其他依赖属性不同，附加属性没有典型的属性包装器用于简化获取和设置访问。 这是因为附加属性不一定是设置属性的实例的以代码为中心的对象模型。 （允许[但不常用]定义这样一个属性，它既是其他类型可在自身上设置的附加属性，也在拥有类型上有一种方便的属性用法。）
+与其他依赖属性不同，附加属性没有典型的属性包装器用于简化获取和设置访问。 这是因为附加属性不一定是设置属性的实例的以代码为中心的对象模型。 （允许\[但不常用\]定义这样一个属性，它既是其他类型可在自身上设置的附加属性，也在拥有类型上有一种方便的属性用法。）
 
 有两种在代码中设置附加属性的方式：使用属性系统 API 或使用 XAML 模式访问器。 这些技术的最终结果大体相同，所以决定使用哪种技术主要在于编码风格。
 
@@ -119,6 +124,7 @@ XAML 处理器必须能够在将 XAML 分析为对象树时设置附加属性值
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

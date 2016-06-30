@@ -1,7 +1,11 @@
 ---
 author: QuinnRadich
-title: Windows 10 版本 1511 中的新增功能 - 2015 年 11 月
-description: Windows 10 版本 1511 和新开发人员工具将提供受新通用 Windows 平台支持的工具、功能和体验。
+title: "Windows 10 版本 1511 中的新增功能 - 2015 年 11 月"
+description: "Windows 10 版本 1511 和新开发人员工具将提供受新通用 Windows 平台支持的工具、功能和体验。"
+translationtype: Human Translation
+ms.sourcegitcommit: 1029eff0f21c62f8235f37516971996791051d4c
+ms.openlocfilehash: 07d40584e998d358c6c80bd5aec43be885a79495
+
 ---
 
 # Windows 中的新增功能
@@ -21,11 +25,12 @@ Windows Hello | Windows Hello 使你的应用可支持面部或指纹识别来�
 新游戏 API | 使用新的 Windows.Gaming.UI.GameBar 类接收显示或关闭游戏栏时的通知。
 蓝牙 API | 已添加多个 API 并进行了更新以扩展对蓝牙 LE、设备枚举以及蓝牙中其他功能的支持。 请参阅 [Windows.Devices.Bluetooth](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.aspx) 命名空间。
 智能卡 API | 已向 [Windows.Devices.SmartCards](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.aspx) 命名空间添加了多个 SmartCardCryptogram API 以支持安全密文付款协议。 使用主机卡仿真支持“触碰以支付”的付款应用可以使用这些 API 以确保额外的安全性和性能。 这些应用可使用 TPM 创建密钥并保护有限使用的交易密钥。 这些应用还可以通过用户的 PIN 利用 NGC（下一代凭据）框架来保护密钥。 这些 API 将密文生成委派给系统以增强性能。 这也将阻止其他应用对这些密钥和密文进行任何访问。
-更新的存储 API | 在 [Windows.Storage.DownloadsFolder 类](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.aspx)中，你的应用现在可以在“下载”文件夹内针对特定[用户](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx)[创建文件](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfileforuserasync.aspx)或[创建文件夹](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfolderforuserasync.aspx)。 在 [Windows.Storage.StorageLibrary 类](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.aspx)中，你的应用现在可以针对特定[用户](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx)[获取指定的“库”](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.getlibraryforuserasync.aspx)。
+更新的存储 API | 在 [Windows.Storage.DownloadsFolder 类](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.aspx)中，你的应用现在可以在“下载”文件夹内针对特定[用户](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx) [创建文件](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfileforuserasync.aspx)或[创建文件夹](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfolderforuserasync.aspx)。 在 [Windows.Storage.StorageLibrary 类](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.aspx)中，你的应用现在可以针对特定[用户](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx) [获取指定的“库”](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.getlibraryforuserasync.aspx)。
 Windows 应用认证工具包 | Windows 应用认证工具包已更新为包含改进的测试。 有关更新的完整列表，请访问 [Windows 应用认证工具包](https://developer.microsoft.com/en-us/windows/develop/app-certification-kit)页面。
 设计下载 | 查看我们适用于 Adobe Photoshop 的新 UWP 应用设计模板。 我们还更新了 Microsoft PowerPoint 和 Adobe Illustrator 模板，并提供了 PDF 版本的指南。 [访问设计下载页面](https://developer.microsoft.com/en-us/windows/design/assets)。
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 在计时器上运行后台任务
-description: 了解如何计划一次性后台任务，或运行定期后台任务。
+author: TylerMSFT
+title: "在计时器上运行后台任务"
+description: "了解如何计划一次性后台任务，或运行定期后台任务。"
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
+
 ---
 
 # 在计时器上运行后台任务
@@ -25,9 +28,9 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 ## 创建时间触发器
 
 
--   创建新的 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)。 第二个参数 *OneShot* 指定后台任务是运行一次还是保持周期性运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，则 *FreshnessTime* 会指定后台任务的运行频率。
+-   创建新的 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)。 第二个参数 *OneShot* 指定后台任务是运行一次还是保持周期性运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 被设置为 false，则 *FreshnessTime* 会指定后台任务的运行频率。
 
-    通用 Windows 平台 (UWP) 应用的内置计时器以 15 分钟的间隔运行后台任务。
+    适用于桌面或移动设备系列的通用 Windows 平台 (UWP) 应用的内置计时器以 15 分钟的间隔运行后台任务。
 
     -   如果 *FreshnessTime* 设置为 15 分钟并且 *OneShot* 为 true，则任务将从其注册之时起 0 至 15 分钟内运行一次该任务。
 
@@ -86,19 +89,19 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
     > ```cs
     > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > string taskName   = "Example hourly background task";
-    > 
+    >
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     > ```cpp
     > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > String ^ taskName   = "Example hourly background task";
-    > 
+    >
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
-    
+
     > **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
 
-   
+
 ## 备注
 
 > **注意** 从 Windows 10 开始，用户无须再将你的应用添加到锁屏界面，即可利用后台任务。 有关后台任务触发器类型的指南，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
@@ -129,8 +132,6 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

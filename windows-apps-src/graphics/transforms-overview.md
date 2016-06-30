@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
 title: "转换概述"
 description: "了解如何通过更改 UI 中元素的相对坐标系，在 Windows 运行时&amp;\\#160;API 中使用转换。"
-ms.sourcegitcommit: a429fa659caf6c8032ad615f1b850092545d4439
-ms.openlocfilehash: fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: f6212143a83e7423550b6529ea62e25c00728f79
 
 ---
 
@@ -59,7 +59,7 @@ ms.openlocfilehash: fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4
 
 ## <span id="Animating_a_transform"></span><span id="animating_a_transform"></span><span id="ANIMATING_A_TRANSFORM"></span>为转换设置动画
 
-可以创建 [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) 对象动画。 若要创建 **Transform** 动画，将兼容类型的动画应用到要创建动画的属性。 这通常意味着你使用 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 或 [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR243136usingkeyframes) 对象定义动画，因为所有转换属性都属于 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 类型。 即使它们的持续时间不为零，对用于 [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 值的转换产生影响的动画也不视为从属动画。 有关从属动画的详细信息，请参阅[情节提要动画](storyboarded-animations.md)。
+可以创建 [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) 对象动画。 若要创建 **Transform** 动画，将兼容类型的动画应用到要创建动画的属性。 这通常意味着你使用 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 或 [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimationusingkeyframes) 对象定义动画，因为所有转换属性都属于 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 类型。 即使它们的持续时间不为零，对用于 [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 值的转换产生影响的动画也不视为从属动画。 有关从属动画的详细信息，请参阅[情节提要动画](storyboarded-animations.md)。
 
 如果要创建属性动画以对网视觉外观产生类似于转换的效果（例如，为 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 和 [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 创建动画，而不是应用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)），此类动画几乎总被视为从属动画。 你必须启用动画，该动画可能会有较大的性能问题，尝试在创建对象动画时支持用户交互尤其如此。 因此更好的方式是使用转换并为它设置动画，而不是为任何将动画视作从属动画的属性设置动画。
 
@@ -145,6 +145,6 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

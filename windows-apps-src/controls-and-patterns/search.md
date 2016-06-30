@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 搜索是用户可以在你的应用中查找内容的最常用方法之一。 本文中的指南介绍搜索体验、搜索范围、实现的要素，以及在上下文中搜索的示例。
-title: 搜索和在页面中查找
+Description: "搜索是用户可以在你的应用中查找内容的最常用方法之一。 本文中的指南介绍搜索体验、搜索范围、实现的要素，以及在上下文中搜索的示例。"
+title: "搜索和在页面中查找"
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: cd746f81e8cca27c5111f3d15342d1def0f874dc
+
 ---
 
 # 搜索和在页面中查找
@@ -216,6 +220,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

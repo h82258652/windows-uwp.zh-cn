@@ -1,8 +1,12 @@
 ---
-title: 创建 Microsoft Passport 登录应用
-description: 这是有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项。
+title: "创建 Microsoft Passport 登录应用"
+description: "这是有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项。"
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: af8ae79f67d77195d5ed4801d040b2f1aafe8a97
+ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
+
 ---
 
 # 创建 Microsoft Passport 登录应用
@@ -24,8 +28,8 @@ author: awkoren
 
 为了生成此项目，你需要具有 C# 和 XAML 方面的一些经验。 你还需要在 Windows 10 计算机上使用 Visual Studio 2015（社区版或更高版本）。
 
--   打开 Visual Studio 2015，然后依次选择“文件”>“新建”>“项目”。
--   这将打开一个“新建项目”窗口。 导航到“模板”>“Visual C#”。
+-   打开 Visual Studio 2015，然后依次选择“文件”&gt;“新建”&gt;“项目”。
+-   这将打开一个“新建项目”窗口。 导航到“模板”&gt;“Visual C#”。
 -   选择“空白应用（通用 Windows）”并将你的应用程序命名为“PassportLogin”。
 -   生成并运行新的应用程序 (F5)，然后你应该看到屏幕上显示的空白窗口。 关闭该应用程序。
 
@@ -36,11 +40,11 @@ author: awkoren
 
 在本练习中，你将了解如何检查 Microsoft Passport 是否在计算机上设置，以及如何使用 Microsoft Passport 登录到某一帐户。
 
--   在新项目中，在解决方案中创建一个名为“Views”的新文件夹。 在本示例中，此文件夹包含将导航到的页面。 在解决方案资源管理器中右键单击该项目、依次选择“添加”>“新文件夹”，然后将该文件夹重命名为 Views。
+-   在新项目中，在解决方案中创建一个名为“Views”的新文件夹。 在本示例中，此文件夹包含将导航到的页面。 在解决方案资源管理器中右键单击该项目、依次选择“添加”&gt;“新文件夹”，然后将该文件夹重命名为 Views。
 
     ![](images/passport-login-2.png)
 
--   右键单击新的 Views 文件夹、依次选择“添加”>“新项目”，然后选择“空白页”。 将此页面命名为“Login.xaml”。
+-   右键单击新的 Views 文件夹、依次选择“添加”&gt;“新项目”，然后选择“空白页”。 将此页面命名为“Login.xaml”。
 
     ![](images/passport-login-3.png)
 
@@ -156,11 +160,11 @@ author: awkoren
     }
     ```
 
--   若要创建 MicrosoftPassportHelper 类，请右键单击解决方案 PassportLogin（通用 Windows），然后依次单击“添加”>“新文件夹”。 将此文件夹命名为 Utils。
+-   若要创建 MicrosoftPassportHelper 类，请右键单击解决方案 PassportLogin（通用 Windows），然后依次单击“添加”&gt;“新文件夹”。 将此文件夹命名为 Utils。
 
     ![](images/passport-login-5.png)
 
--   右键单击 Utils 文件夹，然后依次单击“添加”>“类”。 将此类命名为“MicrosoftPassportHelper.cs”。
+-   右键单击 Utils 文件夹，然后依次单击“添加”&gt;“类”。 将此类命名为“MicrosoftPassportHelper.cs”。
 -   将 MicrosoftPassportHelper 的类定义更改为公共静态，然后添加以下方法以通知用户 Microsoft Passport 是否可供使用。 你将需要添加所需的命名空间。
 
     ```cs
@@ -968,6 +972,7 @@ author: awkoren
 * [Microsoft Passport 和 Windows Hello](microsoft-passport.md)
 * [Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

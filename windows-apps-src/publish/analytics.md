@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 你可以在 Windows 开发人员中心仪表板中查看应用的详细分析。
-title: 分析
+Description: "你可以在 Windows 开发人员中心仪表板中查看应用的详细分析。"
+title: "分析"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
+translationtype: Human Translation
+ms.sourcegitcommit: dfaf348956b19746aa5332aeb7ad5cbc4b224e8c
+ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
+
 ---
 
 # 分析
@@ -71,6 +75,7 @@ ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 安装[开发人员中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)应用，以快速查看有关你的应用在所有 Windows 10 设备上的运行状况和性能的详细信息。 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

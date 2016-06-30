@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: 将你的 UI 的字符串资源放入资源文件中。 随后你可从代码或标记中引用这些字符串。
-title: 将 UI 字符串放入资源中
+Description: "将你的 UI 的字符串资源放入资源文件中。 随后你可从代码或标记中引用这些字符串。"
+title: "将 UI 字符串放入资源中"
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Put UI strings into resources
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: b44d9235e34b8d4c75f663029d1dde3f87bd0eb7
+
 ---
 
 # 将 UI 字符串放入资源中
@@ -244,6 +248,7 @@ auto str = loader->GetString("Farewell");
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。
-title: 发送本地磁贴通知
+Description: "本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。"
+title: "发送本地磁贴通知"
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: cc2f86f2a56aae5ee9e3019dafa3417a25e7d610
+
 ---
 
 # 发送本地磁贴通知
@@ -315,6 +319,7 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

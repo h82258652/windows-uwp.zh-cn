@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
-description: 如果你有应用和应用内产品 (IAP) 的目录，你可以使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API 来访问你的服务中的这些产品的所有权信息。
-title: 从服务查看和授予产品
+description: "如果你有应用和应用内产品 (IAP) 的目录，你可以使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API 来访问你的服务中的这些产品的所有权信息。"
+title: "从服务查看和授予产品"
+ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
+ms.openlocfilehash: 1e17703442ce539de941890a0616fc5e08391d70
+
 ---
 
 # 从服务查看和授予产品
@@ -34,7 +37,9 @@ Windows 应用商店收集 API 和购买 API 使用 Azure Active Directory (Azur
 ### 步骤 1：在 Azure AD 中配置 Web 应用程序
 
 1.  按照[将应用程序与 Azure Active Directory 集成](http://go.microsoft.com/fwlink/?LinkId=722502)中的说明将 Web 应用程序添加到 Azure AD。
-    **注意** **在向我们说明你的应用程序页**上，确保你已选择“Web 应用程序和/或 Web API”****。 这是必需的，以便你可以为你的应用程序获取密钥（也称为*客户端密码*）。 若要调用 Windows 应用商店收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
+
+    > **注意** **在向我们说明你的应用程序页**上，确保你已选择“Web 应用程序和/或 Web API”****。 这是必需的，以便你可以为你的应用程序获取密钥（也称为*客户端密码*）。 若要调用 Windows 应用商店收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
+
 2.  在 [Azure 管理门户](http://manage.windowsazure.com/)中，导航到“Active Directory”****。 选择你的目录、单击顶部的“应用程序”****选项卡，然后选择你的应用程序。
 3.  单击“配置”****选项卡。 在此选项卡上，为你的应用程序获取客户端 ID 并请求密钥（这在稍后的步骤中称为*客户端密码*）。
 4.  在屏幕底部，单击“管理清单”****。 下载你的 Azure AD 应用程序清单并使用以下文本替换 `"identifierUris"` 部分。
@@ -66,17 +71,15 @@ Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客�
 
 -   对于 *client\_id* 和 *client\_secret* 参数，请为你的应用程序指定从 [Azure 管理门户](http://manage.windowsazure.com/)所获取的客户端 ID 和客户端密码。 若要生成带有 Windows 应用商店收集 API 或购买 API 所需的身份验证级别的访问令牌，这两个参数都是必需的。
 -   对于 *resource* 参数，请指定以下应用 ID URI 之一（这些 URI 是你以前添加到应用程序清单的 `"identifierUris"` 部分的相同 URI）。 在此过程结束时，你应有三个访问令牌，其中每一个都有与之相关联的这些应用 ID URI 之一：
-    -   **https://onestore.microsoft.com/b2b/keys/create/collections**：在稍后的步骤中，你将使用通过此 URI 创建的访问令牌请求与 Windows 应用商店收集 API 一起使用的 Windows 应用商店 ID 密钥。
-    -   **https://onestore.microsoft.com/b2b/keys/create/purchase**：在稍后的步骤中，你将使用通过此 URI 创建的访问令牌请求与 Windows 应用商店购买 API 一起使用的 Windows 应用商店 ID 密钥。
-    -   **https://onestore.microsoft.com**：在稍后的步骤中，你将在对 Windows 应用商店收集 API 或购买 API 的直接调用中使用你通过此 URI 创建的访问令牌。
+    -   `https://onestore.microsoft.com/b2b/keys/create/collections`：在稍后的步骤中，你将使用通过此 URI 创建的访问令牌请求与 Windows 应用商店收集 API 一起使用的 Windows 应用商店 ID 密钥。
+    -   `https://onestore.microsoft.com/b2b/keys/create/purchase`：在稍后的步骤中，你将使用通过此 URI 创建的访问令牌请求与 Windows 应用商店购买 API 一起使用的 Windows 应用商店 ID 密钥。
+    -   `https://onestore.microsoft.com`：在稍后的步骤中，你将在对 Windows 应用商店收集 API 或购买 API 的直接调用中使用你通过此 URI 创建的访问令牌。
 
-    **重要提示** 仅限将 **https://onestore.microsoft.com** 受众与安全存储在你的服务中的访问令牌一起使用。 在服务之外公开访问令牌和此受众会让你的服务易受到重播攻击。
+    > **重要提示** 将 `https://onestore.microsoft.com` 受众仅与安全存储在服务中的访问令牌一起使用。 在服务之外公开访问令牌和此受众会让你的服务易受到重播攻击。
 
 有关访问令牌的结构的更多详细信息，请参阅[受支持的令牌和声明类型](http://go.microsoft.com/fwlink/?LinkId=722501)。
 
-**重要提示** 应仅在服务的上下文而非应用中创建 Azure AD 访问令牌。 客户端密码在发送到你的应用时可能会遭泄露。
-
- 
+> **重要提示** 应仅在服务的上下文而非应用中创建 Azure AD 访问令牌。 客户端密码在发送到你的应用时可能会遭泄露。
 
 ### 步骤 4：从应用中的客户端代码生成 Windows 应用商店 ID 密钥
 
@@ -85,8 +88,8 @@ Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客�
 当前，获取 Windows 应用商店 ID 密钥的唯一方法是通过从应用中的客户端代码调用通用 Windows 平台 (UWP) API 以检索当前登录 Windows 应用商店的用户的标识。 若要生成 Windows 应用商店 ID 密钥：
 
 1.  将以下访问令牌之一从你的服务传递到客户端应用：
-    -   若要获取可以与 Windows 应用商店收集 API 一起使用的 Windows 应用商店 ID 密钥，请传递使用 **https://onestore.microsoft.com/b2b/keys/create/collections** 受众 URI 创建的 Azure AD 访问令牌。
-    -   若要获取可以与 Windows 应用商店购买 API 一起使用的 Windows 应用商店 ID 密钥，请传递使用 **https://onestore.microsoft.com/b2b/keys/create/purchase** 受众 URI 创建的 Azure AD 访问令牌。
+    -   若要获取可以与 Windows 应用商店收集 API 一起使用的 Windows 应用商店 ID 密钥，请传递你通过 `https://onestore.microsoft.com/b2b/keys/create/collections` 受众 URI 创建的 Azure AD 访问令牌。
+    -   若要获取可以与 Windows 应用商店购买 API 一起使用的 Windows 应用商店 ID 密钥，请传递你通过 `https://onestore.microsoft.com/b2b/keys/create/purchase` 受众 URI 创建的 Azure AD 访问令牌。
 
 2.  在你的应用代码中，调用 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 类的以下方法之一来检索 Windows 应用商店 ID 密钥。
 
@@ -99,9 +102,7 @@ Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客�
 
 3.  在你的应用成功检索 Windows 应用商店 ID 密钥后，请将该密钥传递回你的服务。
 
-**注意** 每个 Windows 应用商店 ID 密钥的有效期为 90 天。 密钥到期后，可以[续订该密钥](renew-a-windows-store-id-key.md)。 我们建议你续订 Windows 应用商店 ID 密钥，而非创建新密钥。
-
- 
+> **注意** 每个 Windows 应用商店 ID 密钥的有效期为 90 天。 密钥到期后，可以[续订该密钥](renew-a-windows-store-id-key.md)。 我们建议你续订 Windows 应用商店 ID 密钥，而非创建新密钥。
 
 ### 步骤 5：从你的服务调用 Windows 应用商店收集 API 或购买 API
 
@@ -111,9 +112,9 @@ Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客�
 -   [将可消费产品报告为已完成](report-consumable-products-as-fulfilled.md)
 -   [授予免费产品](grant-free-products.md)
 
-对于每个方案，请将以下信息传递给 API：
+对于每个方案，请将以下信息传递到 API：
 
--   你之前使用 **https://onestore.microsoft.com** 受众 URI 创建的 Azure AD 访问令牌。 此令牌代表你的发布者标识。 在请求标头中传递此令牌。
+-   你之前通过 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。 此令牌代表你的发布者标识。 在请求标头中传递此令牌。
 -   你从应用中的 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 检索的 Windows 应用商店 ID 密钥。 此密钥表示你想要访问其产品所有权信息的用户的标识。
 
 ## Windows 应用商店 ID 密钥中的声明
@@ -125,40 +126,40 @@ Windows 应用商店 ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想�
 |------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | iat                                                                    | 标识颁发密钥的时间。 此声明可用于确定令牌的 有效期。 此值表示为纪元时间。                                                                                                                                                                                                                                       |
 | iss                                                                    | 标识颁发者。 这与 *aud* 声明具有相同的值。                                                                                                                                                                                                                                                                                                                      |
-| aud                                                                    | 标识受众。 必须是下列值之一：**https://collections.mp.microsoft.com/v6.0/keys** 或 **https://purchase.mp.microsoft.com/v6.0/keys**。                                                                                                                                                                                                                    |
+| aud                                                                    | 标识受众。 必须是下列值之一：`https://collections.mp.microsoft.com/v6.0/keys` 或 `https://purchase.mp.microsoft.com/v6.0/keys`。                                                                                                                                                                                                                    |
 | exp                                                                    | 标识在此时或之后不再接受密钥处理除续订密钥之外的任何操作的到期时间。 此声明的值表示为纪元时间。                                                                                                                                                                                               |
 | nbf                                                                    | 标识接受令牌进行处理的时间。 此声明的值表示为纪元时间。                                                                                                                                                                                                                                                             |
-| http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId   | 标识开发人员的客户端 ID。                                                                                                                                                                                                                                                                                                                                            |
-| http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload    | 包含计划仅由 Windows 应用商店服务使用的信息的不透明负载（已加密，并使用 Base64 编码）。                                                                                                                                                                                                                                                     |
-| http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId     | 标识服务上下文中的当前用户的用户 ID。 此值与你在创建密钥时传递给 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法的可选 *publisherUserId* 参数中的值相同。 |
-| http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri | 可用于续订密钥的 URI。                                                                                                                                                                                                                                                                                                                                              |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`   | 标识开发人员的客户端 ID。                                                                                                                                                                                                                                                                                                                                            |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`    | 包含计划仅供 Windows 应用商店服务使用的信息的不透明负载（已加密，并使用 Base64 编码）。                                                                                                                                                                                                                                                     |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`     | 标识服务上下文中的当前用户的用户 ID。 此值与你在创建密钥时传递给 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法的可选 *publisherUserId* 参数中的值相同。 |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri` | 可用于续订密钥的 URI。                                                                                                                                                                                                                                                                                                                                              |
 
  
 
 以下是一个解码的 Windows 应用商店 ID 密钥标头的示例。
 
 ```json
-{ 
-    "typ":"JWT", 
-    "alg":"RS256", 
-    "x5t":"agA_pgJ7Twx_Ex2_rEeQ2o5fZ5g" 
-} 
+{
+    "typ":"JWT",
+    "alg":"RS256",
+    "x5t":"agA_pgJ7Twx_Ex2_rEeQ2o5fZ5g"
+}
 ```
 
 以下是一个解码的 Windows 应用商店 ID 密钥声明集的示例。
 
 ```json
-{ 
-    "http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId": "1d5773695a3b44928227393bfef1e13d", 
-    "http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload": "ZdcOq0/N2rjytCRzCHSqnfczv3f0343wfSydx7hghfu0snWzMqyoAGy5DSJ5rMSsKoQFAccs1iNlwlGrX+/eIwh/VlUhLrncyP8c18mNAzAGK+lTAd2oiMQWRRAZxPwGrJrwiq2fTq5NOVDnQS9Za6/GdRjeiQrv6c0x+WNKxSQ7LV/uH1x+IEhYVtDu53GiXIwekltwaV6EkQGphYy7tbNsW2GqxgcoLLMUVOsQjI+FYBA3MdQpalV/aFN4UrJDkMWJBnmz3vrxBNGEApLWTS4Bd3cMswXsV9m+VhOEfnv+6PrL2jq8OZFoF3FUUpY8Fet2DfFr6xjZs3CBS1095J2yyNFWKBZxAXXNjn+zkvqqiVRjjkjNajhuaNKJk4MGHfk2rZiMy/aosyaEpCyncdisHVSx/S4JwIuxTnfnlY24vS0OXy7mFiZjjB8qL03cLsBXM4utCyXSIggb90GAx0+EFlVoJD7+ZKlm1M90xO/QSMDlrzFyuqcXXDBOnt7rPynPTrOZLVF+ODI5HhWEqArkVnc5MYnrZD06YEwClmTDkHQcxCvU+XUEvTbEk69qR2sfnuXV4cJRRWseUTfYoGyuxkQ2eWAAI1BXGxYECIaAnWF0W6ThweL5ZZDdadW9Ug5U3fZd4WxiDlB/EZ3aTy8kYXTW4Uo0adTkCmdLibw=", 
-    "http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId": "infusQMLaYCrgtC0d/SZWoPB4FqLEwHXgZFuMJ6TuTY=", 
-    "http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri": "https://collections.mp.microsoft.com/v6.0/b2b/keys/renew", 
-    "iat": 1442395542, 
-    "iss": "https://collections.mp.microsoft.com/v6.0/keys", 
-    "aud": "https://collections.mp.microsoft.com/v6.0/keys", 
-    "exp": 1450171541, 
-    "nbf": 1442391941 
-} 
+{
+    "http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId": "1d5773695a3b44928227393bfef1e13d",
+    "http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload": "ZdcOq0/N2rjytCRzCHSqnfczv3f0343wfSydx7hghfu0snWzMqyoAGy5DSJ5rMSsKoQFAccs1iNlwlGrX+/eIwh/VlUhLrncyP8c18mNAzAGK+lTAd2oiMQWRRAZxPwGrJrwiq2fTq5NOVDnQS9Za6/GdRjeiQrv6c0x+WNKxSQ7LV/uH1x+IEhYVtDu53GiXIwekltwaV6EkQGphYy7tbNsW2GqxgcoLLMUVOsQjI+FYBA3MdQpalV/aFN4UrJDkMWJBnmz3vrxBNGEApLWTS4Bd3cMswXsV9m+VhOEfnv+6PrL2jq8OZFoF3FUUpY8Fet2DfFr6xjZs3CBS1095J2yyNFWKBZxAXXNjn+zkvqqiVRjjkjNajhuaNKJk4MGHfk2rZiMy/aosyaEpCyncdisHVSx/S4JwIuxTnfnlY24vS0OXy7mFiZjjB8qL03cLsBXM4utCyXSIggb90GAx0+EFlVoJD7+ZKlm1M90xO/QSMDlrzFyuqcXXDBOnt7rPynPTrOZLVF+ODI5HhWEqArkVnc5MYnrZD06YEwClmTDkHQcxCvU+XUEvTbEk69qR2sfnuXV4cJRRWseUTfYoGyuxkQ2eWAAI1BXGxYECIaAnWF0W6ThweL5ZZDdadW9Ug5U3fZd4WxiDlB/EZ3aTy8kYXTW4Uo0adTkCmdLibw=",
+    "http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId": "infusQMLaYCrgtC0d/SZWoPB4FqLEwHXgZFuMJ6TuTY=",
+    "http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri": "https://collections.mp.microsoft.com/v6.0/b2b/keys/renew",
+    "iat": 1442395542,
+    "iss": "https://collections.mp.microsoft.com/v6.0/keys",
+    "aud": "https://collections.mp.microsoft.com/v6.0/keys",
+    "exp": 1450171541,
+    "nbf": 1442391941
+}
 ```
 
 ## 相关主题
@@ -176,8 +177,6 @@ Windows 应用商店 ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想�
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

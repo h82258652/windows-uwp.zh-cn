@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 在通用 Windows 平台 (UWP) 应用中，命令元素是使用户能够执行诸如发送电子邮件、删除项或提交表单等操作的交互式 UI 元素。
-title: 通用 Windows 平台 (UWP) 应用的命令设计基础知识
+Description: "在通用 Windows 平台 (UWP) 应用中，命令元素是使用户能够执行诸如发送电子邮件、删除项或提交表单等操作的交互式 UI 元素。"
+title: "通用 Windows 平台 (UWP) 应用的命令设计基础知识"
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: be7ff187df9800a8c2c47c4315f3f9b021e265f8
+
 ---
 
 #  UWP 应用的命令设计基础知识
@@ -152,6 +156,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

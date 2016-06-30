@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 延长显示初始屏幕的时间
-description: 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。
+author: TylerMSFT
+title: "延长显示初始屏幕的时间"
+description: "通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。"
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
+
 ---
 
 # 延长显示初始屏幕的时间
@@ -97,7 +100,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
         private SplashScreen splash; // Variable to hold the splash screen object.
         internal bool dismissed = false; // Variable to track splash screen dismissal status.
         internal Frame rootFrame;
-     
+
        // Define methods and constructor
     }
     ```
@@ -131,7 +134,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
             PositionRing();
         }
 
-        // Create a Frame to act as the navigation context 
+        // Create a Frame to act as the navigation context
         rootFrame = new Frame();            
     }
     ```
@@ -223,11 +226,11 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
     {
         if (loadState)
         {
-             // code to load your app's state here 
+             // code to load your app's state here
         }
     }
     ```
-    
+
     在你修改 App.xaml.cs 中的启动激活处理程序时，如果应用之前的 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 为 **Terminated**，你还需要将 `loadstate` 设置为 true。 如果出现这种情况，`RestoreStateAsync` 方法会将应用还原到其之前的状态。 有关应用启用、暂停和终止的概述，请参阅[应用生命周期](app-lifecycle.md)。
 
 ## 修改启动激活处理程序
@@ -547,8 +550,6 @@ namespace SplashScreenExample
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

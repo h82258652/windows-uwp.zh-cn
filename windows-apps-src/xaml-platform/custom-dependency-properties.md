@@ -3,8 +3,8 @@ author: jwmsft
 description: "介绍如何为使用 C++、C# 或 Visual Basic 的 Windows 运行时应用定义和实现自定义依赖属性。"
 title: "自定义依赖属性"
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 63301870ab53f4061cac9b9ad87a5fb75e8c48da
+ms.sourcegitcommit: d50b73fcf78c28157cff7003dc3e180de9d69f70
+ms.openlocfilehash: 80a42040887818a0c6a66ed32327144bed586dc2
 
 ---
 
@@ -252,7 +252,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     String s = e.NewValue as String; //null checks omitted
     if (s == String.Empty)
     {
-        iwlc.HasLabelValue = false;
+        iwlc.HasLabelValue = false;s
     } else {
         iwlc.HasLabelValue = true;
     }
@@ -277,7 +277,7 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
     if (s->IsEmpty()) {
         iwlc->HasLabelValue=false;
     }
-}
+}s
 ```
 
 ### 结构和枚举的属性已更改行为
@@ -339,7 +339,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 -   你通常不会为集合制作动画。
 -   你通常不会使用样式或模板预先填充集合中的各项。
 -   尽管绑定到集合是一种主要的场景，但集合不需要将依赖属性用作绑定来源。 对于绑定目标，更典型的用法是使用 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 的子类来支持集合项，或使用视图-模型模式。 有关绑定到集合和从集合绑定的详细信息，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
--   集合更改通知问题最好通过 **INotifyPropertyChanged** 或 **INotifyCollectionChanged** 等接口，或通过从 [**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601) 派生的集合类型来解决。
+-   集合更改通知问题最好通过 **INotifyPropertyChanged** 或 **INotifyCollectionChanged** 等接口，或通过从 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) 派生的集合类型来解决。
 
 但是，有些场景确实需要集合类型依赖属性。 接下来的 3 节提供了有关如何实现集合类型依赖属性的一些指南。
 
@@ -378,6 +378,6 @@ Windows 运行时没有提供将自定义依赖属性注册为只读的方式。
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

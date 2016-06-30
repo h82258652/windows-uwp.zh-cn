@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
-title: UWP 应用中的淡化动画
+Description: "使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。"
+title: "UWP 应用中的淡化动画"
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 028e3462a0bf34af0486864508b1ac049fdf60ed
+
 ---
 
 # 淡化动画
@@ -43,6 +47,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
-description: 本文介绍了如何使用 BitmapDecoder 和 BitmapEncoder 加载和保存图像文件，以及如何使用 SoftwareBitmap 对象表示位图图像。
-title: 图像处理
+description: "本文介绍了如何使用 BitmapDecoder 和 BitmapEncoder 加载和保存图像文件，以及如何使用 SoftwareBitmap 对象表示位图图像。"
+title: "图像处理"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
+
 ---
 
 # 图像处理
@@ -129,6 +133,7 @@ title: 图像处理
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

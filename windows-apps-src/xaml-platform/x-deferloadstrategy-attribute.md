@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-title: xDeferLoadStrategy 属性
-description: xDeferLoadStrategy 会延迟元素及其子元素的创建，这将减少启动时间，不过内存使用量会略有增加。 每个受影响的元素将向内存使用量添加大约 600 个字节。
+title: "xDeferLoadStrategy 属性"
+description: "xDeferLoadStrategy 会延迟元素及其子元素的创建，这将减少启动时间，不过内存使用量会略有增加。 每个受影响的元素将向内存使用量添加大约 600 个字节。"
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
+
 ---
 
 # x&#58;DeferLoadStrategy 属性
@@ -84,6 +88,7 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

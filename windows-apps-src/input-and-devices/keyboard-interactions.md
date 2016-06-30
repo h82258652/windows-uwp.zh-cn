@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 在使用键盘和类事件处理程序的应用中响应来自硬件键盘或软键盘的按键操作。
-title: 键盘交互
+Description: "在使用键盘和类事件处理程序的应用中响应来自硬件键盘或软键盘的按键操作。"
+title: "键盘交互"
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
+ms.sourcegitcommit: d65e1315e83fef5e53771adad0943c9cb59d9139
+ms.openlocfilehash: 9de90236d94522f1b80309c3fec51ce59aee0319
+
 ---
 
 # 键盘交互
@@ -26,7 +29,7 @@ template: detail.hbs
 
 用户可以通过硬件键盘，以及屏幕键盘 (OSK) 和触摸键盘这两个软件键盘与通用应用交互。
 
-<span></span>屏幕键盘  
+屏幕键盘  
 屏幕键盘是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或其他指针设备（不需要触摸屏）来使用屏幕键盘代替物理键盘键入和输入数据。 屏幕键盘是针对没有物理键盘的系统提供的，或者是为行动有障碍而无法使用传统物理输入设备的用户提供使用。 屏幕键盘模拟硬件键盘的大部分功能（如果不是全部功能）。
 
 可通过“设置”&gt;“轻松使用”从键盘页面打开屏幕键盘。
@@ -39,7 +42,7 @@ template: detail.hbs
 
 <sup>屏幕键盘</sup>
 
-<span id="Touch_keyboard"></span><span id="touch_keyboard"></span><span id="TOUCH_KEYBOARD"></span>触摸键盘  
+触摸键盘  
 触摸键盘是一种借助触摸输入来输入文本的可视软件键盘。 触摸键盘不能取代屏幕键盘，因为前者仅用于文本输入（它不模拟硬件键盘）。
 
 触摸键盘将在文本字段或其他可编辑的文本控件获得焦点，或者用户通过**“通知中心”**手动启用它时显示，具体取决于所用设备：
@@ -94,9 +97,9 @@ template: detail.hbs
 
 成功的键盘交互使用户能够仅使用键盘来完成基本应用方案；即用户可以访问所有交互元素并激活默认功能。 很多因素都可能会对键盘交互的成功产生或多或少的影响，其中包括键盘导航、用于辅助功能的访问键，以及面向高级用户的加速键（或快捷方式）。
 
-**注意** 触摸键盘不支持切换操作以及大多数系统命令（请参阅[模式](#keyboard_command_patterns)
+**注意** 触摸键盘不支持切换操作以及大多数系统命令（请参阅[模式](#keyboard_command_patterns)）。
 
-## <span id="Navigation"></span><span id="navigation"></span><span id="NAVIGATION"></span>导航
+## 导航
 
 
 若要将控件（包括导航元素）与键盘结合使用，该控件必须具有焦点。 让控件可用于接收键盘焦点的一种方式是，让其可通过 Tab 键导航进行访问。 设计良好的键盘导航模型会提供可预测的 Tab 键逻辑顺序，以便用户可以快速高效地浏览和使用你的应用。
@@ -126,24 +129,24 @@ Tab 键顺序应尽可能遵循阅读顺序。 这可以降低发生混淆的几
 在某些情况下，会有一些 UI 元素应始终保留在屏幕上。 对 UI 进行设计，以便表单控件包含在平移区域中并且重要的 UI 元素时静态的。 例如：
 
 ![包含应始终位于视图中的区域的表单](images/input-patterns/touch-keyboard-pan2.png)
-## <span id="Activation"></span><span id="activation"></span><span id="ACTIVATION"></span>激活
+## 激活
 
 
 无论控件当前是否有焦点，均可使用多种不同的方式进行激活。
 
-<span id="Spacebar__Enter__and_Esc"></span><span id="spacebar__enter__and_esc"></span><span id="SPACEBAR__ENTER__AND_ESC"></span>空格键、Enter 和 Esc  
+空格键、Enter 和 Esc  
 空格键应当用于激活具有输入焦点的控件。 Enter 键应当用于激活默认控件或具有输入焦点的控件。 默认控件是具有初始焦点的控件，或者是以独占方式响应 Enter 键的控件（通常会随输入焦点发生变化）。 另外，Esc 键应关闭或退出暂时性 UI，例如菜单和对话框。
 
 此处显示的计算器应用使用空格键来激活具有焦点的按钮、将 Enter 键锁定为“=”按钮，并将 Esc 键锁定为“C”按钮。
 
 ![计算器应用](images/input-patterns/calculator.png)
 
-<span id="Keyboard_modifiers"></span><span id="keyboard_modifiers"></span><span id="KEYBOARD_MODIFIERS"></span>键盘修饰符  
-键盘修饰符分为以下类别： 
+键盘修饰符  
+键盘修饰符分为以下类别：
 
- 
-| 类别 | 说明 | 
-|----------|-------------| 
+
+| 类别 | 说明 |
+|----------|-------------|
 | 快捷键 | 不通过 UI 执行常见的操作，例如执行“Ctrl-S”对应于**保存**。 为键盘应用功能实现键盘快捷方式。 并非每个命令都有或需要一个快捷方式。 |   
 | 访问键/热键 | 分配给每个可见的顶层控件，如“Alt-F”对应于**“文件”**菜单。 访问键不调用或激活命令。 |
 | 加速键 | 执行默认系统或应用定义的命令，例如“Alt-PrtScrn”对应于屏幕捕获、“Alt-Tab”对应于切换应用，或者“F1”对应于帮助。 与加速键相关联的命令不需要是一个菜单项。 |
@@ -154,7 +157,7 @@ Tab 键顺序应尽可能遵循阅读顺序。 这可以降低发生混淆的几
 > 一些控件具有内部标签（例如命令按钮、复选框和单选按钮），而另一些控件则具有外部标签（例如列表视图）。 对于具有外部标签的控件，访问键会分配给此类标签，从而使得控件调用后，将焦点设置到关联控件内的某一元素或值中。
 
 
-此处的示例显示了适用于 **Word** 中“页面布局”****选项卡的访问键
+此处的示例显示了适用于 **Word** 中**“页面布局”**选项卡的访问键。
 
 ![适用于 Word 中页面布局选项卡的访问键](images/input-patterns/accesskeys-show.png)
 
@@ -162,7 +165,7 @@ Tab 键顺序应尽可能遵循阅读顺序。 这可以降低发生混淆的几
 
 ![在输入关联标签中标识的访问键后，将突出显示左缩进文本字段值](images/input-patterns/accesskeys-entered.png)
 
-## <span id="Usability_and_accessibility"></span><span id="usability_and_accessibility"></span><span id="USABILITY_AND_ACCESSIBILITY"></span>实用功能和辅助功能
+## 实用功能和辅助功能
 
 
 设计良好的键盘交互体验是软件辅助功能的一个重要方面。 它使具有视力缺陷或行动有障碍的用户能够在应用中导航并与应用的功能交互。 这些用户可能无法操作鼠标，而必须依靠各种辅助技术，其中包括键盘增强工具和屏幕键盘（以及屏幕放大器、屏幕阅读器和语音输入实用工具）。 对于这些用户，综合性体验比一致性体验更为重要。
@@ -211,7 +214,7 @@ Tab 键顺序应尽可能遵循阅读顺序。 这可以降低发生混淆的几
 
 若要确保键盘交互体验成功实现，使用键盘以独占方式全面测试应用至关重要。
 
-## <span id="Text_input"></span><span id="text_input"></span><span id="TEXT_INPUT"></span>文本输入
+## 文本输入
 
 
 当依赖键盘输入时，需始终查询设备功能。 在某些设备（例如手机）上，触摸键盘只能用于文本输入，因为它无法提供硬件键盘上的快捷键或命令键（例如 Alt、功能键或 Windows 徽标键）。
@@ -243,7 +246,7 @@ Tab 键顺序应尽可能遵循阅读顺序。 这可以降低发生混淆的几
 
 ![具有展开式文件菜单的记事本应用，其中同时包含访问键和加速键。](images/input-patterns/notepad.png)
 
-## <span id="Keyboard_commands"></span><span id="keyboard_commands"></span><span id="KEYBOARD_COMMANDS"></span>键盘命令
+## 键盘命令
 
 
 下面是在各种支持键盘输入的设备间提供的键盘交互的完整列表。 某些设备和平台需要本机按键操作和交互，已在表中加以注明。
@@ -252,7 +255,7 @@ Tab 键顺序应尽可能遵循阅读顺序。 这可以降低发生混淆的几
 
 不要重新定义默认的键盘快捷方式。
 
-下面的表格列出了常用的键盘命令。 有关键盘命令的完整列表，请参阅 [Windows 键盘快捷键](http://go.microsoft.com/fwlink/p/?linkid=325424)
+下面的表格列出了常用的键盘命令。 有关键盘命令的完整列表，请参阅 [Windows 键盘快捷键](http://go.microsoft.com/fwlink/p/?linkid=325424)。
 
 **导航命令**
 
@@ -305,7 +308,7 @@ Tab 键顺序应尽可能遵循阅读顺序。 这可以降低发生混淆的几
  
 
 注意：“播放/暂停”和“下一个项目”的媒体导航键命令分别与“打印”和“查找”的键命令相同。 常用命令应优先于媒体导航命令。 例如，如果一个应用同时支持播放媒体和打印，则键命令 Ctrl+P 应为打印。
-## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>视觉反馈
+## 视觉反馈
 
 
 仅在进行键盘交互时使用焦点矩形。 如果用户开始使用触摸交互，则使键盘 UI 逐渐淡出。 这会使 UI 干净整洁。
@@ -314,12 +317,12 @@ Tab 键顺序应尽可能遵循阅读顺序。 这可以降低发生混淆的几
 
 对于所有代表相同输入目标的元素，尝试同时显示视觉反馈。
 
-尝试提供屏幕按钮（如 + 和 -）作为模拟基于触摸的操作（如平移、旋转、缩放等）的提示。
+尝试提供屏幕按钮（如 + 和 -）作为模拟基于触摸的操作 （如平移、旋转、缩放等）的提示。
 
-有关视觉反馈的更多常规指南，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)
+有关视觉反馈的更多常规指南，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
 
-## <span id="keyboard_events"></span><span id="KEYBOARD_EVENTS"></span>键盘事件和焦点
+## 键盘事件和焦点
 
 
 以下键盘事件仅针对硬件和触摸键盘发生。
@@ -333,7 +336,7 @@ Tab 键顺序应尽可能遵循阅读顺序。 这可以降低发生混淆的几
 **重要提示**  
 某些 Windows 运行时控件在内部处理输入事件。 在这些情况下，输入事件好像没有发生，因为你的事件侦听器没有调用相关联的处理程序。 通常，类处理程序将处理这些键的子集以提供对基本键盘辅助功能的内置支持。 例如，[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 类将替代空格键和 Enter 键的 [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) 事件（[**OnPointerPressed**](https://msdn.microsoft.com/library/windows/apps/hh967989) 也是如此），并将其路由到控件的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件。 当控件类处理按键时，不会引发 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 和 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件。
 
-这提供了与调用按钮等效的内置键盘，效果与使用手指点击或使用鼠标单击相似。 空格键或 Enter 键之外的键仍会引发 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 和 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件。 有关基于类处理事件的工作原理的详细信息（特别是“控件中的输入事件处理程序”部分），请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)
+这提供了与调用按钮等效的内置键盘，效果与使用手指点击或使用鼠标单击相似。 空格键或 Enter 键之外的键仍会引发 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 和 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件。 有关基于类处理事件的工作原理的详细信息（特别是“控件中的输入事件处理程序”部分），请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)。
 
 
 UI 中的控件仅在具有输入焦点时才会生成键盘事件。 当用户直接单击或点击布局中的一个控件时该控件获得焦点，或者使用 Tab 键进入内容区域内的 Tab 序列。
@@ -342,21 +345,21 @@ UI 中的控件仅在具有输入焦点时才会生成键盘事件。 当用户�
 
 若要使某个控件接收输入焦点，则必须启用该控件，该控件必须可见并且 [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) 和 [**HitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) 的属性值必须为 **true**。 这是大多数控件的默认状态。 当某个控件具有输入焦点时，该控件可能引发并响应键盘输入事件，如本主题后面部分所述。 你也可以通过处理 [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) 和 [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) 事件来响应接收或丢失焦点的控件。
 
-默认情况下，控件的 Tab 键顺序即为它们在 Extensible Application Markup Language (XAML) 中的显示顺序。 但是，可以使用 [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) 属性修改此顺序。 有关详细信息，请参阅[实现键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/hh868161)
+默认情况下，控件的 Tab 键顺序即为它们在 Extensible Application Markup Language (XAML) 中的显示顺序。 但是，可以使用 [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) 属性修改此顺序。 有关详细信息，请参阅[实现键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/hh868161)。
 
-## <span id="keyboard_event_handlers"></span><span id="KEYBOARD_EVENT_HANDLERS"></span>键盘事件处理程序
+## 键盘事件处理程序
 
 
 输入事件处理程序实现提供以下信息的委派：
 
 -   事件的发送者。 发送者报告附加事件处理程序的对象。
--   事件数据。 对于键盘事件，该数据将是 [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) 的一个实例。 处理程序的委托为 [**KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904)。 对于大多数处理程序方案而言，**KeyRoutedEventArgs** 的最为相关的属性是 [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074)，并且可能为 [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)
+-   事件数据。 对于键盘事件，该数据将是 [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) 的一个实例。 处理程序的委托为 [**KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904)。 对于大多数处理程序方案而言，**KeyRoutedEventArgs** 的最为相关的属性是 [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074)，并且可能为 [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)。
 -   [
-            **OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810)。 由于键盘事件是路由事件，因此事件数据提供 **OriginalSource**。 如果有意允许事件通过对象树向上浮生，则 **OriginalSource** 有时是所涉及的对象而不是发送者。 但是，这取决于你的设计。 有关如何使用 **OriginalSource** 而不是发送者的详细信息，请参阅本主题中的“键盘路由事件”部分或[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)
+            **OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810)。 由于键盘事件是路由事件，因此事件数据提供 **OriginalSource**。 如果有意允许事件通过对象树向上浮生，则 **OriginalSource** 有时是所涉及的对象而不是发送者。 但是，这取决于你的设计。 有关如何使用 **OriginalSource** 而不是发送者的详细信息，请参阅本主题中的“键盘路由事件”部分或[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)。
 
-### <span id="attaching_a_keyboard_event_handler"></span><span id="ATTACHING_A_KEYBOARD_EVENT_HANDLER"></span>附加键盘事件处理程序
+### 附加键盘事件处理程序
 
-可以为将事件作为成员包含的任何对象附加键盘事件处理程序功能。 这包括任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生类。 以下 XAML 示例显示了如何为 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 的 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件附加处理程序
+可以为将事件作为成员包含的任何对象附加键盘事件处理程序功能。 这包括任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生类。 以下 XAML 示例显示了如何为 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 的 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件附加处理程序。
 
 ```XAML
 <Grid KeyUp="Grid_KeyUp">
@@ -364,9 +367,9 @@ UI 中的控件仅在具有输入焦点时才会生成键盘事件。 当用户�
 </Grid>
 ```
 
-也可以在代码中附加事件处理程序。 有关详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)
+也可以在代码中附加事件处理程序。 有关详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)。
 
-### <span id="defining_a_keyboard_event_handler"></span><span id="DEFINING_A_KEYBOARD_EVENT_HANDLER"></span>定义键盘事件处理程序
+### 定义键盘事件处理程序
 
 以下示例显示了在上一示例中附加的 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件处理程序的不完整事件处理程序定义。
 
@@ -390,7 +393,7 @@ void MyProject::MainPage::Grid_KeyUp(
 {//handling code here}
 ```
 
-### <span id="using_keyroutedeventargs"></span><span id="USING_KEYROUTEDEVENTARGS"></span>使用 KeyRoutedEventArgs
+### 使用 KeyRoutedEventArgs
 
 所有键盘事件对事件数据均使用 [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072)，而且 **KeyRoutedEventArgs** 包含以下属性：
 
@@ -398,13 +401,13 @@ void MyProject::MainPage::Grid_KeyUp(
 -   [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)
 -   [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073)
 -   [
-            **OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810)（继承自 [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
+            **OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810)（继承自 [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)）
 
-### <span id="key"></span><span id="KEY"></span>密钥
+### 密钥
 
 如果按下某个键，则引发 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 事件。 同样，如果释放某个键，则引发 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)。 通常会侦听这些事件以处理特定键值。 若要确定按下或释放了哪个键，请检查事件数据中的 [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) 值。 **Key** 返回 [**VirtualKey**](https://msdn.microsoft.com/library/windows/apps/br241812) 值。 **VirtualKey** 枚举包括所有受支持的键。
 
-### <span id="modifier_keys"></span><span id="MODIFIER_KEYS"></span>修改键
+### 修改键
 
 修改键是用户通常与其他键组合而按下的键，如 Ctrl 或 Shift。 你的应用可以使用这些组合作为键盘快捷方式来调用应用命令。
 
@@ -414,10 +417,10 @@ void MyProject::MainPage::Grid_KeyUp(
 
  
 
-## <span id="shortcut_keys_example"></span><span id="SHORTCUT_KEYS_EXAMPLE"></span>快捷键示例
+## 快捷键示例
 
 
-以下示例演示如何实现快捷键。 在此示例中，用户可以使用 Play、Pause 和 Stop 按钮或 Ctrl+P、Ctrl+A 和 Ctrl+S 键盘快捷键来控制媒体播放。 按钮 XAML 通过使用工具提示和按钮标签中的 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) 属性来显示快捷键。 此自述文档对于增加应用的实用功能和辅助功能非常重要。 有关详细信息，请参阅[键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/mt244347)
+以下示例演示如何实现快捷键。 在此示例中，用户可以使用 Play、Pause 和 Stop 按钮或 Ctrl+P、Ctrl+A 和 Ctrl+S 键盘快捷键来控制媒体播放。 按钮 XAML 通过使用工具提示和按钮标签中的 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) 属性来显示快捷键。 此自述文档对于增加应用的实用功能和辅助功能非常重要。 有关详细信息，请参阅[键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/mt244347)。
 
 另请注意，加载页面时页面将输入焦点设置为其自身。 如果没有此步骤，则不会有控件获得初始输入焦点，并且在用户手动设置输入焦点之前，应用不会引发输入事件（例如，通过 Tab 浏览或单击某个控件）。
 
@@ -429,7 +432,7 @@ void MyProject::MainPage::Grid_KeyUp(
     <RowDefinition Height="Auto" />
   </Grid.RowDefinitions>
 
-  <MediaElement x:Name="DemoMovie" Source="xbox.wmv" 
+  <MediaElement x:Name="DemoMovie" Source="xbox.wmv"
     Width="500" Height="500" Margin="20" HorizontalAlignment="Center" />
 
   <StackPanel Grid.Row="1" Margin="10"
@@ -442,13 +445,13 @@ void MyProject::MainPage::Grid_KeyUp(
     </Button>
 
     <Button x:Name="PauseButton" Click="MediaButton_Click"
-      ToolTipService.ToolTip="Shortcut key: Ctrl+A" 
+      ToolTipService.ToolTip="Shortcut key: Ctrl+A"
       AutomationProperties.AcceleratorKey="Control A">
       <TextBlock>Pause</TextBlock>
     </Button>
 
     <Button x:Name="StopButton" Click="MediaButton_Click"
-      ToolTipService.ToolTip="Shortcut key: Ctrl+S" 
+      ToolTipService.ToolTip="Shortcut key: Ctrl+S"
       AutomationProperties.AcceleratorKey="Control S">
       <TextBlock>Stop</TextBlock>
     </Button>
@@ -577,12 +580,12 @@ End Sub
 
  
 
-## <span id="keyboard_routed_events"></span><span id="KEYBOARD_ROUTED_EVENTS"></span>键盘路由事件
+## 键盘路由事件
 
 
 有些事件为路由事件，这些事件包括 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 和 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)。 路由事件使用浮升路由策略。 浮升路由策略意味着某个事件从子对象开始，然后向上路由到对象树中的连续父对象。 这样便提供了处理相同事件以及与相同数据数据交互的另一个机会。
 
-请考虑以下 XAML 示例，该示例处理一个 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 和两个 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 对象的 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件。 在这种情况下，如果在任一 **Button** 对象具有焦点的同时释放键，则会引发 **KeyUp** 事件。 然后，该事件向上浮升到父 **Canvas**
+请考虑以下 XAML 示例，该示例处理一个 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 和两个 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 对象的 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件。 在这种情况下，如果在任一 **Button** 对象具有焦点的同时释放键，则会引发 **KeyUp** 事件。 然后，该事件向上浮升到父 **Canvas**。
 
 ```XAML
 <StackPanel KeyUp="StackPanel_KeyUp">
@@ -605,27 +608,27 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 请注意前面的处理程序中的 [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) 属性的用法。 在此处，**OriginalSource** 报告引发此事件的对象。 该对象不可能是 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)，因为 **StackPanel** 不是控件，无法具有焦点。 只有 **StackPanel** 中的两个按钮之一可能引发此事件，但是是哪一个按钮呢？ 如果在父对象上处理此事件，可使用 **OriginalSource** 来辨别实际的事件源对象。
 
-### <span id="handled_property"></span><span id="HANDLED_PROPERTY"></span>事件数据中的 Handled 属性
+### 事件数据中的 Handled 属性
 
 根据你的事件处理策略，你可能希望只有一个事件处理程序对浮升事件进行响应。 例如，如果已将特定的 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 处理程序附加到其中一个 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 控件，则这是处理该事件的第一次机会。 在这种情况下，你可能不希望父面板也处理该事件。 对于此方案，可以使用事件数据中的 [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) 属性。
 
 路由事件数据类中的 [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) 属性用于报告之前在事件路由上注册的另一个处理程序已进行操作。 这会影响路由事件系统的行为。 在事件处理程序中将 **Handled** 设置为 **true** 时，该事件停止路由，但不会发送到连续的父元素。
 
-### <span id="addhandler_and_already_handled_keyboard_events"></span><span id="ADDHANDLER_AND_ALREADY_HANDLED_KEYBOARD_EVENTS"></span>AddHandler 和 already-handled 键盘事件
+### AddHandler 和 already-handled 键盘事件
 
 可以使用特殊技术来附加处理程序，该技术对已标记为已处理的事件进行操作。 此技术使用 [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) 方法来注册处理程序，而不是使用 XAML 属性或特定于语言的用于添加处理程序的语法，如在 C# 中的“+=”。 此技术的局限性通常是 **AddHandler** API 带有一个类型为 [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808) 的参数，该参数标识有问题的路由事件。 并非所有路由事件都提供 **RoutedEvent** 标识符，因此此注意事项会影响在 [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) 情况下仍然可以处理哪的路由事件。 [
             **KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 和 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 上具有路由事件标识符（[**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) 和 [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418)）。 但是，其他事件（如 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706)）没有路由事件标识符，因此不能使用 **AddHandler** 技术。
 
-## <span id="commanding"></span><span id="COMMANDING"></span>命令处理
+## 命令处理
 
 
 少量 UI 元素提供对命令的内置支持。 命令在其基础实现中使用与输入相关的路由事件。 它能够通过调用一个命令处理程序来处理相关的 UI 输入，如某个指针操作或特定加速键。
 
-如果命令处理可用于 UI 元素，可以考虑使用它的命令处理 API 代替任何具体的输入事件。 有关详细信息，请参阅 [**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740)
+如果命令处理可用于 UI 元素，可以考虑使用它的命令处理 API 代替任何具体的输入事件。 有关详细信息，请参阅 [**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740)。
 
 还可以实现 [**ICommand**](https://msdn.microsoft.com/library/windows/apps/br227885) 来封装从普通事件处理程序中调用的命令功能。 这使你甚至能够在没有任何可用 **Command** 属性的情况下使用命令。
 
-## <span id="text_input_and_controls"></span><span id="TEXT_INPUT_AND_CONTROLS"></span>文本输入和控件
+## 文本输入和控件
 
 
 某些控件通过自身的处理来对键盘事件作出响应。 例如，[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 是一个控件，设计用于捕获然后在视觉上显示使用键盘输入的文本。 它以自己的逻辑使用 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 和 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 来捕获击键，然后，即使在文本实际上已更改的情况下，也还是会引发自己的 [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) 事件。
@@ -638,21 +641,21 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 自定义控件可以通过重写 [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) / [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983) 来为键事件实现自己的类似重写行为。 如果你的自定义控件处理特定加速键或者具有类似于为 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 描述的方案的控件或焦点行为，则应该将该逻辑放置在自己的 **OnKeyDown** / **OnKeyUp** 重写中。
 
-## <span id="the_touch_keyboard"></span><span id="THE_TOUCH_KEYBOARD"></span>触摸键盘
+## 触摸键盘
 
 
 文本输入控件提供对触摸键盘的自动支持。 当用户将输入焦点设置为使用触摸输入的文本控件时，触摸键盘会自动出现。 当输入焦点不在文本控件上时，隐藏触摸键盘。
 
-当出现触摸键盘时，会自动重新定位你的 UI 以确保可以看见具有焦点的元素。 这可能会导致 UI 的其他重要区域移出屏幕。 但是，你可以禁用默认行为并在出现触摸键盘时对自己的 UI 进行调整。 有关详细信息，请参阅[响应出现屏幕键盘的示例](http://go.microsoft.com/fwlink/p/?linkid=231633)
+当出现触摸键盘时，会自动重新定位你的 UI 以确保可以看见具有焦点的元素。 这可能会导致 UI 的其他重要区域移出屏幕。 但是，你可以禁用默认行为并在出现触摸键盘时对自己的 UI 进行调整。 有关详细信息，请参阅[响应出现屏幕键盘的示例](http://go.microsoft.com/fwlink/p/?linkid=231633)。
 
-如果创建一个需文本输入但并非从标准文本输入控件派生的自定义控件，则可以通过实现正确的 UI 自动化控件模式来添加触摸键盘支持。 有关详细信息，请参阅[响应触摸键盘的存在](respond-to-the-presence-of-the-touch-keyboard.md)和[触摸键盘示例](http://go.microsoft.com/fwlink/p/?linkid=246019)
+如果创建一个需文本输入但并非从标准文本输入控件派生的自定义控件，则可以通过实现正确的 UI 自动化控件模式来添加触摸键盘支持。 有关详细信息，请参阅[响应触摸键盘的存在](respond-to-the-presence-of-the-touch-keyboard.md)和[触摸键盘示例](http://go.microsoft.com/fwlink/p/?linkid=246019)。
 
 按下触摸键盘上的键引发 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 和 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件，就像在硬件键盘上按下键一样。 但是，触摸键盘不会引发 Ctrl+A、Ctrl+Z、Ctrl+X、Ctrl+C 和 Ctrl+V 的输入事件，这些是输入控件中保留的文本操作。
 
-通过将文本控件的输入范围设置为匹配你期望用户输入的数据类型，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。 例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) 属性设置为 [**Number**](https://msdn.microsoft.com/library/windows/apps/hh702028)。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。 有关详细信息，请参阅[使用输入范围更改触摸键盘](https://msdn.microsoft.com/library/windows/apps/mt280229)
+通过将文本控件的输入范围设置为匹配你期望用户输入的数据类型，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。 例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) 属性设置为 [**Number**](https://msdn.microsoft.com/library/windows/apps/hh702028)。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。 有关详细信息，请参阅[使用输入范围更改触摸键盘](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
 
-## 本部分中其他文章
+## 本部分中的其他文章
 <table>
 <colgroup>
 <col width="50%" />
@@ -675,7 +678,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
  
 
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 
 **开发人员**
@@ -702,9 +705,6 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 
 
-
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

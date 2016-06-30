@@ -5,8 +5,8 @@ title: "定向"
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: c8244e1a103a1c57df92e54ceeaa02e9c363faa9
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 50a285b484f7e9ed7b349921c3460bd7c9c81603
 
 ---
 
@@ -24,7 +24,7 @@ ms.openlocfilehash: c8244e1a103a1c57df92e54ceeaa02e9c363faa9
 
 本主题介绍使用接触几何图形来确定触摸目标并提供在 UWP 应用中确定目标的最佳实践。
 
-## <span id="Measurements_and_scaling"></span><span id="measurements_and_scaling"></span><span id="MEASUREMENTS_AND_SCALING"></span>度量和缩放
+## 度量和缩放
 
 
 若要在不同的屏幕大小和像素密度之间保持一致性，所有目标大小都要以物理单位（毫米）表示。 使用以下等式将物理单位转换为像素：
@@ -43,14 +43,14 @@ ms.openlocfilehash: c8244e1a103a1c57df92e54ceeaa02e9c363faa9
 
 必须根据系统定义的每个缩放停滞调整该结果。
 
-## <span id="Thresholds"></span><span id="thresholds"></span><span id="THRESHOLDS"></span>阈值
+## 阈值
 
 
 距离和时间阈值可以用来确定交互的结果。
 
 例如，当检测到向下触摸摸式，如果从向下触摸点拖动对象的距离小于 2.7 mm，并且向下触摸的抬起时间不超过 0.1 秒，则注册为点击。 移动手指超过 2.7 mm 的阈值会使对象被拖动、被选中或被移动（有关详细信息，请参阅[交叉滑动指南](guidelines-for-cross-slide.md)）。 根据你的应用，按下手指超过 0.1 秒可能会使系统进行自我显示交互（有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md#selfreveal)）。
 
-## <span id="Target_sizes"></span><span id="target_sizes"></span><span id="TARGET_SIZES"></span>目标大小
+## 目标大小
 
 
 通常，请将触摸目标大小设置为 9 mm 正方形或更大（1.0x 缩放倍数的 135 PPI 屏幕上为 48x48 像素）。 避免使用小于 7 mm 正方形的触摸目标。
@@ -112,7 +112,7 @@ ms.openlocfilehash: c8244e1a103a1c57df92e54ceeaa02e9c363faa9
 -   触摸可视化
 -   硬件和触摸数字化器
 
-## <span id="Targeting_assistance"></span><span id="targeting_assistance"></span><span id="TARGETING_ASSISTANCE"></span>目标协助
+## 目标协助
 
 
 Windows 提供目标协助以支持此处提供的最小大小或填充建议不适用的方案；例如，网页上的超链接、日历控件、下拉列表和组合框，或者文本选择。
@@ -121,7 +121,7 @@ Windows 提供目标协助以支持此处提供的最小大小或填充建议不
 
 如果可触摸元素必须小于建议的最小目标大小，则可以使用以下技术来让产生的目标问题减到最少。
 
-## <span id="Tethering"></span><span id="tethering"></span><span id="TETHERING"></span>叠接
+## 叠接
 
 
 叠接是一种可视提示（从接触点到对象边界矩形的连接器），用于指示用户他们已连接到并且正在与对象进行交互，甚至包括通过输入接触都不能与之联系的对象。 如果符合下列条件，可能会发生这种情况：
@@ -131,7 +131,7 @@ Windows 提供目标协助以支持此处提供的最小大小或填充建议不
 
 此功能不会向使用 JavaScript 的 Windows 应用商店应用开发人员显示。
 
-## <span id="scrubbing"></span><span id="SCRUBBING"></span>推移
+## 推移
 
 
 推移表示触摸目标领域内的任意位置并滑动以选择所需目标，在到达所需目标上之前不抬起手指。 该手势也称为“离开激活”，即当手指抬离屏幕时激活最后一个触摸的对象。
@@ -146,7 +146,7 @@ Windows 提供目标协助以支持此处提供的最小大小或填充建议不
 -   如果目标执行的操作没有破坏性（如在日历上的日期之间切换），则指定叠接到推移目标。
 -   在单个方向（水平或垂直）中指定叠接。
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 
 **示例**
@@ -174,6 +174,6 @@ Windows 提供目标协助以支持此处提供的最小大小或填充建议不
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

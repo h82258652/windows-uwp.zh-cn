@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 向基元应用纹理
-description: 下面，我们将使用之前在“对基元使用深度和效果”中创建的立方体，加载原始纹理数据并将该数据应用到 3D 基元。
+title: "向基元应用纹理"
+description: "下面，我们将使用之前在“对基元使用深度和效果”中创建的立方体，加载原始纹理数据并将该数据应用到 3D 基元。"
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 56e8bf524537526d639f4d732ab228f3c0ea75da
+
 ---
 
 # 向基元应用纹理
@@ -19,7 +23,7 @@ ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 
 我们假定你熟悉 C++。 你还需要具有图形编程概念方面的基本经验。
 
-我们还假定你已阅读[快速入门：设置 DirectX 资源和显示图像](setting-up-directx-resources.md)、[创建着色器和绘制基元](creating-shaders-and-drawing-primitives.md)以及[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)
+我们还假定你已阅读[快速入门：设置 DirectX 资源和显示图像](setting-up-directx-resources.md)、[创建着色器和绘制基元](creating-shaders-and-drawing-primitives.md)以及[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)。
 
 **完成所需时间：**20 分钟。
 
@@ -28,7 +32,7 @@ ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 
 ### 1. 为纹理化的立方体定义变量
 
-首先，我们需要为纹理化的立方体定义 **BasicVertex** 和 **ConstantBuffer** 结构。 这些结构用于指定立方体的顶点位置、方向和纹理以及查看立方体的方式。 或者，按照上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)的类似方法来声明变量
+首先，我们需要为纹理化的立方体定义 **BasicVertex** 和 **ConstantBuffer** 结构。 这些结构用于指定立方体的顶点位置、方向和纹理以及查看立方体的方式。 或者，按照上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)的类似方法来声明变量。
 
 ```cpp
 struct BasicVertex
@@ -265,7 +269,7 @@ private:
 
 ### 3. 创建纹理和取样器
 
-下面，将纹理数据应用到立方体（而不是像上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)那样应用颜色）
+下面，将纹理数据应用到立方体（而不是像上一教程[对基元使用深度和效果](using-depth-and-effects-on-primitives.md)中那样着色）。
 
 使用原始纹理数据来创建纹理。
 
@@ -522,6 +526,7 @@ private:
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

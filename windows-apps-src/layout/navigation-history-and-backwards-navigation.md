@@ -1,11 +1,15 @@
 ---
 author: mijacobs
-Description: 通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。
-title: 通用 Windows 平台 (UWP) 应用的导航设计基础知识
+Description: "通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。"
+title: "通用 Windows 平台 (UWP) 应用的导航设计基础知识"
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
+
 ---
 
 #  导航历史记录和向后导航
@@ -307,6 +311,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

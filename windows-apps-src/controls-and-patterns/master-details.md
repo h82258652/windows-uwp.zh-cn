@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 大纲/细节模式可显示主列表和当前选定项的详细信息。 此模式通常用于电子邮件和联系人列表/通讯簿。
-title: 大纲/细节
+Description: "大纲/细节模式可显示主列表和当前选定项的详细信息。 此模式通常用于电子邮件和联系人列表/通讯簿。"
+title: "大纲/细节"
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5845aaf69bbcf561164c519f76f93578bf0da6db
+
 ---
 # 大纲/细节模式
 
@@ -82,6 +86,7 @@ template: detail.hbs
 - [**ListView 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 创建和显示基本网格
-description: 3D 通用 Windows 平台 (UWP) 游戏通常使用多边形来表示游戏中的对象和图面。
+title: "创建和显示基本网格"
+description: "3D 通用 Windows 平台 (UWP) 游戏通常使用多边形来表示游戏中的对象和图面。"
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c082456d5eb0cf1c5c697a6af5bc1d4de1f5ada2
+
 ---
 
 # 创建和显示基本网格
@@ -445,6 +449,7 @@ m_swapChain->Present(1, 0);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

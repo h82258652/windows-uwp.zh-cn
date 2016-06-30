@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
-description: 使用 Windows 应用商店收集 API 中的此方法，以面向给定客户将可消费产品报告为已完成。 在用户可以重新购买可消费产品前，你的应用或服务必须面向该用户将可消费产品报告为已完成。
-title: 将可消费产品报告为已完成。
+description: "使用 Windows 应用商店收集 API 中的此方法，以面向给定客户将可消费产品报告为已完成。 在用户可以重新购买可消费产品前，你的应用或服务必须面向该用户将可消费产品报告为已完成。"
+title: "将可消费产品报告为已完成。"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: b099bdc26565ef218eaf1f73c5bb3ec9c24065c3
+
 ---
 
 # 将可消费产品报告为已完成。
@@ -22,7 +25,7 @@ title: 将可消费产品报告为已完成。
 
 若要使用此方法，你需要：
 
--   使用 **https://onestore.microsoft.com** 受众 URI 创建的 Azure AD 访问令牌。
+-   使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
 -   一种通过从应用中的客户端代码调用 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 方法所生成的Windows 应用商店 ID 密钥。
 
 有关详细信息，请参阅[从服务查看和授予产品](view-and-grant-products-from-a-service.md)。
@@ -34,9 +37,9 @@ title: 将可消费产品报告为已完成。
 
 | 方法 | 请求 URI                                                   |
 |--------|---------------------------------------------------------------|
-| POST   | https://collections.mp.microsoft.com/v6.0/collections/consume |
+| POST   | `https://collections.mp.microsoft.com/v6.0/collections/consume` |
 
- 
+<br/> 
 
 ### 请求标头
 
@@ -47,7 +50,7 @@ title: 将可消费产品报告为已完成。
 | Content-Length | 数字 | 请求正文的长度。                                                                       |
 | Content-Type   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
 
- 
+<br/> 
 
 ### 请求正文
 
@@ -57,12 +60,13 @@ title: 将可消费产品报告为已完成。
 | ItemID        | 字符串       | [查询产品](query-for-products.md)返回的 itemID 值。 将此参数与 trackingId 一起使用                                                                                                                                                                                                  | 否       |
 | trackingId    | Guid         | 由开发人员提供的唯一跟踪 ID。 将此参数与 itemId 一起使用。                                                                                                                                                                                                                                     | 否       |
 | productId     | 字符串       | [查询产品](query-for-products.md)返回的 productId 值。 将此参数与 transactionId 一起使用                                                                                                                                                                                            | 否       |
-| transactionId | Guid         | 从以下源之一获取的事务 ID 值：                                                                                                                                                                                                                                      | 否       | 
-|               |              | * [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 类的 [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) 属性。   |        | 
+| transactionId | Guid         | 从以下源之一获取的事务 ID 值：                                                                                                                                                                                                                                      | 否       |
+|               |              | * [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 类的 [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) 属性。   |        |
 |               |              | * 由 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) 或 [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) 返回的应用或产品收据。   |        |
 |               |              | * [查询产品](query-for-products.md)返回的 transactionId 参数。   |        |        
 |               |              | 将此参数与 productId 一起使用。   |        |
  
+<br/>
 
 UserIdentity 对象包含以下参数。
 
@@ -72,7 +76,7 @@ UserIdentity 对象包含以下参数。
 | identityValue        | 字符串 | Windows 应用商店 ID 密钥的字符串值。                                                                                                   | 是      |
 | localTicketReference | 字符串 | 已返回响应的请求标识符。 我们建议你使用与 Windows 应用商店 ID 密钥中的 *userId* 声明相同的值。 | 是      |
 
- 
+<br/> 
 
 ### 请求示例
 
@@ -142,7 +146,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 | 401  | 未授权 | PartnerAadTicketRequired   | 在授权标头中，Azure AD 访问令牌不会 传递到服务。                                                                                                   |
 | 401  | 未授权 | InconsistentClientId       | 请求正文的 Windows 应用商店 ID 密钥中的 *clientId* 声明与授权标头的 Azure AD 访问令牌中的 *appid* 声明不匹配。                     |
 
- 
+<br/> 
 
 ## 相关主题
 
@@ -156,8 +160,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

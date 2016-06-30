@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
-description: 本文向你显示了如何使用 MediaProcessingTrigger 和后台任务在后台处理媒体文件。
-title: 在后台处理媒体文件
+description: "本文向你显示了如何使用 MediaProcessingTrigger 和后台任务在后台处理媒体文件。"
+title: "在后台处理媒体文件"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
+
 ---
 
 # 在后台处理媒体文件
@@ -25,18 +29,18 @@ title: 在后台处理媒体文件
 
 若要在 Microsoft Visual Studio 中将后台任务添加到现有解决方案，请输入你的组件的名称
 
-1.  在“文件”****菜单上，依次选择“添加”****和“新建项目...”****
-2.  选择“Windows 运行时组件(通用 Windows)”****项目类型
-3.  输入新的组件项目的名称。 此示例使用 **MediaProcessingBackgroundTask** 项目名称
+1.  在“文件”****菜单上，依次选择“添加”****和“新建项目...”****。
+2.  选择“Windows 运行时组件(通用 Windows)”****项目类型。
+3.  输入新的组件项目的名称。 此示例使用 **MediaProcessingBackgroundTask** 项目名称。
 4.  单击“确定”。
 
-在“解决方案资源管理器”****，右键单击默认情况下创建的“Class1.cs”文件的图标，然后选择“重命名”****。 将该文件重命名为“MediaProcessingTask.cs”。 当 Visual Studio 询问是否想要重命名对此类的所有引用时，请单击“是”****
+在“解决方案资源管理器”****，右键单击默认情况下创建的“Class1.cs”文件的图标，然后选择“重命名”****。 将该文件重命名为“MediaProcessingTask.cs”。 当 Visual Studio 询问是否想要重命名对此类的所有引用时，请单击**“是”**。
 
 在重命名的类文件中，添加以下 **using** 指令以在你的项目中包含这些命名空间。
                                   
 [!code-cs[BackgroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundUsing)]
 
-更新类声明以使你的类继承自 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
+更新类声明以使你的类继承自 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)。
 
 [!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
 
@@ -74,7 +78,7 @@ title: 在后台处理媒体文件
 
 [!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
 
-**SendToastNotification** 帮助程序方法通过获取模板 XML 文档为只含有文本内容的 Toast 创建新的 Toast 通知。 将设置 Toast XML 的文本元素，然后从 XML 文档创建新的 [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 对象。 最后，通过调用 [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) 向用户显示 Toast
+**SendToastNotification** 帮助程序方法通过获取模板 XML 文档为只含有文本内容的 Toast 创建新的 Toast 通知。 将设置 Toast XML 的文本元素，然后从 XML 文档创建新的 [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 对象。 最后，通过调用 [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) 向用户显示 Toast。
 
 [!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
 
@@ -84,16 +88,16 @@ title: 在后台处理媒体文件
 
 1.  在“解决方案资源管理器”****中，双击 Package.appmanifest 文件图标以打开清单编辑器。
 2.  选择“声明”****选项卡。
-3.  在“可用声明”****中，选择“后台任务”****，然后单击“添加”****
-4.  在“支持的声明”****下，确保已选择“后台任务”****项。 在“属性”****下，选中“媒体处理”****的复选框
-5.  在“入口点”****文本框中，为你的后台测试指定命名空间和类名称，以句点分隔。 对于此示例，该项是：
+3.  在**“可用声明”**中，选择**“后台任务”**，然后单击**“添加”**。
+4.  在**“支持的声明”**下，确保已选择**“后台任务”**项。 在**“属性”**下，选中**“媒体处理”**的复选框。
+5.  在**“入口点”**文本框中，为你的后台测试指定命名空间和类名称，以句点分隔。 对于此示例，该项是：
    ```csharp
    MediaProcessingBackgroundTask.MediaProcessingTask
    ```
 接下来，你需要将对后台任务的引用添加到前台应用。
-1.  在“解决方案资源管理器”****的前台应用项目下，右键单击“引用”****文件夹，然后选择“添加引用...”****
-2.  展开“项目”****节点，然后选择“解决方案”****
-3.  选中后台任务项目旁边的框，然后单击“确定”****
+1.  在“解决方案资源管理器”****的前台应用项目下，右键单击“引用”****文件夹，然后选择“添加引用...”****。
+2.  展开“项目”****节点，然后选择“解决方案”****。
+3.  选中后台任务项目旁边的框，然后单击“确定”****。
 
 应将此示例中代码的其余部分添加到前台应用。 首先，需要将以下命名空间添加到你的项目。
 
@@ -139,6 +143,7 @@ title: 在后台处理媒体文件
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 配置 XAML 编译，在标记和代码隐藏之间连接分部类。 代码分部类在一个独立的代码文件中定义，标记分部类由代码生成过程在 XAML 编译期间创建。
-title: x&#58;Class 属性
+description: "配置 XAML 编译，在标记和代码隐藏之间连接分部类。 代码分部类在一个独立的代码文件中定义，标记分部类由代码生成过程在 XAML 编译期间创建。"
+title: "x&#58;Class 属性"
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
+
 ---
 
 # x&#58;Class 属性
@@ -41,6 +45,7 @@ ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

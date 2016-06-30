@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: '你可以通过从 Panel 类派生自定义类来为 XAML 布局定义自定义面板。'
-MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "你可以通过从 Panel 类派生自定义类来为 XAML 布局定义自定义面板。"
+MS-HAID: dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: XAML 自定义面板概述
+title: "XAML 自定义面板概述"
 ms.assetid: 0CD395CD-E2AB-429D-BB49-56A71C5CC35D
 label: XAML custom panels overview
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
+
 ---
 
 # XAML 自定义面板概述
@@ -29,7 +33,7 @@ template: detail.hbs
 -   [
             **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706)、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 和 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的所有其他 API，例如 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 等。 你有时在布局替代中参考这些属性的值，但是它们不是虚拟的，所以你通常不会替代或替换它们。
 
-此处的重点是介绍 XAML 布局概念，以便你考虑自定义面板能够以及应该在布局中如何表现的所有可能性。 如果你希望直接查看自定义面板实现的示例，请参阅 [BoxPanel：一个自定义面板示例](boxpanel-example-custom-panel.md)
+此处的重点是介绍 XAML 布局概念，以便你考虑自定义面板能够以及应该在布局中如何表现的所有可能性。 如果你希望直接查看自定义面板实现的示例，请参阅 [BoxPanel：一个自定义面板示例](boxpanel-example-custom-panel.md)。
 
 ## **Children** 属性
 
@@ -44,9 +48,9 @@ template: detail.hbs
 </local:CustomPanel>
 ```
 
-当 XAML 分析程序读取此标记时，[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 被认为所有 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 派生的类型的 XAML 内容属性，因此分析程序会将两个 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 元素添加到 **Children** 属性的 [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 值中。 XAML 内容属性有助于简化用于 UI 定义的 XAML 标记中的父子关系。 有关 XAML 内容属性的详细信息以及如何在解析 XAML 时填充集合属性，请参阅 [XAML 语法指南](https://msdn.microsoft.com/library/windows/apps/mt185596)
+当 XAML 分析程序读取此标记时，[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 被认为所有 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 派生的类型的 XAML 内容属性，因此分析程序会将两个 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 元素添加到 **Children** 属性的 [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 值中。 XAML 内容属性有助于简化用于 UI 定义的 XAML 标记中的父子关系。 有关 XAML 内容属性的详细信息以及如何在解析 XAML 时填充集合属性，请参阅 [XAML 语法指南](https://msdn.microsoft.com/library/windows/apps/mt185596)。
 
-保持 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 属性的值的集合类型是 [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 类。 **UIElementCollection** 是强类型集合，此集合使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 作为它的强制项类型。 **UIElement** 是基本类型，此类型由数百个实际 UI 元素类型继承，因此此处的类型强制故意较为宽松。 但是它强制你无法拥有作为 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 的直接子元素的 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076)，并且通常表示仅预期在 UI 中可见且参与布局的元素将被视为 **Panel** 中的子元素
+保持 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 属性的值的集合类型是 [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 类。 **UIElementCollection** 是强类型集合，此集合使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 作为它的强制项类型。 **UIElement** 是基本类型，此类型由数百个实际 UI 元素类型继承，因此此处的类型强制故意较为宽松。 但是它强制你无法拥有作为 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 的直接子元素的 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076)，并且通常表示仅预期在 UI 中可见且参与布局的元素将被视为 **Panel** 中的子元素。
 
 通常，自定义面板只需按原样使用 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 属性的特征，便可接受由 XAML 定义的任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 子元素。 作为高级方案，当你在布局替代中的集合上迭代时，可以支持子元素的进一步类型检查。
 
@@ -71,14 +75,13 @@ template: detail.hbs
 
 候选布局必须适合当前应用窗口，否则将剪裁 UI 的其他部分。 面板通常是确定剪裁逻辑的位置。 面板逻辑可以确定何种大小从 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 实现内可用，而且可能必须向子元素施加大小限制并在子元素间划分空间以便达到最佳配置。 在理想情况下，布局的结果使用布局的所有部分的各个属性，但仍然能够适合应用窗口。 这需要良好实现面板的布局逻辑，以及对任何使用该面板构建 UI 的应用代码部分执行正确的 UI 设计。 如果总体 UI 设计包含多于应用可容纳的子元素，则面板设计不可能美观。
 
-使布局系统工作的重要因素是，任何基于 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 的元素在作为容器中的子元素操作时，已拥有一些其自身的固有行为。 例如，一些 **FrameworkElement** 的 API 可通知布局行为，或为布局工作所必需。 其中包括：
+使布局系统工作的重要因素是，任何基于 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 的元素在作为容器中的子元素操作时，已拥有一些其自身的固有行为。 例如，一些 **FrameworkElement** 的 API 可通知布局行为，或为布局工作所必需。 这些功能包括：
 
 -   [
             **DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) （实际为 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 属性）
 -   [
             **ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)
--   [
-            **Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
+-   [ **Height** ](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
 -   [**边距**](https://msdn.microsoft.com/library/windows/apps/br208724)
 -   [
             **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 事件
@@ -134,7 +137,7 @@ protected override Size MeasureOverride(Size availableSize)
 -   [
             **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 实现中的其他常见错误是，返回新的默认 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)（高度和宽度的值为 0）。 你可以从该值开始，并且在面板确定不呈现任何子元素时，它甚至可能为正确的值。 但是，默认的 **Size** 将导致面板的主机错误调整面板大小。 它不请求 UI 中的空间，因此不获取空间且不呈现。 即使所有面板代码均可正常运行，但如果面板的高度和宽度均为零，你仍然无法看到面板或其内容。
 -   在替代内，请避免尝试将子元素转换为 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 并使用计算的属性作为布局结果，尤其是 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 和 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707)。 对于大部分常见方案，你可以将逻辑基于子元素的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值，而且无需子元素的任何 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 或 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 相关属性。 对于你知道元素类型且拥有其他信息（例如图像文件的自然大小）的特殊用例，你可以使用你的元素的专业信息，因为它不是布局系统主动修改的值。 将经布局计算的属性包括为布局逻辑的一部分将大幅增加定义意外布局循环的风险。 这些循环会导致无法创建有效布局的情况，而且如果循环不可恢复，系统可能引发 [**LayoutCycleException**](https://msdn.microsoft.com/library/windows/apps/hh673799)。
--   尽管具体划分空间的方式不同，但面板通常在多个子元素间划分它们的可用空间。 例如，[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 实现布局逻辑，此逻辑使用其 [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) 和 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) 值将空间划分为 **Grid** 单元格，并支持比例缩放和像素值。 如果它们是像素值，则适用于每个子元素的大小已知，因此作为网格样式 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 的输入大小传递
+-   尽管具体划分空间的方式不同，但面板通常在多个子元素间划分它们的可用空间。 例如，[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 实现布局逻辑，此逻辑使用其 [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) 和 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) 值将空间划分为 **Grid** 单元格，并支持比例缩放和像素值。 如果它们是像素值，则适用于每个子元素的大小已知，因此作为网格样式 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 的输入大小传递。
 -   面板本身可以引入用于在项目间填充的保留空间。 如果你执行此操作，请确保将度量显示为与 [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) 或任何 **Padding** 属性不同的属性。
 -   元素可能含有 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 和 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 属性的值，这些值基于上一次布局传递。 如果值更改，应用 UI 代码可以在元素上放置 [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 的处理程序（如果有要运行的特殊逻辑），但是面板逻辑通常不需要使用事件处理检查更改。 布局系统已在确定何时重新运行布局，因为布局相关的属性已更改值，而且在适当情况下自动调用面板的 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 或 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)。
 
@@ -171,7 +174,7 @@ protected override Size ArrangeOverride(Size finalSize)
 
 通常在 [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 实现间变化的是面板确定如何安排每个子元素的 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 组件所依据的逻辑。 绝对定位面板（例如 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)）使用它通过 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) 值从每个元素获取的明确放置信息。 空间划分面板（例如 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)）将包含数学操作，此操作将可用空间划分为单元格，而且每个单元格将具有 x-y 值，以用于确定应当放置和排列其内容的位置。 自适应面板（例如 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)）可能扩展自身以在其方向维度中适合内容。
 
-布局中的元素仍然受到其他定位影响，超出你直接控制的范围并且传递到 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914)。 它们来自 **Arrange** 的内部本机实现，此实现对 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 派生的类型很常见，并且由一些其他的类型（例如文本元素）增强。 例如，元素可以具有边距和对齐，而且一些元素可以具有填充。 这些属性经常交互。 有关详细信息，请参阅[对齐、边距和填充](alignment-margin-padding.md)
+布局中的元素仍然受到其他定位影响，超出你直接控制的范围并且传递到 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914)。 它们来自 **Arrange** 的内部本机实现，此实现对 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 派生的类型很常见，并且由一些其他的类型（例如文本元素）增强。 例如，元素可以具有边距和对齐，而且一些元素可以具有填充。 这些属性经常交互。 有关详细信息，请参阅[对齐、边距和填充](alignment-margin-padding.md)。
 
 ## 面板和控件
 
@@ -180,7 +183,7 @@ protected override Size ArrangeOverride(Size finalSize)
 
 如果有任何交互可供用户访问，你应当编写自定义控件，而不是面板。 例如，面板不应当将滚动视区添加到它所显示的内容，即使目标是阻止剪裁，因为滚动栏、缩略图等是交互式控件部件。 （内容可能仍然具有滚动条，但是你应当使其遵循子元素的逻辑）。 请勿通过将滚动添加为布局操作来强制它。）你可以创建控件，还可以编写在控件的可视化树中发挥重要作用的自定义面板，用于在该控件中显示内容。 但是控件和面板应当是有区别的代码对象。
 
-控件和面板之间的区别之所以重要的原因之一是 Microsoft UI 自动化和辅助功能。 面板提供视觉布局行为，而不是逻辑行为。 UI 元素在视觉上如何显示通常对辅助功能方案不是重要的 UI 特性。 辅助功能与展示逻辑上对理解 UI 重要的应用的部分相关。 当需要交互时，控件应当向 UI 自动化基础结构显示交互可能性。 有关详细信息，请参阅[自定义自动化对等](https://msdn.microsoft.com/library/windows/apps/mt297667)
+控件和面板之间的区别之所以重要的原因之一是 Microsoft UI 自动化和辅助功能。 面板提供视觉布局行为，而不是逻辑行为。 UI 元素在视觉上如何显示通常对辅助功能方案不是重要的 UI 特性。 辅助功能与展示逻辑上对理解 UI 重要的应用的部分相关。 当需要交互时，控件应当向 UI 自动化基础结构显示交互可能性。 有关详细信息，请参阅[自定义的自动化对等](https://msdn.microsoft.com/library/windows/apps/mt297667)。
 
 ## 其他布局 API
 
@@ -190,7 +193,7 @@ protected override Size ArrangeOverride(Size finalSize)
 -   [
             **UpdateLayout**](https://msdn.microsoft.com/library/windows/apps/br208989)、[**InvalidateMeasure**](https://msdn.microsoft.com/library/windows/apps/br208930) 和 [**InvalidateArrange**](https://msdn.microsoft.com/library/windows/apps/br208929) 是启动布局传递的方法。 **InvalidateArrange** 可能不会触发度量传递，但另外两个可以。 从不在布局方法内部调用这些方法替代，因为它们几乎肯定会导致布局循环。 控件代码通常也不需要调用它们。 布局的大部分特性通过检测对框架定义的布局属性（例如 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 等）的更改来自动触发。
 -   [
-            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 是当元素布局的一些特性已发生更改时引发的事件。 它不特定于面板；该事件由 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 定义
+            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 是当元素布局的一些特性已发生更改时引发的事件。 它不特定于面板；该事件由 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 定义。
 -   [
             **SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742) 是仅在布局传递完成后引发的事件，并且显示 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 或 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 已更改作为结果。 这是另一个 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 事件。 在某些情况下，[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 会引发，但 **SizeChanged** 不会。 例如，内部内容可能已重新安排，但元素的大小并未更改。
 
@@ -210,6 +213,7 @@ protected override Size ArrangeOverride(Size finalSize)
 [对齐、边距和填充](alignment-margin-padding.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

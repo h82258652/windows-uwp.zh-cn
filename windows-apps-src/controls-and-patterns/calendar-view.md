@@ -5,8 +5,8 @@ title: "日历视图"
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 7b9d4773cba5c6ebb770e27dd20ba5c6fb40ff75
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 466d8fe25cb2dfe8ce3b4efef995d9e3cb682dc1
 
 ---
 
@@ -14,10 +14,8 @@ ms.openlocfilehash: 7b9d4773cba5c6ebb770e27dd20ba5c6fb40ff75
 
 日历视图让用户查看可按月份、年份或十年期浏览的日历，并与之交互。 用户可选择单个日期或一组日期。 它没有选取器图面，并且日历始终可见。 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
-
 - [**CalendarView 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
-- [**Date 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)
+- [**SelectedDatesChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
 
 ## 这是正确的控件吗？
 使用日历视图，让用户从始终可见的日历中选取单个日期或一组日期。
@@ -195,6 +193,6 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

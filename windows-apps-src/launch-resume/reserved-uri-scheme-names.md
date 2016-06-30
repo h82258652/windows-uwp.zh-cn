@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 保留文件和 URI 方案名称
-description: 当另一个应用启动特定的 URI 方案时，你可以使用 URI 关联自动启动你的应用。
+author: TylerMSFT
+title: "保留文件和 URI 方案名称"
+description: "当另一个应用启动特定的 URI 方案时，你可以使用 URI 关联自动启动你的应用。"
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
+
 ---
 # 保留文件和 URI 方案名称
 
@@ -124,8 +127,6 @@ ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 让你的应用得到关注！ 除了尽量改进你的应用，你还可以采取一些措施来让 Windows 应用商店和其他站点轻松展示你的应用，并帮助该应用获得更多关注。
-title: 使你的应用更易于推广
+Description: "让你的应用得到关注！ 除了尽量改进你的应用，你还可以采取一些措施来让 Windows 应用商店和其他站点轻松展示你的应用，并帮助该应用获得更多关注。"
+title: "使你的应用更易于推广"
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e0f993d703ccd3a4509de4350f07d50564893763
+
 ---
 
 # 使你的应用更易于推广
@@ -44,6 +48,7 @@ Windows 应用商店中展示了各种应用，按类别或主题分组。 好�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

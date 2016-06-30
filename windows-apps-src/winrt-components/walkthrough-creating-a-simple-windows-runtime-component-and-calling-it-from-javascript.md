@@ -1,17 +1,18 @@
 ---
-author: martinekuan
-title: 创建简单的 Windows 运行时组件并通过 JavaScript 调用它
-description: 本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何使用 JavaScript 调用针对 Windows 生成的通用 Windows 应用中的组件。
+author: msatranjr
+title: "创建简单的 Windows 运行时组件并通过 JavaScript 调用它"
+description: "本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何使用 JavaScript 调用针对 Windows 生成的通用 Windows 应用中的组件。"
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: c521061d9fdd3eb2c25e3072182fb1d7823f13ba
+
 ---
 
 # 演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
-\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
 本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何调用为使用 JavaScript 的 Windows 生成的通用 Windows 应用中的组件。
 
@@ -735,6 +736,7 @@ asyncCancel 函数只调用 WinJS.Promise 对象的取消方法。
 * [演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

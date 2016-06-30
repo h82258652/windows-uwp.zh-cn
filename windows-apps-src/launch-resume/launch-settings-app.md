@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 启动 Windows 设置应用
-description: 了解如何从你的应用启动 Windows 设置应用。 本主题介绍了 ms-settings URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。
+author: TylerMSFT
+title: "启动 Windows 设置应用"
+description: "了解如何从你的应用启动 Windows 设置应用。 本主题介绍了 ms-settings URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
+ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
+
 ---
 
 # 启动 Windows 设置应用
@@ -32,7 +35,7 @@ ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 
 ```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
-<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
+<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
           <Run Text="This app is not able to access the microphone. Go to " />
               <Hyperlink NavigateUri="ms-settings:privacy-microphone">
@@ -68,9 +71,9 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 |                    | 通知和操作                | 两者           | ms-settings:notifications                 |
 |                    | 手机                                  | 仅限移动设备    | ms-settings:phone                         |
 |                    | 消息处理                              | 仅限移动设备    | ms-settings:messaging                     |
-|                    | 节电模式                          | 两者           | ms-settings:batterysaver                  |
-|                    | 节电模式/节电模式设置 | 两者           | ms-settings:batterysaver-settings         |
-|                    | 节电模式/电池使用            | 两者           | ms-settings:batterysaver-usagedetails     |
+|                    | 节电模式                          | 带有电池的设备（如平板电脑）上的移动设备和桌面设备    | ms-settings:batterysaver                  |
+|                    | 节电模式/节电模式设置 | 带有电池的设备（如平板电脑）上的移动设备和桌面设备 | ms-settings:batterysaver-settings         |
+|                    | 节电模式/电池使用            | 带有电池的设备（如平板电脑）上的移动设备和桌面设备    | ms-settings:batterysaver-usagedetails     |
 |                    | 电源和睡眠                          | 仅限桌面设备   | ms-settings:powersleep                    |
 |                    | 桌面：关于                         | 两者           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
@@ -124,8 +127,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
-description: Windows.Media.Editing 命名空间中的 API 允许你快速开发应用，从而使用户从音频和视频源文件创建媒体合成。
-title: 媒体合成和编辑
+description: "Windows.Media.Editing 命名空间中的 API 允许你快速开发应用，从而使用户从音频和视频源文件创建媒体合成。"
+title: "媒体合成和编辑"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
+
 ---
 
 # 媒体合成和编辑
@@ -56,7 +60,7 @@ title: 媒体合成和编辑
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
-声明类型 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 的成员变量
+声明类型 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 的成员变量。
 
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
@@ -80,7 +84,7 @@ title: 媒体合成和编辑
 
 [!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
 
-允许用户使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 选择输出文件后，通过调用 **MediaComposition** 对象的 [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690) 将合成呈现到选定的文件。 以下示例中的剩余代码只需遵循处理 [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) 的模式即可
+允许用户使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 选择输出文件后，通过调用 **MediaComposition** 对象的 [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690) 将合成呈现到选定的文件。 以下示例中的剩余代码只需遵循处理 [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) 的模式即可。
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
@@ -153,6 +157,7 @@ title: 媒体合成和编辑
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: 从应用进行 3D 打印
-description: 了解如何向通用 Windows 应用添加 3D 打印功能。 本主题介绍如何启动 3D 打印对话框，但要先确保 3D 模型可打印并且格式正确。
+title: "从应用进行 3D 打印"
+description: "了解如何向通用 Windows 应用添加 3D 打印功能。 本主题介绍如何启动 3D 打印对话框，但要先确保 3D 模型可打印并且格式正确。"
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
+translationtype: Human Translation
+ms.sourcegitcommit: 61d9f5c1fca1ad2e26f052b901361813975ae357
+ms.openlocfilehash: e68a9c681974152bc0d4dfa58e824f80e77dc51f
+
 ---
 
 # 从应用进行 3D 打印
@@ -130,6 +134,7 @@ ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

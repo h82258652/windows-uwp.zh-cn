@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: BasicLoader 的完整代码
-description: 转换并加载常用图形资源（如网格、纹理以及各种着色器对象）的类和方法的完整代码。
+title: "BasicLoader 的完整代码"
+description: "转换并加载常用图形资源（如网格、纹理以及各种着色器对象）的类和方法的完整代码。"
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
+translationtype: Human Translation
+ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
+ms.openlocfilehash: 355e5a65a16e5e2df9bb039383f68dda16ff23a2
+
 ---
 
 # BasicLoader 的完整代码
@@ -1106,6 +1110,7 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

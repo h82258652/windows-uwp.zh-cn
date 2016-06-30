@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: 通用 Windows 平台 (UWP) 应用指南
-description: 在本指南中，了解有关可跨多种设备运行的通用 Windows 平台 (UWP) 应用的信息。
+author: TylerMSFT
+title: "通用 Windows 平台 (UWP) 应用指南"
+description: "在本指南中，了解有关可跨多种设备运行的通用 Windows 平台 (UWP) 应用的信息。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: 191a7aef1a027747379c991e17afc1580a9ec549
+
 ---
 
 # 通用 Windows 平台 (UWP) 应用指南
@@ -213,7 +216,7 @@ Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外�
 
 **编写带有 ApiInformation 类的自适应代码**
 
-编写自适应代码有两步。 第一步是将你需要访问的 API 提供给项目。 为此，请添加对扩展 SDK（表示具有你想要有条件调用的 API 的设备系列）的引用。 请参阅[扩展 SDK](../porting/w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks)
+编写自适应代码有两步。 第一步是将你需要访问的 API 提供给项目。 为此，请添加对扩展 SDK（表示具有你想要有条件调用的 API 的设备系列）的引用。 请参阅[扩展 SDK](../porting/w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks)。
 
 第二步是有条件地在代码中使用 [**Windows.Foundation.Metadata.ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 类，测试是否存在你要调用的 API。 此条件将进行评估（无论你的应用在何处运行），但仅针对存在相应 API 的设备评估为 True，从而可调用该 API。
 
@@ -251,12 +254,12 @@ Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外�
 
 用 C++/CX 编写的 UWP 应用或 Windows 运行时组件具有对 UWP 所包含的 Win32 API 的访问权限。 这些 Win32 API 由所有 Windows 10 设备系列实现。 将你的应用链接到 Windowsapp.lib。 Windowsapp.lib 是为 UWP API 提供导出的“Umbrella”库。 指向 Windowsapp.lib 的链接将添加到存在于所有 Windows 10 设备系列上的 Dll 的应用依赖项。
 
-有关适用于 UWP 应用的 Win32 API 的完整列表，请参阅 [UWP 应用的 API 集](https://msdn.microsoft.com/library/windows/desktop/mt186421)和 [UWP 应用的 Dll](https://msdn.microsoft.com/library/windows/desktop/mt186422)
+有关适用于 UWP 应用的 Win32 API 的完整列表，请参阅 [UWP 应用的 API 集](https://msdn.microsoft.com/library/windows/desktop/mt186421)和 [UWP 应用的 Dll](https://msdn.microsoft.com/library/windows/desktop/mt186422)。
 
 ## 用户体验
 
 
-借助通用 Windows 应用，你可以充分利用正在运行此类应用的设备的独特功能。 你的应用可以利用桌面设备的全部功能、平板电脑上直接操作的自然交互（包括触摸和笔输入）、移动设备的便携性和方便性，以及 [Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365) 的协作功能
+借助通用 Windows 应用，你可以充分利用正在运行此类应用的设备的独特功能。 你的应用可以利用桌面设备的全部功能、平板电脑上直接操作的自然交互（包括触摸和笔输入）、移动设备的便携性和方便性，以及 [Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365) 的协作功能。
 
 良好的[设计](http://go.microsoft.com/fwlink/?LinkId=258848)是确定用户如何与你的应用交互，以及确定应用外观和运行方式的过程。 用户体验极大地影响着用户对你的应用的满意度，所以请勿忽略此步骤。 [设计基础知识](https://dev.windows.com/en-us/design)介绍了如何设计通用 Windows 应用。 有关设计出令用户满意的 UWP 应用的信息，请参阅[面向设计人员的通用 Windows 平台 (UWP) 应用简介](https://msdn.microsoft.com/library/windows/apps/dn958439)。 在开始编写代码之前，请参阅[设备入门](../input-and-devices/device-primer.md)，以帮助你全面考虑在你要针对的所有不同外形规格上使用应用的交互体验。
 
@@ -288,6 +291,7 @@ Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

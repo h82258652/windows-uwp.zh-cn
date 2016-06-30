@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
-title: 音乐、图片和视频库中的文件和文件夹
-description: 将现有的音乐、图片和视频文件夹添加到相应的库。 你还可以从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。
+title: "音乐、图片和视频库中的文件和文件夹"
+description: "将现有的音乐、图片和视频文件夹添加到相应的库。 你还可以从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
+
 ---
 
 # 音乐、图片和视频库中的文件和文件夹
@@ -323,6 +327,7 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

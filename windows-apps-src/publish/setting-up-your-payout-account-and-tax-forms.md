@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: 为从 Windows 应用商店的应用销售中获得收益，你需要设置付款帐户并填写必要的税单。
-title: 设置你的付款帐户和税单
+Description: "为从 Windows 应用商店的应用销售中获得收益，你需要设置付款帐户并填写必要的税单。"
+title: "设置你的付款帐户和税单"
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
+ms.sourcegitcommit: f17132514a42c50d6bfe716f6be706748c287043
+ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
+
 ---
 
 # 设置你的付款帐户和税单
@@ -14,7 +17,7 @@ ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 
 如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果你以后改变主意并决定要售卖应用（或应用内产品），则可以设置付款帐户并于此时填写税单。 在付款帐户和纳税配置文件设置完成前，你将无法提交任何付费应用或 IAP。
 
-> **注意** [某些市场](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)仅允许你列出免费应用。 如果在其中一个市场中注册帐户，则无法设置付款帐户。
+> **注意** 在[某些市场](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，开发人员只可以提交免费应用。 如果在其中一个市场中注册帐户，则无法设置付款帐户。
 
 
 [设置开发者帐户](opening-a-developer-account.md)后，需要先执行两项操作，然后才能在 Windows 应用商店中出售应用（或 IAP）：
@@ -155,6 +158,7 @@ ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
-description: 使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合错误报告数据。
-title: 获取错误报告数据
+description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合错误报告数据。"
+title: "获取错误报告数据"
+ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
+ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
+
 ---
 
 # 获取错误报告数据
@@ -63,7 +66,7 @@ title: 获取错误报告数据
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">字符串</td>
-<td align="left">要检索错误报告数据的应用的产品 ID。 产品 ID 嵌入应用的一览链接中，该链接在开发人员中心仪表板的[应用标识页](https://msdn.microsoft.com/library/windows/apps/mt148561)上提供。 产品 ID 的一个示例为 9WZDNCRFJ3Q8。</td>
+<td align="left">要检索错误报告数据的应用的存储 ID。 存储 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。</td>
 <td align="left">是</td>
 </tr>
 <tr class="even">
@@ -242,7 +245,7 @@ title: 获取错误报告数据
 
 ### 请求示例
 
-以下示例演示用于获取错误报告数据的多个请求。 将 *applicationId* 值替换为你的应用的产品 ID。
+以下示例演示用于获取错误报告数据的多个请求。 将 *applicationId* 值替换为你的应用的存储 ID。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -271,7 +274,7 @@ Authorization: Bearer <your access token>
 | 值           | 类型    | 说明                                                                                                                                                                                                                              |
 |-----------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date            | 字符串  | 购置数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
-| applicationId   | 字符串  | 要检索 IAP 购置数据的应用的产品 ID。                                                                                                                                                           |
+| applicationId   | 字符串  | 要检索 IAP 购置数据的应用的存储 ID。                                                                                                                                                           |
 | applicationName | 字符串  | 应用的显示名称。                                                                                                                                                                                                             |
 | failureName     | 字符串  | 错误的名称。                                                                                                                                                                                                                 |
 | failureHash     | 字符串  | 错误的唯一标识符。                                                                                                                                                                                                   |
@@ -326,6 +329,7 @@ Authorization: Bearer <your access token>
 * [获取应用评价](get-app-reviews.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

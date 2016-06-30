@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 如果之前已为你的 Microsoft Advertising 收入设置 pubCenter 付款帐户，则从 2016 年 4 月1 日开始，该帐户将不再用于付款。 现在将通过你的开发人员中心付款帐户进行付款。
-title: pubCenter-DevCenter 付款帐户和税务资料整合
+Description: "如果之前已为你的 Microsoft Advertising 收入设置 pubCenter 付款帐户，则从 2016 年 4 月1 日开始，该帐户将不再用于付款。 现在将通过你的开发人员中心付款帐户进行付款。"
+title: "pubCenter-DevCenter 付款帐户和税务资料整合"
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
+
 ---
 
 # pubCenter-DevCenter 付款帐户和税务资料整合
@@ -80,6 +84,7 @@ ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

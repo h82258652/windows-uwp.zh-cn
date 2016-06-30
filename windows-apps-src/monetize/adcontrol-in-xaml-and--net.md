@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
-description: 了解如何使用 AdControl 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML 应用中显示横幅广告。
-title: XAML 和 .NET 中的 AdControl
+description: "了解如何使用 AdControl 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML 应用中显示横幅广告。"
+title: "XAML 和 .NET 中的 AdControl"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
+
 ---
 
 # XAML 和 .NET 中的 AdControl
@@ -155,6 +159,7 @@ C++：当前版本的 Microsoft Advertising 库支持 C++。 **AdControl** 将�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 媒体播放器具有管理音频和视频内容控件的可自定义 XAML 传输控件。
-title: 创建自定义媒体传输控件
+Description: "媒体播放器具有管理音频和视频内容控件的可自定义 XAML 传输控件。"
+title: "创建自定义媒体传输控件"
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5500f41b254b32b8d293181fba3acebbfffa90e7
+
 ---
 # 创建自定义传输控件
 
@@ -265,6 +269,7 @@ private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
 - [媒体播放](media-playback.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

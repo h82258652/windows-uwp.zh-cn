@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 适用于游戏的项目模板和工具
-description: 向你显示开始为通用 Windows 平台 (UWP) 编写 DirectX 游戏所需的内容。
+title: "适用于游戏的项目模板和工具"
+description: "向你显示开始为通用 Windows 平台 (UWP) 编写 DirectX 游戏所需的内容。"
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
+
 ---
 
 # 适用于游戏的项目模板和工具
@@ -18,7 +22,7 @@ ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
 ## 获取 Visual Studio
 
 
-下载并安装 Microsoft Visual Studio 2015
+[下载并安装 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。
 
 <table>
 <colgroup>
@@ -63,7 +67,7 @@ ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
 -   [开发 Marble Maze，一款使用 C++ 和 DirectX 的通用 Windows 平台游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
 > **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -76,6 +80,7 @@ ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

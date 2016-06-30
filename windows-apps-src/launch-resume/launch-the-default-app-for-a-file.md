@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 启动文件的默认应用
-description: 了解如何启动文件的默认应用。
+author: TylerMSFT
+title: "启动文件的默认应用"
+description: "了解如何启动文件的默认应用。"
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: b9b2d8ba6aeedea7d9db12565de191b1b6307fa6
+
 ---
 
 # 启动文件的默认应用
@@ -57,7 +60,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 >    If file IsNot Nothing Then
 >       ' Launch the retrieved file
 >       Dim success = await Windows.System.Launcher.LaunchFileAsync(file)
-> 
+>
 >       If success Then
 >          ' File launched
 >       Else
@@ -72,7 +75,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 > void MainPage::DefaultLaunch()
 > {
 >    auto installFolder = Windows::ApplicationModel::Package::Current->InstalledLocation;
-> 
+>
 >    concurrency::task<Windows::Storage::StorageFile^> getFileOperation(installFolder->GetFileAsync("images\\test.png"));
 >    getFileOperation.then([](Windows::Storage::StorageFile^ file)
 >    {
@@ -111,7 +114,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 >    {
 >       // Launch the retrieved file
 >       var success = await Windows.System.Launcher.LaunchFileAsync(file);
-> 
+>
 >       if (success)
 >       {
 >          // File launched
@@ -139,20 +142,20 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 > [!div class="tabbedCodeSnippets"]
 > ```vb
 > async Sub DefaultLaunch()
-> 
+>
 >    ' Path to the file in the app package to launch
 >    Dim imageFile = "images\test.png"
-> 
+>
 >    Dim file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile)
-> 
+>
 >    If file IsNot Nothing Then
 >       ' Set the option to show the picker
 >       Dim options = Windows.System.LauncherOptions()
 >       options.DisplayApplicationPicker = True
-> 
+>
 >       ' Launch the retrieved file
 >       Dim success = await Windows.System.Launcher.LaunchFileAsync(file)
-> 
+>
 >       If success Then
 >          ' File launched
 >       Else
@@ -167,7 +170,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 > void MainPage::DefaultLaunch()
 > {
 >    auto installFolder = Windows::ApplicationModel::Package::Current->InstalledLocation;
-> 
+>
 >    concurrency::task<Windows::Storage::StorageFile^> getFileOperation(installFolder->GetFileAsync("images\\test.png"));
 >    getFileOperation.then([](Windows::Storage::StorageFile^ file)
 >    {
@@ -176,7 +179,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 >          // Set the option to show the picker
 >          auto launchOptions = ref new Windows::System::LauncherOptions();
 >          launchOptions->DisplayApplicationPicker = true;
-> 
+>
 >          // Launch the retrieved file
 >          concurrency::task<bool> launchFileOperation(Windows::System::Launcher::LaunchFileAsync(file, launchOptions));
 >          launchFileOperation.then([](bool success)
@@ -205,13 +208,13 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 >       string imageFile = @"images\test.png";
 >       
 >    var file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile);
-> 
+>
 >    if (file != null)
 >    {
 >       // Set the option to show the picker
 >       var options = new Windows.System.LauncherOptions();
 >       options.DisplayApplicationPicker = true;
-> 
+>
 >       // Launch the retrieved file
 >       bool success = await Windows.System.Launcher.LaunchFileAsync(file, options);
 >       if (success)
@@ -242,23 +245,23 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 > [!div class="tabbedCodeSnippets"]
 > ```vb
 > async Sub DefaultLaunch()
-> 
+>
 >    ' Path to the file in the app package to launch
 >    Dim imageFile = "images\test.contoso"
-> 
+>
 >    ' Get the image file from the package's image directory
 >    Dim file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile)
-> 
+>
 >    If file IsNot Nothing Then
 >       ' Set the recommended app
 >       Dim options = Windows.System.LauncherOptions()
 >       options.PreferredApplicationPackageFamilyName = "Contoso.FileApp_8wknc82po1e";
 >       options.PreferredApplicationDisplayName = "Contoso File App";
-> 
->       ' Launch the retrieved file pass in the recommended app 
+>
+>       ' Launch the retrieved file pass in the recommended app
 >       ' in case the user has no apps installed to handle the file
 >       Dim success = await Windows.System.Launcher.LaunchFileAsync(file)
-> 
+>
 >       If success Then
 >          ' File launched
 >       Else
@@ -273,7 +276,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 > void MainPage::DefaultLaunch()
 > {
 >    auto installFolder = Windows::ApplicationModel::Package::Current->InstalledLocation;
-> 
+>
 >    concurrency::task<Windows::Storage::StorageFile^> getFileOperation(installFolder->GetFileAsync("images\\test.contoso"));
 >    getFileOperation.then([](Windows::Storage::StorageFile^ file)
 >    {
@@ -284,7 +287,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 >          launchOptions-> preferredApplicationPackageFamilyName = "Contoso.FileApp_8wknc82po1e";
 >          launchOptions-> preferredApplicationDisplayName = "Contoso File App";
 >          
->          // Launch the retrieved file pass in the recommended app 
+>          // Launch the retrieved file pass in the recommended app
 >          // in case the user has no apps installed to handle the file
 >          concurrency::task<bool> launchFileOperation(Windows::System::Launcher::LaunchFileAsync(file, launchOptions));
 >          launchFileOperation.then([](bool success)
@@ -311,19 +314,19 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 > {
 >    // Path to the file in the app package to launch
 >    string imageFile = @"images\test.contoso";
-> 
+>
 >    // Get the image file from the package's image directory
 >    var file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile);
-> 
+>
 >    if (file != null)
 >    {
 >       // Set the recommended app
 >       var options = new Windows.System.LauncherOptions();
 >       options.PreferredApplicationPackageFamilyName = "Contoso.FileApp_8wknc82po1e";
 >       options.PreferredApplicationDisplayName = "Contoso File App";
-> 
-> 
->       // Launch the retrieved file pass in the recommended app 
+>
+>
+>       // Launch the retrieved file pass in the recommended app
 >       // in case the user has no apps installed to handle the file
 >       bool success = await Windows.System.Launcher.LaunchFileAsync(file, options);
 >       if (success)
@@ -355,7 +358,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 > void MainPage::DefaultLaunch()
 > {
 >    auto installFolder = Windows::ApplicationModel::Package::Current->InstalledLocation;
-> 
+>
 >    concurrency::task<Windows::Storage::StorageFile^> getFileOperation(installFolder->GetFileAsync("images\\test.png"));
 >    getFileOperation.then([](Windows::Storage::StorageFile^ file)
 >    {
@@ -364,7 +367,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 >          // Set the desired remaining view
 >          auto launchOptions = ref new Windows::System::LauncherOptions();
 >          launchOptions->DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseLess;
-> 
+>
 >          // Launch the retrieved file
 >          concurrency::task<bool> launchFileOperation(Windows::System::Launcher::LaunchFileAsync(file, launchOptions));
 >          launchFileOperation.then([](bool success)
@@ -393,13 +396,13 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 >    string imageFile = @"images\test.png";
 >    
 >    var file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile);
-> 
+>
 >    if (file != null)
 >    {
 >       // Set the desired remaining view
 >       var options = new Windows.System.LauncherOptions();
 >       options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseLess;
-> 
+>
 >       // Launch the retrieved file
 >       bool success = await Windows.System.Launcher.LaunchFileAsync(file, options);
 >       if (success)
@@ -428,7 +431,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 
 如果你尝试启动受限制的文件类型，则启动将失败，且会调用错误回调。 如果你的应用处理许多不同类型的文件，并且你预计会遇到该错误，则应该为你的用户提供回退体验。 例如，你可以为用户提供将文件保存到桌面的选项，然后用户可以从桌面打开该文件。
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 ## 相关主题
@@ -454,8 +457,6 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

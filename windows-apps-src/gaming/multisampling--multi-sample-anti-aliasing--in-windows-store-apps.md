@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 通用 Windows 平台 (UWP) 应用中的多重采样
-description: 了解如何在使用 Direct3D 生成的通用 Windows 平台 (UWP) 应用中使用多重采样。
+title: "通用 Windows 平台 (UWP) 应用中的多重采样"
+description: "了解如何在使用 Direct3D 生成的通用 Windows 平台 (UWP) 应用中使用多重采样。"
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7b240de9ab3c7b53877d38eb9097dde25b2a40be
+
 ---
 
 # <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> 通用 Windows 平台 (UWP) 应用中的多重采样
@@ -205,6 +209,7 @@ Direct3D 功能级别保证支持特定的最小样本计数功能，并保证�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

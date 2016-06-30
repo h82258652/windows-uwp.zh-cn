@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: 介绍了有关在 Windows 应用商店中将通用 Windows 平台 (UWP) 应用声明为辅助应用的要求。
+Description: "介绍了有关在 Windows 应用商店中将通用 Windows 平台 (UWP) 应用声明为辅助应用的要求。"
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
-title: 应用商店中的辅助功能
+title: "应用商店中的辅助功能"
 label: Accessibility in the Store
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 46dfe4fba383861c704b2ba9070bdd8102b10562
+
 ---
 
 # 应用商店中的辅助功能  
@@ -42,6 +46,7 @@ template: detail.hbs
 * [辅助功能](accessibility.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

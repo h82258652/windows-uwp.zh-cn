@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 移植游戏循环
-description: 介绍如何实现通用 Windows 平台 (UWP) 游戏的窗口，以及如何显示游戏循环，包括如何构建 IFrameworkView 来控制全屏 CoreWindow。
+title: "移植游戏循环"
+description: "介绍如何实现通用 Windows 平台 (UWP) 游戏的窗口，以及如何显示游戏循环，包括如何构建 IFrameworkView 来控制全屏 CoreWindow。"
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
+
 ---
 
 # 移植游戏循环
@@ -139,6 +143,7 @@ DirectX UWP 模板包含可随时与游戏结合使用的强大 Direct3D 设备�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

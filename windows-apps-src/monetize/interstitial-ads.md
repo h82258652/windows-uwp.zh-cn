@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: 了解如何使用 Microsoft 官方商城协议和盈利 SDK 中的 Microsoft Advertising 库来将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。
-title: 间隙广告
+description: "了解如何使用 Microsoft 官方商城协议和盈利 SDK 中的 Microsoft Advertising 库来将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。"
+title: "间隙广告"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
+
 ---
 
 # 间隙广告
@@ -382,6 +386,7 @@ title: 间隙广告
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

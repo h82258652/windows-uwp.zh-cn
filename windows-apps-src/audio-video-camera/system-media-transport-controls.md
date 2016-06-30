@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-description: 通过 SystemMediaTransportControls 类，你的应用可以使用内置于 Windows 的系统媒体传输控件，并更新控件显示的有关你的应用当前播放的媒体的元数据。
-title: 系统媒体传输控件
+description: "通过 SystemMediaTransportControls 类，你的应用可以使用内置于 Windows 的系统媒体传输控件，并更新控件显示的有关你的应用当前播放的媒体的元数据。"
+title: "系统媒体传输控件"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
+
 ---
 
 # 系统媒体传输控件
@@ -34,11 +38,11 @@ title: 系统媒体传输控件
 
 [!code-cs[命名空间](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
 
-添加使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 的按钮单击处理程序以允许用户选择某个文件，然后调用 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 以使其成为 **MediaElement** 的活动文件
+添加使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 的按钮单击处理程序以允许用户选择某个文件，然后调用 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 以使其成为 **MediaElement** 的活动文件。
 
 [!code-cs[OpenMediaFile](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetOpenMediaFile)]
 
-通过调用 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 获取 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的实例
+通过调用 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 获取 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的实例。
 
 通过设置 **SystemMediaTransportControls** 对象的相应“已启用”属性（例如 [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714)、[**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713)、[**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) 和 [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715)），启用应用将使用的按钮。 有关可用控件的完整列表，请参阅 **SystemMediaTransportControls** 参考文档。
 
@@ -114,7 +118,7 @@ title: 系统媒体传输控件
 
 若要从应用的后台任务内获取 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的实例，你必须使用 [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635)（而非 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708)），并且仅可以从你的前台应用内使用它。
 
-有关在后台播放音频的详细信息，请参阅[后台音频](background-audio.md)
+有关在后台播放音频的详细信息，请参阅[后台音频](background-audio.md)。
 
  
 
@@ -125,6 +129,7 @@ title: 系统媒体传输控件
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

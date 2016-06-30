@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 3C03FDD8-FA61-4E7B-BDCA-3C29DFEA20E4
-description: 安装 Microsoft 应用商店参与和盈利 SDK 后，请按照本主题中的说明在你的应用中使用广告中介控件。
-title: 添加和使用广告中介控件
+description: "安装 Microsoft 应用商店参与和盈利 SDK 后，请按照本主题中的说明在你的应用中使用广告中介控件。"
+title: "添加和使用广告中介控件"
+translationtype: Human Translation
+ms.sourcegitcommit: 8c3f1997427a7c3d4f4b4b7acc876a2a091e4553
+ms.openlocfilehash: a0d73b50207d251c079714265845a816f4ac23da
+
 ---
 
 # 添加和使用广告中介控件
@@ -29,7 +33,7 @@ title: 添加和使用广告中介控件
     -   在将 C# 或 Visual Basic 与 XAML 结合使用的 Windows 8.1 或 Windows Phone 8.1 项目中，使用位于“AdMediator”****部分下的 **AdMediatorControl**。
     -   在 Windows Phone Silverlight 项目中，使用位于“所有 Windows Phone 控件”****部分下的 **AdMediatorControl**。
 
-    > **注意** 在你首次将 **AdMediatorControl** 控件拖动到 UWP 中的设计器，或者拖动到将 C# 或 Visual Basic 与 XAML 结合使用的 Windows 8.1 或 Windows Phone 8.1 项目中的设计器时，Visual Studio 会将必要的广告中介程序集引用添加到你的项目，但该控件尚未添加到该设计器中。 若要添加该控件，请在 Visual Studio 显示的消息中单击“确定”、等待设计器几秒钟以便刷新，然后再次将该控件拖回到设计器。 如果仍无法成功将该控件添加到设计器，请确保你的项目所面向的适用处理器体系结构适用于你的应用（例如，**x86**），而不是面向**任何 CPU**。 如果该项目面向生成平台的**任何 CPU**，则该控件将无法添加到设计器。
+    > **注意** 在你首次将 **AdMediatorControl** 控件拖动到 UWP 中的设计器，或者拖动到将 C# 或 Visual Basic 与 XAML 结合使用的 Windows 8.1 或 Windows Phone 8.1 项目中的设计器时，Visual Studio 会将必要的广告中介程序集引用添加到你的项目，但该控件尚未添加到该设计器中。 若要添加该控件，请在 Visual Studio 显示的消息中单击“确定”、等待设计器几秒钟以便刷新，然后再次将该控件拖回到设计器。 如果仍无法成功将该控件添加到设计器，请确保你的项目所面向的处理器体系结构适用于你的应用（例如，**“x86”**），而不是面向**任何 CPU**。 如果该项目面向生成平台的**任何 CPU**，则该控件将无法添加到设计器。
 
 5.  Visual Studio 将广告中介程序集引用添加到项目，并将广告中介控件的 XAML 插入当前页面中，包括该控件的唯一 ID 和名称。 程序集引用和 XAML 因你的目标平台而异。 例如，对于通用 Windows 平台 (UWP) 应用，程序集名称为 **Microsoft.AdMediator.Universal**，生成的 XAML 类似于以下示例。
 
@@ -288,6 +292,7 @@ if (Debugger.IsAttached)
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 业务和数据层位于你的 UI 之后。
-title: 将 Windows Phone Silverlight 业务和数据层移植到 UWP
+description: "业务和数据层位于你的 UI 之后。"
+title: "将 Windows Phone Silverlight 业务和数据层移植到 UWP"
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 24e94e91adc0e5ef0b7a076d54299eab8c4ba527
+
 ---
 
 #  将 Windows Phone Silverlight 业务和数据层移植到 UWP
@@ -137,6 +141,7 @@ Windows Phone Silverlight 应用对可选 SD 卡具有只读访问权限。 UWP 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: 本文讨论了如何使用相机配置文件来发现和管理不同视频捕获设备的功能。
-title: 相机配置文件
+description: "本文讨论了如何使用相机配置文件来发现和管理不同视频捕获设备的功能。"
+title: "相机配置文件"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
+
 ---
 
 # 相机配置文件
@@ -105,6 +109,7 @@ title: 相机配置文件
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

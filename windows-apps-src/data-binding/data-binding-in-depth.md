@@ -3,8 +3,8 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "深入了解数据绑定"
 description: "数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。"
-ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
-ms.openlocfilehash: c371ca1804d76a0ffdf812cfb933b03916654bad
+ms.sourcegitcommit: ca92d44cc8e3fb7eaed5a522435efe9cb4796560
+ms.openlocfilehash: d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2
 
 ---
 # 深入了解数据绑定
@@ -12,15 +12,14 @@ ms.openlocfilehash: c371ca1804d76a0ffdf812cfb933b03916654bad
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Binding 类**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-**注意** 本主题将详细介绍数据绑定功能。 有关既简短又实用的简介，请参阅[数据绑定概述](data-binding-quickstart.md)。
+> **注意** &nbsp;&nbsp;本主题将详细介绍数据绑定功能。 有关既简短又实用的简介，请参阅[数据绑定概述](data-binding-quickstart.md)。
 
- 
 
 数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。 借助数据绑定，你可以将关注的数据从关注的 UI 中分离开来，从而可形成一个更简易的概念模型，并且使你的应用拥有更好的可读性、可测试性和可维护性。
 
@@ -77,7 +76,7 @@ public class HostViewModel
 
 **注意** 对于 C++/CX，应实现 [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)，并且绑定源类必须具有 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 或实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。
 
-``` csharp
+```csharp
 public class HostViewModel : INotifyPropertyChanged
 {
     private string nextButtonText;
@@ -111,7 +110,7 @@ public class HostViewModel : INotifyPropertyChanged
 
 这样你便无需多次实现上面所示的模式，只需从 [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) 示例（位于“Common”文件夹中）提供的 **BindableBase** 基类派生即可。 下面是具体操作的一个示例。
 
-``` csharp
+```csharp
 public class HostViewModel : BindableBase
 {
     private string nextButtonText;
@@ -151,11 +150,11 @@ public class HostViewModel : BindableBase
 在下面的两个示例中，**Button.Content** 属性是绑定目标，并且其值已设置为用于声明绑定对象的标记扩展。 首先显示的是 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，然后是 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 在标记中声明绑定这一做法很常见（其既便捷、易读又很实用）。 不过，应避免标记和以命令性方式（编程方式）创建 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 类的实例（除非需要）。
 
 <!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
-``` xml
+```xml
 <Button Content="{x:Bind ...}" ... />
 ```
 
-``` xml
+```xml
 <Button Content="{Binding ...}" ... />
 ```
 
@@ -163,7 +162,7 @@ public class HostViewModel : BindableBase
 
 在创作 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 标记之前，需先执行一个步骤。 我们需要从表示标记页面的类公开绑定源类。 通过将相关属性（本例中为 **HostViewModel** 类型）添加到 **HostView** 页面类，来执行此操作。
 
-``` csharp
+```csharp
 namespace QuizGame.View
 {
     public sealed partial class HostView : Page
@@ -181,7 +180,7 @@ namespace QuizGame.View
 
 该操作完成后，即可仔细看看声明绑定对象的标记。 下面的示例使用与前面“绑定目标”部分中所使用的相同 **Button.Content** 绑定目标，并演示了将其绑定到 **HostViewModel.NextButtonText** 属性。
 
-``` xml
+```xml
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -198,7 +197,7 @@ namespace QuizGame.View
 
 在 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内（不论用作项模板、内容模板还是标头模板），**Path** 的值未在页面的上下文中进行解释，但在模板化的数据对象的上下文中进行了解释。 **DataTemplate** 需要使用 **x:DataType** 声明其数据对象的类型，以便在编译时才对它的绑定进行验证（同时为它们生成有效代码）。 下面给出的示例可用作绑定到 **SampleDataGroup** 对象集合的项目控件的 **ItemTemplate**。
 
-``` xml
+```xml
 <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -223,7 +222,7 @@ namespace QuizGame.View
 
 默认情况下，[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 假设你要绑定到标记页面的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)。 因此，我们将页面的 **DataContext** 设置为绑定源类（本例中为 **HostViewModel** 类型）的实例。 下面的示例展示了用于声明绑定对象的标记。 我们使用了与前面“绑定目标”部分中所使用的相同 **Button.Content** 绑定目标，并绑定到 **HostViewModel.NextButtonText** 属性。
 
-``` xml
+```xml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
     <Page.DataContext>
         <viewmodel:HostViewModel/>
@@ -241,7 +240,7 @@ UI 元素的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 
 在 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内，[**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 已设置为模板化的数据对象。 下面给出的示例可用作项目控件的 **ItemTemplate**，绑定到具有名为 **Title** 和 **Description** 的字符串属性的任意类型的集合。
 
-``` xml
+```xml
 <DataTemplate x:Key="SimpleItemTemplate">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{Binding Title}"/>
@@ -263,7 +262,7 @@ UI 元素的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 
 下面是适用于一次性或单向绑定的值转换器，可将 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 值转换为包含月份的字符串值。 该类实现 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903)。
 
-``` csharp
+```csharp
 public class DateToStringConverter : IValueConverter
 {
     // Define the Convert method to convert a DateTime value to 
@@ -300,7 +299,7 @@ public class DateToStringConverter : IValueConverter
 }
 ```
 
-``` vbnet
+```vbnet
 Public Class DateToStringConverter
     Implements IValueConverter
 
@@ -342,7 +341,7 @@ End Class
 
 下面介绍了如何在绑定对象标记中使用该值转换器。
 
-``` xml
+```xml
 <UserControl.Resources>
   <local:DateToStringConverter x:Key="Converter1"/>
 </UserControl.Resources>
@@ -372,7 +371,7 @@ End Class
 
 TemplatesResourceDictionary.xaml
 
-``` xml
+```xml
 <ResourceDictionary
     x:Class="ExampleNamespace.TemplatesResourceDictionary"
     .....
@@ -388,7 +387,7 @@ TemplatesResourceDictionary.xaml
 
 TemplatesResourceDictionary.xaml.cs
 
-``` csharp
+```csharp
 using Windows.UI.Xaml.Data;
  
 namespace ExampleNamespace
@@ -405,7 +404,7 @@ namespace ExampleNamespace
 
 MainPage.xaml
 
-``` xml
+```xml
 <Page x:Class="ExampleNamespace.MainPage"
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
@@ -425,7 +424,7 @@ MainPage.xaml
 
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 支持一种名为事件绑定的功能。 借助此功能，你可以使用绑定为事件指定处理程序（这是一种附加选项），但使用代码隐藏文件上的某一方法处理事件除外。 假设你的 **MainPage** 类上具有 **RootFrame** 属性。
 
-``` csharp
+```csharp
     public sealed partial class MainPage : Page
     {
         ....    
@@ -435,7 +434,7 @@ MainPage.xaml
 
 随即你可以将按钮的 **Click** 事件绑定到由 **RootFrame** 属性返回的 **Frame** 对象上的方法，如下所示。 注意，我们还将按钮的 **IsEnabled** 属性绑定到同一 **Frame** 的另一成员。
 
-``` xml
+```xml
     <AppBarButton Icon="Forward" IsCompact="True"
     IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
     Click="{x:Bind RootFrame.GoForward}"/>
@@ -443,13 +442,14 @@ MainPage.xaml
 
 重载方法不适用于借助此技术来处理事件。 此外，如果用于处理事件的方法包含一些参数，则这些参数均须根据各自对应的事件参数类型进行赋值。 在此情况下，[**Frame.GoForward**](https://msdn.microsoft.com/library/windows/apps/BR242693) 不重载且不含任何参数（但即使其包含两个 **object** 参数，也仍然有效）。 不过，因为 [**Frame.GoBack**](https://msdn.microsoft.com/library/windows/apps/Dn996568) 已重载，所以我们无法通过此技术使用该方法。
 
-事件绑定技术类似于实现和使用命令（一个命令返回一种属性，该属性将返回实现 [**ICommand**](T:System.Windows.Input.ICommand) 接口的对象）。 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 均适用于命令。 可使用 [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) 示例（位于“Common”文件夹中）中提供的 **DelegateCommand** 帮助程序类，这样便无需多次实现命令模式。
+事件绑定技术类似于实现和使用命令（一个命令返回一种属性，该属性将返回实现 [**ICommand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.icommand.aspx) 接口的对象）。 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 均适用于命令。 可使用 [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) 示例（位于“Common”文件夹中）中提供的 **DelegateCommand** 帮助程序类，这样便无需多次实现命令模式。
+
 
 ## 绑定到文件夹或文件集合
 
 你可以使用 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空间中的 API 来检索文件夹和文件数据。 然而，各种 **GetFilesAsync**、**GetFoldersAsync** 和 **GetItemsAsync** 方法都不会返回适合绑定到列表控件的值。 必须绑定到 [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501) 类的 [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422)、[**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428)和 [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) 方法的返回值。 下面的代码示例来自 [StorageDataSource 和 GetVirtualizedFilesVector 示例](http://go.microsoft.com/fwlink/p/?linkid=228621)，它将显示典型的使用模式。 请谨记在应用包清单中声明 **picturesLibrary** 功能，并确认你的 Pictures 库文件夹中有图片。
 
-``` csharp
+```csharp
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             var library = Windows.Storage.KnownFolders.PicturesLibrary;
@@ -489,7 +489,7 @@ MainPage.xaml
 下面的示例阐述了“包含组”模式。 页面类有一个名为 [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的属性，该属性将返回我们的视图模型的实例。 [
             **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 绑定到视图模型的 **Authors** 属性（**Authors** 是组对象的集合），还指定了它是包含分组项目的 **Author.BookSkus** 属性。 最后，[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 绑定到 **CollectionViewSource** 且具有其已定义的组样式，这样它便可以采用分组形式呈现项目。
 
-``` csharp
+```csharp
     <Page.Resources>
         <CollectionViewSource
         x:Name="AuthorHasACollectionOfBookSku"
@@ -514,7 +514,7 @@ MainPage.xaml
 
 下面的示例使用 [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) 阐述了“属于组”模式。 在本示例中我们按流派对书籍进行分组，并在组标题中显示流派名。 这由引用组 [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx) 的值的“Key”属性路径进行指示。
 
-``` csharp
+```csharp
     using System.Linq;
 
     ...
@@ -538,7 +538,7 @@ MainPage.xaml
 
 请记住，在将 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 用于数据模板时，需通过设置 **x:DataType** 值来指示要绑定到的类型。 如果类型是我们无法在标记中解释的泛型，则需要在组样式标头模板中改用 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-``` xml
+```xml
     <Grid.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
         Source="{Binding Genres}"
@@ -585,7 +585,7 @@ MainPage.xaml
 
 以下示例演示了如何使用代码实现绑定。
 
-``` xml
+```xml
 <TextBox x:Name="MyTextBox" Text="Text"/>
 ```
 
@@ -605,7 +605,7 @@ Binding binding = new Binding() { Path = new PropertyPath("Brush1") };
 MyTextBox.SetBinding(TextBox.ForegroundProperty, binding);
 ```
 
-``` vbnet
+```vbnet
 ' Create an instance of the MyColors class 
 ' that implements INotifyPropertyChanged. 
 Dim textcolor As New MyColors()
@@ -645,6 +645,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

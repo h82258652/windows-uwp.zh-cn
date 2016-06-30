@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
-description: 获取演示如何使用 Microsoft Advertising 库中 AdControl 和 InterstitialAd 类的属性、方法和事件的其他示例。
-title: 示例代码
+description: "获取演示如何使用 Microsoft Advertising 库中 AdControl 和 InterstitialAd 类的属性、方法和事件的其他示例。"
+title: "示例代码"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
+
 ---
 
 # 示例代码
@@ -36,6 +40,7 @@ title: 示例代码
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

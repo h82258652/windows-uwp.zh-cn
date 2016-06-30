@@ -1,6 +1,12 @@
 ---
-description: author: Xansky Windows.ApplicationModel.Contacts 命名空间提供了多个用于选择联系人的选项。
-title: 选择联系人 ms.assetid：35FEDEE6-2B0E-4391-84BA-5E9191D4E442 keywords:联系人, 选择 keywords:选择单个联系人 keywords:选择多个联系人 keywords:联系人, 选择多个 keywords:选择特定联系人数据 keywords:联系人, 选择特定数据 keywords:联系人, 选择特定字段
+author: Xansky
+description: "Windows.ApplicationModel.Contacts 命名空间提供了多个用来选择联系人的选项。"
+title: "选择联系人"
+ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
+keywords: contact, selecting specific fields
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8
+
 ---
 
 # 选择联系人
@@ -9,8 +15,7 @@ title: 选择联系人 ms.assetid：35FEDEE6-2B0E-4391-84BA-5E9191D4E442 keyword
 
 
 [
-              **Windows.ApplicationModel.Contacts**
-            ](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空间提供了多个用来选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。
+            **Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空间提供了多个用来选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。
 
 ## 设置联系人选取器
 
@@ -23,16 +28,15 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ## 设置选择模式（可选）
 
 默认情况下，联系人选取器检索用户选择的联系人的所有可用数据。 [
-              **SelectionMode**
-            ](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) 属性允许你将联系人选取器配置为仅检索你的应用所需的数据字段。 如果你只需要可用联系人数据的一个子集，那么更有效的方法是使用联系人选取器。
+            **SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 属性允许你将联系人选取器配置为仅检索你的应用所需的数据字段。 如果你只需要可用联系人数据的一个子集，那么更有效的方法是使用联系人选取器。
 
-首先，将 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) 属性设置为 **Fields**：
+首先，将 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 属性设置为 **Fields**：
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-然后，使用 [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) 属性指定你希望联系人选取器检索的字段。 该示例将联系人选取器配置为检索电子邮件地址：
+然后，使用 [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) 属性指定你希望联系人选取器检索的字段。 该示例将联系人选取器配置为检索电子邮件地址：
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
@@ -44,7 +48,7 @@ contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Con
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-如果你希望用户选择一个或多个联系人，请使用 [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync)。
+如果你希望用户选择一个或多个联系人，请使用 [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync)。
 
 ```cs
 public IList<Contact> contacts;
@@ -229,6 +233,6 @@ public class ContactItemAdapter
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

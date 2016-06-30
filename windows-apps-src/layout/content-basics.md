@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 任何应用的主要用途都是提供对内容的访问权限。 在照片编辑应用中，照片即是内容；在旅行应用中，地图和旅行目的地信息即是内容；等等。
-title: 通用 Windows 平台 (UWP) 应用的内容设计基础知识
+Description: "任何应用的主要用途都是提供对内容的访问权限。 在照片编辑应用中，照片即是内容；在旅行应用中，地图和旅行目的地信息即是内容；等等。"
+title: "通用 Windows 平台 (UWP) 应用的内容设计基础知识"
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
+
 ---
 
 #  UWP 应用的内容设计基础知识
@@ -118,6 +122,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

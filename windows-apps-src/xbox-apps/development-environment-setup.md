@@ -1,8 +1,11 @@
 ---
 author: Mtoepke
-title: 在 Xbox 开发环境上设置你的 UWP
-description: 在 Xbox 开发环境上设置和测试你的 UWP 的步骤。
+title: "在 Xbox 开发环境上设置你的 UWP"
+description: "在 Xbox 开发环境上设置和测试你的 UWP 的步骤。"
 area: Xbox
+ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
+ms.openlocfilehash: d56206f990e7885af4935401356bd3a2ce2cd292
+
 ---
 
 # 在 Xbox 开发环境上设置你的 UWP
@@ -23,9 +26,13 @@ Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接�
 
 ## Windows 10 SDK 安装程序
 
-安装 Windows 10 SDK 预览版 14295。 有关安装信息，请参阅[下载适用于开发人员的 Insider Preview 更新](http://go.microsoft.com/fwlink/p/?LinkId=780552)。
+安装最新的 Windows 10 SDK 预览版。 有关安装信息，请参阅[下载适用于开发人员的 Insider Preview 更新](http://go.microsoft.com/fwlink/p/?LinkId=780552)。
 
   > **重要提示** &nbsp;&nbsp;你需要安装最新的 SDK，但_不_需要安装操作系统的最新 Windows Insider Preview 版本。
+
+## 设置 Xbox One
+
+在将应用部署到你的 Xbox One 之前，必须先在该主机上进行用户登录。 可以使用你的现有 Xbox Live 帐户，也可以在开发人员模式中为你的主机创建一个新帐户。 
 
 ## 创建你的第一个应用程序
 
@@ -100,6 +107,7 @@ Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接�
 ----
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

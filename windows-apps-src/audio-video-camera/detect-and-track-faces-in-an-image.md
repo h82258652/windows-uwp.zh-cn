@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
-description: 本主题介绍如何使用 FaceDetector 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 FaceTracker。
-title: 检测图像或视频中的人脸
+description: "本主题介绍如何使用 FaceDetector 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 FaceTracker。"
+title: "检测图像或视频中的人脸"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
+
 ---
 
 # 检测图像或视频中的人脸
@@ -98,6 +102,7 @@ title: 检测图像或视频中的人脸
 * [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

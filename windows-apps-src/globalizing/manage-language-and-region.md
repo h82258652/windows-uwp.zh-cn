@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: 通过使用 Windows 提供的各种语言和区域设置，控制 Windows 如何选择 UI 资源和设置应用的 UI 元素的格式。
-title: 管理语言和区域
+Description: "通过使用 Windows 提供的各种语言和区域设置，控制 Windows 如何选择 UI 资源和设置应用的 UI 元素的格式。"
+title: "管理语言和区域"
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 label: Manage language and region
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 294f087fffeefda67ddacd09636915144bf18ff4
+
 ---
 
 # 管理语言和区域
@@ -222,6 +226,7 @@ Windows 以一个标准的易于理解的方式排定语言匹配的优先顺序
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

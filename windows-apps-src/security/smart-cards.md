@@ -1,8 +1,12 @@
 ---
-title: 智能卡
-description: 本主题介绍了通用 Windows 平台 (UWP) 应用如何使用智能卡将用户连接到安全网络服务，包括如何访问物理智能卡读卡器、创建虚拟智能卡、与智能卡通信、对用户进行身份验证、重置用户 PIN 及移除智能卡或断开智能卡连接。
+title: "智能卡"
+description: "本主题介绍了通用 Windows 平台 (UWP) 应用如何使用智能卡将用户连接到安全网络服务，包括如何访问物理智能卡读卡器、创建虚拟智能卡、与智能卡通信、对用户进行身份验证、重置用户 PIN 及移除智能卡或断开智能卡连接。"
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce
+
 ---
 
 # 智能卡
@@ -21,7 +25,7 @@ author: awkoren
 ## 访问连接的卡读取器和智能卡
 
 
-你可以通过向 [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) 方法传递设备 ID（在 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 中指定）来查询读取器和连接的智能卡。 若要访问当前连接到返回的读取器设备的智能卡，请调用 [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887)
+你可以通过向 [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) 方法传递设备 ID（在 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 中指定）来查询读取器和连接的智能卡。 若要访问当前连接到返回的读取器设备的智能卡，请调用 [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887)。
 
 ```cs
 string selector = SmartCardReader.GetDeviceSelector();
@@ -55,11 +59,11 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 ## 创建虚拟智能卡
 
 
-若要使用 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 创建虚拟智能卡，你的应用将首先需要提供一个昵称、一个管理员密钥和一个 [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)。 昵称一般向应用提供，但你的应用将仍需要提供一个管理员密钥并生成一个当前 **SmartCardPinPolicy** 的实例，然后才能将所有三个值传递到 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)
+若要使用 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 创建虚拟智能卡，你的应用将首先需要提供一个昵称、一个管理员密钥和一个 [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)。 昵称一般向应用提供，但你的应用将仍需要提供一个管理员密钥并生成一个当前 **SmartCardPinPolicy** 的实例，然后才能将所有三个值传递到 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)。
 
 1.  新建 [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642) 的实例
 2.  通过调用由该服务或管理工具提供的管理密钥值上的 [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) 来生成管理密钥值。
-3.  将这些值与 *FriendlyNameText* 字符串一起传递到 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)
+3.  将这些值与 *FriendlyNameText* 字符串一起传递到 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)。
 
 ```cs
 SmartCardPinPolicy pinPolicy = new SmartCardPinPolicy();
@@ -75,7 +79,7 @@ SmartCardProvisioning provisioning = await
 ```
 
 [
-            **RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) 返回关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象之后，将预配虚拟智能卡并且为使用做好准备。
+            **RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) 返回关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象之后，将设置虚拟智能卡并且为使用做好准备。
 
 ## 处理身份验证质询
 
@@ -139,7 +143,7 @@ using (SmartCardChallengeContext context =
 
 1.  访问该卡并生成关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象。
 2.  调用 [**RequestPinChangeAsync**](https://msdn.microsoft.com/library/windows/apps/dn263823) 来向用户显示 UI 以完成此操作。
-3.  如果 PIN 成功更改，调用将返回 **true**
+3.  如果 PIN 成功更改，调用将返回 **true**。
 
 ```cs
 SmartCardProvisioning provisioning =
@@ -148,7 +152,7 @@ SmartCardProvisioning provisioning =
 bool result = await provisioning.RequestPinChangeAsync();
 ```
 
-若要请求 PIN，请执行以下操作：
+请求 PIN 重置的步骤：
 
 1.  调用 [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 以启动操作。 此调用包括一个表示智能卡和 PIN 重置请求的 [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 方法。
 2.  [
@@ -201,6 +205,7 @@ bool result = await SmartCardProvisioning
     .RequestVirtualSmartCardDeletionAsync(card);
 ```
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

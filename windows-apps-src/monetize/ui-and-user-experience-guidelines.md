@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
-description: 了解应用中广告的 UI 和用户体验指南。
-title: 应用中广告的 UI 和用户体验指南
+description: "了解应用中广告的 UI 和用户体验指南。"
+title: "应用中广告的 UI 和用户体验指南"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
+
 
 ---
 
@@ -138,6 +142,7 @@ title: 应用中广告的 UI 和用户体验指南
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: DirectX 和 XAML 互操作
-description: 你可以在通用 Windows 平台 (UWP) 游戏中同时使用 Extensible Application Markup Language (XAML) 和 Microsoft DirectX。
+title: "DirectX 和 XAML 互操作"
+description: "你可以在通用 Windows 平台 (UWP) 游戏中同时使用 Extensible Application Markup Language (XAML) 和 Microsoft DirectX。"
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 97e694ae2fb8af30a35aa9ebdb714db50a506e6c
+
 ---
 
 # DirectX 和 XAML 互操作
@@ -37,7 +41,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 
 -   如果图像比所提供的屏幕空间更大，并且可由用户平移或缩放，可以使用 [**Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050)。 此类型处理一个比屏幕更大的特定大小 DirectX 绘图图面。 像 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 一样，你可以在动态创作复杂图像或控件时使用它。 而且，也像 **SurfaceImageSource** 一样，它不太适合高性能游戏。 可使用 **VirtualSurfaceImageSource** 的一些 XAML 元素示例包括地图控件，或者大型的、包含大量图像的文档查看器。
 
--   如果你使用 DirectX 提供实时更新的图形，或者在必须以低延迟的定期间隔更新的情况下，可以使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 类，这样你无需同步到 XAML 框架刷新计时器即可刷新图形。 此类型使你能够直接访问图形设备的交换链 ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631))，将 XAML 放在呈现目标之上。 此类型很适合需要基于 XAML 的用户界面的游戏和其他全屏 DirectX 应用。 若要使用此方法，必须先熟悉 DirectX，包括 Microsoft DirectX 图形基础结构 (DXGI)、Direct2D 和 Direct3D 技术。 有关详细信息，请参阅 [Direct3D 11 编程指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)
+-   如果你使用 DirectX 提供实时更新的图形，或者在必须以低延迟的定期间隔更新的情况下，可以使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 类，这样你无需同步到 XAML 框架刷新计时器即可刷新图形。 此类型使你能够直接访问图形设备的交换链 ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631))，将 XAML 放在呈现目标之上。 此类型很适合需要基于 XAML 的用户界面的游戏和其他全屏 DirectX 应用。 若要使用此方法，你必须熟悉 DirectX，包括 Microsoft DirectX 图形基础结构 (DXGI)、Direct2D 和 Direct3D 技术。 有关详细信息，请参阅 [Direct3D 11 编程指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)。
 
 ## SurfaceImageSource
 
@@ -89,11 +93,11 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 
 4.  将 [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 对象的指针提供给 [**ISurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323)，并使用 DirectX 绘入该图面。 仅绘制在 *updateRect* 参数中指定的更新区域。
 
-    > **注意** 对于每个 [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527)，一次只能有一个未处理的 [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作活动
+    > **注意** 对于每个 [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527)，一次只能有一个未处理的 [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作活动。
 
      
 
-    此方法在 *offset* 参数中返回更新的目标矩形的点 (x,y) 偏移。 使用此偏移确定在 [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 内的何处绘制
+    此方法在 *offset* 参数中返回更新的目标矩形的点 (x,y) 偏移。 使用此偏移确定在 [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 内的何处绘制。
 
     ```cpp
     ComPtr<IDXGISurface> surface;
@@ -109,7 +113,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
     }
     ```
 
-5.  调用 [**ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) 完成此位图。 将此位图传递到 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101)
+5.  调用 [**ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) 完成此位图。 将此位图传递到 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101)。
 
     ```cpp
     m_sisNative->EndDraw();
@@ -174,7 +178,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
     m_vsisNative->SetDevice(dxgiDevice.Get());
     ```
 
-4.  调用 [**IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848334)，传入对 [**IVirtualSurfaceUpdatesCallbackNative**](https://msdn.microsoft.com/library/windows/desktop/hh848336) 实现的引用
+4.  调用 [**IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848334)，传入对 [**IVirtualSurfaceUpdatesCallbackNative**](https://msdn.microsoft.com/library/windows/desktop/hh848336) 实现的引用。
 
     ```cpp
     class MyContentImageSource : public IVirtualSurfaceUpdatesCallbackNative
@@ -235,9 +239,9 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 
     1.  将 [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 对象的指针提供给 [**IVirtualSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323)，并使用 DirectX 绘入该图面。 将仅绘制在 *updateRect* 参数中指定的更新区域。
 
-        和 [**IlSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 一样，此方法在 *offset* 参数中返回更新的目标矩形的点 (x,y) 偏移。 使用此偏移确定在 [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 内的何处绘制
+        和 [**IlSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 一样，此方法在 *offset* 参数中返回更新的目标矩形的点 (x,y) 偏移。 使用此偏移确定在 [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 内的何处绘制。
 
-        > **注意** 对于每个 [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527)，一次只能有一个未处理的 [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作活动
+        > **注意** 对于每个 [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527)，一次只能有一个未处理的 [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作活动。
 
          
 
@@ -271,24 +275,24 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 -   [
             **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 继承的 **Opacity**、**RenderTransform**、**Projection** 和 **Clip** 属性不受支持。
 -   你应该将 DirectX 交换链的高度和宽度（在 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为应用窗口的当前尺寸。 如果不这么做，将缩放显示内容（使用 **DXGI\_SCALING\_STRETCH**）以适合它。
--   必须将 DirectX 交换链的缩放模式（在 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为 **DXGI\_SCALING\_STRETCH**
--   不能将 DirectX 交换链的 alpha 模式（在 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为 **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**
--   必须调用 [**IDXGIFactory2::CreateSwapChainForComposition**](https://msdn.microsoft.com/library/windows/desktop/hh404558) 来创建 DirectX 交换链
+-   必须将 DirectX 交换链的缩放模式（在 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为 **DXGI\_SCALING\_STRETCH**。
+-   不能将 DirectX 交换链的 alpha 模式（在 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为 **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**。
+-   必须调用 [**IDXGIFactory2::CreateSwapChainForComposition**](https://msdn.microsoft.com/library/windows/desktop/hh404558) 来创建 DirectX 交换链。
 
-基于应用的需求来更新 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)，而不是 XAML 框架的更新。 如果需要将 **SwapChainPanel** 的更新与 XAML 框架的更新同步，可以注册 [**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](https://msdn.microsoft.com/library/windows/apps/br228127) 事件。 否则，如果尝试通过与更新 **SwapChainPanel** 的线程不同的线程更新 XAML 元素，则必须考虑所有跨线程问题
+你基于应用的需求来更新 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)，而不是 XAML 框架的更新。 如果需要将 **SwapChainPanel** 的更新与 XAML 框架的更新同步，可以注册 [**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](https://msdn.microsoft.com/library/windows/apps/br228127) 事件。 否则，如果尝试通过与更新 **SwapChainPanel** 的线程不同的线程更新 XAML 元素，则必须考虑任何跨线程问题。
 
-设计应用以使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 时，还需要遵守一些一般性最佳做法
+设计应用使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 时，还需要遵守一些一般性最佳做法。
 
 -   [
             **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 继承自 [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 且支持类似的布局行为。 你需要熟悉 **Grid** 类型及其属性。
 
--   设置 DirectX 交换链后，需要触发所有输入事件，[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 才能像针对任何其他 XAML 元素一样运行。 你没有为 **SwapChainPanel** 设置背景画笔，并且无需直接通过应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象处理输入事件，就像在不使用 **SwapChainPanel** 的 DirectX 应用中一样
+-   设置 DirectX 交换链后，需要触发所有输入事件，[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 才能像针对任何其他 XAML 元素一样运行。 你没有为 **SwapChainPanel** 设置背景画笔，并且无需直接通过应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象处理输入事件，就像在不使用 **SwapChainPanel** 的 DirectX 应用中一样。
 
 -   • [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 的一个直接子项下的可视 XAML 元素树的所有内容会裁剪为 **SwapChainPanel** 对象的直接子项的布局大小。 任何转换到这些布局边界外部的内容都不会呈现。 因此，请将你使用 XAML [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 设置动画效果的所有 XAML 内容放在一个元素下的可视树中，并且这个元素布局边界要足够大，以包含完整的动画范围。
 
 -   限制一个 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 下的直接可视 XAML 元素的数量。 如果可能，将临近的元素分组到一个通用父元素下。 但需要根据性能要求权衡直接可视子项数量与子项的大小：太多或太大的 XAML 元素可能影响总体性能。 类似地，不要为应用的 **SwapChainPanel** 创建单个全屏子 XAML 元素，因为这会增加应用中的过度绘制并降低性能。 作为一条规则，不要为应用的 **SwapChainPanel** 创建多于 8 个直接 XAML 可视子项，并且每个元素的布局大小只需能包含元素的可视内容即可。 但是，可以使 **SwapChainPanel** 的一个子元素下的可视元素树非常复杂，而不会过度降低性能。
 
-> **注意** 通常，你的 DirectX 应用应当在横向创建交换链，并等于显示窗口大小（这在大多数 Windows 应用商店游戏中通常为本机屏幕分辨率）。 这可确保你的应用在没有任何可见 XAML 覆盖时使用最佳交换链实现。 如果应用旋转到纵向模式，你的应用应在现有交换链上调用 [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801)，根据需要应用内容转换，然后在同一交换链上再次调用 [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144)。 类似地，每当通过调用 [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 调整了交换链的大小时，你的应用都应当再次在同一交换链上调用**SetSwapChain**
+> **注意** 通常，你的 DirectX 应用应当在横向创建交换链，并等于显示窗口大小（这在大多数 Windows 应用商店游戏中通常为本机屏幕分辨率）。 这可确保你的应用在没有任何可见 XAML 覆盖时使用最佳交换链实现。 如果应用旋转到纵向模式，你的应用应在现有交换链上调用 [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801)，根据需要应用内容转换，然后在同一交换链上再次调用 [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144)。 类似地，每当通过调用 [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 调整了交换链的大小时，你的应用都应当再次在同一交换链上调用**SetSwapChain**。
 
  
 
@@ -318,7 +322,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
     panelInspectable->QueryInterface(__uuidof(ISwapChainPanelNative), (void **)&m_swapChainNative);
     ```
 
-3.  创建 DXGI 设备和交换链，并将交换链设置为 [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143)，方法是将它传递给 [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144)
+3.  创建 DXGI 设备和交换链，并将交换链设置为 [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143)，方法是将它传递给 [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144)。
 
     ```cpp
     Microsoft::WRL::ComPtr<IDXGISwapChain1>               m_swapChain;    
@@ -384,6 +388,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

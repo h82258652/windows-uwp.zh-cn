@@ -1,7 +1,11 @@
 ---
-title: 通过 Web 帐户管理器连接到标识提供者
-description: 本文将介绍如何通过新的 Windows 10 Web 帐户管理器 API，使用 AccountsSettingsPane 将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。 
+title: "通过 Web 帐户管理器连接到标识提供者"
+description: "本文将介绍如何通过新的 Windows 10 Web 帐户管理器 API，使用 AccountsSettingsPane 将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: c9f6a0183edc3c01566311360417c256329ef904
+ms.openlocfilehash: 6ab12d6da9c4858cf6ab16d4143cf073bb0cb275
+
 ---
 # 通过 Web 帐户管理器连接到标识提供者
 
@@ -383,6 +387,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 [WebAccountManagement 示例](http://go.microsoft.com/fwlink/p/?LinkId=620621)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
 author: awkoren
-Description: 使用桌面转换扩展部署和调试从 Windows 桌面应用程序（Win32、WPF 和 Windows 窗体）转换的通用 Windows 平台 (UWP) 应用。
+Description: "使用桌面转换扩展部署和调试从 Windows 桌面应用程序（Win32、WPF 和 Windows 窗体）转换的通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
-title: 部署和调试从 Windows 桌面应用程序转换的通用 Windows 平台 (UWP) 应用
+title: "部署和调试从 Windows 桌面应用程序转换的通用 Windows 平台 (UWP) 应用"
+ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
+ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
+
 ---
 
 # 部署和调试转换的 UWP 应用 (Project Centennial)
@@ -176,6 +179,8 @@ Visual Studio 现在支持新的打包项目，可使你将在生成应用程序
 
 如果你尝试在未导入你所创建的证书的计算机上运行 Add-AppxPackage cmdlet，则你将收到错误。
 
+在你部署应用前，你将需要使用证书对其进行签名。 有关创建证书的信息，请参阅[对 .Appx 程序包进行签名](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx)。 
+
 下面介绍如何导入你之前创建的证书。 你可以直接安装它，或者可以从你已签名的 appx 中安装它，就像客户所做的那样。
 1.  在“文件资源管理器”中，右键单击你已使用测试证书签名的 appx，然后从上下文菜单中选择“属性”****。
 2.  单击或点击“数字签名”****选项卡。
@@ -188,8 +193,6 @@ Visual Studio 现在支持新的打包项目，可使你将在生成应用程序
 9.  单击或点击“浏览”****。 在“选择证书存储”窗口中，向下滚动并选择“受信任人”****，然后单击或点击“确定”****。
 10. 单击或点击“下一步”****。 将出现新屏幕。 单击或点击“完成”****。
 11. 应出现确认对话框。 如果出现，请单击“确定”****。 如果出现另一个指示证书存在问题的对话框，则可能需要执行某些证书疑难解答操作。
-
-### 其他信息
 
 若要使 Windows 信任证书，证书必须位于“证书(本地计算机)”&gt;“受信任根证书颁发机构”&gt;“证书”****节点或“证书(本地计算机)”&gt;“受信任人”&gt;“证书”****节点中。 仅这两个位置中的证书可以在本地计算机的上下文中验证证书信任。 否则，将显示类似于以下字符串的错误消息：
 ```CMD
@@ -207,7 +210,16 @@ in the app package must be trusted."
 
 在一个名为 VFS 的文件夹内，你将看到包含你的应用具有依赖项的 DLL 的文件夹。 对于应用的经典桌面版本，这些 DLL 将安装到系统文件夹中。 但是，作为 UWP 应用，DLL 位于应用本地。 这样，在安装和卸载 UWP 应用时不会有版本控制问题。
 
+## 另请参阅
+[将桌面应用程序转换为通用 Windows 平台 (UWP) 应用](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
 
-<!--HONumber=May16_HO2-->
+[桌面应用转换器预览 (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+
+[将 Windows 桌面应用程序手动转换为通用 Windows 平台 (UWP) 应用](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+
+[GitHub 上的 UWP 代码示例的桌面应用桥](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+
+
+<!--HONumber=Jun16_HO4-->
 
 

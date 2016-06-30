@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 将阴影映射呈现到深度缓冲区
-description: 从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。
+title: "将阴影映射呈现到深度缓冲区"
+description: "从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。"
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 644e2084baa750965a5283208fde1cea24ecfdea
+
 ---
 
 # 将阴影映射呈现到深度缓冲区
@@ -152,6 +156,7 @@ PixelShaderInput main(VertexShaderInput input)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

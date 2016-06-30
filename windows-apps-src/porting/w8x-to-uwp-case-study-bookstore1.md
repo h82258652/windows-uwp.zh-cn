@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
+title: "Windows 运行时 8.x 到 UWP 案例研究：Bookstore1"
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-description: 本主题介绍将一个非常简单的通用 8.1 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
+description: "本主题介绍将一个非常简单的通用 8.1 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 43536aacb37a79b3e8507896474be67423a0b9fe
+
 ---
 
 # Windows 运行时 8.x 到 UWP 案例研究：Bookstore1
@@ -124,6 +128,7 @@ Bookstore1\_81 应用使用了两个不同的资源词典 (BookstoreStyles.xaml)
 下一个案例研究是 [Bookstore2](w8x-to-uwp-case-study-bookstore2.md)，我们将从中了解访问和显示分组数据。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

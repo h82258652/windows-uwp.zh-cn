@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。
-MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_theme\_resources'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。"
+MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: XAML 主题资源
+title: "XAML 主题资源"
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
+
 ---
 
 # XAML 主题资源
@@ -438,6 +442,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

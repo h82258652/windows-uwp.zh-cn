@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: '本主题介绍了如何在企业数据保护 (EDP) 方案中创建网络连接之前创建受保护的线程上下文。'
-MS-HAID: 'dev\_networking.tagging\_network\_connections\_with\_edp\_identity'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "本主题介绍了如何在企业数据保护 (EDP) 方案中创建网络连接之前创建受保护的线程上下文。"
+MS-HAID: dev\_networking.tagging\_network\_connections\_with\_edp\_identity
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 使用 EDP 标识标记网络连接
+title: "使用 EDP 标识标记网络连接"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2b960bbb5cf58991778e5c20bb915a202ecf6e04
+
 ---
 
 # 使用 EDP 标识标记网络连接
@@ -125,6 +129,7 @@ public static async void SyncMailbox(string identity)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
 author: jwmsft
-description: 列出用于 Windows 运行时的 XAML 中对公共语言运行时 (CLR) 或 C++ 等其他编程语言中某些数据类型的语言级支持。
-title: XAML 固有数据类型
+description: "列出用于 Windows 运行时的 XAML 中对公共语言运行时 (CLR) 或 C++ 等其他编程语言中某些数据类型的语言级支持。"
+title: "XAML 固有数据类型"
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
+ms.sourcegitcommit: 60e328ca8652baeb226e78f5a9d99fbf8c4f5208
+ms.openlocfilehash: 479b900ca14497712f25a7825fde6775a3c1ab60
+
 ---
 
 # XAML 固有数据类型
@@ -15,7 +18,12 @@ XAML 固有数据类型在使用上的最大共同点体现于资源在 XAML 资
 
 用于 Windows 运行时的 XAML 提供了对以下类型的语言级支持。
 
-| XAML primitive | Description | | **x:Boolean** | 对于 CLR 支持来说，原语对应于 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)。 XAML 分析 **x:Boolean** 的值时区分大小写。 请注意，“x:Bool”不是可接受的替代原语。 | | **x:String** | 对于 CLR 支持来说，原语对应于 [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)。 对字符串的编码默认采用包围 XML 编码。 | | **x:Double** | 对于 CLR 支持来说，原语对应于 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 除了数字值，**x:Double** 的文本语法支持令牌“NaN”，这是将布局行为的“Auto”存储为资源值的方式。 对这些令牌的处理区分大小写。 你可以使用科学计数法，例如将 `1,000,000` 记为“1+E06”。 | | **x:Int32** | 对于 CLR 支持来说，原语对应于 [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)。 **x:Int32** 被视为带有符号，你可以为负整数包含减号（“-”）。 在 XAML 中，文本语法中缺少符号表示有符号正值。 |
+| XAML 原语 | 描述 |
+|-------|-------------|
+| **x:Boolean**  | 对于 CLR 支持，对应于 [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx)。 XAML 分析 **x:Boolean** 的值时区分大小写。 请注意，“x:Bool”不是可接受的替代原语。 |
+| **x:String**   | 对于 CLR 支持来说，原语对应于 [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)。 对字符串的编码默认采用包围 XML 编码。 |
+| **x:Double**   | 对于 CLR 支持，对应于 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 除了数字值，**x:Double** 的文本语法支持令牌“NaN”，这是将布局行为的“Auto”存储为资源值的方式。 对这些令牌的处理区分大小写。 你可以使用科学计数法，例如将 `1,000,000` 记为“1+E06”。 |
+| **x:Int32**    | 对于 CLR 支持，对应于 [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)。 **x:Int32** 被视为带有符号，你可以为负整数包含减号（“-”）。 在 XAML 中，文本语法中缺少符号表示有符号正值。 |
 
 这些 XAML 语言原语一般是在 XAML 中定义使用 **x:** 前缀的对象元素的唯一情形。 所有其他 XAML 语言特性通常以属性或标记扩展的形式使用。
 
@@ -36,6 +44,7 @@ XAML 2009 规范还介绍了其他 XAML 语言级原语，例如 **x:Uri** 和 *
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
-description: 本文介绍如何使用 Windows.Media.Audio 命名空间中的 API 来创建音频路由、混合和处理方案的音频图。
-title: 音频图
+description: "本文介绍如何使用 Windows.Media.Audio 命名空间中的 API 来创建音频路由、混合和处理方案的音频图。"
+title: "音频图"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7e8df66a1fc4c95cb8b0b4be9eded8ef58b6803a
+
 ---
 
 # 音频图
@@ -50,7 +54,7 @@ Windows 运行时音频图 API 提供也可通过使用基于 COM 的 [XAudio2 A
 -   如果你仅计划将音频图和文件结合使用，而并不打算输出到音频设备，建议你不设置 [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) 属性而使用默认量子大小。
 -   [
             **DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) 属性确定主呈现设备量对音频图输出执行的处理量。 **Default** 设置允许系统针对指定的音频呈现类别使用默认音频处理。 此处理可以明显地改善音频在某些设备上的声音，尤其是配备小型扬声器的移动设备。 **Raw** 设置可以通过尽量减少执行的信号处理量来提高性能，但会导致某些设备上的声音质量变差。
--   如果 [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) 设置为 **LowestLatency**，则音频图会自动将 **Raw** 用于 [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522)
+-   如果 [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) 设置为 **LowestLatency**，则音频图会自动将 **Raw** 用于 [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522)。
 -   [
             **EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) 确定音频图所使用的音频格式。 仅支持 32 位浮点格式。
 -   [
@@ -69,7 +73,7 @@ Windows 运行时音频图 API 提供也可通过使用基于 COM 的 [XAudio2 A
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-如果要为设备输入节点指定特定音频呈现设备，可以通过调用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 并传入由 [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) 返回的音频呈现设备选择器，使用 [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 类来获取系统的可用音频捕获设备列表。 你可以采用编程方式选择返回的 **DeviceInformation** 对象之一，或显示 UI 以允许用户选择某台设备，然后将其传递到 [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) 中
+如果要为设备输入节点指定特定音频呈现设备，可以通过调用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 并传入由 [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) 返回的音频呈现设备选择器，使用 [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 类来获取系统的可用音频捕获设备列表。 你可以以编程方式选择返回的 **DeviceInformation** 对象之一，或显示 UI 以允许用户选择某台设备，然后将其传递到 [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) 中。
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
@@ -83,7 +87,7 @@ Windows 运行时音频图 API 提供也可通过使用基于 COM 的 [XAudio2 A
 
 ##  文件输入节点
 
-文件输入节点允许你将音频文件中的数据送入音频图。 通过调用 [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914226) 创建 [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108)
+文件输入节点允许你将音频文件中的数据送入音频图。 通过调用 [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914226) 创建 [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108)。
 
 [!code-cs[DeclareFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileInputNode)]
 
@@ -98,7 +102,7 @@ Windows 运行时音频图 API 提供也可通过使用基于 COM 的 [XAudio2 A
 
 ##  文件输出节点
 
-可以使用文件输出节点将音频图中的音频数据定向到音频文件中。 通过调用 [**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227) 创建 [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133)
+可以使用文件输出节点将音频图中的音频数据定向到音频文件中。 通过调用 [**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227) 创建 [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133)。
 
 [!code-cs[DeclareFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileOutputNode)]
 
@@ -110,7 +114,7 @@ Windows 运行时音频图 API 提供也可通过使用基于 COM 的 [XAudio2 A
 
 ##  音频帧输入节点
 
-音频帧输入节点允许你将使用自己的代码生成的音频数据推送到音频图中。 这可实现创建自定义软件合成器等方案。 通过调用 [**CreateFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914230) 创建 [**AudioFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914147)
+音频帧输入节点允许你将使用自己的代码生成的音频数据推送到音频图中。 这可实现创建自定义软件合成器等方案。 通过调用 [**CreateFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914230) 创建 [**AudioFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914147)。
 
 [!code-cs[DeclareFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameInputNode)]
 
@@ -135,14 +139,14 @@ Windows 运行时音频图 API 提供也可通过使用基于 COM 的 [XAudio2 A
 
 -   因为此方法可访问含有基础 Windows 运行时类型的原始缓冲区，所以必须使用 **unsafe** 关键字进行声明。 你还必须使用 Microsoft Visual Studio 配置你的项目，以允许通过以下操作编译不安全的代码：打开项目的**“属性”**页面、单击**“生成”**属性页，然后选中**“允许不安全代码”**复选框。
 -   通过将所需的缓冲区大小传入构造函数，在 **Windows.Media** 命名空间中初始化 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 的新实例。 缓冲区大小等于样本数乘以每个样本的大小。
--   通过调用 [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878) 获取音频帧的 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)
--   通过调用 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457) 从音频缓冲区获取 [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM 接口的实例
+-   通过调用 [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878) 获取音频帧的 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)。
+-   通过调用 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457) 从音频缓冲区获取 [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM 接口的实例。
 -   通过调用 [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) 获取指向原始音频缓冲区数据的指针，并将其转换为音频数据的样本数据类型。
 -   使用数据填充缓冲区并返回 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 以提交到音频图中。
 
 ##  音频帧输出节点
 
-音频帧输出节点允许你使用你创建的自定义代码来接收和处理来自音频图的音频数据输出。 其示例方案是：对音频输出执行信号分析。 通过调用 [**CreateFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914233) 创建 [**AudioFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914166)
+音频帧输出节点允许你使用你创建的自定义代码来接收和处理来自音频图的音频数据输出。 其示例方案是：对音频输出执行信号分析。 通过调用 [**CreateFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914233) 创建 [**AudioFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914166)。
 
 [!code-cs[DeclareFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameOutputNode)]
 
@@ -158,8 +162,8 @@ Windows 运行时音频图 API 提供也可通过使用基于 COM 的 [XAudio2 A
 [!code-cs[ProcessFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetProcessFrameOutput)]
 
 -   与上述音频帧输入节点示例类似，你将需要声明 **IMemoryBufferByteAccess** COM 接口并将你的项目配置为允许不安全代码，才能访问基础音频缓冲区。
--   通过调用 [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878) 获取音频帧的 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)
--   通过调用 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457) 从音频缓冲区获取 **IMemoryBufferByteAccess** COM 接口的实例
+-   通过调用 [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878) 获取音频帧的 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)。
+-   通过调用 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457) 从音频缓冲区获取 **IMemoryBufferByteAccess** COM 接口的实例。
 -   通过调用 **IMemoryBufferByteAccess.GetBuffer** 获取指向原始音频缓冲区数据的指针，并将其转换为音频数据的样本数据类型。
 
 ## 节点连接和子混合节点
@@ -212,6 +216,7 @@ Windows 运行时音频图 API 提供也可通过使用基于 COM 的 [XAudio2 A
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

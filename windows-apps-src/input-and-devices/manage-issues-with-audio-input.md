@@ -5,8 +5,8 @@ title: "管理音频输入问题"
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 6dcab14a290367250e152fb8a1944a924d5aaf46
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 4f926969b5f9f20de904aeaf749e69c0ded3c052
 
 ---
 
@@ -23,7 +23,7 @@ ms.openlocfilehash: 6dcab14a290367250e152fb8a1944a924d5aaf46
 
 
 
-## <span id="Assess_audio-input_quality"></span><span id="assess_audio-input_quality"></span><span id="ASSESS_AUDIO-INPUT_QUALITY"></span>评估音频输入质量
+## 评估音频输入质量
 
 
 当语音识别处于活动状态时，使用语音识别器的 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件，确定一个或多个音频问题是否会干扰语音输入。 事件参数 ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) 可提供 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 属性，该属性描述了检测到的音频输入问题。
@@ -62,7 +62,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Manage_the_speech-recognition_experience"></span><span id="manage_the_speech-recognition_experience"></span><span id="MANAGE_THE_SPEECH-RECOGNITION_EXPERIENCE"></span>管理语音识别体验
+## 管理语音识别体验
 
 
 使用由 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 属性提供的说明可帮助用户改善识别的条件。
@@ -102,7 +102,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 
 * [语音交互](speech-interactions.md)
@@ -119,6 +119,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

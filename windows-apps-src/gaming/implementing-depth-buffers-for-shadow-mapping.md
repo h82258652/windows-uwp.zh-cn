@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷
-description: 本操作实例演示如何使用深度映射呈现阴影卷，并在所有 Direct3D 功能级别的设备上使用 Direct3D 11。
+title: "操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷"
+description: "本操作实例演示如何使用深度映射呈现阴影卷，并在所有 Direct3D 功能级别的设备上使用 Direct3D 11。"
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4bb1f5c71d83b2dc3271b5b2ceaa9a1156b00004
+
 ---
 
 # 操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷
@@ -85,6 +89,7 @@ Windows 8 为功能级别 9\_1 和 9\_3 添加了深度比较功能。 现在，
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

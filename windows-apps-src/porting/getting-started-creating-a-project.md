@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 08C8F359-E8B6-4A45-8F4B-8A1962F0CE38
-description: Microsoft Visual Studio 与 Windows 的关系就像 Xcode 与 iOS 和 Mac OS 的关系一样。 在本演练中，我们将帮助你熟悉如何使用 Visual Studio。
-title: 在 Visual Studio 中创建项目
+description: "Microsoft Visual Studio 与 Windows 的关系就像 Xcode 与 iOS 和 Mac OS 的关系一样。 在本演练中，我们将帮助你熟悉如何使用 Visual Studio。"
+title: "在 Visual Studio 中创建项目"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 23d9ed066e2909a15b3106fd19bf6ce5ab09e7a9
+
 ---
 
 # 入门：创建项目
@@ -51,6 +55,7 @@ Visual Studio 与此非常相似。 你将看到“起始页”****，如下图�
 [入门：选择一种编程语言](getting-started-choosing-a-programming-language.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

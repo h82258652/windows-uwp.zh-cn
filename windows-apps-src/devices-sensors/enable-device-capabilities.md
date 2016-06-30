@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
-title: 启用设备功能
-description: 本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。
+title: "启用设备功能"
+description: "本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。"
+translationtype: Human Translation
+ms.sourcegitcommit: 512b89027f6b707de346fffe104f165074fabcea
+ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
+
 ---
 # 启用设备功能
 
@@ -73,6 +77,7 @@ description: 本教程介绍如何在 Microsoft Visual Studio 中声明设备功
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

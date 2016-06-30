@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
-title: 优化 XAML 标记
-description: 在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以采取以下措施为你的应用提高 XAML 标记分析和加载时间以及内存效率。
+title: "优化 XAML 标记"
+description: "在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以采取以下措施为你的应用提高 XAML 标记分析和加载时间以及内存效率。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c2131b084d8bb989f1f7767f54db697e1cdd8dcf
+
 ---
 # 优化 XAML 标记
 
@@ -104,7 +108,7 @@ description: 在内存中分析构造对象的 XAML 标记对于复杂的 UI 而
 
 ## 将看起来相同的多个画笔整合到一个资源中
 
-XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这些对象。 但是，XAML 难以判断在一部分标记中声明的画笔是否与在另一部分的标记中声明的画笔相同。 此处的示例使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 进行演示，但使用 [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068) 的情况可能性更大也更为重要
+XAML 平台将尝试缓存常用对象，这样可以尽可能经常地重用这些对象。 但是，XAML 难以判断在一部分标记中声明的画笔是否与在另一部分的标记中声明的画笔相同。 此处的示例使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 进行演示，但使用 [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068) 的情况可能性更大也更为重要。
 
 **低效。**
 
@@ -286,6 +290,7 @@ XBF2 是在运行时避免所有文本分析成本的 XAML 标记的二进制表
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
-title: 获取文件属性
-description: 获取由 StorageFile 对象表示的文件属性&amp;\#8212;顶级、基本和扩展&amp;\#8212;。
+title: "获取文件属性"
+description: "获取由 StorageFile 对象表示的文件属性&amp;\\#8212;顶级、基本和扩展&amp;\\#8212;。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
+
 ---
 # 获取文件属性
 
@@ -136,6 +140,7 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

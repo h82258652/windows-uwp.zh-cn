@@ -6,8 +6,8 @@ ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: 0f2e95146281fb992af1201c408ed62705c77741
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: cdef00304e1835532eceb8e51fecc8045f2ff300
 
 ---
 
@@ -29,7 +29,7 @@ ISF 为墨迹的最紧凑持续表现形式。 该格式可以嵌入到二进制
 
  
 
-## <span id="Save_ink_strokes_to_a_file"></span><span id="save_ink_strokes_to_a_file"></span><span id="SAVE_INK_STROKES_TO_A_FILE"></span>将笔划墨迹保存到文件
+## 将笔划墨迹保存到文件
 
 
 在此，我们展示如何保存在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件上绘制的笔划墨迹。
@@ -163,7 +163,7 @@ GIF 是保存墨迹数据的唯一支持格式。 但是，[**LoadAsync**](https
 
  
 
-## <span id="Load_ink_strokes_from_a_file"></span><span id="load_ink_strokes_from_a_file"></span><span id="LOAD_INK_STROKES_FROM_A_FILE"></span>从文件加载笔划墨迹
+## 从文件加载笔划墨迹
 
 
 在此，我们展示如何从文件加载笔划墨迹，并在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件上呈现它们。
@@ -272,7 +272,7 @@ GIF 是保存墨迹数据的唯一受支持格式。 但是，[**LoadAsync**](ht
 | Gif                       | 指定使用作为嵌入到文件中的元数据包含 ISF 的 GIF 文件持久保存的墨迹。 此格式能够在不支持墨迹的应用程序中查看墨迹，并且当返回支持墨迹的应用程序时保持全部墨迹保真度。 此格式适合传输 HTML 文件中的墨迹内容并使其可由墨迹和非墨迹应用程序使用。 |
 | Base64Gif                 | 指定使用 base64 编码的加强 GIF 持久保存墨迹。 当在 XML 或 HTML 文件中对墨迹直接进行编码，之后转换为图像时，提供此格式。 该格式的可能用法是采用生成的 XML 格式包含所有墨迹信息，并用于通过可扩展样式表语言转换 (XSLT) 生成 HTML。 
 
-## <span id="Copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="COPY_AND_PASTE_INK_STROKES_WITH_THE_CLIPBOARD"></span>使用剪贴板复制并粘贴墨迹笔划
+## 使用剪贴板复制并粘贴墨迹笔划
 
 
 在此，我们演示如何使用剪贴板在应用之间传输笔划墨迹。
@@ -430,7 +430,7 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 * [笔和触笔交互](pen-and-stylus-interactions.md)
 
@@ -448,6 +448,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

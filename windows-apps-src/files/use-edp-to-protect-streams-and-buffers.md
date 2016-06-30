@@ -1,10 +1,14 @@
 ---
 author: TylerMSFT
-Description: '本主题介绍了实现一些与流和缓冲区相关的最常见企业数据保护 EDP 方案所需的编码任务示例。'
-MS-HAID: 'dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "本主题介绍了实现一些与流和缓冲区相关的最常见企业数据保护 EDP 方案所需的编码任务示例。"
+MS-HAID: dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: '使用企业数据保护 (EDP) 来保护流和缓冲区'
+title: "使用企业数据保护 (EDP) 来保护流和缓冲区"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: fdde4f7d2ab46b6349273f7c1c9d91cf27aa341a
+
 ---
 
 # 使用企业数据保护 (EDP) 来保护流和缓冲区
@@ -308,6 +312,7 @@ private async void EnableUIPolicyFromProtectedBuffer(IBuffer buffer)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

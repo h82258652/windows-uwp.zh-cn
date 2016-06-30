@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
-title: Windows Device Portal 概述
-description: 了解 Windows Device Portal 如何支持你通过网络或 USB 连接远程配置和管理你的设备。
+title: "Windows Device Portal 概述"
+description: "了解 Windows Device Portal 如何支持你通过网络或 USB 连接远程配置和管理你的设备。"
+ms.sourcegitcommit: c6f00006e656970e4a5bb11e3368faa92cbb8eca
+ms.openlocfilehash: fe4945bf3048a0c38e844a74fa6fc46706085d6d
+
 ---
 # Windows Device Portal 概述
 
@@ -124,6 +127,8 @@ Device Portal 会话从主页开始。 主页通常具有设备的相关信息�
 - **提供程序历史记录**：显示已在当前会话期间启用的 ETW 提供程序。 单击或点击“启用”****来激活已禁用的提供程序。 单击或点击“清除”****来清除历史记录。
 - **事件**：以表格的形式列出来自选定提供程序的 ETW 事件。 此表将实时更新。 在该表下方，单击“清除”****按钮可删除表中的所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击“保存到文件”****来将当前收集的 ETW 事件本地导出到 CSV 文件。
 
+有关使用 ETW 跟踪的更多详细信息，请参阅关于将其用于从你的应用收集实时日志的[博客文章](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)。 
+
 ### 性能跟踪
 
 从设备中捕获 [Windows Performance Recorder](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) \(WPR\) 跟踪。
@@ -151,7 +156,37 @@ Device Portal 会话从主页开始。 主页通常具有设备的相关信息�
 
 ![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-network.png)
 
+## 服务功能和说明
 
-<!--HONumber=May16_HO2-->
+### DNS-SD
+
+Device Portal 使用 DNS-SD 公布其存在于本地网络上。  所有 Device Portal 实例都将在“WDP._wdp._tcp.local”下公布，无论其设备类型如何。 服务实例的 TXT 记录提供以下信息：
+
+项 | 类型 | 描述 
+----|------|-------------
+S | int | Device Portal 的安全端口。  如果为 0（零），则表示 Device Portal 不侦听 HTTPS 连接。 
+D | string | 设备类型。  这将采用“Windows.*”格式，例如 Windows.Xbox 或 Windows.Desktop
+A | string | 设备体系结构。  这将为 ARM、x86 或 AMD64。  
+T | 字符串的 null 字符分隔列表 | 用户应用的设备标记。 有关其用法的信息，请参阅标记 REST API。 列表以双 null 结尾。  
+
+推荐 HTTPS 端口上的连接，因为并非所有设备都侦听 DNS-SD 记录所公布的 HTTP 端口。 
+
+### CSRF 保护和脚本
+
+为了防止受到 [CSRF 攻击](https://wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 请求上都需要唯一的令牌。 此令牌 X-CSRF-Token 请求标头派生自会话 Cookie CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 将复制到每个请求的 X-CSRF-Token 标头中。
+
+**重要提示** 此保护可防止从独立客户端（例如命令行程序）使用 REST API。 这可以通过 3 种方法解决： 
+
+1. 使用“auto-”用户名。 将“auto-”置于其用户名前面的客户端将绕过 CSRF 保护。 此用户名不能用于通过浏览器登录到 Device Portal，这一点很重要，因为它将针对 CSRF 攻击打开服务。 示例：如果 Device Portal 的用户名为“admin”，则 ```curl -u auto-admin:password <args>``` 应该用于绕过 CSRF 保护。 
+
+2. 在客户端中实现 Cookie 到标头的方案。 这需要 GET 请求来建立会话 Cookie，并包含所有后续请求的标头和 Cookie。 
+ 
+3. 禁用身份验证并使用 HTTP。 CSRF 保护仅适用于 HTTPS 终结点，因此 HTTP 终结点上的连接无需执行上述任一操作。 
+
+**注意**：以“auto-”开头的用户名将无法通过浏览器登录到 Device Portal。  
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

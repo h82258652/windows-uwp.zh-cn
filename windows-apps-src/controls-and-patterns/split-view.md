@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-title: 拆分视图
+title: "拆分视图"
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-description: 拆分视图控件具有一个可展开/可折叠的窗格和一个内容区域。
+description: "拆分视图控件具有一个可展开/可折叠的窗格和一个内容区域。"
 label: Split view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 391bfdbbf09474ad707dbbf306d4997825fa8386
+
 ---
 
 # 拆分视图控件指南
@@ -58,6 +62,7 @@ template: detail.hbs
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

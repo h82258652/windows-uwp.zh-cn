@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
-title: 创建你的第一个应用
-description: 创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用比想象中要更简单。
+title: "创建你的第一个应用"
+description: "创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用比想象中要更简单。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
+
 ---
 # 创建你的第一个应用
 
@@ -69,6 +73,7 @@ description: 创建适用于 Windows 10 的通用 Windows 平台 (UWP) 应用比
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

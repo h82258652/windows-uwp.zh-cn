@@ -1,8 +1,12 @@
 ---
-Description: 下面是创建可在任何基于 Windows 10 的设备（包括手机、平板电脑和 PC）上运行的通用 Windows 应用所需的信息。
-title: Windows 10 应用的操作方法指南 - Windows 应用开发
+Description: "下面是创建可在任何基于 Windows 10 的设备（包括手机、平板电脑和 PC）上运行的通用 Windows 应用所需的信息。"
+title: "Windows 10 应用的操作方法指南 - Windows 应用开发"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
+translationtype: Human Translation
+ms.sourcegitcommit: 9be74892a98765a8a45482ce3f5cc5151ab772b1
+ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
+
 ---
 
 
@@ -43,6 +47,7 @@ redirect_url: https://developer.microsoft.com/en-us/windows/develop
 | [XAML 平台](xaml-platform/index.md) | 了解 XAML 编程语言的基本概念。 或者，如果你已熟悉 XAML，可跳至后面部分，了解如何通过使用 Visual Studio 实现采用 XAML 的 Windows 运行时功能，从而创建出色的通用 Windows 应用。 |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

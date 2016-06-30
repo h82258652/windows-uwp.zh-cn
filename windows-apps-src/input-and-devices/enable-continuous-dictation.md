@@ -5,8 +5,8 @@ title: "启用连续听写"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: a142592f878fa539d6c40ea2abfcbf834b2de34d
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 1bcf6ce700b50ff633a29863fee41c2bfa3d9f98
 
 ---
 
@@ -29,7 +29,7 @@ ms.openlocfilehash: a142592f878fa539d6c40ea2abfcbf834b2de34d
 
 
 
-## <span id="Set_up"></span><span id="set_up"></span><span id="SET_UP"></span>设置
+## 设置
 
 
 若要管理连续听写会话，你的应用需要几个对象：
@@ -64,7 +64,7 @@ private CoreDispatcher dispatcher;
 private StringBuilder dictatedTextBuilder;
 ```
 
-## <span id="Initialization"></span><span id="initialization"></span><span id="INITIALIZATION"></span>初始化
+## 初始化
 
 
 在连续语音识别初始化期间，你必须：
@@ -94,13 +94,13 @@ this.speechRecognizer = new SpeechRecognizer();
 
     此处，我们立即调用 [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 而无需添加语法。
 
-    <span codelanguage="CSharp"></span>
+    
 ```    CSharp
 SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>处理识别事件
+## 处理识别事件
 
 
 你可以通过调用 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 捕获单一、简要的话语或短语。 
@@ -210,7 +210,7 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## <span id="Provide_ongoing_recognition_feedback"></span><span id="provide_ongoing_recognition_feedback"></span><span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK"></span>提供正在进行的识别反馈
+## 提供正在进行的识别反馈
 
 
 当用户对话时，他们通常将依赖上下文才能完全理解所说内容。 同样，语音识别器通常需要上下文才能提供高可信度的识别结果。 例如，除非可从前后的词语中收集到更多的上下文，否则词语“包含”和“包涵”本身是无法区分的。 除非识别器已具有一定的置信度来确保字词已正确识别，否则它将不会引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。
@@ -238,7 +238,7 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## <span id="Start_and_stop_recognition"></span><span id="start_and_stop_recognition"></span><span id="START_AND_STOP_RECOGNITION"></span>启动和停止识别
+## 启动和停止识别
 
 
 启动识别会话之前，检查语音识别器 [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) 属性的值。 语音识别器必须处于 [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227) 状态。
@@ -276,7 +276,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
  
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 
 * [语音交互](speech-interactions.md)
@@ -293,6 +293,6 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

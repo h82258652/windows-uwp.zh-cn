@@ -1,8 +1,12 @@
 ---
 author: Mtoepke
-title: Xbox One 开发人员模式激活
-description: 如何激活开发人员模式，以便你可以在零售模式和开发人员模式之间切换。
+title: "Xbox One 开发人员模式激活"
+description: "如何激活开发人员模式，以便你可以在零售模式和开发人员模式之间切换。"
 area: Xbox
+translationtype: Human Translation
+ms.sourcegitcommit: 7d832fee5bcd3a15cee1e7d8f4c66da9b0afa5e1
+ms.openlocfilehash: 9ad9904150acb00982c96eebeaf010f7023d3320
+
 ---
 
 # Xbox One 开发人员模式激活
@@ -78,6 +82,7 @@ Xbox One 具有两种模式，即*零售*模式 (1) 和*开发人员*模式 (2)�
 - [Xbox One 上的 UWP](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: "复选框"
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: b1532ef10a284cbb6e28694ab1598c08b8619773
 
 ---
 # 复选框
@@ -15,7 +15,7 @@ ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
 
 ![复选框状态示例](images/templates-checkbox-states-default.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+
 -   [**CheckBox 类**](https://msdn.microsoft.com/library/windows/apps/br209316)
 -   [**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
 -   [**IsChecked 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 
@@ -26,7 +26,7 @@ ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
 
 ![为单个选项使用的单个复选框](images/checkbox1.png)
 
-对于二元选项，在“复选框”****和“切换开关”****之间的主要差别是：复选框用于表示状态，而切换开关用于表示操作。 你可以延迟提交复选框交互（例如作为表单提交的一部分），然而应该立即提交切换开关交互。 另外，仅复选框允许多选。
+对于二元选项，在“复选框”****和[“切换开关”****](toggles.md)之间的主要差别是：复选框用于表示状态，而切换开关用于表示操作。 你可以延迟提交复选框交互（例如作为表单提交的一部分），然而应该立即提交切换开关交互。 另外，仅复选框允许多选。
 
 使用多选方案的“多个复选框”****，在这些方案中，用户从非相互排斥的选项组中选择一个或多个项目。
 
@@ -287,11 +287,13 @@ private void SetCheckedState()
 ## 相关文章
 
 -   [**CheckBox 类**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [单选按钮](radio-button.md)
+-   [切换开关](toggles.md)
 
 
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

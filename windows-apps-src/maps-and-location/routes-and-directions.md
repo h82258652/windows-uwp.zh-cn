@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: 在地图上显示路线和方向
-description: 请求路线和方向并在应用中显示它们。
+author: msatranjr
+title: "在地图上显示路线和方向"
+description: "请求路线和方向并在应用中显示它们。"
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 2132b0c76a78dac5250ea85f08abd0b1edbd6ed7
+
 ---
 
 # 在地图上显示路线和方向
@@ -17,7 +20,7 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 
 -   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-**提示** 如果映射不是你的应用的核心功能，请考虑改为启动 Windows 地图应用。 你可以使用 `bingmaps:`、`ms-drive-to:` 和 `ms-walk-to:` URI 方案来将 Windows 地图应用启动为特定的地图和路线规划。 有关详细信息，请参阅[启动 Windows 地图应用](https://msdn.microsoft.com/library/windows/apps/mt228341)
+**提示** 如果映射不是你的应用的核心功能，请考虑改为启动 Windows 地图应用。 你可以使用 `bingmaps:`、`ms-drive-to:` 和 `ms-walk-to:` URI 方案来将 Windows 地图应用启动为特定的地图和路线规划。 有关详细信息，请参阅[启动 Windows 地图应用](https://msdn.microsoft.com/library/windows/apps/mt228341)。
 
  
 
@@ -28,7 +31,7 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 
 -   [
             **MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 类提供了获取路线和方向的方法。
--   这些方法将返回一个 [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939)
+-   这些方法将返回一个 [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939)。
 -   [
             **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) 包含一个 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 对象。 通过 **MapRouteFinderResult** 的 [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) 属性访问该对象。
 -   [
@@ -49,7 +52,7 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 
 计算的 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 具有多个属性，可提供遍历该路线所需的时间、路线的长度以及包含路线段的 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) 对象的集合。 每个 **MapRouteLeg** 对象都包含 [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) 对象的集合。 **MapRouteManeuver** 对象包含可以通过其 [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964) 属性进行访问的路线。
 
-**重要提示** 必须先指定地图身份验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)
+**重要提示** 必须先指定地图身份验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
  
 
@@ -129,9 +132,9 @@ You have reached your destination.
 ## 显示路线
 
 
-若要在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 上显示 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937)，请使用 **MapRoute** 构建一个 [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122)。 然后，将 **MapRouteView** 添加到 **MapControl** 的 [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) 集合
+若要在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 上显示 [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937)，请使用 **MapRoute** 构建一个 [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122)。 然后，将 **MapRouteView** 添加到 **MapControl** 的 [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) 集合。
 
-**重要提示** 必须先指定地图身份验证密钥，然后才能使用地图服务或地图控件。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)
+**重要提示** 必须先指定地图身份验证密钥，然后才能使用地图服务或地图控件。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
  
 
@@ -194,6 +197,7 @@ private async void ShowRouteOnMap()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

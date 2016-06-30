@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-description: AdvancedPhotoCapture 类允许你捕获高动态范围 (HDR) 照片。
-title: 高动态范围 (HDR) 照片捕获
+description: "AdvancedPhotoCapture 类允许你捕获高动态范围 (HDR) 照片。"
+title: "高动态范围 (HDR) 照片捕获"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3015aa4338ddb0c0a006eb631026261a4453f376
+
 ---
 
 # 高动态范围 (HDR) 照片捕获
@@ -15,11 +19,11 @@ title: 高动态范围 (HDR) 照片捕获
 
 相关 HDR 捕获的其他文章包括：
 
--   你可以使用 [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 以允许系统评估媒体捕获预览流的内容，以便确定 HDR 处理是否会改善捕获结果。 有关详细信息，请参阅[媒体捕获的场景分析](scene-analysis-for-media-capture.md)
+-   你可以使用 [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 以允许系统评估媒体捕获预览流的内容，以便确定 HDR 处理是否会改善捕获结果。 有关详细信息，请参阅[媒体捕获的场景分析](scene-analysis-for-media-capture.md)。
 
--   使用 [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) 通过 Windows 内置的 HDR 处理算法捕获视频。 有关详细信息，请参阅[用于视频捕获的捕获设备控件](capture-device-controls-for-video-capture.md)
+-   使用 [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) 通过 Windows 内置的 HDR 处理算法捕获视频。 有关详细信息，请参阅[用于视频捕获的捕获设备控件](capture-device-controls-for-video-capture.md)。
 
--   你可以使用 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 捕获一系列照片（每张带有不同的捕获设置），并实现你自己的 HDR 或其他处理算法。 有关详细信息，请参阅[可变照片序列](variable-photo-sequence.md)
+-   你可以使用 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 捕获一系列照片（每张带有不同的捕获设置），并实现你自己的 HDR 或其他处理算法。 有关详细信息，请参阅[可变照片序列](variable-photo-sequence.md)。
 
 **注意**
 -   不支持使用 **AdvancedPhotoCapture** 同时录制视频和照片捕获。
@@ -49,7 +53,7 @@ title: 高动态范围 (HDR) 照片捕获
 
 在你的应用中，在初始化 **MediaCapture** 对象后，创建 [**AdvancedPhotoCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/mt147837) 对象并将模式设置为 [**AdvancedPhotoMode.Hdr**](https://msdn.microsoft.com/library/windows/apps/mt147845)。 调用 [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840) 对象的 [**Configure**](https://msdn.microsoft.com/library/windows/apps/mt147841) 方法，传入创建的 **AdvancedPhotoCaptureSettings** 对象。
 
-调用 **MediaCapture** 对象的 [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403)，传入用于指定该捕获应使用的编码类型的 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 对象。 **ImageEncodingProperties** 类提供用于创建受 **MediaCapture** 支持的图像编码的静态方法
+调用 **MediaCapture** 对象的 [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403)，传入用于指定该捕获应使用的编码类型的 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 对象。 **ImageEncodingProperties** 类提供用于创建受 **MediaCapture** 支持的图像编码的静态方法。
 
 **PrepareAdvancedPhotoCaptureAsync** 返回将用于启动照片捕获的 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 对象。 你可以使用该对象来注册本文稍后将介绍的 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) 和 [**AllPhotosCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181387) 的处理程序。
 
@@ -61,14 +65,13 @@ title: 高动态范围 (HDR) 照片捕获
 
 [!code-cs[CaptureHdrPhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureHdrPhotoAsync)]
 
-**ConvertOrientationToPhotoOrientation** 和 **ReencodeAndSavePhotoAsync** 是作为本文[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中的基本媒体捕获方案的一部分介绍的帮助程序方法
+**ConvertOrientationToPhotoOrientation** 和 **ReencodeAndSavePhotoAsync** 是作为本文[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中的基本媒体捕获方案的一部分介绍的帮助程序方法。
 
 ## 获取可选参考帧
 
 HDR 进程捕获多个帧，然后在已捕获所有帧之后，将它们合成到单个图像中。 你可以在已捕获帧之后，但在完成整个 HDR 进程之前，通过处理 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) 事件来访问该帧。 如果你只对最终 HDR 照片结果感兴趣，则无需执行此操作。
 
-**重要提示** 
-           在支持硬件 HDR 的设备上不会引发 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392)，因此不会生成参考帧。 你的应用应对不会引发此事件的这种情况进行处理。
+**重要提示** 在支持硬件 HDR 的设备上不会引发 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392)，因此不会生成参考帧。 你的应用应对不会引发此事件的这种情况进行处理。
 
 由于参考帧在调用 **CaptureAsync** 的上下文之外到达，因此提供了一个机制来将上下文信息传递到 **OptionalReferencePhotoCaptured** 处理程序。 首先你应创建一个将包含上下文信息的对象。 此对象的名称和内容由你决定。 此示例定义一个对象，该对象具有可用于跟踪捕获的文件名和相机方向的成员。
 
@@ -99,6 +102,7 @@ HDR 照片捕获具有两个步骤。 首先，捕获多个帧，然后将帧处
 * [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

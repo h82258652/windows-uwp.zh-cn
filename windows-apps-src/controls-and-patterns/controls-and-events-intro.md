@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。 下面我们将向你显示如何将控件添加到应用。
-title: 添加控件和处理事件
+Description: "通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。 下面我们将向你显示如何将控件添加到应用。"
+title: "添加控件和处理事件"
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and events
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 709771424daba7c034dc6f19d6998469705a24da
+
 ---
 # 控件和事件简介
 
@@ -133,6 +137,7 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 -   [浮出控件](dialogs-popups-menus.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

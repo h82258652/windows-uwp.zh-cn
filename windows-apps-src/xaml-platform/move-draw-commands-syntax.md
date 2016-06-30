@@ -3,8 +3,8 @@ author: jwmsft
 description: "了解移动和绘制命令（小型语言），可用于将路径几何图形指定为 XAML 属性值。"
 title: "移动和绘制命令语法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
-ms.sourcegitcommit: e1399a25b0455c9a79dcb217c5df1a397420d1f3
-ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 ---
 
@@ -108,7 +108,7 @@ ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
 
 | 术语 | 说明 |
 |------|-------------|
-| x | [**双面**](T:System.Double) <br/> 直线端点的 x 坐标。 |
+| x | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直线端点的 x 坐标。 |
 
 **竖线命令**
 
@@ -120,7 +120,7 @@ ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
 
 | 术语 | 说明 |
 |------|-------------|
-| *y* | [**双面**](T:System.Double) <br/> 直线端点的 y 坐标。 |
+| *y* | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直线端点的 y 坐标。 |
 
 **三次方贝塞尔曲线命令**
 
@@ -186,7 +186,7 @@ ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
 | 术语 | 说明 |
 |------|-------------|
 | *大小* | [**大小**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>圆弧的 x 半径和 y 半径。 |
-| *rotationAngle* | [**双面**](T:System.Double) <br/> 椭圆的旋转角度（以度为单位）。 |
+| *rotationAngle* | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 椭圆的旋转角度（以度为单位）。 |
 | *isLargeArcFlag* | 如果圆弧的角度应为 180 度或更大，则设置为 1；否则，设置为 0。 |
 | *sweepDirectionFlag* | 如果圆弧以正角方向绘制，则设置为 1；否则，设置为 0。 |
 | *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制圆弧的点。|
@@ -209,8 +209,8 @@ ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
 
 | 术语 | 说明 |
 |------|-------------|
-| *x* | [**双面**](T:System.Double) <br/> 点的 x 坐标。 |
-| *y* | [**双面**](T:System.Double) <br/> 点的 y 坐标。 |
+| *x* | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点的 x 坐标。 |
+| *y* | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点的 y 坐标。 |
 
 **其他说明**
 
@@ -240,6 +240,6 @@ ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

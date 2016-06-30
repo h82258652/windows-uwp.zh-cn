@@ -1,17 +1,21 @@
 ---
 author: mijacobs
-Description: 作为语言的可视化表示形式，版式的主要任务是清楚简洁。 其样式不应妨碍这一目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）对设计的用户体验有着重大作用。
-title: 版式
+Description: "作为语言的可视化表示形式，版式的主要任务是清楚简洁。 它的样式应永远不妨碍该目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）对设计的用户体验有着重大作用。"
+title: "版式"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 label: Typography
 template: detail.hbs
 extraBodyClass: style-typography
-brief: As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
+brief: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 02d5149f945bb631e385e45a295fdfe08bd98fb0
+
 ---
 
 # 适用于 UWP 应用的版式
 
-作为语言的可视化表示形式，版式的主要任务是清楚简洁。 其样式不应妨碍这一目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）对设计的用户体验有着重大作用。
+作为语言的可视化表示形式，版式的主要任务是清楚简洁。 它的样式应永远不妨碍该目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）对设计的用户体验有着重大作用。
 
 ## 字样
 
@@ -79,7 +83,7 @@ Segoe 是一种人性化的字样，有着柔和友好的外观和基于手写�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            在 XAML 文本控件中，使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 和 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 来分别控制字距调整和字距。 Typography.Kerning 的默认设置为“true”，FontStretch 的默认设置为“Normal”，它们都是推荐值。
+在 XAML 文本控件中，使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 和 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 来分别控制字距调整和字距。 Typography.Kerning 的默认设置为“true”，FontStretch 的默认设置为“Normal”，它们都是推荐值。
     </div>
 </aside>
 
@@ -125,7 +129,7 @@ Segoe 提供了各种各样的字符，其设计目的是在小字体和大字�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 属性提供了对大写字母高度和基线字体指标的访问权限。 它可以用于使文字在视觉上垂直居中或顶部对齐。
+XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 属性提供了对大写字母高度和基线字体指标的访问权限。 它可以用于使文字在视觉上垂直居中或顶部对齐。
     </div>
 </aside>
 
@@ -150,7 +154,7 @@ Segoe 提供了各种各样的字符，其设计目的是在小字体和大字�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            大多数级别的渐变都可用作遵循 `*TextBlockStyle` 命名约定的 XAML [静态资源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)（以下除外： 
+大多数级别的渐变都可用作遵循 `*TextBlockStyle` 命名约定（`HeaderTextBlockStyle` 除外）的 XAML [静态资源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)。 
     </div>
 </aside>
 
@@ -180,6 +184,7 @@ Segoe 提供了各种各样的字符，其设计目的是在小字体和大字�
 * [文本控件](../controls-and-patterns/text-controls.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

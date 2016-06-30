@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
-title: 执行地理编码和反向地理编码
-description: 通过调用 Windows.Services.Maps 命名空间中 MapLocationFinder 类的方法将地址转换为地理位置（地理编码）以及将地理位置转换为地址（反向地理编码）。
+title: "执行地理编码和反向地理编码"
+description: "通过调用 Windows.Services.Maps 命名空间中 MapLocationFinder 类的方法将地址转换为地理位置（地理编码）以及将地理位置转换为地址（反向地理编码）。"
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: caf3ad6fecd6ed90c65f85477643fb42ab4787d3
+
 ---
 
 # 执行地理编码和反向地理编码
@@ -20,13 +24,13 @@ ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 下面介绍了地理编码的类如何与反向地理编码的类相关联：
 
 -   [
-            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类提供执行地理编码 ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) 和反向地理编码 ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 的方法
--   这些方法将返回一个 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)
+            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类提供执行地理编码 ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) 和反向地理编码 ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) 的方法。
+-   这些方法将返回一个 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)。
 -   [
-            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 包含 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。 通过 **MapLocationFinderResult** 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合
--   每个 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象都包含一个 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 对象。 通过每个 **MapLocation** 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 属性来访问该对象
+            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 包含 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。 通过 **MapLocationFinderResult** 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合。
+-   每个 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象都包含一个 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 对象。 通过每个 **MapLocation** 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 属性来访问该对象。
 
-**重要提示** 必须先指定地图身份验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)
+**重要提示** 必须先指定地图验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
 
  
 
@@ -38,7 +42,7 @@ ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 1.  调用 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的 [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) 方法的其中一项重载。
 2.  [
             **FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) 方法将返回一个 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 对象，该对象包含匹配的 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。
-3.  通过 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合
+3.  通过 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合。
 
 ```csharp
 using Windows.Services.Maps;
@@ -88,8 +92,8 @@ result = (47.6406099647284,-122.129339994863)
 1.  调用 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的 [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法。
 2.  [
             **FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法将返回一个 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 对象，该对象包含匹配的 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。
-3.  通过 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合
-4.  通过每个 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 属性来访问 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 对象
+3.  通过 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合。
+4.  通过每个 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 属性来访问 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 对象。
 
 ```csharp
 using Windows.Services.Maps;
@@ -137,6 +141,7 @@ town = Redmond
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

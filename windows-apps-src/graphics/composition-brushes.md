@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
-title: 合成画笔
-description: 画笔通过其输出绘制 Visual 的区域。 不同的画笔具有不同的输出类型。
+title: "合成画笔"
+description: "画笔通过其输出绘制 Visual 的区域。 不同的画笔具有不同的输出类型。"
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
+
 ---
 # 合成画笔
 
@@ -28,7 +32,7 @@ description: 画笔通过其输出绘制 Visual 的区域。 不同的画笔具�
 
 ## 先决条件
 
-本概述假定你已熟悉基本合成应用程序的结构，如[合成 UI](visual-layer.md) 中所述
+本概述假定你已熟悉基本合成应用程序的结构，如[合成 UI](visual-layer.md) 中所述。
 
 ## 颜色基础知识
 
@@ -73,14 +77,14 @@ Visual2.Offset = new Vector3(3, 3, 0);
 [
             **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 使用合成图面（由 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 对象表示）绘制视觉对象 下图显示了一个使用 licorice 位图绘制的正方形，其中该位图使用 D2D 呈现在 **ICompositionSurface** 上。
 
-![CompositionSurfaceBrush 第一个示例初始化合成图面以供与画笔结合使用。 合成图面使用帮助程序方法 LoadImage 进行创建，该方法将 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 和 Url 用作字符串。 它将从该 Url 加载图像，将该图像呈现在 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 上，并将图面设置为 **CompositionSurfaceBrush** 的内容。
+![CompositionSurfaceBrush](images/composition-compositionsurfacebrush.png) 第一个示例初始化合成图面以供与画笔结合使用。 合成图面使用帮助程序方法 LoadImage 进行创建，该方法将 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 和 Url 用作字符串。 它将从该 Url 加载图像，将该图像呈现在 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 上，并将图面设置为 **CompositionSurfaceBrush** 的内容。 请注意，**ICompositionSurface** 仅在本机代码中公开，因此 LoadImage 方法仅在本机代码中实现。
 
 ```cs
 LoadImage(Brush,
           "ms-appx:///Assets/liqorice.png");
 ```
 
-请注意，**ICompositionSurface** 仅在本机代码中公开，因此 LoadImage 方法仅在本机代码中实现。 若要创建图面画笔，请调用 Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) 方法。 该方法返回 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 对象。
+若要创建图面画笔，请调用 Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) 方法。 该方法返回 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 对象。 以下代码显示了可用于通过 **CompositionSurfaceBrush** 的内容绘制可视对象的代码。
 
 ```cs
 Compositor _compositor;
@@ -93,21 +97,21 @@ LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
 visual.Brush = _surfaceBrush;
 ```
 
-## 以下代码显示了可用于通过 **CompositionSurfaceBrush** 的内容绘制可视对象的代码
+## 配置拉伸和对齐
 
-配置拉伸和对齐 有时，[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 的 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 的内容不能完全填充正在绘制的视觉区域。
+有时，[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 的 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 的内容不能完全填充正在绘制的视觉区域。 如果出现这种情况，合成 API 将使用该画笔的 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 和 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 模式设置来确定如何填充剩余的区域。
 
--   如果出现这种情况，合成 API 将使用该画笔的 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 和 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 模式设置来确定如何填充剩余的区域。
-    -   [
+-   [
             **HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 均属于浮点类型，并且均可用于控制画笔在视觉对象边界内的定位。
     -   值 0.0 指示将画笔的左/上角与可视对象的左/上角对齐
     -   值 0.5 指示将画笔的中心与可视对象的中心对齐
--   值 1.0 指示将画笔的右/下角与可视对象的右/下角对齐
-    -   [
-            **Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 属性接受 [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) 枚举定义的以下值： None：不会为了填充可视对象边界而拉伸画笔。 请留意此拉伸设置：如果画笔超出可视对象边界， 将剪裁该画笔的内容。
-    -   可使用 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 属性 控制用于绘制可视对象边界的画笔部分。 Uniform：画笔将缩放以填充可视对象边界；保留画笔的纵横比。
-    -   这是默认值。
-    -   UniformToFill：画笔将进行缩放，以便可以完全填充可视对象边界；保留画笔的纵横比。 Fill：画笔将缩放以填充可视对象边界。 因为画笔的高度和宽度是独立缩放的，所以可能不能保留画笔的原始纵横比。
+    -   值 1.0 指示将画笔的右/下角与可视对象的右/下角对齐
+-   [
+            **Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 属性接受 [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) 枚举定义的以下值：
+    -   None：不会为了填充可视对象边界而拉伸画笔。 请留意此拉伸设置：如果画笔超出可视对象边界， 将剪裁该画笔的内容。 可使用 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 属性 控制用于绘制可视对象边界的画笔部分。
+    -   Uniform：画笔将缩放以填充可视对象边界；保留画笔的纵横比。 这是默认值。
+    -   UniformToFill：画笔将进行缩放，以便可以完全填充可视对象边界；保留画笔的纵横比。
+    -   Fill：画笔将缩放以填充可视对象边界。 因为画笔的高度和宽度是独立缩放的，所以可能不能保留画笔的原始纵横比。 也就是说，画笔可能为了完全填充可视对象边界而失真。
 
  
 
@@ -118,6 +122,7 @@ visual.Brush = _surfaceBrush;
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

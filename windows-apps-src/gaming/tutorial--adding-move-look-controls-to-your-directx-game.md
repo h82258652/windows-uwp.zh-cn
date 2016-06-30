@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 游戏的移动观看控件
-description: 了解如何向你的 DirectX 游戏添加传统的鼠标和键盘移动观看控件（也称为鼠标观看控件）。
+title: "游戏的移动观看控件"
+description: "了解如何向你的 DirectX 游戏添加传统的鼠标和键盘移动观看控件（也称为鼠标观看控件）。"
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7adbfdb77af6992be9448969f635bdebac58344b
+
 ---
 
 # <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>游戏的移动观看控件
@@ -584,6 +588,7 @@ myFirstPersonCamera->SetViewParameters(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

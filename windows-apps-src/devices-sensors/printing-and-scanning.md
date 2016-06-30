@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
-title: 打印和扫描
-description: 本部分介绍了如何从你的通用 Windows 应用进行打印和扫描。
+title: "打印和扫描"
+description: "本部分介绍了如何从你的通用 Windows 应用进行打印和扫描。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
+
 ---
 # 打印和扫描
 
@@ -26,6 +30,7 @@ description: 本部分介绍了如何从你的通用 Windows 应用进行打印�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

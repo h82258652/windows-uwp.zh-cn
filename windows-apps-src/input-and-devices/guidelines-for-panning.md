@@ -5,8 +5,8 @@ title: "平移"
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 7aafb0bbef2a33f926f76e41c26dd0f6920de274
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 45a2d3cb8cd1db1b138d62b7d6525ed7077207b0
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 7aafb0bbef2a33f926f76e41c26dd0f6920de274
 
 
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
+## 应做事项和禁止事项
 
 
 **平移指示器和滚动条**
@@ -72,7 +72,7 @@ ms.openlocfilehash: 7aafb0bbef2a33f926f76e41c26dd0f6920de274
 
     ![演示与其容器沿同一方向滚动的嵌入式可平移区域的图像。](images/scrolling-embedded3.png)
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
+## 其他使用指南
 
 
 与使用鼠标滚动类似，通过一个或多个手指轻扫或滑动，以使用触控进行平移。 平移交互与滚动鼠标滚轮或滑动滚动框而不是单击滚动条最为相似。 除了在 API 中进行区别，或受到特定于设备的 Windows UI 要求以为，我们将两种交互都称为平移。
@@ -162,7 +162,7 @@ Windows 8 支持三种类型的平移：
 
 本指南也可用于相册或地图应用，这些应用支持在单个图像或地图中进行不受约束的平移，同时还支持相册中的单轴平移（转到上一个或下一个图像）或详细信息区域中的单轴平移。 在提供对应自由形式的平移图像或地图的详细信息或选项区域的应用中，我们建议使用详细信息和选项区域开始进行页面布局，因为图像或地图的不受约束的平移区域可能会干扰向详细信息区域平移。
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 
 * [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/mt185599)
@@ -194,6 +194,6 @@ Windows 8 支持三种类型的平移：
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

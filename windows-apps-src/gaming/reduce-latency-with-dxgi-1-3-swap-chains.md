@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 利用 DXGI 1.3 交换链减少延迟
-description: 使用 DXGI 1.3 通过等待交换链发信号通知开始呈现新帧的正确时间来减少有效的帧延迟。
+title: "利用 DXGI 1.3 交换链减少延迟"
+description: "使用 DXGI 1.3 通过等待交换链发信号通知开始呈现新帧的正确时间来减少有效的帧延迟。"
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 174e2918d54a2b03124752d009f43f0cb0c800ca
+
 ---
 
 # 利用 DXGI 1.3 交换链减少延迟
@@ -158,6 +162,7 @@ void DX::DeviceResources::WaitOnSwapChain()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

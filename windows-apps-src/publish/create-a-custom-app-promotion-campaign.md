@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 除了创建将在 Windows 应用中运行的应用的广告市场活动外，你还可以使用其他渠道推广你的应用。
-title: 创建自定义应用促销活动
+Description: "除了创建将在 Windows 应用中运行的应用的广告市场活动外，你还可以使用其他渠道推广你的应用。"
+title: "创建自定义应用促销活动"
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
+
 ---
 
 # 创建自定义应用促销活动
@@ -63,7 +67,7 @@ ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 2.  为应用获取 HTML 或协议格式的 Windows 应用商店页面 URL。 HTML 格式 URL 在[开发人员仪表板的“应用标识”****页](link-to-your-app.md)上提供。
     -   如果你希望客户在浏览器中导航到应用的 Windows 应用商店页面，请使用 HTTP 格式（如果已安装 Windows 应用商店应用，则此 URL 还会将 Windows 应用商店应用启动到应用一览）。 此 URL 格式为 **`https://www.microsoft.com/store/apps/*your app name*/*your app ID*`**。 例如，Skype 的 HTTP URL 是 `https://www.microsoft.com/store/apps/skype/9wzdncrfj364`。
         > **注意** 在运行 Windows 7 和更高版本的计算机和平板电脑上以及运行 Windows Phone 8 和更高版本的手机上，HTTP 格式 URL 可用于在浏览器中导航到 Windows 应用商店。
-    如果你要从在已安装 Windows 应用商店应用的设备或计算机上运行的其他 Windows 应用推广你的应用，并且希望客户在该 Windows 应用商店应用中打开到你的应用的页面，请使用协议格式。 此 URL 格式为 **`ms-windows-store://pdp/?PRODUCTID=*your app id*`**。 例如，Skype 的协议 URL 是 `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`。
+如果你要从在已安装 Windows 应用商店应用的设备或计算机上运行的其他 Windows 应用推广你的应用，并且希望客户在该 Windows 应用商店应用中打开到你的应用的页面，请使用协议格式。 此 URL 格式为 **`ms-windows-store://pdp/?PRODUCTID=*your app id*`**。 例如，Skype 的协议 URL 是 `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`。
 3.  将以下字符串附加到应用的 URL 的末尾：
     -   对于 HTTP 格式 URL，请附加 **`?cid=*my custom campaign ID*`**。 例如，如果 Skype 引入一个带有值 **custom\_campaign** 的市场活动 ID，则包含该市场活动 ID 的新 HTTP URL 将是：`https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`。
     -   对于协议格式 URL，请附加 **`&cid=*my custom campaign ID*`**。 例如，如果 Skype 引入一个带有值 **custom\_campaign** 的市场活动 ID，则包含该市场活动 ID 的新协议 URL 将是：`ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`。
@@ -131,6 +135,7 @@ HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

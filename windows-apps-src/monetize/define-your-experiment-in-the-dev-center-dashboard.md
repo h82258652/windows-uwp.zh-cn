@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 必须先在开发人员中心仪表板中定义实验后，才能在具有 A/B 测试的通用 Windows 平台 (UWP) 应用中运行实验。
-title: 在开发人员中心仪表板中定义你的实验
+Description: "必须先在开发人员中心仪表板中定义实验后，才能在具有 A/B 测试的通用 Windows 平台 (UWP) 应用中运行实验。"
+title: "在开发人员中心仪表板中定义你的实验"
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7462c23de58b44f897a1737d0d54913144b14f75
+
 ---
 
 # 在开发人员中心仪表板中定义你的实验
@@ -80,6 +84,7 @@ API 密钥是将你的应用与开发人员中心帐户中的实验关联起来�
   * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

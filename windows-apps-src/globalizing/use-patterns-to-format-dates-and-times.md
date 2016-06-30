@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: 使用 Windows.Globalization.DateTimeFormatting API 和自定义模式严格按照所需模式显示日期和时间。
-title: 使用模式设置日期和时间的格式
+Description: "使用 Windows.Globalization.DateTimeFormatting API 和自定义模式严格按照所需模式显示日期和时间。"
+title: "使用模式设置日期和时间的格式"
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 17cd1619a13adced643b4c8983dbf874bebaa740
+
 ---
 
 # 使用模式设置日期和时间的格式
@@ -21,7 +25,7 @@ template: detail.hbs
 
 结合使用 [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API 和自定义模式以严格按照所需模式显示日期和时间。
 
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>简介
+## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>介绍
 
 
 [
@@ -188,6 +192,7 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,17 +1,18 @@
 ---
-author: martinekuan
-title: 将数组传递到 Windows 运行时组件
-description: 在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。
+author: msatranjr
+title: "将数组传递到 Windows 运行时组件"
+description: "在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。"
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
+
 ---
 
 # 将数组传递到 Windows 运行时组件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
-\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
 在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。 如果数组的内容用于输入，该方法将从该数组进行读取而不是对其进行写入。 如果数组的内容用于输出，该方法将对该数组进行写入而不是从中进行读取。 这会带来数组参数问题，因为 .NET Framework 中的数组是引用类型，而且即使通过值（在 Visual Basic 中为 **ByVal**）传递数组引用，数组的内容仍具有可变性。 [Windows 运行时元数据导出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 需要你通过将 ReadOnlyArrayAttribute 属性或 WriteOnlyArrayAttribute 属性应用于参数，指定数组（如果该数组未从上下文中清除）的预期用途。 数组用途已确定，如下所示：
 
@@ -40,7 +41,7 @@ ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 >     ' Manipulate the copy.
 >     '   ...
 >     Return output
-> End Function 
+> End Function
 > ```
 
 我们建议你立即创建输入数组的副本，并处理该副本。 这有助于确保不管你的组件是否由 .NET Framework 代码调用，该方法具有相同的行为。
@@ -63,6 +64,6 @@ ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

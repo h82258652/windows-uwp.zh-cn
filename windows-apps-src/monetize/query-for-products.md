@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
-description: 在 Windows 应用商店收集 API 中使用此方法，以获取客户在与你的 Azure AD 客户端 ID 相关联的应用中所拥有的所有产品。 你可以将查询范围设置为特定产品，或使用其他筛选器。
-title: 查询产品
+description: "在 Windows 应用商店收集 API 中使用此方法，以获取客户在与你的 Azure AD 客户端 ID 相关联的应用中所拥有的所有产品。 你可以将查询范围设置为特定产品，或使用其他筛选器。"
+title: "查询产品"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: b8661d73487dde61b207159d11a0583700fa22bc
+
 ---
 
 # 查询产品
@@ -19,7 +22,7 @@ title: 查询产品
 
 若要使用此方法，你需要：
 
--   使用 **https://onestore.microsoft.com** 受众 URI 创建的 Azure AD 访问令牌。
+-   使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
 -   一种通过从应用中的客户端代码调用 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 方法所生成的Windows 应用商店 ID 密钥。
 
 有关详细信息，请参阅[从服务查看和授予产品](view-and-grant-products-from-a-service.md)。
@@ -30,8 +33,9 @@ title: 查询产品
 
 | 方法 | 请求 URI                                                 |
 |--------|-------------------------------------------------------------|
-| POST   | https://collections.mp.microsoft.com/v6.0/collections/query |
+| POST   | `https://collections.mp.microsoft.com/v6.0/collections/query` |
 
+<br/>
  
 ### 请求标头
 
@@ -42,7 +46,7 @@ title: 查询产品
 | Content-Length | 数字 | 请求正文的长度。                                                                       |
 | Content-Type   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
 
- 
+ <br/>
 
 ### 请求正文
 
@@ -57,7 +61,7 @@ title: 查询产品
 | ProductType      | 字符串       | 如果已指定，该服务仅返回与指定产品类型匹配的产品。 受支持的产品类型为 **Application**、**Durable** 和 **UnmanagedConsumable**。                                                                                       | 否       |
 | ValidityType      | 字符串       | 当设置为 **All** 时，将返回用户的所有产品，包括已过期的项目。 当设置为 **Valid** 时，仅返回在此时有效的产品（即，它们的状态为活动，开始日期 &lt; 现在，结束日期 &gt; 现在）。 | 不支持       |
 
- 
+<br/> 
 
 UserIdentity 对象包含以下参数。
 
@@ -67,16 +71,16 @@ UserIdentity 对象包含以下参数。
 | identityValue        | 字符串 | Windows 应用商店 ID 密钥的字符串值。                                                                                                                                                                                    | 是      |
 | localTicketReference | 字符串 | 已返回产品的请求标识符。 响应正文中返回的项目将具有匹配的 *localTicketReference*。 我们建议你使用与 Windows 应用商店 ID 密钥中的 *userId* 声明相同的值。 | 是      |
 
- 
+<br/> 
 
 ProductSkuId 对象包含以下参数。
 
 | 参数 | 类型   | 说明                                                                                                                                                                                                                                                                                                            | 必需 |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| productId | 字符串 | Windows 应用商店目录中的产品 ID。 若要获取产品 ID，请在 Windows 开发人员中心仪表板中导航到你的应用、转到“应用管理”****&gt;“应用标识”****页面，然后检索显示在“用于 Windows 10 的 URL”****字段中的字符串的后缀。 产品 ID 的一个示例为“9WZDNCRFJ3Q8”。 | 是      |
+| productId | 字符串 | Windows 应用商店目录中的存储 ID。 存储 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 | 是      |
 | SkuID     | 字符串 | Windows 应用商店目录中的 SKU ID。 SKU ID 的一个示例为“0010”。                                                                                                                                                                                                                                                | 是      |
 
- 
+<br/> 
 
 ### 请求示例
 
@@ -120,7 +124,7 @@ Content-Type: application/json
 | ContinuationToken | 字符串                   | 如果有多组产品，此令牌将在达到页面限制时返回。 你可以在后续调用中指定此延续令牌以检索剩余 产品。 | 否       |
 | 项目             | CollectionItemContractV6 | 指定用户的产品的数组。                                                                                                                                               | 否       |
 
- 
+<br/> 
 
 CollectionItemContractV6 对象包含以下参数。
 
@@ -138,7 +142,7 @@ CollectionItemContractV6 对象包含以下参数。
 | orderId              | 字符串             | 获取此项目的顺序 ID（如果存在）。                                                                                          | 否       |
 | orderLineItemId      | 字符串             | 获取此项目的特定顺序的行项（如果存在） 。                                                                | 否       |
 | OwnershipType        | 字符串             | 字符串“OwnedByBeneficiary”。                                                                                                                   | 是      |
-| productId            | 字符串             | Windows 应用商店目录中的产品 ID。 产品 ID 的一个示例为“9WZDNCRFJ3Q8”。                                                            | 是      |
+| productId            | 字符串             | Windows 应用商店目录中的应用的存储 ID。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。                                                            | 是      |
 | productType          | 字符串             | 以下产品类型之一：**Application**、**Durable** 和 **UnmanagedConsumable**。                                                     | 是      |
 | PurchasedCountry     | 字符串             | 不适用。                                                                                                                                               | 否       |
 | 购买者            | IdentityContractV6 | 这表示项目的购买者的标识（如果存在）。 请参阅下面有关此对象的详细信息。                                      | 否       |
@@ -150,16 +154,16 @@ CollectionItemContractV6 对象包含以下参数。
 | Tags                 | 字符串             | 不适用                                                                                                                                                | 是      |
 | transactionId        | guid               | 因购买此项目而产生的事务 ID。 可 用于将项目报告为已完成。                                       | 是      |
 
- 
+<br/> 
 
 IdentityContractV6 对象包含以下参数。
 
 | 参数     | 类型   | 说明                                                                        | 必需 |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
-| IdentityType  | 字符串 | 包含值 **"pub"**。                                                      | 是      |
+| IdentityType  | 字符串 | 包含值**“pub”**。                                                      | 是      |
 | identityValue | 字符串 | 指定的 Windows 应用商店 ID 密钥的 *publisherUserId* 字符串值。 | 是      |
 
- 
+<br/> 
 
 ### 响应示例
 
@@ -211,6 +215,7 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [续订 Windows 应用商店 ID 密钥](renew-a-windows-store-id-key.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

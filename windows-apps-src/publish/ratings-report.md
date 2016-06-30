@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows 开发人员中心仪表板中的“评分”报告可使你查看客户在 Windows 应用商店中为你的应用评分的分布情况。
-title: 评分报告
+Description: "Windows 开发人员中心仪表板中的“评分”报告可使你查看客户在 Windows 应用商店中为你的应用评分的分布情况。"
+title: "评分报告"
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e0258bc9402772d0a036b32563348d11acd0fdb7
+
 ---
 
 # 评分报告
@@ -68,6 +72,7 @@ Windows 开发人员中心仪表板中的**分级**报告可使你查看客户�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

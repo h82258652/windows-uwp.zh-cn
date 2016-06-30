@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: 你可以通过适用于企业的 Windows 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。
-title: 将 LOB 应用分配到企业
+Description: "你可以通过适用于企业的 Windows 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。"
+title: "将 LOB 应用分配到企业"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
+ms.sourcegitcommit: 9ad7589344d2af986e52ae43acc3e48de6374ae6
+ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
+
 ---
 
 # 将 LOB 应用分配到企业
@@ -50,6 +53,8 @@ ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 
 单击“提交到应用商店”****后，应用将完成认证过程。 准备就绪后，企业管理员必须在适用于企业的 Windows 应用商店门户中将应用添加到其专用存储。 企业稍后可以将应用部署到其用户。
 
+> **注意** 为了获取你的 LOB 应用，组织必须位于[受支持的市场](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)中，并且你不得在提交应用时排除该市场。 
+
 有关详细信息，请参阅[使用业务线应用](http://go.microsoft.com/fwlink/p/?LinkId=698846)和[使用专用应用商店分配应用](http://go.microsoft.com/fwlink/p/?LinkId=698847)。
 
 ### 更新 LOB 应用
@@ -75,6 +80,7 @@ ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

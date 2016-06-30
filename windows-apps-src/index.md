@@ -1,9 +1,13 @@
 ---
-Description: 下面是创建可在任何基于 Windows 10 的设备（包括手机、平板电脑和 PC）上运行的通用 Windows 应用所需的信息。
-title: Windows 10 应用的操作方法指南 - Windows 应用开发
+Description: "下面是创建可在任何基于 Windows 10 的设备（包括手机、平板电脑和 PC）上运行的通用 Windows 应用所需的信息。"
+title: "Windows 10 应用的操作方法指南 - Windows 应用开发"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
+translationtype: Human Translation
+ms.sourcegitcommit: 753a917c0ecbf445560203dbc1406acae52e5265
+ms.openlocfilehash: 97e016047c864026fe0c72e4b7cb819f0fc80748
+
 ---
 
 
@@ -21,6 +25,7 @@ redirect_url: https://developer.microsoft.com/en-us/windows/develop
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

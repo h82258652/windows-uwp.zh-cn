@@ -1,12 +1,15 @@
 ---
 author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: 适用于桌面设备的 Device Portal
-description: 了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。
+title: "适用于桌面设备的 Device Portal"
+description: "了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。"
+ms.sourcegitcommit: f09f0233ec11b41989cf52da3c5e8cb37a97b607
+ms.openlocfilehash: 7be27f5fb15676c5330f22995dd044899eddfd3d
+
 ---
 # 适用于桌面设备的 Device Portal
 
-从 Windows 10 版本 1604 开始，附加的开发人员功能可用于桌面设备。 这些功能仅在启用了“开发人员模式”时才可用。
+从 Windows 10 版本 1607 开始，附加的开发人员功能可用于桌面设备。 这些功能仅在启用了“开发人员模式”时才可用。
 
 有关如何启用“开发人员模式”的信息，请参阅[启用设备进行开发](../get-started/enable-your-device-for-development.md)。
 
@@ -101,6 +104,7 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
 2. 重启计算机以确保所有更新都已应用。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

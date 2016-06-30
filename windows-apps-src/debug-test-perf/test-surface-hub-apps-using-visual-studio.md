@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
-title: 使用 Visual Studio 测试 Surface Hub 应用
-description: Visual Studio 模拟器提供了用于设计、开发、调试以及测试 UWP 应用（包括针对 Surface Hub 生成的应用）的环境。
+title: "使用 Visual Studio 测试 Surface Hub 应用"
+description: "Visual Studio 模拟器提供了用于设计、开发、调试以及测试 UWP 应用（包括针对 Surface Hub 生成的应用）的环境。"
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: 655dffb5f1948724c894de291e119be1322f6e77
+
 ---
 
 # 使用 Visual Studio 测试 Surface Hub 应用
@@ -97,6 +101,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
    > **提示** &nbsp;&nbsp;如果 Surface Hub 出现在欢迎屏幕上，请选择任意按钮将其消除。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

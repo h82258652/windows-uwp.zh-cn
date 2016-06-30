@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 2ed21281-f996-402d-a968-d1320a4691df
-description: 请使用本文中的测试应用程序 ID 和广告单元 ID 值，查看应用在测试期间如何呈现广告。
-title: 测试模式值
+description: "请使用本文中的测试应用程序 ID 和广告单元 ID 值，查看应用在测试期间如何呈现广告。"
+title: "测试模式值"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 93b20954ba82b613bde96db30a000902dec3b844
+
 ---
 
 # 测试模式值
@@ -72,6 +76,7 @@ title: 测试模式值
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

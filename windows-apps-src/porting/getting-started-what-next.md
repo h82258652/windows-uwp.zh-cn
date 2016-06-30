@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: 入门：下一步是什么
+title: "入门：下一步是什么"
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
-description: 凭借此基本信息，你现在可以开始编写更有趣的通用 Windows 平台 (UWP) 应用。
+description: "凭借此基本信息，你现在可以开始编写更有趣的通用 Windows 平台 (UWP) 应用。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
+
 ---
 
 # 入门：下一步是什么？
@@ -33,6 +37,7 @@ description: 凭借此基本信息，你现在可以开始编写更有趣的通�
 * [生成适用于 Windows 的应用博客](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

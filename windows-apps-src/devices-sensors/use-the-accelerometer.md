@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
-title: 使用加速计
-description: 了解如何使用加速计响应用户移动。
+title: "使用加速计"
+description: "了解如何使用加速计响应用户移动。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f1ec749d7bec245632f1998ac5cc94b9bfcad533
+
 ---
 # 使用加速计
 
@@ -98,7 +102,7 @@ description: 了解如何使用加速计响应用户移动。
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为 **AccelerometerCS** 的项目，则将 `namespace App1` 替换为 `namespace AccelerometerCS`。
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“AccelerometerCS”**的项目，则将 `namespace App1` 替换为 `namespace AccelerometerCS`。
 
 -   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
@@ -124,7 +128,7 @@ description: 了解如何使用加速计响应用户移动。
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为 **AccelerometerCS** 的项目，则将 `x:Class="App1.MainPage"` 替换为 `x:Class="AccelerometerCS.MainPage"`。 你还应当使用 `xmlns:local="using:AccelerometerCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“AccelerometerCS”**的项目，则将 `x:Class="App1.MainPage"` 替换为 `x:Class="AccelerometerCS.MainPage"`。 你还应当使用 `xmlns:local="using:AccelerometerCS"` 替换 `xmlns:local="using:App1"`。
 
 -   按 F5 或依次选择“调试”****&gt;“开始调试”****来生成、部署并运行应用。
 
@@ -170,6 +174,7 @@ AccelerometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

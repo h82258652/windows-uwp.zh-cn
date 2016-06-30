@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
-title: 优化暂停/恢复
-description: 创建通用 Windows 平台 (UWP) 应用，以简化其生存期系统的使用过程，从而在暂停或终止后高效地恢复。
+title: "优化暂停/恢复"
+description: "创建通用 Windows 平台 (UWP) 应用，以简化其生存期系统的使用过程，从而在暂停或终止后高效地恢复。"
+translationtype: Human Translation
+ms.sourcegitcommit: e0f04c4242891b25db460d4852ab8cc070d82260
+ms.openlocfilehash: 9fee4ab9c55c1243c04c2ed5f007412751528037
+
 ---
 # 优化暂停/恢复
 
@@ -88,6 +92,7 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

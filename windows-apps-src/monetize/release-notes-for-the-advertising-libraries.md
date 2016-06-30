@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: 查看有关 Microsoft 官方商城协定和盈利 SDK 中 Microsoft Advertising 库的发行说明。
-title: Microsoft Advertising 库的发行说明
+description: "查看有关 Microsoft 官方商城协定和盈利 SDK 中 Microsoft Advertising 库的发行说明。"
+title: "Microsoft Advertising 库的发行说明"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
+
 ---
 
 # Microsoft Advertising 库的发行说明
@@ -52,6 +56,7 @@ Microsoft Advertising 库（其中包括 **AdControl** 和 **InterstitialAd** �
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

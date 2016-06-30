@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: 了解 Microsoft 官方商城协定和盈利 SDK 当前版本中的 Microsoft Advertising 库的已知问题。
-title: Microsoft Advertising 库的已知问题
+description: "了解 Microsoft 官方商城协定和盈利 SDK 当前版本中的 Microsoft Advertising 库的已知问题。"
+title: "Microsoft Advertising 库的已知问题"
+translationtype: Human Translation
+ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
+ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
+
 ---
 
 # Microsoft Advertising 库的已知问题
@@ -112,6 +116,7 @@ JavaScript/HTML 应用不得将元素放入 Z 顺序的保留 MAX-10 范围。 �
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

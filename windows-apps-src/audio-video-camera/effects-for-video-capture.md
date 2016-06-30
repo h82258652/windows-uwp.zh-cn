@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: 本主题介绍专用于视频捕获方案的效果。 其中包括视频防抖动效果。
-title: 视频捕获的效果
+description: "本主题介绍专用于视频捕获方案的效果。 其中包括视频防抖动效果。"
+title: "视频捕获的效果"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
+
 ---
 
 # 视频捕获的效果
@@ -85,6 +89,7 @@ title: 视频捕获的效果
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

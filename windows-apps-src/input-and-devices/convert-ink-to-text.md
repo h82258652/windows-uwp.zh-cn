@@ -6,8 +6,8 @@ ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
-ms.sourcegitcommit: 1722fc00de000d07ed30cfb0ae12080708c30b76
-ms.openlocfilehash: c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a74
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: ac07ca76df874c670e7e38698e89de6620f73cc4
 
 ---
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a74
 
 对于此处的所有示例，请添加墨迹功能所需的命名空间引用。 这包括“Windows.UI.Input.Inking”。
 
-## <span id="Basic_handwriting_recognition"></span><span id="basic_handwriting_recognition"></span><span id="BASIC_HANDWRITING_RECOGNITION"></span>基本手写识别
+## 基本手写识别
 
 
 我们在此处演示如何使用与默认安装语言包相关联的手写识别引擎来解释 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上的一组笔划。
@@ -203,7 +203,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="International_recognition"></span><span id="international_recognition"></span><span id="INTERNATIONAL_RECOGNITION"></span>国际识别
+## 国际识别
 
 
 Windows 支持的一个语言综合子集可用于手写识别。
@@ -449,7 +449,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="Dynamic_handwriting_recognition"></span><span id="dynamic_handwriting_recognition"></span><span id="DYNAMIC_HANDWRITING_RECOGNITION"></span>动态手写识别
+## 动态手写识别
 
 
 前面的两个示例要求用户按下按钮来开始识别。 你的应用还可以执行动态识别，方法是使用与基本计时函数配对的笔划输入。
@@ -526,13 +526,13 @@ public MainPage()
 
 2.  下面是我们在第一步中添加的三个事件的处理程序。
 
-    <span id="StrokesCollected"></span><span id="strokescollected"></span><span id="STROKESCOLLECTED"></span>[**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
+    [**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
     当用户通过抬起笔或手指或释放鼠标按钮来停止墨迹书写时，启动识别计时器。 在无墨迹输入的一秒后，启动识别。
 
-    <span id="StrokeStarted"></span><span id="strokestarted"></span><span id="STROKESTARTED"></span>[**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
+    [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
     如果新的笔划在下一个计时器滴答事件前开始，则停止计时器，因为新的笔划可能是单次手写输入的延续。
 
-    <span id="Tick"></span><span id="tick"></span><span id="TICK"></span>[**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
+    [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
     在无墨迹输入的一秒后，调用识别函数。
 ```    CSharp
 // Handler for the timer tick event calls the recognition function.
@@ -662,7 +662,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 * [笔和触笔交互](pen-and-stylus-interactions.md)
 
@@ -676,6 +676,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

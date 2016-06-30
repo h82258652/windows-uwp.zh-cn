@@ -6,8 +6,8 @@ ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen and stylus interactions in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: e642e6ba5319dce2d78c243ab3c57a9ffcc6902f
 
 ---
 
@@ -44,7 +44,7 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 -   [
             **IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) - 支持将笔划墨迹呈现到通用 Windows 应用的指定 Direct2D 设备上下文，而非默认 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件。 这支持完全自定义墨迹书写体验。
 
-## <span id="inkcanvas"></span><span id="INKCANVAS"></span>通过 InkCanvas 实现基本墨迹书写
+## 通过 InkCanvas 实现基本墨迹书写
 
 
 对于基本的墨迹书写功能，只需将 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 放置在页面上的任意位置即可。
@@ -84,7 +84,7 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 
 对于基本墨迹书写，你不必考虑 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011)。 但是，若要在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上自定义和配置墨迹书写行为，则必须访问其相应的 **InkPresenter** 对象。
 
-## <span id="inkpresenter"></span><span id="INKPRESENTER"></span>通过 InkPresenter 实现基本自定义
+## 通过 InkPresenter 实现基本自定义
 
 
 [
@@ -196,7 +196,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 若要提供墨迹书写和擦除之外的功能（例如笔划选择），你的应用必须为 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 标识特定输入，从而在未处理的情况下进行传递以供应用处理。
 
-## <span id="passthrough"></span><span id="PASSTHROUGH"></span>传递输入以进行高级处理
+## 传递输入以进行高级处理
 
 
 默认情况下，[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 将所有输入作为墨迹笔划或擦除笔划进行处理。 这包括由辅助硬件提供（例如笔桶按钮、鼠标右键按钮或类似提供）修改的输入。
@@ -422,7 +422,7 @@ public MainPage()
     }
 ```
 
-## <span id="iinkd2drenderer"></span><span id="IINKD2DRENDERER"></span>自定义墨迹呈现
+## 自定义墨迹呈现
 
 
 默认情况下，墨迹输入在低延迟后台线程上进行处理，并在绘制时呈现“墨迹未干”。 笔划完成时（抬起笔或手指，或者释放鼠标按钮），笔划将在 UI 线程上进行处理并向 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 图层呈现“墨迹已干”（在应用程序内容之上，并且替换未干墨迹）。
@@ -463,7 +463,7 @@ public MainPage()
  
 
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 
 * [处理指针输入](handle-pointer-input.md)
@@ -493,6 +493,6 @@ public MainPage()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

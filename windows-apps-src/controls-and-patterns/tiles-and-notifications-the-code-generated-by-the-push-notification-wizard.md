@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的移动服务生成推送通知。
-title: 由推送通知向导生成的代码
+Description: "通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的移动服务生成推送通知。"
+title: "由推送通知向导生成的代码"
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6b7bf3c8019e6c3e92fd07b114cdc688fe7ad8de
+
 ---
 
 # 由推送通知向导生成的代码
@@ -249,6 +253,7 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

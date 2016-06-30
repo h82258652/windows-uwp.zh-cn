@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。
-title: 定期通知概述
+Description: "定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。"
+title: "定期通知概述"
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 55932595e0d5592003456a28d00ffd70c5e05eba
+
 ---
 
 # 定期通知概述
@@ -71,7 +75,7 @@ template: detail.hbs
 
 默认情况下，定期磁贴和锁屏提醒通知在从下载时刻算起的三天后过期。 通知到期时，此内容将从锁屏提醒、磁贴或队列中删除，且不再向用户显示。 最佳做法是，使用一个对于你的应用或通知合理的时间，在所有定期磁贴和锁屏提醒通知上设置显式过期时间，以确保该内容不会在它不相关时仍存在。 对于具有已定义的使用寿命的内容来说，一个显式过期时间是必需的。 它还可确保在无法连接云服务或用户长时间断开网络时删除过时的内容。
 
-你的云服务通过在响应负载中包括 X-WNS-Expires HTTP 标头来为通知设置过期日期和时间。 X-WNS-Expires HTTP 标头符合 [HTTP-date 格式](http://go.microsoft.com/fwlink/p/?linkid=253706)。 有关详细信息，请参阅 [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) 或 [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945)
+你的云服务通过在响应负载中包括 X-WNS-Expires HTTP 标头来为通知设置过期日期和时间。 X-WNS-Expires HTTP 标头符合 [HTTP-date 格式](http://go.microsoft.com/fwlink/p/?linkid=253706)。 有关详细信息，请参阅 [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) 或 [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945)。
 
 例如，股票市场活跃交易日期间，你可将股票价格更新到期时间设置为轮询间隔的两倍（例如，如果是每半小时轮询一次，则将股票价格更新到期时间设置为一小时）。 另一个示例是，新闻应用可确定每日新闻磁贴更新的适当到期时间为一天。
 
@@ -84,7 +88,7 @@ template: detail.hbs
 
 你可使用通知队列和标记来实现各种丰富的通知方案。 例如，股票应用可发送 5 条通知，每条通知关注一支不同的股票并以相应股票的名称作为标记。 这可以防止队列包含两条有关同一股票的通知，其中较早的通知为过时通知。
 
-有关详细信息，请参阅[使用通知队列](https://msdn.microsoft.com/library/windows/apps/hh781199)
+有关详细信息，请参阅[使用通知队列](https://msdn.microsoft.com/library/windows/apps/hh781199)。
 
 ### <span id="Enabling_the_notification_queue"></span><span id="enabling_the_notification_queue"></span><span id="ENABLING_THE_NOTIFICATION_QUEUE"></span>启用通知队列
 
@@ -109,6 +113,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

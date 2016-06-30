@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 语义式缩放控件可使用户在同一数据集的两个不同语义式视图之间缩放。
-title: 语义式缩放
+Description: "语义式缩放控件可使用户在同一数据集的两个不同语义式视图之间缩放。"
+title: "语义式缩放"
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 47e39290a63408fc66783617ad2f12345eab2fa3
+
 ---
 
 # 语义式缩放
@@ -65,6 +69,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

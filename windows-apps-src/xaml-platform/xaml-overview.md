@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 我们将向 Windows 运行时应用开发人员介绍 XAML 语言和 XAML 概念，并介绍在使用 XAML 创建 Windows 运行时应用时，在 XAML 中声明对象和设置属性的不同方式。
-title: XAML 概述
+description: "我们将向 Windows 运行时应用开发人员介绍 XAML 语言和 XAML 概念，并介绍在使用 XAML 创建 Windows 运行时应用时，在 XAML 中声明对象和设置属性的不同方式。"
+title: "XAML 概述"
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
+translationtype: Human Translation
+ms.sourcegitcommit: 57b406f8210a9de729deec1fd2003973ac91f9cd
+ms.openlocfilehash: 9ddb584efe7c6406f78b5a0cf0bdc73a974afd18
+
 ---
 
 # XAML 概述
@@ -25,7 +29,7 @@ XAML 的基本语法基于 XML。 依照定义，有效的 XAML 必须也是有�
 
 ## XAML 与 Microsoft Visual Studio
 
-无论是在 XAML 文本编辑器中，还是在更为图形化的 XAML 设计界面中，Microsoft Visual Studio 都可以帮助你生成有效的 XAML 语法。 因此在你使用 Visual Studio 为应用编写 XAML 时，不必时时担心语法问题。 IDE 鼓励通过提供自动完成提示、在 Microsoft IntelliSense 列表和下拉列表中显示建议、在工具箱中显示 UI 元素库或其他技术等方式，来编写有效的 XAML 语法。 如果这是你第一次使用 XAML，则当我们在参考或其他主题中介绍 XAML 语法时，了解语法规则可能仍然有用，特别是有时用于描述限制或选择的术语。 我们将在 [XAML 语法指南](xaml-syntax-guide.md)这个单独主题中介绍 XAML 语法的这五个要点
+无论是在 XAML 文本编辑器中，还是在更为图形化的 XAML 设计界面中，Microsoft Visual Studio 都可以帮助你生成有效的 XAML 语法。 因此在你使用 Visual Studio 为应用编写 XAML 时，不必时时担心语法问题。 IDE 鼓励通过提供自动完成提示、在 Microsoft IntelliSense 列表和下拉列表中显示建议、在工具箱中显示 UI 元素库或其他技术等方式，来编写有效的 XAML 语法。 如果这是你第一次使用 XAML，则当我们在参考或其他主题中介绍 XAML 语法时，了解语法规则可能仍然有用，特别是有时用于描述限制或选择的术语。 我们将在 [XAML 语法指南](xaml-syntax-guide.md)这个单独主题中介绍 XAML 语法的这五个要点。
 
 ## XAML 命名空间
 
@@ -59,9 +63,8 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 |------|-------------|
 | [x:Key](x-key-attribute.md) | 为 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的每个资源设置一个唯一的用户定义密钥。 该密钥的令牌字符串是 **StaticResource** 标记扩展的参数，你可以在以后使用此密钥在应用 XAML 的其他位置检索其他 XAML 用法中的 XAML 资源。 |
 | [x:Class](x-class-attribute.md) | 为 XAML 页面提供代码隐藏的类指定代码命名空间和代码类名称。 这可为构建你的应用时通过构建操作创建或加入的类命名。 这些构建操作支持 XAML 标记编译器，并在编译应用时，将你的标记和代码隐藏文件组合到一起。 必须具有此类才能支持对 XAML 页面实现代码隐藏。 默认 Windows 运行时激活模型中的 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051)。 |
-| [x:Name](x-name-attribute.md) | 在处理 XAML 中定义的对象元素后，为运行时代码中存在的实例指定一个运行时对象名。 你可以将在 XAML 中设置 **x:Name** 看作是在代码中声明命名变量。 稍后你会了解，这是将 XAML 加载为 Windows 运行时应用的一个组件时发生的实际情况。 <br/><div class="alert">**注意** 
-           [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是框架中的一个类似属性，并非所有元素都支持它。 因此，当 **FrameworkElement.Name** 在该元素类型上不受支持时，你可以将 **x:Name** 用于元素标识。 |
-| [x:Uid](x-uid-directive.md) | 标识某些元素，应将本地化后的资源用于该元素的一些属性值。 有关如何使用 **x:Uid** 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329) |
+| [x:Name](x-name-attribute.md) | 在处理 XAML 中定义的对象元素后，为运行时代码中存在的实例指定一个运行时对象名。 你可以将在 XAML 中设置 **x:Name** 看作是在代码中声明命名变量。 稍后你会了解，这是将 XAML 加载为 Windows 运行时应用的一个组件时发生的实际情况。 <br/><div class="alert">**注意** [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是框架中的一个类似属性，并非所有元素都支持它。 因此，当 **FrameworkElement.Name** 在该元素类型上不受支持时，你可以将 **x:Name** 用于元素标识。 |
+| [x:Uid](x-uid-directive.md) | 标识某些元素，应将本地化后的资源用于该元素的一些属性值。 有关如何使用 **x:Uid** 的详细信息，请参阅[快速入门：翻译 UI 资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
 | [XAML 固有数据类型](xaml-intrinsic-data-types.md) | 当属性或资源需要值时，这些类型可以为简单值类型指定值。 这些固有类型与通常定义为每个编程语言固有定义的一部分的简单值类型相对应。 例如，你可能需要一个表示 **true** 布尔值的对象，以便在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 情节提要视觉状态中使用。 对于 XAML 中的该值，可将 **x:Boolean** 固有类型用作对象元素，例如： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
 在 XAML 语言 XAML 命名空间中还存在其他编程结构，但没有这么常用。
@@ -78,11 +81,11 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 例如，将前缀 `myTypes` 映射到命名空间 `myCompany.myTypes` 的属性语法为：`    xmlns:myTypes="using:myCompany.myTypes"`，而代表的元素用法为： `<myTypes:CustomButton/>`
 
-有关为自定义类型映射 XAML 命名空间的详细信息，包括 Visual C++ 组件扩展 (C++/CX) 的特殊注意事项，请参阅 [XAML 命名空间和命名空间映射](xaml-namespaces-and-namespace-mapping.md)
+有关为自定义类型映射 XAML 命名空间的详细信息，包括 Visual C++ 组件扩展 (C++/CX) 的特殊注意事项，请参阅 [XAML 命名空间和命名空间映射](xaml-namespaces-and-namespace-mapping.md)。
 
 ## 其他 XAML 命名空间
 
-你常常会看到定义前缀“d”（设计器命名空间）和“mc”（用于实现标记兼容性）的 XAML 文件。 它们通常用于基础结构支持，或者用于启用设计时工具中的方案。 有关详细信息，请参阅 [XAML 命名空间主题中的“其他 XAML 命名空间”部分](xaml-namespaces-and-namespace-mapping.md#other-XAML-namespaces)
+你常常会看到定义前缀“d”（设计器命名空间）和“mc”（用于实现标记兼容性）的 XAML 文件。 它们通常用于基础结构支持，或者用于启用设计时工具中的方案。 有关详细信息，请参阅 [XAML 命名空间主题中的“其他 XAML 命名空间”部分](xaml-namespaces-and-namespace-mapping.md#other-XAML-namespaces)。
 
 ## 标记扩展
 
@@ -94,7 +97,7 @@ Windows 运行时 XAML 支持在默认 XAML 命名空间下定义且 Windows 运
 
 -   [{xBind}](x-bind-markup-extension.md)：支持数据绑定，用于通过执行编译时生成的特殊用途的代码，延迟属性评估直至运行时。 此标记扩展支持广泛的参数。
 -   [{Binding}](binding-markup-extension.md)：支持数据绑定，用于通过执行特殊用途的运行时对象检查，延迟属性评估直至运行时。 此标记扩展支持广泛的参数。
--   [{StaticResource}](staticresource-markup-extension.md)：支持引用在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定义的资源值。 这些资源可以位于不同的 XAML 文件中，但最终必须在加载时可供 XAML 分析程序查找。 `{StaticResource}` 用法的参数标识 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的键控资源的键（名称）
+-   [{StaticResource}](staticresource-markup-extension.md)：支持引用在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定义的资源值。 这些资源可以位于不同的 XAML 文件中，但最终必须在加载时可供 XAML 分析器查找。 `{StaticResource}` 用法的参数标识 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的键控资源的键（名称）。
 -   [{ThemeResource}](themeresource-markup-extension.md)：类似于 [{StaticResource}](staticresource-markup-extension.md)，但可响应运行时主题变更。 {ThemeResource} 经常显示在 Windows 运行时的默认 XAML 模板中，因为其中的大部分模板专门用于用户在应用运行时切换主题的兼容性。
 -   [{TemplateBinding}](templatebinding-markup-extension.md)：[{Binding}](binding-markup-extension.md) 的一种特殊情况，支持 XAML 中的控制模板及其在运行时的最终用法。
 -   [{RelativeSource}](relativesource-markup-extension.md)：支持一种特定形式的模板绑定，其中的值来自于父模板。
@@ -127,7 +130,7 @@ Windows 运行时还支持 [{x:Null} 标记扩展](x-null-markup-extension.md)�
 
 你可以嵌套使用标记扩展。 会首先计算最里层的标记扩展。
 
-由于标记扩展的缘故，你需要使用特殊语法来表示属性中的“{”文本值。 有关详细信息，请参阅 [XAML 语法指南](xaml-syntax-guide.md)
+由于标记扩展的缘故，你需要使用特殊语法来表示属性中的“{”文本值。 有关详细信息，请参阅 [XAML 语法指南](xaml-syntax-guide.md)。
 
 ## 事件
 
@@ -177,68 +180,69 @@ namespace App1
 }
 ```
 
-在一个项目中，将 XAML 编写为 .xaml 文件，使用你最喜欢的语言（C#、Visual Basic、C++/CX）编写一个代码隐藏文件。 当在项目的生成操作中对 XAML 文件进行标记编译时，可以通过将一个命名空间和类指定为 XAML 页面根元素的 [x:Class](x-class-attribute.md) 属性来标识每个 XAML 页面的 XAML 代码隐藏文件的位置。 有关这些机制在 XAML 中如何工作以及它们与编程和应用程序模型之间的关系的详细信息，请参阅[事件和路由事件概述](events-and-routed-events-overview.md)
+在一个项目中，将 XAML 编写为 .xaml 文件，使用你最喜欢的语言（C#、Visual Basic、C++/CX）编写一个代码隐藏文件。 当在项目的生成操作中对 XAML 文件进行标记编译时，可以通过将一个命名空间和类指定为 XAML 页面根元素的 [x:Class](x-class-attribute.md) 属性来标识每个 XAML 页面的 XAML 代码隐藏文件的位置。 有关这些机制在 XAML 中如何工作以及它们与编程和应用程序模型之间的关系的详细信息，请参阅[事件和路由事件概述](events-and-routed-events-overview.md)。
 
 **注意** 对于 C++/CX，存在两个代码隐藏文件，一个是标头 (.xaml.h)，另一个是实现 (.xaml.cpp)。 该实现引用标头，从技术上讲，标头表示代码隐藏连接的入口点。
 
 ## 资源字典
 
-创建 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 是一种常见任务，这通常是通过将资源字典创建为 XAML 页面的一个区域或创建为一个单独的 XAML 文件来完成的。 资源字典以及如何使用资源字典是一个非常大的概念区域，不在本主题的讨论范围内。 有关详细信息，请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)
+创建 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 是一种常见任务，这通常是通过将资源字典创建为 XAML 页面的一个区域或创建为一个单独的 XAML 文件来完成的。 资源字典以及如何使用资源字典是一个非常大的概念区域，不在本主题的讨论范围内。 有关详细信息，请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。
 
 ## XAML 和 XML
 
-XAML 语言基本上基于 XML 语言。 但 XAML 显著扩展了 XML。 具体来讲，由于它与支持类型概念之间的关系，它处理架构概念的方式显著不同，并且它添加了很多语言元素，例如附加成员和标记扩展。 **xml:lang** 在 XAML 中有效，但会影响运行时而不是分析行为，通常又称为一种框架级属性。 有关详细信息，请参阅 [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066). **xml:base** 在标记中有效，但分析程序会忽略它。 **xml:space** 有效，但仅与 [XAML 和空格](xaml-and-whitespace.md)主题中介绍的场景相关。 **encoding** 属性在 XAML 中是有效的。 仅支持 UTF-8 和 UTF-16 编码。 不支持 UTF-32 编码。 XAML 中区分大小写
+XAML 语言基本上基于 XML 语言。 但 XAML 显著扩展了 XML。 具体来讲，由于它与支持类型概念之间的关系，它处理架构概念的方式显著不同，并且它添加了很多语言元素，例如附加成员和标记扩展。 **xml:lang** 在 XAML 中是有效的，但会影响运行时而不是分析行为，通常又称为一种框架级属性。 有关详细信息，请参阅 [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066)。 **xml:base** 在标记中是有效的，但分析器会忽略它。 **xml:space** 是有效的，但仅与 [XAML 和空格](xaml-and-whitespace.md)主题中介绍的场景相关。 **encoding** 属性在 XAML 中是有效的。 仅支持 UTF-8 和 UTF-16 编码。 不支持 UTF-32 编码。
 
-###  XAML 中是区分大小写的。
+###  XAML 中区分大小写
 
-这是 XAML 基于 XML 的另一个后果，XML 是区分大小写的。 XAML 元素和属性的名称是区分大小写的。 属性的值可能区分大小写，这取决于为特定属性处理属性值的方式。 例如，如果属性值声明一个枚举的成员名称，将成员名称字符串进行类型转换，以返回枚举成员值的内部行为是不区分大小写的。 相反，**Name** 属性的值和基于 **Name** 属性声明的名称来处理对象的实用程序方法会对名称字符串区分大小写。 XAML 名称范围
+XAML 中是区分大小写的。 这是 XAML 基于 XML 的另一个后果，XML 是区分大小写的。 XAML 元素和属性的名称是区分大小写的。 属性的值可能区分大小写，这取决于为特定属性处理属性值的方式。 例如，如果属性值声明一个枚举的成员名称，将成员名称字符串进行类型转换，以返回枚举成员值的内部行为是不区分大小写的。 相反，**Name** 属性的值和基于 **Name** 属性声明的名称来处理对象的实用程序方法会对名称字符串区分大小写。
 
-## XAML 语言定义了一个 XAML 名称范围的概念。
+## XAML 名称范围
 
-XAML 名称范围概念会影响 XAML 处理器在处理可用于 XAML 的 **x:Name** 或 **Name** 值时的方式，特别是依赖名称成为唯一标识符的领域。 XAML 名称范围将在一个单独的主题中详细介绍；请参阅 [XAML 名称范围](xaml-namescopes.md) XAML 在开发过程中的作用
+XAML 语言定义了一个 XAML 名称范围的概念。 XAML 名称范围概念会影响 XAML 处理器在处理可用于 XAML 的 **x:Name** 或 **Name** 值时的方式，特别是依赖名称成为唯一标识符的领域。 XAML 名称范围将在一个单独的主题中详细介绍；请参阅 [XAML 名称范围](xaml-namescopes.md)。
 
-## XAML 在应用开发过程中发挥着多项重要作用。
+## XAML 在开发过程中的作用
 
-如果使用 C#、Visual Basic 或 C++/CX 编程，XAML 是声明应用的 UI 和该 UI 中各个元素的主要格式。
+XAML 在应用开发过程中发挥着多项重要作用。
 
--   通常，项目中至少有一个 XAML 文件表示应用中最初显示的 UI 的页面隐喻。 更多的 XAML 文件可以为导航 UI 声明更多页面。 其他 XAML 文件可声明资源，例如模板或样式。 使用 XAML 格式为应用的控件和 UI 声明样式和模板。
--   你可以使用样式和模板将现有控件模板化，或者定义一个控件，在一个控件包中提供默认模板。
--   当使用 XAML 格式定义样式和模板时，相关的 XAML 常常使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 根声明为独立的 XAML 文件。 XAML 是设计器用于支持创建应用 UI 和在不同设计器应用之间交换 UI 设计的通用格式。
--   最重要的是，应用的 XAML 可在不同的 XAML 设计工具（或工具中的设计窗口）之间交换。 其他一些技术也使用 XAML 定义基本 UI。
--   相对于 Windows Presentation Foundation (WPF) XAML 和 Microsoft Silverlight XAML，Windows 运行时的 XAML 使用同一个适用于其共享的默认 XAML 命名空间的 URI。 Windows 运行时的 XAML 词汇表与 Silverlight 使用的 XAML-for-UI 词汇表具有大量重复内容，与 WPF 所使用的词汇表的重复内容稍微少一些。 因此，XAML 为最初为也使用 XAML 的早期技术定义的 UI 提供了一种有效的迁移路径。 XAML 定义 UI 的可视外观，一个关联的代码隐藏文件定义逻辑。
--   无需更改代码隐藏文件中的逻辑，即可调整 UI 设计。 XAML 简化了设计人员与开发人员之间的工作流。 得益于丰富的可视设计器和对 XAML 语言的设计图面的支持，XAML 支持在早期开发阶段快速设计 UI 原型。
--   取决于你自己在开发流程中的角色，你可能不会与 XAML 进行太多交互。
+-   如果使用 C#、Visual Basic 或 C++/CX 编程，XAML 是声明应用的 UI 和该 UI 中各个元素的主要格式。 通常，项目中至少有一个 XAML 文件表示应用中最初显示的 UI 的页面隐喻。 更多的 XAML 文件可以为导航 UI 声明更多页面。 其他 XAML 文件可声明资源，例如模板或样式。
+-   使用 XAML 格式为应用的控件和 UI 声明样式和模板。
+-   你可以使用样式和模板将现有控件模板化，或者定义一个控件，在一个控件包中提供默认模板。 当使用 XAML 格式定义样式和模板时，相关的 XAML 常常使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 根声明为独立的 XAML 文件。
+-   XAML 是设计器用于支持创建应用 UI 和在不同设计器应用之间交换 UI 设计的通用格式。 最重要的是，应用的 XAML 可在不同的 XAML 设计工具（或工具中的设计窗口）之间交换。
+-   其他一些技术也使用 XAML 定义基本 UI。 相对于 Windows Presentation Foundation (WPF) XAML 和 Microsoft Silverlight XAML，Windows 运行时的 XAML 使用同一个适用于其共享的默认 XAML 命名空间的 URI。 Windows 运行时的 XAML 词汇表与 Silverlight 使用的 XAML-for-UI 词汇表具有大量重复内容，与 WPF 所使用的词汇表的重复内容稍微少一些。 因此，XAML 为最初为也使用 XAML 的早期技术定义的 UI 提供了一种有效的迁移路径。
+-   XAML 定义 UI 的可视外观，一个关联的代码隐藏文件定义逻辑。 无需更改代码隐藏文件中的逻辑，即可调整 UI 设计。 XAML 简化了设计人员与开发人员之间的工作流。
+-   得益于丰富的可视设计器和对 XAML 语言的设计图面的支持，XAML 支持在早期开发阶段快速设计 UI 原型。
 
-你与 XAML 文件的交互程度还取决于你使用哪个开发环境、是否使用交互式设计环境功能（例如工具箱和属性编辑器），以及 Windows 运行时应用的范围和用途。 但是可能在应用开发期间，你将在元素级别使用文本或 XML 编辑器来编辑 XAML 文件。 使用此信息，你可以以文本或 XML 表示形式自信地编辑 XAML，并在工具、标记编译操作或 Windows 运行时应用的运行时阶段使用 XAML 文件时保持该文件的声明和用途的有效性。 优化你的 XAML 以提高加载性能
+取决于你自己在开发流程中的角色，你可能不会与 XAML 进行太多交互。 你与 XAML 文件的交互程度还取决于你使用哪个开发环境、是否使用交互式设计环境功能（例如工具箱和属性编辑器），以及 Windows 运行时应用的范围和用途。 但是可能在应用开发期间，你将在元素级别使用文本或 XML 编辑器来编辑 XAML 文件。 使用此信息，你可以以文本或 XML 表示形式自信地编辑 XAML，并在工具、标记编译操作或 Windows 运行时应用的运行时阶段使用 XAML 文件时保持该文件的声明和用途的有效性。
 
-## 在使用 XAML 定义 UI 元素时，对于使用有利于性能的最佳做法，有一些技巧。
+## 优化你的 XAML 以提高加载性能
 
-这些技巧中有许多与使用 XAML 资源有关，但为了方便起见，在此一般 XAML 概述中还是将它们列了出来。 有关 XAML 资源的详细信息，请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。 若要了解更多有关性能的提示，包括特意展示在 XAML 中应避免的某些欠佳性能做法的 XAML，请参阅[优化你的 XAML 标记](https://msdn.microsoft.com/library/windows/apps/mt204779) 如果你经常在 XAML 中使用相同的颜色画笔，请将 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 定义为一个资源，而不是每次都使用某种已命名的颜色作为属性值。
+在使用 XAML 定义 UI 元素时，对于使用有利于性能的最佳做法，有一些技巧。 这些技巧中有许多与使用 XAML 资源有关，但为了方便起见，在此一般 XAML 概述中还是将它们列了出来。 有关 XAML 资源的详细信息，请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。 要了解更多有关性能的提示，包括特意展示在 XAML 中应避免的某些欠佳性能做法的 XAML，请参阅[优化你的 XAML 标记](https://msdn.microsoft.com/library/windows/apps/mt204779)。
 
--   如果你在一个 UI 页面上多次使用同一资源，请考虑在 [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338) 中而不是在每个页面上定义该资源。
--   反之，如果只有一个页面使用某个资源，则不要在 **Application.Resources** 中定义该资源，而只为需要该资源的页面定义它。 这对设计应用时的 XAML 构造和 XAML 分析过程中的性能都有好处。 对于你的应用打包的资源，请检查是否有未使用的资源（这类资源具有键，但在你的应用中没有 [StaticResource](staticresource-markup-extension.md) 引用使用该资源）。
--   在发布你的应用之前，请从 XAML 中删除这些资源。 如果你使用了提供设计资源的单独 XAML 文件 ([**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801))，请考虑从这些文件中注释掉或者删除未使用的资源。
--   即使你有在多个应用中使用的共享 XAML 起始点或者有为你的所有应用提供共用资源的共享 XAML 起始点，你的应用仍然每次都会打包 XAML 资源，并可能需要加载它们。 请不要定义组合所不需要的 UI 元素，并尽可能地使用默认的控件模板（这些模板已经过加载性能方面的测试和验证）。
--   请使用 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 之类的容器而不要故意过度绘制 UI 元素。
--   一般情况下，请不要多次绘制同一像素。 有关过度绘制和如何进行相应测试的详细信息，请参阅 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/hh701823) 针对 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 使用默认的项目模板；这些模板具有特殊的 **Presenter** 逻辑，用于在为大量列表项构建可视化树时解决性能问题。
--   调试 XAML
+-   如果你经常在 XAML 中使用相同的颜色画笔，请将 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 定义为一个资源，而不是每次都使用某种已命名的颜色作为属性值。
+-   如果你在一个 UI 页面上多次使用同一资源，请考虑在 [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338) 中而不是在每个页面上定义该资源。 反之，如果只有一个页面使用某个资源，则不要在 **Application.Resources** 中定义该资源，而只为需要该资源的页面定义它。 这对设计应用时的 XAML 构造和 XAML 分析过程中的性能都有好处。
+-   对于你的应用打包的资源，请检查是否有未使用的资源（这类资源具有键，但在你的应用中没有 [StaticResource](staticresource-markup-extension.md) 引用使用该资源）。 在发布你的应用之前，请从 XAML 中删除这些资源。
+-   如果你使用了提供设计资源的单独 XAML 文件 ([**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801))，请考虑从这些文件中注释掉或者删除未使用的资源。 即使你有在多个应用中使用的共享 XAML 起始点或者有为你的所有应用提供共用资源的共享 XAML 起始点，你的应用仍然每次都会打包 XAML 资源，并可能需要加载它们。
+-   请不要定义组合所不需要的 UI 元素，并尽可能地使用默认的控件模板（这些模板已经过加载性能方面的测试和验证）。
+-   请使用 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 之类的容器而不要故意过度绘制 UI 元素。 一般情况下，请不要多次绘制同一像素。 有关过度绘制和如何进行相应测试的详细信息，请参阅 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/hh701823)。
+-   针对 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 使用默认的项目模板；这些模板具有特殊的 **Presenter** 逻辑，用于在为大量列表项构建可视化树时解决性能问题。
 
-## 因为 XAML 是一种标记语言，所以用于在 Microsoft Visual Studio 中调试的一些典型策略不可用。
+## 调试 XAML
 
-例如，无法在 XAML 文件中设置断点。 不过，有其他的技术可帮助你调试与 UI 定义或其他 XAML 标记相关的问题，与此同时，你仍然可开发你的应用。 当 XAML 文件存在问题时，最典型的结果是某些系统或你的应用不会引发 XAML 分析异常。
+因为 XAML 是一种标记语言，所以用于在 Microsoft Visual Studio 中调试的一些典型策略不可用。 例如，无法在 XAML 文件中设置断点。 不过，有其他的技术可帮助你调试与 UI 定义或其他 XAML 标记相关的问题，与此同时，你仍然可开发你的应用。
 
-只要存在 XAML 分析异常，由 XAML 分析程序加载的 XAML 就无法创建有效的对象树。 在某些情况下，比如当 XAML 声明作为根视觉对象加载的应用程序的第一“页”时，XAML 分析异常不可恢复。 通常在 IDE（例如 Visual Studio 及其某一个 XAML 设计图面）中编辑 XAML。
+当 XAML 文件存在问题时，最典型的结果是某些系统或你的应用不会引发 XAML 分析异常。 只要存在 XAML 分析异常，由 XAML 分析程序加载的 XAML 就无法创建有效的对象树。 在某些情况下，比如当 XAML 声明作为根视觉对象加载的应用程序的第一“页”时，XAML 分析异常不可恢复。
 
-Visual Studio 通常可提供设计时的验证，以及在编辑 XAML 源时的错误检查。 例如，只要你键入无效的属性值，它就可能在 XAML 文本编辑器中显示“曲线”，而且你甚至不必等待 XAML 编译通过，就可看到 UI 定义中出现错误。 当应用真正运行时，如果任何 XAML 分析错误在设计时未经检测，公共语言运行时 (CLR) 便将这些错误报告为 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。
+通常在 IDE（例如 Visual Studio 及其某一个 XAML 设计图面）中编辑 XAML。 Visual Studio 通常可提供设计时的验证，以及在编辑 XAML 源时的错误检查。 例如，只要你键入无效的属性值，它就可能在 XAML 文本编辑器中显示“曲线”，而且你甚至不必等待 XAML 编译通过，就可看到 UI 定义中出现错误。
 
-有关可以对运行时 **XamlParseException** 执行的操作的详细信息，请参阅 [C# 或 Visual Basic 中 Windows 运行时应用的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194) **注意** 针对代码使用 C++/CX 的应用不能获取特定 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。
+一旦应用真正运行，如果任何 XAML 分析错误在设计时未经检测，公共语言运行时 (CLR) 就会报告这些错误作为 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 有关可以对运行时 **XamlParseException** 执行的操作的详细信息，请参阅[采用 C# 或 Visual Basic 的 Windows 运行时应用的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
-但是该异常与 **XamlParseException** 一样，包含的消息可阐明错误源与 XAML 相关，并且在 XAML 文件中包括上下文信息（例如行数）。 有关调试 Windows 运行时应用的详细信息，请参阅[启动调试会话](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)
+**注意** 针对代码使用 C++/CX 的应用不能获取特定 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是该异常与 **XamlParseException** 一样，包含的消息可阐明错误源与 XAML 相关，并且在 XAML 文件中包括上下文信息（例如行数）。
 
-Fore more info on debugging a Windows Runtime app, see <bpt id="p1">[</bpt>Start a debug session<ept id="p1">](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)</ept>.
+有关调试 Windows 运行时应用的详细信息，请参阅[启动调试会话](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

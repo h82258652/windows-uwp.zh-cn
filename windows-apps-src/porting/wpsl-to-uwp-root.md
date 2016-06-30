@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 如果你是一名具有 Windows Phone Silverlight 应用的开发人员，你可以在移植到 Windows 10 时充分使用你的技能组合和源代码。
-title: 从 Windows Phone Silverlight 移动到 UWP
+description: "如果你是一名具有 Windows Phone Silverlight 应用的开发人员，你可以在移植到 Windows 10 时充分使用你的技能组合和源代码。"
+title: "从 Windows Phone Silverlight 移动到 UWP"
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 19dde1c9b0df3b2a5e464feb15e43af9dd283661
+
 ---
 
 #  从 Windows Phone Silverlight 移动到 UWP
@@ -84,6 +88,7 @@ Windows Phone Silverlight 具有基于 Silverlight 4.0 的 XAML UI 框架，并�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

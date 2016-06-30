@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 借助自动播放功能自动启动
-description: 可以使用自动播放功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。
+author: TylerMSFT
+title: "借助自动播放功能自动启动"
+description: "可以使用自动播放功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。"
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 72e61f07c4b37488525d74ae28c9f605f20ca94c
+
 ---
 
 # <span id="dev_launch_resume.auto-launching_with_autoplay"></span>借助自动播放功能自动启动
@@ -66,9 +69,9 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 
 ```xml
 <TextBlock FontSize="18">File List</TextBlock>
-<TextBlock x:Name="FilesBlock" HorizontalAlignment="Left" TextWrapping="Wrap" 
+<TextBlock x:Name="FilesBlock" HorizontalAlignment="Left" TextWrapping="Wrap"
            VerticalAlignment="Top" Margin="0,20,0,0" Height="280" Width="240" />
-<Canvas x:Name="FilesCanvas" HorizontalAlignment="Left" VerticalAlignment="Top" 
+<Canvas x:Name="FilesCanvas" HorizontalAlignment="Left" VerticalAlignment="Top"
         Margin="260,20,0,0" Height="280" Width="100"/>
 ```
 
@@ -372,7 +375,7 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 在 MainPage.xaml.cs 文件中，将以下代码添加到 **MainPage** 类。
 
 ```cs
-async private System.Threading.Tasks.Task<List<Windows.Storage.StorageFile>> GetImageList(Windows.Storage.StorageFolder folder) 
+async private System.Threading.Tasks.Task<List<Windows.Storage.StorageFile>> GetImageList(Windows.Storage.StorageFolder folder)
 {
     var result = await folder.GetFilesAsync();
     var subFolders = await folder.GetFoldersAsync();
@@ -382,7 +385,7 @@ async private System.Threading.Tasks.Task<List<Windows.Storage.StorageFile>> Get
     return (from f in result orderby f.Name select f).ToList();
 }
 
-async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.StorageFile img) 
+async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.StorageFile img)
 {
     // Get the thumbnail to display
     var thumbnail = await img.GetThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.SingleItem,
@@ -495,7 +498,7 @@ internal async void DisplayFiles(Windows.Storage.StorageFolder folder)
     }
 }
 
-internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.StorageFile>> 
+internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.StorageFile>>
     ReadFiles(Windows.Storage.StorageFolder folder, string fileExtension)
 {
     var options = new Windows.Storage.Search.QueryOptions();
@@ -561,7 +564,7 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
       <Extensions>
         <Extension Category="windows.autoPlayContent">
           <AutoPlayContent>
-            <LaunchAction Verb="show" ActionDisplayName="Show Pictures" 
+            <LaunchAction Verb="show" ActionDisplayName="Show Pictures"
                           ContentEvent="ShowPicturesOnArrival" />
           </AutoPlayContent>
         </Extension>
@@ -576,8 +579,6 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

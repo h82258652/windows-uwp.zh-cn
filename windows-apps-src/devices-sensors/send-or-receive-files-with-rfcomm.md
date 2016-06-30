@@ -1,8 +1,11 @@
 ---
-author: DBirtolo
+author: msatranjr
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
-title: 蓝牙 RFCOMM
-description: 本文提供通用 Windows 平台 (UWP) 应用中的蓝牙 RFCOMM 的概述，以及如何发送或接收文件的示例代码。
+title: "蓝牙 RFCOMM"
+description: "本文提供通用 Windows 平台 (UWP) 应用中的蓝牙 RFCOMM 的概述，以及如何发送或接收文件的示例代码。"
+ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
+ms.openlocfilehash: 61e5844f18d09aa170498d261ca1a6fd60ef170c
+
 ---
 # 蓝牙 RFCOMM
 
@@ -364,6 +367,7 @@ void OnConnectionReceived(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

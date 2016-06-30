@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: 设计在应用中被动显示有效帮助。
-title: 有关设计应用内帮助的指南。
+Description: "设计在应用中被动显示有效帮助。"
+title: "有关设计应用内帮助的指南。"
 label: In-app help
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 7edad75b1639768023eb8add1e23fe0aafb0b674
+
 ---
 
 # 应用内帮助页
@@ -52,6 +56,7 @@ template: detail.hbs
 * [应用帮助指南](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
-title: 保持 UI 线程有响应
-description: 用户期望应用在执行计算时保持响应，无论计算机的类型如何都是如此。
+title: "保持 UI 线程有响应"
+description: "用户期望应用在执行计算时保持响应，无论计算机的类型如何都是如此。"
+translationtype: Human Translation
+ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
+ms.openlocfilehash: 6144b5b60a0092efd1056dd5de166a64733356ec
+
 ---
 # 保持 UI 线程有响应
 
@@ -102,6 +106,7 @@ public class AsyncExample
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

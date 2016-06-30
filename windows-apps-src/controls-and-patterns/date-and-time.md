@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 日期和时间控件使你可以查看并设置日期和时间。 本文提供设计指南，并帮助你选取正确的控件。
-title: 日期和时间控件指南
+Description: "日期和时间控件使你可以查看并设置日期和时间。 本文提供设计指南，并帮助你选取正确的控件。"
+title: "日期和时间控件指南"
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e9d8d73c35e2e600e89330fbd54aea57a815aebf
+
 ---
 
 # 日历、日期和时间控件
@@ -110,6 +114,7 @@ XAML 日期和时间控件中所使用的日期对象具有不同的表示形式
 - [**TimePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn299280)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

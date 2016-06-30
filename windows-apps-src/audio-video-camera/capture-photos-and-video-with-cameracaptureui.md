@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: 本文将介绍如何使用 CameraCaptureUI 类来使用内置于 Windows 的相机 UI 捕获照片或视频。
-title: 使用 CameraCaptureUI 捕获照片和视频
+description: "本文将介绍如何使用 CameraCaptureUI 类来使用内置于 Windows 的相机 UI 捕获照片或视频。"
+title: "使用 CameraCaptureUI 捕获照片和视频"
+translationtype: Human Translation
+ms.sourcegitcommit: 72abc006de1925c3c06ecd1b78665e72e2ffb816
+ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
+
 ---
 
 # 使用 CameraCaptureUI 捕获照片和视频
@@ -107,6 +111,7 @@ title: 使用 CameraCaptureUI 捕获照片和视频
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

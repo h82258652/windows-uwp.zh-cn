@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: 了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
+Description: "了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。"
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
-title: 开发非独占 Windows 10 应用
+title: "开发非独占 Windows 10 应用"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 77c401fd9686cb260e7b2d9e4bdf47a91d76802e
+
 ---
 
 # 开发非独占 Windows 应用  
@@ -80,6 +84,7 @@ XAML
 * [Microsoft 辅助功能开发人员中心](https://msdn.microsoft.com/enable)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

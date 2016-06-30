@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 通过“广告中介”报告，你可以查看有效填充率，以及你所使用的广告网络的相应填充率。
-title: 广告中介报告
+Description: "通过“广告中介”报告，你可以查看有效填充率，以及你所使用的广告网络的相应填充率。"
+title: "广告中介报告"
 ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1597e21414dbb5d1b540a2dd67478fbcc83d574e
+
 ---
 
 # 广告中介报告
@@ -63,6 +67,7 @@ ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

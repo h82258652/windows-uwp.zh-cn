@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
-description: 你可以使用 Windows.Media.Transcoding API 将视频文件代码从一种格式转换为另一种格式。
-title: 转换媒体文件代码
+description: "你可以使用 Windows.Media.Transcoding API 将视频文件代码从一种格式转换为另一种格式。"
+title: "转换媒体文件代码"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 06c452291f10acd35dde9659c08a386ea38fa90a
+
 ---
 
 # 转换媒体文件代码
@@ -72,6 +76,7 @@ title: 转换媒体文件代码
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

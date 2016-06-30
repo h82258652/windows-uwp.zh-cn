@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
-title: 性能
-description: 用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。
+title: "性能"
+description: "用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 68f9080cedcc2840fb1e92b81e2fb6bc0b53bee8
+
 ---
 # 性能
 
@@ -31,6 +35,7 @@ description: 用户希望他们的应用保持响应性、感觉自然，并且�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

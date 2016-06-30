@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
-description: Windows SDK、Microsoft 官方商城协定和盈利 SDK 以及 Windows 应用商店提供许多功能，可使你从应用中获取更多收益并通过吸引用户来赢得客户。
-title: 获取应用收益
+description: "Windows SDK、Microsoft 官方商城协定和盈利 SDK 以及 Windows 应用商店提供许多功能，可使你从应用中获取更多收益并通过吸引用户来赢得客户。"
+title: "获取应用收益"
+translationtype: Human Translation
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: 6d5f483b44ae4516f4969431e31f70388a66c5d9
+
 ---
 
 # 获取应用收益，并吸引客户
@@ -28,6 +32,7 @@ Windows SDK、Microsoft 官方商城协定和盈利 SDK 以及 Windows 应用商
 | [使用 Windows 应用商店服务](using-windows-store-services.md)                                    | Windows 应用商店公开可通过 REST API 调用的多个服务，用于以编程方式针对注册到你或你的组织的 Windows 开发人员中心帐户的应用访问特定类型的数据。    |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

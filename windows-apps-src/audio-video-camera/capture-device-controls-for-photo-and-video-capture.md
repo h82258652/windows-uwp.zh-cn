@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
-description: 本文向你介绍了视频设备控件如何实现增强的照片和视频捕获方案，包括光学图像防抖动和平滑缩放。
-title: 用于照片和视频捕获的捕获设备控件
+description: "本文向你介绍了视频设备控件如何实现增强的照片和视频捕获方案，包括光学图像防抖动和平滑缩放。"
+title: "用于照片和视频捕获的捕获设备控件"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
+
 ---
 
 # 用于照片和视频捕获的捕获设备控件
@@ -333,6 +337,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 * [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

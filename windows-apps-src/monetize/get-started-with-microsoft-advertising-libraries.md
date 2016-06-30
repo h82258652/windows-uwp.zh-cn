@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
-description: 获取所需信息以开始使用 Microsoft Advertising 库向你的应用添加横幅和视频间隙广告。
-title: Microsoft Advertising 库入门
+description: "获取所需信息以开始使用 Microsoft Advertising 库向你的应用添加横幅和视频间隙广告。"
+title: "Microsoft Advertising 库入门"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 08168dc15b33d99a044eedd7864848ed7a858991
+
 
 ---
 
@@ -15,7 +19,7 @@ title: Microsoft Advertising 库入门
 
 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和视频间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
->**重要提示** Microsoft Advertising 库是一组不同于广告中介库的扩展。 如果想要在 XAML 或 JavaScript 应用中显示来自 Microsoft 的横幅或视频间隙广告，请使用 Microsoft Advertising 库中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 类。 如果想要在 XAML 应用中显示来自多个广告网络的横幅广告，请使用广告中介库中的 **AdMediatorControl** 类。 有关详细信息，请参阅[区别是什么：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
+>**重要提示** Microsoft Advertising 库是一组不同于广告中介库的扩展。 如果要在 XAML 或 JavaScript 应用中显示来自 Microsoft 的横幅或视频间隙广告，请使用 Microsoft Advertising 库中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 类。 如果要在 XAML 应用中显示来自多个广告网络的横幅广告，请使用广告中介库中的 **AdMediatorControl** 类。 有关详细信息，请参阅[区别是什么：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
 
  
 
@@ -37,6 +41,7 @@ title: Microsoft Advertising 库入门
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

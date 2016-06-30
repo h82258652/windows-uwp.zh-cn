@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: 创建“Hello, world”应用 (JS)
-description: 本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。
+title: "创建“Hello, world”应用 (JS)"
+description: "本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。"
+translationtype: Human Translation
+ms.sourcegitcommit: f3cb50e5b0b0baa73431392a1f6854a62f3655de
+ms.openlocfilehash: 5f534169117da94cb2249c897603f567c007299b
+
 ---
 # 创建“Hello, world”应用 (JS)
 
@@ -37,11 +41,11 @@ description: 本教程指导你如何使用 JavaScript 和 HTML 创建一个简�
 
     （从现在开始，我们将 Visual Studio 2015 简称为 Visual Studio。）
 
-2.  在“文件”****菜单上，依次选择“新建”**** > “项目”****
+2.  在“文件”****菜单上，依次选择“新建”**** > “项目”****。
 
     会出现“新建项目”****对话框。 可在对话框的左侧窗格中选择要显示的模板的类型。
 
-3.  在左侧窗格中，展开“已安装>模板> JavaScript > Windows”****，然后选取“通用”****模板组。 对话框的中心窗格会显示适用于通用 Windows 平台 (UWP) 应用的项目模板的列表。
+3.  在左侧窗格中，展开“已安装&gt;模板&gt; JavaScript &gt; Windows”****，然后选取“通用”****模板组。 对话框的中心窗格会显示适用于通用 Windows 平台 (UWP) 应用的项目模板的列表。
 
     ![“新建项目”窗口 ](images/js-tut-newproject.png)
 
@@ -54,9 +58,9 @@ description: 本教程指导你如何使用 JavaScript 和 HTML 创建一个简�
 5.  在**“名称”**文本框中，键入“HelloWorld”。
 6.  单击“确定”****以创建项目。
 
-    Visual Studio 会创建项目并在“解决方案资源管理器”****中显示该项目
+    Visual Studio 会创建项目并在“解决方案资源管理器”****中显示该项目。
 
-    ![适用于 HelloWorld 项目的 Visual Studio 解决方案资源管理器](images/js-tut-helloworld.png)
+    ![HelloWorld 项目的 Visual Studio 解决方案资源管理器](images/js-tut-helloworld.png)
 
 尽管 **Blank App** 是最基本的模板，但该模板仍包含少量文件：
 
@@ -66,7 +70,7 @@ description: 本教程指导你如何使用 JavaScript 和 HTML 创建一个简�
 -   用于在应用启动时显示的初始屏幕 (images/SplashScreen.scale-200.png)。
 -   用于在应用启动时运行的起始页 (default.html) 和附带的 JavaScript 文件 (default.js)。
 
-若要查看和编辑文件，请双击“解决方案资源管理器”****中的文件
+若要查看和编辑文件，请双击**“解决方案资源管理器”**中的文件。
 
 这些文件是所有使用 JavaScript 的 UWP 应用必不可少的文件。 在 Visual Studio 中创建的所有项目都包含这些文件。
 
@@ -92,13 +96,13 @@ description: 本教程指导你如何使用 JavaScript 和 HTML 创建一个简�
 
    -或者-
 
-   在“调试”****菜单中，单击“开始调试”****
+   在“调试”****菜单中，单击“开始调试”****。
 
    -或者-
 
    按 F5。
 
-应用将在窗口中打开，并且将首先显示默认初始屏幕。 初始屏幕由一个图像 (SplashScreen.png) 和背景色（在应用的清单文件中指定）定义。
+应用将在窗口中打开，并且将首先显示默认初始屏幕。 初始屏幕由一个图像 \(SplashScreen.png\) 和背景色（在应用的清单文件中指定）定义。
 
 初始屏幕会消失，然后会出现你的应用。 它包含带有文本“内容在此处”的黑屏。
 
@@ -114,7 +118,7 @@ description: 本教程指导你如何使用 JavaScript 和 HTML 创建一个简�
 
    -或者-
 
-   在“调试”****菜单中，单击“停止调试”****
+   在“调试”****菜单中，单击“停止调试”****。
 
    -或者-
 
@@ -134,12 +138,12 @@ description: 本教程指导你如何使用 JavaScript 和 HTML 创建一个简�
 最好在带有小型屏幕和有限内存的设备上测试应用，因此请使用“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****选项。
 **在移动设备仿真器上开始调试**
 
-1.  在“标准”****工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****
+1.  在“标准”****工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****。
 2.  单击工具栏中的“开始调试”****按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
 
    -或者-
 
-   在“调试”****菜单中，单击“开始调试”****
+   在**“调试”**菜单中，单击**“开始调试”**。
 
    
 Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。 在移动设备仿真器中，应用的外观如下所示。
@@ -172,11 +176,11 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
 </html>
 ```
 
-我们来向 default.html 文件中添加一些新内容。 正如你向任何其他 HTML 文件中添加内容一样，你在 [**body**](https://msdn.microsoft.com/library/windows/apps/Hh453011) 元素内添加内容。 你可以使用 HTML5 元素创建应用（具有[少数例外](https://msdn.microsoft.com/library/windows/apps/Hh465380)）。 这表示你可以使用 HTML5 元素，如 [**h1**](https://msdn.microsoft.com/library/windows/apps/Hh441078)、[**p**](https://msdn.microsoft.com/library/windows/apps/Hh453431)、[**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017)、[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 以及 [**img**](https://msdn.microsoft.com/library/windows/apps/Hh466114)
+我们来向 default.html 文件中添加一些新内容。 正如你向任何其他 HTML 文件中添加内容一样，你在 [**body**](https://msdn.microsoft.com/library/windows/apps/Hh453011) 元素内添加内容。 你可以使用 HTML5 元素创建应用（具有[少数例外](https://msdn.microsoft.com/library/windows/apps/Hh465380)）。 这表示你可以使用 HTML5 元素，如 [**h1**](https://msdn.microsoft.com/library/windows/apps/Hh441078)、[**p**](https://msdn.microsoft.com/library/windows/apps/Hh453431)、[**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017)、[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 以及 [**img**](https://msdn.microsoft.com/library/windows/apps/Hh466114)。
 
 **修改起始页**
 
-1.  使用以下内容替代 [**body**](https://msdn.microsoft.com/library/windows/apps/Hh453011) 元素中的现有内容：显示“Hello, world!”的首级标题、询问用户名的一些文本、用于接受用户名的 [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 元素、[**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 以及 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 元素。 向 **input**、**button** 和 **div** 分配 ID
+1.  使用以下内容替代 [**body**](https://msdn.microsoft.com/library/windows/apps/Hh453011) 元素中的现有内容：显示“Hello, world!”的首级标题、询问用户名的一些文本、用于接受用户名的 [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 元素、[**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 以及 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 元素。 向 **input**、**button** 和 **div** 分配 ID。
 
  ```html
     <body class="win-type-body">
@@ -248,26 +252,26 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
 })();
 ```
 
-我们来为 [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定义事件处理程序。 新的事件处理程序会从 `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件获取用户名并使用该用户名向在上一部分中创建的 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 元素输出问候。
+我们来为 [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定义事件处理程序。 新的事件处理程序会从 `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件获取用户名并使用该用户名向在上一部分中创建的 `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 元素输出问候。
 
 ### 使用用于触控、鼠标和笔输入的事件
 
 在 UWP 应用中，你无须担心触控、鼠标与其他指针输入形式之间的区别。 你只需使用你了解的事件（如 [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312)），这些事件适用于所有输入形式。
 
-**提示** 应用还可以使用新的 *MSPointer\** 和 *MSGesture\** 事件，这些事件适用于触控输入、鼠标输入以及笔输入，并可以提供有关触发事件的设备的其他信息。 有关详细信息，请参阅[响应用户交互](https://msdn.microsoft.com/library/windows/apps/Hh700412)和[手势、操作以及交互](https://msdn.microsoft.com/library/windows/apps/Hh761498)
+**提示** 应用还可以使用新的 *MSPointer\** 和 *MSGesture\** 事件，这些事件适用于触控输入、鼠标输入以及笔输入，并可以提供有关触发事件的设备的其他信息。 有关详细信息，请参阅[响应用户交互](https://msdn.microsoft.com/library/windows/apps/Hh700412)和[手势、操作以及交互](https://msdn.microsoft.com/library/windows/apps/Hh761498)。
 
 我们继续并创建事件处理程序。
 
 **创建事件处理程序**
 
-1.  在 default.js 中，在 [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) 事件处理程序之后且对 [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705) 的调用之前，创建名为 `buttonClickHandler` 的 [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件处理程序函数，该函数接受有名称的单个参数
+1.  在 default.js 中，在 [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) 事件处理程序之后且对 [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705) 的调用之前，创建名为 `buttonClickHandler` 的 [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件处理程序函数，该函数接受名为 `eventInfo` 的单个参数。
 ```javascript
     function buttonClickHandler(eventInfo) {
      
         }
 ```
 
-2.  在事件处理程序内，从 `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件检索用户的名称并使用它创建问候语。 使用 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 显示相关结果。
+2.  在事件处理程序内，从 `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件检索用户的名称并使用它创建问候语。 使用 `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 显示相关结果。
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -300,7 +304,7 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
     };
 ```
 
-在 [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 处理程序内，该代码会检查发生了何种类型的激活。 存在多种不同类型的激活。 例如，当用户启动应用和用户希望打开与应用关联的文件时会激活应用。 （有关详细信息，请参阅[应用生命周期](https://msdn.microsoft.com/library/windows/apps/Mt243287)
+在 [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 处理程序内，该代码会检查发生了何种类型的激活。 存在多种不同类型的激活。 例如，当用户启动应用和用户希望打开与应用关联的文件时会激活应用。 （有关详细信息，请参阅[应用生命周期](https://msdn.microsoft.com/library/windows/apps/Mt243287)。）
 
 我们关注 [**launch**](https://msdn.microsoft.com/library/windows/apps/BR224693) 激活。 只要应用未在运行而后由用户激活，就会*启动*该应用。
 
@@ -320,7 +324,7 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
             }
 ```
 
-然后激活会调用 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975)
+然后激活会调用 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975)。
 
 ```javascript
             args.setPromise(WinJS.UI.processAll());
@@ -332,11 +336,11 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
 
 **提示** [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 函数会扫描 default.html 文件中是否存在 WinJS 控件并初始化这些控件。 到目前为止，我们尚未添加其中任何控件，但最好保留此代码，以便以后需要时要添加它们。
 
-为非 WinJS 控件注册事件处理程序的较好时机是在调用 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 之后
+为非 WinJS 控件注册事件处理程序的较好时机是在调用 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 之后。
 
 **注册事件处理程序**
 
--   在 default.js 的 [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 事件处理程序中，检索 `helloButton` 并使用 [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) 为 [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件注册事件处理程序。 在调用 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 之后添加此代码
+-   在 default.js 的 [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 事件处理程序中，检索 `helloButton` 并使用 [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) 为 [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件注册事件处理程序。 在调用 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 之后添加此代码。
 
 ```javascript
    app.onactivated = function (args) {
@@ -414,7 +418,7 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
 
 我们来将一个 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件添加到应用。
 
-1.  在你的 default.html 文件中，在 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 之后添加 [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) 和 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件
+1.  在你的 default.html 文件中，在 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 之后添加 [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) 和 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件。
 
     ```html
     <body class="win-type-body">
@@ -477,7 +481,7 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
 ```
 
 2.  在 default.js 文件中，为 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件的 [**change**](https://msdn.microsoft.com/library/windows/apps/BR211891) 事件创建一个名为 `ratingChanged` 的事件处理程序。 [
-            **eventInfo**](https://msdn.microsoft.com/library/windows/apps/Hh465776) 参数包含 **detail.tentativeRating** 属性，该属性可提供新的用户评级。 检索该值并在输出 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 中显示该值
+            **eventInfo**](https://msdn.microsoft.com/library/windows/apps/Hh465776) 参数包含 **detail.tentativeRating** 属性，该属性可提供新的用户评级。 检索该值并在输出 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 中显示该值。
 
 ```javascript
         function ratingChanged(eventInfo) {
@@ -550,6 +554,7 @@ Here's the updated [**onactivated**](https://msdn.microsoft.com/library/windows/
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

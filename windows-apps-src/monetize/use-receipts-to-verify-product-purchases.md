@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: 每个成功购买产品的 Windows 应用商店交易都可以选择返回交易收据。
-title: 使用收据验证产品购买
+description: "每个成功购买产品的 Windows 应用商店交易都可以选择返回交易收据。"
+title: "使用收据验证产品购买"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: b1322b74bf1038f05cd1cba275e432e279ed362d
+
 ---
 
 # 使用收据验证产品购买
@@ -239,6 +243,7 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

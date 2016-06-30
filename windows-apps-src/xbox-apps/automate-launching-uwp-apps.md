@@ -1,7 +1,11 @@
 ---
-title: 自动启动 Windows 10 通用 Windows 平台 (UWP) 应用
-description: 开发人员可以使用协议激活和启动激活来自动启动他们的 UWP 应用或游戏以进行自动化测试。
+title: "自动启动 Windows 10 通用 Windows 平台 (UWP) 应用"
+description: "开发人员可以使用协议激活和启动激活来自动启动他们的 UWP 应用或游戏以进行自动化测试。"
 author: listurm
+translationtype: Human Translation
+ms.sourcegitcommit: adf2d16f9c208631f91fbcad19d1ea8087cd9cb5
+ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
+
 ---
 
 # 自动启动 Windows 10 UWP 应用
@@ -204,6 +208,7 @@ Platform::String^ argval = launchArgs->Arguments;
 总之，你可以使用各种方法来启动 UWP 应用。 根据要求和使用情况，可能还有更适合的其他方法。 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 若要查看应用中广告单元的性能数据，可以在 Windows 开发人员中心仪表板上使用应用级别和帐户级别的广告性能报告。
-title: 广告性能报告
+Description: "若要查看应用中广告单元的性能数据，可以在 Windows 开发人员中心仪表板上使用应用级别和帐户级别的广告性能报告。"
+title: "广告性能报告"
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
+translationtype: Human Translation
+ms.sourcegitcommit: 93e12837aec151b0cd1fa711c9e04081d74a3962
+ms.openlocfilehash: 1617005cff264a89eb66e326e2bedf9f6641a3da
+
 ---
 
 # 广告性能报告
@@ -90,6 +94,7 @@ ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

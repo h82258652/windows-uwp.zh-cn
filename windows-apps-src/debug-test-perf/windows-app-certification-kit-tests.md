@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
-title: Windows 应用认证工具包测试
-description: Windows 应用认证工具包包含大量测试，可以帮助确保应用已准备好，可在 Windows 应用商店中发布。
+title: "Windows 应用认证工具包测试"
+description: "Windows 应用认证工具包包含大量测试，可以帮助确保应用已准备好，可在 Windows 应用商店中发布。"
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: 816b147c91a340505348aa579c8b1540962a1df5
+
 ---
 ## Windows 应用认证工具包测试
 
@@ -666,6 +670,7 @@ WinJS 后台任务测试可确保 JavaScript 应用具有适当的 close 语句�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

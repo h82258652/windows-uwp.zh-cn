@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
-title: 创建定期工作项
-description: 了解如何创建定期重复的工作项。
+title: "创建定期工作项"
+description: "了解如何创建定期重复的工作项。"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: f5b16c62b591481c52cfa4bb7e1ddb162bf18f42
+
 ---
 # 创建定期工作项
 
@@ -179,7 +183,7 @@ description: 了解如何创建定期重复的工作项。
 
 ## 取消计时器
 
-如有必要，调用 [**Cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) 方法停止定期工作项重复运行。 如果取消定期计时器时正在运行工作项，则允许完成该工作项。 当定期工作项的所有实例完成时，调用 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926)（如果已提供）。
+如有必要，调用 [**Cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) 方法停止定期工作项重复运行。 如果取消定期计时器时正在运行工作项，则允许完成该工作项。 当定期工作项的所有实例完成时，请调用 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926)（如已提供）。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -202,6 +206,7 @@ description: 了解如何创建定期重复的工作项。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

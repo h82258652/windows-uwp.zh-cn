@@ -1,16 +1,17 @@
 ---
-author: martinekuan
-title: Windows 运行时类型的 .NET Framework 映射
-description: 下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。
+author: msatranjr
+title: "Windows 运行时类型的 .NET Framework 映射"
+description: "下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。"
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 286f479c86c06c9d08b4e36cf9776b590a13cc5f
+
 ---
 
 # Windows 运行时类型的.NET framework 映射
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 下表列出了 .NET Framework 在通用 Windows 平台 (UWP) 类型和 .NET Framework 类型之间产生的映射。 在使用托管代码编写的通用 Windows 应用中，IntelliSense 将显示 .NET Framework 类型而不是 UWP 类型。 例如，如果 Windows 运行时方法采用类型 IVector&lt;string&gt; 的参数，IntelliSense 将显示类型 IList&lt;string&gt; 的参数。 同样，在使用托管代码编写的 Windows 运行时组件中，你将使用成员签名中的 .NET Framework 类型。 当 [Windows 运行时元数据导出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 生成 Windows 运行时组件时，.NET Framework 类型将变为相应的 UWP 类型。
 
@@ -84,6 +85,6 @@ ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

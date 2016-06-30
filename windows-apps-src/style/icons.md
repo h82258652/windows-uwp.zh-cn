@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 良好的图标会与版式和设计语言的其余部分相协调。 它们不会混合隐喻，并且会尽快且尽量简单地仅交流所需内容。 
-title: 图标
+Description: "良好的图标会与版式和设计语言的其余部分相协调。 它们不会混合隐喻，并且会尽快且尽量简单地仅交流所需内容。"
+title: "图标"
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
+
 ---
 
 # 适用于 UWP 应用的图标
@@ -172,6 +176,7 @@ template: detail.hbs
 * [磁贴和图标资源指南](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

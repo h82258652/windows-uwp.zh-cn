@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 通过 Windows 开发人员中心仪表板中的“购置”报告，你可以查看哪些用户购置了你的应用，以及客户统计和平台详细信息。
-title: 购置报告
+Description: "通过 Windows 开发人员中心仪表板中的“购置”报告，你可以查看哪些用户购置了你的应用，以及客户统计和平台详细信息。"
+title: "购置报告"
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: bfdf4f9f2d94a31a1c159e947615c10abf556aad
+
 ---
 
 # 购置报告
@@ -63,6 +67,7 @@ ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

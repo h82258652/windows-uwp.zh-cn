@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
-description: Windows 应用商店公开可通过 REST API 调用的多个服务，用于以编程方式针对注册到你的或组织的 Windows 开发人员中心帐户的应用访问特定类型的数据。
-title: 使用 Windows 应用商店服务
+description: "Windows 应用商店公开可通过 REST API 调用的多个服务，用于以编程方式针对注册到你的或组织的 Windows 开发人员中心帐户的应用访问特定类型的数据。"
+title: "使用 Windows 应用商店服务"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 43e3155315a9132daa36f592b54af3e943ea3e21
+
 ---
 
 # 使用 Windows 应用商店服务
@@ -29,6 +33,7 @@ Windows 应用商店公开可通过 REST API 调用的多个服务，用于以�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

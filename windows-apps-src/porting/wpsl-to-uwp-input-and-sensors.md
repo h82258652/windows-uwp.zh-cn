@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。
-title: 针对 I/O、设备和应用模型将 Windows Phone Silverlight 移植到 UWP
+description: "与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。"
+title: "针对 I/O、设备和应用模型将 Windows Phone Silverlight 移植到 UWP"
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6b29e741c9cad68083502b25445b965fc266ef6e
+
 ---
 
 #  针对 I/O、设备和应用模型将 Windows Phone Silverlight 移植到 UWP
@@ -97,6 +101,7 @@ Windows Phone Silverlight 应用可以使用 **Microsoft.Phone.Info.DeviceStatus
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

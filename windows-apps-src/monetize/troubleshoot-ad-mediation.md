@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 以下是一些与广告中介相关的多个常见开发问题的解决方案。
-title: 广告中介疑难解答
+Description: "以下是一些与广告中介相关的多个常见开发问题的解决方案。"
+title: "广告中介疑难解答"
 ms.assetid: 8728DE4F-E050-4217-93D3-588DD3280A3A
+translationtype: Human Translation
+ms.sourcegitcommit: 10dcf3c2b8ea530b94e9c17ada80aaa98e9418fe
+ms.openlocfilehash: f32dc28c9b199c11a1932639f49ab4c29d3e1e8f
+
 ---
 
 # 广告中介疑难解答
@@ -15,7 +19,7 @@ ms.assetid: 8728DE4F-E050-4217-93D3-588DD3280A3A
 **无法将 AdMediatorControl 添加到设计图面**  
 如果第一次将 **AdMediatorControl** 控件拖动到通用 Windows 平台 (UWP) 项目中的设计器，或者拖动到将 C# 或 Visual Basic 与 XAML 结合使用的 Windows 8.1 或 Windows Phone 8.1 项目中的设计器，Visual Studio 会将必要的广告中介程序集引用添加到你的项目，但该控件尚未添加到该设计器。 若要添加该控件，请在 Visual Studio 显示的消息中单击“确定”、等待设计器几秒钟以便刷新，然后再次将该控件拖回到设计器。
 
-如果仍无法成功将该控件添加到设计器，请确保你的项目所面向的处理器体系结构适用于你的应用（例如，**“x86”**），而不是面向**任何 CPU**。 如果对于生成平台，该项目面向**任何 CPU**，该控件则无法添加到设计器。
+如果仍无法成功将该控件添加到设计器，请确保你的项目所面向的处理器体系结构适用于你的应用（例如，**“x86”**），而不是面向**任何 CPU**。 如果该项目面向生成平台的**任何 CPU**，则该控件将无法添加到设计器。
 
 当投放来自 Microsoft 的广告时，**AdMediatorControl 会在运行时显示错误“&lt;*宽度* &gt; x &lt;*高度*&gt; 不支持”**Microsoft Advertising 仅支持[互动广告局 (IAB) 建议的某些广告大小](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising)。在某些情况下，即使在设计器中或在你的 XAML 中将广告中介控件的高度和宽度设置为这些受支持的广告大小之一，缩放和舍入问题仍然可能会导致广告中介框架无法投放广告。若要避免此问题，需要将代码中用于 Microsoft Advertising 的** Width **和** Height** 可选参数分配给任一受支持的广告大小。
 
@@ -68,6 +72,7 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.AdDuplex]["Size"] = "160x
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: DirectX 游戏的 2D 图形
-description: 我们将讨论 2D 位图图形的使用和效果，以及如何在游戏中使用它们。
+title: "DirectX 游戏的 2D 图形"
+description: "我们将讨论 2D 位图图形的使用和效果，以及如何在游戏中使用它们。"
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 50782c5923f9c811f5d8e91aa9aee897876e6c24
+
 ---
 
 # DirectX 游戏的 2D 图形
@@ -67,6 +71,7 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

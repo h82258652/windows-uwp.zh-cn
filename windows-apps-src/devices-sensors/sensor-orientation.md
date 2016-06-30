@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
-title: 传感器方向
-description: 来自 Accelerometer、Gyrometer、Compass、Inclinometer 和 OrientationSensor 类的传感器数据由其参考轴定义。 这些轴由设备的横向方向定义，并在用户转动设备时与其一起旋转。
+title: "传感器方向"
+description: "来自 Accelerometer、Gyrometer、Compass、Inclinometer 和 OrientationSensor 类的传感器数据由其参考轴定义。 这些轴由设备的横向方向定义，并在用户转动设备时与其一起旋转。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3da7957bf9b162f1ac1533ccff90c8764f34890a
+
 ---
 # 传感器方向
 
@@ -166,6 +170,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

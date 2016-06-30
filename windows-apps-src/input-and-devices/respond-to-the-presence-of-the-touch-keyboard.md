@@ -5,8 +5,8 @@ title: "响应触摸键盘的存在"
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 417668a24c4a2ba28671b6fb0a4da74c0cfab341
 
 ---
 
@@ -47,7 +47,7 @@ ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
 
 有关于设计出既实用又有吸引力且已针对键盘输入进行优化的应用的有用提示，请参阅[键盘设计指南](https://msdn.microsoft.com/library/windows/apps/hh972345)。
 
-## <span id="Touch_keyboard_and_a_custom_UI"></span><span id="touch_keyboard_and_a_custom_ui"></span><span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"></span>触摸键盘和自定义 UI
+## 触摸键盘和自定义 UI
 
 
 下面是关于自定义的文本输入控件的一些基本建议。
@@ -70,7 +70,7 @@ ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
 
     ![包含应始终位于视图中的区域的表单](images/touch-keyboard-pan2.png)
 
-## <span id="handling_events"></span><span id="HANDLING_EVENTS"></span>处理 Showing 和 Hiding 事件
+## 处理 Showing 和 Hiding 事件
 
 
 下面是关于附加触摸键盘的 [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) 和 [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) 事件的事件处理程序的示例。
@@ -123,7 +123,7 @@ public class MyApplication
 }
 ```
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 * [键盘交互](keyboard-interactions.md)
 * [键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -145,6 +145,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

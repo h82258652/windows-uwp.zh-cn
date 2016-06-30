@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 在许多硬件上支持阴影图
-description: 在速度更快的设备上更高保真度地呈现阴影，在功能不够强大的设备上更快地呈现阴影。
+title: "在许多硬件上支持阴影图"
+description: "在速度更快的设备上更高保真度地呈现阴影，在功能不够强大的设备上更快地呈现阴影。"
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
+translationtype: Human Translation
+ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
+ms.openlocfilehash: 0cdc31f07560e7f1747806d1436bccbc1e50f8b9
+
 ---
 
 # 在许多硬件上支持阴影图
@@ -174,6 +178,7 @@ return float4(input.color * (light + shadow), 1.f);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 在开发人员中心仪表板中定义实验并在你的应用中为实验编码后，便可以准备激活实验，并使用开发人员中心仪表板查看实验结果。
-title: 在开发人员中心仪表板中管理实验
+Description: "在开发人员中心仪表板中定义实验并在你的应用中为实验编码后，便可以准备激活实验，并使用开发人员中心仪表板查看实验结果。"
+title: "在开发人员中心仪表板中管理实验"
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 24ca106cc83c4495657972f463c556585cdfcb45
+
 ---
 
 # 在开发人员中心仪表板中管理实验
@@ -53,6 +57,7 @@ ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
   * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

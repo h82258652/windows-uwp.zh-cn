@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: 通过适当设置日期、时间、数字和货币的格式，开发全球通用的应用。
-title: 使用全球通用的格式
+Description: "通过适当设置日期、时间、数字和货币的格式，开发全球通用的应用。"
+title: "使用全球通用的格式"
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 77b5e7bd412936dd5d8c4bc252771631d6b884cf
+
 ---
 
 # <span id="dev_globalizing.use_global-ready_formats"></span>使用全球通用的格式
@@ -190,6 +194,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

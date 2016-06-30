@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 了解如何向你的客户提供应用的程序包，以及如何管理特定的程序包方案。
-title: 应用包管理指南
+Description: "了解如何向你的客户提供应用的程序包，以及如何管理特定的程序包方案。"
+title: "应用包管理指南"
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: ac8d150f426c7d32e8a3b61b7f08cc0b84feedb8
+
 ---
 
 # 应用包管理指南
@@ -134,6 +138,7 @@ ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

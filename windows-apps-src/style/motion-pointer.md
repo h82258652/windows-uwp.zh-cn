@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 使用指针动画向用户提供用户点击某个项目时的视觉反馈。
-title: UWP 应用中的指针单击动画
+Description: "使用指针动画向用户提供用户点击某个项目时的视觉反馈。"
+title: "UWP 应用中的指针单击动画"
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
 label: Motion--Pointer animations
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 24175bb7c822ceb53af5e1ec70bf83f701fd1cce
+
 ---
 
 # 指针单击动画
@@ -44,6 +48,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

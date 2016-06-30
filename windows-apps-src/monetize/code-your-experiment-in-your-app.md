@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 在开发人员中心仪表板定义你的实验后，你就已经准备好在应用中编写实验代码。
-title: 针对实验为你的应用编码
+Description: "在开发人员中心仪表板定义你的实验后，你就已经准备好在应用中编写实验代码。"
+title: "针对实验为你的应用编码"
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
+translationtype: Human Translation
+ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
+ms.openlocfilehash: 4e6706624e71c6d448a3d457c27d11c9f6ecc156
+
 ---
 
 # 针对实验为你的应用编码
@@ -97,6 +101,7 @@ StoreServicesCustomEvents.Log("userClickedButton", variation);
   * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

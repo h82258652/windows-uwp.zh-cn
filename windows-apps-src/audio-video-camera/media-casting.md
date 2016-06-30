@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: 本文向你演示了如何将媒体从通用 Windows 应用转换到远程设备。
-title: 媒体转换
+description: "本文向你演示了如何将媒体从通用 Windows 应用转换到远程设备。"
+title: "媒体转换"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
+
 ---
 
 # 媒体转换
@@ -151,6 +155,7 @@ title: 媒体转换
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心。
-title: pubCenter 开发人员中心集成
+Description: "pubCenter 上的 Microsoft Advertising 已集成到 Windows 开发人员中心。"
+title: "pubCenter 开发人员中心集成"
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d6bf60e1dae7ec62e3cdbba8098a24c093d5deb1
+
 ---
 
 # pubCenter 开发人员中心集成
@@ -181,6 +185,7 @@ pubCenter 中不再支持创建新的广告单位。 如果你已将 Microsoft �
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

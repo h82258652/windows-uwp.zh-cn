@@ -2,6 +2,10 @@
 author: Jwmsft
 label: Buttons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 91399060e129df18acd38e18d98cad848667a5ad
+
 ---
 # 按钮
 按钮为用户提供了触发即时操作的方法。
@@ -225,6 +229,7 @@ Surface Hub ![Surface Hub 上的系统后退功能](images/nav-back-surfacehub.p
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

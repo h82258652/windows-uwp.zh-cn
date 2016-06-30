@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
-title: 通过网络枚举设备
-description: 除了发现本地连接的设备以外，还可以使用 Windows.Devices.Enumeration API 通过无线和网络协议来枚举设备。
+title: "通过网络枚举设备"
+description: "除了发现本地连接的设备以外，还可以使用 Windows.Devices.Enumeration API 通过无线和网络协议来枚举设备。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6eca7156c8f81a9a89e006c09a232a255f3a8725
+ms.openlocfilehash: 9d2d58f2423688f895da1de56eef6448bb42692d
+
 ---
 # 通过网络枚举设备
 
@@ -19,9 +23,9 @@ description: 除了发现本地连接的设备以外，还可以使用 Windows.D
 
 有时你需要枚举未进行本地连接而且只有通过无线或网络协议才能发现的设备。 为此，[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 拥有三个不同种类的设备对象：**AssociationEndpoint** (AEP)、**AssociationEndpointContainer**（AEP 容器）和 **AssociationEndpointService**（AEP 服务）。 它们统称为 AEP 或 AEP 对象。
 
-某些设备 API 提供了选择器字符串，你可以使用该字符串来枚举可用的 AEP 对象。 与系统已配对和未配对的设备可能都包括在其中。 有些设备可能不需要配对。 如果在与设备交互前需要和其配对，则那些设备 API 可能会尝试与设备配对。 Wi-Fi Direct 就是遵循此模式的 API 的示例。 如果那些设备 API 没有与设备自动配对，你可以从 [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/Dn705960) 中使用 [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/Mt168396) 对象来与其配对
+某些设备 API 提供了选择器字符串，你可以使用该字符串来枚举可用的 AEP 对象。 与系统已配对和未配对的设备可能都包括在其中。 有些设备可能不需要配对。 如果在与设备交互前需要和其配对，则那些设备 API 可能会尝试与设备配对。 Wi-Fi Direct 就是遵循此模式的 API 的示例。 如果那些设备 API 没有与设备自动配对，你可以从 [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/Dn705960) 中使用 [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/Mt168396) 对象来与其配对。
 
-不过，可能存在你要自己手动发现设备而不使用预定义选择器字符串的情况。 例如，你可能只是需要收集有关 AEP 设备的信息而无需和它们交互，或者你可能想要找到比使用预定义选择器字符串发现的更多的 AEP 设备。 在这种情况下，你将需要按照[生成设备选择器](build-a-device-selector.md)下的说明来生成自己的选择器字符串以及使用该字符串
+不过，可能存在你要自己手动发现设备而不使用预定义选择器字符串的情况。 例如，你可能只是需要收集有关 AEP 设备的信息而无需和它们交互，或者你可能想要找到比使用预定义选择器字符串发现的更多的 AEP 设备。 在这种情况下，你将需要按照[生成设备选择器](build-a-device-selector.md)的说明来生成自己的选择器字符串以及使用该字符串。
 
 在你生成自己的选择器时，强烈建议你将枚举范围限制为你感兴趣的协议。 例如，如果你对 UPnP 设备特别感兴趣，则你不会使用 Wi-Fi 无线电来搜索 Wi-Fi Direct 设备。 Windows 已为每个协议都定义了一个标识，你可以用来限制枚举的范围。 下表列出了协议类型和标识符。
 
@@ -45,20 +49,20 @@ description: 除了发现本地连接的设备以外，还可以使用 Windows.D
 
 每个 AEP 种类都具有一个可用于将枚举限制到特定协议的属性。 请记住，在 AQS 筛选器中，你可以使用 OR 操作符来合并多个协议。 下面是一些说明如何查询 AEP 设备的 AQS 筛选器字符串示例。
 
-此 AQS 会在 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 设置为 **AsssociationEndpoint** 时查询所有 UPnP **AssociationEndpoint** 对象
+此 AQS 会在 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 设置为 **AsssociationEndpoint** 时查询所有 UPnP **AssociationEndpoint** 对象。
 
 ``` syntax
 System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
-此 AQS 会在 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 设置为 **AsssociationEndpoint** 时查询所有 UPnP 和 WSD **AssociationEndpoint** 对象
+此 AQS 会在 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 设置为 **AsssociationEndpoint** 时查询所有 UPnP 和 WSD **AssociationEndpoint** 对象。
 
 ``` syntax
 System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR 
 System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
-如果 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 设置为 **AsssociationEndpointService**，此 AQS 将查询所有 UPnP **AssociationEndpointService** 对象
+如果 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 设置为 **AsssociationEndpointService**，此 AQS 将查询所有 UPnP **AssociationEndpointService** 对象。
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
@@ -79,6 +83,7 @@ System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

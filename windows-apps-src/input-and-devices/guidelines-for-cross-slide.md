@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
-title: 交叉滑动指南
+Description: "使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。"
+title: "交叉滑动指南"
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 label: Cross-slide
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 47a16acc4025541b1cc19582c2c7d59755fd2594
+
 ---
 
 # 交叉滑动指南
@@ -150,6 +154,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

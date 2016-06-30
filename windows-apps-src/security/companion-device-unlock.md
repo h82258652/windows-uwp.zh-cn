@@ -1,7 +1,11 @@
 ---
-title: 具有配套 (IoT) 设备的 Windows 解锁
-description: 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用配套设备框架，即使是在 Windows Hello 不可用时（例如 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。
+title: "具有配套 (IoT) 设备的 Windows 解锁"
+description: "配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用配套设备框架，即使是在 Windows Hello 不可用时（例如 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: a6265ca66a1a9d729465845da1014d1aff0e7d4d
+ms.openlocfilehash: 18102d6277ff1c66ebd147b5c1fd2f2d6c91edd1
+
 ---
 # 具有配套 (IoT) 设备的 Windows 解锁
 
@@ -676,6 +680,7 @@ namespace SecondaryAuthFactorSample
 - 确保用户存在信号可用。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

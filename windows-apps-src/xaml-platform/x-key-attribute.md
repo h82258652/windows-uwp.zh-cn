@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 唯一标识作为资源被创建和引用的元素，这些资源存在于一个 ResourceDictionary 中。
-title: xKey 属性
+description: "唯一标识作为资源被创建和引用的元素，这些资源存在于一个 ResourceDictionary 中。"
+title: "xKey 属性"
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 00d801dc3ebb8894f8e21ba0c1b9f3aecc981f30
+
 ---
 
 # x&#58;Key 特性
@@ -32,7 +36,7 @@ ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 | 术语 | 说明 |
 |------|-------------|
 | object | 任何可共享的对象。 请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。 |
-| stringKeyValue | 一个用作键的真实字符串，它必须遵守 _XamlName_> 语法。 请参阅下面的“XamlName 语法”。 | 
+| stringKeyValue | 一个用作键的真实字符串，它必须遵守 _XamlName_&gt; 语法。 请参阅下面的“XamlName 语法”。 | 
 
 ##  XamlName 语法
 
@@ -66,6 +70,7 @@ CombiningCharacter::= none
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

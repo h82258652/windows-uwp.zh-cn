@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
-description: 本文介绍了如何使用 SceneAnalysisEffect 和 FaceDetectionEffect 分析媒体捕获预览流的内容。
-title: 媒体捕获的场景分析
+description: "本文介绍了如何使用 SceneAnalysisEffect 和 FaceDetectionEffect 分析媒体捕获预览流的内容。"
+title: "媒体捕获的场景分析"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 891c0d274c2d3fb82f855011158ecd3ccdcd87b3
+
 ---
 
 # 媒体捕获的场景分析
@@ -19,11 +23,11 @@ title: 媒体捕获的场景分析
 
 如果该效果建议使用 HDR，可以采用以下方式执行此操作：
 
--   使用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 类通过 Windows 内置的 HDR 处理算法捕获照片。 有关详细信息，请参阅[高动态范围 (HDR) 照片捕获](high-dynamic-range-hdr-photo-capture.md)
+-   使用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 类通过 Windows 内置的 HDR 处理算法捕获照片。 有关详细信息，请参阅[高动态范围 (HDR) 照片捕获](high-dynamic-range-hdr-photo-capture.md)。
 
--   使用 [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) 通过 Windows 内置的 HDR 处理算法捕获视频。 有关详细信息，请参阅[用于视频捕获的捕获设备控件](capture-device-controls-for-video-capture.md)
+-   使用 [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) 通过 Windows 内置的 HDR 处理算法捕获视频。 有关详细信息，请参阅[用于视频捕获的捕获设备控件](capture-device-controls-for-video-capture.md)。
 
--   使用 [**VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) 捕获帧的序列，稍后可使用自定义 HDR 实现对其进行组合。 有关详细信息，请参阅[可变照片序列](variable-photo-sequence.md)
+-   使用 [**VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) 捕获帧的序列，稍后可使用自定义 HDR 实现对其进行组合。 有关详细信息，请参阅[可变照片序列](variable-photo-sequence.md)。
 
 ### 场景分析命名空间
 
@@ -37,9 +41,9 @@ title: 媒体捕获的场景分析
 
 [!code-cs[DeclareSceneAnalysisEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSceneAnalysisEffect)]
 
-在你的应用中，在初始化 **MediaCapture** 对象后，创建 [**SceneAnalysisEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948903) 的新实例
+在你的应用中，在初始化 **MediaCapture** 对象后，创建 [**SceneAnalysisEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948903) 的新实例。
 
-通过在你的 **MediaCapture** 对象上调用 [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035)、提供 **SceneAnalysisEffectDefinition** 并指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640)，指示该效果应该应用于视频预览流（而不是捕获流），从而使用捕获设备注册效果。 **AddVideoEffectAsync** 返回已添加效果的实例。 因为此方法可以与多个效果类型结合使用，因此你必须将返回的实例转换为 [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 对象。
+通过在你的 **MediaCapture** 对象上调用 [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035)、提供 **SceneAnalysisEffectDefinition** 并指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640)，指示该效果应应用于视频预览流（而不是捕获流），从而使用捕获设备注册效果。 **AddVideoEffectAsync** 返回已添加效果的实例。 因为此方法可以与多个效果类型结合使用，因此你必须将返回的实例转换为 [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 对象。
 
 若要接收场景分析的结果，你必须为 [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) 事件注册处理程序。
 
@@ -53,7 +57,7 @@ title: 媒体捕获的场景分析
 
 [!code-cs[SceneAnalyzed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalyzed)]
 
-传入处理程序中的 [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) 对象还具有 [**FrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn948834) 属性，它包含用于捕获可变照片序列进行 HDR 处理的建议帧控制器。 有关详细信息，请参阅[可变照片序列](variable-photo-sequence.md)
+传入处理程序中的 [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) 对象还具有 [**FrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn948834) 属性，它包含用于捕获可变照片序列进行 HDR 处理的建议帧控制器。 有关详细信息，请参阅[可变照片序列](variable-photo-sequence.md)。
 
 ### 清理场景分析效果
 
@@ -93,7 +97,7 @@ title: 媒体捕获的场景分析
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
 在该事件的处理程序中，你可以通过访问 [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) 属性，获取帧中所有检测到的人脸列表。 [
-            **FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](http://go.microsoft.com/fwlink/?LinkId=619486)
+            **FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](http://go.microsoft.com/fwlink/?LinkId=619486)。
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 
@@ -121,6 +125,7 @@ title: 媒体捕获的场景分析
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: "触控交互"
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: a78dd1030e653d1cf0a1d7f191b4768e5a99860a
 
 ---
 
@@ -159,7 +159,7 @@ ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
 -   正确的描述以及视觉提示对高级交互的使用有巨大影响。
 
 
-## <span id="App_views"></span><span id="app_views"></span><span id="APP_VIEWS"></span>应用视图
+## 应用视图
 
 
 通过应用视图的平移/滚动和缩放设置来调整用户交互体验。 应用视图指示用户访问和操作你的应用及其内容的方式。 视图还提供一些行为，如惯性、内容边界回弹和吸附点。
@@ -173,7 +173,7 @@ ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
 
 有关应用视图的详细信息，请参阅[控件、布局和文本](https://msdn.microsoft.com/library/windows/apps/mt228348)。
 
-## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>自定义触摸交互
+## 自定义触摸交互
 
 
 如果你实现自己的交互支持，请记住，用户期望获得直观的体验，包括直接与应用中的 UI 元素交互。 我们建议你根据“平台控件库”创建自定义交互的模型，以使内容保持一致且易于发现。 这些库中的控件提供完整的用户交互体验，包括标准交互、动态显示的物理效果、视觉反馈和辅助功能。 仅当要求清楚、定义良好且基本交互不支持你的方案时才创建自定义交互。
@@ -211,12 +211,12 @@ ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
 -->
 
-## <span id="gestures"></span><span id="GESTURES"></span>手势事件
+## 手势事件
 
 
 有关个别控件的详细信息，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
-## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>指针事件
+## 指针事件
 
 
 指针事件由各种活动输入源引发，包括触摸、触摸板、笔和鼠标（它们替代传统的鼠标事件）。
@@ -425,7 +425,7 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## <span id="using_manipulation_events"></span><span id="USING_MANIPULATION_EVENTS"></span>操作事件
+## 操作事件
 
 
 如果你需要在应用中支持多个手指交互或需要速度数据的交互，请使用操作事件。
@@ -601,12 +601,12 @@ Private Sub testRectangle_ManipulationDelta(
 End Sub
 ```
 
-## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>路由事件
+## 路由事件
 
 
 此处提及的所有指针事件、手势事件和操作事件都将作为*路由事件*实现。 这意味着该事件可能由对象（而不是最初引起该事件的对象）处理。 对象树中的连续父对象（例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 元素的父容器或你的应用的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)）可以选择处理这些对象，即使原始元素未执行此操作也是如此。 相反，处理该事件的任何对象都可以标记处理的事件，以使其不再达到任何父元素。 有关路由事件概念以及它如何影响你为路由事件编写处理程序的方式的详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/hh758286)。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
+## 应做事项和禁止事项
 
 
 -   设计将触摸交互作为预期的主要输入方法的应用程序。
@@ -618,7 +618,7 @@ End Sub
 -   尽量不要使用用于区别操作的手指个数。
 
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 * [处理指针输入](handle-pointer-input.md)
 * [标识输入设备](identify-input-devices.md) 
@@ -642,6 +642,6 @@ End Sub
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

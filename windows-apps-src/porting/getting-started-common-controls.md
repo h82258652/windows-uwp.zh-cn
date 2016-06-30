@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-description: 常见控件入门
-title: 常见控件入门
+description: "常见控件入门"
+title: "常见控件入门"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9d67cf02f80b5aa9d49fe3a0c5eb47a89419991a
+
 ---
 
 # 入门：常见控件
@@ -57,6 +61,7 @@ UWP 控件相当智能的方面是，它们可以感知到在其上运行的设�
 * [版本 2014：使用 Visual Studio 构建 XAML 融合应用](http://go.microsoft.com/fwlink/p/?LinkID=397876)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,9 +1,13 @@
 ---
 author: Xansky
-description: 本主题向你展示如何启动撰写短信对话框以允许用户发送短信。 你可以在显示该对话框之前，使用数据预填充短信的字段。 该消息将在用户点击发送按钮后发出。
-title: 发送短信
+description: "本主题向你展示如何启动撰写短信对话框以允许用户发送短信。 你可以在显示该对话框之前，使用数据预填充短信的字段。 该消息将在用户点击发送按钮后发出。"
+title: "发送短信"
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 keywords: contacts, SMS, send
+translationtype: Human Translation
+ms.sourcegitcommit: 1395e342bb6ad6a2d4fa347f1797aeafd7a524a6
+ms.openlocfilehash: 70dfce318d37d6790585b0fa5da50963f95495dc
+
 ---
 
 # 发送短信
@@ -55,6 +59,7 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 * [选择联系人](selecting-contacts.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

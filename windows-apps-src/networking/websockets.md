@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信。
+description: "WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信。"
 title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
+
 ---
 
 # WebSockets
@@ -144,7 +148,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 
 ###  为 MessageWebSocket.Closed 事件实现回调
 
-在使用 WebSocket 建立连接和发送数据前，你的应用需要先注册事件回调，然后才能在 WebSocket 被 WebSocket 服务器关闭时收到 通知。 当发生 [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) 事件时，将调用已注册的回调，以指示连接已被 WebSocket 服务器关闭。
+在使用 WebSocket 建立连接和发送数据前，你的应用需要先注册事件回调，然后才能在 WebSocket 被 WebSocket 服务器关闭时收到 通知。 当发生 [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) 事件时， 将调用已注册的回调，以指示连接已被 WebSocket 服务器关闭。
 
 > [!div class="tabbedCodeSnippets"]
 >```cpp
@@ -349,6 +353,7 @@ MessageWebSocket 和 StreamWebSocket 类使用内部系统服务，发送 WebSoc
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

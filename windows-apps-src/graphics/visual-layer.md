@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
-title: 可视化层
-description: Windows.UI.Composition API 使你能够访问框架层 (XAML) 和图形层 (DirectX) 之间的合成层。
+title: "可视化层"
+description: "Windows.UI.Composition API 使你能够访问框架层 (XAML) 和图形层 (DirectX) 之间的合成层。"
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: 164c01737d27451adcb685f9cda544cc00634af4
+
 ---
 # 可视化层
 
@@ -48,20 +52,21 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 
 ## <span id="XAML_Interoperation"></span><span id="xaml_interoperation"></span><span id="XAML_INTEROPERATION"></span>XAML 互操作
 
-除了从头开始创建可视化树外，合成 API 还可以使用 [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) 中的 [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) 类与现有 XAML UI 交互操作
+除了从头开始创建可视化树外，合成 API 还可以使用 [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) 中的 [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) 类 与现有 XAML UI 交互操作。
 
 
 **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发， 请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
 ## <span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>其他资源：
 
 -   阅读 Kenny Kerr 的关于此 API 的 MSDN 文章：[图形和动画 - Windows 合成支持 10 倍缩放](https://msdn.microsoft.com/magazine/mt590968)
--   [合成 GitHub](https://github.com/Microsoft/composition) 中的合成示例
--   API 的完整参考文档
--   已知问题：[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)
+-   [合成 GitHub](https://github.com/Microsoft/composition) 中的合成示例。
+-   [
+            **API 的完全参考文档**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
+-   已知问题：[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)。
 
  
 
@@ -72,6 +77,7 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

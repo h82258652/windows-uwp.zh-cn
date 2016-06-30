@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 原始通知是简短的通用推送通知。
-title: 原始通知概述
+Description: "原始通知是简短的通用推送通知。"
+title: "原始通知概述"
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
+
 ---
 
 # 原始通知概述
@@ -126,6 +130,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

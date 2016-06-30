@@ -5,8 +5,8 @@ title: "交互入门"
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
-ms.sourcegitcommit: 1221928ebea4a2a926154ed1148e49bdb1e0834c
-ms.openlocfilehash: 7c2d3bd1ab2d2f4923cf84834a73fd1c58113212
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 068bb7d0c7af4b55ab10a955c563988f5123e5eb
 
 ---
 
@@ -15,13 +15,13 @@ ms.openlocfilehash: 7c2d3bd1ab2d2f4923cf84834a73fd1c58113212
 
 ![Windows 输入类型](images/input-interactions/icons-inputdevices03.png)
 
-通用 Windows 平台 (UWP) 中的用户交互组合了输入和输出源（例如鼠标、键盘、笔、触摸、触摸板、语音、**Cortana**、控制器、手势、注视等）以及支持扩展体验（包括鼠标滚轮和按钮、笔橡皮擦、筒状按钮、触摸键盘和后台应用服务）的各种模式或修饰符。 
+通用 Windows 平台 (UWP) 中的用户交互组合了输入和输出源（例如鼠标、键盘、笔、触摸、触摸板、语音、**Cortana**、控制器、手势、注视等）以及支持扩展体验（包括鼠标滚轮和按钮、笔橡皮擦、筒状按钮、触摸键盘和后台应用服务）的各种模式或修饰符。
 
 UWP 使用“智能”的上下文交互系统，在大多数情况下消除了单独处理应用接收的独特输入类型的需要。 这包括处理作为泛型指针类型的触摸、触摸板、鼠标和笔输入，以支持静态手势（例如点击或长按）、操作手势（例如滑动平移或呈现数字墨迹）。
 
 当与特定的外形规格配对时，自行熟悉每个输入设备类型及其行为、功能和限制。 这可以帮助你决定平台控件和提示是足够用于应用，还是要求你提供自定义的交互体验。
 
-## <span id="Cortana"></span><span id="cortana"></span><span id="CORTANA"></span>Cortana
+## Cortana
 
 
 在 Windows 10 中，你可以使用 **Cortana** 扩展性来处理用户的语音命令，并启动应用程序来执行单个操作。
@@ -44,7 +44,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 有关详细信息，请参阅 [Cortana 设计指南](https://msdn.microsoft.com/library/windows/apps/dn974233)。
  
 
-## <span id="Speech"></span><span id="speech"></span><span id="SPEECH"></span>语音
+## 语音
 
 
 语音是用户用于与应用程序交互的一种高效自然方式。 这是一种与应用程序通信的简单且准确的方式，并且可使用户提高效率并在各种情况下获取信息。
@@ -68,19 +68,19 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 语音交互的模式有三种：
 
-<span id="Natural_language"></span><span id="natural_language"></span><span id="NATURAL_LANGUAGE"></span>自然语言  
+自然语言  
 自然语言是我们定期与人们进行口头上的交互的方式。 我们的语音随人以及环境的不同而不同，但一般都能理解。 在不理解的时候，我们通常使用不同的词语和语序来传达相同的想法。
 
 与应用的自然语言交互与此类似：我们通过设备将应用当作一样来对其说话，期望它能够明白并且相应地做出反应。
 
 自然语言是语音交互的最高级模式，可以通过 **Cortana** 实现和公开。
 
-<span id="Command_and_control"></span><span id="command_and_control"></span><span id="COMMAND_AND_CONTROL"></span>命令和控件  
+命令和控件  
 命令和控件使用文字命令激活控件和功能，例如单击某个按钮或选择某个菜单项。
 
 因为命令和控件对成功的用户体验至关重要，所以通常不推荐单一输入类型。 语音通常是基于用户首选项或硬件功能的多个用户输入选项之一。
 
-<span id="Dictation"></span><span id="dictation"></span><span id="DICTATION"></span>听写  
+听写  
 最基本的语音输入方法。 将每个发音转换为文本。
 
 听写通常在应用无需理解含义或意图的情况下使用。
@@ -88,7 +88,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 有关详细信息，请参阅[语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)
  
 
-## <span id="Pen"></span><span id="pen"></span><span id="PEN"></span>笔
+## 笔
 
 
 笔（或触笔）可用作像素精确的定位设备（如鼠标），并且是用于数字墨迹输入的最佳设备。
@@ -119,7 +119,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 有关详细信息，请参阅[笔设计指南](https://msdn.microsoft.com/library/windows/apps/dn456352)
  
 
-## <span id="Touch"></span><span id="touch"></span><span id="TOUCH"></span>触控
+## 触控
 
 
 借助触摸，可以将一个或多个手指组成的肢体手势用作一种备用输入法（类似于鼠标或笔）来模拟 UI 元素的直接操作（如平移、旋转、调整大小或移动），也可以将其用作一种补充输入法来修改其他输入的各个方面（例如涂抹使用笔绘制的笔划墨迹）。 当用户在屏幕上与元素进行交互时，此类可触知体验可以为用户提供更自然的真实感觉。
@@ -150,7 +150,7 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 有关详细信息，请参阅[触控设计指南](https://msdn.microsoft.com/library/windows/apps/hh465370)
  
 
-## <span id="Touchpad"></span><span id="touchpad"></span><span id="TOUCHPAD"></span>触摸板
+## 触摸板
 
 
 触摸板将间接的多点触摸输入和定位设备（如鼠标）的精确输入结合起来。 这种结合使触摸板既适用于触摸优化的 UI，也适用于效率应用的较小目标。
@@ -170,7 +170,7 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 有关详细信息，请参阅[触摸板设计指南](https://msdn.microsoft.com/library/windows/apps/dn456353)
  
 
-## <span id="Keyboard"></span><span id="keyboard"></span><span id="KEYBOARD"></span>键盘
+## 键盘
 
 
 键盘是主要的文本输入设备。对于残障人士，或者认为键盘是与应用交互的最快和最有效方法的用户而言，键盘通常非常重要。
@@ -208,7 +208,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 有关详细信息，请参阅[键盘设计指南](https://msdn.microsoft.com/library/windows/apps/hh972345)
  
 
-## <span id="Mouse"></span><span id="mouse"></span><span id="MOUSE"></span>鼠标
+## 鼠标
 
 
 鼠标最适合用于效率应用或用户交互需要将像素级精度用于定位和命令的高密度 UI。
@@ -231,7 +231,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 有关详细信息，请参阅[鼠标设计指南](https://msdn.microsoft.com/library/windows/apps/dn456351)
  
 
-## <span id="Gesture"></span><span id="gesture"></span><span id="GESTURE"></span>手势
+## 手势
 
 
 手势是在控制应用程序或与应用程序进行交互时，作为输入识别的任何形式的用户动作。 手势采用多种形式：从只使用一只手在屏幕上指定内容，到特定的习得型动作，到使用整个正文的长按拉伸的连续动作。 在设计自定义手势时请小心，因为其含义可能因地域和文化而异。
@@ -252,7 +252,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
  
 
-## <span id="Gamepad_Controller"></span><span id="gamepad_controller"></span><span id="GAMEPAD_CONTROLLER"></span>游戏板/控制器
+## 游戏板/控制器
 
 
 游戏板/控制器是专门用来玩游戏的极其专业的设备。 但是，它也用于模拟基本键盘输入，并可提供非常类似于键盘的 UI 导航体验。
@@ -272,7 +272,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
  
 
-## <span id="Multiple_inputs"></span><span id="multiple_inputs"></span><span id="MULTIPLE_INPUTS"></span>多个输入
+## 多个输入
 
 
 通过尽可能适应更多的用户和设备，以及设计应用并使其可与尽可能多的输入类型（手势、语音、触摸、触摸板、鼠标和键盘）结合使用，可使灵活性、可用性和辅助功能最大化。
@@ -304,6 +304,6 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

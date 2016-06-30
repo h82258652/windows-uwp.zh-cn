@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
-title: 合成效果
-description: 效果 API 使开发人员可以自定义其 UI 的呈现方式。
+title: "合成效果"
+description: "效果 API 使开发人员可以自定义其 UI 的呈现方式。"
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: 10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a7
+
 ---
 # 合成效果
 
@@ -80,7 +84,7 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 
 ### 效果属性：常量与动画
 
-在效果编译期间，可以将效果属性指定为动态或作为常量的“烘焙”属性。 通过“<effect name>.<property name>”形式的字符串指定动态属性。 动态属性可设置为特定值或可使用合成动画系统进行动画处理。
+在效果编译期间，可以将效果属性指定为动态或作为常量的“烘焙”属性。 动态属性通过“<effect name>.<property name>”形式的字符串指定。 动态属性可设置为特定值或可使用合成动画系统进行动画处理。
 
 当编译上面的效果描述时，你可以在饱和度等于 0.5 时灵活地进行烘焙或使其动态化，并进行动态设置或进行动画处理。
 
@@ -244,6 +248,7 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

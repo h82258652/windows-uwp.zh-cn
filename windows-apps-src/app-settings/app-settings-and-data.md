@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 本部分包含显示应用设置和将这些设置存储为应用数据的用户体验指南。
-title: 应用设置和数据
+Description: "本部分包含显示应用设置和将这些设置存储为应用数据的用户体验指南。"
+title: "应用设置和数据"
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462
+
 ---
 
 # 应用设置和数据
@@ -45,6 +49,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

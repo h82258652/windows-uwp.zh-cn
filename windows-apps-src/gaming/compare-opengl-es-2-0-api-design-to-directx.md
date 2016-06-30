@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 规划从 OpenGL ES 2.0 到 Direct3D 的移植
-description: 如果你移植 iOS 或 Android 平台中的游戏，那么你可能需要在 OpenGL ES 2.0 方面进行大量投资。
+title: "规划从 OpenGL ES 2.0 到 Direct3D 的移植"
+description: "如果你移植 iOS 或 Android 平台中的游戏，那么你可能需要在 OpenGL ES 2.0 方面进行大量投资。"
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 804faad3db94bda9d1d67ad899a6ba048a4bfd26
+
 ---
 
 # 规划从 OpenGL ES 2.0 到 Direct3D 的移植
@@ -115,6 +119,7 @@ Windows 运行时 API 为 UWP 应用提供整体基础结构。 [在此处](http
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

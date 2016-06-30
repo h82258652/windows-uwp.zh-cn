@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
-description: 了解如何安装 Microsoft Advertising 库。
-title: 安装 Microsoft Advertising 库
+description: "了解如何安装 Microsoft Advertising 库。"
+title: "安装 Microsoft Advertising 库"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
+
 
 ---
 
@@ -91,6 +95,7 @@ Microsoft 官方商城协定和盈利 SDK 包括两组广告库：适用于 Micr
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

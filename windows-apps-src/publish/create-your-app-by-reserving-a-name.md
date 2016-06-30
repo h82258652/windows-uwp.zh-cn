@@ -1,9 +1,13 @@
 ---
 author: jnHs
-Description: 在 Windows 开发人员中心仪表板中创建新应用的第一步是保留应用名称。 了解如何保留应用名称，并查找有关为应用选择出色名称的的建议。
-title: 通过保留名称创建应用
-keywords:
+Description: "在 Windows 开发人员中心仪表板中创建新应用的第一步是保留应用名称。 了解如何保留应用名称，并查找有关为应用选择出色名称的的建议。"
+title: "通过保留名称创建应用"
+keywords: 
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
+translationtype: Human Translation
+ms.sourcegitcommit: 3b65bbaf2498dde7484c055ff86ed09e89bf3405
+ms.openlocfilehash: 5e4933be456bc76eb5923f5c081e8376c43c118b
+
 ---
 
 # 通过保留名称创建应用
@@ -60,6 +64,7 @@ ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
-title: 文件、文件夹和库
-description: 了解有关应用设置的读取和写入、文件和文件夹选取器，以及诸如视频/音乐库的特殊“沙盒式”位置的信息。
+title: "文件、文件夹和库"
+description: "了解有关应用设置的读取和写入、文件和文件夹选取器，以及诸如视频/音乐库的特殊“沙盒式”位置的信息。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2056a5adee0ce6e65962eeba21fccbfe976c811a
+
 ---
  # 文件、文件夹和库
 
@@ -41,6 +45,7 @@ description: 了解有关应用设置的读取和写入、文件和文件夹选�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
-title: 什么是通用 Windows 平台 (UWP) 应用？
-description: 了解我们称之为“通用 Windows 应用”的不同应用类型：Windows 应用商店应用、Windows Phone 应用商店应用和 Windows 运行时应用。
+title: "什么是通用 Windows 平台 (UWP) 应用？"
+description: "了解我们称之为“通用 Windows 应用”的不同应用类型：Windows 应用商店应用、Windows Phone 应用商店应用和 Windows 运行时应用。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f02851d848a82af7104a6038c5d8850d5362c832
+
 ---
 
 # 什么是通用 Windows 平台 (UWP) 应用？
@@ -90,6 +94,7 @@ Microsoft Visual Studio 2015 为每种语言提供 UWP 应用模板，该模板�
 * [准备工作](get-set-up.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

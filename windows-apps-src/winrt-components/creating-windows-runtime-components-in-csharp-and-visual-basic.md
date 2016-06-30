@@ -1,17 +1,17 @@
 ---
-author: martinekuan
-title: 使用 C# 和 Visual Basic 创建 Windows 运行时组件
-description: 从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。
+author: msatranjr
+title: "使用 C# 和 Visual Basic 创建 Windows 运行时组件"
+description: "从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。"
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
+
 ---
 
 # 使用 C# 和 Visual Basic 创建 Windows 运行时组件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。 你可以将通用 Windows 平台 (UWP) 应用与 C++、JavaScript、Visual Basic 或 C# 一起使用。 本文概述了用于创建组件的规则，并讨论了有关 Windows 运行时的 .NET Framework 支持的一些方面。 一般情况下，该支持设计为对 .NET Framework 程序员透明可见。 但是，在你创建要与 JavaScript 或 C++ 一起使用的组件时，需要意识到这些语言支持 Windows 运行时的方法差异。
 
@@ -121,11 +121,11 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 > {
 >     return s;
 > }
-> [Windows.Foundation.Metadata.DefaultOverload()] 
+> [Windows.Foundation.Metadata.DefaultOverload()]
 > public int OverloadExample(int x)
 > {
 >     return x;
-> } 
+> }
 > ```
 > ```vb
 > Public Function OverloadExample(ByVal s As String) As String
@@ -137,7 +137,7 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 > End Function
 > ```
 
-> **警告** JavaScript 允许你将任何值传递到 OverloadExample，并且将该值强制转换为参数所需的类型。 你可以通过“四十二”、“42”或“42.3”调用 OverloadExample，但所有这些值均会传递到默认重载。 之前示例中的默认重载分别返回 0、42 和 42。
+ **警告** JavaScript 允许你将任何值传递到 OverloadExample，并且将该值强制转换为参数所需的类型。 你可以通过“四十二”、“42”或“42.3”调用 OverloadExample，但所有这些值均会传递到默认重载。 之前示例中的默认重载分别返回 0、42 和 42。
 
 你无法将 DefaultOverloadAttribute 属性应用到构造函数。 类中的所有构造函数必须具有不同数量的参数。
 
@@ -202,7 +202,7 @@ ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 > ```vb
 > Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 >      As IAsyncOperation(Of IList(Of String))
-> 
+>
 >     Return Task.Run(Of IList(Of String))(
 >         Async Function()
 >             Dim data = Await DownloadDataAsync(id)
@@ -241,7 +241,7 @@ function asyncExample(id) {
 > ```vb
 > Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 >     As IAsyncOperation(Of IList(Of String))
-> 
+>
 >     Return AsyncInfo.Run(Of IList(Of String))(
 >         Async Function()
 >             Dim data = Await DownloadDataAsync(id)
@@ -293,7 +293,6 @@ function asyncExample(id) {
 
 
 
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

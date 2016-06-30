@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: 列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。
+Description: "列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。"
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
-title: 控件模式和接口
+title: "控件模式和接口"
 label: Control patterns and interfaces
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 9f38c3bd26ef7b409d4c743abf25a5b0a6455f20
+
 ---
 
 # 控件模式和接口  
@@ -43,10 +46,10 @@ template: detail.hbs
 | **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | 启用 UI 自动化客户端应用，将鼠标或键盘输入定向到特定的 UI 元素。 |
 | **表** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | 用于具有网格以及标题信息的控件。 例如，表格日历控件。 |
 | **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | 用于表中的项。 |
-| **文本** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | 用于公开文本信息的编辑控件和文档。 另请参阅 [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242634) 和 [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/BR2426272)。 |
-| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/Hh701839) | 用于访问距元素最近的支持 **Text** 控件模式的上级元素。 |
+| **文本** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | 用于公开文本信息的编辑控件和文档。 另请参阅 [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) 和 [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2)。 |
+| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | 用于访问距元素最近的支持 **Text** 控件模式的上级元素。 |
 | **TextEdit** | 无可用的托管类 | 访问用于修改文本的控件，例如通过输入法编辑器 (IME) 执行自动更正或启用输入组合的控件。 |
-| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242634) | 访问实现 [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) 的文本容器中的一段连续文本。 另请参阅 [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/BR2426342)。 |
+| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | 访问实现 [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider) 的文本容器中的一段连续文本。 另请参阅 [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2)。 |
 | **切换** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | 用于可切换状态的控件。 例如，可选中的 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316) 和菜单项。 |
 | **转换** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | 用于可调整大小、移动和旋转的控件。 Transform 控件模式通常用于设计器、窗体、图形编辑器和绘图应用程序。 |
 | **值** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | 允许客户端在不支持一系列值的控件上获取或设置某个值。 |
@@ -65,6 +68,7 @@ template: detail.hbs
 * [辅助功能](accessibility.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Windows 应用商店为支持此功能的移动运营商提供移动运营商结算作为付款方式。
-title: 移动运营商结算
+Description: "Windows 应用商店为支持此功能的移动运营商提供移动运营商结算作为付款方式。"
+title: "移动运营商结算"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
+ms.sourcegitcommit: 76ea880f7dd1e737b3b0640d10a138e0eb790802
+ms.openlocfilehash: d22d89523ff3089b3b56d1a85fa2c4b137389887
+
 ---
 
 # 移动运营商结算
@@ -27,6 +30,7 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 |----------------|------------------|
 | 芬兰        | DNA、Elisa       |
 | 德国        | O2               |
+| 挪威         | Telenor          |
 | 瑞士    | Swisscom         |
 | 美国  | Sprint           |
 
@@ -111,6 +115,7 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

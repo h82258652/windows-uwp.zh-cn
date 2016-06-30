@@ -1,15 +1,16 @@
 ---
 author: Xansky
-Description: 为确保通用 Windows 平台 (UWP) 应用为辅助应用而要遵循的测试过程。
+Description: "为确保通用 Windows 平台 (UWP) 应用为辅助应用而要遵循的测试过程。"
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
-title: 辅助功能测试
+title: "辅助功能测试"
 label: Accessibility testing
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: ec436f939c672d6e6d852d3dd6713fd6ca20a53b
+
 ---
 
 # 辅助功能测试  
-
-
 
 为确保通用 Windows 平台 (UWP) 应用为辅助应用而要遵循的测试过程。
 
@@ -32,7 +33,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 <span id="INSPECT"/>
 ### **检查**  
 
-你可以使用 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 选择任何 UI 元素并查看其辅助功能数据。 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 当你开发 UI 以验证如何在 UI 自动化中公开辅助功能属性时，请使用 **Inspect**。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自已经在 XAML 标记中设置为 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 附加属性的特定值。
+你可以使用 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 选择任何 UI 元素并查看其辅助功能数据。 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 当你开发 UI 以验证如何在 UI 自动化中公开辅助功能属性时，请使用 **Inspect**。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自已经在 XAML 标记中设置为 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) 附加属性的特定值。
 
 下图展示了 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 工具，用于查询记事本中**“编辑”**菜单元素的 UI 自动化属性。
 
@@ -134,7 +135,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 [
             **AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 工具提供了一种十分有趣的应用视图，因为你既能以可视化表示的形式查看 UI 自动化元素，也能以列表形式来查看。 如果使用可视化效果，那么你可以深入查看各个部分，从而对应用 UI 的视觉外观有一定的了解。 你甚至可以在为 UI 指定全部逻辑之前对最初 UI 原型的辅助功能进行测试，确保应用的视觉交互和辅助功能方案导航保持平衡。
 
-可供测试的一个方面是，UI 自动化元素视图中是否存在不应出现在其中的元素。 如果发现要从该视图中去除的元素，或者恰好相反，视图中缺少某些元素，则可以使用 [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/BR209081_accessibilityview) XAML 附加属性调整 XAML 控件在辅助功能视图中的显示方式。 查看基本辅助功能视图后，还可以通过启用箭头键重新检查 Tab 键序列或空间导航，从而确保用户可以查看控件视图中公开的各个交互部分。
+可供测试的一个方面是，UI 自动化元素视图中是否存在不应出现在其中的元素。 如果发现要从该视图中去除的元素，或者恰好相反，视图中缺少某些元素，则可以使用 [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) XAML 附加属性调整 XAML 控件在辅助功能视图中的显示方式。 查看基本辅助功能视图后，还可以通过启用箭头键重新检查 Tab 键序列或空间导航，从而确保用户可以查看控件视图中公开的各个交互部分。
 
 <span id="related_topics"/>
 ## 相关主题  
@@ -144,6 +145,7 @@ Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例�
 * [Windows 中的辅助功能](http://go.microsoft.com/fwlink/p/?LinkId=320802)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

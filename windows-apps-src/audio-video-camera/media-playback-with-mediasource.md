@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
-description: MediaSource 类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。
-title: 使用 MediaSource 的媒体播放
+description: "MediaSource 类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。"
+title: "使用 MediaSource 的媒体播放"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
+
 ---
 
 # 使用 MediaSource 的媒体播放
@@ -179,6 +183,7 @@ title: 使用 MediaSource 的媒体播放
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

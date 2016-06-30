@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-description: 本部分将提供有关创建可捕获、播放或编辑照片、视频或音频的通用 Windows 应用的信息。
-title: 音频、视频和相机
+description: "本部分将提供有关创建可捕获、播放或编辑照片、视频或音频的通用 Windows 应用的信息。"
+title: "音频、视频和相机"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8480eb181b6af26eae5950a1f1bf040d0cb5db99
+
 ---
 
 # 音频、视频和相机
@@ -45,6 +49,7 @@ title: 音频、视频和相机
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

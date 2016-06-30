@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常见的外观。 用户界面、输入和交互模式都非常相似，并且用户在设备之间移动的操作也将是熟悉的体验。
-title: 针对外形规格和 UX 将 Windows Phone Silverlight 移植到 UWP
+description: "Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常见的外观。 用户界面、输入和交互模式都非常相似，并且用户在设备之间移动的操作也将是熟悉的体验。"
+title: "针对外形规格和 UX 将 Windows Phone Silverlight 移植到 UWP"
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7d5f1fa969e4ddf4a695a3ca77072a0f9c21316f
+
 ---
 
 #  针对外形规格和 UX 将 Windows Phone Silverlight 移植到 UWP
@@ -67,6 +71,7 @@ Windows Phone Silverlight 界面是触摸专用界面。 当然，已移植应�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

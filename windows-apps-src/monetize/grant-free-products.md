@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: 在 Windows 应用商店购买 API 中使用此方法，以向给定用户授予免费应用或应用内产品 (IAP)。
-title: 授予免费产品
+description: "在 Windows 应用商店购买 API 中使用此方法，以向给定用户授予免费应用或应用内产品 (IAP)。"
+title: "授予免费产品"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
+
 ---
 
 # 授予免费产品
@@ -17,7 +20,7 @@ title: 授予免费产品
 
 若要使用此方法，你需要：
 
--   使用 **https://onestore.microsoft.com** 受众 URI 创建的 Azure AD 访问令牌。
+-   使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
 -   通过在应用中从客户端代码调用 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法生成的 Windows 应用商店 ID 密钥。
 
 有关详细信息，请参阅[从服务查看和授予产品](view-and-grant-products-from-a-service.md)。
@@ -29,9 +32,9 @@ title: 授予免费产品
 
 | 方法 | 请求 URI                                            |
 |--------|--------------------------------------------------------|
-| POST   | https://purchase.mp.microsoft.com/v6.0/purchases/grant |
+| POST   | `https://purchase.mp.microsoft.com/v6.0/purchases/grant` |
 
- 
+<br/> 
 
 ### 请求标头
 
@@ -42,7 +45,7 @@ title: 授予免费产品
 | Content-Length | 数字 | 请求正文的长度。                                                                       |
 | Content-Type   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
 
- 
+<br/>
 
 ### 请求正文
 
@@ -54,11 +57,11 @@ title: 授予免费产品
 | language       | 字符串 | 用户的语言。                                                                                                                                                                                                                                                                                              | 是      |
 | market         | 字符串 | 用户的市场。                                                                                                                                                                                                                                                                                                | 是      |
 | orderId        | GUID   | 为订单生成的 GUID。 此值对用户而言是唯一的，但不 要求对所有订单都唯一。                                                                                                                                                                                              | 是      |
-| productId      | 字符串 | Windows 应用商店目录中的产品 ID。 若要获取产品 ID，请在 Windows 开发人员中心仪表板中导航到你的应用、转到“应用管理”****&gt;“应用标识”****页面，然后检索显示在“用于 Windows 10 的 URL”****字段中的字符串的后缀。 产品 ID 的一个示例为“9WZDNCRFJ3Q8”。 | 是      |
+| productId      | 字符串 | Windows 应用商店目录中的存储 ID。 存储 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 | 是      |
 | quantity       | int    | 要购买的数量。 当前，唯一受支持的值为 1。 如果未指定，默认值为 1。                                                                                                                                                                                                                | 否       |
 | skuId          | 字符串 | Windows 应用商店目录中的 SKU ID。 SKU ID 的一个示例为“0010”。                                                                                                                                                                                                                                                | 是      |
 
- 
+<br/> 
 
 ### 请求示例
 
@@ -104,7 +107,7 @@ Content-Type: application/json
 | totalChargedToCsvTopOffPI | 十进制                     | 如果使用单独的付款方式 (PI) 和存储 值 (CSV)，金额将从 CSV 中扣除。                                                                | 是      |
 | totalTaxAmount            | 十进制                     | 所有行项的税款总额。                                                                                                              | 是      |
 
- 
+<br/> 
 
 ClientContext 对象包含以下参数。
 
@@ -112,7 +115,7 @@ ClientContext 对象包含以下参数。
 |-----------|--------|---------------------------------------|----------|
 | client    | 字符串 | 创建订单的客户端 ID。 | 否       |
 
- 
+<br/> 
 
 OrderLineItemV6 对象包含以下参数。
 
@@ -144,7 +147,7 @@ OrderLineItemV6 对象包含以下参数。
 | Title                   | 字符串         | 行项的本地化标题。                                                                        | 是      |
 | totalAmount             | 十进制        | 行项的总购买额（含税）。                                                    | 是      |
 
- 
+<br/> 
 
 IdentityV6 对象包含以下参数。
 
@@ -153,7 +156,7 @@ IdentityV6 对象包含以下参数。
 | IdentityType  | 字符串 | 包含值**“pub”**。                                                      | 是      |
 | identityValue | 字符串 | 指定的 Windows 应用商店 ID 密钥的 *publisherUserId* 字符串值。 | 是      |
 
- 
+<br/> 
 
 ### 响应示例
 
@@ -226,7 +229,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | 未授权 | InconsistentClientId       | 请求正文的 Windows 应用商店 ID 密钥中的 *clientId* 声明与授权标头的 Azure AD 访问令牌中的 *appid* 声明不匹配。                     |
 | 400  | BadRequest   | InvalidParameter           | 详细信息包含有关请求正文和具有无效值的字段的信息。                                                                                    |
 
- 
+<br/> 
 
 ## 相关主题
 
@@ -241,8 +244,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

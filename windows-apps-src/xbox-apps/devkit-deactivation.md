@@ -1,8 +1,12 @@
 ---
 author: Mtoepke
-title: Xbox One 开发人员模式停用
-description: 如何停用开发人员模式。
+title: "Xbox One 开发人员模式停用"
+description: "如何停用开发人员模式。"
 area: Xbox
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
+
 ---
 
 # Xbox One 开发人员模式停用
@@ -83,6 +87,7 @@ area: Xbox
 - [Xbox One 上的 UWP](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

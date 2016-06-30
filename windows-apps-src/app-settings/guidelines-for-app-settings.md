@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 本文将介绍有关创建和显示应用设置的最佳做法。
-title: 应用设置指南
+Description: "本文将介绍有关创建和显示应用设置的最佳做法。"
+title: "应用设置指南"
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e4
+
 ---
 
 
@@ -137,6 +141,7 @@ template: detail.hbs
 �
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

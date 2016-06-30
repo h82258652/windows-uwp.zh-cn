@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: 此案例研究以 Bookstore 中所提供的信息为基础，首先研究可显示 LongListSelector 中的分组数据的 Windows Phone Silverlight 应用。
-title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
+description: "此案例研究以 Bookstore 中所提供的信息为基础，首先研究可显示 LongListSelector 中的分组数据的 Windows Phone Silverlight 应用。"
+title: "从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2"
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
+
 ---
 
 # 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
@@ -269,7 +273,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 -   将此字段添加到 Author：`private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`。
 -   将此属性添加到 Author：`public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`。
 -   当然，我们可以重复上述两个步骤，向 Author 添加所需数量的组。
--   将 AddBookSku 方法的实现更改 `this.BookSkus.Add(bookSku);`。
+-   将 AddBookSku 方法的实现更改为 `this.BookSkus.Add(bookSku);`。
 -   既然 Author *包含*至少一个组，我们需要向 **CollectionViewSource** 表明它应该使用其中的哪个组。 为此，请将此属性添加到 **CollectionViewSource**： `ItemsPath="BookSkus"`
 
 这些更改将使此应用在功能上保持不变，但现在你已知道可以如何扩展 Author 和 **CollectionViewSource**（如果需要）。 让我们对 Author 做出最后一项更改，以便如果我们在*没有*指定 **CollectionViewSource.ItemsPath** 的情况下使用它，我们将使用一个包含所选项的默认组：
@@ -297,6 +301,7 @@ title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 经发现，Windows Phone Silverlight **LongListSelector** 的所有设施和概念以及其他更多内容都可以采用 **SemanticZoom**、**ListView**、**GridView** 和 **CollectionViewSource** 的形式供 UWP 应用使用。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

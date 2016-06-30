@@ -1,8 +1,12 @@
 ---
-title: MAC、哈希以及签名
-description: 本文讨论了如何在通用 Windows 平台 (UWP) 应用中使用消息验证代码 (MAC)、哈希和签名检测消息篡改。
+title: "MAC、哈希以及签名"
+description: "本文讨论了如何在通用 Windows 平台 (UWP) 应用中使用消息验证代码 (MAC)、哈希和签名检测消息篡改。"
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: d7c66d9ead6e3dbf750f1d058e311ef3c84a204f
+
 ---
 
 # MAC、哈希以及签名
@@ -189,6 +193,7 @@ public void SampleReusableHash()
 
 你可以使用 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 对象枚举可用的签名算法以及生成或导入密钥对。 你可以在 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 类上使用静态方法对消息进行签名或验证签名。
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

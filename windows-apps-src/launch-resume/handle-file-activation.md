@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 处理文件激活
-description: 应用可注册为特定文件类型的默认处理程序。
+author: TylerMSFT
+title: "处理文件激活"
+description: "应用可注册为特定文件类型的默认处理程序。"
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 9c6358bccdea55a7c3749388c35aa770f4325960
+
 ---
 
 # 处理文件激活
@@ -27,7 +30,7 @@ ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 ## 步骤 1：指定程序包清单中的扩展点
 
 
-应用仅接收程序包清单中列出的文件扩展名的激活事件。 以下是指示应用处理带有 `.alsdk` 扩展名的文件的方式。
+应用仅接收程序包清单中列出的文件扩展名的激活事件。 下面是指示应用处理扩展名为 `.alsdk` 的文件的方法。
 
 1.  在“解决方案资源管理器”****中，双击 package.appxmanifest 以打开清单设计器。 选择“声明”****选项卡，并在“可用声明”****下拉列表中，选择“文件类型关联”****，然后单击“添加”****。 有关文件关联使用的标识符的更多详细信息，请参阅[编程标识符](https://msdn.microsoft.com/library/windows/desktop/cc144152)。
 
@@ -42,8 +45,8 @@ ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 | **内容类型** | 对于特定文件类型，请指定 MIME 内容类型，如 **image/jpeg**。 **有关允许的内容类型的重要说明：**以下是由于被保留或禁止而无法输入到程序包清单中的 MIME 内容类型的字母顺序列表：**application/force-download**、**application/octet-stream**、**application/unknown**、**application/x-msdownload**。 |
 | **文件类型** | 指定要注册的文件类型，前面带有句点，如“.jpeg”。 **保留和禁止的文件类型** 请参阅[保留 URI 方案名称和文件类型](reserved-uri-scheme-names.md)以获取因为被保留或禁止而无法为 UWP 应用注册的内置应用的文件类型的字母顺序列表。 |
 
-2.  输入 `alsdk` 作为“名称”****。
-3.  输入 `.alsdk` 作为“文件类型”****。
+2.  输入 `alsdk` 作为**“名称”**。
+3.  输入 `.alsdk` 作为**“文件类型”**。
 4.  输入“images\\Icon.png”作为徽标。
 5.  按 Ctrl+S 保存对 package.appxmanifest 的更改。
 
@@ -151,8 +154,6 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

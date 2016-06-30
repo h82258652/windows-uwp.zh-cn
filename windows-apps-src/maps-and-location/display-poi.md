@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: '在地图上显示兴趣点 (POI)'
-description: 使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。
+author: msatranjr
+title: "在地图上显示兴趣点 (POI)"
+description: "使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。"
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 6f21f9bf9c909d0f89a663cdda05934ad9b4011b
+
 ---
 
 # 在地图上显示目标点 (POI)
@@ -28,7 +31,7 @@ ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 -   [向地图添加 MapPolyline](#mappolyline) 以在地图上显示线条。
 -   [向地图添加 XAML](#mapxaml) 以显示自定义 UI 元素。
 
-如果你想要将大量元素放置在地图上，请考虑[在地图上覆盖平铺图像](overlay-tiled-images.md)。 若要在地图上显示道路，请参阅[显示路线和方向](routes-and-directions.md)
+如果你想要将大量元素放置在地图上，请考虑[在地图上覆盖平铺图像](overlay-tiled-images.md)。 若要在地图上显示道路，请参阅[显示路线和方向](routes-and-directions.md)。
 
 ## 添加 MapIcon
 
@@ -37,7 +40,7 @@ ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 
 ![具有不同长度的磁贴的 MapIcon 示例。](images/mapctrl-mapicons.png)
 
-下面的示例显示了西雅图市的地图并添加了一个带默认图像和可选标题的 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)，可指示 Space Needle 的位置。 地图还以该图标为中心并放大。 有关使用地图控件的常规信息，请参阅[以 2D、3D 和街景视图方式显示地图](display-maps.md)
+下面的示例显示了西雅图市的地图并添加了一个带默认图像和可选标题的 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)，可指示 Space Needle 的位置。 地图还以该图标为中心并放大。 有关使用地图控件的常规信息，请参阅[以 2D、3D 和街景视图方式显示地图](display-maps.md)。
 
 ```csharp
       private void displayPOIButton_Click(object sender, RoutedEventArgs e)
@@ -79,9 +82,9 @@ ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 
 -   [
             **Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) 属性支持的最大图像大小为 2048×2048 像素。
--   默认情况下，不一定会显示地图图标的图像。 当它挡住地图上其他元素或标签时，它可能会隐藏。 若要保持可见，将地图图标的 [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) 属性设置为 [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314)
+-   默认情况下，不一定会显示地图图标的图像。 当它挡住地图上其他元素或标签时，它可能会隐藏。 若要保持可见，将地图图标的 [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) 属性设置为 [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314)。
 -   [
-            **MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 的可选 [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) 并不一定会显示。 如果你没有看到此文本，通过减少 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 属性的值来缩小显示
+            **MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 的可选 [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) 并不一定会显示。 如果你没有看到此文本，通过减少 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 属性的值来缩小显示。
 -   当你显示指向地图上特定位置的 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 图像时（例如，图钉或箭头），考虑将 [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) 属性的值设置为图像上指针的大致位置。 如果你将 **NormalizedAnchorPoint** 的值保留为默认值 (0, 0)（表示图像的左上角），地图的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 中的更改可能会导致图像指向其他位置。
 
 ## 添加 MapPolygon
@@ -140,10 +143,10 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
 
 通过使用 XAML 在地图上显示自定义 UI 元素。 通过指定 XAML 的位置和标准化的定位点在地图上放置 XAML。
 
--   通过调用 [**SetLocation**](https://msdn.microsoft.com/library/windows/desktop/ms704369) 在地图上设置要放置 XAML 的位置
--   通过调用 [**SetNormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637050) 在 XAML 上设置对应于指定位置的相对位置
+-   通过调用 [**SetLocation**](https://msdn.microsoft.com/library/windows/desktop/ms704369) 在地图上设置要放置 XAML 的位置。
+-   通过调用 [**SetNormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637050) 在 XAML 上设置对应于指定位置的相对位置。
 
-下面的示例显示了西雅图市的地图并添加了一个 XAML [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 控件，以指示 Space Needle 的位置。 地图还以该区域为中心并放大。 有关使用地图控件的常规信息，请参阅[以 2D、3D 和街景视图方式显示地图](display-maps.md)
+下面的示例显示了西雅图市的地图并添加了一个 XAML [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 控件，以指示 Space Needle 的位置。 地图还以该区域为中心并放大。 有关使用地图控件的常规信息，请参阅[以 2D、3D 和街景视图方式显示地图](display-maps.md)。
 
 ```csharp
 private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
@@ -178,7 +181,7 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 
 接下来的示例介绍如何使用数据绑定在页面的 XAML 标记中直接添加 XAML UI 元素。 与显示内容的其他 XAML 元素一样，[**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) 是 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的默认内容属性并且无需在 XAML 标记中进行显式指定。
 
-此示例介绍如何将两个 XAML 控件显示为 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的隐式子对象
+此示例介绍如何将两个 XAML 控件显示为 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的隐式子对象。
 
 ```xml
 <maps:MapControl>
@@ -187,7 +190,7 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 </maps:MapControl>
 ```
 
-此示例介绍如何显示 [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) 中包含的两个 XAML 控件
+此示例介绍如何显示 [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) 中包含的两个 XAML 控件。
 
 ```xml
 <maps:MapControl>
@@ -198,7 +201,7 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 </maps:MapControl>
 ```
 
-此示例介绍绑定到 [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) 的 XAML 元素的集合
+此示例显示绑定到 [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) 的 XAML 元素的集合。
 
 ```xml
 <maps:MapControl x:Name="MapControl" MapTapped="MapTapped" MapDoubleTapped="MapTapped" MapHolding="MapTapped">
@@ -228,6 +231,7 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

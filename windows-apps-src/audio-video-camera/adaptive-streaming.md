@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
-description: 本文介绍了如何将自适应流式处理多媒体内容的播放添加到通用 Windows 平台 (UWP) 应用。 此功能当前支持 Http 实时流 (HLS) 和 HTTP 动态流 (DASH) 内容的播放。
-title: 自适应流式处理
+description: "本文介绍了如何将自适应流式处理多媒体内容的播放添加到通用 Windows 平台 (UWP) 应用。 此功能当前支持 Http 实时流 (HLS) 和 HTTP 动态流 (DASH) 内容的播放。"
+title: "自适应流式处理"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8ebf90b02fcfbb4349ba2b303d9c91727b731ad7
+
 ---
 
 # 自适应流式处理
@@ -58,6 +62,7 @@ title: 自适应流式处理
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

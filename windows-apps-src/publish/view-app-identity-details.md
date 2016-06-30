@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 当使用 Windows 开发人员中心仪表板中的应用时，可以通过 Windows 应用商店查看与分配给它的唯一标识符相关的详细信息，并获取到应用的应用商店一览的链接。
-title: 查看应用标识的详细信息
+Description: "当使用 Windows 开发人员中心仪表板中的应用时，可以通过 Windows 应用商店查看与分配给它的唯一标识符相关的详细信息，并获取到应用的应用商店一览的链接。"
+title: "查看应用标识的详细信息"
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
+translationtype: Human Translation
+ms.sourcegitcommit: a25d87556bb85718f818af5b586f54e6985aaaa4
+ms.openlocfilehash: f00d817616d473ef220ebc1817c2bf9207a7aea0
+
 ---
 
 # 查看应用标识的详细信息
@@ -53,6 +57,7 @@ ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
-title: 加密
-description: 本文概述了通用 Windows 平台 (UWP) 应用可用的加密功能。 有关特定任务的详细信息，请参阅本文末尾的表。
+title: "加密"
+description: "本文概述了通用 Windows 平台 (UWP) 应用可用的加密功能。 有关特定任务的详细信息，请参阅本文末尾的表。"
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: b8cccf54e414de084c5b3fd080007b225b9a9b12
+
 ---
 
 # 加密
@@ -143,6 +147,7 @@ SDK 同时也为基于密码的数据保护提供简化的界面。 可使用此
 
  
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
-description: 了解有关开发和发布带广告的应用的端到端过程。
-title: 用于创建带广告的应用的工作流
+description: "了解有关开发和发布带广告的应用的端到端过程。"
+title: "用于创建带广告的应用的工作流"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
+
 
 ---
 
@@ -61,6 +65,7 @@ title: 用于创建带广告的应用的工作流
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

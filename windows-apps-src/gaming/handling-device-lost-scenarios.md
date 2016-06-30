@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 在 Direct3D 11 中处理设备删除方案
-description: 本主题介绍了图形适配器被删除或重新初始化时，如何重新创建 Direct3D 和 DXGI 的设备界面链。
+title: "在 Direct3D 11 中处理设备删除方案"
+description: "本主题介绍了图形适配器被删除或重新初始化时，如何重新创建 Direct3D 和 DXGI 的设备界面链。"
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d522a309386b06f97bc63b9eead1ca4cecf165c
+
 ---
 
 # <span id="dev_gaming.handling_device-lost_scenarios"></span>在 Direct3D 11 中处理设备删除方案
@@ -25,7 +29,7 @@ ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 
 ### <span></span>步骤 1：
 
-包含用于呈现循环中设备删除错误的检查。 通过调用 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)（或 [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 等）呈现帧。 然后，检查它返回的是 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 还是 **DXGI\_ERROR\_DEVICE\_RESET**
+包含用于呈现循环中设备删除错误的检查。 通过调用 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)（或 [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 等）呈现帧。 然后，检查它是返回 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 还是 **DXGI\_ERROR\_DEVICE\_RESET**。
 
 首先，模板存储由 DXGI 交换链返回的 HRESULT：
 
@@ -153,7 +157,7 @@ if (m_deviceNotify != nullptr)
 #endif
 ```
 
-有关更多详细信息，请参阅 [**GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) 和 [**DXGI\_ERROR**](https://msdn.microsoft.com/library/windows/desktop/bb509553)
+有关更多详细信息，请参阅 [**GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) 和 [**DXGI\_ERROR**](https://msdn.microsoft.com/library/windows/desktop/bb509553)。
 
 ### 测试设备删除处理
 
@@ -172,6 +176,7 @@ if (m_deviceNotify != nullptr)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: "使用画笔"
 description: "Brush 对象用于绘制形状、文本和控件各个部分的内部或轮廓，以便所绘制的对象在 UI 中可见。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ---
 # 使用画笔
@@ -42,7 +42,7 @@ ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
 
 ![显示的 SolidColorBrush。](images/brushes-solidcolorbrush.jpg)
 
-如果 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 是使用 XAML 以外的代码定义的，则每个已命名的颜色都作为 [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) 类的静态属性值提供。 例如，若要声明 **SolidColorBrush** 的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 值以表示命名颜色“兰花紫”，请将 **Color** 值设置为静态值 [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx)。
+如果 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 是使用 XAML 以外的代码定义的，则每个已命名的颜色都作为 [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) 类的静态属性值提供。 例如，若要声明 **SolidColorBrush** 的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 值以表示命名颜色“兰花紫”，请将 **Color** 值设置为静态值 [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx)。
 
 ### 十六进制颜色值
 
@@ -156,7 +156,7 @@ ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
 
 比起使用代码来定义画笔来说，使用 XAML 指定画笔是更典型的行为。 这是因为画笔通常被定义为 XAML 资源，并且由于画笔值通常是设计工具的输出或者作为 XAML UI 定义的一部分。 然而，对于你可能希望使用代码定义画笔的很少情况，所有 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 类型均可用于代码实例化。
 
-若要使用代码创建 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)，请使用采用 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 参数的构造函数。 传递作为 [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) 类的静态属性的值，如下所示：
+若要使用代码创建 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)，请使用采用 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 参数的构造函数。 传递作为 [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) 类的静态属性的值，如下所示：
 
 ```cs
 SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
@@ -186,6 +186,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

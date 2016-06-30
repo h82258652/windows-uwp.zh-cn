@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 你可以通过限时促销来在 Windows 应用商店中推广你的应用或应用内产品 (IAP)。
-title: 打折出售应用和 IAP
+Description: "你可以通过限时促销来在 Windows 应用商店中推广你的应用或应用内产品 (IAP)。"
+title: "打折出售应用和 IAP"
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b53d8d4ddcf3f75ffe039203377d12fd02e52f07
+
 ---
 
 # 打折出售应用和 IAP
@@ -65,6 +69,7 @@ ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

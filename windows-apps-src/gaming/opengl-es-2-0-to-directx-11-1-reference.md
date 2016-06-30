@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: OpenGL ES 2.0 到 Direct3D 11 参考
-description: 当从 OpenGL ES 2.0 移植到 Direct3D 11 时，使用这些参考主题查找 API 映射和简短的代码示例。
+title: "OpenGL ES 2.0 到 Direct3D 11 参考"
+description: "当从 OpenGL ES 2.0 移植到 Direct3D 11 时，使用这些参考主题查找 API 映射和简短的代码示例。"
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: ad6da83773bf5b791f4b2921b8ea55345aae999b
+
 ---
 
 # OpenGL ES 2.0 到 Direct3D 11 参考
@@ -42,6 +46,7 @@ ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 通过 Windows 开发人员中心仪表板，你可以在同一位置针对 Windows 设备管理和提交你的所有应用。
-title: 使用 Windows 开发人员中心仪表板
+Description: "通过 Windows 开发人员中心仪表板，你可以在同一位置针对 Windows 设备管理和提交你的所有应用。"
+title: "使用 Windows 开发人员中心仪表板"
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7478a832cea6114c7a6e7f6be5cc3e908981a64c
+
 ---
 
 # 使用 Windows 开发人员中心仪表板
@@ -33,6 +37,7 @@ ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

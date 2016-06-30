@@ -5,8 +5,8 @@ title: "磁贴"
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a440a9abaf150dac6ed95d881261b80521a734c0
+ms.sourcegitcommit: d3fe62d4de00c42079d62d105acdbb21e296ba5f
+ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
 
 ---
 
@@ -48,14 +48,11 @@ ms.openlocfilehash: a440a9abaf150dac6ed95d881261b80521a734c0
 
     应用自己的图像替换这些图像。 可选择为不同的缩放提供图像，但无需为所有缩放提供。 若要确保应用在一系列设备上具有不俗的外观，我们建议针对每个图像提供其 100%、200% 和 400% 缩放的版本。
 
-    缩放的图像应遵循此命名约定：
+    缩放的图像应遵循此命名约定： 
     
     *
-            &lt;image name&gt;*.scale-*&lt;scale factor&gt;*.*&lt;image file extension&gt;* 
-
-
-     
-
+            &lt;image name&gt;*.scale-*&lt;scale factor&gt;*.*&lt;image file extension&gt;*  
+    
     例如：SmallLogo.scale-100.png
 
     在引用图像时，将其引用为 *&lt;image name&gt;*.*&lt;image file extension&gt;*（在此示例中是“SmallLogo.png”）。 系统将自动从你提供的图像中为设备选择相应的缩放图像。
@@ -110,6 +107,6 @@ ms.openlocfilehash: a440a9abaf150dac6ed95d881261b80521a734c0
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

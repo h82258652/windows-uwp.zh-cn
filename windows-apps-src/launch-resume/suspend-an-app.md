@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 处理应用暂停
-description: 了解当系统挂起你的应用时如何保存重要的应用程序数据。
+author: TylerMSFT
+title: "处理应用暂停"
+description: "了解当系统挂起你的应用时如何保存重要的应用程序数据。"
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
+ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
+ms.openlocfilehash: 3ad58dc20a660d89622d215c46d263adf27a0542
+
 ---
 
 # 处理应用暂停
@@ -23,45 +26,45 @@ ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 注册以处理 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件，该事件指示在系统暂停你的应用之前，应用应该保存其应用程序数据。
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-using System;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.UI.Xaml;
-
-partial class MainPage
-{
-   public MainPage()
-   {
-      InitializeComponent();
-      Application.Current.Suspending += new SuspendingEventHandler(App_Suspending);
-   }
-}
-```
-```vb
-Public NotInheritable Class MainPage
-
-   Public Sub New()
-      InitializeComponent() 
-      AddHandler Application.Current.Suspending, AddressOf App_Suspending
-   End Sub
-   
-End Class
-```
-```cpp
-using namespace Windows::ApplicationModel;
-using namespace Windows::ApplicationModel::Activation;
-using namespace Windows::Foundation;
-using namespace Windows::UI::Xaml;
-using namespace AppName;
-
-MainPage::MainPage()
-{
-   InitializeComponent();
-   Application::Current->Suspending += 
-       ref new SuspendingEventHandler(this, &MainPage::App_Suspending);
-}
-```
+> ```cs
+> using System;
+> using Windows.ApplicationModel;
+> using Windows.ApplicationModel.Activation;
+> using Windows.UI.Xaml;
+>
+> partial class MainPage
+> {
+>    public MainPage()
+>    {
+>       InitializeComponent();
+>       Application.Current.Suspending += new SuspendingEventHandler(App_Suspending);
+>    }
+> }
+> ```
+> ```vb
+> Public NotInheritable Class MainPage
+>
+>    Public Sub New()
+>       InitializeComponent()
+>       AddHandler Application.Current.Suspending, AddressOf App_Suspending
+>    End Sub
+>    
+> End Class
+> ```
+> ```cpp
+> using namespace Windows::ApplicationModel;
+> using namespace Windows::ApplicationModel::Activation;
+> using namespace Windows::Foundation;
+> using namespace Windows::UI::Xaml;
+> using namespace AppName;
+>
+> MainPage::MainPage()
+> {
+>    InitializeComponent();
+>    Application::Current->Suspending +=
+>        ref new SuspendingEventHandler(this, &MainPage::App_Suspending);
+> }
+> ```
 
 ## 在挂起之前保存应用程序数据
 
@@ -69,35 +72,35 @@ MainPage::MainPage()
 当你的应用处理 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件时，它将有机会将其重要的应用程序数据保存到处理程序函数中。 应用应该使用 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 存储 API 来同步保存简单的应用程序数据。
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-partial class MainPage
-{
-    async void App_Suspending(
-        Object sender, 
-        Windows.ApplicationModel.SuspendingEventArgs e)
-    {
-        // TODO: This is the time to save app data in case the process is terminated
-    }
-}
-```
-```vb
-Public NonInheritable Class MainPage
-
-    Private Sub App_Suspending(
-        sender As Object, 
-        e As Windows.ApplicationModel.SuspendingEventArgs) Handles OnSuspendEvent.Suspending
-
-        ' TODO: This is the time to save app data in case the process is terminated
-    End Sub
-
-End Class
-```
-```cpp
-void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
-{
-    // TODO: This is the time to save app data in case the process is terminated
-}
-```
+> ```cs
+> partial class MainPage
+> {
+>     async void App_Suspending(
+>         Object sender,
+>         Windows.ApplicationModel.SuspendingEventArgs e)
+>     {
+>         // TODO: This is the time to save app data in case the process is terminated
+>     }
+> }
+> ```
+> ```vb
+> Public NonInheritable Class MainPage
+>
+>     Private Sub App_Suspending(
+>         sender As Object,
+>         e As Windows.ApplicationModel.SuspendingEventArgs) Handles OnSuspendEvent.Suspending
+>
+>         ' TODO: This is the time to save app data in case the process is terminated
+>     End Sub
+>
+> End Class
+> ```
+> ```cpp
+> void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
+> {
+>     // TODO: This is the time to save app data in case the process is terminated
+> }
+> ```
 
 ## 备注
 
@@ -128,8 +131,6 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

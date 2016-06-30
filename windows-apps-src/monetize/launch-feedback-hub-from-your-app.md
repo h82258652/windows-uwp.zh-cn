@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 你可以通过从应用启动“反馈中心”来鼓励客户留下反馈。
-title: 从应用启动“反馈中心”
+Description: "你可以通过从应用启动“反馈中心”来鼓励客户留下反馈。"
+title: "从应用启动“反馈中心”"
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
+translationtype: Human Translation
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: ccda01d9bfa4ffdff2bbce5d6c60c78e026270e5
+
 ---
 
 # 从应用启动“反馈中心”
@@ -73,6 +77,7 @@ private async void feedbackButton_Click(object sender, RoutedEventArgs e)
 * [反馈报告](../publish/feedback-report.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

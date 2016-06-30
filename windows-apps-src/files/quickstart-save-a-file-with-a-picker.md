@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
-title: 使用选取器保存文件
-description: 使用 FileSavePicker 让用户指定名称和他们想让应用保存文件的位置。
+title: "使用选取器保存文件"
+description: "使用 FileSavePicker 让用户指定名称和他们想让应用保存文件的位置。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 68c7fcedbea40541632aa0a7ae65aa77db206280
+
 ---
 
 # 使用选取器保存文件
@@ -113,6 +117,7 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

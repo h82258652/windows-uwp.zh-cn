@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: b307fc7d-0424-459d-8c20-e37e5cfec0d0
-description: 了解使用 Microsoft Advertising 库的应用在发布到应用商店之前必须满足的要求。
-title: 将带广告的应用提交到 Windows 应用商店
+description: "了解使用 Microsoft Advertising 库的应用在发布到应用商店之前必须满足的要求。"
+title: "将带广告的应用提交到 Windows 应用商店"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: d2e6f9873b2539f9c0558abdc9ee936b938a03b1
+
 
 ---
 
@@ -25,6 +29,7 @@ title: 将带广告的应用提交到 Windows 应用商店
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 你可以在“程序包”页上传所要提交应用的所有程序包文件（.xap、.appx、.appxupload 和/或 .appxbundle）。 你可以在此步骤中上传适用于应用所面向的所有操作系统的程序包。
-title: 上传应用包
+Description: "你可以在“程序包”页上传所要提交应用的所有程序包文件（.xap、.appx、.appxupload 和/或 .appxbundle）。 你可以在此步骤中上传适用于应用所面向的所有操作系统的程序包。"
+title: "上传应用包"
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: bb89968c261cc0c14f82375d0d708bbce5da9869
+
 ---
 
 # 上传应用包
@@ -55,6 +59,7 @@ ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

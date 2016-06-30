@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Binding 标记扩展会在 XAML 加载时转换为 Binding 类的实例。
-title: Binding 标记扩展&#39;
+description: "Binding 标记扩展会在 XAML 加载时转换为 Binding 类的实例。"
+title: "Binding 标记扩展&#39;"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
+
 ---
 
 # {Binding} 标记扩展
@@ -37,7 +41,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 
 | 术语 | 说明 |
 |------|-------------|
-| *propertyPath* | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了详细信息。 |
+| *propertyPath* | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
 | *bindingProperties* | *propName* = *value*\[, *propName*=*value*\]*<br/>使用一个名称/值对语法指定的一个或多个绑定属性。 |
 | *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 对象上设置的属性的字符串名称。 例如，“Converter”。 | 
 | *value* | 要将属性设置为的值。 参数的语法取决于下面的[可使用 {Binding} 设置的 Binding 类的属性](#properties-of-binding)部分的属性。 |
@@ -127,6 +131,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

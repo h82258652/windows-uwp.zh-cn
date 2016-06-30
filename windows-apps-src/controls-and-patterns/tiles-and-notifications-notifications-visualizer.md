@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 通知可视化工具是应用商店中一款新的通用 Windows 平台 (UWP) 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。
-title: 通知可视化工具
+Description: "通知可视化工具是应用商店中一款新的通用 Windows 平台 (UWP) 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。"
+title: "通知可视化工具"
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dcbf05669093047bd76dc01c217daf353d8fb9da
+
 ---
 
 # 通知可视化工具
@@ -64,6 +68,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

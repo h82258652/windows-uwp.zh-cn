@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
-description: 了解如何使用 AdControl 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML 应用中显示横幅广告。
-title: HTML 5 和 Javascript 中的 AdControl
+description: "了解如何使用 AdControl 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML 应用中显示横幅广告。"
+title: "HTML 5 和 Javascript 中的 AdControl"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
+
 ---
 
 # HTML 5 和 Javascript 中的 AdControl
@@ -128,6 +132,7 @@ title: HTML 5 和 Javascript 中的 AdControl
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -3,6 +3,10 @@ author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 label: Text box
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 873ca8f869f4303f8fc4a9a7ff08f81df29d367d
+
 ---
 # 文本框
 TextBox 控件可使用户在应用中键入文本。 它通常用于捕获单行文本，但可配置为捕获多行文本。 文本以简单、统一、纯文本的格式显示在屏幕上。
@@ -79,8 +83,7 @@ rootGrid.Children.Add(textBox);
 
 可以通过将 IsReadOnly 属性设置为 true 使 TextBox 变为只读。 例如，你可以提供一个供用户输入评论的 TextBox，该文本框仅在特定条件下启用。 你可以使 TextBox 在不满足特定条件时变为只读。 如果你只需要显示文本，仅考虑改用 TextBlock 或 RichTextBlock。
 
-只读文本框外观与读/写文本框相同，因此它可能使用户产生困惑。 
-用户可以选择并复制文本。
+只读文本框外观与读/写文本框相同，因此它可能使用户产生困惑。 用户可以选择并复制文本。
 IsEnabled
 
 
@@ -277,6 +280,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

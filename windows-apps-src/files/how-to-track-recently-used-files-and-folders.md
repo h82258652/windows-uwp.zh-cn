@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
-title: 跟踪最近使用的文件和文件夹
-description: 通过将用户经常访问的文件添加到你的应用的最近使用列表 (MRU) 中来跟踪这些文件。
+title: "跟踪最近使用的文件和文件夹"
+description: "通过将用户经常访问的文件添加到你的应用的最近使用列表 (MRU) 中来跟踪这些文件。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
+
 ---
 # 跟踪最近使用的文件和文件夹
 
@@ -38,7 +42,7 @@ description: 通过将用户经常访问的文件添加到你的应用的最近�
 
  ## 向 MRU 中添加选取的文件
 
--   用户选取的文件通常是他们重复返回的文件。 因此，当选取文件时，请考虑将选取的文件添加到你的应用的 MRU。 操作方法如下：
+-   用户选取的文件通常是他们重复返回的文件。 因此，当选取文件时，请考虑将选取的文件添加到你的应用的 MRU。 操作方法如下。
 
     ```CSharp
     ...
@@ -106,6 +110,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

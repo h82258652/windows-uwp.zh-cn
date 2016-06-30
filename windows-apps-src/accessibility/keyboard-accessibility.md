@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: 如果应用未提供良好的键盘访问，则盲人用户或行动不便的用户在使用该应用时会存在困难，或者可能根本无法使用该应用。
+Description: "如果应用未提供良好的键盘访问，则盲人用户或行动不便的用户在使用该应用时会存在困难，或者可能根本无法使用该应用。"
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
-title: 键盘辅助功能
+title: "键盘辅助功能"
 label: Keyboard accessibility
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: c5b5ca247e3999850d7bf9b81347c201204db7e8
+
 ---
 
 # 键盘辅助功能  
@@ -43,7 +46,7 @@ XAML
 </Grid>
 ```
 
-你可能希望从 Tab 键顺序中排除某个控件。 这通常只能通过使控件成为非交互控件（例如，将控件的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209419) 属性设置为 **false**）来实现。 已禁用的控件从 Tab 键顺序中自动排除。 但有时，如果某个控件未禁用，你可能希望从 Tab 键顺序中排除它。 在这种情况下，你可以将 [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) 属性设置为 **false**
+你可能希望从 Tab 键顺序中排除某个控件。 这通常只能通过使控件成为非交互控件（例如，将控件的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209419) 属性设置为 **false**）来实现。 已禁用的控件从 Tab 键顺序中自动排除。 但有时，如果某个控件未禁用，你可能希望从 Tab 键顺序中排除它。 在这种情况下，你可以将 [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) 属性设置为 **false**。
 
 默认情况下，任何具有焦点的元素通常都位于 Tab 键顺序中。 例外情况是某些文本显示类型（如 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)）可以具有焦点，以便它们可以通过剪贴板访问，从而进行文本选择；但是，这些类型不在 Tab 键顺序中，因为静态文本元素不应在 Tab 键顺序中。 它们通常不交互（它们不能被调用且不需要文本输入，但要支持[文本控件模式](https://msdn.microsoft.com/library/windows/desktop/Ee671194)，该模式支持在文本中查找和调整选择点）。 文本不应该暗示向其设置焦点可能会启用某些操作。 文本元素仍由辅助技术检测并在屏幕阅读器中大声读出，但这依赖于按照实际 Tab 键顺序查找这些元素之外的其他技术。
 
@@ -60,7 +63,7 @@ XAML
 <span id="keyboard_navigation_within_a_ui_element"/>
 <span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT"/>
 ## 在某个 UI 元素内的键盘导航  
-对于复合元素，确保在所包含的元素之间的内部导航正确，这一点很重要。 复合元素可以管理其当前活动子元素以降低使所有子元素可聚焦的开销。 采用 Tab 键顺序将这样的复合元素包括在内，且该元素本身会处理键盘导航事件。 许多复合控件的事件处理中已经内置了某种内部导航逻辑。 例如，默认情况下允许使用箭头键遍历 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)、[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242704view)、[**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 和 [**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678) 控件上的项。
+对于复合元素，确保在所包含的元素之间的内部导航正确，这一点很重要。 复合元素可以管理其当前活动子元素以降低使所有子元素可聚焦的开销。 采用 Tab 键顺序将这样的复合元素包括在内，且该元素本身会处理键盘导航事件。 许多复合控件的事件处理中已经内置了某种内部导航逻辑。 例如，默认情况下允许使用箭头键遍历 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)、[**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview)、[**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 和 [**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678) 控件上的项。
 
 <span id="keyboard_activation"/>
 <span id="KEYBOARD_ACTIVATION"/>
@@ -147,7 +150,7 @@ XAML
 ### 实现键盘事件处理程序  
 输入事件（如键事件）使用名为*路由事件*的事件概念。 路由事件可以通过复合控件的子元素弹出，以便公用控件的父元素可以处理多个子元素的事件。 对于包含多个在设计上不能具有焦点或位于 Tab 键顺序中的复合部分的控件，此事件模型便于为其定义快捷键操作。
 
-有关说明如何编写键事件处理程序以包括对于修饰符（如 Ctrl 键）的检查的示例代码，请参阅[键盘交互](https://msdn.microsoft.com/library/windows/apps/Mt185607)
+有关说明如何编写键事件处理程序以包括对于修饰字母（如 Ctrl 键）的检查的示例代码，请参阅[键盘交互](https://msdn.microsoft.com/library/windows/apps/Mt185607)。
 
 <span id="Keyboard_navigation_for_custom_controls"/>
 <span id="keyboard_navigation_for_custom_controls"/>
@@ -155,17 +158,17 @@ XAML
 ## 自定义控件的键盘导航  
 如果子元素之间相互具有空间关系，我们建议使用箭头键作为键盘快捷方式来在子元素之间导航。 如果树状视图节点有单独的子元素，用于处理展开折叠和节点激活，则应使用左右箭头键提供键盘展开折叠功能。 对于支持在控件内容中沿着一定的方向进行遍历的方向控件，请使用相应的箭头键。
 
-通常，可通过在类逻辑中包括 [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/BR209390_onkeydown) 和 [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/BR209390_onkeyup) 方法的替代方法来为自定义控件实现自定义的键处理。
+通常，可通过在类逻辑中包括 [**OnKeyDown**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967982.aspx) 和 [**OnKeyUp**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967983.aspx) 方法的替代方法来为自定义控件实现自定义的键处理。
 
 <span id="An_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="an_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR"/>
 ## 焦点指示符的视觉状态示例  
-我们之前曾提到，任何允许用户为其设置焦点的自定义控件都应当具有一个视觉焦点指示器。 通常，该焦点指示器可以简单到直接围绕控件的普通边界矩形周围绘制一个矩形形状。 视觉焦点的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 是该控件在控件模板中的其余组合的对等元素，但它最初是用 **Collapsed** 的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) 值设置的，因为该控件尚未获取焦点。 然后，当控件获取焦点时，会调用一个专门为对于 **Visible** 可见的焦点设置 **Visibility** 的视觉状态。 在焦点移到其他位置之后，会调用另一个视觉状态，**Visibility** 会变成 **Collapsed**
+我们之前曾提到，任何允许用户为其设置焦点的自定义控件都应当具有一个视觉焦点指示器。 通常，该焦点指示器可以简单到直接围绕控件的普通边界矩形周围绘制一个矩形形状。 视觉焦点的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 是该控件在控件模板中的其余组合的对等元素，但它最初是用 **Collapsed** 的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) 值设置的，因为该控件尚未获取焦点。 然后，当控件获取焦点时，会调用一个专门为对于 **Visible** 可见的焦点设置 **Visibility** 的视觉状态。 在焦点移到其他位置之后，会调用另一个视觉状态，**Visibility** 会变成 **Collapsed**。
 
 所有默认 XAML 控件在获得焦点时（如果它们可以获得焦点），都将显示相应的视觉焦点指示器。 还可能存在不同的外观，具体取决于用户所选的主题（尤其是用户使用高对比度模式。）如果你在 UI 中使用的是 XAML 控件且未更换控件模板，则无需执行任何额外操作，即可在正确运行和显示的控件上获取视觉焦点指示器。 但是如果你想要重新创建控件模板，或者如果你对 XAML 控件如何提供其视觉焦点指示器感兴趣，则本部分的剩余部分将介绍如何在 XAML 中和控件逻辑中完成此操作。
 
-下面是来自 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 的默认 XAML 模板的示例 XAML
+下面是来自 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 的默认 XAML 模板的示例 XAML。
 
 XAML
 ```xml
@@ -240,6 +243,7 @@ Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

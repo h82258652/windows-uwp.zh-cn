@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
-description: 本主题介绍了一个将正在运行的对等测验游戏 WinRT 8.1 示例应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
-title: Windows 运行时 8.x 到 UWP 案例研究，QuizGame 对等示例应用
+description: "本主题介绍了一个将正在运行的对等测验游戏 WinRT 8.1 示例应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。"
+title: "Windows 运行时 8.x 到 UWP 案例研究，QuizGame 对等示例应用"
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
+
 ---
 
 # Windows 运行时 8.x 到 UWP 案例研究：QuizGame 对等示例应用
@@ -191,6 +195,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 我们在此案例研究中移植的应用是涉及到多个项目、一个类库以及大量代码和用户界面的相对复杂的应用。 即便如此，该移植仍然很简单。 移植的一些便利之处可以直接归功于 Windows 10 开发人员平台与 Windows 8.1 和 Windows Phone 8.1 平台之间的相似性。 另一些是由于原始应用的设计方式使模型、视图模型和视图保持分离。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

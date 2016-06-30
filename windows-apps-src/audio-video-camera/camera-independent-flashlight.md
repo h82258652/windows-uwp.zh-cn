@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
-description: 本文介绍如何访问和使用设备灯（如果存在）。 灯功能通过设备的相机和相机闪光灯功能单独管理。
-title: 独立于相机的手电筒
+description: "本文介绍如何访问和使用设备灯（如果存在）。 灯功能通过设备的相机和相机闪光灯功能单独管理。"
+title: "独立于相机的手电筒"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
+
 ---
 
 # 独立于相机的手电筒
@@ -75,6 +79,7 @@ title: 独立于相机的手电筒
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
-title: 创建随机数
-description: 此示例代码显示了如何在通用 Windows 平台 (UWP) 应用中创建随机数或在加密中使用的缓冲区。
+title: "创建随机数"
+description: "此示例代码显示了如何在通用 Windows 平台 (UWP) 应用中创建随机数或在加密中使用的缓冲区。"
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 1faa3477acd0cf1a5a2acc7c6c0a62910299254b
+
 ---
 
 # 创建随机数
@@ -35,6 +39,7 @@ public uint GenerateRandomNumber()
 }
 ```
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

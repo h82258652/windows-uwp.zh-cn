@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 对基元使用深度和效果
-description: 下面，我们将向你介绍如何对基元使用深度、透视、颜色和其他效果。
+title: "对基元使用深度和效果"
+description: "下面，我们将向你介绍如何对基元使用深度、透视、颜色和其他效果。"
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 47547a226a69b2631313972ed67b39b1f29de402
+
 ---
 
 # 对基元使用深度和效果
@@ -19,7 +23,7 @@ ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 
 我们假定你熟悉 C++。 你还需要具有图形编程概念方面的基本经验。
 
-我们还假定你已阅读[快速入门：设置 DirectX 资源并显示图像](setting-up-directx-resources.md)和[创建着色器和绘制基元](creating-shaders-and-drawing-primitives.md)
+我们还假定你已阅读[快速入门：设置 DirectX 资源并显示图像](setting-up-directx-resources.md)和[创建着色器和绘制基元](creating-shaders-and-drawing-primitives.md)。
 
 **完成所需时间：**20 分钟。
 
@@ -28,7 +32,7 @@ ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 
 ### 1. 定义立方体变量
 
-首先，我们需要为立方体定义 **SimpleCubeVertex** 和 **ConstantBuffer** 结构。 这些结构用于指定立方体的顶点位置和颜色以及查看立方体的方式。 使用 [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 声明 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 和 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) 并声明 **ConstantBuffer** 的实例
+首先，我们需要为立方体定义 **SimpleCubeVertex** 和 **ConstantBuffer** 结构。 这些结构用于指定立方体的顶点位置和颜色以及查看立方体的方式。 使用 [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 声明 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 和 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) 并声明 **ConstantBuffer** 的实例。
 
 ```cpp
 struct SimpleCubeVertex
@@ -60,7 +64,7 @@ private:
 
 ### 2. 创建深度模具视图
 
-除了创建呈现器目标视图之外，还需要创建深度模具视图。 深度模具视图让 Direct3D 可以高效地在离相机较远的对象前面呈现离相机较近的对象。 在创建深度模具缓冲区视图之前，必须先创建深度模具缓冲区。 填充 [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) 来描述深度模具缓冲区，然后调用 [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) 来创建深度模具缓冲区。 要创建深度模具视图，需填充 [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) 来描述深度模具视图，并将深度模具视图描述和深度模具缓冲区传递到 [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507)
+除了创建呈现器目标视图之外，还需要创建深度模具视图。 深度模具视图让 Direct3D 可以高效地在离相机较远的对象前面呈现离相机较近的对象。 在创建深度模具缓冲区视图之前，必须先创建深度模具缓冲区。 填充 [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) 来描述深度模具缓冲区，然后调用 [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) 来创建深度模具缓冲区。 要创建深度模具视图，需填充 [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) 来描述深度模具视图，并将深度模具视图描述和深度模具缓冲区传递到 [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507)。
 
 ```cpp
         // Once the render target view is created, create a depth stencil view.  This
@@ -453,6 +457,7 @@ private:
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

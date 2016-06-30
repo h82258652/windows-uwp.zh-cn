@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
-description: Microsoft 官方商城协定和盈利 SDK 向你提供通过广告获取应用收益的多种方法。
-title: 在应用中显示广告
+description: "Microsoft 官方商城协定和盈利 SDK 向你提供通过广告获取应用收益的多种方法。"
+title: "在应用中显示广告"
+translationtype: Human Translation
+ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
+ms.openlocfilehash: c79ba96908cc7b52afefbe44c3f56ce009c87f16
+
 ---
 
 # 在应用中显示广告
@@ -39,6 +43,7 @@ Microsoft 官方商城协定和盈利 SDK 中包括 Microsoft Advertising 库和
 * [通过广告获取应用收益]( http://go.microsoft.com/fwlink/p/?LinkId=699559)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 为标记元素提供一个唯一标识符。 对于通用 Windows 平台 (UWP) XAML，这个唯一标识符供 XAML 本地化过程和工具使用（例如，使用 .resw 资源文件中的资源）。
-title: xUid 指令
+description: "为标记元素提供一个唯一标识符。 对于通用 Windows 平台 (UWP) XAML，这个唯一标识符供 XAML 本地化过程和工具使用（例如，使用 .resw 资源文件中的资源）。"
+title: "xUid 指令"
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4f8aa553c99b6071cedc4f9d93cf8258b75eca49
+
 ---
 
 # x&#58;Uid 指令
@@ -45,6 +49,7 @@ UWP XAML 在 **x:Uid** 唯一性上使用的规则不同于以前利用 XAML 的
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

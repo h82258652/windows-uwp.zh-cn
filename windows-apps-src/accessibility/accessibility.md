@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: 介绍与通用 Windows 平台 (UWP) 应用相关的辅助功能概念。
+Description: "介绍与通用 Windows 平台 (UWP) 应用相关的辅助功能概念。"
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: 辅助功能
+title: "辅助功能"
 label: Accessibility
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
+
 ---
 
 # 辅助功能  
@@ -15,6 +19,7 @@ template: detail.hbs
 
 辅助功能主要用于生成以下体验：让你的应用程序适用于在各种环境中使用技术并且对用户界面提出一系列需求和体验要求的用户。 对于某些情况，辅助功能要求由法律强制实施。 但是，无论法律是否有规定，最好都解决辅助功能问题，以尽可能扩大应用的受众范围。 其中还包括关于应用辅助功能的 Windows 应用商店声明。
 
+> [!NOTE]
 > 将应用声明为辅助应用仅与 Windows 应用商店有关。
 
 | 文章 | 描述 |
@@ -38,6 +43,7 @@ template: detail.hbs
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

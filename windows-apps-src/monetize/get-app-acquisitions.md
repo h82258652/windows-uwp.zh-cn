@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
-description: 使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。
-title: 获取应用购置
+description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。"
+title: "获取应用购置"
+ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
+ms.openlocfilehash: 7f87f931c92eca1f64fbd23b4fcba3359293f94a
+
 ---
 
 # 获取应用购置
@@ -63,7 +66,7 @@ title: 获取应用购置
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">字符串</td>
-<td align="left">要检索购置数据的应用的产品 ID。 产品 ID 嵌入应用的一览链接中，该链接在开发人员中心仪表板的[应用标识页](https://msdn.microsoft.com/library/windows/apps/mt148561)上提供。 产品 ID 的一个示例为 9WZDNCRFJ3Q8。</td>
+<td align="left">要检索购置数据的应用的存储 ID。 存储 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。</td>
 <td align="left">是</td>
 </tr>
 <tr class="even">
@@ -234,7 +237,7 @@ title: 获取应用购置
 
 ### 请求示例
 
-以下示例演示用于获取应用购置数据的多个请求。 将 *applicationId* 值替换为你的应用的产品 ID。
+以下示例演示用于获取应用购置数据的多个请求。 将 *applicationId* 值替换为你的应用的存储 ID。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0  HTTP/1.1
@@ -263,7 +266,7 @@ Authorization: Bearer <your access token>
 | 值               | 类型   | 说明                                                                                                                                                                                                                              |
 |---------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                | 字符串 | 购置数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
-| applicationId       | 字符串 | 要检索购置数据的应用的产品 ID。                                                                                                                                                                 |
+| applicationId       | 字符串 | 要检索购置数据的应用的存储 ID。                                                                                                                                                                 |
 | applicationName     | 字符串 | 应用的显示名称。                                                                                                                                                                                                             |
 | deviceType          | 字符串 | 购置已完成的设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                  |
 | orderName           | 字符串 | 订单名称。                                                                                                                                                                                                                   |
@@ -314,7 +317,6 @@ Authorization: Bearer <your access token>
 
 
 
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

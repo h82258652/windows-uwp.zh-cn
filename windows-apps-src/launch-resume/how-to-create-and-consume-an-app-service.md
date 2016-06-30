@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 创建和使用应用服务
-description: 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。
+author: TylerMSFT
+title: "创建和使用应用服务"
+description: "了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。"
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: ade51661fa6628c76b555316f645ec6622dd299a
+
 ---
 
 # 创建和使用应用服务
@@ -26,7 +29,7 @@ ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 在 AppServiceProvider 项目的 Package.appxmanifest 文件中，将以下 AppService 扩展添加到 **&lt;Application&gt;** 元素。 此示例介绍了 `com.Microsoft.Inventory` 服务，以及将此应用识别为应用服务提供程序的内容。 实际服务将作为后台任务来实现。 应用服务应用将该服务公开给其他应用。 我们建议将反向域名样式用于服务名称。
 
 ``` syntax
-... 
+...
 <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
@@ -196,7 +199,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
         {
             this.inventoryService = new AppServiceConnection();
 
-            // Here, we use the app service name defined in the app service provider's Package.appxmanifest file in the <Extension> section. 
+            // Here, we use the app service name defined in the app service provider's Package.appxmanifest file in the <Extension> section.
             this.inventoryService.AppServiceName = "com.microsoft.inventory";
 
             // Use Windows.ApplicationModel.Package.Current.Id.FamilyName within the app service provider to get this value.
@@ -388,8 +391,6 @@ namespace MyAppService
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

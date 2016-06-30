@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: "情节提要动画"
 description: "情节提要动画不仅仅是视觉动画。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83e361fd736ce46893517c7a5cccc9c5efc9a889
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 6c900ae6e1cfde8ec7261acfc57ea19b49f2ede1
 
 ---
 # 情节提要动画
@@ -224,7 +224,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
  
 
-此外，在为控件的视觉外观声明视觉状态动画时，还可以将动画放在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 单元中。 在此情况下，你定义的 **Storyboard** 元素位于 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 容器中，此容器嵌套在 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849)（作为键控资源的 **Style**）中更深层的位置。 在此情况下，不需要对 **Storyboard** 使用键或名称，因为它是一种 **VisualState**，其中包含 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) 可以调用的目标名称。 控件的样式通常分为单独的 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 文件，而不是放在特定页面或应用的 **Resources** 集合中。 有关详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
+此外，在为控件的视觉外观声明视觉状态动画时，还可以将动画放在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 单元中。 在此情况下，你定义的 **Storyboard** 元素位于 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 容器中，此容器嵌套在 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849)（作为键控资源的 **Style**）中更深层的位置。 在此情况下，不需要对 **Storyboard** 使用键或名称，因为它是一种 **VisualState**，其中包含 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) 可以调用的目标名称。 控件的样式通常分为单独的 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 文件，而不是放在特定页面或应用的 **Resources** 集合中。 有关详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
 ## 从属动画和独立动画
 
@@ -307,11 +307,11 @@ myStoryBoard.Begin()
 
 ### 视觉状态的动画
 
-用于定义控件的视觉状态的 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的运行行为不同于应用直接运行情节提要的方式。 当应用到 XAML 中的视觉状态时，**Storyboard** 是包含的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 的元素，并且可以通过使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) API 将该状态作为整体进行控制。 当控件使用包含的 **VisualState** 时，其中的任何动画都将根据其动画值和 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 属性运行。 有关详细信息，请参阅[视觉状态的情节提要](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。 对于视觉状态，显示的 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 是不同的。 如果视觉状态更改为另一个状态，则之前视觉状态及其动画应用的所有属性更改都将被取消，即使在新的视觉状态没有专门将新的动画应用到属性的情况下也是如此。
+用于定义控件的视觉状态的 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的运行行为不同于应用直接运行情节提要的方式。 当应用到 XAML 中的视觉状态时，**Storyboard** 是包含的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 的元素，并且可以通过使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) API 将该状态作为整体进行控制。 当控件使用包含的 **VisualState** 时，其中的任何动画都将根据其动画值和 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 属性运行。 有关详细信息，请参阅[视觉状态的情节提要](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。 对于视觉状态，显示的 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 是不同的。 如果视觉状态更改为另一个状态，则之前视觉状态及其动画应用的所有属性更改都将被取消，即使在新的视觉状态没有专门将新的动画应用到属性的情况下也是如此。
 
 ### **Storyboard** 和 **EventTrigger**
 
-存在启动动画的一种方法，该方法可以在 XAML 中完全声明。 但是，此技术目前不再被广泛使用。 它是来自 WPF 和早期版本的 Silverlight（在 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) 支持之前）中的旧语法。 鉴于导入/兼容性原因，此 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 语法在 Windows 运行时 XAML 中仍然有效，但仅用于基于 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件的触发行为；尝试触发其他事件将引发异常或无法编译。 有关详细信息，请参阅 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 或 [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)。
+存在启动动画的一种方法，该方法可以在 XAML 中完全声明。 但是，此技术目前不再被广泛使用。 它是来自 WPF 和早期版本的 Silverlight（在 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) 支持之前）中的旧语法。 鉴于导入/兼容性原因，此 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 语法在 Windows 运行时 XAML 中仍然有效，但仅用于基于 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件的触发行为；尝试触发其他事件将引发异常或无法编译。 有关详细信息，请参阅 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 或 [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)。
 
 ## 创建 XAML 附加属性的动画
 
@@ -340,6 +340,6 @@ myStoryBoard.Begin()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

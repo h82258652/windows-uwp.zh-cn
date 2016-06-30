@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
-title: 使用测斜仪
-description: 了解如何使用测斜仪确定俯仰、滚转和偏航。
+title: "使用测斜仪"
+description: "了解如何使用测斜仪确定俯仰、滚转和偏航。"
+translationtype: Human Translation
+ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
+ms.openlocfilehash: f8b56e0ef13e471d99519256b5a6d124b569102d
+
 ---
 # 使用测斜仪
 
@@ -96,7 +100,7 @@ description: 了解如何使用测斜仪确定俯仰、滚转和偏航。
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为 **InclinometerCS** 的项目，则使用 `namespace InclinometerCS` 替换 `namespace App1`。
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“InclinometerCS”**的项目，则使用 `namespace InclinometerCS` 替换 `namespace App1`。
 
 -   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
@@ -122,7 +126,7 @@ description: 了解如何使用测斜仪确定俯仰、滚转和偏航。
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为 **InclinometerCS** 的项目，则使用 `x:Class="InclinometerCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:InclinometerCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“InclinometerCS”**的项目，则使用 `x:Class="InclinometerCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:InclinometerCS"` 替换 `xmlns:local="using:App1"`。
 
 -   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
 
@@ -172,6 +176,7 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

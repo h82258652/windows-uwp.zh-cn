@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 将 RichTextBlock 与 RichTextBlockOverflow 元素结合使用以创建高级文本布局。
+Description: "将 RichTextBlock 与 RichTextBlockOverflow 元素结合使用以创建高级文本布局。"
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 28c78b39bad4c66457ec5aba8cf0b4ce0de4f00a
+
 ---
 # RTF 块
 RTF 块提供了多种适用于高级文本布局的功能，你可以在需要支持段落、内联 UI 元素或复杂文本布局时使用。
@@ -148,6 +152,7 @@ RichTextBlock 支持：
 - [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

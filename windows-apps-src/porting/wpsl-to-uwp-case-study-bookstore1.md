@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: 本主题介绍将一个非常简单的将 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
-title: 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1
+description: "本主题介绍将一个非常简单的将 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。"
+title: "从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
+
 ---
 
 # 从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1
@@ -131,6 +135,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 下一个案例研究是 [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md)，我们将从中了解访问和显示分组数据。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

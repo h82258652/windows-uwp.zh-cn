@@ -1,8 +1,12 @@
 ---
-title: 凭据保险箱
-description: 本文介绍了通用 Windows 平台 (UWP) 应用可如何使用凭据保险箱安全存储和检索用户凭据，并使用用户的 Microsoft 帐户在设备间漫游用户凭据。
+title: "凭据保险箱"
+description: "本文介绍了通用 Windows 平台 (UWP) 应用可如何使用凭据保险箱安全存储和检索用户凭据，并使用用户的 Microsoft 帐户在设备间漫游用户凭据。"
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: ba3f4fc8584108fefe25de146ae7fc84ee7c9e2c
+
 ---
 
 # 凭据保险箱
@@ -127,6 +131,7 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
 
 永远不要使用应用数据或漫游设置在纯文本中存储凭据。
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

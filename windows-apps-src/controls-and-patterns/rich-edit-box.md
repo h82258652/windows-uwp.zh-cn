@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的 RTF 文档。 你可以通过将 IsReadOnly 属性设置为 true，将 RichEditBox 设置为只读。
+Description: "你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的 RTF 文档。 你可以通过将 IsReadOnly 属性设置为 true，将 RichEditBox 设置为只读。"
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fc685b952db7292a9eea4d8a54bd6e2685cb13c0
+
 ---
 # 可编辑对话框
 你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的富文本文档。 你可以通过将 IsReadOnly 属性设置为 **true**，从而将 RichEditBox 设置为只读。
@@ -211,6 +215,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

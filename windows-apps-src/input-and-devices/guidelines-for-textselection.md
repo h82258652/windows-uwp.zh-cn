@@ -5,8 +5,8 @@ title: "选择文本和图像"
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: a47b48f9315c51505b2c487c140011e053105556
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 6533e76981d815c2d62008c17e2320fc770dfcc9
 
 ---
 
@@ -23,7 +23,7 @@ ms.openlocfilehash: a47b48f9315c51505b2c487c140011e053105556
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
+## 应做事项和禁止事项
 
 
 -   在实现自己的控制手柄 UI 时使用字体字形。 控制手柄是系统范围内提供的两个 Segoe UI 字体的组合。 使用字体资源可以简化不同的 dpi 下的呈现问题，而且适用于各种 UI 缩放平台。 在实现自己的控制手柄时，应当共享下面的 UI 特征：
@@ -39,7 +39,7 @@ ms.openlocfilehash: a47b48f9315c51505b2c487c140011e053105556
 
 -   不允许选择控件、标签、图像、专有内容等 UI 元素。 通常，Windows 应用程序仅允许在特定控件内进行选择。 诸如按钮、标签和徽标之类的控件不能选择。 评估选择是否是你应用的一个问题，如果是，请标识应该禁止选择的 UI 区域。 
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
+## 其他使用指南
 
 
 文本选择和操作对触摸交互引入的用户体验问题有特别影响。 鼠标、笔/笔触以及键盘输入高度细化：鼠标单击或笔/笔触触点通常映射到单个像素，某个键已按下或未按下。 触控输入并未细化；将指尖的整个表面映射到屏幕上某个特定的 x-y 位置以精确放置文本插入点比较困难。
@@ -103,7 +103,7 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 *具有修剪控制手柄的图像编辑器。*
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 
 
@@ -135,6 +135,6 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

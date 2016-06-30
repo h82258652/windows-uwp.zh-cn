@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: 应用提交过程的“提要”部分是你提供文本和图像的地方，客户将在应用的应用商店一览中看到这些内容。
-title: 创建应用提要
+Description: "应用提交过程的“提要”部分是你提供文本和图像的地方，客户将在应用的应用商店一览中看到这些内容。"
+title: "创建应用提要"
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
+ms.sourcegitcommit: 447beeae917b03dea2538e74fd9cd8ef48b0f41f
+ms.openlocfilehash: ca85f55e12713903dbbee0a4e247cfb1a51c17d3
+
 ---
 
 # 创建应用提要
@@ -28,7 +31,7 @@ ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 
 > **注意** 当使用一种程序包不支持的语言创建描述时，你将需要指示在该描述中应当显示哪一个你保留的应用名称，因为在要从中提取名称的语言中没有相关联的程序包。 你在此处选择的名称仅适用于该语言的应用商店一览，并且不会影响客户安装应用时显示的名称。
 
-若要编辑某段描述，请在“提交”概述中单击其名称。 “描述”****页面的各个部分如下所述。
+若要编辑某段描述，请在“提交”概述中单击语言名称。 “描述”****页面的各个部分如下所述。
 
 ## 默认描述字段
 
@@ -117,6 +120,7 @@ ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 **重要提示** Microsoft 不会为你的应用提供默认的隐私策略。 同样，你的应用也不在任何 Microsoft 隐私策略的涵盖范围之内。 若要确定你的应用是否需要隐私策略，请查看[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)和 [Windows 应用商店策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_5_1)。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

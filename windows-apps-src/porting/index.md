@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-description: 本部分介绍如何将现有应用移植到通用 Windows 平台 (UWP)，你可以在该平台中创建可供客户安装到所有类型的设备的单个 Windows 10 应用包。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。
-title: 将应用移植到 Windows 10
+description: "本部分介绍如何将现有应用移植到通用 Windows 平台 (UWP)，你可以在该平台中创建可供客户安装到所有类型的设备的单个 Windows 10 应用包。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。"
+title: "将应用移植到 Windows 10"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 88ebc2984ce856dd3fb10b8a61de4a32dc711500
+
 ---
 
 # 将应用移植到 Windows 10
@@ -31,6 +35,7 @@ Windows 运行时 (WinRT) 是可让你生成通用 Windows 平台 (UWP) 应用�
 * [从 Web 移动到 WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 使用标签向用户指示他们应向邻近控件输入的内容。 还可以为一组相关控件添加标签，或在一组相关控件旁显示说明文本。
-title: 标签
+Description: "使用标签向用户指示他们应向邻近控件输入的内容。 还可以为一组相关控件添加标签，或在一组相关控件旁显示说明文本。"
+title: "标签"
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fbb186b6f8b7bfba47fb05155a227224a1bd595e
+
 ---
 
 # 标签
@@ -55,6 +59,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。
-title: 通用 Windows 平台 (UWP) 应用的设备基础版
+Description: "了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。"
+title: "通用 Windows 平台 (UWP) 应用的设备基础版"
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: bb23e8cc85544d4b5f0717b0c2d2ebad1447cb8b
+
 ---
 
 #  通用 Windows 平台 (UWP) 应用的设备基础版
@@ -194,6 +198,7 @@ UI 注意事项
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

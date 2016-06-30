@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。
-title: 针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP
+description: "与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。"
+title: "针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP"
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
+
 ---
 
 # 针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP
@@ -73,6 +77,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

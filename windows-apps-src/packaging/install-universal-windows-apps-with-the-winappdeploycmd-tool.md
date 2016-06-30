@@ -1,8 +1,12 @@
 ---
 author: msatranjr
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
-title: 使用 WinAppDeployCmd.exe 工具安装应用
-description: Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将通用 Windows 平台 (UWP) 应用从 Windows 10 计算机部署到任意 Windows 10 移动版设备。
+title: "使用 WinAppDeployCmd.exe 工具安装应用"
+description: "Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将通用 Windows 平台 (UWP) 应用从 Windows 10 计算机部署到任意 Windows 10 移动版设备。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d3135724e092495e8f937e6d53bdfbaa9e7cf450
+
 ---
 # 使用 WinAppDeployCmd.exe 工具安装应用
 
@@ -108,6 +112,7 @@ WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

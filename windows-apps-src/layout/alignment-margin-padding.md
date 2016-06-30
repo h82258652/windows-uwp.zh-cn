@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 使用对齐、边距和填充来影响页面的元素布局。
-title: 适用于通用 Windows 平台 (UWP) 应用的对齐、边距和填充
+Description: "使用对齐、边距和填充来影响页面的元素布局。"
+title: "适用于通用 Windows 平台 (UWP) 应用的对齐、边距和填充"
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 86635255fbdae83fb2749e2aea7011a8b989e83f
+
 ---
 # 对齐、边距和填充
 
@@ -18,13 +22,13 @@ template: detail.hbs
 > **注意** &nbsp;&nbsp;作为常规布局原则，最好仅将度量应用于特定关键元素，并为其他元素使用自适应布局行为。 当用户调整顶部应用窗口的大小（通常随时可能发生）时，这可提供灵活的布局行为。
 
  
-如果自适应容器内有 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 值进行或剪裁，即使 **Stretch** 设置为对齐值，布局仍然由其容器的行为控制。 在面板中，已由 **Height** 和 **Width** 消除的 **Stretch** 值表现得如同值为 **Center** 一样
+如果自适应容器内有 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 值或剪裁，则即使 **Stretch** 设置为对齐值，布局仍然由其容器的行为控制。 在面板中，已由 **Height** 和 **Width** 消除的 **Stretch** 值的操作如同值为 **Center** 一样。
 
 如果没有自然或经计算的高度和宽度值，这些维度值在数学上为 **NaN**（不是数字）。 元素在等待它们的布局容器以给予它们维度。 在运行布局后，使用 **Stretch** 对齐的位置将有 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 属性的值。 **NaN** 值保留在子元素的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 中以便自适应行为再次运行，例如，如果与布局相关的更改（例如应用窗口大小调整）导致另一个布局周期。
 
 文本元素（例如 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)）通常不具有明确声明的宽度，但它们有可使用 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 查询的经计算的宽度，而且该宽度还会取消 **Stretch** 对齐。 （[**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209657) 属性和其他文本属性以及文本本身，已提示所需的布局大小。 通常情况下不需要拉伸文本。）作为控件中的内容使用的文本有相同的效果；需要呈现的文本状态导致需要计算 **ActualWidth**，而且这还会将所需宽度和大小减小到包含的控件。 根据每行字号、分行符号和其他文本属性，文本元素还具有 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707)。
 
-面板（例如 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)）已拥有其他布局逻辑（行和列定义，以及附加的属性，例如在元素上设置以指示要在其中进行绘制的单元格的 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)）。 在该情况下，对齐属性影响内容在该单元格区域内的对齐方式，但单元格结构和大小调整由 **Grid** 上的设置控制
+面板（例如 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)）已拥有布局的其他逻辑（行和列定义，以及附加的属性，例如在元素上设置以指示要在其中进行绘制的单元格的 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)）。 在该情况下，对齐属性影响内容在该单元格的区域内的对齐方式，但单元格结构和大小调整由 **Grid** 上的设置控制。
 
 项目控件有时显示项目的基本类型为数据的项目。 这涉及到 [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/br242843)。 尽管数据本身不是 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 派生的类型，但 **ItemsPresenter** 是，所以你可以为演示者设置 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) 和 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)，而且该对齐在项目控件中显示时适用于数据项目。
 
@@ -68,7 +72,7 @@ template: detail.hbs
 ## 尺寸（高度、宽度）
 
 [
-            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 属性经常影响对齐、边距和填充属性在布局传递发生时的行为方式。 尤其是，实数 **Height** 和 **Width** 值取消 **Stretch** 对齐，而且还提升为 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值的可能组件，此值在布局的度量传递期间创建。 **Height** 和 **Width** 具有约束属性：**Height** 值可以约束在 [**MinHeight**](https://msdn.microsoft.com/library/windows/apps/br208731) 和 [**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/br208726) 范围内，**Width** 可以约束在 [**MinWidth**](https://msdn.microsoft.com/library/windows/apps/br208733) 和 [**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/br208728) 范围内。 而且，[**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 和 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 是经计算的只读属性，这些属性在布局传递完成后仅包含有效值。 有关维度和约束或经计算的属性如何关联的详细信息，请参阅 [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 中的“备注”
+            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 属性经常影响对齐、边距和填充属性在布局传递发生时的行为方式。 尤其是，实数 **Height** 和 **Width** 值取消 **Stretch** 对齐，而且还提升为 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值的可能组件，此值在布局的度量传递期间创建。 **Height** 和 **Width** 具有约束属性：**Height** 值可以约束在 [**MinHeight**](https://msdn.microsoft.com/library/windows/apps/br208731) 和 [**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/br208726) 范围内，**Width** 可以约束在 [**MinWidth**](https://msdn.microsoft.com/library/windows/apps/br208733) 和 [**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/br208728) 范围内。 而且，[**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 和 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 是经计算的只读属性，这些属性在布局传递完成后仅包含有效值。 有关维度和约束或经计算的属性如何关联的详细信息，请参阅 [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 中的“备注”。
 
 ## 相关主题
 
@@ -87,6 +91,7 @@ template: detail.hbs
 [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

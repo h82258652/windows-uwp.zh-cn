@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 浮出控件是轻型弹出窗口，用来临时显示与用户当前正在执行的操作相关的 UI。
-title: 上下文菜单和对话框
+Description: "浮出控件是轻型弹出窗口，用来临时显示与用户当前正在执行的操作相关的 UI。"
+title: "上下文菜单和对话框"
 ms.assetid: 7CA2600C-A1DB-46AE-8F72-24C25E224417
 label: Menus, dialogs, and popups
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
+
 ---
 # 菜单、对话框、浮出控件和弹出窗口
 
@@ -179,6 +183,7 @@ template: detail.hbs
 - [**ContentDialog 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: Jwmsft
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
-title: 图形和动画
-description: 本部分中的主题帮助你开始在应用商店应用中使用图形和动画。
+title: "图形和动画"
+description: "本部分中的主题帮助你开始在应用商店应用中使用图形和动画。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d46498e6e584d85cfce0be237878aff68dee9c50
+
 ---
 # 图形和动画
 
@@ -34,6 +38,7 @@ description: 本部分中的主题帮助你开始在应用商店应用中使用�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

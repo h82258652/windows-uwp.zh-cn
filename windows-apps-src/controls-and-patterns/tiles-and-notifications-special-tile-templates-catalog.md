@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。
-title: 特殊磁贴模板
+Description: "特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。"
+title: "特殊磁贴模板"
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
+
 ---
 
 # 特殊磁贴模板
@@ -283,6 +287,7 @@ TileContent content = new TileContent()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

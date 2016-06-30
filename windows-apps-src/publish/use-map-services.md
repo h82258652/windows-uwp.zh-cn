@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 若要在适用于 Windows Phone 8.1 及更早版本的应用中使用地图服务，需要在应用代码中包含地图服务应用程序 ID 和令牌。 你可以在“服务”部分中的“地图”页面上的开发人员中心仪表板中获取此令牌。
-title: 使用地图服务
+Description: "若要在适用于 Windows Phone 8.1 及更早版本的应用中使用地图服务，需要在应用代码中包含地图服务应用程序 ID 和令牌。 你可以在“服务”部分中的“地图”页面上的开发人员中心仪表板中获取此令牌。"
+title: "使用地图服务"
 ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0d775c67492fd6afe9f65f3e5dede865f9037342
+
 ---
 
 # 使用地图服务
@@ -27,6 +31,7 @@ ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

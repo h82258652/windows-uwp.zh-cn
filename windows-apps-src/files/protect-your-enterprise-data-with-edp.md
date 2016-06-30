@@ -1,10 +1,14 @@
 ---
 author: TylerMSFT
-Description: '本主题演示了实现一些与文件相关的最常见企业数据保护 (EDP) 方案所需的编码任务示例。'
-MS-HAID: 'dev\_files.protect\_your\_enterprise\_data\_with\_edp'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "本主题演示了实现一些与文件相关的最常见企业数据保护 (EDP) 方案所需的编码任务示例。"
+MS-HAID: dev\_files.protect\_your\_enterprise\_data\_with\_edp
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: '使用企业数据保护 (EDP) 保护文件'
+title: "使用企业数据保护 (EDP) 保护文件"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 2d9b1ec4e39e5c8a100030184ee9287a0d97ea24
+
 ---
 
 # 使用企业数据保护 (EDP) 保护文件
@@ -264,6 +268,7 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

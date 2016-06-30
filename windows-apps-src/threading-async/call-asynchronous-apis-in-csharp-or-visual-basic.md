@@ -3,8 +3,8 @@ author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: "使用 C# 或 Visual Basic 调用异步 API"
 description: "通用 Windows 平台 (UWP) 包含许多异步 API，可确保应用在执行可能花费大量时间的任务时仍能保持响应。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b8ff3965503aa96d4ff595d140562c65e0a638c3
+ms.sourcegitcommit: c440d0dc2719a982a6b566c788d76111c40e263e
+ms.openlocfilehash: ba633e4d6f6f97f3ea1c78258f36b11b67b32964
 
 ---
 # 使用 C# 或 Visual Basic 调用异步 API
@@ -47,8 +47,8 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 -   [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)
 -   [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)
--   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
--   [**IAsyncActionWithProgress&lt;TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)
+-   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)
+-   [**IAsyncActionWithProgress&lt;TProgress&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx)
 
 异步方法的结果类型与 `      TResult` 类型参数相同。 没有 `TResult` 的类型没有结果。 你可以将结果视为 **void**。 在 Visual Basic 中，[Sub](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/831f9wka.aspx) 过程等同于返回类型为 **void** 的方法。
 
@@ -58,15 +58,15 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 |-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed, RetrievalProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)                                 | [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) |
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
-| [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)                                                                                                           | **void**                                          |
-| [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)                                                                   | **void**                                          |
+| [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)                                                                                                           | **void**                                          |
+| [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
 | [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [
-            **DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)，实现 **IAsyncOperation&lt;UInt32&gt;** 的自定义结果类。 | [**UInt32**](T:System.UInt32)                     |
+            **DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)，实现 **IAsyncOperation&lt;UInt32&gt;** 的自定义结果类。 | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
  
 
 [
-            **适用于 UWP 应用的 .NET**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) 中定义的异步方法的返回类型为 [**Task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd321424.aspx)。 返回 **Task** 的方法与 UWP 中返回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) 的异步方法类似。 在任何情况下，异步方法的结果均为 **void**。 返回类型 **Task&lt;TResult&gt;** 类似于 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)，因为在运行任务时，异步方法的结果与 `TResult` 类型参数的类型相同。 有关使用**适用于 UWP 应用的 .NET** 和任务的详细信息，请参阅[用于 Windows 运行时应用的 .NET 概述](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230302.aspx)。
+            **适用于 UWP 应用的 .NET**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) 中定义的异步方法的返回类型为 [**Task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd321424.aspx)。 返回 **Task** 的方法与 UWP 中返回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) 的异步方法类似。 在任何情况下，异步方法的结果均为 **void**。 返回类型 **Task&lt;TResult&gt;** 类似于 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)，因为在运行任务时，异步方法的结果与 `TResult` 类型参数的类型相同。 有关使用**适用于 UWP 应用的 .NET** 和任务的详细信息，请参阅[用于 Windows 运行时应用的 .NET 概述](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230302.aspx)。
 
 ## 处理错误
 
@@ -112,7 +112,6 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

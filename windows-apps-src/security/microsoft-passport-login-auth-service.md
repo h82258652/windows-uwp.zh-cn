@@ -1,8 +1,12 @@
 ---
-title: 创建 Microsoft Passport 登录服务
-description: 这是有关如何在 Windows 10 UWP（通用 Windows 平台）应用中使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项的完整演练中的第 2 部分。
+title: "创建 Microsoft Passport 登录服务"
+description: "这是有关如何在 Windows 10 UWP（通用 Windows 平台）应用中使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项的完整演练中的第 2 部分。"
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 6fe013a69bad964dafa788efb4e26ba521b3d621
+
 ---
 
 # 创建 Microsoft Passport 登录服务
@@ -23,7 +27,7 @@ author: awkoren
 在本练习中，你将从第一个实验中生成的 Passport 应用程序开始操作，并创建一个本地 mock 服务器和数据库。 本动手实验设计用来教你如何将 Microsoft Passport 集成到现有系统中。 通过使用 mock 服务器和 mock 数据库，将消除大量不相关的设置。 在你自己的应用程序中，你需要将 mock 对象替换为真实的服务和数据库。
 
 -   若要开始操作，请从第一个 Passport 动手实验打开 PassportLogin 解决方案。
--   首先实现 mock 服务器和 mock 数据库。 创建一个名为“AuthService”的新文件夹。 在“解决方案资源管理器”中，右键单击解决方案“PassportLogin (通用 Windows)”，然后依次选择“添加”>“新文件夹”。
+-   首先实现 mock 服务器和 mock 数据库。 创建一个名为“AuthService”的新文件夹。 在“解决方案资源管理器”中，右键单击解决方案“PassportLogin (通用 Windows)”，然后依次选择“添加”&gt;“新文件夹”。
 -   针对要保存在 mock 数据库中的数据创建将用作模型的 UserAccount 和 PassportDevices 类。 UserAccount 类似于在传统身份验证服务器上实现的用户模型。 右键单击 AuthService 文件夹，并添加名为“UserAccount.cs”的新类。
 
     ![](images/passport-auth-1.png)
@@ -1176,6 +1180,7 @@ author: awkoren
 * [Microsoft Passport 和 Windows Hello](microsoft-passport.md)
 * [Microsoft Passport 登录应用](microsoft-passport-login.md)
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

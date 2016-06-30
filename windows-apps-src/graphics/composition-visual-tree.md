@@ -3,8 +3,8 @@ author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: "合成可视化树"
 description: "合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。"
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: e31d3b23871bd37cde26fb3e9414e8cfae340d3d
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 ---
 # 合成可视化树
@@ -44,7 +44,7 @@ ms.openlocfilehash: e31d3b23871bd37cde26fb3e9414e8cfae340d3d
 -   [
             **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
 -   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自视觉对象，并添加了创建子视觉对象的功能。
+            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 Visual，并添加了创建子视觉对象的功能。
 -   [
             **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自视觉对象并添加了关联画笔的功能，以便视觉对象可以呈现像素，包括图像、效果或纯色。
 
@@ -108,7 +108,7 @@ visual.Opacity = 0.8f;
 
 ## 更改集合中视觉对象的位置
 
-借助合成 API，可以采用多种方式在 [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) 中更改视觉对象的位置： 使用 [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove) 可将该对象放置在其他视觉对象的上方、使用 [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow) 可放置在下方、 使用 [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) 可移动到顶部，而使用 [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom) 可移动到底部。
+借助合成 API，可以采用多种方式在 [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection) 中更改视觉对象的位置： 使用 [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertabove) 可将该对象放置在其他视觉对象的上方、使用 [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertbelow) 可放置在下方、 使用 [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertattop) 可移动到顶部，而使用 [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertatbottom) 可移动到底部。
 
 在示例中，如果在 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 对象上单击，该对象将排列到顶部：
 
@@ -516,6 +516,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

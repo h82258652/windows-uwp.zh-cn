@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 移植 GLSL
-description: 转到创建和配置缓冲区及着色器对象的代码之后，应该将这些着色器中的代码从 OpenGL ES 2.0 的 GL 着色器语言 (GLSL) 移植到 Direct3D 11 的高级着色器语言 (HLSL)。
+title: "移植 GLSL"
+description: "转到创建和配置缓冲区及着色器对象的代码之后，应该将这些着色器中的代码从 OpenGL ES 2.0 的 GL 着色器语言 (GLSL) 移植到 Direct3D 11 的高级着色器语言 (HLSL)。"
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d1d203fa74bd80fe26401e64d4e15bb11e5c1050
+
 ---
 
 # 移植 GLSL
@@ -184,6 +188,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

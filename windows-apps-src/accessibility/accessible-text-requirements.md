@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: 本主题介绍了应用中的文本的最佳辅助功能做法：确保颜色和背景满足必需的对比率。
+Description: "本主题介绍了应用中的文本的最佳辅助功能做法：确保颜色和背景满足必需的对比率。"
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
-title: 辅助文本要求
+title: "辅助文本要求"
 label: Accessible text requirements
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 1307b4f70cf7ffed300f4254a7d92b67b5afd085
+
 ---
 
 # 辅助文本要求  
@@ -41,7 +44,7 @@ UWP 应用可以使用以下默认元素（通常称为 *text* 元素或 *texted
 * [
             **TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)：角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 * [
-            **RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)（溢出类 [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/BR227565overflow)）：角色为 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+            **RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)（溢出类 [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)）：角色为 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 * [
             **RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548)：角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
@@ -53,7 +56,7 @@ UWP 应用可以使用以下默认元素（通常称为 *text* 元素或 *texted
 <span id="text_in_graphics"/>
 <span id="TEXT_IN_GRAPHICS"/>
 ## 图形中的文本  
-请尽可能避免在图形中包括文本。 例如，图像源文件中所包括的、在应用中显示为 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素的任何文本不会自动供辅助技术访问或读取。 如果必须在图形中使用文本，请确保作为“alt text”的等效值提供的 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 值包括该文本或者该文本的含义汇总。 如果要从矢量创建作为 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 一部分的文本字符，或者要使用 [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921) 创建文本字符，也可以遵循类似的注意事项
+请尽可能避免在图形中包括文本。 例如，图像源文件中所包括的、在应用中显示为 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素的任何文本不会自动供辅助技术访问或读取。 如果必须在图形中使用文本，确保你提供为“alt text”的等效值的 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 值包括该文本或者该文本的含义汇总。 如果要从矢量创建作为 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 一部分的文本字符，或者要使用 [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921) 创建文本字符，也可以遵循类似的注意事项。
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
@@ -68,7 +71,7 @@ UWP 应用可以使用以下默认元素（通常称为 *text* 元素或 *texted
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
 ## 文本缩放比例  
-各种文本元素和控件都具有 [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209652_istextscalefactorenabled) 属性。 默认情况下，此属性的值为 **true**。 当其值为 **true** 时，手机上称为“文本缩放”****的设置（“设置”&gt;“轻松使用”****）导致该元素中文本的文字大小被放大。 此缩放对 **FontSize** 较小的文本的影响程度比对 **FontSize** 较大的文本的影响更大。 但是你可以通过将元素的 **IsTextScaleFactorEnabled** 属性设置为 **false** 来禁用自动放大。 试用此标记、调整手机上的**文本大小**设置，然后查看 **TextBlock** 会发生什么情况：
+各种文本元素和控件都具有 [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 属性。 默认情况下，此属性的值为 **true**。 当其值为 **true** 时，手机上称为“文本缩放”****的设置（“设置”&gt;“轻松使用”****）导致该元素中文本的文字大小被放大。 此缩放对 **FontSize** 较小的文本的影响程度比对 **FontSize** 较大的文本的影响更大。 但是你可以通过将元素的 **IsTextScaleFactorEnabled** 属性设置为 **false** 来禁用自动放大。 试用此标记、调整手机上的**文本大小**设置，然后查看 **TextBlock** 会发生什么情况：
 
 XAML
 ```xml
@@ -120,6 +123,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

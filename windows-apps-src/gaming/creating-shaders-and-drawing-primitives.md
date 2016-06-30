@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 创建着色器和绘制基元
-description: 在此处，我们将向你介绍如何使用 HLSL 源文件来编译和创建着色器，这些着色器可用于在显示器上绘制基元。
+title: "创建着色器和绘制基元"
+description: "在此处，我们将向你介绍如何使用 HLSL 源文件来编译和创建着色器，这些着色器可用于在显示器上绘制基元。"
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 15b5f83b45b928baaa484c10dc6e7bfe9c27a924
+
 ---
 
 # 创建着色器和绘制基元
@@ -291,6 +295,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

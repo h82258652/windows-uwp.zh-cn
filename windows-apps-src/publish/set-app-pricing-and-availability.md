@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 应用提交过程的定价和可用性页可让你确定你的应用价格应为多少钱、是否提供免费试用版以及向客户提供的方式、时间和地点。
-title: 设置应用定价和可用性
+Description: "应用提交过程的定价和可用性页可让你确定你的应用价格应为多少钱、是否提供免费试用版以及向客户提供的方式、时间和地点。"
+title: "设置应用定价和可用性"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
+
 ---
 
 # 设置应用定价和可用性
@@ -98,6 +102,7 @@ ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

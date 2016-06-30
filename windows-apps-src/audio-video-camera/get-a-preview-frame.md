@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
-description: 本主题向你介绍如何从媒体捕获预览流获取预览帧。
-title: 获取预览帧
+description: "本主题向你介绍如何从媒体捕获预览流获取预览帧。"
+title: "获取预览帧"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
+
 ---
 
 # 获取预览帧
@@ -59,6 +63,7 @@ title: 获取预览帧
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

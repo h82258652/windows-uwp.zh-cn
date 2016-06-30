@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: 覆盖地图上的平铺图像
-description: 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。
+author: msatranjr
+title: "覆盖地图上的平铺图像"
+description: "使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。"
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 71d044eb19e71786da39ca71d4f4fbd2d87645be
+
 ---
 
 # 覆盖地图上的平铺图像
@@ -367,6 +370,7 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

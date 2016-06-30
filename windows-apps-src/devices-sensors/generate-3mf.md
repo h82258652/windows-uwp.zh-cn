@@ -1,10 +1,14 @@
 ---
 author: PatrickFarley
-Description: '介绍 3D 制造格式文件类型的结构以及如何使用 Windows.Graphics.Printing3D API 创建和操作该文件类型。'
-MS-HAID: 'dev\_devices\_sensors.generate\_3mf'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "介绍 3D 制造格式文件类型的结构以及如何使用 Windows.Graphics.Printing3D API 创建和操作该文件类型。"
+MS-HAID: dev\_devices\_sensors.generate\_3mf
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 生成 3MF 程序包
+title: "生成 3MF 程序包"
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
+
 ---
 
 # 生成 3MF 程序包
@@ -141,6 +145,7 @@ title: 生成 3MF 程序包
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

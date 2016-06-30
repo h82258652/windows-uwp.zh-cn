@@ -1,8 +1,12 @@
 ---
-title: Microsoft Passport 和 Windows Hello
-description: 本文介绍了作为 Windows 10 操作系统的一部分随附的新 Microsoft Passport 技术，并讨论了开发人员可如何实现此技术来保护他们的通用 Windows 平台 (UWP) 应用和后端服务。 它重点介绍了这些技术的特定功能，这些功能有助于缓解由使用传统凭据引发的威胁，并提供有关设计和部署这些技术作为 Windows 10 部署的一部分的指南。
+title: "Microsoft Passport 和 Windows Hello"
+description: "本文介绍了作为 Windows 10 操作系统的一部分随附的新 Microsoft Passport 技术，并讨论了开发人员可如何实现此技术来保护他们的通用 Windows 平台 (UWP) 应用和后端服务。 它重点介绍了这些技术的特定功能，这些功能有助于缓解由使用传统凭据引发的威胁，并提供有关设计和部署这些技术作为 Windows 10 部署的一部分的指南。"
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 781866bbbef755815422d1aa5bf71010bb08630d
+
 ---
 
 # Microsoft Passport 和 Windows Hello
@@ -451,6 +455,7 @@ Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提
 * [Microsoft Passport 登录应用](microsoft-passport-login.md)
 * [Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

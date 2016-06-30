@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
-title: 获取电池信息
-description: 了解如何使用 Windows.Devices.Power 命名空间中的 API 获取电池的详细信息。
+title: "获取电池信息"
+description: "了解如何使用 Windows.Devices.Power 命名空间中的 API 获取电池的详细信息。"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 716123f7401350748c7eb81a2ca4208a74b6e4ac
+
 ---
 # 获取电池信息
 
@@ -155,7 +159,7 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 </Page>
 ```
 
-如果你的应用未命名为 **App1**，将需要使用应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果创建了一个名为 **BasicBatteryApp** 的项目，请将 `x:Class="App1.MainPage"` 替换为 `x:Class="BasicBatteryApp.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:BasicBatteryApp"`。
+如果你的应用未命名为 **App1**，将需要使用应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果创建了一个名为**“BasicBatteryApp”**的项目，请将 `x:Class="App1.MainPage"` 替换为 `x:Class="BasicBatteryApp.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:BasicBatteryApp"`。
 
 下一步，打开你项目的 **MainPage.xaml.cs** 文件，用下列内容替换现有的代码。
 
@@ -325,7 +329,7 @@ namespace App1
 }
 ```
 
-如果你的应用未命名为 **App1**，将需要用你命名项目的名称为以上示例中的命名空间重命名。 例如，如果你创建了一个名为 **BasicBatteryApp** 的项目，请将命名空间 `App1` 替换为命名空间 `BasicBatteryApp`。
+如果你的应用未命名为 **App1**，将需要用你命名项目的名称为以上示例中的命名空间重命名。 例如，如果你创建了一个名为**“BasicBatteryApp”**的项目，请将命名空间 `App1` 替换为命名空间 `BasicBatteryApp`。
 
 最后，若要运行此基本电池应用：在“调试”****菜单上，单击“开始调试”****以测试该解决方案。
 
@@ -335,6 +339,7 @@ namespace App1
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

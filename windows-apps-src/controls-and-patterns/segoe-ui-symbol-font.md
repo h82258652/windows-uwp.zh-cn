@@ -1,11 +1,15 @@
 ---
 author: Jwmsft
-Description: 本文列出并提供了随附 Segoe MDL2 资源字体的字形使用指南。
+Description: "本文列出并提供了随附 Segoe MDL2 资源字体的字形使用指南。"
 Search.Refinement.TopicID: 184
-title: Segoe MDL2 图标指南
+title: "Segoe MDL2 图标指南"
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 9071c7dfddba15738d7bad482fd14f7cbffaa1f7
+
 ---
 
 # Segoe MDL2 图标的指南
@@ -1609,6 +1613,7 @@ Segoe UI Symbol 还依赖于“零宽度”字形以便进行分层和着色，�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

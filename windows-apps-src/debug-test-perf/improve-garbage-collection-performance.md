@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: F912161D-3767-4F35-88C0-E1ECDED692A2
-title: 改进垃圾回收性能
-description: 使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。
+title: "改进垃圾回收性能"
+description: "使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f9626c644315884ea8605a4e69e7e580a44010b
+ms.openlocfilehash: 3fb6a0469a0e7488c40fc03bce8c90780b524656
+
 ---
 # 提高垃圾回收性能
 
@@ -79,6 +83,7 @@ description: 使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

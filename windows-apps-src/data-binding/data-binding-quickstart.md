@@ -3,8 +3,8 @@ author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: "数据绑定概述"
 description: "本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。"
-ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
-ms.openlocfilehash: c30e048f450c062c6e0148e5040a58bfa47193bb
+ms.sourcegitcommit: c5325f0d0a067847bea81a115db4770a39ddd12a
+ms.openlocfilehash: 4753c2fc52fa0227b3867685b793a3d6cfc05630
 
 ---
 数据绑定概述
@@ -32,7 +32,7 @@ ms.openlocfilehash: c30e048f450c062c6e0148e5040a58bfa47193bb
 
 向项目添加一个新类、将其命名为 Recording.cs（如果使用的是 C#），并向其中添加此代码。
 
-``` csharp
+```csharp
 namespace Quickstart
 {
     public class Recording
@@ -66,7 +66,7 @@ namespace Quickstart
 }
 ```
 
-``` cpp
+```cpp
 #include <sstream>
 
 namespace Quickstart
@@ -140,7 +140,7 @@ namespace Quickstart
 
 接下来，从表示标记页的类公开绑定源类。 我们通过将类型 **RecordingViewModel** 的属性添加到 **MainPage** 来执行此操作。
 
-``` csharp
+```csharp
 namespace Quickstart
 {
     public sealed partial class MainPage : Page
@@ -156,7 +156,7 @@ namespace Quickstart
 }
 ```
 
-``` cpp
+```cpp
 namespace Quickstart
 {
     public ref class MainPage sealed
@@ -181,7 +181,7 @@ namespace Quickstart
 
 最后一步是将 **TextBlock** 绑定到 **ViewModel.DefaultRecording.OneLiner** 属性。
 
-``` xml
+```xml
 <Page x:Class="Quickstart.MainPage" ... >
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Text="{x:Bind ViewModel.DefaultRecording.OneLineSummary}"
@@ -202,7 +202,7 @@ namespace Quickstart
 
 下面这个示例演示了将 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 绑定到 `Recording` 对象的集合。 让我们先将该集合添加到视图模型。 只需将这些新成员添加到 **RecordingViewModel** 类。
 
-``` csharp
+```csharp
     public class RecordingViewModel
     {
         ...
@@ -222,7 +222,7 @@ namespace Quickstart
     }
 ```
 
-``` cpp
+```cpp
     public ref class RecordingViewModel sealed
     {
     private:
@@ -270,11 +270,11 @@ namespace Quickstart
             };
         }
     };
-    ```
+```
 
-And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to the **ViewModel.Recordings** property.
+然后，将 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 绑定到 **ViewModel.Recordings** 属性。
 
-``` xml
+```xml
 <Page x:Class="Quickstart.MainPage" ... >
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -289,7 +289,7 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 
 为了解决此问题，我们可以重写 [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) 以返回 **OneLineSummary** 的值，或者提供一个数据模板。 数据模板选项更为常见且更为灵活。 使用内容控件的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 属性或项目控件的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 属性来指定数据模板。 下面是可用于设计适用于 **Recording** 的数据模板以及结果图示的两种方式。
 
-``` xml
+```xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
         HorizontalAlignment="Center" VerticalAlignment="Center">
         <ListView.ItemTemplate>
@@ -298,11 +298,11 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-    ```
+```
 
-![Binding a list view](images/xaml-databinding2.png)
+![绑定列表视图](images/xaml-databinding2.png)
 
-``` xml
+```xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
     HorizontalAlignment="Center" VerticalAlignment="Center">
         <ListView.ItemTemplate>
@@ -334,7 +334,7 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 
 首先介绍的是 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 技术。 如果你使用的是 Visual C++ 组件扩展 (C++/CX)，则因为我们将使用 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)，因此你需要将 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 属性添加到 **Recording** 类。
 
-``` cpp
+```cpp
     [Windows::UI::Xaml::Data::Bindable]
     public ref class Recording sealed
     {
@@ -344,7 +344,7 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 
 只需对标记进行更改。
 
-``` xml
+```xml
 <Page x:Class="Quickstart.MainPage" ... >
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -373,7 +373,7 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 
 对于 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 技术，先添加 **CollectionViewSource** 作为页面资源。
 
-``` xml
+```xml
     <Page.Resources>
         <CollectionViewSource x:Name="RecordingsCollection" Source="{x:Bind ViewModel.Recordings}"/>
     </Page.Resources>
@@ -381,7 +381,7 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 
 然后，在 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)（无需再对其进行命名）和详细信息视图上调节绑定，以使用 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)。 请注意，如果将详细信息视图直接绑定到 **CollectionViewSource**，即表示你希望绑定到绑定中的当前项目，其中在集合本身上无法找到路径。 无需将 **CurrentItem** 属性指定为绑定路径，尽管由于不确定性你可以这样做）。
 
-``` xml
+```xml
     ...
 
     <ListView ItemsSource="{Binding Source={StaticResource RecordingsCollection}}">
@@ -403,7 +403,7 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 
 一个更灵活的解决方案是使用称为值转换器的工具。 下面是如何创作你自己的值转换器的示例。 将此代码添加到你的 Recording.cs 源代码文件。
 
-``` csharp
+```csharp
 public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 {
     // This converts the value object to the string to display.
@@ -434,7 +434,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 
 现在，我们可以添加 **StringFormatter** 的实例作为页面资源并将其用于绑定。 我们将格式字符串从标记传递到该转换器，以便于更为灵活地设置格式。
 
-``` xml
+```xml
     <Page.Resources>
         <local:StringFormatter x:Key="StringFormatterValueConverter"/>
     </Page.Resources>
@@ -455,6 +455,6 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

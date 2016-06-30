@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 如果在开发人员中心注册过程中要求你提供 VAT ID 号码，可通过下面的信息来了解该号码。
-title: VAT 信息
+Description: "如果在开发人员中心注册过程中要求你提供 VAT ID 号码，可通过下面的信息来了解该号码。"
+title: "VAT 信息"
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4dd91c901ade83e482061bed781e3fdcd9dde141
+
 ---
 
 # VAT 信息
@@ -246,6 +250,7 @@ ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 移植着色器对象
-description: 移植 OpenGL ES 2.0 中的简单呈现器时，第一步是在 Direct3D 11 中设置等效的顶点着色器和片段着色器对象，并且确保在编译之后主程序能够与着色器对象进行通信。
+title: "移植着色器对象"
+description: "移植 OpenGL ES 2.0 中的简单呈现器时，第一步是在 Direct3D 11 中设置等效的顶点着色器和片段着色器对象，并且确保在编译之后主程序能够与着色器对象进行通信。"
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 17d66e217e40eca0653078820746746eb23185e1
+
 ---
 
 # 移植着色器对象
@@ -318,6 +322,7 @@ m_d3dContext->UpdateSubresource(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

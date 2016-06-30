@@ -1,9 +1,13 @@
 ---
 author: Jwmsft
-Description: 使用列表视图或网格视图控件显示和操控数据组，例如图像库或一组电子邮件。
-title: 列表视图和网格视图
+Description: "使用列表视图或网格视图控件显示和操控数据组，例如图像库或一组电子邮件。"
+title: "列表视图和网格视图"
 label: List view and grid view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e878b11bbecd4a1007f8b5f56bde5741da18c1e1
+
 ---
 # ListView 和 GridView
 
@@ -384,8 +388,7 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 
 ### 单击模式
 
-你可以更改列表视图，从而使用户单击项目（如按钮），而不是选择项目。 例如，当用户点击列表或网格中的一个项目时，如果你的应用导航至一个新页面，这将会很有用。 
-若要启用此行为：
+你可以更改列表视图，从而使用户单击项目（如按钮），而不是选择项目。 例如，当用户点击列表或网格中的一个项目时，如果你的应用导航至一个新页面，这将会很有用。 若要启用此行为：
 - 将 **SelectionMode** 设置为 **None**。
 - 将 **IsItemClickEnabled** 设置为 **true**。
 - 在用户单击某个项目时，处理 **ItemClick** 事件以执行某些操作。
@@ -495,6 +498,7 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

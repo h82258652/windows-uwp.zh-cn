@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: 设计说明性用户界面 (UI)，可向用户解释如何使用你的 Windows 应用商店应用。
-title: 设计说明性 UI 指南
+Description: "设计说明性用户界面 (UI)，可向用户解释如何使用你的 Windows 应用商店应用。"
+title: "设计说明性 UI 指南"
 label: Instructional UI
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 1c8ab97a5625243a50fa3b40ae93f5928dc7d851
+
 ---
 
 # 说明性 UI 指南
@@ -67,6 +71,7 @@ template: detail.hbs
 * [应用帮助指南](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
-title: 身份验证和用户身份
-description: 通用 Windows 平台 (UWP) 应用提供了多个选项可用于用户身份验证，范围从使用 Web 身份验证代理的简单的单一登录 (SSO) 到高度安全的双因素身份验证。
+title: "身份验证和用户身份"
+description: "通用 Windows 平台 (UWP) 应用提供了多个选项可用于用户身份验证，范围从使用 Web 身份验证代理的简单的单一登录 (SSO) 到高度安全的双因素身份验证。"
 ms.assetid: 53E36DDC-200A-4850-AAF0-07ECA3662BB9
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 3c890ac8d8363982d9f014c36b6cba59bee39f20
+ms.openlocfilehash: e748b319cdeda82aadaf8516e41883a3e32dc10c
+
 ---
 
 # 身份验证和用户身份
@@ -27,12 +31,13 @@ author: awkoren
 <tr><td>[智能卡](smart-cards.md)</td><td>本主题介绍了应用如何使用智能卡将用户连接到安全网络服务，包括如何访问物理智能卡读卡器、创建虚拟智能卡、与智能卡通信、对用户进行身份验证、重置用户 PIN 以及删除智能卡或断开智能卡连接。</td></tr>
 <tr><td>[在应用之间共享证书](share-certificates.md)</td><td>需要用户 ID 和密码组合以外的安全身份验证的 UWP 应用可以使用证书进行身份验证。 当对用户进行身份验证时，认证身份验证提供高级别的信任。 在某些情况下，一组服务将要针对多个应用对用户进行身份验证。 本文介绍了如何使用同一个证书对多个应用进行身份验证，以及如何提供方便代码，用户可使用此代码导入提供的证书以访问安全的 Web 服务。</td></tr>
 <tr><td>[具有配套 IoT 设备的 Windows 解锁](companion-device-unlock.md)</td><td>配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用配套设备框架，即使是在 Windows Hello 不可用时（例如 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。</td></tr>
-<tr><td>[Web 帐户管理器](web-account-manager.md)</td><td>本文将介绍如何使用新的 Windows 10 Web 帐户管理器 API 来显示 AccountsSettingsPane 并将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。 你将了解如何请求用户的权限以使用其 Microsoft 帐户，获取访问令牌，并使用它来执行基本的操作（如获取配置文件数据或将文件上传到他们的 OneDrive）。 </td></tr>
+<tr><td>[Web 帐户管理器](web-account-manager.md)</td><td>本文将介绍如何使用新的 Windows 10 Web 帐户管理器 API 来显示 AccountsSettingsPane 并将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本的操作（如获取配置文件数据或将文件上传到他们的 OneDrive）。 </td></tr>
 <tr><td>[Web 身份验证代理](web-authentication-broker.md)</td><td>本文介绍了如何将应用连接到使用身份验证协议（如 OpenID 或 OAuth）的在线标识提供程序（如 Facebook、Twitter、Flickr、Instagram 等）。 [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供者，并取回描述应用访问的提供者资源的访问令牌。</td></tr>
 </table>
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

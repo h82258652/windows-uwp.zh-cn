@@ -1,11 +1,15 @@
 ---
 author: DelfCo
-Description: 全球化就是在无需做任何更改或自定义的情况下设计和开发你的应用以便适应不同的国际市场的过程。
+Description: "全球化就是在无需做任何更改或自定义的情况下设计和开发你的应用以便适应不同的国际市场的过程。"
 Search.SourceType: Video
-title: 全球化和本地化
+title: "全球化和本地化"
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 1fc82ff462a5c0af6b10e7dc8455adc215558b4e
+
 ---
 
 # 全球化和本地化
@@ -13,7 +17,7 @@ template: detail.hbs
 
 
 
-Windows 的使用遍及世界各地，用户的文化背景、区域及语言也各不相同。 用户可能会说任意一种语言，甚至多种语言。 用户可能位于世界的任何地方，可能在任何地方说任何语言。 通过使用*全球化*和*本地化*对应用进行设计使其更具有适应性，可以拓展其潜在市场
+Windows 的使用遍及世界各地，用户的文化背景、区域及语言也各不相同。 用户可以说任意一种语言，甚至是多种语言。 用户可能位于世界的任何地方，可能在任何地方说任何语言。 通过使用*全球化*和*本地化*对应用进行设计使其更具有适应性，可以拓展其潜在市场。
 
 **全球化** 就是在无需做任何更改或自定义的情况下设计和开发你的应用以便适应不同的国际市场的过程。
 
@@ -30,7 +34,7 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 -   翻译应用的文本和标签以适应新市场，并且为其语言创建单独的资源。
 -   修改任何与文化相关的图像（如有必要），并且放在单独的资源中。
 
-观看此视频以简要了解如何准备在全球发布的应用：[全球化和本地化简介](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)
+观看此视频以简要了解如何准备在全球发布的应用：[全球化和本地化简介](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)。
 
 ## 文章
 <table>
@@ -94,6 +98,7 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

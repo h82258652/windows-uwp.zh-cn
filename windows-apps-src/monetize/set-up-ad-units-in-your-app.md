@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
-description: 了解如何在将应用提交到应用商店之前，从 Windows 开发人员中心仪表板向应用添加应用程序 ID 和广告单元 ID 值。
-title: 在应用中设置广告单元
+description: "了解如何在将应用提交到应用商店之前，从 Windows 开发人员中心仪表板向应用添加应用程序 ID 和广告单元 ID 值。"
+title: "在应用中设置广告单元"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
+
 
 ---
 
@@ -40,6 +44,7 @@ title: 在应用中设置广告单元
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

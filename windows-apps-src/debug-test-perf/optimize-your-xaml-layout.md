@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
-title: 优化 XAML 布局
-description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 CPU 使用率还是内存开销方面。 以下是可为提高 XAML 应用的布局性能而采取的步骤。
+title: "优化 XAML 布局"
+description: "布局可能是 XAML 应用中最耗费资源的部分，无论在 CPU 使用率还是内存开销方面。 以下是可为提高 XAML 应用的布局性能而采取的步骤。"
+translationtype: Human Translation
+ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
+ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
+
 ---
 # 优化 XAML 布局
 
@@ -185,6 +189,7 @@ description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

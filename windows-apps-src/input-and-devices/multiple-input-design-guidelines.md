@@ -5,8 +5,8 @@ title: "多个输入设计指南"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 71c5994e1a308993aef6603ba77ab5e695bde293
 
 ---
 
@@ -23,20 +23,20 @@ ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
 -   所有输入方式都一直受支持吗？ 需使用某些控件？ 需在特定时间或环境下使用？
 -   是否有输入法优先？
 
-## <span id="Single__or_exclusive_-mode_interactions_"></span><span id="single__or_exclusive_-mode_interactions_"></span><span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"></span>单一（或独占）模式交互
+## 单一（或独占）模式交互
 
 
 借助单一模式交互，可支持多种输入类型，但每次操作只能使用一种。 例如，将语音识别用于命令，而将手势用于导航；或者将触摸或手势用于文本输入，具体取决于邻近感应。
 
-## <span id="Multimodal_interactions"></span><span id="multimodal_interactions"></span><span id="MULTIMODAL_INTERACTIONS"></span>多模式交互
+## 多模式交互
 
 
 借助多模式交互，多个输入法将依次用于完成某一操作。
 
-<span id="Speech___gesture"></span><span id="speech___gesture"></span><span id="SPEECH___GESTURE"></span>语音 + 手势  
+语音 + 手势  
 用户指向某一产品，然后说出“添加到购物车”。
 
-<span id="Speech___touch"></span><span id="speech___touch"></span><span id="SPEECH___TOUCH"></span>语音 + 触摸  
+语音 + 触摸  
 用户通过长按选择照片，然后说出“发送照片”。
 
 
@@ -44,6 +44,6 @@ ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

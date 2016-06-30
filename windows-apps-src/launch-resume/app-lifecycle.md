@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 应用生命周期
-description: 本主题介绍通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。
+author: TylerMSFT
+title: "应用生命周期"
+description: "本主题介绍通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。"
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
+
 ---
 
 # 应用生命周期
@@ -28,7 +31,7 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ## 部署
 
 
-为了使应用能够激活，必须先对其进行部署。 你的应用将在以下情况中进行部署：当用户安装你的应用时，或者当你使用 Visual Studio 在开发和测试期间生成并运行你的应用时。 有关此部署以及高级部署方案的详细信息，请参阅[应用包和部署](https://msdn.microsoft.com/library/windows/apps/hh464929)
+为了使应用能够激活，必须先对其进行部署。 当用户安装你的应用时，或者当你使用 Visual Studio 在开发和测试期间生成并运行你的应用时，将部署你的应用。 有关此部署以及高级部署方案的详细信息，请参阅[应用包和部署](https://msdn.microsoft.com/library/windows/apps/hh464929)。
 
 ## 应用启动
 
@@ -42,17 +45,17 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 
 如果 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 的值为 **NotRunning**，应用应重新启动，就好像初次启动它一样。
 
-当应用启动时，Windows 显示应用的初始屏幕。 若要配置初始屏幕，请参阅[添加初始屏幕](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331)
+当应用启动时，Windows 显示应用的初始屏幕。 若要配置初始屏幕，请参阅[添加初始屏幕](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331)。
 
 当显示初始屏幕时，你的应用应使其用户界面准备就绪。 应用的主要任务是注册事件处理程序和设置它加载初始页面所需的任何自定义 UI。 这些任务仅应占用几秒的时间。 如果某个应用需要从网络请求数据或者需要从磁盘检索大量的数据，这些活动应在激活以外完成。 在应用等待这些长期运行的操作结束的同时，它可以使用自己的自定义加载 UI 或扩展的初始屏幕。 有关详细信息，请参阅[延长显示初始屏幕的时间](create-a-customized-splash-screen.md)和[初始屏幕示例](http://go.microsoft.com/fwlink/p/?linkid=234889)。 应用完成激活后，它将进入 **Running** 状态，初始屏幕也将消失（并将清除其所有资源和对象）。
 
 ## 应用激活
 
 
-用户可通过各种扩展和合约（例如“共享”合约）激活应用。 有关可激活应用的方法的列表，请参阅 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)
+用户可通过各种扩展和合约（例如“共享”合约）激活应用。 有关可激活应用的方法的列表，请参阅 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)。
 
 [
-            **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义了为处理各种激活类型而可以替代的一些方法 多种激活类型具有可替代的特定方法，例如 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336) 等。对于其他激活类型，请替代 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)方法。
+            **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义了为处理各种激活类型而可以替代的一些方法。 多种激活类型具有可替代的特定方法，例如 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336) 等。对于其他激活类型，请替代 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)方法。
 
 你的应用的激活代码可以通过测试了解其激活原因以及是否已经处于 **Running** 状态。
 
@@ -70,8 +73,7 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 
  
 
-**注意** 
-           *当前用户会话*基于 Windows 登录。 只要当前用户未明确注销、关机，或者 Windows 未出于其他原因而重启，当前用户会话便可以保留在诸如锁屏界面身份验证、切换用户等事件中。
+**注意** *当前用户会话*基于 Windows 登录。 只要当前用户未显式注销、关闭当前用户会话，或者 Windows 未出于其他原因而重新启动它，该会话便可以保留在诸如锁屏界面身份验证、切换用户的多个事件中。
 
  
 
@@ -80,14 +82,14 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 
 **注意**  
 
-如果你使用计算机的管理员帐户登录，你将无法激活任何 UWP 应用。
+如果你使用计算机的管理员帐户登录，则你将无法激活任何 UWP 应用。
 
-有关详细信息，请参阅[应用扩展](https://msdn.microsoft.com/library/windows/apps/hh464906)
+有关详细信息，请参阅[应用扩展](https://msdn.microsoft.com/library/windows/apps/hh464906)。
 
 ### **OnActivated** 与特定激活
 
 [
-            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 方法旨在处理所有可能的激活类型。 但是，更常见的做法是使用不同的方法来处理最常见的激活类型，而对于不太常见的激活类型，则仅使用 **OnActivated** 作为回滚方法。 例如，[**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 具有 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法，用于在 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 是 **Launch** 时作为回调进行调用，这是适用于大多数应用的典型激活方法。 有超过 6 种 **On\*** 方法可用于特定的激活：[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)。 XAML 应用的起始模板具有 **OnLaunched** 的实现和 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 的处理程序
+            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 方法旨在处理所有可能的激活类型。 但是，更常见的做法是使用不同的方法来处理最常见的激活类型，而对于不太常见的激活类型，则仅使用 **OnActivated** 作为回滚方法。 例如，[**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 具有 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法，用于在 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 是 **Launch** 时作为回调进行调用，这是适用于大多数应用的典型激活方法。 有超过 6 种 **On\*** 方法可用于特定的激活：[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)。 XAML 应用的起始模板具有 **OnLaunched** 的实现和 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 的处理程序。
 
 ## 应用暂停
 
@@ -100,17 +102,17 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 
 当你的应用被暂停后，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保存在内存里，则将终止你的应用。 应用不会收到它们被终止的通知，所以你保存应用数据的唯一机会是在暂停期间。 当应用确定它在终止后被激活时，它应该加载它在暂停期间保存的应用程序数据，以使应用处于与其暂停之前相同的状态。 当用户切换回已终止的暂停应用时，该应用应该在其 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中还原其应用程序数据。 当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且当在终止后又激活应用时还原这些内容。
 
-如果应用已经为 [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件注册一个事件处理程序，则即将暂停应用前调用此代码。 你可以使用事件处理程序保存应用和用户数据。 我们建议使用应用程序数据 API 完成此目的，因为它们可保证在应用进入 **Suspended** 状态之前完成工作。 有关详细信息，请参阅[存储和检索设置以及其他应用数据](https://msdn.microsoft.com/library/windows/apps/mt299098)
+如果应用已经为 [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件注册一个事件处理程序，则即将暂停应用前调用此代码。 你可以使用事件处理程序保存应用和用户数据。 我们建议使用应用程序数据 API 完成此目的，因为它们可保证在应用进入 **Suspended** 状态之前完成工作。 有关详细信息，请参阅[存储和检索设置以及其他应用数据](https://msdn.microsoft.com/library/windows/apps/mt299098)。
 
-你还应释放独占资源和文件句柄，以便在你的应用未使用它们时，其他应用可以访问它们。 独占资源的示例包括相机、I/O 设备、外部设备以及网络资源。 显式释放独占资源和文件句柄有助于确保你的应用未使用它们时其他应用可以访问它们。 当在终止后又激活应用时，它应该重新打开其独占资源和文件句柄。
+你还应释放独占资源和文件句柄，以便在你的应用没有使用它们时其他应用可以访问它们。 独占资源的示例包括相机、I/O 设备、外部设备以及网络资源。 显式释放独占资源和文件句柄有助于确保你的应用未使用它们时其他应用可以访问它们。 当在终止后又激活应用时，它应该重新打开其独占资源和文件句柄。
 
 通常，你的应用应该在处理暂停事件时立即保存其状态并释放其资源和文件句柄，并且此代码最多只需 1 秒便可完成工作。 如果应用未在数秒内从暂停事件中返回，则 Windows 假设应用已停止响应并终止该应用。
 
-有些应用必须继续运行才能完成后台任务。 例如，你的应用可以在后台继续播放音频；有关详细信息，请参阅[后台音频](https://msdn.microsoft.com/library/windows/apps/mt282140)）。 此外，即使你的应用暂停甚至终止，后台传输操作仍将继续；有关详细信息，请参阅[如何下载文件](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)
+有些应用必须继续运行才能完成后台任务。 例如，你的应用可以在后台继续播放音频；有关详细信息，请参阅[后台音频](https://msdn.microsoft.com/library/windows/apps/mt282140)）。 此外，即使你的应用暂停甚至终止，后台传输操作仍将继续；有关详细信息，请参阅[如何下载文件](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)）。
 
-有关指南，请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)
+有关指南，请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 
-**有关使用 Visual Studio 进行调试的注释：**Visual Studio 阻止 Windows 暂停已连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保“调试位置”****工具栏正在显示，然后单击“暂停”****图标。
+**有关使用 Visual Studio 进行调试的注释：**Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保“调试位置”****工具栏正在显示，然后单击“暂停”****图标。
 
 ## 应用可见性
 
@@ -136,7 +138,7 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 
  
 
-有关指南，请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)
+有关指南，请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 
 ## 应用关闭
 
@@ -162,7 +164,7 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 
 如果应用出现故障、停止响应或者发生意外，系统将通过用户的[反馈和诊断设置](http://go.microsoft.com/fwlink/p/?LinkID=614828)向 Microsoft 发送问题报告。 Microsoft 在问题报告中向你提供错误数据的一个子集，这样你可以使用这些数据改进你的应用。 你可以在“仪表板”中应用的“质量”页面中看到此数据。
 
-当用户在应用发生崩溃之后激活该应用时，其激活事件处理程序将收到 **NotRunning** 的 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 值，并且应显示其初始 UI 和数据。 崩溃后，请勿经常使用原本将用于 **Resuming** 和 **Suspended** 的应用数据，因为该数据可能已损坏；请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)
+当用户在应用发生崩溃之后激活该应用时，其激活事件处理程序将收到 **NotRunning** 的 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 值，并且应显示其初始 UI 和数据。 崩溃后，不要经常使用原本将用于 **Resuming** 和 **Suspended** 的应用数据，因为该数据可能已损坏；请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 
 ## 应用删除
 
@@ -172,9 +174,9 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ## 应用生命周期和 Visual Studio 项目模板
 
 
-在起始 Visual Studio 项目模板中提供了与应用生命周期相关的基本代码。 基本应用可处理启动激活、为你提供还原应用数据的位置，甚至可以在你添加自己的任何代码之前显示主要 UI。 有关详细信息，请参阅[适用于应用的 C#、VB 和 C++ 项目模板](https://msdn.microsoft.com/library/windows/apps/hh768232)
+在起始 Visual Studio 项目模板中提供了与应用生命周期相关的基本代码。 基本应用可处理启动激活、为你提供还原应用数据的位置，甚至可以在你添加任何你自己的代码之前显示主要 UI。 有关详细信息，请参阅[适用于应用的 C#、VB 和 C++ 项目模板](https://msdn.microsoft.com/library/windows/apps/hh768232)。
 
-## 应用程序生命周期关键 API
+## 应用程序生命周期中的关键 API
 
 
 -   [
@@ -189,7 +191,7 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
             **Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 类 (XAML)
 
 **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -208,8 +210,6 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。
-title: 进度控件指南
+Description: "进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。"
+title: "进度控件指南"
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 8a03ca36f6e306a03e8aec7b46e51bfff0079bf5
+
 ---
 # 进度控件
 
@@ -298,6 +302,7 @@ stackPanel1.Children.Add(progressRing1);
 - [如何为 Windows Phone 创建自定义不确定进度栏](http://go.microsoft.com/fwlink/p/?LinkID=392426)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

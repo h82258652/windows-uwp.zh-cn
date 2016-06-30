@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 添加声音
-description: 在此步骤中，我们将探讨射击游戏示例如何使用 XAudio2 API 创建声音播放对象。
+title: "添加声音"
+description: "在此步骤中，我们将探讨射击游戏示例如何使用 XAudio2 API 创建声音播放对象。"
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f9e536e71dd7b5c94d587a8bb66df3b41cc9a4ae
+
 ---
 
 # 添加声音
@@ -15,7 +19,7 @@ ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ## 目标
 
 
--   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) 添加声音输出
+-   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) 添加声音输出。
 
 在游戏示例中，音频对象和行为在三个文件中定义：
 
@@ -203,15 +207,15 @@ Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
 
 此方法使用[媒体基础](https://msdn.microsoft.com/library/windows/desktop/ms694197) API 作为脉冲编码调制 (PCM) 缓冲区读入 .wav 音频文件。
 
-1.  通过调用 [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110) 创建媒体源阅读器 ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)) 对象
-2.  通过调用 [**MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861) 创建用于解码音频文件的媒体类型 ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850))。 此方法指定解码的输出为 PCM 音频，它属于 XAudio2 可以使用的音频类型。
-3.  通过调用 [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) 为阅读器设置解码的输出媒体类型
+1.  通过调用 [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110) 创建媒体源阅读器 ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)) 对象。
+2.  通过调用 [**MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861) 创建用于解码音频文件的媒体类型 ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850))。 此方法指定解码的输出是 PCM 音频，它是 XAudio2 可以使用的音频类型。
+3.  通过调用 [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) 为阅读器设置解码的输出媒体类型。
 4.  创建一个 [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) 缓存并将调用结果复制到 [**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) 对象上的 [**IMFMediaType::MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177)。 这将在加载保存音频文件的缓存之后对其设置格式。
 5.  通过调用 [**IMFSourceReader::GetPresentationAttribute**](https://msdn.microsoft.com/library/windows/desktop/dd374662) 获取音频流的持续时间（以秒为单位），然后将持续时间转换为字节。
-6.  通过调用 [**IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665) 将音频文件作为流读入
+6.  通过调用 [**IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665) 将音频文件作为流读入。
 7.  将音频示例缓冲区的内容复制到此方法返回的数组。
 
-**SoundEffect::Initialize** 中最重要的内容是从主语音创建源语音对象 **m\_sourceVoice**。 我们使用源语音实际播放从 **MediaReader::LoadMedia** 获取的声音数据缓冲区
+**SoundEffect::Initialize** 中最重要的内容是从主语音创建源语音对象 **m\_sourceVoice**。 我们使用源语音实际播放从 **MediaReader::LoadMedia** 获取的声音数据缓冲区。
 
 示例游戏在初始化 **SoundEffect** 对象时调用此方法，如下所示：
 
@@ -298,16 +302,16 @@ void SoundEffect::PlaySound(_In_ float volume)
 }
 ```
 
-为了播放声音，此方法使用源语音对象 **m\_sourceVoice** 启动声音数据缓冲区 **m\_soundData** 的播放。 它创建一个 [**XAUDIO2\_BUFFER**](https://msdn.microsoft.com/library/windows/desktop/ee419228)，向其提供对声音数据缓冲区的引用，然后通过调用 [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473) 进行提交。 在声音数据排好队列之后，**SoundEffect::PlaySound** 将通过调用 [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471) 开始播放
+为了播放声音，此方法使用源语音对象 **m\_sourceVoice** 启动声音数据缓冲区 **m\_soundData** 的播放。 它创建一个 [**XAUDIO2\_BUFFER**](https://msdn.microsoft.com/library/windows/desktop/ee419228)，向其提供对声音数据缓冲区的引用，然后通过调用 [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473) 进行提交。 在声音数据排好队列之后，**SoundEffect::PlaySound** 将通过调用 [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471) 开始播放。
 
 现在，每当弹药与目标发生冲突时，调用 **SoundEffect::PlaySound** 将导致播放爆炸声。
 
 ## 后续步骤
 
 
-这就是通用 Windows 平台 (UWP) DirectX 游戏开发的快速教程！ 到目前为止，你已经了解使你针对 Windows 8 开发的自己的游戏获得良好体验所需的工作。 请记住，你的游戏可以在多种 Windows 8 设备和平台上运行，因此请为尽快可能多的配置集设计自己的组件：你的图形、控件、用户界面和音频。
+这就是通用 Windows 平台 (UWP) DirectX 游戏开发的快速教程！ 到目前为止，你已经了解使你针对 Windows 8 开发的自己的游戏获得良好体验所需的工作。 请记住，你的游戏可以在多种 Windows 8 设备和平台上运行，因此请为尽快可能多的配置集设计自己的组件：你的图形、控件、用户界面 和音频！
 
-有关如何修改这些文档中提供的游戏示例的详细信息，请参阅[扩展游戏示例](tutorial-resources.md)
+有关如何修改这些文档中提供的游戏示例的详细信息，请参阅[扩展游戏示例](tutorial-resources.md)。
 
 ## 此部分的完整示例代码
 
@@ -559,6 +563,7 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

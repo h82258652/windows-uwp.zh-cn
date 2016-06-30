@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-Description: 本主题描述需要访问用户位置信息的应用的性能指南。
-title: 位置感知应用指南
+author: msatranjr
+Description: "本主题描述需要访问用户位置信息的应用的性能指南。"
+title: "位置感知应用指南"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
+
 ---
 
 # 位置感知应用指南
@@ -35,7 +38,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 -   在等待获取位置数据时显示进度栏或进度环。 <!--For info on the available progress controls and how to use them, see [**Guidelines for progress controls**](guidelines-and-checklist-for-progress-controls.md).-->
 -   定位服务被禁用或不可用时显示一条相应的错误消息或对话框。
 
-    如果位置设置不允许你的应用访问用户位置，我们建议提供一个指向**“设置”**应用中的**“位置隐私设置”**的便捷链接。 例如，你可以使用超链接控件或调用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以使用 `ms-settings:privacy-location` URI 通过代码启动**“设置”**应用。 有关详细信息，请参阅[启动 Windows 设置应用](https://msdn.microsoft.com/library/windows/apps/mt228342)
+    如果位置设置不允许你的应用访问用户位置，我们建议提供一个指向**“设置”**应用中的**“位置隐私设置”**的便捷链接。 例如，你可以使用超链接控件或调用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以使用 `ms-settings:privacy-location` URI 通过代码启动**“设置”**应用。 有关详细信息，请参阅[启动 Windows 设置应用](https://msdn.microsoft.com/library/windows/apps/mt228342)。
 
 -   当用户禁用对位置数据的访问时，清除缓存的位置信息并释放 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)。
 
@@ -51,7 +54,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
 **性能**
 
--   如果你的应用不需要接收位置信息，使用一次性位置信息请求。 例如，向照片添加位置标记的应用不需要接收位置更新事件。 相反，它应该使用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 请求位置，如[获取当前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)中所述
+-   如果你的应用不需要接收位置信息，使用一次性位置信息请求。 例如，向照片添加位置标记的应用不需要接收位置更新事件。 相反，它应该使用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 请求位置，如[获取当前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)中所述。
 
     当你进行一次性位置请求时，你应该设置以下值。
 
@@ -60,7 +63,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
     -   设置 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的超时参数。 这是你的应用可以等待返回位置或错误的时长。 你将需要在对用户的响应和应用所需的精度之间做出权衡。
 -   当需要频繁的位置更新时，使用连续的位置会话。 将 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件和 [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件用于实时检测超过特定阈值的移动或连续的位置更新。
 
-    当请求位置更新时，你可能要通过设置 [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 或 [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) 指定由应用请求的精度。 你还应该设置需要位置更新的频率，方法是使用 [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) 或 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541)
+    当请求位置更新时，你可能要通过设置 [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 或 [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) 指定由应用请求的精度。 你还应该设置需要位置更新的频率，方法是使用 [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) 或 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541)。
 
     -   指定移动阈值。 某些应用仅在用户移动较大的距离时才需要位置更新。 例如，提供当地新闻或天气更新的应用，除非用户的位置更改为其他城市，否则可能不需要位置更新。 这种情况下，你可以通过设置 [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) 属性来调整位置更新事件所要求的最小移动量。 此操作具有筛选 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件的效果。 仅当位置更改超过移动阈值时才引发这些事件。
 
@@ -87,16 +90,16 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
         -   如果用户试图共享他的位置，应用应该请求大约 10 米的精度。
     -   如果应用有特定的精度要求，请使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 属性。 例如，导航应用应该使用 **Geocoordinate.accuracy** 属性来确定可用的位置数据是否符合应用的要求。
 
--   考虑启动延迟。 应用首次请求位置数据时，定位程序启动时可能会有短暂的延迟（1-2 秒）。 在设计应用的 UI 时，请注意以下事项： 例如，你需要避免阻止其他使 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 调用挂起的任务
+-   考虑启动延迟。 应用首次请求位置数据时，定位程序启动时可能会有短暂的延迟（1-2 秒）。 在设计应用的 UI 时，请注意以下事项： 例如，你需要避免阻止其他使 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 调用挂起的任务。
 
 -   考虑后台行为。 如果应用没有焦点，则该应用在后台暂停时将不会收到位置更新事件。 如果应用通过记录来跟踪位置更新，则需注意这一点。 应用再次获得焦点时，将只接收到新的事件。 处于非活动状态时将不会获取发生的任何更新。
 
--   有效使用原始和融合传感器。 存在两种传感器：*原始传感器*和*融合传感器*
+-   有效使用原始和融合传感器。 存在两种传感器：*原始传感器*和*融合传感器*。
 
     -   原始传感器包括加速计、陀螺仪和磁力计。
     -   融合传感器包括方向、测斜仪和指南针。 融合传感器从原始传感器的组合中获取数据。
 
-    Windows 运行时 API 可以访问除磁力计之外的所有传感器。 融合传感器比原始传感器更准确和稳定，但能耗也较多。 应针对相应目的使用正确的传感器。 有关详细信息，请参阅[传感器](https://msdn.microsoft.com/library/windows/apps/mt187358)
+    Windows 运行时 API 可以访问除磁力计之外的所有传感器。 融合传感器比原始传感器更准确和稳定，但能耗也较多。 应针对相应目的使用正确的传感器。 有关详细信息，请参阅[传感器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
 
 **连接待机：**当电脑处于连接待机状态时，始终可以实例化 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象。 但是，**Geolocator** 对象将找不到任何可聚合的传感器，因此对 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的调用将在 7 秒后超时，[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件侦听程序将永远不会被调用，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件侦听程序将在 **NoData** 状态下被调用一次。
 
@@ -109,7 +112,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
 -   若要检测用户何时禁用或重新启用定位服务：
     -   处理 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 如果用户关闭定位服务，则 **StatusChanged** 事件参数的 [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) 属性将拥有值 **Disabled**。
-    -   检查从 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 返回的错误代码。 如果用户禁用了定位服务，则调用 **GetGeopositionAsync** 将失败，且返回 **ACCESS\_DENIED** 错误，并且 [**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) 属性的值为 **Disabled**
+    -   检查从 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 返回的错误代码。 如果用户禁用了定位服务，则调用 **GetGeopositionAsync** 将失败，且返回 **ACCESS\_DENIED** 错误，并且 [**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) 属性的值为 **Disabled**。
 -   如果位置数据对于你的应用至关重要（例如，地图应用），请务必执行以下操作：
     -   如果用户位置发生更改，则处理 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件以获取更新。
     -   按照上述步骤处理 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件，以检测定位设置中的更改。
@@ -118,7 +121,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
 ### 位置信息的图形表示形式
 
-让你的应用使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 在地区上清晰地指示用户的当前位置。 精度有三个主要区段：大约 10 米的误差半径，大约 100 米的误差半径，以及大于 1 千米的误差半径。 通过使用精度信息，你可以确保自己的应用在可用数据的上下文中精确显示位置。 有关使用地图控件的常规信息，请参阅[以 2D、3D 和街景视图方式显示地图](https://msdn.microsoft.com/library/windows/apps/mt219695)
+让你的应用使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 在地区上清晰地指示用户的当前位置。 精度有三个主要区段：大约 10 米的误差半径，大约 100 米的误差半径，以及大于 1 千米的误差半径。 通过使用精度信息，你可以确保自己的应用在可用数据的上下文中精确显示位置。 有关使用地图控件的常规信息，请参阅[以 2D、3D 和街景视图方式显示地图](https://msdn.microsoft.com/library/windows/apps/mt219695)。
 
 -   对于约等于 10 米（GPS 分辨率）的精度，在地图上可以用一个点或图钉来表示位置。 在此精度下，还可以显示经纬度坐标和街道地址。
 
@@ -169,6 +172,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

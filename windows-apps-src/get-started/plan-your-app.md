@@ -1,8 +1,12 @@
 ---
 author: martinekuan
-title: 规划你的通用 Windows 平台 (UWP) 应用
-description: 在 Microsoft 设计团队中，我们创建应用的流程由五个不同的阶段组成：概念、结构、动态、视觉和原型。 我们鼓励你采用相似的流程，并且在创造供公众享受的新体验时获得乐趣。
+title: "规划你的通用 Windows 平台 (UWP) 应用"
+description: "在 Microsoft 设计团队中，我们创建应用的流程由五个不同的阶段组成：概念、结构、动态、视觉和原型。 我们鼓励你采用相似的流程，并且在创造供公众享受的新体验时获得乐趣。"
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9a3058aabdc6f710149a14d8f125b66efd076007
+
 ---
 
 #  规划你的通用 Windows 平台 (UWP) 应用
@@ -195,7 +199,7 @@ ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 
 在此过程中，应开始了解需要创建哪些 UI 以及需要明确的其他详细信息（例如，为尚未使用你的应用的朋友起草标准电子邮件样本）。 也可以尝试略去不必要的步骤。 例如，或许在共享旅行之前用户实际上不需要查看旅行详细信息。 流程越清晰，使用越简便。
 
-有关如何使用不同图面的更多详细信息，请查看 <!--[Command design basics](../layout/commanding-basics.md)-->。
+有关如何使用不同图面的更多详细信息，请查看<!--[Command design basics](../layout/commanding-basics.md)-->。
 
 **流程应该是怎样的？** 定义了用户将执行的步骤后，你可以将该流程转变为性能目标。 有关详细信息，请参阅[性能规划](../debug-test-perf/planning-and-measuring-performance.md)。
 
@@ -212,7 +216,7 @@ ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 
 ![应用的电脑和移动设备设计](images/ux-budgettracker1-md-notablet.png)
 
-有关针对不同屏幕大小进行设计的详细信息，请参阅 <!--[Responsive design 101](designing-in-effective-pixels.md)-->。
+有关针对不同屏幕大小进行设计的详细信息，请参阅<!--[Responsive design 101](designing-in-effective-pixels.md)-->。
 
 ## 留下良好的第一印象
 
@@ -233,6 +237,7 @@ ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 使用 [UWP 应用的详细 UX 指南](https://msdn.microsoft.com/library/windows/apps/hh465424)确保你专注于重要功能。 使用 [Visual Studio 性能工具](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx)分析每个应用方案的性能。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

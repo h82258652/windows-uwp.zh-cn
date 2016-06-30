@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 本主题提供 Windows Phone Silverlight API 到其通用 Windows 平台 (UWP) 等效项的全面映射。
-title: Windows Phone Silverlight 到 UWP 命名空间和类映射
+description: "本主题提供 Windows Phone Silverlight API 到其通用 Windows 平台 (UWP) 等效项的全面映射。"
+title: "Windows Phone Silverlight 到 UWP 命名空间和类映射"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
+
 ---
 
 # Windows Phone Silverlight 到 UWP 命名空间和类映射
@@ -49,68 +53,68 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
             **DesignMode**](https://msdn.microsoft.com/library/windows/apps/br224664) 类 |
 | **System.Threading.Thread**、**System.Threading.ThreadPool** 类 | [
             **ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229621) 类 |
-| (ST = **System.Threading** <br/> **ST.Thread.MemoryBarrier** 方法 | (ST = **System.Threading** <br/> **ST.Interlocked.MemoryBarrier** 方法 |
-| (ST = **System.Threading** <br/> **ST.Thread.ManagedThreadId** 属性 | (S = **System** <br/> **S.Environment.ManagedThreadId** 属性 |
+| (ST = **System.Threading**) <br/> **ST.Thread.MemoryBarrier** 方法 | (ST = **System.Threading**) <br/> **ST.Interlocked.MemoryBarrier** 方法 |
+| (ST = **System.Threading**) <br/> **ST.Thread.ManagedThreadId** 属性 | (S = **System**) <br/> **S.Environment.ManagedThreadId** 属性 |
 | **System.Threading.Timer** 类 | [
             **ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/br230587) 类 |
-| (SWT = **System.Windows.Threading** <br/> **SWT.Dispatcher** 类 | [
+| (SWT = **System.Windows.Threading**) <br/> **SWT.Dispatcher** 类 | [
             **CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 类 |
-| (SWT = **System.Windows.Threading** <br/> **SWT.DispatcherTimer** 类 | [
+| (SWT = **System.Windows.Threading**) <br/> **SWT.DispatcherTimer** 类 | [
             **DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) 类 |
 | Blend for Visual Studio | |
-| (MEDC = **Microsoft.Expression.Drawing.Core** <br/> **MEDC.GeometryHelper** 类 | 无直接等效项 |
+| (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> **MEDC.GeometryHelper** 类 | 无直接等效项 |
 | **Microsoft.Expression.Interactivity** 命名空间 | [Microsoft.Xaml.Interactivity](http://go.microsoft.com/fwlink/p/?LinkId=328776) 命名空间 |
 | **Microsoft.Expression.Interactivity.Core** 命名空间 | [Microsoft.Xaml.Interactions.Core](http://go.microsoft.com/fwlink/p/?LinkId=328773) 命名空间 |
-| (MEIC = **Microsoft.Expression.Interactivity.Core** <br/> **MEIC.ExtendedVisualStateManager** 类 | 无直接等效项 |
+| (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> **MEIC.ExtendedVisualStateManager** 类 | 无直接等效项 |
 | **Microsoft.Expression.Interactivity.Input** 命名空间 | 无直接等效项 |
 | **Microsoft.Expression.Interactivity.Media** 命名空间 | [Microsoft.Xaml.Interactions.Media](http://go.microsoft.com/fwlink/p/?LinkId=328775) 命名空间 |
 | **Microsoft.Expression.Shapes** 命名空间 | 无直接等效项 |
-| (MI = **Microsoft.Internal** <br/> **MI.IManagedFrameworkInternalHelper** 接口 | 无直接等效项 |
+| (MI = **Microsoft.Internal**) <br/> **MI.IManagedFrameworkInternalHelper** 接口 | 无直接等效项 |
 | 联系人和日历数据 | |
 | **Microsoft.Phone.UserData** 命名空间 | [
             **Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/br225002)、[**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/dn263359) 命名空间 |
-| (MPU = **Microsoft.Phone.UserData** <br/> **MPU.Account**、**ContactAddress**、**ContactCompanyInformation**、**ContactEmailAddress**、**ContactPhoneNumber** 类 | [
+| (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Account**、**ContactAddress**、**ContactCompanyInformation**、**ContactEmailAddress**、**ContactPhoneNumber** 类 | [
             **Contact**](https://msdn.microsoft.com/library/windows/apps/br224849) 类 |
-| (MPU = **Microsoft.Phone.UserData** <br/> **MPU.Appointments** 类 | [
+| (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Appointments** 类 | [
             **AppointmentCalendar**](https://msdn.microsoft.com/library/windows/apps/dn596134) 类 |
-| (MPU = **Microsoft.Phone.UserData** <br/> **MPU.Contacts** 类 | [
+| (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Contacts** 类 | [
             **ContactStore**](https://msdn.microsoft.com/library/windows/apps/dn624859) 类 |
 | 控件和 UI 基础结构 | |
-| **ControlTiltEffect.TiltEffect** 类 | Windows 运行时动画库中的动画内置于常用控件的默认样式中。 请参阅[动画](wpsl-to-uwp-porting-xaml-and-ui.md#animation) |
+| **ControlTiltEffect.TiltEffect** 类 | Windows 运行时动画库中的动画内置于常用控件的默认样式中。 请参阅[动画](wpsl-to-uwp-porting-xaml-and-ui.md#animation)。 |
 | **Microsoft.Phone.Controls** 命名空间 | [
             **Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空间 |
-| (MPC = **Microsoft.Phone.Controls** <br/> **MPC.ContextMenu** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/> **MPC.ContextMenu** 类 | [
             **PopupMenu**](https://msdn.microsoft.com/library/windows/apps/br208693) 类 |
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.DatePickerPage** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.DatePickerPage** 类 | [
             **DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) 类 |
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.GestureListener** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.GestureListener** 类 | [
             **GestureRecognizer**](https://msdn.microsoft.com/library/windows/apps/br241937) 类 |
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.LongListSelector** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.LongListSelector** 类 | [
             **SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 类 |
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.ObscuredEventArgs** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.ObscuredEventArgs** 类 | [
             **SystemProtection**](https://msdn.microsoft.com/library/windows/apps/jj585394)、[**WindowActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208377) 类 | 
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.Panorama** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.Panorama** 类 | [
             **Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 类 | 
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.PhoneApplicationFrame**,<br/>(SWN = **System.Windows.Navigation** <br/>**SWN.NavigationService** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.PhoneApplicationFrame**、<br/>(SWN = **System.Windows.Navigation**) <br/>**SWN.NavigationService** 类 | [
             **Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 类 |
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.PhoneApplicationPage** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.PhoneApplicationPage** 类 | [
             **Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 类|
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.TiltEffect** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.TiltEffect** 类 | [
             **PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/hh969164) 类 | 
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.TimePickerPage** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.TimePickerPage** 类 | [
             **TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313) 类 |
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.WebBrowser** 类 | [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WebBrowser** 类 | [
             **WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) 类 | 
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.WebBrowserExtensions** 类 | 无直接等效项 | 
-| (MPC = **Microsoft.Phone.Controls** <br/>**MPC.WrapPanel** 类 | 无常规布局用途的直接等效项。 [
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WebBrowserExtensions** 类 | 无直接等效项 | 
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WrapPanel** 类 | 无常规布局用途的直接等效项。 [
             **ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) 和 [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) 可以在项目控件的项目面板模板中使用。 | 
-| (MPD = **Microsoft.Phone.Data** <br/>**MPD.Linq** 命名空间 | 无直接等效项 | 
-| (MPD = **Microsoft.Phone.Data** <br/>**MPD.Linq.Mapping** 命名空间 | 无直接等效项 |
+| (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq** 命名空间 | 无直接等效项 | 
+| (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq.Mapping** 命名空间 | 无直接等效项 |
 | **Microsoft.Phone.Globalization** 命名空间 | 无直接等效项 | 
-| (MPI = **Microsoft.Phone.Info** <br/>**MPI.DeviceExtendedProperties**、**DeviceStatus** 类 | [
-            **EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390)、[**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) 类。 有关详细信息，请参阅[设备状态](wpsl-to-uwp-input-and-sensors.md#device-status) | 
-| (MPI = **Microsoft.Phone.Info** <br/>**MPI.MediaCapabilities** 类 | 无直接等效项 | 
-| (MPI = **Microsoft.Phone.Info** <br/>**MPI.UserExtendedProperties** 类 | [
+| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.DeviceExtendedProperties**、**DeviceStatus** 类 | [
+            **EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390)、[**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) 类 有关详细信息，请参阅[设备状态](wpsl-to-uwp-input-and-sensors.md#device-status)。 | 
+| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.MediaCapabilities** 类 | 无直接等效项 | 
+| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.UserExtendedProperties** 类 | [
             **AdvertisingManager**](https://msdn.microsoft.com/library/windows/apps/dn363391) 类 | 
 | **System.Windows** 命名空间 | [
             **Windows.UI.Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) 命名空间 | 
@@ -165,22 +169,22 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | 全球化 | |
 | **System.Globalization** 命名空间 | [
             **Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 命名空间 |
-| (ST = **System.Threading** <br/> **ST.Thread.CurrentCulture** 属性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** 属性 |
-| (ST = **System.Threading** <br/> **ST.Thread.CurrentUICulture** 属性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** 属性 |
+| (ST = **System.Threading**) <br/> **ST.Thread.CurrentCulture** 属性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** 属性 |
+| (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** 属性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** 属性 |
 | 图形和动画 | |
-| **Microsoft.Xna.Framework.\*** 命名空间、[XNA Framework 类库](http://go.microsoft.com/fwlink/p/?LinkId=263769)、[Content Pipeline 类库](http://go.microsoft.com/fwlink/p/?LinkId=263770) | 无直接等效项。 通常情况下，结合使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 和 C++。 请参阅[开发游戏](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 和 XAML 互操作](https://msdn.microsoft.com/library/windows/apps/hh825871) |
+| **Microsoft.Xna.Framework.\*** 命名空间、[XNA Framework 类库](http://go.microsoft.com/fwlink/p/?LinkId=263769)、[Content Pipeline 类库](http://go.microsoft.com/fwlink/p/?LinkId=263770) | 无直接等效项。 通常情况下，结合使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 和 C++。 请参阅[开发游戏](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 和 XAML 互操作](https://msdn.microsoft.com/library/windows/apps/hh825871)。 |
 | **Microsoft.Xna.Framework.Audio.Microphone** 类 | [
-            **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类 |
+            **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类。 |
 | **Microsoft.Xna.Framework.Audio.SoundEffect** 类 | [
             **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 类 |
-| **Microsoft.Xna.Framework.GamerServices** 命名空间 | (WPS = **Windows.Phone.System** <br/> [
+| **Microsoft.Xna.Framework.GamerServices** 命名空间 | (WPS = **Windows.Phone.System**) <br/> [
             **WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) 命名空间 |
 | **Microsoft.Xna.Framework.GamerServices.Guide** 类 | 无直接等效项 | 
 | **Microsoft.Xna.Framework.Input.GamePad** 类 | [
             **HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 类 |
 | **Microsoft.Xna.Framework.Input.Touch.TouchPanel** 类 | [
             **GestureRecognizer**](https://msdn.microsoft.com/library/windows/apps/br241937) 类 |
-| (MXFM = **Microsoft.Xna.Framework.Media** <br/> **MXFM.MediaLibrary**、**MXFM.PhoneExtensions.MediaLibraryExtensions** 类 | [
+| (MXFM = **Microsoft.Xna.Framework.Media**) <br/> **MXFM.MediaLibrary**、**MXFM.PhoneExtensions.MediaLibraryExtensions** 类 | [
             **KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 类 |
 | **Microsoft.Xna.Framework.Media.MediaQueue** 类 | [
             **SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 类 |
@@ -188,7 +192,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
             **BackgroundMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652527) 类 |
 | **System.Windows.Media** 命名空间 | [
             **Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/br243045) 命名空间 |
-| **System.Windows.Media.RadialGradientBrush** 类 | 无直接等效项。 请参阅[媒体和图形](wpsl-to-uwp-porting-xaml-and-ui.md#media) |
+| **System.Windows.Media.RadialGradientBrush** 类 | 无直接等效项。 请参阅[媒体和图形](wpsl-to-uwp-porting-xaml-and-ui.md#media)。 |
 | **System.Windows.Media.Animation** 命名空间 | [
             **Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/br243232) 命名空间 |
 | **System.Windows.Media.Effects** 命名空间 | 无直接等效项 | 
@@ -225,7 +229,7 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | **Microsoft.Phone.Tasks.SaveRingtoneTask** 类 | 无直接等效项 | 
 | **Microsoft.Phone.Tasks.ShareLinkTask**、**ShareMediaTask**、**ShareStatusTask** 类 | [
             **DataPackage**](https://msdn.microsoft.com/library/windows/apps/br205873) 类 |
-| 位置 | |
+| 定位 | |
 | **System.Device.Location** 命名空间 | [
             **Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 命名空间 |
 | **System.Device.GeoCoordinateWatcher** 类 | [
@@ -254,42 +258,42 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | **Microsoft.Phone.Media** 命名空间 | [
             **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 类 |
 | 网络 | |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> **MPNN.DeviceNetworkInformation** 类 | [
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.DeviceNetworkInformation** 类 | [
             **Hostname**](https://msdn.microsoft.com/library/windows/apps/br207113)、[**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) 类
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> **MPNN.NetworkInterface** 类 | [
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterface** 类 | [
             **NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) 类 |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> **MPNN.NetworkInterfaceInfo** 类 | [
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterfaceInfo** 类 | [
             **ConnectionProfile**](https://msdn.microsoft.com/library/windows/apps/br207249) 类 |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> **MPNN.NetworkInterfaceList** 类 | [
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterfaceList** 类 | [
             **NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) 类 |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> **MPNN.SocketExtensions** 类 | 无直接等效项 | 
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation** <br/> **MPNN.WebRequestExtensions** 类 | 无直接等效项 | 
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.SocketExtensions** 类 | 无直接等效项 | 
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.WebRequestExtensions** 类 | 无直接等效项 | 
 | **Microsoft.Phone.Networking.Voip** 命名空间 | 无直接等效项 | 
 | **System.Net.CookieCollection** 类 | 仍受支持，但部分属性已丢失（例如 IsReadOnly） |
 | **System.Net.DownloadProgressChangedEventArgs** 类，以及与 **System.Net.WebClient** 相关的类似的类 | [
-            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 派生自 [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx)，用于测量进度。 |
+            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)） 派生自 [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx)，用于测量进度。 |
 | **System.Net.DnsEndPoint**、**IPAddress** 类 | 这些类仍受支持，但部分属性已丢失。 或者，移植到 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 类。 |
 | **System.Net.HttpUtility** 类 | [
             **HtmlFormatHelper**](https://msdn.microsoft.com/library/windows/apps/hh738437) 类 |
 | **System.Net.HttpWebRequest** 类 | 部分支持，但推荐的预期备用项为 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 这些 API 使用 [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) 来表示 HTTP 请求。 |
 | **System.Net.HttpWebResponse** 类 | 仍受支持，但使用的是 Dispose() 而不是 Close()。 但是，推荐的预期备用项为 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 这些 API 使用 [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx) 表示 HTTP 响应。 |
-| (SNN = **System.Net.NetworkInformation** <br/> **SNN.NetworkChange** 类 | 仍受支持，但构造函数除外。 |
+| (SNN = **System.Net.NetworkInformation**) <br/> **SNN.NetworkChange** 类 | 仍受支持，但构造函数除外。 |
 | **System.Net.OpenReadCompletedEventArgs** 类，以及与 **System.Net.WebClient** 相关的类似的类 | [
-            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx) |
+            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)） |
 | **System.Net.Sockets.Socket** 类 | 仍受支持，但使用的是 Dispose() 而不是 Close()。 或者，移植到 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类。 |
 | **System.Net.Sockets.SocketException** 类 | 仍受支持，但使用的是 SocketErrorCode 属性而不是 ErrorCode。
 | **System.Net.Sockets.UdpAnySourceMulticastClient**、**UdpSingleSourceMulticastClient** 类 | [
             **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 类 | 
 | **System.Net.UploadProgressChangedEventArgs** 类，以及与 **System.Net.WebClient** 相关的类似的类 | [
-            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)
+            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)）
 | **System.Net.WebClient** 类 | [
-            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)
+            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)）
 | **System.Net.WebRequest** 类 | 部分支持（另一组属性），但推荐的预期备用项为 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 这些 API 使用 [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) 来表示 HTTP 请求。
 | **System.Net.WebResponse** 类 | 仍受支持，但使用的是 Dispose() 而不是 Close()。 但是，推荐的预期备用项为 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 这些 API 使用 [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx) 表示 HTTP 响应。
-| (SN = **System.Net** <br/> **SN.WriteStreamClosedEventArgs** 类 | [
-            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)
-| (SN = **System.Net** <br/> **SN.WriteStreamClosedEventHandler** 类 | [
-            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)
+| (SN = **System.Net**) <br/> **SN.WriteStreamClosedEventArgs** 类 | [
+            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)）
+| (SN = **System.Net**) <br/> **SN.WriteStreamClosedEventHandler** 类 | [
+            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)）
 | **System.UriFormatException** 类 | **System.FormatException** 类 |
 | 通知 | |
 | MPN = **Microsoft.Phone.Notification** 命名空间 | [
@@ -309,46 +313,46 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 | 反应性扩展框架 | |
 | **Microsoft.Phone.Reactive** 命名空间 | 无直接等效项 | 
 | 反射 | |
-| **System.Type** 类 | **System.Reflection.TypeInfo** 类。 请参阅[适用于 Windows 应用商店应用的 .NET Framework 中的反射](https://msdn.microsoft.com/library/hh535795.aspx) |
+| **System.Type** 类 | **System.Reflection.TypeInfo** 类。 请参阅[适用于 Windows 应用商店应用的 .NET Framework 中的反射](https://msdn.microsoft.com/library/hh535795.aspx)。 |
 | 资源 | |
-| **System.Resources.ResourceManager** 类 | (WA = **Windows.ApplicationModel**<br/>[
-            **WA.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 以及 [**WA.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 命名空间、[**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) 类。 请参阅[在 Windows 运行时应用中创建和检索资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh694557.aspx) |
+| **System.Resources.ResourceManager** 类 | (WA = **Windows.ApplicationModel**)<br/>[
+            **WA.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 以及 [**WA.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 命名空间、[**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) 类。 请参阅[在 Windows 运行时应用中创建和检索资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh694557.aspx)。 |
 | 安全元素 | |
-| (MPS = **Microsoft.Phone.SecureElement** <br/> **MPS.SecureElementChannel**、**MPS.SecureElementSession** 类 | [
+| (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementChannel**、**MPS.SecureElementSession** 类 | [
             **SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/dn608002) 类 |
-| (MPS = **Microsoft.Phone.SecureElement** <br/> **MPS.SecureElementReader** 类 | [
+| (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementReader** 类 | [
             **SmartCardReader**](https://msdn.microsoft.com/library/windows/apps/dn263857) 类 |
-| 安全性 | |
-| (SSC = **System.Security.Cryptography** <br/> **SSC.Aes**、**SSC.RSA** 类 | [
+| 安全 | |
+| (SSC = **System.Security.Cryptography**) <br/> **SSC.Aes**、**SSC.RSA** 类 | [
             **CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 类 |
-| (SSC = **System.Security.Cryptography** <br/> **SSC.HMACSHA256**、**SSC.SHA256** 类 | [
+| (SSC = **System.Security.Cryptography**) <br/> **SSC.HMACSHA256**、**SSC.SHA256** 类 | [
             **HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 类 |
-| (SSC = **System.Security.Cryptography** <br/> **SSC.ProtectedData** 类 | [
+| (SSC = **System.Security.Cryptography**) <br/> **SSC.ProtectedData** 类 | [
             **DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 类 |
-| (SSC = **System.Security.Cryptography** <br/> **SSC.RandomNumberGenerator** 类 | [
+| (SSC = **System.Security.Cryptography**) <br/> **SSC.RandomNumberGenerator** 类 | [
             **CryptographicBuffer**](https://msdn.microsoft.com/library/windows/apps/br227092) 类 |
-| (SSC = **System.Security.Cryptography** <br/> **SSC.X509Certificates.X509Certificate** 类 | [
+| (SSC = **System.Security.Cryptography**) <br/> **SSC.X509Certificates.X509Certificate** 类 | [
             **CertificateEnrollmentManager**](https://msdn.microsoft.com/library/windows/apps/br212075) 类 |
 | Shell | |
-| (MPSh = **Microsoft.Phone.Shell** <br/> **MPSh.ApplicationBar** 类 | [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBar** 类 | [
             **CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427) 类 |
-| (MPSh = **Microsoft.Phone.Shell** <br/> **MPSh.ApplicationBarIconButton** 类 | [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBarIconButton** 类 | [
             **AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 类（当在 [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/dn279430) 属性内部使用时）
-| (MPSh = **Microsoft.Phone.Shell** <br/> **MPSh.ApplicationBarMenuItem** 类 | [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBarMenuItem** 类 | [
             **AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 类（当在 [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/dn279434) 属性内部使用时）
-| (MPSh = **Microsoft.Phone.Shell** <br/> **MPSh.CycleTileData**、**MPSh.FlipTileData**、**MPSh.IconicTileData**、**MPSh.ShellTileData**、**MPSh.StandardTileData** 类 | [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.CycleTileData**、**MPSh.FlipTileData**、**MPSh.IconicTileData**、**MPSh.ShellTileData**、**MPSh.StandardTileData** 类 | [
             **TileTemplateType**](https://msdn.microsoft.com/library/windows/apps/br208621) 类 |
-| (MPSh = **Microsoft.Phone.Shell** <br/> **MPSh.PhoneApplicationService** 类 | [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.PhoneApplicationService** 类 | [
             **CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016)、[**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 类
-| (MPSh = **Microsoft.Phone.Shell** <br/> **MPSh.ProgressIndicator** 类 | [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ProgressIndicator** 类 | [
             **StatusBarProgressIndicator**](https://msdn.microsoft.com/library/windows/apps/dn633865) 类 |
-| (MPSh = **Microsoft.Phone.Shell** <br/> **MPSh.ShellTile** 类 | [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ShellTile** 类 | [
             **SecondaryTile**](https://msdn.microsoft.com/library/windows/apps/br242183) 类 |
-| (MPSh = **Microsoft.Phone.Shell** <br/> **MPSh.ShellTileSchedule** 类 | [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ShellTileSchedule** 类 | [
             **TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) 类 |
-| (MPSh = **Microsoft.Phone.Shell** <br/> **MPSh.ShellToast** 类 | [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ShellToast** 类 | [
             **ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642) 类 |
-| (MPSh = **Microsoft.Phone.Shell** <br/> **MPSh.SystemTray** 类 | [
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.SystemTray** 类 | [
             **StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) 类 |
 | 存储和 I/O | |
 | **Microsoft.Phone.Storage.ExternalStorage**、**ExternalStorageDevice**、**ExternalStorageFile**、**ExternalStorageFolder** 类 | [
@@ -359,23 +363,24 @@ ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
             **StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 类 |
 | **System.IO.File** 类 | [
             **StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 [**PathIO**](https://msdn.microsoft.com/library/windows/apps/hh701663) 类
-| (SII = **System.IO.IsolatedStorage** <br/> **SII.IsolatedStorageFile** 类 | [
+| (SII = **System.IO.IsolatedStorage**) <br/> **SII.IsolatedStorageFile** 类 | [
             **ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 属性 |
-| (SII = **System.IO.IsolatedStorage** <br/> **SII.IsolatedStorageSettings** 类 | [
+| (SII = **System.IO.IsolatedStorage**) <br/> **SII.IsolatedStorageSettings** 类 | [
             **ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.localsettings.aspx) 属性 |
 | **System.IO.Stream** 类 | 仍受支持，但使用的是 ReadAsync() 和 WriteAsync()，而不是 BeginRead()/EndRead() 和 BeginWrite()/EndWrite()。 |
 | 电子钱包 | |
 | **Microsoft.Phone.Wallet** 命名空间 | [
             **Windows.ApplicationModel.Wallet**](https://msdn.microsoft.com/library/windows/apps/dn631399) 命名空间 |
 | Xml | |
-| (SX = **System.Xml** | **SX.XmlConvert.ToDateTime** 方法 |
-| (SX = **System.Xml** | **SX.XmlConvert.ToDateTimeOffset** 方法 |
+| (SX = **System.Xml**) | **SX.XmlConvert.ToDateTime** 方法 |
+| (SX = **System.Xml**) | **SX.XmlConvert.ToDateTimeOffset** 方法 |
  
 
-下一主题是[移植项目](wpsl-to-uwp-porting-to-a-uwp-project.md)
+下一主题是[移植项目](wpsl-to-uwp-porting-to-a-uwp-project.md)。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 我们介绍了 XAML 语法规则，以及用于描述 XAML 语法中存在的限制或选项的术语。
-title: XAML 语法指南
+description: "我们介绍了 XAML 语法规则，以及用于描述 XAML 语法中存在的限制或选项的术语。"
+title: "XAML 语法指南"
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
+translationtype: Human Translation
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: 8e7819b02d7a22a16cf16091d08bef0aabc8d36e
+
 ---
 
 # XAML 语法指南
@@ -314,6 +318,7 @@ XAML 用法部分还使用各种通用性占位符。 有些情况下，这些�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

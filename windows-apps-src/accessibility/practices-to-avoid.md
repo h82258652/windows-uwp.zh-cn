@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: 列出创建辅助通用 Windows 平台 (UWP) 应用时要避免的做法。
+Description: "列出创建辅助通用 Windows 平台 (UWP) 应用时要避免的做法。"
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
-title: 要避免的辅助功能做法
+title: "要避免的辅助功能做法"
 label: Accessibility practices to avoid
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: b5f5f220d5ff70d70dd797c0bf26a355bd447563
+
 ---
 # 要避免的辅助功能做法
 
@@ -32,6 +36,7 @@ template: detail.hbs
 * [辅助功能清单](accessibility-checklist.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

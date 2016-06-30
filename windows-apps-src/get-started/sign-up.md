@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
-title: 准备好注册了吗？
-description: 立即注册开发者帐户，以便你可以将应用提交到 Windows 应用商店并参与其他 Microsoft 计划。
+title: "准备好注册了吗？"
+description: "立即注册开发者帐户，以便你可以将应用提交到 Windows 应用商店并参与其他 Microsoft 计划。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 53d23b3f8502e1f182c728b9f787fbbc4b694d42
+
 ---
 # 准备好注册了吗？
 
@@ -20,6 +24,7 @@ description: 立即注册开发者帐户，以便你可以将应用提交到 Win
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

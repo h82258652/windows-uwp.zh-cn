@@ -1,7 +1,10 @@
 ---
-Description: 介绍如何将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）手动转换为通用 Windows 平台 (UWP) 应用。
+Description: "介绍如何将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）手动转换为通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
-title: 将 Windows 桌面使用程序手动转换为通用 Windows 平台 (UWP) 应用
+title: "将 Windows 桌面使用程序手动转换为通用 Windows 平台 (UWP) 应用"
+ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
+ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
+
 ---
 
 # 将 Windows 桌面应用程序手动转换为通用 Windows 平台 (UWP) 应用
@@ -96,6 +99,9 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 - [SignTool.exe（签名工具）](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 
-<!--HONumber=May16_HO2-->
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

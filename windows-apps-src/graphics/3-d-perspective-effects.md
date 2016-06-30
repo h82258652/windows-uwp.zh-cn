@@ -1,8 +1,12 @@
 ---
 author: Jwmsft
 ms.assetid: 90F07341-01F4-4205-8161-92DD2EB49860
-title: XAML UI 的 3D 透视效果
-description: 你可以使用透视变换将 3D 效果应用到 Windows 运行时应用中的内容。 例如，你可以创建旋转的对象接近和远离你的视觉效果，如此处所示。
+title: "XAML UI 的 3D 透视效果"
+description: "你可以使用透视变换将 3D 效果应用到 Windows 运行时应用中的内容。 例如，你可以创建旋转的对象接近和远离你的视觉效果，如此处所示。"
+translationtype: Human Translation
+ms.sourcegitcommit: 54bcd19419f31563f910b705fce8128bca33825b
+ms.openlocfilehash: 4141d23c5102df4970ef7c4fb3659bf3ba561ccf
+
 ---
 # XAML UI 的 3D 透视效果
 
@@ -86,7 +90,7 @@ description: 你可以使用透视变换将 3D 效果应用到 Windows 运行时
 你可以使用 [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx)、[**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) 和 [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) 属性移动旋转中心的位置。 在默认情况下，旋转的轴正好位于对象的中心，所以对象会绕着中心旋转。 但是，如果你将旋转中心移动到对象的外侧边，它将会绕着该侧边进行旋转。 **CenterOfRotationX** 和 **CenterOfRotationY** 的默认值为 0.5，而 **CenterOfRotationZ** 的默认值为 0。 对于 **CenterOfRotationX** 和 **CenterOfRotationY**，0 和 1 之间的值设置对象中某些位置的透视点。 0 值表示对象的一条边，1 表示相对的边。 允许使用超出此范围的值，并且会相应地移动旋转中心。 由于旋转中心的 z 轴穿过对象面板的中心，所以，如果你使用负值，则可以将旋转中心移到对象后；如果你使用正值，则可以将旋转中心移到对象前（面向你的方向）。
 
 [
-            **CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx) 沿着对象的 x 轴平行移动旋转中心，而 [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) 则沿着对象的 y 轴移动旋转中心。 下图演示了对 **CenterOfRotationY** 使用不同的值
+            **CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx) 沿着对象的 x 轴平行移动旋转中心，而 [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) 则沿着对象的 y 轴移动旋转中心。 下图演示了为 **CenterOfRotationY** 使用不同的值。
 
 ```xml
 <Image Source="kid.png">
@@ -191,9 +195,10 @@ description: 你可以使用透视变换将 3D 效果应用到 Windows 运行时
 
 ## 定位对象
 
-与 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192).  相比，[**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 类型可用于更复杂的半 3D 方案**Matrix3DProjection** 可为你提供应用于任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的完全 3D 转换矩阵，从而使你可以将任何模型转换矩阵和透视矩阵应用到元素。 请记住，这些 API 非常小，因此如果要使用它们，你需要编写正确创建 3D 转换矩阵的代码。 因此，对于简单的 3D 方案，使用 **PlaneProjection** 更容易。 Because of this, it is easier to use <bpt id="p1">**</bpt>PlaneProjection<ept id="p1">**</ept> for simple 3D scenarios.
+对于比 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 更复杂的半 3D 方案，你可以使用 [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 类型。 **Matrix3DProjection** 可为你提供应用于任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的完全 3D 转换矩阵，从而使你可以将任何模型转换矩阵和透视矩阵应用到元素。 请记住，这些 API 非常小，因此如果要使用它们，你需要编写正确创建 3D 转换矩阵的代码。 因此，对于简单的 3D 方案，使用 **PlaneProjection** 更容易。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

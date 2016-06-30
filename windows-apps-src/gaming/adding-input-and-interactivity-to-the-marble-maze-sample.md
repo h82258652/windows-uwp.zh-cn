@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 向 Marble Maze 示例添加输入和交互性
-description: 通用 Windows 平台 (UWP) 应用游戏可在广泛的设备上运行，如台式计算机、笔记本电脑和平板电脑。
+title: "向 Marble Maze 示例添加输入和交互性"
+description: "通用 Windows 平台 (UWP) 应用游戏可在广泛的设备上运行，如台式计算机、笔记本电脑和平板电脑。"
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 563ee292ec7189b0c365ae5ee0d1c41fd6fd1a09
+
 ---
 
 # 向 Marble Maze 添加输入和交互性示例
@@ -522,6 +526,7 @@ if (marblePosition.z >= resetDepth)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

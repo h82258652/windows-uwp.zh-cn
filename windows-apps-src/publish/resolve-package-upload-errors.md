@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 如果在应用提交过程中上传应用包时遇到错误，必须先解决错误，然后才能将应用提交到应用商店。
-title: 解决程序包上传错误
+Description: "如果在应用提交过程中上传应用包时遇到错误，必须先解决错误，然后才能将应用提交到应用商店。"
+title: "解决程序包上传错误"
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: afd2a08ed637502827e3207702d7659ed70148a0
+
 ---
 
 # 解决程序包上传错误
@@ -37,6 +41,7 @@ ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

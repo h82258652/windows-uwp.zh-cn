@@ -1,16 +1,18 @@
 ---
-author: martinekuan
-title: 诊断 Windows 运行时组件错误条件
-description: 本文提供有关对使用托管代码编写的 Windows 运行时组件的限制的其他信息。
+author: msatranjr
+title: "诊断 Windows 运行时组件错误条件"
+description: "本文提供有关对使用托管代码编写的 Windows 运行时组件的限制的其他信息。"
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
+
 ---
 
 # 诊断 Windows 运行时组件错误条件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
 本文提供有关对使用托管代码编写的 Windows 运行时组件的限制的其他信息。 它扩展了从 [Winmdexp.exe（Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)的错误消息中提供的信息，并补充有关在[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中提供的限制的信息。
 
@@ -220,17 +222,17 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
     > ```cs
     > using System.Runtime.InteropServices;
     > using System.Runtime.InteropServices.WindowsRuntime;
-    > 
+    >
     > [return: ReturnValueName("average")]
     > public int GetAverage(out int lowValue, out int highValue)
     > ```
     > ```vb
     > Imports System.Runtime.InteropServices
     > Imports System.Runtime.InteropServices.WindowsRuntime
-    > 
+    >
     > Public Function GetAverage(<Out> ByRef lowValue As Integer, _
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
-    > ``` 
+    > ```
 
 > **注意** 如果你更改返回值的名称，而新名称与其他参数的名称相冲突，将收到错误 WME1091。
 
@@ -248,6 +250,7 @@ JavaScript 代码可以按照名称访问方法的输出参数，包括返回值
 * [Winmdexp.exe（Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

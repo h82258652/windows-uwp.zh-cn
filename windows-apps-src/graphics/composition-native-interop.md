@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
-title: 带有 BeginDraw 和 EndDraw 的合成本机 DirectX 和 Direct2D 互操作性
-description: Windows.UI.Composition API 提供了本机互操作接口，以便内容可以直接移动到合成器中。
+title: "带有 BeginDraw 和 EndDraw 的合成本机 DirectX 和 Direct2D 互操作性"
+description: "Windows.UI.Composition API 提供了本机互操作接口，以便内容可以直接移动到合成器中。"
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: b5308c8023990996a93277dd1bcfb8298c0bbf4f
+
 ---
 # 带有 BeginDraw 和 EndDraw 的合成本机 DirectX 和 Direct2D 互操作性
 
@@ -265,6 +269,7 @@ private:
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

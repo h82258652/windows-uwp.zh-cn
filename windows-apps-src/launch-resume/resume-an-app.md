@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 处理应用恢复
-description: 了解当系统恢复你的应用时如何刷新显示的内容。
+author: TylerMSFT
+title: "处理应用恢复"
+description: "了解当系统恢复你的应用时如何刷新显示的内容。"
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
+ms.sourcegitcommit: e6957dd44cdf6d474ae247ee0e9ba62bf17251da
+ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
+
 ---
 
 # 处理应用恢复
@@ -27,66 +30,66 @@ ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 注册以处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件，该事件指示用户从你的应用切换到桌面或其他应用，而后又切换回你的应用。
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-partial class MainPage
-{
-   public MainPage()
-   {
-      InitializeComponent();
-      Application.Current.Resuming += new EventHandler<Object>(App_Resuming);
-   }
-}
-```
-```vb
-Public NonInheritable Class MainPage
-
-   Public Sub New()
-      InitializeComponent() 
-      AddHandler Application.Current.Resuming, AddressOf App_Resuming
-   End Sub
-
-End Class
-```
-```cpp
-MainPage::MainPage()
-{
-    InitializeComponent();
-    Application::Current->Resuming += 
-        ref new EventHandler<Platform::Object^>(this, &MainPage::App_Resuming);
-}
-```
+> ```cs
+> partial class MainPage
+> {
+>    public MainPage()
+>    {
+>       InitializeComponent();
+>       Application.Current.Resuming += new EventHandler<Object>(App_Resuming);
+>    }
+> }
+> ```
+> ```vb
+> Public NonInheritable Class MainPage
+>
+>    Public Sub New()
+>       InitializeComponent()
+>       AddHandler Application.Current.Resuming, AddressOf App_Resuming
+>    End Sub
+>
+> End Class
+> ```
+> ```cpp
+> MainPage::MainPage()
+> {
+>     InitializeComponent();
+>     Application::Current->Resuming +=
+>         ref new EventHandler<Platform::Object^>(this, &MainPage::App_Resuming);
+> }
+> ```
 
 ## 暂停之后刷新显示的内容
 
 当你的应用处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件时，它将有机会刷新其显示的内容。
 
 > [!div class="tabbedCodeSnippets"]
-```cs
-partial class MainPage
-{
-    private void App_Resuming(Object sender, Object e)
-    {
-        // TODO: Refresh network data
-    }
-}
-```
-```vb
-Public NonInheritable Class MainPage
-
-    Private Sub App_Resuming(sender As Object, e As Object)
- 
-        ' TODO: Refresh network data
-
-    End Sub
-
-End Class
-```
-```cpp
-void MainPage::App_Resuming(Object^ sender, Object^ e)
-{
-    // TODO: Refresh network data
-}
-```
+> ```cs
+> partial class MainPage
+> {
+>     private void App_Resuming(Object sender, Object e)
+>     {
+>         // TODO: Refresh network data
+>     }
+> }
+> ```
+> ```vb
+> Public NonInheritable Class MainPage
+>
+>     Private Sub App_Resuming(sender As Object, e As Object)
+>  
+>         ' TODO: Refresh network data
+>
+>     End Sub
+>
+> End Class
+> ```
+> ```cpp
+> void MainPage::App_Resuming(Object^ sender, Object^ e)
+> {
+>     // TODO: Refresh network data
+> }
+> ```
 
 > **注意** 因为未从 UI 线程引发 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件，所以必须使用调度程序访问该 UI 线程并向 UI 插入更新（如果这是你想要在处理程序中执行的操作）。
 
@@ -97,7 +100,7 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 
 如果你的应用没有任何要刷新的显示内容，则它无需处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件。
 
-**使用 Visual Studio 进行调试时要注意：**当你的应用连接到 Visual Studio 调试程序时，你可以向你的应用发送一个 **Resume** 事件。 确保“调试位置”****工具栏显示出来，然后单击“暂停”****图标旁边的下拉列表。 然后选择“恢复”****。
+> **请注意** 当你的应用连接到 Visual Studio 调试程序时，你可以向其发送一个 **Resume** 事件。 确保“调试位置”****工具栏可见，然后单击“暂停”****图标旁边的下拉列表。 然后选择“恢复”****。
 
 > **注意** 对于 Windows Phone 应用商店应用，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件之后始终跟着 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 事件，即使你的应用当前已暂停且用户从主要磁贴或应用列表中重新启动它也是如此。 如果当前窗口上已有内容集，则应用可跳过初始化。 你可以检查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 属性以确定该应用是从主要磁贴启动还是从辅助磁贴启动，并可根据该信息，确定是应显示新的应用体验还是应恢复应用体验。
 
@@ -110,7 +113,6 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 
 
 
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

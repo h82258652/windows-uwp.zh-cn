@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 你可以用 100 多种语言向 Windows 应用商店提交应用。
-title: 支持的语言
+Description: "你可以用 100 多种语言向 Windows 应用商店提交应用。"
+title: "支持的语言"
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 17a5a106e24305afd3041f434d2e0890d21fd7ec
+
 ---
 
 # 支持的语言
@@ -134,6 +138,7 @@ ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

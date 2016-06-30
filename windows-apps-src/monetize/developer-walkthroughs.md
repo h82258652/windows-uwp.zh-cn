@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
-description: 使用本部分中的演练了解如何使用 Microsoft Advertising 库将横幅广告和视频间隙广告添加到应用。
-title: Microsoft Advertising 库的开发人员演练
+description: "使用本部分中的演练了解如何使用 Microsoft Advertising 库将横幅广告和视频间隙广告添加到应用。"
+title: "Microsoft Advertising 库的开发人员演练"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b
+
 ---
 
 # Microsoft Advertising 库的开发人员演练
@@ -14,7 +18,7 @@ title: Microsoft Advertising 库的开发人员演练
 
 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和视频间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
-## 本节内容
+## 本部分内容
 
 |  主题    | 描述 |               
 |----------|-------|
@@ -30,6 +34,7 @@ title: Microsoft Advertising 库的开发人员演练
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
-title: 设备配对
-description: 某些设备需要先进行配对，然后才能使用。 Windows.Devices.Enumeration 命名空间支持使用三种不同方式的配对设备。
+title: "设备配对"
+description: "某些设备需要先进行配对，然后才能使用。 Windows.Devices.Enumeration 命名空间支持使用三种不同方式的配对设备。"
+translationtype: Human Translation
+ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
+ms.openlocfilehash: fa736c200185192cfd40a1c09f2da02cae67c05c
+
 ---
 # 配对设备
 
@@ -45,9 +49,9 @@ description: 某些设备需要先进行配对，然后才能使用。 Windows.D
 
 自定义配对使你的应用能够参与配对过程。 这使你的应用可以指定配对过程所支持的 [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808)。 你还将负责创建你自己的用户界面，以便根据需要与用户进行交互。 如果你希望你的应用对配对过程的处理方式所起到的作用更大些，或者希望显示自己的配对用户界面，可以使用自定义配对。
 
-为了实现自定义配对，你将需要获取感兴趣的设备的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象，就像使用基本配对那样。 不过，你感兴趣的特定属性是 [**DeviceInformation.Pairing.Custom**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_custom)。 这将为你提供 [**DeviceInformationCustomPairing**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing) 对象。 所有的 [**DeviceInformationCustomPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing_pairasync) 方法都要求你包含 [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) 参数。 这表示用户为尝试配对设备需要执行的操作。 有关其他配对类型以及用户需要执行的操作的详细信息，请参阅 **DevicePairingKinds** 参考页面。 就像使用基本配对一样，你将需要 **await** 结果，以便让应用有时间来尝试完成配对操作。 将返回配对操作的结果，并且只要未返回任何错误，就将配对设备。
+为了实现自定义配对，你将需要获取感兴趣的设备的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象，就像使用基本配对那样。 不过，你感兴趣的特定属性是 [**DeviceInformation.Pairing.Custom**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.custom.aspx)。 这将为你提供 [**DeviceInformationCustomPairing**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.aspx) 对象。 所有的 [**DeviceInformationCustomPairing.PairAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairasync.aspx) 方法都要求你包含 [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) 参数。 这表示用户为尝试配对设备需要执行的操作。 有关其他配对类型以及用户需要执行的操作的详细信息，请参阅 **DevicePairingKinds** 参考页面。 就像使用基本配对一样，你将需要 **await** 结果，以便让应用有时间来尝试完成配对操作。 将返回配对操作的结果，并且只要未返回任何错误，就将配对设备。
 
-为了支持自定义配对，将需要为 [**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing_pairingrequested) 事件创建一个处理程序。 此处理程序需要确保可处理可能会在自定义配对方案中使用的所有各种 [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808)。 要执行何种操作具体取决于作为事件参数的一部分提供的 **DevicePairingKinds**。
+为了支持自定义配对，将需要为 [**PairingRequested**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested.aspx) 事件创建一个处理程序。 此处理程序需要确保可处理可能会在自定义配对方案中使用的所有各种 [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808)。 要执行何种操作具体取决于作为事件参数的一部分提供的 **DevicePairingKinds**。
 
 请务必注意，自定义配对始终是系统级操作。 因此，如果你在桌面或 Windows Phone 上操作，将始终在配对即将发生时向用户显示系统对话框。 这是因为这两个平台所拥有的用户体验都要求征得用户同意。 由于该对话框是自动生成的，因此如果你在这两个平台上操作时为 **ConfirmOnly** 选择了 [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808)，将无需创建你自己的对话框。 对于其他 **DevicePairingKinds**，你将需要执行一些特殊处理，具体取决于特定 **DevicePairingKinds** 值。 有关如何针对不同的 **DevicePairingKinds** 值处理自定义配对的示例，请参阅相关示例。
 
@@ -72,6 +76,7 @@ description: 某些设备需要先进行配对，然后才能使用。 Windows.D
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

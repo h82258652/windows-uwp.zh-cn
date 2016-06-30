@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
-description: 了解 XAML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
-title: XAML 和 C# 疑难解答指南
+description: "了解 XAML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。"
+title: "XAML 和 C# 疑难解答指南"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
+
 ---
 
 # XAML 和 C# 疑难解答指南
@@ -335,6 +339,7 @@ title: XAML 和 C# 疑难解答指南
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

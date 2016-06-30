@@ -1,8 +1,12 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: 此路线图提供 Windows 10 通用 Windows 平台 (UWP) 应用的关键企业功能的概述。
-title: 企业
+description: "此路线图提供 Windows 10 通用 Windows 平台 (UWP) 应用的关键企业功能的概述。"
+title: "企业"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 468c87694f519a5081f3242346039e6e7310d1db
+ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
+
 ---
 
 # 企业
@@ -111,6 +115,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

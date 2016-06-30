@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 启动“人脉”应用
-description: 本主题介绍了 ms-people URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。
+author: TylerMSFT
+title: "启动“人脉”应用"
+description: "本主题介绍了 ms-people URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。"
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
+
 ---
 
 # 启动“人脉”应用
@@ -205,8 +208,6 @@ ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

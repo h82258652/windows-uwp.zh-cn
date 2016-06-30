@@ -1,10 +1,14 @@
 ---
 author: drewbatgit
-Description: '本文将介绍如何创建可实现 IBasicVideoEffect 接口的 Windows 运行时组件以允许你为视频流创建自定义效果。'
-MS-HAID: 'dev\_audio\_vid\_camera.custom\_video\_effects'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "本文将介绍如何创建可实现 IBasicVideoEffect 接口的 Windows 运行时组件以允许你为视频流创建自定义效果。"
+MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 自定义视频效果
+title: "自定义视频效果"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
+
 ---
 
 # 自定义视频效果
@@ -248,6 +252,7 @@ title: 自定义视频效果
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

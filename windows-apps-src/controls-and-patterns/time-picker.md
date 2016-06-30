@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 时间选取器提供了一种标准化途径，可使用户使用触摸、鼠标或键盘输入选取时间值。
-title: 时间选取器
+Description: "时间选取器提供了一种标准化途径，可使用户使用触摸、鼠标或键盘输入选取时间值。"
+title: "时间选取器"
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5056a9f304ca21c977b9cc65b8ead007eccd4288
+
 ---
 
 # 时间选取器
@@ -56,6 +60,7 @@ arrivalTimePicker.Header = "Arrival time";
 - [日期选取器](date-picker.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

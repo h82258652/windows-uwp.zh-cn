@@ -5,8 +5,8 @@ title: "语音识别"
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 6d1449ede6912add8b8f7e60760d4547c035ed60
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 66bab97e7108a1728e9659a04ea2f1ecf15f68b7
 
 ---
 
@@ -24,7 +24,7 @@ ms.openlocfilehash: 6d1449ede6912add8b8f7e60760d4547c035ed60
 语音识别由以下部分构成：语音运行时、用于为运行时编程的识别 API、用于听写和 Web 搜索的现成语法，以及帮助用户发现和使用语音识别功能的默认系统 UI。
 
 
-## <span id="Set_up_the_audio_feed"></span><span id="set_up_the_audio_feed"></span><span id="SET_UP_THE_AUDIO_FEED"></span>设置音频源
+## 设置音频源
 
 
 确保你的设备具有麦克风或等效硬件。
@@ -33,7 +33,7 @@ ms.openlocfilehash: 6d1449ede6912add8b8f7e60760d4547c035ed60
 
 请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
-## <span id="Recognize_speech_input"></span><span id="recognize_speech_input"></span><span id="RECOGNIZE_SPEECH_INPUT"></span>识别语音输入
+## 识别语音输入
 
 
 *约束*可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，它除了能提高语音识别准确度，还能为你的应用带来其他优势。
@@ -69,7 +69,7 @@ private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></
 
     We then catch any standard exceptions during recogntion and test if the [**HResult**](https://msdn.microsoft.com/library/windows/apps/br206579) value is equal to the value of the HResultPrivacyStatementDeclined variable. If so, we display a warning and call `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` to open the Settings page.
 
-    <span codelanguage="CSharp"></span>
+    
 ```    CSharp
     <colgroup>
     <col width="100%" />
@@ -146,7 +146,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Customize_the_recognition_UI"></span><span id="customize_the_recognition_ui"></span><span id="CUSTOMIZE_THE_RECOGNITION_UI"></span>自定义识别 UI
+## 自定义识别 UI
 
 
 当你的应用通过调用 [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 来尝试进行语音识别时，多个屏幕将按以下顺序显示。
@@ -203,7 +203,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 
 **开发人员**
@@ -222,6 +222,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows 应用商店的客户遍及世界 200 多个国家和地区。
-title: 定义价格和市场选择
+Description: "Windows 应用商店的客户遍及世界 200 多个国家和地区。"
+title: "定义价格和市场选择"
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9a1d8b8fb57989091fe7b82ad34066240f62cb8b
+
 ---
 
 # 定义价格和市场选择
@@ -119,7 +123,7 @@ Windows 应用商店的客户遍及世界 200 多个国家和地区。 可以选
 -   埃及
 -   萨尔瓦多
 -   赤道几内亚
--   厄立特里亚国
+-   厄立特里亚
 -   爱沙尼亚
 -   埃塞俄比亚
 -   福克兰群岛
@@ -245,7 +249,7 @@ Windows 应用商店的客户遍及世界 200 多个国家和地区。 可以选
 -   圣多美和普林西比
 -   沙特阿拉伯
 -   塞内加尔
--   塞尔维亚
+-   塞尔维亚共和国
 -   塞舌尔
 -   塞拉利昂
 -   新加坡
@@ -550,6 +554,7 @@ Windows 应用商店的客户遍及世界 200 多个国家和地区。 可以选
 > **注意** 有关支持开发者帐户注册的国家和地区的列表，请参阅[帐户类型、位置和费用](https://msdn.microsoft.com/library/windows/apps/jj863494)。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
