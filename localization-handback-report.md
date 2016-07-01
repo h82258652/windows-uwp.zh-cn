@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\xaml-platform\property-path-syntax.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xaml-platform/property-path-syntax.md) | InSyncHandedBackSuccess | [Details](#0b1851bc9d19de5b678f8c6c3a255c0ba3057a853904)
 
 ## Item Details
+##### <a name='0b1851bc9d19de5b678f8c6c3a255c0ba3057a853904'></a> Source: [windows-apps-src\xaml-platform\property-path-syntax.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/xaml-platform/property-path-syntax.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\xaml-platform\property-path-syntax.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/257b3e45104818bac4de9022b15e86528bdffe81/windows-apps-src/xaml-platform/property-path-syntax.md)
+* Handoff File: [property-path-syntax.86cb6f42ce5dbf771c1e3f0b026d0e8b0e7a8ffe.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/3fd0c427dfc53e7f00bad67e893d53907bd29e16/ol-handoff/Microsoft/windows-apps.zh-cn/master/property-path-syntax.86cb6f42ce5dbf771c1e3f0b026d0e8b0e7a8ffe.zh-cn.xlf)
+* Handoff Datetime: 2016-06-27 18:03:40
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [property-path-syntax.86cb6f42ce5dbf771c1e3f0b026d0e8b0e7a8ffe.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/cc990bd8a407fc9fa514b1f83c057fa4582e6f6d/ol-handback/Microsoft/windows-apps.zh-cn/master/property-path-syntax.86cb6f42ce5dbf771c1e3f0b026d0e8b0e7a8ffe.zh-cn.xlf)
+* Handback Datetime: 2016-07-01 14:53:25
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
