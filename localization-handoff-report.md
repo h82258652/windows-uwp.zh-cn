@@ -1,56 +1,89 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 5
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\graphics\storyboarded-animations.md](https://github.com/Microsoft/windows-apps/blob/f926a6d97fa486c675fd53faa22db210c2be9fbc/windows-apps-src/graphics/storyboarded-animations.md) | OutofSyncHandedBackSuccess | [Details](#bcf0dfc696908ae26b37d5dc2f5994d79667ab1d2691)
- [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps/blob/b54ea21d12f68830295f59af219c7fe811edd832/windows-apps-src/publish/microsoft-advertising-payment-process.md) | HandedOffSuccess | [Details](#5805f316ed7bc08268fd6c201d740f3a3222629e3623)
- [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/82ff562a192aa42d383f4cd7221c495c3bfbad0f/windows-apps-src/publish/payout-summary.md) | OutofSyncHandedBackSuccess | [Details](#86355a194eb61b8d13eba22d9f6e7c566339cd283631)
+ [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://github.com/Microsoft/windows-apps/blob/a47dc36129daaed02cb181dde625d440fa4cf6e4/windows-apps-src/get-started/create-a-basic-windows-10-app-in-cpp.md) | OutofSyncHandedBackSuccess | [Details](#5989c6ac655011c9918f6e520ae5bcad30cb1e5d2279)
+ [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/a47dc36129daaed02cb181dde625d440fa4cf6e4/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md) | OutofSyncHandedBackSuccess | [Details](#192354e5c9087ace3d864cd48ba63f8f6bef7dd42280)
+ [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/a47dc36129daaed02cb181dde625d440fa4cf6e4/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md) | OutofSyncHandedBackSuccess | [Details](#6342b96fd588397aa5bed522771a09b3ac95f6d72281)
+ [windows-apps-src\get-started\get-set-up.md](https://github.com/Microsoft/windows-apps/blob/a47dc36129daaed02cb181dde625d440fa4cf6e4/windows-apps-src/get-started/get-set-up.md) | OutofSyncHandedBackSuccess | [Details](#f20707cab08998d86142f7d657b51faa78d9a7772283)
+ [windows-apps-src\get-started\images\vs-2015-community-setup.png](https://github.com/Microsoft/windows-apps/blob/a47dc36129daaed02cb181dde625d440fa4cf6e4/windows-apps-src/get-started/images/vs-2015-community-setup.png) | HandedOffSuccess | [Details](#c76ac5f735c5dc93e5f5014b77181a2e862386a12498)
 
 ## Item Details
-##### <a name='bcf0dfc696908ae26b37d5dc2f5994d79667ab1d2691'></a> Source: [windows-apps-src\graphics\storyboarded-animations.md](https://github.com/Microsoft/windows-apps/blob/f926a6d97fa486c675fd53faa22db210c2be9fbc/windows-apps-src/graphics/storyboarded-animations.md)
+##### <a name='5989c6ac655011c9918f6e520ae5bcad30cb1e5d2279'></a> Source: [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://github.com/Microsoft/windows-apps/blob/a47dc36129daaed02cb181dde625d440fa4cf6e4/windows-apps-src/get-started/create-a-basic-windows-10-app-in-cpp.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [storyboarded-animations.b976e28360d00330643214269632f748b2542c0b.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f8591a9e0907ca23e0b5804f272c2927ce7fe485/ol-handoff/Microsoft/windows-apps.zh-cn/master/storyboarded-animations.b976e28360d00330643214269632f748b2542c0b.zh-cn.xlf)
-* Handoff Datetime: 2016-06-30 22:38:18
+* Handoff File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/9e5d4a0764ddafd9f920504f8442913a6df96eb9/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.zh-cn.xlf)
+* Handoff Datetime: 2016-07-01 00:07:41
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\graphics\storyboarded-animations.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/58514041e5577d4e930103b2dec876c5b4137287/windows-apps-src/graphics/storyboarded-animations.md)
-* Current Handback File: [storyboarded-animations.b976e28360d00330643214269632f748b2542c0b.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/d1ee1e724d0568bda4bc3fbdeb825d6edcbcb51e/ol-handback/Microsoft/windows-apps.zh-cn/master/storyboarded-animations.b976e28360d00330643214269632f748b2542c0b.zh-cn.xlf)
+* Current Target File: [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/58514041e5577d4e930103b2dec876c5b4137287/windows-apps-src/get-started/create-a-basic-windows-10-app-in-cpp.md)
+* Current Handback File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/d1ee1e724d0568bda4bc3fbdeb825d6edcbcb51e/ol-handback/Microsoft/windows-apps.zh-cn/master/create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.zh-cn.xlf)
 * Current Handback Datetime: 2016-06-30 20:13:18
 * [Back to Top](#report-top)
 
-##### <a name='5805f316ed7bc08268fd6c201d740f3a3222629e3623'></a> Source: [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps/blob/b54ea21d12f68830295f59af219c7fe811edd832/windows-apps-src/publish/microsoft-advertising-payment-process.md)
+##### <a name='192354e5c9087ace3d864cd48ba63f8f6bef7dd42280'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/a47dc36129daaed02cb181dde625d440fa4cf6e4/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/9e5d4a0764ddafd9f920504f8442913a6df96eb9/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.zh-cn.xlf)
+* Handoff Datetime: 2016-07-01 00:07:41
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/58514041e5577d4e930103b2dec876c5b4137287/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md)
+* Current Handback File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/d1ee1e724d0568bda4bc3fbdeb825d6edcbcb51e/ol-handback/Microsoft/windows-apps.zh-cn/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.zh-cn.xlf)
+* Current Handback Datetime: 2016-06-30 20:13:18
+* [Back to Top](#report-top)
+
+##### <a name='6342b96fd588397aa5bed522771a09b3ac95f6d72281'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/a47dc36129daaed02cb181dde625d440fa4cf6e4/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/9e5d4a0764ddafd9f920504f8442913a6df96eb9/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-cn.xlf)
+* Handoff Datetime: 2016-07-01 00:07:41
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/58514041e5577d4e930103b2dec876c5b4137287/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
+* Current Handback File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/d1ee1e724d0568bda4bc3fbdeb825d6edcbcb51e/ol-handback/Microsoft/windows-apps.zh-cn/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-cn.xlf)
+* Current Handback Datetime: 2016-06-30 20:13:18
+* [Back to Top](#report-top)
+
+##### <a name='f20707cab08998d86142f7d657b51faa78d9a7772283'></a> Source: [windows-apps-src\get-started\get-set-up.md](https://github.com/Microsoft/windows-apps/blob/a47dc36129daaed02cb181dde625d440fa4cf6e4/windows-apps-src/get-started/get-set-up.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/9e5d4a0764ddafd9f920504f8442913a6df96eb9/ol-handoff/Microsoft/windows-apps.zh-cn/master/get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-cn.xlf)
+* Handoff Datetime: 2016-07-01 00:07:41
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\get-started\get-set-up.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/58514041e5577d4e930103b2dec876c5b4137287/windows-apps-src/get-started/get-set-up.md)
+* Current Handback File: [get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/d1ee1e724d0568bda4bc3fbdeb825d6edcbcb51e/ol-handback/Microsoft/windows-apps.zh-cn/master/get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-cn.xlf)
+* Current Handback Datetime: 2016-06-30 20:13:18
+* [Back to Top](#report-top)
+
+##### <a name='c76ac5f735c5dc93e5f5014b77181a2e862386a12498'></a> Source: [windows-apps-src\get-started\images\vs-2015-community-setup.png](https://github.com/Microsoft/windows-apps/blob/a47dc36129daaed02cb181dde625d440fa4cf6e4/windows-apps-src/get-started/images/vs-2015-community-setup.png)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f8591a9e0907ca23e0b5804f272c2927ce7fe485/ol-handoff/Microsoft/windows-apps.zh-cn/master/microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.zh-cn.xlf)
-* Handoff Datetime: 2016-06-30 22:38:18
-* Handoff Reason: Include
+* Handoff File: [c76ac5f735c5dc93e5f5014b77181a2e862386a1.png](https://github.com/Microsoft/WDG.handoff/blob/9e5d4a0764ddafd9f920504f8442913a6df96eb9/ol-handoff/Microsoft/windows-apps.zh-cn/master/c76ac5f735c5dc93e5f5014b77181a2e862386a1.png)
+* Handoff Datetime: 2016-07-01 00:07:41
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\get-started\get-set-up.md
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='86355a194eb61b8d13eba22d9f6e7c566339cd283631'></a> Source: [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/82ff562a192aa42d383f4cd7221c495c3bfbad0f/windows-apps-src/publish/payout-summary.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f8591a9e0907ca23e0b5804f272c2927ce7fe485/ol-handoff/Microsoft/windows-apps.zh-cn/master/payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf)
-* Handoff Datetime: 2016-06-30 22:38:18
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/58514041e5577d4e930103b2dec876c5b4137287/windows-apps-src/publish/payout-summary.md)
-* Current Handback File: [payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/d1ee1e724d0568bda4bc3fbdeb825d6edcbcb51e/ol-handback/Microsoft/windows-apps.zh-cn/master/payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf)
-* Current Handback Datetime: 2016-06-30 20:13:18
 * [Back to Top](#report-top)
 
 
