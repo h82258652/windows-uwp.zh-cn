@@ -1,43 +1,59 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\gaming\directx-and-xaml-interop.md](https://github.com/Microsoft/windows-apps/blob/a8dcb8161d66c322114608b87f7b074c5b9797cb/windows-apps-src/gaming/directx-and-xaml-interop.md) | OutofSyncHandedBackSuccess | [Details](#67813afb9ef6c723186c1d04b7d48f4e8281fbc52188)
- [windows-apps-src\security\cryptographic-keys.md](https://github.com/Microsoft/windows-apps/blob/e7fba930c108744815f261e7d01d198626d7e7c9/windows-apps-src/security/cryptographic-keys.md) | OutofSyncHandedBackSuccess | [Details](#a86f31a0b62958f1300e386dfb99fd7fc1432fc53703)
+ [windows-apps-src\controls-and-patterns\app-bars.md](https://github.com/Microsoft/windows-apps/blob/a2f4e7a679ca47f2a034e19936c1115e87a2eb24/windows-apps-src/controls-and-patterns/app-bars.md) | OutofSyncHandedBackSuccess | [Details](#c7107599529d5af5b118a46cb065106f08afe113503)
+ [windows-apps-src\controls-and-patterns\auto-suggest-box.md](https://github.com/Microsoft/windows-apps/blob/a2f4e7a679ca47f2a034e19936c1115e87a2eb24/windows-apps-src/controls-and-patterns/auto-suggest-box.md) | OutofSyncHandedBackSuccess | [Details](#12f5905fce642a10656864e41325c8f4bd56c025504)
+ [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://github.com/Microsoft/windows-apps/blob/a2f4e7a679ca47f2a034e19936c1115e87a2eb24/windows-apps-src/controls-and-patterns/tabs-pivot.md) | OutofSyncHandedBackSuccess | [Details](#b6cf34346ad557ce53d3009afe8bc83bc7ed21aa1924)
 
 ## Item Details
-##### <a name='67813afb9ef6c723186c1d04b7d48f4e8281fbc52188'></a> Source: [windows-apps-src\gaming\directx-and-xaml-interop.md](https://github.com/Microsoft/windows-apps/blob/a8dcb8161d66c322114608b87f7b074c5b9797cb/windows-apps-src/gaming/directx-and-xaml-interop.md)
+##### <a name='c7107599529d5af5b118a46cb065106f08afe113503'></a> Source: [windows-apps-src\controls-and-patterns\app-bars.md](https://github.com/Microsoft/windows-apps/blob/a2f4e7a679ca47f2a034e19936c1115e87a2eb24/windows-apps-src/controls-and-patterns/app-bars.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/4c56f388b8a69393390b166543e0cae84278deae/ol-handoff/Microsoft/windows-apps.zh-cn/master/directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.zh-cn.xlf)
-* Handoff Datetime: 2016-07-05 20:22:47
+* Handoff File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/3cca05f1401ac3fa6993c405ab858f3085554c2b/ol-handoff/Microsoft/windows-apps.zh-cn/master/app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.zh-cn.xlf)
+* Handoff Datetime: 2016-07-05 20:53:37
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\gaming\directx-and-xaml-interop.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/58514041e5577d4e930103b2dec876c5b4137287/windows-apps-src/gaming/directx-and-xaml-interop.md)
-* Current Handback File: [directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/d1ee1e724d0568bda4bc3fbdeb825d6edcbcb51e/ol-handback/Microsoft/windows-apps.zh-cn/master/directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.zh-cn.xlf)
-* Current Handback Datetime: 2016-06-30 20:13:18
+* Current Target File: [windows-apps-src\controls-and-patterns\app-bars.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/6e3fa9f7bb8fe98c835b89fda6416c88028ae9ab/windows-apps-src/controls-and-patterns/app-bars.md)
+* Current Handback File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/b48cd920b64da460a844a3192119c6d694d22e85/ol-handback/Microsoft/windows-apps.zh-cn/master/app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.zh-cn.xlf)
+* Current Handback Datetime: 2016-06-27 15:17:17
 * [Back to Top](#report-top)
 
-##### <a name='a86f31a0b62958f1300e386dfb99fd7fc1432fc53703'></a> Source: [windows-apps-src\security\cryptographic-keys.md](https://github.com/Microsoft/windows-apps/blob/e7fba930c108744815f261e7d01d198626d7e7c9/windows-apps-src/security/cryptographic-keys.md)
+##### <a name='12f5905fce642a10656864e41325c8f4bd56c025504'></a> Source: [windows-apps-src\controls-and-patterns\auto-suggest-box.md](https://github.com/Microsoft/windows-apps/blob/a2f4e7a679ca47f2a034e19936c1115e87a2eb24/windows-apps-src/controls-and-patterns/auto-suggest-box.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [cryptographic-keys.3ee8361fc3a620e6542c32a4f3d3dc076be88730.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/4c56f388b8a69393390b166543e0cae84278deae/ol-handoff/Microsoft/windows-apps.zh-cn/master/cryptographic-keys.3ee8361fc3a620e6542c32a4f3d3dc076be88730.zh-cn.xlf)
-* Handoff Datetime: 2016-07-05 20:22:47
+* Handoff File: [auto-suggest-box.08ef9669893489f032a263a3685fc63bfa28d270.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/3cca05f1401ac3fa6993c405ab858f3085554c2b/ol-handoff/Microsoft/windows-apps.zh-cn/master/auto-suggest-box.08ef9669893489f032a263a3685fc63bfa28d270.zh-cn.xlf)
+* Handoff Datetime: 2016-07-05 20:53:37
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\cryptographic-keys.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/58514041e5577d4e930103b2dec876c5b4137287/windows-apps-src/security/cryptographic-keys.md)
-* Current Handback File: [cryptographic-keys.3ee8361fc3a620e6542c32a4f3d3dc076be88730.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/d1ee1e724d0568bda4bc3fbdeb825d6edcbcb51e/ol-handback/Microsoft/windows-apps.zh-cn/master/cryptographic-keys.3ee8361fc3a620e6542c32a4f3d3dc076be88730.zh-cn.xlf)
-* Current Handback Datetime: 2016-06-30 20:13:18
+* Current Target File: [windows-apps-src\controls-and-patterns\auto-suggest-box.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/6e3fa9f7bb8fe98c835b89fda6416c88028ae9ab/windows-apps-src/controls-and-patterns/auto-suggest-box.md)
+* Current Handback File: [auto-suggest-box.08ef9669893489f032a263a3685fc63bfa28d270.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/b48cd920b64da460a844a3192119c6d694d22e85/ol-handback/Microsoft/windows-apps.zh-cn/master/auto-suggest-box.08ef9669893489f032a263a3685fc63bfa28d270.zh-cn.xlf)
+* Current Handback Datetime: 2016-06-27 15:17:17
+* [Back to Top](#report-top)
+
+##### <a name='b6cf34346ad557ce53d3009afe8bc83bc7ed21aa1924'></a> Source: [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://github.com/Microsoft/windows-apps/blob/a2f4e7a679ca47f2a034e19936c1115e87a2eb24/windows-apps-src/controls-and-patterns/tabs-pivot.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/3cca05f1401ac3fa6993c405ab858f3085554c2b/ol-handoff/Microsoft/windows-apps.zh-cn/master/tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.zh-cn.xlf)
+* Handoff Datetime: 2016-07-05 20:53:37
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/6e3fa9f7bb8fe98c835b89fda6416c88028ae9ab/windows-apps-src/controls-and-patterns/tabs-pivot.md)
+* Current Handback File: [tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/b48cd920b64da460a844a3192119c6d694d22e85/ol-handback/Microsoft/windows-apps.zh-cn/master/tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.zh-cn.xlf)
+* Current Handback Datetime: 2016-06-27 15:17:17
 * [Back to Top](#report-top)
 
 
