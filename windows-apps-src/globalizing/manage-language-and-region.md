@@ -89,8 +89,7 @@ Windows 用户可以采用完全不同于 Windows 的其他语言来运行应用
 
 ### <span id="Create_the_application_language_list."></span><span id="create_the_application_language_list."></span><span id="CREATE_THE_APPLICATION_LANGUAGE_LIST."></span>创建应用程序语言列表。
 
-在运行时，系统将确定应用在其清单中声明支持的用户语言首选项，然后创建一个*应用程序语言列表*。 它使用此列表来确定应用程序应该使用的语言。 该列表确定用于应用和系统资源、日期、时间和数字以及其他组件的语言。 例如，资源管理系统（[**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 和 [**WinJS.Resources 命名空间**](https://msdn.microsoft.com/library/windows/apps/br229779)）根据应用程序语言加载 UI 资源。 [
-            **Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 也根据应用程序语言列表选择格式。 通过使用 [**Windows.Globalization.ApplicationLanguages.Languages**](https://msdn.microsoft.com/library/windows/apps/hh972396) 提供应用程序语言列表。
+在运行时，系统将确定应用在其清单中声明支持的用户语言首选项，然后创建一个*应用程序语言列表*。 它使用此列表来确定应用程序应该使用的语言。 该列表确定用于应用和系统资源、日期、时间和数字以及其他组件的语言。 例如，资源管理系统（[**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 和 [**WinJS.Resources 命名空间**](https://msdn.microsoft.com/library/windows/apps/br229779)）根据应用程序语言加载 UI 资源。 [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 也根据应用程序语言列表选择格式。 通过使用 [**Windows.Globalization.ApplicationLanguages.Languages**](https://msdn.microsoft.com/library/windows/apps/hh972396) 提供应用程序语言列表。
 
 语言与资源的匹配十分复杂。 我们建议让 Windows 处理匹配，因为语言标记存在多种可能影响匹配优先级的可选组件，在实践中可能会遇到这些组件。
 
@@ -131,15 +130,13 @@ Windows 以一个标准的易于理解的方式排定语言匹配的优先顺序
 
 通常，[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 命名空间中的 API 元素使用应用程序语言列表确定语言。 如果没有任何一种语言有匹配的格式，则使用用户区域设置。 该区域设置即系统时钟所使用的区域设置。 用户区域设置在“设置”****&gt;“时间和语言”****&gt;“区域和语言”****&gt;“其他日期、时间和区域设置”****&gt;“区域: 更改日期、时间或数字格式”****中提供。 **Windows.Globalization** API 还接受替代来指定要使用的语言列表，而不使用应用程序语言列表。
 
-[
-            **Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 还具有作为帮助程序对象提供的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象。 它帮助应用检查有关语言的详细信息，例如，语言的脚本、显示名称和本地名称。
+[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 还具有作为帮助程序对象提供的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象。 它帮助应用检查有关语言的详细信息，例如，语言的脚本、显示名称和本地名称。
 
 ### <span id="Use_geographic_region_when_appropriate."></span><span id="use_geographic_region_when_appropriate."></span><span id="USE_GEOGRAPHIC_REGION_WHEN_APPROPRIATE."></span>在适当的时候使用地理区域。
 
 你可以使用用户的主地理区域设置来选择要显示给用户的内容，而不是语言。 例如，资讯应用可能会默认显示来自用户主位置的内容，该位置在 Windows 安装时设置并在“区域: 更改日期、时间或数字格式”****下的 Windows UI 中提供，如上一任务所述。 你可以使用 [**Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br241829) 检索当前用户的主区域设置。
 
-[
-            **Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 还具有作为帮助程序对象提供的 [**GeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br206795) 对象。 它帮助应用检查有关特定区域的详细信息，例如，其显示名称、本地名称以及使用的货币。
+[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 还具有作为帮助程序对象提供的 [**GeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br206795) 对象。 它帮助应用检查有关特定区域的详细信息，例如，其显示名称、本地名称以及使用的货币。
 
 ## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>备注
 

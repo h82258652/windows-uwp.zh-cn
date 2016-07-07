@@ -90,8 +90,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectio
 boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
 ```
 
-[
-            **PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 枚举包含可查询的硬件 DRM 功能值有效列表。 若要确定硬件 DRM 是否受支持，请使用查询中的 **HardwareDRM** 成员。 若要确定硬件是否支持高效率视频编码 (HEVC)/H.265 编解码器，请使用查询中的 **HEVC** 成员。
+[**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 枚举包含可查询的硬件 DRM 功能值有效列表。 若要确定硬件 DRM 是否受支持，请使用查询中的 **HardwareDRM** 成员。 若要确定硬件是否支持高效率视频编码 (HEVC)/H.265 编解码器，请使用查询中的 **HEVC** 成员。
 
 还可以使用 [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) 属性获取客户端证书的安全级别，以确定硬件 DRM 是否受支持。 除非返回的证书安全级别大于或等于3000，否则将不个性化或预配客户端（在这种情况下此属性返回值为 0），或者硬件 DRM 将处于未使用状态（在这种情况下该属性将返回小于 3000 的值）。
 

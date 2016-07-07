@@ -23,11 +23,9 @@ ms.openlocfilehash: caf3ad6fecd6ed90c65f85477643fb42ab4787d3
 
 下面介绍了地理编码的类如何与反向地理编码的类相关联：
 
--   [
-            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类提供执行地理编码 ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) 和反向地理编码 ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) 的方法。
+-   [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类提供执行地理编码 ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) 和反向地理编码 ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) 的方法。
 -   这些方法将返回一个 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)。
--   [
-            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 包含 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。 通过 **MapLocationFinderResult** 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合。
+-   [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 包含 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。 通过 **MapLocationFinderResult** 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合。
 -   每个 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象都包含一个 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 对象。 通过每个 **MapLocation** 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 属性来访问该对象。
 
 **重要提示** 必须先指定地图验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
@@ -40,8 +38,7 @@ ms.openlocfilehash: caf3ad6fecd6ed90c65f85477643fb42ab4787d3
 通过执行以下步骤，将地址或地点名称转换为地理位置（地理编码）。
 
 1.  调用 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的 [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) 方法的其中一项重载。
-2.  [
-            **FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) 方法将返回一个 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 对象，该对象包含匹配的 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。
+2.  [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) 方法将返回一个 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 对象，该对象包含匹配的 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。
 3.  通过 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合。
 
 ```csharp
@@ -90,8 +87,7 @@ result = (47.6406099647284,-122.129339994863)
 通过执行以下步骤，将地理位置转换为地址（反向地理编码）。
 
 1.  调用 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类的 [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法。
-2.  [
-            **FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法将返回一个 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 对象，该对象包含匹配的 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。
+2.  [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) 方法将返回一个 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 对象，该对象包含匹配的 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 对象的集合。
 3.  通过 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 属性访问该集合。
 4.  通过每个 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 属性来访问 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 对象。
 

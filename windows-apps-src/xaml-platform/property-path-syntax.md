@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 description: "可以使用 PropertyPath 类和字符串语法来实例化 XAML 或代码中的 PropertyPath 值。"
-title: "Property-path 语法'"
+title: "Property-path 语法&#39;"
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
@@ -100,8 +100,7 @@ ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
 
 ## PropertyPath 类
 
-[
-            **PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 类是用于绑定方案的 [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的基础属性类型。
+[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 类是用于绑定方案的 [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的基础属性类型。
 
 大多数情况下，你可以在 XAML 中应用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，而根本不使用任何代码。 但在某些情况下，你可能希望使用代码定义一个 **PropertyPath** 对象并在运行时将其分配给某个属性。
 

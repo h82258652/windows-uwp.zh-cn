@@ -164,8 +164,7 @@ ms.openlocfilehash: a78dd1030e653d1cf0a1d7f191b4768e5a99860a
 
 通过应用视图的平移/滚动和缩放设置来调整用户交互体验。 应用视图指示用户访问和操作你的应用及其内容的方式。 视图还提供一些行为，如惯性、内容边界回弹和吸附点。
 
-[
-            **ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控件的平移和滚动设置指示用户在视图内容太多而无法放在视口中时，如何在单个视图内进行导航。 例如，单个视图可以是杂志或书的某一页、计算机的文件夹结构、文档库，也可以是某个相册。
+[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控件的平移和滚动设置指示用户在视图内容太多而无法放在视口中时，如何在单个视图内进行导航。 例如，单个视图可以是杂志或书的某一页、计算机的文件夹结构、文档库，也可以是某个相册。
 
 缩放设置适用于光学缩放（受 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控件支持）和 [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件。 语义式缩放是一种触摸优化技术，它在一个视图内呈现和导航大量的相关数据或内容集。 它使用两个不同的分类模式（或缩放级别）进行工作。 这类似于在单个视图中平移和滚动。 平移和滚动可以与语义式缩放一起使用。
 
@@ -188,8 +187,7 @@ ms.openlocfilehash: a78dd1030e653d1cf0a1d7f191b4768e5a99860a
 
     指针是具有统一事件机制的通用输入类型。 它将显示活动输入源（触摸屏、触摸板、鼠标或笔）的基本信息，例如屏幕位置。
 
--   [
-            **ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 等操作手势事件表明一个持续的交互。 它们在用户触摸元素时开始引发，一直持续到用户抬起手指或者操作被取消时。
+-   [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 等操作手势事件表明一个持续的交互。 它们在用户触摸元素时开始引发，一直持续到用户抬起手指或者操作被取消时。
 
     操作事件包括多点触控交互（例如，缩放、平移或旋转）和使用惯性和速度数据的交互（例如拖动）。 操作事件提供的信息并不标识所执行的交互的形式，而是包括诸如位置、转换增量和速度等数据。 你可以使用此触摸数据来确定应执行的交互类型。
 
@@ -642,6 +640,6 @@ End Sub
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

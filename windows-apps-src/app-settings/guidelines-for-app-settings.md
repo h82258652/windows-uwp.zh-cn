@@ -135,8 +135,7 @@ ms.openlocfilehash: aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e4
 * [进度控件指南](https://msdn.microsoft.com/library/windows/apps/hh465469) 
            **对于开发人员 (XAML)**
 * [存储和检索应用数据](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [
-            **EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
+* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
 
 �
 

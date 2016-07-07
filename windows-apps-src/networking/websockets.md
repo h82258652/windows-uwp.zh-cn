@@ -38,8 +38,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 
 ## 使用 MessageWebSocket
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 允许由每个读取操作读取消息的各部分。 **MessageWebSocket** 通常在消息不是非常大的应用场景中使用。 UTF-8 和二进制文件均受支持。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 允许由每个读取操作读取消息的各部分。 **MessageWebSocket** 通常在消息不是非常大的应用场景中使用。 UTF-8 和二进制文件均受支持。
 
 此部分中的代码将创建一个新 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842)，连接到 WebSocket 服务器，然后将数据发送到服务器。 在成功建立连接后，应用将等待触发 [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) 事件，从而指示已接收数据。
 
@@ -175,8 +174,7 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 
 ###  通过 WebSocket 发送消息
 
-在建立连接后，WebSocket 客户端可以将数据发送到该服务器。 [
-            **DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) 方法将返回 一个映射到无符号整数的参数。 与建立连接的任务相比，这将更改我们定义发送消息的任务的方式。
+在建立连接后，WebSocket 客户端可以将数据发送到该服务器。 [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) 方法将返回 一个映射到无符号整数的参数。 与建立连接的任务相比，这将更改我们定义发送消息的任务的方式。
 
 **注意** 当你使用 MessageWebSocket 的 OutputStream 创建新的 DataWriter 对象时，DataWriter 将获取 OutputStream 的所有权，并且将在 DataWriter 超出范围时收回 Outputstream。 这会导致使用 OutputStream 的任何后续尝试失败，并显示 HRESULT 值 0x80000013。 若要避免收回 OutputStream，则可通过此代码调用 DataWriter 的 DetachStream 方法， 从而返回 WebSocket 对象的流的所有权。
 
@@ -228,13 +226,10 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 
 ## 将高级控件与 WebSocket 结合使用
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 类在使用高级控件时均遵循相同的模型。 与上述主类对应的是访问高级控件的相关类。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 类在使用高级控件时均遵循相同的模型。 与上述主类对应的是访问高级控件的相关类。
 
-[
-            **MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) 提供 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 对象上的 套接字控件数据。
-[
-            **StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) 提供 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 对象上的 套接字控件数据。
+[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) 提供 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 对象上的 套接字控件数据。
+[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) 提供 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 对象上的 套接字控件数据。
 对于这两类 WebSocket 而言，使用的高级控件的基本模式均相同。 下面的讨论将使用 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 作为示例， 不过相同的过程也适用于 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842)。
 
 1.  创建 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 对象。
@@ -248,21 +243,17 @@ WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与�
 
 ## WebSocket 信息类
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 都具有相应的类，用于提供有关 WebSocket 实例的其他信息。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 都具有相应的类，用于提供有关 WebSocket 实例的其他信息。
 
-[
-            **MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) 提供有关 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 的信息，以便于使用 [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) 属性检索该信息类的实例。
+[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) 提供有关 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 的信息，以便于使用 [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) 属性检索该信息类的实例。
 
-[
-            **StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) 提供有关 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 的信息，以便于使用 [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) 属性检索该信息类的实例。
+[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) 提供有关 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 的信息，以便于使用 [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) 属性检索该信息类的实例。
 
 请注意，这两个信息类上的所有属性均为只读形式，并且你能够在 Web 套接字对象的生存期内随时检索当前信息。
 
 ## 处理网络异常
 
-在进行 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作时发生的错误将以 **HRESULT** 值的形式返回。 [
-            **WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) 方法用于将来自 WebSocket 操作的网络错误转化为 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
+在进行 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作时发生的错误将以 **HRESULT** 值的形式返回。 [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) 方法用于将来自 WebSocket 操作的网络错误转化为 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
 
 对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
 

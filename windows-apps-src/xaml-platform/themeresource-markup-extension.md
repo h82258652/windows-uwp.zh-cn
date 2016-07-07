@@ -88,8 +88,7 @@ Windows 运行时提供了专门由 **ThemeResource** 引用的资源集。 这�
 
 在此处，属性接受一个 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 值，并且使用 **ThemeResource** 引用名为 `ButtonBackgroundThemeBrush` 和 `ButtonForegroundThemeBrush` 的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 资源。
 
-[
-            **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的某些可视状态也调整这些相同的属性。 值得注意的是，当单击某个按钮时，背景颜色会更改。 另外，可视状态情节提要中的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 动画使用 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 对象和对以 **ThemeResource** 作为关键帧值的画笔的引用。
+[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的某些可视状态也调整这些相同的属性。 值得注意的是，当单击某个按钮时，背景颜色会更改。 另外，可视状态情节提要中的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 动画使用 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 对象和对以 **ThemeResource** 作为关键帧值的画笔的引用。
 
 ```xml
 <VisualState x:Name="Pressed">

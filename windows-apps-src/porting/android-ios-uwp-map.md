@@ -1,8 +1,11 @@
 ---
 author: GrantMeStrength
-Description: 比较 iOS、Android 和 Windows 10 之间的平台功能。
+Description: "比较 iOS、Android 和 Windows 10 之间的平台功能。"
 Search.Product: eADQiWindows 10XVcnh
-title: 适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
+title: "适用于 Android 和 iOS 开发人员的 Windows 应用概念映射"
+ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
+ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
+
 ---
 
 #适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
@@ -137,7 +140,7 @@ title: 适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 <td align="left"><strong>初始屏幕。</strong> <br><br>在应用启动时显示图像，主要是用于品牌推广。</td>
 <td align="left">默认情况下，不提供初始屏幕，并通过编辑前几个活动的<strong>主题背景</strong>实现。</td>
 <td align="left">应用必须具有<strong>静态启动映像</strong>或 <strong>XIB/情节提要启动文件</strong>。</td>
-<td align="left">使用<strong>图像</strong>和彩色背景创建初始屏幕。 <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">初始屏幕时间可以延长</a>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">添加初始屏幕</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465338.aspx">初始屏幕指南</a></td>
+<td align="left">使用<strong>图像</strong>和彩色背景创建初始屏幕。 <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">初始屏幕时间可以延长</a>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">添加初始屏幕</a></td>
 </tr>
 </tbody>
 </table>
@@ -660,6 +663,7 @@ title: 适用于 Android 和 iOS 开发人员的 Windows 应用概念映射
 </table>
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

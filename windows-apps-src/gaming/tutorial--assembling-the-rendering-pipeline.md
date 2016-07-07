@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 装配呈现框架
-description: 现在，我们开始讨论示例游戏如何使用该结构和状态显示其图形。
+title: "装配呈现框架"
+description: "现在，我们开始讨论示例游戏如何使用该结构和状态显示其图形。"
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5eb6ea7ad1a30f020c155007396383b88d10c0a8
+
 ---
 
 # 装配呈现框架
@@ -6321,6 +6325,7 @@ void Material::RenderSetup(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

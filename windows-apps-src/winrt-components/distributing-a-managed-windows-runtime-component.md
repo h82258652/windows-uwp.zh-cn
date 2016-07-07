@@ -1,18 +1,18 @@
 ---
-author: martinekuan
-title: 分配托管的 Windows 运行时组件
-description: 你可以通过文件副本分配 Windows 运行时组件。
+author: msatranjr
+title: "分配托管的 Windows 运行时组件"
+description: "你可以通过文件副本分配 Windows 运行时组件。"
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: 3d7a51ed13f63ca9d6070fbbe860c653c4deaf07
+
 ---
 
 
 # 分配托管的 Windows 运行时组件
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 你可以通过文件副本分配 Windows 运行时组件。 但是，如果组件包括许多文件，安装对用户而言会很繁琐。 另外，放置文件错误或无法设置引用可能会给他们造成问题。 为了便于安装和使用，你可以将复杂的组件打包为 Visual Studio 扩展 SDK。 用户仅需为整个程序包设置一个引用即可。 通过使用“扩展和更新”****对话框，他们可以轻松找到和安装组件，如 MSDN 库中的[查找和使用 Visual Studio 扩展](https://msdn.microsoft.com/library/vstudio/dd293638.aspx)所述。
 
@@ -75,6 +75,6 @@ For example: Microsoft.Cpp.Build.dll
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

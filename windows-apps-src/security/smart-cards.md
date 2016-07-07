@@ -78,8 +78,7 @@ SmartCardProvisioning provisioning = await
           pinPolicy);
 ```
 
-[
-            **RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) 返回关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象之后，将设置虚拟智能卡并且为使用做好准备。
+[**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) 返回关联的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 对象之后，将设置虚拟智能卡并且为使用做好准备。
 
 ## 处理身份验证质询
 
@@ -155,8 +154,7 @@ bool result = await provisioning.RequestPinChangeAsync();
 请求 PIN 重置的步骤：
 
 1.  调用 [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 以启动操作。 此调用包括一个表示智能卡和 PIN 重置请求的 [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 方法。
-2.  [
-            **SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 提供我们的 **ChallengeResponseAlgorithm**（包装在 [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) 调用中）用于比较卡的质询值和由服务或管理工具提供的管理员密钥的信息，以便对请求进行身份验证。
+2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) 提供我们的 **ChallengeResponseAlgorithm**（包装在 [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) 调用中）用于比较卡的质询值和由服务或管理工具提供的管理员密钥的信息，以便对请求进行身份验证。
 
 3.  如果质询成功，[**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) 调用将完成；如果成功重置 PIN，将返回 **true**。
 

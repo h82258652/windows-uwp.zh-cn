@@ -141,8 +141,7 @@ var keyCreationResult = await KeyCredentialManager
     .RequestCreateAsync(AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-[
-            **RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是创建公钥和私钥的部分。 如果设备具有正确的 TPM 芯片，API 将请求 TPM 芯片创建私钥和公钥并存储结果；如果不存在可用的 TPM 芯片，操作系统将在代码中创建密钥对。 应用无法直接访问所创建的私钥。 部分创建的密钥对也是生成的证明信息。 （有关证明的详细信息，请参阅下一部分。）
+[**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是创建公钥和私钥的部分。 如果设备具有正确的 TPM 芯片，API 将请求 TPM 芯片创建私钥和公钥并存储结果；如果不存在可用的 TPM 芯片，操作系统将在代码中创建密钥对。 应用无法直接访问所创建的私钥。 部分创建的密钥对也是生成的证明信息。 （有关证明的详细信息，请参阅下一部分。）
 
 在设备上创建密钥对和证明信息后，需要将公钥、可选证明信息和唯一标识符（如电子邮件地址）发送到后端注册服务并存储在后端中。
 
@@ -227,8 +226,7 @@ static async void RegisterUser(string AccountId)
 -   AIK 证书具有有效期。
 -   链中所有颁发的 CA 证书都具有有效期，并且不会撤销。
 -   证明语句格式正确。
--   [
-            **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的签名使用 AIK 公钥。
+-   [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的签名使用 AIK 公钥。
 -   包含在 [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 中的公钥与和证明语句一起发送的公共 RSA 密钥匹配。
 
 你的应用可能为用户分配不同的授权级别，具体取决于这些条件。 例如，如果其中一项检查失败，它可能不会注册用户或可能限制用户可以执行的操作。

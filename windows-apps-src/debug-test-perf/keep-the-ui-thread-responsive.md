@@ -27,8 +27,7 @@ ms.openlocfilehash: 6144b5b60a0092efd1056dd5de166a64733356ec
 -   使用 [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) 延迟实例化元素。
 -   以编程方式根据需要将元素插入树中。
 
-[
-            **CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) 队列适用于在不忙时进行处理的 UI。
+[**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) 队列适用于在不忙时进行处理的 UI。
 
 ## 使用异步 API
 

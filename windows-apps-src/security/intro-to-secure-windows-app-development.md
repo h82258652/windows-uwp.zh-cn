@@ -394,9 +394,7 @@ Windows 应用可以实现 MAC 消息验证，方法是调用 [**MacAlgorithmPro
 
 哈希函数是一种加密算法，用于获取任意长度的数据块并返回固定大小的位字符串（称为哈希值）。 整个系列的哈希函数都可以执行此操作。
 
-在上述消息传输方案中可以使用哈希值代替 MAC。 发送方发送哈希值和消息，接收方从发送方的哈希值和消息派生其自己的哈希值并比较这两个哈希值。 在 Windows 10 上运行的应用可以调用 [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 类来枚举可用的哈希算法并运行其中一个算法。 [
-            **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 类表示哈希值。 [
-            **CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法可用于重复对不同的数据进行哈希操作，而无需在每次使用时重新创建对象。 **CryptographicHash** 类的 Append 方法将新数据添加到缓冲区以进行哈希操作。 以下 C# 代码示例中显示了这一完整过程。
+在上述消息传输方案中可以使用哈希值代替 MAC。 发送方发送哈希值和消息，接收方从发送方的哈希值和消息派生其自己的哈希值并比较这两个哈希值。 在 Windows 10 上运行的应用可以调用 [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 类来枚举可用的哈希算法并运行其中一个算法。 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 类表示哈希值。 [**CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法可用于重复对不同的数据进行哈希操作，而无需在每次使用时重新创建对象。 **CryptographicHash** 类的 Append 方法将新数据添加到缓冲区以进行哈希操作。 以下 C# 代码示例中显示了这一完整过程。
 
 ```cs
 public void SampleReusableHash()

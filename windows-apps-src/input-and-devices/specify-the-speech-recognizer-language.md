@@ -67,11 +67,9 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 
 通过检查 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 类的下列两种静态属性之一，来确定设备上受支持的语言：
 
--   [
-            **SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251) - 可与预定义的听写语法和 Web 搜索语法一起使用的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象的集合。
+-   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251) - 可与预定义的听写语法和 Web 搜索语法一起使用的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象的集合。
 
--   [
-            **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250) - 可与列表约束或语音识别语法规范 (SRGS) 文件一起使用的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象的集合。
+-   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250) - 可与列表约束或语音识别语法规范 (SRGS) 文件一起使用的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象的集合。
 
 ## 指定语言
 
@@ -124,6 +122,6 @@ SRGS 语法是由 [**SpeechRecognitionGrammarFileConstraint**](https://msdn.micr
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

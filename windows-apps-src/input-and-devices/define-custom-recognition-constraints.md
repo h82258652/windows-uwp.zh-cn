@@ -31,12 +31,9 @@ ms.openlocfilehash: 75e7367ee13357d3463213ca7d8f1ff37c4f0b77
 
 我们在此处介绍三种可在应用内使用的语音识别约束。 （有关语音命令约束，请参阅[在 Cortana 中使用语音命令启动前台应用](launch-a-foreground-app-with-voice-commands-in-cortana.md)。）
 
--   [
-            **SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) - 基于预定义语法的约束（听写或 Web 搜索）。
--   [
-            **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) - 基于字词或短语列表的约束。
--   [
-            **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) - 在语音识别语法规范 (SRGS) 文件中定义的约束。
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) - 基于预定义语法的约束（听写或 Web 搜索）。
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) - 基于字词或短语列表的约束。
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) - 在语音识别语法规范 (SRGS) 文件中定义的约束。
 
 每个语音识别器都可具有一个约束集合。 只有以下约束组合有效：
 
@@ -243,6 +240,6 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

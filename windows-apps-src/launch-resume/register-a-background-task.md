@@ -63,16 +63,16 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 检查现有注册
+## [!div class="tabbedCodeSnippets"]
 
 
-检查任务是否已注册。 请务必检查此项，因为如果任务已多次注册，则将在该任务触发时运行多次，这可占用过多的 CPU 并可能导致意外行为。
+检查现有注册 检查任务是否已注册。
 
-你可以通过查询 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 属性并在结果上迭代来检查现有注册。 检查每个实例的名称 - 如果该名称与正注册的任务的名称匹配，则跳出循环并设置标志变量，以便你的代码可以在下一步中选择不同的路径。
+请务必检查此项，因为如果任务已多次注册，则将在该任务触发时运行多次，这可占用过多的 CPU 并可能导致意外行为。 你可以通过查询 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 属性并在结果上迭代来检查现有注册。
 
-> **注意** 使用应用唯一的后台任务名称。 确保每个后台任务都具有唯一的名称。
+> 检查每个实例的名称 - 如果该名称与正注册的任务的名称匹配，则跳出循环并设置标志变量，以便你的代码可以在下一步中选择不同的路径。 **注意** 使用应用唯一的后台任务名称。
 
-以下代码使用我们在上一步中创建的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 注册后台任务：
+确保每个后台任务都具有唯一的名称。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -136,16 +136,16 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 注册后台任务（或返回现有注册）
+## 以下代码使用我们在上一步中创建的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 注册后台任务：
 
 
-检查在现有后台任务注册的列表中是否找到该任务。 如果有，则返回该任务的实例。
+[!div class="tabbedCodeSnippets"] 注册后台任务（或返回现有注册）
 
-否则，使用新 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象注册任务。 此代码应检查条件参数是否为空，如果不为空，则将条件添加到注册对象。 返回 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法返回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)。
+检查在现有后台任务注册的列表中是否找到该任务。 如果有，则返回该任务的实例。 否则，使用新 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象注册任务。
 
-> **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
+> 此代码应检查条件参数是否为空，如果不为空，则将条件添加到注册对象。 返回 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法返回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)。 **注意** 后台任务注册参数在注册时进行验证。
 
-以下示例可能返回现有任务，也可能添加注册后台任务的代码（如果有，包含可选系统条件）：
+如果有任何注册参数无效，则会返回一个错误。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -245,10 +245,10 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 完整的后台任务注册实用工具函数
+## 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
 
 
-此示例展示完整的后台任务注册函数。 此函数可用于注册大部分后台任务，但不能注册网络后台任务。
+以下示例可能返回现有任务，也可能添加注册后台任务的代码（如果有，包含可选系统条件）： [!div class="tabbedCodeSnippets"]
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -365,29 +365,29 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 完整的后台任务注册实用工具函数 此示例展示完整的后台任务注册函数。
 
  
-## 相关主题
+## 此函数可用于注册大部分后台任务，但不能注册网络后台任务。
 
 
 ****
 
-* [创建和注册后台任务](create-and-register-a-background-task.md)
-* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
-* [处理取消的后台任务](handle-a-cancelled-background-task.md)
-* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
-* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
-* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
-* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
-* [使用维护触发器](use-a-maintenance-trigger.md)
-* [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
-* [后台任务指南](guidelines-for-background-tasks.md)
+* [[!div class="tabbedCodeSnippets"]](create-and-register-a-background-task.md)
+* [**注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。](declare-background-tasks-in-the-application-manifest.md)
+* [如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。](handle-a-cancelled-background-task.md)
+* [相关主题](monitor-background-task-progress-and-completion.md)
+* [创建和注册后台任务](respond-to-system-events-with-background-tasks.md)
+* [在应用程序清单中声明后台任务](set-conditions-for-running-a-background-task.md)
+* [处理取消的后台任务](update-a-live-tile-from-a-background-task.md)
+* [监视后台任务进度和完成](use-a-maintenance-trigger.md)
+* [使用后台任务响应系统事件](run-a-background-task-on-a-timer-.md)
+* [设置后台任务的运行条件](guidelines-for-background-tasks.md)
 
 ****
 
-* [调试后台任务](debug-a-background-task.md)
-* [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [使用后台任务更新动态磁贴](debug-a-background-task.md)
+* [使用维护触发器](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
@@ -395,6 +395,6 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

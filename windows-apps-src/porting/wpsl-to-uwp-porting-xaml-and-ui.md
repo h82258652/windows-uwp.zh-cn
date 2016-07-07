@@ -155,12 +155,9 @@ Windows Phone Silverlight 应用栏和应用栏按钮无法像在 UWP 应用中�
 UWP 应用的绑定相关的功能当前具有以下限制：
 
 -   没有对数据输入验证以及 [**IDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx) 和 [**INotifyDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.inotifydataerrorinfo.aspx) 接口的内置支持。
--   [
-            **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类不包含 Windows Phone Silverlight 中所提供的扩展格式属性。 不过，你仍然可以实现 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 以提供自定义格式。
--   [
-            **IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 方法将语言字符串视为参数而不是 [**CultureInfo**](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx) 对象。
--   [
-            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 类不内置支持排序和筛选以及对工作执行差异化分组。 有关详细信息，请参阅[深度数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)和[数据绑定示例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
+-   [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类不包含 Windows Phone Silverlight 中所提供的扩展格式属性。 不过，你仍然可以实现 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 以提供自定义格式。
+-   [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 方法将语言字符串视为参数而不是 [**CultureInfo**](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx) 对象。
+-   [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 类不内置支持排序和筛选以及对工作执行差异化分组。 有关详细信息，请参阅[深度数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)和[数据绑定示例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
 
 尽管相同的绑定功能仍然大部分受支持，但 Windows 10 提供性能更佳的全新绑定机制（称为编译绑定），它使用 {x:Bind} 标记扩展。 请参阅[数据绑定：通过对 XAML 数据绑定的新增功能提升应用性能](http://channel9.msdn.com/Events/Build/2015/3-635)和 [x:Bind 示例](http://go.microsoft.com/fwlink/p/?linkid=619989)。
 
@@ -212,8 +209,7 @@ Windows Phone Silverlight 应用使用在 **Microsoft.Phone.Controls** 命名空
 
 Windows Phone Silverlight 应用使用 **CultureInfo** 类帮助实现应用全球化。 UWP 应用使用 MRT（现代资源技术），此技术支持在运行时和在 Visual Studio 设计图面中动态加载应用资源（本地化、比例和主题）。 有关详细信息，请参阅[文件、数据和全球化指南](https://msdn.microsoft.com/library/windows/apps/dn611859)。
 
-[
-            **ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
+[**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
 
 ## 媒体和图形
 
@@ -398,6 +394,6 @@ Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

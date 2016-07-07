@@ -68,8 +68,7 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 
 选项 2：单个 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
 
-[
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 增加了一些复杂性，但仅使用单个面板元素。
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 增加了一些复杂性，但仅使用单个面板元素。
 
 ```xml
   <Grid>
@@ -157,8 +156,7 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 
 ## 使用面板的内置边框属性
 
-[
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 和 [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) 控件具有内置边框属性，可用于在其周围绘制边框，而无需向你的 XAML 添加额外的 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素。 支持内置边框的新属性是：**BorderBrush**、**BorderThickness**、**CornerRadius** 和 **Padding**。 其中每一属性都是 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)，因此你可以将其用于绑定和动画。 它们设计为一个单独 **Border** 元素的完整替代。
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 和 [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) 控件具有内置边框属性，可用于在其周围绘制边框，而无需向你的 XAML 添加额外的 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素。 支持内置边框的新属性是：**BorderBrush**、**BorderThickness**、**CornerRadius** 和 **Padding**。 其中每一属性都是 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)，因此你可以将其用于绑定和动画。 它们设计为一个单独 **Border** 元素的完整替代。
 
 如果你的 UI 具有围绕这些面板的 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素，请改用内置边框，这可以在应用的布局结构中节省额外的元素。 如前面所述，这可以节省大量资源，在重复 UI 的情况下尤其如此。
 
@@ -173,13 +171,11 @@ ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
 
 ## 使用 **SizeChanged** 事件响应布局更改
 
-[
-            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 类公开两个相似的事件，用于响应布局更改：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged)。 当在布局期间调整元素大小时，你可能正在使用其中一个事件接收通知。 两个事件的语义是不同的，因为在两者之间进行选择时有重要的性能注意事项。
+[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 类公开两个相似的事件，用于响应布局更改：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged)。 当在布局期间调整元素大小时，你可能正在使用其中一个事件接收通知。 两个事件的语义是不同的，因为在两者之间进行选择时有重要的性能注意事项。
 
 若要获取良好性能，选择 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) 在大多数情况下都没有错。 **SizeChanged** 具有直观的语义。 当 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的大小已更新时，将在布局期间引发它。
 
-[
-            **LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 还会在布局期间引发，但它具有全局语义，无论何时更新元素，都会将其引发。 通常只在事件处理程序中进行本地处理，在此情况下将以多于必需的频率运行代码。 仅当你需要知道元素何时在不更改大小的情况下重新定位（此情况不常见）时使用 **LayoutUpdated**。
+[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 还会在布局期间引发，但它具有全局语义，无论何时更新元素，都会将其引发。 通常只在事件处理程序中进行本地处理，在此情况下将以多于必需的频率运行代码。 仅当你需要知道元素何时在不更改大小的情况下重新定位（此情况不常见）时使用 **LayoutUpdated**。
 
 ## 在面板之间选择
 

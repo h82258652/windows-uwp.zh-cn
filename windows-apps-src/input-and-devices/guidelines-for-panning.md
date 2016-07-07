@@ -194,6 +194,6 @@ Windows 8 支持三种类型的平移：
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
-title: 使用计时器提交工作项
-description: 了解如何创建在经过计时器时间后运行的工作项。
+title: "使用计时器提交工作项"
+description: "了解如何创建在经过计时器时间后运行的工作项。"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
+
 ---
 # 使用计时器提交工作项
 
@@ -199,7 +203,7 @@ description: 了解如何创建在经过计时器时间后运行的工作项。
 
 ## 取消计时器
 
-如果计时器仍在倒计时，但是已不再需要工作项，调用 [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588)。 计时器被取消，工作项也不会提交到线程池。
+如果计时器仍在倒计时，但是已不再需要工作项，调用 [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588)。 计时器会取消，而工作项不会提交到线程池。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -228,6 +232,7 @@ description: 了解如何创建在经过计时器时间后运行的工作项。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

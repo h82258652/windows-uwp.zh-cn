@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: 你的应用需要包含各种徽标、屏幕截图和图像。
-title: 应用屏幕截图和图像
+Description: "你的应用需要包含各种徽标、屏幕截图和图像。"
+title: "应用屏幕截图和图像"
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
+ms.sourcegitcommit: ecb030b7c529f765eded46e4e3e9db99ad0c27e8
+ms.openlocfilehash: 9eac5658e2ac04b2abc1bf06abf5c73b16260bc7
+
 ---
 
 # 应用屏幕截图和图像
@@ -12,7 +15,7 @@ ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 
 在[应用提交过程](app-submissions.md)中，你将在[描述](create-app-descriptions.md)步骤中提供你的[屏幕截图](#screenshots)和[促销插图](#promotional-artwork)。 这些图像将用于帮助你在应用商店中显示应用。
 
-应用商店还会使用你包含在你的应用包中的应用磁贴以及其他图像。 运行 [Windows 应用认证工具包](https://msdn.microsoft.com/library/windows/apps/mt186449)可确定你是否缺少任何必需的图像。
+应用商店还会使用你包含在你的应用包中的应用磁贴以及其他图像。 运行 [Windows 应用认证工具包](https://msdn.microsoft.com/library/windows/apps/mt186449)可确定你是否缺少任何必需的图像。 有关这些图像的指南和建议，请参阅[磁贴和图标资源](../controls-and-patterns/tiles-and-notifications-app-assets.md)。
 
 > **注意** 在应用商店中、客户的“开始”屏幕上以及在应用本身内使用图像的方式可能有所不同，具体取决于客户的操作系统以及其他因素。
 
@@ -102,6 +105,7 @@ Windows 应用商店编辑团队使用不同图像在应用商店中展示应用
 在 Windows 8.1 及更早版本上的应用商店中，促销布局可以使用大小为 414 x 180 像素的图像。 如果你的应用运行在 Windows 8.1 或更早版本上，出于促销考虑，我们建议提供此大小的图像。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

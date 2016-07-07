@@ -35,8 +35,7 @@ ms.openlocfilehash: 17893ac17a741f2a6220b1826547c700af0f0f33
 
 用户能够将 OneDrive 文件标记为脱机可用（默认）或仅联机可用。 此功能使用户能够将大文件（例如图片和视频）移动到其 OneDrive、将其标记为仅联机可用，并节省磁盘空间（在本地保留的唯一内容是元数据文件）。
 
-[
-            **StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 用于确定某个文件当前是否可用。 下表显示了在各种方案中 **StorageFile.IsAvailable** 属性的值。
+[**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 用于确定某个文件当前是否可用。 下表显示了在各种方案中 **StorageFile.IsAvailable** 属性的值。
 
 | 文件类型                              | 联机 | 按流量计费的网络        | 脱机 |
 |-------------------------------------------|--------|------------------------|---------|

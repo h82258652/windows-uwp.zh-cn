@@ -23,8 +23,7 @@ ms.openlocfilehash: b1908e83ffcab562c12c82cfcf7b5fe281d7ada1
 
 ## HttpClient 和 Windows.Web.Http 命名空间概述
 
-[
-            **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间及相关 [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 和 [**Windows.Web.Http.Filters**](https://msdn.microsoft.com/library/windows/apps/dn298623) 命名空间中的类为充当 HTTP 客户端的通用 Windows 平台 (UWP) 应用提供了一个编程接口，以便于执行基本 GET 请求或实现下面列出的更高级的 HTTP 功能。
+[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间及相关 [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 和 [**Windows.Web.Http.Filters**](https://msdn.microsoft.com/library/windows/apps/dn298623) 命名空间中的类为充当 HTTP 客户端的通用 Windows 平台 (UWP) 应用提供了一个编程接口，以便于执行基本 GET 请求或实现下面列出的更高级的 HTTP 功能。
 
 -   执行常见操作（**DELETE**、**GET**、**PUT** 和 **POST**）的方法。 上述每种请求都作为异步操作进行发送。
 
@@ -38,32 +37,21 @@ ms.openlocfilehash: b1908e83ffcab562c12c82cfcf7b5fe281d7ada1
 
 -   异步方法上提供的 HTTP 请求进度信息。
 
-[
-            **Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 类用于声明由 [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 发送的 HTTP 请求消息。 [
-            **Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 类用于声明从 HTTP 请求接收到的 HTTP 响应消息。 HTTP 消息由 IETF 在 [RFC 2616](http://go.microsoft.com/fwlink/p/?linkid=241642) 中进行定义。
+[**Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 类用于声明由 [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 发送的 HTTP 请求消息。 [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 类用于声明从 HTTP 请求接收到的 HTTP 响应消息。 HTTP 消息由 IETF 在 [RFC 2616](http://go.microsoft.com/fwlink/p/?linkid=241642) 中进行定义。
 
-[
-            **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间用于声明 HTTP 内容作为 HTTP 实体正文和包含 Cookie 的标头。 HTTP 内容可以与 HTTP 请求或 HTTP 响应相关联。 **Windows.Web.Http** 命名空间提供很多不同的类来声明 HTTP 内容。
+[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间用于声明 HTTP 内容作为 HTTP 实体正文和包含 Cookie 的标头。 HTTP 内容可以与 HTTP 请求或 HTTP 响应相关联。 **Windows.Web.Http** 命名空间提供很多不同的类来声明 HTTP 内容。
 
--   [
-            **HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625)。 缓冲区形式的内容
--   [
-            **HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685)。 使用 **application/x-www-form-urlencoded** MIME 类型编码的名称和值元组形式的内容
--   [
-            **HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708)。 采用 **multipart/\*** MIME 类型格式的内容。
--   [
-            **HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596)。 编码为 **multipart/form-data** MIME 类型的内容。
--   [
-            **HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649)。 流（供 HTTP GET 方法接收数据和 HTTP POST 方法上载数据使用的内部类型）形式的内容
--   [
-            **HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661)。 字符串形式的内容。
--   [
-            **IHttpContent**](https://msdn.microsoft.com/library/windows/apps/dn279684) - 供开发人员创建其自己的内容对象的基本界面
+-   [**HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625)。 缓冲区形式的内容
+-   [**HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685)。 使用 **application/x-www-form-urlencoded** MIME 类型编码的名称和值元组形式的内容
+-   [**HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708)。 采用 **multipart/\*** MIME 类型格式的内容。
+-   [**HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596)。 编码为 **multipart/form-data** MIME 类型的内容。
+-   [**HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649)。 流（供 HTTP GET 方法接收数据和 HTTP POST 方法上载数据使用的内部类型）形式的内容
+-   [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661)。 字符串形式的内容。
+-   [**IHttpContent**](https://msdn.microsoft.com/library/windows/apps/dn279684) - 供开发人员创建其自己的内容对象的基本界面
 
 “通过 HTTP 发送简单的 GET 请求”部分中的代码段使用 [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661) 类，以字符串的形式表示来自 HTTP GET 请求的 HTTP 响应。
 
-[
-            **Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 命名空间支持创建 HTTP 标头和 Cookie，然后再将生成的 HTTP 标头和 Cookie 作为属性与 [**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 和 [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 对象相关联。
+[**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 命名空间支持创建 HTTP 标头和 Cookie，然后再将生成的 HTTP 标头和 Cookie 作为属性与 [**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 和 [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 对象相关联。
 
 ## 通过 HTTP 发送简单的 GET 请求
 
@@ -119,8 +107,7 @@ catch (Exception ex)
 
 在 C++ 中，没有可用于试用字符串和将其解析到 URI 的方法。 如果应用获取 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 用户输入，则构造函数应位于 try/catch 块中。 如果引发了异常，该应用可以通知用户并请求新的主机名。
 
-[
-            **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 缺少方便函数。 所以，使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和该命名空间中其他类的应用需要使用 **HRESULT** 值。
+[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 缺少方便函数。 所以，使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和该命名空间中其他类的应用需要使用 **HRESULT** 值。
 
 在采用 C#、VB.NET 编写的使用 .NET Framework 4.5 的应用中发生异常时，[System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) 表示应用执行期间的错误。 [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) 属性将返回分配到特定异常的 **HRESULT**。 [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) 属性将返回用于描述异常的消息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
 

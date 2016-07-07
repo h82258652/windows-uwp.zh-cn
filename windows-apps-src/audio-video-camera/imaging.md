@@ -18,14 +18,11 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 **SoftwareBitmap** 类是一个通用 API，可从多个源（包括图像文件、[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259) 对象、Direct3D 图面和代码）中进行创建。 **SoftwareBitmap** 允许你在不同的像素格式和 alpha 模式之间轻松转换，并允许对像素数据的低级别访问。 此外，**SoftwareBitmap** 是可供 Windows 的多个功能使用的通用接口，包括：
 
--   [
-            **CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) 允许你获取由相机捕获的帧以作为 **SoftwareBitmap**。
+-   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) 允许你获取由相机捕获的帧以作为 **SoftwareBitmap**。
 
--   [
-            **VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 允许你获取 **VideoFrame** 的 **SoftwareBitmap** 表示形式。
+-   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 允许你获取 **VideoFrame** 的 **SoftwareBitmap** 表示形式。
 
--   [
-            **FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 允许你在 **SoftwareBitmap** 中检测人脸。
+-   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 允许你在 **SoftwareBitmap** 中检测人脸。
 
 本文中的示例代码使用以下命名空间中的 API。
 
@@ -49,8 +46,7 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 调用 **StorageFile** 对象的 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) 方法，以获取该图像将写入的随机访问流。 调用静态方法 [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) 以获取指定流的 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 类的实例。 **CreateAsync** 的第一个参数是表示编解码器的 GUID，应该使用该编解码器对图像进行编码。 **BitmapEncoder** 类公开一个包含受编码器支持的每个编解码器的 ID（例如 [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226)）的属性。
 
-使用 [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337) 方法设置将进行编码的图像。 你可以设置 [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) 属性的值，以在对图像进行编码时将基本转换应用到该图像。 [
-            **IsThumbnailGenerated**](https://msdn.microsoft.com/library/windows/apps/br226225) 属性可确定缩略图是否由编码器生成。 请注意，并非所有文件格式都支持缩略图，因此如果你使用此功能，你应该会收到由于缩略图不受支持而引发的不受支持的操作错误。
+使用 [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337) 方法设置将进行编码的图像。 你可以设置 [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) 属性的值，以在对图像进行编码时将基本转换应用到该图像。 [**IsThumbnailGenerated**](https://msdn.microsoft.com/library/windows/apps/br226225) 属性可确定缩略图是否由编码器生成。 请注意，并非所有文件格式都支持缩略图，因此如果你使用此功能，你应该会收到由于缩略图不受支持而引发的不受支持的操作错误。
 
 调用 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) 以使编码器将图像数据写入指定的文件。
 

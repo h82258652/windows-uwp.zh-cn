@@ -27,14 +27,10 @@ XAML 开发人员可以使用 WinRT“下拉”到采用 C# 的合成层以便�
 
 视觉对象可以是其他视觉对象的容器，也可以托管内容视觉效果。 为了方便使用，该 API 针对层次结构中的特定任务提供了 一组清晰的 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 对象：
 
--   [
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象。 大部分属性均位于此处且继承自其他视觉对象。
--   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，并添加了插入子视觉对象的功能。
--   [
-            **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)，并包含图像、效果和交换链形式的内容。
--   [
-            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) – 用于管理应用程序和系统合成器进程之间关系的对象工厂。
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象。 大部分属性均位于此处且继承自其他视觉对象。
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，并添加了插入子视觉对象的功能。
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)，并包含图像、效果和交换链形式的内容。
+-   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) – 用于管理应用程序和系统合成器进程之间关系的对象工厂。
 
 对于其他一些合成对象而言，合成器也是一个工厂，可用于剪裁或转换树中的视觉对象以及丰富的动画和效果集。
 
@@ -64,8 +60,7 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 
 -   阅读 Kenny Kerr 的关于此 API 的 MSDN 文章：[图形和动画 - Windows 合成支持 10 倍缩放](https://msdn.microsoft.com/magazine/mt590968)
 -   [合成 GitHub](https://github.com/Microsoft/composition) 中的合成示例。
--   [
-            **API 的完全参考文档**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
+-   [**API 的完全参考文档**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
 -   已知问题：[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)。
 
  

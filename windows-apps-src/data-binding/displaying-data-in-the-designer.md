@@ -90,8 +90,7 @@ else
 
 **d:DataContext** 属性及所有其他设计时属性都已记录在[设计时属性](http://go.microsoft.com/fwlink/p/?LinkId=272504)主题中，这对通用 Windows 平台 (UWP) 应用仍然有效。
 
-[
-            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 没有 **DataContext** 属性，不过它有 **Source** 属性。 因此，你可以使用 **d:Source** 属性在 **CollectionViewSource** 上设置仅设计时示例数据。
+[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 没有 **DataContext** 属性，不过它有 **Source** 属性。 因此，你可以使用 **d:Source** 属性在 **CollectionViewSource** 上设置仅设计时示例数据。
 
 ``` xaml
     <Page.Resources>

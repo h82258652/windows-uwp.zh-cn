@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
-title: 枚举和查询文件和文件夹
-description: 访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。
+title: "枚举和查询文件和文件夹"
+description: "访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
+
 ---
 # 枚举和查询文件和文件夹
 
@@ -132,7 +136,7 @@ description: 访问位于文件夹、库、设备或网络位置的文件和文�
 > ```
 
 
-> **注意** 在 C# 或 Visual Basic 中，请记得将 **async** 关键字放入在其中使用 **await** 运算符的任何方法的方法声明中。
+> **注意** 在 C# 或 Visual Basic 中，请记得在使用 **await** 运算符的任何方法的方法声明中放入 **async** 关键字。
  
 
 或者，你可以使用 [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) 方法获取某个特定位置中的所有项（文件和子文件夹）。 以下示例使用 **GetItemsAsync** 方法获取 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 的根文件夹（而不是在子文件夹）中的所有文件和子文件夹。 然后，该示例会列出每个文件和子文件夹的名称。 如果该项是子文件夹，则该示例会向该名称追加 `"folder"`。
@@ -320,6 +324,7 @@ July ‎2015 (2)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

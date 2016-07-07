@@ -1,6 +1,13 @@
 ---
-Description: author:jnHs 通过保留名称创建应用后，你可以开始着手其发布工作。 第一步是创建提交。
-title: 应用提交 ms.assetid：363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywords:提交应用keywords&#58;必需的信息keywords&#58;必填的字段keywords&#58;必需的数据keywords&#58;清单
+author: jnHs
+Description: "通过保留名称创建应用后，你可以开始着手其发布工作。 第一步是创建提交。"
+title: "应用提交"
+ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
+keywords: checklist
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 59f41b74ca264606b4668addf44a07c82e173579
+
 ---
 
 # 应用提交
@@ -10,7 +17,7 @@ title: 应用提交 ms.assetid：363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywords:�
 
 你可以在应用完成创建并准备发布时开始提交，甚至也可以在编写任一代码行之前开始输入信息。 提交将保存在你的仪表板中，以便只要你准备就绪，就可以开始提交。
 
-发布完应用后，你可以通过在仪表板中创建另一个提交来发布更新版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 若要创建应用的新提交，单击在“应用概述”页面上显示的最新提交旁边的“更新”。
+发布完应用后，你可以通过在仪表板中创建另一个提交来发布更新版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 若要创建应用的新提交，单击在“应用概述”页面上显示的最新提交旁边的“更新”****。
 
 ## 应用提交清单
 
@@ -92,6 +99,7 @@ title: 应用提交 ms.assetid：363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywords:�
 **注意** 有关直接向企业发布业务线 (LOB) 应用的信息，请参阅[向企业分配 LOB 应用](distribute-lob-apps-to-enterprises.md)。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

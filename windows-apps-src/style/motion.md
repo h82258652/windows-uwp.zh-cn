@@ -1,13 +1,6 @@
 ---
-author: mijacobs
-Description: "精心设计的有针对性的动画可以使应用变得更丰富，并且使体验感觉精良和完美。 帮助用户理解上下文更改，将体验与视觉转换紧密相连。"
-title: "UWP 应用中的动作和动画"
-ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
-label: Motion
-template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
-
+Description&#58; 作者：mijacobs 精心设计的有针对性的动画可以使应用变得更丰富，并且使体验感觉精良和完美。 帮助用户理解上下文更改，将体验与视觉转换紧密相连。
+title&#58; UWP 应用中的动作和动画 ms.assetid：21AA1335-765E-433A-85D8-560B340AE966 标签：动作 模板：detail.hbs testmetadata：测试 tocnode：设计和 UI
 ---
 
 # 适用于 UWP 应用的动作
@@ -114,6 +107,6 @@ ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

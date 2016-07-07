@@ -31,14 +31,10 @@ ms.openlocfilehash: 1b7431c20e25173a0aa3f8d6ee0d407be869d60a
 
 为了在该示例中进行比较，我们在下面给出了每个 API 的相关类型：
 
--   [
-            **ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)：提供图形设备及其资源的视觉表示。
--   [
-            **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)：提供用于配置缓冲区以及发出呈现命令的接口。
--   [
-            **IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)：交换链类似于 OpenGL ES 2.0 中的后台缓冲区。 它是图形适配器上的内存区域，其中包含用于显示的最终呈现的图像。 它称为“交换链”，因为它包含多个可以写入以及“已进行交换”可向屏幕提供最新呈现的缓冲区。
--   [
-            **ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)：它包含 Direct3D 设备上下文在其中进行绘制且由交换链提供的 2D 位图缓冲区。 和 OpenGL ES 2.0 一样，你可以拥有多个呈现目标，其中一些目标未绑定到交换链，但用于多通道着色技术。
+-   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)：提供图形设备及其资源的视觉表示。
+-   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)：提供用于配置缓冲区以及发出呈现命令的接口。
+-   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)：交换链类似于 OpenGL ES 2.0 中的后台缓冲区。 它是图形适配器上的内存区域，其中包含用于显示的最终呈现的图像。 它称为“交换链”，因为它包含多个可以写入以及“已进行交换”可向屏幕提供最新呈现的缓冲区。
+-   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)：它包含 Direct3D 设备上下文在其中进行绘制且由交换链提供的 2D 位图缓冲区。 和 OpenGL ES 2.0 一样，你可以拥有多个呈现目标，其中一些目标未绑定到交换链，但用于多通道着色技术。
 
 在该模板中，呈现器对象包含以下字段：
 

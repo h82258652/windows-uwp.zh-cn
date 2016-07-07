@@ -37,16 +37,11 @@ ms.openlocfilehash: b3297ffd92d9a61d73c574def7e8101dc9196a69
 
 在初始化该游戏示例中的 **MoveLookController** 类时，将注册四个特定于指针的事件和一个特定于鼠标的事件：
 
--   [
-            **CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)。 点按（并按住）左右鼠标按钮，或触摸触摸屏表面。
--   [
-            **CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)。 移动鼠标，或在触摸表面执行拖动操作。
--   [
-            **CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)。 释放鼠标左按钮，或者移开与触摸表面接触的物体。
--   [
-            **CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275)。 指针移出主窗口。
--   [
-            **Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356)。 鼠标移动了一定距离。 注意，我们只关注鼠标移动增量值，不关注当前 x-y 位置。
+-   [**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)。 点按（并按住）左右鼠标按钮，或触摸触摸屏表面。
+-   [**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)。 移动鼠标，或在触摸表面执行拖动操作。
+-   [**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)。 释放鼠标左按钮，或者移开与触摸表面接触的物体。
+-   [**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275)。 指针移出主窗口。
+-   [**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356)。 鼠标移动了一定距离。 注意，我们只关注鼠标移动增量值，不关注当前 x-y 位置。
 
 ```cpp
 void MoveLookController::Initialize(

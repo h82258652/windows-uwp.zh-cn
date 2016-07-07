@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 本主题介绍了在使用 C++、C# 或 Visual Basic 编写 Windows 运行时应用以及 UI 的 XAML 定义时可用的依赖属性系统。
-title: 依赖属性概述
+description: "本主题介绍了在使用 C++、C# 或 Visual Basic 编写 Windows 运行时应用以及 UI 的 XAML 定义时可用的依赖属性系统。"
+title: "依赖属性概述"
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
+translationtype: Human Translation
+ms.sourcegitcommit: 2791b5b80bf1405d3efdce5d81824dbe6d347b4f
+ms.openlocfilehash: 5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91
+
 ---
 
 # 依赖属性概述
@@ -44,8 +48,7 @@ ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 | 术语 | 说明 |
 |------|-------------|
 | 依赖属性 | 存在于 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 标识符上的一个属性（如下所示）。 通常该标识符可用作定义 **DependencyObject** 派生类的一个静态成员。 |
-| 依赖属性标识符 | [
-            **SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)，这就是为什么它通常是公有的原因，即使它是只读的。 |
+| 依赖属性标识符 | [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)，这就是为什么它通常是公有的原因，即使它是只读的。 |
 | 属性包装器 | Windows 运行时属性的可调用 **get** 和 **set** 实现。 或者原始定义的特定于语言的投影。 **get** 属性包装器实现调用 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)，从而传递相关的依赖属性标识符作为一个输入并将该值设置为第二个输入。 | 
 
 属性包装器不仅给调用方带来了方便，它还向任何为属性使用 Windows 运行时定义的过程、工具或投影公开该依赖属性。
@@ -166,12 +169,11 @@ public bool IsSpinning
 
 你可以使用情节提要动画对依赖属性的值进行动画处理。 Windows 运行时中的情节提要动画不仅仅是视觉装饰。 更有用的做法是将动画视为一种状态机技术，你可以通过该技术设置单个属性或所有属性的值以及控件的视觉效果，并可在日后更改这些值。
 
-若要创建动画，动画的目标属性必须是一个依赖属性。 此外，若要创建动画，目标属性的值类型必须受现有 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) 派生的动画类型之一支持。 [
-            **Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](T:System.Double) 和 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 的值可使用内插或关键帧技术实现动画效果。 大部分其他值都可以使用离散式 **Object** 关键帧实现动画效果。
+若要创建动画，动画的目标属性必须是一个依赖属性。 此外，若要创建动画，目标属性的值类型必须受现有 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) 派生的动画类型之一支持。 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) 和 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 的值可使用内插或关键帧技术实现动画效果。 大部分其他值都可以使用离散式 **Object** 关键帧实现动画效果。
 
 当应用并运行一个动画时，动画值操作的优先级比该属性使用的任何其他值（例如本地值）更高。 动画还有一个可选的 [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 行为，该行为可能导致动画应用于属性值，即使动画在视觉上已停止也是如此。
 
-状态机原则可通过在控件的 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) 状态模型中使用情节提要动画来体现。 有关情节提要动画的详细信息，请参阅[情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)。 有关 **VisualStateManager** 和定义控件视觉状态的详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)或[快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
+状态机原则可通过在控件的 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) 状态模型中使用情节提要动画来体现。 有关情节提要动画的详细信息，请参阅[情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)。 有关 **VisualStateManager** 和定义控件视觉状态的详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)或[控件模板](../controls-and-patterns/control-templates.md)。
 
 ### 属性已更改行为
 
@@ -187,8 +189,7 @@ public bool IsSpinning
 
 所有 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 实例都必须在与 Windows 运行时应用所显示的当前 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 相关联的 UI 线程上创建。 虽然每个 **DependencyObject** 都必须在主 UI 线程上创建，但可以通过访问 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) 属性从其他线程使用调度程序引用来访问这些对象。 然后，你可以在 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 对象上调用诸如 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的方法，并在 UI 线程上遵循线程限制规则执行你的代码。
 
-[
-            **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的线程处理特性很重要，因为这通常意味着只有那些在 UI 线程上运行的代码才能更改甚至读取依赖属性的值。 在正确使用 **async** 模式和后台工作线程的典型 UI 代码中，通常可以避免线程处理问题。 通常，如果你定义自己的 **DependencyObject** 类型并尝试将这些类型用于 **DependencyObject** 未必适宜的数据源或其他场方案，只会遇到与 **DependencyObject** 相关的线程处理问题。
+[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的线程处理特性很重要，因为这通常意味着只有那些在 UI 线程上运行的代码才能更改甚至读取依赖属性的值。 在正确使用 **async** 模式和后台工作线程的典型 UI 代码中，通常可以避免线程处理问题。 通常，如果你定义自己的 **DependencyObject** 类型并尝试将这些类型用于 **DependencyObject** 未必适宜的数据源或其他场方案，只会遇到与 **DependencyObject** 相关的线程处理问题。
 
 ## 相关主题
 
@@ -205,6 +206,7 @@ public bool IsSpinning
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -47,8 +47,7 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-[
-            **RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法提示用户提供访问其位置的权限。 仅提示用户一次（每个应用）。 在他们第一次授予或拒绝授予权限之后，此方法不会再提示用户提供权限。 若要在提示之后帮助用户更改位置权限，我们建议提供位置设置的链接，如本主题中后面部分所示。
+[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法提示用户提供访问其位置的权限。 仅提示用户一次（每个应用）。 在他们第一次授予或拒绝授予权限之后，此方法不会再提示用户提供权限。 若要在提示之后帮助用户更改位置权限，我们建议提供位置设置的链接，如本主题中后面部分所示。
 
 ### 步骤 2：注册地理围栏状态和位置权限的更改
 
@@ -116,16 +115,11 @@ Geofence geofence = new Geofence(fenceId, geocircle);
 
 你可以使用其他构造函数之一来进一步微调地理围栏。 在下一个示例中，地理围栏构造函数将指定这些其他参数：
 
--   [
-            **MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) - 指示你想要哪些地理围栏事件来接收有关输入定义的区域、保留定义的区域或者删除地理围栏的通知。
--   [
-            **SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) - 在满足监视地理围栏的所有状态后，将删除地理围栏。
--   [
-            **DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) - 指示在触发进入/退出事件之前，用户必须位于所定义区域之内/之外的时间。
--   [
-            **StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) - 指示何时开始监视地理围栏。
--   [
-            **Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) - 指示监视地理围栏的时段。
+-   [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) - 指示你想要哪些地理围栏事件来接收有关输入定义的区域、保留定义的区域或者删除地理围栏的通知。
+-   [**SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) - 在满足监视地理围栏的所有状态后，将删除地理围栏。
+-   [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) - 指示在触发进入/退出事件之前，用户必须位于所定义区域之内/之外的时间。
+-   [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) - 指示何时开始监视地理围栏。
+-   [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) - 指示监视地理围栏的时段。
 
 ```csharp
 // Set the fence ID.
@@ -165,8 +159,7 @@ Geofence geofence = new Geofence(fenceId, geocircle, monitoredStates, singleUse,
 
 ### 步骤 4：处理位置权限的更改
 
-[
-            **GeofenceMonitor**](https://msdn.microsoft.com/library/windows/apps/dn263595) 对象触发 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) 事件以指示用户位置设置已更改。 该事件通过参数的 **sender.Status** 属性（类型为 [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)）传递相应的状态。 请注意，此方法不是从 UI 线程中调用的，并且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 对象调用了 UI 更改。
+[**GeofenceMonitor**](https://msdn.microsoft.com/library/windows/apps/dn263595) 对象触发 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) 事件以指示用户位置设置已更改。 该事件通过参数的 **sender.Status** 属性（类型为 [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)）传递相应的状态。 请注意，此方法不是从 UI 线程中调用的，并且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 对象调用了 UI 更改。
 
 ```csharp
 using Windows.UI.Core;

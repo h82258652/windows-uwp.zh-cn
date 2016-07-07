@@ -97,8 +97,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 当用户选取一个项时，请考虑将它添加到你的未来访问列表以及 MRU 中。
 
--   [
-            **FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 最多可保留 1000 个项。 请记住：它可以保留文件夹以及文件，所以有很多文件夹。
+-   [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 最多可保留 1000 个项。 请记住：它可以保留文件夹以及文件，所以有很多文件夹。
 -   平台永远不会为你从 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 删除项。 当你达到 1000 个项的限制时，你就无法添加另一个项，直到你采用 [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497) 方法腾出空间。
 
  

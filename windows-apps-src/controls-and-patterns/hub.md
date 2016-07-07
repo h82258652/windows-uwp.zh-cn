@@ -5,8 +5,8 @@ title: "中心控件"
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
 
 ---
 # 中心控件/模式
@@ -16,7 +16,15 @@ ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
 
 ![中心示例](images/hub_example_tablet.png)
 
-中心的内容可以显示在功能强大的平移视图中，这样用户一眼就能看见新增内容、可用功能和相关信息。 中心通常具有一个页面标头，而对于多个内容区域，每个区域都具有一个区域标头。
+中心的内容可以显示在全景视图中，这样用户一眼就能看见新增内容、可用功能和相关信息。 中心通常具有一个页标题，每个内容部分各有一个部分标题。
+
+
+-   [**Hub 类**](https://msdn.microsoft.com/library/windows/apps/dn251843)
+-   [**HubSection 类**](https://msdn.microsoft.com/library/windows/apps/dn251845)
+
+## 这是正确的控件吗？
+
+对于显示按层次结构排列的大量内容，使用中心控件会很有效。 中心针对浏览和发现新内容设置了优先级，使它们可用于在应用商店或媒体集合中显示项目。
 
 中心控件具有多个功能，这些功能适用于生成内容导航模式。
 
@@ -34,24 +42,13 @@ ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
 
 -   **变量页面和内容宽度**
 
-    作为全景模型，中心允许其区域宽度发生变化。 这非常适合不同深度的内容，并使从少数到多数的项目也可以很好地进行格式化。
+    作为全景模型，中心允许其区域宽度发生变化。 这非常适用于不同深度或数量的内容。
 
 -   **弹性体系结构**
 
     如果你希望使应用体系结构一目了然，你可以使所有频道内容都与中心区域摘要相符。
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
-
--   [**Hub 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251843)
--   [**HubSection 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251845)
--   [**Hub 对象 (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn255137)
-
-
-## 这是正确的控件吗？
-
-对于显示按层次结构排列的大量内容，使用中心控件会很有效。 中心针对浏览和发现新内容设置了优先级，使它们可用于显示应用商店或媒体集合的中项目。
-
-中心只不过是你可以使用的几个导航元素之一；若要了解有关导航模式和其他导航元素的详细信息，请参阅[通用 Windows 平台 (UWP) 应用的导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)。
+中心只不过是你可以使用的几个导航元素之一；若要了解有关导航模式和其他导航元素的详细信息，请参阅[通用 Windows 平台 (UWP) 应用的导航设计基础知识](../layout/navigation-basics.md)。
 
 ## 中心体系结构
 
@@ -107,13 +104,13 @@ ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
 
 ## 相关文章
 
-- [导航基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)
-- [**Windows.UI.Xaml.Controls Hub 类**](https://msdn.microsoft.com/library/windows/apps/dn251843)
-- [XAML 中心控件示例](http://go.microsoft.com/fwlink/p/?LinkID=310072)
+- [Hub 类](https://msdn.microsoft.com/library/windows/apps/dn251843)
+- [导航基础知识](../layout/navigation-basics.md)
 - [使用中心](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
+- [XAML 中心控件示例](http://go.microsoft.com/fwlink/p/?LinkID=310072)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -28,8 +28,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## Exposure
 
-[
-            **ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) 允许你设置照片或视频捕获期间所使用的快门速度。
+[**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) 允许你设置照片或视频捕获期间所使用的快门速度。
 
 该示例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控件来调整当前曝光值，并使用复选框来切换自动曝光调整。
 
@@ -55,8 +54,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## 曝光补偿
 
-[
-            **ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) 允许你设置照片或视频捕获期间所使用的曝光补偿。
+[**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) 允许你设置照片或视频捕获期间所使用的曝光补偿。
 
 此示例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控件调整当前曝光补偿值。
 
@@ -76,9 +74,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## Flash
 
-[
-            **FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) 允许你启用或禁用闪光灯或者启用自动闪光灯（系统会动态确定是否使用闪光灯）。 在支持该控件的设备上，使用它还可以启用自动消除红眼。 这些设置均适用于捕获照片。 [
-            **TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) 是单独的控件，用于针对视频捕获打开或关闭聚光。
+[**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) 允许你启用或禁用闪光灯或者启用自动闪光灯（系统会动态确定是否使用闪光灯）。 在支持该控件的设备上，使用它还可以启用自动消除红眼。 这些设置均适用于捕获照片。 [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) 是单独的控件，用于针对视频捕获打开或关闭聚光。
 
 此示例使用一组单选按钮，以便用户可以在打开、关闭和自动闪光设置之间切换。 还提供了一个复选框，以便可以在消除红眼和视频聚光之间切换。
 
@@ -224,8 +220,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## ISO 感光度
 
-[
-            **IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) 允许你设置照片或视频捕获期间所使用的 ISO 感光度。
+[**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) 允许你设置照片或视频捕获期间所使用的 ISO 感光度。
 
 该示例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控件来调整当前曝光补偿，而使用复选框来切换自动 ISO 感光度调整。
 
@@ -261,8 +256,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 ## 白平衡
 
-[
-            **WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) 允许你设置照片或视频捕获期间所使用的白平衡。
+[**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) 允许你设置照片或视频捕获期间所使用的白平衡。
 
 该示例使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) 控件以从内置色温预设中进行选择，而使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控件进行白平衡调整。
 
@@ -290,8 +284,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 ## 缩放
 
-[
-            **ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) 允许你设置照片或视频捕获期间所使用的缩放级别。
+[**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) 允许你设置照片或视频捕获期间所使用的缩放级别。
 
 此示例使用 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) 控件调整当前缩放级别。 以下部分将介绍如何基于屏幕上的收缩手势调整缩放。
 
@@ -323,8 +316,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 [!code-cs[RegisterPinchGestureHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterPinchGestureHandler)]
 
-在针对 **ManipulationDelta** 事件的处理程序中，将根据用户的收缩手势的变化更新缩放系数。 [
-            **ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 值表示收缩手势的比例变化，如此收缩大小的小幅上升是略大于 1.0 的数字，并且收缩大小的小幅下降是略小于 1.0 的数字。 在此示例中，缩放控制的当前值乘以比例增量。
+在针对 **ManipulationDelta** 事件的处理程序中，将根据用户的收缩手势的变化更新缩放系数。 [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 值表示收缩手势的比例变化，如此收缩大小的小幅上升是略大于 1.0 的数字，并且收缩大小的小幅下降是略小于 1.0 的数字。 在此示例中，缩放控制的当前值乘以比例增量。
 
 在设置缩放系数之前，你必须确保该值不小于由 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 属性表示的受设备支持的最小值。 此外，还要确保该值小于或等于 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最后，你必须确保该缩放系数是由 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) 属性表示的受设备支持的缩放步长的倍数。 如果你的缩放系数不符合这些要求，当你试图在捕获设备上设置缩放级别时将引发异常。
 

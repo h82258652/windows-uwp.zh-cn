@@ -22,11 +22,9 @@ ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
 
 有两种不同类型的方向传感器 API 包含在 [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 命名空间中：[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 和 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)。 虽然这两个传感器都是方向传感器，但该术语具有不同的意义，并且这两者的用途具有显著区别。 但是，由于这两者都是方向传感器，因此均涵盖在本文中。
 
-[
-            **OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API 用于三维应用以获取四元数和旋转矩阵。 四元数可以最简单地理解为一个点 \[x,y,z\] 围绕任意一个轴旋转（与旋转矩阵不同，它表示围绕三个轴旋转）。 四元数后的数学非常奇特，因为它涉及到复数的几何属性以及虚数的数学属性，但是使用它们却非常简单，而且 DirectX 等框架也支持它们。 复杂的三维应用可使用方向传感器调整用户的视角。 此传感器结合了来自加速计、陀螺测试仪以及指南针的输入。
+[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API 用于三维应用以获取四元数和旋转矩阵。 四元数可以最简单地理解为一个点 \[x,y,z\] 围绕任意一个轴旋转（与旋转矩阵不同，它表示围绕三个轴旋转）。 四元数后的数学非常奇特，因为它涉及到复数的几何属性以及虚数的数学属性，但是使用它们却非常简单，而且 DirectX 等框架也支持它们。 复杂的三维应用可使用方向传感器调整用户的视角。 此传感器结合了来自加速计、陀螺测试仪以及指南针的输入。
 
-[
-            **SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API 用于根据 portrait up、portrait down、landscape left 和 landscape right 等定义确定当前设备方向。 它还可以检测设备是正面朝上还是正面朝下。 此传感器不会返回如“portrait up”或“landscape left”等属性，而是返回一个旋转值，如“Not rotated”、“Rotated90DegreesCounterclockwise”等。 下表将常见的方向属性映射到相应的传感器读取方向。
+[**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API 用于根据 portrait up、portrait down、landscape left 和 landscape right 等定义确定当前设备方向。 它还可以检测设备是正面朝上还是正面朝下。 此传感器不会返回如“portrait up”或“landscape left”等属性，而是返回一个旋转值，如“Not rotated”、“Rotated90DegreesCounterclockwise”等。 下表将常见的方向属性映射到相应的传感器读取方向。
 
 | 方向     | 相应的传感器读取方向      |
 |-----------------|-----------------------------------|

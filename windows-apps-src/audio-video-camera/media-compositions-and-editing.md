@@ -18,8 +18,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 ## 创建新的媒体合成
 
-[
-            **MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 类是包含组成合成的所有媒体剪辑的容器，用于负责呈现最终合成、将合成加载并保存到光盘，以及提供合成的预览流，以便用户可以在 UI 中查看它。 若要在你的应用中使用 **MediaComposition**，需包括 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空间以及提供你将需要的相关 API 的 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空间。
+[**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 类是包含组成合成的所有媒体剪辑的容器，用于负责呈现最终合成、将合成加载并保存到光盘，以及提供合成的预览流，以便用户可以在 UI 中查看它。 若要在你的应用中使用 **MediaComposition**，需包括 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空间以及提供你将需要的相关 API 的 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空间。
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
 
@@ -41,8 +40,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 -   **MediaClip** 只能包含在合成中一次。 尝试添加已由合成使用的 **MediaClip** 将导致错误。 若要在合成中多次重复使用视频剪辑，可调用 [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) 以创建新的 **MediaClip** 对象，这些对象随后将添加到合成中。
 
--   通用 Windows 应用没有访问整个文件系统的权限。 [
-            **StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 类的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 属性允许你的应用存储已由用户选择的文件的记录，以便你可以保留访问该文件的权限。 **FutureAccessList** 最多可以包含 1000 个条目，因此你的应用需要管理列表，以确保列表不会饱和。 如果你计划支持加载和修改之前创建的合成，这一点尤其重要。
+-   通用 Windows 应用没有访问整个文件系统的权限。 [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 类的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 属性允许你的应用存储已由用户选择的文件的记录，以便你可以保留访问该文件的权限。 **FutureAccessList** 最多可以包含 1000 个条目，因此你的应用需要管理列表，以确保列表不会饱和。 如果你计划支持加载和修改之前创建的合成，这一点尤其重要。
 
 -   **MediaComposition** 支持采用 MP4 格式的视频剪辑。
 
@@ -88,8 +86,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
--   [
-            **MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) 允许你设置转换代码操作的速度与剪裁相邻媒体剪辑的精度的优先级。 **Fast** 导致转换代码的速度更快，但剪裁精度较低，**Precise** 导致转换代码的速度较慢，但剪裁精度较高。
+-   [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) 允许你设置转换代码操作的速度与剪裁相邻媒体剪辑的精度的优先级。 **Fast** 导致转换代码的速度更快，但剪裁精度较低，**Precise** 导致转换代码的速度较慢，但剪裁精度较高。
 
 ## 剪裁视频剪辑
 

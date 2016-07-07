@@ -116,8 +116,7 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 ## 组件和版本
 
-组件结构允许用户在可打印的 3D 模型中放置多个网格对象。 [
-            **Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 对象包含单个网格和对其他组件的引用列表。 这实际上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 对象的列表。 每个 **Printing3DComponentWithMatrix** 对象都包含一个 **Printing3DComponent**，重要的是，还包含一个适用于所谓的 **Printing3DComponent** 的网格和包含组件的转换矩阵。
+组件结构允许用户在可打印的 3D 模型中放置多个网格对象。 [**Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 对象包含单个网格和对其他组件的引用列表。 这实际上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 对象的列表。 每个 **Printing3DComponentWithMatrix** 对象都包含一个 **Printing3DComponent**，重要的是，还包含一个适用于所谓的 **Printing3DComponent** 的网格和包含组件的转换矩阵。
 
 例如，汽车的模型可能由承载车身网格的“车身”**Printing3DComponent** 组成。 然后，“车身”组件可能包含对四个不同的 **Printing3DComponentWithMatrix** 对象的引用，这些对象全都引用带有“车轮”网格的相同 **Printing3DComponent** 并包含四个不同的转换矩阵（将车轮映射到车身上的四个不同位置）。 在此方案中，“车身”网格和“车轮”网格各自只需存储一次，即使最终产品总共会展示五个网格。
 

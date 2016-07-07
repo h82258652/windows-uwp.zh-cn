@@ -35,30 +35,23 @@ Windows 运行时音频图 API 提供也可通过使用基于 COM 的 [XAudio2 A
 
 ## AudioGraph 类
 
-[
-            **AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) 类是构成音频图的所有节点的父类。 使用此对象来创建所有音频节点类型的实例。 通过初始化 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 对象、包含音频图的配置设置，然后再调用 [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216)，可创建 **AudioGraph** 类的实例。 返回的 [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) 将提供对创建的音频图的访问权限，或提供一个错误值（如果音频图创建失败）。
+[**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) 类是构成音频图的所有节点的父类。 使用此对象来创建所有音频节点类型的实例。 通过初始化 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 对象、包含音频图的配置设置，然后再调用 [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216)，可创建 **AudioGraph** 类的实例。 返回的 [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) 将提供对创建的音频图的访问权限，或提供一个错误值（如果音频图创建失败）。
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
 -   所有音频节点类型均通过使用 **AudioGraph** 类的 Create\* 方法创建。
--   [
-            **AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) 方法可使音频图开始处理音频数据。 [
-            **AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) 方法终止音频处理。 在音频图运行时，音频图中的每一个节点都可以单独启动和停止，但在音频图停止运行时，没有任何节点会处于活动状态。 [
-            **ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) 将使图形中的所有节点丢弃当前处于其音频缓冲区中的任何数据。
+-   [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) 方法可使音频图开始处理音频数据。 [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) 方法终止音频处理。 在音频图运行时，音频图中的每一个节点都可以单独启动和停止，但在音频图停止运行时，没有任何节点会处于活动状态。 [**ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) 将使图形中的所有节点丢弃当前处于其音频缓冲区中的任何数据。
 -   当音频图开始处理新的音频数据量子时，将发生 [**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) 事件。 当处理完某个量子时，将发生 [**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) 事件。
 
 -   仅需的 [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) 属性是 [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724)。 指定此值将允许系统优化指定类别的音频管道。
 -   音频图的量子大小确定一次处理的样本数。 默认情况下，基于默认采样率，量子大小为 10 毫秒。 如果你通过设置 [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) 属性来指定自定义量子大小，则还必须将 [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) 属性设置为 **ClosestToDesired**，或忽略提供的值。 如果使用此值，则系统将选择尽可能接近你所指定大小的量子大小。 若要确定实际量子大小，请在创建 **AudioGraph** 之后检查它的 [**SamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914243)。
 -   如果你仅计划将音频图和文件结合使用，而并不打算输出到音频设备，建议你不设置 [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) 属性而使用默认量子大小。
--   [
-            **DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) 属性确定主呈现设备量对音频图输出执行的处理量。 **Default** 设置允许系统针对指定的音频呈现类别使用默认音频处理。 此处理可以明显地改善音频在某些设备上的声音，尤其是配备小型扬声器的移动设备。 **Raw** 设置可以通过尽量减少执行的信号处理量来提高性能，但会导致某些设备上的声音质量变差。
+-   [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) 属性确定主呈现设备量对音频图输出执行的处理量。 **Default** 设置允许系统针对指定的音频呈现类别使用默认音频处理。 此处理可以明显地改善音频在某些设备上的声音，尤其是配备小型扬声器的移动设备。 **Raw** 设置可以通过尽量减少执行的信号处理量来提高性能，但会导致某些设备上的声音质量变差。
 -   如果 [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) 设置为 **LowestLatency**，则音频图会自动将 **Raw** 用于 [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522)。
--   [
-            **EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) 确定音频图所使用的音频格式。 仅支持 32 位浮点格式。
--   [
-            **PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) 设置音频图的主呈现设备。 如果不设置，则使用默认系统设备。 主呈现设备用于计算音频图中其他节点的量子大小。 如果系统上不存在音频呈现设备，音频图创建将失败。
+-   [**EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) 确定音频图所使用的音频格式。 仅支持 32 位浮点格式。
+-   [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) 设置音频图的主呈现设备。 如果不设置，则使用默认系统设备。 主呈现设备用于计算音频图中其他节点的量子大小。 如果系统上不存在音频呈现设备，音频图创建将失败。
 
 你可以让音频图使用默认的音频呈现设备，或者通过调用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 并传入由 [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) 返回的音频呈现设备选择器，使用 [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 类来获取系统的可用音频呈现设备列表。 你可以以编程方式选择返回的 **DeviceInformation** 对象之一，或显示 UI 以允许用户选择某台设备，然后使用它来设置 [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) 属性。
 

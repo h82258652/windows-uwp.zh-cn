@@ -62,8 +62,7 @@ ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
 
 在 C++/CX 中， 异步编程基于 [**task class**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx) 及其 [**then method**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx)。 语法与 JavaScript 承诺的语法类似。 **task 类**及其相关类型还提供取消和管理线程上下文的功能。 有关详细信息，请参阅[使用 C++ 进行异步编程](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
-[
-            **create\_async 函数**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750102.aspx)提供了相应支持，以便生成可以通过 JavaScript 或任何其他支持 UWP 的语言使用的异步 API。 有关详细信息，请参阅[使用 C++ 创建异步操作](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx)。
+[**create\_async 函数**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750102.aspx)提供了相应支持，以便生成可以通过 JavaScript 或任何其他支持 UWP 的语言使用的异步 API。 有关详细信息，请参阅[使用 C++ 创建异步操作](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx)。
 
 ## 使用 JavaScript 的 UWP 中的异步模式
 

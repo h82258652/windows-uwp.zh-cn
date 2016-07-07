@@ -721,9 +721,7 @@ m_d3dContext->ClearDepthStencilView(
     );
 ```
 
-[
-            **ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 和 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 接口支持 Direct3D 10 和更高版本所提供的纹理视图机制。 有关纹理视图的详细信息，请参阅[纹理视图 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 [
-            **OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 方法准备 Direct3D 管道的输出合并阶段。 有关输出合并阶段的详细信息，请参阅[输出合并阶段](https://msdn.microsoft.com/library/windows/desktop/bb205120)。
+[**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 和 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 接口支持 Direct3D 10 和更高版本所提供的纹理视图机制。 有关纹理视图的详细信息，请参阅[纹理视图 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 [**OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 方法准备 Direct3D 管道的输出合并阶段。 有关输出合并阶段的详细信息，请参阅[输出合并阶段](https://msdn.microsoft.com/library/windows/desktop/bb205120)。
 
 ### 准备顶点和像素着色器
 
@@ -868,11 +866,9 @@ HRESULT hr = m_swapChain->Present1(1, 0, &parameters);
 
 在此示例中，**m\_swapChain** 是一个 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) 对象。 此对象的初始化已在本文档的[初始化 Direct3D 和 Direct2D](#initializing) 一节中介绍。
 
-[
-            **IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 的第一个参数 *SyncInterval* 指定在呈现帧之前等待的垂直空白数量。 Marble Maze 指定 1，以便它等到下一个垂直空白。 垂直空白是一帧完成向监视器的绘制后与下一帧开始时之间的时间。
+[**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 的第一个参数 *SyncInterval* 指定在呈现帧之前等待的垂直空白数量。 Marble Maze 指定 1，以便它等到下一个垂直空白。 垂直空白是一帧完成向监视器的绘制后与下一帧开始时之间的时间。
 
-[
-            **IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 方法返回一个错误代码，表明设备已删除或失败。 在此情况下，Marble Maze 重新初始化设备。
+[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 方法返回一个错误代码，表明设备已删除或失败。 在此情况下，Marble Maze 重新初始化设备。
 
 ```cpp
 // Reinitialize the renderer if the device was disconnected  

@@ -26,8 +26,7 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 [!code-xml[MidiListBoxes](./code/MIDIWin10/cs/MainPage.xaml#SnippetMidiListBoxes)]
 
-[
-            **FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 方法的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 类用于枚举许多不同类型的由 Windows 识别的设备。 若要指明你仅希望使用该方法查找 MIDI 输入设备，请使用 [**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) 返回的选择器字符串。 **FindAllAsync** 将返回包含通过系统注册的每个 MIDI 输入设备的 **DeviceInformation** 的 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395)。 如果返回的集合不包含任何项，则没有可用的 MIDI 输入设备。 如果集合中包含项，循环浏览 **DeviceInformation** 对象，并将每台设备的名称添加到 MIDI 输入设备 **ListBox**。
+[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 方法的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 类用于枚举许多不同类型的由 Windows 识别的设备。 若要指明你仅希望使用该方法查找 MIDI 输入设备，请使用 [**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) 返回的选择器字符串。 **FindAllAsync** 将返回包含通过系统注册的每个 MIDI 输入设备的 **DeviceInformation** 的 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395)。 如果返回的集合不包含任何项，则没有可用的 MIDI 输入设备。 如果集合中包含项，循环浏览 **DeviceInformation** 对象，并将每台设备的名称添加到 MIDI 输入设备 **ListBox**。
 
 [!code-cs[EnumerateMidiInputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiInputDevices)]
 
@@ -37,8 +36,7 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 ## 创建设备观察程序帮助程序类
 
-[
-            **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空间提供了 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446)，它可在设备已在系统中添加或删除时，或者设备的信息已更新时通知你的应用。 因为支持 MIDI 的应用通常会关注输入和输出设备，所以此示例将创建可实现 **DeviceWatcher** 模式的帮助程序类，以便可针对 MIDI 输入和 MIDI 输出设备使用相同的代码，从而避免重复。
+[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空间提供了 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446)，它可在设备已在系统中添加或删除时，或者设备的信息已更新时通知你的应用。 因为支持 MIDI 的应用通常会关注输入和输出设备，所以此示例将创建可实现 **DeviceWatcher** 模式的帮助程序类，以便可针对 MIDI 输入和 MIDI 输出设备使用相同的代码，从而避免重复。
 
 将新类添加到你的项目以作为设备观察程序。 在此示例中，该类名为 **MyMidiDeviceWatcher**。 此部分中的剩余代码将用于实现帮助程序类。
 
@@ -65,14 +63,10 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 **DeviceWatcher** 具有以下事件：
 
--   [
-            **Added**](https://msdn.microsoft.com/library/windows/apps/br225450) - 在新设备添加到系统中时引发。
--   [
-            **Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - 在从系统中删除设备时引发。
--   [
-            **Updated**](https://msdn.microsoft.com/library/windows/apps/br225458) - 在更新与现有设备关联的信息时引发。
--   [
-            **EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) - 在观察程序完成其所请求的设备类型枚举时引发。
+-   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450) - 在新设备添加到系统中时引发。
+-   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - 在从系统中删除设备时引发。
+-   [**Updated**](https://msdn.microsoft.com/library/windows/apps/br225458) - 在更新与现有设备关联的信息时引发。
+-   [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) - 在观察程序完成其所请求的设备类型枚举时引发。
 
 在以上每个事件的事件处理程序中，将调用帮助程序方法 **UpdateDevices**，以通过当前设备列表更新 **ListBox**。 因为未在 UI 线程上调用 **UpdateDevices** 更新 UI 元素和这些事件处理程序，因此每个调用都必须打包在对 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的调用中，这将导致指定代码在 UI 线程上运行。
 

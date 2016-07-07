@@ -18,8 +18,7 @@ ms.openlocfilehash: 891c0d274c2d3fb82f855011158ecd3ccdcd87b3
 
 ## 场景分析效果
 
-[
-            **SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 将分析媒体捕获预览流中的视频帧，并建议处理选项以改进捕获结果。 当前，效果支持检测是否通过使用高动态范围 (HDR) 处理改进捕获。
+[**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 将分析媒体捕获预览流中的视频帧，并建议处理选项以改进捕获结果。 当前，效果支持检测是否通过使用高动态范围 (HDR) 处理改进捕获。
 
 如果该效果建议使用 HDR，可以采用以下方式执行此操作：
 
@@ -67,8 +66,7 @@ ms.openlocfilehash: 891c0d274c2d3fb82f855011158ecd3ccdcd87b3
 
 ## 人脸检测效果
 
-[
-            **FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 可在媒体捕获预览流内标识人脸的位置。 该效果允许你在预览流中检测到人脸时接收通知，并为预览帧内每个检测到的人脸提供边界框。 在受支持的设备上，人脸检测效果还提供增强的曝光，并聚焦于场景中最重要的人脸。
+[**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 可在媒体捕获预览流内标识人脸的位置。 该效果允许你在预览流中检测到人脸时接收通知，并为预览帧内每个检测到的人脸提供边界框。 在受支持的设备上，人脸检测效果还提供增强的曝光，并聚焦于场景中最重要的人脸。
 
 ### 人脸检测命名空间
 
@@ -96,8 +94,7 @@ ms.openlocfilehash: 891c0d274c2d3fb82f855011158ecd3ccdcd87b3
 
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-在该事件的处理程序中，你可以通过访问 [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) 属性，获取帧中所有检测到的人脸列表。 [
-            **FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](http://go.microsoft.com/fwlink/?LinkId=619486)。
+在该事件的处理程序中，你可以通过访问 [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) 属性，获取帧中所有检测到的人脸列表。 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 结构，用于描述包含检测到的人脸的矩形，其单位相对于预览流尺寸。 若要查看将预览流坐标转换到屏幕坐标的示例代码，请参阅[人脸检测 UWP 示例](http://go.microsoft.com/fwlink/?LinkId=619486)。
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 

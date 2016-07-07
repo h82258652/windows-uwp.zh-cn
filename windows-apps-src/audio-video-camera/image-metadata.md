@@ -18,13 +18,11 @@ ms.openlocfilehash: 571d71d52931392a36c3c11030749f6ecb3cc961
 
 ## 图像属性
 
-[
-            **StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 属性返回对关于文件的相关内容信息提供访问的 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 对象。 通过调用 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 获取特定于图像的属性。 返回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 对象公开包含基本图像元数据字段（如图像的标题和捕获日期）的成员。
+[**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 属性返回对关于文件的相关内容信息提供访问的 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 对象。 通过调用 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 获取特定于图像的属性。 返回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 对象公开包含基本图像元数据字段（如图像的标题和捕获日期）的成员。
 
 [!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
 
-若要访问较大的文件元数据集，请使用 Windows 属性系统，一组可以使用唯一的字符串标识符进行检索的文件元数据。 创建字符串列表，并为想要检索的每个属性添加标识符。 [
-            **ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) 方法采用此字符串列表，并返回键/值对的字典，其中键是属性标识符，值是属性值。
+若要访问较大的文件元数据集，请使用 Windows 属性系统，一组可以使用唯一的字符串标识符进行检索的文件元数据。 创建字符串列表，并为想要检索的每个属性添加标识符。 [**ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) 方法采用此字符串列表，并返回键/值对的字典，其中键是属性标识符，值是属性值。
 
 [!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
 

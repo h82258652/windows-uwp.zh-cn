@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 启动、恢复和后台任务
-description: 本部分介绍在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。
+author: TylerMSFT
+title: "启动、恢复和后台任务"
+description: "本部分介绍在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
+ms.sourcegitcommit: a8e6145f7a5c75d3b37277b80b07b0b3ad739d5c
+ms.openlocfilehash: ab20c4af5b9a87dc73775d304c314c9861d989d4
+
 ---
 
 # 启动、恢复和后台任务
@@ -37,7 +40,6 @@ ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 | [处理文件激活](handle-file-activation.md)                                            | 了解如何将你的应用注册为某个文件类型的默认处理程序。                                                                                                  |
 | [文件类型和 URI 的指南](https://msdn.microsoft.com/library/windows/apps/hh700321) | 通过了解 UWP 应用与其支持的文件类型和协议之间的关系，可以为用户提供更一致和简约的体验。 |
 | [保留文件和 URI 方案名称](reserved-uri-scheme-names.md)                             | 本主题将列出不可用于应用的保留文件和 URI 方案名称。                                                                                |
-| 激活内置应用                                                                          | 说明                                                                                                                                                                |
 | [启动 Windows 设置应用](launch-settings-app.md)                                      | 了解如何启动 Windows 设置应用                                                                                                                              |
 | [启动 Windows 应用商店应用](launch-store-app.md)                                            | 了解如何启动 Windows 应用商店应用                                                                                                                                 |
 | [启动 Windows 地图应用](launch-maps-app.md)                                              | 了解如何启动 Windows 地图应用                                                                                                                                  |
@@ -51,8 +53,7 @@ ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 | 主题                                                                                                            | 说明                                                                                                                                                                                   |
 |------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [使用后台任务支持应用](support-your-app-with-background-tasks.md)                             | 本部分中的主题展示如何通过响应具有后台任务的触发器在后台运行你自己的轻型代码。                                                       |
-| [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)       | [
-            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
+| [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
 | [后台任务指南](guidelines-for-background-tasks.md)                                           | 确保你的应用符合运行后台任务的要求。                                                                                                                          |
 | [创建和使用应用服务](how-to-create-and-consume-an-app-service.md)                                | 了解如何编写可以向其他 UWP 应用提供服务的 UWP 应用，以及如何使用这些服务。                                                                                  |
 | [创建和注册后台任务](create-and-register-a-background-task.md)                               | 创建一个后台任务类并注册它，以便在应用不在前台运行时运行。                                                                                                 |
@@ -100,8 +101,6 @@ ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

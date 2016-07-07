@@ -52,6 +52,6 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
 - [SignTool.exe（签名工具）](https://msdn.microsoft.com/library/8s9b9yaz(v=vs.110).aspx)
 - [如何使用 SignTool 对应用包进行签名](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835835(v=vs.85).aspx)
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

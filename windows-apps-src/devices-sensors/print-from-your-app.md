@@ -36,8 +36,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 ```
 
-[
-            **PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 类用于处理应用和 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 之间的大部分交互，但是它会公开其自身的多个回调。 在注册期间，创建 **PrintManager** 和 **PrintDocument** 的实例并为其打印事件注册处理程序。
+[**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 类用于处理应用和 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 之间的大部分交互，但是它会公开其自身的多个回调。 在注册期间，创建 **PrintManager** 和 **PrintDocument** 的实例并为其打印事件注册处理程序。
 
 在 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中，注册通过 `RegisterForPrinting` 方法来执行。
 
@@ -281,8 +280,7 @@ PrintCustomTextOptionDetails pageRangeEdit = printDetailedOptions.CreateTextOpti
 printDetailedOptions.OptionChanged += printDetailedOptions_OptionChanged;
 ```
 
-[
-            **CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) 方法会创建“范围”****文本框。 用户将在此文本框中输入在他们选择“打印范围”****选项时希望打印的特定页面。
+[**CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) 方法会创建“范围”****文本框。 用户将在此文本框中输入在他们选择“打印范围”****选项时希望打印的特定页面。
 
 ## 处理打印选项更改
 

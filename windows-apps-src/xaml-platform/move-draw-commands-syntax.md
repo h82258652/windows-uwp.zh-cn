@@ -25,8 +25,7 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[
-            **PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移动和绘制命令。 你可以将使用移动和绘制命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 对象与 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 对象中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 类型结合起来，然后将其用作 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是此方法与使用属性定义的数据的移动和绘制命令相比并不常用。
+[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移动和绘制命令。 你可以将使用移动和绘制命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 对象与 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 对象中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 类型结合起来，然后将其用作 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是此方法与使用属性定义的数据的移动和绘制命令相比并不常用。
 
 ## 使用移动和绘制命令与使用 **PathGeometry**
 
@@ -240,6 +239,6 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

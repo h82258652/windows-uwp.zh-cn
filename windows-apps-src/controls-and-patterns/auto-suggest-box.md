@@ -6,8 +6,8 @@ ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: bc3337101f0f2e8449d052743f7b3ce8d2dac516
 
 ---
 # 自动建议框
@@ -15,7 +15,7 @@ ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
 
 ![自动建议框](images/controls/auto-suggest-box-open.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+
 
 -   [**AutoSuggestBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
 -   [**TextChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)
@@ -76,9 +76,9 @@ Groove 音乐应用中的自动建议框。
 - 当焦点位于文本框中时，按 Enter 或单击查询图标。 事件参数 [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) 属性是 **null**。
 - 当焦点位于建议列表中时，按 Enter，单击或点击某个项目。 事件参数 ChosenSuggestion 属性包含已从列表中选择的项目。
 
-在所有情况下，事件参数 [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) 属性都包含文本框中的文本。 
+在所有情况下，事件参数 [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) 属性都包含文本框中的文本。
 
-### 使用 AutoSuggestBox 进行搜索
+## 使用 AutoSuggestBox 进行搜索
 
 使用 AutoSuggestBox 提供建议列表，以便用户在键入时从中进行选择。
 
@@ -108,8 +108,8 @@ Groove 音乐应用中的自动建议框。
 ```csharp
 private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
 {
-    // Only get results when it was a user typing, 
-    // otherwise assume the value got filled in by TextMemberPath 
+    // Only get results when it was a user typing,
+    // otherwise assume the value got filled in by TextMemberPath
     // or the handler for SuggestionChosen.
     if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
     {
@@ -144,6 +144,18 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
     ![无任何搜索结果的自动建议框示例](images/controls_autosuggest_noresults.png)
 
+{{&gt; 非内部内容 =“
+## 全球化和本地化清单
+
+<table>
+<tr>
+<th>垂直间距</th><td>为垂直间距使用非拉丁字符以确保非拉丁脚本能够正确显示，包括数字。</td>
+</tr>
+<tr>
+<th>滚动</th><td>当选择自动建议文本时，用户应能够滚动到字符串末尾。</td>
+</tr>
+</table>
+”}}
 
 ## 相关文章
 
@@ -156,6 +168,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -17,8 +17,7 @@ ms.openlocfilehash: fa736c200185192cfd40a1c09f2da02cae67c05c
 
 -   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-某些设备需要先进行配对，然后才能使用。 [
-            **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空间支持三种配对设备的不同方式。
+某些设备需要先进行配对，然后才能使用。 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空间支持三种配对设备的不同方式。
 
 -   自动配对
 -   基本配对

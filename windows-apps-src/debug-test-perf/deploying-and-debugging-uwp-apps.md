@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: "本文指导你完成针对各种部署和调试目标的步骤。"
 title: "部署和调试通用 Windows 平台 (UWP) 应用"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: eb639e78bf144572dfbfd2d65514bb4eff7c7be1
+translationtype: Human Translation
+ms.sourcegitcommit: 14f6684541716034735fbff7896348073fa55f85
+ms.openlocfilehash: e2209e90080c7346bb363304b1a28f6446300332
 
 ---
 
@@ -27,6 +28,18 @@ Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试�
 -   **“设备”**会将应用程序部署到 USB 连接设备。 该设备必须已针对开发人员解锁，并且已解锁屏幕。
 -   “仿真器”****目标会使用名称中指定的配置将应用程序启动并部署到仿真器。 仿真器仅适用于运行 Windows 8.1 或更高版本且支持 Hyper-V 的计算机。
 -   **“远程计算机”**允许你指定要部署应用程序的远程目标。 可以在[指定远程设备](#specifying-a-remote-device)中找到有关部署到远程计算机的详细信息。
+
+## 调试已部署的应用
+通过依次选择“调试”****、“附加到进程”****，Visual Studio 还可以附加到任何运行的 UWP 应用进程。 附加到运行的进程不需要原始 Visual Studio 项目，但是在调试没有原始代码的进程时，加载进程的[符号](#symbols)有很大的帮助。  
+  
+此外，可以通过依次选择“调试”****、“其他”****和“调试安装的应用程序包”****来附加和调试任何安装的应用包。   
+ 
+![“调试安装的应用程序包”对话框](images/gs-debug-uwp-apps-002.png)  
+
+选择“不启动，但在启动时调试代码”****将导致 Visual Studio 调试程序在你在自定义时打开它时附加到你的 UWP 应用。 这是从[不同的启动方法](../xbox-apps/automate-launching-uwp-apps.md)调试控件路径的有效方法，如使用自定义参数的协议激活。  
+
+可以在 Windows 8.1 或更高版本上开发和编译 UWP 应用，但需要运行 Windows 10。 如果你要在 Windows 8.1 电脑上开发 UWP 应用，你可以远程调试在另一台 Windows 10 设备上运行的 UWP 应用，前提是主机和目标计算机在同一个 LAN 上。 若要执行此操作，请在两台计算机上下载和安装 [Visual Studio 远程工具](http://aka.ms/remotedebugger)。 已安装的版本必须与你已安装的现有 Visual Studio 版本匹配，并且你选择的体系结构（x86、x64）还必须与你的目标应用程序的体系结构匹配。   
+  
 
 ## 指定远程设备
 
@@ -83,12 +96,52 @@ Microsoft Visual Studio 允许你在各种 Windows 10 设备上部署和调试�
 若要将部署配置为启动应用时自动开始一个调试会话：
 
 -   在 C# 和 Visual Basic**“调试”**属性页上，选中**“不启动，但在开始时调试我的代码”**复选框。
--   在 JavaScript 和 C++**“调试”**属性页上，将**“启动应用程序”**值设置为**“是”**。
+-   在 JavaScript 和 C++“调试”****属性页上，将“启动应用程序”****值设置为“是”****。
+
+## 符号
+
+符号文件包含各种在调试代码时非常有用的数据，如变量、函数名称和入口点地址，从而使你可以更好地了解异常和调用堆栈执行顺序。 适用于 Windows 的大多数变体的符号通过 [Microsoft 符号服务器](http://msdl.microsoft.com/download/symbols)提供，或者可以下载，以供在[下载 Windows 符号包](http://aka.ms/winsymbols)中更快速地离线查找。
+
+若要为 Visual Studio 设置符号选项，请依次选择“工具”&gt;“选项”****，然后在对话窗口中依次导航到“调试”&gt;“符号”****。
+
+**图 4.“选项”对话框。**
+![“选项”对话框](images/gs-debug-uwp-apps-004.png)
+
+若要使用 [WinDbg](#windbg) 在调试会话中加载符号，请将 **sympath** 变量设置为符号包位置。 例如，运行以下命令将从 Microsoft 符号服务器加载符号，然后将它们缓存在  C:\Symbols 目录中：
+
+```
+.sympath SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols
+.reload
+```
+
+你可以使用“;”分隔符添加多个路径，或使用 `.sympath+` 命令。 有关使用 WinDbg 的更高级符号运算，请参阅[公共和私有符号](https://msdn.microsoft.com/library/windows/hardware/ff553493)。
+
+## WinDbg
+
+WinDbg 是 Windows 调试工具套件随附的一款功能强大的调试器，它包含在 [Windows SDK](http://go.microsoft.com/fwlink/p?LinkID=271979) 中。 Windows SDK 安装允许你安装 Windows 调试工具作为独立产品。 尽管对调试本机代码非常有用，但我们不建议为使用托管代码或 HTML5 编写的应用使用 WinDbg。 
+
+若要将 WinDbg 用于 UWP 应用，你将需要先使用 PLMDebug 为你的应用包禁用 PLM，如上一部分中所述。 
+
+```
+plmdebug /enableDebug [PackageFullName] "\"C:\Program Files\Debugging Tools for Windows (x64)\WinDbg.exe\" -server npipe:pipe=test"
+```
+
+与 Visual Studio 相反，WinDbg 的大部分核心功能依赖于向命令窗口提供命令。 所提供的命令允许你查看执行状态、调查用户模式崩溃转储并在各种模式下进行调试。 
+
+WinDbg 中最常用的命令之一是 `!analyze -v`，该命令用于检索大量有关当前异常的信息，包括：
+
+- FAULTING_IP：故障发生时的指令指针
+- EXCEPTION_RECORD：当前异常的地址、代码和标志
+- STACK_TEXT：异常之前的堆栈跟踪
+
+有关所有 WinDbg 命令的完整列表，请参阅[调试器命令](https://msdn.microsoft.com/library/ff540507)。
+
+## 相关主题
+- [进程周期管理 (PLM) 的测试和调试工具](testing-debugging-plm.md)
+- [调试、测试和性能](index.md)
 
 
 
-
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

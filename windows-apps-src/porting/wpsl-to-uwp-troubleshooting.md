@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。
-title: 将 Windows Phone Silverlight 移植到 UWP 疑难解答
+description: "我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。"
+title: "将 Windows Phone Silverlight 移植到 UWP 疑难解答"
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 0e7c4ba00ab513c1ea9da94f1a3f69b5921c2dc1
+
 ---
 
 #  将 Windows Phone Silverlight 移植到 UWP 疑难解答
@@ -57,6 +61,7 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

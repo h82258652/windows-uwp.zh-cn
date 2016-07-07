@@ -97,30 +97,22 @@ ms.openlocfilehash: eb543a5ef1da7c9b39438349757c1b394a3be9b5
 | [**CommandBar（命令栏）**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 在 Windows 应用商店应用中，[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 的辅助命令始终可见。 在 Windows Phone 应用商店应用和 Windows 10 应用中，它们仅在命令栏打开后才显示。 |
 | [**CommandBar（命令栏）**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 对于 Windows Phone 应用商店应用，[**CommandBar.IsSticky**](https://msdn.microsoft.com/library/windows/apps/hh701944) 的值不影响该栏是否可通过轻触消除。 对于 Windows 10 应用，如果 **IsSticky** 设置为 True，则 **CommandBar** 将忽略轻触消除手势。 |
 | [**CommandBar（命令栏）**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 在 Windows 10 应用中，[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 不处理 [**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622) 事件，也不处理 [**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) 事件。 同时也不会响应点击或向上轻扫操作。 你仍可以选择处理这些事件并设置 [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939)。 |
-| [
-            **DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 通过从视觉上更改 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 和 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280)，查看你的应用的外观。 对于在移动设备上运行的 Windows 10 应用，这些控件不会再导航到选择页面，但会改为使用轻触消除弹出窗口。 |
-| [
-            **DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 在 Windows 10 应用中，你无法将 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 或 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) 放入浮出控件中。 如果你希望这些控件显示在弹出式控件中，则可以使用 [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) 和 [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313)。 |
+| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 通过从视觉上更改 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 和 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280)，查看你的应用的外观。 对于在移动设备上运行的 Windows 10 应用，这些控件不会再导航到选择页面，但会改为使用轻触消除弹出窗口。 |
+| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 在 Windows 10 应用中，你无法将 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 或 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) 放入浮出控件中。 如果你希望这些控件显示在弹出式控件中，则可以使用 [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) 和 [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313)。 |
 | **GridView**、**ListView** | 有关 **GridView**/**ListView**，请参阅 [GridView/ListView 更改](#gridview)。 |
 | [**中心**](https://msdn.microsoft.com/library/windows/apps/dn251843) | 在 Windows Phone 应用商店应用中，[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 控件从最后一部分环绕到第一部分。 在 Windows 应用商店应用和 Windows 10 应用中，中心区域不会环绕。 |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | 在 Windows Phone 应用商店应用中，[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 控件的背景图像相对于中心区域在视差中移动。 在 Windows 应用商店应用和 Windows 10 应用，中心区域不使用视差。 |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | 在通用 8.1 应用中，[**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) 属性会导致区域标头（和呈现在它旁边的 V 型字型）变得具有交互性。 在 Windows 10 应用中，在该标头旁提供可交互的“查看详细信息”，但该标头本身不可交互。 **IsHeaderInteractive** 仍用于确定交互是否引发 [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953) 事件。 |
 | **MessageDialog** | 如果你使用的是 **MessageDialog**，请考虑改用更加灵活的 [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972)。 另请参阅 [XAML UI 基础知识](http://go.microsoft.com/fwlink/p/?linkid=619992)示例。 |
 | **ListPickerFlyout**、**PickerFlyout**  | Windows 10 应用中已弃用 **ListPickerFlyout** 和 **PickerFlyout**。 对于单选浮出控件，请使用 [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030)；对于更复杂的体验，请使用 [**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496)。 |
-| [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | [
-            **PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) 属性在 Windows 10 应用中已弃用，设置它已没有任何作用。 应改用 [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867)，它默认为 **Peek**（在其中显示眼睛标志，就像显示在 Windows 应用商店应用中那样）。 另请参阅[密码框指南](https://msdn.microsoft.com/library/windows/apps/dn596103)。 |
-| [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | [
-            **Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) 控件现在是通用控件，它的使用不再限于移动设备。 |
+| [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) 属性在 Windows 10 应用中已弃用，设置它已没有任何作用。 应改用 [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867)，它默认为 **Peek**（在其中显示眼睛标志，就像显示在 Windows 应用商店应用中那样）。 另请参阅[密码框指南](https://msdn.microsoft.com/library/windows/apps/dn596103)。 |
+| [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) 控件现在是通用控件，它的使用不再限于移动设备。 |
 | [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | 尽管已在通用设备系列中实现了 [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803)，但它无法在移动设备上正常运行。 请参阅[弃用 SearchBox 以支持 AutoSuggestBox](#searchbox)。 |
 | **SemanticZoom** | 有关 **SemanticZoom**，请参阅 [SemanticZoom 更改](#semantic-zoom)。 |
-| [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | [
-            **ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的某些默认属性已更改。 [
-            **HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) 已更改为 **Auto**，[**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) 已更改为 **Auto**，而 [**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) 已更改为 **Disabled**。 如果新的默认值不适合你的应用，你可以使用样式更改它们，或对控件本身的本地值进行更改。  |
+| [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的某些默认属性已更改。 [**HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) 已更改为 **Auto**，[**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) 已更改为 **Auto**，而 [**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) 已更改为 **Disabled**。 如果新的默认值不适合你的应用，你可以使用样式更改它们，或对控件本身的本地值进行更改。  |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | 在 Windows 应用商店应用中，[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 的拼写检查默认处于禁用状态。 在 Windows Phone 应用商店应用和 Windows 10 应用中，它默认处于启用状态。 |
-| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [
-            **TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 的默认字体大小已从 11 更改为 15。 |
-| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [
-            **TextBox.TextReadingOrder**](https://msdn.microsoft.com/library/windows/apps/dn252859) 的默认值已从 **Default** 更改为 **DetectFromContent**。 如果不适用，则使用 **UseFlowDirection**。 **Default** 已弃用。 |
+| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 的默认字体大小已从 11 更改为 15。 |
+| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [**TextBox.TextReadingOrder**](https://msdn.microsoft.com/library/windows/apps/dn252859) 的默认值已从 **Default** 更改为 **DetectFromContent**。 如果不适用，则使用 **UseFlowDirection**。 **Default** 已弃用。 |
 | 各种 | 主题色适用于 Windows Phone 应用商店应用和 Windows 10 应用，但不适用于 Windows 应用商店应用。  |
 
 有关 UWP 应用控件的详细信息，请参阅[按功能列出的控件](https://msdn.microsoft.com/library/windows/apps/mt185405)、[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)和[控件指南](https://msdn.microsoft.com/library/windows/apps/dn611856)。
@@ -151,14 +143,10 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 已对 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 默认样式资源库进行多个更改，以使控件垂直滚动（而不是像之前默认的那样水平滚动）。 如果你编辑过你的项目中的默认样式副本，则副本将不会具有这些更改，因此你将需要手动进行更改。 下面是这些更改的列表。
 
--   [
-            **ScrollViewer.HorizontalScrollBarVisibility**](https://msdn.microsoft.com/library/windows/apps/br209547) 的资源库已从 **Auto** 更改为 **Disabled**。
--   [
-            **ScrollViewer.VerticalScrollBarVisibility**](https://msdn.microsoft.com/library/windows/apps/br209587) 的资源库已从 **Disabled** 更改为 **Auto**。
--   [
-            **ScrollViewer.HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) 的资源库已从 **Enabled** 更改为 **Disabled**。
--   [
-            **ScrollViewer.VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) 的资源库已从 **Disabled** 更改为 **Enabled**。
+-   [**ScrollViewer.HorizontalScrollBarVisibility**](https://msdn.microsoft.com/library/windows/apps/br209547) 的资源库已从 **Auto** 更改为 **Disabled**。
+-   [**ScrollViewer.VerticalScrollBarVisibility**](https://msdn.microsoft.com/library/windows/apps/br209587) 的资源库已从 **Disabled** 更改为 **Auto**。
+-   [**ScrollViewer.HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) 的资源库已从 **Enabled** 更改为 **Disabled**。
+-   [**ScrollViewer.VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) 的资源库已从 **Disabled** 更改为 **Enabled**。
 -   在 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/br242826) 的资源库中，[**ItemsWrapGrid.Orientation**](https://msdn.microsoft.com/library/windows/apps/dn298907) 的值已从 **Vertical** 更改为 **Horizontal**。
 
 如果上一个更改（对 **Orientation** 的更改）看起来矛盾，请记住我们讨论的是包围式网格。 水平方向的包围式网格（新值）与文本水平流动的写入系统类似，并且在页面末尾中断到下一行。 这样的文本页面会垂直滚动。 相反，垂直方向的包围式网格（上一个值）与文本垂直流动的写入系统类似，因而水平滚动。
@@ -244,8 +232,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 ## 本地化和全球化
 
-在 UWP App 项目中，你可以重新使用通用 8.1 项目中的 Resources.resw 文件。 复制完该文件后，将其添加到项目，然后将**“生成操作”**设置为**“PRIResource”**，并将**“复制到输出目录”**设置为**“不复制”**。 [
-            **ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
+在 UWP App 项目中，你可以重新使用通用 8.1 项目中的 Resources.resw 文件。 复制完该文件后，将其添加到项目，然后将**“生成操作”**设置为**“PRIResource”**，并将**“复制到输出目录”**设置为**“不复制”**。 [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
 
 ## 播放到
 
@@ -424,8 +411,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 用户开始键入后，将引发 **TextChanged** 事件，描述为 **UserInput**。 然后填充建议列表，并设置 [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) 的 **ItemsSource**。 在用户导航列表时，将引发 **SuggestionChosen** 事件（并且若已设置 **TextMemberDisplayPath**，文本框将自动填充指定的属性）。 当用户使用 Enter 键提交选择时，将引发 **QuerySubmitted** 事件，此时可对该建议执行相应操作（在此情况下，最有可能是导航至具有有关指定内容的更多详细信息的另一个页面）。 请注意，**SearchBoxQuerySubmittedEventArgs** 的 **LinguisticDetails** 和 **Language** 属性不再受支持（有支持该功能的等效 API）。 并且 **KeyModifiers** 也不再受支持。
 
-[
-            **AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) 还支持输入法编辑器 (IME)。 如果希望显示“查找”图标，也可以那样做（与图标交互将引发 **QuerySubmitted** 事件）。
+[**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) 还支持输入法编辑器 (IME)。 如果希望显示“查找”图标，也可以那样做（与图标交互将引发 **QuerySubmitted** 事件）。
 
 ```xml
    <AutoSuggestBox ... >
@@ -439,8 +425,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 ## SemanticZoom 更改
 
-[
-            **SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 的缩小手势已在 Windows Phone 模型上进行了融合，该手势是点击或单击组标题（因此，在桌面计算机上，不再显示提供的用于缩小的减号按钮）。 现在，我们可以随意在所有设备上获取相同且一致的行为。 与 Windows Phone 模型相比的一个外观区别是缩小视图（跳转列表）替换放大视图，而不是覆盖它。 出于此原因，你可以从缩小视图中删除任何半透明背景。
+[**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 的缩小手势已在 Windows Phone 模型上进行了融合，该手势是点击或单击组标题（因此，在桌面计算机上，不再显示提供的用于缩小的减号按钮）。 现在，我们可以随意在所有设备上获取相同且一致的行为。 与 Windows Phone 模型相比的一个外观区别是缩小视图（跳转列表）替换放大视图，而不是覆盖它。 出于此原因，你可以从缩小视图中删除任何半透明背景。
 
 在 Windows Phone 应用商店应用中，缩小视图将扩展为屏幕大小。 在 Windows 应用商店应用和 Windows 10 应用中，缩小视图的大小限制在 **SemanticZoom** 控件的边界内。
 

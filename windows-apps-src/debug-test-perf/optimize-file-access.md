@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
-title: 优化文件访问
-description: 创建可高效访问文件系统的通用 Windows 平台 (UWP) 应用，避免因磁盘延迟和内存/CPU 周期而产生的性能问题。
+title: "优化文件访问"
+description: "创建可高效访问文件系统的通用 Windows 平台 (UWP) 应用，避免因磁盘延迟和内存/CPU 周期而产生的性能问题。"
+translationtype: Human Translation
+ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
+ms.openlocfilehash: 354a11fefd7164fd6ba5b21ec871ecbe7916ad25
+
 ---
 # 优化文件访问
 
@@ -12,7 +16,7 @@ description: 创建可高效访问文件系统的通用 Windows 平台 (UWP) 应
 
 如果你希望访问较大的文件集合，并且你希望访问除典型的 Name、FileType 和 Path 属性之外的属性值，可通过创建 [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) 和调用 [**SetPropertyPrefetch**](https://msdn.microsoft.com/library/windows/apps/hh973319) 来访问它们。 **SetPropertyPrefetch** 方法可显著改善应用的性能，这些应用可显示从文件系统获取的项目集合，如图像集合。 下一组示例介绍了一些访问多个文件的方法。
 
-第一个示例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) 来检索一组文件的名称信息。 从方法具有很好的性能，因为该示例仅访问名称属性。
+第一个示例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) 来检索一组文件的名称信息。 这个方法具有很好的性能，因为该示例仅访问名称属性。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -36,7 +40,7 @@ description: 创建可高效访问文件系统的通用 Windows 平台 (UWP) 应
 > Next i
 > ```
 
-第二个示例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273)，然后检索每个文件的图像属性。 此方法提供的性能较差。
+第二个示例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273)，然后检索每个文件的图像属性。 这个方法的性能逊色不少。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -62,7 +66,7 @@ description: 创建可高效访问文件系统的通用 Windows 平台 (UWP) 应
 > Next i
 > ```
 
-第三个示例使用 [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) 来获取有关一组文件的信息。 此方法提供的性能优于前面的示例。
+第三个示例使用 [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) 来获取关于一组文件的信息。 此方法提供的性能优于前面的示例。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -119,7 +123,7 @@ description: 创建可高效访问文件系统的通用 Windows 平台 (UWP) 应
 > 
 > Next file
 > ```
-如果要对 Windows.Storage 对象（如 `Windows.Storage.ApplicationData.Current.LocalFolder`）执行多个操作，请创建一个本地变量以引用该存储源，以便你每次访问它时不必重新创建中间对象。
+如果要对 Windows.Storage 对象（如 `Windows.Storage.ApplicationData.Current.LocalFolder`）执行多个操作，请创建一个本地变量以引用该存储源，这样你每次访问它时就不必重新创建中间对象。
 
 ## C# 和 Visual Basic 中的数据流性能
 
@@ -129,7 +133,7 @@ description: 创建可高效访问文件系统的通用 Windows 平台 (UWP) 应
 
 在将 UWP 流转换为 .NET 流时，有效地为基础 UWP 流创建适配器。 在某些情况下，在 UWP 数据流上调用方法会产生与此行为关联的运行时成本。 这可能会影响你的应用的速度，尤其在执行若干频繁读或写的小操作时。
 
-为了提高应用速度，UWP 数据流适配器包含一个数据缓冲区。 以下代码示例演示了使用带有默认缓冲区大小的 UWP 流适配器的小型连续读取操作。
+为了提高应用速度，UWP 数据流适配器包含一个数据缓冲区。 以下代码示例演示使用带有默认缓冲区大小的 UWP 数据流适配器的小型连续读取操作。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -182,7 +186,7 @@ description: 创建可高效访问文件系统的通用 Windows 平台 (UWP) 应
 > End Using
 > ```
 
-在将 UWP 流转换为 .NET 流的大部分情况中，均预期使用此默认缓冲行为。 但是，在某些情况下，你可能希望调整缓冲行为以便提高性能。
+在将 UWP 数据流转换为 .NET 数据流的大部分情况中，均预期使用此默认缓冲行为。 但是，在某些情况下，你可能希望调整缓冲行为以便提高性能。
 
 ### 使用大型数据集
 
@@ -200,8 +204,7 @@ Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
 Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 ```
 
-[
-            **Stream.CopyTo**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copyto.aspx) 和 [**CopyToAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) 方法还会分配本地缓冲区以用于在流之间的复制操作。 与 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx) 扩展方法一样，你可以通过覆盖默认缓冲区大小来为大型流复制操作获取较好的性能。 以下代码示例演示了更改 **CopyToAsync** 调用的默认缓冲区大小。
+[**Stream.CopyTo**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copyto.aspx) 和 [**CopyToAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) 方法还会分配本地缓冲区以用于流之间的复制操作。 与 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx) 扩展方法一样，你可以通过覆盖默认缓冲区大小来为大型流复制操作获取较好的性能。 以下代码示例演示了更改 **CopyToAsync** 调用的默认缓冲区大小。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -234,6 +237,7 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

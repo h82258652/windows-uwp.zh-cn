@@ -1,7 +1,10 @@
 ---
 author: JordanRh1
-title: 启用对 Windows 10 IoT 核心版的用户模式访问
-description: 本教程介绍如何对 Windows 10 IoT 核心版上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。
+title: "启用对 Windows 10 IoT 核心版的用户模式访问"
+description: "本教程介绍如何对 Windows 10 IoT 核心版上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。"
+ms.sourcegitcommit: f7d7dac79154b1a19eb646e7d29d70b2f6a15e35
+ms.openlocfilehash: eedabee593400ff0260b6d3468ac922285a034f8
+
 ---
 # 启用对 Windows 10 IoT 核心版的用户模式访问
 
@@ -140,7 +143,7 @@ SPISerialBus(              // SCKL - GPIO 21 - Pin 40
 
 ```
 
-随附友好名称声明（这是必需的 ）在 DSD 中指定，并引用此资源声明的索引。 
+随附友好名称声明（这是必需的）在 DSD 中指定，并引用此资源声明的索引。 
 
 ```cpp
 Package(2) { "bus-SPI-SPI1", Package() { 2 }}, 
@@ -174,13 +177,13 @@ I2CSerialBus(              // Pin 3 (GPIO2, SDA1), 5 (GPIO3, SCL1)
 
 ```
 
-随附友好名称声明（这是必需的 ）在 DSD 中指定： 
+随附友好名称声明（这是必需的）在 DSD 中指定： 
 
 ```cpp
 Package(2) { "bus-I2C-I2C1", Package() { 3 }}, 
 ```
 
-这将声明友好名称为“I2C1”、引用资源索引 3（它是以上声明的 I2CSerialBus\(\) 的索引）的 I2C 总线。 
+这将声明友好名称为“I2C1”、引用资源索引 3（它是以上声明的 I2CSerialBus() 资源的索引）的 I2C 总线。 
 
 I2CSerialBus\(\) 描述符的以下字段是固定的： 
 
@@ -340,13 +343,15 @@ Windows 在 [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh4395
 
 * 引脚复用服务器 – 这些是控制引脚复用控制块的驱动程序。 引脚复用服务器通过请求保留复用资源（通过 *IRP_MJ_CREATE* 请求）和请求切换引脚的功能（通过 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求），从客户端接收引脚复用请求。 引脚复用服务器通常是 GPIO 驱动程序，因为复用块有时是 GPIO 块的一部分。 即使复用块是单独的外围设备，GPIO 驱动程序也是用于放置复用功能的逻辑位置。 
 * 引脚复用客户端 – 这些是使用引脚复用的驱动程序。 引脚复用客户端从 ACPI 固件接收引脚复用资源。 引脚复用资源是一种连接资源，受资源中心管理。 引脚复用客户端通过打开资源的句柄来保留引脚复用资源。 若要使硬件更改生效，客户端必须通过发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求来提交配置。 客户端通过关闭句柄释放引脚复用资源，其中点复用配置会还原为其默认状态。 
-* ACPI 固件 – 指定具有 `FunctionConfig()` 资源的复用配置。 FunctionConfig 资源表示的引脚中具有客户端所需的复用配置。 FunctionConfig 资源包含功能编号、拉配置和引脚编号列表。 FunctionConfig 资源提供给引脚复用客户端作为硬件资源，驱动程序在其 PrepareHardware 回调中接收这些资源（类似于 GPIO 和 SPB 连接资源）。 客户端接收可用于打开资源句柄的资源中心 ID。 
+* ACPI 固件 – 指定具有 `MsftFunctionConfig()` 资源的复用配置。 MsftFunctionConfig 资源表示的管脚中具有客户端所需的复用配置。 MsftFunctionConfig 资源包含功能编号、拉配置和管脚编号列表。 MsftFunctionConfig 资源提供给管脚复用客户端作为硬件资源，驱动程序在其 PrepareHardware 回调中接收这些资源（类似于 GPIO 和 SPB 连接资源）。 客户端接收可用于打开资源句柄的资源中心 ID。 
+
+> 必须将 `/MsftInternal` 命令行开关传递到 `asl.exe`，才能编译包含 `MsftFunctionConfig()` 描述符的 ASL 文件，因为 ACPI 工作委员会当前正在审查这些描述符。 例如： `asl.exe /MsftInternal dsdt.asl`
 
 引脚复用中涉及的操作顺序如下所示。 
 
 ![引脚复用客户端服务器交互](images/usermode-access-diagram-1.png)
 
-1.  客户端在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回调中从 ACPI 固件接收 FunctionConfig 资源。
+1.  客户端在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回调中从 ACPI 固件接收 MsftFunctionConfig 资源。
 2.  客户端使用资源中心帮助程序函数 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 从资源 ID 创建路径，然后打开路径句柄（使用 [ZwCreateFile\(\)](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer\(\)](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) 或 [WdfIoTargetOpen\(\)](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)）。
 3.  服务器使用资源中心帮助程序函数 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 从文件路径提取资源中心 ID，然后查询资源中心以获取资源描述符。
 4.  服务器为描述符中的每个引脚执行共享仲裁，然后完成 IRP_MJ_CREATE 请求。
@@ -362,7 +367,7 @@ Windows 在 [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh4395
 
 ####    解析资源
 
-WDF 驱动程序在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 例程中接收 `FunctionConfig()` 资源。 FunctionConfig 资源可以由以下字段来标识：
+WDF 驱动程序在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 例程中接收 `MsftFunctionConfig()` 资源。 MsftFunctionConfig 资源可以由以下字段来标识：
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -370,7 +375,7 @@ CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Class = CM_RESOURCE_CONNECTION_CLAS
 CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Type = CM_RESOURCE_CONNECTION_TYPE_FUNCTION_CONFIG
 ```
 
-`EvtDevicePrepareHardware()` 例程可能会提取 FunctionConfig 资源，如下所示：
+`EvtDevicePrepareHardware()` 例程可能会提取 MsftFunctionConfig 资源，如下所示：
 
 ```cpp
 EVT_WDF_DEVICE_PREPARE_HARDWARE evtDevicePrepareHardware;
@@ -426,7 +431,7 @@ evtDevicePrepareHardware (
 
 ####    保留和提交资源
 
-当客户端想要复用引脚时，它会保留并提交 FunctionConfig 资源。 以下示例演示客户端会如何保留并提交 FunctionConfig 资源。
+当客户端想要复用管脚时，它会保留并提交 MsftFunctionConfig 资源。 以下示例演示客户端会如何保留并提交 MsftFunctionConfig 资源。
 
 ```cpp
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -511,7 +516,7 @@ NTSTATUS AcquireFunctionConfigResource (
 
 ####    处理 IRP_MJ_CREATE 请求
 
-当客户端想要保留引脚复用资源时，它们会打开资源句柄。 引脚复用服务器通过资源中心的重分析操作来接收 *IRP_MJ_CREATE* 请求。 *IRP_MJ_CREATE* 请求的尾随路径组件包含资源中心 ID，该 ID 是十六进制格式的 64 位整数。 服务器应使用 reshub.h 中的 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 从文件名中提取资源中心 ID，然后向资源中心发送 *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* 以获取 `FunctionConfig()` 描述符。
+当客户端想要保留引脚复用资源时，它们会打开资源句柄。 引脚复用服务器通过资源中心的重分析操作来接收 *IRP_MJ_CREATE* 请求。 *IRP_MJ_CREATE* 请求的尾随路径组件包含资源中心 ID，该 ID 是十六进制格式的 64 位整数。 服务器应使用 reshub.h 中的 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 从文件名中提取资源中心 ID，然后向资源中心发送 *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* 以获取 `MsftFunctionConfig()` 描述符。
 
 服务器应该验证描述符，然后从描述符中提取共享模式和引脚列表。 接下来，应该对引脚执行共享仲裁，在完成请求之前，如果成功，将该引脚标记为保留。
 
@@ -525,18 +530,18 @@ NTSTATUS AcquireFunctionConfigResource (
 
 如果共享仲裁失败，应使用 *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE* 完成请求。 如果共享仲裁成功，应使用 *STATUS_SUCCESS* 完成请求。
 
-请注意，应从 FunctionConfig 描述符而不是从 [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx) 中获取传入请求的共享模式。
+请注意，应从 MsftFunctionConfig 描述符而不是从 [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx) 中获取传入请求的共享模式。
 
 ####    处理 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 请求
 
-在客户端通过打开句柄成功地保留了 FunctionConfig 资源后，它可以发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 以请求服务器执行实际的硬件复用操作。 当服务器接收 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 时，对于引脚列表中的每个引脚，它应该 
+在客户端通过打开句柄成功保留了 MsftFunctionConfig 资源后，它可以发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 以请求服务器执行实际的硬件复用操作。 当服务器接收 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 时，对于引脚列表中的每个引脚，它应该 
 
 *   将在 PNP_FUNCTION_CONFIG_DESCRIPTOR 结构的 PinConfiguration 成员中指定的拉模式设置到硬件。
 *   将引脚复用到由 PNP_FUNCTION_CONFIG_DESCRIPTOR 结构的 FunctionNumber 成员指定的功能。
 
 然后服务器应使用 *STATUS_SUCCESS* 完成请求。
 
-FunctionNumber 的含义由服务器定义，据悉：FunctionConfig 描述符是使用服务器如何解释此字段的知识撰写的。
+FunctionNumber 的含义由服务器定义，据了解，MsftFunctionConfig 描述符是运用了服务器如何解释此字段这一方面的知识撰写的。
 
 请记住，当关闭该句柄时，服务器必须将引脚恢复为收到 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 时引脚所使用的配置，因此服务器在修改引脚之前，可能需要保存这些引脚的状态。
 
@@ -546,11 +551,11 @@ FunctionNumber 的含义由服务器定义，据悉：FunctionConfig 描述符�
 
 ### ACPI 表的编写指南
 
-本部分介绍如何将复用资源提供给客户端驱动程序。 请注意，你需要 Microsoft ASL 编译器版本 14327 或更高版本来编译包含 `FunctionConfig()` 资源的表。 `FunctionConfig()` 资源提供给引脚复用客户端作为硬件资源。 `FunctionConfig()` 应将资源提供给需要更改引脚复用的驱动程序，这些驱动程序通常是 SPB 和串行控制器驱动程序；但不应将资源提供给 SPB 和串行外设驱动程序，因为该控制器驱动程序将处理复用配置。
-`FunctionConfig()` ACPI 宏按如下方式定义：
+本部分介绍如何将复用资源提供给客户端驱动程序。 请注意，你需要 Microsoft ASL 编译器版本 14327 或更高版本来编译包含 `MsftFunctionConfig()` 资源的表。 `MsftFunctionConfig()` 资源提供给引脚复用客户端作为硬件资源。 `MsftFunctionConfig()` 应将资源提供给需要更改引脚复用的驱动程序，这些驱动程序通常是 SPB 和串行控制器驱动程序；但不应将资源提供给 SPB 和串行外设驱动程序，因为该控制器驱动程序将处理复用配置。
+`MsftFunctionConfig()` ACPI 宏按如下方式定义：
 
 ```cpp
-  FunctionConfig(Shared/Exclusive
+  MsftFunctionConfig(Shared/Exclusive
                 PinPullConfig,
                 FunctionNumber,
                 ResourceSource,
@@ -573,7 +578,7 @@ FunctionNumber 的含义由服务器定义，据悉：FunctionConfig 描述符�
 * VendorData – 可选二进制数据，它的含义由引脚复用服务器进行定义。 通常它应该保留为空。
 * 引脚列表 – 配置所应用到的引脚编号的逗号分隔列表。 当引脚复用服务器为 GpioClx 驱动程序时，这些是 GPIO 引脚编号，并且所具有的含义与 GpioIo 描述符中的引脚编号相同。 
 
-以下示例演示一个引脚复用服务器可能会如何将 FunctionConfig\(\) 资源提供给 I2C 控制器驱动程序。 
+以下示例演示一个管脚复用服务器可能会如何将 MsftFunctionConfig() 资源提供给 I2C 控制器驱动程序。 
 
 ```cpp
 Device(I2C1) 
@@ -591,14 +596,14 @@ Device(I2C1)
         { 
             Memory32Fixed(ReadWrite, 0x3F804000, 0x20) 
             Interrupt(ResourceConsumer, Level, ActiveHigh, Shared) { 0x55 } 
-            FunctionConfig(Exclusive, PullUp, 4, "\\_SB.GPI0", 0, ResourceConsumer, ) { 2, 3 } 
+            MsftFunctionConfig(Exclusive, PullUp, 4, "\\_SB.GPI0", 0, ResourceConsumer, ) { 2, 3 } 
         }) 
         Return(RBUF) 
     } 
 } 
 ```
 
-除了控制器驱动程序通常所需的内存和中断资源，还要指定 `FunctionConfig()` 资源。 此资源允许 I2C 控制器驱动程序将引脚 2 和 3（由 \\_SB.GPIO0 处的设备节点进行管理）置于已启用上拉电阻器的功能 4 中。 
+除了控制器驱动程序通常所需的内存和中断资源，还要指定 `MsftFunctionConfig()` 资源。 此资源允许 I2C 控制器驱动程序将引脚 2 和 3（由 \\_SB.GPIO0 处的设备节点进行管理）置于已启用上拉电阻器的功能 4 中。 
 
 ### 在 GpioClx 客户端驱动器中支持复用支持 
 
@@ -611,7 +616,7 @@ Device(I2C1)
 
 除了这两个新的 DDI，应针对引脚复用兼容性审核现有 DDI： 
 
-* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins 由 GpioClx 调用以命令微型端口驱动程序配置一组用于 GPIO 输入或输出的引脚。 GPIO 与 FunctionConfig 是互斥的，这意味着永远不会在同一时间为 GPIO 和 FunctionConfig 连接引脚。 由于引脚的默认功能不需要成为 GPIO，因此调用 ConnectIoPins 时，引脚未必不会复用为 GPIO。 需要调用 ConnectIoPins，才可以执行使引脚可供 GPIO IO 使用的所有必要操作，包括复用操作。 *CLIENT_ConnectInterrupt* 应具备类似行为，因为中断可以视为 GPIO 输入的一种特殊情况。 
+* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins 由 GpioClx 调用以命令微型端口驱动程序配置一组用于 GPIO 输入或输出的引脚。 GPIO 与 MsftFunctionConfig 是互斥的，这意味着永远不会同时为 GPIO 和 MsftFunctionConfig 连接管脚。 由于引脚的默认功能不需要成为 GPIO，因此调用 ConnectIoPins 时，引脚未必不会复用为 GPIO。 需要调用 ConnectIoPins，才可以执行使引脚可供 GPIO IO 使用的所有必要操作，包括复用操作。 *CLIENT_ConnectInterrupt* 应具备类似行为，因为中断可以视为 GPIO 输入的一种特殊情况。 
 * CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt – 这些例程应该将引脚返回到调用 CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt 时引脚所处的状态，除非指定了 PreserveConfiguration 标志。 除了将引脚的方向恢复为其默认状态之外，微型端口还应该将每个引脚的复用状态恢复为调用 _Connect 例程时引脚所处的状态。 
 
 例如，假设引脚的默认复用配置为 UART，则也可以将引脚用作 GPIO。 调用 CLIENT_ConnectIoPins 以连接用于 GPIO 的引脚时，它应该将该引脚复用为 GPIO；在 CLIENT_DisconnectIoPins 中，它应该将该引脚复用回 UART。 一般情况下，_Disconnect 例程应撤消 _Connect 例程执行的操作。 
@@ -624,13 +629,13 @@ Device(I2C1)
 
 ![引脚复用依存关系](images/usermode-access-diagram-2.png)
 
-在设备初始化期间，`SpbCx` 和 `SerCx` 框架会解析作为硬件资源提供给设备的所有 `FunctionConfig()` 资源。 然后 SpbCx/SerCx 按需获取和释放引脚复用资源。
+在设备初始化期间，`SpbCx` 和 `SerCx` 框架会解析作为硬件资源提供给设备的所有 `MsftFunctionConfig()` 资源。 然后 SpbCx/SerCx 按需获取和释放引脚复用资源。
 
 `SpbCx` 仅在调用客户端驱动程序的 [EvtSpbTargetConnect\(\)](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) 回调之前，在其 *IRP_MJ_CREATE* 处理程序中应用引脚复用配置。 如果无法应用复用配置，将不会调用控制器驱动程序的 `EvtSpbTargetConnect()` 回调。 因此，SPB 控制器驱动程序可能会假设在调用 `EvtSpbTargetConnect()` 时，引脚会复用为 SPB 功能。
 
 `SpbCx` 仅在调用控制器驱动程序的 [EvtSpbTargetDisconnect\(\)](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) 回调之后，在其 *IRP_MJ_CLOSE* 处理程序中恢复引脚复用配置。 结果是，每当外设驱动程序打开 SPB 控制器驱动程序的句柄时，引脚就会复用为 SPB 功能；当外设驱动程序关闭其句柄时，会复用回引脚。
 
-`SerCx` 类似行为。 `SerCx` 仅在调用控制器驱动程序的 [EvtSerCx2FileOpen\(\)](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) 回调之前，在其 *IRP_MJ_CREATE* 处理程序中获取所有 `FunctionConfig()` 资源；仅在调用控制器驱动程序的 [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) 回调之后，在其 IRP_MJ_CLOSE 处理程序中释放所有资源。
+`SerCx` 类似行为。 `SerCx` 仅在调用控制器驱动程序的 [EvtSerCx2FileOpen\(\)](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) 回调之前，在其 *IRP_MJ_CREATE* 处理程序中获取所有 `MsftFunctionConfig()` 资源；仅在调用控制器驱动程序的 [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) 回调之后，在其 IRP_MJ_CLOSE 处理程序中释放所有资源。
 
 适用于 `SerCx` 和 `SpbCx` 控制器驱动程序的动态引脚复用的含义就是：它们必须能够容忍在某些时候从 SPB/UART 功能复用回引脚。 控制器驱动程序需要假设：在调用 `EvtSpbTargetConnect()` 或 `EvtSerCx2FileOpen()` 之前，不会复用引脚。 在以下回调期间，引脚不必复用为 SPB/UART 功能。 以下列表虽然不完整，但呈现了控制器驱动程序所实现的最常用 PNP 例程。
 
@@ -717,7 +722,6 @@ devcon status *msft8000
 | GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C 测试 | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| Signiant | http://windowsreleases/Playbook/Content%20Owners/Requesting%20Access%20to%20Signiant.aspx |
 | GpioTestTool | https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/GPIOTestTool |
 | I2cTestTool   | https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/I2cTestTool | 
 | SpiTestTool | https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/spitesttool |
@@ -1081,26 +1085,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

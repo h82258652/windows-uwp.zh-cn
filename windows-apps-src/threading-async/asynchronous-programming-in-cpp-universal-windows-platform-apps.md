@@ -73,8 +73,7 @@ void App::TestAsync()
 
 由 [**task::then**][taskThen] 函数创建并返回的任务称为*延续*。 用户提供的 lambda 输入参数（在此情况下）是任务操作在完成时产生的结果。 它与你在直接使用 **IAsyncOperation** 接口时通过调用 [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) 检索到的值相同。
 
-[
-            **task::then**][taskThen] 方法立即返回，并且其委托在异步工作成功完成后才运行。 在本示例中，如果异步操作导致引发异常，或由于取消请求而以取消状态结束，则延续永远不会执行。 稍后，我们将介绍如何编写即使上一个任务被取消或失败也会执行的延续。
+[**task::then**][taskThen] 方法立即返回，并且其委托在异步工作成功完成后才运行。 在本示例中，如果异步操作导致引发异常，或由于取消请求而以取消状态结束，则延续永远不会执行。 稍后，我们将介绍如何编写即使上一个任务被取消或失败也会执行的延续。
 
 尽管你在本地堆栈上声明任务变量，但它仍然管理其生存期，这样在其所有操作完成并且对其的所有引用离开作用域之前都不会被删除（即使该方法在操作完成之前返回）。
 
@@ -319,6 +318,6 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

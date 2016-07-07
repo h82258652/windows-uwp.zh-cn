@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
-title: 使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
-description: 通过使用适用于 Windows 10 移动版的 Microsoft 模拟器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。
+title: "使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试"
+description: "通过使用适用于 Windows 10 移动版的 Microsoft 模拟器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。"
+translationtype: Human Translation
+ms.sourcegitcommit: 9a33710315486c23a204a528d3d87421c6990b85
+ms.openlocfilehash: c53bda2329cd984e3a03d4a166e7353097e62cef
+
 ---
 # 使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -625,7 +629,7 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 
 当你安装仿真器时，Windows 10 移动版 VHD 映像已安装，它在控制面板的“程序和功能”****列表中获取自己的条目。 如果你想要卸载该映像，请在已安装的程序列表中找到“Windows 10 移动版映像 - <version>”****、右键单击它，然后选择“卸载”****。
 
-在当前版本中，必须随后手动删除模拟器的 VHD 文件。 如果将模拟器安装到默认路径，VHD 文件则位于 C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd。
+在当前版本中，必须随后手动删除模拟器的 VHD 文件。 如果已将仿真器安装到默认路径，则 VHD 文件位于 C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd。
 
 ###如何禁用硬件加速图形
 
@@ -654,6 +658,7 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

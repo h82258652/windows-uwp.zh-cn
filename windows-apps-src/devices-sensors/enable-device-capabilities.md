@@ -29,8 +29,7 @@ ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
 
 | 设备功能 | 清单设计器 | 描述 |
 |-------------------|-------------------|-------------|    
-| AllJoyn | ![在清单设计器中可用](images/ap-tools.png) | 允许网络上支持 AllJoyn 的应用和设备发现彼此并进行交互。 [
-            **Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971) 命名空间中访问 API 的应用都必须使用此功能。 |
+| AllJoyn | ![在清单设计器中可用](images/ap-tools.png) | 允许网络上支持 AllJoyn 的应用和设备发现彼此并进行交互。 [**Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971) 命名空间中访问 API 的应用都必须使用此功能。 |
 | 阻止的聊天消息 | ![在清单设计器中可用](images/ap-tools.png) | 允许应用读取已由“垃圾邮件筛选器”应用阻止的短信和彩信消息。 |
 | 聊天消息访问 | ![在清单设计器中可用](images/ap-tools.png) | 允许应用读取和删除短信。 它还允许应用将聊天消息存储在系统数据存储中。 |
 | 代码生成 | ![在清单设计器中可用](images/ap-tools.png) | 允许应用以动态方式生成代码。 |

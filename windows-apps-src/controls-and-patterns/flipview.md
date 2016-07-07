@@ -5,8 +5,8 @@ title: "翻转视图控件指南"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: ecb46c0d42821d833e8232780b553754f8f097c5
 
 ---
 # 翻转视图
@@ -14,7 +14,7 @@ ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
 使用翻转视图浏览集合中的图像或其他项目（例如相册中的照片或产品详细信息页中的项目），一次显示一个项目。 对于触摸设备，轻扫某个项将在整个集合中进行浏览。 对于鼠标，导航按钮显示在鼠标悬停位置上。 对于键盘，使用箭头键移动浏览该集合。
 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+
 
 -   [**FlipView 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
 -   [**ItemsSource 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
@@ -205,12 +205,11 @@ stackPanel1.Children.Add(flipView1);
 
 ## 相关文章
 
-- [列表指南](https://msdn.microsoft.com/library/windows/apps/mt186889)
-- [**FlipView 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
-- [**CarouselPanel 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
+- [列表指南](lists.md)
+- [**FlipView 类**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -159,8 +159,7 @@ ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerExited);
 -   自定义的静态事件。
 -   页面导航的处理程序。
 
-[
-            **FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) 或 [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) 是可能的事件触发器，它们在状态管理和对象生存期中具有合适的位置，以便你可以使用它们删除其他事件的处理程序。
+[**FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) 或 [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) 是可能的事件触发器，它们在状态管理和对象生存期中具有合适的位置，以便你可以使用它们删除其他事件的处理程序。
 
 例如，你可以使用以下代码，将名为 **textBlock1\_PointerEntered** 的事件处理程序从目标对象 **textBlock1** 中删除。
 
@@ -252,11 +251,9 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 **注意** **Background** 和 **Fill** 不由 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 定义，而是由不同的派生类定义，例如 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 和 [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377)。 但你为前景和背景属性使用的画笔含义对点击测试和输入事件而言是相同的，无论是哪些子类实现了这些属性。
 
 -   如果该元素为控件，那么它的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) 属性值必须为 **true**。
--   该元素必须具有实际的布局大小。 [
-            **ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 为 0 的元素不会引发输入事件。
+-   该元素必须具有实际的布局大小。 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 为 0 的元素不会引发输入事件。
 
-某些控件对点击测试有特殊规则。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 没有 **Background** 属性，但它仍然可在其大小的整个区域内进行点击测试。 [
-            **Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 和 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控件可在它们定义的矩形大小上执行点击测试，无论显示的媒体源文件中显示了何种透明内容，例如 alpha 通道。 由于该输入可由托管 HTML 处理并引发脚本事件，因此 [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) 控件具有特殊的点击测试行为。
+某些控件对点击测试有特殊规则。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 没有 **Background** 属性，但它仍然可在其大小的整个区域内进行点击测试。 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 和 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控件可在它们定义的矩形大小上执行点击测试，无论显示的媒体源文件中显示了何种透明内容，例如 alpha 通道。 由于该输入可由托管 HTML 处理并引发脚本事件，因此 [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) 控件具有特殊的点击测试行为。
 
 大部分 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 类和 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 都不能在它们自己的后台进行点击测试，但仍然可以处理从它们包含的元素中路由的用户输入事件。
 

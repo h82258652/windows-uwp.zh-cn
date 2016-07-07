@@ -93,10 +93,8 @@ Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客�
 
 2.  在你的应用代码中，调用 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 类的以下方法之一来检索 Windows 应用商店 ID 密钥。
 
-    -   [
-            **GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674)：如果计划使用 Windows 应用商店收集 API，请调用此方法。
-    -   [
-            **GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675)：如果计划使用 Windows 应用商店购买 API，请调用此方法。
+    -   [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674)：如果计划使用 Windows 应用商店收集 API，请调用此方法。
+    -   [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675)：如果计划使用 Windows 应用商店购买 API，请调用此方法。
 
     无论调用何种方法，都需要将你的 Azure AD 访问令牌传递给 *serviceTicket* 参数。 你可以选择将 ID 传递给在服务上下文中标识当前用户的 *publisherUserId* 参数。 如果你为服务维护用户 ID，可以使用此参数将这些用户 ID 与对 Windows 应用商店收集 API 或购买 API 进行的调用关联起来。
 
@@ -177,6 +175,6 @@ Windows 应用商店 ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -41,8 +41,7 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 ## 初始化 MediaCapture 对象
 
-[
-            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) 命名空间中的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类是所有媒体捕获操作的基本接口。 应用通常将此类型变量的范围声明为单个页面。 你的应用需要跟踪 **MediaCapture** 的当前状态，因此应为对象的初始化、预览和录制状态声明布尔变量。
+[**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) 命名空间中的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类是所有媒体捕获操作的基本接口。 应用通常将此类型变量的范围声明为单个页面。 你的应用需要跟踪 **MediaCapture** 的当前状态，因此应为对象的初始化、预览和录制状态声明布尔变量。
 
 [!code-cs[MediaCaptureVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaCaptureVariables)]
 
@@ -54,8 +53,7 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 [!code-cs[InitializeCameraAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitializeCameraAsync)]
 
--   [
-            **DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 方法可以用于查找指定类型的所有设备。 在此示例中，传入 **DeviceClass.VideoCapture** 枚举值以指示仅限返回视频捕获设备。 请注意，视频捕获设备用于捕获照片和视频。
+-   [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 方法可以用于查找指定类型的所有设备。 在此示例中，传入 **DeviceClass.VideoCapture** 枚举值以指示仅限返回视频捕获设备。 请注意，视频捕获设备用于捕获照片和视频。
 
 -   对于请求类型的每个已找到的设备，**FindAllAsync** 将返回包含 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 对象的 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) 对象。 来自 **System.Linq** 命名空间的 **FirstOrDefault** 扩展方法提供简单语法，以便基于指定条件从列表中选择项目。 第一次调用将尝试选择列表中第一个具有 **Panel.Back** 的 [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) 值的 **DeviceInformation**，该值指示相机位于设备机箱的后面板上。 如果设备的后面板上没有相机，则使用第一个可用的相机。
 
@@ -91,8 +89,7 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 -   由 XAML 框架提供 [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 属性以支持双向用户界面。 将 **CaptureElement** 的流方向设置为 [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/br242397) 将导致预览视频水平翻转。 当捕获设备位于设备的前面板上时使用此方法，以便从用户的角度来看，预览处于正确方向。
 
--   [
-            **StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 方法开始显示 **CaptureElement** 内的预览流。 如果成功启动预览，将设置 **\_isPreviewing** 变量以允许应用的其他部分了解该应用当前正在预览，并调用用于设置预览旋转的帮助程序方法。 将在下一节中定义此方法。
+-   [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 方法开始显示 **CaptureElement** 内的预览流。 如果成功启动预览，将设置 **\_isPreviewing** 变量以允许应用的其他部分了解该应用当前正在预览，并调用用于设置预览旋转的帮助程序方法。 将在下一节中定义此方法。
 
 ## 检测屏幕和设备方向
 
@@ -132,8 +129,7 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 [!code-cs[RotationKey](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRotationKey)]
 
-以下方法设置预览流的旋转。 媒体捕获的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 的 [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 方法会返回由键/值对组成的属性集。 指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 以表明我们需要视频预览流的属性，而不是视频录制流或音频流的属性。 属性集是用于设置流属性的常规用途界面，但对于此任务，上面定义的视频旋转 GUID 添加为属性键，并且视频流的所需方向（以度为单位）指定为该值。 [
-            **SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/dn297781) 使用新值更新编码属性。 再次强调，指定 **MediaStreamType.VideoPreview** 以表明正在设置的属性将用于视频预览流。
+以下方法设置预览流的旋转。 媒体捕获的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 的 [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 方法会返回由键/值对组成的属性集。 指定 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 以表明我们需要视频预览流的属性，而不是视频录制流或音频流的属性。 属性集是用于设置流属性的常规用途界面，但对于此任务，上面定义的视频旋转 GUID 添加为属性键，并且视频流的所需方向（以度为单位）指定为该值。 [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/dn297781) 使用新值更新编码属性。 再次强调，指定 **MediaStreamType.VideoPreview** 以表明正在设置的属性将用于视频预览流。
 
 [!code-cs[SetPreviewRotation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetPreviewRotation)]
 
@@ -147,8 +143,7 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 ## 捕获照片
 
-以下方法使用 [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/hh700840) 方法捕获照片，并传入请求的编码属性和一个包含捕获操作输出的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 对象。 [
-            **ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 类提供帮助程序方法（如 [**CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/hh700994)）来为受媒体捕获支持的文件类型生成编码属性。
+以下方法使用 [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/hh700840) 方法捕获照片，并传入请求的编码属性和一个包含捕获操作输出的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 对象。 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 类提供帮助程序方法（如 [**CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/hh700994)）来为受媒体捕获支持的文件类型生成编码属性。
 
 [!code-cs[TakePhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetTakePhotoAsync)]
 
@@ -234,8 +229,7 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 [!code-cs[恢复中](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
 
-[
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 事件提供一个机会，以便为屏幕和设备方向事件初始注册处理程序，并初始化 **MediaCapture** 对象。
+[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 事件提供一个机会，以便为屏幕和设备方向事件初始注册处理程序，并初始化 **MediaCapture** 对象。
 
 [!code-cs[OnNavigatedTo](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
 
@@ -271,8 +265,7 @@ ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
 
 ### 支持同时进行照片和视频捕获
 
-[
-            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API 允许你在支持它的设备上同时捕获照片和视频。 为简化起见，此示例使用 [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) 属性来确定是否支持同时捕获视频和照片，但是执行此操作的更可靠且建议的方法是使用相机配置文件。 有关详细信息，请参阅[相机配置文件](camera-profiles.md)。
+[**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API 允许你在支持它的设备上同时捕获照片和视频。 为简化起见，此示例使用 [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) 属性来确定是否支持同时捕获视频和照片，但是执行此操作的更可靠且建议的方法是使用相机配置文件。 有关详细信息，请参阅[相机配置文件](camera-profiles.md)。
 
 以下帮助程序方法更新应用的控件以匹配该应用的当前捕获状态。 每当你的应用的捕获状态更改时（如启动或停止视频捕获时），请调用此方法。
 

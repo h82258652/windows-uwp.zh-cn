@@ -597,6 +597,6 @@ C# 和 Visual Basic 均支持枚举语言。 这些语言将 C++ 公共枚举类
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

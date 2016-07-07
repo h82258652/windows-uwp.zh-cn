@@ -24,8 +24,7 @@ ms.openlocfilehash: 2ebef9767520d9f54f35ba22e2681cb41766e181
 ## 检索鼠标属性
 
 
-[
-            **Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
+[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
 
 **注意** 此处讨论的属性返回的值基于所有检测到的鼠标：如果至少一个鼠标支持特定功能，则布尔属性返回非零值，数值属性返回任何一个鼠标公开的最大值。
 
@@ -48,8 +47,7 @@ private void GetMouseProperties()
 ## 检索键盘属性
 
 
-[
-            **Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) 类，用于检索是否已连接键盘。 只需创建新的 **KeyboardCapabilities** 对象并获取 [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) 属性。
+[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) 类，用于检索是否已连接键盘。 只需创建新的 **KeyboardCapabilities** 对象并获取 [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) 属性。
 
 以下代码使用 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素来显示键盘属性和值。
 
@@ -64,8 +62,7 @@ private void GetKeyboardProperties()
 ## 检索触摸属性
 
 
-[
-            **Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) 类，用于检索是否已连接任何触摸数字化器。 只需创建新的 **TouchCapabilities** 对象并获取感兴趣的属性。
+[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) 类，用于检索是否已连接任何触摸数字化器。 只需创建新的 **TouchCapabilities** 对象并获取感兴趣的属性。
 
 **注意** 此处讨论的属性返回的值基于所有检测到的触摸数字化器：如果至少一个数字化器支持特定功能，则布尔属性返回非零值，数值属性返回任何一个数字化器公开的最大值。
 
@@ -85,8 +82,7 @@ private void GetTouchProperties()
 ## 检索指针属性
 
 
-[
-            **Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
+[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
 
 **注意** 此处讨论的属性返回的值基于所有检测到的指针设备：如果至少一个设备支持特定功能，则布尔属性返回非零值，数值属性返回任何一个指针设备公开的最大值。
 
@@ -199,6 +195,6 @@ private void GetPointerDevices()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

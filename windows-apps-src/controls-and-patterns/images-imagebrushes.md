@@ -5,15 +5,15 @@ title: "图像和图像画笔"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
+ms.sourcegitcommit: 485f3069ff92995082550366839f14be50f674a5
+ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
 
 ---
 # 图像和图像画笔
 
 要显示图像，可使用 **Image** 对象或 **ImageBrush** 对象。 Image 对象呈现图像，而 ImageBrush 对象使用图像绘制其他对象。 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+
 
 -   [**Image 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
 -   [**Source 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)
@@ -24,9 +24,6 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 使用 **Image** 元素在应用中显示独立的图像。
 
 使用 **ImageBrush** 将图像应用到另一个对象。 ImageBrush 的用途包括文本的装饰效果，或者控件或布局容器的平铺背景。 你可以控制如何拉伸、对齐和平铺图像，从而生成图案和其他效果。 
-
-## 示例
-
 
 
 ## 创建图像
@@ -78,8 +75,7 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 
 你可使用 [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) 属性从图像输出中剪切一个区域。 你可将 Clip 属性设置为 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx)。 目前不支持非矩形剪裁。
 
-接下来的示例显示如何将 [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) 用作图像的剪裁区域。 在该示例中，我们定义高度为 200 的 **Image** 对象。 **RectangleGeometry** 定义将显示图像区域的矩形。 [
-            **Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) 属性设置为 25,25,100,150，即将矩形开始位置定义为“25,25”，将宽度和高度分别定义为 100 和 150。 仅显示矩形区域内的图像部分。
+接下来的示例显示如何将 [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) 用作图像的剪裁区域。 在该示例中，我们定义高度为 200 的 **Image** 对象。 **RectangleGeometry** 定义将显示图像区域的矩形。 [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) 属性设置为 25,25,100,150，即将矩形开始位置定义为“25,25”，将宽度和高度分别定义为 100 和 150。 仅显示矩形区域内的图像部分。
 
 ```xaml
 <Image Source="licorice.jpg" Height="200">
@@ -117,20 +113,17 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 -   JPEG XR
 -   图标 (ICO)
 
-[
-            **Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) 和 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) 的 API 不包含任何用于编码和解码媒体格式的专用方法。 所有的编码和解码操作都是内置的，并且至多将编码和解码方面展现为加载事件的事件数据的一部分。 如果你需要对图像编码或解码执行任何特殊工作（你可能会在你的应用执行图像转换或操作时使用该工作），那么你应该使用在 [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx) 命名空间中提供的 API。 这些 API 也受 Windows 的 Windows 图像处理组件 (WIC) 支持。
+[**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) 和 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) 的 API 不包含任何用于编码和解码媒体格式的专用方法。 所有的编码和解码操作都是内置的，并且至多将编码和解码方面展现为加载事件的事件数据的一部分。 如果你需要对图像编码或解码执行任何特殊工作（你可能会在你的应用执行图像转换或操作时使用该工作），那么你应该使用在 [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx) 命名空间中提供的 API。 这些 API 也受 Windows 的 Windows 图像处理组件 (WIC) 支持。
 
 有关应用资源和如何在应用中打包图像源的详细信息，请参阅[定义应用资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。
 
 ### WriteableBitmap
 
-[
-            **WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx) 提供的 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) 是可修改的，并且不使用 WIC 中的基于文件的基础解码。 你可动态更改图像，然后重新呈现更新的图像。 若要定义 **WriteableBitmap** 的缓冲区内容，请使用 [**PixelBuffer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer.aspx) 属性来访问该缓冲区并使用流或语言特定的缓冲区类型来填充它。 有关示例代码，请参阅 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx)。
+[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx) 提供的 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) 是可修改的，并且不使用 WIC 中的基于文件的基础解码。 你可动态更改图像，然后重新呈现更新的图像。 若要定义 **WriteableBitmap** 的缓冲区内容，请使用 [**PixelBuffer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer.aspx) 属性来访问该缓冲区并使用流或语言特定的缓冲区类型来填充它。 有关示例代码，请参阅 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx)。
 
 ### RenderTargetBitmap
 
-[
-            **RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) 类可从运行的应用中捕获 XAML UI 树，然后代表位图图像源。 捕获后，该图像源可以应用到应用的其他部分，由用户另存为资源或应用数据，或者用于其他方案。 一个非常有用的方案是为导航方案创建 XAML 页面的运行时缩略图，如提供 [**Hub**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 控件中的图像链接。 **RenderTargetBitmap** 对于捕获图像中出现的内容确实具有某些限制。 有关详细信息，请参阅 [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) 的 API 参考主题。
+[**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) 类可从运行的应用中捕获 XAML UI 树，然后代表位图图像源。 捕获后，该图像源可以应用到应用的其他部分，由用户另存为资源或应用数据，或者用于其他方案。 一个非常有用的方案是为导航方案创建 XAML 页面的运行时缩略图，如提供 [**Hub**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 控件中的图像链接。 **RenderTargetBitmap** 对于捕获图像中出现的内容确实具有某些限制。 有关详细信息，请参阅 [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) 的 API 参考主题。
 
 ### 图像源和缩放
 
@@ -146,9 +139,13 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 
 > **注意** &nbsp;&nbsp;如果你使用代码建立图像，则可以使用对具有当前规模和文化限定符的非限定资源的访问的自动处理，或者可以使用具有文化和规模限定符的 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 来直接获取资源。 有关详细信息，请参阅[资源管理系统](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
 
+## 相关文章
+
+-   [音频、视频和相机](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
+-   [**Image 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
+-   [**ImageBrush 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

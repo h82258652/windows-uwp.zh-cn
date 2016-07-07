@@ -444,8 +444,7 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 
 有时你需要以编程方式来操控列表视图的项目选择。 例如，你可能拥有“全选”****按钮来让用户选择列表中的所有项目。 在这种情况下，从 SelectedItems 集合逐个添加或删除项目通常效率不高。 每个项目更改都会导致发生 SelectionChanged 事件，并且当你直接处理项目而非索引值时，该项目会取消虚拟化。
 
-[
-            **SelectAll**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectall.aspx)、[**SelectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectrange.aspx) 和 [**DeselectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.deselectrange.aspx) 方法提供比使用 SelectedItems 属性更高效的修改选择的方法。 这些方法使用项目索引范围进行选择或取消选择。 虚拟化的项目将保持虚拟化状态，因为仅使用了索引。 指定范围中的所有项目均已选定（或已取消选定），无论初始选择状态是什么。 SelectionChanged 事件在每一次调用这些方法时仅发生一次。
+[**SelectAll**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectall.aspx)、[**SelectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectrange.aspx) 和 [**DeselectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.deselectrange.aspx) 方法提供比使用 SelectedItems 属性更高效的修改选择的方法。 这些方法使用项目索引范围进行选择或取消选择。 虚拟化的项目将保持虚拟化状态，因为仅使用了索引。 指定范围中的所有项目均已选定（或已取消选定），无论初始选择状态是什么。 SelectionChanged 事件在每一次调用这些方法时仅发生一次。
 
 > **重要提示** &nbsp;&nbsp;仅当 SelectionMode 属性设置为 Multiple 或 Extended 时才应调用这些方法。 如果在 SelectionMode 是 Single 或 None 时调用 SelectRange，将引发异常。
 

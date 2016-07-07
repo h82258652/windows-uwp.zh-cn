@@ -25,8 +25,7 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 ## 设置传输控件
 
-在页面的 XAML 文件中，定义将由系统媒体传输控件控制的 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 [
-            **CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) 和 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) 事件用于更新系统媒体传输控件，并且将在本文的后面部分中讨论。
+在页面的 XAML 文件中，定义将由系统媒体传输控件控制的 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) 和 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) 事件用于更新系统媒体传输控件，并且将在本文的后面部分中讨论。
 
 [!code-xml[MediaElementSystemMediaTransportControls](./code/SMTCWin10/cs/MainPage.xaml#SnippetMediaElementSystemMediaTransportControls)]
 
@@ -84,8 +83,7 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 -   必须提供 [**StartTime**](https://msdn.microsoft.com/library/windows/apps/mt218751)、[**EndTime**](https://msdn.microsoft.com/library/windows/apps/mt218747) 和 [**Position**](https://msdn.microsoft.com/library/windows/apps/mt218755) 的值，才能使系统控件显示正在播放的项的时间线。
 
--   [
-            **MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) 和 [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) 允许你指定时间线内用户可以查找的范围。 此操作的典型方案是允许内容提供商在其媒体中包含广告中断。
+-   [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) 和 [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) 允许你指定时间线内用户可以查找的范围。 此操作的典型方案是允许内容提供商在其媒体中包含广告中断。
 
     你必须设置 [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) 和 [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748)，才能引发 [**PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755)。
 

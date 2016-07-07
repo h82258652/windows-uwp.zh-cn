@@ -1,8 +1,12 @@
 ---
-title: 安全
-description: 本部分包含有关为 Windows 10 生成安全的通用 Windows 平台 (UWP) 应用的文章。
+title: "安全"
+description: "本部分包含有关为 Windows 10 生成安全的通用 Windows 平台 (UWP) 应用的文章。"
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: a178f992ddd39b5609ce6d15b7e3560e157b9afb
+ms.openlocfilehash: 23897e7e78f3391fbee60a5f7cdf93615401247d
+
 ---
 
 # 安全
@@ -12,9 +16,13 @@ author: awkoren
 
 本部分包含有关为 Windows 10 生成安全的通用 Windows 平台 (UWP) 应用的文章。
 
+## 介绍 
+
 如果你不熟悉 Windows 或 UWP 开发，请从[安全 Windows 应用开发简介](web-authentication-broker.md)开始。 这一介绍性级别的文章提供了 Windows 10 中可用的应用和各种功能的安全注意事项的概述。
 
-[身份验证部分](authentication-and-user-identity.md)包含与用户登录和标识相关的方案的操作实例。 应用提供了多个选项可用于用户身份验证，范围从使用 [Web 身份验证代理](web-authentication-broker.md)的简单的单一登录 (SSO) 到高度安全的双重身份验证。
+## 身份验证和用户身份
+
+[身份验证和用户身份部分](authentication-and-user-identity.md)包含与用户登录和身份相关的方案的操作实例。 应用提供了多个选项用于用户身份验证，范围从使用 [Web 身份验证代理](web-authentication-broker.md)的简单单一登录 (SSO) 到高度安全的双重身份验证。
 
 <table>
 <tr><th>主题</th><th>说明</th></tr>
@@ -31,8 +39,9 @@ author: awkoren
 <tr><td>[Web 身份验证代理](web-authentication-broker.md)</td><td>本文介绍了如何将应用连接到使用身份验证协议（如 OpenID 或 OAuth）的在线标识提供程序（如 Facebook、Twitter、Flickr、Instagram 等）。 [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供者，并取回描述应用访问的提供者资源的访问令牌。</td></tr>
 </table>
 
+## 加密 
 
-加密部分包含有关更复杂的与加密相关的主题的信息。
+加密部分包含与加密相关的更复杂主题的信息。 
 
 | 主题                                                                         | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |-------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,6 +53,7 @@ author: awkoren
 | [常见的加密任务](common-cryptography-tasks.md)                     | 这些文章提供常见的加密任务的示例代码，这些任务包括创建随机数、比较缓冲区、在字符串和二进制数据之间转换、复制到字节数组和从字节数组复制，以及编码和解码数据等。                                                                                                                                                                                                                                                                                    |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

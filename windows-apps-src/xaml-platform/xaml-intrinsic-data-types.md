@@ -45,6 +45,6 @@ XAML 2009 规范还介绍了其他 XAML 语言级原语，例如 **x:Uri** 和 *
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

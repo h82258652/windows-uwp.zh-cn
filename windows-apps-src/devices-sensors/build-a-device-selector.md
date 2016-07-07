@@ -30,8 +30,7 @@ ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
 
 在使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 时，你经常将设备选择器与你感兴趣的设备类型相结合。 设备类型的可用列表由 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 枚举定义。 此组因素可帮助你限制可用于你感兴趣的类型的设备。 如果未指定 **DeviceInformationKind** 或你要使用的方法不提供 **DeviceInformationKind** 参数，则默认类型为 **DeviceInterface**。
 
-[
-            **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 使用规范 AQS 语法，但并非所有运营商都受支持。 有关构造筛选器字符串时可用的属性列表，请参阅[设备信息属性](device-information-properties.md)。
+[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 使用规范 AQS 语法，但并非所有运营商都受支持。 有关构造筛选器字符串时可用的属性列表，请参阅[设备信息属性](device-information-properties.md)。
 
 **警告** 在构造 AQS 筛选器字符串时，无法使用通过 `{GUID} PID` 格式定义的自定义属性。 这是因为属性类型派生自已知的属性名称。
 
@@ -67,41 +66,32 @@ ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
 
 以下示例演示如何使用 AQS 语法来限制要枚举的设备。 所有这些筛选器字符串都与 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对才能创建完整的筛选器。 如果未指定任何类型，请记住默认类型为 **DeviceInterface**。
 
-当此筛选器与 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有包含音频捕获接口类并且当前已启用的对象。 **
-            =
-            ** 转换为 **COP\_EQUALS**。
+当此筛选器与 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有包含音频捕获接口类并且当前已启用的对象。 **=** 转换为 **COP\_EQUALS**。
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有具有至少一个 GenCdRom 硬件 ID 的对象。 **
-            ~~
-            ** 转换为 **COP\_VALUE\_CONTAINS**。
+当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有具有至少一个 GenCdRom 硬件 ID 的对象。 **~~** 转换为 **COP\_VALUE\_CONTAINS**。
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-当此筛选器与 **DeviceContainer** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有模型名称中包含子字符串 Microsoft 的对象。 **
-            ~~
-            ** 转换为 **COP\_VALUE\_CONTAINS**。
+当此筛选器与 **DeviceContainer** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有模型名称中包含子字符串 Microsoft 的对象。 **~~** 转换为 **COP\_VALUE\_CONTAINS**。
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-当此筛选器与 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有名称以子字符串 Microsoft 开头的对象。 **
-            ~&lt;
-            ** 转换为 **COP\_STARTSWITH**。
+当此筛选器与 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有名称以子字符串 Microsoft 开头的对象。 **~&lt;** 转换为 **COP\_STARTSWITH**。
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有具有 **System.Devices.IpAddress** 属性集的对象。 **
-            &lt;&gt;\[\]** 转换为结合了 **NULL** 值的 **COP\_NOTEQUALS**。
+当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有具有 **System.Devices.IpAddress** 属性集的对象。 **&lt;&gt;\[\]** 转换为结合了 **NULL** 值的 **COP\_NOTEQUALS**。
 
 ``` syntax
 System.Devices.IpAddress:<>[]

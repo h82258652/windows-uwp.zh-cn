@@ -16,8 +16,7 @@ ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 本文向你显示了如何使用 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 和后台任务在后台处理媒体文件。
 
-本文中介绍的示例应用允许用户选择要转换代码的输入媒体文件，并指定用于转换结果代码的输出文件。 然后，启动后台任务以执行转换代码操作。 [
-            **MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 旨在支持转换代码之外的许多不同媒体处理方案，包括将媒体组合呈现到磁盘，以及在完成处理后上载已处理的媒体文件。
+本文中介绍的示例应用允许用户选择要转换代码的输入媒体文件，并指定用于转换结果代码的输出文件。 然后，启动后台任务以执行转换代码操作。 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 旨在支持转换代码之外的许多不同媒体处理方案，包括将媒体组合呈现到磁盘，以及在完成处理后上载已处理的媒体文件。
 
 有关此示例中利用的不同通用 Windows 应用功能的更多详细信息，请参阅：
 
@@ -46,13 +45,10 @@ ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 将下列成员变量添加到你的类：
 
--   [
-            **IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)，将用于通过后台任务的进度更新前台应用。
--   [
-            **BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)，用于在以异步方式执行媒体转换代码时，防止系统关闭你的后台任务。
+-   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)，将用于通过后台任务的进度更新前台应用。
+-   [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)，用于在以异步方式执行媒体转换代码时，防止系统关闭你的后台任务。
 -   **CancellationTokenSource** 对象，可用于取消异步转换代码操作。
--   [
-            **MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) 对象，将用于转换媒体文件代码。
+-   [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) 对象，将用于转换媒体文件代码。
 
 [!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 

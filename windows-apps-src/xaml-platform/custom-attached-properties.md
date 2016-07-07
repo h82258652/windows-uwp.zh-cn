@@ -57,8 +57,7 @@ ms.openlocfilehash: cf6ca169623311e515f02a174224d57652afc753
 
 *target* 对象可以是你的实现中一种更为具体的类型，但必须派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *value* 对象和它的 *valueType* 可以是你的实现中一种更为具体的类型。 请记住，此方法的值是 XAML 处理器在标记中遇到你的附加属性时提供的输入。 你使用的类型必须具有类型转换或现有的标记扩展支持，这样才能通过该特性值（最终是一个字符串）创建合适的类型。 基本的 **Object** 类型也可接受，但通常希望进一步增强类型安全性。 为此，请在取值函数中增加类型增强措施。
 
-**注意** 还可以定义附加属性，它旨在通过属性元素语法使用。 在此情况下，你不需要对值进行类型转换，但需要确保所需的值可采用 XAML 构造。 [
-            **VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是一个现有的附加属性示例，它仅支持属性元素用法。
+**注意** 还可以定义附加属性，它旨在通过属性元素语法使用。 在此情况下，你不需要对值进行类型转换，但需要确保所需的值可采用 XAML 构造。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是一个现有的附加属性示例，它仅支持属性元素用法。
 
 ## 代码示例
 
@@ -215,8 +214,7 @@ XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 
 
 在先前的附加属性用法示例中，我们显示了几种用来设置 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 附加属性的方法。 但是，这对于 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 与你的对象的交互方式有何更改，这是在何时发生的？ 我们将在这个特定示例中深入介绍，原因在于：如果你实现了一个附加属性，则会发现一个有趣的情况，那就是当典型的附加属性所有者类在其他对象上发现了它的附加属性值时，它应当会对这些值进行处理。
 
-[
-            **Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 的主要功能是成为 UI 中具有绝对位置的布局容器。 **Canvas** 的子项存储在由基类定义的 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 属性中。 在所有的面板中，**Canvas** 是唯一一个使用绝对位置的面板。 如果在添加属性时仅关注 **Canvas**，或者在 **UIElement** 作为 **UIElement** 的子元素的特定情况下，该面板中会充斥着常见 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 类的对象模型。 将 **Canvas** 的布局控件属性定义为可由任何 **UIElement** 用来使对象模型更简洁的附加属性。
+[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 的主要功能是成为 UI 中具有绝对位置的布局容器。 **Canvas** 的子项存储在由基类定义的 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 属性中。 在所有的面板中，**Canvas** 是唯一一个使用绝对位置的面板。 如果在添加属性时仅关注 **Canvas**，或者在 **UIElement** 作为 **UIElement** 的子元素的特定情况下，该面板中会充斥着常见 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 类的对象模型。 将 **Canvas** 的布局控件属性定义为可由任何 **UIElement** 用来使对象模型更简洁的附加属性。
 
 为了成为实际的面板，[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 具有可替代框架级 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 和 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法的行为。 **Canvas** 就是在这里实际检查其子项上的附加属性值。 **Measure** 和 **Arrange** 模式的一部分就是一个遍历任何内容的循环，一个面板具有 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 属性，通过该属性可以明确假设被视为面板子项的内容。 因此，**Canvas** 布局行为会循环访问这些子项，并针对每个子项进行静态 [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) 和 [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) 调用，查看这些附加属性是否包含非默认值（默认值为 0）。 之后，系统将使用这些值，按照由每个子项提供的特定值将每个子项以绝对位置方式放置到 **Canvas** 中的可用布局空间中。然后系统将使用 **Arrange** 提交这些值。
 

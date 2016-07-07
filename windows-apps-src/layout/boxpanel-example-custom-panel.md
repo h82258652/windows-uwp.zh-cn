@@ -120,8 +120,7 @@ protected override Size MeasureOverride(Size availableSize)
 }
 ```
 
-[
-            **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 实现的必要模式是循环访问 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每个元素。 始终对这些元素中的每一个调用 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法。 **Measure** 具有类型 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 的参数。 你在此处传递的内容是，面板致力于获取的适用于该特定子元素的大小。 因此，在你可以进行循环访问并开始调用 **Measure** 之前，你需要知道每个单元格可以提供多少空间。 从 **MeasureOverride** 方法本身，你具有 *availableSize* 值。 它是面板的父元素在调用 **Measure** 时使用的大小，它是最初调用此 **MeasureOverride** 的触发器。 因此典型的逻辑是制定一个方案，每个子元素通过此方案划分面板的整体 *availableSize* 的空间。 然后你将大小的每个划分传递到每个子元素的 **Measure**。
+[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 实现的必要模式是循环访问 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每个元素。 始终对这些元素中的每一个调用 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法。 **Measure** 具有类型 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 的参数。 你在此处传递的内容是，面板致力于获取的适用于该特定子元素的大小。 因此，在你可以进行循环访问并开始调用 **Measure** 之前，你需要知道每个单元格可以提供多少空间。 从 **MeasureOverride** 方法本身，你具有 *availableSize* 值。 它是面板的父元素在调用 **Measure** 时使用的大小，它是最初调用此 **MeasureOverride** 的触发器。 因此典型的逻辑是制定一个方案，每个子元素通过此方案划分面板的整体 *availableSize* 的空间。 然后你将大小的每个划分传递到每个子元素的 **Measure**。
 
 `BoxPanel` 划分大小的方式相当简单：它将它的空间划分为一些框，这些框很大程度上受项目数量的控制。 基于行列计数和可用大小调整框的大小。 有时因为不需要正方形中的一行或一列而将其删除，因此就行列比而言，面板变成了矩形而不是正方形。 有关如何到达此逻辑的详细信息，请跳到[“面向 BoxPanel 的方案”](#scenario)。
 
@@ -169,8 +168,7 @@ protected override Size ArrangeOverride(Size finalSize)
 }
 ```
 
-[
-            **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 实现的必要模式是循环访问 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每个元素。 始终对这些元素中的每一个调用 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法。
+[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) 实现的必要模式是循环访问 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每个元素。 始终对这些元素中的每一个调用 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法。
 
 请注意，计算不如 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 中多；这很正常。 子元素的大小已经从面板的自身 **MeasureOverride** 逻辑获知，或从度量传递期间每个子元素集合的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值获知。 但是，我们仍然需要确定每个子元素在面板中出现的位置。 在典型的面板中，每个子元素应当在不同的位置呈现。 典型方案不需要创建重叠元素的面板（然而如果那是你真正所需的方案，创建带有有意重叠的面板也并非不可能）。
 

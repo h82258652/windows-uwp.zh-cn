@@ -29,8 +29,7 @@ Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Ed
 
 **修改 Web 视图的外观**
 
-[
-            **WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 不是 [**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) 子类，因此它不具有控件模板。 但是，你可以设置各种属性来控制 Web 视图的某些可视部分。
+[**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 不是 [**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) 子类，因此它不具有控件模板。 但是，你可以设置各种属性来控制 Web 视图的某些可视部分。
 - 若要限制显示区域，请设置 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) 和 [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 属性。 
 - 若要转换、缩放、扭曲和旋转 Web 视图，请使用 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransform.aspx) 属性。
 - 若要控制 Web 视图的不透明度，请设置 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) 属性。
@@ -157,21 +156,16 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 ```
 
 对于 Web 视图内容中的每个 **iframe**，类似的事件按同样顺序发生： 
-- [
-            **FrameNavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) - 在 Web 视图中的框架导航到新内容之前发生。 
-- [
-            **FrameContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) - 在 Web 视图中的框架已开始加载新内容时发生。 
-- [
-            **FrameDOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - 在 Web 视图中的框架已完成分析其当前 HTML 内容时发生。 
-- [
-            **FrameNavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - 在 Web 视图中的框架已完成加载其内容时发生。 
+- [**FrameNavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) - 在 Web 视图中的框架导航到新内容之前发生。 
+- [**FrameContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) - 在 Web 视图中的框架已开始加载新内容时发生。 
+- [**FrameDOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - 在 Web 视图中的框架已完成分析其当前 HTML 内容时发生。 
+- [**FrameNavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - 在 Web 视图中的框架已完成加载其内容时发生。 
 
 ### 响应潜在问题
 
 你可以对内容可能出现的问题做出响应，例如脚本长时间运行、Web 视图不能加载内容和不安全内容的警告。 
 
-脚本运行期间，你的应用可能不做任何响应。 [
-            **LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) 事件在 Web 视图执行 JavaScript 期间定期发生，从而提供中断该脚本运行的机会。 若要确定脚本已运行的时间，请检查 [**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx) 的 [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) 属性。 若要停止该脚本，请将事件参数 [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) 属性设置为 **true**。 除非在后续 Web 视图导航期间重新加载已停止执行的脚本，否则不会再次执行该脚本。 
+脚本运行期间，你的应用可能不做任何响应。 [**LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) 事件在 Web 视图执行 JavaScript 期间定期发生，从而提供中断该脚本运行的机会。 若要确定脚本已运行的时间，请检查 [**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx) 的 [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) 属性。 若要停止该脚本，请将事件参数 [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) 属性设置为 **true**。 除非在后续 Web 视图导航期间重新加载已停止执行的脚本，否则不会再次执行该脚本。 
 
 Web 视图控件无法承载任意文件类型。 当尝试加载 Web 视图无法承载的内容时，会发生 [**UnviewableContentIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx) 事件。 你可以处理此事件并通知用户，或者使用 [**Launcher**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx) 类将该文件重定向到外部浏览器或其他应用。
 
@@ -204,8 +198,7 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
 
 你可以使用 [**NewWindowRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.newwindowrequested.aspx) 事件处理以下情况：承载的 Web 内容请求显示一个新窗口，例如弹出窗口。 你可以使用另一个 WebView 控件来显示请求窗口的内容。
 
-[
-            **PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) 事件用于启用需要特殊功能的 Web 功能。 当前这些功能包括：地理位置、IndexedDB 存储以及用户音频和视频（例如，来自麦克风或摄像头）。 如果你的应用访问用户位置或用户媒体，仍需要在应用清单中声明此功能。 例如，使用地理位置的应用在 Package.appxmanifest 中至少需要声明以下功能：
+[**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) 事件用于启用需要特殊功能的 Web 功能。 当前这些功能包括：地理位置、IndexedDB 存储以及用户音频和视频（例如，来自麦克风或摄像头）。 如果你的应用访问用户位置或用户媒体，仍需要在应用清单中声明此功能。 例如，使用地理位置的应用在 Package.appxmanifest 中至少需要声明以下功能：
 
 ```xml
   <Capabilities>

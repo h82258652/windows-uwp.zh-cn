@@ -27,8 +27,7 @@ XAML 为你提供了灵活的布局系统，以便你可以使用自动调整大
 - **自适应布局** 
              使用视觉状态基于窗口大小或其他更改对 UI 进行重大修改。
 
-    当你的应用窗口增大或缩小超出一定限度时，你可能希望更改布局属性来重新定位、调整大小、重新排列、显示或者替换 UI 部分。 可以为你的 UI 定义不同的视觉状态，以便在窗口宽度或窗口高度超过指定的阈值时应用这些视觉状态。 [
-            **AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) 提供了一个简单方法来设置要应用状态的阈值（也称为“断点”）。
+    当你的应用窗口增大或缩小超出一定限度时，你可能希望更改布局属性来重新定位、调整大小、重新排列、显示或者替换 UI 部分。 可以为你的 UI 定义不同的视觉状态，以便在窗口宽度或窗口高度超过指定的阈值时应用这些视觉状态。 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) 提供了一个简单方法来设置要应用状态的阈值（也称为“断点”）。
 
 - **定制布局** 
              定制布局专为特定设备系列或各种屏幕大小进行优化。 在设备系列内，布局仍应响应并适应各种受支持窗口大小范围内的更改。

@@ -20,8 +20,7 @@ ms.openlocfilehash: 61e5844f18d09aa170498d261ca1a6fd60ef170c
 
 ## 概述
 
-[
-            **Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 命名空间中的 API 基于面向 Windows.Devices 的现有模式生成，包括 [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 和 [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654)。 数据读取和编写旨在充分利用 [**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) 和 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 中的对象。 服务发现协议 (SDP) 属性有一个值和一个预期类型。 但是，一些常用的设备具有错误的 SDP 属性实现，其中的值不属于预期类型。 此外，RFCOMM 的许多用法完全不需要其他 SDP 属性。 因此，此 API 提供对未解析 SDP 数据的访问权限，开发人员可从这里获取所需的信息。
+[**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 命名空间中的 API 基于面向 Windows.Devices 的现有模式生成，包括 [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 和 [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654)。 数据读取和编写旨在充分利用 [**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) 和 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 中的对象。 服务发现协议 (SDP) 属性有一个值和一个预期类型。 但是，一些常用的设备具有错误的 SDP 属性实现，其中的值不属于预期类型。 此外，RFCOMM 的许多用法完全不需要其他 SDP 属性。 因此，此 API 提供对未解析 SDP 数据的访问权限，开发人员可从这里获取所需的信息。
 
 RFCOMM API 使用服务标识符的概念。 尽管服务标识符只是一个 128 位 GUID，它通常还被指定为 16 或 32 位的整数。 RFCOMM API 为服务标识符提供包装器，允许将它们作为 128 位 GUID 以及 32 位整数来指定和使用，但是不提供 16 位整数。 这对 API 来说不是问题，因为语言可以自动扩大到 32 位整数，并且仍然可以正确生成标识符。
 
@@ -368,6 +367,6 @@ void OnConnectionReceived(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

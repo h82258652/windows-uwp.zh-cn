@@ -39,8 +39,7 @@ ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
 
 ## 备注
 
-[
-            **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 可以将 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 设置为 **Binding** 对象元素的属性或者 [{Binding} 标记扩展](binding-markup-extension.md)内部的组件。 这就是显示两种不同 XAML 语法的原因。
+[**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 可以将 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 设置为 **Binding** 对象元素的属性或者 [{Binding} 标记扩展](binding-markup-extension.md)内部的组件。 这就是显示两种不同 XAML 语法的原因。
 
 **RelativeSource** 类似于 [{Binding} 标记扩展](binding-markup-extension.md)。  它是一个能够返回自身实例的标记扩展，支持一种基于字符串的结构，该结构在本质上会将一个参数传递给构造函数。 在本例中，传递的参数是 [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915) 值。
 
@@ -70,6 +69,6 @@ ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

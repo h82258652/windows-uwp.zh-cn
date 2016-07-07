@@ -3,8 +3,8 @@ description: "本文将说明如何在通用 Windows 平台 (UWP) 应用中支�
 title: "共享数据"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
-ms.sourcegitcommit: 03b9943d9bf76343bfbbe714f681a2b398d1a9ad
-ms.openlocfilehash: de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85
+ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
+ms.openlocfilehash: a91f0eb8b62a860809f8ffb63278be1eff31a2f3
 
 ---
 
@@ -37,8 +37,7 @@ ms.openlocfilehash: de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85
 -   文件
 -   自定义开发人员定义的数据
 
-[
-            **DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 对象可以包含其中一种或多种格式（可任意组合）。 下面的示例演示了如何共享文本。
+[**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 对象可以包含其中一种或多种格式（可任意组合）。 下面的示例演示了如何共享文本。
 
 [!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
@@ -52,13 +51,13 @@ ms.openlocfilehash: de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85
 
 ## 启动共享 UI
 
-用于共享的 UI 由系统提供。 若要启动它，请调用 [**ShowShareUI**][ShowShareUi] 方法。
+用于共享的 UI 由系统提供。 若要启动它，请调用 [**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI) 方法。
 
 [!code-cs[主要](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## 处理错误
 
-在大多数情况下，共享内容是一个简单直接的过程。 然而，意外总是有可能发生。 例如，应用可能需要用户选择用于共享的内容，但用户未选择任何内容。 若要处理这些情况，请使用 [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String) 方法，它将在出现问题时向用户显示一条消息。
+在大多数情况下，共享内容是一个简单直接的过程。 然而，意外总是有可能发生。 例如，应用可能需要用户选择用于共享的内容，但用户未选择任何内容。 若要处理这些情况，请使用 [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String)) 方法，它将在出现问题时向用户显示一条消息。
 
 ## 通过委托延迟共享
 
@@ -105,6 +104,6 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

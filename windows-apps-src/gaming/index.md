@@ -3,8 +3,8 @@ author: mtoepke
 title: "游戏和 DirectX"
 description: "通用 Windows 平台 (UWP) 提供了创建、分配游戏以及通过游戏获益的新机会。 了解有关启动新游戏或移植现有游戏的信息。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
+ms.sourcegitcommit: 41ee0d2a45408b5b1a0dbc0b102f1b59843814b2
+ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
 ---
 
@@ -37,7 +37,9 @@ ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
 | [UWP 应用中的多重采样](multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md) | 了解如何在使用 Direct3D 生成的 UWP 应用中使用多重采样。 |
 | [在 Direct3D 11 中处理设备删除方案](handling-device-lost-scenarios.md) | 本主题介绍了图形适配器被删除或重新初始化时，如何重新创建 Direct3D 和 DXGI 的设备界面链。 |
 | [游戏异步编程](asynchronous-programming-directx-and-cpp.md) | 本主题介绍在你对 DirectX 使用异步编程和线程处理时需要考虑的各种注意事项。 |
-| [游戏网络](work-with-networking-in-your-directx-game.md) | 了解如何在你的 DirectX 游戏中开发和合并网络功能。 |
+| [游戏网络](work-with-networking-in-your-directx-game.md) | 了解如何在你的 DirectX 游戏中开发并融入联网功能。 |
+| [游戏的辅助功能](accessibility-for-games.md) | 了解如何使游戏更易于访问。 |
+| [游戏的云](cloud-for-games.md) | 了解如何利用云技术进行游戏开发。 |
 | [DirectX 和 XAML 互操作](directx-and-xaml-interop.md) | 你可以在 UWP 游戏中同时使用 Extensible Application Markup Language (XAML) 和 Microsoft DirectX。 |
 | [打包游戏](package-your-windows-store-directx-game.md) | 较大的 UWP 游戏可能会轻易地膨胀得很大，尤其是那些支持具有特定于区域的资源的多语言游戏或具有可选的高清晰度资源的游戏。 在本主题中，了解如何使用应用包和应用程序包来自定义应用，使你的客户仅收到真正需要的资源。 |
 | [游戏移植指南](porting-guides.md) | 提供将现有游戏移植到 Direct3D 11、UWP 和 Windows 10 的指南。 |
@@ -67,6 +69,6 @@ ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

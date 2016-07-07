@@ -12,8 +12,7 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 # 自定义文本输入
 
-[
-            **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 命名空间中的核心文本 API 支持通用 Windows 平台 (UWP) 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。 该 API 类似于[文本服务框架](https://msdn.microsoft.com/library/windows/desktop/ms629032) API，因此应用不需要详细了解该文本服务。 这使应用接收的文本可以是任何语言以及来自任何输入类型，例如键盘、语音或笔。
+[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 命名空间中的核心文本 API 支持通用 Windows 平台 (UWP) 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。 该 API 类似于[文本服务框架](https://msdn.microsoft.com/library/windows/desktop/ms629032) API，因此应用不需要详细了解该文本服务。 这使应用接收的文本可以是任何语言以及来自任何输入类型，例如键盘、语音或笔。
 
 
 **重要的 API**
@@ -35,8 +34,7 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 下面简单介绍了文本输入系统。
 
 -   “应用程序”表示托管使用核心文本 API 生成的自定义编辑控件的 UWP 应用。
--   [
-            **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API 有助于通过 Windows 与文本服务进行通信。 文本编辑控件和文本服务之间的通信主要通过 [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 对象进行处理，该对象提供的方法和事件有利于通信。
+-   [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API 有助于通过 Windows 与文本服务进行通信。 文本编辑控件和文本服务之间的通信主要通过 [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 对象进行处理，该对象提供的方法和事件有利于通信。
 
 ![核心文本体系结构图示](images/coretext/architecture.png)
 
@@ -78,8 +76,7 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 ## 使用文本
 
 
-[
-            **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 类通过 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件和 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法支持 Windows 和编辑控件之间的文本流。
+[**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) 类通过 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件和 [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) 方法支持 Windows 和编辑控件之间的文本流。
 
 你的编辑控件通过 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件接收文本，这些事件在用户与文本输入法（如键盘、语音或 IME）交互时生成。
 
@@ -99,10 +96,8 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 ![示例文本流图示](images/coretext/stream-3.png) 当用户键入“d”时，将引发 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) 事件并带有以下 [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) 数据：
 
--   [
-            **Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
--   [
-            **Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
+-   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
 -   [ **NewSelection** ](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 在你的编辑控件中，应用指定的更改并将 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 **Succeeded**。 下面是该控件在应用更改后的状态。
@@ -152,8 +147,7 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 请务必确保文本服务具有正确的文本，特别是已存在于编辑控件中的文本（例如，通过加载文档，或由编辑控件插入的文本（如前面的部分所述），以便提供诸如自动更正或预测的功能。 因此，每当引发 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件时，都必须向当前在你的编辑控件中的文本提供指定范围。
 
-[
-            **CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) 中的 [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) 可以多次指定你的编辑控件不能按原样容纳的某个范围。 例如，**Range** 大于发生 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件时的编辑控件的大小，或者 **Range** 的末尾超出范围。 在这些情况下，应返回有意义的任何范围，该范围通常是请求的范围的子集。
+[**CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) 中的 [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) 可以多次指定你的编辑控件不能按原样容纳的某个范围。 例如，**Range** 大于发生 [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) 事件时的编辑控件的大小，或者 **Range** 的末尾超出范围。 在这些情况下，应返回有意义的任何范围，该范围通常是请求的范围的子集。
 
 ## 相关文章
 
@@ -170,6 +164,6 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

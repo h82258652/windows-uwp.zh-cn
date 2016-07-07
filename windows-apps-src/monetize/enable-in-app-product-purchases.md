@@ -1,6 +1,12 @@
 ---
-Description: author:mcleanbyron 无论你的应用是否免费，你都可以直接在应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关卡）。 下面我们显示了如何在应用中启用这些产品。
-title: 启用应用内产品购买 ms.assetid：D158E9EB-1907-4173-9889-66507957BD6B keywords:应用内付费 keywords:应用内购买 keywords:应用内产品 keywords:如何支持应用内 keywords:应用内购买代码示例 keywords:应用内付费代码示例
+author: mcleanbyron
+Description: "无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 下面我们显示了如何在应用中启用这些产品。"
+title: "启用应用内产品购买"
+ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
+keywords: in-app offer code sample
+ms.sourcegitcommit: bb28828463b14130deede9f7cf796c6e32fcb48b
+ms.openlocfilehash: 2e9a011a248e4c7e1d3f06064a7f82e308f07131
+
 ---
 
 # 启用应用内产品购买
@@ -9,7 +15,7 @@ title: 启用应用内产品购买 ms.assetid：D158E9EB-1907-4173-9889-66507957
 
 无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 下面我们显示了如何在应用中启用这些产品。
 
-**注意** 应用的试用版不能提供应用内产品。 仅当使用试用版应用的客户购买了完整版应用后，他们才可以购买应用内产品。
+> **注意** 应用的试用版不能提供应用内产品。 仅当使用试用版应用的客户购买了完整版应用后，他们才可以购买应用内产品。
 
 ## 先决条件
 
@@ -41,15 +47,17 @@ void AppInit()
 
 针对你希望通过应用内产品提供的每项功能，创建一个付费内容并将它添加到你的应用中。
 
-**重要提示** 向应用商店提交你的应用之前，必须将你希望呈现给客户的所有应用内产品都添加到应用中。 如果你稍后需要添加新的应用内产品，则必须更新应用并重新提交新版本。
+> **重要提示** 向应用商店提交你的应用之前，必须将你希望呈现给客户的所有应用内产品都添加到应用中。 如果你稍后需要添加新的应用内产品，则必须更新应用并重新提交新版本。
 
 1.  **创建应用内付费内容标记**
 
     通过标记来标识应用中的每个应用内产品。 此标记是一个字符串，在你的应用和应用商店中定义和使用它来标识特定的应用内产品。 为它提供一个独特（对于你的应用）且有意义的名称，以便你可以在编码时快速标识它所表示的正确功能。 下面是一些名称示例：
 
     -   “SpaceMissionLevel4”
+    
     -   “ContosoCloudSave”
-    -   “RainbowThemePack”。
+    
+    -   “RainbowThemePack”
 
 2.  **在条件块中编码功能**
 
@@ -59,13 +67,13 @@ void AppInit()
 
     ```    CSharp
     if (licenseInformation.ProductLicenses["featureName"].IsActive) 
-        {
-            // the customer can access this feature
-        } 
-        else
-        {
-            // the customer can' t access this feature
-        }
+    {
+        // the customer can access this feature
+    } 
+    else
+    {
+        // the customer can' t access this feature
+    }
     ```
 
 3.  **为此功能添加购买 UI**
@@ -75,28 +83,29 @@ void AppInit()
     下面介绍如何测试，以查看客户是否已拥有应用内产品；如果尚未拥有，则显示购买对话框，让用户可以购买该内容。 将注释“显示购买对话框”替换为你的购买对话框自定义代码（如一个包含友好的“购买此应用！”按钮的页面） 。
 
     ```    CSharp
-    void BuyFeature1() {
-            if (!licenseInformation.ProductLicenses["featureName"].IsActive)
+    void BuyFeature1() 
+    {
+        if (!licenseInformation.ProductLicenses["featureName"].IsActive)
+        {
+            try
             {
-                try
-                    {
-                    // The customer doesn't own this feature, so 
-                    // show the purchase dialog.
-                                    
-                    await CurrentAppSimulator.RequestProductPurchaseAsync("featureName", false);
-                    //Check the license state to determine if the in-app purchase was successful.
-                }
-                catch (Exception)
-                {
-                    // The in-app purchase was not completed because 
-                    // an error occurred.
-                }
-            } 
-            else
-            {
-                // The customer already owns this feature.
+                // The customer doesn't own this feature, so 
+                // show the purchase dialog.
+                await CurrentAppSimulator.RequestProductPurchaseAsync("featureName", false);
+        
+                //Check the license state to determine if the in-app purchase was successful.
             }
+            catch (Exception)
+            {
+                // The in-app purchase was not completed because 
+                // an error occurred.
+            }
+        } 
+        else
+        {
+            // The customer already owns this feature.
         }
+    }
     ```
 
 ## 步骤 3：更改测试代码以达到最后要求
@@ -120,15 +129,13 @@ void AppInit()
 * [管理应用内产品的大目录](manage-a-large-catalog-of-in-app-products.md)
 * [使用收据验证产品购买](use-receipts-to-verify-product-purchases.md)
 * [应用商店示例（演示试用版和应用内购买）](http://go.microsoft.com/fwlink/p/?LinkID=627610)
- 
-
- 
 
 
 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

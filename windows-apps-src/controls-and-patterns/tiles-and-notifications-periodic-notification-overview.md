@@ -47,12 +47,9 @@ ms.openlocfilehash: 55932595e0d5592003456a28d00ffd70c5e05eba
 
 可调用以下方法之一开始轮询：
 
--   [
-            **StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684)（磁贴）
--   [
-            **StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611)（锁屏提醒）
--   [
-            **StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945)（磁贴）
+-   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684)（磁贴）
+-   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611)（锁屏提醒）
+-   [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945)（磁贴）
 
 调用一个方法时，URI 将立即进行轮询，且磁贴或锁屏提醒将根据所接收的内容进行更新。 初次轮询后，Windows 继续按照所要求的间隔提供更新。 轮询不断进行，直到（使用 [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697)）将其显式阻止、卸载应用或删除磁贴（适用于辅助磁贴的情况）。 否则，即使应用从此再不启动，Windows 也将继续轮询磁贴或锁屏提醒更新。
 

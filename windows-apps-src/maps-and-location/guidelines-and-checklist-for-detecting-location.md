@@ -30,8 +30,7 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
 -   如果位置信息对于你的应用来说并非必要，则在用户尝试完成需要该信息的任务之前不要访问它。 例如，如果社交网络应用有一个“使用位置信息登记”按钮，在用户单击该按钮之前，该应用不应该访问位置信息。 如果你的应用主要功能要求立即访问位置信息，你可以这样做。
 
--   [
-            **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象必须首先在前台应用的主 UI 线程上使用，以便向用户触发同意提示。 首次使用 **Geolocator** 可能会首次调用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536)，或首次向处理程序注册 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。
+-   [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象必须首先在前台应用的主 UI 线程上使用，以便向用户触发同意提示。 首次使用 **Geolocator** 可能会首次调用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536)，或首次向处理程序注册 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。
 
 -   告诉用户使用位置数据的方式。
 -   提供 UI，使用户可以手动刷新他们的位置信息。
@@ -48,8 +47,7 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
     使应用提供用于重新启用定位服务的 UI：
 
-    -   如果用户在禁用位置访问之后重新启用位置访问，则不会通知应用。 [
-            **status**](https://msdn.microsoft.com/library/windows/apps/br225601) 属性不会更改，并且没有 [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 你的应用应该创建新的 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象并调用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536)，以尝试获取更新后的位置数据或重新订阅 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。 如果之后状态指示已重新启用位置，请清除之前应用显示的所有用于通知用户定位服务已被禁用的 UI，并对新状态执行相应的响应。
+    -   如果用户在禁用位置访问之后重新启用位置访问，则不会通知应用。 [**status**](https://msdn.microsoft.com/library/windows/apps/br225601) 属性不会更改，并且没有 [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 你的应用应该创建新的 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象并调用 [**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536)，以尝试获取更新后的位置数据或重新订阅 [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。 如果之后状态指示已重新启用位置，请清除之前应用显示的所有用于通知用户定位服务已被禁用的 UI，并对新状态执行相应的响应。
     -   当用户明确地尝试使用需要位置信息的功能时，或者在其他任何适当情况下，你的应用也应该在激活后重新尝试获取位置数据。
 
 **性能**
@@ -173,6 +171,6 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

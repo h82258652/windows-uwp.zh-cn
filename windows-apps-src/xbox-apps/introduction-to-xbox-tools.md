@@ -3,8 +3,8 @@ author: Mtoepke
 title: "Xbox One 工具简介"
 description: "特定于 Xbox One 且使用 Windows Device Portal 的工具“开发人员主页”。"
 area: Xbox
-ms.sourcegitcommit: 4872ac9587b3e2e14860cb152bf33536faccc48d
-ms.openlocfilehash: c975cb07aa9b7f0d30a9905cbceba11e89c8f7df
+ms.sourcegitcommit: 914a1b76c6b502415bee36865af009a8dfe9bb53
+ms.openlocfilehash: e2f87cdeb8ce3371a34bb989e5fa29ef63d18621
 
 ---
 
@@ -56,6 +56,11 @@ ms.openlocfilehash: c975cb07aa9b7f0d30a9905cbceba11e89c8f7df
 | Visual Studio | 能让你将控制台与 Visual Studio 实例配对，以支持部署。 如有必要，清除所有现有的已配对 VS 实例以防止将 UWP 应用部署到工具包。 |
 | [Windows Device Portal](#windows-device-portal) | 在工具包上支持 WDP（基于浏览器的设备管理工具）。 |
 | Xbox Live 状态 | 提供 Xbox Live 服务的当前状态。 |
+
+### 管理开发人员存储分配的大小
+
+若要增大或减小用于开发人员存储的磁盘空间量，请从主菜单中选择“管理开发人员存储”****。 更改“开发人员存储”****栏的值，然后选择“保存并重新启动”****以重新启动主机。
+  ![管理开发人员存储分配](images/devhome_storage.png)
 
 ### 自定义开发人员主页
 
@@ -109,7 +114,7 @@ Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 One
   ![安全证书警告](images/security_cert_warning.jpg)
 
 ## 另请参阅
-- [Microsoft 开发人员技术：Windows Device Portal](https://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
+- [Microsoft 开发人员技术：Windows Device Portal](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-xbox)
 - [Xbox One 上的 UWP](index.md)
 
 
@@ -118,6 +123,6 @@ Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 One
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

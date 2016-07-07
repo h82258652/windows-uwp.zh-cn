@@ -5,8 +5,8 @@ title: "触摸板交互"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 
 ---
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 本主题中讨论的手势和指南可以帮助确保你的应用使用最少的代码无缝支持触摸板输入。
 
-## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>触摸板语言
+## 触摸板语言
 
 
 一组在整个系统中通用的简单触摸板交互功能。 针对触摸和鼠标输入优化应用，这种语言可以使用户快速熟悉应用，提升他们的信心，使其更容易了解和使用应用。
@@ -71,39 +71,39 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>三指点击</p></td>
+<td align="left"><p>三指点击</p></td>
 <td align="left"><p>使用 <strong>Cortana</strong> 搜索或显示<strong>“操作中心”</strong>的用户首选项。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>三指滑动</p></td>
+<td align="left"><p>三指滑动</p></td>
 <td align="left"><p>打开虚拟桌面任务视图、显示桌面、或切换已打开应用的用户首选项。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>单个手指点击进行主操作</p></td>
+<td align="left"><p>单个手指点击进行主操作</p></td>
 <td align="left"><p>使用单个手指点击某个元素并调用它的主操作（如启动应用或执行命令）。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Two_finger_tap_to_right-click"></span><span id="two_finger_tap_to_right-click"></span><span id="TWO_FINGER_TAP_TO_RIGHT-CLICK"></span>二指点击进行右键单击</p></td>
+<td align="left"><p>二指点击进行右键单击</p></td>
 <td align="left"><p>两个手指同时在某个元素上点击可以将其选中并显示上下文命令。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Two_finger_slide_to_pan"></span><span id="two_finger_slide_to_pan"></span><span id="TWO_FINGER_SLIDE_TO_PAN"></span>二指滑动进行平移</p></td>
+<td align="left"><p>二指滑动进行平移</p></td>
 <td align="left"><p>滑动主要用于平移交互，但也可用于移动、绘制或书写。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Pinch_and_stretch_to_zoom"></span><span id="pinch_and_stretch_to_zoom"></span><span id="PINCH_AND_STRETCH_TO_ZOOM"></span>收缩和拉伸以缩放</p></td>
+<td align="left"><p>收缩和拉伸以缩放</p></td>
 <td align="left"><p>收缩和拉伸手势通常用于调整大小和语义式缩放。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_rearrange"></span><span id="single_finger_press_and_slide_to_rearrange"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_REARRANGE"></span>单指按下并滑动以重新排列</p></td>
+<td align="left"><p>单指按下并滑动以重新排列</p></td>
 <td align="left"><p>拖动元素。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_select_text"></span><span id="single_finger_press_and_slide_to_select_text"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_SELECT_TEXT"></span>单指按下并滑动以选择文本</p></td>
+<td align="left"><p>单指按下并滑动以选择文本</p></td>
 <td align="left"><p>在可选择的文本内按下并滑动来选择它。 双击可选择一个字。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left_and_right_click_zone"></span><span id="left_and_right_click_zone"></span><span id="LEFT_AND_RIGHT_CLICK_ZONE"></span>单击和右键单击区域</p></td>
+<td align="left"><p>单击和右键单击区域</p></td>
 <td align="left"><p>模拟鼠标设备的左键和右键功能。</p></td>
 </tr>
 </tbody>
@@ -111,14 +111,14 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
  
 
-## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>硬件
+## 硬件
 
 
 查询鼠标设备功能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) 以确定触摸板硬件可以直接访问你的应用 UI 的哪些方面。 我们建议提供适用于触摸和鼠标输入的 UI。
 
 有关查询设备功能的详细信息，请参阅[标识输入设备](identify-input-devices.md)。
 
-## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>视觉反馈
+## 视觉反馈
 
 
 -   当（通过移动或悬停事件）检测到触摸板光标时，显示特定于鼠标的 UI 以指示元素显示的功能。 如果触摸板光标在一定的时间段内没有移动，或者如果用户启动了触摸交互，则让触摸板 UI 逐渐淡出。 这会使 UI 干净整洁。
@@ -129,7 +129,7 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 有关视觉反馈的更常规的指南，请参阅[视觉反馈指南](https://msdn.microsoft.com/library/windows/apps/hh465342)。
 
-## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>光标
+## 光标
 
 
 为触摸板指针提供了一组标准光标。 它们用来表示元素的主要操作。
@@ -144,7 +144,7 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 -   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png)， ![水平调整光标](images/cursor-horizontal.png)， ![对角调整光标（左下和右上）](images/cursor-diagonal2.png)， ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
 -   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
 
-## <span id="related_topics"></span>相关文章
+## 相关文章
 
 
 * [处理指针输入](handle-pointer-input.md)
@@ -166,6 +166,6 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

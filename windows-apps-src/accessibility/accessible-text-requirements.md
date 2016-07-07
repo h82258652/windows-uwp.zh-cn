@@ -39,14 +39,10 @@ ms.openlocfilehash: 1307b4f70cf7ffed300f4254a7d92b67b5afd085
 ## 文本元素角色  
 UWP 应用可以使用以下默认元素（通常称为 *text* 元素或 *textedit* 控件）：
 
-* [
-            **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)：角色为 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [
-            **TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)：角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [
-            **RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)（溢出类 [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)）：角色为 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [
-            **RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548)：角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)：角色为 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)：角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)（溢出类 [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)）：角色为 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548)：角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
 当控件报告它的角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182) 时，辅助技术假设用户可通过多种方法更改这些值。 因此，如果你在 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 中放置静态文本，则说明你向辅助功能用户报告的角色和应用结构有误。
 
@@ -106,13 +102,11 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 
 这些类型具有 **IsTextScaleFactorEnabled** 属性：  
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
-* [
-            **Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 和派生的类
+* [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 和派生的类
 * [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
 * [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
-* [
-            **TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) 和派生的类
+* [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) 和派生的类
 
 <span id="related_topics"/>
 ## 相关主题  
@@ -124,6 +118,6 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -17,14 +17,10 @@ ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 可视树结构的组成部分包括以下三种视觉类型，以及影响视觉对象内容的多个子类的基本画笔类：
 
--   [
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
--   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，并添加了创建子视觉对象的功能。
--   [
-            **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) 并添加了关联画笔的功能，以便视觉对象可以呈现像素，包括图像、效果或纯色。
--   [
-            **CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – 允许应用程序在可视对象的内容上创建某种效果。 存在大量 CompositionBrush 的子类。
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，并添加了创建子视觉对象的功能。
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) 并添加了关联画笔的功能，以便视觉对象可以呈现像素，包括图像、效果或纯色。
+-   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – 允许应用程序在可视对象的内容上创建某种效果。 存在大量 CompositionBrush 的子类。
 
 ## CompositionVisual 示例
 
@@ -41,12 +37,9 @@ ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 在该示例中，也会提供三种不同的正在工作的视觉对象：
 
--   [
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
--   [
-            **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 Visual，并添加了创建子视觉对象的功能。
--   [
-            **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自视觉对象并添加了关联画笔的功能，以便视觉对象可以呈现像素，包括图像、效果或纯色。
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 Visual，并添加了创建子视觉对象的功能。
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自视觉对象并添加了关联画笔的功能，以便视觉对象可以呈现像素，包括图像、效果或纯色。
 
 尽管此示例不介绍诸如动画或更复杂的效果等概念，但它包含所有这些系统需要使用的构成要素。
 
@@ -71,8 +64,7 @@ visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xF
 
 ## 剪裁可视对象
 
-[
-            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 还可以用于创建 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的剪裁。 下面的例子来自于使用 [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 剪裁可视对象每一侧的示例：
+[**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 还可以用于创建 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的剪裁。 下面的例子来自于使用 [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 剪裁可视对象每一侧的示例：
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -87,8 +79,7 @@ _currentVisual.Clip = clip;
 
 ## <span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋转剪裁
 
-[
-            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 可以通过旋转进行转换。 请注意，[**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) 同时支持弧度和度数。 其默认采用弧度为单位，不过也可以轻松指定以度数为单位，如以下代码段中所示：
+[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 可以通过旋转进行转换。 请注意，[**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) 同时支持弧度和度数。 其默认采用弧度为单位，不过也可以轻松指定以度数为单位，如以下代码段中所示：
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
@@ -516,6 +507,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

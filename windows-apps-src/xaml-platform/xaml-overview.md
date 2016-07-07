@@ -107,13 +107,11 @@ Windows 运行时还支持 [{x:Null} 标记扩展](x-null-markup-extension.md)�
 
 标记扩展一般会从应用的对象图的其他某个部分返回一个现有实例，或者将一个值延迟到运行时。 因为可以将标记扩展用作属性值，并且这是典型用法，所以你经常可以看到标记扩展被用来为引用类型的属性提供值，而采用其他方式时，这些属性可能需要使用属性元素语法。
 
-例如，下面是用于从 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中引用可重用的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 的语法：`<Button Style="{StaticResource SearchButtonStyle}"/>`。 [
-            **Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 是一种引用类型而非一个简单值，因此如果没有 `{StaticResource}` 用法，你需要使用 `<Button.Style>` 属性元素和其中的 `<Style>` 定义来设置 [**FrameworkElement.Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性。
+例如，下面是用于从 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中引用可重用的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 的语法：`<Button Style="{StaticResource SearchButtonStyle}"/>`。 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 是一种引用类型而非一个简单值，因此如果没有 `{StaticResource}` 用法，你需要使用 `<Button.Style>` 属性元素和其中的 `<Style>` 定义来设置 [**FrameworkElement.Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性。
 
 通过使用标记扩展，在 XAML 中可设置的所有属性都可能采用属性语法进行设置。 你可以使用属性语法提供一个属性的引用值，即使它不支持通过其他方法用于直接对象实例化的属性语法也是如此。 或者可以实现一种特定的行为，通过值类型或新创建的引用类型来延迟需填充 XAML 属性的一般需求。
 
-为举例说明，接下来的 XAML 示例使用属性语法来设置一个 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性的值。 [
-            **Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性接受 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 类的一个实例，一个在默认情况下无法使用属性语法字符串创建的引用类型。 但在本例中，该属性引用一个特定的标记扩展 [StaticResource](staticresource-markup-extension.md)。 当处理该标记扩展时，它返回对之前已被定义为资源字典中的键控资源的一个 **Style** 元素的引用。
+为举例说明，接下来的 XAML 示例使用属性语法来设置一个 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性的值。 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 属性接受 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 类的一个实例，一个在默认情况下无法使用属性语法字符串创建的引用类型。 但在本例中，该属性引用一个特定的标记扩展 [StaticResource](staticresource-markup-extension.md)。 当处理该标记扩展时，它返回对之前已被定义为资源字典中的键控资源的一个 **Style** 元素的引用。
 
 ```xml
 <Canvas.Resources>
@@ -136,8 +134,7 @@ Windows 运行时还支持 [{x:Null} 标记扩展](x-null-markup-extension.md)�
 
 XAML 是一种用于对象及其属性的声明性语言，但它也包含向标记中的对象附加事件处理程序的语法。 XAML 事件语法可通过 Windows 运行时编程模型集成 XAML 声明的事件。 在处理事件的对象上，将事件的名称指定为一个属性名称。 对于属性值，指定你在代码中定义的一个事件处理函数的名称。 XAML 处理器使用此名称在加载的对象树中创建一个委托表示，将指定的处理程序添加到内部处理程序列表中。 几乎所有 Windows 运行时应用都是同时通过标记和代码隐藏源文件定义的。
 
-下面是一个简单示例。 [
-            **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 类支持一个名为 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 的事件。 你可以为 **Click** 编写处理程序，用于运行在用户单击 **Button** 之后应当调用的代码。 在 XAML 中，你可以将 **Click** 指定为 **Button** 上的一个属性。 对于属性值，请提供一个表示你的处理程序的方法名称的字符串。
+下面是一个简单示例。 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 类支持一个名为 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 的事件。 你可以为 **Click** 编写处理程序，用于运行在用户单击 **Button** 之后应当调用的代码。 在 XAML 中，你可以将 **Click** 指定为 **Button** 上的一个属性。 对于属性值，请提供一个表示你的处理程序的方法名称的字符串。
 
 ```xml
 <Button Click="showUpdatesButton-Click">Show updates</Button>

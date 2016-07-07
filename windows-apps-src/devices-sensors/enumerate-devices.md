@@ -52,8 +52,7 @@ ms.openlocfilehash: 536a3e8f72b9c68ffc7e0cf63e7601fd21242428
 | 属性                         | 备注                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **DeviceInformation.Id**         | 这是设备的唯一标识符，作为字符串变量提供。 在大多数情况下，这是你将从一种方法传递到另一种方法的模糊值，用于指示你感兴趣的特定设备。 你还可以在关闭应用并重新打开它后使用此属性和 **DeviceInformation.Kind** 属性。 这将确保你可以恢复并重新使用同一 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象。 |
-| **DeviceInformation.Kind**       | 这指示了使用 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象表示的设备对象类型。 这并不是设备类别或设备类型。 单个设备可使用若干个不同的 **DeviceInformation** 对象（不同种类）来表示。 [
-            **DeviceInformationKind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 中列出了此属性可能具有的值以及这些值相互关联的方式。                           |
+| **DeviceInformation.Kind**       | 这指示了使用 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象表示的设备对象类型。 这并不是设备类别或设备类型。 单个设备可使用若干个不同的 **DeviceInformation** 对象（不同种类）来表示。 [**DeviceInformationKind**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 中列出了此属性可能具有的值以及这些值相互关联的方式。                           |
 | **DeviceInformation.Properties** | 此属性包包含了为 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象而请求的信息。 可以轻松地将最常见的属性引用为 **DeviceInformation** 对象的属性，如 [**DeviceInformation.Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name)。 有关详细信息，请参阅[设备信息属性](device-information-properties.md)。                                                                |
 
  
@@ -61,8 +60,7 @@ ms.openlocfilehash: 536a3e8f72b9c68ffc7e0cf63e7601fd21242428
 ## DevicePicker UI
 
 
-[
-            **DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 是 Windows 所提供的控件，用于创建使用户能够从列表中选择设备的较小 UI。 你可以使用多种方法自定义 **DevicePicker** 窗口。
+[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 是 Windows 所提供的控件，用于创建使用户能够从列表中选择设备的较小 UI。 你可以使用多种方法自定义 **DevicePicker** 窗口。
 
 -   你可以通过将 [**SupportedDeviceSelectors**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors.aspx) 或 [**SupportedDeviceClasses**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses.aspx) 或两者一起添加到 [**DevicePicker.Filter**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.filter) 来控制在 UI 中显示的设备。 在大多数情况下，你仅需要添加一个选择器或类，但如果确实需要多个，也可以添加多个。 如果你确实添加了多个选择器或类，则将 OR 逻辑函数连接它们。
 -   你可以指定要为设备检索的属性。 你可以通过将属性添加到 [**DevicePicker.RequestedProperties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.requestedproperties) 来完成。
@@ -116,8 +114,7 @@ ms.openlocfilehash: 536a3e8f72b9c68ffc7e0cf63e7601fd21242428
 |-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | 后台中相同的行为               | 无                                                                                                                                    |
 | 后台中可能只有被动扫描 | 等待出现被动扫描的同时，可能需要更长的时间来发现设备。                                                           |
-| 不支持后台扫描            | [
-            **DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 将不会检测到任何设备，也不会报告任何更新。 |
+| 不支持后台扫描            | [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 将不会检测到任何设备，也不会报告任何更新。 |
 
  
 

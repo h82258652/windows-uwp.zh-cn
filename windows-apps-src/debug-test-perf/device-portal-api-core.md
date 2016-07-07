@@ -1,8 +1,11 @@
 ---
 author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Device Portal 核心 API 参考
-description: 了解 Windows Device Portal 核心 REST API，可用于访问数据和以编程方式控制设备。
+title: "Device Portal 核心 API 参考"
+description: "了解 Windows Device Portal 核心 REST API，可用于访问数据和以编程方式控制设备。"
+ms.sourcegitcommit: 0e36b2adbd0805d9c738de00959581417d2c1ee8
+ms.openlocfilehash: 364e19c723c6cf48a25104b5719735a533ae54a7
+
 ---
 
 # Device Portal 核心 API 参考
@@ -2179,8 +2182,8 @@ URI 参数 | 说明
 :---          | :---
 interface   | （**必需**）用于连接到网络的网络接口的 GUID。
 op   | （**必需**）指示要执行的操作。 可能的值为 connect 或 disconnect。
-ssid   | （**如果 *op* == connect，则为必需**）要连接到的 SSID。
-key   | （**如果 *op* == connect 并且网络需要身份验证，则为必需**）共享的密钥。
+ssid   | （**如果 *op* == connect**，则为必需项）要连接到的 SSID。
+key   | （**如果 *op* == connect 并且网络需要身份验证，则为必需项**）共享的密钥。
 createprofile | （**必需**）在设备上为网络创建配置文件。  这将导致设备在将来自动连接到该网络。 这可以是**是**或**否**。 
 
 **请求标头**
@@ -2730,7 +2733,456 @@ HTTP 状态代码      | 说明
 * HoloLens
 * IoT
 
+---
+## DNS-SD 标记 
+---
+### 查看标记
 
-<!--HONumber=May16_HO2-->
+**请求**
+
+查看当前应用的设备标记。  这些标记通过 T 项中的 DNS-SD TXT 记录公布。  
+ 
+方法      | 请求 URI
+:------     | :-----
+GET | /api/dns-sd/tags
+<br />
+
+**URI 参数**
+
+- 无
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应** 采用以下格式的当前应用的标记。 
+```
+ {
+    "tags": [
+        "tag1", 
+        "tag2", 
+        ...
+     ]
+}
+```
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+5XX | 服务器错误 
+
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* Xbox
+* HoloLens
+* IoT
+
+---
+### 删除标记
+
+**请求**
+
+删除当前由 DNS-SD 公布的所有标记。   
+ 
+方法      | 请求 URI
+:------     | :-----
+DELETE | /api/dns-sd/tags
+<br />
+
+**URI 参数**
+
+- 无
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+ - 无
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+5XX | 服务器错误 
+
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* Xbox
+* HoloLens
+* IoT
+
+---
+### 删除标记
+
+**请求**
+
+删除当前由 DNS-SD 公布的标记。   
+ 
+方法      | 请求 URI
+:------     | :-----
+DELETE | /api/dns-sd/tag
+<br />
+
+**URI 参数**
+
+URI 参数 | 说明
+:------     | :-----
+tagValue | （**必需**）要删除的标记。
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+ - 无
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* Xbox
+* HoloLens
+* IoT
+ 
+---
+### 添加标记
+
+**请求**
+
+将标记添加到 DNS-SD 广告。   
+ 
+方法      | 请求 URI
+:------     | :-----
+POST | /api/dns-sd/tag
+<br />
+
+**URI 参数**
+
+URI 参数 | 说明
+:------     | :-----
+tagValue | （**必需**）要添加的标记。
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+ - 无
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+401 | 标记空间溢出。  当建议的标记对于生成的 DNS-SD 服务记录而言过长时，将出现此情形。  
+
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* Xbox
+* HoloLens
+* IoT
+
+## 应用文件资源管理器
+
+---
+### 获取已知文件夹
+
+**请求**
+
+获取可访问的顶级文件夹列表。
+
+方法      | 请求 URI
+:------     | :-----
+GET | /api/filesystem/apps/knownfolders
+<br />
+
+**URI 参数**
+
+- 无
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应** 采用以下格式的可用文件夹。 
+```
+ {"KnownFolders": [
+    "folder0",
+    "folder1",...
+]}
+```
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 已接受和正在处理的部署请求
+4XX | 错误代码
+5XX | 错误代码
+<br />
+
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* HoloLens
+* Xbox
+* IoT
+
+---
+### 获取文件
+
+**请求**
+
+获取文件夹中的文件列表。
+
+方法      | 请求 URI
+:------     | :-----
+GET | /api/filesystem/apps/files
+<br />
+
+**URI 参数**
+
+URI 参数 | 说明
+:------     | :-----
+knownfolderid | （**必需**）要获取文件列表的顶级目录。 将 **LocalAppData** 用于访问旁加载的应用。 
+packagefullname | （**如果 *knownfolderid* == LocalAppData，则为必需项**）你感兴趣的应用的程序包全名。 
+path | （**可选**）上面指定的文件夹或程序包内的子目录。 
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应** 采用以下格式的可用文件夹。 
+```
+{"Items": [
+    {
+        "CurrentDir": string (folder under the requested known folder),
+        "DateCreated": int,
+        "FileSize": int (bytes),
+        "Id": string,
+        "Name": string,
+        "SubPath": string (present if this item is a folder, this is the name of the folder),
+        "Type": int
+    },...
+]}
+```
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+4XX | 错误代码
+5XX | 错误代码
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* HoloLens
+* Xbox
+* IoT
+
+---
+### 获取文件
+
+**请求**
+
+获取文件夹中的文件列表。
+
+方法      | 请求 URI
+:------     | :-----
+GET | /api/filesystem/apps/file
+
+**URI 参数**
+
+URI 参数 | 说明
+:------     | :-----
+knownfolderid | （**必需**）要下载文件的顶级目录。 将 **LocalAppData** 用于访问旁加载的应用。 
+filename | （**必需**）要下载的文件名称。 
+packagefullname | （**如果 *knownfolderid* == LocalAppData，则为必需项**）你感兴趣的程序包全名。 
+path | （**可选**）上面指定的文件夹或程序包内的子目录。
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 请求的文件（如果存在）
+
+**响应**
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 请求的文件
+404 | 找不到文件
+5XX | 错误代码
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* HoloLens
+* Xbox
+* IoT
+
+---
+### 删除文件
+
+**请求**
+
+删除文件夹中的文件。
+
+方法      | 请求 URI
+:------     | :-----
+DELETE | /api/filesystem/apps/file
+<br />
+**URI 参数**
+
+URI 参数 | 说明
+:------     | :-----
+knownfolderid | （**必需**）要删除文件的顶级目录。 将 **LocalAppData** 用于访问旁加载的应用。 
+filename | （**必需**）要删除的文件名称。 
+packagefullname | （**如果 *knownfolderid* == LocalAppData，则为必需项**）你感兴趣的应用的程序包全名。 
+path | （**可选**）上面指定的文件夹或程序包内的子目录。
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 确定。 文件已删除
+404 | 找不到文件
+5XX | 错误代码
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* HoloLens
+* Xbox
+* IoT
+
+---
+### 上载文件
+
+**请求**
+
+将文件上载到文件夹。  这将覆盖具有相同名称的现有文件，但不会创建新的文件夹。 
+
+方法      | 请求 URI
+:------     | :-----
+POST | /api/filesystem/apps/file
+<br />
+**URI 参数**
+
+URI 参数 | 说明
+:------     | :-----
+knownfolderid | （**必需**）要上载文件的顶级目录。 将 **LocalAppData** 用于访问旁加载的应用。
+packagefullname | （**如果 *knownfolderid* == LocalAppData，则为必需项**）你感兴趣的应用的程序包全名。 
+path | （**可选**）上面指定的文件夹或程序包内的子目录。
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 确定。 文件已上载
+4XX | 错误代码
+5XX | 错误代码
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* HoloLens
+* Xbox
+* IoT
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

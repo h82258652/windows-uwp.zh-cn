@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
-title: 向线程池提交工作项
-description: 了解如何通过向线程池提交工作项，在单独的线程中完成工作。
+title: "向线程池提交工作项"
+description: "了解如何通过向线程池提交工作项，在单独的线程中完成工作。"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: afb6d8b1b1ee5eeb99ba68e8b842436bd58619d0
+
 ---
 # 向线程池提交工作项
 
@@ -19,8 +23,7 @@ description: 了解如何通过向线程池提交工作项，在单独的线程�
 
 通过调用 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 创建工作项。 提供委派来完成工作（你可使用一个 lambda 或 delegate 函数）。 请注意，**RunAsync** 返回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) 对象；存储此对象以用于下一个步骤。
 
-[
-            **RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
+[**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
 
 **注意** 使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 访问 UI 线程并显示工作项的进度。
 
@@ -244,7 +247,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 });
 ```
 
-请注意，完成处理程序在分派 UI 更新之前会检查工作项是否被取消。
+请注意，完成处理程序在分派 UI 更新之前会检查工作项是否已被取消。
 
 ## 摘要和后续步骤
 
@@ -259,6 +262,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

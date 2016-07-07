@@ -1,12 +1,16 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。
-MS-HAID: 'dev\_ctrl\_layout\_txt.use\_input\_scope\_to\_change\_the\_touch\_keyboard'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。"
+MS-HAID: dev\_ctrl\_layout\_txt.use\_input\_scope\_to\_change\_the\_touch\_keyboard
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: 使用输入范围更改触摸键盘
+title: "使用输入范围更改触摸键盘"
 ms.assetid: 6E5F55D7-24D6-47CC-B457-B6231EDE2A71
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 02f06ee498b136f811b4b3b8080a9cb043693504
+
 ---
 
 # 使用输入范围更改触摸键盘
@@ -111,23 +115,19 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 ## 文本预测、拼写检查和自动更正
 
-[
-            **TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 和 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) 控件具有多个属性，这些属性会影响 SIP 的行为。 若要为你的用户提供最佳体验，则了解在使用触摸键盘时这些属性如何影响文本输入非常重要。
+[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 和 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) 控件具有多个属性，这些属性会影响 SIP 的行为。 若要为你的用户提供最佳体验，则了解这些属性如何使用触摸影响文本输入非常重要。
 
--   [
-            **IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688)：为文本控件启用拼写检查后，该控件将与系统的拼写检查引擎进行交互，以标记无法识别的单词。 点击一个单词即可查看建议的更正单词列表。 默认情况下，拼写检查处于启用状态。
+-   [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) — 为文本控件启用拼写检查后，该控件将与系统的拼写检查引擎进行交互，以标记无法识别的字词。 点击一个单词即可查看建议的更正列表。 默认情况下，拼写检查处于启用状态。
 
     在 **Default** 输入范围中，使用此属性还可以使句子中第一个单词的首字母自动大写，并自动更正所键入的单词。 在其他输入范围中可能会禁用这些自动更正功能。 有关详细信息，请参阅本主题后面的表格。
 
--   [
-            **IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690)：为文本控件启用文本预测后，系统将显示你可能会键入的单词的列表。 你可以从该列表中进行选择，因此你无需键入整个单词。 默认情况下，文本预测处于启用状态。
+-   [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) — 为文本控件启用文本预测后，系统将显示你可能开始键入的字词列表。 你可以从该列表中进行选择，因此你无需键入整个字词。 默认情况下，文本预测处于启用状态。
 
     如果输入范围的属性不为 **Default**，将禁用文本预测，即使 [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) 属性为 **true** 也是如此。 有关详细信息，请参阅本主题后面的表格。
 
-    **注意** &nbsp;&nbsp;在移动设备系列上，文本预测和拼写更正将显示在键盘上方区域的 SIP 中。 如果 [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) 设置为 **false**，则 SIP 的相应部分会处于隐藏状态，并且自动更正会处于禁用状态，即使 [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) 的属性为 **true** 也是如此。
+    **注意** &nbsp;&nbsp;在移动设备系列上，文本预测和拼写更正将显示在键盘上方区域的 SIP 中。 如果 [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) 设置为 **false**，则 SIP 的相应部分会处于隐藏状态，并且自动更正会处于禁用状态，即使 [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) 设置为 **true** 也是如此。
 
--   [
-            **PreventKeyboardDisplayOnProgrammaticFocus**](https://msdn.microsoft.com/library/windows/apps/dn299273)：若此属性为 **true**，则系统在采用编程方式在文本控件上设置焦点时，不显示 SIP。 而仅在用户与控件交互时才显示该键盘。
+-   [**PreventKeyboardDisplayOnProgrammaticFocus**](https://msdn.microsoft.com/library/windows/apps/dn299273) — 如果此属性为 **true**，当系统采用编程方式在文本控件上设置焦点时，不显示 SIP。 相反，仅在用户与控件交互时才显示该键盘。
 
 ## 适用于 Windows 和 Windows Phone 的触摸键盘索引
 
@@ -169,7 +169,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 `<TextBox InputScope="Url"/>`
 
-包括“.com”****键和“转到”![](images/input-scopes/kbdgokey.png) (Go) 键。 长按“.com”****键可以显示其他选项（**.org**、**.net** 以及特定于区域的后缀）。
+包括**“.com”**键和![“转到”](images/input-scopes/kbdgokey.png)键。 长按“.com”****键可以显示其他选项（**.org**、**.net** 以及特定于区域的后缀）。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
@@ -255,6 +255,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 |功能的可用性：<ul><li>拼写检查：默认情况下处于启用状态，可以禁用</li><li>自动更正：始终处于禁用状态</li><li>首字母自动大写：始终处于启用状态</li><li>文本预测：始终处于禁用状态</li></ul> | 功能的可用性：<ul><li>拼写检查：默认情况下处于禁用状态，可以启用</li><li>自动更正：默认情况下处于禁用状态，可以启用</li><li>首字母自动大写：默认情况下处于禁用状态，可以启用。 每个单词的首字母均大写。</li><li>文本预测：默认情况下处于禁用状态，可以启用</li></ul> |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

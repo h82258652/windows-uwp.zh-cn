@@ -16,8 +16,7 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
-[
-            **Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 对象用于绘制形状、文本和控件各个部分的内部或轮廓，以便所绘制的对象在 UI 中可见。 让我们了解一下可用的画笔以及如何使用画笔。
+[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 对象用于绘制形状、文本和控件各个部分的内部或轮廓，以便所绘制的对象在 UI 中可见。 让我们了解一下可用的画笔以及如何使用画笔。
 
 ## 画笔简介
 
@@ -25,8 +24,7 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ## 纯色画笔
 
-[
-            **SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 使用单一的 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)（如红色或蓝色）来绘制区域。 这是最基本的画笔。 在 XAML 中可通过以下三种方式定义 **SolidColorBrush** 及其指定的纯色：预定义颜色名称、十六进制颜色值或者属性元素语法。
+[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 使用单一的 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)（如红色或蓝色）来绘制区域。 这是最基本的画笔。 在 XAML 中可通过以下三种方式定义 **SolidColorBrush** 及其指定的纯色：预定义颜色名称、十六进制颜色值或者属性元素语法。
 
 ### 预定义颜色名称
 
@@ -72,16 +70,13 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>线性渐变画笔
 
-[
-            **LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 使用沿着直线定义的渐变绘制一个区域。 这条直线称为*渐变轴*。 你可以使用 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 对象沿着渐变轴来指定渐变颜色及其位置。 默认情况下，渐变轴从画笔绘制区域的左上角到右下角，这会产生对角底纹。
+[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 使用沿着直线定义的渐变绘制一个区域。 这条直线称为*渐变轴*。 你可以使用 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 对象沿着渐变轴来指定渐变颜色及其位置。 默认情况下，渐变轴从画笔绘制区域的左上角到右下角，这会产生对角底纹。
 
-[
-            **GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 是渐变画笔的基本构建块。 渐变停点指定在向绘制区域应用画笔时，画笔的哪个 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) 位于渐变轴上的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 处。
+[**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 是渐变画笔的基本构建块。 渐变停点指定在向绘制区域应用画笔时，画笔的哪个 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) 位于渐变轴上的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 处。
 
 渐变停点的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) 属性指定渐变停点的颜色。 你可以使用预定义颜色名称或指定十六进制的 **ARGB** 值来设置颜色。
 
-[
-            **GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 属性指定每个 **GradientStop** 在渐变轴上的位置。 **Offset** 是 **double** 型参数，范围为 0 到 1。 如果 **Offset** 为 0，则会将 **GradientStop** 放在渐变轴的起点，也就是说靠近 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 的位置。 如果 **Offset** 为 1，则会将 **GradientStop** 放在 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 处。 有用的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 至少应当有两个 **GradientStop** 值，每个 **GradientStop** 都应当指定一个不同的[**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx)，而且具有一个不同的 **Offset**（范围是从 0 到 1）。
+[**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 属性指定每个 **GradientStop** 在渐变轴上的位置。 **Offset** 是 **double** 型参数，范围为 0 到 1。 如果 **Offset** 为 0，则会将 **GradientStop** 放在渐变轴的起点，也就是说靠近 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 的位置。 如果 **Offset** 为 1，则会将 **GradientStop** 放在 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 处。 有用的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 至少应当有两个 **GradientStop** 值，每个 **GradientStop** 都应当指定一个不同的[**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx)，而且具有一个不同的 **Offset**（范围是从 0 到 1）。
 
 下面的示例使用四种颜色创建了一种线性渐变效果，并用它来绘制 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)。
 
@@ -115,8 +110,7 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>图像画笔
 
-[
-            **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 绘制一个包含一个图像的区域，要绘制的图像来自图像文件源。 你可以使用要加载的图像的路径来设置 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) 属性。 通常，图像源来自 **Content** 项目，该项目是应用资源的一部分。
+[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 绘制一个包含一个图像的区域，要绘制的图像来自图像文件源。 你可以使用要加载的图像的路径来设置 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) 属性。 通常，图像源来自 **Content** 项目，该项目是应用资源的一部分。
 
 在默认情况下，[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 会拉伸图像以完全填满绘制的区域，如果绘制区域的纵横比与图像的纵横比不同，这可能会使图像失真。 你可以更改此行为，方式是将 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242975) 属性更改为其默认值 **Fill** 以外的值并将它设置为 **None**、**Uniform** 或 **UniformToFill**。
 
@@ -134,8 +128,7 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ![显示的 ImageBrush。](images/brushes-imagebrush.jpg)
 
-[
-            **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 和 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 均按统一资源标识符 (URI) 引用图像源文件，该图像源文件使用多种可能的图像格式。 这些图像源文件指定为 URI。 有关指定图像源、可用的图像格式并将它们打包到一个应用中的详细信息，请参阅[图像和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)。
+[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 和 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 均按统一资源标识符 (URI) 引用图像源文件，该图像源文件使用多种可能的图像格式。 这些图像源文件指定为 URI。 有关指定图像源、可用的图像格式并将它们打包到一个应用中的详细信息，请参阅[图像和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)。
 
 ## 画笔和文本
 
@@ -145,8 +138,7 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ## WebViewBrush
 
-[
-            **WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) 是一种特殊类型的画笔，可以访问通常在 [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控件中查看的内容。 **WebViewBrush** 将内容绘制到呈现图面的另一个具有 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 型属性的元素上，而不是在矩形 **WebView** 控件区域中绘制内容。 **WebViewBrush** 并非对于所有的画笔方案都适合，但它对于切换 **WebView** 非常有用。 有关详细信息，请参阅 **WebViewBrush**。
+[**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) 是一种特殊类型的画笔，可以访问通常在 [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控件中查看的内容。 **WebViewBrush** 将内容绘制到呈现图面的另一个具有 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 型属性的元素上，而不是在矩形 **WebView** 控件区域中绘制内容。 **WebViewBrush** 并非对于所有的画笔方案都适合，但它对于切换 **WebView** 非常有用。 有关详细信息，请参阅 **WebViewBrush**。
 
 ## 画笔作为 XAML 资源
 
@@ -186,6 +178,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

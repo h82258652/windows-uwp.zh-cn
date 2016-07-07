@@ -104,8 +104,7 @@ Windows 10 提供了新的控件，例如日历和拆分视图。 之前仅适�
 
 ### 设计带有自适应面板的自适应 UI
 
-布局面板将依据可用空间为其子面板提供相应的大小和位置。 例如，[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 将按顺序（水平或垂直）排列其子面板。 [
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 会像 CSS 网格那样将其子网格置于单元格中。
+布局面板将依据可用空间为其子面板提供相应的大小和位置。 例如，[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 将按顺序（水平或垂直）排列其子面板。 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 会像 CSS 网格那样将其子网格置于单元格中。
 
 新 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/dn879546) 实现了由其子元素间的关系定义的布局样式。 它旨在用于创建可适应屏幕分辨率更改的应用布局。 **RelativePanel** 通过定义元素间的关系简化了重新排列元素的过程，这样你便可以生成更为动态的 UI，而无需使用嵌套布局。
 
@@ -185,12 +184,9 @@ Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外�
 
 以下 API 提供对输入的访问：
 
--   [
-            **CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 是一个新的 API，允许你在主线程或后台线程上使用原始输入。
--   [
-            **PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 将原始触摸、鼠标和笔数据统一成一组统一的接口和事件，可借助 **CoreInput** 在主线程或后台线程上使用它们。
--   [
-            **PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 是支持设备查询功能的设备 API，以便你可以确定哪些输入形式在设备上可用。
+-   [**CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 是一个新的 API，允许你在主线程或后台线程上使用原始输入。
+-   [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 将原始触摸、鼠标和笔数据统一成一组统一的接口和事件，可借助 **CoreInput** 在主线程或后台线程上使用它们。
+-   [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 是支持设备查询功能的设备 API，以便你可以确定哪些输入形式在设备上可用。
 -   新的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) XAML 控件和 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) Windows 运行时 API 允许你访问墨迹笔划数据。
 
 ## 编写代码
@@ -292,6 +288,6 @@ Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

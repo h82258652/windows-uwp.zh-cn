@@ -16,10 +16,7 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-[
-            **MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) 类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。 [
-            **MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) 类扩展了 **MediaSource** 的功能，从而允许你管理并从媒体项中所含的多个音频、视频和元数据轨中进行选择。 [
-            **MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 允许你从一个或多个媒体播放项中创建播放列表。
+[**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) 类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) 类扩展了 **MediaSource** 的功能，从而允许你管理并从媒体项中所含的多个音频、视频和元数据轨中进行选择。 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 允许你从一个或多个媒体播放项中创建播放列表。
 
 本文中的代码改编自[视频播放 SDK](http://go.microsoft.com/fwlink/p/?LinkId=620020&clcid=0x409) 示例。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起点。
 
@@ -143,8 +140,7 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 ## 使用 MediaPlaybackList 播放媒体项的列表
 
-[
-            **MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 允许你创建媒体项的播放列表，这些项由 **MediaPlaybackItem** 对象表示。
+[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 允许你创建媒体项的播放列表，这些项由 **MediaPlaybackItem** 对象表示。
 
 **注意** [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 中的项使用无缝播放进行呈现。 系统将使用 MP3 或 AAC 编码的文件中所提供的元数据来确定无缝播放所需的延迟或填充补偿。 如果 MP3 或 AAC 编码的文件不提供此元数据，则系统将试探性确定延迟或填充。 对于无损格式（如 PCM、FLAC 或 ALAC），系统不执行任何操作，因为这些编码器不会引入延迟或填充。
 

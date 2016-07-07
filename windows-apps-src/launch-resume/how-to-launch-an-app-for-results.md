@@ -104,8 +104,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 using Windows.ApplicationModel.Activation
 ```
 
-[
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法中的 [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) 对象包含从调用应用传递的数据。 数据不得超过 100KB 且存储在 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 对象中。
+[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法中的 [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) 对象包含从调用应用传递的数据。 数据不得超过 100KB 且存储在 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 对象中。
 
 在此示例代码中，启动应用预期从调用应用发送的数据存储在名为 **TestData** 的项下的 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 中，因为这就是编码示例的调用应用旨在发送的内容。
 
@@ -204,6 +203,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

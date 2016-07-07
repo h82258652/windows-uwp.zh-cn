@@ -92,8 +92,7 @@ HString campaignId;
 HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf());
 ```
 
-[
-            **GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法从 Windows 应用商店访问数据。 在使用此方法时，请使用以下指南：
+[**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法从 Windows 应用商店访问数据。 在使用此方法时，请使用以下指南：
 
 -   将此方法调用包装在异步操作中以允许调用完成。
 -   如果你的应用尚未发布到 Windows 应用商店并且你要测试自定义市场活动，请使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 类而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 类的 [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt187034) 方法。 请按照以下指南进行操作：

@@ -35,11 +35,9 @@ ms.openlocfilehash: 433cda6432d1e695bacb338e68012bcc9c837eb6
     -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
     -   **布尔值**
     -   **Char16**、**String**
-    -   [
-            **DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
+    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
     -   **GUID**、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [
-            **ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)：一组必须按原子方式序列化和反序列化的相关应用设置。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
+    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)：一组必须按原子方式序列化和反序列化的相关应用设置。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
 -   **文件**
 
     使用文件存储二进制数据，或支持自己的自定义序列化类型。
@@ -119,8 +117,7 @@ else
 
 ### <span id="Create_and_read_a_local_file"></span><span id="create_and_read_a_local_file"></span><span id="CREATE_AND_READ_A_LOCAL_FILE"></span>创建和读取本地文件
 
-若要创建和更新本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)。 此示例会在 `localFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [
-            **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
+若要创建和更新本地应用数据存储中的文件，请使用文件 API，如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)。 此示例会在 `localFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 ```CSharp
 async void WriteTimestamp()
@@ -177,8 +174,7 @@ async void ReadTimestamp()
 
 如果用户使用 Microsoft 帐户登录相应的设备，则任何用户都可以享受到漫游应用数据的益处。 但是，用户和组策略管理员可以随时在设备上关闭漫游应用数据。 如果用户选择不使用 Microsoft 帐户或者禁用漫游数据功能，她仍可以使用你的应用，但应用数据都将留在每台设备本地。
 
-[
-            **PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 中存储的数据仅将在用户使设备成为“受信任”设备的情况下传输。 如果设备不受信任，则不会漫游在该保管库中安全存储的数据。
+[**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 中存储的数据仅将在用户使设备成为“受信任”设备的情况下传输。 如果设备不受信任，则不会漫游在该保管库中安全存储的数据。
 
 ### <span id="Conflict_resolution"></span><span id="conflict_resolution"></span><span id="CONFLICT_RESOLUTION"></span>冲突解决
 
@@ -285,8 +281,7 @@ else
 
 ### <span id="Create_and_retrieve_roaming_files"></span><span id="create_and_retrieve_roaming_files"></span><span id="CREATE_AND_RETRIEVE_ROAMING_FILES"></span>创建和检索漫游文件
 
-若要在漫游应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)）。 此示例会在 `roamingFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [
-            **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
+若要在漫游应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)）。 此示例会在 `roamingFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 ```CSharp
 async void WriteTimestamp()
@@ -337,8 +332,7 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 
 ### <span id="Create_and_read_temporary_files"></span><span id="create_and_read_temporary_files"></span><span id="CREATE_AND_READ_TEMPORARY_FILES"></span>创建和读取临时文件
 
-若要在临时应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)）。 此示例会在 `temporaryFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [
-            **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
+若要在临时应用数据存储中创建和更新文件，请使用文件 API（如 [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) 和 [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505)）。 此示例会在 `temporaryFolder` 容器中创建一个名为 `dataFile.txt` 的文件并将当前日期和时间写入该文件中。 [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 枚举中的 **ReplaceExisting** 值指示替换该文件（如果存在的话）。
 
 <span codelanguage="CSharp"></span>
 ```CSharp
@@ -386,8 +380,7 @@ async void ReadTimestamp()
 
 若要帮助你组织应用数据设置和文件，请创建容器（由 [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) 对象表示），而不是直接使用目录。 你可以向本地、漫游和临时应用数据存储添加容器。 容器的嵌套深度可达 32 层。
 
-若要创建设置容器，请调用 [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) 方法。 此示例将创建一个名为 `exampleContainer` 的本地设置容器并添加一个名为 `exampleSetting` 的设置。 [
-            **ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) 枚举中的 **Always** 值指示已创建容器（如果尚不存在的话）。
+若要创建设置容器，请调用 [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) 方法。 此示例将创建一个名为 `exampleContainer` 的本地设置容器并添加一个名为 `exampleSetting` 的设置。 [**ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) 枚举中的 **Always** 值指示已创建容器（如果尚不存在的话）。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 

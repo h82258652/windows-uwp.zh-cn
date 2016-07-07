@@ -23,8 +23,7 @@ ms.openlocfilehash: ae6ab11963ed06083e581ce42f39ce483d53e0d6
 | [启用设备功能](enable-device-capabilities.md) | 本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。 | 
 | [为 Windows IoT 启用用户模式访问](enable-usermode-access.md) | 本教程介绍如何对 Windows 10 IoT 核心版上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。 |
 | [枚举设备](enumerate-devices.md) | 枚举命名空间可以让你找到内部连接到系统的、外部连接的或通过无线或网络协议可检测到的设备。 |
-| [设备配对](pair-devices.md) | 某些设备需要先进行配对，然后才能使用。 [
-            <strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空间支持三种配对设备的不同方式。 |
+| [设备配对](pair-devices.md) | 某些设备需要先进行配对，然后才能使用。 [<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空间支持三种配对设备的不同方式。 |
 | [带外配对](out-of-band-pairing.md) | 本部分介绍了带外配对如何支持应用在无需发现的情况下也能连接到某些设备。 | 
 | [传感器](sensors.md) | 传感器使你的应用了解它周围的设备和外界之间的关系。 传感器可以告知你的应用设备的方向、定位和移动。 |
 | [蓝牙](bluetooth.md) | 本部分包含有关如何将蓝牙集成到通用 Windows 平台 (UWP) 应用的文章，包括如何使用 RFCOMM、GATT 和低功耗 (LE) 广告。 | 

@@ -57,8 +57,7 @@ RichTextBlock 支持：
 
 ### 内联 UI 元素
 
-[
-            **InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 类允许你将任何 UIElement 内联嵌入文本中。 常用方案是将 Image 内联置于文本中，但你也可以使用交互式元素，例如 Button 或 CheckBox。
+[**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 类允许你将任何 UIElement 内联嵌入文本中。 常用方案是将 Image 内联置于文本中，但你也可以使用交互式元素，例如 Button 或 CheckBox。
 
 如果你想要在相同位置嵌入多个元素内联，请考虑将面板用作单个 InlineUIContainer 子元素，然后将多个元素放入该面板中。
 

@@ -85,13 +85,11 @@ Windows 10 中新后台传输功能可在文件传输完成后触发后处理，
 
 ### 连接质量
 
-[
-            **Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/windows/apps/br207308) API 使你能够访问网络连接、成本以及使用情况信息。 有关使用此 API 的详细信息，请参阅[访问网络连接状态和管理网络成本](https://msdn.microsoft.com/library/windows/apps/hh452983)
+[**Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/windows/apps/br207308) API 使你能够访问网络连接、成本以及使用情况信息。 有关使用此 API 的详细信息，请参阅[访问网络连接状态和管理网络成本](https://msdn.microsoft.com/library/windows/apps/hh452983)
 
 ### DNS 服务发现
 
-[
-            **Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API 使你能够使用 DNS-SD 协议（如 IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158) 中所述）在网络上向其他设备宣传某种网络服务。
+[**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API 使你能够使用 DNS-SD 协议（如 IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158) 中所述）在网络上向其他设备宣传某种网络服务。
 
 ### 通过蓝牙进行通信
 
@@ -99,38 +97,31 @@ Windows 10 中新后台传输功能可在文件传输完成后触发后处理，
 
 ### 推送通知 (WNS)
 
-[
-            **Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) API 使你能够使用 Windows 通知服务 (WNS) 通过网络接收推送通知。 有关使用此 API 的详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](https://msdn.microsoft.com/library/windows/apps/mt187203)
+[**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) API 使你能够使用 Windows 通知服务 (WNS) 通过网络接收推送通知。 有关使用此 API 的详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](https://msdn.microsoft.com/library/windows/apps/mt187203)
 
 ### 近场通信
 
-[
-            **Windows.Networking.Proximity**](https://msdn.microsoft.com/library/windows/apps/br241250) API 允许你针对使用邻近感应或点击设备的应用使用近场通信，从而可轻松传输数据。 有关使用此 API 的详细信息，请参阅[支持邻近感应和点击](https://msdn.microsoft.com/library/windows/apps/hh465229)。
+[**Windows.Networking.Proximity**](https://msdn.microsoft.com/library/windows/apps/br241250) API 允许你针对使用邻近感应或点击设备的应用使用近场通信，从而可轻松传输数据。 有关使用此 API 的详细信息，请参阅[支持邻近感应和点击](https://msdn.microsoft.com/library/windows/apps/hh465229)。
 
 ### RSS/Atom 订阅源
 
-[
-            **Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) API 使你能够以 RSS 和 Atom 格式管理联合源。 有关使用此 API 的详细信息，请参阅 [RSS/Atom 订阅源](web-feeds.md)。
+[**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) API 使你能够以 RSS 和 Atom 格式管理联合源。 有关使用此 API 的详细信息，请参阅 [RSS/Atom 订阅源](web-feeds.md)。
 
 ### WLAN 枚举和连接控制
 
-[
-            **Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/dn975224) API 使你能够枚举 Wi-Fi 适配器、扫描可用的 Wi-Fi 网络，以及将适配器连接到网络。
+[**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/dn975224) API 使你能够枚举 Wi-Fi 适配器、扫描可用的 Wi-Fi 网络，以及将适配器连接到网络。
 
 ### 无线控制
 
-[
-            **Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/dn996447) API 使你能够查找和控制本地设备上的无线，其中包括 Wi-Fi 和蓝牙。
+[**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/dn996447) API 使你能够查找和控制本地设备上的无线，其中包括 Wi-Fi 和蓝牙。
 
 ### Wi-Fi Direct
 
-[
-            **Windows.Devices.WiFiDirect**](https://msdn.microsoft.com/library/windows/apps/dn297687) API 使你能够通过使用 Wi-Fi Direct 创建临时的本地无线网络，来与其他本地设备进行连接和通信。
+[**Windows.Devices.WiFiDirect**](https://msdn.microsoft.com/library/windows/apps/dn297687) API 使你能够通过使用 Wi-Fi Direct 创建临时的本地无线网络，来与其他本地设备进行连接和通信。
 
 ### Wi-Fi Direct Services
 
-[
-            **Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/library/windows/apps/dn996481) API 使你能够提供 Wi-Fi Direct Services 并连接到它们。 借助 Wi-Fi Direct Services，Wi-Fi Direct 临时网络上的设备（服务广告方）便能提供通过 Wi-Fi Direct 连接而连接到其他设备（服务寻求方）的功能。
+[**Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/library/windows/apps/dn996481) API 使你能够提供 Wi-Fi Direct Services 并连接到它们。 借助 Wi-Fi Direct Services，Wi-Fi Direct 临时网络上的设备（服务广告方）便能提供通过 Wi-Fi Direct 连接而连接到其他设备（服务寻求方）的功能。
 
 ### 移动运营商
 
@@ -138,13 +129,11 @@ Windows 10 向广大开发人员受众公开了一些之前只公开给设备制
 
 ### 网络运营
 
-[
-            **Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/library/windows/apps/br241148) API 主要用于处理手机的配置和预配。 因此，用于对其进行控制的功能的相关权限仅限于设备制造商和电信提供商。
+[**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/library/windows/apps/br241148) API 主要用于处理手机的配置和预配。 因此，用于对其进行控制的功能的相关权限仅限于设备制造商和电信提供商。
 
 ### 短信
 
-[
-            **Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) 命名空间用于以低级别实体形式处理短信和相关消息。 提供它供移动运营商作应用定向的短信之用，并使其受某一功能控制，该功能不被大多数应用开发人员批准使用。 如果你要编写一个用于处理消息的应用，应改为使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API，由于其设计初衷并非仅用于处理短信，还能用于处理来自其他来源（如实时聊天应用）的消息，从而能提供更为丰富的聊天/消息传递体验。
+[**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) 命名空间用于以低级别实体形式处理短信和相关消息。 提供它供移动运营商作应用定向的短信之用，并使其受某一功能控制，该功能不被大多数应用开发人员批准使用。 如果你要编写一个用于处理消息的应用，应改为使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API，由于其设计初衷并非仅用于处理短信，还能用于处理来自其他来源（如实时聊天应用）的消息，从而能提供更为丰富的聊天/消息传递体验。
 
 
 

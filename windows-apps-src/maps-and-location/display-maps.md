@@ -226,8 +226,7 @@ private async void showStreetsideView()
 ## 显示鸟瞰图 3D 视图
 
 
-使用 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) 类指定地图的 3D 视角。 地图场景表示显示在地图上的 3D 视图。 [
-            **MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) 类表示可能显示如此一个视图的相机的位置。
+使用 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) 类指定地图的 3D 视角。 地图场景表示显示在地图上的 3D 视图。 [**MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) 类表示可能显示如此一个视图的相机的位置。
 
 ![](images/mapcontrol-techdiagram.png)
 
@@ -283,14 +282,10 @@ private async void display3DLocation()
 
 通过调用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的以下方法，在地图上获取有关位置的信息。
 
--   [
-            **GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) 方法 - 获取与地图控件视口中指定点相对应的地理位置。
--   [
-            **GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) 方法 - 在地图控件的视口中获取与指定地理位置相对应的点。
--   [
-            **IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) 方法 - 确定指定的地理位置当前在地图控件的视口中是否可见。
--   [
-            **FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) 方法 - 在位于地图控件视口中指定点的地图上获取元素。
+-   [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) 方法 - 获取与地图控件视口中指定点相对应的地理位置。
+-   [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) 方法 - 在地图控件的视口中获取与指定地理位置相对应的点。
+-   [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) 方法 - 确定指定的地理位置当前在地图控件的视口中是否可见。
+-   [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) 方法 - 在位于地图控件视口中指定点的地图上获取元素。
 
 ## 处理用户交互和更改
 
@@ -325,6 +320,6 @@ private async void display3DLocation()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -5,46 +5,46 @@ title: "表和透视表"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 6585a75f08a64b7bb8f27fd32a227fa49bb0f3f4
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 8737ce16d98952f24f9651d30d49ffa85b8d306b
 
 ---
 # 透视表和表
 
-透视表控件和表模式用于导航经常访问的不同内容类别。 透视表和表由两个或多个具有相应类别标题的内容窗格构成。 标题将保留在屏幕上且具有一个清晰显示的选择状态，以便用户可以始终知道自己所在的类别。
-![表示例](images/HIGSecOne_Tabs.png)
+透视表控件和相关的表模式用于导航经常访问的不同内容类别。 透视表允许在两个或多个内容窗格之间进行导航，并且依靠文本标题来表明内容的不同部分。
 
-表是透视表的视觉变量，使用 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控件生成。 介绍如何自定义透视表的[**代码示例**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlPivot)可在 GitHub 上获得。
+![表示例](images/pivot_Hero_main.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+表是透视表的视觉变体，它使用图标和文本的组合或纯图标来表明部分内容。 表使用 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控件生成。 [**透视表示例**](http://go.microsoft.com/fwlink/p/?LinkId=619903)显示如何将透视表控件自定义为表模式。
+
+
 
 -   [**Pivot 类**](https://msdn.microsoft.com/library/windows/apps/dn608241)
 
-## 表/透视表模式
+## 透视表模式
 
-在使用表/透视表模式生成应用时，有一些关键设计变量需要考虑。
+在使用透视表生成应用时，有一些关键设计变量需要考虑。
 
-- **标题标签。**  标题可以是带文本的图标或纯文本。
+- **标题标签。**  标题可以是带有文本的图标、纯图标或纯文本。
 - **标题对齐方式。**  标题可以左对齐，也可以居中对齐。
-- **顶级或次级导航。**  表/透视表可以用于任一级别的导航。 （可选）[导航窗格](nav-pane.md)可充当主要级别，而表/透视表可作为辅助级别。
+- **顶级或次级导航。**  透视表可以用于任一级别的导航。 （可选）[导航窗格](nav-pane.md)可充当主要级别，而透视表可作为辅助级别。
 - **触摸手势支持。**  对于支持触摸手势的设备，你可以使用以下两组交互之一在不同的内容类别之间进行导航：
     1. 点击表/透视表标题以导航到该类别。
     2. 在内容区域上向左或向右轻扫，以导航到相邻类别。
 
 ## 示例
 
-Cortana 提醒中的默认透视表控件。
+手机上的透视表控件。
 
-![Cortana 提醒中的透视表示例](images/pivot_cortana-reminders.png)
+![透视表示例](images/pivot_example.png)
 
 “闹钟和时钟”应用中的表模式。
 
-![“闹钟和时钟”中的表示例](images/tabs_alarms-and-clock.png)
+![“闹钟和时钟”中的表模式示例](images/tabs_alarms-and-clock.png)
 
 ## 创建透视表控件
 
-[
-            **Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控件随附本部分中所述的基本功能。
+[**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控件随附本部分中所述的基本功能。
 
 此 XAML 使用 3 个部分的内容创建基本透视表控件。
 
@@ -82,19 +82,35 @@ Cortana 提醒中的默认透视表控件。
 -   通过点击透视表项目标题，可导航到该标题的部分内容。
 -   通过在透视表项目标题上向左或向右轻扫，可导航到相邻部分。
 -   通过在部分内容上向左或向右轻扫，可导航到相邻部分。
+![在部分内容上向左轻扫的示例](images/pivot_w_hand.png)
 
-该控件支持以下两种模式：
+该控件有以下两种模式：
 
 **固定不动**
 
 -   当所有透视表标题都适合所允许的空间时，透视表将固定不动。
 -   点击某个透视表标签即可导航到相应的页面，尽管透视表无法自行移动也是如此。 活动透视表将突出显示。
 
+{{&gt; 非内部内容 =“
+-   我们尤其建议防止项在 10 英尺环境中旋转。 如果你的应用将在 Xbox 上运行，请将新的 `IsHeaderItemsCarouselEnabled` 属性设置为 False。
+”}}
+
 **旋转**
 
 -   当所有透视表标题不适合所允许的空间时，可旋转透视表。
 -   点击某个透视表标签即可导航到相应的页面，并且活动透视表标签将旋转至第一个位置。
 -   从最后一个到第一个透视表部分的旋转循环中的透视表项目。
+
+{{&gt; 非内部内容 =“
+### 透视表焦点
+
+默认情况下，透视表标题上的键盘焦点由下划线表示。
+
+![默认焦点为所选标题加下划线](images/pivot_focus_selectedHeader.png)
+
+具有自定义透视表并且将下划线加到标题选择视觉对象的应用可以使用新的 `HeaderFocusVisualPlacement` 属性来更改默认值。 当 `HeaderFocusVisualPlacement=\"ItemHeaders\"` 时，将在整个标题面板周围绘制焦点。
+
+![ItemsHeader 选项在所有透视表标题周围绘制焦点](images/pivot_focus_headers.png)。”}}
 
 ## 建议
 
@@ -107,10 +123,12 @@ Cortana 提醒中的默认透视表控件。
 
 ## 相关主题
 
-[导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)
+- [导航设计基础知识](../layout/navigation-basics.md)
+
+- [**透视表示例**](http://go.microsoft.com/fwlink/p/?LinkId=619903)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

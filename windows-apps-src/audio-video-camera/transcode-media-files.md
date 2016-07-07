@@ -34,8 +34,7 @@ ms.openlocfilehash: 06c452291f10acd35dde9659c08a386ea38fa90a
 
 编码配置文件包含确定如何编码目标文件的设置。 转换文件代码时，此文件中包含的选项最多。
 
-[
-            **MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 类提供用于创建预定义编码配置文件的静态方法：
+[**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 类提供用于创建预定义编码配置文件的静态方法：
 
 -   Wav
 -   AAC 音频 (M4A)

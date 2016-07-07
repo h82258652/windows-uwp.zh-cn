@@ -36,8 +36,7 @@ ms.openlocfilehash: 05e752925c07b0e3720fbdd42d785381aa08b99c
 
 ## 使用 MediaCapture 启动预览流
 
-[
-            **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象为你的设备相机的应用界面。 此类是 Windows.Media.Capture 命名空间的成员。 除了默认项目模板包含的这些 API，本文的示例还使用来自 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空间的 API。
+[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象为你的设备相机的应用界面。 此类是 Windows.Media.Capture 命名空间的成员。 除了默认项目模板包含的这些 API，本文的示例还使用来自 [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 和 [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 命名空间的 API。
 
 添加 using 指令以将以下命名空间包含在你的页面的 .cs 文件中。
 

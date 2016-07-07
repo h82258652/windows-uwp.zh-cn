@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: xBind 标记扩展是 Binding 的备用选项。 虽然 xBind 缺少 Binding 中的一些功能，但它运行时所花费的时间和使用的内存量均比 Binding 要少，且支持更好的调试。
-title: xBind 标记扩展
+description: "xBind 标记扩展是 Binding 的备用选项。 虽然 xBind 缺少 Binding 中的一些功能，但它运行时所花费的时间和使用的内存量均比 Binding 要少，且支持更好的调试。"
+title: "xBind 标记扩展"
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
+
 ---
 
 # {x&#58;Bind} 标记扩展
@@ -106,8 +110,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 **提示** 如果你需要为某个值指定单个花括号（例如在 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中），请在它前面加上反斜杠：`\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
 
-[
-            **Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 和 **ConverterLanguage** 都与如下方案相关：将绑定源中的值或类型转换为与绑定目标属性兼容的类型或值。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)的“数据转换”部分。
+[**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 和 **ConverterLanguage** 都与如下方案相关：将绑定源中的值或类型转换为与绑定目标属性兼容的类型或值。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)的“数据转换”部分。
 
 **{x:Bind}** 仅为标记扩展，且无法以编程方式创建或处理此类绑定。 有关标记扩展的详细信息，请参阅 [XAML 概述](xaml-overview.md)。
 
@@ -132,6 +135,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

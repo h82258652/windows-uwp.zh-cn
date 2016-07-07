@@ -78,14 +78,10 @@ Windows Phone 应用：状态栏进度指示器和进度栏
 确定进度栏显示应用执行的进度状况。 随着工作进行，进度条逐渐填满。 如果你可以估计剩余工作量的时间、字节数、文件数或其他某些可量化的衡量单位，请使用确定进度栏。
 
 进度栏提供多个用来设置和确定进度的属性：
-- [
-            **IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)：指定进度栏是否不确定。 设置为 **false** 可创建确定的进度栏。
-- [
-            **Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx)：值范围的开始值。 默认值为 0.0。
-- [
-            **Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx)：值范围的结束值。 默认值为 1.0。 
-- [
-            **Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx)：指定当前进度的数字。 如果要显示文件下载进度，此值可以是已经下载的字节数（你随后可以将 Maximum 设置为要下载的字节总数）。
+- [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)：指定进度栏是否不确定。 设置为 **false** 可创建确定的进度栏。
+- [**Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx)：值范围的开始值。 默认值为 0.0。
+- [**Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx)：值范围的结束值。 默认值为 1.0。 
+- [**Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx)：指定当前进度的数字。 如果要显示文件下载进度，此值可以是已经下载的字节数（你随后可以将 Maximum 设置为要下载的字节总数）。
  
 以下示例展示了一个基于值的确定进度栏。 
 

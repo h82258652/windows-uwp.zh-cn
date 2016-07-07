@@ -71,6 +71,6 @@ IAP 提交过程的第一步是通过[定义其产品类型和产品 ID](set-you
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

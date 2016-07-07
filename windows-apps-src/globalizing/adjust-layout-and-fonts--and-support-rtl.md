@@ -108,8 +108,7 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 
 使用 JavaScript 的 Windows 应用商店应用（可使用 ui-light.css 或 ui-dark.css 样式表）可以根据应用语言将其字体自动设置为最适合的字体。 应用托管进程将根元素的 **lang** 属性设置为应用语言。
 
-在单页上显示多种语言的应用应分别针对各语言部分设置 **lang** 属性。 [
-            **:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 伪类选择器会为页面的每个部分选择正确的字体。
+在单页上显示多种语言的应用应分别针对各语言部分设置 **lang** 属性。 [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 伪类选择器会为页面的每个部分选择正确的字体。
 
  
 

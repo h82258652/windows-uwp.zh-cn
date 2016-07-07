@@ -1,6 +1,13 @@
 ---
-Description: author:mcleanbyron 通过应用商店商业平台提供可消费应用内产品&amp;\#8212;这些项目可以进行购买、使用和再次购买&amp;\#8212;，以便为客户提供强大可靠的购买体验。
-title: 启用可消费应用内产品购买 ms.assetid：F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 keywords:应用内付费 keywords:可消费 keywords:应用内购买 keywords:应用内产品 keywords:如何支持应用内 keywords:应用内购买代码示例 keywords:应用内付费代码示例
+author: mcleanbyron
+Description: "通过应用商店商业平台提供可消费应用内产品（这些项目可以进行购买、使用和再次购买），以便为客户提供强大可靠的购买体验。"
+title: "启用可消费应用内产品购买"
+ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
+keywords: in-app offer code sample
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 25f09e043d61f1705f9f0a4fa34114fd06166fa4
+
 ---
 
 # 启用可消费应用内产品购买
@@ -119,6 +126,7 @@ private async void GetUnfulfilledConsumables()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

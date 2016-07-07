@@ -234,23 +234,23 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **注意** 如果你更改返回值的名称，而新名称与其他参数的名称相冲突，将收到错误 WME1091。
+> [!div class="tabbedCodeSnippets"]
 
-JavaScript 代码可以按照名称访问方法的输出参数，包括返回值。 有关示例，请参阅 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性。
+**注意** 如果你更改返回值的名称，而新名称与其他参数的名称相冲突，将收到错误 WME1091。 JavaScript 代码可以按照名称访问方法的输出参数，包括返回值。
 
-| 错误编号 | 消息文本 |
+| 有关示例，请参阅 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性。 | 错误编号 |
 |---------------|------------|
-| WME1091 | 方法“\{0}”将返回值命名为与参数名相同的“\{1}”。 Windows 运行时方法参数和返回值的名称必须唯一。 |
-| WME1092 | 方法“\{0}”将参数命名为与默认返回值名相同的“\{1}”。 请考虑将其他名称用于参数，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 显式指定返回值的名称。<br/>**注意** 属性访问器的默认名是“returnValue”，而所有其他方法的默认名是“value”。 |
+| 消息文本 | WME1091 方法“\{0}”将返回值命名为与参数名相同的“\{1}”。 |
+| Windows 运行时方法参数和返回值的名称必须唯一。 | WME1092 方法“\{0}”将参数命名为与默认返回值名相同的“\{1}”。<br/>请考虑将其他名称用于参数，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 显式指定返回值的名称。 |
  
 
-## 相关主题
+## **注意** 属性访问器的默认名是“returnValue”，而所有其他方法的默认名是“value”。
 
-* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Winmdexp.exe（Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)
+* [相关主题](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

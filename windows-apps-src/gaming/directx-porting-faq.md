@@ -30,8 +30,7 @@ Direct3D 11 是对 Direct3D 9 的重大升级。 其中包含了多种范式转�
 ##  必须针对 UWP 更新游戏计时器吗？
 
 
-[
-            **QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904) 以及 [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) 仍然是为 UWP 应用实现游戏计时器的最佳方法。
+[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904) 以及 [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) 仍然是为 UWP 应用实现游戏计时器的最佳方法。
 
 你应该注意计时器和 UWP 应用生命周期的细微差别。 暂停/恢复与玩家重新启动桌面游戏有所不同，因为你的游戏将 从该游戏的上次播放时间点及时恢复一个快照。 如果经过了很长时间（例如，几周），那么某些游戏计时器实现可能无法正常工作。 当游戏恢复时，你可以使用应用生命周期事件来重置你的计时器。
 

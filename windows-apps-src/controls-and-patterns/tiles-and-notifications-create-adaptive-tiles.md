@@ -5,8 +5,8 @@ title: "创建自适应磁贴"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
+ms.sourcegitcommit: a6632c7b8fdee5320f35e316abd318193a254c51
+ms.openlocfilehash: 6cd4519007d1241cb7c411dade1a092140b598c4
 
 ---
 
@@ -20,21 +20,21 @@ ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
 
 （如果你愿意，你仍然可以在为 Windows 10 设计通知时使用 [Windows 8 磁贴模板目录](https://msdn.microsoft.com/library/windows/apps/hh761491)中的预设模板。）
 
-## <span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>开始使用
+## 开始使用
 
 
 **安装 NotificationsExtensions。** 如果你希望使用 C# 而不是 XML 来生成通知，请安装名为 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) 的 NuGet 程序包。 本文中提供的 C# 示例使用 NotificationsExtensions。
 
 **安装通知可视化工具。** 此免费 UWP 应用通过在你编辑时提供磁贴的即时可视预览来帮助你设计自适应动态磁贴，类似于 Visual Studio 的 XAML 编辑器/设计视图。 你可以阅读[此博客文章](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx)获取详细信息，并且可以在[此处](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)下载通知可视化工具。
 
-## <span id="Usage_guidance"></span><span id="usage_guidance"></span><span id="USAGE_GUIDANCE"></span>用法指南
+## 用法指南
 
 
 自适应模板设计用于跨不同的外形规格和通知类型工作。 组和子组等元素将内容链接在一起，并且不会对其本身暗示特定的可视行为。 通知的最终外观应基于将显示它的特定设备，无论它是手机、平板电脑、台式机还是其他设备。
 
 提示是可选属性，可添加到元素以实现特定的可视行为。 提示可以特定于设备，也可以特定于通知。
 
-## <span id="A_basic_example"></span><span id="a_basic_example"></span><span id="A_BASIC_EXAMPLE"></span>基本示例
+## 基本示例
 
 
 此示例演示自适应磁贴模板可以生成的内容。
@@ -104,7 +104,7 @@ TileContent content = new TileContent()
 
 ![快速示例磁贴](images/adaptive-tiles-quicksample.png)
 
-## <span id="Tile_sizes"></span><span id="tile_sizes"></span><span id="TILE_SIZES"></span>磁贴大小
+## 磁贴大小
 
 
 每种磁贴大小的内容在 XML 负载内的单独 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素中单独指定。 通过将模板属性设置为以下值之一，选择目标大小：
@@ -196,12 +196,12 @@ TileContent content = new TileContent()
 
 ![自适应磁贴大小：小、中、宽和大](images/adaptive-tiles-sizes.png)
 
-## <span id="Branding"></span><span id="branding"></span><span id="BRANDING"></span>品牌
+## 品牌
 
 
 你可以控制动态磁贴底部的品牌（显示名称和角徽标），方法是使用通知负载上的品牌属性。 你可以选择显示“无”、仅“名称”、仅“徽标”，或使用“nameAndLogo”显示两者。
 
-**注意** Windows Phone 不支持角徽标，因此“徽标”和“nameAndLogo”在手机上默认为“名称”。
+**注意** Windows Mobile 不支持角徽标，因此“徽标”和“nameAndLogo”在 Mobile 上默认为“名称”。
 
  
 
@@ -283,10 +283,12 @@ TileContent content = new TileContent()
 
  
 
-## <span id="Display_name"></span><span id="display_name"></span><span id="DISPLAY_NAME"></span>显示名称
+## 显示名称
 
 
 你可以通过输入你使用 **displayName** 属性选择的文本字符串来替代通知的显示名称。 和品牌一样，你可以在 [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上指定它，这会影响整个通知负载，或者可以在 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上指定它，这仅影响个别磁贴。
+
+**已知问题** 在 Windows Mobile 上，如果为磁贴指定一个 ShortName，将不使用通知中提供的显示名称（将始终显示 ShortName）。 
 
 ```XML
 <tile>
@@ -332,11 +334,10 @@ TileContent content = new TileContent()
 
 ![自适应磁贴显示名称](images/adaptive-tiles-displayname.png)
 
-## <span id="Text"></span><span id="text"></span><span id="TEXT"></span>文本
+## 文本
 
 
-[
-            &lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素用于显示文本。 你可以使用提示来修改文本显示方式。
+[&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素用于显示文本。 你可以使用提示来修改文本显示方式。
 
 ```XML
 <text>This is a line of text</text></code></pre></td>
@@ -345,7 +346,7 @@ TileContent content = new TileContent()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -367,7 +368,7 @@ new TileText()
 
 ![自适应磁贴文本](images/adaptive-tiles-text.png)
 
-## <span id="Text_wrapping"></span><span id="text_wrapping"></span><span id="TEXT_WRAPPING"></span>文字环绕
+## 文字环绕
 
 
 默认情况下，文本不会换行，并将在磁贴边缘之外继续。 使用 **hint-wrap** 属性在文本元素上设置文本换行。 你还可以通过使用 **hint-minLines** 和 **hint-maxLines**（两者都接受正整数）来控制最小和最大行数。
@@ -379,7 +380,7 @@ new TileText()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -402,7 +403,7 @@ new TileText()
 
 ![带有文字环绕的自适应磁贴](images/adaptive-tiles-textwrapping.png)
 
-## <span id="Text_styles"></span><span id="text_styles"></span><span id="TEXT_STYLES"></span>文本样式
+## 文本样式
 
 
 样式控制文本元素的字体大小、颜色和粗细。 有多种可用样式，包括每个样式的将不透明度设置为 60% 的“微妙”变体，这通常会使文本带有淡灰色阴影。
@@ -480,7 +481,7 @@ new TileText()
 
  
 
-## <span id="Text_alignment"></span><span id="text_alignment"></span><span id="TEXT_ALIGNMENT"></span>文本对齐
+## 文本对齐
 
 
 文本可以在水平方向上左对齐、居中对齐或右对齐。 在从左到右的语言（如英语）中，文本默认为左对齐。 在从右到左的语言（如阿拉伯语）中，文本默认为右对齐。 你可以在元素上使用 **hint-align** 属性来手动设置对齐方式。
@@ -492,7 +493,7 @@ new TileText()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -515,7 +516,7 @@ new TileText()
 
 ![自适应磁贴文本对齐](images/adaptive-tiles-textalignment.png)
 
-## <span id="Groups_and_subgroups"></span><span id="groups_and_subgroups"></span><span id="GROUPS_AND_SUBGROUPS"></span>组和子组
+## 组和子组
 
 
 组允许你在语义上声明组内的内容有关联，并且必须完整显示才能使内容有意义。 例如，你可能有两个文本元素（一个标题和一个副标题），如果仅显示标题，则该内容没有意义。 通过将这些元素分组在一个子组中，元素将全部显示（如果它们可以容纳）或完全不显示（因为它们无法容纳）。
@@ -617,7 +618,7 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 
 ![自适应磁贴组和子组](images/adaptive-tiles-groups-subgroups.png)
 
-## <span id="Subgroups__columns_"></span><span id="subgroups__columns_"></span><span id="SUBGROUPS__COLUMNS_"></span>子组（列）
+## 子组（列）
 
 
 子组还允许你将数据划分为组内的语义式部分。 对于动态磁贴，这在视觉上转换为列。
@@ -842,7 +843,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![天气磁贴的示例](images/adaptive-tiles-weathertile.png)
 
-## <span id="Images"></span><span id="images"></span><span id="IMAGES"></span>图像
+## 图像
 
 
 &lt;image&gt; 元素用于在磁贴通知上显示图像。 图像可以嵌入到磁贴内容中（默认）、作为内容背后的背景图像，或作为从通知顶部以动画形式进入的速览图像。
@@ -940,7 +941,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 放置在 &lt;binding&gt; 根或第一个组中的图像还可拉伸以适应可用的高度。
 
-### <span id="Image_alignment"></span><span id="image_alignment"></span><span id="IMAGE_ALIGNMENT"></span>图像对齐
+### 图像对齐
 
 可以使用 **hint-align** 属性将图像设置为左对齐、居中对齐或右对齐。 这还会导致图像以其原始分辨率显示，而不是拉伸以填充宽度。
 
@@ -975,7 +976,7 @@ TileLarge = new TileBinding()
 
 ![图像对齐示例（左对齐、居中对齐、右对齐）](images/adaptive-tiles-imagealignment.png)
 
-### <span id="Image_margins"></span><span id="image_margins"></span><span id="IMAGE_MARGINS"></span>图像边距
+### 图像边距
 
 默认情况下，嵌入式图像在与图像上方或图像下方的任何内容之间都有 8 个像素的边距。 可以在图像上使用 **hint-removeMargin** 属性来删除此边距。 但是，图像始终与磁贴边缘保留 8 个像素的边距，并且子组（列）始终在列之间保留 8 个像素的填充。
 
@@ -1065,7 +1066,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![提示删除边距示例](images/adaptive-tiles-removemargin.png)
 
-### <span id="Image_cropping"></span><span id="image_cropping"></span><span id="IMAGE_CROPPING"></span>图像裁剪
+### 图像裁剪
 
 可以使用 **hint-crop** 属性将图像裁剪为圆形，该属性当前仅支持值“none”（默认值）或“circle”。
 
@@ -1143,7 +1144,7 @@ TileLarge = new TileBinding()
 
 ![图像裁剪示例](images/adaptive-tiles-imagecropping.png)
 
-### <span id="Background_image"></span><span id="background_image"></span><span id="BACKGROUND_IMAGE"></span>背景图像
+### 背景图像
 
 若要设置背景图像，请将图像元素放置在 &lt;binding&gt; 的根中，并将放置属性设置为“background”。
 
@@ -1267,7 +1268,7 @@ TileWide = new TileBinding()
 
 ![图像提示覆盖的示例](images/adaptive-tiles-image-hintoverlay.png)
 
-### <span id="Peek_image"></span><span id="peek_image"></span><span id="PEEK_IMAGE"></span>速览图像
+### 速览图像
 
 你可以指定从磁贴顶部“速览”的图像。 速览图像使用动画从磁贴顶部向下/向上滑动、速览到视图中，然后再向外滑动以在磁贴上显示主要内容。 若要设置速览图像，请将图像元素放置在 &lt;binding&gt; 的根中，并将放置属性设置为“peek”。
 
@@ -1345,12 +1346,12 @@ hint-crop="circle"
 
 ![速览图像上的提示覆盖](images/hintoverlay.png)
 
-## <span id="Vertical_alignment__text_stacking_"></span><span id="vertical_alignment__text_stacking_"></span><span id="VERTICAL_ALIGNMENT__TEXT_STACKING_"></span>垂直对齐方式（文本堆叠）
+## 垂直对齐方式（文本堆叠）
 
 
 你可以控制磁贴上的内容的垂直对齐方式，方法是在 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素和 [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上使用 **hint-textStacking** 属性。 默认情况下，所有内容都垂直向顶部对齐，但你还可以使内容向底部或中心对齐。
 
-### <span id="Text_stacking_on_binding_element"></span><span id="text_stacking_on_binding_element"></span><span id="TEXT_STACKING_ON_BINDING_ELEMENT"></span>绑定元素上的文本堆叠
+### 绑定元素上的文本堆叠
 
 当在 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 级别上应用时，文本堆叠设置通知内容（作为一个整体）的垂直对齐方式，在品牌/锁屏提醒区域上方的可用垂直空间中对齐。
 
@@ -1398,7 +1399,7 @@ TileMedium = new TileBinding()
 
 ![绑定元素上的文本堆叠](images/adaptive-tiles-textstack-bindingelement.png)
 
-### <span id="Text_stacking_on_subgroup_element"></span><span id="text_stacking_on_subgroup_element"></span><span id="TEXT_STACKING_ON_SUBGROUP_ELEMENT"></span>子组元素上的文本堆叠
+### 子组元素上的文本堆叠
 
 当在 [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 级别上应用时，文本堆叠设置子组（列）内容的垂直对齐方式，在整个组内的可用垂直空间中对齐。
 
@@ -1477,7 +1478,7 @@ TileWide = new TileBinding()
 ...
 ```
 
-## <span id="related_topics"></span>相关主题
+## 相关主题
 
 
 * [自适应磁贴架构](tiles-and-notifications-adaptive-tiles-schema.md)
@@ -1493,6 +1494,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

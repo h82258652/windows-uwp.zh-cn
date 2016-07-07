@@ -25,10 +25,8 @@ UWP 应用的一个重要方面就是流畅的交互。 这包括“粘住你的
 
 -   使用关键帧的对象动画
 -   零持续时间动画
--   [
-            **Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) 属性的动画
--   [
-            **UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) 属性的动画
+-   [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) 属性的动画
+-   [**UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) 属性的动画
 -   针对 [**SolidColorBrush.Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) 子属性时类型 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 的属性的动画
 -   针对这些返回值类型的子属性时下列 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 属性的动画：
 
@@ -46,8 +44,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 ### 不要动态显示 WebView 或 MediaElement
 
-[
-            **WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控件内的 Web 内容不是由 XAML 框架直接进行呈现的，并且它需要进行额外的工作以与场景的剩余部分进行合成。 动态显示屏幕周围的控件时，此额外的工作会增加，并可能会引入同步问题（例如，HTML 内容可能不会与页面上的 XAML 内容的剩余部分同步移动）。 需要创建 **WebView** 控件的动画时，请在动画的持续时间内使用 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx) 交换该控件。
+[**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控件内的 Web 内容不是由 XAML 框架直接进行呈现的，并且它需要进行额外的工作以与场景的剩余部分进行合成。 动态显示屏幕周围的控件时，此额外的工作会增加，并可能会引入同步问题（例如，HTML 内容可能不会与页面上的 XAML 内容的剩余部分同步移动）。 需要创建 **WebView** 控件的动画时，请在动画的持续时间内使用 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx) 交换该控件。
 
 创建 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) 动画似乎不是一个好方法。 除了有损性能，它还会导致要播放的视频内容中出现断裂或其他痕迹。
 
@@ -59,8 +56,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 ### 使用动画库
 
-[
-            **Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) 命名空间包含一个高性能的、流畅的动画库，这些动画与其他 Windows 动画的外观一致。 相关类的名称中含有“主题”，并在[动画概述](https://msdn.microsoft.com/library/windows/apps/Mt187350)中进行了介绍。 此动画库支持许多常见的动画方案，例如创建应用的第一个视图的动画以及创建状态转换和内容转换。 我们建议尽可能使用此动画库以改进性能并提高 UWP UI 的一致性。
+[**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) 命名空间包含一个高性能的、流畅的动画库，这些动画与其他 Windows 动画的外观一致。 相关类的名称中含有“主题”，并在[动画概述](https://msdn.microsoft.com/library/windows/apps/Mt187350)中进行了介绍。 此动画库支持许多常见的动画方案，例如创建应用的第一个视图的动画以及创建状态转换和内容转换。 我们建议尽可能使用此动画库以改进性能并提高 UWP UI 的一致性。
 
 > **注意** 动画库无法创建所有可能属性的动画。 有关动画库不适用的 XAML 方案，请参阅[情节提要动画](https://msdn.microsoft.com/library/windows/apps/Mt187354)。
 
@@ -166,8 +162,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 </Image>
 ```
 
-默认情况下，[**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 的单位是物理像素。 [
-            **DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) 属性可用于更改此行为：将 **DecodePixelType** 设置为 **Logical** 会导致解码大小自动考虑到系统的当前比例系数，类似于其他 XAML 内容。 因此，举例来说，如果你希望 **DecodePixelWidth** 和 **DecodePixelHeight** 与显示图像所要使用的图像控件的 Height 和 Width 属性匹配，则通常适合将 **DecodePixelType** 设置为 **Logical**。 通过使用物理像素的默认行为，你必须自行考虑到系统的当前比例系数；并且你应该侦听缩放更改通知，以防用户更改其显示首选项。
+默认情况下，[**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 的单位是物理像素。 [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) 属性可用于更改此行为：将 **DecodePixelType** 设置为 **Logical** 会导致解码大小自动考虑到系统的当前比例系数，类似于其他 XAML 内容。 因此，举例来说，如果你希望 **DecodePixelWidth** 和 **DecodePixelHeight** 与显示图像所要使用的图像控件的 Height 和 Width 属性匹配，则通常适合将 **DecodePixelType** 设置为 **Logical**。 通过使用物理像素的默认行为，你必须自行考虑到系统的当前比例系数；并且你应该侦听缩放更改通知，以防用户更改其显示首选项。
 
 如果将 DecodePixelWidth/Height 显式设置为大于将在屏幕上显示的图像，则应用将不必使用额外内存（最高为每像素 4 个字节），这对于大图像来说将很快成为昂贵的负担。 还将使用双线性缩放缩小该图像，这可能导致它在较大的比例系数中显得模糊。
 
@@ -253,8 +248,7 @@ XAML 具有内部优化，使其可以将图像的内容异步解码到硬件中
 
 ### SoftwareBitmapSource
 
-[
-            **SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) 类在不同的 WinRT 命名空间（如 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/BR226176)、camera API 和 XAML）之间交换可互操作的未经压缩的图像。 此类可省去 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259) 通常需要以及有助于减少峰值内存和源到屏幕延迟的额外副本。
+[**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) 类在不同的 WinRT 命名空间（如 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/BR226176)、camera API 和 XAML）之间交换可互操作的未经压缩的图像。 此类可省去 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259) 通常需要以及有助于减少峰值内存和源到屏幕延迟的额外副本。
 
 还可配置提供源信息的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) 以使用自定义 [**IWICBitmap**](https://msdn.microsoft.com/library/windows/desktop/Ee719675) 提供可重新加载的备份存储，可允许应用在其认为合适时重新映射内存。 这是一个高级 C++ 用例。
 
@@ -262,8 +256,7 @@ XAML 具有内部优化，使其可以将图像的内容异步解码到硬件中
 
 ### 为缩略图使用 GetThumbnailAsync
 
-缩放图像的一个用例是创建缩略图。 尽管你可以使用 [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 来提供较小版本的图像，但是 UWP 会提供更加高效的 API 来检索缩略图。 [
-            **GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) 为已对文件系统进行缓存的图像提供缩略图。 这样会提供甚至比 XAML API 更好的性能，因为不需要打开或解码图像。
+缩放图像的一个用例是创建缩略图。 尽管你可以使用 [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) 和 [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) 来提供较小版本的图像，但是 UWP 会提供更加高效的 API 来检索缩略图。 [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) 为已对文件系统进行缓存的图像提供缩略图。 这样会提供甚至比 XAML API 更好的性能，因为不需要打开或解码图像。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp

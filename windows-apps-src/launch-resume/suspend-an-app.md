@@ -66,10 +66,10 @@ ms.openlocfilehash: 3ad58dc20a660d89622d215c46d263adf27a0542
 > }
 > ```
 
-## 在挂起之前保存应用程序数据
+## [!div class="tabbedCodeSnippets"]
 
 
-当你的应用处理 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件时，它将有机会将其重要的应用程序数据保存到处理程序函数中。 应用应该使用 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 存储 API 来同步保存简单的应用程序数据。
+在挂起之前保存应用程序数据 当你的应用处理 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件时，它将有机会将其重要的应用程序数据保存到处理程序函数中。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -102,35 +102,35 @@ ms.openlocfilehash: 3ad58dc20a660d89622d215c46d263adf27a0542
 > }
 > ```
 
-## 备注
+## 应用应该使用 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 存储 API 来同步保存简单的应用程序数据。
 
 
-每当用户切换到其他应用、桌面或“开始”屏幕时，系统都会暂停你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。
+[!div class="tabbedCodeSnippets"] 备注 每当用户切换到其他应用、桌面或“开始”屏幕时，系统都会暂停你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。
 
-当你的应用被暂停后，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保存在内存里，则将终止你的应用。 当用户切换回已终止的暂停应用时，该应用会发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，且应该在其 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中还原其应用程序数据。
+当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。 当你的应用被暂停后，系统会尝试将你的应用及其数据保留在内存中。
 
-当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且当在终止后又激活应用时还原这些内容。
+但是，如果系统没有资源将你的应用保存在内存里，则将终止你的应用。
 
-> **注意** 如果在应用暂停期间，你需要执行一些异步工作，则需要将暂停完成时间延迟到工作完成之后。 你可以使用 [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) 对象（可通过事件参数获取）上的 [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) 方法将暂停的完成延迟到你针对所返回的 [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) 对象调用 [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 方法位置。
+> 当用户切换回已终止的暂停应用时，该应用会发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，且应该在其 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中还原其应用程序数据。 当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且当在终止后又激活应用时还原这些内容。
 
-> **注意** 为了改进 Windows 8.1 中的系统响应，在应用暂停时，我们为应用提供低优先级的资源访问。 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。
+> **注意** 如果在应用暂停期间，你需要执行一些异步工作，则需要将暂停完成时间延迟到工作完成之后。 你可以使用 [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) 对象（可通过事件参数获取）上的 [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) 方法将暂停的完成延迟到你针对所返回的 [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) 对象调用 [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 方法位置。 **注意** 为了改进 Windows 8.1 中的系统响应，在应用暂停时，我们为应用提供低优先级的资源访问。
 
-> **有关使用 Visual Studio 进行调试的注释：**Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保**“调试位置”**工具栏正在显示，然后单击**“暂停”**图标。
+> 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。 **有关使用 Visual Studio 进行调试的注释：**Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。
 
-## 相关主题
+## 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。
 
 
-* [处理应用激活](activate-an-app.md)
-* [处理应用恢复](resume-an-app.md)
-* [启动、暂停和恢复的用户体验指南](https://msdn.microsoft.com/library/windows/apps/dn611862)
-* [应用生命周期](app-lifecycle.md)
-
- 
+* [请确保**“调试位置”**工具栏正在显示，然后单击**“暂停”**图标。](activate-an-app.md)
+* [相关主题](resume-an-app.md)
+* [处理应用激活](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [处理应用恢复](app-lifecycle.md)
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

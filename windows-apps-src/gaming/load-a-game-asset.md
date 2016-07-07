@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 在 DirectX 游戏中加载资源
-description: 大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（着色器、纹理、预先定义的网络或其他图形数据）。
+title: "在 DirectX 游戏中加载资源"
+description: "大多数游戏在某些时间会从本地存储或其他一些数据流中加载资源（着色器、纹理、预先定义的网络或其他图形数据）。"
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: fd4d2162e9a0007df34b465f570820843b326d72
+
 ---
 
 # 在 DirectX 游戏中加载资源
@@ -705,6 +709,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

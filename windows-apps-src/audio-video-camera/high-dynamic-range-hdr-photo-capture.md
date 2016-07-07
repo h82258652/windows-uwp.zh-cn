@@ -14,8 +14,7 @@ ms.openlocfilehash: 3015aa4338ddb0c0a006eb631026261a4453f376
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-[
-            **AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 类允许你捕获高动态范围 (HDR) 照片。 此 API 还允许你在完成最终图像的处理之前从 HDR 捕获获取参考帧。
+[**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 类允许你捕获高动态范围 (HDR) 照片。 此 API 还允许你在完成最终图像的处理之前从 HDR 捕获获取参考帧。
 
 相关 HDR 捕获的其他文章包括：
 

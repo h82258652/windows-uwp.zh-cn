@@ -82,16 +82,14 @@ ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
 ## CoreApplicationView 行为和属性
 
 
-[
-            **CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 表示当前的应用视图。 应用单一实例在初始化期间创建应用视图，但在激活之前，视图将保持休眠。 你可获得 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，可访问它之上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 属性来显示视图，你也可以向 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件注册委托来处理视图的激活和停用事件。
+[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 表示当前的应用视图。 应用单一实例在初始化期间创建应用视图，但在激活之前，视图将保持休眠。 你可获得 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，可访问它之上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 属性来显示视图，你也可以向 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件注册委托来处理视图的激活和停用事件。
 
 ## CoreWindow 行为和属性
 
 
 在应用对象初始化时，会创建父窗口（一个 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 实例）并传递给视图提供程序。 如果应用有一个窗口要显示，它会显示它，否则它会初始化视图。
 
-[
-            **CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 提供了许多特定于输入和基本窗口行为的事件。 你可以向这些事件注册自己的委托来处理它们。
+[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 提供了许多特定于输入和基本窗口行为的事件。 你可以向这些事件注册自己的委托来处理它们。
 
 你也可以访问 [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) 属性来获得窗口的窗口事件调度程序，该属性提供了一个 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 实例。
 

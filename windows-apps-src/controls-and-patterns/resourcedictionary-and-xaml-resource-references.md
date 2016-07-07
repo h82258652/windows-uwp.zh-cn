@@ -193,8 +193,7 @@ sealed partial class App : Application
 
 ## 每个 FrameworkElement 都可以具有 ResourceDictionary
 
-[
-            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 是控件所继承的基类，并且具有 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 属性。 因此你可以将本地资源字典添加到任何 **FrameworkElement**。
+[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 是控件所继承的基类，并且具有 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 属性。 因此你可以将本地资源字典添加到任何 **FrameworkElement**。
 
 此时，资源字典已添加到页面元素。
 
@@ -218,8 +217,7 @@ sealed partial class App : Application
 
 ```
 
-此时，[**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 和 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 都具有资源字典，并且都具有名为“greeting”的资源。 [
-            **TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 位于 **Border** 内，因此其资源查找将依次查找 **Border** 的资源、**Page** 的资源以及 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 资源。 **TextBlock** 将读取“Hola mundo”。
+此时，[**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 和 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 都具有资源字典，并且都具有名为“greeting”的资源。 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 位于 **Border** 内，因此其资源查找将依次查找 **Border** 的资源、**Page** 的资源以及 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 资源。 **TextBlock** 将读取“Hola mundo”。
 
 若要从代码访问元素的资源，请使用该元素的 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 属性。 在代码（而非 XAML）中访问 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 的资源，将仅在该字典中查找，而不在父级元素的字典中查找。
 
@@ -338,8 +336,7 @@ sealed partial class App : Application
 
 主题字典是一种特殊类型的合并字典，用于保存各种资源，具体资源取决于用户当前在其设备上使用的主题。 例如，“浅色”主题可能使用白色画笔，而“深色”主题可能使用黑色画笔。 画笔会更改它所溶入的资源，但使用该画笔作为资源的控件的组成可能保持不变。 若要在个人模板或样式中重现主题切换行为而不将 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 用作属性以将项目合并到主词典中，请使用 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 属性。
 
-[
-            **ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内的每个 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素必须具有一个 [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) 值。 该值是一个字符串，它为相关主题命名，例如 “Default”、“Dark”、“Light”或“HighContrast”。 通常，`Dictionary1` 和 `Dictionary2` 将定义名称相同但值不同的资源。
+[**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内的每个 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素必须具有一个 [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) 值。 该值是一个字符串，它为相关主题命名，例如 “Default”、“Dark”、“Light”或“HighContrast”。 通常，`Dictionary1` 和 `Dictionary2` 将定义名称相同但值不同的资源。
 
 在此处，将红色文本用于浅色主题，蓝色文本用于深色主题。
 
@@ -436,10 +433,8 @@ sealed partial class App : Application
 -   画笔和颜色（从 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 派生的类和 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 值）
 -   动画类型，包括 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)
 -   转换（从 [**GeneralTransform**](https://msdn.microsoft.com/library/windows/apps/br210034) 派生的类）
--   [
-            **Matrix**](https://msdn.microsoft.com/library/windows/apps/br210127) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/br243266)
--   [
-            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 值
+-   [**Matrix**](https://msdn.microsoft.com/library/windows/apps/br210127) 和 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/br243266)
+-   [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) 值
 -   其他与 UI 相关的某些结构，例如 [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) 和 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/br242343)
 -   [XAML 固有数据类型](https://msdn.microsoft.com/library/windows/apps/mt186448)
 

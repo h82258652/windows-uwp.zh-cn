@@ -138,10 +138,7 @@ namespace SampleMacAlgorithmProvider
 
 数字签名为等同于私钥消息验证代码 (MAC) 的公钥。 但是 MAC 使用私钥使消息接受者能够验证消息在传输期间是否尚未改变，签名使用私钥/公钥对。
 
-[
-            **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 对象可用于重复哈希不同的数据，不必在每次使用时重新创建该对象。 [
-            **Append**](https://msdn.microsoft.com/library/windows/apps/br241499) 方法将新数据添加到要进行哈希操作的缓冲区。 [
-            **GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法对数据进行哈希操作并重置对象以用于另一个用途。 下面的示例对此进行了展示。
+[**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 对象可用于重复哈希不同的数据，不必在每次使用时重新创建该对象。 [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) 方法将新数据添加到要进行哈希操作的缓冲区。 [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法对数据进行哈希操作并重置对象以用于另一个用途。 下面的示例对此进行了展示。
 
 ```cs
 public void SampleReusableHash()

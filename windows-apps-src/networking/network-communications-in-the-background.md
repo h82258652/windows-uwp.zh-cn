@@ -60,12 +60,9 @@ ms.openlocfilehash: 4ab9ca2a1cd337bd0af8fbbfcf44d8fc6e6dda3e
 
     通过使用以下一种适当方法，应用会将套接字的所有权传输给套接字代理并传递后台任务的 ID：
 
-    -   [
-            **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) 方法之一。
-    -   [
-            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) 方法之一。
-    -   [
-            **StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) 方法之一。
+    -   [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) 方法之一。
+    -   [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) 方法之一。
+    -   [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) 方法之一。
 
 ```csharp
     private void TransferOwnership(StreamSocketListener tcpListener) 
@@ -174,8 +171,7 @@ case SocketActivityTriggerReason.SocketClosed:
 将 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，应遵循以下使用模式和最佳做法：
 
 -   必须始终保持发布一个未完成的套接字接收。 这是允许发生推送通知任务所必需的。
--   WebSocket 协议为保持连接消息定义一个标准模型。 [
-            **WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) 类可以将客户端发起的 WebSocket 协议保持连接消息发送给服务器。 应用应该将 **WebSocketKeepAlive** 类注册为 KeepAliveTrigger 的 TaskEntryPoint。
+-   WebSocket 协议为保持连接消息定义一个标准模型。 [**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) 类可以将客户端发起的 WebSocket 协议保持连接消息发送给服务器。 应用应该将 **WebSocketKeepAlive** 类注册为 KeepAliveTrigger 的 TaskEntryPoint。
 
 某些特殊的注意事项影响在 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 上接收数据包的请求的处理方式。 尤其在将 **StreamWebSocket** 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，应用必须使用用于处理读取操作的原始异步模式，而不是 C# 和 VB.NET 中的 **await** 模型或 C++ 中的 Task。 本部分后面的代码示例中说明了原始异步模式。
 
@@ -271,8 +267,7 @@ Websocket 的附加详细信息为保持连接处理程序。 WebSocket 协议�
 
 使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 时，请将 [**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) 类实例注册为 KeepAliveTrigger 的 [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774)，以便不会暂停应用并允许其向服务器（远程终结点）定期发送保持连接消息。 此操作应作为后台注册应用代码的一部分，并在 程序包清单中完成。
 
-[
-            **Windows.Sockets.WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) 的此任务入口点需要在两个位置中指定：
+[**Windows.Sockets.WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) 的此任务入口点需要在两个位置中指定：
 
 -   在源代码中创建 KeepAliveTrigger 触发器时（参见下例）。
 -   在保持连接后台任务声明的应用包清单中。
@@ -594,8 +589,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 
 结合使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 时的使用模式和最佳做法
 
--   [
-            **IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 对象在用作传输时，其生存时间仅有一个请求/响应。 在与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 对象结合使用时，可以方便地创建并设置 **ControlChannelTrigger** 对象一次，然后重复调用 [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) 方法，每次关联一个新的 **IXMLHTTPRequest2** 对象。 应用应首先删除上一个 **IXMLHTTPRequest2** 对象，然后再提供新 **IXMLHTTPRequest2** 对象，以确保应用不超出分配的资源限制。
+-   [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 对象在用作传输时，其生存时间仅有一个请求/响应。 在与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 对象结合使用时，可以方便地创建并设置 **ControlChannelTrigger** 对象一次，然后重复调用 [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) 方法，每次关联一个新的 **IXMLHTTPRequest2** 对象。 应用应首先删除上一个 **IXMLHTTPRequest2** 对象，然后再提供新 **IXMLHTTPRequest2** 对象，以确保应用不超出分配的资源限制。
 -   在调用 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 方法前，应用可能需要调用 [**SetProperty**](https://msdn.microsoft.com/library/windows/desktop/hh831167) 和 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/desktop/hh831168) 方法来设置 HTTP 传输。
 -   应用可能需要进行初始 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 请求以正确测试并设置传输，然后再创建要用于 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的传输。 在应用确定正确设置传输后，可以将 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 对象配置为与 **ControlChannelTrigger** 一起使用的传输对象。 设计此过程是为了防止在某些情况下断开通过传输建立的连接。 使用 SSL 与证书，应用可能需要显示一个对话框以输入 PIN 或者用于存在多个证书可供选择时。 可能需要进行代理身份验证和服务器身份验证。 如果代理或服务器身份验证已过期，则可能会关闭连接。 应用可以处理这些身份验证过期问题的一个方法是设置计时器。 当需要 HTTP 重定向时，不能保证能够可靠建立第二次连接。 初始测试请求可以确保在将 **IXMLHTTPRequest2** 对象用作 **ControlChannelTrigger** 对象的传输之前，应用使用最新的重定向 URL。
 

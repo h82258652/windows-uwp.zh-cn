@@ -5,8 +5,8 @@ title: "列表"
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 ---
 # 列表
@@ -22,9 +22,9 @@ ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
 
 ## 重要的 API
 
--   [**ListView 类 **](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**GridView 类 **](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**ComboBox 类 **](https://msdn.microsoft.com/library/windows/apps/br209348)
+-   [**ListView 类**](https://msdn.microsoft.com/library/windows/apps/br242878)
+-   [**GridView 类**](https://msdn.microsoft.com/library/windows/apps/br242705)
+-   [**ComboBox 类**](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 ## 列表视图
@@ -85,33 +85,37 @@ ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
 
 ## 下拉列表
 
-下拉列表（也称为组合框）最初样式为紧凑式，可展开以显示可选择项的列表。 下拉列表既支持单项选择也支持多项选择。 选定项始终可见，而不可见的项在用户点击选定项时进入视图。
+下拉列表（也称为组合框）最初处于紧凑状态，可展开以显示可选择项的列表。 选定项始终可见，而不可见的项可在用户点击组合框时进入视图以将其展开。
 
 ### 这是正确的控件吗？
 
 -   使用下拉列表可让用户从一组项中选择单个值，这些项可使用单行文本完全显示。
--   使用列表视图或网格视图（而非下拉列表），显示包含多行文本或多个图像的项。
+-   使用列表视图或网格视图（而非组合框），显示包含多行文本或多张图像的项。
 -   当少于五项时，应考虑使用[单选按钮](radio-button.md)（当进行单项选择时）或[复选框](checkbox.md)（当进行多项选择时）。
--   当选择项在应用流中不太重要时使用下拉列表。 如果在多数情况下为大部分用户推荐了默认选项，则通过使用列表框显示所有项可能会导致用户过多地注意这些选项。 使用下拉列表可以节省空间并减少干扰。
+-   当选择项在应用流中不太重要时使用组合框。 如果在多数情况下为大部分用户推荐了默认选项，则通过使用列表视图显示所有项可能会导致用户过多地注意这些选项。 使用组合框可以节省空间并减少分心。
 
 ### 示例
 
-紧凑式下拉列表可显示标头。
+处于紧凑状态的组合框可以显示标题。
 
-![紧凑状态下的拉列表示例](images/combo_box_collapsed.png)
+![处于紧凑状态的下拉列表示例](images/combo_box_collapsed.png)
 
-尽管下拉列表可通过展开来支持较长的字符串，但应避免使用难以阅读的过长的字符串。
+尽管组合框可通过展开来支持较长的字符串，但应避免使用难以阅读的过长的字符串。
 
 ![带有长文本字符串的下拉列表示例](images/combo_box_listitemstate.png)
 
-如果下拉列表中的集合足够长，将显示滚动栏来容纳它。 以逻辑方式对列表中的项进行分组。
+如果组合框中的集合足够长，将显示滚动栏来容纳它。 以逻辑方式对列表中的项进行分组。
 
 ![下拉列表中的滚动栏示例](images/combo_box_scroll.png)
 
 ### 建议
 
--   将下拉列表项的文本内容限制为单行。
--   以最合乎逻辑的顺序对下拉列表中的项进行排序。 将相关选项组合到一起、将最常见的选项置于顶部，并按字母顺序对项进行排序。 按字母顺序对名称进行排序、按数字顺序对数字进行排序，并按时间先后顺序对日期进行排序。
+-   将组合框的文本内容限制为单行。
+-   以最合乎逻辑的顺序对组合框中的项进行排序。 将相关选项组合到一起并将最常见的选项置于顶部。 按字母顺序对名称进行排序、按数字顺序对数字进行排序，并按时间先后顺序对日期进行排序。
+
+### 文本搜索
+
+组合框自动支持其集合内的搜索。 当焦点位于打开或关闭的组合框上时，如果用户在物理键盘上键入字符，与用户的字符串匹配的候选项将引入视图。 当在长列表中导航时，此功能尤其有用。 例如，当与包含状态列表的下拉列表交互时，用户可以按“w”键来将“Washington”引入视图，以供快速选择。 
 
 ## 列表框
 
@@ -188,11 +192,9 @@ ms.openlocfilehash: 96fd7c2af74ec609a6cfbb41a14b6f4086747813
 - [**GridView 类**](https://msdn.microsoft.com/library/windows/apps/br242705)
 - [**ComboBox 类**](https://msdn.microsoft.com/library/windows/apps/br209348)
 - [**ListBox 类**](https://msdn.microsoft.com/library/windows/apps/br242868)
-- [添加组合框和列表框](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616)
 
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

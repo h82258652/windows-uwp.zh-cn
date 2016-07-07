@@ -78,8 +78,7 @@ ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
 ## 步骤 3：处理激活的事件
 
 
-[
-            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件处理程序接收所有激活事件。 **Kind** 属性指示激活事件的类型。 此示例设置为处理 [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) 激活事件。
+[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件处理程序接收所有激活事件。 **Kind** 属性指示激活事件的类型。 此示例设置为处理 [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) 激活事件。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -120,62 +119,62 @@ ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
 > }
 > ```
 
-> **注意** 通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。
+> [!div class="tabbedCodeSnippets"]
 
-建议应用为打开新页面的每个激活事件创建一个新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 通过此方式，新 XAML **Frame** 的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。 确定针对启动和文件合约使用单个 XAML **Frame** 的应用在导航到新页面之前，应该清除 **Frame** 导航日志上的页面。
+**注意** 通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。 建议应用为打开新页面的每个激活事件创建一个新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 通过此方式，新 XAML **Frame** 的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。
 
-通过协议激活启动后，应用应该考虑包括允许用户返回到应用顶部页面的 UI。
+确定针对启动和文件合约使用单个 XAML **Frame** 的应用在导航到新页面之前，应该清除 **Frame** 导航日志上的页面。
 
-## 备注
-
-
-任何应用或网站（包括恶意应用或网站）都可以使用你的 URI 方案名称。 因此，在 URI 中获得的任何数据都可能来自不受信任的来源。 建议千万不要基于在 URI 中接收的参数执行永久性操作。 例如，可以使用 URI 参数将应用启动到用户的帐户页面，但建议永远不要将其用于直接修改用户的帐户。
-
-> **注意** 如果为应用创建新的 URI 方案名称，请确保遵循 [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) 中的指南。 这样会确保你的名称符合 URI 方案的标准。
-
-> **注意** 通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。
-
-我们建议应用为打开新 URI 目标的每个激活事件创建一个新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 通过此方式，新 XAML **Frame** 的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。
-
-如果你确定希望你的应用针对启动和协议合约使用单个 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)，在导航到新页面之前，应该清除 **Frame** 导航日志上的页面。 通过协议合约启动后，请考虑在应用中包括允许用户返回到应用顶部的 UI。
-
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
- 
-
-## 相关主题
+## 通过协议激活启动后，应用应该考虑包括允许用户返回到应用顶部页面的 UI。
 
 
-**完整示例**
+备注 任何应用或网站（包括恶意应用或网站）都可以使用你的 URI 方案名称。 因此，在 URI 中获得的任何数据都可能来自不受信任的来源。 建议千万不要基于在 URI 中接收的参数执行永久性操作。
 
-* [关联启动示例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+> 例如，可以使用 URI 参数将应用启动到用户的帐户页面，但建议永远不要将其用于直接修改用户的帐户。 **注意** 如果为应用创建新的 URI 方案名称，请确保遵循 [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) 中的指南。
 
-**概念**
+> 这样会确保你的名称符合 URI 方案的标准。
 
-* [默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [文件类型和 URI 关联模型](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+**注意** 通过协议合约启动后，请确保“后退”按钮可使用户返回到已启动应用的屏幕，而不是应用的早期内容。 我们建议应用为打开新 URI 目标的每个激活事件创建一个新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。
 
-**任务**
+通过此方式，新 XAML **Frame** 的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。 如果你确定希望你的应用针对启动和协议合约使用单个 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)，在导航到新页面之前，应该清除 **Frame** 导航日志上的页面。
 
-* [启动 URI 的默认应用](launch-default-app.md)
-* [处理文件激活](handle-file-activation.md)
-
-**指南**
-
-* [文件类型和 URI 的指南](https://msdn.microsoft.com/library/windows/apps/hh700321)
-
-**参考**
-
-* [**AppX 程序包清单**](https://msdn.microsoft.com/library/windows/apps/dn934791)
-* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
-* [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
+> 通过协议合约启动后，请考虑在应用中包括允许用户返回到应用顶部的 UI。 **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。
 
  
 
+## 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+
+
+**相关主题**
+
+* [完整示例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+
+**关联启动示例**
+
+* [概念](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [默认程序](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+
+**文件类型和 URI 关联模型**
+
+* [任务](launch-default-app.md)
+* [启动 URI 的默认应用](handle-file-activation.md)
+
+**处理文件激活**
+
+* [指南](https://msdn.microsoft.com/library/windows/apps/hh700321)
+
+**文件类型和 URI 的指南**
+
+* [**参考**](https://msdn.microsoft.com/library/windows/apps/dn934791)
+* [**AppX 程序包清单**](https://msdn.microsoft.com/library/windows/apps/br224742)
+* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br242330)
+
+ 
+
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

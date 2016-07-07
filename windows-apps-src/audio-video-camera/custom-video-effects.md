@@ -67,8 +67,7 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 ### IsReadOnly 属性
 
-[
-            **IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 属性使系统能够知道你的效果是否将写入效果的输出。 如果你的应用未修改视频帧（例如，一种仅执行分析该视频帧的效果），那么你应当将此属性设置为 true，这样将使系统能够为你有效地将帧输入复制到帧输出。
+[**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 属性使系统能够知道你的效果是否将写入效果的输出。 如果你的应用未修改视频帧（例如，一种仅执行分析该视频帧的效果），那么你应当将此属性设置为 true，这样将使系统能够为你有效地将帧输入复制到帧输出。
 
 **提示** 当 [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) 属性设置为 true 时，系统会在调用 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 之前，将输入帧复制到输出帧。 将 **IsReadOnly** 属性设置为 true 不会限制你在 **ProcessFrame** 中对效果的输出帧执行写入操作。
 
@@ -107,15 +106,13 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 ### TimeIndependent 属性
 
-[
-            **TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) 属性使系统能够知道你的效果是否需要统一计时。 当设置为 true 时，系统可以使用优化功能以增强效果性能。
+[**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) 属性使系统能够知道你的效果是否需要统一计时。 当设置为 true 时，系统可以使用优化功能以增强效果性能。
 
 [!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
 
 ### SetProperties 方法
 
-[
-            **SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允许正在使用你的效果的应用调整效果参数。 属性将作为属性名称和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 映射传递。
+[**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允许正在使用你的效果的应用调整效果参数。 属性将作为属性名称和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 映射传递。
 
 
 [!code-cs[SetProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetProperties)]
@@ -128,8 +125,7 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 ### ProcessFrame 方法
 
-[
-            **ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法是你的效果修改视频图像数据的位置。 针对每一帧调用一次该方法，并将 [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) 对象传递给它。 此对象包含一个输入 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 对象（包含要处理的传入帧）和一个你要向其写入图像数据（将传递到剩余的视频管道）的输出 **VideoFrame** 对象。 其中每个 **VideoFrame** 对象都有一个 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 属性和一个 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 属性，但是使用其中哪个对象，则由你从 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 属性返回的值确定。
+[**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法是你的效果修改视频图像数据的位置。 针对每一帧调用一次该方法，并将 [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) 对象传递给它。 此对象包含一个输入 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 对象（包含要处理的传入帧）和一个你要向其写入图像数据（将传递到剩余的视频管道）的输出 **VideoFrame** 对象。 其中每个 **VideoFrame** 对象都有一个 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) 属性和一个 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) 属性，但是使用其中哪个对象，则由你从 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 属性返回的值确定。
 
 此示例将介绍如何使用软件处理简单实现 **ProcessFrame** 方法。 有关使用 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象的详细信息，请参阅[图像处理](imaging.md)。 使用硬件处理的 **ProcessFrame** 实现示例将在本文后面介绍。
 
@@ -193,8 +189,7 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 [!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
 
 
-[
-            **SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 实现与上述软件处理示例相同。 此示例使用 **BlurAmount** 属性配置 Win2D 模糊效果。
+[**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 实现与上述软件处理示例相同。 此示例使用 **BlurAmount** 属性配置 Win2D 模糊效果。
 
 [!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
 
@@ -231,8 +226,7 @@ ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
 
 ### 向 MediaComposition 中的一段剪辑添加自定义效果
 
-有关从视频剪辑创建媒体合成的一般指南，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。 以下代码片段展示了使用自定义视频效果创建简单媒体合成的过程。 [
-            **MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 对象已通过调用 [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607)、传入用户通过 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 选择的视频文件创建，并且该剪辑已添加到新的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。 接下来，创建新 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 对象，从而将效果的命名空间和类名称传入到构造函数。 最后，将效果定义添加到 **MediaClip** 对象的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 集合。
+有关从视频剪辑创建媒体合成的一般指南，请参阅[媒体合成和编辑](media-compositions-and-editing.md)。 以下代码片段展示了使用自定义视频效果创建简单媒体合成的过程。 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 对象已通过调用 [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607)、传入用户通过 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 选择的视频文件创建，并且该剪辑已添加到新的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。 接下来，创建新 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 对象，从而将效果的命名空间和类名称传入到构造函数。 最后，将效果定义添加到 **MediaClip** 对象的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 集合。
 
 
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]

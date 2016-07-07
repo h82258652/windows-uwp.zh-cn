@@ -127,6 +127,6 @@ Windows 8 支持三种类型的旋转：自由、受限以及组合。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

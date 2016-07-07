@@ -28,8 +28,7 @@ ms.openlocfilehash: 17cd1619a13adced643b4c8983dbf874bebaa740
 ## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>介绍
 
 
-[
-            **Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) 为全球的语言和区域提供了各种正确设置日期和时间格式的方法。 你可以为年、月、日等使用标准格式，或使用标准字符串模板，例如“longdate”或“month day”。
+[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) 为全球的语言和区域提供了各种正确设置日期和时间格式的方法。 你可以为年、月、日等使用标准格式，或使用标准字符串模板，例如“longdate”或“month day”。
 
 但当你希望更好地控制要显示的 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 字符串要素的顺序和格式时，你可以为字符串模板参数使用名为“模式”的特殊语法。 使用模式语法可以获得 **DateTime** 对象的个别要素（例如获取月名称或仅获取年值），以便在你选择的任何自定义格式中显示它们。 此外，模式也可以进行本地化以适应其他语言和区域。
 

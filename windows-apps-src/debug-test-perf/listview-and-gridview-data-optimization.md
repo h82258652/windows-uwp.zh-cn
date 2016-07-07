@@ -32,8 +32,7 @@ ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
 增量数据虚拟化会按顺序加载数据。 使用增量数据虚拟化的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 可以用于查看包含一百万个项目的集合，但最初只加载 50 个项目。 当用户平移/滚动时，便加载接下来的 50 个项目。 当项目已加载后，滚动栏的滚动块大小将会减小。 对于此类型的数据虚拟化，需要编写实现这些接口的数据源类。
 
 -   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
--   [
-            **INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
 -   [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)
 
 诸如此类的数据源是可以不断扩展的内存中列表。 项目控件将使用标准 [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) 索引器和计数属性请求项目。 计数应表示本地项目的数目，而不是数据集的真实大小。
@@ -45,13 +44,11 @@ ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
 随机访问数据虚拟化允许通过数据集中的任意点加载。 使用随机访问数据虚拟化的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)（用于查看包含一百万个项目的集合）可以加载前 100000 到 100050 个项目。 如果用户随后移动到列表开头，控件将加载前 1 到 50 个项目。 滚动栏的滚动块将始终指示 **ListView** 包含一百万个项目。 滚动栏的滚动块位置相对于可视项目在集合的整个数据集中的位置。 这种类型的数据虚拟化可以显著减少集合的内存需求和加载时间。 若要启用它，需要编写数据源类，用于按需获取数据、管理本地缓存以及实现这些接口。
 
 -   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
--   [
-            **INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
 -   （可选）[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)
 -   （可选）[**ISelectionInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877074)
 
-[
-            **IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 提供关于控件正在使用哪些项目的信息。 只要项目控件的视图发生变化，它便调用此方法，并将包含以下两组范围。
+[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 提供关于控件正在使用哪些项目的信息。 只要项目控件的视图发生变化，它便调用此方法，并将包含以下两组范围。
 
 -   视口中的项目集。
 -   可能不在视口中的由控件使用的非虚拟化项目集。

@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: 使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源通过 Windows.Web.Syndication 命名空间中的功能根据 RSS 和 Atom 标准生成。
-title: RSS/Atom 订阅源
+description: "使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源通过 Windows.Web.Syndication 命名空间中的功能根据 RSS 和 Atom 标准生成。"
+title: "RSS/Atom 订阅源"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 625a18203bd2d60acc97a6243d4f3e1e0cf2b297
+
 ---
 
 # RSS/Atom 订阅源
@@ -23,8 +27,7 @@ Web 订阅源是一个文档，其中包含任意数量的由文本、链接和�
 
 ## 支持哪些订阅源格式标准？
 
-通用 Windows 平台 (UWP) 支持从 RSS 0.91 到 RSS 2.0 的 RSS 格式标准的订阅源检索，也支持从 0.3 到 1.0 的 Atom 标准的订阅源检索。 [
-            **Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类可定义订阅源和能够表示 RSS 和 Atom 元素的订阅源项目。
+通用 Windows 平台 (UWP) 支持从 RSS 0.91 到 RSS 2.0 的 RSS 格式标准的订阅源检索，也支持从 0.3 到 1.0 的 Atom 标准的订阅源检索。 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类可定义订阅源和能够表示 RSS 和 Atom 元素的订阅源项目。
 
 此外，Atom 1.0 和 RSS 2.0 格式都允许各自的订阅源文档包含在正式规范中未定义的元素或属性。 随着时间的推移，这些自定义元素和属性已经成为其他 Web 服务数据格式（如 GDATA 和 OData）用于指定域的特定信息的一种方式。 为了支持这一新增功能，[**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) 类表示泛型 XML 元素。 通过结合使用 **SyndicationNode** 和 [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) 命名空间中的类，应用可以访问属性、扩展以及它们可能包含的任何内容。
 
@@ -167,7 +170,7 @@ function retreiveFeed(uri) {
 }
 ```
 
-在上面的步骤中，[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 返回请求的订阅源内容，并且示例代码将在可用的订阅源项上实施循环访问。 这些项的每个项将使用 [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) 对象表示，其中包含相关联合标准（RSS 或 Atom）提供的所有项属性和内容。 在以下示例中，我们将看到作用于每个项和通过各种命名的 UI 元素显示其内容的 **displayCurrentItem** 函数。
+在上面的步骤中，[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 返回了请求的订阅源内容，并且示例代码已在可用的订阅源项上实施循环访问。 这些项的每个项将使用 [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) 对象表示，其中包含相关联合标准（RSS 或 Atom）提供的所有项属性和内容。 在以下示例中，我们将看到作用于每个项和通过各种命名的 UI 元素显示其内容的 **displayCurrentItem** 函数。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -215,7 +218,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-如上面所述，根据用于发布订阅源的不同订阅源标准（RSS 或 Atom），[**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) 对象所表示的内容类型会有所不同。 例如，Atom 订阅源能够提供 [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540) 的列表，但 RSS 订阅源则不能。 但是，不受任一标准支持的包含在订阅源项中的扩展元素（例如 Dublin Core 扩展元素）可以通过 [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543) 属性进行访问并随后显示，如以下示例代码所示。
+如上面所述，根据用于发布订阅源的不同订阅源标准（RSS 或 Atom），[**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) 对象所表示的内容类型会有所不同。 例如，Atom 订阅源能够提供 [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540) 的列表，但 RSS 订阅源则不能。 但是，不受任一标准支持的包含在订阅源项中的扩展元素（例如 Dublin Core 扩展元素）可以通过使用 [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543) 属性进行访问并随后显示，如以下示例代码所示。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -257,6 +260,7 @@ function displayCurrentItem() {
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

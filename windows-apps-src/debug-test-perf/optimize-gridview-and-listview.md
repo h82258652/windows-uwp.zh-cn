@@ -27,8 +27,7 @@ ms.openlocfilehash: 362fbb6b733e855a2126196f12c650bdf2a7665d
 
 ## UI 虚拟化
 
-UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 UI 元素根据需求而创建。 对于绑定到 1000 个项目的集合的项目控件，同时为所有项目创建 UI 会造成资源浪费，因为它们不可能全部同时显示。 [
-            **ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)（及其他标准 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 派生的控件）可为你执行 UI 虚拟化。 当项目即将滚动到视图中时（只距离几页），框架将为这些项目生成 UI 并将其缓存。 如果这些项目不太可能再次显示，框架将回收内存。
+UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 UI 元素根据需求而创建。 对于绑定到 1000 个项目的集合的项目控件，同时为所有项目创建 UI 会造成资源浪费，因为它们不可能全部同时显示。 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)（及其他标准 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 派生的控件）可为你执行 UI 虚拟化。 当项目即将滚动到视图中时（只距离几页），框架将为这些项目生成 UI 并将其缓存。 如果这些项目不太可能再次显示，框架将回收内存。
 
 如果提供自定义项目面板模板（请参阅 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)），务必使用虚拟化面板，例如 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795)。 如果使用 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717) 或 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)，则不会实现虚拟化。 此外，只有当使用 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795) 时才会引发以下 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 事件：[**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 和 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging)。
 
@@ -42,8 +41,7 @@ UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 
 
 有关减少元素的示例，请参阅[优化 XAML 标记](optimize-xaml-loading.md)。
 
-[
-            **ListViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) 和 [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridviewitem.aspx) 的默认控件模板包含一个 [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) 元素。 此表示器是已优化的单个元素，用于显示焦点、选择和其他视觉状态的复杂视觉效果。 如果你已拥有自定义项目控件模板 ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle))，或者如果你将来要编辑项目控件模板的副本，建议你使用 **ListViewItemPresenter**，因为在大多数情况下，该元素可以最好地平衡性能与自定义。 你可以自定义该表示器，方法是为其设置属性。 例如，以下提供的标记可删除在选定项目时默认出现的复选标记，并将选定项目的背景色更改为橙色。
+[**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) 和 [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridviewitem.aspx) 的默认控件模板包含一个 [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) 元素。 此表示器是已优化的单个元素，用于显示焦点、选择和其他视觉状态的复杂视觉效果。 如果你已拥有自定义项目控件模板 ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle))，或者如果你将来要编辑项目控件模板的副本，建议你使用 **ListViewItemPresenter**，因为在大多数情况下，该元素可以最好地平衡性能与自定义。 你可以自定义该表示器，方法是为其设置属性。 例如，以下提供的标记可删除在选定项目时默认出现的复选标记，并将选定项目的背景色更改为橙色。
 
 ```xml
 ...
@@ -144,8 +142,7 @@ namespace LotsOfItems
 
 **使用 ContainerContentChanging 的渐进数据模板更新**
 
-[
-            **ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件的常规策略是使用 **Opacity** 隐藏无需立即可见的元素。 当元素已回收时，它们将保留原来的值，因此我们希望在从新的数据项目更新这些值之前隐藏这些元素。 我们对事件参数使用 **Phase** 属性以确定要更新和显示的元素。 如果需要其他阶段，则注册一个回调。
+[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件的常规策略是使用 **Opacity** 隐藏无需立即可见的元素。 当元素已回收时，它们将保留原来的值，因此我们希望在从新的数据项目更新这些值之前隐藏这些元素。 我们对事件参数使用 **Phase** 属性以确定要更新和显示的元素。 如果需要其他阶段，则注册一个回调。
 
 1.  我们将使用 **x:Phase** 所使用的同一绑定源。
 
@@ -248,9 +245,7 @@ namespace LotsOfItems
 
 **ChoosingItemContainer 事件**
 
-[
-            **ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 是一个事件，可允许你每当在启动或循环期间需要新项目时向 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 提供项目 (**ListViewItem**/**GridViewItem**)。 你可以根据容器将显示的数据项目类型创建容器（如以下示例所示）。 **ChoosingItemContainer** 是针对不同项目使用不同数据模板的性能更高的方法。 容器缓存是可以使用 **ChoosingItemContainer** 实现的某些内容。 例如，如果你有五个不同的模板，其中一个模板发生的频率比其他模板高一个数量级，则 ChoosingItemContainer 允许你不仅可以以所需的比率创建项目，还可以保留相应数量的缓存且可用于循环的元素。 [
-            **ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) 为组标头提供相同的功能。
+[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 是一个事件，可允许你每当在启动或循环期间需要新项目时向 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 提供项目 (**ListViewItem**/**GridViewItem**)。 你可以根据容器将显示的数据项目类型创建容器（如以下示例所示）。 **ChoosingItemContainer** 是针对不同项目使用不同数据模板的性能更高的方法。 容器缓存是可以使用 **ChoosingItemContainer** 实现的某些内容。 例如，如果你有五个不同的模板，其中一个模板发生的频率比其他模板高一个数量级，则 ChoosingItemContainer 允许你不仅可以以所需的比率创建项目，还可以保留相应数量的缓存且可用于循环的元素。 [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) 为组标头提供相同的功能。
 
 ```csharp
 // Example shows how to use ChoosingItemContainer to return the correct

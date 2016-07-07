@@ -141,8 +141,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 默认情况下，用户可以选择将文件存储在可选的 SD 卡上。 但是，应用可以停止允许将文件存储在 SD 卡上。 因此，媒体库可以在设备的内部存储和 SD 卡上进行拆分。
 
-你无需写入其他代码即可处理这种情况。 [
-            **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空间中用于查询已知文件夹的方法以透明方式合并这两个位置中的查询结果。 你也无需在应用清单文件中指定 **removableStorage** 功能来获取这些合并的结果。
+你无需写入其他代码即可处理这种情况。 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空间中用于查询已知文件夹的方法以透明方式合并这两个位置中的查询结果。 你也无需在应用清单文件中指定 **removableStorage** 功能来获取这些合并的结果。
 
 请考虑下图中显示的设备的存储状态：
 

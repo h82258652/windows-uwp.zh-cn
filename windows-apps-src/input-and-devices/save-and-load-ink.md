@@ -66,8 +66,7 @@ ISF 为墨迹的最紧凑持续表现形式。 该格式可以嵌入到二进制
 
 2.  然后，我们设置一些基本墨迹输入行为。
 
-    [
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，并且将声明用于按钮上的单击事件的侦听器。
+    [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，并且将声明用于按钮上的单击事件的侦听器。
 ```    CSharp
 public MainPage()
     {
@@ -89,8 +88,7 @@ public MainPage()
 
 3.  最终，我们将墨迹保存在“保存”****按钮的单击事件处理程序中。
 
-    [
-            **FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 允许用户选择保存墨迹数据的文件和位置。
+    [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 允许用户选择保存墨迹数据的文件和位置。
 
     选定文件后，我们打开设置为 [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635)的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 流。
 
@@ -200,8 +198,7 @@ GIF 是保存墨迹数据的唯一支持格式。 但是，[**LoadAsync**](https
 
 2.  然后，我们设置一些基本墨迹输入行为。
 
-    [
-            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，并且将声明用于按钮上的单击事件的侦听器。
+    [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，并且将声明用于按钮上的单击事件的侦听器。
 ```    CSharp
 public MainPage()
     {
@@ -223,8 +220,7 @@ public MainPage()
 
 3.  最终，我们将墨迹加载到“加载”****按钮的单击事件处理程序中。
 
-    [
-            **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 允许用户选择检索已保存墨迹数据的文件和位置。
+    [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 允许用户选择检索已保存墨迹数据的文件和位置。
 
     选定文件后，我们打开设置为 [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 流。
 
@@ -448,6 +444,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

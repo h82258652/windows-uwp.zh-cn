@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。
-title: 将 Windows 运行时 8.x 移植到 UWP 疑难解答&#39;
+description: "我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。"
+title: "将 Windows 运行时 8.x 移植到 UWP 疑难解答&#39;"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: e5758472d303f4baaf80d45d6b23b54f2a21e002
+
 ---
 
 # 将 Windows 运行时 8.x 移植到 UWP 疑难解答
@@ -23,7 +27,7 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 
 ## TargetPlatformVersion
 
-本部分介绍了在 Visual Studio 中打开 Windows 10 项目后看到如下消息时该执行何种操作：“需要 Visual Studio 更新。 一个或多个项目需要平台 SDK <version> (未安装该 SDK，也未将其作为 Visual Studio 后续更新的一部分进行提供)。”
+本部分介绍了在 Visual Studio 中打开 Windows 10 项目后看到如下消息时该执行何种操作：“需要 Visual Studio 更新。 一个或多个项目需要平台 SDK <version>（未安装该 SDK 版本，也未将其作为 Visual Studio 后续更新的一部分进行提供）。”
 
 -   首先，确定适用于你已安装的 Windows 10 的 SDK 版本号。 导航到 **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>**，并记下 *<versionfoldername>*，格式为四部分表示法“Major.Minor.Build.Revision”。
 -   打开项目文件以进行编辑，并找到 `TargetPlatformVersion` 和 `TargetPlatformMinVersion` 元素。 将它们编辑为如下形式，使用你在磁盘上找到的四部分表示法版本号替换 *<versionfoldername>*：
@@ -49,6 +53,7 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

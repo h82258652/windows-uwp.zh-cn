@@ -5,19 +5,19 @@ title: "超链接"
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 81cb45dd1f7887fef2d8851c839905117c048460
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ---
 # 超链接
 
 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。 可使用两种方法向 XAML 应用添加超链接：**Hyperlink** 文本元素和 **HyperlinkButton** 控件。
 
-![“超链接”按钮](images/controls/hyperlink-button.png)
+![超链接按钮](images/controls/hyperlink-button.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
 
--   [**Hyperlink 文本元素**](https://msdn.microsoft.com/library/windows/apps/dn279356)
+
+-   [**超链接文本元素**](https://msdn.microsoft.com/library/windows/apps/dn279356)
 -   [**HyperlinkButton 控件**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ## 这是正确的控件吗？
@@ -137,7 +137,7 @@ ms.openlocfilehash: 81cb45dd1f7887fef2d8851c839905117c048460
 ## 建议
 
 -   仅使用超链接进行导航；不要使用它们进行其他操作。
--   将字形渐变中的正文样式用于基于文本的超链接。 阅读有关[**fonts and the Windows 10 type ramp**](text-controls.md)的内容。
+-   将字形渐变中的正文样式用于基于文本的超链接。 阅读有关[**fonts and the Windows 10 type ramp**](fonts.md)的内容。
 -   使离散型超链接具有足够的间隔，以便用户可以区分它们，并且可以轻松地选择每个超链接。
 -   将工具提示添加到可指示用户将被定向到的位置的超链接中。 如果用户将被定向到外部站点，则将顶级域名包含在工具提示中，并将文本样式设置为辅助字体颜色。
 
@@ -154,6 +154,6 @@ ms.openlocfilehash: 81cb45dd1f7887fef2d8851c839905117c048460
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

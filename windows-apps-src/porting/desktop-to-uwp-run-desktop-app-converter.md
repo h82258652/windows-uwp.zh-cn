@@ -3,8 +3,8 @@ author: awkoren
 Description: "运行桌面转换器应用以将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）转换为通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
 title: "桌面应用转换器预览 (Project Centennial)"
-ms.sourcegitcommit: 6d1c6e836d666972641320c73896459490f45924
-ms.openlocfilehash: 874b6452386526d66062a27a5b520cb1a232ae64
+ms.sourcegitcommit: 07016fabb8b49e57dd0ae4ef68447451d31aa2dc
+ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
 
 ---
 
@@ -21,6 +21,11 @@ ms.openlocfilehash: 874b6452386526d66062a27a5b520cb1a232ae64
 ## 新增功能
 
 本部分概述桌面应用转换器的各版本之间的更改。 
+
+### 6/16/2016
+
+* 桌面应用转换器 (v0.1.20) 可以解决最新 Windows 10 Insider Preview 版本上任何阻碍成功转换的问题。 
+* 使用 ```–PackageArch``` 替换了 ```–CreateX86Package```，这允许你指定生成的程序包的体系结构。 
 
 ### 6/8/2016
 
@@ -210,12 +215,12 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```Cleanup WorkDirectory``` | 删除所有临时转换器文件。 |
 |```Cleanup ExpandedImages``` | 删除安装在主机上的所有已扩展的基本映像。 |
 
-### x86 程序包参数
-桌面应用转换器预览现在支持创建可在 x86 和 amd64 计算机上安装和运行的 x86 应用包。 请注意，桌面应用转换器仍然需要在 AMD64 计算机上运行才能执行成功的转换。
+### 程序包体系结构
+桌面应用转换器预览现在支持创建可在 x86 和 amd64 计算机上安装和运行的 x86 和 x64 应用包。 请注意，桌面应用转换器仍然需要在 AMD64 计算机上运行才能执行成功的转换。
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|```-CreateX86Package[<SwitchParameter>]``` | 生成可在 32 位和 64 位主机操作系统上安装和运行的 32 位程序包。 默认情况下，转换器将尝试从应用的主可执行文件检测程序包体系结构，如果未找到任何 exe，则默认为 64 位。 |
+|```-PackageArch <String>``` | 生成指定了体系结构的程序包。 有效选项为“x86”或“x64”，例如 -PackageArch x86。 该参数为可选参数。 如果未指定，DesktopAppConverter 将尝试自动检测程序包体系结构。 如果自动检测失败，它将默认为 x64 程序包。 |
 
 ## 另请参阅
 + [获取桌面应用转换器](http://go.microsoft.com/fwlink/?LinkId=785437)
@@ -227,6 +232,6 @@ get-help .\DesktopAppConverter.ps1 -detailed
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

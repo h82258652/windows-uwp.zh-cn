@@ -1,6 +1,13 @@
 ---
-description: author: martinekuan ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD title: 启用设备进行开发 可使用不同的方法针对 Windows 10 设备进行开发。
-keywords: 开始使用 keywords: 开发人员许可证 keywords: Visual Studio、开发人员许可证 keywords: 启用设备
+author: martinekuan
+ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
+title: "启用设备进行开发"
+description: "可使用不同的方法针对 Windows 10 设备进行开发。"
+keywords: enable device
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4c890d6202a3151e8fc0cf03b3ff33b98cd6a863
+
 ---
 # 启用设备进行开发
 
@@ -16,7 +23,7 @@ keywords: 开始使用 keywords: 开发人员许可证 keywords: Visual Studio�
 
 ![启用在 Visual Studio 中显示的开发人员模式对话框](images/latestenabledialog.png)
 
-当你看到此对话框时，请单击“开发人员设置”以直接转到“更新和安全”页面，如下所示。 或者，单击“确定”，然后按照以下步骤启用 Windows 10 设备以进行开发。
+当你看到此对话框时，请单击“开发人员设置”****以直接转到“更新和安全”****页面，如下所示。 或者，单击“确定”****，然后按照以下步骤启用 Windows 10 设备以进行开发。
 
 ### 启用 Windows 10 设备
 
@@ -29,9 +36,9 @@ keywords: 开始使用 keywords: 开发人员许可证 keywords: Visual Studio�
 
 **使用开发人员功能**
 
-1.  在要启用的设备上，转到“设置”。 依次选择“更新和安全”和“对于开发人员”。
+1.  在要启用的设备上，转到“设置”****。 依次选择“更新和安全”****和“对于开发人员”****。
 2.  选择所需的访问级别。 有关选项的更多详细信息，请参阅[应选择哪些设置：旁加载应用还是开发人员模式？](#WhichSettings)
-3.  阅读所选设置的免责声明，然后单击“是”以接受更改。
+3.  阅读所选设置的免责声明，然后单击“是”****以接受更改。
 
 下面是桌面设备系列的设置页。
 
@@ -134,7 +141,7 @@ keywords: 开始使用 keywords: 开发人员许可证 keywords: Visual Studio�
 
 ## 开发人员模式功能
 
-对于每个设备系列，可能会提供其他开发人员功能。 仅当在设备上启用了“开发人员模式”时这些功能才可用，并且可能会因操作系统版本的不同而有所不同。
+对于每个设备系列，可能会提供其他开发人员功能。 仅当在设备上启用了“开发人员模式”****时这些功能才可用，并且可能会因操作系统版本的不同而有所不同。
 
 此图显示了适用于版本 1511 Windows 10 移动设备系列的开发人员功能。
 
@@ -172,6 +179,7 @@ keywords: 开始使用 keywords: 开发人员许可证 keywords: Visual Studio�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

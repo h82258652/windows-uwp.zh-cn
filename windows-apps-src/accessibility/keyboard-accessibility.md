@@ -52,12 +52,9 @@ XAML
 
 无论你是调整 [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 值还是使用默认顺序，下列规则都适用：
 
-* [
-            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 等于 0 的 UI 元素基于 XAML 或子集合中的声明顺序添加到 Tab 键顺序。
-* [
-            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 大于 0 的 UI 元素基于 **tabIndex** 值添加到 Tab 键顺序。
-* [
-            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 小于 0 的 UI 元素添加到 Tab 键顺序并显示在任何零值前面。 这可能与 HTML 处理其 **tabindex** 属性的操作不同（且负值 **tabindex** 在顺序 HTML 规范中不受支持）。
+* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 等于 0 的 UI 元素基于 XAML 或子集合中的声明顺序添加到 Tab 键顺序。
+* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 大于 0 的 UI 元素基于 **tabIndex** 值添加到 Tab 键顺序。
+* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 小于 0 的 UI 元素添加到 Tab 键顺序并显示在任何零值前面。 这可能与 HTML 处理其 **tabindex** 属性的操作不同（且负值 **tabindex** 在顺序 HTML 规范中不受支持）。
 
 <span id="keyboard_navigation_within_a_UI_element"/>
 <span id="keyboard_navigation_within_a_ui_element"/>
@@ -244,6 +241,6 @@ Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

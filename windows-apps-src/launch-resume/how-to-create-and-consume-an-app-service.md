@@ -159,13 +159,11 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 请注意，**OnRequestedReceived()** 为 **async**，因为我们在此示例中使用对 [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) 的可等待方法调用。
 
-将使用延迟，以便该服务可以在 OnRequestReceived 处理程序中使用 **async** 方法。 确保对 OnRequestReceived 的调用不会在完成处理消息之前结束。 [
-            **SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) 用于在完成时发送响应。 **SendResponseAsync** 不会在调用完成时发出信号。 延迟完成时会发信号给 [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712)，以表明 OnRequestReceived 已完成。
+将使用延迟，以便该服务可以在 OnRequestReceived 处理程序中使用 **async** 方法。 确保对 OnRequestReceived 的调用不会在完成处理消息之前结束。 [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) 用于在完成时发送响应。 **SendResponseAsync** 不会在调用完成时发出信号。 延迟完成时会发信号给 [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712)，以表明 OnRequestReceived 已完成。
 
 应用服务使用 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 交换信息。 可以传递的数据大小仅受限于系统资源。 没有你可以在 **ValueSet** 中使用的预定义项。 你必须确定哪些项值将用于定义你的应用服务的协议。 请牢记，必须使用该协议编写调用方。 在此示例中，我们选择了名为“Command”的项，它具有一个值，用于指示我们是否希望应用服务提供库存项目的名称或其价格。 库存名称的索引存储在“ID”项下。 返回值存储在“Result”项下。
 
-[
-            **AppServiceClosedStatus**](https://msdn.microsoft.com/library/windows/apps/dn921703) 枚举将返回给调用方，以指示对应用服务的调用是否成功。 对应用服务的调用可能失败的原因示例：操作系统中止服务端点，资源耗尽等。 可以通过 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 返回其他错误信息。 在此示例中，我们使用名为“Status”的项将更详细的错误信息返回给调用方。
+[**AppServiceClosedStatus**](https://msdn.microsoft.com/library/windows/apps/dn921703) 枚举将返回给调用方，以指示对应用服务的调用是否成功。 对应用服务的调用可能失败的原因示例：操作系统中止服务端点，资源耗尽等。 可以通过 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 返回其他错误信息。 在此示例中，我们使用名为“Status”的项将更详细的错误信息返回给调用方。
 
 对 [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) 的调用将 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 返回给调用方。
 
@@ -391,6 +389,6 @@ namespace MyAppService
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

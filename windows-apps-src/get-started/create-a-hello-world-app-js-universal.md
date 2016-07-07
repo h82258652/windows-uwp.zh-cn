@@ -458,8 +458,7 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
 
 与所有异步 WinJS 方法类似，[**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 会返回一个 [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 对象。 **Promise** 是对某件事会在将来发生的“承诺”，当该事件发生时，表示 **Promise** 已完成。
 
-[
-            **Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 对象具有 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，该方法接受“completed”函数作为参数。 完成时 **Promise** 会调用此函数。
+[**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 对象具有 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，该方法接受“completed”函数作为参数。 完成时 **Promise** 会调用此函数。
 
 通过向“completed”函数加代码并将其传递到 [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) 对象的 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，你可以确保代码在 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 完成后执行。
 
@@ -480,8 +479,7 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
     </body>
 ```
 
-2.  在 default.js 文件中，为 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件的 [**change**](https://msdn.microsoft.com/library/windows/apps/BR211891) 事件创建一个名为 `ratingChanged` 的事件处理程序。 [
-            **eventInfo**](https://msdn.microsoft.com/library/windows/apps/Hh465776) 参数包含 **detail.tentativeRating** 属性，该属性可提供新的用户评级。 检索该值并在输出 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 中显示该值。
+2.  在 default.js 文件中，为 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件的 [**change**](https://msdn.microsoft.com/library/windows/apps/BR211891) 事件创建一个名为 `ratingChanged` 的事件处理程序。 [**eventInfo**](https://msdn.microsoft.com/library/windows/apps/Hh465776) 参数包含 **detail.tentativeRating** 属性，该属性可提供新的用户评级。 检索该值并在输出 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 中显示该值。
 
 ```javascript
         function ratingChanged(eventInfo) {

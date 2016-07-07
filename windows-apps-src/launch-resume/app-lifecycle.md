@@ -38,8 +38,7 @@ ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
 
 当应用处于 **NotRunning** 状态并且用户点击“开始”屏幕或应用程序列表上的应用磁贴时，将启动应用。 也可以通过预启动常用应用来优化响应（请参阅[处理应用预启动](handle-app-prelaunch.md)）。 应用可能处于 **NotRunning** 状态，原因有：它从未启动、它运行后出现了故障，或者它在暂停后无法保留在内存中而被系统终止。 启动与激活不同。 激活是指通过合约或扩展（例如“搜索”合约）激活你的应用。
 
-当启动应用时（包括当应用当前在内存中暂停时），调用 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法。 [
-            **LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 参数包含你的应用之前的状态和激活参数。
+当启动应用时（包括当应用当前在内存中暂停时），调用 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法。 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 参数包含你的应用之前的状态和激活参数。
 
 当用户切换到终止的应用时，系统将发送 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 参数，其中 [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 设置为 **Launch**，[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 设置为 **Terminated** 或 **ClosedByUser**。 应用应该加载其保存的应用程序数据并刷新其显示的内容。
 
@@ -54,18 +53,15 @@ ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
 
 用户可通过各种扩展和合约（例如“共享”合约）激活应用。 有关可激活应用的方法的列表，请参阅 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)。
 
-[
-            **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义了为处理各种激活类型而可以替代的一些方法。 多种激活类型具有可替代的特定方法，例如 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336) 等。对于其他激活类型，请替代 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)方法。
+[**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义了为处理各种激活类型而可以替代的一些方法。 多种激活类型具有可替代的特定方法，例如 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336) 等。对于其他激活类型，请替代 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)方法。
 
 你的应用的激活代码可以通过测试了解其激活原因以及是否已经处于 **Running** 状态。
 
 当操作系统终止你的应用，随后用户重新启动它时，你的应用可以在激活期间还原之前保存的数据。 Windows 在应用暂停后可能出于一些原因而终止。 用户可以手动关闭你的应用或者注销，否则系统的资源可能不足。 如果用户在 Windows 终止你的应用之后启动它，该应用将收到一个 [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 回调，并且用户将看到应用的初始屏幕，直到该应用激活。 你可以通过此事件确定你的应用是否需要还原其在上次暂停时保存的数据，或者是否必须加载应用的默认数据。 由于初始屏幕已出现，因此你的应用代码可以在不明显拖延用户时间的情况下花费一些处理时间来完成此激活操作，尽管在重新启动或继续该操作时前面所提到的关于运行时间较长的操作的问题仍然存在。
 
-[
-            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件数据包括一个 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 属性，用于告诉你应用在激活之前处于哪种状态。 此属性是 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举中的值之一：
+[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件数据包括一个 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 属性，用于告诉你应用在激活之前处于哪种状态。 此属性是 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举中的值之一：
 
-| 终止原因                                                        | [
-            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 属性的值 | 采取的操作          |
+| 终止原因                                                        | [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 属性的值 | 采取的操作          |
 |-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------|
 | 已由系统终止（例如，因为资源限制）       | **Terminated**                                                                                          | 还原会话数据    |
 | 被用户关闭或被用户终止进程                             | **ClosedByUser**                                                                                        | 使用默认数据启动 |
@@ -77,8 +73,7 @@ ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
 
  
 
-[
-            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 还可能有 **Running** 或 **Suspended** 值，但在这些情况下，你的应用之前未终止，因此你无需还原任何数据，因为所有数据都已经在内存中。
+[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 还可能有 **Running** 或 **Suspended** 值，但在这些情况下，你的应用之前未终止，因此你无需还原任何数据，因为所有数据都已经在内存中。
 
 **注意**  
 
@@ -88,8 +83,7 @@ ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
 
 ### **OnActivated** 与特定激活
 
-[
-            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 方法旨在处理所有可能的激活类型。 但是，更常见的做法是使用不同的方法来处理最常见的激活类型，而对于不太常见的激活类型，则仅使用 **OnActivated** 作为回滚方法。 例如，[**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 具有 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法，用于在 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 是 **Launch** 时作为回调进行调用，这是适用于大多数应用的典型激活方法。 有超过 6 种 **On\*** 方法可用于特定的激活：[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)。 XAML 应用的起始模板具有 **OnLaunched** 的实现和 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 的处理程序。
+[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 方法旨在处理所有可能的激活类型。 但是，更常见的做法是使用不同的方法来处理最常见的激活类型，而对于不太常见的激活类型，则仅使用 **OnActivated** 作为回滚方法。 例如，[**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 具有 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法，用于在 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 是 **Launch** 时作为回调进行调用，这是适用于大多数应用的典型激活方法。 有超过 6 种 **On\*** 方法可用于特定的激活：[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)。 XAML 应用的起始模板具有 **OnLaunched** 的实现和 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 的处理程序。
 
 ## 应用暂停
 
@@ -179,16 +173,11 @@ ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
 ## 应用程序生命周期中的关键 API
 
 
--   [
-            **Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 命名空间
--   [
-            **Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) 命名空间
--   [
-            **Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) 命名空间
--   [
-            **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类 (XAML)
--   [
-            **Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 类 (XAML)
+-   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 命名空间
+-   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) 命名空间
+-   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) 命名空间
+-   [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类 (XAML)
+-   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 类 (XAML)
 
 **注意**  
 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
@@ -210,6 +199,6 @@ ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

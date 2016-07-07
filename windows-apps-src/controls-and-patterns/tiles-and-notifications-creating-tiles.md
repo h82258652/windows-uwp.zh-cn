@@ -50,8 +50,7 @@ ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
 
     缩放的图像应遵循此命名约定： 
     
-    *
-            &lt;image name&gt;*.scale-*&lt;scale factor&gt;*.*&lt;image file extension&gt;*  
+    *&lt;image name&gt;*.scale-*&lt;scale factor&gt;*.*&lt;image file extension&gt;*  
     
     例如：SmallLogo.scale-100.png
 
@@ -107,6 +106,6 @@ ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

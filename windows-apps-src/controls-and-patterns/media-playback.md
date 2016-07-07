@@ -148,8 +148,7 @@ private void LoadEmbeddedAppFile()
 
 如果你的应用需要在不进行用户交互的情况下访问**音乐**或**视频**文件夹（例如，如果要枚举用户集锦中的所有音乐或视频文件并将它们显示在你的应用中），则你需要声明**音乐库**和**视频库**功能。 有关详细信息，请参阅[音乐、图片和视频库中的文件和文件夹](https://msdn.microsoft.com/library/windows/apps/mt188703)。
 
-[
-            **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 不需要特殊功能即可访问本地文件系统上的文件（例如用户的**音乐**或**视频**文件夹），因为用户对所访问的文件具有完全控制权。 从安全性和隐私性角度来看，最好尽量减少你的应用使用的功能数。
+[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 不需要特殊功能即可访问本地文件系统上的文件（例如用户的**音乐**或**视频**文件夹），因为用户对所访问的文件具有完全控制权。 从安全性和隐私性角度来看，最好尽量减少你的应用使用的功能数。
 
 **使用 FileOpenPicker 打开本地媒体**
 
@@ -212,8 +211,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 ```
 
 ### 使设备的屏幕保持活动状态
-通常，设备在用户离开时会降低屏幕亮度（并最终关闭屏幕）以延长电池使用时间，但视频应用需要保持屏幕打开以便用户可以观看视频。 若要阻止屏幕在不再检测到用户操作时（例如在应用播放全屏视频时）被停用，可以调用 [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)。 [
-            **DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 类允许你指示 Windows 保持屏幕打开，以便用户可以观看视频。
+通常，设备在用户离开时会降低屏幕亮度（并最终关闭屏幕）以延长电池使用时间，但视频应用需要保持屏幕打开以便用户可以观看视频。 若要阻止屏幕在不再检测到用户操作时（例如在应用播放全屏视频时）被停用，可以调用 [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818)。 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 类允许你指示 Windows 保持屏幕打开，以便用户可以观看视频。
 
 若要节省电源并延长电池使用时间，应调用 [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) 以在不再需要显示请求时释放显示请求。 当你的应用移离屏幕时，Windows 会自动停用应用的活动显示请求，当你的应用回到前台时，会再次激活显示请求。
 
@@ -270,8 +268,7 @@ private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
     ```
 
 ### 以编程方式控制媒体播放器
-[
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 提供了许多用于控制音频和视频播放的属性、方法和事件。 有关属性、方法和事件的完整列表，请参阅 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 参考页。
+[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 提供了许多用于控制音频和视频播放的属性、方法和事件。 有关属性、方法和事件的完整列表，请参阅 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 参考页。
     
 
 ### 选择不同语言的音轨
@@ -340,14 +337,10 @@ private void FullWindow_Click(object sender, object e)
 
 使用 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 属性更改视频内容填充它所在容器的方式。 这将根据 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 值调整视频大小及拉伸视频。 **Stretch** 状态类似于许多电视机上的图片大小设置。 你可以将它挂起到一个按钮并允许用户选择他们喜欢的设置。
 
--   [
-            **None**](https://msdn.microsoft.com/library/windows/apps/br242968) 显示原始大小的内容的原始分辨率。
--   [
-            **Uniform**](https://msdn.microsoft.com/library/windows/apps/br242968) 在保持纵横比和图像内容的同时填充尽可能多的空间。 这可能会导致在视频的边缘出现水平和垂直黑色条。 这类似于宽屏模式。
--   [
-            **UniformToFill**](https://msdn.microsoft.com/library/windows/apps/br242968) 在保持纵横比的同时填充整个空间。 这可能会导致某些图像被裁剪。 这类似于全屏模式。
--   [
-            **Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) 填充整个空间，但不保持纵横比。 图像不会被裁剪，但可能会发生拉伸。 这类似于拉伸模式。
+-   [**None**](https://msdn.microsoft.com/library/windows/apps/br242968) 显示原始大小的内容的原始分辨率。
+-   [**Uniform**](https://msdn.microsoft.com/library/windows/apps/br242968) 在保持纵横比和图像内容的同时填充尽可能多的空间。 这可能会导致在视频的边缘出现水平和垂直黑色条。 这类似于宽屏模式。
+-   [**UniformToFill**](https://msdn.microsoft.com/library/windows/apps/br242968) 在保持纵横比的同时填充整个空间。 这可能会导致某些图像被裁剪。 这类似于全屏模式。
+-   [**Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) 填充整个空间，但不保持纵横比。 图像不会被裁剪，但可能会发生拉伸。 这类似于拉伸模式。
 
 ![拉伸枚举值](images/Image_Stretch.jpg) 在此处，使用 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 循环访问 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) 选项。 **switch** 语句会检查 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) 属性的当前状态并将其设置为 **Stretch** 枚举中的下一个值。 这使用户可以循环访问不同的拉伸状态。
 

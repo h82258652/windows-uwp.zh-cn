@@ -34,8 +34,7 @@ ms.openlocfilehash: 1bcf6ce700b50ff633a29863fee41c2bfa3d9f98
 
 若要管理连续听写会话，你的应用需要几个对象：
 
--   [
-            **SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 对象的示例。
+-   [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 对象的示例。
 -   对要在听写期间更新 UI 的 UI 调度程序的引用。
 -   用于跟踪用户累积说出的字词的方式。
 
@@ -77,8 +76,7 @@ private StringBuilder dictatedTextBuilder;
 
 在此示例中，我们将在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 页面事件中初始化语音识别。
 
-1.  因为由语音识别器引发的事件在后台线程上发生，所以请创建一个对调度程序的引用以更新 UI 线程。 [
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 始终在 UI 线程上调用。
+1.  因为由语音识别器引发的事件在后台线程上发生，所以请创建一个对调度程序的引用以更新 UI 线程。 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 始终在 UI 线程上调用。
 ```    CSharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
@@ -111,19 +109,14 @@ SpeechRecognitionCompilationResult result =
 
 两个事件尤其关键：
 
--   [
-            **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)，在识别器已生成一些结果时发生。
--   [
-            **Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899)，在连续识别会话已结束时发生。
+-   [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)，在识别器已生成一些结果时发生。
+-   [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899)，在连续识别会话已结束时发生。
 
 当用户说话时引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件。 识别器持续侦听用户，并定期引发一个传递语音输入块的事件。 你必须使用事件参数的 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 属性检查语音输入，并在事件处理程序中采取相应操作，例如将文本追加到 StringBuilder 对象。
 
-作为 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 的实例，[**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 属性可用于确定是否希望接受语音输入。 [
-            **SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 为此提供了两个属性：
--   [
-            **Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 指示识别是否成功。 识别失败的原因有多种。
--   [
-            **Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 指示识别器正确理解字词的相对置信度。
+作为 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 的实例，[**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 属性可用于确定是否希望接受语音输入。 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 为此提供了两个属性：
+-   [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 指示识别是否成功。 识别失败的原因有多种。
+-   [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 指示识别器正确理解字词的相对置信度。
 
 下面是支持连续识别的基本步骤：  
 
@@ -254,10 +247,8 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 
 可以采用两种方法停止识别：
 
--   [
-            **StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908)允许任何挂起的识别事件完成（直到所有识别操作完成之前，都将继续引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)）
--   [
-            **CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898)立即终止识别会话并放弃任何挂起的结果。
+-   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908)允许任何挂起的识别事件完成（直到所有识别操作完成之前，都将继续引发 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)）
+-   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898)立即终止识别会话并放弃任何挂起的结果。
 
 在检查语音识别器的状态之后，我们通过调用语音识别器的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) 属性的 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 方法停止会话。
 
@@ -269,8 +260,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 ```
 
 [!NOTE]  
-[
-            **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件可在调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 后发生。  
+[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件可在调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 后发生。  
 由于多线程处理，当调用 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) 时，[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件可能仍保留在堆栈上。 如果如此，则仍引发 **ResultGenerated** 事件。  
 如果在取消识别会话时设置任何私有字段，请始终在 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 处理程序中确认它们的值。 例如，如果在取消会话时将字段设置为 null，请勿假定字段在处理程序中进行初始化。
 
@@ -293,6 +283,6 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 
