@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/54675478319a42fa65a1f28bda7409a4822312c5/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | OutofSyncHandedBackSuccess | [Details](#2340059dcc91b4c74c171462c48c9f10494909313475)
- [windows-apps-src\xbox-apps\wdp-xboxsettings-api.md](https://github.com/Microsoft/windows-apps/blob/a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0/windows-apps-src/xbox-apps/wdp-xboxsettings-api.md) | OutofSyncHandedBackSuccess | [Details](#e3637f5a8481c0800af42c011fb811b908b946b14037)
+ [windows-apps-src\devices-sensors\bluetooth.md](https://github.com/Microsoft/windows-apps/blob/0598b99b86ca1e531746f13681a41fc56bc69acf/windows-apps-src/devices-sensors/bluetooth.md) | OutofSyncHandedBackSuccess | [Details](#ea51856a59374a5b2cee4d75bd17dec3015f21b22062)
 
 ## Item Details
-##### <a name='2340059dcc91b4c74c171462c48c9f10494909313475'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/54675478319a42fa65a1f28bda7409a4822312c5/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+##### <a name='ea51856a59374a5b2cee4d75bd17dec3015f21b22062'></a> Source: [windows-apps-src\devices-sensors\bluetooth.md](https://github.com/Microsoft/windows-apps/blob/0598b99b86ca1e531746f13681a41fc56bc69acf/windows-apps-src/devices-sensors/bluetooth.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/08553e20479e2acb21ce6c6aefcdd5eecc7f1a54/ol-handoff/Microsoft/windows-apps.zh-cn/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-cn.xlf)
-* Handoff Datetime: 2016-07-08 20:49:56
+* Handoff File: [bluetooth.309edfda5c51b0b2e0a503b2068683a876f60e7f.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/4419ce976b88329b4a16c9dd3a2d83c1c8422fbf/ol-handoff/Microsoft/windows-apps.zh-cn/master/bluetooth.309edfda5c51b0b2e0a503b2068683a876f60e7f.zh-cn.xlf)
+* Handoff Datetime: 2016-07-08 21:48:39
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
-* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.zh-cn.xlf)
-* Current Handback Datetime: 2016-07-07 14:48:41
-* [Back to Top](#report-top)
-
-##### <a name='e3637f5a8481c0800af42c011fb811b908b946b14037'></a> Source: [windows-apps-src\xbox-apps\wdp-xboxsettings-api.md](https://github.com/Microsoft/windows-apps/blob/a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0/windows-apps-src/xbox-apps/wdp-xboxsettings-api.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [wdp-xboxsettings-api.d88568c99ac5aeafdc2db670ec70e7aeda4c94a3.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/08553e20479e2acb21ce6c6aefcdd5eecc7f1a54/ol-handoff/Microsoft/windows-apps.zh-cn/master/wdp-xboxsettings-api.d88568c99ac5aeafdc2db670ec70e7aeda4c94a3.zh-cn.xlf)
-* Handoff Datetime: 2016-07-08 20:49:56
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\wdp-xboxsettings-api.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/xbox-apps/wdp-xboxsettings-api.md)
-* Current Handback File: [wdp-xboxsettings-api.d88568c99ac5aeafdc2db670ec70e7aeda4c94a3.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/wdp-xboxsettings-api.d88568c99ac5aeafdc2db670ec70e7aeda4c94a3.zh-cn.xlf)
+* Current Target File: [windows-apps-src\devices-sensors\bluetooth.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/devices-sensors/bluetooth.md)
+* Current Handback File: [bluetooth.309edfda5c51b0b2e0a503b2068683a876f60e7f.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/bluetooth.309edfda5c51b0b2e0a503b2068683a876f60e7f.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-07 14:48:41
 * [Back to Top](#report-top)
 
