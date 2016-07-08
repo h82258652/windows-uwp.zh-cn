@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\index.md](https://github.com/Microsoft/windows-apps/blob/7c45a464be250e210df48d3fdef35f00d77e16d5/windows-apps-src/controls-and-patterns/index.md) | OutofSyncHandedBackSuccess | [Details](#23fdd3513d11a0fa0171e50fe71d49c8e3db73761903)
+ [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps/blob/26ca8018c2214fe4af9c7ae6d9860d7556e96e24/windows-apps-src/input-and-devices/designing-for-tv.md) | OutofSyncHandedBackSuccess | [Details](#1c03d381630b89672bb9ae39497f1f1a2c9a714e2714)
 
 ## Item Details
-##### <a name='23fdd3513d11a0fa0171e50fe71d49c8e3db73761903'></a> Source: [windows-apps-src\controls-and-patterns\index.md](https://github.com/Microsoft/windows-apps/blob/7c45a464be250e210df48d3fdef35f00d77e16d5/windows-apps-src/controls-and-patterns/index.md)
+##### <a name='1c03d381630b89672bb9ae39497f1f1a2c9a714e2714'></a> Source: [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps/blob/26ca8018c2214fe4af9c7ae6d9860d7556e96e24/windows-apps-src/input-and-devices/designing-for-tv.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [index.fbf3d9a627adba69545b050281feb3391279f52e.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/6962fe0176b672898c35fdffdb634cdb85f7cde4/ol-handoff/Microsoft/windows-apps.zh-cn/master/index.fbf3d9a627adba69545b050281feb3391279f52e.zh-cn.xlf)
-* Handoff Datetime: 2016-07-08 18:19:50
+* Handoff File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/b564cf0559977e9b10e20fa9cb930d84d342874e/ol-handoff/Microsoft/windows-apps.zh-cn/master/designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf)
+* Handoff Datetime: 2016-07-08 19:18:39
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\controls-and-patterns\index.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/controls-and-patterns/index.md)
-* Current Handback File: [index.fbf3d9a627adba69545b050281feb3391279f52e.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/index.fbf3d9a627adba69545b050281feb3391279f52e.zh-cn.xlf)
+* Current Target File: [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/input-and-devices/designing-for-tv.md)
+* Current Handback File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-07 14:48:41
 * [Back to Top](#report-top)
 
