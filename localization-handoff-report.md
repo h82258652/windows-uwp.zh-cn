@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/baeb16b3834a485857c1dc505fea3bbfb0756be8/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#a4e5b8b4e1bb9ed1d3005e6ad5409eb11175c4bc5279)
+ [windows-apps-src\accessibility\accessibility-checklist.md](https://github.com/Microsoft/windows-apps/blob/6ac5430a3e18a02d5f2fc82829631b7649ea547d/windows-apps-src/accessibility/accessibility-checklist.md) | OutofSyncHandedBackSuccess | [Details](#2d632c524de8299378d8cc059d1c522080a2df2e6)
 
 ## Item Details
-##### <a name='a4e5b8b4e1bb9ed1d3005e6ad5409eb11175c4bc5279'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/baeb16b3834a485857c1dc505fea3bbfb0756be8/windows-apps-src/TOC.md)
+##### <a name='2d632c524de8299378d8cc059d1c522080a2df2e6'></a> Source: [windows-apps-src\accessibility\accessibility-checklist.md](https://github.com/Microsoft/windows-apps/blob/6ac5430a3e18a02d5f2fc82829631b7649ea547d/windows-apps-src/accessibility/accessibility-checklist.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/3e26f1f3fa6dc7ebfcd74fa5d0193fa1a15c7543/ol-handoff/Microsoft/windows-apps.zh-cn/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf)
-* Handoff Datetime: 2016-07-08 22:48:36
+* Handoff File: [accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/c9218c45d63a58807366849893da2f93b87c1998/ol-handoff/Microsoft/windows-apps.zh-cn/master/accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.zh-cn.xlf)
+* Handoff Datetime: 2016-07-09 04:48:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/TOC.md)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf)
+* Current Target File: [windows-apps-src\accessibility\accessibility-checklist.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/accessibility/accessibility-checklist.md)
+* Current Handback File: [accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-07 14:48:41
 * [Back to Top](#report-top)
 
