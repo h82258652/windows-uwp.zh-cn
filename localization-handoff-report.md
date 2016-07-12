@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\supported-codecs.md](https://github.com/Microsoft/windows-apps/blob/b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc/windows-apps-src/audio-video-camera/supported-codecs.md) | OutofSyncHandedBackSuccess | [Details](#00fbbdde8d805ce7ae07df1d52dd8171de7d58ab493)
+ [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/a9beb420ac13eb74c0109b30508e49d5305bc67c/windows-apps-src/gaming/e2e.md) | OutofSyncHandedBackSuccess | [Details](#30f8408e6d125423e69615a3f9341e8f7d886fc82192)
 
 ## Item Details
-##### <a name='00fbbdde8d805ce7ae07df1d52dd8171de7d58ab493'></a> Source: [windows-apps-src\audio-video-camera\supported-codecs.md](https://github.com/Microsoft/windows-apps/blob/b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc/windows-apps-src/audio-video-camera/supported-codecs.md)
+##### <a name='30f8408e6d125423e69615a3f9341e8f7d886fc82192'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/a9beb420ac13eb74c0109b30508e49d5305bc67c/windows-apps-src/gaming/e2e.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/074647ab67987fd91464fa5e8a1bf6d3709054ef/ol-handoff/Microsoft/windows-apps.zh-cn/master/supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.zh-cn.xlf)
-* Handoff Datetime: 2016-07-12 22:21:08
+* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f6f39bd0498665458350836f73a98fe3159ba8dc/ol-handoff/Microsoft/windows-apps.zh-cn/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf)
+* Handoff Datetime: 2016-07-12 23:20:41
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\supported-codecs.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/audio-video-camera/supported-codecs.md)
-* Current Handback File: [supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.zh-cn.xlf)
+* Current Target File: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/gaming/e2e.md)
+* Current Handback File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-07 14:48:41
 * [Back to Top](#report-top)
 
