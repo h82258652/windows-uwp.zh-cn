@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/ee75eb3ee3bff61666513dcf57384675a07c56ee/windows-apps-src/publish/dev-center-insider-program.md) | OutofSyncHandedBackSuccess | [Details](#b889769f6a23c2830274a72bc392a4409377c1423622)
+ [windows-apps-src\publish\advertising-performance-report.md](https://github.com/Microsoft/windows-apps/blob/6b354b1b009bf9e4f2899f7ef97ef8791712f52b/windows-apps-src/publish/advertising-performance-report.md) | OutofSyncHandedBackSuccess | [Details](#2b06e25a7e96c3645d7067dc0082da3fc942249d3597)
 
 ## Item Details
-##### <a name='b889769f6a23c2830274a72bc392a4409377c1423622'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/ee75eb3ee3bff61666513dcf57384675a07c56ee/windows-apps-src/publish/dev-center-insider-program.md)
+##### <a name='2b06e25a7e96c3645d7067dc0082da3fc942249d3597'></a> Source: [windows-apps-src\publish\advertising-performance-report.md](https://github.com/Microsoft/windows-apps/blob/6b354b1b009bf9e4f2899f7ef97ef8791712f52b/windows-apps-src/publish/advertising-performance-report.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/dc2b551f7f3423a81dc413323659df3deeac82ba/ol-handoff/Microsoft/windows-apps.zh-cn/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf)
-* Handoff Datetime: 2016-07-11 22:48:21
+* Handoff File: [advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/35f71507ef875227acccd8f0cde8279d0da3f3f2/ol-handoff/Microsoft/windows-apps.zh-cn/master/advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.zh-cn.xlf)
+* Handoff Datetime: 2016-07-12 17:22:57
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/publish/dev-center-insider-program.md)
-* Current Handback File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf)
+* Current Target File: [windows-apps-src\publish\advertising-performance-report.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/publish/advertising-performance-report.md)
+* Current Handback File: [advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-07 14:48:41
 * [Back to Top](#report-top)
 
