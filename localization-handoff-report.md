@@ -1,41 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps/blob/b062900db2daf817ef7ea088dbc102b693effef0/windows-apps-src/accessibility/high-contrast-themes.md) | OutofSyncHandedBackSuccess | [Details](#3c72cda9ef78734ba5ddae59b224fa32e937753c17)
- [windows-apps-src\accessibility\images\high-contrast-calculators.png](https://github.com/Microsoft/windows-apps/blob/b062900db2daf817ef7ea088dbc102b693effef0/windows-apps-src/accessibility/images/high-contrast-calculators.png) | HandedOffSuccess | [Details](#1a6670c73eb8c2d056c6b9d12691da706d0771ef24)
+ [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps/blob/d414f834eb3717803b23dd25ddfaf938540406ac/windows-apps-src/input-and-devices/designing-for-tv.md) | OutofSyncHandedBackSuccess | [Details](#2a8c4a601968cd1d879703a4a5f136eecc3b90f72730)
 
 ## Item Details
-##### <a name='3c72cda9ef78734ba5ddae59b224fa32e937753c17'></a> Source: [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps/blob/b062900db2daf817ef7ea088dbc102b693effef0/windows-apps-src/accessibility/high-contrast-themes.md)
+##### <a name='2a8c4a601968cd1d879703a4a5f136eecc3b90f72730'></a> Source: [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps/blob/d414f834eb3717803b23dd25ddfaf938540406ac/windows-apps-src/input-and-devices/designing-for-tv.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/7d93059ba0b6752e868ef8955f37ca8d8130da86/ol-handoff/Microsoft/windows-apps.zh-cn/master/high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.zh-cn.xlf)
-* Handoff Datetime: 2016-07-14 19:21:50
+* Handoff File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/42f56145a5d70ff396249fe8561b1d710ae95637/ol-handoff/Microsoft/windows-apps.zh-cn/master/designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf)
+* Handoff Datetime: 2016-07-14 22:22:24
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\accessibility\high-contrast-themes.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/accessibility/high-contrast-themes.md)
-* Current Handback File: [high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/high-contrast-themes.48ba9338c4156c9023e5f696133f2b776c3bd1dc.zh-cn.xlf)
+* Current Target File: [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/input-and-devices/designing-for-tv.md)
+* Current Handback File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-07 14:48:41
-* [Back to Top](#report-top)
-
-##### <a name='1a6670c73eb8c2d056c6b9d12691da706d0771ef24'></a> Source: [windows-apps-src\accessibility\images\high-contrast-calculators.png](https://github.com/Microsoft/windows-apps/blob/b062900db2daf817ef7ea088dbc102b693effef0/windows-apps-src/accessibility/images/high-contrast-calculators.png)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [1a6670c73eb8c2d056c6b9d12691da706d0771ef.png](https://github.com/Microsoft/WDG.handoff/blob/7d93059ba0b6752e868ef8955f37ca8d8130da86/ol-handoff/Microsoft/windows-apps.zh-cn/master/1a6670c73eb8c2d056c6b9d12691da706d0771ef.png)
-* Handoff Datetime: 2016-07-14 19:21:50
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\accessibility\high-contrast-themes.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 
