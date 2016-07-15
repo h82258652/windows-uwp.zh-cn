@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps/blob/2e7515efa04f6335929e23d31da7d76cb64b9cc9/windows-apps-src/input-and-devices/designing-for-tv.md) | OutofSyncHandedBackSuccess | [Details](#54da89e33b81fc8c5439786f8a5133360dbd186c2741)
+ [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps/blob/c574d14e68dc9d3f47bb74b8cd4b27c9b5250549/windows-apps-src/porting/desktop-to-uwp-signing.md) | OutofSyncHandedBackSuccess | [Details](#8f36af9559a8c0766e67ed0303e8829949e8b3bc3503)
 
 ## Item Details
-##### <a name='54da89e33b81fc8c5439786f8a5133360dbd186c2741'></a> Source: [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps/blob/2e7515efa04f6335929e23d31da7d76cb64b9cc9/windows-apps-src/input-and-devices/designing-for-tv.md)
+##### <a name='8f36af9559a8c0766e67ed0303e8829949e8b3bc3503'></a> Source: [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps/blob/c574d14e68dc9d3f47bb74b8cd4b27c9b5250549/windows-apps-src/porting/desktop-to-uwp-signing.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/626ea49fe271fb5c706f011d6b290d6d8bdf43f4/ol-handoff/Microsoft/windows-apps.zh-cn/master/designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf)
-* Handoff Datetime: 2016-07-15 17:51:24
+* Handoff File: [desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/45fa383a918b97ac31d469725800503fba05f6dd/ol-handoff/Microsoft/windows-apps.zh-cn/master/desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.zh-cn.xlf)
+* Handoff Datetime: 2016-07-15 18:51:46
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\input-and-devices\designing-for-tv.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/input-and-devices/designing-for-tv.md)
-* Current Handback File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf)
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/porting/desktop-to-uwp-signing.md)
+* Current Handback File: [desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-07 14:48:41
 * [Back to Top](#report-top)
 
