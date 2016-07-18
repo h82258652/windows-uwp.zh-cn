@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/ab05e49cbb6d58ead4bea479592c95820d273550/windows-apps-src/publish/payout-summary.md) | OutofSyncHandedBackSuccess | [Details](#48fac3fd0309a40f1c575a6888ab0c2b341152d63683)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/61d7c9843beaf333d5f7234c937bc28b20928b55/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#1053cb6820535361cef10310d4f259a9b1a362685308)
+ [windows-apps-src\networking\network-communications-in-the-background.md](https://github.com/Microsoft/windows-apps/blob/eea01135c60df0323b73bf3fda8b44e6d02cd04b/windows-apps-src/networking/network-communications-in-the-background.md) | OutofSyncHandedBackSuccess | [Details](#8f26599b8d725845d20872fccd6edf3a6744ce383481)
 
 ## Item Details
-##### <a name='48fac3fd0309a40f1c575a6888ab0c2b341152d63683'></a> Source: [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps/blob/ab05e49cbb6d58ead4bea479592c95820d273550/windows-apps-src/publish/payout-summary.md)
+##### <a name='8f26599b8d725845d20872fccd6edf3a6744ce383481'></a> Source: [windows-apps-src\networking\network-communications-in-the-background.md](https://github.com/Microsoft/windows-apps/blob/eea01135c60df0323b73bf3fda8b44e6d02cd04b/windows-apps-src/networking/network-communications-in-the-background.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0ac40a922900e8bd652227da441592f614a54b1f/ol-handoff/Microsoft/windows-apps.zh-cn/master/payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf)
-* Handoff Datetime: 2016-07-18 18:25:19
+* Handoff File: [network-communications-in-the-background.392e988ada0e7db55009da5cb3fcaf902abcb446.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/76cb5ec9ddd568155bc5f7c059b40415cba95e69/ol-handoff/Microsoft/windows-apps.zh-cn/master/network-communications-in-the-background.392e988ada0e7db55009da5cb3fcaf902abcb446.zh-cn.xlf)
+* Handoff Datetime: 2016-07-18 21:53:36
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\payout-summary.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/publish/payout-summary.md)
-* Current Handback File: [payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/payout-summary.5a5a0b9114e3e212c351a9a539a00f45d27f154f.zh-cn.xlf)
-* Current Handback Datetime: 2016-07-07 14:48:41
-* [Back to Top](#report-top)
-
-##### <a name='1053cb6820535361cef10310d4f259a9b1a362685308'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/61d7c9843beaf333d5f7234c937bc28b20928b55/windows-apps-src/TOC.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/0ac40a922900e8bd652227da441592f614a54b1f/ol-handoff/Microsoft/windows-apps.zh-cn/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf)
-* Handoff Datetime: 2016-07-18 18:25:19
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/TOC.md)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf)
+* Current Target File: [windows-apps-src\networking\network-communications-in-the-background.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/bca83abcea8983793c4b2e273492df455b9ebf58/windows-apps-src/networking/network-communications-in-the-background.md)
+* Current Handback File: [network-communications-in-the-background.392e988ada0e7db55009da5cb3fcaf902abcb446.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/54f4c20d99d5eee8b729518034746c0ee2458777/ol-handback/Microsoft/windows-apps.zh-cn/master/network-communications-in-the-background.392e988ada0e7db55009da5cb3fcaf902abcb446.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-07 14:48:41
 * [Back to Top](#report-top)
 
