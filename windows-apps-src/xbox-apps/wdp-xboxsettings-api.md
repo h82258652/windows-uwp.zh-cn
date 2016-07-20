@@ -2,8 +2,9 @@
 author: payzer
 title: "Device Portal Xbox 开发人员设置 API 参考"
 description: "了解如何访问 Xbox 开发人员设置。"
-ms.sourcegitcommit: c392e6a2356d4180943c17d37512ef8ea35f5719
-ms.openlocfilehash: 52fb6e76bd7ad35127eeebeced8f6f8cc076fb7f
+translationtype: Human Translation
+ms.sourcegitcommit: a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0
+ms.openlocfilehash: e3637f5a8481c0800af42c011fb811b908b946b1
 
 ---
 
@@ -46,7 +47,7 @@ Category -（字符串）设置的类别
 
 HTTP 状态代码      | 说明
 :------     | :-----
-200 | 已授予访问文件共享凭据的请求。
+200 | 请求已成功
 4XX | 错误代码
 5XX | 错误代码
 
@@ -87,7 +88,7 @@ Category -（字符串）设置的类别
 
 HTTP 状态代码      | 说明
 :------     | :-----
-200 | 已授予访问文件共享凭据的请求。
+200 | 请求已成功
 4XX | 错误代码
 5XX | 错误代码
 
@@ -124,7 +125,7 @@ Value -（字符串）设置的新值。
 
 HTTP 状态代码      | 说明
 :------     | :-----
-200 | 已授予访问文件共享凭据的请求。
+200 | 请求已成功
 4XX | 错误代码
 5XX | 错误代码
 
@@ -136,6 +137,6 @@ HTTP 状态代码      | 说明
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

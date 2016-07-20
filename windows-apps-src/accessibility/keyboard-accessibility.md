@@ -5,8 +5,9 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: "键盘辅助功能"
 label: Keyboard accessibility
 template: detail.hbs
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: c5b5ca247e3999850d7bf9b81347c201204db7e8
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 6ac488b6db1ed838cc458c6adaa90dcca18d4c7d
 
 ---
 
@@ -155,7 +156,7 @@ XAML
 ## 自定义控件的键盘导航  
 如果子元素之间相互具有空间关系，我们建议使用箭头键作为键盘快捷方式来在子元素之间导航。 如果树状视图节点有单独的子元素，用于处理展开折叠和节点激活，则应使用左右箭头键提供键盘展开折叠功能。 对于支持在控件内容中沿着一定的方向进行遍历的方向控件，请使用相应的箭头键。
 
-通常，可通过在类逻辑中包括 [**OnKeyDown**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967982.aspx) 和 [**OnKeyUp**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967983.aspx) 方法的替代方法来为自定义控件实现自定义的键处理。
+通常，可通过在类逻辑中包括 [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982.aspx) 和 [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983.aspx) 方法的替代方法来为自定义控件实现自定义的键处理。
 
 <span id="An_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="an_example_of_a_visual_state_for_a_focus_indicator"/>
@@ -241,6 +242,6 @@ Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -4,6 +4,7 @@ title: "使用后台任务更新动态磁贴"
 description: "使用后台任务，以利用最新内容更新应用的动态磁贴。"
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 5b11c3d4757d7da0c4c99d8f74a8988babfc26fd
 

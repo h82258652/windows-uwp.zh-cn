@@ -4,6 +4,7 @@ Description: "设计说明性 UI，可向用户解释如何使用你的 Windows 
 title: "设计说明性 UI 指南"
 label: Instructional UI
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e
 ms.openlocfilehash: f9f1f34bb02cda89d31caa9453b6e3eb056e7bc9
 

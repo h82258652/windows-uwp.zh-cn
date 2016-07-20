@@ -6,8 +6,8 @@ ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a8abaf9e272af3e9563ddb48a1a53993a762c675
 
 ---
 # 布局面板
@@ -35,7 +35,7 @@ ms.openlocfilehash: 70bb6e1f01fa89c7a504e0299e89153efc30de1e
 
 有关附加属性的详细信息，请参阅[附加属性概述](../xaml-platform/attached-properties-overview.md)。
 
-> **注意** &nbsp;&nbsp;附加属性是一个 XAML 概念，需要特殊语法才能从代码中获取或设置。 若要在代码中使用附加属性，请参阅*附加属性概述*文章的*代码中的附加属性*部分。
+> **注意**&nbsp;&nbsp;附加属性是一个 XAML 概念，需要特殊语法才能从代码中获取或设置。 若要在代码中使用附加属性，请参阅*附加属性概述*文章的*代码中的附加属性*部分。
 
 **面板边框**
 
@@ -51,7 +51,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 ![带有边框的 Grid](images/layout-panel-grid-border.png)
 
-使用内置边框属性可以减少 XAML 元素计数，从而改进应用的 UI 性能。 有关布局面板和 UI 性能的详细信息，请参阅[优化你的 XAML 布局](https://msdn.microsoft.com/en-us/library/windows/apps/mt404609.aspx)。
+使用内置边框属性可以减少 XAML 元素计数，从而改进应用的 UI 性能。 有关布局面板和 UI 性能的详细信息，请参阅[优化你的 XAML 布局](https://msdn.microsoft.com/library/windows/apps/mt404609.aspx)。
 
 ## RelativePanel
 
@@ -225,6 +225,6 @@ Canvas 不对其子素的大小进行任何调整。 每个元素都必须指定
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

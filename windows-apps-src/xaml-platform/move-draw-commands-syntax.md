@@ -3,6 +3,7 @@ author: jwmsft
 description: "了解移动和绘制命令（小型语言），可用于将路径几何图形指定为 XAML 属性值。"
 title: "移动和绘制命令语法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
 ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 

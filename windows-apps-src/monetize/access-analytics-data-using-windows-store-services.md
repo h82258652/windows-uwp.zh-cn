@@ -3,6 +3,7 @@ author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "使用 Windows 应用商店分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。"
 title: "使用 Windows 应用商店服务访问分析数据"
+translationtype: Human Translation
 ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
 ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
 

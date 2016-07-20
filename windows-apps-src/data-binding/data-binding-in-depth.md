@@ -3,6 +3,7 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "深入了解数据绑定"
 description: "数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。"
+translationtype: Human Translation
 ms.sourcegitcommit: ca92d44cc8e3fb7eaed5a522435efe9cb4796560
 ms.openlocfilehash: d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2
 

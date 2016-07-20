@@ -4,8 +4,8 @@ title: "DirectX 和 XAML 互操作"
 description: "你可以在通用 Windows 平台 (UWP) 游戏中同时使用 Extensible Application Markup Language (XAML) 和 Microsoft DirectX。"
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 97e694ae2fb8af30a35aa9ebdb714db50a506e6c
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: dda452a6f9b2a47d7ddaee9732bb714f0f5dbe5d
 
 ---
 
@@ -14,33 +14,32 @@ ms.openlocfilehash: 97e694ae2fb8af30a35aa9ebdb714db50a506e6c
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-你可以在通用 Windows 平台 (UWP) 游戏中同时使用 Extensible Application Markup Language (XAML) 和 Microsoft DirectX。 XAML 和 DirectX 的结合可让你生成与 DirectX 呈现的内容互操作的灵活用户界面框架， 并且对于图形密集型应用非常有用。 本主题将说明使用 DirectX 的 UWP 应用的结构，并指出为使 UWP 应用兼容 DirectX 而在生成应用时要使用的重要类型。
+你可以在通用 Windows 平台 (UWP) 游戏或应用中同时使用 Extensible Application Markup Language (XAML) 和 Microsoft DirectX。 XAML 和 DirectX 的结合可让你生成与 DirectX 呈现的内容互操作的灵活用户界面框架，并且对于图形密集型应用非常有用。 本主题将说明使用 DirectX 的 UWP 应用的结构，并指出在生成要与 DirectX 兼容的 UWP 应用时要使用的重要类型。
 
-> **注意** DirectX API 没有定义为 Windows 运行时类型，所以通常使用 Visual C++ 组件扩展 (C++/CX) 来开发可与 DirectX 互操作的 XAMLUWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
+如果你的应用主要侧重于 2D 呈现，你可能需要使用 [**Win2D**](https://github.com/microsoft/win2d) Windows 运行时库。 此库由 Microsoft 维护，并且基于核心 Direct2D 技术生成。 它大大简化了实现 2D 图形的使用模式，并包括对本文档中所述的某些技术的有用抽象。 有关更多详细信息，请参阅项目页面。 本文档介绍有关选择*不*使用 Win2D 的应用开发人员的指南。
+
+> **注意** DirectX API 没有定义为 Windows 运行时类型，所以通常使用 Visual C++ 组件扩展 (C++/CX) 来开发可与 DirectX 互操作的 XAML UWP 组件。 此外，如果将 DirectX 调用包装在一个独立的 Windows 运行时元数据文件中，可以创建一个使用 DirectX 的 C# 和 XAML UWP 应用。
 
  
 
 ## XAML 和 DirectX
 
+DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 Microsoft Direct3D。 尽管 XAML 提供了对基本 2D 基元和效果的支持，但许多应用（例如建模和游戏应用）需要更复杂的图形支持。 对于这些应用，可以使用 Direct2D 和 Direct3D 呈现部分或全部图形，而使用 XAML 呈现所有其他内容。
 
-DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 Microsoft Direct3D。 尽管 XAML 提供了对基本 2D 基元和效果的支持，但许多应用（例如建模和游戏应用）需要更复杂的图形支持。 对于这些应用，可以使用 Direct2D 和 Direct3D 呈现部分或所有图形，使用 XAML 呈现所有其他内容。
+如果要实现自定义 XAML 和 DirectX 互操作，需要知道以下两个概念：
 
-在 XAML 和 DirectX 互操作方案中，需要知道以下两个概念：
+-   共享图面是由 XAML（可以使用 DirectX 间接绘入）使用 [**Windows::UI::Xaml::Media::ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagesource.aspx) 类型定义的调整大小的显示区域。 对于共享图面，不对新内容显示在屏幕上的情形控制精确计时。 而将对共享图面的更新同步到 XAML 框架的更新。
+-   [交换链](https://msdn.microsoft.com/library/windows/desktop/bb206356(v=vs.85).aspx)表示用于以最小延迟显示图形的缓冲区集合。 通常，交换链独立于 UI 线程以每秒 60 帧的速度进行更新。 但是，交换链会使用更多的内存和 CPU 资源来支持快速更新，并且更难以使用，因为你必须管理多个线程。
 
--   共享图面是由 XAML（可以使用 DirectX 间接绘入）使用 [**Windows::UI::Xaml::Media::Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 类别定义的调整大小的显示区域。 对于共享图面，你不控制对显示交换链的调用。 对共享图面的更新同步到 XAML 框架的更新。
--   交换链本身。 它提供了 DirectX 呈现管道的备用缓冲区，即呈现目标完成之后为显示提供的内存区。
-
-考虑 DirectX 的用途。 它是否用于合成或动态显示适合显示窗口维度的单一控件？ 合成的图面会不会被其他图面或屏幕边缘阻塞？ 它是否包含像游戏中那样需要呈现和实时控制的输出？
+考虑 DirectX 的用途。 它是否用于合成适合显示窗口维度的单一控件或对其进行动画处理？ 它是否包含像游戏中那样需要呈现和实时控制的输出？ 如果是，你可能需要实现一个交换链。 否则，可以使用共享图面。
 
 在确定希望使用 DirectX 的方式之后，即可使用这些 Windows 运行时类型之一将 DirectX 呈现合并到 Windows 应用商店应用中：
 
 -   如果希望创作静态图像，或以事件驱动的间隔绘制复杂图像，可使用 [**Windows::UI::Xaml::Media::Imaging::SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 绘制到共享图面。 此类型处理特定大小的 DirectX 绘图图面。 通常，在以位图形式创作图像或纹理来在一个文档或 UI 元素中显示时，可以使用此类型。 它不太适合实时交互，例如高性能游戏。 这是因为 **SurfaceImageSource** 对象的更新会同步到 XAML 用户界面更新，而且这可能导致你提供给用户的视觉反馈出现延迟，例如起伏不定的帧速率或实时输入时能感觉到的迟缓响应。 不过，更新对动态控制或数据模拟而言已经足够快了！
 
-    [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 图形对象可与其他 XAML UI 元素组合在一起。 你可以变换或投射它们，并且 XAML 框架可使用任何不透明度或 z-索引值。
+-   如果图像比所提供的屏幕空间要大，并且可由用户平移或缩放，则使用 [**Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050)。 此类型处理一个比屏幕更大的特定大小 DirectX 绘图图面。 像 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 一样，你可以在动态创作复杂图像或控件时使用它。 而且，也像 **SurfaceImageSource** 一样，它不太适合高性能游戏。 可使用 **VirtualSurfaceImageSource** 的一些 XAML 元素示例包括地图控件，或者大型的、包含大量图像的文档查看器。
 
--   如果图像比所提供的屏幕空间更大，并且可由用户平移或缩放，可以使用 [**Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050)。 此类型处理一个比屏幕更大的特定大小 DirectX 绘图图面。 像 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 一样，你可以在动态创作复杂图像或控件时使用它。 而且，也像 **SurfaceImageSource** 一样，它不太适合高性能游戏。 可使用 **VirtualSurfaceImageSource** 的一些 XAML 元素示例包括地图控件，或者大型的、包含大量图像的文档查看器。
-
--   如果你使用 DirectX 提供实时更新的图形，或者在必须以低延迟的定期间隔更新的情况下，可以使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 类，这样你无需同步到 XAML 框架刷新计时器即可刷新图形。 此类型使你能够直接访问图形设备的交换链 ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631))，将 XAML 放在呈现目标之上。 此类型很适合需要基于 XAML 的用户界面的游戏和其他全屏 DirectX 应用。 若要使用此方法，你必须熟悉 DirectX，包括 Microsoft DirectX 图形基础结构 (DXGI)、Direct2D 和 Direct3D 技术。 有关详细信息，请参阅 [Direct3D 11 编程指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)。
+-   如果你使用 DirectX 提供实时更新的图形，或者在必须以低延迟的定期间隔更新的情况下，可以使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 类，这样你无需同步到 XAML 框架刷新计时器即可刷新图形。 此类型使你能够直接访问图形设备的交换链 ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631))，并将 XAML 放在呈现目标之上。 此类型很适合需要基于 XAML 的用户界面的游戏和全屏 DirectX 应用。 若要使用此方法，你必须熟悉 DirectX，包括 Microsoft DirectX 图形基础结构 (DXGI)、Direct2D 和 Direct3D 技术。 有关详细信息，请参阅 [Direct3D 11 编程指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)。
 
 ## SurfaceImageSource
 
@@ -111,7 +110,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
     }
     ```
 
-5.  调用 [**ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) 完成此位图。 将此位图传递到 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101)。
+5.  调用 [**ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) 完成此位图。 位图可用作 XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) 或 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) 的源。
 
     ```cpp
     m_sisNative->EndDraw();
@@ -120,8 +119,6 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
     ImageBrush^ brush = ref new ImageBrush();
     brush->ImageSource = surfaceImageSource;
     ```
-
-6.  使用 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) 绘制位图。
 
 > **注意** 当前调用 [**SurfaceImageSource::SetSource**](https://msdn.microsoft.com/library/windows/apps/br243255)（从 **IBitmapSource::SetSource** 继承）将引发异常。 不要从你的 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 对象调用它。
 
@@ -262,30 +259,23 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 ## SwapChainPanel 和游戏
 
 
-[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 是用于支持高性能图形和游戏的 Windows 运行时类型，你可以在其中直接管理交换链。 在此情况下，你创建自己的 DirectX 交换链并管理所呈现内容的显示。 然后你可将 XAML 元素添加到 **SwapChainPanel** 对象，例如菜单、提醒显示和其他 UI 覆盖内容。
+[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 是用于支持高性能图形和游戏的 Windows 运行时类型，你可以在其中直接管理交换链。 在此情况下，你可以创建自己的 DirectX 交换链并管理所呈现内容的显示。
 
 若要确保良好的性能，[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 类型有一些限制：
 
 -   每个应用的 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 实例不超过 4 个。
--   [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 继承的 **Opacity**、**RenderTransform**、**Projection** 和 **Clip** 属性不受支持。
--   你应该将 DirectX 交换链的高度和宽度（在 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为应用窗口的当前尺寸。 如果不这么做，将缩放显示内容（使用 **DXGI\_SCALING\_STRETCH**）以适合它。
+-   你应该将 DirectX 交换链的高度和宽度（在 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为交换链元素的当前尺寸。 如果不这么做，将缩放显示内容（使用 **DXGI\_SCALING\_STRETCH**）以适合它。
 -   必须将 DirectX 交换链的缩放模式（在 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为 **DXGI\_SCALING\_STRETCH**。
 -   不能将 DirectX 交换链的 alpha 模式（在 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中）设置为 **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**。
 -   必须调用 [**IDXGIFactory2::CreateSwapChainForComposition**](https://msdn.microsoft.com/library/windows/desktop/hh404558) 来创建 DirectX 交换链。
 
 你基于应用的需求来更新 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)，而不是 XAML 框架的更新。 如果需要将 **SwapChainPanel** 的更新与 XAML 框架的更新同步，可以注册 [**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](https://msdn.microsoft.com/library/windows/apps/br228127) 事件。 否则，如果尝试通过与更新 **SwapChainPanel** 的线程不同的线程更新 XAML 元素，则必须考虑任何跨线程问题。
 
-设计应用使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 时，还需要遵守一些一般性最佳做法。
+如果你需要接收 **SwapChainPanel** 的低延迟指针输入，请使用 [**SwapChainPanel::CreateCoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource)。 此方法将返回 [**CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coreindependentinputsource) 对象，该对象可用于在后台线程上以最小延迟接收输入事件。 请注意，在调用此方法后，将不会对 **SwapChainPanel** 引发正常 XAML 指针输入事件，因为所有输入都将重定向到后台线程。
 
--   [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 继承自 [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 且支持类似的布局行为。 你需要熟悉 **Grid** 类型及其属性。
-
--   设置 DirectX 交换链后，需要触发所有输入事件，[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 才能像针对任何其他 XAML 元素一样运行。 你没有为 **SwapChainPanel** 设置背景画笔，并且无需直接通过应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象处理输入事件，就像在不使用 **SwapChainPanel** 的 DirectX 应用中一样。
-
--   • [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 的一个直接子项下的可视 XAML 元素树的所有内容会裁剪为 **SwapChainPanel** 对象的直接子项的布局大小。 任何转换到这些布局边界外部的内容都不会呈现。 因此，请将你使用 XAML [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 设置动画效果的所有 XAML 内容放在一个元素下的可视树中，并且这个元素布局边界要足够大，以包含完整的动画范围。
-
--   限制一个 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 下的直接可视 XAML 元素的数量。 如果可能，将临近的元素分组到一个通用父元素下。 但需要根据性能要求权衡直接可视子项数量与子项的大小：太多或太大的 XAML 元素可能影响总体性能。 类似地，不要为应用的 **SwapChainPanel** 创建单个全屏子 XAML 元素，因为这会增加应用中的过度绘制并降低性能。 作为一条规则，不要为应用的 **SwapChainPanel** 创建多于 8 个直接 XAML 可视子项，并且每个元素的布局大小只需能包含元素的可视内容即可。 但是，可以使 **SwapChainPanel** 的一个子元素下的可视元素树非常复杂，而不会过度降低性能。
 
 > **注意** 通常，你的 DirectX 应用应当在横向创建交换链，并等于显示窗口大小（这在大多数 Windows 应用商店游戏中通常为本机屏幕分辨率）。 这可确保你的应用在没有任何可见 XAML 覆盖时使用最佳交换链实现。 如果应用旋转到纵向模式，你的应用应在现有交换链上调用 [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801)，根据需要应用内容转换，然后在同一交换链上再次调用 [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144)。 类似地，每当通过调用 [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 调整了交换链的大小时，你的应用都应当再次在同一交换链上调用**SetSwapChain**。
+
 
  
 
@@ -365,7 +355,7 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 
 ## 相关主题
 
-
+* [**Win2D**](http://microsoft.github.io/Win2D/html/Introduction.htm)
 * [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)
 * [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050)
 * [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)
@@ -382,6 +372,6 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

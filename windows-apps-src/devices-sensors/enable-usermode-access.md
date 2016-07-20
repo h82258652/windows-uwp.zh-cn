@@ -2,8 +2,9 @@
 author: JordanRh1
 title: "启用对 Windows 10 IoT 核心版的用户模式访问"
 description: "本教程介绍如何对 Windows 10 IoT 核心版上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。"
-ms.sourcegitcommit: f7d7dac79154b1a19eb646e7d29d70b2f6a15e35
-ms.openlocfilehash: eedabee593400ff0260b6d3468ac922285a034f8
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: eddb2ca0aaa4bdbc19b2c3015ec8d599e0ef5584
 
 ---
 # 启用对 Windows 10 IoT 核心版的用户模式访问
@@ -38,7 +39,7 @@ Device(RHPX)
 * _CID – 兼容 ID。 必须为“MSFT8000”。  
 * _UID – 唯一 ID。 设置为 1。  
 
-接下来，声明应向用户模式公开的每个 GPIO 和 SPB 资源。 资源声明的顺序非常重要，因为使用资源索引将属性与资源关联起来。 如果存在多条公开的 I2C 或 SPI 总线，声明的第一条总线被视为该类型的“默认”总线，并且会是 [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) 和 [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.spi.spicontroller.aspx) 的 `GetDefaultAsync()` 方法返回的实例。 
+接下来，声明应向用户模式公开的每个 GPIO 和 SPB 资源。 资源声明的顺序非常重要，因为使用资源索引将属性与资源关联起来。 如果存在多条公开的 I2C 或 SPI 总线，声明的第一条总线被视为该类型的“默认”总线，并且会是 [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) 和 [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) 的 `GetDefaultAsync()` 方法返回的实例。 
 
 ### SPI 
 
@@ -702,9 +703,9 @@ devcon status *msft8000
 
 | 工具 | 链接 |
 |------|------|
-| GpioTestTool | https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
+| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (Serial) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
 ## 资源
@@ -722,9 +723,9 @@ devcon status *msft8000
 | GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C 测试 | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| GpioTestTool | https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
+| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (Serial) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
@@ -732,7 +733,7 @@ devcon status *msft8000
 
 ### 附录 A - Raspberry Pi ASL 一览
 
-标头引出线：https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/PinMappingsRPi2
+标头引出线：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -894,7 +895,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### 附录 B - MinnowBoardMax ASL 一览
 
-标头引出线：https://developer.microsoft.com/zh-cn/windows/iot/win10/samples/PinMappingsMBM
+标头引出线：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1047,7 +1048,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-### 附录 C - 生成 GPIO 资源的 PowerShell 脚本示例
+### 附录 C - 生成 GPIO 资源的示例 PowerShell 脚本
 
 以下脚本可用于生成适用于 Raspberry Pi 的 GPIO 资源声明：
 
@@ -1085,6 +1086,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

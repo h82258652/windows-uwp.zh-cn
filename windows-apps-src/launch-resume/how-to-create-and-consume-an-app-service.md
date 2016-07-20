@@ -3,8 +3,10 @@ author: TylerMSFT
 title: "创建和使用应用服务"
 description: "了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。"
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: ade51661fa6628c76b555316f645ec6622dd299a
+keywords: app to app
+translationtype: Human Translation
+ms.sourcegitcommit: d7d7edf8d1ed6ae1c4be504cd4827bb941f14380
+ms.openlocfilehash: 13b9456d1f6ee2b592db0e5e38b9f9e7fe41764c
 
 ---
 
@@ -389,6 +391,6 @@ namespace MyAppService
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

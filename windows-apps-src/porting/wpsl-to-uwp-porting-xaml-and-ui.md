@@ -3,8 +3,9 @@ author: mcleblanc
 description: "以声明性 XAML 标记的形式定义 UI 的做法非常好地将 Windows Phone Silverlight 转换为通用 Windows 平台 (UWP) 应用。"
 title: "将 Windows Phone Silverlight XAML 和 UI 移植到 UWP"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
-ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
-ms.openlocfilehash: a34133b42872ce949644dc951255e6214164adad
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 7fa520443f242844cd661d70bad0fdeb2297fb1d
 
 ---
 
@@ -154,9 +155,9 @@ Windows Phone Silverlight 应用栏和应用栏按钮无法像在 UWP 应用中�
 
 UWP 应用的绑定相关的功能当前具有以下限制：
 
--   没有对数据输入验证以及 [**IDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx) 和 [**INotifyDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.inotifydataerrorinfo.aspx) 接口的内置支持。
+-   没有对数据输入验证以及 [**IDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.idataerrorinfo.aspx) 和 [**INotifyDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.inotifydataerrorinfo.aspx) 接口的内置支持。
 -   [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类不包含 Windows Phone Silverlight 中所提供的扩展格式属性。 不过，你仍然可以实现 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 以提供自定义格式。
--   [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 方法将语言字符串视为参数而不是 [**CultureInfo**](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx) 对象。
+-   [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 方法将语言字符串视为参数而不是 [**CultureInfo**](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx) 对象。
 -   [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 类不内置支持排序和筛选以及对工作执行差异化分组。 有关详细信息，请参阅[深度数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)和[数据绑定示例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
 
 尽管相同的绑定功能仍然大部分受支持，但 Windows 10 提供性能更佳的全新绑定机制（称为编译绑定），它使用 {x:Bind} 标记扩展。 请参阅[数据绑定：通过对 XAML 数据绑定的新增功能提升应用性能](http://channel9.msdn.com/Events/Build/2015/3-635)和 [x:Bind 示例](http://go.microsoft.com/fwlink/p/?linkid=619989)。
@@ -394,6 +395,6 @@ Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

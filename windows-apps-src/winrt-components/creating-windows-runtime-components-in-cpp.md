@@ -3,6 +3,7 @@ author: msatranjr
 title: "使用 C++ 创建 Windows 运行时组件"
 description: "本文介绍如何使用 C++ 创建 Windows 运行时组件，该组件是从使用 JavaScript、C#、Visual Basic 或 C++ 生成的通用 Windows 应用调用的 DLL。"
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 1497175723738cc23ec21b280c9639b216a33ddd
 

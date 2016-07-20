@@ -3,6 +3,7 @@ author: jnHs
 Description: "若要了解有关价格选择、付款含义和税收责任的税收注意事项，请在下面的表格中查看分配的国家/地区。"
 title: "付费应用的税收明细"
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
+translationtype: Human Translation
 ms.sourcegitcommit: a59d999ac36e04fbfa53d5b8992b235bff2d3818
 ms.openlocfilehash: 364608e1452ddff7aae261bb0f29ec14ee4fb0a3
 

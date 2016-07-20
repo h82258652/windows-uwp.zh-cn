@@ -4,8 +4,8 @@ ms.assetid: 2fba38c4-11be-4058-bfa3-5f979390791c
 description: "了解如何处理 AdControl 类的事件。"
 title: "C 中的 AdControl 事件#"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: cc5dfbfacefb4be32153f3266878be41a3b923f8
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: f92cbbb00a064ce7569d44ad952838df4d21ac8c
 
 ---
 
@@ -44,7 +44,7 @@ private void OnAdEngagedChanged(object sender, RoutedEventArgs e) {
 
 * [GitHub 上的广告示例](http://aka.ms/githubads)
 * [AdControl 错误处理](adcontrol-error-handling.md)
-* [RoutedEventArgs 类](http://msdn.microsoft.com/en-us/library/system.windows.routedeventargs.aspx)
+* [RoutedEventArgs 类](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
 
  
 
@@ -52,6 +52,6 @@ private void OnAdEngagedChanged(object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

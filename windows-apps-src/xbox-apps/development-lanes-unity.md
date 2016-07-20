@@ -1,16 +1,14 @@
 ---
-title: "将你的 Unity 游戏引入 Xbox One"
-author: JordanEllis6809
-ms.sourcegitcommit: 008ff2566b17a05b52dee0a8cd6c070d841b1f62
-ms.openlocfilehash: cc854bc707a9c08687d3c6d92a704f5099d52d5b
-
+title&#58; Unity：将你的游戏引入 Xbox One 作者：JordanEllis6809 
 ---
 
-# 将你的 Unity 游戏引入 Xbox One
+# Unity：将你的游戏引入 Xbox One
 
 在此分步教程中，我们假定你已有一个采用 Unity 的游戏，随时可供生成和部署。
 
 [本教程的视频版本。](https://www.youtube.com/watch?v=f0Ptvw7k-CE)
+
+想要对你的 Unity UWP 项目进行版本控制？  请[查看此处](development-lanes-unity-versioning.md)。
 
 ## 步骤 0：确保已正确安装 Unity
 
@@ -38,17 +36,18 @@ Unity 现在已创建一个新的 Visual Studio 解决方案，我们将在下�
 
 ![x64 生成平台](images/x64-build-platform.png)
 
-既然你已拥有适用于你的游戏的 UWP Visual Studio 解决方案，[遵循这些步骤](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started)将使你可以成功地将你的游戏部署到零售 Xbox One！
+既然你已拥有适用于你的游戏的 UWP Visual Studio 解决方案，[遵循这些步骤](https://msdn.microsoft.com/windows/uwp/xbox-apps/getting-started)将使你可以成功地将你的游戏部署到零售 Xbox One！
 
-## 开发人员说明
+## 步骤 3：修改和重新生成
 
-- 建议你在你的版本控制中忽略 UWP 文件夹。 如果你想要将其他 XAML 元素添加到你的项目中，并需要对 UWP 文件夹中的某些资源进行版本控制，请参阅[仅执行此操作的这些示例](https://bitbucket.org/Unity-Technologies/windowsstoreappssamples/overview)。
+如果对任何非脚本的内容进行了更改，为了使这些更改在游戏的 UWP 生成中显示，项目必须从编辑器重新生成（如 __步骤 1__ 中所述）。
 
-- 如果你在 Unity 中对你的游戏的生成中所包含的任何内容（脚本除外）进行了更改，则必须重新生成你的 UWP 解决方案，才可以在你下次部署时看到这些更改。 会发生这种情况，因为在 Unity 的生成步骤过程中，你的项目的所有资源会编译到一个资源文件中。 当 UWP 解决方案部署游戏时，它会引用该生成的资源文件。
+## 对你的 UWP 项目进行版本控制
+
+在一些常见的情况下，必须将此新生成的 UWP 目录的各个部分添加到版本控制。  例如，当你要将新的依赖项添加到 UWP 项目（即 Xbox Live SDK）时。  我们将在[此处](development-lanes-unity-versioning.md)详细回顾此示例。
 
 
 
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

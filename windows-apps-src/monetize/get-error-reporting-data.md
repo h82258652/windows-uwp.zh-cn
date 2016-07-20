@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合错误报告数据。"
 title: "获取错误报告数据"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
 
 ---
 
@@ -33,19 +34,19 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 
 | 方法 | 请求 URI                                                          |
 |--------|----------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits``` |
 
- 
+<span/> 
 
-### 请求标头
+### 请求头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。 |
 
- 
+<span/> 
 
-### 请求正文
+### 请求参数
 
 <table>
 <colgroup>
@@ -154,10 +155,11 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 </tbody>
 </table>
 
+<span/>
  
 ### 筛选器字段
 
-请求正文中的 *filter* 参数包含的一条或多条语句用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 下面是一些示例 *filter* 参数：
+请求中的 *filter* 参数包含一条或多条语句，用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 下面是一些示例 *filter* 参数：
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
@@ -241,7 +243,7 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 请求示例
 
@@ -266,7 +268,8 @@ Authorization: Bearer <your access token>
 | @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的错误超过 10000 行时，就会返回此值。 |
 | TotalCount | inumber | 查询的数据结果中的行总数。                                                                                                                                                                                                                     |
 
- 
+<span/>
+
 ### 错误值
 
 *Value* 数组中的元素包含以下值。
@@ -288,7 +291,7 @@ Authorization: Bearer <your access token>
 | eventCount      | inumber | 归因于指定聚合级别的该错误的事件数目。                                                                                                                                            |
 | deviceCount     | inumber | 对应于指定聚合级别的该错误的唯一设备数目。                                                                                                                                        |
 
- 
+<span/> 
 
 ### 响应示例
 
@@ -330,6 +333,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

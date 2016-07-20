@@ -3,6 +3,7 @@ description: "本文介绍如何接收使用“共享”合约从另一个应用
 title: "接收数据"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: 7069e55b92e69a0af9ba23a0a737b61d427c615c
 ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
 

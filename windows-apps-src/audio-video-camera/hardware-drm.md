@@ -3,8 +3,9 @@ author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: "本主题将概述如何向通用 Windows 平台 (UWP) 应用添加基于 PlayReady 硬件的数字版权管理 (DRM)。"
 title: "硬件 DRM"
-ms.sourcegitcommit: b782d1e3d4f5c90e4cac9fbad3877c5457a27c45
-ms.openlocfilehash: ec443d26652ba6c1ff5de2b96749825890d0228a
+translationtype: Human Translation
+ms.sourcegitcommit: 22ce05ab6f24c3ee41798732c35314b3dad87ea8
+ms.openlocfilehash: b7867317c37edf44d9edfaaf28d97a3f23b22814
 
 ---
 
@@ -14,7 +15,8 @@ ms.openlocfilehash: ec443d26652ba6c1ff5de2b96749825890d0228a
 
 本主题将概述如何向通用 Windows 平台 (UWP) 应用添加基于 PlayReady 硬件的数字版权管理 (DRM)。
 
-> [!NOTE] 基于硬件的 PlayReady DRM 在许多设备上均受支持，包括电视机、手机以及平板电脑之类的 Windows 和非 Windows 设备。 对于要支持 PlayReady 硬件 DRM 的 Windows 设备，它必须运行 Windows 10，并且具有受支持的硬件配置。
+> [!NOTE] 
+> 基于硬件的 PlayReady DRM 在许多设备上均受支持，包括电视机、手机以及平板电脑之类的 Windows 和非 Windows 设备。 对于要支持 PlayReady 硬件 DRM 的 Windows 设备，它必须运行 Windows 10，并且具有受支持的硬件配置。
 
 越来越多的内容提供商选择基于硬件的保护，以授权在应用中播放完整高值内容。 为满足此要求，已向 PlayReady 添加了针对加密核心硬件实现的可靠支持。 此支持可以使多个设备平台安全播放高清 (1080p) 和超高清 (UHD) 内容。 通过利用硬件安全，可保护密钥材料（包括私钥、内容密钥和任何其他用于派生或解锁上述密钥的密钥材料）以及解密的压缩和未压缩视频示例。
 
@@ -97,6 +99,6 @@ boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures en
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

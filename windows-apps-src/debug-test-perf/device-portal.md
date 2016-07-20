@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal 概述"
 description: "了解 Windows Device Portal 如何支持你通过网络或 USB 连接远程配置和管理你的设备。"
-ms.sourcegitcommit: c6f00006e656970e4a5bb11e3368faa92cbb8eca
-ms.openlocfilehash: fe4945bf3048a0c38e844a74fa6fc46706085d6d
+translationtype: Human Translation
+ms.sourcegitcommit: 01e83c14304891ff5eaa895e98bbebac33ee7614
+ms.openlocfilehash: 55cbdc077f839166f32605bbada8e0cc707cf5b3
 
 ---
 # Windows Device Portal 概述
@@ -156,6 +157,12 @@ Device Portal 会话从主页开始。 主页通常具有设备的相关信息�
 
 ![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-network.png)
 
+### 应用文件资源管理器
+
+允许查看和操纵由旁加载的应用存储的文件。  这是 Windows Phone 8.1 中[独立存储资源管理器](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx)的新跨平台版本；若要了解有关应用文件资源管理器以及使用方法的详细信息，请参阅[这篇博客文章](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)。 
+
+![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-AppFileExplorer.png)
+
 ## 服务功能和说明
 
 ### DNS-SD
@@ -185,8 +192,12 @@ T | 字符串的 null 字符分隔列表 | 用户应用的设备标记。 有关
 
 **注意**：以“auto-”开头的用户名将无法通过浏览器登录到 Device Portal。  
 
+#### 跨站点 WebSocket 劫持 (CSWSH) 保护
+
+若要防止受到 [CSWSH 攻击](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)，用于打开对 Device Portal 的 WebSocket 连接的所有客户端还必须提供与主机头匹配的 Origin 标头。  这向 Device Portal 证明了请求来自 Device Portal UI 或有效的客户端应用程序。  如果没有 Origin 标头，将拒绝你的请求。 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jul16_HO2-->
 
 

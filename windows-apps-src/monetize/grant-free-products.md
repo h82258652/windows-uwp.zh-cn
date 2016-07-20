@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: "在 Windows 应用商店购买 API 中使用此方法，以向给定用户授予免费应用或应用内产品 (IAP)。"
 title: "授予免费产品"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
 
 ---
 
@@ -32,9 +33,9 @@ ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
 
 | 方法 | 请求 URI                                            |
 |--------|--------------------------------------------------------|
-| POST   | `https://purchase.mp.microsoft.com/v6.0/purchases/grant` |
+| POST   | ```https://purchase.mp.microsoft.com/v6.0/purchases/grant``` |
 
-<br/> 
+<span/> 
 
 ### 请求标头
 
@@ -45,7 +46,7 @@ ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
 | Content-Length | 数字 | 请求正文的长度。                                                                       |
 | Content-Type   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
 
-<br/>
+<span/>
 
 ### 请求正文
 
@@ -61,7 +62,7 @@ ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
 | quantity       | int    | 要购买的数量。 当前，唯一受支持的值为 1。 如果未指定，默认值为 1。                                                                                                                                                                                                                | 否       |
 | skuId          | 字符串 | Windows 应用商店目录中的 SKU ID。 SKU ID 的一个示例为“0010”。                                                                                                                                                                                                                                                | 是      |
 
-<br/> 
+<span/>
 
 ### 请求示例
 
@@ -107,7 +108,7 @@ Content-Type: application/json
 | totalChargedToCsvTopOffPI | 十进制                     | 如果使用单独的付款方式 (PI) 和存储 值 (CSV)，金额将从 CSV 中扣除。                                                                | 是      |
 | totalTaxAmount            | 十进制                     | 所有行项的税款总额。                                                                                                              | 是      |
 
-<br/> 
+<span/>
 
 ClientContext 对象包含以下参数。
 
@@ -115,7 +116,7 @@ ClientContext 对象包含以下参数。
 |-----------|--------|---------------------------------------|----------|
 | client    | 字符串 | 创建订单的客户端 ID。 | 否       |
 
-<br/> 
+<span/>
 
 OrderLineItemV6 对象包含以下参数。
 
@@ -147,7 +148,7 @@ OrderLineItemV6 对象包含以下参数。
 | Title                   | 字符串         | 行项的本地化标题。                                                                        | 是      |
 | totalAmount             | 十进制        | 行项的总购买额（含税）。                                                    | 是      |
 
-<br/> 
+<span/>
 
 IdentityV6 对象包含以下参数。
 
@@ -156,7 +157,7 @@ IdentityV6 对象包含以下参数。
 | IdentityType  | 字符串 | 包含值**“pub”**。                                                      | 是      |
 | identityValue | 字符串 | 指定的 Windows 应用商店 ID 密钥的 *publisherUserId* 字符串值。 | 是      |
 
-<br/> 
+<span/> 
 
 ### 响应示例
 
@@ -229,7 +230,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | 未授权 | InconsistentClientId       | 请求正文的 Windows 应用商店 ID 密钥中的 *clientId* 声明与授权标头的 Azure AD 访问令牌中的 *appid* 声明不匹配。                     |
 | 400  | BadRequest   | InvalidParameter           | 详细信息包含有关请求正文和具有无效值的字段的信息。                                                                                    |
 
-<br/> 
+<span/> 
 
 ## 相关主题
 
@@ -244,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

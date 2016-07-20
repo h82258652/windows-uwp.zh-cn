@@ -3,6 +3,7 @@ author: jnHs
 Description: "可以使用开发人员中心仪表板来创建广告活动，从而有助于推广你的应用并扩大使用你的应用的用户群。"
 title: "为你的应用创建广告市场活动"
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
+translationtype: Human Translation
 ms.sourcegitcommit: ce26f020480c3f45e3fc4130a49eb66ecbdf5ba7
 ms.openlocfilehash: 9596dd4de0c05ee6f85189e529ad18e528e954df
 

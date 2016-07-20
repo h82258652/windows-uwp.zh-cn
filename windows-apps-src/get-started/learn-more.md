@@ -5,8 +5,8 @@ title: "后续步骤是什么？"
 description: "既然你已经创建了你的第一个应用，你便可以查看开发人员中心的其他部分了。 以下是它所包含的其他部分的简介。"
 keywords: Dev Center, Getting started
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: cb77a32f99bc6e27cfe87af16d6cd4e08855d7b6
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 5d8f036b7dcaba1c697f574011875cadbf1970c1
 
 ---
 # 下一步操作
@@ -39,7 +39,7 @@ Windows 应用商店可使你能够接触到使用 Microsoft Windows 的数百�
 
 本部分包含有关以下内容的详细信息：类、属性、方法、事件、样式以及可用于创建通用 Windows 平台 (UWP) 应用的其他 API。
 
-转至[API 参考](https://msdn.microsoft.com/en-us/library/windows/apps/br211369.aspx)。
+转至[API 参考](https://msdn.microsoft.com/library/windows/apps/br211369.aspx)。
 
 ## 语言参考
 
@@ -72,6 +72,6 @@ Windows 应用商店可使你能够接触到使用 Microsoft Windows 的数百�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

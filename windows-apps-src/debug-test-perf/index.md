@@ -3,6 +3,7 @@ author: mcleblanc
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: "调试、测试和性能"
 description: "使用 Microsoft Visual Studio 调试和测试应用。 若要使应用为 Windows 应用商店认证过程做好准备，请使用 Windows 应用认证工具包。"
+translationtype: Human Translation
 ms.sourcegitcommit: 3867bca43bef549fc67b202e329e884ee1ff8fa0
 ms.openlocfilehash: c10c1443ac5a0f4cbf07cf0accc8361ad9100168
 
@@ -27,6 +28,6 @@ ms.openlocfilehash: c10c1443ac5a0f4cbf07cf0accc8361ad9100168
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

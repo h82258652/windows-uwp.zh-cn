@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "添加初始屏幕"
 description: "使用 Microsoft Visual Studio 2015 设置你的应用的初始屏幕图像和背景色。"
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
 

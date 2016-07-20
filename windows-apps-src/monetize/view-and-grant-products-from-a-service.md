@@ -3,6 +3,7 @@ author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: "如果你有应用和应用内产品 (IAP) 的目录，你可以使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API 来访问你的服务中的这些产品的所有权信息。"
 title: "从服务查看和授予产品"
+translationtype: Human Translation
 ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
 ms.openlocfilehash: 1e17703442ce539de941890a0616fc5e08391d70
 

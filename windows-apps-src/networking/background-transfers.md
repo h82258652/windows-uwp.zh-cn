@@ -4,8 +4,8 @@ description: "使用后台传输 API 以通过网络可靠地复制文件。"
 title: "后台传输"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
+ms.sourcegitcommit: b15d01ec4fd41a8f03345a4416b4795455928533
+ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
 
 ---
 
@@ -82,23 +82,23 @@ ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
 
 接下来，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 使用提供的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (*file*) 的属性来填充请求头并使用 **StorageFile** 对象设置 *SourceFile* 属性。 然后，调用 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) 方法以插入文件名（以字符串形式提供）和 [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220) 属性。
 
-最后，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 会创建 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*)。
+最后，[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 创建 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*)。
 
 [!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "创建和初始化上传操作")]
 
-请注意使用 JavaScript Promise 定义的异步方法调用。 查看上一示例中的一行：
+请注意使用 JavaScript Promise 定义的异步方法调用。 查看上个示例中的一行：
 
 ```javascript
 promise = upload.startAsync().then(complete, error, progress);
 ```
 
-    The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
+异步方法调用后跟一个 then 语句，它指示从异步方法调用返回结果时调用的方法（由应用定义）。 有关此编程模式的详细信息，请参阅[在 JavaScript 中使用 Promise 进行异步编程](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)。
 
-### 上传多个文件
+### 上载多个文件
 
-**标识文件和目标以供上传**
+**标识文件和目标以用于上载**
 
-    In a scenario involving multiple files transferred with a single [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), the process begins as it usually does by first providing the required destination URI and local file information. Similar to the example in the previous section, the URI is provided as a string by the end-user and [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) can be used to provide the ability to indicate files through the user interface as well. However, in this scenario the app should instead call the [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) method to enable the selection of multiple files through the UI.
+在涉及到使用单个 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 传输多个文件的方案中，这一过程将像通常一样开始，首先提供必需的目标 URI 和本地文件信息。 与上一部分中的示例类似，由最终用户以字符串形式提供 URI，并且也可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 提供通过用户界面指示文件的功能。 但在此方案中，应用应改为调用 [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) 方法，以便能够通过 UI 选择多个文件。
 
 ```javascript
 function uploadFiles() {
@@ -121,14 +121,14 @@ function uploadFiles() {
     }
 ```
 
-**创建给定参数的对象**
+**为提供的参数创建对象**
 
-    The next two examples use code contained in a single example method, **startMultipart**, which was called at the end of the last step. For the purpose of instruction the code in the method that creates an array of [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects has been split from the code that creates the resultant [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224).
+下面的两个示例使用单示例方法 **startMultipart**（在上一步结束时调用）中包含的代码。 为了进行说明，创建 [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) 对象数组的方法中的代码已从创建结果 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 的代码中分离出来。
 
-    First, the URI string provided by the user is initialized as a [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998). Next, the array of [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) objects (**files**) passed to this method is iterated through, each object is used to create a new [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) object which is then placed in the **contentParts** array.
+首先，用户提供的 URI 字符串初始化为 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)。 接下来，循环访问传递到此方法的 [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) 对象 (**files**) 数组、使用每个对象创建一个新的 [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) 对象，然后将其置于 **contentParts** 数组中。
 
 ```javascript
-upload.startMultipart = function (uriString, files) {
+    upload.startMultipart = function (uriString, files) {
         try {
             var uri = new Windows.Foundation.Uri(uriString);
             var uploader = new Windows.Networking.BackgroundTransfer.BackgroundUploader();
@@ -143,7 +143,7 @@ upload.startMultipart = function (uriString, files) {
 
 **创建和初始化分段上传操作**
 
-    With our contentParts array populated with all of the [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects representing each [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) for upload, we are ready to call [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) using the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) to indicate where the request will be sent.
+在使用所有 [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) 对象（表示每个要上载的 [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102)）填充 contentParts 数组后，我们将准备使用 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 调用 [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) 以指示将请求发送到哪里。
 
 ```javascript
         // Create a new upload operation.
@@ -160,17 +160,17 @@ upload.startMultipart = function (uriString, files) {
      };
 ```
 
-### 重新启动中断的上传操作
+### 重新启动中断的上载操作
 
 在完成或取消 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 时，将释放所有关联的系统资源。 然而，如果在发生这些操作之前终止应用，将中止任何活动操作，并仍将占有与每个操作相关的资源。 如果未枚举这些操作并且未重新引入下一个应用会话，那么它们将不会完成并将继续占有设备资源。
 
-1.  在定义枚举保持的操作的函数之前，我们需要创建包含将返回的 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 对象的数组：
+1.  在定义枚举持续操作的函数之前，我们需要创建包含将返回的 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 对象的数组：
 
-[!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "重新启动中断的上传操作")]
+    [!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "重新启动中断的上传操作")]
 
-2.  接下来，我们定义可枚举保持的操作并将其存储到数组中的函数。 请注意，为将回调重新分配到 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 而调用的 **load** 方法（如果它在应用终止后仍然保持）在本部分后面定义的 UploadOp 类中。
+1.  接下来，我们定义枚举持续操作并将其存储到数组中的函数。 请注意，为将回调重新分配到 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) 而调用的 **load** 方法（如果它在应用终止后仍然保持）在本部分后面定义的 UploadOp 类中。
 
-[!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "枚举保持的操作")]
+    [!code-js[uploadFile] (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "枚举持续操作")]
 
 ## 下载文件
 
@@ -206,13 +206,13 @@ promise = download.startAsync().then(complete, error, progress);
 
 1.  在定义枚举保持的操作的函数之前，我们需要创建包含将返回的 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 对象的数组：
 
-[!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
+    [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
 
-2.  接下来，我们定义可枚举保持的操作并将其存储到数组中的函数。 请注意，为将回调重新分配到 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 而调用的 **load** 方法在本部分后面定义的 DownloadOp 示例中。
+1.  接下来，我们定义可枚举保持的操作并将其存储到数组中的函数。 请注意，为将回调重新分配到 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 而调用的 **load** 方法在本部分后面定义的 DownloadOp 示例中。
 
-[!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_E)]
+    [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_E)]
 
-3.  现在可以使用填充的列表重新启动挂起的操作。
+1.  现在可以使用填充的列表重新启动挂起的操作。
 
 ## 后处理
 
@@ -317,6 +317,6 @@ Windows 10 中的新功能可以在完成后台传输时运行应用程序代码
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

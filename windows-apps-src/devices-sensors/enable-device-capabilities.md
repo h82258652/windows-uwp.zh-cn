@@ -4,8 +4,8 @@ ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: "启用设备功能"
 description: "本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。"
 translationtype: Human Translation
-ms.sourcegitcommit: 512b89027f6b707de346fffe104f165074fabcea
-ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 306e10ee9349f3742ac5a06229d22aad04457d7a
 
 ---
 # 启用设备功能
@@ -18,7 +18,7 @@ ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
 ## 指定你的应用将使用的设备功能
 
 
-当你使用某些类型的设备时，Windows 应用要求你在应用包清单中进行指定。 在 Visual Studio 中，你可以使用[清单设计器](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx)声明大多数功能，也可以按照[如何在程序包清单中指定设备功能（手动）](https://msdn.microsoft.com/library/windows/apps/Dn263092)所述手动添加它们。 本教程假定你使用清单设计器。
+当你使用某些类型的设备时，Windows 应用要求你在应用包清单中进行指定。 在 Visual Studio 中，你可以使用[清单设计器](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)声明大多数功能，也可以按照[如何在程序包清单中指定设备功能（手动）](https://msdn.microsoft.com/library/windows/apps/Dn263092)所述手动添加它们。 本教程假定你使用清单设计器。
 
 **注意**  
 某些类型的设备不需要在应用程序包清单中声明，例如打印机、扫描仪和传感器。
@@ -77,6 +77,6 @@ ms.openlocfilehash: 01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

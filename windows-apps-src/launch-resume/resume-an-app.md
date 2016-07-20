@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "处理应用恢复"
 description: "了解当系统恢复你的应用时如何刷新显示的内容。"
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
+translationtype: Human Translation
 ms.sourcegitcommit: e6957dd44cdf6d474ae247ee0e9ba62bf17251da
 ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
 
@@ -59,9 +60,9 @@ ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
 > }
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## 挂起之后刷新显示的内容
 
-暂停之后刷新显示的内容
+当你的应用处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件时，它将有机会刷新其显示的内容。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -91,25 +92,25 @@ ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
 > }
 > ```
 
-> 当你的应用处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件时，它将有机会刷新其显示的内容。
+> **注意** 因为未从 UI 线程引发 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件，所以必须使用调度程序访问该 UI 线程并向 UI 插入更新（如果这是你想要在处理程序中执行的操作）。
 
-## [!div class="tabbedCodeSnippets"]
+## 备注
 
 
-**注意** 因为未从 UI 线程引发 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件，所以必须使用调度程序访问该 UI 线程并向 UI 插入更新（如果这是你想要在处理程序中执行的操作）。 备注 每当用户切换到桌面或其他应用时，系统都会挂起你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。
+每当用户切换到桌面或其他应用时，系统都会挂起你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。 但是，应用可能已暂停很长一段时间，因此，它应当刷新在应用暂停之后可能已发生更改的任何显示内容（如新闻源或用户位置）。
 
-系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。
+如果你的应用没有任何要刷新的显示内容，则它无需处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件。
 
-> 但是，应用可能已暂停很长一段时间，因此，它应当刷新在应用暂停之后可能已发生更改的任何显示内容（如新闻源或用户位置）。 如果你的应用没有任何要刷新的显示内容，则它无需处理 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件。 **请注意** 当你的应用连接到 Visual Studio 调试程序时，你可以向其发送一个 **Resume** 事件。
+> **请注意** 当你的应用连接到 Visual Studio 调试程序时，你可以向其发送一个 **Resume** 事件。 确保“调试位置”****工具栏可见，然后单击“暂停”****图标旁边的下拉列表。 然后选择“恢复”****。
 
-> 确保“调试位置”****工具栏可见，然后单击“暂停”****图标旁边的下拉列表。 然后选择“恢复”****。 **注意** 对于 Windows Phone 应用商店应用，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件之后始终跟着 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 事件，即使你的应用当前已暂停且用户从主要磁贴或应用列表中重新启动它也是如此。
+> **注意** 对于 Windows Phone 应用商店应用，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件之后始终跟着 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 事件，即使你的应用当前已暂停且用户从主要磁贴或应用列表中重新启动它也是如此。 如果当前窗口上已有内容集，则应用可跳过初始化。 你可以检查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 属性以确定该应用是从主要磁贴启动还是从辅助磁贴启动，并可根据该信息，确定是应显示新的应用体验还是应恢复应用体验。
 
-## 如果当前窗口上已有内容集，则应用可跳过初始化。
+## 相关主题
 
-* [你可以检查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 属性以确定该应用是从主要磁贴启动还是从辅助磁贴启动，并可根据该信息，确定是应显示新的应用体验还是应恢复应用体验。](activate-an-app.md)
-* [相关主题](suspend-an-app.md)
-* [处理应用激活](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [处理应用暂停](app-lifecycle.md)
+* [处理应用激活](activate-an-app.md)
+* [处理应用暂停](suspend-an-app.md)
+* [应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [应用生命周期](app-lifecycle.md)
 
 
 

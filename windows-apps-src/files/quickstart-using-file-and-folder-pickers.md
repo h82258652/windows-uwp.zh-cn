@@ -4,8 +4,8 @@ ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "使用选取器打开文件和文件夹"
 description: "通过让用户与选取器交互来访问文件和文件夹。 你可以使用 FileOpenPicker 和 FileSavePicker 类获取对文件的访问权限，并使用 FolderPicker 获取对文件夹的访问权限。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: efb0b106c779820b2dee48eff6f09b54ae9ef2c4
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 387529636eb44206a23356b0a8bb2748d7c10748
 
 ---
 
@@ -109,9 +109,9 @@ var picker = new Windows.Storage.Pickers.FileOpenPicker();
 
 在文件选取器对象上设置与你的用户和你的应用相关的属性。 有关帮助你确定如何自定义文件选取器的指南，请参阅[文件选取器指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465182)。
 
-此示例在某个方便的位置创建了一种丰富的图片视觉显示，用户可以通过设置以下三个属性从该位置选取：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 和 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
+此示例在某个方便的位置创建一种丰富的图片视觉显示，用户可以通过设置以下三个属性从该位置选取：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 和 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
 
--   将 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 设置为 **Thumbnail**[**PickerViewMode**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) 枚举值可通过使用图片缩略图创建丰富的视觉显示以显示文件选取器中的文件。 此操作用于选取可视文件（如图片或视频）。 否则，请使用 [**PickerViewMode.List**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 假定的电子邮件应用可在显示文件选取器之前设置适用于功能的 **ViewMode**，该应用具有**附加图片或视频**和**附加文档**功能。
+-   将 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 设置为 **Thumbnail** [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) 枚举值可通过使用图片缩略图创建丰富的视觉显示，以显示文件选取器中的文件。 此操作用于选取可视文件（如图片或视频）。 否则，请使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 假定的电子邮件应用可在显示文件选取器之前设置适用于功能的 **ViewMode**，该应用具有**附加图片或视频**和**附加文档**功能。
 
 -   使用 [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 设置为图片可让用户在他们有可能找到图片的某个位置开始。 将 **SuggestedStartLocation** 设置为适用于要选取的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
 
@@ -191,6 +191,6 @@ else
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

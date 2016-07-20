@@ -3,8 +3,9 @@ author: mtoepke
 title: "Windows 10 游戏开发指南"
 description: "开发通用 Windows 平台 (UWP) 游戏的资源和信息的端到端指南。"
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-ms.sourcegitcommit: 35017dd14f873350d7e9d75ff6c5c519067547b5
-ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
+translationtype: Human Translation
+ms.sourcegitcommit: a9beb420ac13eb74c0109b30508e49d5305bc67c
+ms.openlocfilehash: 30f8408e6d125423e69615a3f9341e8f7d886fc8
 
 ---
 
@@ -30,12 +31,9 @@ ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
 
 ## 游戏开发资源
 
-
 从文档到开发人员计划、论坛、博客和示例，游戏开发之路上有很多资源可提供帮助。 以下是在开发 Windows 10 游戏时要了解的资源综述。
 
 > **注意** Xbox One 开发和精选 Windows 10 游戏功能（例如 Xbox Live 服务）通过诸如 ID@Xbox 和 Microsoft Studios 等计划进行管理。 本指南涵盖大范围资源，因此你可能会发现有些资源无法访问，具体取决于所属计划或特定的开发角色。 示例是解析为 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com 或游戏开发人员网络 (GDN) 的链接。 有关与 Microsoft 合作的信息，请参阅[开发人员计划](#programs)。
-
- 
 
 ### 游戏开发文档
 
@@ -80,7 +78,6 @@ ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
     </tr>     
 </table>
 
-
 ### 开发人员计划
 
 Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows 游戏。 若要在 Windows 应用商店中发布游戏，你需要在 Windows 开发人员中心上创建开发者帐户。 其他计划可能会引起你的兴趣，具体取决于游戏和工作室需要，并可以创造 Xbox One 开发和 Xbox Live 集成的机遇。
@@ -97,7 +94,7 @@ Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows �
     <tr>
         <td>注册开发人员帐户</td>
         <td>[准备好注册了吗？](https://msdn.microsoft.com/library/windows/apps/bg124287)</td>
-    </tr>
+    </tr> 
 </table>  
 
 
@@ -188,7 +185,7 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>Xbox One 游戏示例 (GDN)</td>
-        <td>[示例](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
+        <td>[示例](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
         <td>Windows 8 游戏示例（MSDN 代码库）</td>
@@ -326,10 +323,30 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>Microsoft 生态系统上的游戏（视频）</td>
-        <td>[Microsoft 生态系统上游戏的未来](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem)</td>
+        <td>[Microsoft 生态系统上的游戏的未来](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem)</td>
     </tr>
 </table>
- 
+
+### 游戏规划
+
+以下是在规划游戏时需考虑的一些高级别概念和规划主题。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>使你的游戏具有辅助性</td>
+        <td>[游戏的辅助功能](https://msdn.microsoft.com/windows/uwp/gaming/accessibility-for-games)</td>
+    </tr>
+    <tr>
+        <td>使用游戏云</td>
+        <td>[游戏云](https://msdn.microsoft.com/windows/uwp/gaming/cloud-for-games)</td>
+    </tr>
+</table>
+
+
 
 ### 选择图形技术和编程语言
 
@@ -1028,7 +1045,7 @@ UI 地图是一个游戏导航布局，在其中菜单以流程图的形式呈�
  
 #### DirectX 工具包和库
 
-DirectX 工具包、DirectX 纹理处理库和 DirectXMesh 几何图形处理库提供用于 DirectX 开发的纹理、网格、子画面以及其他实用工具功能和帮助程序类。 相比于自己实现这些功能，这些库可以节省大量时间和精力。 尽管主要是为 Direct3D 11 实现，但这些库的其中一部分也可用于 Direct3D 12。
+DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库、UVAtlas 库和 DirectXMath 库提供用于 DirectX 开发的纹理、网格、子画面以及其他实用工具功能和帮助程序类。 这些库可以帮助你节省开发时间和精力。
 
 <table>
     <colgroup>
@@ -1036,16 +1053,28 @@ DirectX 工具包、DirectX 纹理处理库和 DirectXMesh 几何图形处理库
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>获取 DirectX 工具包 (DirectX 11)</td>
+        <td>获取用于 DirectX 11 的 DirectX 工具包</td>
         <td>[DirectXTK](http://go.microsoft.com/fwlink/?LinkId=248929)</td>
     </tr>
     <tr>
-        <td>获取 DirectX 纹理处理库 (DirectX 11)</td>
+        <td>获取用于 DirectX 12 的 DirectX 工具包</td>
+        <td>[DirectXTK 12](http://go.microsoft.com/fwlink/?LinkID=615561)</td>
+    </tr>
+    <tr>
+        <td>获取 DirectX 纹理处理库</td>
         <td>[DirectXTex](http://go.microsoft.com/fwlink/?LinkId=248926)</td>
     </tr>
     <tr>
         <td>获取 DirectXMesh 几何图形处理库</td>
         <td>[DirectXMesh](http://go.microsoft.com/fwlink/?LinkID=324981)</td>
+    </tr>
+    <tr>
+        <td>获取用于创建和打包 isochart 纹理图集的 UVAtlas</td>
+        <td>[UVAtlas](http://go.microsoft.com/fwlink/?LinkID=512686)</td>
+    </tr>
+    <tr>
+        <td>获取 DirectXMath 库</td>
+        <td>[DirectXMath](http://go.microsoft.com/fwlink/?LinkID=615560)</td>
     </tr>
     <tr>
         <td>DirectXTK 中的 Direct3D 12 支持（博客文章）</td>
@@ -1072,11 +1101,11 @@ DirectX 工具包、DirectX 纹理处理库和 DirectXMesh 几何图形处理库
     </tr>
     <tr>
         <td>Inte：DirectX 12 中的多适配器支持</td>
-        <td>[如何使用 DirectX 12 实现显式多适配器应用程序](https://software.intel.com/en-us/articles/multi-adapter-support-in-directx-12)</td>
+        <td>[如何使用 DirectX 12 实现显式多适配器应用程序](https://software.intel.com/articles/multi-adapter-support-in-directx-12)</td>
     </tr>
     <tr>
         <td>Intel：DirectX 12 教程</td>
-        <td>[Intel、Suzhou Snail 和 Microsoft 的协作白皮书](https://software.intel.com/en-us/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
+        <td>[Intel、Suzhou Snail 和 Microsoft 的协作白皮书](https://software.intel.com/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
     </tr>
 </table>
 
@@ -1114,6 +1143,14 @@ DirectX 工具包、DirectX 纹理处理库和 DirectXMesh 几何图形处理库
     <tr>
         <td>交互开发动态磁贴模板的 Windows 10 应用</td>
         <td>[通知可视化工具](https://www.microsoft.com/store/apps/9nblggh5xsl1)</td>
+    </tr>
+    <tr>
+        <td>适用于 Visual Studio 的 UWP 磁贴生成器扩展</td>
+        <td>[用于使用单个图像创建所有必需磁贴的工具](https://visualstudiogallery.msdn.microsoft.com/09611e90-f3e8-44b7-9c83-18dba8275bb2)</td>
+    </tr>
+    <tr>
+        <td>适用于 Visual Studio 的 UWP 磁贴生成器扩展（博客文章）</td>
+        <td>[有关使用 UWP 磁贴生成器工具的提示](https://blogs.windows.com/buildingapps/2016/02/15/uwp-tile-generator-extension-for-visual-studio/)</td>
     </tr>
 </table>
  
@@ -1262,6 +1299,14 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
         <td>[在不使用发布者的应用商店帐户访问权限的情况下创建可上载的程序包](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/)</td>
     </tr>
     <tr>
+        <td>使用 MakeAppx 创建应用包和应用包捆绑包</td>
+        <td>[使用应用包生成工具 MakeAppx.exe 创建程序包](https://msdn.microsoft.com/library/windows/desktop/hh446767)</td>
+    </tr>
+    <tr>
+        <td>使用 SignTool 对你的文件进行数字签名</td>
+        <td>[使用 SignTool 对文件进行签名并验证文件中的签名](https://msdn.microsoft.com/library/windows/desktop/aa387764)</td>
+    </tr>      
+    <tr>
         <td>上载游戏和控制游戏版本</td>
         <td>[上载应用包](https://msdn.microsoft.com/library/windows/apps/mt148542)</td>
     </tr>
@@ -1320,6 +1365,10 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>开发人员中心应用</td>
+        <td>[用于查看已发布应用性能的开发人员中心 Windows 10 应用](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)</td>
+    </tr>  
     <tr>
         <td>Windows 开发人员中心分析</td>
         <td>[分析](https://msdn.microsoft.com/library/windows/apps/mt148522)</td>
@@ -1447,6 +1496,6 @@ Visual Studio Application Insights 提供关于发布的游戏的性能、遥测
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

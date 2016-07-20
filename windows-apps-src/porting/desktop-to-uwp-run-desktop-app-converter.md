@@ -3,8 +3,9 @@ author: awkoren
 Description: "运行桌面转换器应用以将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）转换为通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
 title: "桌面应用转换器预览 (Project Centennial)"
-ms.sourcegitcommit: 07016fabb8b49e57dd0ae4ef68447451d31aa2dc
-ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8a22285467005722ad6ee5bf4f129a7dfdea944c
 
 ---
 
@@ -22,9 +23,14 @@ ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
 
 本部分概述桌面应用转换器的各版本之间的更改。 
 
-### 6/16/2016
+### 7/7/2016 (v0.1.22)
 
-* 桌面应用转换器 (v0.1.20) 可以解决最新 Windows 10 Insider Preview 版本上任何阻碍成功转换的问题。 
+* 添加了对从桌面应用程序自动检测外壳扩展以及在 UWP 程序包的 AppXManifest 中声明这些扩展的支持。 若要了解有关桌面扩展的详细信息，请参阅[**已转换的桌面应用扩展**](desktop-to-uwp-extensions.md)。 
+* 改进了大量应用的 AppExecutable 检测。 
+
+### 6/16/2016 (v0.1.20)
+
+* 解决了最新 Windows 10 Insider Preview 版本上阻碍成功转换的问题。 
 * 使用 ```–PackageArch``` 替换了 ```–CreateX86Package```，这允许你指定生成的程序包的体系结构。 
 
 ### 6/8/2016
@@ -61,7 +67,7 @@ ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
 + 二级地址转换 (SLAT)
 
 ### 推荐资源
-+ [适用于 Windows 10 的 Windows 软件开发工具包 (SDK)](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
++ [适用于 Windows 10 的 Windows 软件开发工具包 (SDK)](http://go.microsoft.com/fwlink/?LinkId=615097)
 
 ## 设置桌面应用转换器   
 桌面应用转换器依赖于作为 Windows Insider Preview 版本进行外部测试的 Windows 10 功能。 确保你使用最新版本来利用转换器。
@@ -114,7 +120,7 @@ PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe
 ```
 
 ## 部署转换的 AppX
-在 PowerShell 中使用 [Add-AppxPackage](https://technet.microsoft.com/en-us/library/hh856048.aspx) cmdlet 将已签名的应用包 (.appx) 部署到用户帐户。 若要对 .appx 程序包进行签名，请参考以下部分“对 .Appx 程序包进行签名”。 此外，你可以包含该 cmdlet 的 *Register* 参数，以在开发过程中从已解压缩文件的文件夹中进行安装。 有关详细信息，请参阅[部署和调试转换的 UWP 应用](desktop-to-uwp-deploy-and-debug.md)。
+在 PowerShell 中使用 [Add-AppxPackage](https://technet.microsoft.com/library/hh856048.aspx) cmdlet 将已签名的应用包 (.appx) 部署到用户帐户。 若要对 .appx 程序包进行签名，请参考以下部分“对 .Appx 程序包进行签名”。 此外，你可以包含该 cmdlet 的 *Register* 参数，以在开发过程中从已解压缩文件的文件夹中进行安装。 有关详细信息，请参阅[部署和调试转换的 UWP 应用](desktop-to-uwp-deploy-and-debug.md)。
 
 ## 对 .Appx 程序包进行签名
 
@@ -224,7 +230,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 
 ## 另请参阅
 + [获取桌面应用转换器](http://go.microsoft.com/fwlink/?LinkId=785437)
-+ [将你的桌面应用发布到通用 Windows 平台](https://developer.microsoft.com/en-us/windows/bridges/desktop)
++ [将你的桌面应用发布到通用 Windows 平台](https://developer.microsoft.com/windows/bridges/desktop)
 + [使用桌面应用转换器将桌面应用发布到 UWP](https://channel9.msdn.com/events/Build/2016/P504)
 + [Project Centennial：将现有桌面应用程序发布到通用 Windows 平台](https://channel9.msdn.com/events/Build/2016/B829)  
 + [适用于 Desktop Bridge 的 UserVoice (Project Centennial)](http://aka.ms/UserVoiceDesktopToUwp)
@@ -232,6 +238,6 @@ get-help .\DesktopAppConverter.ps1 -detailed
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

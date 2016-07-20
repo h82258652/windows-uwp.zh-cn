@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
 title: "优化动画、媒体和图像"
 description: "创建具备流畅动画、高帧速率和高性能媒体捕获与播放的通用 Windows 平台 (UWP) 应用。"
-ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: d3ddc07b214dcfe767d27bf24a36fe19d3534e6e
+translationtype: Human Translation
+ms.sourcegitcommit: 622df404dbf85740aa0029f53a0b4e0d541608f9
+ms.openlocfilehash: 8fd9ce5f43159ae00414d05ddb757c507aaa370d
 
 ---
 # 优化动画、媒体和图像
@@ -42,11 +43,13 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 -   进行逐帧更新，这些是有效的从属动画。 此操作的示例是在 [**CompositonTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) 事件的处理程序中应用转换。
 -   运行在 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.cachemode) 属性设置为 **BitmapCache** 的元素中视为独立的任何动画。 此类动画可视为从属动画，因为必须为每个帧对缓存重新进行光栅化。
 
-### 不要动态显示 WebView 或 MediaElement
+### 不要对 WebView 或 MediaPlayerElement 进行动画处理
 
-[**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控件内的 Web 内容不是由 XAML 框架直接进行呈现的，并且它需要进行额外的工作以与场景的剩余部分进行合成。 动态显示屏幕周围的控件时，此额外的工作会增加，并可能会引入同步问题（例如，HTML 内容可能不会与页面上的 XAML 内容的剩余部分同步移动）。 需要创建 **WebView** 控件的动画时，请在动画的持续时间内使用 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx) 交换该控件。
+[**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控件内的 Web 内容不是由 XAML 框架直接进行呈现的，并且它需要进行额外工作以与场景的剩余部分合成。 动态显示屏幕周围的控件时，此额外的工作会增加，并可能会引入同步问题（例如，HTML 内容可能不会与页面上的 XAML 内容的剩余部分同步移动）。 当需要对 **WebView** 控件进行动画处理时，请在动画的持续时间内使用 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx) 交换该控件。
 
-创建 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) 动画似乎不是一个好方法。 除了有损性能，它还会导致要播放的视频内容中出现断裂或其他痕迹。
+对 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 进行动画处理似乎不是一个好方法。 除了有损性能，它还可能导致要播放的视频内容中出现断裂或其他痕迹。
+
+> **注意** 本文中对 **MediaPlayerElement** 的建议也适用于 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 **MediaPlayerElement** 仅在 Windows 10 版本 1607 中可用，因此如果你要创建适用于以前版本的 Windows 的应用，则需要使用 **MediaElement**。
 
 ### 尽量少使用无限动画
 
@@ -77,11 +80,11 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 ### 尽可能显示全屏视频播放
 
-在 UWP 应用中，始终使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) 上的 [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.isfullwindow) 属性来启用和禁用全屏呈现。 此操作可以确保在媒体播放期间使用系统级别优化。
+在 UWP 应用中，始终使用 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 上的 [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.isfullwindow.aspx) 属性来启用和禁用全屏呈现。 此操作可以确保在媒体播放期间使用系统级别优化。
 
-当视频内容是唯一要呈现的内容时，XAML 框架可以优化视频内容的显示，从而得到使用更少能耗、产生更高帧速率的体验。 要获得最有效的媒体播放，请将 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) 的大小设置为屏幕的宽度和高度，并且不显示其他 XAML 元素。
+当视频内容是唯一要呈现的内容时，XAML 框架可以优化视频内容的显示，从而提供使用更少能耗、产生更高帧速率的体验。 若要获得最有效的媒体播放，请将 **MediaPlayerElement** 的大小设置为屏幕的宽度和高度，并且不显示其他 XAML 元素
 
-存在合法的原因在 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926)（它占据屏幕的整个宽度和高度）上重叠 XAML 元素，例如关闭字幕或瞬息传输控件。 确保在不需要这些元素时隐藏它们（例如， 设置 Visibility=”Collapsed”），这会使媒体播放返回到其最有效的状态。
+在 **MediaPlayerElement**（它占据屏幕的整个宽度和高度）上重叠 XAML 元素可能有正当理由，例如隐藏式字幕或瞬息传输控件。 确保在不需要这些元素来使媒体播放返回到其最有效的状态时隐藏它们（设置 `Visibility="Collapsed"`）。
 
 ### 显示停用和节省电源
 
@@ -97,30 +100,30 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 ### 将其他元素放置到嵌入式视频一侧
 
-通常应用提供一个嵌入式视图，在该视图中视频是在某个页面内播放的。 现在你明显丢失了全屏优化，因为 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) 不是页面的大小，且存在绘制的其他 XAML 对象。 谨防通过围绕 **MediaElement** 绘制边界无意中进入此模式。
+通常应用会提供一个嵌入视图，视频会在该视图中的某个页面内播放。 现在你明显丢失了全屏优化，因为 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 不是页面的大小，并且存在绘制的其他 XAML 对象。 谨防无意间通过在 **MediaPlayerElement** 周围绘制边框进入此模式。
 
-在处于嵌入模式时不要在视频上面绘制 XAML 元素。 如果绘制了，则会强制框架执行少量额外的工作来组合场景。 将传输控件放置到某个嵌入式媒体元素下面而不是放置在视频的上面，这是这种情况的优化的一个很好示例。 在此图像中，红色条指示一组传输控件（播放、暂停、停止等）。
+当视频处于嵌入模式时，不要在其顶部绘制 XAML 元素。 如果绘制了，则会强制框架执行少量额外的工作来组合场景。 将传输控件放置到某个嵌入式媒体元素下面而不是放置在视频的上面，这是这种情况的优化的一个很好示例。 在此图像中，红色条指示一组传输控件（播放、暂停、停止等）。
 
-![包含重叠元素的 MediaElement](images/videowithoverlay.png) 不要将这些控件置于非全屏显示的媒体之上。 而要将传输控件放置在呈现媒体的区域之外的某些地方。 在下一个图像中，控件放置在媒体的下面。
+![包含重叠元素的 MediaPlayerElement](images/videowithoverlay.png) 不要将这些控件置于非全屏显示的媒体上面。 而要将传输控件放置在呈现媒体的区域之外的某些地方。 在下一张图像中，控件放置在媒体的下面。
 
-![包含相邻元素的 MediaElement](images/videowithneighbors.png)
+![包含相邻元素的 MediaPlayerElement](images/videowithneighbors.png)
 
-### 延迟设置 MediaElement 的源
+### 延迟设置 MediaPlayerElement 的源
 
-媒体引擎是很耗费资源的对象，并且只要有可能，XAML 框架就会延迟 dll 的加载和大型对象的创建。 通过 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.source) 属性或 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 方法设置 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) 的源之后，会强制它执行此工作。 在用户真正准备好播放媒体时进行这些设置将尽可能延迟大多数与 **MediaElement** 相关联的成本。
+媒体引擎是很耗费资源的对象，并且 XAML 框架会尽可能延迟加载 dll 和创建大型对象。 通过 [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 属性设置 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 的源之后，会强制它执行此工作。 在用户真正准备好播放媒体时进行此设置将尽可能延迟大多数与 **MediaPlayerElement** 相关联的成本。
 
-### 设置 MediaElement.PosterSource
+### 设置 MediaPlayerElement.PosterSource
 
-设置 [**MediaElement.PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.postersource) 使 XAML 能够释放会以其他方式使用的某些 GPU 资源。 此 API 使应用可以使用尽可能少的内存。
+设置 [**MediaPlayerElement.PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.postersource.aspx) 使 XAML 能够释放以其他方式使用的某些 GPU 资源。 此 API 允许应用使用尽可能少的内存。
 
 ### 改进媒体清理
 
 若要使媒体平台做出真正的响应，清理一直是一项艰巨的任务。 通常，人们通过更改滑块的值来执行此操作。 以下是关于如何使此操作尽可能有效的几个提示：
 
--   将 [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) 的值绑定到 [**MediaElement.Position**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.position)，或者基于某个计时器更新它。 不要既绑定又更新。 如果你选择后者，请确保为你的计时器使用一个合理的更新频率。 XAML 框架在播放期间每 250 毫秒仅更新一次 **MediaElement.Position**。
+-   基于查询 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) 上的 [**Position**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx) 的计时器更新 [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) 的值。 确保为你的计时器使用合理的更新频率。 **Position** 属性在播放期间仅每 250 毫秒更新一次。
 -   滑块上的步进频率的大小必须随视频的长度进行缩放。
--   当用户拖动滑块的缩略图时，请订阅到滑块上的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx)、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) 事件以将 [**MediaElement.PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.playbackrate) 属性设置为 0。
--   在 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) 事件处理程序中，手动将媒体位置设置为滑块位置值以在清理时实现最佳的缩略图贴靠。
+-   当用户拖动滑块的缩略图时，请订阅到滑块上的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx)、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) 事件以将 [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx) 属性设置为 0。
+-   在 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) 事件处理程序中，手动将媒体位置设置为滑块位置值以在清理时实现最佳的缩略图对齐。
 
 ### 将视频分辨率与设备分辨率匹配
 
@@ -134,9 +137,6 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 在包含短暂的低滞后音频效果时（如在游戏中），请使用带未压缩的 PCM 数据的 WAV 文件来减少压缩音频格式常见的处理开销。
 
-### 硬件音频卸载
-
-对于要自动应用的硬件音频卸载，必须将 [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.audiocategory) 设置为 **ForegroundOnlyMedia** 或 **BackgroundCapableMedia**。 硬件音频卸载可优化音频呈现，从而改善功能并延长电池使用时间。
 
 ## 优化图像资源
 
@@ -146,14 +146,14 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 不要执行以下操作：
 
-```xml
+```xaml
 <Image Source="ms-appx:///Assets/highresCar.jpg" 
        Width="300" Height="200"/>    <!-- BAD CODE DO NOT USE.-->
 ```
 
 而要这样做：
 
-```xml
+```xaml
 <Image>
     <Image.Source>
     <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg" 
@@ -194,19 +194,19 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 示例 1（良好）- 标记中指定的统一资源标识符 (URI)。
 
-```xml
+```xaml
 <Image x:Name="myImage" UriSource="Assets/cool-image.png"/>
 ```
 
 示例 2 标记 - 代码隐藏中指定的 URI。
 
-```xml
+```xaml
 <Image x:Name="myImage"/>
 ```
 
 示例 2 代码隐藏（良好）- 在设置 BitmapImage 的 UriSource 前将其连接到树。
 
-```vb
+```csharp
 var bitmapImage = new BitmapImage();
 myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
@@ -214,7 +214,7 @@ bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.Rela
 
 示例 2 代码隐藏（不良）- 在将 BitmapImage 连接到树前设置其 UriSource。
 
-```vb
+```csharp
 var bitmapImage = new BitmapImage();
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 myImage.Source = bitmapImage;
@@ -303,6 +303,6 @@ XAML 具有内部优化，使其可以将图像的内容异步解码到硬件中
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

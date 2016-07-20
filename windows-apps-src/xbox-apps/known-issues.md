@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Xbox One 开发者预览版上的 UWP 已知问题"
 description: 
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: 9a9180f8d6fcd51808310a7f8fbac986ca9c3817
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: e016be20af9a0d7a67fa383cbdc93083d12a1113
 
 ---
 
@@ -44,16 +45,18 @@ public App() {
 }
 ```
 
-若要关闭 HTML/Javascript 应用中的鼠标模式，请遵循此示例：
+若要关闭 HTML/JavaScript 应用中的鼠标模式，请遵循此示例：
 
 ```code
 // Turn off mouse mode
 navigator.gamepadInputEmulation = "keyboard";
 ```
 
-> **注意** &nbsp;&nbsp;在此开发者预览版中，当鼠标模式处于打开状态时，使用控制器上的右操纵杆执行平移可能会导致你的主机挂起。 如果遇到此问题，则必须重启你的主机。
+有关详细信息，包括如何在 HTML/JavaScript 应用中打开方向导航，请参阅[如何禁用鼠标模式](how-to-disable-mouse-mode.md#html)。
 
-有关鼠标模式支持的信息，请参阅[针对 Xbox 和电视进行设计](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)主题。 此主题包含有关如何启用和禁用鼠标模式的信息，以便你可以选择适合你的应用的行为。
+> **注意**&nbsp;&nbsp;在此开发者预览版中，当鼠标模式处于打开状态时，使用控制器上的右操纵杆执行平移可能会导致你的主机挂起。 如果遇到此问题，则必须重启你的主机。
+
+有关鼠标模式支持的信息，请参阅[针对 Xbox 和电视进行设计](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)主题。 此主题包含有关如何启用和禁用鼠标模式的信息，以便你可以选择适合你的应用的行为。
 
 ## 必须进行用户登录才可以部署应用（错误 0x87e10008）
 
@@ -109,7 +112,7 @@ Please use the forum to report any issues you see.-->
 
 ## DirectX 12 支持
 
-Xbox One 上的 UWP 支持 DirectX 11 功能级别 10。 DirectX 12 在此情况下不受支持。 Xbox One（类似于所有的传统游戏主机）是一个专门的硬件，需要特定 SDK 才可以充分发挥其潜能。 如果你正在开发需要最大限度发挥 Xbox One 硬件潜能的游戏，你可以注册 [ID@XBOX](http://www.xbox.com/en-us/Developers/id) 计划来获取该 SDK 的访问权限（包括 DirectX 12 支持）。
+Xbox One 上的 UWP 支持 DirectX 11 功能级别 10。 DirectX 12 在此情况下不受支持。 Xbox One（类似于所有的传统游戏主机）是一个专门的硬件，需要特定 SDK 才可以充分发挥其潜能。 如果你正在开发需要最大限度发挥 Xbox One 硬件潜能的游戏，你可以注册 [ID@XBOX](http://www.xbox.com/Developers/id) 计划来获取该 SDK 的访问权限（包括 DirectX 12 支持）。
 
 <!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
@@ -118,9 +121,9 @@ To restore the game streaming feature, you must leave the developer preview. -->
 
 ## 电视安全区域的已知问题
 
-默认情况下，Xbox 上适用于 UWP 应用的屏幕区域应插入电视安全区域。 但是，Xbox One 开发者预览版包含一个已知 Bug，会导致电视安全区域在 \[0, 0\] 启动，而非在\ [_offset_, _offset_\] 启动。
+默认情况下，Xbox 上适用于 UWP 应用的屏幕区域应插入电视安全区域。 但是，Xbox One 开发者预览版包含一个已知 Bug，这会导致电视安全区域在 [0, 0] 启动，而非在 [_offset_, _offset_] 启动。
 
-> **注意** &nbsp;&nbsp;这仅适用于使用 JavaScript 的 UWP 应用。
+> **注意**&nbsp;&nbsp;这仅适用于使用 JavaScript 的 UWP 应用。
 
 解决此问题的最简单方式是禁用电视安全区域，如以下 JavaScript 示例所示。
 
@@ -136,10 +139,12 @@ UWP apps and games running on Xbox One share resources with the system and other
 If you are running into memory or performance issues, this may be why. 
 For more details, see [System resources for UWP apps and games on Xbox One](system-resource-allocation.md).-->
 
+<!--
+## Networking using traditional sockets
 
-## 使用传统套接字的网络
-
-在此开发人员预览版中，无法使用传统 TCP/UDP 套接字（WinSock、Windows.Networking.Sockets）执行主机的入站和出站网络访问。 开发人员仍可以使用 HTTP 和 WebSocket。 
+In this developer preview, inbound and outbound network access from the console that uses traditional TCP/UDP sockets (WinSock, Windows.Networking.Sockets) is not available. 
+Developers can still use HTTP and WebSockets.
+--> 
 
 
 ## UWP API 覆盖范围
@@ -228,6 +233,6 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

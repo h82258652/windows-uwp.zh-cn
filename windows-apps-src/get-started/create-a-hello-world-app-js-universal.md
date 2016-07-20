@@ -4,8 +4,8 @@ ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
 title: "创建“Hello, world”应用 (JS)"
 description: "本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。"
 translationtype: Human Translation
-ms.sourcegitcommit: f3cb50e5b0b0baa73431392a1f6854a62f3655de
-ms.openlocfilehash: 5f534169117da94cb2249c897603f567c007299b
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: be731072824e81eadc95cebd5855234f9331962b
 
 ---
 # 创建“Hello, world”应用 (JS)
@@ -49,9 +49,11 @@ ms.openlocfilehash: 5f534169117da94cb2249c897603f567c007299b
 
     ![“新建项目”窗口 ](images/js-tut-newproject.png)
 
-    在本教程中，我们使用 **Blank App** 模板。 此模板创建一个最基本的 UWP 应用，该应用能够编译和运行，但不包含用户界面控件或数据。 本教程将指导你向应用中添加控件和数据。
+    在本教程中，我们使用 **Blank App** 模板。 此模板创建一个最基本的 UWP 应用，该应用能够编译和运行，但不包含用户界面控件或数据。 本教程中的课程将指导你向应用中添加控件和数据。
 
-4.  在中心窗格中，选择“空白应用（通用 Windows）”****模板。
+   （如果你没有看到这些选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
+
+4.  在中心窗格中，选择“空白应用(通用 Windows)”****模板。
 
     “空白应用”****模板会创建一个最基本的 UWP 应用，该应用可以编译和运行，但不包含任何用户界面控件或数据。 本教程将指导你向该应用添加控件。
 
@@ -135,7 +137,9 @@ ms.openlocfilehash: 5f534169117da94cb2249c897603f567c007299b
 -   **仿真器 <SDK version> WVGA 4 英寸 1GB**
 -   等（采用其他配置的各种仿真器）
 
-最好在带有小型屏幕和有限内存的设备上测试应用，因此请使用“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****选项。
+（如果你没有看到这些仿真器，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
+
+最好在具有小型屏幕和有限内存的设备上测试应用，因此请使用“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****选项。
 **在移动设备仿真器上开始调试**
 
 1.  在“标准”****工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****。
@@ -219,7 +223,7 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
 
 你可能会对此处发生的情况感到疑惑。 代码的这些行覆盖了自我执行匿名函数中 default.js 代码的其他位置。 自我执行匿名函数使避免冲突或意外修改原本无意修改的值的情况变得更简单。 此操作还可防止全局命名空间中出现不需要的标识符，这有助于提高性能。 它看上去有一点奇怪，但却是良好的编程实践。
 
-代码的下一行为 JavaScript 代码打开了[严格模式](https://msdn.microsoft.com/en-us/library/windows/apps/br230269.aspx)。 严格模式为代码提供了额外的错误检查。 例如，它防止你使用隐式声明的变量或为只读属性分配值。
+代码的下一行为 JavaScript 代码打开了[严格模式](https://msdn.microsoft.com/library/windows/apps/br230269.aspx)。 严格模式为代码提供了额外的错误检查。 例如，它防止你使用隐式声明的变量或为只读属性分配值。
 
 查看 default.js 中代码的剩余部分。 它处理了应用的 [**activated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 和 [**checkpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) 事件。 我们以后会深入了解这些事件的详细信息。 现在，只要了解启动应用时会触发 **activated** 事件。
 
@@ -252,7 +256,7 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
 })();
 ```
 
-我们来为 [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定义事件处理程序。 新的事件处理程序会从 `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件获取用户名并使用该用户名向在上一部分中创建的 `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 元素输出问候。
+我们来为 [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定义事件处理程序。 新的事件处理程序会从 `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件获取用户名并使用该用户名向在上一部分中创建的 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 元素输出问候语。
 
 ### 使用用于触控、鼠标和笔输入的事件
 
@@ -271,7 +275,7 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
         }
 ```
 
-2.  在事件处理程序内，从 `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件检索用户的名称并使用它创建问候语。 使用 `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 显示相关结果。
+2.  在事件处理程序内，从 `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件检索用户名并使用该用户名创建问候语。 使用 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 显示相关结果。
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -418,7 +422,7 @@ Visual Studio 为你创建的文件之一是 default.html，应用的起始页�
 
 我们来将一个 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件添加到应用。
 
-1.  在你的 default.html 文件中，在 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 之后添加 [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) 和 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件。
+1.  在 default.html 文件中，在 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 之后添加 [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) 和 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件。
 
     ```html
     <body class="win-type-body">
@@ -553,6 +557,6 @@ Here's the updated [**onactivated**](https://msdn.microsoft.com/library/windows/
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

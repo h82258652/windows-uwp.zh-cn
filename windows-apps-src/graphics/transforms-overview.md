@@ -3,8 +3,9 @@ author: Jwmsft
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
 title: "转换概述"
 description: "了解如何通过更改 UI 中元素的相对坐标系，在 Windows 运行时&amp;\\#160;API 中使用转换。"
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: f6212143a83e7423550b6529ea62e25c00728f79
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 9e01a64f02d8a36e72c31263400130d0d808eb1b
 
 ---
 
@@ -21,10 +22,10 @@ ms.openlocfilehash: f6212143a83e7423550b6529ea62e25c00728f79
 
 将转换视为四个广义的类别：转换、旋转、缩放和倾斜（或扭曲）。 出于使用图形 API 更改 UI 元素外观的目的，通常最简单的做法是创建每次只定义一个操作的转换。 因此 Windows 运行时为每一种转换分类定义了一个离散类。
 
--   [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)：通过为 [**X**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) 和 [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y) 设置值，在 x-y 空间转换元素。
--   [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)：通过为 [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx)、[**CenterY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx)、[**ScaleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) 和 [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty) 设置值，基于中心点缩放转换内容。
--   [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932)：通过为 [**Angle**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx)、[**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) 和 [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery) 设置值，在 x-y 空间旋转。
--   [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950)：通过为 [**AngleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx)、[**AngleY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx)、[**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) 和 [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty)设置值，在 x-y 空间倾斜或扭曲。
+-   [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)：通过为 [**X**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) 和 [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y) 设置值，在 x-y 空间转换元素。
+-   [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)：通过为 [**CenterX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx)、[**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx)、[**ScaleX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) 和 [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty) 设置值，基于中心点缩放转换内容。
+-   [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932)：通过为 [**Angle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx)、[**CenterX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) 和 [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery) 设置值，在 x-y 空间旋转。
+-   [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950)：通过为 [**AngleX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx)、[**AngleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx)、[**CenterX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) 和 [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty)设置值，在 x-y 空间倾斜或扭曲。
 
 在这其中，你可能最常为 UI 方案使用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 和 [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)。
 
@@ -117,9 +118,9 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 ## <span id="3-D_transforms"></span><span id="3-d_transforms"></span><span id="3-D_TRANSFORMS"></span>3D 变换
 
-在 Windows 10 中，XAML 引入了可用于与 UI 一起创建 3D 效果的新属性 [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)。 若要执行此操作，请使用 [**PerspectiveTransform3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.media3d.perspectivetransform3d.aspx) 将共享的 3D 透视或“相机”添加到场景，然后使用 [**CompositeTransform3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.media3d.compositetransform3d.aspx) 在 3D 空间中转换元素，就像使用 [**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105) 那样。 有关如何实现 3D 转换的讨论，请参阅 [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)。
+在 Windows 10 中，XAML 引入了可用于与 UI 一起创建 3D 效果的新属性 [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)。 若要执行此操作，请使用 [**PerspectiveTransform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.perspectivetransform3d.aspx) 将共享的 3D 透视或“相机”添加到场景，然后使用 [**CompositeTransform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.compositetransform3d.aspx) 在 3D 空间中转换元素，就像使用 [**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105) 那样。 有关如何实现 3D 转换的讨论，请参阅 [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)。
 
- 对于仅应用于单个对象的较简单的 3D 效果，可以使用 [**UIElement.Projection**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.projection) 属性。 将 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/br210192) 用作此属性的值等同于将固定视角转换以及一个或多个 3D 转换应用到元素。 [XAML UI 的 3D 透视效果](3-d-perspective-effects.md)中更详细地介绍了此类型的转换。
+ 对于仅应用于单个对象的较简单的 3D 效果，可以使用 [**UIElement.Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection) 属性。 将 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/br210192) 用作此属性的值等同于将固定视角转换以及一个或多个 3D 转换应用到元素。 [XAML UI 的 3D 透视效果](3-d-perspective-effects.md)中更详细地介绍了此类型的转换。
 
 ## <span id="related_topics"></span>相关主题
 
@@ -138,6 +139,6 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

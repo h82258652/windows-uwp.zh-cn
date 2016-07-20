@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "启动 Windows 设置应用"
 description: "了解如何从你的应用启动 Windows 设置应用。 本主题介绍了 ms-settings URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+translationtype: Human Translation
 ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
 ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 

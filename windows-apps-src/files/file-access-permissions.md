@@ -4,8 +4,8 @@ ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "文件访问权限"
 description: "默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或通过声明功能访问其他位置。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
 
 ---
 # 文件访问权限
@@ -98,7 +98,7 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
 
     你不能通过文件选取器访问本地、漫游或临时文件夹。
 
--   **可移动设备。** 此外，默认情况下你的应用可以访问连接设备上的一些文件。 如果你的应用使用在用户将设备（如相机或 U 盘）连接到系统时自动启动的[自动播放扩展](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464906.aspx#autoplay)，可以选择此选项。 你的应用可以访问的文件限于通过应用清单中的文件类型关联声明指定的特定文件类型。
+-   **可移动设备。** 此外，默认情况下你的应用可以访问连接设备上的一些文件。 如果你的应用使用在用户将设备（如相机或 U 盘）连接到系统时自动启动的[自动播放扩展](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay)，可以选择此选项。 你的应用可以访问的文件限于通过应用清单中的文件类型关联声明指定的特定文件类型。
 
     当然，还可以通过调用文件选取器（使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)）并让用户选取供你的应用访问的文件和文件夹，以获得对可移动设备上的文件和文件夹的访问权。 通过[使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)了解如何使用文件选取器。
 
@@ -112,7 +112,7 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
 
     默认情况下，你的应用只能访问它创建的用户“下载”文件夹中的文件和文件夹。 不过，你可以通过调用文件选取器（[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 或 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)）让用户可以导航并选取供应用访问的文件或文件夹，以获取对用户下载文件夹中的文件和文件夹的访问权。
 
-    -   你可以在用户的“下载”文件夹中创建文件，如下所示：
+    -   你可以在用户的下载文件夹中创建文件，如下所示：
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -126,7 +126,7 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
         );
         ```
  
-        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) 重载，这样可以指定“下载”文件夹中已经存在同名文件时系统应执行的操作。 这些方法完成之后，它们将返回一个代表已创建文件的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)。 此文件在本例中称为 `newFile`。
+        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) 重载，这样可以指定在“下载”文件夹中已经存在同名文件时系统应执行的操作。 这些方法完成之后，它们将返回一个代表已创建文件的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)。 此文件在本例中称为 `newFile`。
 
     -   你可以在用户的“下载”文件夹中创建子文件夹，如下所示：
         > [!div class="tabbedCodeSnippets"]
@@ -142,7 +142,7 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
         );
         ```
  
-        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) 重载，这样可以指定下载文件夹中已经存在同名子文件夹时系统应执行的操作。 这些方法完成之后，它们将返回一个代表已创建子文件夹的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 此文件在本例中称为 `newFolder`。
+        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) 重载，这样可以指定在“下载”文件夹中已经存在同名子文件夹时系统应执行的操作。 这些方法完成之后，它们将返回一个代表已创建子文件夹的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 此文件在本例中称为 `newFolder`。
 
     如果在“下载”文件夹中创建文件或文件夹，我们建议将该项目添加到你的应用的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)，这样你的应用以后可以随时访问该项目。
 
@@ -166,6 +166,6 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

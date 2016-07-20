@@ -4,8 +4,8 @@ Description: "你可以在“程序包”页上传所要提交应用的所有程
 title: "上传应用包"
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bb89968c261cc0c14f82375d0d708bbce5da9869
+ms.sourcegitcommit: 7f1a40f33a3137e4e0ded674b5bfdf35f11135dc
+ms.openlocfilehash: f628820747f51f7200e2748c2c3f41b58455b2fa
 
 ---
 
@@ -43,14 +43,8 @@ ms.openlocfilehash: bb89968c261cc0c14f82375d0d708bbce5da9869
 
 如果我们检测到你的一个或多个冗余程序包，我们将显示一条警告，建议你从此提交中删除这些冗余程序包。 如果你之前已上载程序包，而现在又提供了支持同一组客户的更高版本的程序包，则往往会出现此情况。 在此情况下，再也不会有客户获得冗余程序包，因为你现在有一个更好（更高版本）的程序包来为这些客户提供支持。
 
-当我们检测到你有冗余程序包时，我们将提供用于自动从此提交中删除所有冗余程序包的选项。 如果你愿意的话，你还可以从此提交中单独删除程序包。
+当我们检测到你有冗余程序包时，我们将提供用于自动从此提交中删除所有冗余程序包的选项。 如果你愿意，还可以从此提交中单独删除程序包。
 
-## 具有 Visual Studio Application Insights 的程序包
-
-
-我们建议你在程序包中使用 [Visual Studio Application Insights](http://go.microsoft.com/fwlink/?LinkId=615086)（或在生成程序包时通过选中“在 Windows 开发人员中心中显示遥测”框来启用它），以便我们可以向你提供[应用使用情况遥测详细信息](usage-report.md)。 如果你未在 Microsoft Visual Studio 中配置 Application Insights，当我们检测到某个程序包中包含它时，我们将显示一条消息以确认以下信息：提交你的程序包，即表示你同意启用有关你的开发者帐户的应用使用情况遥测。 你可以在“帐户设置”****中随时禁用应用使用情况遥测。
-
- 
 
  
 
@@ -60,6 +54,6 @@ ms.openlocfilehash: bb89968c261cc0c14f82375d0d708bbce5da9869
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

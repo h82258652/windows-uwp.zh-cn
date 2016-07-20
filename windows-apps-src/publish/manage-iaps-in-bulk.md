@@ -2,6 +2,7 @@
 author: jnHs
 Description: "批量管理 IAP 允许你同时更改多个 IAP，而非逐个提交每个更新。"
 title: "批量管理 IAP"
+translationtype: Human Translation
 ms.sourcegitcommit: 475371dd55aa111f3743c03dc1600e8cfdbeb5b0
 ms.openlocfilehash: ae4d4ed33b9bd10a2b01b336c942ad3212de6533
 
@@ -52,6 +53,6 @@ ms.openlocfilehash: ae4d4ed33b9bd10a2b01b336c942ad3212de6533
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: "准备工作"
 description: "准备工作比想像中的简单。 按照以下说明开始为 Windows 10 创建通用 Windows 平台 (UWP) 应用。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8c5dfb692d647a25eea13036cd320366f3c5a09c
+ms.sourcegitcommit: a47dc36129daaed02cb181dde625d440fa4cf6e4
+ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
 
 ---
 # 准备工作
@@ -29,6 +29,10 @@ Microsoft Visual Studio 2015 可帮助你设计、编码、测试和调试应用
 如果你尚未获得 Visual Studio 2015，请单击此链接安装免费的 Microsoft Visual Studio Community 2015。 此下载包含用于测试应用的设备和手机模拟器：
 
 -   [下载 Windows 10 开发人员工具](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+
+在安装 Visual Studio 时，使用自定义选项，并确保所有通用 Windows 应用开发工具选项均处于选中状态，如下所示。
+
+![适用于 UWP 的 Visual Studio 工具](images/vs-2015-community-setup.png)
 
 ## 3. 启用设备进行开发
 
@@ -56,6 +60,6 @@ Microsoft Visual Studio 2015 可帮助你设计、编码、测试和调试应用
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

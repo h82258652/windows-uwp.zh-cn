@@ -3,6 +3,7 @@ author: jnHs
 Description: "在 Windows 开发人员中心仪表板中创建新的 IAP（应用内产品）时，需要指定产品类型并为其分配产品 ID。"
 title: "设置 IAP 产品类型和产品 ID"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
+translationtype: Human Translation
 ms.sourcegitcommit: ae4727974af632a275c102a6328734597cee3e9b
 ms.openlocfilehash: 9faee009cd907cd8ccdeded019e23713cbc058f0
 

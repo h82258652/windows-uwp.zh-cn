@@ -4,8 +4,8 @@ description: "此路线图提供 Windows 10 通用 Windows 平台 (UWP) 应用�
 title: "企业"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 468c87694f519a5081f3242346039e6e7310d1db
-ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 58f7c9739a000b6cac1c000570807587233018ce
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
 
 此路线图提供 Windows 10 通用 Windows 平台 (UWP) 应用的关键企业功能的概述。 Windows 10 可使你编写一次即可在所有设备上部署，创建可适应任何设备的单个应用。 这使你可以在对组织所需的安全性、管理和配置提供控制的同时，打造用户期望的出色体验。
 
-**注意** 本文面向编写企业 UWP 应用的开发人员。 有关常规 UWP 开发，请参阅 [Windows 10 应用的操作方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 有关 WPF、Windows 窗体或 Win32 开发，请访问[桌面开发人员中心](https://dev.windows.com/en-us/desktop)。 有关 IT 专业人员资源（如部署 Windows 10 或管理企业安全功能），请参阅 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
+**注意** 本文面向编写企业 UWP 应用的开发人员。 有关常规 UWP 开发，请参阅 [Windows 10 应用的操作方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 有关 WPF、Windows 窗体或 Win32 开发，请访问[桌面开发人员中心](https://dev.windows.com/desktop)。 有关 IT 专业人员资源（如部署 Windows 10 或管理企业安全功能），请参阅 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
 
  
 
@@ -95,7 +95,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 | 主题 | 说明 |
 |-------|-------------|
 | [将 LOB 应用分配到企业](https://msdn.microsoft.com/library/windows/apps/mt608995) | 你可以通过适用于企业的 Windows 应用商店向企业直接发布业务线应用以获取批量购置，而无需将应用广泛提供给公众。 |
-| [旁加载应用](https://technet.microsoft.com/en-us/library/mt269549) | 当你旁加载应用时，你将一个已签名的应用包部署到设备。 你维护这些应用的签名、承载和部署。 旁加载应用的过程已在 Windows 10 中得到简化。             |
+| [旁加载应用](https://technet.microsoft.com/library/mt269549) | 当你旁加载应用时，你将一个已签名的应用包部署到设备。 你维护这些应用的签名、承载和部署。 旁加载应用的过程已在 Windows 10 中得到简化。             |
 | [将应用发布到 Windows 应用商店](https://dev.windows.com/publish) | 利用统一的 Windows 应用商店，你可以针对所有 Windows 设备发布和管理你的所有应用。 通过每个市场的定价、分配和可见性控件以及其他选项自定义应用的可用性。 |
 
  
@@ -116,6 +116,6 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司网
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

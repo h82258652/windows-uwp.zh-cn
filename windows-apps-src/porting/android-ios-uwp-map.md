@@ -3,8 +3,9 @@ author: GrantMeStrength
 Description: "比较 iOS、Android 和 Windows 10 之间的平台功能。"
 Search.Product: eADQiWindows 10XVcnh
 title: "适用于 Android 和 iOS 开发人员的 Windows 应用概念映射"
-ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
-ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 
 ---
 
@@ -12,7 +13,7 @@ ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
 
 如果你是具有 Android 或 iOS 技能和/或代码的开发人员，并且希望移动到 Windows 10 和通用 Windows 平台 (UWP)，则此资源具有在三个平台之间映射平台功能（以及你的知识）所需的一切。
 
-另请参阅[从 iOS 移动到 UWP](ios-to-uwp-root.md) 中的移植内容。 本文档也可供[下载](https://www.microsoft.com/en-us/download/details.aspx?id=52041)。
+另请参阅[从 iOS 移动到 UWP](ios-to-uwp-root.md) 中的移植内容。 本文档也可供[下载](https://www.microsoft.com/download/details.aspx?id=52041)。
 
 ## 用户界面 (UI)
 
@@ -664,6 +665,6 @@ ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

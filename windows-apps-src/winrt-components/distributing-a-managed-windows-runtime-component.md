@@ -3,6 +3,7 @@ author: msatranjr
 title: "分配托管的 Windows 运行时组件"
 description: "你可以通过文件副本分配 Windows 运行时组件。"
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 3d7a51ed13f63ca9d6070fbbe860c653c4deaf07
 
@@ -75,6 +76,6 @@ For example: Microsoft.Cpp.Build.dll
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

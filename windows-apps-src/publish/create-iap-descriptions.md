@@ -3,6 +3,7 @@ author: jnHs
 Description: "提交 IAP 时，你提供的信息将显示给应用的客户。"
 title: "创建 IAP 描述"
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
+translationtype: Human Translation
 ms.sourcegitcommit: be199d045feadb352b914bb11dbe2cf3dd5ddbf0
 ms.openlocfilehash: 418907894d3fc9349ca113ff04c575bcb0140347
 

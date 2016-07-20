@@ -3,6 +3,7 @@ author: jnHs
 Description: "你的应用需要包含各种徽标、屏幕截图和图像。"
 title: "应用屏幕截图和图像"
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
+translationtype: Human Translation
 ms.sourcegitcommit: ecb030b7c529f765eded46e4e3e9db99ad0c27e8
 ms.openlocfilehash: 9eac5658e2ac04b2abc1bf06abf5c73b16260bc7
 
@@ -106,6 +107,6 @@ Windows 应用商店编辑团队使用不同图像在应用商店中展示应用
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

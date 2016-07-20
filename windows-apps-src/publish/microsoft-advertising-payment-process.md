@@ -3,8 +3,8 @@ author: jnHs
 title: "Microsoft Advertising 支付流程"
 description: "获取有关 Microsoft Advertising 收益的支付流程、阈值和货币的信息。"
 translationtype: Human Translation
-ms.sourcegitcommit: 87b34cd37c7594bb76dbf0f1cd388dbba73ea456
-ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
+ms.sourcegitcommit: b54ea21d12f68830295f59af219c7fe811edd832
+ms.openlocfilehash: 5805f316ed7bc08268fd6c201d740f3a3222629e
 
 ---
 
@@ -17,7 +17,6 @@ ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
 在达到阈值并且在[付款摘要](payout-summary.md)的“待付款”****部分中可以看到付款时，Microsoft 将在十五天内发放付款。 如果收益余额低于该阈值，收益将继续累积，直到达到此阈值。
 
 付款将按本地货币结算，但下表中标有星号的国家/地区除外。 这些市场中的付款将按美元 (USD) 结算。 银行或 PayPal 将收取相应费用，并从美元换算为本地货币。 我们希望你联系银行或 PayPal，了解费用的潜在影响或接收付款的其他要求。
-
 
 
 |  国家/地区 | 阈值货币 | 阈值金额 | 
@@ -51,7 +50,7 @@ ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
 |  乍得 | XAF  | 30,000 XAF | 
 |  智利* | USD  | 25,000 CLP | 
 |  中国 | USD  | 50 USD | 
-|  哥伦比亚* | USD  | 100,000 COP| 
+|  哥伦比亚* | COP  | 100,000 COP| 
 |  科摩罗 | USD  | 50 USD | 
 |  刚果 | XAF  | 30,000 XAF| 
 |  刚果（金） | USD  | 50 USD | 
@@ -60,7 +59,7 @@ ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
 |  克罗地亚 | HRK  | 350 HRK | 
 |  塞浦路斯 | EUR  | 50 EUR | 
 |  捷克共和国| CZK  | 1000 CZK | 
-|  丹麦 | DKK  | 250 DDK| 
+|  丹麦 | DDK  | 250 DDK| 
 |  多米尼克 | XCD  | 135 XCD | 
 |  多米尼加共和国 | DOP  | 2000 DOP | 
 |  厄瓜多尔 | USD  | 50 USD | 
@@ -83,20 +82,21 @@ ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
 |  香港特别行政区 | HKD  | 500 HKD | 
 |  匈牙利 | HUF  | 10,000 HUF | 
 |  冰岛 | USD  | 50 USD | 
-|  印度 | INR  | 否 | 
-|  印度尼西亚 | IDR  | 2500 INR | 
+|  印度 | INR  | 2500 INR | 
+|  印度尼西亚 | IDR  | 660,000 IDR | 
 |  伊拉克 | USD  | 50 USD | 
 |  爱尔兰 | EUR  | 50 EUR | 
-|  以色列 | ILS  | 200 IL | 
+|  以色列 | ILS  | 200 ILS | 
 |  意大利 | EUR  | 50 EUR | 
 |  牙买加 | JMD  | 5700 JMD | 
 |  日本 | JPY  | 5000 JPY | 
 |  约旦 | JOD  | 35 JOD | 
 |  哈萨克斯坦 | KZT  | 9200 KZT | 
 |  肯尼亚 | KES  | 5000 KES | 
+|  韩国* | WON | 50,000 WON |
 |  科威特 | KWD  | 15 KWD | 
 |  老挝 | USD  | 50 USD | 
-|  拉脱维亚 | LVL | 30 LVL | 
+|  拉脱维亚 | EUR | 50 EUR | 
 |  黎巴嫩 | LBP  | 75,000 LBP | 
 |  利比里亚 | USD  | 50 USD | 
 |  列支敦士登 | CHF  | 50 CHF | 
@@ -104,7 +104,7 @@ ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
 |  卢森堡 | EUR  | 50 EUR | 
 |  马其顿（马其顿共和国） | USD  | 50 USD | 
 |  马达加斯加 | USD  | 50 USD | 
-|  马拉维 | MWK  | 23,000 MWk | 
+|  马拉维 | MWK  | 23,000 MWK | 
 |  马来西亚 | USD  | 50 USD | 
 |  马里 | XOF  | 31,000 XOF | 
 |  马耳他 | EUR  | 50 EUR | 
@@ -144,7 +144,6 @@ ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
 |  斯洛文尼亚 | EUR  | 50 EUR | 
 |  索马里 | USD  | 50 USD | 
 |  南非 | ZAR  | 500 ZAR | 
-|  韩国* | WON | 50,000 WON |
 |  西班牙 | EUR  | 50 EUR | 
 |  斯里兰卡 | LKR  | 6600 LKR | 
 |  瑞典 | SEK  | 350 SEK | 
@@ -161,7 +160,7 @@ ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
 |  土耳其 | TRY  | 130 TRY | 
 |  土库曼斯坦 | USD  | 50 USD | 
 |  乌干达 | UGX  | 152,000 UGX | 
-|  乌克兰 | USD  | | 
+|  乌克兰 | USD  | 50 USD | 
 |  阿拉伯联合酋长国 | EUR  | 50 EUR | 
 |  英国 | GBP  | 35 GBP | 
 |  美国 | USD  | 50 USD | 
@@ -176,13 +175,12 @@ ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
 ## 相关主题
 
 * [设置你的付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)
-* [获取付款](getting-paid-apps.md)
 * [付款摘要](payout-summary.md)
 * [利用广告来盈利](monetize-with-ads.md)
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

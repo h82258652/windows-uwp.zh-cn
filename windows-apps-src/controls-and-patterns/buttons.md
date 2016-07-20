@@ -3,8 +3,8 @@ author: Jwmsft
 label: Buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 91399060e129df18acd38e18d98cad848667a5ad
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: de5af77435b34b8f28005351a7de125f211ca522
 
 ---
 # 按钮
@@ -71,7 +71,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 当你用手指或触笔点击某个按钮或在指针位于其上时按鼠标左键时，按钮会引发 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 如果按钮具有键盘焦点，则按 Enter 键或空格键也会引发 Click 事件。
 
-你通常无法处理按钮上的低级别 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件，因为它具有 Click 行为。 有关详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx)。
+你通常无法处理按钮上的低级别 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件，因为它具有 Click 行为。 有关详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx)。
 
 你可以通过更改 [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) 属性来更改按钮引发 Click 事件的方式。 默认的 ClickMode 值为 **Release**。 如果 ClickMode 为 **Hover**，则无法通过键盘或触摸引发 Click 事件。 
 
@@ -229,6 +229,6 @@ Surface Hub ![Surface Hub 上的系统后退功能](images/nav-back-surfacehub.p
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "调试后台任务"
 description: "了解如何调试后台任务，包括后台任务激活和调试 Windows 事件日志中的跟踪。"
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 1b49c3f06456eef2f3e56227ecb5af5fc991fb13
 

@@ -3,6 +3,7 @@ author: msatranjr
 title: "使用 C++ 创建一个基本 Windows 运行时组件并通过 JavaScript 或 C 调用此组件#"
 description: "本演练演示了如何创建一个可通过 JavaScript、C# 或 Visual Basic 调用的基本 Windows 运行时组件 DLL。"
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 860333e3239198cd54eea061195e2a51d786821b
 

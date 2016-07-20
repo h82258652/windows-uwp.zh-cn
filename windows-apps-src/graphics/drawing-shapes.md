@@ -3,8 +3,9 @@ author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: "绘制图形"
 description: "了解如何绘制形状，如椭圆、矩形、多边形以及路径。 Path 类是在 XAML UI 中可视化基于相当复杂矢量的绘图语言的方法；例如，可以绘制贝塞尔曲线。"
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 20bac4421c2f307932bd5a8a4c462b1ef13fe09b
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 3add60b9067f40c5d330bd66a84eea41b465e8d7
 
 ---
 # 绘制形状
@@ -56,9 +57,9 @@ ms.openlocfilehash: 20bac4421c2f307932bd5a8a4c462b1ef13fe09b
 
 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 形状有四个边而且相对的两个边相等。 若要创建基本的 **Rectangle**，请指定 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 和 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
 
-你可以为 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 创建圆角。 若要创建圆角，请指定 [**RadiusX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) 和 [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) 属性的值。 这些属性指定椭圆的 X 轴和 Y 轴，以定义角的曲线。 **RadiusX** 的最大允许值为 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 的一半，**RadiusY** 的最大允许值为 [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 的一半。
+你可以为 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 创建圆角。 若要创建圆角，请指定 [**RadiusX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) 和 [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) 属性的值。 这些属性指定椭圆的 X 轴和 Y 轴，以定义角的曲线。 **RadiusX** 的最大允许值为 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 的一半，**RadiusY** 的最大允许值为 [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 的一半。
 
-下一个示例创建 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)，其 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 为 200，[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 为 100。 它将 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 的 [**Blue**](https://msdn.microsoft.com/library/windows/apps/Hh747837) 值用于其 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，并将 **SolidColorBrush** 的 [**Black**](https://msdn.microsoft.com/library/windows/apps/Hh747833) 值用于其 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke)。 我们将 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 设置为 3。 我们将 [**RadiusX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) 属性设置为 50，并将 [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) 属性设置为 10，从而为 **Rectangle** 创建圆角。
+下一个示例创建 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)，其 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 为 200，[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 为 100。 它将 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 的 [**Blue**](https://msdn.microsoft.com/library/windows/apps/Hh747837) 值用于其 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，并将 **SolidColorBrush** 的 [**Black**](https://msdn.microsoft.com/library/windows/apps/Hh747833) 值用于其 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke)。 我们将 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 设置为 3。 我们将 [**RadiusX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) 属性设置为 50，并将 [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) 属性设置为 10，从而为 **Rectangle** 创建圆角。
 
 ```xml
 <Rectangle Fill="Blue"
@@ -82,7 +83,7 @@ On the other hand, a [**Rectangle**](https://msdn.microsoft.com/library/windows/
 
 ## Polygon
 
-A [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) is a shape with a boundary defined by an arbitrary number of points. The boundary is created by connecting a line from one point to the next, with the last point connected to the first point. The [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polygon.points.aspx) property defines the collection of points that make up the boundary. In XAML, you define the points with a comma-separated list. In code-behind you use a [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) to define the points and you add each individual point as a [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) value to the collection.
+A [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) is a shape with a boundary defined by an arbitrary number of points. The boundary is created by connecting a line from one point to the next, with the last point connected to the first point. The [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polygon.points.aspx) property defines the collection of points that make up the boundary. In XAML, you define the points with a comma-separated list. In code-behind you use a [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) to define the points and you add each individual point as a [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) value to the collection.
 
 You don't need to explicitly declare the points such that the start point and end point are both specified as the same [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) value. The rendering logic for a [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) assumes that you are defining a closed shape and will connect the end point to the start point implicitly.
 
@@ -105,19 +106,19 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 只是一条在坐标空间中的两个点之间绘制的直线。 **Line** 忽略为 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 提供的任何值，因为它没有内部空间。 对于 **Line**，请确保为 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 和 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 属性指定值，否则 **Line** 将不呈现。
 
-不要使用 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值指定 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 形状，而应针对 [**X1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx)、[**Y1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx)、[**X2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) 和 [**Y2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx) 使用离散的 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值。 这会使得横线或竖线的标记最少。 例如，`<Line Stroke="Red" X2="400"/>` 定义一条长为 400 个像素的横线。 另一对 X,Y 属性在默认情况下为 0，因此，从点的角度看，此 XAML 将绘制一条从 `(0,0)` 到 `(400,0)` 的直线。 如果你希望它从 (0,0) 之外的任意点开始，则可以使用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 移动整个 **Line**。
+不要使用 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值指定 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 形状，而应针对 [**X1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx)、[**Y1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx)、[**X2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) 和 [**Y2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx) 使用离散的 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值。 这会使得横线或竖线的标记最少。 例如，`<Line Stroke="Red" X2="400"/>` 定义一条长为 400 个像素的横线。 另一对 X,Y 属性在默认情况下为 0，因此，从点的角度看，此 XAML 将绘制一条从 `(0,0)` 到 `(400,0)` 的直线。 如果你希望它从 (0,0) 之外的任意点开始，则可以使用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 移动整个 **Line**。
 
 ## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
 
 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 与 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 类似，该形状的边也是通过一组点来进行定义，只不过 **Polyline** 的最后一个点不与第一个点相连。
 
-**注意** 你可以在 [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 中为 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 明确设置相同的起点和终点，但是，在这种情况下，你可能已改用 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)。
+**注意** 你可以在 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 中为 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 明确设置相同的起点和终点，但是，在这种情况下，你可能已改用 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)。
 
  
 
-如果你指定 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，则 **Fill** 会绘制形状的内部空间，即使为 **Polyline** 设置的 [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 的起点和终点不相交也是如此。 如果你没有指定 **Fill**，则 **Polyline** 与指定了多个单独的、其连续直线的起点和终点相交的 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 元素时所呈现的内容相似。
+如果你指定 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，则 **Fill** 会绘制形状的内部空间，即使为 **Polyline** 设置的 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 的起点和终点不相交也是如此。 如果你没有指定 **Fill**，则 **Polyline** 与指定了多个单独的、其连续直线的起点和终点相交的 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 元素时所呈现的内容相似。
 
-就像 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 一样，[**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 属性定义组成边的点集。 在 XAML 中，使用逗号分隔的列表定义点。 在代码隐藏中，使用 [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) 来定义点，并将每个单独的点作为 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 结构添加到集合中。
+就像 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 一样，[**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 属性定义组成边的点集。 在 XAML 中，使用逗号分隔的列表定义点。 在代码隐藏中，使用 [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) 来定义点，并将每个单独的点作为 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 结构添加到集合中。
 
 此示例创建 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365)，其 4 个顶点分别设置为 `(10,200)`、`(60,140)`、`(130,140)` 以及 `(180,200)`。 定义了一个没有 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 的 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke)。
 
@@ -199,6 +200,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

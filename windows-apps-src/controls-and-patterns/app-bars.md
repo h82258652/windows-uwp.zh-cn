@@ -2,8 +2,9 @@
 author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 01cd10c72745ff4bd8204a9adaa8eebf5a892efe
+translationtype: Human Translation
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: c7107599529d5af5b118a46cb065106f08afe113
 
 ---
 
@@ -93,7 +94,7 @@ CommandBar 控件具有三个可用于添加命令和内容的属性：[**Primar
 
 默认溢出区域的样式设置为与栏不同。 你可以通过将 [**CommandBarOverflowPresenterStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle.aspx) 属性设置为面向 [**CommandBarOverflowPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbaroverflowpresenter.aspx) 的[样式](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx)来调整样式设置。
 
-你可以根据需要以编程方式在 PrimaryCommands 和 SecondaryCommands 之间移动命令。 {{&gt; 内部内容 =“命令还可以自动随着命令栏宽度的变化移入或移出溢出，例如当用户调整其应用窗口大小时。 动态溢出默认处于打开状态，但应用可以通过更改 `IsDynamicOverflowEnabled` 属性的值关闭此行为。”}}
+你可以根据需要以编程方式在 PrimaryCommands 和 SecondaryCommands 之间移动命令。 
 
 ### 应用栏按钮
 
@@ -139,7 +140,7 @@ PrimaryCommands 和 SecondaryCommands 都只能使用[**AppBarButton**](https://
 
 你可以通过设置 **Content** 属性来将任何 XAML 元素添加到内容区域。 如果要添加多个元素，需要将它们放置在面板容器中，并使该面板成为 Content 属性的单个子对象。
 
-当同时存在主要命令和内容时，主要命令优先，并且可能导致内容进行裁剪。 {{&gt; 内部内容 =“当启用动态溢出时，内容将不会剪裁，因为主要命令将移到溢出菜单中，从而为内容释放空间。”}}
+当同时存在主要命令和内容时，主要命令优先，并且可能导致内容进行裁剪。 
 
 当 [**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) 为 **Compact** 时，如果内容大于命令栏的精简大小，则可能会剪裁内容。 你应处理 [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) 和 [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) 事件以在内容区域中显示或隐藏部分 UI，以使它们不会进行剪裁。 有关详细信息，请参阅[打开和关闭状态](#open-and-closed-states)部分。
 
@@ -286,6 +287,6 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

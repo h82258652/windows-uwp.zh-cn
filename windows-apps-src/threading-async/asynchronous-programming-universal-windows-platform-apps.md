@@ -4,8 +4,8 @@ ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: "异步编程"
 description: "本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C\\+\\+ 组件扩展 (C\\+\\+/CX) 和 JavaScript 中的表示形式。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
 
 ---
 # 异步编程
@@ -60,9 +60,9 @@ ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
 ## 使用 C++ 的 UWP 中的异步模式
 
 
-在 C++/CX 中， 异步编程基于 [**task class**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx) 及其 [**then method**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx)。 语法与 JavaScript 承诺的语法类似。 **task 类**及其相关类型还提供取消和管理线程上下文的功能。 有关详细信息，请参阅[使用 C++ 进行异步编程](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
+在 C++/CX 中， 异步编程基于 [**task class**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx) 及其 [**then method**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx)。 语法与 JavaScript 承诺的语法类似。 **task 类**及其相关类型还提供取消和管理线程上下文的功能。 有关详细信息，请参阅[使用 C++ 进行异步编程](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
-[**create\_async 函数**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750102.aspx)提供了相应支持，以便生成可以通过 JavaScript 或任何其他支持 UWP 的语言使用的异步 API。 有关详细信息，请参阅[使用 C++ 创建异步操作](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx)。
+[**create\_async 函数**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx)提供了相应支持，以便生成可以通过 JavaScript 或任何其他支持 UWP 的语言使用的异步 API。 有关详细信息，请参阅[使用 C++ 创建异步操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx)。
 
 ## 使用 JavaScript 的 UWP 中的异步模式
 
@@ -76,11 +76,11 @@ ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
 
 * [使用 C# 或 Visual Basic 调用异步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [使用 Async 和 Await（C# 和 Visual Basic）进行异步编程](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
-* [Reversi 示例功能方案：异步代码](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj712233.aspx#async)
+* [Reversi 示例功能方案：异步代码](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

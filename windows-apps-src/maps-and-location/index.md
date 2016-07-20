@@ -3,6 +3,7 @@ author: msatranjr
 title: "地图和位置概述"
 description: "本部分介绍如何在应用中显示地图、使用地图服务、查找位置和设置地理围栏。 本部分还向你显示如何将 Windows 地图应用启动到特定地图、路线或一组逐向路线。"
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
+translationtype: Human Translation
 ms.sourcegitcommit: a3240047ec77ada0c5f6b5586eee2404353889f6
 ms.openlocfilehash: 829a8d7eb4da810e2353593c03cd5aa4e047173a
 

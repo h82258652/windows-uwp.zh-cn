@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "延长显示初始屏幕的时间"
 description: "通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。"
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
 

@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "使用后台任务支持应用"
 description: "本部分中的主题展示如何通过响应具有后台任务的触发器在后台运行你自己的轻型代码。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
 

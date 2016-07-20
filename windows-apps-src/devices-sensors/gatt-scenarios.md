@@ -3,6 +3,7 @@ author: msatranjr
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
 title: "蓝牙 GATT"
 description: "本文提供用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性配置文件 (GATT) API 概述，以及用于三个常见 GATT 方案的示例代码。"
+translationtype: Human Translation
 ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
 ms.openlocfilehash: 664f6ce7829c9e9a6674daa6cdc21e7561ff094b
 

@@ -4,6 +4,7 @@ Description: "以下指南描述了如何为你的应用设计有效的“帮助
 title: "应用帮助指南"
 label: Guidelines for app help
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 0aa2db498ab7ec25839da259dd0026b0a7cd2b13
 ms.openlocfilehash: f2522afa91abe26303a85cbfbabd5ec5b3dba59c
 

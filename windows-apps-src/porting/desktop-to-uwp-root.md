@@ -3,8 +3,9 @@ author: awkoren
 Description: "使用桌面转换扩展使 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）为转换为通用 Windows 平台 (UWP) 应用做好准备。"
 Search.Product: eADQiWindows 10XVcnh
 title: "将桌面应用程序转换为通用 Windows 平台 (UWP) 应用"
-ms.sourcegitcommit: 37d4c8ef6178fe78c7333c47848177b5185c6d61
-ms.openlocfilehash: 16d75ebd2499e56af742c1c9994fd92cc320c22b
+translationtype: Human Translation
+ms.sourcegitcommit: 45b9170ed311e6f17d1c51c0b7d1d288e07184a9
+ms.openlocfilehash: c5ffb1e912c2953d5f813f099e036d2d7b395b69
 
 ---
 
@@ -90,11 +91,12 @@ ms.openlocfilehash: 16d75ebd2499e56af742c1c9994fd92cc320c22b
 |-------|-------------|
 | [桌面应用转换器预览 (Project Centennial)](desktop-to-uwp-run-desktop-app-converter.md) | 介绍如何运行桌面应用转换器。 你可能不需要执行很多操作（如果有）即可使应用为转换过程做好准备。 |
 | [将 Windows 桌面应用程序手动转换为通用 Windows 平台 (UWP) 应用](desktop-to-uwp-manual-conversion.md) | 了解如何手动创建应用包和清单。 |
+| [已转换的桌面应用扩展](desktop-to-uwp-extensions.md) | 可以使用各种通用 Windows 平台 (UWP) API 增强已转换的桌面应用程序。 但是，除了适用于所有 UWP 应用的常规 API 之外，还有一些扩展和 API 仅适用于已转换的桌面应用。 本文将介绍这些扩展及其使用方法。 |
 | [部署和调试转换的 UWP 应用](desktop-to-uwp-deploy-and-debug.md) | 包含有助于你在转换后成功部署和调试应用的信息。 此外，如果你对某些桌面转换扩展的内部组件感兴趣，则本主题适合你。 |
 | [UWP 代码示例的桌面应用桥](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | GitHub 上演示已转换应用的功能的代码示例。 |
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

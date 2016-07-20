@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "借助自动播放功能自动启动"
 description: "可以使用自动播放功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。"
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 72e61f07c4b37488525d74ae28c9f605f20ca94c
 

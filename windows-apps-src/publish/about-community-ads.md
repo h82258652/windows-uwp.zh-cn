@@ -3,6 +3,7 @@ author: jnHs
 Description: "你可以使用其他开发人员发布的应用交叉推广你的应用。 我们将此功能称为社区广告。"
 title: "有关社区广告"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
+translationtype: Human Translation
 ms.sourcegitcommit: 90e63d53c68e25816fd1f7b532792d9ad6dc2cc6
 ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 

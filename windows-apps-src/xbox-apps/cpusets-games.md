@@ -2,6 +2,7 @@
 title: "适用于游戏开发的 CPUSets"
 description: "本文概述了通用 Windows 平台 (UWP) 新增的 CPUSets API，涵盖了对于游戏和应用程序开发相当重要的核心信息。"
 author: hammondsp
+translationtype: Human Translation
 ms.sourcegitcommit: 3cefaf4e527d2a0da412dab474a348b55ad409c9
 ms.openlocfilehash: f125ae7e268a8d35b477a1557c498762869f859b
 

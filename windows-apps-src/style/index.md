@@ -1,10 +1,11 @@
 ---
-description: "这些文章将帮助你设计和编码在各种设备和屏幕大小上易于导航且外观优美的 UWP 应用。"
+description: "了解如何依据 Windows 开发人员中心 UWP 样式指南使用颜色、版式和动作定义你的 UWP 应用的个性。"
+keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
 title: "UWP 样式指南 - Windows 应用开发"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9
+ms.sourcegitcommit: 0a7f655a6f122787873adac76ac4dec9d775a154
+ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
 
 ---
 
@@ -20,7 +21,7 @@ ms.openlocfilehash: 3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9
   <p>设计指南和代码示例通过颜色、版式和动作来告诉你如何定义 UWP 应用的个性。</p>
   </div>
   <div class="side-by-side-content-right">
-    ![Color, icon, motion, sound, and typography guidelines](images/style-header-v2.png)
+    ![颜色、图标、动作、声音和版式指南](images/style-header-v2.png)
   </div>
 </div>
 </div>
@@ -56,10 +57,18 @@ ms.openlocfilehash: 3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>[版式](typography.md)</b><br/>
-作为语言的视觉表现形式，版式的主要任务是清晰。 它的样式应永远不妨碍该目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响），对设计的用户体验有着重大作用。</p>
+作为语言的视觉表现形式，版式的主要任务是清晰。 它的样式应永远不妨碍该目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）还对该设计的用户体验有着重大作用。</p>
+   <div class="uwpd-no-bullet-list">
+   <ul>
+    <li>[字体](fonts.md)</li>
+    <li>[Segoe MDL2 图标](segoe-ui-symbol-font.md)</li>
+   </ul>
+   </div>
   </div>
+  
+  
   <div class="side-by-side-content-right">
-   <p><b>[设置控件的样式](../controls-and-patterns/styling-controls.md)</b><br/>
+   <p><b>[设置控件样式](../controls-and-patterns/styling-controls.md)</b><br/>
 可以使用 XAML 框架通过多种方式自定义应用的外观。 通过样式可以设置控件属性，并重复使用这些设置，以便保持多个控件具有一致的外观。</p>
   </div>
 </div>
@@ -68,6 +77,6 @@ ms.openlocfilehash: 3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -2,10 +2,10 @@
 Description: "下面是创建可在任何基于 Windows 10 的设备（包括手机、平板电脑和 PC）上运行的通用 Windows 应用所需的信息。"
 title: "Windows 10 应用的操作方法指南 - Windows 应用开发"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
-redirect_url: https://developer.microsoft.com/en-us/windows/develop
+redirect_url: https://developer.microsoft.com/windows/develop
 translationtype: Human Translation
-ms.sourcegitcommit: 9be74892a98765a8a45482ce3f5cc5151ab772b1
-ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 654eac5df1bd3309714348dcfc511850234bb0ae
 
 ---
 
@@ -33,7 +33,7 @@ ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
 | [设备、传感器和电源](devices-sensors\index.md) | 用于将不同设备（如打印机、相机和传感器）集成到你的通用 Windows 应用中，以便为用户提供既可靠又灵活的连接设备体验。 | 
 | [企业版](enterprise/index.md) | 了解 Windows 10 通用 Windows 平台 (UWP) 应用的关键企业功能。 |
 | [文件、文件夹和库](files/index.md) | 了解如何在文件中读取和写入文本及其他数据格式，并管理文件和文件夹。 还需了解有关应用设置的读取和写入、文件和文件夹选取器，以及诸如视频/音乐库等特殊“沙盒式”位置的信息。 |
-| [游戏和 DirectX](https://msdn.microsoft.com/en-us/library/windows/apps/mt228375.aspx) | 了解在新的通用 Windows 平台 (UWP) 上创建游戏的基础知识。 |
+| [游戏和 DirectX](https://msdn.microsoft.com/library/windows/apps/mt228375.aspx) | 了解在新的通用 Windows 平台 (UWP) 上创建游戏的基础知识。 |
 | [图形和动画](graphics/index.md) | 通过使用 UI 图形和动画增强你的通用 Windows 应用，从而以视觉方式让用户参与到用户体验中并产生兴趣。 |
 | [启动、恢复和后台任务](launch-resume/index.md) | 通过创建后台任务并注册系统生成的事件来提供相关功能，即使通用 Windows 应用已暂停或不在运行也是如此。 |
 | [地图与位置](maps-and-location/index.md) | 了解通用 Windows 应用如何点击进入必应地图服务，并生成精确的地图视觉效果，其上现在还提供 3D 鸟瞰图和街景视图。 |
@@ -48,6 +48,6 @@ ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

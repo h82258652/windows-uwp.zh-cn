@@ -1,10 +1,11 @@
 ---
-description: "本部分中的设计和编码说明可帮助你针对特定类型的输入和设备自定义 UWP 应用。"
+description: "了解如何使你的应用针对全世界用户都具有包容性和辅助性。"
+keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
 title: "UWP 应用中的可用性 - Windows 应用开发"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: f02713dfee278866af53c6dd529d2faa3e9f625c
+ms.sourcegitcommit: 5370dd078db81de606b7a4bbfcf6dd36b2280a17
+ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 
 ---
 
@@ -12,11 +13,10 @@ ms.openlocfilehash: f02713dfee278866af53c6dd529d2faa3e9f625c
 
 # UWP 应用中的可用性
 
-UWP 应用可自动处理各种各样的输入并在各种设备上运行，例如，无需执行任何额外操作即可支持触摸输入或让你的应用在手机上运行。 
+这些较小的优化额外关注了细节方面，可将良好的用户体验转换为一次能满足全球用户需求的真正具有包容性的用户体验。
 
-但是，有时你可能希望为特定类型的输入或设备优化应用。 例如，如果你要创建绘画应用，可能需要自定义处理笔输入的方式。 
+本部分中的设计和编码说明可以帮助你使你的 UWP 应用更具包容性，方法是添加辅助功能、支持全球化和本地化、允许用户自定义其体验，以及随时为用户提供帮助。
 
-本部分中的设计和编码说明可帮助你针对特定类型的输入和设备自定义 UWP 应用。 
 
 ## 辅助功能
 
@@ -198,6 +198,6 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

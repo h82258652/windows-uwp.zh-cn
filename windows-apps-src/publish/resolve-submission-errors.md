@@ -3,6 +3,7 @@ author: jnHs
 Description: "如果将应用提交到应用商店后遇到错误，必须解决这些错误才能继续进行认证过程。"
 title: "解决提交错误"
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
+translationtype: Human Translation
 ms.sourcegitcommit: e295011db20d151f54e2581f8c67014b30261eb6
 ms.openlocfilehash: cd0e1011bd1f857d8c859428ae0ff7e755db842e
 
@@ -51,6 +52,6 @@ ms.openlocfilehash: cd0e1011bd1f857d8c859428ae0ff7e755db842e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

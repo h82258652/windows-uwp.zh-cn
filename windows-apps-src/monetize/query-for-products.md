@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: "在 Windows 应用商店收集 API 中使用此方法，以获取客户在与你的 Azure AD 客户端 ID 相关联的应用中所拥有的所有产品。 你可以将查询范围设置为特定产品，或使用其他筛选器。"
 title: "查询产品"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: b8661d73487dde61b207159d11a0583700fa22bc
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 93ed2b850de22d562b16f3f10f4ca409054910d3
 
 ---
 
@@ -33,9 +34,9 @@ ms.openlocfilehash: b8661d73487dde61b207159d11a0583700fa22bc
 
 | 方法 | 请求 URI                                                 |
 |--------|-------------------------------------------------------------|
-| POST   | `https://collections.mp.microsoft.com/v6.0/collections/query` |
+| POST   | ```https://collections.mp.microsoft.com/v6.0/collections/query``` |
 
-<br/>
+<span/>
  
 ### 请求标头
 
@@ -46,7 +47,7 @@ ms.openlocfilehash: b8661d73487dde61b207159d11a0583700fa22bc
 | Content-Length | 数字 | 请求正文的长度。                                                                       |
 | Content-Type   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
 
- <br/>
+<span/>
 
 ### 请求正文
 
@@ -61,7 +62,7 @@ ms.openlocfilehash: b8661d73487dde61b207159d11a0583700fa22bc
 | ProductType      | 字符串       | 如果已指定，该服务仅返回与指定产品类型匹配的产品。 受支持的产品类型为 **Application**、**Durable** 和 **UnmanagedConsumable**。                                                                                       | 否       |
 | ValidityType      | 字符串       | 当设置为 **All** 时，将返回用户的所有产品，包括已过期的项目。 当设置为 **Valid** 时，仅返回在此时有效的产品（即，它们的状态为活动，开始日期 &lt; 现在，结束日期 &gt; 现在）。 | 不支持       |
 
-<br/> 
+<span/>
 
 UserIdentity 对象包含以下参数。
 
@@ -71,7 +72,7 @@ UserIdentity 对象包含以下参数。
 | identityValue        | 字符串 | Windows 应用商店 ID 密钥的字符串值。                                                                                                                                                                                    | 是      |
 | localTicketReference | 字符串 | 已返回产品的请求标识符。 响应正文中返回的项目将具有匹配的 *localTicketReference*。 我们建议你使用与 Windows 应用商店 ID 密钥中的 *userId* 声明相同的值。 | 是      |
 
-<br/> 
+<span/> 
 
 ProductSkuId 对象包含以下参数。
 
@@ -80,7 +81,7 @@ ProductSkuId 对象包含以下参数。
 | productId | 字符串 | Windows 应用商店目录中的存储 ID。 存储 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 | 是      |
 | SkuID     | 字符串 | Windows 应用商店目录中的 SKU ID。 SKU ID 的一个示例为“0010”。                                                                                                                                                                                                                                                | 是      |
 
-<br/> 
+<span/>
 
 ### 请求示例
 
@@ -124,7 +125,7 @@ Content-Type: application/json
 | ContinuationToken | 字符串                   | 如果有多组产品，此令牌将在达到页面限制时返回。 你可以在后续调用中指定此延续令牌以检索剩余 产品。 | 否       |
 | 项目             | CollectionItemContractV6 | 指定用户的产品的数组。                                                                                                                                               | 否       |
 
-<br/> 
+<span/> 
 
 CollectionItemContractV6 对象包含以下参数。
 
@@ -154,7 +155,7 @@ CollectionItemContractV6 对象包含以下参数。
 | Tags                 | 字符串             | 不适用                                                                                                                                                | 是      |
 | transactionId        | guid               | 因购买此项目而产生的事务 ID。 可 用于将项目报告为已完成。                                       | 是      |
 
-<br/> 
+<span/> 
 
 IdentityContractV6 对象包含以下参数。
 
@@ -163,7 +164,7 @@ IdentityContractV6 对象包含以下参数。
 | IdentityType  | 字符串 | 包含值**“pub”**。                                                      | 是      |
 | identityValue | 字符串 | 指定的 Windows 应用商店 ID 密钥的 *publisherUserId* 字符串值。 | 是      |
 
-<br/> 
+<span/> 
 
 ### 响应示例
 
@@ -216,6 +217,6 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

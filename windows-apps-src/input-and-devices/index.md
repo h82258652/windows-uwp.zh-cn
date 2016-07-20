@@ -1,10 +1,11 @@
 ---
-description: "针对特定类型的输入和设备自定义 UWP 应用。"
-title: "输入和设备设计 – Windows 应用开发"
+description: "针对特定类型的输入和设备自定义 UWP 应用。 充分利用触摸和语音命令。 在 Xbox、手机甚至是电视上运行你的应用。"
+title: "UWP 应用输入和设备设计 – Windows 应用开发"
 author: mijacobs
+keywords: device primer, app inputs, customize UWP application
 translationtype: Human Translation
-ms.sourcegitcommit: fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9
-ms.openlocfilehash: f2055318fe67a0af2bcc009c6f9782029f9032f1
+ms.sourcegitcommit: 350de23331f7fe951304ba877c40e07feb424adc
+ms.openlocfilehash: 2d3f0588b56b26e125652c12eeca3028bfe6573e
 
 ---
 

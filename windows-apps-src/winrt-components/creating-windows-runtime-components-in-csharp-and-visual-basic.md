@@ -3,6 +3,7 @@ author: msatranjr
 title: "使用 C# 和 Visual Basic 创建 Windows 运行时组件"
 description: "从 .NET Framework 4.5 开始，你可以使用托管代码创建自己的在 Windows 运行时组件中打包的 Windows 运行时类型。"
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
 
@@ -137,31 +138,31 @@ ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
 > End Function
 > ```
 
- [!div class="tabbedCodeSnippets"] **警告** JavaScript 允许你将任何值传递到 OverloadExample，并且将该值强制转换为参数所需的类型。 你可以通过“四十二”、“42”或“42.3”调用 OverloadExample，但所有这些值均会传递到默认重载。
+ **警告** JavaScript 允许你将任何值传递到 OverloadExample，并且将该值强制转换为参数所需的类型。 你可以通过“四十二”、“42”或“42.3”调用 OverloadExample，但所有这些值均会传递到默认重载。 之前示例中的默认重载分别返回 0、42 和 42。
 
-之前示例中的默认重载分别返回 0、42 和 42。 你无法将 DefaultOverloadAttribute 属性应用到构造函数。
+你无法将 DefaultOverloadAttribute 属性应用到构造函数。 类中的所有构造函数必须具有不同数量的参数。
 
-## 类中的所有构造函数必须具有不同数量的参数。
+## 实现 IStringable
 
 
-实现 IStringable 从 Windows 8.1 开始，Windows 运行时包括 IStringable 接口，该接口的一项方法 IStringable.ToString 提供的基本格式支持可与 Object.ToString 提供的格式支持相媲美。
+从 Windows 8.1 开始，Windows 运行时包括 IStringable 接口，该接口的一项方法 IStringable.ToString 提供的基本格式支持可与 Object.ToString 提供的格式支持相媲美。 如果你确实选择在 Windows 运行时组件中导出的公共托管类型中实现 IStringable，将会应用以下限制：
 
--   如果你确实选择在 Windows 运行时组件中导出的公共托管类型中实现 IStringable，将会应用以下限制：
+-   仅可以在“类实现”关系中定义 IStringable 接口，例如以下使用 C# 编写的代码：
 
     ```cs
     public class NewClass : IStringable
     ```
 
-    仅可以在“类实现”关系中定义 IStringable 接口，例如以下使用 C# 编写的代码：
+    或以下 Visual Basic 代码：
 
     ```vb
     Public Class NewClass : Implements IStringable
     ```
 
--   或以下 Visual Basic 代码：
 -   不能在接口上实现 IStringable。
 -   不能将参数声明为属于类 IStringable。
 -   IStringable 不能是方法、属性或字段的返回类型。
+-   不能使用如下方法定义从基类隐藏 IStringable 实现：
 
     ```cs
     public class NewClass : IStringable
@@ -173,20 +174,20 @@ ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
     }
     ```
 
-    不能使用如下方法定义从基类隐藏 IStringable 实现： 相反，IStringable.ToString 实现必须始终重写基类实现。
+    相反，IStringable.ToString 实现必须始终重写基类实现。 你仅可以通过在强类型的类实例上调用 ToString 实现来隐藏它。
 
-你仅可以通过在强类型的类实例上调用 ToString 实现来隐藏它。
+请注意，在许多情况下，对实现 IStringable 或隐藏其 ToString 实现的托管类型的本地代码调用会产生意外行为。
 
-## 请注意，在许多情况下，对实现 IStringable 或隐藏其 ToString 实现的托管类型的本地代码调用会产生意外行为。
+## 异步操作
 
 
-异步操作
+若要在组件中实现异步方法，请将“Async”添加到方法名称的末尾并返回一个表示异步操作的 Windows 运行时接口：IAsyncAction、IAsyncActionWithProgress&lt;TProgress&gt;、IAsyncOperation&lt;TResult&gt; 或 IAsyncOperationWithProgress&lt;TResult, TProgress&gt;。
 
-若要在组件中实现异步方法，请将“Async”添加到方法名称的末尾并返回一个表示异步操作的 Windows 运行时接口：IAsyncAction、IAsyncActionWithProgress&lt;TProgress&gt;、IAsyncOperation&lt;TResult&gt; 或 IAsyncOperationWithProgress&lt;TResult, TProgress&gt;。 你可以使用 .NET Framework 任务（[Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 类和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 类）实现异步方法。 必须返回表示操作正在运行的任务，例如从使用 C# 或 Visual Basic 编写的异步方法返回的任务或从 [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) 方法返回的任务。
+你可以使用 .NET Framework 任务（[Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 类和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 类）实现异步方法。 必须返回表示操作正在运行的任务，例如从使用 C# 或 Visual Basic 编写的异步方法返回的任务或从 [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) 方法返回的任务。 如果你使用构造函数创建任务，必须在返回它之前调用其 [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) 方法。
 
-如果你使用构造函数创建任务，必须在返回它之前调用其 [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) 方法。 使用 await（在 Visual Basic 中是 Await）的方法需要 **async** 关键字（在 Visual Basic 中是 **Async**）。
+使用 await（在 Visual Basic 中是 Await）的方法需要 **async** 关键字（在 Visual Basic 中是 **Async**）。 如果从 Windows 运行时组件公开此类方法，请将 **async** 关键字应用于传递到 Run 方法的委托。
 
-如果从 Windows 运行时组件公开此类方法，请将 **async** 关键字应用于传递到 Run 方法的委托。 对于不支持取消和进度报告的异步操作，你可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) 或 [AsAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779745.aspx) 扩展方法来在相应的接口中打包任务。 例如，以下代码通过使用 Task.Run&lt;TResult&gt; 方法启动任务来实现异步方法。
+对于不支持取消和进度报告的异步操作，你可以使用 [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) 或 [AsAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779745.aspx) 扩展方法来在相应的接口中打包任务。 例如，以下代码通过使用 Task.Run&lt;TResult&gt; 方法启动任务来实现异步方法。 AsAsyncOperation&lt;TResult&gt; 扩展方法将任务返回为 Windows 运行时异步操作。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -211,7 +212,7 @@ ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
 > End Function
 > ```
 
-AsAsyncOperation&lt;TResult&gt; 扩展方法将任务返回为 Windows 运行时异步操作。 [!div class="tabbedCodeSnippets"] 以下 JavaScript 代码介绍如何使用 [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) 对象调用该方法。
+以下 JavaScript 代码介绍如何使用 [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) 对象调用该方法。 然后，传递到该方法的函数在完成异步调用时执行。 stringList 参数包含 DownloadAsStringAsync 方法返回的字符串列表，并且该函数会执行处理所需的任何操作。
 
 ```javascript
 function asyncExample(id) {
@@ -223,9 +224,9 @@ function asyncExample(id) {
 }
 ```
 
-然后，传递到该方法的函数在完成异步调用时执行。 stringList 参数包含 DownloadAsStringAsync 方法返回的字符串列表，并且该函数会执行处理所需的任何操作。
+对于支持取消和进度报告的异步操作，请使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 类生成启动的任务，并将任务的取消和进度报告功能与相应的 Windows 运行时接口的取消和进度报告功能连接起来。 有关支持取消和进度报告的示例，请参阅[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。
 
-对于支持取消和进度报告的异步操作，请使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 类生成启动的任务，并将任务的取消和进度报告功能与相应的 Windows 运行时接口的取消和进度报告功能连接起来。 有关支持取消和进度报告的示例，请参阅[演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。 请注意，即使异步方法不支持取消或进度报告，也可以使用 AsyncInfo 类的方法。 如果你使用 Visual Basic lambda 函数或 C# 匿名方法，则不要为令牌和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 接口提供参数。
+请注意，即使异步方法不支持取消或进度报告，也可以使用 AsyncInfo 类的方法。 如果你使用 Visual Basic lambda 函数或 C# 匿名方法，则不要为令牌和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 接口提供参数。 如果你使用 C# lambda 函数，则提供令牌参数，但忽略它。 在改为使用 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) 方法重载时，使用了 AsAsyncOperation&lt;TResult&gt; 方法的上一示例与此类似：
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -250,46 +251,46 @@ function asyncExample(id) {
 > End Function
 > ```
 
-如果你使用 C# lambda 函数，则提供令牌参数，但忽略它。
+如果你创建可以选择支持取消或进度报告的异步方法，请考虑添加缺少取消令牌或 IProgress&lt;T&gt; 接口的参数的重载。
 
-## 在改为使用 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) 方法重载时，使用了 AsAsyncOperation&lt;TResult&gt; 方法的上一示例与此类似：
+## 引发异常
 
 
-[!div class="tabbedCodeSnippets"] 如果你创建可以选择支持取消或进度报告的异步方法，请考虑添加缺少取消令牌或 IProgress&lt;T&gt; 接口的参数的重载。
+你可以引发任何包括在适用于 Windows 应用的 .NET 中的异常类型。 你无法在 Windows 运行时组件中声明自己的公共异常类型，但可以声明并引发非公共类型。
 
-引发异常 你可以引发任何包括在适用于 Windows 应用的 .NET 中的异常类型。
+如果组件不处理异常，将在调用组件的代码中引发相应异常。 向调用方显示异常的方式取决于调用语言支持 Windows 运行时的方式。
 
--   你无法在 Windows 运行时组件中声明自己的公共异常类型，但可以声明并引发非公共类型。 如果组件不处理异常，将在调用组件的代码中引发相应异常。 向调用方显示异常的方式取决于调用语言支持 Windows 运行时的方式。
+-   在 JavaScript 中，异常显示为堆栈跟踪替换异常消息的对象。 在 Visual Studio 中调试应用时，你可以看到显示在调试器异常对话框中标识为“WinRT 信息”的原始消息文本。 无法从 JavaScript 代码访问原始消息文本。
 
-    > 在 JavaScript 中，异常显示为堆栈跟踪替换异常消息的对象。 在 Visual Studio 中调试应用时，你可以看到显示在调试器异常对话框中标识为“WinRT 信息”的原始消息文本。
+    > **提示** 目前，堆栈跟踪包含托管的异常类型，但我们不推荐分析跟踪来标识异常类型。 改为使用 HRESULT 值，如本部分后面所述。
 
--   无法从 JavaScript 代码访问原始消息文本。 **提示** 目前，堆栈跟踪包含托管的异常类型，但我们不推荐分析跟踪来标识异常类型。 改为使用 HRESULT 值，如本部分后面所述。 在 C++ 中，异常显示为平台异常。 如果托管异常的 HResult 属性能够映射到特定平台异常的 HRESULT，将使用该特定异常；否则，将引发 [Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) 异常。
--   托管异常的消息文本不适用于 C++ 代码。
+-   在 C++ 中，异常显示为平台异常。 如果托管异常的 HResult 属性能够映射到特定平台异常的 HRESULT，将使用该特定异常；否则，将引发 [Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) 异常。 托管异常的消息文本不适用于 C++ 代码。 如果已引发特定平台异常，将显示该异常类型的默认消息文本；否则，将不显示任何消息文本。 请参阅[异常 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx)。
+-   在 C# 或 Visual Basic 中，异常是正常的托管异常。
 
-如果已引发特定平台异常，将显示该异常类型的默认消息文本；否则，将不显示任何消息文本。 请参阅[异常 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx)。
+在从组件引发异常时，你可以使 JavaScript 或 C++ 调用方处理异常变得更简单，方法是引发其 HResult 属性值特定于你的组件的非公共异常类型。 HRESULT 通过异常对象的编号属性提供给 JavaScript 调用方，并通过 [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) 属性提供给 C++ 调用方。
 
-> 在 C# 或 Visual Basic 中，异常是正常的托管异常。 在从组件引发异常时，你可以使 JavaScript 或 C++ 调用方处理异常变得更简单，方法是引发其 HResult 属性值特定于你的组件的非公共异常类型。
+> **注意** 为 HRESULT 使用负值。 正值解释为成功，并且在 JavaScript 或 C++ 调用方中没有引发任何异常。
 
-## HRESULT 通过异常对象的编号属性提供给 JavaScript 调用方，并通过 [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) 属性提供给 C++ 调用方。
-
-**注意** 为 HRESULT 使用负值。 正值解释为成功，并且在 JavaScript 或 C++ 调用方中没有引发任何异常。 声明和引发事件
+## 声明和引发事件
 
 在你声明类型以保留事件数据时，请从 Object 而非 EventArgs 派生，因为 EventArgs 不属于 Windows 运行时类型。 使用 [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) 作为事件类型，并将事件参数类型用作泛型类型参数。 就像在 .NET Framework 应用程序中一样引发该事件。
 
 在通过 JavaScript 或 C++ 使用 Windows 运行时组件时，事件遵循这些语言期望的 Windows 运行时事件模式。 在通过 C# 或 Visual Basic 使用组件时，事件显示为普通的 .NET Framework 事件。 [演练：使用 C# 或 Visual Basic 创建简单组件并通过 JavaScript 调用它]()中提供了示例。
 
-## 如果要实现自定义事件访问器（在 Visual Basic 中通过 **Custom** 关键字声明事件），必须在实现中遵循 Windows 运行时事件模式。
+如果要实现自定义事件访问器（在 Visual Basic 中通过 **Custom** 关键字声明事件），必须在实现中遵循 Windows 运行时事件模式。 请参阅 [Windows 运行时组件中的自定义事件和事件访问器](custom-events-and-event-accessors-in-windows-runtime-components.md)。 请注意，在通过 C# 或 Visual Basic 代码处理事件时，它仍显示为普通的 .NET Framework 事件。
+
+## 后续步骤
 
 
-请参阅 [Windows 运行时组件中的自定义事件和事件访问器](custom-events-and-event-accessors-in-windows-runtime-components.md)。 请注意，在通过 C# 或 Visual Basic 代码处理事件时，它仍显示为普通的 .NET Framework 事件。 后续步骤
+在创建了 Windows 运行时组件以供自己使用后，你可能会发现它封装的功能对其他开发人员也很有用。 若要打包组件以分配给其他开发人员，你有两个选择。 请参阅[分配托管的 Windows 运行时组件](https://msdn.microsoft.com/library/jj614475.aspx)。
 
-在创建了 Windows 运行时组件以供自己使用后，你可能会发现它封装的功能对其他开发人员也很有用。
+有关 Visual Basic 和 C# 语言功能以及 Windows 运行时的 .NET Framework 支持的详细信息，请参阅 [Visual Basic 和 C# 语言参考](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx)。
 
-## 若要打包组件以分配给其他开发人员，你有两个选择。
+## 相关主题
 
-* [请参阅[分配托管的 Windows 运行时组件](https://msdn.microsoft.com/library/jj614475.aspx)。](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [有关 Visual Basic 和 C# 语言功能以及 Windows 运行时的 .NET Framework 支持的详细信息，请参阅 [Visual Basic 和 C# 语言参考](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx)。](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [相关主题](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [适用于 Windows 应用商店应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [适用于 UWP 应用的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
 

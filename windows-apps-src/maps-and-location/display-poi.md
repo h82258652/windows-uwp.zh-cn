@@ -3,6 +3,7 @@ author: msatranjr
 title: "在地图上显示兴趣点 (POI)"
 description: "使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。"
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
 ms.openlocfilehash: 6f21f9bf9c909d0f89a663cdda05934ad9b4011b
 

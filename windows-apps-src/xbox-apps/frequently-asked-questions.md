@@ -3,8 +3,9 @@ author: Mtoepke
 title: "常见问题"
 description: "有关 Xbox 上的 UWP 的常见问题。"
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: 34e186049039d5a8366f34e985ad7250ef664f00
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 01173aeabb74d6d703597a9bd7a48c179c688c07
 
 ---
 
@@ -20,9 +21,9 @@ ms.openlocfilehash: 34e186049039d5a8366f34e985ad7250ef664f00
 
 首先要确认是在开发人员模式下运行，而不是在零售模式下运行。 你无法连接到在零售模式下运行的 Xbox One。 只需按“主页”****按钮并查看你屏幕右侧的“开发人员主页”磁贴，即可对此问题进行检查。 如果你看到的不是该磁贴，而是金会员/Live 内容，这表明你处于零售模式。 若要切换到开发人员模式，需要运行“开发人员模式激活”应用。
 
-> **注意** &nbsp;&nbsp;必须进行用户登录才可以部署应用。
+> **注意**&nbsp;&nbsp;必须进行用户登录才能部署应用。
 
-有关详细信息，请参阅本页面后面的[修复部署失败](frequently-asked-questions.md#fixing-deployment-failures)。
+有关详细信息，请参阅此页面后面部分的[修复部署失败](frequently-asked-questions.md#fixing-deployment-failures)。
 
 ### 如何在零售模式和开发人员模式之间切换？
 
@@ -63,9 +64,9 @@ This means that some popular games and apps will not work as expected and you ma
 
 ### 我是否可以发布我的游戏？
 
-你可以在开发人员模式下使用 UWP 和你的 Xbox One，以便在 Xbox One 上生成和测试你的游戏。 若要发布 UWP 游戏，你必须注册 [ID@XBOX](http://www.xbox.com/en-us/Developers/id)。 
-[ID@XBOX](http://www.xbox.com/en-us/Developers/id) 向开发人员提供适用于其游戏的 Xbox Live API 的完整访问权限，包括玩家分数和成就以及在设备之间畅玩多人游戏、云存储和 Xbox One 上 Xbox Live 的所有功能。 
-[ID@XBOX](http://www.xbox.com/en-us/Developers/id) 还可以为需要访问 Xbox One 硬件最大潜能的游戏提供对 Xbox One 开发工具包的访问权限。
+你可以在开发人员模式下使用 UWP 和你的 Xbox One，以便在 Xbox One 上生成和测试你的游戏。 若要发布 UWP 游戏，你必须注册 [ID@XBOX](http://www.xbox.com/Developers/id)。 
+[ID@XBOX](http://www.xbox.com/Developers/id) 向开发人员提供适用于其游戏的 Xbox Live API 的完整访问权限，包括玩家分数和成就以及在设备之间畅玩多人游戏、云存储和 Xbox One 上 Xbox Live 的所有功能。 
+[ID@XBOX](http://www.xbox.com/Developers/id) 还可以为需要访问 Xbox One 硬件最大潜能的游戏提供对 Xbox One 开发工具包的访问权限。
 
 ### 标准的游戏引擎会奏效吗？
 
@@ -87,7 +88,7 @@ This means that some popular games and apps will not work as expected and you ma
 
 如果无法从 Visual Studio 部署你的应用，以下步骤可能有助于你修复该问题。 如果你遇到问题，请通过论坛寻求帮助。
 
-> **注意** &nbsp;&nbsp;必须进行用户登录才可以部署应用。 如果收到 0x87e10008 错误消息，请确保已进行用户登录，然后再试一次。
+> **注意**&nbsp;&nbsp;必须进行用户登录才能部署应用。 如果收到 0x87e10008 错误消息，请确保已进行用户登录，然后再试一次。
 
 如果 Visual Studio 无法连接到你的 Xbox One：
 
@@ -97,9 +98,9 @@ This means that some popular games and apps will not work as expected and you ma
 3. 如果尚未执行此操作，请通读[开发环境设置](development-environment-setup.md)主题和 [Xbox One 工具简介](introduction-to-xbox-tools.md)主题。
 
 4. 确保可以从你的开发电脑对你的主机 IP 地址执行“ping”操作。
-> **注意** &nbsp;&nbsp;为了获得最佳部署性能，我们建议你采用有线连接方式连接你的主机。
+> **注意**&nbsp;&nbsp;为了获得最佳部署性能，我们建议你采用有线连接方式连接你的主机。
 
-5. 确保使用的是“调试”****选项卡上身份验证下拉列表中的“通用(未加密协议)”。 有关更多详细信息，请参阅[开发环境设置](development-environment-setup.md)。
+5. 确保使用的是“调试”****选项卡上的“身份验证”下拉列表中的“通用(未加密协议)”。 有关更多详细信息，请参阅[开发环境设置](development-environment-setup.md)。
 
 <!--6. Make sure you are not hitting a PIN pairing issue; see "Visual Studio/Xbox PIN pairing failures" in the [Known Issues](known-issues.md) topic.-->
 
@@ -134,6 +135,6 @@ TVHelpers 是一套 JavaScript 和 XAML/C# 示例和库，可帮助你使用 Jav
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

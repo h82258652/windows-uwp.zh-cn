@@ -4,8 +4,8 @@ title: "xDeferLoadStrategy 属性"
 description: "xDeferLoadStrategy 会延迟元素及其子元素的创建，这将减少启动时间，不过内存使用量会略有增加。 每个受影响的元素将向内存使用量添加大约 600 个字节。"
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a5230a92ad919fc52c40c19646ff799453e64fa4
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
 
 -   需要一个已定义的 [x:Name](x-name-attribute.md)，因为之后需要有一种方法来找到该元素。
 -   仅 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 才能标记为延迟，派生自 [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) 的类型除外。
--   根元素既不能在 [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol) 中延迟，也不能在 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中延迟。
+-   根元素既不能在 [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) 中延迟，也不能在 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 中延迟。
 -   [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的元素不能延迟。
 -   不能用于通过 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 加载的松动 XAML。
 -   移动父元素将清除所有尚未实现的元素。
@@ -88,6 +88,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

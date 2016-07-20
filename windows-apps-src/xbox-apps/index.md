@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Xbox One 上的 UWP"
 description: "如何在 Xbox One 上生成适用于通用 Windows 平台 (UWP) 的应用。"
 area: Xbox
-ms.sourcegitcommit: b94df28172a0ffa33e69e7d20c83c715a1bfdb52
-ms.openlocfilehash: d50602cf6ba7041d34200e8bc93a14188038b5ae
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b615eaab90ef43026baedd0113ad28f43bede343
 
 ---
 
@@ -12,7 +13,7 @@ ms.openlocfilehash: d50602cf6ba7041d34200e8bc93a14188038b5ae
 
 在 Xbox One 上生成适用于通用 Windows 平台 (UWP) 的应用入门。
 
-此预览版支持开发应用和游戏。 你无需是 [ID@Xbox](http://www.xbox.com/en-us/Developers/id) 开发人员即可在 Xbox 上实验、创建和测试游戏或应用，但如果想要在 Xbox One 上发布并销售游戏或利用 Windows 10 上的 Xbox Live，则必须注册 [ID@Xbox](http://www.xbox.com/en-us/Developers/id)。 若要加入独立开发人员和爱好者社区，请注册 [ID@Xbox](http://www.xbox.com/en-us/Developers/id)。 
+此预览版支持开发应用和游戏。 你无需是 [ID@Xbox](http://www.xbox.com/Developers/id) 开发人员即可在 Xbox 上实验、创建和测试游戏或应用，但如果想要在 Xbox One 上发布并销售游戏或利用 Windows 10 上的 Xbox Live，则必须注册 [ID@Xbox](http://www.xbox.com/Developers/id)。 若要加入独立开发人员和爱好者社区，请注册 [ID@Xbox](http://www.xbox.com/Developers/id)。 
 
 本部分包括设置步骤、身份验证过程指南、有关安装所需的 Visual Studio 版本和 Windows 10 工具的信息，以及生成、运行和调试你的第一个简单应用程序的步骤。 
 
@@ -22,8 +23,8 @@ ms.openlocfilehash: d50602cf6ba7041d34200e8bc93a14188038b5ae
 |[新增功能](whats-new.md)| 突出显示 Xbox One 开发者预览版上的 UWP 中的新功能。 |
 |[已知问题](known-issues.md)| Xbox One 开发者预览版上的 UWP 已知问题。 |
 |[常见问题](frequently-asked-questions.md)| 与 Xbox One 上的 UWP 相关的常见问题。 |
-|[Xbox One 开发人员模式激活](devkit-activation.md)| 解释如何在 Xbox One 上启用开发人员模式。 |
-|[Xbox One 工具简介](introduction-to-xbox-tools.md)| 介绍了 Xbox One 特定工具_“开发人员主页”_、使用 Windows Device Portal 以及设置 Visual Studio 以供开发，并且指导新开发人员完成第一个 Xbox UWP 应用程序。 |
+|[Xbox One 开发人员模式激活](devkit-activation.md)| 说明如何在 Xbox One 上启用开发人员模式。 |
+|[工具](introduction-to-xbox-tools.md)| 介绍特定于 Xbox One 的工具 _Dev Home_、如何使用 Windows Device Portal 以及如何设置 Visual Studio 以进行开发。 本部分还指导新开发人员完成他们的第一个 Xbox UWP 应用程序，并说明如何使用 Fiddler 工具来查看网络流量。 |
 |[在 Xbox 开发环境上设置你的 UWP](development-environment-setup.md)| 介绍了设置和测试 Xbox One 开发环境的步骤。 |
 |[最佳做法](tailoring-for-xbox.md)| 如何关闭鼠标模式、绘制到屏幕的边缘和禁用缩放。 |
 |[用于 Xbox One 上 UWP 应用和游戏的系统资源](system-resource-allocation.md)| 介绍了应用程序在 Xbox One 上运行时可用的资源。 | 
@@ -42,6 +43,6 @@ ms.openlocfilehash: d50602cf6ba7041d34200e8bc93a14188038b5ae
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

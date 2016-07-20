@@ -3,8 +3,9 @@ author: msatranjr
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: "应用功能声明"
 description: "功能必须在你的通用 Windows 平台 (UWP) 应用的程序包清单中声明，以便可用于访问某些 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。"
-ms.sourcegitcommit: 747cdcecfa04005ee4512007bef95059bd81fb56
-ms.openlocfilehash: c3c70afbeab95fa967d5e7bb4b6dc9a9a66b6a39
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 1ac48bd816cb2702adcb78ab00335d4f3533a1b3
 
 ---
 # 应用功能声明
@@ -13,7 +14,7 @@ ms.openlocfilehash: c3c70afbeab95fa967d5e7bb4b6dc9a9a66b6a39
 
 功能必须在你的通用 Windows 平台 (UWP) 应用的[程序包清单](https://msdn.microsoft.com/library/windows/apps/BR211474)中声明，以便可用于访问某些 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。
 
-可以通过在应用的[程序包清单](https://msdn.microsoft.com/library/windows/apps/BR211474)中声明功能来请求对特定资源或 API 的访问权限。 可以使用 Microsoft Visual Studio 中的[清单设计器](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx)来声明常用功能，也可以手动添加它们。 有关详细信息，请参阅[如何在程序包清单中指定功能](https://msdn.microsoft.com/library/windows/apps/BR211477)。 请务必了解，当客户从应用商店获取你的应用时，会向它们告知该应用声明的所有功能。 请避免声明你的应用不需要的功能。
+可以通过在应用的[程序包清单](https://msdn.microsoft.com/library/windows/apps/BR211474)中声明功能来请求对特定资源或 API 的访问权限。 可以使用 Microsoft Visual Studio 中的[清单设计器](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)来声明常用功能，也可以手动添加它们。 有关详细信息，请参阅[如何在程序包清单中指定功能](https://msdn.microsoft.com/library/windows/apps/BR211477)。 请务必了解，当客户从应用商店获取你的应用时，会向它们告知该应用声明的所有功能。 请避免声明你的应用不需要的功能。
 
 某些功能为应用提供对*敏感资源*的访问权限。 由于这些资源可用于访问用户私人数据或花费用户金钱，因此它们被认为是敏感资源。 由“设置”应用管理的隐私设置允许用户动态控制对敏感资源的访问权限。 因此，你的应用不会假设敏感资源始终可用，这一点很重要。 有关访问敏感资源的详细信息，请参阅[隐私感知应用指南](https://msdn.microsoft.com/library/windows/apps/Hh768223)。 已注释用于为应用提供对*敏感资源*的访问权限的功能，即此类功能应用场景的旁边会有一个星号 (*)。
 
@@ -160,7 +161,7 @@ ms.openlocfilehash: c3c70afbeab95fa967d5e7bb4b6dc9a9a66b6a39
 
 ## 相关主题
 
-* [清单设计器](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx)
+* [清单设计器](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)
 * [隐私感知应用指南](https://msdn.microsoft.com/library/windows/apps/Hh768223)
 * [如何在程序包清单中指定功能](https://msdn.microsoft.com/library/windows/apps/BR211477)
 * [如何在包清单中指定设备功能](https://msdn.microsoft.com/library/windows/apps/Dn263092)
@@ -168,6 +169,6 @@ ms.openlocfilehash: c3c70afbeab95fa967d5e7bb4b6dc9a9a66b6a39
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

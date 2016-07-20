@@ -5,8 +5,9 @@ ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: "在 Windows 10 中设计非独占软件"
 label: Designing inclusive software
 template: detail.hbs
-ms.sourcegitcommit: ea4d413e0b2ade1429d255afbc6a1a73ea308051
-ms.openlocfilehash: 6f1c0663034f81bb0ddfe42c04fbe60562b45c1c
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: cdd41595ee2727c0eeefab7b041c1adfefc15dfa
 
 ---
 
@@ -18,7 +19,7 @@ ms.openlocfilehash: 6f1c0663034f81bb0ddfe42c04fbe60562b45c1c
 
 这一新设计理念称为非独占设计。 该想法是在设计软件的最开始就考虑到所有人。 这与将辅助功能视为在开发过程末尾为满足一小群用户而补上的技术相反。
 
-“我们将残障定义为个体的需求与所提供的服务、产品或环境之间的不匹配。 任何人都可能遇到残障的情况。 这是一个需要排除的常见人体特征。”  \- 来自[非独占](https://www.microsoft.com/en-us/design/inclusive)视频  
+“我们将残障定义为个体的需求与所提供的服务、产品或环境之间的不匹配。 任何人都可能遇到残障的情况。 这是一个需要排除的常见人体特征。”  \- 来自[非独占](https://www.microsoft.com/design/inclusive)视频  
 
 非独占设计为所有人创造更好的产品。 它与考虑整个人类多样性有关。 考虑你现在在大部分街角人行道上发现路边切口。 它们之前明显是供坐轮椅的人使用的。 但是，现在几乎每个人都使用它们，包括推着婴儿车、骑着脚踏车和玩滑板的人。 甚至行人通常也会使用路边切口，因为它们随时提供更好的体验。 可以将电视遥控器视为面向身体不便人士的辅助技术 (AT)。 而如今几乎不可能买到没有遥控器的电视。 在孩子们学会绑鞋带之前，他们可穿易脱穿的或易固定的鞋子。 在日常生活中通常首选易穿脱的鞋子，因为在进入家门前需脱掉鞋子。 它们也适合于行动不便的人士，如关节炎患者或者甚至是手腕骨折的人士。
 
@@ -69,7 +70,7 @@ Microsoft 致力于进行计算机科学和软件工程研究，目的是增强�
 2.  在 UI 中的自定义控件和标准控件之间标识清晰的边界  
 3.  确定 UI 各部分如何协同交互  
 
-逻辑层次结构是处理任何潜在的可用性问题的绝佳方法。 如果你无法以相对简单的方式设置 UI 结构，则你可能遇到可用性问题。 简单对话框的逻辑表示形式不应导致图页面。 对于变得过深或过宽的逻辑层次结构，你可能需要重新设计你的 UI。 有关详细信息，请下载[针对辅助功能设计软件](https://www.microsoft.com/en-us/download/details.aspx?id=19262)电子书。  
+逻辑层次结构是处理任何潜在的可用性问题的绝佳方法。 如果你无法以相对简单的方式设置 UI 结构，则你可能遇到可用性问题。 简单对话框的逻辑表示形式不应导致图页面。 对于变得过深或过宽的逻辑层次结构，你可能需要重新设计你的 UI。 有关详细信息，请下载[针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)电子书。  
 
 ### 设计相应的可视 UI 设置  
 在设计可视 UI 时，请确保你的产品具有高对比度设置、使用默认系统字体和平滑选项、正确缩放到每英寸点数 (DPI) 屏幕设置、具有与背景对比度比率至少为 5:1 的默认文本，并且具有便于色觉障碍用户区分的颜色组合。
@@ -96,18 +97,18 @@ Windows 中的内置辅助功能之一是高对比度模式，该模式可增强
 2.  当你针对要求设计解决方案时，请尽量使用你的框架所提供的控件（标准控件），并避免任何不必要的自定义控件工作和成本。  
 3.  为产品设计逻辑层次结构时，注意标准控件、任何自定义控件以及键盘焦点在 UI 中的位置。  
 4.  将有用的系统设置（如键盘导航、高对比度和高 DPI）设计到产品中。  
-5.  使用 [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/en-us/windows/accessible-apps)和你的框架的辅助功能规范作为参考点，实现你的设计。  
+5.  使用 [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)和你的框架的辅助功能规范作为参考点，实现你的设计。  
 6.  通过具有特殊需求的用户测试产品，以确保他们能够充分利用在其中实现的非独占设计技术。  
 7.  交付已完成的产品，并为可能在你之后继续从事该项目的人员记录你的实现。  
 
 ## 相关主题  
 * [非独占设计](http://design.microsoft.com/inclusive)
-* [针对辅助功能设计软件](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
-* [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/en-us/windows/accessible-apps)
+* [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
 * [开发非独占 Windows 应用](developing-inclusive-windows-apps.md)  
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

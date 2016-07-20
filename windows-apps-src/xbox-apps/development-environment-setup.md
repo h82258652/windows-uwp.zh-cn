@@ -3,6 +3,7 @@ author: Mtoepke
 title: "在 Xbox 开发环境上设置你的 UWP"
 description: "在 Xbox 开发环境上设置和测试你的 UWP 的步骤。"
 area: Xbox
+translationtype: Human Translation
 ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
 ms.openlocfilehash: d56206f990e7885af4935401356bd3a2ce2cd292
 

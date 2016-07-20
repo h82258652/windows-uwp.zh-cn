@@ -4,8 +4,8 @@ ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
 title: "获取电池信息"
 description: "了解如何使用 Windows.Devices.Power 命名空间中的 API 获取电池的详细信息。"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 716123f7401350748c7eb81a2ca4208a74b6e4ac
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 9b1394c28b25b8b1b7401fcc794659dcf38fed6f
 
 ---
 # 获取电池信息
@@ -44,7 +44,7 @@ private void RequestAggregateBatteryReport()
 
 ## 获取单个电池报告
 
-还可以为各个电池创建 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象。 将 [**GetDeviceSelector**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.battery.getdeviceselector.aspx) 方法与 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432) 方法结合使用，以获取表示已连接至设备的任何电池控制器的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象集合。 然后，通过所需 **DeviceInformation** 对象的 **Id** 属性，使用 [**FromIdAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.battery.fromidasync.aspx) 方法来创建相应的 [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004)。 最后，调用 [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) 以获取单个电池报告。
+还可以为各个电池创建 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象。 将 [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getdeviceselector.aspx) 方法与 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432) 方法结合使用，以获取表示已连接至设备的任何电池控制器的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象集合。 然后，通过所需 **DeviceInformation** 对象的 **Id** 属性，使用 [**FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.fromidasync.aspx) 方法来创建相应的 [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004)。 最后，调用 [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) 以获取单个电池报告。
 
 此示例显示了如何为所有连接到设备的电池创建电池报告。
 
@@ -73,7 +73,7 @@ async private void RequestIndividualBatteryReports()
 
 ## 访问报告详细信息
 
-[**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象提供了大量电池信息。 有关详细信息，请参阅其属性的 API 参考：**Status**（[**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458) 枚举）、[**ChargeRateInMilliwatts**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)、[**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)、[**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx) 和 [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 此示例显示了一些基本电池应用所使用的电池报告属性，这将在本主题后面介绍。
+[**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 对象提供了大量电池信息。 有关详细信息，请参阅其属性的 API 参考：**Status**（[**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458) 枚举）、[**ChargeRateInMilliwatts**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)、[**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)、[**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx) 和 [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 此示例显示了一些基本电池应用所使用的电池报告属性，这将在本主题后面介绍。
 
 ```csharp
 ...
@@ -339,6 +339,6 @@ namespace App1
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

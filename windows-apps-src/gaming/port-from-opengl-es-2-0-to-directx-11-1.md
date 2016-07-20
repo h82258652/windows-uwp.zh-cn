@@ -3,6 +3,7 @@ author: mtoepke
 title: "从 OpenGL ES 2.0 移植到 Direct3D 11"
 description: "包含有关将 OpenGL ES 2.0 图形管道移植到 Direct3D 11 和 Windows 运行时的文章、概述以及演练。"
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
+translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
 ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
 

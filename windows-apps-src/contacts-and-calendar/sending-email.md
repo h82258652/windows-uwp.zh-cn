@@ -4,6 +4,7 @@ description: "显示如何启动撰写电子邮件对话框以允许用户发送
 title: "发送电子邮件"
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, email, send
+translationtype: Human Translation
 ms.sourcegitcommit: 252e144b2436f047f7b0849bb6e5aee87b2e3464
 ms.openlocfilehash: ff0d2cd86f8ba422db7a26565c52293a3e21a018
 

@@ -4,8 +4,8 @@ ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: "向线程池提交工作项"
 description: "了解如何通过向线程池提交工作项，在单独的线程中完成工作。"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: afb6d8b1b1ee5eeb99ba68e8b842436bd58619d0
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
 
 ---
 # 向线程池提交工作项
@@ -197,7 +197,7 @@ m_workItem = asyncAction;
 
 ## 处理工作项完成
 
-通过设置工作项的 [**IAsyncAction.Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) 属性来提供完成处理程序。 提供委派（可使用 lambda 或 delegate 函数）来处理工作项的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 访问 UI 线程并显示结果。
+通过设置工作项的 [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) 属性来提供完成处理程序。 提供委派（可使用 lambda 或 delegate 函数）来处理工作项的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 访问 UI 线程并显示结果。
 
 以下示例使用在步骤 1 中所提交工作项的结果更新 UI：
 
@@ -263,6 +263,6 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

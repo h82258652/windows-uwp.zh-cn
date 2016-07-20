@@ -3,6 +3,7 @@ author: jnHs
 Description: "如果你的应用使用 AdMediatorControl 或 AdControl 显示横幅广告，可通过在应用中显示 Microsoft 关联广告来提高广告填充率和收益。"
 title: "软件包外部测试版"
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
+translationtype: Human Translation
 ms.sourcegitcommit: 9e62a7aa18950f7e1cc26b42762e3bb937c389ac
 ms.openlocfilehash: c538da2a58f38925938b9e28ec7ca65cdb9858a3
 

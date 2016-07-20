@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "启动 Windows 应用商店应用"
 description: "本主题介绍了 ms-windows-store URI 方案。 你的应用可以使用此 URI 方案将 Windows 应用商店应用启动到应用商店中的特定页面。"
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
 

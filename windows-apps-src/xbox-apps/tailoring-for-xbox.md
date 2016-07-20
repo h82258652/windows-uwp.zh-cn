@@ -3,8 +3,9 @@ author: payzer
 title: "适用于 Xbox 的最佳做法"
 description: "如何针对 Xbox 优化你的应用程序。"
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: ef0fef1dd43444771add4ed6d9db1300f8d33210
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: bf3f89d29b947c39f818de297556cc438da8901a
 
 ---
 
@@ -21,9 +22,9 @@ ms.openlocfilehash: ef0fef1dd43444771add4ed6d9db1300f8d33210
 默认情况下，应用程序会缩放到 200%（如果你使用的是 XAML），或缩放到 150%（适用于 HTML）。 可以关闭自动缩放。  [了解详细信息](disable-scaling.md)
 
 ## 针对 Xbox 和电视进行设计
-有关设计做法的信息，请参阅[针对 Xbox 和电视进行设计](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)主题。
+有关设计做法的信息，请参阅[针对 Xbox 和电视进行设计](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)主题。
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

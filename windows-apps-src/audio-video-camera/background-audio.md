@@ -3,6 +3,7 @@ author: drewbatgit
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
 description: "本文介绍了如何创建可在后台播放音频的通用 Windows 平台 (UWP) 应用。"
 title: "后台音频"
+translationtype: Human Translation
 ms.sourcegitcommit: 99d1ffa637fd8beca5d1e829cc7cacc18a9c21e9
 ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
 

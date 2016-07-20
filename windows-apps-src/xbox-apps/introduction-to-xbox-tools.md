@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Xbox One 工具简介"
 description: "特定于 Xbox One 且使用 Windows Device Portal 的工具“开发人员主页”。"
 area: Xbox
-ms.sourcegitcommit: 914a1b76c6b502415bee36865af009a8dfe9bb53
-ms.openlocfilehash: e2f87cdeb8ce3371a34bb989e5fa29ef63d18621
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
 
 ---
 
@@ -87,9 +88,9 @@ ms.openlocfilehash: e2f87cdeb8ce3371a34bb989e5fa29ef63d18621
 ### 设置控制台的主机名
 在开发电脑上与控制台通信时，可以为 Xbox One 开发人员工具包设置友好名称（称为_“主机名”_）以用作控制台 IP 地址的替代项。 开发电脑和开发人员工具包必须位于相同子网上才能让主机名连接正常工作。  
 
-若要定义一个开发人员工具包的主机名，请转到控制台设置工具，并在“主机名”____框中键入主机名。  
+若要定义一个开发工具包的主机名，请转到主机设置工具，并在“主机名”____框中键入主机名。  
 
-  > **注意** &nbsp;&nbsp;创建主机名时，不需要该名称是唯一名称。 务必避免名称重复。 达到此目的的一种方法是从开发计算机名称中派生主机名，开发计算机名称通常在组织中是唯一的。
+  > **注意**&nbsp;&nbsp;创建主机名时，不需要该名称是唯一名称。 请注意避免名称重复。 达到此目的的一种方法是从开发计算机名称中派生主机名，开发计算机名称通常在组织中是唯一的。
 
 ## Windows Device Portal
 Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 OneCore 设备管理工具。
@@ -114,7 +115,8 @@ Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 One
   ![安全证书警告](images/security_cert_warning.jpg)
 
 ## 另请参阅
-- [Microsoft 开发人员技术：Windows Device Portal](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-xbox)
+- [在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One](uwp-fiddler.md)
+- [Microsoft 开发人员技术：Windows Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox)
 - [Xbox One 上的 UWP](index.md)
 
 
@@ -123,6 +125,6 @@ Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 One
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

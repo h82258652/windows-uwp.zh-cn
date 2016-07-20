@@ -3,8 +3,9 @@ author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: "使用画笔"
 description: "Brush 对象用于绘制形状、文本和控件各个部分的内部或轮廓，以便所绘制的对象在 UI 中可见。"
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 
 ---
 # 使用画笔
@@ -164,7 +165,7 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 对于 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) 和 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101)，请使用默认的构造函数，然后在尝试使用用于 UI 属性的该画笔前调用其他 API。
 
--   在你使用代码定义 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 时，[**ImageSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) 需要 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235)（而非 URI）。 如果源是一个流，请使用 [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) 方法来初始化该值。 如果源是一个 URI，（其中包含应用中使用 **ms-appx** 或 **ms-resource** 方案的内容），请使用采用 URI 的 [**BitmapImage**](https://msdn.microsoft.com/en-us/library/windows/apps/br243238.aspx) 构造函数。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) 事件。
+-   在你使用代码定义 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 时，[**ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) 需要 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235)（而非 URI）。 如果源是一个流，请使用 [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) 方法来初始化该值。 如果源是一个 URI，（其中包含应用中使用 **ms-appx** 或 **ms-resource** 方案的内容），请使用采用 URI 的 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx) 构造函数。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) 事件。
 -   对于 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703)，如果你最近已重设 [**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) 属性或者如果 [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 的内容也随代码更改，则可能需要调用 [**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx)。
 
 有关代码示例，请参阅 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) 和 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 的参考页面。
@@ -178,6 +179,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

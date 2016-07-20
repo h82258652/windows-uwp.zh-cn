@@ -5,6 +5,7 @@ title: "超链接"
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
@@ -53,7 +54,7 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ![作为文本元素的超链接示例](images/controls_hyperlink-element.png) 
 
-> **提示** &nbsp;&nbsp;当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
+> **提示** &nbsp;&nbsp;当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="default"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
 
 ## 创建 HyperlinkButton
 
@@ -154,6 +155,6 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

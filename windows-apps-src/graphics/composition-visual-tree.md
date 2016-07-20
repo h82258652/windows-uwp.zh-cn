@@ -3,6 +3,7 @@ author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: "合成可视化树"
 description: "合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。"
+translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
 ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 

@@ -3,8 +3,9 @@ author: jnHs
 Description: "应用提交过程的“提要”部分是你提供文本和图像的地方，客户将在应用的应用商店一览中看到这些内容。"
 title: "创建应用提要"
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
-ms.sourcegitcommit: 447beeae917b03dea2538e74fd9cd8ef48b0f41f
-ms.openlocfilehash: ca85f55e12713903dbbee0a4e247cfb1a51c17d3
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: bd10b94cdb3e16e8a6165610fb77adcdaca5b0a4
 
 ---
 
@@ -117,10 +118,10 @@ ms.openlocfilehash: ca85f55e12713903dbbee0a4e247cfb1a51c17d3
 
 如果你有针对你的应用的隐私策略，请在此处输入隐私策略的 URL。 你有责任确保你的应用符合隐私法律法规的相关规定，并提供隐私策略（如果需要）。
 
-**重要提示** Microsoft 不会为你的应用提供默认的隐私策略。 同样，你的应用也不在任何 Microsoft 隐私策略的涵盖范围之内。 若要确定你的应用是否需要隐私策略，请查看[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)和 [Windows 应用商店策略](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_5_1)。
+**重要提示** Microsoft 不会为你的应用提供默认的隐私策略。 同样，你的应用也不在任何 Microsoft 隐私策略的涵盖范围之内。 若要确定你的应用是否需要隐私策略，请查看[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)和 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)。
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,6 +3,7 @@ description: "本文介绍如何支持在通用 Windows 平台 (UWP) 应用中�
 title: "复制和粘贴"
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
 ms.openlocfilehash: 3e3ba8811f4fac283164143aad88913aaabbee49
 
@@ -103,6 +104,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

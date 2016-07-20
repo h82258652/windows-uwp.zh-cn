@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "处理取消的后台任务"
 description: "了解如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。"
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 
@@ -46,7 +47,7 @@ OnCanceled 方法需要具有以下占用：
 >    }
 > ```
 
-[!div class="tabbedCodeSnippets"] 将一个名为 **\_CancelRequested** 的标志变量添加到后台任务类。
+将一个名为 **\_CancelRequested** 的标志变量添加到后台任务类。 此变量将用于指示何时发出取消请求。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -57,9 +58,9 @@ OnCanceled 方法需要具有以下占用：
 >     volatile bool CancelRequested;
 > ```
 
-此变量将用于指示何时发出取消请求。
+在步骤 1 中创建的 OnCanceled 方法中，将标志变量 **\_CancelRequested** 设置为 **true**。
 
-[!div class="tabbedCodeSnippets"]
+完整[后台任务示例]( http://go.microsoft.com/fwlink/p/?linkid=227509) OnCanceled 方法将 **\_CancelRequested** 设置为 **true** 并编写可能有用的调试输出：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -85,7 +86,7 @@ OnCanceled 方法需要具有以下占用：
 >     }
 > ```
 
-在步骤 1 中创建的 OnCanceled 方法中，将标志变量 **\_CancelRequested** 设置为 **true**。 完整[后台任务示例]( http://go.microsoft.com/fwlink/p/?linkid=227509) OnCanceled 方法将 **\_CancelRequested** 设置为 **true** 并编写可能有用的调试输出：
+在后台任务的 Run 方法中，在开始工作之前注册 OnCanceled 事件处理程序方法。 例如，使用以下代码行：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -95,14 +96,14 @@ OnCanceled 方法需要具有以下占用：
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## 通过退出 Run 方法来处理取消
 
 
-在后台任务的 Run 方法中，在开始工作之前注册 OnCanceled 事件处理程序方法。
+当收到取消请求时，Run 方法需要通过识别 **\_cancelRequested** 何时设置为 **true** 来停止工作并退出。
 
-例如，使用以下代码行： [!div class="tabbedCodeSnippets"]
+修改后台任务的代码以在它工作时检查该标志变量。 如果 **\_cancelRequested** 设置为 true，则停止工作。
 
-通过退出 Run 方法来处理取消
+[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包含一个检查，该检查在后台任务取消时停止定期计时器回调：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -132,11 +133,11 @@ OnCanceled 方法需要具有以下占用：
 >     }
 > ```
 
-> 当收到取消请求时，Run 方法需要通过识别 **\_cancelRequested** 何时设置为 **true** 来停止工作并退出。 修改后台任务的代码以在它工作时检查该标志变量。
+> **注意** 上面所示的代码示例使用用于记录后台任务进度的 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) 属性。 使用 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 类将进度报告回应用。
 
-如果 **\_cancelRequested** 设置为 true，则停止工作。
+修改 Run 方法以便停止工作后，它记录该任务是已完成还是已取消。
 
-[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包含一个检查，该检查在后台任务取消时停止定期计时器回调：
+[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)将状态记录在 LocalSettings 中：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -200,15 +201,15 @@ OnCanceled 方法需要具有以下占用：
 >     }
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## 备注
 
-**注意** 上面所示的代码示例使用用于记录后台任务进度的 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) 属性。
+你可以下载[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)以在方法上下文中查看这些代码示例。
 
-使用 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 类将进度报告回应用。
+为了便于说明，示例代码只显示[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)的部分 Run 方法（以及回调计时器）。
 
-## 修改 Run 方法以便停止工作后，它记录该任务是已完成还是已取消。
+## Run 方法示例
 
-[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)将状态记录在 LocalSettings 中：
+下面显示了不同上下文的[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)中的完整 Run 方法和计时器回调代码：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -327,23 +328,23 @@ OnCanceled 方法需要具有以下占用：
 > }
 > ```
 
-> [!div class="tabbedCodeSnippets"] 备注
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 你可以下载[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)以在方法上下文中查看这些代码示例。
+## 相关主题
 
-* [为了便于说明，示例代码只显示[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)的部分 Run 方法（以及回调计时器）。](create-and-register-a-background-task.md)
-* [Run 方法示例](declare-background-tasks-in-the-application-manifest.md)
-* [下面显示了不同上下文的[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)中的完整 Run 方法和计时器回调代码：](guidelines-for-background-tasks.md)
-* [[!div class="tabbedCodeSnippets"]](monitor-background-task-progress-and-completion.md)
-* [**注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。](register-a-background-task.md)
-* [如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。](respond-to-system-events-with-background-tasks.md)
-* [相关主题](run-a-background-task-on-a-timer-.md)
-* [创建和注册后台任务](set-conditions-for-running-a-background-task.md)
-* [在应用程序清单中声明后台任务](update-a-live-tile-from-a-background-task.md)
-* [后台任务指南](use-a-maintenance-trigger.md)
+* [创建和注册后台任务](create-and-register-a-background-task.md)
+* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
+* [后台任务指南](guidelines-for-background-tasks.md)
+* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+* [注册后台任务](register-a-background-task.md)
+* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
+* [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
+* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
+* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
+* [使用维护触发器](use-a-maintenance-trigger.md)
 
-* [监视后台任务进度和完成](debug-a-background-task.md)
-* [注册后台任务](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [调试后台任务](debug-a-background-task.md)
+* [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 

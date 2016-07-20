@@ -6,8 +6,8 @@ title: "开发非独占 Windows 10 应用"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 77c401fd9686cb260e7b2d9e4bdf47a91d76802e
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 826c6984962ecbe3b49ba3753e9cc795344f5057
 
 ---
 
@@ -44,7 +44,7 @@ ms.openlocfilehash: 77c401fd9686cb260e7b2d9e4bdf47a91d76802e
 
 若要了解有关 UI 元素之间的键盘导航的详细信息，请参阅[键盘辅助功能](keyboard-accessibility.md)。  
 
-此外，[针对辅助功能设计软件](https://www.microsoft.com/en-us/download/details.aspx?id=19262)电子书包含有关此主题的出色章节，标题为_设计逻辑层次结构_。
+此外，[针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)电子书包含有关此主题的出色章节，标题为_设计逻辑层次结构_。
 
 ## 颜色和对比度  
 Windows 中的内置辅助功能之一是高对比度模式，该模式可增强计算机屏幕上的文本和图像的颜色对比度。 对于某些人来说，增加颜色对比度可以降低眼睛疲劳并且更易于阅读。 当你在高对比度下验证 UI 时，你要检查是否已使用系统颜色（而不是硬编码颜色）为控件一致编码，以确保他们能够在屏幕上看到不使用高对比度的用户所看到的所有控件。  
@@ -53,7 +53,7 @@ XAML
 ```xml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
-有关使用系统颜色和资源的详细信息，请参阅 [XAML 主题资源](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-theme-resources)。
+有关使用系统颜色和资源的详细信息，请参阅 [XAML 主题资源](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)。
 
 只要你未替代系统颜色，UWP 应用在默认情况下就支持高对比度主题。 如果用户已经选择他们希望系统使用系统设置或辅助功能工具中的高对比度主题，则框架将自动使用为 UI 中的控件和组件生成高对比度布局和呈现的颜色和样式设置。   
 
@@ -80,11 +80,11 @@ XAML
 * [设计非独占软件](designing-inclusive-software.md)  
 * [非独占设计](http://design.microsoft.com/inclusive)
 * [要避免的辅助功能做法](practices-to-avoid.md)
-* [针对辅助功能设计软件](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
+* [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 辅助功能开发人员中心](https://msdn.microsoft.com/enable)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

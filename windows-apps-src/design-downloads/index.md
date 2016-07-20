@@ -1,10 +1,11 @@
 ---
-description: "适用于 UWP 应用的设计和 UI 相关下载。"
+description: "获取适用于 UWP 应用用户界面布局和控件设计的最新下载和工具。"
+keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
 title: "适用于 UWP 应用的设计下载 - Windows 应用开发"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 4101b60c0f640fd54d67a8e57f0a06622c6ec85c
+ms.sourcegitcommit: 1370af75dcd45d52d0d31f57acb958d366f9bee5
+ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 
 ---
 
@@ -108,6 +109,6 @@ ms.openlocfilehash: 4101b60c0f640fd54d67a8e57f0a06622c6ec85c
 <b>想要更多代码？</b> 有关我们的所有 UWP 应用示例的完整列表，请查看 Windows 示例页。 [转到示例门户](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

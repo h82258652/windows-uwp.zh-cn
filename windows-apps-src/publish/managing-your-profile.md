@@ -4,13 +4,13 @@ ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: "管理你的帐户设置和个人资料信息"
 description: "你可以在统一 Windows 开发人员中心仪表板的“帐户设置”部分中，查看和更新你的开发者帐户设置和个人资料信息。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3d82caac353eb7cb63692469c5951be1f392ff52
+ms.sourcegitcommit: a9aae8fdc3cb4eaf151934a773a7cc3e6ced177f
+ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
 
 ---
 # 管理你的帐户设置和个人资料信息
 
-你可以在[帐户设置](https://msdn.microsoft.com/library/windows/apps/Mt169843)的“帐户设置”****部分中，查看和更新你的开发者帐户设置和个人资料信息。
+你可以在 [Windows 开发人员中心仪表板](https://msdn.microsoft.com/library/windows/apps/Mt169843)的“帐户设置”****部分中，查看和更新你的开发者帐户设置和个人资料信息。
 
 ## 帐户设置
 
@@ -32,11 +32,11 @@ ms.openlocfilehash: 3d82caac353eb7cb63692469c5951be1f392ff52
 
 本部分还包含指向[设置付款帐户和税单](https://msdn.microsoft.com/library/windows/apps/Bg124529)的链接。 你将需要先执行此操作，然后才可以收取应用或应用内产品 (IAP) 的费用。
 
-某些程序可能提供让你扩展帐户功能的代码；可以在**“帐户设置”**中输入这些内容。 本页面还允许你查看有关[解锁用于测试的任何 Windows Phone 8 或 Windows Phone 8.1 设备](http://go.microsoft.com/fwlink/p/?LinkId=533897)的详细信息，并启用或禁用用于 Visual Studio Application Insights 的应用使用情况遥测。
+某些程序可能提供让你扩展帐户功能的代码；可以在“帐户设置”****中输入这些内容。 此页面还允许你查看[已解锁用于测试的任何 Windows Phone 8 或 Windows Phone 8.1 设备](http://go.microsoft.com/fwlink/p/?LinkId=533897)的详细信息，并选择加入或退出[开发人员中心会员计划](dev-center-insider-program.md)。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

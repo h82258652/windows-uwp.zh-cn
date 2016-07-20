@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Xbox One 上的 UWP 应用开发入门"
 description: "如何针对 UWP 开发设置电脑和 Xbox One。"
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: b070b6bec350c3c893f934e212b1de743b349861
+translationtype: Human Translation
+ms.sourcegitcommit: 5f050eee9430dc7aaa2738a4610a2c4f5083839d
+ms.openlocfilehash: 92a9cc54c6257c35b1e7ae19838b01c8452c4b36
 
 ---
 
@@ -23,9 +24,9 @@ ms.openlocfilehash: b070b6bec350c3c893f934e212b1de743b349861
 ## 设置你的开发电脑
 1.  安装 Visual Studio 2015 Update 2。 确保你选择“自定义”****安装并选中“通用 Windows 应用开发工具”****复选框，它不是默认安装的一部分。 有关详细信息，请参阅[开发环境设置](development-environment-setup.md)（此外，如果你是 C++ 开发人员，请确保选择自定义安装并同时选择 C++）。
 
-2.  安装最新的 Windows 10 SDK 预览版。 你可以从 [Windows 预览体验计划](http://go.microsoft.com/fwlink/p/?LinkId=780552)获取此版本。
+2.  安装最新的 Windows 10 SDK 预览版。 你可以从 [Windows 预览体验计划](http://go.microsoft.com/fwlink/p/?LinkId=780552)获取它。
   
-  > **重要提示** &nbsp;&nbsp;在电脑上安装此预览版 SDK 将阻止你向应用商店提交在此电脑上生成的应用，因此请不要在生产开发电脑上执行此操作。 
+  > **重要提示**&nbsp;&nbsp;在电脑上安装此预览版 SDK 将使你无法向应用商店提交在此电脑上生成的应用，因此请不要在生产开发电脑上执行此操作。 
 
 ## 设置 Xbox One 主机
 1.  在 Xbox One 上激活开发人员模式。 下载应用、获取激活代码、将其输入开发人员中心帐户中的 xboxactivate 页面。 有关详细信息，请参阅[在 Xbox One 上启用开发人员模式](devkit-activation.md)。 
@@ -34,9 +35,9 @@ ms.openlocfilehash: b070b6bec350c3c893f934e212b1de743b349861
 
 3.  转到开发人员模式激活应用，然后选择“切换并重启”****。 恭喜，你现在具有处于开发人员模式下的 Xbox One！
   
-  > **注意** &nbsp;&nbsp;你的零售游戏和应用不会在开发人员模式下运行，但你创建的应用或游戏会在该模式下运行。 切换回零售模式以运行你最喜爱的游戏和应用。
+  > **注意**&nbsp;&nbsp;你的零售游戏和应用不会在开发人员模式下运行，但你创建的应用或游戏会在该模式下运行。 切换回零售模式以运行你最喜爱的游戏和应用。
   
-  > **注意** &nbsp;&nbsp;必须先在该主机上进行用户登录，然后才能在开发人员模式下将应用部署到你的 Xbox One。 可以使用你的现有 Xbox Live 帐户，也可以在开发人员模式中为你的主机创建一个新帐户。 
+  > **注意**&nbsp;&nbsp;必须先在该主机上进行用户登录，然后才能在开发人员模式下将应用部署到你的 Xbox One。 可以使用你的现有 Xbox Live 帐户，也可以在开发人员模式中为你的主机创建新帐户。 
 
 ## 在 Visual Studio 2015 中创建你的第一个项目
 
@@ -54,9 +55,11 @@ ms.openlocfilehash: b070b6bec350c3c893f934e212b1de743b349861
   
 5.  在配对后，你的应用将开始部署。 你第一次执行此操作时可能有点慢（我们将所有工具复制到 Xbox），但是如果它不只需要几分钟，则可能出现了某些错误。 请确保你已遵循以上所有步骤（尤其是你是否已将“身份验证”****设置为“通用”****？），并且你正在使用与 Xbox One 的有线网络连接。  
 
-6. 坐下来放松。 享受你的第一个在控制台上运行的应用！  
-   ![Hello World](images/getting-started-hello-world.png)
-   
+6. 坐下来放松。 享受你的第一个在主机上运行的应用！  
+
+## 就这么简单！
+
+![Hello World](images/getting-started-hello-world.png)
 
 ## 另请参阅  
 - [常见问题](frequently-asked-questions.md)  
@@ -65,6 +68,6 @@ ms.openlocfilehash: b070b6bec350c3c893f934e212b1de743b349861
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,6 +3,7 @@ author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: "开设开发者帐户"
 description: "有关如何为 Windows 应用商店和其他 Microsoft 计划注册开发者帐户的此概述将有助于你了解设置帐户的过程。"
+translationtype: Human Translation
 ms.sourcegitcommit: c4a753b7642354c4fe42cff721fb21337b14528f
 ms.openlocfilehash: 979df6390fef01a32fb1728956622fbfe38bafa9
 

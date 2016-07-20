@@ -1,10 +1,11 @@
 ---
-description: "这些文章将帮助你设计和编码在各种设备和屏幕大小上易于导航且外观优美的 UWP 应用。"
-title: "布局设计 – Windows 应用开发"
+description: "了解如何设计和编码在各种设备和屏幕大小上易于导航且外观优美的 UWP 应用。"
+title: "UWP 应用布局设计 – Windows 应用开发"
 author: mijacobs
+keywords: uwp app layout, universal windows platform, app design, interface
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 35a8f78420256cb2da02d7fd4720939a16676600
+ms.sourcegitcommit: fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9
+ms.openlocfilehash: 7a1233724b9b0fd9af709bbf114669fe102e6f0d
 
 ---
 
@@ -25,7 +26,7 @@ ms.openlocfilehash: 35a8f78420256cb2da02d7fd4720939a16676600
 在设计 UWP 应用时，可以创建一个适合具有不同屏幕大小的各种设备的用户界面。 本文概述 UWP 应用的 UI 相关功能和优势，以及用于设计响应式 UI 的一些提示和技巧。 </p>
   </div>
   <div class="side-by-side-content-right">
-    ![An app running on multiple devices](images/rspd-reposition-type1-sm.png)
+    ![在多台设备上运行的应用](images/rspd-reposition-type1-sm.png)
   </div>
 </div>
 </div>
@@ -85,6 +86,6 @@ Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

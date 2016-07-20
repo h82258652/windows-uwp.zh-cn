@@ -2,6 +2,7 @@
 author: payzer
 title: "Device Portal SMB API 参考"
 description: "了解如何以编程方式访问 SMB API。"
+translationtype: Human Translation
 ms.sourcegitcommit: 3d76bf181baa9dfd973467d43241230fddf2daf7
 ms.openlocfilehash: 5efe2af3524d97e6014c4d6be2a8f1aef22f2e66
 
@@ -54,6 +55,6 @@ HTTP 状态代码      | 说明
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

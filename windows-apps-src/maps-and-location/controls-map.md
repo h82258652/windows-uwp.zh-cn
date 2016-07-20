@@ -3,6 +3,7 @@ author: msatranjr
 Description: "地图控件可以显示道路地图和鸟瞰图、路线、搜索结果和交通。"
 title: "地图指南"
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
 ms.openlocfilehash: 3c1d37a119eca88ee443772292f8cfe97cb3c1ac
 

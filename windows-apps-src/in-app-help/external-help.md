@@ -4,6 +4,7 @@ Description: "针对有关你的应用的详细说明和建议设计外部帮助
 title: "设计外部帮助页指南"
 label: External help
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 9da639dedf46068fb1f555f90b39ab979114ebf3
 ms.openlocfilehash: 0e21737e33f33d7239162ddcf9d4cdf39db17655
 

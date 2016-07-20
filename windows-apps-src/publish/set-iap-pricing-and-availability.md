@@ -3,6 +3,7 @@ author: jnHs
 Description: "在提交 IAP 时，“定价和可用性”页上的选项决定了你的 IAP 的付费内容以及应向客户提供它的方式。"
 title: "设置 IAP 的定价和可用性"
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
+translationtype: Human Translation
 ms.sourcegitcommit: 52816584a9afbd6c8e213a182bae18732f082aef
 ms.openlocfilehash: 0e6c58f2d892f213d2de53c3cb9b97b1e8152137
 

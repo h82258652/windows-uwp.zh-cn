@@ -2,6 +2,7 @@
 Description: "介绍如何将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）手动转换为通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
 title: "将 Windows 桌面使用程序手动转换为通用 Windows 平台 (UWP) 应用"
+translationtype: Human Translation
 ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
 ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
 

@@ -4,8 +4,8 @@ title: "规划从 OpenGL ES 2.0 到 Direct3D 的移植"
 description: "如果你移植 iOS 或 Android 平台中的游戏，那么你可能需要在 OpenGL ES 2.0 方面进行大量投资。"
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 804faad3db94bda9d1d67ad899a6ba048a4bfd26
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: f1119a9faed4fca7f0538a4c92c667e5b2ba559c
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 804faad3db94bda9d1d67ad899a6ba048a4bfd26
 **重要的 API**
 
 -   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
--   [Visual C++](https://msdn.microsoft.com/en-us/library/windows/apps/60k1461a.aspx)
+-   [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
 
 如果你移植 iOS 或 Android 平台中的游戏，那么你可能需要在 OpenGL ES 2.0 方面进行大量投资。 如果你准备将你的图形管道代码库移动到 Direct3D 11 和 Windows 运行时，那么在开始之前你应该考虑以下事项。
 
@@ -73,7 +73,7 @@ Windows 运行时 API 为 UWP 应用提供整体基础结构。 [在此处](http
 -   [**Windows::ApplicationModel::Core::IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)
 -   [**Windows::ApplicationModel::Core::CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 
-此外，Windows 运行时 C++ 模板库 (WRL) 是提供创作和使用 Windows 运行时组件的低级方法模板库。 最好将 UWP 应用的 Direct3D 11 API 与该库中的接口和类型结合使用，如智能指针 ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx))。 有关 WRL 的详细信息，请阅读 [Windows 运行时 C++ 模板库(WRL)](https://msdn.microsoft.com/en-us/library/windows/apps/hh438466.aspx)。
+此外，Windows 运行时 C++ 模板库 (WRL) 是提供创作和使用 Windows 运行时组件的低级方法模板库。 最好将 UWP 应用的 Direct3D 11 API 与该库中的接口和类型结合使用，如智能指针 ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx))。 有关 WRL 的详细信息，请阅读 [Windows 运行时 C++ 模板库(WRL)](https://msdn.microsoft.com/library/windows/apps/hh438466.aspx)。
 
 ## 更改坐标系
 
@@ -120,6 +120,6 @@ Windows 运行时 API 为 UWP 应用提供整体基础结构。 [在此处](http
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

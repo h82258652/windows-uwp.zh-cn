@@ -3,20 +3,27 @@ author: v-angraf
 title: "Xbox One 上的 UWP 的新增功能"
 description: "突出显示适用于 Xbox One 应用上的 UWP 的新功能。"
 area: Xbox
-ms.sourcegitcommit: 59019f209729b56e02ebdbdfd53a8fbf835c69f7
-ms.openlocfilehash: dfa94ad42a79d0f6b3f72fbf2efe9ce043532c56
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: edc9a914f200c643b1133cf07778e2ca3931d0d9
 
 ---
 
-# 适用于 Xbox One 上的 UWP 的 2016 年 6 月开发者预览版中的新增功能
+# 适用于 Xbox One 上的 UWP 的 2016 年 7 月开发者预览版中的新增功能
 
-Xbox One 上的通用 Windows 平台 (UWP) 的 2016 年 6 月开发者预览版包含以下新功能、现有功能的更新和 Bug 修复。
+Xbox One 上的通用 Windows 平台 (UWP) 的 2016 年 7 月开发者预览版包含以下新功能、现有功能的更新和 Bug 修复。
+
+## 使用 TCP/UDP 套接字的网络现已可用  
+现在可以使用传统 TCP/UDP 套接字（WinSock、Windows.Networking.Sockets）执行主机的入站和出站网络访问。
+
+## Fiddler 支持
+对于已在 Xbox One 上启用通用 Windows 平台 (UWP) 的主机，现在可以启用 Fiddler 作为代理。 Fiddler 允许你记录和检查与 Xbox 服务和依赖方 Web 服务之间的所有 HTTP/HTTPS 流量。 有关详细信息，请参阅[在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One](uwp-fiddler.md)。
 
 ## 默认情况下，鼠标模式现在处于启用状态
 对于 XAML 和托管的 Web 应用，默认情况下，鼠标模式现在处于启用状态。
 我们强烈建议你关闭此模式，并针对方向控制器导航进行优化。
 若要了解如何关闭鼠标模式，请参阅[如何禁用鼠标模式](how-to-disable-mouse-mode.md)。
-有关如何为 Xbox 生成出色的应用的详细信息，请参阅[针对 Xbox 和电视进行设计](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)。
+有关如何为 Xbox 生成出色的应用的详细信息，请参阅[针对 Xbox 和电视进行设计](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)。
 
 ## 扩展的 UWP API 图面区域现已在主机上正常工作
 其他 UWP API 现在可以在 Xbox 主机上正常工作。 有关 UWP API 支持的详细信息，请参阅 [Xbox 上尚不支持的 UWP 功能](http://go.microsoft.com/fwlink/?LinkID=760755)。 
@@ -47,6 +54,6 @@ Xbox One 上的通用 Windows 平台 (UWP) 的 2016 年 6 月开发者预览版�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

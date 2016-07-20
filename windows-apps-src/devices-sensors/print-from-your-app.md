@@ -4,8 +4,8 @@ ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: "从应用打印"
 description: "了解如何从通用 Windows 应用中打印文档。 本主题还介绍了如何打印特定页面。"
 translationtype: Human Translation
-ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
-ms.openlocfilehash: 363c19cfc15a883c4b6d951c59c63187f4239dec
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: effb04f4bd8acdf9dfcc7847341c4a4fcc543bb5
 
 ---
 # 从应用打印
@@ -118,7 +118,7 @@ async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 
 ## 格式化应用的内容
 
-调用 **ShowPrintUIAsync** 时会引发 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件。 此步骤中显示的 **PrintTaskRequested** 事件处理程序将通过调用 [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing.printtaskrequest.createprinttask.aspx) 方法创建 [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436)，并传递打印页面的标题和 [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source) 委托的名称。 请注意，在此示例中，**PrintTaskSourceRequestedHandler** 是以内联方式定义的。 **PrintTaskSourceRequestedHandler** 提供用于打印的格式化内容，并在以后对其进行介绍。
+调用 **ShowPrintUIAsync** 时会引发 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件。 此步骤中显示的 **PrintTaskRequested** 事件处理程序将通过调用 [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtaskrequest.createprinttask.aspx) 方法创建 [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436)，并传递打印页面的标题和 [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source) 委托的名称。 请注意，在此示例中，**PrintTaskSourceRequestedHandler** 是以内联方式定义的。 **PrintTaskSourceRequestedHandler** 提供用于打印的格式化内容，并在以后对其进行介绍。
 
 在此示例中，还会定义一个完成处理程序以捕获错误。 最好对完成事件进行处理，因为，那样你的应用可以让用户知道是否发生了错误并提供可能的解决方案。 同样，你的应用可以使用完成事件来指示用户在打印作业成功之后要采取的后续步骤。
 
@@ -383,6 +383,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

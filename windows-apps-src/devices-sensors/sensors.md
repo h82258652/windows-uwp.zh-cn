@@ -4,8 +4,8 @@ ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: "传感器"
 description: "传感器使你的应用了解它周围的设备和外界之间的关系。 传感器可以告知你的应用设备的方向、定位和移动。"
 translationtype: Human Translation
-ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
-ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 15f9fbdc48d43feb02f46313cea4001392d7f0fe
 
 ---
 # 传感器
@@ -42,7 +42,7 @@ ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
 
 可以通过调整延迟影响传感器发送批量数据的频率。 例如，[**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) 传感器具有 [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) 属性。 当为应用程序设置此属性时，传感器将在指定时间间隔后发送数据。 你可以通过设置 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval) 属性，控制在给定延迟时间内积累的数据量。
 
-在设置延迟时，需要记住几点。 第一点是每个传感器都具有一个可以基于该传感器本身而支持的 [**MaxBatchSize**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx)。 这是在强制发送事件之前，传感器可以缓存的事件数。 如果将 **MaxBatchSize** 乘以 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval)，则可以确定最大的 [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) 值。 如果指定一个比此值更大的值，则将使用最大延迟，以免丢失数据。 此外，多个应用程序都可以分别设置所需的延迟时间。 为满足所有应用程序的需求，将使用最短的延迟时间。 因此，你在你的应用程序中所设置的延迟时间可能不会与观察到的延迟时间相匹配。
+在设置延迟时，需要记住几点。 第一点是每个传感器都具有一个可以基于该传感器本身而支持的 [**MaxBatchSize**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx)。 这是在强制发送事件之前，传感器可以缓存的事件数。 如果将 **MaxBatchSize** 乘以 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval)，则可以确定最大的 [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) 值。 如果指定一个比此值更大的值，则将使用最大延迟，以免丢失数据。 此外，多个应用程序都可以分别设置所需的延迟时间。 为满足所有应用程序的需求，将使用最短的延迟时间。 因此，你在你的应用程序中所设置的延迟时间可能不会与观察到的延迟时间相匹配。
 
 如果传感器使用的是批处理报告，调用 [**GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.getcurrentreading) 将会清除当前这批数据并启动新的延迟时间。
 
@@ -74,7 +74,7 @@ ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
 
 ## 指南针
 
-[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) 传感器基于地球的水平面返回与磁北相关的二维方向。 不应该将指南针传感器用于确定特定设备方向或用于表示三维空间中的任何内容。 地理功能可导致方向出现自然偏差，因此某些系统同时支持 [**HeadingMagneticNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) 和 [**HeadingTrueNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx)。 考虑你的应用将首选哪一个值，但要记住并非所有系统都会报告真北值。 陀螺测试仪和磁力计（测量磁场强度大小的设备）传感器组合其数据以生成指南针方向，该方向具有稳定数据的有效效应（由于电力系统组件，磁场强度非常不稳定）。
+[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) 传感器基于地球的水平面返回与磁北相关的二维方向。 不应该将指南针传感器用于确定特定设备方向或用于表示三维空间中的任何内容。 地理功能可导致方向出现自然偏差，因此某些系统同时支持 [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) 和 [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx)。 考虑你的应用将首选哪一个值，但要记住并非所有系统都会报告真北值。 陀螺测试仪和磁力计（测量磁场强度大小的设备）传感器组合其数据以生成指南针方向，该方向具有稳定数据的有效效应（由于电力系统组件，磁场强度非常不稳定）。
 
 ![有关磁北极的指南针读数](images/compass.png)
 
@@ -118,7 +118,7 @@ ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
 
 ## 简单方向
 
-[**SimpleOrientationSensor**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) 将检测指定设备的当前象限方向或其朝上方向或朝下方向。 它具有六个可能的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) 状态（**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**）。
+[**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) 将检测指定设备的当前象限方向或其朝上方向或朝下方向。 它具有六个可能的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) 状态（**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**）。
 
 可根据平行或垂直于地面的设备更改其显示的阅读器应用将使用 SimpleOrientationSensor 中的值，以确定如何定位该设备。
 
@@ -129,6 +129,6 @@ ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

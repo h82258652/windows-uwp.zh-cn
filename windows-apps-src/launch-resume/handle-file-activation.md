@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "处理文件激活"
 description: "应用可注册为特定文件类型的默认处理程序。"
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 9c6358bccdea55a7c3749388c35aa770f4325960
 
@@ -110,42 +111,42 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
     > **Note**  When launched via File Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
-[!div class="tabbedCodeSnippets"] 建议应用为打开新页面的每个激活事件创建一个新的 XAML 框架。 通过此方式，新 XAML 框架的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。
+建议应用为打开新页面的每个激活事件创建一个新的 XAML 框架。 通过此方式，新 XAML 框架的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。 确定针对启动和文件合约使用单个 XAML 框架的应用在导航到新页面之前，应该清除该框架的导航日志上的页面。
 
-确定针对启动和文件合约使用单个 XAML 框架的应用在导航到新页面之前，应该清除该框架的导航日志上的页面。
+通过文件激活启动后，应用应该考虑包括允许用户返回到应用顶部页面的 UI。
 
-## 通过文件激活启动后，应用应该考虑包括允许用户返回到应用顶部页面的 UI。
+## 备注
 
 
-备注 收到的文件可能来自不受信任的来源。 我们建议在对该文件采取操作之前，先对文件的内容进行验证。
+收到的文件可能来自不受信任的来源。 我们建议在对该文件采取操作之前，先对文件的内容进行验证。 有关输入验证的详细信息，请参阅[编写安全代码](http://go.microsoft.com/fwlink/p/?LinkID=142053)
 
-> 有关输入验证的详细信息，请参阅[编写安全代码](http://go.microsoft.com/fwlink/p/?LinkID=142053) **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
-## 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+## 相关主题
 
-**相关主题**
+**完整示例**
 
-* [完整示例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [关联启动示例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
 
-**关联启动示例**
+**概念**
 
-* [概念](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [默认程序](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+* [默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [文件类型和协议关联模式](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
-**文件类型和协议关联模式**
+**任务**
 
-* [任务](launch-the-default-app-for-a-file.md)
-* [启动文件的默认应用](handle-uri-activation.md)
+* [启动文件的默认应用](launch-the-default-app-for-a-file.md)
+* [处理 URI 激活](handle-uri-activation.md)
 
-**处理 URI 激活**
+**指南**
 
-* [指南](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [文件类型和 URI 的指南](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**文件类型和 URI 的指南**
-* [**参考**](https://msdn.microsoft.com/library/windows/apps/br224716)
-* [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br242331)
+**参考**
+* [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
+* [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
 
  
 

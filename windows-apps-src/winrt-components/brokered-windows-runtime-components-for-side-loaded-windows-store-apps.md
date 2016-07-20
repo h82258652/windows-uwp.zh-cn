@@ -2,6 +2,7 @@
 author: msatranjr
 title: "Windows 运行时组件"
 description: "本文讨论 Windows 10 支持的面向企业的功能，此功能允许触摸友好的 .NET 应用使用对主要关键业务操作负责的现有代码。"
+translationtype: Human Translation
 ms.sourcegitcommit: 4e9f3de68c44cf545ceee2efd99d9db8cab08676
 ms.openlocfilehash: fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569
 
@@ -578,6 +579,6 @@ struct PersonStruct
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

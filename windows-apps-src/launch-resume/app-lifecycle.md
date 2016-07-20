@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "应用生命周期"
 description: "本主题介绍通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。"
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
-ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: c35f3c4bbc33d7202769badd7a0bcdc91f39bc84
 
 ---
 
@@ -102,7 +103,7 @@ ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
 
 通常，你的应用应该在处理暂停事件时立即保存其状态并释放其资源和文件句柄，并且此代码最多只需 1 秒便可完成工作。 如果应用未在数秒内从暂停事件中返回，则 Windows 假设应用已停止响应并终止该应用。
 
-有些应用必须继续运行才能完成后台任务。 例如，你的应用可以在后台继续播放音频；有关详细信息，请参阅[后台音频](https://msdn.microsoft.com/library/windows/apps/mt282140)）。 此外，即使你的应用暂停甚至终止，后台传输操作仍将继续；有关详细信息，请参阅[如何下载文件](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)）。
+有些应用必须继续运行才能完成后台任务。 例如，你的应用可以在后台继续播放音频；有关详细信息，请参阅[后台音频](https://msdn.microsoft.com/library/windows/apps/mt282140)）。 此外，即使你的应用暂停甚至终止，后台传输操作仍将继续；有关详细信息，请参阅[如何下载文件](https://msdn.microsoft.com/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)）。
 
 有关指南，请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 
@@ -199,6 +200,6 @@ ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

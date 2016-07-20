@@ -6,8 +6,9 @@ ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: ac07ca76df874c670e7e38698e89de6620f73cc4
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 4351901984f9b1f134cfc42acbbc7f756dc6c11f
 
 ---
 
@@ -207,7 +208,7 @@ string str = "Recognition result\n";
 
 Windows 支持的一个语言综合子集可用于手写识别。
 
-有关 [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478) 支持的语言列表，请参阅 [**InkRecognizer.Name**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkrecognizer.name.aspx) 属性。
+有关 [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478) 支持的语言列表，请参阅 [**InkRecognizer.Name**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkrecognizer.name.aspx) 属性。
 
 你的应用可以查询已安装的手写识别引擎的集合，并使用其中一个引擎或让用户选择其首选语言。
 
@@ -673,6 +674,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的评价数据。"
 title: "获取应用评价"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
 
 ---
 
@@ -33,19 +34,19 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 
 | 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews``` |
 
- 
+<span/> 
 
-### 请求标头
+### 请求头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。 |
 
- 
+<span/> 
 
-### 请求正文
+### 请求参数
 
 <table>
 <colgroup>
@@ -132,10 +133,11 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 </tbody>
 </table>
 
+<span/>
  
 ### 筛选器字段
 
-请求正文中的 *filter* 参数包含的一条或多条语句用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且某些字段还支持 **contains**、**gt**、**lt**、**ge** 和 **le** 运算符。 语句可以使用 **and** 或 **or** 进行组合。
+请求中的 *filter* 参数包含一条或多条语句，用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且某些字段还支持 **contains**、**gt**、**lt**、**ge** 和 **le** 运算符。 语句可以使用 **and** 或 **or** 进行组合。
 
 下面是一个 *filter* 字符串的示例：*filter=contains(reviewText,'great') and contains(reviewText,'ads') and deviceRAM lt 2048 and market eq 'US'*
 
@@ -282,7 +284,7 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 请求示例
 
@@ -307,6 +309,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的购置数据超过 10000 行时，就会返回此值。 |
 | TotalCount | int    | 查询的数据结果中的行总数。                                                                                                                                                                                                                             |
 
+<span/>
  
 ### 评价值
 
@@ -337,7 +340,7 @@ Authorization: Bearer <your access token>
 | deviceStorageCapacity  | 数字  | 主存储器磁盘容量（以 GB 为单位）。                                                                                                                                                                                     |
 | rating                 | 数字  | 应用评分（以星级为单位）。                                                                                                                                                                                                            |
 
- 
+<span/> 
 
 ### 响应示例
 
@@ -386,6 +389,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

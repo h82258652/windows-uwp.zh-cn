@@ -3,6 +3,7 @@ author: Xansky
 description: "通过 Windows.ApplicationModel.Appointments 命名空间，你可以在用户的日历应用中创建和管理约会。"
 title: "管理约会"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
+translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
 ms.openlocfilehash: 020b020d90a52d45fa989e0f630320b4630b955e
 

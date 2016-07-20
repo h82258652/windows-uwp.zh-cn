@@ -4,8 +4,8 @@ ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: "合成画笔"
 description: "画笔通过其输出绘制 Visual 的区域。 不同的画笔具有不同的输出类型。"
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a9f30ca041d320798c7ace596bd9be37f9712129
 
 ---
 # 合成画笔
@@ -41,7 +41,7 @@ ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
 
 ## 使用颜色画笔
 
-若要创建颜色画笔，请调用 Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx) 方法，从而返回 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399)。 **CompositionColorBrush** 的默认颜色为 \#00000000。 下图和代码显示了一个较小的可视化树来创建一个矩形，该矩形用黑色画笔描边，并使用颜色值为 0x9ACD32 的纯色画笔进行绘制。
+若要创建颜色画笔，请调用 Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx) 方法，从而返回 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399)。 **CompositionColorBrush** 的默认颜色为 \#00000000。 下图和代码显示了一个较小的可视化树来创建一个矩形，该矩形用黑色画笔描边，并使用颜色值为 0x9ACD32 的纯色画笔进行绘制。
 
 ![CompositionColorBrush](images/composition-compositioncolorbrush.png)
 ```cs
@@ -79,7 +79,7 @@ LoadImage(Brush,
           "ms-appx:///Assets/liqorice.png");
 ```
 
-若要创建图面画笔，请调用 Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) 方法。 该方法返回 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 对象。 以下代码显示了可用于通过 **CompositionSurfaceBrush** 的内容绘制可视对象的代码。
+若要创建图面画笔，请调用 Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) 方法。 该方法返回 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 对象。 以下代码显示了可用于通过 **CompositionSurfaceBrush** 的内容绘制可视对象的代码。
 
 ```cs
 Compositor _compositor;
@@ -94,14 +94,14 @@ visual.Brush = _surfaceBrush;
 
 ## 配置拉伸和对齐
 
-有时，[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 的 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 的内容不能完全填充正在绘制的视觉区域。 如果出现这种情况，合成 API 将使用该画笔的 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 和 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 模式设置来确定如何填充剩余的区域。
+有时，[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 的 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) 的内容不能完全填充正在绘制的视觉区域。 如果出现这种情况，合成 API 将使用该画笔的 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 和 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 模式设置来确定如何填充剩余的区域。
 
--   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 均属于浮点类型，并且均可用于控制画笔在视觉对象边界内的定位。
+-   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 均属于浮点类型，并且均可用于控制画笔在视觉对象边界内的定位。
     -   值 0.0 指示将画笔的左/上角与可视对象的左/上角对齐
     -   值 0.5 指示将画笔的中心与可视对象的中心对齐
     -   值 1.0 指示将画笔的右/下角与可视对象的右/下角对齐
 -   [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) 属性接受 [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) 枚举定义的以下值：
-    -   None：不会为了填充可视对象边界而拉伸画笔。 请留意此拉伸设置：如果画笔超出可视对象边界， 将剪裁该画笔的内容。 可使用 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 属性 控制用于绘制可视对象边界的画笔部分。
+    -   None：不会为了填充可视对象边界而拉伸画笔。 请留意此拉伸设置：如果画笔超出可视对象边界， 将剪裁该画笔的内容。 可使用 [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) 和 [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) 属性 控制用于绘制可视对象边界的画笔部分。
     -   Uniform：画笔将缩放以填充可视对象边界；保留画笔的纵横比。 这是默认值。
     -   UniformToFill：画笔将进行缩放，以便可以完全填充可视对象边界；保留画笔的纵横比。
     -   Fill：画笔将缩放以填充可视对象边界。 因为画笔的高度和宽度是独立缩放的，所以可能不能保留画笔的原始纵横比。 也就是说，画笔可能为了完全填充可视对象边界而失真。
@@ -116,6 +116,6 @@ visual.Brush = _surfaceBrush;
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

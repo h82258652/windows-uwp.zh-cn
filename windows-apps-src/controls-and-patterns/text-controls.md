@@ -5,6 +5,7 @@ title: "文本控件"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
@@ -187,6 +188,6 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

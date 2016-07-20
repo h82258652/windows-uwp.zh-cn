@@ -3,8 +3,9 @@ author: Jwmsft
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: "情节提要动画"
 description: "情节提要动画不仅仅是视觉动画。"
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 6c900ae6e1cfde8ec7261acfc57ea19b49f2ede1
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
 
 ---
 # 情节提要动画
@@ -139,7 +140,7 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 ### From/To/By 可以为空
 
-我们之前提到过，你可以忽略 **From**、**To** 或 **By**，并因此使用当前非动画化的值作为缺失值的替代值。 动画的 **From**、**To** 或 **By** 属性的类型不能猜测。 例如，[**DoubleAnimation.To**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 属性的类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 而是 **Double** 的 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)。 并且其默认值为 **null**，而不是 0。 该 **null** 值是动画系统区别你没有特别为 **From**、**To** 或 **By** 属性设置值的方式。 Visual C++ 组件扩展 (C++/CX) 不具有 **Nullable** 类型，因此它转而使用 [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864)。
+我们之前提到过，你可以忽略 **From**、**To** 或 **By**，并因此使用当前非动画化的值作为缺失值的替代值。 动画的 **From**、**To** 或 **By** 属性的类型不能猜测。 例如，[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 属性的类型不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)。 而是 **Double** 的 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)。 并且其默认值为 **null**，而不是 0。 该 **null** 值是动画系统区别你没有特别为 **From**、**To** 或 **By** 属性设置值的方式。 Visual C++ 组件扩展 (C++/CX) 不具有 **Nullable** 类型，因此它转而使用 [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864)。
 
 ### 动画的其他属性
 
@@ -227,9 +228,9 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 如果某个动画具有以下特征的任意特征，则该动画为独立动画：
 
 -   动画的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 为 0 秒（请参阅警告）
--   动画确定 [**UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) 为目标
--   动画确定以下 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 属性的子属性值为目标：[**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980)、[**Projection**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.projection.aspx)、[**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
--   动画确定 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) 或 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) 为目标
+-   动画以 [**UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) 为目标
+-   动画以下列 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 属性的子属性值为目标：[**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)、[**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980)、[**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection.aspx)、[**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
+-   动画以 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) 或 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) 为目标
 -   动画确定 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 值为目标并使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)，为其 [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) 创建动画
 -   动画为 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)
 
@@ -262,9 +263,9 @@ Windows 运行时动画系统具有情节提要动画可以应用于的三种特
 
 到目前为止，我们向你展示的所有内容实际上都不会导致动画运行或应用！ 在动画启动和运行前，动画在 XAML 中声明的值更改都是潜在的并且尚未发生。 你必须采用某些与应用生存期或用户体验相关的方法来显式启动动画。 最简单的方法是，你可以通过在作为该动画的父动画的 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 上调用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) 方法来启动一个动画。 你不能直接通过 XAML 调用方法，因此无论你采用哪种方法启动动画，你都将通过代码来完成。 它将是页面的代码隐藏或是应用的组件，或许是控件的逻辑（如果你定义自定义控件类）。
 
-通常来说，你将调用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) 并仅仅让动画运行直至其持续时间结束。 但是，你也可以使用 [**Pause**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx)、[**Resume**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) 和 [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop) 方法在运行时控制 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)，以及用于更先进的动画控制方案的其他 API。
+通常来说，你将调用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) 并仅仅让动画运行直至其持续时间结束。 但是，你也可以使用 [**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx)、[**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) 和 [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop) 方法在运行时控制 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)，以及用于更先进的动画控制方案的其他 API。
 
-当你在包含无限重复 (`RepeatBehavior="Forever"`) 的动画的情节提要上调用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) 时，该动画将始终运行直至包含该动画的页面卸载，或者你专门调用 [**Pause**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 或 [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)。
+当你在包含无限重复 (`RepeatBehavior="Forever"`) 的动画的情节提要上调用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) 时，该动画将始终运行直至包含该动画的页面卸载，或者你专门调用 [**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 或 [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)。
 
 ### 通过应用代码启动动画
 
@@ -291,47 +292,47 @@ myStoryboard->Begin();
 myStoryBoard.Begin()
 ```
 
-[!div class="tabbedCodeSnippets"] 如果你希望在动画应用完值之后运行其他逻辑，你可以处理 [**Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) 事件。
+如果你希望在动画应用完值之后运行其他逻辑，你可以处理 [**Completed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) 事件。 同样，对于疑难解答属性系统/动画交互，[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) 方法可能十分有用。
 
-同样，对于疑难解答属性系统/动画交互，[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) 方法可能十分有用。 **提示** 在你为应用方案编写代码（其中会从应用代码启动动画）时，你可能希望再次查看动画或转换是否已存在于 UI 方案的动画库中。
-
- 
-
-### 库动画使得所有 Windows 运行时应用间的 UI 体验更加一致，并且更易于使用。
-
-视觉状态的动画 用于定义控件的视觉状态的 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的运行行为不同于应用直接运行情节提要的方式。 当应用到 XAML 中的视觉状态时，**Storyboard** 是包含的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 的元素，并且可以通过使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) API 将该状态作为整体进行控制。 当控件使用包含的 **VisualState** 时，其中的任何动画都将根据其动画值和 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 属性运行。 有关详细信息，请参阅[视觉状态的情节提要](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。 对于视觉状态，显示的 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 是不同的。
-
-### 如果视觉状态更改为另一个状态，则之前视觉状态及其动画应用的所有属性更改都将被取消，即使在新的视觉状态没有专门将新的动画应用到属性的情况下也是如此。
-
-**Storyboard** 和 **EventTrigger** 存在启动动画的一种方法，该方法可以在 XAML 中完全声明。 但是，此技术目前不再被广泛使用。 它是来自 WPF 和早期版本的 Silverlight（在 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) 支持之前）中的旧语法。 鉴于导入/兼容性原因，此 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 语法在 Windows 运行时 XAML 中仍然有效，但仅用于基于 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件的触发行为；尝试触发其他事件将引发异常或无法编译。
-
-## 有关详细信息，请参阅 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 或 [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)。
-
-创建 XAML 附加属性的动画 这不是一个常见情形，但你可以将动画值应用到 XAML 附加属性。 有关哪些附加属性及其工作原理的详细信息，请参阅[附加属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185579)。 确定附加属性目标需要括号中包含属性名的 [Property-path语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 你可以通过使用应用不连续整数值的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) 创建内置附加属性的动画，如 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/Hh759773)。
-
-## 不过，Windows 运行时 XAML 实现的现有局限性是无法创建自定义附加属性的动画。
-
-更多动画类型，以及了解有关创建 UI 动画的后续步骤 到目前为止，我们已经介绍了在两个值之间创建动画的自定义动画，然后在动画运行期间根据需要采用线性方式插入值。 它们被称为 **From**/**To**/**By** 动画。 但还有另一种动画类型可以帮助你声明介于起始和结束之间的中间值。 它们被称为*关键帧动画*。 还有一种方法可以在 **From**/**To**/**By** 动画或关键帧动画上改变插入逻辑。 这将涉及缓动函数的应用。
-
-## 有关这些概念的详细信息，请参阅[关键帧和缓动函数动画](key-frame-and-easing-function-animations.md)。
-
-* [相关主题](https://msdn.microsoft.com/library/windows/apps/Mt185586)
-* [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185583)
-* [依赖属性概述](key-frame-and-easing-function-animations.md)
-* [关键帧以及缓动函数动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
-* [视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/Mt210948)
-* [**控件模板**](https://msdn.microsoft.com/library/windows/apps/BR210490)
-* [**情节提要**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
- 
+**提示** 在你为应用方案编写代码（其中会从应用代码启动动画）时，你可能希望再次查看动画或转换是否已存在于 UI 方案的动画库中。 库动画使得所有 Windows 运行时应用间的 UI 体验更加一致，并且更易于使用。
 
  
 
+### 视觉状态的动画
+
+用于定义控件的视觉状态的 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的运行行为不同于应用直接运行情节提要的方式。 当应用到 XAML 中的视觉状态时，**Storyboard** 是包含的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 的元素，并且可以通过使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) API 将该状态作为整体进行控制。 当控件使用包含的 **VisualState** 时，其中的任何动画都将根据其动画值和 [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 属性运行。 有关详细信息，请参阅[视觉状态的情节提要](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。 对于视觉状态，显示的 [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) 是不同的。 如果视觉状态更改为另一个状态，则之前视觉状态及其动画应用的所有属性更改都将被取消，即使在新的视觉状态没有专门将新的动画应用到属性的情况下也是如此。
+
+### **Storyboard** 和 **EventTrigger**
+
+存在启动动画的一种方法，该方法可以在 XAML 中完全声明。 但是，此技术目前不再被广泛使用。 它是来自 WPF 和早期版本的 Silverlight（在 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) 支持之前）中的旧语法。 鉴于导入/兼容性原因，此 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 语法在 Windows 运行时 XAML 中仍然有效，但仅用于基于 [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) 事件的触发行为；尝试触发其他事件将引发异常或无法编译。 有关详细信息，请参阅 [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 或 [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)。
+
+## 创建 XAML 附加属性的动画
+
+这不是一个常见情形，但你可以将动画值应用到 XAML 附加属性。 有关哪些附加属性及其工作原理的详细信息，请参阅[附加属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185579)。 确定附加属性目标需要括号中包含属性名的 [Property-path语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 你可以通过使用应用不连续整数值的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) 创建内置附加属性的动画，如 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/Hh759773)。 不过，Windows 运行时 XAML 实现的现有局限性是无法创建自定义附加属性的动画。
+
+## 更多动画类型，以及了解有关创建 UI 动画的后续步骤
+
+到目前为止，我们已经介绍了在两个值之间创建动画的自定义动画，然后在动画运行期间根据需要采用线性方式插入值。 它们被称为 **From**/**To**/**By** 动画。 但还有另一种动画类型可以帮助你声明介于起始和结束之间的中间值。 它们被称为*关键帧动画*。 还有一种方法可以在 **From**/**To**/**By** 动画或关键帧动画上改变插入逻辑。 这将涉及缓动函数的应用。 有关这些概念的详细信息，请参阅[关键帧和缓动函数动画](key-frame-and-easing-function-animations.md)。
+
+## 相关主题
+
+* [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)
+* [依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)
+* [关键帧以及缓动函数动画](key-frame-and-easing-function-animations.md)
+* [视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
+* [控件模板](https://msdn.microsoft.com/library/windows/apps/Mt210948)
+* [**情节提要**](https://msdn.microsoft.com/library/windows/apps/BR210490)
+* [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
+ 
+
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,6 +3,7 @@ author: jnHs
 Description: "你可以为已在 Windows 应用商店中发布的应用和应用内产品生成促销充值码。"
 title: "生成促销充值码"
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
+translationtype: Human Translation
 ms.sourcegitcommit: df994a3bbda9f6d4df0ee2dd6c2cb646d91a0bfc
 ms.openlocfilehash: bfea802fb4a6efcfe34121802ce49f20a9b0305e
 
@@ -138,6 +139,6 @@ ms.openlocfilehash: bfea802fb4a6efcfe34121802ce49f20a9b0305e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

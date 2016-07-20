@@ -3,6 +3,7 @@ author: jnHs
 Description: "你可以在应用提交的“定价和可用性”页的“组织许可”部分中指示是否提供应用以及如何提供应用，以便通过适用于企业的 Windows 应用商店批量购买。"
 title: "组织许可选项"
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
+translationtype: Human Translation
 ms.sourcegitcommit: 13603b66bd6168073b855bbe37ea92763e14a5a0
 ms.openlocfilehash: e4adbc66b4b4a88ca3787737e9bbddf0d937b604
 

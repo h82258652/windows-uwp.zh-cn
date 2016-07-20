@@ -6,8 +6,8 @@ ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: e52a5322767677859e32ccbecf4951745c49f36f
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 4f9bc1d14db7c348e2b4dc9db2440f94d44ab4a5
 
 ---
 
@@ -121,13 +121,13 @@ ms.openlocfilehash: e52a5322767677859e32ccbecf4951745c49f36f
 请考虑以下选项：
 
 -   **直接在项目中打开资源文件，即可对其进行翻译。** 对于字符串数量较少而且需要翻译成两种或三种语言的项目，此方法比较适用。 在开发人员使用多种语言并且愿意处理翻译过程的情况下，可以使用这种方法。 这种方法的优势在于快速、无需工具并且误译的风险最小，但这种方法不可扩展。 特别是，不同语言中的资源很容易不同步，这会导致不好的用户体验和维护困难。
--   **字符串资源文件采用 XML 或 ResJSON 文本格式，因此可以使用任何文本编辑器交付它们以供翻译。 然后，再将已翻译的文件复制回项目中。** 此方法存在翻译人员意外编辑 XML 标记的风险，但它允许在 Microsoft Visual Studio 项目外进行翻译工作。 对于需要翻译成少数几种语言的项目，此方法可能比较适用。 XLIFF 格式是专门用于本地化的 XML 格式，应该可以很好地受到一些本地化供应商或本地化工具的支持。 你可以使用[多语言应用工具包](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx)从其他资源文件中（如 .resw 或 .resjson）生成 XLIFF 文件。
+-   **字符串资源文件采用 XML 或 ResJSON 文本格式，因此可以使用任何文本编辑器交付它们以供翻译。 然后，再将已翻译的文件复制回项目中。** 此方法存在翻译人员意外编辑 XML 标记的风险，但它允许在 Microsoft Visual Studio 项目外进行翻译工作。 对于需要翻译成少数几种语言的项目，此方法可能比较适用。 XLIFF 格式是专门用于本地化的 XML 格式，应该可以很好地受到一些本地化供应商或本地化工具的支持。 你可以使用[多语言应用工具包](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370.aspx)从其他资源文件中（如 .resw 或 .resjson）生成 XLIFF 文件。
 
 对于其他文件（例如，图像或音频文件），可能需要交付给本地化人员。 通常，我们不建议创建依赖于文化的文件，因为这会给进行本地化带来困难。
 
 此外，请考虑以下建议：
 
--   **使用本地化工具。** 有很多本地化工具可用于解析资源文件，并仅允许翻译人员编辑可翻译的字符串。 这种方法减少了翻译人员意外编辑 XML 标记的风险。 但它的缺点是向本地化流程中引入了新的工具和流程。 本地化工具适合具有大量字符串但需要翻译为少数语言的项目。 若要了解详细信息，请参阅[如何使用 多语言应用工具包](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx)。
+-   **使用本地化工具。** 有很多本地化工具可用于解析资源文件，并仅允许翻译人员编辑可翻译的字符串。 这种方法减少了翻译人员意外编辑 XML 标记的风险。 但它的缺点是向本地化流程中引入了新的工具和流程。 本地化工具适合具有大量字符串但需要翻译为少数语言的项目。 若要了解详细信息，请参阅[如何使用 多语言应用工具包](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370.aspx)。
 -   **使用本地化供应商。** 如果项目包含大量字符串并需要翻译为多种语言，请考虑使用本地化供应商。 本地化供应商可提供有关工具和流程的建议，并可翻译你的资源文件。 这是一种理想的解决方案，但也是花费最大的选项，并且会增加翻译内容的检查时间。
 -   **使本地化人员了解相关信息。** 通知本地化人员有关可视为名词或动词的字符串。 使用术语工具向本地化人员解释生造词。 尽量使字符串在语法上正确、无歧义，并尽量使用非技术术语以避免混淆。
 
@@ -192,6 +192,6 @@ ms.openlocfilehash: e52a5322767677859e32ccbecf4951745c49f36f
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

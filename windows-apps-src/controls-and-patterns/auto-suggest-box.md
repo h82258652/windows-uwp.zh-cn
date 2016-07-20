@@ -6,8 +6,9 @@ ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: bc3337101f0f2e8449d052743f7b3ce8d2dac516
+translationtype: Human Translation
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: 12f5905fce642a10656864e41325c8f4bd56c025
 
 ---
 # 自动建议框
@@ -144,18 +145,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
     ![无任何搜索结果的自动建议框示例](images/controls_autosuggest_noresults.png)
 
-{{&gt; 非内部内容 =“
-## 全球化和本地化清单
-
-<table>
-<tr>
-<th>垂直间距</th><td>为垂直间距使用非拉丁字符以确保非拉丁脚本能够正确显示，包括数字。</td>
-</tr>
-<tr>
-<th>滚动</th><td>当选择自动建议文本时，用户应能够滚动到字符串末尾。</td>
-</tr>
-</table>
-”}}
 
 ## 相关文章
 
@@ -168,6 +157,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

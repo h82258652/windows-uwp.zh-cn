@@ -3,8 +3,9 @@ author: jnHs
 Description: "“付款摘要”会向你显示有关通过应用和应用内产品获得的收益的详细信息。 它还使你可以知道你将何时收到付款和收到多少付款。"
 title: "付款摘要"
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
-ms.sourcegitcommit: c626a828f9cee6b23ec26fc2eaa60a6477870baf
-ms.openlocfilehash: 773a072f5656068eb6e0b2d792cf73a7ff1d16f0
+translationtype: Human Translation
+ms.sourcegitcommit: 82ff562a192aa42d383f4cd7221c495c3bfbad0f
+ms.openlocfilehash: 86355a194eb61b8d13eba22d9f6e7c566339cd28
 
 ---
 
@@ -13,9 +14,9 @@ ms.openlocfilehash: 773a072f5656068eb6e0b2d792cf73a7ff1d16f0
 
 “付款摘要”****向你显示有关你通过应用和应用内产品获得的收益的详细信息。 它还使你可以知道你将何时收到付款和收到多少付款。
 
-如果你使用 Microsoft Advertising 获取收益，自 2016 年 4 月 1 日起，还可以在“付款摘要”****中查看广告收益的付款信息。 我们显示获取这些收益所在的应用、多个应用中使用的广告单元的“未映射”应用或者是无法映射到特定应用的应用。 有关广告付款策略的更多详细信息，请参阅 [pubCenter 付款策略](http://go.microsoft.com/fwlink/p/?LinkID=624469)。
+如果你使用 Microsoft Advertising 获取收益，自 2016 年 4 月 1 日起，还可以在“付款摘要”****中查看广告收益的付款信息。 我们将显示获取这些收益所在的应用、由于在多个应用中使用的广告单元而“未映射”的应用或者本来就无法映射到特定应用的应用。 有关广告付款的更多详细信息，请参阅 [Microsoft 广告支付流程](https://msdn.microsoft.com/windows/uwp/publish/microsoft-advertising-payment-process)。
 
-如果你在 Azure Marketplace 中销售产品，还将看到自 2015 年 11 月 1 日起的成功付款信息，并可转到“付款摘要”****。 有关 Azure Marketplace 付款的更多详细信息，请参阅 [Microsoft Azure 应用商店参与策略](http://go.microsoft.com/fwlink/p/?LinkId=722436)和 [Microsoft Azure 应用商店发布者协议](http://go.microsoft.com/fwlink/p/?LinkID=699560 )。 有关查看以前 Azure Marketplace 付款信息的详细信息可以在[此处](http://go.microsoft.com/fwlink/p/?LinkID=722439)找到。
+如果你在 Azure Marketplace 中销售产品，还将在“付款摘要”****中看到自 2015 年 11 月 1 日起的成功付款信息。 有关 Azure Marketplace 付款的更多详细信息，请参阅 [Microsoft Azure 应用商店参与策略](http://go.microsoft.com/fwlink/p/?LinkId=722436)和 [Microsoft Azure 应用商店发布者协议](http://go.microsoft.com/fwlink/p/?LinkID=699560 )。 有关查看以前 Azure Marketplace 付款信息的详细信息可以在[此处](http://go.microsoft.com/fwlink/p/?LinkID=722439)找到。
 
 > **注意** 若要符合获取付款的条件，你的应用收益必须达到相应的付款阈值。 如果收益少于付款阈值，则它们将保留在“预留”类别中，直到达到此阈值。 有关更多详细信息，请参阅[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)。
 >

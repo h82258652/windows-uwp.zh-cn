@@ -3,8 +3,9 @@ author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Device Portal 核心 API 参考"
 description: "了解 Windows Device Portal 核心 REST API，可用于访问数据和以编程方式控制设备。"
-ms.sourcegitcommit: 0e36b2adbd0805d9c738de00959581417d2c1ee8
-ms.openlocfilehash: 364e19c723c6cf48a25104b5719735a533ae54a7
+translationtype: Human Translation
+ms.sourcegitcommit: 30aeffcf090c881f84331ced4f7199fd0092b676
+ms.openlocfilehash: 0fa515d28431d4256b977ee3c3c41169661f129f
 
 ---
 
@@ -1137,6 +1138,60 @@ HTTP 状态代码      | 说明
 4XX | 错误代码
 5XX | 错误代码
 <br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* Xbox
+* HoloLens
+* IoT
+
+---
+### 获取设备系列 
+
+**请求**
+
+可以使用以下请求格式来获取设备系列（Xbox、手机、台式计算机等）。
+ 
+方法      | 请求 URI
+:------     | :-----
+GET | /api/os/devicefamily
+<br />
+
+**URI 参数**
+
+- 无
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+
+响应包括设备系列（SKU - 台式计算机、Xbox 等）。
+
+```
+{
+   "DeviceType" : string
+}
+```
+
+DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。 
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+4XX | 错误代码
+5XX | 错误代码
+
 **可用设备系列**
 
 * Windows 移动版
@@ -2662,7 +2717,7 @@ GET | /api/wpr/trace
 
 **响应**
 
-- 返回跟踪 ETL 文件。
+- 无。  **注意：**这是一项运行时间较长的操作。  当 ETL 完成写入到磁盘时，它将返回。  
 
 **状态代码**
 
@@ -2715,6 +2770,161 @@ GET | /api/wpr/status
     "State": string (normal or boot)
 }
 ```
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+4XX | 错误代码
+5XX | 错误代码
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* HoloLens
+* IoT
+
+---
+### 列出已完成的跟踪会话 (ETL)
+
+**请求**
+
+可以使用以下请求格式来获取设备上的 ETL 跟踪列表。 
+
+方法      | 请求 URI
+:------     | :-----
+GET | /api/wpr/tracefiles
+<br />
+
+**URI 参数**
+
+- 无
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+
+将采用以下格式提供已完成的跟踪会话列表。
+
+```
+{"Items": [{
+    "CurrentDir": string (filepath),
+    "DateCreated": int (File CreationTime),
+    "FileSize": int (bytes),
+    "Id": string (filename),
+    "Name": string (filename),
+    "SubPath": string (filepath),
+    "Type": int
+}]}
+```
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+4XX | 错误代码
+5XX | 错误代码
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* HoloLens
+* IoT
+
+---
+### 下载跟踪会话 (ETL)
+
+**请求**
+
+可以使用以下请求格式来下载跟踪文件（启动跟踪或用户模式跟踪）。 
+
+方法      | 请求 URI
+:------     | :-----
+GET | /api/wpr/tracefile
+<br />
+
+**URI 参数**
+
+可以在请求 URI 上指定以下附加参数：
+
+URI 参数 | 说明
+:---          | :---
+文件名   | （**必需**）要下载的 ETL 跟踪的名称。  可以在 /api/wpr/tracefiles 中找到它们
+
+**请求头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+
+- 返回跟踪 ETL 文件。
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 正常
+4XX | 错误代码
+5XX | 错误代码
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* HoloLens
+* IoT
+
+---
+### 删除跟踪会话 (ETL)
+
+**请求**
+
+可以使用以下请求格式来删除跟踪文件（启动跟踪或用户模式跟踪）。 
+
+方法      | 请求 URI
+:------     | :-----
+DELETE | /api/wpr/tracefile
+<br />
+
+**URI 参数**
+
+可以在请求 URI 上指定以下附加参数：
+
+URI 参数 | 说明
+:---          | :---
+文件名   | （**必需**）要删除的 ETL 跟踪的名称。  可以在 /api/wpr/tracefiles 中找到它们
+
+**请求头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+
+- 返回跟踪 ETL 文件。
 
 **状态代码**
 
@@ -3039,11 +3249,11 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取文件
+### 下载文件
 
 **请求**
 
-获取文件夹中的文件列表。
+从已知文件夹或 appLocalData 中获取文件。
 
 方法      | 请求 URI
 :------     | :-----
@@ -3183,6 +3393,6 @@ HTTP 状态代码      | 说明
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

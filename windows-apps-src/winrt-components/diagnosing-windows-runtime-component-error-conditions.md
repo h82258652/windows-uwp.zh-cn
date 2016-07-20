@@ -3,6 +3,7 @@ author: msatranjr
 title: "诊断 Windows 运行时组件错误条件"
 description: "本文提供有关对使用托管代码编写的 Windows 运行时组件的限制的其他信息。"
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
@@ -216,7 +217,7 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
 在 UWP 中，将返回值视为输出参数，并且参数名称必须唯一。 默认情况下，Winmdexp.exe 将返回值命名为“value”。 如果方法具有名为“value”的参数，将收到错误 WME1092。 有两种方法可以更正此错误：
 
 -   将参数命名为除“value”之外的名称（在属性访问器中，使用除“returnValue”之外的名称）。
--   使用 ReturnValueNameAttribute 属性更改返回值的名称，如此处所示：
+-   使用 ReturnValueNameAttribute 属性更改返回值的名称，如下所示：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -234,20 +235,20 @@ Windows 运行时组件中的类型无法具有与命名空间相同的名称 (W
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> [!div class="tabbedCodeSnippets"]
+> **注意** 如果你更改返回值的名称，而新名称与其他参数的名称相冲突，将收到错误 WME1091。
 
-**注意** 如果你更改返回值的名称，而新名称与其他参数的名称相冲突，将收到错误 WME1091。 JavaScript 代码可以按照名称访问方法的输出参数，包括返回值。
+JavaScript 代码可以按照名称访问方法的输出参数，包括返回值。 有关示例，请参阅 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性。
 
-| 有关示例，请参阅 [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性。 | 错误编号 |
+| 错误编号 | 消息文本 |
 |---------------|------------|
-| 消息文本 | WME1091 方法“\{0}”将返回值命名为与参数名相同的“\{1}”。 |
-| Windows 运行时方法参数和返回值的名称必须唯一。 | WME1092 方法“\{0}”将参数命名为与默认返回值名相同的“\{1}”。<br/>请考虑将其他名称用于参数，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 显式指定返回值的名称。 |
+| WME1091 | 方法“\{0}”将返回值命名为与参数名相同的“\{1}”。 Windows 运行时方法参数和返回值的名称必须唯一。 |
+| WME1092 | 方法“\{0}”将参数命名为与默认返回值名相同的“\{1}”。 请考虑将其他名称用于参数，或使用 System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute 显式指定返回值的名称。<br/>**注意** 属性访问器的默认名是“returnValue”，而所有其他方法的默认名是“value”。 |
  
 
-## **注意** 属性访问器的默认名是“returnValue”，而所有其他方法的默认名是“value”。
+## 相关主题
 
-* [相关主题](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](https://msdn.microsoft.com/library/hh925576.aspx)
+* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Winmdexp.exe（Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
 

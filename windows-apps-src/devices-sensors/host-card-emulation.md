@@ -3,8 +3,9 @@ author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: "创建 NFC 智能卡应用"
 description: "Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。"
-ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: f47303826b9d2d2040a2bd2f2dbd5e2da3dd3cd0
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 1c131951d725107daffd8286e85c53acd9c0b88a
 
 ---
 # 创建 NFC 智能卡应用
@@ -103,7 +104,7 @@ bgTask = taskBuilder.Register();
 
 ## 接收和响应 APDU
 
-当存在面向你的应用的 APDU 时，系统将启动后台任务。 你的后台任务将收到通过 [**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) 对象的 [**CommandApdu**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) 属性传递的 APDU，并使用同一对象的 [**TryRespondAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/mt634299.aspx) 方法响应 APDU。 为了提供性能，请考虑使你的后台任务保持轻量运行。 例如，立即响应 APDU 并在完成所有处理后退出后台任务。 由于 NFC 交易的性质，用户将其设备贴靠读卡器的时间通常很短。 后台任务将继续从该读卡器接收通信，直到连接被停用，在这种情况下，将收到 [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644) 对象。 连接可能会因以下原因而被停用，如 [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) 属性中所示。
+当存在面向你的应用的 APDU 时，系统将启动后台任务。 你的后台任务将收到通过 [**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) 对象的 [**CommandApdu**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) 属性传递的 APDU，并使用同一对象的 [**TryRespondAsync**](https://msdn.microsoft.com/library/windows/apps/mt634299.aspx) 方法响应 APDU。 为了提供性能，请考虑使你的后台任务保持轻量运行。 例如，立即响应 APDU 并在完成所有处理后退出后台任务。 由于 NFC 交易的性质，用户将其设备贴靠读卡器的时间通常很短。 后台任务将继续从该读卡器接收通信，直到连接被停用，在这种情况下，将收到 [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644) 对象。 连接可能会因以下原因而被停用，如 [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) 属性中所示。
 
 -   如果连接被停用时附带 **ConnectionLost** 值，这意味着用户已将其设备远离读卡器。 如果你的应用需要用户点击终端更长时间，你可以提示用户提供反馈。 应快速（通过完成延迟）终止你的后台任务，以确保当他们再次点击它时，不会延迟以等待上一后台任务退出。
 -   如果连接被停用时附带 **ConnectionRedirected**，这意味着终端已发送一个新的定向到其他 AID 的 SELECT AID 命令 APDU。 在此情况下，你的应用应立即退出后台任务（通过完成延迟）以允许运行其他后台任务。
@@ -207,7 +208,7 @@ void BgTask::HandleHceActivation()
 
 大部分支付卡都注册相同的 AID（即 PPSE AID）以及其他支付网络卡特定的 AID。 每个 AID 组代表一张卡，并且当用户启用该卡时，会启用组内的所有 AID。 同样，当用户停用该卡时，将禁用组内的所有 AID。
 
-若要注册 AID 组，你需要创建 [**SmartCardAppletIdGroup**](https://msdn.microsoft.com/library/windows/apps/Dn910955) 对象并设置其属性，以反映这是一张基于 HCE 的支付卡。 显示名称对于用户应具有描述性，因为它将显示在 NFC 设置菜单以及用户提示中。 对于 HCE 支付卡，[**SmartCardEmulationCategory**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) 属性应设置为 **Payment**，而 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 属性应设置为 **Host**。
+若要注册 AID 组，你需要创建 [**SmartCardAppletIdGroup**](https://msdn.microsoft.com/library/windows/apps/Dn910955) 对象并设置其属性，以反映这是一张基于 HCE 的支付卡。 显示名称对于用户应具有描述性，因为它将显示在 NFC 设置菜单以及用户提示中。 对于 HCE 支付卡，[**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) 属性应设置为 **Payment**，而 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 属性应设置为 **Host**。
 
 ```csharp
 public static byte[] AID_PPSE =
@@ -225,7 +226,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-对于非 HCE 支付卡，[**SmartCardEmulationCategory**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) 属性应设置为 **Other**，而 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 属性应设置为 **Host**。
+对于非 HCE 支付卡，[**SmartCardEmulationCategory**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) 属性应设置为 **Other**，而 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 属性应设置为 **Host**。
 
 ```csharp
 public static byte[] AID_OTHER =
@@ -385,6 +386,6 @@ Windows Phone 8.1 中的传统二进制短信拦截已删除并替换为 Windows
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

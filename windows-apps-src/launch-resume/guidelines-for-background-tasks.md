@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "后台任务指南"
 description: "确保你的应用满足运行后台任务的要求。"
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
 ms.openlocfilehash: 3fb6884a968afb87e8de303bbd17feba4993c597
 

@@ -6,8 +6,8 @@ ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: bb23e8cc85544d4b5f0717b0c2d2ebad1447cb8b
+ms.sourcegitcommit: 0501d59108c5f01b3cefd3d038f3c7d320c862eb
+ms.openlocfilehash: 3461d5cd399682e0c26a7a6864c916bda21eec43
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: bb23e8cc85544d4b5f0717b0c2d2ebad1447cb8b
 
 了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。 针对特定设备进行设计时，主要注意事项包括应用将如何显示在该设备上，在该设备上使用应用的位置、时间和方式，以及用户将如何与该设备交互。
 
-## <span id="Phones_and_phablets"></span><span id="phones_and_phablets"></span><span id="PHONES_AND_PHABLETS"></span>手机和平板手机
+## 手机和平板手机
 
 
 手机是所有计算设备中最广泛使用的设备，它可以借助有限的屏幕空间和基本输入完成许多操作。 手机有多种尺寸可供选择；较大的手机称为平板手机。 平板手机上的应用体验类似于手机上的应用体验，但平板手机增加的屏幕空间支持在内容使用中进行某些关键更改。
@@ -61,7 +61,7 @@ UI 注意事项
 
  
 
-## <span id="Tablets"></span><span id="tablets"></span><span id="TABLETS"></span>平板电脑
+## 平板电脑
 
 
 超便携平板电脑配有触摸屏、相机、麦克风和加速计。 平板电脑屏幕大小范围通常在 7 英寸到 13.3 英寸之间。
@@ -96,7 +96,7 @@ UI 注意事项
 
  
 
-## <span id="PCs_and_laptops"></span><span id="pcs_and_laptops"></span><span id="PCS_AND_LAPTOPS"></span>PC 和笔记本电脑
+## PC 和笔记本电脑
 
 
 Windows PC 和笔记本电脑包括种类多样的设备和屏幕大小。 总体而言，PC 和笔记本电脑可以比手机或平板电脑显示更多的信息。
@@ -128,7 +128,7 @@ UI 注意事项
 
  
 
-## <span id="Surface_Hub_devices"></span><span id="surface_hub_devices"></span><span id="SURFACE_HUB_DEVICES"></span>Surface Hub 设备
+## Surface Hub 设备
 
 
 Microsoft Surface Hub 是设计用于由多个用户同时使用的大屏幕团队协作设备。
@@ -161,7 +161,7 @@ UI 注意事项
 
  
 
-## <span id="Windows_IoT_devices"></span><span id="windows_iot_devices"></span><span id="WINDOWS_IOT_DEVICES"></span>Windows IoT 设备
+## Windows IoT 设备
 
 
 Windows IoT 设备是一类新兴的设备，主要围绕在物理对象内嵌入小型电子产品、传感器和连接。 这些设备通常通过网络或 Internet 连接以报告它们感知到的实际数据，并且在某些情况下对其执行操作。 设备可以没有屏幕（也称为“无外设”设备）或连接到小型屏幕（也称为“有外设”设备），屏幕大小通常为 3.5 英寸或更小。
@@ -199,6 +199,6 @@ UI 注意事项
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

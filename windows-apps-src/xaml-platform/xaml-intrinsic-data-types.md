@@ -3,6 +3,7 @@ author: jwmsft
 description: "列出用于 Windows 运行时的 XAML 中对公共语言运行时 (CLR) 或 C++ 等其他编程语言中某些数据类型的语言级支持。"
 title: "XAML 固有数据类型"
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
+translationtype: Human Translation
 ms.sourcegitcommit: 60e328ca8652baeb226e78f5a9d99fbf8c4f5208
 ms.openlocfilehash: 479b900ca14497712f25a7825fde6775a3c1ab60
 

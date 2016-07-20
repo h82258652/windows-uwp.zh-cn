@@ -3,6 +3,7 @@ author: msatranjr
 title: "在 Windows 运行时组件中引发事件"
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 54934cba0e26da547e09b95a63d2c63363eaf85d
 

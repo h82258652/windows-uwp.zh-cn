@@ -5,8 +5,9 @@ title: "表和透视表"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 8737ce16d98952f24f9651d30d49ffa85b8d306b
+translationtype: Human Translation
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: b6cf34346ad557ce53d3009afe8bc83bc7ed21aa
 
 ---
 # 透视表和表
@@ -91,9 +92,6 @@ ms.openlocfilehash: 8737ce16d98952f24f9651d30d49ffa85b8d306b
 -   当所有透视表标题都适合所允许的空间时，透视表将固定不动。
 -   点击某个透视表标签即可导航到相应的页面，尽管透视表无法自行移动也是如此。 活动透视表将突出显示。
 
-{{> 非内部内容 =“
--   我们尤其建议防止项在 10 英尺环境中旋转。 如果你的应用将在 Xbox 上运行，请将新的 `IsHeaderItemsCarouselEnabled` 属性设置为 False。
-”}}
 
 **旋转**
 
@@ -101,16 +99,6 @@ ms.openlocfilehash: 8737ce16d98952f24f9651d30d49ffa85b8d306b
 -   点击某个透视表标签即可导航到相应的页面，并且活动透视表标签将旋转至第一个位置。
 -   从最后一个到第一个透视表部分的旋转循环中的透视表项目。
 
-{{&gt; 非内部内容 =“
-### 透视表焦点
-
-默认情况下，透视表标题上的键盘焦点由下划线表示。
-
-![默认焦点为所选标题加下划线](images/pivot_focus_selectedHeader.png)
-
-具有自定义透视表并且将下划线加到标题选择视觉对象的应用可以使用新的 `HeaderFocusVisualPlacement` 属性来更改默认值。 当 `HeaderFocusVisualPlacement=\"ItemHeaders\"` 时，将在整个标题面板周围绘制焦点。
-
-![ItemsHeader 选项在所有透视表标题周围绘制焦点](images/pivot_focus_headers.png)。”}}
 
 ## 建议
 
@@ -129,6 +117,6 @@ ms.openlocfilehash: 8737ce16d98952f24f9651d30d49ffa85b8d306b
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

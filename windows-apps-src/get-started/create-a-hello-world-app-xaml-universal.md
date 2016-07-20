@@ -4,8 +4,8 @@ ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "创建“Hello, world”应用 \\(XAML\\)"
 description: "本教程指导你如何使用 Extensible Application Markup Language \\(XAML\\) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 0d6b6421b4f5ebc01c865e80db96d1158b9bd825
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 0a524d51f713c37ce2069b4e750bf3ed20fe19ab
 
 ---
 
@@ -45,8 +45,10 @@ ms.openlocfilehash: 0d6b6421b4f5ebc01c865e80db96d1158b9bd825
 3.  在左侧窗格中，依次展开“已安装”&gt;“模板”&gt;“Visual C#”&gt;“Windows”****，然后选取“通用”****模板组。 对话框的中心窗格会显示一系列用于通用 Windows 平台 \(UWP\) 应用的项目模板。
 
    ![“新建项目”窗口 ](images/newproject-cs.png)
+   
+   （如果你没有看到这些选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
 
-4.  在中心窗格中，选择“空白应用\(通用 Windows\)”****模板。
+4.  在中心窗格中，选择“空白应用(通用 Windows)”****模板。
 
    “空白应用”****模板会创建一个最基本的 UWP 应用，该应用可以编译和运行，但不包含任何用户界面控件或数据。 本教程将指导你向该应用添加控件。
 
@@ -212,7 +214,9 @@ namespace HelloWorld
 -   **仿真器 <SDK version> WVGA 4 英寸 1GB**
 -   等（采用其他配置的各种仿真器）
 
-最好在带有小型屏幕和有限内存的设备上测试应用，因此请使用“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****选项。
+（如果你没有看到这些仿真器，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
+
+最好在具有小型屏幕和有限内存的设备上测试应用，因此请使用“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****选项。
 **在移动设备仿真器上开始调试**
 
 1.  在“标准”****工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取“仿真器 10.0.10240.0 WVGA 4 英寸 512MB”****。
@@ -239,7 +243,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 XAML 元素可以在出现某些事件时发送消息。 这些事件消息为你提供了可以采取一些操作响应事件的机会。 将用于响应事件的代码放在事件处理程序方法中。 多个应用中最常见事件之一为用户单击 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)。
 
-让我们为按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件创建事件处理程序。 事件处理程序会从 `nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控件获取用户名并使用该用户名向 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 输出问候。
+让我们为按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件创建事件处理程序。 事件处理程序会从 `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控件获取用户名并使用该用户名向 `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 输出问候语。
 
 ### 使用用于触控、鼠标和笔输入的事件
 
@@ -261,7 +265,7 @@ XAML 元素可以在出现某些事件时发送消息。 这些事件消息为�
    <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
 ```    
 
-5.  向在代码隐藏页面中创建的事件处理程序添加代码。 在事件处理程序中，从 `nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控件检索用户名并使用该用户名创建问候语。 使用 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 显示相关结果。
+5.  向在代码隐藏页面中创建的事件处理程序添加代码。 在事件处理程序中，从 `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控件检索用户名并使用该用户名创建问候语。 使用 `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 显示相关结果。
     
 ```csharp    
     private void Button_Click(object sender, RoutedEventArgs e)
@@ -309,9 +313,9 @@ XAML 元素可以在出现某些事件时发送消息。 这些事件消息为�
 
 如果你在以前版本的 XAML 中使用过 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021)，你可能会注意到 XAML 在此处使用简化的语法。
 
-名为 `wideState` 的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 具有一个 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382)，并且其 [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) 属性设置为 641。 这意味着仅在窗口宽度不小于 641 像素的最小值时应用该状态。 你没有为此状态定义任何 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 对象，因此它会将你在 XAML 中定义的布局属性用于页面内容。
+名为 `wideState` 的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 具有一个 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382)，并且其 [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) 属性设置为 641。 这意味着仅在窗口宽度不小于 641 像素的最小值时应用该状态。 你没有为此状态定义任何 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 对象，因此它会将你在 XAML 中定义的布局属性用于页面内容。
 
-名为 `narrowState` 的第二个 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 具有一个 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382)，其 [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) 属性设置为 0。 当窗口宽度大于 0 但小于 641 像素时，应用此状态。 （在 641 像素时，应用 `wideState`。）在此状态下，定义一些 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 对象以更改 UI 中控件的布局属性：
+名为 `narrowState` 的第二个 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) 具有一个 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382)，其 [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) 属性设置为 0。 当窗口宽度大于 0 但小于 641 像素时，应用此状态。 （在 641 像素时，应用 `wideState`。）在此状态下，定义一些 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 对象以更改 UI 中控件的布局属性：
 
 -   将 `inputPanel` 元素的 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) 从 **Horizontal** 更改为 **Vertical**。
 -   将 4 的顶部边距添加到 `inputButton` 元素。
@@ -323,6 +327,6 @@ XAML 元素可以在出现某些事件时发送消息。 这些事件消息为�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

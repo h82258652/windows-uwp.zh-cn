@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "使用此方法续订 Windows 应用商店密钥。"
 title: "续订 Windows 应用商店 ID 密钥"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: a3cef13e84c5bb06be4f3e3d4b2db4e02650df62
 
 ---
 
@@ -32,10 +33,10 @@ ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
 
 | 密钥类型    | 方法 | 请求 URI                                              |
 |-------------|--------|----------------------------------------------------------|
-| 收集 | POST   | `https://collections.mp.microsoft.com/v6.0/b2b/keys/renew` |
-| 购买    | POST   | `https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew`    |
+| 收集 | POST   | ```https://collections.mp.microsoft.com/v6.0/b2b/keys/renew``` |
+| 购买    | POST   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
 
-<br/> 
+<span/>
 
 ### 请求标头
 
@@ -45,7 +46,7 @@ ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
 | Content-Length | 数字 | 请求正文的长度。                                                                       |
 | Content-Type   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
 
-<br/> 
+<span/>
 
 ### 请求正文
 
@@ -54,7 +55,7 @@ ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
 | serviceTicket | 字符串 | Azure AD 访问令牌。        | 是      |
 | 密钥           | 字符串 | 过期的 Windows 应用商店 ID 密钥。 | 否       |
 
-<br/> 
+<span/> 
 
 ### 请求示例
 
@@ -79,7 +80,7 @@ Host: collections.mp.microsoft.com
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
 | 密钥       | 字符串 | 已刷新的 Windows 应用商店密钥，可在对 Windows 应用商店收集 API 或购买 API 的将来调用中使用。 | 否       |
 
-<br/> 
+<span/>
 
 ### 响应示例
 
@@ -106,7 +107,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 | 401  | 未授权 | AuthenticationTokenInvalid | Azure AD 访问令牌无效。 在某些情况下，ServiceError 的详细信息包含更多信息，例如令牌到期或 *appid* 声明丢失的时间。 |
 | 401  | 未授权 | InconsistentClientId       | Windows 应用商店 ID 密钥中的 *clientId* 声明与 Azure AD 访问令牌中的 *appid* 声明不匹配。                                                                     |
 
-<br/> 
+<span/>
 
 ## 相关主题
 
@@ -118,6 +119,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

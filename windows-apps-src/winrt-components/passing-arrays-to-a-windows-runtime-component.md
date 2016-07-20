@@ -3,6 +3,7 @@ author: msatranjr
 title: "将数组传递到 Windows 运行时组件"
 description: "在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。"
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
 ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
 
@@ -44,23 +45,23 @@ ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
 > End Function
 > ```
 
-[!div class="tabbedCodeSnippets"] 我们建议你立即创建输入数组的副本，并处理该副本。
+我们建议你立即创建输入数组的副本，并处理该副本。 这有助于确保不管你的组件是否由 .NET Framework 代码调用，该方法具有相同的行为。
 
-## 这有助于确保不管你的组件是否由 .NET Framework 代码调用，该方法具有相同的行为。
+## 使用来自托管和非托管代码的组件
 
 
-使用来自托管和非托管代码的组件 对于具有 ReadOnlyArrayAttribute 属性或 WriteOnlyArrayAttribute 属性的参数，其行为会有所不同，具体取决于调用方是在本机代码中编写还是在托管代码中编写。
+对于具有 ReadOnlyArrayAttribute 属性或 WriteOnlyArrayAttribute 属性的参数，其行为会有所不同，具体取决于调用方是在本机代码中编写还是在托管代码中编写。 如果调用方为本机代码（JavaScript 或 Visual C++ 组件扩展），对数组内容的处理如下所示：
 
--   如果调用方为本机代码（JavaScript 或 Visual C++ 组件扩展），对数组内容的处理如下所示： ReadOnlyArrayAttribute：当调用跨应用程序二进制接口 (ABI) 边界时，将复制该数组。 如有必要，将转换元素。
--   因此，该方法对仅输入数组所做的任何意外更改对调用方均不可见。 WriteOnlyArrayAttribute：调用的方法不可以做任何有关原始数组内容的假设。 例如，该方法接收的数组可能不会进行初始化，也可能包含默认值。
+-   ReadOnlyArrayAttribute：当调用跨应用程序二进制接口 (ABI) 边界时，将复制该数组。 如有必要，将转换元素。 因此，该方法对仅输入数组所做的任何意外更改对调用方均不可见。
+-   WriteOnlyArrayAttribute：调用的方法不可以做任何有关原始数组内容的假设。 例如，该方法接收的数组可能不会进行初始化，也可能包含默认值。 该方法预计会设置数组中所有元素的值。
 
-该方法预计会设置数组中所有元素的值。 如果调用方为托管代码，则原始数组可用于调用的方法，就像在 .NET Framework 中使用任何方法调用那样。 数组内容在 .NET Framework 代码中具有可变性，因此该方法对数组所做的任何更改对调用方均可见。 记住这一点很重要，因为它会影响为 Windows 运行时组件编写的单元测试。
+如果调用方为托管代码，则原始数组可用于调用的方法，就像在 .NET Framework 中使用任何方法调用那样。 数组内容在 .NET Framework 代码中具有可变性，因此该方法对数组所做的任何更改对调用方均可见。 记住这一点很重要，因为它会影响为 Windows 运行时组件编写的单元测试。 如果测试在托管代码中编写，数组的内容将在测试期间显示为可变。
 
-## 如果测试在托管代码中编写，数组的内容将在测试期间显示为可变。
+## 相关主题
 
-* [相关主题](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
-* [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [WriteOnlyArrayAttribute](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
+* [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
+* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 
 
 

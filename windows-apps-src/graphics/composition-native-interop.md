@@ -4,8 +4,8 @@ ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
 title: "带有 BeginDraw 和 EndDraw 的合成本机 DirectX 和 Direct2D 互操作性"
 description: "Windows.UI.Composition API 提供了本机互操作接口，以便内容可以直接移动到合成器中。"
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: b5308c8023990996a93277dd1bcfb8298c0bbf4f
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: c2086e703e3972d4dd38dc1b7147bfa5f01231cf
 
 ---
 # 带有 BeginDraw 和 EndDraw 的合成本机 DirectX 和 Direct2D 互操作性
@@ -24,19 +24,19 @@ Windows.UI.Composition API 提供了 [**ICompositorInterop**](https://msdn.micro
 
 ## 将像素加载到图面
 
-若要将像素加载到图面，应用程序必须调用 [**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) 方法， 从而返回一个表示纹理或 Direct2D 上下文的 DirectX 接口，具体取决于应用程序请求的内容。 然后，应用程序必须呈现像素或将其上载到该纹理。 应用程序完成操作后，它必须调用 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 方法。 仅在该时间点处新像素才可用于合成，不过它们仍然不会显示在屏幕上，直到下次将所有更改提交到可视化树为止。 如果在调用 **EndDraw** 之前提交可视化树，正在进行的更新将不会在屏幕上显示，而图面将在 **BeginDraw** 调用之前继续显示其内容。 当调用 **EndDraw** 时，由 BeginDraw 返回的纹理或 Direct2D 上下文指针将无效。 应用程序永远不得在 **EndDraw** 调用之后缓存该指针。
+若要将像素加载到图面，应用程序必须调用 [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) 方法， 从而返回一个表示纹理或 Direct2D 上下文的 DirectX 接口，具体取决于应用程序请求的内容。 然后，应用程序必须呈现像素或将其上载到该纹理。 应用程序完成操作后，它必须调用 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 方法。 仅在该时间点处新像素才可用于合成，不过它们仍然不会显示在屏幕上，直到下次将所有更改提交到可视化树为止。 如果在调用 **EndDraw** 之前提交可视化树，正在进行的更新将不会在屏幕上显示，而图面将在 **BeginDraw** 调用之前继续显示其内容。 当调用 **EndDraw** 时，由 BeginDraw 返回的纹理或 Direct2D 上下文指针将无效。 应用程序永远不得在 **EndDraw** 调用之后缓存该指针。
 
-对于任何给定的 [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) 而言，应用程序一次只能在一个图面上调用 BeginDraw。 在调用 [**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) 之后，应用程序必须先在该图面上调用 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060)，然后才能在另一图面上调用 **BeginDraw**。 因为该 API 为敏捷型，所以应用程序应在要从多个 worker 线程执行呈现时负责同步这些调用。 如果应用程序想要中断呈现某一图面而临时切换到另一图面，则应用程序可以使用 [**SuspendDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620064.aspx) 方法。 这将使另一个 **BeginDraw** 成功调用，但无法针对屏幕上合成提供第一个图面更新。 这将允许应用程序以事务性方式执行多个更新。 图面暂停后，应用程序可以通过调用 [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) 方法继续更新，也可以通过调用 **EndDraw** 声明该更新已完成。 这意味着对于任何给定的 **CompositionGraphicsDevice** 而言，一次只能主动更新一个图面。 由于每个图形设备均独立地保持此状态，因此应用程序可以在两个图面从属于不同的图形设备时同时呈现它们。 但是，这将排除汇聚在一起的两个图面的视频内存，使得内存利用率较低。
+对于任何给定的 [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) 而言，应用程序一次只能在一个图面上调用 BeginDraw。 在调用 [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) 之后，应用程序必须先在该图面上调用 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060)，然后才能在另一图面上调用 **BeginDraw**。 因为该 API 为敏捷型，所以应用程序应在要从多个 worker 线程执行呈现时负责同步这些调用。 如果应用程序想要中断呈现某一图面而临时切换到另一图面，则应用程序可以使用 [**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx) 方法。 这将使另一个 **BeginDraw** 成功调用，但无法针对屏幕上合成提供第一个图面更新。 这将允许应用程序以事务性方式执行多个更新。 图面暂停后，应用程序可以通过调用 [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) 方法继续更新，也可以通过调用 **EndDraw** 声明该更新已完成。 这意味着对于任何给定的 **CompositionGraphicsDevice** 而言，一次只能主动更新一个图面。 由于每个图形设备均独立地保持此状态，因此应用程序可以在两个图面从属于不同的图形设备时同时呈现它们。 但是，这将排除汇聚在一起的两个图面的视频内存，使得内存利用率较低。
 
-如果应用程序执行一个不正确的操作（例如传递无效的参数，或者先在某一图面上调用 **BeginDraw** 然后在另一图面上调用 **EndDraw**），[**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx)、[**SuspendDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620064.aspx)、[**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) 和 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 方法将返回失败。 这些类型的故障表示应用程序 Bug，因此预期结果是它们将快速进行处理，而结果为失败。 如果基础 DirectX 设备丢失，**BeginDraw** 还可能会返回一项失败。 此故障并非严重性故障，因为应用程序可以重新创建其 DirectX 设备，然后重试。 因此，应用程序应仅通过跳过呈现就可以处理设备丢失。 如果出于任何原因而使得 **BeginDraw** 无法调用，应用程序同样也不能调用 **EndDraw**，因为必须先调用前者然后才能调用后者。
+如果应用程序执行一个不正确的操作（例如传递无效的参数，或者先在某一图面上调用 **BeginDraw** 然后在另一图面上调用 **EndDraw**），[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)、[**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx)、[**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) 和 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 方法将返回失败。 这些类型的故障表示应用程序 Bug，因此预期结果是它们将快速进行处理，而结果为失败。 如果基础 DirectX 设备丢失，**BeginDraw** 还可能会返回一项失败。 此故障并非严重性故障，因为应用程序可以重新创建其 DirectX 设备，然后重试。 因此，应用程序应仅通过跳过呈现就可以处理设备丢失。 如果出于任何原因而使得 **BeginDraw** 无法调用，应用程序同样也不能调用 **EndDraw**，因为必须先调用前者然后才能调用后者。
 
 ## 滚动
 
-出于性能原因，当应用程序调用 [**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) 时，返回的纹理并不能保证是上一图面的内容。 应用程序必须假定内容是随机的，同时应用形程序也必须确保所有像素均有涉及，无论是通过在呈现前清除，还是通过绘制充足的不透明内容以便覆盖整个更新的矩形。 此外，再加上纹理指针仅在 **BeginDraw** 和 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 调用期间才有效，从而使得应用程序无法从图面中复制之前的内容。 出于此原因，我们提供了 [**Scroll**](https://msdn.microsoft.com/library/windows/apps/mt620063) 方法，该方法允许应用程序执行一次相同图面像素复制。
+出于性能原因，当应用程序调用 [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) 时，返回的纹理并不能保证是上一图面的内容。 应用程序必须假定内容是随机的，同时应用形程序也必须确保所有像素均有涉及，无论是通过在呈现前清除，还是通过绘制充足的不透明内容以便覆盖整个更新的矩形。 此外，再加上纹理指针仅在 **BeginDraw** 和 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 调用期间才有效，从而使得应用程序无法从图面中复制之前的内容。 出于此原因，我们提供了 [**Scroll**](https://msdn.microsoft.com/library/windows/apps/mt620063) 方法，该方法允许应用程序执行一次相同图面像素复制。
 
 ## 使用示例
 
-以下示例介绍了一个非常简单的方案，其中一个应用程序创建绘图图面，并使用 [**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) 和 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 来填充带有文本的图面。 应用程序使用 DirectWrite 来布局文本（不显示详细信息），然后使用 Direct2D 呈现它。 合成图形设备直接在初始化时接受 Direct2D 设备。 这将允许 **BeginDraw** 返回 ID2D1DeviceContext 接口指针，相比于通过让应用程序创建 Direct2D 上下文以便在每次绘制操作中包装返回的 ID3D11Texture2D 接口，此操作更为有效。
+以下示例介绍了一个非常简单的方案，其中一个应用程序创建绘图图面，并使用 [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) 和 [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) 来填充带有文本的图面。 应用程序使用 DirectWrite 来布局文本（不显示详细信息），然后使用 Direct2D 呈现它。 合成图形设备直接在初始化时接受 Direct2D 设备。 这将允许 **BeginDraw** 返回 ID2D1DeviceContext 接口指针，相比于通过让应用程序创建 Direct2D 上下文以便在每次绘制操作中包装返回的 ID3D11Texture2D 接口，此操作更为有效。
 
 ```cpp
 //------------------------------------------------------------------------------
@@ -270,6 +270,6 @@ private:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

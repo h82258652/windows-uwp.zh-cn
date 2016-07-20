@@ -3,6 +3,7 @@ author: scottmill
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: "合成动画"
 description: "许多合成对象和效果属性均可使用关键帧和表达式动画设置动画，以便 UI 元素的属性可以随时间变化或基于计算发生变化。"
+translationtype: Human Translation
 ms.sourcegitcommit: 62f0ea80940ff862d26feaa063414d95b048f685
 ms.openlocfilehash: e0088692b9de10c188f15b85b1f20b98cc113517
 
@@ -667,6 +668,6 @@ _target.StartAnimation(“Opacity”, exp);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

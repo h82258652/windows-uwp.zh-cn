@@ -3,6 +3,7 @@ author: jnHs
 Description: "你可以通过适用于企业的 Windows 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。"
 title: "将 LOB 应用分配到企业"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
+translationtype: Human Translation
 ms.sourcegitcommit: 9ad7589344d2af986e52ae43acc3e48de6374ae6
 ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 

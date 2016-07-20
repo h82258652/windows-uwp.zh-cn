@@ -3,6 +3,7 @@ author: jnHs
 Description: "为从 Windows 应用商店的应用销售中获得收益，你需要设置付款帐户并填写必要的税单。"
 title: "设置你的付款帐户和税单"
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
+translationtype: Human Translation
 ms.sourcegitcommit: f17132514a42c50d6bfe716f6be706748c287043
 ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
 

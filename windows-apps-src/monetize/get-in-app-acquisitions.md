@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用内产品 (IAP) 的聚合购置数据。"
 title: "获取 IAP 购置"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 
 ---
 
@@ -33,21 +34,21 @@ ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
 
 | 方法 | 请求 URI                                                                |
 |--------|----------------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions``` |
 
- 
+<span/> 
 
-### 请求标头
+### 请求头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。 |
 
- 
+<span/> 
 
-### 请求正文
+### 请求参数
 
-*applicationId* 或 *inAppProductId* 是必需参数。 若要检索注册到该应用的所有 IAP 的购置数据，请指定 *applicationId* 参数。 若要检索单个 IAP 的购置数据，请指定 *inAppProductId* 参数。 如果同时指定这两个参数，会忽略 *inAppProductId* 参数。
+*applicationId* 或 *inAppProductId* 参数是必需参数。 若要检索注册到该应用的所有 IAP 的购置数据，请指定 *applicationId* 参数。 若要检索单个 IAP 的购置数据，请指定 *inAppProductId* 参数。 如果同时指定这两个参数，会忽略 *inAppProductId* 参数。
 
 <table>
 <colgroup>
@@ -135,11 +136,11 @@ ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
 </tbody>
 </table>
 
- 
+<span/>
 
 ### 筛选器字段
 
-请求正文中的 *filter* 参数包含的一条或多条语句用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 下面是一些示例 *filter* 参数：
+请求中的 *filter* 参数包含一条或多条语句，用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 下面是一些示例 *filter* 参数：
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
@@ -242,7 +243,7 @@ ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 请求示例
 
@@ -270,6 +271,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的 IAP 购置数据超过 10000 行时，就会返回此值。 |
 | TotalCount | int    | 查询的数据结果中的行总数。                                                                                                                                                                                                                                 |
 
+<span/>
 
 ### IAP 购置值
 
@@ -292,7 +294,7 @@ Authorization: Bearer <your access token>
 | acquisitionType     | 字符串  | 购置类型（免费、付费等）。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                    |
 | acquisitionQuantity | inumber | 发生的购置数。                                                                                                                                                                                                |
 
- 
+<span/> 
 
 ### 响应示例
 
@@ -337,6 +339,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

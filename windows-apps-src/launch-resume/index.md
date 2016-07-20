@@ -3,6 +3,7 @@ author: TylerMSFT
 title: "启动、恢复和后台任务"
 description: "本部分介绍在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
+translationtype: Human Translation
 ms.sourcegitcommit: a8e6145f7a5c75d3b37277b80b07b0b3ad739d5c
 ms.openlocfilehash: ab20c4af5b9a87dc73775d304c314c9861d989d4
 
@@ -101,6 +102,6 @@ ms.openlocfilehash: ab20c4af5b9a87dc73775d304c314c9861d989d4
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: "可视化层"
 description: "Windows.UI.Composition API 使你能够访问框架层 (XAML) 和图形层 (DirectX) 之间的合成层。"
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 164c01737d27451adcb685f9cda544cc00634af4
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 1abb663d0ee27d7e57ab83dab2589557d1f9f29a
 
 ---
 # 可视化层
@@ -14,9 +14,9 @@ ms.openlocfilehash: 164c01737d27451adcb685f9cda544cc00634af4
 
 在 Windows 10 中，已针对创建适用于所有 Windows 应用程序（桌面版或移动版）的全新统一的合成器和呈现引擎完成了大量工作。 该工作生成了称为 Windows.UI.Composition 的统一合成 WinRT API，用于提供对新的轻型合成对象以及 受动画和效果驱动的全新合成器的访问权限。
 
-Windows.UI.Composition 是可以从任何通用 Windows 平台 (UWP) 应用程序调用的声明性[保留模式](https://msdn.microsoft.com/library/windows/desktop/ff684178.aspx) API ，从而可以直接在应用程序中创建合成对象、 动画和效果。 该 API 是对诸如 XAML 等现有框架的一个强大补充，从而为 UWP 应用程序开发人员 提供了一个熟悉的 C# 图面以供添加到其应用程序。 这些 API 可用于创建 DX 样式框架较少的应用程序。
+Windows.UI.Composition 是可以从任何通用 Windows 平台 (UWP) 应用程序调用的声明性[保留模式](https://msdn.microsoft.com/library/windows/desktop/ff684178.aspx) API ，从而可以直接在应用程序中创建合成对象、 动画和效果。 该 API 是对诸如 XAML 等现有框架的一个强大补充，从而为 UWP 应用程序开发人员提供了一个熟悉的 C# 图面以供添加到其应用程序。 这些 API 还可以用于创建 DX 样式框架较少的应用程序。
 
-XAML 开发人员可以使用 WinRT“下拉”到采用 C# 的合成层以便可以在该合成层上执行自定义工作，进而可以在 其 XAML 应用程序中创建对象的“合成岛”，而无需一直下拉到图形层并针对任何自定义 UI 工作使用 DirectX 和 C++。
+XAML 开发人员可以使用 WinRT“下拉”到采用 C# 的合成层，以便在该合成层上执行自定义工作，而无需一直下拉到图形层并针对任何自定义 UI 工作使用 DirectX 和 C++。 此技术可用于使用合成 API 来对现有元素进行动画处理，也可用于通过在 XAML 元素树内创建 Windows.UI.Composition 内容的“视觉岛”来增加 UI。
 
 ![](images/layers-win-ui-composition.png)
 ## <span id="Composition_Objects_and_The_Compositor"></span><span id="composition_objects_and_the_compositor"></span><span id="COMPOSITION_OBJECTS_AND_THE_COMPOSITOR"></span>合成对象和合成器
@@ -48,7 +48,11 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 
 ## <span id="XAML_Interoperation"></span><span id="xaml_interoperation"></span><span id="XAML_INTEROPERATION"></span>XAML 互操作
 
-除了从头开始创建可视化树外，合成 API 还可以使用 [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) 中的 [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) 类 与现有 XAML UI 交互操作。
+除了从头开始创建可视化树外，合成 API 还可以使用 [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) 中的 [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) 类与现有 XAML UI 互操作。
+
+- [**ElementCompositionPreview.GetElementVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：获取元素视觉支持，以便使用合成 API 对其进行动画处理
+- [**ElementCompositionPreview.SetChildVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual)：将合成内容的“视觉岛”添加到 XAML 树。
+- [**ElementCompositionPreview.GetScrollViewerManipulationPropertySet()**](https://msdn.microsoft.com/library/windows/apps/mt608980.aspx)：将 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) 的操作用作对合成动画的输入
 
 
 **注意**  
@@ -59,7 +63,7 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 ## <span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>其他资源：
 
 -   阅读 Kenny Kerr 的关于此 API 的 MSDN 文章：[图形和动画 - Windows 合成支持 10 倍缩放](https://msdn.microsoft.com/magazine/mt590968)
--   [合成 GitHub](https://github.com/Microsoft/composition) 中的合成示例。
+-   [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 中的高级 UI 和合成示例。
 -   [**API 的完全参考文档**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
 -   已知问题：[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)。
 
@@ -73,6 +77,6 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,8 +3,9 @@ author: awkoren
 Description: "使用桌面转换扩展部署和调试从 Windows 桌面应用程序（Win32、WPF 和 Windows 窗体）转换的通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
 title: "部署和调试从 Windows 桌面应用程序转换的通用 Windows 平台 (UWP) 应用"
-ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
-ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
 
 ---
 
@@ -123,7 +124,7 @@ Visual Studio 现在支持新的打包项目，可使你将在生成应用程序
 
 10. 最后，你现在可以在 Win32 代码中设置断点，并按 F5 启动调试程序。 它会将你对 Win32 应用程序所做的所有更新复制到 AppX 程序包，并允许你直接从 Visual Studio 内进行调试。
 
-11. 如果你更新应用程序，将需要使用 MakeAppX 重新打包你的应用。 有关详细信息，请参阅[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh446767(v=vs.85).aspx)。 
+11. 如果你更新应用程序，将需要使用 MakeAppX 重新打包你的应用。 有关详细信息，请参阅[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)。 
 
 如果你有多个生成配置（例如用于发布和调试），可以将以下内容添加到 AppXFileList.xml 文件以从不同的位置复制 Win32 生成：
 
@@ -215,11 +216,11 @@ in the app package must be trusted."
 
 [桌面应用转换器预览 (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 
-[将 Windows 桌面应用程序手动转换为通用 Windows 平台 (UWP) 应用](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+[将 Windows 桌面应用程序手动转换为通用 Windows 平台 (UWP) 应用](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)
 
 [GitHub 上的 UWP 代码示例的桌面应用桥](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 
