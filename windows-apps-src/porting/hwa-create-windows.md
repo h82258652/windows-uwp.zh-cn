@@ -31,7 +31,7 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 启动 Visual Studio。
 1. 单击“文件”****。
 2. 单击“新建项目”****。
-3. 在“JavaScript”****下的“Windows 通用”****中，单击“空白应用(Windows 通用)”****。
+3. 在“JavaScript”****下的“Windows 通用”****中，单击“空白应用\(Windows 通用\)”****。
 
 ![步骤 2：创建一个空白 JavaScript 应用](images/hwa-to-uwp/windows_step2.png)
 
