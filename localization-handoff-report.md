@@ -6,16 +6,31 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/ffcf6567ceacda3a7d20246c16e3ae1ef359f57e/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md) | OutofSyncHandedBackSuccess | [Details](#7a241ab31eb59c605ae24a7753b7f2683e0bec9b2309)
- [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/ffcf6567ceacda3a7d20246c16e3ae1ef359f57e/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md) | OutofSyncHandedBackSuccess | [Details](#73ca2031835ecf2e7c4b34fcfb512370d469d5622310)
- [windows-apps-src\get-started\images\win10-cs-09.png](https://github.com/Microsoft/windows-apps/blob/ffcf6567ceacda3a7d20246c16e3ae1ef359f57e/windows-apps-src/get-started/images/win10-cs-09.png) | HandedOffSuccess | [Details](#dc43ec1d2c973718cd80c0785ebbd12fd108ca6e2590)
+ [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/78141227138d2c690a999458b4b022a99b811449/windows-apps-src/audio-video-camera/playready-client-sdk.md) | OutofSyncHandedBackSuccess | [Details](#c1e57de371cb7ebad60ed63453d355c06cb6bbbc502)
+ [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/a05f4add53a3a08f53990d3fedbad9b5abe2fb02/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md) | OutofSyncHandedBackSuccess | [Details](#1468cd4bed3536b2b7853c192b0051387a1531292309)
+ [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/a05f4add53a3a08f53990d3fedbad9b5abe2fb02/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md) | OutofSyncHandedBackSuccess | [Details](#637db768b02469b11abed439b83fdedae0d82cbd2310)
 
 ## Item Details
-##### <a name='7a241ab31eb59c605ae24a7753b7f2683e0bec9b2309'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/ffcf6567ceacda3a7d20246c16e3ae1ef359f57e/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md)
+##### <a name='c1e57de371cb7ebad60ed63453d355c06cb6bbbc502'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/78141227138d2c690a999458b4b022a99b811449/windows-apps-src/audio-video-camera/playready-client-sdk.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/138ff23b6057df6badceb318e5d9137067b17ad2/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.zh-cn.xlf)
-* Handoff Datetime: 2016-07-22 19:26:11
+* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/2399c3e321ef2b2d7b97af9231536c77463b1704/ol-handoff/Microsoft/windows-apps.zh-cn/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-cn.xlf)
+* Handoff Datetime: 2016-07-22 22:26:40
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/audio-video-camera/playready-client-sdk.md)
+* Current Handback File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.zh-cn.xlf)
+* Current Handback Datetime: 2016-07-20 17:34:58
+* [Back to Top](#report-top)
+
+##### <a name='1468cd4bed3536b2b7853c192b0051387a1531292309'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/a05f4add53a3a08f53990d3fedbad9b5abe2fb02/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/2399c3e321ef2b2d7b97af9231536c77463b1704/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.zh-cn.xlf)
+* Handoff Datetime: 2016-07-22 22:26:40
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -26,11 +41,11 @@
 * Current Handback Datetime: 2016-07-20 17:34:58
 * [Back to Top](#report-top)
 
-##### <a name='73ca2031835ecf2e7c4b34fcfb512370d469d5622310'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/ffcf6567ceacda3a7d20246c16e3ae1ef359f57e/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
+##### <a name='637db768b02469b11abed439b83fdedae0d82cbd2310'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/a05f4add53a3a08f53990d3fedbad9b5abe2fb02/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/138ff23b6057df6badceb318e5d9137067b17ad2/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-cn.xlf)
-* Handoff Datetime: 2016-07-22 19:26:11
+* Handoff File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/2399c3e321ef2b2d7b97af9231536c77463b1704/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-cn.xlf)
+* Handoff Datetime: 2016-07-22 22:26:40
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -39,19 +54,6 @@
 * Current Target File: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
 * Current Handback File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-20 17:34:58
-* [Back to Top](#report-top)
-
-##### <a name='dc43ec1d2c973718cd80c0785ebbd12fd108ca6e2590'></a> Source: [windows-apps-src\get-started\images\win10-cs-09.png](https://github.com/Microsoft/windows-apps/blob/ffcf6567ceacda3a7d20246c16e3ae1ef359f57e/windows-apps-src/get-started/images/win10-cs-09.png)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [dc43ec1d2c973718cd80c0785ebbd12fd108ca6e.png](https://github.com/Microsoft/WDG.handoff/blob/138ff23b6057df6badceb318e5d9137067b17ad2/ol-handoff/Microsoft/windows-apps.zh-cn/master/dc43ec1d2c973718cd80c0785ebbd12fd108ca6e.png)
-* Handoff Datetime: 2016-07-22 19:26:11
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 
