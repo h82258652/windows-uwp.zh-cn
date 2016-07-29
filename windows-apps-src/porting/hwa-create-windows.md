@@ -29,9 +29,9 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 ## 步骤 2：创建一个空白 JavaScript 应用
 
 启动 Visual Studio。
-1. 单击“文件”****。
-2. 单击“新建项目”****。
-3. 在“JavaScript”****下的“Windows 通用”****中，单击“空白应用\(Windows 通用\)”****。
+1. 单击“文件”。
+2. 单击“新建项目”。
+3. 在“JavaScript”下的“Windows 通用”中，单击“空白应用\(Windows 通用\)”。
 
 ![步骤 2：创建一个空白 JavaScript 应用](images/hwa-to-uwp/windows_step2.png)
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 
 应用程序内容 URI 规则 (ACUR) 指定允许访问你的应用和通用 Windows API 的远程 URL。 至少需要为你的起始页以及该页面所利用的任何 Web 资源添加一条 ACUR。 有关 ACUR 的详细信息，请[单击此处](./hwa-access-features.md#keep-your-app-secure-setting-application-content-uri-rules-acurs)。
 1. 打开 `package.appxmanifest` 文件。
-2. 单击“内容 URI”****选项卡。
+2. 单击“内容 URI”选项卡。
 3. 为你的起始页添加任何必要的 URI。
 
 例如：
@@ -61,7 +61,7 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 1. http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 2. http://*.codepen.io/
 ```
-4. 针对你添加的每个 URI，将“WinRT 访问”****设置为“全部”****。
+4. 针对你添加的每个 URI，将“WinRT 访问”设置为“全部”。
 
 ![步骤 5：定义你的 Web 应用的边界](images/hwa-to-uwp/windows_step5.png)
 
@@ -69,7 +69,7 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 
 此时，你有一个可以访问通用 Windows API、完全正常运行的 Windows 10 应用！
 
-如果你遵循的是我们的 Codepen 示例，请单击“Toast 通知”****按钮以调用托管脚本中的 Windows API。
+如果你遵循的是我们的 Codepen 示例，请单击“Toast 通知”按钮以调用托管脚本中的 Windows API。
 
 ![步骤 6：运行应用](images/hwa-to-uwp/windows_step6.png)
 
