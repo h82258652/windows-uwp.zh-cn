@@ -1,63 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\communicate-with-a-remote-app-service.md](https://github.com/Microsoft/windows-apps/blob/c90304b7ca3f7185fca9146aa2303b09cba5ab9a/windows-apps-src/launch-resume/communicate-with-a-remote-app-service.md) | HandedOffSuccess | [Details](#bff77a63d0f88907410c74d4dce19fb422c1bd3f4361)
- [windows-apps-src\launch-resume\connected-apps-and-devices.md](https://github.com/Microsoft/windows-apps/blob/c90304b7ca3f7185fca9146aa2303b09cba5ab9a/windows-apps-src/launch-resume/connected-apps-and-devices.md) | HandedOffSuccess | [Details](#16ca70ec292911068c5e04c521bf0c5b12e1bd954362)
- [windows-apps-src\launch-resume\discover-connected-devices.md](https://github.com/Microsoft/windows-apps/blob/c90304b7ca3f7185fca9146aa2303b09cba5ab9a/windows-apps-src/launch-resume/discover-connected-devices.md) | HandedOffSuccess | [Details](#5fb49ef0783454f507f419c321f0d3c156cd513e4370)
- [windows-apps-src\launch-resume\launch-a-remote-app.md](https://github.com/Microsoft/windows-apps/blob/c90304b7ca3f7185fca9146aa2303b09cba5ab9a/windows-apps-src/launch-resume/launch-a-remote-app.md) | HandedOffSuccess | [Details](#7e3279450a1e1a5fea04e890091a6edf59fce7424394)
+ [windows-apps-src\gaming\use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md](https://github.com/Microsoft/windows-apps/blob/765cde8afe32cef6515ee6ca9750365aa35984a2/windows-apps-src/gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md) | HandedOffSuccess | [Details](#5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e3540)
 
 ## Item Details
-##### <a name='bff77a63d0f88907410c74d4dce19fb422c1bd3f4361'></a> Source: [windows-apps-src\launch-resume\communicate-with-a-remote-app-service.md](https://github.com/Microsoft/windows-apps/blob/c90304b7ca3f7185fca9146aa2303b09cba5ab9a/windows-apps-src/launch-resume/communicate-with-a-remote-app-service.md)
+##### <a name='5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e3540'></a> Source: [windows-apps-src\gaming\use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md](https://github.com/Microsoft/windows-apps/blob/765cde8afe32cef6515ee6ca9750365aa35984a2/windows-apps-src/gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [communicate-with-a-remote-app-service.69868a774210ff17c04a11fc7511d0ac1dca3d9d.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/e999df7ed243faa7c797a8c976ef2177070b2007/ol-handoff/Microsoft/windows-apps.zh-cn/master/communicate-with-a-remote-app-service.69868a774210ff17c04a11fc7511d0ac1dca3d9d.zh-cn.xlf)
-* Handoff Datetime: 2016-08-08 17:34:06
+* Handoff File: [use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.32991bbdf51ecc4e0a37f7d65fafe1f5448ca610.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/987d059394d0e250b2ef5f67d26d40adffb9a623/ol-handoff/Microsoft/windows-apps.zh-cn/master/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.32991bbdf51ecc4e0a37f7d65fafe1f5448ca610.zh-cn.xlf)
+* Handoff Datetime: 2016-08-08 19:35:01
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='16ca70ec292911068c5e04c521bf0c5b12e1bd954362'></a> Source: [windows-apps-src\launch-resume\connected-apps-and-devices.md](https://github.com/Microsoft/windows-apps/blob/c90304b7ca3f7185fca9146aa2303b09cba5ab9a/windows-apps-src/launch-resume/connected-apps-and-devices.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [connected-apps-and-devices.bc37f58754b7bcb70f7340552b803a3428d1f746.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/e999df7ed243faa7c797a8c976ef2177070b2007/ol-handoff/Microsoft/windows-apps.zh-cn/master/connected-apps-and-devices.bc37f58754b7bcb70f7340552b803a3428d1f746.zh-cn.xlf)
-* Handoff Datetime: 2016-08-08 17:34:06
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='5fb49ef0783454f507f419c321f0d3c156cd513e4370'></a> Source: [windows-apps-src\launch-resume\discover-connected-devices.md](https://github.com/Microsoft/windows-apps/blob/c90304b7ca3f7185fca9146aa2303b09cba5ab9a/windows-apps-src/launch-resume/discover-connected-devices.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [discover-connected-devices.c79b65dc0050392e38891f1b7a9ad78e950d8b9e.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/e999df7ed243faa7c797a8c976ef2177070b2007/ol-handoff/Microsoft/windows-apps.zh-cn/master/discover-connected-devices.c79b65dc0050392e38891f1b7a9ad78e950d8b9e.zh-cn.xlf)
-* Handoff Datetime: 2016-08-08 17:34:06
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='7e3279450a1e1a5fea04e890091a6edf59fce7424394'></a> Source: [windows-apps-src\launch-resume\launch-a-remote-app.md](https://github.com/Microsoft/windows-apps/blob/c90304b7ca3f7185fca9146aa2303b09cba5ab9a/windows-apps-src/launch-resume/launch-a-remote-app.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [launch-a-remote-app.ca9376133d84e80a1e47cffe465fc9586a55369d.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/e999df7ed243faa7c797a8c976ef2177070b2007/ol-handoff/Microsoft/windows-apps.zh-cn/master/launch-a-remote-app.ca9376133d84e80a1e47cffe465fc9586a55369d.zh-cn.xlf)
-* Handoff Datetime: 2016-08-08 17:34:06
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\gaming\use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)
+* Current Handback File: [use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.32991bbdf51ecc4e0a37f7d65fafe1f5448ca610.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.32991bbdf51ecc4e0a37f7d65fafe1f5448ca610.zh-cn.xlf)
+* Current Handback Datetime: 2016-07-20 17:34:58
 * [Back to Top](#report-top)
 
 
