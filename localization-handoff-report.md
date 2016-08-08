@@ -1,89 +1,43 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 6
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\enable-consumable-add-on-purchases.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/enable-consumable-add-on-purchases.md) | HandedOffSuccess | [Details](#7f8a518431262ef594d44f0e77e4f7f33622b6bc4731)
- [windows-apps-src\monetize\enable-in-app-purchases-of-apps-and-add-ons.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/enable-in-app-purchases-of-apps-and-add-ons.md) | HandedOffSuccess | [Details](#bba2abf8a7012dd3a38ee7c59e0ad8c39098ead64734)
- [windows-apps-src\monetize\get-license-info-for-apps-and-add-ons.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/get-license-info-for-apps-and-add-ons.md) | HandedOffSuccess | [Details](#f9ddbeec060054b16dbb8b1f6065c7575030b0014745)
- [windows-apps-src\monetize\get-product-info-for-apps-and-add-ons.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/get-product-info-for-apps-and-add-ons.md) | HandedOffSuccess | [Details](#3cecdc22ab1bdc574c6a852dc9eefd16e1eecaf74746)
- [windows-apps-src\monetize\implement-a-trial-version-of-your-app.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/implement-a-trial-version-of-your-app.md) | HandedOffSuccess | [Details](#f4e7b5796e11fea257f0f984725678be85be9c994776)
- [windows-apps-src\monetize\in-app-purchases-and-trials.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/in-app-purchases-and-trials.md) | HandedOffSuccess | [Details](#a43409d14a8e228a1fa4432bc130fdcda104d63e4779)
+ [windows-apps-src\networking\background-transfers.md](https://github.com/Microsoft/windows-apps/blob/177ada6ea8934ca74636454946dfa9c450285167/windows-apps-src/networking/background-transfers.md) | HandedOffSuccess | [Details](#f8548c85e571d3f0f72f775af4ca40d85e86c1634815)
+ [windows-apps-src\xaml-platform\custom-attached-properties.md](https://github.com/Microsoft/windows-apps/blob/21ca5391fc4f29c33b3501d05d5ebed986188a3e/windows-apps-src/xaml-platform/custom-attached-properties.md) | HandedOffSuccess | [Details](#77858a864929c99425f9c008e8f6fb8dfbad0b447950)
 
 ## Item Details
-##### <a name='7f8a518431262ef594d44f0e77e4f7f33622b6bc4731'></a> Source: [windows-apps-src\monetize\enable-consumable-add-on-purchases.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/enable-consumable-add-on-purchases.md)
+##### <a name='f8548c85e571d3f0f72f775af4ca40d85e86c1634815'></a> Source: [windows-apps-src\networking\background-transfers.md](https://github.com/Microsoft/windows-apps/blob/177ada6ea8934ca74636454946dfa9c450285167/windows-apps-src/networking/background-transfers.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [enable-consumable-add-on-purchases.b945edf4df788aac5dba2cad753766477a87a4c2.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6035cb6152bc0c81ac628af990d7c13723ade69/ol-handoff/Microsoft/windows-apps.zh-cn/master/enable-consumable-add-on-purchases.b945edf4df788aac5dba2cad753766477a87a4c2.zh-cn.xlf)
-* Handoff Datetime: 2016-08-08 20:35:38
+* Handoff File: [background-transfers.8f132649565224b7b83365be03e3ebfe42dc6211.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/8248cd943599066ef56fea202870608ebc389f4b/ol-handoff/Microsoft/windows-apps.zh-cn/master/background-transfers.8f132649565224b7b83365be03e3ebfe42dc6211.zh-cn.xlf)
+* Handoff Datetime: 2016-08-08 21:06:03
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\networking\background-transfers.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/networking/background-transfers.md)
+* Current Handback File: [background-transfers.8f132649565224b7b83365be03e3ebfe42dc6211.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/background-transfers.8f132649565224b7b83365be03e3ebfe42dc6211.zh-cn.xlf)
+* Current Handback Datetime: 2016-07-20 17:34:58
 * [Back to Top](#report-top)
 
-##### <a name='bba2abf8a7012dd3a38ee7c59e0ad8c39098ead64734'></a> Source: [windows-apps-src\monetize\enable-in-app-purchases-of-apps-and-add-ons.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/enable-in-app-purchases-of-apps-and-add-ons.md)
+##### <a name='77858a864929c99425f9c008e8f6fb8dfbad0b447950'></a> Source: [windows-apps-src\xaml-platform\custom-attached-properties.md](https://github.com/Microsoft/windows-apps/blob/21ca5391fc4f29c33b3501d05d5ebed986188a3e/windows-apps-src/xaml-platform/custom-attached-properties.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [enable-in-app-purchases-of-apps-and-add-ons.e52f90a53ded9438a1eaea72415074efd71db22e.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6035cb6152bc0c81ac628af990d7c13723ade69/ol-handoff/Microsoft/windows-apps.zh-cn/master/enable-in-app-purchases-of-apps-and-add-ons.e52f90a53ded9438a1eaea72415074efd71db22e.zh-cn.xlf)
-* Handoff Datetime: 2016-08-08 20:35:38
+* Handoff File: [custom-attached-properties.759ee7480bbd45925923920651b0568c4bc71b08.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/8248cd943599066ef56fea202870608ebc389f4b/ol-handoff/Microsoft/windows-apps.zh-cn/master/custom-attached-properties.759ee7480bbd45925923920651b0568c4bc71b08.zh-cn.xlf)
+* Handoff Datetime: 2016-08-08 21:06:03
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='f9ddbeec060054b16dbb8b1f6065c7575030b0014745'></a> Source: [windows-apps-src\monetize\get-license-info-for-apps-and-add-ons.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/get-license-info-for-apps-and-add-ons.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [get-license-info-for-apps-and-add-ons.f7f2b6fa4e5d39eb17a2015071b783967be46ae1.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6035cb6152bc0c81ac628af990d7c13723ade69/ol-handoff/Microsoft/windows-apps.zh-cn/master/get-license-info-for-apps-and-add-ons.f7f2b6fa4e5d39eb17a2015071b783967be46ae1.zh-cn.xlf)
-* Handoff Datetime: 2016-08-08 20:35:38
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='3cecdc22ab1bdc574c6a852dc9eefd16e1eecaf74746'></a> Source: [windows-apps-src\monetize\get-product-info-for-apps-and-add-ons.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/get-product-info-for-apps-and-add-ons.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [get-product-info-for-apps-and-add-ons.770f033d1f96e5508b684af01329fa8f17d581b0.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6035cb6152bc0c81ac628af990d7c13723ade69/ol-handoff/Microsoft/windows-apps.zh-cn/master/get-product-info-for-apps-and-add-ons.770f033d1f96e5508b684af01329fa8f17d581b0.zh-cn.xlf)
-* Handoff Datetime: 2016-08-08 20:35:38
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='f4e7b5796e11fea257f0f984725678be85be9c994776'></a> Source: [windows-apps-src\monetize\implement-a-trial-version-of-your-app.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/implement-a-trial-version-of-your-app.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [implement-a-trial-version-of-your-app.a6bf42c2c41fd342356b2a6edf81780ccf51351e.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6035cb6152bc0c81ac628af990d7c13723ade69/ol-handoff/Microsoft/windows-apps.zh-cn/master/implement-a-trial-version-of-your-app.a6bf42c2c41fd342356b2a6edf81780ccf51351e.zh-cn.xlf)
-* Handoff Datetime: 2016-08-08 20:35:38
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='a43409d14a8e228a1fa4432bc130fdcda104d63e4779'></a> Source: [windows-apps-src\monetize\in-app-purchases-and-trials.md](https://github.com/Microsoft/windows-apps/blob/ba27f14db10f5020b92ac0d731e23c0937f7eb26/windows-apps-src/monetize/in-app-purchases-and-trials.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [in-app-purchases-and-trials.a3afb0af7e5d84cc7ffe7aa7ebe241757a3b869d.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/a6035cb6152bc0c81ac628af990d7c13723ade69/ol-handoff/Microsoft/windows-apps.zh-cn/master/in-app-purchases-and-trials.a3afb0af7e5d84cc7ffe7aa7ebe241757a3b869d.zh-cn.xlf)
-* Handoff Datetime: 2016-08-08 20:35:38
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\xaml-platform\custom-attached-properties.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/xaml-platform/custom-attached-properties.md)
+* Current Handback File: [custom-attached-properties.759ee7480bbd45925923920651b0568c4bc71b08.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/custom-attached-properties.759ee7480bbd45925923920651b0568c4bc71b08.zh-cn.xlf)
+* Current Handback Datetime: 2016-07-20 17:34:58
 * [Back to Top](#report-top)
 
 
