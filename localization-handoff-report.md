@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/568c00d633f56ebe0735d41c88f038f27dbdd859/windows-apps-src/gaming/e2e.md) | HandedOffSuccess | [Details](#697da347fc119c6466cfddf92b663fecad9a9c5d3459)
+ [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/ebb62a77f5410d03b93721560f584d4eefdbb195/windows-apps-src/gaming/e2e.md) | HandedOffSuccess | [Details](#de9b67a8b65099acca2d849832100b01f61714923459)
 
 ## Item Details
-##### <a name='697da347fc119c6466cfddf92b663fecad9a9c5d3459'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/568c00d633f56ebe0735d41c88f038f27dbdd859/windows-apps-src/gaming/e2e.md)
+##### <a name='de9b67a8b65099acca2d849832100b01f61714923459'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/ebb62a77f5410d03b93721560f584d4eefdbb195/windows-apps-src/gaming/e2e.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/6d85688a6eddbf1ea3cb92db7be976c73b09929f/ol-handoff/Microsoft/windows-apps.zh-cn/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf)
-* Handoff Datetime: 2016-08-09 19:19:05
+* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/432393884e87a9814f38e343a6232c5e23498c7b/ol-handoff/Microsoft/windows-apps.zh-cn/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.zh-cn.xlf)
+* Handoff Datetime: 2016-08-09 20:20:13
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
