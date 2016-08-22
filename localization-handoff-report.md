@@ -1,40 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps/blob/881056cf24755d880a142bd5317fc6e524d1cd81/windows-apps-src/launch-resume/launch-default-app.md) | HandedOffSuccess | [Details](#119b24573163224456d4f847cf3a444fb8420c5e4394)
- [windows-apps-src\launch-resume\launch-ringtone-picker.md](https://github.com/Microsoft/windows-apps/blob/4c7037cc91603af97a64285fd6610445de0523d6/windows-apps-src/launch-resume/launch-ringtone-picker.md) | HandedOffSuccess | [Details](#ef605f9d749148240ecee5e0ecfd473f8440ca254397)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/cc8abd578f0e8734c1e2478a1e17062b21b677be/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#d260fadaa4e8fe0fc1c15bcf4df0607d5c0718dc7936)
 
 ## Item Details
-##### <a name='119b24573163224456d4f847cf3a444fb8420c5e4394'></a> Source: [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps/blob/881056cf24755d880a142bd5317fc6e524d1cd81/windows-apps-src/launch-resume/launch-default-app.md)
+##### <a name='d260fadaa4e8fe0fc1c15bcf4df0607d5c0718dc7936'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/cc8abd578f0e8734c1e2478a1e17062b21b677be/windows-apps-src/TOC.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/c1afc7b5f8408160b4b9fd754643787cc60210a6/ol-handoff/Microsoft/windows-apps.zh-cn/master/launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-cn.xlf)
-* Handoff Datetime: 2016-08-22 21:22:03
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/5460d771c3c1a4d84f8c605f3f84542378f0e217/ol-handoff/Microsoft/windows-apps.zh-cn/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf)
+* Handoff Datetime: 2016-08-22 21:53:07
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\launch-resume\launch-default-app.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/launch-resume/launch-default-app.md)
-* Current Handback File: [launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/launch-default-app.d37aa1f24a6608cec389d989c4107b26b2481513.zh-cn.xlf)
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-20 17:34:58
-* [Back to Top](#report-top)
-
-##### <a name='ef605f9d749148240ecee5e0ecfd473f8440ca254397'></a> Source: [windows-apps-src\launch-resume\launch-ringtone-picker.md](https://github.com/Microsoft/windows-apps/blob/4c7037cc91603af97a64285fd6610445de0523d6/windows-apps-src/launch-resume/launch-ringtone-picker.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [launch-ringtone-picker.607755ecc68e95f8cec3518f5ffad51708dd64a8.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/c1afc7b5f8408160b4b9fd754643787cc60210a6/ol-handoff/Microsoft/windows-apps.zh-cn/master/launch-ringtone-picker.607755ecc68e95f8cec3518f5ffad51708dd64a8.zh-cn.xlf)
-* Handoff Datetime: 2016-08-22 21:22:03
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 
