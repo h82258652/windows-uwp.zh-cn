@@ -6,19 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\create-and-manage-submissions-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/7b4681faad59b92b56a887529b9a3f88d72ebae9/windows-apps-src/monetize/create-and-manage-submissions-using-windows-store-services.md) | HandedOffSuccess | [Details](#5f21b9930bc234ecb1e112a506924ef460531a404741)
+ [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/ce629f99d8162e9e81e4e4c8b7e0421e43898a53/windows-apps-src/get-started/learn-more.md) | HandedOffSuccess | [Details](#be9df71646e10633bb31b5bc6da73156e61a44073931)
 
 ## Item Details
-##### <a name='5f21b9930bc234ecb1e112a506924ef460531a404741'></a> Source: [windows-apps-src\monetize\create-and-manage-submissions-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/7b4681faad59b92b56a887529b9a3f88d72ebae9/windows-apps-src/monetize/create-and-manage-submissions-using-windows-store-services.md)
+##### <a name='be9df71646e10633bb31b5bc6da73156e61a44073931'></a> Source: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/ce629f99d8162e9e81e4e4c8b7e0421e43898a53/windows-apps-src/get-started/learn-more.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-and-manage-submissions-using-windows-store-services.d17cd67e3f06021e1bcff183a35fea407e0be645.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/c256dd9fd8382f6f14cfaddc7b5dafc31688e142/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-and-manage-submissions-using-windows-store-services.d17cd67e3f06021e1bcff183a35fea407e0be645.zh-cn.xlf)
-* Handoff Datetime: 2016-08-30 20:40:40
+* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/42576074101e9b6f2d775edd44168a182347cd45/ol-handoff/Microsoft/windows-apps.zh-cn/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf)
+* Handoff Datetime: 2016-08-30 22:07:43
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/get-started/learn-more.md)
+* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf)
+* Current Handback Datetime: 2016-07-20 17:34:58
 * [Back to Top](#report-top)
 
 
