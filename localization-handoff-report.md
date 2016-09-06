@@ -1,27 +1,44 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/3b4dc64cd4dfda07bb55ffc69bb9a99740fc951a/windows-apps-src/publish/manage-account-users.md) | HandedOffSuccess | [Details](#ce50957f133fe612ca4a3d5b90a0a34145a960a45071)
+ [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps/blob/d30de29a80efd3dcfbf830707e0c41adb22f2266/windows-apps-src/graphics/composition-animation.md) | HandedOffSuccess | [Details](#d59bd17392185e1004455a0a97c34058cfc6dfd03952)
+ [windows-apps-src\graphics\images\composition-animation-types.png](https://github.com/Microsoft/windows-apps/blob/d30de29a80efd3dcfbf830707e0c41adb22f2266/windows-apps-src/graphics/images/composition-animation-types.png) | HandedOffSuccess | [Details](#0e2bef11807e50fee9424ecf662c95630d57e42e3968)
 
 ## Item Details
-##### <a name='ce50957f133fe612ca4a3d5b90a0a34145a960a45071'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/3b4dc64cd4dfda07bb55ffc69bb9a99740fc951a/windows-apps-src/publish/manage-account-users.md)
+##### <a name='d59bd17392185e1004455a0a97c34058cfc6dfd03952'></a> Source: [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps/blob/d30de29a80efd3dcfbf830707e0c41adb22f2266/windows-apps-src/graphics/composition-animation.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/b7dd7260cf5483c5c4bbfd3e6a168fc9384d2ac0/ol-handoff/Microsoft/windows-apps.zh-cn/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-cn.xlf)
-* Handoff Datetime: 2016-09-06 18:10:44
+* Handoff File: [composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/540c2bc4dd206bde235a2ac0be7f4322c2ef2fb4/ol-handoff/Microsoft/windows-apps.zh-cn/master/composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-cn.xlf)
+* Handoff Datetime: 2016-09-06 21:39:41
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/publish/manage-account-users.md)
-* Current Handback File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.zh-cn.xlf)
+* Current Target File: [windows-apps-src\graphics\composition-animation.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/graphics/composition-animation.md)
+* Current Handback File: [composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/composition-animation.64277e041816f40676f859bbeb8895857bec9110.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-20 17:34:58
+* [Back to Top](#report-top)
+
+##### <a name='0e2bef11807e50fee9424ecf662c95630d57e42e3968'></a> Source: [windows-apps-src\graphics\images\composition-animation-types.png](https://github.com/Microsoft/windows-apps/blob/d30de29a80efd3dcfbf830707e0c41adb22f2266/windows-apps-src/graphics/images/composition-animation-types.png)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [0e2bef11807e50fee9424ecf662c95630d57e42e.png](https://github.com/Microsoft/WDG.handoff/blob/540c2bc4dd206bde235a2ac0be7f4322c2ef2fb4/ol-handoff/Microsoft/windows-apps.zh-cn/master/0e2bef11807e50fee9424ecf662c95630d57e42e.png)
+* Handoff Datetime: 2016-09-06 21:39:41
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\graphics\composition-animation.md
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\graphics\images\composition-animation-types.png](https://github.com/Microsoft/windows-apps.zh-cn/blob/c071f2d10cd663b62465b612499fb9e8a0a170db/windows-apps-src/graphics/images/composition-animation-types.png)
+* Current Handback File: [32d970c9a95073fa716893356ec1487d3085867e.png](https://github.com/Microsoft/WDG.handback/blob/6a0eba030ad001616188c1f2aca4ab96197b3901/ol-handback/Microsoft/windows-apps.zh-cn/master/32d970c9a95073fa716893356ec1487d3085867e.png)
+* Current Handback Datetime: 2016-07-21 11:34:38
 * [Back to Top](#report-top)
 
 
