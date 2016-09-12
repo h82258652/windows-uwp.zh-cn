@@ -1,26 +1,39 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/d6158b654b3d9edcb9bd3a52b0fe58154ce40565/windows-apps-src/devices-sensors/3d-printing.md) | HandedOffSuccess | [Details](#f3e01344bf7879e8992f4f7976c65ca0b7e616b13326)
+ [windows-apps-src\input-and-devices\ink-toolbar.md](https://github.com/Microsoft/windows-apps/blob/71b73605bab71dad36977d0506c090c34359a3e2/windows-apps-src/input-and-devices/ink-toolbar.md) | HandedOffSuccess | [Details](#c4a5b0ae2893fda7697457b9e7449a996707de4b4297)
+ [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://github.com/Microsoft/windows-apps/blob/16202eeb37421acf75a9032dfc1eec397d23ce4f/windows-apps-src/launch-resume/run-a-background-task-on-a-timer-.md) | HandedOffSuccess | [Details](#dd0d0fe0081eac112ce22e8a035b4bb70be3bef04428)
 
 ## Item Details
-##### <a name='f3e01344bf7879e8992f4f7976c65ca0b7e616b13326'></a> Source: [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/d6158b654b3d9edcb9bd3a52b0fe58154ce40565/windows-apps-src/devices-sensors/3d-printing.md)
+##### <a name='c4a5b0ae2893fda7697457b9e7449a996707de4b4297'></a> Source: [windows-apps-src\input-and-devices\ink-toolbar.md](https://github.com/Microsoft/windows-apps/blob/71b73605bab71dad36977d0506c090c34359a3e2/windows-apps-src/input-and-devices/ink-toolbar.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/f4ba3aa761b75e1419c7bf0bf66c83aab117b23c/ol-handoff/Microsoft/windows-apps.zh-cn/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.zh-cn.xlf)
-* Handoff Datetime: 2016-09-12 18:38:47
+* Handoff File: [ink-toolbar.170e398d5be743c69a0ff308127388f211d2b7ee.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/7ca5649c62b08e58792f4528126ce89b2edb2dce/ol-handoff/Microsoft/windows-apps.zh-cn/master/ink-toolbar.170e398d5be743c69a0ff308127388f211d2b7ee.zh-cn.xlf)
+* Handoff Datetime: 2016-09-12 21:08:50
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/devices-sensors/3d-printing.md)
-* Current Handback File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.zh-cn.xlf)
+* [Back to Top](#report-top)
+
+##### <a name='dd0d0fe0081eac112ce22e8a035b4bb70be3bef04428'></a> Source: [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://github.com/Microsoft/windows-apps/blob/16202eeb37421acf75a9032dfc1eec397d23ce4f/windows-apps-src/launch-resume/run-a-background-task-on-a-timer-.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/7ca5649c62b08e58792f4528126ce89b2edb2dce/ol-handoff/Microsoft/windows-apps.zh-cn/master/run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-cn.xlf)
+* Handoff Datetime: 2016-09-12 21:08:50
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/32ed88f8e6b89946bfa394c621c09bde4565e407/windows-apps-src/launch-resume/run-a-background-task-on-a-timer-.md)
+* Current Handback File: [run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/7f934e6edca1ecf88a8bb5c9968f789c84e1b237/ol-handback/Microsoft/windows-apps.zh-cn/master/run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-20 17:34:58
 * [Back to Top](#report-top)
 
