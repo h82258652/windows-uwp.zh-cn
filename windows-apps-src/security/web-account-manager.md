@@ -106,7 +106,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory，网址为“https://login.microsoft.com”。 
+接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory，网址为" https://login.microsoft.com "。 
 
 ```C#
 private async void BuildPaneAsync(AccountsSettingsPane s,
