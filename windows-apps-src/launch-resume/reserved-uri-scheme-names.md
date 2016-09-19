@@ -1,27 +1,27 @@
 ---
 author: TylerMSFT
-title: "保留文件和 URI 方案名称"
-description: "当另一个应用启动特定的 URI 方案时，你可以使用 URI 关联自动启动你的应用。"
+title: Reserved file and URI scheme names
+description: You can use URI associations to automatically launch your app when another app launches a specific URI scheme.
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
+ms.openlocfilehash: 2d3d647985701a7bbccc606fd485ad9f6361f9e7
 
 ---
-# 保留文件和 URI 方案名称
+# Reserved file and URI scheme names
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-当另一个应用启动特定的 URI 方案时，你可以使用 URI 关联自动启动你的应用。 但是你无法使用某些 URI 关联（保留的关联）。 如果应用为保留的关联注册，那么该注册会被忽略。 本主题将列出不可用于应用的保留文件和 URI 方案名称。
+You can use URI associations to automatically launch your app when another app launches a specific URI scheme. But there are some URI associations that you can’t use, associations that are reserved. If your app registers for a reserved association, that registration will be ignored. This topic lists the reserved file and URI scheme names that are not available to your app.
 
-## 保留文件类型
+## Reserved file types
 
 
-有两种保留文件类型：为内置应用保留的文件类型和为操作系统保留的文件类型。 启动为内置应用保留的文件类型时，只有内置应用会启动。 任何利用该文件类型注册应用的企图都会被忽略。 同样，任何利用为操作系统保留的文件类型注册应用的企图也会被忽略。
+There are two types of reserved file types: file types reserved for built-in apps and file types reserved for the operating system. When a file type reserved for a built-in app is launched, only the built-in app will launch. Any attempt to register your app with that file type is ignored. Similarly, any attempt to register your app with a file type reserved for the operating system also will be ignored.
 
-为内置应用保留的文件类型
+File types reserved for built-in apps
 
 | .aac  | .icon    | .pem  | .wdp   |
 |-------|----------|-------|--------|
@@ -38,12 +38,12 @@ ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
 | .ico  | .p7b     | .wav  |        |
  
 
-## 为操作系统保留的文件类型
+## File types reserved for the operating system
 
 
-为操作系统保留以下文件类型
+The following file types are reserved for the operating system
 
-| .accountpicture-ms | .its      | .ops           | .url      |
+| .accountpicture-ms | its      | .ops           | .url      |
 |--------------------|----------|----------------|-----------|
 | .ade               | .jar     | .pcd           | .vb       |
 | .adp               | .js      | .pif           | .vbe      |
@@ -82,7 +82,7 @@ ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
 | .isp               | .ocx     | .ttf           |           |
  
 
-## 保留 URI 方案名称
+## Reserved URI scheme names
 
 
 | application.manifest                        | internetshortcut                      | ms-settings:network-mobilehotspot | shbfile                 |
@@ -128,6 +128,6 @@ ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

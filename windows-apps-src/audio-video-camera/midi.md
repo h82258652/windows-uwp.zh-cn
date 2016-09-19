@@ -4,8 +4,8 @@ ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: "本文向你演示了如何枚举 MIDI（乐器数字接口）设备以及从通用 Windows 应用发送和接收 MIDI 消息。"
 title: MIDI
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 ---
 
@@ -131,8 +131,9 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 1.  在**“解决方案资源管理器”**中，在你的项目下，右键单击**“引用”**，然后选择**“添加引用...”**
 2.  展开**“通用 Windows”**节点。
 3.  选择**“扩展”**。
-4.  从扩展列表中，选择**“适用于通用 Windows 应用的 Microsoft 通用 MIDI DLS”**。
-    **注意** 如果存在多个版本的扩展，请务必选择与应用所面向的目标相匹配的版本。 你可以在项目“属性”的**“应用程序”**选项卡中查看应用所面向的 SDK 版本。
+4.  从扩展列表中，选择“适用于通用 Windows 应用的 Microsoft 通用 MIDI DLS”****。
+    > [!NOTE] 
+    > 如果存在多个版本的扩展，请务必选择与应用所面向的目标匹配的版本。 你可以在项目“属性”的“应用程序”****选项卡上查看应用所面向的 SDK 版本。
 
  
 
@@ -144,6 +145,6 @@ ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

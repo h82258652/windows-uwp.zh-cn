@@ -1,53 +1,53 @@
 ---
 author: jnHs
-Description: "当你提交应用时，你可以选择使用“认证说明”页面向认证测试人员提供额外信息。 此信息有助于确保正确测试你的应用。"
-title: "认证说明"
+Description: As you submit your app, you have the option to use the Notes for certification page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
+title: Notes for certification
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 02a0f17fef730da305f5dfb24c834b53045e3eb8
+ms.openlocfilehash: 9f8bc1fc435c0ee25220c60d68a5adaa34ff6214
 
 ---
 
-# 认证说明
+# Notes for certification
 
 
-当你提交应用时，你可以选择使用“认证说明”****页面向认证测试人员提供额外信息。 此信息有助于确保正确测试你的应用。
+As you submit your app, you have the option to use the **Notes for certification** page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
 
-请务必包括以下内容（如果适用于你的应用）：
+Make sure to include the following (if applicable for your app):
 
--   **测试帐户的用户名和密码**
+-   **User names and passwords for test accounts**
 
-    如果你的应用要求用户登录某项服务，请提供一个测试帐户的用户名和密码。 认证测试人员在审查你的应用时将使用此帐户。
+    If your app requires users to log in to a service, provide the user name and password for a test account. The certification testers will use this account when reviewing your app.
 
--   **访问隐藏或锁定功能的步骤**
+-   **Steps to access hidden or locked features**
 
-    如果你的应用包含对测试人员来说不太明显的功能，请向他们简要描述如何访问这些功能。 看起来不完整的应用可能无法通过认证。
+    If your app has features that might not be obvious to the testers, briefly describe how they can access those features. Apps that appear to be incomplete may fail certification.
 
--   **验证后台音频使用情况的步骤**
+-   **Steps to verify background audio usage**
 
-    如果你的应用允许音频在后台运行，测试人员可能需要有关如何访问此功能的说明，以便确认它是否能正常工作。
+    If your app allows audio to run in the background, testers may need instructions on how to access this feature so they can confirm it functions appropriately.
 
--   **有关应用更新中的更改的信息**
+-   **Info about what's changed in an app update**
 
-    对于对以前发布的应用的更新， 你可能希望让测试人员了解已更改的内容，尤其是在数据包相同，并且你仅对应用一览进行更改（如添加更多屏幕截图、更改应用类别或编辑提要）的情况下。
+    For updates to previously published apps, you may want to let the testers know what has changed, especially if your packages are the same and you're just making changes to your app listing (such as adding more screenshots, changing your app's category, or editing the description).
 
-构思要编写的内容时，请记住：
+When considering what to write, remember:
 
--   **将由真人阅读这些说明。** 如果你的说明语气友好并且可以提供清晰、有用的说明信息，测试人员将会非常感激。
--   **请保证说明信息言简意赅。** 如果确实需要介绍详细信息，你可以提供包含更多信息的页面链接。 请记住，应用的客户不会看到这些说明。 如果需要提供复杂说明来测试应用，则考虑你的应用是否需要进行简化，以便客户了解它的使用方法。
--   **服务和外部组件必须联机并且可用。** 如果你的应用连接到部分功能的服务，请确保服务联机并且可用。 包括有关测试人员将需要用到的服务的任何信息。 如果你的应用无法在测试期间连接到它所需的服务，则它可能无法通过认证。
-
- 
+-   **A real person will read these notes.** Testers will appreciate a polite note and clear, helpful instructions.
+-   **Be succinct and keep instructions simple.** If you really need to explain more, you can include a link to a page with more info. Keep in mind that customers of your app won't be seeing these notes. If you need to provide complicated instructions for testing your app, consider whether your app might need to be made simpler so that customers know how to use it.
+-   **Services and external components must be online and available.** If your app connects to a service for part of its function, make sure that the service will be online and available. Include any information about the service that testers will need. If your app can't connect to a service it needs during testing, it may fail certification.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

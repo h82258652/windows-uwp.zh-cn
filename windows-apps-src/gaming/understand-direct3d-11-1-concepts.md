@@ -1,121 +1,121 @@
 ---
 author: mtoepke
-title: "从 Direct3D 9 到 Direct3D 11 的重要更改"
-description: "本主题介绍 DirectX 9 和 DirectX 11 之间更高级别的差异。"
+title: Important changes from Direct3D 9 to Direct3D 11
+description: This topic explains the high-level differences between DirectX 9 and DirectX 11.
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d63aebaf656b62481675eebf7c0bf9ea51784a8
+ms.openlocfilehash: 9812e3a4528b0ce8abd76b1bfcfb93b1268f362c
 
 ---
 
-# 从 Direct3D 9 到 Direct3D 11 的重要更改
+# Important changes from Direct3D 9 to Direct3D 11
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**摘要**
+**Summary**
 
--   [规划 DirectX 移植](plan-your-directx-port.md)
--   从 Direct3D 9 到 Direct3D 11 的重要更改
--   [功能映射](feature-mapping.md)
-
-
-本主题介绍 DirectX 9 和 DirectX 11 之间更高级别的差异。
-
-从根本上说，Direct3D 11 与 Direct3D 9 是同类型的 API - 一种到图形硬件的低级别虚拟化接口。 它还允许你在各种硬件实现上执行图形绘制操作。 自 Direct3D 9 起，图形 API 的布局已更改，设备上下文的概念已经扩展，并且已添加一个 API 专用于图形基础结构。 Direct3D 设备上存储的资源具有一种新的数据多态性机制，称为资源视图。
-
-## 核心 API 函数
+-   [Plan your DirectX port](plan-your-directx-port.md)
+-   Important changes from Direct3D 9 to Direct3D 11
+-   [Feature mapping](feature-mapping.md)
 
 
-在 Direct3D 9 中，你必须先创建一个到 Direct3D API 的接口，然后才能开始使用它。 在 Direct3D 11 通用 Windows 平台 (UWP) 游戏中，可调用 名为 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 的静态函数，创建设备和设备上下文。
+This topic explains the high-level differences between DirectX 9 and DirectX 11.
 
-## 设备和设备上下文
+Direct3D 11 is fundamentally the same type of API as Direct3D 9 - a low-level, virtualized interface into graphics hardware. It still allows you to perform graphics drawing operations on a variety of hardware implementations. The layout of the graphics API has changed since Direct3D 9; the concept of a device context has been expanded, and an API has been added specifically for graphics infrastructure. Resources stored on the Direct3D device have a novel mechanism for data polymorphism called a resource view.
 
-
-Direct3D 11 设备表示一个虚拟化的图形适配器。 它用于在视频内存中创建资源，例如：将纹理上载到 GPU、在纹理资源和交换链上创建视图，以及创建纹理采样器。 有关 Direct3D 11 设备接口用途的完整列表，请参见 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 和 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)。
-
-Direct3D 11 设备上下文用于设置管道状态，并生成呈现命令。 例如，Direct3D 11 呈现链使用设备上下文来设置呈现链并绘制场景（请参见下文）。 设备上下文用于访问（映射）Direct3D 设备资源使用的视频内存，它也可用于更新子资源数据（例如常量缓冲区数据）。 有关 Direct3D 11 设备上下文用途的完整列表，请参见 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)。 请注意，我们的大多数示例均使用即时上下文直接呈现给设备，但 Direct3D 11 还支持递延的设备上下文，这主要用于多线程处理。
-
-在 Direct3D 11 中，设备句柄和设备上下文句柄都通过调用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 获取。 此方法也是你在图形适配器支持的 Direct3D 功能级别上请求一组特定硬件功能并检索信息的位置。 有关设备、设备上下文和线程处理注意事项的详细信息，请参阅 [Direct3D 11 中的设备简介](https://msdn.microsoft.com/library/windows/desktop/ff476880)。
-
-## 设备基础结构、帧缓存和呈现目标视图
+## Core API functions
 
 
-在 Direct3D 11 中，设备适配器和硬件配置均使用 [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) 和 [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) COM 接口通过 DirectX 图形基础结构 (DXGI) API 进行设置。 缓冲区和其他窗口资源（可见或位于屏幕外）使用特定 DXGI 接口创建和配置，[**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) 出厂模式实现获取帧缓冲区之类的 DXGI 资源。 由于 DXGI 拥有交换链，因此 DXGI 接口用于将帧呈现到屏幕上：请参见 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)。
+In Direct3D 9 you had to create an interface to the Direct3D API before you could start using it. In your Direct3D 11 Universal Windows Platform (UWP) game, you call a static function called [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) to create the device and the device context.
 
-使用 [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) 创建与你的游戏兼容的交换链。 你需要为核心窗口或为复合（XAML 互操作）创建一个交换链，而不是为 HWND 创建一个交换链。
-
-## 设备资源和资源视图
+## Devices and device context
 
 
-对于名为视图的视频内存资源，Direct3D 11 支持一种额外的多态性。 从本质上说，如果你有一个 Direct3D 9 对象供获取纹理，则你现在拥有两个对象：纹理资源（保留数据）和资源视图（指示该视图用于呈现的方式）。 基于资源的视图使该资源能够用于特定目的。 例如，将一个 2D 纹理资源创建为 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)，然后在对其创建一个着色器资源视图 ([**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628))，以便该资源在着色器中可用作纹理。 还可以在同一 2D 纹理资源上创建一个呈现目标视图 ([**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582))，以便该资源可用作绘图表面。 在另一个示例中，通过对一个纹理资源使用 2 个不同的视图以 2 种不同的像素格式表示相同的像素数据。
+A Direct3D 11 device represents a virtualized graphics adapter. It's used to create resources in video memory, for example: uploading textures to the GPU, creating views on texture resources and swap chains, and creating texture samplers. For a complete list of what a Direct3D 11 device interface is used for see [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) and [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575).
 
-底层资源必须使用与创建所用的视图类型兼容的属性创建。 例如，如果 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 应用到一个表面，则该表面应使用 [**D3D11\_BIND\_RENDER\_TARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476085) 标记创建。 该表面还必须具有一个与呈现兼容的 DXGI 表面格式（请参见 [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)）。
+A Direct3D 11. device context is used to set pipeline state and generate rendering commands. For example, a Direct3D 11 rendering chain uses a device context to set up the rendering chain and draw the scene (see below). The device context is used to access (map) video memory used by Direct3D device resources; it's also used to update subresource data, for example constant buffer data. For a complete list of what a Direct3D 11 device context is used for see [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) and [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). Note that most of our samples use an immediate context to render directly to the device, but Direct3D 11 also supports deferred device contexts, which are primarily used for multithreading.
 
-用于呈现的大部分资源都继承自[**ID3D11Resource**](https://msdn.microsoft.com/library/windows/desktop/ff476584) 接口，而此接口又继承自 [**ID3D11DeviceChild**](https://msdn.microsoft.com/library/windows/desktop/ff476380)。 顶点缓冲区、索引缓冲区、常量缓冲区以及着色器均为 Direct3D 11 资源。 输入布局和采样器状态直接继承自 [**ID3D11DeviceChild**](https://msdn.microsoft.com/library/windows/desktop/ff476380)。
+In Direct3D 11, the device handle and device context handle are both obtained by calling [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). This method is also where you request a specific set of hardware features and retrieve information on Direct3D feature levels supported by the graphics adapter. See [Introduction to a Device in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476880) for more info on devices, device contexts, and threading considerations.
 
-资源视图使用一个 DXGI\_FORMAT 枚举值以指示像素格式。 并非每个 D3DFMT 均作为 DXGI\_FORMAT 受到支持。 例如，DXGI 中不存在等效于 D3DFMT\_R8G8B8 的 24 bpp RGB 格式。 也不存在等效于各个 RGB 格式（DXGI\_FORMAT\_R10G10B10A2\_UNORM 等效于 D3DFMT\_A2B10G10R10，但 D3DFMT\_A2R10G10B10 没有直接等效对象）的 BGR。 在生成时，你应该计划将任何采用这些传统格式的内容转换为支持的格式。 有关 DXGI 格式的完整列表，请参见 [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059) 枚举。
-
-在呈现场景之前创建 Direct3D 设备资源（和资源视图）。 设备上下文用于设置呈现链，如下所述。
-
-## 设备上下文和呈现链
+## Device infrastructure, frame buffers, and render target views
 
 
-在 Direct3D 9 和 Direct3D 10.x 中，有一个管理资源创建、状态和绘图的 Direct3D 设备对象。 在 Direct3D 11 中，该 Direct3D 设备接口仍管理资源创建，但所有状态和绘图操作均使用 Direct3D 设备上下文处理。 下面是如何使用设备上下文（[**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 接口）设置呈现链的示例：
+In Direct3D 11, the device adapter and hardware configuration are set with the DirectX Graphics Infrastructure (DXGI) API using the [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) and [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) COM interfaces. Buffers and other window resources (visible or offscreen) are created and configured by specific DXGI interfaces; the [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) factory pattern implementation acquires DXGI resources such as the frame buffer. Since DXGI owns the swap chain, a DXGI interface is used to present frames to the screen - see [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631).
 
--   设置和清除呈现目标视图（以及深度模板视图）
--   为输入装配器阶段（IA 阶段）设置顶点缓冲区、索引缓冲区和输入布局
--   将顶点和像素着色器绑定到管道
--   将常量缓冲区绑定到着色器
--   将纹理视图和采样器绑定到像素着色器
--   绘制场景
+Use [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) to create a swap chain compatible with your game. You need to create a swap chain for a core window, or for composition (XAML interop), instead of creating a swap chain for an HWND.
 
-调用其中一个 [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) 方法时，会在呈现目标视图上绘制场景。 当你完成所有绘图时，DXGI 适配器将用于通过调用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 呈现完整的帧。
-
-## 状态管理
+## Device resources and resource views
 
 
-Direct3D 9 通过使用 SetRenderState、SetSamplerState 和 SetTextureStageState 方法设置的大量单独切换管理状态设置。 由于 Direct3D 11 不支持传统的固定函数管道，因此 SetTextureStageState 替换为写入像素着色器 (PS)。 Direct3D 9 状态块没有等效对象。 Direct3D 11 通过使用 4 种状态对象管理状态，从而提供了一种简化的方式来对呈现状态进行分组。
+Direct3D 11 supports an additional level of polymorphism on video memory resources known as views. Essentially, where you had a single Direct3D 9 object for a texture, you now have two objects: the texture resource, which holds the data, and the resource view, which indicates how the view is used for rendering. A view based on a resource enables that resource to be used for a specific purpose. For example, a 2D texture resource is created as an [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635), then a shader resource view ([**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628)) is created on it so it can be used as a texture in a shader. A render target view ([**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)) can also be created on the same 2D texture resource so that it can be used as a drawing surface. In another example, the same pixel data is represented in 2 different pixel formats by using 2 separate views on a single texture resource.
 
-例如，无需搭配使用 SetRenderState 与 D3DRS\_ZENABLE，你可以使用此状态设置和其他相关状态设置创建一个 DepthStencilState 对象，并使用它在呈现时更改状态。
+The underlying resource must be created with properties that are compatible with the type of views that will be created from it. For example, if an [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) is applied to a surface, that surface is created with the [**D3D11\_BIND\_RENDER\_TARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476085) flag. The surface also has to have a DXGI surface format compatible with rendering (see [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)).
 
-将 Direct3D 9 应用程序移植到状态对象时，请注意，你的各种状态组合表示为不可变的状态对象。 它们应一次性创建，并且只要有效，就应重复使用。
+Most of the resources you use for rendering inherit from the [**ID3D11Resource**](https://msdn.microsoft.com/library/windows/desktop/ff476584) interface, which inherits from [**ID3D11DeviceChild**](https://msdn.microsoft.com/library/windows/desktop/ff476380). Vertex buffers, index buffers, constant buffers, and shaders are all Direct3D 11 resources. Input layouts and sampler states inherit directly from [**ID3D11DeviceChild**](https://msdn.microsoft.com/library/windows/desktop/ff476380).
 
-## Direct3D 功能级别
+Resources views use a DXGI\_FORMAT enum value to indicate the pixel format. Not every D3DFMT is supported as a DXGI\_FORMAT. For example, there is no 24bpp RGB format in DXGI that is equivalent to D3DFMT\_R8G8B8. There are also not BGR equivalents to every RGB format (DXGI\_FORMAT\_R10G10B10A2\_UNORM is equivalent to D3DFMT\_A2B10G10R10, but there’s no direct equivalent to D3DFMT\_A2R10G10B10). You should plan to convert any content in these legacy formats to supported formats at build-time. For a complete list of DXGI formats see the [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059) enumeration.
 
+Direct3D device resources (and resource views) are created before the scene is rendered. Device contexts are used to set up the rendering chain, as explained below.
 
-Direct3D 具有一种新机制来确定名为功能级别的硬件支持。 通过允许你请求一组明确定义的 GPU 功能，功能级别简化了指出图形适配器可执行操作的任务。 例如，9\_1 功能级别可实现 Direct3D 9 图形适配器（包括着色器模型 2.x）所提供的功能。 由于 9\_1 是最低功能级别，因此你可能希望所有设备均支持顶点着色器和像素着色器，这与 Direct3D 9 可编程着色器模型支持的阶段相同。
-
-你的游戏将使用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 来创建 Direct3D 设备和设备上下文。 调用该函数时，你将提供游戏可支持的功能级别列表。 将从该列表返回受支持的最高功能级别。 例如，如果你的游戏中可使用 BC4/BC5 纹理（DirectX 10 硬件的功能），则应在支持的功能级别列表中包含至少 9\_1 和 10\_0。 如果游戏在 DirectX 9 硬件上运行，并且无法使用 BC4/BC5 纹理，则 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 将返回 9\_1。 然后，你的游戏可回退到不同的纹理格式（以及更小的纹理）。
-
-如果你决定扩展 Direct3D 9 游戏以支持更高的 Direct3D 功能级别，则最好先完成现有 Direct3D 9 图形代码的移植。 之后，你可以让游戏在 Direct3D 11 中工作，通过增强的图形可以比较容易地增加额外的呈现路径。
-
-有关功能级别支持的详细解释，请参见 [Direct3D 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876)。 有关 Direct3D 11 功能的完整列表， 请参阅 [Direct3D 11 功能](https://msdn.microsoft.com/library/windows/desktop/ff476342)和 [Direct3D 11.1 功能](https://msdn.microsoft.com/library/windows/desktop/hh404562)。
-
-## 功能级别和可编程管道
+## Device context and the rendering chain
 
 
-从 Direct3D 9 开始，硬件在不断发展，一些新的可选阶段已添加到可编程图形管道。 你拥有的适用于图形管道的选项集因 Direct3D 功能级别而不同。 功能级别 10.0 包括具有可选流输出的几何着色器阶段，以在 GPU 上实现多通道呈现。 功能级别 11\_0 包括外壳着色器和域着色器，以与硬件分割搭配使用。 功能级别 11\_0 还包括对 DirectCompute 着色器的全面支持，而功能级别 10.x 仅包括对有限形式的 DirectCompute 的支持。
+In Direct3D 9 and Direct3D 10.x, there was a single Direct3D device object which managed resource creation, state, and drawing. In Direct3D 11, the Direct3D device interface still manages resource creation, but all state and drawing operations are handled by using a Direct3D device context. Here's an example of how the device context ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) interface) is used to set up the rendering chain:
 
-使用对应于 Direct3D 功能级别的着色器配置文件以 HLSL 编写所有着色器。 着色器配置文件可向上兼容，因此使用 vs\_4\_0\_level\_9\_1 or ps\_4\_0\_level\_9\_1 编译的 HLSL 着色器可在所有设备上工作。 着色器配置文件无法向下兼容，因此使用 vs\_4\_1 编译的着色器将仅在功能级别 10\_1、11\_0 或 11\_1 设备上工作。
+-   Set and clear render target views (and depth stencil view)
+-   Set the vertex buffer, index buffer, and input layout for the input assembler stage (IA stage)
+-   Bind vertex and pixel shaders to the pipeline
+-   Bind constant buffers to shaders
+-   Bind texture views and samplers to the pixel shader
+-   Draw the scene
 
-Direct3D 9 使用 SetVertexShaderConstant 和 SetPixelShaderConstant 为采用共享数组的着色器管理常量。 Direct3D 11 使用常量缓冲区，这是顶点缓冲区或索引缓冲区之类的资源。 常量缓冲区旨在有效地进行更新。 无需将所有的着色器常量组织为一个全局数组，你可以将常量组织成逻辑分组，并通过一个或多个常量缓冲区进行管理。 当你将 Direct3D 9 游戏移植到 Direct3D 11 时，请计划组织常量缓冲区，以便你可以相应地更新它们。 例如，对不是将每个帧更新到一个单独常量缓冲区的着色器常量进行分组，这样你就不必经常将数据上载到图形适配器以及更加动态的着色器常量。
+When one of the [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) methods is called, the scene is drawn on the render target view. When you're done will all your drawing the DXGI adapter is used to present the completed frame by calling [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
 
-> **注意** 大多数 Direct3D 9 应用程序广泛使用着色器，但偶尔会混合使用传统的固定函数行为。 请注意，Direct3D 11 仅使用可编程着色模型。 Direct3D 9 的传统固定函数功能已弃用。
+## State management
 
- 
+
+Direct3D 9 managed state settings with a large set of individual toggles set with the SetRenderState, SetSamplerState, and SetTextureStageState methods. Since Direct3D 11 does not support the legacy fixed-function pipeline, the SetTextureStageState is replaced by writing pixel shaders (PS). There is no equivalent to a Direct3D 9 state block. Direct3D 11 instead manages state through the use of 4 kinds of state objects which provide a more streamlined way to group the rendering state.
+
+For example, instead of using SetRenderState with D3DRS\_ZENABLE, you create a DepthStencilState object with this and other related state settings and use it to change state while rendering.
+
+When porting Direct3D 9 applications to state objects, be aware that your various state combinations are represented as immutable state objects. They should be created once and re-used as long as they are valid.
+
+## Direct3D feature levels
+
+
+Direct3D has a new mechanism for determining hardware support called feature levels. Feature levels simplify the task of figuring out what the graphics adapter can do by allowing you to request a well-defined set of GPU functionality. For example, the 9\_1 feature level implements the functionality provided by Direct3D 9 graphics adapters, including shader model 2.x. Since 9\_1 is the lowest feature level, you can expect all devices to support a vertex shader and a pixel shader, which were the same stages supported by the Direct3D 9 programmable shader model.
+
+Your game will use [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) to create the Direct3D device and device context. When you call this function you provide a list of feature levels that your game can support. It will return the highest supported feature level from that list. For example if your game can use BC4/BC5 textures (a feature of DirectX 10 hardware), you would include at least 9\_1 and 10\_0 in the list of supported feature levels. If the game is running on DirectX 9 hardware and BC4/BC5 textures can't be used, then [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) will return 9\_1. Then your game can fall back to a different texture format (and smaller textures).
+
+If you decide to extend your Direct3D 9 game to support higher Direct3D feature levels then it's better to finish porting your existing Direct3D 9 graphics code first. After you have your game working in Direct3D 11, it's easier to add additional rendering paths with enhanced graphics.
+
+See [Direct3D feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876) for a detailed explanation of feature level support. See [Direct3D 11 Features](https://msdn.microsoft.com/library/windows/desktop/ff476342) and [Direct3D 11.1 Features](https://msdn.microsoft.com/library/windows/desktop/hh404562) for a full list of Direct3D 11 features.
+
+## Feature levels and the programmable pipeline
+
+
+Hardware has continue to evolve since Direct3D 9, and several new optional stages have been added to the programmable graphics pipeline. The set of options you have for the graphics pipeline varies with the Direct3D feature level. Feature level 10.0 includes the geometry shader stage with optional stream out for multipass rendering on the GPU. Feature level 11\_0 include the hull shader and domain shader for use with hardware tessellation. Feature level 11\_0 also includes full support for DirectCompute shaders, while feature levels 10.x only include support for a limited form of DirectCompute.
+
+All shaders are written in HLSL using a shader profile that corresponds to a Direct3D feature level. Shader profiles are upwards compatible, so an HLSL shader that compiles using vs\_4\_0\_level\_9\_1 or ps\_4\_0\_level\_9\_1 will work across all devices. Shader profiles are not downlevel compatible, so a shader compiled using vs\_4\_1 will only work on feature level 10\_1, 11\_0, or 11\_1 devices.
+
+Direct3D 9 managed constants for shaders using a shared array with SetVertexShaderConstant and SetPixelShaderConstant. Direct3D 11 uses constant buffers, which are resources like a vertex buffer or index buffer. Constant buffers are designed to be updated efficiently. Instead of having all the shader contants organized into a single global array you organize your constants into logical groupings and manage them through one or more constant buffers. When you port your Direct3D 9 game to Direct3D 11, plan to organize your constant buffers so that you can update them appropriately. For example, group shader constants that aren't updated every frame into a separate constant buffer, so that you don't have to constantly upload that data to the graphics adapter along with your more dynamic shader constants.
+
+> **Note**   Most Direct3D 9 applications made extensive use of shaders, but occasionally mixed in use of the legacy fixed-function behavior. Note that Direct3D 11 only uses a programmable shading model. The legacy fixed-function features of Direct3D 9 are deprecated.
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

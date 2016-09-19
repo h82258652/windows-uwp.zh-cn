@@ -1,31 +1,31 @@
 ---
 author: PatrickFarley
-title: "获取用户位置"
-description: "查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。"
+title: Get the user's location
+description: Find the user's location and respond to changes in location. Access to the user's location is managed by privacy settings in the Settings app. This topic also shows how to check if your app has permission to access the user's location.
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: d35bf3ef13e2b36dfed6613a00f65d19b9013464
+ms.sourcegitcommit: bdb6cbd0b0ccb7b6aa04cf6ba98bb154af325515
+ms.openlocfilehash: 1172aae67169295ac6f2446c839a1cce5a84fa36
 
 ---
 
-# 获取用户位置
+# Get the user's location
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-查找用户的位置并响应位置更改。 对用户位置的访问由“设置”应用中的隐私设置来管理。 本主题还介绍了如何查看你的应用是否具有访问用户位置的权限。
+Find the user's location and respond to changes in location. Access to the user's location is managed by privacy settings in the Settings app. This topic also shows how to check if your app has permission to access the user's location.
 
-**提示**若要了解有关在你的应用中访问用户位置的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)下载以下示例。
+**Tip** To learn more about accessing the user's location in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## 启用位置功能
+## Enable the location capability
 
 
-1.  在“解决方案资源管理器”****中，双击“package.appxmanifest”****并选择“功能”****选项卡。
-2.  在**“功能”**列表中，选择**“功能”**选项卡。 这将向程序包清单文件中添加 `Location` 设备功能。
+1.  In **Solution Explorer**, double-click **package.appxmanifest** and select the **Capabilities** tab.
+2.  In the **Capabilities** list, select the **Capabilities** tab. This adds the `Location` device capability to the package manifest file.
 
 ```XML
   <Capabilities>
@@ -34,14 +34,14 @@ ms.openlocfilehash: d35bf3ef13e2b36dfed6613a00f65d19b9013464
   </Capabilities>
 ```
 
-## 获取当前位置
+## Get the current location
 
 
-此部分介绍如何使用 [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 命名空间中的 API 检测用户的地理位置。
+This section describes how to detect the user's geographic location using APIs in the [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) namespace.
 
-### 步骤 1：请求访问用户的位置
+### Step 1: Request access to the user's location
 
-**重要提示** 在尝试访问用户的位置之前，必须通过使用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法请求对该位置的访问权限。 必须从 UI 线程调用 **RequestAccessAsync** 方法，并且你的应用必须在前台。 只有在用户授予相应的应用权限后，你的应用才可以访问用户的位置信息。
+Unless your app has Consentless Location capability (see note), you must request access to the user's location by using the [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) method before attempting to access the location. You must call the **RequestAccessAsync** method from the UI thread and your app must be in the foreground. Your app will not be able to access the user's location information until after the user grants permission to your app.\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -49,11 +49,15 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法提示用户提供访问其位置的权限。 仅提示用户一次（每个应用）。 在他们第一次授予或拒绝授予权限之后，此方法不会再提示用户提供权限。 若要在已进行提示之后帮助用户更改位置权限，我们建议提供一个指向位置设置的链接，如本主题中后面部分所示。
 
-### 步骤 2：获取用户的位置并注册位置权限的更改
 
-[**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 方法执行当前位置的一次读取。 在此处，**switch** 语句将与 **accessStatus**（来自上一示例）结合使用以便仅在允许访问用户位置时进行操作。 如果允许访问用户位置，该代码将创建 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象、注册位置权限的更改，并请求用户位置。
+The [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) method prompts the user for permission to access their location. The user is only prompted once (per app). After the first time they grant or deny permission, this method no longer prompts the user for permission. To help the user change location permissions after they've been prompted, we recommend that you provide a link to the location settings as demonstrated later in this topic.
+
+>Note:  The Consentless Location feature allows your app to obtain an intentionally obfuscated (imprecise) location without getting the user's explicit permission (the system-wide location switch must still be **on**, however). To learn how to utilize Consentless Location in your app, see the [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) method in the [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) class.
+
+### Step 2: Get the user's location and register for changes in location permissions
+
+The [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) method performs a one-time reading of the current location. Here, a **switch** statement is used with **accessStatus** (from the previous example) to act only when access to the user's location is allowed. If access to the user's location is allowed, the code creates a [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object, registers for changes in location permissions, and requests the user's location.
 
 ```csharp
 switch (accessStatus)
@@ -87,9 +91,9 @@ switch (accessStatus)
 }
 ```
 
-### 步骤 3：处理位置权限的更改
+### Step 3: Handle changes in location permissions
 
-[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象触发 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件以指示用户位置设置已更改。 该事件通过参数的 **Status** 属性（类型为 [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)）传递相应的状态。 请注意，此方法不是从 UI 线程中调用的，并且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 对象调用了 UI 更改。
+The [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object triggers the [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) event to indicate that the user's location settings changed. That event passes the corresponding status via the argument's **Status** property (of type [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)). Note that this method is not called from the UI thread and the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) object invokes the UI changes.
 
 ```csharp
 using Windows.UI.Core;
@@ -155,23 +159,23 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 }
 ```
 
-## 响应位置更新
+## Respond to location updates
 
 
-本部分介绍如何使用 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件来接收一段时间内的用户的位置更新。 由于用户随时可能会取消对位置的访问，请务必调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 和使用 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件，如上一部分中所示。
+This section describes how to use the [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) event to receive updates of the user's location over a period of time. Because the user could revoke access to location at any time, it's important call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) and use the [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) event as shown in the previous section.
 
-本部分假定你已启用位置功能并且已从前台应用的 UI 线程调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)。
+This section assumes that you've already enabled the location capability and called [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) from the UI thread of your foreground app.
 
-### 步骤 1：定义报告间隔和注册位置更新
+### Step 1: Define the report interval and register for location updates
 
-在本示例中，将一个 **switch** 语句与 **accessStatus**（来自上一示例）一起使用，以便仅在允许访问用户位置时进行操作。 如果允许访问用户位置，该代码将创建 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象、指定跟踪类型并注册位置更新。
+In this example, a **switch** statement is used with **accessStatus** (from the previous example) to act only when access to the user's location is allowed. If access to the user's location is allowed, the code creates a [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object, specifies the tracking type, and registers for location updates.
 
-[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象可以基于位置更改（基于距离的跟踪）或时间更改（基于定期的跟踪）触发 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件。
+The [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object can trigger the [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) event based on a change in position (distance-based tracking) or a change in time (periodic-based tracking).
 
--   对于基于距离的跟踪，设置 [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) 属性。
--   对于基于周期的跟踪，设置 [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) 属性。
+-   For distance-based tracking, set the [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) property.
+-   For periodic-based tracking, set the [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) property.
 
-如果两个属性都未设置，则每隔 1 秒（相当于 `ReportInterval = 1000`）返回一个位置。 此处，使用 2 秒 (`ReportInterval = 2000`) 报告间隔。
+If neither property is set, a position is returned every 1 second (equivalent to `ReportInterval = 1000`). Here, a 2 second (`ReportInterval = 2000`) report interval is used.
 ```csharp
 using Windows.Devices.Geolocation;
 ...
@@ -207,9 +211,9 @@ switch (accessStatus)
 }
 ```
 
-### 步骤 2：处理位置更新
+### Step 2: Handle location updates
 
-[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 对象通过触发 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件以指示用户的位置更改或时间已过，具体取决于配置它的方式。 该事件通过参数的 **Position** 属性（属于类型 [**Geoposition**](https://msdn.microsoft.com/library/windows/apps/br225543)）来传递相应的位置信息。 在此示例中，该方法不是从 UI 线程中调用的，并且 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 对象调用了 UI 更改。
+The [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) object triggers the [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) event to indicate that the user's location changed or time has passed, depending on how you've configured it. That event passes the corresponding location via the argument's **Position** property (of type [**Geoposition**](https://msdn.microsoft.com/library/windows/apps/br225543)). In this example, the method is not called from the UI thread and the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) object invokes the UI changes.
 
 ```csharp
 using Windows.UI.Core;
@@ -224,10 +228,10 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 }
 ```
 
-## 更改位置隐私设置
+## Change the location privacy settings
 
 
-如果位置隐私设置不允许你的应用访问用户位置，我们建议提供一个指向**“设置”**应用中的**“位置隐私设置”**的便捷链接。 在此示例中，“超链接”控件用于导航到 `ms-settings:privacy-location` URI。
+If the location privacy settings don't allow your app to access the user's location, we recommend that you provide a convenient link to the **location privacy settings** in the **Settings** app. In this example, a Hyperlink control is used navigate to the `ms-settings:privacy-location` URI.
 
 ```xml
 <!--Set Visibility to Visible when access to location is denied -->  
@@ -241,7 +245,7 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 </TextBlock>
 ```
 
-此外，你的应用可以调用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法，以从代码启动**“设置”**应用。 有关详细信息，请参阅[启动 Windows 设置应用](https://msdn.microsoft.com/library/windows/apps/mt228342)。
+Alternatively, your app can call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app from code. For more info, see [Launch the Windows Settings app](https://msdn.microsoft.com/library/windows/apps/mt228342).
 
 ```csharp
 using Windows.System;
@@ -249,25 +253,25 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
 ```
 
-## 对应用进行故障排除
+## Troubleshoot your app
 
 
-在你的应用可以访问用户位置之前，必须在设备上启用**“位置”**。 在“设置”****应用中，检查以下“位置隐私设置”****是否已打开：
+Before your app can access the user's location, **Location** must be enabled on the device. In the **Settings** app, check that the following **location privacy settings** are turned on:
 
--   **“此设备的位置...”**已**“打开”**（在 Windows 10 移动版中不适用）
--   位置服务设置（“位置”****）已“打开”****
--   在**“选择可以使用你的位置的应用”**下，你的应用已设置为**“打开”**
+-   **Location for this device...** is turned **on** (not applicable in Windows 10 Mobile)
+-   The location services setting, **Location**, is turned **on**
+-   Under **Choose apps that can use your location**, your app is set to **on**
 
-## 相关主题
+## Related topics
 
-* [UWP 地理位置示例](http://go.microsoft.com/fwlink/p/?linkid=533278)
-* [地理围栏设计指南](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [位置感知应用设计指南](https://msdn.microsoft.com/library/windows/apps/hh465148)
-
-
+* [UWP geolocation sample](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Design guidelines for geofencing](https://msdn.microsoft.com/library/windows/apps/dn631756)
+* [Design guidelines for location-aware apps](https://msdn.microsoft.com/library/windows/apps/hh465148)
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

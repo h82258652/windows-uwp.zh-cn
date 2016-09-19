@@ -1,76 +1,76 @@
 ---
 author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
-description: "了解如何使用 AdControl 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML 应用中显示横幅广告。"
-title: "HTML 5 和 Javascript 中的 AdControl"
+description: Learn how to use the AdControl class to display banner ads in a JavaScript/HTML app for Windows 10 (UWP), Windows 8.1, or Windows Phone 8.1.
+title: AdControl in HTML 5 and JavaScript
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
 
 ---
 
-# HTML 5 和 Javascript 中的 AdControl
+# AdControl in HTML 5 and JavaScript
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-本演练介绍如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML 应用中显示横幅广告。 本演练不使用 **AdMediatorControl** 或广告中介。
-
-有关演示如何将横幅广告添加到 JavaScript/HTML 应用的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
-
-## 先决条件
 
 
-* 使用 Visual Studio 2015 或 Visual Studio 2013 安装 [Microsoft 官方商城协定和盈利 SDK](http://aka.ms/store-em-sdk)。
+This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class to display banner ads in a JavaScript/HTML app for Windows 10 (UWP), Windows 8.1, or Windows Phone 8.1. This walkthrough does not use the **AdMediatorControl** or ad mediation.
 
-> **注意** 如果你已使用 Visual Studio 2015 安装了 Windows 10 Anniversary SDK Preview Build 14295 或更高版本，还必须安装 WinJS 库。 此库过去包含在以前版本的 Windows SDK（适用于 Windows 10）中，但从 Windows 10 Anniversary SDK Preview Build 14295 开始，此库必须单独安装。 若要安装 WinJS，请参阅[获取 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
+For a complete sample project that demonstrates how to add banner ads to a JavaScript/HTML app, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
-## 代码开发
+## Prerequisites
 
-1. 在 Visual Studio 中，打开项目或创建新项目。
 
-2. 如果你的项目面向**任何 CPU**，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 如果你的项目面向**任何 CPU**，你将无法在以下步骤中成功添加对 Microsoft Advertising 库的引用。 有关详细信息，请参阅[项目中由面向任何 CPU 引起的引用错误](known-issues-for-the-advertising-libraries.md#reference_errors)。
+* For UWP apps: install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015.
+* For Windows 8.1 or Windows Phone 8.1 apps: install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) with Visual Studio 2015 or Visual Studio 2013.
 
-3.  在“解决方案资源管理器”****窗口中，右键单击“引用”****，然后选择“添加引用...”****
+> **Note** If you have installed Windows 10 Anniversary SDK Preview Build 14295 or later with Visual Studio 2015, you must also install the WinJS library. This library used to be included in previous versions of the Windows SDK for Windows 10, but starting with the Windows 10 Anniversary SDK Preview Build 14295 this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
-4.  在“引用管理器”****中，根据你的项目类型选择以下引用之一：
+## Code development
 
-    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”****、单击“扩展”****，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”****（版本 10.0）旁边的复选框。
+1. In Visual Studio, open your project or create a new project.
 
-    -   对于 Windows 8.1 项目：展开“Windows 8.1”****、单击“扩展”****，然后选中“适用于 Windows 8.1 Native (JS) 的 Microsoft Advertising SDK”****旁边的复选框。
+2. If your project targets **Any CPU**, update your project to use an architecture-specific build output (for example, **x86**). If your project targets **Any CPU**, you will not be able to successfully add a reference to the Microsoft advertising library in the following steps. For more information, see [Reference errors caused by targeting Any CPU in your project](known-issues-for-the-advertising-libraries.md#reference_errors).
 
-    -   对于 Windows 8.1 项目：展开“Windows Phone 8.1”****、单击“扩展”****，然后选中“适用于 Windows Phone 8.1 Native (JS) 的 Microsoft Advertising SDK”****旁边的复选框。
+3.  From the **Solution Explorer** window, right click **References**, and select **Add Reference…**
+
+4.  In **Reference Manager**, select one of the following references depending on your project type:
+
+    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for JavaScript** (Version 10.0).
+
+    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for Windows 8.1 Native (JS)**.
+
+    -   For a Windows 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)**.
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
 
-    > **注意** 此图像适用于生成 Windows 10 UWP 项目的 Visual Studio 2015。 如果你正在生成 Windows 8.1 或 Windows Phone 8.1 应用，或正在使用 Visual Studio 2013，你的屏幕看起来有所不同。
+    > **Note**  This image is for Visual Studio 2015 building a UWP project for Windows 10. If you are building a Windows 8.1 or Windows Phone 8.1 app or using Visual Studio 2013, your screen will look different.
 
-5.  在“引用管理器”****中，单击“确定”。
+5.  In **Reference Manager**, click OK.
 
-6.  打开 default.html 文件（或其他适用于你的项目的 html 文件）。
+6.  Open the default.html file (or other html file as appropriate for your project).
 
-7.  在**&lt;标题&gt;**部分中，在项目的 JavaScript 引用 default.css 和 default.js 之后，添加对 ad.js 的引用。
+7.  In the **&lt;head&gt;** section, after the project’s JavaScript references of default.css and default.js, add the reference to ad.js.
 
-    在 UWP 项目中，添加以下代码。
+    In a UWP project, add the following code.
 
     ``` syntax
     <!-- Microsoft advertising required references -->
     <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
     ```
 
-    在 Windows 8.1 或 Windows Phone 8.1 项目中，添加以下代码。
+    In a Windows 8.1 or Windows Phone 8.1 project, add the following code.
 
     ``` syntax
     <!-- Microsoft advertising required references -->
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > **注意** 在包含了 default.js 之后，此行必须放置在**&lt;标题&gt;**部分；否则，当你生成项目时将遇到错误。
+    > **Note**&nbsp;&nbsp;This line must be placed in the **&lt;head&gt;** section after the include of default.js; otherwise, you will encounter an error when you build your project.
 
-8.  修改 default.html 文件（或其他适用于你的项目的 html 文件）的**&lt;正文&gt;**部分，以便包含 **AdControl** 的 div。 将 **AdControl** 中的 **applicationId** 和 **adUnitId** 属性分配给[测试模式值](test-mode-values.md)中提供的测试值，然后调整控件的高度和宽度，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
+8.  Modify the **&lt;body&gt;** section in the default.html file (or other html file as appropriate for your project) to include the div for the **AdControl**. Assign the **applicationId** and **adUnitId** properties in the **AdControl** to the test values provided in [Test mode values](test-mode-values.md), and adjust the height and width of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
 
-    > **注意**  
-    在提交应用之前，你需要将测试 **applicationId** 和 **adUnitId** 值替换为实时值。
+    > **Note**&nbsp;&nbsp;You will replace the test **applicationId** and **adUnitId** values with live values before submitting your app for submission.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -79,20 +79,20 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
     </div>
     ```
 
-9.  编译并运行应用以查看是否带有广告。
+9.  Compile and run the app to see it with an ad.
 
-## 使用 Windows 开发人员中心发布带有实时广告的应用
+## Release your app with live ads using Windows Dev Center
 
 
-1.  在“开发人员中心仪表板”中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，请指定“横幅”****。 记下广告单元 ID 和应用程序 ID。
+1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create a standalone Microsoft Advertising unit](../publish/monetize-with-ads.md). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
 
-2.  在你的代码中，将测试广告单元值（**applicationId** 和 **adUnitId**）替换为你在开发人员中心生成的实时值。
+2.  In your code, replace the test ad unit values (**applicationId** and **adUnitId**) with the live values you generated in Dev Center.
 
-3.  使用开发人员中心仪表板[将应用提交](../publish/app-submissions.md)到应用商店。
+3.  [Submit your app](../publish/app-submissions.md) to the Store using the Dev Center dashboard.
 
-4.  在开发人员中心仪表板中查看你的[广告性能报告](../publish/advertising-performance-report.md)。
+4.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
 
-## 示例 UWP 项目的完整 default.html
+## Complete default.html for a sample UWP project
 
 
 ``` syntax
@@ -124,15 +124,15 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 </html>
 ```
 
-## 相关主题
+## Related topics
 
-* [GitHub 上的广告示例](http://aka.ms/githubads)
+* [Advertising samples on GitHub](http://aka.ms/githubads)
  
 
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

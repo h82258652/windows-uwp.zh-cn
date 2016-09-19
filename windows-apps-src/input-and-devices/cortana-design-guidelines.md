@@ -1,25 +1,25 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "通过语音命令，使用你的应用提供的功能扩展 Cortana。"
-title: "Cortana 设计指南"
+Description: Extend Cortana with functionality provided by your app, using voice commands.
+title: Cortana design guidelines
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
 label: Guidelines
 template: detail.hbs
 redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/voicecommand-design-guidelines
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 83bf462659b28df49bf40beabd253acd039d67b6
+ms.openlocfilehash: b3612b71b5e6843d2326c9874e674cfb77900e7e
 
 ---
 
-# Cortana 设计指南
+# Cortana design guidelines
 
-本主题已移至 https&#58;//msdn.microsoft.com/zh-cn/cortana/voicecommands/voicecommand-design-guidelines。
+This topic has been moved to https://msdn.microsoft.com/en-us/cortana/voicecommands/voicecommand-design-guidelines.
 
-Github：https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/voicecommand-design-guidelines.md
+Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/voicecommand-design-guidelines.md
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

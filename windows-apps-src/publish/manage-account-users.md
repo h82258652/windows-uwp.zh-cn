@@ -1,222 +1,230 @@
 ---
 author: jnHs
-Description: "将用户添加到开发人员中心帐户，并向其分配具有特定权限的角色。"
-title: "管理帐户用户"
+Description: Add users to your Dev Center account and assign them roles with specific permissions.
+title: Manage account users
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 translationtype: Human Translation
-ms.sourcegitcommit: 3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1
-ms.openlocfilehash: 18e25d0064652089d450eec811a7a5d24b8dc3e8
+ms.sourcegitcommit: 3b4dc64cd4dfda07bb55ffc69bb9a99740fc951a
+ms.openlocfilehash: ce50957f133fe612ca4a3d5b90a0a34145a960a4
 
 ---
 
-# 管理帐户用户
+# Manage account users
 
 
-你可以使用 Azure Active Directory 将用户添加到开发人员中心帐户。 为每个用户分配一个角色，该角色为他们提供一组特定的帐户权限。 你还可以将一个角色分配给一组用户或 Azure AD 应用程序。
+You can use Azure Active Directory to add users to your Dev Center account. Each user is assigned a role that gives them a specific set of permissions to the account. You can also assign a role to a group of users, or to an Azure AD application.
 
-> **重要提示** 若要添加和管理帐户用户，你必须先将你的开发人员中心帐户与你的组织的 Azure Active Directory 相关联。 这需要你使用[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)帐户登录到 Azure AD。 建立此关联后，你将无法在不联系支持人员的情况下删除它。
+> **Important**  In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory. This requires you to sign in to Azure AD with a [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) account. Once you establish this association, you won't be able to remove it without contacting support.
 
  
 
-## 将你的开发人员中心帐户与你的组织的 Azure Active Directory 相关联
+## Associate your Dev Center account with your organization's Azure Active Directory
+
+Windows Dev Center leverages Azure Active Directory for multi-user management and roles assignment. If your organization already uses Office 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can create a new Azure AD from within Dev Center at no additional charge.
+
+Note that only one Dev Center account can be associated with an Azure AD. Similarly, only one Azure AD can be associated with a Dev Center account.
+
+> **Note**  You can only add users to your Dev Center account if they are part of your organization’s Azure AD (or if you create new Azure AD accounts for them). You won’t be able to add users to your Dev Center account with their personal Microsoft accounts.
+
+### Associate your Dev Center account with your organization’s existing Azure AD
+
+If your organization already uses Azure AD, follow these steps to link your Dev Center account.
+
+1.  Go to your **Account settings** and click **Manage users**.
+2.  Click the **Associate Azure AD with your Dev Center account** button.
+3.  Sign in to your Azure AD account. This account must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission in order to set up the association.
+4.  Review the organization and domain name for your Azure AD account. To complete the association, click **Confirm**.
+5.  If the association is successful, you will then be ready to add and manage account users on the **Manage users** page of your account as described in the sections below.
+
+### Create a brand new Azure AD to associate with your Dev Center account
+
+If you need to set up a new Azure AD to link with your Dev Center account, follow these steps.
+
+1.  Go to your **Account settings** and click **Manage users**.
+2.  Click the **Create new Azure AD** button.
+3.  Enter the directory information for your new Azure AD:
+ - **Domain name**: The unique name that we’ll use for your Azure AD domain, along with “.onmicrosoft.com”. For example, if you entered “example”, your Azure AD domain would be “example.onmicrosoft.com”.
+ - **Contact email**: An email address where we can contact you about your account if necessary.
+ - **Global administrator user account info**: The first name, last name, username, and password that you want to use for the new administrator account.
+4.  Click **Create** to confirm the new domain and account info.
+5.  Sign in with your new Azure AD global administrator username and password to begin adding and managing additional account users on the **Manage users** page of your account as described in the sections below.
 
 
-Windows开发人员中心利用 Azure Active Directory 进行多用户管理和角色分配。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以免费在开发人员中心中创建新的 Azure AD。 
+> **Important**  After you associate your Dev Center account with Azure AD, you’ll always need sign in to Dev Center using the Azure AD global administrator account (and not a personal Microsoft account) in order to add and manage account users.
 
-请注意，仅一个开发人员中心帐户可与 Azure AD 关联。 同样地，仅一个 Azure AD 可与开发人员中心帐户关联。
-
-> **注意** 如果用户是你的组织的 Azure AD 成员（或者如果你为他们创建新的 Azure AD 帐户），你仅可以将他们添加到你的开发人员中心帐户。 无法使用用户的个人 Microsoft 帐户将他们添加到开发人员中心帐户。
-
-若要将你的开发人员中心帐户与你的组织的现有 Azure AD 关联：
-
-1.  转到你的“帐户设置”****并单击“管理用户”****。
-2.  单击“将 Azure AD 与开发人员中心帐户关联”****按钮。
-3.  登录到 Azure AD 帐户。 此帐户必须具有[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限才能设置关联。
-4.  查看 Azure AD 帐户的组织和域名。 若要完成关联，请单击“确认”****。
-5.  如果关联成功，你可以随时在你的帐户的“管理用户”****页上添加和管理帐户用户，如以下部分所述。
-  
-若要创建与开发人员中心帐户关联的全新 Azure AD：
-1.  转到你的“帐户设置”****并单击“管理用户”****。
-2.  单击“创建新的 Azure AD”****按钮。
-3.  输入新的 Azure AD 的目录信息：
-- **域名**：用于 Azure AD 域的唯一名称，包含“.onmicrosoft.com”。 例如，如果你输入“example”，则 Azure AD 域将为“example.onmicrosoft.com”。 
-- **联系人电子邮件**：我们在必要时就帐户情况与你联系的电子邮件地址。
-- **全局管理员用户帐户信息**：希望用于新管理员帐户的名字、姓氏、用户名和密码。 
-4.  单击“创建”****以确认新域和帐户信息。
-5.  使用新的 Azure AD 全局管理员用户名和密码登录，以开始在帐户的“管理用户”****页面上添加和管理其他帐户用户，如下文所述。
+## Add and manage account users, groups, and Azure AD applications
 
 
-> **重要提示** 在将开发人员中心帐户与 Azure AD 关联后，你将始终需要使用 Azure AD 全局管理员帐户（而非个人 Microsoft 帐户）登录开发人员中心，以便添加和管理帐户用户。
+Once you have established the association, you can add users, groups, and Azure AD applications to your account. You can also change roles, edit account details, or remove users.
 
-## 添加和管理用户、组和 Azure AD 应用程序
+> **Note**  If your organization uses [directory integration](http://go.microsoft.com/fwlink/p/?LinkID=724033) to sync the on-premises directory service with your Azure AD, you won't be able to create new users, groups, or Azure AD applications in Dev Center. You (or another admin in your on-premises directory) will need to create them directly in the on-premises directory before you'll be able to see and add them in Dev Center.
 
+When managing users, keep the following in mind:
 
-建立关联后，你可以向你的帐户添加用户、组和 Azure AD 应用程序。 你还可以更改角色、编辑帐户详细信息或删除用户。
+-   All Dev Center users must have an active account in your organization's Azure AD.
+-   Creating a **new** user or group in Dev Center will also add them to your organization's Azure AD.
+-   Making changes to a user or group's name in Dev Center will make those changes in your organization's Azure AD.
+-   Users (including groups and Azure AD applications) will be able to access the entire Dev Center account with the permissions associated with their assigned role. You can't limit a user's access so that they can only work with specific apps and/or add-ons.
+-   You can allow a user, group, or Azure AD application to have access to more than one role's functionality by selecting multiple roles.
+-   A user with a certain role may also be part of a group that has a different role. In that case, the user will have access to the functionality associated with both roles.
 
-> **注意** 如果你的组织使用[目录集成](http://go.microsoft.com/fwlink/p/?LinkID=724033)在 Azure AD 中同步本地目录服务，你将无法在开发人员中心中创建新的用户、组或 Azure AD 应用程序。 你（或你的本地目录中的其他管理员）必须先在本地目录中直接创建它们，然后才能在开发人员中心中查看和添加它们。
+### Roles and permissions
 
-在管理用户时，请记住以下事项：
+Each user, group, or Azure AD application that you add to an account must be assigned at least one of the following roles. Each role has a specific set of permissions in order to perform certain functions within the account.
 
--   所有开发人员中心用户都必须在组织的 Azure AD 中拥有一个活动帐户。
--   在开发人员中心内创建**新**用户或组也会将它们添加到你的组织的 Azure AD。
--   在开发人员中心内对用户或组的名称进行更改将在你的组织的 Azure AD 中进行相应的更改。
--   用户（包括组和 Azure AD 应用程序）将能够使用与其分配角色相关联的权限访问整个开发人员中心帐户。 你无法限制用户的访问权限，以使他们只能使用特定的应用和/或 IAP。
--   你可以通过选择多个角色来允许用户、组或 Azure AD 应用程序拥有对多个角色的功能的访问权限。
--   带有特定角色的用户也可能是具有不同角色的组的一部分。 在此情况下，该用户将可以访问与这两个角色相关联的功能。
+> **Note**  The owner of the account is the person who first created it with a Microsoft account (rather than any users added through Azure AD). This account owner is the only person with complete access to the account, including the ability to delete apps, create and edit all account users, and change all financial and account settings. 
 
-### 角色和权限
-
-你添加到帐户的每个用户、组或 Azure AD 应用程序都必须分配至少一个以下角色。 每个角色都有一组特定的权限，以便在帐户内执行特定功能。
-
-> **注意** 该帐户的所有者是第一个使用 Microsoft 帐户创建它的人员（而不是任何通过 Azure AD 添加的用户）。 此帐户所有者是唯一具有该帐户的完整访问权限的人员，其中包括删除应用、创建和编辑所有帐户用户以及更改所有财务和帐户设置的功能。 在 Microsoft Visual Studio 中创建应用包时，必须使用用于创建帐户的 Microsoft 帐户。
-
-| 角色                 | 描述              |
+| Role                 | Description              |
 |----------------------|--------------------------|
-| 管理员              | 具有对该帐户的完整访问权限，除了更改税收和付款设置。 这包括在开发人员中心中管理用户，但请注意，创建和删除用户的功能取决于帐户在 Azure AD 中的权限。 即，如果用户分配了管理员角色，但在组织的 Azure AD 中没有管理员权限，他们将无法创建新用户或从目录中删除用户（但他们可以更改用户的开发人员中心角色）。 |
-| 开发人员            | 可以上传程序包并提交应用和 IAP，并且可以查看[使用情况报告](usage-report.md)来获取遥测详细信息。 无法查看财务信息或帐户设置。                                                                                                                                                                                                                                                                                                                     |
-| 业务参与者 | 可以访问财务信息，并且可以设置定价详细信息。 无法创建或提交新的应用和 IAP 或更改帐户设置。                                                                                                                                                                                                                                                                                                                                                              |
-| 财务参与者  | 可以查看[付款报告](payout-summary.md)。 无法对应用、IAP 或帐户设置进行任何更改。                                                                                                                                                                                                                                                                                                                                                                                 |
-| 营销人员             | 可以[回复客户评论](respond-to-customer-reviews.md)和查看非财务[分析报告](analytics.md)。 无法对应用、IAP 或帐户设置进行任何更改。                                                                                                                                                                                                                                                                                                            |
+| Manager              | Has complete access to the account, except for changing tax and payout settings. This includes managing users in Dev Center, but note that the ability to create and delete users is dependent on the account's permission in Azure AD. That is, if a user is assigned the Manager role, but does not have admin permissions in the organization's Azure AD, they will not be able to create new users or delete users from the directory (but they can change a user's Dev Center role). |
+| Developer            | Can upload packages and submit apps and add-ons, and can view the [Usage report](usage-report.md) for telemetry details. Can’t view financial info or account settings.                                                                                                                                                                                                                                                                                                                     |
+| Business Contributor | Can access financial info, and can set pricing details. Can’t create or submit new apps and add-ons or change account settings.                                                                                                                                                                                                                                                                                                                                                              |
+| Finance Contributor  | Can view [payout reports](payout-summary.md). Can’t make any changes to apps, add-ons, or account settings.                                                                                                                                                                                                                                                                                                                                                                                 |
+| Marketer             | Can [respond to customer reviews](respond-to-customer-reviews.md) and view non-financial [analytic reports](analytics.md). Can’t make any changes to apps, add-ons, or account settings.                                                                                                                                                                                                                                                                                                            |
 
-> **注意** 具有管理员或开发人员角色的用户可以通过仪表板提交应用。 但是，在 Visual Studio 中创建应用包时，必须使用用于打开开发者帐户的 Microsoft 帐户，而非 Azure AD 帐户。
+### Add and manage account users
 
-### 添加和管理帐户用户
+To identify users that you want to add to your Dev Center account and assign them a role, click **Add users**.
 
-若要标识你希望添加到开发人员中心帐户的用户并为他们分配角色，请单击**“添加用户”**。
+You can add one or more users from your organization's directory to your Dev Center account. Note that when you add more than one user at the same time, you must assign the same role. If you want to add users but assign them different roles, repeat the steps below for each role.
 
-你可以将一个或多个用户从组织的目录添加到你的开发人员中心帐户。 请注意，当你同时添加多个用户时，你必须分配相同的角色。 如果你希望添加多个用户但为他们分配不同的角色，请为每个角色重复以下步骤。
+**Add users from your organization's directory**
 
-**从组织的目录添加用户**
+1.  From the **Manage users** page, click **Add users**.
+2.  Select one or more users from the list that appears. You can use the search box to search for specific users.
+3.  When you are finished selecting users, click **Add selected**.
+4.  In the **Roles** section, select one or more roles to assign to this set of users.
+5.  Click **Save**.
 
-1.  从“管理用户”****页面中，单击“添加用户”****。
-2.  从出现的列表中选择一个或多个用户。 你可以使用搜索框来搜索特定用户。
-3.  当你完成选择用户时，请单击“添加选定项”****。
-4.  在“角色”****部分中，选择一个或多个要分配给此组用户的角色。
-5.  单击“保存”****。
+If you want to grant Dev Center access to a brand new user account, you can create one in the **Manage users** section. Note that this will create a new account in your organization's directory, not just in your Dev Center account.
 
-如果你希望将开发人员中心访问权限授予全新的用户帐户，你可以在“管理用户”****部分中创建一个新的用户帐户。 请注意，这将在组织的目录中创建新的帐户，而不只是在你的开发人员中心帐户中创建。
+**Create a new user account**
 
-**创建新的用户帐户**
+1.  From the **Manage users** page, click **Add users**.
+2.  On the next page, click **New user**.
+3.  Enter the first name, last name, and username for the new user.
+4.  In the **Roles** section, select one or more roles to assign to the new user.
+5.  In the **Group membership** section, select any groups to which you want the new user to belong.
+6.  Click **Save**.
+7.  On the confirmation page, you'll see login info for the new user, including a temporary password. Be sure to note this info and provide it to the new user, as you won't be able to access the temporary password after you leave this page.
 
-1.  从“管理用户”****页面中，单击“添加用户”****。
-2.  在下一页上，单击“新用户”****。
-3.  输入新用户的名字、姓氏和用户名。
-4.  在“角色”****部分中，选择一个或多个要分配给新用户的角色。
-5.  在“组成员身份”****部分中，选择任何你希望新用户所属的组。
-6.  单击“保存”****。
-7.  在确认页上，你将看到新用户的登录信息，包括临时密码。 请确保记下此信息，并将其提供给新用户，因为你可能在离开此页面后无法访问临时密码。
+You can make changes to user accounts that you've added to your Dev Center account in the **Manage users** section. Note that changes to the user's name or group membership will be reflected in your organization's directory, not just in your Dev Center account. Changes made to a user's role will only affect their Dev Center access.
 
-你可以在“管理用户”****部分中对你添加到开发人员中心帐户的用户帐户进行更改。 请注意，对用户的名称或组成员身份的更改将反映在组织的目录中，而不只反映在你的开发人员中心帐户中。 对用户角色所做的更改将仅影响他们的开发人员中心访问权限。
+**Edit a user account**
 
-**编辑用户帐户**
+1.  From the **Manage users** page, click the name of the user account that you want to edit.
+2.  Make any of the following changes:
+    -   Edit the user's first name, last name, or username. Remember, these changes will be made in your organization's directory.
+    -   In the **Roles** section, select or deselect the role(s) that you want to add or remove for this user.
+    -   In the **Group membership** section, select or deselect the group(s) that you want the user to join or be removed from. Remember, these changes will be made in your organization's directory.
 
-1.  从“管理用户”****页面中，单击你希望编辑的用户帐户的名称。
-2.  进行以下任意更改：
-    -   编辑用户的名字、姓氏或用户名。 请记住，将在组织的目录中进行这些更改。
-    -   在“角色”****部分中，选中或取消选中你希望为此用户添加或删除的角色。
-    -   在“组成员身份”****部分中，选中或取消选中你希望用户加入或从中删除的组。 请记住，将在组织的目录中进行这些更改。
+3.  Click **Save**.
 
-3.  单击“保存”****。
+If you need to change a password for a user account that you've added to your Dev Center account, you can do so in the **Manage users** section. Note that this will change the user's directory password, not just the password for their Dev Center access.
 
-如果你需要为你已添加到开发人员中心帐户的用户帐户更改密码，可以在“管理用户”****部分中执行此操作。 请注意，这将更改用户的目录密码，而不只是用于其开发人员中心访问的密码。
+**Changing a user's directory password**
 
-**更改用户的目录密码**
+1.  From the **Manage users** page, click the name of the user account that you want to edit.
+2.  Click the **Reset password** button at the bottom of the page.
+3.  A confirmation page will appear showing the login info for the user, including a temporary password.
+  > **Important**  Be sure to print or copy this info and provide it to the user, as you won't be able to access the temporary password after you leave this page.
 
-1.  从“管理用户”****页面中，单击你希望编辑的用户帐户的名称。
-2.  请单击页面底部的“重置密码”****按钮。
-3.  将显示一个确认页，用于显示用户的登录信息，包括临时密码。
-  > **重要提示** 请务必打印或复制此信息，并将其提供给用户，因为你可能在离开此页面后无法访问临时密码。
+### Add and manage groups
 
-### 添加和管理组
+When you add a group from your organization's directory to your Dev Center account, every user who is a member of that group will be able to access it, with the permissions associated with the group's assigned role. Keep in mind that any changes made to groups (including their name or membership) will be reflected in your organization's directory.
 
-当你将某个组从组织的目录添加到你的开发人员中心帐户时，属于该组的每位用户都将可以使用与该组的分配角色相关联的权限访问它。 请记住，对组所做的任何更改（包括其名称或成员身份）都将反映在组织的目录中。
+Note that when you add more than one group at the same time, you must assign the same role. If you want to add groups but assign them different roles, repeat the steps below for each role.
 
-请注意，当你同时添加多个组时，你必须分配相同的角色。 如果你希望添加多个组但为它们分配不同的角色，请为每个角色重复以下步骤。
+**Add groups from your organization's directory**
 
-**从组织的目录添加组**
+1.  From the **Manage users** page, click **Add groups**.
+2.  Select one or more groups from the list that appears. You can use the search box to search for specific groups.
+3.  When you are finished selecting groups, click **Add selected**.
+4.  In the **Roles** section, select one or more roles to assign to this set of groups.
+5.  Click **Save**.
 
-1.  从“管理用户”****页面中，单击“添加组”****。
-2.  从出现的列表中选择一个或多个组。 你可以使用搜索框来搜索特定组。
-3.  当你完成选择组时，请单击“添加选定项”****。
-4.  在“角色”****部分中，选择一个或多个要分配给此组集的角色。
-5.  单击“保存”****。
+If you want to grant Dev Center access to a brand new group, you can create a new group in the **Manage users** section. Note that the new group will be created in your organization's directory, not just in your Dev Center account.
 
-如果你希望将开发人员中心访问权限授予全新的组，你可以在“管理用户”****部分中创建新组。 请注意，将在组织的目录中创建新组，而不只是在你的开发人员中心帐户中创建。
+**Create a new group account**
 
-**创建新的组帐户**
+1.  From the **Manage users** page, click **Add groups**.
+2.  On the next page, click **New group**.
+3.  Enter the display name for the new group.
+4.  Select one or more roles to assign to the new group. All members of the group will be able to access your Dev Center account with the permissions associated with that role
+5.  Select one or more users from the list that appears. You can use the search box to search for specific users.
+6.  When you are finished selecting users, click **Add selected**.
+7.  Click **Save**.
 
-1.  从“管理用户”****页面中，单击“添加组”****。
-2.  在下一页上，请单击“新组”****。
-3.  输入新组的显示名称。
-4.  选择一个或多个要分配给新组的角色。 该组的所有成员都可以使用与该角色相关联的权限访问你的开发人员中心帐户。
-5.  从出现的列表中选择一个或多个用户。 你可以使用搜索框来搜索特定用户。
-6.  当你完成选择用户时，请单击“添加选定项”****。
-7.  单击“保存”****。
+You can make changes to group accounts that you've added to your Dev Center account in the **Manage users** section. Note that changes to the group's name and membership will be reflected in your organization's directory, not just in your Dev Center account. Changes made to a group's role will only affect that group's Dev Center access.
 
-你可以在“管理用户”****部分中对你添加到开发人员中心帐户的组帐户进行更改。 请注意，对组的名称或成员身份的更改将反映在组织的目录中，而不只反映在你的开发人员中心帐户中。 对组的角色所做的更改将仅影响该组的开发人员中心访问权限。
+**Edit a group account**
 
-**编辑组帐户**
+1.  From the **Manage users** page, click the name of the group account that you want to edit.
+2.  To change group info, make any desired changes to the group's name. Remember, these changes will be made in your organization's directory.
+3.  To change the group role, select or deselect the role(s) that you want to apply to the group.
+4.  Click **Save**.
 
-1.  从“管理用户”****页面中，单击你希望编辑的组帐户的名称。
-2.  若要更改组信息，请对组的名称进行任何所需的更改。 请记住，将在组织的目录中进行这些更改。
-3.  若要更改组角色，请选中或取消选中你希望应用到该组的角色。
-4.  单击“保存”****。
+### Add and manage Azure AD applications
 
-### 添加和管理 Azure AD 应用程序
+You can allow applications or services that are part of your organization's Azure AD to access your Dev Center account.
 
-你可以允许你的组织的 Azure AD 组成部分的应用程序或服务访问你的开发人员中心帐户。
+Note that when you add more than one Azure AD application at the same time, you must assign the same role. If you want to add groups but assign them different roles, repeat the steps below for each role.
 
-请注意，当你同时添加多个 Azure AD 应用程序时，你必须分配相同的角色。 如果你希望添加多个组但为它们分配不同的角色，请为每个角色重复以下步骤。
+**Add Azure AD applications from your organization's directory**
 
-**从组织的目录中添加 Azure AD 应用程序**
+1.  From the **Manage users** page, click **Add Azure AD applications**.
+2.  Select one or more Azure AD applications from the list that appears. You can use the search box to search for specific Azure AD applications.
+3.  When you are finished selecting Azure AD applications, click **Add selected**.
+4.  In the **Roles** section, select one or more roles to assign to this set of Azure AD applications.
+5.  Click **Save**.
 
-1.  从“管理用户”****页面中，单击“添加 Azure AD 应用程序”****。
-2.  从出现的列表中选择一个或多个 Azure AD 应用程序。 你可以使用搜索框来搜索特定的 Azure AD 应用程序。
-3.  当你完成选择 Azure AD 应用程序时，请单击“添加选定项”****。
-4.  在“角色”****部分中，选择一个或多个要分配给此组 Azure AD 应用程序的角色。
-5.  单击“保存”****。
+If you want to grant Dev Center access to a brand new Azure AD application account, you can create one in the **Manage users** section. Note that this will create a new account in your organization's directory, not just in your Dev Center account.
 
-如果你希望将开发人员中心访问权限授予给全新的 Azure AD 应用程序帐户，你可以在“管理用户”****部分中创建一个帐户。 请注意，这将在组织的目录中创建新的帐户，而不只是在你的开发人员中心帐户中创建。
+> **Tip** If you are primarily using this Azure AD application for Dev Center authentication, and don't need users to access it directly, you can enter any valid address for the **Reply URL** and **App ID URI**, as long as those values are not used by any other Azure AD application in your directory.
 
-**创建新的 Azure AD 应用程序**
+**Create a new Azure AD application**
 
-1.  从“管理用户”****页面中，单击“添加 Azure AD 应用程序”****。
-2.  在下一页上，单击“新的 Azure AD 应用程序”****。
-3.  输入新的 Azure AD 应用程序的“回复 URL”****。 这是用户可以登录并使用 Azure AD 应用程序的 URL（有时也称为“应用 URL”或“登录 URL”）。 “回复 URL”****的长度不得超过 256 个字符。
-4.  输入新的 Azure AD 应用程序的“应用 ID URI”****。 这是 Azure AD 应用程序在向 Azure AD 发送单一登录请求时所显示的逻辑标识符。 请注意，每个 Azure AD 应用程序的“应用 ID URI”****在你的目录中必须唯一，且其长度不得超过 256 个字符。
-5.  在“角色”****部分中，选择一个或多个要分配给新的 Azure AD 应用程序的角色。
-6.  单击“保存”****。
+1.  From the **Manage users** page, click **Add Azure AD applications**.
+2.  On the next page, click **New Azure AD application**.
+3.  Enter the **Reply URL** for the new Azure AD application. This is the URL where users can sign in and use your Azure AD application (sometimes also known as the App URL or Sign-On URL). The **Reply URL** can't be longer than 256 characters.
+4.  Enter the **App ID URI** for the new Azure AD application. This is a logical identifier for the Azure AD application that is presented when it sends a single sign-on request to Azure AD. Note that the **App ID URI** must be unique for each Azure AD application in your directory, and it can't be longer than 256 characters.
+5.  In the **Roles** section, select one or more roles to assign to the new Azure AD application
+6.  Click **Save**.
 
-你可以在“管理用户”****部分中对你添加到开发人员中心帐户的 Azure AD 应用程序进行更改。 请注意，对“回复 URL”和“应用 ID URI”的更改将反映在组织的目录中，而不只是反映在你的开发人员中心帐户中。 角色更改仅影响开发人员中心内的 Azure AD 应用程序的权限。
+After you add or create an Azure AD application, you can return to the **Manage users** section and click the application name to review settings for the application, including the Tenant ID, Client ID, Reply URL, and App ID URI.
 
-**编辑 Azure AD 应用程序**
+>**Note** If you intend to use the REST APIs provided by the [Windows Store services](../monetize/using-windows-store-services.md), you will need the Tenant ID and Client ID values shown on this page to obtain an Azure AD access token that you can use to authenticate the calls to services.   
 
-1.  从“管理用户”****页面中，单击你希望编辑的 Azure AD 应用程序帐户的名称。
-2.  若要更改“回复 URL”****或“应用 ID URI”****，请在此处输入新值。 请记住，将在组织的目录中进行这些更改。
-3.  若要更改 Azure AD 应用程序的角色，请选中或取消选中你希望应用的角色。
-4.  单击“保存”****。
+You can make changes to Azure AD applications that you've added to your Dev Center account in the **Manage users** section. Note that changes to the Reply URL and App ID URI will be reflected in your organization's directory, not just in your Dev Center account. Role changes will only affect the Azure AD application's permissions within Dev Center.
 
-如果 Azure AD 应用程序在 Microsoft Azure AD 中读写数据，它将需要密钥。 可以通过在开发人员中心中编辑 Azure AD 应用程序的信息来为其创建密钥。 还可以删除不再需要的密钥。
+**Edit an Azure AD application**
 
-**管理 Azure AD 应用程序的密钥**
+1.  From the **Manage users** page, click the name of the Azure AD application account that you want to edit.
+2.  To change the **Reply URL** or **App ID URI**, enter the new values here. Remember, these changes will be made in your organization's directory.
+3.  To change the Azure AD application's role, select or deselect the role(s) that you want to apply.
+4.  Click **Save**.
 
-1.  从“管理用户”****页面中，单击 Azure AD 应用程序的名称。
+If your Azure AD application reads and writes data in Microsoft Azure AD, it will need a key. You can create keys for an Azure AD application by editing its info in Dev Center. You can also remove keys that are no longer needed.
 
-    > **提示** 在你单击 Azure AD 应用程序的名称时，你将看到该 Azure AD 应用程序的所有有效密钥（其中包括密钥的创建日期以及其过期日期）。 若要删除不再需要的密钥，请单击“删除”****。
+**Manage keys for an Azure AD application**
 
-2.  若要添加新密钥，请单击“添加新密钥”****。
+1.  From the **Manage users** page, click the name of the Azure AD application.
 
-3.  你将看到一个显示 **Client ID** 和 **Key** 值的屏幕。
+    > **Tip**  When you click the name of the Azure AD application, you'll see all of the active keys for the Azure AD application, including the date on which the key was created and when it will expire. To remove a key that is no longer needed, click **Remove**.
 
-    > **重要提示** 请务必打印或复制此信息，因为你可能在离开此页面后无法再访问该信息。
+2.  To add a new key, click **Add new key**.
 
-4.  如果要创建更多密钥，请单击“添加其他密钥”****。
+3.  You will see a screen showing the **Client ID** and **Key** values.
 
-### 删除用户、组和 Azure AD 应用程序
+    > **Important**  Be sure to print or copy this info, as you won't be able to access it again after you leave this page.
 
-若要从开发人员中心帐户删除用户、组或 Azure AD 应用程序，请在“管理用户”****页上单击按其名称显示的“删除”****链接。 在确认你希望删除它后，该用户、组或 Azure AD 应用程序将无法再访问你的开发人员中心帐户（除非你以后再次添加它）。
+4.  If you want to create more keys, click **Add another key**.
 
-> **注意** 删除用户、组或 Azure AD 应用程序意味着它将无法再访问你的开发人员中心帐户。 它不会从你的组织的目录中删除用户、组或 Azure AD 应用程序。
+### Removing users, groups, and Azure AD applications
+
+To remove a user, group, or Azure AD application from your Dev Center account, click the **Remove** link that appears by their name on the **Manage users** page. After confirming that you want to remove it, that user, group, or Azure AD application will no longer be able to access to your Dev Center account (unless you add it again later).
+
+> **Note**  Removing a user, group, or Azure AD application means that it will no longer have access to your Dev Center account. It does not delete the user, group, or Azure AD application from your organization's directory.
 
  
 
@@ -226,10 +234,6 @@ Windows开发人员中心利用 Azure Active Directory 进行多用户管理和�
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO1-->
 
 

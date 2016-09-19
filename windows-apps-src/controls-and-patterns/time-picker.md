@@ -1,39 +1,47 @@
 ---
 author: Jwmsft
-Description: "时间选取器提供了一种标准化途径，可使用户使用触摸、鼠标或键盘输入选取时间值。"
-title: "时间选取器"
+Description: The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input.
+title: Time picker
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 5056a9f304ca21c977b9cc65b8ead007eccd4288
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 69f682b0edddbcf88515af537c33b3d8297f91f0
 
 ---
+# Time picker
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# 时间选取器
+The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input. 
 
-时间选取器提供了一种标准化途径，可使用户使用触摸、鼠标或键盘输入选取时间值。 
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx"><strong>TimePicker class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx"><strong>Time property</strong></a></li>
+</ul>
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+</div>
+</div>
 
--   [**TimePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
--   [**Time 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
 
-## 这是正确的控件吗？
-使用时间选取器使用户可以选取单个时间值。
 
-有关选择正确控件的详细信息，请参阅[日期和时间控件](date-and-time.md)文章。
 
-## 示例
+## Is this the right control?
+Use a time picker to let a user pick a single time value.
 
-入口点显示所选的时间，当用户选择该入口点时，会从中间垂直展开一个选取器图面以供用户进行选择。 时间选取器会覆盖其他 UI；它不会将其他 UI 推开。
+For more info about choosing the right control, see the [Date and time controls](date-and-time.md) article.
 
-![时间选取器展开示例](images/controls_timepicker_expand.png)
+## Examples
 
-## 创建时间选取器
+The entry point displays the chosen time, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The time picker overlays other UI; it doesn't push other UI out of the way.
 
-本示例显示如何创建带有标题的简单时间选取器。
+![Example of the time picker expanding](images/controls_timepicker_expand.png)
+
+## Create a time picker
+
+This example shows how to create a simple time picker with a header.
 
 ```xaml
 <TimePicker x:Name=arrivalTimePicker Header="Arrival time"/>
@@ -44,23 +52,23 @@ TimePicker arrivalTimePicker = new TimePicker();
 arrivalTimePicker.Header = "Arrival time";
 ```
 
-生成的时间选取器如下所示：
+The resulting time picker looks like this:
 
-![时间选取器示例](images/time-picker-closed.png)
+![Example of time picker](images/time-picker-closed.png)
 
-> **注意** &nbsp;&nbsp;有关日期和时间值的重要信息，请参阅*日期和时间控件*文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
-
-
-
-## 相关主题
-
-- [日期和时间控件](date-and-time.md)
-- [日历日期选取器](calendar-date-picker.md)
-- [日历视图](calendar-view.md)
-- [日期选取器](date-picker.md)
+> **Note**&nbsp;&nbsp;For important info about date and time values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the *Date and time controls* article.
 
 
 
-<!--HONumber=Jun16_HO4-->
+## Related topics
+
+- [Date and time controls](date-and-time.md)
+- [Calendar date picker](calendar-date-picker.md)
+- [Calendar view](calendar-view.md)
+- [Date picker](date-picker.md)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

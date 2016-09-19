@@ -1,42 +1,42 @@
 ---
 author: PatrickFarley
-Description: "介绍 3D 制造格式文件类型的结构以及如何使用 Windows.Graphics.Printing3D API 创建和操作该文件类型。"
+Description: Describes the structure of the 3D Manufacturing Format file type and how it can be created and manipulated with the Windows.Graphics.Printing3D API.
 MS-HAID: dev\_devices\_sensors.generate\_3mf
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "生成 3MF 程序包"
+title: Generate a 3MF package
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
+ms.sourcegitcommit: c790d57e72a75ec28e376722f8d87c2655b18c42
+ms.openlocfilehash: 1d291173cc68d4eedcbc2918f308be1489105a08
 
 ---
 
-# 生成 3MF 程序包
+# Generate a 3MF package
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要的 API**
+**Important APIs**
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
 
-\[在商业发行之前会发生实质性修改的、与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-介绍 3D 制造格式文档的结构以及如何使用 [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API 创建和操作该文档。
+This guide describes the structure of the 3D Manufacturing Format document and how it can be created and manipulated with the [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API.
 
-## 什么是 3MF？
+## What is 3MF?
 
-3D 制造格式是有关出于制造目的（3D 打印）使用 XML 描述 3D 模型的外观和结构的一组约定。 它定义一组部件（有些必选，有些可选）及其关系，目的是向 3D 制造设备提供所有必要的信息。 符合 3D 制造格式的数据集可以另存为带有 .3mf 扩展名的文件。
+The 3D Manufacturing Format is a set of conventions for using XML to describe the appearance and structure of 3D models for the purpose of manufacturing (3D printing). It defines a set of parts (some required and some optional) and their relationships, with the goal of providing all necessary information to a 3D manufacturing device. A data set that adheres to the 3D Manufacturing Format can be saved as a file with the .3mf extension.
 
-在 Windows 10 中，**Windows.Graphics.Printing3D** 命名空间中的 [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) 类类似于单个 .3mf 文件，并且其他类映射到该文件中的特定 XML 元素。 本指南介绍如何以编程方式创建和设置 3MF 文档的每个主要部分、如何利用 3MF Materials Extension 以及最后如何将采用 C\# 的 **Printing3D3MFPackage** 对象转换并另存为 .3mf 文件。 有关 3MF 的标准或 3MF Materials Extension 的详细信息，请参阅 [3MF 规范](http://3mf.io/what-is-3mf/3mf-specification/)。
+In Windows 10, the [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) class in the **Windows.Graphics.Printing3D** namespace is analogous to a single .3mf file, and other classes map to the particular XML elements in the file. This guide describes how each of the main parts of a 3MF document can be created and set programmatically, how the 3MF Materials Extension can be utilized, and how a **Printing3D3MFPackage** object can be converted and saved as a .3mf file. For more information on the standards of 3MF or the 3MF Materials Extension, see the [3MF Specification](http://3mf.io/what-is-3mf/3mf-specification/).
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
 
-## 3MF 结构中的核心类
+## Core classes in the 3MF structure
 
-**Printing3D3MFPackage** 类表示完整的 3MF 文档，并且 3MF 文档的核心是其模型部分，由 [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx) 类表示。 我们希望指定的有关 3D 模型的大部分信息都将通过设置 **Printing3DModel** 类的属性和它们的基础类的属性来存储。
+The **Printing3D3MFPackage** class represents a complete 3MF document, and at the core of a 3MF document is its model part, represented by the [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx) class. Most of the information we wish to specify about a 3D model will be stored by setting the properties of the **Printing3DModel** class and the properties of their underlying classes.
 
 [!code-cs[InitClasses](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetInitClasses)]
 
@@ -44,107 +44,112 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 ## Metadata
 
-3MF 文档的模型部分可以将元数据以存储在 **Metadata** 属性中的字符串的键/值对的形式保存。 存在大量预定义的元数据名称，但其他对可以添加为扩展名的一部分（在 [3MF 规范](http://3mf.io/what-is-3mf/3mf-specification/)中有更详细的介绍）。 由程序包的接收器（一种 3D 制造设备）来确定是否以及如何处理元数据，但最好是在 3MF 程序包中包含尽可能多的基本信息：
+The model part of a 3MF document can hold metadata in the form of key/value pairs of strings stored in the **Metadata** property. There are a number of predefined names of metadata, but other pairs can be added as part of an extension (described in more detail in the [3MF specification](http://3mf.io/what-is-3mf/3mf-specification/)). It is up to the receiver of the package (a 3D manufacturing device) to determine whether and how to handle metadata, but it is good practice to include as much basic info as possible in the 3MF package:
 
 [!code-cs[Metadata](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMetadata)]
 
-## 网格数据
+## Mesh data
 
-在本指南的上下文中，网格是从单个顶点集构造的三维几何图形（尽管它无需显示为单个顶点）。 网格部件由 [**Printing3DMesh**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmesh.aspx) 类表示。 一个有效的网格对象必须包含有关其所有顶点以及存在于特定顶点集之间的所有三角形面的位置的信息。
+In the context of this guide, a mesh is a body of 3-dimensional geometry constructed from a single set of vertices (though it does not have to appear as a single solid). A mesh part is represented by the [**Printing3DMesh**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmesh.aspx) class. A valid mesh object must contain information about the location of all of its vertices as well as all the triangle faces that exist between certain sets of vertices.
 
-以下方法将顶点添加到网格，然后提供它们在 3D 空间中的相应位置：
+The following method adds vertices to a mesh and then gives them locations in 3D space:
 
 [!code-cs[Vertices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetVertices)]
 
-下一个方法定义在这些顶点上绘制的所有三角形：
+The next method defines all of the triangles to be drawn across these vertices:
 
 [!code-cs[TriangleIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTriangleIndices)]
 
-> **注意** 所有三角形都必须以逆时针方向的顺序（当从网格对象外部查看三角形时）定义其索引，以便使它们的面法线矢量指向外部。
+> [!NOTE]
+> All triangles must have their indices defined in counter-clockwise order (when viewing the triangle from outside of the mesh object), so that their face-normal vectors point outward.
 
-当 Printing3DMesh 对象包含有效的顶点和三角形集时，应该随后将其添加到模型的 **Meshes** 属性。 程序包中的所有 **Printing3DMesh** 对象都必须存储在 **Printing3DModel** 类的 **Meshes** 属性下。
+When a Printing3DMesh object contains valid sets of vertices and triangles, it should then be added to the model's **Meshes** property. All **Printing3DMesh** objects in a package must be stored under the **Meshes** property of the **Printing3DModel** class.
 
 [!code-cs[MeshAdd](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMeshAdd)]
 
 
-## 创建材料
+## Create materials
 
 
-3D 模型可以保留多个材料的数据。 此约定旨在充分利用可在单个打印作业中使用多个材料的 3D 制造设备。 还有多种*类型*的材料组，每个都能够支持大量不同的单独材料。 每个材料组都必须有唯一的引用 ID 号，并且该组内的每个材料都必须有唯一的 ID。
+A 3D model can hold data for multiple materials. This convention is intended to take advantage of 3D manufacturing devices that can use multiple materials on a single print job. There are also multiple *types* of material gropus, each one capable of supporting a number of different individual materals. Each material group must have a unique reference id number, and each material within that group must also have a unique id.
 
-然后，模型内的不同网格对象可以引用这些材料。 此外，每个网格上的个别三角形可以指定不同的材料。 更进一步，甚至可以在单个三角形内表示不同的材料，其中每个三角形顶点都分配有不同的材料，并将面材料计算为顶点之间的渐变。
+The different mesh objects within a model can then reference these materials. Furthermore, individual triangles on each mesh can specify different materials. Further still, different materials can even be represented within a single triangle, with each triangle vertex having a different material assigned to it and the face material calculated as the gradient between them.
 
-本指南将先介绍如何在各自的材料组内创建不同类型的材料，然后将它们存储为模型对象上的资源。 然后，我们会了解将不同的材料分配到个别网格和个别三角形。
+This guide will first show how to create different kinds of materials within their respective material groups and store them as resources on the model object. Then, we will go about assigning different materials to individual meshes and individual triangles.
 
-### 基本材料
+### Base materials
 
-默认材料类型为**基本材料**，该类型具有**颜色材料**值（如下所述）和旨在指定要使用的材料*类型*的名称属性。
+The default material type is **Base Material**, which has both a **Color Material** value (described below) and a name attribute that is intended to specify the *type* of material to use.
 
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
-**注意** 3D 制造设备将确定哪些可用物理材料映射到存储在 3MF 中的哪些虚拟材料元素。 材料映射并不一定是 1:1：如果 3D 打印机只使用一种材料，无论向哪些对象或面分配了不同的材料，它都将以该材料打印整个模型。
+> [!NOTE]
+> The 3D manufacturing device will determine which available physical materials map to which virtual material elements stored in the 3MF. Material mapping doesn't have to be 1:1: if a 3D printer only uses one material, it will print the whole model in that material, regardless of which objects or faces were assigned different materials.
 
-### 颜色材料
+### Color materials
 
-**颜色材料**类似于**基本材料**，但它们不包含名称。 因此，它们不会提供有关计算机应使用哪些材料类型的说明。 它们仅保留颜色数据，并且让计算机选择材料类型（计算机随后可能提示用户进行选择）。 在以下代码中，独立使用上一方法中的 `colrMat` 对象。
+**Color Materials** are similar to **Base Materials**, but they do not contain a name. Thus, they give no instructions as to what type of material should be used by the machine. They hold only color data, and let the machine choose the material type (and the machine may then prompt the user to choose). In the code below, the `colrMat` objects from the previous method are used on their own.
 
 [!code-cs[ColorMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetColorMaterialGroup)]
 
-### 复合材料
+### Composite materials
 
-**复合材料**仅指示制造设备使用不同**基本材料**的统一组合。 每个**复合材料组**都必须仅引用一个要从中抽取成分的**基本材料组**。 此外，此组内要提供的**基本材料**必须在**材料索引**列表中列出，以供每个**复合材料**在指定比率（每个**复合材料**只是**基本材料**的比率）时引用。
+**Composite Materials** simply instruct the manufacturing device to use a uniform mixture of different **Base Materials**. Each **Composite Material Group** must reference exactly one **Base Material Group** from which to draw ingredients. Additonally, the **Base Materials** within this group that are to be made available must be listed out in a **Material Indices** list, which each **Composite Material** will then reference when specifying the ratios (every **Composite Material** is simply a ratio of **Base Materials**).
 
 [!code-cs[CompositeMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetCompositeMaterialGroup)]
 
-### 纹理坐标材料
+### Texture coordinate materials
 
-3MF 支持使用 2D 图形为 3D 模型的图面上色。 通过此方式，该模型可以在每个三角形面上传达更多的颜色数据（与每个三角形顶点只有一个颜色值相反）。 和**颜色材料**一样，纹理坐标材料仅传达颜色数据。 若要使用 2D 纹理，必须先声明纹理资源：
+3MF supports the use of 2D images to color the surfaces of 3D models. This way, the model can convey much more color data per triangle face (as opposed to having just one color value per triangle vertex). Like **Color Materials**, texture coordinate materials only convery color data. To use a 2D texture, a texture resource must first be declared:
 
 [!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
 
-**注意** 纹理数据属于 3MF 程序包本身，而不属于程序包内的模型部件。
+> [!NOTE]
+> Texture data belongs to the 3MF Package itself, not to the model part within the package.
 
-接下来，我们必须填写 **Texture3Coord 材料**。 其中每一个都引用一个纹理资源，并在图像上指定一个特定的点（在 UV 坐标中）。
+Next, we must fill out **Texture3Coord Materials**. Each of these references a texture resource and specifies a particular point on the image (in UV coordinates).
 
 [!code-cs[Texture2CoordMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTexture2CoordMaterialGroup)]
 
-## 将材料映射到面
+## Map materials to faces
 
-为了指示哪些材料映射到每个三角形上的哪些顶点，我们必须在模型的网格对象上执行其他一些工作（如果模型包括多个网格，则每个网格都必须分别分配它们的材料）。 如上所述，材料按顶点、按三角形分配。 请参考下面的代码以查看如何输入和解释此信息。
+In order to dictate which materials are mapped to which vertices on each triangle, we must do some more work on the mesh object of our model (if a model contains multiple meshes, they must each have their materials assigned separately). As mentioned above, materials are assigned per-vertex, per-triangle. Refer to the code below to see how this information is entered and interpreted.
 
 [!code-cs[MaterialIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMaterialIndices)]
 
-## 组件和版本
+## Components and build
 
-组件结构允许用户在可打印的 3D 模型中放置多个网格对象。 [**Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) 对象包含单个网格和对其他组件的引用列表。 这实际上是 [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) 对象的列表。 每个 **Printing3DComponentWithMatrix** 对象都包含一个 **Printing3DComponent**，重要的是，还包含一个适用于所谓的 **Printing3DComponent** 的网格和包含组件的转换矩阵。
+The component structure allows the user to place more than one mesh object in a printable 3D model. A [**Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) object contains a single mesh and a list of references to other components. This is actually a list of [**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) objects. **Printing3DComponentWithMatrix** objects each contain a **Printing3DComponent** and, importantly, a transform matrix that applies to the mesh and contained components of said **Printing3DComponent**.
 
-例如，汽车的模型可能由承载车身网格的“车身”**Printing3DComponent** 组成。 然后，“车身”组件可能包含对四个不同的 **Printing3DComponentWithMatrix** 对象的引用，这些对象全都引用带有“车轮”网格的相同 **Printing3DComponent** 并包含四个不同的转换矩阵（将车轮映射到车身上的四个不同位置）。 在此方案中，“车身”网格和“车轮”网格各自只需存储一次，即使最终产品总共会展示五个网格。
+For example, a model of a car might consist of a "Body" **Printing3DComponent** that holds the mesh for the car's body. The "Body" component may then contain references to four different **Printing3DComponentWithMatrix** objects, which all reference the same **Printing3DComponent** with the "Wheel" mesh and contain four different transform matrices (mapping the wheels to four different positions on the car's body). In this scenario, the "Body" mesh and "Wheel" mesh would each only need to be stored once, even though the final product would feature five meshes in total.
 
-所有 **Printing3DComponent** 组件都必须在模型的 **Components** 属性中直接引用。 要在打印作业中使用的单个特定组件存储在 **Build** 属性中。
+All **Printing3DComponent** objects must be directly referenced in the model's **Components** property. The one particular component that is to be used in the printing job is stored in the **Build** Property.
 
-[!code-cs[组件](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetComponents)]
+[!code-cs[Components](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetComponents)]
 
-## 保存程序包
-现在我们具有包含已定义材料和组件的模型，我们可以将其保存到程序包。
+## Save package
+Now that we have a model, with defined materials and components, we can save it to the package.
 
 [!code-cs[SavePackage](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
 
-我们可以从此处在应用内启动打印作业（请参阅[从应用进行 3D 打印](https://msdn.microsoft.com/library/windows/apps/mt204541.aspx)），或者将此 **Printing3D3MFPackage** 另存为 .3mf 文件。
+From here, we can either initiate a print job within the app (see [3D printing from your app](https://msdn.microsoft.com/library/windows/apps/mt204541.aspx)), or save this **Printing3D3MFPackage** as a .3mf file.
 
-以下方法选取已完成的 **Printing3D3MFPackage** 并将其数据保存到.3mf 文件。
+The following method takes a finished **Printing3D3MFPackage** and saves its data to a .3mf file.
 
 [!code-cs[SaveTo3mf](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSaveTo3mf)]
 
-## 相关主题
+## Related topics
 
-[从应用进行 3D 打印](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)
-
+[3D printing from your app](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
+[3D printing UWP sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO4-->
 
 

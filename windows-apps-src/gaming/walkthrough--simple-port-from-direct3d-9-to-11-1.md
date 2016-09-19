@@ -1,20 +1,20 @@
 ---
 author: mtoepke
-title: "演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)"
-description: "此移植练习显示了如何将一个简单的呈现框架从 Direct3D 9 移植到 Direct3D 11 和通用 Windows 平台 (UWP)。"
+title: Walkthrough-- Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)
+description: This porting exercise shows how to bring a simple rendering framework from Direct3D 9 to Direct3D 11 and Universal Windows Platform (UWP).
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
+ms.openlocfilehash: 53e0b3f5a69f133e74430b1a2e32a13180569f06
 
 ---
 
-# 演练：将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)
+# Walkthrough: Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-此移植练习显示了如何将一个简单的呈现框架从 Direct3D 9 移植到 Direct3D 11 和通用 Windows 平台 (UWP)。
+This porting exercise shows how to bring a simple rendering framework from Direct3D 9 to Direct3D 11 and Universal Windows Platform (UWP).
 ## 
 <table>
 <colgroup>
@@ -23,75 +23,75 @@ ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[初始化 Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)</p></td>
-<td align="left"><p>介绍如何将 Direct3D 9 初始化代码转换为 Direct3D 11，包括如何获取 Direct3D 设备和设备上下文的句柄以及如何使用 DXGI 设置交换链。</p></td>
+<td align="left"><p>[Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)</p></td>
+<td align="left"><p>Shows how to convert Direct3D 9 initialization code to Direct3D 11, including how to get handles to the Direct3D device and the device context and how to use DXGI to set up a swap chain.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[转换呈现框架](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)</p></td>
-<td align="left"><p>介绍如何将简单的呈现框架从 Direct3D 9 转换到 Direct3D 11，包括如何移植几何图形缓冲区、如何编译和加载 HLSL 着色器程序以及如何在 Direct3D 11 中实现呈现链。</p></td>
+<td align="left"><p>[Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)</p></td>
+<td align="left"><p>Shows how to convert a simple rendering framework from Direct3D 9 to Direct3D 11, including how to port geometry buffers, how to compile and load HLSL shader programs, and how to implement the rendering chain in Direct3D 11.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[移植游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)</p></td>
-<td align="left"><p>介绍如何实现 UWP 游戏的窗口，以及如何显示游戏循环，包括如何生成 [<strong>IFrameworkView</strong>](https://msdn.microsoft.com/library/windows/apps/hh700478) 来控制全屏 [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/apps/br208225)。</p></td>
+<td align="left"><p>[Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)</p></td>
+<td align="left"><p>Shows how to implement a window for a UWP game and how to bring over the game loop, including how to build an [<strong>IFrameworkView</strong>](https://msdn.microsoft.com/library/windows/apps/hh700478) to control a full-screen [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/apps/br208225).</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-本主题介绍了执行以下同一基本图形任务的两种代码路径：显示旋转的顶点着色立方体。 在这两种情况下，该代码涉及以下流程：
+This topic walks through two code paths that perform the same basic graphics task: display a rotating vertex-shaded cube. In both cases, the code covers the following process:
 
-1.  创建 Direct3D 设备和交换链。
-2.  创建顶点缓冲区和索引缓冲区，用来表示彩色立方体网格。
-3.  创建用来将顶点转换为屏幕空间的顶点着色器和用来混合颜色值的像素着色器、编译着色器和加载着色器作为 Direct3D 资源。
-4.  实现渲染链并在屏幕上呈现绘制立方体。
-5.  创建窗口、开始主循环并关注窗口消息处理。
+1.  Creating a Direct3D device and a swap chain.
+2.  Creating a vertex buffer, and an index buffer, to represent a colorful cube mesh.
+3.  Creating a vertex shader that transforms vertices to screen space, a pixel shader that blends color values, compiling the shaders, and loading the shaders as Direct3D resources.
+4.  Implementing the rendering chain and presenting the drawn cube to the screen.
+5.  Creating a window, starting a main loop, and taking care of window message processing.
 
-完成本演练后，你应当熟悉 Direct3D 9 和 Direct3D 11 之间的以下基本差异：
+Upon completing this walkthrough, you should be familiar with the following basic differences between Direct3D 9 and Direct3D 11:
 
--   分离设备、设备上下文和图形基础结构。
--   编译着色器并在运行时加载着色器字节码的过程。
--   如何为输入装配器 (IA) 阶段配置每顶点数据。
--   如何使用 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 创建 CoreWindow 视图。
+-   The separation of device, device context, and graphics infrastructure.
+-   The process of compiling shaders, and loading shader bytecode at runtime.
+-   How to configure per-vertex data for the Input Assembler (IA) stage.
+-   How to use an [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) to create a CoreWindow view.
 
-请注意，此演练使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 进行简化，并不涉及 XAML 互操作。
+Note that this walkthrough uses [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) for simplicity, and does not cover XAML interop.
 
-## 先决条件
-
-
-应该[为 UWP DirectX 游戏开发准备开发人员环境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 尚不需要模板，但需要 Microsoft Visual Studio 2015 来加载此操作实例的代码示例。
-
-访问[移植概念和注意事项](porting-considerations.md)，以便更好地了解此演练中显示的 DirectX 11 和 UWP 编程概念。
-
-## 相关主题
+## Prerequisites
 
 
-**Direct3D** 
-           [在 Direct3D 9 中编写 HLSL 着色器](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+You should [Prepare your dev environment for UWP DirectX game development](prepare-your-dev-environment-for-windows-store-directx-game-development.md). You don't need a template yet, but you'll need Microsoft Visual Studio 2015 to load the code samples for this walkthrough.
 
-[创建针对 UWP 的新的 DirectX 11 项目](user-interface.md)
+Visit [Porting concepts and considerations](porting-considerations.md) to gain a better understanding of the DirectX 11 and UWP programming concepts shown in this walkthrough.
 
-**Windows 应用商店** 
-           [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+## Related topics
 
-[**对象运算符的句柄 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
 
- 
+**Direct3D**
+[Writing HLSL Shaders in Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+
+[Create a new DirectX 11 project for UWP](user-interface.md)
+
+**Windows Store**
+[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+
+[**Handle to Object Operator (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

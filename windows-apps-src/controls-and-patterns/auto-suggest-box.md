@@ -1,103 +1,114 @@
 ---
 author: Jwmsft
-Description: "在用户键入时提供建议的文本输入框。"
-title: "自动建议框指南"
+Description: A text entry box that provides suggestions as the user types.
+title: Guidelines for auto-suggest boxes
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
-ms.openlocfilehash: 12f5905fce642a10656864e41325c8f4bd56c025
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 9406f9b826dfb7d2603a0812f209dfb38cf639ae
 
 ---
-# 自动建议框
-使用 AutoSuggestBox 提供建议列表，以便用户在键入时从中进行选择。
+# Auto-suggest box
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-![自动建议框](images/controls/auto-suggest-box-open.png)
+Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
+
+![An auto suggest box](images/controls/auto-suggest-box-open.png)
+
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx"><strong>AutoSuggestBox class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx"><strong>TextChanged event</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx"><strong>SuggestionChose event</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx"><strong>QuerySubmitted event</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
 
--   [**AutoSuggestBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
--   [**TextChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)
--   [**SuggestionChose 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)
--   [**QuerySubmitted 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)
 
-## 这是正确的控件吗？
 
-如果你希望允许进行文本搜索且附带建议列表的简单、可自定义的控件，请选择自动建议框。
+## Is this the right control?
 
-有关选择正确的文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
+If you'd like a simple, customizable control that allows text search with a list of suggestions, then choose an auto-suggest box.
 
-## 示例
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
-Groove 音乐应用中的自动建议框。
+## Examples
 
-![Groove 音乐应用中的自动建议框](images/control-examples/auto-suggest-box-groove.png)
+An auto suggest box in the Groove Music app.
 
-## 结构
-自动建议框的入口点由一个可选的标头和一个带有可选提示文本的文本框构成：
+![An auto suggest box in the Groove Music app](images/control-examples/auto-suggest-box-groove.png)
 
-![自动建议控件的入口点示例](images/controls_autosuggest_entrypoint.png)
+## Anatomy
+The entry point for the auto-suggest box consists of an optional header and a text box with optional hint text:
 
-用户开始输入文本后，自动建议结果将自动列出填充内容。 结果列表可能出现在文本输入框的上方或下方。 将显示“清除所有”按钮：
+![Example of the entry point for auto-suggest control](images/controls_autosuggest_entrypoint.png)
 
-![展开的自动建议控件示例](images/controls_autosuggest_expanded01.png)
+The auto-suggest results list populates automatically once the user starts to enter text. The results list can appear above or below the text entry box. A "clear all" button appears:
 
-## 创建自动建议框
+![Example of the expanded auto-suggest control](images/controls_autosuggest_expanded01.png)
 
-若要使用 AutoSuggestBox，你需要响应 3 个用户操作。
+## Create an auto-suggest box
 
-- 更改的文本 - 当用户输入文本时，更新建议列表。
-- 选择的建议 - 当用户在建议列表中选择某个建议时，更新文本框。
-- 提交的查询 - 当用户提交某个查询时，显示查询结果。
+To use an AutoSuggestBox, you need to respond to 3 user actions.
 
-### 更改的文本
+- Text changed - When the user enters text, update the suggestion list.
+- Suggestion chosen - When the user chooses a suggestion in the suggestion list, update the text box.
+- Query submitted - When the user submits a query, show the query results.
 
-每当更新文本框的内容时，都将引发 [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx) 事件。 使用事件参数 [Reason](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason.aspx) 属性确定更改是否缘自用户输入。 如果更改原因是 **UserInput**，则根据输入筛选你的数据。 然后，将筛选的数据设置为 AutoSuggestBox 的 [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 以更新建议列表。
+### Text changed
 
-若要控制项目在建议列表中的显示方式，你可以使用 [DisplayMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) 或 [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)。
+The [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx) event occurs whenever the content of the text box is updated. Use the event args [Reason](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason.aspx) property to determine whether the change was due to user input. If the change reason is **UserInput**, filter your data based on the input. Then, set the filtered data as the [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) of the AutoSuggestBox to update the suggestion list.
 
-- 若要显示数据项的单一属性的文本，则设置 DisplayMemberPath 属性以选择对象中的哪个属性要显示在建议列表中。
-- 若要为列表中的每个项目定义自定义外观，请使用 ItemTemplate 属性。
+To control how items are displayed in the suggestion list, you can use [DisplayMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) or [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx).
 
-### 选择的建议
+- To display the text of a single property of your data item, set the DisplayMemberPath property to choose which property from your object to display in the suggestion list.
+- To define a custom look for each item in the list, use the ItemTemplate property.
 
-当用户使用键盘导航浏览建议列表时，你需要更新文本框中的文本以进行匹配。
+### Suggestion chosen
 
-你可以设置 [TextMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textmemberpath.aspx) 属性以选择数据对象中的哪个属性要显示在文本框中。 如果指定 TextMemberPath，文本框将自动更新。 通常应该为 DisplayMemberPath 和 TextMemberPath 指定相同的值，以便使建议列表和文本框中的文本相同。
+When a user navigates through the suggestion list using the keyboard, you need to update the text in the text box to match.
 
-如果你需要显示多个简单属性，请处理 [SuggestionChosen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx) 事件以根据所选项目使用自定义文本填充文本框。
+You can set the [TextMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textmemberpath.aspx) property to choose which property from your data object to display in the text box. If you specify a TextMemberPath, the text box is updated automatically. You should typically specify the same value for DisplayMemberPath and TextMemberPath so the text is the same in the suggestion list and the text box.
 
-### 提交的查询
+If you need to show more than a simple property, handle the [SuggestionChosen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx) event to populate the text box with custom text based on the selected item.
 
-处理 [QuerySubmitted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx) 事件以执行适用于你的应用的查询操作，并向用户显示结果。
+### Query submitted
 
-当用户提交查询字符串时，将发生 QuerySubmitted 事件。 用户可以采用以下方式之一提交查询：
-- 当焦点位于文本框中时，按 Enter 或单击查询图标。 事件参数 [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) 属性是 **null**。
-- 当焦点位于建议列表中时，按 Enter，单击或点击某个项目。 事件参数 ChosenSuggestion 属性包含已从列表中选择的项目。
+Handle the [QuerySubmitted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx) event to perform a query action appropriate to your app and show the result to the user.
 
-在所有情况下，事件参数 [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) 属性都包含文本框中的文本。
+The QuerySubmitted event occurs when a user commits a query string. The user can commit a query in one of these ways:
+- While the focus is in the text box, press Enter or click the query icon. The event args [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) property is **null**.
+- While the focus is in the suggestion list, press Enter, click, or tap an item. The event args ChosenSuggestion property contains the item that was selected from the list.
 
-## 使用 AutoSuggestBox 进行搜索
+In all cases, the event args [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) property contains the text from the text box.
 
-使用 AutoSuggestBox 提供建议列表，以便用户在键入时从中进行选择。
+## Use AutoSuggestBox for search
 
-默认情况下，文本输入框中不会显示查询按钮。 你可以设置 [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) 属性以在文本框的右侧添加附带指定图标的按钮。 例如，若要使 AutoSuggestBox 看起来像一个典型的搜索框，可添加一个“查找”图标，如下所示。
+Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
+
+By default, the text entry box doesn’t have a query button shown. You can set the [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) property to add a button with the specified icon on the right side of the text box. For example, to make the AutoSuggestBox look like a typical search box, add a ‘find’ icon, like this.
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
 ```
 
-下面是附带“查找”图标的 AutoSuggestBox。
+Here's an AutoSuggestBox with a 'find' icon.
 
-![自动建议控件的入口点示例](images/controls_autosuggest_entrypoint.png)
+![Example of the entry point for auto-suggest control](images/controls_autosuggest_entrypoint.png)
 
-## 示例
+## Samples
 
-若要查看 AutoSuggestBox 的完整工作示例，请参阅 [AutoSuggestBox 迁移示例](http://go.microsoft.com/fwlink/p/?LinkId=619996)和 [XAML UI 基本示例](http://go.microsoft.com/fwlink/p/?LinkId=619992)。
+To see complete working examples of AutoSuggestBox, see the [AutoSuggestBox migration sample](http://go.microsoft.com/fwlink/p/?LinkId=619996) and [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992).
 
-下面是带有所需事件处理程序的简单 AutoSuggestBox。
+Here is a simple AutoSuggestBox with the required event handlers.
 
 ```xaml
 <AutoSuggestBox PlaceholderText="Search" QueryIcon="Find" Width="200"
@@ -139,24 +150,24 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 }
 ```
 
-## 应做事项和禁止事项
+## Do's and don'ts
 
--   在使用自动建议框执行搜索并且输入的文本不存在任何搜索结果时，请显示一行“没有结果”的消息作为结果，以便用户知道已执行了他们的搜索请求：
+-   When using the auto-suggest box to perform searches and no search results exist for the entered text, display a single-line "No results" message as the result so that users know their search request executed:
 
-    ![无任何搜索结果的自动建议框示例](images/controls_autosuggest_noresults.png)
-
-
-## 相关文章
-
-- [文本控件](text-controls.md)
-- [拼写检查](spell-checking-and-prediction.md)
-- [搜索](search.md)
-- [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+    ![Example of an auto suggest box with no search results](images/controls_autosuggest_noresults.png)
 
 
+## Related articles
 
-<!--HONumber=Jul16_HO1-->
+- [Text controls](text-controls.md)
+- [Spell checking](spell-checking-and-prediction.md)
+- [Search](search.md)
+- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

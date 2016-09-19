@@ -1,203 +1,203 @@
 ---
 author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
-title: "Windows Device Portal 概述"
-description: "了解 Windows Device Portal 如何支持你通过网络或 USB 连接远程配置和管理你的设备。"
+title: Windows Device Portal overview
+description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
 translationtype: Human Translation
-ms.sourcegitcommit: 01e83c14304891ff5eaa895e98bbebac33ee7614
-ms.openlocfilehash: 55cbdc077f839166f32605bbada8e0cc707cf5b3
+ms.sourcegitcommit: 7f6aba331ba27d2c0c2ca7925c452da58e155cb8
+ms.openlocfilehash: b316eab1f269dadbe65b7e93b5a33a8e4c4924d7
 
 ---
-# Windows Device Portal 概述
+# Windows Device Portal overview
 
-Windows Device Portal 可使你通过网络或 USB 连接远程配置和管理你的设备。 它还提供高级诊断工具，用于帮助你查看 Windows 设备的实时性能并对其进行疑难解答。
+The Windows Device Portal lets you configure and manage your device remotely over a network or USB connection. It also provides advanced diagnostic tools to help you troubleshoot and view the real time performance of your Windows device.
 
-Device Portal 是设备上的 Web 服务器，你可以从电脑上的 Web 浏览器连接到它。 如果你的设备具有 Web 浏览器，你还可以与设备上的浏览器本地连接。
+The Device Portal is a web server on your device that you can connect to from a web browser on your PC. If your device has a web browser, you can also connect locally with the browser on your device.
 
-Windows Device Portal 在每个设备系列上都可用，但功能和设置可能因设备的要求而异。 本文提供了 Device Portal 的常规说明以及指向包含每个设备系列的更具体信息的文章链接。
+Windows Device Portal is available on each device family, but features and setup vary based on the device's requirements. This article provides a general description of Device Portal and links to articles with more specific information for each device family.
 
-Windows Device Portal 中的所有内容都基于 [REST API](device-portal-api-core.md) 生成，该 API 可用于访问数据和以编程方式控制设备。
+Everything in the Windows Device Portal is built on top of [REST API's](device-portal-api-core.md) that you can use to access the data and control your device programmatically.
 
-## 设置
+## Setup
 
-每台设备都有有关连接到 Device Portal 的特定说明，但每台设备都需要以下常规步骤：
-1. 在你的设备上启用开发人员模式和 Device Portal。
-2. 通过本地网络或 USB 连接你的设备和电脑。
-3. 在浏览器中导航到 Device Portal 页面。 此表显示了每个设备系列所使用的端口和协议。
+Each device has specific instructions for connecting to Device Portal, but each requires these general steps:
+1. Enable Developer Mode and Device Portal on your device.
+2. Connect your device and PC via local network or USB.
+3. Navigate to the Device Portal page in your browser. This table shows the ports and protcols used by each device family.
 
-设备系列 | 默认启用？ | HTTP | HTTPS | USB
+Device family | On by default? | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
-HoloLens | 是，处于开发人员模式下 | 80（默认值） | 443（默认值） | localhost:10080
-IoT | 是，处于开发人员模式下 | 8080 | 通过注册表项启用 | 不适用
-Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
-桌面设备| 在开发人员模式内启用 | 随机 &gt; 50,000 \(xx080\) | 随机 &gt; 50,000 \(xx443\) | 不适用
-电话 | 在开发人员模式内启用 | 80| 443 | localhost:10080
+HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | localhost:10080
+IoT | Yes, in Dev Mode | 8080 | Enable via regkey | N/A
+Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A
+Desktop| Enable inside Dev Mode | Random > 50,000 (xx080) | Random > 50,000 (xx443) | N/A
+Phone | Enable inside Dev Mode | 80| 443 | localhost:10080
 
-有关特定于设备的设置说明，请参阅：
-- [适用于 HoloLens 的 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
-- [适用于 IoT 的 Device Portal](http://ms-iot.github.io/content/win10/tools/DevicePortal.htm)
-- [适用于移动设备的 Device Portal](device-portal-mobile.md#set-up-device-portal-on-window-phone)
-- [适用于 Xbox 的 Device Portal](device-portal-xbox.md)
-- [适用于桌面设备的 Device Portal](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
+For device-specific setup instructions, see:
+- [Device Portal for HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [Device Portal for IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
+- [Device Portal for Mobile](device-portal-mobile.md#set-up-device-portal-on-window-phone)
+- [Device Portal for Xbox](device-portal-xbox.md)
+- [Device Portal for Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
-## 功能
+## Features
 
-### 工具栏和导航
+### Toolbar and navigation
 
-页面顶部的工具栏提供了对常用状态和功能的访问权限。
-- **关机**：关闭设备。
-- **重启**：重新接通设备的电源。
-- **帮助**：打开帮助页面。
+The toolbar at the top of the page provides access to commonly used status and features.
+- **Shutdown**: Turns off the device.
+- **Restart**: Cycles power on the device.
+- **Help**: Opens the help page.
 
-使用沿页面左侧的导航窗格中的链接导航到适用于你的设备的可用管理和监视工具。
+Use the links in the navigation pane along the left side of the page to navigate to the available management and monitoring tools for your device.
 
-下面介绍了在设备上常用的工具。 根据设备的不同可能提供其他选项。 有关详细信息，请参阅你的设备的特定页面。
+Tools that are common across devices are described here. Other options might be available depending on the device. For more info, see the specific page for your device.
 
-### 主页
+### Home
 
-Device Portal 会话从主页开始。 主页通常具有设备的相关信息（如名称和 OS 版本）和可为该设备设置的首选项。
+Your Device Portal session starts at the home page. The home page typically has information about the device, such as name and OS version, and preferences that you can set for the device.
 
-### 应用
+### Apps
 
-为设备上的 AppX 程序包和捆绑包提供安装/卸载和管理功能。
+Provides install/uninstall and management functionality for AppX packages and bundles on your device.
 
-![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-apps.png)
+![Device Portal for mobile](images/device-portal/mob-device-portal-apps.png)
 
-- **已安装的应用**：删除和启动应用。
-- **正在运行的应用**：列出当前正在运行的应用。
-- **安装应用**：从计算机或网络上的文件夹中选择应用包进行安装。
-- **依赖项**：为要安装的应用添加依赖项。
-- **部署**：将选定的应用和依赖项部署到设备。
+- **Installed apps**: Remove and start apps.
+- **Running apps**: Lists apps that are running currently.
+- **Install app**: Select app packages for installation from a folder on your computer or network.
+- **Dependency**: Add dependencies for the app you are going to install.
+- **Deploy**: Deploy the selected app and dependencies to your device.
 
-**安装应用**
+**To install an app**
 
-1.  [创建应用包](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)后，可以将其远程安装到设备上。 在 Visual Studio 中生成它后，将生成一个输出文件夹。
+1.  When you've [created an app package](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx), you can remotely install it onto your device. After you build it in Visual Studio, an output folder is generated.
 
-    ![应用安装](images/device-portal/iot-installapp0.png)
-2.  单击“浏览”并找到你的应用包 \(.appx\)。
-3.  单击“浏览”并找到证书文件 \(.cer\)。 （并非在所有设备上都需要。）
-4.  添加依赖项。 如果你有多个依赖项，请分别添加每一个。     
-5.  在“部署”****下，单击“转到”****。 
-6.  若要安装另一个应用，请单击“重置”****按钮来清除字段。
+    ![App install](images/device-portal/iot-installapp0.png)
+2.  Click browse and find your app package (.appx).
+3.  Click browse and find the certificate file (.cer). (Not required on all devices.)
+4.  Add dependencies. If you have more than one, add each one individually.     
+5.  Under **Deploy**, click **Go**. 
+6.  To install another app, click the **Reset** button to clear the fields.
 
 
-**卸载应用**
+**To uninstall an app**
 
-1.  确保应用未在运行。 
-2.  如果正在运行，请转到“正在运行的应用”并关闭它。 如果你尝试在应用正在运行时卸载，它将在尝试重新安装应用时导致问题。 
-3.  准备就绪后，单击“卸载”****。
+1.  Ensure that your app is not running. 
+2.  If it is, go to 'running apps' and close it. If you attempt to uninstall while the app is running, it will cause issues when trying to re-install the app. 
+3.  Once you're ready, click **Uninstall**.
 
-### 进程
+### Processes
 
-显示有关当前正在运行的进程的详细信息。 这包括应用和系统进程。
+Shows details about currently running processes. This includes both apps and system processes.
 
-与电脑上的任务管理器非常相似，此页面可使你查看当前正在运行的进程及其内存使用情况。  在某些平台（桌面设备、IoT 和 HoloLens），你可以终止进程。
+Much like the Task Manager on your PC, this page lets you see which processes are currently running as well as their memory usage.  On some platforms (Desktop, IoT, and HoloLens) you can terminate processes.
 
-![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-processes.png)
+![Device Portal for mobile](images/device-portal/mob-device-portal-processes.png)
 
-### 性能
+### Performance
 
-显示系统诊断信息的实时图形，如电源使用情况、帧速率和 CPU 负载。
+Shows real-time graphs of system diagnostic info, like power usage, frame rate, and CPU load.
 
-以下是可用指标：
-- **CPU**：总可用量的百分比
-- **内存**：总量、正在使用、可用提交、页面缓冲和非页面缓冲
-- **GPU**：GPU 引擎使用率、总可用量的百分比
-- **I/O**：读取和写入
-- **网络**：已接收和已发送
+These are the available metrics:
+- **CPU**: Percent of total available
+- **Memory**: Total, in use, available committed, paged, and non-paged
+- **GPU**: GPU engine utilization, percent of total available
+- **I/O**: Reads and writes
+- **Network**: Received and sent
 
-![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-perf.png)
+![Device Portal for mobile](images/device-portal/mob-device-portal-perf.png)
 
-### Windows 事件跟踪 \(ETW\)
+### Event Tracing for Windows (ETW)
 
-管理设备上的实时 Windows 事件跟踪 \(ETW\)。
+Manages realtime Event Tracing for Windows (ETW) on the device.
 
-![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-etw.png)
+![Device Portal for mobile](images/device-portal/mob-device-portal-etw.png)
 
-选中“隐藏提供程序”****以仅显示“事件”列表。
-- **注册的提供程序**：选择 ETW 提供程序和跟踪级别。 跟踪级别是以下值之一：
-    1. 异常退出或终止
-    2. 严重错误
-    3. 警告
-    4. 非错误警告
-    5. 详细跟踪 \(*\)
+Check **Hide providers** to show the Events list only.
+- **Registered providers**: Select the ETW provider and the tracing level. Tracing level is one of these values:
+    1. Abnormal exit or termination
+    2. Severe errors
+    3. Warnings
+    4. Non-error warnings
+    5. Detailed trace (*)
 
-单击或点击“启用”****以开始跟踪。 提供程序将添加到“已启用的提供程序”****下拉列表。
-- **自定义提供程序**：选择自定义 ETW 提供程序和跟踪级别。 根据其 GUDI 标识提供程序。 不要在 GUID 中包含括号。
-- **已启用的提供程序**：列出已启用的提供程序。 从下拉列表中选择一个提供程序，然后单击或点击“禁用”****来停止跟踪。 单击或点击“全部停止”****来暂停所有跟踪。
-- **提供程序历史记录**：显示已在当前会话期间启用的 ETW 提供程序。 单击或点击“启用”****来激活已禁用的提供程序。 单击或点击“清除”****来清除历史记录。
-- **事件**：以表格的形式列出来自选定提供程序的 ETW 事件。 此表将实时更新。 在该表下方，单击“清除”****按钮可删除表中的所有 ETW 事件。 这不会禁用任何提供程序。 你可以单击“保存到文件”****来将当前收集的 ETW 事件本地导出到 CSV 文件。
+Click or tap **Enable** to start tracing. The provider is added to the **Enabled Providers** dropdown.
+- **Custom providers**: Select a custom ETW provider and the tracing level. Identify the provider by its GUID. Don't include brackets in the GUID.
+- **Enabled providers**: Lists the enabled providers. Select a provider from the dropdown and click or tap **Disable** to stop tracing. Click or tap **Stop all** to suspend all tracing.
+- **Providers history**: Shows the ETW providers that were enabled during the current session. Click or tap **Enable** to activate a provider that was disabled. Click or tap **Clear** to clear the history.
+- **Events**: Lists ETW events from the selected providers in table format. This table is updated in real time. Beneath the table, click the **Clear** button to delete all ETW events from the table. This does not disable any providers. You can click **Save to file** to export the currently collected ETW events to a CSV file locally.
 
-有关使用 ETW 跟踪的更多详细信息，请参阅关于将其用于从你的应用收集实时日志的[博客文章](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)。 
+For more details on using ETW tracing, see the [blogpost](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) about using it to collect real-time logs from your app. 
 
-### 性能跟踪
+### Performance tracing
 
-从设备中捕获 [Windows Performance Recorder](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) \(WPR\) 跟踪。
+Capture [Windows Performance Recorder](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) (WPR) traces from your device.
 
-![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-perf-tracing.png)
+![Device Portal for mobile](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- **可用配置文件**：从下拉列表中选择 WPR 配置文件，然后单击或点击“开始”****以开始跟踪。
-- **自定义配置文件**：单击或点击“浏览”****以从电脑中选择 WPR 配置文件。 单击或点击“上载并启动”****以开始跟踪。
+- **Available profiles**: Select the WPR profile from the dropdown, and click or tap **Start** to start tracing.
+- **Custom profiles**: Click or tap **Browse** to choose a WPR profile from your PC. Click or tap **Upload and start** to start tracing.
 
-若要停止跟踪，请单击“停止”****。 停留在此页面上，直到跟踪文件 \(.ETL\) 完成下载。
+To stop the trace, click **Stop**. Stay on this page until the trace file (.ETL) has completed downloading.
 
-可以打开捕获的 ETL 文件以供在 [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) 中进行分析。
+Captured ETL files can be opened for analysis in [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx).
 
-### 设备
+### Devices
 
-枚举连接到你的设备的所有外围设备。
+Enumerates all peripherals attached to your device.
 
-![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-devices.png)
+![Device Portal for mobile](images/device-portal/mob-device-portal-devices.png)
 
-### 网络
+### Networking
 
-管理设备上的网络连接。  除非你通过 USB 连接到 Device Portal，否则更改这些设置很可能使你与 Device Portal 断开连接。
-- **配置文件**：选择其他 WLAN 配置文件以供使用。  
-- **可用网络**：可用于该设备的 WLAN 网络。 单击或点击某个网络将允许你连接到该网络，并提供密钥（如果需要）。 注意：Device Portal 尚不支持企业身份验证。 
+Manages network connections on the device.  Unless you are connected to Device Portal via USB, changing these settings will likely disconnect you from Device Portal.
+- **Profiles**: Select a different WiFi profile to use.  
+- **Available networks**: The WiFi networks available to the device. Clicking or tapping on a network will allow you to connect to it and supply a passkey if needed. Note: Device Portal does not yet support Enterprise Authentication. 
 
-![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-network.png)
+![Device Portal for mobile](images/device-portal/mob-device-portal-network.png)
 
-### 应用文件资源管理器
+### App File Explorer
 
-允许查看和操纵由旁加载的应用存储的文件。  这是 Windows Phone 8.1 中[独立存储资源管理器](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx)的新跨平台版本；若要了解有关应用文件资源管理器以及使用方法的详细信息，请参阅[这篇博客文章](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)。 
+Allows you to view and manipulate files stored by your sideloaded apps.  This is a new, cross-platform version of the [Isolated Storage Explorer](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx) from Windows Phone 8.1  See [this blog post](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) to learn more about the App File Explorer and how to use it. 
 
-![适用于移动设备的 Device Portal](images/device-portal/mob-device-portal-AppFileExplorer.png)
+![Device Portal for mobile](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
-## 服务功能和说明
+## Service Features and Notes
 
 ### DNS-SD
 
-Device Portal 使用 DNS-SD 公布其存在于本地网络上。  所有 Device Portal 实例都将在“WDP._wdp._tcp.local”下公布，无论其设备类型如何。 服务实例的 TXT 记录提供以下信息：
+Device Portal advertises its presence on the local network using DNS-SD.  All Device Portal instances, regardless of their device type, advertise under "WDP._wdp._tcp.local". The TXT records for the service instance provide the following:
 
-项 | 类型 | 描述 
+Key | Type | Description 
 ----|------|-------------
-S | int | Device Portal 的安全端口。  如果为 0（零），则表示 Device Portal 不侦听 HTTPS 连接。 
-D | string | 设备类型。  这将采用“Windows.*”格式，例如 Windows.Xbox 或 Windows.Desktop
-A | string | 设备体系结构。  这将为 ARM、x86 或 AMD64。  
-T | 字符串的 null 字符分隔列表 | 用户应用的设备标记。 有关其用法的信息，请参阅标记 REST API。 列表以双 null 结尾。  
+S | int | Secure port for Device Portal.  If 0 (zero), Device Portal is not listening for HTTPS connections. 
+D | string | Type of device.  This will be in the format "Windows.*", e.g. Windows.Xbox or Windows.Desktop
+A | string | Device architecture.  This will be ARM, x86, or AMD64.  
+T | null-character delineated list of strings | User-applied tags for the device. See the Tags REST API for how to use this. List is double-null terminated.  
 
-推荐 HTTPS 端口上的连接，因为并非所有设备都侦听 DNS-SD 记录所公布的 HTTP 端口。 
+Connecting on the HTTPS port is suggested, as not all devices are listening on the HTTP port advertised by the DNS-SD record. 
 
-### CSRF 保护和脚本
+### CSRF Protection and Scripting
 
-为了防止受到 [CSRF 攻击](https://wikipedia.org/wiki/Cross-site_request_forgery)，所有非 GET 请求上都需要唯一的令牌。 此令牌 X-CSRF-Token 请求标头派生自会话 Cookie CSRF-Token。 在 Device Portal Web UI 中，CSRF-Token Cookie 将复制到每个请求的 X-CSRF-Token 标头中。
+In order to protect against [CSRF attacks](https://wikipedia.org/wiki/Cross-site_request_forgery), a unique token is required on all non-GET requests. This token, the X-CSRF-Token request header, is derived from a session cookie, CSRF-Token. In the Device Portal web UI, the CSRF-Token cookie is copied into the X-CSRF-Token header on each request.
 
-**重要提示** 此保护可防止从独立客户端（例如命令行程序）使用 REST API。 这可以通过 3 种方法解决： 
+**Important** This protection prevents usages of the REST APIs from a standalone client (e.g. command-line utilities). This can be solved in 3 ways: 
 
-1. 使用“auto-”用户名。 将“auto-”置于其用户名前面的客户端将绕过 CSRF 保护。 此用户名不能用于通过浏览器登录到 Device Portal，这一点很重要，因为它将针对 CSRF 攻击打开服务。 示例：如果 Device Portal 的用户名为“admin”，则 ```curl -u auto-admin:password <args>``` 应该用于绕过 CSRF 保护。 
+1. Use of the "auto-" username. Clients that prepend "auto-" to their username will bypass CSRF protection. It is important that this username not be used to log in to Device Portal through the browser, as it will open up the service to CSRF attacks. Example: If Device Portal's username is "admin", ```curl -u auto-admin:password <args>``` should be used to bypass CSRF protection. 
 
-2. 在客户端中实现 Cookie 到标头的方案。 这需要 GET 请求来建立会话 Cookie，并包含所有后续请求的标头和 Cookie。 
+2. Implement the cookie-to-header scheme in the client. This requires a GET request to establish the session cookie, and then the inclusion of both the header and the cookie on all subsequent requests. 
  
-3. 禁用身份验证并使用 HTTP。 CSRF 保护仅适用于 HTTPS 终结点，因此 HTTP 终结点上的连接无需执行上述任一操作。 
+3. Disable authentication and use HTTP. CSRF protection only applies to HTTPS endpoints, so connections on HTTP endpoints will not need to do either of the above. 
 
-**注意**：以“auto-”开头的用户名将无法通过浏览器登录到 Device Portal。  
+**Note**: a username that begins with "auto-" will not be able to log into Device Portal via the browser.  
 
-#### 跨站点 WebSocket 劫持 (CSWSH) 保护
+#### Cross-Site WebSocket Hijacking (CSWSH) protection
 
-若要防止受到 [CSWSH 攻击](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)，用于打开对 Device Portal 的 WebSocket 连接的所有客户端还必须提供与主机头匹配的 Origin 标头。  这向 Device Portal 证明了请求来自 Device Portal UI 或有效的客户端应用程序。  如果没有 Origin 标头，将拒绝你的请求。 
+To protect against [CSWSH attacks](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), all clients opening a WebSocket connection to Device Portal must also provide an Origin header that matches the Host header.  This proves to Device Portal that the request comes either from the Device Portal UI or a valid client application.  Without the Origin header your request will be rejected. 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

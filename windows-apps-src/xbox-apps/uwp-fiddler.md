@@ -1,85 +1,84 @@
 ---
 author: WilliamsJason
-title: "在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One"
-description: "介绍如何使用免费 Fiddler 工具查看 UWP Xbox One 开发工具包上的网络流量。"
-area: Xbox
+title: How to use Fiddler with Xbox One when developing for UWP
+description: Describes how to use the freeware Fiddler tool to see network traffic on a UWP Xbox One dev kit.
 translationtype: Human Translation
-ms.sourcegitcommit: 0f0840992afe5eeae8ec5ac6897e728ec183a2f4
-ms.openlocfilehash: 6d02d7c4fe9c1804e3b63a1d1156fbb3981d0536
+ms.sourcegitcommit: 11c6cffab7934937b6d89c30e4d03ae752f6b3b7
+ms.openlocfilehash: 241fa495c7277fe2bf4feafeb4062842f97e59b1
 
 ---
 
-# 在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One
+# How to use Fiddler with Xbox One when developing for UWP
 
-Fiddler 是一种 Web 调试代理，用于记录 Xbox One 开发工具包和 Internet 之间的所有 HTTP 和 HTTPS 流量。 你将使用它记录和检查与 Xbox 服务和依赖方 Web 服务之间的流量，以便了解和调试 Web 服务调用。 
+Fiddler is a web debugging proxy which logs all HTTP and HTTPS traffic between your Xbox One dev kit and the Internet. You will use it to log and inspect traffic to and from the Xbox services and relying party web services, to understand and debug web service calls. 
 
-在正常操作中，通过代理通信的主机面临通信被代理修改的风险，从而可能使玩家有机会作弊。 因此，主机设计为不允许通过代理通信。 将 Fiddler 用于 Xbox One 开发工具包需要你在开发工具包上执行某些特殊配置步骤，以便允许它使用 Fiddler 代理。 
+In normal operation, a console that communicates through a proxy is at risk of having its communications modified by the proxy, possibly allowing players to cheat. Thus, consoles are designed to not allow communication through a proxy. Using Fiddler with your Xbox One dev kit requires that you perform some special configuration steps on the dev kit to allow it to use the Fiddler proxy. 
 
-Fiddler 是一款免费软件，可从 [Fiddler 网站](http://www.fiddler2.com/fiddler2/)下载。 
+Fiddler is freeware, and can be downloaded from the [Fiddler website](http://www.fiddler2.com/fiddler2/). 
 
-Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler 的计算机禁用上游连接，则在主机的身份验证过期前，主机可能无法检测到此断开连接。 如果你使用的是 Fiddler，请确保断开主机与运行 Fiddler 的计算机之间的连接，而不是使用 Fiddler 模拟断开连接。
+Fiddler can impact the network status reported by the console. If an upstream connection is disabled from the machine running Fiddler, the console may not detect this disconnection until the authentication of the console has expired. If you are using Fiddler, be sure to disconnect the connection between the console and the computer running Fiddler, rather than using Fiddler to simulate a disconnect.
 
-### 在开发电脑上安装并启用 Fiddler
-请按照以下步骤安装并启用 Fiddler，以便从开发工具包监视流量：
+### To install and enable Fiddler on your development PC
+Follow these steps to install and enable Fiddler to monitor traffic from your dev kit:
 
-1. 按照 [Fiddler 网站](http://www.fiddler2.com/fiddler2/)上的指示在开发电脑上安装 Fiddler。 
-2. 启动 Fiddler，然后从“工具”****菜单中选择“Fiddler 选项”****。 
-3. 选择“连接”****选项卡，并确保“允许远程计算机连接”****处于选中状态。 
-4. 单击“确定”****来接受对设置的更改。 你将看到一个显示必须重启 Fiddler 才能使更改生效以及你可能需要手动配置防火墙的对话框。 单击此对话框上的“确定”****，但*不要重启 Fiddler*。
-5. 配置必要的防火墙规则来允许远程计算机连接。 启动 Windows 防火墙控制面板小程序。 单击“高级设置”****，然后单击“入站规则”****。 找到名为“FiddlerProxy”的规则并滚动到右侧，从而验证是否为该规则显示下表中的每项设置。
+1. Install Fiddler on your development PC, following the directions on the [Fiddler website](http://www.fiddler2.com/fiddler2/). 
+2. Launch Fiddler and select **Fiddler Options** from the **Tools** menu. 
+3. Select the **Connections** tab and ensure that **Allow remote computers to connect** is selected. 
+4. Click **OK** to accept your change to the settings. You will see a dialog box saying that Fiddler must be restarted for the change to take effect, and that you may need to configure your firewall manually. Click **OK** on this dialog, but *do not restart Fiddler yet*.
+5. Configure the necessary firewall rule to allow remote computers to connect. Start the Windows Firewall Control Panel applet. Click **Advanced Settings**, and then **Inbound Rule**. Find the rule named "FiddlerProxy" and scroll to the right, verifying that each of the settings in the following table appears for that rule.
   
-  | 设置           | 首选值                |
+  | Setting           | Preferred Value                |
   | ----              | ----                           |
-  | 名称              | FiddlerProxy                   |
-  | 组             | *没有值* |
-  | 配置文件           | 全部                            |
-  | 已启用           | 是                            |
-  | 操作            | 允许                          |
-  | 替代          | 否                             |
-  | 程序           | *fiddler.exe 的路径*          |
-  | LocalAddress      | 任意                            |
-  | RemoteAddress     | 任意                            |
-  | 协议          | TCP                            |
-  | LocalPort         | 任意                            |
-  | RemotePort        | 任意                            |
-  | AllowedUsers      | 任意                            |
-  | AllowedComputers  | 任意                            |
-
-6. 通过执行以下操作将 Fiddler 配置为捕获和解密 HTTPS 流量：
-  1. 若要实现最佳性能，请通过单击按钮栏上的“流”****按钮来将 Fiddler设置为使用流模式。
-  2. 在 Fiddler“工具”****菜单中，选择“Fiddler 选项”****，然后单击“HTTPS”****。
-  3. 选中“解密 HTTPS 流量”****复选框。 如果某个对话框询问是否将 Windows 配置为信任 CA 证书，请单击“否”****。
-  4. 单击“将根证书导出到桌面”****。
-7. 退出并重启 Fiddler。
-
-### 将开发工具包配置为使用 Fiddler 作为其 Internet 代理
-
-1. 导航到 Xbox Device Portal UI 中的“网络”****工具。
-2. 浏览你导出到桌面的 Fiddler 根证书。 
-3. 键入运行 Fiddler 的开发电脑的 IP 地址或主机名。
-4. 键入 Fiddler 正在侦听的端口号（默认情况下，Fiddler 使用端口 8888）。 
-5. 单击“启用”****。 这将重启你的开发工具包。
-
-### 停止使用 Fiddler
-若要停止使用 Fiddler 作为 Internet 代理（并使 Fiddler 停止跟踪所有开发工具包的网络流量），请执行以下操作：
-
-1. 导航到 Xbox Device Portal UI 中的“网络”****工具。
-2. 单击“禁用”****。
-
-###注意
-
-每台安装了 Fiddler 的电脑都使用不同的 Fiddler 根证书。 如果你有多台电脑可用于为开发工具包提供 Fiddler 代理，你将需要在它们之间进行切换时选择新的根证书。 如果你只使用一台电脑，则只需在首次启用 Fiddler 时选择根证书。 你仍然必须指定 IP 地址和端口。
-
-## 另请参阅
-- [Fiddler 设置 API 参考](wdp-fiddler-api.md)
-- [常见问题](frequently-asked-questions.md)
-- [Xbox One 上的 UWP](index.md)
+  | Name              | FiddlerProxy                   |
+  | Group             | *No value* |
+  | Profile           | All                            |
+  | Enabled           | Yes                            |
+  | Action            | Allow                          |
+  | Override          | No                             |
+  | Program           | *Path to fiddler.exe*          |
+  | LocalAddress      | Any                            |
+  | RemoteAddress     | Any                            |
+  | Protocol          | TCP                            |
+  | LocalPort         | Any                            |
+  | RemotePort        | Any                            |
+  | AllowedUsers      | Any                            |
+  | AllowedComputers  | Any                            |
 
 
+6. Configure Fiddler to capture and decrypt HTTPS traffic by doing the following:
+  1. To enable best performance, set Fiddler to use Streaming Mode by clicking the **Stream** button on the button bar.
+  2. In the Fiddler **Tools** menu, select **Fiddler Options**, and then click **HTTPS**.
+  3. Select the **Decrypt HTTPS traffic** check box. If a dialog box asks whether to configure Windows to trust the CA certificate, click **No**.
+  4. Click **Export Root Certificate to Desktop**.
+7. Exit and restart Fiddler.
+
+### To configure a dev kit to use Fiddler as its proxy to the Internet
+
+1. Navigate to the **Network** tool in the Xbox Device Portal UI.
+2. Browse for the Fiddler root certificate that you exported to the desktop. 
+3. Type the IP address or hostname of the development PC running Fiddler.
+4. Type the port number where Fiddler is listening (by default, Fiddler uses port 8888). 
+5. Click **Enable**. This will restart your dev kit.
+
+### To stop using Fiddler
+To stop using Fiddler as a proxy to the Internet (and stop Fiddler from tracing all of the dev kit's network traffic), do the following:
+
+1. Navigate to the **Network** tool in the Xbox Device Portal UI.
+2. Click **Disable**.
+
+> [!NOTE]
+> Each PC with Fiddler installed uses a different Fiddler root certificate. If you have more than one PC that might be used to provide a Fiddler proxy for your dev kit, you will need to select the new root certificate when switching between them. If you are using only one PC, you need to select the root certificate only the first time you enable Fiddler. You must still specify the IP address and port.
+
+## See also
+- [Fiddler settings API reference](wdp-fiddler-api.md)
+- [Frequently asked questions](frequently-asked-questions.md)
+- [UWP on Xbox One](index.md)
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

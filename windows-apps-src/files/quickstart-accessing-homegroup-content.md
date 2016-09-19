@@ -1,55 +1,55 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
-title: "访问家庭组内容"
-description: "访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。"
+title: Accessing HomeGroup content
+description: Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 ---
-# 访问家庭组内容
+# Accessing HomeGroup content
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+** Important APIs **
 
--   [**Windows.Storage.KnownFolders 类**](https://msdn.microsoft.com/library/windows/apps/br227151)
+-   [**Windows.Storage.KnownFolders class**](https://msdn.microsoft.com/library/windows/apps/br227151)
 
-访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。
+Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
 
-## 先决条件
+## Prerequisites
 
--   **了解通用 Windows 平台 (UWP) 应用的异步编程**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **应用功能声明**
+-   **App capabilty declarations**
 
-    若要访问家庭组内容，用户的计算机必须已设置家庭组，且你的应用必须至少具有以下功能之一：**picturesLibrary**、**musicLibrary** 或 **videosLibrary**。 当你的应用访问“家庭组”文件夹时，它将仅看到与在你的应用清单中声明的功能相对应的库。 若要了解详细信息，请参阅[文件访问权限](file-access-permissions.md)。
+    To access HomeGroup content, the user's machine must have a HomeGroup set up and your app must have at least one of the following capabilities: **picturesLibrary**, **musicLibrary**, or **videosLibrary**. When your app accesses the HomeGroup folder, it will see only the libraries that correspond to the capabilities declared in your app's manifest. To learn more, see [File access permissions](file-access-permissions.md).
 
-    **注意** 无论在你的应用清单中声明了什么功能，也无论用户的共享设置如何，你的应用都看不到家庭组的文档库中的内容。
+    **Note**  Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.
 
      
 
--   **了解如何使用文件选取器**
+-   **Understand how to use file pickers**
 
-    你通常使用文件选取器访问家庭组中的文件和文件夹。 若要了解如何使用文件选取器，请参阅[使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)
+    You typically use the file picker to access files and folders in the HomeGroup. To learn how to use the file picker, see [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
 
--   **了解文件和文件夹查询**
+-   **Understand file and folder queries**
 
-    你可以使用查询来枚举家庭组中的文件和文件夹。 若要了解有关文件和文件夹查询的信息，请参阅[枚举和查询文件和文件夹](quickstart-listing-files-and-folders.md)。
+    You can use queries to enumerate files and folders in the HomeGroup. To learn about file and folder queries, see [Enumerating and querying files and folders](quickstart-listing-files-and-folders.md).
 
-## 在家庭组打开文件选取器
+## Open the file picker at the HomeGroup
 
-按以下步骤打开文件选取器的一个实例，让用户从家庭组中选取文件和文件夹：
+Follow these steps to open an instance of the file picker that lets the user pick files and folders from the HomeGroup:
 
-1.  **创建并自定义文件选取器**
+1.  **Create and customize the file picker**
 
-    使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 创建文件选取器，然后将选取器的 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 设置为 [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890)。 或者，设置与你的用户和你的应用相关的其他属性。 有关帮助你确定如何自定义文件选取器的指南，请参阅[文件选取器指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465182)。
+    Use [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to create the file picker, and then set the picker's [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890). Or, set other properties that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182)
 
-    此示例创建了一个在家庭组打开的文件选取器，包含任何类型的文件，并将文件显示为缩略图图像：
+    This example creates a file picker that opens at the HomeGroup, includes files of any type, and displays the files as thumbnail images:
     ```csharp
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -57,12 +57,12 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
     picker.FileTypeFilter.Clear();
     picker.FileTypeFilter.Add("*");
     ```
-  
-2.  **显示文件选取器并处理已选取的文件。**
 
-    在你创建并自定义文件选取器之后，让用户通过调用 [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 来选取一个文件，或通过调用 [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) 来选取多个文件。
+2.  **Show the file picker and process the picked file.**
 
-    此示例显示文件选取器以让用户选取一个文件：
+    After you create and customize the file picker, let the user pick one file by calling [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), or multiple files by calling [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).
+
+    This example displays the file picker to let the user pick one file:
     ```csharp
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
@@ -76,36 +76,36 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
     }   
     ```
 
-## 在家庭组中搜索文件
+## Search the HomeGroup for files
 
-此部分显示了如何找到与用户提供的查询词匹配的家庭组项目。
+This section shows how to find HomeGroup items that match a query term provided by the user.
 
-1.  **从用户获取查询词。**
+1.  **Get the query term from the user.**
 
-    下面我们将获取一个用户已输入到某个称为 `searchQueryTextBox` 的 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 控件中的查询词：
+    Here we get a query term that the user has entered into a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) control called `searchQueryTextBox`:
     ```csharp
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
 
-2.  **设置查询选项和搜索筛选器。**
+2.  **Set the query options and search filter.**
 
-    查询选项确定搜索结果是如何进行排序的，而搜索筛选器确定哪些项目包含在搜索结果中。
+    Query options determine how the search results are sorted, while the search filter determines which items are included in the search results.
 
-    此示例设置先按相关性然后按修改日期对搜索结果进行排序的查询选项。 搜索筛选器是用户在上一步中输入的查询词：
+    This example sets query options that sort the search results by relevance and then the date modified. The search filter is the query term that the user entered in the previous step:
     ```csharp
-    Windows.Storage.Search.QueryOptions queryOptions = 
+    Windows.Storage.Search.QueryOptions queryOptions =
             new Windows.Storage.Search.QueryOptions
                 (Windows.Storage.Search.CommonFileQuery.OrderBySearchRank, null);
     queryOptions.UserSearchFilter = queryTerm.Text;
-    Windows.Storage.Search.StorageFileQueryResult queryResults = 
+    Windows.Storage.Search.StorageFileQueryResult queryResults =
             Windows.Storage.KnownFolders.HomeGroup.CreateFileQueryWithOptions(queryOptions);    
     ```
 
-3.  **运行查询并处理结果。**
+3.  **Run the query and process the results.**
 
-    以下示例在家庭组中运行搜索查询并将任何匹配的文件的名称另存为一个字符串列表。
+    The following example runs the search query in the HomeGroup and saves the names of any matching files as a list of strings.
     ```csharp
-    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files = 
+    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files =
         await queryResults.GetFilesAsync();
 
     if (files.Count > 0)
@@ -119,21 +119,21 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
     ```
 
 
-## 在家庭组中搜索某个特定用户的共享文件
+## Search the HomeGroup for a particular user's shared files
 
-此部分介绍如何查找由特定用户共享的家庭组文件。
+This section shows you how to find HomeGroup files that are shared by a particular user.
 
-1.  **获取家庭组用户的集合。**
+1.  **Get a collection of HomeGroup users.**
 
-    家庭组中每个第一级文件夹表示单个家庭组用户。 因此，若要获取家庭组用户的集合，请调用 [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) 检索顶级家庭组文件夹。
+    Each of the first-level folders in the HomeGroup represents an individual HomeGroup user. So, to get the collection of HomeGroup users, call [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) retrieve the top-level HomeGroup folders.
     ```csharp
-    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders = 
+    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
     ```
 
-2.  **查找目标用户的文件夹，然后创建一个限定于该用户的文件夹的文件查询。**
+2.  **Find the target user's folder, and then create a file query scoped to that user's folder.**
 
-    以下示例循环访问检索的文件夹以查找目标用户的文件夹。 然后，它设置查询选项以查找文件夹中的所有文件，这些文件先按相关性然后按数据修改日期进行排序。 此示例构建一个字符串，此字符串报告找到的文件数以及文件的名称。
+    The following example iterates through the retrieved folders to find the target user's folder. Then, it sets query options to find all files in the folder, sorted first by relevance and then by the date modified. The example builds a string that reports the number of files found, along with the names of the files.
     ```csharp
     bool userFound = false;
     foreach (Windows.Storage.StorageFolder folder in hgFolders)
@@ -142,7 +142,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
         {
             // Found the target user's folder, now find all files in the folder.
             userFound = true;
-            Windows.Storage.Search.QueryOptions queryOptions = 
+            Windows.Storage.Search.QueryOptions queryOptions =
                 new Windows.Storage.Search.QueryOptions
                     (Windows.Storage.Search.CommonFileQuery.OrderBySearchRank, null);
             queryOptions.UserSearchFilter = "*";
@@ -164,22 +164,22 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
     }    
     ```
 
-## 从家庭组流式传输视频
+## Stream video from the HomeGroup
 
-请按以下步骤从家庭组流式传输视频内容：
+Follow these steps to stream video content from the HomeGroup:
 
-1.  **在你的应用中包含一个 MediaElement。**
+1.  **Include a MediaElement in your app.**
 
-    [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 允许你在你的应用中播放音频和视频内容。 有关音频和视频播放的详细信息，请参阅[创建自定义传输控件](https://msdn.microsoft.com/library/windows/apps/mt187271)和[音频、视频和相机](https://msdn.microsoft.com/library/windows/apps/mt203788)。
+    A [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) lets you play back audio and video content in your app. For more information on audio and video playback, see [Create custom transport controls](https://msdn.microsoft.com/library/windows/apps/mt187271) and [Audio, video, and camera](https://msdn.microsoft.com/library/windows/apps/mt203788).
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
     </Grid>    
     ```
 
-2.  **在家庭组打开某个文件选取器，并应用某个筛选器，该筛选器包含采用你的应用支持的格式的视频文件。**
+2.  **Open a file picker at the HomeGroup and apply a filter that includes video files in the formats that your app supports.**
 
-    此示例在文件打开选取器中包含 .mp4 和 .wmv 文件。
+    This example includes .mp4 and .wmv files in the file open picker.
     ```csharp
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -190,7 +190,7 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **打开用户的文件选择以进行读取访问，并将文件流设置为** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 的源，然后播放该文件。
+3.  **Open the the user's file selection for read access, and set the file stream as the source for the** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), and then play the file.
     ```csharp
     if (file != null)
     {
@@ -211,10 +211,6 @@ ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

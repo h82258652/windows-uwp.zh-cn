@@ -1,101 +1,101 @@
 ---
 author: mcleblanc
-description: "在开发跨平台应用时，应该作何选择？"
-title: "选择一种方法进行 iOS 和 UWP 应用开发"
+description: What are the choices when developing cross-platform apps?.
+title: Selecting an approach to iOS and UWP app development
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
+ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
 
 ---
 
-# 选择一种方法进行 iOS 和 UWP 应用开发
+# Selecting an approach to iOS and UWP app development
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在开发跨平台应用时，应该作何选择？
+What are the choices when developing cross-platform apps?
 
-## 同时支持 iOS 和 Windows 的最佳方式是什么？
+## What's the best way to support both iOS and Windows?
 
-Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这两个平台（Android 亦然）的应用，越来越多的工具和技术都可以为你提供很大帮助。 最佳的解决方案取决于你所编写的应用类型以及你是从零开始编写还是移植现有项目。
+Windows and iOS may seem to be very different beasts, but a growing number of tools and techniques can greatly assist you if you need to write apps that support both platforms (and Android too). The best solution depends on the type of app you are writing, and whether you are starting from scratch or porting an existing project.
 
-## 编写新应用
+## Writing a new app
 
-若从零开始，有许多选项可供你随意使用，其中包括：
+With a clean slate, you have many options at your disposal, including:
 
 -   [Xamarin](http://go.microsoft.com/fwlink/p/?LinkID=320484)
 
-    借助 Xamarin，你可以使用 C# 编写应用、使其在 Windows 上运行，也可以创建本机 iOS 应用。 Visual Studio 中内置了对 Xamarin 的支持；只需选择正确的项目类型即可。
+    With Xamarin, you can write your app in C#, have it run on Windows, and create native iOS apps too. Support for Xamarin is built into Visual Studio; just select the correct project type.
 
 -   [Apache Cordova](http://go.microsoft.com/fwlink/p/?LinkID=400439)
 
-    如果 Javascript 和 HTML 更适合你，Apache Cordova (aka PhoneGap) 将会帮助你创建适用于 iOS、Windows 和 Android 的跨平台应用。 Visual Studio 中也内置了此项目类型。
+    If Javascript and HTML is more your thing, Apache Cordova (aka PhoneGap) will help you create cross-platform apps for iOS, Windows, and Android. This project type is also built into Visual Studio.
 
--   游戏引擎
+-   Game-engines
 
-    借助可供你支配的工具（如 [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) 和 [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062)），你可以编写适用于 Windows 和包括 iOS 在内的许多其他平台的 AAA 级质量游戏。 Unity 支持 C# 脚本，而 Unreal 则使用 C++。
+    With tools like [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) and [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062) at your disposal, you can write AAA-quality games for Windows and many other platforms, including iOS. Unity supports C# scripting; Unreal uses C++.
 
 -   [MonoGame](http://go.microsoft.com/fwlink/p/?LinkID=320483)
 
-    XNA 的精神继任者。 现在它是开源跨平台框架，这意味着你可以采用 C# 面向各种支持物理引擎以及 2D 与 3D 图形的平台编写应用。
+    The spiritual successor to XNA. Now, it's an open-source cross-platform framework, which means you can write apps in C# for many platforms with support for physics engines, and 2D and 3D graphics.
 
-## 适应现有应用
+## Adapting an existing app
 
-使用现有的 iOS 应用，你的选项将受到稍多限制。 但是，一切都肯定不会丢失。
+With an existing iOS app, your options are a little more limited. However, all is most certainly not lost.
 
--   [面向 iOS 的 Windows 桥](https://go.microsoft.com/fwlink/p/?LinkId=619014)
+-   [Windows Bridge for iOS](https://go.microsoft.com/fwlink/p/?LinkId=619014)
 
-    也称为 Project Islandwood，它是一种可以直接将 Xcode 项目导入到 Visual Studio 的工具，现在仍处于开发中。 OBJECTIVE-C 代码可以在 Visual Studio 中生成并调试。 如果你的项目要为图形使用诸如 Cocos 此类的库，你可能会发现这一种快速移植应用的方法。
+    Also known as Project Islandwood, this is a still-in-development tool that can import Xcode projects directly into Visual Studio. Objective-C code can be built and debugged from within Visual Studio. If your project makes use of libraries such as Cocos for graphics, you might find this a useful way to quickly port your app.
 
--   重新调整 C++ 代码的用途。
+-   Repurpose your C++ code.
 
-    如果你的核心业务逻辑采用 C++（而不是 OBJECTIVE-C 或 Swift）编写，通常在你的项目中仅需细微的改动就可以使用此代码。 然后可以使用 XAML 定义 UI（与其他的 Windows 应用一样），并在必要时调用 C++ 代码。
+    If your core business logic is written in C++, rather than Objective-C or Swift, you can often use this code with only minor changes in your project. You can then use XAML to define your UI, as with other Windows apps, and call into the C++ code when necessary.
 
--   [在 Windows 上使用 ANGLE 运行 OpenGL ES](http://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [Use ANGLE to run OpenGL ES on Windows](http://go.microsoft.com/fwlink/p/?linkid=618387)
 
-    移植 OpenGL ES 2.0 项目的中间步骤是使用 ANGLE。 ANGLE 通过将 OpenGL ES API 调用平移到 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。
+    An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
 
-## 其他跨平台创作工具
+## Other cross-platform authoring tools
 
 -   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
 
-    一个游戏创作环境。
+    A game authoring environment.
 
 -   [Construct 2]( http://go.microsoft.com/fwlink/p/?LinkID=320481)
 
-    一个游戏创作环境。
+    A game authoring environment.
 
 -   [Titanium Studio](http://go.microsoft.com/fwlink/p/?LinkID=320482)
 
-    一个跨平台创作环境。
+    A cross-platform authoring environment.
 
 -   [Cocos2D-x](http://go.microsoft.com/fwlink/p/?LinkID=320485)
 
-    一个用于子画面处理和力学建模的跨平台代码库。
+    A cross-platform code library for sprite handling and physics modeling.
 
 -   [Impact.js](http://go.microsoft.com/fwlink/p/?LinkID=320486)
 
-    一个基于 HTML 的游戏库。
+    An HTML based game library.
 
 -   [Marmalade](http://go.microsoft.com/fwlink/p/?LinkID=320487)
 
-    一个跨平台 SDK。
+    A cross-platform SDK.
 
 -   [OpenFL](http://go.microsoft.com/fwlink/p/?LinkID=320488)
 
-    一个跨平台开发工具。
+    A cross-platform development tool.
 
 -   [GameMaker](http://go.microsoft.com/fwlink/p/?LinkID=320490)
 
-    一个游戏专用的创作环境。
+    An authoring environment specifically for games.
 
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
-    一个基于 HTML 的游戏开发工具。
+    An HTML based game development tool.
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

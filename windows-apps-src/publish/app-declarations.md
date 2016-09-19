@@ -1,72 +1,72 @@
 ---
 author: jnHs
-Description: "在提交过程中，你可以在“应用属性”页面的“应用声明”部分中提供有关你的应用的附加信息。"
-title: "应用声明"
+Description: You can provide additional information about your app in the App declarations section of the App properties page during the submission process.
+title: App declarations
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
 
 ---
 
-# 应用声明
+# App declarations
 
-在[提交过程](app-submissions.md)中，你可以在“应用属性”****页面的“应用声明”****部分中提供有关你的应用的附加信息。 这些声明可以帮助确保你的应用以适当的方式显示并交付给正确的客户群，也可以指示客户使用你的应用的方式。
+You can provide additional information about your app in the **App declarations** section of the **App properties** page during the [submission process](app-submissions.md). These declarations can help make sure your app is displayed appropriately and offered to the right set of customers, or can indicate how customers can use your app.
 
-以下部分描述了每个声明，以及在确定是否每个声明都适用于你的应用时的注意事项。
+The following sections describe each declaration and what you need to consider when determining whether each declaration applies to your app.
 
-## 此应用使用户可以进行购买，但不使用 Windows 应用商店商务系统。
+## This app allows users to make purchases, but does not use the Windows Store commerce system.
 
-大部分应用应使此框保持未选中的状态，因为提供应用内购买机会的应用通常使用 Microsoft 应用内购买 API 创建和[提交 IAP](iap-submissions.md)。 根据[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)，在 2015 年 6 月 29 日之前创建和提交的应用可在不使用 Microsoft 商务引擎的情况下继续提供应用内购买功能，只要该购买功能符合 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8)。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
+Most apps should leave this box unchecked, since apps which offer opportunities to make in-app purchases generally use the Microsoft in-app purchase API to create and [submit the add-ons](add-on-submissions.md). Per the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058), apps that were created and submitted prior to June 29, 2015, may continue to offer in-app purchasing functionality without using Microsoft's commerce engine, so long as the purchase functionality complies with the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8). If this applies to your app, you must check this box. Otherwise, leave it unchecked.
 
-## 已对此应用进行辅助功能指南符合度测试。
+## This app has been tested to meet accessibility guidelines.
 
-勾选此框可使你的应用能够被在应用商店中特意寻找辅助应用的客户发现。
+Checking this box makes your app discoverable to customers who are specifically looking for accessible apps in the Store.
 
-仅应在已完成以下所有事项后才勾选此框：
+You should only check this box if you have done all of the following items:
 
--   为 UI 元素设置所有相关的辅助功能信息，例如辅助名称。
--   已实现键盘导航和操作，考虑选项卡顺序、键盘激活、箭头键导航和快捷方式。
--   已通过包含如 4.5:1 文本对比率等设置，确保实现辅助视觉体验，并且在将信息传递给用户时，不要仅依赖颜色。
--   已使用辅助功能测试工具（例如“检查”或 AccChecker）验证你的应用，并解决了这些工具检测到的所有高优先级错误。
--   已使用“讲述人”、“放大镜”、“屏幕键盘”、“高对比度”和“高 DPI”等设备和工具，从头到尾验证应用的关键场景。
+-   Set all the relevant accessibility info for UI elements, such as accessible names.
+-   Implemented keyboard navigation and operations, taking into account tab order, keyboard activation, arrow keys navigation, shortcuts.
+-   Ensured an accessible visual experience by including such things as a 4.5:1 text contrast ratio, and don't rely on color alone to convey info to the user.
+-   Used accessibility testing tools, such as Inspect or AccChecker, to verify your app, and resolve all high-priority errors detected by those tools.
+-   Verified the app’s key scenarios from end to end using such facilities and tools as Narrator, Magnifier, On Screen Keyboard, High Contrast, and High DPI.
 
-将应用声明为可以访问，意味着你同意所有客户（包括残障人士）访问你的应用。 例如，这意味着你已经使用高对比度模式和屏幕阅读器对该应用进行了测试。 同时还验证键盘、放大镜及其他辅助工具是否能够正确操作用户界面功能。
+When you declare your app as accessible, you agree that your app is accessible to all customers, including those with disabilities. For example, this means you have tested the app with high-contrast mode and with a screen reader. You've also verified that the user interface functions correctly with a keyboard, the Magnifier, and other accessibility tools.
 
-有关详细信息，请参阅 [Windows 运行时应用的辅助功能](https://msdn.microsoft.com/library/windows/apps/dn263101)、[辅助功能测试](https://msdn.microsoft.com/library/windows/apps/mt297664)和[应用商店中的辅助功能](https://msdn.microsoft.com/library/windows/apps/mt297663)。
+For more info, see [Accessibility for Windows Runtime apps](https://msdn.microsoft.com/library/windows/apps/dn263101), [Accessibility testing](https://msdn.microsoft.com/library/windows/apps/mt297664), and [Accessibility in the Store](https://msdn.microsoft.com/library/windows/apps/mt297663).
 
-> **重要提示** 除非已针对此目的特别设计和测试过你的应用，否则不要将该应用列为辅助应用。 如果将你的应用声明为辅助应用，但它实际上并不支持辅助功能，你可能会收到来自社区的负面反馈。
+> **Important**  Don't list your app as accessible unless you have specifically engineered and tested it for that purpose. If your app is declared as accessible, but it doesn’t actually support accessibility, you'll probably receive negative feedback from the community.
 
-## 客户可以将此应用安装到备用驱动器或可移动存储。
+## Customers can install this app to alternate drives or removable storage.
 
-此框在默认情况下处于选中状态，从而允许客户将你的应用安装到 SD 卡等可移动存储媒体上，或非系统卷驱动器（如外部驱动器）上。
+This box is checked by default, to allow customers to install your app to removable storage media such as an SD card, or to a non-system volume drive such as an external drive.
 
-如果要阻止你的应用安装到备用驱动器或可移动存储，请取消选中此框。
+If you want to prevent your app from being installed to alternate drives or removable storage, uncheck this box.
 
-请注意，如果没有限制安装的选项，则应用只能安装到可移动存储媒体上。
+Note that there is no option to restrict installation so that an app can only be installed to removable storage media.
 
-> **注意** 对于 Windows Phone 8.1，这之前通过 StoreManifest.xml 指示。
+> **Note**  For Windows Phone 8.1, this was previously indicated via StoreManifest.xml.
 
-## Windows 可以将此应用的数据包含在 OneDrive 的自动备份中。
+## Windows can include this app's data in automatic backups to OneDrive.
 
-此框在默认情况下处于选中状态，从而允许在客户选择使用 Windows 创建 OneDrive 自动备份时，将你的应用的数据包含在内。
+This box is checked by default, to allow your app's data to be included when a customer chooses to have Windows make automated backups to OneDrive.
 
-如果要防止你的应用数据包含在自动备份中，请取消选中此框。
+If you want to prevent your app's data from being included in automated backups, uncheck this box.
 
-> **注意** 对于 Windows Phone 8.1，这之前通过 StoreManifest.xml 指示。
-
- 
+> **Note**  For Windows Phone 8.1, this was previously indicated via StoreManifest.xml.
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

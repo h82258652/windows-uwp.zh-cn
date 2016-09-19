@@ -1,50 +1,50 @@
 ---
 author: mcleblanc
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
-title: "MVVM 和语言性能提示"
-description: "本主题讨论了一些与选择软件设计模式和编程语言相关的性能注意事项。"
+title: MVVM and language performance tips
+description: This topic discusses some performance considerations related to your choice of software design patterns, and programming language.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 77a162076e14b4726e1fb29673b14be65be37a16
+ms.openlocfilehash: 4be8fd69752dac70c316164fca79bb73c6666c43
 
 ---
-# MVVM 和语言性能提示
+# MVVM and language performance tips
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主题讨论了一些与选择软件设计模式和编程语言相关的性能注意事项。
+This topic discusses some performance considerations related to your choice of software design patterns, and programming language.
 
-## Model-View-ViewModel (MVVM) 模式
+## The Model-View-ViewModel (MVVM) pattern
 
-Model-View-ViewModel (MVVM) 模式在许多 XAML 应用中很常见。 （MVVM 是非常类似于 Fowler 对 Model-View-Presenter 模式的描述，但它专用于 XAML）。 MVVM 模式有个问题，就是它可能会无意间产生具有过多层和过多分配的应用。 MVVM 会产生这些应用。
+The Model-View-ViewModel (MVVM) pattern is common in a lot of XAML apps. (MVVM is very similar to Fowler’s description of the Model-View-Presenter pattern, but it is tailored to XAML). The issue with the MVVM pattern is that it can inadvertently lead to apps that have too many layers and too many allocations. The motivations for MVVM are these.
 
--   **关注点分离**。 它始终有助于将一个问题划分为几个较小的部分，而且诸如 MVVM 或 MVC 的模式也是将应用（甚至是单个控件）划分为较小部分的一种方式：实际视图、视图的逻辑模型（视图模型）以及独立于视图的应用逻辑（模型）。 特别的是，这种受欢迎的工作流可以让设计人员拥有使用一种工具的视图、让开发人员拥有使用另一种工具的模型以及让设计集成者拥有使用两种工具的视图模型。
--   **单元测试**。 你可以对独立于视图的视图模型进行单元测试（并随后对模型也进行测试），因而不需要创建窗口、驱动输入等。 通过保持较小的视图，你可以测试很大一部分应用，而不必再创建一个窗口。
--   **用户体验更改的灵活性**。 当根据最终用户反馈对用户体验稍作调整时，视图会查看最常见的更改和最新的更改。 通过使视图分离，可更快地容纳这些视图并且无需对应用做太多的改动。
+-   **Separation of concerns**. It’s always helpful to divide a problem into smaller pieces, and a pattern like MVVM or MVC is a way to divide an app (or even a single control) into smaller pieces: the actual view, a logical model of the view (view-model), and the view-independent app logic (the model). In particular, it’s a popular workflow to have designers own the view using one tool, developers own the model using another tool, and design integrators own the view-model using both tools.
+-   **Unit testing**. You can unit test the view-model (and consequently the model) independent of the view, thereby not relying on creating windows, driving input, and so on. By keeping the view small, you can test a large portion of your app without ever having to create a window.
+-   **Agility to user experience changes**. The view tends to see the most frequent changes, and the most late changes, as the user experience is tweaked based on end-user feedback. By keeping the view separate, these changes can be accommodated more quickly and with less churn to the app.
 
-对于 MVVM 模式，有多个具体的定义，而且还存在有助于实现该模式的第三方框架。 但是严格遵循该模式的所有变体可能会导致应用的开销比调整多很多。
+There are multiple concrete definitions of the MVVM pattern, and 3rd party frameworks that help implement it. But strict adherence to any variation of the pattern can lead to apps with a lot more overhead than can be justified.
 
--   设计 XAML 数据绑定（{Binding} 标记扩展）在某种程度上是为了启用模型/视图模式。 但 {Binding} 会带来非比寻常的工作集和 CPU 开销。 创建 {Binding} 会导致一系列分配，而更新绑定目标可能会引起反射和装箱。 目前正在使用 {x:Bind} 标记扩展处理这些问题，以便在生成时编译绑定。 **建议：**使用 {x:Bind}。
--   在 MVVM 中，通常使用 ICommand 将 Button.Click 连接到视图模型，如常见的 DelegateCommand 或 RelayCommand 帮助程序。 虽然这些命令是额外的分配，但包含了 CanExecuteChanged 事件侦听器、增加了工作集和页面的启动/导航时间。 **建议：**请考虑将事件处理程序放在你的代码隐藏中，同时将它们附加到视图事件，并在引发这些事件时在你的视图模型上调用命令，这可以作为使用便利 ICommand 接口的备用方法。 你还需要添加额外代码，以便在该命令不可用时禁用“按钮”。
--   在 MVVM 中，通常使用所有可能的 UI 配置来创建“页面”，然后通过将“可见性”属性绑定到 VM 中的属性来折叠树的某些部分。 这会不必要地增加启动时间，也可能会增加工作集（因为树的某些部分可能永远不会变得可见）。 **建议：**使用 x:DeferLoadStrategy 功能来延迟启动之外的树的不必要部分。 另外，还要为页面的不同模式创建单独的用户控件，并使用代码隐藏保持仅加载必要的控件。
+-   XAML data binding (the {Binding} markup extension) was designed in part to enable model/view patterns. But {Binding} brings with it non-trivial working set and CPU overhead. Creating a {Binding} causes a series of allocations, and updating a binding target can cause reflection and boxing. These problems are being addressed with the {x:Bind} markup extension, which compiles the bindings at build time. **Recommendation:** use {x:Bind}.
+-   It’s popular in MVVM to connect Button.Click to the view-model using an ICommand, such as the common DelegateCommand or RelayCommand helpers. Those commands are extra allocations, though, including the CanExecuteChanged event listener, adding to the working set, and adding to the startup/navigation time for the page. **Recommendation:** As an alternative to using the convenient ICommand interface, consider putting event handlers in your code-behind and attaching them to the view events and call a command on your view-model when those events are raised. You'll also need to add extra code to disable the Button when the command is unavailable.
+-   It’s popular in MVVM to create a Page with all possible configurations of the UI, then collapse parts of the tree by binding the Visibility property to properties in the VM. This adds unnecessarily to startup time and possibly to working set (because some parts of the tree may never become visible). **Recommendations:** Use the x:DeferLoadStrategy feature to defer unnecessary portions of the tree out of startup. Also, create separate user controls for the different modes of the page and use code-behind to keep only the necessary controls loaded.
 
-## C++/CX 建议
+## C++/CX recommendations
 
--   **使用最新版本**。 对 C++/CX 编译器进行连续的性能改进。 确保使用最新的工具集生成你的应用。
--   **禁用 RTTI (/ GR-)**。 在编译器中，RTTI 默认处于打开状态，因此除非你的生成环境将其关闭，否则你可能正在使用它。 RTTI 的开销非常大，如果你的代码对其没有很大的依赖性，请将其关闭。 XAML 框架对你的代码使用 RTTI 没有任何要求。
--   **避免大量使用 ppltask**。 当调用异步 WinRT API 时，ppltask 非常便利，但它们的代码大小开销也非常大。 C++/CX 团队正致力于开发一种语言功能 await，它将提供更出色的性能。 同时，在代码的热路径中均衡使用 ppltask。
--   **避免在应用的“业务逻辑”中使用 C++/CX**。 C++/CX 旨在为访问 C++ 应用中的 WinRT API 提供一种便捷方式。 它将使用具有开销的包装器。 你应该避免在类的业务逻辑/模型内使用 C++/CX，并进行保留以便用于你的代码和 WinRT 之间的边界。
-
- 
+-   **Use the latest version**. There are continual performance improvements made to the C++/CX compiler. Ensure your app is building using the latest toolset.
+-   **Disable RTTI (/GR-)**. RTTI is on by default in the compiler so, unless your build environment switches it off, you’re probably using it. RTTI has significant overhead, and unless your code has a deep dependency on it, you should turn it off. The XAML framework has no requirement that your code use RTTI.
+-   **Avoid heavy use of ppltasks**. Ppltasks are very convenient when calling async WinRT APIs, but they come with significant code size overhead. The C++/CX team is working on a language feature – await – that will provide much better performance. In the meantime, balance your use of ppltasks in the hot paths of your code.
+-   **Avoid use of C++/CX in the “business logic” of your app**. C++/CX is designed to be a convenient way to access WinRT APIs from C++ apps. It makes use of wrappers that have overhead. You should avoid C++/CX inside the business logic/model of your class, and reserve it for use at the boundaries between your code and WinRT.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

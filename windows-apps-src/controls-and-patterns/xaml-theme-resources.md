@@ -1,71 +1,72 @@
 ---
 author: Jwmsft
-Description: "XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。"
+Description: Theme resources in XAML are a set of resources that apply different values depending on which system theme is active.
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "XAML 主题资源"
+title: XAML theme resources
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
+ms.sourcegitcommit: 32b6685dfd04994d13dc8805c5205e87a20b10f1
+ms.openlocfilehash: 092b183ead828ae411ff64d37e581bbbb59a1f5b
 
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# XAML 主题资源
+# XAML theme resources
 
-XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。 XAML 框架支持三种主题：“浅色”、“深色”和“高对比度”。
+Theme resources in XAML are a set of resources that apply different values depending on which system theme is active. There are 3 themes that the XAML framework supports: "Light", "Dark", and "HighContrast".
 
-**先决条件**
+**Prerequisites**
 
-本主题假设你已阅读 [ResourceDictionary 和 XAML 资源引用](resourcedictionary-and-xaml-resource-references.md)。
+This topic assumes that you have read [ResourceDictionary and XAML resource references](resourcedictionary-and-xaml-resource-references.md).
 
-## 主题资源与静态资源有何不同
+## How theme resources differ from static resources
 
-有两个 XAML 标记扩展，可从现有 XAML 资源字典引用 XAML 资源：[{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)和 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)。
+There are two XAML markup extensions that can reference a XAML resource from an existing XAML resource dictionary: [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) and [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md).
 
-将在应用加载时和随后每次在运行时更改主题时，发生 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)评估。 这通常是用户更改其设备设置或从更改其当前主题的应用内进行编程更改所引起的。
+Evaluation of a [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) occurs when the app loads and subsequently each time the theme changes at runtime. This is typically the result of the user changing their device settings or from a programmatic change within the app that alters its current theme.
 
-相比之下，仅在应用首次加载 XAML 时评估 [{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)。 它未更新。 这类似于在应用启动时使用实际运行时值在 XAML 中进行查找和替换。
+In contrast, a [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) is evaluated only when the XAML is first loaded by the app. It does not update. It’s similar to a find and replace in your XAML with the actual runtime value at app launch.
 
-## 主题资源以及它们嵌入资源字典结构中的位置。
+## Theme resources and where they fit in the resource dictionary structure
 
 
-每个主题资源都是 XAML 文件 themeresources.xaml 的一部分。 出于设计目的，themeresources.xaml 在 Windows 软件开发工具包 (SDK) 安装中的 \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic 文件夹中提供。 themeresources.xaml 中的资源字典还在同一目录中的 generic.xaml 中重现。
+Each theme resource is part of the XAML file themeresources.xaml. For design purposes, themeresources.xaml is available in the \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic folder from a Windows Software Development Kit (SDK) installation. The resource dictionaries in themeresources.xaml are also reproduced in generic.xaml in the same directory.
 
-> **注意** &nbsp;&nbsp;Windows 运行时不使用这些物理文件进行运行时查找。 这就是它们专门用于 DesignTime 文件夹，并且在默认情况下未复制到应用中的原因。 这些资源字典在内存中作为 Windows 运行时本身的一部分存在，并且你的应用的对主题资源（或系统资源）的 XAML 资源引用将在运行时在该处进行解析。
+> **Note**&nbsp;&nbsp;The Windows Runtime doesn't use these physical files for runtime lookup. That's why they are specifically in a DesignTime folder, and they aren't copied into apps by default. Instead, these resource dictionaries exist in memory as part of the Windows Runtime itself, and your app's XAML resource references to theme resources (or system resources) resolve there at runtime.
 
- ## 使用主题资源指南
+ ## Guidelines for using theme resources
 
-当定义和使用你自己的自定义主题资源时，请遵循这些指南。
+Follow these guidelines when you define and consume your own custom theme resources.
 
-正确做法：
+DO:
 
--   除“高对比度”字典以外，还需指定“浅色”和“深色”的主题字典。 尽管你可以在将“默认”作为键的情况下创建 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)，但建议以明确的方式改用“浅色”、“深色”和“高对比度”。
--   在以下位置使用 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)：Styles、Setters、Control 模板、Property 资源库和 Animations。
+-   Specify theme dictionaries for both "Light" and "Dark" in addition to your "HighContrast" dictionary. Although you can create a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) with "Default" as the key, it’s preferred to be explicit and instead use "Light", "Dark", and "HighContrast".
+-   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in: Styles, Setters, Control templates, Property setters, and Animations.
 
-错误做法：
+DO NOT:
 
--   请勿在你的 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内的资源定义中使用 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)。 改用 [{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)。
+-   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in your resource definitions inside your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Use [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) instead.
 
-    例外：可以使用 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)，以引用对于 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 中的应用主题不可知的资源。 这些资源的示例是主题色资源（例如 `SystemAccentColor`）或通常带有“SystemColor”前缀的系统颜色资源（例如 `SystemColorButtonFaceColor`）。
+    EXCEPTION: it is alright to use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to reference resources that are agnostic to the app theme in your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Examples of these resources are accent color resources like `SystemAccentColor`, or system color resources, which are typically prefixed with "SystemColor" like `SystemColorButtonFaceColor`.
 
-**警告** 如果你不遵循这些指南，你可能会看到与你的应用中的主题相关的意外行为。 有关详细信息，请参阅[主题资源疑难解答](#troubleshooting_theme_resources)部分。
+**Caution**  If you don’t follow these guidelines, you might see unexpected behavior related to themes in your app. For more info, see the [Troubleshooting theme resources](#troubleshooting_theme_resources) section.
  
 
-## XAML 颜色渐变和依赖于主题的画笔
+## The XAML color ramp and theme-dependent brushes
 
-由“浅色”、“深色”和“高对比度”主题组合的颜色集构成了 XAML 中的 *Windows 颜色渐变*。 无论是想要修改系统主题，还是将系统主题应用到自己的 XAML 元素，了解如何构建颜色资源都非常重要。
+The combined set of colors for "Light", "Dark", and "HighContrast" themes make up the *Windows color ramp* in XAML. Whether you want to modify the system themes, or apply a system theme to your own XAML elements, it’s important to understand how the color resources are structured.
 
-### 浅色和深色主题颜色
+### Light and Dark theme colors
 
-XAML 框架提供了一个已命名的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 资源集，其中包含的值专为“浅色”和“深色”主题而定制。 用于引用这些内容的键遵循以下命名格式：`System[Simple Light/Dark Name]Color`。
+The XAML framework provides a set of named [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) resources with values that are tailored for the "Light" and "Dark" themes. The keys you use to reference these follow the naming format: `System[Simple Light/Dark Name]Color`.
 
-针对 XAML 框架提供的“浅色”和“深色”资源，此表列出了该颜色的键、简单名称和字符串表示形式（使用 \#aarrggbb 格式）。 该键用于引用应用中的资源。 将“简单浅色/深色名称”用作我们后面介绍的画笔命名约定的一部分。
+This table lists the key, simple name, and string representation of the color (using the \#aarrggbb format) for the "Light" and "Dark" resources provided by the XAML framework. The key is used to reference the resource in an app. The "Simple light/dark name" is used as part of the brush naming convention that we explain later.
 
-| 键                             | 简单浅色/深色名称 | 浅色      | 深色       |
+| Key                             | Simple light/dark name | Light      | Dark       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -93,83 +94,83 @@ XAML 框架提供了一个已命名的 [**Color**](https://msdn.microsoft.com/li
 | SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
 
 
-### Windows 系统高对比度颜色
+### Windows system high-contrast colors
 
-除了 XAML 框架提供的资源集，还存在派生自 Windows 系统调色板的颜色值集。 这些颜色并不特定于 Windows 运行时或通用 Windows 平台(UWP) 应用。 然而，当使用“高度对比”主题运行系统（并且应用正在运行）时，许多 XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 资源都将使用这些颜色。 XAML 框架提供这些系统范围的颜色作为键控资源。 这些键遵循以下命名格式：`SystemColor[name]Color`。
+In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Universal Windows Platform (UWP) apps. However, many of the XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) resources consume these colors when the system is operating (and the app is running) using the "HighContrast" theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: `SystemColor[name]Color`.
 
-此表列出了 XAML 提供的系统范围的颜色，可作为派生自 Windows 系统调色板的资源对象。 “轻松使用名称”列显示了如何在 Windows 设置 UI 中向颜色添加标签。 “简单的高对比度名称”列中使用一个词描述如何在 XAML 常用控件中应用该颜色。 它将用作我们后面介绍的画笔命名约定的一部分。 如果系统未以高对比度运行，则“初始默认设置”列会显示你已得到的值。
+This table lists the system-wide colors that XAML provides as resource objects derived from the Windows system palette. The "Ease of Access name" column shows how color is labeled in the Windows settings UI. The "Simple HighContrast name" column is a one word description of how the color is applied across the XAML common controls. It's used as part of the brush naming convention that we explain later. The "Initial default" column shows the values you'd get if the system is not running in high contrast at all.
 
-| 键                           | 轻松使用名称            | 简单的高对比度名称 | 初始默认设置 |
+| Key                           | Ease of Access name            | Simple HighContrast name | Initial default |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | **按钮文本**（背景）   | 后台               | \#FFF0F0F0      |
-| SystemColorButtonTextColor    | **按钮文本**（前景）   | Foreground               | \#FF000000      |
-| SystemColorGrayTextColor      | **失效文本**              | Disabled                 | \#FF6D6D6D      |
-| SystemColorHighlightColor     | **选定文本**（背景） | Highlight                | \#FF3399FF      |
-| SystemColorHighlightTextColor | **选定文本**（前景） | HighlightAlt             | \#FFFFFFFF      |
-| SystemColorHotlightColor      | **超链接**                 | Hyperlink                | \#FF0066CC      |
-| SystemColorWindowColor        | **后台**                 | PageBackground           | \#FFFFFFFF      |
-| SystemColorWindowTextColor    | **文本**                       | PageText                 | \#FF000000      |
+| SystemColorButtonFaceColor    | **Button Text** (background)   | Background               | \#FFF0F0F0      |
+| SystemColorButtonTextColor    | **Button Text** (foreground)   | Foreground               | \#FF000000      |
+| SystemColorGrayTextColor      | **Disabled Text**              | Disabled                 | \#FF6D6D6D      |
+| SystemColorHighlightColor     | **Selected Text** (background) | Highlight                | \#FF3399FF      |
+| SystemColorHighlightTextColor | **Selected Text** (foreground) | HighlightAlt             | \#FFFFFFFF      |
+| SystemColorHotlightColor      | **Hyperlinks**                 | Hyperlink                | \#FF0066CC      |
+| SystemColorWindowColor        | **Background**                 | PageBackground           | \#FFFFFFFF      |
+| SystemColorWindowTextColor    | **Text**                       | PageText                 | \#FF000000      |
 
 
-通过“轻松使用设置中心”，Windows 提供不同的高对比度主题，并且支持用户设置特定颜色以用于其高对比度设置，如此处所示。 因此，无法提供一个明确的高对比颜色值列表。
+Windows provides different high-contrast themes, and enables the user to set the specific colors to for their high-contrast settings through the Ease of Access Center, as shown here. Therefore, it's not possible to provide a definitive list of high-contrast color values.
 
-![Windows 高对比度设置 UI](images/high-contrast-settings.png)
+![The Windows high contrast settings UI](images/high-contrast-settings.png)
 
-有关支持高对比度主题的详细信息，请参阅[高对比度主题](https://msdn.microsoft.com/library/windows/apps/mt244346)。
+For more info about supporting high-contrast themes, see [High-contrast themes](https://msdn.microsoft.com/library/windows/apps/mt244346).
 
-### 系统主题色
+### System accent color
 
-除了系统高对比度主题颜色外，通过使用键 `SystemAccentColor`，系统主题色还会作为特定的颜色资源提供。 在运行时，该资源获取用户已在 Windows 个性化设置中指定为主题色的颜色。
+In addition to the system high-contrast theme colors, the system accent color is provided as a special color resource using the key `SystemAccentColor`. At runtime, this resource gets the color that the user has specified as the accent color in the Windows personalization settings.
 
-> **注意** &nbsp;&nbsp;可以通过使用相同名称创建资源来替代高对比度颜色和主题色的系统颜色资源，但最好是遵循用户所选的颜色（尤其是对于高对比度设置）。
+> **Note**&nbsp;&nbsp;It’s possible to override the system color resources for high-contrast color and accent color by creating resources with the same names, but it’s a best practice to respect the user’s color choices, especially for high-contrast settings.
 
-### 依赖于主题的画笔
+### Theme-dependent brushes
 
-使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 资源的 [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackroundAltHighBrush`。
+The color resources shown in the preceding sections are used to set the [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) property of [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) resources in the system theme resource dictionaries. You use the brush resources to apply the color to XAML elements. The keys for the brush resources follow the naming format: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. For example, `SystemControlBackroundAltHighBrush`.
 
-让我们看一下如何在运行时确定此画笔的颜色值。 在“浅色”和“深色”资源字典中，定义此画笔，如下所示：
+Let’s look at how the color value for this brush is determined at run-time. In the "Light" and "Dark" resource dictionaries, this brush is defined like this:
 
 `<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{StaticResource SystemAltHighColor}"/>`
 
-在“高对比度”资源字典中，定义此画笔，如下所示：
+In the "HighContrast" resource dictionary, this brush is defined like this:
 
 `<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>`
 
-当将此画笔应用到 XAML 元素时，其颜色在运行时由当前主题决定，如此表中所示。
+When this brush is applied to a XAML element, its color is determined at run-time by the current theme, as shown in this table.
 
-| 主题        | 颜色简单名称 | 颜色资源             | 运行时值                                              |
+| Theme        | Color simple name | Color resource             | Runtime value                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
-| 浅色        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
-| 深色         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
-| 高对比度 | 后台        | SystemColorButtonFaceColor | 在设置中指定的按钮背景的颜色。 |
+| Light        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
+| Dark         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
+| HighContrast | Background        | SystemColorButtonFaceColor | The color specified in settings for the button background. |
 
-你可以使用 `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` 命名方案确定要应用到你自己的 XAML 元素的画笔。 
+You can use the `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` naming scheme to determine which brush to apply to your own XAML elements. 
 
 <!--
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **注意** &nbsp;&nbsp;并非 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 的每个组合都作为画笔资源提供。
+> **Note**&nbsp;&nbsp;Not every combination of \[*Simple HighContrast name*\]\[*Simple light/dark name*\] is provided as a brush resource.
 
-## XAML 类型渐变
+## The XAML type ramp
 
-themeresources.xaml 文件将定义若干个资源，这些资源定义可应用到 UI 中的文本容器（特别是 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 或 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)）的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)。 它们不是默认的隐式样式。 通过它们，你可以更轻松地创建匹配[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394)中记录的 *Windows 类型渐变*的 XAML UI 定义。
+The themeresources.xaml file defines several resources that define a [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) that you can apply to text containers in your UI, specifically for either [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) or [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565). These are not the default implicit styles. They are provided to make it easier for you to create XAML UI definitions that match the *Windows type ramp* documented in [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394).
 
-这些样式用于你要应用到整个文本容器的文本属性。 如果你仅想要将样式应用到该文本部分，请在容器中的文本元素上（例如 [**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) 中的 [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) 上或 [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347) 中的 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) 上）设置属性。
+These styles are for text attributes that you want applied to the whole text container. If you want styles applied just to sections of the text, set attributes on the text elements within the container, such as on a [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) in [**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) or on a [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) in [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347).
 
-当应用于 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 时，这些样式如下所示：
+The styles look like this when applied to a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652):
 
-![文本块样式](images/text-block-type-ramp.png)
+![text block styles](images/text-block-type-ramp.png)
 
 ### BaseTextBlockStyle
 
-**TargetType**：[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
+**TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-为所有其他 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 容器样式提供常用属性。
+Supplies the common properties for all the other [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) container styles.
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Base" Style="{ThemeResource BaseTextBlockStyle}"/>
+<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
@@ -187,7 +188,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Header" Style="{ThemeResource HeaderTextBlockStyle}"/>
+<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock"
@@ -202,7 +203,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="SubHeader" Style="{ThemeResource SubheaderTextBlockStyle}"/>
+<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="SubheaderTextBlockStyle" TargetType="TextBlock" 
@@ -247,7 +248,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Body" Style="{ThemeResource BodyTextBlockStyle}"/>
+<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="BodyTextBlockStyle" TargetType="TextBlock" 
@@ -261,7 +262,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Caption" Style="{ThemeResource CaptionTextBlockStyle}"/>
+<TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="CaptionTextBlockStyle" TargetType="TextBlock" 
@@ -273,13 +274,13 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ### BaseRichTextBlockStyle
 
-**TargetType**：[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
+**TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
 
-为所有其他 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 容器样式提供常用属性。
+Supplies the common properties for all the other [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) container styles.
 
 ```XAML
 <!-- Usage -->
-<RichTextBlock Style="{ThemeResource BaseRichTextBlockStyle}">
+<RichTextBlock Style="{StaticResource BaseRichTextBlockStyle}">
     <Paragraph>Rich text.</Paragraph>
 </RichTextBlock>
 
@@ -300,7 +301,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ```XAML
 <!-- Usage -->
-<RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}">
+<RichTextBlock Style="{StaticResource BodyRichTextBlockStyle}">
     <Paragraph>Rich text.</Paragraph>
 </RichTextBlock>
 
@@ -310,71 +311,71 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-> **注意** &nbsp;&nbsp; [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 样式不具有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 包含的所有文本渐变样式，主要原因是适用于 **RichTextBlock** 的基于块的文档对象模型使在单独文本元素上设置属性更为简单。 同样，使用 XAML 内容属性设置 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 将出现以下情况：没有要设置样式的文本元素，因此你需要设置容器样式。 对于 **RichTextBlock**，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)）中，你可能在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
+> **Note**&nbsp;&nbsp;  The [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) styles don't have all the text ramp styles that [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) does, mainly because the block-based document object model for **RichTextBlock** makes it easier to set attributes on the individual text elements. Also, setting [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) using the XAML content property introduces a situation where there is no text element to style and thus you'd have to style the container. That isn't an issue for **RichTextBlock** because its text content always has to be in specific text elements like [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503), which is where you might apply XAML styles for page header, page subheader and similar text ramp definitions.
 
-## 其他命名样式
+## Miscellaneous Named styles
 
-还存在一组额外的键控 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定义，可供你向 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 应用不同于其默认隐式样式的样式。
+There's an additional set of keyed [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) definitions you can apply to style a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) differently than its default implicit style.
 
 ### TextBlockButtonStyle
 
-**TargetType**：[**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
+**TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
 
-当你需要显示用户可以点击以进行操作的文本时，请将此样式应用到 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)。 使用当前主题色设置该文本的样式以在交互时进行区分，并且该文本具有非常适用于文本的焦点矩形。 与 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 的隐式样式不同，**TextBlockButtonStyle** 不会为文本添加下划线。
+Apply this style to a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) when you need to show text that a user can click to take action. The text is styled using the current accent color to distinguish it as interactive and has focus rectangles that work well for text. Unlike the implicit style of a [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), the **TextBlockButtonStyle** does not underline the text.
 
-该模板还设置显示文本的样式以使用 **SystemControlHyperlinkBaseMediumBrush**（适用于“PointerOver”状态）、**SystemControlHighlightBaseMediumLowBrush**（适用于“Pressed”状态）和 **SystemControlDisabledBaseLowBrush**（适用于“Disabled”状态）。
+The template also styles the presented text to use **SystemControlHyperlinkBaseMediumBrush** (for "PointerOver" state), **SystemControlHighlightBaseMediumLowBrush** (for "Pressed" state) and **SystemControlDisabledBaseLowBrush** (for "Disabled" state).
 
-下面介绍向其应用了 **TextBlockButtonStyle** 资源的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)。
+Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **TextBlockButtonStyle** resource applied to it.
 
 ```XAML
-<Button Content="Clickable text" Style="{ThemeResource TextBlockButtonStyle}" 
+<Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}" 
         Click="Button_Click"/>
 ```
 
-它如下所示：
+It looks like this:
 
-![按钮的样式看起来像文本](images/styles-textblock-button-style.png)
+![A button styled to look like text](images/styles-textblock-button-style.png)
 
 ### NavigationBackButtonNormalStyle
 
-**TargetType**：[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-此 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 提供的适用于 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的完整模板可能是适用于导航应用的导航后退按钮。 它包括使此按钮使用 Segoe MDL2 Assets 符号字体的主题资源引用，因此你应该将 [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) 值用作内容而不是文本。 默认尺寸是 40 x 40 像素。 若要定制样式，你可以明确设置 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、[**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406) 和 **Button** 上的其他属性，也可以使用 [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) 创建一个派生的样式。
+This [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It includes theme resource references that make this button use the Segoe MDL2 Assets symbol font, so you should use a [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) value as the content rather than text. The default dimensions are 40 x 40 pixels. To tailor the styling you can either explicitly set the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406), and other properties on your **Button** or create a derived style using [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852).
 
-下面介绍向其应用了 **NavigationBackButtonNormalStyle** 资源的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)。
+Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonNormalStyle** resource applied to it.
 
 ```XAML
-<Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonNormalStyle}" 
+<Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonNormalStyle}" 
         Click="Button_Click"/>
 ```
 
-它如下所示：
+It looks like this:
 
-![看起来像后退按钮样式的按钮](images/styles-back-button-normal.png)
+![A button styled as a back button](images/styles-back-button-normal.png)
 
 ### NavigationBackButtonSmallStyle
 
-**TargetType**：[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-此 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 提供的适用于 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的完整模板可能是适用于导航应用的导航后退按钮。 它与 **NavigationBackButtonNormalStyle** 类似，但其尺寸为 30 x 30 像素。
+This [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It's similar to **NavigationBackButtonNormalStyle**, but its dimensions are 30 by 30 pixels.
 
-下面介绍向其应用了 **NavigationBackButtonSmallStyle** 资源的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)。
+Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonSmallStyle** resource applied to it.
 
 ```XAML
-<Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonSmallStyle}" 
+<Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonSmallStyle}" 
         Click="Button_Click"/>
 ```
 
-## 主题资源疑难解答
+## Troubleshooting theme resources
 
 
-如果你不遵循[使用主题资源指南](#guidelines_for_using_theme_resources)，你可能会看到与你的应用中的主题相关的意外行为。主题
+If you don’t follow the [guidelines for using theme resources](#guidelines_for_using_theme_resources), you might see unexpected behavior related to themes in your app.
 
-例如，当你打开浅色主题的浮出控件时，深色主题的应用的某些部分也会更改，就好像在浅色主题中一样。 或者如果你导航至浅色主题的页面，然后再导航回来，此时原始的深色主题页面（或部分页面）看起来仍像在浅色主题中一样。
+For example, when you open a light-themed flyout, parts of your dark-themed app also change as if they were in the light theme. Or if you navigate to a light-themed page and then navigate back, the original dark-themed page (or parts of it) now looks as though it is in the light theme.
 
-通常，在提供“默认”主题和“高对比度”主题以支持高对比度方案，然后在你的应用的不同部分中使用“浅色”和“深色”主题时，会发生这些类型的问题。
+Typically, these types of issues occur when you provide a "Default" theme and a "HighContrast" theme to support high-contrast scenarios, and then use both "Light" and "Dark" themes in different parts of your app.
 
-例如，考虑此主题字典定义：
+For example, consider this theme dictionary definition:
 
 ```XAML
 <!-- DO NOT USE. THIS XAML DEMONSTRATES AN ERROR. -->
@@ -390,11 +391,11 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </ResourceDictionary>
 ```
 
-从直观上来说这看起来准确无误。 你想要在处于高对比度下时更改 `myBrush` 所指向的颜色，但在不处于高对比度下时，你依赖于 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)，以确保 `myBrush` 针对你的主题指向正确的颜色。 如果你的应用从未在可视化树内的元素上设置 [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515)，这通常会按预期工作。 但是，在开始设置可视化树的不同部分的主题时，你的应用会立即出现问题。
+Intuitively, this looks correct. You want to change the color pointed to by `myBrush` when in high-contrast, but when not in high-contrast, you rely on the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to make sure that `myBrush` points to the right color for your theme. If your app never has [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515) set on elements within its visual tree, this will typically work as expected. However, you run into problems in your app as soon as you start to re-theme different parts of your visual tree.
 
-与大多数其他 XAML 类型不同，产生该问题的原因是画笔是共享的资源。 如果你在 XAML 子树（具有可引用相同画笔资源的不同主题）中具有 2 个元素，则当框架遍历每个子树以更新其 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)表达式时，将在其他子树中反映对已共享画笔资源的更改，这不是你预期的结果。
+The problem occurs because brushes are shared resources, unlike most other XAML types. If you have 2 elements in XAML sub-trees with different themes that reference the same brush resource, then as the framework walks each sub-tree to update its [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) expressions, changes to the shared brush resource are reflected in the other sub-tree, which is not your intended result.
 
-若要解决此问题，除了“高对比度”以外，还使用“浅色”和“深色”主题的单独主题字典替换“默认”字典：
+To fix this, replace the "Default" dictionary with separate theme dictionaries for both "Light" and "Dark" themes in addition to "HighContrast":
 
 ```XAML
 <!-- DO NOT USE. THIS XAML DEMONSTRATES AN ERROR. -->
@@ -413,13 +414,13 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </ResourceDictionary>
 ```
 
-但是，如果其中任何资源在继承属性（如 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)）中引用，则仍会发生这些问题。 你的自定义控件模板可能使用 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)指定元素的前景色，但当框架将继承的值传播到子元素时，它可以直接引用由 {ThemeResource} 标记扩展表达式解决的资源。 这将在框架处理主题更改时导致问题，因为它遍历控件的可视化树。 它将重新计算 {ThemeResource} 标记扩展表达式以获取新的画笔资源，但尚未将该引用传播到你的控件的子元素；这种情况将在以后发生（例如在下一个测量阶段期间）。
+However, problems still occur if any of these resources are referenced in inherited properties like [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Your custom control template might specify the foreground color of an element using the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md), but when the framework propagates the inherited value to child elements, it provides a direct reference to the resource that was resolved by the {ThemeResource} markup extension expression. This causes problems when the framework processes theme changes as it walks your control's visual tree. It re-evaluates the {ThemeResource} markup extension expression to get a new brush resource but doesn’t yet propagate this reference down to the children of your control; this happens later, such as during the next measure pass.
 
-因此，在遍历控件可视化树以响应主题更改后，该框架将遍历子项并更新对其设置的任何 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)表达式，或在其属性上设置的对象。 在此情况下会发生问题；框架将遍历画笔资源，并且因为它使用 {ThemeResource} 标记扩展指定其颜色，因此它将重新计算。
+As a result, after walking the control visual tree in response to a theme change, the framework walks the children and updates any [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) expressions set on them, or on objects set on their properties. This is where the problem occurs; the framework walks the brush resource and because it specifies its color using a {ThemeResource} markup extension, it's re-evaluated.
 
-此时，框架看起来已被你的主题字典污染，因为它现在具有的资源来自从另一个字典设置其颜色的一个字典。
+At this point, the framework appears to have polluted your theme dictionary because it now has a resource from one dictionary that has its color set from another dictionary.
 
-若要解决此问题，请使用 [{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)而不是 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)。 通过应用指南，主题字典如下所示：
+To fix this problem, use the [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) instead of [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md). With the guidelines applied, the theme dictionaries look like this:
 
 ```XAML
 <ResourceDictionary>
@@ -437,12 +438,12 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </ResourceDictionary>
 ```
 
-请注意，[{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)仍在“HighContrast”字典而不是 [{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)中使用。 此情况属于在指南中的前面部分所给定的异常情况。 用于“高对比度”主题的大多数画笔值使用由系统全局控制的颜色选择，但会作为特别命名的资源暴露给 XAML（名称中带有“SystemColor”前缀）。 系统使用户可以通过“轻松访问中心”设置应该用于其高对比度设置的特定颜色。 这些颜色选择将应用于特殊命名的资源中。 当 XAML 框架检测到画笔在系统级别上发生更改时，它也将使用相同的主题更改事件更新这些画笔。 这就是在此处使用 {ThemeResource} 标记扩展的原因。
+Notice that the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) is still used in the "HighContrast" dictionary instead of [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md). This situation falls under the exception given earlier in the guidelines. Most of the brush values that are used for the "HighContrast" theme are using color choices that are globally controlled by the system, but exposed to XAML as a specially-named resource (those prefixed with ‘SystemColor’ in the name). The system enables the user to set the specific colors that should be used for their high contrast settings through the Ease of Access Center. Those color choices are applied to the specially-named resources. The XAML framework uses the same theme changed event to also update these brushes when it detects they’ve changed at the system level. This is why the {ThemeResource} markup extension is used here.
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

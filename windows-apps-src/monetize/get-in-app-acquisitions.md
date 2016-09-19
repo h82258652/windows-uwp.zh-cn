@@ -1,54 +1,51 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用内产品 (IAP) 的聚合购置数据。"
-title: "获取 IAP 购置"
+description: Use this method in the Windows Store analytics API to get aggregate acquisition data for an add-on during a given date range and other optional filters.
+title: Get add-on acquisitions
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
+ms.sourcegitcommit: ecb0f5263b7f7f470484e9bd579b7bdb6efcdfa4
+ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 
 ---
 
-# 获取 IAP 购置
+# Get add-on acquisitions
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用内产品 (IAP) 的聚合购置数据。 此方法返回采用 JSON 格式的数据。
-
-## 先决条件
 
 
-若要使用此方法，你需要满足以下条件：
+Use this method in the Windows Store analytics API to get aggregate acquisition data for an add-on (also known as in-app product or IAP) during a given date range and other optional filters. This method returns the data in JSON format.
 
--   将需要用于调用此方法的 Azure AD 应用程序与你的开发人员中心帐户相关联。
-
--   针对你的应用程序获取 Azure AD 访问令牌。
-
-有关详细信息，请参阅[使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)。
-
-## 请求
+## Prerequisites
 
 
-### 请求语法
+To use this method, you need to first do the following:
 
-| 方法 | 请求 URI                                                                |
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+
+## Request
+
+
+### Request syntax
+
+| Method | Request URI                                                                |
 |--------|----------------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions``` |
 
 <span/> 
 
-### 请求头
+### Request header
 
-| 标头        | 类型   | 说明                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。 |
+| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
 <span/> 
 
-### 请求参数
+### Request parameters
 
-*applicationId* 或 *inAppProductId* 参数是必需参数。 若要检索注册到该应用的所有 IAP 的购置数据，请指定 *applicationId* 参数。 若要检索单个 IAP 的购置数据，请指定 *inAppProductId* 参数。 如果同时指定这两个参数，会忽略 *inAppProductId* 参数。
+The *applicationId* or *inAppProductId* parameter is required. To retrieve acquisition data for all add-ons registered to the app, specify the *applicationId* parameter. To retrieve acquisition data for a single add-on, specify the *inAppProductId* parameter. If you specify both, the *applicationId* parameter is ignored.
 
 <table>
 <colgroup>
@@ -59,65 +56,65 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数</th>
-<th align="left">类型</th>
-<th align="left">说明</th>
-<th align="left">必需</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
-<td align="left">字符串</td>
-<td align="left">要检索 IAP 购置数据的应用的存储 ID。 存储 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。</td>
-<td align="left">是</td>
+<td align="left">string</td>
+<td align="left">The Store ID of the app for which you want to retrieve add-on acquisition data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8.</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="left">inAppProductId</td>
-<td align="left">字符串</td>
-<td align="left">要检索购置数据的 IAP 的产品 ID。</td>
-<td align="left">是</td>
+<td align="left">string</td>
+<td align="left">The Store ID of the add-on for which you want to retrieve acquisition data. The Store ID is available in the URL of the overview page for the add-on in the Windows Dev Center dashboard. For example, if the URL for the dashboard page for an add-on is ```https://developer.microsoft.com/en-us/dashboard/iaps/9NBLGGH4SCZS?appId=9NBLGGH29DM8```, the Store ID for the add-on is the string 9NBLGGH4SCZS.</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
 <td align="left">startDate</td>
 <td align="left">date</td>
-<td align="left">要检索的 IAP 购置数据日期范围中的开始日期。 默认值为当前日期。</td>
-<td align="left">否</td>
+<td align="left">The start date in the date range of add-on acquisition data to retrieve. The default is the current date.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">endDate</td>
 <td align="left">date</td>
-<td align="left">要检索的 IAP 购置数据日期范围中的结束日期。 默认值为当前日期。</td>
-<td align="left">否</td>
+<td align="left">The end date in the date range of add-on acquisition data to retrieve. The default is the current date.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">top</td>
 <td align="left">int</td>
-<td align="left">要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。</td>
-<td align="left">否</td>
+<td align="left">The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">skip</td>
 <td align="left">int</td>
-<td align="left">要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。</td>
-<td align="left">否</td>
+<td align="left">The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10000 and skip=0 retrieves the first 10000 rows of data, top=10000 and skip=10000 retrieves the next 10000 rows of data, and so on.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">filter</td>
-<td align="left">字符串</td>
-<td align="left">在响应中筛选行的一条或多条语句。 有关详细信息，请参阅下面的[筛选器字段](#filter-fields)部分。</td>
-<td align="left">否</td>
+<td align="left">string</td>
+<td align="left">One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">aggregationLevel</td>
-<td align="left">字符串</td>
-<td align="left">指定用于检索聚合数据的时间范围。 可以是以下字符串之一：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果未指定，默认值为 <strong>day</strong>。</td>
-<td align="left">否</td>
+<td align="left">string</td>
+<td align="left">Specifies the time range for which to retrieve aggregate data. Can be one of the following strings: <strong>day</strong>, <strong>week</strong>, or <strong>month</strong>. If unspecified, the default is <strong>day</strong>.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">orderby</td>
-<td align="left">字符串</td>
-<td align="left">对每个 IAP 购置的结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 参数可以是以下字符串之一。
+<td align="left">string</td>
+<td align="left">A statement that orders the result data values for each add-on acquisition. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:
 <ul>
 <li><strong>date</strong></li>
 <li><strong>acquisitionType</strong></li>
@@ -129,23 +126,23 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 <li><strong>deviceType</strong></li>
 <li><strong>orderName</strong></li>
 </ul>
-<p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p>
-<p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,market</em></p></td>
-<td align="left">否</td>
+<p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p>
+<p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p></td>
+<td align="left">No</td>
 </tr>
 </tbody>
 </table>
 
 <span/>
 
-### 筛选器字段
+### Filter fields
 
-请求中的 *filter* 参数包含一条或多条语句，用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 下面是一些示例 *filter* 参数：
+The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. Here are some example *filter* parameters:
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
 
-有关支持的字段列表，请参阅下表。 *filter* 参数中的字符串值必须使用单引号括起来。
+For a list of the supported fields, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
 
 <table>
 <colgroup>
@@ -154,14 +151,14 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">字段</th>
-<th align="left">说明</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">acquisitionType</td>
-<td align="left">以下字符串之一：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>free</strong></li>
 <li><strong>trial</strong></li>
@@ -172,7 +169,7 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 </tr>
 <tr class="even">
 <td align="left">ageGroup</td>
-<td align="left">以下字符串之一：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>less than 13</strong></li>
 <li><strong>13-17</strong></li>
@@ -186,7 +183,7 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 </tr>
 <tr class="odd">
 <td align="left">storeClient</td>
-<td align="left">以下字符串之一：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>Windows Phone Store (client)</strong></li>
 <li><strong>Windows Store (client)</strong></li>
@@ -197,7 +194,7 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 </tr>
 <tr class="even">
 <td align="left">gender</td>
-<td align="left">以下字符串之一：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>m</strong></li>
 <li><strong>f</strong></li>
@@ -206,11 +203,11 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 </tr>
 <tr class="odd">
 <td align="left">market</td>
-<td align="left">包含购置行为所在地市场的 ISO 3166 国家/地区代码的字符串。</td>
+<td align="left">A string that contains the ISO 3166 country code of the market where the acquisition occurred.</td>
 </tr>
 <tr class="even">
 <td align="left">osVersion</td>
-<td align="left">以下字符串之一：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>Windows Phone 7.5</strong></li>
 <li><strong>Windows Phone 8</strong></li>
@@ -224,7 +221,7 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 </tr>
 <tr class="odd">
 <td align="left">deviceType</td>
-<td align="left">以下字符串之一：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -238,16 +235,16 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 </tr>
 <tr class="even">
 <td align="left">orderName</td>
-<td align="left">指定促销充值码（用于获取应用）订单名称的字符串（仅当用户通过兑换促销充值码获取应用后才可用）。</td>
+<td align="left">A string that specifies the name of the order for the promotional code that was used to acquire the app (this only applies if the user acquired the app by redeeming a promotional code).</td>
 </tr>
 </tbody>
 </table>
 
 <span/> 
 
-### 请求示例
+### Request example
 
-以下示例演示用于获取 IAP 购置数据的多个请求。 将 *inAppProductId* 和 *applicationId* 值替换为你的 IAP 的相应产品 ID 和你的应用的相应存储 ID。
+The following examples demonstrates several requests for getting add-on acquisition data. Replace the *inAppProductId* and *applicationId* values with the appropriate Store ID for your add-on or app.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -260,45 +257,46 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?i
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## Response
 
 
-### 响应正文
+### Response body
 
-| 值      | 类型   | 说明                                                                                                                                                                                                                                                                                |
+| Value      | Type   | Description                                                                                                                                                                                                                                                                                |
 |------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array  | 包含聚合 IAP 购置数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下 [IAP 购置值](#iap-acquisition-values)部分。                                                                                                              |
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的 IAP 购置数据超过 10000 行时，就会返回此值。 |
-| TotalCount | int    | 查询的数据结果中的行总数。                                                                                                                                                                                                                                 |
+| Value      | array  | An array of objects that contain aggregate add-on acquisition data. For more information about the data in each object, see the [add-on acquisition values](#add-on-acquisition-values) section below.                                                                                                              |
+| @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of add-on acquisition data for the query. |
+| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                                 |
 
 <span/>
 
-### IAP 购置值
+<span id="add-on-acquisition-values" />
+### Add-on acquisition values
 
-*Value* 数组中的元素包含以下值。
+Elements in the *Value* array contain the following values.
 
-| 值               | 类型    | 说明                                                                                                                                                                                                                              |
+| Value               | Type    | Description                                                                                                                                                                                                                              |
 |---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| date                | 字符串  | 购置数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
-| inAppProductId      | 字符串  | 要检索购置数据的 IAP 的产品 ID。                                                                                                                                                                 |
-| inAppProductName    | 字符串  | IAP 的显示名称。                                                                                                                                                                                                             |
-| applicationId       | 字符串  | 要检索 IAP 购置数据的应用的存储 ID。                                                                                                                                                           |
-| applicationName     | 字符串  | 应用的显示名称。                                                                                                                                                                                                             |
-| deviceType          | 字符串  | 购置已完成的设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                  |
-| orderName           | 字符串  | 订单名称。                                                                                                                                                                                                                   |
-| storeClient         | 字符串  | 发生购置行为的应用商店版本。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                            |
-| osVersion           | 字符串  | 发生购置行为的操作系统版本。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                   |
-| market              | 字符串  | 发生购置行为的市场的 ISO 3166 国家/地区代码。                                                                                                                                                                  |
-| gender              | 字符串  | 进行购置的用户的性别。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                    |
-| ageGroup            | 字符串  | 进行购置的用户的年龄组。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                 |
-| acquisitionType     | 字符串  | 购置类型（免费、付费等）。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                    |
-| acquisitionQuantity | inumber | 发生的购置数。                                                                                                                                                                                                |
+| date                | string  | The first date in the date range for the acquisition data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
+| inAppProductId      | string  | The Store ID of the add-on for which you are retrieving acquisition data.                                                                                                                                                                 |
+| inAppProductName    | string  | The display name of the add-on.                                                                                                                                                                                                             |
+| applicationId       | string  | The Store ID of the app for which you want to retrieve add-on acquisition data.                                                                                                                                                           |
+| applicationName     | string  | The display name of the app.                                                                                                                                                                                                             |
+| deviceType          | string  | The type of device that completed the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                  |
+| orderName           | string  | The name of the order.                                                                                                                                                                                                                   |
+| storeClient         | string  | The version of the Store where the acquisition occurred. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                            |
+| osVersion           | string  | The OS version on which the acquisition occurred. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                   |
+| market              | string  | The ISO 3166 country code of the market where the acquisition occurred.                                                                                                                                                                  |
+| gender              | string  | The gender of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
+| ageGroup            | string  | The age group of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                 |
+| acquisitionType     | string  | The type of acquisition (free, paid, and so on). For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
+| acquisitionQuantity | inumber | The number of acquisitions that occurred.                                                                                                                                                                                                |
 
 <span/> 
 
-### 响应示例
+### Response example
 
-以下示例举例说明此请求的 JSON 响应正文。
+The following example demonstrates an example JSON response body for this request.
 
 ```json
 {
@@ -306,7 +304,7 @@ Authorization: Bearer <your access token>
     {
       "date": "2015-01-02",
       "inAppProductId": "9NBLGGH3LHKL",
-      "inAppProductName": "Contoso IAP 7",
+      "inAppProductName": "Contoso add-on 7",
       "applicationId": "9NBLGGGZ5QDR",
       "applicationName": "Contoso Demo",
       "deviceType": "Phone",
@@ -316,7 +314,7 @@ Authorization: Bearer <your access token>
       "market": "GB",
       "gender": "m",
       "ageGroup": "50orover",
-      "acquisitionType": "Iap",
+      "acquisitionType": "iap",
       "acquisitionQuantity": 1
     }
   ],
@@ -325,20 +323,20 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 相关主题
+## Related topics
 
-* [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
-* [获取应用购置](get-app-acquisitions.md)
-* [获取错误报告数据](get-error-reporting-data.md)
-* [获取应用评分](get-app-ratings.md)
-* [获取应用评价](get-app-reviews.md)
-
- 
+* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Get app acquisitions](get-app-acquisitions.md)
+* [Get error reporting data](get-error-reporting-data.md)
+* [Get app ratings](get-app-ratings.md)
+* [Get app reviews](get-app-reviews.md)
 
  
 
+ 
 
 
-<!--HONumber=Jul16_HO1-->
+
+<!--HONumber=Sep16_HO2-->
 
 

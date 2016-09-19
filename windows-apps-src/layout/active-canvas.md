@@ -1,46 +1,46 @@
 ---
 author: Jwmsft
-Description: "带有内容区域和命令区域的单视图应用或模式体验模式，例如照片查看器/编辑器、文档查看器、地图、绘画或使用自由滚动视图的其他应用。"
-title: "活动画布布局模式"
+Description: A pattern with a content area and a command area for single-view apps or modal experiences, such as photo viewers/editors, document viewers, maps, painting, or other apps that make use of a free-scrolling view.
+title: Active canvas layout pattern
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: ef71196ba0aefd4428daae70c54bcc9cbeaa56a2
-ms.openlocfilehash: ddb977999f4bdb24cef36c80659c78aba1ee5e98
+ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
 
 ---
-# 活动画布布局模式
+# Active canvas layout pattern
 
-活动画布是带有内容区域和命令区域的模式。 它适用于单视图应用或模式体验，例如照片查看器/编辑器、文档查看器、地图、绘画或使用自由滚动视图的其他应用。 在操作执行方面，活动画布可以与命令栏或仅与按钮搭配使用，具体取决于用户所需的操作数和操作类型。
+An active canvas is a pattern with a content area and a command area. It's for single-view apps or modal experiences, such as photo viewers/editors, document viewers, maps, painting, or other apps that make use of a free-scrolling view. For taking actions, an active canvas can be paired with a command bar or just buttons, depending on the number and types of actions you need.
 
-## 示例
+## Examples
 
-此照片编辑应用的设计主要包括一个活动画布模式，其左侧具有一个移动示例，其右侧具有一个桌面示例。 图像编辑图面是一块画布，底部的命令栏包含应用所需的所有上下文操作。
+This design of a photo editing app features an active canvas pattern, with a mobile example on the left, and a desktop example on the right. The image editing surface is a canvas, and the command bar at the bottom contains all of the contextual actions for the app.
 
-![使用活动画布模式的照片编辑器示例](images/uap-photo-pc-phone-700.png)
+![Example of a photo editor using active canvas pattern](images/uap-photo-pc-phone-700.png)
 
-此地铁地图应用的设计使用了顶部具有简单 UI 带的活动画布，该 UI 带中只有两个操作和一个搜索框。 上下文操作显示在上下文菜单中，如右图所示。
+This design of a subway map app makes use of an active canvas with a simple UI strip at the top that has only two actions and a search box. Contextual actions are shown in the context menu, as seen on the right image.
 
-![使用活动画布模式的地图应用示例](images/uap-subway-pc-phone-700.png)
-
-
-## 实现此模式
-
-活动画布模式由一个内容区域和一个命令区域组成。
-
-**内容区域。**  内容区域通常是一块自由滚动的画布。 在一个应用中可以存在多个内容区域。
-
-**命令区域。**  如果你要放置大量命令，可以使用可根据屏幕大小做出响应的命令栏。 如果不放置那么多命令，并且不涉及响应式 UI，则节省空间按钮也行之有效。
+![Example of a maps app using active canvas pattern](images/uap-subway-pc-phone-700.png)
 
 
+## Implementing this pattern
 
-## 相关文章
+The active canvas pattern consists of a content area and a command area.
 
--   [**应用栏和命令栏**](../controls-and-patterns/app-bars.md)
+**Content area.**  The content area is usually a free-scrolling canvas. Multiple content areas can exist within an app.
+
+**Command area.**  If you're placing a lot of commands, then a command bar, which responds based on screen size, could be the way to go. If you're not placing that many commands and aren't as concerned with a responsive UI, space-saving buttons work well.
 
 
 
-<!--HONumber=Jul16_HO1-->
+## Related articles
+
+-   [**App bar and command bar**](../controls-and-patterns/app-bars.md)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

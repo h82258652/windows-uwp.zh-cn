@@ -1,52 +1,52 @@
 ---
 author: Xansky
-Description: "介绍了有关在 Windows 应用商店中将通用 Windows 平台 (UWP) 应用声明为辅助应用的要求。"
+Description: Describes the requirements for declaring your Universal Windows Platform (UWP) app as accessible in the Windows Store.
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
-title: "应用商店中的辅助功能"
+title: Accessibility in the Store
 label: Accessibility in the Store
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 46dfe4fba383861c704b2ba9070bdd8102b10562
+ms.sourcegitcommit: 137e8671655c0d20b0343ee7f87086d271fdc531
+ms.openlocfilehash: 8d987e9c1c9476625b8544ee95abc62e2b2c09f5
 
 ---
 
-# 应用商店中的辅助功能  
+# Accessibility in the Store  
 
 
 
-介绍要在 Windows 应用商店中将通用 Windows 平台 (UWP) 应用声明为辅助应用需满足的要求。
+Describes the requirements for declaring your Universal Windows Platform (UWP) app as accessible in the Windows Store.
 
-将你的应用提交至 Windows 应用商店进行认证时，可以将你的应用声明为辅助应用。 将你的应用声明为辅助应用，这样可使关注辅助应用的用户（如视力受损的用户）更轻松地发现该应用。 用户在搜索 Windows 应用商店时使用**辅助**筛选器发现辅助应用。 将你的应用声明为辅助应用还可以将**“辅助”**标记添加到应用的说明中。
+While submitting your app to the Windows Store for certification, you can declare your app as accessible. Declaring your app as accessible makes it easier to discover for users who are interested in accessible apps, such as users who have visual impairments. Users discover accessible apps by using the **Accessible** filter while searching the Windows Store. Declaring your app as accessible also adds the **Accessible** tag to your app’s description.
 
-通过将你的应用声明为辅助应用，即表明该应用具有用户对使用下列一个或多个项目的主要方案所需的[基本辅助功能信息](basic-accessibility-information.md)：
+By declaring your app as accessible, you state that it has the [basic accessibility information](basic-accessibility-information.md) that users need for primary scenarios using one or more of the following:
 
-* 键盘。
-* 高对比度主题。
-* 可变的每英寸点数 (dpi) 设置。
-* Windows 辅助功能等常见辅助技术，其中包括讲述人、放大镜、屏幕键盘。
+* The keyboard.
+* A high contrast theme.
+* A variable dots per inch (dpi) setting.
+* Common assistive technology such as the Windows accessibility features, including Narrator, Magnifier, and On-Screen Keyboard.
 
-如果你构建的应用可实现辅助功能并进行了辅助功能测试，你应将自己的应用声明为辅助应用。 这表示，你已完成下列工作：
+You should declare your app as accessible if you built and tested it for accessibility. This means that you did the following:
 
-* 为 UI 元素设置了所有相关辅助功能信息，这些元素包括名称、角色、值，等等。
-* 实现了完整的键盘辅助功能，使用户能够：
-    * 仅用键盘即可完成主要应用方案。
-    * 用 Tab 按逻辑顺序在 UI 元素间移动。
-    * 使用箭头键在某控件的 UI 元素间导航。
-    * 使用键盘快捷方式实现主要应用功能。
-    * 针对选项卡使用讲述人触控笔势，针对不带键盘的设备使用等效箭头键。
-* 确保你的应用 UI 具有视觉辅助功能：文本对比率最低为 4.5:1、不单单依赖颜色传递信息等等。
-* 使用 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 和 [**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986) 等辅助功能测试工具验证过你的辅助功能实现，已解决由类似工具报告的、优先级为 1 的所有错误。
-* 已使用讲述人、放大镜、屏幕键盘、高对比度主题和已调节的 dpi 设置从头到尾验证了你的应用的主要方案。
+* Set all the relevant accessibility information for UI elements, including name, role, value, and so on.
+* Implemented full keyboard accessibility, enabling the user to:
+    * Accomplish primary app scenarios by using only the keyboard.
+    * Tab among UI elements in a logical order.
+    * Navigate among UI elements within a control by using the arrow keys.
+    * Use keyboard shortcuts to reach primary app functionality.
+    * Use Narrator touch gestures for Tab and arrow equivalency for devices with no keyboard.
+* Ensured that your app UI is visually accessible: has a minimum text contrast ratio of 4.5:1, does not rely on color alone to convey information, and so on.
+* Used accessibility testing tools such as [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) and [**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986) to verify your accessibility implementation, and resolved all priority 1 errors reported by such tools.
+* Verified your app’s primary scenarios from end to end by using Narrator, Magnifier, On-Screen Keyboard, a high contrast theme, and adjusted dpi settings.
 
-请参阅[辅助功能清单](accessibility-checklist.md)，以查看这些过程以及有助于实现辅助功能的资源的链接。
+See the [Accessibility checklist](accessibility-checklist.md) for a review of these procedures and links to resources that will help you accomplish them.
 
 <span id="related_topics"/>
-## 相关主题    
-* [辅助功能](accessibility.md)
+## Related topics    
+* [Accessibility](accessibility.md) 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

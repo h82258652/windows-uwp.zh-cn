@@ -1,88 +1,86 @@
 ---
 author: Mtoepke
-title: "Xbox One 开发人员模式激活"
-description: "如何激活开发人员模式，以便你可以在零售模式和开发人员模式之间切换。"
-area: Xbox
+title: Xbox One Developer Mode activation
+description: How to activate Developer Mode so you can switch between Retail Mode and Developer Mode.
 translationtype: Human Translation
-ms.sourcegitcommit: 7d832fee5bcd3a15cee1e7d8f4c66da9b0afa5e1
-ms.openlocfilehash: 9ad9904150acb00982c96eebeaf010f7023d3320
+ms.sourcegitcommit: 2e34e54465448c91f4e63ec53a062cdb730ad952
+ms.openlocfilehash: c50ec870e9548e4823b9116c25f47fed1537a4e6
 
 ---
 
-# Xbox One 开发人员模式激活
+# Xbox One Developer Mode activation
 
-* [开发人员模式的工作原理](#how-developer-mode-works)
-* [在零售 Xbox One 主机上激活开发人员模式](#activate-developer-mode-on-your-retail-xbox-one-console)  
-* [在零售模式和开发人员模式之间切换](#switch-between-retail-and-developer-mode)
+* [How Developer Mode works](#how-developer-mode-works)
+* [Activate Developer Mode on your retail Xbox One console](#activate-developer-mode-on-your-retail-xbox-one-console)  
+* [Switch between Retail and Developer Mode](#switch-between-retail-and-developer-mode)
 
-## 开发人员模式的工作原理
-Xbox One 具有两种模式，即*零售*模式 (1) 和*开发人员*模式 (2)。 在零售模式中，Xbox One 主机处于可供任何客户或用户使用的状态：既可玩游戏，也可以用户身份运行应用。 在开发人员模式中，你可以开发适用于该主机的软件，不过既不能玩零售游戏也不能运行零售应用。
-可以在任何零售 Xbox One 主机上启用开发人员模式。 开发人员模式启用后，可以在零售模式 (2a) 和开发人员模式 (2b) 之间来回切换。
+## How Developer Mode works
+Xbox One has two modes, *Retail* Mode (1) and *Developer* Mode (2). In Retail Mode, the console is in the state that any customer or user of an Xbox One console would use: you can play games and run apps as a user. In Developer Mode, you can develop software for the console, but you cannot play retail games or run retail apps.
+Developer Mode can be enabled on any retail Xbox One console. After Developer Mode is enabled, you can switch back and forth between Retail (2a) and Developer Modes (2b).
 
-> **重要提示** &nbsp;&nbsp;当在 Xbox One 上激活开发人员模式时，你可以选择进入 Xbox 系统更新，以获取开发人员预览版本（该版本包含实验性和提前预发布的软件）。 这意味着某些热门游戏和应用将无法按预期运行，并且可能会遇到偶发的崩溃和数据丢失。 当你退出开发者预览版时，主机将恢复出厂设置，使得你必须重新安装所有游戏、应用和内容。 
+> [!NOTE]
+> You cannot activate Developer Mode on Xbox One if you are part of an existing preview program such as the Xbox One Beta program. You can leave an existing preview program by using the Xbox Preview Dashboard app. 
 
-> **注意** &nbsp;&nbsp;如果你参与了现有预览计划（例如 Xbox One Beta 计划），将无法在 Xbox One 上激活开发人员模式。 可通过使用 Xbox 预览仪表板应用退出现有预览计划。 
+![Xbox One modes](images/dev-mode-flow.png)
 
-![Xbox One 模式](images/dev-mode-flow.png)
+## Activate Developer Mode on your retail Xbox One console
 
-## 在零售 Xbox One 主机上激活开发人员模式
+1.  Start your Xbox One console.
 
-1.  启动 Xbox One 主机。
-
-2.  从 Xbox One 商店中搜索和安装“开发人员模式激活”应用。  
+2.  Search for and install the Dev Mode Activation app from the Xbox One store.  
     ![](images/activation-store-search.png)
 
-3.  导航到“我的游戏和应用”**** > “应用”****。
+3.  Navigate to **My games & apps** > **Apps**.
 
-    ![开发人员模式激活应用](images/activation-step-3.png)
-4. 打开“开发人员模式激活”应用。    
+    ![Dev Mode Activation app](images/activation-step-3.png)
+4. Open the Dev Mode Activation app.    
     
-    > **注意** &nbsp;&nbsp;请确保仔细阅读免责声明。 由于参与了激活 Xbox 进行开发，你将获得提前预发布的版本。 如果要玩游戏和运行应用，需要切换到零售模式。 旁加载的应用将仅在开发人员模式下运行。
+    > [!NOTE]
+    > To play games and apps, you must switch to Retail Mode. Sideloaded apps will work only in Developer Mode.
 
-5.  记下“开发人员模式激活”应用中显示的代码。  
+5.  Note the code displayed in the Dev Mode Activation app.  
 
-    ![激活步骤 5](images/activation-step-5.png)  
+    ![Activation Step 5](images/activation-step-5.png)  
     
-6.  转到 [developer.microsoft.com/xboxactivate](https://developer.microsoft.com/xboxactivate)。
-7.  使用你的开发人员中心帐户登录到开发人员中心。  
-8.  输入“开发人员模式激活”应用中显示的激活代码。   
+6.  Go to [developer.microsoft.com/xboxactivate](https://developer.microsoft.com/xboxactivate).
+7.  Sign in to Dev Center with your Dev Center account.  
+8.  Enter the activation code displayed in the Dev Mode Activation app.   
    
-     > **注意** &nbsp;&nbsp;与你的帐户关联的激活次数有限制。 开发人员模式激活后，开发人员中心将指示：你已将其中一个激活与你的帐户关联。 
+    > [!NOTE]
+    > You have a limited number of activations associated with your account. After Developer Mode has been activated, Dev Center will indicate you have used one of the activations associated with your account. 
     
-    ![激活步骤 8](images/activation-step-8.png)    
+    ![Activation Step 8](images/activation-step-8.png)    
     
-9.  单击“同意并激活”****。 这将导致页面重新加载，并且你将看到你的设备已填充到表中。
+9.  Click **Agree and activate**. This will cause the page to reload, and you will see your device populate in the table.
     
-    > **注意** &nbsp;&nbsp;可以在[此处](http://go.microsoft.com/fwlink/?LinkId=760399)找到 Xbox One 开发人员模式激活计划协议的条款。
+    > [!NOTE]
+    > Terms for the Xbox One Developer Mode Activation Program agreement can be found at [Xbox One Developer Mode Activation Program](http://go.microsoft.com/fwlink/p/?LinkId=760399).
 
-10. 输入激活代码之后，主机将显示激活过程的进度屏幕。  
-11. 激活完成后，需要等待你的主机更新到所需的预览版。 这可能需要几个小时，请耐心等待。  
-
-    ![激活步骤 11](images/activation-step-11.png)    
+10. After you’ve entered your activation code, your console will display a progress screen for the activation process.  
     
-12. 激活完成后，打开“开发人员模式激活”应用，然后单击“切换并重启”****以转到开发人员模式。 请注意，此操作所需的时间比平常更长。  
+11. After activation has completed, open the Dev Mode Activation app and click **Switch and restart** to go to Developer Mode. Note that this will take longer than usual.  
 
-    ![激活步骤 12](images/activation-step-12.png)   
+    ![Activation Step 12](images/activation-step-12.png)   
     
 
     
-## 在零售模式和开发人员模式之间切换
-在主机上启用了开发人员模式后，可使用“开发人员主页”****在零售模式和开发人员模式之间切换。 若要了解有关启动和使用“开发人员主页”****的详细信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。
+## Switch between Retail and Developer Mode
+After Developer Mode has been enabled on your console, use **Dev Home** to switch between Retail Mode and Developer Mode. To learn more about starting and using **Dev Home**, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
 
-* 若要切换到零售模式，请使用“开发人员主页”****，然后单击“退出开发人员模式”****。 这将在零售模式下重新启动主机。    
+* To switch to Retail Mode, use **Dev Home** and click **Leave developer mode**. This will restart your console in Retail Mode.    
 
-  ![激活步骤 13](images/activation-step-13.png)  
+  ![Activation Step 13](images/activation-step-13.png)  
   
-* 若要切换到开发人员模式，请使用“开发人员模式激活”应用。 打开该应用，然后单击“切换并重启”****。 这将在开发人员模式下重新启动你的主机。  
+* To switch to Developer Mode, use the Dev Mode Activation app. Open the app and click **Switch and restart**. This will restart your console in Developer Mode.  
 
-  ![激活步骤 14](images/activation-step-12.png)  
+  ![Activation Step 14](images/activation-step-12.png)  
 
-## 另请参阅
-- [Xbox One 开发人员模式停用](devkit-deactivation.md)
-- [Xbox One 上的 UWP](index.md)
+## See also
+- [Xbox One Developer Mode deactivation](devkit-deactivation.md)
+- [UWP on Xbox One](index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

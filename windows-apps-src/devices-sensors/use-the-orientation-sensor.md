@@ -1,53 +1,53 @@
 ---
 author: DBirtolo
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
-title: "使用方向传感器"
-description: "了解如何使用方向传感器确定设备方向。"
+title: Use the orientation sensor
+description: Learn how to use the orientation sensors to determine the device orientation.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
+ms.openlocfilehash: 1265697f03e0de74444fc936a3041d1e88147e77
 
 ---
-# 使用方向传感器
+# Use the orientation sensor
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+** Important APIs **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
 -   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
 
-了解如何使用方向传感器确定设备方向。
+Learn how to use the orientation sensors to determine the device orientation.
 
-有两种不同类型的方向传感器 API 包含在 [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 命名空间中：[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 和 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)。 虽然这两个传感器都是方向传感器，但该术语具有不同的意义，并且这两者的用途具有显著区别。 但是，由于这两者都是方向传感器，因此均涵盖在本文中。
+There are two different types of orientation sensor APIs included in the [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) namespace: [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) and [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). While both of these sensors are orientation sensors, that term is overloaded and they are used for very different purposes. However, since both are orientation sensors, they are both covered in this article.
 
-[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API 用于三维应用以获取四元数和旋转矩阵。 四元数可以最简单地理解为一个点 \[x,y,z\] 围绕任意一个轴旋转（与旋转矩阵不同，它表示围绕三个轴旋转）。 四元数后的数学非常奇特，因为它涉及到复数的几何属性以及虚数的数学属性，但是使用它们却非常简单，而且 DirectX 等框架也支持它们。 复杂的三维应用可使用方向传感器调整用户的视角。 此传感器结合了来自加速计、陀螺测试仪以及指南针的输入。
+The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API is used for 3-D apps two obtain a quaternion and a rotation matrix. A quaternion can be most easily understood as a rotation of a point \[x,y,z\] about an arbitrary axis (contrasted with a rotation matrix, which represents rotations around three axes). The mathematics behind quaternions is fairly exotic in that it involves the geometric properties of complex numbers and mathematical properties of imaginary numbers, but working with them is simple, and frameworks like DirectX support them. A complex 3-D app can use the Orientation sensor to adjust the user's perspective. This sensor combines input from the accelerometer, gyrometer, and compass.
 
-[**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API 用于根据 portrait up、portrait down、landscape left 和 landscape right 等定义确定当前设备方向。 它还可以检测设备是正面朝上还是正面朝下。 此传感器不会返回如“portrait up”或“landscape left”等属性，而是返回一个旋转值，如“Not rotated”、“Rotated90DegreesCounterclockwise”等。 下表将常见的方向属性映射到相应的传感器读取方向。
+The [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API is used to determine the current device orientation in terms of definitions like portrait up, portrait down, landscape left, and landscape right. It can also detect if a device is face-up or face-down. Rather than returning properties like "portrait up" or "landscape left", this sensor returns a rotation value: "Not rotated", "Rotated90DegreesCounterclockwise", and so on. The following table maps common orientation properties to the corresponding sensor reading.
 
-| 方向     | 相应的传感器读取方向      |
+| Orientation     | Corresponding sensor reading      |
 |-----------------|-----------------------------------|
 | Portrait Up     | NotRotated                        |
 | Landscape Left  | Rotated90DegreesCounterclockwise  |
 | Portrait Down   | Rotated180DegreesCounterclockwise |
 | Landscape Right | Rotated270DegreesCounterclockwise |
 
-## 先决条件
+## Prerequisites
 
-你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
+You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-你使用的设备或仿真器必须支持方向传感器。
+The device or emulator that you're using must support a orientation sensor.
 
-## 创建一个 OrientationSensor 应用
+## Create an OrientationSensor app
 
-此部分划分为两个子部分。 第一个子部分将指导你完成从头开始创建方向应用程序所需的步骤。 以下子部分介绍你刚创建的应用。
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create an orientation application from scratch. The following subsection explains the app you have just created.
 
-###  说明
+###  Instructions
 
--   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
+-   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -120,9 +120,9 @@ ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“OrientationSensorCS”**的项目，则使用 `namespace OrientationSensorCS` 替换 `namespace App1`。
+You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **OrientationSensorCS**, you'd replace `namespace App1` with `namespace OrientationSensorCS`.
 
--   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
+-   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
         <Page
@@ -166,25 +166,25 @@ ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“OrientationSensorCS”**的项目，则使用 `x:Class="OrientationSensorCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:OrientationSensorCS"` 替换 `xmlns:local="using:App1"`。
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **OrientationSensorCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="OrientationSensorCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:OrientationSensorCS"`.
 
--   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
+-   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
-应用运行后，你可以通过移动设备或使用仿真器工具更改方向。
+Once the app is running, you can change the orientation by moving the device or using the emulator tools.
 
--   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
-###  描述
+###  Explanation
 
-前面的示例演示了，只需要写入极少的代码即可将方向传感器输入集成到你的应用。
+The previous example demonstrates how little code you'll need to write in order to integrate orientation-sensor input in your app.
 
-该应用在 **MainPage** 方法中建立了与默认方向传感器的连接。
+The app establishes a connection with the default orientation sensor in the **MainPage** method.
 
 ```csharp
 _sensor = OrientationSensor.GetDefault();
 ```
 
-该应用在 **MainPage** 方法中建立了报告间隔。 此代码检索设备支持的最短间隔，并将它与所请求的间隔 16 毫秒（大约 60-Hz 刷新率）进行比较。 如果支持的最短间隔大于所请求的间隔，则此代码会将报告间隔设置为所支持的最短间隔。 否则，它会将报告间隔设置为所请求的间隔。
+The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
 uint minReportInterval = _sensor.MinimumReportInterval;
@@ -192,24 +192,24 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _sensor.ReportInterval = reportInterval;
 ```
 
-在 **ReadingChanged** 方法中捕获新的传感器数据。 每当传感器驱动程序从传感器接收到新数据时，它都将使用此事件处理程序将该值传递到你的应用中。 应用在下行中注册此事件处理程序。
+The new sensor data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
 _sensor.ReadingChanged += new TypedEventHandler<OrientationSensor, 
 OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
-这些新值将写入位于项目 XAML 中的 TextBlock。
+These new values are written to the TextBlocks found in the project's XAML.
 
-## 创建一个 SimpleOrientation 应用
+## Create a SimpleOrientation app
 
-此部分划分为两个子部分。 第一个子部分将指导你完成从头开始创建简单的方向应用程序所需的步骤。 以下子部分介绍你刚创建的应用。
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple orientation application from scratch. The following subsection explains the app you have just created.
 
-### 说明
+### Instructions
 
--   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
+-   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -290,9 +290,9 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“SimpleOrientationCS”**的项目，则使用 `namespace SimpleOrientationCS` 替换 `namespace App1`。
+You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **SimpleOrientationCS**, you'd replace `namespace App1` with `namespace SimpleOrientationCS`.
 
--   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
+-   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
     <Page
@@ -312,47 +312,47 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“SimpleOrientationCS”**的项目，则使用 `x:Class="SimpleOrientationCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:SimpleOrientationCS"` 替换 `xmlns:local="using:App1"`。
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **SimpleOrientationCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="SimpleOrientationCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:SimpleOrientationCS"`.
 
--   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
+-   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
-应用运行后，你可以通过移动设备或使用仿真器工具更改方向。
+Once the app is running, you can change the orientation by moving the device or using the emulator tools.
 
--   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
-### 描述
+### Explanation
 
-前面的示例演示了，只需要写入极少的代码即可在应用中集成简单方向传感器输入。
+The previous example demonstrates how little code you'll need to write in order to integrate simple-orientation sensor input in your app.
 
-该应用在 **MainPage** 方法中建立了与默认传感器的连接。
+The app establishes a connection with the default sensor in the **MainPage** method.
 
 ```csharp
 _simpleorientation = SimpleOrientationSensor.GetDefault();
 ```
 
-在 **OrientationChanged** 方法中捕获新的传感器数据。 每当传感器驱动程序从传感器接收到新数据时，它都将使用此事件处理程序将该值传递到你的应用中。 应用在下行中注册此事件处理程序。
+The new sensor data is captured in the **OrientationChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
 _simpleorientation.OrientationChanged += new TypedEventHandler<SimpleOrientationSensor, 
 SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 ```
 
-这些新值将写入位于项目 XAML 的 TextBlock 中。
+These new values are written to a TextBlock found in the project's XAML.
 
 ```csharp
 <TextBlock HorizontalAlignment="Left" Height="24" Margin="8,8,0,0" TextWrapping="Wrap" Text="Current Orientation:" VerticalAlignment="Top" Width="101" Foreground="#FFF8F7F7"/>
  <TextBlock x:Name="txtOrientation" HorizontalAlignment="Left" Height="24" Margin="118,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="175" Foreground="#FFFEFAFA"/>
 ```
 
-## 相关主题
+## Related topics
 
-* [OrientationSensor 示例](http://go.microsoft.com/fwlink/p/?linkid=241382)
-* [SimpleOrientation 传感器示例](http://go.microsoft.com/fwlink/p/?linkid=241383)
+* [OrientationSensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241382)
+* [SimpleOrientation Sensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241383)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

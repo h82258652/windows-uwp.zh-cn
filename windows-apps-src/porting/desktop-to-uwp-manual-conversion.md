@@ -1,24 +1,24 @@
 ---
-Description: "介绍如何将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）手动转换为通用 Windows 平台 (UWP) 应用。"
+Description: Shows how to manually convert a Windows desktop application (like Win32, WPF, and Windows Forms) to a Universal Windows Platform (UWP) app.
 Search.Product: eADQiWindows 10XVcnh
-title: "将 Windows 桌面使用程序手动转换为通用 Windows 平台 (UWP) 应用"
+title: Manually convert a Windows desktop application to a Universal Windows Platform (UWP) app
 translationtype: Human Translation
-ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
-ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
+ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
+ms.openlocfilehash: 646a5b88cb7ca97f18bf4552950979a2ceead398
 
 ---
 
-# 将 Windows 桌面应用程序手动转换为通用 Windows 平台 (UWP) 应用
+# Manually convert your Windows desktop application to a Universal Windows Platform (UWP) app
 
-\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-使用转换器方便并且自动，如果你不确定安装程序的用途，则它很有用。 但是如果应用使用 xcopy 安装，或者你熟悉应用的安装程序对系统所做的更改，可以选择手动创建应用包和清单。
+Using the Converter is convenient and automatic, and it's useful if there's any uncertainty about what your installer does. But if your app is installed by using xcopy, or if you're familiar with the changes that your app's installer makes to the system, you can opt to create an app package and manifest manually.
 
-以下是手动创建 Centennial 程序包的步骤：
+Here are the steps to create a package manually:
 
-## 手动创建清单。
+## Create a manifest by hand.
 
-你的 _appxmanifest.xml_ 文件需要具有以下内容（至少）。 将格式类似于 \*\*\*THIS\*\*\* 的占位符更改为应用程序的实际值。
+Your _appxmanifest.xml_ file needs to have the following content (at the minimum). Change placeholders that are formatted like \*\*\*THIS\*\*\* to actual values for your application.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -58,13 +58,13 @@ ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
     </Package>
     ```
 
-## 运行 MakeAppX 工具
+## Run the MakeAppX tool
 
-使用[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) 为你的项目生成 AppX。 MakeAppx.exe 包含在 Windows 10 SDK 中。 
+Use the [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) to generate an AppX for your project. MakeAppx.exe is included with the Windows 10 SDK. 
 
-若要运行 MakeAppx，请先确保你已创建清单文件，如上所述。 
+To run MakeAppx, first ensure you've created an manifest file as described above. 
 
-接下来，创建一个映射文件。 该文件应以 **[Files]** 开头，然后列出磁盘上的每个源文件，后跟其在程序包中的目标路径。 下面是一个示例： 
+Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Here's an example: 
 
 ```
 [Files]
@@ -74,17 +74,17 @@ ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
 "MyCustomManifest.xml"       "AppxManifest.xml"
 ```
 
-最后，运行以下命令： 
+Finally, run the following command: 
 
 ```cmd
 MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 ```
 
-## 对 AppX 程序包进行签名
+## Sign your AppX package
 
-Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用 Microsoft Windows 10 SDK 附带的 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) 对 .appx 程序包进行签名。
+The Add-AppxPackage cmdlet requires that the application package (.appx) being deployed must be signed. Use [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), which ships in the Microsoft Windows 10 SDK, to sign the .appx package.
 
-示例用法： 
+Example usage: 
 
 ```cmd
 C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
@@ -92,17 +92,17 @@ C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
 
-当你运行 MakeCert.exe 并且系统要求你输入密码时，请选择“无”****。 有关证书和签名的详细信息，请参阅以下内容： 
+When you run MakeCert.exe and you're asked to enter a password, select **none**. For more info on certificates and signing, see the following: 
 
-- [操作方法：创建在部署期间使用的临时证书](https://msdn.microsoft.com/library/ms733813.aspx)
+- [How to: Create Temporary Certificates for Use During Development](https://msdn.microsoft.com/library/ms733813.aspx)
 
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
 
-- [SignTool.exe（签名工具）](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
+- [SignTool.exe (Sign Tool)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

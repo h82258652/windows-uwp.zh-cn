@@ -1,51 +1,17 @@
 ---
-author: jnHs
-Description: "在 Windows 开发人员中心仪表板中创建新的 IAP（应用内产品）时，需要指定产品类型并为其分配产品 ID。"
-title: "设置 IAP 产品类型和产品 ID"
-ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
+redirect_url: https://msdn.microsoft.com/windows/uwp/publish/set-your-add-on-product-id
 translationtype: Human Translation
-ms.sourcegitcommit: ae4727974af632a275c102a6328734597cee3e9b
-ms.openlocfilehash: 9faee009cd907cd8ccdeded019e23713cbc058f0
+ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
+ms.openlocfilehash: 1552dc14937c704e1db710cf5226d8b698ce890f
 
 ---
 
-# 设置 IAP 产品类型和产品 ID
+# Set your IAP product type and product ID
 
-IAP 必须与已在仪表板中创建的应用（即使你并为提交）关联。 你可以在应用的“概述”****页面或“IAP”****页面找到“创建新 IAP”****的按钮。
-
-单击该按钮后，你将看到“创建新 IAP”****页面。 你需要在此处指定产品类型并为其分配产品 ID。
-
-## 产品类型
-
-首先，你将需要指示所提供的 IAP 类型。 该选择是指客户使用 IAP 的方式。
-
-> **注意** 在保存此页面创建 IAP 后，将无法更改该产品类型。 如果选择了错误的产品类型，你随时可以删除正在提交的 IAP，然后从头开始创建新的 IAP。
-
-选择适用于你的 IAP 的产品类型：
-
-- 易耗型：可购买、使用（消耗）并再次购买的产品。 易耗型 IAP 通常用于客户可按固定数量购买然后会使用完毕的产品，例如游戏货币（金币、硬币等）。
-- 耐用型：由购买者购买，并在指定时段内为购买者所有的产品。 持久型 IAP 通常用于解锁应用中的额外功能。 持久型 IAP 不会进行消耗，但你可以设置**“产品生命周期”**，以使它们在一段时间后（可选择 1 至 365 天）过期。 持久型 IAP 的默认**“产品生命周期”**为**“永久”**，这意味着 IAP 永不过期。 你可以在 IAP 提交过程的 [IAP 属性](enter-iap-properties.md)步骤中，将产品生命周期更改为不同的持续时间。
-
-## 产品 ID
-
-输入你的 IAP 的唯一产品 ID。 这就是你将在[用于调用 IAP 的应用代码](https://msdn.microsoft.com/library/windows/apps/mt219684)中需要引用的同一标识符。
-
-以下是在选择产品 ID 时应记住的一些事项：
-
--   客户不会看到此产品 ID。 （稍后，你可以输入一个用于向客户显示的[标题和描述](create-iap-descriptions.md)。）
--   你无法在 IAP 发布后更改或删除其产品 ID。
--   产品 ID 的长度不可大于 100 个字符。
--   产品 ID 不可包含任何以下字符：**&lt;&gt; \* % &amp; : \\ ? + ,**
--   若要在所有设备上提供 IAP，你必须只使用字母数字字符、句点和/或下划线。 如果你使用任何其他类型的字符，该 IAP 将不可供运行 Windows Phone 8.1 或更早版本的客户购买。
--   产品 ID 无需在 Windows 应用商店中是唯一的，但它必须对于你的开发人员帐户是唯一的。
- 
+This page has been redirected to: Set your add-on product type and product ID
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,31 +1,31 @@
 ---
 author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
-title: "使用计时器提交工作项"
-description: "了解如何创建在经过计时器时间后运行的工作项。"
+title: Use a timer to submit a work item
+description: Learn how to create a work item that runs after a timer elapses.
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
+ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 
 ---
-# 使用计时器提交工作项
+# Use a timer to submit a work item
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+** Important APIs **
 
--   [**Windows.UI.Core 命名空间**](https://msdn.microsoft.com/library/windows/apps/BR208383)
--   [**Windows.System.Threading 命名空间**](https://msdn.microsoft.com/library/windows/apps/BR229642)
+-   [**Windows.UI.Core namespace**](https://msdn.microsoft.com/library/windows/apps/BR208383)
+-   [**Windows.System.Threading namespace**](https://msdn.microsoft.com/library/windows/apps/BR229642)
 
-了解如何创建在经过计时器时间后运行的工作项。
+Learn how to create a work item that runs after a timer elapses.
 
-## 创建单次计时器
+## Create a single-shot timer
 
-使用 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 方法为工作项创建计时器。 提供用于完成工作的 lambda，并使用 *delay* 参数指定线程池在可将工作项分配给可用线程之前等待的时间。 使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 结构指定延迟。
+Use the [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) method to create a timer for the work item. Supply a lambda that accomplishes the work, and use the *delay* parameter to specify how long the thread pool waits before it can assign the work item to an available thread. The delay is specified using a [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) structure.
 
-> **注意** 你可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 访问 UI 并显示工作项的进度。
+> **Note**  You can use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI and show progress from the work item.
 
-以下示例创建三分钟后运行的工作项：
+The following example creates a work item that runs in three minutes:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -81,11 +81,11 @@ ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
 >         }), delay);
 > ```
 
-## 提供完成处理程序
+## Provide a completion handler
 
-如果需要，使用 [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) 处理工作项的取消和完成。 使用 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 重载以提供其他 lambda。 它在计时器被取消或工作项完成时运行。
+If needed, handle cancellation and completion of the work item with a [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Use the [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) overload to supply an additional lambda. This runs when the timer is cancelled or when the work item completes.
 
-以下示例创建提交工作项的计时器，并在工作项完成或计时器被取消时调用方法：
+The following example creates a timer that submits the work item, and calls a method when the work item finishes or the timer is cancelled:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -201,9 +201,9 @@ ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
 >         }));
 > ```
 
-## 取消计时器
+## Cancel the timer
 
-如果计时器仍在倒计时，但是已不再需要工作项，调用 [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588)。 计时器会取消，而工作项不会提交到线程池。
+If the timer is still counting down, but the work item is no longer needed, call [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588). The timer is cancelled and the work item won't be submitted to the thread pool.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -213,19 +213,19 @@ ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
 > DelayTimer->Cancel();
 > ```
 
-## 备注
+## Remarks
 
-通用 Windows 平台 (UWP) 应用无法使用 **Thread.Sleep**，因为它会阻止 UI 线程。 你可以改为使用 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 创建工作项，这将延迟工作项完成的任务，但不会阻止 UI 线程。
+Universal Windows Platform (UWP) apps can't use **Thread.Sleep** because it can block the UI thread. You can use a [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) to create a work item instead, and this will delay the task accomplished by the work item without blocking the UI thread.
 
-如需演示工作项、计时器工作项和定期工作项的完整代码示例，请参阅[线程池示例](http://go.microsoft.com/fwlink/p/?linkid=255387)。 代码示例最初是为 Windows 8.1 编写，但该代码可在 Windows 10 中重复使用。
+See the [thread pool sample](http://go.microsoft.com/fwlink/p/?linkid=255387) for a complete code sample that demonstrates work items, timer work items, and periodic work items. The code sample was originally written for Windows 8.1 but the code can be re-used in Windows 10.
 
-有关重复计时器的信息，请参阅[创建定期工作项](create-a-periodic-work-item.md)。
+For information about repeating timers, see [Create a periodic work item](create-a-periodic-work-item.md).
 
-## 相关主题
+## Related topics
 
-* [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
-* [使用线程池的最佳实践](best-practices-for-using-the-thread-pool.md)
-* [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)
+* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
+* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
+* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
  
 
  
@@ -233,6 +233,6 @@ ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

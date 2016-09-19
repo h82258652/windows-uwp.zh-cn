@@ -1,59 +1,59 @@
 ---
 author: WilliamsJason
-title: "Device Portal 文件夹上载 API 参考"
-description: "了解如何以编程方式访问文件夹上载 API。"
+title: Device Portal folder upload API reference
+description: Learn how to access the folder upload APIs programatically.
 translationtype: Human Translation
 ms.sourcegitcommit: fdc25fa4bd7bd5bfa598b993f23cd0ae9783dd0e
-ms.openlocfilehash: 942ddc13b0deba382ad7758bc30bd9a5b0cceb11
+ms.openlocfilehash: 6c3eeccdbb2bca315dc84293a36d0923f46e746d
 
 ---
 
-# 将文件夹上载到开发目录
+# Upload a folder to the development directory
 
-**请求**
+**Request**
 
-你可以一次将整个文件夹上载到 DevelopmentFiles 的“已知文件夹 ID”（或上载到该文件中的子文件夹）。
+You can upload an entire folder at once to the Known Folder Id for the DevelopmentFiles (or to a subfolder within that folder).
 
-方法      | 请求 URI
+Method      | Request URI
 :------     | :------
 POST | /api/app/packagemanager/upload 
 <br />
-**URI 参数**
+**URI parameters**
 
-你可以在请求 URI 上指定以下附加参数：
+You can specify the following additional parameters on the request URI:
 
-URI 参数      | 描述
+URI Parameter      | Description
 :------     | :-----
-destinationFolder（必需） | 要上载的文件夹的目标文件夹名称。 此文件夹将放置在主机的 d:\developmentfiles\LooseApps 之下。 如果此文件夹是 LooseApps 下面的一个子文件夹，那么该文件夹的名称应进行 base64 编码，因为它可能包含路径分隔符。
+destinationFolder  (required) | The destination folder name of the folder to be uploaded. This folder will be placed under d:\developmentfiles\LooseApps on the console. This folder name should be base64 encoded as it may contain path separators if the folder is a subfolder under LooseApps.
 <br />
 
-**请求标头**
+**Request headers**
 
-- 无
+- None
 
-**请求正文**
+**Request body**
 
-- 目录内容的多部分一致性 http 正文。
+- multi-part conforming http body of the directory contents.
 
-**响应**
+**Response**
 
-**状态代码**
+**Status code**
 
-此 API 具有以下预期状态代码。
+This API has the following expected status codes.
 
-HTTP 状态代码      | 说明
+HTTP status code      | Description
 :------     | :-----
-200 | 成功
-4XX | 错误代码
-5XX | 错误代码
+200 | Success
+4XX | Error codes
+5XX | Error codes
 <br />
-**可用设备系列**
+**Available device families**
 
 * Windows Xbox
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

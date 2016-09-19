@@ -1,101 +1,101 @@
 ---
 author: msatranjr
-title: "请求地图身份验证密钥"
-description: "通用 Windows 应用必须先经过身份验证，然后才能在 Windows.Services.Maps 命名空间中使用 MapControl 和地图服务。"
+title: Request a maps authentication key
+description: Your Universal Windows app must be authenticated before it can use the MapControl and map services in the Windows.Services.Maps namespace.
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
+ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
 
 ---
 
-# 请求地图身份验证密钥
+# Request a maps authentication key
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-[通用 Windows 应用](https://msdn.microsoft.com/library/windows/apps/dn894631)必须先经过验证，然后才能在 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务。 若要对你的应用进行身份验证，你必须指定地图身份验证密钥。 本主题介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图验证密钥并将其添加到应用。
+Your [Universal Windows app](https://msdn.microsoft.com/library/windows/apps/dn894631) must be authenticated before it can use the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and map services in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace. To authenticate your app, you must specify a maps authentication key. This topic describes how to request a maps authentication key from the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and add it to your app.
 
-**提示** 若要了解有关在你的应用中使用地图的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载以下示例：
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub:
 
--   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## 获取密钥
-
-
-使用[必应地图开发人员中心](https://www.bingmapsportal.com/)创建并管理你的通用 Windows 应用的地图验证密钥。
-
-创建新密钥
-
-1.  在你的浏览器中，导航到必应地图开发人员中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
-
-2.  如果系统提示你登录，请输入你的 Microsoft 帐户，然后单击“登录”****。
-
-3.  选择要与必应地图帐户关联的帐户。 如果你想要使用自己的 Microsoft 帐户，请单击**“是”**。 否则，请单击“使用其他帐户登录”****。
-
-4.  如果你还没有必应地图帐户，请创建一个新的必应地图帐户。 输入**“帐户名称”**、**“联系人姓名”**、**“公司名称”**、**“电子邮件地址”**和**“电话号码”**。 在接受使用条款后，单击“创建”****。
-
-5.  在**“我的帐户”**菜单下，单击**“创建或查看密钥”**。
-
-6.  单击链接“创建新的密钥”****。
-
-7.  完成“创建密钥”****表格，然后单击“创建”****。
-
-    -   **应用程序名称：**你的应用程序的名称。
-    -   **应用程序 URL（可选）：**你的应用程序的 URL。
-    -   **密钥类型：**选择**“基本”**或**“企业”**。
-    -   **应用程序类型：**选择**“通用 Windows 应用”**以便在你的通用 Windows 应用中使用。
-
-    这是一个表格呈现内容的示例。
-
-    ![“创建密钥”表格的示例。](images/createkeydialog.png)
-
-8.  在单击**“创建”**后，新的密钥将显示在**“创建密钥”**表格的下方。 将该密钥复制到安全位置或立即将其添加到你的应用，如下一步中所述。
-
-## 将密钥添加到你的应用
+## Get a key
 
 
-若要在你的通用 Windows 应用中使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和地图服务 ([**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979))，则需要地图验证密钥。 将该密钥添加到地图控件和地图服务对象（如果适用）。
+Create and manage map authentication keys for your Universal Windows apps using the [Bing Maps Developer Center](https://www.bingmapsportal.com/).
 
-### 将密钥添加到地图控件
+To create a new key
 
-要验证 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)，请将 [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) 属性设置为身份验证密钥值。 你可以在代码中设置该属性，也可以在 XAML 标记中设置它，具体取决于你的偏好。 有关使用 **MapControl** 的详细信息，请参阅[以 2D、3D 和街景视图方式显示地图](display-maps.md)。
+1.  In your browser, navigate to the Bing Maps Developer Center ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
 
--   此示例将 **MapServiceToken** 设置为代码中的身份验证密钥的值。
+2.  If you are asked to sign in, enter your Microsoft account and click **Sign in**.
+
+3.  Choose the account to associate with your Bing Maps account. If you want to use your Microsoft account, click **Yes**. Otherwise, click **Sign in with another account**.
+
+4.  If you don't already have a Bing Maps account, create a new Bing Maps account. Enter the **Account Name**, **Contact Name**, **Company Name**, **Email Address**, and **Phone Number**. After accepting the terms of use, click **Create**.
+
+5.  Under the **My account** menu, click **Create or view keys**.
+
+6.  Click on the link **to create a new key**.
+
+7.  Complete the **Create Key** form and then click **Create**.
+
+    -   **Application name:** The name of your application.
+    -   **Application URL (optional):** The URL of your application.
+    -   **Key type:** Select **Basic** or **Enterprise**.
+    -   **Application type:** Select **Universal Windows App** for use in your Universal Windows app.
+
+    This is an example of what the form looks like.
+
+    ![an example of the create key form.](images/createkeydialog.png)
+
+8.  After you click **Create**, the new key appears below the **Create Key** form. Copy it to a safe place or immediately add it to your app, as described in the next step.
+
+## Add the key to your app
+
+
+The map authentication key is required to use the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and map services ([**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979)) in your Universal Windows app. Add it to the map control and map service objects, as applicable.
+
+### To add the key to a map control
+
+To authenticate the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), set the [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) property to the authentication key value. You can set this property in code or in XAML markup, depending on your preferences. For more info about using the **MapControl**, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
+
+-   This example sets the **MapServiceToken** to the value of the authentication key in code.
 
     ```cs
     MapControl1.MapServiceToken = "abcdef-abcdefghijklmno";
     ```
 
--   此示例将 **MapServiceToken** 设置为 XAML 标记中的身份验证密钥的值。
+-   This example sets the **MapServiceToken** to the value of the authentication key in XAML markup.
 
     ```xml
     <Maps:MapControl x:Name="MapControl1" MapServiceToken="abcdef-abcdefghijklmno"/>
     ```
 
-### 将密钥添加到地图服务
+### To add the key to map services
 
-若要在 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间中使用服务，请将 [**ServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn636977) 属性设置为身份验证密钥值。 有关使用地图服务的详细信息，请参阅[显示路线和方向](routes-and-directions.md)和[执行地理编码和反向地理编码](geocoding.md)。
+To use services in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace, set the [**ServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn636977) property to the authentication key value. For more info about using map services, see [Display routes and directions](routes-and-directions.md) and [Perform geocoding and reverse geocoding](geocoding.md).
 
--   此示例将 **ServiceToken** 设置为代码中的身份验证密钥的值。
+-   This example sets the **ServiceToken** to the value of the authentication key in code.
 
     ```cs
     MapService.ServiceToken = "abcdef-abcdefghijklmno";
     ```
 
-## 相关主题
+## Related topics
 
-* [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

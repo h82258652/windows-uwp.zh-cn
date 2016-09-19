@@ -1,24 +1,25 @@
 ---
 author: mijacobs
-Description: "以下是用于创建自适应磁贴的元素和属性。"
-title: "自适应磁贴架构和模板"
+Description: Here are the elements and attributes you use to create adaptive tiles.
+title: Adaptive tile schema and templates
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 
 ---
+# Adaptive tile templates: schema and guidance
 
-# 自适应磁贴模板：架构和指南
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-以下是用于创建自适应磁贴的元素和属性。 有关说明和示例，请参阅[创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)。
+Here are the elements and attributes you use to create adaptive tiles. For instructions and examples, see [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md).
 
-## <span id="tile_element"></span><span id="TILE_ELEMENT"></span>磁贴元素
+## tile element
 
 
-``` syntax
+``` xml
 <tile>
   
   <!-- Child elements -->
@@ -27,10 +28,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </tile>
 ```
 
-## <span id="visual_element"></span><span id="VISUAL_ELEMENT"></span>可视元素
+## visual element
 
 
-``` syntax
+``` xml
 <visual
   version? = integer
   lang? = string
@@ -46,10 +47,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </visual>
 ```
 
-## <span id="binding_element"></span><span id="BINDING_ELEMENT"></span>绑定元素
+## binding element
 
 
-``` syntax
+``` xml
 <binding
   template = tileTemplateNameV3
   fallback? = tileTemplateNameV1
@@ -71,10 +72,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </binding>
 ```
 
-## <span id="image_element"></span><span id="IMAGE_ELEMENT"></span>图像元素
+## image element
 
 
-``` syntax
+``` xml
 <image
   src = string
   placement? = "inline" | "background" | "peek"
@@ -85,10 +86,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## <span id="text_element"></span><span id="TEXT_ELEMENT"></span>文本元素
+## text element
 
 
-``` syntax
+``` xml
 <text
   lang? = string
   hint-style? = textStyle
@@ -102,12 +103,12 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </text>
 ```
 
-textStyle 值： caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
+textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
 
-## <span id="group_element"></span><span id="GROUP_ELEMENT"></span>组元素
+## group element
 
 
-``` syntax
+``` xml
 <group>
 
   <!-- Child elements -->
@@ -116,10 +117,10 @@ textStyle 值： caption captionSubtle body bodySubtle base baseSubtle subtitle 
 </group>
 ```
 
-## <span id="subgroup_element"></span><span id="SUBGROUP_ELEMENT"></span>子组元素
+## subgroup element
 
 
-``` syntax
+``` xml
 <subgroup
   hint-weight? = [0-100]
   hint-textStacking? = "top" | "center" | "bottom" >
@@ -132,10 +133,10 @@ textStyle 值： caption captionSubtle body bodySubtle base baseSubtle subtitle 
 </subgroup>
 ```
 
-## <span id="related_topics"></span>相关主题
+## Related topics
 
 
-* [创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)
+* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
  
 
  
@@ -146,6 +147,6 @@ textStyle 值： caption captionSubtle body bodySubtle base baseSubtle subtitle 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

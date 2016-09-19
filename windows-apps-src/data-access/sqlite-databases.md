@@ -1,82 +1,82 @@
 ---
 author: mcleblanc
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
-title: "SQLite 数据库"
-description: "SQLite 是一种无服务器的嵌入式数据库引擎。 本文介绍了如何使用包含在 SDK 中的 SQLite 库、如何将自己的 SQLite 库打包在通用 Windows 应用中或从源生成该库。"
+title: SQLite databases
+description: SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dd628d16b3ee230ddc0c56b47fd381a518b8af00
+ms.openlocfilehash: 33148e8cfe301c6016d3f8a16bbcc904ca403d0e
 
 ---
-# SQLite 数据库
+# SQLite databases
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-SQLite 是一种无服务器的嵌入式数据库引擎。 本文介绍了如何使用包含在 SDK 中的 SQLite 库、如何将自己的 SQLite 库打包在通用 Windows 应用中或从源生成该库。
+SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source.
 
-## SQLite 是什么以及何时使用它
+## What SQLite is and when to use it
 
-SQLite 是一个开源的无服务器嵌入式数据库。 这些年来，它已作为面向存储在许多平台和设备上的数据的主要设备端技术出现。 通用 Windows 平台 (UWP) 支持并建议使用 SQLite 实现跨所有 Windows 10 设备系列的本地存储。
+SQLite is an open source, embedded, server-less database. Over the years it has emerged as the dominant device side technology for data storage on many platforms and devices. Universal Windows Platform (UWP) supports and recommends SQLite for local storage across all Windows 10 device families.
 
-SQLite 最适用于手机应用、面向 Windows 10 IoT 核心版（IoT 核心版）的嵌入式应用程序，以及作为企业关系数据库服务器 (RDBS) 数据的缓存。 它将满足大多数本地数据访问需求，除非这些数据需要大量的并发写入，或除了与大多数应用不同的大数据规模方案。
+SQLite is best suited for phone apps, embedded applications for Windows 10 IoT Core (IoT Core), and as a cache for enterprise relations database server (RDBS) data. It will satisfy most local data access needs unless they entail heavy concurrent writes, or a big data scale—scenarios unlikely for most apps.
 
-在媒体播放和游戏应用程序中，SQLite 还可用作文件格式来存储目录或其他资源（例如游戏级别），可以从 Web 服务器按原样下载该文件格式。
+In media playback and gaming applications, SQLite can also be used as a file format to store catalogues or other assets, such as levels of a game, that can be downloaded as-is from a web server.
 
-## 向 UWP 应用项目添加 SQLite
+## Adding SQLite to a UWP app project
 
-有三种方法将 SQLite 添加到 UWP 项目。
+There are three ways of adding SQLite to a UWP project.
 
-1.  [使用 SDK SQLite](#using-the-sdk-sqlite)
-2.  [将 SQLite 包含在应用包内](#including-sqlite-in-the-app-package)
-3.  [从 Visual Studio 中的源生成 SQLite](#building-sqlite-from-source-in-visual-studio)
+1.  [Using the SDK SQLite](#using-the-sdk-sqlite)
+2.  [Including SQLite in the App Package](#including-sqlite-in-the-app-package)
+3.  [Building SQLite from source in Visual Studio](#building-sqlite-from-source-in-visual-studio)
 
-### 使用 SDK SQLite
+### Using the SDK SQLite
 
-你可能想要使用包含在 UWP SDK 中的 SQLite 库来减小应用程序包的大小，并依赖于该平台来定期更新库。 使用 SDK SQLite 还可能带来性能优势（例如提供更快的启动时间），SQLite 库很有可能已加载在内存中以供系统组件使用。
+You may wish to use the SQLite library included in the UWP SDK to reduce the size of your application package, and rely on the platform to update the library periodically. Using the SDK SQLite might also lead to performance advantages such as faster launch times given the SQLite library is highly likely to already be loaded in memory for use by system components.
 
-若要引用 SDK SQLite，请将以下标头包含在项目中。 该标头还包含了平台中支持的 SQLite 版本。
+To reference the SDK SQLite, include the following header in your project. The header also contains the version of SQLite supported in the platform.
 
 `#include <winsqlite/winsqlite3.h>`
 
-配置要链接到 winsqlite3.lib 的项目。 在“解决方案资源管理器”****中，右键单击你的项目，依次选择“属性”****&gt;“链接器”****&gt;“输入”****，然后将 winsqlite3.lib 添加到“其他依赖项”****。
+Configure the project to link to winsqlite3.lib. In **Solution Explorer**, right-click your project and select **Properties** &gt; **Linker** &gt; **Input**, then add winsqlite3.lib to **Additional Dependencies**.
 
-### 2. 将 SQLite 包含在应用包中
+### 2. Including SQLite in the App Package
 
-你有时可能想要打包自己的库而非使用 SDK 版本，例如，你可能想要在跨平台客户端中使用与 SDK 中所含 SQLite 版本不同的特定版本。
+Sometimes, you might wish to package your own library instead of using the SDK version, for example, you might wish to use a particular version of it in your cross-platform clients that is different from the version of SQLite included in the SDK.
 
-在 SQLite.org 提供的通用 Windows 平台 Visual Studio 扩展上或通过“扩展和更新”工具安装 SQLite 库。
+Install the SQLite library on the Universal Windows Platform Visual Studio extension available from SQLite.org, or through the Extensions and Updates tool.
 
-![“扩展和更新”屏幕](./images/extensions-and-updates.png)
+![Extensions and Updates screen](./images/extensions-and-updates.png)
 
-安装扩展后，在代码中引用以下头文件。
+Once the extension is installed, reference the following header file in your code.
 
 `#include <sqlite3.h>`
 
-### 3. 从 Visual Studio 中的源生成 SQLite
+### 3. Building SQLite from source in Visual Studio
 
-你有时可能想要编译自己的 SQLite 二进制文件来使用[各编译器选项](http://www.sqlite.org/compile.html)减小文件大小、调整库的性能或定制为你的应用程序设置的功能。 SQLite 提供的选项可用于进行平台配置、设置默认参数值、设置大小限制、控制操作特点、启用正常情况下的功能关闭状态、禁用正常情况下的功能打开状态、省略功能、启用分析和调试以及在 Windows 上管理内存分配行为。
+Sometimes you might wish to compile your own SQLite binary to use [various compiler options](http://www.sqlite.org/compile.html) to reduce the file size, performance tune the library, or tailor the feature set to your application. SQLite provides options for platform configuration, setting default parameter values, setting size limits, controlling operating characteristics, enabling features normally turned off, disabling features normally turned on, omitting features, enabling analysis and debugging, and managing memory allocation behavior on Windows.
 
-*将源添加到 Visual Studio 项目*
+*Adding source to a Visual Studio project*
 
-SQLite 源代码可在 [SQLite.org 下载页面](https://www.sqlite.org/download.html)上进行下载。 将此文件添加到你希望在其中使用 SQLite 的应用程序的 Visual Studio 项目。
+The SQLite source code is available for download at the [SQLite.org download page](https://www.sqlite.org/download.html). Add this file to the Visual Studio project of the application you wish to use SQLite in.
 
-*配置预处理器*
+*Configure Preprocessors*
 
-除了任何其他[编译时间选项](http://www.sqlite.org/compile.html)以外，始终使用 SQLITE\_OS\_WINRT 和 SQLITE\_API=\_\_declspec(dllexport)。
+Always use SQLITE\_OS\_WINRT and SQLITE\_API=\_\_declspec(dllexport) in addition to any other [compile time options](http://www.sqlite.org/compile.html).
 
-![“SQLite 属性页”屏幕](./images/property-pages.png)
+![SQLite Property Pages screen](./images/property-pages.png)
 
-## 管理 SQLite 数据库
+## Managing a SQLite Database
 
-可以使用 SQLite C API 创建、更新和删除 SQLite 数据库。 SQLite C API 的详细信息位于 SQLite.org [SQLite C/C++ 接口简介](http://www.sqlite.org/cintro.html)页面。
+SQLite databases can be created, updated, and deleted with the SQLite C APIs. Details of the SQLite C API can be found at the SQLite.org [Introduction To The SQLite C/C++ Interface](http://www.sqlite.org/cintro.html) page.
 
-若要充分了解 SQLite 的工作方式，请从用于评估 SQL 语句的 SQL 数据库主要任务开始回顾。 请谨记两个对象：
+To gain sound understanding of how SQLite works, work backwards from the main task of the SQL database which is to evaluate SQL statements. There are two objects to keep in mind:
 
--   [数据库连接句柄](https://www.sqlite.org/c3ref/sqlite3.html)
--   [准备好的语句对象](https://www.sqlite.org/c3ref/stmt.html)
+-   [The database connection handle](https://www.sqlite.org/c3ref/sqlite3.html)
+-   [The prepared statement object](https://www.sqlite.org/c3ref/stmt.html)
 
-有六个接口来执行对这些对象的数据库操作：
+There are six interfaces to perform database operations on these objects:
 
 -   [sqlite3\_open()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/open.html)
 -   [sqlite3\_prepare()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/prepare.html)
@@ -95,6 +95,6 @@ SQLite 源代码可在 [SQLite.org 下载页面](https://www.sqlite.org/download
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

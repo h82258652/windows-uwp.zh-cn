@@ -1,33 +1,33 @@
 ---
 author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
-description: "本文将列出 UWP 应用的音频和视频编解码器以及格式支持。"
-title: "支持的编解码器"
+description: This article lists the audio and video codec and format support for UWP apps.
+title: Supported codecs
 translationtype: Human Translation
-ms.sourcegitcommit: b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc
-ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
 
 ---
 
-# 支持的编解码器
+# Supported codecs
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文将列出 UWP 应用的音频和视频编解码器以及格式支持。
+This article lists the audio and video codec and format support for UWP apps.
 
-在下表中，“D”表示解码器支持，而“E”表示编码器支持。
+In the tables below "D" indicates decoder support and "E" indicates encoder support.
 
-## 音频编解码器和格式支持
+## Audio codec & format support
 
-下表显示每个设备系列的音频编解码器和格式支持。
+The following tables show the audio codec and format support for each device family.
 
-**注意**  
--   其中表明 AMR-NB 支持，此编解码器在服务器 SKU 上不受支持。
+> [!NOTE] 
+> Where AMR-NB support is indicated, this codec is not supported on Server SKUs.
 
  
 
-### 桌面
+### Desktop
 
 <table>
 <colgroup>
@@ -47,7 +47,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">编解码器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -319,7 +319,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">WMA 语音</td>
+<td align="left">WMA Voice</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -338,7 +338,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-### 移动体验
+### Mobile
 
 <table>
 <colgroup>
@@ -358,7 +358,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">编解码器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -421,14 +421,14 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </tr>
 <tr class="even">
 <td align="left">AC3</td>
-<td align="left">D, 仅在 Lumia 图标上, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
-<td align="left">D, 仅在 Lumia 图标上, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
-<td align="left">D, 仅在 Lumia 图标上, 830, 930, 1520</td>
-<td align="left">D, 仅在 Lumia 图标上, 830, 930, 1520</td>
-<td align="left">D, 仅在 Lumia 图标上, 830, 930, 1520</td>
-<td align="left">D, 仅在 Lumia 图标上, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -630,7 +630,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">WMA 语音</td>
+<td align="left">WMA Voice</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -669,7 +669,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">编解码器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -941,7 +941,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">WMA 语音</td>
+<td align="left">WMA Voice</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -980,7 +980,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">编解码器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -1252,7 +1252,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">WMA 语音</td>
+<td align="left">WMA Voice</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1291,7 +1291,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">编解码器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -1563,7 +1563,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">WMA 语音</td>
+<td align="left">WMA Voice</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1582,17 +1582,17 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-## 视频编解码器和格式支持
+## Video codec & format support
 
-下表显示每个设备系列的视频编解码器和格式支持。
+The following tables show the video codec and format support for each device family.
 
-**注意**  
--   其中表明 H.265 支持，该设备系列内的所有设备不一定都受支持。
--   其中表明 MPEG-2/MPEG-1 支持，只在安装可选的 Microsoft DVD 通用 Windows 应用后才受支持。
+> [!NOTE] 
+> Where H.265 support is indicated, it is not necessarily supported by all devices within the device family.
+> Where MPEG-2/MPEG-1 support is indicated, it is only supported with the installation of the optional Microsoft DVD Universal Windows app.
 
  
 
-### 桌面
+### Desktop
 
 <table>
 <colgroup>
@@ -1613,7 +1613,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">编解码器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -1663,7 +1663,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">MPEG-4（第 2 部分）</td>
+<td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -1759,7 +1759,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">WMV9 屏幕</td>
+<td align="left">WMV9 Screen</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -1811,7 +1811,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
  
 
-### 移动体验
+### Mobile
 
 <table>
 <colgroup>
@@ -1832,7 +1832,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">编解码器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -1882,7 +1882,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">MPEG-4（第 2 部分）</td>
+<td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -1978,7 +1978,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">WMV9 屏幕</td>
+<td align="left">WMV9 Screen</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2051,7 +2051,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">编解码器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2101,7 +2101,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">MPEG-4（第 2 部分）</td>
+<td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2197,7 +2197,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">WMV9 屏幕</td>
+<td align="left">WMV9 Screen</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2270,7 +2270,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">编解码器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2320,7 +2320,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">MPEG-4（第 2 部分）</td>
+<td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2416,7 +2416,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">WMV9 屏幕</td>
+<td align="left">WMV9 Screen</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2489,7 +2489,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">编解码器/容器</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2539,7 +2539,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">MPEG-4（第 2 部分）</td>
+<td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2635,7 +2635,7 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">WMV9 屏幕</td>
+<td align="left">WMV9 Screen</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2697,6 +2697,6 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

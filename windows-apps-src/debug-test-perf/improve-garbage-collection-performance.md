@@ -1,81 +1,81 @@
 ---
 author: mcleblanc
 ms.assetid: F912161D-3767-4F35-88C0-E1ECDED692A2
-title: "改进垃圾回收性能"
-description: "使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。"
+title: Improve garbage collection performance
+description: Universal Windows Platform (UWP) apps written in C# and Visual Basic get automatic memory management from the .NET garbage collector. This section summarizes the behavior and performance best practices for the .NET garbage collector in UWP apps.
 translationtype: Human Translation
 ms.sourcegitcommit: 5f9626c644315884ea8605a4e69e7e580a44010b
-ms.openlocfilehash: 3fb6a0469a0e7488c40fc03bce8c90780b524656
+ms.openlocfilehash: 32290820d4732f1a8b28fd18682514e3948e0356
 
 ---
-# 提高垃圾回收性能
+# Improve garbage collection performance
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。 有关 .NET 垃圾回收器的工作原理以及调试和分析垃圾回收器性能的工具的详细信息，请参阅[垃圾回收](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx)。
+Universal Windows Platform (UWP) apps written in C# and Visual Basic get automatic memory management from the .NET garbage collector. This section summarizes the behavior and performance best practices for the .NET garbage collector in UWP apps. For more info on how the .NET garbage collector works and tools for debugging and analyzing garbage collector performance, see [Garbage collection](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx).
 
-**注意** 需要干涉垃圾回收器的默认行为是应用的一般内存问题的显著特征。 有关详细信息，请参阅[在 Visual Studio 2015 中调试时使用的内存使用工具](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx)。 本主题仅适用于 C# 和 Visual Basic。
-
- 
-
-垃圾回收器通过平衡托管堆的内存消耗与垃圾回收需要执行的工作量来确定运行时间。 垃圾回收器执行此操作的其中一种方式是将堆栈划分为几代且大部分时间仅回收堆栈的一部分。 在托管堆栈中有三代：
-
--   第 0 代。 这一代包含新分配的对象，除非它们为 85KB 或更大，在这种情况下，它们将属于大型对象堆栈。 大型对象堆栈使用第 2 代回收进行回收。 第 0 代回收是最经常出现的回收类型，它们清理生存期短的对象，如本地变量。
--   第 1 代。 这一代包含从第 0 代回收留存下来的对象。 这一代充当第 0 代和第 2 代之间的缓冲区。 第 1 代回收没有第 0 代回收出现得那么频繁，它们清理在先前的第 0 代回收期间处于活动状态的临时对象。 第 1 代回收也回收第 0 代。
--   第 2 代。 这一代包含从第 0 代和第 1 代回收留存下来的生存期长的对象。 第 2 代回收出现频率最少，它们回收整个托管堆栈，包括大型对象堆栈（包含 85KB 或更大的对象）。
-
-可以从两个方面来衡量垃圾回收器的性能：执行垃圾回收所花费的时间和托管堆栈的内存消耗。 如果你有一个小型应用，且堆栈大小小于 100MB，请专注于减少内存消耗。 如果你的应用的托管堆栈大于 100M，请仅专注于减少垃圾回收时间。 下面介绍如何帮助 .NET 垃圾回收器实现更好的性能。
-
-## 减少内存消耗
-
-### 释放引用
-
-对应用中的某个对象的引用会禁止回收该对象以及该对象引用的所有对象。 .NET 实时编译器可以很好地检测何时不再使用某个变量，以便该变量所保留的对象将可以回收。 但在某些情况下，虽然某些对象包含对其他对象的引用，但这种关系可能不是很明显，因为对象图的一部分可能归应用使用的库所有。 要了解用于查明哪些对象在垃圾回收之后还会留存下来的工具和技术，请参阅[垃圾回收和性能](https://msdn.microsoft.com/library/windows/apps/xaml/ee851764.aspx)。
-
-### 引发垃圾回收（如果有用）
-
-仅当你已衡量应用的性能且已确定引发回收将改进其性能之后，才引发垃圾回收。
-
-可以通过调用 [**GC.Collect(n)**](https://msdn.microsoft.com/library/windows/apps/xaml/y46kxc5e.aspx) 来引发某一代的垃圾回收，其中 n 是要回收的代（0、1 或 2）。
-
-**注意** 我们建议，不要强制在应用中进行垃圾回收，因为垃圾回收器使用许多启发式技术来确定执行回收的最佳时间，且强制进行回收在许多情况下会造成不必要的 CPU 消耗。 但是，如果你知道自己的应用中有大量不再使用的对象，并且你希望将此内存返回给系统，此时则适合强制进行垃圾回收。 例如，在游戏中，在某个加载序列结束时你可以引发回收，以在游戏开始之前释放内存。
- 
-为了避免意外引发过多垃圾回收，可以将 [**GCCollectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/bb495757.aspx) 设置为 **Optimized**。 这会指导垃圾回收器仅在确定回收将足够富有成效，可证明其合理性时才启动回收。
-
-## 缩短垃圾回收时间
-
-如果你已分析应用并观察到大量垃圾回收时间，此部分将适用。 与垃圾回收相关的暂停时间包括：运行单一垃圾回收过程所花费的时间；以及应用执行垃圾回收花费的总时间。 进行回收所花费的时间取决于回收器必须分析的实时数据量。 第 0 代和第 1 代在大小上是有限制的，但随着越来越多的长生存期对象在你的应用中处于活动状态，第 2 代会不断增多。 这意味着第 0 代和第 1 代的回收时间是有限制的，而第 2 代回收有可能会花费较长的时间。 垃圾回收运行的频率大多取决于你分配的内存量，因为垃圾回收通过释放内存来满足分配请求。
-
-垃圾回收有时会使你的应用暂停执行工作，但并不需要在它执行回收的整个时间内都暂停你的应用。 用户通常在你的应用中觉察不到暂停时间，特别是对于第 0 代和第 1 代回收。 .NET 垃圾回收器的[后台垃圾回收](https://msdn.microsoft.com/library/windows/apps/xaml/ee787088.aspx#background-garbage-collection)功能允许在你的应用运行的同时并发执行第 2 代回收，并且仅会使你的应用暂停很短的一段时间。 但并非始终可以将第 2 代回收作为后台回收执行。 在这种情况下，如果你有足够大的堆栈（超过 100MB），那么用户将可以觉察到暂停。
-
-频繁的垃圾回收可能会导致 CPU 消耗增加（并因此导致功率消耗增加）、加载时间更长或应用程序中的帧速率降低。 可使用下列技术缩短垃圾回收时间、减少托管 UWP 应用中与回收相关的暂停。
-
-### 减少内存分配
-
-如果不分配任何对象，那么垃圾回收器就不会运行，除非系统中存在低内存条件。 减少分配的内存的数量将直接导致垃圾回收频率降低。
-
-如果在你的应用的某些部分中，暂停完全不可取，那么你可以在某段性能不是很关键的时间内事先预分配必要的对象。 例如，游戏可能会在某个级别的加载屏幕期间分配进行游戏所需的所有对象，并且在游戏进行期间不进行任何分配。 这样可避免用户正在玩游戏时出现暂停，并可能会使帧速率更高、更一致。
-
-### 通过避免具有中等长度生存期的对象，减少第 2 代回收
-
-当你的应用中有真正短生存期和/或真正长生存期的对象时，分代垃圾回收执行得最好。 短生存期对象在开销较少的第 0 代和第 1 代回收中被回收，长生存期对象被提升至不经常进行回收的第 2 代。 长生存期对象是用于你的应用的整个持续时间的那些对象，或者用于你的应用的重要期间（如在某个特定页面或游戏级别期间）的那些对象。
-
-如果你经常创建具有临时生存时间但生存时间很长足以提升至第 2 代的对象，将会发生更多耗费资源的第 2 代回收。 你也许能够通过回收现有对象或更快地释放对象来减少第 2 代回收。
-
-具有中期生存时间的对象的常见示例是用于显示用户滚动查看的列表中的项。 如果对象是在将列表中的项滚动到视图中时创建的，且随着列表中的项滚动到视图之外而不再被引用，那么应用通常有大量第 2 代回收。 在此类情形下，你可以为主动显示给用户的数据预分配和重新使用一组对象，并随着列表中的项进入视图中后使用短生存期对象来加载信息。
-
-### 通过避免使用生存期短的大型对象来减少第 2 代回收
-
-任何 85KB 或更大的对象将分配在大型对象堆栈 (LOH) 上并作为第 2 代的一部分进行回收。 如果你有大于 85KB 的临时变量（例如缓冲区），第 2 代回收将会清理它们。 将临时变量限制为小于 85KB 会减少应用中第 2 代集合的数量。 一项常见的技术是创建缓冲池并重新使用池中的对象以避免大量临时分配。
-
-### 避免引用丰富的对象
-
-垃圾回收器通过追踪对象之间的引用（从你的应用中的根开始）来确定哪些对象是实时的。 有关详细信息，请参阅[垃圾回收期间发生了什么情况](https://msdn.microsoft.com/library/windows/apps/xaml/ee787088.aspx#what-happens-during-a-garbage-collection)。 如果某个对象包含许多引用，那么垃圾回收器将有更多工作要做。 一项常见的技术（特别是对于大型对象）是将引用丰富的对象转换为无引用的对象（例如，不是存储引用，而是存储索引）。 当然，此技术仅适合逻辑上可能这样做时。
-
-将对象引用替换为索引可能是对应用的一种破坏性复杂更改，且对于包含大量引用的大型对象最有效。 仅当你注意到在你的应用中存在与引用频繁的对象相关的大量垃圾回收时间时，才这样做。
+**Note**  Needing to intervene in the default behavior of the garbage collector is strongly indicative of general memory issues with your app. For more info, see [Memory Usage Tool while debugging in Visual Studio 2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). This topic applies to C# and Visual Basic only.
 
  
 
+The garbage collector determines when to run by balancing the memory consumption of the managed heap with the amount of work a garbage collection needs to do. One of the ways the garbage collector does this is by dividing the heap into generations and collecting only part of the heap most of the time. There are three generations in the managed heap:
+
+-   Generation 0. This generation contains newly allocated objects unless they are 85KB or larger, in which case they are part of the large object heap. The large object heap is collected with generation 2 collections. Generation 0 collections are the most frequently occurring type of collection and clean up short-lived objects such as local variables.
+-   Generation 1. This generation contains objects that have survived generation 0 collections. It serves as a buffer between generation 0 and generation 2. Generation 1 collections occur less frequently than generation 0 collections and clean up temporary objects that were active during previous generation 0 collections. A generation 1 collection also collects generation 0.
+-   Generation 2. This generation contains long-lived objects that have survived generation 0 and generation 1 collections. Generation 2 collections are the least frequent and collect the entire managed heap, including the large object heap which contains objects that are 85KB or larger.
+
+You can measure the performance of the garbage collector in 2 aspects: the time it takes to do the garbage collection, and the memory consumption of the managed heap. If you have a small app with a heap size less than 100MB then focus on reducing memory consumption. If you have an app with a managed heap larger than 100MB then focus on reducing the garbage collection time only. Here's how you can help the .NET garbage collector achieve better performance.
+
+## Reduce memory consumption
+
+### Release references
+
+A reference to an object in your app prevents that object, and all of the objects it references, from being collected. The .NET compiler does a good job of detecting when a variable is no longer in use so objects held onto by that variable will be eligible for collection. But in some cases it may not be obvious that some objects have a reference to other objects because part of the object graph might be owned by libraries your app uses. To learn about the tools and techniques to find out which objects survive a garbage collection, see [Garbage collection and performance](https://msdn.microsoft.com/library/windows/apps/xaml/ee851764.aspx).
+
+### Induce a garbage collection if it’s useful
+
+Induce a garbage collection only after you have measured your app's performance and have determined that inducing a collection will improve its performance.
+
+You can induce a garbage collection of a generation by calling [**GC.Collect(n)**](https://msdn.microsoft.com/library/windows/apps/xaml/y46kxc5e.aspx), where n is the generation you want to collect (0, 1, or 2).
+
+**Note**  We recommend that you don't force a garbage collection in your app because the garbage collector uses many heuristics to determine the best time to perform a collection, and forcing a collection is in many cases an unnecessary use of the CPU. But if you know that you have a large number of objects in your app that are no longer used and you want to return this memory to the system, then it may be appropriate to force a garbage collection. For example, you can induce a collection at the end of a loading sequence in a game to free up memory before gameplay starts.
+ 
+To avoid inadvertently inducing too many garbage collections, you can set the [**GCCollectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/bb495757.aspx) to **Optimized**. This instructs the garbage collector to start a collection only if it determines that the collection would be productive enough to be justified.
+
+## Reduce garbage collection time
+
+This section applies if you've analyzed your app and observed large garbage collection times. Garbage collection-related pause times include: the time it takes to run a single garbage collection pass; and the total time your app spends doing garbage collections. The amount of time it takes to do a collection depends on how much live data the collector has to analyze. Generation 0 and generation 1 are bounded in size, but generation 2 continues to grow as more long-lived objects are active in your app. This means that the collection times for generation 0 and generation 1 are bounded, while generation 2 collections can take longer. How often garbage collections run depends mostly on how much memory you allocate, because a garbage collection frees up memory to satisfy allocation requests.
+
+The garbage collector occasionally pauses your app to perform work, but doesn't necessarily pause your app the entire time it is doing a collection. Pause times are usually not user-perceivable in your app, especially for generation 0 and generation 1 collections. The [Background garbage collection](https://msdn.microsoft.com/library/windows/apps/xaml/ee787088.aspx#background-garbage-collection) feature of the .NET garbage collector allows Generation 2 collections to be performed concurrently while your app is running and will only pause your app for short periods of time. But it is not always possible to do a Generation 2 collection as a background collection. In that case, the pause can be user-perceivable if you have a large enough heap (more than 100MB).
+
+Frequent garbage collections can contribute to increased CPU (and therefore power) consumption, longer loading times, or decreased frame rates in your application. Below are some techniques you can use to reduce garbage collection time and collection-related pauses in your managed UWP app.
+
+### Reduce memory allocations
+
+If you don’t allocate any objects then the garbage collector doesn’t run unless there is a low memory condition in the system. Reducing the amount of memory you allocate directly translates to less frequent garbage collections.
+
+If in some sections of your app pauses are completely undesirable, then you can pre-allocate the necessary objects beforehand during a less performance-critical time. For example, a game might allocate all of the objects needed for gameplay during the loading screen of a level and not make any allocations during gameplay. This avoids pauses while the user is playing the game and can result in a higher and more consistent frame rate.
+
+### Reduce generation 2 collections by avoiding objects with a medium-length lifetime
+
+Generational garbage collections perform best when you have really short-lived and/or really long-lived objects in your app. Short lived objects are collected in the cheaper generation 0 and generation 1 collections, and objects that are long-lived get promoted to generation 2, which is collected infrequently. Long-lived objects are those that are in use for the entire duration of your app, or during a significant period of your app, such as during a specific page or game level.
+
+If you frequently create objects that have a temporary lifetime but live long enough to be promoted to generation 2, then more of the expensive generation 2 collections happen. You may be able to reduce generation 2 collections by recycling existing objects or releasing objects more quickly.
+
+A common example of objects with medium-term lifetime is objects that are used for displaying items in a list that a user scrolls through. If objects are created when items in the list are scrolled into view, and are no longer referenced as items in the list are scrolled out of view, then your app typically has a large number of generation 2 collections. In situations like this you can pre-allocate and reuse a set of objects for the data that is actively shown to the user, and use short-lived objects to load info as items in the list come into view.
+
+### Reduce generation 2 collections by avoiding large-sized objects with short lifetimes
+
+Any object that is 85KB or larger is allocated on the large object heap (LOH) and gets collected as part of generation 2. If you have temporary variables, such as buffers, that are greater than 85KB, then a generation 2 collection cleans them up. Limiting temporary variables to less than 85KB reduces the number of generation 2 collections in your app. One common technique is to create a buffer pool and reuse objects from the pool to avoid large temporary allocations.
+
+### Avoid reference-rich objects
+
+The garbage collector determines which objects are live by following references between objects, starting from roots in your app. For more info, see [What happens during a garbage collection](https://msdn.microsoft.com/library/windows/apps/xaml/ee787088.aspx#what-happens-during-a-garbage-collection). If an object contains many references, then there is more work for the garbage collector to do. A common technique (especially with large objects) is to convert reference rich objects into objects with no references (e.g., instead of storing a reference, store an index). Of course this technique works only when it is logically possible to do so.
+
+Replacing object references with indexes can be a disruptive and complicated change to your app and is most effective for large objects with a large number of references. Do this only if you are noticing large garbage collection times in your app related to reference-heavy objects.
+
+ 
+
  
 
 
@@ -84,6 +84,6 @@ ms.openlocfilehash: 3fb6a0469a0e7488c40fc03bce8c90780b524656
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

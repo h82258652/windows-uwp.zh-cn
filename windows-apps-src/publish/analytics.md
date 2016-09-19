@@ -1,81 +1,85 @@
 ---
 author: jnHs
-Description: "你可以在 Windows 开发人员中心仪表板中查看应用的详细分析。"
-title: "分析"
+Description: You can view detailed analytics for your apps in the Windows Dev Center dashboard.
+title: Analytics
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 translationtype: Human Translation
-ms.sourcegitcommit: dfaf348956b19746aa5332aeb7ad5cbc4b224e8c
-ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 
 ---
 
-# 分析
+# Analytics
 
-你可以在 Windows 开发人员中心仪表板中查看应用的详细分析。 可以通过统计信息和图表了解你的应用的表现（从你已拥有的客户数量到客户使用你的应用的方式）以及他们对你的应用的评价。 你还可以找到应用运行状况、广告使用情况等信息。 在仪表板中查看报告，或[下载所需的报告](download-analytic-reports.md)以脱机分析数据。 我们还为你提供了几种[无需使用仪表板即可访问分析数据](#no-dashboard)的方法。
+You can view detailed analytics for your apps in the Windows Dev Center dashboard. Statistics and charts let you know how your apps are doing, from how many customers you've reached to how they're using your app and what they have to say about it. You can also find info on app health, ad usage, and more. View the reports in the dashboard, or [download the reports you need](download-analytic-reports.md) to analyze your data offline. We also provide several ways for you to [access your analytics data without using the dashboard](#no-dashboard).
 
-> **注意** &nbsp;&nbsp;除仪表板报告之外，你也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式访问某些分析数据。
+> [!NOTE]
+> In addition to the dashboard reports, you can programmatically access some analytics data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-## 针对所有应用的分析
+## Analytics for all your apps
 
+Your dashboard overview page also includes a roll-up view to gather details about all your apps. The stats shown on the overview page will vary, depending on your apps.
 
-你的仪表板概述页面还包含一个用于收集有关所有应用的详细信息的汇总视图。 概述页面上显示的统计信息将有所不同，具体取决于你的应用。
+When you [download analytic reports](download-analytic-reports.md), you also have the option to download reports about all of your apps. Note that you will need to access the **Download reports** page in the **Analytics** section for one of your apps, but you are not limited to downloading data only for that particular app.
 
-[下载分析报告](download-analytic-reports.md)时，你也可以选择下载有关所有应用的报告。 请注意，你将需要针对你的应用之一访问“分析”****部分中的“下载报告”****页面，但你不会仅限于下载该特定应用的数据。
+## Available reports for each app
 
-## 每个应用的可用报告
+In this section you'll find details about the info presented in each of the following reports:
 
+-   [Acquisitions report](acquisitions-report.md)
+-   [Health report](health-report.md)
+-   [Ratings report](ratings-report.md)
+-   [Reviews report](reviews-report.md)
+-   [Feedback report](feedback-report.md)
+-   [Usage report](usage-report.md)
+-   [Add-on acquisitions report](add-on-acquisitions-report.md)
+-   [Ad mediation report](ad-mediation-report.md)
+-   [Advertising performance report](advertising-performance-report.md)
+-   [App install ads report](app-install-ads-reports.md)
+-   [Channels and conversions report](channels-and-conversions-report.md)
 
-在本部分中，你将看到以下每个报告中所显示信息的详情：
+> [!NOTE]
+> You may not see data in all of these reports, depending on your app's specific features and implementation.
 
--   [购置报告](acquisitions-report.md)
--   [运行状况报告](health-report.md)
--   [分级报告](ratings-report.md)
--   [评价报告](reviews-report.md)
--   [反馈报告](feedback-report.md)
--   [使用情况报告](usage-report.md)
--   [IAP 购置报告](iap-acquisitions-report.md)
--   [广告中介报告](ad-mediation-report.md)
--   [广告性能报告](advertising-performance-report.md)
--   [应用安装广告报告](app-install-ads-reports.md)
--   [通道和转换报告](channels-and-conversions-report.md)
+## Page and section filters
 
-> **注意** &nbsp;&nbsp;你可能看不到所有报告中的数据，具体取决于应用的特定功能和实现。
+Each report includes filters that you can use to drill down into your data. Near the top of the page you'll see **Apply filters**. You can use these filters to limit or expand the scope of all of the charts and info on the page.
 
-## 页面和部分筛选器
+Within each particular chart, you may also see individual section filters. These will limit the data shown only for that particular chart.
 
-每个报告都包含可用于深入了解数据的筛选器。 你将在页面顶部附近看到“应用筛选器”****。 你可以使用这些筛选器限制或扩展页面上所有图表和信息的范围。
-
-在每个特定图表中，你可能还会看到个别部分筛选器。 这些筛选器将限制为仅针对该特定图表显示数据。
-
-特定筛选器因报告而异。 本部分中的主题将介绍哪些筛选器可用，以及每个报告页面上的其他数据。
+The specific filters vary by report. The topics in this section will explain which filters are available and will describe the other data on the page for each report.
 
 <span id="no-dashboard"/>
-## 不使用开发人员中心仪表板访问分析数据
+## Access analytics data without using the Dev Center dashboard
 
-除了仪表板上的分析报告，还有其他几种方法可以访问你的分析数据。
+In addition to the analytic reports on the dashboard, there are several other ways to access your analytics data.
 
-### Windows 应用商店分析 API
+### Windows Store analytics API
 
-使用 [Windows 应用商店分析 API](../monetize/access-analytics-data-using-windows-store-services.md)，针对你的应用以编程方式检索分析数据。 此 REST API 使你可以针对应用和 IAP 购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
+Use the [Windows Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) to programmatically retrieve analytics data for your apps. This REST API enables you to retrieve data for app and add-on acquisitions, errors, app ratings and reviews. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 
-### 适用于 Power BI 的 Windows 开发人员中心内容包
+### Windows Dev Center content pack for Power BI
 
-使用[适用于 Power BI 的 Windows 开发人员中心内容包](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)来浏览并监视 Power BI 中的开发人员中心分析数据。 Power BI 是一种基于云的业务分析服务，可为你提供单个视图的业务数据。
+Use the [Windows Dev Center content pack for Power BI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/) to explore and monitor your Dev Center analytics data in Power BI. Power BI is a cloud-based business analytics service that gives you a single view of your business data.
 
-使用以下资源开始使用 Power BI 来访问分析数据。
+Use the following resources to get started using Power BI to access your analytics data.
 
-* [注册 Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-self-service-signup-for-power-bi/)
-* [了解如何使用 Power BI](https://powerbi.microsoft.com/guided-learning/)
-* [了解如何使用适用于 Power BI 的 Windows 开发人员中心内容包连接到分析数据](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
+* [Sign up for Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-self-service-signup-for-power-bi/)
+* [Learn how to use Power BI](https://powerbi.microsoft.com/guided-learning/)
+* [Learn how to use the Windows Dev Center content pack for Power BI to connect to your analytics data](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
-> **注意** &nbsp;&nbsp;为了连接到适用于 Power BI 的 Windows 开发人员中心内容包，我们建议你从与开发人员中心帐户相关联的 Azure AD 目录指定凭据。 如果你使用 Microsoft 帐户凭据，Power BI 中的分析数据不会自动刷新，而是需要登录到 Power BI 才能刷新数据。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以[免费获取它](http://go.microsoft.com/fwlink/p/?LinkId=703757)。 有关将开发人员中心帐户与 Azure AD 相关联的详细信息，请参阅[管理帐户用户](manage-account-users.md)。
+> [!NOTE]
+> To connect to the Windows Dev Center content pack for Power BI, we recommend that you specify credentials from an Azure AD directory that is associated with your Dev Center account. If you use your Microsoft account credentials, your analytics data in Power BI does not refresh automatically, and you will need to sign in to Power BI to refresh your data. If your organization already uses Office 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can [get it for free](http://go.microsoft.com/fwlink/p/?LinkId=703757). For more information about associating your Dev Center account with an Azure AD, see [Manage account users](manage-account-users.md).
 
-### 开发人员中心应用
+### Dev Center app
 
-安装[开发人员中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)应用，以快速查看有关你的应用在所有 Windows 10 设备上的运行状况和性能的详细信息。 
+Install the [Dev Center](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) app to quickly view details about the health and performance of your apps on any Windows 10 device. 
+
+## Related topics
+- [Publish Windows apps](index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

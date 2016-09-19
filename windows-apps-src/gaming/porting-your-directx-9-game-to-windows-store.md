@@ -1,45 +1,45 @@
 ---
 author: mtoepke
-title: "从 DirectX 9 移植到通用 Windows 平台 (UWP)"
-description: "本部分包含有关将 DirectX 9 游戏移植到通用 Windows 平台 (UWP) 的文章、概述以及操作实例。"
+title: Port from DirectX 9 to Universal Windows Platform (UWP)
+description: This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to Universal Windows Platform (UWP).
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1cb77db78fe368c567990c9521122b42ef10ec65
+ms.openlocfilehash: 3988d0cbfb3b7e585622af45c0d7ff3589ee020d
 
 ---
 
-# 从 DirectX 9 移植到通用 Windows 平台 (UWP)
+# Port from DirectX 9 to Universal Windows Platform (UWP)
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本部分包含有关将 DirectX 9 游戏移植到通用 Windows 平台 (UWP) 的文章、概述以及操作实例。
+This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to Universal Windows Platform (UWP).
 
-##  将 DirectX 9 游戏移植到 UWP
-
-
--   传达至 UWP 用户，并销售游戏。
--   面向广泛的设备，所有这些设备都至少支持 Direct3D 9.1 图形功能集。
--   了解新的、宝贵的 Windows 游戏开发技巧 - 包括 Direct3D 11、统一的着色器模型、Windows API、XAudio2、触控输入、C++/CX 以及更多内容。
-
-## 从何处开始？
+##  Port your DirectX 9 game to UWP
 
 
--   访问[从 DirectX 9 移动到 DirectX 11 和 UWP](porting-considerations.md)，了解应该在游戏移植项目中进行哪些规划、 Direct3D 11 概念，以及如何将熟悉的功能映射到 DirectX 11 UWP 应用。
--   遵照[将简单的 Direct3D 9 应用移植到 DirectX 11 和 UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 操作实例文章中的内容，对 Direct3D 9 和 Direct3D 11 图形框架进行直接比较。 本操作实例还包含用于设置应用窗口和视口的代码。
--   有关从 DirectX 9 进行移植的常见问题解答，请参阅 [DirectX 11 移植 FAQ](directx-porting-faq.md)。
+-   Reach the UWP audiences and monetize your game.
+-   Target a wide array of devices, all of which support at least the Direct3D 9.1 set of graphics features.
+-   Learn valuable new Windows game development skills - including Direct3D 11, the unified shader models, Windows APIs, XAudio2, touch input, C++/CX and more.
 
- 
+## Where do I start?
+
+
+-   Visit [Moving from DirectX 9 to DirectX 11 and UWP](porting-considerations.md) to learn what you should plan for in your game porting project, catch up on Direct3D 11 concepts, and understand how the features you're familiar with map to DirectX 11 UWP apps.
+-   Follow the [Port a simple Direct3D 9 app to DirectX 11 and UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough article for a direct comparison of Direct3D 9 and Direct3D 11 graphics frameworks. This walkthrough also has code for setting up an app window and viewport.
+-   See the [DirectX 11 porting FAQ](directx-porting-faq.md) for answers to common questions about porting from DirectX 9.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,107 +1,106 @@
 ---
 author: WilliamsJason
-title: "Device Portal Fiddler API 参考"
-description: "了解如何以编程方式启用/禁用 Fiddler 跟踪。"
-area: Xbox
+title: Device Portal Fiddler API reference
+description: Learn how to enable/disable Fiddler tracing programatically.
 translationtype: Human Translation
-ms.sourcegitcommit: eeb3bc5c4843fe86c54930315d4e112166664e45
-ms.openlocfilehash: 435a00eaf9c1f0d8e0c0043229c2adc80638ace3
+ms.sourcegitcommit: 3cc2a4bd1859e46a73f3e806489eac7381fa6c17
+ms.openlocfilehash: bd215058c71118d8b3e5ce81e2302ce8b151c3f6
 
 ---
 
-# Fiddler 设置 API 参考   
-可以使用此 REST API 在开发工具包上启用和禁用 Fiddler 网络跟踪。
+# Fiddler settings API reference   
+You can enable and disable Fiddler network tracing on your devkit using this REST API.
 
-## 启用 Fiddler 跟踪
+## Enable Fiddler tracing
 
-**请求**
+**Request**
 
-可以使用以下请求为开发工具包启用 Fiddler 跟踪。  请注意，必须重启设备才能使此操作生效。
+You can enable Fiddler tracing for the devkit using the following request.  Note that the device must be restarted before this takes effect.
 
-方法      | 请求 URI
+Method      | Request URI
 :------     | :-----
 POST | /ext/fiddler
 <br />
-**URI 参数**
+**URI parameters**
 
-可以在请求 URI 上指定以下附加参数：
+You can specify the following additional parameters on the request URI:
 
-| URI 参数      | 说明     | 
+| URI parameter      | Description     | 
 | ------------------ |-----------------|
-| proxyAddress       | 运行 Fiddler 的设备的 IP 地址或主机名 |
-| proxyPort          | Fiddler 用于监视流量的端口。 默认为 8888 |
-| updateCert（可选）| 指示是否提供根 Fiddler 证书的布尔值。 如果 Fiddler 从未在此开发工具包上配置或曾针对其他主机进行配置，则此值必须为 true。  |
+| proxyAddress       | The IP address or hostname of the device running Fiddler |
+| proxyPort          | The port which Fiddler is using for monitoring traffic. Defaults to 8888 |
+| updateCert (optional)| A boolean value indicating if the root Fiddler cert is provided. This must be true if Fiddler has never been configured on this devkit or was configured for a different host.  |
 <br>
 
-**请求头**
+**Request headers**
 
-- 无
+- None
 
-**请求正文**
+**Request body**
 
-- 如果 updateCert 为 false 或未提供，则为 None。 否则为包含 FiddlerRoot.cer 文件的多方一致 http 正文。
+- None if updateCert is false or not provided. Multi-part conforming http body containing the FiddlerRoot.cer file otherwise.
 
-**响应**   
+**Response**   
 
-- 无  
+- None  
 
-**状态代码**
+**Status code**
 
-此 API 具有以下预期状态代码。
+This API has the following expected status codes.
 
-HTTP 状态代码      | 说明
+HTTP status code      | Description
 :------     | :-----
-204 | 已接受启用 Fiddler 的请求。 将在设备下次重启时启用 Fiddler。
-4XX | 错误代码
-5XX | 错误代码
+204 | The request to enable Fiddler was accepted. Fiddler will be enabled the next time the device reboots.
+4XX | Error codes
+5XX | Error codes
 
-## 在开发工具包上禁用 Fiddler 跟踪
+## Disable Fiddler tracing on the devkit
 
-**请求**
+**Request**
 
-可以使用以下请求在设备上禁用 Fiddler 跟踪。 请注意，必须重启设备才能使此操作生效。
+You can disable Fiddler tracing on the device using the following request. Note that the device must be restarted before this takes effect.
 
-方法      | 请求 URI
+Method      | Request URI
 :------     | :-----
 DELETE | /ext/fiddler
 <br />
-**URI 参数**
+**URI parameters**
 
-- 无
+- None
 
-**请求标头**
+**Request headers**
 
-- 无
+- None
 
-**请求正文**   
+**Request body**   
 
-- 无
+- None
 
-**响应**   
+**Response**   
 
-- 无 
+- None 
 
-**状态代码**
+**Status code**
 
-此 API 具有以下预期状态代码。
+This API has the following expected status codes.
 
-HTTP 状态代码      | 说明
+HTTP status code      | Description
 :------     | :-----
-204 | 禁用 Fiddler 跟踪的请求已成功。 将在设备下次重启时禁用跟踪。
-4XX | 错误代码
-5XX | 错误代码
+204 | The request to disable Fiddler tracing was successful. Tracing will be disabled on the next reboot of the device.
+4XX | Error codes
+5XX | Error codes
 
 <br />
-**可用设备系列**
+**Available device families**
 
 * Windows Xbox
 
-## 另请参阅
-- [为 Xbox 上的 UWP 配置 Fiddler](uwp-fiddler.md)
+## See also
+- [Configuring Fiddler for UWP on Xbox](uwp-fiddler.md)
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

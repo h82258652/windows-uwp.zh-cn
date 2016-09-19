@@ -1,33 +1,35 @@
 ---
 author: mcleanbyron
-Description: "通过应用商店商业平台提供可消费应用内产品（这些项目可以进行购买、使用和再次购买），以便为客户提供强大可靠的购买体验。"
-title: "启用可消费应用内产品购买"
+Description: Offer consumable in-app products&\#8212;items that can be purchased, used, and purchased again&\#8212;through the Store commerce platform to provide your customers with a purchase experience that is both robust and reliable.
+title: Enable consumable in-app product purchases
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
 keywords: in-app offer code sample
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 25f09e043d61f1705f9f0a4fa34114fd06166fa4
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 15092f726283f36c8dc5970157d3cd54dea9b837
 
 ---
 
-# 启用可消费应用内产品购买
+# Enable consumable in-app product purchases
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-通过应用商店商业平台提供可消费应用内产品（这些项目可以进行购买、使用和再次购买），以便为客户提供强大可靠的购买体验。 这对游戏内货币（金子、金币等）等来说尤为有用，可以购买此类货币，然后将其用于购买特定道具。
 
-## 先决条件
+>**Note**&nbsp;&nbsp;This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage add-ons (also known as in-app products or IAPs) instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
 
--   本主题介绍可消费应用内产品的购买和实施报告。 如果你不熟悉应用内产品，请查看[启用应用内产品购买](enable-in-app-product-purchases.md)，了解许可证相关信息以及如何在应用商店中恰当地列出应用内产品。
--   首次编码和测试新应用内产品时，必须使用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 对象而不是 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 对象。 这样，你可以使用对许可证服务器的模拟调用验证许可证逻辑，而不是调用实时服务器。 若要实现此目的，需要在 %userprofile%\\AppData\\local\\packages\\&lt;程序包名称&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData 中自定义名为“WindowsStoreProxy.xml”的文件。 Microsoft Visual Studio 仿真器会在你首次运行应用时创建此文件，你也可以在运行时加载一个自定义文件。 有关详细信息，请参阅 **CurrentAppSimulator**。
--   本主题还参考了[应用商店示例](http://go.microsoft.com/fwlink/p/?LinkID=627610)中提供的代码示例。 若要获得为通用 Windows 平台 (UWP) 应用提供的不同货币化选项的实际体验，此示例是一个不错的选择。
+Offer consumable in-app products—items that can be purchased, used, and purchased again—through the Store commerce platform to provide your customers with a purchase experience that is both robust and reliable. This is especially useful for things like in-game currency (gold, coins, etc.) that can be purchased and then used to purchase specific power-ups.
 
-## 步骤 1：提出购买请求
+## Prerequisites
 
-初始购买请求是通过 [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) 提出的，其方式与通过应用商店提出的任何其他购买相似。 可消费应用内产品的不同之处在于在成功购买后，客户无法再次购买同一个产品，直到应用通知应用商店之前的购买已成功实施。 应用负责实施购买的消费品，并通知应用商店该项实施。
+-   This topic covers the purchase and fulfillment reporting of consumable in-app products. If you are unfamiliar with in-app products, please review [Enable in-app product purchases](enable-in-app-product-purchases.md) to learn about license information, and how to properly list in-app products in the Store.
+-   When you code and test new in-app products for the first time, you must use the [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) object instead of the [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) object. This way you can verify your license logic using simulated calls to the license server instead of calling the live server. To do this, you need to customize the file named "WindowsStoreProxy.xml" in %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. The Microsoft Visual Studio simulator creates this file when you run your app for the first time—or you can also load a custom one at runtime. For more info, see **CurrentAppSimulator**.
+-   This topic also references code examples provided in the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). This sample is a great way to get hands-on experience with the different monetization options provided for Universal Windows Platform (UWP) apps.
 
-下面的示例显示了一个可消费应用内产品的购买请求。 你会注意到代码注释，指明应用何时应该为下面两种不同情况的可消费应用内产品执行本地实施：已成功提出请求的情况和请求因同一产品未实施购买而失败的情况。
+## Step 1: Making the purchase request
+
+The initial purchase request is made with [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) like any other purchase made through the Store. The difference for consumable in-app products is that after a successful purchase, a customer cannot purchase the same product again until the app has notified the Store that the previous purchase was successfully fulfilled. It's your app's responsibility to fulfill purchased consumables and notify the Store of the fulfillment.
+
+The following example shows a consumable in-app product purchase request. You'll notice code comments indicating when your app should conduct its local fulfillment of the consumable in-app product for two different scenarios—when the request is successful, and when the request is not successful because of an unfulfilled purchase of that same product.
 
 ```CSharp
 PurchaseResults purchaseResults = await CurrentAppSimulator.RequestProductPurchaseAsync("product1");
@@ -50,13 +52,13 @@ switch (purchaseResults.Status)
 }
 ```
 
-## 步骤 2：跟踪可消费应用内产品的本地实施
+## Step 2: Tracking local fulfillment of the consumable
 
-当授权客户访问可消费应用内产品时，持续跟踪实施的产品 (*productId*) 以及跟踪与实施相关联的交易 (*transactionId*) 非常重要。
+When granting your customer access to the consumable in-app product, it's important to keep track of which product is fulfilled (*productId*), and which transaction that fulfillment is associated with (*transactionId*).
 
-**重要提示** 应用负责向应用商店准确报告实施情况。 对于维护客户公平、可靠的购买体验来说，此步骤非常重要。
+**Important**  Your app is responsible for the accurately reporting fulfillment to the Store. This step is essential to maintaining a fair and reliable purchase experience for your customers.
 
-以下示例说明了使用上一步骤中 [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) 调用的 [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392) 属性，以标识要实施的已购买产品。 使用一个数组将产品信息存储在可供稍后引用的位置中，以便确认成功完成本地的实施。
+The following example demonstrates use of the [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392) properties from the [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) call in the previous step to identify the purchased product for fulfillment. An array is used to store the product information in a location that can later be referenced to confirm that local fulfillment was successful.
 
 ```CSharp
 private void GrantFeatureLocally(string productId, Guid transactionId)
@@ -71,9 +73,9 @@ private void GrantFeatureLocally(string productId, Guid transactionId)
 }
 ```
 
-下一个示例显示了如何使用上一个示例的数组来访问产品 ID/交易 ID 对，稍后将使用它们向应用商店报告实施情况。
+This next example shows how to use the array from the previous example to access product ID/transaction ID pairs that are later used when reporting fulfillment to the Store.
 
-**重要提示** 无论应用使用何种方法来跟踪和确认实施，应用都必须恪尽职守，确保客户不会为没有收到的项目付费。
+**Important**  Whatever methodology your app uses to track and confirm fulfillment, your app must demonstrate due diligence to ensure that your customers are not charged for items they haven't received.
 
 ```CSharp
 private Boolean IsLocallyFulfilled(string productId, Guid transactionId)
@@ -82,21 +84,21 @@ private Boolean IsLocallyFulfilled(string productId, Guid transactionId)
 }
 ```
 
-## 步骤 3：向应用商店报告产品实施情况
+## Step 3: Reporting product fulfillment to the Store
 
-完成本地实施后，应用必须调用 [**ReportConsumableFulfillmentAsync**](https://msdn.microsoft.com/library/windows/apps/dn263380)，其中包含 *productId* 和包括产品购买在内的交易。
+After local fulfillment is completed, your app must make a [**ReportConsumableFulfillmentAsync**](https://msdn.microsoft.com/library/windows/apps/dn263380) call that includes the *productId* and the transaction the product purchase is included in.
 
-**重要提示** 如果无法向应用商店报告已实施的可消费应用内产品，则会导致在上次购买的实施情况得到报告之前，用户无法再次购买该产品。
+**Important**  Failure to report fulfilled consumable in-app products to the Store will result in the user being unable to purchase that product again until fulfillment for the previous purchase is reported.
 
 ```CSharp
 FulfillmentResult result = await CurrentAppSimulator.ReportConsumableFulfillmentAsync("product2", product2TempTransactionId);
 ```
 
-## 步骤 4：标识未实施的购买
+## Step 4: Identifying unfulfilled purchases
 
-你的应用可以随时使用 [**GetUnfulfilledConsumablesAsync**](https://msdn.microsoft.com/library/windows/apps/dn263379) 方法来检查是否存在尚未实施的可消费应用内产品。 你应该定期调用此方法，以便检查是否存在由未参与的应用事件（如网络连接中断或应用终止）所导致的未实施的消费品。
+Your app can use the [**GetUnfulfilledConsumablesAsync**](https://msdn.microsoft.com/library/windows/apps/dn263379) method to check for unfulfilled consumable in-app products at any time. This method should be called on a regular basis to check for unfulfilled consumables that exist due to unanticipated app events like an interruption in network connectivity or app termination.
 
-以下示例说明了如何使用 [**GetUnfulfilledConsumablesAsync**](https://msdn.microsoft.com/library/windows/apps/dn263379) 枚举未实施的消费品，以及应用如何通过此列表进行迭代以便完成本地实施。
+The following example demonstrates how [**GetUnfulfilledConsumablesAsync**](https://msdn.microsoft.com/library/windows/apps/dn263379) can be used to enumerate unfulfilled consumables, and how your app can iterate through this list to complete local fulfillment.
 
 ```CSharp
 private async void GetUnfulfilledConsumables()
@@ -112,10 +114,10 @@ private async void GetUnfulfilledConsumables()
 }
 ```
 
-## 相关主题
+## Related topics
 
-* [启用应用内产品购买](enable-in-app-product-purchases.md)
-* [应用商店示例（演示试用版和应用内购买）](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+* [Enable in-app product purchases](enable-in-app-product-purchases.md)
+* [Store sample (demonstrates trials and in-app purchases)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197)
  
 
@@ -123,10 +125,6 @@ private async void GetUnfulfilledConsumables()
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

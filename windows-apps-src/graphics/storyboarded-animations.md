@@ -5,7 +5,7 @@ title: "情节提要动画"
 description: "情节提要动画不仅仅是视觉动画。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
+ms.openlocfilehash: 361765de700af2a701e16fc27a5867d80907865a
 
 ---
 # 情节提要动画
@@ -333,6 +333,6 @@ myStoryBoard.Begin()
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

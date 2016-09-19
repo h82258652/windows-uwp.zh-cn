@@ -1,62 +1,62 @@
 ---
 author: QuinnRadich
-Description: "设计在应用中被动显示有效帮助。"
-title: "有关设计应用内帮助的指南。"
+Description: Design effective help to be displayed reactively inside your app.
+title: Guidelines for designing in-app help.
 label: In-app help
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 7edad75b1639768023eb8add1e23fe0aafb0b674
+ms.sourcegitcommit: 0d13ca6850df1b575eddebdb36b345423392664f
+ms.openlocfilehash: 0c606e3b5be2889e83efce77d4c98ca646fef725
 
 ---
 
-# 应用内帮助页
+# In-app help pages
 
-在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。
+Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.
 
-## <span id="when_to_use_in_app_help"></span><span id="WHEN_TO_USE_IN_APP_HELP"></span>何时使用应用内帮助页
+## <span id="when_to_use_in_app_help"></span><span id="WHEN_TO_USE_IN_APP_HELP"></span>When to use in-app help pages
 
-应用内帮助应是为用户显示帮助的默认方法。 它应该用于任何简单、直观并且不会向用户引入新内容的帮助。 说明、建议以及提示和技巧均适用于应用内帮助。
+In-app help should be the default method of displaying help for the user. It should be used for any help that is simple, straightforward, and does not introduce new content to the user. Instructions, advice, and tips and tricks are all suitable for in-app help.
 
-复杂说明或教程难于快速参考，并且会占用大量空间。 因此，它们应在外部托管，并且不能合并到应用本身。
+Complex instructions or tutorials are not easy to reference quickly, and they take up large amounts of space, so these materials should be hosted externally, and not incorporated into the app itself.
 
-用户不必寻找有关基本说明的帮助或发现新功能。 如果你需要拥有教导用户的帮助，请使用说明性 UI。
+Users should not have to seek out help for basic instructions or to discover new features. If you need to have help that educates users, use instructional UI.
 
-## <span id="types_of_in_app_help"></span><span id="TYPES_OF_IN_APP_HELP"></span>应用内帮助的类型
+## <span id="types_of_in_app_help"></span><span id="TYPES_OF_IN_APP_HELP"></span>Types of in-app help
 
-虽然应用内帮助全都遵守相同的设计和可用性一般原则，但它们可以多种形式呈现。
+In-app help can come in several forms, though they all follow the same general principles of design and usability.
 
-#### <span id="help_pages"></span><span id="HELP_PAGES"></span>帮助页
+### <span id="help_pages"></span><span id="HELP_PAGES"></span>Help pages
 
-在应用内拥有一个或多个单独的帮助页可简单快速地显示有用说明。
+Having a separate page or pages of help within your app is a quick and easy way of displaying useful instructions:
 
--   **保持简单：**大型帮助主题库不太实用，并且不适用于应用内帮助。
--   **保持一致：**确保用户在应用的任何部分都可通过相同方式转到帮助页面。 他们应永远不必进行搜索。
--   **用户扫描，而非阅读：**因为用户寻找的帮助可能在与其他帮助主题的相同页面上，所以请确保他们可以轻松知晓需要关注哪一个帮助。
-
-
-#### <span id="popups"></span><span id="POPUPS"></span>弹出窗口
-
-弹出窗口支持高度上下文的帮助，即显示与用户正在尝试的特定任务相关的说明和建议。
-
--   **专注于一个问题：**相比帮助页面，空间在弹出窗口中会受到更多限制。 帮助弹出窗口需要专门指定某项任务为有效任务。
--   **可见性很重要：**因为帮助弹出窗口仅可从一个位置查看，所以请确保用户可以毫无阻碍地清楚看到它们。 如果用户错过了它，他们可能会退出弹出窗口，从而搜索帮助页面。
--   **不要使用过多资源：**帮助不应减缓速度或使加载缓慢。 在弹出窗口中使用视频或音频文件或者是高分辨率的图像不会帮助用户，反而更有可能令他们失望。
-
-#### <span id="descriptions"></span><span id="DESCRIPTIONS"></span>描述
-
-有时在用户检查某项功能时，提供有关该功能的详细信息会很有用。 描述类似于说明性 UI，但关键差异在于，说明性 UI 尝试向用户解释和演示他们不知道的功能，而详细的描述却会提高用户对感兴趣的应用功能的理解。
-
--   **不要解释基础知识：**假设用户已经知道关于如何使用所描述的项目的基础知识。 阐释或进一步提供信息会很有用。 但告诉他们已知的信息没用。
--   **描述有趣的交互：**描述的一项最佳用途是向用户演示他们已经知道的某项功能可如何交互。 这可帮助用户了解有关他们已经使用的功能的详细信息。
--   **不做打扰：**描述需要避免打扰用户使用应用，这一点与说明性 UI 很像。
-
-## <span id="related_topics"></span>相关文章
-
-* [应用帮助指南](guidelines-for-app-help.md)
+-   **Be concise:** A large library of help topics is unwieldy and unsuited for in-app help.
+-   **Be consistent:** Make sure that users can reach your help pages the same way from any part of your app. They should never have to search for it.
+-   **Be aware that users scan, not read:** Because the help a user is looking for might be on the same page as other help topics, make sure they can easily tell which one they need to focus on.
 
 
+### <span id="popups"></span><span id="POPUPS"></span>Popups
 
-<!--HONumber=Jun16_HO4-->
+Popups allow for highly contexual help, displaying instructions and advice that is relevant to the specific task that the user is attempting:
+
+-   **Focus on one issue:** Space is even more restricted in a popup than a help page. Help popups need to refer specifically to a single task to be effective.
+-   **Visibility is important:** Because help popups can only be viewed from one location, make sure that they're clearly visible to the user without being obstructive. If the user misses it, they might move away from the popup in search of a help page.
+-   **Don't use too many resources:** Help shouldn't lag or be slow-loading. Using videos or audio files or high resolution images in popups is more likely to frustrate the user than it is to help them.
+
+### <span id="descriptions"></span><span id="DESCRIPTIONS"></span>Descriptions
+
+Sometimes, it can be useful to provide more information about a feature when a user inspects it. Descriptions are similar to instructive UI, but the key difference is that instructional UI attempts to teach and educate the user about features that they don't know about, whereas detailed descriptions enhance a user's understanding of app features that they're already interested in:
+
+-   **Don't teach the basics:** Assume that the user already knows the fundamentals of how to use the item being described. Clarifying or offering further information is useful. Telling them what they already know is not.
+-   **Describe interesting interactions:** One of the best uses for descriptions is to educate the user on how a features that they already know about can interact. This helps users learn more about things they already like to use.
+-   **Stay out of the way:** Much like instructional UI, descriptions need to avoid interfering with a user's enjoyment of the app.
+
+## <span id="related_topics"></span>Related articles
+
+* [Guidelines for app help](guidelines-for-app-help.md)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

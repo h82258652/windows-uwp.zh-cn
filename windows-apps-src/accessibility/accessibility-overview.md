@@ -1,112 +1,112 @@
 ---
 author: Xansky
-Description: "本文概述了与通用 Windows 平台 (UWP) 应用的辅助功能方案相关的概念和技术。"
+Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
-title: "辅助功能概述"
+title: Accessibility overview
 label: Accessibility overview
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 430484a9243abc644de75d35c03bb11cf47960c0
+ms.sourcegitcommit: a93f6fb154300ac27b9dc700182d90083fb2cbc8
+ms.openlocfilehash: 669672ecd8c15adb2e53eb8e4a8efd8483af14d1
 
 ---
 
-# 辅助功能概述  
+# Accessibility overview  
 
 
 
 
-本文概述了与通用 Windows 平台 (UWP) 应用的辅助功能方案相关的概念和技术。
+This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
 
 <span id="Accessibility_and_your_app"/>
 <span id="accessibility_and_your_app"/>
 <span id="ACCESSIBILITY_AND_YOUR_APP"/>
-## 辅助功能和应用  
-有许多可能的残障人士，包括在以下方面受限的人士：移动、视觉、颜色识别、听觉、说话能力、认知能力以及读写能力。 不过，通过遵循此处提供的指南可以满足大部分的要求。 这意味着：
+## Accessibility and your app  
+There are many possible disabilities or impairments, including limitations in mobility, vision, color perception, hearing, speech, cognition, and literacy. However, you can address most requirements by following the guidelines offered here. This means providing:
 
-* 为键盘交互和屏幕阅读器提供支持。
-* 为用户自定义（如字体、缩放设置（放大）、颜色和高对比度设置）提供支持。
-* 为 UI 的某些部分提供替换选项或补充选项。
+* Support for keyboard interactions and screen readers.
+* Support for user customization, such as font, zoom setting (magnification), color, and high-contrast settings.
+* Alternatives or supplements for parts of your UI.
 
-用于 XAML 的控件提供了内置的键盘支持和对辅助技术（如屏幕阅读器）的支持，从而利用了已支持 UWP 应用、HTML 和其他 UI 技术的辅助功能框架。 此内置支持启用了基本级别的辅助功能，只需执行极少量的操作（设置少量属性）即可完成自定义。 如果你要创建自己的自定义 XAML 组件和控件，则还可以通过使用*自动化对等*这一概念来添加对于这些控件的类似支持。
+Controls for XAML provide built-in keyboard support and support for assistive technologies such as screen readers, which take advantage of accessibility frameworks that already support UWP apps, HTML, and other UI technologies. This built-in support enables a basic level of accessibility that you can customize with very little work, by setting just a handful of properties. If you are creating your own custom XAML components and controls, you can also add similar support to those controls by using the concept of an *automation peer*.
 
-另外，使用数据绑定、样式以及模板功能可以轻松实现对显示设置和替换 UI 文本的动态更改的支持。
+In addition, data binding, style, and template features make it easy to implement support for dynamic changes to display settings and text for alternative UIs.
 
 <span id="UI_Automation"/>
 <span id="ui_automation"/>
 <span id="UI_AUTOMATION"/>
-## UI 自动化  
-辅助功能支持主要来自 Microsoft UI 自动化框架的集成支持。 该支持通过控件类型类实现的基类和内置行为以及 UI 自动化提供程序 API 的接口表示形式提供。 每个控件类都使用自动化对等和自动化模式的 UI 自动化概念，以便向 UI 自动化客户端报告控件的角色和内容。 UI 自动化将该应用视为顶级窗口，通过 UI 自动化框架，该应用窗口内的所有辅助功能相关内容均可供 UI 自动化客户端使用。 有关 UI 自动化的详细信息，请参阅 [UI 自动化概述](https://msdn.microsoft.com/library/windows/desktop/Ee684076)。
+## UI Automation  
+Accessibility support comes primarily from the integrated support for the Microsoft UI Automation framework. That support is provided through base classes and the built-in behavior of the class implementation for control types, and an interface representation of the UI Automation provider API. Each control class uses the UI Automation concepts of automation peers and automation patterns that report the control's role and content to UI Automation clients. The app is treated as a top-level window by UI Automation, and through the UI Automation framework all the accessibility-relevant content within that app window is available to a UI Automation client. For more info about UI Automation, see [UI Automation Overview](https://msdn.microsoft.com/library/windows/desktop/Ee684076).
 
 <span id="Assistive_technology"/>
 <span id="assistive_technology"/>
 <span id="ASSISTIVE_TECHNOLOGY"/>
-## 辅助技术  
-许多用户辅助功能需求由用户安装的辅助技术产品或由操作系统提供的工具和设置来完成。 这包括诸如屏幕阅读器、屏幕放大以及高对比度设置等功能。
+## Assistive technology  
+Many user accessibility needs are met by assistive technology products installed by the user or by tools and settings provided by the operating system. This includes functionality such as screen readers, screen magnification, and high-contrast settings.
 
-辅助技术产品包括大量软件和硬件。 这些产品通过标准的键盘界面和辅助功能框架工作，这些框架向屏幕阅读器和其他辅助技术报告有关 UI 的内容和结构的信息。 辅助技术产品的示例包括：
+Assistive technology products include a wide variety of software and hardware. These products work through the standard keyboard interface and accessibility frameworks that report information about the content and structure of a UI to screen readers and other assistive technologies. Examples of assistive technology products include:
 
-* 屏幕键盘（可让用户使用指针代替键盘来键入文本）。
-* 声音识别软件（可将说词转换为键入的文本）。
-* 屏幕阅读器（可将文本转换为说词或其他形式（如盲文））。
-* 讲述人屏幕阅读器（专门属于 Windows）。 讲述人具有触摸模式，当没有提供键盘时，该模式可以通过处理触控笔势执行屏幕阅读任务。
-* 用于调整显示器或其区域的程序或设置，例如高对比度主题、显示器的每英寸点数 (dpi) 设置或“放大镜”工具。
+* The On-Screen Keyboard, which enables people to use a pointer in place of a keyboard to type text.
+* Voice-recognition software, which converts spoken words into typed text.
+* Screen readers, which convert text into spoken words or other forms such as Braille.
+* The Narrator screen reader, which is specifically part of Windows. Narrator has a touch mode, which can perform screen reading tasks by processing touch gestures, for when there is no keyboard available.
+* Programs or settings that adjust the display or areas of it, for example high contrast themes, dots per inch (dpi) settings of the display, or the Magnifier tool.
 
-具有良好键盘和屏幕阅读器支持的应用通常可成功用于大量的辅助技术产品。 在很多情况下，UWP 应用可用于这些产品，而无需对信息或结构进行任何额外的修改。 但是，你可能需要修改某些设置以获得最佳辅助功能体验或实现其他支持。
+Apps that have good keyboard and screen reader support usually work well with various assistive technology products. In many cases, a UWP app works with these products without additional modification of information or structure. However, you may want to modify some settings for optimal accessibility experience or to implement additional support.
 
-[辅助功能测试](accessibility-testing.md)中列出了你可以用于通过辅助技术测试基本辅助功能方案的一些选项。
+Some of the options that you can use for testing basic accessibility scenarios with assistive technologies are listed in [Accessibility testing](accessibility-testing.md).
 
 <span id="Screen_reader_support_and_basic_accessibility_information"/>
 <span id="screen_reader_support_and_basic_accessibility_information"/>
 <span id="SCREEN_READER_SUPPORT_AND_BASIC_ACCESSIBILITY_INFORMATION"/>
-## 屏幕阅读器支持和基本辅助功能信息  
-可通过屏幕阅读器来访问应用中的文本，方法是以某个其他格式呈现该文本，例如口头语言或盲文输出内容。 屏幕阅读器的确切行为取决于软件和软件的用户配置。
+## Screen reader support and basic accessibility information  
+Screen readers provide access to the text in an app by rendering it in some other format, such as spoken language or Braille output. The exact behavior of a screen reader depends on the software and on the user's configuration of it.
 
-例如，当用户启动或切换至要查看的应用时，某些屏幕阅读器会读取整个应用 UI，从而允许用户在接收所有可用信息内容后再尝试进行导航。 某些屏幕阅读器在 Tab 键导航过程中接收焦点时还会读取与单个控件关联的文本。 从而允许用户在应用程序的输入控件之间导航时确定自己的位置。 “讲述人”即为提供两种行为的屏幕阅读器示例，具体取决于用户选择。
+For example, some screen readers read the entire app UI when the user starts or switches to the app being viewed, which enables the user to receive all of the available informational content before attempting to navigate it. Some screen readers also read the text associated with an individual control when it receives focus during tab navigation. This enables users to orient themselves as they navigate among the input controls of an application. Narrator is an example of a screen reader that provides both behaviors, depending on user choice.
 
-屏幕阅读器或任何其他辅助技术在帮助用户了解或导航应用时需要的最重要信息就是应用的元素部分的*辅助名称*。 在许多情况下，控件或元素已经有一个辅助名称，该名称是从你已经以其他方式提供的其他属性值计算的。 对于可支持和显示内部文本的元素，最常使用已经计算的名称。 对于其他元素，有时需要考虑用其他方法来通过遵循元素结构的最佳做法提供辅助名称。 而且有时候，你需要提供一个名称来明确作为应用辅助功能的辅助名称。 有关这些计算值中有多少值可在常见的 UI 元素中使用的列表，以及有关常见辅助名称的详细信息，请参阅[基本辅助功能信息](basic-accessibility-information.md)。
+The most important information that a screen reader or any other assistive technology needs in order to help users understand or navigate an app is an *accessible name* for the element parts of the app. In many cases, a control or element already has an accessible name that is calculated from other property values that you have otherwise provided. The most common case in which you can use an already-calculated name is with an element that supports and displays inner text. For other elements, you sometimes need to account for other ways to provide an accessible name by following best practices for element structure. And sometimes you need to provide a name that is explicitly intended as the accessible name for app accessibility. For a listing of how many of these calculated values work in common UI elements, and for more info about accessible names in general, see [Basic accessibility information](basic-accessibility-information.md).
 
-可以使用一些其他自动化属性（包括下一部分中所述的键盘属性）。 但是，并非所有屏幕阅读器都支持所有的自动化属性。 通常，应设置所有适当的自动化属性和测试，以便为屏幕阅读器提供尽可能多的支持。
+There are several other automation properties available (including the keyboard properties described in the next section). However, not all screen readers support all automation properties. In general, you should set all appropriate automation properties and test to provide the widest possible support for screen readers.
 
 <span id="Keyboard_support"/>
 <span id="keyboard_support"/>
 <span id="KEYBOARD_SUPPORT"/>
-## 键盘支持  
-为了提供良好的键盘支持，必须确保应用程序的每个部分都可与键盘结合使用。 如果你的应用主要使用标准控件而不使用任何自定义控件，则说明你已经做到了这一点。 基本 XAML 控件模型提供了内置的键盘支持，包括 Tab 导航、文本输入以及控件特定的支持。 充当布局容器（如面板）的元素使用布局顺序来建立默认的 Tab 键顺序。 该顺序通常是适合 UI 的辅助表示形式的 Tab 键顺序。 如果使用 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 控件显示数据，则它们会提供内置的箭头键导航。 或者，如果使用 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 控件，则它已经为按钮激活而处理空格键或 Enter 键。
+## Keyboard support  
+To provide good keyboard support, you must ensure that every part of your application can be used with a keyboard. If your app uses mostly the standard controls and doesn't use any custom controls, you are most of the way there already. The basic XAML control model provides built-in keyboard support including tab navigation, text input, and control-specific support. The elements that serve as layout containers (such as panels) use the layout order to establish a default tab order. That order is often the correct tab order to use for an accessible representation of the UI. If you use [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) controls to display data, they provide built-in arrow-key navigation. Or if you use a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) control, it already handles the Spacebar or Enter keys for button activation.
 
-有关键盘支持的各个方面的详细信息（包括 Tab 键顺序和基于键的激活或导航），请参阅[键盘辅助功能](keyboard-accessibility.md)。
+For more info about all the aspects of keyboard support, including tab order and key-based activation or navigation, see [Keyboard accessibility](keyboard-accessibility.md).
 
 <span id="Media_and_captioning"/>
 <span id="media_and_captioning"/>
 <span id="MEDIA_AND_CAPTIONING"/>
-## 媒体和字幕  
-通常通过 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) 对象显示视听媒体。 你可以使用 **MediaElement** API 控制媒体播放。 为实现辅助功能，所提供的控件应能使用户根据需要播放、暂停和停止媒体。 有时，媒体包括面向辅助功能的额外组件，如字幕或包括叙述性描述的可选音轨。
+## Media and captioning  
+You typically display audiovisual media through a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) object. You can use **MediaElement** APIs to control the media playback. For accessibility purposes, provide controls that enable users to play, pause, and stop the media as needed. Sometimes, media includes additional components that are intended for accessibility, such as captioning or alternative audio tracks that include narrative descriptions.
 
 <span id="Accessible_text"/>
 <span id="accessible_text"/>
 <span id="ACCESSIBLE_TEXT"/>
-## 辅助文本  
-文本的以下三个主要方面与辅助功能相关：
+## Accessible text  
+Three main aspects of text are relevant to accessibility:
 
-* 工具必须确定文本是在 Tab 序列遍历过程中读取，还是仅作为整个文档表示形式的一部分进行读取。 你还可以通过选择要用来显示文本的相应元素或者通过调整这些文本元素的属性来帮助控件确定上述内容。 每个文本元素都有一种特定的用途，而且该用途通常具有相应的 UI 自动化角色。 如果使用错误的元素，可能会导致向 UI 自动化报告错误的角色，而且可能会为辅助技术用户创建令人混淆的体验。
-* 除非文本与背景的对比度很大，否则，许多用户都会因视觉上的局限而很难阅读文本。 对于没有该视觉局限的应用设计人员来说，这对用户造成的影响不太直观。 例如，对于色盲用户，如果设计中的颜色选项不好，可能会使某些用户无法阅读文本。 最初为 Web 内容提出的辅助功能建议还定义了可能会避免这些应用问题的对比度标准。 有关详细信息，请参阅[辅助文本要求](accessible-text-requirements.md)。
-* 对于太小的文本，许多用户都有阅读困难。 你可以通过使应用 UI 中的文本在首次出现时合理变大来避免发生此问题。 但是，对于显示大量文本的应用或者对于与其他视觉元素穿插在一起的文本，则具有一定的挑战性。 在这些情况下，请确保应用与能够放大显示器的系统功能正确交互，以便应用中的任何文本都能够随控件一起放大。 （某些用户可采用辅助功能选项方式更改 DPI 值。 该选项可从“轻松使用”****的“放大屏幕上显示的内容”****中获得，可重定向到“外观和个性化”**** / “屏幕”****的“控制面板”****UI。）
+* Tools must determine whether the text is to be read as part of a tab-sequence traversal or only as part of an overall document representation. You can help control this determination by choosing the appropriate element for displaying the text or by adjusting properties of those text elements. Each text element has a specific purpose, and that purpose often has a corresponding UI Automation role. Using the wrong element can result in reporting the wrong role to UI Automation and creating a confusing experience for an assistive technology user.
+* Many users have sight limitations that make it difficult for them to read text unless it has adequate contrast against the background. How this impacts the user is not intuitive for app designers who do not have that sight limitation. For example, for color-blind users, poor color choices in the design can prevent some users from being able to read the text. Accessibility recommendations that were originally made for web content define standards for contrast that can avoid these problems in apps as well. For more info, see [Accessible text requirements](accessible-text-requirements.md).
+* Many users have difficulty reading text that is simply too small. You can prevent this issue by making the text in your app's UI reasonably large in the first place. However, that's challenging for apps that display large quantities of text, or text interspersed with other visual elements. In such cases, make sure that the app correctly interacts with the system features that can scale up the display, so that any text in apps scales up along with it. (Some users change dpi values as an accessibility option. That option is available from **Make things on the screen larger** in **Ease of Access**, which redirects to a **Control Panel** UI for **Appearance and Personalization** / **Display**.)
 
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>
 <span id="SUPPORTING_HIGH-CONTRAST_THEMES"/>
-## 支持高对比度主题  
-UI 控件使用一种定义为 XAML 资源主题字典一部分的视觉表示形式。 这些主题中的一个或多个专门用于为系统设置了高对比度的情况。 当用户通过从资源字典中动态查找相应主题来切换到高对比度时，所有 UI 控件也将使用相应的高对比度主题。 你只需确保尚未禁用这些主题即可，方法是指定明确的样式，或者使用其他可防止高对比度主题加载和替代样式更改的样式技术。 有关详细信息，请参阅[高对比度主题](high-contrast-themes.md)。
+## Supporting high-contrast themes  
+UI controls use a visual representation that is defined as part of a XAML resource dictionary of themes. One or more of these themes is specifically used when the system is set for high contrast. When the user switches to high contrast, by looking up the appropriate theme from a resource dictionary dynamically, all your UI controls will use an appropriate high-contrast theme too. Just make sure that you haven't disabled the themes by specifying an explicit style or using another styling technique that prevents the high-contrast themes from loading and overriding your style changes. For more info, see [High-contrast themes](high-contrast-themes.md).
 
 <span id="Design_for_alternative_UI"/>
 <span id="design_for_alternative_ui"/>
 <span id="DESIGN_FOR_ALTERNATIVE_UI"/>
-## 替换 UI 设计  
-在设计应用时，应考虑在行动、视觉和听觉方面受限的用户可以如何使用这些应用。 由于辅助技术产品大量使用标准 UI，因此提供良好的键盘和屏幕阅读器支持尤为重要，即便未对辅助功能做任何其他调整，也是如此。
+## Design for alternative UI  
+When you design your apps, consider how they may be used by people with limited mobility, vision, and hearing. Because assistive technology products make extensive use of standard UI, it is particularly important to provide good keyboard and screen-reader support even if you make no other adjustments for accessibility.
 
-很多情况下，可以使用多种技术传递重要信息以便扩宽受众范围。 例如，可以同时使用图标和颜色信息来突出显示信息以帮助色盲用户，并可显示视觉警报和声音效果以帮助听力受损的用户。
+In many cases, you can convey essential information by using multiple techniques to widen your audience. For example, you can highlight information using both icon and color information to help users who are color blind, and you can display visual alerts along with sound effects to help users who are hearing impaired.
 
-如有必要，可以提供可完全删除非必要元素和动画的辅助性替换用户界面元素，并提供其他简化措施以简化用户体验。 以下代码示例演示了如何根据用户设置显示一个 [**UserControl**](https://msdn.microsoft.com/library/windows/apps/BR227647) 实例以代替另一实例。
+If necessary, you can provide alternative, accessible user interface elements that completely remove nonessential elements and animations, and provide other simplifications to streamline the user experience. The following code example demonstrates how to display one [**UserControl**](https://msdn.microsoft.com/library/windows/apps/BR227647) instance in place of another depending on a user setting.
 
 XAML
 ```xml
@@ -154,32 +154,33 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 <span id="Verification_and_publishing"/>
 <span id="verification_and_publishing"/>
 <span id="VERIFICATION_AND_PUBLISHING"/>
-## 验证和发布  
-有关辅助功能声明和发布应用的详细信息，请参阅[应用商店中的辅助功能](accessibility-in-the-store.md)。
+## Verification and publishing  
+For more info about accessibility declarations and publishing your app, see [Accessibility in the Store](accessibility-in-the-store.md).
 
 > [!NOTE]
-> 将应用声明为辅助应用仅与 Windows 应用商店有关。
+> Declaring the app as accessible is only relevant to the Windows Store.
 
 <span id="Assistive_technology_support_in_custom_controls"/>
 <span id="assistive_technology_support_in_custom_controls"/>
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_CUSTOM_CONTROLS"/>
-## 自定义控件中的辅助技术支持  
-创建自定义控件时，建议你同时实现或扩展一个或多个 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 子类以提供辅助功能支持。 在某些情况下，只要你使用与基本控件类所用相同的对等类，对你的派生类的自动化支持在基本级别上便足够了。 但是，你应该对此进行测试，并且作为最佳做法，仍然建议你实现一个对等，以便对等可以正确地报告你的新控件类的类名称。 实现自定义自动化对等涉及多个步骤。 有关详细信息，请参阅[自定义自动化对等](custom-automation-peers.md)。
+## Assistive technology support in custom controls  
+When you create a custom control, we recommend that you also implement or extend one or more [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) subclasses to provide accessibility support. In some cases, so long as you use the same peer class as was used by the base control class, the automation support for your derived class is adequate at a basic level. However, you should test this, and implementing a peer is still recommended as a best practice so that the peer can correctly report the class name of your new control class. Implementing a custom automation peer has a few steps involved. For more info, see [Custom automation peers](custom-automation-peers.md).
 
 <span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"/>
 <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"/>
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"/>
-## 支持 XAML / Microsoft DirectX 互操作的应用中的辅助技术支持  
-默认情况下，无法访问 XAML UI 中托管的 Microsoft DirectX 内容（使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) 或 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)）。 [XAML SwapChainPanel DirectX 互操作示例](http://go.microsoft.com/fwlink/p/?LinkID=309155)显示如何为托管的 DirectX 内容创建 UI 自动化对等。 这种技术让托管的内容可通过 UI 自动化进行访问。
+## Assistive technology support in apps that support XAML / Microsoft DirectX interop  
+Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) or [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)) is not accessible by default. The [XAML SwapChainPanel DirectX interop sample](http://go.microsoft.com/fwlink/p/?LinkID=309155) shows how to create UI Automation peers for the hosted DirectX content. This technique makes the hosted content accessible through UI Automation.
 
 <span id="related_topics"/>
-## 相关主题  
+## Related topics  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
-* [辅助功能设计](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Design for accessibility](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Accessibility](accessibility.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

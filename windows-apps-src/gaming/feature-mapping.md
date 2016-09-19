@@ -1,122 +1,122 @@
 ---
 author: mtoepke
-title: "将 DirectX 9 功能映射到 DirectX 11 API"
-description: "了解 Direct3D 9 游戏使用的功能如何转换到 Direct3D 11 和通用 Windows 平台 (UWP)。"
+title: Map DirectX 9 features to DirectX 11 APIs
+description: Understand how the features your Direct3D 9 game uses will translate to Direct3D 11 and the Universal Windows Platform (UWP).
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3a9e9c32ed2d892674592f32d0f067fed668d9d1
+ms.openlocfilehash: 6ab76921f1e8b613010f99eba6a141daca128ea5
 
 ---
 
-# 将 DirectX 9 功能映射到 DirectX 11 API
+# Map DirectX 9 features to DirectX 11 APIs
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**摘要**
+**Summary**
 
--   [规划 DirectX 移植](plan-your-directx-port.md)
--   [从 Direct3D 9 到 Direct3D 11 的重要更改](understand-direct3d-11-1-concepts.md)
--   功能映射
-
-
-了解 Direct3D 9 游戏使用的功能如何转换到 Direct3D 11 和通用 Windows 平台 (UWP)。
-
-## 将 Direct3D 9 映射到 DirectX 11 API
+-   [Plan your DirectX port](plan-your-directx-port.md)
+-   [Important changes from Direct3D 9 to Direct3D 11](understand-direct3d-11-1-concepts.md)
+-   Feature mapping
 
 
-[Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) 仍然是 DirectX 图形的基础，但是 API 自从 DirectX 9 起发生了更改。
+Understand how the features your Direct3D 9 game uses will translate to Direct3D 11 and the Universal Windows Platform (UWP).
 
--   Microsoft DirectX 图形基础结构 (DXGI) 用于设置图形适配器。 使用 [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534) 来选择缓冲区格式、创建交换链、呈现帧以及创建共享资源。 请参阅 [DXGI 概述](https://msdn.microsoft.com/library/windows/desktop/bb205075)。
--   Direct3D 设备上下文用于设置管道状态以及生成呈现命令。 我们的大多数示例都使用即时上下文直接呈现到设备；Direct3D 11 还支持使用延迟上下文的多线程呈现。 请参阅 [Direct3D 11 中的设备简介](https://msdn.microsoft.com/library/windows/desktop/ff476880)。
--   一些功能已经被弃用，最值得一提的就是固定函数管道。 请参阅[已弃用的功能](https://msdn.microsoft.com/library/windows/desktop/cc308047)。
-
-有关 Direct3D 11 功能的完整列表，请参阅 [Direct3D 11 功能](https://msdn.microsoft.com/library/windows/desktop/ff476342)和 [Direct3D 11 功能](https://msdn.microsoft.com/library/windows/desktop/hh404562)。
-
-## 从 Direct2D 9 移动到 Direct2D 11
+## Mapping Direct3D 9 to DirectX 11 APIs
 
 
-[Direct2D (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd370990) 仍然是 DirectX 图形和 Windows 的重要组成部分。 你仍然可以使用 Direct2D 来绘制 2D 游戏，以及在 Direct3D 上面绘制覆盖 (HUD)。
+[Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) is still the foundation of DirectX graphics, but the API has changed since DirectX 9:
 
-Direct2D 在 Direct3D 上运行，因此可以使用任一 API 实现 2D 游戏。 例如，使用 Direct3D 实现的 2D 游戏可以使用正交投影、设置 Z 值以控制基元的绘制顺序，以及使用像素着色器添加特殊效果。
+-   Microsoft DirectX Graphics Infrastructure (DXGI) is used to set up graphics adapters. Use [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534) to select buffer formats, create swap chains, present frames, and create shared resources. See [DXGI Overview](https://msdn.microsoft.com/library/windows/desktop/bb205075).
+-   A Direct3D device context is used to set pipeline state and generate rendering commands. Most of our samples use an immediate context to render directly to the device; Direct3D 11 also supports multithreaded rendering, in which case deferred contexts are used. See [Introduction to a Device in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476880).
+-   Some features have been deprecated, most notably the fixed function pipeline. See [Deprecated Features](https://msdn.microsoft.com/library/windows/desktop/cc308047).
 
-由于 Direct2D 是基于 Direct3D 的，因此它也使用 DXGI 和设备上下文。 请参阅 [Direct2D API 概述](https://msdn.microsoft.com/library/windows/desktop/dd317121)。
+For a full list of Direct3D 11 features, see [Direct3D 11 Features](https://msdn.microsoft.com/library/windows/desktop/ff476342) and [Direct3D 11 Features](https://msdn.microsoft.com/library/windows/desktop/hh404562).
 
-[DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) API 增加了对使用 Direct2D 设置文本格式的支持。 请参阅 [DirectWrite 简介](https://msdn.microsoft.com/library/windows/desktop/dd371554)。
-
-## 替换已弃用的帮助程序库
-
-
-D3DX 和 DXUT 已弃用，并且不能由 UWP 游戏使用。 这些帮助程序库为诸如纹理加载和网格加载之类的任务提供了资源。
-
--   [从 Direct3D 9 到 UWP 的简单移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)操作实例演示了如何设置窗口、初始化 Direct3D 以及执行基本的 3D 呈现。
--   [使用 DirectX 编写简单的 UWP 游戏](tutorial--create-your-first-metro-style-directx-game.md)演示了常见游戏编程任务，包括图形、加载文件、UI、控件以及声音。
--   [DirectX 工具包](http://go.microsoft.com/fwlink/p/?LinkID=248929)社区项目提供用于 Direct3D 11 和 UWP 应用的 帮助程序类。
-
-## 将 FX 中的着色器程序移动到 HLSL
+## Moving from Direct2D 9 to Direct2D 11
 
 
-对于 UWP 来说，D3DX 实用工具库（D3DX 9、D3DX 10 和 D3DX 11）（包括“效果”库）已被弃用。 UWP 的所有 DirectX 游戏都使用 [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)（不使用“效果”库）驱动图形管道。
+[Direct2D (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd370990) is still an important part of DirectX graphics and Windows. You can still use Direct2D to draw 2D games, and to draw overlays (HUDs) on top of Direct3D.
 
-Visual Studio 仍然在后台使用 FXC 编译着色器对象。 将提前编译 UWP 游戏着色器。 在运行时加载字节码，然后 在相应的呈现传递过程中将每个着色器资源绑定到图形管道。 应将着色器移动到它们自己的 .HLSL 文件中，且应采用 C++ 代码实现呈现技术。
+Direct2D runs on top of Direct3D; 2D games can be implemented using either API. For example, a 2D game implemented using Direct3D can use orthographic projection, set Z-values to control the drawing order of primitives, and use pixel shaders to add special effects.
 
-若要快速浏览加载着色器资源，请参阅[从 Direct3D 9 到 UWP 的简单移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)。
+Since Direct2D is based on Direct3D it also uses DXGI and device contexts. See [Direct2D API Overview](https://msdn.microsoft.com/library/windows/desktop/dd317121).
 
-Direct3D 11 引入了着色器模型 5，它需要 Direct3D 功能级别 11\_0（或更高功能级别）。 请参阅 [Direct3D 11 的 HLSL 着色器模型 5 功能](https://msdn.microsoft.com/library/windows/desktop/ff471419)。
+The [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) API adds support for formatted text using Direct2D. See [Introducing DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd371554).
 
-## 替换 XNAMath 和 D3DXMath
-
-
-应该将使用 XNAMath（或 D3DXMath）的代码迁移到 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)。 DirectXMath 包括可以跨 x86、x64 和 ARM 进行移植的类型。 请参阅 [XNA Math 库中的代码迁移](https://msdn.microsoft.com/library/windows/desktop/ee418730)。
-
-请注意，DirectXMath 浮点类型便于与着色器配合使用。 例如，[**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) 和 [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) 便于对齐常量缓冲区的数据。
-
-## 将 DirectSound 替换为 XAudio2（以及背景音频）
+## Replace deprecated helper libraries
 
 
-UWP 不支持 DirectSound：
+D3DX and DXUT are deprecated and cannot be used by UWP games. These helper libraries provided resources for tasks such as texture loading and mesh loading.
 
--   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) 向游戏中添加声音效果。
+-   The [Simple port from Direct3D 9 to UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough demonstrates how to set up a window, initialize Direct3D, and do basic 3D rendering.
+-   The [Simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md) walkthrough demonstrates common game programming tasks including graphics, loading files, UI, controls, and sound.
+-   The [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) community project offers helper classes for use with Direct3D 11 and UWP apps.
 
-##  将 DirectInput 替换为 XInput 和 UWP API
-
-
-UWP 不支持 DirectInput：
-
--   为鼠标、键盘和触摸输入使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 输入事件回调。
--   使用 [XInput](https://msdn.microsoft.com/library/windows/desktop/ee417001) 1.4 以获得游戏控制器支持（以及游戏控制器耳机支持）。 如果使用桌面和 UWP 的共享代码库，请参阅 [XInput 版本](https://msdn.microsoft.com/library/windows/desktop/hh405051)以获取有关向后兼容的信息。
--   如果你的游戏需要使用应用栏，请注册 [**EdgeGesture**](https://msdn.microsoft.com/library/windows/apps/hh701600) 事件。
-
-## 使用 Microsoft Media Foundation 代替 DirectShow
+## Move shader programs from FX to HLSL
 
 
-DirectShow 不再是 DirectX API（或 Windows API）的一部分。 [Microsoft 媒体基础](https://msdn.microsoft.com/library/windows/desktop/ms694197)使用共享图面向 Direct3D 提供视频内容。 请参阅 [Direct3D 11 视频 API](https://msdn.microsoft.com/library/windows/desktop/hh447677)。
+The D3DX utility library (D3DX 9, D3DX 10, and D3DX 11), including Effects, is deprecated for UWP. All DirectX games for UWP drive the graphics pipeline using [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561) without Effects.
 
-## 将 DirectPlay 替换为网络代码
+Visual Studio still uses FXC under the hood to compile shader objects. UWP game shaders are compiled ahead of time. The bytecode is loaded at runtime, then each shader resource is bound to the graphics pipeline during the appropriate rendering pass. Shaders should be moved to their own separate .HLSL files and rendering techniques should be implemented in your C++ code.
 
+For a quick look at loading shader resources see [Simple port from Direct3D 9 to UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
-Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要提供符合 UWP 要求的网络代码。 使用以下 API：
+Direct3D 11 introduced Shader Model 5, which requires Direct3D feature level 11\_0 (or above). See [HLSL Shader Model 5 Features for Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff471419).
 
--   [适用于 Windows 应用商店应用的 Win32 和 COM（网络）(Windows)](https://msdn.microsoft.com/library/windows/apps/br205759)
--   [**Windows.Networking 命名空间 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207124)
--   [**Windows.Networking.Sockets 命名空间 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br226960)
--   [**Windows.Networking.Connectivity 命名空间 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207308)
--   [**Windows.ApplicationModel.Background 命名空间 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br224847)
-
-以下文章将帮助你在应用包清单中添加网络功能并声明对网络的支持。
-
--   [使用套接字进行连接（使用 C#/VB/C++ 和 XAML 的 Windows 应用商店应用）(Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
--   [使用 WebSockets 进行连接（使用 C#/VB/C++ 和 XAML 的 Windows 应用商店应用）(Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994396)
--   [连接到 Web 服务（使用 C#/VB/C++ 和 XAML 的 Windows 应用商店应用）(Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
--   [网络基础知识](https://msdn.microsoft.com/library/windows/apps/mt280233)
-
-请注意，所有 UWP 应用（包括游戏）都使用特定类型的后台任务，以便在应用暂停时保持连接。 如果你的游戏需要在暂停时保持连接状态，请参阅[网络基础知识](https://msdn.microsoft.com/library/windows/apps/mt280233)。
-
-## 功能映射
+## Replace XNAMath and D3DXMath
 
 
-使用下表可帮助你将 Direct3D 9 中的代码转换到 Direct3D 11。 该表还有助于区分设备和设备上下文。
+Code using XNAMath (or D3DXMath) should be migrated to [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833). DirectXMath includes types that are portable across x86, x64, and ARM. See [Code Migration from the XNA Math Library](https://msdn.microsoft.com/library/windows/desktop/ee418730).
+
+Note that DirectXMath float types are convenient for use with shaders. For example [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) and [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) conveniently align data for constant buffers.
+
+## Replace DirectSound with XAudio2 (and background audio)
+
+
+DirectSound is not supported for UWP:
+
+-   Use [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) to add sound effects to your game.
+
+##  Replace DirectInput with XInput and UWP APIs
+
+
+DirectInput is not supported for UWP:
+
+-   Use [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) input event callbacks for mouse, keyboard, and touch input.
+-   Use [XInput](https://msdn.microsoft.com/library/windows/desktop/ee417001) 1.4 for game controller support (and game controller headset support). If you are using a shared code base for desktop and UWP, see [XInput Versions](https://msdn.microsoft.com/library/windows/desktop/hh405051) for information on backwards compatibility.
+-   Register for [**EdgeGesture**](https://msdn.microsoft.com/library/windows/apps/hh701600) events if your game needs to use the app bar.
+
+## Use Microsoft Media Foundation instead of DirectShow
+
+
+DirectShow is no longer part of the DirectX API (or the Windows API). [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) provides video content to Direct3D using shared surfaces. See [Direct3D 11 Video APIs](https://msdn.microsoft.com/library/windows/desktop/hh447677).
+
+## Replace DirectPlay with networking code
+
+
+Microsoft DirectPlay has been deprecated. If your game uses network services, you need to provide networking code that complies with UWP requirements. Use the following APIs:
+
+-   [Win32 and COM for Windows Store apps (networking) (Windows)](https://msdn.microsoft.com/library/windows/apps/br205759)
+-   [**Windows.Networking namespace (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207124)
+-   [**Windows.Networking.Sockets namespace (Windows)**](https://msdn.microsoft.com/library/windows/apps/br226960)
+-   [**Windows.Networking.Connectivity namespace (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207308)
+-   [**Windows.ApplicationModel.Background namespace (Windows)**](https://msdn.microsoft.com/library/windows/apps/br224847)
+
+The following articles help you add networking features and declare support for networking in your app's package manifest.
+
+-   [Connecting with sockets (Windows Store apps using C#/VB/C++ and XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
+-   [Connecting with WebSockets (Windows Store apps using C#/VB/C++ and XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994396)
+-   [Connecting to web services (Windows Store apps using C#/VB/C++ and XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
+-   [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233)
+
+Note that all UWP apps (including games) use specific types of background tasks to maintain connectivity while the app is suspended. If your game needs to maintain connection state while suspended see [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233).
+
+## Function mapping
+
+
+Use the following table to help convert code from Direct3D 9 to Direct3D 11. This can also help distinguish between the device and device context.
 
 <table>
 <colgroup>
@@ -126,18 +126,18 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <thead>
 <tr class="header">
 <th align="left">Direct3D9</th>
-<th align="left">Direct3D 11 等效内容</th>
+<th align="left">Direct3D 11 Equivalent</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[<strong>IDirect3DDevice9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174336)</p></td>
 <td align="left"><p>[<strong>ID3D11Device2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280493)</p>
-<p>\[<strong>ID3D11DeviceContext2</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/dn280498\)</p>
-<p>[图形管道](https://msdn.microsoft.com/library/windows/desktop/ff476882)中描述了各个图形管道阶段。</p></td>
+<p>[<strong>ID3D11DeviceContext2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280498)</p>
+<p>The graphics pipeline stages are described in [Graphics Pipeline](https://msdn.microsoft.com/library/windows/desktop/ff476882).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>\[<strong>IDirect3D9</strong>\]\(https://msdn.microsoft.com/library/windows/desktop/bb174300\)</p></td>
+<td align="left"><p>[<strong>IDirect3D9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174300)</p></td>
 <td align="left"><p>[<strong>IDXGIFactory2</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404556)</p>
 <p>[<strong>IDXGIAdapter2</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404537)</p>
 <p>[<strong>IDXGIDevice3</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280345)</p></td>
@@ -148,7 +148,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="even">
 <td align="left"><p>[<strong>IDirect3DDevice9::TestCooperativeLevel</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174472)</p></td>
-<td align="left"><p>调用带有 DXGI_PRESENT_TEST 标志集的 [<strong>IDXGISwapChain1::Present1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446797)。</p></td>
+<td align="left"><p>Call [<strong>IDXGISwapChain1::Present1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446797) with the DXGI_PRESENT_TEST flag set.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[<strong>IDirect3DBaseTexture9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174322)</p>
@@ -198,17 +198,17 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <p>[<strong>IDirect3DDevice9::EndScene</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174375)</p>
 <p>[<strong>IDirect3DDevice9::DrawPrimitiveUP</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174372)</p>
 <p>[<strong>IDirect3DDevice9::DrawIndexedPrimitiveUP</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174370)</p></td>
-<td align="left"><p>无直接等效项</p></td>
+<td align="left"><p>No direct equivalent</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[<strong>IDirect3DDevice9::ShowCursor</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174470)</p>
 <p>[<strong>IDirect3DDevice9::SetCursorPosition</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174429)</p>
 <p>[<strong>IDirect3DDevice9::SetCursorProperties</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174430)</p></td>
-<td align="left"><p>使用标准光标 API。</p></td>
+<td align="left"><p>Use standard cursor APIs.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[<strong>IDirect3DDevice9::Reset</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174425)</p></td>
-<td align="left"><p>LOST 设备和 POOL_MANAGED 不再存在。 [<strong>IDXGISwapChain1::Present1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446797) 可能会失败，返回值为 [<strong>DXGI_ERROR_DEVICE_REMOVED</strong>](https://msdn.microsoft.com/library/windows/desktop/bb509553)。</p></td>
+<td align="left"><p>LOST device and POOL_MANAGED no longer exist. [<strong>IDXGISwapChain1::Present1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446797) can fail with a [<strong>DXGI_ERROR_DEVICE_REMOVED</strong>](https://msdn.microsoft.com/library/windows/desktop/bb509553) return value.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[<strong>IDirect3DDevice9:DrawRectPatch</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174373)</p>
@@ -221,24 +221,24 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <p>[<strong>IDirect3DDevice9:SetTransform</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174463)</p>
 <p>[<strong>IDirect3DDevice9:SetFVF</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174433)</p>
 <p>[<strong>IDirect3DDevice9:SetTextureStageState</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174462)</p></td>
-<td align="left"><p>固定函数管道已被弃用。</p></td>
+<td align="left"><p>The fixed-function pipeline has been deprecated.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[<strong>IDirect3DDevice9:CheckDepthStencilMatch</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174308)</p>
 <p>[<strong>IDirect3DDevice9:CheckDeviceFormat</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174309)</p>
 <p>[<strong>IDirect3DDevice9:GetDeviceCaps</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174320)</p>
 <p>[<strong>IDirect3DDevice9:ValidateDevice</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205859)</p></td>
-<td align="left"><p>功能位已被替换为功能级别。 对于任何给定的功能级别，只有几个格式和功能用例是可选的。 可以使用 [<strong>ID3D11Device::CheckFeatureSupport</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476497) 和 [<strong>ID3D11Device::CheckFormatSupport</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173536) 对这些功能和格式进行检查。</p></td>
+<td align="left"><p>Capability bits are replaced with feature levels. Only a few format and feature usage cases are optional for any given feature level. These can be checked with [<strong>ID3D11Device::CheckFeatureSupport</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476497) and [<strong>ID3D11Device::CheckFormatSupport</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173536).</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## 图面格式映射
+## Surface format mapping
 
 
-使用下表将 Direct3D 9 格式转换为 DXGI 格式。
+Use the following table to convert Direct3D 9 formats into DXGI formats.
 
 <table>
 <colgroup>
@@ -247,8 +247,8 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Direct3D 9 格式</th>
-<th align="left">Direct3D 11 格式</th>
+<th align="left">Direct3D 9 Format</th>
+<th align="left">Direct3D 11 Format</th>
 </tr>
 </thead>
 <tbody>
@@ -258,7 +258,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_R8G8B8</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A8R8G8B8</p></td>
@@ -276,7 +276,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X1R5G5B5</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A1R5G5B5</p></td>
@@ -288,7 +288,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_R3G3B2</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A8</p></td>
@@ -296,11 +296,11 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A8R3G3B2</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X4R4G4B4</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A2B10G10R10</p></td>
@@ -313,7 +313,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_X8B8G8R8</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_G16R16</p></td>
@@ -321,7 +321,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A2R10G10B10</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A16B16G16R16</p></td>
@@ -329,17 +329,17 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A8P8</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_P8</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 使用着色器中的 .r 重排将红色复制到其他组件以获取 Direct3D 9 行为。
+<strong>Note</strong>   Use .r swizzle in shader to duplicate red to other components to get Direct3D 9 behavior.
 </div>
 <div>
  
@@ -349,7 +349,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 使用着色器中的重排 .rrrg 复制红色并将绿色移动到 alpha 组件以获取 Direct3D 9 行为。
+<strong>Note</strong>   Use swizzle .rrrg in shader to duplicate red and move green to the alpha components to get Direct3D 9 behavior.
 </div>
 <div>
  
@@ -357,7 +357,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_A4L4</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_V8U8</p></td>
@@ -365,11 +365,11 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_L6V5U5</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X8L8V8U8</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_Q8W8V8U8</p></td>
@@ -381,21 +381,21 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_W11V11U10</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A2W10V10U10</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_UYVY</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 在 Direct3D 9 中，数据被放大了 255.0f 倍，但可以在着色器中对此进行处理。
+<strong>Note</strong>   In Direct3D 9 the data was scaled up by 255.0f, but this can be handled in the shader.
 </div>
 <div>
  
@@ -403,13 +403,13 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_YUY2</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 在 Direct3D 9 中，数据被放大了 255.0f 倍，但可以在着色器中对此进行处理。
+<strong>Note</strong>   In Direct3D 9 the data was scaled up by 255.0f, but this can be handled in the shader.
 </div>
 <div>
  
@@ -417,13 +417,13 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_DXT1</p></td>
-<td align="left"><p>DXGI_FORMAT_BC1_UNORM &amp; DXGI_FORMAT_BC1_UNORM_SRGB</p></td>
+<td align="left"><p>DXGI_FORMAT_BC1_UNORM & DXGI_FORMAT_BC1_UNORM_SRGB</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_DXT2</p></td>
-<td align="left"><p>DXGI_FORMAT_BC1_UNORM &amp; DXGI_FORMAT_BC1_UNORM_SRGB</p>
+<td align="left"><p>DXGI_FORMAT_BC1_UNORM & DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>注意</strong> 从 API/硬件的角度来看，DXT1 和 DXT2 相同。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
+<strong>Note</strong>   DXT1 and DXT2 are the same from an API/hardware perspective. The only difference is whether premultiplied alpha is used, which can be tracked by an application and doesn't need a separate format.
 </div>
 <div>
  
@@ -431,13 +431,13 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_DXT3</p></td>
-<td align="left"><p>DXGI_FORMAT_BC2_UNORM &amp; DXGI_FORMAT_BC2_UNORM_SRGB</p></td>
+<td align="left"><p>DXGI_FORMAT_BC2_UNORM & DXGI_FORMAT_BC2_UNORM_SRGB</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_DXT4</p></td>
-<td align="left"><p>DXGI_FORMAT_BC2_UNORM &amp; DXGI_FORMAT_BC2_UNORM_SRGB</p>
+<td align="left"><p>DXGI_FORMAT_BC2_UNORM & DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>注意</strong> 从 API/硬件的角度来看，DXT3 和 DXT4 相同。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
+<strong>Note</strong>   DXT3 and DXT4 are the same from an API/hardware perspective. The only difference is whether premultiplied alpha is used, which can be tracked by an application and doesn't need a separate format.
 </div>
 <div>
  
@@ -445,31 +445,31 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_DXT5</p></td>
-<td align="left"><p>DXGI_FORMAT_BC3_UNORM &amp; DXGI_FORMAT_BC3_UNORM_SRGB</p></td>
+<td align="left"><p>DXGI_FORMAT_BC3_UNORM & DXGI_FORMAT_BC3_UNORM_SRGB</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>D3DFMT_D16 &amp; D3DFMT_D16_LOCKABLE</p></td>
+<td align="left"><p>D3DFMT_D16 & D3DFMT_D16_LOCKABLE</p></td>
 <td align="left"><p>DXGI_FORMAT_D16_UNORM</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_D32</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D15S1</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_D24S8</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D24X8</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_D24X4S4</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D16</p></td>
@@ -481,11 +481,11 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_D24FS8</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_S1D15</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_S8D24</p></td>
@@ -493,17 +493,17 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_X8D24</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_X4S4D24</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 使用着色器中的 .r 重排将红色复制到其他组件以获取 D3D9 行为。
+<strong>Note</strong>   Use .r swizzle in shader to duplicate red to other components to get D3D9 behavior.
 </div>
 <div>
  
@@ -523,7 +523,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DFMT_MULTI2_ARGB8</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_R16F</p></td>
@@ -551,7 +551,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_CxV8U8</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPE_FLOAT1</p></td>
@@ -571,13 +571,13 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPED3DCOLOR</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>注意</strong> 着色器获取 UINT 值，但是如果需要 Direct3D 9 样式的整型浮点数（0.0f、1.0f... 255.f），则只需在着色器中将 UINT 转换为 float32。
+<strong>Note</strong>   The shader gets UINT values, but if Direct3D 9 style integral floats are needed (0.0f, 1.0f... 255.f), UINT can just be converted to float32 in the shader.
 </div>
 <div>
  
@@ -587,7 +587,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>注意</strong> 着色器获取 SINT 值，但是如果需要 Direct3D 9 样式的整型浮点数，则只需在着色器中将 SINT 转换为 float32。
+<strong>Note</strong>   The shader gets SINT values, but if Direct3D 9 style integral floats are needed, SINT can just be converted to float32 in the shader.
 </div>
 <div>
  
@@ -597,7 +597,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>注意</strong> 着色器获取 SINT 值，但是如果需要 Direct3D 9 样式的整型浮点数，则只需在着色器中将 SINT 转换为 float32。
+<strong>Note</strong>   The shader gets SINT values, but if Direct3D 9 style integral floats are needed, SINT can just be converted to float32 in the shader.
 </div>
 <div>
  
@@ -625,11 +625,11 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_UDEC3</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPE_DEC3N</p></td>
-<td align="left"><p>不可用</p></td>
+<td align="left"><p>Not available</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_FLOAT16_2</p></td>
@@ -643,7 +643,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 要求功能级别 10.0 或更高功能级别
+<strong>Note</strong>   Requires Feature Level 10.0 or later
 </div>
 <div>
  
@@ -653,7 +653,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 要求功能级别 10.0 或更高功能级别
+<strong>Note</strong>   Requires Feature Level 10.0 or later
 </div>
 <div>
  
@@ -674,6 +674,6 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

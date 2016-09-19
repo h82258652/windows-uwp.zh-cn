@@ -1,53 +1,55 @@
 ---
 author: Jwmsft
-Description: "利用表和透视表，用户可以在经常访问的内容之间导航。"
-title: "表和透视表"
+Description: Tabs and pivots are enable users to navigate between frequently accessed content.
+title: Tabs and pivots
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
-ms.openlocfilehash: b6cf34346ad557ce53d3009afe8bc83bc7ed21aa
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 2a652e7bd8223a128fbd77d986c446fa7c74a34c
 
 ---
-# 透视表和表
+# Pivot and tabs
 
-透视表控件和相关的表模式用于导航经常访问的不同内容类别。 透视表允许在两个或多个内容窗格之间进行导航，并且依靠文本标题来表明内容的不同部分。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-![表示例](images/pivot_Hero_main.png)
+The Pivot control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Pivots allow for navigation between two or more content panes and relies on text headers to articulate the different sections of content.
 
-表是透视表的视觉变体，它使用图标和文本的组合或纯图标来表明部分内容。 表使用 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控件生成。 [**透视表示例**](http://go.microsoft.com/fwlink/p/?LinkId=619903)显示如何将透视表控件自定义为表模式。
+![An examples of tabs](images/pivot_Hero_main.png)
+
+Tabs are a visual variant of Pivot that use a combination of icons and text or just icons to articulate section content. Tabs are built using the [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The [**Pivot sample**](http://go.microsoft.com/fwlink/p/?LinkId=619903) shows how to customize the Pivot control into the tabs pattern.
 
 
 
--   [**Pivot 类**](https://msdn.microsoft.com/library/windows/apps/dn608241)
+-   [**Pivot class**](https://msdn.microsoft.com/library/windows/apps/dn608241)
 
-## 透视表模式
+## The pivot pattern
 
-在使用透视表生成应用时，有一些关键设计变量需要考虑。
+When building an app with pivot, there are a few key design variables to consider.
 
-- **标题标签。**  标题可以是带有文本的图标、纯图标或纯文本。
-- **标题对齐方式。**  标题可以左对齐，也可以居中对齐。
-- **顶级或次级导航。**  透视表可以用于任一级别的导航。 （可选）[导航窗格](nav-pane.md)可充当主要级别，而透视表可作为辅助级别。
-- **触摸手势支持。**  对于支持触摸手势的设备，你可以使用以下两组交互之一在不同的内容类别之间进行导航：
-    1. 点击表/透视表标题以导航到该类别。
-    2. 在内容区域上向左或向右轻扫，以导航到相邻类别。
+- **Header labels.**  Headers can have an icon with text, icon only, or text only.
+- **Header alignment.**  Headers can be left-justified or centered.
+- **Top-level or sub-level navigation.**  Pivots can be used for either level of navigation. Optionally, [navigation pane](nav-pane.md) can serve as the primary level with pivot acting as secondary.
+- **Touch gesture support.**  For devices that support touch gestures, you can use one of two interaction sets to navigate between content categories:
+    1. Tap on a tab/pivot header to navigate to that category.
+    2. Swipe left or right on the content area to navigate to the adjacent category.
 
-## 示例
+## Examples
 
-手机上的透视表控件。
+Pivot control on phone.
 
-![透视表示例](images/pivot_example.png)
+![An example of Pivot](images/pivot_example.png)
 
-“闹钟和时钟”应用中的表模式。
+Tabs pattern in the Alarms & Clock app.
 
-![“闹钟和时钟”中的表模式示例](images/tabs_alarms-and-clock.png)
+![An example of tabs pattern in Alarms and Clock](images/tabs_alarms-and-clock.png)
 
-## 创建透视表控件
+## Create a pivot control
 
-[**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 控件随附本部分中所述的基本功能。
+The [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control comes with the basic functionality described in this section.
 
-此 XAML 使用 3 个部分的内容创建基本透视表控件。
+This XAML creates a basic pivot control with 3 sections of content.
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Pivot Title">
@@ -66,57 +68,57 @@ ms.openlocfilehash: b6cf34346ad557ce53d3009afe8bc83bc7ed21aa
 </Pivot>
 ```
 
-### 透视表项目
+### Pivot items
 
-透视表是一个 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx)，因此可以包含任何类型的项目集合。 你添加到透视表的任何非显式 [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) 的项目都隐式包装在 PivotItem 中。 由于透视表经常用于在内容页面之间导航，因此通常使用 XAML UI 元素直接填充 [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合。 或者，你可以将 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 属性设置为数据源。 ItemsSource 中绑定的项目可以属于任何类型，但如果它们不是显式 PivotItems，则必须定义 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 和 [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) 来指定这些项目的显示方式。
+Pivot is an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx), so it can contain a collection of items of any type. Any item you add to the Pivot that is not explicitly a [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) is implicitly wrapped in a PivotItem. Because a Pivot is often used to navigate between pages of content, it's common to populate the [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) collection directly with XAML UI elements. Or, you can set the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a data source. Items bound in the ItemsSource can be of any type, but if they aren't explicitly PivotItems, you must define an [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) and [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) to specify how the items are displayed.
 
-你可以使用 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) 属性获取或设置透视表的活动项目。 使用 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) 属性获取或设置活动项目的索引。
+You can use the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) property to get or set the Pivot's active item. Use the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) property to get or set the index of the active item.
 
-### 透视表标题
+### Pivot headers
 
-你可以使用 [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) 和 [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) 属性将其他控件添加到透视表标题。
+You can use the [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) and [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) properties to add other controls to the Pivot header.
 
-### 透视表交互
+### Pivot interaction
 
-该控件的特色之处在于以下触摸手势交互：
+The control features these touch gesture interactions:
 
--   通过点击透视表项目标题，可导航到该标题的部分内容。
--   通过在透视表项目标题上向左或向右轻扫，可导航到相邻部分。
--   通过在部分内容上向左或向右轻扫，可导航到相邻部分。
-![在部分内容上向左轻扫的示例](images/pivot_w_hand.png)
+-   Tapping on a pivot item header navigates to that header's section content.
+-   Swiping left or right on a pivot item header navigates to the adjacent section.
+-   Swiping left or right on section content navigates to the adjacent section.
+![Example swiping left on section content](images/pivot_w_hand.png)
 
-该控件有以下两种模式：
+The control comes in two modes:
 
-**固定不动**
+**Stationary**
 
--   当所有透视表标题都适合所允许的空间时，透视表将固定不动。
--   点击某个透视表标签即可导航到相应的页面，尽管透视表无法自行移动也是如此。 活动透视表将突出显示。
-
-
-**旋转**
-
--   当所有透视表标题不适合所允许的空间时，可旋转透视表。
--   点击某个透视表标签即可导航到相应的页面，并且活动透视表标签将旋转至第一个位置。
--   从最后一个到第一个透视表部分的旋转循环中的透视表项目。
+-   Pivots are stationary when all pivot headers fit within the allowed space.
+-   Tapping on a pivot label navigates to the corresponding page, though the pivot itself will not move. The active pivot is highlighted.
 
 
-## 建议
+**Carousel**
 
--   根据屏幕大小来选择表/透视表标题的对齐方式。 对于宽度低于 720 像素的屏幕，通常使用中心对齐效果更佳；而对于宽度高于 720 像素的屏幕，在大多数情况下都推荐使用左对齐。
--   当使用旋转（来回旋转）模式时，避免使用 5 个以上的标题，因为超过 5 个标题的循环可能会令人困惑。
--   仅当透视表项目具有不同的图标时，使用表模式。
--   在透视表项目标题中包含文本，以帮助用户了解每个透视表部分的含义。 图标不一定对所有用户都加以说明。
-
+-   Pivots carousel when all pivot headers don't fit within the allowed space.
+-   Tapping a pivot label navigates to the corresponding page, and the active pivot label will carousel into the first position.
+-   Pivot items in a carousel loop from last to first pivot section.
 
 
-## 相关主题
+## Recommendations
 
-- [导航设计基础知识](../layout/navigation-basics.md)
-
-- [**透视表示例**](http://go.microsoft.com/fwlink/p/?LinkId=619903)
+-   Base the alignment of tab/pivot headers on screen size. For screen widths below 720 epx, center-aligning usually works better, while left-aligning for screen widths above 720 epx is recommended in most cases.
+-   Avoid using more than 5 headers when using carousel (round-trip) mode, as looping more than 5 can become confusing.
+-   Use the tabs pattern only if your pivot items have distinct icons.
+-   Include text in pivot item headers to help users understand the meaning of each pivot section. Icons are not necessarily self-explanatory to all users.
 
 
 
-<!--HONumber=Jul16_HO1-->
+## Related topics
+
+- [Navigation design basics](../layout/navigation-basics.md)
+
+- [**Pivot sample**](http://go.microsoft.com/fwlink/p/?LinkId=619903)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

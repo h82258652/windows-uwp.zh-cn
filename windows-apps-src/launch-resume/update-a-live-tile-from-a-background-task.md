@@ -1,51 +1,51 @@
 ---
 author: TylerMSFT
-title: "使用后台任务更新动态磁贴"
-description: "使用后台任务，以利用最新内容更新应用的动态磁贴。"
+title: Update a live tile from a background task
+description: Use a background task to update your app's live tile with fresh content.
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 5b11c3d4757d7da0c4c99d8f74a8988babfc26fd
+ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
 
 ---
 
 
-# 使用后台任务更新动态磁贴
+# Update a live tile from a background task
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要的 API**
+**Important APIs**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
-使用后台任务，以最新内容更新应用的动态磁贴。
+Use a background task to update your app's live tile with fresh content.
 
-下面的视频旨在演示如何将动态磁贴添加到你的应用。
+Here's a video that shows how to add live tiles to your apps.
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">一份开发备忘录 - 使用后台任务更新动态磁贴</iframe>
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - Updating a live tile from a background task</iframe>
 
-## 创建后台任务项目
-
-
-要为应用启用动态磁贴，请向你的解决方案中添加一个新的 Windows 运行时组件项目。 这是一个独立程序集，当用户安装你的应用时，OS 需要在后台加载并运行该程序集。
-
-1.  在“解决方案资源管理器”中，右键单击该解决方案、指向“添加”****，然后单击或点击“新建项目”****。
-2.  在“添加新项目”****对话框的“Visual C#”&gt;“Windows 应用商店”****部分中，选择“Windows 运行时组件”****模板。
-3.  将项目命名为 BackgroundTasks，然后单击或点击“确定”****。 Microsoft Visual Studio 即会将这个新项目添加到该解决方案。
-4.  在主项目中，向 BackgroundTasks 项目添加一个引用。
-
-## 实施后台任务
+## Create the background task project
 
 
-实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口，以创建用于更新应用动态磁贴的类。 后台工作将采用 Run 方法。 在这种情况下，该任务将收到一个 MSDN 博客联合源。 为了防止该任务在异步代码仍在运行时过早关闭，请延期执行。
+To enable a live tile for your app, add a new Windows Runtime Component project to your solution. This is a separate assembly that the OS loads and runs in the background when a user installs your app.
 
-1.  在解决方案资源管理器中，将自动生成的文件 Class1.cs 重命名为 BlogFeedBackgroundTask.cs。
-2.  在 BlogFeedBackgroundTask.cs 中，将自动生成的代码替换为 **BlogFeedBackgroundTask** 类的存根代码。
-3.  在 Run 方法的实现过程中，添加 **GetMSDNBlogFeed** 和 **UpdateTile** 方法的代码。
+1.  In Solution Explorer, right-click the solution, point to **Add**, and click or tap **New Project**.
+2.  In the **Add New Project** dialog, select the **Windows Runtime Component** template in the **Visual C# &gt; Windows Store** section.
+3.  Name the project BackgroundTasks and click or tap **OK**. Microsoft Visual Studio adds the new project to the solution.
+4.  In the main project, add a reference to the BackgroundTasks project.
+
+## Implement the background task
+
+
+Implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface to create a class that updates your app's live tile. Your background work goes in the Run method. In this case, the task gets a syndication feed for the MSDN blogs. To prevent the task from closing prematurely while asynchronous code is still running, get a deferral.
+
+1.  In Solution Explorer, rename the automatically generated file, Class1.cs, to BlogFeedBackgroundTask.cs.
+2.  In BlogFeedBackgroundTask.cs, replace the automatically generated code with the stub code for the **BlogFeedBackgroundTask** class.
+3.  In the Run method implementation, add code for the **GetMSDNBlogFeed** and **UpdateTile** methods.
 
 ```cs
 using System;
@@ -141,32 +141,32 @@ namespace BackgroundTasks
 }
 ```
 
-## 设置包清单
+## Set up the package manifest
 
 
-若要设置包清单，请打开它并添加一个新的后台任务声明。 将该任务的入口点设置为类名称，包括其命名空间。
+To set up the package manifest, open it and add a new background task declaration. Set the entry point for the task to the class name, including its namespace.
 
-1.  在解决方案资源管理器中，打开“Package.appxmanifest”。
-2.  单击或点击“声明”****选项卡。
-3.  在“可用声明”****下，选择“BackgroundTasks”****，然后单击“添加”****。 Visual Studio 即会将“BackgroundTasks”****添加到“支持的声明”****下。
-4.  在“支持的任务类型”****下，确保已选中“计时器”****。
-5.  在“应用设置”****下，将入口点设置为“BackgroundTasks.BlogFeedBackgroundTask”****。
-6.  单击或点击“应用程序 UI”****选项卡。
-7.  将“锁屏界面通知”****设置为“锁屏提醒和磁贴文本”****。
-8.  在“锁屏提醒徽标”****字段中，将路径设置为 24x24 像素图标。
-    **重要提示** 此图标只能使用单色透明像素。
-9.  在“小徽标”****字段中，将路径设置为 30x30 像素图标。
-10. 在“宽徽标”****字段中，将路径设置为 310x150 像素图标。
+1.  In Solution Explorer, open Package.appxmanifest.
+2.  Click or tap the **Declarations** tab.
+3.  Under **Available Declarations**, select **BackgroundTasks** and click **Add**. Visual Studio adds **BackgroundTasks** under **Supported Declarations**.
+4.  Under **Supported task types**, ensure that **Timer** is checked.
+5.  Under **App settings**, set the entry point to **BackgroundTasks.BlogFeedBackgroundTask**.
+6.  Click or tap the **Application UI** tab.
+7.  Set **Lock screen notifications** to **Badge and Tile Text**.
+8.  Set a path to a 24x24 pixel icon in the **Badge logo** field.
+    **Important**  This icon must use monochrome and transparent pixels only.
+9.  In the **Small logo** field, set a path to a 30x30 pixel icon.
+10. In the **Wide logo** field, set a path to a 310x150 pixel icon.
 
-## 注册后台任务
+## Register the background task
 
 
-创建 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 以注册你的任务。
+Create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) to register your task.
 
-> **注意** 从 Windows 8.1 开始，后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
+> **Note**  Starting in Windows 8.1, background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Your app must be able to handle scenarios where background task registration fails - for example, use a conditional statement to check for registration errors and then retry failed registration using different parameter values.
  
 
-在应用的主页中，添加 **RegisterBackgroundTask** 方法并在 **OnNavigatedTo** 事件处理程序中进行调用。
+In your app's main page, add the **RegisterBackgroundTask** method and call it in the **OnNavigatedTo** event handler.
 
 ```cs
 using System;
@@ -240,29 +240,29 @@ namespace ContosoApp
 }
 ```
 
-## 调试后台任务
+## Debug the background task
 
 
-若要调试后台任务，请在该任务的 Run 方法中设置一个断点。 在“调试位置”****工具栏中，选择你的后台任务。 这将导致系统立即调用 Run 方法。
+To debug the background task, set a breakpoint in the task’s Run method. In the **Debug Location** toolbar, select your background task. This causes the system to call the Run method immediately.
 
-1.  在该任务的 Run 方法中设置一个断点。
-2.  按 F5 或点击“调试”&gt;“开始调试”****以部署和运行该应用。
-3.  应用启动后，切换回 Visual Studio。
-4.  确保显示“调试位置”****工具栏。 该工具栏位于“查看”&gt;“工具栏”****菜单上。
-5.  在“调试位置”****工具栏上，单击“暂停”****下拉菜单，然后选择“BlogFeedBackgroundTask”****。
-6.  Visual Studio 会在断点位置暂停执行。
-7.  按 F5 或点击“调试”&gt;“继续”****以继续运行该应用。
-8.  按 Shift+F5 或点击“调试”&gt;“停止调试”****以停止调试。
-9.  返回到“开始”屏幕上的该应用磁贴。 几秒钟后，你的应用磁贴上将会显示磁贴通知。
+1.  Set a breakpoint in the task’s Run method.
+2.  Press F5 or tap **Debug &gt; Start Debugging** to deploy and run the app.
+3.  After the app launches, switch back to Visual Studio.
+4.  Ensure that the **Debug Location** toolbar is visible. It's on the **View &gt; Toolbars** menu.
+5.  On the **Debug Location** toolbar, click the **Suspend** dropdown and select **BlogFeedBackgroundTask**.
+6.  Visual Studio suspends execution at the breakpoint.
+7.  Press F5 or tap **Debug &gt; Continue** to continue running the app.
+8.  Press Shift+F5 or tap **Debug &gt; Stop Debugging** to stop debugging.
+9.  Return to the app's tile on the Start screen. After a few seconds, tile notifications appear on your app's tile.
 
-## 相关主题
+## Related topics
 
 
 * [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 * [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
 * [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)
-* [使用后台任务支持应用](support-your-app-with-background-tasks.md)
-* [磁贴和锁屏提醒指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465403)
+* [Support your app with background tasks](support-your-app-with-background-tasks.md)
+* [Guidelines and checklist for tiles and badges](https://msdn.microsoft.com/library/windows/apps/hh465403)
 
  
 
@@ -270,6 +270,6 @@ namespace ContosoApp
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

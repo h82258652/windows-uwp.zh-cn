@@ -1,40 +1,40 @@
 ---
 author: mtoepke
-title: "扩展游戏示例"
-description: "恭喜你！ 此时，你已了解了基本通用 Windows 平台 (UWP) DirectX 3D 游戏的关键组件。"
+title: Extend the game sample
+description: Congratulations! At this point, you understand the key components of a basic Universal Windows Platform (UWP) DirectX 3D game.
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 keywords:
 - DirectX, XAML
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 02b8681c45c84e1cdd5b97dfc717a68015df1252
+ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
 
 ---
 
-# 扩展游戏示例
+# Extend the game sample
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-恭喜你！ 此时，你已了解了基本 Windows 通用 (UWP) DirectX 3D 游戏的关键组件。 你可以设置游戏的框架，包括视图提供程序和呈现管道，并实现基本的游戏循环。 还可以创建基本的用户界面覆盖层以及合并声音和控件。 你正在创建一个专属游戏， 这里提供了一些资源可使你进一步了解 DirectX 游戏开发。
+Congratulations! At this point, you understand the key components of a basic Universal Windows Platform (UWP) DirectX 3D game. You can set up the framework for a game, including the view provider and rendering pipeline, and implement a basic game loop. You can also create a basic user interface overlay, and incorporate sounds and controls. You're on your way to creating a game of your own, and here are some resources to further your knowledge of DirectX game development.
 
--   [DirectX 图形和游戏](https://msdn.microsoft.com/library/windows/desktop/ee663274)
--   [Direct3D 11 概述](https://msdn.microsoft.com/library/windows/desktop/ff476345)
--   [Direct3D 11 参考](https://msdn.microsoft.com/library/windows/desktop/ff476147)
+-   [DirectX Graphics and Gaming](https://msdn.microsoft.com/library/windows/desktop/ee663274)
+-   [Direct3D 11 Overview](https://msdn.microsoft.com/library/windows/desktop/ff476345)
+-   [Direct3D 11 Reference](https://msdn.microsoft.com/library/windows/desktop/ff476147)
 
-## 扩展游戏示例：将 XAML 用于覆盖层
+## Extending the game sample: using XAML for the overlay
 
 
-还有一种方法我们未深入讨论，即使用 XAML 代替 Direct2D 作为覆盖层。 与 Direct2D 相比，XAML 在绘制用户界面元素方面有许多优势， 最重要的一点是它可以更方便地将 Windows 10 外观和感觉融入到 DirectX 游戏中。 许多用于定义 UWP 应用的常用元素、 样式和行为都紧密集成到 XAML 模型中，大幅减少了游戏开发人员的实现工作。 如果你自己设计的游戏有一个复杂的用户界面，请考虑使用 XAML 代替 Direct2D。
+One alternative that we didn't discuss in depth is the use of XAML instead of Direct2D for the overlay. XAML has many benefits over Direct2D for drawing user interface elements, and the most important one is that it makes incorporating the Windows 10 look and feel into your DirectX game more convenient. Many of the common elements, styles, and behaviors that define a UWP app are tightly integrated into the XAML model, making it far less work for a game developer to implement. If your own game design has a complicated user interface, consider using XAML instead of Direct2D.
 
-那么，使用 Direct2D 实现用户界面与使用 XAML 实现相同的用户界面有何不同？
+So, what is the difference between the implementation of a user interface with Direct2D, and implementing that same interface with XAML?
 
--   可在 XAML 文件 \*.xaml 中定义覆盖层，而不是将其作为手动放置并写入 Direct2D 目标缓冲区 Direct2D 基元和 DirectWrite 字符串的集合。 如果你了解 XAML，你会发现创建和配置较复杂的覆盖层要容易得多，尤其是使用 Visual Studio 的 XAML 编辑工具。
--   用户界面元素来自属于 Windows 运行时 XAML API 一部分的标准化元素，其中包括 [**Windows::UI::Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) 和 [**Windows::UI::Xaml::Controls**](https://msdn.microsoft.com/library/windows/apps/br227716)。 处理 XAML 用户界面元素行为的代码在代码隐藏文件 Main.xaml.cpp 中定义。
--   XAML 作为一个紧密集成的 Windows 运行时组件，通常处理大小调整和视图状态更改事件，相应地转换覆盖层，因此不需要手动指定如何重新绘制覆盖层的组件。
--   交换链不直接附加到 [**Windows::UI::Core::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 对象；或者至少你不必附加它。 而在构建新的 [**SwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/apps/hh702626) 对象时，合并 XAML 的 DirectX 应用将关联一个交换链。 **SwapChainBackgroundPanel** 对象设置为在启动时由应用单一实例创建的当前窗口对象的 [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) 属性，该窗口作为 **CoreWindow** 对象传递到 **Simple3DGame::Initialize**。
+-   You define the overlay in a XAML file, \*.xaml, rather than as a collection of Direct2D primitives and DirectWrite strings manually placed and written to a Direct2D target buffer. If you understand XAML, you'll find it much easier to create and configure more complicated overlays, especially if you use Visual Studio's XAML editing tools.
+-   The user interface elements come from standardized elements that are part of the Windows Runtime XAML APIs, including [**Windows::UI::Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) and [**Windows::UI::Xaml::Controls**](https://msdn.microsoft.com/library/windows/apps/br227716). The code that handles the behavior of the XAML user interface elements is defined in a codebehind file, Main.xaml.cpp.
+-   XAML, as a tightly integrated Windows Runtime component, naturally handles resize and view state change events, transforming the overlay accordingly, so you don't have to manually specify how to redraw the overlay's components.
+-   The swap chain is not directly attached to a [**Windows::UI::Core::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object, or at least you don't have to do this. Instead, a DirectX app that incorporates XAML associates a swap chain when a new [**SwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/apps/hh702626) object is constructed. The **SwapChainBackgroundPanel** object is set as the [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) property of the current window object created at launch by the app singleton, and the window is passed to **Simple3DGame::Initialize** as a **CoreWindow** object.
 
-可在 **Main.app.xaml** 文件中为 **SwapChainBackgroundPanel** 声明 XAML，如下所示：
+You declare the XAML for the **SwapChainBackgroundPanel** like this in **Main.app.xaml** file:
 
 ```xml
 <Page
@@ -145,7 +145,7 @@ void App::OnLaunched(LaunchActivatedEventArgs^ /* args */)
 }
 ```
 
-若要将配置的交换链连接到 XAML 定义的 [**SwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/apps/hh702626) 面板实例，必须获取底层本机 [**ISwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/desktop/hh848326) 接口实现的指针并对其调用 [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/hh848327)，从而向其传递配置的交换链。 从派生自专用于 DirectX/XAML 互操作的 **DirectXBase::CreateWindowSizeDependentResources** 的方法：
+To attach the configured swap chain to the [**SwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/apps/hh702626) panel instance defined by your XAML, you must obtain a pointer to the underlying native [**ISwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/desktop/hh848326) interface implementation and call [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/hh848327) on it, passing it your configured swap chain. From a method derived from **DirectXBase::CreateWindowSizeDependentResources** specifically for DirectX/XAML interop:
 
 ```cpp
         ComPtr<IDXGIDevice1> dxgiDevice;
@@ -189,14 +189,14 @@ void App::OnLaunched(LaunchActivatedEventArgs^ /* args */)
             );
 ```
 
-有关此过程的详细信息，请参阅 [DirectX 和 XAML 互操作](https://msdn.microsoft.com/library/windows/apps/hh825871)。
+For more info about this process, see [DirectX and XAML interop](https://msdn.microsoft.com/library/windows/apps/hh825871).
 
-## XAML 游戏示例 XAML 代码隐藏的完整代码
+## Complete code for the XAML game sample XAML codebehinds
 
 
-下面是 XAML 版本的 Direct3D 11.1 射击游戏示例中的代码隐藏的完整代码。
+Here's the complete code for the codebehinds found in the XAML version of the Direct3D 11.1 shooting game sample.
 
-（与其余主题中讨论的游戏示例版本不同，XAML 版本分别在 **App.xaml.cpp** 和 **MainPage.xaml.cpp** 文件中定义其框架，而不是在 **DirectXApp.cpp** 和 **GameInfoOverlay.cpp** 中。）
+(Unlike the version of the game sample discussed in the rest of these topics, the XAML version defines its framework in the **App.xaml.cpp** and **MainPage.xaml.cpp** files, instead of **DirectXApp.cpp** and **GameInfoOverlay.cpp**, respectively.)
 
 App.xaml.h
 
@@ -1279,7 +1279,7 @@ namespace Simple3DGameXaml
 }
 ```
 
-Main.xaml.cpp 代码隐藏
+Main.xaml.cpp codebehind
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1509,7 +1509,7 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 //----------------------------------------------------------------------
 ```
 
-要下载为覆盖层使用 XAML 的示例游戏的版本，请转到 [Direct3D 射击游戏示例 (XAML)](http://go.microsoft.com/fwlink/p/?linkid=241418)。
+To download a version of the sample game that uses XAML for the overlay, go to the [Direct3D shooting game sample (XAML)](http://go.microsoft.com/fwlink/p/?linkid=241418).
 
  
 
@@ -1521,6 +1521,6 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

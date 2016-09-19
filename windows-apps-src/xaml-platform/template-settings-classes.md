@@ -1,42 +1,42 @@
 ---
 author: jwmsft
-description: "模板设置类"
-title: "模板设置类"
+description: Template settings classes
+title: Template settings classes
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
+ms.openlocfilehash: 8a52535e54a321bab6b34b6a73c53222e88d2151
 
 ---
 
-# 模板设置类
+# Template settings classes
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 先决条件
+## Prerequisites
 
-我们假定你可以将控件添加到 UI，设置控件的属性以及连接事件处理程序。 有关将控件添加到应用的说明，请参阅[添加控件和处理事件](https://msdn.microsoft.com/library/windows/apps/mt228345)。 我们还假设你了解如何通过创建默认模板的副本并对其进行编辑来定义控件的自定义模板的基础知识。 有关详细信息，请参阅[快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
+We assume that you can add controls to your UI, set their properties, and attach event handlers. For instructions for adding controls to your app, see [Add controls and handle events](https://msdn.microsoft.com/library/windows/apps/mt228345). We also assume that you know the basics of how to define a custom template for a control by making a copy of the default template and editing it. For more info on this, see [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
-## 适用于 **TemplateSettings** 类的方案
+## The scenario for **TemplateSettings** classes
 
-**TemplateSettings** 类提供一组可在为控件定义新控件模板时使用的属性。 这些属性具有诸如特定 UI 元素部件大小的像素度量之类的值。 这些值有时是来自于通常难以覆盖甚至访问的控件逻辑的经计算的值。 其中一些属性旨在作为控制部件的过渡和动画的 **From** **To** 值，因此也是成对出现的相关 **TemplateSettings** 属性。
+**TemplateSettings** classes provide a set of properties that are used when you define a new control template for a control. The properties have values such as pixel measurements for the size of certain UI element parts. The values are sometimes calculated values that come from control logic that isn't typically easy to override or even access. Some of the properties are intended as **From** and **To** values that control transitions and animations of parts, and thus the relevant **TemplateSettings** properties come in pairs.
 
-有多个 **TemplateSettings** 类。 它们全部都在 [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空间中。 下面是类的列表，以及指向相关控件的 **TemplateSettings** 属性的链接。 此 **TemplateSettings** 属性是你访问控件的 **TemplateSettings** 值的方式，并且可以建立对其属性的模板绑定：
+There are several **TemplateSettings** classes. All of them are in the [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) namespace. Here's a list of the classes, and a link to the **TemplateSettings** property of the relevant control. This **TemplateSettings** property is how you access the **TemplateSettings** values for the control, and can establish template bindings to its properties:
 
--   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752)：[**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364) 的值
--   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499)：[**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503) 的值
--   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948)：[**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923) 的值
--   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856)：[**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537) 的值
--   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248)：[**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581) 的值
--   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721)：[**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826) 的值
--   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804)：[**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731) 的值
--   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813)：[**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629) 的值
+-   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752): value of [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
+-   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499): value of [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
+-   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948): value of [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
+-   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856): value of [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
+-   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248): value of [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
+-   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721): value of [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
+-   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804): value of [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
+-   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813): value of [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
 
-**TemplateSettings** 属性始终旨在用于 XAML 中，而不是用于代码。 它们是父控件的只读 **TemplateSettings** 属性的只读子属性。 对于高级自定义控件方案，在此方案中你要创建新的基于 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 的类并且可以影响控件逻辑，请在控件上定义一个自定义 **TemplateSettings** 属性，以传送可能对任何正在为控件重新创建模板的人有用的信息。 作为该属性的只读值，请定义与你的控件相关的新 **TemplateSettings** 类，此类具有与模板度量、动画位置等相关的每个信息项的只读属性，并且向调用方提供使用你的控件逻辑初始化的该类的运行时实例。 **TemplateSettings** 类派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)，因此这些属性可以使用依赖属性系统进行更改属性的回调。 但是这些属性的依赖属性标识符将不公开为公共 API，因为 **TemplateSettings** 属性旨在对调用方只读。
+**TemplateSettings** properties are always intended to be used in XAML, not code. They are read-only sub-properties of a read-only **TemplateSettings** property of a parent control. For an advanced custom control scenario, where you're creating a new [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390)-based class and thus can influence the control logic, consider defining a custom **TemplateSettings** property on the control in order to communicate info that might be useful for anyone that is re-templating the control. As that property's read-only value, define a new **TemplateSettings** class related to your control that has read-only properties for each of the info items that are relevant for template measurements, animation positioning, and so on, and give callers the runtime instance of that class that's initialized using your control logic. **TemplateSettings** classes are derived from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), so that the properties can use the dependency property system for property-changed callbacks. But the dependency property identifiers for the properties aren't exposed as public API, because the **TemplateSettings** properties are meant to be read-only to callers.
 
-## 如何在控件模板中使用 **TemplateSettings**
+## How to use **TemplateSettings** in a control template
 
-下面是来自初始默认 XAML 控件模板的示例。 此特定的示例来自 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的默认模板：
+Here's an example that comes from the starting default XAML control templates. This particular one is from the default template of [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538):
 
 ```xml
 <Ellipse
@@ -51,7 +51,7 @@ ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 模板的完整 XAML 有数百行，因此这只是一个小小的摘要。 此 XAML 定义作为 6 个 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 元素之一的控件部件，此元素描绘不确定进度的旋转动画。 作为开发人员，你可能不喜欢圆形，而且可能针对动画处理方式使用不同的图形基元或不同的基本形状。 例如，你可能撰写一个改用一组以方形排列的[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 元素的 **ProgressRing**。 如果是这样，则你的新模板的单个 **Rectangle** 组件可能如下所示：
+The full XAML for the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) template is hundreds of lines, so this is just a tiny excerpt. This XAML defines a control part that is one of 6 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) elements that portray the spinning animation for indeterminate progress. As a developer, you might not like the circles and might use a different graphics primitive or a different basic shape for how the animation progresses. For example, you might compose a **ProgressRing** that uses a set of [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) elements arranged in a square instead. If so, each individual **Rectangle** component of your new template might look like this:
 
 ```xml
 <Rectangle
@@ -65,9 +65,9 @@ ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-**TemplateSettings** 属性在此处有用的原因是，它们是来自 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的基本控件逻辑的经计算的值。 计算划分 **ProgressRing** 的总体 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 和 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707)，并且为其模板中的每个动作元素分配经计算的度量，以便模板部件可以调整内容大小。
+The reason that the **TemplateSettings** properties are useful here is because they are calculated values coming from the basic control logic of [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538). The calculation is dividing up the overall [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) and [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) of the **ProgressRing**, and allotting a calculated measurement for each of the motion elements in its templates so that the template parts can size to content.
 
-下面是另一个来自默认 XAML 控件模板的示例用法，这次显示作为动画的 **From** 和 **To** 的属性集之一。 它来自 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) 默认模板：
+Here's another example usage from the default XAML control templates, this time showing one of the property sets that are the **From** and **To** of an animation. This is from the [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) default template:
 
 ```xml
 <VisualStateGroup x:Name="DropDownStates">
@@ -90,18 +90,18 @@ ms.openlocfilehash: 1ae6ca45808eae8943f471cceaf78fc5e8d81410
 </VisualStateGroup>
 ```
 
-同样，模板中有许多 XAML，因此我们只显示摘要。 而且这仅仅是分别使用相同 [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) 属性的多个状态和主题动画之一。 对于 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)，通过绑定使用 **ComboBoxTemplateSettings** 值强制模板中的相关动画停止，并在基于共享值的位置上开始，以便平稳地过渡。
+Again there is lots of XAML in the template so we only show an excerpt. And this is only one of several states and theme animations that each use the same [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) properties. For [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348), use of the **ComboBoxTemplateSettings** values through bindings enforces that related animations in the template will stop and start at positions that are based on shared values, and thus transition smoothly.
 
-**注意**  
-当你使用 **TemplateSettings** 值作为控件模板的一部分时，请确保你设置的是与值的类型匹配的属性。 如果不是，你可能需要为绑定创建一个值转换器，以便可以从 **TemplateSettings** 值的不同源类型转换为绑定的目标类型。 有关详细信息，请参阅 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)。
+**Note**  
+When you do use **TemplateSettings** values as part of your control template, make sure you're setting properties that match the type of the value. If not, you might need to create a value converter for the binding so that the target type of the binding can be converted from a different source type of the **TemplateSettings** value. For more info, see [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
-## 相关主题
+## Related topics
 
-* [快速入门：控件模板](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-
-
+* [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,30 +1,30 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
-title: "准备好注册了吗？"
-description: "立即注册开发者帐户，以便你可以将应用提交到 Windows 应用商店并参与其他 Microsoft 计划。"
+title: Ready to sign up?
+description: Register now for a developer account so you can get your apps into the Windows Store and participate in other Microsoft programs.
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53d23b3f8502e1f182c728b9f787fbbc4b694d42
+ms.sourcegitcommit: 43214b9e2c786a007b8d9cdef7700e275101aba5
+ms.openlocfilehash: ddba8a7fe517ecb538a5632355fcb73a17fe54f7
 
 ---
-# 准备好注册了吗？
+# Ready to sign up?
 
-立即注册开发者帐户，以便你可以将应用提交到 Windows 应用商店并参与其他 Microsoft 计划。
+Register now for a developer account so you can get your apps into the Windows Store and participate in other Microsoft programs.
 
-[立即注册！](http://go.microsoft.com/fwlink/p/?LinkId=615100)
+[Sign up now!](http://go.microsoft.com/fwlink/p/?LinkId=615100)
 
-## 打开你的开发者帐户
+## Opening your developer account
 
-我们[在全球各地提供个人和公司帐户](../publish/account-types-locations-and-fees.md)。 请参阅我们的[注册流程概述](../publish/opening-a-developer-account.md)以查看操作方法。
+We offer [individual and company accounts in locations around the world](../publish/account-types-locations-and-fees.md). Check out our [overview of the sign-up process](../publish/opening-a-developer-account.md) to see how it works.
 
-## 你的应用有名称吗？
+## Have a name for your app?
 
-打开开发者帐户后，你可以立即[通过保留名称创建你的应用](https://msdn.microsoft.com/library/windows/apps/JJ657967)。
-
-
+As soon as you open your developer account, you can [create your app by reserving a name](https://msdn.microsoft.com/library/windows/apps/JJ657967).
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

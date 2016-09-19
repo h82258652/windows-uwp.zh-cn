@@ -1,40 +1,51 @@
 ---
 author: Jwmsft
-Description: "日期选取器向你提供了一种标准化方式，可使用户通过触摸、鼠标或键盘输入选取本地化格式的日期值。"
-title: "日期选取器"
+Description: The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
+title: Date picker
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: c237d4bc013ad0a1d0d16f695f4332a6aac7efdc
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 2253172ff20ae46b0ada556551adfeac62136398
 
 ---
+# Date picker
 
-# 日期选取器
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-日期选取器向你提供了一种标准化方式，可使用户通过触摸、鼠标或键盘输入选取本地化格式的日期值。 
+The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx"><strong>DatePicker class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx"><strong>Date property</strong></a></li>
+</ul>
 
--   [**DatePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
--   [**Date 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
+</div>
+</div>
 
-## 这是正确的控件吗？
-使用日期选取器以使用户选取日历上下文不重要的已知日期，例如生日。
 
-有关选择正确日期控件的详细信息，请参阅[日期和时间控件](date-and-time.md)文章。
 
-## 示例
 
-入口点显示选定的日期，当用户选择该入口点时，会从中间垂直展开一个选取器图面以供用户进行选择。 日期选取器会覆盖其他 UI；它不会将其他 UI 推开。
 
-![日期选取器展开示例](images/controls_datepicker_expand.png)
 
-## 创建日期选取器
+## Is this the right control?
+Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.
 
-本示例演示如何创建附带标头的简单日期选取器。
+For more info about choosing the right date control, see the [Date and time controls](date-and-time.md) article.
+
+## Examples
+
+The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.
+
+![Example of the date picker expanding](images/controls_datepicker_expand.png)
+
+## Create a date picker
+
+This example shows how to create a simple date picker with a header.
 
 ```xaml
 <DatePicker x:Name=birthDatePicker Header="Date of birth"/>
@@ -45,23 +56,23 @@ DatePicker birthDatePicker = new DatePicker();
 birthDatePicker.Header = "Date of birth";
 ```
 
-生成的日期选取器如下所示：
+The resulting date picker looks like this:
 
-![日期选取器示例](images/date-picker-closed.png)
+![Example of date picker](images/date-picker-closed.png)
 
-> **注意** &nbsp;&nbsp;有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
-
-
-
-## 相关文章
-
-- [日期和时间控件](date-and-time.md)
-- [日历日期选取器](calendar-date-picker.md)
-- [日历视图](calendar-view.md)
-- [时间选取器](time-picker.md)
+> **Note**&nbsp;&nbsp;For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
 
 
 
-<!--HONumber=Jun16_HO4-->
+## Related articles
+
+- [Date and time controls](date-and-time.md)
+- [Calendar date picker](calendar-date-picker.md)
+- [Calendar view](calendar-view.md)
+- [Time picker](time-picker.md)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

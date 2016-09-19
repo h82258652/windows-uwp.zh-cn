@@ -1,52 +1,16 @@
 ---
-author: jnHs
-Description: "提交 IAP 时，你提供的信息将显示给应用的客户。"
-title: "创建 IAP 描述"
-ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
+redirect_url: https://msdn.microsoft.com/windows/uwp/publish/create-add-on-store-listings
 translationtype: Human Translation
-ms.sourcegitcommit: be199d045feadb352b914bb11dbe2cf3dd5ddbf0
-ms.openlocfilehash: 418907894d3fc9349ca113ff04c575bcb0140347
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: 292db4af3a0b80ccb3ef40553f2f5dcaa45312a4
 
 ---
 
-# 创建 IAP 描述
+# Create IAP descriptions
+
+This page has been redirected to: Create add-on Store listings
 
 
-提交 IAP 时，在“描述”****步骤中提供的信息将显示给应用的客户。 请务必仔细考虑描述，以便通过吸引客户注意力的方式准确地展示你的 IAP。 你可以针对不同的语言提供自定义描述。
-
-## 语言
-
-
-在输入提要信息之前，你需要指定一种或多种[语言](supported-languages.md)。 我们建议为你的应用支持的每种语言提供提要。
-
-在 IAP 提交的“描述”****部分下，单击“管理描述语言”****，然后单击下一页上的“管理语言”****。 查看你要添加的语言的对话框，然后单击“更新”****。 你已选择的语言将显示在页面的“描述语言”****部分。 若要删除其中一种或多种语言，请单击“删除”****（或单击“管理语言”****并取消选中你要删除的语言的对话框）。 当你对语言列表满意时，单击“保存****。
-
-> **提示** 若要添加和删除其他语言，请在 IAP 提交概述中单击“管理描述语言”****。
-
-若要编辑某段描述，请在 IAP 提交概述中单击语言名称。 下面介绍了你可以为每种语言输入的信息。
-
-## 标题
-
-你必须在此处提供标题，对于此 IAP，它是你的客户将看到的名称。 你的标题最长可以为 100 个字符。
-
-## 说明
-
-如果你想要显示更多信息（而不仅仅是一个标题），请在此处输入最多 200 个字符。 此字段是可选的。
-
-## 图标
-
-你也可以选择提供一个图像，该图像可能在用户购买产品时显示。 此图标必须是 .png 文件，大小正好是 300 x 300 像素。
-
- 
-
- 
-
-
-
-
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

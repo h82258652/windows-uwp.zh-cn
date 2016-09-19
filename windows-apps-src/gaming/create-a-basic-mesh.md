@@ -1,46 +1,46 @@
 ---
 author: mtoepke
-title: "创建和显示基本网格"
-description: "3D 通用 Windows 平台 (UWP) 游戏通常使用多边形来表示游戏中的对象和图面。"
+title: Create and display a basic mesh
+description: 3-D Universal Windows Platform (UWP) games typically use polygons to represent objects and surfaces in the game.
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c082456d5eb0cf1c5c697a6af5bc1d4de1f5ada2
+ms.openlocfilehash: b8795438053adebfbd36cada86a8ef13afb3eef2
 
 ---
 
-# 创建和显示基本网格
+# Create and display a basic mesh
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-3D 通用 Windows 平台游戏通常使用多边形来表示游戏中的对象和图面。 构成这些多边形对象和图面的结构的顶点列表称为网格。 在这里，我们为立方体对象创建一个基本网格并为其提供用于呈现和显示的着色器管道。
+3-D Universal Windows Platform (UWP) games typically use polygons to represent objects and surfaces in the game. The lists of vertices that comprise the structure of these polygonal objects and surfaces are called meshes. Here, we create a basic mesh for a cube object and provide it to the shader pipeline for rendering and display.
 
-> **重要提示** 此处包含的示例代码使用在 DirectXMath.h 中声明的类型（如 DirectX::XMFLOAT3 和 DirectX::XMFLOAT4X4）和内联方法。 如果你剪切并粘贴该代码，则在你的项目中使用 \#include &lt;DirectXMath.h&gt;。
+> **Important**   The example code included here uses types (such as DirectX::XMFLOAT3 and DirectX::XMFLOAT4X4) and inline methods declared in DirectXMath.h. If you're cutting and pasting this code, \#include &lt;DirectXMath.h&gt; in your project.
 
  
 
-## 你需要了解的内容
+## What you need to know
 
 
-### 技术
+### Technologies
 
 -   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
 
-### 先决条件
+### Prerequisites
 
--   线性代数和三维坐标系的基础知识
--   Visual Studio 2015 Direct3D 模板
+-   Basic knowledge of linear algebra and 3-D coordinate systems
+-   A Visual Studio 2015 Direct3D template
 
-## 说明
+## Instructions
 
-### 步骤 1：为模型构造网格
+### Step 1: Construct the mesh for the model
 
-在大多数游戏中，游戏对象的网格都从包含特定顶点数据的文件加载。 这些顶点的排序与应用相关，但它们通常被序列化为带或扇形。 顶点数据可以来自任何软件源，也可以手动创建。 游戏采用顶点着色器可以高效处理的方式解释数据。
+In most games, the mesh for a game object is loaded from a file that contains the specific vertex data. The ordering of these vertices is app-dependent, but they are usually serialized as strips or fans. Vertex data can come from any software source, or it can be created manually. It's up to your game to interpret the data in a way that the vertex shader can effectively process it.
 
-在我们的示例中，我们对一个立方体使用简单的网格。 该立方体，与管道中处于该阶段的任何对象网格一样，都使用其自己的坐标系来表示。 顶点着色器获取它的坐标，通过应用提供的变换矩阵在同类坐标系中返回最终的 2-D 视图投影。
+In our example, we use a simple mesh for a cube. The cube, like any object mesh at this stage in the pipeline, is represented using its own coordinate system. The vertex shader takes its coordinates and, by applying the transformation matrices you provide, returns the final 2-D view projection in a homogeneous coordinate system.
 
-为立方体定义网格。 （或从文件加载。 由你来调用！）
+Define the mesh for a cube. (Or load it from a file. It's your call!)
 
 ```cpp
 SimpleCubeVertex cubeVertices[] =
@@ -57,17 +57,17 @@ SimpleCubeVertex cubeVertices[] =
 };
 ```
 
-立方体的坐标系将立方体的中心放置在原点，y 轴使用左手坐标系从上指向下。 坐标值表示为介于 -1 和 1 之间的 32 位浮点值。
+The cube's coordinate system places the center of the cube at the origin, with the y-axis running top to bottom using a left-handed coordinate system. Coordinate values are expressed as 32-bit floating values between -1 and 1.
 
-在每对括号中，第二个 DirectX::XMFLOAT3 值组将与顶点关联的颜色指定为 RGB 值。 例如，(-0.5, 0.5, -0.5) 处的第一个顶点为完全绿色（G 值设置为 1.0，“R”和“B”值设置为 0）。
+In each bracketed pairing, the second DirectX::XMFLOAT3 value group specifies the color associated with the vertex as an RGB value. For example, the first vertex at (-0.5, 0.5, -0.5) has a full green color (the G value is set to 1.0, and the "R" and "B" values are set to 0).
 
-因此，你拥有 8 个顶点，每个顶点都具有特定的颜色。 在我们的示例中，每个顶点/颜色对都是顶点的完整数据。 当你指定我们的顶点缓冲区时，必须记住这个特定的布局。 我们将此输入布局提供给顶点着色器以便它可以理解你的顶点数据。
+Therefore, you have 8 vertices, each with a specific color. Each vertex/color pairing is the complete data for a vertex in our example. When you specify our vertex buffer, you must keep this specific layout in mind. We provide this input layout to the vertex shader so it can understand your vertex data.
 
-### 步骤 2：设置输入布局
+### Step 2: Set up the input layout
 
-现在，你在内存中已拥有顶点。 但你的图形设备拥有其自己的内存，并且你使用 Direct3D 来访问该内存。 若要使你的顶点数据进入图形设备以便进行处理，你需要扫除障碍，因为你必须声明顶点数据的布局方式，以便图形设备从你的游戏获取顶点数据时图形设备可以对其进行解释。 若要执行该操作，需要使用 [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)。
+Now, you have the vertices in memory. But, your graphics device has its own memory, and you use Direct3D to access it. To get your vertex data into the graphics device for processing, you need to clear the way, as it were: you must declare how the vertex data is laid out so that the graphics device can interpret it when it gets it from your game. To do that, you use [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575).
 
-为顶点缓冲区声明和设置输入布局。
+Declare and set the input layout for the vertex buffer.
 
 ```cpp
 const D3D11_INPUT_ELEMENT_DESC basicVertexLayoutDesc[] =
@@ -86,31 +86,31 @@ m_d3dDevice->CreateInputLayout(
 );
 ```
 
-在该代码中，为顶点指定布局，具体地说就是指定顶点列表中每个元素包含的数据。 在此处，在 **basicVertexLayoutDesc** 中，指定两个数据分量：
+In this code, you specify a layout for the vertices, specifically, what data each element in the vertex list contains. Here, in **basicVertexLayoutDesc**, you specify two data components:
 
--   **POSITION**：这是提供给着色器的位置数据的 HLSL 语义。 在该代码中，它是 DirectX::XMFLOAT3，更具体地说，是一个具有 3 个与 3D 坐标 (x, y, z) 相对应的 32 位浮点值的结构。 如果你支持同类的“w”坐标，则还可以使用 float4，在这种情况下，需要指定 DXGI\_FORMAT\_R32G32B32A32\_FLOAT。 使用 DirectX::XMFLOAT3 还是使用 float4 由你的游戏的具体需求来决定。 只需确保网格的顶点数据与你使用的格式正确对应！
+-   **POSITION**: This is an HLSL semantic for position data provided to a shader. In this code, it's a DirectX::XMFLOAT3, or more specifically, a structure with 3 32-bit floating point values that correspond to a 3D coordinate (x, y, z). You could also use a float4 if you are supplying the homogeneous "w" coordinate, and in that case, you specify DXGI\_FORMAT\_R32G32B32A32\_FLOAT. Whether you use a DirectX::XMFLOAT3 or a float4 is up to the specific needs of your game. Just make sure that the vertex data for your mesh corresponds correctly to the format you use!
 
-    在对象坐标空间中，每个坐标值都表示为介于 -1 和 1 之间的浮点值。 当顶点着色器完成时，转换后的顶点位于同类（透视校正）视图投影空间中。
+    Each coordinate value is expressed as a floating point value between -1 and 1, in the object's coordinate space. When the vertex shader completes, the transformed vertex is in the homogeneous (perspective corrected) view projection space.
 
-    你严格地指出 “枚举值指示 RGB，而不是 XYZ！”。 好眼力！ 在同时使用颜色数据和坐标数据的情况下，通常使用 3 个或 4 个分量值，那么为何不对它们使用相同的格式呢？ HLSL 语义（非格式名称）指示着色器处理数据的方式。
+    "But the enumeration value indicates RGB, not XYZ!" you smartly note. Good eye! In both the cases of color data and coordinate data, you typically use 3 or 4 component values, so why not use the same format for both? The HLSL semantic, not the format name, indicates how the shader treats the data.
 
--   **COLOR**：这是颜色数据的 HLSL 语义。 与 **POSITION** 一样，它也包含 3 个 32 位浮点值 (DirectX::XMFLOAT3)。 每个值都包含一个颜色分量：红色 (r)、蓝色 (b) 或绿色 (g)，都表示为介于 0 和 1 之间的浮点数。
+-   **COLOR**: This is an HLSL semantic for color data. Like **POSITION**, it consists of 3 32-bit floating point values (DirectX::XMFLOAT3). Each value contains a color component: red (r), blue (b), or green (g), expressed as a floating number between 0 and 1.
 
-    **COLOR** 值通常在着色器管道结尾处以 4 个分量的 RGBA 值的形式返回。 对于该示例，在所有像素的着色器管道中，你将“A”alpha 值设置为 1.0（最大不透明度）。
+    **COLOR** values are typically returned as a 4-component RGBA value at the end of the shader pipeline. For this example, you will be setting the "A" alpha value to 1.0 (maximum opacity) in the shader pipeline for all pixels.
 
-有关格式的完整列表，请参阅 [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。 有关 HLSL 语义的完整列表，请参阅[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
+For a complete list of formats, see [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059). For a complete list of HLSL semantics, see [Semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647).
 
-在 Direct3D 设备上，调用 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) 并创建输入布局。 现在，你需要创建一个可以实际包含数据的缓冲区！
+Call [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) and create the input layout on the Direct3D device. Now, you need to create a buffer that can actually hold the data!
 
-### 步骤 3：填充顶点缓冲区
+### Step 3: Populate the vertex buffers
 
-顶点缓冲区包含网格中每个三角形的顶点列表。 每个顶点都必须在该列表中唯一。 在我们的示例中，立方体有 8 个顶点。 顶点着色器在图形设备上运行并从顶点缓冲区中读取，并且它根据你在上一步中指定的输入布局来解释数据。
+Vertex buffers contain the list of vertices for each triangle in the mesh. Every vertex must be unique in this list. In our example, you have 8 vertices for the cube. The vertex shader runs on the graphics device and reads from the vertex buffer, and it interprets the data based on the input layout you specified in the previous step.
 
-在下面的示例中，为缓冲区提供一个描述和一个子资源，它们会告知 Direct3D 有关顶点数据的物理映射以及如何在图形设备的内存中对其进行处理的大量信息。 这是必需的，因为你使用的常规 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) 可能会包含所有内容！ 提供了 [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 和 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 结构，目的是确保 Direct3D 理解缓冲区的物理内存布局，其中包括缓冲区中每个顶点元素的大小以及顶点列表的最大大小。 你也可以在此处控制对缓冲区内存的访问以及遍历的方式，但这有点超出本教程的范围。
+In the next example, you provide a description and a subresource for the buffer, which tell Direct3D a number of things about the physical mapping of the vertex data and how to treat it in memory on the graphics device. This is necessary because you use a generic [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351), which could contain anything! The [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structures are supplied to ensure that Direct3D understands the physical memory layout of the buffer, including the size of each vertex element in the buffer as well as the maximum size of the vertex list. You can also control access to the buffer memory here and how it is traversed, but that's a bit beyond the scope of this tutorial.
 
-配置缓冲区之后，调用 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 来实际创建缓冲区。 很明显，如果你拥有多个对象，则为每个唯一的模型创建缓冲区。
+After you configure the buffer, you call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) to actually create it. Obviously, if you have more than one object, create buffers for each unique model.
 
-声明并创建顶点缓冲区。
+Declare and create the vertex buffer.
 
 ```cpp
 D3D11_BUFFER_DESC vertexBufferDesc = {0};
@@ -133,26 +133,26 @@ m_d3dDevice->CreateBuffer(
                 &vertexBuffer);
 ```
 
-加载顶点。 但处理这些顶点有什么顺序吗？ 当你为顶点提供索引列表时进行处理时，这些索引的顺序即为顶点着色器处理它们的顺序。
+Vertices loaded. But what's the order of processing these vertices? That's handled when you provide a list of indices to the vertices—the ordering of these indices is the order in which the vertex shader processes them.
 
-### 步骤 4：填充索引缓冲区
+### Step 4: Populate the index buffers
 
-现在，你为每个顶点提供一个索引列表。 这些索引与顶点缓冲区中顶点的位置相对应，从 0 开始。 为了帮助你看到这种情况，考虑为网格中的每个唯一顶点都分配一个唯一的数字，如分配一个 ID。 这个 ID 是顶点缓冲区中顶点的整数位置。
+Now, you provide a list of the indices for each of the vertices. These indices correspond to the position of the vertex in the vertex buffer, starting with 0. To help you visualize this, consider that each unique vertex in your mesh has a unique number assigned to it, like an ID. This ID is the integer position of the vertex in the vertex buffer.
 
-![一个包含八个带编号的顶点的立方体](images/cube-mesh-1.png)
+![a cube with eight numbered vertices](images/cube-mesh-1.png)
 
-在我们的示例立方体中，你拥有 8 个顶点，它们为侧面创建了 6 个四边形。 将四边形分割成三角形，使用 8 个顶点总共组成 12 个三角形。 每个三角形有 3 个顶点，那么在我们的索引缓冲区中便拥有 36 个项目。 在我们的示例中，该索引模式称为三角形列表，当你设置基元拓扑时，你将其指示到 Direct3D 作为 **D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLELIST**。
+In our example cube, you have 8 vertices, which create 6 quads for the sides. You split the quads into triangles, for a total of 12 triangles that use our 8 vertices. At 3 vertices per triangle, you have 36 entries in our index buffer. In our example, this index pattern is known as a triangle list, and you indicate it to Direct3D as a **D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLELIST** when you set the primitive topology.
 
-这可能是列出索引的最低效方式，因为当三角形共享点和面时有很多冗余。 例如，当在菱形中时三角形共享一个边，你却为四个顶点列出了 6 个索引，如下所示：
+This is probably the most inefficient way to list indices, as there are many redundancies when triangles share points and sides. For example, when a triangle shares a side in a rhombus shape, you list 6 indices for the four vertices, like this:
 
-![构造菱形时的索引顺序](images/rhombus-surface-1.png)
+![order of indices when constructing a rhombus](images/rhombus-surface-1.png)
 
--   三角形 1：\[0, 1, 2\]
--   三角形 2：\[0, 2, 3\]
+-   Triangle 1: \[0, 1, 2\]
+-   Triangle 2: \[0, 2, 3\]
 
-在带状或扇形拓扑中，按照在遍历期间消除很多冗余边的方式对顶点进行排序（如图中从索引 0 到索引 2 的边）。对于大型网格，这会大大减少运行顶点着色器的次数，从而显著提高性能。 但是，我们将保持它的简单性并且继续使用三角形列表。
+In a strip or fan topology, you order the vertices in a way that eliminates many redundant sides during traversal (such as the side from index 0 to index 2 in the image.) For large meshes, this dramatically reduces the number of times the vertex shader is run, and improves performance significantly. However, we'll keep it simple and stick with the triangle list.
 
-将顶点缓冲区的索引声明为一个简单的三角形列表拓扑。
+Declare the indices for the vertex buffer as a simple triangle list topology.
 
 ```cpp
 unsigned short cubeIndices[] =
@@ -175,29 +175,29 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-当你只有 8 个顶点时，缓冲区中的 36 个索引元素非常多余！ 如果你选择消除一些冗余并使用不同的顶点列表类型，如某一带状或扇形区域，当你为 [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) 方法提供一个特定的 [**D3D11\_PRIMITIVE\_TOPOLOGY**](https://msdn.microsoft.com/library/windows/desktop/ff476189) 值时，必须指定该类型。
+Thirty six index elements in the buffer is very redundant when you only have 8 vertices! If you choose to eliminate some of the redundancies and use a different vertex list type, such as a strip or a fan, you must specify that type when you provide a specific [**D3D11\_PRIMITIVE\_TOPOLOGY**](https://msdn.microsoft.com/library/windows/desktop/ff476189) value to the [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) method.
 
-有关不同索引列表技术的详细信息，请参阅[基元拓扑](https://msdn.microsoft.com/library/windows/desktop/bb205124)。
+For more information about different index list techniques, see [Primitive Topologies](https://msdn.microsoft.com/library/windows/desktop/bb205124).
 
-### 步骤 5：为你的转换矩阵创建一个恒定的缓冲区
+### Step 5: Create a constant buffer for your transformation matrices
 
-开始处理顶点之前，你需要提供运行时将应用于（相乘）每个顶点的转换矩阵。 对于大多数 3-D 游戏，包含其中三个：
+Before you can start processing vertices, you need to provide the transformation matrices that will be applied (multiplied) to each vertex when it runs. For most 3-D games, there are three of them:
 
--   将对象（模型）坐标系转换为总体世界坐标系的 4x4 矩阵。
--   将世界坐标系转换为相机（视图）坐标系的 4x4 矩阵。
--   将相机坐标系转换为 2-D 视图投影坐标系的 4x4 矩阵。
+-   The 4x4 matrix that transforms from the object (model) coordinate system to the overall world coordinate system.
+-   The 4x4 matrix that transforms from the world coordinate system to the camera (view) coordinate system.
+-   The 4x4 matrix that transforms from the camera coordinate system to the 2-D view projection coordinate system.
 
-这些矩阵传递给*常量缓冲区*中的着色器。 恒定缓冲区是在执行着色器管道的下次传递过程中保持不变的内存区域，着色器可以从 HLSL 代码中直接对其进行访问。 每个恒定缓冲区定义两次：第一次在游戏的 C++ 代码中，一次（至少）在着色器代码的类似于 C 的 HLSL 语法中。 这两个声明都必须与类型和数据对齐直接对应。 引入很容易，但当着色器使用 HLSL 声明解释 C++ 中声明的数据时很难发现错误，并且类型不匹配或者数据对齐被禁用！
+These matrices are passed to the shader in a *constant buffer*. A constant buffer is a region of memory that remains constant throughout the execution of the next pass of the shader pipeline, and which can be directly accessed by the shaders from your HLSL code. You define each constant buffer two times: first in your game's C++ code, and (at least) one time in the C-like HLSL syntax for your shader code. The two declarations must directly correspond in terms of types and data alignment. It's easy to introduce hard to find errors when the shader uses the HLSL declaration to interpret data declared in C++, and the types don't match or the alignment of data is off!
 
-恒定缓冲区不会被 HLSL 更改。 你可以在游戏更新特定数据时更改它们。 通常，游戏设备会创建 4 类恒定缓冲区：一种类型用于每个帧的更新；一种类型用于每个模型/对象的更新；一种类型用于每个游戏状态刷新的更新；一种类型用于整个游戏的生存时间内从不更改的数据。
+Constant buffers don't get changed by the HLSL. You can change them when your game updates specific data. Often, game devs create 4 classes of constant buffers: one type for updates per frame; one type for updates per model/object; one type for updates per game state refresh; and one type for data that never changes through the lifetime of the game.
 
-在该示例中，我们只有一个从不更改的恒定缓冲区：三个矩阵的 DirectX::XMFLOAT4X4 数据。
+In this example, we just have one that never changes: the DirectX::XMFLOAT4X4 data for the three matrices.
 
-> **注意** 此处呈现的示例代码使用列主序矩阵。 可以通过在 HLSL 中使用 **row\_major** 关键字并且确保源矩阵数据也是行主序来使用行主序矩阵。 DirectXMath 使用行主序矩阵，并且可以直接用于使用 **row\_major** 关键字定义的 HLSL 矩阵。
+> **Note**   The example code presented here uses column-major matrices. You can use row-major matrices instead by using the **row\_major** keyword in HLSL, and ensuring your source matrix data is also row-major. DirectXMath uses row-major matrices and can be used directly with HLSL matrices defined with the **row\_major** keyword.
 
  
 
-为用于转换每个顶点的三个矩阵声明并创建一个恒定缓冲区。
+Declare and create a constant buffer for the three matrices you use to transform each vertex.
 
 ```cpp
 struct ConstantBuffer
@@ -245,7 +245,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **注意** 通常当设置特定于设备的资源时声明投影矩阵，因为与它相乘的结果必须与当前 2D 视口大小参数（通常与显示器的像素高度和宽度相对应）匹配。 如果这些内容发生改变，则必须相应地缩放 x 和 y 坐标值。
+> **Note**  You usually declare the projection matrix when you set up device specific resources, because the results of multiplication with it must match the current 2-D viewport size parameters (which often correspond with the pixel height and width of the display). If those change, you must scale the x- and y-coordinate values accordingly.
 
  
 
@@ -277,7 +277,7 @@ m_constantBufferData.projection = DirectX::XMFLOAT4X4(
             );
 ```
 
-当你位于此处时，在 [ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149) 上设置顶点和索引缓冲区，以及你使用的拓扑。
+While you're here, set the vertex and index buffers on the[ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149), plus the topology you're using.
 
 ```cpp
 // Set the vertex and index buffers, and specify the way they define geometry.
@@ -298,15 +298,15 @@ m_d3dDeviceContext->IASetIndexBuffer(
  m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 ```
 
-非常好！ 输入程序集已完成。 所有内容都可用于呈现。 让我们开始使用顶点着色器。
+All right! Input assembly complete. Everything's in place for rendering. Let's get that vertex shader going.
 
-### 步骤 6：使用顶点着色器处理网格
+### Step 6: Process the mesh with the vertex shader
 
-现在，你已经拥有一个顶点缓冲区（它的顶点定义网格）以及定义处理顶点顺序的索引缓冲区，将它们发送到顶点着色器。 以编译的高级着色器语言表示的顶点着色器代码为顶点缓冲区中的每个顶点运行一次，从而允许你执行每个顶点的转换。 最终结果通常是一个 2-D 投影。
+Now that you have a vertex buffer with the vertices that define your mesh, and the index buffer that defines the order in which the vertices are processed, you send them to the vertex shader. The vertex shader code, expressed as compiled high-level shader language, runs one time for each vertex in the vertex buffer, allowing you to perform your per-vertex transforms. The final result is typically a 2-D projection.
 
-（加载顶点着色器了吗？ 如果没有，请查阅[如何在 DirectX 游戏中加载资源](load-a-game-asset.md)。）
+(Did you load your vertex shader? If not, review [How to load resources in your DirectX game](load-a-game-asset.md).)
 
-在这里，你创建顶点着色器...
+Here, you create the vertex shader...
 
 ``` syntax
 // Set the vertex and pixel shader stage state.
@@ -316,7 +316,7 @@ m_d3dDeviceContext->VSSetShader(
                 0);
 ```
 
-...并设置恒定缓冲区。
+...and set the constant buffers.
 
 ``` syntax
 m_d3dDeviceContext->VSSetConstantBuffers(
@@ -325,7 +325,7 @@ m_d3dDeviceContext->VSSetConstantBuffers(
                 m_constantBuffer.GetAddressOf());
 ```
 
-下面是处理从对象坐标到世界坐标，然后到 2-D 视图投影坐标系的转换的顶点着色器代码。 你也可以应用一些简单的每个顶点照明来使它们更漂亮。 该操作需要在顶点着色器的 HLSL 文件（在该示例中为 SimplerVertexShader.hlsl）中进行。
+Here's the vertex shader code that handles the transformation from object coordinates to world coordinates and then to the 2-D view projection coordinate system. You also apply some simple per-vertex lighting to make things pretty. This goes in your vertex shader's HLSL file (SimplerVertexShader.hlsl, in this example).
 
 ``` syntax
 cbuffer simpleConstantBuffer : register( b0 )
@@ -365,23 +365,23 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-看到顶部的 **cbuffer** 了吗？ 它是与我们前面在 C++ 代码中声明的恒定缓冲区类似的 HLSL 恒定缓冲区。 看到 **VertexShaderInputstruct** 了吗？ 为什么它看起来就像是你的输入布局和顶点数据声明！ 重要的是，C++ 代码中的恒定缓冲区和顶点数据声明要与 HLSL 代码中的声明相匹配，这包括符号、类型以及数据对齐。
+See that **cbuffer** at the top? That's the HLSL analogue to the same constant buffer we declared in our C++ code previously. And the **VertexShaderInputstruct**? Why, that looks just like your input layout and vertex data declaration! It's important that the constant buffer and vertex data declarations in your C++ code match the declarations in your HLSL code—and that includes signs, types, and data alignment.
 
-**PixelShaderInput** 指定顶点着色器的 main 函数返回的数据的布局。 当你完成处理某个顶点时，你将返回 2-D 投影空间中的某个顶点位置以及用于每个顶点照明的颜色。 图形卡使用着色器的数据输出来计算当在管道的下一阶段中运行像素着色器时必须着色的“分段”（可能的像素）。
+**PixelShaderInput** specifies the layout of the data that is returned by the vertex shader's main function. When you finish processing a vertex, you'll return a vertex position in the 2-D projection space and a color used for per-vertex lighting. The graphics card uses data output by the shader to calculate the "fragments" (possible pixels) that must be colored when the pixel shader is run in the next stage of the pipeline.
 
-### 步骤 7：通过像素着色器传递网格
+### Step 7: Passing the mesh through the pixel shader
 
-通常，在在图形管道的这个阶段，需要在项目的可见投影面上执行每像素操作。 （人们喜欢纹理。）但出于示例的目的，你只是在该阶段传递它。
+Typically, at this stage in the graphics pipeline, you perform per-pixel operations on the visible projected surfaces of your objects. (People like textures.) For the purposes of sample, though, you simply pass it through this stage.
 
-首先，让我们创建像素着色器的一个实例。 像素着色器将针对场景的 2-D 投影中的每个像素运行，从而为该像素分配一种颜色。 在这种情况下，我们直接传递顶点着色器返回的像素的颜色。
+First, let's create an instance of the pixel shader. The pixel shader runs for every pixel in the 2-D projection of your scene, assigning a color to that pixel. In this case, we pass the color for the pixel returned by the vertex shader straight through.
 
-设置像素着色器。
+Set the pixel shader.
 
 ``` syntax
 m_d3dDeviceContext->PSSetShader( pixelShader.Get(), nullptr, 0 );
 ```
 
-在 HLSL 中定义一个传递像素着色器。
+Define a passthrough pixel shader in HLSL.
 
 ``` syntax
 struct PixelShaderInput
@@ -396,13 +396,13 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-将该代码放置在不同于顶点着色器 HLSL 的 HLSL 文件（如 SimplePixelShader.hlsl）中。 该代码为视口中的每个可见像素运行一次（你正在绘制到的屏幕部分的内存中表示），在这种情况下，映射到整个屏幕。 现在，你的图形管道已完全定义！
+Put this code in an HLSL file separate from the vertex shader HLSL (such as SimplePixelShader.hlsl). This code is run one time for every visible pixel in your viewport (an in-memory representation of the portion of the screen you are drawing to), which, in this case, maps to the entire screen. Now, your graphics pipeline is completely defined!
 
-### 步骤 8：对网格进行光栅化并显示
+### Step 8: Rasterizing and displaying the mesh
 
-让我们运行管道。 该操作非常简单：调用 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565)。
+Let's run the pipeline. This is easy: call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565).
 
-绘制该立方体！
+Draw that cube!
 
 ```cpp
 // Draw the cube.
@@ -410,11 +410,11 @@ m_d3dDeviceContext->DrawIndexed( ARRAYSIZE(cubeIndices), 0, 0 );
             
 ```
 
-在图形卡内，按照索引缓冲区中指定的顺序处理每个顶点。 代码已执行顶点着色器并定义 2-D 分段之后，调用像素着色器并对三角形进行着色。
+Inside the graphics card, each vertex is processed in the order specified in your index buffer. After your code has executed the vertex shader and the 2-D fragments are defined, the pixel shader is invoked and the triangles colored.
 
-现在，将立方体放在屏幕上。
+Now, put the cube on the screen.
 
-将该帧缓冲区呈现到显示器。
+Present that frame buffer to the display.
 
 ```cpp
 // Present the rendered image to the window.  Because the maximum frame latency is set to 1,
@@ -424,24 +424,24 @@ m_d3dDeviceContext->DrawIndexed( ARRAYSIZE(cubeIndices), 0, 0 );
 m_swapChain->Present(1, 0);
 ```
 
-已完成！ 若要查看充满模型的场景，请使用多个顶点和索引缓冲区，并且不同的模型类型可以拥有不同的着色器。 请记住，每个模型都有其自己的坐标系，你需要使用在恒定缓冲区中定义的矩阵将其转换为共享的世界坐标系。
+And you're done! For a scene full of models, use multiple vertex and index buffers, and you might even have different shaders for different model types. Remember that each model has its own coordinate system, and you need to transform them to the shared world coordinate system using the matrices you defined in the constant buffer.
 
-## 备注
+## Remarks
 
-本主题介绍创建以及显示你自己创建的简单几何体。 有关从文件中加载更复杂的几何图形以及将其转换为特定于示例的顶点缓冲区对象 (.vbo) 格式的详细信息，请参阅[如何在 DirectX 游戏中加载资源](load-a-game-asset.md)。
+This topic covers creating and displaying simple geometry that you create yourself. For more info about loading more complex geometry from a file and converting it to the sample-specific vertex buffer object (.vbo) format, see [How to load resources in your DirectX game](load-a-game-asset.md).
 
-> **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
- 
-
-## 相关主题
-
-
-* [如何在 DirectX 游戏中加载资源](load-a-game-asset.md)
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
+## Related topics
+
+
+* [How to load resources in your DirectX game](load-a-game-asset.md)
+
+ 
+
  
 
 
@@ -450,6 +450,6 @@ m_swapChain->Present(1, 0);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

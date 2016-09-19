@@ -1,64 +1,64 @@
 ---
 author: PatrickFarley
-Description: "在应用中遵循这些适用于地理围栏的最佳做法。"
-title: "地理围栏应用指南"
+Description: Follow these best practices for geofencing in your app.
+title: Guidelines for geofencing apps
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d631885eced58d360d3e0442cbb49ede7b9b86c3
+ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
 
 ---
 
-# 地理围栏应用指南
+# Guidelines for geofencing apps
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要的 API**
+**Important APIs**
 
--   [**Geofence 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
--   [**Geolocator 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br225534)
+-   [**Geofence class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
+-   [**Geolocator class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
-在应用中遵循这些适用于[**地理围栏**](https://msdn.microsoft.com/library/windows/apps/dn263744)的最佳做法。
+Follow these best practices for [**geofencing**](https://msdn.microsoft.com/library/windows/apps/dn263744) in your app.
 
-## 建议
+## Recommendations
 
 
--   如果在发生 [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) 事件时应用需要具备 Internet 访问权限，请在创建地理围栏之前先检查有无 Internet 访问权限。
-    -   如果应用当前没有 Internet 访问权限，你可以提示用户在你设置地理围栏之前连接到 Internet。
-    -   如果不能访问 Internet，请避免消耗进行地理围栏位置检查所需的电源。
--   在地理围栏事件指示 [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exited** 状态发生更改时，通过检查时间戳和当前位置来确保地理围栏通知的相关性。 有关详细信息，请参阅下面的[检查时间戳和当前位置](#timestamp)。
--   当设备无法访问位置信息时，创建异常来管理这些情况，并在需要时通知用户。 由于以下原因，可能不提供位置信息：已禁用权限、设备未包含 GPS 无线电、GPS 信号受阻或者 Wi-Fi 信号不够强。
--   总体而言，没有必要同时在前台和后台侦听地理围栏事件。 然而，如果你的应用需要同时在前台和后台侦听地理围栏事件：
+-   If your app will need internet access when a [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) event occurs, check for internet access before creating the geofence.
+    -   If the app doesn't currently have internet access, you can prompt the user to connect to the internet before you set up the geofence.
+    -   If internet access isn't possible, avoid consuming the power required for the geofencing location checks.
+-   Ensure the relevance of geofencing notifications by checking the time stamp and current location when a geofence event indicates changes to an [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) or **Exited** state. See [Checking the time stamp and current location](#timestamp) below for more information.
+-   Create exceptions to manage cases when a device can't access location info, and notify the user if necessary. Location info may be unavailable because permissions are turned off, the device doesn't contain a GPS radio, the GPS signal is blocked, or the Wi-Fi signal isn't strong enough.
+-   In general, it isn't necessary to listen for geofence events in the foreground and background at the same time. However, if your app needs to listen for geofence events in both the foreground and background:
 
-    -   请调用 [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) 方法以查明是否发生了某个事件。
-    -   在用户看不到你的应用时，将前台事件侦听器取消注册，并在它再次可见时为其重新注册。
+    -   Call the [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) method to find out if an event has occurred.
+    -   Unregister your foreground event listener when your app isn't visible to the user and re-register when it becomes visible again.
 
-    有关代码示例和详细信息，请参阅[后台和前台侦听器](#background-and-foreground-listeners)。
+    See [Background and foreground listeners](#background-and-foreground-listeners) for code examples and more information.
 
--   对每个应用不要使用多于 1000 个地理围栏。 系统实际上支持每个应用数千个地理围栏，你可以通过使用多于 1000 个来维持良好的应用性能以帮助减少应用的内存使用量。
--   不要创建带有小于 50 米的 radius 的地理围栏。 如果应用必须带有小型 radius 的地理围栏，则最好建议用户在具备 GPS 无线电的设备上使用该应用，确保获得最佳性能。
+-   Don't use more than 1000 geofences per app. The system actually supports thousands of geofences per app, you can maintain good app performance to help reduce the app's memory usage by using no more than 1000.
+-   Don't create a geofence with a radius smaller than 50 meters. If your app needs to use a geofence with a small radius, advise users to use your app on a device with a GPS radio to ensure the best performance.
 
-## 其他使用指南
+## Additional usage guidance
 
-### 检查时间戳和当前位置
+### Checking the time stamp and current location
 
-当某个事件表明 [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exited** 状态存在变化时，应同时检查事件的时间戳和你的当前位置。 各种各样的因素都可能会影响用户具体何时处理事件，例如系统没有足够资源来启动后台任务、用户没注意到通知，或者设备处在待机状态（在 Windows 上）。 例如，可能会出现下面的顺序：
+When an event indicates a change to an [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) or **Exited** state, check both the time stamp of the event and your current location. Various factors, such as the system not having enough resources to launch a background task, the user not noticing the notification, or the device being in standby (on Windows), may affect when the event is actually processed by the user. For example, the following sequence may occur:
 
--   你的应用创建了一个地理围栏并监视地理围栏有无进入和退出事件。
--   当用户在地理围栏内移动设备时，则会触发一个进入事件。
--   应用会向用户发送一个通知，指明用户当前正处于地理围栏内。
--   用户一直忙于其他的事情，没有注意到这则通知，直至 10 分钟以后才察觉。
--   在这 10 分钟的延迟期内，用户将设备移出了地理围栏。
+-   Your app creates a geofence and monitors the geofence for enter and exit events.
+-   The user moves the device inside of the geofence, causing an enter event to be triggered.
+-   Your app sends a notification to the user that they are now inside the geofence.
+-   The user was busy and does not notice the notification until 10 minutes later.
+-   During that 10 minute delay, the user has moved back outside of the geofence.
 
-通过时间戳，你可以判断出过去发生的操作。 通过当前位置，你可以了解到用户现已离开地理围栏。 根据应用的功能，你可能希望过滤掉这个事件。
+From the timestamp, you can tell that the action occurred in the past. From the current location, you can see that the user is now back outside of the geofence. Depending on the functionality of your app, you may want to filter out this event.
 
-### 后台侦听器和前台侦听器
+### Background and foreground listeners
 
-通常，你的应用不需要同时在前台和后台任务中侦听 [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) 事件。 如果遇到可能同时需要在前台和后台任务中侦听的情况，最简洁的方法是由后台任务来处理通知。 如果你同时设置了前台和后台地理围栏侦听器，则无法保证哪个侦听器先被触发，为此你必须一直调用 [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) 方法以判断是否发生了事件。
+In general, your app doesn't need to listen for [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) events both in the foreground and in a background task at the same time. The cleanest method for handling a case where you might need both is to let the background task handle the notifications. If you do set up both foreground and background geofence listeners, there is no guarantee which will be triggered first and so you must always call the [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) method to find out if an event has occurred.
 
-此外，如果你已经同时设置了前台和后台地理围栏侦听器，请在应用对用户不可见时取消注册前台事件侦听器；当应用再次对用户可见时，应重新注册应用。 下面是一些注册可见性事件的示例代码。
+If you have set up both foreground and background geofence listeners, you should unregister your foreground event listener whenever your app is not visible to the user and re-register your app when it becomes visible again. Here's some example code that registers for the visibility event.
 
 ```csharp
     Windows.UI.Core.CoreWindow coreWindow;    
@@ -72,7 +72,7 @@ ms.openlocfilehash: d631885eced58d360d3e0442cbb49ede7b9b86c3
  document.addEventListener("visibilitychange", onVisibilityChanged, false);
 ```
 
-当可见性出现变化时，你可以按照此处显示的情况，启用或禁用前台事件处理程序。
+When the visibility changes, you can then enable or disable the foreground event handlers as shown here.
 
 ```csharp
 private void OnVisibilityChanged(CoreWindow sender, VisibilityChangedEventArgs args)
@@ -114,19 +114,19 @@ function onVisibilityChanged() {
 }
 ```
 
-### 确定地理围栏的大小
+### Sizing your geofences
 
-虽说 GPS 可以提供最精确的位置信息，但是地理围栏也可以使用 Wi-Fi 或其他位置传感器来确定用户的当前位置。 不过，使用这些方法会影响你创建地理围栏的大小范围。 如果精确度较低，创建较小的地理围栏不会有任何帮助。 通常，建议不要创建半径小于 50 米的地理围栏。 同样，地理围栏后台任务仅在 Windows 上定期运行；如果你使用较小的地理围栏，你可能会完全错过 [**Enter**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exit** 事件。
+While GPS can provide the most accurate location info, geofencing can also use Wi-Fi or other location sensors to determine the user's current position. But using these other methods can affect the size of the geofences you can create. If the accuracy level is low, creating small geofences won't be useful. In general, it is recommended that you do not create a geofence with a radius smaller than 50 meters. Also, geofence background tasks only run periodically on Windows; if you use a small geofence, there's a possibility that you could miss an [**Enter**](https://msdn.microsoft.com/library/windows/apps/dn263660) or **Exit** event entirely.
 
-如果应用需要使用半径较小的的地理围栏，最好建议用户在具备 GPS 无线电的设备上使用该应用，确保获得最佳性能。
+If your app needs to use a geofence with a small radius, advise users to use your app on a device with a GPS radio to ensure the best performance.
 
-## 相关主题
+## Related topics
 
 
-* [设置地理围栏](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [获取当前位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [Set up a geofence](https://msdn.microsoft.com/library/windows/apps/mt219702)
+* [Get current location](https://msdn.microsoft.com/library/windows/apps/mt219698)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP 位置示例（地理位置）](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  
@@ -137,6 +137,6 @@ function onVisibilityChanged() {
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

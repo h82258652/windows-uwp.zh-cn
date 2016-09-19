@@ -1,148 +1,150 @@
 ---
 author: Xansky
-Description: "为确保通用 Windows 平台 (UWP) 应用为辅助应用而要遵循的测试过程。"
+Description: Testing procedures to follow to ensure that your Universal Windows Platform (UWP) app is accessible.
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
-title: "辅助功能测试"
+title: Accessibility testing
 label: Accessibility testing
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: ec436f939c672d6e6d852d3dd6713fd6ca20a53b
+ms.sourcegitcommit: 82d43f6553be280831c0a739680a2f9c833286f9
+ms.openlocfilehash: cc988037a8b3270045c7dd5faac4bf7d69fd6274
 
 ---
 
-# 辅助功能测试  
+# Accessibility testing  
 
-为确保通用 Windows 平台 (UWP) 应用为辅助应用而要遵循的测试过程。
+Testing procedures to follow to ensure that your Universal Windows Platform (UWP) app is accessible.
 
 <span id="run_accessibility_testing_tools"/>
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
-## 运行辅助功能测试工具  
-Windows 软件开发工具包 (SDK) 包括多个辅助功能测试工具，例如 [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)、[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 和 [**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985)。 这些工具可帮助你验证应用的辅助功能。 确保验证所有应用方案和 UI 元素。
+## Run accessibility testing tools  
+The Windows Software Development Kit (SDK) includes several accessibility testing tools such as [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239), [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) and [**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985). These tools can help you verify the accessibility of your app. Be sure to verify all app scenarios and UI elements.
 
-可从 Microsoft Visual Studio 命令提示符或从 Windows SDK 工具文件夹（你的开发计算机上安装 Windows SDK 的 bin 子目录）启动辅助功能测试工具。
+You can launch the accessibility testing tools either from a Microsoft Visual Studio command prompt or from the Windows SDK tools folder (the bin subdirectory of where the Windows SDK is installed on your development machine).
 
 <span id="AccScope"/>
 <span id="accscope"/>
 <span id="ACCSCOPE"/>
 ### **AccScope**  
 
-[**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 工具允许开发人员和测试人员在其应用的开发和设计期间评估该应用的辅助功能，并且可能在早期原型设计阶段进行，而不是在应用开发周期的后期测试阶段。 它专门用于测试应用程序的讲述人辅助功能方案。
+The [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) tool enables developers and testers to evaluate the accessibility of their app during the app's development and design, potentially in earlier prototype phases, rather than in the late testing phases of an app's development cycle. It's particularly intended for testing Narrator accessibility scenarios with your app.
 
 <span id="inspect"/>
 <span id="INSPECT"/>
-### **检查**  
+### **Inspect**  
 
-你可以使用 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 选择任何 UI 元素并查看其辅助功能数据。 可以查看 Microsoft UI 自动化属性和控件模式并测试 UI 自动化树中自动化元素的导航结构。 当你开发 UI 以验证如何在 UI 自动化中公开辅助功能属性时，请使用 **Inspect**。 在某些情况下，属性来自已经为默认 XAML 控件实现的 UI 自动化支持。 在其他情况下，属性来自已经在 XAML 标记中设置为 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) 附加属性的特定值。
+[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) enables you to select any UI element and view its accessibility data. You can view Microsoft UI Automation properties and control patterns and test the navigational structure of the automation elements in the UI Automation tree. Use **Inspect** as you develop the UI to verify how accessibility attributes are exposed in UI Automation. In some cases the attributes come from the UI Automation support that is already implemented for default XAML controls. In other cases the attributes come from specific values that you have set in your XAML markup, as [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) attached properties.
 
-下图展示了 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 工具，用于查询记事本中**“编辑”**菜单元素的 UI 自动化属性。
+The following image shows the [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) tool querying the UI Automation properties of the **Edit** menu element in Notepad.
 
-![“检查”工具的屏幕截图。](./images/inspect.png)
+![Screen shot of the Inspect tool.](./images/inspect.png)
 
 <span id="ui_accessibility_checker"/>
 <span id="UI_ACCESSIBILITY_CHECKER"/>
-### **UI 辅助功能检查器**  
-**UI 辅助功能检查器 (AccChecker)** 有助于发现运行时的辅助功能问题。 如果你的 UI 完整且可使用，则将 **AccChecker** 用于测试不同的方案、验证运行时辅助功能信息的正确性以及发现运行时问题。 可以在 UI 或命令行模式下运行 **AccChecker**。 若要运行 UI 模式工具，在 Windows SDK bin 目录中打开 **AccChecker** 目录、运行 acccheckui.exe，然后单击“帮助”****菜单。
+### **UI Accessibility Checker**  
+**UI Accessibility Checker (AccChecker)** helps you discover accessibility problems at run time. When your UI is complete and functional, use **AccChecker** to test different scenarios, verify the correctness of runtime accessibility information, and discover runtime issues. You can run **AccChecker** in UI or command line mode. To run the UI mode tool, open the **AccChecker** directory in the Windows SDK bin directory, run acccheckui.exe, and click the **Help** menu.
 
 <span id="ui_automation_verify"/>
 <span id="UI_AUTOMATION_VERIFY"/>
-### **UI 自动化验证**  
-**UI 自动化验证（UIA 验证）**是一种用于实现 UI 自动化的自动化测试和验证框架。 **UIA 验证**可以集成到测试代码中并针对 UI 自动化方案定期执行自动化测试或抽查。 若要运行 **UIA 验证**，请从 UIAVerify 子目录运行 VisualUIAVerifyNative.exe。
+### **UI Automation Verify**  
+**UI Automation Verify (UIA Verify)** is an automated testing and verification framework for UI Automation implementations. **UIA Verify** can integrate into the test code and conduct regular, automated testing or spot checks of UI Automation scenarios. To run **UIA Verify**, run VisualUIAVerifyNative.exe from the UIAVerify subdirectory.
 
 <span id="accessible_event_watcher"/>
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
-### **辅助功能事件查看器**  
-[**Accessible Event Watcher (AccEvent)**](https://msdn.microsoft.com/library/windows/desktop/Dd317979) 测试在 UI 发生变化时，应用的 UI 元素是否引发正确的 UI 自动化和 Microsoft Active Accessibility 事件。 当焦点改变时，或者当 UI 元素被调用、选择或者其状态或属性发生变化时，UI 会发生变化。
+### **Accessible Event Watcher**  
+[**Accessible Event Watcher (AccEvent)**](https://msdn.microsoft.com/library/windows/desktop/Dd317979) tests whether an app's UI elements fire proper UI Automation and Microsoft Active Accessibility events when UI changes occur. Changes in the UI can occur when the focus changes, or when a UI element is invoked, selected, or has a state or property change.
 
 > [!NOTE]
-> 文档中提及的大多数辅助功能测试工具在电脑而不是手机上运行。 开发和使用模拟器时可以运行某些工具，但其中大部分工具无法在模拟器中公开 UI 自动化树。
+> Most accessibility testing tools mentioned in the documentation run on a PC, not on a phone. You can run some of the tools while developing and using an emulator, but most of these tools can't expose the UI Automation tree within the emulator.
 
 <span id="test_keyboard_accessibility"/>
 <span id="TEST_KEYBOARD_ACCESSIBILITY"/>
-## 测试键盘辅助功能  
-测试键盘辅助功能的最佳方式是拔下鼠标或使用屏幕键盘（如果使用的是平板设备）。 使用 Tab 键测试键盘辅助功能导航。 应可以使用 Tab 键循环选择所有交互 UI 元素。 对于复合 UI 元素，验证你可以使用箭头键在元素的不同部分之间导航。 例如，你应当能够使用键盘键在项目列表中导航。 最后，对于所有的交互 UI 元素，确保你可以在它们拥有焦点之后立即使用键盘（通常使用 Enter 键或空格）调用它们。
+## Test keyboard accessibility  
+The best way to test your keyboard accessibility is to unplug your mouse or use the On-Screen Keyboard if you are using a tablet device. Test keyboard accessibility navigation by using the _Tab_ key. You should be able to cycle through all interactive UI elements by using _Tab_ key. For composite UI elements, verify that you can navigate among the parts of elements by using the arrow keys. For example, you should be able to navigate lists of items using keyboard keys. Finally, make sure that you can invoke all interactive UI elements with the keyboard once those elements have focus, typically by using the Enter or Spacebar key.
 
 <span id="verify_the_contrast_ratio_of_visible_text"/>
 <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"/>
-## 验证可见文本的对比度  
-使用颜色对比工具验证可见文本的对比度是否可接受。 例外情况包括不活动的 UI 元素，以及不传递任何信息且可以在含义不变的情况下重新整理的徽标或装饰文本。 有关对比率和例外情况的详细信息，请参阅[辅助文本要求](accessible-text-requirements.md)。 请参阅 [WCAG 2.0 G18 的技术（“资源”部分）](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)了解可以测试对比率的工具。
+## Verify the contrast ratio of visible text  
+Use color contrast tools to verify that the visible text contrast ratio is acceptable. The exceptions include inactive UI elements, and logos or decorative text that doesn’t convey any information and can be rearranged without changing the meaning. See [Accessible text requirements](accessible-text-requirements.md) for more information on contrast ratio and exceptions. See [Techniques for WCAG 2.0 G18 (Resources section)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) for tools that can test contrast ratios.
 
 > [!NOTE]
-> “WCAG 2.0 G18 的技术”列出的某些工具无法与 Windows 应用商店应用交互使用。 你可能需要在该工具中手动输入前景和背景颜色值，对应用 UI 进行屏幕捕获，然后对屏幕捕获图像运行对比度工具，或者在图像编辑程序中打开源位图文件时运行该工具，而不是在应用加载该图像时。
+> Some of the tools listed by Techniques for WCAG 2.0 G18 can't be used interactively with a Windows Store app. You may need to enter foreground and background color values manually in the tool, make screen captures of app UI and then run the contrast ratio tool over the screen capture image, or run the tool while opening source bitmap files in an image editing program rather than while that image is loaded by the app.
 
 <span id="verify_your_app_in_high_contrast"/>
 <span id="VERIFY_YOUR_APP_IN_HIGH_CONTRAST"/>
-## 在高对比度下验证应用  
-当高对比度主题处于活动状态时使用你的应用，以验证所有 UI 元素均可正确显示。 所有文本都应可读，且所有图像都应清晰可见。 调整 XAML 主题-字典资源或控件模板，以更正源自控件的所有主题问题。 如果显著的高对比度问题不是来自主题或控件（如图像文件），请提供在高对比度主题处于活动状态时要使用的单独的版本。
+## Verify your app in high contrast  
+Use your app while a high-contrast theme is active to verify that all the UI elements display correctly. All text should be readable, and all images should be clear. Adjust the XAML theme-dictionary resources or control templates to correct any theme issues that come from controls. In cases where prominent high-contrast issues are not coming from themes or controls (such as from image files), provide separate versions to use when a high-contrast theme is active.
 
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
-## 使用显示设置验证你的应用  
-使用可调节屏幕的每英寸点数 (dpi) 值的系统屏幕选项，并确保当该 dpi 值发生更改时，你的应用 UI 可正确缩放。 （某些用户可采用辅助功能选项方式更改 dpi 值，该选项可从“轻松使用”****以及屏幕属性中获得。）如果发现任何问题，请遵循[布局缩放指南](https://msdn.microsoft.com/library/windows/apps/Dn611863)，并提供其他资源以用于不同的缩放因素。
+## Verify your app with display settings  
+Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access** as well as display properties.) If you find any issues, follow the [Guidelines for layout scaling](https://msdn.microsoft.com/library/windows/apps/Dn611863) and provide additional resources for different scaling factors.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
-## 使用“讲述人”验证主应用方案  
-通过执行以下步骤，使用“讲述人”测试应用的屏幕阅读体验：
+## Verify main app scenarios by using Narrator  
+Use Narrator to test the screen reading experience for your app by performing the following steps:
 
-**使用以下步骤，配合鼠标和键盘使用“讲述人”测试你的应用：**
-1.  按 Windows 徽标键 + Enter 启动“讲述人”。
-2.  使用键盘上的 Tab 键、箭头键、Caps Lock 和箭头键在你的应用中导航。
-3.  在应用中导航时，听“讲述人”读 UI 元素，验证下列项：
-    * 对于每个控件，确保“讲述人”读出所有可见内容。 还需要确保“讲述人”读出每个控件的名称、所有适用的状态（已选中、已选择，等等）、控件类型（按钮、复选框、列表项，等等）。
-    * 如果相应元素可交互，请验证是否可以使用“讲述人”通过按 Caps Lock + 空格键调用其操作。
-    * 对于每个表格，确保“讲述人”读出表格名称、表格描述（如果可用）以及行标题和列标题。
+**Use these steps to test your app using Narrator with a mouse and keyboard:**
+1.  Start Narrator by pressing _Windows logo key + Enter_.
+2.  Navigate your app with the keyboard by using the _Tab_ key, the arrow keys, and the _Caps Lock + arrow keys_.
+3.  As you navigate your app, listen as Narrator reads the elements of your UI and verify the following:
+    * For each control, ensure that Narrator reads all visible content. Also ensure that Narrator reads each control's name, any applicable state (checked, selected, and so on), and the control type (button, check box, list item, and so on).
+    * If the element is interactive, verify that you can use Narrator to invoke its action by pressing _Caps Lock + Enter_.
+    * For each table, ensure that Narrator correctly reads the table name, the table description (if available), and the row and column headings.
 
-4.  按 Caps Lock + Enter 搜索你的应用，验证所有控件都显示在搜索列表中，并验证控件名称已本地化而且可以读取。
-5.  关闭监视器，尝试只使用键盘和“讲述人”完成主屏方案。 要获取“讲述人”命令和快捷方式的完整列表，请按 Caps Lock + F1。
+4.  Press _Caps Lock + Shift + Enter_ to search your app and verify that all of your controls appear in the search list, and that the control names are localized and readable.
+5.  Turn off your monitor and try to accomplish main app scenarios by using only the keyboard and Narrator. To get the full list of Narrator commands and shortcuts, press _Caps Lock + F1_.
 
-**按照以下步骤，使用“讲述人”的触摸模式测试你的应用：**
+Starting with Windows 10 version 1607, we introduced a new developer mode in Narrator. Turn on developer mode when Narrator is already running by pressing _Caps Lock + Shift + F12_. When developer mode is enabled, the screen will be masked and will highlight only the accessible objects and the associated text that is exposed programmatically to Narrator. This gives a you a good visual representation of the information that is exposed to Narrator.
+
+**Use these steps to test your app using Narrator's touch mode:**
 
 > [!NOTE]
-> 在支持 4 个以上联系人的设备上，“讲述人”自动进入触摸模式。 在主要屏幕上，“讲述人”不支持多监视器方案或多点触控数字化器。
+> Narrator automatically enters touch mode on devices that support 4+ contacts. Narrator doesn't support multi-monitor scenarios or multi-touch digitizers on the primary screen.
 
-1.  熟悉 UI，了解布局。
+1.  Get familiar with the UI and explore the layout.
 
-    * **使用单根手指轻扫手势在 UI 中导航。** 使用向左或向右轻扫在项目间移动，使用向上或向下轻扫更改要导航的项目的类别。 类别包括所有项目、链接、表格、标题等。 使用单根手指轻扫手势进行导航类似于使用 Caps Lock + 箭头键进行导航。
-    * **使用 Tab 手势在可聚焦的元素间导航。** 三根手指向右或向左轻扫与使用键盘上的 Tab 和 Shift + Tab 导航相似。
-    * **使用单根手指从空间角度研究 UI。** 上下拖动或左右拖动单根手指，以使“讲述人”读出你的手指下的项目。 可以使用鼠标作为替代项，因为鼠标在拖动单根手指时使用相同的点击测试逻辑。
-    * **通过三个手指向上轻扫读出整个窗口及其所有内容**。 这等效于使用 Caps Lock + W。
+    * **Navigate through the UI by using single-finger swipe gestures.** Use left or right swipes to move between items, and up or down swipes to change the category of items being navigated. Categories include all items, links, tables, headers, and so on. Navigating with single-finger swipe gestures is similar to navigating with _Caps Lock + Arrow_.
+    * **Use tab gestures to navigate through focusable elements.** A three-finger swipe to the right or left is the same as navigating with _Tab_ and _Shift + Tab_ on a keyboard.
+    * **Spatially investigate the UI with a single finger.** Drag a single finger up and down, or left and right, to have Narrator read the items under your finger. You can use the mouse as an alternative because it uses the same hit-testing logic as dragging a single finger.
+    * **Read the entire window and all its contents with a three finger swipe up**. This is equivalent to using _Caps Lock + W_.
 
-    如果存在无法到达的重要 UI，则表明可能存在辅助功能问题。
+    If there is important UI that you cannot reach, you may have an accessibility issue.
 
-2.  与控件交互，测试其主要操作、辅助操作以及滚动行为。
+2.  Interact with a control to test its primary and secondary actions, and its scrolling behavior.
 
-    主要操作包括激活按钮、放置文本插入符号、对控件设置焦点等操作。 辅助操作包括选择列表项、展开提供了多个选项的按钮等。
+    Primary actions include things like activating a button, placing a text caret, and setting focus to the control. Secondary actions include actions such as selecting a list item or expanding a button that offers multiple options.
 
-    * 测试主要操作：双击，或用一个手指按住，另一个手指点击。
-    * 测试辅助操作：点击三次，或用一个手指按住，另一个手指双击。
-    * 测试滚动行为：使用两个手指轻扫，沿所需方向滚动。
+    * To test a primary action: Double tap, or press with one finger and tap with another.
+    * To test a secondary action: Triple tap, or press with one finger and double tap with another.
+    * To test scrolling behavior: Use two-finger swipes to scroll in the desired direction.
 
-    某些控件提供其他操作。 若要显示完整列表，请用四根手指点击。
+    Some controls provide additional actions. To display the full list, enter a single four-finger tap.
 
-    如果控件响应鼠标或键盘，但不响应主要触摸交互或辅助触摸交互，则控件可能需要实现其他的 [UI 自动化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)控件模式。
+    If a control responds to the mouse or keyboard but does not respond to a primary or secondary touch interaction, the control might need to implement additional [UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684009) control patterns.
 
-还应考虑使用 [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 工具测试应用的“讲述人”辅助功能方案。 [**AccScope 工具主题**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)介绍了如何配置 **AccScope** 来测试“讲述人”方案。
+You should also consider using the [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) tool to test Narrator accessibility scenarios with your app. The [**AccScope tool topic**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) describes how to configure **AccScope** to test Narrator scenarios.
 
 <span id="Examine_the_UI_Automation_representation_for_your_app"/>
 <span id="examine_the_ui_automation_representation_for_your_app"/>
 <span id="EXAMINE_THE_UI_AUTOMATION_REPRESENTATION_FOR_YOUR_APP"/>
-## 检查应用的 UI 自动化表示  
-前面提到的某些 UI 自动化测试工具提供了一种查看应用的方式，这种方式有意不考虑应用的外观，而以 UI 自动化元素结构表示应用。 在辅助功能方案中，UI 自动化客户端（主要是辅助技术）将通过此方式与你的应用进行交互。
+## Examine the UI Automation representation for your app  
+Several of the UI Automation testing tools mentioned previously provide a way to view your app in a way that deliberately does not consider what the app looks like, and instead represents the app as a structure of UI Automation elements. This is how UI Automation clients, mainly assistive technologies, will be interacting with your app in accessibility scenarios.
 
-[**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 工具提供了一种十分有趣的应用视图，因为你既能以可视化表示的形式查看 UI 自动化元素，也能以列表形式来查看。 如果使用可视化效果，那么你可以深入查看各个部分，从而对应用 UI 的视觉外观有一定的了解。 你甚至可以在为 UI 指定全部逻辑之前对最初 UI 原型的辅助功能进行测试，确保应用的视觉交互和辅助功能方案导航保持平衡。
+The [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) tool provides a particularly interesting view of your app because you can see the UI Automation elements either as a visual representation or as a list. If you use the visualization, you can drill down into the parts in a way that you'll be able to correlate with the visual appearance of your app's UI. You can even test the accessibility of your earliest UI prototypes before you've assigned all the logic to the UI, making sure that both the visual interaction and accessibility-scenario navigation for your app is in balance.
 
-可供测试的一个方面是，UI 自动化元素视图中是否存在不应出现在其中的元素。 如果发现要从该视图中去除的元素，或者恰好相反，视图中缺少某些元素，则可以使用 [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) XAML 附加属性调整 XAML 控件在辅助功能视图中的显示方式。 查看基本辅助功能视图后，还可以通过启用箭头键重新检查 Tab 键序列或空间导航，从而确保用户可以查看控件视图中公开的各个交互部分。
+One aspect that you can test is whether there are elements appearing in the UI Automation element view that you don't want to appear there. If you find elements you want to omit from the view, or conversely if there are elements missing, you can use the [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) XAML attached property to adjust how XAML controls appear in accessibility views. After you've looked at the basic accessibility views, this is also a good opportunity to recheck your tab sequences or spatial navigation as enabled by arrow keys to make sure users can reach each of the parts that are interactive and exposed in the control view.
 
 <span id="related_topics"/>
-## 相关主题  
-* [辅助功能](accessibility.md)
-* [要避免的做法](practices-to-avoid.md)
-* [UI 自动化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Windows 中的辅助功能](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+## Related topics  
+* [Accessibility](accessibility.md)
+* [Practices to avoid](practices-to-avoid.md)
+* [UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
+* [Accessibility in Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

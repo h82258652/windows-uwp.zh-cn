@@ -4,8 +4,8 @@ ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
 title: "ListView 和 GridView 数据虚拟化"
 description: "通过数据虚拟化改进 ListView 和 GridView 性能和启动时间。"
 translationtype: Human Translation
-ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
-ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
+ms.sourcegitcommit: e44dd5c2c3c9fb252062af3a6a9f409e1777a878
+ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 ---
 # ListView 和 GridView 数据虚拟化
@@ -63,8 +63,8 @@ ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
 -   当系统请求某个项目时
     -   如果内存中提供该项目，则将其返回。
     -   如果没有该项目，则返回 null 或占位符项。
-    -   使用对项目的请求（或者来自 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 的范围信息）了解所需项目，并以异步方式从后端获取项目的数据。 检索数据后，通过 [**INotifyCollectionChanged**]((https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引发变更通知，以使项目控件了解新项目。
--   （可选）当项目控件的视口更改时，通过实现 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 来标识需要使用数据源中的哪些项目。
+    -   使用对项目的请求（或者来自 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 的范围信息）了解所需项目，并以异步方式从后端获取项目的数据。 检索数据后，通过 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引发更改通知，以使项目控件了解新项目。
+-   （可选）当项目控件的视区更改时，通过实现 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) 来标识需要使用数据源中的哪些项目。
 
 除此之外，对于加载数据项目的时间、加载数目、在内存中所保留项目的策略，取决于你的应用程序。 需要记住的一些常规注意事项：
 
@@ -83,6 +83,6 @@ ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

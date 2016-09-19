@@ -1,27 +1,27 @@
 ---
 author: mtoepke
-title: "如何暂停应用（DirectX 和 C++）"
-description: "本主题介绍了系统在暂停通用 Windows 平台 (UWP) DirectX 应用时，如何保存重要系统状态和应用数据。"
+title: How to suspend an app (DirectX and C++)
+description: This topic shows how to save important system state and app data when the system suspends your Universal Windows Platform (UWP) DirectX app.
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 38e03a4a6312c5a0521c7263944897260624aa38
+ms.openlocfilehash: dd7319b254dcaaa5da7a7055bbde299f5e7e62a3
 
 ---
 
-# 如何暂停应用（DirectX 和 C++）
+# How to suspend an app (DirectX and C++)
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主题介绍了系统在暂停通用 Windows 平台 (UWP) DirectX 应用时，如何保存重要系统状态和应用数据。
+This topic shows how to save important system state and app data when the system suspends your Universal Windows Platform (UWP) DirectX app.
 
-## 注册暂停事件处理程序
+## Register the suspending event handler
 
 
-首先，注册以处理 [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) 事件，当某个用户或系统操作将你的应用移动到某个已暂停状态时， 会发生此事件。
+First, register to handle the [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event, which is raised when your app is moved to a suspended state by a user or system action.
 
-将此代码添加到你的视图提供程序 的 [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) 方法的实现中：
+Add this code to your implementation of the [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method of your view provider:
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -35,12 +35,12 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## 在暂停之前保存所有应用数据
+## Save any app data before suspending
 
 
-当你的应用处理 [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) 事件时，它将有机会将其重要的应用程序数据保存到处理程序函数中。 应用应该使用 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 存储 API 来同步保存简单的应用程序数据。 如果你要开发一个游戏，请保存所有关键游戏状态信息。 请不要忘记去挂起音频处理！
+When your app handles the [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event, it has the opportunity to save its important application data in the handler function. The app should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) storage API to save simple application data synchronously. If you are developing a game, save any critical game state information. Don't forget to suspend the audio processing!
 
-现在，请实施回调。 将应用数据保存在此方法中。
+Now, implement the callback. Save the app data in this method.
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -62,9 +62,9 @@ void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
 }
 ```
 
-此回调必须在 5 秒内完成。 在此回调期间，你必须通过调用 [**SuspendingOperation::GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) 来请求一个延迟，这会启动递减计数。 当你的应用完成保存操作之后，请调用 [**SuspendingDeferral::Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 来告知系统你的应用现在已准备好进行挂起。 如果你不请求延迟，或者如果你的应用保存数据所花费的时间超过 5 秒，则会自动暂停你的应用。
+This callback must complete with 5 seconds. During this callback, you must request a deferral by calling [**SuspendingOperation::GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690), which starts the countdown. When your app completes the save operation, call [**SuspendingDeferral::Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) to tell the system that your app is now ready to be suspended. If you do not request a deferral, or if your app takes longer than 5 seconds to save the data, your app is automatically suspended.
 
-对于应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，此回调是由 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 处理的一条事件消息。 如果你没有从你的应用的主回路调用 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)（在你的查看提供程序的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中实现），那么将不会调用此回调。
+This callback occurs as an event message processed by the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). This callback will not be invoked if you do not call [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's main loop (implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method of your view provider).
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -91,10 +91,10 @@ void App::Run()
 }
 ```
 
-## 调用 Trim()
+## Call Trim()
 
 
-从 Windows 8.1 开始，所有 DirectX Windows 应用商店应用在挂起时必须调用 [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346)。 此调用指示图形驱动程序释放为该应用分配的所有临时缓冲区，这样可以减少应用在暂停状态时被终止以回收内存资源的情况。 这是针对 Windows 8.1 的认证要求。
+Starting in Windows 8.1, all DirectX Windows Store apps must call [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) when suspending. This call tells the graphics driver to release all temporary buffers allocated for the app, which reduces the chance that the app will be terminated to reclaim memory resources while in the suspend state. This is a certification requirement for Windows 8.1.
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -126,35 +126,35 @@ void DX::DeviceResources::Trim()
 }
 ```
 
-## 释放所有独占资源和文件句柄
+## Release any exclusive resources and file handles
 
 
-当你的应用处理 [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) 事件时，它还将有机会释放独占资源和文件句柄。 显式释放独占资源和文件句柄有助于确保：你的应用未使用它们时其他应用可以访问它们。 当在终止后又激活应用时，它应该打开其独占资源和文件句柄。
+When your app handles the [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event, it also has the opportunity to release exclusive resources and file handles. Explicitly releasing exclusive resources and file handles helps to ensure that other apps can access them while your app isn't using them. When the app is activated after termination, it should open its exclusive resources and file handles.
 
-## 备注
+## Remarks
 
 
-每当用户切换到桌面或其他应用时，系统都会挂起你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。
+The system suspends your app whenever the user switches to another app or to the desktop. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background.
 
-当你的应用被暂停后，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保存在内存里，则将终止你的应用。 当用户切换回已终止的暂停应用时，系统会发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，且应该在其处理程序中为 **CoreApplicationView::Activated** 事件还原其应用程序数据。
+The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. When the user switches back to a suspended app that has been terminated, the system sends an [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event and should restore its application data in its handler for the **CoreApplicationView::Activated** event.
 
-当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且在终止后又激活应用时还原这些内容。
+The system doesn't notify an app when it's terminated, so your app must save its application data and release exclusive resources and file handles when it's suspended, and restore them when the app is activated after termination.
 
-## 相关主题
+## Related topics
 
-* [如何恢复应用（DirectX 和 C++）](how-to-resume-an-app-directx-and-cpp.md)
-* [如何激活应用（DirectX 和 C++）](how-to-activate-an-app-directx-and-cpp.md)
-
- 
+* [How to resume an app (DirectX and C++)](how-to-resume-an-app-directx-and-cpp.md)
+* [How to activate an app (DirectX and C++)](how-to-activate-an-app-directx-and-cpp.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,24 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
-description: "本文介绍如何访问和使用设备灯（如果存在）。 灯功能通过设备的相机和相机闪光灯功能单独管理。"
-title: "独立于相机的手电筒"
+description: This article shows how to access and use a device's lamp, if one is present. Lamp functionality is managed separately from the device's camera and camera flash functionality.
+title: Camera-independent Flashlight
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
+ms.sourcegitcommit: 1b32633abc9365bf88137dff7c36ba0f2ad05d72
+ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 ---
 
-# 独立于相机的手电筒
+# Camera-independent Flashlight
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文介绍如何访问和使用设备灯（如果存在）。 灯功能通过设备的相机和相机闪光灯功能单独管理。 除了获取对灯的引用和调整其设置以外，本文还介绍了在不使用灯资源时如何正确地释放灯资源，以及在灯正由另一个应用使用时，如何检测灯的可用性更改。
+This article shows how to access and use a device's lamp, if one is present. Lamp functionality is managed separately from the device's camera and camera flash functionality. In addition to acquiring a reference to the lamp and adjusting its settings, this article also shows you how to properly free up the lamp resource when it's not in use, and how to detect when the lamp's availability changes in case it is being used by another app.
 
-## 获取设备的默认灯
+## Get the device's default lamp
 
-若要获取设备的默认灯设备，请调用 [**Lamp.GetDefaultAsync**](https://msdn.microsoft.com/library/windows/apps/dn894327)。 灯 API 位于 [**Windows.Devices.Lights**](https://msdn.microsoft.com/library/windows/apps/dn894331) 命名空间中。 在尝试访问这些 API 之前，请务必为此命名空间添加一个 using 指令。
+To get a device's default lamp device, call [**Lamp.GetDefaultAsync**](https://msdn.microsoft.com/library/windows/apps/dn894327). The lamp APIs are found in the [**Windows.Devices.Lights**](https://msdn.microsoft.com/library/windows/apps/dn894331) namespace. Be sure to add a using directive for this namespace before attempting to access these APIs.
 
 [!code-cs[LightsNamespace](./code/Lamp/cs/MainPage.xaml.cs#SnippetLightsNamespace)]
 
@@ -28,49 +28,50 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 [!code-cs[GetDefaultLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetGetDefaultLamp)]
 
-如果返回的对象是 **null**，则该设备不支持 **Lamp** API。 即使某些设备上实际存在灯，它们也可能不支持 **Lamp** API。
+If the returned object is **null**, the **Lamp** API is unsupported on the device. Some devices may not support the **Lamp** API even if there is a lamp physically present on the device.
 
-## 使用灯选择器字符串获取特定灯
+## Get a specific lamp using the lamp selector string
 
-某些设备可以具有多个灯。 若要获取设备上可用灯的列表，请通过调用 [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894328) 获取设备选择器字符串。 然后，此选择器字符串可以传递到 [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 中。 此方法用于枚举多种不同类型的设备，而选择器字符串可指示该方法仅返回灯设备。 从 **FindAllAsync** 返回的 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) 对象是表示设备上的可用灯的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 对象的集合。 选择列表中的某个对象，然后将 [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) 属性传递给 [**Lamp.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn894326)，以获取对请求的灯的引用。 此示例使用 **System.Linq** 命名空间中的 **GetFirstOrDefault** 扩展方法选择 **DeviceInformation** 对象，其中，[**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) 属性的值为 **Back**，可选择位于设备外壳背面的灯（如果存在）。
+Some devices may have more than one lamp. To obtain a list of lamps available on the device, get the device selector string by calling [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894328). This selector string can then be passed into [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432). This method is used to enumerate many different kinds of devices and the selector string lets the method know to return only lamp devices. The [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) object returned from **FindAllAsync** is a collection of [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) objects representing the lamps available on the device. Select one of the objects in the list and then pass the [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) property to [**Lamp.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn894326) to get a reference to the requested lamp. This example uses the **GetFirstOrDefault** extension method from the **System.Linq** namespace to select the **DeviceInformation** object where the [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) property has a value of **Back**, which selects a lamp that is on the back of the device's enclosure, if one exists.
 
-请注意，[**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) API 位于 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空间中。
+Note that the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) APIs are found in the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) namespace.
 
 [!code-cs[EnumerationNamespace](./code/Lamp/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
 
 [!code-cs[GetLampWithSelectionString](./code/Lamp/cs/MainPage.xaml.cs#SnippetGetLampWithSelectionString)]
 
-## 调整灯设置
+## Adjust lamp settings
 
-拥有 [**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) 类的实例后，请通过将 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) 属性设置为 **true** 来打开灯。
+After you have an instance of the [**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) class, turn the lamp on by setting the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) property to **true**.
 
 [!code-cs[LampSettingsOn](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsOn)]
 
-通过将 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) 属性设置为 **false** 来关闭灯。
+Turn the lamp off by setting the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) property to **false**.
 
 [!code-cs[LampSettingsOff](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsOff)]
 
-某些设备配备支持颜色值的灯。 通过检查 [**IsColorSettable**](https://msdn.microsoft.com/library/windows/apps/dn894329) 属性来检查灯是否支持颜色。 如果此值为 **true**，你可以使用 [**Color**](https://msdn.microsoft.com/library/windows/apps/dn894322) 属性设置灯的颜色。
+Some devices have lamps that support color values. Check if a lamp supports color by checking the [**IsColorSettable**](https://msdn.microsoft.com/library/windows/apps/dn894329) property. If this value is **true**, you can set the color of the lamp with the [**Color**](https://msdn.microsoft.com/library/windows/apps/dn894322) property.
 
 [!code-cs[LampSettingsColor](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsColor)]
 
-## 注册，以在灯可用性发生更改时获得通知
+## Register to be notified if the lamp availability changes
 
-灯访问权限将授予最近请求访问的应用。 因此，如果另一个应用已启动并请求使用你的应用当前在使用的灯资源，则在其他应用释放资源之前，你的应用将不再能够控制灯。 若要在灯的可用性发生更改时收到通知，请注册 [**Lamp.AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317) 事件的处理程序。
+Lamp access is granted to the most recent app to request access. So, if another app is launched and requests a lamp resource that your app is currently using, your app will no longer be able to control the lamp until the other app has released the resource. To receive a notification when the availability of the lamp changes, register a handler for the [**Lamp.AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317) event.
 
 [!code-cs[AvailabilityChanged](./code/Lamp/cs/MainPage.xaml.cs#SnippetAvailabilityChanged)]
 
-在该事件的处理程序中，检查 [**LampAvailabilityChanged.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/dn894315) 属性以确定灯是否可用。 此示例根据灯的可用性确定是否启用用于打开或关闭灯的切换开关。
+In the handler for the event, check the [**LampAvailabilityChanged.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/dn894315) property to determine if the lamp is available. In this example, a toggle switch for turning the lamp on and off is enabled or disabled based on the lamp availability.
 
 [!code-cs[AvailabilityChangedHandler](./code/Lamp/cs/MainPage.xaml.cs#SnippetAvailabilityChangedHandler)]
 
-## 适当地处理不处于使用状态的灯资源
+## Properly dispose of the lamp resource when not in use
 
-当你不再使用灯时，你应该将其禁用，然后调用 [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) 来释放该资源并允许其他应用访问该灯。 如果你使用的是 C#，此属性将映射到 **Dispose** 方法。 如果你已注册 [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317)，则应当在处理灯资源时注销该处理程序。 代码中用于处理灯资源的正确位置取决于你的应用。 若要将灯访问限制到单个页面，请在 [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) 事件中释放该资源。
+When you are no longer using the lamp, you should disable it and call [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) to release the resource and allow other apps to access the lamp. This property is mapped to the **Dispose** method if you are using C#. If you registered for the [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), you should unregister the handler when you dispose of the lamp resource. The right place in your code to dispose of the lamp resource depends on your app. To scope lamp access to a single page, release the resource in the [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) event.
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
- 
+## Related topics
+- [Media playback](media-playback.md)
 
  
 
@@ -80,6 +81,6 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,105 +1,104 @@
 ---
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: "本文讨论了如何使用相机配置文件来发现和管理不同视频捕获设备的功能。"
-title: "相机配置文件"
+description: This article discusses how to use camera profiles to discover and manage the capabilities of different video capture devices. This includes tasks such as selecting profiles that support specific resolutions or frame rates, profiles that support simultaneous access to multiple cameras, and profiles that support HDR.
+title: Discover and select camera capabilities with camera profiles
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
+ms.sourcegitcommit: 625cf715a88837cb920433fa34e47a1e1828a4c8
+ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 ---
 
-# 相机配置文件
+# Discover and select camera capabilities with camera profiles
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文讨论了如何使用相机配置文件来发现和管理不同视频捕获设备的功能。
+This article discusses how to use camera profiles to discover and manage the capabilities of different video capture devices. This includes tasks such as selecting profiles that support specific resolutions or frame rates, profiles that support simultaneous access to multiple cameras, and profiles that support HDR.
 
-**注意**  
-本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码生成，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
+> [!NOTE] 
+> This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
 
  
 
-## 关于相机配置文件
+## About camera profiles
 
-不同设备上的相机支持不同的功能，包括一组支持的捕获分辨率、视频捕获的帧速率，以及是否支持 HDR 或可变帧速率捕获。 通用 Windows 平台 (UWP) 媒体捕获框架将此功能集存储在 [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) 中。 由 [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694) 对象表示的相机配置文件具有三组媒体描述；一组用于照片捕获，一组用于视频捕获，另一组用于视频预览。
+Cameras on different devices support different capabilities including the set of supported capture resolutions, frame rate for video captures, and whether HDR or variable frame rate captures are supported. The Universal Windows Platform (UWP) media capture framework stores this set of capabilities in a [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695). A camera profile, represented by a [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694) object, has three collections of media descriptions; one for photo capture, one for video capture, and another for video preview.
 
-在初始化你的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 对象之前，你可以在当前设备上查询捕获设备，以查看支持哪些配置文件。 当你选择某个受支持的配置文件时，你知道捕获设备支持该配置文件的媒体说明中的所有功能。 这便无需使用用于确定特定设备支持哪些功能组合的试错方法。
-
-在有关基本媒体捕获的文章[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中，用于初始化媒体捕获的 [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) 仅通过捕获设备的 ID 字符串（初始化所需的最低数据量）来创建。
+Before initializing your [MediaCapture](capture-photos-and-video-with-mediacapture.md) object, you can query the capture devices on the current device to see what profiles are supported. When you select a supported profile, you know that the capture device supports all of the capabilities in the profile's media descriptions. This eliminates the need for a trial and error approach to determining which combinations of capabilities are supported on a particular device.
 
 [!code-cs[BasicInitExample](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
 
-本文中的代码示例将这一最简单的初始化过程替换为支持各种功能的相机配置文件的发现过程，后者随后用于初始化媒体捕获设备。
+The code examples in this article replace this minimal initialization with the discovery of camera profiles supporting various capabilities, which are then used to initialize the media capture device.
 
-## 查找支持相机配置文件的视频设备
+## Find a video device that supports camera profiles
 
-在搜索受支持的相机配置文件之前，你应查找支持使用相机配置文件的捕获设备。 在下面示例中定义的 **GetVideoProfileSupportedDeviceIdAsync** 帮助程序方法使用 [**DeviceInformaion.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 方法来检索所有可用视频捕获设备的列表。 它将循环访问列表中的所有设备，同时为每台设备调用静态方法 [**IsVideoProfileSupported**](https://msdn.microsoft.com/library/windows/apps/dn926714)，以查看设备是否支持视频配置文件。 还有，每台设备的 [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) 属性允许你指定希望相机位于设备正面还是背面。
+Before searching for supported camera profiles, you should find a capture device that supports the use of camera profiles. The **GetVideoProfileSupportedDeviceIdAsync** helper method defined in the example below uses the [**DeviceInformaion.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) method to retrieve a list of all available video capture devices. It loops through all of the devices in the list, calling the static method, [**IsVideoProfileSupported**](https://msdn.microsoft.com/library/windows/apps/dn926714), for each device to see if it supports video profiles. Also, the [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) property for each device, allowing you to specify wether you want a camera on the front or back of the device.
 
-如果在指定的面板中发现支持相机配置文件的设备，将返回包含设备 ID 字符串的 [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) 值。
+If a device that supports camera profiles is found on the specified panel, the [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) value, containing the device's ID string, is returned.
 
 [!code-cs[GetVideoProfileSupportedDeviceIdAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetVideoProfileSupportedDeviceIdAsync)]
 
-如果从 **GetVideoProfileSupportedDeviceIdAsync** 帮助程序方法返回的设备 ID 为 null 或是一个空字符串，则指定面板上不存在支持相机配置文件的设备。 在此情况下，你应在不使用配置文件的情况下初始化媒体捕获设备。
+If the device ID returned from the **GetVideoProfileSupportedDeviceIdAsync** helper method is null or an empty string, there is no device on the specified panel that supports camera profiles. In this case, you should initialize your media capture device without using profiles.
 
 [!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
 
-## 基于受支持的分辨率和帧速率选择配置文件
+## Select a profile based on supported resolution and frame rate
 
-若要选择具有特定功能（如具有达到特定分辨率和帧速率的功能）的配置文件，首先应调用上面定义的帮助程序方法，以获取支持使用相机配置文件的捕获设备的 ID。
+To select a profile with particular capabilities, such as with the ability to achieve a particular resolution and frame rate, you should first call the helper method defined above to get the ID of a capture device that supports using camera profiles.
 
-创建新的 [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) 对象，传入选定的设备 ID。 接下来，调用静态方法 [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708)，获取设备支持的所有相机配置文件的列表。
+Create a new [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) object, passing in the selected device ID. Next, call the static method [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) to get a list of all camera profiles supported by the device.
 
-此示例使用包含在 using **System.Linq** 命名空间中的 Linq 查询方法，来选择包含 [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) 对象的配置文件，其中的 [**Width**](https://msdn.microsoft.com/library/windows/apps/dn926700)、[**Height**](https://msdn.microsoft.com/library/windows/apps/dn926697) 和 [**FrameRate**](https://msdn.microsoft.com/library/windows/apps/dn926696) 属性与请求的值相匹配。 如果找到匹配项，则 **MediaCaptureInitializationSettings** 的 [**VideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926679) 和 [**RecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926678) 将设置为从 Linq 查询返回的匿名类型中的值。 如果未找到匹配项，则使用默认配置文件。
+This example uses a Linq query method, included in the using **System.Linq** namespace, to select a profile that contains a [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) object where the [**Width**](https://msdn.microsoft.com/library/windows/apps/dn926700), [**Height**](https://msdn.microsoft.com/library/windows/apps/dn926697), and [**FrameRate**](https://msdn.microsoft.com/library/windows/apps/dn926696) properties match the requested values. If a match is found, [**VideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926679) and [**RecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926678) of the **MediaCaptureInitializationSettings** are set to the values from the anonymous type returned from the Linq query. If no match is found, the default profile is used.
 
 [!code-cs[FindWVGA30FPSProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindWVGA30FPSProfile)]
 
-使用你所需的相机配置文件填充 **MediaCaptureInitializationSettings** 后，你只需对你的媒体捕获对象调用 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 即可将其配置为所需的配置文件。
+After you populate the **MediaCaptureInitializationSettings** with your desired camera profile, you simply call [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) on your media capture object to configure it to the desired profile.
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## 选择支持并发的配置文件
+## Select a profile that supports concurrence
 
-你可以使用相机配置文件来确定设备是否支持同时从多个相机捕获视频。 在此方案中，你需要创建两组捕获对象，一组用于前置相机，一组用于后置相机。 请为每个相机都创建一个 **MediaCapture**、一个 **MediaCaptureInitializationSettings**，和一个用于保留捕获设备 ID 的字符串。 此外，添加一个将跟踪是否支持并发的布尔变量。
+You can use camera profiles to determine if a device supports video capture from multiple cameras concurrently. For this scenario, you will need to create two sets of capture objects, one for the front camera and one for the back. For each camera, create a **MediaCapture**, a **MediaCaptureInitializationSettings**, and a string to hold the capture device ID. Also, add a boolean variable that will track whether concurrence is supported.
 
 [!code-cs[ConcurrencySetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
 
-静态方法 [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) 将返回受指定捕获设备（还可以支持并发）支持的相机配置文件的列表。 使用 Linq 查询来查找支持并发且同时受前置和后置相机支持的配置文件。 如果找到了符合这些要求的配置文件，请将每个 **MediaCaptureInitializationSettings** 对象的配置文件都设置为 true，并将布尔并发跟踪变量设置为 true。
+The static method [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) returns a list of the camera profiles that are supported by the specified capture device that can also supports concurrence. Use a Linq query to find a profile that supports concurrence and that is supported by both the front and back camera. If a profile that meets theses requirements is found, set the profile on each of the **MediaCaptureInitializationSettings** objects and set the boolean concurrence tracking variable to true.
 
 [!code-cs[FindConcurrencyDevices](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
 
-在你的应用方案中，为主相机调用 **MediaCapture.InitializeAsync**。 如果支持并发，请同样初始化第二台相机。
+Call **MediaCapture.InitializeAsync** for the primary camera for your app scenario. If concurrence is supported, initialize the second camera as well.
 
 [!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
 
-## 使用已知的配置文件来查找支持 HDR 视频的配置文件
+## Use known profiles to find a profile that supports HDR video
 
-选择支持 HDR 的配置文件的开始方法与其他方案类似。 创建一个 **MediaCaptureInitializationSettings** 和一个用于保留捕获设备 ID 的字符串。 添加一个将跟踪是否支持 HDR 视频的布尔变量。
+Selecting a profile that supports HDR begins like the other scenarios. Create a a **MediaCaptureInitializationSettings** and a string to hold the capture device ID. Add a boolean variable that will track whether HDR video is supported.
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 
-使用上面定义的 **GetVideoProfileSupportedDeviceIdAsync** 帮助程序方法，获取支持相机配置文件的捕获设备的设备 ID。
+Use the **GetVideoProfileSupportedDeviceIdAsync** helper method defined above to get the device ID for a capture device that supports camera profiles.
 
 [!code-cs[FindDeviceHDR](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindDeviceHDR)]
 
-静态方法 [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) 将返回受指定设备（按指定的 [**KnownVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn948843) 值进行分类）支持的相机配置文件。 在此方案中，指定 **VideoRecording** 值是为了将返回的相机配置文件限制为支持视频录制的配置文件。
+The static method [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) returns the camera profiles supported by the specified device that is categorized by the specified [**KnownVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn948843) value. For this scenario, the **VideoRecording** value is specified to limit the returned camera profiles to ones that support video recording.
 
-循环访问返回的相机配置文件列表。 对于每个相机配置文件，循环访问配置文件中的每个 [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695)，同时检查 [**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) 属性是否为 true。 找到合适的媒体描述后，中断循环并将配置文件和描述对象分配给 **MediaCaptureInitializationSettings** 对象。
+Loop through the returned list of camera profiles. For each camera profile, loop through each [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) in the profile checking to see if the [**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) property is true. After a suitable media description is found, break out of the loop and assign the profile and description objects to the **MediaCaptureInitializationSettings** object.
 
 [!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
 
-## 确定设备是否支持同时进行照片和视频捕获
+## Determine if a device supports simultaneous photo and video capture
 
-许多设备支持同时捕获照片和视频。 若要确定捕获设备是否支持此功能，请调用 [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) 以获取设备支持的所有相机配置文件。 使用链接查询来查找至少具有一个同时用于 [**SupportedPhotoMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926703) 和 [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) 的条目的配置文件，这表示该配置文件支持同时捕获。
+Many devices support capturing photos and video simultaneously. To determine if a capture device supports this, call [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) to get all of the camera profiles supported by the device. Use a link query to find a profile that has at least one entry for both [**SupportedPhotoMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926703) and [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) which means that the profile supports simultaneous capture.
 
 [!code-cs[GetPhotoAndVideoSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPhotoAndVideoSupport)]
 
-你可以优化此查询，查找支持特定分辨率或支持除同时录制视频功能外的其他功能的配置文件。 你还可以使用 [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) 并指定 [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843) 值，以检索支持同时捕获的配置文件，但查询所有配置文件将提供更完整的结果。
+You can refine this query to look for profiles that support specific resolutions or other capabilities in addition to simultaneous video record. You can also use the [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) and specify the [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843) value to retrieve profiles that support simultaneous capture, but querying all profiles will provide more complete results.
 
-## 相关主题
+## Related topics
 
-* [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
+* [Camera](camera.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -110,6 +109,6 @@ ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

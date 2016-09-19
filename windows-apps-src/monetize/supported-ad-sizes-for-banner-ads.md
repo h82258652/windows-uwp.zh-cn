@@ -1,22 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
-description: "了解支持的横幅广告大小。"
-title: "横幅广告的受支持广告大小"
+description: Learn about the supported banner ad sizes.
+title: Supported ad sizes for banner ads
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: f83febcb6c96ad85329633e652978f5c7724e743
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 488c47e7fd3ab55c51454e867d802d632a0b4df2
 
 
 ---
 
-# 横幅广告的受支持广告大小
+# Supported ad sizes for banner ads
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Microsoft Advertising 支持以下广告大小的横幅广告。
 
-## Windows 10 移动版和 Windows Phone 8.x
+Microsoft advertising supports banner ads in the following ad sizes.
+
+## Windows 10 Mobile and Windows Phone 8.x
 
 <table>
 <colgroup>
@@ -25,8 +25,8 @@ Microsoft Advertising 支持以下广告大小的横幅广告。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">广告大小</th>
-<th align="left">示例</th>
+<th align="left">Ad Size</th>
+<th align="left">Example</th>
 </tr>
 </thead>
 <tbody>
@@ -39,7 +39,7 @@ Microsoft Advertising 支持以下广告大小的横幅广告。
 <td align="left"><img src="images/13-f6f413da-ddde-4424-9364-41d8ba536d21.jpg" alt="AdSizesPhone320x50" /></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>480x80</p><p>**注意** 仅 Windows Phone Silverlight 支持此大小。</p></td>
+<td align="left"><p>480x80</p><p>**Note**&nbsp;&nbsp;This size is supported for Windows Phone Silverlight only.</p></td>
 <td align="left"><img src="images/13-0f11f562-0624-40d6-9720-400420f0a486.jpg" alt="AdSizesPhone480x80" /></td>
 </tr>
 <tr class="even">
@@ -51,7 +51,7 @@ Microsoft Advertising 支持以下广告大小的横幅广告。
 
  
 
-## Windows 10 (UWP) 和 Windows 8.1
+## Windows 10 (UWP) and Windows 8.1
 
 <table>
 <colgroup>
@@ -60,8 +60,8 @@ Microsoft Advertising 支持以下广告大小的横幅广告。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">广告大小</th>
-<th align="left">示例</th>
+<th align="left">Ad Size</th>
+<th align="left">Example</th>
 </tr>
 </thead>
 <tbody>
@@ -92,6 +92,6 @@ Microsoft Advertising 支持以下广告大小的横幅广告。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -1,53 +1,53 @@
 ---
 author: jnHs
-Description: "查看为应用保留的名称、保留其他名称（用于其他语言或者更改应用名），并删除不再需要的已保留名称。"
-title: "管理应用名称"
+Description: View the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete reserved names that you don't need anymore.
+title: Manage app names
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 translationtype: Human Translation
 ms.sourcegitcommit: 48952b5d4f2565d06ec79475f88fbabf93fd0f70
-ms.openlocfilehash: e03e99b5de2142c2bcf46ee2aad4a76bb87ee4e5
+ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
 
 ---
 
-# 管理应用名称
+# Manage app names
 
 
-查看为应用保留的所有名称、保留其他名称（用于其他语言或者更改应用名），并删除不需要的名称。 若要执行此操作，请转到 Windows 开发人员中心仪表板中任意应用的“应用管理”****部分中的“管理应用名称”****页。
+You can view all of the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete names you don't need. To do this, go to the **Manage app names** page in the **App management** section for any of your apps in the Windows Dev Center dashboard.
 
-## 为你的应用保留其他名称
+## Reserve additional names for your app
 
-可以保留多个应用名称以用于同一应用。 如果你以多种语言提供应用，而且要为不同的语言使用不同的名称，则该选项特别有用。 也可以使用它来更改你尚未发布的应用的名称。
+You can reserve multiple app names to use for the same app. This is especially useful if you are offering your app in multiple languages and want to use different names for different languages. You can also use this to change the name of an app which you haven't published yet.
 
-在“管理应用名称”****页面的“保留更多名称”****部分中，你将会看到文本框。 输入想要保留的名称，然后单击“检查可用性”****。 如果该名称可用，请单击“保留名称”****。
+In the **Reserve more names** section of the **Manage app names** page, you'll see a text box. Enter the name you'd like to reserve, then click **Check availability**. If the name is available, click **Reserve name**.
 
-> **注意** 有关保留应用名称的详细信息，以及为何某个名称可能不可用，请参阅[通过保留名称创建你的应用](create-your-app-by-reserving-a-name.md)。
+> **Note**  For more info about reserving app names, and why a certain name may not be available, see [Create your app by reserving a name](create-your-app-by-reserving-a-name.md).
 
-如果需要，你可以继续在此处保留其他应用名称。
+You can continue reserving additional app names here if desired.
 
-## 删除应用名称
+## Delete app names
 
-如果你不再希望使用以前保留的名称，则可以通过在此处删除来释放它。 在执行此操作之前，请确保你确定要执行此操作，因为这意味着该名称将立即变为可供别人保留和使用的名称。
+If you no longer want to use a name you've previously reserved, you can release it by deleting it here. Make sure you're certain before you do so, since this means that the name will immediately become available for someone else to reserve and use.
 
-若要删除应用的保留名称之一，请找到你不再希望使用的名称，然后单击“删除”****。 在确认对话框中，再次单击“删除”****以确认。
+To delete one of your app's reserved names, find the name you no longer want to use and then click **Delete**. In the confirmation dialog, click **Delete** again to confirm.
 
-请注意，你的应用需要至少具有一个保留名称。 若要从仪表板完全删除应用（这也会释放你已为该应用保留的所有内容），可以从其“概述”****页面单击“删除此应用”****。
+Note that your app needs to have at least one reserved name. To completely remove an app from your dashboard (which also release all of the you've reserved for that app), you can click **Delete this app** from its **Overview** page.
 
-## 重命名已发布的应用
+## Rename an app that has already been published
 
-如果你的应用已经在 Windows 应用商店中，而且你要重命名它，则可以通过为它保留一个新名称（通过按照上述步骤操作）执行此操作，然后创建用于该应用的新提交。 请注意，你将需要更新你的程序包来包含新名称，才能使应用商店在新名称下显示该应用。 请确保在应用清单的 [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) 元素中使用新名称，并更新包含应用名称的任何图形或文本。 如果你在该元素中的任何位置提起它，则还要查看应用提要并更改名称。
+If your app is already in the Windows Store and you want to rename it, you can do so by reserving a new name for it (by following the steps described above) and then creating a new submission for the app. Note that you'll have to update your package to include the new name in order for the Store to display the app under the new name. Be sure to use the new name in the [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) element in the app manifest, and update any graphics or text that includes the app's name. You'll also want to review your app's description and change the name if you mention it anywhere there.
 
-使用新名称发布应用后，可以删除你不再需要使用的旧名称。
-
- 
+Once your app has been published with the new name, you can delete the old name that you no longer need to use.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

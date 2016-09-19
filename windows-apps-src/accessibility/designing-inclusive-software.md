@@ -1,114 +1,113 @@
 ---
 author: Xansky
-Description: "了解如何改进适用于 Windows 10 的通用 Windows 平台 (UWP) 应用的非独占设计。  以辅助功能为中心来设计和生成非独占软件。"
+Description: Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
-title: "在 Windows 10 中设计非独占软件"
+title: Designing inclusive software in Windows 10
 label: Designing inclusive software
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: cdd41595ee2727c0eeefab7b041c1adfefc15dfa
+ms.sourcegitcommit: c5ccae0e095b7c8e403a230fe8f3442754aa2ad7
+ms.openlocfilehash: 94848fd1acf51e7ab8dab0f45584d3214be58830
 
 ---
 
-# 针对 Windows 10 设计非独占软件  
+# Designing inclusive software for Windows 10  
 
-了解如何改进适用于 Windows 10 的通用 Windows 平台 (UWP) 应用的非独占设计。  以辅助功能为中心来设计和生成非独占软件。
+Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.
 
-在 Microsoft 中，我们正在发展我们的设计原则和做法。 这些内容揭示我们的体验的外观、感觉、功能和行为。 我们正在提升我们的视角。
+At Microsoft, we’re evolving our design principles and practices. These inform how our experiences look, feel, function, and behave. We’re elevating our perspective.
 
-这一新设计理念称为非独占设计。 该想法是在设计软件的最开始就考虑到所有人。 这与将辅助功能视为在开发过程末尾为满足一小群用户而补上的技术相反。
+This new design philosophy is called inclusive design. The idea is to design software with everyone in mind from the very beginning. This is in contrast to viewing accessibility as a technology you bolt on at the end of the development process in order to satisfy some small group of users.
 
-“我们将残障定义为个体的需求与所提供的服务、产品或环境之间的不匹配。 任何人都可能遇到残障的情况。 这是一个需要排除的常见人体特征。”  \- 来自[非独占](https://www.microsoft.com/design/inclusive)视频  
+“We define disability as a mismatch between the needs of the individual and the service, product or environment offered. Anyone can experience a disability. It is a common human trait to be excluded.”  \- from the [Inclusive](https://www.microsoft.com/design/inclusive) video  
 
-非独占设计为所有人创造更好的产品。 它与考虑整个人类多样性有关。 考虑你现在在大部分街角人行道上发现路边切口。 它们之前明显是供坐轮椅的人使用的。 但是，现在几乎每个人都使用它们，包括推着婴儿车、骑着脚踏车和玩滑板的人。 甚至行人通常也会使用路边切口，因为它们随时提供更好的体验。 可以将电视遥控器视为面向身体不便人士的辅助技术 (AT)。 而如今几乎不可能买到没有遥控器的电视。 在孩子们学会绑鞋带之前，他们可穿易脱穿的或易固定的鞋子。 在日常生活中通常首选易穿脱的鞋子，因为在进入家门前需脱掉鞋子。 它们也适合于行动不便的人士，如关节炎患者或者甚至是手腕骨折的人士。
+Inclusive design creates better products for everyone. It’s about considering the full range of human diversity. Consider the curb cutouts that you now find on most street corner sidewalks. They were clearly intended to be used by people in wheelchairs. But now nearly everyone uses them, including people with baby strollers, bicyclists, skateboarders. Even pedestrians will often use curb cutouts because they are there and provide a better experience. The television remote control could be considered an assistive technology (AT) for someone with physical limitations. And yet, today it is nearly impossible to buy a television without one. Before children learn to tie their shoes, they can wear slip-on or easy fastening shoes. Shoes that are easy to put on and take off are often preferred in cultures where shoes are removed before entering a home. They are also better for people with dexterity issues such as arthritis or even a temporarily broken wrist.
 
-## 非独占设计原则  
-以下 4 个原则将指导 Microsoft 转移到非独占设计：
+## Inclusive design principles  
+The following 4 principles are guiding Microsoft’s shift to inclusive design:
 
-**普遍思考**：我们侧重于使人统一的因素 — 人类动机、关系和能力。 这促使我们思考我们的工作所产生的更广泛的社会影响。 从而创造出包含可让所有人参与的多样方法的体验。
+**Think universal**: We focus on what unifies people — human motivations, relationships, and abilities. This drives us to consider the broader social impact of our work. The result is an experience that has a diversity of ways for all people to participate.
 
-**彰显个性**：接下来，我们挑战自己来创造情感连接。 人与人的交互可以激发出更好的人与技术的交互。 某个人的独特情况可以为所有人改进一项设计。 从而创造出感觉像是为某一个人创造的体验。
+**Make it personal**: Next, we challenge ourselves to create emotional connections. Human-to-human interactions can inspire better human-to-technology interaction. A person’s unique circumstances can improve a design for everyone. The result is an experience that feels like it was created for one person.
 
-**保持简单**：我们首先从作为基本统一因素的简单性开始。 只需减少繁杂，就能让人们知道下一步的行动。 启发他们前进到干净、明亮、开放的空间中。 从而创造出真实而永恒的体验。
+**Keep it simple**: We start with simplicity as the ultimate unifier. When we reduce clutter people know what to do next. They’re inspired to move forward into spaces that are clean, light, and open. The result is an experience that’s honest and timeless.
 
-**创造愉悦**：令人愉悦的体验将唤起惊奇和发现。 有时它很神奇。 有时它的细节又恰到好处。 我们将这些时刻设计得感觉像是令人愉悦的节奏变化。 从而创造出具有动力和流动感觉的体验。
+**Create delight**: Delightful experiences evoke wonder and discovery. Sometimes it’s magical. Sometimes it’s a detail that’s just right. We design these moments to feel like a welcomed change in tempo. The result is an experience that has momentum and flow.
 
-## 非独占设计用户  
-本质上有两种类型的辅助技术 (AT) 用户：
+## Inclusive design users  
+There are essentially two types of users of assistive technology (AT):
 
-1. 由于残障或损伤、与年龄相关的状况或暂时状况（如由于腿骨折而行动不便）而需要它的用户  
-2. 出于偏好而使用它的用户，为了得到更舒适或更便利的计算体验
+1. Those who need it, because of disabilities or impairments, age-related conditions, or temporary conditions (such as limited mobility from a broken limb)  
+2. Those who use it out of preference, for a more comfortable or convenient computing experience
 
-大多数计算机用户 (54%) 知道某种形式的辅助技术，44% 的计算机用户使用某种形式的辅助技术，但许多用户未使用对他们有益的辅助技术 (Forrester 2004)。  
+The majority of computer users (54 per-cent) are aware of some form of assistive technology, and 44 percent of computer users use some form of it, but many of them are not using AT that would benefit them (Forrester 2004).  
 
-由 Microsoft 委托并由 Forrester Research 执行的 2003-2004 研究发现美国超过一半 (57%) 的年龄在 18 到 64 岁之间的计算机用户能够从辅助技术中受益。 其中大部分用户不会将自己视为残障或受损人士，但表示在使用计算机时有某些任务相关的困难或障碍。 Forrester (2003) 还发现了以下数量的带有如下特定障碍的用户：四分之一用户有视觉障碍。 四分之一用户的手腕或手有伤痛。 五分之一用户有听力障碍。  
+A 2003-2004 study commissioned by Microsoft and conducted by Forrester Research found that over half &mdash; 57 percent &mdash; of computer users in the United States between the ages of 18 and 64 could benefit from assistive technology. Most of these users did not identify themselves as having a disability or being impaired but expressed certain task-related difficulties or impairments when using a computer. Forrester (2003) also found the following number of users with these specific difficulties: One in four experiences a visual difficulty. One in four experiences pain in the wrists or hands. One in five experiences hearing difficulty.  
 
-除了永久性残障，个人遇到的困难的严重程度和类型在其一生中可能有所不同。 根本不存在“正常人”。 我们的功能始终在变化。 Margaret Meade 说过：“我们都是独一无二的。 独一无二又会使我们实现统一。”  
+Besides permanent disabilities, the severity and types of difficulties an individual experiences can vary throughout their life. There is no such thing as a normal human. Our capabilities are always changing. Margaret Meade said, “We are all unique. Being all unique makes us all the same.”  
 
-Microsoft 致力于进行计算机科学和软件工程研究，目的是增强计算体验和构想新颖的计算技术。 请参阅[当前 Microsoft 研究和开发项目](https://www.microsoft.com/enable/microsoft/research.aspx)，这些项目旨在使计算机更便于访问，并且更易于查看、侦听和与之交互。  
+Microsoft is dedicated to conducting computer science and software engineering research with goals to enhance the computing experience and invent novel computing technologies. See [Current Microsoft Research and Development Projects](https://www.microsoft.com/enable/microsoft/research.aspx) aimed at making the computer more accessible, and easier to see, hear, and interact with.  
 
-## 实际设计步骤  
-如果你满足上述条件，本部分适合你。 该部分介绍了为应用实现非独占设计时应考虑的实际设计步骤。  
+## Practical design steps  
+If you're all in, then this section is for you. It describes the practical design steps to consider when implementing inclusive design for your app.  
 
-### 描述目标受众  
-定义你的应用的潜在用户。 仔细考虑用户的所有不同能力和特征。 例如，年龄、性别、语言、失聪或听觉障碍用户、视觉障碍、认知能力、学习风格、移动限制等。 你的设计是否满足个人的需求？  
+### Describe the target audience  
+Define the potential users of your app. Think through all of their different abilities and characteristics. For example, age, gender, language, deaf or hard of hearing users, visual impairments, cognitive abilities, learning style, mobility restrictions, and so on. Is your design meeting their individual needs?  
 
-### 与具有特定需求的实际人员交谈  
-与具有不同特征的潜在用户见面 确保你在设计应用时考虑到他们的所有需求。 例如，Microsoft 发现失聪用户在其 Xbox 控制台上关闭了 Toast 通知。 当我们向实际的失聪用户询问此情况时，我们了解到 Toast 通知遮挡了一部分隐藏字幕。 修复方法是将 Toast 显示在屏幕上的较高位置。 这是一个简单的解决方案，但从最初揭示该行为的遥测数据来看不一定很明显。  
+### Talk to actual humans with specific needs  
+Meet with potential users who have diverse characteristics. Make sure you are considering all of their needs when designing your app. For example, Microsoft discovered that deaf users were turning off toast notifications on their Xbox consoles. When we asked actual deaf users about this, we learned that toast notifications were obscuring a section of closed captioning. The fix was to display the toast slight higher on the screen. This was a simple solution that was not necessarily obvious from the telemetry data that initially revealed the behavior.  
 
-### 明智地选择开发框架  
-在设计阶段中，你将使用的开发框架（即 UWP、Win32、Web）对产品开发至关重要。
- 如果你可以随意选择框架，请考虑在所选框架内创建控件所需投入的精力。 它附带的默认或内置辅助功能属性是什么？ 你需要自定义哪些控件？ 选择框架时，实际上就是在选择你将“免费”获得多少辅助功能控件（即，已经内置了多少控件）以及多少控件由于控件自定义而需要额外的开发成本。   
+### Choose a development framework wisely  
+In the design stage, the development framework you will use (i.e. UWP, Win32, web) is critical to the development of your product. If you have the luxury of choosing your framework, think about how much effort it will take to create your controls within the framework. What are the default or built-in accessibility properties that come with it? Which controls will you need to customize? When choosing your framework, you are essentially choosing how much of the accessibility controls you will get “for free” (that is, how much of the controls are already built-in) and how much will require additional development costs because of control customizations.   
 
-尽可能使用标准 Windows 控件。 这些控件已经通过与辅助技术接合所需的技术启用。
+Use standard Windows controls whenever possible. These controls are already enabled with the technology necessary to interface with assistive technologies.
 
-### 为你的控件设计逻辑层次结构  
-拥有框架后，设计一个逻辑层次结构来规划你的控件。 你的应用的逻辑层次结构包括控件的布局和 Tab 键顺序。 当辅助技术 (AT) 程序（如屏幕阅读器）阅读你的 UI 时，可视化表示形式是不够的；你必须提供在结构上对用户有意义的编程替代项。 逻辑层次结构有助于你执行该操作。 它是研究 UI 的布局并设置每个元素的结构，以便用户理解它的一种方法。 逻辑层次结构主要用于：  
+### Design a logical hierarchy for your controls  
+Once you have your framework, design a logical hierarchy to map out your controls. The logical hierarchy of your app includes the layout and tab order of controls. When assistive technology (AT) programs, such as screen readers, read your UI, visual presentation is not sufficient; you must provide a programmatic alternative that makes sense structurally to your users. A logical hierarchy can help you do that. It is a way of studying the layout of your UI and structuring each element so that users can understand it. A logical hierarchy is mainly used:  
 
-1.  为 UI 中的元素的逻辑（阅读）顺序提供程序上下文  
-2.  在 UI 中的自定义控件和标准控件之间标识清晰的边界  
-3.  确定 UI 各部分如何协同交互  
+1.  To provide programs context for the logical (reading) order of the elements in the UI  
+2.  To identify clear boundaries between custom controls and standard controls in the UI  
+3.  To determine how pieces of the UI interact together  
 
-逻辑层次结构是处理任何潜在的可用性问题的绝佳方法。 如果你无法以相对简单的方式设置 UI 结构，则你可能遇到可用性问题。 简单对话框的逻辑表示形式不应导致图页面。 对于变得过深或过宽的逻辑层次结构，你可能需要重新设计你的 UI。 有关详细信息，请下载[针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)电子书。  
+A logical hierarchy is a great way to address any potential usability issues. If you cannot structure the UI in a relatively simple manner, you may have problems with usability. A logical representation of a simple dialog box should not result in pages of diagrams. For logical hierarchies that become too deep or too wide, you may need to redesign your UI. For more information, download the [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262) eBook.  
 
-### 设计相应的可视 UI 设置  
-在设计可视 UI 时，请确保你的产品具有高对比度设置、使用默认系统字体和平滑选项、正确缩放到每英寸点数 (DPI) 屏幕设置、具有与背景对比度比率至少为 5:1 的默认文本，并且具有便于色觉障碍用户区分的颜色组合。
-  
+### Design appropriate visual UI settings  
+When designing the visual UI, ensure that your product has a high contrast setting, uses the default system fonts and smoothing options, correctly scales to the dots per inch (dpi) screen settings, has default text with at least a 5:1 contrast ratio with the background, and has color combinations that will be easy for users with color deficiencies to differentiate.  
 
-#### 高对比度设置  
-Windows 中的内置辅助功能之一是高对比度模式，该模式可增强文本和图像的颜色对比度。 对于某些人来说，增加颜色对比度可以降低眼睛疲劳并且更易于阅读。 当你在高对比度模式下验证 UI 时，你要检查是否已使用系统颜色（而不是硬编码颜色）为控件（如链接）一致编码，以确保他们能够在屏幕上看到不使用高对比度的用户所看到的所有控件。  
+#### High contrast setting  
+One of the built-in accessibility features in Windows is High Contrast mode, which heightens the color contrast of text and images. For some people, increasing the contrast in colors reduces eyestrain and makes it easier to read. When you verify your UI in high contrast mode, you want to check that controls, such as links, have been coded consistently and with system colors (not with hard-coded colors) to ensure that they will be able to see all the controls on the screen that a user not using high contrast would see.  
 
-#### 系统字体设置  
-为了确保可读性并最大程度减少任何文本的意外失真，请确保你的产品始终遵循默认系统字体，并使用抗锯齿和平滑选项。 如果你的产品使用自定义字体，用户在自定义其 UI 的表示形式（例如，通过使用屏幕阅读器或通过使用不同的字体样式来查看你的 UI）时可能遇到大量可读性问题和干扰。  
+#### System font settings  
+To ensure readability and minimize any unexpected distortions to the text, make sure that your product always adheres to the default system fonts and uses the anti-aliasing and smoothing options. If your product uses custom fonts, users may face significant readability issues and distractions when they customize the presentation of their UI (through the use of a screen reader or by using different font styles to view your UI, for instance).  
 
-#### 高 DPI 分辨率  
-对于具有视觉障碍的用户，提供可缩放的 UI 很重要。 在高每英寸点数 (DPI) 下无法正确缩放的用户界面可能导致重要组件重叠或隐藏其他组件，并且可能变得不可访问。  
+#### High DPI resolutions  
+For users with vision impairments, having a scalable UI is important. User interfaces that do not scale correctly in high dots-per-inch (DPI) resolutions may cause important components to overlap or hide other components and can become inaccessible.  
 
-#### 颜色对比率  
-更新后的美国残疾人法案 (ADA) 第 508 节以及其他法规要求文本与其背景之间的默认颜色对比度必须为 5:1。 对于较大的文本（18 点字体大小或 14 点加粗），所需的默认对比度为 3:1。  
+#### Color contrast ratio  
+The updated Section 508 of the Americans with Disability Act (ADA), as well as other legislations, requires that the default color contrasts between text and its background must be 5:1. For large texts (18-point font sizes, or 14 points and bolded) the required default contrast is 3:1.  
 
-#### 颜色组合  
-大约 7% 的男性（和小于 1 % 的女性）具有某种形式的色觉障碍。 色盲用户难以区分某些颜色，因此在应用程序中永远不单独使用颜色来传达状态或意义，这一点很重要。 对于装饰性图像（如图标或背景），应尽量选择能够使色盲用户识别图像的颜色组合。 如果你从一开始就使用这些颜色建议，则你的应用已经向成为非独占应用迈出了一大步。  
+#### Color combinations  
+About 7 percent of males (and less than 1 percent of females) have some form of color deficiency. Users with colorblindness have problems distinguishing between certain colors, so it is important that color alone is never used to convey status or meaning in an application. As for decorative images (such as icons or backgrounds), color combinations should be chosen in a manner that maximizes the perception of the image by colorblind users. If you design using these color recommendations from the beginning, your app will already be taking significant steps toward being inclusive.  
 
-## 总结 &mdash; 非独占设计的七个步骤  
-总的来说，遵循这七个步骤可确保你的软件非独占。  
-1.  确定非独占设计是否是你的软件的一个重要方面。 如果是，请了解并体验它如何支持真实用户生活、工作和娱乐，并帮助指导你的设计。  
-2.  当你针对要求设计解决方案时，请尽量使用你的框架所提供的控件（标准控件），并避免任何不必要的自定义控件工作和成本。  
-3.  为产品设计逻辑层次结构时，注意标准控件、任何自定义控件以及键盘焦点在 UI 中的位置。  
-4.  将有用的系统设置（如键盘导航、高对比度和高 DPI）设计到产品中。  
-5.  使用 [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)和你的框架的辅助功能规范作为参考点，实现你的设计。  
-6.  通过具有特殊需求的用户测试产品，以确保他们能够充分利用在其中实现的非独占设计技术。  
-7.  交付已完成的产品，并为可能在你之后继续从事该项目的人员记录你的实现。  
+## Summary &mdash; seven steps for inclusive design  
+In summary, follow these seven steps to ensure your software is inclusive.  
+1.  Decide if inclusive design is an important aspect to your software. If it is, learn and appreciate how it enables real users to live, work, and play, to help guide your design.  
+2.  As you design solutions for your requirements, use controls provided by your framework (standard controls) as much as possible, and avoid any unnecessary effort and costs of custom controls.  
+3.  Design a logical hierarchy for your product, noting where the standard controls, any custom controls, and keyboard focus are in the UI.  
+4.  Design useful system settings (such as keyboard navigation, high contrast, and high dpi) into your product.  
+5.  Implement your design, using the [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps) and your framework’s accessibility specification as a reference point.  
+6.  Test your product with users who have special needs to ensure they will be able to take advantage of the inclusive design techniques implemented in it.  
+7.  Deliver your finished product and document your implementation for those who may work on the project after you.  
 
-## 相关主题  
-* [非独占设计](http://design.microsoft.com/inclusive)
-* [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
-* [开发非独占 Windows 应用](developing-inclusive-windows-apps.md)  
-
+## Related topics  
+* [Inclusive design](http://design.microsoft.com/inclusive)
+* [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps)
+* [Developing inclusive Windows apps](developing-inclusive-windows-apps.md) 
+* [Accessibility](accessibility.md)
 
 
-<!--HONumber=Jul16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,44 +1,44 @@
 ---
 author: DBirtolo
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
-title: "从应用打印"
-description: "了解如何从通用 Windows 应用中打印文档。 本主题还介绍了如何打印特定页面。"
+title: Print from your app
+description: Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages.
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: effb04f4bd8acdf9dfcc7847341c4a4fcc543bb5
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 334b6d5faad641bbce67f7267be43700cd540569
 
 ---
-# 从应用打印
+# Print from your app
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+** Important APIs **
 
 -   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
 -   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
 -   [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314)
 
-了解如何从通用 Windows 应用中打印文档。 本主题还介绍了如何打印特定页面。 有关对打印预览 UI 的更多高级更改，请参阅[自定义打印预览 UI](customize-the-print-preview-ui.md)。
+Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages. For more advanced changes to the print preview UI, see [Customize the print preview UI](customize-the-print-preview-ui.md).
 
-**提示** 本主题中的大多数示例都基于打印示例。 若要查看完整代码，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)。
+**Tip**  Most of the examples in this topic are based on the print sample. To see the full code, download the [Universal Windows Platform (UWP) print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
-## 注册打印
+## Register for printing
 
-在你的应用中添加打印的第一步是注册打印合约。 你的应用必须在你希望你的用户能够从其打印的每个屏幕上执行此操作。 仅显示给用户的屏幕可以注册打印。 如果你的应用的一个屏幕已注册打印，则该屏幕必须取消注册打印（当该屏幕存在时）。 如果该屏幕替换为另一个屏幕，则当下一个屏幕打开时，它必须注册新的打印合约。
+The first step to add printing to your app is to register for the Print contract. Your app must do this on every screen from which you want your customer to be able to print. Only the screen that is displayed to the user can be registered for printing. If one screen of your app has registered for printing, it must unregister for printing when it exits. If it is replaced by another screen, the next screen must register for a new Print contract when it opens.
 
-**提示** 如果你需要在应用中支持从多个页面打印，则可以将该打印代码放置在常用的帮助程序类中并且让你的应用重复使用它。 有关具体做法的示例，请参阅 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `PrintHelper` 类。
+**Tip**  If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984).
 
-首先，声明 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 和 [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314)。 **PrintManager** 类型以及用于支持其他 Windows 打印功能的类型都位于 [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489) 命名空间中。 **PrintDocument** 类型以及支持准备 XAML 内容以供打印的其他类型都位于 [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325) 命名空间中。 你可以通过在页面中添加以下 **using** 或 **Imports** 语句，使得编写打印代码更加容易。
+First, declare the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) and [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314). The **PrintManager** type is in the [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489) namespace along with types to support other Windows printing functionality. The **PrintDocument** type is in the [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325) namespace along with other types that support preparing XAML content for printing. You can make it easier to write your printing code by adding the following **using** or **Imports** statements to your page.
 
 ```csharp
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 ```
 
-[**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 类用于处理应用和 [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 之间的大部分交互，但是它会公开其自身的多个回调。 在注册期间，创建 **PrintManager** 和 **PrintDocument** 的实例并为其打印事件注册处理程序。
+The [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) class is used to handle much of the interaction between the app and the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426), but it exposes several callbacks of its own. During registration, create instances of **PrintManager** and **PrintDocument** and register handlers for their printing events.
 
-在 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中，注册通过 `RegisterForPrinting` 方法来执行。
+In the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984), registration is performed by the `RegisterForPrinting` method.
 
 ```csharp
 public virtual void RegisterForPrinting()
@@ -54,7 +54,7 @@ public virtual void RegisterForPrinting()
 }
 ```
 
-当用户转到支持的页面时，它会在 `OnNavigatedTo` 方法中启动注册。
+When the user goes to a page that supports, it initiates the registration within the `OnNavigatedTo` method.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -71,7 +71,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-当用户离开页面时，断开打印事件处理程序的连接。 如果你拥有一个多页面的应用并且未断开打印连接，则当用户离开页面并且又回到页面时会引发异常。
+When the user leaves the page, disconnect the printing event handlers. If you have a multiple-page app and don't disconnect printing, an exception is thrown when the user leaves the page and then comes back to it.
 
 ```csharp
 protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -82,45 +82,58 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
    }
 }
 ```
-## 创建打印按钮
+## Create a print button
 
-将打印按钮添加到你希望其在其中显示的应用屏幕。 确保它不会干扰你要打印的内容。
+Add a print button to your app's screen where you'd like it to appear. Make sure that it doesn't interfere with the content that you want to print.
 
 ```xml
 <Button x:Name="InvokePrintingButton" Content="Print" Click="OnPrintButtonClick"/>
 ```
 
-下一步，将时间处理程序添加到应用的代码以处理 click 事件。 使用 [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync) 方法开始从你的应用打印。 **ShowPrintUIAsync** 是显示相应打印窗口的异步方法。 如果无法在此时执行打印，则该方法将引发异常。 我们建议捕获这些异常，并让用户知道何时无法继续打印，如下所示。
+Next, add an event handler to your app's code to handle the click event. Use the [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync) method to start printing from your app. **ShowPrintUIAsync** is an asynchronous method that displays the appropriate printing window. We recommend calling the [**IsSupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Printing.PrintManager.IsSupported) method first in order to check that the app is being run on a device that supports printing (and handle the case in which it is not). If printing can't be performed at that time for any other reason, **ShowPrintUIAsync** will throw an exception. We recommend catching these exceptions and letting the user know when printing can't proceed.
 
 ```csharp
 async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 {
-    try
+    if (Windows.Graphics.Printing.PrintManager.IsSupported())
     {
-        // Show print UI
-        await Windows.Graphics.Printing.PrintManager.ShowPrintUIAsync();
+        try
+        {
+            // Show print UI
+            await Windows.Graphics.Printing.PrintManager.ShowPrintUIAsync();
 
+        }
+        catch
+        {
+            // Printing cannot proceed at this time
+            ContentDialog noPrintingDialog = new ContentDialog()
+            {
+                Title = "Printing error",
+                Content = "\nSorry, printing can' t proceed at this time.", PrimaryButtonText = "OK"
+            };
+            await noPrintingDialog.ShowAsync();
+        }
     }
-    catch
+    else
     {
-        // Printing cannot proceed at this time
+        // Printing is not supported on this device
         ContentDialog noPrintingDialog = new ContentDialog()
         {
-            Title = "Printing error",
-            Content = "\nSorry, printing can' t proceed at this time.", PrimaryButtonText = "OK"
+            Title = "Printing not supported",
+            Content = "\nSorry, printing is not supported on this device.",PrimaryButtonText = "OK"
         };
         await noPrintingDialog.ShowAsync();
     }
 }
 ```
 
-在此示例中，点击按钮将在事件处理程序中显示打印窗口。 如果该方法引发异常（因为不能在该时间执行打印)，则 [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/Dn633972) 控件将通知用户该情况。
+In this example, a print window is displayed in the event handler for a button click. If the method throws an exception (because printing can't be performed at that time), a [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/Dn633972) control informs the user of the situation.
 
-## 格式化应用的内容
+## Format your app's content
 
-调用 **ShowPrintUIAsync** 时会引发 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件。 此步骤中显示的 **PrintTaskRequested** 事件处理程序将通过调用 [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtaskrequest.createprinttask.aspx) 方法创建 [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436)，并传递打印页面的标题和 [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source) 委托的名称。 请注意，在此示例中，**PrintTaskSourceRequestedHandler** 是以内联方式定义的。 **PrintTaskSourceRequestedHandler** 提供用于打印的格式化内容，并在以后对其进行介绍。
+When **ShowPrintUIAsync** is called, the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event is raised. The **PrintTaskRequested** event handler shown in this step creates a [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436) by calling the [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtaskrequest.createprinttask.aspx) method and passes the title for the print page and the name of a [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source) delegate. Notice that in this example, the **PrintTaskSourceRequestedHandler** is defined inline. The **PrintTaskSourceRequestedHandler** provides the formatted content for printing and is described later.
 
-在此示例中，还会定义一个完成处理程序以捕获错误。 最好对完成事件进行处理，因为，那样你的应用可以让用户知道是否发生了错误并提供可能的解决方案。 同样，你的应用可以使用完成事件来指示用户在打印作业成功之后要采取的后续步骤。
+In this example, a completion handler is also defined to catch errors. It's a good idea to handle completion events because then your app can let the user know if an error occurred and provide possible solutions. Likewise, your app could use the completion event to indicate subsequent steps for the user to take after the print job is successful.
 
 ```csharp
 protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -146,11 +159,11 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 }
 ```
 
-创建打印任务之后，[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 将通过引发 [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) 事件来请求要在打印预览 UI 中显示的打印页面集合。 这与 **IPrintPreviewPageCollection** 接口的 **Paginate** 方法对应。 此时将调用在注册期间创建的事件处理程序。
+After the print task is created, the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) requests a collection of print pages to show in the print preview UI by raising the [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) event. This corresponds with the **Paginate** method of the **IPrintPreviewPageCollection** interface. The event handler you created during registration will be called at this time.
 
-**提示** 如果用户更改打印设置，则将再次调用分页事件处理程序以允许你重新排列内容。 为了获得最佳的用户体验，我们建议在重新排列内容之前检查设置，以避免在不必要时重新初始化分页内容。
+**Important**  If the user changes print settings, the paginate event handler will be called again to allow you to reflow the content. For the best user experience, we recommend checking the settings before you reflow the content and avoid reinitializing the paginated content when it's not necessary.
 
-在 [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) 事件处理程序中（[UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `CreatePrintPreviewPages` 方法），创建要在打印预览 UI 中显示并发送到打印机的页面。 用于准备你的应用的内容以供打印的代码特定于你的应用以及你打印的内容。 请参考 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)源代码，了解它如何格式化其内容以进行打印。
+In the [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) event handler (the `CreatePrintPreviewPages` method in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)), create the pages to show in the print preview UI and to send to the printer. The code you use to prepare your app's content for printing is specific to your app and the content you print. Refer to the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) source code to see how it formats its content for printing.
 
 ```csharp
 protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs e)
@@ -193,9 +206,9 @@ protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs 
 }
 ```
 
-要在打印预览窗口中显示特定页面时，[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 将引发 [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) 事件。 这与 **IPrintPreviewPageCollection** 接口的 **MakePage** 方法对应。 此时将调用在注册期间创建的事件处理程序。
+When a particular page is to be shown in the print preview window, the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) raises the [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) event. This corresponds with the **MakePage** method of the **IPrintPreviewPageCollection** interface. The event handler you created during registration will be called at this time.
 
-在 [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) 事件处理程序（[UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `GetPrintPreviewPage` 方法）中，在打印文档上设置相应的页面。
+In the [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) event handler (the `GetPrintPreviewPage` method in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)), set the appropriate page on the print document.
 
 ```csharp
 protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArgs e)
@@ -205,9 +218,9 @@ protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArg
 }
 ```
 
-最后，在用户单击打印按钮后，[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) 会通过调用 **IDocumentPageSource** 接口的 **MakeDocument** 方法，请求要发送到打印机的页面的最终集合。 在 XAML 中，这会引发 [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) 事件。 此时将调用在注册期间创建的事件处理程序。
+Finally, once the user clicks the print button, the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) requests the final collection of pages to send to the printer by calling the **MakeDocument** method of the **IDocumentPageSource** interface. In XAML, this raises the [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) event. The event handler you created during registration will be called at this time.
 
-在 [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) 事件处理程序（[UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `AddPrintPages` 方法）中，将页面集合中的页面添加到要发送到打印机的 [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) 对象。 如果用户指定要打印的特殊页面或页面范围，则使用此处的信息以仅添加将实际发送到打印机的页面。
+In the [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) event handler (the `AddPrintPages` method in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)), add pages from the page collection to the [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) object to be sent to the printer. If a user specifies particular pages or a range of pages to print, you use that information here to add only the pages that will actually be sent to the printer.
 
 ```csharp
 protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
@@ -226,27 +239,27 @@ protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
 }
 ```
 
-## 准备打印选项
+## Prepare print options
 
-下一步，准备打印选项。 例如，本部分将介绍如何设置页面范围选项来允许打印特定页面。 有关更多高级选项，请参阅[自定义打印预览 UI](customize-the-print-preview-ui.md)。
+Next prepare print options. As an example, this section will describe how to set the page range option to allow printing of specific pages. For more advanced options, see [Customize the print preview UI](customize-the-print-preview-ui.md).
 
-此步骤将创建一个新打印选项，定义该选项支持的一个值列表，然后将该选项添加到打印预览 UI 中。 页面范围选项具有以下设置：
+This step creates a new print option, defines a list of values that the option supports, and then adds the option to the print preview UI. The page range option has these settings:
 
-| 选项名称          | 操作 | 
+| Option name          | Action | 
 |----------------------|--------|
-| **打印全部**        | 打印文档中的所有页面。 |
-| **打印选择内容**  | 仅打印用户选择的内容。 | 
-| **打印范围**      | 显示编辑控件，用户可以将要打印的页面输入到该控件中。 |
+| **Print all**        | Print all pages in the document. |
+| **Print Selection**  | Print only the content the user selected. | 
+| **Print Range**      | Display an edit control into which the user can enter the pages to print. |
  
-首先，修改 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件处理程序以添加代码，从而获取一个 [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256) 对象。
+First, modify the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler to add the code to get a [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256) object.
 
 ```csharp
 PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(printTask.Options);
 ```
 
-清除在打印预览 UI 中显示的选项列表，并添加要在用户想要从应用打印时显示的选项。
+Clear the list of options that are shown in the print preview UI and add the options that you want to display when the user wants to print from the app.
 
-**注意** 这些选项按追加它们的相同顺序显示在打印预览 UI 中，第一个选项显示在窗口顶部。
+**Note**  The options appear in the print preview UI in the same order they are appended, with the first option shown at the top of the window.
 
 ```csharp
 IList<string> displayedOptions = printDetailedOptions.DisplayedOptions;
@@ -257,7 +270,7 @@ displayedOptions.Add(Windows.Graphics.Printing.StandardPrintTaskOptions.Orientat
 displayedOptions.Add(Windows.Graphics.Printing.StandardPrintTaskOptions.ColorMode);
 ```
 
-创建新打印选项并初始化选项值列表。
+Create the new print option and initialize the list of option values.
 
 ```csharp
 // Create a new list option
@@ -267,7 +280,7 @@ pageFormat.AddItem("PrintSelection", "Print Selection");
 pageFormat.AddItem("PrintRange", "Print Range");
 ```
 
-添加你的自定义打印选项并分配事件处理程序。 将自定义选项附加到最后，这样它会显示在选项列表的底部。 但是，你可以将其放在列表中的任意位置，自定义打印选项无需添加到最后位置。
+Add your custom print option and assign the event handler. The custom option is appended last so that it appears at the bottom of the list of options. But you can put it anywhere in the list, custom print options don't need to be added last.
 
 ```csharp
 // Add the custom option to the option list
@@ -280,13 +293,13 @@ PrintCustomTextOptionDetails pageRangeEdit = printDetailedOptions.CreateTextOpti
 printDetailedOptions.OptionChanged += printDetailedOptions_OptionChanged;
 ```
 
-[**CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) 方法会创建“范围”****文本框。 用户将在此文本框中输入在他们选择“打印范围”****选项时希望打印的特定页面。
+The [**CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) method creates the **Range** text box. This is where the user enters the specific pages they want to print when they select the **Print Range** option.
 
-## 处理打印选项更改
+## Handle print option changes
 
-**OptionChanged** 事件处理程序执行两项工作。 第一，它根据用户选择的页面范围选项显示和隐藏页面范围的文本编辑字段。 第二，它将测试输入到页面范围文本框中的文本，以确保它代表文档的有效页面范围。
+The **OptionChanged** event handler does two things. First, it shows and hides the text edit field for the page range depending on the page range option that the user selected. Second, it tests the text entered into the page range text box to make sure that it represents a valid page range for the document.
 
-此示例显示了 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)如何处理更改事件。
+This example shows how the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) handles change events.
 
 ```csharp
 async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, PrintTaskOptionChangedEventArgs args)
@@ -362,27 +375,27 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-**提示** 有关如何解析用户在“范围”文本框中输入的页面范围的详细信息，请参阅 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)中的 `GetPagesInRange` 方法。
+**Tip**  See the `GetPagesInRange` method in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) for details on how to parse the page range the user enters in the Range text box.
 
-## 预览所选页面
+## Preview selected pages
 
-针对打印而设置你的应用内容的格式的方式取决于你的应用及其内容的性质。 [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)使用 print helper 类来设置其内容的格式以用于打印。
+How you format your app's content for printing depends on the nature of your app and its content. The [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) uses a print helper class to format its content for printing.
 
-在打印这些页面的子集时，可采用多种方法在打印预览中显示内容。 无论你采用哪种方法在打印预览中显示页面范围，打印输出都必须仅包含选中的页面。
+When printing a subset of the pages, there are several ways to show the content in the print preview. Regardless of the method you chose to show the page range in the print preview, the printed output must contain only the selected pages.
 
--   无论是否已指定页面范围，都在打印预览中显示所有页面，这可以让用户了解实际将打印哪些页面。
--   仅在打印预览中显示用户的页面范围所选中的页面，这会在用户更改页面范围时更新显示器。
--   在打印预览中显示所有页面，但灰显未在用户所选页面范围内的页面。
+-   Show all the pages in the print preview whether a page range is specified or not, leaving the user to know which pages will actually be printed.
+-   Show only the pages selected by the user's page range in the print preview, updating the display whenever the user changes the page range.
+-   Show all the pages in print preview, but grey out the pages that are not in page range selected by the user.
 
-## 相关主题
+## Related topics
 
-* [打印的设计指南](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Build 2015 视频：开发可在 Windows 10 中打印的应用](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-
-
+* [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
 
 
-<!--HONumber=Jul16_HO2-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

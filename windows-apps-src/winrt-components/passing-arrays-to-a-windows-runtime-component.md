@@ -1,30 +1,30 @@
 ---
 author: msatranjr
-title: "将数组传递到 Windows 运行时组件"
-description: "在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。"
+title: Passing arrays to a Windows Runtime Component
+description: In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output.
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
+ms.openlocfilehash: 8ced5e6a4411554fcf82a54b57de64562a305619
 
 ---
 
-# 将数组传递到 Windows 运行时组件
+# Passing arrays to a Windows Runtime Component
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-在通用 Windows 平台 (UWP) 中，参数要么用于输入，要么用于输出，决不可同时用于两者。 这意味着传递到某个方法的数组的内容以及数组本身要么用于输入，要么用于输出。 如果数组的内容用于输入，该方法将从该数组进行读取而不是对其进行写入。 如果数组的内容用于输出，该方法将对该数组进行写入而不是从中进行读取。 这会带来数组参数问题，因为 .NET Framework 中的数组是引用类型，而且即使通过值（在 Visual Basic 中为 **ByVal**）传递数组引用，数组的内容仍具有可变性。 [Windows 运行时元数据导出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 需要你通过将 ReadOnlyArrayAttribute 属性或 WriteOnlyArrayAttribute 属性应用于参数，指定数组（如果该数组未从上下文中清除）的预期用途。 数组用途已确定，如下所示：
+In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output. If the contents of the array are for input, the method reads from the array but doesn't write to it. If the contents of the array are for output, the method writes to the array but doesn't read from it. This presents a problem for array parameters, because arrays in the .NET Framework are reference types, and the contents of an array are mutable even when the array reference is passed by value (**ByVal** in Visual Basic). The [Windows Runtime Metadata Export Tool (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) requires you to specify the intended usage of the array if it is not clear from context, by applying the ReadOnlyArrayAttribute attribute or the WriteOnlyArrayAttribute attribute to the parameter. Array usage is determined as follows:
 
--   对于返回值或输出参数（在 Visual Basic 中为带有 [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性的 **ByRef** 参数），数组始终仅用于输出。 不会应用 ReadOnlyArrayAttribute 属性。 输出参数上允许有 WriteOnlyArrayAttribute 属性，但是多余的。
+-   For the return value or for an out parameter (a **ByRef** parameter with the [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) attribute in Visual Basic) the array is always for output only. Do not apply the ReadOnlyArrayAttribute attribute. The WriteOnlyArrayAttribute attribute is allowed on output parameters, but it's redundant.
 
-    > **注意** Visual Basic 编译器不强制执行仅输出规则。 你绝不应从输出参数中进行读取；它可能包含 **Nothing**。 始终分配新数组。
+    > **Caution**  The Visual Basic compiler does not enforce output-only rules. You should never read from an output parameter; it may contain **Nothing**. Always assign a new array.
  
--   不允许具有 **ref** 修饰符（在 Visual Basic 中为 **ByRef**）的参数。 Winmdexp.exe 会生成错误。
--   对于通过值传递的参数，必须通过应用 [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) 属性或 [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) 属性来指定数组内容是用于输入还是用于输出。 同时指定这两个属性是一个错误。
+-   Parameters that have the **ref** modifier (**ByRef** in Visual Basic) are not allowed. Winmdexp.exe generates an error.
+-   For a parameter that is passed by value, you must specify whether the array contents are for input or output by applying either the [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) attribute or the [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) attribute. Specifying both attributes is an error.
 
-如果某个方法必须接受用于输入的数组，请修改数组内容，并将该数组返回到调用方，然后将只读参数用于输入，而将只写参数（或返回值）用于输出。 以下代码显示了一种实现此模式的方法：
+If a method must accept an array for input, modify the array contents, and return the array to the caller, use a read-only parameter for the input and a write-only parameter (or the return value) for the output. The following code shows one way to implement this pattern:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -45,26 +45,26 @@ ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
 > End Function
 > ```
 
-我们建议你立即创建输入数组的副本，并处理该副本。 这有助于确保不管你的组件是否由 .NET Framework 代码调用，该方法具有相同的行为。
+We recommend that you make a copy of the input array immediately, and manipulate the copy. This helps ensure that the method behaves the same whether or not your component is called by .NET Framework code.
 
-## 使用来自托管和非托管代码的组件
+## Using components from managed and unmanaged code
 
 
-对于具有 ReadOnlyArrayAttribute 属性或 WriteOnlyArrayAttribute 属性的参数，其行为会有所不同，具体取决于调用方是在本机代码中编写还是在托管代码中编写。 如果调用方为本机代码（JavaScript 或 Visual C++ 组件扩展），对数组内容的处理如下所示：
+Parameters that have the ReadOnlyArrayAttribute attribute or the WriteOnlyArrayAttribute attribute behave differently depending on whether the caller is written in native code or managed code. If the caller is native code (JavaScript or Visual C++ component extensions), the array contents are treated as follows:
 
--   ReadOnlyArrayAttribute：当调用跨应用程序二进制接口 (ABI) 边界时，将复制该数组。 如有必要，将转换元素。 因此，该方法对仅输入数组所做的任何意外更改对调用方均不可见。
--   WriteOnlyArrayAttribute：调用的方法不可以做任何有关原始数组内容的假设。 例如，该方法接收的数组可能不会进行初始化，也可能包含默认值。 该方法预计会设置数组中所有元素的值。
+-   ReadOnlyArrayAttribute: The array is copied when the call crosses the application binary interface (ABI) boundary. Elements are converted if necessary. Therefore, any accidental changes the method makes to an input-only array are not visible to the caller.
+-   WriteOnlyArrayAttribute: The called method can't make any assumptions about the contents of the original array. For example, the array the method receives might not be initialized, or might contain default values. The method is expected to set the values of all the elements in the array.
 
-如果调用方为托管代码，则原始数组可用于调用的方法，就像在 .NET Framework 中使用任何方法调用那样。 数组内容在 .NET Framework 代码中具有可变性，因此该方法对数组所做的任何更改对调用方均可见。 记住这一点很重要，因为它会影响为 Windows 运行时组件编写的单元测试。 如果测试在托管代码中编写，数组的内容将在测试期间显示为可变。
+If the caller is managed code, the original array is available to the called method, as it would be in any method call in the .NET Framework. Array contents are mutable in .NET Framework code, so any changes the method makes to the array are visible to the caller. This is important to remember because it affects unit tests written for a Windows Runtime Component. If the tests are written in managed code, the contents of an array will appear to be mutable during testing.
 
-## 相关主题
+## Related topics
 
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

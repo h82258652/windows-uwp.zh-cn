@@ -1,30 +1,30 @@
 ---
-title: "适用于游戏开发的 CPUSets"
-description: "本文概述了通用 Windows 平台 (UWP) 新增的 CPUSets API，涵盖了对于游戏和应用程序开发相当重要的核心信息。"
+title: CPUSets for game development
+description: This article provides an overview of the CPUSets API new to the Universal Windows Platform (UWP), and covers the core information pertinent to game and application development.
 author: hammondsp
 translationtype: Human Translation
-ms.sourcegitcommit: 3cefaf4e527d2a0da412dab474a348b55ad409c9
-ms.openlocfilehash: f125ae7e268a8d35b477a1557c498762869f859b
+ms.sourcegitcommit: 9f15d551715d9ccf23e4eb397637f4fafacec350
+ms.openlocfilehash: 6065435dc3add0d9bde15dc6bdd355935b8f53cd
 
 ---
 
-# 适用于游戏开发的 CPUSets
+# CPUSets for game development
 
-## 简介
+## Introduction
 
-通用 Windows 平台 (UWP) 是范围广泛的消费电子设备的核心。 因此，要求通用 API 满足从游戏到嵌入式应用再到服务器上运行的企业软件在内的所有应用程序类型的需求。 通过利用该 API 提供的正确信息，你可以确保你的游戏在任何硬件上都可以完美运行。
+The Universal Windows Platform (UWP) is at the core of a wide range of consumer electronic devices. As such, it requires a general purpose API to address the needs of all types of applications from games to embedded apps to enterprise software running on servers. By leveraging the right information provided by the API, you can ensure your game runs at its best on any hardware.
 
 ## CPUSets API
 
-CPUSets API 控制可用于在其上调度线程的 CPU 设置。 两个函数可用于控制调度线程的位置：
-- **SetProcessDefaultCpuSets** – 如果新线程未分配给特定的 CPU 设置，可使用此函数指定新线程可在其上运行的 CPU 设置。
-- **SetThreadSelectedCpuSets** – 此函数允许你限制特定线程可在其上运行的 CPU 设置。
+The CPUSets API provides control over which CPU sets are available for threads to be scheduled on. Two functions are available to control where threads are scheduled:
+- **SetProcessDefaultCpuSets** – This function can be used to specify which CPU sets new threads may run on if they are not assigned to specific CPU sets.
+- **SetThreadSelectedCpuSets** – This function allows you to limit the CPU sets a specific thread may run on.
 
-如果从未使用过 **SetProcessDefaultCpuSets** 函数，则新创建的线程可以在适用于你的进程的任何 CPU 设置上调度。 此部分介绍 CPUSets API 的基础知识。
+If the **SetProcessDefaultCpuSets** function is never used, newly created threads may be scheduled on any CPU set available to your process. This section goes over the basics of the CPUSets API.
 
 ### GetSystemCpuSetInformation
 
-用于收集信息的第一个 API 是 **GetSystemCpuSetInformation** 函数。 此函数将信息填充于标题代码提供的 **SYSTEM_CPU_SET_INFORMATION** 对象数组中。 目标内存必须由游戏代码进行分配，而具体大小将通过调用 **GetSystemCpuSetInformation** 本身来确定。 这需要调用 **GetSystemCpuSetInformation** 两次，如以下示例中所示。
+The first API used for gathering information is the **GetSystemCpuSetInformation** function. This function populates information in an array of **SYSTEM_CPU_SET_INFORMATION** objects provided by title code. The memory for the destination must be allocated by game code, the size of which is determined by calling **GetSystemCpuSetInformation** itself. This requires two calls to **GetSystemCpuSetInformation** as demonstrated in the following example.
 
 ```
 unsigned long size;
@@ -38,65 +38,65 @@ PSYSTEM_CPU_SET_INFORMATION cpuSets = reinterpret_cast<PSYSTEM_CPU_SET_INFORMATI
 GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 ```
 
-每个返回的 **SYSTEM_CPU_SET_INFORMATION** 实例包含有关一个唯一的处理单元的信息，也称为“CPU 设置”。 这并不一定意味着它表示硬件的独特物理部分。 利用超线程的 CPU 将具有在单个物理处理内核上运行的多个逻辑核心。 在不同逻辑核心（位于同一物理核心上）上调度多个线程允许执行硬件级别的资源优化，否则会以内核级别执行额外工作。 在同一物理核心的单独逻辑核心上调度的两个线程必须共享 CPU 时间，但相比于它们在同一逻辑核心上调度而言，可以更高效地运行。
+Each instance of **SYSTEM_CPU_SET_INFORMATION** returned contains information about one unique processing unit, also known as a CPU set. This does not necessarily mean that it represents a unique physical piece of hardware. CPUs that utilize hyperthreading will have multiple logical cores running on a single physical processing core. Scheduling multiple threads on different logical cores that reside on the same physical core allows hardware-level resource optimization that would otherwise require extra work to be done at the kernel level. Two threads scheduled on separate logical cores on the same physical core must share CPU time, but would run more efficiently than if they were scheduled to the same logical core.
 
 ### SYSTEM_CPU_SET_INFORMATION
 
-从 **GetSystemCpuSetInformation** 中返回的此数据结构的每个实例中的信息包含有关可以在其上调度的线程唯一处理单元的信息。 根据给定的可能目标设备范围，**SYSTEM_CPU_SET_INFORMATION** 数据结构中的许多信息可能不适用于游戏开发。 表 1 提供适用于游戏开发的数据成员的说明。
+The information in each instance of this data structure returned from **GetSystemCpuSetInformation** contains information about a unique processing unit that threads may be scheduled on. Given the possible range of target devices, a lot of the information in the **SYSTEM_CPU_SET_INFORMATION** data structure may not applicable for game development. Table 1 provides an explanation of data members that are useful for game development.
 
- **表 1. 适用于游戏开发的数据成员。**
+ **Table 1. Data members useful for game development.**
 
-| 成员名称  | 数据类型 | 提要 |
+| Member name  | Data type | Description |
 | ------------- | ------------- | ------------- |
-| Type  | CPU_SET_INFORMATION_TYPE  | 结构中信息的类型。 如果此成员的值不是 **CpuSetInformation**，应忽略它。  |
-| Id  | 无符号长整型  | 指定 CPU 设置的 ID。 这是应与 CPU 设置函数（如 **SetThreadSelectedCpuSets**）结合使用的 ID。  |
-| Group  | 无符号短整型  | 指定 CPU 设置的“处理器组”。 处理器组允许电脑具有超过 64 个逻辑核心，并允许在系统运行期间热交换 CPU。 不是服务器但具有多个组的电脑并不常见。 除非你要编写的应用程序打算在大型服务器或服务器场上运行，否则最好使用单个组中的 CPU 设置，因为大多数消费者电脑只具有一个处理器组。 此结构中的其他所有值都与 Group 有关。  |
-| LogicalProcessorIndex  | 无符号字符型  | CPU 设置的 Group 相关索引  |
-| CoreIndex  | 无符号字符型  | CPU 设置所在的物理 CPU 核心的 Group 相关索引  |
-| LastLevelCacheIndex  | 无符号字符型  | 与此 CPU 设置关联的最后一级缓存的 Group 相关索引。 此缓存的速度最慢，除非系统利用 NUMA 节点，通常为 L2 或 L3 缓存。  |
+| Type  | CPU_SET_INFORMATION_TYPE  | The type of information in the structure. If the value of this is not **CpuSetInformation**, it should be ignored.  |
+| Id  | unsigned long  | The ID of the specified CPU set. This is the ID that should be used with CPU set functions such as **SetThreadSelectedCpuSets**.  |
+| Group  | unsigned short  | Specifies the “processor group” of the CPU set. Processor groups allow a PC to have more than 64 logical cores, and allow for hot swapping of CPUs while the system is running. It is uncommon to see a PC that is not a server with more than one group. Unless you are writing applications meant to run on large servers or server farms, it is best to use CPU sets in a single group because most consumer PCs will only have one processor group. All other values in this structure are relative to the Group.  |
+| LogicalProcessorIndex  | unsigned char  | Group relative index of the CPU set  |
+| CoreIndex  | unsigned char  | Group relative index of the physical CPU core where the CPU set is located  |
+| LastLevelCacheIndex  | unsigned char  | Group relative index of the last cache associated with this CPU set. This is the slowest cache unless the system utilizes NUMA nodes, usually the L2 or L3 cache.  |
 
 <br />
 
-其他数据成员提供的信息不太可能描述消费者电脑或其他消费者设备中的 CPU，也不太可能非常有用。 然后返回的数据提供的信息可用于以多种方式组织线程。 此白皮书的[游戏开发注意事项](#considerations-for-game-development)部分详细介绍了利用此数据优化线程分配的多种方法。
+The other data members provide information that is unlikely to describe CPUs in consumer PCs or other consumer devices and is unlikely to be useful. The information provided by the data returned can then be used to organize threads in various ways. The [Considerations for game development](#considerations-for-game-development) section of this white paper details a few ways to leverage this data to optimize thread allocation.
 
-以下是一些从各种类型硬件上运行的 UWP 应用程序中收集的信息类型的示例。
+The following are some examples of the type of information gathered from UWP applications running on various types of hardware.
 
-**表 2. 从 Microsoft Lumia 950 上运行的 UWP 应用中返回的信息。 这是一个具有多个最后一级缓存的系统示例。 Lumia 950 配备 Qualcomm 808 Snapdragon 处理器，该处理器包含双核 ARM Cortex A57 和四核 ARM Cortex A53 CPU。**
+**Table 2. Information returned from a UWP app running on a Microsoft Lumia 950. This is an example of a system that has multiple last level caches. The Lumia 950 features a Qualcomm 808 Snapdragon process that contains a dual core ARM Cortex A57 and quad core ARM Cortex A53 CPUs.**
 
-  ![表 2](images/cpusets-table2.png)
+  ![Table 2](images/cpusets-table2.png)
 
-**表 3. 从典型的电脑上运行的 UWP 应用中返回的信息。 这是一个使用超线程的系统示例；每个物理核心具有两个可在其上调度线程的逻辑核心。 在此情况下，该系统包含了一个 Intel Xenon CPU E5-2620。**
+**Table 3. Information returned from a UWP app running on a typical PC. This is an example of a system that uses hyperthreading; each physical core has two logical cores onto which threads can be scheduled. In this case, the system contained an Intel Xenon CPU E5-2620.**
 
-  ![表 3](images/cpusets-table3.png)
+  ![Table 3](images/cpusets-table3.png)
 
-**表 4. 从四核 Microsoft Surface Pro 4 上运行的 UWP 应用中返回的信息。 此系统已有一个 Intel Core i5-6300 CPU。**
+**Table 4. Information returned from a UWP app running on a quad core Microsoft Surface Pro 4. This system had an Intel Core i5-6300 CPU.**
 
-  ![表 4](images/cpusets-table4.png)
+  ![Table 4](images/cpusets-table4.png)
 
 ### SetThreadSelectedCpuSets
 
-既然提供了 CPU 设置的相关信息，就可以使用该信息来组织线程。 将向此函数传递使用 **CreateThread** 创建的线程的句柄以及可在其上调度线程的 CPU 设置的 ID 数组。 使用以下代码演示函数使用情况的一个示例。
+Now that information about the CPU sets is available, it can be used to organize threads. The handle of a thread created with **CreateThread** is passed to this function along with an array of IDs of the CPU sets that the thread can be scheduled on. One example of its usage is demonstrated in the following code.
 
 ```
 HANDLE audioHandle = CreateThread(nullptr, 0, AudioThread, nullptr, 0, nullptr);
 unsigned long cores [] = { cpuSets[0].CpuSet.Id, cpuSets[1].CpuSet.Id };
 SetThreadSelectedCpuSets(audioHandle, cores, 2);
 ```
-在此示例中，线程基于声明为 **AudioThread** 的函数创建。 然后，允许在两个 CPU 设置之一上调度此线程。 CPU 设置的线程所有权不独占。 在未锁定到特定 CPU 设置的情况下，通过 **AudioThread** 创建线程可能需要一些时间。 同样，创建的其他线程稍后也可以锁定到这些 CPU 设置中的一个或两个。
+In this example, a thread is created based on a function declared as **AudioThread**. This thread is then allowed to be scheduled on one of two CPU sets. Thread ownership of the CPU set is not exclusive. Threads that are created without being locked to a specific CPU set may take time from the **AudioThread**. Likewise, other threads created may also be locked to one or both of these CPU sets at a later time.
 
 ### SetProcessDefaultCpuSets
 
-与 **SetThreadSelectedCpuSets** 相反的是 **SetProcessDefaultCpuSets**。 创建线程时，不需要将它们锁定到特定 CPU 设置。 如果你不希望这些线程在特定 CPU 设置上运行（例如，呈现线程或音频线程使用的 CPU 设置），可以使用此函数指定允许在其上调度这些线程的核心。
+The converse to **SetThreadSelectedCpuSets** is **SetProcessDefaultCpuSets**. When threads are created, they do not need to be locked into certain CPU sets. If you do not want these threads to run on specific CPU sets (those used by your render thread or audio thread for example), you can use this function to specify which cores these threads are allowed to be scheduled on.
 
-## 游戏开发注意事项
+## Considerations for game development
 
-正如我们所见，CPUSets API 涉及到调度线程时，它可提供大量信息和灵活性。 与采取自下而上的方法来尝试查找此数据的使用相比，采取自上而下的方法查找如何将数据用于适应常见方案会更有效。
+As we've seen, the CPUSets API provides a lot of information and flexibility when it comes to scheduling threads. Instead of taking the bottom-up approach of trying to find uses for this data, it is more effective to take the top-down approach of finding how the data can be used to accommodate common scenarios.
 
-### 使用时间关键线程和超线程
+### Working with time critical threads and hyperthreading
 
-如果你的游戏所具有的多个线程必须实时运行，而其他工作线程所需的 CPU 时间相对较少，则此方法非常有效。 某些任务（如连续背景音乐）必须不间断地运行才可以实现最佳游戏体验。 因此每帧接收必要数量的 CPU 时间至关重要，即使音频线程的单帧匮乏可能导致爆音或噪音干扰。
+This method is effective if your game has a few threads that must run in real time along with other worker threads that require relatively little CPU time. Some tasks, like continuous background music, must run without interruption for an optimal gaming experience. Even a single frame of starvation for an audio thread may cause popping or glitching, so it is critical that it receives the necessary amount of CPU time every frame.
 
-结合 **SetProcessDefaultCpuSets** 使用 **SetThreadSelectedCpuSets** 可以确保你的大量线程不会因任何工作线程而中断。 **SetThreadSelectedCpuSets** 可用于将你的大量线程分配给特定的 CPU 设置。 然后 **SetProcessDefaultCpuSets** 可用于确保任何已创建的未分配线程放置在其他 CPU 设置上。 即使 CPU 利用超线程，在同一物理核心上考虑使用逻辑核心也很重要。 不应允许工作线程在共享物理核心（与你想要以实时响应性运行的线程相同）的逻辑核心上运行。 以下代码演示如何确定电脑是否使用超线程。
+Using **SetThreadSelectedCpuSets** in conjunction with **SetProcessDefaultCpuSets** can ensure your heavy threads remain uninterrupted by any worker threads. **SetThreadSelectedCpuSets** can be used to assign your heavy threads to specific CPU sets. **SetProcessDefaultCpuSets** can then be used to make sure any unassigned threads created are put on other CPU sets. In the case of CPUs that utilize hyperthreading, it's also important to account for logical cores on the same physical core. Worker threads should not be allowed to run on logical cores that share the same physical core as a thread that you want to run with real time responsiveness. The following code demonstrates how to determine whether a PC uses hyperthreading.
 
 ```
 unsigned long retsize = 0;
@@ -127,17 +127,17 @@ for( DWORD size = 0; size < retsize; ) {
 bool hyperthreaded = processors.size() != cores.size();
 ```
 
-如果系统利用超线程，则默认 CPU 设置的设置在与任何实时线程的相同物理核心上不包含任何逻辑核心，这一点很重要。 如果系统不是超线程，只需确保默认 CPU 设置不包含与运行你的音频线程的 CPU 设置相同的核心即可。
+If the system utilizes hyperthreading, it is important that the set of default CPU sets does not include any logical cores on the same physical core as any real time threads. If the system is not hyperthreading, it is only necessary to make sure that the default CPU sets do not include the same core as the CPU set running your audio thread.
 
-可以在[其他资源](#additional-resources)部分链接的 GitHub 存储库上提供的 CPUSets 示例中找到基于物理核心组织线程的示例。
+An example of organizing threads based on physical cores can be found in the CPUSets sample available on the GitHub repository linked in the [Additional resources](#additional-resources) section.
 
-### 减少最后一级缓存的缓存一致性的开销
+### Reducing the cost of cache coherence with last level cache
 
-缓存一致性的概念为缓存的内存在处理同一数据的多个硬件资源之间是相同的。 如果线程在不同核心上调度，但处理同一数据，则这些线程就可以处理不同缓存中该数据的单独副本。 为了获取正确的结果，这些缓存相互之间必须保持一致。 保持多个缓存之间的一致性相当耗费资源，但却是运行任何多核系统所必需的。 此外，它完全失去对客户端代码的控制；基础系统独立工作以通过访问核心之间共享的内存资源来保持缓存的最新状态。
+Cache coherency is the concept that cached memory is the same across multiple hardware resources that act on the same data. If threads are scheduled on different cores, but work on the same data, they may be working on separate copies of that data in different caches. In order to get correct results, these caches must be kept coherent with each other. Maintaining coherency between multiple caches is relatively expensive, but necessary for any multi-core system to operate. Additionally, it is completely out of the control of client code; the underlying system works independently to keep caches up to date by accessing shared memory resources between cores.
 
-如果你的游戏具有共享特别庞大的数据的多个线程，可以通过确保这些线程在共享最后一级缓存的 CPU 设置上调度来最大程度地减少缓存一致性的开销。 最后一级缓存是速度最慢的缓存，可用于不利用 NUMA 节点的系统上的核心。 对于利用 NUMA 节点的游戏电脑而言相当少见。 如果核心不共享最后一级缓存，保持一致性就需要访问更高级别的内存资源，因此速度较慢。 将两个线程锁定到共享一个缓存和一个物理核心的单独 CPU 设置可以提供更好的性能（相比于在单独的物理核心上调度它们，如果它们在任何给定的框架中不需要超过 50% 的时间）。 
+If your game has multiple threads that share an especially large amount of data, you can minimize the cost of cache coherency by ensuring that they are scheduled on CPU sets that share a last level cache. The last level cache is the slowest cache available to a core on systems that do not utilize NUMA nodes. It is extremely rare for a gaming PC to utilize NUMA nodes. If cores do not share a last level cache, maintaining coherency would require accessing higher level, and therefore slower, memory resources. Locking two threads to separate CPU sets that share a cache and a physical core may provide even better performance than scheduling them on separate physical cores if they do not require more than 50% of the time in any given frame. 
 
-此代码示例显示如何确定频繁通信的线程是否可以共享最后一级缓存。
+This code example shows how to determine whether threads that communicate frequently can share a last level cache.
 
 ```
 unsigned long retsize = 0;
@@ -177,23 +177,24 @@ for (size_t i = 0; i < count; ++i)
 }
 ```
 
-图 1 中所示的缓存布局是你可以从系统中看到的布局的类型示例。 此图是在 Microsoft Lumia 950 中找到的缓存示意图。 CPU 256 和 CPU 260 之间发生的线程间通信将导致大量开销，因为需要系统保持它们的 L2 缓存一致性。
+The cache layout illustrated in Figure 1 is an example of the type of layout you might see from a system. This figure is an illustration of the caches found in a Microsoft Lumia 950. Inter-thread communication occurring between CPU 256 and CPU 260 would incur significant overhead because it would require the system to keep their L2 caches coherent.
 
-**图 1. Microsoft Lumia 950 设备上找到的缓存体系结构。**
+**Figure 1. Cache architecture found on a Microsoft Lumia 950 device.**
 
-![Lumia 950 缓存](images/cpusets-lumia950cache.png)
+![Lumia 950 cache](images/cpusets-lumia950cache.png)
 
-## 摘要
+## Summary
 
-适用于 UWP 开发的 CPUSets API 提供了与你的多线程选项有关的大量信息和控制。 相比于以前的适用于 Windows 开发的多线程 API，增加的复杂性具有一些学习曲线，但提升的灵活性最终允许在一些消费者电脑和其他硬件目标之间实现较好的性能。
+The CPUSets API available for UWP development provides a considerable amount of information and control over your multithreading options. The added complexities compared to previous multithreaded APIs for Windows development has some learning curve, but the increased flexibility ultimately allows for better performance across a range of consumer PCs and other hardware targets.
 
-## 其他资源
-- [CPU 设置 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
-- [ATG 提供的 CPUSets 示例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+## Additional resources
+- [CPU Sets (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
+- [CPUSets sample provided by ATG](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [UWP on Xbox One](index.md)
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

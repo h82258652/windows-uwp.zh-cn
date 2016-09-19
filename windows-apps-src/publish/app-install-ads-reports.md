@@ -1,65 +1,65 @@
 ---
 author: jnHs
-title: "应用安装广告报告"
+title: App install ads report
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
+ms.openlocfilehash: 45dd0b2cb34e724313fe431a5b8b7a6df9b5a5cf
 
 ---
 
-# 应用安装广告报告
+# App install ads report
 
-可以使用两种方法来访问开发人员中心中的**应用安装广告报告**页面：
+There are two ways to get to the **App install ads reports** page in Dev Center:
 
--   在应用页面的左侧导航菜单上，依次单击“分析”****&gt;“应用安装广告”****。
--   在应用页面的左侧导航菜单上，依次单击“盈利”****&gt;“推广你的应用”****，然后单击市场活动的“报告”****链接。
+-   From the left navigation menu on your app's page, click **Analytics** &gt; **App install ads**.
+-   From the left navigation menu on your app's page, click **Monetization** &gt; **Promote your app**, and then click a campaign's **Report** link.
 
-你将在此处看到两个部分：“广告效果”****和“帐户帐单历史记录”****。
+Here you'll see two sections: **Ad performance** and **Account billing history**.
 
-## 广告效果
+## Ad performance
 
-此处的效果指标显示为绘制在图形上的线条，y 轴显示选定指标，x 轴显示时间。 默认报告显示曝光量。 单击选项卡标题可查看其他效果指标的数据。 此处跟踪的指标包括：
+Here, performance metrics are displayed as lines plotted on a graph, with the selected metric on the y-axis and time on the x-axis. The default report shows Impressions. Click the tab headers to view data for other performance metrics. The metrics tracked here are:
 
--   **曝光量**：广告的显示次数。
--   **点击量**：客户单击广告的次数。
--   **安装量**：客户单击广告并安装你的应用的次数。 有关安装跟踪的详细信息，请参阅以下内容。
+-   **Impressions**: The number of times your ad has been shown.
+-   **Clicks**: The number of times someone clicked on your ad.
+-   **Installs**: The number of times someone clicked on your ad and then installed your app. See below for more information on install tracking.
 
-你一次最多可以显示四个不同广告活动的性能数据。 单击“更多活动”****可选择要显示的活动。 也可以通过单击已显示活动旁边的减号来删除它。
+You can display performance data for up to four different ad campaigns at a time. Click **More campaigns** to choose which campaigns to display. You can also click the minus symbol by a displayed campaign to remove it.
 
-### 什么是安装跟踪？
+### What is install tracking?
 
-在开发人员中心上通过“推广你的应用”****投放安装广告市场活动可为尝试推广其应用的开发人员提供其急需的曝光度。 将向最有可能对应用感兴趣的用户显示广告曝光，用户可单击广告并通过应用商店安装应用。 到目前为止，安装是广告活动还是其他来源所致仍令人难以分辨。
+Running an install ad campaign through **Promote your app** on Dev Center provides much-needed exposure for developers trying to advertise their apps. Ad impressions are shown to users who are most likely to be interested in the app, and the users click on the ad and install the app from the Store. Until today, it was hard to distinguish between installs that were the result of an ad campaign versus installs that came from other sources.
 
-现在，我们已为应用安装活动启用了安装报告，可向开发人员告知其通过投放广告活动所获得的安装量。 这仅表示由广告活动直接产生的下载量，不包括其他来源所产生的下载量。
+We have now enabled Install reports for app install campaigns that tell developers how many installs they have earned by running the ad campaign. This only represents downloads that are a direct outcome of the ad campaign, and does not include downloads from other sources.
 
-通过监视广告活动的安装量，开发人员可以衡量投资在应用推广上的资金的真实反馈。 它还有助于将获得新用户的开销与用户的终身价值相比较。
+By monitoring installs for their ad campaigns, developers can measure the true return on investment from the money spent on promoting their apps. It also helps in comparing the cost of obtaining a new user with the lifetime value of users.
 
-### 如何测量安装量？
+### How are installs measured?
 
-“推广你的应用”****广告市场活动可在其他应用中提供广告曝光。 广告所面向的用户可能会使用以下两种方法之一来安装应用：通过单击该广告或基于查看广告曝光。
+**Promote your app** ad campaigns deliver ad impressions within other apps. Users who are exposed to the ad are likely to install the app in one of two ways: by clicking the ad or based on viewing the ad impression.
 
-如果向某位用户显示某个广告后，他/她在 24 小时内安装了应用（无论是通过单击该广告，还是直接访问包含该应用的应用商店页面），则该安装归功于提供该曝光的活动。
+If a user is shown an ad and he or she installs the app within 24 hours -- by either clicking the ad, or directly going to the Store page of the app -- that install is attributed to the campaign that delivered the impression.
 
-在手机、平板电脑和 PC 上，应用商店中的安装将被跟踪（基于安装了该应用的用户）。 广告引擎将跟踪看到广告的用户，而我们则使用此信息，将看过广告的用户和安装过应用的用户关联起来。 若要对应用安装进行计数，必须满足几点要求：
+An install is tracked in the Store -- across phone, tablet, and PC -- based on the user who installed the app. The advertising engine tracks users who see the ad and we use this information to correlate the users who viewed the ad with the users who installed the app. In order for the app install to be counted, a few requirements must be met:
 
-1.  用户尚未退出目标跟踪。
-2.  用户已登录 Microsoft 帐户。
-3.  用户满足 [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 要求（无法跟踪不满足 COPPA 要求的用户）。
+1.  The user has not opted out of targeting.
+2.  The user is logged in to a Microsoft account.
+3.  The user meets [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) requirements (users that don’t meet COPPA requirements cannot be tracked).
 
-因此，应用安装跟踪有可能*低估*由“推广你的应用”****市场活动所产生的实际安装量。 请注意，可通过开发人员中心中的“购置”****报告查看应用下载总数。
+As a result, it is possible the app install tracking may *underreport* the actual number of installs generated by a **Promote your app** campaign. Please note that the total number of downloads for an app is viewable in the **Acquisitions** report in Dev Center.
 
-## 帐户帐单历史记录
+## Account billing history
 
-你可以从中看到与你的帐户相关联的所有交易。 对于每笔交易，我们都会显示“交易日期”****、相应的“市场活动名称”****、收取的“支付票据”****，以及费用“总额”****。
+Here you can see all of the transactions associated with your account. For each transaction, we show the **Transaction date**, the appropriate **Campaign name**, the **Payment instrument** charged, and the **Total amount** of the charge.
 
-## 相关主题
+## Related topics
 
-* [为你的应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)
-* [管理广告活动](managing-your-ad-campaign.md)
-* [关于自家广告](about-house-ads.md)
-* [常见问题](common-questions.md)
+* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
+* [Managing your ad campaign](managing-your-ad-campaign.md)
+* [About house ads](about-house-ads.md)
+* [Common questions](common-questions.md)
  
 
  
@@ -70,6 +70,6 @@ ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

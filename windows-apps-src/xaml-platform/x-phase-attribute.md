@@ -1,41 +1,41 @@
 ---
 author: jwmsft
-title: "xPhase 属性"
-description: "将 xPhase 与 xBind 标记扩展结合使用，以便能以增量方式呈现 ListView 和 GridView 项并改进平移体验。"
+title: xPhase attribute
+description: Use xPhase with the xBind markup extension to render ListView and GridView items incrementally and improve the panning experience.
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: dfa12909d19a44ed38939c612712c8fe90f3f584
+ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
 
 ---
 
-# x&#58;Phase 属性
+# x:Phase attribute
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-将 **x:Phase** 与 [{x:Bind} 标记扩展](x-bind-markup-extension.md)结合使用，以便能以增量方式呈现 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 项并改进平移体验。 为了能实现与使用 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件手动控制列表项的呈现相同的效果，**x:Phase** 提供了一种声明性方法。 另请参阅[以增量方式更新 ListView 和 GridView 项](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
+Use **x:Phase** with the [{x:Bind} markup extension](x-bind-markup-extension.md) to render [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) items incrementally and improve the panning experience. **x:Phase** provides a declarative way of achieving the same effect as using the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event to manually control the rendering of list items. Also see [Update ListView and GridView items incrementally](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
 
-## XAML 属性使用方法
+## XAML attribute usage
 
 
 ``` syntax
 <object x:Phase="PhaseValue".../>
 ```
 
-## XAML 值
+## XAML values
 
 
-| 术语 | 说明 |
+| Term | Description |
 |------|-------------|
-| PhaseValue | 一个用于指示将处理的元素所处的阶段的数字。 默认值为 0。 | 
+| PhaseValue | A number that indicates the phase in which the element will be processed. The default is 0. | 
 
-## 备注
+## Remarks
 
-如果列表既能借助触摸快速平移又能使用鼠标滚轮实现，则该列表可能无法以足够快地速度呈现项目以跟上滚动速度，具体取决于数据模板的复杂程度。 这对于带有节能 CPU 的便携式设备（如手机或平板电脑）尤其如此。
+If a list is panned fast with touch, or using the mouse wheel, then depending on the complexity of the data template, the list may not be able to render items fast enough to keep up with the speed of scrolling. This is particularly true for a portable device with a power-efficient CPU such as a phone or a tablet.
 
-阶段支持递增式呈现数据模板，以便可为内容设定优先级，即最重要的元素最先呈现。 这使列表能够在平移速度较快时为每个项显示相应内容，并且将在时间允许的情况下为每个模板呈现更多的元素。
+Phasing enables incremental rendering of the data template so that the contents can be prioritized, and the most important elements rendered first. This enables the list to show some content for each item if panning fast, and will render more elements of each template as time permits.
 
-## 示例
+## Example
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
@@ -59,28 +59,28 @@ ms.openlocfilehash: dfa12909d19a44ed38939c612712c8fe90f3f584
 </DataTemplate>
 ```
 
-数据模板描述了 4 个阶段：
+The data template describes 4 phases:
 
-1.  显示 DisplayName 文本块。 未指定阶段的所有控件将隐式视为阶段 0 的一部分。
-2.  显示 prettyDate 文本块。
-3.  显示 prettyFileSize 和 prettyImageSize 文本块。
-4.  显示图像。
+1.  Presents the DisplayName text block. All controls without a phase specified will be implicitly considered to be part of phase 0.
+2.  Shows the prettyDate text block.
+3.  Shows the prettyFileSize and prettyImageSize text blocks.
+4.  Shows the image.
 
-阶段是 [{x:Bind}](x-bind-markup-extension.md) 的一项功能，它适用于派生自 [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 的控件，且以增量方式处理数据绑定的项目模板。 在呈现列表项时，**ListViewBase** 将先以视图形式为所有项呈现单个阶段，然后再移至下一阶段。 呈现工作将以时间分片批处理的形式进行执行，以便在滚动列表时可对所需的工作进行重新评估，从而可不执行不再可见的项。
+Phasing is a feature of [{x:Bind}](x-bind-markup-extension.md) that works with controls derived from [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) and that incrementally processes the item template for data binding. When rendering list items, **ListViewBase** renders a single phase for all items in the view before moving onto the next phase. The rendering work is performed in time-sliced batches so that as the list is scrolled, the work required can be re-assessed, and not performed for items that are no longer visible.
 
-**x:Phase** 可以在使用 [{x:Bind}](x-bind-markup-extension.md) 的数据模板中的任一元素上进行指定。 当元素具有一个非 0 的阶段时，将（通过 **Opacity**，而非 **Visibility**）从视图中隐藏该元素，直到处理完该阶段并更新绑定为止。 当滚动 [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 派生的控件时，它将从不再显示在屏幕上的项中回收项目模板，以呈现新的可见项。 模板内的 UI 元素将保留其旧值，直到它们再次进行数据绑定。 阶段将导致数据绑定步骤延迟，因此它需要隐藏 UI 元素，以防这些元素过时。
+The **x:Phase** attribute can be specified on any element in a data template that uses [{x:Bind}](x-bind-markup-extension.md). When an element has a phase other than 0, the element will be hidden from view (via **Opacity**, not **Visibility**) until that phase is processed and bindings are updated. When a [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879)-derived control is scrolled, it will recycle the item templates from items that are no longer on screen to render the newly visible items. UI elements within the template will retain their old values until they are data-bound again. Phasing causes that data-binding step to be delayed, and therefore phasing needs to hide the UI elements in case they are stale.
 
-每个 UI 元素可能只具有一个指定阶段。 如果是，这将应用于元素上的所有绑定。 如果未指定阶段，将假定阶段 0。
+Each UI element may have only one phase specified. If so, that will apply to all bindings on the element. If a phase is not specified, phase 0 is assumed.
 
-阶段数字不需要是连续的，不过需与 [**ContainerContentChangingEventArgs.Phase**](https://msdn.microsoft.com/library/windows/apps/dn298493) 值相同。 在处理 **x:Phase** 绑定前，将针对每个阶段引发 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件。
+Phase numbers do not need to be contiguous and are the same as the value of [**ContainerContentChangingEventArgs.Phase**](https://msdn.microsoft.com/library/windows/apps/dn298493). The [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event will be raised for each phase before the **x:Phase** bindings are processed.
 
-阶段仅影响 [{x:Bind}](x-bind-markup-extension.md) 绑定，而不会影响 [{Binding}](binding-markup-extension.md) 绑定。
+Phasing only affects [{x:Bind}](x-bind-markup-extension.md) bindings, not [{Binding}](binding-markup-extension.md) bindings.
 
-仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 对于 Windows 10，即表示 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。
-
-
+Phasing will only apply when the item template is rendered using a control that is aware of phasing. For Windows 10, that means [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). Phasing will not apply to data templates used in other item controls, or for other scenarios such as [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) or [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) sections—in those cases, all the UI elements will be data bound at once.
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

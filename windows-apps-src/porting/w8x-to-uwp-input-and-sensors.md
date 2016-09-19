@@ -1,50 +1,50 @@
 ---
 author: mcleblanc
-description: "与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。"
-title: "针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP"
+description: Code that integrates with the device itself and its sensors involves input from, and output to, the user.
+title: Porting Windows Runtime 8.x to UWP for I/O, device, and app model'
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
+ms.openlocfilehash: 4f7a73eb48d898ed99a5145eccc04da259fe4871
 
 ---
 
-# 针对 I/O、设备和应用模型将 Windows 运行时 8.x 移植到 UWP
+# Porting Windows Runtime 8.x to UWP for I/O, device, and app model
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-上一主题是[移植 XAML 和 UI](w8x-to-uwp-porting-xaml-and-ui.md)。
+The previous topic was [Porting XAML and UI](w8x-to-uwp-porting-xaml-and-ui.md).
 
-与设备本身及其传感器集成的代码涉及到与用户之间的输入和输出。 它还可以涉及处理数据。 但是通常不会将此代码视为 UI 层*或*数据层。 此代码包含与振动控制器、加速计、陀螺仪、麦克风和扬声器（与语音识别和合成交叉）、（地理）位置和输入形式（例如触摸、鼠标、键盘和笔）的集成。
+Code that integrates with the device itself and its sensors involves input from, and output to, the user. It can also involve processing data. But, this code is not generally thought of as either the UI layer *or* the data layer. This code includes integration with the vibration controller, accelerometer, gyroscope, microphone and speaker (which intersect with speech recognition and synthesis), (geo)location, and input modalities such as touch, mouse, keyboard, and pen.
 
-## 应用程序生命周期（进程周期管理）
-
-
-对于通用 8.1 应用，在该应用处于非活动状态以及系统引发暂停事件期间会出现 2 秒的“防止误动作窗口”。 将此防止误动作窗口的出现时间用作暂停状态的额外时间并不安全；而对于通用 Windows 平台 (UWP) 应用而言，根本不会存在防止误动作窗口；因为只要某个应用处于非活动状态，便会引发暂停事件。
-
-有关详细信息，请参阅[应用生命周期](https://msdn.microsoft.com/library/windows/apps/mt243287)。
-
-## 后台音频
+## Application lifecycle (process lifetime management)
 
 
-对于 [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352) 属性，**ForegroundOnlyMedia** 和 **BackgroundCapableMedia** 在 Windows 10 应用中已被弃用。 改用 Windows Phone 应用商店应用模型。 有关详细信息，请参阅[后台音频](https://msdn.microsoft.com/library/windows/apps/mt282140)。
+For a Universal 8.1 app, there is a two-second "debounce window" of time between the app becoming inactive and the system raising the suspending event. Using this debounce window as extra time to suspend state is unsafe, and for a Universal Windows Platform (UWP) app, there is no debounce window at all; the suspension event is raised as soon as an app becomes inactive.
 
-## 检测正运行你的应用的平台
+For more info, see [App lifecycle](https://msdn.microsoft.com/library/windows/apps/mt243287).
+
+## Background audio
 
 
-介绍 Windows 10 中面向应用所做的更改。 新增的概念模型是，应用面向通用 Windows 平台 (UWP)，并且可跨所有 Windows 设备运行。 这样它便可以选择充分利用特定设备系列所独有的功能。 特别是，该应用还可以选择自行限制为面向一个或多个设备系列（如果需要）。 有关具体设备系列（以及如何确定要面向哪一个设备系列）的详细信息，请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+For the [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352) property, **ForegroundOnlyMedia** and **BackgroundCapableMedia** are deprecated for Windows 10 apps. Use the Windows Phone Store app model instead. For more information, see [Background Audio](https://msdn.microsoft.com/library/windows/apps/mt282140).
 
-如果你在通用 8.1 应用中具有代码（可检测到运行它的操作系统），你可能需要做一些更改，具体取决于理性逻辑。 如果应用正在通过操作系统传递值，但没有在该系统上执行任何操作，你可能需要继续收集该操作系统的相关信息。
+## Detecting the platform your app is running on
 
-**注意** 我们不建议你使用操作系统或设备系列来检测某些功能是否存在。 通常情况下，标识当前操作系统或设备系列并不是确定是否存在特定的操作系统或设备系列功能的最佳方式。 与其检测操作系统或设备系列（和版本号），不如自行测试功能是否存在（请参阅[条件编译和自适应代码](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation)）。 如果你必须请求某个特定操作系统或设备系列，请确保将其用作受支持的最低版本，而不是针对某一版本设计相应测试。
+
+The way of thinking about app-targeting changes with Windows 10. The new conceptual model is that an app targets the Universal Windows Platform (UWP) and runs across all Windows devices. It can then opt to light up features that are exclusive to particular device families. If needed, the app also has the option to limit itself to targeting one or more device families specifically. For more info on what device families are—and how to decide which device family to target—see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
+
+If you have code in your Universal 8.1 app that detects what operating system it is running on, then you may need to change that depending on the reason for the logic. If the app is passing the value through, and not acting on it, then you may want to continue to collect the operating system info.
+
+**Note**   We recommend that you not use operating system or device family to detect the presence of features. Identifying the current operating system or device family is usually not the best way to determine whether a particular operating system or device family feature is present. Rather than detecting the operating system or device family (and version number), test for the presence of the feature itself (see [Conditional compilation, and adaptive code](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation)). If you must require a particular operating system or device family, be sure to use it as a minimum supported version, rather than design the test for that one version.
 
  
 
-若要定制你的应用的 UI 以适应不同的设备，可以使用我们建议的多种技术。 不过，你也可以像往常那样继续使用可自动调整大小的元素和动态布局面板。 在 XAML 标记中，元素大小继续以有效像素（之前称为视图像素）为单位，以便 UI 能适应不同的分辨率和比例因子（请参阅[有效像素、观看距离和比例因子](w8x-to-uwp-porting-xaml-and-ui.md#effective-pixels)）。 并且，通过使用视觉状态管理器的自适应触发器和设置器，让 UI 能适应相应的窗口大小（请参阅 [UWP App 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)）。
+To tailor your app's UI to different devices, there are several techniques that we recommend. Continue to use auto-sized elements and dynamic layout panels as you always have. In your XAML markup, continue to use sizes in effective pixels (formerly view pixels) so that your UI adapts to different resolutions and scale factors (see [Effective pixels, viewing distance, and scale factors](w8x-to-uwp-porting-xaml-and-ui.md#effective-pixels).). And use Visual State Manager's adaptive triggers and setters to adapt your UI to the window size (see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).).
 
-但是，在遇到必须检测设备系列的情况时，你可以执行此操作。 在本示例中，我们将使用 [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) 类导航到为移动设备系列定制的页面（如果适用），并且我们保证可通过其他方式回退到默认页面。
+However, if you have a scenario where it is unavoidable to detect the device family, then you can do that. In this example, we use the [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) class to navigate to a page tailored for the mobile device family where appropriate, and we make sure to fall back to a default page otherwise.
 
 ```csharp
    if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
@@ -53,7 +53,7 @@ ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ```
 
-你的应用还可以通过有效的资源选择因素，确定正在运行它的设备系列。 下面的示例演示了如何强制执行此操作；[**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主题描述了在加载特定于设备系列的资源（基于设备系列规格）时有关该类的更为典型的用例。
+Your app can also determine the device family that it is running on from the resource selection factors that are in effect. The example below shows how to do this imperatively, and the [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) topic describes the more typical use case for the class in loading device family-specific resources based on the device family factor.
 
 ```csharp
 var qualifiers = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
@@ -61,23 +61,23 @@ string deviceFamilyName;
 bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out deviceFamilyName);
 ```
 
-另请参阅[条件编译和自适应代码](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation)。
+Also, see [Conditional compilation, and adaptive code](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation).
 
-## 位置
+## Location
 
 
-当在其应用包清单中声明了位置功能的应用运行于 Windows 10 上时，系统将提示最终用户是否允许此次操作。 无论应用是 Windows Phone 应用商店应用还是 Windows 10 应用都是如此。 因此，如果你的应用显示自己的自定义许可提示，或者如果它提供了一个开/关切换开关，则需要删除它以便仅提示最终用户一次。
-
- 
+When an app that declares the Location capability in its app package manifest runs on Windows 10, the system will prompt the end-user for consent. This is true whether the app is a Windows Phone Store app or a Windows 10 app. So, if your app displays its own custom consent prompt, or if it provides an on-off toggle, then you will want to remove that so that the end-user is only prompted once.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

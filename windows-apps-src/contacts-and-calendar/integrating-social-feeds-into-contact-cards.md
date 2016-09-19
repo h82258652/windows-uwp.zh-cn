@@ -1,31 +1,37 @@
 ---
 author: normesta
-description: 'Shows how to integrate social feeds into the People app'
-MSHAttr: 'PreferredLib:/library/windows/apps'
-title: 'Provide social feeds to the People app'
+description: "显示如何将社交源集成到“人脉”应用"
+MSHAttr: PreferredLib:/library/windows/apps
+title: "向“人脉”应用提供社交源"
+translationtype: Human Translation
+ms.sourcegitcommit: 767acdc847e1897cc17918ce7f49f9807681f4a3
+ms.openlocfilehash: c5b9666d8654a4065bc0e4e400d3e47de4773b8b
+
 ---
 
-# Provide social feeds to the People app
+# 向“人脉”应用提供社交源
 
-Integrate social feed data from your database into the People app.
+将社交源数据从数据库集成到“人脉”应用。
 
-Your feed data will appear in the **What's New** pages of the People app or in the **Profile** page of a contact.
+你的源数据将显示在“人脉”应用的“最近更新”****或联系人的“个人资料”****页面中。
 
-![Social Feeds in People App](images/social-feeds.png)
+用户可以点击某个源项来打开你的应用。
 
-To get started, create a foreground app that tags contacts for social feeds and a background agent that sends feed data to the People app.
+![“人脉”应用中的社交源](images/social-feeds.png)
 
-For a more complete sample, see [Social Info Sample](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp).
+若要开始，请创建一个标记社交源联系人的前台应用和一个向“人脉”应用发送源数据的后台代理。
 
-## Create a foreground app
+有关更完整的示例，请参阅[社交信息示例](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)。
 
-First, create a Universal Windows Platform (UWP) project and then add the **Windows Mobile Extensions for UWP** to it.
+## 创建前台应用
 
-![Mobile Extensions](images/mobile-extensions.png)
+首先，创建一个通用 Windows 平台 (UWP) 项目，然后向它添加**适用于 UWP 的 Windows 移动扩展**。
 
-### Find or create contacts
+![移动扩展](images/mobile-extensions.png)
 
-You can find contacts by using a name, email address, or phone number.
+### 查找或创建联系人
+
+你可以使用姓名、电子邮件地址或电话号码来查找联系人。
 
 ```cs
 ContactStore contactStore = await ContactManager.RequestStoreAsync();
@@ -36,7 +42,7 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 
 Contact contact = contacts[0];
 ```
-You can also create contacts and then add them to a contact list.
+你还可以创建联系人，然后将它们添加到联系人列表。
 
 ```cs
 Contact contact = new Contact();
@@ -67,11 +73,11 @@ else
 await contactList.SaveContactAsync(contact);
 ```
 
-### Tag each contact with an annotation
+### 使用批注标记每个联系人
 
-This *annotation* causes the People app to request feed data for the contact from your background agent.
+此*批注*导致“人脉”应用从后台代理请求联系人的源数据。
 
-As part of the annotation, associate the ID of the contact to an ID that your app uses internally to identify that contact.
+作为批注的一部分，将联系人的 ID 与你的应用在内部用于标识该联系人的 ID 关联。
 
 ```cs
 ContactAnnotationStore annotationStore = await
@@ -94,11 +100,11 @@ annotation.SupportedOperations = ContactAnnotationOperations.SocialFeeds;
 await annotationList.TrySaveAnnotationAsync(annotation);
 
 ```
-### Provision the background agent
+### 预配后台代理
 
-Make sure that the [SocialInfoContract](https://msdn.microsoft.com/library/windows/apps/dn706146.aspx) API contract is available on the device that will run your app.
+请确保 [SocialInfoContract](https://msdn.microsoft.com/library/windows/apps/dn706146.aspx) API 合约在将运行你的应用的设备上可用。
 
-If it's available, then provision the background agent.
+如果可用，则预配后台代理。
 
 ```cs
 if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent(
@@ -114,21 +120,21 @@ if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent(
     }
 }
 ```
-## Create the background agent
+## 创建后台代理
 
-The background agent is a Windows Runtime Component that responds to feed requests from the People app.
+后台代理是一个 Windows 运行时组件，可响应来自“人脉”应用的源请求。
 
-In your agent, you'll respond to those requests by giving the People app feed data from your database.
+在代理中，你将通过提供来自数据库的“人脉”应用源数据来响应这些请求。
 
-### Create a Windows Runtime Component
+### 创建 Windows 运行时组件
 
-Add a **Windows Runtime Component (Universal Windows)** project to your solution.
+将“Windows 运行时组件(通用 Windows)”****项目添加到你的解决方案。
 
-![Windows Runtime Component](images/windows-runtime-component.png)
+![Windows 运行时组件](images/windows-runtime-component.png)
 
-### Register the background agent as an app service
+### 将后台代理注册为应用服务
 
-Register by adding protocol handlers to the ``Extensions`` element of the manifest.
+通过将协议处理程序添加到清单的 ``Extensions`` 元素来注册。
 
 ```xml
 <Extensions>
@@ -137,27 +143,27 @@ Register by adding protocol handlers to the ``Extensions`` element of the manife
   </uap:Extension>
 </Extensions>
 ```
-You can also add these in the **Declarations** tab of the manifest designer in Visual Studio.
+你还可以在 Visual Studio 中的清单设计器的“声明”****选项卡中添加这些协议处理程序。
 
-![App Service in Manifest Designer](images/manifest-designer-app-service.png)
+![清单设计器中的应用服务](images/manifest-designer-app-service.png)
 
-### Request operations from the People app
+### 从“人脉”应用请求操作
 
-Ask the People app what type of data it wants next. The People app will respond to your request with a code that indicates which feed it wants data for.
+询问“人脉”应用接下来它需要哪种类型的数据。 “人脉”应用将通过用于指示它需要哪个源的数据的代码来响应你的请求。
 
-This table describes each feed:
+此表介绍每个源：
 
-| Feed | Description |
+| 源 | 说明 |
 |-------|-------------|
-| Home | Feed that appears in the What's New page of the People app. |
-| Contact | Feed that appears in the What's New page of a contact. |
-| Dashboard | Feed that appears in the contact card next to the profile picture. |
+| 主页 | 显示在“人脉”应用的“最近更新”页面中的源。 |
+| 联系人 | 显示在联系人的“最近更新”页面中的源。 |
+| 仪表板 | 显示在个人资料图片旁边的联系人卡片中的源。 |
 <br>
-You'll ask the People app by requesting an *operation*. Implement the [IBackgroundTask](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx) interface and override the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method.
+你将通过请求 *operation* 来询问“人脉”应用。 实现 [IBackgroundTask](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx) 接口并替代 [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) 方法。
 
-In the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method, send the People app two key-value pairs. One of them contains the version of the protocol and the other one contains the type of the operation.
+在 [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) 方法中，向“人脉”应用发送两个键值对。 其中一个包含协议的版本，另一个包含操作的类型。
 
-Then listen for a response from the People app. That response will contain a code.
+然后，侦听来自“人脉”应用的响应。 该响应将包含代码。
 
 ```cs
 public sealed class BackgroundAgent : IBackgroundTask
@@ -225,41 +231,41 @@ public sealed class BackgroundAgent : IBackgroundTask
 }
 ```
 
-Refer to the ``Type`` element of the [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) property to get that code. Here's a complete list of the codes.
+请参考 [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) 属性的 ``Type`` 元素来获取该代码。 下面是代码的完整列表。
 
-| Type| Description |
+| 类型| 说明 |
 |-----|-------------|
-| 0x10 | A request to the People app for the next operation. |
-| 0x11 | A request from the People app to provide the home feed for the primary user. |
-| 0x13 | A request from the People app to get the contact feed for the selected contact. |
-| 0x15 | A request from the People app to get the dashboard item of the selected contact. |
-| 0x80 | Indicates that the operation is completed. This notifies the People app that the data is now available. |
-| 0xF1 | A message from the People app indicating that it does not require any other operations. The background agent can shut down now. |
+| 0x10 | 针对下一次操作向“人脉”应用发出的请求。 |
+| 0x11 | 来自“人脉”应用的为主要用户提供主页源的请求。 |
+| 0x13 | 来自“人脉”应用的获取选定联系人的联系人源的请求。 |
+| 0x15 | 来自“人脉”应用的获取选定联系人仪表板项的请求。 |
+| 0x80 | 指示操作已完成。 这将通知“人脉”应用数据现在可用。 |
+| 0xF1 | 来自“人脉”应用的消息，指示它不需要任何其他操作。 后台代理现在可以关闭。 |
 <br>
-The [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) property also returns a collection of other key-value pairs that describe the response. Here's a list of them.
+[AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) 属性还返回描述该响应的其他键值对的集合。 下面是它们的列表。
 
-| Key | Type | Description |
+| 密钥 | 类型 | 说明 |
 |-----|------|-------------|
-| Version | UINT32 | (Required) Identifies the version of the message protocol. The upper 16 bits are the major version, and the lower 16 bits are the minor version. |
-| Type | UINT32 | (Required) The type of operation to perform. The previous example uses the Type key to determine what operation the People app is asking for.
-| OperationId | UINT32 | The ID of the operation. |
-| OwnerRemoteId | String | ID that your app uses internally to identify that contact. |
-| LastFeedItemTimeStamp | String | The ID of the last feed item that was retrieved. |
-| LastFeedItemTimeStamp | DateTime | The time stamp of the last feed item that was retrieved. |
-| ItemCount | UINT32 | The number of items that the People app asks for. |
-| IsFetchMore | BOOLEAN | Determines when the internal cache is updated. |
-| ErrorCode | UINT32 | The error code associated with the background agent operation. |
+| 版本 | UINT32 | （必需）表示消息协议的版本。 高 16 位是主要版本，低 16 位是次要版本。 |
+| 类型 | UINT32 | （必需）要执行的操作类型。 上一个示例使用 Type 键确定“人脉”应用正在请求哪种操作。
+| OperationId | UINT32 | 操作的 ID。 |
+| OwnerRemoteId | 字符串 | 你的应用在内部用于标识该联系人的 ID。 |
+| LastFeedItemTimeStamp | 字符串 | 最后一个检索到的源项的 ID。 |
+| LastFeedItemTimeStamp | 日期/时间 | 最后一个检索到的源项的时间戳。 |
+| ItemCount | UINT32 | “人脉”应用要求的项目数。 |
+| IsFetchMore | 布尔 | 确定何时更新内部缓存。 |
+| ErrorCode | UINT32 | 与后台代理操作关联的错误代码。 |
 <br>
-### Provide a data feed to the People app
+### 向“人脉”应用提供数据源
 
-A **Type** value of ``0x11``, ``0x13``, or ``0x15`` is a request from the People app for feed data.  
+``0x11``、``0x13`` 或 ``0x15`` 的 **Type** 值是来自“人脉”应用对源数据的请求。  
 
-The next few snippets show an approach to providing that data to the People app.
+接下来的一些代码段显示向“人脉”应用提供该数据的方法。
 
 > [!NOTE]
-> These snippets come from the [Social Info Sample](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp). They contain references to interfaces, classes and members that are defined elsewhere in the sample. Use these snippets along with the other examples in this topic to understand the flow of tasks and refer to the sample if you're interested in diving further into the stack of interfaces, classes, and types.
+> 这些代码段来自[社交信息示例](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)。 它们包含对在示例中的其他位置定义的接口、类和成员的引用。 使用这些代码段以及本主题中的其他示例来了解任务的流程，如果你有兴趣进一步了解接口、类和类型的堆栈，请参考示例。
 
-**Get contact feed items**
+**获取联系人源项**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -311,7 +317,7 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-**Get dashboard items**
+**获取仪表板项**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -354,7 +360,7 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-**Get home feed items**
+**获取主页源项**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -406,9 +412,9 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-### Send success or failure notification back to the People app
+### 将成功或失败通知发送回“人脉”应用
 
-Encapsulate your calls in a try catch block and then pass back a success or failure message to the People app after you've provided feed data.
+将你的调用封装在 try catch 块中，然后在提供源数据后将成功或失败消息传递回“人脉”应用。
 
 ```cs
 try
@@ -433,3 +439,9 @@ fields.Add("OperationId", operationID);
 await this.mAppServiceConnection.SendMessageAsync(fields);
 
 ```
+
+
+
+<!--HONumber=Aug16_HO4-->
+
+

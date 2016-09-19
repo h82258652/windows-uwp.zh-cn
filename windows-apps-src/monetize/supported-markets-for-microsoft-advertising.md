@@ -1,313 +1,313 @@
 ---
 author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
-description: "了解有关支持间隙和横幅广告的国家和地区。"
-title: "Microsoft Advertising 的受支持市场"
+description: Learn about the supported countries and regions for interstitial and banner ads.
+title: Supported markets for Microsoft advertising
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 
 ---
 
-# Microsoft Advertising 的受支持市场
+# Supported markets for Microsoft advertising
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-以下国家和地区支持间隙广告和横幅广告。
+
+Interstitial ads and banner ads are supported in the following countries and regions.
 
 <span id="interstitialads"/>
-## 间隙广告
+## Interstitial ads
 
--   澳大利亚
+-   Australia
 
--   巴西
+-   Brazil
 
--   加拿大
+-   Canada
 
--   法国
+-   France
 
--   德国
+-   Germany
 
--   意大利
+-   Italy
 
--   日本
+-   Japan
 
--   西班牙
+-   Spain
 
--   英国
+-   United Kingdom
 
--   美国
+-   United States
 
 <span id="bannerads"/>
-## 横幅广告
+## Banner ads
 
 
--   阿富汗
+-   Afghanistan
 
--   阿尔巴尼亚
+-   Albania
 
--   阿尔及利亚
+-   Algeria
 
--   安哥拉
+-   Angola
 
--   安提瓜和巴布达
+-   Antigua and Barbuda
 
--   阿根廷
+-   Argentina
 
--   亚美尼亚
+-   Armenia
 
--   澳大利亚
+-   Australia
 
--   奥地利
+-   Austria
 
--   埃塞拜疆
+-   Azerbaijan
 
--   巴林
+-   Bahrain
 
--   孟加拉国
+-   Bangladesh
 
--   白俄罗斯
+-   Belarus
 
--   比利时
+-   Belgium
 
--   贝宁
+-   Benin
 
--   玻利维亚
+-   Bolivia
 
--   波斯尼亚和黑塞哥维那
+-   Bosnia and Herzegovina
 
--   博茨瓦纳
+-   Botswana
 
--   巴西
+-   Brazil
 
--   布基纳法索
+-   Burkina Faso
 
--   布隆迪
+-   Burundi
 
--   柬埔寨
+-   Cambodia
 
--   喀麦隆
+-   Cameroon
 
--   加拿大
+-   Canada
 
--   中非共和国
+-   Central African Republic
 
--   乍得
+-   Chad
 
--   智利
+-   Chile
 
--   中国
+-   China
 
--   哥伦比亚
+-   Colombia
 
--   科摩罗
+-   Comoros
 
--   刚果
+-   Congo
 
--   刚果民主共和国
+-   Congo (DRC)
 
--   哥斯达黎加
+-   Costa Rica
 
--   科特迪瓦
+-   Côte d'Ivoire
 
--   丹麦
+-   Denmark
 
--   多米尼克
+-   Dominica
 
--   多米尼加共和国
+-   Dominican Republic
 
--   厄瓜多尔
+-   Ecuador
 
--   埃及
+-   Egypt
 
--   萨尔瓦多
+-   El Salvador
 
--   厄立特里亚国
+-   Eritrea
 
--   埃塞俄比亚
+-   Ethiopia
 
--   斐济
+-   Fiji
 
--   芬兰
+-   Finland
 
--   法国
+-   France
 
--   格鲁吉亚
+-   Georgia
 
--   德国
+-   Germany
 
--   加纳
+-   Ghana
 
--   希腊
+-   Greece
 
--   危地马拉
+-   Guatemala
 
--   几内亚
+-   Guinea
 
--   海地
+-   Haiti
 
--   洪都拉斯
+-   Honduras
 
--   香港特别行政区
+-   Hong Kong
 
--   冰岛
+-   Iceland
 
--   印度
+-   India
 
--   印度尼西亚
+-   Indonesia
 
--   伊拉克
+-   Iraq
 
--   爱尔兰
+-   Ireland
 
--   以色列
+-   Israel
 
--   意大利
+-   Italy
 
--   牙买加
+-   Jamaica
 
--   日本
+-   Japan
 
--   约旦
+-   Jordan
 
--   哈萨克斯坦
+-   Kazakhstan
 
--   肯尼亚
+-   Kenya
 
--   科威特
+-   Kuwait
 
--   老挝
+-   Laos
 
--   黎巴嫩
+-   Lebanon
 
--   利比里亚
+-   Liberia
 
--   列支敦士登
+-   Liechtenstein
 
--   卢森堡
+-   Luxembourg
 
--   前南斯拉夫马其顿共和国
+-   Macedonia (FYROM)
 
--   马达加斯加
+-   Madagascar
 
--   马拉维
+-   Malawi
 
--   马来西亚
+-   Malaysia
 
--   马里
+-   Mali
 
--   马耳他
+-   Malta
 
--   毛里求斯
+-   Mauritius
 
--   墨西哥
+-   Mexico
 
--   摩纳哥
+-   Monaco
 
--   蒙古
+-   Mongolia
 
--   黑山共和国
+-   Montenegro
 
--   摩洛哥
+-   Morocco
 
--   莫桑比克
+-   Mozambique
 
--   尼泊尔
+-   Nepal
 
--   新西兰
+-   New Zealand
 
--   尼加拉瓜
+-   Nicaragua
 
--   尼日尔
+-   Niger
 
--   尼日利亚
+-   Nigeria
 
--   挪威
+-   Norway
 
--   阿曼
+-   Oman
 
--   巴基斯坦
+-   Pakistan
 
--   巴拿马
+-   Panama
 
--   巴拉圭
+-   Paraguay
 
--   秘鲁
+-   Peru
 
--   菲律宾
+-   Philippines
 
--   波兰
+-   Poland
 
--   葡萄牙
+-   Portugal
 
--   卡塔尔
+-   Qatar
 
--   俄罗斯
+-   Russia
 
--   卢旺达
+-   Rwanda
 
--   圣文森特和格林纳丁斯
+-   Saint Vincent and the Grenadines
 
--   沙特阿拉伯
+-   Saudi Arabia
 
--   塞内加尔
+-   Senegal
 
--   塞拉利昂
+-   Sierra Leone
 
--   新加坡
+-   Singapore
 
--   索马里
+-   Somalia
 
--   南非
+-   South Africa
 
--   韩国
+-   South Korea
 
--   西班牙
+-   Spain
 
--   斯里兰卡
+-   Sri Lanka
 
--   瑞典
+-   Sweden
 
--   瑞士
+-   Switzerland
 
--   台湾
+-   Taiwan
 
--   塔吉克斯坦
+-   Tajikistan
 
--   坦桑尼亚
+-   Tanzania
 
--   泰国
+-   Thailand
 
--   荷兰
+-   The Netherlands
 
--   东帝汶
+-   Timor-Leste
 
--   多哥
+-   Togo
 
--   汤加
+-   Tonga
 
--   突尼斯
+-   Tunisia
 
--   土耳其
+-   Turkey
 
--   土库曼斯坦
+-   Turkmenistan
 
--   乌干达
+-   Uganda
 
--   乌克兰
+-   Ukraine
 
--   阿拉伯联合酋长国
+-   United Arab Emirates
 
--   英国
+-   United Kingdom
 
--   乌兹别克斯坦
+-   Uzbekistan
 
--   委内瑞拉
+-   Venezuela
 
--   越南
+-   Vietnam
 
--   津巴布韦
+-   Zimbabwe
 
  
 
@@ -315,6 +315,6 @@ ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

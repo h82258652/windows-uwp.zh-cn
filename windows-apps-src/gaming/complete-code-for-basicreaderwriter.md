@@ -1,45 +1,45 @@
 ---
 author: mtoepke
-title: "BasicReaderWriter 的完整代码"
-description: "一般用来读取和写入二进制数据文件的类和方法的完整代码。"
+title: Complete code for BasicReaderWriter
+description: Complete code for a class and methods for reading and writing binary data files in general.
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: 46762d7b7234be9ff7b4c288a09162d4f942a707
+ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
 
 ---
 
-# BasicReaderWriter 的完整代码
+# Complete code for BasicReaderWriter
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-一般用来读取和写入二进制数据文件的类和方法的完整代码。 由 [BasicLoader](complete-code-for-basicloader.md) 类使用。
+Complete code for a class and methods for reading and writing binary data files in general. Used by the [BasicLoader](complete-code-for-basicloader.md) class.
 
-本主题包含以下部分：
+This topic contains these sections:
 
--   [技术](#technologies)
--   [要求](#requirements)
--   [查看代码 (C++)](#view-the-code-c-)
-
-
-## 下载位置
-
-此示例无法下载。
+-   [Technologies](#technologies)
+-   [Requirements](#requirements)
+-   [View the code (C++)](#view-the-code-c-)
 
 
-## 技术
+## Download location
 
-**编程语言** - C++  
-**编程模型** - Windows 运行时
+This sample is not available for download.
 
 
-## 要求
+## Technologies
 
- **最低受支持的客户端** - Windows 10       
- **最低受支持的服务器** - Windows Server 2016 Technical Preview 
+**Programming languages** -  C++  
+**Programming models** - Windows Runtime
 
-## 查看代码 (C++)
+
+## Requirements
+
+ **Minimum supported client** - Windows 10       
+ **Minimum supported server** - Windows Server 2016 Technical Preview 
+
+## View the code (C++)
 
 
 ## BasicReaderWriter.h
@@ -266,6 +266,6 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

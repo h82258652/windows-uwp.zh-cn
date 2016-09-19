@@ -1,46 +1,46 @@
 ---
 author: mtoepke
-title: "GLSL 到 HLSL 参考"
-description: "将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 11 以便创建适用于通用 Windows 平台 (UWP) 的游戏时，需要将 OpenGL 着色器语言 (GLSL) 代码移植到 Microsoft 高级着色器语言 (HLSL) 代码。"
+title: GLSL-to-HLSL reference
+description: You port your OpenGL Shader Language (GLSL) code to Microsoft High Level Shader Language (HLSL) code when you port your graphics architecture from OpenGL ES 2.0 to Direct3D 11 to create a game for Universal Windows Platform (UWP).
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 02a3ba1768b6fa7b09b6c9f637a72d88c0cef604
+ms.openlocfilehash: 1be2c49dc88dcaecfa1d349f9dda7a9cc0619b92
 
 ---
 
-# GLSL 到 HLSL 参考
+# GLSL-to-HLSL reference
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-[将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) 以便为通用 Windows 平台 (UWP) 创建游戏时，需要将 OpenGL 着色器语言 (GLSL) 代码移植到 Microsoft 高级着色器语言 (HLSL) 代码。 此处所谈到的 GLSL 兼容 OpenGL ES 2.0；HLSL 兼容 Direct3D 11。 有关 Direct3D 11 和之前版本的 Direct3D 之间差别的信息，请参阅[功能映射](feature-mapping.md)。
+You port your OpenGL Shader Language (GLSL) code to Microsoft High Level Shader Language (HLSL) code when you [port your graphics architecture from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) to create a game for Universal Windows Platform (UWP). The GLSL that is referred to herein is compatible with OpenGL ES 2.0; the HLSL is compatible with Direct3D 11. For info about the differences between Direct3D 11 and previous versions of Direct3D, see [Feature mapping](feature-mapping.md).
 
--   [比较 OpenGL ES 2.0 与 Direct3D 11](#compare)
--   [将 GLSL 变量移植到 HLSL](#variables)
--   [将 GLSL 类型移植到 HLSL](#types)
--   [将 GLSL 预定义的全局变量移植到 HLSL](#porting_glsl_pre-defined_global_variables_to_hlsl)
--   [将 GLSL 变量移植到 HLSL 的示例](#example1)
-    -   [GLSL 中的 uniform、attribute 和 varying](#uniform___attribute__and_varying_in_glsl)
-    -   [HLSL 中的常量缓冲区和数据传输](#constant_buffers_and_data_transfers_in_hlsl)
--   [将 OpenGL 呈现代码移植到 Direct3D 的示例](#example2)
--   [相关主题](#related_topics)
+-   [Comparing OpenGL ES 2.0 with Direct3D 11](#compare)
+-   [Porting GLSL variables to HLSL](#variables)
+-   [Porting GLSL types to HLSL](#types)
+-   [Porting GLSL pre-defined global variables to HLSL](#porting_glsl_pre-defined_global_variables_to_hlsl)
+-   [Examples of porting GLSL variables to HLSL](#example1)
+    -   [Uniform, attribute, and varying in GLSL](#uniform___attribute__and_varying_in_glsl)
+    -   [Constant buffers and data transfers in HLSL](#constant_buffers_and_data_transfers_in_hlsl)
+-   [Examples of porting OpenGL rendering code to Direct3D](#example2)
+-   [Related topics](#related_topics)
 
-## 比较 OpenGL ES 2.0 与 Direct3D 11
+## Comparing OpenGL ES 2.0 with Direct3D 11
 
 
-OpenGL ES 2.0 和 Direct3D 11 有很多相似之处。 它们都有相似的呈现管道和图形功能。 但是 Direct3D 11 是呈现实现和 API，而不是规范；OpenGL ES 2.0 是呈现规范和 API，而不是实现。 Direct3D 11 和 OpenGL ES 2.0 通常会在以下方面有所不同：
+OpenGL ES 2.0 and Direct3D 11 have many similarities. They both have similar rendering pipelines and graphics features. But Direct3D 11 is a rendering implementation and API, not a specification; OpenGL ES 2.0 is a rendering specification and API, not an implementation. Direct3D 11 and OpenGL ES 2.0 generally differ in these ways:
 
 | OpenGL ES 2.0                                                                                         | Direct3D 11                                                                                                            |
 |-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| 硬件和操作系统规范与供应商提供的实现无关             | 在 Windows 平台上硬件抽象和认证的 Microsoft 实现                                |
-| 对硬件多样性进行了抽象，运行时管理大多数资源                                     | 直接访问硬件布局；应用可以管理资源和处理                                              |
-| 通过第三方库（例如，Simple DirectMedia Layer (SDL)）提供更高级的模块 | 更高级的模块（如 Direct2D）构建在低级模块上，以简化 Windows 应用的开发             |
-| 通过扩展名来区分硬件供应商                                                         | Microsoft 采用常规方法向 API 中添加可选功能，以便这些功能不会特定于任何特定的硬件供应商 |
+| Hardware and operating system agnostic specification with vendor provided implementations             | Microsoft implementation of hardware abstraction and certification on Windows platforms                                |
+| Abstracted for hardware diversity, runtime manages most resources                                     | Direct access to hardware layout; app can manage resources and processing                                              |
+| Provides higher-level modules via third-party libraries (for example, Simple DirectMedia Layer (SDL)) | Higher-level modules, like Direct2D, are built upon lower modules to simplify development for Windows apps             |
+| Hardware vendors differentiate via extensions                                                         | Microsoft adds optional features to the API in a generic way so they aren't specific to any particular hardware vendor |
 
  
 
-GLSL 和 HLSL 通常会在以下方面有所不同：
+GLSL and HLSL generally differ in these ways:
 
 <table>
 <colgroup>
@@ -55,29 +55,29 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">注重过程，以步骤为中心（如 C）</td>
-<td align="left">面向对象，以数据为中心（如 C++）</td>
+<td align="left">Procedural, step-centric (C like)</td>
+<td align="left">Object oriented, data-centric (C++ like)</td>
 </tr>
 <tr class="even">
-<td align="left">着色器编译被集成到了图形 API 中</td>
-<td align="left">HLSL 编译器[将着色器编译为](https://msdn.microsoft.com/library/windows/desktop/bb509633)中间二进制表示，然后 Direct3D 将其传递给驱动程序。
+<td align="left">Shader compilation integrated into the graphics API</td>
+<td align="left">The HLSL compiler [compiles the shader](https://msdn.microsoft.com/library/windows/desktop/bb509633) to an intermediate binary representation before Direct3D passes it to the driver.
 <div class="alert">
-<strong>注意</strong> 此二进制表示与硬件无关。 通常在应用生成时对其进行编译，而不是在应用运行时编译。
+<strong>Note</strong>  This binary representation is hardware independent. It's typically compiled at app build time, rather than at app run time.
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">[可变](#variables)存储修饰符</td>
-<td align="left">通过输入布局声明进行常量缓冲区和数据传输</td>
+<td align="left">[Variable](#variables) storage modifiers</td>
+<td align="left">Constant buffers and data transfers via input layout declarations</td>
 </tr>
 <tr class="even">
-<td align="left"><p>[类型](#types)</p>
-<p>典型的矢量类型：vec2/3/4</p>
-<p>lowp、mediump、highp</p></td>
-<td align="left"><p>典型的矢量类型：float2/3/4</p>
-<p>min10float、min16float</p></td>
+<td align="left"><p>[Types](#types)</p>
+<p>Typical vector type: vec2/3/4</p>
+<p>lowp, mediump, highp</p></td>
+<td align="left"><p>Typical vector type: float2/3/4</p>
+<p>min10float, min16float</p></td>
 </tr>
 <tr class="odd">
 <td align="left">texture2D [Function]</td>
@@ -88,34 +88,34 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 <td align="left">[Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [datatype]</td>
 </tr>
 <tr class="odd">
-<td align="left">行主序矩阵（默认设置）</td>
-<td align="left">列主序矩阵（默认设置）
+<td align="left">Row-major matrices (default)</td>
+<td align="left">Column-major matrices (default)
 <div class="alert">
-<strong>注意</strong> 使用 <strong>row_major</strong> 类型修饰符来更改一个变量的布局。 有关详细信息，请参阅[变量语法](https://msdn.microsoft.com/library/windows/desktop/bb509706)。 还可以指定编译器标志或 pragma 来更改全局默认设置。
+<strong>Note</strong>   Use the <strong>row_major</strong> type-modifier to change the layout for one variable. For more info, see [Variable Syntax](https://msdn.microsoft.com/library/windows/desktop/bb509706). You can also specify a compiler flag or a pragma to change the global default.
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="even">
-<td align="left">片段着色器</td>
-<td align="left">像素着色器</td>
+<td align="left">Fragment shader</td>
+<td align="left">Pixel shader</td>
 </tr>
 </tbody>
 </table>
 
  
 
-> **注意** HLSL 让纹理和采样器作为两个不同的对象。 在 GLSL（如 Direct3D 9）中，纹理绑定是采样器状态的一部分。
+> **Note**  HLSL has textures and samplers as two separate objects. In GLSL, like Direct3D 9, the texture binding is part of the sampler state.
 
  
 
-在 GLSL 中，将大多数 OpenGL 状态呈现为预定义的全局变量。 例如，使用 GLSL，**gl\_Position** 变量可用于指定顶点位置，而 **gl\_FragColor** 变量可用于指定片段颜色。 在 HLSL 中，将 Direct3D 状态从应用代码显式传递到着色器。 例如，对于 Direct3D 和 HLSL，顶点着色器的输入必须与顶点缓冲区中的数据格式相匹配，并且应用代码中常量缓冲区的结构必须与着色器代码中常量缓冲区 ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) 的结构相匹配。
+In GLSL, you present much of the OpenGL state as pre-defined global variables. For example, with GLSL, you use the **gl\_Position** variable to specify vertex position and the **gl\_FragColor** variable to specify fragment color. In HLSL, you pass Direct3D state explicitly from the app code to the shader. For example, with Direct3D and HLSL, the input to the vertex shader must match the data format in the vertex buffer, and the structure of a constant buffer in the app code must match the structure of a constant buffer ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) in shader code.
 
-## 将 GLSL 变量移植到 HLSL
+## Porting GLSL variables to HLSL
 
 
-在 GLSL 中，将修饰符（限定符）应用于全局着色器变量声明，以为该变量提供一个你的着色器中的特定行为。 在 HLSL 中，不需要这些修饰符，因为你使用传递给着色器的参数以及从着色器返回的参数定义了着色器流。
+In GLSL, you apply modifiers (qualifiers) to a global shader variable declaration to give that variable a specific behavior in your shaders. In HLSL, you don’t need these modifiers because you define the flow of the shader with the arguments that you pass to your shader and that you return from your shader.
 
 <table>
 <colgroup>
@@ -124,47 +124,47 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">GLSL 变量行为</th>
-<th align="left">HLSL 等效内容</th>
+<th align="left">GLSL variable behavior</th>
+<th align="left">HLSL equivalent</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>uniform</strong></p>
-<p>将 uniform 变量从应用代码传递到顶点着色器和分段着色器或传递到两者。 必须在使用这些着色器绘制任何三角形之前，设置所有 uniform 的值，以便它们的值在绘制三角形网格的整个过程中保持不变。 这些值都是 uniform。 一些 uniform 是针对整个帧设置的，另一些 uniform 唯一对应于一个特定的顶点像素着色器对。</p>
-<p>uniform 变量是每个多边形的变量。</p></td>
-<td align="left"><p>使用常量缓冲区。</p>
-<p>请参阅[如何：创建常量缓冲区](https://msdn.microsoft.com/library/windows/desktop/ff476896)和[着色器常量](https://msdn.microsoft.com/library/windows/desktop/bb509581)。</p></td>
+<p>You pass a uniform variable from the app code into either or both vertex and fragment shaders. You must set the values of all uniforms before you draw any triangles with those shaders so their values stay the same throughout the drawing of a triangle mesh. These values are uniform. Some uniforms are set for the entire frame and others uniquely to one particular vertex-pixel shader pair.</p>
+<p>Uniform variables are per-polygon variables.</p></td>
+<td align="left"><p>Use constant buffer.</p>
+<p>See [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896) and [Shader Constants](https://msdn.microsoft.com/library/windows/desktop/bb509581).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>varying</strong></p>
-<p>在顶点着色器内初始化一个 varying 变量，并将其传递到片段着色器中具有相同名称的 varying 变量。 由于顶点着色器仅设置每个顶点上的 varying 变量的值，因此光栅器会插入这些值（采用透视校正的方式），以生成每个要传递到片段着色器中的片段值。 这些变量在各个三角形之间有所不同。</p></td>
-<td align="left">使用从顶点着色器返回的结构作为像素着色器的输入。 确保语义值相匹配。</td>
+<p>You initialize a varying variable inside the vertex shader and pass it through to an identically named varying variable in the fragment shader. Because the vertex shader only sets the value of the varying variables at each vertex, the rasterizer interpolates those values (in a perspective-correct manner) to generate per fragment values to pass into the fragment shader. These variables vary across each triangle.</p></td>
+<td align="left">Use the structure that you return from your vertex shader as the input to your pixel shader. Make sure the semantic values match.</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性</strong></p>
-<p>attribute 只是你从应用代码传递到顶点着色器的顶点描述的一部分。 与 uniform 不同，你为每个顶点设置每个 attribute 的值，但却允许每个顶点拥有不同的值。 attribute 变量是每个顶点的变量。</p></td>
-<td align="left"><p>在 Direct3D 应用代码中定义顶点缓冲区并将其与顶点着色器中定义的顶点输入相匹配。 也可以定义索引缓冲区。 请参阅[如何：创建顶点缓冲区](https://msdn.microsoft.com/library/windows/desktop/ff476899)和[如何：创建索引缓冲区](https://msdn.microsoft.com/library/windows/desktop/ff476897)。</p>
-<p>在 Direct3D 应用代码中创建输入布局并将语义值与顶点输入中的值相匹配。 请参阅[创建输入布局](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout)。</p></td>
+<td align="left"><p><strong>attribute</strong></p>
+<p>An attribute is a part of the description of a vertex that you pass from the app code to the vertex shader alone. Unlike a uniform, you set each attribute’s value for each vertex, which, in turn, allows each vertex to have a different value. Attribute variables are per-vertex variables.</p></td>
+<td align="left"><p>Define a vertex buffer in your Direct3D app code and match it to the vertex input defined in the vertex shader. Optionally, define an index buffer. See [How to: Create a Vertex Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476899) and [How to: Create an Index Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476897).</p>
+<p>Create an input layout in your Direct3D app code and match semantic values with those in the vertex input. See [Create the input layout](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
-<p>常量编译到着色器中，从不更改。</p></td>
-<td align="left">使用 <strong>static const</strong>。 <strong>static</strong> 表示未向常量缓冲区显示该值，<strong>const</strong> 表示着色器无法更改该值。 因此，在编译时我们根据它的初始值来了解该值。</td>
+<p>Constants that are compiled into the shader and never change.</p></td>
+<td align="left">Use a <strong>static const</strong>. <strong>static</strong> means the value isn't exposed to constant buffers, <strong>const</strong> means the shader can't change the value. So, the value is known at compile time based on its initializer.</td>
 </tr>
 </tbody>
 </table>
 
  
 
-在 GLSL 中，没有修饰符的变量只是普通的全局变量，它们是每个着色器的私有变量。
+In GLSL, variables without modifiers are just ordinary global variables that are private to each shader.
 
-当将数据传递到纹理（在 HLSL 中为 [Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525)）及其关联的采样器 （在 HLSL 中为 [SamplerState](https://msdn.microsoft.com/library/windows/desktop/bb509644)）时，通常会在像素着色器中将它们声明为全局变量。
+When you pass data to textures ([Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) in HLSL) and their associated samplers ([SamplerState](https://msdn.microsoft.com/library/windows/desktop/bb509644) in HLSL), you typically declare them as global variables in the pixel shader.
 
-## 将 GLSL 类型移植到 HLSL
+## Porting GLSL types to HLSL
 
 
-使用该表将 GLSL 类型移植到 HLSL。
+Use this table to port your GLSL types to HLSL.
 
 <table>
 <colgroup>
@@ -173,88 +173,88 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">GLSL 类型</th>
-<th align="left">HLSL 类型</th>
+<th align="left">GLSL type</th>
+<th align="left">HLSL type</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">标量类型：float、int、bool</td>
-<td align="left"><p>标量类型：float、int、bool</p>
-<p>also、uint、double</p>
-<p>有关详细信息，请参阅[标量类型](https://msdn.microsoft.com/library/windows/desktop/bb509646)。</p></td>
+<td align="left">scalar types: float, int, bool</td>
+<td align="left"><p>scalar types: float, int, bool</p>
+<p>also, uint, double</p>
+<p>For more info, see [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>矢量类型</p>
+<td align="left"><p>vector type</p>
 <ul>
-<li>浮点矢量：vec2、vec3、vec4</li>
-<li>布尔矢量：bvec2、bvec3、bvec4</li>
-<li>有符号整数矢量：ivec2、ivec3、ivec4</li>
+<li>floating-point vector: vec2, vec3, vec4</li>
+<li>Boolean vector: bvec2, bvec3, bvec4</li>
+<li>signed integer vector: ivec2, ivec3, ivec4</li>
 </ul></td>
-<td align="left"><p>矢量类型</p>
+<td align="left"><p>vector type</p>
 <ul>
-<li>float2、float3、float4 和 float1</li>
-<li>bool2、bool3、bool4 和 bool1</li>
-<li>int2、int3、int4 和 int1</li>
-<li><p>这些类型也都有类似于 float、bool 和 int 的矢量扩展：</p>
+<li>float2, float3, float4, and float1</li>
+<li>bool2, bool3, bool4, and bool1</li>
+<li>int2, int3, int4, and int1</li>
+<li><p>These types also have vector expansions similar to float, bool, and int:</p>
 <ul>
 <li>uint</li>
-<li>min10float、min16float</li>
-<li>min12int、min16int</li>
+<li>min10float, min16float</li>
+<li>min12int, min16int</li>
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>有关详细信息，请参阅[矢量类型](https://msdn.microsoft.com/library/windows/desktop/bb509707)和[关键字](https://msdn.microsoft.com/library/windows/desktop/bb509568)。</p>
-<p>vector 是定义为 float4 的 also 类型 (typedef vector &lt;float, 4&gt; vector;)。 有关详细信息，请参阅[用户定义的类型](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
+<p>For more info, see [Vector Type](https://msdn.microsoft.com/library/windows/desktop/bb509707) and [Keywords](https://msdn.microsoft.com/library/windows/desktop/bb509568).</p>
+<p>vector is also type defined as float4 (typedef vector &lt;float, 4&gt; vector;). For more info, see [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>矩阵类型</p>
+<td align="left"><p>matrix type</p>
 <ul>
-<li>mat2: 2x2 浮点矩阵</li>
-<li>mat3: 3x3 浮点矩阵</li>
-<li>mat4: 4x4 浮点矩阵</li>
+<li>mat2: 2x2 float matrix</li>
+<li>mat3: 3x3 float matrix</li>
+<li>mat4: 4x4 float matrix</li>
 </ul></td>
-<td align="left"><p>矩阵类型</p>
+<td align="left"><p>matrix type</p>
 <ul>
 <li>float2x2</li>
 <li>float3x3</li>
 <li>float4x4</li>
-<li>also、float1x1、float1x2、float1x3、float1x4、float2x1、float2x3、float2x4、float3x1、float3x2、float3x4、float4x1、float4x2、float4x3</li>
-<li><p>这些类型也都有类似于 float 的矩阵扩展：</p>
+<li>also, float1x1, float1x2, float1x3, float1x4, float2x1, float2x3, float2x4, float3x1, float3x2, float3x4, float4x1, float4x2, float4x3</li>
+<li><p>These types also have matrix expansions similar to float:</p>
 <ul>
-<li>int、uint、bool</li>
-<li>min10float、min16float</li>
-<li>min12int、min16int</li>
+<li>int, uint, bool</li>
+<li>min10float, min16float</li>
+<li>min12int, min16int</li>
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>也可以使用[矩阵类型](https://msdn.microsoft.com/library/windows/desktop/bb509623)来定义矩阵。</p>
-<p>例如：matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>matrix 是定义为 float4x4 的 also 类型 (typedef matrix &lt;float, 4, 4&gt; matrix;)。 有关详细信息，请参阅[用户定义的类型](https://msdn.microsoft.com/library/windows/desktop/bb509702)。</p></td>
+<p>You can also use the [matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623) to define a matrix.</p>
+<p>For example: matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
+<p>matrix is also type defined as float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). For more info, see [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>float、int、sampler 的精度限定符</p>
+<td align="left"><p>precision qualifiers for float, int, sampler</p>
 <ul>
 <li><p>highp</p>
-<p>该限定符提供最低精度要求，该要求大于 min16float 提供的要求，但小于完整的 32 位浮点。 HLSL 中的等效内容为：</p>
+<p>This qualifier provides minimum precision requirements that are greater than that provided by min16float and less than a full 32-bit float. Equivalent in HLSL is:</p>
 <p>highp float -&gt; float</p>
 <p>highp int -&gt; int</p></li>
 <li><p>mediump</p>
-<p>该限定符应用于 float 和 int，它等效于 HLSL 中的 min16float 和 min12int。 最低 10 位尾数，与 min10float 不同。</p></li>
+<p>This qualifier applied to float and int is equivalent to min16float and min12int in HLSL. Minimum 10 bits of mantissa, not like min10float.</p></li>
 <li><p>lowp</p>
-<p>该限定符应用于 float，它提供的浮点范围为 -2 到 2。 等效于 HLSL 中的 min10float。</p></li>
+<p>This qualifier applied to float provides a floating point range of -2 to 2. Equivalent to min10float in HLSL.</p></li>
 </ul></td>
-<td align="left"><p>精度类型</p>
+<td align="left"><p>precision types</p>
 <ul>
-<li>min16float：最低 16 位浮点值</li>
+<li>min16float: minimum 16-bit floating point value</li>
 <li><p>min10float</p>
-<p>最低固定点有符号 2.8 位值（2 位整数和 8 位小数部分）。 8 位小数部分可以包括 1，而非排除 1，目的是为它提供完整的包含范围 -2 到 2。</p></li>
-<li>min16int：最低 16 位有符号整数</li>
-<li><p>min12int：最低 12 位有符号整数</p>
-<p>该类型用于 10Level9（[9_x 功能级别](https://msdn.microsoft.com/library/windows/desktop/ff476876)），其中整数由浮点数来表示。 这是在使用 16 位浮点数模拟整数时可以获得的精度。</p></li>
-<li>min16uint：最低 16 位无符号整数</li>
+<p>Minimum fixed-point signed 2.8 bit value (2 bits of whole number and 8 bits fractional component). The 8-bit fractional component can be inclusive of 1 instead of exclusive to give it the full inclusive range of -2 to 2.</p></li>
+<li>min16int: minimum 16-bit signed integer</li>
+<li><p>min12int: minimum 12-bit signed integer</p>
+<p>This type is for 10Level9 ([9_x feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876)) in which integers are represented by floating point numbers. This is the precision you can get when you emulate an integer with a 16-bit floating point number.</p></li>
+<li>min16uint: minimum 16-bit unsigned integer</li>
 </ul>
-<p>有关详细信息，请参阅[标量类型](https://msdn.microsoft.com/library/windows/desktop/bb509646)和[使用 HLSL 最低精度](https://msdn.microsoft.com/library/windows/desktop/hh968108)。</p></td>
+<p>For more info, see [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646) and [Using HLSL minimum precision](https://msdn.microsoft.com/library/windows/desktop/hh968108).</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
@@ -269,10 +269,10 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 
  
 
-## 将 GLSL 预定义的全局变量移植到 HLSL
+## Porting GLSL pre-defined global variables to HLSL
 
 
-使用该表将 GLSL 预定义的全局变量移植到 HLSL。
+Use this table to port GLSL pre-defined global variables to HLSL.
 
 <table>
 <colgroup>
@@ -281,112 +281,112 @@ GLSL 和 HLSL 通常会在以下方面有所不同：
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">GLSL 预定义的全局变量</th>
-<th align="left">HLSL 语义</th>
+<th align="left">GLSL pre-defined global variable</th>
+<th align="left">HLSL semantics</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>gl_Position</strong></p>
-<p>该变量为 <strong>vec4</strong> 类型。</p>
-<p>顶点位置</p>
-<p>例如 - gl_Position = position;</p></td>
+<p>This variable is type <strong>vec4</strong>.</p>
+<p>Vertex position</p>
+<p>for example - gl_Position = position;</p></td>
 <td align="left"><p>SV_Position</p>
-<p>在 Direct3D 9 中为 POSITION</p>
-<p>该语义为 <strong>float4</strong> 类型。</p>
-<p>顶点着色器输出</p>
-<p>顶点位置</p>
-<p>例如 - float4 vPosition : SV_Position;</p></td>
+<p>POSITION in Direct3D 9</p>
+<p>This semantic is type <strong>float4</strong>.</p>
+<p>Vertex shader output</p>
+<p>Vertex position</p>
+<p>for example - float4 vPosition : SV_Position;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_PointSize</strong></p>
-<p>该变量为 <strong>float</strong> 类型。</p>
-<p>点大小</p></td>
+<p>This variable is type <strong>float</strong>.</p>
+<p>Point size</p></td>
 <td align="left"><p>PSIZE</p>
-<p>除非你的目标是 Direct3D 9，否则没有意义</p>
-<p>该语义为 <strong>float</strong> 类型。</p>
-<p>顶点着色器输出</p>
-<p>点大小</p></td>
+<p>No meaning unless you target Direct3D 9</p>
+<p>This semantic is type <strong>float</strong>.</p>
+<p>Vertex shader output</p>
+<p>Point size</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>gl_FragColor</strong></p>
-<p>该变量为 <strong>vec4</strong> 类型。</p>
-<p>片段颜色</p>
-<p>例如 - gl_FragColor = vec4(colorVarying, 1.0);</p></td>
+<p>This variable is type <strong>vec4</strong>.</p>
+<p>Fragment color</p>
+<p>for example - gl_FragColor = vec4(colorVarying, 1.0);</p></td>
 <td align="left"><p>SV_Target</p>
-<p>在 Direct3D 9 中为 COLOR</p>
-<p>该语义为 <strong>float4</strong> 类型。</p>
-<p>像素着色器输出</p>
-<p>像素颜色</p>
-<p>例如 - float4 Color[4] : SV_Target;</p></td>
+<p>COLOR in Direct3D 9</p>
+<p>This semantic is type <strong>float4</strong>.</p>
+<p>Pixel shader output</p>
+<p>Pixel color</p>
+<p>for example - float4 Color[4] : SV_Target;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FragData[n]</strong></p>
-<p>该变量为 <strong>vec4</strong> 类型。</p>
-<p>颜色附件 n 的片段颜色</p></td>
+<p>This variable is type <strong>vec4</strong>.</p>
+<p>Fragment color for color attachment n</p></td>
 <td align="left"><p>SV_Target[n]</p>
-<p>该语义为 <strong>float4</strong> 类型。</p>
-<p>n 呈现目标中存储的像素着色器输出值，其中 0 &lt;= n &lt;= 7。</p></td>
+<p>This semantic is type <strong>float4</strong>.</p>
+<p>Pixel shader output value that is stored in n render target, where 0 &lt;= n &lt;= 7.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>gl_FragCoord</strong></p>
-<p>该变量为 <strong>vec4</strong> 类型。</p>
-<p>帧缓冲区中的片段位置</p></td>
+<p>This variable is type <strong>vec4</strong>.</p>
+<p>Fragment position within frame buffer</p></td>
 <td align="left"><p>SV_Position</p>
-<p>在 Direct3D 9 中不可用</p>
-<p>该语义为 <strong>float4</strong> 类型。</p>
-<p>像素着色器输入</p>
-<p>屏幕空间坐标</p>
-<p>例如 - float4 screenSpace : SV_Position</p></td>
+<p>Not available in Direct3D 9</p>
+<p>This semantic is type <strong>float4</strong>.</p>
+<p>Pixel shader input</p>
+<p>Screen space coordinates</p>
+<p>for example - float4 screenSpace : SV_Position</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FrontFacing</strong></p>
-<p>该变量为 <strong>bool</strong> 类型。</p>
-<p>确定片段是否属于正面基元。</p></td>
+<p>This variable is type <strong>bool</strong>.</p>
+<p>Determines whether fragment belongs to a front-facing primitive.</p></td>
 <td align="left"><p>SV_IsFrontFace</p>
-<p>在 Direct3D 9 中为 VFACE</p>
-<p>SV_IsFrontFace 为 <strong>bool</strong> 类型。</p>
-<p>VFACE 为 <strong>float</strong> 类型。</p>
-<p>像素着色器输入</p>
-<p>基元朝向</p></td>
+<p>VFACE in Direct3D 9</p>
+<p>SV_IsFrontFace is type <strong>bool</strong>.</p>
+<p>VFACE is type <strong>float</strong>.</p>
+<p>Pixel shader input</p>
+<p>Primitive facing</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>gl_PointCoord</strong></p>
-<p>该变量为 <strong>vec2</strong> 类型。</p>
-<p>某个点中的片段位置（仅限点光栅化）</p></td>
+<p>This variable is type <strong>vec2</strong>.</p>
+<p>Fragment position within a point (point rasterization only)</p></td>
 <td align="left"><p>SV_Position</p>
-<p>在 Direct3D 9 中为 VPOS</p>
-<p>SV_Position 为 <strong>float4</strong> 类型。</p>
-<p>VPOS 为 <strong>float2</strong> 类型。</p>
-<p>像素着色器输入</p>
-<p>屏幕空间中的像素或示例位置</p>
-<p>例如 - float4 pos : SV_Position</p></td>
+<p>VPOS in Direct3D 9</p>
+<p>SV_Position is type <strong>float4</strong>.</p>
+<p>VPOS is type <strong>float2</strong>.</p>
+<p>Pixel shader input</p>
+<p>The pixel or sample position in screen space</p>
+<p>for example - float4 pos : SV_Position</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FragDepth</strong></p>
-<p>该变量为 <strong>float</strong> 类型。</p>
-<p>深度缓冲区数据</p></td>
+<p>This variable is type <strong>float</strong>.</p>
+<p>Depth buffer data</p></td>
 <td align="left"><p>SV_Depth</p>
-<p>在 Direct3D 9 中为 DEPTH</p>
-<p>SV_Depth 为 <strong>float</strong> 类型。</p>
-<p>像素着色器输出</p>
-<p>深度缓冲区数据</p></td>
+<p>DEPTH in Direct3D 9</p>
+<p>SV_Depth is type <strong>float</strong>.</p>
+<p>Pixel shader output</p>
+<p>Depth buffer data</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-使用语义指定位置、颜色等作为顶点着色器输入和像素着色器输入。 必须将输入布局中的语义值与顶点着色器输入相匹配。 例如，请参阅[将 GLSL 变量移植到 HLSL 的示例](#example1)。 有关 HLSL 语义的详细信息，请参阅[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
+You use semantics to specify position, color, and so on for vertex shader input and pixel shader input. You must match the semantics values in the input layout with the vertex shader input. For examples, see [Examples of porting GLSL variables to HLSL](#example1). For more info about the HLSL semantics, see [Semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647).
 
-## 将 GLSL 变量移植到 HLSL 的示例
+## Examples of porting GLSL variables to HLSL
 
 
-下面我们介绍在 OpenGL/GLSL 代码中使用 GLSL 变量的示例，然后介绍在 Direct3D/HLSL 代码中的等效示例。
+Here we show examples of using GLSL variables in OpenGL/GLSL code and then the equivalent example in Direct3D/HLSL code.
 
-### GLSL 中的 uniform、attribute 和 varying
+### Uniform, attribute, and varying in GLSL
 
-OpenGL 应用代码
+OpenGL app code
 
 ``` syntax
 // Uniform values can be set in app code and then processed in the shader code.
@@ -405,7 +405,7 @@ attribute vec3 color;
 varying vec3 colorVarying;
 ```
 
-GLSL 顶点着色器代码
+GLSL vertex shader code
 
 ``` syntax
 //The shader entry point is the main method.
@@ -416,7 +416,7 @@ gl_Position = position; //Copy the position to the gl_Position pre-defined globa
 }
 ```
 
-GLSL 片段着色器代码
+GLSL fragment shader code
 
 ``` syntax
 void main()
@@ -428,11 +428,11 @@ gl_FragColor = vec4(colorVarying, 1.0);
 }
 ```
 
-### HLSL 中的常量缓冲区和数据传输
+### Constant buffers and data transfers in HLSL
 
-下面是如何将数据传递到 HLSL 顶点着色器，然后流动到像素着色器的示例。 在你的应用代码中，定义一个顶点缓冲区和一个常量缓冲区。 然后，在你的顶点着色器代码中，将常量缓冲区定义为 [cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581) 并存储每个顶点数据以及像素着色器输入数据。 这里我们使用名为 **VertexShaderInput** 和 **PixelShaderInput** 的结构。
+Here is an example of how you pass data to the HLSL vertex shader that then flows through to the pixel shader. In your app code, define a vertex and a constant buffer. Then, in your vertex shader code, define the constant buffer as a [cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581) and store the per-vertex data and the pixel shader input data. Here we use structures called **VertexShaderInput** and **PixelShaderInput**.
 
-Direct3D 应用代码
+Direct3D app code
 
 ```cpp
 struct ConstantBuffer
@@ -457,7 +457,7 @@ struct SimpleCubeVertex
 // Create vertex and index buffers that define a geometry.
 ```
 
-HLSL 顶点着色器代码
+HLSL vertex shader code
 
 ``` syntax
 cbuffer ModelViewProjectionCB : register( b0 )
@@ -489,7 +489,7 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-HLSL 像素着色器代码
+HLSL pixel shader code
 
 ``` syntax
 // Collect input from the vertex shader. 
@@ -507,12 +507,12 @@ float4 main(PixelShaderInput input) : SV_Target
 }
 ```
 
-## 将 OpenGL 呈现代码移植到 Direct3D 的示例
+## Examples of porting OpenGL rendering code to Direct3D
 
 
-下面我们介绍一个在 OpenGL ES 2.0 代码中进行呈现的示例，然后介绍在 Direct3D 11 代码中的等效示例。
+Here we show an example of rendering in OpenGL ES 2.0 code and then the equivalent example in Direct3D 11 code.
 
-OpenGL 呈现代码
+OpenGL rendering code
 
 ``` syntax
 // Bind shaders to the pipeline. 
@@ -538,7 +538,7 @@ glVertexAttribPointer(m_colorLocation, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 glDrawArray(GL_TRIANGLES, 0, 3);
 ```
 
-Direct3D 呈现代码
+Direct3D rendering code
 
 ```cpp
 // Bind the vertex shader and pixel shader to the pipeline.
@@ -556,21 +556,21 @@ m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST
 m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 ```
 
-## 相关主题
+## Related topics
 
 
-* [从 OpenGL ES 2.0 移植到 Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)
-
- 
+* [Port from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

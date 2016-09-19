@@ -1,88 +1,95 @@
 ---
 author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
-description: "了解如何安装 Microsoft Advertising 库。"
-title: "安装 Microsoft Advertising 库"
+description: Learn about how to install the Microsoft advertising libraries.
+title: Install the Microsoft advertising libraries
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
 
 
 ---
 
-# 安装 Microsoft Advertising 库
+# Install the Microsoft advertising libraries
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-适用于 Windows 应用的 Microsoft Advertising 库包含在 [Microsoft 官方商城协定和盈利 SDK](http://aka.ms/store-em-sdk) 中。 此 SDK 是对 Visual Studio 2015 或 Visual Studio 2013 的扩展。
-
-有关安装说明，请参阅[使用 Microsoft 官方商城协定和盈利 SDK 来获取应用收益并吸引客户](https://msdn.microsoft.com/windows/uwp/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk)。
-
-> **注意** 已使用 Visual Studio 2015 安装了 Windows 10 Anniversary SDK Preview Build 14295 或更高版本后，如果你想要将广告添加到 JavaScript/HTML 应用，还必须安装 WinJS 库。 此库过去包含在以前版本的 Windows SDK（适用于 Windows 10）中，但从 Windows 10 Anniversary SDK Preview Build 14295 开始，此库必须单独安装。 若要安装 WinJS，请参阅[获取 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
-
-## 广告和广告中介的库名称
 
 
-Microsoft 官方商城协定和盈利 SDK 包括两组广告库：适用于 Microsoft Advertising 的库（提供适用于 XAML 和 JavaScript/HTML 应用的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 类）和适用于广告中介库的库（提供 **AdMediatorControl** 类）。
+For Universal Windows Platform (UWP) apps for Windows 10, the Microsoft advertising libraries are included in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). This SDK is an extension to Visual Studio 2015. For more information about this SDK, see [this article](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk).
 
-本文档介绍如何在 Microsoft Advertising 库中使用 **AdControl** 和 **InterstitialAd** 类，以显示来自 Microsoft 的横幅或视频间隙广告。 有关使用广告中介的信息，请参阅[使用广告中介使收益最大化](https://msdn.microsoft.com/windows/uwp/monetize/use-ad-mediation-to-maximize-revenue)。
+> **Note**&nbsp;&nbsp;If you have installed Windows 10 SDK (14393) or later, you must also install the WinJS library if you want to add ads to a JavaScript/HTML UWP app. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK (14393) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+
+For XAML and JavaScript/HTML apps for Windows 8.1 and Windows Phone 8.x, the Microsoft advertising libraries are included in the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). This SDK is an extension to Visual Studio 2015 and Visual Studio 2013.
+
+For Windows Phone Silverlight 8.x apps, the Microsoft advertising libraries are available in a NuGet package that you can download and install to your project. For more information, see [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
+
+## Library names for advertising
 
 
-必须在项目中引用相应的库，才能使用应用代码中的任意广告控件。 下表列出了 Microsoft 官方商城协定和盈利 SDK 中每个库的名称（显示在 Visual Studio 中的“引用管理器”****对话框中）。
+There are several different advertising libraries available in the Microsoft Store Services SDK and Microsoft Advertising SDK for Windows and Windows Phone 8.x:
+
+* The Microsoft Store Services SDK includes the Microsoft advertising libraries (which provide the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) and [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) classes for XAML and JavaScript/HTML apps).
+
+* The Microsoft Advertising SDK for Windows and Windows Phone 8.x includes two sets of advertising libraries: the libraries for Microsoft advertising (which provide the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) and [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)  classes for XAML and JavaScript/HTML apps) and the libraries for ad mediation (which provide the **AdMediatorControl** class).
+
+This documentation describes how to use the **AdControl** and **InterstitialAd** classes in the Microsoft advertising libraries to display banner or video interstitial ads. For information about using ad mediation for Windows 8.1 and Windows Phone 8.x apps, see [Use ad mediation to maximize revenue](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
+
+>**Note**&nbsp;&nbsp;Ad mediation using the **AdMediatorControl** class is currently not supported for UWP apps for Windows 10. Server-side mediation is coming soon for UWP apps using the same APIs for banner ads (**AdControl**) and video interstitial ads (**InterstitialAd**).
+
+Before you can use the any of the advertising controls in your app code, you must reference the appropriate library in your project. The following tables lists the names of each of the libraries as they appear in in the **Reference Manager** dialog box in Visual Studio.
 
 
 <table>
     <thead>
-        <tr><th>控件名称</th><th>项目类型</th><th>引用管理器中的库名</th><th>版本号</th></tr>
+        <tr><th>Control name</th><th>Project type</th><th>Library name in Reference Manager</th><th>Version number</th></tr>
     </thead>
     <tbody>
     <tr>
-            <td rowspan="3">**AdControl** 和 **InterstitialAd** (XAML)</td>
+            <td rowspan="3">**AdControl** and **InterstitialAd** (XAML)</td>
             <td>UWP</td>
-            <td>适用于 XAML 的 Microsoft Advertising SDK</td>
+            <td>Microsoft Advertising SDK for XAML</td>
             <td>10.0</td>
         </tr>
         <tr>
             <td>Windows 8.1</td>
-            <td>适用于 Windows 8.1 XAML 的广告中介 SDK</td>
+            <td>Ad Mediator SDK for Windows 8.1 XAML</td>
             <td>1.0</td>
         </tr>
         <tr>
             <td>Windows Phone 8.1</td>
-            <td>适用于 Windows Phone 8.1 XAML 的广告中介 SDK</td>
+            <td>Ad Mediator SDK for Windows Phone 8.1 XAML</td>
             <td>1.0</td>
         </tr>
     <tr>
-            <td rowspan="3">**AdControl** 和 **InterstitialAd** (JavaScript/HTML)</td>
+            <td rowspan="3">**AdControl** and **InterstitialAd** (JavaScript/HTML)</td>
             <td>UWP</td>
-            <td>适用于 JavaScript 的 Microsoft Advertising SDK</td>
+            <td>Microsoft Advertising SDK for JavaScript</td>
             <td>10.0</td>
         </tr>
         <tr>
             <td>Windows 8.1</td>
-            <td>适用于 Windows 8.1 本机 (JS) 的 Microsoft Advertising SDK</td>
+            <td>Microsoft Advertising SDK for Windows 8.1 Native (JS)</td>
             <td>8.5</td>
         </tr>
         <tr>
             <td>Windows Phone 8.1</td>
-            <td>适用于 Windows Phone 8.1 本机 (JS) 的 Microsoft Advertising SDK</td>
+            <td>Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)</td>
             <td>8.5</td>
         </tr>
     <tr>
-            <td rowspan="3">**AdMediatorControl**（仅限 XAML）</td>
+            <td rowspan="3">**AdMediatorControl** (XAML only)</td>
             <td>UWP</td>
-            <td>Microsoft Advertising 通用 SDK</td>
+            <td>Microsoft Advertising Universal SDK</td>
             <td>1.0</td>
         </tr>
         <tr>
             <td>Windows 8.1</td>
-            <td>适用于 Windows 8.1 XAML 的广告中介 SDK</td>
+            <td>Ad Mediator SDK for Windows 8.1 XAML</td>
             <td>1.0</td>
         </tr>
         <tr>
             <td>Windows Phone 8.1</td>
-            <td>适用于 Windows Phone 8.1 XAML 的广告中介 SDK</td>
+            <td>Ad Mediator SDK for Windows Phone 8.1 XAML</td>
             <td>1.0</td>
         </tr>
     </tbody>
@@ -96,6 +103,6 @@ Microsoft 官方商城协定和盈利 SDK 包括两组广告库：适用于 Micr
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

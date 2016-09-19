@@ -1,144 +1,145 @@
 ---
 author: jnHs
-Description: "你可以为已在 Windows 应用商店中发布的应用和应用内产品生成促销充值码。"
-title: "生成促销充值码"
+Description: You can generate promotional codes for an app or add-on that you have published in the Windows Store.
+title: Generate promotional codes
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 translationtype: Human Translation
-ms.sourcegitcommit: df994a3bbda9f6d4df0ee2dd6c2cb646d91a0bfc
-ms.openlocfilehash: bfea802fb4a6efcfe34121802ce49f20a9b0305e
+ms.sourcegitcommit: a92f642b2d28eb801106388648455752c10e013a
+ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 
 ---
 
-# 生成促销充值码
+# Generate promotional codes
 
 
-你可以为已在 Windows 应用商店中发布的应用和应用内产品生成促销充值码。 促销充值码是让有影响力的用户能够免费访问你的应用或 IAP 的一种简便方式。 你还可以使用促销充值码来使用户免费访问应用或 IAP，或者对 Windows 10 进行 [Beta 测试](beta-testing-and-targeted-distribution.md)，以此来处理客户服务方案。
+You can generate promotional codes for an app or add-on that you have published in the Windows Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for [beta testing](beta-testing-and-targeted-distribution.md) with Windows 10.
 
-每个促销充值码都具有对应的唯一可兑换的 URL，你可以将其分发给用户。 用户只需单击 URL 即可兑换充值码并从 Windows 应用商店安装应用或 IAP。
+Each promotional code has a corresponding unique redeemable URL that you can distribute to a single user or to a group of users. The user can simply click the URL to redeem the code and install your app or add-on from the Windows Store.
 
-在 Windows 开发人员仪表板上，你可以：
+On the Windows Dev Center dashboard, you can:
 
--   为你的应用预订一组促销充值码。
--   下载已完成的促销充值码订单。
--   查看你的应用的促销充值码，包括：
-    -   你的所有应用的促销充值码订单的摘要（位于“仪表板概述”****页面上），以及每个应用各自的促销充值码订单的摘要（位于每个应用的“应用概述”****页面上）。
-    -   每个应用的促销充值码订单的详细摘要（位于每个应用的“促销充值码”****页面上）。
+-   Order a set of promotional codes for your app.
+-   Download a fulfilled promotional codes order.
+-   Review promotional code usage for your apps, including:
+    -   Summaries of promotional code orders for all your apps (on the **Dashboard overview** page) and for each app individually (on the **App overview** page for each app).
+    -   A detailed summary of promotional code orders for each app (on the **Promotional codes** page for each app).
 
-> **注意** 即使你已在应用的[定价和可用性](set-app-pricing-and-availability.md)仪表板页面上选择了“隐藏此应用并阻止获取。但具有促销充值码的客户仍可以在 Windows 10 设备上下载它”****选项，你仍然可以生成促销充值码。 你的应用必须先通过[应用认证过程](the-app-certification-process.md)的最终发布阶段，然后用户才能兑换促销充值码来安装应用。
+> **Note**  You can generate promotional codes even if you have selected the **Hide this app and prevent acquisition. Customers with a promotional code can still download it on Windows 10 devices** option on the [Pricing and availability](set-app-pricing-and-availability.md) dashboard page for your app. Your app must pass the final publishing phase of the [app certification process](the-app-certification-process.md) before users can redeem a promotional code to install it.
 
-## 促销充值码策略
-
-
-请注意以下促销充值码策略：
-
--   你可以为已发布到 Windows 应用商店的任何应用或 IAP 生成促销充值码。 用户可以在你的应用或 IAP 支持的任何版本的 Windows 上兑换这些充值码。
--   促销充值码将在你预订它们的日期 6 个月之后过期。
--   对于每个应用或 IAP，每 6 个月你最多可以生成 500 个促销充值码。 6 个月期间从提交首个促销充值码订单时开始算起。
--   你必须按照[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)中定义的要求进行操作，包括“3k. 促销充值码”****部分。
-
-## 预订促销充值码
+## Promotional code policies
 
 
-若要为已发布到 Windows 应用商店的应用或 IAP 预订促销充值码：
+Be aware of the following policies for promotional codes:
 
-1.  在 Windows 开发人员中心仪表板上，执行以下操作之一：
-    -   在应用的“应用概述”****页面上，找到“促销充值码”****部分并单击“预订充值码”****。
-    -   在应用的任意仪表板页面上，在左侧的导航菜单中，展开“盈利”****并单击“促销充值码”****。 在“促销充值码”****页面上，单击“预订充值码”****。
+-   You can generate promotional codes for any app or add-on that you published to the Windows Store. Users can redeem the codes on any versions of Windows that are supported by your app or add-on.
+-   Promotional codes expire 6 months after the date you order them (unless you choose an earlier expiration date).
+-   For each of your apps or add-ons, you can generate up to 500 promotional codes every 6 months. The 6 month period begins when the first promotional code order is submitted.
+-   You must follow the requirements defined in the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058), including section **3k. Promotional Codes**.
 
-2.  在“新促销充值码订单”****页面上，输入以下内容：
-    -   选择要为其生成充值码的应用或 IAP。
-    -   为订单指定名称。 在查看促销充值码使用情况数据时，你可以使用此名称区分不同的充值码订单。
-    -   指定要预订的充值码数量。
-    -   指定促销充值码应处于活动状态的时间。 若要选择特定开始日期和时间，请清除“充值码立即处于活动状态”****复选框。
-    -   指定促销充值码应到期的时间。 若要选择特定到期日期和时间，请清除“充值码 6 个月后到期”****复选框。
-
-3.  单击“预订充值码”****。 提交订单，并将你导航到“促销充值码”****页面上，其中新订单在促销充值码订单的摘要表中列为“挂起”****。
-
-促销充值码通常在提交订单后的 60 分钟内提供下载，尽管某些订单可能需要较长时间处理。 在完成订单并提供充值码下载后，订单状态将更改为“可用”****。
-
-## 下载和分发促销充值码
+## Order promotional codes
 
 
-若要下载已完成的促销充值码订单并将充值码分发给应用的用户：
+To order promotional codes for an app or add-on that you published to the Windows Store:
 
-1.  在 Windows 开发人员中心仪表板上，返回到应用的“促销充值码”****页（展开“盈利”****并单击“促销充值码”****）。
-2.  确认你的订单状态为“可用”****。 单击订单的“下载”****链接，然后将所提供的文件保存到计算机。 此文件包含采用制表符分隔值 (TSV) 格式的有关促销充值码订单的信息。
-3.  在你选择的编辑器中打开 TSV 文件。 为了实现最佳体验，请在可采用表格结构显示数据的应用程序（例如 Microsoft Excel）中打开 TSV 文件。 但是，你也可以在任何文本编辑器中打开此文件。
+1.  On Windows Dev Center dashboard, do one of the following:
+    -   On the **App overview** page for your app, locate the **Promotional codes** section and click **Manage codes**.
+    -   On any dashboard page for your app, in the left navigation menu, expand **Monetization** and click **Promotional codes**. On the **Promotional codes** page, click **Order codes**.
 
-    该文件包含每个充值码的以下数据列：
+2.  On the **New promotional codes order** page, enter the following:
+    -   Select the app or add-on for which you want to generate codes.
+    -   Specify a name for the order. You can use this name to differentiate between different orders of codes when reviewing your promotional code usage data.
+    -   Select the order type. You can choose to generate a set of promo codes that can each be used once or you can choose to generate one promo code that can be used multiple times.
+    -   Specify the quantity of codes to order.
+    -   Specify when the promotional codes should become active. To choose a specific start date and time, clear the **Codes are active immediately** check box.
+    -   Specify when the promotional codes should expire. To choose a specific expire date and time, clear the **Codes expire after 6 months** check box.
 
-    -   **产品名称**：充值码相关联的应用或 IAP 的名称。
-    -   **订单名称**：实现此充值码的订单的名称。
-    -   **促销充值码**：代码本身。 这是由连字符分隔、字母数字字符组成的 5x5 字符串。 例如：
+3.  Click **Order codes**. The order is submitted and the dashboard navigates you to the **Promotional codes** page, where the new order is listed as **Pending** in the summary table of promotional code orders.
+
+Promotional codes are usually available for download within 60 minutes of placing the order, although some orders may take longer to process. After your order is fulfilled and the codes are available for download, the order status changes to **Available**.
+
+## Download and distribute promotional codes
+
+
+To download a fulfilled promotional codes order and distribute the codes to users of your app:
+
+1.  On Windows Dev Center dashboard, return to the **Promotional codes** page for your app (expand **Monetization** and click **Promotional codes**).
+2.  Confirm that your order's status is **Available**. Click the **Download** link for your order and save the provided file to your computer. This file contains information about your promotional codes order in tab-separated value (TSV) format.
+3.  Open the TSV file in the editor of your choice. For the best experience, open the TSV file in an application that can display the data in a tabular structure, such as Microsoft Excel. However, you can alternatively open the file in any text editor.
+
+    The file contains the following columns of data for each code:
+
+    -   **Product name**: The name of the app or add-on that the code is associated with.
+    -   **Order name**: The name of the order in which this code was fulfilled.
+    -   **Promotional code**: The code itself. This is a 5x5 string of alphanumeric characters separated by hyphens. For example:
 
         DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
 
-    -   **可兑换 URL**：用户可用于兑换充值码并安装应用或 IAP 的 URL。 URL 具有以下格式：
+    -   **Redeemable URL**: The URL that a user can use to redeem the code and install your app or add-on. The URL has the following format:
 
-        https://account.microsoft.com/billing/redeem?mstoken=&lt;promotional_code&gt;
+        https://account.microsoft.com/billing/redeem?mstoken=&lt;promotional_code>
 
-    -   **开始日期**：此充值码开始的日期。
-    -   **到期日期**：此充值码到期的日期。
-    -   **充值码 ID**：此充值码的唯一 ID。
-    -   **订单 ID**：完成此充值码的订单的唯一 ID。
-    -   **接收者**：可填写值的空白字段，该值用来标识接收充值码的用户。
-    -   **可用**：仍可用于兑换的充值码数。
-    -   **已兑换**：已兑换的充值码数。
+    -   **Start date**: The date this code starts.
+    -   **Expire date**: The date this code expires.
+    -   **Code ID**: A unique ID for this code.
+    -   **Order ID**: A unique ID for the order in which this code was fulfilled.
+    -   **Given to**: An empty field that you can fill with a value that identifies the user you gave the code to.
+    -   **Available**: The number of codes still available to redeem.
+    -   **Redeemed**: The number of codes that have been redeemed.
 
-4.  通过你偏好的任何通信格式（例如，电子邮件、短信或打印的卡片）将可兑换 URL 分发给用户。 我们建议你的通信包括以下内容：
-    -   关于促销充值码用于哪个应用或 IAP 的说明，以及关于用户为何收到该充值码的说明（可选）。
-    -   充值码的可兑换 URL。
-    -   指导用户访问可兑换 URL、使用其 Microsoft 帐户登录并按照说明下载和安装应用的说明。
+4.  Distribute the redeemable URLs to your users via any communication format you prefer (for example, email, SMS message, or printed cards). We recommend that your communication includes the following:
+    -   An explanation of which app or add-on the promotional code is for, and optionally a description of why the user is receiving the code.
+    -   The redeemable URL for the code.
+    -   Instructions that guide the user to visit the redeemable URL, log in using their Microsoft account, and follow the instructions to download and install your app.
 
-## 充值码兑换用户体验
-
-
-在将可兑换 URL 分配给用户后，以下步骤介绍用户将遵循以兑换应用的体验。
-
-1.  用户单击可兑换 URL。
-
-    浏览器打开到经身份验证的“兑换充值码”****页面，位于 <https://account.microsoft.com/billing/redeem>。 此页面包含用户即将兑换的应用的描述。
-
-2.  用户单击“兑换”****。
-
-    浏览器导航到带有**获取*****&lt;应用名称&gt;***链接的“谢谢”****页面。
-
-    > **注意** 如果你的应用尚未发布，用户将在执行此步骤时收到一个错误。
-
-3.  用户单击“获取&lt;应用名称&gt;”**********。
-
-4.  如果用户使用安装了适用于 Windows 10 或 Windows 8.1 的 Windows 应用商店的计算机，则 Windows 应用商店将打开到该应用的概述页面。 用户可单击“安装”****来免费安装该应用。
-
-    如果用户使用未安装 Windows 应用商店的计算机或设备，则浏览器打开到该应用的 Windows 应用商店网页。 用户可单击“安装”****来免费安装该应用。
-
-    > **注意** 在某些情况下，应用页面可能显示“购买”****按钮而不是“安装”****，即使该应用已通过促销充值码成功兑换。 用户可单击“购买”****来免费安装该应用。
-
-## 查看促销充值码
+## Code redemption user experience
 
 
-有多种不同的方法可用于查看促销充值码的使用情况。
+After you distribute a redeemable URL to a user, the following steps describe the experience the user will follow to redeem your app.
 
--   若要查看所有应用的促销充值码订单的摘要，请访问“仪表板概述”****页面并找到此页面上的“促销充值码”****部分。 此部分显示你的所有应用的剩余活动促销充值码、你的所有应用的已兑换促销充值码总数以及你已为所有应用设置的促销充值码订单总数。
--   若要查看特定应用的促销充值码订单的摘要，请导航到该应用的“应用概述”****页面，并找到此页面上的“促销充值码”****部分。 此部分显示该应用的剩余活动促销充值码、该应用的已兑换促销充值码总数以及你已为该应用设置的促销充值码订单总数。
--   若要查看特定应用的促销充值码订单的详细摘要，请导航到应用的“促销充值码”****页面（展开“盈利”****并单击“促销充值码”****）。 你可以查看该应用的所有当前和非活动促销充值码的以下详细信息：
-    -   订单名称
-    -   应用或 IAP 名称
-    -   订单日期
-    -   过期日期
-    -   状态
+1.  The user clicks the redeemable URL.
 
-你还可以从此表中下载活动订单。
+    The browser opens to an authenticated **Redeem your code** page at <https://account.microsoft.com/billing/redeem>. This page includes a description of the app the user is about to redeem.
 
- 
+2.  The user clicks **Redeem.**
+
+    The browser navigates to a **Thank you** page with a **Get** ***&lt;your app name&gt;*** link.
+
+    > **Note**  Users will receive an error at this step if your app is not yet published.
+
+3.  The user clicks **Get** ***&lt;your app name&gt;***.
+
+4.  If the user is on a computer with the Windows Store for Windows 10 or Windows 8.1 installed, the Windows Store opens to the overview page for the app. The user can click **Install** to install the app for no charge.
+
+    If the user is on a computer or device that does not have the Windows Store installed, the browser opens to the Windows Store web page for the app. The user can click **Install** to install the app for no charge.
+
+    > **Note**  In some cases the app page might display a **Buy** button instead of **Install**, even though the app was successfully redeemed via the promotional code. The user can click **Buy** to install the app for no charge.
+
+## Review your promotional codes
+
+
+There are several different ways to review your promotional code usage.
+
+-   To review a summary of promotional code orders for all your apps, visit the **Dashboard overview** page and locate the **Promotional codes** section on this page. This section displays the remaining active promotional codes for all your apps, the total number of redeemed promotional codes for all your apps, and the total number of promotional code orders you have placed for all your apps.
+-   To review a summary of promotional code orders for a specific app, navigate to the **App overview** page for the app and locate the **Promotional codes** section on this page. This section displays the remaining active promotional codes for the app, the total number of redeemed promotional codes for the app, and the total number of promotional code orders you have placed for the app.
+-   To review a detailed summary of promotional code orders for a specific app, navigate to the **Promotional codes** page for your app (expand **Monetization** and click **Promotional codes**). You can review the following details for all current and inactive promotional codes for the app:
+    -   Order name
+    -   App or add-on name
+    -   Order date
+    -   Expire date
+    -   Status
+
+You can also download an active order from this table.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,40 +1,40 @@
 ---
 author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
-title: "线程和异步编程"
-description: "线程和异步编程可让你的应用在并行线程中以异步方式完成工作。"
+title: Threading and async programming
+description: Threading and async programming enables your app to accomplish work asynchronously in parallel threads.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d69259d449ffb7d4dfc1824c77c16eb9e1cdb026
+ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
 
 ---
-# 线程和异步编程
+# Threading and async programming
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-线程和异步编程可让你的应用在并行线程中以异步方式完成工作。
+Threading and async programming enables your app to accomplish work asynchronously in parallel threads.
 
-应用可使用线程池在并行线程中异步完成工作。 线程池管理一组线程并使用队列向变得可用的线程分配工作项。 线程池与 Windows 运行时中提供的异步编程模式相似，因为它可用于完成扩展的工作而不会阻止 UI，但是线程池比异步编程模式提供更多的控制，并且你可以使用它并行完成多个工作项。 你可以使用线程池执行下列操作：
+Your app can use the thread pool to accomplish work asynchronously in parallel threads. The thread pool manages a set of threads and uses a queue to assign work items to threads as they become available. The thread pool is similar to the asynchronous programming patterns available in the Windows Runtime because it can be used to accomplish extended work without blocking the UI, but the thread pool offers more control than the asynchronous programming patterns and you can use it to complete multiple work items in parallel. You can use the thread pool to:
 
--   添加工作项，控制其优先级和取消工作项。
+-   Submit work items, control their priority, and cancel work items.
 
--   使用计时器和定期计时器安排工作项。
+-   Schedule work items using timers and periodic timers.
 
--   为关键工作项留出资源。
+-   Set aside resources for critical work items.
 
--   运行工作项以响应指定的事件和信号灯。
+-   Run work items in response to named events and semaphores.
 
-在管理线程方面，线程池更为有效，因为这样可以减少创建和销毁线程的开销。 这意味着它可以跨多个 CPU 核心优化线程，并且它可以在应用之间及在后台任务运行时平衡线程资源。 使用内置线程池是一种方便的方法，因为你只需将注意力集中到编写完成任务的代码上，而不是线程管理机制上。
+The thread pool is more efficient at managing threads because it reduces the overhead of creating and destroying threads. The means it has access to optimize threads across multiple CPU cores, and it can balance thread resources between apps and when background tasks are running. Using the built-in thread pool is convenient because you focus on writing code that accomplishes a task instead of the mechanics of thread management.
 
-| 主题                                                                                                          | 说明                         |
+| Topic                                                                                                          | Description                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| [异步编程（UWP 应用）](asynchronous-programming-universal-windows-platform-apps.md)              | 本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C++ 组件扩展 (C++/CX) 和 JavaScript 中的表示形式。 |
-| [使用 C++ 进行异步编程（UWP 应用）](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| 本文介绍在 C++/CX 中，通过使用在 ppltasks.h 中的 <code>concurrency</code> 命名空间中定义的 <code>task</code> 类来使用异步方法的推荐方法。 |
-| [使用线程池的最佳做法](best-practices-for-using-the-thread-pool.md)                         | 本主题介绍使用线程池的最佳实践。 |
-| [使用 C# 或 Visual Basic 调用异步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | 通用 Windows 平台 (UWP) 包含许多异步 API，可确保应用在执行可能花费大量时间的任务时仍能保持响应。 本主题将介绍如何从采用 C# 或 Microsoft Visual Basic 的 UWP 使用异步方法。 |
-| [创建定期工作项](create-a-periodic-work-item.md)                                                   | 了解如何创建定期重复的工作项。 |
-| [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)                               | 了解如何通过向线程池提交工作项，在单独的线程中完成工作。 |
-| [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)                                       | 了解如何创建在经过计时器时间后运行的工作项。 |
+| [Asynchronous programming (UWP apps)](asynchronous-programming-universal-windows-platform-apps.md)              | This topic describes asynchronous programming in the Universal Windows Platform (UWP) and its representation in C#, Microsoft Visual Basic .NET, Visual C++ component extensions (C++/CX), and JavaScript. |
+| [Asynchronous programming in C++ (UWP apps)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| This article describes the recommended way to consume asynchronous methods in C++/CX by using the <code>task</code> class that's defined in the <code>concurrency</code> namespace in ppltasks.h. |
+| [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)                         | This topic describes best practices for working with the thread pool. |
+| [Call asynchronous APIs in C# or Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | The Universal Windows Platform (UWP) includes many asynchronous APIs to ensure that your app remains responsive when it does work that might take an extended amount of time. This topic discusses how to use asynchronous methods from the UWP in C# or Microsoft Visual Basic. |
+| [Create a periodic work item](create-a-periodic-work-item.md)                                                   | Learn how to create a work item that repeats periodically. |
+| [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)                               | Learn how to do work in a separate thread by submitting a work item to the thread pool. |
+| [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)                                       | Learn how to create a work item that runs after a timer elapses. |
 
 
 
@@ -42,6 +42,6 @@ ms.openlocfilehash: d69259d449ffb7d4dfc1824c77c16eb9e1cdb026
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -1,63 +1,63 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸板进行了优化，但在不同的输入设备上功能一致。"
-title: "触摸板交互"
+Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
+title: Touchpad interactions
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
+ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 ---
 
-# 触摸板设计指南
+# Touchpad design guidelines
 
 
-设计你的应用，以便用户可以通过触摸板与其交互。 触摸板将间接式多点触控输入和定位设备（如鼠标）的精确输入结合起来。 这种结合使触摸板既适用于触摸优化的 UI，也适用于效率应用的较小目标。
+Design your app so that users can interact with it through a touchpad. A touchpad combines both indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both a touch-optimized UI and the smaller targets of productivity apps.
 
  
 
-![触摸板](images/input-patterns/input-touchpad.jpg)
+![touchpad](images/input-patterns/input-touchpad.jpg)
 
 
-触摸板交互需要满足以下三项：
+Touchpad interactions require three things:
 
--   标准触摸板或 Windows 精确式触摸板。
+-   A standard touchpad or a Windows Precision Touchpad.
 
-    精确式触摸板针对通用 Windows 平台 (UWP) 设备进行了优化。 它们支持系统在本机处理触摸板体验的某些方面（例如手指跟踪和手掌检测），从而在不同设备之间实现更一致的体验。
+    Precision touchpads are optimized for Universal Windows Platform (UWP) devices. They enable the system to handle certain aspects of the touchpad experience natively, such as finger tracking and palm detection, for a more consistent experience across devices.
 
--   一个或多个手指直接接触触摸板。
--   触摸接触时移动（或不移动，具体取决于时间阈值）。
+-   The direct contact of one or more fingers on the touchpad.
+-   Movement of the touch contacts (or lack thereof, based on a time threshold).
 
-触摸传感器提供的输入数据可以实现以下目的：
+The input data provided by the touchpad sensor can be:
 
--   解释为直接操作一个或多个 UI 元素的物理手势（例如平移、旋转、调整大小或移动）。 相比之下，通过某个元素属性窗口或其他对话框与该元素交互被认为是间接操作。
--   作为另一种输入方法识别，例如鼠标或笔。
--   用于补充或修改其他输入方法的方面，例如涂抹用笔绘制的笔划墨迹。
+-   Interpreted as a physical gesture for direct manipulation of one or more UI elements (such as panning, rotating, resizing, or moving). In contrast, interacting with an element through its properties window or other dialog box is considered indirect manipulation.
+-   Recognized as an alternative input method, such as mouse or pen.
+-   Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.
 
-触摸板将间接多点触控输入与指针设备（如鼠标）的精确输入结合。 这种组合使触摸板既适用于触摸优化的 UI，也适用于效率应用和桌面环境通常较小的目标。 针对触摸输入优化 Window 应用商店应用设计，并在默认情况下获得触摸板支持。
+A touchpad combines indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both touch-optimized UI and the typically smaller targets of productivity apps and the desktop environment. Optimize your Windows Store app design for touch input and get touchpad support by default.
 
-由于触摸板支持聚合的交互体验，所以除了触摸输入的内置支持，我们还建议使用 [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) 事件来提供鼠标样式的 UI 命令。 例如，使用“上一页”和“下一页”按钮，使用户既可以翻阅网页内容，也可以通过平移浏览内容。
+Because of the convergence of interaction experiences supported by touchpads, we recommend using the [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) event to provide mouse-style UI commands in addition to the built-in support for touch input. For example, use previous and next buttons to let users flip through pages of content as well as pan through the content.
 
-本主题中讨论的手势和指南可以帮助确保你的应用使用最少的代码无缝支持触摸板输入。
+The gestures and guidelines discussed in this topic can help to ensure that your app supports touchpad input seamlessly and with minimal code.
 
-## 触摸板语言
+## The touchpad language
 
 
-一组在整个系统中通用的简单触摸板交互功能。 针对触摸和鼠标输入优化应用，这种语言可以使用户快速熟悉应用，提升他们的信心，使其更容易了解和使用应用。
+A concise set of touchpad interactions are used consistently throughout the system. Optimize your app for touch and mouse input and this language makes your app feel instantly familiar for your users, increasing their confidence and making your app easier to learn and use.
 
-用户可以设置远比标准触摸板更多的精确式触摸板手势和交互行为。 这两张图分别显示了不同于标准触摸板和精确式触摸板的“设置”&gt;“设备”&gt;“鼠标和触摸板”的触摸板设置页面。
+Users can set far more Precision Touchpad gestures and interaction behaviors than they can for a standard touchpad. These two images show the different touchpad settings pages from Settings &gt; Devices &gt; Mouse & touchpad for a standard touchpad and a Precision Touchpad, respectively.
 
-![标准触摸板设置](images/mouse-touchpad-settings-standard.png)
+![standard touchpad settings](images/mouse-touchpad-settings-standard.png)
 
-<sup>标准\\ 触摸板\\ 设置</sup>
+<sup>Standard\\ touchpad\\ settings</sup>
 
-![Windows 精确式触摸板设置](images/mouse-touchpad-settings-ptp.png)
+![windows precision touchpad settings](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\ 精确式\\ 触摸板\\ 设置</sup>
+<sup>Windows\\ Precision\\ Touchpad\\ settings</sup>
 
-下面是一些用于执行常见任务的触摸板优化手势的示例。
+Here are some examples of touchpad-optimized gestures for performing common tasks.
 
 <table>
 <colgroup>
@@ -66,100 +66,100 @@ ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">术语</th>
-<th align="left">说明</th>
+<th align="left">Term</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>三指点击</p></td>
-<td align="left"><p>使用 <strong>Cortana</strong> 搜索或显示<strong>“操作中心”</strong>的用户首选项。</p></td>
+<td align="left"><p>Three-finger tap</p></td>
+<td align="left"><p>User preference to search with <strong>Cortana</strong> or show <strong>Action Center</strong>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>三指滑动</p></td>
-<td align="left"><p>打开虚拟桌面任务视图、显示桌面、或切换已打开应用的用户首选项。</p></td>
+<td align="left"><p>Three finger slide</p></td>
+<td align="left"><p>User preference to open the virtual desktop Task View, show Desktop, or switch between open apps.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>单个手指点击进行主操作</p></td>
-<td align="left"><p>使用单个手指点击某个元素并调用它的主操作（如启动应用或执行命令）。</p></td>
+<td align="left"><p>Single finger tap for primary action</p></td>
+<td align="left"><p>Use a single finger to tap an element and invoke its primary action (such as launching an app or executing a command).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>二指点击进行右键单击</p></td>
-<td align="left"><p>两个手指同时在某个元素上点击可以将其选中并显示上下文命令。</p></td>
+<td align="left"><p>Two finger tap to right-click</p></td>
+<td align="left"><p>Tap with two fingers simultaneously on an element to select it and display contextual commands.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>二指滑动进行平移</p></td>
-<td align="left"><p>滑动主要用于平移交互，但也可用于移动、绘制或书写。</p></td>
+<td align="left"><p>Two finger slide to pan</p></td>
+<td align="left"><p>Slide is used primarily for panning interactions but can also be used for moving, drawing, or writing.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>收缩和拉伸以缩放</p></td>
-<td align="left"><p>收缩和拉伸手势通常用于调整大小和语义式缩放。</p></td>
+<td align="left"><p>Pinch and stretch to zoom</p></td>
+<td align="left"><p>The pinch and stretch gestures are commonly used for resizing and Semantic Zoom.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>单指按下并滑动以重新排列</p></td>
-<td align="left"><p>拖动元素。</p></td>
+<td align="left"><p>Single finger press and slide to rearrange</p></td>
+<td align="left"><p>Drag an element.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>单指按下并滑动以选择文本</p></td>
-<td align="left"><p>在可选择的文本内按下并滑动来选择它。 双击可选择一个字。</p></td>
+<td align="left"><p>Single finger press and slide to select text</p></td>
+<td align="left"><p>Press within selectable text and slide to select it. Double-tap to select a word.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>单击和右键单击区域</p></td>
-<td align="left"><p>模拟鼠标设备的左键和右键功能。</p></td>
+<td align="left"><p>Left and right click zone</p></td>
+<td align="left"><p>Emulate the left and right button functionality of a mouse device.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## 硬件
+## Hardware
 
 
-查询鼠标设备功能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) 以确定触摸板硬件可以直接访问你的应用 UI 的哪些方面。 我们建议提供适用于触摸和鼠标输入的 UI。
+Query the mouse device capabilities ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) to identify what aspects of your app UI the touchpad hardware can access directly. We recommend providing UI for both touch and mouse input.
 
-有关查询设备功能的详细信息，请参阅[标识输入设备](identify-input-devices.md)。
+For more info about querying device capabilities, see [Identify input devices](identify-input-devices.md).
 
-## 视觉反馈
-
-
--   当（通过移动或悬停事件）检测到触摸板光标时，显示特定于鼠标的 UI 以指示元素显示的功能。 如果触摸板光标在一定的时间段内没有移动，或者如果用户启动了触摸交互，则让触摸板 UI 逐渐淡出。 这会使 UI 干净整洁。
--   不要使用鼠标获取悬停反馈，由元素提供的反馈就足够（请参阅下面的[光标](#Cursors)）。
--   如果元素不支持交互（如静态文本），不要显示视觉反馈。
--   不要将焦点矩形与触摸板交互结合使用。 保留焦点矩形是为了进行键盘交互。
--   对于所有代表相同输入目标的元素，同时显示视觉反馈。
-
-有关视觉反馈的更常规的指南，请参阅[视觉反馈指南](https://msdn.microsoft.com/library/windows/apps/hh465342)。
-
-## 光标
+## Visual feedback
 
 
-为触摸板指针提供了一组标准光标。 它们用来表示元素的主要操作。
+-   When a touchpad cursor is detected (through move or hover events), show mouse-specific UI to indicate functionality exposed by the element. If the touchpad cursor doesn't move for a certain amount of time, or if the user initiates a touch interaction, make the touchpad UI gradually fade away. This keeps the UI clean and uncluttered.
+-   Don't use the cursor for hover feedback, the feedback provided by the element is sufficient (see [Cursors](#Cursors) below).
+-   Don't display visual feedback if an element doesn't support interaction (such as static text).
+-   Don't use focus rectangles with touchpad interactions. Reserve these for keyboard interactions.
+-   Display visual feedback concurrently for all elements that represent the same input target.
 
-每个标准光标都有一个与它相关联的默认图像。 用户或应用可以随时替换与任何标准光标相关联的默认图像。 Windows 应用商店应用通过 [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 函数指定光标图像。
+For more general guidance about visual feedback, see [Guidelines for visual feedback](https://msdn.microsoft.com/library/windows/apps/hh465342).
 
-如果你需要自定义鼠标光标：
-
--   对于可单击元素，始终使用箭头光标（![箭头光标](images/cursor-arrow.png)）。 对于链接或其他交互元素，不使用指向手光标（![指向手光标](images/cursor-pointinghand.png)）。 而应使用悬停效果（上文中有介绍）。
--   对于可选择文本，使用文本光标（![文本光标](images/cursor-text.png)）。
--   当主要操作是移动（如拖动或裁剪）时，使用移动光标（![移动光标](images/cursor-move.png)）。 对于主要操作是导航的元素（如“开始”菜单磁贴），不使用移动光标。
--   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png)， ![水平调整光标](images/cursor-horizontal.png)， ![对角调整光标（左下和右上）](images/cursor-diagonal2.png)， ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
--   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
-
-## 相关文章
+## Cursors
 
 
-* [处理指针输入](handle-pointer-input.md)
-* [标识输入设备](identify-input-devices.md) 
-           **示例**
-* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉效果示例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
-           **存档示例**
-* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+A set of standard cursors is available for a touchpad pointer. These are used to indicate the primary action of an element.
+
+Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. Windows Store apps specify a cursor image through the [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) function.
+
+If you need to customize the mouse cursor:
+
+-   Always use the arrow cursor (![arrow cursor](images/cursor-arrow.png)) for clickable elements. don't use the pointing hand cursor (![pointing hand cursor](images/cursor-pointinghand.png)) for links or other interactive elements. Instead, use hover effects (described earlier).
+-   Use the text cursor (![text cursor](images/cursor-text.png)) for selectable text.
+-   Use the move cursor (![move cursor](images/cursor-move.png)) when moving is the primary action (such as dragging or cropping). Don't use the move cursor for elements where the primary action is navigation (such as Start tiles).
+-   Use the horizontal, vertical and diagonal resize cursors (![vertical resize cursor](images/cursor-vertical.png), ![horizontal resize cursor](images/cursor-horizontal.png), ![diagonal resize cursor (lower left, upper right)](images/cursor-diagonal2.png), ![diagonal resize cursor (upper left, lower right)](images/cursor-diagonal1.png)), when an object is resizable.
+-   Use the grasping hand cursors (![grasping hand cursor (open)](images/cursor-pan1.png), ![grasping hand cursor (closed)](images/cursor-pan2.png)) when panning content within a fixed canvas (such as a map).
+
+## Related articles
+
+
+* [Handle pointer input](handle-pointer-input.md)
+* [Identify input devices](identify-input-devices.md)
+**Samples**
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Archive Samples**
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
 
@@ -167,6 +167,6 @@ ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

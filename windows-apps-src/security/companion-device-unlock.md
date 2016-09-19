@@ -1,219 +1,222 @@
 ---
-title: "具有配套 (IoT) 设备的 Windows 解锁"
-description: "配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用配套设备框架，即使是在 Windows Hello 不可用时（例如 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。"
+title: Windows Unlock with Windows Hello companion (IoT) devices
+description: A Windows Hello companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Windows Hello companion device framework, a companion device can provide a rich experience for Windows Hello even when biometrics are not available (e.g., if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a6265ca66a1a9d729465845da1014d1aff0e7d4d
-ms.openlocfilehash: 18102d6277ff1c66ebd147b5c1fd2f2d6c91edd1
+ms.sourcegitcommit: fcff9982a0a4f42f864d1ade214b475458b7d37a
+ms.openlocfilehash: 04e68203367b2366fa64decd067dc6e8526ce71e
 
 ---
-# 具有配套 (IoT) 设备的 Windows 解锁
+# Windows Unlock with Windows Hello companion (IoT) devices
 
-配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用配套设备框架，即使是在 Windows Hello 不可用时（例如 Windows 10 台式机缺少相机进行脸部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。
+A Windows Hello companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Windows Hello companion device framework, a companion device can provide a rich experience for Windows Hello even when biometrics are not available (e.g., if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).
 
-> **注意** 配套设备框架是不向所有应用开发人员提供的特定功能。 若要使用此框架，应用必须由 Microsoft 专门设置，并且在它的清单中列出受限制的 *secondaryAuthenticationFactor* 功能。 若要获得批准，请联系 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)。
+> **Note** The Windows Hello companion device framework is a specialized feature not available to all app developers. To use this framework, your app must be specifically provisioned by Microsoft and list the restricted *secondaryAuthenticationFactor* capability in its manifest. To obtain approval, contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
 
-## 简介
+## Introduction
 
-> 有关视频概述，请参阅第 9 频道上来自内部版本 2016 的[具有 IoT 设备的 Windows 解锁](https://channel9.msdn.com/Events/Build/2016/P491)会话。
+> For a video overview, see the [Windows Unlock with IoT Devices](https://channel9.msdn.com/Events/Build/2016/P491) session from Build 2016 on Channel 9.
 
-### 用例
+> For code samples, see the [Windows Hello companion device framework Github repository](https://github.com/Microsoft/companion-device-framework).
 
-有很多方法可以将配套设备框架与配套设备结合使用，从而构建出色的 Windows 解锁体验。 例如，用户可以：
+### Use cases
 
-- 通过 USB 将配套设备连接到电脑、触摸配套设备上的按钮，并自动解锁电脑。
-- 在口袋中携带已通过蓝牙与电脑配对的手机。 当在电脑上点击空格键时，手机会收到通知。 同意该通知，电脑即会解锁。
-- 点击 NFC 读卡器的配套设备，快速解锁电脑。
-- 戴上已验证穿戴者身份的健身环。 接近电脑，通过执行特殊手势（例如鼓掌），解锁电脑。
+There are numerous ways one can use the Windows Hello companion device framework to build a great Windows unlock experience with a companion device. For example, users could:
 
-### 启用生物识别的配套设备
+- Attach their companion device to PC via USB, touch the button on the companion device, and automatically unlock their PC.
+- Carry a phone in their pocket that is already paired with PC over Bluetooth. Upon hitting the spacebar on their PC, their phone receives a notification. Approve it and the PC simply unlocks.
+- Tap their companion device to an NFC reader to quickly unlock their PC.
+- Wear a fitness band that has already authenticated the wearer. Upon approaching PC, and by performing a special gesture (like clapping), the PC unlocks.
 
-如果配套设备支持生物识别，在某些情况下，[Windows 生物识别框架](https://msdn.microsoft.com/library/windows/hardware/mt608302(v=vs.85).aspx)可能是比配套设备框架更好的解决方案。 请联系 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)，我们将帮助你选取正确的方法。
+### Biometric enabled Windows Hello companion devices
 
-### 解决方案的构成
+If the companion device supports biometrics, in some cases the [Windows Biometric framework](https://msdn.microsoft.com/library/windows/hardware/mt608302(v=vs.85).aspx) may be a better solution than the Windows Hello companion device framework. Please contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) and we'll help you pick the right approach.
 
-下图描述了解决方案的构成以及构建它们的责任方。
+### Components of the solution
 
-![框架概述](images/companion-device-1.png)
+The diagram below depicts the components of the solution and who is responsible for building them.
 
-配套设备框架实现为在 Windows 上运行的服务（在本文中称为配套身份验证服务）。 此服务负责生成需要由存储在配套设备上的 HMAC 密钥保护的解锁令牌。 这可保证访问解锁令牌需要有配套设备。 每个（电脑，Windows 用户）元组都会有唯一的解锁令牌。
+![framework overview](images/companion-device-1.png)
 
-与配套设备框架集成需要：
+The Windows Hello companion device framework is implemented as a service running on Windows (called the Companion Authentication Service in this article). This service is responsible for generating an unlock token which needs to be protected by an HMAC key stored on the Windows Hello companion device. This guarantees that access to the unlock token requires Windows Hello companion device presence. Per each (PC, Windows user) tuple, there will be a unique unlock token.
 
-- 从 Windows 应用商店下载的配套设备的[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) 配套设备应用。 
-- 能够在配套设备上创建两个 256 位的 HMAC 密钥，并通过它生成 HMAC（使用 SHA-256）。
-- 正确配置 Windows 10 桌面版的安全设置。 配套身份验证服务将要求在任何配套设备能插入 PIN 前设置它。 用户必须通过“设置”&gt;“帐户”&gt;“登录”选项来设置 PIN。
+Integration with the Windows Hello Companion Device Framework requires:
 
-除上述要求外，配套设备应用还负责：
+- A [Universal Windows Platform (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) Windows Hello companion device app for the companion device, downloaded from the Windows app store. 
+- The ability to create two 256 bit HMAC keys on the Windows Hello companion device and generate HMAC with it (using SHA-256).
+- Security settings on the Windows 10 desktop properly configured. The Companion Authentication Service will require this PIN to be set up before any Windows Hello companion device can be plugged into it. The users must set up a PIN via Settings > Accounts > Sign-in options.
 
-- 用户体验和初始注册的品牌，以及在以后取消配套设备注册。
-- 在后台运行、发现配套设备，与配套设备和配套身份验证服务通信。
-- 错误处理
+In addition to the above requirements, the Windows Hello companion device app is responsible for:
 
-正常情况下，配套设备随附在用于初始设置的应用上，例如首次设置健身环。 本文档介绍的功能可能是该应用的一部分，而且也不需要单独的应用。  
+- User experience and branding of initial registration and later de-registration of the Windows Hello companion device.
+- Running in the background, discovering the Windows Hello companion device, communicating to the Windows Hello companion device and also Companion Authentication Service.
+- Error handling
 
-### 用户信号
+Normally, companion devices ship with an app for initial setup, like setting up a fitness band for the first time. The functionality described in this document can be part of that app and a separate app should not be required.  
 
-每个配套设备均应与支持三种用户信号的应用结合。 这些信号可以采用操作或手势的形式。
+### User signals
 
-- **意图信号**：通过诸如点击配套设备上的按钮等方式，允许用户显示解锁意图。 意图信号必须在**配套设备**端收集。
-- **用户存在信号**：证明存在用户。 例如，配套设备可能在可用于解锁电脑前需要 PIN（不要与电脑 PIN 混淆），或者它可能需要按某个按钮。
-- **消除歧义信号**：当向配套设备提供多个选项时，消除用户想要解锁哪台 Windows 10 桌面版的疑虑。
+Each Windows Hello companion device should be combined with an app that supports three user signals. These signals can be in form of an action or gesture.
 
-这些用户信号的任意数量都可以组合成一个信号。 每次使用时都必须要有用户存在和意图信号。
+- **Intent signal**: Allows the user to show his intent for unlock by, for example, hitting a button on the Windows Hello companion device. The intent signal must be collected on **Windows Hello companion device** side.
+- **User presence signal**: Proves the presence of the user. The Windows Hello companion device might, for instance, require a PIN before it can be used for unlocking PC (not to be confused with PC PIN), or it might require press of a button.
+- **Disambiguation signal**: Disambiguates which Windows 10 desktop the user wants to unlock when multiple options are available to the Windows Hello companion device.
 
-### 注册以及电脑和配套设备之间的未来通信
+Any number of these user signals can be combined into one. User presence and intent signals must be required on each use.
 
-在配套设备可插入配套设备框架前，它需要先向该框架注册。 注册体验完全归配套设备应用所有。
+### Registration and future communication between a PC and Windows Hello companion devices
 
-配套设备和 Windows 10 桌面版设备的注册关系可以是一对多的关系（即一台配套设备可用于多台 Windows 10 桌面版设备）。 但是，每台配套设备在 Windows 10 桌面版设备上仅可用于一个用户。   
+Before a Windows Hello companion device can be plugged into the Windows Hello companion device framework, it needs to be registered with the framework. The experience for registration is completely owned by the Windows Hello companion device app.
 
-在配套设备能与电脑通信前，它们需要同意使用某种传输。 此类选择留待配套设备应用做出；配套设备框架不会对传输类型（USB、NFC、WLAN、BT、BLE 等）或在配套设备和 Windows 10 桌面版设备端的配套设备应用之间使用的协议施加任何限制。 但是，就像在本文档的“安全要求”部分中所示那样，它会提示传输层的某些安全注意事项。 提供这些要求是设备提供商的责任。 框架不会为你提供它们。
+The relationship between the Windows Hello companion device and the Windows 10 desktop  device can be one to many (i.e., one companion device can be used for many Windows 10 desktop  devices). However, each Windows Hello companion device can only be used for one user on each Windows 10 desktop  device.   
 
+Before a Windows Hello companion device can communicate with a PC, they need to agree on a transport to use. Such choice is left to the Windows Hello companion device app; the Windows Hello companion device framework does not impose any limitations on transport type (USB, NFC, WiFi, BT, BLE, etc) or protocol being used between the Windows Hello companion device and the Windows Hello companion device app on the Windows 10 desktop device side. It does, however, suggest certain security considerations for the transport layer as outlined in the "Security Requirements" section of this document. It is the device provider’s responsibility to provide those requirements. The framework does not provide them for you.
 
-## 用户交互模型
 
-### 配套设备应用发现、安装和首次注册
+## User Interaction Model
 
-典型的用户工作流如下所示：
+### Windows Hello companion device app discovery, installation, and first-time registration
 
-- 用户在想要通过该配套设备解锁的每台目标 Windows 10 桌面版设备上设置 PIN。
-- 用户在 Windows 10 桌面版设备上运行配套设备应用，以将配套设备注册到 Windows 10 桌面版。
+A typical user workflow is as follows:
 
-注意：
+- The user sets up the PIN on each of target Windows 10 desktop devices she wants to unlock with that Windows Hello companion device.
+- The user runs the Windows Hello companion device app on their Windows 10 desktop device to register her Windows Hello companion device with Windows 10 desktop.
 
-- 我们建议简化和自动化（如果可能）配套设备应用的发现、下载和启动（例如当点击 Windows 10 桌面版设备端的 NFC 读卡器上的配套设备时，应用即可下载）。 但是，这是配套设备和配套设备应用的责任。
-- 在企业环境中，配套设备应用可通过 MDM 部署。
-- 配套设备应用负责向用户显示任何在注册时发生的错误消息。
+Notes:
 
-### 注册和注销协议
+- We recommend the discovery, download, and launch of the Windows Hello companion device app is streamlined and, if possible, automated (e.g., the app can be downloaded upon tapping the Windows Hello companion device on an NFC reader on Windows 10 desktop device side). This is, however, the responsibility of the Windows Hello companion device and Windows Hello companion device app.
+- In an enterprise environment, the Windows Hello companion device app can be deployed via MDM.
+- The Windows Hello companion device app is responsible for showing the user any error messages that happen as part of registration.
 
-下图说明了在注册期间，配套设备如何与配套身份验证服务交互。  
+### Registration and de-registration protocol
 
-![注册流程](images/companion-device-2.png)
+The following diagram illustrates how the Windows Hello companion device interacts with Companion Authentication Service during registration.  
 
-在协议中要用到两个密钥：
+![registration flow](images/companion-device-2.png)
 
-- 设备密钥 (**devicekey**)：用于保护电脑解锁 Windows 所需的解锁令牌。
-- 身份验证密钥 (**authkey**)：用于共同验证配套设备和配套身份验证服务。
+There are two keys used in our protocol:
 
-设备密钥和身份验证密钥在注册时会在配套设备应用和配套设备之间交换。 因此，配套设备应用和配套设备必须使用安全传输来保护密钥。
+- Device key (**devicekey**): used to protect unlock tokens that the PC needs to unlock Windows.
+- The authentication key (**authkey**): used to mutually authenticate the Windows Hello companion device and Companion Authentication Service.
 
-此外请注意，虽然上图显示了两个在配套设备上生成的 HMAC 密钥，但应用也可以生成它们并将它们发送到配套设备以进行存储。
+The device key and authentication keys are exchanged at registration time between the Windows Hello companion device app and Windows Hello companion device. As a result, the Windows Hello companion device app and Windows Hello companion device must use a secure transport to protect keys.
 
-### 启动身份验证流程
+Also, note that while the diagram above displays two HMAC keys generating on the Windows Hello companion device, it is also possible for the app to generate them and send them to the Windows Hello companion device for storage.
 
-通过使用配套设备框架（即提供意图信号），用户有两种方法可以启动 Windows 10 桌面版的登录流程：
+### Starting authentication flows
 
-- 打开笔记本电脑的盖子，或者点击电脑空格键或轻扫。
-- 在配套设备端执行手势或操作。
+There are two ways for the user to start the signing in flow to Windows 10 desktop using Windows Hello companion device framework (i.e., provide intent signal):
 
-由配套设备选择哪一个是起始点。 当选项一发生时，配套设备框架会通知配套设备应用。 对于选项二，配套设备应用应查询配套设备以查看是否已捕获该事件。 这确保了在解锁成功前配套设备能收集意图信号。
+- Open up the lid on laptop, or hit the space bar or swipe up on PC.
+- Perform a gesture or an action on the Windows Hello companion device side.
 
-### 配套设备凭据提供程序
+It is the Windows Hello companion device's choice to select which one is the starting point. The Windows Hello companion device framework will inform companion device app when option one happens. For option two, the Windows Hello companion device app should query the companion device to see if that event has been captured. This ensures the Windows Hello companion device collects the intent signal before the unlock succeeds.
 
-Windows 10 拥有处理所有配套设备的全新凭据提供程序。
+### Windows Hello companion device credential provider
 
-配套设备凭据提供程序负责通过激活某个触发器来启动配套设备后台任务。 该触发器在唤醒电脑并且显示锁屏界面时进行首次设置。 第二次是在电脑进入登录 UI 并且配套设备凭据提供程序已是选定标题的时候。
+There is a new credential provider in Windows 10 that handles all Windows Hello companion devices.
 
-配套设备应用的帮助程序库会侦听锁屏界面状态更改，并发送对应配套设备后台任务的事件。
+The Windows Hello companion device credential provider is responsible for launching the companion device background task via activating a trigger. The trigger is set the first time when the PC awakens and a lock screen is displayed. The second time is when the PC is entering logon UI and the Windows Hello companion device credential provider is the selected tile.
 
-如果有多个配套设备后台任务，则第一个完成身份验证过程的后台任务将解锁电脑。 配套设备身份验证服务将忽略任何剩下的身份验证调用。
+The helper library for the Windows Hello companion device app will listen to the lock screen status change and send the event corresponding to the Windows Hello companion device background task.
 
-配套设备端的体验归配套设备应用所有并由其管理。 配套设备框架无法控制此部分的用户体验。 更具体而言，配套身份验证提供程序通知配套设备应用（通过后台应用）有关登录 UI 的状态更改情况（例如锁屏界面刚刚应用，或者用户刚刚点击了空格键而消除了锁屏界面），而围绕状态更改构建体验（例如当用户点击空格键和消除锁屏界面时，开始通过 USB 寻找设备）则是配套设备应用的责任。
+If there are multiple Windows Hello companion device background tasks, the first background task that has finished the authentication process will unlock the PC. The companion device authentication service will ignore any remaining authentication calls.
 
-配套设备框架会提供大量（本地化的）文本和错误消息以供配套设备应用进行选择。 这些都将在锁屏界面上（或登录 UI 中）显示。 有关更多详细信息，请参阅“处理消息和错误”部分。
+The experience on the Windows Hello companion device side is owned and managed by the Windows Hello companion device app. The Windows Hello companion device framework has no control over this part of the user experience. More specifically, the companion authentication provider informs the Windows Hello companion device app (via its background app) about state changes in logon UI (e.g., lock screen just came down, or the user just dispelled lock screen by hitting spacebar), and it is the responsibility of the Windows Hello companion device app to build an experience around that (e.g., upon user hitting spacebar and dispelling unlock screen, start looking for the device over USB).
 
-### 身份验证协议
+The Windows Hello companion device Framework will provide a stock of (localized) text and error messages for the Windows Hello companion device app to choose from. These will be displayed on top of lock screen (or in logon UI). See the Dealing with Messages and Errors section for more details.
 
-在与配套设备应用关联的后台任务的触发器启动后，它有责任请求配套设备帮助计算两个 HMAC 值：
-- 拥有 nonce 的设备密钥的 HMAC。
-- 第一个 HMAC 值与配套身份验证服务生成的 nonce 串联的身份验证密钥的 HMAC。
+### Authentication protocol
 
-第二个值由服务用于验证设备身份，并且还阻止传输通道中的重播攻击。
+Once the background task associated with a Windows Hello companion device app is trigger started, it is responsible for asking the Windows Hello companion device to validate an HMAC value computed by the Companion Authentication Service and help calculate two HMAC values:
+- Validate Service HMAC = HMAC(authentication key, service nonce || device nonce || session nonce).
+- Calculate the HMAC of the device key with a nonce.
+- Calculate the HMAC of the authentication key with first HMAC value concatenated with a nonce generated by the Companion Authentication Service.
 
-![注册流程](images/companion-device-3.png)
+The second computed value is used by the service to authenticate the device and also prevent replay attack in transport channel.
 
-## 生命周期管理
+![registration flow](images/companion-device-3.png)
 
-### 一次注册，随处使用
+## Lifecycle management
 
-如果没有后端服务器，用户必须将他们的配套设备分别注册到每台 Windows 10 桌面版设备上。
+### Register once, use everywhere
 
-配套设备供应商或 OEM 可以实现 Web 服务以在用户的 Windows 10 桌面版或移动设备上漫游注册状态。 有关更多详细信息，请参阅“漫游、吊销和筛选器服务”部分。
+Without a backend server, users must register their Windows Hello companion device with each Windows 10 desktop device separately.
 
-### PIN 管理
+A companion device vendor or OEM can implement a web service to roam the registration state across user Windows 10 desktops or mobile devices. For more details, see the Roaming, Revocation, and Filter Service section.
 
-在配套设备可以使用前，需要在 Windows 10 桌面设备上设置 PIN。 这可确保用户拥有一份备份，以防配套设备无法运行。 PIN 受到 Windows 管理，但应用永远无法看到。 若要更改它，用户应导航到“设置”&gt;“帐户”&gt;“登录”选项。
+### PIN management
 
-### 管理和策略
+Before a companion device can be used, a PIN needs to be set up on Windows 10 desktop device. This ensures the user has a backup in case their Windows Hello companion device is not working. The PIN is something that Windows manages and that apps never see. To change it, the user navigates to Settings > Accounts > Sign-in options.
 
-通过在 Windows 10 桌面版上运行配套设备应用，用户可从该桌面版删除配套设备。
+### Management and policy
 
-企业有两个选择可以控制配套设备框架：
+Users can remove a Windows Hello companion device from a Windows 10 desktops by running the Windows Hello companion device app on that desktop device.
 
-- 打开或关闭功能
-- 使用 Windows 应用保险箱定义允许的配套设备白名单
+Enterprises have two options for controlling the Windows Hello companion device framework:
 
-配套设备框架不支持任何保留可用配套设备清单的集中式方法，或者是进一步筛选允许哪一个配套设备种类的实例的方法（例如仅允许序列号在 X 和 Y 之间的配套设备）。 但是，应用开发人员可以生成提供此类功能的服务。 有关更多详细信息，请参阅“漫游、吊销和筛选器服务”部分。
+- Turn the feature on or off
+- Define the whitelist of Windows Hello companion devices allowed using Windows app locker
 
-### 吊销
+The Windows Hello companion device framework does not support any centralized way to keep inventory of available companion devices, or a method to further filter which instances of a Windows Hello companion device type is allowed (for example, only a companion device with a serial number between X and Y are allowed). Apps developers can, however, build a service to provide such functionality. For more details, see the Roaming, Revocation, and Filter Service section.
 
-配套设备框架不支持远程删除特定 Windows 10 桌面版设备的配套设备。 用户可以转而通过在该 Windows 10 桌面版上运行的配套设备应用来删除配套设备。
+### Revocation
 
-但是，配套设备供应商可以构建提供远程吊销功能的服务。 有关更多详细信息，请参阅“漫游、吊销和筛选器服务”部分。
+The Windows Hello companion device framework does not support removing a companion device from a specific Windows 10 desktop device remotely. Instead, users can remove the Windows Hello companion device via the Windows Hello companion device app running on that Windows 10 desktop.
 
-### 漫游和筛选器服务
+Companion device vendors, however, can build a service to provide remote revocation functionality. For more details, see Roaming, Revocation, and Filter Service section.
 
-配套设备供应商可以实现可用于以下方案的 Web 服务：
+### Roaming and filter services
 
-- 企业的筛选器服务：企业可以将能够在它们的环境中运行的配套设备组限制为特定供应商的少数精选设备。 例如，公司 Contoso 可以从供应商 X 订购10000 台 Y 型号的设备，并确保仅这些设备能够在 Contoso 域中运行（并且供应商 X 的任何其他设备型号都不行）。
-- 清单：企业可以确定在企业环境中使用的现有配套设备的列表。
-- 实时吊销：如果员工报告配套设备丢失或失窃，可使用 Web 服务吊销该设备。
-- 漫游：用户仅需注册配套设备一次，它就可以在所有 Windows 10 桌面版和移动版上运行。
+Companion device vendors can implement a web service that can be used for the following scenarios:
 
-实现这些功能要求配套设备应用在注册和使用时检查 Web 服务。 配套设备应用可以为诸如要求一天仅检查一次 Web 服务的缓存登录方案进行优化（代价是将吊销事件延长至最多一天）。  
+- A filter service for enterprise: An enterprise can limit the set of Windows Hello companion devices that can work in their environment to a select few from a specific vendor. For example, the company Contoso could order 10,000 Model Y companion devices from Vendor X and ensure only those devices will work in the Contoso domain (and not any other device model from Vendor X).
+- Inventory:  An enterprise can determine the list of existing companion devices used in an enterprise environment.
+- Real time revocation: If an employee reports that his companion device is lost or stolen, the web service can be used to revoke that device.
+- Roaming: A user only has to register his companion device once and it works on all of his Windows 10 desktops and Mobile.
 
-## 配套设备框架 API 模型
+Implementing these features requires the Windows Hello companion device app to check with the web service at registration and usage time. The Windows Hello companion device app can optimize for cached logon scenarios like requiring checking with web service only once a day (at the cost of extending the revocation time to up to one day).  
 
-### 概述
+## Windows Hello companion device framework API model
 
-配套应用应包含两个组件：UI 负责注册和注销设备的前台应用和处理身份验证的后台任务。
+### Overview
 
-整体 API 流程如下所示：
+A Windows Hello companion device app should contain two components: a foregroud app with UI responsible for registering and unregistering the device, and a background task that handles authentication.
 
-1. 注册配套设备
-    * 确保设备在附近并查询其功能（如果需要）
-    * 生成两个 HMAC 密钥（在配套设备端或在应用端）
-    * 调用 RequestStartRegisteringDeviceAsync
-    * 调用 FinishRegisteringDeviceAsync
-    * 确保配套设备应用存储了 HMAC 密钥（如果支持），并且配套设备应用放弃其副本
-2. 注册后台任务
-3. 等待后台任务的正确事件
-    * WaitingForUserConfirmation：如果开始身份验证流程需要配套设备端上的用户操作/手势，请等待此事件
-    * CollectingCredential：如果电脑端的配套设备依靠用户操作/手势启动身份验证流程（例如通过点击空格键），则请等待此事件。
-    * 其他触发器（例如智能卡）：确保查询当前身份验证状态，以调用正确的 API。
-4. 通过调用 ShowNotificationMessageAsync，随时通知用户错误消息或要求的后续步骤。 仅在收集了意图信号后调用此 API
-5. 解除锁定
-    * 确保已收集意图和用户存在信号
-    * 调用 StartAuthenticationAsync
-    * 与配套设备通信，执行所需的 HMAC 操作
-    * 调用 FinishAuthenticationAsync
-6. 在用户提出有关请求时（例如丢失了配套设备），取消配套设备注册
-    * 通过 FindAllRegisteredDeviceInfoAsync 为登录的用户枚举配套设备
-    * 使用 UnregisterDeviceAsync 取消注册
+The overall API flow is as follows:
 
-### 注册和注销
+1. Register the Windows Hello companion device
+    * Make sure the device is nearby and query its capability (if required)
+    * Generate two HMAC keys (either on the companion device side or the app side)
+    * Call RequestStartRegisteringDeviceAsync
+    * Call FinishRegisteringDeviceAsync
+    * Make sure Windows Hello companion device app stores HMAC keys (if supported) and Windows Hello companion device app discards its copies
+2. Register your background task
+3. Wait for the right event in the background task
+    * WaitingForUserConfirmation: Wait for this event if the user action/gesture on the Windows Hello companion device side is required to start authentication flow
+    * CollectingCredential: Wait for this event if the Windows Hello companion device relies on user action/gesture on the PC side to start authentication flow (e.g., by hitting spacebar)
+    * Other trigger, like a smartcard: Make sure to query for current authentication state to call the right APIs.
+4. Keep user informed about error messages or required next steps by calling ShowNotificationMessageAsync. Only call this API once an intent signal is collected
+5. Unlock
+    * Make sure intent and user presence signals were collected
+    * Call StartAuthenticationAsync
+    * Communicate with the companion device to perform required HMAC operations
+    * Call FinishAuthenticationAsync
+6. Un-register a Windows Hello companion device when the user requests it (for example, if they've lost their companion device)
+    * Enumerate the Windows Hello companion device for logged in user via FindAllRegisteredDeviceInfoAsync
+    * Un-register it using UnregisterDeviceAsync
 
-注册需要配套身份验证服务的两个 API 调用：RequestStartRegisteringDeviceAsync 和 FinishRegisteringDeviceAsync。
+### Registration and de-registration
 
-在执行任何这些调用前，配套设备应用必须确保配套设备可用。 如果配套设备负责生成 HMAC 密钥（身份验证和设备密钥），则配套设备应用也应要求配套设备在执行任何上述两个调用前生成这些密钥。 如果配套设备应用负责生成 HMAC 密钥，则它在调用上述两个调用前也应这样做。
+Registration requires two API calls to the Companion Authentication Service: RequestStartRegisteringDeviceAsync and FinishRegisteringDeviceAsync.
 
-此外，作为第一个 API 调用 (RequestStartRegisteringDeviceAsync) 的一部分，配套设备应用必须确定设备功能，并准备将其作为 API 调用的一部分进行传递（例如配套设备是否支持安全存储 HMAC 密钥）。 如果相同配套设备应用用于管理多个版本的相同配套设备，并且这些功能会更改（还要求进行设备查询才能做出决定），我们建议此查询要在执行第一个 API 调用前发生。   
+Before any of these calls are made, the Windows Hello companion device app must make sure that the Windows Hello companion device is available. If the Windows Hello companion device is responsible for generating HMAC keys (authentication and device keys), then the Windows Hello companion device app should also ask the companion device to generate them before making any of the above two calls. If the Windows Hello companion device app is responsible for generating HMAC keys, then it should do so before calling the above two calls.
 
-第一个 API (RequestStartRegisteringDeviceAsync) 将返回第二个 API (FinishRegisteringDeviceAsync) 使用的句柄。 首次调用注册将启动 PIN 提示符以确保用户已存在。 如果没有设置任何 PIN，则此调用将失败。 配套设备应用还可通过 KeyCredentialManager.IsSupportedAsync 调用查询 PIN 是否已设置。 如果策略禁用配套设备，RequestStartRegisteringDeviceAsync 调用也会失败。
+Additionally, as part of first API call (RequestStartRegisteringDeviceAsync), the Windows Hello companion device app must decide on device capability and be prepared to pass it as part of the API call; for example, whether the Windows Hello companion device supports secure storage for HMAC keys. If the same Windows Hello companion device app is used to manage multiple versions of the same companion device and those capabilities change (and requires a device query to decide), we recommend this queries occurs before first API call is made.   
 
-第一个调用的结果通过 SecondaryAuthenticationFactorRegistrationStatus 枚举返回：
+The first API (RequestStartRegisteringDeviceAsync) will return a handle used by the second API (FinishRegisteringDeviceAsync). The first call for registration will launch the PIN prompt to make sure user is present. If no PIN is set up, this call will fail. The Windows Hello companion device app can query whether PIN is set up or not via KeyCredentialManager.IsSupportedAsync call as well. RequestStartRegisteringDeviceAsync call can also fail if policy has disabled the usage of the Windows Hello companion device.
+
+The result of first call is returned via SecondaryAuthenticationFactorRegistrationStatus enum:
 
 ```C#
 {
@@ -225,13 +228,13 @@ Windows 10 拥有处理所有配套设备的全新凭据提供程序。
 }
 ```
 
-第二个调用 (FinishRegisteringDeviceAsync) 结束注册。 作为注册过程的一部分，配套设备应用可通过配套身份验证服务存储配套设备配置数据。 此数据限制为 4K 大小。 在进行身份验证时，此数据将提供给配套设备应用。 例如，此数据可用于连接配套设备（就像 MAC 地址），或者如果配套设备没有存储而配套设备想要将电脑用于存储，则可使用配置数据。 注意，任何作为配置数据的一部分存储的敏感数据都必须使用仅配套设备知道的密钥加密。 另外，考虑到配置数据由 Windows 服务存储，它在用户配置文件上可用于配套设备应用。
+The second call (FinishRegisteringDeviceAsync) finishes the registration. As part of registration process, the Windows Hello companion device app can store companion device configuration data with Companion Authentication Service. There is a 4K size limit for this data. This data will be available to the Windows Hello companion device app at authentication time. This data can be used, as an example, to connect to the Windows Hello companion device like a MAC address, or if the Windows Hello companion device does not have storage and companion device wants to use PC for storage, then configuration data can be used. Note that any sensitive data stored as part of configuration data must be encrypted with a key that only the Windows Hello companion device knows. Also, given that configuration data is stored by a Windows service, it is available to the Windows Hello companion device app across user profiles.
 
-配套设备应用可调用 AbortRegisteringDeviceAsync 取消注册，并传递错误代码。 配套身份验证服务将在遥测数据中记录错误。 执行此调用很好的示例是配套设备出错并且无法完成注册（例如无法存储 HMAC 密钥或者丢失了 BT 连接）。
+The Windows Hello companion device app can call AbortRegisteringDeviceAsync to cancel the registration and pass in an error code. The Companion Authentication Service will log the error in the telemetry data. A good example for this call would be when something went wrong with the Windows Hello companion device and it could not finish registration (e.g., it cannot store HMAC keys or BT connection was lost).
 
-配套设备应用必须让用户可以选择从 Windows 10 桌面版注销配套设备（例如他们丢失了配套设备或购买了更高的版本）。 当用户选择该选项时，配套设备应用必须调用 UnregisterDeviceAsync。 此配套设备应用的调用将触发配套设备身份验证服务从电脑端删除与调用方的特定设备 Id 和 AppId 对应的所有数据（包括 HMAC 密钥）。 此 API 调用不会尝试从配套设备应用或配套设备端删除 HMAC 密钥。 这留待配套设备应用来实现。
+The Windows Hello companion device app must provide an option for the user to de-register their Windows Hello companion device from their Windows 10 desktop (e.g., if they lost their companion device or bought a newer version). When the user selects that option, then the Windows Hello companion device app must call UnregisterDeviceAsync. This call by the Windows Hello companion device app will trigger the companion device authentication service to delete all data (including HMAC keys) corresponding to the specific device Id and AppId of the caller app from PC side. This API call does not attempt to delete HMAC keys from either the Windows Hello companion device app or companion device side. That is left for the Windows Hello companion device app to implement.
 
-配套设备应用负责显示在注册和注销阶段发生的任何错误消息。
+The Windows Hello companion device app is responsible for showing any error messages that happen in registration and de-registration phase.
 
 ```C#
 using System;
@@ -258,9 +261,9 @@ namespace SecondaryAuthFactorSample
             SecondaryAuthenticationFactorRegistration registrationResult =
                 await SecondaryAuthenticationFactorRegistration.RequestStartRegisteringDeviceAsync(
                     deviceId,  // deviceId: max 40 wide characters. For example, serial number of the device
-                    SecondaryAuthenticaitonFactorDeviceCapabilities.SupportSecureStorage |
-                        SecondaryAuthenticaitonFactorDeviceCapabilities.SupportSha2 |
-                        SecondaryAuthenticaitonFactorDeviceCapabilities.StoreKeys,
+                    SecondaryAuthenticationFactorDeviceCapabilities.SecureStorage |
+                        SecondaryAuthenticationFactorDeviceCapabilities.HMacSha256 |
+                        SecondaryAuthenticationFactorDeviceCapabilities.StoreKeys,
                     "My test device 1", // deviceFriendlyName: max 64 wide characters. For example: John's card
                     "SAMPLE-001", // deviceModelNumber: max 32 wide characters. The app should read the model number from device.
                     deviceKey,
@@ -310,7 +313,7 @@ namespace SecondaryAuthFactorSample
         {
             IReadOnlyList<SecondaryAuthenticationFactorInfo> deviceInfoList =
                 await SecondaryAuthenticationFactorRegistration.FindAllRegisteredDeviceInfoAsync(
-                    SecondaryAuthenticaitonFactorDeviceFindScope.User);
+                    SecondaryAuthenticationFactorDeviceFindScope.User);
 
             if (deviceInfoList.Count > 0)
             {
@@ -335,13 +338,13 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### 身份验证
+### Authentication
 
-身份验证需要配套身份验证服务的两个 API 调用：StartAuthenticationAsync 和 FinishAuthencationAsync。
+Authentication requires two API calls to the Companion Authentication Service: StartAuthenticationAsync and FinishAuthencationAsync.
 
-第一个启动 API 将返回第二个 API 使用的句柄。  在其他事项中，第一个调用返回需要通过存储在配套设备上的设备密钥进行 HMAC 处理的 nonce（在与其他内容串联后）。 第二个调用返回 HMAC 的结果和设备密钥，并且最后可能验证身份成功（即用户将看到桌面）。
+The first initiation API will return a handle used by the second API.  The first call returns, among other things, a nonce that – once concatenated with other things - needs to be HMAC'ed with the device key stored on the Windows Hello companion device. The second call returns the results of HMAC with device key and can potentially end in successful authentication (i.e., the user will see their desktop).
 
-如果在初始注册后策略禁用了该配套设备，则第一个启动 API (StartAuthenticationAsync) 可能失败。 如果在 WaitingForUserConfirmation 或 CollectingCredential states 之外执行 API 调用，它也可能失败（稍后在本部分还会有详细介绍）。 如果未注册的配套设备应用进行调用，它也可能失败。 SecondaryAuthenticationFactorAuthenticationStatus 枚举总结了以下可能的结果：
+The first initiation API (StartAuthenticationAsync) can fail if policy has disabled that Windows Hello companion device after initial registration. It can also fail if the API call was made outside WaitingForUserConfirmation or CollectingCredential states (more on this later in this section). It can also fail if an unregistered companion device app calls it. SecondaryAuthenticationFactorAuthenticationStatus Enum summarizes the possible outcomes:
 
 ```C#
 {
@@ -354,7 +357,7 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-如果第一个 API 调用提供的 nonce 到期（20 秒），第二个调用 (FinishAuthencationAsync) 可能会失败。 SecondaryAuthenticationFactorFinishAuthenticationStatus 枚举捕获可能的结果。
+The second API call (FinishAuthencationAsync) can fail if the nonce that was provided in the first call is expired (20 seconds). SecondaryAuthenticationFactorFinishAuthenticationStatus enum captures possible outcomes.
 
 ```C#
 {
@@ -364,26 +367,26 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-两个 API 调用（StartAuthenticationAsync 和 FinishAuthencationAsync）的计时需要符合配套设备收集意图、用户存在和消除歧义信号的方式（更多详细信息，请参阅“用户信号”）。 例如，禁止在意图信号可用前提交第二个调用。 换句话说，在用户没有表达意图前，电脑不应解锁。 为了使表达更加清楚，假定蓝牙临近感应用于电脑解锁，否则必须收集显式意图信号；当用户走向厨房路过电脑旁边时，电脑就会解锁。 另外，从第一个调用返回的 nonce 的时间已绑定（20 秒），并且在某段时间后就会到期。 于是，只应在配套设备应用可以清楚指示配套设备存在（例如配套设备已插入 USB 端口或点击 NFC 读卡器）时才能执行第一个调用。 使用蓝牙时，必须小心避免影响电脑端的电池或避免在检查配套设备存在时影响正在进行的其他蓝牙活动。 另外，如果需要提供用户存在信号（例如通过键入 PIN），建议在收集完该信号后执行第一个身份验证调用。
+The timing of two API calls (StartAuthenticationAsync and FinishAuthencationAsync) needs to align with how the Windows Hello companion device collects intent, user presence, and disambiguation signals (see User Signals for more details). For example, the second call must not be submitted until intent signal is available. In other words, the PC should not unlock if the user has not expressed intent for it. To make this more clear, assume that Bluetooth proximity is used for PC unlock, then an explicit intent signal must be collected, otherwise, as soon as user walks by his PC on the way to kitchen, the PC will unlock. Also, the nonce returned from the first call is time bound (20 seconds) and will expire after certain period. As a result, the first call only should be made when the Windows Hello companion device app has good indication of companion device presence, e.g., the companion device is inserted into USB port, or tapped on NFC reader. With Bluetooth, care must be taken to avoid affecting battery on PC side or affecting other Bluetooth activities going on at that point when checking for Windows Hello companion device presence. Also, if a user presence signal needs to be provided (e.g., by typing in PIN), it is recommended that the first authentication call is only made after that signal is collected.
 
-通过提供用户所处的身份验证流程的完整图片，配套设备框架可帮助配套设备应用明智地决定执行上述两个调用的时机。 通过向应用后台任务提供锁定状态更改通知，配套设备框架可提供此功能。
+The Windows Hello companion device framework helps the Windows Hello companion device app to make informed decision on when to make above two calls by providing a complete picture of where user is in authentication flow. Windows Hello companion device framework provides this functionality by providing lock state change notification to app background task.
 
-![配套设备流](images/companion-device-4.png)
+![companion device flow](images/companion-device-4.png)
 
-这些状态的详细信息如下所示：
+Details of each of these states are as follows:
 
-| 状态                         | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| State                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
-| WaitingForUserConfirmation    | 当锁屏界面应用（例如用户按 Windows + L）时，将触发此状态更改通知事件。 我们建议不请求与在此状态中难以查找设备相关的任何错误消息。 一般情况下，我们建议仅在提供意图信号时显示消息。 如果配套设备收集意图信号（例如点击 NFC 读卡器、在配套设备上按某个按钮，或者是诸如鼓掌等特定手势），配套设备应用应在此状态中将第一个 API 调用用于身份验证，并且配套设备应用后台任务会从配套设备接收已检测到意图信号的指示。 否则，如果配套设备应用依赖电脑启动身份验证流程（通过让用户轻扫解锁屏幕或点击空格键），则配套设备应用需等到下一个状态 (CollectingCredential)。    |
-| CollectingCredential          | 当用户打开笔记本电脑盖子、点击任意键盘按键或轻扫解锁屏幕时，将触发此状态更改通知事件。 如果配套设备依赖上述操作来开始收集意图信号，则配套设备应用应开始收集该信号（例如使用配套设备上询问用户是否想要解锁电脑的弹出窗口）。 如果配套设备应用需要用户在配套设备上提供用户存在信号（例如在配套设备上键入 PIN），这将是提供错误情况的良好时机。                                                                                                                                                                                                                                                                                                                                               |
-| Suspendingauthentication      | 当配套设备应用接收此状态时，这意味着配套身份验证服务已停止接收身份验证请求。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| CredentialCollected           | 这表示另一个配套设备应用已调用了第二个 API，并且配套身份验证服务正在验证提交内容。 此时，除非当前提交的身份验证请求没有通过验证，配套身份验证服务不会接受任何其他请求。 配套设备应用应保持优化，直到到达下一个状态。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| CredentialAuthenticated       | 这表示提交的凭据有效。 CredentialAuthenticated 拥有已成功的配套设备的设备 ID。 配套设备应用应确保查看它的关联设备是否是入选方。 如果不是，则配套设备应用应避免显示任何后身份验证流程（例如配套设备上的成功消息或者可能是该设备的震动）。 请注意，如果提交的凭据没有效果，则状态将更改为 CollectingCredential 状态。                                                                                                                                                                                                                                                                                                                                                                                        |
-| StoppoingAuthentication       | 身份验证已成功，并且用户已看到桌面。 终止后台任务的时间                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| WaitingForUserConfirmation    | This state change notification event is fired when the lock screen comes down (e.g., user pressed Windows + L). We recommend not to request any error messages relating to having difficulty finding a device in this state. In general, we recommend to only show messages when intent signal is available. The Windows Hello companion device app should make the first API call for authentication in this state if the companion device collects the intent signal (e.g., tapping on NFC reader, press of a button on the companion device or a specific gesture, like clapping), and the Windows Hello companion device app background task receives indication from the companion device that intent signal was detected. Otherwise, if the Windows Hello companion device app relies on the PC to start authentication flow (by having user swipe up the unlock screen or hitting space bar), then the Windows Hello companion device app needs to wait for the next state (CollectingCredential).     |
+| CollectingCredential          | This state change notification event is fired when the user either opens their laptop lid, hits any key on their keyboard, or swipes up to the unlock screen. If the Windows Hello companion device relies on the above actions to start collecting the intent signal, then the Windows Hello companion device app should start collecting it (e.g., via a pop up on the companion device asking whether user wants to unlock the PC). This would be a good time to provide error cases if the Windows Hello companion device app needs the user to provide a user presence signal on the companion device (like typing in PIN on the Windows Hello companion device).                                                                                                                                                                                                                                                                                                                                            |
+| SuspendingAuthentication      | When the Windows Hello companion device app receives this state, it means that the Companion Authentication Service has stopped accepting authentication requests.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| CredentialCollected           | This means that another Windows Hello companion device app has called the second API and that the Companion Authentication Service is verifying what was submitted. At this point, the Companion Authentication Service is not accepting any other authentication requests unless the currently submitted one does not pass verification. The Windows Hello companion device app should stay tuned until next state is reached.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| CredentialAuthenticated       | This means that the submitted credential worked. The credentialAuthenticated has the device ID of the Windows Hello companion device that succeeded. The Windows Hello companion device app should make sure to check on that to see if its associated device was the winner. If not, then the Windows Hello companion device app should avoid showing any post authentication flows (like success message on the companion device or perhaps a vibration on that device). Note that if the submitted credential did not work, the state will change to CollectingCredential state.                                                                                                                                                                                                                                                                                                                                                                                       |
+| StoppingAuthentication        | Authentication succeeded and user saw the desktop. Time to kill your background task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 
 
-配套设备应用在前两种状态中应仅调用两个身份验证 API。  配套设备应用应查看触发此事件的方案。 存在两种可能性：解锁或后解锁。 当前仅支持解锁。 在即将推出的版本中，后解锁方案可能会受支持。 SecondaryAuthenticationFactorAuthenticationScenario 枚举捕获以下两个选项：
+Windows Hello companion device apps should only call the two authentication APIs in the first two states. Windows Hello companion device apps should check for what scenario this event is being fired. There are two possibilities: unlock or post unlock. Currently, only unlock is supported. In upcoming releases, post unlock scenarios may be supported. The SecondaryAuthenticationFactorAuthenticationScenario enum captures these two options:
 
 ```C#
 {
@@ -392,7 +395,7 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-完整代码示例：
+Complete code sample:
 
 ```C#
 using System;
@@ -529,7 +532,7 @@ namespace SecondaryAuthFactorSample
             // Find all device registred by this application
             IReadOnlyList<SecondaryAuthenticationFactorInfo> deviceInfoList =
                 await SecondaryAuthenticationFactorRegistration.FindAllRegisteredDeviceInfoAsync(
-                    SecondaryAuthenticaitonFactorDeviceFindScope.AllUsers);
+                    SecondaryAuthenticationFactorDeviceFindScope.AllUsers);
 
             if (deviceInfoList.Count == 0)
             {
@@ -556,9 +559,9 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### 注册后台任务
+### Register a background task
 
-当配套设备应用注册第一台配套设备时，它还应注册该配套设备能够在设备和配套设备身份验证服务之间传递身份验证信息的后台任务组件。
+When the Windows Hello companion device app registers the first companion device, it should also register its background task component which will pass authentication information between device and companion device authentication service.
 
 ```C#
 using System;
@@ -607,50 +610,50 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### 错误和消息
+### Errors and messages
 
-配套设备框架负责向用户提供有关登录成功或失败的反馈。 配套设备框架会提供大量（本地化的）文本和错误消息以供配套设备应用进行选择。 这些将显示在登录 UI 中。
+The Windows Hello companion device framework is responsible for providing feedback to the user about success or failure of signing in. The Windows Hello companion device framework will provide a stock of (localized) text and error messages for the Windows Hello companion device app to choose from. These will be displayed in the logon UI.
 
-![配套设备错误](images/companion-device-5.png)
+![companion device error](images/companion-device-5.png)
 
-配套设备应用可使用 ShowNotificationMessageAsync 向用户显示作为登录 UI 一部分的消息。 当意图信号可用时调用此 API。 请注意，意图信号必须始终在配套设备端上收集。
+Windows Hello companion device apps can use ShowNotificationMessageAsync to show messages to user as part of the logon UI. Call this API when an intent signal is available. Note that an intent signal must always be collected on the Windows Hello companion device side.
 
-有两种消息：指导和错误消息。
+There are two types of messages: guidance and errors.
 
-指导消息旨在向用户显示如何启动解锁过程。 这些消息只会在设备第一次注册时向用户显示，并且再也不会显示。
+Guidance messages are designed to show the user how to start the unlock process. Those messages are only shown to the user once, upon first device registration, and never shown again.
 
-错误消息会始终显示。 错误消息会向用户显示 5 秒钟，然后再消失。 考虑到必须先收集意图信号再向用户显示消息，并且用户将仅使用其中一台配套设备提供该意图，所以禁止出现多台配套设备争相显示错误消息的情况。 因此，配套设备框架不会保持任何队列。 当调用方请求错误消息时，这会显示 5 秒钟，并且在这 5 秒钟时间内其他所有显示错误消息的请求都会被弃用。 5 秒钟过后，其他调用方就有机会显示错误消息。 我们禁止任何调用方堵塞错误通道。
+Error messages are always shown. Error messages will be shown to the user for 5 seconds and then disappear. Given that an intent signal must be collected before showing messages to the user, and the user will provide that intent only using one of the Windows Hello companion devices, there must not be a situation where multiple Windows Hello companion devices race for showing error messages. As a result, the Windows Hello companion device framework does not maintain any queue. When a caller asks for an error message, it will be shown for 5 seconds and all other requests for showing an error message in that 5 seconds are dropped. Once 5 seconds has passed, then the opportunity arises for another caller to show an error message. We prohibit any caller from jamming the error channel.
 
-指导和错误消息如下所示。 设备名是配套设备应用作为 ShowNotificationMessageAsync 的一部分传递的参数。
+Guidance and error messages are as follows. Device name is a parameter passed by the companion device app as part of ShowNotificationMessageAsync.
 
-**指南**
+**Guidance**
 
-- “轻扫或按空格键以使用*设备名称*登录。”
-- “点击 NFC 读卡器的*设备名称*以登录。”
-- “查找*设备名称*...”
-- “将*设备名称*插入 USB 端口以登录。”
+- "Swipe up or press space bar to sign in with *device name*."
+- "Tap *device name* to the NFC reader to sign in."
+- "Looking for *device name* ..."
+- "Plug *device name* into a USB port to sign in."
 
-**错误**
+**Errors**
 
-- “有关登录说明，请参阅*设备名称*。”
-- “打开蓝牙以使用*设备名称*登录。”
-- “打开 NFC 以使用*设备名称*登录。”
-- “连接到 WLAN 网络以使用*设备名称*登录。”
-- “再次点击*设备名称*。”
-- “你的企业阻止使用*设备名称*登录。 请使用其他登录选项。”
-- “点击*设备名称*以登录。”
-- “将你的手指放在*设备名称*上以登录。”
-- “用手指在*设备名称*上轻扫以登录。”
-- “无法使用*设备名称*登录。 请使用其他登录选项。”
-- “出现了一些问题。 请使用其他登录选项，然后再次设置*设备名称*。”
-- “再试一次。”
-- “在*设备名称*中说出你的口令密码。”
-- “准备好使用*设备名称*登录。”
-- “请先使用其他登录选项，然后再使用*设备名称*登录。”
+- "See *device name* for sign-in instructions."
+- "Turn on Bluetooth to use *device name* to sign in."
+- "Turn on NFC to use *device name* to sign in."
+- "Connect to a Wi-Fi network to use *device name* to sign in."
+- "Tap *device name* again."
+- "Your enterprise prevents sign in with *device name*. Use another sign-in option."
+- "Tap *device name* to sign in."
+- "Rest your finger on *device name* to sign in."
+- "Swipe your finger on *device name* to sign in."
+- "Couldn’t sign in with *device name*. Use another sign-in option."
+- "Something went wrong. Use another sign-in option, and then set up *device name* again."
+- "Try again."
+- "Say your Spoken Passphrase into *device name*."
+- "Ready to sign in with *device name*."
+- "Use another sign-in option first, then you can use *device name* to sign in."
 
-### 枚举已注册的设备
+### Enumerating registered devices
 
-配套设备应用可通过 FindAllRegisteredDeviceInfoAsync 调用枚举注册的配套设备列表。 此 API 支持两种由枚举 SecondaryAuthenticaitonFactorDeviceFindScope 定义的查询类型：
+The Windows Hello companion device app can enumerate the list of registered companion devices via FindAllRegisteredDeviceInfoAsync call. This API supports two query types defined via enum SecondaryAuthenticationFactorDeviceFindScope:
 
 ```C#
 {
@@ -659,28 +662,28 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-第一个作用域为登录的用户返回设备列表。 第二个作用域在该电脑上为所有用户返回该列表。 第一个作用域必须在注销时使用，以避免注销其他用户的配套设备。 第二个作用域必须在身份验证或注册时使用：在注册时，此枚举可帮助应用避免尝试二度注册相同的配套设备。
+The first scope returns the list of devices for the logged on user. The second one returns the list for all users on that PC. The first scope must be used at un-registration time to avoid un-registering another user's Windows Hello companion device. The second one must be used at authentication or registration time: at registration time, this enumeration can help the app avoid trying to register the same Windows Hello companion device twice.
 
-请注意，即使应用不会执行此检查，电脑也会拒绝多次注册相同的配套设备。 在身份验证时，使用 AllUsers 作用域可帮助配套设备应用支持切换用户流：当用户 B 登录时注册用户 A（这要求两个用户都安装了配套设备应用，并且用户 A 已将配套设备注册到了电脑而且电脑正显示锁屏界面（或登录屏幕））。
+Note that even if the app does not perform this check, the PC does and will reject the same Windows Hello companion device from being registered more than once. At authentication time, using the AllUsers scope helps the Windows Hello companion device app support switch user flow: log on user A when user B is logged in (this requires that both users have installed the Windows Hello companion device app and user A has registered their companion devices with the PC and the PC is sitting on lock screen (or logon screen)).
 
-## 安全要求
+## Security requirements
 
-配套身份验证服务提供以下安全保护。
+The Companion Authentication Service provides the following security protections.
 
-- 在 Windows 10 桌面版设备上作为媒介用户或应用容器运行的恶意软件无法在电脑上以静默方式使用配套设备访问用户凭据密钥（存储为 Microsoft Passport 的一部分）。
-- 使用 Windows 10 桌面版设备的恶意用户无法使用属于该 Windows 10 桌面版设备上的其他用户的配套设备静默访问其用户凭据密钥（在相同的 Windows 10 桌面版设备上）。
-- 配套设备上的恶意软件无法在 Windows 10 桌面版设备上静默访问用户凭据密钥，包括利用专为配套设备框架开发的功能或代码。
-- 恶意用户无法通过捕获配套设备和 Windows 10 桌面版设备之间的通信并在随后以重播的方式解锁 Windows 10 桌面版设备。 在协议中使用 nonce、authkey 和 HMAC 可保证防止重播攻击。
-- 恶意电脑上的恶意软件或恶意用户无法使用配套设备访问真实的用户电脑。 这通过在协议中使用 authkey 和 HMAC 相互验证配套身份验证服务和配套设备来实现。
+- Malware on a Windows 10 desktop device running as a medium user or app container cannot use the Windows Hello companion device to access user credential keys (stored as part of Windows Hello) on a PC silently.
+- A malicious user on a Windows 10 desktop device cannot use the Windows Hello companion device that belongs to another user on that Windows 10 desktop device to get silent access to his user credential keys (on the same Windows 10 desktop device).
+- Malware on the Windows Hello companion device cannot silently get access to user credential keys on a Windows 10 desktop device, including leveraging functionality or code developed specifically for the Windows Hello companion device framework.
+- A malicious user cannot unlock a Windows 10 desktop device by capturing traffic between the Windows Hello companion device and the Windows 10 desktop device and replaying it later. Usage of nonce, authkey, and HMAC in our protocol guarantees protection against a replay attack.
+- Malware or a malicious user on a rouge PC cannot use Windows Hello companion device to get access to honest user PC. This is achieved through mutual authentication between Companion Authentication Service and Windows Hello companion device through usage of authkey and HMAC in our protocol.
 
-实现上述列举的安全保护的关键是保护 HMAC 密钥不受未经授权的访问，并且验证用户存在。 具体而言，它必须满足以下要求：
+The key to achieve the security protections enumerated above is to protect HMAC keys from unauthorized access and also verifying user presence. More specifically, it must satisfy these requirements:
 
-- 防止克隆配套设备
-- 在注册时将 HMAC 密钥发送到电脑时防止窃听
-- 确保用户存在信号可用。
+- Provide protection against cloning the Windows Hello companion device
+- Provide protection against eavesdropping when sending HMAC keys at registration time to the PC
+- Make sure that user presence signal is available
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

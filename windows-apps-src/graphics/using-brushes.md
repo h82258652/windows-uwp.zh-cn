@@ -1,53 +1,53 @@
 ---
 author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
-title: "使用画笔"
-description: "Brush 对象用于绘制形状、文本和控件各个部分的内部或轮廓，以便所绘制的对象在 UI 中可见。"
+title: Use brushes
+description: Brush objects are used to paint the interiors or outlines of shapes, text, and parts of controls, so that the object being painted is visible in a UI.
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
+ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
 
 ---
-# 使用画笔
+# Use brushes
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+** Important APIs **
 
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
-[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 对象用于绘制形状、文本和控件各个部分的内部或轮廓，以便所绘制的对象在 UI 中可见。 让我们了解一下可用的画笔以及如何使用画笔。
+[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) objects are used to paint the interiors or outlines of shapes, text, and parts of controls, so that the object being painted is visible in a UI. Let's look at the available brushes and how to use them.
 
-## 画笔简介
+## Introduction to brushes
 
-若要绘制在应用画布上显示的对象（如 [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377)，或者 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 的各个部分），可以使用 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)。 例如，将 **Shape** 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 属性或者 **Control** 的 [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) 和 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) 属性设置为 **Brush** 值，该 **Brush** 确定 UI 元素在 UI 中的绘制或呈现方式。 画笔包括 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)、[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108)、[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 和 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) 这几种不同类型。
+To paint an object such as a [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) or the parts of a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) that is displayed on the app canvas, you use a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). For example, you set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of the **Shape** or the [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) properties of a **Control** to a **Brush** value, and that **Brush** determines how the UI element paints or is rendered in UI. The different types of brushes are: [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108), [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101), and [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703).
 
-## 纯色画笔
+## Solid color brushes
 
-[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 使用单一的 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)（如红色或蓝色）来绘制区域。 这是最基本的画笔。 在 XAML 中可通过以下三种方式定义 **SolidColorBrush** 及其指定的纯色：预定义颜色名称、十六进制颜色值或者属性元素语法。
+A [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) paints an area with a single [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723), such as red or blue. This is the most basic brush. There are three ways in XAML to define a **SolidColorBrush** and the solid color it specifies: predefined color names, hexadecimal color values, or the property element syntax.
 
-### 预定义颜色名称
+### Predefined color names
 
-可以使用预定义的颜色名称（如 [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) 或 [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx)）。 共有 256 种已命名的颜色。 XAML 解析器会将颜色名称转换为具有正确颜色通道的 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 结构。 这 256 种已命名的颜色基于级联样式表 3 层 (CSS3) 规范中的 *X11* 颜色名称，因此，如果你以前有过 Web 开发或设计经验，则可能已经熟悉这个已命名颜色的列表。
+You can use a predefined color name, such as [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) or [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). There are 256 available named colors. The XAML parser converts the color name to a [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) structure with the correct color channels. The 256 named colors are based on the *X11* color names from the Cascading Style Sheets, Level 3 (CSS3) specification, so you may already be familiar with this list of named colors if you have previous experience with web development or design.
 
-下面是将 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 属性设置为预定义颜色 [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx) 的示例。
+Here's an example that sets the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) to the predefined color [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 
 ```xml
 <Rectangle Width="100" Height="100" Fill="Red" />
 ```
 
-下图显示将 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 应用于 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 时的情况。
+This image shows the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) as applied to the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371).
 
-![显示的 SolidColorBrush。](images/brushes-solidcolorbrush.jpg)
+![A rendered SolidColorBrush.](images/brushes-solidcolorbrush.jpg)
 
-如果 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 是使用 XAML 以外的代码定义的，则每个已命名的颜色都作为 [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) 类的静态属性值提供。 例如，若要声明 **SolidColorBrush** 的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 值以表示命名颜色“兰花紫”，请将 **Color** 值设置为静态值 [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx)。
+If you are defining a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) using code rather than XAML, each named color is available as a static property value of the [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) class. For example, to declare a [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) value of a **SolidColorBrush** to represent the named color "Orchid", set the **Color** value to the static value [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx).
 
-### 十六进制颜色值
+### Hexadecimal color values
 
-可以使用十六进制格式字符串来声明精确的 24 位颜色值，其中有 8 位 alpha 通道用于 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)。 从 0 到 F 这一范围中的两个字符定义每个组成部分的值，而且十六进制字符串中各个组成部分的值顺序为：alpha 通道（不透明度）、红色通道、绿色通道和蓝色通道 (**ARGB**)。 例如，十六进制值“\#FFFF0000”定义完全不透明的红色（alpha=“FF”，红色=“FF”，绿色=“00”，蓝色=“00”）。
+You can use a hexadecimal format string to declare precise 24-bit color values with 8-bit alpha channel for a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). Two characters in the range 0 to F define each component value, and the component value order of the hexadecimal string is: alpha channel (opacity), red channel, green channel, and blue channel (**ARGB**). For example, the hexadecimal value "\#FFFF0000" defines fully opaque red (alpha="FF", red="FF", green="00", and blue="00").
 
-下面的 XAML 示例将 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 属性设置为十六进制值“\#FFFF0000”，其结果与使用命名颜色 [**Colors.Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx) 时相同。
+This XAML example sets the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) to the hexadecimal value "\#FFFF0000", and gives an identical result to using the named color [**Colors.Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 
 ```xml
 <StackPanel>
@@ -55,11 +55,11 @@ ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 </StackPanel>
 ```
 
-### <span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>属性元素语法
+### <span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Property element syntax
 
-你可以使用属性元素语法来定义 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)。 此语法比前面的方法更详细，但是，你可以针对元素指定其他属性值（如 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx)）。 有关 XAML 语法的详细信息（包括属性元素语法），请参阅 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595)和 [XAML 语法指南](https://msdn.microsoft.com/library/windows/apps/Mt185596)。
+You can use property element syntax to define a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). This syntax is more verbose than the previous methods, but you can specify additional property values on an element, such as the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx). For more info on XAML syntax, including property element syntax, see [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595) and [XAML syntax guide](https://msdn.microsoft.com/library/windows/apps/Mt185596).
 
-在前面的几个示例中，你在语法中甚至从未看到过字符串“SolidColorBrush”。 要创建的画笔是以隐含方式作为有意的 XAML 语言速记的一部分自动创建的，可以帮助使 UI 定义在最常用的情况下简单。 下一个示例将创建一个 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 并明确创建 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 以作为 [**Rectangle.Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 属性的元素值。 **SolidColorBrush** 的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 设置为 [**Blue**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.blue.aspx)，[**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx) 设置为 0.5。
+In the previous examples, you never even saw the string "SolidColorBrush" appear in the syntax. The brush being created is created implicitly and automatically, as part of a deliberate XAML language shorthand that helps keep UI definition simple for the most common cases. The next example creates a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) and explicitly creates the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) as an element value for a [**Rectangle.Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property. The [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) of the **SolidColorBrush** is set to [**Blue**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.blue.aspx) and the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx) is set to 0.5.
 
 ```xml
 <Rectangle Width="200" Height="150">
@@ -69,17 +69,17 @@ ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 </Rectangle>
 ```
 
-## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>线性渐变画笔
+## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>Linear gradient brushes
 
-[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 使用沿着直线定义的渐变绘制一个区域。 这条直线称为*渐变轴*。 你可以使用 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 对象沿着渐变轴来指定渐变颜色及其位置。 默认情况下，渐变轴从画笔绘制区域的左上角到右下角，这会产生对角底纹。
+A [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) paints an area with a gradient that's defined along a line. This line is called the *gradient axis*. You specify the gradient's colors and their locations along the gradient axis using [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) objects. By default, the gradient axis runs from the upper left corner to the lower right corner of the area that the brush paints, resulting in a diagonal shading.
 
-[**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 是渐变画笔的基本构建块。 渐变停点指定在向绘制区域应用画笔时，画笔的哪个 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) 位于渐变轴上的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 处。
+The [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) is the basic building block of a gradient brush. A gradient stop specifies what the [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) of the brush is at an [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) along the gradient axis, when the brush is applied to the area being painted.
 
-渐变停点的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) 属性指定渐变停点的颜色。 你可以使用预定义颜色名称或指定十六进制的 **ARGB** 值来设置颜色。
+The gradient stop's [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) property specifies the color of the gradient stop. You can set the color by using a predefined color name or by specifying the hexadecimal **ARGB** values.
 
-[**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 属性指定每个 **GradientStop** 在渐变轴上的位置。 **Offset** 是 **double** 型参数，范围为 0 到 1。 如果 **Offset** 为 0，则会将 **GradientStop** 放在渐变轴的起点，也就是说靠近 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 的位置。 如果 **Offset** 为 1，则会将 **GradientStop** 放在 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 处。 有用的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 至少应当有两个 **GradientStop** 值，每个 **GradientStop** 都应当指定一个不同的[**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx)，而且具有一个不同的 **Offset**（范围是从 0 到 1）。
+The [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) property of a [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) specifies the position of each **GradientStop** along the gradient axis. The **Offset** is a **double** that ranges from 0 to 1. An **Offset** of 0 places the **GradientStop** at the start of the gradient axis, in other words near its [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx). An **Offset** of 1 places the **GradientStop** at the [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx). At a minimum, a useful [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) should have two **GradientStop** values, where each **GradientStop** should specify a different [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) and have a different **Offset** between 0 and 1.
 
-下面的示例使用四种颜色创建了一种线性渐变效果，并用它来绘制 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)。
+This example creates a linear gradient with four colors and uses it to paint a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371).
 
 ```xml
 <!-- This rectangle is painted with a diagonal linear gradient. -->
@@ -95,27 +95,27 @@ ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 </Rectangle>
 ```
 
-渐变停点之间每个点的颜色均以两个边界渐变停点指定的颜色组合呈线性相互融合。 该图突出显示了上述示例中的渐变停点。 圆圈标出了渐变停点的位置，虚线显示的是渐变轴。
+The color of each point between gradient stops is linearly interpolated as a combination of the color specified by the two bounding gradient stops. The illustration highlights the gradient stops in the previous example. The circles mark the position of the gradient stops, and the dashed line shows the gradient axis.
 
-![渐变停点](images/linear-gradients-stops.png) 你可以通过将 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 和 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 属性设置为不同于 `(0,0)` 和 `(1,1)` 起始默认值的值，更改渐变停点所在的直线。 通过更改 **StartPoint** 和 **EndPoint** 坐标值，可以创建水平或垂直渐变，颠倒渐变方向，或者加快渐变速度以便应用于比整个绘制区域小的范围。 若要加快渐变，必须将 **StartPoint** 和/或 **EndPoint** 的值设置为 0 到 1 之间的值。 例如，如果你需要一个水平渐变，该渐变所有的淡化都发生在画笔的左半部分，画笔的右侧是纯色且与上一个 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 颜色相同，请将 **StartPoint** 指定为 `(0,0)`，将 **EndPoint** 指定为 `(0.5,0)`。
+![Gradient stops](images/linear-gradients-stops.png) You can change the line at which the gradient stops are positioned by setting the [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) and [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) properties to be different values than the `(0,0)` and `(1,1)` starting defaults. By changing the **StartPoint** and **EndPoint** coordinate values, you can create horizontal or vertical gradients, reverse the gradient direction, or condense the gradient spread to apply to a smaller range than the full painted area. To condense the gradient, you set values of **StartPoint** and/or **EndPoint** to be something that is between the values 0 and 1. For example, if you want a horizontal gradient where the fade all happens on the left half of the brush and the right side is solid to your last [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) color, you specify a **StartPoint** of `(0,0)` and an **EndPoint** of `(0.5,0)`.
 
-### <span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>使用工具创建渐变
+### <span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>Use tools to make gradients
 
-既然你知道了线性渐变的工作原理，你可以使用 Visual Studio 或 Blend 简化创建这些渐变的工作。 若要创建一个渐变，请在设计图面或 XAML 视图中选择要应用渐变的对象。 展开“笔画”****并选择“线性渐变”****选项卡（请参阅下一张屏幕截图）。
+Now that you know how linear gradients work, you can use Visual Studio or Blend to make creating these gradients easier. To create a gradient, select the object you want to apply a gradient to on the design surface or in XAML view. Expand **Brush** and select the **Linear Gradient** tab (see next screenshot).
 
-![使用 Visual Studio 创建线性渐变。](images/tool-gradient-brush-1.png)
+![Create linear gradient using Visual Studio.](images/tool-gradient-brush-1.png)
 
-现在你可以更改梯度停止点的颜色，并使用底部的栏滑动其位置。 也可以通过单击该栏添加新的梯度停止点，并通过将停止点拖离该栏来删除它们（请参阅下一张屏幕截图）。
+Now you can change the colors of the gradient stops and slide their positions using the bar on the bottom. You can also add new gradient stops by clicking on the bar and remove them by dragging the stops off of the bar (see next screenshot).
 
-![控制梯度停止点的属性窗口的底部的栏。](images/tool-gradient-brush-2.png)
+![Bar at bottom of properties window that controls gradient stops.](images/tool-gradient-brush-2.png)
 
-## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>图像画笔
+## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>Image brushes
 
-[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 绘制一个包含一个图像的区域，要绘制的图像来自图像文件源。 你可以使用要加载的图像的路径来设置 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) 属性。 通常，图像源来自 **Content** 项目，该项目是应用资源的一部分。
+An [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) paints an area with an image, with the image to paint coming from an image file source. You set the [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) property with the path of the image to load. Typically, the image source comes from a **Content** item that is part of your app's resources.
 
-在默认情况下，[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 会拉伸图像以完全填满绘制的区域，如果绘制区域的纵横比与图像的纵横比不同，这可能会使图像失真。 你可以更改此行为，方式是将 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242975) 属性更改为其默认值 **Fill** 以外的值并将它设置为 **None**、**Uniform** 或 **UniformToFill**。
+By default, an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) stretches its image to completely fill the painted area, possibly distorting the image if the painted area has a different aspect ratio than the image. You can change this behavior by changing the [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242975) property from its default value of **Fill** and setting it as **None**, **Uniform**, or **UniformToFill**.
 
-下一个示例将创建一个 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 并将 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) 设置为名为“licorice.jpg”的图像，必须将该图像作为资源包括在你的应用中。 **ImageBrush** 随后会绘制由 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 形状定义的区域。
+The next example creates an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) and sets the [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) to an image named licorice.jpg, which you must include as a resource in the app. The **ImageBrush** then paints the area defined by an [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) shape.
 
 ```xml
 <Ellipse Height="200" Width="300">
@@ -125,31 +125,31 @@ ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 </Ellipse>
 ```
 
-下面是显示的 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 的外观。
+Here's what the rendered [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) looks like.
 
-![显示的 ImageBrush。](images/brushes-imagebrush.jpg)
+![A rendered ImageBrush.](images/brushes-imagebrush.jpg)
 
-[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 和 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 均按统一资源标识符 (URI) 引用图像源文件，该图像源文件使用多种可能的图像格式。 这些图像源文件指定为 URI。 有关指定图像源、可用的图像格式并将它们打包到一个应用中的详细信息，请参阅[图像和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)。
+[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) and [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) both reference an image source file by Uniform Resource Identifier (URI), where that image source file uses several possible image formats. These image source files are specified as URIs. For more info about specifying image sources, the usable image formats, and packaging them in an app, see [Image and ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382).
 
-## 画笔和文本
+## Brushes and text
 
-还可以使用画布向文本元素应用呈现特征。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 的 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) 属性接受 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)。 你可以向文本应用此处描述的任何画笔。 但是，在向文本应用画笔时一定要格外谨慎，原因在于，如果你使用的画笔融合到文本的背景中（与什么背景无关）或者与文本字符的轮廓混在一起，有可能会使文本不可读。 在多数情况下，除非你希望文本元素主要用于装饰，否则使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 可以实现文本元素的可读性。
+You can also use brushes to apply rendering characteristics to text elements. For example, the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) property of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) takes a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). You can apply any of the brushes described here to text. But be careful with brushes applied to text, because it's possible to make the text unreadable if you use brushes that bleed into whatever background the text is rendered on top of, or that distract from the outlines of text characters. Use [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) for readability of text elements in most cases, unless you want the text element to be mostly decorative.
 
-甚至在使用纯色时，也要确保你选择的文本颜色相对于文本布局容器的背景颜色具有足够大的对比度。 为了实现可读性，需要考虑文本前景和文本容器背景之间的对比度级别。
+Even when you use a solid color, make sure that the text color you choose has enough contrast against the background color of the text's layout container. The level of contrast between text foreground and text container background is an accessibility consideration.
 
 ## WebViewBrush
 
-[**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) 是一种特殊类型的画笔，可以访问通常在 [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控件中查看的内容。 **WebViewBrush** 将内容绘制到呈现图面的另一个具有 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 型属性的元素上，而不是在矩形 **WebView** 控件区域中绘制内容。 **WebViewBrush** 并非对于所有的画笔方案都适合，但它对于切换 **WebView** 非常有用。 有关详细信息，请参阅 **WebViewBrush**。
+A [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) is a special type of brush that can access the content normally viewed in a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control. Instead of rendering the content in the rectangular **WebView** control area, **WebViewBrush** paints that content onto another element that has a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)-type property for a render surface. **WebViewBrush** isn't appropriate for every brush scenario, but is useful for transitions of a **WebView**. For more info, see **WebViewBrush**.
 
-## 画笔作为 XAML 资源
+## Brushes as XAML resources
 
-你可以将任何画笔声明为 XAML 资源字典中的键控 XAML 资源。 这便于复制已经应用到 UI 中多个元素的画笔值。 这些画笔值随后将共享并应用到以 XAML 中的 [{StaticResource}](https://msdn.microsoft.com/library/windows/apps/Mt185588) 用法形式引用画笔资源的任何情况。 这包括你拥有一个引用共享画笔的 XAML 控件模板以及控件模板本身是键控 XAML 资源的情况。
+You can declare any brush to be a keyed XAML resource in a XAML resource dictionary. This makes it easy to replicate the same brush values as applied to multiple elements in a UI. The brush values are then shared and applied to any case where you reference the brush resource as a [{StaticResource}](https://msdn.microsoft.com/library/windows/apps/Mt185588) usage in your XAML. This includes cases where you have a XAML control template that references the shared brush, and the control template is itself a keyed XAML resource.
 
-## 代码中的画笔
+## Brushes in code
 
-比起使用代码来定义画笔来说，使用 XAML 指定画笔是更典型的行为。 这是因为画笔通常被定义为 XAML 资源，并且由于画笔值通常是设计工具的输出或者作为 XAML UI 定义的一部分。 然而，对于你可能希望使用代码定义画笔的很少情况，所有 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 类型均可用于代码实例化。
+It's much more typical to specify brushes using XAML than it is to use code to define brushes. This is because brushes are usually defined as XAML resources, and because brush values are often the output of design tools or otherwise as part of a XAML UI definition. Still, for the occasional case where you might want to define a brush using code, all the [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) types are available for code instantiation.
 
-若要使用代码创建 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)，请使用采用 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 参数的构造函数。 传递作为 [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) 类的静态属性的值，如下所示：
+To create a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) in code, use the constructor that takes a [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) parameter. Pass a value that is a static property of the [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) class, like this:
 
 ```cs
 SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
@@ -163,12 +163,12 @@ Dim blueBrush as SolidColorBrush = New SolidColorBrush(Windows.UI.Colors.Blue)
 blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 ```
 
-对于 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) 和 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101)，请使用默认的构造函数，然后在尝试使用用于 UI 属性的该画笔前调用其他 API。
+For [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) and [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101), use the default constructor and then call other APIs before you attempt to use that brush for a UI property.
 
--   在你使用代码定义 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 时，[**ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) 需要 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235)（而非 URI）。 如果源是一个流，请使用 [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) 方法来初始化该值。 如果源是一个 URI，（其中包含应用中使用 **ms-appx** 或 **ms-resource** 方案的内容），请使用采用 URI 的 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx) 构造函数。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) 事件。
--   对于 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703)，如果你最近已重设 [**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) 属性或者如果 [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 的内容也随代码更改，则可能需要调用 [**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx)。
+-   [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) requires a [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (not a URI) when you define an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) using code. If your source is a stream , use the [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) method to initialize the value. If your source is a URI, which includes content in your app that uses the **ms-appx** or **ms-resource** schemes, use the [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx) constructor that takes a URI. You might also consider handling the [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available.
+-   For [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) you might need to call [**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) if you've recently reset the [**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) property or if the content of the [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) is also being changed with code.
 
-有关代码示例，请参阅 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) 和 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 的参考页面。
+For code examples, see reference pages for [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) and [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101).
  
 
  
@@ -179,6 +179,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

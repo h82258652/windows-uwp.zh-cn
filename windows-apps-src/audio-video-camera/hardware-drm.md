@@ -1,66 +1,66 @@
 ---
 author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
-description: "本主题将概述如何向通用 Windows 平台 (UWP) 应用添加基于 PlayReady 硬件的数字版权管理 (DRM)。"
-title: "硬件 DRM"
+description: This topic provides an overview of how to add PlayReady hardware-based digital rights management (DRM) to your Universal Windows Platform (UWP) app.
+title: Hardware DRM
 translationtype: Human Translation
-ms.sourcegitcommit: 22ce05ab6f24c3ee41798732c35314b3dad87ea8
-ms.openlocfilehash: b7867317c37edf44d9edfaaf28d97a3f23b22814
+ms.sourcegitcommit: 56d79a93704021fc18d3e72d00738d0ce7acba91
+ms.openlocfilehash: 643b67c3975a8aea6791c834a9ca3178b9762257
 
 ---
 
-# 硬件 DRM
+# Hardware DRM
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主题将概述如何向通用 Windows 平台 (UWP) 应用添加基于 PlayReady 硬件的数字版权管理 (DRM)。
+This topic provides an overview of how to add PlayReady hardware-based digital rights management (DRM) to your Universal Windows Platform (UWP) app.
 
 > [!NOTE] 
-> 基于硬件的 PlayReady DRM 在许多设备上均受支持，包括电视机、手机以及平板电脑之类的 Windows 和非 Windows 设备。 对于要支持 PlayReady 硬件 DRM 的 Windows 设备，它必须运行 Windows 10，并且具有受支持的硬件配置。
+> Hardware-based PlayReady DRM is supported on a multitude of devices, including both Windows and non-Windows devices such as TV sets, phones, and tablets. For a Windows device to support PlayReady Hardware DRM, it must be running Windows 10 and have a supported hardware configuration.
 
-越来越多的内容提供商选择基于硬件的保护，以授权在应用中播放完整高值内容。 为满足此要求，已向 PlayReady 添加了针对加密核心硬件实现的可靠支持。 此支持可以使多个设备平台安全播放高清 (1080p) 和超高清 (UHD) 内容。 通过利用硬件安全，可保护密钥材料（包括私钥、内容密钥和任何其他用于派生或解锁上述密钥的密钥材料）以及解密的压缩和未压缩视频示例。
+Increasingly, content providers are moving towards hardware-based protections for granting permission to play back full high value content in apps. Robust support for a hardware implementation of the cryptographic core has been added to PlayReady to meet this need. This support enables secure playback of high definition (1080p) and ultra-high definition (UHD) content on multiple device platforms. Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security.
 
-## Windows TEE 实现
+## Windows TEE implementation
 
-本主题简要概述了 Windows 10 如何实现受信任的执行环境。
+This topic provides a brief overview of how Windows 10 implements the trusted execution environment (TEE).
 
-Windows TEE 实现的详细信息已超出本文档范围。 但是，简要讨论标准移植工具包 TEE 端口和 Windows 端口之间的区别将非常有益。 Windows 可实现 OEM 代理层，并将序列化 PRITEE 函数调用传输到 Windows Media Foundation 子系统中的用户模式驱动程序。 这将最终传送至 Windows TrEE（受信任的执行环境）驱动程序或 OEM 图形驱动程序。 有关这些方法的详细信息已超出了本文档范围。 下图显示了 Windows 端口的常规组件交互。 如果想要开发 Windows PlayReady TEE 实现，可以联系 <WMLA@Microsoft.com>。
+The details of the Windows TEE implementation is out of scope for this document. However, a brief discussion of the difference between the standard porting kit TEE port and the Windows port will be beneficial. Windows implements the OEM proxy layer and transfers the serialized PRITEE functions calls to a user mode driver in the Windows Media Foundation subsystem. This will eventually get routed to either the Windows TrEE (Trusted Execution Environment) driver or the OEM’s graphics driver. The details of either of these approaches is out of scope for this document. The following diagram shows the general component interaction for the Windows port. If you want to develop a Windows PlayReady TEE implementation, you can contact <WMLA@Microsoft.com>.
 
-![Windows TEE 组件图](images/windowsteecomponentdiagram720.jpg)
+![windows tee component diagram](images/windowsteecomponentdiagram720.jpg)
 
-## 使用硬件 DRM 的注意事项
+## Considerations for using hardware DRM
 
-本主题提供在开发旨在使用硬件 DRM 的应用时应考虑的事项的简短列表。 如 [PlayReady DRM](playready-client-sdk.md#output-protection) 中所述，使用适用于 Windows 10 的 PlayReady HWDRM 时，所有输出保护均可从 Windows TEE 实现中强制执行，从而对输出保护行为产生一些影响：
+This topic provides a brief list of items that should be considered when developing apps designed to use hardware DRM. As explained in [PlayReady DRM](playready-client-sdk.md#output-protection), with PlayReady HWDRM for Windows 10, all output protections are enforced from within the Windows TEE implementation, which has some consequences on output protection behaviors:
 
--   **对未压缩的数字视频 270 的输出保护级别 (OPL) 的支持：**适用于 Windows 10 的 PlayReady HWDRM 不支持向下分辨率，并将强制使用 HDCP。 Microsoft 建议 HWDRM 的高清内容应具有大于 270 的 OPL（尽管这并不是必需的）。 另外，Microsoft 建议你在许可证中设置 HDCP 类型限制（Windows 10 上的 HDCP 版本 2.2）。
--   不同于软件 DRM，输出保护在基于最低功能的监视器的所有监视器上强制执行。 例如，如果用户连接了两台监视器，其中一台显示器支持 HDCP，而另一台不支持。即使仅在支持 HDCP 的监视器上呈现内容，但如果许可证需要 HDCP，播放也将失败。 在软件 DRM (SWDRM) 中可播放内容，前提是仅在支持 HDCP 的监视器上呈现该内容。
--   HWDRM 不能保证由客户端和安全使用，除非内容密钥和许可证满足以下条件：
-    -   用于视频内容密钥的许可证必须至少具有 3000 安全级别属性。
-    -   音频必须加密为不同于视频的内容密钥，并且用于音频的许可证必须至少具有 2000 安全级别属性。 此外，音频可能保持清晰。
+-   **Support for output protection level (OPL) for uncompressed digital video 270:** PlayReady HWDRM for Windows 10 doesn't support down-resolution and will enforce that HDCP is engaged. We recommend that high definition content for HWDRM have an OPL greater than 270 (although it is not required). Additionally, we recommend that you set HDCP type restriction in the license (HDCP version 2.2 on Windows 10).
+-   **Unlike software DRM (SWDRM), output protections are enforced on all monitors based on the least capable monitor.** For example, if the user has two monitors connected where one of the monitors supports HDCP and the other does not, playback will fail if the license requires HDCP even if the content is only being rendered on the monitor that supports HDCP. In software DRM, content would play back as long as it is only being rendered on the monitor that supports HDCP.
+-   **HWDRM is not guaranteed to be used by the client and secure unless the following conditions are met** by the content keys and licenses:
+    -   The license used for the video content key must have a Minimum Security level property of 3000.
+    -   Audio must be encrypted to a different content key than video, and the license used for the audio must have a Minimum Security level property of 2000. Alternatively, audio could be left in the clear.
     
-此外，使用 HWDRM 时应考虑以下各项：
+Additionally, you should take the following items into consideration when using HWDRM:
 
--   不支持受保护的媒体进程 (PMP)。
--   Windows Media 视频（也称为 VC-1）不受支持（请参阅[替代硬件 DRM](#override-hardware-drm)）。
--   永久性许可证不支持多个图形处理单元 (GPU)。
+-   Protected Media Process (PMP) is not supported.
+-   Windows Media Video (also known as VC-1) is not supported (see [Override hardware DRM](#override-hardware-drm)).
+-   Multiple graphics processing units (GPUs) are not supported for persistent licenses.
 
-若要在具有多个 GPU 的计算机上处理永久性许可证，请考虑以下方案：
+To handle persistent licenses on machines with multiple GPUs, consider the following scenario:
 
-1.  客户购买具有集成显卡的新计算机。
-2.  客户使用在使用硬件 DRM 时获取永久性许可证的应用。
-3.  永久性许可证现已绑定到该显卡的硬件密钥。
-4.  然后，客户即可安装新的显卡。
-5.  经过哈希的数据存储 (HDS) 中的所有许可证均将绑定到集成视频卡，但客户现在希望使用新安装的显卡播放受保护的内容。
+1.  A customer buys a new machine with an integrated graphics card.
+2.  The customer uses an app that acquires persistent licenses while using hardware DRM.
+3.  The persistent license is now bound to that graphics card’s hardware keys.
+4.  The customer then installs a new graphics card.
+5.  All licenses in the hashed data store (HDS) are bound to the integrated video card, but the customer now wants to play back protected content using the newly-installed graphics card.
 
-为防止播放由于硬件无法解密许可证而失败，PlayReady 为其遇到的每个图形卡使用单个 HDS。 这将导致 PlayReady 将尝试内容的许可证获取，因为正常情况下，PlayReady 已经具有许可证（也就是说，在软件 DRM 或其他没有硬件更改的情况下，PlayReady 无需重新获取许可证）。 因此，如果应用在使用硬件 DRM 时获取了持久性许可证，它必须能够在最终用户安装（或卸载）显卡时，处理该许可证有效“丢失”的情况。 因为这不是常用方案，你可能会决定在硬件更改后内容不再播放时处理支持调用，而不是确定如何在客户端/服务器代码中处理硬件更改。
+To prevent playback from failing because the licenses can’t be decrypted by the hardware, PlayReady uses a separate HDS for each graphics card that it encounters. This will cause PlayReady to attempt license acquisition for a piece of content where PlayReady would normally already have a license (that is, in the software DRM case or any case without a hardware change, PlayReady wouldn’t need to reacquire a license). Therefore, if the app acquires a persistent license while using hardware DRM, your app needs to be able to handle the case where that license is effectively “lost” if the end user installs (or uninstalls) a graphics card. Because this is not a common scenario, you may decide to handle the support calls when the content no longer plays after a hardware change rather than figure out how to deal with a hardware change in the client/server code.
 
-## 替代硬件 DRM
+## Override hardware DRM
 
-本部分介绍如何在要播放的内容不支持硬件 DRM 时替代硬件 DRM (HWDRM)。
+This section describes how to override hardware DRM (HWDRM) if the content to be played back does not support hardware DRM.
 
-默认情况下，如果系统支持，则使用硬件 DRM。 但是，硬件 DRM 不支持某些内容。 其中一个示例为鸡尾酒内容。 另一个示例是使用 H.264 和 HEVC 之外的视频编解码器的所有内容。 另一个示例是 HEVC 内容，因为一些硬件 DRM 支持 HEVC 而另一些不支持。 因此，如果希望播放某条内容，但在问题系统上的硬件 DRM 不支持此操作，可以选择退出硬件 DRM。
+By default, hardware DRM is used if the system supports it. However, some content is not supported in hardware DRM. One example of this is Cocktail content. Another example is any content that uses a video codec other than H.264 and HEVC. Another example is HEVC content, as some hardware DRM will support HEVC and some will not. Therefore, if you want to play a piece of content and hardware DRM doesn’t support it on the system in question, you may want to opt out of hardware DRM.
 
-以下示例将说明如何选择退出硬件 DRM。 只需在切换之前执行此操作。 此外，还要确保内存中没有任何 PlayReady 对象，否则行为将是未定义行为。
+The following example shows how to opt-out of hardware DRM. You only need to do this before you switch. Also, make sure you don’t have any PlayReady object in memory, otherwise behavior is undefined.
 
 ```js
 var applicationData = Windows.Storage.ApplicationData.current;
@@ -68,37 +68,39 @@ var localSettings = applicationData.localSettings.createContainer("PlayReady", W
 localSettings.values["SoftwareOverride"] = 1;
 ```
 
-若要切换回硬件 DRM，请将 **SoftwareOverride** 值设置为 **0**。
+To switch back to hardware DRM, set the **SoftwareOverride** value to **0**.
 
-对于每一次媒体播放，都需要将 **MediaProtectionManager** 设置为：
+For every media playback, you need to set **MediaProtectionManager** to:
 
 ```js
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-辨别使用的是硬件 DRM 还是软件 DRM 的最佳方法是查看 C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\*
+The best way to tell if you are in hardware DRM or software DRM is to look at C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\*
 
--   如果存在 mspr.hds 文件，则使用的是软件 DRM。
--   如果你具有另一个 \*.hds 文件，则使用的是硬件 DRM。
--   也可以删除整个 PlayReady 文件夹，然后重新进行测试。
+-   If there is an mspr.hds file, you are in software DRM.
+-   If you have another \*.hds file, you are in hardware DRM.
+-   You can delete the entire PlayReady folder and retry your test as well.
 
-## 检测硬件 DRM 的类型
+## Detect the type of hardware DRM
 
-本部分介绍如何检测系统上支持哪些类型的硬件 DRM。
+This section describes how to detect what type of hardware DRM is supported on the system.
 
-可以使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法确定系统是否支持特定硬件数字版权管理 (DRM) 功能。 例如：
+You can use the [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) method to determine whether the system supports a specific hardware DRM feature. For example:
 
 ```cpp
 boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
 ```
 
-[**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 枚举包含可查询的硬件 DRM 功能值有效列表。 若要确定硬件 DRM 是否受支持，请使用查询中的 **HardwareDRM** 成员。 若要确定硬件是否支持高效率视频编码 (HEVC)/H.265 编解码器，请使用查询中的 **HEVC** 成员。
+The [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) enumeration contains the valid list of hardware DRM feature values that can be queried. To determine if hardware DRM is supported, use the **HardwareDRM** member in the query. To determine if the hardware supports the High Efficiency Video Coding (HEVC)/H.265 codec, use the **HEVC** member in the query.
 
-还可以使用 [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) 属性获取客户端证书的安全级别，以确定硬件 DRM 是否受支持。 除非返回的证书安全级别大于或等于3000，否则将不个性化或预配客户端（在这种情况下此属性返回值为 0），或者硬件 DRM 将处于未使用状态（在这种情况下该属性将返回小于 3000 的值）。
+You can also use the [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) property to get the security level of the client certificate to determine if hardware DRM is supported. Unless the returned certificate security level is greater than or equal to 3000, either the client is not individualized or provisioned (in which case this property returns 0) or hardware DRM is not in use (in which case this property returns a value that is less than 3000).
+
+## See also
+- [PlayReady DRM](playready-client-sdk.md)
 
 
 
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

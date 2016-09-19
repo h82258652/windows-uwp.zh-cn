@@ -1,42 +1,42 @@
 ---
 author: mtoepke
-title: "将阴影映射呈现到深度缓冲区"
-description: "从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。"
+title: Render the shadow map to the depth buffer
+description: Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume.
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 644e2084baa750965a5283208fde1cea24ecfdea
+ms.openlocfilehash: 337aa63ee30b05da51d5b224cb0013519e11504d
 
 ---
 
-# 将阴影映射呈现到深度缓冲区
+# Render the shadow map to the depth buffer
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-从光线的角度呈现，以创建一个表示阴影卷的二维深度映射。 深度映射会掩盖将在阴影中呈现的空间。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 2 部分。
+Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume. The depth map masks the space that will be rendered in shadow. Part 2 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## 清除深度缓冲区
+## Clear the depth buffer
 
 
-呈现到深度缓冲区之前，始终清除深度缓冲区。
+Always clear the depth buffer before rendering to it.
 
 ```cpp
 context->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(), DirectX::Colors::CornflowerBlue);
 context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 ```
 
-## 将阴影映射呈现到深度缓冲区
+## Render the shadow map to the depth buffer
 
 
-对于阴影呈现通道，指定深度缓冲区，但不指定呈现目标。
+For the shadow rendering pass, specify a depth buffer but do not specify a render target.
 
-指定光线视区、顶点着色器，并设置光线空间常量缓冲区。 为该通道使用正面剔除以优化放置在阴影缓冲区中的深度值。
+Specify the light viewport, a vertex shader, and set the light space constant buffers. Use front face culling for this pass to optimize the depth values placed in the shadow buffer.
 
-请注意，在大多数设备上，你可以为像素着色器指定 nullptr（或者完全跳过指定像素着色器）。 但一些驱动程序可能会在像素着色器集为 null 的 Direct3D 设备上调用 draw 时引发异常。 为了避免发生此异常，你可以为阴影呈现通道设置最低像素着色器。 扔掉该着色器的输出；它可以在每个像素上调用 [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995)。
+Note that on most devices, you can specify nullptr for the pixel shader (or skip specifying a pixel shader entirely). But some drivers may throw an exception when you call draw on the Direct3D device with a null pixel shader set. To avoid this exception, you can set a minimal pixel shader for the shadow rendering pass. The output of this shader is thrown away; it can call [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995) on every pixel.
 
-呈现可以投影的对象，但不要打扰没有投影的呈现几何图形（就像房间中的地板，或者为了优化而从阴影通道中删除的对象）。
+Render the objects that can cast shadows, but don't bother rendering geometry that can't cast a shadow (like a floor in a room, or objects removed from the shadow pass for optimization reasons).
 
 ```cpp
 void ShadowSceneRenderer::RenderShadowMap()
@@ -122,12 +122,12 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**优化视锥：**确保你的实现计算一个严密的视锥，以便在深度缓冲区之外获得最大精度。 有关阴影技术的更多提示，请参阅[改进阴影深度映射的常用技术](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
+**Optimize the view frustum:**  Make sure your implementation computes a tight view frustum so that you get the most precision out of your depth buffer. See [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324) for more tips on shadow technique.
 
-## 阴影通道的顶点着色器
+## Vertex shader for shadow pass
 
 
-使用简化版的顶点着色器在光线空间中仅呈现顶点位置。 不要包含任何照明法线、二次转换等。
+Use a simplified version of your vertex shader to render just the vertex position in light space. Don't include any lighting normals, secondary transformations, and so on.
 
 ```cpp
 PixelShaderInput main(VertexShaderInput input)
@@ -145,7 +145,7 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-在本演练的下一部分中，了解如何通过[使用深度测试进行呈现](render-the-scene-with-depth-testing.md)来添加阴影。
+In the next part of this walkthrough, learn how to add shadows by [rendering with depth testing](render-the-scene-with-depth-testing.md).
 
  
 
@@ -157,6 +157,6 @@ PixelShaderInput main(VertexShaderInput input)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

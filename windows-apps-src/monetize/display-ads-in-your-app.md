@@ -1,49 +1,67 @@
 ---
 author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
-description: "Microsoft 官方商城协定和盈利 SDK 向你提供通过广告获取应用收益的多种方法。"
-title: "在应用中显示广告"
+description: The Microsoft Store Services SDK gives you several ways to monetize your app with ads.
+title: Display ads in your app
 translationtype: Human Translation
-ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
-ms.openlocfilehash: c79ba96908cc7b52afefbe44c3f56ce009c87f16
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 35dfe2864958a15cf01133d6017b7dd03f382e4a
 
 ---
 
-# 在应用中显示广告
+# Display ads in your app
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+The Universal Windows Platform (UWP) and Windows Store provide several ways to monetize your app with ads.
 
-[Microsoft 官方商城协定和盈利 SDK](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) 向你提供通过广告获取应用收益的多种方法。
+## Display banner and video interstitial ads using the Microsoft advertising libraries
 
-## 显示使用 Microsoft Advertising 库的横幅和视频间隙广告
+Make more money from your UWP apps and your apps for Windows 8.1 and Windows Phone 8.x by including banner and video interstitial ads. The ads show in Windows apps for PCs, tablets, and phones. You can monitor your ad performance in real time by using the [advertising performance report](../publish/advertising-performance-report.md) in the Windows Dev Center dashboard.
 
-通过包含横幅和视频间隙广告来从 Windows 应用中获取更多收益。 在适用于 PC、平板电脑和手机的 Windows 应用中显示广告。 你可以通过使用 Windows 开发人员中心仪表板来实时监视广告性能。
-
-若要在应用中包含广告，请使用在 Microsoft 官方商城协定和盈利 SDK 分配的广告库中的 **AdControl** 和 **InterstitialAd** 控件。 你可以使用这些控件在适用于 Windows 10、Windows 8.1、Windows Phone 8.1 和 Windows Phone 8 的 XAML或 JavaScript/HTML 应用中显示来自 Microsoft 的横幅和视频间隙广告。
-
-有关详细信息，请参阅[使用 Microsoft Advertising 库显示广告](display-ads-using-the-microsoft-advertising-libraries.md)。 发布某个带广告的应用后，请使用[广告性能报告](../publish/advertising-performance-report.md)来跟踪广告的性能。                                           
-
-## 为来自多个广告网络的横幅广告使用广告中介
-
-你可以在 XAML 应用中使用 **AdMediatorControl** 类以通过显示来自多个广告网络的横幅广告优化广告收益。 将此控件添加到应用后，在 Windows 开发人员中心仪表板上配置广告中介设置，我们将负责来自你选择的广告网络的横幅广告请求的中介工作。 有关详细信息，请参阅[使用广告中介使广告收益最大化](use-ad-mediation-to-maximize-revenue.md)。
-
-## Microsoft Advertising 库和广告中介之间的区别
-
-Microsoft 官方商城协定和盈利 SDK 中包括 Microsoft Advertising 库和广告中介。 但是，这些库提供不同的类，并且用于不同的用途。
-
-* 如果要在 XAML 或 JavaScript 应用中显示横幅或视频间隙广告，请使用 Microsoft Advertising 库中的 **AdControl** 和 **InterstitialAd** 类。
-* 如果要在 XAML 应用中显示来自多个广告网络的横幅广告，请使用广告中介库中的 **AdMediatorControl** 类。
-
-有关详细信息，请参阅[区别是什么：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
-
-## 相关主题
-
-* [Microsoft 官方商城协定和盈利 SDK](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)
-* [通过广告获取应用收益]( http://go.microsoft.com/fwlink/p/?LinkId=699559)
+To include these types of ads in your apps, use the **AdControl** and **InterstitialAd** controls in the advertising libraries that are distributed in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps).
 
 
+The following topics provide information about common tasks involving the Windows advertising libraries.
 
-<!--HONumber=Jun16_HO4-->
+|  Task    | Topic |               
+|----------|-------|
+| Install and get started using the Microsoft advertising libraries.     | See [Get started with Microsoft advertising libraries](get-started-with-microsoft-advertising-libraries.md).        |
+| Show banner ads in your XAML/C# app.     | See [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md).        |
+| Show banner ads in your HTML/JavaScript app.     | See [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md).        |
+| Show banner ads in your Windows Phone Silverlight 8.x app.     | See [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).        |
+| Show a video interstitial ad in your app.     | See [Interstitial ads](interstitial-ads.md).       |
+| Add advertisements to video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.   |  See [Add advertisements to video content in HTML 5 and JavaScript](add-advertisements-to-video-content.md).  |
+| Download sample projects that demonstrate how to add banner and interstitial ads to apps.     |See the [Advertising samples on GitHub](http://aka.ms/githubads).       |
+| Handle [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) errors in your app.     | See [Error handling](error-handling-with-advertising-libraries.md) and the walkthroughs under [AdControl error handling](adcontrol-error-handling.md).       |
+| Report a bug in the Microsoft advertising libraries.     | Visit the [support page](https://go.microsoft.com/fwlink/p/?LinkId=331508).        |
+| Get community support.     | Visit the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).       |
+
+                            
+
+## Use ad mediation for banner ads (Windows 8.1 and Windows Phone 8.x)
+
+For Windows 8.1 and Windows Phone 8.x apps, you can use the **AdMediatorControl** class to optimize your advertising revenue by displaying banner ads from multiple ad networks. After you add this control to your app, you configure your ad mediation settings on the Windows Dev Center dashboard, and we take care of mediating banner ad requests from the ad networks you choose. For more information, see [Use ad mediation to maximize ad revenue](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
+
+>**Note**&nbsp;&nbsp;Ad mediation using the **AdMediatorControl** class is currently not supported for UWP apps for Windows 10. Server-side mediation is coming soon for UWP apps using the same APIs for banner ads (**AdControl**) and video interstitial ads (**InterstitialAd**). For guidance about migrating from **AdMediatorControl** to **AdControl** in your UWP app, see [Migrate from AdMediatorControl to AdControl for UWP apps](migrate-from-admediatorcontrol-to-adcontrol.md).
+
+<span id="silverlight_support"/>
+## Advertising support for Windows Phone 8.x Silverlight projects
+
+Some developer scenarios are no longer supported in Windows Phone 8.x Silverlight projects. For more information, see the following table.
+
+|  Platform version  |  Existing projects    |   New projects  |
+|-----------------|----------------|--------------|
+| Windows Phone 8.0 Silverlight     |  If you have an existing Windows Phone 8.0 Silverlight project that already uses an **AdControl** or **AdMediatorControl** from an earlier release of the Universal Ad Client SDK or Microsoft Advertising SDK and this app is already published in the Windows Store, you can modify and rebuild the project, and you can debug or test your changes on a device. Debugging or testing the project in the emulator is not supported.  |  Not supported.  |
+| Windows Phone 8.1 Silverlight    |  If you have an existing Windows Phone 8.1 Silverlight project that uses an **AdControl** or **AdMediatorControl** from an earlier SDK, you can modify and rebuild the project. However, to debug or test the app, you must run the app in the emulator and use [test mode values](test-mode-values.md) for the application ID and ad unit ID. Debugging or testing the app on a device is not supported.  |   You can add an **AdControl** or **AdMediatorControl** to a new Windows Phone 8.1 Silverlight project. However, to debug or test the app, you must run the app in the emulator and use [test mode values](test-mode-values.md) for the application ID and ad unit ID. Debugging or testing the app on a device is not supported. |
+
+## Related topics
+
+* [Microsoft Store Services SDK](microsoft-store-services-sdk.md)
+* [Monetize your app with ads](http://go.microsoft.com/fwlink/p/?LinkId=699559)
+* [Advertising performance report](../publish/advertising-performance-report.md)
+
+
+
+<!--HONumber=Sep16_HO2-->
 
 

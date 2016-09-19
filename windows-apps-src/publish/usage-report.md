@@ -1,51 +1,51 @@
 ---
 author: jnHs
-Description: "Windows 开发人员中心仪表板中的“使用情况报告”可使你查看客户如何使用你的应用。"
-title: "使用情况报告"
+Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
+title: Usage report
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 translationtype: Human Translation
-ms.sourcegitcommit: 6dac44032ac217969148ff73c594f99d8a733355
-ms.openlocfilehash: 0cb9d09504a024cabe66661a5c77e21752b7e2e6
+ms.sourcegitcommit: c413ff1d4fe709e92f7a306e671f9a4fe22a5999
+ms.openlocfilehash: 21be2064914189abe8ef68c858d33346b947550c
 
 ---
 
-# 使用情况报告
+# Usage report
 
 
-Windows 开发人员中心仪表板中的“使用情况”****报告可使你查看使用 Windows 10 的客户如何使用你的应用，并获取有关已定义的自定义事件的信息。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。
+The **Usage** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 are using your app and get info about custom events that you've defined. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
 
-> **注意** 之前，如果你已在应用中激活了 Visual Studio Application Insights SDK，则“使用情况”****报告仅提供数据。 更新了“使用情况”****报告后，便不再需要它。
+> **Note**  Previously, the **Usage** report only provided data if you activated the Visual Studio Application Insights SDK in your app. With the updated **Usage** report, this is no longer required.
 
-## 应用筛选器
+## Apply filters
 
 
-在页面顶部附近，可以展开“应用筛选器”****按日期范围和/或按产品组（相关操作系统版本）筛选此页面上的所有数据。
+Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by product group (related OS versions).
 
--   **日期**：默认筛选器为“最近 30 天”****，但是你可以将此条件扩大到“最近 3 个月”****。
--   **程序包版本**：默认设置为“全部”****。 如果应用包含多个程序包，可以在此处选择一个特定程序包。
--   **设备类型**：默认设置为“全部”****，但可以选择仅为一种特定设备类型显示数据。
+-   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 3 months**.
+-   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here.
+-   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type.
 
-以下列出的所有图中的信息都将反映“应用筛选器”****中所选的时段。 除非已使用“应用筛选器”****部分进行筛选以仅显示一个程序包版本，否则在默认情况下，这将包含所有程序包版本和受支持的设备类型的数据。
+The info in all of the charts listed below will reflect the period of time selected in **Apply filters**. By default this will include data for all of your package versions and supported device types, unless you've used the **Apply filters** section to filter for only one.
 
-> **注意** 此报告中仅包含使用 Windows 10 的客户的用法数据。
+> **Note** Only usage data from customers on Windows 10 is included in this report.
 
-## 用户会话总数
+## Total user sessions
 
-“用户会话总数”****图显示选定时间段内的应用的日常用户会话数。
+The **Total user sessions** chart shows the number of daily user sessions for your app over the selected period of time.
 
-每个用户会话表示客户与应用交互的不同时间段。 每个用户会话均视为非活动状态时间的结束，因此，单个客户在相同的一天内可以进行多个用户会话。 请注意，此图表不会跟踪应用的唯一用户。
+Each user session represents a distinct period of time when a customer interacted with your app. Each user session is considered to end after a period of inactivity, so a single customer could have multiple user sessions over the same day. Note this chart does not track unique users for your app.
 
-## 活动用户
+## Active users
 
-“活动客户”****图显示在选定时间段内的某一天使用你的应用的客户数。
+The **Active users** chart shows the number of customers who used your app on a specific day during the selected period of time.
 
-每个活动用户表示一个当天使用过你的应用的客户。 此图表不跟踪唯一用户会话（即，无论客户当天只使用你的应用一次还是多次，都将在此图表中表示一个客户）。
+Each active user represents a customer who used your app that day. This chart does not track unique user sessions (that is, a customer is represented in this chart whether they used your app just once or multiple times that day).
 
-## 自定义事件
+## Custom events
 
-“自定义事件”****图显示你为应用定义的任何自定义事件的总发生次数。 这可以包括同一个客户的多次发生。
+The **Custom events** chart shows the total occurrences for any custom events that you have defined for your app. This may include multiple occurrences for the same customer.
 
-自定义事件通过在 [Microsoft 官方商城协定和盈利 SDK](../monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) 中使用 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) 方法实现。
+Custom events are implemented using the [StoreServicesCustomEventLogger.Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) method in the [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
 
 
 
@@ -53,10 +53,6 @@ Windows 开发人员中心仪表板中的“使用情况”****报告可使你�
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

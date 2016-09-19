@@ -1,72 +1,72 @@
 ---
 author: TylerMSFT
-title: "借助自动播放功能自动启动"
-description: "可以使用自动播放功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。"
+title: Auto-launching with AutoPlay
+description: You can use AutoPlay to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD.
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 72e61f07c4b37488525d74ae28c9f605f20ca94c
+ms.openlocfilehash: 2c7dc2ad19867c9f721f7f4cc51c8a7096bc9501
 
 ---
 
-# <span id="dev_launch_resume.auto-launching_with_autoplay"></span>借助自动播放功能自动启动
+# <span id="dev_launch_resume.auto-launching_with_autoplay"></span>Auto-launching with AutoPlay
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-可以使用“自动播放”****功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 还可以使用“自动播放”****功能在用户使用邻近感应（点击）在两台电脑之间共享文件时，将应用作为一个选项提供。
+You can use **AutoPlay** to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD. You can also use **AutoPlay** to offer your app as an option when users share files between two PCs by using proximity (tapping).
 
-> **注意** 如果你是设备制造商，而且希望将你的 [Windows 应用商店设备应用](http://go.microsoft.com/fwlink/p/?LinkID=301381)关联为设备的“自动播放”****处理程序，则可以在设备元数据中标识该应用。 有关详细信息，请参阅 [Windows 应用商店设备应用的自动播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
+> **Note**  If you are a device manufacturer and you want to associate your [Windows Store device app](http://go.microsoft.com/fwlink/p/?LinkID=301381) as an **AutoPlay** handler for your device, you can identify that app in the device metadata. For more info, see [AutoPlay for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306684).
 
-## 注册自动播放内容
+## Register for AutoPlay content
 
-可以将应用注册为“自动播放”****内容事件的选项。 当卷设备（如相机内存卡、指状驱动器或 DVD）插入到电脑时，会引发“自动播放”****内容事件。 下面我们介绍如何在插入来自相机的卷设备时，将应用标识为的“自动播放”****选项。
+You can register apps as options for **AutoPlay** content events. **AutoPlay** content events are raised when a volume device such as a camera memory card, thumb drive, or DVD is inserted into the PC. Here we show how to identify your app as an **AutoPlay** option when a volume device from a camera is inserted.
 
-在本教程中，你创建了一个用于显示图像文件或将其复制到“图片”的应用。 为自动播放 **ShowPicturesOnArrival** 内容事件注册了应用。
+In this tutorial, you created an app that displays image files or copies them to Pictures. You registered the app for the AutoPlay **ShowPicturesOnArrival** content event.
 
-“自动播放”功能还为在使用邻近感应（点击）的电脑之间共享的内容引发内容事件。 你可以使用本部分中的步骤和代码来处理使用邻近感应的电脑之间共享的文件。 下表列出了可以使用邻近感应共享内容的“自动播放”内容事件。
+AutoPlay also raises content events for content shared between PCs using proximity (tapping). You can use the steps and code in this section to handle files that are shared between PCs that use proximity. The following table lists the AutoPlay content events that are available for sharing content by using proximity.
 
-| 操作         | “自动播放内容”事件  |
+| Action         | AutoPlay content event  |
 |----------------|-------------------------|
-| 共享音乐  | PlayMusicFilesOnArrival |
-| 共享视频 | PlayVideoFilesOnArrival |
+| Sharing music  | PlayMusicFilesOnArrival |
+| Sharing videos | PlayVideoFilesOnArrival |
 
  
-使用邻近感应共享文件时，**FileActivatedEventArgs** 对象的 **Files** 属性包含对拥有所有共享文件的根文件夹的引用。
+When files are shared by using proximity, the **Files** property of the **FileActivatedEventArgs** object contains a reference to a root folder that contains all of the shared files.
 
-### 步骤 1：创建新项目并添加自动播放声明
+### Step 1: Create a new project and add AutoPlay declarations
 
-1.  打开 Microsoft Visual Studio，然后从“文件”****菜单中选择“新建项目”****。 在“Visual C#”****部分的“Windows”****下，选择“空白应用(通用 Windows)”****。 将应用命名为 **AutoPlayDisplayOrCopyImages** 并单击“确定”****。
-2.  打开 Package.appxmanifest 文件并选择“功能”****选项卡。 选择“可移动存储”****和“图片库”****功能。 如此一来，该应用便可访问相机内存的可移动存储设备，也可访问本地图片。
-3.  在清单文件中，选择“声明”****选项卡。 在“可用声明”****下拉列表中，选择“自动播放内容”****，然后单击“添加”****。 选择已添加到“支持的声明”****列表中的新“自动播放内容”****项。
-4.  “自动播放内容”****声明会在自动播放引发内容事件时将你的应用标识为一个选项。 该事件基于卷设备（如 DVD 或 U 盘）的内容。 “自动播放”会检查卷设备的内容并确定要引发的内容事件。 如果卷的根中包含 DCIM、AVCHD 或 PRIVATE\ACHD 文件夹，或如果用户已启用自动播放控制面板中的“为每种媒体选择相应的操作”****，且在卷的根中找到了图片，则自动播放会引发 **ShowPicturesOnArrival** 事件。 在“启动操作”****部分中，为第一个启动操作输入表 1 中的以下值。
-5.  在“自动播放内容”****项的“启动操作”****部分中，单击“新增”****可添加第二个启动操作。 为第二个启动操作输入表 2 中的以下值。
-6.  在“可用声明”****下拉列表中，选择“文件类型关联”****，然后单击“添加”****。 在新“文件类型关联”****声明的“属性”中，将“显示名称”****字段设置为“自动播放复制或显示图像”****，并将“名称”****字段设置为 **image\_association1**。 在“支持的文件类型”****部分中，单击“新增”****。 将“文件类型”****字段设置为 **.jpg**。 在“支持的文件类型”****部分中，将新文件关联的“文件类型”****字段设置为 **.png**。 对于内容事件，自动播放功能会筛选掉任何未与应用显式关联的文件类型。
-7.  保存并关闭清单文件。
+1.  Open Microsoft Visual Studio and select **New Project** from the **File** menu. In the **Visual C#** section, under **Windows**, select **Blank App (Universal Windows)**. Name the app **AutoPlayDisplayOrCopyImages** and click **OK.**
+2.  Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** and **Pictures Library** capabilities. This gives the app access to removable storage devices for camera memory, and access to local pictures.
+3.  In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Content** and click **Add**. Select the new **AutoPlay Content** item that was added to the **Supported Declarations** list.
+4.  An **AutoPlay Content** declaration identifies your app as an option when AutoPlay raises a content event. The event is based on the content of a volume device such as a DVD or a thumb drive. AutoPlay examines the content of the volume device and determines which content event to raise. If the root of the volume contains a DCIM, AVCHD, or PRIVATE\\ACHD folder, or if a user has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel and pictures are found in the root of the volume, then AutoPlay raises the **ShowPicturesOnArrival** event. In the **Launch Actions** section, enter the values from Table 1 below for the first launch action.
+5.  In the **Launch Actions** section for the **AutoPlay Content** item, click **Add New** to add a second launch action. Enter the values in Table 2 below for the second launch action.
+6.  In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **AutoPlay Copy or Show Images** and the **Name** field to **image\_association1**. In the **Supported File Types** section, click **Add New**. Set the **File Type** field to **.jpg**. In the **Supported File Types** section, set the **File Type** field of the new file association to **.png**. For content events, AutoPlay filters out any file types that are not explicitly associated with your app.
+7.  Save and close the manifest file.
 
 
-**表 1**
+**Table 1**
 
-| 设置             | 值                 |
+| Setting             | Value                 |
 |---------------------|-----------------------|
-| 谓词                | 显示                  |
-| 操作显示名称 | 显示图片         |
-| 内容事件       | ShowPicturesOnArrival |
+| Verb                | show                  |
+| Action Display Name | Show Pictures         |
+| Content Event       | ShowPicturesOnArrival |
 
-“操作显示名称”****设置标识自动播放为你的应用显示的字符串。 “谓词”****设置标识针对所选选项传递给你的应用的值。 你可以为自动播放事件指定多个启动操作并且可以使用“谓词”****设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 **verb** 属性来标识用户选择的选项。 你可以为“谓词”****设置使用任何值（但保留的 **open** 除外）。
+The **Action Display Name** setting identifies the string that AutoPlay displays for your app. The **Verb** setting identifies a value that is passed to your app for the selected option. You can specify multiple launch actions for an AutoPlay event and use the **Verb** setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the **verb** property of the startup event arguments passed to your app. You can use any value for the **Verb** setting except, **open**, which is reserved.
 
-**表 2**  
+**Table 2**  
 
-| 设置             | 值                      |
+| Setting             | Value                      |
 |---------------------|----------------------------|
-| 谓词                | 复制                       |
-| 操作显示名称 | 将图片复制到库 |
-| 内容事件       | ShowPicturesOnArrival      |
+| Verb                | copy                       |
+| Action Display Name | Copy Pictures Into Library |
+| Content Event       | ShowPicturesOnArrival      |
 
-### 步骤 2：添加 XAML UI
+### Step 2: Add XAML UI
 
-打开 MainPage.xaml 文件并将以下 XAML 添加到默认的 &lt;Grid&gt; 部分。
+Open the MainPage.xaml file and add the following XAML to the default &lt;Grid&gt; section.
 
 ```xml
 <TextBlock FontSize="18">File List</TextBlock>
@@ -76,11 +76,11 @@ ms.openlocfilehash: 72e61f07c4b37488525d74ae28c9f605f20ca94c
         Margin="260,20,0,0" Height="280" Width="100"/>
 ```
 
-### 步骤 3：添加初始化代码
+### Step 3: Add initialization code
 
-此步骤中的代码检查 **Verb** 属性中的 verb 值，该属性是在 **OnFileActivated** 事件期间传递给应用的启动参数之一。 代码随后调用与用户所选选项相关的方法。 对于相机内存事件，“自动播放”功能将相机存储的根文件夹传递给应用。 可以从 **Files** 属性的第一个元素检索该文件夹。
+The code in this step checks the verb value in the **Verb** property, which is one of the startup arguments passed to the app during the **OnFileActivated** event. The code then calls a method related to the option that the user selected. For the camera memory event, AutoPlay passes the root folder of the camera storage to the app. You can retrieve this folder from the first element of the **Files** property.
 
-打开 App.xaml.cs 文件，然后将以下代码添加到 **App** 类。
+Open the App.xaml.cs file and add the following code to the **App** class.
 
 ```cs
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -107,11 +107,11 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注意** 将在以下步骤中添加 `DisplayImages` 和 `CopyImages` 方法。
+> **Note**  The `DisplayImages` and `CopyImages` methods are added in the following steps.
 
-### 步骤 4：添加用于显示图像的代码
+### Step 4: Add code to display images
 
-在 MainPage.xaml.cs 文件中，将以下代码添加到 **MainPage** 类。
+In the MainPage.xaml.cs file add the following code to the **MainPage** class.
 
 ```cs
 async internal void DisplayImages(Windows.Storage.StorageFolder rootFolder)
@@ -169,9 +169,9 @@ private async void WriteMessageText(string message, bool overwrite = false)
 }
 ```
 
-### 步骤 5：添加用于复制图像的代码
+### Step 5: Add code to copy images
 
-在 MainPage.xaml.cs 文件中，将以下代码添加到 **MainPage** 类。
+In the MainPage.xaml.cs file add the following code to the **MainPage** class.
 
 ```cs
 async internal void CopyImages(Windows.Storage.StorageFolder rootFolder)
@@ -215,51 +215,51 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 }
 ```
 
-### 步骤 6：生成并运行应用
+### Step 6: Build and run the app
 
-1.  按 F5 生成并部署应用（在调试模式下）。
-2.  若要运行应用，请将相机内存卡或相机的其他存储设备插入电脑。 然后，从自动播放选项列表中选择在你的 package.appxmanifest 文件中指定的内容事件选项之一。 此示例代码仅显示或复制相机内存卡的 DCIM 文件夹中的图片。 如果你的相机内存卡将图片存储在 AVCHD 或 PRIVATE\ACHD 文件夹中，则将需要相应地更新代码。
-    **注意** 如果你没有相机内存卡，则可以使用闪存驱动器（只要它在根目录中具有一个名为 **DCIM** 的文件夹，并且 DCIM 文件夹具有一个包含图像的子文件夹）。
+1.  Press F5 to build and deploy the app (in debug mode).
+2.  To run your app, insert a camera memory card or another storage device from a camera into your PC. Then, select one of the content event options that you specified in your package.appxmanifest file from the AutoPlay list of options. This sample code only displays or copies pictures in the DCIM folder of a camera memory card. If your camera memory card stores pictures in an AVCHD or PRIVATE\\ACHD folder, you will need to update the code accordingly.
+    **Note**  If you don't have a camera memory card, you can use a flash drive if it has a folder named **DCIM** in the root and if the DCIM folder has a subfolder that contains images.
 
-## 注册自动播放设备
+## Register for an AutoPlay device
 
 
-可以将应用注册为“自动播放”****设备事件的选项。 “自动播放”****设备事件会在设备连接到电脑时引发。
+You can register apps as options for **AutoPlay** device events. **AutoPlay** device events are raised when a device is connected to a PC.
 
-下面显示了如何将应用标识为在将相机连接到电脑时的“自动播放”****选项。 此应用会注册为 **WPD\\ImageSourceAutoPlay** 事件的处理程序。 当相机和其他图像设备通知事件它们为使用 MTP 的 ImageSource 时，此为 Windows Portable Device (WPD) 系统引发的常见事件。 有关详细信息，请参阅 [Windows Portable Device](https://msdn.microsoft.com/library/windows/hardware/ff597729)。
+Here we show how to identify your app as an **AutoPlay** option when a camera is connected to a PC. The app registers as a handler for the **WPD\\ImageSourceAutoPlay** event. This is a common event that the Windows Portable Device (WPD) system raises when cameras and other imaging devices notify it that they are an ImageSource using MTP. For more info, see [Windows Portable Devices](https://msdn.microsoft.com/library/windows/hardware/ff597729).
 
-**重要提示** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) API 是[桌面设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 应用只能在属于桌面设备系列的 Windows 10 设备（例如电脑）上使用这些 API。
+**Important**  The [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) APIs are part of the [desktop device family](https://msdn.microsoft.com/library/windows/apps/dn894631). Apps can use these APIs only on Windows 10 devices in the desktop device family, such as PCs.
 
  
 
-### 步骤 1：创建新项目并添加自动播放声明
+### Step 1: Create a new project and add AutoPlay declarations
 
-1.  打开 Visual Studio，然后从“文件”****菜单中选择“新建项目”****。 在“Visual C#”****部分的“Windows”****下，选择“空白应用(通用 Windows)”****。 将应用命名为 **AutoPlayDevice\_Camera** 并单击“确定”****。
-2.  打开 Package.appxmanifest 文件并选择“功能”****选项卡。 选择“可移动存储”****功能。 这会使该应用能够访问作为可移动存储卷设备的相机上的数据。
-3.  在清单文件中，选择“声明”****选项卡。 在“可用声明”****下拉列表中，选择“自动播放设备”****，然后单击“添加”****。 选择已添加到“支持的声明”****列表中的新“自动播放设备”****项。
-4.  “自动播放设备”****声明会在“自动播放”引发已知事件的设备事件时将你的应用标识为一个选项。 在“启动操作”****部分中，为第一个启动操作输入下表中的以下值。
-5.  在“可用声明”****下拉列表中，选择“文件类型关联”****，然后单击“添加”****。 在新“文件类型关联”****声明的“属性”中，将“显示名称”****字段设置为“从相机显示图像”****，将“名称”****字段设置为 **camera\_association1**。 在“支持的文件类型”****部分中，单击“新增”****（如果需要）。 将“文件类型”****字段设置为 **.jpg**。 在“支持的文件类型”****部分中，再次单击“新增”****。 将新文件关联的“文件类型”****字段设置为 **.png**。 对于内容事件，自动播放功能会筛选掉任何未与应用显式关联的文件类型。
-6.  保存并关闭清单文件。
+1.  Open Visual Studio and select **New Project** from the **File** menu. In the **Visual C#** section, under **Windows**, select **Blank App (Universal Windows)**. Name the app **AutoPlayDevice\_Camera** and click **OK.**
+2.  Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** capability. This gives the app access to the data on the camera as a removable storage volume device.
+3.  In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Device** and click **Add**. Select the new **AutoPlay Device** item that was added to the **Supported Declarations** list.
+4.  An **AutoPlay Device** declaration identifies your app as an option when AutoPlay raises a device event for known events. In the **Launch Actions** section, enter the values in the table below for the first launch action.
+5.  In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **Show Images from Camera** and the **Name** field to **camera\_association1**. In the **Supported File Types** section, click **Add New** (if needed). Set the **File Type** field to **.jpg**. In the **Supported File Types** section, click **Add New** again. Set the **File Type** field of the new file association to **.png**. For content events, AutoPlay filters out any file types that are not explicitly associated with your app.
+6.  Save and close the manifest file.
 
-| 设置             | 值            |
+| Setting             | Value            |
 |---------------------|------------------|
-| 谓词                | 显示             |
-| 操作显示名称 | 显示图片    |
-| 内容事件       | WPD\\ImageSource |
+| Verb                | show             |
+| Action Display Name | Show Pictures    |
+| Content Event       | WPD\\ImageSource |
 
-“操作显示名称”****设置标识自动播放为你的应用显示的字符串。 “谓词”****设置标识针对所选选项传递给你的应用的值。 你可以为自动播放事件指定多个启动操作并且可以使用“谓词”****设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 **verb** 属性来标识用户选择的选项。 你可以为“谓词”****设置使用任何值（但保留的 **open** 除外）。 有关在单个应用中使用多个谓词的示例，请参阅[注册自动播放内容](#autoplaycontent)。
+The **Action Display Name** setting identifies the string that AutoPlay displays for your app. The **Verb** setting identifies a value that is passed to your app for the selected option. You can specify multiple launch actions for an AutoPlay event and use the **Verb** setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the **verb** property of the startup event arguments passed to your app. You can use any value for the **Verb** setting except, **open**, which is reserved. For an example of using multiple verbs in a single app, see [Register for AutoPlay content](#autoplaycontent).
 
-### 步骤 2：添加桌面扩展的程序集引用
+### Step 2: Add assembly reference for the desktop extensions
 
-访问 Windows 便携设备上的存储所需的 API [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) 是[桌面设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 这表示使用这些 API 需要特殊的程序集，并且这些调用仅适用于桌面设备系列中的设备（例如电脑）。
+The APIs required to access storage on a Windows Portable Device, [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654), are part of the desktop [desktop device family](https://msdn.microsoft.com/library/windows/apps/dn894631). This means a special assembly is required to use the APIs and those calls will only work on a device in the desktop device family (such as a PC).
 
-1.  在“解决方案资源管理器”****中，右键单击“引用”****，然后单击“添加引用...”****。
-2.  展开“通用 Windows”****并单击“扩展”****。
-3.  然后选择“适用于 UWP 的 Windows 桌面扩展”****并单击“确定”****。
+1.  In **Solution Explorer**, right click on **References** and then **Add Reference...**.
+2.  Expand **Universal Windows** and click **Extensions**.
+3.  Then select **Windows Desktop Extensions for the UWP** and click **OK**.
 
-### 步骤 3：添加 XAML UI
+### Step 3: Add XAML UI
 
-打开 MainPage.xaml 文件并将以下 XAML 添加到默认的 &lt;Grid&gt; 部分。
+Open the MainPage.xaml file and add the following XAML to the default &lt;Grid&gt; section.
 
 ```xml
 <StackPanel Orientation="Vertical" Margin="10,0,-10,0">
@@ -285,11 +285,11 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 </StackPanel>
 ```
 
-### 步骤 4：添加激活代码
+### Step 4: Add activation code
 
-此步骤中的代码通过将相机的设备信息 ID 传递给 [**FromId**](https://msdn.microsoft.com/library/windows/apps/br225655) 方法来以 [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) 形式引用相机。 通过以下方法获取相机的设备信息 ID：首先将事件参数强制转换为 [**DeviceActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224710)，然后从 [**DeviceInformationId**](https://msdn.microsoft.com/library/windows/apps/br224711) 属性获取值。
+The code in this step references the camera as a [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) by passing the device information Id of the camera to the [**FromId**](https://msdn.microsoft.com/library/windows/apps/br225655) method. The device information Id of the camera is obtained by first casting the event arguments as [**DeviceActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224710), and then getting the value from the [**DeviceInformationId**](https://msdn.microsoft.com/library/windows/apps/br224711) property.
 
-打开 App.xaml.cs 文件，然后将以下代码添加到 **App** 类。
+Open the App.xaml.cs file and add the following code to the **App** class.
 
 ```cs
 protected override void OnActivated(IActivatedEventArgs args)
@@ -337,13 +337,13 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **注意** 将在以下步骤中添加 `ShowImages` 方法。
+> **Note**  The `ShowImages` method is added in the following step.
 
-### 步骤 5：添加用于显示设备信息的代码
+### Step 5: Add code to display device information
 
-可以从 [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) 类的属性中获取有关相机的信息。 此步骤中的代码在应用运行时，向用户显示设备名称和其他信息。 此代码随后调用 GetImageList 和 GetThumbnail 方法，这些方法将在下一步中添加，用于显示相机上所存储图像的缩略图。
+You can obtain information about the camera from the properties of the [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) class. The code in this step displays the device name and other info to the user when the app runs. The code then calls the GetImageList and GetThumbnail methods, which you will add in the next step, to display thumbnails of the images stored on the camera
 
-在 MainPage.xaml.cs 文件中，将以下代码添加到 **MainPage** 类。
+In the MainPage.xaml.cs file, add the following code to the **MainPage** class.
 
 ```cs
 private Windows.Storage.StorageFolder rootFolder;
@@ -365,15 +365,15 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **注意** 将在以下步骤中添加 `GetImageList` 和 `GetThumbnail` 方法。
+> **Note**  The `GetImageList` and `GetThumbnail` methods are added in the following step.
 
  
 
-### 步骤 6：添加用于显示图像的代码
+### Step 6: Add code to display images
 
-此步骤中的代码显示相机上所存储图像的缩略图。 此代码对相机进行异步调用以获取缩略图。 但是，只有在上一个异步调用完成后，才会进行下一个异步调用。 这可确保一次仅对相机发出一个请求。
+The code in this step displays thumbnails of the images stored on the camera. The code makes asynchronous calls to the camera to get the thumbnail image. However, the next asynchronous call doesn't occur until the previous asynchronous call completes. This ensures that only one request is made to the camera at a time.
 
-在 MainPage.xaml.cs 文件中，将以下代码添加到 **MainPage** 类。
+In the MainPage.xaml.cs file, add the following code to the **MainPage** class.
 
 ```cs
 async private System.Threading.Tasks.Task<List<Windows.Storage.StorageFile>> GetImageList(Windows.Storage.StorageFolder folder)
@@ -406,55 +406,55 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 }
 ```
 
-### 步骤 7：生成并运行应用
+### Step 7: Build and run the app
 
-1.  按 F5 生成并部署应用（在调试模式下）。
-2.  若要运行你的应用，请将相机连接到你的计算机。 然后从“自动播放”选项列表中选择该应用。
-    **注意** 并非所有相机都针对 **WPD\\ImageSource** 自动播放设备事件进行公布。
+1.  Press F5 to build and deploy the app (in debug mode).
+2.  To run your app, connect a camera to your machine. Then select the app from the AutoPlay list of options.
+    **Note**  Not all cameras advertise for the **WPD\\ImageSource** AutoPlay device event.
 
      
 
-## 配置可移动存储
+## Configure removable storage
 
 
-当卷设备（如内存卡或指状驱动器）连接到电脑时，你可以将这些设备标识为“自动播放”****设备。 当你希望关联特定的应用以便为卷设备的用户提供“自动播放”****功能时，这尤其有用。
+You can identify a volume device such as a memory card or thumb drive as an **AutoPlay** device when the volume device is connected to a PC. This is especially useful when you want to associate a specific app for **AutoPlay** to present to the user for your volume device.
 
-下面显示了如何将卷设备标识为“自动播放”****设备。
+Here we show how to identify your volume device as an **AutoPlay** device.
 
-若要将卷设备标识为“自动播放”****设备，请在设备的根驱动器中添加一个 autorun.inf 文件。 在 autorun.inf 文件中，向 **AutoRun** 部分中添加一个 **CustomEvent** 键。 当卷设备连接到电脑时，“自动播放”****将查找 autorun.inf 文件并将你的卷视为一台设备。 “自动播放”****将通过使用你为 **CustomEvent** 键提供的名称创建一个“自动播放”****事件。 然后，你可以创建一个应用并将其注册为该“自动播放”****事件的处理程序。 当设备连接到电脑时，“自动播放”****功能会将该应用显示为卷设备的处理程序。 有关 autorun.inf 文件的详细信息，请参阅 [autorun.inf 条目](https://msdn.microsoft.com/library/windows/desktop/cc144200)。
+To identify your volume device as an **AutoPlay** device, add an autorun.inf file to the root drive of your device. In the autorun.inf file, add a **CustomEvent** key to the **AutoRun** section. When your volume device connects to a PC, **AutoPlay** will find the autorun.inf file and treat your volume as a device. **AutoPlay** will create an **AutoPlay** event by using the name that you supplied for the **CustomEvent** key. You can then create an app and register the app as a handler for that **AutoPlay** event. When the device is connected to the PC, **AutoPlay** will show your app as a handler for your volume device. For more info on autorun.inf files, see [autorun.inf entries](https://msdn.microsoft.com/library/windows/desktop/cc144200).
 
-### 步骤 1：创建 autorun.inf 文件
+### Step 1: Create an autorun.inf file
 
-在卷设备的根驱动器中，添加一个名为 autorun.inf 的文件。 打开 autorun.inf 文件并添加以下文本。
+In the root drive of your volume device, add a file named autorun.inf. Open the autorun.inf file and add the following text.
 
 ``` syntax
 [AutoRun]
 CustomEvent=AutoPlayCustomEventQuickstart
 ```
 
-### 步骤 2：创建新项目并添加自动播放声明
+### Step 2: Create a new project and add AutoPlay declarations
 
-1.  打开 Visual Studio，然后从“文件”****菜单中选择“新建项目”****。 在“Visual C#”****部分的“Windows”****下，选择“空白应用(通用 Windows)”****。 将该应用程序命名为 **AutoPlayCustomEvent**，然后单击“确定”****。
-2.  打开 Package.appxmanifest 文件并选择“功能”****选项卡。 选择“可移动存储”****功能。 这使应用能够访问可移动存储设备上的文件和文件夹。
-3.  在清单文件中，选择“声明”****选项卡。 在“可用声明”****下拉列表中，选择“自动播放内容”****，然后单击“添加”****。 选择已添加到“支持的声明”****列表中的新“自动播放内容”****项。
+1.  Open Visual Studio and select **New Project** from the **File** menu. In the **Visual C#** section, under **Windows**, select **Blank App (Universal Windows)**. Name the application **AutoPlayCustomEvent** and click **OK.**
+2.  Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** capability. This gives the app access to the files and folders on removable storage devices.
+3.  In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Content** and click **Add**. Select the new **AutoPlay Content** item that was added to the **Supported Declarations** list.
 
-    **注意** 此外，你还可以选择为自定义“自动播放”事件添加“自动播放设备”****声明。
+    **Note**  Alternatively, you can also choose to add an **AutoPlay Device** declaration for your custom AutoPlay event.
     
-4.  在“自动播放内容”****事件声明的“启动操作”****部分中，为第一个启动操作输入下表中的以下值。
-5.  在“可用声明”****下拉列表中，选择“文件类型关联”****，然后单击“添加”****。 在新“文件类型关联”****声明的“属性”中，将“显示名称”****字段设置为“显示 .ms 文件”****，并将“名称”****字段设置为 **ms\_association**。 在“支持的文件类型”****部分中，单击“新增”****。 将“文件类型”****字段设置为 **.ms**。 对于内容事件，“自动播放”功能会筛选掉任何未与应用显式关联的文件类型。
-6.  保存并关闭清单文件。
+4.  In the **Launch Actions** section for your **AutoPlay Content** event declaration, enter the values in the table below for the first launch action.
+5.  In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **Show .ms Files** and the **Name** field to **ms\_association**. In the **Supported File Types** section, click **Add New**. Set the **File Type** field to **.ms**. For content events, AutoPlay filters out any file types that aren't explicitly associated with your app.
+6.  Save and close the manifest file.
 
-| 设置             | 值                         |
+| Setting             | Value                         |
 |---------------------|-------------------------------|
-| 谓词                | 显示                          |
-| 操作显示名称 | 显示文件                    |
-| 内容事件       | AutoPlayCustomEventQuickstart |
+| Verb                | show                          |
+| Action Display Name | Show Files                    |
+| Content Event       | AutoPlayCustomEventQuickstart |
 
-“内容事件”****值是在 autorun.inf 文件中为 **CustomEvent** 键提供的文本。 “操作显示名称”****设置标识自动播放为你的应用显示的字符串。 “谓词”****设置标识针对所选选项传递给你的应用的值。 你可以为自动播放事件指定多个启动操作并且可以使用“谓词”****设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 **verb** 属性来标识用户选择的选项。 你可以为“谓词”****设置使用任何值（但保留的 **open** 除外）。
+The **Content Event** value is the text that you supplied for the **CustomEvent** key in your autorun.inf file. The **Action Display Name** setting identifies the string that AutoPlay displays for your app. The **Verb** setting identifies a value that is passed to your app for the selected option. You can specify multiple launch actions for an AutoPlay event and use the **Verb** setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the **verb** property of the startup event arguments passed to your app. You can use any value for the **Verb** setting except, **open**, which is reserved.
 
-### 步骤 3：添加 XAML UI
+### Step 3: Add XAML UI
 
-打开 MainPage.xaml 文件并将以下 XAML 添加到默认的 &lt;Grid&gt; 部分。
+Open the MainPage.xaml file and add the following XAML to the default &lt;Grid&gt; section.
 
 ```xml
 <StackPanel Orientation="Vertical">
@@ -463,11 +463,11 @@ CustomEvent=AutoPlayCustomEventQuickstart
 </StackPanel>
 ```
 
-### 步骤 4：添加激活代码
+### Step 4: Add activation code
 
-此步骤中的代码调用一个方法以显示卷设备的根驱动器中的文件夹。 对于“自动播放内容”事件，“自动播放”功能在执行 **OnFileActivated** 事件期间传递给应用程序的启动参数中传递存储设备的根文件夹。 可以从 **Files** 属性的第一个元素检索该文件夹。
+The code in this step calls a method to display the folders in the root drive of your volume device. For the AutoPlay content events, AutoPlay passes the root folder of the storage device in the startup arguments passed to the application during the **OnFileActivated** event. You can retrieve this folder from the first element of the **Files** property.
 
-打开 App.xaml.cs 文件，然后将以下代码添加到 **App** 类。
+Open the App.xaml.cs file and add the following code to the **App** class.
 
 ```cs
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -482,13 +482,13 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注意** 将在以下步骤中添加 `DisplayFiles` 方法。
+> **Note**  The `DisplayFiles` method is added in the following step.
 
  
 
-### 步骤 5：添加用于显示文件夹的代码
+### Step 5: Add code to display folders
 
-在 MainPage.xaml.cs 文件中，将以下代码添加到 **MainPage** 类。
+In the MainPage.xaml.cs file add the following code to the **MainPage** class.
 
 ```cs
 internal async void DisplayFiles(Windows.Storage.StorageFolder folder)
@@ -511,53 +511,53 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 }
 ```
 
-### 步骤 6：生成并运行应用
+### Step 6: Build and run the qpp
 
-1.  按 F5 生成并部署应用（在调试模式下）。
-2.  若要运行应用，请将内存卡或其他存储设备插入电脑。 然后从“自动播放”处理程序选项的列表中选择你的应用。
+1.  Press F5 to build and deploy the app (in debug mode).
+2.  To run your app, insert a memory card or another storage device into your PC. Then select your app from the list of AutoPlay handler options.
 
-## 自动播放事件参考
+## AutoPlay event reference
 
 
-使用“自动播放”****系统，应用可以注册各种设备和卷（磁盘）到达事件。 若要注册“自动播放”****内容事件，则必须在程序包清单中启用“可移动存储”****功能。 此表显示了可以注册的事件及其引发时间。
+The **AutoPlay** system allows apps to register for a variety of device and volume (disk) arrival events. To register for **AutoPlay** content events, you must enable the **Removable Storage** capability in your package manifest. This table shows the events that you can register for and when they are raised.
 
-| 方案                                                           | 事件   | 说明   |
+| Scenario                                                           | Event   | Description   |
 |--------------------------------------------------------------------|---------|---------------|
-| 使用相机上的照片                                           | **WPD\ImageSource**                | 针对标识为 Windows Portable Devices 且提供 ImageSource 功能的相机引发。                                                                                                                                                                                                                                                                  |
-| 使用自动播放器上的音乐                                     | **WPD\AudioSource**                | 针对标识为 Windows Portable Devices 且提供 AudioSource 功能的媒体播放器引发。                                                                                                                                                                                                                                                            |
-| 使用摄像机上的视频                                     | **WPD\VideoSource**                | 针对标识为 Windows Portable Devices 且提供 VideoSource 功能的摄像机引发。                                                                                                                                                                                                                                                            |
-| 访问所连接的闪存驱动器或外部硬盘驱动器              | **StorageOnArrival**               | 在驱动器或卷连接到电脑时引发。   如果驱动器或卷的磁盘根目录中包含 DCIM、AVCHD 或 PRIVATE\ACHD 文件夹，则会改为引发 **ShowPicturesOnArrival** 事件。                                                                                                                                                             |
-| 使用大容量存储（旧功能）中的照片                            | **ShowPicturesOnArrival**          | 当驱动器或卷的磁盘根目录中包含 DCIM、AVCHD 或 PRIVATE\ACHD 文件夹时引发。 如果用户已启用自动播放控制面板中的“为每种媒体类型选择相应的操作”****，则自动播放会检查连接到电脑的卷以确定磁盘中内容的类型。 找到图片时，将引发 **ShowPicturesOnArrival**。 |
-| 使用邻近感应共享（点击并发送）接收照片             | **ShowPicturesOnArrival**          | 当用户使用邻近感应（点击并发送）发送内容时，自动播放会检查共享文件以确定内容的类型。 如果找到图片，则会引发 **ShowPicturesOnArrival**。                                                                                                                                                                         |
-| 使用大容量存储（旧功能）中的音乐                             | **PlayMusicFilesOnArrival**        | 如果用户已启用自动播放控制面板中的“为每种媒体类型选择相应的操作”****，则自动播放会检查连接到电脑的卷以确定磁盘中内容的类型。  找到音乐文件时，将引发 **PlayMusicFilesOnArrival**。                                                                                                   |
-| 使用邻近感应共享（点击并发送）接收音乐              | **PlayMusicFilesOnArrival**        | 当用户使用邻近感应（点击并发送）发送内容时，自动播放会检查共享文件以确定内容的类型。 如果找到音乐文件，则会引发 **PlayMusicFilesOnArrival**。                                                                                                                                                                    |
-| 使用大容量存储（旧功能）中的视频                            | **PlayVideoFilesOnArrival**        | 如果用户已启用自动播放控制面板中的“为每种媒体类型选择相应的操作”****，则自动播放会检查连接到电脑的卷以确定磁盘中内容的类型。 找到视频文件时，将引发 **PlayVideoFilesOnArrival**。                                                                                                   |
-| 使用邻近感应共享（点击并发送）接收视频             | **PlayVideoFilesOnArrival**        | 当用户使用邻近感应（点击并发送）发送内容时，自动播放会检查共享文件以确定内容的类型。 如果找到视频文件，则会引发 **PlayVideoFilesOnArrival**。                                                                                                                                                                    |
-| 处理所连接设备中的混合文件集               | **MixedContentOnArrival**          | 如果用户已启用自动播放控制面板中的“为每种媒体类型选择相应的操作”****，则自动播放会检查连接到电脑的卷以确定磁盘中内容的类型。 如果未找到特定的内容类型（例如，图片），则会引发 **MixedContentOnArrival**。                                                                    |
-| 使用邻近感应共享（点击并发送）处理混合文件集 | **MixedContentOnArrival**          | 当用户使用邻近感应（点击并发送）发送内容时，自动播放会检查共享文件以确定内容的类型。 如果未找到特定的内容类型（例如，图片），则会引发 **MixedContentOnArrival**。                                                                                                                                  |
-| 处理光学媒体上的视频                                    | **PlayDVDMovieOnArrival**          |                                                                                                                                                                                                                                                                                                                                                                           |
+| Using photos on a Camera                                           | **WPD\ImageSource**                | Raised for cameras that are identified as Windows Portable Devices and offer the ImageSource capability.                                                                                                                                                                                                                                                                  |
+| Using music on an audio player                                     | **WPD\AudioSource**                | Raised for media players that are identified as Windows Portable Devices and offer the AudioSource capability.                                                                                                                                                                                                                                                            |
+| Using videos on a video camera                                     | **WPD\VideoSource**                | Raised for video cameras that are identified as Windows Portable Devices and offer the VideoSource capability.                                                                                                                                                                                                                                                            |
+| Access a connected flash drive or external hard drive              | **StorageOnArrival**               | Raised when a drive or volume is connected to the PC.   If the drive or volume contains a DCIM, AVCHD, or PRIVATE\ACHD folder in the root of the disk, the **ShowPicturesOnArrival** event is raised instead.                                                                                                                                                             |
+| Using photos from mass storage (legacy)                            | **ShowPicturesOnArrival**          | Raised when a drive or volume contains a DCIM, AVCHD, or PRIVATE\ACHD folder in the root of the disk. IIf a user  has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel, AutoPlay will examine a volume connected to the PC to determine the type of content on the disk. When pictures are found, **ShowPicturesOnArrival** is raised. |
+| Receiving photos with Proximity Sharing (tap and send)             | **ShowPicturesOnArrival**          | When users send content with using proximity (tap and send), AutoPlay will examine the shared files to determine the type of content. If pictures are found, **ShowPicturesOnArrival** is raised.                                                                                                                                                                         |
+| Using music from mass storage (legacy)                             | **PlayMusicFilesOnArrival**        | If a user has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel, AutoPlay will examine a volume connected to the PC to determine the type of content on the disk.  When music files are found, **PlayMusicFilesOnArrival** is raised.                                                                                                   |
+| Receiving music with Proximity Sharing (tap and send)              | **PlayMusicFilesOnArrival**        | When users send content with using proximity (tap and send), AutoPlay will examine the shared files to determine the type of content. If music files are found, **PlayMusicFilesOnArrival** is raised.                                                                                                                                                                    |
+| Using videos from mass storage (legacy)                            | **PlayVideoFilesOnArrival**        | If a user has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel,, AutoPlay will examine a volume connected to the PC to determine the type of content on the disk. When video files are found, **PlayVideoFilesOnArrival** is raised.                                                                                                   |
+| Receiving videos with Proximity Sharing (tap and send)             | **PlayVideoFilesOnArrival**        | When users send content with using proximity (tap and send), AutoPlay will examine the shared files to determine the type of content. If video files are found, **PlayVideoFilesOnArrival** is raised.                                                                                                                                                                    |
+| Handling mixed sets of files from a connected device               | **MixedContentOnArrival**          | If a user has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel, AutoPlay will examine a volume connected to the PC to determine the type of content on the disk. If no specific content type is found (for example, pictures), **MixedContentOnArrival** is raised.                                                                    |
+| Handling mixed sets of files with Proximity Sharing (tap and send) | **MixedContentOnArrival**          | When users send content with using proximity (tap and send), AutoPlay will examine the shared files to determine the type of content. If no specific content type is found (for example, pictures), **MixedContentOnArrival** is raised.                                                                                                                                  |
+| Handle video from optical media                                    | **PlayDVDMovieOnArrival**          |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **PlayBluRayOnArrival**            |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **PlayVideoCDMovieOnArrival**      |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **PlaySuperVideoCDMovieOnArrival** |                                                                                                                                                                                                                                                                                                                                                                           |
-| 处理光学媒体上的音乐                                    | **PlayCDAudioOnArrival**           |                                                                                                                                                                                                                                                                                                                                                                           |
+| Handle music from optical media                                    | **PlayCDAudioOnArrival**           |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **PlayDVDAudioOnArrival**          |                                                                                                                                                                                                                                                                                                                                                                           |
-| 播放增强磁盘                                                | **PlayEnhancedCDOnArrival**        |                                                                                                                                                                                                                                                                                                                                                                           |
+| Play enhanced disks                                                | **PlayEnhancedCDOnArrival**        |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **PlayEnhancedDVDOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
-| 处理可写入的光盘                                     | **HandleCDBurningOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
+| Handle writeable optical disks                                     | **HandleCDBurningOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **HandleDVDBurningOnArrival**      |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    | **HandleBDBurningOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
-| 处理任何其他设备或卷连接                       | **UnknownContentOnArrival**        | 在找到与任何“自动播放内容”事件都不匹配的内容时，会针对所有事件引发。 不建议使用此事件。 只应当针对你的应用可以处理的特定“自动播放”事件注册你的应用程序。                                                                                                                               |
+| Handle any other device or volume connection                       | **UnknownContentOnArrival**        | Raised for all events in case content is found that does not match any of the AutoPlay content events. Use of this event is not recommended. You should only register your application for the specific AutoPlay events that it can handle.                                                                                                                               |
 
-你可以指定“自动播放”使用 autorun.inf 文件中的 **CustomEvent** 条目来为卷引发自定义的“自动播放内容”事件。 有关详细信息，请参阅 [Autorun.inf 条目](https://msdn.microsoft.com/library/windows/desktop/cc144200)。
+You can specify that AutoPlay raise a custom AutoPlay Content event using the **CustomEvent** entry in the autorun.inf file for a volume. For more info, see [Autorun.inf entries](https://msdn.microsoft.com/library/windows/desktop/cc144200).
 
-你可以通过向应用的 package.appxmanifest 文件添加扩展，将应用注册为“自动播放内容”或“自动播放设备”事件处理程序。 如果你使用的是 Visual Studio，则可在“声明”****选项卡中添加“自动播放内容”****或“自动播放设备”****声明。 如果你要直接编辑应用的 package.appxmanifest 文件，则将 [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 元素添加到程序包清单，以将 **windows.autoPlayContent** 或 **windows.autoPlayDevice** 指定为 **Category**。 例如，程序包清单中的以下条目添加“自动播放内容”****扩展，以将应用注册为 **ShowPicturesOnArrival** 事件的处理程序。
+You can register your app as an AutoPlay Content or AutoPlay Device event handler by adding an extension to the package.appxmanifest file for your app. If you are using Visual Studio, you can add an **AutoPlay Content** or **AutoPlay Device** declaration in the **Declarations** tab. If you are editing the package.appxmanifest file for your app directly, add an [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) element to your package manifest that specifies either **windows.autoPlayContent** or **windows.autoPlayDevice** as the **Category**. For example, the following entry in the package manifest adds an **AutoPlay Content** extension to register the app as a handler for the **ShowPicturesOnArrival** event.
 
 ```xml
   <Applications>
@@ -580,6 +580,6 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

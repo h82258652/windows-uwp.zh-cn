@@ -1,142 +1,142 @@
 ---
 author: payzer
-title: "Device Portal Xbox 开发人员设置 API 参考"
-description: "了解如何访问 Xbox 开发人员设置。"
+title: Device Portal Xbox Developer settings API reference
+description: Learn how to access Xbox developer settings.
 translationtype: Human Translation
-ms.sourcegitcommit: a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0
-ms.openlocfilehash: e3637f5a8481c0800af42c011fb811b908b946b1
+ms.sourcegitcommit: c51eff41e63d815f6298b4fc46a9b11314bc8bc9
+ms.openlocfilehash: 5a983714cda9b5a5f45e555e2cb6f980f082a003
 
 ---
 
-# 开发人员设置 API 参考   
-你可以使用此 API 访问有助于开发的 Xbox One 设置。
+# Developer settings API reference   
+You can access Xbox One settings that are useful for development using this API.
 
-## 一次性获取所有开发人员设置
+## Get all developer settings at once
 
-**请求**
+**Request**
 
-你可以使用以下请求，在一次请求中获取所有开发人员设置。
+You can use the following request to get all developer settings in a single request.
 
-方法      | 请求 URI
+Method      | Request URI
 :------     | :-----
 GET | /ext/settings
 <br />
-**URI 参数**
+**URI parameters**
 
-- 无
+- None
 
-**请求标头**
+**Request headers**
 
-- 无
+- None
 
-**请求正文**
+**Request body**
 
-- 无
+- None
 
-**响应**   
-该响应是一个设置 JSON 数组，包含所有设置。 每个设置对象都包含以下字段：   
+**Response**   
+The response is a Settings JSON array containing all the settings. Each settings object contains the following fields:   
 
-Name -（字符串）设置的名称。   
-Value -（字符串）设置的值。   
-RequiresReboot -（“Yes”|“No”）此字段指示该设置是否需要重新启动才能生效。
-Category -（字符串）设置的类别
+Name - (String) The name of the setting.   
+Value - (String) The value of the setting.   
+RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.
+Category - (String) The category of the setting
 
-**状态代码**
+**Status code**
 
-此 API 具有以下预期状态代码。
+This API has the following expected status codes.
 
-HTTP 状态代码      | 说明
+HTTP status code      | Description
 :------     | :-----
-200 | 请求已成功
-4XX | 错误代码
-5XX | 错误代码
+200 | Request was successful
+4XX | Error codes
+5XX | Error codes
 
-## 一次获取一个设置
-设置也可以逐个检索。
+## Get settings one at a time
+Settings can also be retrieved individually.
 
-**请求**
+**Request**
 
-你可以使用以下请求来获取有关各个设置的信息。
+You can use the following request to get information about an individual setting.
 
-方法      | 请求 URI
+Method      | Request URI
 :------     | :-----
-GET | /ext/settings/<setting name>
+GET | /ext/settings/\<setting name\>
 <br />
-**URI 参数**
+**URI parameters**
 
-- 无
+- None
 
-**请求标头**
+**Request headers**
 
-- 无
+- None
 
-**请求正文**
+**Request body**
 
-- 无
+- None
 
-**响应**   
-该响应是一个具有以下字段的 JSON 对象：   
+**Response**   
+The response is a JSON object with following fields:   
 
-Name -（字符串）设置的名称。   
-Value -（字符串）设置的值。   
-RequiresReboot -（“Yes”|“No”）此字段指示该设置是否需要重新启动才能生效。
-Category -（字符串）设置的类别
+Name - (String) The name of the setting.   
+Value - (String) The value of the setting.   
+RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.
+Category - (String) The category of the setting
 
-**状态代码**
+**Status code**
 
-此 API 具有以下预期状态代码。
+This API has the following expected status codes.
 
-HTTP 状态代码      | 说明
+HTTP status code      | Description
 :------     | :-----
-200 | 请求已成功
-4XX | 错误代码
-5XX | 错误代码
+200 | Request was successful
+4XX | Error codes
+5XX | Error codes
 
-## 设置某个设置的值
-你可以设置某个设置的值。
+## Set the value of a setting
+You can set the value of a setting.
 
-**请求**
+**Request**
 
-你可以使用以下请求设置某个设置的值。
+You can use the following request to set the value for a setting.
 
-方法      | 请求 URI
+Method      | Request URI
 :------     | :-----
-PUT | /ext/settings/<setting name>
+PUT | /ext/settings/\<setting name\>
 <br />
-**URI 参数**
+**URI parameters**
 
-- 无
+- None
 
-**请求标头**
+**Request headers**
 
-- 无
+- None
 
-**请求正文**   
-请求正文是 JSON 对象，包含以下字段：   
-Value -（字符串）设置的新值。
+**Request body**   
+The request body is JSON object containing the following field:   
+Value - (String) The new value for the setting.
 
-**响应**   
+**Response**   
 
-- 无
+- None
 
-**状态代码**
+**Status code**
 
-此 API 具有以下预期状态代码。
+This API has the following expected status codes.
 
-HTTP 状态代码      | 说明
+HTTP status code      | Description
 :------     | :-----
-200 | 请求已成功
-4XX | 错误代码
-5XX | 错误代码
+200 | Request was successful
+4XX | Error codes
+5XX | Error codes
 
 <br />
-**可用设备系列**
+**Available device families**
 
 * Windows Xbox
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

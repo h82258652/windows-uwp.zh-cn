@@ -1,20 +1,20 @@
 ---
-title: "编码和解码数据"
-description: "此示例代码显示了如何在通用 Windows 平台 (UWP) 应用中对 Base64 和十六进制数据进行编码和解码。"
+title: Encode and decode data
+description: This example code shows how to encode and decode base64 and hexadecimal data in an Universal Windows Platform (UWP) app.
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: cd70a84e498c390684a59b33ec8a34375e1eb863
+ms.openlocfilehash: b07a040cafd2248f12fee571552632080e117692
 
 ---
 
-# 编码和解码数据
+# Encode and decode data
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-此示例代码显示了如何在通用 Windows 平台 (UWP) 应用中对 Base64 和十六进制数据进行编码和解码。
+This example code shows how to encode and decode base64 and hexadecimal data in an Universal Windows Platform (UWP) app.
 
 ```cs
 public void EncodeDecodeBase64()
@@ -44,6 +44,6 @@ public void EncodeDecodeHex()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

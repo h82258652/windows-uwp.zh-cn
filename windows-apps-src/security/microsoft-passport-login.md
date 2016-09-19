@@ -1,61 +1,61 @@
 ---
-title: "创建 Microsoft Passport 登录应用"
-description: "这是有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项。"
+title: Create a Microsoft Passport login app
+description: This is Part 1 of a complete walkthrough on how to create a Windows 10 UWP (Universal Windows Platform) app that uses Microsoft Passport as an alternative to traditional username and password authentication systems.
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: af8ae79f67d77195d5ed4801d040b2f1aafe8a97
-ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
+ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 ---
 
-# 创建 Microsoft Passport 登录应用
+# Create a Microsoft Passport login app
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-这是有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项。 该应用将用户名用于登录并为每个帐户创建 Passport 密钥。 这些帐户在配置 Microsoft Passport 时将受在 Windows 设置中设置的 PIN 保护。
+This is Part 1 of a complete walkthrough on how to create a Windows 10 UWP (Universal Windows Platform) app that uses Microsoft Passport as an alternative to traditional username and password authentication systems. The app uses a username for sign-in and create a Passport Key for each account. These accounts will be protected by the PIN that is setup in Windows Settings on configuration of Microsoft Passport.
 
-本演练分为两个部分：生成应用和连接后端服务。 当你完成此文章时，请继续执行第 2 部分：[Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)。
+This walkthrough is split into two parts: building the app and connecting the backend service. When you're finished with this article, continue on to Part 2: [Microsoft Passport login service](microsoft-passport-login-auth-service.md).
 
-在开始之前，你应阅读 [Microsoft Passport 和 Windows Hello](microsoft-passport.md) 概述，以便大致了解 Microsoft Passport 的工作原理。
+Before you begin, you should read the [Microsoft Passport and Windows Hello](microsoft-passport.md) overview for a general understanding of how Microsoft Passport works.
 
-## 入门
+## Get started
 
 
-为了生成此项目，你需要具有 C# 和 XAML 方面的一些经验。 你还需要在 Windows 10 计算机上使用 Visual Studio 2015（社区版或更高版本）。
+In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2015 (Community Edition or greater) on a Windows 10 machine.
 
--   打开 Visual Studio 2015，然后依次选择“文件”&gt;“新建”&gt;“项目”。
--   这将打开一个“新建项目”窗口。 导航到“模板”&gt;“Visual C#”。
--   选择“空白应用（通用 Windows）”并将你的应用程序命名为“PassportLogin”。
--   生成并运行新的应用程序 (F5)，然后你应该看到屏幕上显示的空白窗口。 关闭该应用程序。
+-   Open Visual Studio 2015 and select File > New > Project.
+-   This will open a “New Project” window. Navigation to Templates > Visual C#.
+-   Choose Blank App (Universal Windows) and name your application "PassportLogin".
+-   Build and Run the new application (F5), you should see a blank window shown on the screen. Close the application.
 
 ![](images/passport-login-1.png)
 
-## 练习 1：使用 Microsoft Passport 登录
+## Exercise 1: Login with Microsoft Passport
 
 
-在本练习中，你将了解如何检查 Microsoft Passport 是否在计算机上设置，以及如何使用 Microsoft Passport 登录到某一帐户。
+In this exercise you will learn how to check if Microsoft Passport is setup on the machine, and how to sign into an account using Microsoft Passport.
 
--   在新项目中，在解决方案中创建一个名为“Views”的新文件夹。 在本示例中，此文件夹包含将导航到的页面。 在解决方案资源管理器中右键单击该项目、依次选择“添加”&gt;“新文件夹”，然后将该文件夹重命名为 Views。
+-   In the new project create a new folder in the solution called "Views". This folder will contain the pages that will be navigated to in this sample. Right click on the project in solution explorer, select Add > New Folder, then rename the folder to Views.
 
     ![](images/passport-login-2.png)
 
--   右键单击新的 Views 文件夹、依次选择“添加”&gt;“新项目”，然后选择“空白页”。 将此页面命名为“Login.xaml”。
+-   Right click on the new Views folder, select Add > New Item and select Blank Page. Name this page "Login.xaml".
 
     ![](images/passport-login-3.png)
 
--   若要为新的登录页定义用户界面，请添加以下 XAML。 此 XAML 定义 StackPanel 以便对齐以下子元素：
+-   To define the user interface for the new login page, add the following XAML. This XAML defines a StackPanel to align the following children:
 
-    -   将包含标题的 TextBlock。
-    -   用于错误消息的 TextBlock。
-    -   用于要输入的用户名的文本框。
-    -   用于导航至注册页的按钮。
-    -   包含 Microsoft Passport 状态的 TextBlock。
-    -   用于解释登录页的 TextBlock（当没有任何后端或已配置的用户时）。
+    -   TextBlock that will contain a title.
+    -   TextBlock for error messages.
+    -   TextBox for the username to input.
+    -   Button to navigate to a register page.
+    -   TextBlock to contain the status of Microsoft Passport.
+    -   TextBlock to explain the Login page as there is no backend or configured users.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -85,7 +85,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     </Grid>
     ```
 
--   需要将几个方法添加到代码隐藏，以便生成解决方案。 按 F7，或者使用“解决方案资源管理器”来访问 Login.xaml.cs。 添加以下两个事件方法，以处理登录和注册事件。 现在，这些方法将 ErrorMessage.Text 设置为空字符串。
+-   A few methods need to be added to the code behind to get the solution building. Either press F7 or use the Solution Explorer to get to the Login.xaml.cs. Add in the following two event methods to handle the Login and Register events. For now these methods will set the ErrorMessage.Text to an empty string.
 
     ```cs
     namespace PassportLogin.Views
@@ -109,7 +109,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   若要呈现登录页，可在加载 MainPage 时编辑 MainPage 代码以导航到登录页。 打开 MainPage.xaml.cs 文件。 在“解决方案资源管理器”中，双击 MainPage.xaml.cs。 如果你找不到此文件，请单击 MainPage.xaml 旁边的小箭头以显示代码隐藏。 创建将导航到登录页的已加载事件处理程序方法。 你将需要添加对 Views 命名空间的引用。
+-   In order to render the Login page, edit the MainPage code to navigate to the Login page when the MainPage is loaded. Open the MainPage.xaml.cs file. In the solution explorer double click on MainPage.xaml.cs. If you can’t find this click the little arrow next to MainPage.xaml to show the code behind. Create a loaded event handler method that will navigate to the login page. You will need to add a reference to the Views namespace.
 
     ```cs
     using PassportLogin.Views;
@@ -132,7 +132,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   在登录页中，你需要处理 OnNavigatedTo 事件来验证 Microsoft Passport 在此计算机上是否可用。 在 Login.xaml.cs 中，实现以下项。 你会注意到 MicrosoftPassportHelper 对象标记一个错误。 这是因为我们尚未实现它。
+-   In the Login page you need to handle the OnNavigatedTo event to validate if Microsoft Passport is available on this machine. In Login.xaml.cs implement the following. You will notice that the MicrosoftPassportHelper object flags an error. This is because we have not implement it yet.
 
     ```cs
     public sealed partial class Login : Page
@@ -160,12 +160,12 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   若要创建 MicrosoftPassportHelper 类，请右键单击解决方案 PassportLogin（通用 Windows），然后依次单击“添加”&gt;“新文件夹”。 将此文件夹命名为 Utils。
+-   To create the MicrosoftPassportHelper class, right click on the solution PassportLogin (Universal Windows) and click Add > New Folder. Name this folder Utils.
 
     ![](images/passport-login-5.png)
 
--   右键单击 Utils 文件夹，然后依次单击“添加”&gt;“类”。 将此类命名为“MicrosoftPassportHelper.cs”。
--   将 MicrosoftPassportHelper 的类定义更改为公共静态，然后添加以下方法以通知用户 Microsoft Passport 是否可供使用。 你将需要添加所需的命名空间。
+-   Right click on the Utils folder and click Add > Class. Name this class "MicrosoftPassportHelper.cs".
+-   Change the class definition of MicrosoftPassportHelper to public static, then add the following method that to inform the user if Microsoft Passport is ready to be used or not. You will need to add the required namespaces.
 
     ```cs
     using System;
@@ -201,20 +201,20 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   在 Login.xaml.cs 中，添加对 Utils 命名空间的引用。 这将解决 OnNavigatedTo 方法中的错误。
+-   In Login.xaml.cs add a reference to the Utils namespace. This will resolve the error in the OnNavigatedTo method.
 
     ```cs
     using PassportLogin.Utils;
     ```
 
--   生成并运行应用程序 (F5)。 你将导航到登录页，Microsoft Passport 横幅将指示 Passport 是否可供使用。 你应该看到绿色或蓝色横幅，这指示你的计算机上的 Microsoft Passport 状态。
+-   Build and run the application (F5). You will be navigated to the login page and the Microsoft Passport banner will indicate to you if Passport is ready to be used. You should see either the green or blue banner indicating the Microsoft Passport status on your machine.
 
     ![](images/passport-login-6.png)
 
     ![](images/passport-login-7.png)
 
--   接下来你需要执行的操作是生成用于登录的逻辑。 创建名为“Models”的新文件夹。
--   在 Models 文件夹中，创建名为“Account.cs”的新类。 此类将用作你的帐户模型。 由于这是一个示例，因此它将仅包含一个用户名。 将类定义更改为公共，并添加 Username 属性。
+-   The next thing you need to do is build the logic for signing in. Create a new folder called "Models".
+-   In the Models folder create a new class called "Account.cs". This class will act as your account model. As this is a sample it will only contain a username. Change the class definition to public and add the Username property.
     
     ```cs
     namespace PassportLogin.Models
@@ -226,7 +226,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   你将需要一种帐户处理方法。 对于本动手实验，由于没有服务器或数据库，因此将本地保存和加载用户列表。 右键单击 Utils 文件夹，然后添加名为“AccountHelper.cs”的新类。 将类定义更改为公共静态。 AccountHelper 为静态类，其中包含本地保存和加载帐户列表的所有必需方法。 使用 XmlSerializer 即可进行保存和加载。 你还需要记住保存的文件及其保存位置。 需要其他命名空间以供引用。
+-   You will need a way to handle accounts. For this hands on lab as there is no server, or a database, a list of users will be saved and loaded locally. Right click on the Utils folder and add a new class called "AccountHelper.cs". Change the class definition to be public static. The AccountHelper is a static class that will contain all the necessary methods to save and load the list of accounts locally. Saving and loading will work by using an XmlSerializer. You will also need to remember the file you saved and where you saved it. Additional namespaces will be need to be referenced.
     
     ```cs
     using System.IO;
@@ -309,7 +309,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   接下来，实现一种可从帐户的本地列表添加和删除帐户的方法。 每次执行这些操作都将保存该列表。 你将需要对本动手实验执行的最终方法是验证方法。 因为没有用户的身份验证服务器或数据库，因此这将对硬编码的单个用户进行验证。 这些方法应添加到 AccountHelper 类。
+-   Next, implement a way to add and remove an account from the local list of accounts. These actions will each save the list. The final method that you will need for this hands on lab is a validation method. As there is no auth server or database of users, this will validate against a single user which is hard coded. These methods should be added to the AccountHelper class.
     
     ```cs
     public static Account AddAccount(string username)
@@ -351,7 +351,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
             }<
     ```
 
--   接下来你需要执行的操作是处理来自用户的登录请求。 在 Login.xaml.cs 中，创建一个将保存当前正在登录的帐户的新私有变量。 然后，添加一个名为 SignInPassport 的新方法。 这将使用 AccountHelper.ValidateAccountCredentials 方法验证帐户凭据。 如果输入的用户名与你在上一步中设置的硬编码字符串值相同，此方法将返回一个布尔值。 在本示例中，硬编码的值是“sampleUsername”。
+-   The next thing you need to do is handle a sign in request from the user. In Login.xaml.cs create a new private variable that will hold the current account logging in. Then add a new method call SignInPassport. This will validate the account credentials using the AccountHelper.ValidateAccountCredentials method. This method will return a Boolean value if the entered user name is the same as the hard coded string value you set in the previous step. The hard coded value for this sample is "sampleUsername".
 
     ```cs
     using PassportLogin.Models;
@@ -417,7 +417,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   你可能已经注意到，注释代码引用了 MicrosoftPassportHelper 中的方法。 在 MicrosoftPassportHelper.cs 中，添加名为 CreatePassportKeyAsync 的新方法。 此方法使用 [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043) 中的 Microsoft Passport API。 调用 [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 将创建特定于 *accountId* 和本地计算机的 Passport 密钥。 如果你对在真实应用场景中进行实现感兴趣，请注意 switch 语句中的注释。
+-   You may have noticed the commented code that was referencing a method in MicrosoftPassportHelper. In MicrosoftPassportHelper.cs add in a new method called CreatePassportKeyAsync. This method uses the Microsoft Passport API in the [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043). Calling [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) will create a Passport key that is specific to the *accountId* and the local machine. Please note the comments in the switch statement if you are interested in implementing this in a real world scenario.
 
     ```cs
     /// <summary>
@@ -461,7 +461,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   现在你已创建 CreatePassportKeyAsync 方法，请返回到 Login.xaml.cs 文件，并取消对 SignInPassport 方法内代码的注释。
+-   Now you have created the CreatePassportKeyAsync method, return to the Login.xaml.cs file and uncomment the code inside the SignInPassport method.
 
     ```cs
     private async void SignInPassport()
@@ -484,16 +484,16 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   生成并运行应用程序。 你将转到登录页。 键入“sampleUsername”，然后单击“登录”。 系统将通过一条 Microsoft Passport 提示信息提示你输入 PIN。 在正确输入 PIN 之后，CreatePassportKeyAsync 方法将能够创建 Passport 密钥。 监视输出窗口，以查看是否显示指示已成功的消息。
+-   Build and run the application. You will be taken to the Login page. Type in "sampleUsername" and click login. You will be prompted with a Microsoft Passport prompt asking you to enter your PIN. Upon entering your PIN correctly the CreatePassportKeyAsync method will be able to create a Passport key. Monitor the output windows to see if the messages saying successful are shown.
 
     ![](images/passport-login-8.png)
 
-## 练习 2：欢迎页和用户选择页
+## Exercise 2: Welcome and User Selection Pages
 
 
-在本练习中，你将从上一练习继续操作。 当用户成功登录时，他们应该进入可从中注销或删除其帐户的欢迎页。 当 Passport 为每台计算机创建密钥时，将创建一个用户选择屏幕，该屏幕上将显示已登录这台计算机的所有用户。 然后，用户可以选择这些帐户之一并直接转至欢迎屏幕，而无需重新输入密码，因为已针对这些用户进行身份验证，以便访问该计算机。
+In this exercise, you will continue from the previous exercise. When a person successfully logs in they should be taken to a welcome page where they can sign out or delete their account. As Passport creates a key for every machine, a user selection screen can be created, which displays all users that have been signed in on that machine. A user can then select one of these accounts and go directly to the welcome screen without needed to re-enter a password as they have already authenticated to access the machine.
 
--   在 Views 文件夹中，添加名为“Welcome.xaml”的新空白页。 添加以下 XAML 来完成用户界面。 这将显示一个标题、登录的用户名以及两个按钮。 其中一个按钮将向后导航到用户列表（将在稍后创建），另一个按钮将处理忘记此用户的情况。
+-   In the Views folder add a new blank page called "Welcome.xaml". Add the following XAML to complete the user interface. This will display a title, the logged in username, and two buttons. One of the buttons will navigate back to a user list (that you will create later), and the other button will handle forgetting this user.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -512,7 +512,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     </Grid>
     ```
 
--   在 Welcome.xaml.cs 代码隐藏文件中，添加用于保留已登录的帐户的新私有变量。 你将需要实现某种方法来替代 OnNavigateTo 事件，以便存储传递至欢迎页的帐户。 还需要针对 XAML 中定义的两个按钮实现单击事件。 你将需要一个对 Models 和 Utils 文件夹的引用。
+-   In the Welcome.xaml.cs code behind file, add a new private variable that will hold the account that is logged in. You will need to implement a method to override the OnNavigateTo event, this will store the account passed to the welcome page. You will also need to implement the click event for the two buttons defined in the XAML. You will need a reference to the Models and Utils folders.
 
     ```cs
     using PassportLogin.Models;
@@ -557,7 +557,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   你可能已注意到，某行在忘记用户单击事件中已有注释。 该帐户将从你的本地列表中删除，不过当前没有从 Passport 删除的方法。 你需要在 MicrosoftPassportHelper.cs 中实现一个新方法，以便处理 Passport 用户的删除操作。 此方法将使用其他 Microsoft Passport API 来打开和删除帐户。 实际上，在删除帐户后，应通知服务器或数据库，以便用户数据库保持有效。 你将需要一个对 Models 文件夹的引用。
+-   You may have noticed a line commented out in the forget user click event. The account is being removed from your local list but currently there is no way to be removed from Passport. You need to implement a new method in MicrosoftPassportHelper.cs that will handle removing a Passport user. This method will use other Microsoft Passport API’s to open and delete the account. In the real world when you delete an account the server or database should be notified so the user database remains valid. You will need a reference to the Models folder.
 
     ```cs
     using PassportLogin.Models;
@@ -583,7 +583,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   返回到 Welcome.xaml.cs，并取消用于调用 RemovePassportAccountAsync 的行的注释。
+-   Back in Welcome.xaml.cs, uncomment the line that calls RemovePassportAccountAsync.
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -598,7 +598,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   在 SignInPassport 方法（属于 Login.xaml.cs）中，在CreatePassportKeyAsync 成功创建后，应导航到欢迎屏幕并传递该帐户。
+-   In the SignInPassport method (of Login.xaml.cs), once the CreatePassportKeyAsync is successful it should navigate to the Welcome screen and pass the Account.
 
     ```cs
     private async void SignInPassport()
@@ -622,11 +622,11 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   生成并运行应用程序。 使用“sampleUsername”登录，然后单击“登录”。 输入你的 PIN，如果成功，你应导航到欢迎屏幕。 尝试单击“忘记用户”，并监视输出窗口以查看是否已删除该用户。 请注意，在用户删除后，你将仍位于欢迎页上。 你需要创建应用可以导航到的用户选择页。
+-   Build and run the application. Login with "sampleUsername" and click login. Enter your PIN and if successful you should be navigated to the welcome screen. Try clicking forget user and monitor the output window to see if the user was deleted. Notice that when the user is deleted you remain on the welcome page. You will need to create a user selection page that the app can navigate to.
 
     ![](images/passport-login-9.png)
 
--   在 Views 文件夹中，创建名为“UserSelection.xaml”的新空白页，然后添加以下 XAML 来定义用户界面。 此页面将包含一个用于在本地帐户列表中显示所有用户的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)，以及一个用于导航到登录页的 Button，从而让用户可以添加其他帐户。
+-   In the Views folder create a new blank page called "UserSelection.xaml" and add the following XAML to define the user interface. This page will contain a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) that displays all the users in the local accounts list, and a Button that will navigate to the login page to allow the user to add another account.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -648,7 +648,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     </Grid><
     ```
 
--   在 UserSelection.xaml.cs 中，如果本地列表中不存在任何帐户，则实现将导航到登录页的加载方法。 此外，针对 ListView 实现 SelectionChanged 事件，针对 Button 实现单击事件。
+-   In UserSelection.xaml.cs implement the loaded method that will navigate to the login page if there are no accounts in the local list. Also implement the SelectionChanged event for the ListView and a click event for the Button.
 
     ```cs
     using System.Diagnostics;
@@ -709,7 +709,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
 
 <!-- -->
 
--   存在你想要在其中导航到 UserSelection 页的应用中的多个位置。 在 MainPage.xaml.cs 中，你应导航到 UserSelection 页而不是登录页。 当你在 MainPage 中执行加载事件时，你需要加载帐户列表，以便 UserSelection 页可以检查是否存在任何帐户。 此操作不仅需要更改要异步执行的加载方法，还需要添加对 Utils 文件夹的引用。
+-   There are a few places in the app where you want to navigated to the UserSelection page. In MainPage.xaml.cs you should navigate to the UserSelection page instead of the Login page. While you are in the loaded event in MainPage you will need to load the accounts list so that the UserSelection page can check if there are any accounts. This will require changing the loaded method to be async and also adding a reference to the Utils folder.
 
     ```cs
     using PassportLogin.Utils;
@@ -722,7 +722,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   接下来，需要从欢迎页导航到 UserSelection 页。 在这两个单击事件中，你应向后导航到 UserSelection 页。
+-   Next you will want to navigate to the UserSelection page from the Welcome page. In both click events you should navigate back to the UserSelection page.
 
     ```cs
     private void Button_Restart_Click(object sender, RoutedEventArgs e)
@@ -745,7 +745,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   在登录页中，你需要代码来登录到从 UserSelection 页的列表中选择的帐户。 在 OnNavigatedTo 事件中，存储已传递给导航的帐户。 首先，添加新的私有变量，用于标识帐户是否为现有帐户。 然后，处理 OnNavigatedTo 事件。
+-   In the Login page you need code to log in to the account selected from the list in the UserSelection page. In OnNavigatedTo event store the account passed to the navigation. Start by adding a new private variable that will identify if the account is an existing account. Then handle the OnNavigatedTo event.
 
     ```cs
     namespace PassportLogin.Views
@@ -792,7 +792,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   SignInPassport 方法将需要进行更新，以便登录到所选的帐户。 MicrosoftPassportHelper 将需要另一种方法来使用 Passport 打开帐户，因为帐户已具有一个为其创建的 Passport 密钥。 在 MicrosoftPassportHelper.cs 中实现新方法，以便现有用户可以使用 Passport 登录。 有关代码的每个部分的信息，请阅读整个代码注释。
+-   The SignInPassport method will need to be updated to sign in to the selected account. The MicrosoftPassportHelper will need another method to open the account with Passport, as the account already has a Passport key created for it. Implement the new method in MicrosoftPassportHelper.cs to sign in an existing user with passport. For information on each part of the code please read through the code comments.
 
     ```cs
     /// <summary>
@@ -839,7 +839,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   在 Login.xaml.cs 中更新 SignInPassport 方法以处理现有帐户。 这将在 MicrosoftPassportHelper.cs 中使用新方法。 如果成功，将登录该帐户，并且用户将导航到欢迎屏幕。
+-   Update the SignInPassport method in Login.xaml.cs to handle the existing account. This will use the new method in the MicrosoftPassportHelper.cs. If successful the account will be signed in and the user navigated to the welcome screen.
 
     ```cs
     private async void SignInPassport()
@@ -870,16 +870,16 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   生成并运行应用程序。 使用“sampleUsername”登录。 键入你的 PIN，如果成功，你将导航到欢迎屏幕。 通过单击返回到用户列表。 你现在应该可以在列表中看到用户。 通过单击此 Passport，你可以重新登录，而无需重新输入任何密码等。
+-   Build and run the application. Login with "sampleUsername". Type in your PIN and if successful you will be navigated to the Welcome screen. Click back to user list. You should now see a user in the list. If you click on this Passport enables you to sign back in without having to re-enter any passwords etc.
 
     ![](images/passport-login-10.png)
 
-## 练习 3：注册新的 Passport 用户
+## Exercise 3: Registering a new Passport user
 
 
-在本练习中，将为你创建一个新页面，将在该页面中使用 Passport 创建一个新帐户。 这将与登录页的工作原理类似。 登录页将针对迁移的现有用户进行实现，以便使用 Passport。 PassportRegister 页将为新用户创建 Passport 注册。
+In this exercise you will be creating a new page that will create a new account with Passport. This will work similarly to how the Login page works. The Login page is implemented for an existing user that is migrating to use Passport. A PassportRegister page will create Passport registration for a new user.
 
--   在 Views 文件夹中，创建名为“PassportRegister.xaml”的新空白页。 在 XAML 中，添加以下内容来设置用户界面。 此处的界面类似于登录页。
+-   In the views folder create a new blank page called "PassportRegister.xaml". In the XAML add in the following to setup the user interface. The interface here is similar to the Login page.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -906,7 +906,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     </Grid>
     ```
 
--   在 PassportRegister.xaml.cs 代码隐藏文件中，实现私有 Account 变量，并针对注册 Button 实现单击事件。 这将添加一个新的本地帐户，并创建 Passport 密钥。
+-   In the PassportRegister.xaml.cs code behind file implement a private Account variable and a click event for the register Button. This will add a new local account and create a Passport key.
 
     ```cs
     using PassportLogin.Models;
@@ -949,7 +949,7 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   当单击注册时，需要从登录页导航至该页。
+-   You need to navigate to this page from the Login page when register is clicked.
 
     ```cs
     private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)
@@ -959,20 +959,20 @@ ms.openlocfilehash: d28f0b9ea08d35a220cdb58367f03af95966e282
     }
     ```
 
--   生成并运行应用程序。 尝试注册新用户。 然后返回到用户列表，并验证你是否可以选择该用户并登录。
+-   Build and run the application. Try to register a new user. Then return to the user list and validate that you can select that user and login.
 
     ![](images/passport-login-11.png)
 
-在本实验中，你已经掌握了使用新 Microsoft Passport API 对现有用户进行身份验证和为新用户创建帐户时所需的基本技能。 借助此新知识，你的用户现在不再需要记住你的应用程序密码，不过请放心，你的应用程序仍然受用户身份验证保护。 Windows 10 使用 Passport 技术来支持 Windows Hello 的生物识别登录。 如果你使用的计算机支持 Windows Hello，你将看到这组练习已支持 Windows Hello。
+In this lab you have learned the essential skills you need to use the new Microsoft Passport API to authenticate existing users and create accounts for new users. With this new knowledge you can start removing the need for users to remember passwords for your application, yet remain confident that your applications remain protected by user authentication. Windows 10 uses the Passport technology to support the biometrics login of Windows Hello. If you have been using a machine that supports Windows Hello you will have seen that this set of exercises already supports Windows Hello.
 
-作为一名开发人员，你无需执行任何额外的工作，即可在实现对 Microsoft Passport 的支持之后支持 Windows Hello。
+There is no extra work you as a developer need to do in order to support Windows Hello once you have implemented support for Microsoft Passport.
 
-## 相关主题
+## Related topics
 
-* [Microsoft Passport 和 Windows Hello](microsoft-passport.md)
-* [Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)
+* [Microsoft Passport and Windows Hello](microsoft-passport.md)
+* [Microsoft Passport login service](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

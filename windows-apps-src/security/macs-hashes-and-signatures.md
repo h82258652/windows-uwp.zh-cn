@@ -1,41 +1,41 @@
 ---
-title: "MAC、哈希以及签名"
-description: "本文讨论了如何在通用 Windows 平台 (UWP) 应用中使用消息验证代码 (MAC)、哈希和签名检测消息篡改。"
+title: MACs, hashes, and signatures
+description: This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: d7c66d9ead6e3dbf750f1d058e311ef3c84a204f
+ms.openlocfilehash: 2c43e8ea726827d263fd397ea28058c04d30a7aa
 
 ---
 
-# MAC、哈希以及签名
+# MACs, hashes, and signatures
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文讨论了如何在通用 Windows 平台 (UWP) 应用中使用消息验证代码 (MAC)、哈希和签名检测消息篡改。
+This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
 
-## 消息验证代码 (MAC)
+## Message authentication codes (MACs)
 
 
-加密有助于防止未经授权的个人读取消息，但不能防止个人篡改消息。 更改的消息（即使该更改不会导致任何情况发生，只是一种无聊的行为）会产生实际成本。 消息验证代码 (MAC) 有助于防止消息篡改。 例如，考虑以下情景：
+Encryption helps prevent an unauthorized individual from reading a message, but it does not prevent that individual from tampering with the message. An altered message, even if the alteration results in nothing but nonsense, can have real costs. A message authentication code (MAC) helps prevent message tampering. For example, consider the following scenario:
 
--   鲍勃和艾丽斯共享密钥并就要使用的 MAC 功能达成一致意见。
--   Bob 创建了消息并将该消息和密钥输入至 MAC 功能以检索 MAC 值。
--   Bob 将 \[unencrypted\] 消息和 MAC 值通过网络发送给 Alice。
--   Alice 使用密钥和消息作为 MAC 功能的输入。 她将生成的 MAC 值与鲍勃发送的 MAC 值进行比较。 如果二者相同，则消息在传输中未进行更改。
+-   Bob and Alice share a secret key and agree on a MAC function to use.
+-   Bob creates a message and inputs the message and the secret key into a MAC function to retrieve a MAC value.
+-   Bob sends the \[unencrypted\] message and the MAC value to Alice over a network.
+-   Alice uses the secret key and the message as input to the MAC function. She compares the generated MAC value to the MAC value sent by Bob. If they are the same, the message was not changed in transit.
 
-注意，偷听鲍勃和艾丽斯之间对话的第三方伊夫无法有效操纵消息。 伊夫没有私钥访问权限，因此，无法创建 MAC 值，该值看上去可让艾丽斯感觉出现的篡改消息合法。
+Note that Eve, a third party eavesdropping on the conversation between Bob and Alice, cannot effectively manipulate the message. Eve does not have access to the private key and cannot, therefore, create a MAC value which would make the tampered message appear legitimate to Alice.
 
-创建消息验证代码仅确保原始消息未更改，并且通过使用共享密钥，消息哈希由具有该私钥访问权限的某人进行签名。
+Creating a message authentication code ensures only that the original message was not altered and, by using a shared secret key, that the message hash was signed by someone with access to that private key.
 
-可以使用 [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) 枚举可用的 MAC 算法并生成对称密钥。 可以使用 [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 类上的静态方法来执行创建 MAC 值的必要加密。
+You can use the [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) to enumerate the available MAC algorithms and generate a symmetric key. You can use static methods on the [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) class to perform the necessary encryption that creates the MAC value.
 
-数字签名为等同于私钥消息验证代码 (MAC) 的公钥。 尽管 MAC 使用私钥来使消息接收人验证传输过程中尚未更改消息，但是签名使用私钥/公钥对。
+Digital signatures are the public key equivalent of private key message authentication codes (MACs). Although MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
 
-此示例代码说明如何使用 [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) 类创建经过哈希的邮件身份验证代码 (HMAC)。
+This example code shows how to use the [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) class to create a hashed message authentication code (HMAC).
 
 ```cs
 using Windows.Security.Cryptography;
@@ -122,23 +122,23 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## 哈希
+## Hashes
 
 
-加密哈希函数获取任意长度的数据块并返回固定大小的位字符串。 哈希函数通常在对数据进行签名时使用。 由于大多数公钥签名操作是计算密集型的操作，因此对消息哈希进行签名（加密）比对原始消息进行签名通常更高效。 以下过程显示了一个常用的简化方案：
+A cryptographic hash function takes an arbitrarily long block of data and returns a fixed-size bit string. Hash functions are typically used when signing data. Because most public key signature operations are computationally intensive, it is typically more efficient to sign (encrypt) a message hash than it is to sign the original message. The following procedure represents a common, albeit simplified, scenario:
 
--   Bob 和 Alice 共享密钥并就要使用的 MAC 功能达成一致意见。
--   Bob 创建了消息并将该消息和密钥输入至 MAC 功能以检索 MAC 值。
--   Bob 将 \[unencrypted\] 消息和 MAC 值通过网络发送给 Alice。
--   Alice 使用密钥和消息作为 MAC 功能的输入。 她将生成的 MAC 值与鲍勃发送的 MAC 值进行比较。 如果二者相同，则消息在传输中未进行更改。
+-   Bob and Alice share a secret key and agree on a MAC function to use.
+-   Bob creates a message and inputs the message and the secret key into a MAC function to retrieve a MAC value.
+-   Bob sends the \[unencrypted\] message and the MAC value to Alice over a network.
+-   Alice uses the secret key and the message as input to the MAC function. She compares the generated MAC value to the MAC value sent by Bob. If they are the same, the message was not changed in transit.
 
-请注意，Alice 发送了一个未加密的消息。 只对哈希进行加密。 该过程只能确保原始消息未经修改，以及消息哈希是由对 Alice 的私钥（推测是 Alice）具有访问权限的人进行的签名，后者是通过使用通过使用 Alice 的公钥来实现的。
+Note that Alice sent an unencrypted message. Only the hash was encrypted. The procedure ensures only that the original message was not altered and, by using Alice's public key, that the message hash was signed by someone with access to Alice's private key, presumably Alice.
 
-你可以使用 [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 类枚举可用的哈希算法并创建一个 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 值。
+You can use the [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) class to enumerate the available hash algorithms and create a [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) value.
 
-数字签名为等同于私钥消息验证代码 (MAC) 的公钥。 但是 MAC 使用私钥使消息接受者能够验证消息在传输期间是否尚未改变，签名使用私钥/公钥对。
+Digital signatures are the public key equivalent of private key message authentication codes (MACs). Whereas MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
 
-[**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 对象可用于重复哈希不同的数据，不必在每次使用时重新创建该对象。 [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) 方法将新数据添加到要进行哈希操作的缓冲区。 [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法对数据进行哈希操作并重置对象以用于另一个用途。 下面的示例对此进行了展示。
+The [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) object can be used to repeatedly hash different data without having to re-create the object for each use. The [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) method adds new data to a buffer to be hashed. The [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) method hashes the data and resets the object for another use. This is shown by the following example.
 
 ```cs
 public void SampleReusableHash()
@@ -179,18 +179,18 @@ public void SampleReusableHash()
 
 ```
 
-## 数字签名
+## Digital signatures
 
 
-数字签名为等同于私钥消息验证代码 (MAC) 的公钥。 但是 MAC 使用私钥使消息接受者能够验证消息在传输期间是否尚未改变，签名使用私钥/公钥对。
+Digital signatures are the public key equivalent of private key message authentication codes (MACs). Whereas MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
 
-由于大多数公钥签名操作是计算密集型的操作，因此对消息哈希进行签名（加密）比对原始消息进行签名通常更高效。 发送者创建消息哈希，并且发送签名和（未加密）消息。 接收者计算该消息上的哈希，解密签名并将解密的签名计算为哈希值。 如果两者匹配，则接收者可以更加清楚地确定该消息确实来自发送者并且传输期间并未改变。
+Because most public key signature operations are computationally intensive, however, it is typically more efficient to sign (encrypt) a message hash than it is to sign the original message. The sender creates a message hash, signs it, and sends both the signature and the (unencrypted) message. The recipient calculates a hash over the message, decrypts the signature, and compares the decrypted signature to the hash value. If they match, the recipient can be fairly certain that the message did, in fact, come from the sender and was not altered during transmission.
 
-签名通过发送者的公钥只能确保原始消息未被改变以及消息哈希是由对私钥有访问权限的某个人进行的签名。
+Signing ensures only that the original message was not altered and, by using the sender's public key, that the message hash was signed by someone with access to the private key.
 
-你可以使用 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 对象枚举可用的签名算法以及生成或导入密钥对。 你可以在 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 类上使用静态方法对消息进行签名或验证签名。
+You can use an [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) object to enumerate the available signature algorithms and generate or import a key pair. You can use static methods on the [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) class to sign a message or verify a signature.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

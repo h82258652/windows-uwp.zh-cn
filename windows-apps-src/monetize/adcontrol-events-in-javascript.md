@@ -1,25 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: 2383296e-c3d7-4b49-bcd2-621391228fdb
-description: "了解如何处理 AdControl 类的事件。"
-title: "JavaScript 中的 AdControl 事件"
+description: Learn how to handle the events of the AdControl class.
+title: AdControl events in JavaScript
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b3c41f38f42c390c52c96fa93cfce3fe9bbd181d
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: d24030dfae92451924000ba4f1ac19cf6c4d4abe
 
 
 ---
 
-# JavaScript 中的 AdControl 事件
+# AdControl events in JavaScript
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-以下示例演示了如何处理 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 类的事件。 这些示例假设你之前已向 **AdControl** 事件分配了事件处理程序。 有关如何执行此操作的详细信息，请参阅 [HTML 属性示例](html-properties-example.md)。
 
-在 JavaScript 中，**AdControl** 事件必须包含在 [MarkSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) 函数中。 有关处理 JavaScript 中的事件的详细信息，请参阅[编码基本应用 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh780660.aspx#adding-event-handlers)。
+The following examples demonstrate how to handle the events of the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class. These examples assume that you have previously assigned the event handlers to the **AdControl** events. For more information about how to do this, see [HTML properties example](html-properties-example.md).
 
-## 示例
+In JavaScript, the **AdControl** events must be enclosed by the [MarkSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) function. For more information about handling events in JavaScript, see [Coding basic apps (HTML)](https://msdn.microsoft.com/library/windows/apps/hh780660.aspx#adding-event-handlers).
+
+## Examples
 
 ``` syntax
 WinJS.Utilities.markSupportedForProcessing(
@@ -44,18 +44,18 @@ window.myAdEngagedChanged = function (sender) {
 });
 ```
 
-## 相关主题
+## Related topics
 
-* [GitHub 上的广告示例](http://aka.ms/githubads)
-* [AdControl 错误处理](adcontrol-error-handling.md)
-* [RoutedEventArgs 类](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
-
- 
+* [Advertising samples on GitHub](http://aka.ms/githubads)
+* [AdControl error handling](adcontrol-error-handling.md)
+* [RoutedEventArgs Class](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
 
  
 
+ 
 
 
-<!--HONumber=Jul16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,55 +1,55 @@
 ---
 author: mcleblanc
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
-title: "Beta 测试"
-description: "Beta 测试使你有机会根据来自你的应用开发团队之外的个人的反馈来改进你的应用，这些个人在其自己的设备上试用你的未发布应用。"
+title: Beta testing
+description: Beta testing gives you the chance to improve your app based on feedback from individuals outside of your app-development team who try your unreleased app on their own devices.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7404a90fc9efc05d4e2bb83321bb2ba80b8378ce
+ms.openlocfilehash: 13857b2ba5946149d04ad4f6eda6828cc11a0640
 
 ---
-# Beta 测试
+# Beta testing
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-*Beta 测试*使你有机会根据来自你的应用开发团队之外的个人的反馈来改进你的应用，这些个人在其自己的设备上试用你的未发布应用。
+*Beta testing* gives you the chance to improve your app based on feedback from individuals outside of your app-development team who try your unreleased app on their own devices.
 
-本部分介绍对通用 Windows 应用执行 Beta 测试的选项。
+This section describes your options for beta testing Universal Windows apps.
 
-## 为什么执行 Beta 测试？
+## Why beta test?
 
-若要全面测试应用，需要针对尽可能多的设备配置和用户交互尝试该测试。 也可以在内部执行所有相关测试，但却很难。
+To thoroughly test an app, you need to try it against as many device configurations and user interactions as possible. Doing all of that testing in-house is difficult if not impossible.
 
-借助 Beta 测试，用户可在他们自己的设备上试用你的应用。 并且不受限制：用户可以完全自由地通过任何方式使用应用（而不是执行指定任务），从而能够发现他们永远不会预料到的问题。
+With beta testing, users try your app on their own devices. And it's unmoderated: instead of performing specified tasks, users have complete freedom in how they use an app, so they can find issues that you might never have expected.
 
-借助 Beta 测试，你可以：
+With beta testing, you can:
 
--   在各种设备上测试你的应用。
--   标识性能问题和以其他方式可能找不到的其他错误。
--   获取可用于改善用户体验的实际使用情况信息。
--   收到反馈，而不会影响 Windows 应用商店中的公共评级。
+-   Test your app on a variety of devices.
+-   Identify performance issues and other bugs that you might not have found otherwise.
+-   Get real-world usage info that can be used improve the user experience.
+-   Receive feedback without affecting public ratings in the Windows Store.
 
-## 何时进行 Beta 测试
+## When to beta test
 
-最好是在释放你的应用之前，进行 Beta 测试作为测试的最后阶段。 此时，你已经尽可能彻底地测试该应用，而且已经涵盖了所有的显式使用案例。 Beta 测试不能替代其他测试方法。 由于 Beta 测试不受限制，每个测试人员的体验都是自主的，并且他们不太可能会探索应用的所有功能，因此参与者可能不会捕获代码中的所有错误。 但 Beta 测试反馈可以向你提供最后一批真实反馈，这些反馈显示了在正式发布之前你可能永远不会预料到的问题。
+It's best to conduct beta testing as the final stage of testing before you release your app. At that point, you have tested the app as thoroughly as you can yourself, and you've covered all explicit use cases. Beta testing is not a substitute for other testing methods. Since beta testing is unmoderated, participants may not catch all bugs in your code because every tester's experience is self-directed and it's unlikely that they'll explore all features of the app. But beta-testing feedback can give you a final wave of real-world feedback that reveals issues that you might never have expected before you go live.
 
-## 后续步骤
+## Next steps
 
-在统一的 Windows 开发人员中心仪表板中，你可以限制为仅向你的测试人员分发应用，而不必考虑你的应用所面向的操作系统。 没有必要使用单独的名称和程序包标识创建单独的应用版本；你可以先执行测试，然后当你准备好向大众发布应用时，再创建新的提交。 （如果你愿意，当然可以创建单独的应用仅供测试。 如果要这样做，请确保为其指定的名称不同于你打算使用的最终的公共应用名称。）
+In the unified Windows Dev Center dashboard, you can limit distribution of your apps to only your testers, regardless of which operating systems your app targets. There’s no need to create a separate version of your app with a separate name and package identity; you can do your testing, then create a new submission when you’re ready to make the app available to everyone. (Of course, you can create a separate app for testing only if you prefer. If you do, make sure to give it a different name from what you intend as the final, public app name.)
 
-请参阅 [Beta 测试和目标分发](https://msdn.microsoft.com/library/windows/apps/Mt185377)了解如何将应用提交到应用商店进行 Beta 测试。
-
- 
+See [Beta testing and targeted distribution](https://msdn.microsoft.com/library/windows/apps/Mt185377) to learn how to submit your app to the Store for beta testing.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

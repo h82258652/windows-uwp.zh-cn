@@ -1,82 +1,82 @@
 ---
 author: DBirtolo
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
-title: "启用设备功能"
-description: "本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。"
+title: Enable device capabilities
+description: This tutorial describes how to declare device capabilities in Microsoft Visual Studio. This enables your app to use cameras, microphones, location sensors, and other devices.
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 306e10ee9349f3742ac5a06229d22aad04457d7a
+ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
 
 ---
-# 启用设备功能
+# Enable device capabilities
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。
-
-## 指定你的应用将使用的设备功能
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-当你使用某些类型的设备时，Windows 应用要求你在应用包清单中进行指定。 在 Visual Studio 中，你可以使用[清单设计器](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)声明大多数功能，也可以按照[如何在程序包清单中指定设备功能（手动）](https://msdn.microsoft.com/library/windows/apps/Dn263092)所述手动添加它们。 本教程假定你使用清单设计器。
+This tutorial describes how to declare device capabilities in Microsoft Visual Studio. This enables your app to use cameras, microphones, location sensors, and other devices.
 
-**注意**  
-某些类型的设备不需要在应用程序包清单中声明，例如打印机、扫描仪和传感器。
+## Specify the device capabilities your app will use
 
--   在 Visual Studio 解决方案资源管理器中，双击程序清单文件 **Package.appxmanifest**。
--   打开“功能”****选项卡。
--   选择你的应用使用的设备功能。 如果你在清单设计器中没有看到你需要的功能，请手动添加该功能。 有关详细信息，请参阅[如何在程序包清单中指定设备功能](https://msdn.microsoft.com/library/windows/apps/Dn263092)。
 
-| 设备功能 | 清单设计器 | 描述 |
+Windows apps require you to specify in the app package manifest when you use certain types of devices. In Visual Studio, you can declare most capabilities by using [Manifest Designer](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx) or you can add them manually as described in [How to specify device capabilities in a package manifest (manually)](https://msdn.microsoft.com/library/windows/apps/Dn263092). This tutorial assumes you're using Manifest Designer.
+
+**Note**  
+Some types of devices, such as printers, scanners, and sensors, don't need to be declared in the app package manifest.
+
+-   In Visual Studio Solution Explorer, double-click the package manifest file, **Package.appxmanifest**.
+-   Open the **Capabilities** tab.
+-   Select the device capabilities that your app uses. If you don't see the capability you're looking for in Manifest Designer, add it manually. For more info, see [How to specify device capabilities in a package manifest](https://msdn.microsoft.com/library/windows/apps/Dn263092).
+
+| Device Capability | Manifest Designer | Description |
 |-------------------|-------------------|-------------|    
-| AllJoyn | ![在清单设计器中可用](images/ap-tools.png) | 允许网络上支持 AllJoyn 的应用和设备发现彼此并进行交互。 [**Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971) 命名空间中访问 API 的应用都必须使用此功能。 |
-| 阻止的聊天消息 | ![在清单设计器中可用](images/ap-tools.png) | 允许应用读取已由“垃圾邮件筛选器”应用阻止的短信和彩信消息。 |
-| 聊天消息访问 | ![在清单设计器中可用](images/ap-tools.png) | 允许应用读取和删除短信。 它还允许应用将聊天消息存储在系统数据存储中。 |
-| 代码生成 | ![在清单设计器中可用](images/ap-tools.png) | 允许应用以动态方式生成代码。 |
-| 企业身份验证 | ![在清单设计器中可用](images/ap-tools.png) | 此功能遵循 Windows 应用商店策略。 它允许连接至要求提供域凭据的企业 Intranet 资源。 大多数应用通常不需要此功能。 | 
-| Internet (客户端) | ![在清单设计器中可用](images/ap-tools.png) | 提供对 Internet 及公共场所（如机场和咖啡厅）网络的出站访问。 例如，用户将网络指定为公共网络的 Intranet 网络。 需要进行 Internet 访问的大多数应用都应使用此功能。 |
-| Internet（客户端 &amp; 服务器） | ![在清单设计器中可用](images/ap-tools.png) | 提供对 Internet 及公共场所（如机场和咖啡厅）网络的入站和出站访问。 此功能是“Internet (客户端)”****的超集。 如果已启用此功能，则不需要同时启用“Internet (客户端)”****。 对重要端口的入站访问始终会被阻止。 |
-| 位置| ![在清单设计器中可用](images/ap-tools.png) | 提供对当前位置的访问。 当前位置是从专用硬件（例如电脑中的 GPS 传感器）或从可用的网络信息中获取的。 | 
-| 麦克风 | ![在清单设计器中可用](images/ap-tools.png) | 提供对麦克风音频源的访问。 这允许应用从所连接的麦克风进行录音。 | 
-| 音乐库 | ![在清单设计器中可用](images/ap-tools.png) | 能够添加、更改或删除本地电脑和**家庭组**电脑的“音乐库”****中的文件。 | 
-| 对象 3D | ![在清单设计器中可用](images/ap-tools.png) | 提供对用户 **3D 对象**的编程访问权限，让应用无需用户交互即可枚举和访问库中的所有文件。 此功能通常用在需要访问整个 **3D 对象**库的 3D 应用和游戏中。 | 
-| 电话呼叫 | ![在清单设计器中可用](images/ap-tools.png) | 允许应用访问设备上的所有电话线路并执行以下功能：在手机上进行拨号并显示系统拨号器而不提示用户；访问与线路相关的元数据；访问与线路相关的触发器。 允许用户选择的垃圾邮件筛选器应用设置并检查阻止列表和呼叫来源信息。 | 
-| 图片库 | ![在清单设计器中可用](images/ap-tools.png) | 能够添加、更改或删除本地电脑和**家庭组**电脑的“图片库”****中的文件。 | 
-| 专用网络（客户端 &amp; 服务器） | ![在清单设计器中可用](images/ap-tools.png) | 针对具有经过身份验证的域控制器或用户已指定为家庭或工作网络的 Intranet 网络提供入站和出站访问。 对重要端口的入站访问始终会被阻止。 | 
-| 邻近感应 | ![在清单设计器中可用](images/ap-tools.png) | 能够通过近距离通信 (NFC) 与靠近电脑的设备进行连接。 近距离感应可用于向附近设备上的应用发送文件或与其进行通信。 | 
-| 可移动存储 | ![在清单设计器中可用](images/ap-tools.png) | 能够添加、更改或删除可移动存储设备上的文件。 应用只能访问可移动存储上使用“文件类型关联”****声明在清单中定义的文件类型。 应用无法访问**家庭组**电脑上的可移动存储。 | 
-| 共享用户证书 | ![在清单设计器中可用](images/ap-tools.png) | 此功能遵循 Windows 应用商店策略。 它允许访问用于验证用户身份的软件和硬件证书，如智能卡证书。 如果相关 API 在运行时被调用，用户必须执行操作（插卡、选择证书等）。 如果你的应用通过“证书”****声明包含专用证书，则不需要此功能。 | 
-| 用户帐户信息 | ![在清单设计器中可用](images/ap-tools.png) | 使应用能够访问用户的名称和头像。 若要访问 [**Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/BR241881) 命名空间中的某些 API，此功能是必需的。 | 
-| 视频库 | ![在清单设计器中可用](images/ap-tools.png) | 能够添加、更改或删除本地电脑和**家庭组**电脑的“视频库”****中的文件。 | 
-| VOIP 呼叫 | ![在清单设计器中可用](images/ap-tools.png) | 允许应用访问 [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) 命名空间中的 VOIP 呼叫 API。 | 
-| 摄像头 | ![在清单设计器中可用](images/ap-tools.png) | 提供对内置相机或附加摄像头视频源的访问权限。 这允许应用捕获快照和影片。 | 
-| USB | | 提供对自定义 USB 设备的访问。 此功能需要子元素。 该功能在 Windows Phone 上不受支持。 | 
-| 人体学接口设备 (HID) | | 提供对人体学接口设备 (HID) 的访问。 此功能需要子元素。 有关详细信息，请参阅[如何为 HID 指定设备功能](https://msdn.microsoft.com/library/windows/apps/Dn263091)。 | 
-| 蓝牙 GATT | | 通过主要服务、附属服务、特征和描述符的集合提供对蓝牙 LE 设备的访问。 此功能需要子元素。 有关详细信息，请参阅[如何为蓝牙指定设备功能](https://msdn.microsoft.com/library/windows/apps/Dn263090)。 | 
-| 蓝牙 RFCOMM |  | 提供对支持基本速率/扩展数据速率 (BR/EDR) 传输的 API 的访问，并且允许你的 Windows 应用商店应用访问实现了串行端口配置文件 (SPP) 的设备。 此功能需要子元素。 有关详细信息，请参阅[如何为蓝牙指定设备功能](https://msdn.microsoft.com/library/windows/apps/Dn263090)。 |
-| 服务点 |  | 提供对服务点 (POS) 条码扫描仪和磁条阅读器的访问。 该功能在 Windows Phone 上不受支持。 | 
+| AllJoyn | ![Available in Manifest Designer](images/ap-tools.png) | Allows AllJoyn-enabled apps and devices on a network to discover and interact with each other. App apps that access APIs in the [**Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971) namespace must use this capability. |
+| Blocked Chat Messages | ![Available in Manifest Designer](images/ap-tools.png) | Allows apps to read SMS and MMS messages that have been blocked by the Spam Filter app. |
+| Chat Message Access | ![Available in Manifest Designer](images/ap-tools.png) | Allows apps to read and delete Text Messages. It also allows apps to store chat messages in the system data store. |
+| Code Generation | ![Available in Manifest Designer](images/ap-tools.png) | Allows apps to generate code dynamically. |
+| Enterprise Authentication | ![Available in Manifest Designer](images/ap-tools.png) | This capability is subject to the Windows Store policy. It provides the capability to connect to enterprise intranet resources that require domain credentials. This capability is not typically needed for most apps. | 
+| Internet (Client) | ![Available in Manifest Designer](images/ap-tools.png) | Provides outbound access to the Internet and networks in public places like airports and coffee shops. For example, Intranet networks where the user has designated the network as public. Most apps that require Internet access should use the capability. |
+| Internet (Client &amp; Server) | ![Available in Manifest Designer](images/ap-tools.png) | Provides inbound and outbound access to the Internet and the networks in public places like airports and coffee shops. This capability is a superset of **Internet (Client)**. **Internet (Client)** doesn't need to be enabled if this capability is also enabled. Inbound access to critical ports is always blocked. |
+| Location| ![Available in Manifest Designer](images/ap-tools.png) | Provides access to the current location. This is obtained from dedicated hardware like a GPS sensor in the PC, or derived from available network information. | 
+| Microphone | ![Available in Manifest Designer](images/ap-tools.png) | Provides access to the microphone's audio feed. This allows the app to record from connected microphones. | 
+| Music Library | ![Available in Manifest Designer](images/ap-tools.png) | Provides the capability to add, change, or delete files in the **Music Library** for the local PC and **HomeGroup** PCs. | 
+| Objects 3D | ![Available in Manifest Designer](images/ap-tools.png) | Provides programmatic access to the user's **3D Objects**, allowing the app to enumerate and access all files in the library without user interaction. This capability is typically used in 3D apps and games that need to access the entire **3D Objects** library. | 
+| Phone Call | ![Available in Manifest Designer](images/ap-tools.png) | Allows apps to access all of the phone lines on the device and perform the following functions: place a call on the phone and show the system dialer without prompting the user; access line-related metadata; access line-related triggers. Allows the user-selected spam filter app to set and check the block list and call origin information. | 
+| Pictures Library | ![Available in Manifest Designer](images/ap-tools.png) | Provides the capability to add, change, or delete files in the **Pictures Library** for the local PC and **HomeGroup** PCs. | 
+| Private Networks (Client &amp; Server) | ![Available in Manifest Designer](images/ap-tools.png) | Provides inbound and outbound access to Intranet networks that have an authenticated domain controller, or that the user has designated as either home or work networks. Inbound access to critical ports is always blocked. | 
+| Proximity | ![Available in Manifest Designer](images/ap-tools.png) | Provides the capability to connect to devices in close proximity to the PC via near-field communication (NFC). Near-field proximity may be used to send files or communicate with an app on the nearby device. | 
+| Removable Storage | ![Available in Manifest Designer](images/ap-tools.png) | Provides the capability to add, change, or delete files on removable storage devices. The app can only access the file types on removable storage that are defined in the manifest using the **File Type Associations** declaration. The app can't access removable storage on **HomeGroup** PCs. | 
+| Shared User Certificates | ![Available in Manifest Designer](images/ap-tools.png) | This capability is subject to the Windows Store policy. It provides the capability to access software and hardware certificates, such as smart card certificates, for validating a user's identity. When related APIs are invoked at runtime, the user must take action (insert card, select certificate, etc.). This capability is not necessary if your app includes a private certificate via a **Certificates** declaration. | 
+| User Account Information | ![Available in Manifest Designer](images/ap-tools.png) | Gives apps the ability to access the user's name and picture. This capability is required to access some APIs in the [**Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/BR241881) namespace. | 
+| Videos Library | ![Available in Manifest Designer](images/ap-tools.png) | Provides the capability to add, change, or delete files in the **Videos Library** for the local PC and **HomeGroup** PCs. | 
+| VOIP Calling | ![Available in Manifest Designer](images/ap-tools.png) | Allows apps to access the VOIP calling APIs in the [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) namespace. | 
+| Webcam | ![Available in Manifest Designer](images/ap-tools.png) | Provides access to the built-in camera or attached webcam's video feed. This allows the app to capture snapshots and movies. | 
+| USB | | Provides access to custom USB devices. This capability requires child elements. This feature is not supported on Windows Phone. | 
+| Human Interface Device (HID) | | Provides access to Human Interface Devices (HID). This capability requires child elements. For more info, see [How to specify device capabilities for HID](https://msdn.microsoft.com/library/windows/apps/Dn263091). | 
+| Bluetooth GATT | | Provides access to Bluetooth LE devices through a collection of primary services, included services, characteristics, and descriptors. This capability requires child elements. For more info, see [How to specify device capabilities for Bluetooth](https://msdn.microsoft.com/library/windows/apps/Dn263090). | 
+| Bluetooth RFCOMM |  | Provides access to APIs that support the Basic Rate/Extended Data Rate (BR/EDR) transport and also lets your Windows Store app access a device that implements Serial Port Profile (SPP). This capability requires child elements. For more info, see [How to specify device capabilities for Bluetooth](https://msdn.microsoft.com/library/windows/apps/Dn263090). |
+| pointOfService |  | Provides access to Point of Service (POS) barcode scanners and magnetic stripe readers. This feature is not supported on Windows Phone. | 
 
-## 使用 Windows 运行时 API 与你的设备进行通信
+## Use the Windows Runtime API for communicating with your device
 
-下表会将某些功能连接到 Windows 运行时 API。
+The following table connects some of the capabilities to Windows Runtime APIs.
 
-| 设备功能        | API             | 
+| Device Capability        | API             | 
 |--------------------------|-----------------|
 | AllJoyn                  | [**Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971) | 
-| 阻止的聊天消息    | [**Windows.ApplicationModel.CommunicationBlocking**](https://msdn.microsoft.com/library/windows/apps/Dn974207) | 
-| 位置                 | 有关详细信息，请参阅[地图和位置概述](https://msdn.microsoft.com/library/windows/apps/Mt219699)。 | 
-| 电话呼叫               | [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
-| 用户帐户信息 | [**Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/BR241881) | 
-| VOIP 呼叫             | [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
+| Blocked Chat Messages    | [**Windows.ApplicationModel.CommunicationBlocking**](https://msdn.microsoft.com/library/windows/apps/Dn974207) | 
+| Location                 | See [Maps and location overview](https://msdn.microsoft.com/library/windows/apps/Mt219699) for more information. | 
+| Phone Call               | [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
+| User Account Information | [**Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/BR241881) | 
+| VOIP Calling             | [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
 | USB                      | [**Windows.Devices.Usb**](https://msdn.microsoft.com/library/windows/apps/Dn278466) | 
 | HID                      | [**Windows.Devices.HumanInterfaceDevice**](https://msdn.microsoft.com/library/windows/apps/Dn264174) | 
 | Bluetooth GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) | 
 | Bluetooth RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) | 
-| 服务点 (POS)   | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
+| Point of Service (POS)   | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

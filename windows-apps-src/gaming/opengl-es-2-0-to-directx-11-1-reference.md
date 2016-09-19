@@ -1,20 +1,20 @@
 ---
 author: mtoepke
-title: "OpenGL ES 2.0 到 Direct3D 11 参考"
-description: "当从 OpenGL ES 2.0 移植到 Direct3D 11 时，使用这些参考主题查找 API 映射和简短的代码示例。"
+title: OpenGL ES 2.0 to Direct3D 11 reference
+description: Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ad6da83773bf5b791f4b2921b8ea55345aae999b
+ms.openlocfilehash: dff8bf0f8723055e955cd32042f14f58037494b5
 
 ---
 
-# OpenGL ES 2.0 到 Direct3D 11 参考
+# OpenGL ES 2.0 to Direct3D 11 reference
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-当从 OpenGL ES 2.0 移植到 Direct3D 11 时，使用这些参考主题查找 API 映射和简短的代码示例。
+Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.
 ## 
 <table>
 <colgroup>
@@ -23,14 +23,14 @@ ms.openlocfilehash: ad6da83773bf5b791f4b2921b8ea55345aae999b
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[GLSL 到 HLSL 参考](glsl-to-hlsl-reference.md)</p></td>
-<td align="left"><p>[将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) 以便为通用 Windows 平台 (UWP) 创建游戏时，需要将 OpenGL 着色器语言 (GLSL) 代码移植到 Microsoft 高级着色器语言 (HLSL) 代码。</p></td>
+<td align="left"><p>[GLSL-to-HLSL reference](glsl-to-hlsl-reference.md)</p></td>
+<td align="left"><p>You port your OpenGL Shader Language (GLSL) code to Microsoft High Level Shader Language (HLSL) code when you [port your graphics architecture from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) to create a game for Universal Windows Platform (UWP).</p></td>
 </tr>
 </tbody>
 </table>
@@ -47,6 +47,6 @@ ms.openlocfilehash: ad6da83773bf5b791f4b2921b8ea55345aae999b
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

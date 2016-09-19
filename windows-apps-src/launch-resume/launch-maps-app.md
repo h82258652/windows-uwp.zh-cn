@@ -1,54 +1,54 @@
 ---
 author: TylerMSFT
-title: "启动 Windows 地图应用"
-description: "了解如何从你的应用启动 Windows 地图应用。"
+title: Launch the Windows Maps app
+description: Learn how to launch the Windows Maps app from your app.
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 0dcd15c7d04ed452f69208ad1e68a8949baf40dd
+ms.openlocfilehash: a2f09aa510c9c3db6b8eca25f4c8cee98fa0eb46
 
 ---
 
-# 启动 Windows 地图应用
+# Launch the Windows Maps app
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-了解如何从你的应用启动 Windows 地图应用。 本主题介绍了 **bingmaps:**、**ms-drive-to:**、**ms-walk-to:** 和 *ms-settings:* 统一资源标识符 (URI) 方案。 使用这些 URI 方案来将 Windows 地图应用启动为特定的地图、路线和搜索结果或从“设置”应用下载 Windows 地图离线地图。
+Learn how to launch the Windows Maps app from your app. This topic describes the **bingmaps:**, **ms-drive-to:**, **ms-walk-to:**, and *ms-settings:* Uniform Resource Identifier (URI) schemes. Use these URI schemes to launch the Windows Maps app to specific maps, directions, and search results or to download Windows Maps offline maps from the Settings app.
 
-**提示** 若要了解有关从你的应用启动 Windows 地图应用的详细信息，请从 GitHub 上的 [Windows 通用示例存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)中下载[通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
+**Tip** To learn more about launching the Windows Maps app from your app, download the [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977) from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
-## URI 简介
+## Introducing URIs
 
-URI 方案允许你通过单击超链接（或在你的应用中以编程方式）打开应用。 正如可以使用 **mailto:** 打开新的电子邮件或使用 **http:** 打开 Web 浏览器，你还可以使用 **bingmaps:**、**ms-drive-to:** 和 **ms-walk-to:** 打开 Windows 地图应用。
+URI schemes let you open apps by clicking hyperlinks (or programmatically, in your app). Just as you can start a new email using **mailto:** or open a web browser using **http:**, you can open the Windows maps app using **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:**.
 
--   **bingmaps:** URI 提供附带位置、搜索结果、路线和路况的地图。
--   **ms-drive-to:** URI 提供从你的当前位置开始的行车路线规划。
--   **ms-walk-to:** URI 提供从你的当前位置开始的步行路线规划。
+-   The **bingmaps:** URI provides maps for locations, search results, directions, and traffic.
+-   The **ms-drive-to:** URI provides turn-by-turn driving directions from your current location.
+-   The **ms-walk-to:** URI provides turn-by-turn walking directions from your current location.
 
-例如，以下 URI 将打开 Windows 地图应用，并显示以纽约市为中心的地图。
+For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
 
 ```xml
 <bingmaps:?cp=40.726966~-74.006076>
 ```
 
-![以纽约市为中心的地图。](images/mapnyc.png)
+![a map centered over new york city.](images/mapnyc.png)
 
-下面是 URI 方案的说明：
+Here is a description of the URI scheme:
 
 **bingmaps:?query**
 
-在此 URI 方案中，*query* 是一系列参数名称/值对：
+In this URI scheme, *query* is a series of parameter name/value pairs:
 
-**&amp;param1=value1&amp;param2=value2 …**
+**&param1=value1&param2=value2 …**
 
-有关可用参数的完整列表，请参阅 [bingmaps:](#bingmaps)、[ms-drive-to:](#msdriveto) 和 [ms-walk-to:](#mswalkto) 参数引用。 本主题的后面还会提供示例。
+For a full list of the available parameters, see the [bingmaps:](#bingmaps), [ms-drive-to:](#msdriveto), and [ms-walk-to:](#mswalkto) parameter reference. There are also examples later in this topic.
 
-## 从你的应用启动 URI
+## Launch a URI from your app
 
 
-若要从你的应用启动 Windows 地图应用，请使用 **bingmaps:**、**ms-drive-to:** 或 **ms-walk-to:** URI 调用 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法。 以下示例启动前一个示例中相同的 URI。 有关通过 URI 启动应用的详细信息，请参阅[启动 URI 的默认应用](launch-default-app.md)。
+To launch the Windows Maps app from your app, call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method with a **bingmaps:**, **ms-drive-to:**, or **ms-walk-to:** URI. The following example launches the same URI from the previous example. For more info about launching apps via URI, see [Launch the default app for a URI](launch-default-app.md).
 
 ```cs
 // Center on New York City
@@ -60,113 +60,113 @@ launcherOptions.TargetApplicationPackageFamilyName = "Microsoft.WindowsMaps_8wek
 var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherOptions);
 ```
 
-在此示例中，[**LauncherOptions**](https://msdn.microsoft.com/library/windows/apps/hh701435) 类用于帮助确保启动 Windows 地图应用。
+In this example, the [**LauncherOptions**](https://msdn.microsoft.com/library/windows/apps/hh701435) class is used to help ensure the Windows Maps app is launched.
 
-## 显示已知的位置
+## Display known locations
 
 
-提供多种方法来控制地图中心点和缩放级别。 使用 *cp*（中心点）和 *lvl*（缩放级别）参数是最直接的方法，并且它们会产生可预测的结果。 使用 *bb* 参数（指定由纬度和经度值界定的区域）不如前两者可预测，因为它会考虑屏幕分辨率，然后根据所提供的坐标来确定地图中心点和缩放级别。 当所有三个参数（*bb*、*cp* 和 *lvl*）都存在时，*bb* 参数将被忽略。
+There are several ways to control the map center point and the zoom level. Using *cp* (center point) and *lvl* (zoom level) parameters are the most straightforward methods and they produce predictable results. Using *bb* parameter (specifies an area bounded by latitude and longitude values) is less predictable because it takes into account the screen resolution and determines the map center point and zoom level based on the coordinates provided. The *bb* parameter is ignored when all three parameters (*bb*, *cp*, and *lvl*) are present.
 
-若要控制视图类型，请使用 *ss*（街景）和 *sty*（样式）参数。 *ss* 参数将地图置于街景视图。 *sty* 参数允许你在路线图、鸟瞰图和 3D 视图之间切换。 使用 3D 样式时，可以使用 *hdg*、*pit* 和 *rad* 参数指定 3D 视图。 *hdg* 指定视图的方位，*pit* 指定视图的俯仰以及 *rad* 指定与要显示在视图中的中心点之间的间距。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps)。
+To control the type of view, use the *ss* (Streetside) and *sty* (style) and parameters. The *ss* parameter puts the map into a Streetside view. The *sty* parameter lets you switch between road, aerial, and 3D views. When using the 3D style, the *hdg*, *pit*, and *rad* parameters can be used to specify the 3D view. *hdg* specifies the heading of the view, *pit* specifies the pitch of the view, and *rad* specifies the distance from the center point to show in view. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps).
 
-| 示例 URI                                                                 | 结果                                                                                                                                                                                                   |
+| Sample URI                                                                 | Results                                                                                                                                                                                                   |
 |----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?                                                                 | 打开地图应用。                                                                                                                                                                                       |
-| bingmaps:?cp=40.726966~-74.006076                                          | 显示以纽约市为中心的地图。                                                                                                                                                               |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | 使用缩放级别 10 显示以纽约市为中心的地图。                                                                                                                                       |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | 通过将屏幕的大小作为边界框来显示纽约市的地图。                                                                                                                          |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&amp;cp=47~-122                        | 显示纽约市（使用边界框参数指定的区域）的地图。 将忽略使用 **cp** 参数为西雅图指定的中心点。                                      |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&amp;cp=47~-122&amp;lvl=8                  | 显示纽约市（**bb** 参数中指定的区域）的地图。 将忽略 **cp** 参数（用于指定西雅图），因为在指定 **bb** 时，将忽略 **cp** 和 **lvl**。 |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&amp;lvl=16 | 显示名为恺撒王宫酒店的某个点（位于拉斯维加斯）的地图并将缩放级别设置为 16。                                                                                                            |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | 显示带有名为 Some\_Business（位于拉斯维加斯）的点的地图。                                                                                                                                          |
-| bingmaps:?cp=40.726966~-74.006076&amp;trfc=1&amp;sty=a                             | 显示纽约市的地图并已启用路况和鸟瞰图样式。                                                                                                                                               |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d                                      | 显示 Space Needle 的 3D 视图。                                                                                                                                                                   |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | 显示 Space Needle 的 3D 视图（半径 200 米、俯仰 75 度和方位 165 度）。                                                                                        |
-| bingmaps:?cp=47.6204~-122.3491&amp;ss=1                                        | 显示 Space Needle 的街景视图。                                                                                                                                                           |
+| bingmaps:?                                                                 | Opens the Maps app.                                                                                                                                                                                       |
+| bingmaps:?cp=40.726966~-74.006076                                          | Displays a map centered over New York City.                                                                                                                                                               |
+| bingmaps:?cp=40.726966~-74.006076&lvl=10                                   | Displays a map centered over New York City with a zoom level of 10.                                                                                                                                       |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Displays a map of New York City with the size of the screen as the bounding box.                                                                                                                          |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | Displays a map of New York City, which is the area specified in the bounding box argument. The center point for Seattle specified in the **cp** argument is ignored.                                      |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122&lvl=8                  | Displays a map of New York, which is the area specified in the **bb** argument. The **cp** argument, which specifies Seattle, is ignored because **cp** and **lvl** are ignored when **bb** is specified. |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | Displays a map with a point named Caesars Palace (in Las Vegas) and sets the zoom level to 16.                                                                                                            |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Displays a map with a point named Some\_Business (in Las Vegas).                                                                                                                                          |
+| bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | Displays a map of NYC with traffic on and aerial map style.                                                                                                                                               |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | Displays a 3D view of the Space Needle.                                                                                                                                                                   |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165               | Displays a 3D view of the Space Needle with a radius of 200m, a pitch or 75 degrees, and a heading of 165 degrees.                                                                                        |
+| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | Displays a Streetside view of the Space Needle.                                                                                                                                                           |
 
  
 
-## 显示搜索结果
+## Display search results
 
 
-我们建议在使用 *q* 参数进行商家搜索时，尽可能使用特定搜索词，并将其与 *cp* 或 *where* 参数之一结合使用以指定位置。 如果用户未向地图应用授予可使用其位置的权限，并且未为商家搜索指定位置，则可能会在国家/地区级别执行该搜索且不会返回有意义的结果。 搜索结果将显示在最合适的地图视图中，因此除非需要设置 *lvl*（缩放级别），否则我们建议将决定权交给地图应用。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps)。
+We recommend when doing a business search using the *q* parameter, make the terms specific as possible and use it in conjunction with either the *cp* or the *where* parameter to specify a location. If the user has not given the Maps app permission to use their location and you do not specify a location for a business search, the search may be performed at the country level and not return meaningful results. Search results are displayed in the most appropriate map view, so unless there is a need to set the *lvl* (zoom level), we recommend to allow the Maps app to decide. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps).
 
-| 示例 URI                                                    | 结果                                                                                                                                         |
+| Sample URI                                                    | Results                                                                                                                                         |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?where=1600%20Pennsylvania%20Ave,%20Washington,%20DC | 显示地图并搜索位于华盛顿哥伦比亚特区的白宫的地址。                                                              |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10&amp;where=New%20York     | 在指定中心点的附近搜索纽约、在地图上显示结果，并将缩放级别设置为 10。                            |
-| bingmaps:?lvl=10&amp;where=New%20York                             | 搜索纽约并以缩放级别 10 显示结果。                                                                                    |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=14.5&amp;q=pizza            | 在指定中心点的附近搜索比萨店（位于纽约市）、在地图上显示结果，并将缩放级别设置为 14.5。 |
-| bingmaps:?q=coffee&amp;where=Seattle                              | 搜索西雅图的咖啡馆。                                                                                                                 |
+| bingmaps:?where=1600%20Pennsylvania%20Ave,%20Washington,%20DC | Displays a map and searches for the address of the White House in Washington, D.C.                                                              |
+| bingmaps:?cp=40.726966~-74.006076&lvl=10&where=New%20York     | Searches for New York near the specified center point, displays the results on a map, and sets the zoom level to 10.                            |
+| bingmaps:?lvl=10&where=New%20York                             | Searches for New York and shows the result at zoom level 10.                                                                                    |
+| bingmaps:?cp=40.726966~-74.006076&lvl=14.5&q=pizza            | Searches for pizza near the specified center point (that is, in New York City), displays the results on a map, and sets the zoom level to 14.5. |
+| bingmaps:?q=coffee&where=Seattle                              | Searches for coffee in Seattle.                                                                                                                 |
 
  
 
-## 显示多个点
+## Display multiple points
 
 
-使用 *collection* 参数在地图上显示一组自定义的点。 如果存在多个点，将显示点的列表。 一个集合中最多可以包含 25 个点，它们按所提供的顺序列出。 集合优先于搜索和路线请求。 有关此参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps)。
+Use the *collection* parameter to show a custom set of points on the map. If there is more than one point, a list of points is displayed. There can be up to 25 points in a collection and they are listed in the order provided. The collection takes precedence over search and directions requests. For more info about this parameter and others, see the [bingmaps: parameter reference](#bingmaps).
 
-| 示例 URI                                                                                                                                                         | 结果                                                                                                                   |
+| Sample URI                                                                                                                                                         | Results                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | 搜索拉斯维加斯的恺撒王宫酒店，并在地图上以最佳的地图视图显示结果。                         |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&amp;lvl=16                                                                                         | 显示名为恺撒王宫酒店（位于拉斯维加斯）的图钉，缩放级别为 16。                                               |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&amp;lvl=16&amp;cp=36.114902~-115.176669                   | 显示名为恺撒王宫酒店和百乐宫酒店（均位于拉斯维加斯）的两枚图钉，缩放级别为 16。              |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | 显示带有名为 Fake\_Business\_with\_Underscore 的图钉的纽约市。                                                  |
-| bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&amp;lvl=16&amp;cp=36.114902~-115.176669 | 显示名为酒店列表的列表，以及拉斯维加斯的恺撒王宫酒店和百乐宫酒店的两枚图钉，缩放级别为 16。 |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | Searches for Caesar's Palace in Las Vegas and displays the results on a map in the best map view.                         |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16                                                                                         | Displays a pushpin named Caesars Palace in Las Vegas and zooms to level 16.                                               |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669                   | Displays a pushpin named Caesars Palace and a pushpin named The Bellagio in Las Vegas and zooms to level 16.              |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | Displays New York with a pushpin named Fake\_Business\_with\_Underscore.                                                  |
+| bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669 | Displays a list named Hotel List and two pushpins for Caesars Palace and The Bellagio in Las Vegas and zooms to level 16. |
 
  
 
-## 显示路线和路况
+## Display directions and traffic
 
 
-你可以使用 *rtp* 参数显示两个点之间的路线；这些点可以是地址或纬度和经度坐标。 使用 *trfc* 参数显示路况信息。 若要指定路线的类型：驾车、步行或公交，请使用 *mode* 参数。 如果未指定 *mode*，将使用交通首选项的用户的模式提供路线。 有关这些参数和其他参数的详细信息，请参阅 [bingmaps: 参数引用](#bingmaps)。
+You can display directions between two points using the *rtp* parameter; those points can be either an address or latitude and longitude coordinates. Use the *trfc* parameter to show traffic information. To specify the type of directions: driving, walking, or transit, use the *mode* parameter. If *mode* isn't specified, directions will be provided using the user's mode of transportation preference. For more info about these parameters and others, see the [bingmaps: parameter reference](#bingmaps).
 
-![路线的示例](images/windowsmapgcdirections.png)
+![an example of directions](images/windowsmapgcdirections.png)
 
-| 示例 URI                                                                                                              | 结果                                                                                                                                                         |
+| Sample URI                                                                                                              | Results                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?rtp=pos.44.9160\_-110.4158~pos.45.0475\_-109.4187                                                             | 显示带有点对点路线的地图。 因为未指定 *mode*，所以将使用交通首选项的用户的模式提供路线。 |
-| bingmaps:?cp=43.0332~-87.9167&amp;trfc=1                                                                                    | 显示以威斯康辛州的密尔沃基市为中心的地图以及路况。                                                                                                        |
-| bingmaps:?rtp=adr.One Microsoft Way, Redmond, WA 98052~pos.39.0731\_-108.7238                                           | 显示带有从指定的地址到指定位置的路线的地图。                                                                            |
-| bingmaps:?rtp=adr.1%20Microsoft%20Way,%20Redmond,%20WA,%2098052~pos.36.1223\_-111.9495\_Grand%20Canyon%20northern%20rim | 显示从 1 Microsoft Way, Redmond, WA, 98052 到 Grand Canyon's northern rim 的路线。                                                                |
-| bingmaps:?rtp=adr.Davenport, CA~adr.Yosemite Village                                                                    | 显示地图以及从指定的位置到指定的地标的驾车路线。                                                                   |
-| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=d                      | 显示从芒廷维尤到旧金山国际机场（这两者均位于加利福尼亚州）的驾车路线。                                                                  |
-| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=w                      | 显示从芒廷维尤到旧金山国际机场（这两者均位于加利福尼亚州）的步行路线。                                                                  |
-| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=t                      | 显示从芒廷维尤到旧金山国际机场（这两者均位于加利福尼亚州）的公交路线。                                                                  |
+| bingmaps:?rtp=pos.44.9160\_-110.4158~pos.45.0475\_-109.4187                                                             | Displays a map with point-to-point directions. Because *mode* is not specified, directions will be provided using the user's mode of transportation preference. |
+| bingmaps:?cp=43.0332~-87.9167&trfc=1                                                                                    | Displays a map centered over Milwaukee, WI with traffic.                                                                                                        |
+| bingmaps:?rtp=adr.One Microsoft Way, Redmond, WA 98052~pos.39.0731\_-108.7238                                           | Displays a map with directions from the specified address to the specified location.                                                                            |
+| bingmaps:?rtp=adr.1%20Microsoft%20Way,%20Redmond,%20WA,%2098052~pos.36.1223\_-111.9495\_Grand%20Canyon%20northern%20rim | Displays directions from 1 Microsoft Way, Redmond, WA, 98052 to the Grand Canyon's northern rim.                                                                |
+| bingmaps:?rtp=adr.Davenport, CA~adr.Yosemite Village                                                                    | Displays a map with driving directions from the specified location to the specified landmark.                                                                   |
+| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=d                      | Displays driving directions from Mountain View, CA to San Francisco International Airport, CA.                                                                  |
+| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=w                      | Displays walking directions from Mountain View, CA to San Francisco International Airport, CA.                                                                  |
+| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=t                      | Displays transit directions from Mountain View, CA to San Francisco International Airport, CA.                                                                  |
 
  
 
-## 显示路线规划
+## Display turn-by-turn directions
 
 
-**ms-drive-to:** 和 **ms-walk-to:** URI 方案允许你直接启动到路线的规划视图。 这些 URI 方案只能提供自用户的当前位置开始的路线。 如果必须提供未包含用户的当前位置的点之间的路线，请使用先前部分中所述的 **bingmaps:** URI 方案。 有关这些 URI 方案的详细信息，请参阅 [ms-drive-to:](#msdriveto) 和 [ms-walk-to:](#mswalkto) 参数引用。
+The **ms-drive-to:** and **ms-walk-to:** URI schemes let you launch directly into a turn-by-turn view of a route. These URI schemes can only provide directions from the user's current location. If you must provide directions between points that do not include the user's current location, use the **bingmaps:** URI scheme as described in the previous section. For more info about these URI schemes, see the [ms-drive-to:](#msdriveto) and [ms-walk-to:](#mswalkto) parameter reference.
 
-> **重要提示** 当启动 **ms-drive-to:** 或 **ms-walk-to:** URI 方案时，“地图”应用将检查设备是否曾有过 GPS 位置定位。 如果有，则“地图”应用将继续进行路线规划。 如果没有，应用将显示路线概述，如[显示路线和路况](#directions)中所述。
+> **Important**  When the **ms-drive-to:** or **ms-walk-to:** URI schemes are launched, the Maps app will check to see if the device has ever had a GPS location fix. If it has, then the Maps app will proceed to turn-by-turn directions. If it hasn't, the app will display the route overview, as described in [Display directions and traffic](#directions).
 
  
 
-![路线规划的示例](images/windowsmapsappdirections.png)
+![an example of turn-by-turn directions](images/windowsmapsappdirections.png)
 
-| 示例 URI                                                                                                | 结果                                                                                       |
+| Sample URI                                                                                                | Results                                                                                       |
 |-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| ms-drive-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake | 显示地图以及从你的当前位置到 Green Lake 的驾车路线规划。 |
-| ms-walk-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake  | 显示地图以及从你的当前位置到 Green Lake 的行走路线规划。 |
+| ms-drive-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake | Displays a map with turn-by-turn driving directions to Green Lake from your current location. |
+| ms-walk-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake  | Displays a map with turn-by-turn walking directions to Green Lake from your current location. |
 
 
-## 下载离线地图
+## Download offline maps
 
 
-**ms-settings:** URI 方案可使你直接启动到“设置”应用中的特定页面。 尽管 **ms-settings:** URI 方案不会启动到“地图”应用中，但它允许你直接启动到“设置”应用中的“离线地图”页面，并显示下载“地图”应用所使用的离线地图的确认对话框。 URI 方案接受由纬度和经度指定的点，并自动确定是否存在可用于包含该点的离线地图。  如果经过的纬度和经度恰好落在多个下载区域内，确认对话框将让用户选取要下载其中哪一个区域。 如果离线地图不适用于包含该点的区域，则“设置”应用中的“离线地图”页面将显示一个错误对话框。
+The **ms-settings:** URI scheme lets you launch directly into a particular page in the Settings app. While the **ms-settings:** URI scheme doesn't launch into the Maps app, it does allow you to launch directly to the Offline Maps page in the Settings app and displays a confirmation dialog to download the offline maps used by the Maps app. The URI scheme accepts a point specified by a latitude and longitude and automatically determines if there are offline maps available for a region containing that point.  If the latitude and longitude passed happen to fall within multiple download regions, the confirmation dialog will let the user pick which of those regions to download. If offline maps are not available for a region containing that point, the offline Maps page in the Settings app is displayed with an error dialog.
 
-| 示例 URI                                                                                                | 结果                                                                                       |
+| Sample URI                                                                                                | Results                                                                                       |
 |-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | 将“设置”应用打开到显示确认对话框的“离线地图”页面，以便下载包含指定经纬度点的区域的地图。 |
+| ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | Opens the Settings app to the Offline Maps page with a confirmation dialog displayed to download maps for the region containing the specified latitude-longitude point. |
  
 
-## bingmaps: 参数引用
+## bingmaps: parameter reference
 
 
-此表中每个参数的语法都是通过使用扩展的巴科斯范式 (ABNF) 显示的。
+The syntax for each parameter in this table is shown by using Augmented Backus–Naur Form (ABNF).
 
 <table>
 <colgroup>
@@ -177,83 +177,83 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数</th>
-<th align="left">定义</th>
-<th align="left">ABNF 定义和示例</th>
-<th align="left">详细信息</th>
+<th align="left">Parameter</th>
+<th align="left">Definition</th>
+<th align="left">ABNF Definition and Example</th>
+<th align="left">Details</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>**cp**</p></td>
-<td align="left"><p>中心点</p></td>
+<td align="left"><p>Center point</p></td>
 <td align="left"><p>cp = "cp=" cpval</p>
 <p>cpval = degreeslat "~" degreeslon</p>
-<p>degreeslat = \["-"\] 1*3DIGIT \["." 1*7DIGIT\]</p>
-<p>degreeslon = \["-"\] 1*2DIGIT \["." 1*7DIGIT]</p>
-<p>示例：</p>
+<p>degreeslat = ["-"] 1*3DIGIT ["." 1*7DIGIT]</p>
+<p>degreeslon = ["-"] 1*2DIGIT ["." 1*7DIGIT]</p>
+<p>Example:</p>
 <p>cp=40.726966~-74.006076</p></td>
-<td align="left"><p>这两个值都必须采用十进制度数表示，并由波形符 (**~**) 分隔。</p>
-<p>有效的经度值范围为 -180 到 +180（包括这两者）。</p>
-<p>有效的纬度值范围为 -90 到 +90（包括这两者）。</p></td>
+<td align="left"><p>Both values must be expressed in decimal degrees and separated by a tilde(**~**).</p>
+<p>Valid longitude values are between -180 and +180 inclusive.</p>
+<p>Valid latitude values are between -90 and +90 inclusive.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**bb**</p></td>
-<td align="left"><p>边界框</p></td>
+<td align="left"><p>Bounding box</p></td>
 <td align="left"><p>bb = "bb=" southlatitude "_" westlongitude "~" northlatitude "_" eastlongitude</p>
 <p>southlatitude = degreeslat</p>
 <p>northlatitude = degreeslat</p>
 <p>westlongitude = degreeslon</p>
 <p>eastlongitude = degreeslon</p>
-<p>degreeslat = \["-"\] 13DIGIT \["." 17DIGIT\]</p>
+<p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
 <p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
-<p>示例：</p>
+<p>Example:</p>
 <p>bb=39.719_-74.52~41.71_-73.5</p></td>
-<td align="left"><p>用于指定边界框的矩形区域，采用十进制度数表示，使用波形符 (**~**) 来区分左下角和右上角。 各个矩形区域的经纬度由下划线 (**_**) 分隔。</p>
-<p>有效的经度值范围为 -180 到 +180（包括这两者）。</p>
-<p>有效的纬度值范围为 -90 到 +90（包括这两者）。</p><p>当提供边界框时，将忽略 cp 和 lvl 参数。</p></td>
+<td align="left"><p>A rectangular area that specifies the bounding box expressed in decimal degrees, using a tilde (**~**) to separate the lower left corner from the upper right corner. Latitude and longitude for each are separated with an underscore (**_**).</p>
+<p>Valid longitude values are between -180 and +180 inclusive.</p>
+<p>Valid latitude values are between -90 and +90 inclusive.</p><p>The cp and lvl parameters are ignored when a bounding box is provided.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>**where**</p></td>
-<td align="left"><p>位置</p></td>
+<td align="left"><p>Location</p></td>
 <td align="left"><p>where = "where=" whereval</p>
 <p>whereval = 1*( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "*" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
-<p>示例：</p>
+<p>Example:</p>
 <p>where=1600%20Pennsylvania%20Ave,%20Washington,%20DC</p></td>
-<td align="left"><p>特定位置、路标或地点的搜索词。</p></td>
+<td align="left"><p>Search term for a specific location, landmark or place.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**q**</p></td>
-<td align="left"><p>查询词</p></td>
+<td align="left"><p>Query Term</p></td>
 <td align="left"><p>q = "q="</p>
 <p>whereval</p>
-<p>示例：</p>
+<p>Example:</p>
 <p>q=mexican%20restaurants</p></td>
-<td align="left"><p>本地商家或商家类别的搜索词。</p></td>
+<td align="left"><p>Search term for local business or category of businesses.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>**lvl**</p></td>
-<td align="left"><p>缩放级别</p></td>
-<td align="left"><p>lvl = "lvl=" 1*2DIGIT \["." 1*2DIGIT\]</p>
-<p>示例：</p>
+<td align="left"><p>Zoom Level</p></td>
+<td align="left"><p>lvl = "lvl=" 1*2DIGIT ["." 1*2DIGIT]</p>
+<p>Example:</p>
 <p>lvl=10.50</p></td>
-<td align="left"><p>定义地图视图的缩放级别。 有效值介于 1 至 20 之间，其中 1 表示缩到最小。</p></td>
+<td align="left"><p>Defines the zoom level of the map view. Valid values are 1-20 where 1 is zoomed all the way out.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**sty**</p></td>
-<td align="left"><p>样式</p></td>
+<td align="left"><p>Style</p></td>
 <td align="left"><p>sty = "sty=" ("a" / "r"/"3d")</p>
-<p>示例：</p>
+<p>Example:</p>
 <p>sty=a</p></td>
-<td align="left"><p>定义地图样式 此参数的有效值包括：</p>
+<td align="left"><p>Defines the map style. Valid values for this parameter include:</p>
 <ul>
-<li>**a**：借助地图显示鸟瞰图。</li>
-<li>**r**：借助地图显示街景图。</li>
-<li>**3d**：借助地图显示 3D 视图。 可与 **cp** 参数结合使用，也可以与 **rad** 参数结合使用。</li>
+<li>**a**: Display an aerial view of the map.</li>
+<li>**r**: Display a road view of the map.</li>
+<li>**3d**: Display a 3D view of the map. Use in conjunction with the **cp** parameter and optionally with the **rad** parameter.</li>
 </ul>
-<p>在 Windows 10 中，鸟瞰图和 3D 视图样式相同。</p>
+<p>In Windows 10, the aerial view and 3D view styles are the same.</p>
 <div class="alert">
-**注意** 省略 **sty** 参数将产生与 sty=r 相同的结果。
+**Note**  Omitting the **sty** parameter produces the same results as sty=r.
 </div>
 <div>
  
@@ -261,37 +261,37 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tr>
 <tr class="odd">
 <td align="left"><p>**rad**</p></td>
-<td align="left"><p>半径</p></td>
+<td align="left"><p>Radius</p></td>
 <td align="left"><p>rad = "rad=" 1*8DIGIT</p>
-<p>示例：</p>
+<p>Example:</p>
 <p>rad=1000</p></td>
-<td align="left"><p>一个圆形区域，可指定所需的地图视图。 半径值以米为单位进行测量。</p></td>
+<td align="left"><p>A circular area that specifies the desired map view. The radius value is measured in meters.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**pit**</p></td>
-<td align="left"><p>俯仰</p></td>
+<td align="left"><p>Pitch</p></td>
 <td align="left"><p>pit = "pit=" pitch</p>
-<p>示例：</p>
+<p>Example:</p>
 <p>pit=60</p></td>
-<td align="left"><p>指示查看地图的角度，其中 90 是水平查看（最大），0 是俯视查看（最小）。</p><p>有效的俯仰值范围为 0 到 90（包括这两者）。</td>
+<td align="left"><p>Indicates the angle that the map is viewed at, where 90 is looking out at the horizon (maximum) and 0 is looking straight down (minimum).</p><p>Valid pitch values are between 0 and 90 inclusive.</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>**hdg**</p></td>
-<td align="left"><p>方位</p></td>
+<td align="left"><p>Heading</p></td>
 <td align="left"><p>hdg = "hdg=" heading</p>
-<p>示例：</p>
+<p>Example:</p>
 <p>hdg=180</p></td>
-<td align="left"><p>指示以角度表示的地图前进方向，其中 0 或 360 = 北、90 = 东、180 = 南和 270 = 西。</p></td>
+<td align="left"><p>Indicates the direction the map is heading in degrees, where 0 or 360 = North, 90 = East, 180 = South, and 270 = West.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**ss**</p></td>
-<td align="left"><p>街景</p></td>
+<td align="left"><p>Streetside</p></td>
 <td align="left"><p>ss = "ss=" BIT</p>
-<p>示例：</p>
+<p>Example:</p>
 <p>ss=1</p></td>
-<td align="left"><p>指示在 <code>ss=1</code> 时所显示的街景图像。 省略 **ss** 参数将产生与 <code>ss=0</code> 相同的结果。 通过与 **cp** 参数结合使用，指定街道级视图的位置。</p>
+<td align="left"><p>Indicates that street-level imagery is shown when <code>ss=1</code>. Omitting the **ss** parameter produces the same result as <code>ss=0</code>. Use in conjunction with the **cp** parameter to specify the location of the street-level view.</p>
 <div class="alert">
-> **注意** 并不是所有地区都提供街道级图像。
+> **Note**  Street-level imagery is not available in all regions.
 </div>
 <div>
  
@@ -299,13 +299,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tr>
 <tr class="odd">
 <td align="left"><p>**trfc**</p></td>
-<td align="left"><p>路况</p></td>
+<td align="left"><p>Traffic</p></td>
 <td align="left"><p>trfc = "trfc=" BIT</p>
-<p>示例：</p>
+<p>Example:</p>
 <p>trfc=1</p></td>
-<td align="left"><p>指定地图上是否包含路况信息。 省略 trfc 参数将产生与 <code>trfc=0</code> 时相同的结果。</p>
+<td align="left"><p>Specifies whether traffic information is included on the map. Omitting the trfc parameter produces the same results as <code>trfc=0</code>.</p>
 <div class="alert">
-> **注意** 并不是所有地区都提供路况数据。
+> **Note**  Traffic data is not available in all regions.
 </div>
 <div>
  
@@ -313,7 +313,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tr>
 <tr class="even">
 <td align="left"><p>**rtp**</p></td>
-<td align="left"><p>路线</p></td>
+<td align="left"><p>Route</p></td>
 <td align="left"><p>rtp = "rtp=" (waypoint "~" [waypoint]) / ("~" waypoint)</p>
 <p>waypoint = ("pos." point ) / ("adr." whereval)</p>
 <p>point = "point." pointval ["_" title]</p>
@@ -324,17 +324,17 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 
 
-<p>示例：</p>
+<p>Examples:</p>
 <p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
-<td align="left"><p>定义要在地图上绘制的路线起点和终点，由波形符 (**~**) 分隔。 每个经过点可能是通过使用纬度和经度的位置定义的，也可能是通过可选标题或地址标识符定义的。</p>
-<p>一条完整的路线正好包含两个经过点。 例如，包含两个经过点的路线由 <code>rtp="A"~"B"</code> 定义。</p>
-<p>还可以指定不完整的路线。 例如，你可以仅定义包含 <code>rtp="A"~</code> 的路线起点。 在此情况下，显示路线输入时将在“出发地”****字段中带有所提供的经过点，并且“目的地”****字段具有焦点。</p>
-<p>如果指定路线终点，与 <code>rtp=~"B"</code> 相同，路线面板上的“目的地”****字段中将显示所提供的经过点。 如果提供精确的当前位置，当前位置将预先填写在具有焦点的“出发地”****字段中。</p>
-<p>如果给出一条不完整的路线，则不会绘制任何路线。</p>
-<p>通过与 **mode** 参数结合使用，指定交通的模式（驾车、公交或步行）。 如果未指定 **mode**，将使用交通首选项的用户的模式提供路线。</p>
+<td align="left"><p>Defines the start and end of a route to draw on the map, separated by a tilde (**~**). Each of the waypoints is defined by either a position using ltitude, longitude, and optional title or an address identifier.</p>
+<p>A complete route contains exactly two waypoints. For example, a route with two waypoints is defined by <code>rtp="A"~"B"</code>.</p>
+<p>It's also acceptable to specify an incomplete route. For example, you can define only the start of a route with <code>rtp="A"~</code>. In this case, the directions input is displayed with the provided waypoint in the **From** field and the **To** field has focus.</p>
+<p>If only the end of a route is specified, as with <code>rtp=~"B"</code>, the directions panel is displayed with the provided waypoint in the **To** field. If an accurate current location is available, the current location is pre-populated in the **From** field with focus.</p>
+<p>No route line is drawn when an incomplete route is given.</p>
+<p>Use in conjunction with the **mode** parameter to specify the mode of transportation (driving, transit, or walking). If **mode** isn't specified, directions will be provided using the user's mode of transportation preference.</p>
 <div class="alert">
-**注意** 如果某个位置由 **pos** 参数值指定，则可针对该位置使用标题。 将显示标题，而不是显示纬度和经度。
+**Note**  A title can be used for a location if the location is specified by the **pos** parameter value. Rather than showing the latitude and longitude, the title will be displayed.
 </div>
 <div>
  
@@ -342,22 +342,22 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tr>
 <tr class="odd">
 <td align="left"><p>**mode**</p></td>
-<td align="left"><p>交通模式</p></td>
+<td align="left"><p>Transportation mode</p></td>
 <td align="left"><p>mode = "mode=" ("d" / "t" / "w")</p>
-<p>示例：</p>
+<p>Example:</p>
 <p>mode=d</p></td>
-<td align="left"><p>定义交通模式。 此参数的有效值包括：</p>
+<td align="left"><p>Defines the transportation mode. Valid values for this parameter include:</p>
 <ul>
-<li>**d**：显示驾车路线的路线概述</li>
-<li>**t**：显示公交路线的路线概述</li>
-<li>**w**：显示步行路线的路线概述</li>
+<li>**d**: Displays route overview for driving directions</li>
+<li>**t**: Displays route overview for transit directions</li>
+<li>**w**: Displays route overview for walking directions</li>
 </ul>
-<p>针对交通路线与 **rtp** 参数结合使用。 如果未指定 **mode**，将使用交通首选项的用户的模式提供路线。 在提供 **mode** 时，可以不提供任何路线参数用于为该模式输入从当前位置的路线输入。</p></td>
+<p>Use in conjunction with the **rtp** parameter for transportation directions. If **mode** isn't specified, directions will be provided using the user's mode of transportation preference. A **mode** can be provided with no route parameter to enter directions input for that mode from the current location.</p></td>
 </tr>
 
 <tr class="even">
 <td align="left"><p>**collection**</p></td>
-<td align="left"><p>集合</p></td>
+<td align="left"><p>Collection</p></td>
 <td align="left"><p>collection = "collection="(name"~"/)point["~"point]</p>
 <p>name = "name." whereval </p>
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?") </p>
@@ -368,70 +368,70 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>title = whereval</p>
 
 
-<p>示例：</p>
+<p>Example:</p>
 <p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
-<td align="left"><p>要添加到地图和列表的点的集合。 可以使用 name 参数命名点集合。 使用纬度、经度和可选标题指定点。</p>
-<p>用波形符 (**~**) 分隔名称和多个点。</p>
-<p>如果你指定的项目中包含波形符，请确保已将该波形符编码为 <code>%7E</code>。 如果不带有“中心点”和“缩放级别”参数，则集合将提供最佳地图视图。</p>
+<td align="left"><p>Collection of points to be added to the map and list. The collection of points can be named using the name parameter. A point is specified using a latitude, longitude, and optional title.</p>
+<p>Separate name and multiple points with tildes (**~**).</p>
+<p>If the item you specify contains a tilde, make sure the tilde is encoded as <code>%7E</code>. If not accompanied by Center point and Zoom Level parameters, the collection will provide the best map view.</p>
 
-<p>**重要提示** 如果你指定的项目中包含下划线，请确保将该下划线双编码为 %255F。</p>
+<p>**Important** If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p>
 
-<p>如果你指定的项目中包含下划线，请确保将该下划线双编码为 %255F。</p></td>
+<p>If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## ms-drive-to: 参数引用
+## ms-drive-to: parameter reference
 
 
-用于启动逐向导航驾驶路线请求的 URI 无需编码，并且具有以下格式。
+The URI to launch a request for turn-by-turn driving directions does not need to be encoded and has the following format.
 
-> **注意** 不在此 URI 方案中指定起点。 起点将始终假定为当前位置。 如果你需要指定不同于当前位置的起点，请参阅[显示路线和路况](#directions)。
+> **Note**  You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#directions).
 
  
 
-| 参数 | 定义 | 示例 | 详细信息 |
+| Parameter | Definition | Example | Details |
 |------------|-----------|---------|---------|
-| **destination.latitude** | 目的地纬度 | 示例：destination.latitude=47.6451413797194 | 目的地的纬度。 有效的纬度值范围为 -90 到 +90（包括这两者）。 |
-| **destination.longitude** | 目的地经度 | 示例：destination.longitude=-122.141964733601 | 目的地的经度。 有效的经度值范围为 -180 到 +180（包括这两者）。 |
-| **destination.name** | 目的地的名称 | 示例：destination.name=Redmond, WA | 目的地的名称。 你无需编码 **destination.name** 值。 |
+| **destination.latitude** | Destination latitude | Example: destination.latitude=47.6451413797194 | The latitude of the destination. Valid latitude values are between -90 and +90 inclusive. |
+| **destination.longitude** | Destination longitude | Example: destination.longitude=-122.141964733601 | The longitude of the destination. Valid longitude values are between -180 and +180 inclusive. |
+| **destination.name** | Name of the destination | Example: destination.name=Redmond, WA | The name of the destination. You do not have to encode the **destination.name** value. |
 
  
 
-## ms-walk-to: 参数引用
+## ms-walk-to: parameter reference
 
 
-用于启动逐向导航步行路线请求的 URI 无需编码，并且具有以下格式。
+The URI to launch a request for turn-by-turn walking directions does not need to be encoded and has the following format.
 
-> **注意** 不在此 URI 方案中指定起点。 起点将始终假定为当前位置。 如果你需要指定不同于当前位置的起点，请参阅[显示路线和路况](#directions)。
+> **Note**  You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#directions).
 
  
 
-| 参数 | 定义 | 示例 | 详细信息 |
+| Parameter | Definition | Example | Details |
 |-----------|------------|---------|----------|
-| **destination.latitude** | 目的地纬度 | 示例：destination.latitude=47.6451413797194 | 目的地的纬度。 有效的纬度值范围为 -90 到 +90（包括这两者）。 |
-| **destination.longitude** | 目的地经度 | 示例：destination.longitude=-122.141964733601 | 目的地的经度。 有效的经度值范围为 -180 到 +180（包括这两者）。 |
-| **destination.name** | 目的地的名称 | 示例：destination.name=Redmond, WA | 目的地的名称。 你无需编码 **destination.name** 值。 |
+| **destination.latitude** | Destination latitude | Example: destination.latitude=47.6451413797194 | The latitude of the destination. Valid latitude values are between -90 and +90 inclusive. |
+| **destination.longitude** | Destination longitude | Example: destination.longitude=-122.141964733601 | The longitude of the destination. Valid longitude values are between -180 and +180 inclusive. |
+| **destination.name** | Name of the destination | Example: destination.name=Redmond, WA | The name of the destination. You do not have to encode the **destination.name** value. |
 
  
-## ms-settings: 参数引用
+## ms-settings: parameter reference
 
 
-**ms-settings:** URI 方案的地图应用特定参数的语法定义如下。 **maps-downloadmaps** 采用 **ms-settings:maps-downloadmaps?** 的形式与 **ms-settings:** URI 一起指定以指示脱机地图设置页。
+The syntax for maps app specific parameters for the **ms-settings:** URI scheme is defined below. **maps-downloadmaps** is specified along with the **ms-settings:** URI in the form of **ms-settings:maps-downloadmaps?** to indicate the offline maps settings page.
 
  
 
-| 参数 | 定义 | 示例 | 详细信息 |
+| Parameter | Definition | Example | Details |
 |-----------|------------|---------|----------|
-| **latlong** | 定义离线地图区域的点。 | 示例：latlong=47.6,-122.3 | geopoint 由逗号分隔的纬度和经度指定。 有效的纬度值范围为 -90 到 +90（包括这两者）。 有效的经度值范围为 -180 到 +180（包括这两者）。 |
+| **latlong** | Point defining offline map region. | Example: latlong=47.6,-122.3 | The geopoint is specified by a comma separated latitude and longitude. Valid latitude values are between -90 and +90 inclusive. Valid longitude values are between -180 and +180 inclusive. |
  
 
  
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

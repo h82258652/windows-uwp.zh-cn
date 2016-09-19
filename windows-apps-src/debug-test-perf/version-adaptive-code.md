@@ -1,116 +1,113 @@
 ---
 author: jwmsft
-title: "版本自适应代码"
-description: "了解如何在保持与以前版本的兼容性的同时利用新 API"
+title: Version adaptive code
+description: Learn how to take advantage of new APIs while maintaining compatibility with previous versions
 translationtype: Human Translation
-ms.sourcegitcommit: 3f81d80cef0fef6d24cad1b42ce9726b03857b5a
-ms.openlocfilehash: db6b9c83d36ac876661197dce81e5724e44bb640
+ms.sourcegitcommit: 24a62c9331d4f651937f3f795fb1e7c9704af2ca
+ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
 
 ---
 
-# 版本自适应代码：在保持与以前版本的兼容性的同时使用新 API
+# Version adaptive code: Use new APIs while maintaining compatibility with previous versions
 
-每个 Windows 10 SDK 版本都添加你会想要利用的精彩的新功能。 然而，并非所有客户都会同时将其设备更新为最新版本的 Windows 10，因此你希望确保你的应用所适用的设备范围能够尽可能的广泛。 我们在此处显示如何设计应用，以便它不仅可以在较早版本的 Windows 10 上运行，还可以在应用运行在装有最新更新的设备上运行时利用新功能。
+Each release of the Windows 10 SDK adds exciting new functionality that you'll want to take advantage of. However, not all your customers will update their devices to the latest version of Windows 10 at the same time, and you want to make sure your app works on the broadest possible range of devices. Here, we show you how to design your app so that it runs on earlier versions of Windows 10, but also takes advantage of new features whenever your app runs on a device with the latest update installed.
 
-若要确保你的应用支持最广泛的 Windows 10 设备，需采取 2 个步骤。 首先，配置要面向最新 API 的 Visual Studio 项目。 这将影响编译应用时发生的情况。 其次，执行运行时检查，以确保仅调用正在运行应用的设备上存在的 API。
+There are 2 steps to take to make sure your app supports the broadest range of Windows 10 devices. First, configure your Visual Studio project to target the latest APIs. This affects what happens when you compile your app. Second, perform runtime checks to ensure that you only call APIs that are present on the device your app is running on.
 
-> [!NOTE] 
-> 本文中使用的示例取自适用于 Windows 10 的 Windows Insider Preview SDK 版本 1607（周年更新）。 预览版 SDK 是预发布版本，不能用于生产环境中。 请仅在你的测试计算机上安装该 SDK。 预览版 SDK 包含对 API 图面区域的 Bug 修复和正在开发的更改。 如果你使用的应用程序需要提交到应用商店，则不应安装预览版。
+## Configure your Visual Studio project
 
-## 配置 Visual Studio 项目
+The first step in supporting multiple Windows 10 versions is to specify the *Target* and *Minimum* supported OS/SDK versions in your Visual Studio project.
+- *Target*: The SDK version that Visual Studio compiles your app code and run all tools against. All APIs and resources in this SDK version are available in your app code at compile time.
+- *Minimum*: The SDK version that supports the earliest OS version that your app can run on (and will be deployed to by the store) and the version that Visual Studio compiles your app markup code against. 
 
-支持多个 Windows 10 版本的第一步是在 Visual Studio 项目中指定*目标*和*最低*支持的操作系统/SDK 版本。
-- *目标*：Visual Studio 编译应用代码和运行所有工具所面向的 SDK 版本。 编译时，此 SDK 版本中的所有 API 和资源均可在你的应用代码中使用。
-- *最低*：支持可在其上运行应用的最早操作系统版本的 SDK 版本（并且将通过应用商店部署到它），以及 Visual Studio 编译应用标记代码时所面向的版本。 
+During runtime your app will run against the OS version that it is deployed to, so your app will throw exceptions if you use resources or call APIs that are not available in that version. We show you how to use runtime checks to call the correct APIs later in this article.
 
-在运行时，你的应用将针对其部署到的操作系统版本运行，因此如果使用资源或调用 API（它们在该版本中并未提供），应用将引发异常。 我们将在本文的后面部分介绍如何使用运行时检查来调用正确的 API。
-
-“目标”和“最低”设置指定操作系统/SDK 版本范围的限度。 但是，如果你在最低版本上测试你的应用，则能够确定它将在“最低”和“目标”之间的任意版本上运行。
+The Target and Minimum settings specify the ends of a range of OS/SDK versions. However, if you test your app on the minimum version, you can be sure it will run on any versions between the Minimum and Target.
 
 > [!TIP]
-> Visual Studio 不会向你发出有关 API 兼容性的警告。 由你负责测试并确保你的应用在“最低”和“目标”（包含这两者）之间的所有操作系统版本上按预期方式执行。
+> Visual Studio does not warn you about API compatibility. It is your responsibility to test and ensure that your app performs as expected on all OS versions between and including the Minimum and Target.
 
-当你在 Visual Studio 2015 Update 2 或更高版本中创建新项目时，系统将提示你设置应用支持的目标版本和最低版本。 默认情况下，目标版本是安装的最高 SDK 版本，最低版本是安装的最低 SDK 版本。 你只能从安装在你的计算机上的 SDK 版本中选择“目标”和“最低”。 
+When you create a new project in Visual Studio 2015, Update 2 or later, you are prompted to set the Target and Minimum versions that your app supports. By default, the Target Version is the highest installed SDK version, and the Minimum Version is the lowest installed SDK version. You can choose Target and Minimum only from SDK versions that are installed on your machine. 
 
-![在 Visual Studio 中设置目标 SDK](images/vs-target-sdk-1.png)
+![Set the target SDK in Visual Studio](images/vs-target-sdk-1.png)
 
-我们通常建议你保留默认值。 但是，如果你已安装了 SDK 的预览版本，并且要编写生产代码，则应将目标版本从预览版 SDK 更改为最新的官方 SDK 版本。 
+We typically recommend that you leave the defaults. However, if you have a Preview version of the SDK installed and you are writing production code, you should change the Target Version from the Preview SDK to the latest official SDK version. 
 
-若要更改已在 Visual Studio 中创建的项目的最低版本和目标版本，请转到“项目”-&gt;“属性”-&gt;“应用程序”选项卡 -&gt;“目标”。
+To change the Minimum and Target version for a project that has already been created in Visual Studio, go to Project -> Properties -> Application tab -> Targeting.
 
-![在 Visual Studio 中更改目标 SDK](images/vs-target-sdk-2.png) 
+![Change the target SDK in Visual Studio](images/vs-target-sdk-2.png) 
 
-为便于参考，提供了每个 SDK 的内部版本号：
-- Windows 10，版本 1506：SDK 版本 10240
-- Windows 10，版本 1511（11 月更新）：SDK 版本 10586
-- Windows 10，版本 1607 Insider Preview（周年更新）：在撰写本文时，[最新的 Insider Preview SDK 版本是 14332](https://blogs.windows.com/buildingapps/2016/04/28/windows-10-anniversary-sdk-preview-build-14332-released/)。
+For reference these are the build numbers for each SDK:
+- Windows 10, version 1506: SDK version 10240
+- Windows 10, version 1511 (November Update): SDK version 10586
+- Windows 10, version 1607 (Anniversary Update): SDK version 14393.
 
-可以从 [Windows SDK 和仿真器存档](https://developer.microsoft.com/downloads/sdk-archive)下载任何发布的 SDK 版本。 可以从 [Windows 预览体验成员](https://insider.windows.com/)站点的开发人员部分下载最新的 Windows Insider Preview SDK。
+You can download any released version of the SDK from the [Windows SDK and emulator archive](https://developer.microsoft.com/downloads/sdk-archive). You can download the latest Windows Insider Preview SDK from the developer section of the [Windows Insider](https://insider.windows.com/) site.
 
-## 编写自适应代码
+## Write adaptive code
 
-你可以考虑编写自适应代码，这与考虑如何[创建自适应 UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml) 类似。 当你检测到自己的应用在较大的屏幕上运行时，你可以设计基本的 UI 以在最小的屏幕上运行，然后移动或添加元素。 借助自适应代码，可编写基础代码以在最低的操作系统版本上运行，并且可以在检测到应用运行所在的较高版本上提供新功能时，添加精心挑选的功能。
+You can think about writing adaptive code similarly to how you think about [creating an adaptive UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml). You might design your base UI to run on the smallest screen, and then move or add elements when you detect that your app is running on a larger screen. With adaptive code, you write your base code to run on the lowest OS version, and you can add hand-selected features when you detect that your app is running on a higher version where the new feature is available.
 
-### 运行时 API 检查
+### Runtime API checks
 
-有条件地在代码中使用 [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) 类，测试是否存在要调用的 API。 此条件将进行评估（无论你的应用在何处运行），但仅针对存在相应 API 的设备评估为 **True**，从而可调用该 API。 这将允许你编写版本自适应代码，以便创建相关应用，它们使用仅在特定操作系统版本上提供的 API。
+You use the [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) class in a condition in your code to test for the presence of the API you want to call. This condition is evaluated wherever your app runs, but it evaluates to **true** only on devices where the API is present and therefore available to call. This lets you to write version adaptive code in order to create apps that use APIs that are available only on certain OS versions.
 
-下面我们看一下面向 Windows Insider Preview 中的新功能的特定示例。 有关使用 **ApiInformation** 的总体概述，请参阅 [UWP 应用指南](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)和博客文章[使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)。
-
-> [!TIP]
-> 许多运行时 API 检查可能会影响你的应用的性能。 在这些示例中，我们将以内联形式演示检查。 在生产代码中，应执行检查一次并缓存结果，然后在整个应用中使用缓存的结果。 
-
-### 不受支持的方案
-
-在大多数情况下，你可以将应用的最低版本设置为 SDK 版本 10240 并使用运行时检查，以便在应用运行在更高的版本上时启用任何新的 API。 但在某些情况下，必须提高应用的最低版本才能使用新功能。
-
-如果要使用以下内容，则必须提高应用的最低版本：
-- 需要一项在较早版本中并未提供的功能的新 API。 必须将受支持的最低版本提高到包含该功能的版本。 有关详细信息，请参阅[应用功能声明](../packaging/app-capability-declarations.md)。
-- 任何已添加到 generic.xaml 并且在早期版本中不可用的新资源键。 运行时所使用的 generic.xaml 版本由设备运行所在的操作系统版本确定。 无法使用运行时 API 检查来确定是否存在 XAML 资源。 因此，你只能使用应用支持的最低版本中提供的资源键，否则 [XAMLParseException](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.markup.xamlparseexception.aspx) 将导致应用在运行时崩溃。
-
-### 自适应代码选项
-
-有两种方法创建自适应代码。 在大多数情况下，编写要在最低版本上运行的应用标记，然后通过应用代码来利用较新的操作系统功能（如果有）。 但是，如果你需要在视觉状态中更新某一属性，并且操作系统版本之间仅有一个属性或枚举值更改，则可以创建可扩展的状态触发器，该触发器根据是否存在 API 进行激活。
-
-我们在此处比较这些选项。
-
-**应用代码**
-
-使用场合：
-- 推荐所有自适应代码方案，但下面针对可扩展触发器定义的特定情况除外。
-
-优势：
-- 避免开发人员开销/将 API 差异绑定到标记的复杂性。
-
-缺点：
-- 无设计器支持。
-
-**状态触发器**
-
-使用场合：
-- 在操作系统版本之间仅有一个属性或枚举更改（无需逻辑更改）并且已连接到视觉状态时使用。
-
-优势：
-- 允许你创建特定的视觉状态，它们根据是否存在 API 进行触发。
-- 某些设计器支持可用。
-
-缺点：
-- 自定义触发器的使用仅限于视觉状态，它不适合复杂的自适应布局。
-- 必须使用 Setter 指定值更改，因此仅允许简单的更改。
-- 自定义状态触发器在设置和使用时相当繁琐。
-
-## 自适应代码示例
-
-在本部分中，我们将显示多个使用 Windows 10 版本 1607 (Windows Insider Preview) 中新增 API 的自适应代码的示例。
-
-### 示例 1：新的枚举值
-
-Windows 10 版本 1607 向 [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx) 枚举添加了一个新值：**ChatWithoutEmoji**。 这一新输入范围与 **Chat** 输入范围具有相同的输入行为（拼写检查、自动完成、首字母自动大写），但其无需表情符号按钮即可映射到触摸键盘。 如果你要创建自己的表情符号选取器，并希望禁用触摸键盘中内置的表情符号按钮，这将很有用。 
-
-此示例显示了如何检查是否存在 **ChatWithoutEmoji** 枚举值，并设置 **TextBox** 的 [InputScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.inputscope.aspx) 属性（如果存在该枚举值）。 如果在应用运行所在的系统上不存在该枚举值，则改为将 **InputScope** 设置为 **Chat**。 所示代码可放置在 Page 构造函数或 Page.Loaded 事件处理程序中。
+Here we look at specific examples for targeting new features in the Windows Insider Preview. For a general overview of using **ApiInformation**, see [Guide to UWP apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) and the blog post [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 > [!TIP]
-> 在检查 API 时，使用静态字符串而不是依赖于 .NET 语言功能，否则你的应用可能会尝试访问未定义的类型并在运行时崩溃。
+> Numerous runtime API checks can affect the performance of your app. We show the checks inline in these examples. In production code, you should perform the check once and cache the result, then used the cached result throughout your app. 
+
+### Unsupported scenarios
+
+In most cases, you can keep your app's Minimum Version set to SDK version 10240 and use runtime checks to enable any new APIs when your app runs on later a version. However, there are some cases where you must increase your app's Minimum Version in order to use new features.
+
+You must increase your app's Minimum Version if you use:
+- a new API that requires a capability that isn't available in an earlier version. You must increase the minimum supported version to one that includes that capability. For more info, see [App capability declarations](../packaging/app-capability-declarations.md).
+- any new resource keys added to generic.xaml and not available in a previous version. The version of generic.xaml used at runtime is determined by the OS version the device is running on. You can't use runtime API checks to determine the presence of XAML resources. So, you must only use resource keys that are available in the minimum version that your app supports or a [XAMLParseException](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.markup.xamlparseexception.aspx) will cause your app to crash at runtime.
+
+### Adaptive code options
+
+There are two ways to create adaptive code. In most cases, you write your app markup to run on the Minimum version, then use your app code to tap into newer OS features when present. However, if you need to update a property in a visual state, and there is only a property or enumeration value change between OS versions, you can create an extensible state trigger that’s activated based on the presence of an API.
+
+Here, we compare these options.
+
+**App code**
+
+When to use:
+- Recommended for all adaptive code scenarios except for specific cases defined below for extensible triggers.
+
+Benefits:
+- Avoids developer overhead/complexity of tying API differences into markup.
+
+Drawbacks:
+- No Designer support.
+
+**State Triggers**
+
+When to use:
+- Use when there is only a property or enum change between OS versions that doesn’t require logic changes, and is connected to a visual state.
+
+Benefits:
+- Lets you create specific visual states that are triggered based on the presence of an API.
+- Some designer support available.
+
+Drawbacks:
+- Use of custom triggers is restricted to visual states, which doesn’t lend itself to complicated adaptive layouts.
+- Must use Setters to specify value changes, so only simple changes are possible.
+- Custom state triggers are fairly verbose to set up and use.
+
+## Adaptive code examples
+
+In this section, we show several examples of adaptive code that use APIs that are new in Windows 10, version 1607 (Windows Insider Preview).
+
+### Example 1: New enum value
+
+Windows 10, version 1607 adds a new value to the [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx) enumeration: **ChatWithoutEmoji**. This new input scope has the same input behavior as the **Chat** input scope (spellchecking, auto-complete, auto-capitalization), but it maps to a touch keyboard without an emoji button. This is useful if you create your own emoji picker and want to disable the built-in emoji button in the touch keyboard. 
+
+This example shows how to check if the **ChatWithoutEmoji** enum value is present and sets the [InputScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.inputscope.aspx) property of a **TextBox** if it is. If it’s not present on the system the app is run on, the **InputScope** is set to **Chat** instead. The code shown could be placed in a Page consructor or Page.Loaded event handler.
+
+> [!TIP]
+> When you check an API, use static strings instead of relying on .NET language features, otherwise your app might try to access a type that isn’t defined and crash at runtime.
 
 **C#**
 ```csharp
@@ -147,7 +144,7 @@ messageBox.Text = messageBox.InputScope.Names[0].NameValue.ToString();
 rootGrid.Children.Add(messageBox);
 ```
 
-在上一示例中，在代码中创建了 TextBox 并设置了所有属性。 但是，如果你具有现有的 XAML 并且只需更改支持新值的系统上的 InputScope 属性，则可以在不更改 XAML 的情况下执行此操作，如下所示。 在 XAML 中将默认值设置为 **Chat**，当要在代码中覆盖它（如果存在 **ChatWithoutEmoji** 值）。
+In the previous example, the TextBox is created and all properties are set in code. However, if you have existing XAML, and just need to change the InputScope property on systems where the new value is supported, you can do that without changing your XAML, as shown here. You set the default value to **Chat** in XAML, but you override it in code if the **ChatWithoutEmoji** value is present.
 
 **XAML**
 ```xaml
@@ -180,28 +177,28 @@ private void messageBox_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-既然我们已经有具体示例，让我们来看一下如何对其应用目标版本和最低版本设置。
+Now that we have a concrete example, let’s see how the Target and Minimum version settings apply to it.
 
-在这些示例中，可以在不检查的情况下在 XAML 或代码中使用 Chat 枚举值，因为它存在于受支持的最低操作系统版本中。 
+In these examples, you can use the Chat enum value in XAML, or in code without a check, because it’s present in the minimum supported OS version. 
 
-如果要在不检查的情况下在 XAML 或代码中使用 ChatWithoutEmoji 值，它将编译且不会出现错误，因为它存在于目标操作系统版本中。 它还将在具有目标操作系统版本的系统上运行且不会出现错误。 但是，当应用在使用最低操作系统版本的系统上运行时，它将在运行时崩溃，因为 ChatWithoutEmoji 枚举值不存在。 因此，你只能在代码中使用此值，并将其封装在运行时 API 检查中，以便它仅在当前系统上受支持时才调用。
+If you use the ChatWithoutEmoji value in XAML, or in code without a check, it will compile without error because it's present in the Target OS version. It will also run without error on a system with the Target OS version. However, when the app runs on a system with an OS using the Minimum version, it will crash at runtime because the ChatWithoutEmoji enum value is not present. Therefore, you must use this value only in code, and wrap it in a runtime API check so it’s called only if it’s supported on the current system.
 
-### 示例 2：新控件
+### Example 2: New control
 
-新的 Windows 版本通常会将新控件引入到 UWP API 图面，进而为平台引入新功能。 若要利用存在的新控件，请使用 [ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) 方法。
+A new version of Windows typically brings new controls to the UWP API surface that bring new functionality to the platform. To leverage the presence of a new control, use the  [ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) method.
 
-Windows 10 版本 1607 引入了名为 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 的新媒体控件。 此控件基于 [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) 类生成，因此它将提供相关功能（例如能够轻松绑定到后台音频），并且它将使用媒体堆栈中的体系结构改进。
+Windows 10, version 1607 introduces a new media control called [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). This control builds on the [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) class, so it brings features like the ability to easily tie into background audio, and it makes use of architectural improvements in the media stack.
 
-但是，如果应用运行所在的设备运行的是版本 1607 之前的 Windows 10 版本，则必须使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) 控件而不是新的 **MediaPlayerElement** 控件。 可以使用 [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) 方法来检查在运行时是否存在 MediaPlayerElement 控件，并加载适用于应用运行所在的系统的控件。
+However, if the app runs on a device that’s running a version of Windows 10 older than version 1607, you must use the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) control instead of the new **MediaPlayerElement** control. You can use the [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) method to check for the presence of the MediaPlayerElement control at runtime, and load whichever control is suitable for the system where the app is running.
 
-此示例显示了如何创建使用新 MediaPlayerElement 或旧 MediaElement 的应用，这具体取决于是否存在 MediaPlayerElement 类型。 在此代码中，使用 [UserControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol.aspx) 类来组件化控件及其相关 UI 和代码，以便你可以基于操作系统版本切换它们。 作为替代方法，你可以使用自定义控件，该控件提供的功能和自定义行为比这一简单示例所需的内容要多。
+This example shows how to create an app that uses either the new MediaPlayerElement or the old MediaElement depending on whether MediaPlayerElement type is present. In this code, you use the [UserControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol.aspx) class to componentize the controls and their related UI and code so that you can switch them in and out based on the OS version. As an alternative, you can use a custom control, which provides more functionality and custom behavior than what’s needed for this simple example.
  
 **MediaPlayerUserControl** 
 
-`MediaPlayerUserControl` 封装 **MediaPlayerElement** 和用于按帧跳过媒体框架的多个按钮。 UserControl 使你可以将这些控件视为单个实体，并使在较旧的系统上使用 MediaElement 切换变得更容易。 此用户控件应当仅在存在 MediaPlayerElement 的系统上使用，因此你无需在此用户控件内的代码中使用 ApiInformation 检查。
+The `MediaPlayerUserControl` encapsulates a **MediaPlayerElement** and several buttons that are used to skip through the media frame by frame. The UserControl lets you treat these controls as a single entity and makes it easier to switch with a MediaElement on older systems. This user control should be used only on systems where MediaPlayerElement is present, so you don’t use ApiInformation checks in the code inside this user control.
 
 > [!NOTE]
-> 若要使此示例既简单又有焦点，请将帧步骤按钮放置在媒体播放器的外部。 若要实现更好的用户体验，应自定义 MediaTransportControls 以包括自定义按钮。 有关详细信息，请参阅[自定义传输控件](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls)。 
+> To keep this example simple and focused, the frame step buttons are placed outside of the media player. For a better user experiance, you should customize the MediaTransportControls to include your custom buttons. See [Custom transport controls](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls) for more info. 
 
 **XAML**
 ```xaml
@@ -274,7 +271,7 @@ namespace MediaApp
 
 **MediaElementUserControl**
  
-`MediaElementUserControl` 封装 **MediaElement** 控件。
+The `MediaElementUserControl` encapsulates a **MediaElement** control.
 
 **XAML**
 ```xaml
@@ -297,11 +294,11 @@ namespace MediaApp
 ```
 
 > [!NOTE]
-> `MediaElementUserControl` 的代码页仅包含生成的代码，因此它不会显示。
+> The code page for `MediaElementUserControl` contains only generated code, so it's not shown.
 
-**基于 IsTypePresent 初始化控件**
+**Initialize a control based on IsTypePresent**
 
-在运行时，调用 **ApiInformation.IsTypePresent** 以检查 MediaPlayerElement。 如果存在，则加载 `MediaPlayerUserControl`；如果不存在，则加载 `MediaElementUserControl`。
+At runtime, you call **ApiInformation.IsTypePresent** to check for MediaPlayerElement. If it's present, you load `MediaPlayerUserControl`, if it's not, you load `MediaElementUserControl`.
 
 **C#**
 ```csharp
@@ -327,17 +324,17 @@ public MainPage()
 ```
 
 > [!IMPORTANT]
-> 请记住，此检查仅将 `mediaControl` 对象设置为 `MediaPlayerUserControl` 或 `MediaElementUserControl`。 要求在代码中需确定是使用 MediaPlayerElement API 还是使用 MediaElement API 的任何其他位置执行这些条件检查。 应执行检查一次并缓存结果，然后在整个应用中使用缓存的结果。
+> Remember that this check only sets the `mediaControl` object to either `MediaPlayerUserControl` or `MediaElementUserControl`. You need to perform these conditional checks anywhere else in your code that you need to determine whether to use MediaPlayerElement or MediaElement APIs. You should perform the check once and cache the result, then used the cached result throughout your app.
 
-## 状态触发器示例
+## State trigger examples
 
-借助可扩展状态触发器，你可以结合使用标记和代码来基于检查代码的条件触发视觉状态更改；在此情况下，基于是否存在特定 API。 对于常见自适应代码方案，因涉及到开销以及仅限视觉状态而不推荐状态触发器。 
+Extensible state triggers let you use markup and code together to trigger visual state changes based on a condition that you check in code; in this case, the presence of a specific API. We don’t recommend state triggers for common adaptive code scenarios because of the overhead involved, and the restriction to only visual states. 
 
-应仅当不同操作系统版本之间的较小 UI 更改不影响其余 UI （例如控件上的属性或枚举值更改）时，才将状态触发器用于自适应代码。
+You should use state triggers for adaptive code only when you have small UI changes between different OS versions that won’t impact the remaining UI, such as a property or enum value change on a control.
 
-### 示例 1：新属性
+### Example 1: New property
 
-设置可扩展状态触发器的第一步是子类化 [StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx) 类来创建自定义触发器，该触发器将基于是否存在 API 来激活。 此示例演示了在存在属性与 XAML 中设置的 `_isPresent` 变量匹配时激活的触发器。
+The first step in setting up an extensible state trigger is subclassing the [StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx) class to create a custom trigger that will be active based on the presence of an API. This example shows a trigger that activates if the property presence matches the `_isPresent` variable set in XAML.
 
 **C#**
 ```csharp
@@ -369,11 +366,11 @@ class IsPropertyPresentTrigger : StateTriggerBase
 }
 ```
 
-下一步是在 XAML 中设置视觉状态触发器，以便基于是否存在该 API 生成两个不同的视觉状态。 
+The next step is setting up the visual state trigger in XAML so that two different visual states result based on the presence of the API. 
 
-Windows 10 版本 1607 在 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) 类上引入了名为 [AllowFocusOnInteraction](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.allowfocusoninteraction.aspx) 的新属性，该属性用于确定控件是否在用户与其交互时获得焦点。 如果要在用户单击某个按钮时使焦点位于文本框上以便进行数据输入（并使触摸键盘保持显示），这将很有用。
+Windows 10, version 1607 introduces a new property on the [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) class called [AllowFocusOnInteraction](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.allowfocusoninteraction.aspx) that determines whether a control takes focus when  a user interacts with it. This is useful if you want to keep focus on a text box for data entry (and keep the touch keyboard showing) while the user clicks a button.
 
-如果该属性存在，该示例中的触发器将处于选中状态。 如果该属性存在，Button 上的 **AllowFocusOnInteraction** 属性将设为 **false**；如果该属性不存在，Button 将保留其原始状态。 TextBox 包括在内，以便于在运行代码时更轻松地查看此属性的效果。
+The trigger in this example checks if the property is present. If the property is present it sets the **AllowFocusOnInteraction** property on a Button to **false**; if the property isn’t present, the Button retains its original state. The TextBox is included to make it easier to see the effect of this property when you run the code.
 
 **XAML**
 ```xaml
@@ -403,9 +400,9 @@ Windows 10 版本 1607 在 [FrameworkElement](https://msdn.microsoft.com/library
 </Grid>
 ```
 
-### 示例 2：新的枚举值
+### Example 2: New enum value
 
-此示例演示了如何基于是否存在某个值设置不同的枚举值。 它使用自定义状态触发器来实现与之前的 chat 示例相同的效果。 在此示例中，使用新的 ChatWithoutEmoji 输入范围（如果设备运行的是 Windows 10 版本 1607），否则使用 **Chat** 输入范围。 使用此触发器的视觉状态可采用 *if-else* 样式进行设置，其中输入范围基于是否存在新的枚举值进行选择。
+This example shows how to set different enumeration values based on whether a value is present. It uses a custom state trigger to achieve the same result as the previous chat example. In this example, you use the new ChatWithoutEmoji input scope if the device is running Windows 10, version 1607, otherwise the **Chat** input scope is used. The visual states that use this trigger are set up in an *if-else* style where the input scope is chosen based on the presence of the new enum value.
 
 **C#**
 ```csharp
@@ -474,13 +471,13 @@ class IsEnumPresentTrigger : StateTriggerBase
     </VisualStateManager.VisualStateGroups>
 </Grid>
 ```
-## 相关文章
+## Related articles
 
-- [UWP 应用指南](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-- [使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [Guide to UWP apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

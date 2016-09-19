@@ -1,82 +1,82 @@
 ---
 author: mijacobs
-Description: "Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。"
-title: "Windows 推送通知服务 (WNS) 概述"
+Description: The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
+title: Windows Push Notification Services (WNS) overview
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 32471f23bf10a8430db6c6bd1376f1f7aa6c784c
+ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
+ms.openlocfilehash: 9b37e79611520800ceb7c3f45d92044fbc44dae0
 
 ---
-
-# Windows 推送通知服务 (WNS) 概述
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# Windows Push Notification Services (WNS) overview
 
 
 
-Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。
-
-## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>工作原理
 
 
-下图显示了用于发送推送通知的完整数据流。 它涉及到以下步骤：
+The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
 
-1.  你的应用从通用 Windows 平台请求推送通知通道。
-2.  Windows 要求 WNS 创建通知通道。 此通道以统一资源标识符 (URI) 的形式返回到调用设备。
-3.  通知通道 URI 由 Windows 返回到应用。
-4.  你的应用将 URI 发送到你自己的云服务。 然后你将 URI 存储在自己的云服务上，以便在发生通知时访问该 URI。 URI 是你自己的应用与自己的服务之间的接口；它负责通过安全可靠的 Web 标准来实现此接口。
-5.  当你的云服务有要发送的更新时，它使用通道 URI 通知 WNS。 通过安全套接字层 (SSL) 发送 TTP POST 请求（包括通知负载）来执行此操作。 此步骤需要身份验证。
-6.  WNS 接收请求，并将通知路由到相应的设备。
-
-![推送通知的 WNS 数据流关系图](images/wns-diagram-01.png)
-
-## <span id="registering_wit_store"></span><span id="REGISTERING_WIT_STORE"></span>注册你的应用，并为你的云服务接收凭据
+## How it works
 
 
-在使用 WNS 发送通知之前，应用必须先向应用商店仪表板进行注册。 这将为应用提供凭据，云服务在向 WNS 进行验证的过程中将使用该凭据。 这些凭据由程序包安全标识符 (SID) 和密钥组成。 若要执行此注册，请转到 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?linkid=511146)并选择“仪表板”****。
+The following diagram shows the complete data flow for sending a push notification. It involves these steps:
 
-每个应用都有其各自的一组云服务凭据。 这些凭据无法用于向其他任何应用发送通知。
+1.  Your app requests a push notification channel from the Universal Windows Platform.
+2.  Windows asks WNS to create a notification channel. This channel is returned to the calling device in the form of a Uniform Resource Identifier (URI).
+3.  The notification channel URI is returned by Windows to your app.
+4.  Your app sends the URI to your own cloud service. You then store the URI on your own cloud service so that you can access the URI when you send notifications. The URI is an interface between your own app and your own service; it's your responsibility to implement this interface with safe and secure web standards.
+5.  When your cloud service has an update to send, it notifies WNS using the channel URI. This is done by issuing an HTTP POST request, including the notification payload, over Secure Sockets Layer (SSL). This step requires authentication.
+6.  WNS receives the request and routes the notification to the appropriate device.
 
-若要详细了解如何注册你的应用，请参阅[如何向 Windows 通知服务 (WNS) 进行验证](https://msdn.microsoft.com/library/windows/apps/hh465407)。
+![wns data flow diagram for push notification](images/wns-diagram-01.png)
 
-## <span id="Requesting_a_notification_channel"></span><span id="requesting_a_notification_channel"></span><span id="REQUESTING_A_NOTIFICATION_CHANNEL"></span>请求通知通道
-
-
-当能够接收推送通知的应用运行时，它必须首先通过 [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241285) 请求通知通道。 若要查看全面介绍和示例代码，请参阅[如何请求、创建和保存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)。 此 API 会返回一个唯一链接到进行调用的应用程序及其磁贴的通道 URI，所有通知类型均可通过此 URI 发送。
-
-应用成功创建了通道 URI 之后，会将其与任何应该与该 URI 关联的特定于应用的元数据一起发送到它的云服务。
-
-### <span id="important_notes1"></span><span id="IMPORTANT_NOTES1"></span>重要说明
-
--   我们不保证应用的通知通道 URI 将始终保持相同。 我们建议应用在每次运行时均请求一个新的通道，并在 URI 更改时更新其服务。 开发人员绝不能修改该通道 URI，而应将其视作一段黑盒字符串。 此时，通道 URI 于 30 天后过期。 如果 Windows 10 应用会在后台定期更新其通道，则可以下载针对 Windows 8.1 的[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?linkid=231476)、重新使用其源代码和/或其展示的模式。
--   云服务和客户端应用之间的接口由你这个开发人员来实现。 我们建议应用使用其自身的服务完成身份验证过程，并通过安全的协议（如 HTTPS）来传输数据。
--   云服务必须始终确保通道 URI 使用域“notify.windows.com”。 该服务永远不应向任何其他域中的通道推送通知。 如果应用的回调发生了泄露，恶意攻击者可能会将该通道 URI 提交给假冒 WNS。 如果不对域进行检查，你的云服务可能会在你不知情的情况下向此攻击者泄露信息。
--   如果你的云服务尝试将通知传递到过期通道，WNS 将返回[响应代码 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes)。 为响应此代码，你的服务不应再尝试将通知发送到该 URI。
-
-## <span id="Authenticating_your_cloud_service"></span><span id="authenticating_your_cloud_service"></span><span id="AUTHENTICATING_YOUR_CLOUD_SERVICE"></span>验证你的云服务
+## Registering your app and receiving the credentials for your cloud service
 
 
-若要发送通知，云服务必须通过 WNS 进行验证。 验证过程的第一步发生在向 Windows 应用商店仪表板注册应用之时。 在注册过程中，你的应用会获得一个程序包安全标识符 (SID) 和一个密钥。 该信息由你的云服务用于向 WNS 进行验证。
+Before you can send notifications using WNS, your app must be registered with the Store Dashboard. This will provide you with credentials for your app that your cloud service will use in authenticating with WNS. These credentials consist of a Package Security Identifier (SID) and a secret key. To perform this registration, go to the [Windows Dev Center](http://go.microsoft.com/fwlink/p/?linkid=511146) and select **Dashboard**.
 
-WNS 身份验证方案通过来自 [OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=226787) 协议的客户端凭据配置文件来实现。 云服务通过提供其凭据（程序包 SID 和密钥）来向 WNS 进行验证。 反过来，云服务会获得一个访问令牌。 该访问令牌允许云服务发送通知。 每次向 WNS 发送通知请求时都必须使用该令牌。
+Each app has its own set of credentials for its cloud service. These credentials cannot be used to send notifications to any other app.
 
-该信息链简述如下：
+For more details on how to register your app, please see [How to authenticate with the Windows Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407).
 
-1.  云服务遵循 OAuth 2.0 协议通过 HTTPS 将其凭据发送给 WNS。 这会向 WNS 验证该服务。
-2.  如果身份验证成功，则 WNS 会返回一个访问令牌。 此访问令牌在所有后续通知请求中使用，直到令牌过期。
+## Requesting a notification channel
 
-![云服务身份验证的 WNS 关系图](images/wns-diagram-02.png)
 
-在对 WNS 进行身份验证的过程中，云服务会通过安全套接字层 (SSL) 提交一个 HTTP 请求。 参数以“application/x-www-for-urlencoded”格式提供。 在“client_id”字段中提供你的程序包 SID，并在“client_secret”字段中提供你的密钥。 有关语法的详细信息，请参阅[访问令牌请求](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request)参考。
+When an app that is capable of receiving push notifications runs, it must first request a notification channel through the [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241285). For a full discussion and example code, see [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412). This API returns a channel URI that is uniquely linked to the calling application and its tile, and through which all notification types can be sent.
 
-**注意** 这仅仅是一个示例，而不是可在你自己的代码中成功使用的剪切和粘贴代码。
+After the app has successfully created a channel URI, it sends it to its cloud service, together with any app-specific metadata that should be associated with this URI.
+
+### Important notes
+
+-   We do not guarantee that the notification channel URI for an app will always remain the same. We advise that the app requests a new channel every time it runs and updates its service when the URI changes. The developer should never modify the channel URI and should consider it as a black-box string. At this time, channel URIs expire after 30 days. If your Windows 10 app will periodically renew its channel in the background then you can download the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?linkid=231476) for Windows 8.1 and re-use its source code and/or the pattern it demonstrates.
+-   The interface between the cloud service and the client app is implemented by you, the developer. We recommend that the app go through an authentication process with its own service and transmit data over a secure protocol such as HTTPS.
+-   It is important that the cloud service always ensures that the channel URI uses the domain "notify.windows.com". The service should never push notifications to a channel on any other domain. If the callback for your app is ever compromised, a malicious attacker could submit a channel URI to spoof WNS. Without inspecting the domain, your cloud service could be potentially disclose information to this attacker unknowingly.
+-   If your cloud service attempts to deliver a notification to an expired channel, WNS will return [response code 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes). In response to that code, your service should no longer attempt to send notifications to that URI.
+
+## Authenticating your cloud service
+
+
+To send a notification, the cloud service must be authenticated through WNS. The first step in this process occurs when you register your app with the Windows Store Dashboard. During the registration process, your app is given a Package security identifier (SID) and a secret key. This information is used by your cloud service to authenticate with WNS.
+
+The WNS authentication scheme is implemented using the client credentials profile from the [OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=226787) protocol. The cloud service authenticates with WNS by providing its credentials (Package SID and secret key). In return, it receives an access token. This access token allows a cloud service to send a notification. The token is required with every notification request sent to the WNS.
+
+At a high level, the information chain is as follows:
+
+1.  The cloud service sends its credentials to WNS over HTTPS following the OAuth 2.0 protocol. This authenticates the service with WNS.
+2.  WNS returns an access token if the authentication was successful. This access token is used in all subsequent notification requests until it expires.
+
+![wns diagram for cloud service authentication](images/wns-diagram-02.png)
+
+In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the "application/x-www-for-urlencoded" format. Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field. For syntax details, see the [access token request](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request) reference.
+
+**Note**  This is just an example, not cut-and-paste code that you can successfully use in your own code.
 
  
 
-``` syntax
+``` http
  POST /accesstoken.srf HTTP/1.1
  Content-Type: application/x-www-form-urlencoded
  Host: https://login.live.com
@@ -85,11 +85,11 @@ WNS 身份验证方案通过来自 [OAuth 2.0](http://go.microsoft.com/fwlink/p/
  grant_type=client_credentials&client_id=ms-app%3a%2f%2fS-1-15-2-2972962901-2322836549-3722629029-1345238579-3987825745-2155616079-650196962&client_secret=Vex8L9WOFZuj95euaLrvSH7XyoDhLJc7&scope=notify.windows.com
 ```
 
-WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应。 访问令牌使用“application/json”媒体类型在该 HTTP 响应正文所含的参数中返回。 在你的服务收到该访问令牌后，可随时开始发送通知。
+The WNS authenticates the cloud service and, if successful, sends a response of "200 OK". The access token is returned in the parameters included in the body of the HTTP response, using the "application/json" media type. After your service has received the access token, you are ready to send notifications.
 
-以下示例将显示一个包含访问令牌身份的成功验证响应。 有关语法的详细信息，请参阅[推送通知服务请求和响应头](https://msdn.microsoft.com/library/windows/apps/hh465435)。
+The following example shows a successful authentication response, including the access token. For syntax details, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435).
 
-``` syntax
+``` http
  HTTP/1.1 200 OK   
  Cache-Control: no-store
  Content-Length: 422
@@ -101,27 +101,27 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
  }
 ```
 
-### <span id="important_notes2"></span><span id="IMPORTANT_NOTES2"></span>重要说明
+### Important notes
 
--   以上过程支持的 OAuth 2.0 协议遵循草案版本 V16。
--   OAuth 征求意见文档 (RFC) 使用术语“客户端”指示云服务。
--   当该 OAuth 草案定稿时，以上过程可能有所更改。
--   访问令牌可用于多个通知请求。 这样，云服务只需验证一次即可发送多个通知。 然而，当访问令牌过期时，云服务必须再次验证，以获得一个新的访问令牌。
+-   The OAuth 2.0 protocol supported in this procedure follows draft version V16.
+-   The OAuth Request for Comments (RFC) uses the term "client" to refer to the cloud service.
+-   There might be changes to this procedure when the OAuth draft is finalized.
+-   The access token can be reused for multiple notification requests. This allows the cloud service to authenticate just once to send many notifications. However, when the access token expires, the cloud service must authenticate again to receive a new access token.
 
-## <span id="Sending_a_notification"></span><span id="sending_a_notification"></span><span id="SENDING_A_NOTIFICATION"></span>发送通知
+## Sending a notification
 
 
-通过使用通道 URI，无论何时有适用于客户的更新，云服务都可以发送通知。
+Using the channel URI, the cloud service can send a notification whenever it has an update for the user.
 
-上述访问令牌可用于多个通知请求；云服务不必为每个通知都请求一个新的访问令牌。 如果访问令牌过期，通知请求将返回一个错误。 如果访问令牌被拒绝，我们建议你不要尝试多次重新发送通知。 如果遇到该错误，你将需要请求一个新的访问令牌并重新发送通知。 有关准确的错误代码，请参阅[推送通知响应代码](https://msdn.microsoft.com/library/windows/apps/hh465435)。
+The access token described above can be reused for multiple notification requests; the cloud server is not required to request a new access token for every notification. If the access token has expired, the notification request will return an error. We recommended that you do not try to re-send your notification more than once if the access token is rejected. If you encounter this error, you will need to request a new access token and resend the notification. For the exact error code, see [Push notification response codes](https://msdn.microsoft.com/library/windows/apps/hh465435).
 
-1.  云服务会向通道 URI 发出一个 HTTP POST。 该请求必须通过 SSL 发出并包含必要的标头和通知负载。 授权头必须包含授权所必需的访问令牌。
+1.  The cloud service makes an HTTP POST to the channel URI. This request must be made over SSL and contains the necessary headers and the notification payload. The authorization header must include the acquired access token for authorization.
 
-    示例请求如下。 有关语法的详细信息，请参阅[推送通知响应代码](https://msdn.microsoft.com/library/windows/apps/hh465435)。
+    An example request is shown here. For syntax details, see [Push notification response codes](https://msdn.microsoft.com/library/windows/apps/hh465435).
 
-    有关编写通知负载的详细信息，请参阅[快速入门：发送推送通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)。 磁贴、Toast 或锁屏提醒通知的负载作为 XML 内容提供，并依附于其分别定义的[适应磁贴架构](tiles-and-notifications-adaptive-tiles-schema.md)或[传统磁贴架构](https://msdn.microsoft.com/library/windows/apps/br212853)。 原始通知的负载没有指定的结构。 严格来讲它是由应用定义的。
+    For details on composing the notification payload, see [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252). The payload of a tile, toast, or badge push notification is supplied as XML content that adheres to their respective defined [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md) or [Legacy tiles schema](https://msdn.microsoft.com/library/windows/apps/br212853). The payload of a raw notification does not have a specified structure. It is strictly app-defined.
 
-    ``` syntax
+    ``` http
      POST https://cloud.notify.windows.com/?token=AQE%bU%2fSjZOCvRjjpILow%3d%3d HTTP/1.1
      Content-Type: text/xml
      X-WNS-Type: wns/tile
@@ -133,49 +133,49 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
      ....
     ```
 
-2.  WNS 发出响应，表明通知已收到，并将在下次可能时传递。 但是，WNS 不会提供设备或应用程序已收到通知的端到端确认。
+2.  WNS responds to indicate that the notification has been received and will be delivered at the next available opportunity. However, WNS does not provide end-to-end confirmation that your notification has been received by the device or application.
 
-此关系图演示数据流：
+This diagram illustrates the data flow:
 
-![发送通知的 WNS 关系图](images/wns-diagram-03.png)
+![wns diagram for sending a notification](images/wns-diagram-03.png)
 
-### <span id="important_notes3"></span><span id="IMPORTANT_NOTES3"></span>重要说明
+### Important notes
 
--   WNS 不保证通知的可靠性或延迟。
--   通知绝不应包含机密或敏感数据。
--   若要发送通知，云服务必须先对 WNS 进行身份验证并获得访问令牌。
--   访问令牌仅允许云服务将通知发送到为其创建令牌的单个应用。 单个访问令牌无法用于在多个应用中发送通知。 因此，如果你的云服务支持多个应用，则在向每个通道 URI 推送通知时都必须提供相应应用的正确访问令牌。
--   当设备脱机时，WNS 将默认为每个通道 URI 存储至多 5 个磁贴通知（如果启用了队列；否则只能存储 1 个磁贴通知）和 1 个锁屏提醒通知，不存储原始通知。 可以通过 [X-WNS-Cache-Policy 标头](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache)更改这种默认缓存行为。 请注意，当设备离线时，永远不会存储 Toast 通知。
--   在对用户个性化通知内容的方案中，WNS 建议云服务在收到这些更新时立即发送这些更新。 此方案的示例包括社交媒体源更新、即时通信邀请、新消息通知或警报。 作为备用方法，你可以使用向大部分用户频繁提供相同的通用更新的方案；例如，天气、股票和新闻更新。 WNS 指南中指定这些更新的频率最高为每 30 分钟一个。 最终用户或 WNS 可以将超过该频率的例常更新确定为滥发更新。
+-   WNS does not guarantee the reliability or latency of a notification.
+-   Notifications should never include confidential or sensitive data.
+-   To send a notification, the cloud service must first authenticate with WNS and receive an access token.
+-   An access token only allows a cloud service to send notifications to the single app for which the token was created. One access token cannot be used to send notifications across multiple apps. Therefore, if your cloud service supports multiple apps, it must provide the correct access token for the app when pushing a notification to each channel URI.
+-   When the device is offline, by default WNS will store up to five tile notifications (if queuing is enabled; otherwise, one tile notification) and one badge notification for each channel URI, and no raw notifications. This default caching behavior can be changed through the [X-WNS-Cache-Policy header](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache). Note that toast notifications are never stored when the device is offline.
+-   In scenarios where the notification content is personalized to the user, WNS recommends that the cloud service immediately send those updates when those are received. Examples of this scenario include social media feed updates, instant communication invitations, new message notifications, or alerts. As an alternative, you can have scenarios in which the same generic update is frequently delivered to a large subset of your users; for example, weather, stock, and news updates. WNS guidelines specify that the frequency of these updates should be at most one every 30 minutes. The end user or WNS may determine more frequent routine updates to be abusive.
 
-## <span id="expiry"></span><span id="EXPIRY"></span>磁贴和锁屏提醒通知过期时间
-
-
-默认情况下，磁贴和徽标通知在下载完成时的三天后过期。 通知过期时，此内容将从磁贴或队列中删除，且不再向用户显示。 最佳做法是在所有磁贴和锁屏提醒通知上设置过期时间（使用对你的应用有意义的时间），以便使磁贴的内容不会在它不相关时继续保留。 对于具有已定义的使用寿命的内容来说，显式过期时间是必需的。 这还确保在你的云服务停止发送通知或用户在长时间内与网络断开连接时删除过时的内容。
-
-你的云服务可以为每个通知设置一个过期时间，方法是设置 X-WNS-Expires HTTP 标头以指定通知在发送后保持有效的时间（以秒为单位）。 有关详细信息，请参阅[推送通知服务请求和响应头](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl)。
-
-例如，股票市场活跃交易日期间，你可将股票价格更新到期时间设置为发送间隔的两倍（例如，如果是每半小时发送一次通知，则将股票价格更新到期时间设置为一小时）。 另一个示例是，新闻应用可确定每日新闻磁贴更新的适当到期时间为一天。
-
-## <span id="Push_notifications_and_battery_saver"></span><span id="push_notifications_and_battery_saver"></span><span id="PUSH_NOTIFICATIONS_AND_BATTERY_SAVER"></span>推送通知和节电模式
+## Expiration of tile and badge notifications
 
 
-节电模式可通过限制设备上的后台活动，延长电池使用时间。 Windows 10 允许用户设置在电量降低至特定阈值时，自动打开节电模式。 在节电模式处于打开状态时，将禁用推送消息接收，以节省电量。 但是也有几种例外情况。 以下 Windows 10 节电模式设置（见“设置”****应用）允许应用即使在节电模式打开时，也可以接收推送通知。
+By default, tile and badge notifications expire three days after being downloaded. When a notification expires, the content is removed from the tile or queue and is no longer shown to the user. It's a best practice to set an expiration (using a time that makes sense for your app) on all tile and badge notifications so that your tile's content doesn't persist longer than it is relevant. An explicit expiration time is essential for content with a defined lifespan. This also assures the removal of stale content if your cloud service stops sending notifications, or if the user disconnects from the network for an extended period.
 
--   **允许在节电模式下接收任何应用的推送通知**：此设置允许所有应用在节电模式处于打开状态时接收推送通知。 请注意，此设置仅适用于 Windows 10 桌面版（家庭版、专业版、企业版和教育版）。
--   **始终允许**：此设置允许在节电模式处于打开状态时在后台运行特定应用，包括接收推送通知。 此列表由用户手动维护。
+Your cloud service can set an expiration for each notification by setting the X-WNS-Expires HTTP header to specify the time (in seconds) that your notification will remain valid after it is sent. For more information, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl).
 
-此两种设置的状态无法检查，但可以检查节电模式的状态。 在 Windows 10 中，使用 [**EnergySaverStatus**](https://msdn.microsoft.com/library/windows/apps/dn966190) 属性检查节电模式状态。 应用也可以使用 [**EnergySaverStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn966191) 事件侦听对节电模式的更改。
+For example, during a stock market's active trading day, you can set the expiration for a stock price update to twice that of your sending interval (such as one hour after receipt if you are sending notifications every half-hour). As another example, a news app might determine that one day is an appropriate expiration time for a daily news tile update.
 
-如果应用严重依赖推送通知，我们建议通知用户，在节电模式打开时，他们可能无法接收通知，并让他们可以轻松地调整“节电模式设置”****。 通过在 Windows 10 `ms-settings:batterysaver-settings` 中使用节电模式设置 URI 架构，可以提供指向“设置”应用的简便链接。
+## Push notifications and battery saver
 
-**提示** 通知用户有关节电模式设置的事项时，我们建议提供在未来阻止消息的方法。 例如，以下示例中的 `dontAskMeAgainBox` 复选框保留用户在 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 中的首选项。
+
+Battery saver extends battery life by limiting background activity on the device. Windows 10 lets the user set battery saver to turn on automatically when the battery drops below a specified threshold. When battery saver is on, the receipt of push notifications is disabled to save energy. But there are a couple exceptions to this. The following Windows 10 battery saver settings (found in the **Settings** app) allow your app to receive push notifications even when battery saver is on.
+
+-   **Allow push notifications from any app while in battery saver**: This setting lets all apps receive push notifications while battery saver is on. Note that this setting applies only to Windows 10 for desktop editions (Home, Pro, Enterprise, and Education).
+-   **Always allowed**: This setting lets specific apps run in the background while battery saver is on - including receiving push notifications. This list is maintained manually by the user.
+
+There is no way to check the state of these two settings, but you can check the state of battery saver. In Windows 10, use the [**EnergySaverStatus**](https://msdn.microsoft.com/library/windows/apps/dn966190) property to check battery saver state. Your app can also use the [**EnergySaverStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn966191) event to listen for changes to battery saver.
+
+If your app depends heavily on push notifications, we recommend notifying users that they may not receive notifications while battery saver is on and to make it easy for them to adjust **battery saver settings**. Using the battery saver settings URI scheme in Windows 10, `ms-settings:batterysaver-settings`, you can provide a convenient link to the Settings app.
+
+**Tip**   When notifying the user about battery saver settings, we recommend providing a way to suppress the message in the future. For example, the `dontAskMeAgainBox` checkbox in the following example persists the user's preference in [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622).
 
  
 
-下面是如何检查 Windows 10 中的节电模式是否已打开的示例。 此示例将通知用户，并将“设置”应用启动到“节电模式设置”****。 `dontAskAgainSetting` 允许用户在不希望再次收到通知时阻止消息。
+Here's an example of how to check if battery saver is turned on in Windows 10. This example notifies the user and launches the Settings app to **battery saver settings**. The `dontAskAgainSetting` lets the user suppress the message if they don't want to be notified again.
 
-```CSharp
+```cs
 using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -220,9 +220,9 @@ async public void CheckForEnergySaving()
 }
 ```
 
-这是适用于此示例中重点介绍的 [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972) 的 XAML。
+This is the XAML for the [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972) featured in this example.
 
-```XAML
+```xaml
 <ContentDialog x:Name="saveEnergyDialog"
                PrimaryButtonText="Open battery saver settings"
                SecondaryButtonText="Ignore"
@@ -240,23 +240,23 @@ async public void CheckForEnergySaving()
 </ContentDialog>
 ```
 
-**注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## <span id="related_topics"></span>相关主题
+## Related topics
 
 
-* [发送本地磁贴通知](tiles-and-notifications-sending-a-local-tile-notification.md)
-* [快速入门：发送推送通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [如何通过推送通知更新锁屏提醒](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何请求、创建和保存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [如何为正在运行的应用程序截获通知](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [如何使用 Windows 推送通知服务 (WNS) 进行验证](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [推送通知服务请求和响应头](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [推送通知指南和清单](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [原始通知](https://msdn.microsoft.com/library/windows/apps/hh761488)
+* [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
+* [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
+* [How to update a badge through push notifications](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [How to intercept notifications for running applications](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [How to authenticate with the Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
+* [Guidelines and checklist for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Raw notifications](https://msdn.microsoft.com/library/windows/apps/hh761488)
  
 
  
@@ -267,6 +267,6 @@ async public void CheckForEnergySaving()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,55 +1,55 @@
 ---
 author: jnHs
-Description: "应用提交进程的年龄分级页面允许你提供有关应用的信息，以便它可以从国际年龄分级联盟 (IARC) 收到相应的年龄分级。"
-title: "年龄分级"
+Description: The Age ratings page of the App submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
+title: Age ratings
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 559842fb6740236780756018d01036b835660309
+ms.sourcegitcommit: 8781eb0e5ea352216a1f4e1c6deedbd04d4b588c
+ms.openlocfilehash: d190a32f16d1e7c1d98e33d1757bc9047277b62b
 
 ---
 
-# 年龄分级
+# Age ratings
 
-[应用提交进程](app-submissions.md)的“年龄分级”****页面允许你提供与你的应用相关的信息，以便它可以从[国际年龄分级联盟 (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) 收到相应的年龄分级。 这些分级与应用及其元数据中的内容的适宜性有关，而与应用的目标受众的年龄无关。
+The **Age ratings** page of the [App submission process](app-submissions.md) lets you provide information about your app so it can receive the appropriate age and content ratings administered by the [International Age Ratings Coalition (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) rating system. These ratings are about the suitability of the content in the app, rather than the age of the target audience for your app.
 
-## 回答年龄分级问卷调查
+## Answering the age ratings questionnaire
 
-首次提交应用（或首次更新使用较早的年龄分级过程发布的应用）时，系统将提示你采用多选问卷调查来确定你的应用的年龄分级。
+The first time you submit an app (or the first time you update an app that was published using the older age rating process), you will be prompted to complete a multiple-choice questionnaire to determine your app’s age rating.
 
-> **重要提示** 如果你已针对其他店面的应用进行了问卷调查并拥有 IARC 分级 ID，则可以选择此选项来向我们提供你的分级 ID。 我们将使用你的 ID 将现有分级与 Windows 应用商店中的应用相关联。
+> **Important**  If you have already completed the questionnaire for your app in another storefront and have an IARC rating ID, you can select the option to provide us with your rating ID. We'll use your ID to associate the existing ratings with your app in the Windows Store.
 
-你需要准确回答这些问题。 在此过程中，我们与 IARC 共享你的发布者显示名称和电子邮件地址。 在你完成问卷调查后，IARC 将根据你的回复分配年龄分级。 我们将在不同市场中向客户显示你的应用时使用这些分级。 你还将收到来自 IARC 的电子邮件，其中包含有关应用分级的信息。
+You are required to answer the questions accurately. As part of this process, we share your publisher display name and email address with IARC. After you complete the questionnaire, the IARC rating system will provide age and content rating information based on your responses. We’ll use this rating information when displaying your app to customers in different markets. You will also receive an email from IARC with a confirmation of the app’s rating when your app has been published.
 
-第一个问题要求你选择最贴切地描述你的应用（及其元数据）的类别。 完成选择后，你将看到其他问题。 你看到的特定问题会因你之前的回答而异。 如果出现失误，你可以重新开始问卷调查来提供正确的答案。
+The first question asks you to choose the category that best describes your app (and its metadata). Once you make a selection, you will see additional questions. The specific questions you see will vary based on your previous answers. If you make a mistake, you can go back or start the questionnaire again to provide the right answers.
 
-当你回答完问题时，请单击“保存并生成”****。 然后，你将看到应用的所有已分配分级，并且可以继续进行提交。 你还可以单击“编辑”****以重新进行问卷调查。
+When you have completed answering the questions, click **Save and generate**. You’ll then see all of the app’s assigned ratings, and can continue with your submission. You can also click **Edit** to correct any of your answers to the questionnaire.
 
-下次更新应用时，你将在该页面上看到应用的所有已分配分级。 如果要重新进行问卷调查，还可以单击“编辑”****。 如果你的应用的内容发生了某种程度上需要你调整你的任何答案的更改，请务必重新进行问卷调查。 IARC 有时还可能会更新问题。 如果发生这种情况，可能会在你提交更新时提示你重新进行问卷调查。
+The next time you update your app, you’ll see all of the app’s assigned ratings on this page. You can also click **Edit** to retake the questionnaire if the content of your app has changed in a way that requires you to adjust any of your answers. IARC may also update the questions from time to time. If this happens, you may be prompted to complete the questionnaire again when you submit an update.
 
-> **注意** 韩国法律要求在韩国上市的游戏应通过韩国[游戏分级委员会](http://go.microsoft.com/fwlink/p/?LinkId=228256)进行分级。 如果你的应用是一款游戏并且想要向韩国提供，则必须填写此条增补款并上传分级证书。 注意，如果你的应用不是游戏或不打算向韩国提供，可以将此部分留空。
+> **Note**  South Korean law requires games made available in South Korea to be rated through the South Korea [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256). If your app is a game, and if you want to offer it in South Korea, you must fill out this additional section and upload your rating certificate. Note that if your app is not a game, or if you don't want to offer it in South Korea, you can leave this section blank.
 
-## 对分级进行申诉或拒绝分类
+## Appealing ratings or refused classifications
 
-如果你对你的应用收到的年龄分级有疑问或希望对其进行申诉，你可以通过显示在分级认证电子邮件中的链接联系 IARC，你将在发布应用后收到该电子邮件。
+If you have questions about the age rating your app received, or wish to appeal it, you can contact IARC via the link that appears in the rating certificate email that you will receive after your app has been published.
 
-在某些情况下，你的应用的分级可能导致其被分类为不适合特定的国家或地区。 如果发生这种情况，你将看到一条消息，指示无法提供你的应用的市场。 如果你不同意该分类，可以使用显示在分级认证电子邮件中的链接请求申诉，你将从 IARC 收到该电子邮件。
+In some cases, the rating for your app may cause it to be classified as inappropriate for a particular country or region. If this occurs, you will see a message indicating the market(s) to which your app can’t be offered. If you disagree with this classification (or any other for that matter), you can request an appeal using the link that appears in the rating certificate email that you will receive from IARC.
 
-## 以前的 Windows 应用商店年龄分级
+## Previous Windows Store age ratings
 
 
-之前，由开发人员为其应用指定年龄分级，而不是通过回答问卷调查。 在下面，查找以前的 Windows 应用商店年龄分级细目：
+Previously, developers specified the age rating for their app rather than completing the questionnaire. Below, find the previous Windows Store age ratings breakdown:
 
-| 年龄分级                           | 描述                            |
+| Age rating                           | Description                            |
 |--------------------------------------|----------------------------------------|
-| 3+（适合幼儿）     | 这些应用包含适合幼儿的内容。 可能会存在非现实的卡通形式的极少量漫画暴力行为。 角色不应该与现实的角色相似或相关联。 不应该存在任何可能会令人害怕的内容，且不应该存在任何裸体或涉及性行为或犯罪活动。 使用此年龄分级的应用也不能启用可能会访问不适合幼儿的内容或功能的功能（例如不受控制地在线共享 12+ 分级类别下描述的信息等）。            |
-| 7+（适合 7 岁及以上年龄）   | 具有此年龄分级的应用与 3+ 应用程序具有相同的条件，但这些应用可以包含可能会惊吓较年幼受众的内容，并且可以包含部分裸露的内容，只要这些裸露不会涉及到性行为。 此分级应该仅用于其内容适合儿童的应用。                                                                                   |
-| 12+（适合 12 岁及以上年龄） | 使用此年龄分级的应用可能会包含更多的非性本质的裸露、针对非现实角色的轻微血腥暴力或针对现实人物或动物角色的非血腥暴力。 此年龄分级可能还包含猥亵，但不具有性本质。 另外，使用此年龄分级或更高分级的应用可以允许不受控制地执行以下操作：(i) 访问在线社交网络，或者 (ii) 与第三方共享个人信息，包括其他玩家或在线熟人。 （若要让此类活动被视为受到控制，你的应用必须包含一些家长控制功能 - 要求家长许可才能使用这些共享功能，你还必须在[认证说明](notes-for-certification.md)中指明这些家长控制选项并说明其功能。） |
-| 16+（适合 16 岁及以上年龄） | 具有此年龄分级的应用可以描绘带最低血腥程度的真实暴力，并且它们可以描绘性行为。 它们还可以包含毒品或烟草的使用和犯罪活动以及比 12+ 应用所允许的更多的猥亵，但是处于应用商店策略所制定的限制内。                                                                                                                           |
-| 18+（适合成人）            | 此年龄分级的游戏可能包含仅适合成人用户的激烈、粗俗或特定暴力、血腥内容。 所有内容都必须符合[内容策略](https://msdn.microsoft.com/library/windows/apps/dn764944)标准。                                                                                                                                                            |
+| 3+ (Suitable for young children)     | These apps contain content suitable for young children. There may be minimal comic violence in non-realistic, cartoon form. Characters should not resemble or be associated with real life characters. There should be no content that could be frightening, and there should be no nudity or references to sexual or criminal activity. Apps with this age rating also cannot enable features that could access content or functionality unsuitable for young children, such as uncontrolled online sharing of information (such as that described under the 12+ ratings category).            |
+| 7+ (Suitable for ages 7 and older)   | Apps with this age rating have the same criteria as the 3+ applications, except these apps can include content that might frighten a younger audience and can contain partial nudity, as long as the nudity doesn't refer to sexual activity. This rating should only be used for apps where the content is suitable for children.                                                                                   |
+| 12+ (Suitable for ages 12 and older) | Apps with this age rating can contain increased nudity of a non-sexual nature, slightly graphic violence towards non-realistic characters, or non-graphic violence towards realistic human or animal characters. This age rating might also include profanity, but not of a sexual nature. Also, apps with this age rating or higher may allow for uncontrolled: (i) access to online social networks, or (ii) sharing of personal info with third parties, including other gamers or online acquaintances. (For such activity to be considered controlled, your app must include parental control features that require parental permission to use such sharing features, and you must identify those and explain their functionality in the [Notes for certification](notes-for-certification.md).) |
+| 16+ (Suitable for ages 16 and older) | Apps with this age rating can depict realistic violence with minimal blood, and they can depict sexual activity. They can also contain drug or tobacco use and criminal activities, and more profanity than would be allowed in a 12+ app, within the limits laid out in the Store Policies.                                                                                                                           |
+| 18+ (Suitable for adults)            | Games with this age rating may contain intense, gross or specific violence, blood or gore which is only suitable for an adult audience. All content must meet the [content policies](https://msdn.microsoft.com/library/windows/apps/dn764944) criteria.                                                                                                                                                            |
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

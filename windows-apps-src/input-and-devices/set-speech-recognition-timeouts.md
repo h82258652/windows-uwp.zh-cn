@@ -1,35 +1,35 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。"
-title: "设置语音识别超时"
+Description: Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
+title: Set speech recognition timeouts
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 99ead02e8886ae79b8e8423ac0f78609b4fa1f6f
+ms.openlocfilehash: 0e5b60b2a59478899343ed4dee9d9c2039607491
 
 ---
 
-# 设置语音识别超时
-设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。
+# Set speech recognition timeouts
+Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
 
-**重要的 API**
+**Important APIs**
 
--   [**超时**](https://msdn.microsoft.com/library/windows/apps/dn653253)
+-   [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)
 -   [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
 
 
-## 设置超时
+## Set a timeout
 
 
-我们在此处指定各种 [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) 值：
+Here, we specify various [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) values:
 
--   InitialSilenceTimeout - SpeechRecognizer 检测静默（在生成任何识别结果之前），并假定语音输入尚未进行的时长。
--   BabbleTimeout - SpeechRecognizer 先继续侦听无法识别的声音（干扰），之后再假定语音输入已结束并结束识别操作的时长。
--   EndSilenceTimeout - SpeechRecognizer 检测静默（在生成任何识别结果之后），并假定语音输入已结束的时长。
+-   InitialSilenceTimeout - The length of time that a SpeechRecognizer detects silence (before any recognition results have been generated) and assumes speech input is not forthcoming.
+-   BabbleTimeout - The length of time that a SpeechRecognizer continues to listen to unrecognizable sounds (babble) before it assumes speech input has ended and finalizes the recognition operation.
+-   EndSilenceTimeout - The length of time that a SpeechRecognizer detects silence (after recognition results have been generated) and assumes speech input has ended.
 
-**注意** 可以基于每个识别器设置超时。
+**Note**  Timeouts can be set on a per-recognizer basis.
 
  
 
@@ -40,12 +40,12 @@ recognizer.Timeouts.BabbleTimeout = TimeSpan.FromSeconds(4.0);
 recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 ```
 
-## 相关文章
+## Related articles
 
 
-* [语音交互](speech-interactions.md) 
-           **示例**
-* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Speech interactions](speech-interactions.md)
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -56,6 +56,6 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

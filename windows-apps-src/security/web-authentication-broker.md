@@ -1,39 +1,39 @@
 ---
-title: "Web 身份验证代理"
-description: "本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。"
+title: Web authentication broker
+description: This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on.
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd
+ms.openlocfilehash: ea3d3e1df07c8cf9701e7bd39af006cd681ef1fe
 
 ---
 
-# Web 身份验证代理
+# Web authentication broker
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文介绍了如何将通用 Windows 平台 (UWP) 应用连接到使用身份验证协议（如 OpenID 或 OAuth）的联机标识提供商（如 Facebook、Twitter、Flickr、Instagram 等）。 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供者，并取回描述应用有权访问的提供者资源的访问令牌。
+This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on. The [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method sends a request to the online identity provider and gets back an access token that describes the provider resources to which the app has access.
 
-**注意** 有关完整的有效代码示例，请克隆 [GitHub 上的 WebAuthenticationBroker 存储库](http://go.microsoft.com/fwlink/p/?LinkId=620622)。
+**Note**  For a complete, working code sample, clone the [WebAuthenticationBroker repo on GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
 
  
 
-## 向联机提供商注册应用
+## Register your app with your online provider
 
 
-你必须将你的应用注册到要连接到的联机标识提供商。 可从标识提供商处找到如何注册应用的信息。 注册后，联机提供商通常会向你提供应用的 ID 或私钥。
+You must register your app with the online identity provider to which you want to connect. You can find out how to register your app from the identity provider. After registering, the online provider typically gives you an Id or secret key for your app.
 
-## 生成身份验证请求 URI
+## Build the authentication request URI
 
 
-请求 URI 由以下内容组成：你将身份验证请求发送到联机提供商的地址，其中附有其他所需信息，例如应用 ID 或机密信息、用户在完成身份验证后发送的重定向 URI 以及预期响应类型。 你可以从你的提供商处找到需要的参数。
+The request URI consists of the address where you send the authentication request to your online provider appended with other required information, such as an app ID or secret, a redirect URI where the user is sent after completing authentication, and the expected response type. You can find out from your provider what parameters are required.
 
-请求 URI 作为 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法的 *requestUri* 参数进行发送。 它必须是安全地址（即，必须以 https:// 开始）
+The request URI is sent as the *requestUri* parameter of the [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method. It must be a secure address (it must start with https://)
 
-下例介绍如何建立请求 URI。
+The following example shows how to build the request URI.
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>&scope=<scopes>&response_type=token";
@@ -43,10 +43,10 @@ System.Uri startURI = new System.Uri(startURL);
 System.Uri endURI = new System.Uri(endURL);
 ```
 
-## 连接到联机提供商
+## Connect to the online provider
 
 
-调用 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法以连接到联机标识提供者并获取访问令牌。 该方法将上一步骤中构建的 URI 用作 *requestUri* 参数，并将你希望用户被重定向到的 URI 用作 *callbackUri* 参数。
+You call the [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method to connect to the online identity provider and get an access token. The method takes the URI constructed in the previous step as the *requestUri* parameter, and a URI to which you want the user to be redirected as the *callbackUri* parameter.
 
 ```cs
 string result;
@@ -82,14 +82,14 @@ catch (Exception ex)
 }
 ```
 
-除 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 之外，[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 命名空间还包括 [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) 方法。 请勿调用此方法。 它仅为面向 Windows Phone 8.1 的应用设计，并从 Windows 10 开始已启用。
+In addition to [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), the [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) namespace contains an [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) method. Do not call this method. It is designed for apps targeting Windows Phone 8.1 only and is deprecated starting with Windows 10.
 
-## 使用单一登录 (SSO) 连接。
+## Connecting with single sign-on (SSO).
 
 
-默认情况下，Web 身份验证代理不允许保留 cookie。 正因为如此，所以即使应用用户指示他们希望保留登录状态（例如，通过选择提供商的登录对话框中的复选框），他们也必须在每次希望访问该提供商的资源时登录。 若要使用 SSO 登录，则联机标识提供者必须为 Web 身份验证代理启用 SSO，而你的应用必须调用未获取 *callbackUri* 参数的 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) 的重载。
+By default, Web authentication broker does not allow cookies to persist. Because of this, even if the app user indicates that they want to stay logged in (for example, by selecting a check box in the provider's login dialog), they will have to login each time they want to access resources for that provider. To login with SSO, your online identity provider must have enabled SSO for Web authentication broker, and your app must call the overload of [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) that does not take a *callbackUri* parameter.
 
-若要支持 SSO，联机提供商必须允许你采用 `ms-app://`*appSID* 形式注册重定向 URI，其中 *appSID* 为应用的 SID。 可从应用开发人员页面中为应用找到应用的 SID，或通过调用 [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) 方法（也可以达到此目的）。
+To support SSO, the online provider must allow you to register a redirect URI in the form `ms-app://`*appSID*, where *appSID* is the SID for your app. You can find your app's SID from the app developer page for your app, or by calling the [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) method.
 
 ```cs
 string result;
@@ -124,40 +124,40 @@ catch (Exception ex)
 }
 ```
 
-## 调试
+## Debugging
 
 
-有多种方法对 Web 身份验证代理 API 进行疑难解答，包括查看操作日志和使用 Fiddler 查看 Web 请求和响应。
+There are several ways to troubleshoot the web authentication broker APIs, including reviewing operational logs and reviewing web requests and responses using Fiddler.
 
-### 操作日志
+### Operational logs
 
-操作日志通常用来确定哪些内容不工作。 有一个专门的事件日志通道 Microsoft-Windows-WebAuth\\Operational，该通道允许网站开发人员了解 Web 身份验证代理正在如何处理其网页。 为了启用操作日志，请启动 eventvwr.exe 并在“Application and Services\\Microsoft\\Windows\\WebAuth“下启用 Operational 日志。 此外，Web 身份验证代理还在用户代理字符串后面附加一个用来在 Web 服务器上标识其本身的唯一字符串。 该字符串为“MSAuthHost/1.0”。 请注意，版本号可能会在将来更改，因此，不应当在代码中依赖该版本号。 如下所示是带有全部调试步骤的完整用户代理字符串示例。
+Often you can determine what is not working by using the operational logs. There is a dedicated event log channel Microsoft-Windows-WebAuth\\Operational that allows website developers to understand how their web pages are being processed by the Web authentication broker. To enable it, launch eventvwr.exe and enable Operational log under the Application and Services\\Microsoft\\Windows\\WebAuth. Also, the Web authentication broker appends a unique string to the user agent string to identify itself on the web server. The string is "MSAuthHost/1.0". Note that the version number may change in the future, so you should not to depend on that version number in your code. An example of the full user agent string, followed by full debugging steps, is as follows.
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
-1.  启用操作日志。
-2.  运行 Contoso 社交应用程序。 ![显示 WebAuth 操作日志的事件查看器](images/wab-event-viewer-1.png)
-3.  所生成的日志条目可用来更详细地了解 Web 身份验证代理的行为。 在本例中，这些行为包括：
-    -   导航开始：记录 AuthHost 何时启动，包含有关起始和终止 URL 的信息。
-    -   ![阐释“导航开始”的详细信息](images/wab-event-viewer-2.png)
-    -   导航完成：记录网页已完成加载。
-    -   Meta 标记：记录何时遇到了 meta 标记（包括详细信息）。
-    -   导航终止：导航由用户终止。
-    -   导航错误：AuthHost 在某个 URL 处遇到一个导航错误（包括 HttpStatusCode）。
-    -   导航结束：遇到了终止 URL。
+1.  Enable operational logs.
+2.  Run Contoso social application. ![event viewer displaying the webauth operational logs](images/wab-event-viewer-1.png)
+3.  The generated logs entries can be used to understand the behavior of Web authentication broker in greater detail. In this case, these can include:
+    -   Navigation Start: Logs when the AuthHost is started and contains information about the start and termination URLs.
+    -   ![illustrates the details of navigation start](images/wab-event-viewer-2.png)
+    -   Navigation Complete: Logs the completion of loading a web page.
+    -   Meta Tag: Logs when a meta-tag is encountered including the details.
+    -   Navigation Terminate: Navigation terminated by the user.
+    -   Navigation Error: AuthHost encounters a navigation error at a URL including HttpStatusCode.
+    -   Navigation End: Terminating URL is encountered.
 
 ### Fiddler
 
-Fiddler Web 调试程序可与应用一起使用。
+The Fiddler web debugger can be used with apps.
 
-1.  由于 AuthHost 在自己的应用容器中运行以实现它的私有网络功能，所以必须设置注册表项：Windows 注册表编辑器版本 5.00
+1.  Since the AuthHost runs in its own app container to give it the private network capability, you must set a registry key: Windows Registry Editor Version 5.00
 
-    **HKEY\_LOCAL\_MACHINE** \\ **SOFTWARE** \\ **Microsoft** \\ **Windows NT** \\ **CurrentVersion** \\ **Image File Execution Options** \\ **authhost.exe** \\ **EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
 
-2.  为 AuthHost 添加规则，因为这是出站流量的来源。
+2.  Add a rule for the AuthHost as this is what is generating the outbound traffic.
     ```syntax
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.a.p_8wekyb3d8bbwe
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.sso.p_8wekyb3d8bbwe
@@ -175,9 +175,9 @@ Fiddler Web 调试程序可与应用一起使用。
         SID:  S-1-15-2-3506084497-1208594716-3384433646-2514033508-1838198150-1980605558-3480344935
     ```
 
-3.  针对传入 Fiddler 的流量添加防火墙规则。
+3.  Add a firewall rule for incoming traffic to Fiddler.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

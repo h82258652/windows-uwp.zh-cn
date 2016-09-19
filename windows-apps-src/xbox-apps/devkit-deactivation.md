@@ -1,93 +1,93 @@
 ---
 author: Mtoepke
-title: "Xbox One 开发人员模式停用"
-description: "如何停用开发人员模式。"
-area: Xbox
+title: Xbox One Developer Mode deactivation
+description: How to deactivate Developer Mode.
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
+ms.sourcegitcommit: c80849904eccae1ef0e0740bb4e882f7f0f37cc8
+ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
 
 ---
 
-# Xbox One 开发人员模式停用
+# Xbox One Developer Mode deactivation
 
-* [切换到零售模式](#switch-to-retail-mode)
-* [使用“开发人员模式激活”应用停用主机](#deactivate-your-console-using-the-dev-mode-activation-app)  
-* [重置主机](#reset-your-console)
-* [使用 Windows 开发人员中心停用主机](#deactivate-your-console-using-windows-dev-center)
+* [Switch to Retail Mode](#switch-to-retail-mode)
+* [Deactivate your console using the Dev Mode Activation app](#deactivate-your-console-using-the-dev-mode-activation-app)  
+* [Reset your console](#reset-your-console)
+* [Deactivate your console using Windows Dev Center](#deactivate-your-console-using-windows-dev-center)
 
-如果你决定不再希望将主机用于开发，请使用以下步骤停用开发人员模式。
+If you decide you no longer want to use your console for development, use the following steps to deactivate Developer Mode.
 
-## 切换到零售模式
-首先，将你的 Xbox One 主机返回到零售模式。
+## Switch to Retail Mode
+First, return your Xbox One console to Retail Mode.
 
-1. 打开“开发人员主页”****。
-2. 单击“退出开发人员模式”****。  主机将在零售模式下重新启动。  
+1. Open **Dev Home**.
+2. Click **Leave developer mode**.  Your console will restart in Retail Mode.  
 
    ![](images/deactivation-leave-dev-mode.png)
 
-现在，可使用以下方法之一停用你的主机。
+Now deactivate your console by using one of the following methods.
 
-## 使用“开发人员模式激活”应用停用主机
+## Deactivate your console using the Dev Mode Activation app
 
-在主机上停用开发人员模式的首选方法是使用“开发人员模式激活”应用。 
+The preferred method of deactivating Developer Mode on your console is to use the Dev Mode Activation app. 
 
-1. 导航到“我的游戏和应用”**** > “应用”****。
+1. Navigate to **My games & apps** > **Apps**.
   
-   ![激活步骤 3](images/activation-step-3.png)    
+   ![Activation Step 3](images/activation-step-3.png)    
    
-2.  打开“开发人员模式激活”应用。    
-3.  单击“停用”****。
+2.  Open the Dev Mode Activation app.    
+3.  Click **Deactivate**.
   
-![停用主机](images/deactivation-app.png)
+![Deactivate console](images/deactivation-app.png)
 
-## 重置主机
+## Reset your console
 
-也可以通过重置你的主机来停用开发人员模式。  
+You can also deactivate Developer Mode by resetting your console.  
 
-> **注意** &nbsp;&nbsp;在重置主机时，将丢失所有本地保存的游戏数据。
+> [!NOTE]
+> When you reset your console, all local save game data will be lost.
 
-若要重置主机，请执行以下步骤：
+To reset your console perform the following steps:
 
-1.  转到“我的游戏和应用”****。  
-2.  选择“应用”****，然后选择“设置”****。  
-3.  转到左侧窗格中的“系统”****，然后选择右侧窗格中的“主机信息和更新”****。  
-4.  转到“主机信息和更新”****。  
+1.  Go to **My games & apps**.  
+2.  Select **Apps**, and then select **Settings**.  
+3.  Go to **System** in the left pane, and then select **Console info & updates** in the right pane.  
+4.  Go to **Console info & updates**.  
    
-    ![主机信息和更新](images/deactivation-console-info-updates.png)  
+    ![Console info and updates](images/deactivation-console-info-updates.png)  
     
-5.  单击“重置主机”****。
+5.  Click **Reset console**.
     
-    ![重置主机](images/deactivation-reset-console.png)
+    ![Reset console](images/deactivation-reset-console.png)
     
-6.  接下来，单击“重置和删除所有内容”****。 此选项用于将主机重置为其原始零售状态。  将删除所有应用、游戏和本地保存数据。 请注意，如果选择另一选项“重置并保留我的游戏和应用”****，将无法从开发人员计划中删除你的主机。  
+6.  Next, click **Reset and remove everything**. This option resets the console to its original retail state.  All of your apps, games, and local save data will be deleted. Note that choosing the other option, **Reset and keep my games & apps**, will not remove your console from the developer program.  
    
-    ![重置和删除所有内容](images/deactivation-reset-remove.png)
+    ![Reset and remove everything](images/deactivation-reset-remove.png)
 
-## 使用 Windows 开发人员中心停用主机
+## Deactivate your console using Windows Dev Center
 
-如果你因某种原因而无法访问你的主机，还使用 Windows 开发人员中心来停用主机上的开发人员模式。
+If you are unable to access your console for any reason, you can also deactivate Developer Mode on your console by using Windows Dev Center.
 
-1. 转到 [developer.microsoft.com/xboxdevices](https://developer.microsoft.com/xboxdevices)。    
-2. 使用你的开发人员中心帐户登录到开发人员中心。    
-3. 通过匹配序列号、主机 ID 或设备 ID，在主机列表中找到要停用的主机。  
-4. 单击“停用”****。  
+1. Go to [developer.microsoft.com/xboxdevices](https://developer.microsoft.com/xboxdevices).    
+2. Sign in to Dev Center with your Dev Center account.    
+3. Find the console that you want to deactivate in the list of consoles by matching the serial number, console ID, or the device ID.  
+4. Click **Deactivate**.  
   
-![使用 DevCenter 执行停用](images/deactivation-devcenter.png)
+![Deactivate using DevCenter](images/deactivation-devcenter.png)
 
-如果你之前未将 Xbox One 主机返回到零售模式，请立即执行此操作。
+If you didn't previously return your Xbox One console to Retail Mode, do so now.
 
-1. 启动“开发人员主页”****。
-2. 单击“退出开发人员模式”****。  主机将在零售模式下重新启动。
+1. Launch **Dev Home**.
+2. Click **Leave developer mode**.  Your console will restart in Retail Mode.
 
-![激活步骤 13](images/deactivation-leave-dev-mode.png)
+![Activation Step 13](images/deactivation-leave-dev-mode.png)
 
-## 另请参阅
-- [Xbox One 开发人员模式激活](devkit-activation.md)
-- [Xbox One 上的 UWP](index.md)
+## See also
+- [Xbox One Developer Mode activation](devkit-activation.md)
+- [UWP on Xbox One](index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

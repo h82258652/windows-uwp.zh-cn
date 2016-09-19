@@ -1,34 +1,34 @@
 ---
 author: seksenov
-title: "托管 Web 应用 - 访问通用 Windows 平台 (UWP) 功能和运行时 API"
-description: "访问通用 Windows 平台 (UWP) 本机功能和 Windows 10 运行时 API，包括 Cortona 语音命令、动态磁贴、用于实现安全的 ACUR、OpenID、OAuth 以及来自远程 JavaScript 中的全部内容。"
+title: Hosted Web Apps - Accessing Universal Windows Platform (UWP) features and Runtime APIs
+description: Access Universal Windows Platform (UWP) native features and Windows 10 Runtime APIs, including Cortona voice commands, Live Tiles, ACURs for security, OpenID and OAuth, all from remote JavaScript.
 kw: Hosted Web Apps, Accessing Windows 10 features from remote JavaScript, Building a Win10 Web Application, Windows JavaScript Apps, Microsoft Web Apps, HTML5 app for PC, ACUR URI Rules for Windows App, Call Live Tiles with web app, Use Cortana with web app, Access Cortana from website, msapplication-cortanavcd
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a7f7dccb9c7461e482bd43c8f370a2a7244eb735
+ms.openlocfilehash: fb74bfc40750941860dae0a8f811fde4a614e403
 
 ---
 
-# 访问通用 Windows 平台 (UWP) 功能
+# Accessing Universal Windows Platform (UWP) features
 
-你的 Web 应用程序可以具有对通用 Windows 平台 (UWP) 的完全访问权限，从而可以激活 Windows 设备上的本机功能、[受益于 Windows 安全](#keep-your-app-secure-setting-application-content-uri-rules-acurs)、从托管在服务器上的脚本直接[调用 Windows 运行时 API](#call-windows-runtime-apis)、利用 [Cortana 集成](#integrate-cortana-voice-commands)，以及使用[联机验证提供程序](#web-authentication-broker)。 [混合应用](#create-hybrid-apps-packaged-web-apps-vs-hosted-web-apps)也受支持，因为你可以包含可从托管脚本调用的本地代码，并在远程页面和本地页面之间管理应用导航。
+Your web application can have full access to the Universal Windows Platform (UWP), activating native features on Windows devices, [benefiting from Windows security](#keep-your-app-secure-setting-application-content-uri-rules-acurs), [calling Windows Runtime APIs](#call-windows-runtime-apis) directly from script hosted on a server, leveraging [Cortana integration](#integrate-cortana-voice-commands), and using an [online authentication provider](#web-authentication-broker). [Hybrid apps](#create-hybrid-apps-packaged-web-apps-vs-hosted-web-apps) are also supported as you can include local code to be called from the hosted script and manage app navigation between remote and local pages.
 
-## 确保应用安全 – 设置应用程序内容 URI 规则 (ACUR)
+## Keep your app secure – Setting Application Content URI Rules (ACURs)
 
-通过 ACUR（也称为 URL 允许列表），你可以实现对远程 HTML、CSS 和 JavaScript 中的通用 Windows API 的远程 URL 直接访问。 已在 Windows 操作系统级别设置正确策略边界，允许 Web 服务器上托管的代码直接调用平台 API。 当你将构成托管 Web 应用的一组 URL 置于应用程序内容 URI 规则 (ACUR) 中时，请在应用包清单中定义这些边界。 你的规则应包括应用起始页和你希望作为应用页包括进来的任何其他页面。 你也可以选择排除特定 URL。
+Through ACURs, otherwise known as a URL allow list, you are able to give remote URLs direct access to Universal Windows APIs from remote HTML, CSS, and JavaScript. At the Windows OS level, the right policy bounds have been set to allow code hosted on your web server to directly call platform APIs. You define these bounds in the app package manifest when you place the set of URLs that make up your Hosted Web App in the Application Content URI Rules (ACURs). Your rules should include your app’s start page and any other pages you want included as app pages. Optionally, you can exclude specific URLs, too.
 
-可通过多种方式在规则中指定 URI 匹配：
+There are several ways to specify a URL match in your rules:
 
-- 确切的主机名
-- 已包括或排除含有某个主机名的任何子域的 URI 对应的主机名
-- 确切的 URI
-- 可以包含查询属性的确切 URI
-- 部分路径和用于指示包含规则的特定文件扩展名的通配符。
-- 排除规则的相对路径
+- An exact hostname
+- A hostname for which a URI with any subdomain of that hostname is included or excluded
+- An exact URI
+- An exact URI that can contain a query property
+- A partial path and a wildcard to indicate a particular file extension for an include rule
+- Relative paths for exclude rules
 
-如果你的用户导航到一个未包含在规则中的 URL，Windows 会使用浏览器打开目标 URL。
+If your user navigates to a URL that is not included in your rules, then Windows opens the target URL in a browser.
 
-下面是几个 ACUR 示例。
+Here are a few examples of ACURs.
 
 ```HTML
 <Application
@@ -41,17 +41,17 @@ StartPage="http://contoso.com/home">
 </uap:ApplicationContentUriRules>
 ```
 
-## 调用 Windows 运行时 API
+## Call Windows Runtime APIs
 
-如果 URL 定义在应用的边界 (ACUR) 内，则它可以使用“WindowsRuntimeAccess”属性调用使用 JavaScript 的 Windows 运行时 API。 当具有相应访问权限的 URL 载入应用主机时，Windows 命名空间会注入并呈现在脚本引擎中。 这使应用的脚本可以直接调用通用 Windows API。 作为一名开发人员，只需对你想要调用的 Windows API 执行功能检测，如果有的话，继续执行以启用平台功能。
+If a URL is defined within the app’s bounds (ACURs), it can call Windows Runtime APIs with JavaScript using the “WindowsRuntimeAccess” attribute. The Windows namespace will be injected and present in the script engine when a URL with appropriate access is loaded in the App Host. This makes Universal Windows APIs available for the app’s scripts to call directly. As a developer, you just need to feature detect for the Windows API you would like to call and, if available, proceed to light-up platform features.
 
-若要启用此功能，需要在 ACUR 中使用以下任一值指定 `(WindowsRuntimeAccess="<<level>>")` 属性：
+To enable this, you need to specify the `(WindowsRuntimeAccess="<<level>>")` attribute in the ACURs with the one of these values:
 
-- **all**：远程 JavaScript 代码有权访问所有 UWP API 和任何本地封装组件。
-- **allowForWeb**：远程 JavaScript 代码只有权访问程序包中的自定义代码。 本地访问自定义 C++/C# 组件。
-- **none**：默认值。 指定的 URL 不具有任何平台访问权限。
+- **all**: Remote JavaScript code has access to all UWP APIs and any local packaged components.
+- **allowForWeb**: Remote JavaScript code has access to custom in package code only. Local access to custom C++/C# components.
+- **none**: Default. The specified URL has no platform access.
 
-下面是一个规则类型示例：
+Here is an example rule type:
 
 ```HTML
 <uap:ApplicationContentUriRules>
@@ -59,9 +59,9 @@ StartPage="http://contoso.com/home">
 </uap:ApplicationContentUriRules>
 ```
 
-这会向在 http://contoso.com/ 上运行的脚本授予访问 Windows 运行时命名空间和该程序包中的自定义封装组件的权限。 请参阅 GitHub 上的 [Windows.UI.Notifications.js](https://gist.github.com/Gr8Gatsby/3d471150e5b317eb1813#file-windows-ui-notifications-js) 示例，以获取 Toast 通知。
+This gives script running on http://contoso.com/ access to Windows Runtime namespaces and custom packaged components in the package. See the [Windows.UI.Notifications.js](https://gist.github.com/Gr8Gatsby/3d471150e5b317eb1813#file-windows-ui-notifications-js) example on GitHub for toast notifications.
 
-下面是一个如何实现动态磁贴以及通过远程 JavaScript 对它进行更新的示例：
+Here is an example of how to implement a Live Tile and update it from remote JavaScript:
 
 ```Javascript
 function updateTile(message, imgUrl, imgAlt) {
@@ -89,70 +89,70 @@ function updateTile(message, imgUrl, imgAlt) {
 }
 ```
 
-此代码将生成一个如下所示的磁贴：
+This code will produce a tile that looks something like this:
 
-![Windows 10 调用动态磁贴](images/hwa-to-uwp/hwa_livetile.png)
+![Windows 10 calling a live tile](images/hwa-to-uwp/hwa_livetile.png)
 
-无论使用何种环境或技术，调用 Windows 运行时 API 对你来说都非常熟悉，只需将你的资源保留在服务器功能上（这些服务器功能在调用 Windows 功能之前，会先对它们进行检测）。 如果平台功能不可用，并且 Web 应用在另一台主机上运行，你可以向用户提供适用于该浏览器的默认标准体验。
+Call Windows Runtime APIs with whatever environment or technique is most familiar to you by keeping your resources on a server feature detecting for Windows capabilities prior to calling them. If platform capabilities are not available, and the web app is running in another host, you can provide the user with a standard default experience that works in the browser.
 
-## 集成 Cortana 语音命令
+## Integrate Cortana voice commands
 
-你可以通过在 html 页面中指定语音命令定义 (VCD) 文件来充分利用 Cortana 集成。 VCD 文件是一个用于将命令映射到特定短语的 xml 文件。 例如，用户可以点击“开始”按钮并说出“Contoso Books，显示畅销商品”，该操作可以同时启动 Contoso Books 应用并导航至“畅销商品”页面。
+You can take advantage of Cortana integration by specifying a Voice Command Definition (VCD) file in your html page. The VCD file is an xml file that maps commands to specific phrases. For example, a user could tap the Start button and say “Contoso Books, show best sellers” to both launch the Contoso Books app and to navigate to a “best sellers” page.
 
-当你添加可列出 VCD 文件位置的 `<meta>` 元素标记时，Windows 将自动下载并注册语音命令定义文件。
+When you add a `<meta>` element tag that lists the location of your VCD file, Windows automatically downloads and registers the Voice Command Definition file.
 
-下面是该标记在托管 Web 应用的 html 页面中的用法示例：
+Here is an example of the use of the tag in an html page in a hosted web app:
 
 ```HTML
 <meta name="msapplication-cortanavcd" content="http:// contoso.com/vcd.xml"/>
 ```
 
-有关 Cortana 集成和 VCD 的详细信息，请参阅“Cortana 交互”和“语音命令定义 (VCD) 元素和属性 v1.2”。
+For more info on Cortana integration and VCDs, see Cortana interactions and Voice Command Defintion (VCD) elements and attributes v1.2.
 
-## 创建混合应用 - 封装 Web 应用与托管 Web 应用
+## Create Hybrid apps – Packaged web apps vs. Hosted web apps
 
-你拥有用于创建 UWP 应用的选项。 应用可能设计为从 Windows 应用商店下载，并完全在本地客户端上托管，通常称为**封装 Web 应用**。 这允许你在任何兼容的平台上脱机运行应用。 或该应用可能是在远程 Web 服务器上运行的完全托管 Web 应用，通常称为**托管 Web 应用**。 但也存在第三个选项：应用的一部分可在本地客户端上托管，一部分在远程 Web 服务器上托管。 我们将第三个选项称为**混合应用**，并且它通常使用 **WebView** 组件使远程内容看起来像本地内容。 混合应用可包含 HTML5、CSS 和在本地应用客户端中作为程序包运行的 Javascript 代码，并保留与远程内容交互的能力。
+You have options for creating your UWP app. The app might be designed to be downloaded from the Windows Store and fully hosted on the local client; often referred to as a **Packaged Web App**. This lets you run your app offline on any compatible platform. Or the app might be a fully hosted web app that runs on a remote web server; typically known as a **Hosted Web App**. But there is also a third option: the app can be hosted partially on the local client and partially on a remote web server. We call this third option a **Hybrid app** and it typically uses the **WebView** component to make remote content look like local content. Hybrid apps can include your HTML5, CSS, and Javascript code running as a package inside the local app client and retain the ability to interact with remote content.
 
-## Web 身份验证代理
+## Web authentication broker
 
-如果你具有使用 Internet 身份验证和授权协议（如 OpenID 或 OAuth）的联机身份提供商，则可以使用 Web 身份验证代理为你的用户处理登录流程。 可以在你的应用的 html 页面上的 `<meta>` 标记中指定起始和结束 URI。 Windows 将检测到这些 URI，并将其传递到 Web 身份验证代理来完成登录流程。 起始 URI 由以下内容组成：你将身份验证请求发送到联机提供商的地址，其中附有其他所需信息，例如应用 ID 、用户在完成身份验证后发送的重定向 URI 以及预期响应类型。 你可以从你的提供商处找到需要的参数。 下面是 `<meta>` 标记的用法示例：
+You can use the web authentication broker to handle the login flow for your users if you have an online identity provider that uses internet authentication and authorization protocols like OpenID or OAuth. You specify the start and end URIs in a `<meta>` tag on an html page in your app. Windows detects these URIs and passes them to the web authentication broker to complete the login flow. The start URI consists of the address where you send the authentication request to your online provider appended with other required information, such as an app ID, a redirect URI where the user is sent after completing authentication, and the expected response type. You can find out from your provider what parameters are required. Here is an example use of the `<meta>` tag:
 
 ```HTML
 <meta name="ms-webauth-uris" content="https://<providerstartpoint>?client_id=<clientid>&response_type=token, https://<appendpoint>"/>
 ```
 
-有关更多指南，请参阅[联机提供商的 Web 身份验证代理注意事项](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)。
+For more guidance, see [Web authentication broker considerations for online providers](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx).
 
-## 应用功能声明
+## App capability declarations
 
-如果应用需要以编程方式访问用户资源（如图片或音乐）或设备（如相机或麦克风），你必须声明相应的功能。 三种应用功能声明类别如下所示： 
+If your app needs programmatic access to user resources like pictures or music, or to devices like a camera or a microphone, you must declare the appropriate capability. There are three app capability declaration categories: 
 
-- 适用于大多数常见应用场景的[通用功能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#General-use_capabilities)。 
-- 允许你的应用访问外围设备和内部设备的[设备功能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Device_capabilities)。 
-- 需要使用特殊的公司帐户才能提交到应用商店以供使用的[特殊用途的功能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Special_and_restricted_capabilities)。 
+- [General-use capabilities](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#General-use_capabilities) that apply to most common app scenarios. 
+- [Device capabilities](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Device_capabilities) that allow your app to access peripheral and internal devices. 
+- [Special-use capabilities](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Special_and_restricted_capabilities) that require a special company account for submission to the Store to use them. 
 
-有关公司帐户的详细信息，请参阅[帐户类型、位置和费用](https://msdn.microsoft.com/library/windows/apps/jj863494.aspx)。
+For more info about company accounts, see [Account types, locations, and fees](https://msdn.microsoft.com/library/windows/apps/jj863494.aspx).
 
 > [!NOTE]
-> 请务必了解，当客户从 Windows 应用商店获取你的应用时，会向他们告知该应用声明的所有功能。 因此，不要使用你的应用不需要的功能。
+> It is important to know that when customers get your app from the Windows Store, they are notified of all the capabilities that the app declares. So do not use capabilities that your app does not need.
 
-可以通过在应用的[程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)中声明功能来请求访问权限。 可以使用 Microsoft Visual Studio 中的[清单设计器](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx#Configure)来声明常用功能，也可以手动添加它们 - 请参阅[如何在程序包清单中指定功能](https://msdn.microsoft.com/library/windows/apps/br211477.aspx)。
+You request access by declaring capabilities in your app’s [package manifest](https://msdn.microsoft.com/library/windows/apps/br211474.aspx). You can declare general capabilities by using the [Manifest Designer](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx#Configure) in Microsoft Visual Studio, or you can add them manually—-see [How to specify capabilities in a package manifest](https://msdn.microsoft.com/library/windows/apps/br211477.aspx).
 
-某些功能为应用提供对敏感资源的访问权限。 由于这些资源可用于访问用户个人数据或花费用户金钱，因此它们被认为是敏感资源。 由“设置”应用管理的隐私设置允许用户动态控制对敏感资源的访问权限。 因此，你的应用不会假设敏感资源始终可用，这一点很重要。 有关访问敏感资源的详细信息，请参阅[隐私感知应用指南](https://msdn.microsoft.com/library/windows/apps/hh768223.aspx)。
+Some capabilities provide apps access to a sensitive resource. These resources are considered sensitive because they can access the user’s personal data or cost the user money. Privacy settings, managed by the Settings app, let the user dynamically control access to sensitive resources. Thus, it’s important that your app doesn’t assume a sensitive resource is always available. For more info about accessing sensitive resources, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223.aspx).
 
-## manifoldjs 和应用部件清单
+## manifoldjs and the app manifest
 
-将网站转换为 UWP 应用的简单方法是使用**应用部件清单**和 **manifoldjs**。 应用部件清单是一个包含有关该应用元数据的 xml 文件。 它指定诸如应用名称、指向资源的链接、显示模式、URL 和其他描述应如何部署和运行应用的数据等内容。 manifoldjs 使此过程变得非常简单，即使在不支持 Web 应用的系统上也是如此。 有关其工作原理的详细信息，请转到 [manifoldjs.com](http://www.manifoldjs.com/)。 还可查看作为此 [Windows 10 Web 应用演示文稿](http://channel9.msdn.com/Events/WebPlatformSummit/2015/Hosted-web-apps-and-web-platform-innovations?wt.mc_id=relatedsession)一部分的 manifoldjs 演示。
+An easy way to turn your website into a UWP app is to use an **app manifest** and **manifoldjs**. The app manifest is an xml file that contains metadata about the app. It specifies such things as the app’s name, links to resources, display mode, URLs, and other data that describes how the app should be deployed and run. manifoldjs makes this process very easy, even on systems that do not support web apps. Please go to [manifoldjs.com](http://www.manifoldjs.com/) for more information on how it works. You can also view a manifoldjs demonstration as part of this [Windows 10 Web Apps presentation](http://channel9.msdn.com/Events/WebPlatformSummit/2015/Hosted-web-apps-and-web-platform-innovations?wt.mc_id=relatedsession).
 
-## 相关主题
-- [Windows 运行时 API：JavaScript 代码示例](http://rjs.azurewebsites.net/)
-- [Codepen：用于调用 Windows 运行时 API 的沙盒](http://codepen.io/seksenov/pen/wBbVyb/)
-- [Cortana 交互](https://msdn.microsoft.com/library/windows/apps/dn974231.aspx)
-- [语音命令定义 (VCD) 元素和属性 v1.2](https://msdn.microsoft.com/library/windows/apps/dn954977.aspx)
-- [联机提供商的 Web 身份验证代理注意事项](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)
-- [应用功能声明](https://msdn.microsoft.com/ibrary/windows/apps/hh464936.aspx)
+## Related topics
+- [Windows Runtime API: JavaScript Code Samples](http://rjs.azurewebsites.net/)
+- [Codepen: sandbox to use for calling Windows Runtime APIs](http://codepen.io/seksenov/pen/wBbVyb/)
+- [Cortana interactions](https://msdn.microsoft.com/library/windows/apps/dn974231.aspx)
+- [Voice Command Definition (VCD) elements and attributes v1.2](https://msdn.microsoft.com/library/windows/apps/dn954977.aspx)
+- [Web authentication broker considerations for online providers](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)
+- [App capability declarations](https://msdn.microsoft.com/ibrary/windows/apps/hh464936.aspx)
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

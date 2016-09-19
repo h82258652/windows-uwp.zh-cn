@@ -1,104 +1,108 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: This article describes how to import media from a device, including searching for available media sources, importing files such as photos and sidecar files, and deleting the imported files from the source device.
-title: Import media
+description: "本文介绍如何从设备导入媒体，包括搜索可用的媒体源、导入文件（如照片和 sidecar 文件）以及从源设备中删除导入的文件。"
+title: "导入媒体"
+translationtype: Human Translation
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: b1b8467e181d1a04317a8a0b8688ffb02621730c
+
 ---
 
-# Import media from a device
+# 从设备导入媒体
 
-This article describes how to import media from a device, including searching for available media sources, importing files such as videos, photos, and sidecar files, and deleting the imported files from the source device.
+本文介绍如何从设备导入媒体，包括搜索可用媒体源、导入文件（如视频、照片和 sidecar 文件）以及从源设备中删除导入的文件。
 
 > [!NOTE] 
-> The code in this article was adapted from the [**MediaImport UWP app sample**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport) . You can clone or download this sample from the [**Universal Windows app samples Git repo**](https://github.com/Microsoft/Windows-universal-samples) to see the code in context or to use it as a starting point for your own app.
+> 本文中的代码改编自 [**MediaImport UWP 应用示例**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport)。 你可以从[**通用 Windows 应用示例 Git 存储库**](https://github.com/Microsoft/Windows-universal-samples)中克隆或下载此示例，以便在上下文中查看代码或将其用作你自己的应用的起始点。
 
-## Create a simple media import UI
-The example in this article uses a minimal UI to enable the core media import scenarios. To see how to create a more robust UI for a media import app, see the [**MediaImport sample**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport). The following XAML creates a stack panel with the following controls:
-* A [**Button**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Button) to initiate searching for sources from which media can be imported.
-* A [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ComboBox) to list and select from the media import sources that are found.
-* A [**ListView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ListView) control to display and select from the media items from the selected import source.
-* A **Button** to initiate importing media items from the selected source.
-* A **Button** to initiate deleting the items that have been imported from the selected source.
-* A **Button** to cancel an asynchronous media import operation.
+## 创建简单的媒体导入 UI
+本文中的示例使用最少的 UI 来启用核心媒体导入方案。 若要了解如何为媒体导入应用创建更可靠的 UI，请参阅[**导入示例**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport)。 以下 XAML 创建带有以下控件的堆栈面板：
+* 一个[**按钮**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Button)，用于发起对可从中导入媒体的源进行搜索的操作。
+* 一个[**组合框**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ComboBox)，用于列出所找到的媒体导入源，并从中进行选择。
+* 一个 [**ListView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ListView) 控件，用于显示选定导入源中的媒体项，并从中进行选择。
+* 一个**按钮**，用于发起从选定源导入媒体项的操作。
+* 一个**按钮**，用于发起对已从选定源中导入的项进行删除的操作。
+* 一个**按钮**，用于取消异步媒体导入操作。
 
 [!code-xml[ImportXAML](./code/PhotoImport_Win10/cs/MainPage.xaml#SnippetImportXAML)]
 
-## Set up your code-behind file
-Add *using* directives to include the namespaces used by this example that are not already included in the default project template.
+## 设置代码隐藏文件
+添加 *using* 指令以包括此示例使用但尚未包括在默认项目模板中的命名空间。
 
 [!code-cs[Using](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
 
-## Set up task cancellation for media import operations
+## 为媒体导入操作设置任务取消
 
-Because media import operations can take a long time, they are performed asynchronously using [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/en-us/library/windows/apps/br206594.aspx). Declare a class member variable of type [**CancellationTokenSource**](https://msdn.microsoft.com/en-us/library/system.threading.cancellationtokensource) that will be used to cancel an in-progress operation if the user clicks the cancel button.
+由于媒体导入操作可能需要很长时间，因此使用 [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/en-us/library/windows/apps/br206594.aspx) 异步执行它们。 声明一个 [**CancellationTokenSource**](https://msdn.microsoft.com/en-us/library/system.threading.cancellationtokensource) 类型的类成员变量，该变量将用于在用户单击取消按钮时取消正在进行的操作。
 
 [!code-cs[DeclareCts](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareCts)]
 
-Implement a handler for the cancel button. The examples shown later in this article will initialize the **CancellationTokenSource** when an operation begins and set it to null when the operation completes. In the cancel button handler, check to see if the token is null, and if not, call [**Cancel**](https://msdn.microsoft.com/en-us/library/dd321955) to cancel the operation.
+实现取消按钮的处理程序。 本文后面部分介绍的示例将在操作开始时初始化 **CancellationTokenSource**，并在操作完成时将其设置为 null。 在取消按钮处理程序中，检查令牌是否为 null，如果不是，则调用 [**Cancel**](https://msdn.microsoft.com/en-us/library/dd321955) 来取消该操作。
 
 [!code-cs[OnCancel](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetOnCancel)]
 
-## Data binding helper classes
+## 数据绑定帮助程序类
 
-In a typical media import scenario you show the user a list of available media items to import, there can be a large number of media files to choose from and, typically, you want to show a thumbnail for each media item. For this reason, this example uses three helper classes to incrementally load entries into the ListView control as the user scrolls down through the list.
+在典型的媒体导入方案中，你向用户显示可供导入的媒体项列表，可能有大量的媒体文件可供选择，通常你需要为每个媒体项显示缩略图。 出于此原因，当用户在列表中向下滚动时，此示例使用三个帮助程序类以增量方式将条目加载到 ListView 控件中。
 
-* **IncrementalLoadingBase** class - Implements the [**IList**](https://msdn.microsoft.com/en-us/library/system.collections.ilist), [**ISupportIncrementalLoading**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading), and [**INotifyCollectionChanged**](https://msdn.microsoft.com/en-us/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx) to provide the base incremental loading behavior.
-* **GeneratorIncrementalLoadingClass** class - Provides an implementation of the incremental loading base class.
-* **ImportableItemWrapper** class - A thin wrapper around the [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) class to add a bindable [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.BitmapImage) property for the thumbnail image for each imported item.
+* **IncrementalLoadingBase** 类 - 实现 [**IList**](https://msdn.microsoft.com/en-us/library/system.collections.ilist)、[**ISupportIncrementalLoading**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/en-us/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx) 来提供基本增量加载行为。
+* **GeneratorIncrementalLoadingClass** 类 - 提供增量加载基类的实现。
+* **ImportableItemWrapper** 类 - [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) 类周围的一个精简包装器，用于为每个已导入项的缩略图图像添加可绑定的 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.BitmapImage) 属性。
 
-These classes are provided in the [**MediaImport sample**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport) and can be added to your project without modifications. After adding the helper classes to your project, declare a class member variable of type **GeneratorIncrementalLoadingClass** that will be used later in this example.
+这些类在 [**MediaImport 示例**中提供，并且无需修改即可添加到你的项目。](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport) 在将帮助程序类添加到你的项目后，声明一个 **GeneratorIncrementalLoadingClass** 类型的类成员变量，此变量将在本示例后面部分中使用。
 
 [!code-cs[GeneratorIncrementalLoadingClass](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetGeneratorIncrementalLoadingClass)]
 
 
-# Find available sources from which media can be imported
+# 查找可从中导入媒体的可用源
 
-In the click handler for the find sources button, call the static method [**PhotoImportManager.FindAllSourcesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportManager.FindAllSourcesAsync) to start the system searching for devices from which media can be imported. After awaiting the completion of the operation, loop through each [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) object in the returned list and add an entry to the **ComboBox**, setting the **Tag** property to the source object itself so it can be easily retrieved when the user makes a selection.
+在查找源按钮的单击处理程序中，调用静态方法 [**PhotoImportManager.FindAllSourcesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportManager.FindAllSourcesAsync) 来针对可从中导入媒体的设备启动系统搜索。 等待该操作完成后，循环访问返回的列表中的每个 [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) 对象，并向**组合框** 添加一个条目，从而将 **Tag** 属性设置为源对象本身，以便在用户进行选择时可以轻松地检索它。
 
 [!code-cs[FindSourcesClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetFindSourcesClick)]
 
-Declare a class member variable to store the user's selected import source.
+声明一个类成员变量，用于存储用户选定的导入源。
 
 [!code-cs[DeclareImportSource](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImportSource)]
 
-In the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.Selector.SelectionChanged) handler for the import source **ComboBox**, set the class member variable to the selected source and then call the **FindItems** helper method which will be shown later in this article. 
+在导入源 **ComboBox** 的 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.Selector.SelectionChanged) 处理程序中，将类成员变量设置为选定的源，然后调用 **FindItems** 帮助程序方法，此方法将在本文后面部分中进行介绍。 
 
 [!code-cs[SourcesSelectionChanged](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetSourcesSelectionChanged)]
 
-# Find items to import
+# 查找要导入的项
 
-Add class member variables of type [**PhotoImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession) and [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) which will be used in the following steps.
+添加 [**PhotoImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession) 和 [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) 类型的类成员变量，这些变量将在以下步骤中使用。
 
 [!code-cs[DeclareImport](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImport)]
 
-In the FindItems method, initialize the **CancellationTokenSource** variable so it can be used to cancel the find operation if necessary. Within a **try** block, create a new import session by calling [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) on the [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) object selected by the user. Create a new [**Progress**](https://msdn.microsoft.com/en-us/library/hh193692.aspx) object to provide a callback to display the progress of the find operation. Next, call [**FindItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession.FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter,Windows.Media.Import.PhotoImportItemSelectionMode) to start the find operation. Provide a [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) value to specify whether photos, videos, or both should be returned. Provide a [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) value to specify whether all, none, or only the new media items are returned with their [**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) property set to true. This property is bound to a checkbox for each media item in our ListBox item template.
+在 FindItems 方法中，初始化 **CancellationTokenSource** 变量，以便可以使用它在必要时取消查找操作。 在 **try** 块内，通过在用户选择的 [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) 对象上调用 [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) 来创建新的导入会话。 创建新的 [**Progress**](https://msdn.microsoft.com/en-us/library/hh193692.aspx) 对象以提供用于显示查找操作进度的回调。 接下来，调用 [**FindItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession.FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter,Windows.Media.Import.PhotoImportItemSelectionMode) 以启动查找操作。 提供一个 [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) 值来指定应返回照片、视频还是两者都返回。 提供一个 [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) 值来指定是返回全部媒体项、不返回任何媒体项还是仅返回新的媒体项，同时将它们的 [**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) 属性设置为 true。 此属性绑定到我们的 ListBox 项模板中的每个媒体项的复选框。
 
-**FindItemsAsync** returns an [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/en-us/library/windows/apps/br206594.aspx). The extension method [**AsTask**](https://msdn.microsoft.com/en-us/library/hh779750.aspx) is used to create a task that can be awaited, can be cancelled with the cancellation token, and that reports progress using the supplied **Progress** object.
+**FindItemsAsync** 返回 [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/en-us/library/windows/apps/br206594.aspx)。 扩展方法 [**AsTask**](https://msdn.microsoft.com/en-us/library/hh779750.aspx) 用于创建可等待、可使用取消令牌取消以及使用所提供的 **Progress** 对象报告进度的任务。
 
-Next the data binding helper class, **GeneratorIncrementalLoadingClass** is initialized. **FindItemsAsync**, when it returns from being awaited, returns a [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) object. This object contains status information about the find operation, including the success of the operation and the count of different types of media items that were found. The [**FoundItems**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.FoundItems) property contains a list of [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) objects representing the found media items. The **GeneratorIncrementalLoadingClass** constructor takes as arguments the total count of items that will be loaded incrementally, and a function that generates new items to be loaded as needed. In this case, the provided lambda expression creates a new instance of the **ImportableItemWrapper** which wraps **PhotoImportItem** and includes a thumbnail for each item. Once the incremental loading class has been initialized, set it to the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl.ItemsSource) property of the **ListView** control in the UI. Now, the found media items will be loaded incrementally and displayed in the list.
+接下来，初始化数据绑定帮助程序类 **GeneratorIncrementalLoadingClass**。 当从等待状态返回时，**FindItemsAsync** 会返回 [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) 对象。 此对象包含关于查找操作的状态信息，包括操作是否成功以及所找到的不同类型的媒体项的计数。 [**FoundItems**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.FoundItems) 属性包含表示所找到的媒体项的 [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) 对象的列表。 **GeneratorIncrementalLoadingClass** 构造函数将要以增量方式加载的项的总计数以及生成要按需加载的新项的函数作为参数。 在此情况下，所提供的 lambda 表达式创建 **ImportableItemWrapper** 的新实例，该实例包装 **PhotoImportItem** 并包含每个项的缩略图。 初始化增量加载类后，将其设置为 UI 中的 **ListView** 控件的 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl.ItemsSource) 属性。 现在，所找到的媒体项将以增量方式加载，并在列表中显示。
 
-Next, the status information of the find operation are output. A typical app will display this information to the user in the UI, but this example simply outputs the information to the debug console. Finally, set the cancellation token to null because the operation is complete.
+接下来，输出查找操作的状态信息。 典型应用会在 UI 中向用户显示此信息，但本示例仅将该信息输出到调试控制台。 最后，由于操作已完成，将取消令牌设置为 null。
 
 [!code-cs[FindItems](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetFindItems)]
 
-## Import media items
+## 导入媒体项
 
-Before implementing the import operation, declare a [**PhotoImportImportItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult) object to store the results of the import operation. This will be used later to delete media items that were successfully imported from the source.
+在实现导入操作前，声明一个 [**PhotoImportImportItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult) 对象来存储导入操作的结果。 稍后将使用此对象删除已从源成功导入的媒体项。
 
 [!code-cs[DeclareImportResult](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImportResult)]
 
-Before starting the media import operation initialize the **CancellationTokenSource** variable and by setting the value of the [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ProgressBar) control to 0.
+在启动媒体导入操作前，通过将 [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ProgressBar) 控件的值设置为 0 来初始化 **CancellationTokenSource** 变量。
 
-If there are no selected items in the **ListView** control, then there is nothing to import. Otherwise, initialize a [**Progress**](https://msdn.microsoft.com/en-us/library/hh193692.aspx) object to provide a progress callback which updates the value of the progress bar control. Register a handler for the [**ItemImported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ItemImported) event of the [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) returned by the find operation. This event will be raised whenever an item is imported and, in this example, outputs the name of each imported file to the debug console.
+如果 **ListView** 控件中没有选定的项，则没有可导入的内容。 否则，初始化 [**Progress**](https://msdn.microsoft.com/en-us/library/hh193692.aspx) 对象以提供一个进度回调，用于更新进度栏控件的值。 为查找操作返回的 [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) 的 [**ItemImported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ItemImported) 事件注册一个处理程序。 每当导入某个项时都会引发此事件，并且在本示例中，此事件会将每个已导入文件的名称输出到调试控制台。
 
-Call [**ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync) to begin the import operation. Just as with the find operation, the [**AsTask**](https://msdn.microsoft.com/en-us/library/hh779750.aspx) extension method is used to convert the returned operation to a task that can be awaited, reports progress, and can be cancelled.
+调用 [**ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync) 开始导入操作。 和查找操作一样，[**AsTask**](https://msdn.microsoft.com/en-us/library/hh779750.aspx) 扩展方法用于将返回的操作转换为可等待、报告进度和可取消的任务。
 
-After the import operation is complete, the operation status can be obtained from the [**PhotoImportImportItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult) object returned by [**ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync). This example outputs the status information to the debug console and then finallly, sets the cancellation token to null.
+在导入操作完成后，可以从 [**ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync) 返回的 [**PhotoImportImportItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult) 对象获取操作状态。 本示例将状态信息输出到调试控制台，然后最终将取消令牌设置为 null。
 
 [!code-cs[ImportClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetImportClick)]
 
-## Delete imported items
-To delete the successfully imported items from the source from which they were imported, first initialize the cancellation token so that the delete operation can be cancelled and set the progress bar value to 0. Make sure that the [**PhotoImportImportItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult) returned from [**ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync) is not null. If not, once again create a [**Progress**](https://msdn.microsoft.com/en-us/library/hh193692.aspx) object to provide a progress callback for the delete operation. Call [**DeleteImportedItemsFromSourceAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult.DeleteImportedItemsFromSourceAsync) to start deleting the imported items. Us **AsTask** to convert the result to an awaitable task with progress and cancellation capabilities. After awaiting, the returned [**PhotoImportDeleteImportedItemsFromSourceResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult) object can be used to get and display status information about the delete operation.
+## 删除导入的项
+若要从导入项的源中删除成功导入的项，请先初始化取消令牌，以便可以取消删除操作，并将进度栏值设置为 0。 确保从 [**ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync) 返回的 [**PhotoImportImportItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult) 不为 null。 如果不是，则再次创建一个 [**Progress**](https://msdn.microsoft.com/en-us/library/hh193692.aspx) 对象来为删除操作提供进度回调。 调用 [**DeleteImportedItemsFromSourceAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult.DeleteImportedItemsFromSourceAsync) 以开始删除导入的项。 使用 **AsTask** 将结果转换为具有进度和取消功能的可等待任务。 在等待后，返回的 [**PhotoImportDeleteImportedItemsFromSourceResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult) 对象可用于获取和显示关于删除操作的状态信息。
 
 [!code-cs[DeleteClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeleteClick)]
 
@@ -110,5 +114,11 @@ To delete the successfully imported items from the source from which they were i
 
 
  
+
+
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

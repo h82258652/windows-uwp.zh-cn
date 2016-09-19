@@ -1,35 +1,35 @@
 ---
 author: msatranjr
-title: "覆盖地图上的平铺图像"
-description: "使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。"
+title: Overlay tiled images on a map
+description: Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 71d044eb19e71786da39ca71d4f4fbd2d87645be
+ms.openlocfilehash: a00d3d27161310077a0690cef7e4d11a5209bee7
 
 ---
 
-# 覆盖地图上的平铺图像
+# Overlay tiled images on a map
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。
+Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
 
-**提示** 若要了解有关在你的应用中使用地图的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](http://go.microsoft.com/fwlink/p/?LinkId=619979)下载以下示例。
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [通用 Windows 平台 (UWP) 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## 平铺图像概述
+## Tiled image overview
 
 
-地图服务（例如 Nokia 地图和必应地图）将地图剪切成多个方形磁贴，以供快速检索和显示。 这些磁贴的大小为 256 像素 X 256 像素，并以多个级别的详细信息的形式进行预呈现。 许多第三方服务还提供剪切成磁贴的基于地图的数据。 使用磁贴源可检索第三方磁贴，还可以创建你自己的自定义磁贴，并且可覆盖显示在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 中的地图上的这些磁贴。
+Map services such as Nokia Maps and Bing Maps cut maps into square tiles for quick retrieval and display. These tiles are 256 pixels by 256 pixels in size, and are pre-rendered at multiple levels of detail. Many third-party services also provide map-based data that's cut into tiles. Use tile sources to retrieve third-party tiles, or to create your own custom tiles, and overlay them on the map displayed in the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-**重要提示**  
-在使用磁贴源时，无需编写代码即可请求或放置个别磁贴。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 会按需请求磁贴。 每个请求均会为单个磁贴指定 X 和 Y 坐标以及缩放级别。 仅需指定要使用的 URI 或文件名的格式，即可检索采用 **UriFormatString** 属性的磁贴。 换言之，在基本 URI 或文件名中插入可替换的参数，以指示每个磁贴的 X 和 Y 坐标及缩放级别的传递位置。
+**Important**  
+When you use tile sources, you don't have to write code to request or to position individual tiles. The [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) requests tiles as it needs them. Each request specifies the X and Y coordinates and the zoom level for the individual tile. You simply specify the format of the Uri or filename to use to retrieve the tiles in the **UriFormatString** property. That is, you insert replaceable parameters in the base Uri or filename to indicate where to pass the X and Y coordinates and the zoom level for each tile.
 
-下面是 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的示例，并显示了 X 和 Y 坐标及缩放级别的可替换参数。
+Here's an example of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property for an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) that shows the replaceable parameters for the X and Y coordinates and the zoom level.
 
 ``` syntax
     http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
@@ -37,67 +37,67 @@ ms.openlocfilehash: 71d044eb19e71786da39ca71d4f4fbd2d87645be
 
  
 
-（X 和 Y 坐标以指定级别的详细信息形式表示单个磁贴在世界地图中的位置。 磁贴编号系统从位于地图左上角的 {0, 0} 开始。 例如，坐标为 {1, 2} 的磁贴位于磁贴网格中的第 2 列，第 3 行。）
+(The X and Y coordinates represent the location of the individual tile within the map of the world at the specified level of detail. The tile numbering system starts from {0, 0} in the upper left corner of the map. For example, the tile at {1, 2} is in the second column of the third row of the grid of tiles.)
 
-有关地图服务使用的磁贴系统的详细信息，请参阅[必应地图磁贴系统](http://go.microsoft.com/fwlink/p/?LinkId=626692)。
+For more info about the tile system used by mapping services, see [Bing Maps Tile System](http://go.microsoft.com/fwlink/p/?LinkId=626692).
 
-### 覆盖来自磁贴源的磁贴
+### Overlay tiles from a tile source
 
-使用 [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) 覆盖地图上来自磁贴源的平铺图像。
+Overlay tiled images from a tile source on a map by using the [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
-1.  实例化继承自 [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) 的三个磁贴数据源类之一。
+1.  Instantiate one of the three tile data source classes that inherit from [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
     -   [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)
     -   [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)
     -   [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983)
 
-    通过在基本 Uri 或文件名中插入可替换参数，将 **UriFormatString** 配置为用于请求磁贴。
+    Configure the **UriFormatString** to use to request the tiles by inserting replaceable parameters in the base Uri or filename.
 
-    以下示例将实例化 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)。 该示例在 **HttpMapTileDataSource** 的构造函数中指定 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值。
+    The following example instantiates an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). This example specifies the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) in the constructor of the **HttpMapTileDataSource**.
 
     ```cs
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
           "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
-2.  实例化并配置 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144)。 指定 [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141)，它在之前的步骤中已配置为 **MapTileSource** 的 [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149)。
+2.  Instantiate and configure a [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144). Specify the [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) that you configured in the previous step as the [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) of the **MapTileSource**.
 
-    以下示例在 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 的构造函数中指定 [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149)。
+    The following example specifies the [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) in the constructor of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 
     ```cs
         MapTileSource tileSource = new MapTileSource(dataSource);
     ```
 
-    使用 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 的属性可限制磁贴的显示条件。
+    You can restrict the conditions in which the tiles are displayed by using properties of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 
-    -   若为 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 属性提供值，将仅在特定的地理区域内显示磁贴。
-    -   若为 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 属性提供值，将仅以特定级别的详细信息的形式显示磁贴。
+    -   Display tiles only within a specific geographic area by providing a value for the [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) property.
+    -   Display tiles only at certain levels of detail by providing a value for the [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) property.
 
-    也可以配置影响磁贴加载或显示的 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 的其他属性，例如 [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157)、[**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145)、[**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153) 和 [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155)。
+    Optionally, configure other properties of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) that affect the loading or the display of the tiles, such as [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157), [**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145), [**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153), and [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155).
 
-3.  将 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 添加到 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) 集合。
+3.  Add the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) to the [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) collection of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
     ```cs
          MapControl1.TileSources.Add(tileSource);
     ```
 
-## 覆盖来自 Web 服务的磁贴
+## Overlay tiles from a web service
 
 
-使用 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 覆盖从 Web 服务检索的平铺图像。
+Overlay tiled images retrieved from a web service by using the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
 
-1.  实例化 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)。
-2.  根据 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的值，指定 Web 服务预期的 URI 的格式。 若要创建此值，请在基本 Uri 中插入可替换参数。 例如，在以下代码示例中，**UriFormatString** 的值是：
+1.  Instantiate an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
+2.  Specify the format of the Uri that the web service expects as the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property. To create this value, insert replaceable parameters in the base Uri. For example, in the following code sample, the value of the **UriFormatString** is:
 
     ``` syntax
         http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Web 服务必须支持包含可替换参数 {x}、{y} 和 {zoomlevel} 的 Uri。 大多数 Web 服务（例如，Nokia、必应和 Google）支持这种格式的 URI。 如果 Web 服务需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) 事件创建并返回自定义 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#customuri) 部分。
+    The web service has to support a Uri that contains the replaceable parameters {x}, {y}, and {zoomlevel}. Most web services (for example, Nokia, Bing, and Google) support Uris in this format. If the web service requires additional arguments that aren't available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property, then you have to create a custom Uri. Create and return a custom Uri by handling the [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) event. For more info, see the [Provide a custom URI](#customuri) section later in this topic.
 
-3.  然后，按照之前在[平铺图像概述](#tileintro)中介绍的剩余步骤操作。
+3.  Then, follow the remaining steps described previously in the [Tiled image overview](#tileintro).
 
-以下示例将覆盖北美地区地图上来自虚拟 Web 服务的磁贴。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的构造函数中指定。 在此示例中，磁贴仅显示在由可选的 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 属性指定的地理边界内。
+The following example overlays tiles from a fictitious web service on a map of North America. The value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) is specified in the constructor of the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). In this example, tiles are only displayed within the geographic boundaries specified by the optional [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) property.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -144,36 +144,36 @@ void MainPage::AddHttpMapTileSource()
 }
 ```
 
-## 覆盖来自本地存储的磁贴
+## Overlay tiles from local storage
 
 
-使用 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 覆盖以文件形式存储在本地存储中的平铺图像。 通常，你会与自己的应用一起打包并分配这些文件。
+Overlay tiled images stored as files in local storage by using the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Typically, you package and distribute these files with your app.
 
-1.  实例化 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)。
-2.  根据 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 属性的值，指定文件名的格式。 若要创建此值，请在基本文件名中插入可替换参数。 例如，在以下代码示例中，[**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值是：
+1.  Instantiate a [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
+2.  Specify the format of the file names as the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property. To create this value, insert replaceable parameters in the base filename. For example, in the following code sample, the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) is:
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    如果文件名的格式需要不能应用于 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 属性的其他参数，则必须创建自定义 Uri。 通过处理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) 事件创建并返回自定义 Uri。 有关详细信息，请参阅本主题后面的[提供自定义 URI](#customuri) 部分。
+    If the format of the file names requires additional arguments that aren't available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property, then you have to create a custom Uri. Create and return a custom Uri by handling the [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) event. For more info, see the [Provide a custom URI](#customuri) section later in this topic.
 
-3.  然后，按照之前在[平铺图像概述](#tileintro)中介绍的剩余步骤操作。
+3.  Then, follow the remaining steps described previously in the [Tiled image overview](#tileintro).
 
-可以使用以下协议和位置从本地存储加载磁贴：
+You can use the following protocols and locations to load tiles from local storage:
 
-| URI | 详细信息 |
+| Uri | More info |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| ms-appx:/// | 指向应用的安装文件夹所在的根目录。 |
-|  | 这是 [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681) 属性所引用的位置。 |
-| ms-appdata:///local | 指向应用的本地存储的根文件夹。 |
-|  | 这是 [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621) 属性所引用的位置。 |
-| ms-appdata:///temp | 指向应用的临时文件夹。 |
-|  | 这是 [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) 属性所引用的位置。 |
+| ms-appx:/// | Points to the root of the app's installation folder. |
+|  | This is the location referenced by the [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681) property. |
+| ms-appdata:///local | Points to the root of the app's local storage. |
+|  | This is the location referenced by the [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621) property. |
+| ms-appdata:///temp | Points to the app's temp folder. |
+|  | This is the location referenced by the [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) property. |
 
  
 
-以下示例通过使用 `ms-appx:///` 协议来加载以文件形式存储在应用的安装文件夹中的磁贴。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 的值在 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的构造函数中指定。 在此示例中，磁贴仅当地图的缩放级别在可选的 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 属性所指定的范围时才显示。
+The following example loads tiles that are stored as files in the app's installation folder by using the `ms-appx:///` protocol. The value for the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) is specified in the constructor of the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). In this example, tiles are only displayed when the zoom level of the map is within the range specified by the optional [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) property.
 
 ```csharp
         void AddLocalMapTileSource()
@@ -195,15 +195,15 @@ void MainPage::AddHttpMapTileSource()
         }
 ```
 
-## 提供自定义 URI
+## Provide a custom URI
 
 
-如果没有足够的由 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 属性或 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 属性提供的可替换参数来检索磁贴，则必须创建自定义 Uri。 通过为 **UriRequested** 事件提供自定义处理程序创建和返回自定义 Uri。 每个单独的磁贴都会引发 **UriRequested** 事件。
+If the replaceable parameters available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property of the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) or the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property of the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) aren't sufficient to retrieve your tiles, then you have to create a custom Uri. Create and return a custom Uri by providing a custom handler for the **UriRequested** event. The **UriRequested** event is raised for each individual tile.
 
-1.  在 **UriRequested** 事件的自定义处理程序中，将所需的自定义参数与 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) 属性进行合并，以创建自定义 Uri。
-2.  在 [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173)（它包含在 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) 属性中）的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) 属性中返回自定义 Uri。
+1.  In your custom handler for the **UriRequested** event, combine the required custom arguments with the [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) properties of the [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) to create the custom Uri.
+2.  Return the custom Uri in the [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) property of the [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173), which is contained in the [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) property of the [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
 
-以下示例显示了如何通过为 **UriRequested** 事件创建自定义处理程序来提供自定义 Uri。 该示例还显示了如何在必须异步执行某些操作的情况下，实现延迟模式来创建自定义 Uri。
+The following example shows how to provide a custom Uri by creating a custom handler for the **UriRequested** event. It also shows how to implement the deferral pattern if you have to do something asynchronously to create the custom Uri.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -241,17 +241,17 @@ using System.Threading.Tasks;
         }
 ```
 
-## 覆盖来自自定义源的磁贴
+## Overlay tiles from a custom source
 
 
-使用 [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983) 覆盖自定义磁贴。 在内存中以编程方式快速创建磁贴，或者编写自己的代码以从其他源加载现有磁贴。
+Overlay custom tiles by using the [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Create tiles programmatically in memory on the fly, or write your own code to load existing tiles from another source.
 
-若要创建或加载自定义磁贴，请为 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件提供自定义处理程序。 每个单独的磁贴都会引发 **BitmapRequested** 事件。
+To create or load custom tiles, provide a custom handler for the [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) event. The **BitmapRequested** event is raised for each individual tile.
 
-1.  在 [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) 事件的自定义处理程序中，将所需的自定义参数与 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 属性进行合并，以创建或检索自定义磁贴。
-2.  在 [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128)（它包含在 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) 属性中）的 [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) 属性中返回自定义磁贴。 **PixelData** 属性属于类型 [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664)。
+1.  In your custom handler for the [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) event, combine the required custom arguments with the [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) properties of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) to create or retrieve a custom tile.
+2.  Return the custom tile in the [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) property of the [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128), which is contained in the [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) property of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). The **PixelData** property is of type [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664).
 
-以下示例显示了如何通过为 **BitmapRequested** 事件创建自定义处理程序来提供自定义磁贴。 此示例创建相同的红色磁贴，这些磁贴局部是透明的。 该示例忽略了 [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) 和 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) 属性。 尽管这不是真实的示例，但该示例演示了如何在内存中快速创建自定义磁贴。 该示例还显示了如何在必须异步执行某些操作的情况下，实现延迟模式来创建自定义磁贴。
+The following example shows how to provide custom tiles by creating a custom handler for the **BitmapRequested** event. This example creates identical red tiles that are partially opaque. The example ignores the [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) properties of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Although this is not a real world example, the example demonstrates how you can create in-memory custom tiles on the fly. The example also shows how to implement the deferral pattern if you have to do something asynchronously to create the custom tiles.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -350,25 +350,25 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 }
 ```
 
-## 替换默认地图
+## Replace the default map
 
 
-使用第三方或自定义磁贴来替换所有默认地图：
+To replace the default map entirely with third-party or custom tiles:
 
--   将 [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** 指定为 [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) 的 [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) 属性的值。
--   将 [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** 指定为 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) 属性的值。
+-   Specify [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** as the value of the [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) property of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+-   Specify [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** as the value of the [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-## 相关主题
+## Related topics
 
-* [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地图设计指南](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 
 
-<!--HONumber=Jun16_HO5-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

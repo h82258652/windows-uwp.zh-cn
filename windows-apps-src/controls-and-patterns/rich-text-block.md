@@ -1,51 +1,64 @@
 ---
 author: Jwmsft
-Description: "将 RichTextBlock 与 RichTextBlockOverflow 元素结合使用以创建高级文本布局。"
+Description: Use a RichTextBlock with RichTextBlockOverflow elements to create advanced text layouts.
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 28c78b39bad4c66457ec5aba8cf0b4ce0de4f00a
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 82c7e80afde143d7d12bbf4fe49aa2c52f244f6f
 
 ---
-# RTF 块
-RTF 块提供了多种适用于高级文本布局的功能，你可以在需要支持段落、内联 UI 元素或复杂文本布局时使用。
+# Rich text block
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+Rich text blocks provide several features for advanced text layout that you can use when you need support for paragraphs, inline UI elements, or complex text layouts.
+
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx"><strong>RichTextBlock class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx"><strong>RichTextBlockOverflow class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx"><strong>Paragraph class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx"><strong>Typography class</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
-
--   [**RichTextBlock 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)
--   [**RichTextBlockOverflow 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)
--   [**Paragraph 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)
--   [**Typography 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
-
-## 这是正确的控件吗？
-
-如果你需要支持多段落、多列或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。
-
-使用 **TextBlock** 显示应用中大部分只读文本。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。 TextBlock 提供较简单的内容模型，因此通常也更易于使用，并且它比 RichTextBlock 提供文本呈现性能更好。 它优先用于大部分应用 UI 文本。 虽然你可以在文本中放入换行符，但 TextBlock 旨在显示一个段落且不支持文本缩进。
-
-有关选择正确文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
-
-## 示例
 
 
-## 创建富文本块
 
-RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) 属性，它通过 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素支持基于段落的文本。 它没有可以用来轻松访问应用中控件的文本内容的 **Text** 属性。 但是，RichTextBlock 提供了多个 TextBlock 没有提供的独特功能。 
 
-RichTextBlock 支持：
-- 多个段落。 通过设置 [TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx) 属性设置段落缩进。
-- 内联 UI 元素。 使用 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 显示文本的内联 UI 元素，如图像。
-- 溢出容器。 使用 [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 元素创建多列文本布局。
+
+## Is this the right control?
+
+Use a **RichTextBlock** when you need support for multiple paragraphs, multi-column or other complex text layouts, or inline UI elements like images.
+
+Use a **TextBlock** to display most read-only text in your app. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined. TextBlock provides a simpler content model, so it’s typically easier to use, and it can provide better text rendering performance than RichTextBlock. It's preferred for most app UI text. Although you can put line breaks in the text, TextBlock is designed to display a single paragraph and doesn’t support text indentation.
+
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
+
+## Examples
+
+
+## Create a rich text block
+
+The content property of RichTextBlock is the [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) property, which supports paragraph based text via the [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) element. It doesn't have a **Text** property that you can use to easily access the control's text content in your app. However, RichTextBlock provides several unique features that TextBlock doesn’t provide. 
+
+RichTextBlock supports:
+- Multiple paragraphs. Set the indentation for paragraphs by setting the [TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx) property.
+- Inline UI elements. Use an [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) to display UI elements, such as images, inline with your text.
+- Overflow containers. Use [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) elements to create multi-column text layouts.
 
 ### Paragraphs
 
-使用 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素定义要在 RichTextBlock 控件中显示的文本块。 每个 RichTextBlock 应至少包括一个 Paragraph。 
+You use [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) elements to define the blocks of text to display within a RichTextBlock control. Every RichTextBlock should include at least one Paragraph. 
 
-通过设置 [RichTextBlock.TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx) 属性，你可以在 RichTextBlock 中设置所有段落的缩进量。 通过将 [Paragraph.TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.textindent.aspx) 属性设置为不同值，你可以在 RichTextBlock 中为特定段落重写此设置。
+You can set the indent amount for all paragraphs in a RichTextBlock by setting the [RichTextBlock.TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx) property. You can override this setting for specific paragraphs in a RichTextBlock by setting the [Paragraph.TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.textindent.aspx) property to a different value.
 
 ```xaml
 <RichTextBlock TextIndent="12">
@@ -55,13 +68,13 @@ RichTextBlock 支持：
 </RichTextBlock>
 ```
 
-### 内联 UI 元素
+### Inline UI elements
 
-[**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 类允许你将任何 UIElement 内联嵌入文本中。 常用方案是将 Image 内联置于文本中，但你也可以使用交互式元素，例如 Button 或 CheckBox。
+The [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) class lets you embed any UIElement inline with your text. A common scenario is to place an Image inline with your text, but you can also use interactive elements, like a Button or CheckBox.
 
-如果你想要在相同位置嵌入多个元素内联，请考虑将面板用作单个 InlineUIContainer 子元素，然后将多个元素放入该面板中。
+If you want to embed more than one element inline in the same position, consider using a panel as the single InlineUIContainer child, and then place the multiple elements within that panel.
 
-本示例显示如何使用 InlineUIContainer 将图像插入 RichTextBlock 中。 
+This example shows how to use an InlineUIContainer to insert an image into a RichTextBlock. 
 
 ```xaml
 <RichTextBlock>
@@ -75,11 +88,11 @@ RichTextBlock 支持：
 </RichTextBlock>
 ```
 
-## 溢出容器
+## Overflow containers
 
-你可以将 RichTextBlock 与 [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 元素结合使用，以创建多列或其他高级页面布局。 RichTextBlockOverflow 元素的内容始终来自 RichTextBlock 元素。 链接 RichTextBlockOverflow 元素的方法是将其设置为 RichTextBlock 的 OverflowContentTarget 或另一个 RichTextBlockOverflow。
+You can use a RichTextBlock with [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) elements to create multi-column or other advanced page layouts. The content for a RichTextBlockOverflow element always comes from a RichTextBlock element. You link RichTextBlockOverflow elements by setting them as the OverflowContentTarget of a RichTextBlock or another RichTextBlockOverflow.
 
-以下是创建两列布局的简单示例。 查看示例部分获取更复杂的示例。
+Here's a simple example that creates a two column layout. See the Examples section for a more complex example.
 
 ```xaml
 <Grid>
@@ -97,15 +110,15 @@ RichTextBlock 支持：
 </Grid>
 ```
 
-## 设置文本格式
+## Formatting text
 
-尽管 RichTextBlock 存储纯文本，但你可以应用各种格式选项自定义文本在应用中的呈现方式。 你可以设置标准控件属性（例如 FontFamily、FontSize、FontStyle、Foreground 和 CharacterSpacing）以更改文本外观。 你还可以使用内联文本元素和 Typography 附加属性设置文本格式。 这些选项仅影响 RichTextBlock 在本地显示文本的方式，因此如果你将文本复制并粘贴到富文本控件，将不会应用任何格式。
+Although the RichTextBlock stores plain text, you can apply various formatting options to customize how the text is rendered in your app. You can set standard control properties like FontFamily, FontSize, FontStyle, Foreground, and CharacterSpacing to change the look of the text. You can also use inline text elements and Typography attached properties to format your text. These options affect only how the RichTextBlock displays the text locally, so if you copy and paste the text into a rich text control, for example, no formatting is applied.
 
-### 内联元素
+### Inline elements
 
-[Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) 命名空间提供可用于设置文本格式的各种内联文本元素，如 Bold、Italic、Run、Span 和 LineBreak。 将格式应用到文本的各个文本部分的典型方法是将文本放入 Run 或 Span 元素中，然后在该元素上设置属性。
+The [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) namespace provides a variety of inline text elements that you can use to format your text, such as Bold, Italic, Run, Span, and LineBreak. A typical way to apply formatting to sections of text is to place the text in a Run or Span element, and then set properties on that element.
 
-以下是 Paragraph，第一个词组显示为粗体、蓝色、16pt 文本。
+Here's a Paragraph with the first phrase shown in bold, blue, 16pt text.
 
 ```xaml
 <Paragraph>
@@ -116,7 +129,7 @@ RichTextBlock 支持：
 
 ### Typography
 
-[Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) 类的附加属性提供针对 Microsoft OpenType 版式属性集的访问权限。 你可以在 RichTextBlock 或个别内联文本元素上设置这些附加属性，如下所示。
+The attached properties of the [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) class provide access to a set of Microsoft OpenType typography properties. You can set these attached properties either on the RichTextBlock, or on individual inline text elements, as shown here.
 
 ```xaml
 <RichTextBlock Typography.StylisticSet4="True">
@@ -127,31 +140,31 @@ RichTextBlock 支持：
 </RichTextBlock>
 ```
 
-## 建议
+## Recommendations
 
-请参阅版式和字体指南。
-
-
-
-## 相关文章
-
-[文本控件](text-controls.md)
-
-**对于设计人员**
-- [拼写检查指南](spell-checking-and-prediction.md)
-- [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [文本输入指南](text-controls.md)
-
-**面向开发人员 (XAML)**
-- [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**对于开发人员（其他）**
-- [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+See Typography and Guidelines for fonts.
 
 
 
-<!--HONumber=Jun16_HO4-->
+## Related articles
+
+[Text controls](text-controls.md)
+
+**For designers**
+- [Guidelines for spell checking](spell-checking-and-prediction.md)
+- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Guidelines for text input](text-controls.md)
+
+**For developers (XAML)**
+- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
+
+
+**For developers (other)**
+- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

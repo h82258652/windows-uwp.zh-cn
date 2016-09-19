@@ -1,65 +1,65 @@
 ---
 author: TylerMSFT
-title: "延长显示初始屏幕的时间"
-description: "通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。"
+title: Display a splash screen for more time
+description: Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized.
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
+ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
 
 ---
 
-# 延长显示初始屏幕的时间
+# Display a splash screen for more time
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要的 API**
+**Important APIs**
 
--   [**SplashScreen 类**](https://msdn.microsoft.com/library/windows/apps/br224763)
--   [**Window.SizeChanged 事件**](https://msdn.microsoft.com/library/windows/apps/br209055)
--   [**Application.OnLaunched 方法**](https://msdn.microsoft.com/library/windows/apps/br242335)
+-   [**SplashScreen class**](https://msdn.microsoft.com/library/windows/apps/br224763)
+-   [**Window.SizeChanged event**](https://msdn.microsoft.com/library/windows/apps/br209055)
+-   [**Application.OnLaunched method**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-通过为你的应用创建延长的初始屏幕，使初始屏幕显示的时间更长。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，但是也可以进行自定义。 无论你是要显示实时加载信息还是想要简单地为应用提供更多时间来准备其初始 UI，延长的初始屏幕允许你定义启动体验。
+Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized. Whether you want to show real-time loading information or simply give your app extra time to prepare its initial UI, an extended splash screen lets you define the launch experience.
 
-> **注意** 本主题中的短语“延长的初始屏幕”是指在屏幕上保留延长时间的初始屏幕。 它不表示从 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类派生的子类。
+> **Note**  The phrase "extended splash screen" in this topic refers to a splash screen that stays on the screen for an extended period of time. It does not mean a subclass that derives from the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class.
 
  
 
-通过遵循以下建议，确保延长的初始屏幕准确地模仿默认初始屏幕：
+Make sure your extended splash screen accurately imitates the default splash screen by following these recommendations:
 
--   你的延长的初始屏幕页面应该使用 620 x 300 像素的图像，与应用清单中为初始屏幕指定的图像（你的应用的初始屏幕图像）一致。 在 Microsoft Visual Studio 2015 中，初始屏幕设置存储在你的应用清单（Package.appxmanifest 文件）的**“可见资源”**选项卡的**“初始屏幕”**部分中。
--   你的延长的初始屏幕使用的背景色应该与应用清单中为初始屏幕指定的背景色（你的应用的初始屏幕背景）一致。
--   你的代码应该使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类将你的应用的初始屏幕图像放置在默认初始屏幕的相同屏幕坐标处。
--   通过使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类在你的延长的初始屏幕上重新放置项目，你的代码应该响应窗口调整大小事件（例如，在旋转屏幕时或将应用移动到屏幕上靠近另一个应用的位置时）。
+-   Your extended splash screen page should use a 620 x 300 pixel image that is consistent with the image specified for your splash screen in your app manifest (your app's splash screen image). In Microsoft Visual Studio 2015, splash screen settings are stored in the **Splash Screen** section of the **Visual Assets** tab in your app manifest (Package.appxmanifest file).
+-   Your extended splash screen should use a background color that is consistent with the background color specified for your splash screen in your app manifest (your app's splash screen background).
+-   Your code should use the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class to position your app's splash screen image at the same screen coordinates as the default splash screen.
+-   Your code should respond to window resize events (such as when the screen is rotated or your app is moved next to another app onscreen) by using the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class to reposition items on your extended splash screen.
 
-使用以下步骤创建一个延长的初始屏幕，该屏幕可有效地模仿默认初始屏幕。
+Use the following steps to create an extended splash screen that effectively imitates the default splash screen.
 
-## 将“空白页”****项目添加到你的现有应用
-
-
-本主题假设你希望将延长的初始屏幕添加到使用 C#、Visual Basic 或 C++ 的现有通用 Windows 平台 (UWP) 应用。
-
--   在 Visual Studio 2015 中打开你的应用。
--   从菜单栏按下或打开**“项目”**，然后单击**“添加新项”**。 将出现**“添加新项”**对话框。
--   从此对话框，向你的应用添加新的**“空白页”**。 本主题将延长的初始屏幕页命名为“ExtendedSplash”。
-
-添加**“空白页”**项目将生成两个文件，一个用于标记 (ExtendedSplash.xaml)，另一个用于代码 (ExtendedSplash.xaml.cs)。
-
-## 延长的初始屏幕的必需 XAML
+## Add a **Blank Page** item to your existing app
 
 
-请按照以下步骤将图像和进度控件添加到你的延长的初始屏幕。
+This topic assumes you want to add an extended splash screen to an existing Universal Windows Platform (UWP) app project using C#, Visual Basic, or C++.
 
-在你的 ExtendedSplash.xaml 文件中，执行以下操作：
+-   Open your app in Visual Studio 2015.
+-   Press or open **Project** from the menu bar and click **Add New Item**. An **Add New Item** dialog box will appear.
+-   From this dialog box, add a new **Blank Page** to your app. This topic names the extended splash screen page "ExtendedSplash".
 
--   更改默认 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 元素的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) 属性，使其匹配你在应用清单（在 Package.appxmanifest 文件中的**“可见资源”**部分）中为应用的初始屏幕设置的背景色。 默认的初始屏幕颜色为浅灰色（十六进制值为 \#464646）。 请注意，在你创建新的**“空白页”**时，将默认提供此 **Grid** 元素。 你不必使用 **Grid**；它只是为构建延长的初始屏幕提供了一个方便。
--   将 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 元素添加到 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)。 你将使用此 **Canvas** 来放置你的延长的初始屏幕图像。
--   将 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 元素添加到 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)。 将你为默认初始屏幕选择的 600 x 320 像素图像用于延长的初始屏幕。
--   （可选）添加一个进度控件，以向用户显示正在加载的应用。 此主题添加了一个 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)，而非一个确定或不确定的 [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529)。
+Adding a **Blank Page** item generates two files, one for markup (ExtendedSplash.xaml) and another for code (ExtendedSplash.xaml.cs).
 
-添加以下代码以在 ExtendedSplash.xaml 中定义 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 和 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 元素以及 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控件：
+## Essential XAML for an extended splash screen
+
+
+Follow these steps to add an image and progress control to your extended splash screen.
+
+In your ExtendedSplash.xaml file:
+
+-   Change the [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) property of the default [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) element to match the background color you set for your app's splash screen in your app manifest (in the **Visual Assets** section of your Package.appxmanifest file). The default splash screen color is a light gray (hex value \#464646). Note that this **Grid** element is provided by default when you create a new **Blank Page**. You don't have to use a **Grid**; it's just a convenient base for building an extended splash screen.
+-   Add a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) element to the [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). You'll use this **Canvas** to position your extended splash screen image.
+-   Add an [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) element to the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267). Use the same 600 x 320 pixel image for your extended splash screen that you chose for the default splash screen.
+-   (Optional) Add a progress control to show users that your app is loading. This topic adds a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538), instead of a determinate or indeterminate [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529).
+
+Add the following code to define [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) and [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) elements, as well as a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control, in ExtendedSplash.xaml:
 
 ```xml
     <Grid Background="#464646">
@@ -70,29 +70,29 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     </Grid>
 ```
 
-**注意** 此代码将 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 的宽度设置为 20 像素。 你可以将其宽度手动设置为对你的应用有效的值，但是，该控件无法以小于 20 像素的宽度呈现。
+**Note**  This code sets the width of the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) to 20 pixels. You can manually set its width to a value that works for your app, however, the control will not render at widths of less than 20 pixels.
 
  
 
-## 延长的初始屏幕类的必需代码
+## Essential code for an extended splash screen class
 
 
-你的延长的初始屏幕需要在每次窗口大小（仅限 Windows）或方向发生更改时作出响应。 你使用的图像的位置必须进行更新，这样你的延长的初始屏幕将看起来很好，而不管窗口大小如何改变。
+Your extended splash screen needs to respond whenever the window size (Windows only) or orientation changes. The position of the image you use must be updated so that your extended splash screen looks good no matter how the window changes.
 
-使用以下步骤定义方法以正确地显示你的延长的初始屏幕。
+Use these steps to define methods to correctly display your extended splash screen.
 
-1.  **添加所需的命名空间**
+1.  **Add required namespaces**
 
-    你将需要将以下命名空间添加到 ExtendedSplash.xaml.cs 以访问 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类、[**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) 事件。
+    You'll need to add the following namespaces to ExtendedSplash.xaml.cs to access the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class, [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) events.
 
     ```cs
     using Windows.ApplicationModel.Activation;
     using Windows.UI.Core;
     ```
 
-2.  **创建部分类并声明类变量**
+2.  **Create a partial class and declare class variables**
 
-    将以下代码包括在 ExtendedSplash.xaml.cs 中，以创建一个部分类来代表延长的初始屏幕。
+    Include the following code in ExtendedSplash.xaml.cs to create a partial class to represent an extended splash screen.
 
     ```cs
     partial class ExtendedSplash : Page
@@ -106,11 +106,11 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     }
     ```
 
-    这些类变量由多个方法使用。 `splashImageRect` 变量存储系统为应用显示初始屏幕图像所在位置的坐标。 `splash` 变量存储一个 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 对象，而 `dismissed` 变量跟踪是否已解除系统所显示的初始屏幕。
+    These class variables are used by several methods. The `splashImageRect` variable stores the coordinates where the system displayed the splash screen image for the app. The `splash` variable stores a [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) object, and the `dismissed` variable tracks whether or not the splash screen that is displayed by the system has been dismissed.
 
-3.  **为正确放置图像的类定义一个构造函数**
+3.  **Define a constructor for your class that correctly positions the image**
 
-    以下代码为延长的初始屏幕类定义了一个构造函数，用于侦听窗口调整大小事件、将图像和（可选）进度控件放置在延长的初始屏幕上、为导航创建一个框架，以及调用异步方法来还原保存的会话状态。
+    The following code defines a constructor for the extended splash screen class that listens for window resizing events, positions the image and (optional) progress control on the extended splash screen, creates a frame for navigation, and calls an asynchronous method to restore a saved session state.
 
     ```cs
     public ExtendedSplash(SplashScreen splashscreen, bool loadState)
@@ -140,11 +140,11 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     }
     ```
 
-    确保在你的类构造函数中注册 [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) 处理程序（示例中为 `ExtendedSplash_OnResize`），以便你的应用在延长的初始屏幕中正确放置图像。
+    Make sure to register your [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) handler (`ExtendedSplash_OnResize` in the example) in your class constructor so that your app positions the image correctly in your extended splash screen.
 
-4.  **定义一个类方法以将图像放置在你的延长的初始屏幕中**
+4.  **Define a class method to position the image in your extended splash screen**
 
-    此代码演示了如何使用 `splashImageRect` 类变量将图像放置在延长的初始屏幕页面上。
+    This code demonstrates how to position the image on the extended splash screen page with the `splashImageRect` class variable.
 
     ```cs
     void PositionImage()
@@ -156,9 +156,9 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     }
     ```
 
-5.  **（可选）定义一个类方法以将进度控件放置在你的延长的初始屏幕中**
+5.  **(Optional) Define a class method to position a progress control in your extended splash screen**
 
-    如果你选择将 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 添加到你的延长的初始屏幕，请将它放置在与初始屏幕图像相对的位置。 将以下代码添加到 ExtendedSplash.xaml.cs 以将 **ProgressRing** 32 像素居中放置在图像的下方。
+    If you chose to add a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) to your extended splash screen, position it relative to the splash screen image. Add the following code to ExtendedSplash.xaml.cs to center the **ProgressRing** 32 pixels below the image.
 
     ```cs
     void PositionRing()
@@ -168,9 +168,9 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     }
     ```
 
-6.  **在该类内，为 Dismissed 事件定义一个处理程序**
+6.  **Inside the class, define a handler for the Dismissed event**
 
-    在 ExtendedSplash.xaml.cs 中，通过将 `dismissed` 类变量设置为 true，在发生 [**SplashScreen.Dismissed**](https://msdn.microsoft.com/library/windows/apps/br224764) 事件时进行响应。 如果你的应用包含设置操作，请将它们添加到事件处理程序。
+    In ExtendedSplash.xaml.cs, respond when the [**SplashScreen.Dismissed**](https://msdn.microsoft.com/library/windows/apps/br224764) event occurs by setting the `dismissed` class variable to true. If your app has setup operations, add them to this event handler.
 
     ```cs
     // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
@@ -182,7 +182,7 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     }
     ```
 
-    完成应用设置后，导航离开你的延长的初始屏幕。 以下代码定义了一个称为 `DismissExtendedSplash` 的方法，可用于导航至应用的 MainPage.xaml 文件中定义的 `MainPage`。
+    After app setup is complete, navigate away from your extended splash screen. The following code defines a method called `DismissExtendedSplash` that navigates to the `MainPage` defined in your app's MainPage.xaml file.
 
     ```cs
     void DismissExtendedSplash()
@@ -194,9 +194,9 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     }
     ```
 
-7.  **在该类内，为 Window.SizeChanged 事件定义一个处理程序**
+7.  **Inside the class, define a handler for Window.SizeChanged events**
 
-    在用户调整窗口大小时，准备你的延长的初始屏幕以重新放置其元素。 当 [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) 事件发生时，此代码将通过捕获新坐标和重新放置图像来进行响应。 如果你已将进度控件添加到延长的初始屏幕，同样将它重新放置在该事件处理程序内。
+    Prepare your extended splash screen to reposition its elements if a user resizes the window. This code responds when a [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) event occurs by capturing the new coordinates and repositioning the image. If you added a progress control to your extended splash screen, reposition it inside this event handler as well.
 
     ```cs
     void ExtendedSplash_OnResize(Object sender, WindowSizeChangedEventArgs e)
@@ -214,13 +214,13 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     }
     ```
 
-    **注意** 在你尝试获取图像位置之前，请确保类变量 (`splash`) 包含一个有效的 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 对象，如该示例中所示。
+    **Note**  Before you try to get the image location make sure the class variable (`splash`) contains a valid [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) object, as shown in the example.
 
      
 
-8.  **（可选）添加类方法以还原保存的会话状态**
+8.  **(Optional) Add a class method to restore a saved session state**
 
-    在步骤 4 中你添加到 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中的代码：[修改启动激活处理程序](#modify-the-launch-activation-handler)，将导致你的应用在启动时显示延长的初始屏幕。 若要将与应用启动相关的所有方法合并到延长的初始屏幕类中，你可以考虑向 ExtendedSplash.xaml.cs 文件添加一个异步方法以还原应用的状态。
+    The code you added to the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method in Step 4: [Modify the launch activation handler](#modify-the-launch-activation-handler) causes your app to display an extended splash screen when it launches. To consolidate all methods related to app launch in your extended splash screen class, you could consider adding an asynchronous method to your ExtendedSplash.xaml.cs file to restore the app's state.
 
     ```cs
     async void RestoreStateAsync(bool loadState)
@@ -232,16 +232,16 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
     }
     ```
 
-    在你修改 App.xaml.cs 中的启动激活处理程序时，如果应用之前的 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 为 **Terminated**，你还需要将 `loadstate` 设置为 true。 如果出现这种情况，`RestoreStateAsync` 方法会将应用还原到其之前的状态。 有关应用启用、暂停和终止的概述，请参阅[应用生命周期](app-lifecycle.md)。
+    When you modify the launch activation handler in App.xaml.cs, you'll also set `loadstate` to true if the previous [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) of your app was **Terminated**. If so, the `RestoreStateAsync` method restores the app to its previous state. For an overview of app launch, suspension, and termination, see [App lifecycle](app-lifecycle.md).
 
-## 修改启动激活处理程序
+## Modify the launch activation handler
 
 
-启动应用时，系统将初始屏幕信息传递给应用的启动激活事件处理程序。 你可以使用该信息将图像正确放置在延长的初始屏幕页面上。 你可以从传递给你的应用的 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 处理程序的激活事件参数获取此初始屏幕信息（请参阅以下代码中的 `args` 变量）。
+When your app is launched, the system passes splash screen information to the app's launch activation event handler. You can use this information to correctly position the image on your extended splash screen page. You can get this splash screen information from the activation event arguments that are passed to your app's [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) handler (see the `args` variable in the following code).
 
-如果你尚未为你的应用替代 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 处理程序，请参阅[应用生命周期](app-lifecycle.md)以了解如何处理激活事件。
+If you have not already overridden the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) handler for your app, see [App lifecycle](app-lifecycle.md) to learn how to handle activation events.
 
-在 App.xaml.cs 中，添加以下代码以创建和显示延长的初始屏幕。
+In App.xaml.cs, add the following code to create and display an extended splash screen.
 
 ```cs
 protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -257,14 +257,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 }
 ```
 
-## 完成代码
+## Complete code
 
 
-> **注意** 以下代码与之前步骤中显示的代码段稍有不同。
--   ExtendedSplash.xaml 包括一个 `DismissSplash` 按钮。 单击此按钮时，事件处理程序 `DismissSplashButton_Click` 将调用 `DismissExtendedSplash` 方法。 在你的应用中，在应用完成资源加载或初始化其 UI 后调用 `DismissExtendedSplash`。
--   此应用还会使用 UWP 应用项目模板，该模板使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 导航。 因此，在 App.xaml.cs 中，启动激活处理程序 ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) 将定义一个 `rootFrame` 并使用它来设置应用窗口的内容。
+> **Note**  The following code slightly differs from the snippets shown in the previous steps.
+-   ExtendedSplash.xaml includes a `DismissSplash` button. When this button is clicked, an event handler, `DismissSplashButton_Click`, calls the `DismissExtendedSplash` method. In your app, call `DismissExtendedSplash` when your app is done loading resources or initializing its UI.
+-   This app also uses a UWP app project template, which uses [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) navigation. As a result, in App.xaml.cs, the launch activation handler ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) defines a `rootFrame` and uses it to set the content of the app window.
 
-ExtendedSplash.xaml：此示例包含一个 `DismissSplash` 按钮，因为它没有要加载的应用资源。 在你的应用中，如果你的应用已完成资源加载或已准备好其初始 UI，将自动忽略延长的初始屏幕。
+ExtendedSplash.xaml: This example includes a `DismissSplash` button because it doesn't have app resources to load. In your app, dismiss the extended splash screen automatically when your app is done loading resources or preparing its initial UI.
 
 ```xml
 <Page
@@ -288,7 +288,7 @@ ExtendedSplash.xaml：此示例包含一个 `DismissSplash` 按钮，因为它�
 </Page>
 ```
 
-ExtendedSplash.xaml.cs：请注意 `DismissExtendedSplash` 方法将从 `DismissSplash` 按钮的单击事件处理程序中调用。 在你的应用中，你将不需要 `DismissSplash` 按钮。 而是，在资源加载完成后以及在你想要导航到其主页面时调用 `DismissExtendedSplash`。
+ExtendedSplash.xaml.cs: Note that the `DismissExtendedSplash` method is called from the click event handler for the `DismissSplash` button. In your app, you won't need a `DismissSplash` button. Instead, call `DismissExtendedSplash` when your app is done loading resources and you want to navigate to its main page.
 
 ```cs
 using System;
@@ -414,9 +414,9 @@ namespace SplashScreenExample
 }
 ```
 
-App.xaml.cs：此项目是在 Visual Studio 2015 中使用 UWP 应用**“空白应用 (XAML)”**项目模板创建的。 `OnNavigationFailed` 和 `OnSuspending` 事件处理程序均自动生成并且无需进行任何更改即可实现延长的初始屏幕。 此主题将仅修改 `OnLaunched`。
+App.xaml.cs: This project was created using the UWP app **Blank App (XAML)** project template in Visual Studio 2015. Both the `OnNavigationFailed` and `OnSuspending` event handlers are automatically generated and don't need to be changed to implement an extended splash screen. This topic only modifies `OnLaunched`.
 
-如果你没有为应用使用项目模板，请参阅步骤 4：[修改启动激活处理程序](#modify_the_launch_activation_handler)以获取不使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 导航的已修改 `OnLaunched` 的示例。
+If you didn't use a project template for your app, see Step 4: [Modify the launch activation handler](#modify_the_launch_activation_handler) for an example of a modified `OnLaunched` that doesn't use [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) navigation.
 
 ```cs
 using System;
@@ -533,24 +533,24 @@ namespace SplashScreenExample
 }
 ```
 
-## 相关主题
+## Related topics
 
 
-* [应用生命周期](app-lifecycle.md)
+* [App lifecycle](app-lifecycle.md)
 
-**参考**
+**Reference**
 
-* [**Windows.ApplicationModel.Activation 命名空间**](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [**Windows.ApplicationModel.Activation.SplashScreen 类**](https://msdn.microsoft.com/library/windows/apps/br224763)
-* [**Windows.ApplicationModel.Activation.SplashScreen.ImageLocation 属性**](https://msdn.microsoft.com/library/windows/apps/br224765)
-* [**Windows.ApplicationModel.Core.CoreApplicationView.Activated 事件**](https://msdn.microsoft.com/library/windows/apps/br225018)
-
- 
+* [**Windows.ApplicationModel.Activation namespace**](https://msdn.microsoft.com/library/windows/apps/br224766)
+* [**Windows.ApplicationModel.Activation.SplashScreen class**](https://msdn.microsoft.com/library/windows/apps/br224763)
+* [**Windows.ApplicationModel.Activation.SplashScreen.ImageLocation property**](https://msdn.microsoft.com/library/windows/apps/br224765)
+* [**Windows.ApplicationModel.Core.CoreApplicationView.Activated event**](https://msdn.microsoft.com/library/windows/apps/br225018)
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

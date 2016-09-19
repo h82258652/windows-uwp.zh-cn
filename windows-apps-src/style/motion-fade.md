@@ -1,53 +1,53 @@
 ---
 author: mijacobs
-Description: "使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。"
-title: "UWP 应用中的淡化动画"
+Description: Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
+title: Fade animations in UWP apps
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 028e3462a0bf34af0486864508b1ac049fdf60ed
+ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
 
 ---
 
-# 淡化动画
+# Fade animations
 
-使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
+Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
 
-**重要的 API**
+**Important APIs**
 
--   [**FadeInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210298)
--   [**FadeOutThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210302)
-
-
-## 应做事项和禁止事项
+-   [**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298)
+-   [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
--   当你的应用在不相关的元素或有大量文本的元素之间过渡时，先使用淡出，然后使用淡入。 这可让传出对象在传入对象显示之前完全消失。
--   如果元素的大小保持不变并且你希望用户感觉他们在查看相同的项，则在传出元素之上淡入一个或多个传入元素。 淡入完成后，可以删除传出项目。 这只是在传出项被传入项完全覆盖时的一个可行选项。
--   避免使用淡化动画添加或删除列表中的项。 相反，请使用为该目的创建的列表动画。
--   避免使用淡化动画更改整个页面内容。 相反，请使用为该目的创建的页面过渡动画。
--   淡出是用于删除元素的不明显的方法。
-## 相关文章
+## Do's and don'ts
 
-**对于开发人员 (XAML)**
-* [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [创建淡化动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**FadeInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210298)
-* [**FadeOutThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
- 
+-   When your app transitions between unrelated or text-heavy elements, use a fade-out followed by a fade-in. This allows the outgoing object to completely disappear before the incoming object is visible.
+-   Fade in the incoming element or elements on top of the outgoing elements if the size of the elements remains constant, and if you want the user to feel that they're looking at the same item. Once the fade-in is complete, the outgoing item can be removed. This is only a viable option when the outgoing item will be completely covered by the incoming item.
+-   Avoid fade animations to add or delete items in a list. Instead, use the list animations created for that purpose.
+-   Avoid fade animations to change the entire contents of a page. Instead, use the page transition animations created for that purpose.
+-   Fade-out is a subtle way to remove an element.
+## Related articles
+
+**For developers (XAML)**
+* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Animating fades](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298)
+* [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

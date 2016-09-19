@@ -1,42 +1,43 @@
 ---
 author: TylerMSFT
-title: "注册后台任务"
-description: "了解如何创建可以重复使用以安全注册大部分后台任务的函数。"
+title: Register a background task
+description: Learn how to create a function that can be re-used to safely register most background tasks.
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 
 ---
 
-# 注册后台任务
+# Register a background task
 
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+**Important APIs**
 
+-   [**BackgroundTaskRegistration class**](https://msdn.microsoft.com/library/windows/apps/br224786)
+-   [**BackgroundTaskBuilder class**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**SystemCondition class**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
-**重要的 API**
+Learn how to create a function that can be re-used to safely register most background tasks.
 
--   [**BackgroundTaskRegistration 类**](https://msdn.microsoft.com/library/windows/apps/br224786)
--   [**BackgroundTaskBuilder 类**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**SystemCondition 类**](https://msdn.microsoft.com/library/windows/apps/br224834)
+This topic is applicable to both single-process background tasks and background tasks that run in a separate process. This topic assumes that you already have a background task that needs to be registered. (See [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md) or [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md) for information about how to write a background task).
 
-了解如何创建可以重复使用以安全注册大部分后台任务的函数。
+This topic walks through a utility function that registers background tasks. This utility function checks for existing registrations first before registering the task multiple times to avoid problems with multiple registrations, and it can apply a system condition to the background task. The walkthrough includes a complete, working example of this utility function.
 
-本主题假定你已拥有需要注册的后台任务。 （请参阅[创建和注册后台任务](create-and-register-a-background-task.md)以获取有关如何编写后台任务的信息）。
+**Note**  
 
-本主题指导完成注册后台任务的实用工具函数。 此实用工具函数在注册任务前首先多次检查现有注册以避免多次注册产生的错误，并且该函数可以将系统条件应用于后台任务。 本操作实例包括此实用工具函数的正常运行的完整示例。
+Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
-**注意**  
+To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
+## Define the method signature and return type
 
-若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
+This method takes in the task entry point, task name, a pre-constructed background task trigger, and (optionally) a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) for the background task. This method returns a [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) object.
 
-## 定义方法签名并返回类型
-
-
-此方法包含任务入口点、任务名称、预构建的后台任务触发器以及后台任务的 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)（可选）。 此方法返回 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) 对象。
+> [!Important]
+> `taskEntryPoint` - for background tasks that run in a separate process, this must be constructed as the namespace name, '.', and the name of the class containing your background class. The string is case-sensitive.  For example, if you had a namespace "MyBackgroundTasks" and a class "BackgroundTask1" that contained your background class code, the string for `taskEntryPoint` would be "MyBackgroundTasks.BackgruondTask1".
+> If your background task runs in the same process as your app (i.e. a single-process background task) `taskEntryPoint` should not be set.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -64,16 +65,15 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 检查现有注册
+## Check for existing registrations
 
+Check whether the task is already registered. It's important to check this because if a task is registered multiple times, it will run more than once whenever it’s triggered; this can use excess CPU and may cause unexpected behavior.
 
-检查任务是否已注册。 请务必检查此项，因为如果任务已多次注册，则将在该任务触发时运行多次，这可占用过多的 CPU 并可能导致意外行为。
+You can check for existing registrations by querying the [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property and iterating on the result. Check the name of each instance – if it matches the name of the task you’re registering, then break out of the loop and set a flag variable so that your code can choose a different path in the next step.
 
-你可以通过查询 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 属性并在结果上迭代来检查现有注册。 检查每个实例的名称 - 如果该名称与正注册的任务的名称匹配，则跳出循环并设置标志变量，以便你的代码可以在下一步中选择不同的路径。
+> **Note**  Use background task names that are unique to your app. Ensure each background task has a unique name.
 
-> **注意** 使用应用唯一的后台任务名称。 确保每个后台任务都具有唯一的名称。
-
-以下代码使用我们在上一步中创建的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 注册后台任务：
+The following code registers a background task using the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) we created in the last step:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -137,16 +137,17 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 注册后台任务（或返回现有注册）
+## Register the background task (or return the existing registration)
 
 
-检查在现有后台任务注册的列表中是否找到该任务。 如果有，则返回该任务的实例。
+Check to see if the task was found in the list of existing background task registrations. If so, return that instance of the task.
 
-否则，使用新 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象注册任务。 此代码应检查条件参数是否为空，如果不为空，则将条件添加到注册对象。 返回 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法返回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)。
+Then, register the task using a new [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. This code should check whether the condition parameter is null, and if not, add the condition to the registration object. Return the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) returned by the [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method.
 
-> **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
+> **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+> **Note** If you are registering a background task that runs in the same process as your app, send `String.Empty` or `null` for the `taskEntryPoint` parameter.
 
-下例可能返回现有任务，也可能添加注册后台任务的代码（如果有，包含可选系统条件）：
+The following example either returns the existing task, or adds code that registers the background task (including the optional system condition if present):
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -180,12 +181,16 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 >     var builder = new BackgroundTaskBuilder();
 >
 >     builder.Name = name;
->     builder.TaskEntryPoint = taskEntryPoint;
+>
+>     // single-process background tasks don't set TaskEntryPoint
+>     if ( taskEntryPoint != null && taskEntryPoint != String.Empty)
+>     {
+>         builder.TaskEntryPoint = taskEntryPoint;
+>     }
 >     builder.SetTrigger(trigger);
 >
 >     if (condition != null)
 >     {
->
 >         builder.AddCondition(condition);
 >     }
 >
@@ -246,10 +251,10 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 完整的后台任务注册实用工具函数
+## Complete background task registration utility function
 
 
-此示例展示完整的后台任务注册函数。 此函数可用于注册大部分后台任务，但不能注册网络后台任务。
+This example shows the completed background task registration function. This function can be used to register most background tasks, with the exception of networking background tasks.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -366,29 +371,28 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
-## 相关主题
-
+## Related topics
 
 ****
 
-* [创建和注册后台任务](create-and-register-a-background-task.md)
-* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
-* [处理取消的后台任务](handle-a-cancelled-background-task.md)
-* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
-* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
-* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
-* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
-* [使用维护触发器](use-a-maintenance-trigger.md)
-* [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
-* [后台任务指南](guidelines-for-background-tasks.md)
+* [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md)
+* [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
 
 ****
 
-* [调试后台任务](debug-a-background-task.md)
-* [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
@@ -396,6 +400,6 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

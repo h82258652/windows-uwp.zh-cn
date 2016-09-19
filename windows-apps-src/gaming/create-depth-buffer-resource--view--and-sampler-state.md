@@ -1,41 +1,41 @@
 ---
 author: mtoepke
-title: "创建深度缓冲区设备资源"
-description: "了解如何创建支持阴影卷的深度测试所需的 Direct3D 设备资源。"
+title: Create depth buffer device resources
+description: Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f0aedb99832ecd10da547cf73a074070008a4344
+ms.openlocfilehash: 85fb020e7d476d3b2095875376903c5e28f08d94
 
 ---
 
-# 创建深度缓冲区设备资源
+# Create depth buffer device resources
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-了解如何创建支持阴影卷的深度测试所需的 Direct3D 设备资源。 [操作实例：使用 Direct3D 11 中的深度缓冲区实现阴影卷](implementing-depth-buffers-for-shadow-mapping.md)的第 1 部分。
+Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes. Part 1 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## 所需资源
-
-
-呈现阴影卷的深度映射需要以下与 Direct3D 设备有关的资源：
-
--   用于深度映射的资源（缓冲区）
--   资源的深度模具视图和着色器资源视图
--   比较采样器状态对象
--   光线 POV 矩阵的常量缓冲区
--   用于呈现阴影映射的视区（通常为方形视区）
--   用于启用正面剔除的呈现状态对象
--   你还将需要一个呈现状态对象（如果你尚未使用），用于切换回背面剔除。
-
-请注意，这些资源的创建需要包含在与设备有关的资源创建例程中，这样你的呈现器便可以在安装新的设备驱动程序时或者用户将你的应用移动到与其他图形适配器连接的监视器时重新创建它们。
-
-## 检查功能支持
+## Resources you'll need
 
 
-创建深度映射之前，在 Direct3D 设备上调用 [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) 方法，请求 **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** 并提供一个 [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) 结构。
+Rendering a depth map for shadow volumes requires the following Direct3D device-dependent resources:
+
+-   A resource (buffer) for the depth map
+-   A depth stencil view and shader resource view for the resource
+-   A comparison sampler state object
+-   Constant buffers for light POV matrices
+-   A viewport for rendering the shadow map (typically a square viewport)
+-   A rendering state object to enable front face culling
+-   You will also need a rendering state object to switch back to back face culling, if you don't already use one.
+
+Note that creation of these resources needs to be included in a device-dependent resource creation routine, that way your renderer can recreate them if (for example) a new device driver is installed, or the user moves your app to a monitor attached to a different graphics adapter.
+
+## Check feature support
+
+
+Before creating the depth map, call the [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) method on the Direct3D device, request **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT**, and provide a [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) structure.
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -52,14 +52,14 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 ```
 
-如果不支持此功能，请勿尝试加载与调用示例比较函数的着色器模型 4 级别 9\_x 兼容的着色器。 在大多数情况下，缺乏对该功能的支持意味着 GPU 是一款旧设备，其驱动器未更新至支持 WDDM 1.2。 如果设备支持至少功能级别 10\_0，则可加载与着色器模型 4\_0 兼容的示例比较函数作为替代。
+If this feature is not supported, do not try to load shaders compiled for shader model 4 level 9\_x that call sample comparison functions. In many cases, lack of support for this feature means that the GPU is a legacy device with a driver that isn't updated to support at least WDDM 1.2. If the device supports at least feature level 10\_0 then you can load a sample comparison shader compiled for shader model 4\_0 instead.
 
-## 创建深度缓冲区
+## Create depth buffer
 
 
-首先，尝试使用精度较高的深度格式创建深度映射。 首先设置匹配的着色器资源视图属性。 如果资源创建失败，例如由于设备内存不足或者存在硬件不支持的格式，请尝试精度较低的格式并更改要匹配的属性。
+First, try creating the depth map with a higher-precision depth format. Set up matching shader resource view properties first. If the resource creation fails, for example due to low device memory or a format that the hardware doesn't support, try a lower-precision format and change properties to match.
 
-如果你仅需要精度较低的深度格式，例如当在中等分辨率 Direct3D 功能级别 9\_1 设备上呈现时，该步骤是可选的。
+This step is optional if you only need a low-precision depth format, for example when rendering on medium-resolution Direct3D feature level 9\_1 devices.
 
 ```cpp
 D3D11_TEXTURE2D_DESC shadowMapDesc;
@@ -79,7 +79,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-然后创建资源视图。 在深度模具视图上将 mip 片设置为零，在着色器资源视图上将 mip 级别设置为 1。 两者都有一个纹理维度 TEXTURE2D，并且两者都需要使用匹配的 [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。
+Then create the resource views. Set the mip slice to zero on the depth stencil view and set mip levels to 1 on the shader resource view. Both have a texture dimension of TEXTURE2D, and both need to use a matching [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -107,14 +107,14 @@ hr = pD3DDevice->CreateShaderResourceView(
     );
 ```
 
-## 创建比较状态
+## Create comparison state
 
 
-现在创建比较采样器状态对象。 功能级别 9\_1 仅支持 D3D11\_COMPARISON\_LESS\_EQUAL。 [在硬件范围内支持阴影映射](target-a-range-of-hardware.md)中详细介绍了筛选选项，或者只是选取点筛选以便快速获得阴影映射。
+Now create the comparison sampler state object. Feature level 9\_1 only supports D3D11\_COMPARISON\_LESS\_EQUAL. Filtering choices are explained more in [Supporting shadow maps on a range of hardware](target-a-range-of-hardware.md) - or you can just pick point filtering for faster shadow maps.
 
-请注意，你可以指定 D3D11\_TEXTURE\_ADDRESS\_BORDER 地址模式，并且它将在功能级别 9\_1 设备上有效。 这适用于像素着色器，该着色器在进行深度测试之前不测试像素是否位于光线的视锥之内。 通过为每个边框指定 0 或 1，你可以控制位于光线的视锥之外的像素是否可以通过深度测试，从而可以控制它们是被照亮还是处于阴影之中。
+Note that you can specify the D3D11\_TEXTURE\_ADDRESS\_BORDER address mode and it will work on feature level 9\_1 devices. This applies to pixel shaders that don't test whether the pixel is in the light's view frustum before doing the depth test. By specifying 0 or 1 for each border, you can control whether pixels outside the light's view frustum pass or fail the depth test, and therefore whether they are lit or in shadow.
 
-在功能级别 9\_1 上，必须设置为以下所需值：**MinLOD** 设置为零，**MaxLOD** 设置为 **D3D11\_FLOAT32\_MAX**，而 **MaxAnisotropy** 设置为零。
+On feature level 9\_1, the following required values must be set: **MinLOD** is set to zero, **MaxLOD** is set to **D3D11\_FLOAT32\_MAX**, and **MaxAnisotropy** is set to zero.
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -146,10 +146,10 @@ DX::ThrowIfFailed(
     );
 ```
 
-## 创建呈现器状态
+## Create render states
 
 
-现在，创建你可以用来启用正面剔除的呈现器状态。 请注意，功能级别 9\_1 设备要求将 **DepthClipEnable** 设置为 **true**。
+Now create a render state you can use to enable front face culling. Note that feature level 9\_1 devices require **DepthClipEnable** set to **true**.
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;
@@ -165,7 +165,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-创建你可以用来启用背面剔除的呈现器状态。 如果你的呈现代码已经启用了背面剔除，那么你可以跳过这一步。
+Create a render state you can use to enable back face culling. If your rendering code already turns on back face culling, then you can skip this step.
 
 ```cpp
 D3D11_RASTERIZER_DESC shadowRenderStateDesc;
@@ -182,10 +182,10 @@ DX::ThrowIfFailed(
     );
 ```
 
-## 创建常量缓冲区
+## Create constant buffers
 
 
-不要忘记创建一个用于从光线的角度呈现的常量缓冲区。 你还可以使用该常量缓冲区指定着色器的光线位置。 对点光源使用透视矩阵，对定向光源（太阳光）使用正交矩阵。
+Don't forget to create a constant buffer for rendering from the light's point of view. You can also use this constant buffer to specify the light position to the shader. Use a perspective matrix for point lights, and use an orthogonal matrix for directional lights (such as sunlight).
 
 ```cpp
 DX::ThrowIfFailed(
@@ -197,7 +197,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-填写常量缓冲数据。 在初始化时更新常量缓冲，如果从上一帧起更改光值，则会再次更新。
+Fill the constant buffer data. Update the constant buffers once during initialization, and again if the light values have changed since the previous frame.
 
 ```cpp
 {
@@ -239,10 +239,10 @@ context->UpdateSubresource(
     );
 ```
 
-## 创建视区
+## Create a viewport
 
 
-你需要一个单独的视区来呈现到阴影映射。 视区不是基于设备的资源；你可以在代码中的其他地方创建视区。 创建具有阴影映射的视口可便于将视口的尺寸与阴影映射的尺寸保持一致。
+You need a separate viewport to render to the shadow map. The viewport isn't a device-based resource; you're free to create it elsewhere in your code. Creating the viewport along with the shadow map can help make it more convenient to keep the dimension of the viewport congruent with the shadow map dimension.
 
 ```cpp
 // Init viewport for shadow rendering
@@ -253,7 +253,7 @@ m_shadowViewport.MinDepth = 0.f;
 m_shadowViewport.MaxDepth = 1.f;
 ```
 
-在本操作实例的下一部分中，将介绍如何通过[呈现到深度缓冲区](render-the-shadow-map-to-the-depth-buffer.md)来创建阴影映射。
+In the next part of this walkthrough, learn how to create the shadow map by [rendering to the depth buffer](render-the-shadow-map-to-the-depth-buffer.md).
 
  
 
@@ -265,6 +265,6 @@ m_shadowViewport.MaxDepth = 1.f;
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

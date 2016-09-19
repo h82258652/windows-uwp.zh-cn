@@ -1,33 +1,33 @@
 ---
 author: jnHs
-Description: "你可以下载包含分析数据的文件，以便你可以脱机查看统计数据和信息。"
-title: "下载分析报告"
+Description: You can download .files that contain your analytics data so that you can review your stats and info offline.
+title: Download analytics reports
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e
+ms.openlocfilehash: 99b751146adc2394e10c6deae58bd0fdb124888d
 
 ---
 
-# 下载分析报告
+# Download analytics reports
 
 
-你可以下载包含分析数据的文件，以便你可以脱机查看统计数据和信息。 数据在 .tsv（制表符分隔值）文件中提供，你可以使用多个程序打开这些文件。
+You can download .files that contain your analytics data so that you can review your stats and info offline. Data is provided in .tsv (tab-separated values) files, which can be opened in a number of programs.
 
-## 下载特定报告
+## To download a specific report
 
-1.  首先，选择你想要下载哪个应用的信息。
+1.  First, select the app for which you'd like to download info.
 
-    > **提示** 你可以选择下载你的所有应用或某个特定应用的信息。 请注意：当你访问**“分析”**部分中的**“下载报告”**页面时，不会将你限制为仅可针对正在使用的应用下载报告。
+    > **Tip**  You can choose to download info all of your apps or a specific app. Note that you're not limited to downloading a report for the app which you were working in when you accessed the **Download reports** page in its **Analytics** section.
 
-2.  选择其中一个可用的报告。
+2.  Select one of the available reports.
 
-3.  从“聚合级别”****中的可用值和“日期范围”****下拉列表中选择。 请注意：这些选项可能因你所选择的报告类型而有所不同。
+3.  Select from the available values in the **Aggregation level** and **Date range** drop-down lists. Note that the options may vary depending on the type of report you've selected.
 
-4.  单击“下载报告”****按钮，然后保存或打开 .tsv 文件。
+4.  Click the **Download reports** button, and then save or open the .tsv file.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,49 +1,49 @@
 ---
 author: mcleblanc
-description: "使用当前的 Mac 计算机开发 Windows 应用。"
-title: "在 Mac 上设置 Windows 10"
+description: Use your current Mac computer to develop apps for Windows.
+title: Setting up your Mac with Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 10ebdb0a534d8f2931d15481c1bee4705268b0bb
+ms.openlocfilehash: b0a6c701237e7eeb1d96964ad429d73373e55252
 
 ---
 
-# 在 Mac 上设置 Windows 10
+# Setting up your Mac with Windows 10
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-使用当前的 Mac 计算机开发 Windows 应用。
+Use your current Mac computer to develop apps for Windows.
 
-## 在 Mac 上运行 Windows 并使用 Visual Studio
+## Run Windows on your Mac and use Visual Studio
 
-准备好开始开发通用 Windows 应用，却没有一台随手可用的电脑？ 没关系 - 你可以使用 Mac！ 使用目前流行的第三方解决方案（如 Apple Boot Camp、Oracle VirtualBox、VMware Fusion 以及 Parallels Desktop 等），可以在你的 Apple 计算机上安装 Windows 10 和 Microsoft Visual Studio。
+Are you ready to start developing Universal Windows apps, but you don't have a PC handy? That's okay — you can use your Mac! With popular third-party solutions like Apple Boot Camp, Oracle VirtualBox, VMware Fusion, and Parallels Desktop, you can install Windows 10 and Microsoft Visual Studio on your Apple computer.
 
-**注意** 你需要位于磁盘或 U 盘上的 Windows 10 可启动映像。 如果你是 MSDN 订户，可以从 MSDN 订户下载中心下载安装映像。 如果不是订户，可以从 [Windows 应用商店](http://apps.microsoft.com/windows/app)购买安装程序。 也可以从[此位置](http://go.microsoft.com/fwlink/?LinkId=623906)下载安装程序，这在你已运行 Windows 并希望升级时很有用。
+**Note**  You will need a Windows 10 bootable image on disk or USB flash drive. If you are a MSDN Subscriber, you can download the install image from the MSDN Subscriber Downloads center. If you aren't a subscriber, the installer can be purchased from the [Windows Store](http://apps.microsoft.com/windows/app). You can also download it from [this location](http://go.microsoft.com/fwlink/?LinkId=623906), which is useful if you are already running Windows and wish to upgrade.
 
-当你运行 Windows 后，便可以从 [Windows 10 开发人员下载](http://go.microsoft.com/fwlink/p/?LinkId=302144)安装 Visual Studio 2015，然后开始编写应用！
+Once you have Windows running, you can then install Visual Studio 2015 from [Developer downloads for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=302144) and start writing apps!
 
-**注意** 如果你打算使用 Visual Studio 设备仿真程序，则**必须**安装 64 位 (x64) 版本的 Windows 10 专业版或更好的版本。 遗憾的是，某些较旧的 Mac 电脑无法运行 64 位 Windows。 请在此 [Apple 支持页面](http://go.microsoft.com/fwlink/p/?LinkID=397959)上与 Apple 联系以核实你的硬件是否兼容。
+**Note**  If you plan to use the Visual Studio device emulators, you **must** install a 64-bit (x64) version of Windows 10 Pro or better. Unfortunately, some older Macs cannot run 64-bit Windows. Please check with Apple if your hardware is compatible on this[Apple support page](http://go.microsoft.com/fwlink/p/?LinkID=397959).
 
 ## Apple Boot Camp
 
-在每个新的 Mac 上都预安装了 Boot Camp Assistant 应用，启动后，它将引导你完成安装 Windows 10 的过程。 你只需要一个 Windows 的副本（来自上面列出的源）和至少 30 GB 的可用磁盘空间。 安装后，你可以选择启动到 Mac OSX 或 Windows 10 中。 有关详细信息，请参阅 Apple 的 [Boot Camp 说明页面](http://go.microsoft.com/fwlink/?LinkId=623912)。
+The Boot Camp Assistant app is pre-installed on every recent Mac, and launching it will walk you through the process of installing Windows 10. All you need is a copy of Windows (from the sources listed above) and at least 30 Gb of free disk space. Once installed, you can choose to boot into Mac OSX or Windows 10. For more info, see Apple's [Boot Camp instructions page](http://go.microsoft.com/fwlink/?LinkId=623912).
 
 ## Parallels Desktop
 
-使用 Parallels Desktop 11，可以将包括 Visual Studio 和 Cortana 在内的 Windows 应用与现有的 Mac 应用程序并列运行。 专业版可用于开发人员，它具有一些额外功能，其中包括改进的调试以及对 Docker 和 Jenkins 的支持。 有关详细信息和免费试用版，请参阅 [Parallels Desktop](http://go.microsoft.com/fwlink/p/?LinkId=281827)。
+Using Parallels Desktop 11, you can run Windows apps side-by-side with existing Mac applications, including Visual Studio and Cortana. A pro version is available that includes extra features for developers, including improved debugging, and support for Docker and Jenkins. For more info, and a free trial version, see [Parallels Desktop](http://go.microsoft.com/fwlink/p/?LinkId=281827).
 
 ## VMWare Fusion
 
-来自 VMWare 的 Fusion 8 可以使你在 Mac 桌面上直接运行 Visual Studio。 专业版可用于为开发人员提供一些更高级的功能，如 vSphere 支持 有关详细信息和免费试用版，请参阅 [VMWare Fusion](http://go.microsoft.com/fwlink/p/?LinkId=281826)。
+Fusion 8 from VMWare will let you run Visual Studio right on your Mac desktop. A pro version is available to offer developers some more advanced features such as vSphere support. For more info, and a free trial version, see [VMware Fusion](http://go.microsoft.com/fwlink/p/?LinkId=281826).
 
 ## Oracle VirtualBox
 
-VirtualBox 是一款用于在计算机上运行虚拟机的免费应用程序，它支持在 Mac 上运行 Windows。 它是只提供基本服务的选项，但是价格很具有吸引力。 有关详细信息，请参阅 [VirtualBox](http://go.microsoft.com/fwlink/p/?LinkId=280599)。
+VirtualBox is a free application for running virtual machines on your computer, and it supports running Windows on Mac. It is a no-frills option, but the price is appealing. For more info, see [VirtualBox](http://go.microsoft.com/fwlink/p/?LinkId=280599).
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

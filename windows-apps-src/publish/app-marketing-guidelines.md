@@ -1,60 +1,60 @@
 ---
 author: jnHs
-Description: "了解如何推广你的应用和 Windows 应用商店中的内容。 这些指南涉及如何使用可用资源以及有关在打印、电视、社交媒体和数字广告中推广应用的建议。"
-title: "Windows 应用商店应用营销指南"
+Description: Learn how to promote your apps and content in the Windows Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
+title: Windows Store app marketing guidelines
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 64c6dd45053070096ff7d7e932bac1c560194518
+ms.openlocfilehash: b6662344996a83c3f1460af8b7387bf7cfd4b087
 
 ---
 
-# Windows 应用商店应用营销指南
+# Windows Store app marketing guidelines
 
-了解如何推广你的应用和 Windows 应用商店中的内容。 这些指南涉及如何使用可用资源以及有关在打印、电视、社交媒体和数字广告中推广应用的建议。
+Learn how to promote your apps and content in the Windows Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
 
-## 应用商店锁屏提醒
+## Store badges
 
-我们创建了特殊的促销锁屏提醒，帮助你带动更多客户查看 Windows 应用商店中的应用一览。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
+We’ve created special promotional badges to help you drive more customers to your app's listing within the Windows Store. These badges are available in 44 languages. Keep in mind that there are certain requirements you need to follow when using these images; these requirements, along with usage examples and guidelines, are available in a PDF file.
 
-[![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Windows 应用商店营销指南（英语版本的 PDF 文件）
+[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Windows Store Marketing Guidelines (PDF, English)
 
-## 锁屏提醒生成器和图像
+## Badge generator and images
 
-你可以使用[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)生成显示（使用所选语言）应用商店锁屏提醒的 HTML 和直接指向应用的应用商店列表的链接。 你也可以从以下链接中下载完整的锁屏提醒图像集（格式为 PNG 和 PDF）。
+You can use our [badge generator](http://go.microsoft.com/fwlink/p/?LinkID=534236) to generate HTML that displays the Store badge (in the language of your choice) and links directly to your app's Store listing. You can also download the complete set of badge images (in PNG and PDF format) from the link below.
 
-[![下载按钮](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) 所有锁屏提醒图像
+[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) All badge images
 
-## 设备图像
+## Device images
 
-若要推广应用，你可能会想展示其在 Windows 设备上运行时的外观。 我们提供了各种设备底盘图像供你选择，包括手机、平板电脑、笔记本电脑和 PC。 可在 [Windows 应用商店营销指南](http://go.microsoft.com/fwlink/p/?LinkId=529769)中查找有关如何使用这些图像的最佳实践和技术规范。
+To promote your app, you may want to show how it looks when running on a Windows device. We’ve got a variety of device chassis images for you to select from, including phones, tablets, laptops and PCs. Best practices and technical specifications for how to use these images can be found in the [Windows Store Marketing Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
-[![下载按钮](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Windows 设备插图
+[![Download button](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Windows device art
 
-## Microsoft 商标授权
+## License to Microsoft Marks
 
-*Microsoft 商标*表示[锁屏提醒生成器](http://go.microsoft.com/fwlink/p/?LinkID=534236)页上所述的 *Microsoft 锁屏提醒*和 *Windows 应用商店磁贴*。 若要使用这些锁屏提醒，必须满足以下条件：
+*Microsoft Marks* means the *Microsoft badge* and the *Windows Store tile* described on the [badge generator](http://go.microsoft.com/fwlink/p/?LinkID=534236) page. To use these badges, you must:
 
--   应用或其他内容存在于 Windows 应用商店中，或是 [Microsoft 联盟计划](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
+-   Have your app or other content available in the Windows Store, or be part of the [Microsoft Affiliate Program](http://go.microsoft.com/fwlink/p/?LinkId=624463).
 
--   如果你已注册开发人员中心，请遵守“应用开发人员协议”中[“Microsoft 商标授权”](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark)部分。
+-   If you are registered with Dev Center, comply with the [“License to Microsoft Marks”](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark) section of the App Developer Agreement.
 
--   如果未注册 Windows 开发人员中心，Microsoft 将授予你世界范围的、无排他性的、不可转让的、免版税的许可证来单独使用锁屏提醒，如 Windows 应用商店营销指南所述。 Microsoft 可能会更改这些指南，如果要更改，Microsoft 会通过合理的方式将你重定向到任何发布这些规范的新 URL。 Microsoft 保留此处未明确授予的所有权利。
+-   If you are not registered with Windows Dev Center, Microsoft grants you a worldwide, nonexclusive, nontransferable, royalty-free license to use the badges solely as described in the Windows Store Marketing Guidelines. Microsoft may change these guidelines, but if it does, Microsoft will use reasonable means to redirect you to any new URLs where these specifications are posted. Microsoft reserves all rights not expressly granted herein.
 
--   遵循 [Windows 应用商店市场营销指南](http://go.microsoft.com/fwlink/p/?LinkId=529769)中所述的徽标使用规范。
+-   Follow the logo usage specifications described in the [Windows Store Marketing Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
-Microsoft 是 Microsoft 标志及相关商誉的唯一所有者，也是使用 Microsoft 标志获得的有关商誉的唯一受益公司。 Microsoft 可能会随时自行撤销此许可证。
-
- 
+Microsoft is the sole owner of the Microsoft Marks and associated goodwill, and the sole beneficiary of the goodwill associated with your use of the Microsoft Marks. Microsoft may revoke this license at any time and at its sole discretion.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,41 +1,41 @@
 ---
 author: mtoepke
-title: "移植着色器对象"
-description: "移植 OpenGL ES 2.0 中的简单呈现器时，第一步是在 Direct3D 11 中设置等效的顶点着色器和片段着色器对象，并且确保在编译之后主程序能够与着色器对象进行通信。"
+title: Port the shader objects
+description: When porting the simple renderer from OpenGL ES 2.0, the first step is to set up the equivalent vertex and fragment shader objects in Direct3D 11, and to make sure that the main program can communicate with the shader objects after they are compiled.
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 17d66e217e40eca0653078820746746eb23185e1
+ms.openlocfilehash: 478b5615834ea946a6a327fc2cbf54651e21b695
 
 ---
 
-# 移植着色器对象
+# Port the shader objects
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要的 API**
+**Important APIs**
 
 -   [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)
 -   [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)
 
-移植 OpenGL ES 2.0 中的简单呈现器时，第一步是在 Direct3D 11 中设置等效的顶点着色器和片段着色器对象，并且确保在编译之后主程序能够与着色器对象进行通信。
+When porting the simple renderer from OpenGL ES 2.0, the first step is to set up the equivalent vertex and fragment shader objects in Direct3D 11, and to make sure that the main program can communicate with the shader objects after they are compiled.
 
-> **注意** 是否创建了新的 Direct3D 项目？ 如果尚未创建，请按照[为通用 Windows 平台 (UWP) 创建新的 DirectX 11 项目](user-interface.md)中的说明进行操作。 本操作实例假定你已经为绘制到屏幕创建了 DXGI 和 Direct3D 资源（模板中提供了这些资源）。
+> **Note**   Have you created a new Direct3D project? If not, follow the instructions in [Create a new DirectX 11 project for Universal Windows Platform (UWP)](user-interface.md). This walkthrough assumes that you have the created the DXGI and Direct3D resources for drawing to the screen, and which are provided in the template.
 
  
 
-与 OpenGL ES 2.0 非常相似，必须将 Direct3D 中已编译的着色器与绘制上下文相关联。 但是，Direct3D 本身没有着色器程序对象的概念，你必须将着色器直接分配给 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)。 该步骤遵循 OpenGL ES 2.0 创建和绑定着色器对象的过程，并且为你提供了 Direct3D 中的相应 API 行为。
+Much like OpenGL ES 2.0, the compiled shaders in Direct3D must be associated with a drawing context. However, Direct3D does not have the concept of a shader program object per se; instead, you must assign the shaders directly to a [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385). This step follows the OpenGL ES 2.0 process for creating and binding shader objects, and provides you with the corresponding API behaviors in Direct3D.
 
-说明
+Instructions
 ------------
 
-### 步骤 1：编译着色器
+### Step 1: Compile the shaders
 
-在这个简单的 OpenGL ES 2.0 示例中，着色器存储为文本文件，并作为字符串数据进行加载以供在运行时编译。
+In this simple OpenGL ES 2.0 sample, the shaders are stored as text files and loaded as string data for run-time compilation.
 
-OpenGL ES 2.0：编译着色器
+OpenGL ES 2.0: Compile a shader
 
 ``` syntax
 GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
@@ -73,13 +73,13 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 }
 ```
 
-在 Direct3D 中，着色器不是在运行时期间编译的，当编译程序的其余部分时，它们始终被编译为 CSO 文件。 当使用 Microsoft Visual Studio 编译应用时，HLSL 文件被编译为应用必须加载的 CSO (.cso) 文件。 确保在打包时将这些 CSO 文件与你的应用包含在一起。
+In Direct3D, shaders are not compiled during run-time; they are always compiled to CSO files when the rest of the program is compiled. When you compile your app with Microsoft Visual Studio, the HLSL files are compiled to CSO (.cso) files that your app must load. Make sure you include these CSO files with your app when you package it!
 
-> **注意** 以下示例使用 **auto** 关键字和 lambda 语法异步执行着色器加载和编译。 ReadDataAsync() 是一个为模板实现的方法，它在 CSO 文件中以字节数据数组 (fileData) 的形式进行读取。
+> **Note**   The following example performs the shader loading and compilation asynchronously using the **auto** keyword and lambda syntax. ReadDataAsync() is a method implemented for the template that reads in a CSO file as an array of byte data (fileData).
 
  
 
-Direct3D 11：编译着色器
+Direct3D 11: Compile a shader
 
 ``` syntax
 auto loadVSTask = DX::ReadDataAsync(m_projectDir + "SimpleVertexShader.cso");
@@ -102,11 +102,11 @@ auto createPSTask = loadPSTask.then([this](Platform::Array<byte>^ fileData) {
 };
 ```
 
-### 步骤 2：创建和加载顶点着色器和片段（像素）着色器
+### Step 2: Create and load the vertex and fragment (pixel) shaders
 
-OpenGL ES 2.0 包含着色器“程序”的概念，该程序充当在 CPU 上运行的主程序与在 CPU 上执行的着色器之间的接口。 通过一个能够在 GPU 上执行的程序来编译（或从编译的源加载）和关联着色器。
+OpenGL ES 2.0 has the notion of a shader "program", which serves as the interface between the main program running on the CPU and the shaders, which are executed on the GPU. Shaders are compiled (or loaded from compiled sources) and associated with a program, which enables execution on the GPU.
 
-OpenGL ES 2.0：将顶点着色器和片段着色器加载到着色程序中。
+OpenGL ES 2.0: Loading the vertex and fragment shaders into a shading program
 
 ``` syntax
 GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *fragShaderSrcStr)
@@ -165,9 +165,9 @@ GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *frag
 glUseProgram(renderer->programObject);
 ```
 
-Direct3D 没有着色器程序对象的概念。 当在 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 接口上调用其中一个着色器创建方法（如 [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 或 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)）时会创建着色器。 为了能够为当前绘制上下文设置着色器，我们为它们提供了相应的 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)，它包含一个设置的着色器方法，如用于顶点着色器的 [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 或用于片段着色器的 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)。
+Direct3D does not have the concept of a shader program object. Rather, the shaders are created when one of the shader creation methods on the [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) interface (such as [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) or [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)) is called. To set the shaders for the current drawing context, we provide them to corresponding [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) with a set shader method, such as [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) for the vertex shader or [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) for the fragment shader.
 
-Direct3D 11：为图形设备绘制上下文设置着色器。
+Direct3D 11: Set the shaders for the graphics device drawing context.
 
 ``` syntax
 m_d3dContext->VSSetShader(
@@ -181,18 +181,18 @@ m_d3dContext->PSSetShader(
   0);
 ```
 
-### 步骤 3：定义要提供给着色器的数据
+### Step 3: Define the data to supply to the shaders
 
-在我们的 OpenGL ES 2.0 示例中，我们有一个要为着色器管道声明的 **uniform**：
+In our OpenGL ES 2.0 example, we have one **uniform** to declare for the shader pipeline:
 
--   **u\_mvpMatrix**：一个 4x4 浮点数组，该数组表示最终的模型视图投影转换矩阵，该矩阵获取立方体的模型坐标并将它们转换为 2D 投影坐标以供进行扫描转换。
+-   **u\_mvpMatrix**: a 4x4 array of floats that represents the final model-view-projection transformation matrix that takes the model coordinates for the cube and transforms them into 2D projection coordinates for scan conversion.
 
-顶点数据的两个 **attribute** 值：
+And two **attribute** values for the vertex data:
 
--   **a\_position**：一个 4 位浮点矢量，用于提供顶点的模型坐标。
--   **a\_color**：一个 4 位浮点矢量，用于提供与顶点关联的 RGBA 颜色值。
+-   **a\_position**: a 4-float vector for the model coordinates of a vertex.
+-   **a\_color**: A 4-float vector for the RGBA color value associated with the vertex.
 
-Open GL ES 2.0：uniform 和 attribute 的 GLSL 定义
+Open GL ES 2.0: GLSL definitions for the uniforms and attributes
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
@@ -200,9 +200,9 @@ attribute vec4 a_position;
 attribute vec4 a_color;
 ```
 
-在本例中，相应的主程序变量定义为呈现器对象上的字段。 （请参阅[如何：将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md) 中的标题。）完成该操作之后，我们需要指定内存中的位置，在这里主程序会为着色器管道提供这些值，我们通常会在进行绘图调用之前执行该操作：
+The corresponding main program variables are defined as fields on the renderer object, in this case. (Refer to the header in [How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md).) Once we've done that, we need to specify the locations in memory where the main program will supply these values for the shader pipeline, which we typically do right before a draw call:
 
-OpenGL ES 2.0：标记 uniform 和 attribute 数据的位置
+OpenGL ES 2.0: Marking the location of the uniform and attribute data
 
 ``` syntax
 
@@ -222,11 +222,11 @@ glEnableVertexAttribArray(loc);
 renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 ```
 
-Direct3D 没有同样含义的“attribute”或“uniform”的概念（或者至少它不会共享该语法）。 它具有常量缓冲区，该缓冲区以 Direct3D 子资源形式表示，即：在主程序和着色器程序之间共享的资源。 其中一些子资源（如顶点位置和颜色）以 HLSL 语义的形式进行描述。 有关与 OpenGL ES 2.0 概念相关时的常量缓冲区和 HLSL 语义的详细信息，请阅读[移植帧缓冲区对象、uniform 和 attribute](porting-uniforms-and-attributes.md)。
+Direct3D does not have the concept of an "attribute" or a "uniform" in the same sense (or, at least, it does not share this syntax). Rather, it has constant buffers, represented as Direct3D subresources -- resources that are shared between the main program and the shader programs. Some of these subresources, such as vertex positions and colors, are described as HLSL semantics. For more info on constant buffers and HLSL semantics as they relate to OpenGL ES 2.0 concepts, read [Port frame buffer objects, uniforms, and attributes](porting-uniforms-and-attributes.md).
 
-将此过程移动到 Direct3D 时，我们将 uniform 转换为 Direct3D 常量缓冲区 (cbuffer) 并使用 **register** HLSL 语义为其分配一个用于查找的寄存器。 两个顶点属性作为着色器管道阶段的输入元素进行处理，而且还分配了通知着色器的 [HLSL 语义](https://msdn.microsoft.com/library/windows/desktop/bb205574)（POSITION 和 COLOR0）。 像素着色器获取一个 SV\_POSITION，其中 SV\_ 前缀表示这是由 GPU 生成的系统值。 （在本例中，它是在扫描转换过程中生成像素位置。）VertexShaderInput 和 PixelShaderInput 未声明为常量缓冲区，因为前者将用于定义顶点缓冲区（请参阅[移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md)），而后者的数据将生成为管道中上一个阶段的结果，在本例中为顶点着色器。
+When moving this process to Direct3D, we convert the uniform to a Direct3D constant buffer (cbuffer) and assign it a register for lookup with the **register** HLSL semantic. The two vertex attributes are handled as input elements to the shader pipeline stages, and are also assigned [HLSL semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION and COLOR0) that inform the shaders. The pixel shader takes an SV\_POSITION, with the SV\_ prefix indicating that it is a system value generated by the GPU. (In this case, it is a pixel position generated during scan conversion.) VertexShaderInput and PixelShaderInput are not declared as constant buffers because the former will be used to define the vertex buffer (see [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)), and the data for the latter is generated as the result of a previous stage in the pipeline, which in this case is the vertex shader.
 
-Direct3D：常量缓冲区和顶点数据的 HLSL 定义
+Direct3D: HLSL definitions for the constant buffers and vertex data
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -249,11 +249,11 @@ struct PixelShaderInput
 };
 ```
 
-有关移植到常量缓冲区以及应用 HLSL 语义的详细信息，请阅读[移植帧缓冲区对象、uniform 和 attribute](porting-uniforms-and-attributes.md)。
+For more info on porting to constant buffers and the application of HLSL semantics, read [Port frame buffer objects, uniforms, and attributes](porting-uniforms-and-attributes.md).
 
-下面是通过常量缓冲区或顶点缓冲区传递到着色器管道的数据布局的结构。
+Here are the structures for the layout of the data passed to the shader pipeline with a constant or vertex buffer.
 
-Direct3D 11：声明常量和顶点缓冲区布局
+Direct3D 11: Declaring the constant and vertex buffers layout
 
 ``` syntax
 // Constant buffer used to send MVP matrices to the vertex shader.
@@ -270,11 +270,11 @@ struct VertexPositionColor
 };
 ```
 
-对常量缓冲区元素使用 DirectXMath XM\* 类型，因为它们在发送到着色器管道时将对内容进行正确的打包和对齐。 如果使用标准的 Windows 平台浮点类型和数组，那么你必须自行执行打包和对齐操作。
+Use the DirectXMath XM\* types for your constant buffer elements, since they provide proper packing and alignment for the contents when they are sent to the shader pipeline. If you use standard Windows platform float types and arrays, you must perform the packing and alignment yourself.
 
-若要绑定常量缓冲区，请将布局描述创建为 [**CD3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/jj151620) 结构并将其传递给 [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)。 然后，在你的呈现方法中，将常量缓冲区传递给 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486)，之后再进行绘制。
+To bind a constant buffer, create a layout description as a [**CD3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/jj151620) structure, and pass it to [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501). Then, in your render method, pass the constant buffer to [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) before drawing.
 
-Direct3D 11：绑定常量缓冲区
+Direct3D 11: Bind the constant buffer
 
 ``` syntax
 CD3D11_BUFFER_DESC constantBufferDesc(sizeof(ModelViewProjectionConstantBuffer), D3D11_BIND_CONSTANT_BUFFER);
@@ -296,33 +296,33 @@ m_d3dContext->UpdateSubresource(
   0);
 ```
 
-创建和更新顶点缓冲区非常类似，下一步[移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md)中对此进行了介绍。
+The vertex buffer is created and updated similarly, and is discussed in the next step, [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md).
 
-下一步
+Next step
 ---------
 
-[移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md)
-## 相关主题
+[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
+## Related topics
 
 
-[如何：将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+[How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 
-[移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md)
+[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
 
-[移植 GLSL](port-the-glsl.md)
+[Port the GLSL](port-the-glsl.md)
 
-[绘制到屏幕](draw-to-the-screen.md)
-
- 
+[Draw to the screen](draw-to-the-screen.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

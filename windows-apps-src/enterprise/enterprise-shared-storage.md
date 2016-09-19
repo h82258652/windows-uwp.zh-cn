@@ -1,34 +1,34 @@
 ---
 author: mcleblanc
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
-title: "企业共享的存储"
-description: "企业共享的存储为要共享数据的业务线应用定义本地数据位置。"
+title: Enterprise Shared Storage
+description: Enterprise shared storage defines local data locations for line of business apps to share data.
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 6f0e479081c361d69ab0c9e8cf4c531627304d32
+ms.openlocfilehash: bd4663b25c351551cd2f4e1e780a76431d1c3a19
 
 ---
-# 企业共享的存储
+# Enterprise Shared Storage
 
-共享的存储包含两个位置，其中的应用具有受限功能 **enterpriseDeviceLockdown**，而企业证书具有完整的读写访问权限。 请注意，**enterpriseDeviceLockdown** 功能允许应用使用设备锁定 API 和访问企业共享的存储文件夹。 有关该 API 的详细信息，请参阅 [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331) 命名空间。  
+The shared storage consists of two locations, where apps with the restricted capability  **enterpriseDeviceLockdown** and an Enterprise certificate have full read and write access. Note that the **enterpriseDeviceLockdown** capability allows apps to use the device lock down API and access the enterprise shared storage folders. For more information about the API, see [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331) namespace.  
 
-本地驱动器上的位置设置如下所示：
+These locations are set on the local drive:
 - \Data\SharedData\Enterprise\Persistent
 - \Data\SharedData\Enterprise\Non-Persistent
 
-## 方案
+## Scenarios
 
-企业共享的存储为以下方案提供支持。
+Enterprise shared storage provides support for the following scenarios.
 
-- 可以在同一应用的不同实例之间，甚至是假定具有相应功能和证书的应用之间，共享某个应用实例内的数据。
-- 你可以将本地硬盘驱动器上的数据存储在 \Data\SharedData\Enterprise\Persistent 文件夹中，即使重置了设备，仍然会保留该数据。
-- 在设备上通过移动设备管理 (MDM) 服务操作文件，包括读取、写入和删除文件。 有关如何通过 MDM 服务使用企业共享存储的详细信息，请参阅 [EnterpriseExtFileSystem CSP](http://go.microsoft.com/fwlink/?LinkId=699333)。
+- You can share data within an instance of an app, between instances of the same app, or even between apps assuming they both have the appropriate capability and certificate.
+- You can store data on the local hard drive in the \Data\SharedData\Enterprise\Persistent folder and it persists even after the device has been reset.
+- Manipulate files, including read, write, and delete of files on a device via Mobile Device Management (MDM) service. For more information on how to use enterprise shared storage through the MDM service, see [EnterpriseExtFileSystem CSP](http://go.microsoft.com/fwlink/?LinkId=699333).
 
-## 访问企业共享的存储
+## Access enterprise shared storage
 
-下面的示例演示了如何在程序包清单中声明访问企业共享存储的功能，以及如何通过使用 Windows.Storage.StorageFolder 类访问共享的存储文件夹。
+The following example shows how to declare the capability to access enterprise shared storage in the package manifest, and how to access the shared storage folders by using the Windows.Storage.StorageFolder class.
 
-在应用程序包清单中，包括以下功能：
+In your app package manifest, include the following capability:
 
 ```xml
 <Package
@@ -45,7 +45,7 @@ ms.openlocfilehash: 6f0e479081c361d69ab0c9e8cf4c531627304d32
 </Capabilities>
 ```
 
-若要访问共享的数据位置，应用将使用以下代码。
+To access the shared data location, your app would use the following code.
 
 ```csharp
 using System;
@@ -74,6 +74,6 @@ foreach (StorageFile file in sortedItems)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

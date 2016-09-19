@@ -1,75 +1,75 @@
 ---
 author: Xansky
-Description: "列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。"
+Description: Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them.
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
-title: "控件模式和接口"
+title: Control patterns and interfaces
 label: Control patterns and interfaces
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 9f38c3bd26ef7b409d4c743abf25a5b0a6455f20
+ms.sourcegitcommit: 74e5af4c3eb5a2e17c95afce156474b613e966c5
+ms.openlocfilehash: d2ae98f95538c014ef256f5d4a400aabb36c3118
 
 ---
 
-# 控件模式和接口  
+# Control patterns and interfaces  
 
 
 
-列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。
+Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them.
 
-本主题中的表描述了 Microsoft UI 自动化控件模式。 此表还列出了 UI 自动化客户端用于访问控件模式的类和 UI 自动化提供程序用来实现这些模式的接口。 从 UI 自动化客户端的角度来看，“控件模式”****列显示模式名称，[**Control Pattern Availability Property Identifiers**](https://msdn.microsoft.com/library/windows/desktop/Ee671199) 中将该名称列为常数值。 从 UI 自动化提供程序的角度来看，其中每个模式都是一个 [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) 常量名称。 “类提供程序接口”****列显示提供程序为向自定义 XAML 控件提供此模式而实现的接口名称。
+The table in this topic describes the Microsoft UI Automation control patterns. The table also lists the classes used by UI Automation clients to access the control patterns and the interfaces used by UI Automation providers to implement them. The **Control pattern** column shows the pattern name from the UI Automation client perspective, as a constant value listed in [**Control Pattern Availability Property Identifiers**](https://msdn.microsoft.com/library/windows/desktop/Ee671199). From the UI Automation provider perspective, each of these patterns is a [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) constant name. The **Class provider interface** column shows the name of the interface that providers implement to provide this pattern for a custom XAML control.
 
-有关如何实现用于公开控件模式和实现接口的自定义自动化对等的详细信息，请参阅[自定义自动化对等](custom-automation-peers.md)。
+For more info about how to implement custom automation peers that expose control patterns and implement the interfaces, see [Custom automation peers](custom-automation-peers.md).
 
-在实现控件模式时，还应查阅 UI 自动化提供程序文档，该文档说明了客户端在控件模式下将达到的部分预期，无论使用哪个 UI 框架实现控件模式，均不会影响这些预期。 常规 UI 自动化提供程序文档中列出的部分信息将影响对等实现的方式及正确为该模式提供支持的方式。 请参阅[实现 UI 自动化控件模式](https://msdn.microsoft.com/library/windows/desktop/Ee671292)，并查看记录了你计划实现的模式的页面。
+When you implement a control pattern, you should also consult the UI Automation provider documentation that explains some of the expectations that clients will have of a control pattern regardless of which UI framework is used to implement it. Some of the info listed in the general UI Automation provider documentation will influence how you implement your peers and correctly support that pattern. See [Implementing UI Automation Control Patterns](https://msdn.microsoft.com/library/windows/desktop/Ee671292), and view the page that documents the pattern you intend to implement.
 
-| 控件模式 | 类提供程序接口 | 说明 |
+| Control pattern | Class provider interface | Description |
 |-----------------|--------------------------|-------------|
-| **批注** | [**IAnnotationProvider**](https://msdn.microsoft.com/library/windows/apps/Hh738493) | 用于公开文档注释的属性。 |
-| **靠接** | [**IDockProvider**](https://msdn.microsoft.com/library/windows/apps/BR242565) | 用于可停靠在停靠容器中的控件。 例如，工具栏或工具调色板。 |
-| **拖动** | [**IDragProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750322) | 用于支持可拖动控件或包含可拖动项目的控件。 |
-| **DropTarget** | [**IDropTargetProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750327) | 用于支持可作为拖放操作目标的控件。 |
-| **ExpandCollapse** | [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/BR242568) | 用于支持通过直观展开来显示更多内容并通过折叠来隐藏内容的控件。 |
-| **网格** | [**IGridProvider**](https://msdn.microsoft.com/library/windows/apps/BR242578) | 用于支持网格功能（例如调整指定单元格的大小或移动到指定单元格）的控件。 请注意，网格本身并不实现此模式，因为它虽然提供布局，却不是控件。 |
-| **GridItem** | [**IGridItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242572) | 用于在网格中具有单元格的控件。 |
-| **调用** | [**IInvokeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242582) | 用于可调用的控件，例如 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)。 |
-| **ItemContainer** | [**IItemContainerProvider**](https://msdn.microsoft.com/library/windows/apps/BR242583) | 支持应用程序查找容器（例如虚拟化列表）中的元素。 |
-| **MultipleView** | [**IMultipleViewProvider**](https://msdn.microsoft.com/library/windows/apps/BR242585) | 用于可在同一组信息、数据或子项的多个表示形式之间进行切换的控件。 |
-| **ObjectModel** | [**IObjectModelProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251815) | 用于公开指向文档基础对象模型的指针。 |
-| **RangeValue** | [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) | 用于具有一系列可应用于控件的值的控件。 例如，包含年份的微调框控件的数据范围可能介于 1900 至当前年份之间，而另一个呈现月份的微调框控件的数据范围介于 1 至 12 之间。 |
-| **滚动** | [**IScrollProvider**](https://msdn.microsoft.com/library/windows/apps/BR242601) | 用于可滚动的控件。 例如，具有滚动条的控件，当信息太多而无法在控件可视区域中全部显示出来时会出现滚动条。 |
-| **ScrollItem** | [**IScrollItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242599) | 用于在可滚动的列表中包含多个独立项的控件。 例如，在滚动列表（如组合框控件）中包含多个独立项的列表控件。 |
-| **选择** | [**ISelectionProvider**](https://msdn.microsoft.com/library/windows/apps/BR242616) | 用于选择容器控件。 例如，[**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 和 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/BR209348)。 |
-| **SelectionItem** | [**ISelectionItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242610) | 用于选择容器控件（如列表框和组合框）中的各个项。 |
-| **电子表格** | [**ISpreadsheetProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251821) | 用于公开电子表格或其他基于网格的文档的内容。 |
-| **SpreadsheetItem** | [**ISpreadsheetItemProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251817) | 用于公开电子表格或其他基于网格的文档的单元格属性。 |
-| **样式** | [**IStylesProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251823) | 用于描述具有特定样式、填充颜色、填充图案或形状的 UI 元素。 |
-| **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | 启用 UI 自动化客户端应用，将鼠标或键盘输入定向到特定的 UI 元素。 |
-| **表** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | 用于具有网格以及标题信息的控件。 例如，表格日历控件。 |
-| **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | 用于表中的项。 |
-| **文本** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | 用于公开文本信息的编辑控件和文档。 另请参阅 [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) 和 [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2)。 |
-| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | 用于访问距元素最近的支持 **Text** 控件模式的上级元素。 |
-| **TextEdit** | 无可用的托管类 | 访问用于修改文本的控件，例如通过输入法编辑器 (IME) 执行自动更正或启用输入组合的控件。 |
-| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | 访问实现 [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider) 的文本容器中的一段连续文本。 另请参阅 [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2)。 |
-| **切换** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | 用于可切换状态的控件。 例如，可选中的 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316) 和菜单项。 |
-| **转换** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | 用于可调整大小、移动和旋转的控件。 Transform 控件模式通常用于设计器、窗体、图形编辑器和绘图应用程序。 |
-| **值** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | 允许客户端在不支持一系列值的控件上获取或设置某个值。 |
-| **VirtualizedItem** | [**IVirtualizedItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242668) | 公开容器中已虚拟化并需要作为 UI 自动化元素可完全进行访问的项目。 |
-| **窗口** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | 向 Microsoft Windows 操作系统公开特定于窗口的信息（一种基本概念）。 用作窗口的控件示例包括子窗口和对话框。 |
+| **Annotation** | [**IAnnotationProvider**](https://msdn.microsoft.com/library/windows/apps/Hh738493) | Used to expose the properties of an annotation in a document. |
+| **Dock** | [**IDockProvider**](https://msdn.microsoft.com/library/windows/apps/BR242565) | Used for controls that can be docked in a docking container. For example, toolbars or tool palettes. |
+| **Drag** | [**IDragProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750322) | Used to support draggable controls, or controls with draggable items. |
+| **DropTarget** | [**IDropTargetProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750327) | Used to support controls that can be the target of a drag-and-drop operation. |
+| **ExpandCollapse** | [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/BR242568) | Used to support controls that visually expand to display more content and collapse to hide content. |
+| **Grid** | [**IGridProvider**](https://msdn.microsoft.com/library/windows/apps/BR242578) | Used for controls that support grid functionality such as sizing and moving to a specified cell. Note that Grid itself does not implement this pattern because it provides layout but is not a control. |
+| **GridItem** | [**IGridItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242572) | Used for controls that have cells within grids. |
+| **Invoke** | [**IInvokeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242582) | Used for controls that can be invoked, such as a  [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265). |
+| **ItemContainer** | [**IItemContainerProvider**](https://msdn.microsoft.com/library/windows/apps/BR242583) | Enables applications to find an element in a container, such as a virtualized list. |
+| **MultipleView** | [**IMultipleViewProvider**](https://msdn.microsoft.com/library/windows/apps/BR242585) | Used for controls that can switch between multiple representations of the same set of information, data, or children. |
+| **ObjectModel** | [**IObjectModelProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251815) | Used to expose a pointer to the underlying object model of a document. |
+| **RangeValue** | [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) | Used for controls that have a range of values that can be applied to the control. For example, a spinner control containing years might have a range of 1900 to the current year, while another spinner control presenting months would have a range of 1 to 12. |
+| **Scroll** | [**IScrollProvider**](https://msdn.microsoft.com/library/windows/apps/BR242601) | Used for controls that can scroll. For example, a control that has scroll bars that are active when there is more information than can be displayed in the viewable area of the control. |
+| **ScrollItem** | [**IScrollItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242599) | Used for controls that have individual items in a list that scrolls. For example, a list control that has individual items in the scroll list, such as a combo box control. |
+| **Selection** | [**ISelectionProvider**](https://msdn.microsoft.com/library/windows/apps/BR242616) | Used for selection container controls. For example, [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) and [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/BR209348). |
+| **SelectionItem** | [**ISelectionItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242610) | Used for individual items in selection container controls, such as list boxes and combo boxes. |
+| **Spreadsheet** | [**ISpreadsheetProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251821) | Used to expose the contents of a spreadsheet or other grid-based document. |
+| **SpreadsheetItem** | [**ISpreadsheetItemProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251817) | Used to expose the properties of a cell in a spreadsheet or other grid-based document. |
+| **Styles** | [**IStylesProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251823) | Used to describe a UI element that has a specific style, fill color, fill pattern, or shape. |
+| **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | Enables UI Automation client apps to direct the mouse or keyboard input to a specific UI element. |
+| **Table** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | Used for controls that have a grid as well as header information. For example, a tabular calendar control. |
+| **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | Used for items in a table. |
+| **Text** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | Used for edit controls and documents that expose textual information. See also [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) and [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2). |
+| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | Used to access an element’s nearest ancestor that supports the **Text** control pattern. |
+| **TextEdit** | No managed class available | Provides access to a control that modifies text, for example a control that performs auto-correction or enables input composition through an Input Method Editor (IME). |
+| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | Provides access to a span of continuous text in a text container that implements [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider). See also [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2). |
+| **Toggle** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | Used for controls where the state can be toggled. For example, [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316) and menu items that can be checked. |
+| **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | Used for controls that can be resized, moved, and rotated. Typical uses for the Transform control pattern are in designers, forms, graphical editors, and drawing applications. |
+| **Value** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | Allows clients to get or set a value on controls that do not support a range of values. |
+| **VirtualizedItem** | [**IVirtualizedItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242668) | Exposes items inside containers that are virtualized and need to be made fully accessible as UI Automation elements. |
+| **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | Exposes information specific to windows, a fundamental concept to the Microsoft Windows operating system. Examples of controls that are windows are child windows and dialogs. |
 
 > [!NOTE]
-> 现有的 XAML 控件中可能并不会包含所有这些模式的实现。 其中部分模式具有接口，目的仅在于通过模式的常规 UI 自动化框架定义来支持奇偶校验，以及支持需要使用纯粹自定义实现来支持该模式的自动化对等方案。
+> You won't necessarily find implementations of all these patterns in existing XAML controls. Some of the patterns have interfaces solely to support parity with the general UI Automation framework definition of patterns, and to support automation peer scenarios that will require a purely custom implementation to support that pattern.
 
 > [!NOTE]
-> Windows Phone 应用商店应用不支持此处列出的所有 UI 自动化控件模式。 **Annotation**、**Dock**、**Drag**、**DropTarget**、**ObjectModel** 是一些不受支持的模式。
+> Windows Phone Store apps do not support all the UI Automation control patterns listed here. **Annotation**, **Dock**, **Drag**, **DropTarget**, **ObjectModel** are some of the unsupported patterns.
 
 <span id="related_topics"/>
-## 相关主题  
-* [自定义的自动化对等](custom-automation-peers.md)
-* [辅助功能](accessibility.md)
+## Related topics  
+* [Custom automation peers](custom-automation-peers.md)
+* [Accessibility](accessibility.md) 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

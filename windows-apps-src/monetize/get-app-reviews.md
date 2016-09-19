@@ -1,52 +1,49 @@
 ---
 author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
-description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的评价数据。"
-title: "获取应用评价"
+description: Use this method in the Windows Store analytics API to get review data for a given date range and other optional filters.
+title: Get app reviews
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: 4190012c08e22f4efb086c711183332b23ccee38
 
 ---
 
-# 获取应用评价
+# Get app reviews
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的评价数据。 此方法返回采用 JSON 格式的数据。
-
-## 先决条件
 
 
-若要使用此方法，你需要满足以下条件：
+Use this method in the Windows Store analytics API to get review data for a given date range and other optional filters. This method returns the data in JSON format.
 
--   将需要用于调用此方法的 Azure AD 应用程序与你的开发人员中心帐户相关联。
-
--   针对你的应用程序获取 Azure AD 访问令牌。
-
-有关详细信息，请参阅[使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)。
-
-## 请求
+## Prerequisites
 
 
-### 请求语法
+To use this method, you need to first do the following:
 
-| 方法 | 请求 URI                                                      |
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+
+## Request
+
+
+### Request syntax
+
+| Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews``` |
 
 <span/> 
 
-### 请求头
+### Request header
 
-| 标头        | 类型   | 说明                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。 |
+| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
 <span/> 
 
-### 请求参数
+### Request parameters
 
 <table>
 <colgroup>
@@ -57,53 +54,53 @@ ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数</th>
-<th align="left">类型</th>
-<th align="left">说明</th>
-<th align="left">必需</th>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
-<td align="left">字符串</td>
-<td align="left">要检索评价数据的应用的存储 ID。 存储 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。</td>
-<td align="left">是</td>
+<td align="left">string</td>
+<td align="left">The Store ID of the app for which you want to retrieve review data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8.</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
 <td align="left">startDate</td>
 <td align="left">date</td>
-<td align="left">要检索的评价数据日期范围中的开始日期。 默认值为当前日期。</td>
-<td align="left">否</td>
+<td align="left">The start date in the date range of review data to retrieve. The default is the current date.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">endDate</td>
 <td align="left">date</td>
-<td align="left">要检索的评价数据日期范围中的结束日期。 默认值为当前日期。</td>
-<td align="left">否</td>
+<td align="left">The end date in the date range of review data to retrieve. The default is the current date.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">top</td>
 <td align="left">int</td>
-<td align="left">要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。</td>
-<td align="left">否</td>
+<td align="left">The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">skip</td>
 <td align="left">int</td>
-<td align="left">要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。</td>
-<td align="left">否</td>
+<td align="left">The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10000 and skip=0 retrieves the first 10000 rows of data, top=10000 and skip=10000 retrieves the next 10000 rows of data, and so on.</td>
+<td align="left">No</td>
 </tr>
 <tr class="even">
 <td align="left">filter</td>
-<td align="left">字符串</td>
-<td align="left">在响应中筛选行的一条或多条语句。 有关详细信息，请参阅下面的[筛选器字段](#filter-fields)部分。</td>
-<td align="left">否</td>
+<td align="left">string</td>
+<td align="left">One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below.</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
 <td align="left">orderby</td>
-<td align="left">字符串</td>
-<td align="left">对每个评分的结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 参数可以是以下字符串之一。
+<td align="left">string</td>
+<td align="left">A statement that orders the result data values for each rating. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:
 <ul>
 <li><strong>date</strong></li>
 <li><strong>osVersion</strong></li>
@@ -126,22 +123,22 @@ ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
 <li><strong>deviceStorageCapacity</strong></li>
 <li><strong>rating</strong></li>
 </ul>
-<p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p>
-<p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,market</em></p></td>
-<td align="left">否</td>
+<p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p>
+<p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p></td>
+<td align="left">No</td>
 </tr>
 </tbody>
 </table>
 
 <span/>
  
-### 筛选器字段
+### Filter fields
 
-请求中的 *filter* 参数包含一条或多条语句，用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且某些字段还支持 **contains**、**gt**、**lt**、**ge** 和 **le** 运算符。 语句可以使用 **and** 或 **or** 进行组合。
+The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and some fields also support the **contains**, **gt**, **lt**, **ge**, and **le** operators. Statements can be combined using **and** or **or**.
 
-下面是一个 *filter* 字符串的示例：*filter=contains(reviewText,'great') and contains(reviewText,'ads') and deviceRAM lt 2048 and market eq 'US'*
+Here is an example *filter* string: *filter=contains(reviewText,'great') and contains(reviewText,'ads') and deviceRAM lt 2048 and market eq 'US'*
 
-有关支持的字段列表和每个字段支持的运算符，请参阅下表。 *filter* 参数中的字符串值必须使用单引号括起来。
+For a list of the supported fields and support operators for each field, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
 
 <table>
 <colgroup>
@@ -151,21 +148,21 @@ ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">字段</th>
-<th align="left">支持的运算符</th>
-<th align="left">说明</th>
+<th align="left">Fields</th>
+<th align="left">Supported operators</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">market</td>
 <td align="left">eq, ne</td>
-<td align="left">包含设备市场的 ISO 3166 国家/地区代码的字符串。</td>
+<td align="left">A string that contains the ISO 3166 country code of the device market.</td>
 </tr>
 <tr class="even">
 <td align="left">osVersion</td>
 <td align="left">eq, ne</td>
-<td align="left">以下字符串之一：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>Windows Phone 7.5</strong></li>
 <li><strong>Windows Phone 8</strong></li>
@@ -180,7 +177,7 @@ ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
 <tr class="odd">
 <td align="left">deviceType</td>
 <td align="left">eq, ne</td>
-<td align="left">以下字符串之一：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -195,22 +192,22 @@ ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
 <tr class="even">
 <td align="left">isRevised</td>
 <td align="left">eq, ne</td>
-<td align="left">指定 <strong>true</strong> 可筛选已修改的评价，否则指定 <strong>false</strong>。</td>
+<td align="left">Specify <strong>true</strong> to filter for reviews that have been revised; otherwise <strong>false</strong>.</td>
 </tr>
 <tr class="odd">
 <td align="left">packageVersion</td>
 <td align="left">eq, ne</td>
-<td align="left">已评价的应用程序包版本。</td>
+<td align="left">The version of the app package that was reviewed.</td>
 </tr>
 <tr class="even">
 <td align="left">deviceModel</td>
 <td align="left">eq, ne</td>
-<td align="left">应用已评价的设备的类型。</td>
+<td align="left">The type of device on which the app was reviewed.</td>
 </tr>
 <tr class="odd">
 <td align="left">productFamily</td>
 <td align="left">eq, ne</td>
-<td align="left">以下字符串之一：
+<td align="left">One of the following strings:
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -224,71 +221,71 @@ ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
 <tr class="even">
 <td align="left">deviceScreenResolution</td>
 <td align="left">eq, ne</td>
-<td align="left">设备屏幕分辨率采用&quot;<em>宽度</em> x <em>高度</em>&quot;格式。</td>
+<td align="left">The device screen resolution in the format &quot;<em>width</em> x <em>height</em>&quot;.</td>
 </tr>
 <tr class="odd">
 <td align="left">isTouchEnabled</td>
 <td align="left">eq, ne</td>
-<td align="left">指定 <strong>true</strong> 可筛选支持触摸的设备，否则指定 <strong>false</strong>。</td>
+<td align="left">Specify <strong>true</strong> to filter for touch-enabled devices; otherwise <strong>false</strong>.</td>
 </tr>
 <tr class="even">
 <td align="left">reviewerName</td>
 <td align="left">eq, ne</td>
-<td align="left">评价者昵称。</td>
+<td align="left">The reviewer name.</td>
 </tr>
 <tr class="odd">
 <td align="left">helpfulCount</td>
 <td align="left">eq, ne</td>
-<td align="left">评价标记为有用的次数。</td>
+<td align="left">The number of times the review was marked helpful.</td>
 </tr>
 <tr class="even">
 <td align="left">notHelpfulCount</td>
 <td align="left">eq, ne</td>
-<td align="left">评价标记为无用的次数。</td>
+<td align="left">The number of times the review was marked not helpful.</td>
 </tr>
 <tr class="odd">
 <td align="left">reviewTitle</td>
 <td align="left">eq, ne, contains</td>
-<td align="left">评价的标题。</td>
+<td align="left">The title of the review.</td>
 </tr>
 <tr class="even">
 <td align="left">reviewText</td>
 <td align="left">eq, ne, contains</td>
-<td align="left">评价的文本内容。</td>
+<td align="left">The text contents of the review.</td>
 </tr>
 <tr class="odd">
 <td align="left">responseText</td>
 <td align="left">eq, ne, contains</td>
-<td align="left">回复的文本内容。</td>
+<td align="left">The text contents of the response.</td>
 </tr>
 <tr class="even">
 <td align="left">responseDate</td>
 <td align="left">eq, ne</td>
-<td align="left">回复的提交时间。</td>
+<td align="left">The date that the response was submitted.</td>
 </tr>
 <tr class="odd">
 <td align="left">deviceRAM</td>
 <td align="left">eq, ne, gt, lt, ge, le</td>
-<td align="left">物理 RAM（以 MB 为单位）。</td>
+<td align="left">The physical RAM, in MB.</td>
 </tr>
 <tr class="even">
 <td align="left">deviceStorageCapacity</td>
 <td align="left">eq, ne, gt, lt, ge, le</td>
-<td align="left">主存储器磁盘容量（以 GB 为单位）。</td>
+<td align="left">The capacity of the primary storage disk, in GB.</td>
 </tr>
 <tr class="odd">
 <td align="left">rating</td>
 <td align="left">eq, ne, gt, lt, ge, le</td>
-<td align="left">应用评分（以星级为单位）。</td>
+<td align="left">The app rating, in stars.</td>
 </tr>
 </tbody>
 </table>
 
 <span/> 
 
-### 请求示例
+### Request example
 
-以下示例演示用于获取评价数据的多个请求。 将 *applicationId* 值替换为你的应用的存储 ID。
+The following examples demonstrate several requests for getting review data. Replace the *applicationId* value with the Store ID for your app.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -298,53 +295,53 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?application
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## Response
 
 
-### 响应正文
+### Response body
 
-| 值      | 类型   | 说明                                                                                                                                                                                                                                                                            |
+| Value      | Type   | Description                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array  | 包含评价数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[评价值](#review-values)部分。                                                                                                                                      |
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的购置数据超过 10000 行时，就会返回此值。 |
-| TotalCount | int    | 查询的数据结果中的行总数。                                                                                                                                                                                                                             |
+| Value      | array  | An array of objects that contain review data. For more information about the data in each object, see the [review values](#review-values) section below.                                                                                                                                      |
+| @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of acquisition data for the query. |
+| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             |
 
 <span/>
  
-### 评价值
+### Review values
 
-*Value* 数组中的元素包含以下值。
+Elements in the *Value* array contain the following values.
 
-| 值                  | 类型    | 说明                                                                                                                                                                                                                          |
+| Value                  | Type    | Description                                                                                                                                                                                                                          |
 |------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| date                   | 字符串  | 评分数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
-| applicationId          | 字符串  | 要检索评分数据的应用的存储 ID。                                                                                                                                                                 |
-| applicationName        | 字符串  | 应用的显示名称。                                                                                                                                                                                                         |
-| market                 | 字符串  | 评分已提交的市场的 ISO 3166 国家/地区代码。                                                                                                                                                              |
-| osVersion              | 字符串  | 评分已提交的操作系统版本。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                               |
-| deviceType             | 字符串  | 评分已提交的设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                           |
-| isRevised              | 布尔值 | 值为 **true** 表示评价已修改；否则为 **false**。                                                                                                                                                       |
-| packageVersion         | 字符串  | 已评价的应用程序包版本。                                                                                                                                                                                    |
-| deviceModel            | 字符串  | 应用已评价的设备的类型。                                                                                                                                                                                    |
-| productFamily          | 字符串  | 设备系列名称。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                                         |
-| deviceScreenResolution | 字符串  | 设备屏幕分辨率采用“*宽度* x *高度*”格式。                                                                                                                                                                     |
-| isTouchEnabled         | 布尔值 | 值为 **true** 表示触摸受支持；否则为 **false**。                                                                                                                                                             |
-| reviewerName           | 字符串  | 评价者昵称。                                                                                                                                                                                                                   |
-| helpfulCount           | 数字  | 评价标记为有用的次数。                                                                                                                                                                                   |
-| notHelpfulCount        | 数字  | 评价标记为无用的次数。                                                                                                                                                                               |
-| reviewTitle            | 字符串  | 评价的标题。                                                                                                                                                                                                             |
-| reviewText             | 字符串  | 评价的文本内容。                                                                                                                                                                                                     |
-| responseText           | 字符串  | 回复的文本内容。                                                                                                                                                                                                   |
-| responseDate           | 字符串  | 回复的提交时间。                                                                                                                                                                                                   |
-| deviceRAM              | 数字  | 物理 RAM（以 MB 为单位）。                                                                                                                                                                                                             |
-| deviceStorageCapacity  | 数字  | 主存储器磁盘容量（以 GB 为单位）。                                                                                                                                                                                     |
-| rating                 | 数字  | 应用评分（以星级为单位）。                                                                                                                                                                                                            |
+| date                   | string  | The first date in the date range for the ratings data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
+| applicationId          | string  | The Store ID of the app for which you are retrieving ratings data.                                                                                                                                                                 |
+| applicationName        | string  | The display name of the app.                                                                                                                                                                                                         |
+| market                 | string  | The ISO 3166 country code of the market where the rating was submitted.                                                                                                                                                              |
+| osVersion              | string  | The OS version on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                               |
+| deviceType             | string  | The type of device on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                           |
+| isRevised              | Boolean | The value **true** indicates that the review was revised; otherwise **false**.                                                                                                                                                       |
+| packageVersion         | string  | The version of the app package that was reviewed.                                                                                                                                                                                    |
+| deviceModel            | string  | The type of device on which the app was reviewed.                                                                                                                                                                                    |
+| productFamily          | string  | The device family name. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                                         |
+| deviceScreenResolution | string  | The device screen resolution in the format "*width* x *height*".                                                                                                                                                                     |
+| isTouchEnabled         | Boolean | The value **true** indicates that touch is enabled; otherwise **false**.                                                                                                                                                             |
+| reviewerName           | string  | The reviewer name.                                                                                                                                                                                                                   |
+| helpfulCount           | number  | The number of times the review was marked helpful.                                                                                                                                                                                   |
+| notHelpfulCount        | number  | The number of times the review was marked not helpful.                                                                                                                                                                               |
+| reviewTitle            | string  | The title of the review.                                                                                                                                                                                                             |
+| reviewText             | string  | The text contents of the review.                                                                                                                                                                                                     |
+| responseText           | string  | The text contents of the response.                                                                                                                                                                                                   |
+| responseDate           | string  | The date a response was submitted.                                                                                                                                                                                                   |
+| deviceRAM              | number  | The physical RAM, in MB.                                                                                                                                                                                                             |
+| deviceStorageCapacity  | number  | The capacity of the primary storage disk, in GB.                                                                                                                                                                                     |
+| rating                 | number  | The app rating, in stars.                                                                                                                                                                                                            |
 
 <span/> 
 
-### 响应示例
+### Response example
 
-以下示例举例说明此请求的 JSON 响应正文。
+The following example demonstrates an example JSON response body for this request.
 
 ```json
 {
@@ -379,16 +376,16 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 相关主题
+## Related topics
 
-* [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
-* [获取应用购置](get-app-acquisitions.md)
-* [获取 IAP 购置](get-in-app-acquisitions.md)
-* [获取错误报告数据](get-error-reporting-data.md)
-* [获取应用评分](get-app-ratings.md)
+* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Get app acquisitions](get-app-acquisitions.md)
+* [Get add-on acquisitions](get-in-app-acquisitions.md)
+* [Get error reporting data](get-error-reporting-data.md)
+* [Get app ratings](get-app-ratings.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -1,20 +1,20 @@
 ---
 author: mtoepke
-title: "将 OpenGL ES 2.0 映射到 Direct3D 11"
-description: "首次开始将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 的过程时，你需要自行熟悉一下 API 之间的主要差别。"
+title: Map OpenGL ES 2.0 to Direct3D 11
+description: When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs.
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a058c5f669704695cc3a2ae5385feccbf6cb4bc3
+ms.openlocfilehash: d21bbf905797a7b0c14e666f1ec31a85203b30db
 
 ---
 
-# 将 OpenGL ES 2.0 映射到 Direct3D 11
+# Map OpenGL ES 2.0 to Direct3D 11
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-首次开始将图形体系结构从 OpenGL ES 2.0 移植到 Direct3D 的过程时，你需要自行熟悉一下 API 之间的主要差别。 本部分中的主题将帮助你规划你的移植策略以及将图形处理移动到 Direct3D 时必须进行的 API 更改。
+When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs. The topics in this section help you plan your port strategy and the API changes that you must make when moving your graphics processing to Direct3D.
 ## 
 <table>
 <colgroup>
@@ -23,47 +23,47 @@ ms.openlocfilehash: a058c5f669704695cc3a2ae5385feccbf6cb4bc3
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">主题</th>
-<th align="left">描述</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[规划从 OpenGL ES 2.0 到 Direct3D 的移植](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
-<td align="left"><p>如果你移植 iOS 或 Android 平台中的游戏，那么你可能需要在 OpenGL ES 2.0 方面进行大量投资。 如果你准备将你的图形管道代码库移动到 Direct3D 11 和 Windows 运行时，那么在开始之前你应该考虑以下事项。</p></td>
+<td align="left"><p>[Plan your port from OpenGL ES 2.0 to Direct3D](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
+<td align="left"><p>If you are porting a game from the iOS or Android platforms, you have probably made a significant investment in OpenGL ES 2.0. When preparing to move your graphics pipeline codebase to Direct3D 11 and the Windows Runtime, there are a few things you should consider before you start.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[将 EGL 代码与 DXGI 和 Direct3D 进行比较](moving-from-egl-to-dxgi.md)</p></td>
-<td align="left"><p>DirectX Graphics Interface (DXGI) 以及若干个 Direct3D API 所起的作用与 EGL 相同。 本主题帮助你从 EGL 的角度了解 DXGI 和 Direct3D 11。</p></td>
+<td align="left"><p>[Compare EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md)</p></td>
+<td align="left"><p>The DirectX Graphics Interface (DXGI) and several Direct3D APIs serve the same role as EGL. This topic helps you understand DXGI and Direct3D 11 from the perspective of EGL.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[将 OpenGL ES 2.0 缓冲区、uniform 和顶点属性与 Direct3D 进行比较](porting-uniforms-and-attributes.md)</p></td>
-<td align="left"><p>在从 OpenGL ES 2.0 移植到 Direct3D 11 的过程中，必须更改用于在应用和着色器程序之间传递数据的语法和 API 行为。</p></td>
+<td align="left"><p>[Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D](porting-uniforms-and-attributes.md)</p></td>
+<td align="left"><p>During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[将 OpenGL ES 2.0 着色器管道与 Direct3D 进行比较](change-your-shader-loading-code.md)</p></td>
-<td align="left"><p>从概念上来说，Direct3D 11 着色器管道与 OpenGL ES 2.0 中的着色器管道非常相似。 但是，就 API 设计而言，用于创建和管理着色器阶段的主要组件是两个主要接口 [<strong>ID3D11Device1</strong>] (https://msdn.microsoft.com/library/windows/desktop/hh404575) 和 [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598) 的一部分。 本主题尝试在这些接口中将常用的 OpenGL ES 2.0 着色器管道 API 模式映射到 Direct3D 11 同等模式。</p></td>
+<td align="left"><p>[Compare the OpenGL ES 2.0 shader pipeline to Direct3D](change-your-shader-loading-code.md)</p></td>
+<td align="left"><p>Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0. In terms of API design, however, the major components for creating and managing the shader stages are parts of two primary interfaces, [<strong>ID3D11Device1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404575) and [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598). This topic attempts to map common OpenGL ES 2.0 shader pipeline API patterns to the Direct3D 11 equivalents in these interfaces.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## 有关特定 OpenGL ES 2.0 提供商的说明
+## Notes on specific OpenGL ES 2.0 providers
 
 
-这些主题都使用 Khronos OpenGL ES 2.0 规范，该规范使用与平台无关的 C 程序。iOS 和 Android 使用相同的规范，为这些平台开发的 OpenGL ES 2.0 代码与我们将介绍的代码片段非常相似，尽管它们通常显示为面向对象的 API。 此外，由于每个平台的复杂性和语言差异性，可能存在细微的差别，特别是在方法参数类型或常规的语言语法方面。 例如，iOS 使用 Objective-C。 Android 能够使用 C++；但是，某些开发人员可能依赖纯 Java 实现。 鉴于这一点，这些主题应该依然有用，因为 OpenGL ES API 的总体概念、结构以及用法并没有什么不同。
-
- 
+These topics use the Khronos OpenGL ES 2.0 specification with platform-agnostic C. Both iOS and Android utilize the same specification and OpenGL ES 2.0 code developed for those platforms is very similar to the code snippets we will walk through, although they are typically exposed as object-oriented APIs. Also, due to the intricacies and language differences of each platform, there may be minor differences, especially in method parameter types, or in general language syntax. iOS, for instance, uses Objective-C. Android has the capability to use C++; however, some developers may have relied on a pure Java implementation. With that in mind, these topics should still be useful as the overall concepts, structure and usage of the OpenGL ES APIs do not differ.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,34 +1,34 @@
 ---
-title: "数据保护"
-description: "本文介绍了如何在 UWP 应用中使用 Windows.Security.Cryptography.DataProtection 命名空间中的 DataProtectionProvider 类加密和解密数字数据。"
+title: Data protection
+description: This article explains how to use the DataProtectionProvider class in the Windows.Security.Cryptography.DataProtection namespace to encrypt and decrypt digital data in a UWP app.
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 958d5dd1c5f61078a0b288d53debe93875d65f06
+ms.openlocfilehash: 2a3be202f6754c452185aecbae3b259e09bd3fd3
 
 ---
 
-# 数据保护
+# Data protection
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本文介绍了如何在 UWP 应用中使用 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空间中的 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 类加密和解密数字数据。
+This article explains how to use the [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.
 
-可以多种方式使用数据保护 API：
+You can use the data protection APIs in multiple ways:
 
--   保护 Active Directory (AD) 安全主体（如 AD 组）的数据。 本组的任何成员均可解密数据。
--   保护包含在 X.509 证书中的公钥的数据。 私钥所有者可解密这些数据。
--   使用对称密钥保护数据。 例如，这用于将数据保护到非 AD 主体，如 Live ID。
--   保护在登录到网站时使用的凭据（密码）的数据。
+-   To protect data to an Active Directory (AD) security principal like an AD group. Any member of the group can decrypt the data.
+-   To protect data to the public key contained in an X.509 certificate. The owner of the private key can decrypt the data.
+-   To protect data by using a symmetric key. This works, for example, to protect data to a non-AD principal such as Live ID.
+-   To protect data to the credentials (password) used during logon to a website.
 
-为保护数据，在创建 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 对象时，必须在调用 [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) 或 [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) 之前指定保护描述符。 以下示例显示了可能的示例保护描述符。
+To protect data, when you create a [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) object you must specify a protection descriptor before calling [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) or [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564). The following example shows possible sample protection descriptors.
 
-## 保护静态数据
+## Protecting static data
 
 
-以下示例说明了如何使用 [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) 和 [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) 方法以非对称方式针对当前用户的 SID 保护静态数据。
+The following example shows how to use the [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) and [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) methods to asynchronously protect static data to the current user's SID.
 
 ```cs
 using Windows.Security.Cryptography;
@@ -110,10 +110,10 @@ namespace SampleProtectAsync
 }
 ```
 
-## 保护流数据
+## Protecting stream data
 
 
-以下示例显示了如何使用 [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) 和 [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) 方法以异步方式针对当前用户的 SID 保护流数据。
+The following example shows how to use the [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) and [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) methods to asynchronously protect stream data to the current user's SID.
 
 ```cs
 using Windows.Security.Cryptography;
@@ -264,6 +264,6 @@ namespace SampleProtectStreamAsync
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,90 +1,90 @@
 ---
 author: mcleanbyron
-Description: "必须先在开发人员中心仪表板中定义实验后，才能在具有 A/B 测试的通用 Windows 平台 (UWP) 应用中运行实验。"
-title: "在开发人员中心仪表板中定义你的实验"
+Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in the Dev Center dashboard.
+title: Define your experiment in the Dev Center dashboard
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7462c23de58b44f897a1737d0d54913144b14f75
+ms.sourcegitcommit: ce0431243866125eff83569e3b9b1c75e0703358
+ms.openlocfilehash: df6744cb9f4dd60c9eef07dc89f2265ac4244aab
 
 ---
 
-# 在开发人员中心仪表板中定义你的实验
+# Define your experiment in the Dev Center dashboard
 
-若要在具有 A/B 测试的通用 Windows 平台 (UWP) 应用中运行实验，请先在开发人员中心仪表板中定义你的实验。
+After you [create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) and [code your app for experimentation](code-your-experiment-in-your-app.md), you are ready to create an experiment in the project. When you create the experiment, you will define the goals and variations that your users will receive.
 
-以下部分介绍了在仪表板中定义实验的一般过程。 有关演示如何创建和运行实验的端到端过程的演练，请参阅 [Create and run your first experiment with A/B testing（通过 A/B 测试来创建和运行你的第一个实验）](create-and-run-your-first-experiment-with-a-b-testing.md)。
+<span id="get-an-api-key" />
+<span id="create-an-experiment" />
+## Create your experiment
 
-## 获取 API 密钥
+1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
+2. Under **Your apps**, select the app for which you want to create an experiment.
+3. In the navigation pane, select **Services** and then select **Experimentation**.
+4. On the **Experimentation** page, identify the project where you want to add an experiment in the projects table, and click the **Add experiment** link for that project.
+5. In the **Experiment name** field, type a name that you can use to easily identify the experiment. After you create an experiment, this name appears in the list of existing experiments on the **Experimentation** page for your app and on the project's page.
+6. If you want to edit the experiment while it is active, click the **Editable experiment** check box. Check this box only if you are creating an experiment to validate all the variations through internal testing. For more information, see [Create an experiment for internal testing](define-your-experiment-in-the-dev-center-dashboard.md#test_experiments).
 
-开始时请先转到开发人员中心仪表板的**实验**页，并获取实验的 *API 密钥*。
+  > **Note**&nbsp;&nbsp;Do not check this box if you are creating an experiment that you will release to customers (that is, an experiment that is associated with a project ID that is used in a version of your app that is available to customers). Editing an experiment while it is active will invalidate the experiment results.
+4. In the **Project name** drop-down, the current project is automatically selected. If you want to add the new experiment to a different project, you can select that project here. Otherwise, leave this selection alone.
+5.   Make note of the [Project ID](run-app-experiments-with-a-b-testing.md#terms) value. When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this ID in your code so you can receive variation data and report view and conversion events to Dev Center.
+5. In the **View event** section, type the name of the [view event](run-app-experiments-with-a-b-testing.md#terms) for your experiment in the **View event name** field.
+6. In the **Goals and conversion events** section, define at least one goal for your experiment:
+  * In the **Goal name** field, type a descriptive name for your goal. After you run an experiment, this name appears in the results summary for the experiment.
+  * In the **Conversion event name** field, type the name of the [conversion event](run-app-experiments-with-a-b-testing.md#terms) for this goal.
+  * In the **Objective** field, choose **Maximize** or **Minimize**, depending on whether you want to maximize or minimize the occurrences of the conversion event. This information is used in the results summary for the experiment.
 
-API 密钥是将你的应用与开发人员中心帐户中的实验关联起来的唯一 ID。 每项实验都只和一个 API 密钥关联。 但是，应用可以有多个 API 密钥，而每个 API 密钥也可以与多项实验关联。 你可以使用 API 密钥帮助区分不同的实验集。 例如，你可能有一组发布到组织测试人员的实验，还有另外一组仅发布到应用的外部用户的实验。
+  >**Note**&nbsp;&nbsp;Dev Center reports only the first conversion event for each user view in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user from skewing the experiment results for a sample group of users when the goal is to maximize the number of users who perform a conversion.
 
-必须使用此 API 密钥来连接应用代码中的 A/B 测试服务。 有关详细信息，请参阅 [Code your app for experimentation（针对实验为应用编码）](code-your-experiment-in-your-app.md)。
+<span id="define-the-variations-and-settings-for-the-experiment" />
+### Define the remote variables and variations for your experiment
 
-1. 登录到[开发人员中心仪表板](https://dev.windows.com/overview)。
-2. 在**“你的应用”**下，选择你想为之创建实验的应用。
-3. 在导航窗格中，选择**“服务”**，然后选择**“实验”**。
-4. **API 密钥**部分为你的应用提供了名为 **API 密钥 #1** 的默认 API 密钥。 如果你想使用此密钥，可以为此密钥键入一个友好名称，并复制它以在应用代码中使用。 若要生成新的 API 密钥，请选择**“新建 API 密钥”**，并为该 API 密钥输入一个友好名称。
+Next, define the remote [variables](run-app-experiments-with-a-b-testing.md#terms) and [variations](run-app-experiments-with-a-b-testing.md#terms) for your experiment.
 
-## 创建实验
+1. In the **Remote variables and variations** section, you should see two default variations, **Variation A (Control)** and **Variation B**. If you want more variations, click **Add variation**. Optionally, you can rename each variation.
+2. By default, variations are distributed equally to your app users. If you want to choose a specific distribution percentage, clear the **Distribute equally** check box and type the percentages in the **Distribution (%)** row.
+3. Add remote variables to your variations. In the drop-down control at the bottom of this section, choose each variable you want to add and click **Add variable**.
 
-接下来，创建新实验，并定义实验目标。
+  >**Note**&nbsp;&nbsp; The variables listed in this control are inherited from the project for the experiment. The default value for the variable (as defined in the project) is automatically assigned to the control variation. If you want to create new variables that aren't listed here, go to the related project page and add the variables there.
+4. Edit the variable values for each unique variation in the experiment (that is, the variations other than the control variation).
 
-1. 在**实验**部分中，单击**“新建实验”**按钮。
-2. 在 **API 密钥名**部分中，选择你想要与此实验关联的 API 密钥。 如果你只有一个 API 密钥，则将默认选择该 API 密钥。
-3. 在**“实验名称”**字段中，键入你可以用来轻松标识实验的名称。 在你创建实验后，此名称将会显示在**实验**页的草稿、活动和完成实验的列表中。
-4. 如果你想要创建测试实验，请单击**“测试实验”**复选框。 测试实验和常规实验的区别在于，仅测试实验能在激活后更改。
+<span id="save-and-activate-your-experiment" />
+### Save and activate your experiment
 
-  测试实验旨在帮助你在将实验发布到客户前在客户端设备上测试所有变体。 若要确保变体按预期提供到客户端，你可以激活将 100% 分配分给一个变体而将 0% 分给其他变体的测试实验。 验证此变体后，你可以对其他变体重复该过程。
-  > **注意** 仅在通过内部设置创建验证参数的测试实验时才选中此框。 如果你要创建发布给客户的实验，则请勿选中此框。
+When you finish entering the required fields for your experiment, click **Save** to save your experiment.
 
-5. 在**“视图事件名称”**字段中，键入实验的*视图事件*名称。 视图事件是表示用户开始查看作为实验一部分的变体时，某项活动的任意字符串。 当用户开始查看变体时，你的应用会将此视图事件字符串发送到开发人员中心。 有关详细信息，请参阅 [Code your app for experimentation（针对实验为应用编码）](code-your-experiment-in-your-app.md)。
-6. 在**目标和转换事件**部分中，为你的实验定义至少一个目标：
-  * 在**“目标名称”**字段中，为目标键入描述性的名称。 运行实验后，此名称将显示在实验的结果摘要中。
-  * 在**“转换事件名称”**字段中，为此目标键入*转换事件*的名称。 转换事件是表示此目标的目的的任意字符串。 当用户达成此目的时，你的应用会将此转换事件字符串发送到开发人员中心。 有关详细信息，请参阅 [Code your app for experimentation（针对实验为应用编码）](code-your-experiment-in-your-app.md)。
-  * 在**“目标”**字段中，选择**“最大化”**或**“最小化”**，具体取决于你是想要最大化还是最小化转换事件的发生次数。 此信息将用于实验的结果摘要。
+If you are satisfied with the parameters of your experiment and you are ready to activate it so you can start collecting experiment data from your app, click **Activate**. When the experiment is active, your app can retrieve variation variables and report view and conversion events to Dev Center. For more information, see [Run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md).
 
-  >**注意** 开发人员中心中在 24 小时时间段内向每个用户视图仅报告第一个转换事件。 如果用户在 24 小时时间段内触发多个转换事件，则将仅报告第一个转换事件。 这是为了在目标是最大化执行转换的用户数时，帮助防止单个用户扭曲一组示例用户得出的实验结果。
+> **Important**  A project can only contain one active experiment at a time. After you activate an experiment, you can no longer modify the experiment parameters unless you selected the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
 
-## 定义实验的变体和设置
+<span id="test_experiments"/>
+## Create an experiment for internal testing
 
-接下来，定义实验的变体和设置。
+You might want to test your experiment with a controlled audience (for example, a set of internal testers) and confirm that all of the variations are working as expected before you activate the experiment for your customers. You can accomplish this by creating an experiment that has the **Editable experiment** option selected.
 
-* *变体*是你在实验中测试的一个或多个设置的集合。 每项实验必须拥有至少一个设置和两个变体（包括控件）。 实验可以有最多五个变量。
-* *设置*是应用用于初始化程序变量的值。 在实验中，设置值随变体更改而更改。 结束实验后，设置会分配由你选择发布到应用所有用户的变体的值。 设置可拥有以下类型：字符串、布尔值、双精度和整数。
+To test your experiment before releasing it to customers, follow this process:
 
-定义实验的变体和设置：
-1. 在**变体和设置**部分，应该可以看到**变体 A（控件）**和**变体 B** 这两个默认变体。如果你想要更多变体，请单击**“添加变体”**。 或者，你可以重命名每个变体。
-2. 接下来，创建变体设置。 单击**“添加设置”**以创建每个新设置，并在每个变体中键入设置名和该设置的值。
-3. 默认情况下，变体会平均分配到应用用户。 如果你想要选择特定的分配百分比，清除**“平均分配”**复选框，并在**“分配 (%)”**行中键入百分比。
+1. Create two projects: one for the public build of your app, and one for a private build of your app that is available only to your test audience. The following instructions refer to these projects as the public project and test project, respectively.
+2. When you [code your app for experimentation](code-your-experiment-in-your-app.md), reference the project ID from your public project in the public build of your app. In the private build of your app, reference the project ID from your test project.
+3. Create an experiment in the test project, and select the **Editable experiment** option for the experiment.
+4. Activate the experiment in the test project. Allocate 100% distribution to one variation and verify that this variation works as expected for your testers. Repeat the process for other variations.
+5. After you verify that the variations are working as expected, make any final changes to the experiment in the test project. When you are ready to release the experiment to your customers, clone the experiment to the public project. In this experiment, do not select the **Editable experiment** option.
+4. Ensure that the target variation distribution is correct in the cloned experiment.
+5. Activate the cloned experiment to release the experiment to your customers.
 
-## 保存实验
+## Next steps
 
-当你完成输入实验的所需字段后，单击**“保存”**以保存实验。
+After you define your experiment in the Dev Center dashboard and code the experiment in your app, you are ready to [run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md).
 
-> **重要提示** 保存实验后，不必再更改实验的 API 密钥，即使实验尚未激活也是如此。
+## Related topics
 
-如果你对实验参数感到满意，并且已准备好激活它以开始收集应用的实验数据，请单击**“激活”**。 当实验已激活，你的应用便可以检索变体设置，并向开发人员中心报告视图和转换事件。
-
-> **重要提示** 激活实验后，你不可再对实验参数进行修复，除非该实验为测试实验（创建实验时，选中**“测试实验”**复选框）。 激活实验之前，我们建议你在应用中为实验编码。
-
-## 后续步骤
-
-在开发人员中心仪表板定义你的实验后，你就已经准备好进行以下步骤：
-1. [针对实验为应用编码](code-your-experiment-in-your-app.md)。 在 Microsoft 官方商城协定和盈利 SDK 中使用 API 获取实验的变体设置、使用此数据来修改你正在测试的该功能的行为，并将视图事件和转换事件发送到开发人员中心。
-2. [在开发人员中心仪表板中运行和管理实验](manage-your-experiment.md)。 使用仪表板查看实验结果，并完成实验。
-
-## 相关主题
-
-  * [针对实验为你的应用编码](code-your-experiment-in-your-app.md)
-  * [在开发人员中心仪表板中管理你的实验](manage-your-experiment.md)
-  * [通过 A/B 测试创建和运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)
-  * [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
+* [Create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [Code your app for experimentation](code-your-experiment-in-your-app.md)
+* [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md)
+* [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO1-->
 
 

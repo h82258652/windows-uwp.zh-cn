@@ -1,74 +1,74 @@
 ---
 author: jnHs
-Description: "了解当你认为其他应用正在侵犯你的知识产权时可以采取的措施。"
-title: "商标和版权保护"
+Description: Learn what you can do if you think another app is infringing on your intellectual property rights.
+title: Trademark and copyright protection
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2c3f35ee5fb3f04e9f2fc389162793caa9ce5f1a
+ms.openlocfilehash: f4946ac6e163dd84806d52a1775301ac231d2b9d
 
 ---
 
-# 商标和版权保护
+# Trademark and copyright protection
 
 
-了解当您认为其他应用正在侵犯您的知识产权时可以采取的措施。
+Learn what you can do if you think another app is infringing on your intellectual property rights.
 
-## 1. 如何在 Windows 应用中报告侵犯我的知识产权的行为？
-
-
-请使用以下[表单](http://go.microsoft.com/fwlink/p/?LinkId=273879)在 Windows 应用中提交版权、商标或形象宣传权侵犯投诉。 对于跨多个应用的版权、商标或形象宣传权侵犯投诉，请将你的请求提交到 mktlegal@microsoft.com。 如果您需要有关 Microsoft DMCA 政策的其他信息，请访问：[https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976)。
-
-## 2. 我创建了要使用 Microsoft 产品/服务的应用。 我可以在我的应用名称中使用 Microsoft 产品/服务名称吗？
+## 1. How may I report an infringement of my intellectual property rights within a Windows app?
 
 
-Microsoft 强烈建议您不要这样做。 但是如果商业上确实有必要这样做，则应该遵循以下准则：
+Please use the following [form](http://go.microsoft.com/fwlink/p/?LinkId=273879) to submit a copyright, trademark or publicity rights infringement complaint on a Windows app. For copyright, trademark or publicity rights infringements complaints across multiple apps, please submit your request to mktlegal@microsoft.com. If you need additional info about Microsoft’s DMCA policy, please visit: [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976).
 
--   您的应用名称不应以发行的 Microsoft 产品或服务名称开头。 例如，“Xbox Points Calculator”不应用作应用名称。 “Bob’s Points Calculator for Xbox”才是最佳名称。 这样就可以明确该应用不是由 Microsoft 分发的。
--   使用说明您的应用是专门用来与 Microsoft 产品或服务结合使用的语言。 例如，“与...一起使用”、“针对”、“针对...而设计”和“针对...进行优化”都是可接受的术语，可用于说明您的产品是专门用来与 Microsoft 产品或服务配合使用的。 诸如“经过认证”、“官方”、“身份验证”以及“已授权”之类的术语暗示法律从属关系或公开背书，因此如果没有与 Microsoft 的正式商标许可协议，则不得使用。 通常此上下文中不提供此类协议。
--   请以纯文本的形式使用 Microsoft 产品/服务名称。 不要使用任何奇特字体或伴随图形。
-
-有关详细信息，请参阅[通用 Microsoft 商标准则](http://go.microsoft.com/fwlink/p/?LinkId=225434)。
-
-## 3. 我是否可以在我的应用标题中或作为我的应用内容的一部分使用其他公司的商标名称或徽标？
+## 2. I created my app to work with a Microsoft product/service. May I use the Microsoft product/service name in the name of my app?
 
 
-您需要向自己的商标顾问咨询有关其他公司的商标名称或徽标的使用。 但是，当收到来自商标所有者有关滥用其商标的正式通知时，Microsoft 会将应用从应用商店上撤下。 相应地，我们也会强烈要求您行使充分的尽职调查。
+Microsoft strongly prefers that you do not. But if there is a clear business necessity, you may do so if you follow these guidelines:
 
-有关详细信息，请参阅[美国专利商标局：商标基础知识](http://go.microsoft.com/fwlink/p/?LinkId=225271)。
+-   The name of your app should not begin with the Microsoft product or service name at issue. For example, "Xbox Points Calculator" should not be used as an app name. "Bob’s Points Calculator for Xbox" is a better name. This makes it clear that the app is not distributed by Microsoft.
+-   Use language that explains that your app was designed to work in conjunction with a Microsoft product or service. For example, "works with," "for," "designed for," and "optimized for" are all acceptable terms to explain that your product is designed to work in conjunction with a Microsoft product or service. Use of terms such as "certified," "official," "authentic," and "licensed" imply legal affiliation or overt endorsement and thus must not be used absent a formal trademark license agreement with Microsoft. Such agreements are typically not available in this context.
+-   Use the Microsoft product/service name only in plain text. Do not use any fancy fonts or accompanying graphics.
 
-## 4. 我是否可以在我的应用中使用 Microsoft 的图形商标（徽标）（如 WINDOWS 标志徽标）？
+For more information, see [General Microsoft Trademark Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=225434).
 
-
-否。 Microsoft 只允许第三方通过正式授权使用其商标徽标。 通常在此上下文中不提供此类许可。
-
-有关详细信息，请参阅[美国专利商标局：商标基础知识](http://go.microsoft.com/fwlink/p/?LinkId=225271)或下载[美国版权局：版权基础知识](http://go.microsoft.com/fwlink/p/?LinkID=225273)。
-
-## 5. 当我在我的应用中引用 Microsoft 商标时是否需要使用注册的 ® 或商标 ™ 符号？ 并且在使用 Microsoft 商标时，是否必须在我的应用中放置商标归属公告，例如，“Microsoft is a registered trademark of the Microsoft Corporation（Microsoft 是 Microsoft Corporation 的注册商标）”？
+## 3. Is it OK if I use the trademarked name or logo of another company in the title of my app or as part of the content of my app?
 
 
-对于您包含这些符号或归属公告没有法律要求，但如果您这样做，Microsoft 将非常感谢您。
+You need to consult your own trademark counsel about the use of a trademarked name or logo of another company. However, Microsoft will take apps off the Store upon proper notice from trademark owners regarding misuse of their trademarks. Accordingly, we strongly urge you to exercise adequate due diligence.
 
-## 6. 我是否可以制造与其他人的游戏类似的游戏（只要我更改名称）？
+For more information, see [U.S. Patent and Trademark Office: Trademark Basics](http://go.microsoft.com/fwlink/p/?LinkId=225271).
 
-
-不可以，未经允许，不可以这样做。 尽管版权不保护游戏的思想，但它保护游戏中的原始表示，如原始视听元素、图形、声音、字符等等，并且保护这些元素的排列和原始选择。 如果您的游戏与其他人的游戏太过相似，可能会使您遭到侵犯版权的指控。 Microsoft 无法关于此问题提供建议，如果您不确定您的游戏是否过于类似，那么您可能需要咨询您自己的律师。 有关详细信息，请下载[美国版权局：版权基础知识](http://go.microsoft.com/fwlink/p/?LinkID=225273)。
-
-## 7. 如果我收到 Microsoft 的通知，告诉我它已经收到有关我的应用侵犯商标或版权的投诉，我该做什么？
+## 4. May I use Microsoft’s graphical trademarks (logos), such as the WINDOWS FLAG logo, in my app?
 
 
-仔细阅读 Microsoft 的通知，并按照说明执行操作。 Microsoft 的通知可能包含您可能需要遵循的具体步骤，以告知我们您为纠正该问题所做的事项、您与要求者的意见不一致以及/或者您希望将您的应用重新提交到应用商店。
+No. Microsoft allows third parties to use its trademarked logos only via formal license. Such a license is typically not available in this context.
 
- 
+For more information, see [U.S. Patent and Trademark Office: Trademark Basics](http://go.microsoft.com/fwlink/p/?LinkId=225271) or download [U.S. Copyright Office: Copyright Basics](http://go.microsoft.com/fwlink/p/?LinkID=225273).
+
+## 5. Do I need to use registered ® or trademark ™ symbols when I refer to a Microsoft trademark in my app? And must I, when using a Microsoft trademark, place a trademark attribution notice in my app, for example, "Microsoft is a registered trademark of the Microsoft Corporation"?
+
+
+There is no legal requirement that you include these symbols or the attribution notice, but Microsoft would greatly appreciate it if you do.
+
+## 6. Is it OK if I make a game that is identical to someone else’s game as long as I change the name?
+
+
+No, not without permission. While copyright does not protect the idea of a game, it does protect original expression in a game, such as original audiovisual elements, graphics, sounds, characters, and so on, and the original selection and arrangement of these elements. A game that is too similar to someone else’s game could subject you to a claim of copyright infringement. Microsoft cannot give advice on this issue, and you may need to consult your own lawyer if you are unsure about whether your game is too similar. For more information, download [U.S. Copyright Office: Copyright Basics](http://go.microsoft.com/fwlink/p/?LinkID=225273).
+
+## 7. What should I do if I get a notice from Microsoft telling me it has received a complaint that my app infringes a trademark or copyright?
+
+
+Read the notice from Microsoft carefully, and follow the instructions. The notice from Microsoft may include specific steps you may follow to inform us what you have done to correct the problem, that you disagree with the claimant, and/or that you want to resubmit your app to the Store.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

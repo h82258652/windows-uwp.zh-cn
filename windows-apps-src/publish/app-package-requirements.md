@@ -1,90 +1,90 @@
 ---
 author: jnHs
-Description: "按照以下指南准备要提交到 Windows 应用商店的应用包。"
-title: "应用包要求"
+Description: Follow these guidelines to prepare your app's packages for submission to the Windows Store.
+title: App package requirements
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 951c00f9fd2c945ac44d47bfae701049e937b98f
+ms.sourcegitcommit: c15d4153f6ae83cc7bf1ae02d834bd07189e38ab
+ms.openlocfilehash: 250e94c2766227cabad791db6d994bcfb1a2ac33
 
 ---
 
-# 应用包要求
+# App package requirements
 
-按照以下指南准备要提交到 Windows 应用商店的应用包。
+Follow these guidelines to prepare your app's packages for submission to the Windows Store.
 
-## 为 Windows 应用商店生成应用包之前
+## Before you build your app's package for the Windows Store
 
-请确保[使用 Windows 应用认证工具包测试应用](https://msdn.microsoft.com/library/windows/apps/mt186449)。 我们还建议在不同类型的硬件上测试你的应用。 请注意，在我们对你的应用进行认证并在 Windows 应用商店中发布之前，该应用只能在具有开发者许可证的计算机上安装和运行。
+Make sure to [test your app with the Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/mt186449). We also recommend that you test your app on different types of hardware. Note that until we certify your app and make it available from the Windows Store, it can only be installed and run on computers that have developer licenses.
 
-## 使用 Microsoft Visual Studio 生成应用包
+## Building the app package using Microsoft Visual Studio
 
-如果你使用 Microsoft Visual Studio 作为开发环境，则你已经拥有可使创建应用包的过程变得快速而轻松的内置工具。 有关详细信息，请参阅[打包应用](https://msdn.microsoft.com/library/windows/apps/mt270969)。
+If you're using Microsoft Visual Studio as your development environment, you already have built-in tools that make creating an app package a quick and easy process. For more info, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969).
 
-> **注意** 请确保你的所有文件名都使用 ANSI。 
-
-
-在 Visual Studio 中创建程序包时，请确保你使用与你的开发者帐户关联的相同 Microsoft 帐户登录。 程序包清单的某些部分具有与你的帐户相关的特定详细信息。 将自动检测和添加此信息。
-
-在生成应用包时，Visual Studio 可以创建 .appx 文件或 .appxupload 文件（对于 Windows Phone 8.1 及更早版本，创建 .xap 文件）。 对于面向 Windows 10 的应用，始终在[程序包](upload-app-packages.md)页面中上传 .appxupload 文件。 有关打包适用于应用商店的 UWP 应用的详细信息，请参阅[打包适用于 Windows 10 的通用 Windows 应用](http://go.microsoft.com/fwlink/p/?LinkId=620193 )。
-
-不必使用来自受信任的证书颁发机构的根证书对你的应用包进行签名。
-
-### 应用程序包
-
-对于面向 Windows 8.1、Windows Phone 8.1 及更高版本的应用，Visual Studio 可以生成应用程序包 (.appxbundle) 以减少用户所下载应用的大小。 仅当已定义特定于语言的资源、大量图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源时，该操作才有用。
-
-> **注意** 一个应用程序包可以包含所有体系结构的程序包。 对于每个目标操作系统，应仅提交一个捆绑包。
+> **Note**  Be sure that all your filenames use ANSI. 
 
 
-使用应用程序包，用户将仅下载相关文件，而不是所有可能的资源。 有关应用程序包的详细信息，请参阅[打包应用](https://msdn.microsoft.com/library/windows/apps/mt270969)和[打包适用于 Windows 10 的通用 Windows 应用](http://go.microsoft.com/fwlink/p/?LinkId=620193 )。
+When you create your package in Visual Studio, make sure you are signed in with the same account associated with your developer account. Some parts of the package manifest have specific details related to your account. This info is detected and added automatically.
 
-## 手动生成应用包
+When you build your app's packages, Visual Studio can create an .appx file or an .appxupload file (or a .xap file for Windows Phone 8.1 and earlier). For apps that target Windows 10, always upload the .appxupload file in the [Packages](upload-app-packages.md) page. For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
 
-如果未使用 Visual Studio 创建程序包，则必须[手动创建程序包清单](https://msdn.microsoft.com/library/windows/apps/br211476)。
+Your app's packages don't have to be signed with a certificate rooted in a trusted certificate authority.
 
-确保查看[应用包清单](https://msdn.microsoft.com/library/windows/apps/br211474)文档，以获取完整清单的详细信息和要求。 你的清单必须遵循程序包清单架构，才能通过认证。
+### App bundles
 
-你的清单必须包含有关你的帐户和应用的某些特定信息。 通过查看仪表板中应用概述页面的**“应用管理”**部分中的[查看应用标识详细信息](view-app-identity-details.md)，可找到此信息。
+For apps that target Windows 8.1, Windows Phone 8.1, and later, Visual Studio can generate an app bundle (.appxbundle) to reduce the size of the app that users download. This can be helpful if you've defined language-specific assets, a variety of image-scale assets, or resources that apply to specific versions of Microsoft DirectX.
 
-> **注意** 清单中的值区分大小写。 空格和其他标点符号也必须匹配。 请小心输入值并进行检查，以确保这些值准确无误。
-
-
-应用程序包使用不同的清单。 查看[捆绑包清单](https://msdn.microsoft.com/library/windows/apps/dn263089)文档，以获取应用程序包清单的详细信息和要求。
-
-> **提示** 在提交你的程序包之前，请确保运行 [Windows 应用认证工具包](https://msdn.microsoft.com/library/windows/apps/mt186449)。 此操作可帮助你确定你的清单是否存在任何可能导致认证或提交失败的问题。
+> **Note**  One app bundle can contain your packages for all architectures. You should submit only one bundle for each targeted OS.
 
 
-如果你的应用具有多个程序包，这些应用清单元素必须在每个程序包（每个目标操作系统）中保持相同：
+With an app bundle, a user will only download the relevant files, rather than all possible resources. For more info about app bundles, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969) and [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
 
--   [**程序包/功能**](https://msdn.microsoft.com/library/windows/apps/br211422)
--   [**程序包/依赖项**](https://msdn.microsoft.com/library/windows/apps/br211428)
--   [**程序包/资源**](https://msdn.microsoft.com/library/windows/apps/br211462)
+## Building the app package manually
 
-## 程序包格式要求
+If you don't use Visual Studio to create your package, you must [create your package manifest manually](https://msdn.microsoft.com/library/windows/apps/br211476).
 
-你的应用包必须符合这些要求。
+Be sure to review the [App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474) documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.
 
-| 应用包属性 | 要求                                                          |
+Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](view-app-identity-details.md) in the **App management** section of your app's overview page in the dashboard.
+
+> **Note**  Values in the manifest are case-sensitive. Spaces and other punctuation must also match. Enter the values carefully and review them to ensure that they are correct.
+
+
+App bundles use a different manifest. Review the [Bundle manifest](https://msdn.microsoft.com/library/windows/apps/dn263089) documentation for the details and requirements for app bundle manifests.
+
+> **Tip**  Be sure to run the [Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/mt186449) before you submit your packages. This can you help determine if your manifest has any problems that might cause certification or submission failures.
+
+
+If your app has more than one package, these app manifest elements must be the same in each package (per targeted OS):
+
+-   [**Package/Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)
+-   [**Package/Dependencies**](https://msdn.microsoft.com/library/windows/apps/br211428)
+-   [**Package/Resources**](https://msdn.microsoft.com/library/windows/apps/br211462)
+
+## Package format requirements
+
+Your app’s packages must comply with these requirements.
+
+| App package property | Requirement                                                          |
 |----------------------|----------------------------------------------------------------------|
-| 程序包大小         | .appxbundle：每个捆绑包最大为 25 GB <br>面向 Windows 8.1 的 .appx 程序包：每个程序包最大为 8 GB <br> 面向 Windows 8 的 .appx 程序包：每个程序包最大为 2 GB <br> 面向 Windows Phone 8.1 的 .appx 程序包：每个程序包最大为 4 GB <br> .xap 程序包：每个程序包最大为 1 GB                                                                           |
-| 块映射哈希     | SHA2-256 算法                                                   |
+| Package size         | .appxbundle: 25 GB maximum per bundle <br>.appx packages targeting Windows 8.1: 8 GB maximum per package <br> .appx packages targeting Windows 8: 2 GB maximum per package <br> .appx packages targeting Windows Phone 8.1: 4 GB maximum per package <br> .xap packages: 1 GB maximum per package                                                                           |
+| Block map hashes     | SHA2-256 algorithm                                                   |
  
 
-## StoreManifest XML 文件
+## StoreManifest XML file
 
-StoreManifest.xml 是一种可选的配置文件，可包含在应用包中。 在文件旨在支持程序包清单未涵盖的功能，例如将应用声明为 Windows 应用商店设备应用或声明程序包适用于某个设备所依据的要求。 StoreManifest.xml 与应用包一起提交，并且必须在应用的主项目的根文件夹中。 有关详细信息，请参阅 [StoreManifest 架构](https://msdn.microsoft.com/library/windows/apps/mt617325)。
-
- 
+StoreManifest.xml is an optional configuration file that may be included in app packages. Its purpose is to enable features, such as declaring your app as a Windows Store device app or declaring requirements that a package depends on to be applicable to a device, that the package manifest does not cover. StoreManifest.xml is submitted with the app package and must be in the root folder of your app's main project. For more info, see [StoreManifest schema](https://msdn.microsoft.com/library/windows/apps/mt617325).
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

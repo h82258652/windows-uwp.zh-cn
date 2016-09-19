@@ -1,66 +1,66 @@
 ---
 author: seksenov
-title: "托管 Web 应用 - 使用 Mac 将 Web 应用程序转换为 Windows 应用"
-description: "使用 Mac 将你的网站转换为适用于 Windows 10 的通用 Windows 平台 (UWP) 应用。"
+title: Hosted Web Apps - Convert your web application to a Windows app using a Mac
+description: Use a Mac to turn your website in to a Universal Windows Platform (UWP) app for Windows 10.
 kw: Hosted Web Apps with a Mac, Porting to Windows 10 with a Mac, Convert website to Windows with Mac, Packaging web application with ManfoldJS for Windows Store, Add website to Windows Store with App Studio
 translationtype: Human Translation
 ms.sourcegitcommit: 0458dcd2aab862ccdecf1ebbc51e883405a929a6
-ms.openlocfilehash: 775963ae3d12023488c79ded1cc83d464e84169c
+ms.openlocfilehash: 3ba820e2ec8a3556874c0c7c7e328831bab783ca
 
 ---
 
-# 使用 Mac 创建托管 Web 应用
+# Create your Hosted Web App using a Mac
 
-只需从网站 URL 入手，即可快速创建适用于 Windows 10 的通用 Windows 平台应用。 
+Quickly create a Universal Windows Platform app for Windows 10 starting with just a website URL. 
 
 > [!NOTE]
-> 以下说明适用于 Mac 开发平台。 Windows 用户，请访问[有关使用 Windows 开发平台的说明](/hwa-create-windows.md)。
+> The following instructions are for use with a Mac development platform. Windows users, visit [instructions on using a Windows development platform](/hwa-create-windows.md).
 
-## 在 Mac 上开发需要做哪些准备工作
+## What you need to develop on Mac
 
-- Web 浏览器。
-- 命令提示符。
+- A web browser.
+- A command prompt.
 
-## 选项 1：ManifoldJS
+## Option 1: ManifoldJS
 
-[ManifoldJS](http://manifoldjs.com/) 是一款 Node.js 应用，可通过 NPM 轻松安装。 它会获取有关你的网站的元数据，并生成跨 Android、iOS 和 Windows 的本机托管应用。 如果你的站点没有 [Web 应用部件清单](https://www.w3.org/TR/appmanifest/)，将自动为你生成一个清单。
+[ManifoldJS](http://manifoldjs.com/) is a Node.js app that easily installs from NPM. It takes the meta-data about your web site and generates native hosted apps across Android, iOS, and Windows. If your site does not have a [web app manifest](https://www.w3.org/TR/appmanifest/), one will be automatically generated for you.
 
-1. 安装包含 NPM（节点包管理器）的 [NodeJS](https://nodejs.org/)。 <br>
+1. Install [NodeJS](https://nodejs.org/) which includes NPM (Node Package Manager). <br>
 
-2. 打开命令提示符和 NPM，安装 ManifoldJS：
+2. Open a command prompt and NPM install ManifoldJS:
 ```
 npm install -g manifoldjs
 ```
 
-3. 运行你的网站 URL 上的 `manifoldjs` 命令：
+3. Run the `manifoldjs` command on your web site URL:
 ```
 manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 ```
 
-4. 遵循以下视频中的步骤完成打包并将你的托管 Web 应用发布到 Windows 应用商店。
+4. Follow the steps in the video below to complete the packaging and publish your Hosted Web App to the Windows Store.
 
-[ ![使用 ManifoldJS 在 Mac 上发布 UWP Web 应用] (images/hwa-to-uwp/mac_manifoldjs_video.png)](https://sec.ch9.ms/ch9/0a67/9b06e5c7-d7aa-478d-b30d-f99e145a0a67/ManifoldJS_high.mp4 "使用 ManifoldJS 在 Mac 上发布 UWP Web 应用")
+[![Publishing a UWP Web App on a Mac using ManifoldJS](images/hwa-to-uwp/mac_manifoldjs_video.png)](https://sec.ch9.ms/ch9/0a67/9b06e5c7-d7aa-478d-b30d-f99e145a0a67/ManifoldJS_high.mp4 "Publishing a UWP Web App on a Mac using ManifoldJS")
 
-## 选项 2：App Studio
+## Option 2: App Studio
 
-[App Studio](http://appstudio.windows.com/) 是一款免费的联机应用创建工具，使你可以快速生成 Windows 10 应用。
+[App Studio](http://appstudio.windows.com/) is a free, online app creation tool that allows you to quickly build Windows 10 apps.
 
-1. 在 Web 浏览器中打开 [App Studio](http://appstudio.windows.com/)。
+1. Open [App Studio](http://appstudio.windows.com/) in your web browser.
 
-2. 单击“立即启动！”****。
+2. Click **Start now!**.
 
-3. 在“Web 应用模板”****下，单击“托管 Web 应用”****。
+3. Under **Web app templates**, click **Hosted Web App**.
 
-4. 按照屏幕上的说明，生成准备用于向 Windows 应用商店发布的程序包。
+4. Follow the on-screen instructions to generate a package ready for publishing to the Windows Store.
 
-## 相关主题
+## Related topics
 
-- [通过访问通用 Windows 平台 (UWP) 功能增强你的 Web 应用](/hwa-access-features.md)
-- [通用 Windows 平台 (UWP) 应用指南](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-- [下载 Windows 应用商店应用的设计资源](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+- [Enhance your web app by accessing Universal Windows Platform (UWP) features](/hwa-access-features.md)
+- [Guide to Universal Windows Platform (UWP) apps](http://go.microsoft.com/fwlink/p/?LinkID=397871)
+- [Download design assets for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

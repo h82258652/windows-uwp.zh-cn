@@ -1,40 +1,37 @@
 ---
 author: TylerMSFT
-title: "使用维护触发器"
-description: "了解如何在插入设备的情况下使用 MaintenanceTrigger 类在后台运行轻型代码。"
+title: Use a maintenance trigger
+description: Learn how to use the MaintenanceTrigger class to run lightweight code in the background while the device is plugged in.
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
 
 ---
 
-# 使用维护触发器
+# Use a maintenance trigger
 
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-**重要的 API**
+**Important APIs**
 
 -   [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
-了解如何在插入设备的情况下使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 类在后台运行轻型代码。
+Learn how to use the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) class to run lightweight code in the background while the device is plugged in.
 
-## 创建一个维护触发器对象
+## Create a maintenance trigger object
 
+This example assumes that you have lightweight code you can run in the background to enhance your app while the device is plugged in. This topic focuses on the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517), which is similar to [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
-本示例假定在插入设备时你已具有可以在后台运行的轻型代码以增强你的应用。 此主题重点介绍 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 类，它类似于 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)。 有关编写后台任务类的详细信息可以在[创建和注册后台任务](create-and-register-a-background-task.md)中找到。
+More information on writing a background task class is available in [Create and register a single-process background task](create-and-register-a-singleprocess-background-task.md) or [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md).
 
-创建新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 对象。 第二个参数 *OneShot* 指定维护任务是运行一次还是继续定期运行。 如果 *OneShot* 被设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 被设置为 false，则 *FreshnessTime* 会指定后台任务的运行频率。
+Create a new [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) object. The second parameter, *OneShot*, specifies whether the maintenance task will run only once or continue to run periodically. If *OneShot* is set to true, the first parameter (*FreshnessTime*) specifies the number of minutes to wait before scheduling the background task. If *OneShot* is set to false, *FreshnessTime* specifies how often the background task will run.
 
-> **注意** 如果 *FreshnessTime* 设置为少于 15 分钟，则在尝试注册后台任务时将引发异常。
+> **Note**  If *FreshnessTime* is set to less than 15 minutes, an exception is thrown when attempting to register the background task.
 
- 
-
-本示例代码会创建一个每小时运行一次的触发器：
+This example code creates a trigger that runs once an hour:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -48,28 +45,27 @@ ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
 > MaintenanceTrigger ^ taskTrigger = ref new MaintenanceTrigger(waitIntervalMinutes, false);
 > ```
 
-## （可选）添加条件
+## (Optional) Add a condition
 
--   如果需要，创建一个后台任务条件以控制任务何时运行。 防止后台任务在未满足条件之前运行的条件，有关详细信息，请参阅[设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)
+-   If necessary, create a background task condition to control when the task runs. A condition prevents your background task from running until the condition is met - for more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
 
-    在该示例中，条件设置为 **InternetAvailable** 以便在 Internet 可用时（或者变为可用时）运行维护。 有关可能的后台任务条件列表，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+In this example, the condition is set to **InternetAvailable** so that maintenance runs when the Internet is available (or when it becomes available). For a list of possible background task conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-    以下代码向维护任务生成器中添加一个条件：
+The following code adds a condition to the maintenance task builder:
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > SystemCondition exampleCondition = new SystemCondition(SystemConditionType.InternetAvailable);
-    > ```
-    > ```cpp
-    > SystemCondition ^ exampleCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> SystemCondition exampleCondition = new SystemCondition(SystemConditionType.InternetAvailable);
+> ```
+> ```cpp
+> SystemCondition ^ exampleCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
+> ```
 
-## 注册后台任务
+## Register the background task
 
+-   Register the background task by calling your background task registration function. For more information on registering background tasks, see [Register a background task](register-a-background-task.md).
 
--   通过调用后台任务注册函数注册后台任务。 有关注册后台任务的详细信息，请参阅[注册后台任务](register-a-background-task.md)。
-
-    以下代码将注册维护任务：
+    The following code registers the maintenance task. Note that it assumes your background task runs in a separate process from your app because it specifies `entryPoint`. If your background task runs in the same process as your app, you do not specify `entryPoint`.
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -85,44 +81,40 @@ ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, taskTrigger, exampleCondition);
     > ```
 
-    > **注意** 对于除台式计算机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或者应用没有处理该异常，则后台任务将在没有警告且不引发 OnCanceled 事件的情况下终止。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此情形。
+    > **Note**  For all device families except desktop, if the device becomes low on memory, background tasks may be terminated. If an out of memory exception is not surfaced, or the app does not handle it, then the background task will be terminated without warning and without raising the OnCanceled event. This helps to ensure the user experience of the app in the foreground. Your background task should be designed to handle this scenario.
 
-    > **注意** 通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
+    > **Note**  Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
-    若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
+    To ensure that your Universal Windows app continues to run properly after you release an update to your app, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-    > **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
-
-
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
-## 相关主题
+    > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
 
-****
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-* [创建和注册后台任务](create-and-register-a-background-task.md)
-* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
-* [处理取消的后台任务](handle-a-cancelled-background-task.md)
-* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
-* [注册后台任务](register-a-background-task.md)
-* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
-* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
-* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
-* [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
-* [后台任务指南](guidelines-for-background-tasks.md)
+## Related topics
 
 ****
 
-* [调试后台任务](debug-a-background-task.md)
-* [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Create and register a single-process background task](create-and-register-a-singleprocess-background-task.md).
+* [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
 
- 
+****
 
- 
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,32 +1,32 @@
 ---
 author: mtoepke
-title: "初始化 Direct3D 11"
-description: "介绍如何将 Direct3D 9 初始化代码转换为 Direct3D 11，包括如何获取 Direct3D 设备和设备上下文的句柄以及如何使用 DXGI 设置交换链。"
+title: Initialize Direct3D 11
+description: Shows how to convert Direct3D 9 initialization code to Direct3D 11, including how to get handles to the Direct3D device and the device context and how to use DXGI to set up a swap chain.
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f0e25e43633d895673d640f139af338f6f0713f2
+ms.openlocfilehash: 723321983418a714ec375db99a0df7f8455c0464
 
 ---
 
-# 初始化 Direct3D 11
+# Initialize Direct3D 11
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**摘要**
+**Summary**
 
--   第 1 部分：初始化 Direct3D 11
--   [第 2 部分：转换呈现框架](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   [第 3 部分：移植游戏循环](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
-
-
-介绍如何将 Direct3D 9 初始化代码转换为 Direct3D 11，包括如何获取 Direct3D 设备和设备上下文的句柄以及如何使用 DXGI 设置交换链。 [将简单的 Direct3D 9 应用移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 操作实例的第 1 部分。
-
-## 初始化 Direct3D 设备
+-   Part 1: Initialize Direct3D 11
+-   [Part 2: Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
+-   [Part 3: Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-在 Direct3D 9 中，我们通过调用 [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313) 创建了 Direct3D 设备的一个句柄。 我们先获取指向 [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) 的指针，然后指定了控制 Direct3D 设备和交换链配置的很多参数。 执行该操作之前，我们调用了 [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) 以确保我们没有要求设备执行无法完成的操作。
+Shows how to convert Direct3D 9 initialization code to Direct3D 11, including how to get handles to the Direct3D device and the device context and how to use DXGI to set up a swap chain. Part 1 of the [Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough.
+
+## Initialize the Direct3D device
+
+
+In Direct3D 9, we created a handle to the Direct3D device by calling [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313). We started by getting a pointer to [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) and we specified a number of parameters to control the configuration of the Direct3D device and the swap chain. Before doing this we called [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) to make sure we weren't asking the device to do something it couldn't do.
 
 Direct3D 9
 
@@ -64,13 +64,13 @@ m_pD3D->CreateDevice(
     );
 ```
 
-在 Direct3D 11 中，设备上下文和图形基础结构被认为是与设备本身分离的。 初始化分为多个步骤。
+In Direct3D 11, the device context and graphics infrastructure is considered separate from the device itself. Initialization is divided into multiple steps.
 
-首先，我们创建设备。 我们会得到设备所支持的功能级别列表 - 该列表将告知我们想知道的有关 GPU 的大部分内容。 而且，我们无需创建接口即可访问 Direct3D。 我们使用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 核心 API。 这会为我们提供设备句柄以及设备的即时上下文。 设备上下文用来设置管道状态以及生成呈现命令。
+First we create the device. We get a list of the feature levels the device supports - this informs most of what we need to know about the GPU. Also, we don't need to create an interface just to access Direct3D. Instead we use the [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) core API. This gives us a handle to the device and the device's immediate context. The device context is used to set pipeline state and generate rendering commands.
 
-创建 Direct3D 11 设备和上下文之后，我们可以利用 COM 指针功能获取最新版本的接口，该指针功能还包括其他功能，因此我们总是推荐使用它。
+After creating the Direct3D 11 device and context, we can take advantage of COM pointer functionality to get the most recent version of the interfaces, which include additional capability and are always recommended.
 
-> **注意** D3D\_FEATURE\_LEVEL\_9\_1（对应于着色器模型 2.0）是 Windows 应用商店游戏所需支持的最低级别。 （如果不支持 9\_1，则你游戏的 ARM 程序包将无法通过认证。）如果你的游戏还包括用于着色器模型 3 功能的呈现路径，那么你应该在数组中包含 D3D\_FEATURE\_LEVEL\_9\_3。
+> **Note**   D3D\_FEATURE\_LEVEL\_9\_1 (which corresponds to shader model 2.0) is the minimum level your Windows Store game is required to support. (Your game's ARM packages will fail certification if you don't support 9\_1.) If your game also includes a rendering path for shader model 3 features, then you should include D3D\_FEATURE\_LEVEL\_9\_3 in the array.
 
  
 
@@ -115,14 +115,14 @@ device.As(&m_d3dDevice);
 context.As(&m_d3dContext);
 ```
 
-## 创建交换链
+## Create a swap chain
 
 
-Direct3D 11 包含一个称为 DirectX 图形基础结构 (DXGI) 的设备 API。 使用 DXGI 接口，我们可以控制交换链的配置方式，并可设置共享设备。 初始化 Direct3D 时，我们会在这一步骤中使用 DXGI 来创建交换链。 创建设备之后，我们便可以跟随一个接口链回到 DXGI 适配器。
+Direct3D 11 includes a device API called DirectX graphics infrastructure (DXGI). The DXGI interface allows us to (for example) control how the swap chain is configured and set up shared devices. At this step in initializing Direct3D, we're going to use DXGI to create a swap chain. Since we created the device, we can follow an interface chain back to the DXGI adapter.
 
-Direct3D 设备为 DXGI 实现一个 COM 接口。 首先，我们需要获取该接口并使用该接口来请求托管设备的 DXGI 适配器。 然后，我们使用 DXGI 适配器来创建 DXGI 工厂。
+The Direct3D device implements a COM interface for DXGI. First we need to get that interface and use it to request the DXGI adapter hosting the device. Then we use the DXGI adapter to create a DXGI factory.
 
-> **注意** 这些是 COM 接口，因此你的第一反应可能是使用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 应该使用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智能指针。 然后，只需调用 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，从而提供正确接口类型的一个空 COM 指针。
+> **Note**   These are COM interfaces so your first response might be to use [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). You should use [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) smart pointers instead. Then just call the [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) method, supplying an empty COM pointer of the correct interface type.
 
  
 
@@ -144,9 +144,9 @@ dxgiAdapter->GetParent(
     );
 ```
 
-既然我们拥有了 DXGI 工厂，那么我们便可以使用它来创建交换链。 下面我们定义交换链参数。 我们需要指定表面格式；我们将选择 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059)，因为它与 Direct2D 兼容。 我们将关闭显示缩放、多重采样以及立体呈现，因为该示例中没有使用这些功能。 由于我们直接在 CoreWindow 中运行，因此可以将宽度和高度设置为 0 并自动获取全屏值。
+Now that we have the DXGI factory, we can use it to create the swap chain. Let's define the swap chain parameters. We need to specify the surface format; we'll choose [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059) because it's compatible with Direct2D. We'll turn off display scaling, multisampling, and stereo rendering because they aren't used in this example. Since we are running directly in a CoreWindow we can leave the width and height set to 0 and get full-screen values automatically.
 
-> **注意** 始终将 *SDKVersion* 参数设置为用于 UWP 应用的 D3D11\_SDK\_VERSION。
+> **Note**   Always set the *SDKVersion* parameter to D3D11\_SDK\_VERSION for UWP apps.
 
  
 
@@ -164,9 +164,9 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-为了确保我们不会呈现屏幕未实际显示的内容，我们将帧延迟设置为 1 并使用 [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077)。 这不仅能够省电而且还是应用商店的认证要求；我们将在本操作实例的第 2 部分中了解有关呈现到屏幕的更多信息。
+To ensure we aren't rendering more often than the screen can actually display, we set frame latency to 1 and use [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). This saves power and is a store certification requirement; we'll learn more about presenting to the screen in part 2 of this walkthrough.
 
-> **注意** 可以使用多线程（例如，[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) 工作项）在呈现线程被阻止时继续其他工作。
+> **Note**   You can use multithreading (for example, [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) work items) to continue other work while the rendering thread is blocked.
 
  
 
@@ -176,12 +176,12 @@ swapChain.As(&m_swapChain);
 dxgiDevice->SetMaximumFrameLatency(1);
 ```
 
-现在，我们可以设置用于呈现的后台缓冲区。
+Now we can set up the back buffer for rendering.
 
-## 将后台缓冲区配置为呈现目标
+## Configure the back buffer as a render target
 
 
-首先，我们必须获取后台缓冲区的句柄。 （请注意，后台缓冲区由 DXGI 交换链所有，而在 DirectX 9 中，它是由 Direct3D 设备所有。）然后，我们通过使用后台缓冲区创建呈现目标*视图*来告知 Direct3D 设备将其用作呈现目标。
+First we have to get a handle to the back buffer. (Note that the back buffer is owned by the DXGI swap chain, whereas in DirectX 9 it was owned by the Direct3D device.) Then we tell the Direct3D device to use it as the render target by creating a render target *view* using the back buffer.
 
 **Direct3D 11**
 
@@ -201,7 +201,7 @@ m_d3dDevice->CreateRenderTargetView(
     );
 ```
 
-现在，开始使用设备上下文了。 我们通过使用设备上下文接口告知 Direct3D 使用我们新创建的呈现目标视图。 我们将检索后台缓冲区的宽度和高度，以便我们可以将整个窗口设置为我们的目标视区。 请注意，后台缓冲区与交换链相连接，因此如果窗口大小发生改变（例如，用户将游戏窗口拖动到另一个监视器），那么后台缓冲区将需要调整大小，并且需要重新进行某些设置。
+Now the device context comes into play. We tell Direct3D to use our newly-created render target view by using the device context interface. We'll retrieve the width and height of the back buffer so that we can target the whole window as our viewport. Note that the back buffer is attached to the swap chain, so if the window size changes (for example, the user drags the game window to another monitor) the back buffer will need to be resized and some setup will need to be redone.
 
 **Direct3D 11**
 
@@ -219,7 +219,7 @@ CD3D11_VIEWPORT viewport(
 m_d3dContext->RSSetViewports(1, &viewport);
 ```
 
-现在，我们拥有了设备句柄和全屏呈现目标，接下来我们便可以加载和绘制几何图形了。 继续[第 2 部分：呈现](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)。
+Now that we have a device handle and a full-screen render target, we are ready to load and draw geometry. Continue to [Part 2: Rendering](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md).
 
  
 
@@ -231,6 +231,6 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,8 +6,8 @@ title: "公开基本的辅助功能信息"
 label: Expose basic accessibility information
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 1c6bc8567b39357d414a46ef2b92197c78bca971
+ms.sourcegitcommit: 05fa9bb674839c255d8b63da04a018e397c84490
+ms.openlocfilehash: a72a49756b5d2828526a39fce50357ae90549aae
 
 ---
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: 1c6bc8567b39357d414a46ef2b92197c78bca971
 | 图像            | XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
 | 窗体元素     | 窗体元素的辅助名称应当与针对该元素显示的标签同名。 请参阅[标签和 LabeledBy](#labels)。 |
 | 按钮和链接 | 默认情况下，按钮或链接的辅助名称基于可见文本，并使用相同的规则，如[根据内部文本命名](#name_from_inner_text)所述。 如果按钮中仅包含一个图像，请使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 提供与按钮的预期操作等效的仅文本操作。 |
-
+<br/>
 大多数容器元素（如面板）不会将其内容提升为辅助名称。 这是由于项目内容应当报告名称及其角色而非其容器。 容器元素可能报告它在 Microsoft UI 自动化表示形式中有子元素，以便它能够由辅助技术逻辑遍历。 但是，辅助技术的用户通常不需要了解容器，因此大多数容器都没有命名。
 
 <span id="role_value"/>
@@ -146,6 +146,6 @@ Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,130 +1,123 @@
 ---
 author: Jwmsft
-Description: "浮出控件是轻型弹出窗口，用来临时显示与用户当前正在执行的操作相关的 UI。"
-title: "上下文菜单和对话框"
+redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/dialogs
+Description: A flyout is a lightweight popup that is used to temporarily show UI that is related to what the user is currently doing.
+title: Context menus and dialogs
 ms.assetid: 7CA2600C-A1DB-46AE-8F72-24C25E224417
 label: Menus, dialogs, and popups
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 6572acefa25e464b6edaca9fee5b2b3e3b46ff3f
 
 ---
-# 菜单、对话框、浮出控件和弹出窗口
+# Menus, dialogs, flyouts and popups
 
-菜单、对话框、浮出控件和弹出窗口显示的瞬态 UI 元素在用户请求这些元素或是发生需要通知或许可的操作时出现。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+Menus, dialogs, flyouts and popups display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
 
--   [MenuFlyout 类](https://msdn.microsoft.com/library/windows/apps/dn299030)
--   [Flyout 类](https://msdn.microsoft.com/library/windows/apps/dn279496)
--   [ContentDialog 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn299030">MenuFlyout class</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Flyout class</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">ContentDialog class</a></li>
+</ul>
 
-上下文菜单向用户提供即时操作。 可以使用文本命令填充它。 可以通过点击或单击菜单之外的某个位置来轻型消除上下文菜单。
-
-对话框是用于提供上下文应用信息的模式 UI 覆盖。 除非明确取消对话框，否则它会阻止与应用窗口的交互。 它们通常会请求用户进行某种类型的操作。
-
-浮出控件是轻量级上下文弹出窗口，用于显示与用户正在执行的操作相关的 UI。 它包含放置和大小调整逻辑，可用于显示隐藏的控件、显示有关某个项目的更多详细信息，或者请求用户确认某个操作。 可以通过点击或单击弹出窗口之外的某个位置来轻型消除浮出控件。
-
-
-## 这是正确的控件吗？
-
-上下文菜单可用于：
-
--   上下文操作。
--   必须对其执行操作但是无法选择的对象的命令。
-
-对话框可用于：
-
-- 表示用户在继续操作之前必须阅读并确认的重要信息。
-- 请求用户执行明确操作，或传递用户应确认的重要消息。 示例包括：
-  - 当用户的安全可能受到威胁时
-  - 当用户准备永久改变宝贵资产时
-  - 当用户准备删除宝贵资产时
-  - 确认应用内购买
-- 应用于整个应用上下文的错误消息，如连接错误。
-- 问题，在应用需要询问用户阻止问题时（例如当应用不能代表用户进行选择时）。 阻止问题不能忽略或延迟，并应该向用户提供明确定义的选项。
-
-浮出控件可用于：
-
--   上下文、瞬态 UI。
--   警告和确认，包括与可能有破坏性的操作相关的警告和确认。
--   显示详细信息，例如页面上某个项目的详细信息或较长说明。
+</div>
+</div>
 
 
-## 示例
-
-下面是带有简单命令的短列表的典型单窗格上下文菜单。 如有必要，它可以滚动。 根据需要使用分隔符对相似命令进行分组。
-
-![典型上下文菜单示例](images/controls_contextmenu_singlepane.png)
-
-级联的上下文菜单可用于更全面的命令集。 它以多个浮出控件级别为特色，并且可以滚动。 根据需要使用分隔符对相似命令进行分组。
-
-![级联的上下文菜单示例](images/controls_contextmenu_cascading.png)
-
-这是一个全屏的单按钮确认对话框示例。 通过此类型的对话框，用户将看到应在按下按钮继续之前阅读的相当数量的信息。
-
-![整页单按钮对话框示例](images/controls_dialog_singlebutton.png)
-
-下面是为用户提供 A/B 选项的双按钮对话框示例。 通常，此对话框中显示的信息量十分简短。
-
-![全按钮对话框示例](images/controls_dialog_twobutton.png)
-
-## 模式和轻型消除
-
-对话框是模式，这意味着它们会阻止所有与用户的交互，直到用户选择某个对话框按钮。 为了在视觉上强化其模式行为，对话框会绘制一个覆盖层，用于部分遮挡暂时无法访问的应用 UI。
-
-**注意** 当“取消”是可用对话框选项之一时，应用可以选择让用户通过按 Escape 键消除对话框。 此行为不内置于该控件，但通常是所实现的快捷方式。
-
-浮出控件和上下文菜单是轻型消除控件，这意味着用户可以从各种操作中进行选择以快速消除瞬态 UI。 这些交互预期为轻型并且非阻止性。 轻型消除操作包括
-- 单击或点击瞬态 UI 之外
-- 按 Esc 键
-- 按“返回”按钮
-- 调整应用窗口大小
-- 更改设备方向
 
 
-## 对话框使用指南
 
--   在对话框的第一行文本中清楚地标识问题或用户的目标。
--   对话框标题是主要说明并且是可选的。
-    -   使用简短标题说明用户需要怎样处理对话框。 长标题不会换行而且将被截断。
-    -   如果你使用对话框来传达简单的消息、错误或问题，则可以省略标题。 可依赖内容文本来传达这样的核心信息。
-    -   确保标题与按钮选项直接相关。
--   对话框内容包含描述性文本，并且是必需的。
-    -   提供尽可能简单的消息、错误或阻止问题。
-    -   如果使用对话框标题，请使用内容区域提供更多详情或定义术语。 不要只是修改几个措词来重复标题。
--   必须至少显示一个对话框按钮。
-    -   按钮是用户消除对话框的唯一机制。
-    -   使用带有文本的按钮，该文本可标识对于主要说明或内容的响应。 例如，“你是否希望允许 AppName 访问你的位置”，后跟“允许”和“拒绝”按钮。 具体的响应可以使用户更快速的理解，以便进行高效的决策。
--   错误对话框在对话框中显示错误消息，以及任何相关的信息。 在错误对话框中使用的唯一按钮应为“关闭”或类似操作。
--   不要将对话框用于针对页面上特定位置的上下文错误（例如，密码字段等位置的验证错误），请使用应用的画布本身显示内联错误。
 
-## 上下文菜单和浮出控件
+A context menu provides the user with instant actions. It can be filled with text commands. Context menus can be light dismissed by tapping or clicking somewhere outside the menu.
 
-上下文菜单和浮出控件是紧密相关的控件，两者共享交互行为。 这些控件之间的主要区别在于它们接受的内容类型。
+Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.
 
-### MenuFlyout
-一个使用 MenuFlyout 类实现的上下文菜单，可以包含 [**MenuFlyoutItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutitem.aspx)、[**ToggleMenuFlyoutItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)、[**MenuFlyoutSubItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutsubitem.aspx) 和 [**MenuFlyoutSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutseparator.aspx)。 若要显示任何其他类型的 UI，请使用浮出控件。
+A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a hidden control, show more detail about an item, or ask the user to confirm an action. Flyouts can be light dismissed by tapping or clicking somewhere outside the popup.
 
-- **使用指南**
-  - 在上下文菜单中的命令组之间使用分隔符，以便：
-    - 区分多组相关命令。
-    - 将多个命令集分为一组。
-    - 将可预测的命令集从特定于应用或视图的命令中分离出来，例如剪贴板命令（剪切/复制/粘贴）。
-  -   在笔记本电脑和台式机上，上下文菜单和工具提示不限于应用程序窗口，可以部分显示在其外部。 如果应用尝试完全在其窗口外呈现上下文菜单，将引发异常。
 
-- **应做事项和禁止事项**
-  -   使上下文菜单命令保持简短。 较长的命令最终会被截断。
-  -   对每个命令名称均应用句子大小写规则。
-  -   在任意上下文菜单中，显示可能的最少数量的命令。
-  -   如果可以直接操作 UI 元素，请避免在上下文菜单中放置该命令。 对于无法以其他方式显示在屏幕上的上下文命令，应保留上下文菜单。
+## Is this the right control?
 
-### 浮出控件
+Context menus can be used for:
 
-浮出控件是可显示任意 UI 作为其内容的开放式容器。  浮出控件没有其自己的可视部分，它们只是内容控件。 浮出控件具有它们在其内容周围添加的边距和可选滚动栏。 若要设置某个浮出控件的样式，请修改其 `FlyoutPresenterStyle`。
+-   Contextual actions.
+-   Commands for an object that must be acted upon but that can't be selected.
 
-以下代码显示自动换行段落，并使屏幕阅读器可以访问该文本块。
+Dialogs can be used for:
+
+- Expressing important information that the user must read and acknowledge before proceeding.
+- Requesting a clear action from the user or communicating an important message that the user should acknowledge. Examples include:
+  - When the user's security might be compromised
+  - When the user is about to permanently alter a valuable asset
+  - When the user is about to delete a valuable asset
+  - To confirm an in-app purchase
+- Error messages that apply to the overall app context, such as a connectivity error.
+- Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.
+
+Flyouts can be used for:
+
+-   Contextual, transient UI.
+-   Warnings and confirmations, including ones related to potentially destructive actions.
+-   Displaying more information, such as details or longer descriptions of an item on the page.
+
+
+## Examples
+
+Here's a typical single-pane context menu with a short list of simple commands. It can scroll if necessary. Use separators as needed to group similar commands.
+
+![Example of a typical context menu](images/controls_contextmenu_singlepane.png)
+
+A cascading context menu can be used for a more comprehensive collection of commands. It features multiple flyout levels and can scroll. Use separators as needed to group similar commands.
+
+![Example of a cascading context menu](images/controls_contextmenu_cascading.png)
+
+This is an example of a full-screen, single-button confirmation dialog. With this kind of dialog, the user is presented with a fair amount of information that they're expected to read before pressing the button to proceed.
+
+![Example of a full-page, single-button dialog](images/controls_dialog_singlebutton.png)
+
+Here's an example of a two-button dialog that presents the user with an A/B choice. Generally, the amount of information presented in this dialog is brief.
+
+![Example of a full-button dialog](images/controls_dialog_twobutton.png)
+
+## Modal vs light dismiss
+
+Dialogs are modal, which means they block all interaction with the app until the user selects a dialog button. To visually reinforce their modal behavior, dialogs draw an overlay layer which partially obscures the temporarily unreachable app UI.
+
+**Note** When Cancel is one of the available dialog options, apps can choose to let users dismiss the dialog by pressing the Escape key. This behavior is not built into the control but is a commonly implemented shortcut.
+
+Flyouts and context menus are light dismiss controls, meaning that users can choose from a variety of actions to quickly dismiss transient UIs. These interactions are intended to be lightweight and non-blocking. Light dismiss actions include
+- Click or tap outside the transient UI
+- Press the Escape key
+- Press the Back button
+- Resize the app window
+- Change device orientation
+
+
+## Dialog usage guidelines
+
+-   Clearly identify the issue or the user's objective in the first line of the dialog's text.
+-   The dialog title is the main instruction and is optional.
+    -   Use a short title to explain what people need to do with the dialog. Long titles do not wrap and are truncated.
+    -   If you're using the dialog to deliver a simple message, error or question, you can optionally omit the title. Rely on the content text to deliver that core information.
+    -   Make sure that the title relates directly to the button choices.
+-   The dialog content contains the descriptive text and is required.
+    -   Present the message, error, or blocking question as simply as possible.
+    -   If a dialog title is used, use the content area to provide more detail or define terminology. Don't repeat the title with slightly different wording.
+-   At least one dialog button must appear.
+    -   Buttons are the only mechanism for users to dismiss the dialog.
+    -   Use buttons with text that identifies specific responses to the main instruction or content. An example is, "Do you want to allow AppName to access your location?", followed by "Allow" and "Block" buttons. Specific responses can be understood more quickly, resulting in efficient decision making.
+-   Error dialogs display the error message in the dialog box, along with any pertinent information. The only button used in an error dialog should be “Close” or a similar action.
+-   Don't use dialogs for errors that are contextual to a specific place on the page, such as validation errors (in password fields, for example), use the app's canvas itself to show inline errors.
+
+## Flyout
+
+A Flyout is an open-ended container that can show arbitrary UI as its content.  Flyouts don’t have visual parts on their own, they are simply a content control. Flyouts do have a margin and optional scroll bars they add around their content. To style a Flyout, modify its [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx).
+
+The following code shows a paragraph of wrapping text and makes the text block accessible to a screen reader.
 
 ````xaml
 <Flyout>
@@ -140,11 +133,11 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 </Flyout>
 ````
 
-### 调用和放置
+### Invocation and placement
 
-浮出控件和上下文菜单附加到特定控件。 当可见时，它们应固定到调用对象，并将其首选相对位置指定为对象：顶部、左侧、底部或右侧。 浮出控件还具有一种完整放置模式，该模式尝试拉伸浮出控件，并在应用窗口内部居中放置。
+Flyouts and context menus are attached to specific controls. When visible, they should be anchored to the invoking object and specify their preferred relative position to the object: Top, Left, Bottom, or Right. Flyout also has a Full placement mode which attempts to stretch the flyout and center it inside the app window.
 
-[Button 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)包含一个 `Flyout` 属性，该属性可使你指定将在用户单击或点击按钮时打开的瞬态 UI。
+The [Button class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) includes a [**Flyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) property that lets you specify the transient UI that will open when the user clicks or taps the button.
 
 ````xaml
 <Button Content="Click me">
@@ -156,34 +149,16 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 </Button>
 ````
 
-若要打开上下文菜单，用户可以执行以下操作之一：
-- 使用鼠标右键单击
-- 通过触摸长按
-- 键入 Shift + F10
-- 按键盘菜单键
-- 按游戏板菜单按钮
 
-若要轻松打开上下文菜单或浮出控件以响应上述任何操作，应用可以利用 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx)（大多数控件的基类）上的新 [`ContextFlyout`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 属性。
+## Related articles
 
-````xaml
-<Rectangle Height="100" Width="100" Fill="Red">
-  <Rectangle.ContextFlyout>
-     <MenuFlyout>
-        <MenuFlyoutItem Text="Close"/>
-     </MenuFlyout>
-  </Rectangle.Flyout>
-</Rectangle>
-````
-
-## 相关文章
-
-**面向开发人员**
-- [**MenuFlyout 类**](https://msdn.microsoft.com/library/windows/apps/dn299030)
-- [**Flyout 类**](https://msdn.microsoft.com/library/windows/apps/dn279496)
-- [**ContentDialog 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+**For developers**
+- [**MenuFlyout class**](https://msdn.microsoft.com/library/windows/apps/dn299030)
+- [**Flyout class**](https://msdn.microsoft.com/library/windows/apps/dn279496)
+- [**ContentDialog class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

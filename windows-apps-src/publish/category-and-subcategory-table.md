@@ -1,69 +1,69 @@
 ---
 author: jnHs
-Description: "将你的应用列在正确的类别和子类别中，可帮助客户找到你的应用，并且更好地了解它。"
-title: "类别和子类别表"
+Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
+title: Category and subcategory table
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
+ms.sourcegitcommit: b31e399d950a99f0cb6f1e912e391429b5463136
+ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
 
 ---
 
-# 类别和子类别表
+# Category and subcategory table
 
 
-将你的应用列在正确的类别和子类别中，可帮助客户找到你的应用，并且更好地了解它。
+Listing your app in the right category and subcategory helps customers find your app and understand more about it.
 
-选择最能描述你的应用的类别。 然后选择一个子类别（如果可用）。
+Choose the category that best describes your app. Then choose a subcategory, if available.
 
-> **注意** 如果选择**游戏**作为类别，则子类别是必需的。
+> **Note**  If you choose **Games** for your category, a subcategory is required.
 
- 
+An app can only be listed in one category (and one subcategory, if available.) If you're not sure which category or subcategory to use, choose the one that you think customers are most likely to look at when trying to find apps like yours.
 
-应用只能列在一个类别（以及一个子类别，如果有的话）中。如果你不确定要使用哪一类别或子类别，请选择你认为客户在尝试查找与你的应用类似的应用时，最有可能查看的类别或子类别。
+If you want to change the category or subcategory of an app that's already in the Store, you can do that by [creating a new submission](app-submissions.md) and selecting the new category.
 
-如果要更改已存在于应用商店中的某个应用的类别或子类别，可以通过[创建新提交](app-submissions.md)和选择新类别来实现。
+> **Important** If you publish the app in the **Games** category, you won't be able to pick a different category in a new submission. You also can't choose the **Games** category in an update to an app that you previously published in a different category.
 
-Windows 应用商店将应用整理为以下类别和子类别。
+The Windows Store organizes apps into the following categories and subcategories.
 
-只有部分类别具有子类别。 请记住，你只能使用属于你所选类别的子类别。
+Only some categories have subcategories. Keep in mind that you can only use a subcategory if it belongs to the category you picked.
 
 
-| 类别                    | 子类别                                       |
+| Category                    | Subcategory                                       |
 |-----------------------------|---------------------------------------------------|
-| 书籍 + 参考           | 电子阅读器 <br> 小说 <br> 非小说 <br> 参考 |
-| 商务                    | 会计 + 财务 <br> 协作 <br> CRM <br> 数据 + 分析 <br> 文件管理 <br> 库存 + 物流 <br> 法务信息 + 人力资源 <br> 项目管理 <br> 远程桌面 <br> 销售 + 营销 <br> 时间 + 费用 |
-| 开发人员工具             | 数据库 <br> 设计工具 <br> 开发工具包 <br> 网络 <br> 参考 + 培训 <br> 服务器 <br> 实用工具 <br> Web 托管 |
-| 教育                   | 书籍 + 参考 <br> 早期学习 <br> 教学工具 <br> 语言 <br> 学习帮手 |
-| 娱乐               | （无）                                            |
-| 美食               | （无）                                            |
-| 游戏                       | 动作 + 冒险 <br> 纸牌 + 棋类 <br> 赌场 <br> 教育 <br> 家庭 + 儿童 <br> 格斗 <br> 音乐 <br> 平台动作游戏 <br> 拼图 + 益智 <br> 赛车 + 飞行 <br> 角色扮演 <br> 射击 <br> 模拟 <br> 运动 <br> 策略 <br> 文字 |
-| 政策 + 时政       | （无）                                            |
-| 健康 + 健身            | （无）                                            |
-| 育儿 + 家庭               | 书籍 + 参考 <br> 娱乐 <br> 爱好 + 玩具 <br> 运动 + 活动 <br> 旅行 |
-| 生活方式                   | 汽车 <br> DIY <br> 家居 + 园艺 <br> 关系 <br> 特殊爱好 <br> 风格 + 潮流 |
-| 医疗                     | （无）                                            |
-| 多媒体设计           | 插图 + 图形设计 <br> 音乐制作 <br> 照片 + 视频制作 |
-| 音乐                       | （无）                                            |
-| 导航 + 地图           | （无）                                            |
-| 新闻 + 天气              | 新闻 <br> 天气                                 |
-| 个人理财            | 银行业务 + 投资 <br> 预算 + 税款      |
-| 个性化             | 铃声 + 声音 <br> 主题 <br> 壁纸 + 锁屏界面 |
-| 照片 + 视频               | （无）                                            |
-| 工作效率                | （无）                                            |
-| 安全                    | 电脑保护 <br> 个人安全 <br>         |
-| 购物                    | （无）                                            |
-| 社交                      | （无）                                            |
-| 体育                      | （无）                                            |
-| 旅行                      | 城市指南 <br> 旅馆                           |
-| 实用工具 + 工具           | 备份 + 管理 <br> 文件管理器                |
+| Books + reference           | E-reader <br> Fiction <br> Nonfiction <br> Reference |
+| Business                    | Accounting + finance <br> Collaboration <br> CRM <br> Data + analytics <br> File management <br> Inventory + logistics <br> Legal + HR <br> Project management <br> Remote desktop <br> Sales + marketing <br> Time + expenses |
+| Developer tools             | Database <br> Design tools <br> Development kits <br> Networking <br> Reference + training <br> Servers <br> Utilities <br> Web hosting |
+| Education                   | Books + reference <br> Early learning <br> Instructional tools <br> Language <br> Study aids |
+| Entertainment               | (None)                                            |
+| Food + dining               | (None)                                            |
+| Games                       | Action + adventure <br> Card + board <br> Casino <br> Educational <br> Family + kids <br> Fighting <br> Music <br> Platformer <br> Puzzle + trivia <br> Racing + flying <br> Role playing <br> Shooter <br> Simulation <br> Sports <br> Strategy <br> Word |
+| Government + politics       | (None)                                            |
+| Health + fitness            | (None)                                            |
+| Kids + family               | Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel |
+| Lifestyle                   | Automotive <br> DIY <br> Home + garden <br> Relationships <br> Special interest <br> Style + fashion |
+| Medical                     | (None)                                            |
+| Multimedia design           | Illustration + graphic design <br> Music production <br> Photo + video production |
+| Music                       | (None)                                            |
+| Navigation + maps           | (None)                                            |
+| News + weather              | News <br> Weather                                 |
+| Personal finance            | Banking + investments <br> Budgeting + taxes      |
+| Personalization             | Ringtones + sounds <br> Themes <br> Wallpaper + lock screens |
+| Photo + video               | (None)                                            |
+| Productivity                | (None)                                            |
+| Security                    | PC protection <br> Personal security <br>         |
+| Shopping                    | (None)                                            |
+| Social                      | (None)                                            |
+| Sports                      | (None)                                            |
+| Travel                      | City guides <br> Hotels                           |
+| Utilities + tools           | Backup + manage <br> File managers                |
  
 
-> **注意** 有关在 Windows 8.1 及更早版本的 Windows 应用商店和 Windows Phone 应用商店中所使用的类别，以及它们与以上所列类别的关系等信息，请参阅[你的应用如何显示在面向 Windows 10 客户的应用商店中](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
+> **Note**  For info on the categories used in the Windows Store for Windows 8.1 and earlier, and in the Windows Phone Store, and how they relate to the category list above, see [How your app appears in the Store for Windows 10 customers](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes).
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

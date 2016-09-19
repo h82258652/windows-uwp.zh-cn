@@ -1,80 +1,81 @@
 ---
 author: jnHs
-Description: "通过 Windows 开发人员中心仪表板中的“评价”报告可以查看客户在应用商店中对你的应用进行评分时提供的评论。"
-title: "评价报告"
+Description: The Reviews report in the Windows Dev Center dashboard lets you see the comments that customers entered when rating your app in the Store.
+title: Reviews report
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7d1a768ce558718b43a4d124f7c88868e999fb93
+ms.sourcegitcommit: ccadaad34ac0854ab95646eda4e3451d1b178b7e
+ms.openlocfilehash: d08eb446977ebab2eeee346f8f17ff79ae57c19b
 
 ---
 
-# 评价报告
+# Reviews report
 
 
-通过 Windows 开发人员中心仪表板中的“评论”****报告可以查看客户在应用商店中对你的应用进行评分时提供的评论。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式检索此数据。
+The **Reviews** report in the Windows Dev Center dashboard lets you see the comments that customers entered when rating your app in the Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-> **注意** 你也可以从此页[回复客户评价](respond-to-customer-reviews.md)。
+> **Note**  You can also [respond to customer reviews](respond-to-customer-reviews.md) from this page.
 
-此报告显示了客户在进行评价时对你的应用评定的星级，但不对你的应用进行星级评定的分析；有关评分的统计信息，请参阅[评分报告](ratings-report.md)。
+This report shows the number of stars that a customer rated your app when leaving a review, but does not analyze star ratings across your app; for statistics about your ratings, see the [Ratings report](ratings-report.md).
 
-请注意，客户可以对你的应用进行评分但不添加任何评论，因此你通常会看到评论数少于评分数。 默认情况下，此页面也显示不包含评论内容的评分，但可以使用“页面筛选器”****来仅显示包含评论的评分，如下所示。
+Note that customers can leave a rating for your app without adding any comments, so you will typically see fewer reviews than ratings. By default, this page also shows ratings that don't include review content, but you can use the **Page filters** to show only ratings that include reviews, as described below.
 
-每条客户评论都包含：
+Each customer review contains:
 
--   客户提供的标题和评论文本。 （使用 Windows Phone 8.1 及较早版本的客户所撰写的评论将不带有标题。）
--   评论的日期。
--   评论者在 Windows 应用商店中显示的名称。
--   评论者所在的国家/地区。
--   客户进行评论时其设备上的应用程序包版本。 （此信息不适用于在线提交的评论或使用 Windows 8.1 及较早版本的客户所提交的评论。）
--   客户进行评论时所使用设备的操作系统版本。
--   客户进行评论时所使用设备的名称。 （此信息不适用于在线提交的评论或使用 Windows 8.1 及较早版本的客户所提交的评论。）
--   评论的“有用性计数”，依据其他客户在阅读该评论时进行的评定。 它们显示为一组包含两个数字的数据：第一个数字显示将其评定为有用的客户数，第二个数字显示对该评论进行评定的客户总数。 例如，有用性计数 4/10 表示在 10 个评定者中，有 4 个评定者认为评论有用，而 6 个评定者认为无用。 （如果该评论没有有用投票，则不显示有用计数。）
+-   The title and review text provided by the customer. (Reviews written by customers on Windows Phone 8.1 and earlier will not have a title.)
+-   The date of the review.
+-   The name of the reviewer as it appears in the Windows Store.
+-   The reviewer's country/region.
+-   The package version of the app on the customer's device at the time the review was left. (This info is not available for reviews submitted online or submitted by customers on Windows 8.1 and earlier.)
+-   The OS version of the device which the customer was using when the review was left.
+-   The name of the device which the customer was using when the review was left. (This info is not available for reviews submitted online or submitted by customers on Windows 8.1 and earlier.)
+-   The review's "usefulness count," as rated by other customers when reading that review. These are shown as a series of two numbers: the first number shows how many customers rated it as useful, and the second number is the total number of customers who rated the review. For example, a usefulness count of 4/10 means that out of 10 raters, 4 found the review useful and 6 did not. (If there are no usefulness votes for a review, no usefulness count is displayed.)
 
-## 应用筛选器
+> **Note** You may occasionally see reviews disappear from this report. This can happen because Microsoft removes reviews from the Store that are written by customers running certain pre-release and Insider builds of Windows 10. We do this to reduce the possibility of a negative review that is caused by a problem in a pre-release Windows build. We may also remove reviews from the Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
 
-
-在页面顶部附近，可以展开**“应用筛选器”**筛选此页上的所有数据。
-
->**提示** 如果在该页上未看到任何评价，请检查以确保筛选器并未排除所有评价。 例如，如果按应用不支持的“目标操作系统”进行筛选，你将看不到任何评价。
-
--   **分级**：默认选择所有星级评定，但如果你只想查看与特定星级评定相关联的评论，可以选择和取消选择特定分级（从 1 到 5 星级）。
--   **日期**：默认筛选器为“最近 30 天”****，但是你可以将此条件扩大到“最近 12 个月”****。
--   **评价内容**：默认设置是**“全部”**，这将包含未添加评价文本的评分。 你可以选择“带有评论内容的评分”****来仅显示包含所撰写评论内容的评分。
--   **目标操作系统**：默认设置为**“全部”**。 如果希望此页面仅显示使用面向特定目标操作系统的程序包的客户评分，你可以选择该操作系统。
--   **回复**：默认设置为**“全部”**。 可以选择筛选评论以仅显示已在其中[回复客户](respond-to-customer-reviews.md)的评论，或仅显示尚未回复的评论。
--   **更新**：默认设置为**“全部”**。 可以选择筛选评论以仅显示在你[回复评论](respond-to-customer-reviews.md)后客户已更新的评论，或仅显示客户还未更新的评论。
--   **市场**：默认设置为**“所有市场”**。 如果你希望此页面仅显示特定市场中客户的评论，你可以选择该市场。
--   **设备类型**：默认筛选器为“所有设备”****。 如果你想要此页面仅显示使用特定设备类型的客户留下的评论，你可以选择该设备类型。
--   **程序包版本**：默认筛选器为“所有程序包”****。 如果你想要此页面仅显示拥有特定程序包的客户在查看你的应用时留下的评论，你可以选择该程序包。
-
-以下列出的所有图中的信息将反映在**“应用筛选器”**部分中所选的时段，并将反映你在此处选择的其他任何筛选器。
-
-> **注意** 客户在应用商店中看到的平均评分会考虑客户的市场和设备类型以及去年的评分，因此可能不同于你在此报告中看到的内容。 若要查看平均评分将如何在应用商店中面向给定客户进行显示，将需要应用筛选器以选择特定市场和设备类型，并将**“日期”**设置为**“过去 12 个月”**。
-
-## 翻译评论
+## Apply filters
 
 
-默认情况下，为你翻译那些不是以你首选语言所撰写的评论。 如果需要，可以通过在评论列表的上方取消选中右上角的“翻译评论”****复选框来禁用评论翻译。
+Near the top of the page, you can expand **Apply filters** to filter all of the data on this page.
 
-请注意，评论将由自动翻译系统翻译，翻译结果翻译可能并不总是准确。 如果你想要对照翻译或者通过其他方式进行翻译，原始文本会依旧提供。
+>**Tip**  If you don't see any reviews on the page, check to make sure your filters haven't excluded all of your reviews. For example, if you filter by a Target OS that your app doesn't support, you won't see any reviews.
 
-## 对评论进行排序
+-   **Rating**: By default all star ratings are checked, but you can check and uncheck specific ratings (from 1 to 5 stars) if you want to only see reviews associated with particular star ratings.
+-   **From**: The default value (blank) will show reviews starting from when your app was published. You can choose a different date if you only want to see reviews that were left on or after the date you choose.
+-   **To**: The default value (blank) will show reviews up to the current date. You can choose a different date if you only want to see reviews that were left before or on the date you choose. 
+-   **Review content**: The default setting is **All**, which includes ratings without review text added. You can select **Ratings with review content** to only show ratings that include written review content.
+-   **Target OS**: The default setting is **All**. You can choose a specific targeted operating system if you want this page to only show ratings from customers using your package(s) which target that OS.
+-   **Responses**: The default setting is **All**. You can choose to filter the reviews to only show the reviews where you have [responded to customers](respond-to-customer-reviews.md), or only those where you have not yet responded.
+-   **Updates**: The default setting is **All**. You can choose to filter the reviews to only show the reviews which have been updated by the customer since you [responded to a review](respond-to-customer-reviews.md), or only those which have not yet been updated by the customer.
+-   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show reviews from customers in that market.
+-   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show reviews left by customers using that type of device.
+-   **Package version**: The default filter is **All packages**. You can choose a specific package if you want this page to only show reviews left by customers who had that package when they reviewed your app.
+
+The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
+
+> **Note**  The average rating that a customer sees in the Store takes into account the customer’s market and device type, and considers ratings over the past year, so it may differ from what you see in this report. To see how the average rating will appear in the Store for a given customer, you’ll need to apply filters to select a specific market and device type, and to set the **Date** to **Last 12 months**.
+
+## Translating reviews
 
 
-你可以按日期和/或按评分以升序或降序对页面上的评论进行排序。 单击**“排序依据”**链接，可以查看按日期和/或按评分排序的选项。 当单击“日期或评分”部分的单选按钮时，排序条件就会应用，并且你会看到显示在**“排序依据”**标题旁边的排序标签。 也可以通过单击每个标签上显示的**“X”**完全删除排序条件。
+By default, reviews that were not written in your preferred language are translated for you. If you prefer, review translation can be disabled by unchecking the **Translate reviews** checkbox at the upper right, above the list of reviews.
 
-## 回复客户评价
+Please note that reviews are translated by an automatic translation system, and the resulting translation may not always be accurate. The original text is provided if you wish to compare it to the translation, or translate it through some other means.
+
+## Sorting reviews
 
 
-你可以使用 Windows 应用商店开发人员中心仪表板对大量的客户评论发送回复。 有关详细信息，请参阅[回复客户评论](respond-to-customer-reviews.md)。
+You can sort the reviews on the page by date and/or by rating, in ascending or descending order. Click the **Sort by** link to view options to sort by Date and/or Rating. When you click a radio button in the Date or Rating section, the sorting criteria will be applied and you will see the sorting label shown next to the **Sort by** heading. You can remove the sorting criteria altogether by clicking the **X** that appears on each label.
 
-根据你所看到的评分和评论，不妨考虑下面提供的一些其他措施。
+## Responding to customer reviews
 
--   如果你发现许多评论都建议推出新功能或更改功能，或者抱怨某种问题，请考虑发布新版本，以响应此类具体反馈。 （请务必更新你的应用[描述](create-app-descriptions.md)以指示该问题已经得到解决。）
--   如果平均评分较高，但下载量较低，你需要设法[让更多的用户发现你的应用](app-promotion-and-customer-engagement.md)，因为它已经受到试用用户的广泛好评。
+You can use the Windows Store Dev Center dashboard to send responses to many of your customers' reviews. For more info, see [Respond to customer reviews](respond-to-customer-reviews.md).
 
-> **注意** 在比较 Windows 开发人员中心的**“评价”**报告和旧式的开发人员中心移动应用的“评价”报告时，你可能会看到不同数量的评价。 这是因为应用仅显示 Windows Phone 8.1 及早期版本的客户留下的评价数据。 这也可能是因为 Microsoft 致力于从 Windows 应用商店中删除标识为垃圾邮件、不适合、具有冒犯性或违反了其他策略的评论。 我们希望此操作将产生更好的客户体验。
+Here are some additional actions you may wish to consider, based on the ratings and reviews you're seeing.
+
+-   If you notice many reviews that suggest a new or changed feature, or complain about a problem, consider releasing a new version that addresses the specific feedback. (Be sure to update your app's [description](create-app-descriptions.md) to indicate that the issue has been fixed.)
+-   If the average rating is high, but your number of downloads is low, you might want to look for ways to [expose your app to more people](app-promotion-and-customer-engagement.md), since it's been well-received by those who have tried it out.
+
 
  
 
@@ -84,6 +85,6 @@ ms.openlocfilehash: 7d1a768ce558718b43a4d124f7c88868e999fb93
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -1,42 +1,42 @@
 ---
 author: msatranjr
-title: "创建简单的 Windows 运行时组件并通过 JavaScript 调用它"
-description: "本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何使用 JavaScript 调用针对 Windows 生成的通用 Windows 应用中的组件。"
+title: Creating a Simple Windows Runtime component and calling it from JavaScript
+description: This walkthrough shows how you can use the .NET Framework with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your Universal Windows app built for Windows using JavaScript.
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: c521061d9fdd3eb2c25e3072182fb1d7823f13ba
+ms.openlocfilehash: ff9db6298fd6d0083ae6923f3666ce4315573058
 
 ---
 
-# 演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
+# Walkthrough: Creating a Simple Windows Runtime component and calling it from JavaScript
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何调用为使用 JavaScript 的 Windows 生成的通用 Windows 应用中的组件。
+This walkthrough shows how you can use the .NET Framework with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your Universal Windows app built for Windows using JavaScript.
 
-可以通过 Visual Studio 轻松地将使用 C# 或 Visual Basic 编写的 Windows 运行时组件添加到你的应用，并创建可以从 JavaScript 调用的 Windows 运行时类型。 在内部，Windows 运行时类型可以使用通用 Windows 应用中允许的任何 .NET Framework 功能。 （有关详细信息，请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[适用于 Windows 应用商店应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)。）在外部，类型成员仅可以为其参数公开 Windows 运行时类型并返回值。 在生成解决方案时，Visual Studio 将生成 .NET Framework Windows 运行时组件项目，然后执行创建 Windows 元数据 (.winmd) 文件的生成步骤。 这是你的 Windows 运行时组件，即 Visual Studio 在你的应用中包含的组件。
+Visual Studio makes it easy to add a Windows Runtime component written with C# or Visual Basic to your app, and to create Windows Runtime types that you can call from JavaScript. Internally, your Windows Runtime types can use any .NET Framework functionality that's allowed in a Universal Windows app. (For more information, see [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for Windows Store apps overview](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx).) Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET Framework Windows Runtime Component project and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component, which Visual Studio includes in your app.
 
-> **注意** .NET Framework 自动将某些常用的 .NET Framework 类型（例如基元数据类型和集合类型）映射到其 Windows 运行时等效项。 这些 .NET Framework 类型可在 Windows 运行时组件的公共接口中使用，并且将组件作为相应的 Windows 运行时类型向用户显示。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)。
+> **Note**  The .NET Framework automatically maps some commonly used .NET Framework types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET Framework types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
-本演练演示以下任务。 完成第一部分（使用 JavaScript 设置 Windows 应用）后，可以按照任意顺序完成剩余部分。
+This walkthrough illustrates the following tasks. After you've completed the first section, which sets up the Windows app with JavaScript, you can complete the remaining sections in any order.
 
-## 先决条件：
+## Prerequisites:
 
 -   Windows 10
--   Microsoft Visual Studio 2015 或 Microsoft Visual Studio Community 2015
+-   Microsoft Visual Studio 2015 or Microsoft Visual Studio Community 2015
 
-## 创建一个简单的 Windows 运行时类
+## Creating a simple Windows Runtime class
 
 
-本部分将创建为使用 JavaScript 的 Windows 生成的通用 Windows 应用，并添加 Visual Basic 或 C# Windows 运行时组件项目。 它演示了如何定义托管的 Windows 运行时类型、创建 JavaScript 中类型的实例并调用静态和实例成员。 特意将示例应用的视觉显示设置为单调效果，从而重点关注组件。 可以随意设置使其更加美观。
+This section creates a Universal Windows app built for Windows using JavaScript, and adds a Visual Basic or C# Windows Runtime Component project. It shows how to define a managed Windows Runtime type, create an instance of the type from JavaScript, and call static and instance members. The visual display of the example app is deliberately dull to keep the focus on the component. Feel free to make it prettier.
 
-1.  在 Visual Studio 中，创建新的 JavaScript 项目：在菜单栏上，依次选择“文件”、“新建”、“项目”****。 在“新建项目”****对话框的“已安装模板”****部分中，依次选择“JavaScript”****、“Windows”****和“通用”****。 （如果 Windows 不可用，请确保使用的是 Windows 8 或更高版本。）选择“空白应用程序”****模板，然后输入 SampleApp 作为项目名称。
-2.  创建组件项目：在“解决方案资源管理器”中，打开 SampleApp 解决方案的快捷菜单，然后依次选择“添加”****、“新建项目”****将新的 C# 或 Visual Basic 项目添加到解决方案。 在“添加新项目”****对话框的“已安装模板”****部分中，选择“Visual Basic”****或“Visual C#”****，然后依次选择“Windows”****、“通用”****。 选择“Windows 运行时组件”****模板，然后输入 **SampleComponent** 作为项目名称。
-3.  将类名更改为 **Example**。 请注意，该类在默认情况下标记为 **public sealed**（Visual Basic 中为 **Public NotInheritable**）。 必须封装通过你的组件公开的所有 Windows 运行时类。
-4.  将两个简单的成员添加到类：**static** 方法（在 Visual Basic 中为 **Shared** 方法）和实例属性：
+1.  In Visual Studio, create a new JavaScript project: On the menu bar, choose **File, New, Project**. In the **Installed Templates** section of the **New Project** dialog box, choose **JavaScript**, and then choose **Windows**, and then **Universal**. (If Windows is not available, make sure you're using Windows 8 or later.) Choose the **Blank Application** template and enter SampleApp for the project name.
+2.  Create the component project: In Solution Explorer, open the shortcut menu for the SampleApp solution and choose **Add**, and then choose **New Project** to add a new C# or Visual Basic project to the solution. In the **Installed Templates** section of the **Add New Project** dialog box, choose **Visual Basic** or **Visual C#**, and then choose **Windows**, and then **Universal**. Choose the **Windows Runtime Component** template and enter **SampleComponent** for the project name.
+3.  Change the name of the class to **Example**. Notice that by default, the class is marked **public sealed** (**Public NotInheritable** in Visual Basic). All the Windows Runtime classes you expose from your component must be sealed.
+4.  Add two simple members to the class, a **static** method (**Shared** method in Visual Basic) and an instance property:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cpp
@@ -63,13 +63,13 @@ ms.openlocfilehash: c521061d9fdd3eb2c25e3072182fb1d7823f13ba
     > End Class
     > ```
 
-5.  可选：若要为新添加的成员启用 IntelliSense，请在“解决方案资源管理器”中，打开 SampleComponent 项目的快捷菜单，然后选择“生成”****。
-6.  在“解决方案资源管理器”的 JavaScript 项目中，打开“引用”****的快捷菜单，然后选择“添加引用”****打开“引用管理器”****。 依次选择“项目”****和“解决方案”****。 选中 SampleComponent 项目的复选框，然后选择“确定”****来添加引用。
+5.  Optional: To enable IntelliSense for the newly added members, in Solution Explorer, open the shortcut menu for the SampleComponent project, and then choose **Build**.
+6.  In Solution Explorer, in the JavaScript project, open the shortcut menu for **References**, and then choose **Add Reference** to open the **Reference Manager**. Choose **Projects**, and then choose **Solution**. Select the check box for the SampleComponent project and choose **OK** to add a reference.
 
-## 通过 JavaScript 调用组件
+## Call the component from JavaScript
 
 
-若要通过 JavaScript 使用 Windows 运行时类型，请在由 Visual Studio 模板提供的 default.js 文件（位于项目的 js 文件夹中）的匿名函数中添加以下代码。 它应位于 app.oncheckpoint 事件处理程序之后、对 app.start 的调用之前。
+To use the Windows Runtime type from JavaScript, add the following code in the anonymous function in the default.js file (in the js folder of the project) that is provided by the Visual Studio template. It should go after the app.oncheckpoint event handler and before the call to app.start.
 
 ```javascript
 var ex;
@@ -92,16 +92,16 @@ function basics2() {
 }
 ```
 
-请注意，每个成员名称的第一个字母从大写更改为小写。 此转换是 JavaScript 所提供支持的一部分以便自然使用 Windows 运行时。 命名空间和类名采用 Pascal 大小写形式。 成员名称采用 Camel 大小写形式，除了事件名称以外，它们全部采用小写。 请参阅[在 JavaScript 中使用 Windows 运行时](https://msdn.microsoft.com/library/hh710230.aspx)。 Camel 大小写规则可能容易使人混淆。 一串初始的大写字母通常显示为小写，但如果三个大写字母后跟一个小写字母，则只有前两个字母以小写字母显示：例如名为 IDStringKind 的成员显示为 idStringKind。 在 Visual Studio 中，你可以生成自己的 Windows 运行时组件项目，然后在 JavaScript 项目中使用 IntelliSense 查看正确的大小写。
+Notice that the first letter of each member name is changed from uppercase to lowercase. This transformation is part of the support that JavaScript provides to enable the natural use of the Windows Runtime. Namespaces and class names are Pascal-cased. Member names are camel-cased except for event names, which are all lowercase. See [Using the Windows Runtime in JavaScript](https://msdn.microsoft.com/library/hh710230.aspx). The rules for camel casing can be confusing. A series of initial uppercase letters normally appears as lowercase, but if three uppercase letters are followed by a lowercase letter, only the first two letters appear in lowercase: for example, a member named IDStringKind appears as idStringKind. In Visual Studio, you can build your Windows Runtime component project and then use IntelliSense in your JavaScript project to see the correct casing.
 
-类似地，.NET Framework 提供了支持以便在托管代码中自然地使用 Windows 运行时。 本文的后续部分，以及文章[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[适用于 Windows 应用商店应用和 Windows 运行时的 .NET Framework 支持](https://msdn.microsoft.com/library/hh694558.aspx)中均对此进行了讨论。
+In similar fashion, the .NET Framework provides support to enable the natural use of the Windows Runtime in managed code. This is discussed in subsequent sections of this article, and in the articles [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET Framework Support for Windows Store Apps and Windows Runtime](https://msdn.microsoft.com/library/hh694558.aspx).
 
-## 创建简单的用户界面
+## Create a simple user interface
 
 
-在你的 JavaScript 项目中，打开默认 .html 文件然后更新正文，如以下代码所示。 此代码包含用于示例应用的完整控件集，并指定了单击事件的函数名称。
+In your JavaScript project, open the default.html file and update the body as shown in the following code. This code includes the complete set of controls for the example app and specifies the function names for the click events.
 
-> **注意** 当首次运行应用时，仅支持 Basics1 和 Basics2 按钮。
+> **Note**  When you first run the app, only the Basics1 and Basics2 button are supported.
 
 ```html
 <body>
@@ -126,7 +126,7 @@ function basics2() {
 </body>
 ```
 
-在 JavaScript 项目的 css 文件夹中，打开 default.css。 如下所示修改正文部分，并添加样式以控制按钮的布局和输出文本的位置。
+In your JavaScript project, in the css folder, open default.css. Modify the body section as shown, and add styles to control the layout of buttons and the placement of output text.
 
 ```css
 body
@@ -147,7 +147,7 @@ body
 }
 ```
 
-现在添加事件侦听器注册代码，方法是在 default.js 的 app.onactivated 中向 processAll 调用添加 then 子句。 替换调用 setPromise 的现有代码行，并将其更改为以下代码：
+Now add the event listener registration code by adding a then clause to the processAll call in app.onactivated in default.js. Replace the existing line of code that calls setPromise and change it to the following code:
 
 ```javascript
 args.setPromise(WinJS.UI.processAll().then(function () {
@@ -158,42 +158,42 @@ args.setPromise(WinJS.UI.processAll().then(function () {
 }));
 ```
 
-向 HTML 控件添加事件是比直接在 HTML 中添加单击事件处理程序更好的方式。 请参阅[创建“Hello World”应用 (JS)](https://msdn.microsoft.com/library/windows/apps/mt280216)。
+This is a better way to add events to HTML controls than adding a click event handler directly in HTML. See [Create a "Hello World" app (JS)](https://msdn.microsoft.com/library/windows/apps/mt280216).
 
-## 生成并运行应用
+## Build and run the app
 
 
-在生成之前，根据你的计算机将所有项目的目标平台按需更改为 ARM、x64 或 x86。
+Before you build, change the target platform for all projects to ARM, x64, or x86, as appropriate for your computer.
 
-若要生成并运行解决方案，请选择 F5 键。 （如果你收到运行时错误消息，指出 SampleComponent 未定义，则表明缺少对类库项目的引用。）
+To build and run the solution, choose the F5 key. (If you get a run-time error message stating that SampleComponent is undefined, the reference to the class library project is missing.)
 
-Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows 运行时元数据导出工具）](https://msdn.microsoft.com/library/hh925576.aspx)的 MSBuild 任务来创建你的 Windows 运行时组件。 该组件包含在 .winmd 文件中，此文件同时包含了托管代码和描述代码的 Windows 元数据。 当你编写在 Windows 运行时组件中无效的代码时，WinMdExp.exe 将产生生成错误消息，并且错误消息将显示在 Visual Studio IDE 中。 Visual Studio 将你的组件添加到通用 Windows 应用的应用包（.appx 文件），然后生成相应的清单。
+Visual Studio first compiles the class library, and then executes an MSBuild task that runs [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx) to create your Windows Runtime component. The component is included in a .winmd file that contains both the managed code and the Windows metadata that describes the code. WinMdExp.exe generates build error messages when you write code that's invalid in a Windows Runtime component, and the error messages are displayed in the Visual Studio IDE. Visual Studio adds your component to the app package (.appx file) for your Universal Windows app, and generates the appropriate manifest.
 
-选择 Basics 1 按钮将静态 GetAnswer 方法的返回值分配到输出区域、创建 Example 类的实例，并在输出区域显示其 SampleProperty 属性的值。 输出如下所示：
+Choose the Basics 1 button to assign the return value from the static GetAnswer method to the output area, create an instance of the Example class, and display the value of its SampleProperty property in the output area. The output is shown here:
 
 ``` syntax
 "The answer is 42."
 0
 ```
 
-选择 Basics 2 按钮递增 SampleProperty 属性的值并在输出区域中显示新值。 字符串和数字等基元类型可用作参数类型和返回类型，并且可以在托管代码与 JavaScript 之间进行传递。 由于 JavaScript 中的数值以双精度浮点格式进行存储，它们可以转换为 .NET Framework 数值类型。
+Choose the Basics 2 button to increment the value of the SampleProperty property and to display the new value in the output area. Primitive types such as strings and numbers can be used as parameter types and return types, and can be passed between managed code and JavaScript. Because numbers in JavaScript are stored in double-precision floating-point format, they are converted to .NET Framework numeric types.
 
-> **注意** 默认情况下，你只能在 JavaScript 代码中设置断点。 若要调试 Visual Basic 或 C# 代码，请参阅“使用 C# 和 Visual Basic 创建 Windows 运行时组件”。
-
- 
-
-若要停止调试并关闭应用，请从应用切换到 Visual Studio，然后选择 Shift+F5。
-
-## 从 JavaScript 和托管代码使用 Windows 运行时
-
-
-可以从 JavaScript 或托管代码调用 Windows 运行时。 Windows 运行时对象可以在这两者之间来回传递，并且事件可以从任一端进行处理。 但是，在两种环境中使用 Windows 运行时类型的方式在一些细节方面略有不同，因为 JavaScript 和 .NET Framework 支持 Windows 运行时的方式不同。 下面的示例使用 [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx) 类演示了这些差异。 在本例中，你在托管代码中创建 PropertySet 集合的一个实例，并注册一个事件处理程序来跟踪集合中的更改。 然后添加获取集合的 JavaScript 代码、注册其自己的事件处理程序，然后使用集合。 最后，添加通过托管代码对集合进行更改的方法，并显示处理托管异常的 JavaScript。
-
-> **重要提示** 在本例中，事件在 UI 线程上触发。 如果从后台线程触发事件（例如在异步调用中），你需要进行一些额外工作才能使 JavaScript 处理事件。 有关详细信息，请参阅[引发 Windows 运行时组件中的事件](raising-events-in-windows-runtime-components.md)。
+> **Note**  By default, you can set breakpoints only in your JavaScript code. To debug your Visual Basic or C# code, see Creating Windows Runtime Components in C# and Visual Basic.
 
  
 
-在 SampleComponent 项目中，添加名为 PropertySetStats 的新 **public sealed** 类（Visual Basic 中为 **Public NotInheritable** 类）。 该类封装了 PropertySet 集合并处理其 MapChanged 事件。 事件处理程序将跟踪所发生的每种类型的更改数目，并且 DisplayStats 方法将生成格式为 HTML 的报告。 请注意附加的 **using** 语句（在 Visual Basic 中为 **Imports** 语句）；请谨慎地将其添加到现有 **using** 语句中，而不是覆盖它们。
+To stop debugging and close your app, switch from the app to Visual Studio, and choose Shift+F5.
+
+## Using the Windows Runtime from JavaScript and managed code
+
+
+The Windows Runtime can be called from either JavaScript or managed code. Windows Runtime objects can be passed back and forth between the two, and events can be handled from either side. However, the ways you use Windows Runtime types in the two environments differ in some details, because JavaScript and the .NET Framework support the Windows Runtime differently. The following example demonstrates these differences, using the [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx) class. In this example, you create an instance of the PropertySet collection in managed code and register an event handler to track changes in the collection. Then you add JavaScript code that gets the collection, registers its own event handler, and uses the collection. Finally, you add a method that makes changes to the collection from managed code and shows JavaScript handling a managed exception.
+
+> **Important**  In this example, the event is being fired on the UI thread. If you fire the event from a background thread, for example in an async call, you will need to do some extra work in order for JavaScript to handle the event. For more information, see [Raising Events in Windows Runtime Components](raising-events-in-windows-runtime-components.md).
+
+ 
+
+In the SampleComponent project, add a new **public sealed** class (**Public NotInheritable** class in Visual Basic) named PropertySetStats. The class wraps a PropertySet collection and handles its MapChanged event. The event handler tracks the number of changes of each kind that occur, and the DisplayStats method produces a report that is formatted in HTML. Notice the additional **using** statement (**Imports** statement in Visual Basic); be careful to add this to the existing **using** statements rather than overwriting them.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -265,9 +265,9 @@ Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows �
 > End Class
 > ```
 
-事件处理程序遵循熟悉的 .NET Framework 事件模式，除了事件的发送程序（在此情况下为 PropertySet 对象）将强制转换为 IObservableMap&lt;string, object&gt; 接口（在 Visual Basic 中为 IObservableMap(Of String, Object)），后者是 Windows 运行时接口 [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx) 的实例化。（如有必要，你可以将发送程序强制转换为其类型。）此外，事件参数将呈现为接口而非对象。
+The event handler follows the familiar .NET Framework event pattern, except that the sender of the event (in this case, the PropertySet object) is cast to the IObservableMap&lt;string, object&gt; interface (IObservableMap(Of String, Object) in Visual Basic), which is an instantiation of the Windows Runtime interface [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx). (You can cast the sender to its type if necessary.) Also, the event arguments are presented as an interface rather than as an object.
 
-在 default.js 文件中添加 Runtime1 函数，如下所示。 此代码会创建一个 PropertySetStats 对象、获取其 PropertySet 集合，然后添加自己的事件处理程序 onMapChanged 函数以处理 MapChanged 事件。 对集合进行更改之后，runtime1 调用 DisplayStats 方法显示更改类型的摘要。
+In the default.js file, add the Runtime1 function as shown. This code creates a PropertySetStats object, gets its PropertySet collection, and adds its own event handler, the onMapChanged function, to handle the MapChanged event. After making changes to the collection, runtime1 calls the DisplayStats method to show a summary of change types.
 
 ```javascript
 var propertysetstats;
@@ -317,13 +317,13 @@ function onMapChanged(change) {
 }
 ```
 
-在 JavaScript 中处理 Windows 运行时事件的方式明显不同于在 .NET Framework 代码中进行处理的方式。 JavaScript 事件处理程序只使用一个参数。 在 Visual Studio 调试器中查看此对象时，第一个属性是发送程序。 事件参数接口的成员还将直接在此对象中显示。
+The way you handle Windows Runtime events in JavaScript is very different from the way you handle them in .NET Framework code. The JavaScript event handler takes only one argument. When you view this object in the Visual Studio debugger, the first property is the sender. The members of the event argument interface also appear directly on this object.
 
-若要运行应用，请选择 F5 键。 如果未封装类，你将收到错误消息“当前不支持导出未封装类型‘SampleComponent.Example’。 请将其标记为已封装。”
+To run the app, choose the F5 key. If the class is not sealed, you get the error message, "Exporting unsealed type 'SampleComponent.Example' is not currently supported. Please mark it as sealed."
 
-选择“Runtime 1”****按钮。 当元素进行添加或更改时，事件处理程序将显示更改，并且最后 DisplayStats 方法将进行调用以生成计数的摘要。 若要停止调试并关闭应用，请切换回 Visual Studio，然后选择 Shift+F5。
+Choose the **Runtime 1** button. The event handler displays changes as elements are added or changed, and at the end the DisplayStats method is called to produce a summary of counts. To stop debugging and close the app, switch back to Visual Studio and choose Shift+F5.
 
-若要从托管代码向 PropertySet 集合添加两个以上的项，请将以下代码添加到 PropertySetStats 类：
+To add two more items to the PropertySet collection from managed code, add the following code to the PropertySetStats class:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -340,9 +340,9 @@ function onMapChanged(change) {
 > End Sub
 > ```
 
-此代码强调了在两个环境中针对 Windows 运行时类型的使用方式的另一个区别。 如果自行键入此代码，你将注意到 IntelliSense 未显示你在 JavaScript 代码中使用的 insert 方法。 而是显示在 .NET Framewor 的集合中常见的 Add 方法。 这是因为某些常用的集合接口在 Windows 运行时和 .NET Framework 中的名称不同但功能相似。 当你在托管代码中使用这些接口时，它们将显示为相应的 .NET Framework 等效项。 [使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)对此进行了详细讨论。 当你在 JavaScript 中使用相同接口时，从 Windows 运行时进行的唯一更改只是成员名称开头的大写字母变为小写。
+This code highlights another difference in the way you use Windows Runtime types in the two environments. If you type this code yourself, you'll notice that IntelliSense doesn't show the insert method you used in the JavaScript code. Instead, it shows the Add method commonly seen on collections in the .NET Framework. This is because some commonly used collection interfaces have different names but similar functionality in the Windows Runtime and the .NET Framework. When you use these interfaces in managed code, they appear as their .NET Framework equivalents. This is discussed in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md). When you use the same interfaces in JavaScript, the only change from the Windows Runtime is that uppercase letters at the beginning of member names become lowercase.
 
-最后，若要调用使用异常处理的 AddMore 方法，请将 runtime2 函数添加到 default.js。
+Finally, to call the AddMore method with exception handling, add the runtime2 function to default.js.
 
 ```javascript
 function runtime2() {
@@ -359,7 +359,7 @@ function runtime2() {
 }
 ```
 
-采用与以前相同的方式添加事件处理程序注册代码。
+Add the event handler registration code the same way you did previously.
 
 ```javascript
 var runtimeButton1 = document.getElementById("runtimeButton1");
@@ -368,18 +368,18 @@ var runtimeButton2 = document.getElementById("runtimeButton2");
 runtimeButton2.addEventListener("click", runtime2, false);
 ```
 
-若要运行应用，请选择 F5 键。 依次选择“Runtime 1”****和“Runtime 2”****。 JavaScript 事件处理程序报告对集合进行的第一项更改。 但是第二项更改具有一个重复键。 .NET Framework 字典的用户期望 Add 方法引发异常，而该情况会如期发生。 JavaScript 处理 .NET Framework 异常。
+To run the app, choose the F5 key. Choose **Runtime 1** and then **Runtime 2**. The JavaScript event handler reports the first change to the collection. The second change, however, has a duplicate key. Users of .NET Framework dictionaries expect the Add method to throw an exception, and that is what happens. JavaScript handles the .NET Framework exception.
 
-> **注意** 无法通过 JavaScript 代码显示异常的消息。 消息文本替换为堆栈跟踪。 有关详细信息，请参阅“使用 C# 和 Visual Basic 创建 Windows 运行时组件”的“引发异常”。
+> **Note**  You can't display the exception's message from JavaScript code. The message text is replaced by a stack trace. For more information, see "Throwing exceptions" in Creating Windows Runtime Components in C# and Visual Basic.
 
-相比之下，当 JavaScript 调用带有重复键的 insert 方法时，项的值已发生更改。 这种行为的差异是由于 JavaScript 和 .NET Framework 支持 Windows 运行时的方式不同，如[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中所述。
+By contrast, when JavaScript called the insert method with a duplicate key, the value of the item was changed. This difference in behavior is due to the different ways that JavaScript and the .NET Framework support the Windows Runtime, as explained in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
-## 从组件返回托管类型
+## Returning managed types from your component
 
 
-如前所述，你可以在 JavaScript 代码与 C# 或 Visual Basic 代码之间来回传递本机 Windows 运行时类型。 大多数情况下，类型名称和成员名称在两种情况下均相同（除了成员名称在 JavaScript 中以小写字母开头以外）。 但是在前面的部分中，PropertySet 类似乎在托管代码中具有不同的成员。 （例如，在 JavaScript 中称为 insert 方法，而在 .NET Framework 代码中称为 Add 方法。）本部分将探索这些差异影响传递到 JavaScript 的 .NET Framework 类型的方式。
+As discussed previously, you can pass native Windows Runtime types back and forth freely between your JavaScript code and your C# or Visual Basic code. Most of the time, the type names and member names will be the same in both cases (except that the member names start with lowercase letters in JavaScript). However, in the preceding section, the PropertySet class appeared to have different members in managed code. (For example, in JavaScript you called the insert method, and in the .NET Framework code you called the Add method.) This section explores the way those differences affect .NET Framework types passed to JavaScript.
 
-除了返回在组件中创建的或通过 JavaScript 传递到组件的 Windows 运行时类型，还可以将使用托管代码创建的托管类型返回给 JavaScript，就像这是相应的 Windows 运行时类型一样。 即使在运行时类的第一个简单示例中，成员的参数和返回值也是 Visual Basic 或 C# 基元类型，即 .NET Framework 类型。 若要面向集合对此进行演示，请将以下代码添加到 Example 类，从而创建返回字符串泛型字典（通过整数索引）的方法：
+In addition to returning Windows Runtime types that you created in your component or passed to your component from JavaScript, you can return a managed type, created in managed code, to JavaScript as if it were the corresponding Windows Runtime type. Even in the first, simple example of a runtime class, the parameters and return types of the members were Visual Basic or C# primitive types, which are .NET Framework types. To demonstrate this for collections, add the following code to the Example class, to create a method that returns a generic dictionary of strings, indexed by integers:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -406,13 +406,13 @@ runtimeButton2.addEventListener("click", runtime2, false);
 > End Function
 > ```
 
-请注意，字典必须作为由 [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) 实现且映射到 Windows 运行时接口的接口返回。 在此情况下，接口为 IDictionary&lt;int, string&gt;（在 Visual Basic 中为 IDictionary(Of Integer, String)）。 当 Windows 运行时类型 IMap&lt;int, string&gt; 传递到托管代码时，它显示为 IDictionary&lt;int, string&gt;，相反地当托管类型传递到 JavaScript 时也是如此。
+Notice that the dictionary must be returned as an interface that is implemented by [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx), and that maps to a Windows Runtime interface. In this case, the interface is IDictionary&lt;int, string&gt; (IDictionary(Of Integer, String) in Visual Basic). When the Windows Runtime type IMap&lt;int, string&gt; is passed to managed code, it appears as IDictionary&lt;int, string&gt;, and the reverse is true when the managed type is passed to JavaScript.
 
-**重要提示** 当托管类型实现多个接口时，JavaScript 使用最先显示在列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+**Important**  When a managed type implements multiple interfaces, JavaScript uses the interface that appears first in the list. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
 
  
 
-若要测试新方法并使用字典，请将 returns1 和 returns2 函数添加到 default.js：
+To test the new method and use the dictionary, add the returns1 and returns2 functions to default.js:
 
 ```javascript
 var names;
@@ -448,7 +448,7 @@ function showMap(map) {
 }
 ```
 
-将事件注册代码添加到相同文件，然后将其作为其他事件注册代码块：
+Add the event registration code to the same then block as the other event registration code:
 
 ```javascript
 var returnsButton1 = document.getElementById("returnsButton1");
@@ -457,19 +457,19 @@ var returnsButton2 = document.getElementById("returnsButton2");
 returnsButton2.addEventListener("click", returns2, false);
 ```
 
-还有一些有趣的内容可观察有关这段 JavaScript 代码的信息。 首先，它包含一个 showMap 函数，用于在 HTML 中显示字典的内容。 在 showMap 的代码中，注意迭代模式。 在 .NET Framework 中，泛型 IDictionary 接口上不存在 First 方法，并且大小由 Count 属性而非 Size 方法返回。 对于 JavaScript，IDictionary&lt;int, string&gt; 显示为 Windows 运行时类型 IMap&lt;int, string&gt;。 （请参阅 [IMap&lt;K,V&gt;](https://msdn.microsoft.com/library/windows/apps/br226042.aspx) 接口。）
+There are a few interesting things to observe about this JavaScript code. First of all, it includes a showMap function to display the contents of the dictionary in HTML. In the code for showMap, notice the iteration pattern. In the .NET Framework, there's no First method on the generic IDictionary interface, and the size is returned by a Count property rather than by a Size method. To JavaScript, IDictionary&lt;int, string&gt; appears to be the Windows Runtime type IMap&lt;int, string&gt;. (See the [IMap&lt;K,V&gt;](https://msdn.microsoft.com/library/windows/apps/br226042.aspx) interface.)
 
-在 returns2 函数中，如前面的示例所示，JavaScript 将调用 Insert 方法（在 JavaScript 中为 insert）向字典添加项目。
+In the returns2 function, as in earlier examples, JavaScript calls the Insert method (insert in JavaScript) to add items to the dictionary.
 
-若要运行应用，请选择 F5 键。 若要创建和显示字典的初始内容，请选择“Returns 1”****按钮。 若要向字典添加两个以上的条目，请选择“Returns 2”****按钮。 请注意，条目将按插入顺序显示，正如你对 Dictionary&lt;TKey, TValue&gt; 的期望一样。 如果你希望对它们进行排序，可以从 GetMapOfNames 返回 Dictionary&lt;TKey, TValue&gt;。 （前面示例使用的 PropertySet 类与 Dictionary&lt;TKey, TValue&gt; 所具有的内部组织不同。）
+To run the app, choose the F5 key. To create and display the initial contents of the dictionary, choose the **Returns 1** button. To add two more entries to the dictionary, choose the **Returns 2** button. Notice that the entries are displayed in order of insertion, as you would expect from Dictionary&lt;TKey, TValue&gt;. If you want them sorted, you can return a SortedDictionary&lt;int, string&gt; from GetMapOfNames. (The PropertySet class used in earlier examples has a different internal organization from Dictionary&lt;TKey, TValue&gt;.)
 
-当然，JavaScript 不是强类型语言，因此使用强类型的泛型集合可能会导致意料之外的结果。 再次选择“Returns 2”****按钮。 JavaScript 帮助你将“7”强制转换为数值 7，并将存储在 ct 中的数值 7 强制转换为字符串。 它还将字符串“forty”强制转换为零。 但这只是开始。 再选择几次“Returns 2”****按钮。 在托管代码中，Add 方法将生成重复键异常，即使值已强制转换为正确类型也是如此。 相比之下，Insert 方法将更新与现有键关联的值，并返回一个布尔值，用于指示新键是否已添加到字典中。 这是与键 7 关联的值保持变化的原因。
+Of course, JavaScript is not a strongly typed language, so using strongly typed generic collections can lead to some surprising results. Choose the **Returns 2** button again. JavaScript obligingly coerces the "7" to a numeric 7, and the numeric 7 that's stored in ct to a string. And it coerces the string "forty" to zero. But that's only the beginning. Choose the **Returns 2** button a few more times. In managed code, the Add method would generate duplicate key exceptions, even if the values were cast to the correct types. In contrast, the Insert method updates the value associated with an existing key and returns a Boolean value that indicates whether a new key was added to the dictionary. This is why the value associated with the key 7 keeps changing.
 
-另一种意外的行为：如果你将未分配的 JavaScript 变量作为字符串参数传递，你得到的将是字符串“undefined”。 简而言之，请谨慎将 .NET Framework 集合类型传递给你的 JavaScript 代码。
+Another unexpected behavior: If you pass an unassigned JavaScript variable as a string argument, what you get is the string "undefined". In short, be careful when you pass .NET Framework collection types to your JavaScript code.
 
-> **注意** 如果你要连接大量文本，可以通过将代码移动到 .NET Framework 方法并使用 StringBuilder 类来更为高效地实现此目的，如 showMap 函数所示。
+> **Note**  If you have large quantities of text to concatenate, you can do it more efficiently by moving the code into a .NET Framework method and using the StringBuilder class, as shown in the showMap function.
 
-尽管无法从 Windows 运行时组件公开你自己的泛型类型，但你可以使用如下所示的代码返回 Windows 运行时类的 .NET Framework 泛型集合：
+Although you can't expose your own generic types from a Windows Runtime component, you can return .NET Framework generic collections for Windows Runtime classes by using code such as the following:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -486,12 +486,12 @@ returnsButton2.addEventListener("click", returns2, false);
 > End Function
 > ```
 
-List&lt;T&gt; 实现 IList&lt;T&gt;，这在 JavaScript 中显示为 Windows 运行时类型 IVector&lt;T&gt;。
+List&lt;T&gt; implements IList&lt;T&gt;, which appears as the Windows Runtime type IVector&lt;T&gt; in JavaScript.
 
-## 声明事件
+## Declaring events
 
 
-你可以使用标准 .NET Framework 事件模式或 Windows 运行时使用的其他模式声明事件。 .NET Framework 支持 System.EventHandler&lt;TEventArgs&gt; 委托与 Windows 运行时 EventHandler&lt;T&gt; 委托之间的等价性，因此使用 EventHandler&lt;TEventArgs&gt; 是实现标准 .NET Framework 模式的好方法。 若要查看此工作原理，请向 SampleComponent 项目添加以下两个类：
+You can declare events by using the standard .NET Framework event pattern or other patterns used by the Windows Runtime. The .NET Framework supports equivalence between the System.EventHandler&lt;TEventArgs&gt; delegate and the Windows Runtime EventHandler&lt;T&gt; delegate, so using EventHandler&lt;TEventArgs&gt; is a good way to implement the standard .NET Framework pattern. To see how this works, add the following pair of classes to the SampleComponent project:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -538,11 +538,11 @@ List&lt;T&gt; 实现 IList&lt;T&gt;，这在 JavaScript 中显示为 Windows 运
 > End Class
 > ```
 
-在 Windows 运行时中公开某个事件时，该事件参数类将继承自 System.Object。 它不会从 System.EventArgs 继承，如同在 .NET Framework 中一样，因为 EventArgs 不是 Windows 运行时类型。
+When you expose an event in the Windows Runtime, the event argument class inherits from System.Object. It doesn't inherit from System.EventArgs, as it would in the .NET Framework, because EventArgs is not a Windows Runtime type.
 
-如果为事件声明自定义事件访问器（在 Visual Basic 中为 **Custom** 关键字），则必须使用 Windows 运行时事件模式。 请参阅 [Windows 运行时组件中的自定义事件和事件访问器](custom-events-and-event-accessors-in-windows-runtime-components.md)。
+If you declare custom event accessors for your event (**Custom** keyword in Visual Basic), you must use the Windows Runtime event pattern. See [Custom events and event accessors in Windows Runtime Components](custom-events-and-event-accessors-in-windows-runtime-components.md).
 
-若要处理 Test 事件，请将 events1 函数添加到 default.js。 events1 函数为 Test 事件创建事件处理程序函数，并立即调用 OnTest 方法引发事件。 如果你在事件处理程序的主体中放置一个断点，你可以看到传递到单个参数的对象包含了源对象和 TestEventArgs 的两个成员。
+To handle the Test event, add the events1 function to default.js. The events1 function creates an event handler function for the Test event, and immediately invokes the OnTest method to raise the event. If you place a breakpoint in the body of the event handler, you can see that the object passed to the single parameter includes the source object and both members of TestEventArgs.
 
 ```javascript
 var ev;
@@ -557,19 +557,19 @@ function events1() {
 }
 ```
 
-将事件注册代码添加到相同文件，然后将其作为其他事件注册代码块：
+Add the event registration code to the same then block as the other event registration code:
 
 ```javascript
 var events1Button = document.getElementById("events1Button");
 events1Button.addEventListener("click", events1, false);
 ```
 
-## 公开异步操作
+## Exposing asynchronous operations
 
 
-.NET Framework 具有一组丰富的工具，用于基于 Task 和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 类进行异步处理和并行处理。 若要在 Windows 运行时组件中公开基于任务的异步处理，请使用 Windows 运行时接口 [IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/br205802.aspx) 和 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/br205807.aspx)。 （在 Windows 运行时中，操作会返回结果，但执行不会。）
+The .NET Framework has a rich set of tools for asynchronous processing and parallel processing, based on the Task and generic [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) classes. To expose task-based asynchronous processing in a Windows Runtime component, use the Windows Runtime interfaces [IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/br205802.aspx), and [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/br205807.aspx). (In the Windows Runtime, operations return results, but actions do not.)
 
-此部分演示了一个可取消的用于报告进度和返回结果的异步操作。 GetPrimesInRangeAsync 方法使用 [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) 类生成一个任务并将其取消和进度报告功能连接到 WinJS.Promise 对象。 首先将 GetPrimesInRangeAsync 方法添加到示例类：
+This section demonstrates a cancelable asynchronous operation that reports progress and returns results. The GetPrimesInRangeAsync method uses the [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) class to generate a task and to connect its cancellation and progress-reporting features to a WinJS.Promise object. Begin by adding the GetPrimesInRangeAsync method to the example class:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -661,27 +661,27 @@ events1Button.addEventListener("click", events1, false);
 > End Function
 > ```
 
-GetPrimesInRangeAsync 是非常简单的质数查找程序，通过设计实现。 此处的重点是实现异步操作，因此简单性非常重要，并且当我们演示取消时，较慢的实现很有优势。 GetPrimesInRangeAsync 通过暴力方式查找质数：它将候选数除以所有小于或等于其平方根的整数，而不是只使用质数。 逐步执行此代码：
+GetPrimesInRangeAsync is a very simple prime number finder, and that's by design. The focus here is on implementing an asynchronous operation, so simplicity is important, and a slow implementation is an advantage when we're demonstrating cancellation. GetPrimesInRangeAsync finds primes by brute force: It divides a candidate by all the integers that are less than or equal to its square root, rather than using only the prime numbers. Stepping through this code:
 
--   在开始异步操作之前执行整理活动，例如验证参数和针对无效输入引发异常。
--   此实现的关键是 [AsyncInfo.Run&lt;TResult, TProgress&gt;(Func&lt;CancellationToken, IProgress&lt;TProgress&gt;, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)&gt;) 方法，以及作为该方法唯一参数的委托。 委托必须接受取消令牌和报告进度的接口，并且必须返回使用这些参数的启动任务。 当 JavaScript 调用 GetPrimesInRangeAsync 方法时，将执行以下步骤（不一定按照此处提供的顺序）：
+-   Before starting an asynchronous operation, perform housekeeping activities such as validating parameters and throwing exceptions for invalid input.
+-   The key to this implementation is the [AsyncInfo.Run&lt;TResult, TProgress&gt;(Func&lt;CancellationToken, IProgress&lt;TProgress&gt;, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)&gt;) method, and the delegate that is the method's only parameter. The delegate must accept a cancellation token and an interface for reporting progress, and must return a started task that uses those parameters. When JavaScript calls the GetPrimesInRangeAsync method, the following steps occur (not necessarily in the order given here):
 
-    -   [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) 对象提供用于处理返回结果、响应取消和处理进度报告的函数。
-    -   AsyncInfo.Run 方法创建一个取消源和一个实现 IProgress&lt;T&gt; 接口的对象。 对于委托，它将同时传递取消源中的 [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) 令牌，以及 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 接口。
+    -   The [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) object supplies functions to process the returned results, react to cancellation, and handle progress reports.
+    -   The AsyncInfo.Run method creates a cancellation source and an object that implements the IProgress&lt;T&gt; interface. To the delegate, it passes both a [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) token from the cancellation source, and the [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) interface.
 
-        > **注意** 如果 Promise 对象未提供响应取消的函数，AsyncInfo.Run 仍会传递可取消的令牌，且取消仍可能会发生。 如果 Promise 对象未提供处理进度更新的函数，AsyncInfo.Run 仍提供实现 IProgress&lt;T&gt; 的对象，但将忽略报告。
+        > **Note**  If the Promise object doesn't supply a function to react to cancellation, AsyncInfo.Run still passes a cancelable token, and cancellation can still occur. If the Promise object doesn't supply a function to handle progress updates, AsyncInfo.Run still supplies an object that implements IProgress&lt;T&gt;, but its reports are ignored.
 
-    -   委托使用 [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) 方法创建使用令牌和进度接口的启动任务。 启动任务的委托由计算所需结果的 lambda 函数提供。 稍后对此进行详细讨论。
-    -   AsyncInfo.Run 方法创建实现 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) 接口的对象、将 Windows 运行时取消机制与令牌源连接，并将 Promise 对象的进度报告函数与 IProgress&lt;T&gt; 接口连接。
-    -   IAsyncOperationWithProgress&lt;TResult, TProgress&gt; 接口将返回到 JavaScript。
+    -   The delegate uses the [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) method to create a started task that uses the token and the progress interface. The delegate for the started task is provided by a lambda function that computes the desired result. More about that in a moment.
+    -   The AsyncInfo.Run method creates an object that implements the [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) interface, connects the Windows Runtime cancellation mechanism with the token source, and connects the Promise object's progress-reporting function with the IProgress&lt;T&gt; interface.
+    -   The IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface is returned to JavaScript.
 
--   由启动任务表示的 lambda 函数不使用任何参数。 由于它是 lambda 函数，它将有权访问令牌和 IProgress 接口。 每次计算候选数量时，lambda 函数将执行以下操作：
+-   The lambda function that is represented by the started task doesn't take any arguments. Because it's a lambda function, it has access to the token and the IProgress interface. Each time a candidate number is evaluated, the lambda function:
 
-    -   查看是否已达到进度的下一百分点。 如果已达到，lambda 函数将调用 IProgress&lt;T&gt;.Report 方法，并且百分比将传递到 Promise 对象为报告进度指定的函数。
-    -   如果操作已取消，使用取消令牌引发异常。 如果 [IAsyncInfo.Cancel](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel.aspx) 方法（IAsyncOperationWithProgress&lt;TResult, TProgress&gt; 接口继承的方法）已调用，AsyncInfo.Run 方法设置的连接将确保取消令牌收到通知。
--   当 lambda 函数返回质数列表时，该列表将传递给 WinJS.Promise 对象为处理结果所指定的函数。
+    -   Checks to see whether the next percentage point of progress has been reached. If it has, the lambda function calls the IProgress&lt;T&gt;.Report method, and the percentage is passed through to the function that the Promise object specified for reporting progress.
+    -   Uses the cancellation token to throw an exception if the operation has been canceled. If the [IAsyncInfo.Cancel](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel.aspx) method (which the IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface inherits) has been called, the connection that the AsyncInfo.Run method set up ensures that the cancellation token is notified.
+-   When the lambda function returns the list of prime numbers, the list is passed to the function that the WinJS.Promise object specified for processing the results.
 
-若要创建 JavaScript Promise 并设置取消机制，请将 asyncRun 和 asyncCancel 函数添加到 default.js。
+To create the JavaScript promise and set up the cancellation mechanism, add the asyncRun and asyncCancel functions to default.js.
 
 ```javascript
 var resultAsync;
@@ -715,7 +715,7 @@ function asyncCancel() {
 }
 ```
 
-不要忘记事件注册代码，像你之前操作的那样。
+Don't forget the event registration code the same as you did previously.
 
 ```javascript
 var btnAsync = document.getElementById("btnAsync");
@@ -724,20 +724,20 @@ var btnCancel = document.getElementById("btnCancel");
 btnCancel.addEventListener("click", asyncCancel, false);
 ```
 
-通过调用异步 GetPrimesInRangeAsync 方法，asyncRun 函数将创建 WinJS.Promise 对象。 然后，该对象将使用用于处理返回结果、响应错误（包括取消）和处理进度报告的三个函数。 在本例中，返回结果在输出区域中输出。 取消或完成将重置启动和取消操作的按钮。 进度报告将更新进度控件。
+By calling the asynchronous GetPrimesInRangeAsync method, the asyncRun function creates a WinJS.Promise object. The object's then method takes three functions that process the returned results, react to errors (including cancellation), and handle progress reports. In this example, the returned results are printed in the output area. Cancellation or completion resets the buttons that launch and cancel the operation. Progress reporting updates the progress control.
 
-asyncCancel 函数只调用 WinJS.Promise 对象的取消方法。
+The asyncCancel function just calls the cancel method of the WinJS.Promise object.
 
-若要运行应用，请选择 F5 键。 若要启动异步操作，请选择“异步”****按钮。 下一步将发生什么情况取决于你的计算机速度有多快。 如果进度栏快速完成以至于你来不及看到此过程，请按十的一个或多个因数增加传递到 GetPrimesInRangeAsync 的起始数字大小。 你可以通过增加或减少要测试的数字计数，以微调操作的持续时间，但在起始数字的中间添加零将会产生更大的影响。 若要取消操作，请选择“取消异步”****按钮。
+To run the app, choose the F5 key. To start the asynchronous operation, choose the **Async** button. What happens next depends on how fast your computer is. If the progress bar zips to completion before you have time to blink, increase the size of the starting number that is passed to GetPrimesInRangeAsync by one or more factors of ten. You can fine-tune the duration of the operation by increasing or decreasing the count of numbers to test, but adding zeros in the middle of the starting number will have a bigger impact. To cancel the operation, choose the **Cancel Async** button.
 
-## 相关主题
+## Related topics
 
-* [适用于 Windows 应用商店应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [适用于 UWP 应用的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [.NET for Windows Store Apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

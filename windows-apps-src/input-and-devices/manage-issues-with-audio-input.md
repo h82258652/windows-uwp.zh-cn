@@ -1,21 +1,21 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "了解如何管理由音频输入的质量所导致的语音识别准确度的问题。"
-title: "管理音频输入问题"
+Description: Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
+title: Manage issues with audio input
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 4f926969b5f9f20de904aeaf749e69c0ded3c052
+ms.openlocfilehash: 12f46dd0ec375977cc33efeb73757c5ec75077bd
 
 ---
 
-# 管理音频输入问题
+# Manage issues with audio input
 
-了解如何管理由音频输入的质量所导致的语音识别准确度的问题。
+Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
 
-**重要的 API**
+**Important APIs**
 
 -   [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)
 -   [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)
@@ -24,14 +24,14 @@ ms.openlocfilehash: 4f926969b5f9f20de904aeaf749e69c0ded3c052
 
 
 
-## 评估音频输入质量
+## Assess audio-input quality
 
 
-当语音识别处于活动状态时，使用语音识别器的 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件，确定一个或多个音频问题是否会干扰语音输入。 事件参数 ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) 可提供 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 属性，该属性描述了检测到的音频输入问题。
+When speech recognition is active, use the [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) event of your speech recognizer to determine whether one or more audio issues might be interfering with speech input. The event argument ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) provides the [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) property, which describes the issues detected with the audio input.
 
-背景噪音太大、麦克风设为静音以及扬声器的音量或语速都可能会影响语音识别。
+Recognition can be affected by too much background noise, a muted microphone, and the volume or speed of the speaker.
 
-在此情况下，我们可以配置一个语音识别器并开始侦听 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件。
+Here, we configure a speech recognizer and start listening for the [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) event.
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -63,12 +63,12 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 管理语音识别体验
+## Manage the speech-recognition experience
 
 
-使用由 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) 属性提供的说明可帮助用户改善识别的条件。
+Use the description provided by the [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) property to help the user improve conditions for recognition.
 
-在此处，我们将为 [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) 事件创建一个处理程序，用于检查较低的音量级别。 然后，我们将使用 [**SpeechSynthesizer**](https://msdn.microsoft.com/library/windows/apps/dn298152) 对象建议用户尝试提高音量。
+Here, we create a handler for the [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) event that checks for a low volume level. We then use a [**SpeechSynthesizer**](https://msdn.microsoft.com/library/windows/apps/dn298152) object to suggest that the user try speaking louder.
 
 ```CSharp
 private async void speechRecognizer_RecognitionQualityDegrading(
@@ -103,13 +103,13 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## 相关文章
+## Related articles
 
 
-* [语音交互](speech-interactions.md)
+* [Speech interactions](speech-interactions.md)
 
-**示例**
-* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -120,6 +120,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

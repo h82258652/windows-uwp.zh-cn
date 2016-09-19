@@ -1,43 +1,43 @@
 ---
 author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
-title: "使用指南针"
-description: "了解如何使用指南针确定当前方位。"
+title: Use the compass
+description: Learn how to use the compass to determine the current heading.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2c2135867586909328b8d1080c413b3524322246
+ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
 
 ---
-# 使用指南针
+# Use the compass
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+** Important APIs **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)
 
-\[在商业发行之前会发生实质性修改的、与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-了解如何使用指南针确定当前方位。
+Learn how to use the compass to determine the current heading.
 
-应用可以相对于磁性来检索当前的方位，如果为 True，则是北面。 导航应用使用指南针来确定设备面向的方向，然后相应地在地图上定位。
+An app can retrieve the current heading with respect to magnetic, or true, north. Navigation apps use the compass to determine the direction a device is facing and then orient the map accordingly.
 
-## 先决条件
+## Prerequisites
 
-你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
+You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-你使用的设备或仿真器必须支持指南针。
+The device or emulator that you're using must support a compass.
 
-## 创建一个简单的指南针应用
+## Create a simple compass app
 
-此部分划分为两个子部分。 第一个子部分将指导你完成从头开始创建简单的指南针应用程序所需的步骤。 以下子部分介绍你刚创建的应用。
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple compass application from scratch. The following subsection explains the app you have just created.
 
-### 说明
+### Instructions
 
--   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   打开你项目的 MainPage.xaml.cs 文件，用下列内容替换现有的代码。
+-   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -126,25 +126,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“CompassCS”**的项目，则使用 `x:Class="CompassCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:CompassCS"` 替换 `xmlns:local="using:App1"`。
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **CompassCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="CompassCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:CompassCS"`.
 
--   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
+-   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
-应用运行后，你可以通过移动设备或使用仿真器工具更改指南针的值。
+Once the app is running, you can change the compass values by moving the device or using the emulator tools.
 
--   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
-### 描述
+### Explanation
 
-前面的示例演示了，只需要写入极少的代码即可将指南针输入集成到你的应用。
+The previous example demonstrates how little code you'll need to write in order to integrate compass input in your app.
 
-该应用在 **MainPage** 方法中建立了与默认指南针的连接。
+The app establishes a connection with the default compass in the **MainPage** method.
 
 ```csharp
 _compass = Compass.GetDefault(); // Get the default compass object
 ```
 
-该应用在 **MainPage** 方法中建立了报告间隔。 此代码检索设备支持的最短间隔，并将它与所请求的间隔 16 毫秒（大约 60-Hz 刷新率）进行比较。 如果支持的最短间隔大于所请求的间隔，则此代码会将报告间隔设置为所支持的最短间隔。 否则，它会将报告间隔设置为所请求的间隔。
+The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
 uint minReportInterval = _compass.MinimumReportInterval;
@@ -152,14 +152,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _compass.ReportInterval = reportInterval;
 ```
 
-在 **ReadingChanged** 方法中捕获新的指南针数据。 每当传感器驱动程序从传感器接收到新数据时，它都将使用此事件处理程序将该值传递到你的应用中。 应用在下行中注册此事件处理程序。
+The new compass data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
 _compass.ReadingChanged += new TypedEventHandler<Compass, 
 CompassReadingChangedEventArgs>(ReadingChanged);
 ```
 
-这些新值写入项目 XAML 中的 TextBlock 中。
+These new values are written to the TextBlocks found in the project's XAML.
 
 ```xml
  <TextBlock HorizontalAlignment="Left" Height="22" Margin="8,18,0,0" TextWrapping="Wrap" Text="Magnetic Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFFBF9F9"/>
@@ -168,9 +168,9 @@ CompassReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
 
-## 相关主题
+## Related topics
 
-* [指南针示例](http://go.microsoft.com/fwlink/p/?linkid=241378)
+* [Compass Sample](http://go.microsoft.com/fwlink/p/?linkid=241378)
  
 
  
@@ -181,6 +181,6 @@ CompassReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

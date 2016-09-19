@@ -1,76 +1,81 @@
 ---
 author: jnHs
-Description: "你可以通过适用于企业的 Windows 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。"
-title: "将 LOB 应用分配到企业"
+Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Windows Store for Business, without making the apps broadly available in the Store.
+title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 translationtype: Human Translation
-ms.sourcegitcommit: 9ad7589344d2af986e52ae43acc3e48de6374ae6
-ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
+ms.sourcegitcommit: 44485b32a7c5580e1a7a0ca9ca7c642e0b9b29d2
+ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 ---
 
-# 将 LOB 应用分配到企业
+# Distribute LOB apps to enterprises
 
 
-你可以通过适用于企业的 Windows 应用商店向企业直接发布业务线 (LOB) 应用以获取批量购置，无需在应用商店中使应用广泛可用。
+You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Windows Store for Business, without making the apps broadly available in the Store.
 
-> **重要提示** 此时，仅免费应用可以通过适用于企业的Windows 应用商店专门分配到企业。 如果你提交某个付费应用作为 LOB，它此时不会向企业提供。 
+> **Important**  At this time, only free apps can be distributed exclusively to enterprises via the Windows Store for Business. If you submit a paid app as LOB, it will not be available to the enterprise at this time. 
 
-## 设置企业关联
-
-
-将 LOB 应用专门发布到企业的第一步是建立你的帐户和企业的专用应用商店之间的关联。
-
-> **重要提示** 此关联过程必须由企业启动，并且必须发送到你的帐户的“联系人信息”****下的电子邮件地址。 有关详细信息，请参阅[使用业务线应用](http://go.microsoft.com/fwlink/p/?LinkId=698846)。
-
-在企业选择邀请你发布供其专门使用的应用时，你将收到包含确认该关联的链接的电子邮件。 你还可以通过转到“帐户设置”****的“企业关联”****部分确认这些关联。
-
-若要确认关联，请单击“接受”****。 随后你的帐户将能够发布供该企业专门使用的应用。
-
-## 提交 LOB 应用
+## Setting up the enterprise association
 
 
-在准备好发布供企业专门使用的应用后，该过程类似于应用提交过程。 应用完成相同的认证过程，并且必须遵循所有 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944)。 仅有两部分过程不同。
+The first step in publishing LOB apps exclusively to an enterprise is to establish the association between your account and the enterprise’s private store.
 
-### 分发和可见性
+> **Important**  This association process must be initiated by the enterprise, and must be sent to the email address in your account’s **Contact info**. For more info, see [Working with line-of-business apps](http://go.microsoft.com/fwlink/p/?LinkId=698846).
 
-在设置企业关联后，每次提交应用时，你都会在提交的“定价和可用性”****页面的“分发和可见性”****部分中看到下拉框。 默认情况下，此下拉框设置为“零售分配”****。 若要使应用供某个企业专门使用，你需要选择“业务线 (LOB) 分配”****。
+When an enterprise chooses to invite you to publish apps for their exclusive use, you’ll get an email that includes a link to confirm the association. You can also confirm these associations by going to the **Enterprise associations** section of your **Account settings**.
 
-选择“业务线 (LOB) 分配”****后，常见的“分发和可见性”****选项将替换为发布专用应用的企业列表。
+To confirm the association, click **Accept**. Your account will then be able to publish apps for that enterprise’s exclusive use.
 
-选择应该能够获取应用的企业。 任何其他人均无法访问该应用。
+## Submitting an LOB app
 
-> **注意** 若要将某个应用作为业务线应用发布，必须至少选择一家企业。
 
-### 组织授权
+Once you’re ready to publish an app for an enterprise’s exclusive use, the process is similar to the app submission process. The app goes through the same certification process, and must comply with all [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944). There are just a few parts of the process that are different.
 
-默认情况下，在提交应用时，“应用商店管理的(在线)批量许可”****框已选中。 在发布 LOB 应用时，此框必须处于选中状态，以便企业可以批量获取你的应用。 此操作不会让在“分发和可见性”****部分中选择的企业之外的任何人使用该应用。
+### Distribution and visibility
 
-如果你想要通过断开连接（离线）许可使企业能够使用应用，也可以选中“断开连接(离线)许可”****框。
+After you've set up an enterprise association, every time you submit an app you’ll see a drop-down box in the **Distribution and visibility** section of the submission’s **Pricing and availability** page. By default, this is set to **Retail distribution**. To make the app exclusive to an enterprise, you’ll need to choose **Line-of-business (LOB) distribution**.
 
-有关详细信息，请参阅[组织授权选项](organizational-licensing.md)。
+Once **Line-of-business (LOB) distribution** is selected, the usual **Distribution and visibility** options will be replaced with a list of the enterprises to which you can publish exclusive apps.
 
-### LOB 应用的企业部署
+Select the enterprise(s) which should be able to get the app. No one else will be able to access it.
 
-单击“提交到应用商店”****后，应用将完成认证过程。 准备就绪后，企业管理员必须在适用于企业的 Windows 应用商店门户中将应用添加到其专用存储。 企业稍后可以将应用部署到其用户。
+> **Note**  At least one enterprise must be selected in order to publish an app as line-of-business.
 
-> **注意** 为了获取你的 LOB 应用，组织必须位于[受支持的市场](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)中，并且你不得在提交应用时排除该市场。 
+### Organizational licensing
 
-有关详细信息，请参阅[使用业务线应用](http://go.microsoft.com/fwlink/p/?LinkId=698846)和[使用专用应用商店分配应用](http://go.microsoft.com/fwlink/p/?LinkId=698847)。
+By default, the box for **Store-managed (online) volume licensing** is checked when you submit an app. When publishing LOB apps, this box must be checked so that the enterprise can acquire your app in volume. This won’t make the app available to anyone outside of the enterprise(s) that you selected in the **Distribution and visibility** section.
 
-### 更新 LOB 应用
+If you’d like to make the app available to the enterprise via disconnected (offline) licensing, you can check the **Disconnected (offline) licensing** box as well.
 
-若要发布对已经发布为 LOB 的应用的更新，只需创建新的提交即可。 你可以上传新程序包或进行任何其他更改，然后单击“提交到应用商店”****使更新的版本可用。 请确保使“分发和可见性”****中的企业选择保持不变（除非你打算更改这些选择，例如选择获取应用的其他企业，或删除一家之前分配了应用的企业）。
+For more info, see [Organizational licensing options](organizational-licensing.md).
 
-如果想要停止提供之前作为业务线应用发布的应用，并阻止任何新的购置，你需要创建新的提交。 首先，你需要将“分发和可见性”****选择从“业务线 (LOB) 分配”****更改为“零售分配”****。 然后，在“分发和可见性”****选项中，选择“隐藏此应用并阻止购置”****。 提交完成认证过程后，应用将不再用于新的购置（虽然任何已拥有该应用的用户可以继续使用它）。
+### Age ratings
+For LOB apps, the [age ratings](age-ratings.md) step of the submission process works the same as for retail apps, but you also have an additional option that allows you to indicate the Store age rating of your app manually rather than completing the questionnaire or importing an existing IARC rating ID. This manual rating can only be used with LOB distribution, so if you ever change the **Distribution and visibility** setting of the app to **Retail distribution**, you'll need to take the age ratings questionnaire before you can publish the submission.
 
-### 通过旁加载分配 LOB 应用
+### Enterprise deployment of LOB apps
 
-通过适用于企业的应用商店发布应用可以确保应用由应用商店进行签名，并遵守标准的应用商店策略。
+After you click **Submit to the Store**, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Windows Store for Business portal. The enterprise can then deploy the app to its users.
 
-在某些情况下，出于多种原因（例如合规性原因或应用需要其他功能），公司可能不希望其 LOB 应用通过 Windows 开发人员中心提交。 在这种情况下，企业可以通过旁加载直接将应用部署到计算机，无需使用适用于企业的 Windows 应用商店。
+> **Note** In order to get your LOB app, the organization must be located in a [supported market](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), and you must not have excluded that market when submitting your app. 
 
-有关详细信息，请参阅[在 Windows 10 中旁加载 LOB 应用](http://go.microsoft.com/fwlink/p/?LinkId=623433)。
+For more info, see [Working with line-of-business apps](http://go.microsoft.com/fwlink/p/?LinkId=698846) and [Distribute apps using your private store](http://go.microsoft.com/fwlink/p/?LinkId=698847).
+
+### Updating LOB apps
+
+To publish updates to an app that you’ve already published as LOB, simply create a new submission. You can upload new packages or make any other changes, then click **Submit to the Store** to make the updated version available. Be sure to keep the enterprise selections in **Distribution and visibility** the same (unless you intentionally want to change them, such as selecting an additional enterprise to acquire the app, or removing one of the enterprises to which you’d previously distributed it).
+
+If you want to stop offering an app that you’ve previously published as line-of-business, and prevent any new acquisitions, you’ll need to create a new submission. First, you’ll need to change your **Distribution and visibility** selection from **Line-of-business (LOB) distribution** to **Retail distribution**. Then, in the **Distribution and visibility** options, choose **Hide this app and prevent acquisition**. After the submission goes through the certification process, the app will no longer be available for new acquisitions (although anyone who already has it will continue to be able to use it).
+
+> **Note** When changing an app to **Retail distribution**, you'll need to complete the [age ratings questionnaire](age-ratings.md) if you haven't done so already (even if the app will not be available for new acquisitions).
+
+### Distributing LOB apps through sideloading
+
+Making apps available through Store for Business ensures that the app has been signed by the Store and complies with the standard Store Policies.
+
+In some cases, companies may not want their LOB apps to be submitted through the Windows Dev Center for various reasons (such as compliance reasons or apps that need additional capabilities). In this case, the enterprises can deploy apps directly to machines via sideloading, without using the Windows Store for Business.
+
+For more info, see [Sideload LOB apps in Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=623433).
 
  
 
@@ -82,6 +87,6 @@ ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO1-->
 
 

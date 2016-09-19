@@ -1,473 +1,473 @@
 ---
 author: mcleblanc
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
-title: "Windows 应用认证工具包测试"
-description: "Windows 应用认证工具包包含大量测试，可以帮助确保应用已准备好，可在 Windows 应用商店中发布。"
+title: Windows App Certification Kit tests
+description: The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
 translationtype: Human Translation
 ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 816b147c91a340505348aa579c8b1540962a1df5
+ms.openlocfilehash: 78a1a2ad4aea11275aa3db1d13790c490a50c232
 
 ---
-## Windows 应用认证工具包测试
+## Windows App Certification Kit tests
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Windows 应用认证工具包包含大量测试，可以帮助确保应用已准备好，可在 Windows 应用商店中发布。
+The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
 
-## 部署和启动测试
+## Deployment and launch tests
 
-在认证测试期间监视应用，记录它何时崩溃或停止响应。
+Monitors the app during certification testing to record when it crashes or hangs.
 
-### 背景
+### Background
 
-停止响应或崩溃的应用可能导致用户丢失数据和拥有糟糕的体验。
+Apps that stop responding or crash can cause the user to lose data and have a poor experience.
 
-我们希望应用应该具有完整的功能，而无需使用 Windows 兼容模式、AppHelp 消息或兼容性修复程序。
+We expect apps to be fully functional without the use of Windows compatibility modes, AppHelp messages, or compatibility fixes.
 
-应用不得列出要加载到 HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs 注册表项中的 DLL。
+Apps must not list DLLs to load in the HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs registry key.
 
-### 测试详细信息
+### Test details
 
-在整个认证测试中，我们将测试应用的恢复能力和稳定性。
+We test the app resilience and stability throughout the certification testing.
 
-Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 来启动应用。 若要使 **ActivateApplication** 启动应用，必须启用用户帐户控制 (UAC) 并且屏幕分辨率必须至少为 1024 x 768 或 768 x 1024。 如果不满足任何条件，那么你的应用将无法通过此测试。
+The Windows App Certification Kit calls [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) to launch apps. For **ActivateApplication** to launch an app, User Account Control (UAC) must be enabled and the screen resolution must be at least 1024 x 768 or 768 x 1024. If either condition is not met, your app will fail this test.
 
-### 更正操作
+### Corrective actions
 
-确保在测试计算机上启用 UAC。
+Make sure UAC is enabled on the test computer.
 
-确保在屏幕足够大的计算机上运行测试。
+Make sure you are running the test on a computer with large enough screen.
 
-如果你的应用无法启动并且你的测试平台满足 [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 的先决条件，那么你可以通过查看激活事件日志来解决此问题。 若要在事件日志中找到这些条目，请执行以下操作：
+If your app fails to launch and your test platform satisfies the prerequisites of [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903), you can troubleshoot the problem by reviewing the activation event log. To find these entries in the event log:
 
-1.  打开 eventvwr.exe 并导航至“Application and Services Log\\Microsoft\\Windows\\Immersive-Shell”文件夹。
-2.  筛选视图以显示事件 ID：5900-6000。
-3.  查看日志条目，了解可能说明了应用为何未启动的信息。
+1.  Open eventvwr.exe and navigate to the Application and Services Log\\Microsoft\\Windows\\Immersive-Shell folder.
+2.  Filter the view to show Event Ids: 5900-6000.
+3.  Review the log entries for info that might explain why the app didn't launch.
 
-排除文件的问题，识别并修复问题。 重新构建和重新测试应用。 你还可以检查 Windows App 认证工具包日志文件夹中是否已生成转储文件，该文件可用于调试你的应用。
+Troubleshoot the file with the problem, identify and fix the problem. Rebuild and re-test the app. You can also check if a dump file was generated in the Windows App Certification Kit log folder that can be used to debug your app.
 
-## 平台版本启动测试
+## Platform Version Launch test
 
-检查 Windows 应用是否能在未来版本的操作系统中运行。 此测试历来都仅适用于桌面应用工作流，但现在可适用于应用商店和通用 Windows 平台工作流。
+Checks that the Windows app can run on a future version of the OS. This test has historically been only applied to the Desktop app workflow, but this is now enabled for the Store and Universal Windows Platform (UWP) workflows.
 
-### 背景
+### Background
 
-操作系统版本信息已限制 Windows 应用商店的使用。 这常被应用误用于检查操作系统版本，使得该应用会向用户提供特定于操作系统版本的相关功能。
+Operating system version info has restricted usage for the Windows Store. This has often been incorrectly used by apps to check OS version so that the app can provide users with functionality that is specific to an OS version.
 
-### 测试详细信息
+### Test details
 
-Windows App 认证工具包使用 HighVersionLie 来检测应用检查操作系统版本的方式。 如果应用出现崩溃，它将无法通过此测试。
+The Windows App Certification Kit uses the HighVersionLie to detect how the app checks the OS version. If the app crashes, it will fail this test.
 
-### 更正操作
+### Corrective action
 
-应用应使用版本 API 帮助程序函数来检查此版本。 有关详细信息，请参阅[操作系统版本](https://msdn.microsoft.com/library/windows/desktop/ms724832)。
+Apps should use Version API helper functions to check this. See [Operating System Version](https://msdn.microsoft.com/library/windows/desktop/ms724832) for more information.
 
-## 后台任务取消处理程序验证
+## Background tasks cancellation handler validation
 
-这将验证应用是否具有一个可用于已声明后台任务的取消处理程序。 在该任务被取消后，将需要一个用于调用的专用函数。 此测试仅适用于已部署的应用。
+This verifies that the app has a cancellation handler for declared background tasks. There needs to be a dedicated function that will be called when the task is cancelled. This test is applied only for deployed apps.
 
-### 后台
+### Background
 
-Windows 应用可注册一个在后台运行的进程。 例如，电子邮件应用有时可能会对服务器执行 ping 操作。 但是，如果操作系统需要这些资源，它将取消该后台任务，并且应用应当能正常处理此取消操作。 不具有取消处理程序的应用可能会出现崩溃，或者在用户试图关闭应用时无法将其关闭。
+Store apps can register a process that runs in the background. For example, an email app may ping a server from time to time. However, if the OS needs these resources, it will cancel the background task, and apps should gracefully handle this cancellation. Apps that don't have a cancellation handler may crash or not close when the user tries to close the app.
 
-### 测试详细信息
+### Test details
 
-应用启动后，其中的已暂停和非后台部分将被终止。 随后，将取消与此应用关联的后台任务。 检查应用的状态，如果它仍在运行，将无法通过此测试。
+The app is launched, suspended and the non-background portion of the app is terminated. Then the background tasks associated with this app are cancelled. The state of the app is checked, and if the app is still running then it will fail this test.
 
-### 更正操作
+### Corrective action
 
-将取消处理程序添加到你的应用。 有关详细信息，请参阅[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/Mt299103)。
+Add the cancellation handler to your app. For more information see [Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/Mt299103).
 
-## 应用计数
+## App count
 
-这将验证应用包（APPX 应用程序包）中是否包含某个应用程序。 该测试在工具包中已更改为一个独立的测试。
+This verifies that an app package (APPX, app bundle) contains one application. This was changed in the kit to be a standalone test.
 
-### 后台
+### Background
 
-此测试依据应用商店策略进行实现。
+This test was implemented as per Store policy.
 
-### 测试详细信息
+### Test details
 
-对于 Windows Phone 8.1 应用，测试将验证程序包中 appx 包的总数是否 &lt; 512、程序包中是否只有一个主程序包，以及程序包中的主程序包体系结构是标记为 ARM 还是中性。
+For Windows Phone 8.1 apps the test verifies the total number of appx packages in the bundle is &lt; 512, there is only one main package in the bundle, and that the architecture of the main package in the bundle is marked as ARM or neutral.
 
-对于 Windows 10 应用，测试将验证程序包版本中的修订号是否设置为 0。
+For Windows 10 apps the test verifies that the revision number in the version of the bundle is set to 0.
 
-### 更正操作
+### Corrective action
 
-确保应用包和程序包满足上述测试详细信息中的要求。
+Ensure the app package and bundle meet requirements above in Test details.
 
-## 应用部件清单合规性测试
+## App manifest compliance test
 
-测试应用部件清单 (manifest) 的内容，确保它的内容是正确的。
+Test the contents of app manifest to make sure its contents are correct.
 
-### 背景
+### Background
 
-应用必须拥有格式正确的应用部件清单 (manifest)。
+Apps must have a correctly formatted app manifest.
 
-### 测试详细信息
+### Test details
 
-检查应用清单验证内容是否正确，如[应用包要求](https://msdn.microsoft.com/library/windows/apps/Mt148525)中所述。
+Examines the app manifest to verify the contents are correct as described in the [App package requirements](https://msdn.microsoft.com/library/windows/apps/Mt148525).
 
--   **文件后缀名和协议**
+-   **File extensions and protocols**
 
-    你的应用可以声明要与其关联的文件扩展名。 使用不当时，应用会声明大量文件扩展名（大多数扩展名甚至可能不会使用），从而导致较差的用户体验。 此测试将添加检查以限制可与应用关联的文件扩展名的数量。
+    Your app can declare the file extensions that it wants to associate with. Used improperly, an app can declare a large number of file extensions, most of which it may not even use, resulting in a bad user experience. This test will add a check to limit the number of file extensions that an app can associate with.
 
--   **框架依赖关系规则**
+-   **Framework Dependency rule**
 
-    此测试强制要求应用采取对 UWP 的适当依赖关系。 如果存在不适当的依赖关系，该测试将失败。
+    This test enforces the requirement that apps take appropriate dependencies on the UWP. If there is an inappropriate dependency, this test will fail.
 
-    如果应用适用的操作系统版本和框架依赖关系采用的操作系统版本不匹配，该测试将失败。 如果应用引用了任何预览版的框架 DLL，该测试也将失败。
+    If there is a mismatch between the OS version the app applies to and the framework dependencies made, the test will fail. The test would also fail if the app refers to any preview versions of the framework dlls.
 
--   **进程间通信 (IPC) 验证**
+-   **Inter-process Communication (IPC) verification**
 
-    此测试强制要求 Windows 应用商店应用不在应用容器外部通信到桌面组件。 进程间通信仅适用于旁加载应用。 使用等效于“DesktopApplicationPath”的名称指定 [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) 的应用无法通过此测试。
+    This test enforces the requirement that Windows Store apps do not communicate outside of the app container to Desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) with name equal to "DesktopApplicationPath" will fail this test.
 
-### 更正操作
+### Corrective action
 
-针对[应用包要求](https://msdn.microsoft.com/library/windows/apps/Mt148525)中所述的要求检查应用清单。
+Review the app's manifest against the requirements described in the [App package requirements](https://msdn.microsoft.com/library/windows/apps/Mt148525).
 
-## Windows 安全功能测试
+## Windows Security features test
 
-### 背景
+### Background
 
-更改默认的 Windows 安全保护可能增加客户的风险。
+Changing the default Windows security protections can put customers at increased risk.
 
-### 测试详细信息
+### Test details
 
-通过运行 [BinScope Binary Analyzer](#binscope) 来测试应用的安全性。
+Tests the app's security by running the [BinScope Binary Analyzer](#binscope).
 
-BinScope Binary Analyzer 测试检查应用的二进制文件，以检查使应用不容易被攻击或被用作攻击平台的编码和构建实践。
+The BinScope Binary Analyzer tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
 
-BinScope Binary Analyzer 测试检查对以下安全相关功能的正确使用。
+The BinScope Binary Analyzer tests check for the correct use of the following security-related features.
 
--   BinScope Binary Analyzer 测试
--   私有代码签名
+-   BinScope Binary Analyzer tests
+-   Private Code Signing
 
-### BinScope Binary Analyzer 测试
+### BinScope Binary Analyzer tests
 
-[BinScope Binary Analyzer](http://go.microsoft.com/fwlink/p/?linkid=257276) 测试检查应用的二进制文件，以检查使应用不容易被攻击或被用作攻击平台的编码和生成做法。
+The [BinScope Binary Analyzer](http://go.microsoft.com/fwlink/p/?linkid=257276) tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
 
-BinScope Binary Analyzer 测试检查对这些安全相关功能的正确使用：
+The BinScope Binary Analyzer tests check for the correct use of these security-related features:
 
 -   [AllowPartiallyTrustedCallersAttribute](#binscope-1)
--   [/SafeSEH 异常处理保护](#binscope-2)
--   [数据执行保护](#binscope-3)
--   [地址空间布局随机化](#binscope-4)
--   [读取/写入共享 PE 部分](#binscope-5)
+-   [/SafeSEH Exception Handling Protection](#binscope-2)
+-   [Data Execution Prevention](#binscope-3)
+-   [Address Space Layout Randomization](#binscope-4)
+-   [Read/Write Shared PE Section](#binscope-5)
 -   [AppContainerCheck](#appcontainercheck)
 -   [ExecutableImportsCheck](#binscope-7)
 -   [WXCheck](#binscope-8)
 
 ### <span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
-**Windows 应用认证工具包错误消息：**APTCACheck 测试失败
+**Windows App Certification Kit error message:** APTCACheck Test failed
 
-AllowPartiallyTrustedCallersAttribute (APTCA) 属性可以从签名程序集中的部分信任代码访问完全信任的代码。 当你将 APTCA 属性应用到程序集时，部分信任的调用方便可以在该程序集的寿命内访问它，这样可能会危及安全性。
+The AllowPartiallyTrustedCallersAttribute (APTCA) attribute enables access to fully trusted code from partially trusted code in signed assemblies. When you apply the APTCA attribute to an assembly, partially trusted callers can access that assembly for the life of the assembly, which can compromise security.
 
-**在应用未通过此测试时怎么办**
+**What to do if your app fails this test**
 
-不要使用强命名程序集上的 APTCA 属性，除非你的项目需要它且已充分了解风险。 为防不时之需，请确保所有 API 都在相应的代码访问安全性要求下受到了保护。 当程序集包含在通用 Windows 平台 (UWP) 应用中时，APTCA 不会生效。
+Don't use the APTCA attribute on strong named assemblies unless your project requires it and the risks are well understood. In cases where it's required, make sure that all APIs are protected with appropriate code access security demands. APTCA has no effect when the assembly is a part of a Universal Windows Platform (UWP) app.
 
-**备注**
+**Remarks**
 
-仅在托管代码（C#、.NET 等）上执行此测试。
+This test is performed only on managed code (C#, .NET, etc.).
 
-### <span id="binscope-2"></span>/SafeSEH 异常处理保护
+### <span id="binscope-2"></span>/SafeSEH Exception Handling Protection
 
-**Windows 应用认证工具包错误消息：**SafeSEHCheck 测试失败
+**Windows App Certification Kit error message:** SafeSEHCheck Test failed
 
-异常处理程序在应用遇到异常情况时运行，例如被零除错误。 因为在调用函数时异常处理程序的地址存储在堆栈上，所以如果某个恶意软件要覆盖堆栈，可能会易于受到缓冲区溢出攻击者的攻击。
+An exception handler runs when the app encounters an exceptional condition, such as a divide-by-zero error. Because the address of the exception handler is stored on the stack when a function is called, it could be vulnerable to a buffer overflow attacker if some malicious software were to overwrite the stack.
 
-**在应用未通过此测试时怎么办**
+**What to do if your app fails this test**
 
-生成应用时，在链接器命令中启用 /SAFESEH 选项。 默认情况下，此选项处于打开状态（位于 Visual Studio 的“发布”配置中）。 确认在生成指令中为应用中的所有可执行模块启用了此选项。
+Enable the /SAFESEH option in the linker command when you build your app. This option is on by default in the Release configurations of Visual Studio. Verify this option is enabled in the build instructions for all executable modules in your app.
 
-**备注**
+**Remarks**
 
-不在 64 位二元文件或 ARM 芯片集二元文件上执行此测试，因为它们不将异常处理程序地址存储在堆栈上。
+The test is not performed on 64-bit binaries or ARM chipset binaries because they don't store exception handler addresses on the stack.
 
-### <span id="binscope-3"></span>数据执行保护
+### <span id="binscope-3"></span>Data Execution Prevention
 
-**Windows 应用认证工具包错误消息：**NXCheck 测试失败
+**Windows App Certification Kit error message:** NXCheck Test failed
 
-此测试验证应用是否未运行存储在数据段中的代码。
+This test verifies that an app doesn't run code that is stored in a data segment.
 
-**在应用未通过此测试时怎么办**
+**What to do if your app fails this test**
 
-生成应用时，在链接器命令中启用 /NXCOMPAT 选项。 默认情况下，此选项在支持数据执行保护 (DEP) 的链接器版本中处于打开状态。
+Enable the /NXCOMPAT option in the linker command when you build your app. This option is on by default in linker versions that support Data Execution Prevention (DEP).
 
-**备注**
+**Remarks**
 
-我们建议，在支持 DEP 的 CPU 上测试你的应用，并修复你发现的由于 DEP 所导致的任何故障。
+We recommend that you test your apps on a DEP-capable CPU and fix any failures you find that result from DEP.
 
-### <span id="binscope-4"></span>地址空间布局随机化
+### <span id="binscope-4"></span>Address Space Layout Randomization
 
-**Windows 应用认证工具包错误消息：**DBCheck 测试失败
+**Windows App Certification Kit error message:** DBCheck Test failed
 
-地址空间布局随机化 (ASLR) 将可执行文件映像加载到内存中不可预测的位置，从而使预期某个程序在特定虚拟地址加载的恶意软件更难以按可预见的方式运行。 你的应用及其使用的所有组件必须支持 ASLR。
+Address Space Layout Randomization (ASLR) loads executable images into unpredictable locations in memory, which makes it harder for malicious software that expects a program to be loaded at a certain virtual address to operate predictably. Your app and all components that your app uses must support ASLR.
 
-**在应用未通过此测试时怎么办**
+**What to do if your app fails this test**
 
-在生成应用时，在链接器命令中启用 /DYNAMICBASE 选项。 验证你的应用使用的所有模块也使用此链接器选项。
+Enable the /DYNAMICBASE option in the linker command when you build your app. Verify that all modules that your app uses also use this linker option.
 
-**备注**
+**Remarks**
 
-通常，ASLR 不影响性能。 但在某些情况下，在 32 位系统上有少许的性能改进。 原因可能是，在许多不同内存位置加载许多映像的高拥堵系统中，性能可能会降级。
+Normally, ASLR doesn't affect performance. But in some scenarios there is a slight performance improvement on 32-bit systems. It is possible that performance could degrade in a highly congested system that have many images loaded in many different memory locations.
 
-此测试仅在使用托管代码编写的应用上执行，如使用 C# 或 .NET Framework 编写的应用。
+This test is performed on only apps written in managed code, such as by using C# or .NET Framework.
 
-### <span id="binscope-5"></span>读取/写入共享 PE 部分
+### <span id="binscope-5"></span>Read/Write Shared PE Section
 
-**Windows 应用认证工具包错误消息：**SharedSectionsCheck 测试失败。
+**Windows App Certification Kit error message:** SharedSectionsCheck Test failed.
 
-如果二进制文件包含标记为共享的可写入节，那么它就是一种安全威胁。 除非必须，否则不要构建包含共享的可写入节的应用。 使用 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) 或 [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) 创建受到适当保护的共享内存对象。
+Binary files with writable sections that are marked as shared are a security threat. Don't build apps with shared writable sections unless necessary. Use [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) or [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) to create a properly secured shared memory object.
 
-**在应用未通过此测试时怎么办**
+**What to do if your app fails this test**
 
-从应用中删除任何共享节，使用合适的安全属性调用 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) 或 [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) 来创建共享内存对象，然后重新生成你的应用。
+Remove any shared sections from the app and create shared memory objects by calling [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) or [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) with the proper security attributes and then rebuild your app.
 
-**备注**
+**Remarks**
 
-此测试仅在使用非托管语言（如使用 C 或 C++）编写的应用上执行。
+This test is performed only on apps written in unmanaged languages, such as by using C or C++.
 
 ### AppContainerCheck
 
-**Windows 应用认证工具包错误消息：**AppContainerCheck 测试失败。
+**Windows App Certification Kit error message:** AppContainerCheck Test failed.
 
-AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE) 头文件中的 **appcontainer** 位是否已设置。 应用必须在所有 .exe 文件和所有非托管 DLL 上设置了 **appcontainer** 位才能正确执行。
+The AppContainerCheck verifies that the **appcontainer** bit in the portable executable (PE) header of an executable binary is set. Apps must have the **appcontainer** bit set on all .exe files and all unmanaged DLLs to execute properly.
 
-**在应用未通过此测试时怎么办**
+**What to do if your app fails this test**
 
-如果原生的可执行文件未通过测试，请确保你使用了最新的编译器和链接器来生成文件，并在链接器上使用了 */appcontainer* 标记。
+If a native executable file fails the test, make sure that you used the latest compiler and linker to build the file and that you use the */appcontainer* flag on the linker.
 
-如果托管的可执行文件未通过测试，请确保你使用了最新的编译器和链接器（如 Microsoft Visual Studio）来生成 Windows 应用商店应用。
+If a managed executable fails the test, make sure that you used the latest compiler and linker, such as Microsoft Visual Studio, to build the Windows Store app.
 
-**备注**
+**Remarks**
 
-此测试在所有 .exe 文件和非托管 DLL 上执行。
+This test is performed on all .exe files and on unmanaged DLLs.
 
 ### <span id="binscope-7"></span>ExecutableImportsCheck
 
-**Windows 应用认证工具包错误消息：**ExecutableImportsCheck 测试失败。
+**Windows App Certification Kit error message:** ExecutableImportsCheck Test failed.
 
-如果可移植可执行 (PE) 映像的导入表放在了一个可执行代码节中，该映像将无法通过此测试。 如果通过将 Visual C++ 链接器的 */merge* 标记设置为 */merge:.rdata=.text*来为 PE 映像启用了 .rdata 合并，则可能发生此情形。
+A portable executable (PE) image fails this test if its import table has been placed in an executable code section. This can occur if you enabled .rdata merging for the PE image by setting the */merge* flag of the Visual C++ linker as */merge:.rdata=.text*.
 
-**在应用未通过此测试时怎么办**
+**What to do if your app fails this test**
 
-不要将导入表合并到可执行代码节中。 确保 Visual C++ 链接器的 */merge* 标记未设置为将“.rdata”节合并到代码节中。
+Don't merge the import table into an executable code section. Make sure that the */merge* flag of the Visual C++ linker is not set to merge the ".rdata" section into a code section.
 
-**备注**
+**Remarks**
 
-此测试在除纯粹的托管程序集以外的所有二进制代码上执行。
+This test is performed on all binary code except purely managed assemblies.
 
 ### <span id="binscope-8"></span>WXCheck
 
-**Windows 应用认证工具包错误消息：**WXCheck 测试失败。
+**Windows App Certification Kit error message:** WXCheck Test failed.
 
-此项检查有助于确保二进制文件不包含任何映射为可写和可映射的页面。 如果二进制文件包含可写和可执行的部分，或者如果二进制文件的 *SectionAlignment* 小于 *PAGE\-SIZE*，则可能会发生这种情况。
+The check helps to ensure that a binary does not have any pages that are mapped as writable and executable. This can occur if the binary has a writable and executable section or if the binary’s *SectionAlignment* is less than *PAGE\-SIZE*.
 
-**在应用未通过此测试时怎么办**
+**What to do if your app fails this test**
 
-确保二进制文件不包含可写或可执行部分，并且二进制文件的 *SectionAlignment* 值至少等于 *PAGE\-SIZE*。
+Make sure that the binary does not have a writeable or executable section and that the binary's *SectionAlignment* value is at least equal to its *PAGE\-SIZE*.
 
-**备注**
+**Remarks**
 
-此测试在所有 .exe 文件和本机非托管 DLL 上执行。
+This test is performed on all .exe files and on native, unmanaged DLLs.
 
-如果已在启用“编辑”和“继续”(/ZI) 的情况下构建可执行文件，则其中可能包含可写和可执行部分。 禁用“编辑”和“继续”将导致无效部分无法呈现。
+An executable may have a writable and executable section if it has been built with Edit and Continue enabled (/ZI). Disabling Edit and Continue will cause the invalid section to not be present.
 
-*PAGE\-SIZE* 是可执行文件的默认 *SectionAlignment* 值。
+*PAGE\-SIZE* is the default *SectionAlignment* for executables.
 
-### 私有代码签名
+### Private Code Signing
 
-测试应用程序包中是否存在私有代码签名二进制文件。
+Tests for the existence of private code signing binaries within the app package.
 
-### 背景
+### Background
 
-私有代码签名文件应该保持私有，因为在泄露这些文件的事件中，它们可能会被恶意使用。
+Private code signing files should be kept private as they may be used for malicious purposes in the event they are compromised.
 
-### 测试详细信息
+### Test details
 
-在应用程序包中测试扩展名为 .pfx 或 .snk 的文件，这指示其中包含私有签名密钥。
+Tests for files within the app package that have an extension of .pfx or.snk that would indicate that private signing keys were included.
 
-### 更正操作
+### Corrective actions
 
-从该程序包中删除任何私有代码签名密钥（例如 .pfx 和 .snk 文件）。
+Remove any private code signing keys (e.g. .pfx and .snk files) from the package.
 
-## 支持的 API 测试
+## Supported API test
 
-测试应用是否使用了任何不兼容的 API。
+Test the app for the use of any non-compliant APIs.
 
-### 背景
+### Background
 
-应用必须使用要针对 Windows 应用商店进行认证的 Windows 应用商店应用 API（Windows 运行时或支持的 Win32 API）。 此测试还识别托管二进制文件依赖于批准的配置文件以外功能的情形。
+Apps must use the APIs for Windows Store apps (Windows Runtime or supported Win32 APIs) to be certified for the Windows Store. This test also identifies situations where a managed binary takes a dependency on a function outside of the approved profile.
 
-### 测试详细信息
+### Test details
 
--   通过检查二进制文件的导入地址表，验证应用包中的每个二进制文件是否均不依赖于不支持 Windows 应用商店应用开发的 Win32 API。
--   验证应用包中的每个托管二进制文件是否均不依赖于批准的配置文件以外的功能。
+-   Verifies that each binary within the app package doesn't have a dependency on a Win32 API that is not supported for Windows Store app development by checking the import address table of the binary.
+-   Verifies that each managed binary within the app package doesn't have a dependency on a function outside of the approved profile.
 
-### 更正操作
+### Corrective actions
 
-确保应用编译为一个发行版本，而不是调试版本。
+Make sure that the app was compiled as a release build and not a debug build.
 
-> **注意** 应用的调试版本将无法通过此测试，即使应用仅使用 [Windows 应用商店应用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) 也是如此。
+> **Note**  The debug build of an app will fail this test even if the app uses only [APIs for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-检查错误消息，识别应用所用的哪些 API 不是 [Windows 应用商店应用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
+Review the error messages to identify the API the app uses that is not an [API for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **注意** 即使调试配置仅使用针对 Windows 应用商店应用的 Windows SDK 中的 API，内置于该调试配置中的 C++ 应用也会导致此测试失败。 有关详细信息，请参阅 [Windows 应用商店应用中 Windows API 的替代项](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
+> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for Windows Store apps. See, [Alternatives to Windows APIs in Windows Store apps](http://go.microsoft.com/fwlink/p/?LinkID=244022) for more info.
 
-## 性能测试
+## Performance tests
 
-为了提供快速而流畅的用户体验，应用必须迅速响应用户交互和系统命令。
+The app must respond quickly to user interaction and system commands in order to present a fast and fluid user experience.
 
-执行测试的计算机的特性会影响测试结果。 设置应用认证的性能测试阈值，以便低能耗计算机能够满足客户快速流畅的体验预期。 为了确定你的应用性能，我们建议你在低能耗计算机上测试应用，例如基于 Intel Atom 处理器的计算机，屏幕分辨率为 1366x768（或更高），旋转硬盘驱动器（相对于固态硬盘驱动器）。
+The characteristics of the computer on which the test is performed can influence the test results. The performance test thresholds for app certification are set such that low-power computers meet the customer’s expectation of a fast and fluid experience. To determine your app’s performance, we recommend that you test on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
 
-### 字节码的生成
+### Bytecode generation
 
-作为一种性能优化，为缩短 JavaScript 执行时间，在部署应用时，以 .js 扩展名结尾的 JavaScript 文件将生成字节码。 这可以显著缩短 JavaScript 操作的启动和持续执行时间。
+As a performance optimization to accelerate JavaScript execution time, JavaScript files ending in the .js extension generate bytecode when the app is deployed. This significantly improves startup and ongoing execution times for JavaScript operations.
 
-### 测试详细信息
+### Test Details
 
-检查应用部署，验证所有 .js 文件已转换为字节码。
+Checks the app deployment to verify that all .js files have been converted to bytecode.
 
-### 更正操作
+### Corrective Action
 
-如果此测试失败，在解决此问题时请考虑以下方法：
+If this test fails, consider the following when addressing the issue:
 
--   验证是否启用了事件日志记录。
--   验证所有 JavaScript 文件的语法是否有效。
--   确认已经卸载该应用的所有以前版本。
--   从应用包中排除识别的文件。
+-   Verify that event logging is enabled.
+-   Verify that all JavaScript files are syntactically valid.
+-   Confirm that all previous versions of the app are uninstalled.
+-   Exclude identified files from the app package.
 
-### 优化的绑定引用
+### Optimized binding references
 
-在使用绑定时，WinJS.Binding.optimizeBindingReferences 应设置为 True 才能优化内存使用情况。
+When using bindings, WinJS.Binding.optimizeBindingReferences should be set to true in order to optimize memory usage.
 
-### 测试详细信息
+### Test Details
 
-验证 WinJS.Binding.optimizeBindingReferences 的值。
+Verify the value of WinJS.Binding.optimizeBindingReferences.
 
-### 更正操作
+### Corrective Action
 
-在应用 JavaScript 中，将 WinJS.Binding.optimizeBindingReferences 设置为 **true**。
+Set WinJS.Binding.optimizeBindingReferences to **true** in the app JavaScript.
 
-## 应用清单资源测试
+## App manifest resources test
 
-### 应用资源验证
+### App resources validation
 
-如果应用部件清单 (manifest) 中声明的字符串或图像不正确，应用可能未安装。 如果安装应用时出现了这些错误，应用的徽标或应用使用的其他图像可能无法正确显示。
+The app might not install if the strings or images declared in your app’s manifest are incorrect. If the app does install with these errors, your app’s logo or other images used by your app might not display correctly.
 
-### 测试详细信息
+### Test Details
 
-检查应用部件清单 (manifest) 中定义的资源，确保它们是最新且有效的。
+Inspects the resources defined in the app manifest to make sure they are present and valid.
 
-### 更正操作
+### Corrective Action
 
-使用下表作为指导。
+Use the following table as guidance.
 
 <table>
-<tr><th>错误消息</th><th>备注</th></tr>
+<tr><th>Error message</th><th>Comments</th></tr>
 <tr><td>
-<p>图像 {image name} 定义 Scale 和 TargetSize 限定符；一次只能定义一个限定符。</p>
+<p>The image {image name} defines both Scale and TargetSize qualifiers; you can define only one qualifier at a time.</p>
 </td><td>
-<p>可以自定义不同分辨率的图像。</p>
-<p>在实际消息中，{image name} 包含有错误的图像名称。</p>
-<p> 确保每个图像都将 Scale 或 TargetSize 定义为限定符。</p>
+<p>You can customize images for different resolutions.</p>
+<p>In the actual message, {image name} contains the name of the image with the error.</p>
+<p> Make sure that each image defines either Scale or TargetSize as the qualifier.</p>
 </td></tr>
 <tr><td>
-<p>图像 {image name} 不符合大小限制。</p>
+<p>The image {image name} failed the size restrictions.</p>
 </td><td>
-<p>确保所有应用图像都符合相应的大小限制。</p>
-<p>在实际消息中，{image name} 包含有错误的图像名称。</p>
+<p>Ensure that all the app images adhere to the proper size restrictions.</p>
+<p>In the actual message, {image name} contains the name of the image with the error.</p>
 </td></tr>
 <tr><td>
-<p>程序包中缺少图像 {image name}。</p>
+<p>The image {image name} is missing from the package.</p>
 </td><td>
-<p>缺少所需的图像。</p>
-<p>在实际消息中，{image name} 包含缺少的图像名称。</p>
+<p>A required image is missing.</p>
+<p>In the actual message, {image name} contains the name of the image that is missing.</p>
 </td></tr>
 <tr><td>
-<p>图像 {image name} 不是有效的图像文件。</p>
+<p>The image {image name} is not a valid image file.</p>
 </td><td>
-<p>确保所有应用图像都符合相应的文件格式类型限制。</p>
-<p>在实际消息中，{image name} 包含无效的图像名称。</p>
+<p>Ensure that all the app images adhere to the proper file format type restrictions.</p>
+<p>In the actual message, {image name} contains the name of the image that is not valid.</p>
 </td></tr>
 <tr><td>
-<p>图像“BadgeLogo”在位置 (x, y) 上具有一个无效的 ABGR 值 {value}。 像素必须为白色 (##FFFFFF) 或透明 (00######)</p>
+<p>The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid. The pixel must be white (##FFFFFF) or transparent (00######)</p>
 </td><td>
-<p>锁屏提醒徽标是显示在锁屏提醒通知旁边的图像，用于在锁屏上标识应用。 该图像必须是单色图像（它只能包含白色和透明像素）。</p>
-<p>在实际消息中，{value} 在图像中包含无效的颜色值。</p>
+<p>The badge logo is an image that appears next to the badge notification to identify the app on the lock screen. This image must be monochromatic (it can contain only white and transparent pixels).</p>
+<p>In the actual message, {value} contains the color value in the image that is not valid.</p>
 </td></tr>
 <tr><td>
-<p>图像“BadgeLogo”在位置 (x, y) 上具有一个对高对比度白色图像来说无效的 ABGR 值 {value}。 像素必须为 (##2A2A2A) 或更暗，或者透明 (00######)。</p>
+<p>The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid for a high-contrast white image. The pixel must be (##2A2A2A) or darker, or transparent (00######).</p>
 </td><td>
-<p>锁屏提醒徽标是显示在锁屏提醒通知旁边的图像，用于在锁屏上标识应用。   因为当处于高对比度白色背景中时锁屏提醒徽标出现在白色背景上，因此它必须是较暗版本的正常锁屏提醒徽标。 在高对比度白色背景中，锁屏提醒徽标只能包含比 (##2A2A2A) 暗或透明的像素。</p>
-<p>在实际消息中，{value} 在图像中包含无效的颜色值。</p>
+<p>The badge logo is an image that appears next to the badge notification to identify the app on the lock screen.   Because the badge logo  appears on a white background when in high-contrast white, it must be a dark version of the normal badge logo. In high-contrast white, the badge logo can only contain pixels that are darker than (##2A2A2A) or transparent.</p>
+<p>In the actual message, {value} contains the color value in the image that is not valid.</p>
 </td></tr>
 <tr><td>
-<p>图像必须至少定义一个没有 TargetSize 限定符的变量。 它必须定义一个 Scale 限定符或者保持 Scale 和 TargetSize 为未指定状态，默认值为 Scale-100。</p>
+<p>The image must define at least one variant without a TargetSize qualifier. It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100.</p>
 </td><td>
-<p>有关详细信息，请参阅 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">UWP 应用的响应式设计基础</a>和<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">应用资源指南</a>。</p>
+<p>For more info, see <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">Responsive design 101 for UWP apps</a> and <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Guidelines for app resources</a>.</p>
 </td></tr>
 <tr><td>
-<p>该程序包缺少一个“resources.pri”文件。</p>
+<p>The package is missing a "resources.pri" file.</p>
 </td><td>
-<p>如果你在应用清单中包含可本地化的内容，请确保你的应用包包含有效的 resources.pri 文件。</p>
+<p>If you have localizable content in your app manifest, make sure that your app's package includes a valid resources.pri file.</p>
 </td></tr>
 <tr><td>
-<p>“resources.pri”文件必须包含一个其名称与程序包名称 {package full name} 相匹配的资源映射</p>
+<p>The "resources.pri" file must contain a resource map with a name that matches the package name  {package full name}</p>
 </td><td>
-<p>如果清单发生更改并且 resources.pri 中的资源映射名称不再与清单中的程序包名称相匹配，你将遇到此错误。</p>
-<p>在实际消息中，{package full name} 包含 resources.pri 必须包含的程序包名称。</p>
-<p>为了解决此问题，你需要重新构建 resources.pri，而这样做的最简单方法就是重新构建应用包。</p>
+<p>You can get this error if the manifest changed and  the name of the resource map in resources.pri no longer matches the package name in the manifest.</p>
+<p>In the actual message, {package full name} contains the package name that resources.pri must contain.</p>
+<p>To fix this, you need to rebuild resources.pri and the easiest way to do that is  by rebuilding the app's package.</p>
 </td></tr>
 <tr><td>
-<p>“resources.pri”文件不得启用 AutoMerge。</p>
+<p>The "resources.pri" file must not have AutoMerge enabled.</p>
 </td><td>
-<p>MakePRI.exe 支持一个名为 <strong>AutoMerge</strong> 的选项。 <strong>AutoMerge</strong> 的默认值为 <strong>off</strong>。 启用后，<strong>AutoMerge</strong> 在运行时将应用的语言包资源合并到一个 resources.pri 中。 我们建议不要对你打算通过 Windows 应用商店分发的应用执行此操作。 通过 Windows 应用商店分发的应用的 resources.pri 必须位于应用包的根目录中并且必须包含应用支持的所有语言参考。</p>
+<p>MakePRI.exe supports an option called <strong>AutoMerge</strong>. The default value of <strong>AutoMerge</strong> is <strong>off</strong>. When enabled, <strong>AutoMerge</strong> merges an app's  language pack resources into a single resources.pri at runtime. We don't recommend this for apps that you intend to distribute through  the Windows Store. The resources.pri of an app that is distributed through the  Windows Store must be in  the root of the app's package and contain all the language references that the app supports.</p>
 </td></tr>
 <tr><td>
-<p>字符串 {string} 不符合 {number} 个字符的最大长度限制。</p>
+<p>The string {string} failed the max length restriction of {number} characters.</p>
 </td><td>
-<p>请参阅<a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">应用包要求</a>。</p>
-<p>在实际消息中，{string} 替换为有错误的字符串并且 {number} 包含最大长度。</p>
+<p>Refer to the <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">App package requirements</a>.</p>
+<p>In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length.</p>
 </td></tr>
 <tr><td>
-<p>字符串 {string} 不得包含前导空格/尾随空格。</p>
+<p>The string {string} must not have leading/trailing whitespace.</p>
 </td><td>
-<p>应用部件清单 (manifest) 中元素的架构不允许前导空格或尾随空格字符。</p>
-<p>在实际消息中，{string} 替换为有错误的字符串。</p>
-<p>确保 resources.pri 中清单字段的任何本地化值都没有前导空格或尾随空格字符。</p>
+<p>The schema for the elements in the app manifest don't allow leading or trailing white space characters.</p>
+<p>In the actual message, {string} is replaced by the string with the error.</p>
+<p>Make sure that none of the localized values of the manifest fields in resources.pri have leading or trailing white space characters.</p>
 </td></tr>
 <tr><td>
-<p>字符串必须非空（长度大于零）</p>
+<p>The string must be non-empty (greater than zero in length)</p>
 </td><td>
-<p>有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">应用包要求</a>。</p>
+<p>For more info, see <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">App package requirements</a>.</p>
 </td></tr>
 <tr><td>
-<p>“resources.pri”文件中没有指定的默认资源。</p>
+<p>There is no default resource specified in the "resources.pri" file.</p>
 </td><td>
-<p>有关详细信息，请参阅<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">应用资源指南</a>。</p>
-<p>在默认版本配置中，Visual Studio 在生成捆绑包时仅在应用包中包含比例为 200 的图像资源，从而将其他资源放入资源包中。 确保你包含比例为 200 的图像资源或将项目配置为包含你拥有的资源。</p>
+<p>For more info, see <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Guidelines for app resources</a>.</p>
+<p>In the default build configuration,  Visual Studio only includes scale-200 image resources in the app package when generating bundles, putting other resources in the resource package. Make sure  you either include scale-200 image resources or configure your project to include the resources you have.</p>
 </td></tr>
 <tr><td>
-<p>“resources.pri”文件中没有指定的资源值。</p>
+<p>There is no resource value specified in the "resources.pri" file.</p>
 </td><td>
-<p>确保应用清单具有在 resources.pri 中定义的有效资源。</p>
+<p>Make sure that the app manifest has valid resources defined in resources.pri.</p>
 </td></tr>
 <tr><td>
-<p>图像文件 {filename} 必须小于 204800 字节。\*\*</p>
+<p>The image file {filename} must be smaller than 204800 bytes.\*\*</p>
 </td><td>
-<p>减小指示图像的大小。</p>
+<p>Reduce the size of the indicated images.</p>
 </td></tr>
 <tr><td>
-<p>{filename} 文件不能包含反向映射部分。\*\*</p>
+<p>The {filename} file must not contain a reverse map section.\*\*</p>
 </td><td>
-<p>如果反向映射是在调用 makepri.exe 时在 Visual Studio 的 F5 调试期间生成的，通过在生成 pri 文件时运行 makepri.exe（不具有 /m 参数）可删除该反向映射。</p>
+<p>While the reverse map is generated during Visual Studio 'F5 debugging' when calling into makepri.exe, it can be removed by running makepri.exe without the /m parameter when generating a pri file.</p>
 </td></tr>
 <tr><td colspan="2">
-<p>\*\* 指示某个测试已添加到适用于 Windows 8.1 的 Windows 应用认证工具包 3.3 中，并且仅在使用该版本或更高版本的工具包时适用。</p>
+<p>\*\* Indicates that a test was added in the Windows App Certification Kit 3.3 for Windows 8.1 and is only applicable when using the that version of the kit or later.</p>
 </td></tr>
 </table>
 
@@ -475,202 +475,202 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
  
 
-### 品牌验证
+### Branding validation
 
-Windows 应用商店应用应该完整并且功能齐全。 使用默认图像（来自模板或 SDK 示例）的应用会带来很差的用户体验，且无法在应用商店目录中方便地标识。
+Windows Store apps are expected to be complete and fully functional. Apps using the default images (from templates or SDK samples) present a poor user experience and cannot be easily identified in the store catalog.
 
-### 测试详细信息
+### Test Details
 
-该测试将验证应用使用的图像不是 SDK 示例或 Visual Studio 中的默认图像。
+The test will validate if the images used by the app are not default images either from SDK samples or from Visual Studio.
 
-### 更正操作
+### Corrective actions
 
-将默认图像替换为更能区别和代表该应用的图像。
+Replace default images with something more distinct and representative of your app.
 
-## 调试配置测试
+## Debug configuration test
 
-测试应用，确保它不是一个调试版本。
+Test the app to make sure it is not a debug build.
 
-### 背景
+### Background
 
-要通过 Windows 应用商店的认证，应用不得编译为调试版本，且不得引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
+To be certified for the Windows Store, apps must not be compiled for debug and they must not reference debug versions of an executable file. In addition, you must build your code as optimized for your app to pass this test.
 
-### 测试详细信息
+### Test details
 
-测试应用，确保它不是调试版本并且未链接到任何调试框架。
+Test the app to make sure it is not a debug build and is not linked to any debug frameworks.
 
-### 更正操作
+### Corrective actions
 
--   将应用编译为发行版，然后再将它提交到 Windows 应用商店。
--   确保你安装了正确版本的 .NET Framework。
--   确保该应用未链接到框架的调试版本，并使用发布版本构建。 如果此应用包含 .NET 组件，请确保安装了正确的 .NET Framework 版本。
+-   Build the app as a release build before you submit it to the Windows Store.
+-   Make sure that you have the correct version of .NET framework installed.
+-   Make sure the app isn't linking to debug versions of a framework and that it is building with a release version. If this app contains .NET components, make sure that you have installed the correct version of the .NET framework.
 
-## 文件编码测试
+## File encoding test
 
-### UTF-8 文件编码
+### UTF-8 file encoding
 
-### 背景
+### Background
 
-HTML、CSS 和 JavaScript 文件必须使用带有相应字节顺序标记 (BOM) 的 UTF-8 格式进行编码，以便从字节码缓存中获益并避免某些运行时错误情况。
+HTML, CSS, and JavaScript files must be encoded in UTF-8 form with a corresponding byte-order mark (BOM) to benefit from bytecode caching and avoid certain runtime error conditions.
 
-### 测试详细信息
+### Test details
 
-测试应用包的内容，确保它们使用了正确的文件编码。
+Test the contents of app packages to make sure that they use the correct file encoding.
 
-### 更正操作
+### Corrective Action
 
-在 Visual Studio 中打开受影响的文件，并从“文件”****菜单中选择“另存为”****。 选择“保存”****按钮旁边的下拉控件，并选择“编码保存”****。 从“高级”****保存选项对话框中，选择 Unicode（带签名的 UTF-8）选项，并单击“确定”****。
+Open the affected file and select **Save As** from the **File** menu in Visual Studio. Select the drop-down control next to the **Save** button and select **Save with Encoding**. From the **Advanced** save options dialog, choose the Unicode (UTF-8 with signature) option and click **OK**.
 
-## Direct3D 功能级别测试
+## Direct3D feature level test
 
-### Direct3D 功能级别支持
+### Direct3D feature level support
 
-对 Microsoft Direct3D 应用进行测试，以确保它们不会在使用旧版图形硬件的设备上崩溃。
+Tests Microsoft Direct3D apps to ensure that they won't crash on devices with older graphics hardware.
 
-### 后台
+### Background
 
-Windows 应用商店要求使用 Direct3D 的所有应用程序在功能级别 9\-1 图形卡上正确呈现或正常退出。
+Windows Store requires all applications using Direct3D to render properly or fail gracefully on feature level 9\-1 graphics cards.
 
-由于用户可能会在安装应用后更换设备中的图形硬件，因此如果你选择高于 9\-1 的最低功能级别，你的应用必须在启动时检测当前的硬件是否满足最低要求。 如果不满足最低要求，则应用必须向用户显示一条消息，以详细说明 Direct3D 要求。 此外，如果应用下载到不兼容的设备上，应用应当在启动时检测出该问题并向用户显示一条消息，详细说明这些要求。
+Because users can change the graphics hardware in their device after the app is installed, if you choose a minimum feature level higher than 9\-1, your app must detect at launch whether or not the current hardware meets the minimum requirements. If the minimum requirements are not met, the app must display a message to the user detailing the Direct3D requirements. Also, if an app is downloaded on a device with which it is not compatible, it should detect that at launch and display a message to the customer detailing the requirements.
 
-### 测试详细信息
+### Test Details
 
-该测试将验证应用是否在功能级别 9\-1 上准确地呈现。
+The test will validate if the apps render accurately on feature level 9\-1.
 
-### 更正操作
+### Corrective Action
 
-确保你的应用在 Direct3D 功能级别 9\-1 上正确呈现，即使你希望它在更高的功能级别上运行。 有关详细信息，请参阅[针对不同 Direct3D 功能级别开发](http://go.microsoft.com/fwlink/p/?LinkID=253575)。
+Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level. See [Developing for different Direct3D feature levels](http://go.microsoft.com/fwlink/p/?LinkID=253575) for more info.
 
-### Direct3D 暂停后修正
+### Direct3D Trim after suspend
 
-> **注意** 此测试仅适用于面向 Windows 8.1 和更高版本开发的 Windows 应用商店应用。
+> **Note**  This test only applies to Windows Store apps developed for Windows 8.1 and later.
 
-### 后台
+### Background
 
-如果该应用不在其 Direct3D 设备上调用 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346)，则该应用不会释放为其早期 3D 工作分配的内存。 这将增加由于系统内存压力而终止应用的风险。
+If the app does not call [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) on its Direct3D device, the app will not release memory allocated for its earlier 3D work. This increases the risk of apps being terminated due to system memory pressure.
 
-### 测试详细信息
+### Test Details
 
-检查应用是否符合 d3d 要求，并确保应用在 Suspend 回调时调用新的 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API。
+Checks apps for compliance with d3d requirements and ensures that apps are calling a new [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API upon their Suspend callback.
 
-### 更正操作
+### Corrective Action
 
-每当应用即将暂停时应在其 [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) 接口上调用 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API。
+The app should call the [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API on its [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) interface anytime it is about to be suspended.
 
-## 应用功能测试
+## App Capabilities test
 
-### 专用许可范围
+### Special use capabilities
 
-### 背景
+### Background
 
-专用许可范围专用于非常特定的场景。 仅允许公司帐户使用这些功能。
+Special use capabilities are intended for very specific scenarios. Only company accounts are allowed to use these capabilities.
 
-### 测试详细信息
+### Test Details
 
-验证应用是否在声明以下任何功能：
+Validate if the app is declaring any of the below capabilities:
 
 -   EnterpriseAuthentication
 -   SharedUserCertificates
 -   DocumentsLibrary
 
-如果声明了其中任一功能，该测试将向用户显示警告。
+If any of these capabilities are declared, the test will display a warning to the user.
 
-### 更正操作
+### Corrective Actions
 
-如果你的应用不需要特殊的使用功能，请考虑将其删除。 此外，使用这些功能应接受其他板载策略审查。
+Consider removing the special use capability if your app doesn't require it. Additionally, use of these capabilities are subject to additional on-boarding policy review.
 <!--TODO: after migrating dev-packaging, link to [if your app doesn't require it](dev-packaging.app-capability-declarations#special-and-restricted-capabilities)-->
 
-## Windows 运行时元数据验证
+## Windows Runtime metadata validation
 
-### 背景
+### Background
 
-确保随应用发送的组件符合 UWP 类型系统。
+Ensures that the components that ship in an app conform to the UWP type system.
 
-### 测试详细信息
+### Test Details
 
-验证程序包中的 **.winmd** 文件是否符合 UWP 规则。
+Verifies that the **.winmd** files in the package conform to UWP rules.
 
-### 更正操作
+### Corrective Actions
 
--   **ExclusiveTo 属性测试：**确保 UWP 类未实现标记为 ExclusiveTo 其他类的接口。
--   **类型位置测试：**确保所有 UWP 类型的元数据位于在应用包中具有最长命名空间匹配名称的 winmd 文件中。
--   **类型名称区分大小写测试：**确保所有 UWP 类型在应用包中具有不区分大小写的唯一名称。 还要确保没有任何 UWP 类型名称在应用包中用作命名空间名称。
--   **类型名称正确性测试：**确保在全局命名空间或 Windows 顶级命名空间中没有 UWP 类型。
--   **一般元数据正确性测试：**确保用于生成相应类型的编译器符合最新的 UWP 规范。
--   **属性测试：**确保 UWP 类上的所有属性都具有 get 方法（set 方法可选）。 对于 UWP 类型上的所有属性，确保 get 方法返回值的类型与 set 方法输入参数的类型匹配。
+-   **ExclusiveTo attribute test:** Ensure that UWP classes don't implement interfaces that are marked as ExclusiveTo another class.
+-   **Type location test:** Ensure that the metadata for all UWP types is located in the winmd file that has the longest namespace-matching name in the app package.
+-   **Type name case-sensitivity test:** Ensure that all UWP types have unique, case-insensitive names within your app package. Also ensure that no UWP type name is also used as a namespace name within your app package.
+-   **Type name correctness test:** Ensure there are no UWP types in the global namespace or in the Windows top-level namespace.
+-   **General metadata correctness test:** Ensure that the compiler you are using to generate your types is up to date with the UWP specifications.
+-   **Properties test:** ensure that all properties on a UWP class have a get method (set methods are optional). Ensure that the type of the get method return value matches the type of the set method input parameter, for all properties on UWP types.
 
-## 程序包健全性测试
+## Package Sanity tests
 
-### 平台的相应文件测试
+### Platform appropriate files test
 
-安装混合二进制文件的应用可能崩溃或者不能正确运行，具体取决于用户的处理器体系结构。
+Apps that install mixed binaries may crash or not run correctly depending upon the user’s processor architecture.
 
-### 背景
+### Background
 
-此测试验证应用包中的二进制文件，确定是否存在体系结构冲突。 应用包不得包含无法在部件清单 (manifest) 指定的处理器体系结构上使用的二进制文件。 包含不受支持的二进制文件可能会导致应用发生崩溃，或造成应用包大小出现不必要的增加。
+This test validates the binaries in an app package for architecture conflicts. An app package should not include binaries that can't be used on the processor architecture specified in the manifest. Including unsupported binaries can lead to your app crashing or an unnecessary increase in the app package size.
 
-### 测试详细信息
+### Test Details
 
-在与应用程序包处理器体系结构声明交叉引用时，验证 PE 标头中每个文件的“位元”是否适当。
+Validates that each file's "bitness" in the PE header is appropriate when cross-referenced with the app package processor architecture declaration
 
-### 更正操作
+### Corrective Action
 
-遵循以下指南，确保你的应用包仅包含应用部件清单 (manifest) 中指定的体系结构支持的文件。
+Follow these guidelines to ensure that your app package only contains files supported by the architecture specified in the app manifest:
 
--   如果应用的目标处理器体系结构为非特定处理器类型，则应用包不能包含 x86、x64 或 ARM 二进制文件或图像类型文件。
+-   If the Target Processor Architecture for your app is Neutral processor Type, the app package cannot contain x86, x64, or ARM binary or image type files.
 
--   如果应用的目标处理器体系结构为 x86 处理器类型，则应用包必须仅包含 x86 二进制文件或图像类型文件。 如果应用包包含 x64 或 ARM 二进制文件或图像类型文件，将无法通过这项测试。
+-   If the Target Processor Architecture for your app is x86 processor type, the app package must only contain x86 binary or image type files. If the package contains x64 or ARM binary or image types, it will fail the test.
 
--   如果应用的目标处理器体系结构为 x64 处理器类型，则应用包必须包含 x64 二进制文件或图像类型文件。 请注意，在这种情况下，应用包还可以包含 x86 文件，但主要应用体验应使用 x64 二进制文件。
+-   If the Target Processor Architecture for your app is x64 processor type, the app package must contain x64 binary or image type files. Note that in this case the package can also include x86 files, but the primary app experience should utilize the x64 binary.
 
-    但是，如果应用包包含 ARM 二进制文件或图像类型文件，或者仅包含 x86 二进制文件或图像类型文件，将无法通过这项测试。
+    However, if the package contains ARM binary or image type files, or only contains x86 binaries or image type files, it will fail the test.
 
--   如果应用的目标处理器体系结构为 ARM 处理器类型，则应用包必须仅包含 ARM 二进制文件或图像类型文件。 如果应用包包含 x64 或 x86 二进制文件或图像类型文件，将无法通过这项测试。
+-   If the Target Processor Architecture for your app is ARM processor type, the app package must only contain ARM binary or image type files. If the package contains x64 or x86 binary or image type files, it will fail the test.
 
-### 支持的目录结构测试
+### Supported Directory Structure test
 
-验证应用程序未创建长度超过 MAX\-PATH 的子目录来作为安装的一部分。
+Validates that applications are not creating subdirectories as part of installation that are longer than MAX\-PATH.
 
-### 后台
+### Background
 
-操作系统组件（包括 Trident、WWAHost 等）内部限制在文件系统路径的 MAX\-PATH，对于较长的路径将不会正确运行。
+OS components (including Trident, WWAHost, etc.) are internally limited to MAX\-PATH for file system paths and will not work correctly for longer paths.
 
-### 测试详细信息
+### Test Details
 
-验证应用安装目录中没有超过 MAX\-PATH 的路径。
+Verifies that no path within the app install directory exceeds MAX\-PATH.
 
-### 更正操作
+### Corrective Action
 
-使用较短的目录结构和/或文件名称。
+Use a shorter directory structure, and or file name.
 
-## 资源使用测试
+## Resource Usage test
 
-### WinJS 后台任务测试
+### WinJS Background Task test
 
-WinJS 后台任务测试可确保 JavaScript 应用具有适当的 close 语句，因此应用不消耗电池电量。
+WinJS background task test ensures that JavaScript apps have the proper close statements so apps don’t consume battery.
 
-### 后台
+### Background
 
-具有 JavaScript 后台任务的应用在后台任务中需要调用 Close() 作为最后的语句。 不执行此操作的应用可能会使系统无法返回到连接的待机模式，并导致消耗电池电量。
+Apps that have JavaScript background tasks need to call Close() as the last statement in their background task. Apps that do not do this could keep the system from returning to connected standby mode and result in draining the battery.
 
-### 测试详细信息
+### Test Details
 
-如果应用没有清单中指定的后台任务文件，该测试将会通过。 否则，测试将解析应用包中指定的 JavaScript 后台任务文件，并查找 Close() 语句。 如果找到，测试将通过；否则测试将失败。
+If the app does not have a background task file specified in the manifest, the test will pass. Otherwise the test will parse the JavaScript background task file that is specified in the app package, and look for a Close() statement. If found, the test will pass; otherwise the test will fail.
 
-### 更正操作
+### Corrective Action
 
-更新后台 JavaScript 代码以正确调用 Close()。
+Update the background JavaScript code to call Close() correctly.
 
-> **注意** 本文适用于编写 UWP 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
- 
+> **Note**  This article is for Windows 10 developers writing UWP apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

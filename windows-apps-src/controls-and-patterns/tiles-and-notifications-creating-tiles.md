@@ -1,28 +1,25 @@
 ---
 author: mijacobs
-Description: "磁贴是应用在“开始”菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的通用 Windows 平台 (UWP) 应用项目时，它将包含显示应用名称和徽标的默认磁贴。"
-title: "磁贴"
+Description: A tile is an app's representation on the Start menu. Every app has a tile. When you create a new Universal Windows Platform (UWP) app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo.
+title: Tiles
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d3fe62d4de00c42079d62d105acdbb21e296ba5f
-ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
 
 ---
+# Tiles for UWP apps
 
-# 适用于 UWP 应用的磁贴
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
+A *tile* is an app's representation on the Start menu. Every app has a tile. When you create a new Universal Windows Platform (UWP) app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo. Windows displays this tile when your app is first installed. After your app is installed, you can change your tile's content through notifications; for example, you can change the tile to communicate new information to the user, such as news headlines, or the subject of the most recent unread message.
 
-
-
-
-*磁贴*是应用在“开始”菜单上的表示形式。 每个应用都有一个磁贴。 在 Microsoft Visual Studio 中创建新的通用 Windows 平台 (UWP) 应用项目时，它将包含显示应用名称和徽标的默认磁贴。 应用首次安装时，Windows 将显示此磁贴。 应用安装后，可通过通知更改磁贴内容，例如，可更改磁贴以将新信息传递给用户（如头条新闻或最近未读邮件的主题）。
-
-## <span id="Configure_the_default_tile"></span><span id="configure_the_default_tile"></span><span id="CONFIGURE_THE_DEFAULT_TILE"></span>配置默认磁贴
+## Configure the default tile
 
 
-当在 Visual Studio 中创建新项目时，它将创建显示应用名称和徽标的简单默认磁贴。
+When you create a new project in Visual Studio, it creates a simple default tile that displays your app's name and logo.
 
 ```XML
   <Applications>
@@ -41,23 +38,23 @@ ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
   </Applications>
 ```
 
-应更新以下项：
+There are a few items you should update:
 
--   DisplayName：将要在磁贴上显示的名称替换此值。
--   ShortName：由于磁贴上容纳显示名称的空间有限，我们也建议指定 ShortName，以确保应用名称不会被截断。
--   徽标图像：
+-   DisplayName: Replace this value with the name you want to display on your tile.
+-   ShortName: Because there is limited room for your display name to fit on tiles, we recommend that you to specify a ShortName as well, to make sure your app's name doesn’t get truncated.
+-   Logo images:
 
-    应用自己的图像替换这些图像。 可选择为不同的缩放提供图像，但无需为所有缩放提供。 若要确保应用在一系列设备上具有不俗的外观，我们建议针对每个图像提供其 100%、200% 和 400% 缩放的版本。
+    You should replace these images with your own. You have the option of supplying images for different visual scales, but you are not required to supply them all. To ensure that you app looks good on a range of devices, we recommend that you provide 100%, 200%, and 400% scale versions of each image.
 
-    缩放的图像应遵循此命名约定： 
+    Scaled images follow this naming convention: testing
     
-    *&lt;image name&gt;*.scale-*&lt;scale factor&gt;*.*&lt;image file extension&gt;*  
-    
-    例如：SmallLogo.scale-100.png
+    *&lt;image name&gt;*.scale-*&lt;scale factor&gt;*.*&lt;image file extension&gt;* 
 
-    在引用图像时，将其引用为 *&lt;image name&gt;*.*&lt;image file extension&gt;*（在此示例中是“SmallLogo.png”）。 系统将自动从你提供的图像中为设备选择相应的缩放图像。
+    For example: SmallLogo.scale-100.png
 
--   虽然不是必须的，但我们强烈建议你提供适用于宽磁贴和大磁贴的徽标，以便用户可以将应用磁贴大小调整到这些大小。 若要提供这些附加图像，可创建 `DefaultTile` 元素并使用 `Wide310x150Logo` 和 `Square310x310Logo` 属性指定附加图像：
+    When you refer to the image, you refer to it as *&lt;image name&gt;*.*&lt;image file extension&gt;* ("SmallLogo.png" in this example). The system will automatically select the appropriate scaled image for the device from the images you've provided.
+
+-   You don't have to, but we highly recommend supplying logos for wide and large tile sizes so that the user can resize your app's tile to those sizes. To provide these additional images, you create a `DefaultTile` element and use the `Wide310x150Logo` and `Square310x310Logo` attributes to specify the additional images:
 ```    XML
   <Applications>
         <Application Id="App"
@@ -79,34 +76,34 @@ ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
       </Applications>
 ```
 
-## <span id="Use_notifications_to_customize_your_tile"></span><span id="use_notifications_to_customize_your_tile"></span><span id="USE_NOTIFICATIONS_TO_CUSTOMIZE_YOUR_TILE"></span>使用通知自定义磁贴
+## Use notifications to customize your tile
 
 
-应用安装后，可使用通知自定义磁贴。 可在首次启动应用或响应某个事件（如推送通知）时执行此操作。
+After your app is installed, you can use notifications to customize your tile. You can do this the first time your app launches or in response to some event, such as a push notification.
 
-1.  创建描述磁贴的 XML 负载（以 [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) 的形式）。
+1.  Create an XML payload (in the form of an [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173)) that describes the tile.
 
-    -   Windows 10 引入了可供你使用的新自适应磁贴架构。 有关说明，请参阅[自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)。 有关架构信息，请参阅[自适应磁贴架构](tiles-and-notifications-adaptive-tiles-schema.md)。 
+    -   Windows 10 introduces a new adaptive tile schema you can use. For instructions, see [Adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md). For the schema, see the [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md). 
 
-    -   可使用 Windows 8.1 磁贴模板定义磁贴。 有关详细信息，请参阅[创建磁贴和锁屏提醒 (Windows 8.1)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260)。
+    -   You can use the Windows 8.1 tile templates to define your tile. For more info, see [Creating tiles and badges (Windows 8.1)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260).
 
-2.  创建磁贴通知对象并将其传递到所创建的 [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173)。 通知对象分为以下几类：
-    -   可立即更新磁贴的 [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) 对象。
-    -   在未来某个时间更新磁贴的 [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) 对象。
+2.  Create a tile notification object and pass it the [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) you created. There are several types of notification objects:
+    -   A [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) object for updating the tile immediately.
+    -   A [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) object for updating the tile at some point in the future.
 
-3.  使用 [**Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) 创建 [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) 对象。
-4.  调用 [**TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) 方法，并将其传递到在步骤 2 中创建的磁贴通知对象。
-
- 
+3.  Use the [**Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) to create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) object.
+4.  Call the [**TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) method and pass it the tile notification object you created in step 2.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

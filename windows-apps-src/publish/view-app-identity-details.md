@@ -1,63 +1,63 @@
 ---
 author: jnHs
-Description: "当使用 Windows 开发人员中心仪表板中的应用时，可以通过 Windows 应用商店查看与分配给它的唯一标识符相关的详细信息，并获取到应用的应用商店一览的链接。"
-title: "查看应用标识的详细信息"
+Description: When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Windows Store and get a link to your app's Store listing.
+title: View app identity details
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 translationtype: Human Translation
 ms.sourcegitcommit: a25d87556bb85718f818af5b586f54e6985aaaa4
-ms.openlocfilehash: f00d817616d473ef220ebc1817c2bf9207a7aea0
+ms.openlocfilehash: dc61971865a05e1de17cdcf55ab495fee4917b74
 
 ---
 
-# 查看应用标识的详细信息
+# View app identity details
 
 
-当使用 Windows 开发人员中心仪表板中的应用时，可以通过 Windows 应用商店查看与分配给它的唯一标识符相关的详细信息，并获取到应用的应用商店一览的链接。
+When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Windows Store and get a link to your app's Store listing.
 
-若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的“应用管理”****。 单击“应用标识”****查看这些详细信息。
+To find this info, navigate to one of your apps, then expand **App management** in the left navigation menu. Click **App identity** to view these details.
 
-> **注意** 你需要拥有应用的[保留名称](create-your-app-by-reserving-a-name.md)才能查看大部分标识的详细信息。
+> **Note**  You need to have a [reserved name](create-your-app-by-reserving-a-name.md) for your app in order to see most of these identity details.
 
-## 要包含在 APPX 清单中的值
-
-
-以下值必须包含在 APPX 清单中。 如果你使用 Microsoft Visual Studio 生成程序包，并使用与你的开发人员帐户关联的相同 Microsoft 帐户登录，则会自动包含这些详细信息。 如果手动生成程序包，则需要将这些信息添加到程序包中。
-
--   **程序包/标识/名称**
--   **程序包/标识/发布者**
-
-有关详细信息，请参阅[程序包清单架构参考](https://msdn.microsoft.com/library/windows/apps/br211473)中的 [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441)。
-
-同时，这些元素声明应用的标识、建立了所有程序包所属于的“程序包系列”。 单个程序包将具有其他详细信息，如体系结构和版本。
-
-## 程序包系列的其他值
+## Values to include in your appx manifest
 
 
-以下值是指应用的程序包系列的其他值，但不包含在清单内。
+The following values must be included in your appx manifest. If you are using Microsoft Visual Studio to build your packages, and are signed in with the same Microsoft account that you have associated with your developer account, these details are included automatically. If you're building your package manually, you'll need to add these in.
 
--   **程序包系列名称 (PFN)**：此值与某些 Windows API 结合使用。
--   **程序包 SID**：需要该值才能向应用发送 WNS 通知。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](https://msdn.microsoft.com/library/windows/apps/mt187203)。
+-   **Package/Identity/Name**
+-   **Package/Identity/Publisher**
 
-## 链接到应用一览
+For more info, see [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441) in the [package manifest schema reference](https://msdn.microsoft.com/library/windows/apps/br211473).
 
-可以共享应用的页面链接来帮助客户在应用商店中查找该应用。 此链接采用格式 **`https://www.microsoft.com/store/apps/<your app's Store ID>`**。
+Together, these elements declare the identity of your app, establishing the "package family" to which all of its packages belong. Individual packages will have additional details, such as architecture and version.
 
-> **注意** 此 URL 适用于你的应用可在其中提供的任何操作系统版本。 你还可能会看到适用于 Windows 8.1 及更早版本和/或 Windows Phone 8.1 及更早版本的其他链接，它们仅适用于指定的操作系统版本。
+## Additional values for package family
 
-当客户单击此链接时，它将打开基于 Web 的应用一览页。 如果你的应用适用于客户的 Windows 设备，应用商店应用还将启动并显示你的应用一览。
 
-你的应用的**应用商店 ID** 也会在本部分中显示。 此应用商店 ID 可以用来[生成应用商店锁屏提醒](http://go.microsoft.com/fwlink/p/?LinkId=534236)或标识你的应用。
+The following values are additional values that refer to your app's package family, but are not included in your manifest.
 
- 
+-   **Package Family Name (PFN)**: This value is used with certain Windows APIs.
+-   **Package SID**: You'll need this value to send WNS notifications to your app. For more info, see [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/library/windows/apps/mt187203).
+
+## Link to your app's listing
+
+The link to your app's page can be shared to help your customers find the app in the Store. This link is in the format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**.
+
+> **Note**  This URL will work for any OS version on which your app is available. You may also see additional links for Windows 8.1 and earlier and/or Windows Phone 8.1 and earlier, which will work only on the specified OS versions.
+
+When a customer clicks this link, it will open the web-based listing page for your app. If your app is available for the customer's Windows device, the Store app will also launch and display your app's listing.
+
+Your app's **Store ID** is also shown in this section. This Store ID can be used to [generate Store badges](http://go.microsoft.com/fwlink/p/?LinkId=534236) or otherwise identify your app.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

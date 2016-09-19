@@ -1,79 +1,81 @@
 ---
 author: jnHs
-Description: "如果之前已为你的 Microsoft Advertising 收入设置 pubCenter 付款帐户，则从 2016 年 4 月1 日开始，该帐户将不再用于付款。 现在将通过你的开发人员中心付款帐户进行付款。"
-title: "pubCenter-DevCenter 付款帐户和税务资料整合"
+Description: If you had previously set up a pubCenter payout account for your Microsoft Advertising earnings, that account will no longer be used for payments as of April 1st, 2016. Your payments will now be made through your Dev Center payout account.
+title: pubCenter-DevCenter payout account and tax profile consolidation
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
+ms.sourcegitcommit: bcb57cd9418ae5bd5d7779a1b442d9a236d3eae6
+ms.openlocfilehash: 9b97ab818fdc14d0354e5e9ba4809ac3401d6053
 
 ---
 
-# pubCenter-DevCenter 付款帐户和税务资料整合
+# pubCenter-DevCenter payout account and tax profile consolidation
 
 
-如果之前已为你的 Microsoft Advertising 收入设置 pubCenter 付款帐户，则从 2016 年 4 月1 日开始，该帐户将不再用于付款。 现已通过你的开发人员中心付款帐户付款。
+If you had previously set up a pubCenter payout account for your Microsoft Advertising earnings, that account will no longer be used for payments as of April 1st, 2016. Payments are now made through your Dev Center payout account.
 
-若要确保按时提交所有应付款项，请登录到你的开发人员中心仪表板，并确认你的[付款帐户和税务资料](setting-up-your-payout-account-and-tax-forms.md)已正确设置并且是最新的。
+> **Important** As of October 1st, 2016, you will no longer have access to the pubCenter dashboard. Please visit your [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/apps/overview) for all ad management and reporting. If you haven’t linked any of your pubCenter accounts to a Dev Center account, please do so immediately. For more info, see [pubCenter-Dev Center integration](pubcenter-dev-center-integration.md).
 
-> **重要提示** 如果你从未在开发人员中心中设置你的付款帐户或税务资料，需要立即执行此操作。 有关详细信息，请参阅[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)。
+To ensure any payments due are submitted on time, please sign in to your Dev Center dashboard and confirm that your [payout account and tax profile](setting-up-your-payout-account-and-tax-forms.md) are set up correctly and are up to date.
 
-有关开发人员中心中的付款的详细信息，请参阅[付款摘要](payout-summary.md)。 有关在不同国家和地区用于付款的货币的信息，请参阅[开发者帐户和应用提交市场](account-types-locations-and-fees.md#account_markets)。
+> **Important**  If you have never set up your payout account or tax profile in Dev Center, you’ll need to do that in order to receive payments. For more info, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
 
-我们还建议查看以下常见问题以了解有关特定方案的详细信息。
+For more info about payments in Dev Center, see [Payout summary](payout-summary.md). For info about currencies used for payouts in different countries and regions, see [Developer account and app-submission markets](account-types-locations-and-fees.md#account_markets).
 
-## 常见问题
+We also suggest reviewing the FAQ below for more info about specific scenarios.
 
-### 我在同一国家/地区使用相同的 Microsoft 帐户注册 pubCenter 和 DevCenter 帐户。 我将如何收到我的金额？
+## Frequently asked questions
 
-将向在开发人员中心中设置的付款帐户（PayPal 或银行帐户）支付你的 Microsoft Advertising 收入。
+**I have my pubCenter and DevCenter accounts registered with the same Microsoft account in the same region/country. How will I receive my money?**
 
-### 我在不同的国家/地区使用相同的 Microsoft 帐户注册 pubCenter 和 DevCenter 帐户。 我将如何收到我的金额？
+Your Microsoft Advertising earnings will be paid to your the payout account (PayPal or bank account) that you set up in Dev Center.
 
-将向在开发人员中心中设置的付款帐户（PayPal 或银行帐户）支付你的 Microsoft Advertising 收入。 付款金额将转换为你的开发人员中心帐户所在国家或地区的货币。
+**I have my pubCenter and DevCenter accounts registered with the same Microsoft Account but in different regions/countries. How will I receive my money?**
 
-### 我通常将我的 pubCenter 帐户链接到我的 DevCenter 帐户。 我将在哪里收到我的 Microsoft Advertising 收入？
+Your Microsoft Advertising earnings will be paid to the payout account (PayPal or bank account) that you set up in Dev Center. The payout amount will be converted to the currency of your Dev Center account country or region.
 
-你将从在开发人员中心中设置的付款帐户（PayPal 或银行帐户）的所有链接的 pubCenter 帐户中收到 Microsoft Advertising 收入的单项付款。 付款金额将转换为你的开发人员中心帐户所在国家或地区的货币。
+**I have manually linked my pubCenter accounts to my DevCenter accounts. Where will I receive my Microsoft Advertising earnings?**
 
-### 我已使用同一发布者注册多个 pubCenter 帐户。 我将如何收到所有这些帐户的收入？
+You will receive a single payout for the Microsoft Advertising earnings from all your linked pubCenter accounts in the payout account (PayPal or bank account) that you set up in Dev Center. The payout amount will be converted to the currency of your Dev Center account country or region.
 
-你将从在开发人员中心中设置的付款帐户（PayPal 或银行帐户）的所有链接的 pubCenter 帐户中收到 Microsoft Advertising 收入的单项付款。 付款金额将转换为你的开发人员中心帐户所在国家或地区的货币。
+**I had multiple pubCenter accounts registered with the same publisher. How will I receive my earnings for all these accounts?**
 
-### 我已在 pubCenter 中使用不同的税务资料注册多个 pubCenter 帐户。 为什么在 DevCenter 中只能看到一个税务资料？
+You will receive a single payout for the Microsoft Advertising earnings from all your linked pubCenter accounts in the payout account (PayPal or bank account) that you set up in Dev Center. The payout amount will be converted to the currency of your Dev Center account country or region.
 
-你的 DevCenter 帐户具有将用于所有付款的单个税务资料。 请访问[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)以了解如何在开发人员中心中设置和管理付款以及税收信息。
+**I had multiple pubCenter accounts registered with different tax profiles in pubCenter. Why do I only see one tax profile in DevCenter?**
 
-### 为什么将我的付款转换为其他货币？
+Your DevCenter account has a single tax profile that will be used for all your payouts. Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn about setting up and managing your payment and tax information in Dev Center.
 
-将向在开发人员中心中设置的付款帐户（PayPal 或银行帐户）转入和支付你的 Microsoft Advertising 收入。 如果你的 pubCenter 帐户所在国家/地区与你的开发人员中心帐户所在国家/地区不匹配，你将使用与你的开发人员中心帐户所在国家/地区相关联的货币支付。
+**Why was my payout converted to a different currency?**
 
-### 为什么我的付款会发送到其他 PayPal 或银行帐户？
+Your Microsoft Advertising earnings will be converted and paid to the payout account (PayPal or bank account) that you set up in Dev Center . If your pubCenter account country did not match your Dev Center account country, you will be paid in the currency associated with your Dev Center account country.
 
-如果你在开发人员中心和 pubCenter 中设置了其他付款帐户（PayPal 或银行帐户），可能会发生这种情况。 从 2016 年 4 月 1 日开始，将向在开发人员中心中设置的付款帐户支付所有 Microsoft Advertising 付款。
+**Why was my payout sent to a different PayPal or bank account?**
 
-### 为什么这个月没有收到我的 Microsoft Advertising 付款？
+This can happen if you had set up different payout accounts (PayPal or bank accounts) in Dev Center and pubCenter. As of April 1st, 2016, all Microsoft Advertising payouts will be made to the payout account that you set up in Dev Center.
 
-这通常由下列一个或多个原因引起：
+**Why didn’t I receive my Microsoft Advertising payout this month?**
 
--   未在开发人员中心中正确设置你的[付款帐户和税务资料详细信息](setting-up-your-payout-account-and-tax-forms.md)。
--   你的 pubCenter 帐户尚未[链接到你的开发人员中心帐户](pubcenter-dev-center-integration.md)。
+This is usually due to one or more of the following reasons:
 
-### 我如何查看将在 DevCenter 中用于付款的付款帐户和税务资料？
+-   Your [payout account and tax profile details](setting-up-your-payout-account-and-tax-forms.md) were not set up correctly in Dev Center.
+-   Your pubCenter account has not been [linked to your Dev Center account](pubcenter-dev-center-integration.md).
 
-请访问[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)以了解如何在开发人员中心中查看（和在必要时编辑）付款以及税收信息。
+**How can I check the payout account and tax profile that will be used for payout in DevCenter?**
 
-### 我仍会在 pubCenter 中看到我的税务资料和付款帐户信息。 这些信息是否将用于我的付款？
+Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn how to view (and edit if necessary) your payment and tax information in Dev Center.
 
-否，从 2016 年 4 月 1 日开始，你的 pubCenter 付款帐户和税务资料信息将不再用于付款。 请访问[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)以了解如何在开发人员中心中设置和管理付款以及税收信息。
+**I still see my tax profile and payout account information in pubCenter. Will these be used for my payout?**
 
-### 我是否仍可以在 pubCenter 中管理我的税务资料和付款帐户信息？
+No, your pubCenter payout account and tax profile information will no longer be used for payments starting April 1st, 2016. Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn how to set up and manage your payment and tax information in Dev Center.
 
-否，从 2016 年 4 月 1 日起，你的 pubCenter 付款帐户和税务资料信息将不再用于付款。 请访问[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)以了解如何在开发人员中心中设置和管理付款以及税收信息。
+**Can I still manage my tax profile and payout account information in pubCenter?**
 
-### 如果我需要相关付款帮助，我可以联系谁？
+No, your pubCenter payout account and tax profile information will no longer be used for payments as of April 1st, 2016. Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn how to set up and manage your payment and tax information in Dev Center.
 
-有关任何问题或咨询，请打开[支持票据](http://go.microsoft.com/fwlink/p/?LinkId=733342)。
+**If I need help with my payouts, whom do I contact?**
+
+For any questions or inquiries, please open a [support ticket](http://go.microsoft.com/fwlink/p/?LinkId=733342).
 
  
 
@@ -81,10 +83,6 @@ ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

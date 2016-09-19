@@ -1,190 +1,190 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。"
-title: "平移"
+Description: Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport. Examples of views include the folder structure of a computer, a library of documents, or a photo album.
+title: Panning
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 45a2d3cb8cd1db1b138d62b7d6525ed7077207b0
+ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
 
 ---
 
-# 平移指南
+# Guidelines for panning
 
-平移或滚动允许用户在单个视图中导航，以显示在视口内不适合的视图内容。 示例视图包括计算机的文件夹结构、文档库或相册。
+Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport. Examples of views include the folder structure of a computer, a library of documents, or a photo album.
 
-**重要的 API**
+**Important APIs**
 
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
 
-## 应做事项和禁止事项
+## Dos and don'ts
 
 
-**平移指示器和滚动条**
+**Panning indicators and scroll bars**
 
--   在将内容加载到你的应用之前，确保可以进行平移/滚动。
+-   Ensure panning/scrolling is possible before loading content into your app.
 
--   显示平移指示器和滚动条以提供位置和大小提示。 如果你提供自定义导航功能，则隐藏它们。
+-   Display panning indicators and scroll bars to provide location and size cues. Hide them if you provide a custom navigation feature.
 
-    **注意** 与标准滚动条不同，平移指示器只是为了提供信息而已。 它们并不会向输入设备显示，因此无法采用任何方式对它们进行操作。
+    **Note**  Unlike standard scroll bars, panning indicators are purely informative. They are not exposed to input devices and cannot be manipulated in any way.
 
      
 
-**单轴平移（一维溢出）**
+**Single-axis panning (one-dimensional overflow)**
 
--   对于超出一条视口边界（垂直或水平）的内容区域使用单轴平移。
+-   Use one-axis panning for content regions that extend beyond one viewport boundary (vertical or horizontal).
 
-    -   用于一维项列表的垂直平移。
-    -   用于项网格的水平平移。
--   如果用户必须在吸附点之间平移和停止，则请勿使用具有单轴平移的强制吸附点。 强制吸附点确保用户将停在某个吸附点处。 转而使用邻近吸附点。
+    -   Vertical panning for a one-dimensional list of items.
+    -   Horizontal panning for a grid of items.
+-   Don’t use mandatory snap-points with single-axis panning if a user must be able to pan and stop between snap-points. Mandatory snap-points guarantee that the user will stop on a snap-point. Use proximity snap-points instead.
 
-**自由平移（二维溢出）**
+**Freeform panning (two-dimensional overflow)**
 
--   对于超出两条视口边界（垂直和水平）的内容区域使用双轴平移。
+-   Use two-axis panning for content regions that extend beyond both viewport boundaries (vertical and horizontal).
 
-    -   对于用户想在多个方向移动的非结构化内容，覆盖默认围栏行为并使用自由平移。
--   自由平移通常适用于在图像或地图内导航。
+    -   Override the default rails behavior and use freeform panning for unstructured content where the user is likely to move in multiple directions.
+-   Freeform panning is typically suited to navigating within images or maps.
 
-**分页视图**
+**Paged view**
 
--   当内容由分散的元素组成或者你想显示整个元素时，可使用强制对齐点。 这可能包括书籍或杂志、一列项或单个图像的多个页面。
+-   Use mandatory snap-points when the content is composed of discrete elements or you want to display an entire element. This can include pages of a book or magazine, a column of items, or individual images.
 
-    -   吸附点应该放置在每个逻辑边界处。
-    -   应通过调整大小或缩放来使每个元素适合视图。
+    -   A snap-point should be placed at each logical boundary.
+    -   Each element should be sized or scaled to fit the view.
 
-**逻辑点和关键点**
+**Logical and key points**
 
--   如果内容中存在用户可能停止的关键点或逻辑点，则使用邻近吸附点。 例如，节标题。
+-   Use proximity snap-points if there are key points or logical places in the content that a user will likely stop. For example, a section header.
 
--   如果定义了最大和最小大小限制或边界，则使用视觉反馈演示用户何时达到或超过这些边界。
+-   If maximum and minimum size constraints or boundaries are defined, use visual feedback to demonstrate when the user reaches or exceeds those boundaries.
 
-**链接嵌入或嵌套的内容**
+**Chaining embedded or nested content**
 
--   将单轴平移（通常为水平方向）和列布局用于基于文本和网格的内容。 在这些情况下，内容通常从列到列自然地环绕和流动，并在整个 Windows 应用商店应用中保持易发现的一致的用户体验。
+-   Use single-axis panning (typically horizontal) and column layouts for text and grid-based content. In these cases, content typically wraps and flows naturally from column to column and keeps the user experience consistent and discoverable across Windows Store apps.
 
--   不要使用可平移的嵌入式区域来显示文本或项列表。 因为平移指示器和滚动条仅在区域内检测到输入触摸时显示，而这不是一种直观或易发现的用户体验。
+-   Don't use embedded pannable regions to display text or item lists. Because the panning indicators and scroll bars are displayed only when the input contact is detected within the region, it is not an intuitive or discoverable user experience.
 
--   如果平移方向相同，请不要链接或将一个可平移区域放置在另一个可平移区域之内，如此处所示。 这可能会导致达到子区域的边界时无意中平移父区域。 考虑使平移轴垂直。
+-   Don't chain or place one pannable region within another pannable region if they both pan in the same direction, as shown here. This can result in the parent area being panned unintentionally when a boundary for the child area is reached. Consider making the panning axis perpendicular.
 
-    ![演示与其容器沿同一方向滚动的嵌入式可平移区域的图像。](images/scrolling-embedded3.png)
+    ![image demonstrating an embedded pannable area that scrolls in the same direction as its container.](images/scrolling-embedded3.png)
 
-## 其他使用指南
+## Additional usage guidance
 
 
-与使用鼠标滚动类似，通过一个或多个手指轻扫或滑动，以使用触控进行平移。 平移交互与滚动鼠标滚轮或滑动滚动框而不是单击滚动条最为相似。 除了在 API 中进行区别，或受到特定于设备的 Windows UI 要求以为，我们将两种交互都称为平移。
+Panning with touch, by using a swipe or slide gesture with one or more fingers, is like scrolling with the mouse. The panning interaction is most similar to rotating the mouse wheel or sliding the scroll box, rather than clicking the scroll bar. Unless a distinction is made in an API or required by some device-specific Windows UI, we simply refer to both interactions as panning.
 
-根据输入设备的不同，用户使用以下方式之一在可平移区域内进行平移：
+Depending on the input device, the user pans within a pannable region by using one of these:
 
--   使用鼠标、触摸板或主动笔/触笔单击滚动箭头、拖动滚动框或在滚动条内单击。
--   使用鼠标的滚轮按钮可模拟拖动滚动框。
--   扩展按钮（XBUTTON1 和 XBUTTON2）（如果鼠标支持）。
--   使用键盘箭头键可模拟拖动滚动框，使用页面按键可模拟在滚动条内单击。
--   使用触摸、触摸板或主动笔/触笔按所需方向滑动或轻扫手指。
+-   A mouse, touchpad, or active pen/stylus to click the scroll arrows, drag the scroll box, or click within the scroll bar.
+-   The wheel button of the mouse to emulate dragging the scroll box.
+-   The extended buttons (XBUTTON1 and XBUTTON2), if supported by the mouse.
+-   The keyboard arrow keys to emulate dragging the scroll box or the page keys to emulate clicking within the scroll bar.
+-   Touch, touchpad, or passive pen/stylus to slide or swipe the fingers in the desired direction.
 
-滑动涉及按平移方向缓慢移动手指。 这将导致一对一的关系，其中内容会随着手指以相同的速度和距离进行平移。 轻扫涉及迅速滑动并抬起手指，将导致对平移动画应用以下物理情景：
+Sliding involves moving the fingers slowly in the panning direction. This results in a one-to-one relationship, where the content pans at the same speed and distance as the fingers. Swiping, which involves rapidly sliding and lifting the fingers, results in the following physics being applied to the panning animation:
 
--   减速（延时）：抬起手指导致平移开始减速。 这类似于滑动到一个斜面上的挡块。
--   吸收：在减速期间，如果达到吸附点或内容区域边界，则平移动量导致轻微向后弹的效果。
+-   Deceleration (inertia): Lifting the fingers causes panning to start decelerating. This is similar to sliding to a stop on a slippery surface.
+-   Absorption: Panning momentum during deceleration causes a slight bounce-back effect if either a snap point or a content area boundary is reached.
 
-**平移类型**
+**Types of panning**
 
-Windows 8 支持三种类型的平移：
+Windows 8 supports three types of panning:
 
--   单轴 - 仅支持一个方向（水平或垂直）的平移。
--   围栏 - 支持所有方向的平移。 但是，用户超过特定方向的距离阈值后，平移限制在该轴范围内。
--   任意 - 支持所有方向的平移。
+-   Single axis - panning is supported in one direction only (horizontal or vertical).
+-   Rails - panning is supported in all directions. However, once the user crosses a distance threshold in a specific direction, then panning is restricted to that axis.
+-   Freeform - panning is supported in all directions.
 
-**平移 UI**
+**Panning UI**
 
-平移的交互体验对于每种输入装置有所不同，但提供类似的功能。
+The interaction experience for panning is unique to the input device while still providing similar functionality.
 
-**可平移的区域** 开发人员将在设计时通过级联样式表 (CSS)将可平移的区域公开到使用 JavaScript 的 Windows 应用商店应用。
+**Pannable regions** Pannable region behaviors are exposed to Windows Store app using JavaScript developers at design time through Cascading Style Sheets (CSS).
 
-基于检测到的输入设备，存在两种平移显示模式：
+There are two panning display modes based on the input device detected:
 
--   触摸平移指示器。
--   用于其他输入设备（包括鼠标、触摸板、键盘和触笔）的滚动条。
+-   Panning indicators for touch.
+-   Scroll bars for other input devices, including mouse, touchpad, keyboard, and stylus.
 
-**注意** 仅当在可平移区域内进行触摸接触时，平移指标器才可见。 同样，只有当鼠标光标、笔/触笔光标或键盘焦点位于可滚动的区域内时才能看到滚动条。
+**Note**  Panning indicators are only visible when the touch contact is within the pannable region. Similarly, the scroll bar is only visible when the mouse cursor, pen/stylus cursor, or keyboard focus is within the scrollable region.
 
  
 
-**平移指示器** 平移指示器类似于滚动条中的滚动框。 它们指示所显示内容与全部可平移区域的比例以及所显示内容在可平移区域中的相对位置。
+**Panning indicators** Panning indicators are similar to the scroll box in a scroll bar. They indicate the proportion of displayed content to total pannable area and the relative position of the displayed content in the pannable area.
 
-下图显示了两个长度不同的可平移区域及其平移指示器。
+The following diagram shows two pannable areas of different lengths and their panning indicators.
 
-![显示两个长度不同的可平移区域及其平移指示器的图像。](images/scrolling-indicators.png)
+![image showing two pannable areas of different lengths and their panning indicators.](images/scrolling-indicators.png)
 
-**平移行为** 
-           **吸附点** 在抬起触摸接触时，使用轻扫手势平移可以将惯性行为引入交互。 无需用户直接输入，内容将借助惯性继续平移，直到达到某些距离阈值为止。 使用吸附点修改此类惯性行为。
+**Panning behaviors**
+**Snap points** Panning with the swipe gesture introduces inertia behavior into the interaction when the touch contact is lifted. With inertia, the content continues to pan until some distance threshold is reached without direct input from the user. Use snap points to modify this inertia behavior.
 
-吸附点可以在你的应用内容中指定逻辑停止。 从认知的角度看，在较大的可平移区域中，吸附点为用户充当分页机制，并尽量减少因过度滑动或轻扫而带来的疲劳。 借助它们，你可以处理不精确的用户输入，并确保在视口中显示内容或关键信息的特定子集。
+Snap points specify logical stops in your app content. Cognitively, snap points act as a paging mechanism for the user and minimize fatigue from excessive sliding or swiping in large pannable regions. With them, you can handle imprecise user input and ensure a specific subset of content or key information is displayed in the viewport.
 
-吸附点有两种类型：
+There are two types of snap-points:
 
--   邻近 - 抬起接触之后，如果惯性停止在吸附点的距离阈值之内，则选择该吸附点。 平移仍然可以在邻近吸附点之间停止。
--   强制 - 所选择的吸附点紧跟抬起接触之前划过的最后一个吸附点之前或之后（取决于手势的方向和速度）。 平移必须停止于强制吸附点上。
+-   Proximity - After the contact is lifted, a snap point is selected if inertia stops within a distance threshold of the snap point. Panning can still stop between proximity snap points.
+-   Mandatory - The snap point selected is the one that immediately precedes or succeeds the last snap point crossed before the contact was lifted (depending on the direction and velocity of the gesture). Panning must stop on a mandatory snap point.
 
-对于能够模拟分页内容或具有可动态重组以适合视口或显示的项逻辑组的应用程序（如 Web 浏览器和相册），平移吸附点非常有用。
+Panning snap-points are useful for applications such as web browsers and photo albums that emulate paginated content or have logical groupings of items that can be dynamically regrouped to fit within a viewport or display.
 
-下图显示了平移到某个点并释放如何使内容自动平移到逻辑位置。
+The following diagrams show how panning to a certain point and releasing causes the content to automatically pan to a logical location.
 
 |                                                                |                                                                                         |                                                                                                                 |
 |----------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| ![显示可平移区域的图像。](images/ux-panning-snap1.png) | ![显示要向左平移的可平移区域的图像。](images/ux-panning-snap2.png) | ![显示在逻辑吸附点上停止平移的可平移区域的图像。](images/ux-panning-snap3.png) |
-| 轻扫以平移。                                                  | 抬起触摸接触。                                                                     | 可平移区域在吸附点停止，不是在抬起触摸接触的位置停止。                                |
+| ![image showing a pannable area.](images/ux-panning-snap1.png) | ![image showing a pannable area being panned to the left.](images/ux-panning-snap2.png) | ![image showing a pannable area that has stopped panning at a logical snap-point.](images/ux-panning-snap3.png) |
+| Swipe to pan.                                                  | Lift touch contact.                                                                     | Pannable region stops at the snap point, not where the touch contact was lifted.                                |
 
  
 
-**围栏** 内容可能宽于和高于屏幕设备的尺寸和分辨率。 因此，经常需要进行二维平移（水平和垂直）。 在此类情况下，围栏可以通过强调沿运动轴（垂直或水平）平移来改善用户体验。
+**Rails** Content can be wider and taller than the dimensions and resolution of a display device. For this reason, two-dimensional panning (horizontal and vertical) is often necessary. Rails improve the user experience in these cases by emphasizing panning along the axis of motion (vertical or horizontal).
 
-下图演示了围栏的概念。
+The following diagram demonstrates the concept of rails.
 
-![具有限制平移的围栏的屏幕图](images/ux-panning-rails.png)
+![diagram of a screen with rails that constrain panning](images/ux-panning-rails.png)
 
-**链接嵌入或嵌套的内容**
+**Chaining embedded or nested content**
 
-当用户在嵌套在另一可缩放或可滚动元素中的元素上达到缩放或滚动限制时，你可以指定父元素是否应继续执行在其子元素中开始的缩放或滚动操作。 这称为缩放或滚动链接。
+After a user hits a zoom or scroll limit on an element that has been nested within another zoomable or scrollable element, you can specify whether that parent element should continue the zooming or scrolling operation begun in its child element. This is called zoom or scroll chaining.
 
-链接用于在包含一个或多个单轴的单轴内容区域或自由平移区域（当触摸点位于这些子区域中的一个子区域内时）中进行平移。 当在特定方向达到子区域的平移边界时，则父区域中会沿同一方向开始平移。
+Chaining is used for panning within a single-axis content area that contains one or more single-axis or freeform panning regions (when the touch contact is within one of these child regions). When the panning boundary of the child region is reached in a specific direction, panning is then activated on the parent region in the same direction.
 
-当一个可平移区域嵌套在另一个可平移区域之内时，请务必在容器和嵌入内容之间指定足够的空间。 在下图中，一个可平移区域放置在另一个可平移区域之内，并且平移方向彼此垂直。 每个区域中必须有足够的空间才能供用户进行平移。
+When a pannable region is nested inside another pannable region it's important to specify enough space between the container and the embedded content. In the following diagrams, one pannable region is placed inside another pannable region, each going in perpendicular directions. There is plenty of space for users to pan in each region.
 
-![演示嵌入的可平移区域的图像。](images/scrolling-embedded.png)
+![image demonstrating an embedded pannable area.](images/scrolling-embedded.png)
 
-如果没有足够的空间，如下图所示，则嵌入的可平移区域可能会干扰容器中的平移，并导致一个或多个可平移区域中出现意外平移的情况。
+Without enough space, as shown in the following diagram, the embedded pannable region can interfere with panning in the container and result in unintentional panning in one or more of the pannable regions.
 
-![演示嵌入的可平移区域填充不足的图像。](images/ux-panning-embedded-wrong.png)
+![image demonstrating insufficient padding for an embedded pannable area.](images/ux-panning-embedded-wrong.png)
 
-本指南也可用于相册或地图应用，这些应用支持在单个图像或地图中进行不受约束的平移，同时还支持相册中的单轴平移（转到上一个或下一个图像）或详细信息区域中的单轴平移。 在提供对应自由形式的平移图像或地图的详细信息或选项区域的应用中，我们建议使用详细信息和选项区域开始进行页面布局，因为图像或地图的不受约束的平移区域可能会干扰向详细信息区域平移。
+This guidance is also useful for apps such as photo albums or mapping apps that support unconstrained panning within an individual image or map while also supporting single-axis panning within the album (to the previous or next images) or details area. In apps that provide a detail or options area corresponding to a freeform panning image or map, we recommend that the page layout start with the details and options area as the unconstrained panning area of the image or map might interfere with panning to the details area.
 
-## 相关文章
+## Related articles
 
 
-* [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/mt185599)
-* [优化 ListView 和 GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
-* [键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/mt244347)
+* [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [Optimize ListView and GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
+* [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347)
 
-**示例**
-* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Samples**
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
-**存档示例**
-* [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触摸点击测试示例](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：简化的墨迹示例](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [输入：Windows 8 手势示例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 (C++) 示例](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 触控输入示例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**Archive samples**
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Input: Windows 8 gestures sample](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
@@ -195,6 +195,6 @@ Windows 8 支持三种类型的平移：
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

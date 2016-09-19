@@ -1,64 +1,64 @@
 ---
 author: Xansky
-description: "Windows.ApplicationModel.Contacts 命名空间提供了多个用来选择联系人的选项。"
-title: "选择联系人"
+description: Through the Windows.ApplicationModel.Contacts namespace, you have several options for selecting contacts.
+title: Select contacts
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
 keywords: contact, selecting specific fields
 translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8
+ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
 
 ---
 
-# 选择联系人
+# Select contacts
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-[**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空间提供了多个用来选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。
+Through the [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) namespace, you have several options for selecting contacts. Here, we'll show you how to select a single contact or multiple contacts, and we'll show you how to configure the contact picker to retrieve only the contact information that your app needs.
 
-## 设置联系人选取器
+## Set up the contact picker
 
-创建一个 [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) 实例并将它分配给某个变量。
+Create an instance of [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) and assign it to a variable.
 
 ```cs
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ```
 
-## 设置选择模式（可选）
+## Set the selection mode (optional)
 
-默认情况下，联系人选取器检索用户选择的联系人的所有可用数据。 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 属性允许你将联系人选取器配置为仅检索你的应用所需的数据字段。 如果你只需要可用联系人数据的一个子集，那么更有效的方法是使用联系人选取器。
+By default, the contact picker retrieves all of the available data for the contacts that the user selects. The [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) property lets you configure the contact picker to retrieve only the data fields that your app needs. This is a more efficient way to use the contact picker if you only need a subset of the available contact data.
 
-首先，将 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 属性设置为 **Fields**：
+First, set the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) property to **Fields**:
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-然后，使用 [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) 属性指定你希望联系人选取器检索的字段。 该示例将联系人选取器配置为检索电子邮件地址：
+Then, use the [**DesiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) property to specify the fields that you want the contact picker to retrieve. This example configures the contact picker to retrieve email addresses:
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
 ```
 
-## 启动选取器
+## Launch the picker
 
 ```cs
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-如果你希望用户选择一个或多个联系人，请使用 [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync)。
+Use [**PickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) if you want the user to select one or more contacts.
 
 ```cs
 public IList<Contact> contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
-## 处理联系人
+## Process the contacts
 
-当选取器返回时，检查用户是否选择了任何联系人。 如果选择了联系人，则处理联系人信息。
+When the picker returns, check whether the user has selected any contacts. If so, process the contact information.
 
-此示例显示如何处理一个联系人。 下面我们检索联系人的姓名并将该姓名复制到称为 *OutputName* 的 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 控件中。
+This example shows how to processes a single contact. Here we retrieve the contact's name and copy it into a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) control called *OutputName*.
 
 ```cs
 if (contact != null)
@@ -71,7 +71,7 @@ else
 }
 ```
 
-该示例显示如何处理多个联系人。
+This example shows how to process multiple contacts.
 
 ```cs
 if (contacts != null && contacts.Count > 0)
@@ -83,9 +83,9 @@ if (contacts != null && contacts.Count > 0)
 }
 ```
 
-## 完整示例（一个联系人）
+## Complete example (single contact)
 
-该示例使用联系人选取器检索一个联系人的姓名以及电子邮件地址、位置或电话号码。
+This example uses the contact picker to retrieve a single contact's name along with an email address, location or phone number.
 
 ```cs
 // ...
@@ -163,9 +163,9 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 }
 ```
 
-## 完整示例（多个联系人）
+## Complete example (multiple contacts)
 
-该示例使用联系人选取器检索多个联系人，然后将联系人添加到名为 `OutputContacts` 的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 控件中。
+This example uses the contact picker to retrieve multiple contacts and then adds the contacts to a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) control called `OutputContacts`.
 
 ```cs
 MainPage rootPage = MainPage.Current;
@@ -226,12 +226,12 @@ public class ContactItemAdapter
 }
 ```
 
-## 摘要和后续步骤
+## Summary and next steps
 
-现在，你基本了解了如何使用联系人选取器检索联系人信息。 从 GitHub 下载[通用 Windows 应用示例](http://go.microsoft.com/fwlink/p/?linkid=619979)来查看更多有关如何使用联系人和联系人选取器的示例。
+Now you have a basic understanding of how to use the contact picker to retrieve contact information. Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to use contacts and the contact picker.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

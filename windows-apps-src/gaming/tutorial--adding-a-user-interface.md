@@ -1,46 +1,46 @@
 ---
 author: mtoepke
-title: "添加用户界面"
-description: "你已经了解示例游戏如何实现主游戏对象以及基本呈现框架。"
+title: Add a user interface
+description: You've seen how the sample game implements the main game object as well as the basic rendering framework.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d7af6683ab2def1af62e73be008e9189190cde95
+ms.openlocfilehash: 4f4ca9626e38ce7449b6476345205d136b3d9a2d
 
 ---
 
-# 添加用户界面
+# Add a user interface
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-你已经了解示例游戏如何实现主游戏对象以及基本呈现框架。 现在介绍示例游戏如何向玩家提供有关游戏状态的反馈。 在此，你将学习如何在三维图形管道输出上添加简单的菜单选项和抬头显示组件。
+You've seen how the sample game implements the main game object as well as the basic rendering framework. Now, let's look at how the sample game provides feedback about game state to the player. Here, you learn how you can add simple menu options and heads-up display components on top of the 3-D graphics pipeline output.
 
-## 目标
-
-
--   将基本用户界面图形和行为添加到 Windows 平台 (UWP) DirectX 游戏。
-
-## 用户界面覆盖层
+## Objective
 
 
-尽管可以使用许多方法在 DirectX 游戏中显示文本和用户界面元素，但我们将重点介绍一种方法，即 [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx)（文本元素的 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)）。
+-   To add basic user interface graphics and behaviors to a Universal Windows Platform (UWP) DirectX game.
 
-让我们首先弄清 Direct2D 不是什么，再了解它是什么。 它不是专门为用户界面或布局（如 HTML 或 XAML）而设计的。 它不提供用户界面组件（如列表框或按钮）；而且不提供布局组件（如 div、表或网格）。
+## The user interface overlay
 
-Direct2D 是一组二维绘图 API，用于绘制基于像素的基元和效果。 在开始使用 Direct2D 时，请从简单的内容开始。 复杂的布局和界面行为需要时间和规划。 如果你的游戏需要显示复杂的用户界面，如模拟游戏和战略游戏中的用户界面，请考虑使用 XAML。
 
-（有关在 UWP DirectX 游戏中使用 XAML 开发用户界面的信息，请参阅[扩展游戏示例](tutorial-resources.md)。）
+While there are many ways to display text and user interface elements in a DirectX game, we are going to focus on one, [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) (with [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) for the text elements).
 
-在本游戏示例中，我们有两个主要 UI 组件：一个是用于显示分数和游戏内控件的提醒显示， 一个是用于显示游戏状态文本和选项（例如暂停信息和级别开始选项）的覆盖层。
+First, let's be clear about what Direct2D is not. It's not specifically designed for user interfaces or layouts, like HTML or XAML. It doesn't provide user interface components, like list boxes or buttons; and it doesn't provide layout components like divs, tables, or grids.
 
-### 对抬头显示使用 Direct2D
+Direct2D is a set of 2-D drawing APIs used to draw pixel-based primitives and effects. When starting out with Direct2D, keep it simple. Complex layouts and interface behaviors need time and planning. If your game requires a complex user interface to play, like those found in simulation and strategy games, consider XAML instead.
 
-这是该游戏示例的游戏内提醒显示，无游戏视觉显示。 它简单整齐，可让玩家专注于在三维世界中导航、射击目标。 良好的界面或提醒显示决不会干扰玩家处理和响应游戏中事件的能力。
+(For info about developing a user interface with XAML in a UWP DirectX game, see [Extending the game sample](tutorial-resources.md).)
 
-![游戏覆盖层的屏幕截图](images/sample3dgame-overlay-nogame.png)
+In this game sample, we have two major UI components: the heads-up display for the score and in-game controls; and an overlay used to display game state text and options (such as pause info and level start options).
 
-你可以看到，覆盖层包含一些基本的基元：两个用于十字准线的相交线段和两个用于[移动观看控制器](tutorial--adding-controls.md)的矩形。 在右上角，DirectWrite 文本向玩家提示当前成功命中数、玩家射击次数、该关卡的剩余时间以及当前级关卡。 覆盖层的游戏内提醒显示状态使用 **GameHud** 类的 **Render** 方法绘制，其编码如下所示：
+### Using Direct2D for a heads-up display
+
+This is the in-game heads-up display for the game sample without the game visuals. It's simple and uncluttered, allowing the player to focus on navigating the 3-D world and shooting the targets. A good interface or heads-up display must never obfuscate the ability of the player to process and react to the events in the game.
+
+![a screen shot of the game overlay](images/sample3dgame-overlay-nogame.png)
+
+As you can see, the overlay consists of basic primitives: two intersecting line segments for the cross hairs, and two rectangles for the [move-look controller](tutorial--adding-controls.md). In the upper-right corner, DirectWrite text informs the player of the current number of successful hits, the number of shots the player has made, the time remaining in the level, and the current level number. The in-game heads-up display state of the overlay is drawn in the **Render** method of the **GameHud** class, and is coded like this:
 
 ```cpp
 void GameHud::Render(
@@ -171,43 +171,43 @@ void GameHud::Render(
 }
 ```
 
-在此代码中，更新了为覆盖层建立的 Direct2D 呈现器目标，以反映命中次数、剩余时间和关卡数的更改。 矩形通过调用 [**DrawRect**](https://msdn.microsoft.com/library/windows/desktop/dd371902) 绘制，而十字准线通过一对 [**DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895) 调用绘制。
+In this code, the Direct2D render target established for the overlay is updated to reflect the changes in the number of hits, the time remaining, and the level number. The rectangles are drawn with calls to [**DrawRect**](https://msdn.microsoft.com/library/windows/desktop/dd371902), and the cross hairs are drawn with a pair of calls to [**DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895).
 
-> **注意** 你也许注意到，对 **GameHud::Render** 的调用采用 [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 参数，该参数包含主窗口矩形的大小。 这里演示了 UI 编程的一个重要组成部分：采用名为 DIP（与设备无关的像素）的度量获取窗口的大小，其中 DIP 定义为一英寸的 1/96。 在开始绘图时，Direct2D 将绘图单位缩放到实际像素，它通过使用 Windows 每英寸的点数 (DPI) 设置进行此操作。 同样，在使用 DirectWrite 绘制文本时，指定的是 DIP 而不是字号大小的点数。 DIP 表示为浮点数字。
+> **Note**   You probably noticed the call to **GameHud::Render** takes a [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) parameter, which contains the size of the main window rectangle. This demonstrates an essential part of UI programming: obtaining the size of window in a measurement called DIPs (device independent pixels), where a DIP is defined as 1/96 of an inch. Direct2D scales the drawing units to actual pixels when the drawing occurs, and it does so by using the Windows dots per inch (DPI) setting. Similarly, when you draw text using DirectWrite, you specify DIPs rather than points for the size of the font. DIPs are expressed as floating point numbers.
 
  
 
-### 使用覆盖层显示游戏状态信息
+### Displaying game state information with an overlay
 
-除提醒显示外，该游戏示例还有一个用于表示游戏的五个状态的覆盖层，其中所有状态显示有一个大的黑色矩形基元，附带供玩家阅读的文本。 （注意，未绘制移动观看控制器矩形，因为它们在这些状态下不处于活动状态。）这些覆盖层状态为：
+Besides the heads-up display, the game sample has an overlay that represents five game states, and all of which feature a large black rectangle primitive with text for the player to read. (Be aware that the move-look controller rectangles are not drawn, because they are not active in these states.) These overlay states are:
 
--   游戏开始覆盖层。 在玩家开始玩游戏时显示此状态。 它包含各游戏会话中的高分。
+-   The game start overlay. We show this when the player starts the game. It contains the high score across game sessions.
 
-    ![Simple3DGameDX 开始屏幕的屏幕截图](images/simple3dgamestart.png)
+    ![a screen shot of the start screen for simple3dgamedx](images/simple3dgamestart.png)
 
--   暂停状态。
+-   The pause state.
 
-    ![Simple3DGameDX 暂停屏幕的屏幕截图](images/simple3dgame-overlay-pause.png)
+    ![a screen shot of the pause screen for simple3dgamedx](images/simple3dgame-overlay-pause.png)
 
--   关卡开始状态。 在玩家开始一个新关卡时显示此状态。
+-   The level start state. We show this when the player starts a new level.
 
-    ![Simple3DGameDX 关卡开始屏幕的屏幕截图](images/simple3dgame-overlay-newgame.png)
+    ![a screen shot of the level start screen for simple3dgamedx](images/simple3dgame-overlay-newgame.png)
 
--   游戏结束状态。 在玩家未通过某个关卡时显示此状态。
+-   The game over state. We show this when the player fails a level.
 
-    ![Simple3DGameDX 游戏结束屏幕的屏幕截图](images/simple3dgame-overlay-gameover.png)
+    ![a screen shot of the game over screen for simple3dgamedx](images/simple3dgame-overlay-gameover.png)
 
--   游戏统计信息显示状态。 在玩家获胜时显示此状态。 它包含玩家获得的最终得分。
+-   The game stat display state. We show this when the player wins. It contains the final score the player has achieved.
 
-    ![Simple3DGameDX 的获胜屏幕](images/simple3dgame-overlay-gamestats.png)
+    ![the victory screen for simple3dgamedx](images/simple3dgame-overlay-gamestats.png)
 
-下面我们了解如何初始化和绘制这五个状态的覆盖层。
+Let's look at how we initialize and draw the overlay for these five states.
 
-### 初始化和绘制覆盖层
+### Initializing and drawing the overlay
 
-这五个显式状态具有一些共同特征：第一，它们都在屏幕中心使用黑色矩形作为背景；第二，显示的文本是标题文本或者正文文本；第三，文本使用 Segoe UI 字体并在背景矩形顶部绘制。 因此，它们所需的资源和实现它们的方法非常类似。
+The five explicit states have some things in common: one, they all use a black rectangle in the center of the screen as their background; two, the displayed text is either title text or body text; and three, the text uses the Segoe UI font and is drawn on top of the back rectangle. As a result, the resources they need and the methods that implement them are very similar.
 
-该游戏示例有四种方法（**GameInfoOverlay::Initialize**、**GameInfoOverlay::SetDpi**、**GameInfoOverlay::RecreateDirectXResources** 和 **GameInfoOverlay::RecreateDpiDependentResources**），分别用于进行初始化、设置每英寸点数、重新创建 DirectWrite 资源（文本元素）、构造此覆盖层以进行显示。 下面是这四种方法的代码：
+The game sample has four methods( **GameInfoOverlay::Initialize**, **GameInfoOverlay::SetDpi**, **GameInfoOverlay::RecreateDirectXResources**, and **GameInfoOverlay::RecreateDpiDependentResources**) that it uses to initialize, set the dots per inch, recreate the DirectWrite resources (the text elements), and construct this overlay for display, respectively. This is the code for these four methods:
 
 ```cpp
 void GameInfoOverlay::Initialize(
@@ -364,17 +364,17 @@ void GameInfoOverlay::RecreateDpiDependentResources()
 
 ```
 
-**Initialize** 方法从传递到它的 [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478) 对象获取工厂，使用该工厂创建覆盖层对象本身可以绘入的 [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479)，然后将 [**IDWriteFactory**](https://msdn.microsoft.com/library/windows/desktop/dd368183) 字段设置为提供的 **m\_dWriteFactory** 引用。 它还设置上下文的 DPI。 然后，调用 **RecreateDeviceResources** 组装和绘制覆盖层。
+The **Initialize** method obtains a factory from the [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478) object passed to it, which it uses to create an [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) that the overlay object itself can draw into, and sets the **m\_dWriteFactory** field to the provided [**IDWriteFactory**](https://msdn.microsoft.com/library/windows/desktop/dd368183) reference. It also sets the DPI for the context. Then, it calls **RecreateDeviceResources** to assemble and draw the overlay.
 
-**RecreateDeviceResources** 使用 DirectWrite 工厂对象为将在覆盖层上显示的标题和正文文本字符串创建格式化程序（画笔）。 它创建一个白色画笔来绘制文本，创建一个黑色画笔来绘制背景，创建一个橙色画笔来绘制操作信息。 然后，它调用 **RecreateDpiDependentResources** 准备一个位图，以通过调用 [**ID2D1DeviceContext::CreateBitmap**](https://msdn.microsoft.com/library/windows/desktop/hh404480) 在其上绘制文本。 最后，**RecreateDpiDependentResources** 将 Direct2D 设备上下文的呈现器目标设置为该位图并清理它，然后将位图中的每个像素设置为黑色。
+**RecreateDeviceResources** uses the DirectWrite factory object to create formatters (brushes) for the title and body text strings that will be displayed on the overlay. It creates a white brush to draw the text, a black brush to draw the background, and an orange brush to draw action messages. Then, it calls **RecreateDpiDependentResources** to prepare a bitmap to draw the text on by calling [**ID2D1DeviceContext::CreateBitmap**](https://msdn.microsoft.com/library/windows/desktop/hh404480). Lastly, **RecreateDpiDependentResources** sets the render target for the Direct2D device context to the bitmap and clears it, which then sets each pixel in the bitmap to the color black.
 
-现在，覆盖层所需的仅仅是一些要显示的文本！
+Now, all the overlay needs is some text to display!
 
-### 在覆盖层中显示游戏状态
+### Representing game state in the overlay
 
-该游戏示例中的五个覆盖层状态在 **GameInfoOverlay** 对象中均有一个对应的方法。 这些方法绘制覆盖层的变体，以向玩家传达游戏本身的显式信息。 传递的信息当然表示为两个字符串：一个标题字符串和一个正文字符串。 因为该示例已经在 **RecreateDeviceResources** 方法中为此信息配置了资源和布局，因此只需提供特定于覆盖层状态的字符串。
+Each of the five overlay states in the game sample has a corresponding method on the **GameInfoOverlay** object. These methods draw a variation of the overlay to communicate explicit info to the player about the game itself. This communication is, of course, represented as two strings: a title string, and a body string. Because the sample already configured the resources and layout for this info in the **RecreateDeviceResources** method, it only needs to provide the overlay state-specific strings.
 
-现在，在 **GameInfoOverlay** 类的定义中，该示例声明了与覆盖层的特定区域对应的三个矩形区域，如下所示：
+Now, in the definition of the **GameInfoOverlay** class, the sample declared three rectangular areas that correspond to specific regions of the overlay, as shown here:
 
 ```cpp
 static const D2D1_RECT_F titleRectangle = D2D1::RectF(50.0f, 50.0f, GameInfoOverlayConstant::Width - 50.0f, 100.0f);
@@ -382,13 +382,13 @@ static const D2D1_RECT_F bodyRectangle = D2D1::RectF(50.0f, 110.0f, GameInfoOver
 static const D2D1_RECT_F actionRectangle = D2D1::RectF(50.0f, GameInfoOverlayConstant::Height - 45.0f, GameInfoOverlayConstant::Width - 50.0f, GameInfoOverlayConstant::Height - 5.0f);
 ```
 
-这些区域各有一个特定目的：
+These areas each have a specific purpose:
 
--   在 **titleRectangle** 中绘制标题文本。
--   在 **bodyRectangle** 中绘制正文文本。
--   在 **actionRectangle** 中绘制的文本用于通知玩家采取具体操作。 （位于覆盖层位图的左下角。）
+-   **titleRectangle** is where the title text is drawn.
+-   **bodyRectangle** is where the body text is drawn.
+-   **actionRectangle** is where the text that informs the player to take a specific action is drawn. (It's in the bottom left of the overlay bitmap.)
 
-记住这些覆盖层后，下面我们了解一个特定于状态的方法 **GameInfoOverlay::SetGameStats**，并了解如何绘制覆盖层。
+With these areas in mind, let's look at one of the state-specific methods, **GameInfoOverlay::SetGameStats**, and see how the overlay is drawn.
 
 ```cpp
 void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
@@ -440,11 +440,11 @@ void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
 }
 ```
 
-利用由 **GameInfoOverlay** 对象通过 **Initialize** 和 **RecreateDirectXResources** 初始化和配置的 Direct2D 设备上下文，此方法使用背景画笔将标题和正文矩形填充为黑色。 它使用白色文本画笔将“High Score”字符串文本绘制到标题矩形，并将包含更新游戏状态信息的文本绘制到正文矩形。
+Using the Direct2D device context that the **GameInfoOverlay** object initialized and configured using **Initialize** and **RecreateDirectXResources**, this method fills the title and body rectangles with black using the background brush. It draws the text for the "High Score" string to the title rectangle and a string containing the updates game state information to the body rectangle using the white text brush.
 
-操作矩形通过从 **DirectXApp** 对象上的方法调用 **GameInfoOverlay::SetAction** 进行更新，这将提供游戏状态信息，**SetAction** 需要此信息确定向玩家显示的正确消息（如“点击以继续”）。
+The action rectangle is updated by a subsequent call to **GameInfoOverlay::SetAction** from a method on the **DirectXApp** object, which provides the game state info needed by **SetAction** to determine the right message to the player (such as "Tap to continue").
 
-任何给定状态的覆盖层都在 **DirectXApp** 上的 **SetGameInfoOverlay** 方法中选择，如下所示：
+The overlay for any given state is chosen in the **SetGameInfoOverlay** method on **DirectXApp**, like this:
 
 ```cpp
 void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -500,13 +500,13 @@ void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-现在，游戏示例提供了一种根据游戏状态向玩家传达文本信息的方式。
+And now the game sample has a way to communicate text info to the player based on game state.
 
-### 后续步骤
+### Next steps
 
-在下一主题[添加控件](tutorial--adding-controls.md)中，我们将介绍玩家如何与游戏示例交互以及输入如何更改游戏状态。
+In the next topic, [Adding controls](tutorial--adding-controls.md), we look at how the player interacts with the game sample, and how input changes game state.
 
-### 这部分的完整示例代码
+### Complete sample code for this section
 
 GameHud.h
 
@@ -1478,21 +1478,21 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 }
 ```
 
-## 相关主题
+## Related topics
 
 
-[使用 DirectX 创建一款简单的 UWP 游戏](tutorial--create-your-first-metro-style-directx-game.md)
-
- 
+[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

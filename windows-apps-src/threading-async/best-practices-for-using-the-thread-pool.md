@@ -1,62 +1,62 @@
 ---
 author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
-title: "使用线程池的最佳做法"
-description: "本主题介绍了使用线程池的最佳做法。"
+title: Best practices for using the thread pool
+description: This topic describes best practices for working with the thread pool.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53f7460be63fa9bd440ed6999ac9cca7cdca0174
+ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
 
 ---
-# 使用线程池的最佳做法
+# Best practices for using the thread pool
 
-\[ 已针对 Windows 10 上的 UWP 应用更新 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-本主题介绍了使用线程池的最佳做法。
-
-## 应做事项
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
--   使用线程池在应用中执行并行工作。
+This topic describes best practices for working with the thread pool.
 
--   使用工作项实现扩展任务，而不阻止 UI 线程。
-
--   创建生存时间较短的独立工作项。 工作项异步运行，可以从队列中以任何顺序将它们提交到池中。
-
--   使用 [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 调度对 UI 线程的更新。
-
--   使用 [**ThreadPoolTimer.CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 而不是 **Sleep** 函数。
-
--   使用线程池，而不是创建自己的线程管理系统。 线程池运行在具有高级功能的操作系统级别，并且优化为根据进程和整个系统内的设备资源和活动来动态缩放。
-
--   在 C++ 中，确保工作项代理使用敏捷线程模型（默认情况下，C++ 代理是敏捷的）。
-
--   如果无法忍受资源分配在使用时失败，请使用预分配的工作项。
-
-## 禁止事项
+## Do's
 
 
--   不要创建 *period* 值为&lt;1 毫秒（包括 0）的定期计时器。 这样将使工作项像单次计时器一样操作。
+-   Use the thread pool to do parallel work in your app.
 
--   不要提交需要花费比 *period* 参数指定的时间量更长的时间才能完成的定期工作项。
+-   Use work items to accomplish extended tasks without blocking the UI thread.
 
--   不要尝试从后台任务调度的工作项发送 UI 更新（非 Toast 和通知）。 相反，使用后台任务进度和完成处理程序（例如 [**IBackgroundTaskInstance.Progress**](https://msdn.microsoft.com/library/windows/apps/BR224800)）。
+-   Create work items that are short-lived and independent. Work items run asynchronously and they can be submitted to the pool in any order from the queue.
 
--   当使用的工作项处理程序使用 **async** 关键字时，请注意，在执行处理程序中的所有代码之前，线程池工作项可能会设置为完成状态。 在工作项已设置为完成状态后，可能会执行处理程序中 **await** 关键字之后的代码。
+-   Dispatch updates to the UI thread with the [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211).
 
--   不要在未重新初始化的情况下尝试运行预分配的工作项多次。 [创建定期工作项](create-a-periodic-work-item.md)
+-   Use [**ThreadPoolTimer.CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) instead of the **Sleep** function.
 
-## 相关主题
+-   Use the thread pool instead of creating your own thread management system. The thread pool runs at the OS level with advanced capability and is optimized to dynamically scale according to device resources and activity within the process and across the system.
+
+-   In C++, ensure that work item delegates use the agile threading model (C++ delegates are agile by default).
+
+-   Use pre-allocated work items when you can't tolerate a resource allocation failure at time of use.
+
+## Dont's
 
 
-* [创建定期工作项](create-a-periodic-work-item.md)
-* [向线程池提交工作项](submit-a-work-item-to-the-thread-pool.md)
-* [使用计时器提交工作项](use-a-timer-to-submit-a-work-item.md)
+-   Don't create periodic timers with a *period* value of &lt;1 millisecond (including 0). This will cause the work item to behave as a single-shot timer.
+
+-   Don't submit periodic work items that take longer to complete than the amount of time you specified in the *period* parameter.
+
+-   Don't try to send UI updates (other than toasts and notifications) from a work item dispatched from a background task. Instead, use background task progress and completion handlers - for example, [**IBackgroundTaskInstance.Progress**](https://msdn.microsoft.com/library/windows/apps/BR224800).
+
+-   When you use work-item handlers that use the **async** keyword, be aware that the thread pool work item may be set to the complete state before all of the code in the handler has executed. Code following an **await** keyword within the handler may execute after the work item has been set to the complete state.
+
+-   Don't try to run a pre-allocated work item more than once without reinitializing it. [Create a periodic work item](create-a-periodic-work-item.md)
+
+## Related topics
+
+
+* [Create a periodic work item](create-a-periodic-work-item.md)
+* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
+* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

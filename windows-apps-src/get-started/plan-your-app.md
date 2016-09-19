@@ -1,243 +1,243 @@
 ---
-author: martinekuan
-title: "规划你的通用 Windows 平台 (UWP) 应用"
-description: "在 Microsoft 设计团队中，我们创建应用的流程由五个不同的阶段组成：概念、结构、动态、视觉和原型。 我们鼓励你采用相似的流程，并且在创造供公众享受的新体验时获得乐趣。"
+author: GrantMeStrength
+title: Plan your Universal Windows Platform (UWP) app
+description: On Microsoft design teams, our process for creating apps consists of five distinct stages--concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9a3058aabdc6f710149a14d8f125b66efd076007
+ms.sourcegitcommit: 43214b9e2c786a007b8d9cdef7700e275101aba5
+ms.openlocfilehash: 4d17f7da6969910d2738377174cec9f1c1517dde
 
 ---
 
-#  规划你的通用 Windows 平台 (UWP) 应用
+#  Plan your Universal Windows Platform (UWP) app
 
-在 Microsoft 设计团队中，我们创建应用的流程由五个不同的阶段组成：概念、结构、动态、视觉和原型。 我们鼓励你采用相似的流程，并且在创造供公众享受的新体验时获得乐趣。
+On Microsoft design teams, our process for creating apps consists of five distinct stages: concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
 
-## 概念
+## Concept
 
-**关注你的应用**
+**Focus your app**
 
-在规划你的通用 Windows 平台 (UWP) 应用时，不仅应该确定应用功能和使用群体，还要确定应用的优势。 每个出色应用的核心是提供坚实基础的强大概念。
+When planning your Universal Windows Platform (UWP) app, you should determine not only what your app will do and who it's for, but also what your app will be great at. At the core of every great app is a strong concept that provides a solid foundation.
 
-假设你希望创建一个照片应用。 通过考虑用户处理、保存和共享其照片的原因，你将发现他们希望重温记忆、通过照片与其他人联系以及保护照片安全。 这些都是你希望该应用擅长的方面，你使用这些体验目标来指导你完成设计过程的剩余阶段。
+Say you want to create a photo app. Thinking about the reasons users work with, save, and share their photos, you’ll realize that they want to relive memories, connect with others through the photos, and keep the photos safe. These, then, are the things that you want the app to be great at, and you use these experience goals to guide you through the rest of the design process.
 
-**你的应用是做什么用的？** 从广泛的概念开始并列出你希望用你的应用帮助用户完成的所有事情。
+**What's your app about?** Start with a broad concept and list all of the things that you want to help users do with your app.
 
-例如，假设你希望生成一个帮助人们规划其旅程的应用。 下面列出了一些突发灵感后拟定的创意：
+For example, suppose you want to build an app that helps people plan their trips. Here are some ideas you might sketch out on the back of a napkin:
 
--   获得行程中所有旅行目的地的地图，在旅行中随身携带这些地图。
--   查找你所到的城市中举办的特别活动。
--   要求旅行伙伴创建独立但可分享的必做活动列表与必看景点列表。
--   让旅伴编译其所有的照片，将其与亲朋好友共享。
--   视机票价格选择他人推荐的目的地。
--   查找目的地周围的餐馆、商店和活动的交易的综合列表。
+-   Get maps of all the places on an itinerary, and take them with you on the trip.
+-   Find out about special events happening while you're in a city.
+-   Let travel buddies create separate but shareable lists of must-do activities and must-see attractions.
+-   Let travel buddies compile all of their photos to share with friends and family.
+-   Get recommended destinations based on flight prices.
+-   Find a consolidated list of deals for restaurants, shops, and activities around your destination.
 
-![旅行应用的设计](images/ux-triptracker-tab-phone-700.png)
+![a design for a travel app](images/ux-triptracker-tab-phone-700.png)
 
-**你的应用的优势是什么？** 回过头来查看你的创意列表，看看有没有哪个特定方案引起你的格外关注。 挑战自己：删减列表，直到只剩下一个你希望重点关注的方案。 在此过程中，你可能舍弃大量不错的创意，但是这种否定对于最终选定一个最佳方案至关重要。
+**What's your app great at?** Take a step back and look at your list of ideas to see if a particular scenario really jumps out at you. Challenge yourself to trim the list to just a single scenario that you want to focus on. In the process, you might cross off many good ideas, but saying "no" to them is crucial to making a single scenario great.
 
-选定某一个方案后，确定如何通过一句话来向普通受众说明你的应用所具备的功能。 例如：
+After you choose a single scenario, decide how you would explain to an average person what your app is great at by writing it down in one sentence. For example:
 
--   我的旅行应用擅长帮助多个好友共同创建团体旅行的行程。
--   我的锻炼应用擅长让朋友跟踪锻炼进展以及彼此分享成果。
--   我的杂货应用擅长帮助家人协调他们每周购买的杂货，以便他们不会少买或买重。
+-   My travel app is great at helping friends create itineraries collaboratively for group trips.
+-   My workout app is great at letting friends track their workout progress and share their achievements with each other.
+-   My grocery app is great at helping families coordinate their weekly grocery shopping so they never miss or duplicate a purchase.
 
-![协作工具设计](images/ux-collaboration-tabphone-700.png)
+![a design for a collaboration tool](images/ux-collaboration-tabphone-700.png)
 
-以上就是你的应用的“擅长”语句，你可以在生成应用时使用它来指导所作的设计决策和措施。 侧重于你希望用户在你的应用中体验的方案，注意不要将这些语句写成功能列表。 其重点应为用户将能够执行哪些操作，而不是应用将能够执行哪些操作。
+This is your app's "great at" statement, and it can guide many design decisions and tradeoffs that you make as you build your app. Focus on the scenarios you want users to experience in your app, and be careful not to turn this into a feature list. It should be about what your users will be able to do, as opposed to what your app will be able to do.
 
-**设计漏斗**
+**The design funnel**
 
-它对继续操作和进行开发（通过想出你满意的想法）很有帮助，甚至可能以一种独特方式将其投入生产中。 但是，假设你执行此操作，然后又产生了另一个有趣的想法。 不管两个想法的相对优势如何，你会很自然地坚持使用你已感兴趣的想法。 如果你能在该过程的较早阶段想到其他想法就好了！ 设计漏斗是一项可帮助你尽早发现最佳想法的技术。
+It’s very tempting—having thought of an idea you like—to go ahead and develop it, perhaps even taking it quite a ways into production. But let’s say you do that and then another interesting idea comes along. It’s natural that you’ll be tempted to stick with the idea you’ve already invested in regardless of the relative merits of the two ideas. If only you’d thought of that other idea earlier in the process! Well, the design funnel is a technique to help uncover your best ideas as early as possible.
 
-“漏斗”一词源于其形状。 在漏斗较宽的一端，会涌入许多想法，每个想法都会被识别为低保真度的设计项目（草图或者可能是一段文本）。 如果此想法集穿过漏斗较窄的一端，则当表示想法的项目保真度增加时，会减少想法的数量。 每个项目都应仅捕获以下操作所需的信息：判断各个想法或回答特定问题（例如“这是有用的，还是凭直觉获知的？”）。 *在该项目上投入更多的时间和精力*。 某些想法会在测试时半途而废，你不会在意此问题，因为与必须判断该想法相比，你无需再在这些方面进行投资。 努力进一步移动到漏斗中的想法将相继受到高保真度处理。 最后，你将具有一个表示共赢想法的设计项目。 应用该想法的原因在于其优势，而不仅仅因为它是第一个想法。 你已竭尽所能设计了最佳应用。
+The term "funnel" comes from its shape. At the wide end of the funnel, many ideas go in and each one is realized as a very low-fidelity design artifact (a sketch, perhaps, or a paragraph of text). As this collection of ideas travels through toward the narrow end of the funnel, the number of ideas is trimmed down while the fidelity of the artifacts representing the ideas increases. Each artifact should capture only the information necessary to judge one idea against another, or to answer a particular question such as "is this usable, or intuitive?". *Put no more time and effort into each than that*. Some ideas will fall by the wayside as you test them, and you’ll be okay with that because you won’t be invested in them any more than was necessary to judge the idea. Ideas that survive to move further into the funnel will receive successively high-fidelity treatments. In the end, you’ll have a single design artifact that represents the winning idea. This is the idea that won because of its merits, not merely because it came along first. You will have designed the best app you could.
 
-## 结构
+## Structure
 
 
-**组织可使所有事情更容易**
+**Organization makes everything easier**
 
-![组织可使所有事情更容易](images/ux-vision-and-process-organization.png)
+![organization makes everything easier](images/ux-vision-and-process-organization.png)
 
-如果对概念满意，便可以准备下一个阶段，即创建应用蓝图。 信息体系结构 (IA) 为你的内容提供所需的结构完整性。 它帮助定义应用的导航模型，并且最终定义应用的标识。 通过规划内容的组织方式（以及用户发现此内容的方式），你可以在用户对应用的体验方面获得更好的主意。
+When you're happy with your concept, you're ready for the next stage—creating your app's blueprint. Information architecture (IA) gives your content the structural integrity it needs. It helps define your app's navigational model and, ultimately, your app's identity. By planning how your content will be organized—and how your users will discover that content—you can get a better idea of how users will experience your app.
 
-好的 IA 不仅可以实现用户方案，还能帮助你构想起始关键屏幕。 例如，[Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089) 应用可直接启动到中心，该中心提供对用户的库、应用商店、新闻和统计数据的访问。 该体验专注于使用户能快速地获取并享受音频书籍。 应用的更深级别侧重于更具体的任务。
+Good IA not only facilitates user scenarios, but it helps you envision the key screens to start with. The [Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089) app, for example, launches directly into a hub that provides access to the user's library, store, news, and stats. The experience is focused, so users can get and enjoy audiobooks quickly. Deeper levels of the app focus on more specific tasks.
 
-有关相关指南，请参阅[导航设计基础知识](../layout/navigation-basics.md)。
+For related guidelines, see [Navigation design basics](../layout/navigation-basics.md).
 
-## 动态
+## Dynamics
 
-**执行概念**
+**Execute your concept**
 
-如果概念阶段有关于定义应用的用途，则动态阶段的一切均关乎于实现该用途。 这可以通过多种方法完成，例如使用线框绘制页面流（如何在应用中从一个位置移动到下一个位置以实现其目标），以及考虑在整个应用 UI 中使用的语音和单词。 线框是一种快速、低保真度的工具，可帮助你做出有关应用用户流的关键决定。
+If the concept stage is about defining your app's purpose, the dynamics stage is all about executing that purpose. This can be accomplished in many ways, such as using wireframes to sketch out your page flows (how you get from one place to the next within the app to achieve their goals), and thinking about the voice and the words used throughout your app's UI. Wireframes are a quick, low-fidelity tool to help you make critical decisions about your app's user flow.
 
-应用流应该紧密绑定到你的“擅长”语句，而且应该帮助用户实现你希望实现的单个方案。 出色应用的流程通常易于了解，且所需的工作量最少。 开始逐屏进行思考，就像第一次使用你的应用时来看待它。 当你针对你创建的页面定位用户方案时，你将准确给予用户他们所需要的内容，无需大量不必要的屏幕触摸。 动态也与动作相关。 正确的动作功能将决定从一个页面到另一个页面的流畅性和易用性。
+Your app flow should be tightly tied to your "great at" statement, and should help users achieve that single scenario that you want to light up. Great apps have flows that are easy to learn, and require minimal effort. Start thinking on a screen-to-screen level—see your app as if you're using it for the first time. When you pinpoint user scenarios for pages you create, you'll give people exactly what they want without lots of unnecessary screen touches. Dynamics are also about motion. The right motion capabilities will determine fluidity and ease of use from one page to the next.
 
-有助于执行此步骤的常见方法：
+Common techniques to help with this step:
 
--   概括流程：第一步做什么，接下来做什么？
--   细化流程：用户应如何使用应用的用户界面来完成流程？
--   原型：通过快速原型对流程进行试验。
+-   Outline the flow: What comes first, what comes next?
+-   Storyboard the flow: How should users move through your UI to complete the flow?
+-   Prototype: Try out the flow with a quick prototype.
 
-**用户应当能够执行什么操作？** 例如，旅行应用“擅长帮助朋友以协作方式为团队旅行创建旅行计划”。 让我们列出希望实现的流：
+**What should users be able to do?** For example, the travel app is "great at helping friends collaboratively create itineraries for group trips." Let's list the flows that we want to enable:
 
--   创建包含常规信息的旅行行程。
--   邀请朋友一同旅行。
--   参与朋友的旅行。
--   查看其他游客推荐的行程。
--   向旅行添加目的地和活动。
--   编辑朋友添加的目的地和活动并对它们添加注释。
--   共享可让朋友与家人关注的行程。
+-   Create a trip with general information.
+-   Invite friends to join a trip.
+-   Join a friend's trip.
+-   See itineraries recommended by other travelers.
+-   Add destinations and activities to trips.
+-   Edit and comment on destinations and activities that friends added.
+-   Share itineraries for friends and families to follow.
 
-## 视觉
+## Visual
 
-**无声胜有声**
+**Speak without words**
 
-![鸡尾酒创造者应用的设计](images/ux-cocktailcreator-tab-phone.png)
+![a design for a cocktail creator app](images/ux-cocktailcreator-tab-phone.png)
 
-在建立了动态的应用之后，你可以使用适当的视觉修饰让你的应用绽放光彩。 出色的视觉不仅定义应用的外观，还通过动画和动作使用户获得生动的感觉。 你对调色板、图标和艺术图片的选择只是此视觉语言的几个示例。
+Once you've established the dynamics of your app, you can make your app shine with the right visual polish. Great visuals define not only how your app looks, but how it feels and comes alive through animation and motion. Your choice of color palette, icon, and artwork are just a few examples of this visual language.
 
-所有应用都有其自己的独特标识，因此需要了解适用于你的应用的视觉方向。 让内容引导外观；不要让外观主宰内容。
+All apps have their own unique identity, so explore the visual directions you can take with your app. Let the content guide the look and feel; don't let the look dictate your content.
 
-## 原型
+## Prototype
 
-**细化杰作**
+**Refine your masterpiece**
 
-原型是*设计漏斗*（我们之前讨论的一种技术）的一个阶段，在该阶段中，表示你的想法的项目中开发的内容比草图多，但复杂程度不如完成应用。 原型可能是向用户显示的手绘屏幕的流。 运行测试的人员可能通过放置不同的屏幕或者在页面上粘滞或扯开部分 UI 来响应用户的线索，从而模拟正在运行的应用。 或者，原型可能是一个可模拟某些工作流的非常简单的应用，前提是操作员粘滞到脚本并按下右侧的按钮。 在此阶段中，你的想法将成为现实，你的辛苦工作将真正得到验证。 在对应用的各方面建立原型时，先花些时间修饰和细化最常用的组件。
+Prototyping is a stage in the *design funnel*—a technique we talked about earlier—at which the artifact representing your idea develops into something more than a sketch, but less complicated than a complete app. A prototype might be a flow of hand-drawn screens shown to a user. The person running the test might respond to cues from the user by placing different screens down, or sticking or unsticking smaller pieces of UI on the pages, to simulate a running app. Or, a prototype might be a very simple app that simulates some workflows, provided the operator sticks to a script and pushes the right buttons. At this stage, your ideas begin to really come alive and your hard work is tested in earnest. When prototyping areas of your app, take the time to sculpt and refine the components that need it the most.
 
-对于新的开发人员，我们不能给予太多压力：开发出色的应用是一个重复的过程。 我们建议你尽早并经常建立原型。 就像任何创新性努力一样，最好的应用是经过大量试用和错误修正的产品。
+To new developers, we can't stress enough: Making great apps is an iterative process. We recommend that you prototype early and often. Like any creative endeavor, the best apps are the product of intensive trial and error.
 
-## 决定要包含的功能
+## Decide what features to include
 
-当了解用户需求并且知道如何帮助他们满足其需求时，你可以了解工具箱中的特定工具。 了解通用 Windows 平台 (UWP) 并将功能与你的应用需求相关联。 确保按照每项功能的[用户体验 (UX) 指南](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx)进行操作。
+When you know what your users want and how you can help them get there, you can look at the specific tools in your toolbox. Explore the Universal Windows Platform (UWP) and associate features with your app's needs. Be sure to follow the [user experience (UX) guidelines](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx) for each feature.
 <!--need URL for landing page -->
 
-常用技巧：
+Common techniques:
 
--   平台搜索：了解平台提供的功能及其使用方法。
--   关联图：将流程与功能进行连接。
--   原型：练习这些功能，确保它们符合你的需求。
+-   Platform research: Find out what features the platform offers and how you can use them.
+-   Association diagrams: Connect your flows with features.
+-   Prototype: Exercise the features to ensure that they do what you need.
 
-**应用合约** 你的应用可以参与可实现广泛的、跨应用、跨功能的用户流程的应用合约。
+**App contracts**  Your app can participate in app contracts that enable broad, cross-app, cross-feature user flows.
 
--   **共享** 让你的用户将你的应用的内容通过其他应用与其他人共享，也接收来自其他人和应用的可共享内容。
--   **播放到** 让用户尽情享受从你的应用流式传输到用户的家庭网络中其他设备上的音频、视频或图像。
--   **文件选取器和文件选取器扩展** 让你的用户可以从本地文件系统、连接的存储设备、HomeGroup、甚至是其他应用加载并保存文件。 你还可以提供文件选取器扩展，以便其他应用可以加载你的应用的内容。
+-   **Share**  Let your users share content from your app with other people through other apps, and receive shareable content from other people and apps, too.
+-   **Play To**  Let your users enjoy audio, video, or images streamed from your app to other devices in their home network.
+-   **File picker and file picker extensions**   Let your users load and save their files from the local file system, connected storage devices, HomeGroup, or even other apps. You can also provide a file picker extension so other apps can load your app's content.
 
-有关详细信息，请参阅[应用合约和扩展](https://msdn.microsoft.com/library/windows/apps/hh464906)。
+For more info, see [App contracts and extensions](https://msdn.microsoft.com/library/windows/apps/hh464906).
 <!-- Win 8 page. Should have replacement. -->
 
-**不同的视图、外形规格和硬件配置** Windows 让用户获得主导权并将应用置于最前端。 你希望你的应用 UI 在任何设备上、在使用任何输入模式时、在任何方向中、在任何硬件配置下以及在用户决定使用它的任何情况下都光彩夺目。
+**Different views, form factors, and hardware configurations**  Windows puts users in charge and your app in the forefront. You want your app UI to shine on any device, using any input mode, in any orientation, in any hardware configuration, and in whatever circumstance the user decides to use it.
 
-**触摸优先** Windows 提供唯一且独特的触摸体验，不仅仅是模仿鼠标功能。
+**Touch first**  Windows provides a unique and distinctive touch experience that does more than simply emulate mouse functionality.
 
-例如，语义式缩放是一种可导航大量内容的触控优化方式。 用户可以平移或滚动内容类别，然后放大这些类别以查看更多更详细的信息。 使用此功能，你可以以比传统导航和布局模式（如选项卡）更可触、可视且信息化的方式来展示你的内容。
+For example, semantic zoom is a touch-optimized way to navigate through a large set of content. Users can pan or scroll through categories of content, and then zoom in on those categories to view more and more detailed information. You can use this to present your content in a more tactile, visual, and informative way than with traditional navigation and layout patterns like tabs.
 
-当然，可以利用一些触摸交互，如旋转、平移、轻扫等。 了解有关[触摸和其他用户交互](../input-and-devices/input-primer.md)的详细信息。
+Of course, you can take advantage of a number of touch interactions, like rotate, pan, swipe, and others. Learn more about [Touch and other user interactions](../input-and-devices/input-primer.md).
 
-**有吸引力且新鲜** 使用这些标准体验，确保你的应用感觉新鲜且吸引用户：
+**Engaging and fresh**  Be sure your app feels fresh and engages users with these standard experiences:
 
--   **动画** 使用我们的动画库使你的应用快速且流畅地提供给用户。 帮助用户了解上下文更改，并将体验与视觉转换联系在一起。 了解有关[创建 UI 动画](../graphics/animations-overview.md)的详细信息。
--   **Toast 通知** 通过 Toast 通知，使你的用户了解有关时间敏感或个人相关的内容，甚至可以在应用关闭时邀请用户返回你的应用。 了解有关[磁贴、锁屏提醒和 Toast 通知](../controls-and-patterns/tiles-badges-notifications.md)的详细信息。
--   **应用磁贴** 提供新鲜和相关的更新来吸引用户返回你的应用。 有关此内容的详细信息，请参阅下一节。 了解有关[应用磁贴](../controls-and-patterns/tiles-and-notifications-creating-tiles.md)的详细信息。
+-   **Animations**  Use our library of animations to make your app fast and fluid for your users. Help users understand context changes and tie experiences together with visual transitions. Learn more about [animating your UI](../graphics/animations-overview.md).
+-   **Toast notifications**  Let your users know about time-sensitive or personally relevant content through toast notifications, and invite them back to your app even when your app is closed. Learn more about [tiles, badges, and toast notifications](../controls-and-patterns/tiles-badges-notifications.md).
+-   **App tiles**  Provide fresh and relevant updates to entice users back into your app. There's more info about this in the next section. Learn more about [app tiles](../controls-and-patterns/tiles-and-notifications-creating-tiles.md).
 
-**个性化**
+**Personalization**
 
--   **设置** 支持用户通过保存应用设置来创建所希望的体验。 将所有设置合并到一个屏幕上，然后用户可以通过已熟悉的常用机制来配置你的应用。 了解有关[添加应用设置](../app-settings/app-settings-and-data.md)的详细信息。
--   **漫游** 通过漫游数据来在各种设备之间创建一种连续的体验，允许用户在他们离开的位置挑选一项任务并保留他们最关心的 UX，无论他们使用何种设备。 通过在漫游时保持设置和状态，更易于在任何位置（从厨房中的家庭电脑到其工作电脑再到个人平板电脑以及其他外形规格）使用你的应用。 了解有关[管理应用程序数据](../app-settings/store-and-retrieve-app-data.md)的详细信息，并参阅[漫游应用程序数据指南](https://msdn.microsoft.com/library/windows/apps/hh465094)。
--   **用户磁贴** 支持用户加载自己的磁贴图像，或支持用户在整个 Windows 中将来自你的应用的内容设置为其个人磁贴，从而使你的应用更个性化。
+-   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](../app-settings/app-settings-and-data.md).
+-   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](../app-settings/store-and-retrieve-app-data.md) and see [Guidelines for roaming application data](https://msdn.microsoft.com/library/windows/apps/hh465094).
+-   **User tiles**   Make your app more personal to your users by loading their user tile image, or let the users set content from your app as their personal tile throughout Windows.
 
-**设备功能** 确保你的应用完全利用当今设备的功能。
+**Device capabilities**  Be sure your app takes full advantage of the capabilities of today's devices.
 
--   **邻近感应笔势** 让你的用户通过实际接触设备来连接设备，带来多个用户实际距离非常近的体验（如多玩家游戏）。 了解有关[邻近感应和点击](https://msdn.microsoft.com/library/windows/apps/hh465229)的详细信息。
--   **相机和外部存储设备** 将你的用户与他们内置的或外接的相机相连，用于聊天、电话会议、记录视频博客、拍摄头像、记录周围的世界或进行任何你的应用擅长的活动。 了解有关[访问可移动存储上的内容](https://msdn.microsoft.com/library/windows/apps/hh465189)的详细信息。
--   **加速计和其他传感器** 如今的设备都带有若干个传感器。 你的应用可以根据环境光调暗或调亮屏幕、在用户旋转屏幕时重新排列 UI，或者对任何物理活动做出反应。 了解有关[传感器](../devices-sensors/sensors.md)的详细信息。
--   **地理位置** 使用标准 Web 数据或地理位置传感器的地理位置信息，有助于你的用户了解周围环境、在地图上定位或了解周围的人员、活动和目的地。 了解有关[地理位置](https://msdn.microsoft.com/library/windows/apps/hh465139)的详细信息。
+-   **Proximity gestures**  Let your users connect devices with other users who are physically in close proximity, by physically tapping the devices together (multiplayer games). Learn more about [proximity and tapping](https://msdn.microsoft.com/library/windows/apps/hh465229).
+-   **Cameras and external storage devices**  Connect your users to their built-in or plugged-in cameras for chatting and conferencing, recording vlogs, taking profile pics, documenting the world around them, or whatever activity your app is great at. Learn more about [Accessing content on removable storage](https://msdn.microsoft.com/library/windows/apps/hh465189).
+-   **Accelerometers and other sensors**     Devices come with a number of sensors nowadays. Your app can dim or brighten the display based on ambient light, reflow the UI if the user rotates the display, or react to any physical movement. Learn more about [sensors](../devices-sensors/sensors.md).
+-   **Geolocation**  Use geolocation information from standard web data or from geolocation sensors to help your users get around, find their position on a map, or get notices about nearby people, activities, and destinations. Learn more about [geolocation](https://msdn.microsoft.com/library/windows/apps/hh465139).
 
-我们再来看看旅行应用示例。 为了帮助好友共同创建团体旅行的行程，你可以使用以下一些功能（仅举几例）：
+Let's consider the travel app example again. To be great at helping friends collaboratively create itineraries for group trips, you could use some of these features, just to name a few:
 
--   共享：用户可将即将进行的旅行及其行程共享到多个社交网络，与家人和朋友分享旅行前的兴奋之情。
--   搜索：用户可以从他人共享的或公开的行程中搜索并查找能包含在自己旅行中的活动或目的地。
--   通知：如果旅行伙伴更新了行程，用户会收到相应通知。
--   设置：用户可以根据自己的爱好来配置应用，例如哪些旅行应发送通知或允许哪些社会团体搜索用户的行程。
--   语义式缩放：用户可以浏览行程的日程表，并放大具体行程来查看他们已规划的大量活动的更详细信息。
--   用户磁贴：用户可以选择与朋友共享旅行事宜时所要显示的图片。
+-   Share: Users share upcoming trips and their itineraries to multiple social networks to share the pre-trip excitement with their friends and families.
+-   Search: Users search for and find activities or destinations from others' shared or public itineraries that they can include in their own trips.
+-   Notifications: Users are notified when travel companions update their itineraries.
+-   Settings: Users configure the app to their preference, like which trip should bring up notifications or which social groups are allowed to search the users' itineraries.
+-   Semantic zoom: Users navigate through the timeline of their itinerary and zoom in to see greater details of the long list of activities they've planned.
+-   User tiles: Users choose the picture they want to appear when they share their trip with friends.
 
-## 确定如何用你的应用赚钱
+## Decide how to monetize your app
 
-你可以通过多种方式让你的应用赚钱。 如果决定使用应用内广告或促销来挣钱，则需要对 UI 进行设计以支持这一想法。 有关详细信息，请参阅[赚钱规划](../monetize/index.md)。
+You have a lot of options for earning money from your app. If you decide to use in-app ads or sales, you'll want to design your UI to support that. For more information, see [Plan for monetization](../monetize/index.md).
 
-## 为应用设计 UX
+## Design the UX for your app
 
-本步骤介绍了一些基础知识。 既然你已了解你的应用的优势，并且也形成了想要支持的流程，你可以开始考虑用户体验 (UX) 设计的基础。
+This is about getting the basics right. Now that you know what your app is great at, and you've figured out the flows that you want to support, you can start to think about the fundamentals of user experience (UX) design.
 
-**应如何组织 UI 内容？**   大多数应用内容都可组织为某种形式的分组或层次结构。 在对内容进行顶层分组时所选择的内容应与“擅长”语句所着重描述的内容相一致。
+**How should you organize UI content?**   Most app content can be organized into some form of groupings or hierarchies. What you choose as the top-level grouping of your content should match the focus of your "great at" statement.
 
-以旅行应用为例，可采用多种方式对行程进行分组。 如果该应用旨在探索有趣的目的地，则你可以根据兴趣（如冒险、沐浴阳光或浪漫休闲）来对其进行分组。 但是，因为此应用的重点是规划与朋友出行，所以最好按社会圈（如家庭、朋友或工作）来组织旅行日程。
+To use the travel app as an example, there are multiple ways to group itineraries. If the focus of the app is discovering interesting destinations, you might group them based on interest, like adventure, fun in the sun, or romantic getaways. However, because the focus of the app is planning trips with friends, it makes more sense to organize itineraries based on social circles, like family, friends, or work.
 
-选择内容的分组方式有助于你确定允许哪些页面或视图显示在应用中。 有关详细信息，请参阅 UI 基础知识。
+Choosing how you want to group your content helps you decide what pages or views you need in your app. See UI basics for more info.
 
-**应如何呈现 UI 内容？** 确定了如何组织你的 UI 后，你可以定义一些 UX 目标，这些目标指定你的 UI 如何生成以及如何呈现给你的用户。 在任何方案中，你都希望确保用户持续使用应用，并尽快从中发现乐趣。 为此，请确定需要首先呈现 UI 的哪些部分，并且在你花时间构建非关键部分之前，请确保这些要首先呈现的 UI 部分是完整的。
+**How should you present UI content?** After you've decided how to organize your UI, you can define UX goals that specify how your UI gets built and presented to your user. In any scenario, you want to make sure that your user can continue using and enjoying your app as quickly as possible. To do this, decide what parts of your UI need to be presented first, and make sure that those parts are complete before you spend time building the noncritical parts.
 
-在旅行应用中，用户希望在应用中执行的首个操作可能是查找特定旅行行程。 若要尽快呈现此信息，你应该先使用 **ListView** 控件显示旅行列表。
+In the travel app, probably the first thing the user will want to do in the app is find a specific trip itinerary. To present this info as fast as possible, you should show the list of trips first, using a **ListView** control.
 
-![旅行应用中的行程选择器的设计](images/ux-app-travel-cc-a-1-180.png)
+![a design for the itinerary selector in a travel app](images/ux-app-travel-cc-a-1-180.png)
 
-在显示旅行列表后，你可以开始加载其他功能，如好友旅行的新闻源。
+After showing the trips list, you could start loading other features, like a news feed of their friends' trips.
 
-**你需要哪些 UI 图面和命令？**   查看之前标识的流程。 针对每个流程，创建用户要执行的步骤的大概提纲。
+**What UI surfaces and commands do you need?**   Review the flows that you identified earlier. For each flow, create a rough outline of the steps users take.
 
-我们来看看“共享朋友与家人应遵循的行程”流程。 我们假设用户已经创建了一个旅行。 共享旅行行程可能需要执行以下步骤：
+Let's look at the "Share itineraries for friends and families to follow" flow. We'll assume that the user has already created a trip. Sharing a trip itinerary might require these steps:
 
-1.  用户打开应用并查看已创建的旅行列表。
-2.  用户点击要共享的旅行。
-3.  屏幕上显示旅行详情。
-4.  用户访问某些 UI 以启动共享。
-5.  用户选择或输入要与自己共享旅行的朋友的电子邮件地址或姓名。
-6.  用户访问某些 UI 以完成共享。
-7.  你的应用向已与用户共享旅行的人员列表更新旅行详情。
+1.  The user opens the app and sees a list of trips she created.
+2.  The user taps on the trip she wants to share.
+3.  The details of the trip appear on screen.
+4.  The user accesses some UI to initiate sharing.
+5.  The user selects or enters the email address or name of the friend she wants to share the trip with.
+6.  The user accesses some UI to finalize sharing.
+7.  Your app updates the trip details with the list of people she has shared her trip with.
 
-在此过程中，应开始了解需要创建哪些 UI 以及需要明确的其他详细信息（例如，为尚未使用你的应用的朋友起草标准电子邮件样本）。 也可以尝试略去不必要的步骤。 例如，或许在共享旅行之前用户实际上不需要查看旅行详细信息。 流程越清晰，使用越简便。
+During this process, you begin to see what UI you need to create and the additional details you need to figure out (like drafting a standard email boilerplate for friends who aren't using your app yet). You also can start eliminating unnecessary steps. Perhaps the user doesn't actually need to see the details of the trip before sharing, for example. The cleaner the flow, the easier to use.
 
-有关如何使用不同图面的更多详细信息，请查看<!--[Command design basics](../layout/commanding-basics.md)-->。
+For more details on how to use different surfaces, take a look at <!--[Command design basics](../layout/commanding-basics.md)-->.
 
-**流程应该是怎样的？** 定义了用户将执行的步骤后，你可以将该流程转变为性能目标。 有关详细信息，请参阅[性能规划](../debug-test-perf/planning-and-measuring-performance.md)。
+**What should the flow feel like?** When you have defined the steps your user will take, you can turn that flow into performance goals. For more info, see [Plan for performance](../debug-test-perf/planning-and-measuring-performance.md).
 
-**应如何组织命令？**  使用流程步骤大纲来确定可能需要设计的命令。 然后考虑这些命令在应用中的使用位置。
+**How should you organize commands?**  Use your outline of the flow steps to identify potential commands that you need to design for. Then think about where to use those commands in your app.
 
--   **始终尝试使用内容。**  尽可能让用户在应用的画布上直接操纵内容，而不是添加作用于内容的命令。 例如，在旅行应用中，让用户通过在画布的列表中拖放活动来重新安排行程，而不是通过选择活动并使用“上移”或“下移”命令按钮。
--   **如果无法使用内容。** 如果你无法使用内容，请将命令置于以下某个 UI 图面中：
+-   **Always try to use the content.**  Whenever possible, let users directly manipulate the content on the app's canvas, rather than adding commands that act on the content. For example, in the travel app, let users rearrange their itinerary by dragging and dropping activities in a list on the canvas, rather than by selecting the activity and using Up or Down command buttons.
+-   **If you can't use the content.** Place commands on one of these UI surfaces if you are not able to use the content:
 
-    -   在[命令栏](https://msdn.microsoft.com/library/windows/apps/hh465302)中：应当将大部分命令放在命令栏上，命令栏通常是隐藏的，直到用户点击才可见。
-    -   在应用画布上：如果用户位于仅具有单一用途的页面或视图上，则可以直接在画布上为此用途提供相应的命令。 这些命令应非常少。
-    -   在[上下文菜单](https://msdn.microsoft.com/library/windows/apps/hh465308)中：可以使用上下文菜单执行剪贴板操作（如剪切、复制和粘贴）或适用于无法选择的内容的命令（如将图钉添加到地图上的某个位置）。
+    -   In the [command bar](https://msdn.microsoft.com/library/windows/apps/hh465302): You should put most commands on the command bar, which is usually hidden until the user taps to make it visible.
+    -   On the app's canvas: If the user is on a page or view that has a single purpose, you can provide commands for that purpose directly on the canvas. There should be very few of these commands.
+    -   In a [context menu](https://msdn.microsoft.com/library/windows/apps/hh465308): You can use context menus for clipboard actions (such as cut, copy, and paste), or for commands that apply to content that cannot be selected (like adding a push pin to a location on a map).
 
-**确定应用在每个视图中的布局方式。**  Windows 支持横向和纵向，并支持将应用大小调整为任意宽度，从全屏到最小宽度。 你希望你的应用在任何大小、任何屏幕以及任何方向上都正常显示和运行。 这意味着你需要为不同大小和视图规划 UI 元素的布局。 执行此操作时，应用 UI 会不断更改以满足用户的需求和偏好。
+**Decide how to lay out your app in each view.**  Windows supports landscape and portrait orientations and supports resizing apps to any width, from full screen to a minimum width. You want your app to look and work great at any size, on any screen, in either orientation. This means you need to plan the layout of your UI elements for different sizes and views. When you do this, your app UI changes fluidly to meet your user's needs and preferences.
 
-![应用的电脑和移动设备设计](images/ux-budgettracker1-md-notablet.png)
+![pc and mobile designs for an app](images/ux-budgettracker1-md-notablet.png)
 
-有关针对不同屏幕大小进行设计的详细信息，请参阅<!--[Responsive design 101](designing-in-effective-pixels.md)-->。
+For more info on designing for different screen sizes, see <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
 
-## 留下良好的第一印象
+## Make a good first impression
 
-考虑一下用户首次启动你的应用后，你想要用户有什么想法、感觉或想要执行什么操作。 需要回顾一下“擅长功能”语句。 即使可能没有机会亲自告诉用户你的应用具有哪些功能特色，你也可以在留下第一印象时将向他们传达一些信息。 使用以下功能：
+Think about what you want users to think, feel, or do when they first launch your app. Refer back to your "great at" statement. Even though you won't get a chance to personally tell your users what your app is great at, you can convey the message to them when you make your first impression. Take advantage of these:
 
-**磁贴和通知** 磁贴是你的应用的外观。 在用户“开始”屏幕上的众多其他应用中，什么将能够促使用户想要启动你的应用？ 确保你的磁贴突出显示你的应用的品牌，并展示应用所擅长的方面。 使用磁贴通知，以便应用始终保持实时更新以及与用户的相关性，从而吸引用户多次使用你的应用。
+**Tile and notifications**    The tile is the face of your app. Among the many other apps on a user's Start screen, what will make the user want to launch your app? Be sure your tile highlights your app's brand and shows what the app is great at. Use tile notifications so your app will always feel fresh and relevant, bringing the user back to your app again and again.
 
-**初始屏幕** 初始屏幕的加载速度应尽可能快，并且在屏幕上的持续时间只是启动应用状态所需的时间。 初始屏幕上显示的内容应展示应用的个性。
+**Splash screen**  The splash screen should load as fast as possible, and remain on the screen only as long as you need to initialize your app state. What you show on the splash screen should express your app's personality.
 
-**首次启动** 在用户登录服务器前、登录帐户前或添加内容前，他们将看到什么？ 在要求用户输入相关信息之前，尝试展现应用的价值。 考虑显示示例内容，以便人们可以环顾一下四周并在提交之前了解应用的用途。
+**First launch**  Before users sign up for your service, log in to their account, or add their own content, what will they see? Try to demonstrate the value of your app before asking users for information. Consider showing sample content so people can look around and understand what your app does before you ask them to commit.
 
-**主页** 主页是用户每次启动你的应用时访问的位置。 主页中的内容应该有明确的重点，能够迅速展现应用的特色和优势。 在此页面上重点突出某一方面的优势，相信人们会去探索应用的其他优势。 解决登录页面上杂乱无章的特色呈现，尽量一目了然。
+**Home page**  The home page is where you bring users each time they launch your app. The content here should have a clear focus, and immediately showcase what your app is tailored to do. Make this page great at one thing and trust that people will explore the rest of your app. Focus on eliminating distractions on the landing page, and not on discoverability.
 
-## 验证你的设计
+## Validate your design
 
-在进行更深层次的应用开发之前，应该根据指南、用户印象以及要求验证你的设计或原型，以避免以后返工。 每个功能都有一组可帮助你优化应用的 UX 指南以及一组应用商店要求，在 Windows 应用商店中销售你的应用时必须满足这些要求。 你可以使用 [Windows 应用认证工具包](https://dev.windows.com/develop/app-certification-kit)测试对应用商店要求的技术合规性。 还可以使用 Microsoft Visual Studio 中的性能工具以确保你在所有情况下都为用户提供极佳体验。
+Before you get too far into developing your app, you should validate your design or prototype against guidelines, user impressions, and requirements to avoid having to rework it later. Each feature has a set of UX guidelines to help you polish your app, and a set of Store requirements that you must meet to publish your app in the Windows Store. You can use [the Windows App Certification Kit](https://dev.windows.com/develop/app-certification-kit) to test for technical compliance with Store requirements. You can also use the performance tools in Microsoft Visual Studio to make sure that you're giving your users a great experience in every scenario.
 
-使用 [UWP 应用的详细 UX 指南](https://msdn.microsoft.com/library/windows/apps/hh465424)确保你专注于重要功能。 使用 [Visual Studio 性能工具](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx)分析每个应用方案的性能。
+Use the [detailed UX guidelines for UWP apps](https://msdn.microsoft.com/library/windows/apps/hh465424) to stay focused on important features. Use the [Visual Studio performance tools](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) to analyze the performance of each of your app's scenarios.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

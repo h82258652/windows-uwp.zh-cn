@@ -1,80 +1,80 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "了解如何在显示或隐藏触摸键盘时定制你的应用 UI。"
-title: "响应触摸键盘的存在"
+Description: Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
+title: Respond to the presence of the touch keyboard
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 417668a24c4a2ba28671b6fb0a4da74c0cfab341
+ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
 ---
 
-# 响应触摸键盘的存在
+# Respond to the presence of the touch keyboard
 
-了解如何在显示或隐藏触摸键盘时定制你的应用 UI。
+Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 
 
-**重要的 API**
+**Important APIs**
 
 -   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
 -   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
 
 
 
-![默认布局模式中的触摸键盘](images/touchkeyboard-standard.png)
+![the touch keyboard in default layout mode](images/touchkeyboard-standard.png)
 
-<sup>\\ 默认\\ 布局\\ 模式中\\ 的触摸\\ 键盘\\</sup>
+<sup>The\\ touch\\ keyboard\\ in\\ default\\ layout\\ mode</sup>
 
-对于支持触摸的设备，触摸键盘支持文本输入。 当用户点击可编辑的输入字段时，通用 Windows 平台 (UWP) 文本输入控件会默认调用触摸键盘。 当用户在表单的控件之间导航时，触摸键盘通常保持可见，不过此行为可能因表单内其他控件类型的不同而有所不同。
+The touch keyboard enables text entry for devices that support touch. Universal Windows Platform (UWP) text input controls invoke the touch keyboard by default when a user taps on an editable input field. The touch keyboard typically remains visible while the user navigates between controls in a form, but this behavior can vary based on the other control types within the form.
 
-若要针对并非派生自标准文本输入控件的自定义文本输入控件支持相应的触摸键盘行为，必须使用 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185) 类向 Microsoft UI 自动化公开控件，并实现正确的 UI 自动化控件模式。 请参阅[键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/mt244347)和[自定义的自动化对等](https://msdn.microsoft.com/library/windows/apps/mt297667)。
+To support corresponding touch keyboard behavior in a custom text input control that does not derive from a standard text input control, you must use the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185) class to expose your controls to Microsoft UI Automation and implement the correct UI Automation control patterns. See [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347) and [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667).
 
-在此支持添加到你的自定义控件后，你便可以对触摸键盘的存在做出适当的响应。
+Once this support has been added to your custom control, you can respond appropriately to the presence of the touch keyboard.
 
-**先决条件：  **
+**Prerequisites:  **
 
-本主题基于[键盘交互](keyboard-interactions.md)生成。
+This topic builds on [Keyboard interactions](keyboard-interactions.md).
 
-你应该对标准键盘交互、处理键盘输入和事件以及 UI 自动化有一个基本了解。
+You should have a basic understanding of standard keyboard interactions, handling keyboard input and events, and UI Automation.
 
-如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请仔细阅读这些主题来熟悉此处讨论的技术。
+If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 
--   [创建你的第一个应用](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   借助[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584)了解事件
+-   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**用户体验指南：  **
+**User experience guidelines:  **
 
-有关于设计出既实用又有吸引力且已针对键盘输入进行优化的应用的有用提示，请参阅[键盘设计指南](https://msdn.microsoft.com/library/windows/apps/hh972345)。
+For helpful tips about designing a useful and engaging app optimized for keyboard input, see [Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345) .
 
-## 触摸键盘和自定义 UI
-
-
-下面是关于自定义的文本输入控件的一些基本建议。
-
--   在与表单的整个交互中显示触摸键盘。
-
--   确保你的自定义控件具有正确的 UI 自动化[**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/br209182)，以确保在焦点从文本输入字段移出时（但仍然位于文本输入的上下文中）保持键盘始终显示。 例如，如果在文本输入时打开了一个菜单，但你希望该键盘一直显示，则该菜单必须具有 **AutomationControlType** 菜单。
-
--   不要操作 UI 自动化属性来控制触摸键盘。 其他辅助工具依赖于 UI 自动化属性的精度。
-
--   确保用户在交互时始终可以看到输入字段。
-
-    触摸键盘会遮挡住大部分屏幕，不过 UWP 可确保当用户在表单上的不同控件（包括当前不在视图中的控件）之间导航时，具有焦点的输入字段滚动到视图中。
-
-    自定义 UI 时，可通过处理 [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255) 对象所公开的 [**Showing**](https://msdn.microsoft.com/library/windows/apps/br242262) 和 [**Hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) 事件，针对触摸键盘的外观提供相似的行为。
-
-    ![显示和没有显示触摸键盘的表单](images/touch-keyboard-pan1.png)
-
-    在某些情况下，会有一些 UI 元素应始终保留在屏幕上。 对 UI 进行设计，以便表单控件包含在平移区域中并且重要的 UI 元素时静态的。 例如：
-
-    ![包含应始终位于视图中的区域的表单](images/touch-keyboard-pan2.png)
-
-## 处理 Showing 和 Hiding 事件
+## Touch keyboard and a custom UI
 
 
-下面是关于附加触摸键盘的 [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) 和 [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) 事件的事件处理程序的示例。
+Here are a few basic recommendations for custom text input controls.
+
+-   Display the touch keyboard throughout the entire interaction with your form.
+
+-   Ensure that your custom controls have the appropriate UI Automation [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/br209182) for the keyboard to persist when focus moves from a text input field while in the context of text entry. For example, if you have a menu that's opened in the middle of a text-entry scenario, and you want the keyboard to persist, the menu must have the **AutomationControlType** of Menu.
+
+-   Don't manipulate UI Automation properties to control the touch keyboard. Other accessibility tools rely on the accuracy of UI Automation properties.
+
+-   Ensure that users can always see the input field that they're interacting with.
+
+    Because the touch keyboard occludes a large portion of the screen, the UWP ensures that the input field with focus scrolls into view as a user navigates through the controls on the form, including controls that are not currently in view.
+
+    When customizing your UI, provide similar behavior on the appearance of the touch keyboard by handling the [**Showing**](https://msdn.microsoft.com/library/windows/apps/br242262) and [**Hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) events exposed by the [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255) object.
+
+    ![a form with and without the touch keyboard showing](images/touch-keyboard-pan1.png)
+
+    In some cases, there are UI elements that should stay on the screen the entire time. Design the UI so that the form controls are contained in a panning region and the important UI elements are static. For example:
+
+    ![a form that contains areas that should always stay in view](images/touch-keyboard-pan2.png)
+
+## Handling the Showing and Hiding events
+
+
+Here's an example of attaching event handlers for the [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) and [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) events of the touch keyboard.
 
 ```CSharp
 public class MyApplication
@@ -124,18 +124,18 @@ public class MyApplication
 }
 ```
 
-## 相关文章
+## Related articles
 
-* [键盘交互](keyboard-interactions.md)
-* [键盘辅助功能](https://msdn.microsoft.com/library/windows/apps/mt244347)
-* [自定义自动化对等](https://msdn.microsoft.com/library/windows/apps/mt297667)
+* [Keyboard interactions](keyboard-interactions.md)
+* [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347)
+* [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667)
 
 
-**存档示例**
-* [输入：触摸键盘示例](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [响应屏幕键盘外观示例](http://go.microsoft.com/fwlink/p/?linkid=231633)
-* [XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
-* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+**Archive samples**
+* [Input: Touch keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=246019)
+* [Responding to the appearance of the on-screen keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=231633)
+* [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
  
 
  
@@ -146,6 +146,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

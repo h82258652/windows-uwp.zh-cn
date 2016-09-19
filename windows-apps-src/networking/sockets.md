@@ -1,34 +1,34 @@
 ---
 author: DelfCo
-description: "作为一名通用 Windows 平台 (UWP) 应用开发人员，你可以将 Windows.Networking.Sockets 与 Winsock 结合使用，以与其他设备通信。"
-title: "套接字"
+description: You can use both Windows.Networking.Sockets and Winsock to communicate with other devices as a Universal Windows Platform (UWP) app developer.
+title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 translationtype: Human Translation
 ms.sourcegitcommit: 4557fa59d377edc2ae5bf5a9be63516d152949bb
-ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
+ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
 
 ---
 
-# 套接字
+# Sockets
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**重要的 API**
+**Important APIs**
 
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 -   [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
-作为一名通用 Windows 平台 (UWP) 应用开发人员，你可以将 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 与 [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) 结合使用，以与其他设备通信。 关于使用 **Windows.Networking.Sockets** 命名空间执行网络操作的详细指南，请参阅本主题。
+You can use both [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) and [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) to communicate with other devices as a Universal Windows Platform (UWP) app developer. This topic provides in-depth guidance on using the **Windows.Networking.Sockets** namespace to perform networking operations.
 
->**注意** 作为[网络隔离](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)的一部分，系统禁止在通过本地环回地址 (127.0.0.0) 或明确指定本地 IP 地址运行于同一台计算机的两个 UWP 应用之间建立套接字连接（Sockets 或 WinSock）。 这意味着你无法使用套接字在两个 UWP 应用之间进行通信。 UWP 提供了其他可用于应用间通信的机制。 请参阅[应用到应用的通信](https://msdn.microsoft.com/windows/uwp/app-to-app/index)以了解详细信息。
+>**Note** As part of [network isolation](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), the system forbids establishing socket connections (Sockets or WinSock) between two UWP apps running on the same machine via either the local loopback address (127.0.0.0) or explicitly specifying the local IP address. This means that you cannot use sockets to communicate between two UWP apps. UWP supplies other mechanisms for communicating between apps. See [App-to-app communications](https://msdn.microsoft.com/windows/uwp/app-to-app/index) for details.
 
-## 基本的 TCP 套接字操作
+## Basic TCP socket operations
 
-TCP 套接字对于长时间的连接提供双向低级网络数据传输。 TCP 套接字是由大部分网络协议在 Internet 上使用的基础功能。 本部分显示了如何借助将 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 和 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 类用作 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间一部分的 TCP 流套接字使 UWP 应用可以发送和接收数据。 在本部分中，我们将创建一个非常简单的应用，该应用将用作回显服务器和客户端来演示基本的 TCP 操作。
+A TCP socket provides low-level network data transfers in either direction for long-lived connections. TCP sockets are the underlying feature used by most of the network protocols used on the Internet. This section shows how to enable a UWP app to send and receive data with a TCP stream socket using the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) classes as part of the [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace. For this section, we will be creating a very simple app that will function as an echo server and client to demonstrate basic TCP operations.
 
-**创建 TCP 回显服务器**
+**Creating a TCP echo server**
 
-下面的代码示例演示了如何创建 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 对象并开始侦听传入的 TCP 连接。
+The following code example demonstrates how to create a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) object and start listening for incoming TCP connections.
 
 ```csharp
 try
@@ -48,7 +48,7 @@ catch (Exception e)
 }
 ```
 
-下面的代码示例实现了在上面的示例中附加到 [**StreamSocketListener.ConnectionReceived**](https://msdn.microsoft.com/library/windows/apps/hh701494) 事件的 SocketListener\_ConnectionReceived 事件处理程序。 每当远程客户端与回显服务器建立连接时，[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 类都会调用此事件处理程序。
+The following code example implements the SocketListener\_ConnectionReceived event handler that was attached to the [**StreamSocketListener.ConnectionReceived**](https://msdn.microsoft.com/library/windows/apps/hh701494) event in the above example. This event handler is called by the [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) class every time a remote client has established a connection with the echo server.
 
 ```csharp
 private async void SocketListener_ConnectionReceived(Windows.Networking.Sockets.StreamSocketListener sender, 
@@ -67,9 +67,9 @@ private async void SocketListener_ConnectionReceived(Windows.Networking.Sockets.
 }
 ```
 
-**创建 TCP 回显客户端**
+**Creating a TCP echo client**
 
-下面的代码示例演示了如何创建 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象、与远程服务器建立连接、发送请求以及接收响应。
+The following code example demonstrates how to create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object, establish a connection to the remote server, send a request, and receive a response.
 
 ```csharp
 try
@@ -104,13 +104,13 @@ catch (Exception e)
 }
 ```
 
-## 基本的 UDP 套接字操作
+## Basic UDP socket operations
 
-UDP 套接字为不需要已建立连接的网络通信提供了双向低级网络数据传输。 因为 UDP 套接字不会在两个端点上保持连接，所以它们会为远程计算机之间的网络提供快速而简单的解决方案。 然而，UDP 套接字根本不能确保网络数据包的完整性，也不能确保它们是否能使其实现远程目标。 使用 UDP 的应用程序的一些示例包括本地网络发现和本地聊天客户端。 本部分演示了通过创建简单的回显服务器和客户端将 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 类用于发送和接收 UDP 消息。
+A UDP socket provides low-level network data transfers in either direction for network communication that does not require an established connection. Because UDP sockets do not maintain connection on both endpoints they provide fast and simple solution for networking between remote machines. However, UDP sockets do not ensure integrity of the network packets or whether they make it to the remote destination at all. Some examples of applications that use UDP sockets are local network discovery and local chat clients. This section demonstrates the use of the [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) class to sending and receiving UDP messages by creating a simple echo server and client.
 
-**创建 UDP 回显服务器**
+**Creating a UDP echo server**
 
-下面的代码示例演示了如何创建 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 对象并将其绑定到特定端口，以便你可以帧听传入的 UDP 消息。
+The following code example demonstrates how to create a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) object and bind it to a specific port so that you can listen for incoming UDP messages.
 
 ```csharp
 Windows.Networking.Sockets.DatagramSocket socket = new Windows.Networking.Sockets.DatagramSocket();
@@ -124,7 +124,7 @@ string serverPort = "1337";
 await socket.BindServiceNameAsync(serverPort);
 ```
 
-下面的代码示例实现了 **Socket\_MessageReceived** 事件处理程序，以读取从客户端接收的消息并将同样的消息发送回去。
+The following code example implements the **Socket\_MessageReceived** event handler to read a message that was received from a client and send the same message back.
 
 ```csharp
 private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs args)
@@ -146,9 +146,9 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-**创建 UDP 回显客户端**
+**Creating a UDP echo client**
 
-下面的代码示例演示了如何创建 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 对象并将其绑定到特定端口，以便你可以侦听传入的 UDP 消息并向 UDP 回显服务器发送 UDP 消息。
+The following code example demonstrates how to create a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) object and bind it to a specific port so that you can listen for incoming UDP messages and send a UDP message to the UDP echo server.
 
 ```csharp
 private async void testUdpSocketServer()
@@ -177,7 +177,7 @@ private async void testUdpSocketServer()
 }
 ```
 
-下面的代码示例实现了 **Socket\_MessageReceived** 事件处理程序以读取从 UDP 回显服务器接收的消息。
+The following code example implements the **Socket\_MessageReceived** event handler to read a message that was received from the UDP echo server.
 
 ```csharp
 private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, 
@@ -190,17 +190,17 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-## 后台操作和套接字代理
+## Background operations and the socket broker
 
-如果你的应用根据套接字来接收连接或数据，则你必须为应用不在前台运行时正确执行这些操作做好准备。 为此，请使用套接字代理。 有关如何使用套接字代理的详细信息，请参阅[后台网络通信](network-communications-in-the-background.md)。
+If your app receives connections or data on sockets, then you must be prepared to perform those operations properly while your app is not in the foreground. To do so, you use the socket broker. For more information on how to use the socket broker, see [Network communications in the background](network-communications-in-the-background.md).
 
-## 批量发送
+## Batched sends
 
-从 Windows 10 开始，Windows.Networking.Sockets 支持批量发送，这为你一次性发送多个数据缓冲区提供了一个途径，此时你所使用的上下文切换开销要比你分开发送每个缓冲区低很多。 如果你的应用正在执行 VoIP、VPN 或涉及需最大效率地移动大量数据的其他任务，此做法将特别有用。
+Starting with Windows 10, Windows.Networking.Sockets supports batched sends, a way for you to send multiple buffers of data together with much lower context-switching overhead than if you send each of the buffers separately. This is especially useful if your app is doing VoIP, VPN, or other tasks which involve moving a lot of data as efficiently as possible.
 
-对套接字上的 WriteAsync 的每次调用都会引发一次内核转换，以到达网络堆栈。 当应用一次写入多个缓冲区时，每次写入都会引发单独的内核转换，从而导致大量的开销。 新的批量发送模式优化了内核转换的频率。 此功能当前仅适用于 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 和已连接的 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 实例。
+Each call to WriteAsync on a socket triggers a kernel transition to reach the network stack. When an app writes many buffers at a time, each write incurs a separate kernel transition, and this creates substantial overhead. The new batched sends pattern optimizes the frequency of kernel transitions. This functionality is currently limited to [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and connected [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) instances.
 
-下面是应用如何以非最佳方式发送大量缓冲区的一个示例。
+Here is an example of how an app would send a large number of buffers in a non-optimal way.
 
 ```csharp
 // Send a set of packets inefficiently, one packet at a time.
@@ -215,7 +215,7 @@ foreach (IBuffer packet in packetsToSend)
 }
 ```
 
-本示例演示了发送大量缓冲区的一种更有效的方式。 由于此技术使用了 C# 语言特有的功能，因此该技术仅面向 C# 程序员。 本示例中通过一次发送多个数据包，从而支持系统分批发送以优化内核转换，进而可提高性能。
+This example shows a more efficient way to send a large number of buffers. Because this technique uses features unique to the C# language, it is only available to C# programmers. By sending multiple packets at a time, this example enables the system to batch sends, and thus optimize kernel transitions for improved performance.
 
 ```csharp
 // More efficient way to send packets.
@@ -235,7 +235,7 @@ foreach (IBuffer packet in packetsToSend)
 await Task.WaitAll(pendingTasks);
 ```
 
-本示例演示了采用与批量发送兼容的方式发送大量缓冲区的另一种方法。 此外，由于它未使用任何特定于 C# 的功能，使得它适用于所有语言（尽管此处使用 C# 进行演示）。 它应改用 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 和 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 类（这是 Windows 10 中的新增功能）的 **OutputStream** 成员中已更改的行为。
+This example shows another way to send a large number of buffers in a way that's compatible with batched sends. And since it doesn't use any C#-specific features, it is applicable for all languages (though it is demonstrated here in C#). Instead, it uses changed behavior in the **OutputStream** member of the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) classes that is new in Windows 10.
 
 ```csharp
 // More efficient way to send packets in Windows 10, using the new behavior of OutputStream.FlushAsync().
@@ -255,24 +255,24 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-在早期版本的 Windows 中，**FlushAsync** 会立即返回，并且不保证流上的所有操作均已完成。 在 Window10 中，此行为已发生更改。 **FlushAsync** 现保证先完成输出流上的所有操作，然后再返回。
+In earlier versions of Windows, **FlushAsync** returned immediately, and did not guarantee that all operations on the stream had completed yet. In Windows 10, the behavior has changed. **FlushAsync** is now guaranteed to return after all operations on the output stream have completed.
 
-在代码中使用批量写入存在一些很大的局限性。
+There are some important limitations imposed by using batched writes in your code.
 
--   在异步写入尚未完成之前，你将无法修改当前写入的 **IBuffer** 实例的内容。
--   **FlushAsync** 模式仅适用于 **StreamSocket.OutputStream** 和 **DatagramSocket.OutputStream**。
--   **FlushAsync** 模式适仅用于 Windows 10 以及更高版本。
--   在其他情况下，用 **Task.WaitAll** 来代替 **FlushAsync** 模式。
+-   You cannot modify the contents of the **IBuffer** instances being written until the asynchronous write is complete.
+-   The **FlushAsync** pattern only works on **StreamSocket.OutputStream** and **DatagramSocket.OutputStream**.
+-   The **FlushAsync** pattern only works in Windows 10 and onward.
+-   In other cases, use **Task.WaitAll** instead of the **FlushAsync** pattern.
 
-## DatagramSocket 的端口共享
+## Port sharing for DatagramSocket
 
-Windows 10 引入了一个新 [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) 属性 [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368)，以便你可以指定相关 **DatagramSocket** 能与绑定到同一地址/端口的其他 Win32 或 WinRT 多播套接字共存。
+Windows 10 introduces a new [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) property, [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), which enables you to specify that the **DatagramSocket** in question is able to coexist with other Win32 or WinRT multicast sockets bound to the same address/port.
 
-## 通过 StreamSocket 类提供客户端证书
+## Providing a client certificate with the StreamSocket class
 
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 Windows 10 中，你可以在 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 对象上提供客户端证书（这必须在启动 TLS 握手之前进行设置）。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
+The [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class supports using SSL/TLS to authenticate the server the app is talking to. In certain cases, the app also needs to authenticate itself to the server using a TLS client certificate. In Windows 10, you can provide a client certificate on the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) object (this must be set before the TLS handshake is started). If the server requests the client certificate, Windows will respond with the certificate provided.
 
-下面是演示如何实现此目的的代码段：
+Here is a code snippet showing how to implement this:
 
 ```csharp
 var socket = new StreamSocket();
@@ -281,26 +281,26 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-## Windows.Networking.Sockets 中的异常
+## Exceptions in Windows.Networking.Sockets
 
-如果传递的字符串不是有效的主机名（包含主机名中不允许的字符），则与套接字一起使用的 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 类的构造函数会引发异常。 如果应用获取 **HostName** 用户输入，则构造函数应位于 try/catch 块中。 如果引发了异常，该应用可以通知用户并请求新的主机名。
+The constructor for the [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) class used with sockets can throw an exception if the string passed is not a valid hostname (contains characters that are not allowed in a host name). If an app gets input from the user for the **HostName**, the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new hostname.
 
-[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空间具有方便的帮助程序方法和枚举，以便在使用套接字和 WebSocket 时处理错误。 这有助于在应用中分别处理特定网络异常。
+The [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace has convenient helper methods and enumerations for handling errors when using sockets and WebSockets. This can be useful for handling specific network exceptions differently in your app.
 
-在进行 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 操作时发生的错误将以 **HRESULT** 值的形式返回。 [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) 方法用于将来自套接字操作的网络错误转化为 [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 枚举值。 大部分 **SocketErrorStatus** 枚举值对应由本机 Windows 套接字操作返回的错误。 应用可以筛选特定 **SocketErrorStatus** 枚举值来基于异常原因修改应用行为。
+An error encountered on [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) operation is returned as an **HRESULT** value. The [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) method is used to convert a network error from a socket operation to a [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) enumeration value. Most of the **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation. An app can filter on specific **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
 
-在进行 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作时发生的错误将以 **HRESULT** 值的形式返回。 [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) 方法用于将来自 WebSocket 操作的网络错误转化为 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 枚举值。 大部分 **WebErrorStatus** 枚举值对应由本机 HTTP 客户端操作返回的错误。 应用可以筛选特定 **WebErrorStatus** 枚举值来基于异常原因修改应用行为。
+An error encountered on a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) operation is returned as an **HRESULT** value. The [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) method is used to convert a network error from a WebSocket operation to a [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) enumeration value. Most of the **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP client operation. An app can filter on specific **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
 
-对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 来了解关于导致该异常的错误的详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大部分参数验证错误，返回的 **HRESULT** 为 **E\_INVALIDARG**。
+For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
 
-## Winsock API
+## The Winsock API
 
-也可以在 UWP 应用中使用 [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)。 支持的 Winsock API 基于 Windows Phone 8.1 的成员 Microsoft Silverlight 8.1，并继续支持大部分的类型、属性和方法（一些被视为过时的 API 已被删除）。 [此处](https://msdn.microsoft.com/library/windows/desktop/ms740673)提供了有关 Winsock 编程的详细信息。
-
-
+You can use [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) in your UWP app, as well. The supported Winsock API is based on that of Windows Phone 8.1Microsoft Silverlight and continues to support most of the types, properties and methods (some APIs that are considered obsolete have been removed). You can find more information on Winsock programming [here](https://msdn.microsoft.com/library/windows/desktop/ms740673).
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

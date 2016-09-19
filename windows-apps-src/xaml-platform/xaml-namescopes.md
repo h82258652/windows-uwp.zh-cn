@@ -5,7 +5,7 @@ title: "XAML 名称范围"
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b8b833f40bc38799acc8813d38ddea63426f05b3
+ms.openlocfilehash: 34ef0bf246abe49a5e19adef66bddda7004a3441
 
 ---
 
@@ -87,6 +87,6 @@ XAML 中的模板提供了以一种直观方式重用和重新应用内容的能
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,18 +1,18 @@
 ---
 author: IvorB
 ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
-title: "带外配对"
-description: "带外配对允许应用不被发现即可连接到服务点外设。"
+title: Out-of-band pairing
+description: Out-of-band pairing allows apps to connect to a Point-of-Service peripheral without requiring discovery.
 translationtype: Human Translation
 ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: d8d37b779a0f9a4bec36d73fcd2d35272c587b11
+ms.openlocfilehash: 283f0a0cfc7b3827e70ea79490818bc259d98ad1
 
 ---
-# 带外配对
+# Out-of-band pairing
 
-带外配对允许应用不被发现即可连接到服务点外设。 应用必须使用 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) 命名空间并将特定格式的字符串（带外 blob）传递给外设所需的相应的 **FromIdAsync** 方法。 当执行 **FromIdAsync** 时，在该操作返回到调用方之前，主机设备要进行配对并连接到外设。
+Out-of-band pairing allows apps to connect to a Point-of-Service peripheral without requiring discovery. Apps must use the [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) namespace and pass in a specifically formatted string (out-of-band blob) to the appropriate **FromIdAsync** method for the desired peripheral. When **FromIdAsync** is executed, the host device pairs and connects to the peripheral before the operation returns to the caller.
 
-## 带外 blob 格式
+## Out-of-band blob format
 
 ```json
     "connectionKind":"Network",
@@ -23,44 +23,44 @@ ms.openlocfilehash: d8d37b779a0f9a4bec36d73fcd2d35272c587b11
     "providerName":"PrinterProtocolProvider.dll"
 ```
 
-**connectionKind** - 连接类型。 有效值为“网络”和“蓝牙”。
+**connectionKind** - The type of connection. Valid values are "Network" and "Bluetooth".
 
-**physicalAddress** - 外设的 MAC 地址。 例如，如果是网络打印机，则打印机测试表提供的 MAC 地址将采用 AA:BB:CC:DD:EE:FF 格式。
+**physicalAddress** - The MAC address of the peripheral. For example, in case of a network printer, this would be the MAC address that is provided by the printer test sheet in AA:BB:CC:DD:EE:FF format.
 
-**connectionString** - 外设的连接字符串。 例如，如果是网络打印机，则打印机测试表提供的 IP 地址将采用 192.168.1.1:9001 格式。 所有蓝牙外设会省略此字段。
+**connectionString** - The connection string of the peripheral. For example, in the case of a network printer, this would be the IP address provided by the printer test sheet in 192.168.1.1:9001 format. This field is omitted for all Bluetooth peripherals.
 
-**peripheralKinds** - 设备类型的 GUID。 有效值为：
+**peripheralKinds** - The GUID for the device type. Valid values are:
 
-| 设备类型 | GUID |
+| Device type | GUID |
 | ---- | ---- |
-| *POS 打印机* | C7BC9B22-21F0-4F0D-9BB6-66C229B8CD33 |
-| *条形码扫描仪* | C243FFBD-3AFC-45E9-B3D3-2BA18BC7EBC5 |
-| *收银机* | 772E18F2-8925-4229-A5AC-6453CB482FDA |
+| *POS printer* | C7BC9B22-21F0-4F0D-9BB6-66C229B8CD33 |
+| *Barcode scanner* | C243FFBD-3AFC-45E9-B3D3-2BA18BC7EBC5 |
+| *Cash drawer* | 772E18F2-8925-4229-A5AC-6453CB482FDA |
 
 
-**providerId** -协议提供程序类的 GUID。 有效值为：
+**providerId** - The GUID for the protocol provider class. Valid values are:
 
-| 协议提供程序类 | GUID |
+| Protocol provider class | GUID |
 | ---- | ---- |
-| *通用 ESC/POS 网络打印机* | 02FFF12E-7291-4A5D-ADFA-DA8FB7769CD2 |
-| *通用 ESC/POS BT 打印机* | CCD5B810-95B9-4320-BA7E-78C223CAF418 |
-| *Epson BT 打印机* | 94917594-544F-4AF8-B53B-EC6D9F8A4464 |
-| *Epson 网络打印机* | 9F0F8BE3-4E59-4520-BFBA-AF77614A31CE |
-| *星形网络打印机* | 1E3A32C2-F411-4B8C-AC91-CC2C5FD21996 |
-| *套接字 BT 扫描仪* | 6E7C8178-A006-405E-85C3-084244885AD2 |
-| *APG 网络收银机* | E619E2FE-9489-4C74-BF57-70AED670B9B0 |
-| *APG BT 收银机* | 332E6550-2E01-42EB-9401-C6A112D80185 |
+| *Generic ESC/POS network printer* | 02FFF12E-7291-4A5D-ADFA-DA8FB7769CD2 |
+| *Generic ESC/POS BT printer* | CCD5B810-95B9-4320-BA7E-78C223CAF418 |
+| *Epson BT printer* | 94917594-544F-4AF8-B53B-EC6D9F8A4464 |
+| *Epson network printer* | 9F0F8BE3-4E59-4520-BFBA-AF77614A31CE |
+| *Star network printer* | 1E3A32C2-F411-4B8C-AC91-CC2C5FD21996 |
+| *Socket BT scanner* | 6E7C8178-A006-405E-85C3-084244885AD2 |
+| *APG network drawer* | E619E2FE-9489-4C74-BF57-70AED670B9B0 |
+| *APG BT drawer* | 332E6550-2E01-42EB-9401-C6A112D80185 |
 
 
-**providerName** - 提供程序 DLL 的名称。 默认提供程序包括：
+**providerName** - The name of the provider DLL. The default providers are:
 
-| 提供程序 | DLL 名称 |
+| Provider | DLL name |
 | ---- | ---- |
-| 打印机 | PrinterProtocolProvider.dll |
-| 收银机 | CashDrawerProtocolProvider.dll |
-| 扫描仪 | BarcodeScannerProtocolProvider.dll |
+| Printer | PrinterProtocolProvider.dll |
+| Cash drawer | CashDrawerProtocolProvider.dll |
+| Scanner | BarcodeScannerProtocolProvider.dll |
 
-## 使用示例：网络打印机
+## Usage example: Network printer
 
 ```csharp
 String oobBlobNetworkPrinter =
@@ -74,7 +74,7 @@ String oobBlobNetworkPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobNetworkPrinter);
 ```
 
-## 使用示例：蓝牙打印机
+## Usage example: Bluetooth printer
 
 ```csharp
 string oobBlobBTPrinter =
@@ -90,6 +90,6 @@ printer = await PosPrinter.FromIdAsync(oobBlobBTPrinter);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

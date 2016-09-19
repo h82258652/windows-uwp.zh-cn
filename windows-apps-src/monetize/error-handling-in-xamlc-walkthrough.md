@@ -1,25 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
-description: "了解如何在应用中捕获 AdControl 错误。"
-title: "XAML/C# 演练中的错误处理"
+description: Learn how to catch AdControl errors in your app.
+title: Error handling in XAML/C# walkthrough
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 7cb827b4269afb55f0326eec0a0ee25b93119eb0
+ms.sourcegitcommit: 90c866fcdb4df0f32a4ace0cb4f6b761d6e9170e
+ms.openlocfilehash: bca54776fb4793fbc9e0b9af070a0cc676168d86
 
 
 ---
 
-# XAML/C# 演练中的错误处理
+# Error handling in XAML/C# walkthrough
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主题演示如何在应用中捕获 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 错误。
 
-这些示例假定你拥有一个 XAML/C# 应用，它包含一个 **AdControl**。 有关演示如何向你的应用添加 **AdControl** 的分步说明，请参阅 [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)。 有关演示如何使用 C# 和 C++ 将横幅广告添加到 XAML 应用的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
+This topic demonstrates how to catch [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) errors in your app.
 
-1.  在 MainPage.xaml 文件中，找到 **AdControl** 的定义。 该代码如下所示。
+These examples assume that you have a XAML/C# app that contains an **AdControl**. For step-by-step instructions that demonstrate how to add an **AdControl** to your app, see [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md). For a complete sample project that demonstrates how to add banner ads to a XAML app using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
+
+1.  In your MainPage.xaml file, locate the definition for the **AdControl**. That code looks like this.
 
     ``` syntax
     <UI:AdControl
@@ -32,13 +32,13 @@ ms.openlocfilehash: 7cb827b4269afb55f0326eec0a0ee25b93119eb0
        Width="300" />
     ```
 
-2.   在 **Width** 属性之后，但在结束标记之前，将错误事件处理程序的名称分配给 [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.erroroccurred.aspx) 事件。 在本演练中，错误事件处理程序的名称为 **OnAdError**。
+2.   After the **Width** property, but before the closing tag, assign a name of an error event handler to the [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.erroroccurred.aspx) event. In this walkthrough, the name of the error event handler is **OnAdError**.
 
     ``` syntax
     ErrorOccurred="OnAdError"
     ```
 
-    用于定义 **AdControl** 的完整 XAML 代码如下所示。
+    The complete XAML code that defines the **AdControl** looks like this.
 
     ``` syntax
     <UI:AdControl
@@ -52,9 +52,9 @@ ms.openlocfilehash: 7cb827b4269afb55f0326eec0a0ee25b93119eb0
        ErrorOccurred="OnAdError"/>
     ```
 
-2.  若要生成运行时错误，请创建具有不同应用程序 ID 的第二个 **AdControl**。 因为应用中的所有 **AdControl** 对象必须使用相同的应用程序 ID，所以创建具有不同应用程序 ID 的其他 **AdControl** 会引发错误。
+2.  To generate an error at runtime, create a second **AdControl** with a different application ID. Because all **AdControl** objects in an app must use the same application ID, creating an additional **AdControl** with a different application id will throw an error.
 
-    仅在 MainPage.xaml 中的第一个 **AdControl** 后面，定义第二个 **AdControl**，然后将 [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 属性设置为零 (“0”)。
+    Define a second **AdControl** in MainPage.xaml just after the first **AdControl**, and set the [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) property to zero (“0”).
 
     ``` syntax
     <UI:AdControl
@@ -68,31 +68,31 @@ ms.openlocfilehash: 7cb827b4269afb55f0326eec0a0ee25b93119eb0
       ErrorOccurred="OnAdError" />
     ```
 
-3.  在 MainPage.xaml.cs 中，将以下 **OnAdError** 事件处理程序添加到 **MainPage** 类。 此事件处理程序会将信息写入 Visual Studio“输出”****窗口。
+3.  In MainPage.xaml.cs, add the following **OnAdError** event handler to the **MainPage** class. This event handler writes information to the Visual Studio **Output** window.
 
     ``` syntax
     private void OnAdError(object sender, AdErrorEventArgs e)
     {
-        System.Diagnostics.Debug.WriteLine("AdControl error (" + ((AdControl)sender).Name + "): " + e.Error + " ErrorCode: " + e.ErrorCode.ToString());
+        System.Diagnostics.Debug.WriteLine("AdControl error (" + ((AdControl)sender).Name + "): " + e.ErrorMessage + " ErrorCode: " + e.ErrorCode.ToString());
     }
     ```
 
-4.  生成并运行该项目。
+4.  Build and run the project.
 
-在应用运行后，你将在 Visual Studio 的“输出”****窗口中看到与以下内容类似的消息。
+After the app is running, you will see a message similar to the one below in the **Output** window of Visual Studio.
 
 ``` syntax
 AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
 ```
 
-## 相关主题
+## Related topics
 
-* [GitHub 上的广告示例](http://aka.ms/githubads)
+* [Advertising samples on GitHub](http://aka.ms/githubads)
 
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -1,51 +1,52 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
-description: "了解如何使用 AdControl 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML 应用中显示横幅广告。"
-title: "XAML 和 .NET 中的 AdControl"
+description: Learn how to use the AdControl class to display banner ads in a XAML app for Windows 10 (UWP), Windows 8.1, or Windows Phone 8.1.
+title: AdControl in XAML and .NET
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: e3cc04e2c039223729a1e24224ddd19d6485d434
 
 ---
 
-# XAML 和 .NET 中的 AdControl
+# AdControl in XAML and .NET
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本演练介绍如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML 应用中显示横幅广告。 本演练不使用 **AdMediatorControl** 或广告中介。
 
-有关演示如何使用 C# 和 C++ 将横幅广告添加到 XAML 应用的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
+This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class to display banner ads in a XAML app for Windows 10 (UWP), Windows 8.1, or Windows Phone 8.1. This walkthrough does not use the **AdMediatorControl** or ad mediation.
 
-## 先决条件
+For a complete sample project that demonstrates how to add banner ads to a XAML app using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
-* 使用 Visual Studio 2015 或 Visual Studio 2013 安装 [Microsoft 官方商城协定和盈利 SDK](http://aka.ms/store-em-sdk)。
+## Prerequisites
 
-## 代码开发
+* For UWP apps: install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015.
+* For Windows 8.1 or Windows Phone 8.1 apps: install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) with Visual Studio 2015 or Visual Studio 2013.
 
-1. 在 Visual Studio 中，打开项目或创建新项目。
+## Code development
 
-2. 如果你的项目面向**任何 CPU**，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 如果你的项目面向**任何 CPU**，你将无法在以下步骤中成功添加对 Microsoft Advertising 库的引用。 有关详细信息，请参阅[项目中由面向任何 CPU 引起的引用错误](known-issues-for-the-advertising-libraries.md#reference_errors)。
+1. In Visual Studio, open your project or create a new project.
 
-1.  在“解决方案资源管理器”****窗口中，右键单击“引用”****，然后选择“添加引用...”****
+2. If your project targets **Any CPU**, update your project to use an architecture-specific build output (for example, **x86**). If your project targets **Any CPU**, you will not be able to successfully add a reference to the Microsoft advertising library in the following steps. For more information, see [Reference errors caused by targeting Any CPU in your project](known-issues-for-the-advertising-libraries.md#reference_errors).
 
-2.  在“引用管理器”****中，根据你的项目类型选择以下引用之一：
+1.  From the **Solution Explorer** window, right click **References**, and select **Add Reference…**
 
-    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”****、单击“扩展”****，然后选中“适用于 XAML 的 Microsoft Advertising SDK”****（版本 10.0）旁边的复选框。
+2.  In **Reference Manager**, select one of the following references depending on your project type:
 
-    -   对于 Windows 8.1 项目：展开“Windows 8.1”****、单击“扩展”****，然后选中“适用于 Windows 8.1 XAML 的广告中介 SDK”****旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for XAML** (Version 10.0).
 
-    -   对于 Windows Phone 8.1 项目：展开“Windows Phone 8.1”****、单击“扩展”****，然后选中“适用于 Windows Phone 8.1 XAML 的广告中介 SDK”****旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
+
+    -   For a Windows Phone 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows Phone 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
 
   ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
 
-    > **注意** 此图像适用于生成 Windows 10 UWP 项目的 Visual Studio 2015。 如果你正在生成 Windows 8.1 或 Windows Phone 8.1 应用，或正在使用 Visual Studio 2013，你的屏幕看起来有所不同。
+    > **Note**  This image is for Visual Studio 2015 building a UWP project for Windows 10. If you are building a Windows 8.1 or Windows Phone 8.1 app or using Visual Studio 2013, your screen will look different.
 
-3.  在“引用管理器”****中，单击“确定”。
-4.  修改你要在其中嵌入广告的页面的 XAML，以包含 **Microsoft.Advertising.WinRT.UI** 命名空间。 例如，在由 Visual Studio 生成的默认示例应用中（即，在应用 MyAdFundedWindows10AppXAML 中），XAML 页面是 **MainPage.XAML**。
+3.  In **Reference Manager**, click OK.
+4.  Modify the XAML for the page where you are embedding advertising to include the **Microsoft.Advertising.WinRT.UI** namespace. For example, in the default sample app generated by Visual Studio (named, in this app, MyAdFundedWindows10AppXAML), the XAML page is **MainPage.XAML**.
 
-    由 Visual Studio 生成的 MainPage.xaml 文件的**页面**部分具有以下代码。
+    The **Page** section of the MainPage.xaml file generated by Visual Studio has the following code.
 
     ``` syntax
     <Page
@@ -63,7 +64,7 @@ ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
     </Page>
     ```
 
-    添加命名空间引用 **Microsoft.Advertising.WinRT.UI**，以使 MainPage.xaml 文件的**页面**部分具有以下代码。
+    Add the namespace reference **Microsoft.Advertising.WinRT.UI** so the **Page** section of the MainPage.xaml file has the following code.
 
     ``` syntax
     <Page
@@ -82,15 +83,15 @@ ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
     </Page>
     ```
 
-5.  在“网格”****标记中，为 **AdControl** 添加代码。
+5.  In the **Grid** tag, add the code for the **AdControl**.
 
-    1.  将**页面**中的 [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) 属性分配给[测试模式值](test-mode-values.md)中提供的测试值。
+    1.  Assign the [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) and [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) properties in the **Page** to the test values provided in [Test mode values](test-mode-values.md).
 
-        > **注意** 在提交应用之前，你需要将测试值替换为实时值。
+        > **Note**   You will replace the test values with live values before submitting your app for submission.
 
-    2.  调整控件的高度和宽度，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
+    2.  Adjust the height and width of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
 
-    完整的“网格”****标记看起来像此代码。
+    The complete **Grid** tag looks like this code.
 
     ``` syntax
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
@@ -104,7 +105,7 @@ ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
     </Grid>
     ```
 
-    MainPage.xaml 文件的完整代码应如下所示。
+    The complete code for the MainPage.xaml file should look like this.
 
     ``` syntax
     <Page
@@ -129,37 +130,37 @@ ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
     </Page>
     ```
 
-6.  编译并运行应用以查看是否带有广告。
+6.  Compile and run the app to see it with an ad.
 
-## 使用 Windows 开发人员中心发布带有实时广告的应用
+## Release your app with live ads using Windows Dev Center
 
 
-1.  在“开发人员中心仪表板”中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，请指定“横幅”****。 记下广告单元 ID 和应用程序 ID。
+1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create a standalone Microsoft Advertising unit](../publish/monetize-with-ads.md). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
 
-2.  在你的代码中，将测试广告单元值（**ApplicationId** 和 **AdUnitId**）替换为你在开发人员中心生成的实时值。
+2.  In your code, replace the test ad unit values (**ApplicationId** and **AdUnitId**) with the live values you generated in Dev Center.
 
-3.  使用开发人员中心仪表板[将应用提交](../publish/app-submissions.md)到应用商店。
+3.  [Submit your app](../publish/app-submissions.md) to the Store using the Dev Center dashboard.
 
-4.  在开发人员中心仪表板中查看你的[广告性能报告](../publish/advertising-performance-report.md)。
+4.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
 
-## 注意
+## Notes
 
-C#：有关如何向 **AdControl** 事件分配事件处理程序的示例，请参阅 [XAML 属性示例](xaml-properties-example.md)。 有关介绍采用 C# 编写的事件处理程序的示例代码，请参阅 [C# 中的 AdControl 事件](adcontrol-events-in-c.md)。
+C#: See [XAML properties example](xaml-properties-example.md) for an example of how to assign event handlers to **AdControl** events. Then see [AdControl events in C#](adcontrol-events-in-c.md) for sample code that shows event handlers written in C#.
 
-Visual Basic：有关如何向 **AdControl** 事件分配事件处理程序的示例，请参阅 [XAML 属性示例](xaml-properties-example.md)。
+Visual Basic: See [XAML properties example](xaml-properties-example.md) for an example of how to assign event handlers to **AdControl** events.
 
-C++：当前版本的 Microsoft Advertising 库支持 C++。 **AdControl** 将加载 CLR 并使用托管的 C++。
+C++: The current release of the Microsoft advertising libraries support C++. The **AdControl** loads the CLR and uses managed C++.
 
-错误处理：若要了解如何处理错误，请参阅 [AdControl 错误处理](adcontrol-error-handling.md)。
+Error Handling: To learn about how to handle errors, see [AdControl error handling](adcontrol-error-handling.md).
 
-## 相关主题
+## Related topics
 
-* [GitHub 上的广告示例](http://aka.ms/githubads)
+* [Advertising samples on GitHub](http://aka.ms/githubads)
 
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

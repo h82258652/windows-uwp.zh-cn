@@ -1,44 +1,41 @@
 ---
 author: TylerMSFT
-title: "设置后台任务的运行条件"
-description: "了解如何设置控制何时运行后台任务的条件。"
+title: Set conditions for running a background task
+description: Learn how to set conditions that control when your background task will run.
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 0d90511c9fcfd722dfcc51a8ff8e5163e31e9fdf
 
 ---
 
-# 设置后台任务的运行条件
+# Set conditions for running a background task
 
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-**重要的 API**
+**Important APIs**
 
 -   [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
 -   [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
-了解如何设置控制何时运行后台任务的条件。
+Learn how to set conditions that control when your background task will run.
 
-有时，除了触发该任务的事件之外，后台任务还需要满足某些条件以便后台任务可以继续。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的一个或多个条件。 引发触发器之后将检查条件；后台任务将进入队列，但在满足所有所需条件之前不会运行。
+Sometimes, background tasks require certain conditions to be met, in addition to the event that triggers the task, for the background task to succeed. You can specify one or more of the conditions specified by [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) when registering your background task. The condition will be checked after the trigger has been fired; the background task will be queued, but it will not run until all the required conditions are satisfied.
 
-对后台任务设置条件可阻止任务不必要地运行，从而节省电池电量和 CPU 运行时。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 通过在计时器时间过去以及 Internet 可用时让任务运行，有助于防止任务使用不必要的系统资源和电池寿命。
+Putting conditions on background tasks saves battery life and CPU runtime by preventing tasks from running unnecessarily. For example, if your background task runs on a timer and requires Internet connectivity, add the **InternetAvailable** condition to the [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) before registering the task. This will help prevent the task from using system resources and battery life unnecessarily by only running the background task when the timer has elapsed *and* the Internet is available.
 
-**注意** 通过多次调用同一 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 上的 AddCondition 可组合多个条件。 注意不要添加冲突条件，如 **UserPresent** 和 **UserNotPresent**。
+It is also possible to combine multiple conditions by calling AddCondition multiple times on the same [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Take care not to add conflicting conditions, such as **UserPresent** and **UserNotPresent**.
 
- 
+## Create a SystemCondition object
 
-## 创建 SystemCondition 对象
+This topic assumes that you have a background task already associated with your app, and that your app already includes code that creates a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object named **taskBuilder**.  See [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md) or [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md) if you need to create a background task first.
 
+This topic applies to background tasks that run in a separate process as well as those that run in the same process as the foreground app.
 
-本主题假定你的后台任务已与你的应用关联，且你的应用已包含用于创建名为 **taskBuilder** 的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象的代码
+Before adding the condition, create a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object representing the condition that must be in effect for a background task to run. In the constructor, specify the condition that must be met by providing a [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration value.
 
-添加该条件之前，创建一个代表该条件的 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 对象，该对象必须实际用于运行后台任务。 在构造函数中，通过提供一个 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 枚举值指定必须满足的条件。
-
-以下代码创建一个 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 对象，该对象将 Internet 可用性指定为条件要求：
+The following code creates a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object specifying Internet availability as the conditional requirement:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -48,12 +45,12 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## 向你的后台任务中添加 SystemCondition 对象
+## Add the SystemCondition object to your background task
 
 
-若要添加条件，请在 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象上调用 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) 方法，并向其传递 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 对象。
+To add the condition, call the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method on the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object, and pass it the [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object.
 
-下面的代码将使用 TaskBuilder 注册 InternetAvailable 后台任务条件：
+The following code registers the InternetAvailable background task condition with the TaskBuilder:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -63,12 +60,12 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > taskBuilder->AddCondition(internetCondition);
 > ```
 
-## 注册后台任务
+## Register your background task
 
 
-现在，你便可以使用 [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法注册后台任务了，该任务在满足指定的条件之前不会启动。
+Now you can register your background task with the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method, and the task will not start until the specified condition is met.
 
-以下代码注册该任务并存储所生成的 BackgroundTaskRegistration 对象：
+The following code registers the task and stores the resulting BackgroundTaskRegistration object:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -78,20 +75,20 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > ```
 
-> **注意** 通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
+> **Note**  Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
-若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
+To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-> **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
+> **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
-## 在后台任务上放置多个条件
+## Place multiple conditions on your background task
 
-若要添加多个条件，你的应用需要多次调用 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) 方法。 任务注册生效之前，必须进行这些调用。
+To add multiple conditions, your app makes multiple calls to the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method. These calls must come before task registration to be effective.
 
-> **注意** 小心不要向后台任务中添加冲突的条件。
+> **Note**  Take care not to add conflicting conditions to a background task.
  
 
-以下代码段在创建和注册后台任务的上下文中显示多个条件：
+The following snippet shows multiple conditions in the context of creating and registering a background task:
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
@@ -153,35 +150,33 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ```
 
-## 备注
+## Remarks
 
 
-> **注意** 为你的后台任务选择合适的条件，以便它仅在需要时运行，不在不工作时运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+> **Note**  Choose conditions for your background task so that it only runs when it's needed, and doesn't run when it shouldn't. See [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) for descriptions of the different background task conditions.
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
-
-## 相关主题
-
+## Related topics
 
 ****
 
-* [创建和注册后台任务](create-and-register-a-background-task.md)
-* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
-* [处理取消的后台任务](handle-a-cancelled-background-task.md)
-* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
-* [注册后台任务](register-a-background-task.md)
-* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
-* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
-* [使用维护触发器](use-a-maintenance-trigger.md)
-* [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
-* [后台任务指南](guidelines-for-background-tasks.md)
+* [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md)
+* [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
 
 ****
 
-* [调试后台任务](debug-a-background-task.md)
-* [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
@@ -189,6 +184,6 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "XAML UI 的 3D 透视效果"
 description: "你可以使用透视变换将 3D 效果应用到 Windows 运行时应用中的内容。 例如，你可以创建旋转的对象接近和远离你的视觉效果，如此处所示。"
 translationtype: Human Translation
 ms.sourcegitcommit: 54bcd19419f31563f910b705fce8128bca33825b
-ms.openlocfilehash: 4141d23c5102df4970ef7c4fb3659bf3ba561ccf
+ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 ---
 # XAML UI 的 3D 透视效果
@@ -186,6 +186,6 @@ ms.openlocfilehash: 4141d23c5102df4970ef7c4fb3659bf3ba561ccf
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

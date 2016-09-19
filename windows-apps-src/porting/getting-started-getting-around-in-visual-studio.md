@@ -1,59 +1,59 @@
 ---
 author: mcleblanc
-description: "熟悉 Visual Studio 环境"
-title: "熟悉 Visual Studio 环境"
+description: Getting around in Visual Studio
+title: Getting around in Visual Studio
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d31e6e940f0b03667f1e19abec17804f6f3e16a6
+ms.openlocfilehash: 3f23745d161965d08a35abbef31b8e4342cf1ff6
 
 ---
 
-# 入门：熟悉 Visual Studio 环境
+# Getting started: Getting around in Visual Studio
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 熟悉 Microsof Visual Studio 环境
+## Getting around in Microsoft Visual Studio
 
-现在让我们回到先前创建的项目，并且看看如何在 Microsoft Visual Studio 集成开发环境 (IDE) 中进行开发。
+Let's now get back to the project that we created earlier, and look at how you might find your way around the Microsoft Visual Studio integrated development environment (IDE).
 
-如果你是一名 Xcode 开发人员，那应该很熟悉下面的默认视图：左侧窗格中的是源文件，中心窗格中的是编辑器（UI 或源代码），右侧窗格中的是控件及其属性。
+If you are an Xcode developer, the default view below should be familiar, with source files in the left pane, the editor (either the UI or source code) in the center pane, and controls and their properties in the right pane.
 
-![Xcode 开发环境](images/ios-to-uwp/xcode-ide.png)
+![xcode development environment](images/ios-to-uwp/xcode-ide.png)
 
-Microsoft Visual Studio 与此非常相似，只不过默认视图的控件在“工具箱”****的左侧。 源文件在右侧的“解决方案资源管理器”****中，而属性在“解决方案资源管理器”****窗格下的“属性”****中，如下所示：
+Microsoft Visual Studio looks very similar, although the default view has the controls on the left side in the **Toolbox**. The source files are in the **Solution Explorer** on the right side, and properties are in **Properties** under the **Solution Explorer** pane, like this:
 
-![Visual Studio 开发环境](images/ios-to-uwp/vs-ide.png)
+![visual studio development environment](images/ios-to-uwp/vs-ide.png)
 
-如果你对此感到些许陌生，那么你一定很高兴地知道，在 Visual Studio 中可以重新排列窗格、将源文件放置在屏幕左侧并将工具箱放置在屏幕右侧。 实际上，可单击并拖动任何窗格的标题栏，以将其重新放置，而且 Visual Studio 将显示告诉你标题栏在释放后会停靠在哪里的阴影框。 许多窗格在其标题栏上还有一个细小的绘图固定图标。 此图标可让你按其现在的样子固定面板，即锁定在某个位置。 取消固定窗格，而且它可以折叠以节省空间：如果显示器的尺寸较小，这一点将很有用。 如果扰乱了操作（不必担心，我们都做过这事），请选择“窗口”****菜单中的“重置窗口布局”****以还原顺序。
+If this feels a little alien to you, you'll be pleased to know you can rearrange the panes in Visual Studio to place the source files on the left of the screen and the toolbox on the right. In fact, you can click and drag the title bar of any pane to reposition it, and Visual Studio will display a shaded box telling you where it will be docked once you release it. Many panes also have a small drawing pin icon in their title bar. This allows you to pin the panel as-is, locking it in place. Unpin the pane, and it can be collapsed to save space: useful if your monitor is on the smaller side. If you mess things up (don't worry, we've all done it), select **Reset Window Layout** from the **Window** menu to restore order.
 
-## 添加控件、设置控件属性并响应事件
+## Adding controls, setting their properties, and responding to events
 
-现在让我们将一些控件添加到你的项目中。 然后，我们将更改控件的一些属性，并编写一些代码来响应某个控件的事件。
+Let's now add some controls to your project. We'll then change some of their properties, and write some code to respond to one of the control's events.
 
-若要在 Xcode 中添加控件，请打开所需 .xib 文件或情节提要，然后按如下所示的方式拖放控件，如“圆角矩形按钮”****或“标签”****：
+To add controls in Xcode, you open up the desired .xib file or the Storyboard and then drag and drop controls, such as a**Round Rect Button** or a **Label**, as shown below:
 
-![在 Xcode 中设计 UI](images/ios-to-uwp/xcode-add-button-label.png)
+![designing ui in xcode](images/ios-to-uwp/xcode-add-button-label.png)
 
-让我们在 Visual Studio 中执行一些类似的操作。 在“工具箱”****中，拖动“按钮”****控件，然后将其拖放到 MainPage.xaml 文件的设计图面。
+Let's do something similar in Visual Studio. From the **Toolbox**, drag the **Button** control, and then drop it onto the MainPage.xaml file's design surface.
 
-对“TextBlock”****控件执行相同操作，使其外观如下所示：
+Do the same with the **TextBlock** control, so it looks like this:
 
-![在 Visual Studio 中设计 UI](images/ios-to-uwp/vs-add-button-label.png)
+![designing ui in visual studio](images/ios-to-uwp/vs-add-button-label.png)
 
-与 Xcode 在 .xib 或情节提要文件中隐藏布局和绑定信息不同，Visual Studio 鼓励你编辑 XAML 文件（这些文件使用丰富、可编辑、具有声明性、类似于 XML 的语言存储详细信息）。 有关 Extensible Application Markup Language (XAML) 的详细信息，请参阅 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/mt185595)。 目前，请知晓“设计”****窗格中显示的所有内容均在“XAML”****窗格中定义。 “XAML”****窗格使你能够在必要时进行精细控制，并且随着进一步了解，可以快速手动开发用户界面代码。 不过，目前我们仅关注“设计”****窗格和“属性”****窗格。
+Unlike Xcode, which hides the layout and binding information inside a .xib or Storyboard file, Visual Studio encourages you to edit the XAML files used to store these details it its rich, editable, declarative, XML-like language. For more info about Extensible Application Markup Language (XAML), see [XAML overview](https://msdn.microsoft.com/library/windows/apps/mt185595). For now, know that everything displayed in the **Design** pane is defined in the **XAML** pane. The **XAML** pane allows for fine control where necessary, and as you learn more about it, you can quickly develop user interface code manually. For now, however, let's focus on just the **Design** and **Properties** panes.
 
-让我们来更改按钮的详细信息。 你将知道，若要在 Xcode 中更改按钮名称，可在其属性面板中更改“标题”****字段值。
+Let's change the button's details. As you will know, to change the button's name in Xcode, you would change the value of the **Title** field in its properties panel.
 
-使用 Visual Studio 时，将执行非常相似的操作。 在“设计”****窗格中，点击按钮赋予其焦点。 然后在“属性”****窗格中，将“内容”****值从“按钮”更改为“Press Me”。 接下来，通过将“名称”****值从“&lt;No Name&gt;”更改为“myButton”，更新按钮控件名称，如下所示：
+When using Visual Studio you do something very similar. In the **Design** pane, tap the button to give it focus. Then in the **Properties** pane, alter the **Content** value from "Button" to "Press Me". Next, update the name of the button control, by changing the **Name** value from "&lt;No Name&gt;" to "myButton", as shown here:
 
-![Visual Studio 中的“按钮属性”窗口](images/ios-to-uwp/vs-button-properties.png)
+![button properties window in visual studio](images/ios-to-uwp/vs-button-properties.png)
 
-现在让我们写一些代码，以便在用户点击该按钮时将“TextBlock”****控件的内容更改为“Hello, World!” 。
+Now, let's write some code to change the **TextBlock** control's contents to "Hello, World!" after the user taps the button.
 
-在 Xcode 中，通过编写代码，然后将此代码与控件关联（通常通过将按钮控件拖动至源代码的方法），从而将事件与控件关联，如下所示：
+In Xcode, you would associate an event with a control by writing code and then associating that code with the control, often by control-dragging the button into the source code, like this:
 
-![在 Xcode 中将按钮与事件关联](images/ios-to-uwp/xcode-add-button-event.png)
+![wiring a button to an event in xcode](images/ios-to-uwp/xcode-add-button-event.png)
 
 ```swift
 // Swift implementation.
@@ -63,11 +63,11 @@ Microsoft Visual Studio 与此非常相似，只不过默认视图的控件在�
 }
 ```
 
-Visual Studio 与此相似。 在“属性”****的右上角是一个闪电按钮。 与所选控件关联的可能事件在此列出，如下所示：
+Visual Studio is similar. At the top right of **Properties** is a lightning bolt button. This is where the possible events associated with the selected control are listed, like this:
 
-![Visual Studio 中的按钮事件列表](images/ios-to-uwp/vs-button-event.png)
+![button events list in visual studio](images/ios-to-uwp/vs-button-event.png)
 
-若要为按钮的单击事件添加代码，请先在“设计”****窗格中选择按钮。 接下来，单击闪电按钮，然后双击名称“单击”****旁边的空白框。 然后，Visual Studio 会将事件“myButton\_Click”添加到“单击”****框中，随后在 MainPage.xaml.cs 文件中添加并显示相应事件处理程序，如下所示。
+To add code for the button's click event, first select the button in the **Design** pane. Next, click the lightning bolt button, and double-click the empty box next to the name **Click**. Visual Studio then adds the event "myButton\_Click" to the **Click** box, and then adds and displays the corresponding event handler in the MainPage.xaml.cs file, like this.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -76,9 +76,9 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-现在让我们关联“TextBlock”****控件。 在 Xcode 中，将按钮控件拖动至源代码文件，以将控件与其定义关联，如下所示。
+Let's now hook-up the **TextBlock** control. In Xcode, you would control-drag the button to the source code file to associate the control with its definition, like this.
 
-![在 Xcode 中将标签与其定义关联](images/ios-to-uwp/xcode-add-button-reference.png)
+![wiring a label to its definition in xcode](images/ios-to-uwp/xcode-add-button-reference.png)
 
 ```swift
 // Swift implentation.
@@ -86,16 +86,16 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 @IBOutlet weak var myLabel : UILabel
 ```
 
-在 Visual Studio 中，无需关联控件，因为系统始终会为你执行此操作。 让我们来更改某些属性：
+In Visual Studio, you don't need associated the control as this is always done for you. Let's change some of the properties though:
 
-1.  点击“MainPage.xaml 文件”选项卡。
-2.  在“设计”****窗格中，点击“TextBlock”****控件。
-3.  在“属性”****窗格中，点击扳手按钮以显示其属性。
-4.  在“名称”****框中，将“&lt;No Name&gt;”更改为“myLabel”。
+1.  Tap the MainPage.xaml file tab.
+2.  In the **Design** pane, tap the **TextBlock** control.
+3.  In the **Properties** pane, tap the wrench button to display its properties.
+4.  In the **Name** box, change "&lt;No Name&gt;" to "myLabel".
 
-![Visual Studio 中的“标签属性”窗口](images/ios-to-uwp/vs-label-properties.png)
+![label properties window in visual studio](images/ios-to-uwp/vs-label-properties.png)
 
-现在让我们将一些代码添加到按钮的单击事件。 为此，点击 MainPage.xaml.cs 文件，并将以下代码添加到 myButton\_Click 事件处理程序。
+Let's now add some code to the button's click event. To do this, tap the MainPage.xaml.cs file, and add the following code to the myButton\_Click event handler.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -105,7 +105,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-此操作类似于在 Swift 中编写的内容：
+This is similar to what you would write in Swift:
 
 ```swift
 @IBAction func buttonPressed(sender: UIButton) {
@@ -113,19 +113,19 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-最后，若要运行应用，请选择“调试”****菜单，然后选择“开始调试”****（或直接按 F5）。 在应用启动之后，单击“点击我”按钮，将看到标签的内容从“TextBlock”更改为“Hello, World!”，如下图所示。
+Finally, to run the app, select the **Debug** menu, and then select **Start Debugging** (or just press F5). After the app starts, click the "Press Me" button, and see the label's contents change from "TextBlock" to "Hello, World!", as shown in the following figure.
 
-![运行第一个演练的结果：Hello, World!](images/ios-to-uwp/vs-hello-world.png)
+![results of running the first walkthrough: hello, world!](images/ios-to-uwp/vs-hello-world.png)
 
-要退出该应用，返回到 Visual Studio，请点击“调试”****菜单，然后点击“停止调试”****（或者直接按 Shift + F5）。 请注意，Visual Studio 可让你在多种不同的设备上尝试应用，以查看其在每台设备的执行方式。
+To quit the app, return to Visual Studio, tap the **Debug** menu, and then tap **Stop Debugging** (or just press SHIFT + F5). Notice that Visual Studio lets you try the app in many different devices, to check how it will perform in each.
 
-## 下一步
+## Next step
 
-[入门：常见控件](getting-started-common-controls.md)
-
-
+[Getting started: Common Controls](getting-started-common-controls.md)
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

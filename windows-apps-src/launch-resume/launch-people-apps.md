@@ -1,23 +1,23 @@
 ---
 author: TylerMSFT
-title: "启动“人脉”应用"
-description: "本主题介绍了 ms-people URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。"
+title: Launch the People app
+description: This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions.
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
+ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
 
 ---
 
-# 启动“人脉”应用
+# Launch the People app
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本主题介绍了 **ms-people:** URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。
+This topic describes the **ms-people:** URI scheme. Your app can use this URI scheme to launch the People app for specific actions.
 
-## ms-people: URI 方案引用
+## ms-people: URI scheme reference
 
 
 <table>
@@ -27,25 +27,25 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">结果</th>
-<th align="left">URI 方案</th>
+<th align="left">Results</th>
+<th align="left">URI scheme</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">允许其他应用启动“人脉”应用主页。</td>
+<td align="left">Allows other apps to launch the People app Main page.</td>
 <td align="left">ms-people:</td>
 </tr>
 <tr class="even">
-<td align="left">允许其他应用启动“人脉”应用设置页。</td>
+<td align="left">Allows other apps to launch the People app Settings page.</td>
 <td align="left">ms-people:settings</td>
 </tr>
 <tr class="odd">
-<td align="left">允许其他应用通过搜索的结果页提供将启动“人脉”应用的搜索字符串。
+<td align="left">Allows other apps to provide a search string that will launch the People app with the result page of the search.
 <div class="alert">
-**注意**  
-<p>参数区分大小写。</p>
-<p>如果未正确输入语法或缺少搜索字符串值，默认行为是返回未经过任何筛选的联系人的完整列表。</p>
+**Note**  
+<p>The parameters are case sensitive.</p>
+<p>If you do not enter the syntax correctly, or are missing the search string value, the default behavior is to return a full list of contacts without any filtering.</p>
 </div>
 <div>
  
@@ -53,12 +53,12 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 <td align="left">ms-people:search?SearchString=&lt;contactsearchinfo&gt;</td>
 </tr>
 <tr class="even">
-<td align="left">如果找到该联系人，将启动到现有的联系人卡片。 或者，如果未找到联系人，将启动到临时的联系人卡片。 如果未提供输入参数，我们将启动带有联系人列表的“人脉”应用。
+<td align="left">Launches to an existing contact card, if the contact is found. Or, launches to a temporary contact card, if no contact is found. If no input parameter is supplied, we will launch the People App with a contact list.
 <div class="alert">
-**注意**  
-<p>参数区分大小写。</p>
-<p>参数的顺序无关紧要。</p>
-<p>如果存在多个匹配，我们将返回匹配的第一个联系人。</p>
+**Note**  
+<p>The parameters are case sensitive.</p>
+<p>The order of the parameters doesn’t matter.</p>
+<p>If there is more than one match, we will return the first match of the contact.</p>
 </div>
 <div>
  
@@ -66,11 +66,11 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 <td align="left">ms-people:viewcontact:?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
-<td align="left">启动到“人脉”应用内的保存联系人页面，以使用提供的电话号码或电子邮件地址保存给定的联系人。
+<td align="left">Launches to a Save-contact page within the People app to save the given contact with the supplied phone number or email address.
 <div class="alert">
-**注意**  
-<p>参数区分大小写。</p>
-<p>参数的顺序无关紧要。</p>
+**Note**  
+<p>The parameters are case sensitive.</p>
+<p>The order of the parameters doesn’t matter.</p>
 </div>
 <div>
  
@@ -82,7 +82,7 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 
  
 
-## ms-people:search: 参数引用
+## ms-people:search: parameter reference
 
 
 <table>
@@ -93,17 +93,17 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数</th>
-<th align="left">说明</th>
-<th align="left">示例</th>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+<th align="left">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">**SearchString**</td>
-<td align="left"><p>可选。</p>
-<p>联系人搜索信息的搜索字符串。</p>
-<p>电话号码或联系人姓名。</p></td>
+<td align="left"><p>Optional.</p>
+<p>The search string for the contact search information.</p>
+<p>The phone number or the contact name.</p></td>
 <td align="left"><p>ms-people:search?SearchString=Smith</p></td>
 </tr>
 </tbody>
@@ -111,7 +111,7 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 
  
 
-## ms-people:viewcontact: 参数引用
+## ms-people:viewcontact: parameter reference
 
 
 <table>
@@ -122,40 +122,40 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数</th>
-<th align="left">说明</th>
-<th align="left">示例</th>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+<th align="left">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">**ContactId**</td>
-<td align="left"><p>可选。</p>
-<p>联系人的联系人 ID。</p></td>
+<td align="left"><p>Optional.</p>
+<p>Contact Id of the contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactId={ContactId}</p></td>
 </tr>
 <tr class="even">
 <td align="left">**PhoneNumber**</td>
-<td align="left"><p>可选。</p>
-<p>联系人的电话号码。</p></td>
+<td align="left"><p>Optional.</p>
+<p>Phone number of the contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**电子邮件**</td>
-<td align="left"><p>可选。</p>
-<p>联系人的电子邮件。</p></td>
+<td align="left">**Email**</td>
+<td align="left"><p>Optional.</p>
+<p>Email of the contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="even">
 <td align="left">**ContactName**</td>
-<td align="left"><p>可选。</p>
-<p>联系人的姓名。</p></td>
+<td align="left"><p>Optional.</p>
+<p>Name of the contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactName=John%20%Smith</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**联系人**</td>
-<td align="left"><p>可选。</p>
-<p>Contact 对象。</p></td>
+<td align="left">**Contact**</td>
+<td align="left"><p>Optional.</p>
+<p>Contact object.</p></td>
 <td align="left"><p>ms-people:viewcontact?Contact={Serialized Contact}</p></td>
 </tr>
 </tbody>
@@ -163,7 +163,7 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 
  
 
-## ms-people:savetocontact: 参数引用
+## ms-people:savetocontact: parameter reference
 
 
 <table>
@@ -174,28 +174,28 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">参数</th>
-<th align="left">说明</th>
-<th align="left">示例</th>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+<th align="left">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">**PhoneNumber**</td>
-<td align="left"><p>可选。</p>
-<p>联系人的电话号码。</p></td>
+<td align="left"><p>Optional.</p>
+<p>Phone number of the contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="even">
-<td align="left">**电子邮件**</td>
-<td align="left"><p>可选。</p>
-<p>联系人的电子邮件。</p></td>
+<td align="left">**Email**</td>
+<td align="left"><p>Optional.</p>
+<p>Email of the contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="odd">
 <td align="left">**ContactName**</td>
-<td align="left"><p>可选。</p>
-<p>联系人的姓名。</p></td>
+<td align="left"><p>Optional.</p>
+<p>Name of the contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com&amp;ContactName= John%20%Smith</p></td>
 </tr>
 </tbody>
@@ -209,6 +209,6 @@ ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

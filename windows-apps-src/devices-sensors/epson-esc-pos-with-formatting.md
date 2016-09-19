@@ -1,37 +1,37 @@
 ---
 author: DBirtolo
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
-title: "Epson ESC/POS（可进行格式设置）"
-description: "了解如何使用 ESC/POS 命令语言来为服务点打印机设置文本的格式（如粗体和双倍大小字符）。"
+title: Epson ESC/POS with formatting
+description: Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer.
 translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 33231abb1e573d837193daeee21713f09c7d8448
+ms.openlocfilehash: b645e41d7456f1dff664e3f61721a3564d554202
 
 ---
-# Epson ESC/POS（可进行格式设置）
+# Epson ESC/POS with formatting
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要的 API **
+** Important APIs **
 
--   [PointofService 打印机](https://msdn.microsoft.com/library/windows/apps/Mt426652)
+-   [PointofService Printer](https://msdn.microsoft.com/library/windows/apps/Mt426652)
 -   [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
-了解如何使用 ESC/POS 命令语言来为服务点打印机设置文本的格式（如粗体和双倍大小字符）。
+Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer.
 
-## ESC/POS 用法
+## ESC/POS usage
 
-Windows 服务点提供使用各种打印机，包括多个 Epson TM 系列打印机（有关受支持打印机的完整列表，请参阅 [PointofService 打印机](https://msdn.microsoft.com/library/windows/apps/Mt426652)页面）。 Windows 支持使用 ESC/POS 打印机控制语言的打印，该语言为与你的打印机通信提供高效且功能丰富的命令。
+Windows Point of Service provides use of a variety of printers, including several Epson TM series printers (for a full list of supported printers, see the [PointofService Printer](https://msdn.microsoft.com/library/windows/apps/Mt426652) page). Windows supports printing through the ESC/POS printer control language, which provides efficient and functional commands for communicating with your printer.
 
-ESC/POS 是由 Epson 创建的命令系统，适用于各种 POS 打印机系统，旨在通过提供通用的适用性避免不兼容的命令集。 大多数现代打印机都支持 ESC/POS。
+ESC/POS is a command system created by Epson used across a wide range of POS printer systems, aimed at avoiding incompatible command sets by providing universal applicability. Most modern printers support ESC/POS.
 
-所有命令以 ESC 字符（ASCII 27，十六进制 1B）或 GS（ASCII 29，十六进制 1D）开头，后跟指定命令的其他字符。 正常文本仅发送到打印机，以换行符分隔。
+All commands start with the ESC character (ASCII 27, HEX 1B) or GS (ASCII 29, HEX 1D), followed by another character that specifies the command. Normal text is simply sent to the printer, separated by line breaks.
 
-[**Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 通过 **Print()** 或 **PrintLine()** 方法为你提供大部分功能。 但是，若要获取特定格式或发送特定命令，则必须使用 ESC/POS 命令、生成为字符串并发送到打印机。
+The [**Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) provides much of that functionality for you via the **Print()** or **PrintLine()** methods. However, to get certain formatting or to send specific commands, you must use ESC/POS commands, built as a string and sent to the printer.
 
-## 使用粗体和双倍大小字符的示例
+## Example using bold and double size characters
 
-以下示例介绍如何使用 ESC/POS 命令以粗体和双倍大小字符进行打印。 请注意，每个命令都会生成为字符串，然后插入到 printJob 调用中。
+The example below shows how to use ESC/POS commands to print in bold and double sized characters. Note that each command is built as a string, then inserted into the printJob calls.
 
 ```csharp
 // … prior plumbing code removed for brevity
@@ -55,12 +55,12 @@ printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-有关 ESC/POS（包括可用命令）的详细信息，请查看 [Epson ESC/POS 常见问题](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf)。 有关 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 和所有可用功能的详细信息，请参阅 MSDN 上的 [PointofService 打印机](https://msdn.microsoft.com/library/windows/apps/Mt426652)。
+For more information on ESC/POS, including available commands, check out the [Epson ESC/POS FAQ](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). For details on [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) and all the available functionality, see [PointofService Printer](https://msdn.microsoft.com/library/windows/apps/Mt426652) on MSDN.
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

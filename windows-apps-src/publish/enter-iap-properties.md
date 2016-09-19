@@ -1,70 +1,16 @@
 ---
-author: jnHs
-Description: "在提交 IAP 时，“属性”页面上的选项有助于确定在提供给客户时 IAP 的行为。"
-title: "输入 IAP 属性"
-ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
+redirect_url: https://msdn.microsoft.com/windows/uwp/publish/enter-add-on-properties
 translationtype: Human Translation
-ms.sourcegitcommit: 3cc9a18124b7be93ab45456c1a35a3b65d3f0deb
-ms.openlocfilehash: 6f6052508118c77fd85a30c09d8aefe0a9a7f33b
+ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
+ms.openlocfilehash: 04693ba9ab42eecb6fc48c35219fea45f45b436c
 
 ---
 
-# 输入 IAP 属性
+# Enter IAP properties
+
+This page has been redirected to: Enter add-on properties
 
 
-在提交 IAP 时，“属性”****页面上的选项有助于确定在提供给客户时 IAP 的行为。
-
-## 产品类型
-
-首次创建 IAP 时，将选择你的产品类型。 你选择的产品类型显示在此处，但你无法更改它。
-
-> **注意** 如果你未发布该 IAP，并且需要选择不同的产品类型，可以删除该提交并重新开始。 
-
-如果你选择的产品类型为“耐用品”，“产品生命周期”****将显示在此处。 耐用品 IAP 的默认“产品生命周期”****为“永久”****，这意味着 IAP 永不过期。 如果你愿意，可以设置“产品生命周期”****，以使 IAP 在设置的持续时间后（可选择 1 至 365 天）过期。 
-
-## 内容类型
-
-无论 IAP 产品类型是什么，你还需要指示所提供内容的类型。 对于大部分 IAP，内容类型应为“电子软件下载”****。 如果列表中的另一个选项可以更好地描述你的 IAP（例如，如果要提供音乐下载或电子书），请改为选择该选项。 
-
-以下是 IAP 的内容类型的可能选项：
-
--   电子软件下载
--   电子书
--   电子杂志单期
--   电子报纸单期
--   音乐下载
--   音乐流
--   联机数据存储/服务
--   视频下载
--   视频流
--   软件即服务
-
-## 关键字
-
-可以选择为每个提交的 IAP 提供最多十个关键字，每个关键字最多 30 个字符。 然后，你的应用便可查询匹配这些字词的 IAP。 你可以使用此功能在应用中生成可加载 IAP 的屏幕，而无需直接在应用的代码中指定产品 ID。 然后，可以随时更改 IAP 关键字，而无需在应用中更改代码或重新提交应用。
-
-> **注意** 关键字不适用于面向 Windows 8 和 Windows 8.1 的程序包。
-
-## 标记
-
-你可以在“标记”****字段中输入最多 3000 个字符来为应用内产品提供额外的上下文。
-
-例如，假设你有一款游戏，并且你正将一袋金币作为 IAP 来出售。 使用“标记”****字段，应用即可查询此袋金币。 可通过更新 IAP“标记”****字段中的信息来随时调整值（在本例中，为袋中的金币数），而无需在应用中更改代码或重新提交应用。
-
-> **注意** **“标记”**字段不适用于面向 Windows 8 和 Windows 8.1 的程序包。
-
- 
-
- 
-
- 
-
-
-
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

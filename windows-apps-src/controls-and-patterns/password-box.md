@@ -1,62 +1,75 @@
 ---
 author: Jwmsft
-Description: "密码框是指出于隐私目的隐藏所键入的字符的文本输入框。"
-title: "密码框指南"
+Description: A password box is a text input box that conceals the characters typed into it for the purpose of privacy.
+title: Guidelines for password boxes
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 1a2d5efbeacd5ce8a71f5261aa52f09400c75c97
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
 
 ---
-# 密码框
-密码框是指出于隐私目的隐藏所键入的字符的文本输入框。 密码框的外观类似文本框，区别在于它在已输入文本的位置呈现占位符。 可配置占位符。
+# Password box
 
-默认情况下，密码框向用户提供了查看其密码的方法，即按下显示按钮。 你可以禁用显示按钮，或提供显示密码的替代机制，如复选框。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+A password box is a text input box that conceals the characters typed into it for the purpose of privacy. A password box looks like a text box, except that it renders placeholder characters in place of the text that has been entered. You can configure the placeholder character.
 
--   [**PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
--   [**Password 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)
--   [**PasswordChar 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)
--   [**PasswordRevealMode 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)
--   [**PasswordChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
+By default, the password box provides a way for the user to view their password by holding down a reveal button. You can disable the reveal button, or provide an alternate mechanism to reveal the password, such as a check box.
 
-## 这是正确的控件吗？
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>PasswordBox class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx"><strong>Password property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx"><strong>PasswordChar property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx"><strong>PasswordRevealMode property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx"><strong>PasswordChanged event</strong></a></li>
+</ul>
 
-使用 **PasswordBox** 控件收集密码或其他隐私数据，如身份证号。
+</div>
+</div>
 
-有关选择正确文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
-## 示例
 
-密码框具有多种状态，包括以下明显的状态。
 
-处于闲置状态的密码框可以显示提示文本，以使用户知道它的用途：
 
-![带有提示文本的处于闲置状态的密码框](images/passwordbox-rest-hinttext.png)
 
-当用户在密码框中键入时，默认行为是显示隐藏正在输入的文本的项目符号：
+## Is this the right control?
 
-![正在键入文本的密码框焦点状态](images/passwordbox-focus-typing.png)
+Use a **PasswordBox** control to collect a password or other private data, such as a Social Security number.
 
-按右侧的“显示”按钮可粗略地看到正在输入的密码：
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
-![显示文本的密码框](images/passwordbox-text-reveal.png)
+## Examples
 
-## 创建密码框
+The password box has several states, including these notable ones.
 
-使用 [Password](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx) 属性获取或设置 PasswordBox 的内容。 你可以在 [PasswordChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx) 事件的处理程序中执行此操作，以便在用户输入密码时执行验证。 或者，你可以使用其他事件（如按钮 [Click](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)），以在用户完成文本输入后执行验证。
+A password box at rest can show hint text so that the user knows its purpose:
 
-下面是密码框控件的 XAML，演示了 PasswordBox 的默认外观。 当用户输入密码时，通过检查以判断它是否为文本值“Password”。 如果是，则向用户显示一条消息。
+![Password box in rest state with hint text](images/passwordbox-rest-hinttext.png)
+
+When the user types in a password box, the default behavior is to show bullets that hide the text being entered:
+
+![Password box focus state typing text](images/passwordbox-focus-typing.png)
+
+Pressing the "reveal" button on the right gives a peek at the password text being entered:
+
+![Password box text revealed](images/passwordbox-text-reveal.png)
+
+## Create a password box
+
+Use the [Password](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx) property to get or set the contents of the PasswordBox. You can do this in the handler for the [PasswordChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx) event to perform validation while the user enters the password. Or, you can use another event, like a button [Click](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx), to perform validation after the user completes the text entry.
+
+Here's the XAML for a password box control that demonstrates the default look of the PasswordBox. When the user enters a password, you check to see if it's the literal value, "Password". If it is, you display a message to the user.
 
 ```xaml
 <StackPanel>  
   <PasswordBox x:Name="passwordBox" Width="200" MaxLength="16"
              PasswordChanged="passwordBox_PasswordChanged"/>
-           
+
   <TextBlock x:Name="statusText" Margin="10" HorizontalAlignment="Center" />
 </StackPanel>   
 ```
@@ -74,66 +87,66 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
     }
 }
 ```
-下面是运行此代码且用户输入“Password”时的结果。
+Here's the result when this code runs and the user enters "Password".
 
-![带有验证消息的密码框](images/passwordbox-revealed-validation.png)
+![Password box with a validation message](images/passwordbox-revealed-validation.png)
 
-### 密码字符
+### Password character
 
-通过设置 [PasswordChar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx) 属性，你可以更改用于屏蔽密码的字符。 此处使用星号替换默认项目符号。
+You can change the character used to mask the password by setting the [PasswordChar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx) property. Here, the default bullet is replaced with an asterisk.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" PasswordChar="*"/>
 ```
 
-结果如下所示。
+The result looks like this.
 
-![带有自定义字符的密码框](images/passwordbox-custom-char.png)
+![Password box with a custom character](images/passwordbox-custom-char.png)
 
-### 标头和占位符文本
+### Headers and placeholder text
 
-你可以使用 [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.header.aspx) 和 [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.placeholdertext.aspx) 属性为 PasswordBox 提供上下文。 这在你拥有多个框时（例如在更改密码的窗体上）非常有用。
+You can use the [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.header.aspx) and [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.placeholdertext.aspx) properties to provide context for the PasswordBox. This is especially useful when you have multiple boxes, such as on a form to change a password.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" Header="Password" PlaceholderText="Enter your password"/>
 ```
 
-![带有提示文本的处于闲置状态的密码框](images/passwordbox-rest-hinttext.png)
+![Password box in rest state with hint text](images/passwordbox-rest-hinttext.png)
 
-### 最大长度。
+### Maximum length
 
-通过设置 [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.maxlength.aspx) 属性，指定用户可输入的最大字符数。 不存在指定最小长度的属性，但你可以在应用代码中检查密码长度并执行任何其他验证。
+Specify the maximum number of characters that the user can enter by setting the [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.maxlength.aspx) property. There is no property to specify a minimum length, but you can check the password length, and perform any other validation, in your app code.
 
-## 密码显示模式
+## Password reveal mode
 
-PasswordBox 具有内置按钮，用户按下该按钮可显示密码文本。 下面是用户操作的结果。 当用户释放该按钮时，密码会自动重新隐藏。
+The PasswordBox has a built-in button that the user can press to display the password text. Here's the result of the user's action. When the user releases it, the password is automatically hidden again.
 
-![显示文本的密码框](images/passwordbox-text-reveal.png)
+![Password box text revealed](images/passwordbox-text-reveal.png)
 
-### 速览模式
+### Peek mode
 
-默认情况下，会显示密码显示按钮（或“速览”按钮）。 用户必须持续按住按钮来查看密码，以便保持较高级别的安全性。
+By default, the password reveal button (or "peek" button) is shown. The user must continuously press the button to view the password, so that a high level of security is maintained.
 
-[PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) 属性值不是确定用户能否看到密码显示按钮的唯一因素。 其他因素包括控件所示宽度是否大于最小值、PasswordBox 是否具有焦点以及文本输入字段是否至少包含一个字符。 密码显示按钮仅在 PasswordBox 首次接收焦点并且在用户输入一个字符后显示。 如果 PasswordBox 失去焦点后又重新获得焦点，除非已清除密码并从头开始输入字符，否则显示按钮将不会再次显示。
+The value of the [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) property is not the only factor that determines whether a password reveal button is visible to the user. Other factors include whether the control is displayed above a minimum width, whether the PasswordBox has focus, and whether the text entry field contains at least one character. The password reveal button is shown only when the PasswordBox receives focus for the first time and a character is entered. If the PasswordBox loses focus and then regains focus, the reveal button is not shown again unless the password is cleared and character entry starts over.
 
-> **注意** &nbsp;&nbsp;在 Windows 10 之前，密码显示按钮在默认情况下不显示。 如果应用安全要求始终掩盖密码，请务必将 PasswordRevealMode 设置为 Hidden。
+> **Caution**&nbsp;&nbsp;Prior to Windows 10, the password reveal button was not shown by default. If the security of your app requires that the password is always obscured, be sure to set PasswordRevealMode to Hidden.
 
-### 隐藏和可见模式
+### Hidden and Visible modes
 
-其他 [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordrevealmode.aspx) 枚举值（**Hidden** 和 **Visible**）会隐藏密码显示按钮，并允许你以编程方式管理是否掩盖密码。
+The other [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordrevealmode.aspx) enumeration values, **Hidden** and **Visible**, hide the password reveal button and let you programmatically manage whether the password is obscured.
 
-若要始终掩盖密码，请将 PasswordRevealMode 设置为 Hidden。 如果你不需要始终掩盖密码，可以提供自定义 UI，使用户在 Hidden 和 Visible 之间切换 PasswordRevealMode。
+To always obscure the password, set PasswordRevealMode to Hidden. Unless you need the password to be always obscured, you can provide a custom UI to let the user toggle the PasswordRevealMode between Hidden and Visible.
 
-在以前版本的 Windows Phone 中，PasswordBox 使用复选框切换是否掩盖密码。 你可以为你的应用创建类似的 UI，如以下示例所示。 你还可以使用其他控件（例如 [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)）以使用户切换模式。
+In previous versions of Windows Phone, PasswordBox used a check box to toggle whether the password was obscured. You can create a similar UI for your app, as shown in the following example. You can also use other controls, like [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx), to let the user switch modes.
 
-此示例展示了如何使用 [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 使用户切换 PasswordBox 的显示模式。
+This example shows how to use a [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) to let a user switch the reveal mode of a PasswordBox.
 
 ```xaml
 <StackPanel Width="200">
-    <PasswordBox Name="passwordBox1" 
+    <PasswordBox Name="passwordBox1"
                  PasswordRevealMode="Hidden"/>
     <CheckBox Name="revealModeCheckBox" Content="Show password"
-              IsChecked="False" 
+              IsChecked="False"
               Checked="CheckBox_Changed" Unchecked="CheckBox_Changed"/>
 </StackPanel>
 ```
@@ -152,46 +165,46 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 }
 ```
 
-此 PasswordBox 的外观如下所示。
+This PasswordBox looks like this.
 
-![带有自定义显示按钮的密码框](images/passwordbox-custom-reveal.png)
-    
-## 为文本控件选择正确的键盘
+![Password box with a custom reveal button](images/passwordbox-custom-reveal.png)
 
-若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。 PasswordBox 仅支持 **Password** 和 **NumericPin** 输入范围值。 将忽略任何其他值。
+## Choose the right keyboard for your text control
 
-有关如何使用输入范围的详细信息，请参阅[使用输入范围更改触摸键盘]()。
+To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter. PasswordBox supports only the **Password** and **NumericPin** input scope values. Any other value is ignored.
 
-## 建议
+For more info about how to use input scopes, see [Use input scope to change the touch keyboard](https://msdn.microsoft.com/library/windows/apps/mt280229).
 
--   如果密码框的用途不甚清楚，请使用标签或占位符文本。 无论文本输入框是否具有值，标签都可见。 占位符文本显示在文本输入框内，并在输入值后立即消失。
--   针对可输入值的范围，为密码框提供适当的宽度。 单词长度因语言而异，因此如果希望应用世界通用，请将本地化考虑在内。
--   不要紧挨密码输入框放置另一个控件。 密码框具有密码显示按钮，供用户验证已键入的密码。紧挨密码输入框放置其他控件会使用户在尝试与其他控件交互时，不小心显示其密码。 为了防止出现这种情况，请在输入框中的密码和另一个控件之间设置一些间距，或者将另一个控件放在下一行中。
--   请考虑为帐户创建显示两个密码框：一个用于新密码，第二个用于确认新密码。
--   仅为登录显示单个密码框。
--   当密码框用于输入 PIN 时，请考虑在输入最后一个数字后立即提供即时响应，而不是使用确认按钮。
+## Recommendations
 
-
-
-## 相关文章
-
-[文本控件](text-controls.md)
-
-**对于设计人员**
-- [拼写检查指南](spell-checking-and-prediction.md)
-- [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [文本输入指南](text-controls.md)
-
-**面向开发人员 (XAML)**
-- [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**对于开发人员（其他）**
-- [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+-   Use a label or placeholder text if the purpose of the password box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.
+-   Give the password box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.
+-   Don't put another control right next to a password input box. The password box has a password reveal button for users to verify the passwords they have typed, and having another control right next to it might make users accidentally reveal their passwords when they try to interact with the other control. To prevent this from happening, put some spacing between the password in put box and the other control, or put the other control on the next line.
+-   Consider presenting two password boxes for account creation: one for the new password, and a second to confirm the new password.
+-   Only show a single password box for logins.
+-   When a password box is used to enter a PIN, consider providing an instant response as soon as the last number is entered instead of using a confirmation button.
 
 
 
-<!--HONumber=Jun16_HO4-->
+## Related articles
+
+[Text controls](text-controls.md)
+
+**For designers**
+- [Guidelines for spell checking](spell-checking-and-prediction.md)
+- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Guidelines for text input](text-controls.md)
+
+**For developers (XAML)**
+- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
+
+
+**For developers (other)**
+- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

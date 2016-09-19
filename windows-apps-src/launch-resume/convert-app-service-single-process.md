@@ -1,16 +1,20 @@
 ---
 author: TylerMSFT
-title: Convert an app service to run in the same process as its provider
-description: Convert app service code that ran in a separate background process into code that runs inside the same process as your app service provider.
+title: "将应用服务转换为在与其提供程序相同的进程中运行"
+description: "将在单独的后台进程中运行的应用服务代码转换为在与应用服务提供程序相同的进程中运行的代码。"
+translationtype: Human Translation
+ms.sourcegitcommit: 9e959a8ae6bf9496b658ddfae3abccf4716957a3
+ms.openlocfilehash: 0990e9938bb9bf1794cf58c5541a64f22853b093
+
 ---
 
-# Convert an app service to run in the same process as its provider
+# 将应用服务转换为在与其提供程序相同的进程中运行
 
-An App Service Connection enables another application to wake up your app in the background and start a direct line of communication with it.
+[AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceconnection.aspx) 使其他应用程序可以在后台唤醒你的应用，并建立与它的直接通信。
 
-With the introduction of single-process App Services, two running foreground applications can have a direct line of communication via an app service connection. App Services can now run in the same process as the foreground application; which makes communication between apps much easier while removing the need to separate the service code into a separate project.
+引入单进程应用服务后，两个正在运行的前台应用程序可通过应用服务连接建立直接通信。 应用服务现在在无需将服务代码分离到独立项目的同时，还可以在与前台应用程序相同的进程中运行，这简化了应用之间的通信。
 
-Turning a multiple process model App Service into single process model requires two changes. The first is a manifest change.
+将多进程模型的应用服务转换为单进程模型需要两项更改。 第一项是清单更改。
 
 > ```xml
 >  <uap:Extension Category="windows.appService">
@@ -18,11 +22,11 @@ Turning a multiple process model App Service into single process model requires 
 >  </uap:Extension>
 > ```
 
-Remove the `EntryPoint` attribute. Now `OnBackgroundActivated()` callback will be used as the callback method when the app service is invoked.
+删除 `EntryPoint` 属性。 在调用应用服务后，[OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 回调将用作回调方法。
 
-The second change is to move the service logic from its separate background task project into methods that can be called from `OnBackgroundActivated()`.
+第二项更改是将服务逻辑从其单独的后台任务项目移动至可从 **OnBackgroundActivated()** 调用的方法。
 
-Now your application can directly run your App Service.  For example:
+此时，应用程序可直接运行应用服务。  例如：
 
 > ``` cs
 > private AppServiceConnection appServiceconnection;
@@ -65,8 +69,14 @@ Now your application can directly run your App Service.  For example:
 > }
 > ```
 
-In the code above the `OnBackgroundActivated` method handles the app service activation. All of the events required for communication through an `AppServiceConnection` are registered, and the task deferral object is stored so that it can be marked as complete when the communication between the applications is done.
+在上述代码中，`OnBackgroundActivated` 方法处理应用服务激活。 通过 [AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceconnection.aspx) 进行通信所需的所有事件均已注册，并且任务延迟对象已存储，以便在应用程序之间的通信完成时可标记为“完成”。
 
-When the app receives a request and reads the `ValueSet` provided to see if the `Key` and `Value` strings are present. If they are present then the app service returns a pair of `Response` and `True` string values back to the app on the other side of the AppServiceConnection.
+在应用收到请求并读取所提供的 [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) 时，查看是否存在 `Key` 和 `Value` 字符串。 如果存在，则应用服务会将一对 `Response` 和 `True` 字符串值返回到 **AppServiceConnection** 另一侧的应用上。
 
-Learn more about connecting and communicating with other apps at [Create and Consume an App Service](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396).
+请在[创建和使用应用服务](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396)中了解关于连接和与其他应用通信的详细信息。
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

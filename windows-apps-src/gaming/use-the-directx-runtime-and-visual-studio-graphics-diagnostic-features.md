@@ -1,34 +1,35 @@
 ---
 author: mtoepke
-title: "图形诊断工具"
-description: "了解如何在 Visual Studio 中获取和使用图形诊断功能，包括图形调试、图形框架分析和 GPU 使用率。"
+title: Graphics diagnostics tools
+description: Learn how to get and use the graphics diagnostics features including Graphics Debugging, Graphics Frame Analysis, and GPU Usage in Visual Studio.
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f266cb50893fd37162f21be169d6daf6e37c6bb9
+ms.sourcegitcommit: 765cde8afe32cef6515ee6ca9750365aa35984a2
+ms.openlocfilehash: 5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e
 
 ---
 
-# 图形诊断工具
+# Graphics diagnostics tools
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-对于 Windows 10，图形诊断工具现已作为 Windows 内的可选功能提供。 若要使用在运行时和 Visual Studio 中提供的图形诊断功能来开发 DirectX 应用或游戏，请安装可选“图形工具”功能：
+With Windows 10, the graphics diagnostic tools are now available from within Windows as an optional feature. To use the graphics diagnostic features provided in the runtime and Visual Studio to develop DirectX apps or games, install the optional Graphics Tools feature:
 
-1.  转到**“设置”**、依次选择**“系统”**和**“可选功能”**，然后单击**“添加功能”**。 转到“设置”****、依次选择“系统”****、“应用和功能”****和“管理可选功能”****， 然后单击“添加功能”****。
-2.  在**“添加功能”**列表中，单击**“图形工具”**。
+1.  Go to **Settings**, select **System**, select **Apps & Features**, and then click **Manage optional features**.
+2.  Click **Add a feature**   
+3.  In the **Optional features** list, select **Graphics Tools** and then click **Install**.
 
-图形诊断功能包括在 DirectX 运行时中创建 Direct3D 调试设备（通过 Direct3D SDK 层）的功能以及图形调试、框架分析和 GPU 使用情况。
+Graphics diagnostics features include the ability to create Direct3D debug devices (via Direct3D SDK Layers) in the DirectX runtime, plus Graphics Debugging, Frame Analysis, and GPU Usage.
 
--   图形调试使你可以跟踪你的应用正在进行的 Direct3D 调用。 然后，你可以重播这些调用、检查参数、使用着色器进行调试和实验， 并可视化图形资源以诊断呈现问题。 可以在 Windows 电脑、模拟器或设备上获取日志，并且该日志可以在不同的硬件上播放。
--   Visual Studio 中的图形框架分析在图形调试日志上运行，并收集 Direct3D 绘图调用的基线计时。 然后它通过修改各种图形设置来执行一组实验，并生成计时结果的表格。 你可以使用此数据了解应用中的图形性能问题，并且可以查看各种实验的结果，以确定性能改善的机会。
--   Visual Studio 中的 GPU 使用情况使你可以实时监视 GPU 使用。 它收集和分析 CPU 和 GPU 正在处理的工作负载的计时数据，以便你可以确定哪里存在瓶颈。
+-   Graphics Debugging lets you trace the Direct3D calls being made by your app. Then, you can replay those calls, inspect parameters, debug and experiment with shaders, and visualize graphics assets to diagnose rendering issues. Logs can be taken on Windows PCs, simulators, or devices, and be played back on different hardware.
+-   Graphics Frame Analysis in Visual Studio runs on a graphics debugging log and gathers baseline timing for the Direct3D draw calls. It then performs a set of experiments by modifying various graphics settings and produces a table of timing results. You can use this data to understand graphics performance issues in your app, and you can review results of the various experiments to identify opportunities for performance improvements.
+-   GPU Usage in Visual Studio allows you to monitor GPU use in real time. It collects and analyzes the timing data of the workloads being handled by the CPU and GPU, so you can determine where the bottlenecks are.
 
-## 相关主题
+## Related topics
 
 
-[Visual Studio 中的图形诊断概述](http://go.microsoft.com/fwlink/p/?LinkID=526382)
+[Graphics Diagnostics Overview in Visual Studio](http://go.microsoft.com/fwlink/p/?LinkID=526382)
 
  
 
@@ -40,6 +41,6 @@ ms.openlocfilehash: f266cb50893fd37162f21be169d6daf6e37c6bb9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

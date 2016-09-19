@@ -1,47 +1,47 @@
 ---
 author: mcleblanc
-description: "如果你具有使用 Visual Studio 2015 RC 创建的 Windows 10 项目，则你在将项目文件更新为适合 Visual Studio 2015 RTM 的格式时拥有两个选项。"
-title: "将 UWP Microsoft Visual Studio 2015 RC 项目更新为 RTM"
+description: If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then you have two options when it comes to updating the project files to the format suitable for Visual Studio 2015 RTM.
+title: Update your UWP Microsoft Visual Studio 2015 RC project to RTM
 ms.assetid: 104E36CE-36DE-4E9C-A944-711C200B44EF
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9c2b9f164b6578a9e1d269295b3fa0d7a863a6a0
+ms.openlocfilehash: 10c65c359f3a0791ba03288a745bc732b94251b7
 
 ---
 
-# 将 UWP Microsoft Visual Studio 2015 RC 项目更新为 RTM
+# Update your UWP Microsoft Visual Studio 2015 RC project to RTM
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-如果你具有使用 Visual Studio 2015 RC 创建的 Windows 10 项目，则你在将项目文件更新为适合 Visual Studio 2015 RTM 的格式时拥有两个选项。 推荐的方法是在 Visual Studio 2015 RTM 中创建新的 Windows 10 项目，并将文件复制到其中。 或者，可按照高级文档内容，编辑现有项目文件并将它们移动至新的格式。
+If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then you have two options when it comes to updating the project files to the format suitable for Visual Studio 2015 RTM. The recommended method is to create a new Windows 10 project in Visual Studio 2015 RTM and copy your files into it. Alternatively, you can follow advanced documentation to edit your existing project files and move them over to the new format.
 
-## 在 Visual Studio 2015 RTM 中打开 Windows 10 Visual Studio 2015 RC 项目时看到的内容
+## What you see when you open a Windows 10Visual Studio 2015 RC project in Visual Studio 2015 RTM
 
-在 Visual Studio 2015 RTM 中打开 Windows 10 Visual Studio 2015 RC 项目时，将在**“解决方案资源管理器”**中看到“需要更新”消息。
+When you open a Windows 10Visual Studio 2015 RC project in Visual Studio 2015 RTM, you'll see an "update required" message in **Solution Explorer**.
 
-![需要更新](images/vsrc-to-rtm/solution-explorer.png)
+![update required](images/vsrc-to-rtm/solution-explorer.png)
 
-如果在**“解决方案资源管理器”**中访问项目的上下文菜单，并选择**“重新加载项目”**，你将看到此对话框。
+If you access the context menu for the project in **Solution Explorer** and choose **Reload Project**, then you'll see this dialog.
 
-![需要 Visual Studio 更新](images/vsrc-to-rtm/reload-project.png)
+![visual studio update required](images/vsrc-to-rtm/reload-project.png)
 
-## 创建新项目，并将文件复制到其中
+## Create a new project and copy files into it
 
-1.  启动 Visual Studio 2015 RTM 并创建新的空白应用程序（Windows 通用）项目。 请记住，在默认情况下，新项目将生成面向通用设备系列的应用包（appx 文件）。 如果面向一个或多个特定设备系列，请更改该默认设置。
-2.  在 Visual Studio 2015 RC 项目中，标识要复制的所有源代码文件和视觉资源文件。 通过使用文件资源管理器，将数据模型、视图模型、视觉资源、资源词典，文件夹结构和所需的任何其他内容（包括 AssemblyInfo.cs）复制到新项目中。 根据需要在磁盘上复制或创建子文件夹。
-3.  还可以将视图（例如，MainPage.xaml 和 MainPage.xaml.cs）复制到新项目中。 同样，也可根据需要创建新的子文件夹，并从项目中删除现有视图。 但在覆盖或删除 Visual Studio 生成的视图之前，请保留一份副本，因为在以后引用它时，这可能会很有用。
-4.  在**“解决方案资源管理器”**中，请确保将**“显示所有文件”**切换为打开。 选择要复制的文件，右键单击这些文件，然后单击“包括在项目中”****。 这将自动包括其所包含的文件夹。 然后，可根据需要将**“显示所有文件”**切换为关闭。 备用工作流（如果选择）旨在使用**“添加现有项”**命令，以便在 Visual Studio**“解决方案资源管理器”**中创建任何必要子文件夹。 仔细检查可见资源是否已将**“生成操作”**设置为**“内容”**，并将**“复制到输出目录”**设置为**“不复制”**。
-5.  在 RC 项目中向引用的任何扩展 SDK 添加引用，并从之前的 Package.appxmanifest（如声明的任何功能）将任意更改复制到新 RTM 项目的 Package.appxmanifest 中。
+1.  Launch Visual Studio 2015 RTM and create a new Blank Application (Windows Universal) project. Remember that, by default, your new project builds an app package (an appx file) that targets the Universal device family. Change that if you're targeting one or more specific device families.
+2.  In your Visual Studio 2015 RC project, identify all of the source code files and visual asset files that you want to copy over. Using File Explorer, copy data models, view models, visual assets, Resource Dictionaries, folder structure, and anything else that you need (including AssemblyInfo.cs), to your new project. Copy or create sub-folders on disk as necessary.
+3.  Copy views (for example, MainPage.xaml and MainPage.xaml.cs) into the new project, too. Again, create new sub-folders as necessary, and remove the existing views from the project. But, before you over-write or remove a view that Visual Studio generated, keep a copy because it may be useful to refer to it later.
+4.  In **Solution Explorer**, make sure **Show All Files** is toggled on. Select the files that you copied, right-click them, and click **Include In Project**. This will automatically include their containing folders. You can then toggle **Show All Files** off if you like. An alternative workflow, if you prefer, is to use the **Add Existing Item** command, having created any necessary sub-folders in the Visual Studio **Solution Explorer**. Double-check that your visual assets have **Build Action** set to **Content** and **Copy to Output Directory** set to **Do not copy**.
+5.  Add references to any extension SDKs that you referenced in your RC project, and copy any changes over from your previous Package.appxmanifest (for example, any capabilities that you declared) to the one in the new RTM project.
 
-## 高级：编辑现有项目文件
+## Advanced: Edit your existing project files
 
-Visual Studio 2015 RC 和 Visual Studio 2015 RTM 之间的 Windows 10 项目格式的明显区别是，RTM 格式使用 [NuGet](http://docs.nuget.org/) 版本 3。 如果计划手动更新项目，请记住这一差异。
+One significant difference between the Windows 10 project format of Visual Studio 2015 RC and Visual Studio 2015 RTM is that the RTM format uses [NuGet](http://docs.nuget.org/) version 3. Bear this difference in mind if you intend to manually update your project.
 
-如果不希望手动更新项目，或者对了解 Visual Studio 2015 RC 和 Visual Studio 2015 RTM 之间的项目格式差异感兴趣，请参阅[将应用迁移到通用 Windows 平台 (UWP)](http://msdn.microsoft.com/library/mt148501.aspx)。
-
-
+If you do want to manually update your project, or if you're interested in knowing the differences between the project formats of Visual Studio 2015 RC and Visual Studio 2015 RTM, then see [Migrate apps to the Universal Windows Platform (UWP)](http://msdn.microsoft.com/library/mt148501.aspx).
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

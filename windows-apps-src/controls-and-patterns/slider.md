@@ -1,72 +1,84 @@
 ---
 author: Jwmsft
-Description: "让用户在给定的范围内设置值。"
-title: "滑块"
+Description: Lets the user set a value in a given range.
+title: Sliders
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 64ae11c8c7e46d973c13cacb69482fd957e0488d
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
 
 ---
-# 滑块
+# Sliders
 
-滑块是一种可让用户通过沿轨迹移动 thumb 控件从一个值范围中进行选择的控件。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-![滑块控件](images/controls/slider.png)
+A slider is a control that lets the user select from a range of values by moving a thumb control along a track.
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+![A slider control](images/controls/slider.png)
 
--   [**Slider 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)
--   [**Value 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)
--   [**ValueChanged 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx"><strong>Slider class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx"><strong>Value property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx"><strong>ValueChanged event</strong></a></li>
+</ul>
 
-## 这是正确的控件吗？
+</div>
+</div>
 
-当你希望用户能够设置所定义的连续值（如音量或亮度）或一系列离散值（如屏幕分辨率设置）时，应使用滑块。
 
-当你知道用户用户将该值视为相对数量而不是数值时，滑块是最好的选择。 例如，用户考虑将其音量设置为低或中—而不是考虑将该值设置为 2 或 5。
 
-不要对二元设置使用滑块。 改用[切换开关](toggles.md)。
 
-下面是决定是否使用滑块时要考虑的一些其他因素：
 
--   **该设置是否是相对数量？** 如果不是，使用[单选按钮](radio-button.md)或[列表框](lists.md)。
--   **该设置是否为确切的已知数值？** 如果是，请使用数值[文本框](text-box.md)。
--   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用滑块。 例如，用户可以通过立即查看色调、饱和度或亮度值更改的效果，从而更加轻松地选择颜色。
--   **该设置是否包含四个或更多值？** 如果不是，请使用[单选按钮](radio-button.md)。
--   **用户是否可以更改该值？** 滑块用于用户交互。 如果用户无法更改该值，请改为使用只读文本。
 
-如果你在滑块和数值文本框之间进行选择，请在以下情况下使用数值文本框：
+## Is this the right control?
 
--   屏幕空间紧凑。
--   用户可能首选使用键盘。
+Use a slider when you want your users to be able to set defined, contiguous values (such as volume or brightness) or a range of discrete values (such as screen resolution settings).
 
-在以下情况下使用滑块：
+A slider is a good choice when you know that users think of the value as a relative quantity, not a numeric value. For example, users think about setting their audio volume to low or medium—not about setting the value to 2 or 5.
 
--   用户将获得即时反馈所带来的好处。
+Don't use a slider for binary settings. Use a [toggle switch](toggles.md) instead.
 
-## 示例
+Here are some additional factors to consider when deciding whether to use a slider:
 
-Windows Phone 上用于控制音量的滑块。
+-   **Does the setting seem like a relative quantity?** If not, use [radio buttons](radio-button.md) or a [list box](lists.md).
+-   **Is the setting an exact, known numeric value?** If so, use a numeric [text box](text-box.md).
+-   **Would a user benefit from instant feedback on the effect of setting changes?** If so, use a slider. For example, users can choose a color more easily by immediately seeing the effect of changes to hue, saturation, or luminosity values.
+-   **Does the setting have a range of four or more values?** If not, use [radio buttons](radio-button.md).
+-   **Can the user change the value?** Sliders are for user interaction. If a user can't ever change the value, use read-only text instead.
 
-![Windows Phone 上用于控制音量的滑块](images/control-examples/slider-phone.png)
+If you are deciding between a slider and a numeric text box, use a numeric text box if:
 
-Windows 显示设置中用于更改文本大小的滑块。
+-   Screen space is tight.
+-   The user is likely to prefer using the keyboard.
 
-![Windows 显示设置中用于更改文本大小的滑块](images/control-examples/slider-display-settings.png)
+Use a slider if:
 
-## 创建滑块
+-   Users will benefit from instant feedback.
 
-下面介绍了如何使用 XAML 创建滑块。
+## Examples
+
+A slider to control the volume on Windows Phone.
+
+![A slider to control the volume on Windows Phone](images/control-examples/slider-phone.png)
+
+A slider to change text size in Windows display settings.
+
+![A slider to change text size in Windows display settings](images/control-examples/slider-display-settings.png)
+
+## Create a slider
+
+Here's how to create a slider in XAML.
 
 ```xaml
 <Slider x:Name="volumeSlider" Header="Volume" Width="200"
         ValueChanged="Slider_ValueChanged"/>
 ```
 
-下面介绍了如何使用代码创建滑块。
+Here's how to create a slider in code.
 
 ```csharp
 Slider volumeSlider = new Slider();
@@ -78,7 +90,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-从 [**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) 属性中获取并设置滑块的值。 若要响应值更改，可使用数据绑定以绑定到 Value 属性或处理 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) 事件。
+You get and set the value of the slider from the [**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) property. To respond to value changes, you can use data binding to bind to the Value property, or handle the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) event.
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -91,88 +103,88 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 }
 ```
 
-## 建议
+## Recommendations
 
--   调整控件大小，以便用户可以轻松设置所需的值。 对于具有离散值的设置，请确保用户可以使用鼠标轻松选择任何值。 确保滑块的终点始终位于视图边界内。
--   在用户选择时或选择后，提供即时反馈（如果实际）。 例如，Windows 音量控件会蜂鸣以指示选定的音频音量。
--   使用标签显示值范围。 例外：如果滑块垂直放置，并且顶部标签为“最大”、“高”、“更多”或同等标签，则可以忽略其他标签，因为它的意思已明确。
--   在禁用滑块时禁用所有关联标签或反馈视觉对象。
--   当设置你的滑块的流向和/或方向时，请考虑文本方向。 在某些语言中，书写文字从左向右排列，在另一些语言中却从右向左排列。
--   不使用滑块作为进度指示器。
--   不要将滑块的滑动条大小更改为默认大小以外的大小。
--   如果值范围较大，并且用户很可能选择该范围内几个代表值之一，请不要创建相邻滑块。 相反，请将这些值用作唯一允许的步骤。 例如，如果时间值最多为 1 个月，但用户仅需要从 1 分钟、1 小时、1 天或 1 个月中选取，则创建仅具有 4 个步骤点的滑块。
+-   Size the control so that users can easily set the value they want. For settings with discrete values, make sure the user can easily select any value using the mouse. Make sure the endpoints of the slider always fit within the bounds of a view.
+-   Give immediate feedback while or after a user makes a selection (when practical). For example, the Windows volume control beeps to indicate the selected audio volume.
+-   Use labels to show the range of values. Exception: If the slider is vertically oriented and the top label is Maximum, High, More, or equivalent, you can omit the other labels because the meaning is clear.
+-   Disable all associated labels or feedback visuals when you disable the slider.
+-   Consider the direction of text when setting the flow direction and/or orientation of your slider. Script flows from left to right in some languages, and from right to left in others.
+-   Don't use a slider as a progress indicator.
+-   Don't change the size of the slider thumb from the default size.
+-   Don't create a continuous slider if the range of values is large and users will most likely select one of several representative values from the range. Instead, use those values as the only steps allowed. For example if time value might be up to 1 month but users only need to pick from 1 minute, 1 hour, 1 day or 1 month, then create a slider with only 4 step points.
 
-## 其他使用指南
+## Additional usage guidance
 
-### 选择适当的布局：水平或垂直
+### Choosing the right layout: horizontal or vertical
 
-你可以水平或垂直布置滑块。 使用这些指南可确定使用哪个布局。
+You can orient your slider horizontally or vertically. Use these guidelines to determine which layout to use.
 
--   使用自然方向。 例如，如果滑块代表一个真实值（通常垂直显示），例如温度，请使用垂直方向。
--   如果使用控件在媒体中进行搜索，例如在视频应用中，请使用水平方向。
--   当在可以沿着一个方向（水平或垂直）移动的页面中使用滑块时，请针对滑块使用与移动方向不同的方向。 否则，用户在尝试平移页面时，可能会意外地轻扫滑块从而更改其值。
--   如果仍然不确定使用哪个方向，请使用最适合你的页面布局的方向。
+-   Use a natural orientation. For example, if the slider represents a real-world value that is normally shown vertically (such as temperature), use a vertical orientation.
+-   If the control is used to seek within media, like in a video app, use a horizontal orientation.
+-   When using a slider in page that can be panned in one direction (horizontally or vertically), use a different orientation for the slider than the panning direction. Otherwise, users might swipe the slider and change its value accidentally when they try to pan the page.
+-   If you're still not sure which orientation to use, use the one that best fits your page layout.
 
-### 范围方向
+### Range direction
 
-范围方向是指当你从滑块的当前值滑动到它的最大值时，滑块的移动方向。
+The range direction is the direction you move the slider when you slide it from its current value to its max value.
 
--   对于垂直滑块，无论从哪个方向阅读，都将最大值放在滑块的顶部。 例如，对于音量滑块，始终将最大音量设置放在滑块顶部。 对于其他类型的值（例如星期几），请按照页面的阅读说明操作。
--   对于水平样式，如果是从左到右的页面布局，请将较小的值放在滑块的左侧；如果是从右到左的页面布局，请将较小的值放在滑块的右侧。
--   上述指南的一个例外是，对于媒体定位栏：始终将较小的值放在滑块的左侧。
+-   For vertical slider, put the largest value at the top of the slider, regardless of reading direction. For example, for a volume slider, always put the maximum volume setting at the top of the slider. For other types of values (such as days of the week), follow the reading direction of the page.
+-   For horizontal styles, put the lower value on the left side of the slider for left-to-right page layout, and on the right for right-to-left page layout.
+-   The one exception to the previous guideline is for media seek bars: always put the lower value on the left side of the slider.
 
-### 步长和刻度线
+### Steps and tick marks
 
--   如果你不希望滑块允许使用最小值和最大值之间的任意值，请使用步骤点。例如，如果使用滑块指定要购买的电影票数，请不要允许浮点值。 为它提供一个步骤值 1。
--   如果你指定步骤（也称为贴靠点），请确保最后一步与滑块的最大值对齐。
--   当你希望向用户显示主要或有意义值的位置时，请使用刻度线。 例如，控制缩放的滑块可能有 50%、100% 和 200% 的刻度线。
--   当用户需要了解设置的近似值时显示刻度线。
--   当用户需要知道他们所选择的设置的确切值而不想与控件交互时，显示刻度线和值标签。 否则，他们可以使用值工具提示来查看确切值。
--   当步骤点不明显时，始终显示刻度线。 例如，如果滑块的宽度为 200 像素，有 200 个贴靠点，则可以隐藏刻度线，因为用户不会注意到贴靠行为。 但是如果只有 10 个贴靠点，则显示刻度线。
+-   Use step points if you don't want the slider to allow arbitrary values between min and max. For example, if you use a slider to specify the number of movie tickets to buy, don't allow floating point values. Give it a step value of 1.
+-   If you specify steps (also known as snap points), make sure that the final step aligns to the slider's max value.
+-   Use tick marks when you want to show users the location of major or significant values. For example, a slider that controls a zoom might have tick marks for 50%, 100%, and 200%.
+-   Show tick marks when users need to know the approximate value of the setting.
+-   Show tick marks and a value label when users need to know the exact value of the setting they choose, without interacting with the control. Otherwise, they can use the value tooltip to see the exact value.
+-   Always show tick marks when step points aren't obvious. For example, if the slider is 200 pixels wide and has 200 snap points, you can hide the tick marks because users won't notice the snapping behavior. But if there are only 10 snap points, show tick marks.
 
-### 标签
+### Labels
 
--   **滑块标签**
+-   **Slider labels**
 
-    滑块标签指示滑块用于何处。
+    The slider label indicates what the slider is used for.
 
-    -   使用没有结束标点的标签（对于所有控件标签而言，这是惯例）。
-    -   当滑块采用的形式会将它的大部分标签放在其控件上方时，应将标签放在滑块上方。
-    -   当滑块采用的形式会将它的大部分标签放在其控件一侧时，请将标签放在滑块的一侧。
-    -   避免将标签放在滑块下方，因为当用户触摸滑块时，用户的手指可能会盖住标签。
--   **范围标签**
+    -   Use a label with no ending punctuation (this is the convention for all control labels).
+    -   Position labels above the slider when the slider is in a form that places most of its labels above their controls.
+    -   Position labels to the sides when the slider is in a form that places most of its labels to the side of their controls.
+    -   Avoid placing labels below the slider because the user's finger might occlude the label when the user touches the slider.
+-   **Range labels**
 
-    范围（或填充）标签描述滑块的最小和最大值。
+    The range, or fill, labels describe the slider's minimum and maximum values.
 
-    -   标记滑块范围的两端，除非垂直方向使得不必要这样做。
-    -   如果可能，为每个标签仅使用一个词。
-    -   不要使用结束标点符号。
-    -   确保这些标签具有描述性且相对应。 示例：最大/最小，更多/更少，高/低、温和/高声。
--   **值标签**
+    -   Label the two ends of the slider range, unless a vertical orientation makes this unnecessary.
+    -   Use only one word, if possible, for each label.
+    -   Don't use ending punctuation.
+    -   Make sure these labels are descriptive and parallel. Examples: Maximum/Minimum, More/Less, Low/High, Soft/Loud.
+-   **Value labels**
 
-    值标签显示滑块的当前值。
+    A value label displays the current value of the slider.
 
-    -   如果需要值标签，将它显示在滑块下。
-    -   相对于控件居中放置文本，并包括单位（例如像素）。
-    -   由于滑块的 Thumb 控件在推动时被遮盖，请考虑以其他方式（采用标签或其他视觉对象）显示当前值。 用于设置文本大小的滑块可以在滑块旁边呈现一些正确大小的示例文本。
+    -   If you need a value label, display it below the slider.
+    -   Center the text relative to the control and include the units (such as pixels).
+    -   Since the slider’s thumb is covered during scrubbing, consider showing the current value some other way, with a label or other visual. A slider setting text size could render some sample text of the right size beside the slider.
 
-### 外观和交互
+### Appearance and interaction
 
-滑块由一条轨迹和 Thumb 控件构成。 该轨迹是一个栏（它可以选择性地显示各种刻度线样式），它代表可以输入的值范围。 Thumb 控件是一个选择器，用户可通过点击轨迹或来回推动来决定它的位置。
+A slider is composed of a track and a thumb. The track is a bar (which can optionally show various styles of tick marks) representing the range of values that can be input. The thumb is a selector, which the user can position by either tapping the track or by scrubbing back and forth on it.
 
-滑块具有较大的触摸目标。 要维护触摸辅助功能，滑块应该与显示器边缘保持足够远的距离。
+A slider has a large touch target. To maintain touch accessibility, a slider should be positioned far enough away from the edge of the display.
 
-当你设计自定义滑块时，请考虑尽可能清楚地向用户提供所有需要的信息的方法。 如果用户需要通过了解单位来了解设置，请使用值标签；寻找使用图形创意地代表这些值的方法。 例如，控制音量的滑块可以在滑块最小值一端显示不带有音波的扬声器图形，并在最大值一端显示带有音波的扬声器图形。
+When you’re designing a custom slider, consider ways to present all the necessary info to the user with as little clutter as possible. Use a value label if a user needs to know the units in order to understand the setting; find creative ways to represent these values graphically. A slider that controls volume, for example, could display a speaker graphic without sound waves at the minimum end of the slider, and a speaker graphic with sound waves at the maximum end.
 
-## 相关主题
+## Related topics
 
-**对于设计人员**
-- [切换开关指南](toggles.md) 
-           **对于开发人员 (XAML)**
-- [**Slider 类**](https://msdn.microsoft.com/library/windows/apps/br209614)
+**For designers**
+- [Guidelines for toggle switches](toggles.md)
+**For developers (XAML)**
+- [**Slider class**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

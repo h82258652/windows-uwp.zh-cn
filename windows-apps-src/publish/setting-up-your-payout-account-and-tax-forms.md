@@ -1,157 +1,157 @@
 ---
 author: jnHs
-Description: "为从 Windows 应用商店的应用销售中获得收益，你需要设置付款帐户并填写必要的税单。"
-title: "设置你的付款帐户和税单"
+Description: In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
+title: Setting up your payout account and tax forms
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 translationtype: Human Translation
-ms.sourcegitcommit: f17132514a42c50d6bfe716f6be706748c287043
-ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
+ms.sourcegitcommit: ea9ea2d39ecd0fc54381df8d5fa7dd7cdc2fae51
+ms.openlocfilehash: 7de230aeee932f781a282ab7555e1c90bcd76460
 
 ---
 
-# 设置你的付款帐户和税单
+# Setting up your payout account and tax forms
 
 
-为从 Windows 应用商店的应用销售中获得收益，你需要设置付款帐户并填写必要的税单。
+In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
 
-> **注意** 从 2016 年 4 月 1 日开始，将向在开发人员中心中设置的相同付款帐户支付你的 Microsoft Advertising 收入。 有关详细信息，请参阅 [pubCenter-DevCenter 付款帐户和税务资料整合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
+> **Note**  As of April 1st, 2016, your Microsoft Advertising earnings will be paid to the same payout account you've set up in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
 
-如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果你以后改变主意并决定要售卖应用（或应用内产品），则可以设置付款帐户并于此时填写税单。 在付款帐户和纳税配置文件设置完成前，你将无法提交任何付费应用或 IAP。
+If you only plan to list free apps (and don't plan to offer in-app purchases or use Microsoft Advertising), you don't need to set up a payout account or fill out any tax forms. If you change your mind later and decide you do want to sell apps (or in-app products), you can set up your payout account and fill out tax forms at that time. You won't be able to submit any paid apps or add-ons until your payout account and tax profile has been completed.
 
-> **注意** 在[某些市场](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，开发人员只可以提交免费应用。 如果在其中一个市场中注册帐户，则无法设置付款帐户。
-
-
-[设置开发者帐户](opening-a-developer-account.md)后，需要先执行两项操作，然后才能在 Windows 应用商店中出售应用（或 IAP）：
-
--   [设置付款帐户](#setting_up_your_payout_account)
--   [填写税单](#paying_taxes)
-
-> **注意** 有关支付应用销售所得款项的方式和时间，请参阅[获得收入](getting-paid-apps.md)。
-
- 
-
-## 付款帐户
+> **Note**  In [certain markets](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), developers can only submit free apps. If your account is registered in one of these markets, you will not have the option to set up a payout account.
 
 
-付款帐户是我们用于为你存入销售收益的银行帐户。 此银行帐户的所在地必须与你注册开发人员帐户的国家/地区相同。
+After you have [set up your developer account](opening-a-developer-account.md), there are two things you need to do before you can sell apps (or add-ons) in the Windows Store:
 
-> **注意** 在某些市场中，PayPal 可用于你的付款帐户。 请参阅[帐户类型、位置和费用](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)以查明某个特定市场是否支持 PayPal，并阅读下面的 [PayPal 信息](#paypal)获取更多详细信息。
+-   [Set up your payout account](#setting_up_your_payout_account)
+-   [Fill out your tax forms](#paying_taxes)
 
- 
-**设置付款帐户**
-
-1.  在 Windows 开发人员中心仪表板中，单击左侧导航菜单中的“帐户设置”****。
-2.  在“帐户设置”****页的左侧导航菜单中，单击“付款帐户”****。
-
-   > **注意** 由于这是敏感信息，系统可能提示你再次登录。
-
-3.  在出现的屏幕上，填写你的帐户信息。
-
-   > **注意** 你用于提供帐户信息的字段仅接受字母数字字符。
-
-4.  保存你的信息。
-
-如果需要更新或更改你的付款帐户，请按照上面的步骤，使用新信息替换当前信息。
-
-> **重要提示** 更改你的付款帐户最多会使你的付款延迟一个付款周期。 出现此延迟是因为我们需要验证帐户更改，就像你第一次设置付款帐户时我们所进行的验证一样。 在帐户通过验证后，你仍能获得全额付款；当前付款周期的所有应付款项均被计入下一付款周期。 有关详细信息，请参阅[获得收入](getting-paid-apps.md)。
+> **Note**  For details about how and when you will be paid for the money your apps make, see [Getting paid](getting-paid-apps.md).
 
  
 
-### PayPal 信息
-
-在选定的国家和地区中，您可以通过输入 PayPal 信息来创建付款帐户。 但是，在选择 PayPal 作为付款帐户选项之前：
-
--   检查[帐户类型、位置和费用](account-types-locations-and-fees.md)以查看 PayPal 在你的国家或地区中是否是受支持的付款方式。
--   查看以下常见问题解答。 根据你的情况，PayPal 可能不是最适合你的付款帐户选项，银行帐户也许是首选。
-
-关于使用 PayPal 作为付款方式的常见问题：
-
--   **我需要有怎样的 PayPal 设置才能接收付款？** 必须确保你的 PayPal 帐户不会阻止 eCheck 付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。 有关详细信息，请参阅 [PayPal 的帐户设置页面](http://go.microsoft.com/fwlink/p/?linkid=513139)。
--   **我所在的国家/地区是否受支持？** 请参阅[帐户类型、位置和费用](account-types-locations-and-fees.md)以了解哪些地方支持 PayPal 的付款方式。
--   **使用 PayPal 接收付款是否有额度限制？** 是。 PayPal 限制用户在单笔交易中可接收的金额。 该限制因货币而异，请参阅 [PayPal 的交易限制页面](http://go.microsoft.com/fwlink/p/?linkid=513108)查看每种货币的限制。 如果预计收到一笔大于 PayPal 交易限制的付款，请将付款方式更改为银行帐户。
--   **我的 PayPal 帐户是否必须与我的开发者帐户在相同的国家/地区注册？** 否。 设置 PayPal 帐户时，可以接受默认配置。 您不应该有任何其他国家/地区和货币的问题，除非您阻止了某些货币的付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。
--   **我是否必须手动接受 PayPal 付款？** 否。 PayPal 帐户默认设置为需要用户手动接受付款，这意味着如果你不在 30 天内接受付款，将返回付款。 你可以更改此设置，方法是在 PayPal 的“更多设置”页面中关闭“询问我”。
-
-### 某些国家/地区的特定要求
-
-在一些国家和地区中，必须遵循付款帐户的其他要求。 如果你居住在巴基斯坦、俄罗斯或乌克兰，请注意以下要求。
-
-### 巴基斯坦
-
-表单 R 是巴基斯坦银行业法规要求。 它用于指示接收国外资金的目的和原因。 因此，每当你有资格获得来自 Microsoft 的每月付款时，你将需要向银行提交表单 R，然后付款才能发放到你的帐户。 有关如何获取表单 R 的副本的说明，请联系你的当地银行分支机构。
-
-你将需要在你有资格获得付款的每个月都向银行提交表单 R。 例如，如果希望在一年中的每个月都接收付款，你将需要提交表单 R 12 次（每个月一次）。
-
-付款提交到你的银行后，你有 30 天的时间来提交表单 R。 如果未在 30 天内提交，资金将返回到 Microsoft。
-
-### 俄罗斯
-
-如果你是居住在俄罗斯的开发人员，可能需要在银行将资金存入你的帐户前向银行提供文档。 当您有资格获得付款时，我们将在电子邮件中为您提供以下文档：
-
-1.  认可证书 (CoA) - 包含转移到您的帐户的付款额。
-2.  应用开发人员协议 (ADA) - 需要副签的开发人员协议的已签署副本。
-
-为了确保付款成功，请谨记以下事项：
-
--   在 Windows 开发人员中心仪表板中，为付款帐户输入的“帐户持有者名称”****必须与银行帐户相关联的名称完全相同。 例如，如果银行帐户名称包含中间名，则向“帐户持有者名称”****添加中间名。
--   付款会直接从 Microsoft 转移到您的银行帐户，货币单位为卢比 (RUB)。
--   在开发人员中心中输入拉丁字符的银行信息将转换为西里尔字符。
--   付款必须支付到银行帐户而不是银行卡。
-
-### 乌克兰
-
-如果你是居住在乌克兰的开发人员，可能需要在银行将资金存入你的帐户前向银行提供文档。 当你有资格获得付款时，我们将在电子邮件中为你提供以下文档：
-
-1.  认可证书 (CoA) - 包含转移到您的帐户的付款额。
-2.  应用开发人员协议 (ADA) - 需要副签的开发人员协议的已签署副本。
-3.  修订协议 (AA) - 你的银行可使用此文档帮助识别你的付款资金。
-
-当尝试首次付款时，Microsoft 将提供所有三个文档。 对于任何后续付款，你将仅接收 CoA 文档。 请保留 ADA 和 AA 文档，以防你从银行接收将来付款时需要它们。
-
-为了确保付款成功，请记住以下事项：
-
--   在 Windows 开发人员中心仪表板中，为付款帐户输入的“帐户持有者名称”****必须与银行帐户相关联的名称完全相同。 例如，如果银行帐户名称包含中间名，则向“帐户持有者名称”****添加中间名。
--   付款会直接从 Microsoft 转移到你的银行帐户，货币单位为美元。
--   在开发人员中心中输入拉丁字符的银行信息将转换为西里尔字符。
-
-## 税单
+## Payout account
 
 
-[注册开发者帐户](opening-a-developer-account.md)并设置[付款帐户](#receiving_payments)后，可以通过完成以下步骤为 Windows 应用商店创建*税务资料*：
+A payout account is the bank account to which we send the proceeds from your sales. This bank account must be located in the same country where you registered your developer account.
 
--   指定你的居住地和公民身份所属的国家/地区。
--   填写相应的税单。
-
-可以在仪表板中填写和提交电子税单；在大多数情况下，不需要打印和邮寄任何税单。
-
-> **重要提示** 不同的国家和地区有不同的纳税要求。 你必须支付的税款的精确金额取决于你在哪些国家和地区销售你的应用。 请参阅[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)，以了解 Microsoft 为哪些国家和地区代缴销售和使用税。 在其他国家或地区中，根据你的注册地点，你可能需要直接向当地的税务机构为你的应用缴纳销售和使用税 另外，你所获得的应用销售收益可能需要缴纳所得税。 我们强烈建议你联系你所在国家或地区的相关机构，以便最好地帮助你确定你的 Windows 应用商店开发人员活动的正确纳税信息。
+> **Note**  In some markets, PayPal can be used for your payout account. See [Account types, locations, and fees](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) to find out if PayPal is supported for a specific market, and read the [PayPal info](#paypal) below for more details.
 
  
-**完成税务配置文件**
+**To set up your payout account**
 
-1.  在 Windows 开发人员中心仪表板中，单击左侧导航菜单中的“帐户设置”****。
-2.  在“帐户设置”****页面的左侧导航菜单中，单击“税务配置文件”****。
+1.  In the Windows Dev Center dashboard, and click **Account settings** in the left navigation menu.
+2.  In the left navigation menu of the **Account settings** page, click **Payout account**.
 
-   > **注意** 由于这是敏感信息，系统可能提示你再次登录。
+   > **Note**  Because this is sensitive info, you may be prompted to sign in again.
 
-3.  查看你当前的纳税配置文件状态，然后单击“编辑”****以完成所需税单。
-4.  回答有关美国公民身份和居住地的问题，然后单击“下一步”****。
-5.  如果显示了你的姓名和地址信息，请进行确认以申报税款。
+3.  On the screen that appears, fill out the info for your account.
 
-接下来，将会看到必须填写的电子版本的税单。 无论居住地或公民身份所属的国家/地区是哪里，都必须填写美国税单才能通过 Windows 应用商店销售任何应用或应用内产品。 符合某些美国居住地要求的开发人员必须填写 IRS W-9 表格。 美国境外的其他开发人员必须填写 IRS W-8 表格。 可以在完成纳税配置文件时在线填写这些表单。
+   > **Note**  The fields you use to provide your account info accept only alphanumeric characters.
 
-不需要提供美国个人纳税识别号码（或 ITIN）即可从 Microsoft 接收付款或申请免税待遇。
+4.  Save your info.
 
-### 预缴比率
+If you need to update or change your payout account, follow the same steps above, replacing the current info with the new info.
 
-你在税单中提交的信息将确定相应的预缴比率。 预缴比率仅适用于你在美国的销售；非美国地区的销售不受预缴约束。 不同情况下的预缴比率有所不同，但对于在美国之外国家或地区注册的大多数开发人员，黙认税率是 30%。 如果你的国家和地区与美国签有所得税条约，你可以选择降低此税率。
-
-### 免税待遇
-
-如果你在美国境外，你也许能够利用免税待遇。 这些优惠会随国家和地区的不同而变化，并可能会允许你减少 Windows 应用商店预缴的纳税金额。 你可以通过填写 W-8BEN 表格的第 II 部分来申请免税待遇。 我们建议你咨询所在国家或地区的相关人员，以确定是否可以享受这些优惠。
+> **Important**  Changing your payout account can delay your payments by up to one payment cycle. This delay occurs because we need to verify the account change, just as we did when you first set up the payout account. You'll still get paid for the full amount after your account has been verified; any payments due for the current payment cycle will be added to the next one. See [Getting paid](getting-paid-apps.md) for more info.
 
  
 
+### PayPal info
+
+In select countries and regions, you can create a payment account by entering your PayPal info. However, before choosing PayPal as a payment account option:
+
+-   Check [Account types, locations, and fees](account-types-locations-and-fees.md) to see if PayPal is a supported payment method in your country or region.
+-   Review the following FAQs. Depending on your situation, PayPal may not be the best payment account option for you, and a bank account may be preferred.
+
+Common questions about using PayPal as a payment method:
+
+-   **What PayPal settings do I need to have in order to receive payments?** You must ensure that your PayPal account does not block eCheck payments. This setting is managed in PayPal’s Payment Receiving Preferences page. See [PayPal’s account setup page](http://go.microsoft.com/fwlink/p/?linkid=513139) for more info.
+-   **Is my country/region supported?** See [Account types, locations, and fees](account-types-locations-and-fees.md) to find out where PayPal is a supported payment method.
+-   **Is there a restriction on the size of payments that I can receive using PayPal?** Yes. PayPal limits the amount of money that users can receive in a single transaction. The limits vary by currency; see [PayPal’s transaction limit page](http://go.microsoft.com/fwlink/p/?linkid=513108) for each currency’s limit. If you anticipate that you will receive a payment greater than your PayPal transaction limit, change your payment method to a bank account.
+-   **Does my PayPal account have to be registered in the same country/region as my Dev Center account?** No. When you set up a PayPal account, you can accept the default configuration. You shouldn’t have any issues with other countries/regions and currencies unless you have blocked payment in some currencies. This setting is managed in PayPal’s Payment Receiving Preferences page.
+-   **Do I have to accept PayPal payments manually?** No. PayPal accounts are set by default to require users to accept payments manually, which means if you don’t accept the payment within 30 days, it is returned. You can change this setting by turning off “Ask Me” in PayPal’s More Settings page.
+
+### Specific requirements for certain countries/regions
+
+In some countries and regions, additional requirements for payout accounts must be followed. If you are a resident of Pakistan, Russia, or Ukraine, please note the following requirements.
+
+### Pakistan
+
+Form-R is a Pakistan banking regulatory requirement. It is used to indicate the purpose and reason for receipt of funds from abroad. Therefore, anytime that you are eligible for a monthly payout from Microsoft, you will need to submit a Form-R to your bank before the payout can be released to your account. Contact your local bank branch for instructions on how to obtain a copy of Form-R.
+
+You will need to submit a Form-R to your bank each month that you are eligible for a payout. For example, if you expect to receive a payout every month of the year, you will need to submit a Form-R 12 times (once each month).
+
+Once the payout has been submitted to your bank, you have 30 days to submit a Form-R. If it is not submitted within 30 days, the funds will be returned to Microsoft.
+
+### Russia
+
+If you’re a developer who lives in Russia, you may need to provide documentation to your bank before your bank will deposit funds into your account. When you’re eligible to be paid, we will provide you with the following documentation in an email message:
+
+1.  Acceptance Certificate (AC) – contains the amount of payout being transferred to your account.
+2.  App Developer Agreement (ADA) – a signed copy of the developer agreement that needs to be counter signed.
+
+To ensure your payout is successful, please also keep in mind the following:
+
+-   The **Account holder name** entered for your payout account in the Windows Dev Center dashboard must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
+-   Payouts are transferred directly from Microsoft to your bank account in Ruble (RUB) currency.
+-   Bank information entered in Dev Center in Latin characters is translated to Cyrillic characters.
+-   Payouts must be made to a bank account and not to a bank card.
+
+### Ukraine
+
+If you’re a developer who lives in Ukraine, you may need to provide documentation to your bank before your bank will deposit funds into your account. When you’re eligible to be paid, we will provide you with the following documentation in an email message:
+
+1.  Acceptance Certificate (AC) – contains the amount of payout being transferred to your account.
+2.  App Developer Agreement (ADA) – a signed copy of the developer agreement that needs to be counter signed.
+3.  Amendment Agreement (AA) – this document can be used by your bank to help identify your payout funds.
+
+Microsoft provides all three documents when your first payout is attempted. For any subsequent payouts, you will only receive the AC document. Please retain the ADA and AA documents in case you need them to receive future payouts from your bank.
+
+To ensure your payout is successful, please also keep in mind the following:
+
+-   The **Account holder name** entered for your payout account in the Windows Dev Center dashboard must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
+-   Payouts are transferred directly from Microsoft to your bank account in USD currency.
+-   Bank information entered in Dev Center in Latin characters is translated to Cyrillic characters.
+
+## Tax forms
+
+
+After you have [registered for a developer account](opening-a-developer-account.md) and set up your [payout account](#receiving_payments), you can create your *tax profile* for the Windows Store by completing the following steps:
+
+-   Specify your country of residence and citizenship.
+-   Fill out the appropriate tax forms.
+
+You can complete and submit your tax forms electronically in your dashboard; in most cases, you don't need to print and mail any forms.
+
+> **Important**  Different countries and regions have different tax requirements. The exact amount that you must pay in taxes depends on the countries and regions where you sell your apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) to find out for which countries Microsoft remits sales and use tax on your behalf. In other countries, depending on where you are registered, you may need to remit sales and use tax for your app sales directly to the local taxing authority. In addition, the app sales proceeds you receive may be taxable as income. We strongly encourage you to contact the relevant authority for your country or region that can best help you determine the right tax info for your Windows Store developer activities.
+
+ 
+**To complete your tax profile**
+
+1.  In the Windows Dev Center dashboard, click **Account settings** in the left navigation menu.
+2.  In the left navigation menu of the **Account settings** page, click **Tax profile**.
+
+   > **Note**  Because this is sensitive info, you may be prompted to sign in again.
+
+3.  Review your current tax profile status and click **Edit** to complete the required forms.
+4.  Answer the questions about United States citizenship and residency, then click **Next**.
+5.  If your name and address info are displayed, confirm them for the purposes of filing taxes.
+
+Next, you will see electronic versions of the tax forms that you must complete. Regardless of your country of residence or citizenship, you must fill out United States tax forms to sell any apps or in-app products through the Windows Store. Developers who satisfy certain United States residency requirements must fill out an IRS W-9 form. Other developers outside the United States must fill out an IRS W-8 form. You can fill out these forms online as you complete your tax profile.
+
+A United States Individual Taxpayer Identification Number (or ITIN) is not required to receive payments from Microsoft or to claim tax treaty benefits.
+
+### Withholding rates
+
+The info you submit in your tax forms determines the appropriate tax withholding rate. The withholding rate applies only to sales that you make into the United States; sales made into non-US locations are not subject to withholding. The withholding rates vary, but for most developers registering outside the United States, the default rate is 30%. You have the option of reducing this rate if your country has agreed to an income tax treaty with the United States.
+
+### Tax treaty benefits
+
+If you are outside the United States, you may be able to take advantage of tax treaty benefits. These benefits vary from country to country, and may allow you to reduce the amount of taxes that the Windows Store withholds. You can claim tax treaty benefits by completing Part II of the W-8BEN form. We recommend that you communicate with the appropriate resources in your country or region to determine whether these benefits apply to you.
+
+ 
+
  
 
 
@@ -160,6 +160,6 @@ ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 
