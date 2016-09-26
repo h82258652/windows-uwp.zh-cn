@@ -24,10 +24,10 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 **将功能添加到应用部件清单**
 
-1.  在 Microsoft Visual Studio 的“解决方案资源管理器”****中，通过双击“package.appxmanifest”****项，打开应用程序清单的设计器。
-2.  选择“功能”****选项卡。
-3.  选中“摄像头”****框和“麦克风”****框。
-4.  若要访问图片库和视频库，请选中“图片库”****框和“视频库”****框。
+1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。
+2.  选择“功能”选项卡。
+3.  选中“摄像头”框和“麦克风”框。
+4.  若要访问图片库和视频库，请选中“图片库”框和“视频库”框。
 
 
 ## 初始化 MediaCapture 对象
@@ -54,7 +54,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 ## 将照片捕获到文件
 典型的摄影应用会将捕获的照片保存到磁盘或云存储，并且需要将元数据（例如照片方向）添加到文件。 以下示例显示如何将照片捕获到文件。 你仍可选择在以后从图像文件中创建 **SoftwareBitmap**。 
 
-此示例中显示的技术将照片捕获到内存流，然后从该内存流将照片转码到磁盘上的某个文件。 此示例使用 [**GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.GetLibraryAsync) 获取用户的图片库，然后使用 [**SaveFolder**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.SaveFolder) 属性获取参考默认保存文件夹。 请记住，将“图片库”****功能添加到应用部件清单才能访问此文件夹。 [**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFolder.CreateFileAsync) 创建保存照片的新 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile)。
+此示例中显示的技术将照片捕获到内存流，然后从该内存流将照片转码到磁盘上的某个文件。 此示例使用 [**GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.GetLibraryAsync) 获取用户的图片库，然后使用 [**SaveFolder**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.SaveFolder) 属性获取参考默认保存文件夹。 请记住，将“图片库”功能添加到应用部件清单才能访问此文件夹。 [**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFolder.CreateFileAsync) 创建保存照片的新 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile)。
 
 创建 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream)，然后调用 [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync) 以将照片捕获到流，该照片在流和指定应使用的图像格式的 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties) 对象中传递。 可通过自行初始化对象来创建自定义编码属性，但类提供用于常见编码格式的静态方法，例如 [**ImageEncodingProperties.CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties.CreateJpeg)。 接下来，通过调用 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile.OpenAsync) 创建输出文件的文件流。 创建 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder) 以解码内存流中的图像，然后创建 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder) 以通过调用 [**CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.CreateForTranscodingAsync) 将图像编码到文件。
 
@@ -71,7 +71,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 
 [!code-cs[LowLagMediaRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetLowLagMediaRecording)]
 
-接下来，创建将保存视频的 **StorageFile** 对象。 请注意，若要保存到用户的视频库（如本示例所示），必须将“视频库”****功能添加到应用部件清单。 调用 [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync) 以初始化媒体录制，该媒体录制在存储文件和指定视频编码的 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile) 对象中传递。 该类提供用于创建常见视频编码配置文件的静态方法，例如 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp4)。
+接下来，创建将保存视频的 **StorageFile** 对象。 请注意，若要保存到用户的视频库（如本示例所示），必须将“视频库”功能添加到应用部件清单。 调用 [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync) 以初始化媒体录制，该媒体录制在存储文件和指定视频编码的 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile) 对象中传递。 该类提供用于创建常见视频编码配置文件的静态方法，例如 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp4)。
 
 最后，调用 [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StartAsync) 以开始捕获视频。
 
