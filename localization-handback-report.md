@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\basic-photo-video-and-audio-capture-with-MediaCapture.md](https://github.com/Microsoft/windows-apps/blob/0c7355d442cd650f110042d5e01f51becbb51d0e/windows-apps-src/audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md) | InSyncHandedBackSuccess | [Details](#19a546d4778d0edfbc5ca2e3acf0ded084445958153)
- [windows-apps-src\monetize\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md](https://github.com/Microsoft/windows-apps/blob/5f975d0a99539292e1ce91ca09dbd5fac11c4a49/windows-apps-src/monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) | InSyncHandedBackSuccess | [Details](#ea455892717546f7f789054609664ca1c00176994751)
 
 ## Item Details
-##### <a name='19a546d4778d0edfbc5ca2e3acf0ded084445958153'></a> Source: [windows-apps-src\audio-video-camera\basic-photo-video-and-audio-capture-with-MediaCapture.md](https://github.com/Microsoft/windows-apps/blob/0c7355d442cd650f110042d5e01f51becbb51d0e/windows-apps-src/audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\audio-video-camera\basic-photo-video-and-audio-capture-with-MediaCapture.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/41e5dd6a41c1533e68bc3a0ad807d3ef007dd849/windows-apps-src/audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* Handoff File: [basic-photo-video-and-audio-capture-with-MediaCapture.4348d0480d281f0eda313b7534c6981ba3181021.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/40e87dccc7be0598ef959c85fe3efbc308cb3613/ol-handoff/Microsoft/windows-apps.zh-cn/master/basic-photo-video-and-audio-capture-with-MediaCapture.4348d0480d281f0eda313b7534c6981ba3181021.zh-cn.xlf)
-* Handoff Datetime: 2016-08-18 00:31:16
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [basic-photo-video-and-audio-capture-with-MediaCapture.4348d0480d281f0eda313b7534c6981ba3181021.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/5357c68bdb50b7f131f5ec6916fc76f909be7225/ol-handback/Microsoft/windows-apps.zh-cn/master/basic-photo-video-and-audio-capture-with-MediaCapture.4348d0480d281f0eda313b7534c6981ba3181021.zh-cn.xlf)
-* Handback Datetime: 2016-09-26 20:05:10
-* [Back to Top](#report-top)
-
-##### <a name='ea455892717546f7f789054609664ca1c00176994751'></a> Source: [windows-apps-src\monetize\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md](https://github.com/Microsoft/windows-apps/blob/5f975d0a99539292e1ce91ca09dbd5fac11c4a49/windows-apps-src/monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\monetize\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md](https://github.com/Microsoft/windows-apps.zh-cn/blob/41e5dd6a41c1533e68bc3a0ad807d3ef007dd849/windows-apps-src/monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* Handoff File: [create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.2a8dad6a811656c190ed2876e3ca656d1cfe3db0.zh-cn.xlf](https://github.com/Microsoft/WDG.handoff/blob/a85c49430766f543975d372df506c19e4388e4ef/ol-handoff/Microsoft/windows-apps.zh-cn/master/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.2a8dad6a811656c190ed2876e3ca656d1cfe3db0.zh-cn.xlf)
-* Handoff Datetime: 2016-08-30 18:40:08
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.2a8dad6a811656c190ed2876e3ca656d1cfe3db0.zh-cn.xlf](https://github.com/Microsoft/WDG.handback/blob/5357c68bdb50b7f131f5ec6916fc76f909be7225/ol-handback/Microsoft/windows-apps.zh-cn/master/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.2a8dad6a811656c190ed2876e3ca656d1cfe3db0.zh-cn.xlf)
-* Handback Datetime: 2016-09-26 20:05:10
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
