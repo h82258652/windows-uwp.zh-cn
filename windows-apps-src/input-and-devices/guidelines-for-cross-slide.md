@@ -1,150 +1,150 @@
 ---
 author: mijacobs
-Description: Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
-title: Guidelines for cross-slide
+Description: "使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。"
+title: "交叉滑动指南"
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 label: Cross-slide
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
+ms.openlocfilehash: 47a16acc4025541b1cc19582c2c7d59755fd2594
 
 ---
 
-# Guidelines for cross-slide
+# 交叉滑动指南
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**重要的 API**
 
 -   [**CrossSliding**](https://msdn.microsoft.com/library/windows/apps/br241942)
 -   [**CrossSlideThresholds**](https://msdn.microsoft.com/library/windows/apps/br241941)
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
-Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
+使用交叉滑动来支持使用轻扫手势进行选择以及使用滑动手势拖动（移动）交互。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos and don'ts
-
-
--   Use cross-slide for lists or collections that scroll in a single direction.
--   Use cross-slide for item selection when the tap interaction is used for another purpose.
--   Don't use cross-slide for adding items to a queue.
-
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
-Selection and drag are possible only within a content area that is pannable in one direction (vertical or horizontal). For either interaction to work, one panning direction must be locked and the gesture must be performed in the direction perpendicular to the panning direction.
+-   对在单个方向上滚动的列表或集合使用横向滑动。
+-   当点击交互用于其他目的时，可为项目选择使用横向滑动。
+-   不要使用横向滑动将项目添加到队列。
 
-Here we demonstrate selecting and dragging an object using a cross-slide. The image on the left shows how an item is selected if a swipe gesture doesn't cross a distance threshold before the contact is lifted and the object released. The image on the right shows a sliding gesture that crosses a distance threshold and results in the object being dragged.
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
-![diagram showing the select and drag and drop processes.](images/crossslide-mechanism.png)
 
-The threshold distances used by the cross-slide interaction are shown in the following diagram.
+仅在可以沿一个方向（垂直或水平）平移的内容区域内进行选择和拖动。 要使任何交互发挥效果，必须锁定一个平移方向，并且必须在垂直于该平移方向的方向上执行手势。
 
-![screen shot showing the select and drag and drop processes.](images/crossslide-threshold.png)
+下面我们将展示使用横向滑动选择和拖动对象。 左侧的图像显示了如果在抬起接触点并释放对象之前轻扫手势未超过距离阈值，如何选择对象。 右侧的图像显示滑动手势超过了距离阈值并导致对象被拖动。
 
-To preserve panning functionality, a small threshold of 2.7mm (approximately 10 pixels at target resolution) must be crossed before either a select or drag interaction is activated. This small threshold helps the system to differentiate cross-sliding from panning, and also helps ensure that a tap gesture is distinguished from both cross-sliding and panning.
+![显示选择和拖放过程的图表。](images/crossslide-mechanism.png)
 
-This image shows how a user touches an element in the UI, but moves their finger down slightly at contact. With no threshold, the interaction would be interpreted as a cross-slide because of the initial vertical movement. With the threshold, the movement is interpreted correctly as horizontal panning.
+下图中显示了横向滑动交互使用的阈值距离。
 
-![screen shot showing the select or drag and drop disambiguation threshold.](images/crossslide-threshold2.png)
+![显示选择和拖放过程的屏幕截图。](images/crossslide-threshold.png)
 
-Here are some guidelines to consider when including cross-slide functionality in your app.
+若要保留平移功能，必须超过 2.7mm 的小阈值（目标分辨率约为 10 个像素），然后才能激活选择或拖动交互。 这个小阈值可帮助系统区分横向滑动和平移，而且还帮助确保将点击手势与横向滑动和平移区分开来。
 
-Use cross-slide for lists or collections that scroll in a single direction. For more information, see [Adding ListView controls](https://msdn.microsoft.com/library/windows/apps/hh465382).
+此图像显示了用户如何触摸 UI 中的元素，但在接触时稍微向下移动他们的手指。 如果没有阈值，则会由于开始的垂直移动，此交互将被视为横向滑动。 有了阈值，系统才会将此次移动正确视为水平平移。
 
-**Note**  In cases where the content area can be panned in two directions, such as web browsers or e-readers, the press-and-hold timed interaction should be used to invoke the context menu for objects such as images and hyperlinks.
+![显示选择或拖放消除歧义阈值的屏幕截图。](images/crossslide-threshold2.png)
+
+如果应用中包括横向滑动功能，请考虑以下指南。
+
+对在单个方向上滚动的列表或集合使用横向滑动。 有关详细信息，请参阅[添加 ListView 控件](https://msdn.microsoft.com/library/windows/apps/hh465382)。
+
+**注意** 如果内容区域可以在两个方向上平移（如 Web 浏览器或电子阅读器），则长按计时交互应该用于调用诸如图像和超链接之类的对象的上下文菜单。
 
  
 
 |                                                                                         |                                                                                         |
 |-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| ![horizontal-panning, two-dimensional list](images/groupedlistview1.png)                | ![vertical-panning, one-dimensional list](images/listviewlistlayout.png)                |
-| A horizontally panning two-dimensional list. Drag vertically to select or move an item. | A vertically panning one-dimensional list. Drag horizontally to select or move an item. |
+| ![水平平移，二维列表](images/groupedlistview1.png)                | ![垂直平移，一维列表](images/listviewlistlayout.png)                |
+| 水平平移二维列表。 垂直拖动以选择或移动项。 | 垂直平移一维列表。 水平拖动以选择或移动项。 |
 
  
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
-**Selecting**
+**选择**
 
-Selection is the marking, without launching or activating, of one or more objects. This action is analogous to a single mouse click, or Shift key and mouse click, on one or more objects.
+选择就是标记一个或多个对象，而不是启动或激活。 该操作类似于鼠标单击一个或多个对象，或按住 Shift 键的同时鼠标单击这些对象。
 
-Cross-slide selection is achieved by touching an element and releasing it after a short dragging interaction. This method of selection dispenses with both the dedicated selection mode and the press-and-hold timed interaction required by other touch interfaces and does not conflict with the tap interaction for activation.
+通过触摸元素并在短时间拖动交互之后释放该元素可实现横向滑动选择。 这种选择方法无需专用的选择模式以及其他触摸界面所需的长按计时交互，并且与用于激活的点击交互不存在冲突。
 
-In addition to the distance threshold, cross-slide selection is constrained to a 90° threshold area, as shown in the following diagram. If the object is dragged outside of this area, it is not selected.
+除了距离阈值之外，横向滑动选择还受 90° 阈值区域所限，如下图所示。 如果对象被拖动到此区域之外，则不会选择该对象。
 
-![diagram showing the selection threshold area.](images/crossslide-selection.png)
+![显示选择阈值区域的图表。](images/crossslide-selection.png)
 
-The cross-slide interaction is supplemented by a press-and-hold timed interaction, also referred to as a "self-revealing" interaction. This supplemental interaction activates an animation that indicates what action can be performed on the object. For more information on disambiguation UI, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
+横向滑动交互由长按计时交互进行了补充，也称为“自我显示”交互。 此补充的交互会激活一个动画，显示可在对象上执行的操作。 有关消除歧义 UI 的详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
-The following screen shots demonstrate how the self-revealing animation works.
+以下屏幕截图演示了自我显示动画的工作方式。
 
-1.  Press and hold to initiate the animation for the self-revealing interaction. The selected state of the item affects what is revealed by the animation: a check mark if unselected and no check mark if selected.
+1.  长按以启动用于自我显示交互的动画。 该项目的选中状态会影响动画显示的内容：如果未选中，则显示复选标记；如果已选中，则不显示复选标记。
 
-    ![screen shot showing an unselected state.](images/crossslide-selfreveal1.png)
+    ![显示已取消选择状态的屏幕截图。](images/crossslide-selfreveal1.png)
 
-2.  Select the item using the swipe gesture (up or down).
+2.  使用轻扫手势（向上或向下）选中项目。
 
-    ![screen shot showing the animation for selection.](images/crossslide-selfreveal2.png)
+    ![显示可供选择的动画的屏幕截图。](images/crossslide-selfreveal2.png)
 
-3.  The item is now selected. Override the selection behavior using the slide gesture to move the item.
+3.  现在已选中项目。 使用滑动手势替代选择行为以移动该项目。
 
-    ![screen shot showing the animation for drag and drop.](images/crossslide-selfreveal3.png)
+    ![显示可供拖放的动画的屏幕截图。](images/crossslide-selfreveal3.png)
 
-Use a single tap for selection in applications where it is the only primary action. The cross-slide self-revealing animation is displayed to disambiguate this functionality from the standard tap interaction for activation and navigation.
+在将单击用作唯一主动作的应用中，使用单击进行选择。 显示横向滑动自我显示动画，以将该功能与用于激活和导航的标准点击交互区分开来。
 
-**Selection basket**
+**选择篮**
 
-The selection basket is a visually distinct and dynamic representation of items that have been selected from the primary list or collection in the application. This feature is useful for tracking selected items and should be used by applications where:
+选择篮是已从应用程序的主列表或集合中选择的项的明确动态展示。 此功能对于跟踪所选项非常有用，应由下列应用程序使用：
 
--   Items can be selected from multiple locations.
--   Many items can be selected.
--   An action or command relies upon the selection list.
+-   可从多个位置选择项的应用。
+-   可选择多个项的应用。
+-   操作或命令取决于选择列表的应用。
 
-The content of the selection basket persists across actions and commands. For example, if you select a series of photographs from a gallery, apply a color correction to each photograph, and share the photographs in some fashion, the items remain selected.
+跨操作和命令时，选择篮中的内容保持不变。 例如，如果你从库中选择一系列照片，对每张照片进行颜色校正，并以某种方式共享这些照片，则这些照片仍然处于选中状态。
 
-If no selection basket is used in an application, the current selection should be cleared after an action or command. For example, if you select a song from a play list and rate it, the selection should be cleared.
+如果在应用程序中未使用选择篮，则某个操作或命令之后应该清除当前选择。 例如，如果你从播放列表中选择了一首歌曲并进行评分，则应该清除该选择。
 
-The current selection should also be cleared when no selection basket is used and another item in the list or collection is activated. For example, if you select an inbox message, the preview pane is updated. Then, if you select a second inbox message, the selection of the previous message is canceled and the preview pane is updated.
+当未使用选择篮并且列表或集合中有其他项已被激活时，也应该清除当前选择。 例如，如果你选择某封收件箱邮件，则预览窗格会更新。 如果你选择另一封收件箱邮件，则会取消之前邮件的选择并且更新预览窗格。
 
-**Queues**
+**队列**
 
-A queue is not equivalent to the selection basket list and should not be treated as such. The primary distinctions include:
+队列不等于选择篮列表，也不应作为此类选择篮列表对待。 它们的主要区别包括：
 
--   The list of items in the selection basket is only a visual representation; the items in a queue are assembled with a specific action in mind.
--   Items can be represented only once in the selection basket but multiple times in a queue.
--   The order of items in the selection basket represents the order of selection. The order of items in a queue is directly related to functionality.
+-   选择篮中的项列表只是视觉上的展示，而队列中的项则是通过特定的操作组合在一起。
+-   在选择篮中，项只能展示一次，而在队列中可以展示多次。
+-   选择篮中的项顺序代表选择的顺序。 队列中的项顺序则与功能直接相关。
 
-For these reasons, the cross-slide selection interaction should not be used to add items to a queue. Instead, items should be added to a queue through a drag action.
+因此，不应该使用横向滑动选择交互向队列中添加项， 而是应该通过拖动操作向队列中添加项。
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Drag**
+**拖动**
 
-Use drag to move one or more objects from one location to another.
+使用拖动操作将一个或多个对象从一个位置移动到另一个位置。
 
-If more than one object needs to be moved, let users select multiple items and then drag all at one time.
+如果需要移动多个对象，则让用户选择多个项，然后同时拖动所有选中项。
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>相关文章
 
 
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Archive samples**
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Input: Windows 8 gestures sample](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**示例**
+* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦点视觉效果示例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **存档示例**
+* [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [输入：触摸点击测试示例](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [输入：简化的墨迹示例](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [输入：Windows 8 手势示例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [输入：操作和手势 (C++) 示例](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX 触控输入示例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
@@ -155,6 +155,6 @@ If more than one object needs to be moved, let users select multiple items and t
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

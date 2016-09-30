@@ -1,45 +1,45 @@
 ---
 author: mcleblanc
-title: Getting started with Navigation
-description: Getting started with navigation
+title: "导航入门"
+description: "导航入门"
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
+ms.openlocfilehash: c542faa6365c8558988162bee12f266d67474461
 
 ---
 
-# Getting started: Navigation
+# 入门：导航
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Adding navigation
+## 添加导航
 
-iOS provides the **UINavigationController** class to help with in-app navigation: you can push and pop views to create the hierarchy of **UIViewControllers** that define your app.
+iOS 提供 **UINavigationController** 类以帮助应用内导航：可按下和弹出视图，以创建定义应用的**“UIViewControllers”**层次结构。
 
-In contrast, a Windows 10 app containing multiple views takes more of a web-site approach to navigation. You can imagine your users hopping from page to page as they click on controls to work their way through the app. For more info, see [Navigation design basics](https://msdn.microsoft.com/library/windows/apps/dn958438).
+相比之下，包含多个视图的 Windows 10 应用需要更多网站方法进行导航。 想象一下，用户在单击控件以其自己的方式浏览应用时，在页面间来回跳跃。 有关详细信息，请参阅[导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)。
 
-One of the ways to manage this navigation in a Windows 10 app is to use the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class. The following walkthrough shows you how to try this out.
+在 Windows 10 应用中管理此导航的方法之一是使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 类。 以下演练将向你展示如何尝试执行此操作。
 
-Continuing with the solution you started earlier, open the **MainPage.xaml** file, and add a button in the **Design** view. Change the button's **Content** property from "Button" to "Go To Page". Then, create a handler for the button's **Click** event, as shown in the following figure. If you don't remember how to do this, review the walkthrough in the previous section (Hint: double-click the button in the **Design** view).
+继续使用之前启动的解决方案，打开 **MainPage.xaml** 文件，然后在**“设计”**视图中添加按钮。 将该按钮的 **Content** 属性从“Button”更改为“Go To Page”。 然后为按钮的 **Click** 事件创建一个处理程序，如下图所示。 如果忘记了如何执行此操作，可回顾之前部分中的操作实例（提示：双击**“设计”**视图中的按钮）。
 
-![adding a button and its click event in visual studio](images/ios-to-uwp/vs-go-to-page.png)
+![在 Visual Studio 中添加按钮及其 Click 事件](images/ios-to-uwp/vs-go-to-page.png)
 
-Let's add a new page. In the **Solution** view, tap the **Project** menu, and tap **Add New Item**. Tap **Blank Page** as shown in the following figure, and then tap **Add**.
+让我们添加新页面。 在**“解决方案”**视图中，点击**“项目”**菜单，然后点击**“添加新项”**。 如下图所示点击**“空白页”**，然后点击**“添加”**。
 
-![adding a new page in visual studio](images/ios-to-uwp/vs-add-new-page.png)
+![在 Visual Studio 中添加新页面](images/ios-to-uwp/vs-add-new-page.png)
 
-Next, add a button to the BlankPage.xaml file. Let's use the AppBarButton control, and let's give it a back arrow image: in the **XAML** view, add ` <AppBarButton Icon="Back"/>` between the `<Grid> </Grid>` elements.
+接下来，向 BlankPage.xaml 文件中添加一个按钮。 我们可以使用 AppBarButton 控件并为它添加一个返回箭头图像：在**“XAML”**视图中，在 `<Grid> </Grid>` 元素之间添加 ` <AppBarButton Icon="Back"/>`。
 
-Now, let's add an event handler to the button: double-click the control in the **Design** view and Microsoft Visual Studio adds the text "AppBarButton\_Click" to the **Click** box, as shown in the following figure, and then adds and displays the corresponding event handler in the BlankPage.xaml.cs file.
+现在，我们可以为按钮添加一个事件处理程序：双击**“设计”**视图中的控件，Microsoft Visual Studio 会将文本“AppBarButton\_Click”添加到**“Click”**框中（如下图所示），然后在 BlankPage.xaml.cs 文件中添加和显示相应的事件处理程序。
 
-![adding a back button and its click event in visual studio](images/ios-to-uwp/vs-add-back-button.png)
+![在 Visual Studio 中添加一个后退按钮及其 Click 事件](images/ios-to-uwp/vs-add-back-button.png)
 
-If you return to the BlankPage.xaml file's **XAML** view, the `<AppBarButton>` element's Extensible Application Markup Language (XAML) code should now look like this:
+如果返回到 BlankPage.xaml 文件的 **XAML** 视图，`<AppBarButton>` 元素的 Extensible Application Markup Language (XAML) 代码现在应该与以下内容类似：
 
 ` <AppBarButton Icon="Back" Click="AppBarButton_Click"/>`
 
-Return to the BlankPage.xaml.cs file, and add this code to go to the previous page after the user taps the button.
+返回到 BlankPage.xaml.cs 文件，并添加此代码以便在用户点击该按钮后转到上一页。
 
 ```csharp
 private void AppBarButton_Click(object sender, RoutedEventArgs e)
@@ -49,7 +49,7 @@ private void AppBarButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Finally, open the MainPage.xaml.cs file and add this code. It opens BlankPage after the user taps the button.
+最后，打开 MainPage.xaml.cs 文件并添加此代码。 在用户点击该按钮之后，它将打开 BlankPage。
 
 ```csharp
 private void Button_Click(object sender, RoutedEventArgs e)
@@ -59,11 +59,11 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Now, run the program. Tap the "Go To Page" button to go to the other page, and then tap the back-arrow button to return to the previous page.
+现在运行该程序。 点击“Go To Page”按钮以转到另一页，然后点击后退箭头按钮返回到上一页。
 
-Page navigation is managed by the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class. As the **UINavigationController** class in iOS uses **pushViewController** and **popViewController** methods, the **Frame** class for Windows Store apps provides [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) and [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) methods. The **Frame** class also has a method called [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), which does what you might expect.
+页面导航由 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 类管理。 与 iOS 中的 **UINavigationController** 类使用 **pushViewController** 和 **popViewController** 方法一样，Windows 应用商店应用的 **Frame** 类也提供 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 和 [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) 方法。 **Frame** 类还有一个名为 [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) 的方法，该方法可以执行可能需要的操作。
 
-This walkthrough creates a new instance of BlankPage each time you navigate to it. (The previous instance will be freed, or *released*, automatically). If you don't want a new instance to be created each time, add the following code to the BlankPage class's constructor in the BlankPage.xaml.cs file. This will enable the [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) behavior.
+此演练在每次导航到 BlankPage 时都会创建它的一个新实例。 （上一实例将被释放或自动*释放*）。 如果不希望每次都创建一个新实例，可将以下代码添加到 BlankPage.xaml.cs 文件中 BlankPage 类的构造函数。 这将启用 [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) 行为。
 
 ```csharp
 public BlankPage()
@@ -74,19 +74,19 @@ public BlankPage()
 }
 ```
 
-You can also get or set the **Frame** class's [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) property to manage how many pages in the navigation history can be cached.
+你还可以获取或设置 **Frame** 类的 [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) 属性，以管理在导航历史记录中可以缓存多少页面。
 
-For more info about navigation, see [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) and [XAML personality animations sample](http://go.microsoft.com/fwlink/p/?LinkID=242401).
+有关导航的详细信息，请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344)和 [XAML 个性化动画示例](http://go.microsoft.com/fwlink/p/?LinkID=242401)。
 
-**Note**  For info about navigation for Windows Store apps using JavaScript and HTML, see [Quickstart: Using single-page navigation](https://msdn.microsoft.com/library/windows/apps/hh452768).
+**注意** 有关采用 JavaScript 和 HTML 的 Windows 应用商店应用的导航信息，请参阅[快速入门：使用单页导航](https://msdn.microsoft.com/library/windows/apps/hh452768)。
  
-### Next step
+### 下一步
 
-[Getting started: Animation](getting-started-animation.md)
-
-
+[入门：动画](getting-started-animation.md)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

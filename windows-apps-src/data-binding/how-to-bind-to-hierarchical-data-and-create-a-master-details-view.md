@@ -1,39 +1,39 @@
 ---
 author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
-title: Bind hierarchical data and create a master/details view
-description: You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to CollectionViewSource instances that are bound together in a chain.
+title: "绑定分层数据和创建大纲/细节视图"
+description: "你可以通过将项目控件绑定到 CollectionViewSource 实例（它们绑定在同一个链中），来生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。"
 translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 91786a785eece1448a36ebf48b8c8ef5c131e609
+ms.openlocfilehash: 2ff66a1d6a80bb085f54dec8e35371ba0c9e6b27
 
 ---
-# Bind hierarchical data and create a master/details view
+# 绑定分层数据和创建大纲/细节视图
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-> **Note**  Also see the [Master/detail sample](http://go.microsoft.com/fwlink/p/?linkid=619991).
+> **注意** 另请参阅[大纲/细节示例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
 
-You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) instances that are bound together in a chain. In this topic we use the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783) where possible, and the more flexible (but less performant) [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782) where necessary.
+你可以通过将项目控件绑定到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例（它们绑定在同一个链中），从而生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。 在本主题中，我们将尽可能使用 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，并根据需要使用更为灵活（但性能较低）的 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-One common structure for Universal Windows Platform (UWP) apps is to navigate to different details pages when a user makes a selection in a master list. This is useful when you want to provide a rich visual representation of each item at every level in a hierarchy. Another option is to display multiple levels of data on a single page. This is useful when you want to display a few simple lists that let the user quickly drill down to an item of interest. This topic describes how to implement this interaction. The [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) instances keep track of the current selection at each hierarchical level.
+通用 Windows 平台 (UWP) 应用的一个常见结构就是当用户在主列表中进行选择时导航到不同的详细信息页面。 当你想提供某个层次结构中每个级别上每个项目的丰富视觉表示时，该功能非常有用。 另一种选择是在一个页面上显示多级数据。 当你要显示几个简单的列表，方便用户快速下拉到感兴趣的项目时，该功能非常有用。 本主题介绍如何实现此交互。 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例将跟踪各分层级别的当前选择。
 
-We'll create a view of a sports team hierarchy that is organized into lists for leagues, divisions, and teams, and includes a team details view. When you select an item from any list, the subsequent views update automatically.
+我们将创建一个有关运动团队的层次结构视图，它分为联盟、分支和团队的列表，并包含团队详细信息视图。 当你从任一列表中选择一个项目时，会自动更新后续视图。
 
-![master/details view of a sports hierarchy](images/xaml-masterdetails.png)
+![体育运动层次结构的主视图/详细信息视图](images/xaml-masterdetails.png)
 
-## Prerequisites
+## 先决条件
 
-This topic assumes that you know how to create a basic UWP app. For instructions on creating your first UWP app, see [Create your first UWP app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581).
+此主题假设你知晓如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅[使用 C# 或 Visual Basic 创建你的第一个 UWP 应用](https://msdn.microsoft.com/library/windows/apps/Hh974581)。
 
-## Create the project
+## 创建项目
 
-Create a new **Blank Application (Windows Universal)** project. Name it "MasterDetailsBinding".
+创建一个新的“空白应用程序(Windows 通用)”****项目。 将其命名为“MasterDetailsBinding”。
 
-## Create the data model
+## 创建数据模型
 
-Add a new class to your project, name it ViewModel.cs, and add this code to it. This will be your binding source class.
+向项目添加一个新类、将其命名为 ViewModel.cs，并向其中添加此代码。 这将是你的绑定源类。
 
 ```cs
 using System;
@@ -104,9 +104,9 @@ namespace MasterDetailsBinding
 }
 ```
 
-## Create the view
+## 创建视图
 
-Next, expose the binding source class from the class that represents your page of markup. We do that by adding a property of type **LeagueList** to **MainPage**.
+接下来，从表示标记页的类公开绑定源类。 我们通过将类型 **LeagueList** 的属性添加到 **MainPage** 来执行此操作。
 
 ```cs
 namespace MasterDetailsBinding
@@ -126,7 +126,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-Finally, replace the contents of the MainPage.xaml file with the following markup, which declares three [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) instances and binds them together in a chain. The subsequent controls can then bind to the appropriate **CollectionViewSource**, depending on its level in the hierarchy.
+最后，用以下标记来替代 MainPage.xaml 文件的内容，该标记声明了三个 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 实例并将其绑定到同一链中。 后续控件可以根据其在层次结构中的级别绑定到相应的 **CollectionViewSource**。
 
 ```xml
 <Page
@@ -216,7 +216,7 @@ Finally, replace the contents of the MainPage.xaml file with the following marku
 </Page>
 ```
 
-Note that by binding directly to the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the **CurrentItem** property as the path for the binding, although you can do that if there's any ambiguity. For example, the [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) representing the team view has its [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) property bound to the `Teams`**CollectionViewSource**. However, the controls in the [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) bind to properties of the `Team` class because the **CollectionViewSource** automatically supplies the currently selected team from the teams list when necessary.
+请注意，如果直接绑定到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，即表示你希望绑定到绑定控件中的当前项，其中在集合本身上无法找到路径。 无需将 **CurrentItem** 属性指定为绑定路径，尽管由于不确定性你可以这样做。 例如，[**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) 表示团队视图的 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 属性被绑定到 `Teams`**CollectionViewSource**。 然而，[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 中的控件被绑定到 `Team` 类的属性，因为 **CollectionViewSource** 会自动按需提供团队列表中当前所选的团队。
 
  
 
@@ -225,6 +225,6 @@ Note that by binding directly to the [**CollectionViewSource**](https://msdn.mic
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

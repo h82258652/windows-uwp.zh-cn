@@ -1,36 +1,30 @@
 ---
 author: mcleanbyron
 ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
-description: "了解如何使用 Windows.Services.Store 命名空间获取当前应用或其中一项加载项的与应用商店相关的产品信息。"
-title: "获取应用和加载项的产品信息"
-translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: c453dc74730fc451bbe9babdffb2ce4d72712082
-
+description: Learn how to use the Windows.Services.Store namespace to get Store-related product info for the current app or one of its add-ons.
+title: Get product info for apps and add-ons
 ---
 
-# 获取应用和加载项的产品信息
+# Get product info for apps and add-ons
 
-面向 Windows 10 版本 1607 或更高版本的应用可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的方法，来访问当前应用或其中一项加载项（亦称为应用内产品或 IAP）的与应用商店相关的信息。 本文中的以下示例展示了如何针对不同的情况执行此操作。 有关完整示例，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+Apps that target Windows 10, version 1607 or later can use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to access Store-related info for the current app or one of its add-ons (also known as in-app products or IAPs). The following examples demonstrate how to do this for different scenarios.
 
->**注意**&nbsp;&nbsp;本文适用于面向 Windows 10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+>**Note** This article is applicable to apps that target Windows 10, version 1607 or later. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace. For more information, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## 先决条件
+## Prerequisites
 
-这些示例有以下先决条件：
-* 适用于面向 Windows 10 版本 1607 或更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
-* 你已在 Windows 开发人员中心仪表板中创建了一个应用，并且该应用已发布，并在应用商店中上架。 该应用可以是你想要发布给客户的应用，也可以是符合 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)最低要求、仅用于测试目的的基本应用。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
+These examples have the following prerequisites:
+* A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607 or later.
+* You have created an app in the Windows Dev Center dashboard, and this app is published and available in the Store. This can be an app that you want to release to customers, or it can be a basic app that meets minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements that you are using for testing purposes only. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
 
-这些示例中的代码假设：
-* 代码在含有 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx)（名为 ```workingProgressRing```）和 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)（名为 ```textBlock```）的 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 上下文中运行。 这些对象分别用于指示是否正在进行异步操作和显示输出消息。
-* 代码文件有一个适用于 **Windows.Services.Store** 命名空间的 **using** 语句。
-* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md#api_intro)。
+The code in these examples assume:
+* The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.
+* The code file has a **using** statement for the **Windows.Services.Store** namespace.
+* The app is a single-user app that runs only in the context of the user that launched the app. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).
 
-有关完整的示例应用程序，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+## Get info for the current app
 
-## 获取当前应用的信息
-
-若要获取当前应用的应用商店产品信息，请使用 [GetStoreProductForCurrentAppAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getstoreproductforcurrentappasync.aspx) 方法。 这是一种异步方法，可返回 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象，你可以使用该对象来获取诸如价格之类的信息。
+To get Store product info about the current app, use the [GetStoreProductForCurrentAppAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getstoreproductforcurrentappasync.aspx) method. This is an asynchronous method that returns a [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) object that you can use to get info such as the price.
 
 ```csharp
 private StoreContext context = null;
@@ -45,7 +39,7 @@ public async void GetAppInfo()
     // Get app store product details. Because this might take several moments,   
     // display a ProgressRing during the operation.
     workingProgressRing.IsActive = true;
-    StoreProductResult queryResult = await context.GetStoreProductForCurrentAppAsync();
+    var queryResult = await context.GetStoreProductForCurrentAppAsync();
     workingProgressRing.IsActive = false;
 
     if (queryResult.ExtendedError != null)
@@ -67,11 +61,11 @@ public async void GetAppInfo()
 }
 ```
 
-## 使用已知应用商店 ID 获取产品信息
+## Get info for products with known Store IDs
 
-若要获取你已知道其[应用商店 ID](in-app-purchases-and-trials.md#store_ids) 的应用或加载项的应用商店产品信息，请使用 [GetStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706579.aspx) 方法。 这是一种异步方法，可返回一组代表每一个应用或加载项的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象。 除了应用商店 ID 之外，还必须向此方法传递一列字符串，用于标识加载项的类型。 有关受支持的字符串值列表，请参阅 [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) 属性。
+To get Store product info for apps or add-ons for which you already know the [Store IDs](in-app-purchases-and-trials.md#store_ids), use the [GetStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706579.aspx) method. This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the apps or add-ons. In addition to the Store IDs, you must pass a list of strings to this method that identify the types of the add-ons. For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.
 
-以下示例使用指定的应用商店 ID 检索持久型加载项的信息。
+The following example retrieves info for durable add-ons with the specified Store IDs.
 
 ```csharp
 private StoreContext context = null;
@@ -91,8 +85,7 @@ public async void GetProductInfo()
     string[] storeIds = new string[] { "9NBLGGH4TNMP", "9NBLGGH4TNMN" };
 
     workingProgressRing.IsActive = true;
-    StoreProductQueryResult queryResult =
-        await context.GetStoreProductsAsync(filterList, storeIds);
+    var queryResult = await context.GetStoreProductsAsync(filterList, storeIds);
     workingProgressRing.IsActive = false;
 
     if (queryResult.ExtendedError != null)
@@ -102,7 +95,7 @@ public async void GetProductInfo()
         return;
     }
 
-    foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products)
+    foreach (var item in queryResult.Products)
     {
         // Access the Store info for the product.
         StoreProduct product = item.Value;
@@ -112,11 +105,11 @@ public async void GetProductInfo()
 }
 ```
 
-## 获取适用于当前应用的加载项的信息
+## Get info for add-ons that are available for the current app
 
-若要获取适用于当前应用的加载项的应用商店产品信息，请使用 [GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx) 方法。 这是一种异步方法，可返回一组代表每一个可用加载项的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象。 必须向此方法传递一列字符串，用于标识你想要检索的加载项的类型。 有关受支持的字符串值列表，请参阅 [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) 属性。
+To get Store product info for the add-ons that are available for the current app, use the [GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx) method. This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the available add-ons. You must pass a list of strings to this method that identify the types of add-ons you want to retrieve. For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.
 
-以下示例检索所有持久型加载项、应用商店管理的可消耗加载项和开发人员管理的可消耗加载项的信息。
+The following example retrieves info for all durable add-ons, Store-managed consumable add-ons, and developer-managed consumable add-ons.
 
 ```csharp
 private StoreContext context = null;
@@ -133,7 +126,7 @@ public async void GetAddOnInfo()
     List<String> filterList = new List<string>(productKinds);
 
     workingProgressRing.IsActive = true;
-    StoreProductQueryResult queryResult = await context.GetAssociatedStoreProductsAsync(filterList);
+    var queryResult = await context.GetAssociatedStoreProductsAsync(filterList);
     workingProgressRing.IsActive = false;
 
     if (queryResult.ExtendedError != null)
@@ -143,7 +136,7 @@ public async void GetAddOnInfo()
         return;
     }
 
-    foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products)
+    foreach (var item in queryResult.Products)
     {
         // Access the Store product info for the add-on.
         StoreProduct product = item.Value;
@@ -153,14 +146,14 @@ public async void GetAddOnInfo()
 }
 ```
 
->**注意**&nbsp;&nbsp;如果应用具有许多加载项，你也可以使用 [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx) 方法分页返回加载项结果。
+>**Note** If the app has many add-ons, you can alternatively use the [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx) method to use paging to return the add-on results.
 
 
-## 获取当前用户有权使用的当前应用的加载项信息
+## Get info for add-ons for the current app that the current user is entitled to use
 
-若要获取当前用户有权使用的加载项的应用商店产品信息，请使用 [GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx) 方法。 这是一种异步方法，可返回一组代表每一个加载项的 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 对象。 必须向此方法传递一列字符串，用于标识你想要检索的加载项的类型。 有关受支持的字符串值列表，请参阅 [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) 属性。
+To get Store product info for add-ons that the current user is entitled to use, use the [GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx) method. This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the add-ons. You must pass a list of strings to this method that identify the types of add-ons you want to retrieve. For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.
 
-以下示例使用指定的应用商店 ID 检索持久型加载项的信息。
+The following example retrieves info for durable add-ons with the specified Store IDs.
 
 ```csharp
 private StoreContext context = null;
@@ -176,8 +169,11 @@ public async void GetUserCollection()
     string[] productKinds = { "Durable" };
     List<String> filterList = new List<string>(productKinds);
 
+    // Specify the Store IDs of the products to retrieve.
+    string[] storeIds = new string[] { "9NBLGGH4TNMP", "9NBLGGH4TNMN" };
+
     workingProgressRing.IsActive = true;
-    StoreProductQueryResult queryResult = await context.GetUserCollectionAsync(filterList);
+    var queryResult = await context.GetUserCollectionAsync(filterList);
     workingProgressRing.IsActive = false;
 
     if (queryResult.ExtendedError != null)
@@ -187,7 +183,7 @@ public async void GetUserCollection()
         return;
     }
 
-    foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products)
+    foreach (var item in queryResult.Products)
     {
         StoreProduct product = item.Value;
 
@@ -196,19 +192,12 @@ public async void GetUserCollection()
 }
 ```
 
->**注意**&nbsp;&nbsp;如果应用具有许多加载项，你也可以使用 [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx) 方法分页返回加载项结果。
+>**Note** If the app has many add-ons, you can alternatively use the [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx) method to use paging to return the add-on results.
 
-## 相关主题
+## Related topics
 
-* [应用内购买和试用](in-app-purchases-and-trials.md)
-* [获取应用和加载项的许可证信息](get-license-info-for-apps-and-add-ons.md)
-* [支持应用内购买应用和加载项](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [支持购买易耗型加载项](enable-consumable-add-on-purchases.md)
-* [实现应用的试用版](implement-a-trial-version-of-your-app.md)
-* [应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
-
+* [In-app purchases and trials](in-app-purchases-and-trials.md)
+* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
+* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
+* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)

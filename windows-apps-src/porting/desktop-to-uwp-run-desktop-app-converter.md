@@ -1,117 +1,94 @@
 ---
 author: awkoren
-Description: Run the Desktop Converter App to convert a Windows desktop application (like Win32, WPF, and Windows Forms) to a Universal Windows Platform (UWP) app.
+Description: "运行桌面转换器应用以将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）转换为通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop App Converter
+title: "桌面应用转换器预览 (Project Centennial)"
 translationtype: Human Translation
-ms.sourcegitcommit: 1cae625559ad95c1de577e57bfd5087e55a0c2f5
-ms.openlocfilehash: daa29e4e96219bd1eaf7f2dca29fc685b6589774
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8a22285467005722ad6ee5bf4f129a7dfdea944c
 
 ---
 
-# Desktop App Converter
+# 桌面应用转换器预览 (Project Centennial)
 
-[Get the Desktop App Converter](https://aka.ms/converter)
+\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-The Desktop App Converter (DAC) is a tool that enables you to bring your existing desktop apps written for .NET 4.6.1 or Win32 to the Universal Windows Platform (UWP). You can run your desktop installers through the converter in an unattended (silent) mode and obtain an AppX package that you can install by using the Add-AppxPackage PowerShell cmdlet on your development machine.
+[获取桌面应用转换器。](http://go.microsoft.com/fwlink/?LinkId=785437)
 
-The Desktop App Converter is available now in the [Windows Store](https://aka.ms/converter).
+桌面应用转换器是一款预发布工具，可使你将为 .NET 4.6.1 或 Win32 编写的现有桌面应用发布到通用 Windows 平台 (UWP)。 你可以在无人参与（无提示）模式下通过转换器运行桌面安装程序，并获取可在开发计算机上使用 Add-AppxPackage PowerShell cmdlet 安装的 AppX 程序包。
 
-The converter runs the desktop installer in an isolated Windows environment using a clean base image provided as part of the converter download. It captures any registry and file system I/O made by the desktop installer and packages it as part of the output. The converter outputs an AppX with package identity and the ability to call a vast range of WinRT APIs.
+转换器使用作为转换器下载的一部分提供的干净基本映像在隔离的 Windows 环境中运行桌面安装程序。 它捕获桌面安装程序进行的任何注册表和文件系统 I/O，并将其作为输出的一部分打包。 转换器输出一个带有程序包标识和调用各种 WinRT API 的功能的 AppX。
 
-## What's new
+## 新增功能
 
-This section outlines changes between versions of the Desktop App Converter. 
-
-### 9/14/2016 (v1.0)
-
-* The Desktop App Converter is now available for download in the [Windows Store](https://aka.ms/converter)! 
-* Grab the latest Windows 10 Base Images (.wim) on the [Download Center](https://www.microsoft.com/download/details.aspx?id=53833) for use with the DAC.
-* With the store app, you can now use the new entry point *DesktopAppConverter.exe <arguments>* to run the converter from anywhere in an elevated command prompt or PowerShell window.  
-
-
-### 9/2/2016 (v0.1.25)
-
-* Integrated the latest dotnet-computervirtualization NuGet package.
-* Added newly introduced dependencies on common.dll.
-* Several bug fixes.
-
-### 8/4/2016 (v0.1.24)
-
-* Added support for auto-signing the converted apps produced by DAC for testing purposes. Check out the ```–Sign``` flag to give it a try. 
-* Added warnings if any of the COM registrations in the virtual registry hive are not supported within the packaged AppX.  
-* Added support for auto-detecting app dependancies on VC++ libraries and then converting them in to AppX manifest dependencies. Note that in order to sideload and test apps using VC++ runtime, you'll need to download the VCLib framework packages as outlined in the blog post [Using Visual C++ Runtime in a Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project). Locate the packages under the folder ```Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop``` on your machine, navigate to the version you depend on (e.g., 11.0, 12.0, 14.0), and double click on the appropriate architecture package (x64, x86) to install it.
-* Updated the manifest schema to align with the Windows 10 Anniversary Update (10.0.14393.0). 
-* Several bug fixes and improved output layout. 
+本部分概述桌面应用转换器的各版本之间的更改。 
 
 ### 7/7/2016 (v0.1.22)
 
-* Added support for auto detecting shell extensions from your desktop application and declaring them in the AppXManifest for your UWP package. To learn more about the desktop extensions, see [**Converted desktop app extensions**](desktop-to-uwp-extensions.md). 
-* Improved AppExecutable detection for a large set of apps. 
+* 添加了对从桌面应用程序自动检测外壳扩展以及在 UWP 程序包的 AppXManifest 中声明这些扩展的支持。 若要了解有关桌面扩展的详细信息，请参阅[**已转换的桌面应用扩展**](desktop-to-uwp-extensions.md)。 
+* 改进了大量应用的 AppExecutable 检测。 
 
 ### 6/16/2016 (v0.1.20)
 
-* Fixes issues blocking successful conversions on the latest Windows 10 Insider Preview builds. 
-* Replaced ```–CreateX86Package``` with ```–PackageArch```, which allows you to specify the architecture for the generated package. 
+* 解决了最新 Windows 10 Insider Preview 版本上阻碍成功转换的问题。 
+* 使用 ```–PackageArch``` 替换了 ```–CreateX86Package```，这允许你指定生成的程序包的体系结构。 
 
 ### 6/8/2016
 
-* Added support for generating x86 appx packages on AMD64 host machines running the converter.
-* Reduced disk space usage by removing any previously expanded base images.
-* Added support for cleaning up temporary files and any unnecessary base images.
-* Improved support for detecting file type and protocol associations.
-* Improved logic to detect the AppExecutable property for a large set of apps.
-* Added support for providing additional –InstallerArguments for MSI based installers.
-* Bug fixes for any PathTooLongException errors during the conversion process.
+* 添加了对在运行转换器的 AMD64 主机上生成 x86 appx 程序包的支持。
+* 通过删除所有以前扩展的基本映像降低了磁盘空间使用率。
+* 添加了对清除临时文件和所有不必要的基本映像的支持。
+* 改进了对检测文件类型和协议关联的支持。
+* 改进了用于检测大量应用的 AppExecutable 属性的逻辑。
+* 添加了对为基于 MSI 的安装程序提供其他 –InstallerArguments 的支持。
+* 针对转换过程中所有 PathTooLongException 错误的 bug 修复。
 
 ### 5/12/2016
 
-- Restored support for Pro edition of Windows. 
-- Converter ```-Setup``` flag now enables Windows Containers feature and handles base image expansion. Run the following from an elevated PowerShell prompt to do one time setup: ```PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage BaseImage-12345.wim -Verbose```
-- Added auto-detection of app install path and moving application root outside of VFS to reduce any unnecessary file system redirections at runtime.
-- Added auto-detection of the expanded base image as part of the conversion process.
-- Added auto-detection for file type associations and protocols.
-- Improved logic to detect Start Menu shortcut.
-- Improved file system filtering to retain app installed MUI files.
-- Updated the minimum supported desktop version (10.0.14342.0) in the manifest.
+- 还原了对 Windows 专业版的支持。 
+- 转换器 ```-Setup``` 标志现在启用 Windows 容器功能，并处理基本映像扩展。 从提升的 PowerShell 提示符运行以下命令来执行一次性设置： ```PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage BaseImage-12345.wim -Verbose```
+- 添加了应用安装路径的自动检测并将应用程序根移到 VFS 之外，以在运行时减少任何不必要的文件系统重定向。
+- 添加了作为转换过程的一部分的扩展基本映像的自动检测。
+- 添加了文件类型关联和协议的自动检测。
+- 改进了检测“开始”菜单快捷方式的逻辑。
+- 改进了文件系统筛选以保留应用安装的 MUI 文件。
+- 在清单中更新了 Project Centennial 的最低受支持桌面版本 (10.0.14342.0)。
 
-## System requirements
+## 系统要求
 
-### Supported operating system
-+ Windows 10 Anniversary Update Enterprise edition preview (Build 10.0.14342.0 and later)
+### 支持的操作系统
++ Windows 10 周年更新企业版预览（内部版本 10.0.14342.0 和更高版本）
 
-### Required hardware configuration
+### 所需的硬件配置
 
-Your computer must have the following minimum capabilities:
-+ 64 bit (x64) processor
-+ Hardware-assisted virtualization
-+ Second Level Address Translation (SLAT)
+你的计算机必须具有以下最低功能：
++ 64 位 (x64) 处理器
++ 硬件辅助虚拟化
++ 二级地址转换 (SLAT)
 
-### Recommended resources
+### 推荐资源
++ [适用于 Windows 10 的 Windows 软件开发工具包 (SDK)](http://go.microsoft.com/fwlink/?LinkId=615097)
 
-+ [Windows Software Development Kit (SDK) for Windows 10](http://go.microsoft.com/fwlink/?LinkId=615097)
+## 设置桌面应用转换器   
+桌面应用转换器依赖于作为 Windows Insider Preview 版本进行外部测试的 Windows 10 功能。 确保你使用最新版本来利用转换器。
 
-## Set up the Desktop App Converter   
-
-Desktop App Converter relies on Windows 10 features that are flighted as part of the Windows Insider Preview builds. Make sure that you're on the latest build to utilize the converter.
-
-1. Ensure that you have the latest Windows 10 Insider Preview OS – Enterprise or Pro edition (http://insider.windows.com). 
-2. Download the DesktopAppConverter.zip and the base image .wim file that matches your Insider Preview build (http://aka.ms/converter). 
-3. Extract the DesktopAppConverter.zip to a local folder.
-4. From an admin PowerShell window:  
+1. 确保你具有最新的 Windows 10 Insider Preview 操作系统 - 企业版或专业版 (http://insider.windows.com)。 
+2. 下载 DesktopAppConverter.zip 和与你的 Insider Preview 版本匹配的基本映像 .wim 文件 (http://aka.ms/converter)。 
+3. 将 DesktopAppConverter.zip 解压缩到本地文件夹。
+4. 从管理员 PowerShell 窗口：  
 ```CMD
 PS C:\> Set-ExecutionPolicy bypass
 ```
-5. Run the following command from an admin PowerShell window to setup the converter:
+5. 从管理员 PowerShell 窗口运行以下命令来设置转换器：
 ```CMD
 PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose
 ```
-6. If running the previous command prompts you to reboot, restart your machine and run the command again.
+6. 如果运行以前的命令后提示你重启，请重启计算机并再次运行该命令。
 
-## Run the Desktop App Converter
-Desktop App Converter has two entry points: PowerShell and Command Shell. You can use either of these entry points to start the conversion process.
+## 运行桌面应用转换器
+桌面应用转换器具有两个入口点：PowerShell 和 Command Shell。 你可以使用这些入口点之一启动转换过程。
 
-### Usage
+### 用法
 ```CMD
 DesktopAppConverter.ps1
 -Installer <String> [-InstallerArguments <String>] [-InstallerValidExitCodes <Int32>]
@@ -132,151 +109,135 @@ DesktopAppConverter.ps1
 [<CommonParameters>]  
 ```
 
-### Example
-The following example shows how to convert a desktop app named *MyApp* by *&lt;publisher_name&gt;* to a UWP package (AppX).
+### 示例
+以下示例介绍如何将 *&lt;publisher_name&gt;* 发布的名为 *MyApp* 的桌面应用转换为 UWP 程序包 (AppX)。
 
-+ From an admin PowerShell window, run the following command:
++ 从管理员 PowerShell 窗口，运行以下命令：
 ```CMD
 PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe 
 -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" 
 -Publisher "CN=<publisher_name>" -Version 0.0.0.1 -MakeAppx -Verbose
 ```
 
-## Deploy your converted AppX
+## 部署转换的 AppX
+在 PowerShell 中使用 [Add-AppxPackage](https://technet.microsoft.com/library/hh856048.aspx) cmdlet 将已签名的应用包 (.appx) 部署到用户帐户。 若要对 .appx 程序包进行签名，请参考以下部分“对 .Appx 程序包进行签名”。 此外，你可以包含该 cmdlet 的 *Register* 参数，以在开发过程中从已解压缩文件的文件夹中进行安装。 有关详细信息，请参阅[部署和调试转换的 UWP 应用](desktop-to-uwp-deploy-and-debug.md)。
 
-Use the [Add-AppxPackage](https://technet.microsoft.com/library/hh856048.aspx) cmdlet in PowerShell to deploy a signed app package (.appx) to a user account. 
+## 对 .Appx 程序包进行签名
 
-You can use the ```-Sign``` flag in the Desktop App Converter (v0.1.24) to auto-sign your converted app. Alternatively, refer to [Sign your converted desktop app](desktop-to-uwp-signing.md) to learn how to self-sign AppX packages.
+Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用 Microsoft Windows 10 SDK 附带的 SignTool.exe 对 .appx 程序包进行签名。
 
-You can also utilize the ```-Register``` parameter of the Add-AppXPackage PowerShell cmdlet to install from a folder of unpackaged files during the development process. 
+### 示例
+```CMD
+C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
+C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
+C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
+```
+**注意：**当你运行 MakeCert.exe 并且系统要求你输入密码时，请选择“无”****。
 
-For more information on deploying and debugging your converted app, see [Deploy and debug your converted UWP app](desktop-to-uwp-deploy-and-debug.md). 
+有关证书和签名的详细信息，请参阅：
 
-## Sign your .Appx Package
++ [操作方法：创建在部署期间使用的临时证书](https://msdn.microsoft.com/library/ms733813.aspx)
++ [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
++ [SignTool.exe（签名工具）](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 
-The Add-AppxPackage cmdlet requires that the application package (.appx) being deployed must be signed. Use ```-Sign``` flag as part of the converter command line or SignTool.exe, which ships in the Microsoft Windows 10 SDK, to sign the .appx package.
+### 警告
+1. 主机上的 Windows 10 版本必须与作为桌面应用转换器下载的一部分获取的基本映像匹配。  
+2. 确保桌面安装程序是独立的目录，因为转换器会将目录的所有内容复制到隔离的 Windows 环境中。  
+3. 当前，桌面应用转换器仅支持在 64 位操作系统上运行转换过程。 你仅可以将转换的.appx 程序包部署到 64 位 (x64) 操作系统。  
+4. 桌面应用转换器需要桌面安装程序在无人参与模式下运行。 确保使用 *-InstallerArguments* 参数将安装程序的无提示标志传递到转换器。
+5. 发布公共 SxS Fusion 程序集不起作用。 在安装期间，应用程序可以发布公共并行 Fusion 程序集，这些程序集可供任何其他进程访问。 在进程激活上下文创建期间，这些程序集将由名为 CSRSS.exe 的系统进程检索。 当 Centennial 进程执行此操作时，这些程序集的激活上下文创建和模块加载将失败。 内置程序集（如 ComCtl）随操作系统附带，因此从 Centennial 进程获取它们的依赖项很安全。 SxS Fusion 程序集在以下位置注册：
+  + 注册表： `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
+  + 文件系统：%windir%\\SideBySide
 
-For additional details on how to sign your .appx package, see [Sign your converted desktop app](desktop-to-uwp-signing.md). 
+## 已知问题
 
-## Caveats
++ 如果你在之前已安装桌面应用转换器预览的开发人员计算机上收到 Windows 预览体验成员外部测试版，你可能会在设置新的基本映像时收到错误 `New-ContainerNetwork: The object already exists`。 作为解决方法，请从提升的命令提示符运行命令 `Netsh int ipv4 reset`，然后重启你的计算机。 
++ 如果主可执行文件或任何依赖项放置在“Program Files”或“Windows\System32”下，使用“AnyCPU”版本选项编译的 .NET 应用将无法安装。 作为解决方法，请使用特定于体系结构的桌面安装程序（32 位或 64 位）成功生成 AppX 程序包。
 
-1. The Windows 10 build on the host machine must match the base image that you obtained as part of the Desktop App Converter download.  
-2. Ensure that the desktop installer is in an independent directory, because the converter copies all of the directory's content to the isolated Windows environment.  
-3. Currently, the Desktop App Converter supports running the conversion process on a 64-bit operating system only. You can deploy the converted .appx packages to a 64-bit (x64) OS only.  
-4. Desktop App Converter requires the desktop installer to run under unattended mode. Ensure that you pass the silent flag for your installer to the converter by using the *-InstallerArguments* parameter.
-5. Publishing public SxS Fusion assemblies won't work. During install, an application can publish public side-by-side Fusion assemblies, accessible to any other process. During process activation context creation, these assemblies are retrieved by a system process named CSRSS.exe. When this is done for a converted process, activation context creation and module loading of these assemblies will fail. Inbox assemblies, like ComCtl, are shipped with the OS, so taking a dependency on them is safe. The SxS Fusion assemblies are registered in the following locations:
-  + Registry: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
-  + File System: %windir%\\SideBySide
+## 来自桌面应用转换器的遥测  
+桌面应用转换器可以收集关于你和你使用该软件的情况的信息，并将此信息发送给 Microsoft。 你可以在产品文档和 [Microsoft 隐私声明](http://go.microsoft.com/fwlink/?LinkId=521839)中了解有关 Microsoft 的数据收集和使用的详细信息。 你同意遵守 Microsoft 隐私声明的所有适用条款。
 
-## Known issues
-
-+ If you receive a Windows Insider flight on a developer machine that previously had the Desktop App Converter installed, you may receive the error `New-ContainerNetwork: The object already exists` when you setup the new base image. As a workaround, run the command `Netsh int ipv4 reset` from an elevated command prompt, then reboot your machine. 
-+ A .NET app compiled with "AnyCPU" build option will fail to install if the main executable or any of the dependencies were placed under "Program Files" or "Windows\System32". As a workaround, please use your architecture specific desktop installer (32 bit or 64 bit) to successfully generate an AppX package.
-
-## Telemetry from Desktop App Converter  
-Desktop App Converter may collect information about you and your use of the software and send this info to Microsoft. You can learn more about Microsoft's data collection and use in the product documentation and in the [Microsoft Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=521839). You agree to comply with all applicable provisions of the Microsoft Privacy Statement.
-
-By default, telemetry will be enabled for the Desktop App Converter. Add the following registry key to configure telemetry to a desired setting:  
+默认情况下，将为桌面应用转换器启用遥测。 添加以下注册表项以将遥测配置为所需设置：  
 ```CMD
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DesktopAppConverter
 ```
-+ Add or edit the *DisableTelemetry* value by using a DWORD set to 1.
-+ To enable telemetry, remove the key or set the value to 0.
++ 通过使用设置为 1 的 DWORD 来添加或编辑 *DisableTelemetry* 值。
++ 若要启用遥测，请删除该项或将值设置为 0。
 
-## Desktop App Converter usage
-Here's a list of parameters to the Desktop App Converter. You can also view this list in the Windows Powershell window by running the following command:  
+## 桌面应用转换器用法
+下面是桌面应用转换器的参数列表。 你还可以通过运行以下命令在 Windows Powershell 窗口中查看此列表：  
 ```CMD
 get-help .\DesktopAppConverter.ps1 -detailed
 ```
 
-### Setup Parameters  
-|Parameter|Description|
+### Setup 参数  
+|参数|说明|
 |---------|-----------|
-|```-Setup [<SwitchParameter>]``` | Runs DesktopAppConverter in setup mode. Setup mode supports expanding a provided base image.|
-|```-BaseImage <String>``` | Full path to an unexpanded base image. This parameter is required if -Setup is specified.|
-|```-LogFile <String>``` [optional] | Specifies a log file. If omitted, a log file temporary location will be created.|
-|```-NatSubnetPrefix <String>``` [optional] | Prefix value to be used for the Nat instance. Typically, you would want to change this only if your host machine is attached to the same subnet range as the converter's NetNat. You can query the current converter NetNat config by using the **Get-NetNat** cmdlet. |
-|```-NoRestart [<SwitchParameter>]``` | Don't prompt for reboot when running setup (reboot is required to enable the container feature). |
+|```-Setup [<SwitchParameter>]``` | 在设置模式下运行 DesktopAppConverter。 设置模式支持扩展所提供的基本映像。|
+|```-BaseImage <String>``` | 未扩展的基本映像的完整路径。 如果指定 -Setup，则需要此参数。|
+|```-LogFile <String>``` [可选] | 指定日志文件。 如果省略，将创建一个日志文件临时位置。|
+|```-NatSubnetPrefix <String>``` [可选] | 用于 Nat 实例的前缀值。 通常，仅在主机连接到与转换器的 NetNat 相同的子网范围时，你会希望更改此值。 你可以通过使用 **Get-NetNat** cmdlet 查询当前转换器 NetNat 配置。 |
+|```-NoRestart [<SwitchParameter>]``` | 在运行设置时不要提示重启（需要重启才能启用容器功能）。 |
 
-### Conversion Parameters  
-|Parameter|Description|
+### Conversion 参数  
+|参数|说明|
 |---------|-----------|
-|```-Installer <String>``` | The path to the installer for your application - must be able to run unattended/silently|
-|```-InstallerArguments <String>``` [optional] | A comma-separated list or string of arguments to force your installer to run unattended/silently. This parameter is optional if your installer is an msi. To get a log from your installer, supply the logging argument for the installer here and use the path ```<log_folder>```, which is a token that the converter replaces with the appropriate path. <br><br>**NOTE: The unattended/silent flags and log arguments will vary between installer technologies.** <br><br>An example usage for this parameter: ```-InstallerArguments "/silent /log <log_folder>\install.log"``` Another example that doesn't produce a log file may look like: ```-InstallerArguments "/quiet", "/norestart"``` Again, you must literally direct any logs to the token path ```<log_folder>``` if you want the converter to capture it and put it in the final log folder.|
-|```-InstallerValidExitCodes <Int32>``` [optional] | A comma-separated list of exit codes that indicate your installer ran successfully (for example: 0, 1234, 5678).  By default this is 0 for non-msi, and 0, 1641, 3010 for msi.|
-|```-Destination <String>``` | The desired destination for the converter's appx output - DesktopAppConverter can create this location if it doesn't already exist.|
+|```-Installer <String>``` | 应用程序的安装程序的路径 - 必须能够在无人参与/无提示的情况下运行。|
+|```-InstallerArguments <String>``` [可选] | 用于强制安装程序在无人参与/无提示的情况下运行的参数的逗号分隔列表或字符串。 如果安装程序是 msi，则此参数为可选参数。 若要从安装程序中获取日志，请在此处为安装程序提供日志记录参数，并使用路径 ```<log_folder>```，该路径是转换器替换为相应路径的标记。 <br><br>**注意：无人参与/无提示标志和日志参数将因安装程序技术而有所不同。** <br><br>此参数的用法示例：```-InstallerArguments "/silent /log <log_folder>\install.log"```另一个不产生日志文件的示例可能如下所示：```-InstallerArguments "/quiet", "/norestart"```同样，如果你希望转换器捕获日志并将其放置在最终日志文件夹中，你必须逐字节地将任何日志直接指向标记路径 ```<log_folder>```。|
+|```-InstallerValidExitCodes <Int32>``` [可选] | 指示安装程序成功运行的退出代码的逗号分隔列表（例如，0, 1234, 5678）。  默认情况下，对于非 msi，它为 0，对于 msi，它为 0, 1641, 3010。|
+|```-Destination <String>``` | 如果转换器的 appx 输出的所需目标尚未存在，DesktopAppConverter 可以创建此位置。|
 
-### Appx Identity Parameters  
-|Parameter|Description|
+### Appx Identity 参数  
+|参数|描述|
 |---------|-----------|
-|```-PackageName <String>``` | The name of your Universal Windows App package
-|```-Publisher <String>``` | The publisher of your Universal Windows App package
-|```-Version <Version>``` | The version number for your Universal Windows App package
+|```-PackageName <String>``` | 通用 Windows 应用程序包的名称
+|```-Publisher <String>``` | 通用 Windows 应用程序包的发布者
+|```-Version <Version>``` | 通用 Windows 应用程序包的版本号
 
-### Optional Appx Manifest Parameters  
-|Parameter|Description|
+### 可选 Appx Manifest 参数  
+|参数|描述|
 |---------|-----------|
-|```-AppExecutable <String> [optional]``` [optional] | The name of your application's main executable (eg "MyApp.exe"). |
-|```-AppFileTypes <String>``` [optional] | A comma-separated list of file types which the application will be associated with (eg. ".txt, .doc", without the quotes).|
-|```-AppId <String>``` [optional] | Specifies a value to set Application Id to in the appx manifest. If it is not specified, it will be set to the value passed in for *PackageName*.|
-|```-AppDisplayName <String>``` [optional] | Specifies a value to set Application Display Name to in the appx manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
-|```-AppDescription <String>``` [optional] | Specifies a value to set Application Description to in the appx manifest. If it is not specified, it will be set to the value passed in for *PackageName*.|
-|```-PackageDisplayName <String>``` [optional] | Specifies a value to set Package Display Name to in the appx manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
-|```-PackagePublisherDisplayName <String>``` [optional] | Specifies a value to set Package Publisher Display Name to in the appx manifest. If it is not specified, it will be set to the value passed in for *Publisher*. |
+|```-AppExecutable <String>``` [可选] | 应用程序的主可执行文件的完整路径（如果要安装，但并非必须安装），例如“C:\Program Files (x86)\MyApp\MyApp.exe”。|
+|```-AppFileTypes <String>``` [可选] | 应用程序将与其关联的文件类型的逗号分隔列表（例如 “.txt, .doc”，不包含引号）。|
+|```-AppId <String>``` [可选] | 在 appx 清单中指定要将 Application Id 设置为的值。 如果未指定，则将其设置为 *PackageName* 传入的值。|
+|```-AppDisplayName <String>``` [可选] | 在 appx 清单中指定要将应用程序显示名称设置为的值。 如果未指定，则将其设置为 *PackageName* 传入的值。 |
+|```-AppDescription <String>``` [可选] | 在 appx 清单中指定要将应用程序描述设置为的值。 如果未指定，则将其设置为 *PackageName* 传入的值。|
+|```-PackageDisplayName <String>``` [可选] | 在 appx 清单中指定要将程序包显示名称设置为的值。 如果未指定，则将其设置为 *PackageName* 传入的值。 |
+|```-PackagePublisherDisplayName <String>``` [可选] | 在 appx 清单中指定要将程序包发布者显示名称设置为的值。 如果未指定，则将其设置为 *Publisher* 传入的值。 |
 
-### Other Conversion Parameters  
-|Parameter|Description|
+### 其他 Conversion 参数  
+|参数|描述|
 |---------|-----------|
-|```-ExpandedBaseImage <String>``` [optional] | Full path to an already expanded base image.|
-|```-MakeAppx [<SwitchParameter>]``` [optional] | A switch that, when present, tells this script to call MakeAppx on the output. |
-|```-LogFile <String>``` [optional] | Specifies a log file. If omitted, a log file temporary location will be created. |
-| ```Sign [<SwitchParameter>] [optional]``` | Tells this script to sign the output appx. This switch should be present alongside the switch ```-MakeAppx```. 
-|```<Common parameters>``` | This cmdlet supports the common parameters: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable*, and *OutVariable*. For more info, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
+|```-ExpandedBaseImage <String>``` [可选] | 已扩展的基本映像的完整路径。|
+|```-MakeAppx [<SwitchParameter>]``` [可选] | 一个告知此脚本对输出调用 MakeAppx 的开关（当存在时）。 |
+|```-LogFile <String>``` [可选] | 指定日志文件。 如果省略，将创建一个日志文件临时位置。 |
+|```<Common parameters>``` | 此 cmdlet 支持通用参数：*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable* 和 *OutVariable*。 有关详细信息，请参阅 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。 |
 
-### Cleanup Parameters
-|Parameter|Description|
+### 清除参数
+|参数|说明|
 |---------|-----------|
-|```Cleanup [<Option>]``` | Runs cleanup for the DesktopAppConverter artifacts. There are 3 valid options for the Cleanup mode. |
-|```Cleanup All``` | Deletes all expanded base images, removes any temporary converter files, removes the container network, and disables the optional Windows feature, Containers. |
-|```Cleanup WorkDirectory``` | Removes all the temporary converter files. |
-|```Cleanup ExpandedImage``` | Deletes all the expanded base images installed on your host machine. |
+|```Cleanup [<Option>]``` | 为 DesktopAppConverter 项目运行清除。 清除模式有 3 个有效的选项。 |
+|```Cleanup All``` | 删除所有已扩展的基本映像、删除任何临时转换器文件、删除容器网络并禁用可选的 Windows 功能，即容器。 |
+|```Cleanup WorkDirectory``` | 删除所有临时转换器文件。 |
+|```Cleanup ExpandedImages``` | 删除安装在主机上的所有已扩展的基本映像。 |
 
-### Package Architecture
-The Desktop App Converter now supports creation of both x86 and x64 app packages that you can install and run on x86 and amd64 machines. Note the Desktop App Converter still needs to run on an AMD64 machine to perform a successful conversion.
+### 程序包体系结构
+桌面应用转换器预览现在支持创建可在 x86 和 amd64 计算机上安装和运行的 x86 和 x64 应用包。 请注意，桌面应用转换器仍然需要在 AMD64 计算机上运行才能执行成功的转换。
 
-|Parameter|Description|
+|参数|描述|
 |---------|-----------|
-|```-PackageArch <String>``` | Generates a package with the specified architecture. Valid options are 'x86' or 'x64'; for example, -PackageArch x86. This parameter is optional. If unspecified, the DesktopAppConverter will try to auto-detect package architecture. If auto-detection fails, it will default to x64 package. 
+|```-PackageArch <String>``` | 生成指定了体系结构的程序包。 有效选项为“x86”或“x64”，例如 -PackageArch x86。 该参数为可选参数。 如果未指定，DesktopAppConverter 将尝试自动检测程序包体系结构。 如果自动检测失败，它将默认为 x64 程序包。 |
 
-### Running the PEHeaderCertFixTool
-
-During the conversion process, the DesktopAppConverter automatically runs the PEHeaderCertFixTool in order to fixup any corrupted PE headers. However, you can also run the PEHeaderCertFixTool on a UWP appx, loose files or a specific binary. 
-
-PEHeaderCertFixTool ships as part of the DesktopAppConverter.zip. Example usage: 
-
-```CMD
-PEHeaderCertFixTool.exe <binary file>|<.appx package>|<folder> [/c] [/v]
- /c   -- check for corrupted certificate but do not fix (optional)
- /v   -- verbose (optional)
-example1: PEHeaderCertFixTool app.exe
-example2: PEHeaderCertFixTool c:\package.appx /c
-example3: PEHeaderCertFixTool c:\myapp /c /v
-```
-
-## Language support
-
-The Desktop App Converter does not support Unicode; thus, no Chinese characters or non-ASCII characters can be used with the tool.
-
-## See also
-+ [Get the Desktop App Converter](http://go.microsoft.com/fwlink/?LinkId=785437)
-+ [Bring your desktop app to the Universal Windows Platform](https://developer.microsoft.com/windows/bridges/desktop)
-+ [Bringing Desktop Apps to the UWP Using Desktop App Converter](https://channel9.msdn.com/events/Build/2016/P504)
-+ [Project Centennial: Bringing Existing Desktop Applications to the Universal Windows Platform](https://channel9.msdn.com/events/Build/2016/B829)  
-+ [UserVoice for Desktop Bridge](http://aka.ms/UserVoiceDesktopToUwp)
-+ [Desktop app bridge to UWP code samples on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+## 另请参阅
++ [获取桌面应用转换器](http://go.microsoft.com/fwlink/?LinkId=785437)
++ [将你的桌面应用发布到通用 Windows 平台](https://developer.microsoft.com/windows/bridges/desktop)
++ [使用桌面应用转换器将桌面应用发布到 UWP](https://channel9.msdn.com/events/Build/2016/P504)
++ [Project Centennial：将现有桌面应用程序发布到通用 Windows 平台](https://channel9.msdn.com/events/Build/2016/B829)  
++ [适用于 Desktop Bridge 的 UserVoice (Project Centennial)](http://aka.ms/UserVoiceDesktopToUwp)
++ [GitHub 上的 UWP 代码示例的桌面应用桥](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Jul16_HO2-->
 
 

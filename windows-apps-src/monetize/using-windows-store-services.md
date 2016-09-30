@@ -1,29 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
-description: The Windows Store exposes several services that you can call via REST APIs to programmatically access certain types of data for apps that are registered to your or your organization''s Windows Dev Center account.
-title: Use Windows Store services
+description: "Windows 应用商店公开可通过 REST API 调用的多个服务，用于以编程方式针对注册到你的或组织的 Windows 开发人员中心帐户的应用访问特定类型的数据。"
+title: "使用 Windows 应用商店服务"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: ed5d27bf74e516717fa0b8e7e526617bea94cc51
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 43e3155315a9132daa36f592b54af3e943ea3e21
 
 ---
 
-# Use Windows Store services
+# 使用 Windows 应用商店服务
 
 
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+Windows 应用商店公开可通过 REST API 调用的多个服务，用于以编程方式针对注册到你的或组织的 Windows 开发人员中心帐户的应用访问特定类型的数据。
+
+## 本节内容
 
 
-The Windows Store exposes several services that you can call via REST APIs to programmatically access certain types of data for apps that are registered to your or your organization's Windows Dev Center account.
-
-## In this section
-
-
-| Topic                                                                                                       | Description                 |
+| 主题                                                                                                       | 说明                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [Access analytics data](access-analytics-data-using-windows-store-services.md) | Use the *Windows Store analytics API* to programmatically retrieve analytics data for apps that are registered to your or your organization's Windows Dev Center account. This API enables you to retrieve data for app and add-on (also known as in-app product or IAP) acquisitions, app failures, app ratings and reviews. |
-| [Create and manage submissions](create-and-manage-submissions-using-windows-store-services.md) | Use the *Windows Store submission API* to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Windows Dev Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. |
-| [View and grant products from a service](view-and-grant-products-from-a-service.md)  | If you have a catalog of apps and add-ons, you can use the *Windows Store collection API* and *Windows Store purchase API* to access ownership information for these products from your services.  |
+| [访问分析数据](access-analytics-data-using-windows-store-services.md) | 使用 <em>Windows 应用商店分析 API</em>，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。 此 API 使你可以针对应用和 IAP 购置、应用失败、应用评分和评价检索数据。 |
+| [从服务查看和授予产品](view-and-grant-products-from-a-service.md)  | 如果你有应用和应用内产品 (IAP) 的目录，你可以使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API 来访问你的服务中的这些产品的所有权信息。  |
 
 
 
@@ -35,6 +34,6 @@ The Windows Store exposes several services that you can call via REST APIs to pr
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

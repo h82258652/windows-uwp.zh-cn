@@ -1,71 +1,74 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: Learn how to include interstitial ads in a Windows 10, Windows 8.1, or Windows Phone 8.1 app using the Microsoft advertising libraries in the Microsoft Store Services SDK.
-title: Interstitial ads
+description: "了解如何使用 Microsoft 官方商城协议和盈利 SDK 中的 Microsoft Advertising 库来将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。"
+title: "间隙广告"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 ---
 
-# Interstitial ads
+# 间隙广告
 
 
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+此演练显示如何使用 Microsoft 官方商城协议和盈利 SDK 中的 Microsoft Advertising 库来将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。
 
-This walkthrough shows how to include interstitial ads in a Windows 10, Windows 8.1, or Windows Phone 8.1 app using the Microsoft advertising libraries in the Microsoft Store Services SDK.
-
-For complete sample projects that demonstrate how to add interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
+有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
 <span id="whatareinterstitialads10"/>
-## What are interstitial ads?
+## 什么是间隙广告？
 
-Unlike banner ads, interstitial ads (or *interstitials*) are shown on the entire screen of the app. Two basic forms are frequently used in games.
+与横幅广告不同，间隙广告（或称*间隙*）会显示在应用的整个屏幕上。 游戏中经常会使用两种基本形式。
 
-* With *Paywall* ads, the user must watch an ad at some regular interval. For example between game levels:
+* 通过 *Paywall* 广告，用户必须在某段固定间隔时间后观看广告。 例如在转换游戏关卡之间：
 
     ![whatisaninterstitial](images/13-ed0a333b-0fc8-4ca9-a4c8-11e8b4392831.png)
 
-* With *Rewards Based* ads the user is explicitly seeking some benefit, such as a hint or extra time to complete the level, and initializes the video ad through the app’s user interface.
+* 通过 *Rewards Based* 广告，用户显式寻找某些好处（例如完成关卡的提示或额外时间），并通过应用的用户界面来初始化视频广告。
 
-    It is important to note that this SDK does not handle any user interface except at the time of video playback. Refer to the [interstitial best practices](ui-and-user-experience-guidelines.md#interstitialbestpractices10) for guidelines on what to do, and avoid, as you consider how to integrate interstitial ads in your app.
+    请务必注意，此 SDK 除在视频播放时外不会处理任何用户界面。 在考虑如何在应用中集成间隙广告时，可就有关处理方法、避免内容的指南参考[间隙最佳做法](ui-and-user-experience-guidelines.md#interstitialbestpractices10)。
 
-## Building an app with interstitial ads
+## 使用间隙广告生成应用
 
 
-### Prerequisites
+### 先决条件
 
-* For UWP apps: install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015.
-* For Windows 8.1 or Windows Phone 8.1 apps: install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) with Visual Studio 2015 or Visual Studio 2013.
+1.  使用 Visual Studio 2015 或 Visual Studio 2013 安装 [Microsoft 官方商城协定和盈利 SDK](http://aka.ms/store-em-sdk)。
 
-### Code development
+2.  在 Visual Studio 中，打开项目或创建新项目。
 
-* [Steps for a XAML/.NET app](#interstitialadsxaml10)
-* [Steps for HTML/JavaScript](#interstitialadshtml10)
-* [Steps for C++ (DirectX Interop)](#interstitialadsdirectx10)
+### 代码开发
+
+* [适用于 XAML/.NET 应用的步骤](#interstitialadsxaml10)
+
+* [适用于 HTML/JavaScript 的步骤](#interstitialadshtml10)
+
+* [适用于 C++（DirectX 互操作）的步骤](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
-### Interstitial ads (XAML/.NET)
+### 间隙广告 (XAML/.NET)
 
-> **Note**   This section provides C# examples, but Visual Basic and C++ are also supported.
+> **注意** 本部分提供 C# 示例，但 Visual Basic 和 C++ 也受支持。
  
-1. Open your project in Visual Studio.
-2. In **Reference Manager**, select one of the following references depending on your project type:
+1. 在 Visual Studio 中打开你的项目。
+2. 在“引用管理器”****中，根据你的项目类型选择以下引用之一：
 
-    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for XAML** (Version 10.0).
+    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”****、单击“扩展”****，然后选中“适用于 XAML 的 Microsoft Advertising SDK”****（版本 10.0）旁边的复选框。
 
-    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
+    -   对于 Windows 8.1 项目：展开“Windows 8.1”****、单击“扩展”****，然后选中“适用于 Windows 8.1 XAML 的广告中介 SDK”****旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
-    -   For a Windows Phone 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows Phone 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
+    -   对于 Windows Phone 8.1 项目：展开“Windows Phone 8.1”****、单击“扩展”****，然后选中“适用于 Windows Phone 8.1 XAML 的广告中介 SDK”****旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
-3.  In the app code, include the following namespace reference.
+3.  在应用代码中，包含以下命名空间引用。
 
     ``` syntax
     using Microsoft.Advertising.WinRT.UI;
     ```
 
-4.  Declare your `MyAppId` and `MyAdUnitId` properties.
+4.  声明 `MyAppId` 和 `MyAdUnitId` 属性。
 
     ``` syntax
     var MyAppId = "<your app id for windows>";
@@ -80,9 +83,9 @@ Unlike banner ads, interstitial ads (or *interstitials*) are shown on the entire
 #endif
     ```
 
-    > **Note**   You will replace the test values with live values before submitting your app for submission.
+    > **注意** 在提交应用之前，你需要将测试值替换为实时值。
 
-5.  Instantiate an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), wire up all event handlers, and request an ad.
+5.  实例化 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)、绑定所有事件处理程序，并请求某个广告。
 
     ``` syntax
     // instantiate an InterstitialAd
@@ -98,7 +101,7 @@ Unlike banner ads, interstitial ads (or *interstitials*) are shown on the entire
     MyVideoAd.RequestAd(AdType.Video, MyAppId, MyAdUnitId);
     ```
 
-6.  At the point in your code where the ad is to be shown, be sure the ad is ready, and show it.
+6.  在代码中显示广告的地方确保广告已准备就绪，然后再展示广告。
 
     ``` syntax
     if ((InterstitialAdState.Ready) == (MyVideoAd.State))
@@ -107,7 +110,7 @@ Unlike banner ads, interstitial ads (or *interstitials*) are shown on the entire
     }
     ```
 
-7.  Define and code up the events.
+7.  定义事件，并为之编码。
 
     ``` syntax
     void MyVideoAd_AdReady(object sender, object e)
@@ -131,41 +134,41 @@ Unlike banner ads, interstitial ads (or *interstitials*) are shown on the entire
     }
     ```
 
-8.  Assign the `MyAppId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
+8.  将 `MyAppId` 属性分配到[测试模式值](test-mode-values.md)中提供的测试值。 此值仅用于测试；你可以在发布应用前使用实时值替换。
 
     ``` syntax
     var MyAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
     ```
 
-9.  Assign the `MyAdUnitId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
+9.  将 `MyAdUnitId` 属性分配到[测试模式值](test-mode-values.md)中提供的测试值。 此值仅用于测试；你可以在发布应用前使用实时值替换。
 
     ``` syntax
     var MyAdUnitId = "11389925";
     ```
 
-10.  Build and test your app to confirm it is showing test ads.
+10.  生成并测试你的应用，以确认它会显示测试广告。
 
 <span id="interstitialadshtml10"/>
-### Interstitial ads (HTML/JavaScript)
+### 间隙广告 (HTML/JavaScript)
 
-This sample assumes you have created a Universal App project for JavaScript in Visual Studio 2015 and are targeting a specific CPU.
+此示例假设你已在 Visual Studio 2015 中为 JavaScript 创建了通用应用项目，并且面向特定的 CPU。
 
-1. Open your project in Visual Studio.
-2.  In **Reference Manager**, select one of the following references depending on your project type:
+1. 在 Visual Studio 中打开你的项目。
+2.  在“引用管理器”****中，根据你的项目类型选择以下引用之一：
 
-    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for JavaScript** (Version 10.0).
+    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”****、单击“扩展”****，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”****（版本 10.0）旁边的复选框。
 
-    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for Windows 8.1 Native (JS)**.
+    -   对于 Windows 8.1 项目：展开“Windows 8.1”****、单击“扩展”****，然后选中“适用于 Windows 8.1 Native (JS) 的 Microsoft Advertising SDK”****旁边的复选框。
 
-    -   For a Windows 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)**.
+    -   对于 Windows 8.1 项目：展开“Windows Phone 8.1”****、单击“扩展”****，然后选中“适用于 Windows Phone 8.1 本机 (JS) 的 Microsoft Advertising SDK”****旁边的复选框。
 
-3.  In the HTML, include the following script reference.
+3.  在 HTML 中，包括以下脚本引用。
 
     ``` syntax
     <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
     ```
 
-4.  Declare your `myAppId` and `myAdUnitId` properties.
+4.  声明 `myAppId` 和 `myAdUnitId` 属性。
 
     ``` syntax
     <script>
@@ -174,7 +177,7 @@ This sample assumes you have created a Universal App project for JavaScript in V
     </script>
     ```
 
-5.  Instantiate an **InterstitialAd**, wire up all event handlers, and request an ad.
+5.  实例化 **InterstitialAd**、绑定所有事件处理程序，并请求某个广告。
 
     ``` syntax
     // instantiate an InterstitialAd
@@ -191,7 +194,7 @@ This sample assumes you have created a Universal App project for JavaScript in V
     window.interstitialAd.requestAd(myAdType, myAppId, myAdUnitId);
     ```
 
-6.  At the point in your code where the ad is to be shown, be sure the ad is ready, and show it.
+6.  在代码中显示广告的地方确保广告已准备就绪，然后再展示广告。
 
     ``` syntax
     if ((MicrosoftNSJS.Advertising.InterstitialAdState.ready) == (window.interstitialAd.state)) {
@@ -199,7 +202,7 @@ This sample assumes you have created a Universal App project for JavaScript in V
     }
     ```
 
-7.  Define and code up the events.
+7.  定义事件，并为之编码。
 
     ``` syntax
     function readyHandler(sender) {
@@ -219,38 +222,38 @@ This sample assumes you have created a Universal App project for JavaScript in V
     }
     ```
 
-7.  Assign the `MyAppId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
+7.  将 `MyAppId` 属性分配到[测试模式值](test-mode-values.md)中提供的测试值。 此值仅用于测试；你可以在发布应用前使用实时值替换。
 
     ``` syntax
     var MyAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
     ```
 
-8.  Assign the `MyAdUnitId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
+8.  将 `MyAdUnitId` 属性分配到[测试模式值](test-mode-values.md)中提供的测试值。 此值仅用于测试；你可以在发布应用前使用实时值替换。
 
     ``` syntax
     var MyAdUnitId = "11389925";
     ```
 
-9.  Build and test your app to confirm it is showing test ads.
+9.  生成并测试你的应用，以确认它会显示测试广告。
 
 <span id="interstitialadsdirectx10"/>
-### Interstitial ads (C++ and DirectX with XAML interop)
+### 间隙广告（C++ 和带有 XAML 互操作的 DirectX）
 
-This sample assumes you have created a Universal App project for XAML in Visual Studio 2015 and are targeting a specific CPU architecture.
+此示例假设你已在 Visual Studio 2015 中为 XAML 创建了通用应用项目，并且面向特定的 CPU 体系结构。
 
-> **Important**   This code is written in C++ as required for DirectX.
+> **重要提示** 根据 DirectX 的要求使用 C++ 编写此代码。
 
  
-1. Open your project in Visual Studio.
-1.  In **Reference Manager**, select one of the following references depending on your project type:
+1. 在 Visual Studio 中打开你的项目。
+1.  在“引用管理器”****中，根据你的项目类型选择以下引用之一：
 
-    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for XAML** (Version 10.0).
+    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”****、单击“扩展”****，然后选中“适用于 XAML 的 Microsoft Advertising SDK”****（版本 10.0）旁边的复选框。
 
-    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
+    -   对于 Windows 8.1 项目：展开“Windows 8.1”****、单击“扩展”****，然后选中“适用于 Windows 8.1 XAML 的广告中介 SDK”****旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
-    -   For a Windows Phone 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows Phone 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
+    -   对于 Windows Phone 8.1 项目：展开“Windows Phone 8.1”****、单击“扩展”****，然后选中“适用于 Windows Phone 8.1 XAML 的广告中介 SDK”****旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
-2.  In the appropriate header file for your app, declare the interstitial ad object and related properties/methods.
+2.  在应用的相应标头文件中，声明间隙广告对象和相关的属性/方法。
 
     ``` syntax
     Microsoft::Advertising::WinRT::UI::InterstitialAd^ m_ia;
@@ -260,7 +263,7 @@ This sample assumes you have created a Universal App project for XAML in Visual 
     void OnAdError (Object^ sender,  Microsoft::Advertising::WinRT::UI::AdErrorEventArgs^ args);
     ```
 
-3.  Declare your `AppId` and `AdUnitId` properties.
+3.  声明 `AppId` 和 `AdUnitId` 属性。
 
     ``` syntax
     #if WINDOWS_PHONE_APP
@@ -274,13 +277,13 @@ This sample assumes you have created a Universal App project for XAML in Visual 
     #endif
     ```
 
-4.  In the .cpp file, add a namespace reference.
+4.  在 .cpp 文件中，添加命名空间引用。
 
     ``` syntax
     using namespace Microsoft::Advertising::WinRT::UI;
     ```
 
-5.  Instantiate an **InterstitialAd**, wire up all event handlers, and request an ad.
+5.  实例化 **InterstitialAd**、绑定所有事件处理程序，并请求某个广告。
 
     ``` syntax
     // Instantiate an InterstitialAd.
@@ -301,7 +304,7 @@ This sample assumes you have created a Universal App project for XAML in Visual 
     m_ia->RequestAd(AdType::Video, IA_APPID, IA_ADUNITID);
     ```
 
-6.  At the point in your code where the ad is to be shown, be sure the ad is ready, and show it.
+6.  在代码中显示广告的地方确保广告已准备就绪，然后再展示广告。
 
     ``` syntax
     if ((InterstitialAdState::Ready == m_ia->State))
@@ -310,7 +313,7 @@ This sample assumes you have created a Universal App project for XAML in Visual 
     }
     ```
 
-7.  Define and code up the events.
+7.  定义事件，并为之编码。
 
     ``` syntax
     void DirectXPage::OnAdReady(Object^ sender, Object^ args)
@@ -335,55 +338,55 @@ This sample assumes you have created a Universal App project for XAML in Visual 
     }
     ```
 
-8.  Assign the `AppId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
+8.  将 `AppId` 属性分配到[测试模式值](test-mode-values.md)中提供的测试值。 此值仅用于测试；你可以在发布应用前使用实时值替换。
 
     ``` syntax
     static Platform::String^ IA_APPID = L"d25517cb-12d4-4699-8bdc-52040c712cab";
     ```
 
-9.  Assign the `AdUnitId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
+9.  将 `AdUnitId` 属性分配到[测试模式值](test-mode-values.md)中提供的测试值。 此值仅用于测试；你可以在发布应用前使用实时值替换。
 
     ``` syntax
     static Platform::String^ IA_ADUNITID = L"11389925";
     ```
 
-10. Build and test your app to confirm it is showing test ads.
+10. 生成并测试你的应用，以确认它会显示测试广告。
 
-### Release your app with live ads using Windows Dev Center
+### 使用 Windows 开发人员中心发布带有实时广告的应用
 
-1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create a standalone Microsoft Advertising unit](../publish/monetize-with-ads.md). For the ad unit type, specify **Video interstitial**. Make note of both the ad unit ID and the application ID.
+1.  在“开发人员中心仪表板”中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，指定“视频间隙”****。 记下广告单元 ID 和应用程序 ID。
 
-2.  In your code, replace the test ad unit values with the live values you generated in Dev Center.
+2.  在你的代码中，将测试广告单元值替换为你在开发人员中心生成的实时值。
 
-3.  [Submit your app](../publish/app-submissions.md) to the Store using the Windows Dev Center dashboard.
+3.  使用 Windows 开发人员中心仪表板[将应用提交](../publish/app-submissions.md)到应用商店。
 
-4.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
+4.  在开发人员中心仪表板中查看你的[广告性能报告](../publish/advertising-performance-report.md)。
 
 <span id="interstitialbestpractices10"/>
-## Interstitial best practices
+## 间隙最佳做法
 
 
-For more information about how to use interstitial ads effectively, see [UI and user experience guidelines](ui-and-user-experience-guidelines.md).
+有关如何有效地使用间隙广告的详细信息，请参阅 [UI 和用户体验指南](ui-and-user-experience-guidelines.md)。
 
 <span id="targetplatform10"/>
-## Remove reference errors: target a specific CPU platform (XAML and HTML)
+## 删除引用错误：面向特定的 CPU 平台（XAML 和 HTML）
 
 
-When using the Microsoft advertising libraries, you cannot target **Any CPU** in your project. If your project targets the **Any CPU** platform, you may see a warning in your project after you add a reference to the Microsoft advertising libraries. To remove this warning, update your project to use an architecture-specific build output (for example, **x86**). For more information, see [Known issues](known-issues-for-the-advertising-libraries.md).
+在使用 Microsoft Advertising 库时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，在你添加对 Microsoft Advertising 库的引用后，可能会在项目中看到一条警告。 若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 有关详细信息，请参阅[已知问题](known-issues-for-the-advertising-libraries.md)。
 
-## Related topics
+## 相关主题
 
 
-* [Interstitial ad sample code in C#](interstitial-ad-sample-code-in-c.md)
-* [Interstitial ad sample code in JavaScript](interstitial-ad-sample-code-in-javascript.md)
-* [Advertising samples on GitHub](http://aka.ms/githubads)
-
- 
+* [C 中的间隙广告示例代码#](interstitial-ad-sample-code-in-c.md)
+* [JavaScript 中的间隙广告示例代码](interstitial-ad-sample-code-in-javascript.md)
+* [GitHub 上的广告示例](http://aka.ms/githubads)
 
  
 
+ 
 
 
-<!--HONumber=Sep16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,34 +1,34 @@
 ---
 author: mcleblanc
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
-description: Entity Framework (EF) is an object-relational mapper that enables you to work with relational data using domain-specific objects.
-title: Entity framework 7 with SQLite for C# apps
+description: "Entity Framework (EF) 是一个对象关系映射程序，支持使用特定于域的对象处理关系数据。"
+title: "C# 应用的带有 SQLite 的 Entity Framework 7"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b453a2a6c3ab0b9418122ae27bf6a3a1c56e5873
+ms.openlocfilehash: 4c9b674445e901a370f9822f8f11acdeba6061b6
 
 ---
 
-# Entity framework 7 with SQLite for C# apps
+# C# 应用的带有 SQLite 的 Entity Framework 7
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Entity Framework (EF) is an object-relational mapper that enables you to work with relational data using domain-specific objects. This article explains how you can use Entity Framework 7 with a SQLite database in a Universal Windows app.
+Entity Framework (EF) 是一个对象关系映射程序，支持使用特定于域的对象处理关系数据。 本文介绍如何在通用 Windows 应用中使用带有 SQLite 数据库的实体框架 7。
 
-Originally for .NET developers, Entity Framework 7 can be used with SQLite on Universal Windows Platform (UWP) to store and manipulate relational data using domain specific objects. You can migrate EF code from a .NET app to a UWP app and expect it work with appropriate changes to the connection string.
+最初对于 .NET 开发人员而言，实体框架 7 可以在通用 Windows 平台 (UWP) 上与 SQLite 一起使用，从而可以使用特定于域的对象存储和处理相关数据。 你可以将 EF 代码从 .NET 应用迁移到 UWP 应用，并希望它能够处理连接字符串的相应更改。
 
-Currently EF only supports SQLite on UWP. A detailed walkthrough on installing Entity Framework 7, and creating models is available at the [Getting Started on Universal Windows Platform page](http://go.microsoft.com/fwlink/p/?LinkId=735013). It covers the following topics:
+当前，EF 仅在 UWP 上支持 SQLite。 [通用 Windows 平台入门](http://go.microsoft.com/fwlink/p/?LinkId=735013)页上提供了有关安装实体框架 7 和创建模型的详细操作实例。 它包含以下主题：
 
--   Prerequisites
--   Create a new project
--   Install Entity Framework
--   Create your model
--   Create your database
--   Use your model
-
-
+-   先决条件
+-   创建新项目
+-   安装实体框架
+-   创建模型
+-   创建数据库
+-   使用模型
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

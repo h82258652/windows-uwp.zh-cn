@@ -1,51 +1,51 @@
 ---
 author: msatranjr
-title: Creating Windows Runtime Components in C++
-description: "This article shows how to use C++ to create a Windows Runtime component, which is a DLL that's callable from a Universal Windows app that's built by using JavaScript—or C#, Visual Basic, or C++."
+title: "使用 C++ 创建 Windows 运行时组件"
+description: "本文介绍如何使用 C++ 创建 Windows 运行时组件，该组件是从使用 JavaScript、C#、Visual Basic 或 C++ 生成的通用 Windows 应用调用的 DLL。"
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 65114d476da1a7f9113987ebccc8bdbaca6381a7
+ms.openlocfilehash: 1497175723738cc23ec21b280c9639b216a33ddd
 
 ---
 
 
-# Creating Windows Runtime Components in C++
+# 使用 C++ 创建 Windows 运行时组件
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This article shows how to use C++ to create a Windows Runtime component, which is a DLL that's callable from a Universal Windows app that's built by using JavaScript—or C#, Visual Basic, or C++.
+本文介绍如何使用 C++ 创建 Windows 运行时组件，该组件是从使用 JavaScript、C#、Visual Basic 或 C++ 生成的通用 Windows 应用调用的 DLL。
 
-Here are several reasons for building such a component:
+以下是生成此类组件的若干原因：
 
--   To get the performance advantage of C++ in complex or computationally intensive operations.
+-   在复杂或计算密集型操作中获取 C++ 的性能优势。
 
--   To reuse code that's already written and tested.
+-   重复使用已编写和测试的代码。
 
-When you build a solution that contains a JavaScript or .NET project, and a Windows Runtime component project, the JavaScript project files and the compiled DLL are merged into one package, which you can debug locally in the simulator or remotely on a tethered device. You can also distribute just the component project as an Extension SDK. For more information, see [Creating a Software Development Kit](https://msdn.microsoft.com/library/hh768146.aspx).
+在生成包含 JavaScript 或 .NET 项目的解决方案时，Windows 运行时组件项目、JavaScript 项目文件和编译的 DLL 会合并到一个程序包中，可以在模拟器中本地调试或在受限设备上远程调试该程序包。 你还可以仅将组件项目作为扩展 SDK 进行分配。 有关详细信息，请参阅[创建软件开发工具包](https://msdn.microsoft.com/library/hh768146.aspx)。
 
-In general, when you code your C++ component, use the regular C++ library and built-in types, except at the abstract binary interface (ABI) boundary where you are passing data to and from code in another .winmd package. There, use Windows Runtime types and the special syntax that Visual C++ supports for creating and manipulating those types. In addition, in your Visual C++ code, use types such as delegate and event to implement events that can be fired from your component and handled in JavaScript, Visual Basic, or C#. For more information about the new Visual C++ syntax, see [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
+一般情况下，在编写 C++ 组件代码时，请使用常规 C++ 库和内置类型，抽象二进制接口 (ABI) 边界除外，在该边界内，你将在另一个 .winmd 程序包中与代码传递数据。 因此，请使用 Windows 运行时类型和 Visual C++ 支持用于创建和处理这些类型的特殊语法。 此外，在 Visual C++ 代码中，使用诸如委派和事件的类型实现可从组件引发并在 JavaScript、Visual Basic 或 C# 中处理的事件。 有关新 Visual C++ 语法的详细信息，请参阅 [Visual C++ 语言参考 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)。
 
-## Casing and naming rules
+## 大小写和命名规则
 
 
 ### JavaScript
 
-JavaScript is case-sensitive. Therefore, you must follow these casing conventions:
+JavaScript 区分大小写。 因此，必须遵循以下大小写约定：
 
--   When you reference C++ namespaces and classes, use the same casing that's used on the C++ side.
--   When you call methods, use camel casing even if the method name is capitalized on the C++ side. For example, a C++ method GetDate() must be called from JavaScript as getDate().
--   An activatable class name and namespace name can't contain UNICODE characters.
+-   引用 C++ 命名空间和类时，采用在 C++ 端上使用的相同大小写。
+-   调用方法时，使用 Camel 大小写格式，即使方法名在 C++ 端上是大写。 例如，C++ 方法 GetDate() 必须作为 getDate() 从 JavaScript 调用。
+-   可激活类名和命名空间名称不能包含 UNICODE 字符。
 
 ### .NET
 
-The .NET languages follow their normal casing rules.
+.NET 语言遵循其正常大小写规则。
 
-## Instantiating the object
+## 实例化对象
 
 
-Only Windows Runtime types can be passed across the ABI boundary. The compiler will raise an error if the component has a type like std::wstring as a return type or parameter in a public method. The Visual C++ component extensions (C++/CX) built-in types include the usual scalars such as int and double, and also their typedef equivalents int32, float64, and so on.For more information, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+仅 Windows 运行时类型可以跨 ABI 边界传递。 如果组件在公共方法中具有作为返回类型或参数的类型（例如 std::wstring），编译器将引发错误。 Visual C++ 组件扩展 (C++/CX) 内置类型包括诸如整型和双精度型的常用标量及其 typedef 等效 int32、float64 等。有关详细信息，请参阅[类型系统 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
 
 ```cpp
 // ref class definition in C++
@@ -75,22 +75,22 @@ var num = nativeObject.LogCalc(21.5);
 ResultText.Text = num.ToString();
 ```
 
-## C++ built-in types, library types, and Windows Runtime types
+## C++ 内置类型、库类型和 Windows 运行时类型
 
 
-An activatable class (also known as a ref class) is one that can be instantiated from another language such as JavaScript, C# or Visual Basic. To be consumable from another language, a component must contain at least one activatable class.
+可激活类（也称为 ref 类）是可通过其他诸如 JavaScript、C# 或 Visual Basic 语言实例化的类。 若要能够通过其他语言使用，组件必须包含至少一项可激活类。
 
-A Windows Runtime component can contain multiple public activatable classes as well as additional classes that are known only internally to the component. Apply the [WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx) attribute to C++ types that are not intended to be visible to JavaScript.
+Windows 运行时组件可以包含多个公共的可激活类以及其他仅为组件内部所知的类。 将 [WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx) 属性应用到旨在对 JavaScript 不可见的 C++ 类型。
 
-All public classes must reside in the same root namespace which has the same name as the component metadata file. For example, a class that's named A.B.C.MyClass can be instantiated only if it's defined in a metadata file that's named A.winmd or A.B.winmd or A.B.C.winmd. The name of the DLL is not required to match the .winmd file name.
+所有公共类必须驻留在与组件元数据文件具有相同名称的相同根命名空间中。 例如，名为 A.B.C.MyClass 的类仅可在名为 A.winmd、A.B.winmd 或 A.B.C.winmd 的元数据文件中定义的情况下才可以实例化。 DLL 名称不需要匹配 .winmd 文件名。
 
-Client code creates an instance of the component by using the **new** (**New** in Visual Basic) keyword just as for any class.
+就像对任意类一样，客户端代码使用 **new**（在 Visual Basic 中是 **New**）关键字创建组件实例。
 
-An activatable class must be declared as **public ref class sealed**. The **ref class** keyword tells the compiler to create the class as a Windows Runtime compatible type, and the sealed keyword specifies that the class cannot be inherited. The Windows Runtime does not currently support a generalized inheritance model; a limited inheritance model supports creation of custom XAML controls. For more information, see [Ref classes and structs (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx).
+可激活类必须声明为 **public ref class sealed**。 **ref class** 关键字告知编译器将类创建为 Windows 运行时兼容类型，而 sealed 关键字指定该类无法继承。 Windows 运行时当前无法支持一般化的继承模型；有限的继承模型支持创建自定义 XAML 控件。 有关详细信息，请参阅 [Ref 类和结构 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx)。
 
-For C++, all the numeric primitives are defined in the default namespace. The [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) namespace contains C++ classes that are specific to the Windows Runtime type system. These include [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) class and [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) class. The concrete collection types such as [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) class and [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) class are defined in the [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) namespace. The public interfaces that these types implement are defined in [Windows::Foundation::Collections Namespace (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx). It is these interface types that are consumed by JavaScript, C# and Visual Basic. For more information, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+对于 C++，所有数字基元均在默认命名空间中定义。 [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 命名空间包含特定于 Windows 运行时类型系统的 C++ 类。 这些类包括 [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) 类和 [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) 类。 诸如 [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) 类和 [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) 类的具体集合类型在 [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) 命名空间中定义。 这些类型实现的公共接口在 [Windows::Foundation::Collections 命名空间 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx) 中定义。 JavaScript、C# 和 Visual Basic 使用的正是这些接口类型。 有关详细信息，请参阅[类型系统 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
 
-## Method that returns a value of built-in type
+## 返回内置类型值的方法
 
 ```cpp
     // #include <valarray>
@@ -109,7 +109,7 @@ var num = nativeObject.logCalc(21.5);
 document.getElementById('P2').innerHTML = num;
 ```
 
-## Method that returns a custom value struct
+## 返回自定义值结构的方法
 
 ```cpp
 namespace CppComponent
@@ -136,7 +136,7 @@ namespace CppComponent
 }
 ```
 
-To pass user-defined value structs across the ABI, define a JavaScript object that has the same members as the value struct that's defined in C++. You can then pass that object as an argument to a C++ method so that the object is implicitly converted to the C++ type.
+若要跨 ABI 传递用户定义的值结构，定义与使用 C++ 定义的值结构具有相同成员的 JavaScript 对象。 然后你可以将该对象作为参数传递到 C++ 方法，以便该对象隐式转换为 C++ 类型。
 
 ```javascript
 // Get and set the value struct
@@ -153,9 +153,9 @@ function GetAndSetPlayerData() {
 }
 ```
 
-Another approach is to define a class that implements IPropertySet (not shown).
+另一种方法是定义实现 IPropertySet 的类（未显示）。
 
-In the .NET languages, you just create a variable of the type that's defined in the C++ component.
+在 .NET 语言中，只需创建在 C++ 组件中定义的类型的变量。
 
 ```csharp
 private void GetAndSetPlayerData()
@@ -180,10 +180,10 @@ private void GetAndSetPlayerData()
 }
 ```
 
-## Overloaded Methods
+## 重载的方法
 
 
-A C++ public ref class can contain overloaded methods, but JavaScript has limited ability to differentiate overloaded methods. For example, it can tell the difference between these signatures:
+C++ 公共 ref 类可以包含重载方法，而 JavaScript 区分重载方法的功能受限。 例如，它可以区分以下签名之间的区别：
 
 ```cpp
 public ref class NumberClass sealed
@@ -195,16 +195,16 @@ public:
 };
 ```
 
-But it can’t tell the difference between these:
+但是它无法区分以下内容之间的区别：
 
 ```cpp
 int GetNumber(int i);
 double GetNumber(double d);
 ```
 
-In ambiguous cases, you can ensure that JavaScript always calls a specific overload by applying the [Windows::Foundation::Metadata::DefaultOverload](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) attribute to the method signature in the header file.
+在不明确的情况下，通过在标头文件中将 [Windows::Foundation::Metadata::DefaultOverload](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) 属性应用到方法签名，你可以确保 JavaScript 始终调用特定重载。
 
-This JavaScript always calls the attributed overload:
+此 JavaScript 始终调用属性化重载：
 
 ```javascript
 var nativeObject = new CppComponent.NumberClass();
@@ -215,11 +215,11 @@ document.getElementById('P4').innerHTML = num;
 ## .NET
 
 
-The .NET languages recognize overloads in a C++ ref class just as in any .NET Framework class.
+.NET 语言与在任意 .NET Framework 类中一样，在 C++ ref 类中识别重载。
 
 ## DateTime
 
-In the Windows Runtime, a [Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) object is just a 64-bit signed integer that represents the number of 100-nanosecond intervals either before or after January 1, 1601. There are no methods on a Windows:Foundation::DateTime object. Instead, each language projects the DateTime in the way that is native to that language: the Date object in JavaScript and the System.DateTime and System.DateTimeOffset types in the .NET Framework.
+在 Windows 运行时中，[Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) 对象仅是一个 64 位有符号的整数，代表 1601 年 1 月 1 日前或后 100 纳秒间隔的数字。 Windows:Foundation::DateTime 对象上没有方法。 相反，每种语言按照源于该语言的方法投射 DateTime：JavaScript 中的 Date 对象和 .NET Framework 中的 System.DateTime 和 System.DateTimeOffset 类型。
 
 ```cpp
 public  ref class MyDateClass sealed
@@ -235,7 +235,7 @@ public:
 };
 ```
 
-When you pass a DateTime value from C++ to JavaScript, JavaScript accepts it as a Date object and displays it by default as a long-form date string.
+在将 DateTime 值从 C++ 传递到 JavaScript 时，JavaScript 将其作为 Date 对象接受，并且默认将其显示为长格式日期字符串。
 
 ```javascript
 function SetAndGetDate() {
@@ -252,7 +252,7 @@ function SetAndGetDate() {
 }
 ```
 
-When a .NET language passes a System.DateTime to a C++ component, the method accepts it as a Windows::Foundation::DateTime. When the component passes a Windows::Foundation::DateTime to a .NET Framework method, the Framework method accepts it as a DateTimeOffset.
+在 .NET 语言将 System.DateTime 传递到 C++ 组件时，该方法将其作为 Windows::Foundation::DateTime 接受。 在组件将 Windows::Foundation::DateTime 传递到 .NET Framework 方法时，Framework 方法将其作为 DateTimeOffset 接受。
 
 ```csharp
 private void DateTimeExample()
@@ -272,12 +272,12 @@ private void DateTimeExample()
 }
 ```
 
-## Collections and arrays
+## 集合和数组
 
 
-Collections are always passed across the ABI boundary as handles to Windows Runtime types such as Windows::Foundation::Collections::IVector^ and Windows::Foundation::Collections::IMap^. For example, if you return a handle to a Platform::Collections::Map, it implicitly converts to a Windows::Foundation::Collections::IMap^. The collection interfaces are defined in a namespace that's separate from the C++ classes that provide the concrete implementations. JavaScript and .NET languages consume the interfaces. For more information, see [Collections (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx) and [Array and WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx).
+集合始终作为 Windows 运行时类型（例如 Windows::Foundation::Collections::IVector^ 和 Windows::Foundation::Collections::IMap^）的句柄在 ABI 边界上传递。 例如，如果将句柄返回到 Platform::Collections::Map，它会隐式转换为 Windows::Foundation::Collections::IMap^。 集合接口在与提供具体实现的 C++ 类分开的命名空间中定义。 JavaScript 和 .NET 语言使用接口。 有关详细信息，请参阅[集合 (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx) 和[数组和 WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx)。
 
-## Passing IVector
+## 传递 IVector
 
 
 ```cpp
@@ -305,7 +305,7 @@ for (var i = 0; i < outVector.length; i++)
 document.getElementById('P6').innerHTML = result;
 ```
 
-The .NET languages see IVector&lt;T&gt; as IList&lt;T&gt;.
+.NET 语言将 IVector&lt;T&gt; 视为 IList&lt;T&gt;。
 
 ```csharp
 private void SortListItems()
@@ -326,7 +326,7 @@ private void SortListItems()
 }
 ```
 
-## Passing IMap
+## 传递 IMap
 
 
 ```cpp
@@ -353,7 +353,7 @@ var mStr = "Map result:" + outputMap.lookup(1) + outputMap.lookup(2)
 document.getElementById('P7').innerHTML = mStr;
 ```
 
-The .NET languages see IMap and IDictionary&lt;K, V&gt;.
+.NET 语言查看 IMap 和 IDictionary&lt;K, V&gt;。
 
 ```csharp
 private void GetDictionary()
@@ -364,10 +364,10 @@ private void GetDictionary()
 }
 ```
 
-## Properties
+## 属性
 
 
-A public ref class in Visual C++ component extensions exposes public data members as properties, by using the property keyword. The concept is identical to .NET Framework properties. A trivial property resembles a data member because its functionality is implicit. A non-trivial property has explicit get and set accessors and a named private variable that's the "backing store" for the value. In this example, the private member variable \_propertyAValue is the backing store for PropertyA. A property can fire an event when its value changes, and a client app can register to receive that event.
+Visual C++ 组件扩展中的公共 ref 类使用属性关键字将公共数据成员作为属性公开。 此概念与 .NET Framework 属性一致。 普通属性类似于数据成员，因为其功能是隐式的。 特殊属性具有显式获取和设置的访问器和作为值的“备份存储”的已命名私有变量。 在此示例中，私有成员变量 \_propertyAValue 是 PropertyA 的备份存储。 属性可以在它的值更改时引发某个事件，并且客户端应用可注册为接收该事件。
 
 ```cpp
 //Properties
@@ -414,7 +414,7 @@ nativeObject.propertyB = "What is the meaning of the universe?";
 document.getElementById('P9').innerHTML += nativeObject.propertyB;
 ```
 
-The .NET languages access properties on a native C++ object just as they would on a .NET Framework object.
+.NET 语言在本机 C++ 对象上访问属性，就像它们在 .NET Framework 对象上访问一样。
 
 ```csharp
 private void GetAProperty()
@@ -434,22 +434,22 @@ private void GetAProperty()
 }
 ```
 
-## Delegates and events
+## 委派和事件
 
 
-A delegate is a Windows Runtime type that represents a function object. You can use delegates in connection with events, callbacks, and asynchronous method calls to specify an action to be performed later. Like a function object, the delegate provides type-safety by enabling the compiler to verify the return type and parameter types of the function. The declaration of a delegate resembles a function signature, the implementation resembles a class definition, and the invocation resembles a function invocation.
+委派是表示函数对象的 Windows 运行时类型。 你可以将委派与事件、回调和异步方法调用结合起来，以指定稍后要执行的操作。 像函数对象一样，委派通过支持编译器验证返回类型和函数的参数类型来提供类型安全。 委派的声明类似于函数签名、实现类似于类定义，而调用类似于函数调用。
 
-## Adding an event listener
+## 添加事件侦听器
 
 
-You can use the event keyword to declare a public member of a specified delegate type. Client code subscribes to the event by using the standard mechanisms that are provided in the particular language.
+你可以使用事件关键字声明指定的委派类型的公共成员。 客户端代码通过使用在特定语言中提供的标准机制订阅事件。
 
 ```cpp
 public:
     event SomeHandler^ someEvent;
 ```
 
-This example uses the same C++ code as for the previous properties section.
+此示例使用与之前属性部分相同的 C++ 代码。
 
 ```javascript
 function Button_Click() {
@@ -469,7 +469,7 @@ function Button_Click() {
 }
 ```
 
-In the .NET languages, subscribing to an event in a C++ component is the same as subscribing to an event in a .NET Framework class:
+在 .NET 语言中，在 C++ 组件中订阅事件与在 .NET Framework 类中订阅事件一样：
 
 ```csharp
 //Subscribe to event and call method that causes it to be fired.
@@ -489,10 +489,10 @@ private void objWithEvent_PropertyChangedEvent(object __param0, int __param1)
 }
 ```
 
-## Adding multiple event listeners for one event
+## 为一个事件添加多个事件侦听器
 
 
-JavaScript has an addEventListener method that enables multiple handlers to subscribe to a single event.
+JavaScript 具有支持多个处理程序订阅单一事件的 addEventListener 方法。
 
 ```cpp
 public delegate void SomeHandler(Platform::String^ str);
@@ -532,12 +532,12 @@ nativeObject.propertyA = "42";
 nativeObject.fireEvent("The answer is ");
 ```
 
-In C#, any number of event handlers can subscribe to the event by using the += operator as shown in the previous example.
+在 C# 中，任意数量的事件处理程序可以使用 += 运算符订阅事件，如之前示例所示。
 
-## Enums
+## 枚举
 
 
-A Windows Runtime enum in C++ is declared by using public class enum; it resembles a scoped enum in standard C++.
+使用公共类枚举声明 C++ 中的 Windows 运行时枚举，它在标准 C++ 中类似于作用域枚举。
 
 ```cpp
 public enum class Direction {North, South, East, West};
@@ -555,7 +555,7 @@ private:
 };
 ```
 
-Enum values are passed between C++ and JavaScript as integers. You can optionally declare a JavaScript object that contains the same named values as the C++ enum and use it as follows.
+枚举值以整数形式在 C++ 和 JavaScript 之间传递。 你可以选择声明包含与 C++ 枚举相同的命名值的 JavaScript 对象，并按照如下方式使用它。
 
 ```javascript
 var Direction = { 0: "North", 1: "South", 2: "East", 3: "West" };
@@ -567,37 +567,37 @@ document.getElementById('P13').innerHTML =
 Direction[curDirection];
 ```
 
-Both C# and Visual Basic have language support for enums. These languages see a C++ public enum class just as they would see a .NET Framework enum.
+C# 和 Visual Basic 均支持枚举语言。 这些语言将 C++ 公共枚举类视为 .NET Framework 枚举一样。
 
-## Asynchronous methods
-
-
-To consume asynchronous methods that are exposed by other Windows Runtime objects, use the [task Class (Concurrency Runtime)](https://msdn.microsoft.com/library/hh750113.aspx). For more information, see and [Task Parallelism (Concurrency Runtime)](https://msdn.microsoft.com/library/dd492427.aspx).
-
-To implement asynchronous methods in C++, use the [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) function that's defined in ppltasks.h. For more information, see [Creating Asynchronous Operations in C++ for Windows Store Apps](https://msdn.microsoft.com/library/vstudio/hh750082.aspx). For an example, see [Walkthrough: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). The .NET languages consume C++ asynchronous methods just as they would any asynchronous method that's defined in the .NET Framework.
-
-## Exceptions
+## 异步方法
 
 
-You can throw any exception type that's defined by the Windows Runtime. You cannot derive custom types from any Windows Runtime exception type. However, you can throw COMException and provide a custom HRESULT that can be accessed by the code that catches the exception. There's no way to specify a custom Message in a COMException.
+若要使用其他 Windows 运行时对象公开的异步方法，请使用[任务类（并发运行时）](https://msdn.microsoft.com/library/hh750113.aspx)。 有关详细信息，请参阅[任务并行度（并发运行时）](https://msdn.microsoft.com/library/dd492427.aspx)。
 
-## Debugging tips
+若要使用 C++ 实现异步方法，请使用在 ppltasks.h 中定义的 [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) 函数。 有关详细信息，请参阅[使用 C++ 为 Windows 应用商店应用创建异步操作](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)。 有关示例，请参阅[演练：使用 C++ 创建基本的 Windows 运行时组件并通过 JavaScript 或 C# 调用它](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 语言会像使用任何在 .NET Framework 中定义的异步方法一样使用 C++ 异步方法。
 
-
-When you debug a JavaScript solution that has a component DLL, you can set the debugger to enable either stepping through script, or stepping through native code in the component, but not both at the same time. To change the setting, select the JavaScript project node in Solution Explorer and then choose Properties, Debugging, Debugger Type.
-
-Be sure to select appropriate capabilities in the package designer. For example, if you are attempting to open an image file in the user's Pictures library by using the Windows Runtime APIs, be sure to select the Pictures Library check box in the Capabilities pane of the manifest designer.
-
-If your JavaScript code doesn't seem to be recognizing the public properties or methods in the component, make sure that in JavaScript you are using camel casing. For example, the LogCalc C++ method must be referenced as logCalc in JavaScript.
-
-If you remove a C++ Windows Runtime component project from a solution, you must also manually remove the project reference from the JavaScript project. Failure to do so prevents subsequent debug or build operations. If necessary, you can then add an assembly reference to the DLL.
-
-## Related topics
-
-* [Walkthrough: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+## 异常
 
 
+你可以引发任何由 Windows 运行时定义的异常类型。 你无法从任何 Windows 运行时异常类型中派生自定义类型。 但是，你可以引发 COMException 并提供可由捕获异常的代码访问的自定义 HRESULT。 无法在 COMException 中指定自定义消息。
 
-<!--HONumber=Aug16_HO3-->
+## 调试提示
+
+
+在调试具有组件 DLL 的 JavaScript 解决方案时，你可以将调试器设置为在组件中支持单步调试脚本或单步调试本机代码，但无法设置为同时进行。 若要更改设置，请在解决方案资源管理器中选择 JavaScript 项目节点，然后选择“属性”、“调试”、“调试器类型”。
+
+请确保在程序包设计器中选择相应的功能。 例如，如果你要尝试使用 Windows 运行时 API 打开用户的“图片”库中的图像文件，请确保在清单设计器中的“功能”窗格中选中“图片库”复选框。
+
+如果 JavaScript 代码似乎无法识别组件中的公共属性或方法，请确保在 JavaScript 中使用的是 Camel 大小写格式。 例如，LogCalc C++ 方法在 JavaScript 中必须引用为 logCalc。
+
+如果你从某个解决方案中删除 C++ Windows 运行时组件项目，则还必须从 JavaScript 项目中手动删除项目引用。 如果此操作无法完成，将阻止后续调试或生成操作。 如有必要，你可以稍后向 DLL 添加程序集引用。
+
+## 相关主题
+
+* [演练：在 C++ 中创建一个基本 Windows 运行时组件并从 JavaScript 或 C 中调用此组件#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+
+
+
+<!--HONumber=Jun16_HO5-->
 
 

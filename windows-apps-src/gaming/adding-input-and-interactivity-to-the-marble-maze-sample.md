@@ -1,57 +1,57 @@
 ---
 author: mtoepke
-title: Adding input and interactivity to the Marble Maze sample
-description: Universal Windows Platform (UWP) app games run on a wide variety of devices, such as desktop computers, laptops, and tablets.
+title: "向 Marble Maze 示例添加输入和交互性"
+description: "通用 Windows 平台 (UWP) 应用游戏可在广泛的设备上运行，如台式计算机、笔记本电脑和平板电脑。"
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4
+ms.openlocfilehash: 563ee292ec7189b0c365ae5ee0d1c41fd6fd1a09
 
 ---
 
-# Adding input and interactivity to the Marble Maze sample
+# 向 Marble Maze 添加输入和交互性示例
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Universal Windows Platform (UWP) app games run on a wide variety of devices, such as desktop computers, laptops, and tablets. A device can have a wide variety of input and control mechanisms. Support multiple input devices to enable your game to accommodate a wider range of preferences and abilities among your customers. This document describes the key practices to keep in mind when you work with input devices and shows how Marble Maze applies these practices.
+通用 Windows 平台 (UWP) 应用游戏可在广泛的设备上运行，如台式计算机、笔记本电脑和平板电脑。 一台设备可拥有广泛的输入和控制机制。 支持多种输入设备，使你的游戏能够适应更广泛的客户偏好和能力。 本文档介绍了在使用输入设备时要记住的重要实践，并展示了 Marble Maze 如何应用这些实践。
 
-> **Note**   The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011).
-
- 
-Here are some of the key points that this document discusses for when you work with input in your game:
-
--   When possible, support multiple input devices to enable your game to accommodate a wider range of preferences and abilities among your customers. Although game controller and sensor usage is optional, we strongly recommend it to enhance the player experience. We designed the game controller and sensor API to help you more easily integrate these input devices.
--   To initialize touch, you must register for window events such as when the pointer is activated, released, and moved. To initialize the accelerometer, create a [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) object when you initialize the application. The Xbox 360 controller doesn't require initialization.
--   For single-player games, consider whether to combine input from all possible Xbox 360 controllers. This way, you don’t have to track what input comes from which controller.
--   Process Windows events before you process input devices.
--   The Xbox 360 controller and the accelerometer support polling. That is, you can poll for data when you need it. For touch, record touch events in data structures that are available to your input processing code.
--   Consider whether to normalize input values to a common format. Doing so can simplify how input is interpreted by other components of your game, such as physics simulation, and can make it easier to write games that work on different screen resolutions.
-
-## Input devices supported by Marble Maze
-
-
-Marble Maze supports Xbox 360 common controller devices, mouse, and touch to select menu items, and the Xbox 360 controller, mouse, touch, and the accelerometer to control game play. Marble Maze uses the XInput API to poll the controller for input. Touch enables applications to track and respond to fingertip input. An accelerometer is a sensor that measures the force that is applied along the x, y, and z axes. By using the Windows Runtime, you can poll the current state of the accelerometer device, as well as receive touch events through the Windows Runtime event-handling mechanism.
-
-> **Note**  This document uses touch to refer to both touch and mouse input and pointer to refer to any device that uses pointer events. Because touch and the mouse use standard pointer events, you can use either device to select menu items and control game play.
+> **注意** 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011)中。
 
  
+本文档讨论了在游戏中使用输入时的一些重要事项：
 
-> **Note**  The package manifest sets Landscape as the supported rotation for the game to prevent the orientation from changing when you rotate the device to roll the marble.
+-   如果可能，支持多种输入设备，使你的游戏能够适应更广泛的客户偏好和能力。 尽管游戏控制器和传感器的使用是可选的，但我们强烈建议使用它来增强玩家体验。 我们设计了游戏控制器和传感器 API 来帮助你更轻松地集成这些输入设备。
+-   要初始化触摸，必须注册窗口事件，例如在指针被激活、释放和移动时。 要初始化加速计，可在初始化应用时创建一个 [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) 对象。 Xbox 360 控制器不需要初始化。
+-   对于单人游戏，考虑是否组合来自所有可能 Xbox 360 控制器的输入。 这样，你无需跟踪何种输入来自哪个控制器。
+-   在处理输入设备之前处理 Windows 事件。
+-   Xbox 360 控制器和加速计支持轮询。 也就是说，你可在需要数据时轮询它。 对于触摸，在可供你的输入处理代码访问的数据结构中记录各种触摸事件。
+-   考虑是否将输入值规范化为一种通用格式。 这么做可简化游戏的其他组件如何解释输入内容，例如力学模拟，还可以使编写适用于不同屏幕分辨率的游戏更容易。
+
+## Marble Maze 支持的输入设备
+
+
+Marble Maze 支持通过 Xbox 360 通用控制器设备、鼠标和触摸来选择菜单项，支持通过 Xbox 360 控制器、鼠标、触摸和加速计来控制游戏。 Marble Maze 使用 XInput API 在控制器中轮询输入。 触摸让应用能够跟踪和响应指尖输入。 加速计是一种度量力量的传感器，它沿 x、y 和 z 轴应用。 通过使用 Windows 运行时，可轮询加速计设备的当前状态，以及通过 Windows 运行时事件处理机制接收触摸事件。
+
+> **注意** 本文档使用触摸表示触摸和鼠标输入，使用指针表示任何使用指针事件的设备。 因为触摸和鼠标使用标准指针事件，所以你可使用任何一种设备来选择菜单项和控制游戏。
 
  
 
-## Initializing input devices
+> **注意** 程序包清单将 Landscape 设置为支持的游戏方向，以免在旋转设备来滚动弹珠时更改方向。
+
+ 
+
+## 初始化输入设备
 
 
-The Xbox 360 controller does not require initialization. To initialize touch, you must register for windowing events such as when the pointer is activated (for example, your user presses the mouse button or touches the screen), released, and moved. To initialize the accelerometer, you have to create a [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) object when you initialize the application.
+Xbox 360 控制器不需要初始化。 要初始化触摸，必须注册窗口事件，例如指针被激活（例如，用户按下鼠标按钮或触摸屏幕）、释放和移动时。 若要初始化加速计，必须在初始化应用程序时创建一个 [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) 对象。
 
-The following example shows how the **DirectXPage** constructor registers for the [**Windows::UI::Core::CoreIndependentInputSource::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn298471), [**Windows::UI::Core::CoreIndependentInputSource::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn298472), and [**Windows::UI::Core::CoreIndependentInputSource::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn298469) pointer events for the [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834). These events are registered during app initialization and before the game loop.
+下面的示例展示了 **DirectXPage** 构造函数如何注册 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 的 [**Windows::UI::Core::CoreIndependentInputSource::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn298471)、[**Windows::UI::Core::CoreIndependentInputSource::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn298472) 和 [**Windows::UI::Core::CoreIndependentInputSource::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn298469) 指针事件。 这些事件在应用初始化期间和游戏循环之前注册。
 
-These events are handled in a separate thread that invokes the event handlers.
+这些事件在调用事件处理程序的单独线程中处理。
 
-For more information about how the application is initialized, see [Marble Maze application structure](marble-maze-application-structure.md).
+有关应用如何初始化的详细信息，请参阅 [Marble Maze 应用结构](marble-maze-application-structure.md)。
 
 ```cpp
 coreInput->PointerPressed += ref new TypedEventHandler<Object^, PointerEventArgs^>(this, &DirectXPage::OnPointerPressed);
@@ -59,41 +59,41 @@ coreInput->PointerMoved += ref new TypedEventHandler<Object^, PointerEventArgs^>
 coreInput->PointerReleased += ref new TypedEventHandler<Object^, PointerEventArgs^>(this, &DirectXPage::OnPointerReleased);
 ```
 
-The MarbleMaze class also creates a std::map object to hold touch events. The key for this map object is a value that uniquely identifies the input pointer. Each key maps to the distance between every touch point and the center of the screen. Marble Maze later uses these values to calculate the amount by which the maze is tilted.
+MarbleMaze 类还创建了一个 std::map 对象来持有触摸事件。 这个 map 对象的键是一个唯一表示输入指针的值。 每个键映射到每个触摸点与屏幕中心之间的距离。 Marble Maze 随后使用这些值计算迷宫倾斜的程度。
 
 ```cpp
 typedef std::map<int, XMFLOAT2> TouchMap;
 TouchMap        m_touches;
 ```
 
-The MarbleMaze class holds an Accelerometer object.
+MarbleMaze 类持有一个 Accelerometer 对象。
 
 ```cpp
 Windows::Devices::Sensors::Accelerometer^           m_accelerometer;
 ```
 
-The Accelerometer object is initialized in the MarbleMaze::Initialize method, as shown in the following example. The Windows::Devices::Sensors::Accelerometer::GetDefault method returns an instance of the default accelerometer. If there is no default accelerometer, Accelerometer::GetDefault the value of m\_accelerometer remains nullptr.
+Accelerometer 对象在 MarbleMaze::Initialize 方法中初始化，如下面的示例中所示。 Windows::Devices::Sensors::Accelerometer::GetDefault 方法返回默认加速计的一个实例。 如果没有默认加速计，m\_accelerometer 的 Accelerometer::GetDefault 的值会保持为 nullptr。
 
 ```cpp
 // Returns accelerometer ref if there is one; nullptr otherwise.
 m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 ```
 
-##  Navigating the menus
+##  导航菜单
 
 
-###  Tracking Xbox 360 controller input
+###  跟踪 Xbox 360 控制器输入
 
-You can use the mouse, touch, or the Xbox 360 controller to navigate the menus, as follows:
+可使用鼠标、触摸或 Xbox 360 控制器导航菜单，如下所示：
 
--   Use the directional pad to change the active menu item.
--   Use touch, the A button, or the Start button to pick a menu item or close the current menu, such as the high-score table.
--   Use the Start button to pause or resume the game.
--   Click on a menu item with the mouse to choose that action.
+-   使用方向板更改活动菜单项。
+-   使用触摸、A 按钮或“开始”按钮挑选一个菜单项或关闭当前菜单，例如高分表。
+-   使用“开始”按钮暂停或恢复游戏。
+-   使用鼠标单击一个菜单项可选择该操作。
 
-###  Tracking touch and mouse input
+###  跟踪触摸和鼠标输入
 
-To track Xbox 360 controller input, the **MarbleMaze::Update** method defines an array of buttons that define the input behaviors. XInput provides only the current state of the controller. Therefore, **MarbleMaze::Update** also defines two arrays that track, for each possible Xbox 360 controller, whether each button was pressed during the previous frame and whether each button is currently pressed.
+为了跟踪 Xbox 360 控制器输入，**MarbleMaze::Update** 方法定义一个可定义输入行为的按钮数组。 XInput 仅提供控制器的当前状态。 因此，无论是否已在前一帧中按下每个按钮，以及无论是否目前已按下每个按钮，**MarbleMaze::Update** 还可定义两个数组，分别跟踪每个可能的 Xbox 360 控制器。
 
 ```cpp
 // This array contains the constants from XINPUT that map to the 
@@ -116,15 +116,15 @@ static bool wasButtonDown[XUSER_MAX_COUNT][buttonCount] = { false, };
 bool isButtonDown[XUSER_MAX_COUNT][buttonCount] = { false, };
 ```
 
-You can connect up to four Xbox 360 controllers to a Windows device. To avoid having to figure out which controller is the active one, the **MarbleMaze::Update** method combines input across all controllers.
+最多可将四个 Xbox 360 控制器连接到一台 Windows 设备。 若要避免确定哪个控制器是活动的，**MarbleMaze::Update** 方法组合了所有控制器的输入。
 
 ```cpp
 bool combinedButtonPressed[buttonCount] = { false, };
 ```
 
-If your game supports more than one player, you have to track input for each player separately.
+如果游戏支持多个玩家，你必须分别跟踪每个玩家的输入。
 
-In a loop, the **MarbleMaze::Update** method polls each controller for input and reads the state of each button.
+在一个循环中，**MarbleMaze::Update** 方法在每个控制器中轮询输入并读取每个按钮的状态。
 
 ```cpp
 // Account for input on any connected controller.
@@ -151,7 +151,7 @@ for (DWORD userIndex = 0; userIndex < XUSER_MAX_COUNT; ++userIndex)
 }
 ```
 
-After the **MarbleMaze::Update** method polls for input, it updates the combined input array. The combined input array tracks only which buttons are pressed but were not previously pressed. This enables the game to perform an action only at the time a button is initially pressed, and not when the button is held.
+在 **MarbleMaze::Update** 方法轮询输入后，将更新组合的输入数组。 组合的输入数组仅跟踪哪些按钮当前已按下而之前没有按下。 这使得游戏能够仅在最初按下按钮时执行操作，而不是在按住按钮时执行操作。
 
 ```cpp
 bool combinedButtonPressed[buttonCount] = { false, };
@@ -165,7 +165,7 @@ for (int i = 0; i < buttonCount; ++i)
 }
 ```
 
-After the **MarbleMaze::Update** method collects button input, it performs any actions that must happen. For example, when the Start button (XINPUT\_GAMEPAD\_START) is pressed, the game state changes from active to paused or from paused to active.
+在 **MarbleMaze::Update** 方法收集按钮输入后，它会执行任何必须发生的操作。 例如，按下“开始”按钮 (XINPUT\_GAMEPAD\_START) 时，游戏状态会从活动更改为暂停，或者从暂停更改为活动。
 
 ```cpp
 // Check whether the user paused or resumed the game. 
@@ -180,7 +180,7 @@ if (combinedButtonPressed[1] || m_pauseKeyPressed)
 }
 ```
 
-If the main menu is active, the active menu item changes when the directional pad is pressed up or down. If the user chooses the current selection, the appropriate UI element is marked as being chosen.
+如果主菜单是活动的，活动的菜单项会在向上或向下按方向板时发生改变。 如果用户选择当前的选项，相应的 UI 元素将标记为已选择。
 
 ```cpp
 // Handle menu navigation. 
@@ -236,16 +236,16 @@ case GameState::InGamePaused:
 }
 ```
 
-After the **MarbleMaze::Update** method processes controller input, it saves the current input state for the next frame.
+在 **MarbleMaze::Update** 方法处理控制器输入后，将会保存下一帧的当前输入状态。
 
 ```cpp
 // Update the button state for the next frame.
 memcpy(wasButtonDown, isButtonDown, sizeof(wasButtonDown));
 ```
 
-### Tracking touch and mouse input
+### 跟踪触摸和鼠标输入
 
-For touch and mouse input, a menu item is chosen when the user touches or clicks it. The following example shows how the **MarbleMaze::Update** method processes pointer input to select menu items. The **m\_pointQueue** member variable tracks the locations where the user touched or clicked on the screen. The way in which Marble Maze collects pointer input is described in greater detail later in this document in the section Processing pointer input.
+对于触摸和鼠标输入，用户可通过触摸或单击一个菜单项来选择它。 下面的示例展示了 **MarbleMaze::Update** 方法如何处理指针输入来选择菜单项。 **m\_pointQueue** 成员变量跟踪用户在屏幕上触摸或单击的位置。 Marble Maze 收集指针输入的方式将在本文档后面“处理指针输入”一节中详细介绍。
 
 ```cpp
 // Check whether the user chose a button from the UI. 
@@ -257,7 +257,7 @@ while (!m_pointQueue.empty())
 }
 ```
 
-The **UserInterface::HitTest** method determines whether the provided point is located in the bounds of any UI element. Any UI elements that pass this test are marked as being touched. This method uses the **PointInRect** helper function to determine whether the provided point is located in the bounds of each UI element.
+**UserInterface::HitTest** 方法确定所提供的点是否位于任何 UI 元素边界内。 任何通过此测试的 UI 元素都会标记为已触摸。 此方法使用 **PointInRect** 帮助程序函数确定所提供的点是否位于每个 UI 元素的边界内。
 
 ```cpp
 void UserInterface::HitTest(D2D1_POINT_2F point)
@@ -277,9 +277,9 @@ void UserInterface::HitTest(D2D1_POINT_2F point)
 }
 ```
 
-### Updating the game state
+### 更新游戏状态
 
-After the **MarbleMaze::Update** method processes controller and touch input, it updates the game state if any button was pressed.
+在 **MarbleMaze::Update** 方法处理控制器和触摸输入后，如果按下任何按钮，它会更新游戏状态。
 
 ```cpp
 // Update the game state if the user chose a menu option. 
@@ -295,28 +295,28 @@ if (m_highScoreButton.IsPressed())
 }
 ```
 
-##  Controlling game play
+##  控制游戏
 
 
-The game loop and the **MarbleMaze::Update** method work together to update the state of game objects. If your game accepts input from multiple devices, you can accumulate the input from all devices into one set of variables so that you can write code that's easier to maintain. The **MarbleMaze::Update** method defines one set of variables that accumulates movement from all devices.
+游戏循环和 **MarbleMaze::Update** 方法一起更新游戏对象的状态。 如果游戏接受来自多台设备的输入，你可将来自所有设备的输入累积到一个变量集中，以便能编写更易于维护的代码。 **MarbleMaze::Update** 方法定义一个可累积来自所有设备的运动的变量集。
 
 ```cpp
 float combinedTiltX = 0.0f;
 float combinedTiltY = 0.0f;
 ```
 
-The input mechanism can vary from one input device to another. For example, pointer input is handled by using the Windows Runtime event-handling model. Conversely, you poll for input data from the Xbox 360 controller when you need it. We recommend that you always follow the input mechanism that is prescribed for a given device. This section describes how Marble Maze reads input from each device, how it updates the combined input values, and how it uses the combined input values to update the state of the game.
+不同输入设备的输入机制可能不同。 例如，指针输入使用 Windows 运行时事件处理模型来处理。 相反，在需要时轮询来自 Xbox 360 控制器的输入数据。 我们建议你始终遵循为给定设备规定的输入机制。 本节介绍 Marble Maze 如何从每个设备读取输入，它如何更新组合的输入值，以及它如何使用组合的输入值更新游戏的状态。
 
-###  Processing pointer input
+###  处理指针输入
 
-When you work with pointer input, call the [**Windows::UI::Core::CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208217) method to process window events. Call this method in your game loop before you update or render the scene. Marble Maze passes **CoreProcessEventsOption::ProcessAllIfPresent** to this method to process all queued events, and then immediately return. After events are processed, Marble Maze renders and presents the next frame.
+处理指针输入时，可调用 [**Windows::UI::Core::CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208217) 方法来处理窗口事件。 在更新或呈现场景之前，在游戏循环中调用此方法。 Marble Maze 将 **CoreProcessEventsOption::ProcessAllIfPresent** 传递到此方法以处理所有排队的事件，然后立即返回。 在处理事件后，Marble Maze 呈现并显示下一帧。
 
 ```cpp
 // Process windowing events.
 CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
 ```
 
-The Windows Runtime calls the registered handler for each event that occurred. The **DirectXApp** class registers for events and forwards pointer information to the **MarbleMaze** class.
+Windows 运行时调用为每个发生的事件所注册的处理程序。 **DirectXApp** 类注册事件并将指针信息转发到 **MarbleMaze** 类。
 
 ```cpp
 void DirectXApp::OnPointerPressed(
@@ -344,7 +344,7 @@ void DirectXApp::OnPointerMoved(
 }
 ```
 
-The **MarbleMaze** class reacts to pointer events by updating the map object that holds touch events. The **MarbleMaze::AddTouch** method is called when the pointer is first pressed, for example, when the user initially touches the screen on a touch-enabled device. The **MarbleMaze::AddTouch** method is called when the pointer position moves. The **MarbleMaze::RemoveTouch** method is called when the pointer is released, for example, when the user stops touching the screen.
+**MarbleMaze** 类通过对保留触摸事件的 map 对象进行更新来对指针事件做出反应。 **MarbleMaze::AddTouch** 方法在首次按下指针时调用，例如当用户最初在支持触摸的设备上触摸屏幕时。 **MarbleMaze::AddTouch** 方法在指针位置移动时调用。 **MarbleMaze::RemoveTouch** 方法在指针释放时调用，例如当用户停止触摸屏幕时。
 
 ```cpp
 void MarbleMaze::AddTouch(int id, Windows::Foundation::Point point)
@@ -366,7 +366,7 @@ void MarbleMaze::RemoveTouch(int id)
 }
 ```
 
-The PointToTouch function translates the current pointer position so that the origin is in the center of the screen, and then scales the coordinates so that they range approximately between -1.0 and +1.0. This makes it easier to calculate the tilt of the maze in a consistent way across different input methods.
+PointToTouch 函数转换当前的指针位置，以便原点位于屏幕中心，然后按比例缩放坐标，以便它们大约在 -1.0 与 +1.0 之间。 这使跨不同输入方法以一致方式计算迷宫倾斜程度变得更容易。
 
 ```cpp
 inline XMFLOAT2 PointToTouch(Windows::Foundation::Point point, Windows::Foundation::Rect bounds)
@@ -379,7 +379,7 @@ inline XMFLOAT2 PointToTouch(Windows::Foundation::Point point, Windows::Foundati
 }
 ```
 
-The **MarbleMaze::Update** method updates the combined input values by incrementing the tilt factor by a constant scaling value. This scaling value was determined by experimenting with several different values.
+**MarbleMaze::Update** 方法通过在倾斜系数上加上一个固定刻度值来更新组合的输入值。 这个刻度值通过试验多个不同的值来确定。
 
 ```cpp
 // Account for touch input. 
@@ -391,11 +391,11 @@ for (TouchMap::const_iterator iter = m_touches.cbegin(); iter != m_touches.cend(
 }
 ```
 
-### Processing accelerometer input
+### 处理加速计输入
 
-To process accelerometer input, the **MarbleMaze::Update** method calls the [**Windows::Devices::Sensors::Accelerometer::GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/br225699) method. This method returns a [**Windows::Devices::Sensors::AccelerometerReading**](https://msdn.microsoft.com/library/windows/apps/br225688) object, which represents an accelerometer reading. The **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** and **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** properties hold the g-force acceleration along the x and y axes, respectively.
+若要处理加速计输入，**MarbleMaze::Update** 方法会调用 [**Windows::Devices::Sensors::Accelerometer::GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/br225699) 方法。 此方法返回一个 [**Windows::Devices::Sensors::AccelerometerReading**](https://msdn.microsoft.com/library/windows/apps/br225688) 对象，它表示一个加速计读数。 **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** 和 **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** 属性具有分别沿 x 和 y 轴的 G-Force 加速。
 
-The following example shows how the **MarbleMaze::Update** method polls the accelerometer and updates the combined input values. As you tilt the device, gravity causes the marble to move faster.
+下面的示例展示了 **MarbleMaze::Update** 方法如何轮询加速计并更新组合的输入值。 倾斜设备时，重力会导致弹珠移动速度更快。
 
 ```cpp
 // Account for sensors. 
@@ -413,11 +413,11 @@ if (m_accelerometer != nullptr)
 }
 ```
 
-Because you cannot be sure that an accelerometer is present on the user’s computer, always ensure that you have a valid Accelerometer object before you poll the accelerometer.
+因为无法确保用户计算机上是否有加速计，所以始终要在轮询加速计之前确保你有一个有效的 Accelerometer 对象。
 
-### Processing Xbox 360 controller input
+### 处理 Xbox 360 控制器输入
 
-The following example shows how the **MarbleMaze::Update** method reads from the Xbox 360 controller and updates the combined input values. The **MarbleMaze::Update** method uses a for loop to enable input to be received from any connected controller. The **XInputGetState** method fills an XINPUT\_STATE object with current state of the controller. The **combinedTiltX** and **combinedTiltY** values are updated according to the x and y values of the left thumbstick.
+下面的示例展示了 **MarbleMaze::Update** 方法如何从 Xbox 360 控制器读取数据并更新组合的输入值。 **MarbleMaze::Update** 方法使用一个 for 循环来支持从任何连接的控制器接收输入。 **XInputGetState** 方法在一个 XINPUT_STATE 对象中填入控制器的当前状态。 根据左操纵杆的 x 和 y 值来更新 **combinedTiltX** 和 **combinedTiltY** 值。
 
 ```cpp
 // Account for input on any connected controller.
@@ -444,21 +444,21 @@ for (DWORD userIndex = 0; userIndex < XUSER_MAX_COUNT; ++userIndex)
 }
 ```
 
-XInput defines the **XINPUT\_GAMEPAD\_LEFT\_THUMB\_DEADZONE** constant for the left thumbstick. This is an appropriate dead zone threshold for most games.
+XInput 定义左操纵杆的 **XINPUT\_GAMEPAD\_LEFT\_THUMB\_DEADZONE** 常量。 这是大多数游戏的一个合适的死区阈值。
 
-> **Important**  When you work with the Xbox 360 controller, always account for the dead zone. The dead zone refers to the variance among gamepads in their sensitivity to initial movement. In some controllers, a small movement may generate no reading, but in others it may generate a measurable reading. To account for this in your game, create a zone of non-movement for initial thumbstick movement. For more information about the dead zone, see [Getting Started With XInput.](https://msdn.microsoft.com/library/windows/desktop/ee417001)
-
- 
-
-###  Applying input to the game state
-
-Devices report input values in different ways. For example, pointer input might be in screen coordinates, and controller input might be in a completely different format. One challenge with combining input from multiple devices into one set of input values is normalization, or converting values to a common format. Marble Maze normalizes values by scaling them to the range \[-1.0, 1.0\]. To normalize Xbox 360 controller input, Marble Maze divides the input values by 32768 because thumbstick input values always fall between -32768 and 32767. The **PointToTouch** function, which is previously described in this section, achieves a similar result by converting screen coordinates to normalized values that range approximately between -1.0 and +1.0.
-
-> **Tip**  Even if your application uses one input method, we recommend that you always normalize input values. Doing so can simplify how input is interpreted by other components of your game, such as physics simulation, and makes it easier to write games that work on different screen resolutions.
+> **重要提示** 使用 Xbox 360 控制器时，始终要考虑死区。 死区指各个游戏板在对初始移动的敏感性上的差异。 在一些控制器中，较小的运动可能不会生成读数，但在其他控制器中，它可能生成明显的读数。 若要在游戏中考虑此情形，可为初始操纵杆运动创建一个不运动区域。 有关死区的详细信息，请参阅 [XInput 入门](https://msdn.microsoft.com/library/windows/desktop/ee417001)。
 
  
 
-After the **MarbleMaze::Update** method processes input, it creates a vector that represents the effect of the tilt of the maze on the marble. The following example shows how Marble Maze uses the **XMVector3Normalize** function to create a normalized gravity vector. The *MaxTilt* variable constrains the amount by which the maze tilts and prevents the maze from tilting on its side.
+###  将输入应用到游戏状态
+
+设备以不同方式报告输入值。 例如，指针输入可能采用屏幕坐标格式，而控制器输入可能采用完全不同的格式。 将来自多台设备的输入组合到一组输入值中的一项挑战是标准化，或者将值转换为通用格式。 Marble Maze 通过在 \[-1.0, 1.0\] 区间内缩放这些值来规范化它们。 若要规范化 Xbox 360 控制器输入，Marble Maze 将输入值除以 32768，因为操纵杆输入值始终位于 -32768 与 32767 之间。 **PointToTouch** 函数（本节前面已介绍）通过将屏幕坐标转换为大体在 -1.0 与 +1.0 之间的规范化值，实现一种类似的结果。
+
+> **提示** 即使你的应用程序仅使用一种输入方法，我们也建议你始终规范化输入值。 执行此操作可简化游戏的其他组件如何解释输入（例如力学模拟），以及使编写适用于不同屏幕分辨率的游戏更容易。
+
+ 
+
+在 **MarbleMaze::Update** 方法处理输入后，将会创建一个矢量来表示在倾斜迷宫时对弹珠的影响。 下面的示例展示了 Marble Maze 如何使用 **XMVector3Normalize** 函数创建一个规范化的重力矢量。 *MaxTilt* 变量约束迷宫倾斜的程度并阻止迷宫朝一侧倾斜。
 
 ```cpp
 const float maxTilt = 1.0f / 8.0f;
@@ -466,7 +466,7 @@ XMVECTOR gravity = XMVectorSet(combinedTiltX * maxTilt, combinedTiltY * maxTilt,
 gravity = XMVector3Normalize(gravity);
 ```
 
-To complete the update of scene objects, Marble Maze passes the updated gravity vector to the physics simulation, updates the physics simulation for the time that has elapsed since the previous frame, and updates the position and orientation of the marble. If the marble has fallen through the maze, the **MarbleMaze::Update** method places the marble back at the last checkpoint that the marble touched and resets the state of the physics simulation.
+若要完成场景对象的更新，Marble Maze 将更新的重力矢量传递给力学模拟，在力学模拟中更新自前一帧以来经历的时间，并更新弹珠的位置和方向。 如果弹珠从迷宫落下，**MarbleMaze::Update** 方法将弹珠放回它最后接触的检查点，并重置力学模拟的状态。
 
 ```cpp
 XMFLOAT3 g;
@@ -503,30 +503,30 @@ if (marblePosition.z >= resetDepth)
 }
 ```
 
-This section does not describe how the physics simulation works. For details about that, see Physics.h and Physics.cpp in the Marble Maze sources.
+本节没有介绍力学模拟的工作原理。 有关这方面的细节，请参阅 Marble Maze 源代码中的 Physics.h 和 Physics.cpp。
 
-## Next steps
-
-
-Read [Adding audio to the Marble Maze sample](adding-audio-to-the-marble-maze-sample.md) for information about some of the key practices to keep in mind when you work with audio. The document discusses how Marble Maze uses Microsoft Media Foundation and XAudio2 to load, mix, and play audio resources.
-
-## Related topics
+## 后续步骤
 
 
-* [Adding audio to the Marble Maze sample](adding-audio-to-the-marble-maze-sample.md)
-* [Adding visual content to the Marble Maze sample](adding-visual-content-to-the-marble-maze-sample.md)
-* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+查阅[向 Marble Maze 添加音频示例](adding-audio-to-the-marble-maze-sample.md)，了解在使用音频时要记住的一些重要实践。 本文档讨论了 Marble Maze 如何使用 Microsoft 媒体基础和 XAudio2 来加载、混合和播放音频资源。
 
- 
+## 相关主题
+
+
+* [向 Marble Maze 添加音频示例](adding-audio-to-the-marble-maze-sample.md)
+* [向 Marble Maze 添加可视内容示例](adding-visual-content-to-the-marble-maze-sample.md)
+* [开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

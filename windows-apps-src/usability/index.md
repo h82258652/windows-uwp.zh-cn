@@ -1,33 +1,34 @@
 ---
-description: Learn how to make your app inclusive and accessible to people around the world.
+description: "了解如何使你的应用针对全世界用户都具有包容性和辅助性。"
 keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
-title: Usability in UWP apps - Windows app development
+title: "UWP 应用中的可用性 - Windows 应用开发"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 589e3290a47a9245ddb5e43f64d13bae1244ac8b
-ms.openlocfilehash: d7246bc898e36155996941875b6c00da7891809d
+ms.sourcegitcommit: 5370dd078db81de606b7a4bbfcf6dd36b2280a17
+ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 
 ---
-# Usability for UWP apps
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-It’s the little touches, an extra attention to detail, that can transform a good user experience into a truly inclusive user experience that meets the needs of users around the globe.
+# UWP 应用中的可用性
 
-The design and coding instructions in this section can make your UWP app more inclusive by adding accessibility features, enabling globalization and localization, enabling users to customize their experience, and providing help when users need it.
+这些较小的优化额外关注了细节方面，可将良好的用户体验转换为一次能满足全球用户需求的真正具有包容性的用户体验。
+
+本部分中的设计和编码说明可以帮助你使你的 UWP 应用更具包容性，方法是添加辅助功能、支持全球化和本地化、允许用户自定义其体验，以及随时为用户提供帮助。
 
 
-## Accessiblity
+## 辅助功能
 
-Accessibility is about making your app usable by people who have limitations that prevent or impede the use of conventional user interfaces. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience.
+辅助功能是指应用可供那些对使用常规用户界面存在限制（阻碍或阻止他们使用）的用户使用。 对于某些情况，辅助功能要求是由法律强制实施的。 但是，无论法律是否有规定，最好都解决辅助功能问题，以尽可能扩大应用的受众范围。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Accessibility overview](../accessibility/accessibility-overview.md)</b> <br/> This article is an overview of the concepts and technologies related to accessibility scenarios for UWP apps.</p>
+<p><b>[辅助功能概述](../accessibility/accessibility-overview.md)</b> <br/> 本文概述了与 UWP 应用的辅助功能方案相关的概念和技术。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Designing inclusive software](../accessibility/designing-inclusive-software.md)</b><br/>Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.</p>
+<p><b>[设计非独占软件](../accessibility/designing-inclusive-software.md)</b><br/>了解如何改进适用于 Windows 10 的通用 Windows 平台 (UWP) 应用的非独占设计。  以辅助功能为中心来设计和生成非独占软件。</p>
   </div>
 </div>
 </div>
@@ -35,10 +36,10 @@ Accessibility is about making your app usable by people who have limitations tha
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Developing inclusive Windows apps](../accessibility/developing-inclusive-windows-apps.md)</b><br/> This article is a roadmap for developing accessible UWP apps.</p>
+<p><b>[开发非独占 Windows 应用](../accessibility/developing-inclusive-windows-apps.md)</b><br/> 本文是开发辅助 UWP 应用的路线图。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Accessibility testing](../accessibility/accessibility-testing.md) </b><br/>Testing procedures to follow to ensure that your UWP app is accessible.</p>
+<p><b>[辅助功能测试](../accessibility/accessibility-testing.md) </b><br/>为确保 UWP 应用为辅助应用所要遵循的测试过程。</p>
   </div>
 </div>
 </div>
@@ -46,10 +47,10 @@ Accessibility is about making your app usable by people who have limitations tha
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Accessibility in the Store](../accessibility/accessibility-in-the-store.md)</b><br/>Describes the requirements for declaring your UWP app as accessible in the Windows Store.</p>
+<p><b>[应用商店中的辅助功能](../accessibility/accessibility-in-the-store.md)</b><br/>介绍有关在 Windows 应用商店中将 UWP 应用声明为辅助应用的要求。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Accessibility checklist](../accessibility/accessibility-checklist.md)</b><br/>Provides a checklist to help you ensure that your UWP app is accessible.</p>
+<p><b>[辅助功能清单](../accessibility/accessibility-checklist.md)</b><br/>提供了可帮助你确保 UWP 应用为辅助应用的清单。</p>
   </div>
 </div>
 </div>
@@ -57,10 +58,10 @@ Accessibility is about making your app usable by people who have limitations tha
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Expose basic accessibility information](../accessibility/basic-accessibility-information.md)</b><br/>Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.</p>
+<p><b>[公开基本的辅助功能信息](../accessibility/basic-accessibility-information.md)</b><br/>基本的辅助功能信息通常按照名称、角色和值进行分类。 本主题介绍可帮助应用公开辅助技术所需的基本信息的代码。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Keyboard accessibility](../accessibility/keyboard-accessibility.md)</b><br/>If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.</p>
+<p><b>[键盘辅助功能](../accessibility/keyboard-accessibility.md)</b><br/>如果应用未提供良好的键盘访问，则盲人用户或行动不便的用户在使用该应用时会存在困难，或者可能根本无法使用该应用。</p>
   </div>
 </div>
 </div>
@@ -68,10 +69,10 @@ Accessibility is about making your app usable by people who have limitations tha
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[High-contrast themes](../accessibility/high-contrast-themes.md)</b><br/>Describes the steps needed to ensure your UWP app is usable when a high-contrast theme is active. </p>
+<p><b>[高对比度主题](../accessibility/high-contrast-themes.md)</b><br/>介绍了为确保 UWP 应用在高对比度主题处于活动状态时可供使用所需的步骤。 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Accessible text requirements](../accessibility/accessible-text-requirements.md)</b><br/>This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a UWP app can have, and best practices for text in graphics.</p>
+<p><b>[辅助文本要求](../accessibility/accessible-text-requirements.md)</b><br/>本主题介绍了应用中的文本的最佳辅助功能做法：确保颜色和背景满足必需的对比率。 本主题还讨论了 UWP 应用中的文本元素可以具有的 Microsoft UI 自动化角色，以及图形中文本的最佳做法。</p>
   </div>
 </div>
 </div>
@@ -79,10 +80,10 @@ Accessibility is about making your app usable by people who have limitations tha
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Accessibility practices to avoid](../accessibility/practices-to-avoid.md)</b><br/>Lists the practices to avoid if you want to create an accessible UWP app.</p>
+<p><b>[要避免的辅助功能做法](../accessibility/practices-to-avoid.md)</b><br/>列出创建辅助的 UWP 应用时应避免的做法。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Custom automation peers](../accessibility/custom-automation-peers.md)</b><br/>Describes the concept of automation peers for UI Automation, and how you can provide automation support for your own custom UI class.</p>
+<p><b>[自定义自动化对等](../accessibility/custom-automation-peers.md)</b><br/>介绍 UI 自动化的自动化对等概念以及如何为自己的自定义 UI 类提供自动化支持。</p>
   </div>
 </div>
 </div>
@@ -90,7 +91,7 @@ Accessibility is about making your app usable by people who have limitations tha
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Control patterns and interfaces](../accessibility/control-patterns-and-interfaces.md)</b><br/>Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them.</p>
+<p><b>[控件模式和接口](../accessibility/control-patterns-and-interfaces.md)</b><br/>列出 Microsoft UI 自动化控件模式、客户端用于访问这些模式的类以及提供程序用于实现这些模式的接口。</p>
   </div>
   <div class="side-by-side-content-right">
 <p><b></b>   
@@ -101,17 +102,17 @@ Accessibility is about making your app usable by people who have limitations tha
 
 
 
-## Globalization and localization
+## 全球化和本地化
 
-Windows is used worldwide, by audiences that vary in culture, region, and language. A user may speak any language, or even multiple languages. A user may be located anywhere in the world, and may speak any language in any location. You can increase the potential market for your app by designing it to be readily adaptable using globalization and localization.
+Windows 的使用遍及世界各地，用户的文化背景、区域及语言也各不相同。 用户可以说任意一种语言，甚至是多种语言。 用户可能位于世界的任何地方，可能在任何地方说任何语言。 通过使用全球化和本地化对应用进行设计使其更具有适应性，可以拓展其潜在市场。 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Do's and don'ts](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md)</b><br/>Follow these best practices when globalizing your apps for a wider audience and when localizing your apps for a specific market.</p>
+<p><b>[应做事项和禁止事项](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md)</b><br/>在将你的应用全球化使其适用于更广泛的用户以及将你的应用本地化使其适用于特定市场时，请遵循这些最佳做法。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Use global-ready formats](../globalizing/use-global-ready-formats.md)</b><br/>Develop a global-ready app by appropriately formatting dates, times, numbers, and currencies.</p>
+<p><b>[使用全球通用的格式](../globalizing/use-global-ready-formats.md)</b><br/>通过适当设置日期、时间、数字和货币的格式，开发全球通用的应用。</p>
   </div>
 </div>
 </div>
@@ -119,10 +120,10 @@ Windows is used worldwide, by audiences that vary in culture, region, and langua
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Manage language and region](../globalizing/manage-language-and-region.md)</b><br/>Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows.</p>
+<p><b>[管理语言和区域](../globalizing/manage-language-and-region.md)</b><br/>通过使用 Windows 提供的各种语言和区域设置，控制 Windows 如何选择 UI 资源和设置应用的 UI 元素的格式。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Use patterns to format dates and times](../globalizing/use-patterns-to-format-dates-and-times.md)</b><br/>Use the [<strong>DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API with custom patterns to display dates and times in exactly the format you wish.</p>
+<p><b>[使用模式设置日期和时间的格式](../globalizing/use-patterns-to-format-dates-and-times.md)</b><br/>使用 [<strong>DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API 和自定义模式严格按照所需模式显示日期和时间。</p>
   </div>
 </div>
 </div>
@@ -130,10 +131,10 @@ Windows is used worldwide, by audiences that vary in culture, region, and langua
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Adjust layout and fonts, and support RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)</b><br/>Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.</p>
+<p><b>[调整布局和字体并支持 RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)</b><br/>开发你的应用来支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Prepare your app for localization](../globalizing/prepare-your-app-for-localization.md)</b><br/>Prepare your app for localization to other markets, languages, or regions.</p>
+<p><b>[准备你的应用以供进行本地化](../globalizing/prepare-your-app-for-localization.md)</b><br/>准备将应用本地化到其他市场、语言或地区。</p>
   </div>
 </div>
 </div>
@@ -141,7 +142,7 @@ Windows is used worldwide, by audiences that vary in culture, region, and langua
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Put UI strings into resources](../globalizing/put-ui-strings-into-resources.md)</b><br/>Put string resources for your UI into resource files. You can then reference those strings from your code or markup.</p>
+<p><b>[将 UI 字符串放入资源中](../globalizing/put-ui-strings-into-resources.md)</b><br/>将你的 UI 的字符串资源放入资源文件中。 随后你可从代码或标记中引用这些字符串。</p>
   </div>
   <div class="side-by-side-content-right">
 <b></b>   
@@ -151,32 +152,32 @@ Windows is used worldwide, by audiences that vary in culture, region, and langua
 </div>
 
 
-## App settings
+## 应用设置
 
-App settings let you the user customize your app, optimizing it for their individual needs and preferences. Providing the right settings and storing them properly can make a great user experience even better.
+借助应用设置，用户可以自定义你的应用，从而可以针对其个人需求和偏好来优化它。 通过提供适当的设置并妥善存储它们，可使用户体验更加出色。 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Guidelines](../app-settings/guidelines-for-app-settings.md)</b><br/>Best practices for creating and displaying app settings.</p>
+<p><b>[指南](../app-settings/guidelines-for-app-settings.md)</b><br/>有关创建和显示应用设置的最佳做法。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Store and retrieve app data](../app-settings/store-and-retrieve-app-data.md)</b><br/>How to store and retrieve local, roaming, and temporary app data.</p>
+<p><b>[存储和检索应用数据](../app-settings/store-and-retrieve-app-data.md)</b><br/>如何存储和检索本地、漫游和临时应用数据。</p>
   </div>
 </div>
 </div>
 
-## In-app help
-No matter how well you’ve designed your app, some users will need a little extra help.
+## 应用内帮助
+无论你设计的应用有多好，某些用户仍将需要一些额外帮助。 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Guidelines for app help](../in-app-help/guidelines-for-app-help.md)</b><br/>Applications can be complex, and providing effective help for your users can greatly improve their experience.
+<p><b>[应用帮助指南](../app-help-guidelines/guidelines-for-app-help.md)</b><br/>应用程序可能会很复杂，而为用户提供有效的帮助可大幅改善他们的体验。 
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Instructional UI](../in-app-help/instructional-ui.md)</b><br/>Sometimes it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the UI so they can discover and use features they might have missed.</p>
+<p><b>[说明性 UI](../app-help-guidelines/instructional-ui.md)</b><br/>有时，向用户解释应用中他们不熟悉的功能（例如特定的触摸交互）会很有用。 在这些情况下，你需要通过 UI 向用户显示说明，以便他们可以发现并使用可能错过的功能。</p>
   </div>
 </div>
 </div>
@@ -184,16 +185,19 @@ No matter how well you’ve designed your app, some users will need a little ext
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[In-app help](../in-app-help/in-app-help.md)</b><br/>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
+<p><b>[应用内帮助](../app-help-guidelines/in-app-help.md)</b><br/>在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。 在创建应用内帮助时，请考虑以下指南。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[External help](../in-app-help/external-help.md)</b><br/>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
+<p><b>[外部帮助](../app-help-guidelines/external-help.md)</b><br/>在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。 在创建应用内帮助时，请考虑以下指南。</p>
   </div>
 </div>
 </div>
 
 
 
-<!--HONumber=Aug16_HO5-->
+
+
+
+<!--HONumber=Jul16_HO1-->
 
 

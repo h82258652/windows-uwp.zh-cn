@@ -1,11 +1,11 @@
 ---
-author: GrantMeStrength
+author: martinekuan
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: "使用 C++ 创建“Hello World”应用 (Windows 10)"
 description: "借助 Microsoft Visual Studio 2015，可以使用 C++ 开发可在 Windows 10 上运行的应用，包括可在运行 Windows 10 的手机上运行的应用。 这些应用具有使用 Extensible Application Markup Language (XAML) 定义的 UI。"
 translationtype: Human Translation
-ms.sourcegitcommit: cedab04d2969809dca84097b027e973be9b9948b
-ms.openlocfilehash: 55d5b160bbf1d877408a52e981a030dee28515c4
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 7836cb385cc37f39fa1af01ea981263fcf3f3634
 
 ---
 
@@ -13,11 +13,13 @@ ms.openlocfilehash: 55d5b160bbf1d877408a52e981a030dee28515c4
 
 借助 Microsoft Visual Studio 2015，可以使用 C++ 开发可在 Windows 10 上运行的应用，包括可在运行 Windows 10 的手机上运行的应用。 这些应用具有使用 Extensible Application Markup Language (XAML) 定义的 UI。
 
+若要开发可在 Windows 8.1 和 Windows Phone 8.1 上运行的应用，请使用 Microsoft Visual Studio 2013 Update 3 或更高版本并按照[此处](https://msdn.microsoft.com/library/windows/apps/Dn263168)的步骤进行操作。 最明显的差异是，对于 Windows 8.1 和 Windows Phone 8.1，你可以使用包含三个项目的解决方案，一个项目用于桌面设备（或平板电脑设备）、一个用于手机、一个用于共享代码。 对于 Windows 10 开发，所有代码都共用同一个项目。
+
 有关采用其他编程语言的教程，请参阅：
 
 -   [使用 JavaScript 创建你的第一个 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/BR211385)
 
--   [使用 C 创建你的第一个 Windows 应用商店应用#](https://msdn.microsoft.com/library/windows/apps/Hh974581)
+-   [使用 C# 或 Visual Basic 创建你的第一个 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/Hh974581)
 
 ## 开始之前...
 
@@ -25,7 +27,7 @@ ms.openlocfilehash: 55d5b160bbf1d877408a52e981a030dee28515c4
 -   安装适当的 [SDK](http://go.microsoft.com/fwlink/?LinkId=533049) 用于 Windows 通用平台开发。
 -   我们假设你已基本了解 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595)中的标准 C++、XAML 和概念。
 -   我们假定你正在使用 Visual Studio 中的默认窗口布局。 若要重置为默认布局，请在菜单栏上，依次选择“窗口”**** > “重置窗口布局”****。
-
+-   请注意，Visual Studio 2015 存在一项已知问题，它在加载 XAML 设计器时可能导致 NullReferenceException。 此问题会阻止本教程的一些步骤，除非你应用解决方法。 有关此问题和解决方法的详细信息，请参阅[此 MSDN 论坛文章](http://go.microsoft.com/fwlink/p/?LinkId=624036)。
 
 ## 将 C++ 桌面应用与 Windows 应用比较
 
@@ -109,94 +111,96 @@ ms.openlocfilehash: 55d5b160bbf1d877408a52e981a030dee28515c4
 
 如果你检查共享项目中的 App.xaml.h、App.xaml.cpp 中的代码，你将注意到主要是 C++ 代码看起来很熟悉。 但是，如果你不熟悉 Windows 运行时应用，或者你使用过 C++/CLI，则某些语法元素可能不那么熟悉。 以下是你将在 C++/CX 中看到的最常见的非标准语法元素：
 
-**引用类**
+-   **引用类**
 
 几乎所有 Windows 运行时类，包括 Windows API--XAML 控件中的所有类型、应用中的页面、应用类本身，所有设备和网络对象、所有容器类型，都声明为 **ref class**。 （一些 Windows 类型是 **value class** 或 **value struct**）。 引用类可从任何语言使用。 在 C++ 中，这些类型的生存期由自动引用计数管理（非垃圾集合），以便你从来不会明确地删除这些对象。 你也可以创建自己的引用类。
 
 ```cpp
-namespace HelloWorld
-{
-   /// <summary>
-   /// An empty page that can be used on its own or navigated to within a Frame.
-   /// </summary>
-   public ref class MainPage sealed
-   {
-      public:
-      MainPage();
-   };
-}
+    namespace HelloWorld
+    {
+        /// <summary>
+        /// An empty page that can be used on its own or navigated to within a Frame.
+        /// </summary>
+        public ref class MainPage sealed
+        {
+        public:
+            MainPage();
+
+        };
+    }
 ```    
 
 所有 Windows 运行时类型必须在命名空间中进行声明，而且与 ISO C++ 中不同，这些类型本身具有辅助功能修改器。 **public** 修改器使类对命名空间之外的 Windows 运行时组件可见。 **sealed** 关键字表示该类无法用作基类。 几乎已密封所有引用类；而不广泛使用类继承，因为 Javascript 无法理解它。
 
-**ref new** 和 **^ (hats)**
+-   **ref new** 和 **^ (hats)**
 
-通过使用 ^（乘幂号）运算符声明引用类的变量，并且使用引用新关键字实例化该对象。 然后你使用 -&gt; 运算符访问对象的实例方法，就像 C++ 指针一样。 使用 :: 运算符访问静态方法，就像 ISO C++ 中一样。
+ 通过使用 ^（乘幂号）运算符声明引用类的变量，并且使用引用新关键字实例化该对象。 然后你使用 -&gt; 运算符访问对象的实例方法，就像 C++ 指针一样。 使用 :: 运算符访问静态方法，就像 ISO C++ 中一样。
 
-在以下代码中，我们使用完全限定的名称来实例化对象，并使用 -&gt; 运算符调用实例方法。
+ 在以下代码中，我们使用完全限定的名称来实例化对象，并使用 -&gt; 运算符调用实例方法。
 
-```cpp
-Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
-     ref new Windows::UI::Xaml::Media::Imaging::BitmapImage();
+ ```cpp
+    Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
+        ref new Windows::UI::Xaml::Media::Imaging::BitmapImage();
       
-bitmapImage->SetSource(fileStream);
-```
+    bitmapImage->SetSource(fileStream);
+    ```
 
-通常，在 .cpp 文件中，我们将添加 `using namespace  Windows::UI::Xaml::Media::Imaging` 指令和自动关键字，因此相同的代码看似如下：
-
-```cpp
-auto bitmapImage = ref new BitmapImage();
-bitmapImage->SetSource(fileStream);
-```
-
-**属性**
-
-引用类可以具有属性，和在托管的语言中一样，这些属性是对使用代码显示为字段的特殊成员函数。
+   通常，在 .cpp 文件中，我们将添加 `using namespace  Windows::UI::Xaml::Media::Imaging` 指令和自动关键字，因此相同的代码看似如下：
 
 ```cpp
-public ref class SaveStateEventArgs sealed
-{
-   public:
-   // Declare the property
-   property Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ PageState
-   {
-      Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ get();
-   }
-   ...
-};
-
-   ...
-   // consume the property like a public field
-   void PhotoPage::SaveState(Object^ sender, Common::SaveStateEventArgs^ e)
-   {    
-      if (mruToken != nullptr && !mruToken->IsEmpty())
-   {
-      e->PageState->Insert("mruToken", mruToken);
-   }
-}
+    auto bitmapImage = ref new BitmapImage();
+    bitmapImage->SetSource(fileStream);
 ```
 
-**代理**
+-   **属性**
 
-和在托管语言中一样，代理是包装带有特定签名的函数的引用类型。 它们经常与事件和事件处理程序一同使用
+   引用类可以具有属性，和在托管的语言中一样，这些属性是对使用代码显示为字段的特殊成员函数。
 
 ```cpp
-// Delegate declaration (within namespace scope)
-public delegate void LoadStateEventHandler(Platform::Object^ sender, LoadStateEventArgs^ e);
+    public ref class SaveStateEventArgs sealed
+            {
+            public:
 
-// Event declaration (class scope)
-public ref class NavigationHelper sealed
-{
-   public:
-   event LoadStateEventHandler^ LoadState;
-};
+                // Declare the property
+                property Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ PageState
+                {
+                    Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ get();
+                }
+    ...
+    };
 
-// Create the event handler in consuming class
-MainPage::MainPage()
-{
-   auto navigationHelper = ref new Common::NavigationHelper(this);
-   navigationHelper->LoadState += ref new Common::LoadStateEventHandler(this, &MainPage::LoadState);
-}
+    ...
+    // consume the property like a public field
+    void PhotoPage::SaveState(Object^ sender, Common::SaveStateEventArgs^ e)
+    {    
+        if (mruToken != nullptr && !mruToken->IsEmpty())
+        {
+            e->PageState->Insert("mruToken", mruToken);
+        }
+    }
+```
+
+-   **代理**
+
+   和在托管语言中一样，代理是包装带有特定签名的函数的引用类型。 它们经常与事件和事件处理程序一同使用
+
+```cpp
+    // Delegate declaration (within namespace scope)
+    public delegate void LoadStateEventHandler(Platform::Object^ sender, LoadStateEventArgs^ e);
+
+    // Event declaration (class scope)
+    public ref class NavigationHelper sealed
+    {
+      public:
+        event LoadStateEventHandler^ LoadState;
+    };
+
+    // Create the event handler in consuming class
+    MainPage::MainPage()
+    {
+        auto navigationHelper = ref new Common::NavigationHelper(this);
+        navigationHelper->LoadState += ref new Common::LoadStateEventHandler(this, &MainPage::LoadState);
+    }
 ```
 
 ## 向应用添加内容
@@ -208,7 +212,7 @@ MainPage::MainPage()
 1.  在**“解决方案资源管理器”**中，打开 MainPage.xaml。
 2.  通过向根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 添加以下 XAML 来为 UI 创建控件，紧挨在其结束标记之前。 它包含 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)，后者具有一个询问用户名的 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)、一个接受用户名的 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 元素、一个 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 和其他 **TextBlock** 元素。
 
-    ```xaml
+```xml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
         <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36"/>
         <TextBlock Text="What's your name?"/>
@@ -218,25 +222,30 @@ MainPage::MainPage()
         </StackPanel>
         <TextBlock x:Name="greetingOutput"/>
     </StackPanel>
-    ```
+```
 
-3.  此时，你已创建一个非常基本的通用 Windows 应用。 若要查看 UWP 应用的外观，请按 F5，在调试模式下生成、部署并运行该应用。
+我们将在[导航、布局和视图](https://msdn.microsoft.com/library/windows/apps/Dn263172)文章中谈论有关 XAML 布局的详细信息。
+
+3.  此时，你已创建了一个非常基本的通用 Windows 应用。 若要查看 UWP 应用的外观，请按 F5，在调试模式下生成、部署并运行该应用。
 
 首先会出现默认的初始屏幕。 它有一个图像（Assets\\SplashScreen.scale-100.png）以及在应用的清单文件中指定的背景色。 若要了解如何自定义初始屏幕，请参阅[添加初始屏幕](https://msdn.microsoft.com/library/windows/apps/Hh465332)。
 
 当初始屏幕消失时，将显示你的应用。 它显示应用的主页面。
 
-![带有控件的 Windows 应用商店应用屏幕](images/xaml-hw-app2.png)
+按 Windows 键或单击“开始”按钮可转到“开始”菜单，并且请注意，部署应用时会将其添加到“开始”菜单的已安装应用的列表。 它还会在你单击“所有应用”按钮旁边的“新”链接时显示。 若要再次运行应用，只需点击或单击该应用的磁贴，或像往常一样在 Visual Studio 中按 F5 或 Ctrl+F5。
 
-它还做不了多少事，但是祝贺你，你已生成了你的第一款通用 Windows 平台应用！
+ ![带有控件的 Windows 应用商店应用屏幕](images/xaml-hw-app2.png)
 
-要停止调试并关闭应用，请返回到 Visual Studio 并按 Shift+F5。
+   它还做不了多少事，但是祝贺你，你已生成了你的第一款通用 Windows 平台应用！
 
-有关详细信息，请参阅[从 Visual Studio 运行应用商店应用](http://go.microsoft.com/fwlink/p/?LinkId=619619)。
+   要停止调试并关闭应用，请返回到 Visual Studio 并按 Shift+F5。
 
-在应用中，你可以在 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 中键入，但是单击 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 不执行任何操作。 在以后的步骤中，为按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件创建事件处理程序，该事件会显示个性化问候。
+   有关详细信息，请参阅[从 Visual Studio 运行应用商店应用](http://go.microsoft.com/fwlink/p/?LinkId=619619)。
+
+   在应用中，你可以在 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 中键入，但是单击 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 不执行任何操作。 在以后的步骤中，为按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件创建事件处理程序，该事件会显示个性化问候。
 
 ## 在移动设备仿真器上启动该应用
+
 
 你的应用可在任何 Windows 10 设备上运行，让我们看一下它在 Windows Phone 上的外观。 本部分需要一个运行 Windows 10 的 Windows Phone 或Windows Phone 仿真器的访问权限，并且它要求 Visual Studio 在物理计算机（不是虚拟机）上运行，并支持其启用 HyperV。
 
@@ -250,6 +259,8 @@ MainPage::MainPage()
 
 最好在具有小型屏幕和有限内存的设备上测试应用，因此请使用“仿真器 10.0.0.0 WVGA 4 英寸 512MB”****选项。
 **提示** 有关使用手机仿真器的详细信息，请参阅[在仿真器中运行 Windows Phone 应用](http://go.microsoft.com/fwlink/p/?LinkId=394233)。
+
+ 
 
 若要在物理设备上调试你的应用，必须具有已注册用于开发的设备。 有关详细信息，请参阅[注册你的 Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128)。
 
@@ -278,28 +289,28 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 2.  按 Alt+Enter 打开**“属性窗口”**，然后选择事件按钮（![事件按钮](images/eventsbutton.png)）。
 3.  查找 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件。 在其文本框中，键入处理 **Click** 事件的函数名称。 对于本示例，请键入“Button\_Click”。
 
-    ![属性窗口, 事件视图](images/xaml-hw-event.png)
+![属性窗口, 事件视图](images/xaml-hw-event.png)
 
 4.  按 Enter。 事件处理程序方法在 MainPage.xaml.cpp 中创建并已打开，因此你可以添加在事件出现时执行的代码。
 
    同时，在 MainPage.xaml 中，更新 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 的 XAML 以声明 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件处理程序，如下所示：
 
-    ```xaml
+```xml
     <Button Content="Say \"Hello\"" Click="Button_Click"/>
-    ```
+```
 
-    你可以只是手动将其添加到 xaml 代码，如果设计器未加载这可能会很有用。 如果你手动输入此信息，请键入“Click”，然后让 IntelliSense 弹出用于添加新事件处理程序的选项。 这样，Visual Studio 将创建必要的方法声明和存根。
+你可以只是手动将其添加到 xaml 代码，如果设计器未加载这可能会很有用。 如果你手动输入此信息，请键入“Click”，然后让 IntelliSense 弹出用于添加新事件处理程序的选项。 这样，Visual Studio 将创建必要的方法声明和存根。
 
-    如果在呈现期间发生未经处理的异常，则设计器将无法加载。 在设计器中呈现涉及到运行该页面的设计时版本。 它可能有助于禁用运行用户代码。 你可以通过在**“工具, 选项”**对话框中更改设置来执行此操作。 在**“XAML 设计器”**下，取消选中**“在 XAML 设计器中运行项目代码 (如果支持)”**。
+如果在呈现期间发生未经处理的异常，则设计器将无法加载。 在设计器中呈现涉及到运行该页面的设计时版本。 它可能有助于禁用运行用户代码。 你可以通过在**“工具, 选项”**对话框中更改设置来执行此操作。 在**“XAML 设计器”**下，取消选中**“在 XAML 设计器中运行项目代码 (如果支持)”**。
 
 5.  在 MainPage.xaml.cpp 中，将以下代码添加到刚创建的 **Button\_Click** 事件处理程序。 此代码将从 `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 控件检索用户名并使用该用户名创建问候语。 `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 将显示相关结果。
 
-    ```cpp
+```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
     {
         greetingOutput->Text = "Hello, " + nameInput->Text + "!";
     }
-    ```
+```
 
 6.  将项目设置为启动项，然后按 F5 生成并运行应用。 当你在文本框中键入姓名并单击按钮时，应用会显示个性化问候。
 
@@ -316,20 +327,20 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 1.  打开 App.xaml。
 2.  在开始标记 [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) 中，编辑 [**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) 属性并将其值设置为 **Dark**：
 
-    ```xaml
-    RequestedTheme="Light"
-    ```
+```xml
+   RequestedTheme="Light"
+```
 
-    以下是带有深色主题的完整 [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) 标记：
+以下是带有深色主题的完整 [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) 标记：
 
-    ```xaml 
+```xml 
         <Application
         x:Class="HelloWorld.App"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:HelloWorld"
+        xmlns:local="using:HelloWorld" 
         RequestedTheme="Dark">
-    ```
+```
 
 3.  按 F5 生成并运行应用。 请注意它使用深色主题。
 
@@ -350,25 +361,25 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 3.  在**“属性”** 窗口 (**F4**) 中，选择右上角的“属性”按钮（![“属性”按钮](images/propertiesbutton.png)）。
 4.  展开**“文本”**组，并将字体大小设置为 18 px。
 5.  展开“其他”****组并找到 **Style** 属性。
-6.  单击属性标记（“样式”****属性右侧的绿色框），然后在菜单上，依次选择“系统资源”**** > BaseTextBlockStyle****。
+6.  单击属性标记（“样式”****属性右侧的绿色框），然后在菜单上，依次选择“系统资源”**** > “BaseTextBlockStyle”****。
 
-     **BaseTextBlockStyle**为在 <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml 中的[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794)中定义的资源。
+ “BaseTextBlockStyle”****为在 <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml 中的[“ResourceDictionary”](https://msdn.microsoft.com/library/windows/apps/BR208794)****中定义的资源。
 
-    ![属性窗口，属性视图](images/xaml-hw-style-cpp.png)
+![属性窗口，属性视图](images/xaml-hw-style-cpp.png)
 
-     在 XAML 设计图面中，文本外观会发生更改。 在 XAML 编辑器中，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 的 XAML 会进行更新：
+ 在 XAML 设计图面中，文本外观会发生更改。 在 XAML 编辑器中，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 的 XAML 会进行更新：
 
-    ```xaml
-    <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
-    ```
+```xml
+   <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
+```
 
 7.  重复该过程可设置字体大小并将 **BaseTextBlockStyle** 分配到 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 元素。
 
-    **提示** 尽管此 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 中没有文本，但当你将指针移动到 XAML 设计图面上时，蓝色轮廓会显示它的位置，以便你可以选择它。  
+  **提示** 尽管此 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 中没有文本，但当你将指针移动到 XAML 设计图面上时，蓝色轮廓会显示它的位置，以便你可以选择它。  
 
-    现在的 XAML 如下所示：
+  现在的 XAML 如下所示：
 
-    ```xaml
+```xml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
         <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" Text="What's your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
@@ -377,11 +388,11 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
         </StackPanel>
         <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" x:Name="greetingOutput"/>
     </StackPanel>
-    ```
+```
 
 8.  按 F5 构建并运行应用。 现在它的外观如下所示：
 
-![带有较大文本的应用屏幕](images/xaml-hw-app5.png)
+ ![带有较大文本的应用屏幕](images/xaml-hw-app5.png)
 
 ### 步骤 4：使 UI 适应不同的窗口大小
 
@@ -391,7 +402,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 1.  在 XAML 编辑器中，在根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 元素的开始标记后添加此 XAML 块。
 
-    ```xaml
+```xml
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup>
             <VisualState x:Name="wideState">
@@ -411,7 +422,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
             </VisualState>
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
-    ```
+```
 
 2.  在本地计算机上调试应用。 请注意，UI 外观与以前相同，除非窗口变得窄于 641 与设备无关的像素 (DIP)。
 3.  在移动设备仿真器上调试应用。 请注意 UI 使用你在 `narrowState` 中定义的属性并正确显示在小屏幕上。
@@ -441,6 +452,6 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

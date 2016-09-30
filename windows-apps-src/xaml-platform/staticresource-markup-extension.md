@@ -1,54 +1,54 @@
 ---
 author: jwmsft
-description: Provides a value for any XAML attribute by evaluating a reference to an already defined resource. Resources are defined in a ResourceDictionary, and a StaticResource usage references the key of that resource in the ResourceDictionary.
-title: StaticResource markup extension
+description: "通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 ResourceDictionary 中定义，而 StaticResource 用法则在 ResourceDictionary 中引用该资源的键。"
+title: "StaticResource 标记扩展"
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 48cdfd86705ff29e4ffc7e9f69de2f01e75f7f2a
+ms.openlocfilehash: 3f486a8ac56e37a7401b9a87a4d560cac6b68f6f
 
 ---
 
-# {StaticResource} markup extension
+# {StaticResource} 标记扩展
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Provides a value for any XAML attribute by evaluating a reference to an already defined resource. Resources are defined in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), and a **StaticResource** usage references the key of that resource in the **ResourceDictionary**.
+通过计算对一个已定义资源的引用，为任何 XAML 属性提供一个值。 资源在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定义，而 **StaticResource** 用法则在 **ResourceDictionary** 中引用该资源的键。
 
-## XAML attribute usage
+## XAML 属性使用方法
 
 ``` syntax
 <object property="{StaticResource key}" .../>
 ```
 
-## XAML values
+## XAML 值
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| key | The key for the requested resource. This key is initially assigned by the [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). A resource key can be any string defined in the XamlName Grammar. |
+| 键 | 所请求资源的键。 此键最初通过 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 分配。 资源键可以是以 XamlName 语法定义的任何字符串。 |
 
-## Remarks
+## 备注
 
-**StaticResource** is a technique for obtaining values for a XAML attribute that are defined elsewhere in a XAML resource dictionary. Values might be placed in a resource dictionary because they are intended to be shared by multiple property values, or because a XAML resource dictionary is used as a XAML packaging or factoring technique. An example of a XAML packaging technique is the theme dictionary for a control. Another example is merged resource dictionaries used for resource fallback.
+**StaticResource** 是一种用于获取 XAML 属性值的技术，这些值在资源字典中的其他地方定义。 这些值可以放在资源字典中，因为它们供多个属性值共享，或者因为 XAML 资源字典用作 XAML 打包或重构技术。 一种 XAML 打包技术的示例是一个控件的主题字典。 另一个示例是用于资源回滚的合并资源字典。
 
-**StaticResource** takes one argument, which specifies the key for the requested resource. A resource key is always a string in Windows Runtime XAML. For more info on how the resource key is initially specified, see [x:Key attribute](x-key-attribute.md).
+**StaticResource** 使用一个参数，该参数用来为所请求的资源指定键。 在 Windows 运行时 XAML 中，资源键始终是一个字符串。 有关最初如何指定资源键的详细信息，请参阅 [x:Key 属性](x-key-attribute.md)。
 
-The rules by which a **StaticResource** resolves to an item in a resource dictionary are not described in this topic. That depends on whether the reference and the resource both exist in a template, whether merged resource dictionaries are used, and so on. For more info on how to define resources and properly use a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), including sample code, see [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).
+本主题未介绍 **StaticResource** 解析为资源字典中的项时所遵循的规则。 这些规则取决于引用和资源是否都存在于模板中，以及是否使用了合并的资源字典，等等。 有关如何定义资源和正确使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的详细信息（包括示例代码），请参阅 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)。
 
-**Important**  
-A **StaticResource** must not attempt to make a forward reference to a resource that is defined lexically further within the XAML file. Attempting to do so is not supported. Even if the forward reference doesn't fail, trying to make one carries a performance penalty. For best results, adjust the composition of your resource dictionaries so that forward references are avoided.
+**重要提示**  
+**StaticResource** 不应尝试将引用转发到一个在 XAML 文件中按词法进一步定义的资源。 这样的尝试不受支持。 即使前向引用没有失败，尝试进行这样的引用也会对性能造成不利影响。 为实现最佳效果，请调整你的资源字典的组成，以避免使用前向引用。
 
-Attempting to specify a **StaticResource** to a key that cannot resolve throws a XAML parse exception at run time. Design tools may also offer warnings or errors.
+尝试为无法解析的键指定 **StaticResource** 会在运行时引发 XAML 分析异常。 设计工具还可能会提供警告或错误。
 
-In the Windows Runtime XAML processor implementation, there is no backing class representation for **StaticResource** functionality. **StaticResource** is exclusively for use in XAML. The closest equivalent in code is to use the collection API of a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), for example calling [**Contains**](https://msdn.microsoft.com/library/windows/apps/jj635925) or [**TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj603139).
+在 Windows 运行时 XAML 处理器实现中，没有针对 **StaticResource** 功能的后备类表示。 **StaticResource** 专用于 XAML 中。 在代码中最接近的等效体是使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的集合 API，例如调用 [**Contains**](https://msdn.microsoft.com/library/windows/apps/jj635925) 或 [**TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj603139)。
 
-[{ThemeResource} markup extension](themeresource-markup-extension.md) is a similar markup extension that references named resources in another location. The difference is that {ThemeResource} markup extension has the ability to return different resources depending on the system theme that's active. For more info see [{ThemeResource} markup extension](themeresource-markup-extension.md).
+[{ThemeResource} 标记扩展](themeresource-markup-extension.md)是在其他位置中引用命名资源的类似标记扩展。 不同之处在于 {ThemeResource} 标记扩展能够返回不同的资源，具体取决于处于活动状态的系统主题。 有关详细信息，请参阅 [{ThemeResource} 标记扩展](themeresource-markup-extension.md)。
 
-**StaticResource** is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the "\{" and "\}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
+**StaticResource** 是标记扩展。 当需要将属性值转义为除文字值或处理程序名称之外的值时，以及当需求更具全局性而不是仅仅将类型转换器放在某些类型或属性上时，通常需要实现标记扩展。 XAML 中的所有标记扩展在其属性语法中都使用“\{”和“\}”字符，通过此约定，XAML 处理器可以知道标记扩展必须处理属性。
 
-### An example {StaticResource} usage
+### 示例 {StaticResource} 用法
 
-This example XAML is taken from the [XAML data binding sample](http://go.microsoft.com/fwlink/p/?linkid=226854).
+以下示例 XAML 摘自 [XAML 数据绑定示例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
 
 ```xml
 <StackPanel Margin="5">
@@ -65,28 +65,28 @@ This example XAML is taken from the [XAML data binding sample](http://go.microso
 </StackPanel> 
 ```
 
-This particular example creates an object that's backed by a custom class, and creates it as a resource in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). To be a valid resource, this `local:S2Formatter` element must also have an **x:Key** attribute value. The value of the attribute is set to "GradeConverter".
+这个特定示例创建一个由自定义类支持的对象，并将它作为 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的一个资源。 为了使此 `local:S2Formatter` 元素成为有效的资源，它还必须具有一个 **x:Key** 属性值。 该属性的值设置为“GradeConverter”。
 
-The resource is then requested just a bit further into the XAML, where you see `{StaticResource GradeConverter}`.
+随后会将该资源进一步请求到 XAML 中，在 XAML 中可以看到 `{StaticResource GradeConverter}`。
 
-Note how the {StaticResource} markup extension usage is setting a property of another markup extension [{Binding} markup extension](binding-markup-extension.md), so there's two nested markup extension usages here. The inner one is evaluated first, so that the resource is obtained first and can be used as a value. This same example is also shown in {Binding} markup extension.
+请注意 {StaticResource} 标记扩展用法如何设置另一个标记扩展 [{Binding} 标记扩展](binding-markup-extension.md)的属性，以便在这里有两个嵌套标记扩展用法。 内部嵌套将先求值，以便该资源首先获取并且可以用作一个值。 此相同示例也显示在 {Binding} 标记扩展中。
 
-## Design-time tools support for the **{StaticResource}** markup extension
+## 设计时工具支持 **{StaticResource}** 标记扩展
 
-Microsoft Visual Studio 2013 can include possible key values in the Microsoft IntelliSense dropdowns when you use the **{StaticResource}** markup extension in a XAML page. For example, as soon as you type "{StaticResource", any of the resource keys from the current lookup scope are displayed in the IntelliSense dropdowns. In addition to the typical resources you'd have at page level ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) and app level ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)), you also see [XAML theme resources](https://msdn.microsoft.com/library/windows/apps/mt187274), and resources from any extensions your project is using.
+当你在 XAML 页面中使用 **{StaticResource}** 标记扩展时，Microsoft Visual Studio 2013 可在 Microsoft IntelliSense 下拉菜单中包含可能的键值。 例如，只要键入“{StaticResource”，来自当前查找作用域的任何资源键就会显示在 IntelliSense 下拉菜单中。 除了你在页面级别 ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) 和应用级别 ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) 上具有的典型资源外，你还可以查看 [XAML 主题资源](https://msdn.microsoft.com/library/windows/apps/mt187274)以及你的项目正在使用的任何扩展中的资源。
 
-Once a resource key exists as part of any **{StaticResource}** usage, the **Go To Definition** (F12) feature can resolve that resource and show you the dictionary where it's defined. For the theme resources, this goes to generic.xaml for design time.
+在资源键作为任何 **{StaticResource}** 用法的一部分存在后，“转至定义”****(F12) 功能可以解析该资源并向你显示其定义所在的字典。 若要获取主题资源，请转到设计时 generic.xaml。
 
-## Related topics
+## 相关主题
 
-* [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
-* [x:Key attribute](x-key-attribute.md)
-* [{ThemeResource} markup extension](themeresource-markup-extension.md)
+* [x:Key 特性](x-key-attribute.md)
+* [{ThemeResource} 标记扩展](themeresource-markup-extension.md)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

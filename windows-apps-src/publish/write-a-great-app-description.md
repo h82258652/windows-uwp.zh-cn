@@ -1,45 +1,45 @@
 ---
 author: jnHs
-Description: A great description can make your app stand out in the Windows Store and help encourage customers to download it.
-title: Write a great app description
+Description: "出色的提要可以让你的应用在 Windows 应用商店中脱颖而出，并有助于鼓励用户下载它。"
+title: "编写出色的应用提要"
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 translationtype: Human Translation
-ms.sourcegitcommit: 1591a9a84db2d0b00345d522ee5fc076142e0054
-ms.openlocfilehash: 01bc284b74568651012acfc7fb29c8912bb1f4d1
+ms.sourcegitcommit: 17e7724eaa8a33f17360eb6e24fcc22068c5d477
+ms.openlocfilehash: 56b8492fea59c9a744c948d27e728e2305388cf8
 
 ---
 
-# Write a great app description
+# 编写出色的应用提要
 
 
-A great description can make your app stand out in the Windows Store and help encourage customers to download it. [The description you enter when submitting your app](create-app-store-listings.md#description) is displayed in your app's Store listing. The first few lines may also be displayed in search results and algorithm lists in the Store.
+出色的提要可以让你的应用在 Windows 应用商店中脱颖而出，并有助于鼓励用户下载它。 [提交应用时输入的提要](create-app-descriptions.md)显示在应用的应用商店一览中。 前几行也可能显示在应用商店中的搜索结果和算法列表中。
 
 
-Here are some tips for making your app's description the best it can be.
+以下是使应用的提要能成为最好提要的一些提示。
 
--   **Grab attention in the first few sentences.** The beginning of your description is the most important, so make sure it grabs and holds attention. Start with the value prop: why should potential customers take the time and money to get your app? What is the benefit to choosing your app over another? In one or two sentences, using plain and clear language, explain your app's unique appeal and why someone would want it.
--   **Make it easy to learn about your app.** After your initial hook, describe additional benefits, in-app purchase opportunities, and other details about your app that customers will want to know. Make sure you include any disclosures or information that you are required to provide under the law in the markets where you are distributing your app.
--   **Use lists and short paragraphs.** Potential customers may just take a quick glance at your app's description. Breaking up the content by using short paragraphs and lists makes it easier to scan.
-    > **Note**  Adding a list of [app features](create-app-store-listings.md#app-features) can also help to quickly show what your app does. This list appears directly below the app description.
--   **Avoid dry language.** Write your description using engaging language. Be sure the wording clearly describes what your app does, but say it in a way that doesn't sound boring. For many apps, a casual and friendly tone works well.
--   **Use a length that is just right.** A good description reads quickly, but also includes enough info to get the reader interested and explain what the app does. A complex app will need more sentences to describe it; a simple app may need only a few. In most cases the right length is somewhere over 200 words, but well under 3000.
--   **Be clear about free trials and add-ons.** If you offer a free trial of your app, be sure to explain how that trial works, so that customers understand which features are limited. It's also a good idea to mention what types of add-ons are available, particularly if they have significant impacts on your app's functionality.
--   **Use standard capitalization and punctuation.** Descriptions in all caps, or those that have unusual punctuation, can be hard to read.
--   **Don't forget to check the spelling and grammar.** A description with lots of misspelled words or mangled sentences doesn't reflect well on the quality of your app. Be sure to review your description (or have someone else take a look) to check for errors.
--   **Don't include links or info that belongs elsewhere.** URLs that you enter in the description field won't be clickable, so don't try to add links for things like your privacy policy or support website. Instead, add these in the designated areas of the **Store listing** page.
--   **Don't try to use HTML tags.** HTML or other code will not be rendered. Your description needs to be plain text only.
--   **Get ideas by reviewing descriptions of similar apps in the Store.** Take a look at how other developers describe their apps. This also helps you figure out what you can emphasize that is different about your app.
-
- 
+-   **开头几句话就要吸引眼球。** 提要的开头部分最为重要，所以一定要确保能够吸引和抓住注意力。 从值属性开始：为什么潜在客户会花费时间和金钱来获取你的应用？ 与其他应用相比，选择你的应用的优点有哪些？ 用一两句简单明了的话来介绍你的应用的独特吸引力，以及让别人想要购买的原因。
+-   **使客户能够轻松了解应用。** 在开头语之后，描述其他优点、应用内购买机会及客户可能希望了解的有关你的应用的其他详细信息。 确保依据分发应用所在市场的法律规定纳入所有要求提供的披露内容或信息。
+-   **使用列表和简短的段落。** 潜在客户可能只会快速浏览应用的提要。 使用简短的段落和列表将内容拆分可以更加方便用户浏览。
+    > **注意** 添加[应用功能](create-app-descriptions.md#app-features)列表也可以帮助快速显示该应用的功能。 此列表应直接位于应用提要下方。
+-   **避免使用枯燥乏味的语言。** 应使用引人入胜的语言来撰写提要。 确保措辞能够清楚地描述你的应用的功能，但请用有趣的方式来介绍。 对于大多数应用，采用随和而友好的语气效果较好。
+-   **提要的长度应恰到好处。** 一个好的提要应该读起来轻松快速，但也要包含足够的信息以让读者产生兴趣，并将应用的功能介绍清楚。 复杂的应用将需要更多篇幅来介绍；而简单的应用可能只需要几句话。 在大多数情况下，合适的长度在 200 字左右，但最好不要超过 3000 字。
+-   **清楚说明免费试用和应用内产品的情况。** 如果你为你的应用提供免费试用版，一定要解释清楚试用版的相关情况，以便让客户了解哪些功能受到限制。 提一下有哪些类型的应用内产品，这也是一个不错的主意，特别是当它们对你的应用的功能有重大影响时。
+-   **使用标准大写形式和标点符号。** 全部采用大写形式的提要，或使用独特标点符号的提要难以阅读。
+-   **不要忘了检查拼写和语法。** 如果提要中有很多拼写错误的单词或错乱的句子，这就不能很好地反映你的应用的质量。 一定要检查你的提要（或让其他人看一下）以查看是否存在错误。
+-   **不要包含链接或其他位置上的信息。** 你在提要字段中输入的 URL 不可单击，因此不要尝试添加诸如隐私策略或支持网站等内容的链接。 而是在“应用描述”****页面的指定区域中添加这些内容。
+-   **不要尝试使用 HTML 标记。** HTML 或其他代码将不会呈现。 你的提要必须仅为纯文本。
+-   **通过查看应用商店中类似应用的提要来获得灵感。** 看看其他开发者如何描述他们的应用。 这也有助于你找出可加以强调的你的应用的与众不同之处。
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO5-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,112 +1,100 @@
 ---
-author: GrantMeStrength
+author: martinekuan
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
-title: What's a Universal Windows Platform (UWP) app?
-description: Learn about the different types of apps that we call Universal Windows apps--Windows Store apps, Windows Phone Store apps, and Windows Runtime apps.
+title: "什么是通用 Windows 平台 (UWP) 应用？"
+description: "了解我们称之为“通用 Windows 应用”的不同应用类型：Windows 应用商店应用、Windows Phone 应用商店应用和 Windows 运行时应用。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6be8bb0a78b614e160fb40629601bdab2d7fc71a
-ms.openlocfilehash: 3fd9f4d539977c4b531e08efe0719328365c757c
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f02851d848a82af7104a6038c5d8850d5362c832
 
 ---
 
-# What's a Universal Windows Platform (UWP) app?
+# 什么是通用 Windows 平台 (UWP) 应用？
 
-If you are new to the Windows platform, or coming from the worlds of .NET, Windows Forms or Silverlight, you might be wondering what a UWP app actually *is*. 
+通用 Windows 平台 (UWP) 应用是一种基于通用 Windows 平台 (UWP) 生成的 Windows 体验，它首次作为 Windows 运行时在 Windows 8 中引入。 用户希望其*体验*在所有设备上均为移动版，并且希望使用现有的最方便或最高效的设备完成任务，此理念是 UWP 应用的核心。
 
-As a famous book once said, "Don't panic!" Everything will soon become clear. 
+通过 Windows 10，你可以更加轻松地开发适用于 UWP 的应用，并且只需一个 API 集、一个应用包和一个应用商店，即可访问所有 Windows 10 设备 – PC、平板电脑、手机等。 对许多屏幕大小以及各种交互模型（无论是触控、鼠标和键盘、游戏控制器还是笔）的支持也更加轻松。
 
-A Universal Windows Platform (UWP) app is a Windows experience that is built upon the Universal Windows Platform (UWP), which was first introduced in Windows 8 as the Windows Runtime. At the core of UWP apps is the idea that users want their *experiences* to be mobile across ALL their devices, and they want to use whatever device is most convenient or productive for the task at hand.
+![Windows 支持的设备](images/1894834-hig-device-primer-01-500.png)
 
-Windows 10 makes it easier to develop apps for the UWP with just one API set, one app package, and one store to reach all Windows 10 devices – PC, tablet, phone, Xbox, HoloLens, Surface Hub and more. It’s easier to support a number of screen sizes, and also a variety of interaction models, whether it be touch, mouse and keyboard, a game controller, or a pen.
-
-The bottom line: You can spend your time working with familiar programming languages and APIs, all in single project, and have the very same code run on the huge range of Windows hardware that exists today.
-
-![Windows-powered devices](images/1894834-hig-device-primer-01-500.png)
-
-##So, what *exactly* is a UWP app?
+##那么，UWP 应用是什么呢？
 
 
-What makes a UWP app special? Here are some of the characteristics that make UWP apps on Windows 10 different.
+什么使 UWP 应用与众不同？ 以下特性使 Windows 10 上的 UWP 应用与众不同。
 
--   You target device families, not an OS.
+-   你的目标设备系列，而非某个操作系统。
 
-    A device family identifies the APIs, system characteristics, and behaviors that you can expect across devices within the device family. It also determines the set of devices on which your app can be installed from the store.
+    设备系列可标识在其中的设备上所需的 API、系统特性和行为。 它还可以确定在其上安装应用商店应用的设备集。
 
--   Apps are packaged and distributed using the .AppX packaging format.
+-   应用使用 .AppX 打包格式进行打包和分配。
 
-    All UWP apps are distributed as an AppX package. This provides a trustworthy installation mechanism and ensures that your apps can be deployed and updated seamlessly.
+    所有 UWP 应用均可作为 AppX 程序包进行分配。 这提供了值得信赖的安装机制，并确保应用可以无缝进行部署和更新。
 
--   There's one store for all devices.
+-   存在一个适用于所有设备的应用商店。
 
-    After you register as an app developer, you can submit your app to the store and make it available on all device families, or only those you choose. You submit and manage all your apps for Windows devices in one place.
+    注册为应用开发人员后，你可以向应用商店提交应用，并使其在所有设备系列或仅在所选设备系列上可用。 你将在一个位置上提交和管理适用于 Windows 设备的所有应用。
 
--   There's a common API surface across device families.
+-   设备系列上有常用 API 图面。
 
-    The Universal Windows Platform (UWP) core APIs are the same for all Windows device families. If your app uses only the core APIs, it will run on any Windows 10 device.
+    所有 Windows 设备系列均使用相同的通用 Windows 平台 (UWP) 核心 API。 如果你的应用仅使用核心 API，它将在任何 Windows 10 设备上运行。
 
--   Extension SDKs make your app light up on specialized devices.
+-   扩展 SDK 可在专用设备上装饰你的应用。
 
-    Extension SDKs add specialized APIs for each device family. If your app is intended for a particular device family, you can make it light up by using these APIs. You can still have one app package that runs on all devices by checking what device family your app is running on before calling an extension API.
+    扩展 SDK 可为每个设备系列添加专用 API。 如果你的应用面向特定的设备系列，你可以使用这些 API 装饰该应用。 在调用扩展 API 之前，通过检查应用在什么设备系列上运行，你仍然可以拥有一个在所有设备上运行的应用包。
 
--   Adaptive Controls and input
+-   自适应控件和输入
 
-    UI elements use *effective pixels* (see [Responsive design 101 for UWP apps](https://msdn.microsoft.com/library/windows/apps/Dn958435)), so they automatically adapt themselves based on the number of screen pixels available on the device. And they work well with multiple types of input such as keyboard, mouse, touch, pen, and Xbox One controllers. If you need to further tailor your UI to a specific screen size or device, new layout panels and tooling help you adapt your UI to the devices your app may run on.
+    UI 元素使用*有效像素*（请参阅[适用于 UWP 应用的响应式设计 101](https://msdn.microsoft.com/library/windows/apps/Dn958435)），因此它们会基于设备上可用的屏幕像素数自动自行调整。 而且它们与多种输入类型（如键盘、鼠标、触摸、笔和 Xbox One 控制器）配合良好。 如果你需要进一步为特定屏幕大小或设备定制 UI，新的布局面板和工具将帮助你使 UI 适应运行应用的设备。
 
-For a more detailed look at the UWP, see [Guide to Universal Windows Platform apps](universal-application-platform-guide.md).
+有关 UWP 的详细信息，请参阅[通用 Windows 平台应用指南](universal-application-platform-guide.md)。
 
-## Use a language you already know
-
-
-You can create UWP apps using the programming languages you're most familiar with, like C# or Visual Basic with XAML, JavaScript with HTML, or C++ with DirectX and/or Extensible Application Markup Language (XAML). You can even write components in one language and use them in an app that's written in another language.
-
-UWP apps use the Windows Runtime, a native API built into the operating system. This API is implemented in C++ and supported in C#, Visual Basic, C++, and JavaScript in a way that feels natural for each language.
-
-Microsoft Visual Studio 2015 provides a UWP app template for each language that lets you create a single project for all devices. When your work is finished, you can produce an app package and submit it to the Windows Store from within Visual Studio to get your app out to customers on any Windows 10 device.
-
-## UWP apps come to life on Windows
+## 使用一种你已知道的语言
 
 
-On Windows, your app can deliver relevant, real-time info to your users and keep them coming back for more. In the modern app economy, your app has to be engaging to stay at the front of your users’ lives. Windows provides you with lots of resources to help keep your users returning to your app:
+你可以使用最熟悉的编程语言（如 C# 或 Visual Basic 和 XAML、JavaScript 和 HTML，或 C++ 和 DirectX 和/或 Extensible Application Markup Language (XAML)）创建 UWP 应用。 你甚至可以采用一种语言编写组件，然后在采用另一种语言编写的应用中使用这些组件。
 
--   Live tiles and the lock screen show contextually relevant and timely info at a glance.
--   Push notifications bring real-time, breaking alerts to your user’s attention when they're needed.
+UWP 应用可以使用 Windows 运行时，它是一个内置于操作系统的本机 API。 此 API 采用 C++ 实现，并支持 C#、Visual Basic、C++ 和 JavaScript，且对于每种语言都以非常自然的方式支持。
 
--   The Action Center is a place where you can organize and display notifications and content that users need to take action on.
+Microsoft Visual Studio 2015 为每种语言提供 UWP 应用模板，该模板允许你为所有设备创建单个项目。 完成工作后，你可以生成应用包，并将其从 Visual Studio 提交到 Windows 应用商店，以向任何 Windows 10 设备上的客户提供你的应用。
 
--   Background execution and triggers bring your app to life just when the user needs it.
-
--   Your app can use voice and Bluetooth LE devices to help users interact with the world around them.
-
-Finally, you can use roaming data and the Windows Credential Locker to enable a consistent roaming experience across all of the Windows screens where users run your app. Roaming data gives you an easy way to store a user’s preferences and settings in the cloud, without having to build your own sync infrastructure. And you can store user credentials in the Credential Locker, where security and reliability are the top priority.
-
-##  Monetize your app your way
+## 在 Windows 上构建 UWP 应用
 
 
-On Windows, you can choose how you'll monetize your app—across phones, tablets, PCs, and other devices. We give you a number of ways to make money with your app and the services it delivers. All you need to do is choose the one that works best for you:
+在 Windows 上，你的应用可以向用户提供相关且实时的信息，并且吸引他们再次访问更多信息。 在现代应用经济中，你的应用必须具有足够的吸引力才能受到用户的青睐。 Windows 为你提供了大量资源，使你的用户会回过头来使用你的应用：
 
--   A paid download is the simplest option. Just name your price.
--   Trials give you a great way to let users try your app before buying it, providing easier discoverability and conversion than the more traditional "freemium" options.
--   In-app purchase offers you the most flexibility for monetizing your app.
+-   动态磁贴和锁屏可以显示上下文相关且实时的信息概览。
+-   推送通知可在用户需要时，提供实时的突发提醒来引起用户的注意。
 
-## Let's get started
+-   操作中心可让你组织和显示用户需要采取操作的通知和内容。
+
+-   后台执行和触发器使你的应用仅在用户需要时才会运行。
+
+-   你的应用可以使用语音和蓝牙 LE 设备 来帮助用户与周围的世界进行交互。
+
+最后，你可以使用漫游数据和 Windows 凭据保险箱，在用户运行你的应用的所有 Windows 屏幕上提供一致的漫游体验。 通过漫游数据可以方便地在云中存储用户的首选项和设置，而无需生成你自己的同步基础结构。 另外，你可以将用户凭据存储在凭据保险箱中，该功能最为重视安全性和可靠性。
+
+##  以你自己的方式销售应用
 
 
-For a more detailed look at the UWP, read the [Guide to Universal Windows Platform apps](universal-application-platform-guide.md). Then, check out [Get set up](get-set-up.md) to download the tools you need to start creating apps.
+在 Windows 上，你可以选择以何种方式销售自己的应用—通过手机、平板电脑、PC 以及其他设备。 我们提供了多种方式让你通过自己的应用及其提供的服务来获得收益。 你只需选择最适合自身的方式即可。
 
-## Related topics
+-   付费下载是最简单的选项， 你只需指定价格即可。
+-   试用是一种绝佳的销售方式，即允许用户在购买前先试用你的应用，与更传统的“免费模式”选项相比，用户更易于发现你的应用并转而使用该应用。
+-   应用内购买是通过自己的应用获得收益的最灵活选项。
+
+## 让我们开始吧
 
 
-* [Guide to Universal Windows Platform apps](universal-application-platform-guide.md)
-* [Get set up](get-set-up.md)
+有关 UWP 详细信息，请参阅[通用 Windows 平台应用指南](universal-application-platform-guide.md)。 然后，请查看[准备工作](get-set-up.md)以下载开始创建应用所需的工具。
 
-## More advanced topics
+## 相关主题
 
-* [.NET Native - What it means for Universal Windows Platform (UWP) developers](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
-* [Universal Windows apps in .NET](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)
-* [.NET for UWP apps](https://msdn.microsoft.com/en-us/library/mt185501.aspx)
+
+* [通用 Windows 平台应用指南](universal-application-platform-guide.md)
+* [准备工作](get-set-up.md)
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

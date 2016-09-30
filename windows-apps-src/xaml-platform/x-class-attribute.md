@@ -1,21 +1,21 @@
 ---
 author: jwmsft
-description: Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
-title: xClass attribute
+description: "配置 XAML 编译，在标记和代码隐藏之间连接分部类。 代码分部类在一个独立的代码文件中定义，标记分部类由代码生成过程在 XAML 编译期间创建。"
+title: "x&#58;Class 属性"
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 translationtype: Human Translation
-ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
-ms.openlocfilehash: 1d04755cc9a2b7689d5373772803b6697227b18a
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
 
 ---
 
-# x:Class attribute
+# x&#58;Class 属性
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
+配置 XAML 编译，在标记和代码隐藏之间连接分部类。 代码分部类在一个独立的代码文件中定义，标记分部类由代码生成过程在 XAML 编译期间创建。
 
-## XAML attribute usage
+## XAML 属性使用方法
 
 
 ``` syntax
@@ -24,28 +24,28 @@ Configures XAML compilation to join partial classes between markup and code-behi
 </object>
 ```
 
-## XAML values
+## XAML 值
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| namespace | Optional. Specifies a namespace that contains the partial class identified by _classname_. If _namespace_ is specified, a dot (.) separates _namespace_ and _classname_. If _namespace_ is omitted, _classname_ is assumed to have no namespace. |
-| classname | Required. Specifies the name of the partial class that connects the loaded XAML and your code-behind for that XAML. | 
+| 命名空间 | 可选。 指定一个包含 _classname_ 所标识的分部类的命名空间。 如果 _namespace_ 已指定，点 (.) 会将 _namespace_ 和 _classname_ 分开。 如果省略 _namespace_，会假设 _classname_ 没有命名空间。 |
+| classname | 必需。 指定分部类的名称，该分部类连接已加载的 XAML 和该 XAML 的代码隐藏。 | 
 
-## Remarks
+## 备注
 
-**x:Class** can be declared as an attribute for any element that is the root of a XAML file/object tree and is being compiled by build actions, or for the [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) root in the application definition of a compiled application. Declaring **x:Class** on any element other than a root node, and under any circumstances for a XAML file that is not compiled with the **Page** build action, results in a compile-time error.
+**x:Class** 可声明为作为一个 XAML 文件/对象树的根并由生成操作编译的任何元素的属性，或者已编译应用程序的应用程序定义中 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根的属性。 在页面根或应用程序根以外的任何元素上，以及在不会使用**“页面”**生成操作编译 XAML 文件的任何环境中声明 **x:Class**，会导致编译时错误。
 
-The class used as **x:Class** cannot be a nested class.
+用作 **x:Class** 的类不能是嵌套类。
 
-The value of the **x:Class** attribute must be a string that specifies the fully qualified name of a class. You can omit namespace information so long as that is how the code-behind is structured also (your class definition starts at the class level). The code-behind file for a page or application definition must be within a code file that is included as part of the project. The code-behind class must be public. The code-behind class must be partial.
+**x:Class** 属性的值必须是一个字符串，用于指定一个类的完全限定名称。 只要构造代码隐藏时省略了命名空间信息（类定义从类级别开始），你可以省略命名空间信息。 一个页面或应用程序定义的代码隐藏文件必须在一个代码文件中，并且该代码文件包含在项目中。 代码隐藏类必须是公共的。 代码隐藏类必须是部分的。
 
-## CLR language rules
+## CLR 语言规则
 
-Although your code-behind file can be a C++ file, there are certain conventions that still follow the CLR language form, so that there is no difference in the XAML syntax. In particular, the separator between the namespace and classname components of any **x:Class** value is always a dot ("."), even though the separator between namespace and classname in the C++ code file associated with the XAML is "::". If you declare nested namespaces in C++, then the separator between the successive nested namespace strings should also be "." rather than "::" when you specify the *namespace* part of the **x:Class** value.
-
-
+尽管代码隐藏文件可以是 C++ 文件，但一些约定仍然遵守 CLR 语言形式，因此在 XAML 语法上没有区别。 具体来讲，命名空间与任何 **x:Class** 值的类名组件之间的分隔符始终为一个点（“.”），即使与 XAML 关联的 C++ 代码文件中的命名空间和类名称之间的分隔符是“::”也是如此。 如果在 C++ 中声明嵌套的命名空间，那么在指定 **x:Class** 值的 *namespace* 部分时，连续的嵌套命名空间字符串之间的分隔符也应是一个“.”，而不是“::”。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

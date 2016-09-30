@@ -1,56 +1,56 @@
 ---
 author: mijacobs
-Description: Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.
-title: Special tile templates
+Description: "特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。"
+title: "特殊磁贴模板"
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# Special tile templates
+
+# 特殊磁贴模板
 
 
 
 
 
-Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles. Each special tile template was specifically built for Windows 10, except for the iconic tile template, a classic special template that has been updated for Windows 10. This article covers three special tile templates: Iconic, Photos, and People.
+特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。 每个特殊磁贴模板均专为 Windows 10 而生成，除了图标磁贴模板，它是针对 Windows 10 进行更新的经典特殊模板。 本文介绍了三种特殊磁贴模板：图标、照片和人脉。
 
-## Iconic tile template
+## <span id="Iconic_tile_template"></span><span id="iconic_tile_template"></span><span id="ICONIC_TILE_TEMPLATE"></span>图标磁贴模板
 
 
-The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop.
+图标模板（也称为“IconWithBadge”模板）允许你在磁贴中心显示较小的图像。 Windows 10 在手机和平板电脑/台式机上都支持该模板。
 
-![small and medium mail tiles](images/iconic-template-mail-2sizes.png)
+![小邮件磁贴和中邮件磁贴](images/iconic-template-mail-2sizes.png)
 
-### How to create an iconic tile
+### <span id="How_to_create_an_iconic_tile"></span><span id="how_to_create_an_iconic_tile"></span><span id="HOW_TO_CREATE_AN_ICONIC_TILE"></span>如何创建图标磁贴
 
-The following steps cover everything you need to know to create an iconic tile for Windows 10. At a high level, you need your iconic image asset, then you send a notification to the tile using the iconic template, and finally you send a badge notification that provides the number to be displayed on the tile.
+以下步骤介绍了要创建适用于 Windows 10 的图标磁贴所需的所有内容。 具体而言，你首先需要图标图像资源，然后使用图标模板向磁贴发送通知，最后发送锁屏提醒通知以提供要在磁贴上显示的数目。
 
-![developer flow of iconic tile](images/iconic-template-dev-flow.png)
+![图标磁贴的开发人员流程](images/iconic-template-dev-flow.png)
 
-**Step 1: Create your image assets in PNG format**
+**步骤 1：创建采用 PNG 格式的图像资源**
 
-Create the icon assets for your tile and place those in your project resources with your other assets. At a bare minimum, create a 200x200 pixel icon, which works for both small and medium tiles on phone and desktop. To provide the best user experience, create an icon for each size. See sizing details in the below image.
+为磁贴创建图标资源，然后将其放置在包含其他资源的项目资源中。 至少创建一个 200x200 像素的图标，这可用于手机和台式机上的小磁贴和中等磁贴。 若要提供最佳用户体验，请为每种大小创建一个图标。 请参阅下图中的调整大小详细信息。
 
-Save icon assets in PNG format and with transparency. On Windows Phone, every non-transparent pixel is displayed as white (RGB 255, 255, 255). For consistency and simplicity, use white for desktop icons as well.
+采用 PNG 格式保存为透明的图标资源。 在 Windows Phone 上，每个非透明像素都显示为白色 (RGB 255, 255, 255)。 为了一致性和简单起见，同样为桌面图标使用白色。
 
-Windows 10 on tablet, laptop, and desktop only supports square icon assets. Phone supports both square assets and assets that are taller than they are wide, up to a 2:3 width:height ratio, which is useful for images such as a phone icon.
+平板电脑、笔记本电脑和台式机上的 Windows 10 仅支持方形图标资源。 手机支持方形资源和高度超过宽度的资源，最多支持 2:3 的宽度:高度比，这非常有利于手机图标之类的图像。
 
-![icon sizing on small and medium tiles, on phone and desktop](images/iconic-template-sizing-info.png)
+![手机和台式机的小磁贴以及中磁贴上的图标大小调整](images/iconic-template-sizing-info.png)
 
-**Step 2: Create your base tile**
+**步骤 2：创建基本磁贴**
 
-You can use the iconic template on both primary and secondary tiles. If you're using it on a secondary tile, you'll first have to create the secondary tile or use an already-pinned secondary tile. Primary tiles are implicitly pinned and can always be sent notifications.
+你可以在主要磁贴和辅助磁贴上使用图标模板。 如果要在辅助磁贴上使用它，首先需要创建辅助磁贴或使用已固定的辅助磁贴。 主要磁贴已隐式固定，并且始终可以向其发送通知。
 
-**Step 3: Send a notification to your tile**
+**步骤 3：向磁贴发送通知**
 
-Although this step can vary based on whether the notification is sent locally or via server push, the XML payload that you send remains the same. To send a local tile notification, create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) for your tile (either primary or secondary tile), then send a notification to the tile that uses the iconic tile template as seen below. Ideally, you should also include bindings for wide and large tile sizes using [adaptive tile templates](tiles-and-notifications-adaptive-tiles-schema.md).
+尽管此步骤将根据通知的发送方式（通过本地或通过服务器推送）而有所不同，但所发送的 XML 负载依然保持不变。 若要发送本地磁贴通知，请为磁贴（主要磁贴或辅助磁贴）创建 [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628)，然后向使用图标磁贴模板的磁贴发送通知，如下所示。 理想情况下，还应为使用[自适应磁贴模板](tiles-and-notifications-adaptive-tiles-schema.md)的宽形磁贴和大磁贴包含绑定。
 
-Here's sample code for the XML payload:
+下面是 XML 负载的示例代码：
 
 ```XML
 <tile>
@@ -68,13 +68,13 @@ Here's sample code for the XML payload:
 </tile>
 ```
 
-This iconic tile template XML payload uses an image element that points to the image that you created in Step 1. Now your tile is ready to display the badge next to your icon; all that's left is sending badge notifications.
+此图标磁贴模板 XML 负载使用的图像元素指向在步骤 1 中创建的图像。 现在，磁贴已经可以在图标旁边显示锁屏提醒；只需发送锁屏提醒通知即可。
 
-**Step 4: Send a badge notification to your tile**
+**步骤 4：向磁贴发送锁屏提醒通知**
 
-As with step 3, this step can vary based on whether the notification is sent locally or via server push, yet the XML payload that you send remains the same. To send a local badge notification, create a [**BadgeUpdater**](https://msdn.microsoft.com/library/windows/apps/br208537) for your tile (either primary or secondary tile), then send a badge notification with your desired value (or clear the badge).
+与步骤 3 一样，此步骤将根据通知的发送方式（通过本地或通过服务器推送）而有所不同，但所发送的 XML 负载依然保持不变。 若要发送本地锁屏提醒通知，请为磁贴（主要磁贴或辅助磁贴）创建 [**BadgeUpdater**](https://msdn.microsoft.com/library/windows/apps/br208537)，然后发送具有所需值的锁屏提醒（或清除锁屏提醒）通知。
 
-Here's sample code for the XML payload:
+下面是 XML 负载的示例代码：
 
 ```XML
 <badge value="2"/></code></pre></td>
@@ -83,30 +83,30 @@ Here's sample code for the XML payload:
 </table>
 ```
 
-The tile's badge will update accordingly.
+磁贴的锁屏提醒将进行相应的更新。
 
-**Step 5: Putting it all together**
+**步骤 5：组织到一起**
 
-The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](https://msdn.microsoft.com/library/windows/apps/hh779724) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](https://msdn.microsoft.com/library/windows/apps/hh779719) specifies the numerical value; tile properties control your tile's display name, color, and more.
+下图说明了如何将各个 API 和负载与图标磁贴模板的每个方面关联在一起。 [磁贴通知](https://msdn.microsoft.com/library/windows/apps/hh779724)（包含那些 &lt;binding&gt; 元素）用于指定图标模板和图像资源；[锁屏提醒通知](https://msdn.microsoft.com/library/windows/apps/hh779719)指定数值；磁贴属性控制你的磁贴的显示名称、颜色等。
 
-![apis and payloads associated with the iconic tile template](images/iconic-template-properties-info.png)
+![与图标磁贴模板关联的 API 和负载](images/iconic-template-properties-info.png)
 
-## Photos tile template
-
-
-The photos tile template lets you display a slideshow of photos on your live tile. The template is supported on all tile sizes, including small, and behaves the same on each tile size. The below example shows five frames of a medium tile that uses the photos template. The template has a zoom and cross-fade animation that cycles through selected photos and loops indefinitely.
-
-![image slideshow using photos tile template](images/photo-tile-template-image01.jpg)
-
-### How to use the photos template
-
-Using the photos template is easy if you've installed the [Windows 10 version of NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx). Although you can use raw XML, we highly recommend going with NotificationExtensions so that you don't have to worry about generating valid XML or XML-escaping content.
-
-Windows Phone displays up to 9 photos in a slideshow; tablet, laptop, and desktop display up to 12.
-
-For information about sending the tile notification, see the [Send notifications article](tiles-badges-notifications.md).
+## <span id="Photos_tile_template"></span><span id="photos_tile_template"></span><span id="PHOTOS_TILE_TEMPLATE"></span>照片磁贴模板
 
 
+照片磁贴模板允许你在动态磁贴上显示照片的幻灯片。 该模板受所有磁贴大小（包括小磁贴）的支持，并且对于每个磁贴大小的行为都相同。 下面的示例演示了使用照片模板的具有五个画面的中等磁贴。 该模板具有在选定的照片之间无限循环的缩放和交叉淡入淡出动画。
+
+![使用照片磁贴模板的图像幻灯片放映](images/photo-tile-template-image01.jpg)
+
+### <span id="How_to_use_the_photos_template"></span><span id="how_to_use_the_photos_template"></span><span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE"></span>如何使用照片模板
+
+如果你已安装 [Windows 10 版本的 NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)，使用图片模板将非常简单。 尽管你可以使用原始的 XML，但我们强烈建议使用 NotificationExtensions，这样你便无需担心生成有效的 XML 或 XML 转义内容。
+
+Windows Phone 最多在幻灯片中显示 9 张照片；平板电脑、笔记本电脑和台式机最多显示 12 张。
+
+有关发送磁贴通知的信息，请参阅[发送通知文章](tiles-badges-notifications.md)。
+
+<span codelanguage="XML"></span>
 ```XML
 <colgroup>
 <col width="100%" />
@@ -182,36 +182,36 @@ TileContent content = new TileContent()
 };
 ```
 
-## People tile template
+## <span id="People_tile_template"></span><span id="people_tile_template"></span><span id="PEOPLE_TILE_TEMPLATE"></span>“人脉”磁贴模板
 
 
-The People app in Windows 10 uses a special tile template that displays a collection of images in circles that slide around vertically or horizontally on the tile. This tile template has been available since Windows 10 Build 10572, and anyone is welcome to use it in their app.
+Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在磁贴上垂直或水平滚动的圆形图像。 这种磁贴模板自 Windows 10 版本 10572 起推出，任何人都可随意在其应用中使用该模板。
 
-The People tile template works on tiles of these sizes:
+“人脉”磁贴模板可用于以下大小的磁贴：
 
-**Medium tile** (TileMedium)
+**中磁贴** (TileMedium)
 
-![medium people tile](images/people-tile-medium.png)
-
- 
-
-**Wide tile** (TileWide)
-
-![wide people tile](images/people-tile-wide.png)
+![中等“人脉”磁贴](images/people-tile-medium.png)
 
  
 
-**Large tile (desktop only)** (TileLarge)
+**宽磁贴** (TileWide)
 
-![large people tile](images/people-tile-large.png)
+![宽“人脉”磁贴](images/people-tile-wide.png)
 
  
 
-If you're using [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx), all you have to do to make use of the People tile template is create a new *TileBindingContentPeople* object for your *TileBinding* content. The *TileBindingContentPeople* class has an Images property where you add your images.
+**大磁贴（仅限台式机）** (TileLarge)
 
-If you're using raw XML, set the *hint-presentation* to "people" and add your images as children of the binding element.
+![大“人脉”磁贴](images/people-tile-large.png)
 
-The following C# code sample assumes that you're using [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx).
+ 
+
+如果你使用的是 [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)，若要使用“人脉”磁贴模板，只需为 *TileBinding* 内容创建新的 *TileBindingContentPeople* 对象即可。 *TileBindingContentPeople* 类具有一个 Images 属性，你可以在其中添加图像。
+
+如果你使用的是原始 XML，请将 *hint-presentation* 设置为“people”并将图像添加为绑定元素的子元素。
+
+以下 C# 代码示例假定你使用的是 [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)。
 
 ```CSharp
 TileContent content = new TileContent()
@@ -260,24 +260,24 @@ TileContent content = new TileContent()
 </tile>
 ```
 
-For the best user experience, we recommend that you provide the following number of photos for each tile size:
+若要提供最佳用户体验，我们建议为每种磁贴大小提供以下数量的照片：
 
--   Medium tile: 9 photos
--   Wide tile: 15 photos
--   Large tile: 20 photos
+-   中等磁贴：9 张照片
+-   宽形磁贴：15 张照片
+-   大磁贴：20 张照片
 
-Having that number of photos allows for a few empty circles, which means that the tile won't be too visually busy. Feel free to tweak the number of photos to get the look that works best for you.
+提供如此数量的照片将允许出现几个空圆圈，这意味着磁贴的视觉效果不会过于拥挤。 可随意调整照片数量以获得最合适的外观。
 
-To send the notification, see [Choose a notification delivery method](tiles-and-notifications-choosing-a-notification-delivery-method.md).
+若要发送通知，请参阅[选择通知传递方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)。
 
-## Related topics
+## <span id="related_topics"></span>相关主题
 
 
-* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-people-tile-template)
-* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Tiles, badges, and notifications](tiles-badges-notifications.md)
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
-* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
+* [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-people-tile-template)
+* [GitHub 上的 NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [磁贴、锁屏提醒和通知](tiles-badges-notifications.md)
+* [创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)
+* [自适应磁贴模板：架构和文档](tiles-and-notifications-adaptive-tiles-schema.md)
  
 
  
@@ -288,6 +288,6 @@ To send the notification, see [Choose a notification delivery method](tiles-and-
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

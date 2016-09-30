@@ -6,17 +6,18 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f9c475a90c270270217999c5a7289e29e7fef208
-ms.openlocfilehash: a1d97c5a66db1b799ccc16769ff18130155743b8
+ms.sourcegitcommit: d65e1315e83fef5e53771adad0943c9cb59d9139
+ms.openlocfilehash: 9de90236d94522f1b80309c3fec51ce59aee0319
 
 ---
 
 # 键盘交互
 
 
-键盘输入是应用的所有用户交互体验的一个重要部分。 对于残疾人士，或者只是认为键盘是与应用交互的最有效方法的用户而言，键盘非常重要。 例如，用户应可以使用 Tab 和箭头键导航应用，使用空格键和 Enter 键激活 UI 元素，并使用键盘快捷方式访问命令。  
-
+键盘输入是应用的所有用户交互体验的一个重要部分。 对于残疾人士，或者只是认为键盘是与应用交互的最有效方法的用户而言，键盘非常重要。 例如，用户应可以使用 Tab 和箭头键导航应用，使用空格键和 Enter 键激活 UI 元素，并使用键盘快捷方式访问命令。
 ![键盘 Hero 图像](images/input-patterns/input-keyboard-small.jpg)
+
+
 
 **重要的 API**
 
@@ -78,19 +79,19 @@ ms.openlocfilehash: a1d97c5a66db1b799ccc16769ff18130155743b8
 <table>
 <tr>
     <td>**默认布局模式中的触摸键盘：  **</td>
-    <td>![默认布局模式中的触摸键盘](images/touchkeyboard-standard.png)</td>
+    <td>![the touch keyboard in default layout mode](images/touchkeyboard-standard.png)</td>
 </tr>
 <tr>
     <td>**扩展布局模式中的触摸键盘：  **</td>
-    <td>![扩展布局模式中的触摸键盘](images/touchkeyboard-expanded.png)</td>
+    <td>![the touch keyboard in expanded layout mode](images/touchkeyboard-expanded.png)</td>
 </tr>
 <tr>
     <td>**默认缩略图布局模式中的触摸键盘：  **</td>
-    <td>![缩略图布局模式中的触摸键盘](images/touchkeyboard-thumb.png)</td>
+    <td>![the touch keyboard in thumb layout mode](images/touchkeyboard-thumb.png)</td>
 </tr>
 <tr>
     <td>**数字缩略图布局模式中的触摸键盘：  **</td>
-    <td>![数字缩略图布局模式中的触摸键盘](images/touchkeyboard-numeric-thumb.png)</td>
+    <td>![the touch keyboard in numeric thumb layout mode](images/touchkeyboard-numeric-thumb.png)</td>
 </tr>
 </table>
 
@@ -401,7 +402,7 @@ void MyProject::MainPage::Grid_KeyUp(
 -   [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073)
 -   [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810)（继承自 [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)）
 
-### 键
+### 密钥
 
 如果按下某个键，则引发 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 事件。 同样，如果释放某个键，则引发 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)。 通常会侦听这些事件以处理特定键值。 若要确定按下或释放了哪个键，请检查事件数据中的 [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) 值。 **Key** 返回 [**VirtualKey**](https://msdn.microsoft.com/library/windows/apps/br241812) 值。 **VirtualKey** 枚举包括所有受支持的键。
 
@@ -702,6 +703,6 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

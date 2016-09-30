@@ -6,12 +6,15 @@ ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 37858532004f477672f2c19adad93a22ca989f39
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 55932595e0d5592003456a28d00ffd70c5e05eba
 
 ---
+
 # 定期通知概述
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+
+
 
 
 定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。 若要使用定期通知，客户端应用代码需要提供两部分信息：
@@ -25,21 +28,21 @@ ms.openlocfilehash: 37858532004f477672f2c19adad93a22ca989f39
 
  
 
-## 工作原理
+## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>工作原理
 
 
 定期通知要求应用托管一个云服务。 该服务将由所有安装了该应用的用户定期进行轮询。 Windows 在每个轮询间隔（例如一小时一次）向 URI 发送 HTTP GET 请求，下载响应请求而提供的磁贴或锁屏提醒内容（如 XML），并在应用磁贴上显示此内容。
 
 请注意，定期更新不能与 Toast 通知配合使用。 Toast 最好通过[计划](https://msdn.microsoft.com/library/windows/apps/hh465417)或[推送](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)通知来传递。
 
-## URI 位置和 XML 内容
+## <span id="URI_location_and_XML_content"></span><span id="uri_location_and_xml_content"></span><span id="URI_LOCATION_AND_XML_CONTENT"></span>URI 位置和 XML 内容
 
 
 任何有效的 HTTP 或 HTTPS 网址均可用作要轮询 URI。
 
 云服务器的响应包括已下载的内容。 从 URI 返回的内容必须符合[磁贴](tiles-and-notifications-adaptive-tiles-schema.md)或[锁屏提醒](https://msdn.microsoft.com/library/windows/apps/br212851) XML 架构规格，并且必须为 UTF-8 编码。 你可使用已定义的 HTTP 标头来指定通知的[到期时间](#expiry)或[标记](#taggo)。
 
-## 轮询行为
+## <span id="Polling_Behavior"></span><span id="polling_behavior"></span><span id="POLLING_BEHAVIOR"></span>轮询行为
 
 
 可调用以下方法之一开始轮询：
@@ -50,21 +53,21 @@ ms.openlocfilehash: 37858532004f477672f2c19adad93a22ca989f39
 
 调用一个方法时，URI 将立即进行轮询，且磁贴或锁屏提醒将根据所接收的内容进行更新。 初次轮询后，Windows 继续按照所要求的间隔提供更新。 轮询不断进行，直到（使用 [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697)）将其显式阻止、卸载应用或删除磁贴（适用于辅助磁贴的情况）。 否则，即使应用从此再不启动，Windows 也将继续轮询磁贴或锁屏提醒更新。
 
-### 重复出现的间隔
+### <span id="The_recurrence_interval"></span><span id="the_recurrence_interval"></span><span id="THE_RECURRENCE_INTERVAL"></span>重复出现的间隔
 
 指定重复出现的间隔，作为上面所列方法的一个参数。 请注意，虽然 Windows 尽量根据请求进行轮询，但此间隔不是很准确。 所请求的轮询间隔最长可能延迟 15 分钟，具体取决于 Windows。
 
-### 开始时间
+### <span id="The_start_time"></span><span id="the_start_time"></span><span id="THE_START_TIME"></span>开始时间
 
 你可以选择指定一天中的某个特定时间开始轮询。 考虑应用一天仅更改一次磁贴内容。 在此情况下，我们建议你将轮询开始时间设置为接近更新云服务的时间。 例如，如果一家日常购物网站每天早上 8 点发布当日的商品与服务，则在早上 8 点不久之后轮询新磁贴内容。
 
 如果提供开始时间，则首次调用该方法时即会立即轮询内容。 然后，在指定开始时间的 15 分钟之内开始定期轮询。
 
-### 自动重试行为
+### <span id="Automatic_retry_behavior"></span><span id="automatic_retry_behavior"></span><span id="AUTOMATIC_RETRY_BEHAVIOR"></span>自动重试行为
 
 只能在设备联机时轮询 URI。 如果网络可用，但因某种原因无法联系 URI，则轮询间隔此次迭代将被跳过，并将在下个间隔再次轮询 URI。 如果达到轮询间隔时，该设备处于关闭、睡眠或休眠状态，则设备从关闭或睡眠状态返回时，将轮询 URI。
 
-## 磁贴和锁屏提醒通知到期时间
+## <span id="expiry"></span><span id="EXPIRY"></span>磁贴和锁屏提醒通知到期时间
 
 
 默认情况下，定期磁贴和锁屏提醒通知在从下载时刻算起的三天后过期。 通知到期时，此内容将从锁屏提醒、磁贴或队列中删除，且不再向用户显示。 最佳做法是，使用一个对于你的应用或通知合理的时间，在所有定期磁贴和锁屏提醒通知上设置显式过期时间，以确保该内容不会在它不相关时仍存在。 对于具有已定义的使用寿命的内容来说，一个显式过期时间是必需的。 它还可确保在无法连接云服务或用户长时间断开网络时删除过时的内容。
@@ -73,7 +76,7 @@ ms.openlocfilehash: 37858532004f477672f2c19adad93a22ca989f39
 
 例如，股票市场活跃交易日期间，你可将股票价格更新到期时间设置为轮询间隔的两倍（例如，如果是每半小时轮询一次，则将股票价格更新到期时间设置为一小时）。 另一个示例是，新闻应用可确定每日新闻磁贴更新的适当到期时间为一天。
 
-## 通知队列中的定期通知
+## <span id="taggo"></span><span id="TAGGO"></span>通知队列中的定期通知
 
 
 你可将定期磁贴更新与[通知循环](https://msdn.microsoft.com/library/windows/apps/hh781199)结合使用。 默认情况下，“开始”屏幕中的磁贴会显示单条通知的内容，直到有新的通知替换当前的通知。 启用循环之后，队列中最多会保留 5 条通知，磁贴会循环显示这些通知。
@@ -84,15 +87,15 @@ ms.openlocfilehash: 37858532004f477672f2c19adad93a22ca989f39
 
 有关详细信息，请参阅[使用通知队列](https://msdn.microsoft.com/library/windows/apps/hh781199)。
 
-### 启用通知队列
+### <span id="Enabling_the_notification_queue"></span><span id="enabling_the_notification_queue"></span><span id="ENABLING_THE_NOTIFICATION_QUEUE"></span>启用通知队列
 
 若要实现通知队列，请首先启用磁贴队列（请参阅[如何使用具有本地通知的通知队列](https://msdn.microsoft.com/library/windows/apps/hh465429)）。 在应用的生命周期内，调用启用队列必须一次性完成，但在每次启动应用时均调用一次也无妨。
 
-### 你可以一次轮询多条通知。
+### <span id="Polling_for_more_than_one_notification_at_a_time"></span><span id="polling_for_more_than_one_notification_at_a_time"></span><span id="POLLING_FOR_MORE_THAN_ONE_NOTIFICATION_AT_A_TIME"></span>你可以一次轮询多条通知。
 
 你必须为希望 Windows 为磁贴下载的每条通知提供唯一的 URI。 你可使用 [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) 方法一次最多提供五个 URI 与通知队列配合使用。 将在相同时间或接近该时间轮询每个 URI 以获得单个通知负载。 每个轮询的 URL 还可以返回各自的到期时间和标记值。
 
-## 相关主题
+## <span id="related_topics"></span>相关主题
 
 
 * [定期通知指南](https://msdn.microsoft.com/library/windows/apps/hh761461)
@@ -108,6 +111,6 @@ ms.openlocfilehash: 37858532004f477672f2c19adad93a22ca989f39
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

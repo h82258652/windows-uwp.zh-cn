@@ -1,29 +1,33 @@
 ---
 author: TylerMSFT
-title: Handle app activation
-description: Learn how to handle app activation by overriding the OnLaunched method.
+title: "处理应用激活"
+description: "了解如何通过替代 OnLaunched 方法来处理应用激活。"
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 translationtype: Human Translation
-ms.sourcegitcommit: a1bb0d5d24291fad1acab41c149dd9d763610907
-ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
+ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
+ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 
 ---
 
-# Handle app activation
+# 处理应用激活
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Learn how to handle app activation by overriding the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method..
+**重要的 API**
 
-## Override the launch handler
+-   [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-When an app is activated, for any reason, the system sends the [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event. For a list of activation types, see the [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) enumeration.
+了解如何通过替代 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法来处理应用激活。
 
-The [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) class defines methods you can override to handle the various activation types. Several of the activation types have a specific method that you can override. For the other activation types, override the [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) method.
+## 替代启动处理程序
 
-Define the class for your application.
+当激活应用时，无论任何原因，系统都会发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件。 有关激活类型的列表，请参阅 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 枚举。
+
+[**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义了为处理各种激活类型而可以替代的一些方法。 对于其中一些激活类型，有特定的方法可以替代。 对于其他激活类型，则替代 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 方法。
+
+为你的应用程序定义类。
 
 ```xml
 <Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -31,9 +35,9 @@ Define the class for your application.
              x:Class="AppName.App" >
 ```
 
-Override the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method. This method is called whenever the user launches the app. The [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) parameter contains the previous state of your app and the activation arguments.
+替代 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法。 只要用户启动该应用，就会调用此方法。 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 参数包含你的应用之前的状态和激活参数。
 
-**Note**  For Windows Phone Store apps, this method is called each time the user launches the app from Start tile or app list, even when the app is currently suspended in memory. On Windows, launching a suspended app from Start tile or app list doesn’t call this method.
+**注意** 对于 Windows Phone 应用商店应用，每次用户从“开始”磁贴或应用列表启动应用时都会调用此方法，即使该应用当前在内存中已暂停也是如此。 在 Windows 上，从“开始”磁贴或应用列表启动暂停的应用不会调用此方法。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -97,10 +101,10 @@ Override the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br
 > }
 > ```
 
-## Restore application data if app was suspended then terminated
+## 在应用暂停而后终止时还原应用程序数据
 
 
-When the user switches to your terminated app, the system sends the [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event, with [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) set to **Launch** and [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) set to **Terminated** or **ClosedByUser**. The app should load its saved application data and refresh its displayed content.
+当用户切换到终止的应用时，系统将发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，其中 [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 设置为 **Launch**，[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 设置为 **Terminated** 或 **ClosedByUser**。 应用应该加载其保存的应用程序数据并刷新其显示的内容。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -155,20 +159,20 @@ When the user switches to your terminated app, the system sends the [**Activated
 > }
 > ```
 
-If the value of [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) is **NotRunning**, the app failed to save its application data successfully and the app should start over as if it were being initially launched.
+如果 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 的值为 **NotRunning**，则应用无法成功保存其应用程序数据，应用应该如同初始启动一样重新启动。
 
-## Remarks
+## 备注
 
-> **Note**  For Windows Phone Store apps, the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is always followed by [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), even when your app is currently suspended and the user re-launches your app from a primary tile or app list. Apps can skip initialization if there is already content set on the current window. You can check the [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) property to determine if the app was launched from a primary or a secondary tile and, based on that information, decide whether you should present a fresh or resume app experience.
+> **注意** 对于 Windows Phone 应用商店应用，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件始终后跟 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 事件，即使你的应用当前已暂停且用户从主要磁贴或应用列表中重新启动它也是如此。 如果当前窗口上已有内容集，则应用可跳过初始化。 你可以检查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 属性以确定该应用是从主要磁贴启动还是从辅助磁贴启动，并可根据该信息，确定是应显示新的应用体验还是应恢复应用体验。
 
-## Related topics
+## 相关主题
 
-* [Handle app suspend](suspend-an-app.md)
-* [Handle app resume](resume-an-app.md)
-* [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [App lifecycle](app-lifecycle.md)
+* [处理应用暂停](suspend-an-app.md)
+* [处理应用恢复](resume-an-app.md)
+* [应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [应用生命周期](app-lifecycle.md)
 
-**Reference**
+**参考**
 
 * [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766)
 * [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324)
@@ -179,6 +183,6 @@ If the value of [**PreviousExecutionState**](https://msdn.microsoft.com/library/
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

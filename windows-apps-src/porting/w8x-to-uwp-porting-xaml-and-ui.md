@@ -5,7 +5,7 @@ title: "将 Windows 运行时 8.x XAML 和 UI 移植到 UWP"
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
+ms.openlocfilehash: eb543a5ef1da7c9b39438349757c1b394a3be9b5
 
 ---
 
@@ -232,7 +232,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 ## 本地化和全球化
 
-在 UWP App 项目中，你可以重新使用通用 8.1 项目中的 Resources.resw 文件。 复制完该文件后，将其添加到项目，然后将**“生成操作”**设置为**PRIResource**，并将**“复制到输出目录”**设置为**“不复制”**。 [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
+在 UWP App 项目中，你可以重新使用通用 8.1 项目中的 Resources.resw 文件。 复制完该文件后，将其添加到项目，然后将**“生成操作”**设置为**“PRIResource”**，并将**“复制到输出目录”**设置为**“不复制”**。 [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
 
 ## 播放到
 
@@ -485,6 +485,6 @@ Windows 运行时 8.x **SettingsPane** 类不适用于 Windows 10。 除了生�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

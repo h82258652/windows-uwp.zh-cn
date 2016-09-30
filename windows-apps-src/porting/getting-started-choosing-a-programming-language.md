@@ -1,47 +1,47 @@
 ---
 author: mcleblanc
-title: Choosing a programming language
+title: "选择编程语言"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
-description: Choosing a programming language
+description: "选择编程语言"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
+ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
 
 ---
 
-# Getting started: Choosing a programming language
+# 入门：选择编程语言
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Choosing a programming language
+## 选择编程语言
 
-Before we go any further, you should know about the programming languages that you can choose from when you develop Universal Windows Platform (UWP) apps. Although the walkthroughs in this article use C#, you can develop UWP apps using one or more programming languages (see [Languages, tools and frameworks](https://msdn.microsoft.com/library/windows/apps/dn465799)).
+在执行下一步操作之前，你应知道在开发通用 Windows 平台 (UWP) 应用时可从中选择的编程语言。 尽管本文中的演练使用的是 C#，但你可以使用一种或多种编程语言开发 UWP 应用（请参阅[语言、工具和框架](https://msdn.microsoft.com/library/windows/apps/dn465799)）。
 
-You can develop using C++, C#, Microsoft Visual Basic, and JavaScript. JavaScript uses HTML5 markup for UI layout, and the other languages use a markup language called *Extensible Application Markup Language (XAML)* to describe their UI.
+可使用 C++、C#、Microsoft Visual Basic 和 JavaScript 进行开发。 JavaScript 使用用于 UI 布局的 HTML5 标记，其他语言使用一种称为*Extensible Application Markup Language (XAML)* 的标记语言来描述其 UI。
 
-Although we're focusing on C# in this article, the other languages offer unique benefits, which you may want to explore. For example, if your app's performance is a primary concern, especially for intensive graphics, then C++ might be the right choice. The Microsoft .NET version of Visual Basic is great for Visual Basic app developers. JavaScript with HTML5 is great for those coming from a web development background. For more info, see one of the following:
+尽管我们在本文中以 C# 为重点，但其他语言也提供了你可能希望尝试的独特优势。 例如，如果应用的性能是首要关注事项，特别是对于密集图形，则 C++ 可能是正确选择。 Microsoft .NET 版本的 Visual Basic 非常适合 Visual Basic 应用的开发人员。 使用 HTML5 的 JavaScript 非常适合具有 Web 开发背景的开发人员。 有关更多信息，请参见下列内容之一：
 
--   [Create your first Windows Store app using C++](https://msdn.microsoft.com/library/windows/apps/hh974580)
--   [Create your first Windows Store app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581)
--   [Create your first Windows Store app using JavaScript](https://msdn.microsoft.com/library/windows/apps/br211385)
--   [Create your first Windows Phone Store app using C# or Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=397877)
--   [WinJS on Windows Phone 8.1](http://go.microsoft.com/fwlink/p/?LinkID=397879)
+-   [使用 C++ 创建你的第一个 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/hh974580)
+-   [使用 C# 或 Visual Basic 创建你的第一个 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/hh974581)
+-   [使用 JavaScript 创建你的第一个 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/br211385)
+-   [使用 C# 或 Visual Basic 创建你的第一个 Windows Phone 应用商店应用](http://go.microsoft.com/fwlink/p/?LinkID=397877)
+-   [Windows Phone 8.1 上的 WinJS](http://go.microsoft.com/fwlink/p/?LinkID=397879)
 
-**Note**  For apps that use 3D graphics, the OpenGL and OpenGL ES standards are not natively available for UWP apps. If you would rather not rewrite your OpenGL ES code into Microsoft DirectX, you may be interested to know about **Angle**. Angle is an on-going project designed to convert OpenGL to DirectX by translating OpenGL API calls into DirectX API calls. To learn more, see the following:
--   [Angle](https://code.google.com/p/angleproject/)
--   [Create your first Windows Store app using DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [Windows Store app samples that use DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
--   [Where is the DirectX SDK?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
+**注意** 对于使用 3D 图形的应用，OpenGL 和 OpenGL ES 标准本质上不适用于 UWP 应用。 如果你不愿意将 OpenGL ES 代码重新写入到 Microsoft DirectX，你可能会有兴趣了解**“角度”**。 角度是一个持续项目，旨在将 OpenGL API 调用转换为 DirectX API 调用，以将 OpenGL 转换为 DirectX。 若要了解详细信息，请参阅以下内容：
+-   [角度](https://code.google.com/p/angleproject/)
+-   [使用 DirectX 创建你的首个 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [使用 DirectX 的 Windows 应用商店应用示例](http://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [DirectX SDK 在哪里？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
-## Giving C# a go
+## 尝试 C#
 
-As an iOS developer, you're accustomed to Objective-C and Swift. The closest Microsoft programming language to both is C#. For most developers and most apps, we think C# is the easiest and fastest language to learn and use, so this article's info and walkthroughs focus on that language. To learn more about C#, see the following:
+作为 iOS 开发人员，你已习惯使用 Objective-C 和 Swift。 C# 是与 Objective-C 和 Swift 最相似的 Microsoft 编程语言。 对于大多数开发人员和大多数应用而言，我们认为 C# 是可供学习和使用的最容易、最快速的语言，因此本文的信息和演练将以该语言为主。 若要了解有关 C# 的详细信息，请参阅以下内容：
 
--   [Create your first Windows Store app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581)
--   [Windows Store app samples that use C#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [使用 C# 或 Visual Basic 创建你的第一个 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/hh974581)
+-   [使用 C 的 Windows 应用商店应用示例#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
 -   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
 
-Following is a class written in Objective-C and C#. The Objective-C version is shown first, followed by the C# version.
+下面是一个使用 Objective-C 和 C# 编写的类。 首先显示 Objective-C 版本，然后是 C# 版本。
 
 ```obj-c
 // Objective-C header: SampleClass.h.
@@ -91,7 +91,7 @@ mySampleClass.localVariable = false;
 int result = [mySampleClass addThis:1 andThis:2];
 ```
 
-Now, for the C# version. You'll see that like Swift, the header and the implementation are not in separate files.
+现在来看一下 C# 版本。 就像 Swift，你将看到标头和实现不在单独的文件中。
 
 ```csharp
 // C# header and implementation.
@@ -137,14 +137,14 @@ mySampleClass.myLocalVariable = false;
 int result = mySampleClass.AddTwoNumbers(1, 2);
 ```
 
-C# is an easy language to pick up, and comes with the many support classes and frameworks that make up .NET. In no time, you'll be happily writing your code without a square bracket in sight!
+C# 是一种简单易学的语言，并附带构成 .NET 的许多支持类和框架。 在任何时间，你都将愉快地编写代码，并且看不到方括号。
 
-## Next step
+## 下一步
 
-[Getting started: Getting around in Visual Studio](getting-started-getting-around-in-visual-studio.md)
+[入门：熟悉 Visual Studio 环境](getting-started-getting-around-in-visual-studio.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

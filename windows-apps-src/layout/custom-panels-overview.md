@@ -10,7 +10,7 @@ label: XAML custom panels overview
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: aebe6b873fff2a4284f03ca519f998ded742f677
+ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
 
 ---
 
@@ -69,11 +69,11 @@ ms.openlocfilehash: aebe6b873fff2a4284f03ca519f998ded742f677
 
 候选布局必须适合当前应用窗口，否则将剪裁 UI 的其他部分。 面板通常是确定剪裁逻辑的位置。 面板逻辑可以确定何种大小从 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 实现内可用，而且可能必须向子元素施加大小限制并在子元素间划分空间以便达到最佳配置。 在理想情况下，布局的结果使用布局的所有部分的各个属性，但仍然能够适合应用窗口。 这需要良好实现面板的布局逻辑，以及对任何使用该面板构建 UI 的应用代码部分执行正确的 UI 设计。 如果总体 UI 设计包含多于应用可容纳的子元素，则面板设计不可能美观。
 
-使布局系统工作的重要因素是，任何基于 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 的元素在作为容器中的子元素操作时，已拥有一些其自身的固有行为。 例如，一些 **FrameworkElement** 的 API 可通知布局行为，或为布局工作所必需。 其中包括：
+使布局系统工作的重要因素是，任何基于 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 的元素在作为容器中的子元素操作时，已拥有一些其自身的固有行为。 例如，一些 **FrameworkElement** 的 API 可通知布局行为，或为布局工作所必需。 这些功能包括：
 
 -   [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) （实际为 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 属性）
 -   [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)
--   [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
+-   [ **Height** ](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
 -   [**边距**](https://msdn.microsoft.com/library/windows/apps/br208724)
 -   [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) 事件
 -   [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) 和 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
@@ -194,6 +194,6 @@ protected override Size ArrangeOverride(Size finalSize)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

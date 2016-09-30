@@ -1,61 +1,61 @@
 ---
 author: mtoepke
-title: Game technologies for Universal Windows Platform (UWP) apps
-description: In this guide, you'll learn about the technologies available for developing Universal Windows Platform (UWP) games.
+title: "通用 Windows 平台 (UWP) 应用的游戏技术"
+description: "在此指南中，你将了解可用于开发通用 Windows 平台 (UWP) 游戏的技术。"
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83c3fda490d7ab821e8e584291ded642c9c11dd1
+ms.openlocfilehash: 3c7807d0b46a32bfe90c79b7eee3111039ca94ab
 
 ---
 
-# Game technologies for Universal Windows Platform (UWP) apps
+# 通用 Windows 平台 (UWP) 应用的游戏技术
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-In this guide, you'll learn about the technologies available for developing Universal Windows Platform (UWP) games.
+在此指南中，你将了解可用于开发通用 Windows 平台 (UWP) 游戏的技术。
 
-##  Benefits of Windows 10 for game development
-
-
-With the introduction of UWP in Windows 10, your Windows 10 titles will be able to span all of the Microsoft platforms. With free migration from previous versions of Windows, there is a steadily increasing number of Windows 10 clients. The combination of these two things means that your Windows 10 titles will be able to reach a huge number of customers through the Windows Store.
-
-In addition, Windows 10 offers many new features that are particularly beneficial to games:
-
--   Reduced memory paging and reduced overall memory system size
--   Improved graphics memory management actively allocates and protects more memory for the foreground game
-
-## UWP Games with C++ and DirectX
+##  Windows 10 对于游戏开发的优势
 
 
-Real-time games requiring high performance should make use of the DirectX APIs. DirectX is a collection of native APIs for creating games and multimedia applications that require high performance, such as 3D games. Because the DirectX APIs are native, C++ is the only language supported for use with DirectX.
+通过在 Windows 10 中引入 UWP，Windows 10 标题将能够跨越所有 Microsoft 平台。 通过从以前版本的 Windows 的免费迁移，Windows 10 客户端数量将稳定增加。 这两个事实的结合意味着你的 Windows 10 标题能够通过 Windows 应用商店覆盖大量客户。
 
-## Development Environment
+此外，Windows 10 还提供了许多对游戏极其有益的新功能：
 
+-   减少了内存分页和整体内存系统大小
+-   经改进的图形内存管理可为前台游戏主动分配和保护更多内存
 
-To create games for UWP, you'll need to set up your development environment by installing a copy of Visual Studio 2015. Visual Studio 2015 allows you to create UWP apps and provides tools for game development:
-
--   Visual Studio tools for DX game programming - Visual Studio provides tools for creating, editing, previewing, and exporting image, model, and shader resources. There are also tools that you can use to convert resources at build time and debug DirectX graphics code. For more information, see [Use Visual Studio tools for game programming](set-up-visual-studio-for-game-development.md).
--   Visual Studio graphics diagnostics features - Graphics diagnostic tools are now available from within Windows as an optional feature. The diagnostic tools allow you to do graphics debugging, graphics frame analysis, and monitor GPU usage in real time. For more information, see [Use the DirectX runtime and Visual Studio graphics diagnostic features](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md).
-
-For more information, see Prepare your Universal Windows Platform and DirectX game programming environment.
-
-## Getting Started with DirectX Game Project Templates
+## 使用 C++ 和 DirectX 的 UWP 游戏
 
 
-After setting up you development environment, you can use one of the DirectX related project templates to create your UWP DirectX game. Visual Studio 2015 has three templates available for creating new UWP DirectX projects, **DirectX 11 App (Universal Windows)**, **DirectX 12 App (Universal Windows)**, and **DirectX 11 and XAML App (Universal Windows)**. For more information, see [Create a Universal Windows Platform and DirectX game project from a template](user-interface.md).
+需要高性能的实时游戏应充分利用 DirectX API。 DirectX 是用于创建需要高性能的游戏和多媒体应用程序（如 3D 游戏）的本机 API 集合。 由于 DirectX API 是本机的，因此 C++ 是唯一支持用于 DirectX 的语言。
 
-## Windows 10 APIs
+## 开发环境
 
 
-Windows 10 provides a an extensive collection of APIs that are useful for game development. There are APIs for almost all aspects of games including, 3D Graphics, 2D Graphics, Audio, Input, Text Resources, User Interface, and networking.
+若要创建 UWP 游戏，将需要通过安装 Visual Studio 2015 的副本来设置开发环境。 Visual Studio 2015 允许你创建 UWP 应用 并提供用于游戏开发的工具：
 
-There are many APIs related to game development, but not all games need to use all of the APIs. For example, some games will only use 3D graphics and only make use of Direct3D, some games may only use 2D graphics and only make use of Direct2D, and still other games may make use of both. The following diagram shows the game development related APIs grouped by functionality type.
+-   用于 DX 游戏编程的 Visual Studio 工具 - Visual Studio 提供用于创建、编辑、预览和导出图像、模型和着色器资源的工具。 还有一些工具，可以用来在生成时转换资源以及调试 DirectX 图形代码。 有关详细信息，请参阅[使用 Visual Studio 工具进行游戏编程](set-up-visual-studio-for-game-development.md)。
+-   Visual Studio 图形诊断功能 - 图形诊断工具现在在 Windows 中作为可选功能提供。 诊断工具允许你 执行图形调试、图形帧分析以及实时监视 GPU 使用情况。 有关详细信息，请参阅[使用 DirectX 运行时和 Visual Studio 图形诊断功能](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)。
 
-![game platform technologies](images/gameplatformtechnologies.png)
+有关详细信息，请参阅“准备通用 Windows 平台和 DirectX 游戏编程环境”。
 
--   3D Graphics - Windows 10 supports two 3D graphics API sets, Direct3D 11, and [Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn899121). Both of these APIs provide the capability to create 3D and 2D graphics. Direct3D 11 and Direct3D 12 are not used together, but either can be used with any of the APIs in the 2D Graphics and UI group. For more information about using the graphics APIs in your game, see [Basic 3D graphics for DirectX games](an-introduction-to-3d-graphics-with-directx.md).
+## DirectX 游戏项目模板入门
+
+
+设置开发环境后，可以使用 DirectX 相关项目模板之一创建 UWP DirectX 游戏。 Visual Studio 2015 具有三个可用于创建新的 UWP DirectX 项目的模板：**DirectX 11 应用（通用 Windows）**、**DirectX 12 应用（通用 Windows）**以及 **DirectX 11 和 XAML 应用（通用 Windows）**。 有关详细信息，请参阅[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
+
+## Windows 10 API
+
+
+Windows 10 提供可用于游戏开发的大量 API 集合。 有用于游戏的几乎所有方面的 API，包括 3D 图形、2D 图形、音频、输入、文本资源、用户界面和网络。
+
+有许多与游戏开发相关的 API，但并非所有游戏都需要使用所有 API。 例如，某些游戏仅使用 3D 图形，因此仅使用 Direct3D， 某些游戏可能仅使用 2D 图形，因此仅使用 Direct2D，而其他游戏可能同时使用这两者。 下图显示按功能类型分组的游戏开发相关 API。
+
+![游戏平台技术](images/gameplatformtechnologies.png)
+
+-   3D 图形 - Windows 10 支持两个 3D 图形 API 集：Direct3D 11 和 [Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn899121)。 这些 API 都提供创建 3D 和 2D 图形的功能。 Direct3D 11 和 Direct3D 12 不在一起使用，但是其中任何一个都可与 2D 图形和 UI 组中的任何 API 一起使用。 有关在游戏中使用图形 API 的详细信息，请参阅 [DirectX 游戏的基本 3D 图形](an-introduction-to-3d-graphics-with-directx.md)。
 
     <table>
     <colgroup>
@@ -65,32 +65,32 @@ There are many APIs related to game development, but not all games need to use a
     <thead>
     <tr class="header">
     <th align="left">API</th>
-    <th align="left">Description</th>
+    <th align="left">说明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
     <td align="left">Direct3D 12</td>
-    <td align="left"><p>Direct3D 12 introduces the next version of Direct3D, the 3D graphics API at the heart of DirectX. This version of Direct3D is designed to be faster and more efficient than previous versions of Direct3D. The tradeoff for Direct3D 12's increased speed is that it is lower level and requires you to manage your graphics resources yourself and have more extensive graphics programming experience to realize the increased speed.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Direct3D 12 when you need to maximize your game's performance and your game is CPU bound.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [Direct3d 12](https://msdn.microsoft.com/library/windows/desktop/dn899121) documentation.</p></td>
+    <td align="left"><p>Direct3D 12 引入了下一版本的 Direct3D，它是 DirectX 的核心 3D 图形 API。 此版本的 Direct3D 设计为比以前版本的 Direct3D 更快速且更高效。 Direct3D 12 提升了速度的代价是，它较低级，需要你自行管理你的图形资源 并且拥有更广泛的图形编程经验才能实现速度的提升。</p>
+    <p><strong>使用时间</strong></p>
+    <p>当你需要最大限度提升游戏性能并且你的游戏占用大量 CPU 时，请使用 Direct3D 12。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 [Direct3d 12](https://msdn.microsoft.com/library/windows/desktop/dn899121) 文档。</p></td>
     </tr>
     <tr class="even">
     <td align="left">Direct3D 11</td>
-    <td align="left"><p>Direct3D 11 is the previous version of Direct3D and allows you to create 3D graphics using a higher level of hardware abstraction than D3D 12.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Direct3D 11 if you have existing Direct3D 11 code, your game is not CPU bound, or you want the benefit of having resources managed for you.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) documentation.</p></td>
+    <td align="left"><p>Direct3D 11 是以前版本的 Direct3D，可允许你使用比 D3D 12 更高级的硬件抽象创建 3D 图形。</p>
+    <p><strong>使用时间</strong></p>
+    <p>如果你有现有的 Direct3D 11 代码、你的游戏不占用大量 CPU，或者你希望拥有为你管理资源的优势，请使用 Direct3D 11。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) 文档。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   2D Graphics and UI - APIs concerning 2D graphics such as text and user interfaces. All of the 2D graphics and UI APIs are optional.
+-   2D 图形和 UI - 与 2D 图形（例如文本和用户界面）相关的 API。 所有 2D 图形和 UI API 都是可选项。
 
     <table>
     <colgroup>
@@ -100,40 +100,40 @@ There are many APIs related to game development, but not all games need to use a
     <thead>
     <tr class="header">
     <th align="left">API</th>
-    <th align="left">Description</th>
+    <th align="left">说明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
     <td align="left">Direct2D</td>
-    <td align="left"><p>Direct2D is a hardware-accelerated, immediate-mode, 2-D graphics API that provides high performance and high-quality rendering for 2-D geometry, bitmaps, and text. The Direct2D API is built on Direct3D and is designed to interoperate well with GDI, GDI+, and Direct3D.</p>
-    <p><strong>When to use</strong></p>
-    <p>Direct2D can be used instead of Direct3D to provide graphics for pure 2D games such as a side-scroller or board game, or can be used with Direct3D to simplify creation of 2D graphics in a 3D game, such as a user interface or heads-up-display.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) documentation.</p></td>
+    <td align="left"><p>Direct2D 是硬件加速、直接模式的 2D 图形 API，可为 2D 几何图形、位图和文本提供高性能且高质量的渲染。 Direct2D API 基于 Direct3D 生成，设计用于与 GDI、GDI+ 和 Direct3D 进行良好的交互操作。</p>
+    <p><strong>使用时间</strong></p>
+    <p>可使用 Direct2D 而不是 Direct3D 来为纯 2D 游戏（如横版游戏和棋盘游戏）提供图形，或者可以与 Direct3D 结合使用来简化在 3D 游戏中创建 2D 图形（如用户界面或提醒显示）的工作。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) 文档。</p></td>
     </tr>
     <tr class="even">
     <td align="left">DirectWrite</td>
-    <td align="left"><p>DirectWrite provides extra capabilities for working with text and can be used with Direct3D or Direct2D to provide text output for user interfaces or other areas where text is required. DirectWrite supports measuring, drawing, and hit-testing of multi-format text. DirectWrite handles text in all supported languages for global and localized applications. DirectWrite also provides a low-level glyph rendering API for developers who want to perform their own layout and Unicode-to-glyph processing.</p>
-    <p><strong>When to use</strong></p>
+    <td align="left"><p>DirectWrite 提供处理文本的额外功能，可与 Direct3D 或 Direct2D 结合使用，为需要文本的用户界面或其他区域提供文本输入。 DirectWrite 支持多格式文本的测试、绘制和命中测试。 DirectWrite 处理使用全球和本地化应用程序的所有受支持的语言的文本。 对于希望执行其自己的布局和 Unicode 到字形处理的开发人员，DirectWrite 还提供低级的字形呈现 API。</p>
+    <p><strong>使用时间</strong></p>
     <p></p>
-    <p><strong>For more information</strong></p>
-    <p>See the [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) documentation.</p></td>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) 文档。</p></td>
     </tr>
     <tr class="odd">
     <td align="left">DirectComposition</td>
-    <td align="left"><p>DirectComposition is a Windows component that enables high-performance bitmap composition with transforms, effects, and animations. Application developers can use the DirectComposition API to create visually engaging user interfaces that feature rich and fluid animated transitions from one visual to another.</p>
-    <p><strong>When to use</strong></p>
-    <p>DirectComposition is designed to simplify the process of composing visuals and creating animated transitions. If your game requires complex user interfaces, you can use DirectComposition to simplify the creation and management of the UI.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [DirectComposition](https://msdn.microsoft.com/library/windows/desktop/hh437371) documentation.</p></td>
+    <td align="left"><p>DirectComposition 是一个 Windows 组件，可通过 转换、效果和动画支持高性能的位图合成。 应用程序开发人员可以使用 DirectComposition API 创建视觉上吸引人的用户界面，该用户界面以从一个视觉对象到另一个视觉对象的丰富且流畅的动画切换为特征。</p>
+    <p><strong>使用时间</strong></p>
+    <p>DirectComposition 设计用于简化合成视觉对象和创建动画过渡的过程。 如果游戏需要复杂的用户界面，可以使用 DirectComposition 简化 UI 的创建和管理。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 [DirectComposition](https://msdn.microsoft.com/library/windows/desktop/hh437371) 文档。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Audio - APIs concerning playing audio and applying audio effects. For information about using the audio APIs in your game, see [Audio for games](working-with-audio-in-your-directx-game.md).
+-   音频 - 与播放音频和应用音频效果相关的 API。 有关在游戏中使用音频 API 的信息，请参阅[游戏音频](working-with-audio-in-your-directx-game.md)。
 
     <table>
     <colgroup>
@@ -143,32 +143,32 @@ There are many APIs related to game development, but not all games need to use a
     <thead>
     <tr class="header">
     <th align="left">API</th>
-    <th align="left">Description</th>
+    <th align="left">说明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
     <td align="left">XAudio2</td>
-    <td align="left"><p>XAudio2 is a low-level audio API that provides a foundation for signal processing and mixing. XAudio is designed to be very responsive for game audio engines while maintaining the ability to create custom audio effects and complex chains of audio effects and filters.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use XAudio2 when your game needs to play sounds with minimal overhead and delay.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) documentation.</p></td>
+    <td align="left"><p>XAudio2 是低级的音频 API，可提供信号处理和混音的基础。 XAudio 设计用于对游戏音频引擎快速响应，同时保持能够创建自定义音频效果与音频效果和过滤的复杂链。</p>
+    <p><strong>使用时间</strong></p>
+    <p>当游戏需要以最少的开销和延迟播放声音时，请使用 XAudio2。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) 文档。</p></td>
     </tr>
     <tr class="even">
-    <td align="left">Media Foundation</td>
-    <td align="left"><p>Microsoft Media Foundation is designed for the playback of media files and streams, both audio and video, but can also be used in games when higher level functionality than XAudio2 is required and some additional overhead is acceptable.</p>
-    <p><strong>When to use</strong></p>
-    <p>Media foundation is particularly useful for cinematic scenes or non-interactive components of your game. Media foundation is also useful for decoding audio files for playback using XAudio2.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [Microsoft Media Foundation overview](https://msdn.microsoft.com/library/windows/desktop/ms694197).</p></td>
+    <td align="left">媒体基础</td>
+    <td align="left"><p>Microsoft 媒体基础设计用于媒体文件和流媒体（音频和视频）的播放，但是当需要比 XAudio2 更高级的功能并且可接受一些更多的开销时，也可用于游戏中。</p>
+    <p><strong>使用时间</strong></p>
+    <p>媒体基础对于游戏中的电影场景或非交互组件尤其有用。 媒体基础对于使用 XAudio2 解码音频文件用于播放也很有用。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 [Microsoft 媒体基础概述](https://msdn.microsoft.com/library/windows/desktop/ms694197)。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Input - APIs concerning input from the keyboard, mouse, gamepad, and other user input sources.
+-   输入 - 与从键盘、鼠标、游戏板和其他用户输入源的输入相关的 API。
 
     <table>
     <colgroup>
@@ -178,48 +178,48 @@ There are many APIs related to game development, but not all games need to use a
     <thead>
     <tr class="header">
     <th align="left">API</th>
-    <th align="left">Description</th>
+    <th align="left">说明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
     <td align="left">XInput</td>
-    <td align="left"><p>The XInput Game Controller API enables applications to receive input from game controllers.</p>
-    <p><strong>When to use</strong></p>
-    <p>If your game needs to support gampad input and you have existing XInput code, you can continue to make use of XInput. XInput has been replaced by Windows.Gaming.Input for UWP, and if you're writing new input code, you should use Windows.Gaming.Input instead of XInput.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) documentation.</p></td>
+    <td align="left"><p>XInput 游戏控制器 API 支持应用程序从游戏控制器接收输入。</p>
+    <p><strong>使用时间</strong></p>
+    <p>如果游戏需要支持游戏板输入，并且你有现有的 XInput 代码，则可以继续使用 XInput。 XInput 已替换为适用于 UWP 的 Windows.Gaming.Input，如果你要编写新的输入代码，应使用 Windows.Gaming.Input，而非 XInput。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) 文档。</p></td>
     </tr>
     <tr class="even">
     <td align="left">Windows.Gaming.Input</td>
-    <td align="left"><p>The Windows.Gaming.Input API replaces XInput and provides the same functionality with the following advantages over Xinput:</p>
+    <td align="left"><p>Windows.Gaming.Input API 替换了 XInput，并提供相同的功能，但具有以下 Xinput 不具备的优势：</p>
     <ul>
-    <li>Lower resource usage</li>
-    <li>Lower API call latency for retrieving input</li>
-    <li>The ability to work with more than 4 gamepads at once</li>
-    <li>The ability to access addition Xbox One gamepad features, such as the trigger vibration motors</li>
-    <li>The ability to be notified when controllers connect/disconnect via event instead of polling</li>
-    <li>The ability to attribute input to a specific user (Windows.System.User)</li>
+    <li>资源使用率较低</li>
+    <li>检索输入时 API 调用延迟较低</li>
+    <li>可同时处理多于 4 个游戏板</li>
+    <li>可访问其他 Xbox One 游戏板功能，例如触发振动电动机</li>
+    <li>可在控制器连接/断开连接时通过事件而非轮询收到通知</li>
+    <li>可将输入分配给特定用户 (Windows.System.User)</li>
     </ul>
-    <p><strong>When to use</strong></p>
-    <p>If your game needs to support gamepad input and is not using existing XInput code or you need one of the benefits listed above, you should make use of Windows.Gaming.Input.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [<strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) documentation.</p></td>
+    <p><strong>使用时间</strong></p>
+    <p>如果游戏需要支持游戏板输入，并且不使用现有 XInput 代码，或者需要以上列出的优势之一，则应使用 Windows.Gaming.Input。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 [<strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) 文档。</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
-    <td align="left"><p>The Windows.UI.Core.CoreWindow class provides events for tracking pointer presses and movement, and key down and key up events.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Windows.UI.Core.CoreWindows events when you need to track the mouse or key presses in your game.</p>
-    <p><strong>For more information</strong></p>
-    <p>See [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md) for more information about using the mouse or keyboard in your game.</p></td>
+    <td align="left"><p>Windows.UI.Core.CoreWindow 类提供用于跟踪指针按下和移动的事件，以及键按下和键放开事件。</p>
+    <p><strong>使用时间</strong></p>
+    <p>需要在游戏中跟踪鼠标或按键时，请使用 Windows.UI.Core.CoreWindows 事件。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>有关在游戏中使用鼠标或键盘的详细信息，请参阅[适用于游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md)。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Math - APIs concerning simplifying commonly used mathematical operations.
+-   数学 - 与简化常用数学运算相关的 API。
 
     <table>
     <colgroup>
@@ -229,24 +229,24 @@ There are many APIs related to game development, but not all games need to use a
     <thead>
     <tr class="header">
     <th align="left">API</th>
-    <th align="left">Description</th>
+    <th align="left">说明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
     <td align="left">DirectXMath</td>
-    <td align="left"><p>The DirectXMath API provides SIMD-friendly C++ types and functions for common linear algebra and graphics math operations common to games.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use of DirectXMath is optional and simplifies common mathematical operations.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) documentation.</p></td>
+    <td align="left"><p>DirectXMath API 提供 SIMD 友好的 C++ 类型和函数，用于游戏中常用的线性代数和图形数学运算。</p>
+    <p><strong>使用时间</strong></p>
+    <p>可以选择使用 DirectXMath，并且可以简化常用数学运算。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) 文档。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Networking - APIs concerning communicating with other computers and devices over either the Internet or private networks.
+-   网络 - 有关通过 Internet 或专用网络与其他计算机和设备通信的 API。
 
     <table>
     <colgroup>
@@ -256,32 +256,32 @@ There are many APIs related to game development, but not all games need to use a
     <thead>
     <tr class="header">
     <th align="left">API</th>
-    <th align="left">Description</th>
+    <th align="left">说明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
     <td align="left">Windows.Networking.Sockets</td>
-    <td align="left"><p>The Windows.Networking.Sockets namespace provides TCP and UDP sockets that allow reliable or unreliable network communication.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Windows.Networking.Sockets if your game needs to communicate with other computers or devices over the network.</p>
-    <p><strong>For more information</strong></p>
-    <p>See [Work with networking in your game](work-with-networking-in-your-directx-game.md).</p></td>
+    <td align="left"><p>Windows.Networking.Sockets 命名空间提供 TCP 和 UDP 套接字，这些套接字允许可靠或不可靠的网络通信。</p>
+    <p><strong>使用时间</strong></p>
+    <p>如果游戏需要通过网络与其他计算机或设备通信，请使用 Windows.Networking.Sockets。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅[在你的游戏中使用网络](work-with-networking-in-your-directx-game.md)。</p></td>
     </tr>
     <tr class="even">
     <td align="left">Windows.Web.HTTP</td>
-    <td align="left"><p>The Windows.Web.HTTP namespace provides a reliable connection to HTTP servers that can be used to access a web site.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Windows.Web.HTTP when your game needs to access a web site to retrieve or store information.</p>
-    <p><strong>For more information</strong></p>
-    <p>See [Work with networking in your game](work-with-networking-in-your-directx-game.md).</p></td>
+    <td align="left"><p>Windows.Web.HTTP 命名空间提供可用于访问网站的 HTTP 服务器的可靠连接。</p>
+    <p><strong>使用时间</strong></p>
+    <p>如果游戏需要访问网站以检索或存储信息，请使用 Windows.Web.HTTP。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅[在你的游戏中使用网络](work-with-networking-in-your-directx-game.md)。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Support Utilities - Libraries that build on the Windows 10 APIs.
+-   支持实用工具 - 基于 Windows 10 API 生成的库。
 
     <table>
     <colgroup>
@@ -290,72 +290,72 @@ There are many APIs related to game development, but not all games need to use a
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">Library</th>
-    <th align="left">Description</th>
+    <th align="left">库</th>
+    <th align="left">说明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left">DirectX Tool Kit</td>
-    <td align="left"><p>The DirectX Tool Kit (DirectXTK) is a collection of helper classes for writing DirectX 11.x code in C++.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use the DirectX Tool Kit if you're a C++ developer looking for a modern replacement to the legacy D3DX utility code or you're an XNA Game Studio developer transitioning to native C++.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the DirectX Tool Kit project page, [https://github.com/Microsoft/DirectXTK](https://github.com/Microsoft/DirectXTK).</p></td>
+    <td align="left">DirectX 工具包</td>
+    <td align="left"><p>DirectX 工具包 (DirectXTK) 是用于使用 C++ 编写 DirectX 11.x 代码的帮助程序类集合。</p>
+    <p><strong>使用时间</strong></p>
+    <p>如果你是正在寻找旧版 D3DX 实用工具代码的现代替代项的 C++ 开发人员，或者你是过渡到本机 C++ 的 XNA Game Studio 开发人员，请使用 DirectX 工具包。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 DirectX 工具包项目页面 [https://github.com/Microsoft/DirectXTK](https://github.com/Microsoft/DirectXTK)。</p></td>
     </tr>
     <tr class="even">
     <td align="left">Win2D</td>
-    <td align="left"><p>Win2D is an easy-to-use Windows Runtime API for immediate mode 2D graphics rendering.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Win2D if you're a C++ developer and want an easier to use WinRT wrapper for Direct2D and DirectWrite, or you're a C# developer wanting to use Direct2D and DirectWrite.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the Win2D project page, [https://github.com/Microsoft/Win2D](https://github.com/Microsoft/Win2D).</p></td>
+    <td align="left"><p>Win2D 是易于使用的 Windows 运行时 API，用于直接模式 2D 图形渲染。</p>
+    <p><strong>使用时间</strong></p>
+    <p>如果你是一名 C++ 开发人员并且需要更易于使用的 Direct2D 和 DirectWrite 的 WinRT 包装器，或者你是要使用 Direct2D 和 DirectWrite 的 C# 开发人员，请使用 Win2D。</p>
+    <p><strong>有关详细信息</strong></p>
+    <p>请参阅 Win2D 项目页面 [https://github.com/Microsoft/Win2D](https://github.com/Microsoft/Win2D)。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
-## Xbox Live Services
+## Xbox Live 服务
 
 
-The Xbox Live feature set – cross play with Xbox, Achievements, Gamerscore, and more – is coming to Windows 10. Soon, you'll be able to work with ID@Xbox to include Live in your UWP games! In the future, we’ll also help you ship your universal app platform games on Xbox One. For more information, see the [ID@Xbox](http://www.xbox.com/developers/id) page.
+Windows 10 即将推出 Xbox Live 功能集，包括 Xbox 跨平台联机、成就和玩家分数等。 很快你将能够使用 ID@Xbox 将 Live 包含在你的 UWP 游戏中！ 将来我们还将帮助你在 Xbox One 上交付通用应用平台游戏。 有关详细信息，请参阅 [ID@Xbox](http://www.xbox.com/developers/id) 页面。
 
-##  Alternatives to writing games with DirectX and UWP
-
-
-### UWP Games without DirectX
-
-Simpler games with minimal performance requirements, such as card games or board games, can be written without DirectX and don't necessarily need to be written in C++. These sort of games can make use of any of the languages supported by UWP such as C#, Visual Basic, C++, and HTML/JavaScript. If performance and intensive graphics are not a requirement for your game, checkout [JavaScript and HTML5 touch game sample](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031) as an example.
-
-### Game Engines
-
-As an alternative to writing your own game engine using the Windows game development APIs, many high quality game engines that build on the Windows game development APIs are available for developing games on Windows platforms. When considering a game engine or library, you have multiple options:
-
--   Full game engine - A full game engine encapsulates most or all of the Windows 10 APIs you would use when writing a game engine from scratch, such as graphics, audio, input, and networking. Full game engines may also provide game logic functionality such as artificial intelligence and pathfinding.
--   Graphics engine - Graphics engines encapsulate the Windows 10 graphics APIs, manage graphics resources, and support a variety of model and world formats.
--   Audio engine - Audio engines encapsulate the Windows 10 audio APIs, manage audio resources, and provide advanced audio processing and effects.
--   Network engine - Network engines encapsulate Windows 10 networking APIs for adding peer-to-peer or server-based multiplayer support to your game, and may include advanced networking functionality to support large numbers of players.
--   Artificial intelligence and pathfinding engine - AI and pathfinding engines provide a framework for controlling the behavior of agents in your game.
--   Special purpose engines - A variety of additional engines exist for handling almost any game development related task you might run into, such as creating inventory systems and dialog trees.
-
-## Submitting a game to the Store
+##  使用 DirectX 和 UWP 编写游戏的替代项
 
 
-Once you’re ready to publish your game, you’ll need to create a developer account and submit your game to the Windows Store.
+### 不使用 DirectX 的 UWP 游戏
 
-For information about submitting your game to the Windows Store, see <https://dev.windows.com/publish>.
+具有最小性能要求的较简单的游戏（例如纸盘或棋盘游戏）可在不使用 DirectX 的情况下编写，并且不一定需要使用 C++ 编写。 此类游戏可使用 UWP 支持的任何语言，例如 C#、Visual Basic、C++ 和 HTML/JavaScript。 如果你的游戏不需要高性能和密集图形，请查阅 [JavaScript 和 HTML5 触摸游戏示例](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)作为一个示例。
 
- 
+### 游戏引擎
+
+作为使用 Windows 游戏开发 API 编写你自己的游戏引擎的替代项，许多基于 Windows 游戏开发 API 生成的高质量游戏引擎都可用于 在 Windows 平台上开发游戏。 在考虑使用游戏引擎或库时，你有多个选项：
+
+-   完整的游戏引擎 - 一个完整的游戏引擎会封装在从头开始编写游戏引擎时将使用的大多数或全部 Windows 10 API，例如图形、音频、输入和网络。 完整的游戏引擎还提供游戏逻辑功能，例如人工智能和寻路。
+-   图形引擎 - 图形引擎封装 Windows 10 图形 API、管理图形资源并支持各种模型和现实格式。
+-   音频引擎 - 音频引擎封装 Windows 10 音频 API、管理音频资源并提供高级音频处理和效果。
+-   网络引擎 - 网络引擎封装用于将点对点或基于服务器的多人支持添加到游戏中的 Windows 10 网络 API，并且可能包括用于支持大量玩家的高级网络功能。
+-   人工智能和寻路引擎 - AI 和寻路引擎提供用于控制游戏中的代理行为的框架。
+-   特殊用途引擎 - 存在各种其他引擎用于处理你可能遇到的几乎任何与游戏开发相关的任务，例如创建存货系统和对话树。
+
+## 将游戏提交到应用商店
+
+
+一旦准备好发布游戏，将需要创建一个开发者帐户并将游戏提交到 Windows 应用商店。
+
+有关将游戏提交到 Windows 应用商店的信息，请参阅 <https://dev.windows.com/publish>。
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

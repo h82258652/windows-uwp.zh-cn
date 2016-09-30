@@ -1,43 +1,43 @@
 ---
 author: DBirtolo
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
-title: Use the gyrometer
-description: Learn how to use the gyrometer to detect changes in user movement.
+title: "使用陀螺测试仪"
+description: "了解如何使用陀螺测试仪检测用户移动变化。"
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
+ms.openlocfilehash: ad76837574b8887bceb135db156e2744542259b0
 
 ---
-# Use the gyrometer
+# 使用陀螺测试仪
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Important APIs **
+** 重要的 API **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)
+-   [**陀螺测试仪**](https://msdn.microsoft.com/library/windows/apps/BR225718)
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[在商业发行之前会发生实质性修改的、与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-Learn how to use the gyrometer to detect changes in user movement.
+了解如何使用陀螺测试仪检测用户移动变化。
 
-Gyrometers compliment accelerometers as game controllers. The accelerometer can measure linear motion while the gyrometer measures angular velocity or rotational motion.
+陀螺测试仪补充了加速计来一起作为游戏控制器。 加速计可以测量线性运动，而陀螺测试仪测量角度矢量或旋转运动。
 
-## Prerequisites
+## 先决条件
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
 
-The device or emulator that you're using must support a gyrometer.
+你使用的设备或仿真器必须支持陀螺测试仪。
 
-## Create a simple gyrometer app
+## 创建简单的陀螺测试仪应用
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple gyrometer application from scratch. The following subsection explains the app you have just created.
+此部分划分为两个子部分。 第一个子部分将指导你完成从头开始创建简单的陀螺测试仪应用程序所需的步骤。 以下子部分介绍你刚创建的应用。
 
-###  Instructions
+###  说明
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
 ```csharp
     using System;
@@ -102,9 +102,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **GyrometerCS**, you'd replace `namespace App1` with `namespace GyrometerCS`.
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“GyrometerCS”**的项目，则使用 `namespace GyrometerCS` 替换 `namespace App1`。
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
 ```xml 
         <Page
@@ -128,25 +128,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **GyrometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="GyrometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:GyrometerCS"`.
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“GyrometerCS”**的项目，则使用 `x:Class="GyrometerCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:GyrometerCS"` 替换 `xmlns:local="using:App1"`。
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+-   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
 
-Once the app is running, you can change the gyrometer values by moving the device or using the emulator tools.
+应用运行后，你可以通过移动设备或使用仿真器工具更改陀螺测试仪的值。
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”**** > “停止调试”****来停止应用。
 
-###  Explanation
+###  描述
 
-The previous example demonstrates how little code you'll need to write in order to integrate gyrometer input in your app.
+前面的示例演示了，只需要写入极少的代码即可将陀螺测试仪输入集成到你的应用。
 
-The app establishes a connection with the default gyrometer in the **MainPage** method.
+该应用在 **MainPage** 方法中建立了与默认陀螺测试仪的连接。
 
 ```csharp
 _gyrometer = Gyrometer.GetDefault(); // Get the default gyrometer sensor object
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+该应用在 **MainPage** 方法中建立了报告间隔。 此代码检索设备支持的最短间隔，并将它与所请求的间隔 16 毫秒（大约 60-Hz 刷新率）进行比较。 如果支持的最短间隔大于所请求的间隔，则此代码会将报告间隔设置为所支持的最短间隔。 否则，它会将报告间隔设置为所请求的间隔。
 
 ```csharp
 uint minReportInterval = _gyrometer.MinimumReportInterval;
@@ -154,14 +154,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _gyrometer.ReportInterval = reportInterval;
 ```
 
-The new gyrometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+在 **ReadingChanged** 方法中捕获新的陀螺测试仪数据。 每当传感器驱动程序从传感器接收到新数据时，它都将使用此事件处理程序将该值传递到你的应用中。 应用在下行中注册此事件处理程序。
 
 ```csharp
 _gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer, 
 GyrometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+这些新值写入项目 XAML 中的 TextBlock 中。
 
 ```xml
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="8,8,0,0" TextWrapping="Wrap" Text="X-Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFDFDFD"/>
@@ -172,13 +172,13 @@ These new values are written to the TextBlocks found in the project's XAML.
         <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
 ```
 
- ## Related topics
+ ## 相关主题
 
-* [Gyrometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241379)
-
-
+* [陀螺测试仪示例](http://go.microsoft.com/fwlink/p/?linkid=241379)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

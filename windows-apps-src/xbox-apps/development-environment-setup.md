@@ -1,118 +1,114 @@
 ---
 author: Mtoepke
-title: Set up your UWP on Xbox development environment
-description: Steps to set up and test your UWP on Xbox development environment.
+title: "在 Xbox 开发环境上设置你的 UWP"
+description: "在 Xbox 开发环境上设置和测试你的 UWP 的步骤。"
+area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: e273cc55935f961e0b5493c0648347cba399fa3d
-ms.openlocfilehash: 5ffe0ce35e4aabcfc74e9bfa9017248320925603
+ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
+ms.openlocfilehash: d56206f990e7885af4935401356bd3a2ce2cd292
 
 ---
 
-# Set up your UWP on Xbox development environment
+# 在 Xbox 开发环境上设置你的 UWP
 
-The Universal Windows Platform (UWP) on Xbox development environment consists of a development PC connected to an Xbox One console through a local network.
-The development PC requires Windows 10, Visual Studio 2015 Update 2, Windows 10 SDK preview build 14295, and a range of supporting tools.
+Xbox 开发环境上的通用 Windows 平台 (UWP) 由通过本地网络连接到 Xbox One 控制台的开发电脑组成。
+开发电脑需要 Windows 10、Visual Studio 2015 Update 2、Windows 10 SDK 预览版 14295 和各种支持工具。
 
 
-This article covers the steps to set up and test your development environment.
+本文介绍了设置和测试你的开发环境的步骤。
 
-## Visual Studio setup
+## Visual Studio 安装程序
 
-1. Install Visual Studio 2015 Update 2 or later. For more information and to install, see [Downloads and tools for Windows 10](https://dev.windows.com/downloads).
+1. 安装 Visual Studio 2015 Update 2 或更高版本。 有关详细信息以及安装方式，请参阅[适用于 Windows 10 的下载和工具](https://dev.windows.com/downloads)。
 
-1. When installing Visual Studio 2015 Update 2, ensure that the **Universal Windows App Development Tools** check box is selected.
+1. 安装 Visual Studio 2015 Update 2 时，请确保“通用 Windows 应用开发工具”****复选框处于选中状态。
 
-  ![Install Visual Studio 2015 Update 2](images/vs_install_tools.png)
+  ![安装 Visual Studio 2015 Update 2](images/vs_install_tools.png)
 
-## Windows 10 SDK setup
+## Windows 10 SDK 安装程序
 
-Install the latest Windows 10 SDK preview build. For installation information, see [Download Insider Preview updates for developers](http://go.microsoft.com/fwlink/p/?LinkId=780552).
+安装最新的 Windows 10 SDK 预览版。 有关安装信息，请参阅[下载适用于开发人员的 Insider Preview 更新](http://go.microsoft.com/fwlink/p/?LinkId=780552)。
 
-> [!IMPORTANT]
-> You need to install the latest SDK, but you do _not_ need to install the latest Windows Insider Preview release of the operating system.
+  > **重要提示** &nbsp;&nbsp;你需要安装最新的 SDK，但_不_需要安装操作系统的最新 Windows Insider Preview 版本。
 
-## Enabling Developer Mode
+## 设置 Xbox One
 
-Before you can deploy applications from your development PC, you must enable Developer Mode through the Windows menu: Settings / Update & security / For developers / Developer mode.
+在将应用部署到你的 Xbox One 之前，必须先在该主机上进行用户登录。 可以使用你的现有 Xbox Live 帐户，也可以在开发人员模式中为你的主机创建一个新帐户。 
 
-## Setting up your Xbox One
+## 创建你的第一个应用程序
 
-Before you can deploy an app to your Xbox One, you must have a user signed in on the console. You can either use your existing Xbox Live account or create a new account for your console in Developer Mode. 
+1. 确保你的开发电脑与目标 Xbox One 控制台在同一个本地网络上。 通常，这意味着它们应使用相同的路由器并位于同一个子网上。 建议使用有线网络连接。
 
-## Create your first application
+1. 确保你的 Xbox One 控制台处于开发人员模式下。  有关详细信息，请参阅[在 Xbox One 上启用开发人员模式](devkit-activation.md)。
 
-1. Make sure your development PC is on the same local network as the target Xbox One console. Typically, this means they should use the same router and be on the same subnet. A wired network connection is recommended.
+1. 确定要用于 UWP 应用的编程语言。
 
-1. Ensure that your Xbox One console is in Developer Mode.  For more information, see [Enabling Developer Mode on Xbox One](devkit-activation.md).
+1. 在开发电脑上，选择“新建项目”****，然后依次选择“Windows”/“通用”/“空白应用”****。
 
-1. Decide the programming language that you want to use for your UWP app.
+### 启动 C# 项目
 
-1. On your development PC, select **New Project**, and then select **Windows / Universal / Blank App**.
+  ![“新建项目”对话框](images/vs_universal_blank.jpg)
 
-### Starting a C# project
+1. 在“新建通用 Windows 项目”****对话框中选择默认选项。 如果出现“开发人员模式”****对话框，单击“确定”****。 将创建一个新的空白应用。
 
-  ![New Project dialog](images/vs_universal_blank.jpg)
+1. 为远程调试配置开发环境：
 
-1. Select the default options in the **New Universal Windows Project** dialog. If the **Developer Mode** dialog appears, click **OK**. A new blank app is created.
+  1. 右键单击该项目，然后选择“属性”****。
+  1. 在“调试”****选项卡上，将“目标设备”****更改为“远程计算机”****。
+  1. 在“远程计算机”****中，输入系统 IP 地址或 Xbox One 主机的主机名。 有关获取 IP 地址或主机名的信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。
+  1. 在“身份验证模式”****下拉列表中，选择“通用(未加密协议)”****。
 
-1. Configure your development environment for remote debugging:
+    ![C# BlankApp 属性页](images/vs_remote.jpg)
 
-  1. Right-click the project, and then select **Properties**.
-  1. On the **Debug** tab, change **Target device** to **Remote Machine**.
-  1. In **Remote machine**, enter the system IP address or hostname of the Xbox One console. For information about obtaining the IP address or hostname, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
-  1. In the **Authentication Mode** drop-down list, select **Universal (Unencrypted Protocol)**.
+### 启动 C++ 项目
 
-    ![C# BlankApp Property Pages](images/vs_remote.jpg)
+  ![C++ 项目](images/vs_universal_cpp_blank.jpg)
 
-### Starting a C++ project
+1. 在“新建通用 Windows 项目”****对话框中选择默认选项。 如果出现“开发人员模式”****对话框，单击“确定”****。 将创建一个新的空白应用。
 
-  ![C++ project](images/vs_universal_cpp_blank.jpg)
+1. 为远程调试配置开发环境：
 
-1. Select the default options in the **New Universal Windows Project** dialog. If the **Developer Mode** dialog appears, click **OK**. A new blank app is created.
+   1. 右键单击该项目，然后选择“属性”****。
+   1. 在“调试”****选项卡上，将“要启动的调试器”****更改为“远程计算机”****。
+   1. 在“计算机名称”****中，输入系统 IP 地址或 Xbox One 主机的主机名。 有关获取 IP 地址或主机名的信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。
+   1. 在“身份验证类型”****下拉列表中，选择“通用(未加密协议)”****。
 
-1. Configure your development environment for remote debugging:
+    ![C++ BlankApp 属性页](images/vs_remote_cpp.jpg)
 
-   1. Right-click the project, and then select **Properties**.
-   1. On the **Debugging** tab, change **Debugger to launch** to **Remote Machine**.
-   1. In **Machine Name**, enter the system IP address or hostname of the Xbox One console. For information about obtaining the IP address or hostname, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
-   1. In the **Authentication Type** drop-down list, select **Universal (Unencrypted Protocol)**.
+### 将你的设备与 Visual Studio 进行 PIN 配对
 
-    ![C++ BlankApp Property Pages](images/vs_remote_cpp.jpg)
+1. 保存你的设置，并确保你的 Xbox One 控制台处于开发人员模式下。
 
-### Pin-pair your device with Visual Studio
+1. 按 F5。
 
-1. Save your settings, and make sure your Xbox One console is in Developer Mode.
+1. 如果这是你第一次部署，你将获取来自 Visual Studio 的对话框，要求你对你的设备进行 PIN 配对。
 
-1. Press F5.
+  1. 若要获取 PIN，请从 Xbox One 主机上的主屏幕打开“开发人员主页”****。
+  1. 选择“与 Visual Studio 配对”****。
 
-1. If this is your first deployment, you will get a dialog from Visual Studio asking to PIN-pair your device.
+    ![“与 Visual Studio 配对”对话框](images/devhome_visualstudio.png)
 
-  1. To obtain a PIN, open **Dev Home** from the Home screen on your Xbox One console.
-  1. Select **Pair with Visual Studio**.
+  1. 在“与 Visual Studio 配对”****对话框中输入你的 PIN。 以下 PIN 只是一个示例；你的 PIN 将有所不同。
 
-    ![Pair with Visual Studio dialog](images/devhome_visualstudio.png)
+    ![“与 Visual Studio PIN 配对”对话框](images/devhome_pin.png)
 
-  1. Enter your PIN into the **Pair with Visual Studio** dialog. The following PIN is just an example; yours will differ.
+  1. 部署错误（如果有）将显示在“输出”****窗口中。
 
-    ![Pair with Visual Studio PIN dialog](images/devhome_pin.png)
-
-  1. Deployment errors, if any, will appear in the **Output** window.
-
-Congratulations, you've successfully created and deployed your first UWP app on Xbox!
+恭喜，你已在 Xbox 上成功创建和部署了你的第一个 UWP 应用！
 
 
 
-## See also
-- [Enabling Developer Mode on Xbox One](devkit-activation.md)  
-- [Downloads and tools for Windows 10](https://dev.windows.com/downloads)  
-- [Download Insider Preview updates for developers](http://go.microsoft.com/fwlink/?LinkId=780552)  
-- [Introduction to Xbox One tools](introduction-to-xbox-tools.md) 
-- [UWP on Xbox One](index.md)
+## 另请参阅
+- [在 Xbox One 上启用开发人员模式](devkit-activation.md)  
+- [适用于 Windows 10 的下载和工具](https://dev.windows.com/downloads)  
+- [下载适用于开发人员的 Insider Preview 更新](http://go.microsoft.com/fwlink/?LinkId=780552)  
+- [Xbox One 工具简介](introduction-to-xbox-tools.md) 
+- [Xbox One 上的 UWP](index.md)
 
 ----
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

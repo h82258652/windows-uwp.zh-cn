@@ -1,31 +1,31 @@
 ---
 author: jwmsft
-description: The xBind markup extension is an alternative to Binding. xBind lacks some of the features of Binding, but it runs in less time and less memory than Binding and supports better debugging.
-title: xBind markup extension
+description: "xBind 标记扩展是 Binding 的备用选项。 虽然 xBind 缺少 Binding 中的一些功能，但它运行时所花费的时间和使用的内存量均比 Binding 要少，且支持更好的调试。"
+title: "xBind 标记扩展"
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 translationtype: Human Translation
-ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
-ms.openlocfilehash: 7380386a77338c1fce7a7184b558a06605ffdf33
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
 
 ---
 
-# {x:Bind} markup extension
+# {x&#58;Bind} 标记扩展
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Note**  For general info about using data binding in your app with **{x:Bind}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**注意** 有关将应用中的数据绑定与 **{x:Bind}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-The **{x:Bind}** markup extension—new for Windows 10—is an alternative to **{Binding}**. **{x:Bind}** lacks some of the features of **{Binding}**, but it runs in less time and less memory than **{Binding}** and supports better debugging.
+**{x:Bind}** 标记扩展（Windows 10 的新增内容）是 **{Binding}** 的备用选项。 虽然 **{x:Bind}** 缺少 **{Binding}** 中的一些功能，但它运行时所花费的时间和使用的内存量均比 **{Binding}** 要少，且支持更好的调试。
 
-At XAML compile time, **{x:Bind}** is converted into code that will get a value from a property on a data source, and set it on the property specified in markup. The binding object can optionally be configured to observe changes in the value of the data source property and refresh itself based on those changes. It can also optionally be configured to push changes in its own value back to the source property. The binding objects created by **{x:Bind}** and **{Binding}** are largely functionally equivalent. But **{x:Bind}** executes special-purpose code, which it generates at compile-time, and **{Binding}** uses general-purpose runtime object inspection. Consequently, **{x:Bind}** bindings (often referred-to as compiled bindings) have great performance, provide compile-time validation of your binding expressions, and support debugging by enabling you to set breakpoints in the code files that are generated as the partial class for your page. These files can be found in your `obj` folder, with names like (for C#) `<view name>.g.cs`.
+在 XAML 加载时，**{x:Bind}** 将转换为你所需的绑定对象，此对象将从数据源上的某一属性中获取相关值。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新。 该对象也可以配置为将其自己的值的更改推送回源属性。 由 **{x:Bind}** 和 **{Binding}** 创建的绑定对象在功能上大致等同。 不过，**{x:Bind}** 执行编译时所生成的专用代码，而 **{Binding}** 使用通用的运行时对象检查。 因此，**{x:Bind}** 绑定（通常指已编译的绑定）具有出色的性能、提供编译时对绑定表达式的验证，并支持通过允许你在作为页面的部分类生成的代码文件中设置断点进行调试。 可以在 `obj` 文件夹中找到这些文件，其名称类似于（适用于 C#）`<view name>.g.cs`。
 
-**Sample apps that demonstrate {x:Bind}**
+**用于演示 {x:Bind} 的应用示例**
 
--   [{x:Bind} sample](http://go.microsoft.com/fwlink/p/?linkid=619989)
+-   [{x:Bind} 示例](http://go.microsoft.com/fwlink/p/?linkid=619989)
 -   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
--   [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?linkid=619992)
+-   [XAML UI 基本示例](http://go.microsoft.com/fwlink/p/?linkid=619992)
 
-## XAML attribute usage
+## XAML 属性使用方法
 
 ``` syntax
 <object property="{x:Bind}" .../>
@@ -37,173 +37,84 @@ At XAML compile time, **{x:Bind}** is converted into code that will get a value 
 <object property="{x:Bind propertyPath, bindingProperties}" .../>
 ```
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| _propertyPath_ | A string that specifies the property path for the binding. More info is in the [Property path](#property-path) section below. |
+| _propertyPath_ | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
 | _bindingProperties_ |
-| _propName_=_value_\[, _propName_=_value_\]* | One or more binding properties that are specified using a name/value pair syntax. |
-| _propName_ | The string name of the property to set on the binding object. For example, "Converter". |
-| _value_ | The value to set the property to. The syntax of the argument depends on the property being set. Here's an example of a _propName_=_value_ usage where the value is itself a markup extension: `Converter={StaticResource myConverterClass}`. For more info, see [Properties that you can set with {x:Bind}](#properties-you-can-set) section below. | 
+| _propName_ = _value_\[, _propName_=_value_\]* | 使用一个名称/值对语法指定的一个或多个绑定属性。 |
+| _propName_ | 要在绑定对象上设置的属性的字符串名称。 例如，“Converter”。 | 
+| _value_ | 要将属性设置为的值。 参数的语法取决于要设置的属性。 下面是 _propName_=_value_ 用法的示例，其中该值本身就是一个标记扩展：`Converter={StaticResource myConverterClass}`。 有关详细信息，请参阅下面的[可使用 {x:Bind} 设置的属性](#properties-you-can-set)部分。 | 
 
-## Property path
+## 属性路径
 
-*PropertyPath* sets the **Path** for an **{x:Bind}** expression. **Path** is a property path specifying the value of the property, sub-property, field, or method that you're binding to (the source). You can mention the name of the **Path** property explicitly: `{Binding Path=...}`. Or you can omit it: `{Binding ...}`.
+*PropertyPath* 为 **{x:Bind}** 表达式设置 **Path**。 **Path** 是一个属性路径，用于指定要绑定到的（源）属性、子属性、字段或方法的值。 你可以明确指出 **Path** 属性名称：`{Binding Path=...}`。 也可以将其省略：`{Binding ...}`。
 
-### Property path resolution
+**{x:Bind}** 不会将 **DataContext** 用作默认源，而是将改用页面或用户控件本身。 因此，它将针对属性、字段和方法查找代码隐藏的页面或用户控件。 要向 **{x:Bind}** 显示视图模型，你通常需要将新字段或属性添加到代码隐藏的页面或用户控件。 属性路径中的步骤由点号 (.) 分隔，并且可包含多个分隔符以遍历连续的子属性。 无论使用何种编程语言，均可将点号分隔符用于实现要绑定到的对象。
 
-**{x:Bind}** does not use the **DataContext** as a default source—instead, it uses the page or user control itself. So it will look in the code-behind of your page or user control for properties, fields, and methods. To expose your view model to **{x:Bind}**, you will typically want to add new fields or properties to the code behind for your page or user control. Steps in a property path are delimited by dots (.), and you can include multiple delimiters to traverse successive sub-properties. Use the dot delimiter regardless of the programming language used to implement the object being bound to.
+例如，在某一页面中，**Text="{x:Bind Employee.FirstName}"** 将查找该页面上的 **Employee** 成员，然后该对象上的 **FirstName** 成员将由 **Employee** 返回。 如果将一个项目控件绑定到一个包含员工家属的属性，则属性路径可能是“Employee.Dependents”，并且项目控件的项目模板将负责显示“Dependents”中的项。
 
-For example: in a page, **Text="{x:Bind Employee.FirstName}"** will look for an **Employee** member on the page and then a **FirstName** member on the object returned by **Employee**. If you are binding an items control to a property that contains an employee's dependents, your property path might be "Employee.Dependents", and the item template of the items control would take care of displaying the items in "Dependents".
+对于 C++/CX，**{x:Bind}** 无法绑定到页面或数据模型中的私有字段和属性，你需要具有其可绑定的公共属性。 绑定的图面区域需显示为 CX 类/接口，以便我们可以获取相关的元数据。 无需使用 **\[Bindable\]** 属性。
 
-For C++/CX, **{x:Bind}** cannot bind to private fields and properties in the page or data model – you will need to have a public property for it to be bindable. The surface area for binding needs to be exposed as CX classes/interfaces so that we can get the relevant metadata. The **\[Bindable\]** attribute should not be needed.
+如果数据源是一个集合，则属性路径可以按照位置或索引来指定集合中的项目。 例如“Teams\[0\].Players”，其中文本“\[\]”中包含“0”，用以请求从零开始编制索引的集合中的第一个项目。
 
-With **x:Bind**, you do not need to use **ElementName=xxx** as part of the binding expression. With **x:Bind**, you can use the name of the element as the first part of the path for the binding because named elements become fields within the page or user control that represents the root binding source
+若要使用索引器，该模型需要在将编入索引的属性类型上实现 **IList&lt;T&gt;** 或 **IVector&lt;T&gt;**。 如果已编入索引的属性类型支持 **INotifyCollectionChanged** 或 **IObservableVector** 且绑定是单向或双向，则它将针对这些接口上的更改通知进行注册和侦听。 更改检测逻辑将基于所有集合更改进行更新，即使这不会影响特定的索引值也是如此。 这是因为侦听逻辑在集合的所有实例中是通用的。
 
-### Collections
+若要绑定到附加属性，你需要将类和属性名称放入点号后面的括号内。 例如 **Text="{x:Bind Button22.(Grid.Row)}"**。 如果未在 Xaml 命名空间中声明该属性，你需要在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。
 
-If the data source is a collection, then a property path can specify items in the collection by their position or index. For example, "Teams\[0\].Players", where the literal "\[\]" encloses the "0" that requests the first item in a zero-indexed collection.
+已编译的绑定为强类型，并且将解析路径中的每个步骤的类型。 如果返回的类型没有成员，则它将在编译时失败。 你可以指定转换来告知绑定对象的实际类型。 在以下用例中，**obj** 为类型对象的属性，但包含一个文本框，因此我们可以使用 **Text="{x:Bind obj.(TextBox.Text)}"**。
 
-To use an indexer, the model needs to implement **IList&lt;T&gt;** or **IVector&lt;T&gt;** on the type of the property that is going to be indexed. If the type of the indexed property supports **INotifyCollectionChanged** or **IObservableVector** and the binding is OneWay or TwoWay, then it will register and listen for change notifications on those interfaces. The change detection logic will update based on all collection changes, even if that doesn’t affect the specific indexed value. This is because the listening logic is common across all instances of the collection.
+**Text="{x:Bind groups3\[0\].(data:SampleDataGroup.Title)}"** 中的 **groups3** 字段是一个对象字典，因此必须将其转换为 **data:SampleDataGroup**。 请注意 **data:** 命名空间前缀的用法，可用于将对象类型映射到不是默认 XAML 命名空间组成部分的某一命名空间。
 
-If the data source is a Dictionary or Map, then a property path can specify items in the collection by their string name. For example **&lt;TextBlock Text="{x:Bind Players\['John Smith'\]" /&gt;** will look for an item in the dictionary named "John Smith". The name needs to be enclosed in quotes, and either single or double quotes can be used. Hat (^) can be used to escape quotes in strings. Its usually easiest to use alternate quotes from those used for the XAML attribute.
+使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 使用 **x:Bind** 时，你可以使用元素的名称作为绑定路径的第一部分，因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。
 
-To use an string indexer, the model needs to implement **IDictionary&lt;string, T&gt;** or **IMap&lt;string, T&gt;** on the type of the property that is going to be indexed. If the type of the indexed property supports **IObservableMap** and the binding is OneWay or TwoWay, then it will register and listen for change notifications on those interfaces. The change detection logic will update based on all collection changes, even if that doesn’t affect the specific indexed value. This is because the listening logic is common across all instances of the collection.
+事件绑定是编译绑定的一项新功能。 它允许你使用绑定为事件指定处理程序，而无需使其成为代码隐藏的方法。 例如：**Click="{x:Bind rootFrame.GoForward}"**。
 
-### Attached Properties
+对于事件，目标方法不能重载，而且还必须：
 
-To bind to attached properties, you need to put the class and property name into parentheses after the dot. For example **Text="{x:Bind Button22.(Grid.Row)}"**. If the property is not declared in a Xaml namespace, then you will need to prefix it with a xml namespace, which you should map to a code namespace at the head of the document.
+-   匹配事件的签名。
+-   或者没有任何参数。
+-   或者具有相同数量的参数类型，这些参数根据事件参数的类型进行赋值。
 
-### Casting
+在生成的代码隐藏中，已编译的绑定将处理事件并将其路由到模型上的对应方法，并在该事件发生时计算绑定表达式的路径。 这意味着，与属性绑定不同的是，它不跟踪模型的更改。
 
-Compiled bindings are strongly typed, and will resolve the type of each step in a path. If the type returned doesn’t have the member, it will fail at compile time. You can specify a cast to tell binding the real type of the object. In the following case, **obj** is a property of type object, but contains a text box, so we can use either **Text="{x:Bind ((TextBox)obj).Text}"** or **Text="{x:Bind obj.(TextBox.Text)}"**.
-The **groups3** field in **Text="{x:Bind ((data:SampleDataGroup)groups3\[0\]).Title}"** is a dictionary of objects, so you must cast it to **data:SampleDataGroup**. Note the use of the xml **data:** namespace prefix for mapping the object type to a code namespace that isn't part of the default XAML namespace.
+有关属性路径的字符串语法的详细信息，请参阅 [Property-path 语法](property-path-syntax.md)，记住此处所述的 **{x:Bind}** 的不同之处。
 
-_Note: The C#-style cast syntax is more flexible than the attached property syntax, and is the recommended syntax going forward._
-
-## Functions in binding paths
-
-Starting in Windows 10, version 1607, **{x:Bind}** supports using a function as the leaf step of the binding path. This enables
-- A simpler way to achieve value conversion
-- A way for bindings to depend on more than one parameter
-
-> [!NOTE]
-> To use functions with **{x:Bind}**, your app's minimum target SDK version must be 14393 or later. You can't use functions when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
-
-In the following example, the background and foreground of the item are bound to functions to do conversion based on the color parameter
-
-``` Xamlmarkup
-<DataTemplate x:DataType="local:ColorEntry">
-    <Grid Background="{x:Bind Brushify(Color)}" Width="240">
-        <TextBlock Text="{x:Bind ColorName}" Foreground="{x:Bind TextColor(Color)}" Margin="10,5" />
-    </Grid>
-</DataTemplate>
-```
-``` C#
-class ColorEntry
-{
-    public string ColorName { get; set; }
-    public Color Color { get; set; }
-
-    public static SolidColorBrush Brushify(Color c)
-    {
-        return new SolidColorBrush(c);
-    }
-
-    public static SolidColorBrush TextColor(Color c)
-    {
-        return new SolidColorBrush(((c.R * 0.299 + c.G * 0.587 + c.B * 0.114) > 150) ? Colors.Black : Colors.White);
-    }
-}
-
-```
-### Function Syntax
-``` Syntax
-Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Order.ShipAddr.Zip, 'Contoso'), Mode=OneTime}"
-             |      Path to function         |    Path argument   |       Path argument       | Const arg |  Bind Props
-```
-
-### Path to the function
-The path to the function is specified like other property paths and can include dots (.), indexers or casts to locate the function.
-
-Static functions can be specified using XMLNamespace:ClassName.MethodName syntax. For example **&lt;CalendarDatePicker Date="\{x:Bind sys:DateTime.Parse(TextBlock1.Text)\}" /&gt;** will map to the DateTime.Parse function, assuming that **xmlns:sys="using:System"** is specified on the top of the page.
-
-If the mode is OneWay/TwoWay, then the function path will have change detection performed on it, and the binding will be re-evaluated if there are changes to those objects.
-
-The function being bound to needs to:
-- Be accessible to the code and metadata – so internal / private work in C#, but C++/CX will need methods to be public WinRT methods
-- Overloading is based on the number of arguments, not type, and it will try to match to the first overload with that many arguments
-- The argument types need to match the data being passed in – we don’t do narrowing conversions
-- The return type of the function needs to match the type of the property that is using the binding
+##  可使用 {x:Bind} 设置的属性
 
 
-### Function arguments
-Multiple function arguments can be specified, separated by comma's (,)
-- Binding Path – Same syntax as if you were binding directly to that object.
-  - If the mode is OneWay/TwoWay then change detection will be performed and the binding re-evaluated upon object changes
-- Constant string enclosed in quotes – quotes are needed to designate it as a string. Hat (^) can be used to escape quotes in strings
-- Constant Number - for example -123.456
-- Boolean – specified as "x:True" or "x:False"
+**{x:Bind}** 通过 *bindingProperties* 占位符语法来解释，因为标记扩展中可以设置多个读/写属性。 这些属性可按任何顺序设置，并带有以逗号分隔的 *propName*=*value* 对。 请注意，不得将换行符包含在绑定表达式中。 由于其中一些属性需要不具有类型转换的类型，因此它们需要一些自己嵌套在 **{x:Bind}** 内的标记扩展。
 
-### Two way function bindings
-In a two-way binding scenario, a second function must be specified for the reverse direction of the binding. This is done using the **BindBack** binding property, for example **Text="\{x:Bind a.MyFunc(b), BindBack=a.MyFunc2\}"**. The function should take one argument which is the value that needs to be pushed back to the model.
+这些属性的工作方式与 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类的属性的工作方式大体相同。
 
-## Event Binding
-
-Event binding is a unique feature for compiled binding. It enables you to specify the handler for an event using a binding, rather than it having to be a method on the code behind. For example: **Click="{x:Bind rootFrame.GoForward}"**.
-
-For events, the target method must not be overloaded and must also:
-
--   Match the signature of the event.
--   OR have no parameters.
--   OR have the same number of parameters of types that are assignable from the types of the event parameters.
-
-In generated code-behind, compiled binding handles the event and routes it to the method on the model, evaluating the path of the binding expression when the event occurs. This means that, unlike property bindings, it doesn’t track changes to the model.
-
-For more info about the string syntax for a property path, see [Property-path syntax](property-path-syntax.md), keeping in mind the differences described here for **{x:Bind}**.
-
-##  Properties that you can set with {x:Bind}
-
-
-**{x:Bind}** is illustrated with the *bindingProperties* placeholder syntax because there are multiple read/write properties that can be set in the markup extension. The properties can be set in any order with comma-separated *propName*=*value* pairs. Note that you cannot include line breaks in the binding expression. Some of the properties require types that don't have a type conversion, so these require markup extensions of their own nested within the **{x:Bind}**.
-
-These properties work in much the same way as the properties of the [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) class.
-
-| Property | Description |
+| 属性 | 说明 |
 |----------|-------------|
-| **Path** | See the [Property path](#property-path) section above. |
-| **Converter** | Specifies the converter object that is called by the binding engine. The converter can be set in XAML, but only if you refer to an object instance that you've assigned in a [{StaticResource} markup extension](staticresource-markup-extension.md) reference to that object in the resource dictionary. |
-| **ConverterLanguage** | Specifies the culture to be used by the converter. (If you're setting **ConverterLanguage** you should also be setting **Converter**.) The culture is set as a standards-based identifier. For more info, see [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880). |
-| **ConverterParameter** | Specifies the converter parameter that can be used in converter logic. (If you're setting **ConverterParameter** you should also be setting **Converter**.) Most converters use simple logic that get all the info they need from the passed value to convert, and don't need a **ConverterParameter** value. The **ConverterParameter** parameter is for moderately advanced converter implementations that have more than one logic that keys off what's passed in **ConverterParameter**. You can write a converter that uses values other than strings but this is uncommon, see Remarks in [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) for more info. |
-| **FallbackValue** | Specifies a value to display when the source or path cannot be resolved. |
-| **Mode** | Specifies the binding mode, as one of these strings: "OneTime", "OneWay", or "TwoWay". The default is "OneTime". Note that this differs from the default for **{Binding}**, which is "OneWay" in most cases. |
-| **TargetNullValue** | Specifies a value to display when the source value resolves but is explicitly **null**. |
-| **BindBack** | Specifies a function to use for the reverse direction of a two-way binding. | 
+| **Path** | 请参阅上面的[属性路径](#property-path)部分。 |
+| **转换器** | 指定绑定引擎所调用的转换器对象。 转换器可以在 XAML 中设置，但仅限于你引用你在对资源字典中的该对象的 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用中分配的对象实例。 |
+| **ConverterLanguage** | 指定转换器要使用的区域性。 （如果要设置 **ConverterLanguage**，还应该设置 **Converter**。）区域性可设置为一个基于标准的标识符。 有关详细信息，请参阅 [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)。 |
+| **ConverterParameter** | 指定可在转换器逻辑中使用的转换器参数。 （如果要设置 **ConverterParameter**，还应该设置 **Converter**。）大多数转换器使用可从要转换的传递值获取所有所需信息的简单逻辑，不需要 **ConverterParameter** 值。 **ConverterParameter** 参数适用于具有多个逻辑的中等高级转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中的备注，以获取详细信息。 |
+| **FallbackValue** | 指定要在无法解析源或路径时显示的值。 |
+| **模式** | 将绑定模式指定为以下字符串之一：“OneTime”、“OneWay”或“TwoWay”。 默认值是“OneTime”。 请注意，该值不是 **{Binding}** 的默认值，大多数情况下为“OneWay”。 |
+| **TargetNullValue** | 指定要在源值解析但并非显式 **null** 时显示的值。 | 
 
-**Note**  If you're converting markup from **{Binding}** to **{x:Bind}**, then be aware of the differences in default values for the **Mode** property.
+**注意** 如果你要将标记从 **{Binding}** 转换为 **{x:Bind}**，请注意在 **Mode** 属性默认值方面的差异。
  
-## Remarks
+## 备注
 
-Because **{x:Bind}** uses generated code to achieve its benefits, it requires type information at compile time. This means that you cannot bind to properties where you do not know the type ahead of time. Because of this, you cannot use **{x:Bind}** with the **DataContext** property, which is of type **Object**, and is also subject to change at run time.
+因为 **{x:Bind}** 使用生成的代码来达成目标，所以它在编译时需使用类型信息。 这意味着你无法绑定到预先不知道类型的属性。 因此，不能将 **{x:Bind}** 与 **DataContext** 属性结合使用，因为它为 **Object** 类型，并且还可能会在运行时出现更改。
 
-When using **{x:Bind}** with data templates, you must indicate the type being bound to by setting an **x:DataType** value, as shown in the example below. You can also set the type to an interface or base class type, and then use casts if necessary to formulate a full expression.
+在将 **{x:Bind}** 用于数据模板时，需通过设置 **x:DataType** 值来指示要绑定到的类型，如以下示例所示。 你也可以将类型设置为接口或基类类型，然后按需使用转换，从而编写一个完整的表达式。
 
-Compiled bindings depend on code generation. So if you use **{x:Bind}** in a resource dictionary then the resource dictionary needs to have a code-behind class. See [Resource dictionaries with {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind) for a code example.
+已编译的绑定取决于代码生成。 因此，如果你在资源字典中使用 **{x:Bind}**，则该资源字典需要有一个代码隐藏类。 有关代码示例，请参阅[带有 {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind) 的资源字典。
 
-Pages and user controls that include Compiled bindings will have a "Bindings" property in the generated code. This includes the following methods:
-- **Update()** - This will update the values of all compiled bindings. Any one-way/Two-Way bindings will have the listeners hooked up to detect changes.
-- **Initiatlize()** - If the bindings have not already been initialized, then it will call Update() to initialize the bindings
-- **StopTracking()** - This will unhook all listeners created for one-way and two-way bindings. They can be re-initialized using the Update() method.
+**重要提示** 如果你为某一属性设置了本地值，而该属性之前具有一个用于提供本地值的 **{x:Bind}** 标记扩展，则绑定将完全删除。
 
-> [!NOTE]
-> Starting in Windows 10, version 1607, the XAML framework provides a built in Boolean to Visibility converter. The converter maps **true** to the **Visible** enumeration value and **false** to **Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+**提示** 如果你需要为某个值指定单个花括号（例如在 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中），请在它前面加上反斜杠：`\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
 
-**Tip**   If you need to specify a single curly brace for a value, such as in [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) or [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), precede it with a backslash: `\{`. Alternatively, enclose the entire string that contains the braces that need escaping in a secondary quotation set, for example `ConverterParameter='{Mix}'`.
+[**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 和 **ConverterLanguage** 都与如下方案相关：将绑定源中的值或类型转换为与绑定目标属性兼容的类型或值。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)的“数据转换”部分。
 
-[**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) and **ConverterLanguage** are all related to the scenario of converting a value or type from the binding source into a type or value that is compatible with the binding target property. For more info and examples, see the "Data conversions" section of [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**{x:Bind}** 仅为标记扩展，且无法以编程方式创建或处理此类绑定。 有关标记扩展的详细信息，请参阅 [XAML 概述](xaml-overview.md)。
 
-**{x:Bind}** is a markup extension only, with no way to create or manipulate such bindings programmatically. For more info about markup extensions, see [XAML overview](xaml-overview.md).
-
-## Examples
+## 示例
 
 ```XML
 <Page x:Class="QuizGame.View.HostView" ... >
@@ -211,7 +122,7 @@ Pages and user controls that include Compiled bindings will have a "Bindings" pr
 </Page>
 ```
 
-This example XAML uses **{x:Bind}** with a **ListView.ItemTemplate** property. Note the declaration of an **x:DataType** value.
+本示例中 XAML 会将 **{x:Bind}** 与 **ListView.ItemTemplate** 属性结合使用。 请注意 **x:DataType** 值的声明。
 
 ```XML
   <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
@@ -224,6 +135,7 @@ This example XAML uses **{x:Bind}** with a **ListView.ItemTemplate** property. N
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

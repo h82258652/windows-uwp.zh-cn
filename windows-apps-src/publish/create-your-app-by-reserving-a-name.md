@@ -1,70 +1,70 @@
 ---
 author: jnHs
-Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
-title: Create your app by reserving a name
+Description: "在 Windows 开发人员中心仪表板中创建新应用的第一步是保留应用名称。 了解如何保留应用名称，并查找有关为应用选择出色名称的的建议。"
+title: "通过保留名称创建应用"
 keywords: 
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 translationtype: Human Translation
 ms.sourcegitcommit: 3b65bbaf2498dde7484c055ff86ed09e89bf3405
-ms.openlocfilehash: 1be7229086e1f2f932e0945334098d89a9978b70
+ms.openlocfilehash: 5e4933be456bc76eb5923f5c081e8376c43c118b
 
 ---
 
-# Create your app by reserving a name
+# 通过保留名称创建应用
 
 
-The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for [choosing a great name for your app](#choosing-your-app-s-name). Each reserved name must be unique throughout the entire Store.
+在 Windows 开发人员中心仪表板中创建新应用的第一步是保留应用名称。 了解如何保留名称，并查找有关[为应用选择出色名称](#choosing-your-app-s-name)的建议。 每个保留的名称在整个应用商店中都必须是唯一的。
 
-> **Note**  If you have a Windows Phone app that you created earlier, and you never reserved a name for it, you can still manage and submit that app. However, in order to upload .appx packages for it, or to [view app identity details](view-app-identity-details.md) specific to creating .appx packages, you'll need to reserve a unique name by following the steps below. This also prevents anyone else from reserving that name for themselves.
+> **注意** 如果你有一个以前创建的 Windows Phone 应用并且从未为其保留过名称，你仍可以管理并提交该应用。 但是，若要上载它的 .appx 程序包，或[查看应用标识详细信息](view-app-identity-details.md)（特定于 .appx 程序包创建），你将需要按照以下步骤保留唯一名称。 这还可以阻止其他任何用户为其自身保留该名称。
 
-When you [upload your app's packages](upload-app-packages.md), the [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) value must match the name that you reserved for your app in the **Dashboard**. If you use Microsoft Visual Studio to create your app's package, this attribute will be filled in for you.
+在[上载应用程序包](upload-app-packages.md)时，[**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) 值必须与你在“仪表板”****中为应用所保留的名称相匹配。 如果你使用 Microsoft Visual Studio 创建应用程序包，则将为你填充此特性。
 
-## Create your app by reserving a new name
+## 通过保留新名称创建应用
 
-Reserving a name is the first step in creating an app in the dashboard. You can do this even if you haven't started to build your app yet. We recommend doing it as soon as possible, so that nobody else can use the name.
+保留名称是在仪表板中创建应用的第一步。 即使你尚未开始生成应用，也可以保留名称。 我们建议你尽早这样做，这样其他任何人都无法使用该名称。
 
-1.  From the **Dashboard overview** or **All apps** page, click **Create a new app**.
-2.  In the text box, enter the name that you want to use, and then click the **Check availability** link. If the name is available, you'll see a green check mark. (If the name you entered is already reserved or in use by another developer, you'll see a message that the name is not available.)
-3.  Click **Reserve app name**.
+1.  在“仪表板概述”****或“所有应用”****页面上，单击“创建新应用”****。
+2.  在文本框中，输入要使用的名称，然后单击“检查可用性”****链接。 如果该名称可用，你将看到绿色复选标记。 （如果你输入的名称已经由另一个开发人员保留或使用，你将看到一条指示该名称不可用的消息。）
+3.  单击“保留应用名称”****。
 
-The name is now reserved for you and you can start working on your [submission](app-submissions.md) whenever you're ready.
+现在已为你保留该名称，只要你准备就绪，就可以开始进行[提交](app-submissions.md)。
 
-> **Note**  Because names can be reserved for one year, you might find that you can't reserve a name, even though you don't see any apps listed by that name in the Store. This is usually because another developer has reserved the name for their app but hasn't submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Windows Store using that name, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).
+> **注意** 由于名称可以保留一年，因此你可能会发现自己无法保留某个名称，即使你在应用商店中并没有看到任何以该名称命名的应用也是如此。 这通常是因为其他开发人员已为其应用保留该名称，但尚未提交该应用。 如果你拥有某个名称的商标权或其他法律权利，但却无法保留该名称，或发现 Windows 应用商店中的其他应用在使用该名称，请[联系 Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777)。
 
-After you reserve a name, you'll have one year to submit that app. If you don't submit it within the year, the reservation will expire and another developer could use that name for an app. You may encounter an error if you try to submit an app under a name which you have let expire.
+在保留某个名称后，你有一年的时间来提交应用。 如果你在一年内未提交该应用，保留的应用名称将过期，其他开发人员将可以使用该名称命名应用。 如果你尝试采用已任其过期的名称提交应用，你可能会遇到错误。
 
-## Choosing your app's name
+## 选择应用名称
 
-Choosing the right name for your app is an important task. Pick a name that will capture your customers' interest and draw them in to learn more about your app. Here are some tips for choosing a great app name.
+为你的应用选择适当的名称非常重要。 你应该选取一个能够引起客户兴趣的名称，从而吸引他们进一步了解你的应用。 下面是有关选择良好应用名称的几点提示。
 
--   **Keep it short.** The space to display your app's name is limited in many places, so we suggest using the shortest name as you can. While your app's name can have up to 256 characters, the end of a very long name may not always be visible to customers.
+-   **保持简短。** 在很多情况下，用来显示应用名称的空间非常有限，因此我们建议尽可能使用最短的名称。 虽然你的应用的名称最多可包含 256 个字符，但客户可能无法始终看到非常长的名称的末尾。
 
-    > **Note**  The actual number of characters displayed in various locations may vary, depending on the length allotted and on the types of characters used in your app's name. For example, in the Segoe UI font that Windows uses, about 30 "I" characters will fit in the same space as 10 "W" characters. Because of this variation, be sure to test your app and verify how its name appears on its tiles (if you choose to overlay the app name), in search results, and within the app itself before you submit your app. Also consider each language in which you offer your app. Keep in mind that East-Asian characters tend to be wider than Latin characters, so fewer characters will be displayed.
+    > **注意** 在各种位置显示的实际字符数目可能有所不同，具体取决于分配的长度和你的应用名称所使用的字符类型。 例如，在 Windows 使用的 Segoe UI 字体中，10 个“W”字符占用的空间大约相当于 30 个“I”字符。 因为此变化，请确保在提交你的应用之前测试你的应用，并验证它的名字在其磁贴（如果你选择覆盖应用名称）、搜索结果和应用本身内的显示方式。 另外，请考虑应用要采用的每种语言。 请记住，东亚字符往往比拉丁字符宽，因此将显示的字符会比拉丁字符少。
 
--   **Avoid adding differentiating info at the end of the name.** If the info that differentiates multiple apps is added to the end of a name, customers might miss it, especially if the name is long; all of the apps could appear to have the same name. If this is unavoidable, use different logos and app images so it's easier to differentiate one app from another.
--   **Be original.** Make sure your app name is distinctive enough so that it isn't easily confused with an existing app.
--   **Don't use names trademarked by others.** Make sure that you have the rights to use the name that you reserve. If someone else has trademarked the name, they can report an infringement and you won't be able to keep using that name. If that happens after your app has been published, it will be removed from the Store. You'll then need to change the name of your app, and all instances of the name throughout your app and its content, before you can [submit your app](app-submissions.md) for certification again.
+-   **避免在名称末尾添加区别性信息。** 如果将用于区分多个应用的信息添加到名称末尾，则客户可能会忽略此信息，尤其是在名称很长的情况下；这样所有应用看上去似乎都采用了相同名称。 如果这不可避免，请使用不同的徽标和应用图像，这样会更容易区分应用。
+-   **保持独创性。** 确保使用与众不同的应用名称，这样不易与现有应用产生混淆。
+-   **请勿使用其他人注册商标的名称。** 确保你有权使用你保留的名称。 如果其他人将该名称注册为商标，他们有权投诉侵权，你将无法继续使用该名称。 如果在你的应用发布后发生这种情况，我们会将其从应用商店中删除。 你将需要更改你的应用名称以及出现在应用及其内容中该名称的所有实例，然后才能再次[提交你的应用](app-submissions.md)进行认证。
 
-## Manage additional app names
+## 管理其他应用名称
 
-You can manage names for your apps on the **Manage app names** page in the **App management** section for each of your apps in the Windows Dev Center dashboard.
+你可以在 Windows 开发人员中心仪表板中在每个应用的“应用管理”****部分的“管理应用名称”****页面上管理应用的名称。
 
-In some cases, you may want to reserve multiple names to use for the same app, such as when you want to offer your app in multiple languages and want to use different names. You will need to reserve an additional name if you want to change an app's name completely.
+在某些情况下，你可能希望保留用于同一应用的多个名称，例如你要提供应用的多个语言版本并希望使用不同的名称。 如果你要完全更改应用的名称，你将需要保留额外的名称。
 
-On this page, you can also delete any names that you have reserved but no longer want to use.
+在此页面上，你还可以删除你已保留但不想再使用的任何名称。
 
-For more info, see [Manage app names](manage-app-names.md).
-
- 
+有关详细信息，请参阅[管理应用名称](manage-app-names.md)。
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

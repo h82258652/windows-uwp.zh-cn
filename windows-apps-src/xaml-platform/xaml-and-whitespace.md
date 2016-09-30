@@ -1,59 +1,59 @@
 ---
 author: jwmsft
-description: Learn about the whitespace processing rules as used by XAML.
-title: XAML and whitespace
+description: "了解 XAML 中使用的空格处理规则。"
+title: "XAML 与空格"
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3b8b68ae8823ec23105d5f92e533d271ab3dcc88
+ms.openlocfilehash: 408c9c7f79f5db81bdf7810a6c71cf25c1c8ec51
 
 ---
 
-# XAML and whitespace
+# XAML 与空格
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Learn about the whitespace processing rules as used by XAML.
+了解 XAML 中使用的空格处理规则。
 
-## Whitespace processing
+## 空格处理
 
-Consistent with XML, whitespace characters in XAML are space, linefeed, and tab. These correspond to the Unicode values 0020, 000A, and 0009 respectively. By default this whitespace normalization occurs when a XAML processor encounters any inner text found between elements in a XAML file:
+与 XML 一样，XAML 中的空格字符是空白、换行和制表符。 它们分别对应于 Unicode 值 0020、000A 和 0009。 默认情况下，在 XAML 处理器遇到 XAML 文件中各元素之间的任何内部文本时，会执行以下空格规范化操作：
 
--   Linefeed characters between East Asian characters are removed.
--   All whitespace characters (space, linefeed, tab) are converted into spaces.
--   All consecutive spaces are deleted and replaced by one space.
--   A space immediately following the start tag is deleted.
--   A space immediately before the end tag is deleted.
--   *East Asian characters* is defined as a set of Unicode character ranges U+20000 to U+2FFFD and U+30000 to U+3FFFD. This subset is also sometimes referred to as *CJK ideographs*. For more information, see http://www.unicode.org.
+-   删除东亚字符之间的换行字符。
+-   将所有空格字符（空白、换行、制表符）转换为空白。
+-   删除所有连续的空格并替换为一个空格。
+-   删除紧挨起始标记之后的空格。
+-   删除紧挨结束标记之前的空格。
+-   *东亚字符*定义为从 U+20000 到 U+2FFFD 和从 U+30000 到 U+3FFFD 的 Unicode 字符集。 这个子集有时也称为“CJK 象形文字”**。 有关详细信息，请参阅 http://www.unicode.org。
 
-"Default" corresponds to the state denoted by the default value of the **xml:space** attribute.
+“默认”对应于 **xml:space** 属性的默认值所表示的状态。
 
-### Whitespace in inner text, and string primitives
+### 内部文本中的空格和字符串原语
 
-The above normalization rules apply to inner text within XAML elements. After normalization, a XAML processor converts any inner text into an appropriate type like this:
+上面的规范化规则适用于 XAML 元素中的内部文本。 规范化后，一个 XAML 处理器将任何内部文本转换为合适的类型，如下所示：
 
--   If the type of the property is not a collection, but is not directly an **Object** type, the XAML processor tries to convert to that type using its type converter. A failed conversion here results in a XAML parse error.
--   If the type of the property is a collection, and the inner text is contiguous (no intervening element tags), the inner text is parsed as a single **String**. If the collection type cannot accept **String**, this also results in a XAML parser error.
--   If the type of the property is **Object**, then the inner text is parsed as a single **String**. If there are intervening element tags, this results in a XAML parser error, because the **Object** type implies a single object (**String** or otherwise).
--   If the type of the property is a collection, and the inner text is not contiguous, then the first substring is converted into a **String** and added as a collection item, the intervening element is added as a collection item, and finally the trailing substring (if any) is added to the collection as a third **String** item.
+-   如果属性的类型不是集合，但也不是一种直接的 **Object** 类型，XAML 处理器将尝试使用它的转换器转换为该类型。 此处失败的转换将导致 XAML 分析错误。
+-   如果属性的类型是一个集合，并且内部文本是连续的（中间没有元素标记），内部文本会分析为单个 **String**。 如果集合类型不能接受 **String**，这也会导致 XAML 分析器错误。
+-   如果属性的类型是 **Object**，那么内部文本会分析为单个 **String**。 如果中间没有元素标记，这将导致 XAML 分析器错误，因为 **Object** 类型标识单个对象（**String** 或其他对象）。
+-   如果属性类型是一个集合，并且内部文本不是连续的，那么第一个子字符串转换为一个 **String** 并添加为一个集合项，中间元素添加为一个集合项，最后的结尾子字符串（如果有）作为第三个 **String** 项添加到集合中。
 
-### Whitespace and text content models
+### 空格和文本内容模型
 
-In practice, preserving whitespace is of concern only for a subset of all possible content models. That subset is composed of content models that can take a singleton **String** type in some form, a dedicated **String** collection, or a mixture of **String** and other types in lists, collections, or dictionaries.
+在实际中，保留空格仅是所有可能的内容模型的一个子集。 该子集包含可接受某种形式的单独 **String** 类型的内容模型、一个专用的 **String** 集合，或者 **String** 和列表、集合或词典中的其他类型的组合。
 
-Even for content models that can take strings, the default behavior within these content models is that any whitespace that remains is not treated as significant.
+甚至对于可接受字符串的内容模型，这些内容模型内的默认行为也不会重视任何保留的空格。
 
-### Preserving whitespace
+### 保留空格
 
-Several techniques for preserving whitespace in the source XAML for eventual presentation are not affected by XAML processor whitespace normalization.
+可以采用多种技术在源 XAML 中保留空格，使最终表示不会受 XAML 处理器空格规范化的影响。
 
-`xml:space="preserve"`: Specify this attribute at the level of the element where whitespace needs to be preserved. Note that this preserves all whitespace, including the spaces that might be added by code editors or design surfaces to align markup elements as a visually intuitive nesting. Whether those spaces render is again a matter of the content model for the containing element. We don't recommend that you specify `xml:space="preserve"` at the root level, because the majority of object models don't consider whitespace as significant one way or another. It is a better practice to only set the attribute specifically at the level of elements that render whitespace within strings, or are whitespace significant collections.
+`xml:space="preserve"`：在希望保留空格的元素级别上指定此属性。 请注意，这会保留所有空格，包括可能由代码编辑器或设计界面添加的，使标记元素以一种直观嵌套方式对齐的空格。 是否显示这些空格由包含元素的内容模型负责。 我们不建议在根级别指定 `xml:space="default"`，因为大部分对象模型都不会将空格视为一种重要的方式。 一种更好的做法是，仅在呈现字符串内的空格的元素级别上专门设置该属性，或者在空格很重要的集合中设置该属性。
 
-Entities and nonbreaking spaces: XAML supports placing any Unicode entity within a text object model. You can use dedicated entities such as nonbreaking space (in UTF-8 encoding). You can also use rich text controls that support nonbreaking space characters. Be cautious if you are using entities to simulate layout characteristics such as indents, because the run-time output of the entities vary based on a greater number of factors than would the general layout facilities, such as proper use of panels and margins.
-
-
+实体和不间断空白：XAML 支持在一个文本对象模型中放置任何 Unicode 实体。 你可以使用专门的实体，例如不间断空白（在 UTF-8 编码中）。 你也可以使用支持不间断空白字符的富文本控件。 如果使用实体来模拟缩进等布局字符，请保持谨慎，因为不同于一般的布局工具（例如面板和边距的适当使用），基于大量因素，实体的运行时输出将不同。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

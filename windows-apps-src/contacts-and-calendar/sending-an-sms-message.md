@@ -1,25 +1,25 @@
 ---
 author: Xansky
-description: This topic shows you how to launch the compose SMS dialog to allow the user to send an SMS message. You can pre-populate the fields of the SMS with data before showing the dialog. The message will not be sent until the user taps the send button.
-title: Send an SMS message
+description: "本主题向你展示如何启动撰写短信对话框以允许用户发送短信。 你可以在显示该对话框之前，使用数据预填充短信的字段。 该消息将在用户点击发送按钮后发出。"
+title: "发送短信"
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 keywords: contacts, SMS, send
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: e00d2e9a701a2a23b5a98f2275abd55da12fa791
+ms.openlocfilehash: 738f7049b0a8fe5b42abfbc25f09501d0f6e7370
 
 ---
 
-# Send an SMS message
+# 发送短信
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This topic shows you how to launch the compose SMS dialog to allow the user to send an SMS message. You can pre-populate the fields of the SMS with data before showing the dialog. The message will not be sent until the user taps the send button.
+本主题向你展示如何启动撰写短信对话框以允许用户发送短信。 你可以在显示该对话框之前，使用数据预填充短信的字段。 消息在用户点击“发送”按钮之前将不会发送。
 
-## Launch the compose SMS dialog
+## 启动撰写短信对话框
 
-Create a new [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessage) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) to show the dialog.
+创建新 [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessage) 对象，并设置你要在撰写电子邮件对话框中预填充的数据。 调用 [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) 显示对话框。
 
 ```cs
 private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -50,16 +50,16 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 }
 ```
 
-## Summary and next steps
+## 摘要和后续步骤
 
-This topic has shown you how to launch the compose SMS dialog. For information on selecting contacts to use as recipients for an SMS message, see [Select contacts](selecting-contacts.md). Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to send and receive SMS messages by using a background task.
+本主题已向你展示如何启动撰写短信对话框。 有关选择用作短信接收方的联系人的信息，请参阅[选择联系人](selecting-contacts.md)。 从 GitHub 下载[通用 Windows 应用示例](http://go.microsoft.com/fwlink/p/?linkid=619979)来查看更多有关如何使用后台任务发送和接收短信的示例。
 
-## Related topics
+## 相关主题
 
-* [Select contacts](selecting-contacts.md)
+* [选择联系人](selecting-contacts.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

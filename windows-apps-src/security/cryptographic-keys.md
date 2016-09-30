@@ -1,81 +1,81 @@
 ---
-title: Cryptographic keys
-description: This article shows how to use standard key derivation functions to derive keys and how to encrypt content using symmetric and asymmetric keys.
+title: "加密密钥"
+description: "本文显示了如何使用标准密钥派生函数来派生密钥以及如何使用对称密钥和非对称密钥来加密内容。"
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: e7fba930c108744815f261e7d01d198626d7e7c9
-ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
+ms.openlocfilehash: a86f31a0b62958f1300e386dfb99fd7fc1432fc5
 
 ---
 
-# Cryptographic keys
+# 加密密钥
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article shows how to use standard key derivation functions to derive keys and how to encrypt content using symmetric and asymmetric keys. 
+本文显示了如何使用标准密钥派生函数来派生密钥以及如何使用对称密钥和非对称密钥来加密内容。 
 
-## Symmetric keys
-
-
-Symmetric key encryption, also called secret key encryption, requires that the key used for encryption also be used for decryption. You can use a [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) class to specify a symmetric algorithm and create or import a key. You can use static methods on the [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) class to encrypt and decrypt data by using the algorithm and key.
-
-Symmetric key encryption typically uses block ciphers and block cipher modes. A block cipher is a symmetric encryption function that operates on fixed size blocks. If the message you want to encrypt is longer than the block length, you must use a block cipher mode. A block cipher mode is a symmetric encryption function built by using a block cipher. It encrypts plaintext as a series of fixed size blocks. The following modes are supported for apps:
-
--   The ECB (electronic codebook) mode encrypts each block of the message separately. This is not considered a secure encryption mode.
--   The CBC (cipher block chaining) mode uses the previous ciphertext block to obfuscate the current block. You must determine what value to use for the first block. This value is called the initialization vector (IV).
--   The CCM (counter with CBC-MAC) mode combines the CBC block cipher mode with a message authentication code (MAC).
--   The GCM (Galois counter mode) mode combines the counter encryption mode with the Galois authentication mode.
-
-Some modes such as CBC require that you use an initialization vector (IV) for the first ciphertext block. The following are common initialization vectors. You specify the IV when calling [**CryptographicEngine.Encrypt**](https://msdn.microsoft.com/library/windows/apps/br241494). For most cases it is important that the IV never be reused with the same key.
-
--   Fixed uses the same IV for all messages to be encrypted. This leaks information and its use is not recommended.
--   Counter increments the IV for each block.
--   Random creates a pseudorandom IV. You can use [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) to create the IV.
--   Nonce-Generated uses a unique number for each message to be encrypted. Typically, the nonce is a modified message or transaction identifier. The nonce does not have to be kept secret, but it should never be reused under the same key.
-
-Most modes require that the length of the plaintext be an exact multiple of the block size. This usually requires that you pad the plaintext to obtain the appropriate length.
-
-While block ciphers encrypt fixed size blocks of data, stream ciphers are symmetric encryption functions that combine plaintext bits with a pseudorandom bit stream (called a key stream) to generate the ciphertext. Some block cipher modes such as output feedback mode (OTF) and counter mode (CTR) effectively turn a block cipher into a stream cipher. Actual stream ciphers such as RC4, however, typically operate at higher speeds than block cipher modes are capable of achieving.
-
-The following example shows how to use the [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) class to create a symmetric key and use it to encrypt and decrypt data.
-
-## Asymmetric keys
+## 对称密钥
 
 
-Asymmetric key cryptography, also called public key cryptography, uses a public key and a private key to perform encryption and decryption. The keys are different but mathematically related. Typically the private key is kept secret and is used to decrypt data while the public key is distributed to interested parties and is used to encrypt data. Asymmetric cryptography is also useful for signing data.
+对称密钥加密又称为密钥加密，它要求用来解密的密钥与用来加密的密钥相同。 可使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 类指定对称算法、创建密钥或导入密钥。 可将 [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 类上的静态方法与算法和密钥结合使用来加密和解密数据。
 
-Because asymmetric cryptography is much slower than symmetric cryptography, it is seldom used to encrypt large amounts of data directly. Instead, it is typically used in the following manner to encrypt keys.
+对称密钥加密一般使用块加密和块加密模式。 块加密是一种对固定大小块操作的对称加密功能。 如果要加密的消息大于块长度，则必须使用块加密模式。 块加密模式是一种通过使用块加密构建的对称加密功能。 它作为一系列固定大小块加密纯文本。 应用支持以下模式：
 
--   Alice requires that Bob send her only encrypted messages.
--   Alice creates a private/public key pair, keeps her private key secret and publishes her public key.
--   Bob has a message he wants to send to Alice.
--   Bob creates a symmetric key.
--   Bob uses his new symmetric key to encrypt his message to Alice.
--   Bob uses Alice’s public key to encrypt his symmetric key.
--   Bob sends the encrypted message and the encrypted symmetric key to Alice (enveloped).
--   Alice uses her private key (from the private/public pair) to decrypt Bob’s symmetric key.
--   Alice uses Bob’s symmetric key to decrypt the message.
+-   ECB（电子密码本）模式单独加密每个消息块。 这不是安全的加密模式。
+-   CBC（加密块链） 模式使用以前的加密文本块来混淆当前的块。 你必须确定第一个块使用哪个值。 此值称为初始化矢量 (IV)。
+-   CCM（使用 CBC-MAC 的计数器） 模式将 CBC 块加密模式与消息验证代码 (MAC) 合并在一起。
+-   GCM（Galois 计数器模式） 模式将计数器加密模式与 Galois 验证模式合并在一起。
 
-You can use an [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) object to specify an asymmetric algorithm or a signing algorithm, to create or import an ephemeral key pair, or to import the public key portion of a key pair.
+有些模式（如 CBC）要求对第一个 ciphertext 块使用初始化矢量 (IV)。 下面是常用的初始化矢量。 在调用 [**CryptographicEngine.Encrypt**](https://msdn.microsoft.com/library/windows/apps/br241494) 时指定 IV。 大多数情况下，IV 不与相同密钥重复使用，这一点很重要。
 
-## Deriving keys
+-   固定 对要加密的所有消息使用相同的 IV。 这将泄漏信息，不建议使用此模式。
+-   计数器 对每个块增量使用 IV。
+-   随机可创建一个伪随机 IV。 可使用 [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) 创建 IV。
+-   Nonce 生成对要加密的每个消息使用唯一编号。 通常，nonce 是一个修改的消息或事务标识符。 nonce 不必保密，但不得在同一密钥下重用。
+
+大多数模式都要求纯文本的长度是块大小的整数倍。 这通常要求填充纯文本来获取相应长度。
+
+尽管分组加密对固定大小的数据块进行加密，但是流加密是结合纯文本位和伪随机位流（称为密钥流）来生成已加密文本的对称加密功能。 一些分组加密模式（如输出反馈模式 (OTF) 和计数器模式 (CTR)）将分组加密有效地转换为流加密。 但是，实际的流加密（如 RC4）的操作速度比分组加密模式能够获取的速度高。
+
+以下示例说明如何使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 类创建对称密钥并使用其加密和解密数据。
+
+## 不对称密钥
 
 
-It is often necessary to derive additional keys from a shared secret. You can use the [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) class and one of the following specialized methods in the [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) class to derive keys.
+不对称密钥加密也称为公钥加密，使用公钥和私钥执行加密和解密。 这两种密钥虽然不同，但在算术上相关。 通常，私钥秘密保存并用于解密数据，而公钥会分发到感兴趣的各方并用于加密数据。 不对称加密也用于对数据进行签名。
 
-| Object                                                                            | Description                                                                                                                                |
+因为非对称加密比对称加密慢得多，所以非对称加密很少用于直接加密大量数据。 非对称加密通常用于按以下方式加密密钥。
+
+-   Alice 要求 Bob 仅向她发送已加密的邮件。
+-   Alice 创建了一个私钥/公钥对，将其私钥保密，并发布了其公钥。
+-   Bob 有一封要发给 Alice 的邮件。
+-   Bob 创建了一个对称密钥。
+-   Bob 使用其新对称密钥来加密他要发给 Alice 的邮件。
+-   Bob 使用 Alice 的公钥来加密其对称密钥。
+-   Bob 将已加密的邮件和已加密的对称密钥发送给 Alice（已包封）。
+-   Alice 使用其私钥（来自私钥/公钥对）来解密 Bob 的对称密钥。
+-   Alice 使用 Bob 的对称密钥来解密该邮件。
+
+可使用 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 对象指定不对称算法或签名算法、创建或导入短暂密钥对，或者导入密钥对的公钥部分。
+
+## 派生密钥
+
+
+通常有必要从共享机密派生附加密钥。 你可以使用 [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) 类以及 [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) 类中的以下特殊方法之一来派生密钥。
+
+| 对象                                                                            | 说明                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Creates a KeyDerivationParameters object for use in the password-based key derivation function 2 (PBKDF2).                                 |
-| [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | Creates a KeyDerivationParameters object for use in a counter mode, hash-based message authentication code (HMAC) key derivation function. |
-| [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | Creates a KeyDerivationParameters object for use in the SP800-56A key derivation function.                                                 |
+| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | 创建一个 KeyDerivationParameters 对象以在基于密码的密钥派生函数 2 (PBKDF2) 中使用。                                 |
+| [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | 创建一个 KeyDerivationParameters 对象以在某个计数器模式的、基于哈希的邮件身份验证代码 (HMAC) 密钥派生函数中使用。 |
+| [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | 创建一个 KeyDerivationParameters 对象以在 SP800-56A 密钥派生函数中使用。                                                 |
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

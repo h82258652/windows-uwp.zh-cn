@@ -1,78 +1,78 @@
 ---
 author: jnHs
-Description: The Ratings report in the Windows Dev Center dashboard lets you see the distribution of how customers rate your app in the Windows Store.
-title: Ratings report
+Description: "Windows 开发人员中心仪表板中的“评分”报告可使你查看客户在 Windows 应用商店中为你的应用评分的分布情况。"
+title: "评分报告"
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1613c8a5e5a28ba431fcfb186a0fcd5fe9bd7582
+ms.openlocfilehash: e0258bc9402772d0a036b32563348d11acd0fdb7
 
 ---
 
-# Ratings report
+# 评分报告
 
 
-The **Ratings** report in the Windows Dev Center dashboard lets you see the distribution of how customers rate your app in the Windows Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+Windows 开发人员中心仪表板中的**分级**报告可使你查看客户在 Windows 应用商店中为你的应用分级的分布情况。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式检索此数据。
 
-In this report, a rating means the number of stars (from 1 to 5) that a customer gave your app when rating it in the Store. The **Ratings** report does not include info on any individual comments left as reviews; those are available in the [Reviews report](reviews-report.md).
+在此报告中，评分表示客户在应用商店中为应用评分时为其所给予的星数（从 1 到 5）。 “分级”****报告不包含有关作为评论留下的任何个别评语的信息；这些内容在[评论报告](reviews-report.md)中提供。
 
-## Apply filters
-
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by market.
-
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Market**: The default filter is **All markets**. You can choose a specific market if you want this page to only show ratings from customers in that market.
--   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show ratings left by customers using that type of device.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
-
-## Average rating
+## 应用筛选器
 
 
-The **Average rating** chart shows the average rating of your app over the selected period of time.
+在页面顶部附近，你可以展开“应用筛选器”****按日期范围和/或市场筛选此页上的所有数据。
 
-## Number of ratings
+-   **日期**：默认筛选器为“最近 30 天”****，但是你可以将此条件扩大到“最近 12 个月”****。
+-   **市场**：默认筛选器为“所有市场”****。 如果你希望此页面仅显示特定市场中客户的分级，你可以选择该市场。
+-   **设备类型**：默认筛选器为“所有设备”****。 如果你希望此页面仅显示使用特定设备类型的客户留下的分级，你可以选择该设备类型。
 
+以下列出的所有图中的信息将反映在“应用筛选器”****部分中所选的时段，并将反映你选择的其他任何筛选器。
 
-The **Number of ratings** chart shows the total number of ratings of your app over the selected period of time.
-
-## New and revised ratings
-
-
-The **New and revised ratings** chart shows the number of ratings for each type of rating (new or revised) over the selected period of time.
-
--   **New ratings** are ratings that customers have submitted but haven't changed.
--   **Revised ratings** are ratings that have been changed by the customer.
-
->**Note**  A rating will appear here as revised even if the customer only changed or added the text or title of their review and left the actual rating the same.
-
-## Average rating over time
+## 平均分级
 
 
-The **Average rating over time** chart shows how the app's average rating has changed over the selected period of time.
+“平均分级”****图显示选定时段内应用的平均分级。
 
-Rather than calculating the average of all ratings left during the selected period of time (as in the **Average rating** chart), the **Average rating over time** chart shows you how customers rated the app on a given day or week during the period. This helps you identify trends or determine if ratings were affected by updates or other factors.
-
-If you have filtered the info by **Last 30 days** or **Last 3 months**, the chart displays your average rating by day. If you've filtered by **Last 6 months** or **Last 12 months**, the chart displays your average rating by week (with a new week considered to start on Monday; the average rating shown is for the previous week).
-
-## Markets
+## 分级数量
 
 
-The **Markets** chart shows average rating and number of ratings over the selected period of time by market.
+“分级数量”****图显示选定时段内的应用分级总数。
 
-> **Note**  If you have used the **Page filters** to specify a specific market, you won't see this chart on the **Ratings** report. To see this chart, change the **Page filters** to show all markets.
+## 新分级和已修改分级
 
-By default, we show you the market which had the most reviews and continue downward from there, but you can reverse this order by toggling the arrow in the **Number of ratings** column of this chart. You can also sort the data by **Average rating** or **Market** by clicking those columns.
 
-> **Note**  It’s likely that you’ll see a different number of ratings when comparing the **Ratings** report in the Windows Dev Center with the Reviews report in the older Dev Center mobile app. This is because the app only shows data for reviews left from customers on Windows Phone 8.1 and earlier. This may also be a result of work by Microsoft to remove reviews from the Windows Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
+“新分级和已修改分级”****图显示选定时段内每种类型的分级（新分级或已修改分级）的分级数量。
 
- 
+-   “新分级”****是客户已提交但未更改的分级。
+-   **“已修改评分”**是客户已更改的评分。
+
+>**注意** 评分在此处显示为已修改（即使客户仅更改或添加了其评论文本或标题，而实际评分保持原样）。
+
+## 按时间的平均评分
+
+
+“按时间的平均分级”****图显示选定时间段内应用的平均分级如何变化。
+
+“按时间的平均分级”****图显示客户在选定时间段内的给定日期或某一星期如何为应用分级，而不是计算在该时间段内进行的所有分级的平均值（如在“平均分级”****图中）。 这有助于你确认趋势或确定分级是否受到更新或其他因素的影响。
+
+如果你已按**“最近 30 天”**或**“最近 3 个月”**筛选该信息，则此图按日显示平均评分。 如果你已按“最近 6 个月”****或“最近 12 个月”****进行筛选，则此图按周显示平均分级（从星期一开始视为新的一周）；所显示的平均分级属于上一周）。
+
+## 市场
+
+
+**“市场”**图按市场显示选定时段内的平均评分和评分数量。
+
+> **注意** 如果你已使用**“页面筛选器”**指定特定市场，则无法在**“评分”**报告上看到此图。 若要查看此图，请将**“页面筛选器”**更改为显示所有市场。
+
+默认情况下，我们将按评论数量从高到底的顺序向你显示市场，但你可以通过切换此图的**“评分数量”**列中的箭头来颠倒此顺序。 你还可以按**“平均评分”**或**“市场”**来为数据排序，方法是单击相应的列。
+
+> **注意** 在比较 Windows 开发人员中心的**“评分”**报告和旧式的开发人员中心移动应用的“评价”报告时，你可能会看到不同数量的评分。 这是因为应用仅显示 Windows Phone 8.1 及早期版本的客户留下的评价数据。 这也可能是因为 Microsoft 致力于从 Windows 应用商店中删除标识为垃圾邮件、不适合、具有冒犯性或违反了其他策略的评论。 我们希望此操作将产生更好的客户体验。
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

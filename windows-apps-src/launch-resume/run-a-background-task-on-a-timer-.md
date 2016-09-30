@@ -1,43 +1,47 @@
 ---
 author: TylerMSFT
-title: Run a background task on a timer
-description: Learn how to schedule a one-time background task, or run a periodic background task.
+title: "在计时器上运行后台任务"
+description: "了解如何计划一次性后台任务，或运行定期后台任务。"
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 translationtype: Human Translation
-ms.sourcegitcommit: 16202eeb37421acf75a9032dfc1eec397d23ce4f
-ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
 
 ---
 
-# Run a background task on a timer
+# 在计时器上运行后台任务
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Important APIs**
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+
+**重要的 API**
 
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)
+-   [**TimeTrigger 类**](https://msdn.microsoft.com/library/windows/apps/br224843)
 -   [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)
 
-Learn how to schedule a one-time background task, or run a periodic background task.
+了解如何计划一次性后台任务，或运行定期后台任务。
 
--   This example assumes that you have a background task that needs to run periodically, or at a specific time, to support your app. A background task will only run using a [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) if you have called [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
--   This topic assumes you have already created a background task class. To get started quickly building a background task, see [Create and register a single-process background task](create-and-register-a-singleprocess-background-task.md) or [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md). For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
+-   此示例假定你的后台任务需要定期运行，或在特定时间运行以支持你的应用。 如果你已调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，后台任务将仅使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 运行。
+-   本主题假定你已创建一个后台任务类，其中包含用作后台任务入口点的 Run 方法。 若要快速生成后台任务，请参阅[创建和注册后台任务](create-and-register-a-background-task.md)。 有关条件和触发器的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-## Create a time trigger
+## 创建时间触发器
 
--   Create a new [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). The second parameter, *OneShot*, specifies whether the background task will run only once or keep running periodically. If *OneShot* is set to true, the first parameter (*FreshnessTime*) specifies the number of minutes to wait before scheduling the background task. If *OneShot* is set to false, *FreshnessTime* specifies the frequency at which the background task will run.
 
-    The built-in timer for Universal Windows Platform (UWP) apps that target the desktop or mobile device family runs background tasks in 15-minute intervals.
+-   创建新的 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)。 第二个参数 *OneShot* 指定后台任务是运行一次还是保持周期性运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 被设置为 false，则 *FreshnessTime* 会指定后台任务的运行频率。
 
-    -   If *FreshnessTime* is set to 15 minutes and *OneShot* is true, the task will be scheduled to run once starting between 15 and 30 minutes from the time it is registered. If it is set to 25 minutes and *OneShot* is true, the task will be scheduled to run once starting between 25 and 40 minutes from the time it is registered.
+    适用于桌面或移动设备系列的通用 Windows 平台 (UWP) 应用的内置计时器以 15 分钟的间隔运行后台任务。
 
-    -   If *FreshnessTime* is set to 15 minutes and *OneShot* is false, the task will be scheduled to run every 15 minutes starting between 15 and 30 minutes from the time it is registered. If it is set to n minutes and *OneShot* is false, the task will be scheduled to run every n minutes starting between n and n + 15 minutes after it is registered.
+    -   如果 *FreshnessTime* 设置为 15 分钟并且 *OneShot* 为 true，则任务将从其注册之时起 0 至 15 分钟内运行一次该任务。
 
-    **Note**  If *FreshnessTime* is set to less than 15 minutes, an exception is thrown when attempting to register the background task.
- 
+    -   如果 *FreshnessTime* 设置为 15 分钟并且 *OneShot* 为 false，则任务将从其注册之时起 0 至 15 分钟内每隔 15 分钟运行一次该任务。
 
-    For example, this trigger will cause a background task to run once an hour:
+    **注意** 如果 *FreshnessTime* 设置为少于 15 分钟，则在尝试注册后台任务时将引发异常。
+
+     
+
+    例如，该触发器将导致后台任务每小时运行一次：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -47,11 +51,12 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
     > ```
 
-## (Optional) Add a condition
+## （可选）添加条件
 
--   If necessary, create a background task condition to control when the task runs. A condition prevents the background task from running until the condition is met - for more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
-    In this example the condition is set to **UserPresent** so that, once triggered, the task only runs once the user is active. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+-   如果需要，创建一个后台任务条件以控制任务何时运行。 防止后台任务在未满足条件之前运行的条件 - 有关详细信息，请参阅 [设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)。
+
+    在此示例中，条件设置为 **UserPresent**，以便在触发之后，在用户处于活动状态时才运行一次该任务。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -61,9 +66,10 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
     > ```
 
-##  Call RequestAccessAsync()
+##  调用 RequestAccessAsync()
 
--   Before trying to register the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) background task, call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494).
+
+-   在尝试注册 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 后台任务之前，调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -73,14 +79,12 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > BackgroundExecutionManager::RequestAccessAsync();
     > ```
 
-## Register the background task
+## 注册后台任务
 
--   Register the background task by calling your background task registration function. For more information on registering background tasks, see [Register a background task](register-a-background-task.md).
 
-> [!Important]
-> For background tasks that run in the same process as your app, do not set `entryPoint` For background tasks that run in a separate process from your app, set `entryPoint` to be the namespace, '.', and name of the class that contains your background task implementation.
+-   通过调用后台任务注册函数注册后台任务。 有关注册后台任务的详细信息，请参阅[注册后台任务](register-a-background-task.md)。
 
-    The following code registers a background task that runs in a separate process:
+    以下代码将注册后台任务：
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -96,33 +100,39 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
 
-    > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+    > **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
 
 
-## Remarks
+## 备注
 
-> **Note**  Starting with Windows 10, it is no longer necessary for the user to add your app to the lock screen in order to utilize background tasks. For guidance on the types of background task triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
+> **注意** 从 Windows 10 开始，用户无须再将你的应用添加到锁屏界面，即可利用后台任务。 有关后台任务触发器类型的指南，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
-## Related topics
-
-* [Create and register a single-process background task](create-and-register-a-singleprocess-background-task.md).
-* [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 
+## 相关主题
 
-<!--HONumber=Sep16_HO2-->
+
+* [创建和注册后台任务](create-and-register-a-background-task.md)
+* [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
+* [处理取消的后台任务](handle-a-cancelled-background-task.md)
+* [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
+* [注册后台任务](register-a-background-task.md)
+* [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
+* [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
+* [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
+* [使用维护触发器](use-a-maintenance-trigger.md)
+* [后台任务指南](guidelines-for-background-tasks.md)
+
+* [调试后台任务](debug-a-background-task.md)
+* [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
+
+ 
+
+ 
+
+
+
+<!--HONumber=Jun16_HO5-->
 
 

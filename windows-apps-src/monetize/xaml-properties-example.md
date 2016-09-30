@@ -1,23 +1,23 @@
 ---
 author: mcleanbyron
 ms.assetid: d074e9d5-b3e0-4f16-b1e4-02b32ac99b2c
-description: Learn how to assign **AdControl** properties to values.
-title: XAML properties example
+description: "了解如何将 **AdControl** 属性分配给值。"
+title: "XAML 属性示例"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: fb0533aa0ea760bca686276f886f0afcb21bf6f7
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 43d579d2d0a92a8f03f17efa2ec42707357e99f9
 
 
 ---
 
-# XAML properties example
+# XAML 属性示例
 
 
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+以下 XAML 示例演示了如何将 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 属性分配给值。 如果某个属性未设置，**AdControl** 将使用默认值来创建与应用的用户体验一致的广告。
 
-The following XAML example demonstrates how to assign [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) properties to values. If a property is not set, the **AdControl** will use default values to create an ad that is consistent with the user experience of the app.
-
-The values are examples. In your code you will set the values of these functions and properties appropriate for your app.
+这些值均为示例。 在你的代码中，你将根据应用的需要设置这些函数和属性的值。
 
 ``` syntax
 Width="300",
@@ -30,14 +30,14 @@ ErrorOcurred="OnAdError",
 IsEngagedChanged="OnAdEngagedChanged"
 ```
 
-## Related topics
+## 相关主题
 
-* [Advertising samples on GitHub](http://aka.ms/githubads)
+* [GitHub 上的广告示例](http://aka.ms/githubads)
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,43 +1,43 @@
 ---
 author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: Device Portal for Xbox
-description: Learn how to enable the Device Portal for Xbox One.
+title: "适用于 Xbox 的 Device Portal"
+description: "了解如何启用适用于 Xbox One 的 Device Portal。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 77f542b2fed80271082e97437790b33ea7b54172
+ms.openlocfilehash: e1bfdf8e4ee4ed1f88c514acb9ef555c07fd0746
 
 ---
-# Device Portal for Xbox
+# 适用于 Xbox 的 Device Portal
 
 
-## Set up Device Portal on Xbox
+## 在 Xbox 上设置 Device Portal
 
-### Enable Device Portal
+### 启用 Device Portal
 
-**To enable Device Portal**
+**启用 Device Portal**
 
-1. Select the Dev Home tile on the home screen (see image)  
+1. 在主屏幕上选择“开发人员主页”磁贴（如图所示）  
 ![Device Portal DevHome](images/device-portal/xbox-dev-home-tile.png)
-2. Within Dev Home, navigate to the **Remote Management** tool ![Device Portal RemoteManagement Tool](images/device-portal/xbox-remote-management-tool.png)
-3. Select **Manage Windows Device Portal** and press **A**
-4. Check the **Enable Windows Device Portal** setting
-5. Enter a Username and Password to use to authenticate access to your devkit from a browser, and save them.
-6. Close the settings page and note the URL listed on the Remote Management tool to connect.
-7. Enter the URL in your browser, and then sign in with the credentials you configured.
-8. You will receive a warning about the Certificate that was provided, similar to that pictured below. You should click on **Continue to this website** to access Windows Device Portal in the preview.
-![Device Portal Certificate Error](images/device-portal/xbox-certificate-error.png)
+2. 在开发人员主页中，导航到“远程管理”****工具 ![Device Portal RemoteManagement 工具](images/device-portal/xbox-remote-management-tool.png)
+3. 选择“管理 Windows Device Portal”****，然后按“A”****
+4. 选中“启用 Windows Device Portal”****设置
+5. 输入用于从浏览器对开发套件的访问进行验证的用户名和密码，然后保存它们。
+6. 关闭设置页面，并记下远程管理工具上列出的要连接的 URL。
+7. 在浏览器中输入 URL，然后使用已配置的凭据登录。
+8. 你将收到有关已提供的证书的警告，与下图中的内容类似。 若要以预览方式访问 Windows Device Portal，应单击“继续浏览此网站”****。
+![Device Portal 证书错误](images/device-portal/xbox-certificate-error.png)
 
-## Device Portal pages
+## Device Portal 页面
 
-Device Portal on Xbox provides a set of standard pages. For detailed descriptions, see [Windows Device Portal overview](device-portal.md).
+XBox 上的 Device Portal 提供了一组标准页面。 有关详细说明，请参阅 [Windows Device Portal 概述](device-portal.md)。
 
-- Apps
-- Performance
-- Networking
+- 应用
+- 性能
+- 网络
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

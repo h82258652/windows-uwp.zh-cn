@@ -1,239 +1,239 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
-title: Speech interactions
+Description: "使用 Cortana 语音命令、语音识别和语音合成，将语音整合到你的应用中。"
+title: "语音交互"
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: d32c38c2f939e03375630439f2aa512004601a70
+ms.openlocfilehash: ecd002e6f3a92702459426858693dd7547b0ca02
 
 ---
 
-# Speech interactions
+# 语音交互
 
 
-Integrate speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into the user experience of your app.
+将语音识别和文本到语音转换（又称 TTS 或语音合成）直接集成到你的应用的用户体验中。
 
 
-**Other speech components**
+**其他语音组件**
 
--   See the [Cortana design guidelines](cortana-interactions.md) if you are exposing app functionality in the **Cortana** UI.
+-   如果要使用 **Cortana** UI 公开应用功能，请参阅 [Cortana 设计指南](cortana-interactions.md)。
 
 
-**Speech recognition:  **converts words spoken by the user into text for form input, for text dictation, to specify an action or command, and to accomplish tasks. Both pre-defined grammars for free-text dictation and web search, and custom grammars authored using Speech Recognition Grammar Specification (SRGS) Version 1.0 are supported.
+**语音识别：**对于文本听写，将用户说出的话语转换为用于表单输入的文本，从而指定操作或命令并完成任务。 既支持用于自由文本听写和 Web 搜索的预定义语法，也支持使用语音识别语法规范 (SRGS) 版本 1.0 创作的自定义语法。
 
-**TTS:  **uses a speech synthesis engine (voice) to convert a text string into spoken words. The input string can be either basic, unadorned text or more complex Speech Synthesis Markup Language (SSML). SSML provides a standard way to control characteristics of speech output, such as pronunciation, volume, pitch, rate or speed, and emphasis.
+**TTS：**使用语音合成引擎（语音）可将文本字符串转换为语音字词。 输入字符串既可以是基本的未经处理的文本，也可以是更复杂的语音合成标记语言 (SSML)。 SSML 提供用于控制语音输出特征（例如发音、音量、音调、音速和重读）的标准方式。
 
-**Note**  Using **Cortana** and customized voice commands, your app can be launched in the foreground (the app takes focus, just as if it was launched from the Start menu) or activated as a background service (**Cortana** retains focus but provides results from the app). Commands that require additional context or user input (such as sending a message to a specific contact) are best handled in a foreground app, while basic commands can be handled in **Cortana** through a background app.
-If you are exposing functionality as a background service through voice commands in the **Cortana** UI, see the [Cortana design guidelines](cortana-design-guidelines.md).
+**注意** 通过使用 **Cortana** 和自定义语音命令，你的应用可以在前台启动（应用获取焦点，正如通过“开始”菜单启动一样），或作为后台服务激活（**Cortana** 保留焦点，但提供来自应用的结果）。 需要额外上下文或用户输入（例如将消息发送给特定联系人）的命令最好通过前台应用处理，而基本命令可以通过后台应用使用 **Cortana** 处理。
+如果要使用 **Cortana** UI 通过语音命令将功能作为后台服务公开，请参阅 [Cortana 设计指南](cortana-design-guidelines.md)。
 
  
 
-Designed and implemented thoughtfully, speech can be a robust and enjoyable way for people to interact with your app, complementing, or even replacing, keyboard, mouse, touch, and gestures.
+经过周密地设计和实现，语音可以成为用户与应用交互的可靠而愉快的方式，补充甚至替代键盘、鼠标、触摸和手势。
 
-## Speech interaction design
-
-
-These guidelines and recommendations describe how to best integrate both speech recognition and TTS into the interaction experience of your app.
-
-If you are considering supporting speech interactions in your app:
-
--   What actions can be taken through speech? Can a user navigate between pages, invoke commands, or enter data as text fields, brief notes, or long messages?
--   Is speech input a good option for completing a task?
--   How does a user know when speech input is available?
--   Is the app always listening, or does the user need to take an action for the app to enter listening mode?
--   What phrases initiate an action or behavior? Do the phrases and actions need to be enumerated on screen?
--   Are prompt, confirmation, and disambiguation screens or TTS required?
--   What is the interaction dialog between app and user?
--   Is a custom or constrained vocabulary required (such as medicine, science, or locale) for the context of your app?
--   Is network connectivity required?
-
-## Text input
+## 语音交互设计
 
 
-Speech for text input can range from short form (single word or phrase) to long form (continuous dictation). Short form input must be less than 10 seconds in length, while long form input session can be up to two minutes in length. (Long form input can be restarted without user intervention to give the impression of continuous dictation.)
+这些指南和建议将介绍如何以最佳方式将语音识别和 TTS 都集成到你的应用的交互体验中。
 
-You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Command bars](../controls-and-patterns/app-bars.md)) can be used to show both availability and state.
+如果你考虑在你的应用中支持语音交互：
 
-Provide ongoing recognition feedback to minimize any apparent lack of response while recognition is being performed.
+-   可以通过语音执行哪些操作？ 用户是否可以在页面之间导航、调用命令，或将数据作为文本字段、简短注释或长消息输入？
+-   语音输入是否是用于完成任务的理想选项？
+-   用户如何知道语音输入可用？
+-   应用是否始终在侦听，或者用户是否需要执行某项操作才能使应用进入侦听模式？
+-   哪些短语会启动操作或行为？ 是否需要在屏幕上枚举短语和操作？
+-   是否需要提示、确认和消除歧义屏幕或 TTS？
+-   应用和用户之间的交互对话框是什么？
+-   你的应用上下文是否需要自定义词汇或有限词汇（如医学、科学或区域设置）？
+-   是否需要网络连接？
 
-Let users revise recognition text using keyboard input, disambiguation prompts, suggestions, or additional speech recognition.
-
-Stop recognition if input is detected from a device other than speech recognition, such as touch or keyboard. This probably indicates that the user has moved onto another task, such as correcting the recognition text or interacting with other form fields.
-
-Specify the length of time for which no speech input indicates that recognition is over. Do not automatically restart recognition after this period of time as it typically indicates the user has stopped engaging with your app.
-
-Disable all continuous recognition UI and terminate the recognition session if a network connection is not available. Continuous recogntion requires a network connection.
-
-## Commanding
-
-
-Speech input can initiate actions, invoke commands, and accomplish tasks.
-
-If space permits, consider displaying the supported responses for the current app context, with examples of valid input. This reduces the potential responses your app has to process and also eliminates confusion for the user.
-
-Try to frame your questions such that they elicit as specific a response as possible. For example, "What do you want to do today?" is very open ended and would require a very large grammar definition due to how varied the responses could be. Alternatively, "Would you like to play a game or listen to music?" constrains the response to one of two valid answers with a correspondingly small grammar definition. A small grammar is much easier to author and results in much more accurate recognition results.
-
-Request confirmation from the user when speech recognition confidence is low. If the user's intent is unclear, it's better to get clarification than to initiate an unintended action.
-
-You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Guidelines for command bars](../controls-and-patterns/app-bars.md)) can be used to show both availability and state.
-
-If the speech recognition switch is typically out of view, consider displaying a state indicator in the content area of the app.
-
-If recognition is initiated by the user, consider using the built-in recognition experience for consistency. The built-in experience includes customizable screens with prompts, examples, disambiguations, confirmations, and errors.
-
-The screens vary depending on the specified constraints:
-
--   Pre-defined grammar (dictation or web search)
-
-    -   The **Listening** screen.
-    -   The **Thinking** screen.
-    -   The **Heard you say** screen or the error screen.
--   List of words or phrases, or a SRGS grammar file
-
-    -   The **Listening** screen.
-    -   The **Did you say** screen, if what the user said could be interpreted as more than one potential result.
-    -   The **Heard you say** screen or the error screen.
-
-On the **Listening** screen you can:
-
--   Customize the heading text.
--   Provide example text of what the user can say.
--   Specify whether the **Heard you say** screen is shown.
--   Read the recognized string back to the user on the **Heard you say** screen.
-
-Here is an example of the built-in recognition flow for a speech recognizer that uses a SRGS-defined constraint. In this example, speech recognition is successful.
-
-![initial recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-initial.png)
-
-![intermediate recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-intermediate.png)
-
-![final recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-complete.png)
-
-## Always listening
+## 文本输入
 
 
-Your app can listen for and recognize speech input as soon as the app is launched, without user intervention.
+用于文本输入的语音包括简短形式（单个词或短语）和较长形式（连续听写）。 简短形式输入的长度必须小于 10 秒，而较长形式的输入会话最长可达两分钟。 （较长格式输入可以重新启动而无需用户干预，给人连续听写的印象。）
 
-You should customize the grammar constraints based on the app context. This keeps the speech recognition experience very targeted and relevant to the current task, and minimizes errors.
+你应该提供视觉提示，以指示语音识别受到支持并可供用户使用，以及用户是否需要打开它。 例如，一个带麦克风标志的命令栏按钮（请参阅[命令栏](../controls-and-patterns/app-bars.md)）可用于同时显示可用性和状态。
 
-## "What can I say?"
+提供正在进行的识别反馈，尽量减少执行识别时任何明显的响应缺失。
 
+让用户使用键盘输入、消除歧义提示、建议或其他语音识别方式修改识别文本。
 
-When speech input is enabled, it's important to help users discover what exactly can be understood and what actions can be performed.
+如果从除语音识别以外的其他设备（如触摸或键盘）检测到输入，请停止识别。 这很可能表示用户已转到其他任务，如更正识别文本或与其他表单字段交互。
 
-If speech recognition is user enabled, consider using the command bar or a menu command to show all words and phrases supported in the current context.
+指定无任何语音输入指示识别已结束的时长。 请不要在这段时间后自动重新启动识别，因为它通常指示用户已停止与你的应用交互。
 
-If speech recognition is always on, consider adding the phrase "What can I say?" to every page. When the user says this phrase, display all words and phrases supported in the current context. Using this phrase provides a consistent way for users to discover speech capabilities across the system.
+如果网络连接不可用，则禁用所有连续识别 UI 并终止识别会话。 连续识别需要网络连接。
 
-## Recognition failures
-
-
-Speech recognition will fail. Failures happen when audio quality is poor, when only part of a phrase is recognized, or when no input is detected at all.
-
-Handle failure gracefully, help a user understand why recognition failed, and recover.
-
-Your app should inform the user that they weren't understood and that they need to try again.
-
-Consider providing examples of one or more supported phrases. The user is likely to repeat a suggested phrase, which increases recognition success.
-
-You should display a list of potential matches for a user to select from. This can be far more efficient than going through the recognition process again.
-
-You should always support alternative input types, which is especially helpful for handling repeated recognition failures. For example, you could suggest that the user try to use a keyboard, or use touch or a mouse to select from a list of potential matches.
-
-Use the built-in speech recognition experience as it includes screens that inform the user that recognition was not successful and lets the user make another recognition attempt.
-
-Listen for and try to correct issues in the audio input. The speech recognizer can detect issues with the audio quality that might adversely affect speech recognition accuracy. You can use the information provided by the speech recognizer to inform the user of the issue and let them take corrective action, if possible. For example, if the volume setting on the microphone is too low, you can prompt the user to speak louder or turn the volume up.
-
-## Constraints
+## 命令
 
 
-Constraints, or grammars, define the spoken words and phrases that can be matched by the speech recognizer. You can specify one of the pre-defined web service grammars or you can create a custom grammar that is installed with your app.
+语音输入可以启动操作、调用命令和完成任务。
 
-### Predefined grammars
+如果空间允许，请考虑通过有效输入示例，显示当前应用上下文支持的响应。 这可以减少你的应用需要处理的潜在响应，还可以消除用户的困惑。
 
-Predefined dictation and web-search grammars provide speech recognition for your app without requiring you to author a grammar. When using these grammars, speech recognition is performed by a remote web service and the results are returned to the device
+努力整理你的问题，尽可能提出如响应一样具体的问题。 例如“你今天想做什么？” 是一个开放性问题，由于响应可能截然不同，它将需要庞大的语法定义。 此外，“你想要玩游戏还是听音乐呢？” 这一问题通过相应的狭小语法定义将响应限制在二选一的有效答案中。 狭小语法定义的创作过程容易得多，它还可以产生准确得多的识别结果。
 
--   The default free-text dictation grammar can recognize most words and phrases that a user can say in a particular language, and is optimized to recognize short phrases. Free-text dictation is useful when you don't want to limit the kinds of things a user can say. Typical uses include creating notes or dictating the content for a message.
--   The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.
+当语音识别置信度较低时，请求用户确认。 如果用户的意图并不明确，最好获得清楚示意，而不是启动意外操作。
 
-**Note**  Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.
+你应该提供视觉提示，以指示语音识别受到支持并可供用户使用，以及用户是否需要打开它。 例如，一个带麦克风标志的命令栏按钮（请参阅[命令栏指南](../controls-and-patterns/app-bars.md)）可用于同时显示可用性和状态。
+
+如果语音识别开关总是位于视图以外，请考虑在应用的内容区域中显示状态指示器。
+
+如果识别由用户启动，为保证一致性，请考虑使用内置识别体验。 内置体验包含可借助提示、示例、消除歧义、确认和错误进行自定义的屏幕。
+
+屏幕根据指定的约束而异：
+
+-   预定义语法（听写或 Web 搜索）
+
+    -   “侦听”****屏幕。
+    -   “思考”****屏幕。
+    -   “听到你说”****屏幕或错误屏幕。
+-   字词或短语列表，或者 SRGS 语法文件
+
+    -   “侦听”****屏幕。
+    -   “你说的是”****屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+    -   “听到你说”****屏幕或错误屏幕。
+
+在“侦听”****屏幕上，你可以：
+
+-   自定义标题文本。
+-   提供用户可以说出的示例文本。
+-   指定是否显示“听到你说”****屏幕。
+-   在“听到你说”****屏幕上向用户读出已识别的字符串。
+
+以下示例显示了使用 SRGS 定义的约束的语音识别器的内置识别流程。 在本例中，语音识别是成功的。
+
+![基于 sgrs 语法文件的约束的初始识别屏幕](images/speech/speech-listening-initial.png)
+
+![基于 sgrs 语法文件的约束的中间识别屏幕](images/speech/speech-listening-intermediate.png)
+
+![基于 sgrs 语法文件的约束的最终识别屏幕](images/speech/speech-listening-complete.png)
+
+## 始终聆听
+
+
+只要应用已启动，你的应用就可以聆听和识别语音输入，无需用户干预。
+
+你应该基于应用上下文自定义语法约束。 这可使语音识别体验具有很高的针对性，始终与当前任务保持相关，并最大程度地减少错误。
+
+## “我可以说什么？”
+
+
+启用语音输入后，帮助用户了解可以准确理解哪些内容，以及可以执行哪些操作十分重要。
+
+如果语音识别由用户启用，请考虑使用命令栏或菜单命令来显示当前上下文支持的所有单词和短语。
+
+如果语音识别始终处于打开状态，请考虑将短语“我可以说什么？” 添加到每个页面上。 当用户说出此短语时，显示当前上下文支持的所有单词和短语。 使用此短语将为用户在系统上发现语音功能提供一种一致的方式。
+
+## 识别失败
+
+
+语音识别将失败。 在音频质量较差、仅识别出一部分短语或根本没有检测到任何输入时，将发生故障。
+
+请妥善处理故障，帮助用户了解识别失败的原因并恢复。
+
+你的应用应该通知用户无法理解他们所说内容，需要他们重试。
+
+请考虑提供一个或多个受支持短语示例。 用户有可能重复说出建议的短语，这可增加识别成功率。
+
+你应显示一个包含可能匹配的列表，以供用户选择。 这可能远比重新执行识别过程有效。
+
+你应始终支持替代输入类型，它们对于处理重复识别故障尤其有用。 例如，你可以建议用户尝试使用键盘、触摸或鼠标从可能的匹配列表中进行选择。
+
+请使用内置语音识别体验，因为它包含了用于告知用户识别未成功的屏幕，并让用户再次进行识别尝试。
+
+聆听并尝试改正音频输入问题。 语音识别器可以检测音频质量问题，该问题可反作用于语音识别准确度。 你可以使用语音识别器提供的信息，将该问题告知用户并让其采取改正措施（如果可以）。 例如，如果麦克风的音量设置太低，则可以提示用户说话声应更响亮或调高音量。
+
+## 约束
+
+
+约束（或语法）定义语音识别器可匹配的语音字词和短语。 你可以指定一种预定义 Web 服务语法，也可以创建一种随你的应用一起安装的自定义语法。
+
+### 预定义的语法
+
+预定义的听写和 Web 搜索语法在无需你创作语法的情况下为你的应用提供语音识别。 使用这些语法时，语音识别由远程 Web 服务执行，并且结果将返回到设备
+
+-   默认自由文本听写语法可以识别用户以特定语言说出的大部分字词或短语，并且为识别短语进行了优化。 当你不希望限制用户可说内容的种类时，自由文本听写非常有用。 典型用法包括为一条消息创建笔记或听写其内容。
+-   诸如听写语法等 Web 搜索语法包含了用户可能说出的大量字词和短语。 但是，优化它的目的是识别用户搜索 Web 时通常使用的术语。
+
+**注意** 由于预定义的听写和 Web 搜索语法可能很大，而且处于联机状态（不在设备上），性能可能不如安装在设备上的自定义语法快。
 
  
 
-These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require connection to a network.
+可以使用这些预定义语法识别长达 10 秒的语音输入，并且不要求你进行任何创作。 然而，它们确实需要连接到网络。
 
-### Custom grammars
+### 自定义语法
 
-A custom grammar is designed and authored by you and is installed with your app. Speech recognition using a custom constraint is performed on the device.
+自定义语法由你设计和创作，随你的应用一起安装。 使用自定义约束的语音识别是在设备上执行的。
 
--   Programmatic list constraints provide a lightweight approach to creating simple grammars using a list of words or phrases. A list constraint works well for recognizing short, distinct phrases. Explicitly specifying all words in a grammar also improves recognition accuracy, as the speech recognition engine must only process speech to confirm a match. The list can also be programmatically updated.
--   An SRGS grammar is a static document that, unlike a programmatic list constraint, uses the XML format defined by the [SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). An SRGS grammar provides the greatest control over the speech recognition experience by letting you capture multiple semantic meanings in a single recognition.
+-   编程列表约束提供一种轻型方法，用于使用字词或短语的列表创建一种简单的语法。 列表约束非常适用于识别清晰的短语。 因为语音识别引擎仅须处理语音即可确认匹配，所以采用某种语法明确指定所有字词也可提高识别准确度。 也可以以编程方式更新该列表。
+-   SRGS 语法是一个静态文档，与编程列表约束不同，它使用由 [SRGS 版本 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302) 定义的 XML 格式。 SRGS 语法提供了对语音识别体验的最大控制，方法是让你在单个识别中捕获多个语义含义。
 
-    Here are some tips for authoring SRGS grammars:
+    以下是用于编写 SRGS 语法的一些提示：
 
-    -   Keep each grammar small. Grammars that contain fewer phrases tend to provide more accurate recognition than larger grammars that contain many phrases. It's better to have several smaller grammars for specific scenarios than to have a single grammar for your entire app.
-    -   Let users know what to say for each app context and enable and disable grammars as needed.
-    -   Design each grammar so users can speak a command in a variety of ways. For example, you can use the **GARBAGE** rule to match speech input that your grammar does not define. This lets users speak additional words that have no meaning to your app. For example, "give me", "and", "uh", "maybe", and so on.
-    -   Use the [sapi:subset](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) element to help match speech input. This is a Microsoft extension to the SRGS specification to help match partial phrases.
-    -   Try to avoid defining phrases in your grammar that contain only one syllable. Recognition tends to be more accurate for phrases containing two or more syllables.
-    -   Avoid using phrases that sound similar. For example, phrases such as "hello", "bellow", and "fellow" can confuse the recognition engine and result in poor recognition accuracy.
+    -   使每个语法保持简短。 与包含许多短语的较大语法相比，包含较少短语的语法往往可提供更准确的识别度。 最好将多个较小语法用于特定方案，而不是将单个语法用于整个应用。
+    -   让用户了解针对每个应用上下文说哪些内容，并按照需要启用和禁用语法。
+    -   设计每个语法，以便用户可以使用多种方式说出同一条命令。 例如，可以使用 **GARBAGE** 规则来匹配你的语法没有定义的语音输入。 这将使用户可以说出对你的应用没有任何意义的其他字词。 例如，“给我”、“和”、“呃”、“可能”等等。
+    -   使用 [sapi:subset](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) 元素，帮助匹配语音输入。 这是针对 SRGS 规范的 Microsoft 扩展，可帮助匹配部分短语。
+    -   尽量避免在语法中定义只包含一个音节的短语。 对于包含两个或更多音节的短语，识别往往更为准确。
+    -   避免使用听起来相似的短语。 例如，“hello”、“bellow”和“fellow”等短语可使识别引擎难以分辨，从而导致较差的识别准确度。
 
-**Note**  Which type of constraint type you use depends on the complexity of the recognition experience you want to create. Any could be the best choice for a specific recognition task, and you might find uses for all types of constraints in your app.
+**注意** 使用哪种类型的约束类型取决于待创建识别体验的复杂程度。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
 
  
 
-### Custom pronunciations
+### 自定义发音
 
-If your app contains specialized vocabulary with unusual or fictional words, or words with uncommon pronunciations, you might be able to improve recognition performance for those words by defining custom pronunciations.
+如果你的应用包含了带有不常见或虚构字词的专用词汇或带有罕见发音的字词，你可能能够通过定义自定义发音来提高对这些字词的识别性能。
 
-For a small list of words and phrases, or a list of infrequently used words and phrases, you can create custom pronunciations in a SRGS grammar. See [token Element](http://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx) for more info.
+对于包含字词和短语的小型列表，或包含不常用字词和短语的列表，可以使用 SRGS 语法创建自定义发音。 有关详细信息，请参阅[令牌元素](http://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx)。
 
-For larger lists of words and phrases, or frequently used words and phrases, you can create separate pronunciation lexicon documents. See [About Lexicons and Phonetic Alphabets](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx) for more info.
+对于包含字词和短语的较大列表，或包含常用字词和短语的列表，可以创建单独的发音词典文档。 有关详细信息，请参阅[关于词典和音标字母](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx)。
 
-## Testing
-
-
-Test speech recognition accuracy and any supporting UI with your app's target audience. This is the best way to determine the effectiveness of the speech interaction experience in your app. For example, are users getting poor recognition results because your app isn't listening for a common phrase?
-
-Either modify the grammar to support this phrase or provide users with a list of supported phrases. If you already provide the list of supported phrases, ensure it is easily discoverable.
-
-## Text-to-speech (TTS)
+## 测试
 
 
-TTS generates speech output from plain text or SSML.
+通过应用目标受众测试语音识别准确度以及任何支持的 UI。 这是确定应用的语音交互体验有效性的最佳方式。 例如，用户是否因你的应用无法聆听常见短语而获得了较差的识别结果？
 
-Try to design prompts that are polite and encouraging.
+可以修改语法以支持此短语，或者为用户提供受支持短语的列表。 如果已提供受支持短语列表，请确保它易被发现。
 
-Consider whether you should read long strings of text. It's one thing to listen to a text message, but quite another to listen to a long list of search results that are difficult to remember.
+## 文本到语音转换 (TTS)
 
-You should provide media controls to let users pause, or stop, TTS.
 
-You should listen to all TTS strings to ensure they are intelligible and sound natural.
+TTS 从纯文本或 SSML 生成语音输出。
 
--   Stringing together an unusual sequence of words or speaking part numbers or punctuation might cause a phrase to become unintelligible.
--   Speech can sound unnatural when the prosody or cadence is different from how a native speaker would say a phrase.
+尝试设计礼貌且具有鼓励性的提示。
 
-Both issues can be addressed bu using SSML instead of plain text as input to the speech synthesizer. For more info about SSML, see [Use SSML to Control Synthesized Speech](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx) and [Speech Synthesis Markup Language Reference](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx).
+请考虑是否应阅读长字符串文本。 聆听文本消息是一回事，但聆听由难以记住的搜索结果组成的冗长列表完全是另一回事。
 
-## Other articles in this section 
-| Topic | Description |
+你应该提供媒体控件，以便用户暂停或停止 TTS。
+
+你应聆听所有 TTS 字符串，确保它们明白易懂，听起来自然。
+
+-   将一系列不常见单词串联在一起，或者说出零件编号或标点可能会导致短语变得无法识别。
+-   当母语使用者说出短语时的韵律或节奏不同时，语音可能听起来不自然。
+
+将 SSML 而不是将纯文本用作语音合成器的输入可以解决这两种问题。 有关 SSML 的详细信息，请参阅[使用 SSML 控制合成的语音](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)和[语音合成标记语言参考](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)。
+
+## 本部分中的其他文章 
+| 主题 | 描述 |
 | --- | --- |
-| [Speech recognition](speech-recognition.md) | Use speech recognition to provide input, specify an action or command, and accomplish tasks. |
-| [Specify the speech recognizer language](specify-the-speech-recognizer-language.md) | Learn how to select an installed language to use for speech recognition. |
-| [Define custom recognition constraints](define-custom-recognition-constraints.md) | Learn how to define and use custom constraints for speech recognition. |
-| [Enable continuous dictation](enable-continuous-dictation.md) |Learn how to capture and recognize long-form, continuous dictation speech input. |
-| [Manage issues with audio input](manage-issues-with-audio-input.md) | Learn how to manage issues with speech-recognition accuracy caused by audio-input quality. |
-| [Set speech recognition timeouts](set-speech-recognition-timeouts.md) | Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input. |
+| [语音识别](speech-recognition.md) | 使用语音识别提供输入内容、指定操作或命令并完成任务。 |
+| [指定语音识别器语言](specify-the-speech-recognizer-language.md) | 了解如何选择要用于语音识别的安装语言。 |
+| [定义自定义识别约束](define-custom-recognition-constraints.md) | 了解如何为语音识别定义和使用自定义约束。 |
+| [启用连续听写](enable-continuous-dictation.md) |了解如何捕获和识别较长的连续听写语音输入。 |
+| [管理音频输入问题](manage-issues-with-audio-input.md) | 了解如何管理由音频输入质量所导致的语音识别准确度的问题。 |
+| [设置语音识别超时](set-speech-recognition-timeouts.md) | 设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。 |
 
-## Related articles
+## 相关文章
 
-* [Speech interactions](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Cortana interactions](https://msdn.microsoft.com/library/windows/apps/mt185598)
- **Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [语音交互](https://msdn.microsoft.com/library/windows/apps/mt185614)
+* [Cortana 交互](https://msdn.microsoft.com/library/windows/apps/mt185598) 
+            **示例**
+* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -243,6 +243,6 @@ Both issues can be addressed bu using SSML instead of plain text as input to the
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

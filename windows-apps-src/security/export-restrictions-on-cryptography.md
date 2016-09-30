@@ -1,65 +1,65 @@
 ---
-title: Export restrictions on cryptography
-description: Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.
+title: "有关加密的出口限制"
+description: "使用此信息可以确定应用使用加密的方式是否可能会阻止它被列在 Windows 应用商店中。"
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: a6bd271ddfece1cc104243b8800f6473df14c275
+ms.openlocfilehash: 37d6131891e93d73021c860df45d1b5fdd7cfa53
 
 ---
 
-# Export restrictions on cryptography
+# 有关加密的出口限制
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.
+使用此信息可以确定应用使用加密的方式是否可能会阻止它被列在 Windows 应用商店中。
 
-The Bureau of Industry and Security in the United States Department of Commerce regulates the export of technology that uses certain types of encryption. All apps listed in the Windows Store must comply with these laws and regulations because the app files can be stored in the United States. Even apps that are uploaded by app developers from other countries for distribution outside of the United States must comply with these regulations. Consequently, when submitting an app to the Windows Store, all app developers must make sure that their apps don't contain any technology that is restricted by these regulations.
+美国商务部工业与安全局负责对使用某些加密类型的技术出口进行监管。 Windows 应用商店中列出的所有应用都必须遵守这些法律和法规，因为这些应用文件可以存储在美国。 甚至其他国家或地区的应用开发者上载在美国之外分发的应用也必须遵守这些法规。 因此，当向 Windows 应用商店提交应用时，所有应用开发者必须确保他们的应用不包含这些法规所限制的任何技术。
 
-> **Note**  The information provided here provides some guidance, but it is your responsibility as the app developer who is publishing apps in the Windows Store to make sure that your app complies with all applicable laws and regulations.
+> **注意** 在此提供的信息提供了一些指南，但作为在 Windows 应用商店中发布应用的应用开发者，确保应用遵守所有适用法律和法规是你自己的责任。
 
  
 
-For more info about the U.S. Department of Commerce and the Bureau of Industry and Security, see [About the Bureau of Industry and Security](http://go.microsoft.com/fwlink/p/?LinkID=245644).
+有关美国商务部工业与安全局的详细信息，请参阅[关于工业与安全局](http://go.microsoft.com/fwlink/p/?LinkID=245644)。
 
-For info about the Export Administration Regulations (EAR) that govern the export of technology that includes encryption, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+有关监管技术出口（包括加密）的出口管理条例 (EAR) 的信息，请参阅[对使用加密的项进行 EAR 控制](http://go.microsoft.com/fwlink/p/?LinkID=245645)。
 
-## Governed uses
+## 监管使用
 
-First, determine if your app uses a type of cryptography that is governed by the Export Administration Regulations. The question includes the examples shown in the list here; but remember that this list doesn't include every possible application of cryptography.
+首先，确定应用是否使用了出口管理条例监管的加密类型。 该问题包括显示在以下列表中的示例；但是切记，此列表不包括每种可能的加密应用。
 
-> **Important**  Consider not only the code you wrote for your app, but also all the software libraries, utilities and operating system components that your app includes or links to.
+> **重要提示** 不仅要考虑为应用编写的代码，而且要考虑应用包括或链接到的所有软件库、实用工具和操作系统组件。
 
--   Any use of a digital signature, such as authentication or integrity checking
--   Encryption of any data or files that your app uses or accesses
--   Key management, certificate management, or anything that interacts with a public key infrastructure
--   Using a secure communication channel such as NTLM, Kerberos, Secure Sockets Layer (SSL), or Transport Layer Security (TLS)
--   Encrypting passwords or other forms of information security
--   Copy protection or digital rights management (DRM)
--   Antivirus protection
+-   对数字签名的任何使用，例如身份验证或完整性检查
+-   对你的应用使用或访问的任何数据或文件的加密
+-   密钥管理、证书管理或与公钥基础结构交互的任何内容
+-   使用安全通信通道，例如 NTLM、Kerberos、安全套接字层 (SSL) 或传输层安全 (TLS)
+-   加密密码或其他形式的信息安全
+-   复制保护或数字版权管理 (DRM)
+-   防病毒保护
 
-For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+有关加密应用程序的最新完整列表，请参阅[使用加密的项的 EAR 控制](http://go.microsoft.com/fwlink/p/?LinkID=245645)。
 
-## Non-restricted uses
+## 非限制使用
 
-Note that some of the applications of cryptography are not restricted. Here are the unrestricted tasks:
+请注意，某些加密的应用程序不受限制。 以下是不受限制的任务：
 
--   Password encryption
--   Copy protection
--   Authentication
--   Digital rights management
--   Using digital signatures
+-   密码加密
+-   复制保护
+-   身份验证
+-   数字版权管理
+-   使用数字签名
 
-For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+有关加密应用程序的最新完整列表，请参阅[使用加密的项的 EAR 控制](http://go.microsoft.com/fwlink/p/?LinkID=245645)。
 
-If your app calls, supports, contains, or uses cryptography or encryption for any task that is not in this list, it needs an Export Commodity Classification Number (ECCN).
+如果应用为不在此列表中的任何任务调用、支持、包含或使用加密，则它需要出口商品分类编号 (ECCN)。
 
-If you don't have an ECCN, see [ECCN Questions and Answers](http://go.microsoft.com/fwlink/p/?LinkID=245646).
+如果没有 ECCN，请参阅 [ECCN 问题与答案](http://go.microsoft.com/fwlink/p/?LinkID=245646)。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

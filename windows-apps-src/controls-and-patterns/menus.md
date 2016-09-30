@@ -1,28 +1,23 @@
 ---
 author: mijacobs
-Description: "浮出控件是轻型弹出窗口，用于临时显示与用户当前正在执行的操作相关的 UI。"
-title: "菜单和上下文菜单"
+Description: A flyout is a lightweight popup that is used to temporarily show UI that is related to what the user is currently doing.
+title: Menus and context menus
 label: Menus and context menus
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f6ce4bc08e3647cd26dc1537bba5499ddb646a49
-
 ---
-# 菜单和上下文菜单
-
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# Menus and context menus
 
-菜单和上下文菜单会在用户发出请求时显示命令或选项列表。
+Menus and context menus display a list of commands or options when the user requests them.
 
-![典型上下文菜单示例](images/controls_contextmenu_singlepane.png)
+![Example of a typical context menu](images/controls_contextmenu_singlepane.png)
 
 <div class="important-apis" >
-<b>重要的 API</b><br/>
+<b>Important APIs</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn299030">MenuFlyout 类</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx">ContextFlyout 属性</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx">FlyoutBase.AttachedFlyout 属性</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn299030">MenuFlyout class</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx">ContextFlyout property</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx">FlyoutBase.AttachedFlyout property</a></li>
 </ul>
 
 </div>
@@ -31,60 +26,59 @@ ms.openlocfilehash: f6ce4bc08e3647cd26dc1537bba5499ddb646a49
 
 
 
-## 这是正确的控件吗？
-菜单和上下文菜单通过在用户不需要使用时对命令进行组织和隐藏，从而节省空间。 如果需要经常使用某一特定命令并希望有可用的空间，请考虑将该命令直接置于其自己的元素（而非菜单）中，以便用户无需遍历菜单即可访问它。 
+## Is this the right control?
+Menus and context menus save space by organizing commands and hiding them until the user needs them. If a particular command will be used frequently and you have the space available, consider placing it directly in its own element, rather than in a menu, so that users don't have to go through a menu to get to it. 
 
-菜单和上下文菜单用于整理命令；若要显示任意内容（如通知）或请求确认，则使用[对话框或浮出控件](dialogs.md)。  
+Menus and context menus are for organizing commands; to display arbitrary content, such as an notification or to request confirmation, use a [dialog or a flyout](dialogs.md).  
 
 
-## 菜单与上下文菜单
+## Menus vs. context menus
 
-菜单和上下文菜单在外观和可以包含的内容方面完全相同。 事实上，你使用相同的控件 [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) 来创建它们。 唯一的区别是允许用户访问它的方式。 
+Menus and context menus are identical in how they look and what they can contain. In fact, you use the same control, [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), to create them. The only difference is how you let the user access it. 
 
-何时应使用菜单或上下文菜单？
-* 如果主机元素是一个按钮或其他一些命令元素（其主要作用是显示其他命令），则使用菜单。
-* 如果主机元素是一些具有另一主要用途（如显示文本或图像）的其他类型的元素，则使用上下文菜单。 
+When should you use a menu or a context menu?
+* If the host element is a button or some other command element whose primary role is to present additional commands, use a menu.
+* If the host element is some other type of element that has another primary purpose (such as presenting text or an image), use a context menu. 
 
-例如，在导航窗格的按钮上使用菜单来提供其他导航选项。 在此方案中，按钮控件的主要用途是提供对菜单的访问权限。 
+For example, use a menu on a button in a navigation pane to provide additional navigation options. In this scenario, the primary purpose of the button control is to provide access to a menu. 
 
-如果要将命令（如剪切、复制和粘贴）添加到某个文本元素，请使用上下文菜单而不是菜单。 在此方案中，文本元素的主要作用是显示和编辑文本；其他命令（如剪切、复制和粘贴）是辅助命令，属于上下文菜单。 
+If you want to add commands (such as cut, copy, and paste) to a text element, use a context menu instead of a menu. In this scenario, the primary role of the text element is to present and edit text; additional commands (such as cut, copy, and paste) are secondary and belong in a context menu. 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>菜单</b></p>
+   <p><b>Menus</b></p>
 <p>
 <ul>
-<li>具有始终显示的单个入口点（例如，位于屏幕顶部的“文件”菜单）。</li>
-<li>通常附加到某个按钮或父菜单项。</li>
-<li>通过左键单击（或等效操作，例如用手指点击）进行调用。</li>  
-<li>通过 [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) 或 [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) 属性与元素相关联。</li> 
+<li>Have a single entry point (a File menu at the top of the screen, for example) that is always displayed.</li>
+<li>Are usually attached to a button or a parent menu item.</li>
+<li>Are invoked by left-clicking (or an equivalent action, such as tapping with your finger).</li>
+<li>Are associated with an element via its [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) or [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) properties.</li>
 </ul>
-</p><br/>
+</p>
 
   </div>
   <div class="side-by-side-content-right">
-   <p><b>上下文菜单</b></p>
+   <p><b>Context menus</b></p>
    
 <ul>
-<li>附加到单个元素，但仅在上下文有意义时才可以访问。</li>
-<li>通过右键单击（或等效操作，例如用手指按住）进行调用。</li>
-<li>通过 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 属性与元素相关联。  
-</ul><br/>
-
+<li>Are attched to a single element, but are only accessible when the context makes sense.</li>
+<li>Are invoked by right clicking (or an equivalent action, such as pressing and holding with your finger).</li>
+<li>Are associated with an element via its [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property.</li>
+</ul>
   </div>
 </div>
 </div>
 
-## 创建菜单或上下文菜单
+## Create a menu or a context menu
 
-若要创建菜单或上下文菜单，请使用 [MenuFlyout 类](https://msdn.microsoft.com/library/windows/apps/dn299030)。 通过将 [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 和 [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) 对象添加到 MenuFlyout 来定义菜单的内容。 这些对象如下：
-* [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx) - 执行即时操作。
-* [ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) - 打开或关闭选项。
-* [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) - 直观地区分菜单项。
+To create a menu or a context menu, you use the [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030). You define the contents of the menu by adding [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx), and [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) objects to the MenuFlyout. These objects are for:
+* [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)—Performing an immediate action.
+* [ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)—Switching an option on or off.
+* [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)—Visually separating menu items.
 
 
-此示例将创建 [MenuFlyout 类](https://msdn.microsoft.com/library/windows/apps/dn299030)，并使用 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 属性（该属性适用于大多数控件），以显示 [MenuFlyout 类](https://msdn.microsoft.com/library/windows/apps/dn299030)作为上下文菜单。
+This example creates a [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030) and uses the [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property, a property available to most controls, to show the [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030) as a context menu.
 
 ````xaml
 <Rectangle 
@@ -116,7 +110,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-下一个示例几乎完全相同，但该示例使用 [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 属性将其显示为菜单，而不是使用 [ContextFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 属性来显示 [MenuFlyout 类](https://msdn.microsoft.com/library/windows/apps/dn299030)作为上下文菜单。 
+The next example is nearly identical, but instead of using the [ContextFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) property to show the [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030) as a context menu, the example uses the [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) property to show it as a menu. 
 
 ````xaml
 <Rectangle 
@@ -153,7 +147,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-> **注意**&nbsp;&nbsp;轻型消除控件（如菜单、上下文菜单和其他浮出控件）会捕获瞬态 UI 内的键盘焦点和游戏板焦点，直到消除为止。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的可见性变暗。 可以使用新的 [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) 属性来修改此行为。 默认情况下，瞬态 UI 将在 Xbox（而非其他设备系列）上绘制轻型消除覆盖，不过应用可以选择强制使覆盖始终**打开**或始终**关闭**。
+> **Note**&nbsp;&nbsp;Light dismiss controls&mdash;such as menus, context menus, and other flyouts&mdash;trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the new [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) property. By default, transient UIs will draw the light dismiss overlay on Xbox but not other device families, but apps can choose to force the overlay to be always **On** or always **Off**.
 > 
 > ```xaml
 > <MenuFlyout LightDismissOverlayMode="Off">
@@ -166,9 +160,3 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## Related articles
 
 - [**MenuFlyout class**](https://msdn.microsoft.com/library/windows/apps/dn299030)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

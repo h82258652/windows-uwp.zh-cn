@@ -1,136 +1,130 @@
 ---
 author: Mtoepke
-title: Introduction to Xbox One tools
-description: The Xbox One-specific tool Dev Home, using the Windows Device Portal.
+title: "Xbox One 工具简介"
+description: "特定于 Xbox One 且使用 Windows Device Portal 的工具“开发人员主页”。"
+area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: b3e1a6f1dfe3537d0db8e917163cfbba7b8705fe
-ms.openlocfilehash: 6030f666f213865a92d071210fe66f587c1bffb1
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
 
 ---
 
-# Introduction to Xbox One tools
+# Xbox One 工具简介
 
-This section covers the Xbox One-specific tool _Dev Home_, using the Windows Device Portal.
+本部分介绍了特定于 Xbox One 且使用 Windows Device Portal 的工具“开发人员主页”__。
 
-## Dev Home
+## 开发人员主页
 
-_Dev Home_ is a tools experience on the Xbox One Development Kit designed to aid developer productivity. Dev Home offers functionality to manage and configure your dev kit.
+“开发人员主页”__是 Xbox One 开发工具包上旨在提高开发人员工作效率的工具体验。 “开发人员主页”提供管理和配置开发人员工具包的功能。
 
-To open Dev Home, select the **Dev Home** tile on the home screen. If there is no tile present, the console is not in Developer Mode.
+若要打开“开发人员主页”，请在主屏幕上选择“开发人员主页”****磁贴。 如果不存在任何磁贴，则控制台不处于开发人员模式中。
 
   ![Windows Device Portal](images/windowsdeviceportal_1.png)
 
-### User interface
-The Dev Home user interface is divided into the areas described in the following sections. Note the console IP address and friendly name are displayed here.
+### 用户界面
+“开发人员主页”用户界面分为在以下部分中介绍的几个区域。 请注意，主机 IP 地址和友好名称在此处显示。
 
   ![DevHome UI](images/devhome_ui.png)
 
-#### Header
-The header contains important “at a glance” information about the dev kit. This includes the console name, its IP address, the Xbox Live sandbox it is in, and the version of the operating system it is running. On the right of the header, the current system time and date is shown for convenience.
+#### 标题
+标题包含关于开发人员工具包的重要“一览”信息。 这包括控制台名称、它的 IP 地址、所在的 Xbox Live 沙盒以及它正在运行的操作系统版本。 在标题右侧，为方便起见显示了当前系统时间和日期。
 
-#### Tool windows
-Under the header is the main area of the app, which contains a set of configurable tool windows. These are intended to allow developers to customize the app to provide access to various tools and sets of information. For more details about the tools, see the following individual tool descriptions. For information about how to configure the layout and appearance of the tool windows, see the [Customizing Dev Home](#customizing-dev-home) section later on this page.
+#### 工具窗口
+标题下面是应用的主区域，其中包括一组可配置的工具窗口。 这些窗口旨在支持开发人员自定义应用以提供对各种工具和信息集的访问权限。 有关工具的更多详细信息，请参阅以下个别工具描述。 有关如何配置工具窗口布局和外观的信息，请参阅本页后面的[自定义开发人员主页](#customizing-dev-home)部分。
 
-#### Main menu
-By pressing the **Menu** button on your controller or navigating to the menu (“Hamburger”) button at the top left of the screen, you can access the main menu that allows you to configure the theme color and background image for the app workspace, and provide feedback on the app.
+##### 主菜单
+通过按控制器上的“菜单”****按钮或导航到屏幕左上方的菜单（“汉堡包”）按钮，你可以访问支持配置应用工作区的主题色和背景图的主菜单，并提供有关应用的反馈。
 
-  ![Main menu](images/devhome_mainmenu.png)
+  ![主菜单](images/devhome_mainmenu.png)
 
-#### Snap mode
-Tools in Dev Home can be snapped to the side while you are running your title so that you can have easy access to tools while you are testing.
+#### 贴靠模式
+开发人员主页中的工具可以在运行标题时贴靠到一侧，以便你可以在进行测试时轻松访问工具。
 
-To access **Snap** mode, select the title of the appropriate tool, press the **View** button on your controller, and on the context menu, select **Snap**.
+若要访问**贴靠**模式，请选择相应工具的标题、在控制器上按“视图”****按钮，并在上下文菜单中选择“贴靠”****。
 
-  ![Snap mode](images/devhome_snapmode.png)
+  ![贴靠模式](images/devhome_snapmode.png)
 
-Dev Home will snap right. You can switch context by double tapping the **Nexus** button as usual.
+开发人员主页将贴靠到右侧。 你可以通过像往常那样双击 **Nexus** 按钮来切换上下文。
 
   ![Nexus](images/devhome_nexus.png)
 
-#### Tool descriptions
-| Tool  | Capabilities |
+##### 工具描述
+| 工具  | 功能 |
 |-------|--------------|
-| Games & Apps  | Lists the titles and apps installed on the dev kit and the ability to quickly open them. You can also view the process lifetime management (PLM) state of games and apps, and change PLM states from a context menu. |
-| Users | Lists the users currently registered on the console. Enables one-click user sign in/out, adding users and guests, and viewing details of users and guests. |
-| [Console settings](#console-settings) | Provides an “at a glance” view and editing options of console settings and information. |
-| Visual Studio | Enables you to pair the console with an instance of Visual Studio to allow deployment. If necessary, clear any existing paired VS instances to prevent UWP app deployment to a kit. |
-| [Windows Device Portal](#windows-device-portal) | Enables WDP (a browser-based device management tool) on the kit. |
-| Xbox Live status | Provides the current status of the Xbox Live service. |
-<br/>
-### Managing the size of the developer storage allocation
+| 游戏和应用  | 列出在开发人员工具包中安装的标题和应用以及快速打开它们的功能。 你还可以查看游戏和应用的进程周期管理 (PLM) 状态，并在上下文菜单中更改 PLM 状态。 |
+| 用户 | 列出当前在控制台上注册的用户。 支持用户一键登录/注销、添加用户和来宾，以及查看用户和来宾的详细信息。 |
+| [控制台设置](#console-settings) | 提供“一览”视图以及控制台设置和信息的编辑选项。 |
+| Visual Studio | 能让你将控制台与 Visual Studio 实例配对，以支持部署。 如有必要，清除所有现有的已配对 VS 实例以防止将 UWP 应用部署到工具包。 |
+| [Windows Device Portal](#windows-device-portal) | 在工具包上支持 WDP（基于浏览器的设备管理工具）。 |
+| Xbox Live 状态 | 提供 Xbox Live 服务的当前状态。 |
 
-To increase or decrease the amount of disk space that is used for developer storage, select **Manage dev storage** from the main menu. Change the value of the **Dev storage** bar, and then select **Save and restart** to restart your console.
+### 管理开发人员存储分配的大小
 
-  ![Manage dev storage allocation](images/devhome_storage.png)
+若要增大或减小用于开发人员存储的磁盘空间量，请从主菜单中选择“管理开发人员存储”****。 更改“开发人员存储”****栏的值，然后选择“保存并重新启动”****以重新启动主机。
+  ![管理开发人员存储分配](images/devhome_storage.png)
 
-### Customizing Dev Home
+### 自定义开发人员主页
 
-Dev Home has been designed to be customizable and personal. You can choose a background image and theme color to personalize your Dev Home experience. These options are found on the main menu.
+开发人员主页已设计为可自定义，并且具有个性化。 你可以选择背景图和主题色来个性化你的开发人员主页体验。 这些选项可以在主菜单上找到。
 
-#### Resizing and reordering tools
-To change the size or position of a tool, use the context menu button (**View** button on your controller) while the title has focus. On the context menu, select **Move** or **Resize**.
+#### 调整工具大小和对其重新排序
+若要更改工具的大小或位置，请在标题有焦点时使用上下文菜单按钮（控制器上的“视图”****按钮）。 在上下文菜单上，选择“移动”****或“调整大小”****。
 
-  ![Move or resize](images/devhome_move.png)
+  ![移动或调整大小](images/devhome_move.png)
 
-#### Changing theme color and background image
-On the main menu, you can select **Change theme color**. To update the theme color used for focus highlighting, select a new color and then click **Save**.
+#### 更改主题色和背景图
+在主菜单上，你可以选择“更改主题色”****。 若要更新用于焦点突出显示的主题色，选择一种新颜色，然后单击“保存”****。
 
-  ![Change theme color](images/devhome_colors.png)
+  ![更改主题色](images/devhome_colors.png)
 
-### Providing feedback
-To provide feedback on Dev Home, or any of the tools processes, select the **Provide feedback** option on the main menu.
+### 提供反馈
+若要提供有关开发人员主页或任何工具进程的反馈，请在主菜单上选择**“提供反馈”**选项。
 
-  ![Provide feedback](images/devhome_feedback.png)
+  ![提供反馈](images/devhome_feedback.png)
 
-## Console settings
-The Console settings tool provides quick access to the settings of the dev kit.
+## 控制台设置
+控制台设置工具可快速访问开发人员工具包的设置。
 
-### Setting a hostname for the console
-When communicating with the console from your development PC, you can set a friendly name (called a _hostname_) for the Xbox One dev kit to use as an alternative to the console IP address. Your development PC and the dev kit must be on the same subnet for hostname connectivity to work.  
+### 设置控制台的主机名
+在开发电脑上与控制台通信时，可以为 Xbox One 开发人员工具包设置友好名称（称为_“主机名”_）以用作控制台 IP 地址的替代项。 开发电脑和开发人员工具包必须位于相同子网上才能让主机名连接正常工作。  
 
-To define a hostname for a dev kit, go to the Console settings tool and type the hostname in the __Hostname__ box.  
+若要定义一个开发工具包的主机名，请转到主机设置工具，并在“主机名”____框中键入主机名。  
 
-> [!NOTE]
-> Name uniqueness is not enforced when the hostname is created. Be careful to avoid name duplication. One way to do this is to derive the hostname from the name of your development computer, which is usually unique within an organization.
+  > **注意**&nbsp;&nbsp;创建主机名时，不需要该名称是唯一名称。 请注意避免名称重复。 达到此目的的一种方法是从开发计算机名称中派生主机名，开发计算机名称通常在组织中是唯一的。
 
 ## Windows Device Portal
-Windows Device Portal (WDP) is a OneCore device management tool that allows a browser-based device management experience.
+Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 OneCore 设备管理工具。
 
-> [!NOTE]
-> For more information on WDP, see the [Windows Device Portal overview](../debug-test-perf/device-portal.md).
+若要在 Xbox One 控制台上启用 WDP：
 
-To enable WDP on your Xbox One console:
+1. 在主屏幕上选择“开发人员主页”磁贴。
 
-1. Select the Dev Home tile on the home screen.
+  ![选择“开发人员主页”磁贴](images/windowsdeviceportal_1.png)
 
-  ![Select Dev Home tile](images/windowsdeviceportal_1.png)
+2. 在“开发人员主页”中，导航到“远程管理”****工具。
 
-2. Within Dev Home, navigate to the **Remote management** tool.
+  ![远程管理工具](images/windowsdeviceportal_2.png)
 
-  ![Remote management tool](images/windowsdeviceportal_2.png)
+3. 选择“管理 Windows Device Portal”____，然后按 __A__。
+4. 选中“启用 Windows Device Portal”____复选框。
+5. 输入__用户名__和__密码__，然后进行保存。 它们用于验证浏览器对开发人员工具包的访问权限。
+6. 关闭“设置”____页面，并记下“远程管理”__工具上列出的要连接的 URL。
+7. 在浏览器中输入 URL，然后使用已配置的凭据登录。
+8. 你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 控制台签名的安全证书不被视为众所周知的受信任发布者。 单击“继续浏览此网站”****可访问 Windows Device Portal。
 
-3. Select __Manage Windows Device Portal__, and then press __A__.
-4. Select the __Enable Windows Device Portal__ check box.
-5. Enter a __Username__ and __Password__, and save them. These are used to authenticate access to your dev kit from a browser.
-6. Close the __Settings__ page, and note the URL listed on the _Remote Management_ tool to connect.
-7. Enter the URL in your browser, and then sign in with the credentials you configured.
-8. You will receive a warning about the certificate that was provided, similar to the following screenshot, because the security certificate signed by your Xbox One console is not considered a well-known trusted publisher. Click **Continue to this website** to access the Windows Device Portal.
+  ![安全证书警告](images/security_cert_warning.jpg)
 
-  ![Security certificate warning](images/security_cert_warning.jpg)
+## 另请参阅
+- [在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One](uwp-fiddler.md)
+- [Microsoft 开发人员技术：Windows Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox)
+- [Xbox One 上的 UWP](index.md)
 
-## Xbox Dev Mode Companion
-Xbox Dev Mode Companion is a tool that allows you to work on your console without leaving your PC. The app allows you to view the console screen and send input to it. For more information, see [Xbox Dev Mode Companion](xbox-dev-mode-companion.md).
-
-## See also
-- [How to use Fiddler with Xbox One when developing for UWP](uwp-fiddler.md)
-- [Windows Device Portal overview](../debug-test-perf/device-portal.md)
-- [UWP on Xbox One](index.md)
 
 
 ----
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Jul16_HO2-->
 
 

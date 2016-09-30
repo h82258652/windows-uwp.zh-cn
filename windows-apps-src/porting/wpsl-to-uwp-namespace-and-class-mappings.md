@@ -5,7 +5,7 @@ title: "Windows Phone Silverlight 到 UWP 命名空间和类映射"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
+ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
 
 ---
 
@@ -119,7 +119,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** 属性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** 属性 |
 | 图形和动画 | |
 | **Microsoft.Xna.Framework.\*** 命名空间、[XNA Framework 类库](http://go.microsoft.com/fwlink/p/?LinkId=263769)、[Content Pipeline 类库](http://go.microsoft.com/fwlink/p/?LinkId=263770) | 无直接等效项。 通常情况下，结合使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 和 C++。 请参阅[开发游戏](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 和 XAML 互操作](https://msdn.microsoft.com/library/windows/apps/hh825871)。 |
-| **Microsoft.Xna.Framework.Audio.Microphone** 类 | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类 |
+| **Microsoft.Xna.Framework.Audio.Microphone** 类 | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类。 |
 | **Microsoft.Xna.Framework.Audio.SoundEffect** 类 | [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 类 |
 | **Microsoft.Xna.Framework.GamerServices** 命名空间 | (WPS = **Windows.Phone.System**) <br/> [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) 命名空间 |
 | **Microsoft.Xna.Framework.GamerServices.Guide** 类 | 无直接等效项 | 
@@ -151,7 +151,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | **Microsoft.Phone.Tasks.SaveContactTask**、**SaveEmailAddressTask**、**SavePhoneNumberTask** 类 | [**StoredContact**](https://msdn.microsoft.com/library/windows/apps/jj207727) 类（仅限 Windows Phone） | 
 | **Microsoft.Phone.Tasks.SaveRingtoneTask** 类 | 无直接等效项 | 
 | **Microsoft.Phone.Tasks.ShareLinkTask**、**ShareMediaTask**、**ShareStatusTask** 类 | [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/br205873) 类 |
-| 位置 | |
+| 定位 | |
 | **System.Device.Location** 命名空间 | [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 命名空间 |
 | **System.Device.GeoCoordinateWatcher** 类 | [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 类 |
 | 地图 | |
@@ -176,7 +176,7 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.WebRequestExtensions** 类 | 无直接等效项 | 
 | **Microsoft.Phone.Networking.Voip** 命名空间 | 无直接等效项 | 
 | **System.Net.CookieCollection** 类 | 仍受支持，但部分属性已丢失（例如 IsReadOnly） |
-| **System.Net.DownloadProgressChangedEventArgs** 类，以及与 **System.Net.WebClient** 相关的类似的类 | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 派生自 [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx)，用于测量进度。 |
+| **System.Net.DownloadProgressChangedEventArgs** 类，以及与 **System.Net.WebClient** 相关的类似的类 | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)） 派生自 [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx)，用于测量进度。 |
 | **System.Net.DnsEndPoint**、**IPAddress** 类 | 这些类仍受支持，但部分属性已丢失。 或者，移植到 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 类。 |
 | **System.Net.HttpUtility** 类 | [**HtmlFormatHelper**](https://msdn.microsoft.com/library/windows/apps/hh738437) 类 |
 | **System.Net.HttpWebRequest** 类 | 部分支持，但推荐的预期备用项为 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 这些 API 使用 [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) 来表示 HTTP 请求。 |
@@ -249,6 +249,6 @@ ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

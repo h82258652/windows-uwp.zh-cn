@@ -1,77 +1,77 @@
 ---  
 author: WilliamsJason
-title: Xbox Live Test User Management API reference
-description: Learn how to access the User Management APIs programmatically.
+title: "Xbox Live 测试用户管理 API 参考"
+description: "了解如何以编程方式访问用户管理 API。"
 translationtype: Human Translation
 ms.sourcegitcommit: 67f158b1d3d5ece14c36483a2513a2db2f478660
-ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
+ms.openlocfilehash: ad01d4daf089c61fc50c7927cfbf123d7d7ee4df
 
 ---  
 
-#Xbox Live User Management#
+#Xbox Live 用户管理#
 
-**Request**
+**请求**
 
-You can get the list of users on the console, or update the list--adding, removing, signing in, signing out, or modifying existing users.
+你可以获取主机中的用户列表，也可以更新该列表，如添加、删除、登录、注销或修改现有用户。
 
-| Method        | Request URI     | 
+| 方法        | 请求 URI     | 
 | ------------- |-----------------|
 | GET           | /ext/user |
 | PUT           | /ext/user |
 <br>
 
-**URI parameters**
+**URI 参数**
 
-* None
+* 无
 
-**Request headers**
+**请求标头**
 
-* None
+* 无
 
-**Request body**
+**请求正文**
 
-Calls to PUT should include a JSON array with the following structure:
+调用 PUT 应包含具有以下结构的 JSON 数组：
 
-* Users
-  * AutoSignIn (optional) : bool disabling or enabling automatic signin for the account specified by EmailAddress or UserId.
-  * EmailAddress (optional - must be provided if UserId is not provided unless signing in a sponsored user) : Email address specifying the user to modify/add/delete.
-  * Password (optional - must be provided if the user isn't currently on the console) : Password used for adding a new user to the console.
-  * SignedIn (optional) : bool specifying whether the provided account should be signed in or out.
-  * UserId (optional - must be provided if EmailAddress is not provided unless signing in a sponsored user) : UserId specifying the user to modify/add/delete.
-  * SponsoredUser (optional) : bool specifying whether to add a sponsored user.
-  * Delete (optional) : bool specifying specifying to delete this user from the console
+* 用户
+  * AutoSignIn（可选）：用于禁用或启用自动登录 EmailAddress 或 UserId 指定帐户的布尔值。
+  * EmailAddress（可选，但如果未提供 UserId，则必须提供，除非登录的是赞助用户）：用于指定要修改/添加/删除的用户的电子邮件。
+  * 密码（可选，但如果用户当前不在主机上，则必须提供）：用于向主机添加新用户的密码。
+  * SignedIn（可选）：用于指定是否应登录或注销所提供帐户的布尔值。
+  * UserId（可选，但如果未提供 EmailAddress，则必须提供，除非登录的是赞助用户）：用于指定要修改/添加/删除的用户的 UserId。
+  * SponsoredUser（可选）：用于指定是否添加赞助用户的布尔值。
+  * 删除（可选）：用于指定是否要从主机中删除此用户的布尔值。
 
-###Response###
+###响应###
 
-**Response body**
+**响应正文**
 
-Calls to GET will return a JSON array with the following properties:
+调用 GET 将返回具有以下属性的 JSON 数组：
 
-* Users
-  * AutoSignIn (optional)
-  * EmailAddress (optional)
+* 用户
+  * AutoSignIn（可选）
+  * EmailAddress（可选）
   * Gamertag
   * SignedIn
   * UserId
   * XboxUserId
-  * SponsoredUser (optional)
+  * SponsoredUser（可选）
   
-**Status code**
+**状态代码**
 
-This API has the following expected status codes.
+此 API 具有以下预期状态代码。
 
-| HTTP status code   | Description     | 
+| HTTP 状态代码   | 说明     | 
 | ------------------ |-----------------|
-| 200                | Call to GET was successful and JSON array of users returned in the response body |
-| 204                | Call to PUT was successful and the users on the console have been updated |
-| 4XX                | Various errors for invalid request data or format |
-| 5XX                | Error codes for unexpected failures |
+| 200                | 调用 GET 成功，并且在响应正文中已返回用户的 JSON 数组 |
+| 204                | 调用 PUT 成功，并且主机中的用户已更新 |
+| 4XX                | 无效请求数据或格式的各种错误 |
+| 5XX                | 意外失败的错误代码 |
 <br>
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

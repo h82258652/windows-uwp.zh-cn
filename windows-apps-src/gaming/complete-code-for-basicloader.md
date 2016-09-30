@@ -1,45 +1,45 @@
 ---
 author: mtoepke
-title: Complete code for BasicLoader
-description: Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.
+title: "BasicLoader 的完整代码"
+description: "转换并加载常用图形资源（如网格、纹理以及各种着色器对象）的类和方法的完整代码。"
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: ab16033c05273a0cd483fdc7a5302a3ff461e4b1
+ms.openlocfilehash: 355e5a65a16e5e2df9bb039383f68dda16ff23a2
 
 ---
 
-# Complete code for BasicLoader
+# BasicLoader 的完整代码
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.
+转换并加载常用图形资源（如网格、纹理以及各种着色器对象）的类和方法的完整代码。
 
-This topic contains these sections:
+本主题包含以下部分：
 
--   [Technologies](#technologies)
--   [Requirements](#requirements)
--   [View the code (C++)](#view-the-code-c-)
+-   [技术](#technologies)
+-   [要求](#requirements)
+-   [查看代码 (C++)](#view-the-code-c-)
 
 <span id="download_locations"></span>
-## Download location
+## 下载位置
 
 
-This sample is not available for download.
+此示例无法下载。
 
-## Technologies
+## 技术
 
-**Programming languages** - C++  
-**Programming models** - Windows Runtime
+**编程语言** - C++  
+**编程模型** - Windows 运行时
 
-## Requirements
+## 要求
 
-**Minimum supported client** - Windows 10                              
-**Minimum supported server** - Windows Server 2016 Technical Preview 
+**最低受支持的客户端** - Windows 10                              
+**最低受支持的服务器** - Windows Server 2016 Technical Preview 
 
 
-## View the code (C++)
+## 查看代码 (C++)
 
 ## BasicLoader.h
 
@@ -1111,6 +1111,6 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,27 +1,27 @@
 ---
 author: mtoepke
-title: How to resume an app (DirectX and C++)
-description: This topic shows how to restore important application data when the system resumes your Universal Windows Platform (UWP) DirectX app.
+title: "如何恢复应用（DirectX 和 C++）"
+description: "本主题介绍了系统在恢复通用 Windows 平台 (UWP) DirectX 应用时，如何还原重要的应用程序数据。"
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 978f779eaeb732b549657751c11cd2192728999b
+ms.openlocfilehash: d5383da7332c80d4337f0e0b3eef0a6851fcd527
 
 ---
 
-# How to resume an app (DirectX and C++)
+# 如何恢复应用（DirectX 和 C++）
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This topic shows how to restore important application data when the system resumes your Universal Windows Platform (UWP) DirectX app.
+本主题介绍了系统在恢复通用 Windows 平台 (UWP) DirectX 应用时，如何还原重要的应用程序数据。
 
-## Register the resuming event handler
+## 注册恢复事件处理程序
 
 
-Register to handle the [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859) event, which indicates that the user switched away from your app and then back to it.
+注册以处理 [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859) 事件， 该事件指示用户从你的应用切换离开，而后又切换回你的应用。
 
-Add this code to your implementation of the [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method of your view provider:
+将此代码添加到你的视图提供程序的 [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) 方法的实现中：
 
 ```cpp
 // The first method is called when the IFrameworkView is being created.
@@ -37,10 +37,10 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## Refresh displayed content after suspension
+## 暂停之后刷新显示的内容
 
 
-When your app handles the Resuming event, it has the opportunity to refresh its displayed content. Restore any app you have saved with your handler for [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860), and restart processing. Game devs: if you've suspended your audio engine, now's the time to restart it.
+当你的应用处理 Resuming 事件时，它将有机会刷新其显示的内容。 还原你已使用你的 [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) 处理程序保存的所有应用，然后重新启动处理。 游戏开发人员：如果你已暂停你的音频引擎，那么现在该重新启动它了。
 
 ```cpp
 void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
@@ -53,7 +53,7 @@ void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
 }
 ```
 
-This callback occurs as an event message processed by the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). This callback will not be invoked if you do not call [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's main loop (implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method of your view provider).
+对于应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，此回调是由 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 处理的一条事件消息。 如果你没有从你的应用的主回路调用 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)（在你的查看提供程序的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中实现），那么将不会调用此回调。
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -80,26 +80,26 @@ void App::Run()
 }
 ```
 
-## Remarks
+## 备注
 
 
-The system suspends your app whenever the user switches to another app or to the desktop. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background. However, the app may have been suspended for a significant amount of time, so it should refresh any displayed content that might have changed while the app was suspended, and restart any rendering or audio processing threads. If you've saved any game state data during a previous suspend event, restore it now.
+每当用户切换到桌面或其他应用时，系统都会挂起你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。 但是，应用可能已暂停很长一段时间，因此，它应当刷新在应用暂停之后可能已发生更改的任何显示内容，并且重新启动任何呈现或音频处理线程。 如果你已在上一个暂停事件期间保存任何游戏状态数据，现在请还原它。
 
-## Related topics
+## 相关主题
 
-* [How to suspend an app (DirectX and C++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [How to activate an app (DirectX and C++)](how-to-activate-an-app-directx-and-cpp.md)
-
- 
+* [如何暂停应用（DirectX 和 C++）](how-to-suspend-an-app-directx-and-cpp.md)
+* [如何激活应用（DirectX 和 C++）](how-to-activate-an-app-directx-and-cpp.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

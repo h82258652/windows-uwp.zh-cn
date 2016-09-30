@@ -1,40 +1,37 @@
 ---
 author: TylerMSFT
-title: Declare background tasks in the application manifest
-description: Enable the use of background tasks by declaring them as extensions in the app manifest.
+title: "在应用程序清单中声明后台任务"
+description: "通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。"
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
 
 ---
 
-# Declare background tasks in the application manifest
+# 在应用程序清单中声明后台任务
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**重要的 API**
 
--   [**BackgroundTasks Schema**](https://msdn.microsoft.com/library/windows/apps/br224794)
+-   [**BackgroundTasks 架构**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-Enable the use of background tasks by declaring them as extensions in the app manifest.
+通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。
 
-> [!Important]
->  This article is specific to background tasks that run in a separate process. Single-process background tasks are not declared in the manifest.
+必须在应用清单中声明后台任务，否则你的应用将无法注册它们（仅引发异常）。 此外，必须在应用程序清单中声明后台任务才能通过认证。
 
-Background tasks that run in a separate process must be declared in the app manifest or else your app will not be able to register them (an exception will be thrown). Additionally, background tasks must be declared in the application manifest to pass certification.
+本主题假定你已创建一个或多个后台任务类，并且你的应用注册了为响应至少一个触发器而运行的所有后台任务。
 
-This topic assumes you have a created one or more background task classes, and that your app registers each background task to run in response to at least one trigger.
-
-## Add Extensions Manually
+## 手动添加扩展
 
 
-Open the application manifest (Package.appxmanifest) and go to the Application element. Create an Extensions element (if one doesn't already exist).
+打开应用程序清单 (Package.appxmanifest)，然后转到 Application 元素。 创建一个 Extensions 元素（如果尚不存在该元素）。
 
-The following snippet is taken from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666):
+以下代码段来自[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)：
 
 ```xml
 <Application Id="App"
@@ -55,58 +52,60 @@ The following snippet is taken from the [background task sample](http://go.micro
  </Application>
 ```
 
-## Add a Background Task Extension
+## 添加背景任务扩展
 
 
-Declare your first background task.
+声明你的第一个后台任务。
 
-Copy this code into the Extensions element (you will add attributes in the following steps).
-
-```xml
-<Extensions>
-    <Extension Category="windows.backgroundTasks" EntryPoint="">
-      <BackgroundTasks>
-        <Task Type="" />
-      </BackgroundTasks>
-    </Extension>
-</Extensions>
-```
-
-1.  Change the EntryPoint attribute to have the same string used by your code as the entry point when registering your background task (**namespace.classname**).
-
-    In this example, the entry point is ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName:
+将该代码复制到 Extensions 元素中（将在下面的步骤中添加属性）。
 
 ```xml
-<Extensions>
-    <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.ExampleBackgroundTaskClassName">
-       <BackgroundTasks>
-         <Task Type="" />
-       </BackgroundTasks>
-    </Extension>
-</Extensions>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="">
+          <BackgroundTasks>
+            <Task Type="" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
 ```
 
-2.  Change the list of Task Type attribute to indicate the type of task registration used with this background task. If the background task is registered with multiple trigger types, add additional Task elements and Type attributes for each one.
+1.  更改 EntryPoint 属性以让你的代码使用的字符串与注册后台任务时的入口点相同 (**namespace.classname**)。
 
-    **Note**  Make sure to list each of the trigger types you're using, or the background task will not register with the undeclared trigger types (the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method will fail and throw an exception).
+    在此示例中，入口点为 ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName：
 
-    This snippet example indicates the use of system event triggers and push notifications:
+    ```xml
+          <Extensions>
+            <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.ExampleBackgroundTaskClassName">
+              <BackgroundTasks>
+                <Task Type="" />
+              </BackgroundTasks>
+            </Extension>
+          </Extensions>
+    ```
 
-```xml
-<Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
-    <BackgroundTasks>
-        <Task Type="systemEvent" />
-        <Task Type="pushNotification" />
-    </BackgroundTasks>
-</Extension>
-```
+2.  更改 Task Type 属性列表以指示该后台任务所使用的任务注册类型。 如果后台任务注册了多个触发器类型，需要为每个触发器类型添加附加的 Task 元素和 Type 属性。
+
+    **注意** 确保列出你所使用的每个触发器类型，否则后台任务将不会注册未声明的触发器类型（[**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法将失败并引发异常）。
+
+    此代码段示例指示使用系统事件触发器和推送通知：
+
+    ```xml
+                <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
+                  <BackgroundTasks>
+                    <Task Type="systemEvent" />
+                    <Task Type="pushNotification" />
+                  </BackgroundTasks>
+                </Extension>
+    ```
+
+    > **注意** 正常情况下，应用将在名为“BackgroundTaskHost.exe”的特殊进程中运行。 这可能会将一个 Executable 元素添加到 Extension 元素，从而可以在应用上下文中运行后台任务。 仅将 Executable 元素与需要它的后台任务结合使用，例如 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。    
+
+## 添加其他后台任务扩展
 
 
-## Add Additional Background Task Extensions
+对你的应用注册的每个额外的后台任务类重复步骤 2。
 
-Repeat step 2 for each additional background task class registered by your app.
-
-The following example is the complete Application element from the [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509). This shows the use of 2 background task classes with a total of 3 trigger types. Copy the Extensions section of this example, and modify it as needed, to declare background tasks in your application manifest.
+下面的示例是来自[后台任务示例]( http://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 它显示使用了两个后台任务类，触发器类型总数为 3。 复制此示例的“扩展”部分，并根据需要进行修改，以在应用程序清单中声明后台任务。
 
 ```xml
 <Applications>
@@ -147,71 +146,14 @@ The following example is the complete Application element from the [background t
 </Applications>
 ```
 
-## Declare your background task to run in a different process
+## 相关主题
 
-New functionality in Windows 10, version 1507, allows you to run your background task in a different process than BackgroundTaskHost.exe (the process where background tasks run by default).  There are two options: run in the same process as your foreground application; run in an instance of BackgroundTaskHost.exe that is separate from other instances of background tasks from the same application.  
-
-### Run in the foreground application
-
-Here is example XML that declares a background task that runs in the same process as the foreground application. Note the `Executable` attribute:
-
-```xml
-<Extensions>
-    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask" Executable="$targetnametoken$.exe">
-        <BackgroundTasks>
-            <Task Type="systemEvent" />
-        </BackgroundTasks>
-    </Extension>
-</Extensions>
-```
-
-> [!Note]
-> Only use the Executable element with background tasks that require it, such as the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).  
-
-### Run in a different background host process
-
-Here is example XML that declares a background task that runs in a BackgroundTaskHost.exe process, but in a separate one than other instances of background tasks from the same app. Note the `ResourceGroup` attribute, which identifies which background tasks will run together.
-
-```xml
-<Extensions>
-    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.SessionConnectedTriggerTask" ResourceGroup="foo">
-      <BackgroundTasks>
-        <Task Type="systemEvent" />
-      </BackgroundTasks>
-    </Extension>
-    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimeZoneTriggerTask" ResourceGroup="foo">
-      <BackgroundTasks>
-        <Task Type="systemEvent" />
-      </BackgroundTasks>
-    </Extension>
-    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask" ResourceGroup="bar">
-      <BackgroundTasks>
-        <Task Type="timer" />
-      </BackgroundTasks>
-    </Extension>
-    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.ApplicationTriggerTask" ResourceGroup="bar">
-      <BackgroundTasks>
-        <Task Type="general" />
-      </BackgroundTasks>
-    </Extension>
-    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.MaintenanceTriggerTask" ResourceGroup="foobar">
-      <BackgroundTasks>
-        <Task Type="general" />
-      </BackgroundTasks>
-    </Extension>
-</Extensions>
-```
-
-
-## Related topics
-
-
-* [Debug a background task](debug-a-background-task.md)
-* [Register a background task](register-a-background-task.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [调试后台任务](debug-a-background-task.md)
+* [注册后台任务](register-a-background-task.md)
+* [后台任务指南](guidelines-for-background-tasks.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

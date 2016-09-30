@@ -1,89 +1,80 @@
 ---
 author: Jwmsft
-Description: Use a tooltip to reveal more info about a control before asking the user to perform an action.
-title: Tooltips
+Description: "要求用户执行操作之前，使用工具提示显示有关控件的详细信息。"
+title: "工具提示"
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 0529f212e9fac290bb58925e992518ab0e803bfa
 
 
 ---
-# Tooltips
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+# 工具提示
 
 
 
+工具提示是链接到另一个控件或对象的简短描述。 工具提示可帮助用户了解未在 UI 中直接描述的不熟悉的对象。 它们会在用户将焦点移动到控件、长按控件或将鼠标指针停在控件上时自动显示。 几秒钟后或者当用户移动手指、指针或键盘/游戏板焦点时，工具提示将消失。
 
-A tooltip is a short description that is linked to another control or object. Tooltips help users understand unfamiliar objects that aren't described directly in the UI. They display automatically when the user moves focus to, presses and holds, or hovers the mouse pointer over a control. The tooltip disappears after a few seconds, or when the user moves the finger, pointer or keyboard/gamepad focus.
+![工具提示](images/controls/tool-tip.png)
 
-![A tooltip](images/controls/tool-tip.png)
+<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227608"><strong>ToolTip class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice"><strong>ToolTipService class</strong></a></li>
-</ul>
+-   [**ToolTip 类**](https://msdn.microsoft.com/library/windows/apps/br227608)
+-   [**ToolTipService 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
-</div>
-</div>
+## 这是正确的控件吗？
 
+要求用户执行操作之前，使用工具提示显示有关控件的详细信息。 工具提示应尽量少用，仅应在用户为尝试完成某个任务而需要添加不同的值时才使用。 一个经验规则是，如果信息在同一体验的其他位置提供，则不需要工具提示。 一个有价值的工具提示可以澄清不明确的操作。
 
+应在何时使用工具提示？ 在决定之前，请考虑以下问题：
 
+-   **信息是否应当基于指针悬停显示？**
+    如果不是，请使用其他控件。 仅在与用户交互时显示提示，工具提示从来不会自行显示。
 
-## Is this the right control?
+-   **控件是否有文本标签？**
+    如果没有，请使用工具提示提供标签。 比较好的 UX 设计做法是以内联方式为大多数控件添加标签，对于这些控件，你不需要使用工具提示。 仅显示图标的工具栏控件和命令按钮需要工具提示。
 
-Use a tooltip to reveal more info about a control before asking the user to perform an action. Tooltips should be used sparingly, and only when they are adding distinct value for the user who is trying to complete a task. One rule of thumb is that if the information is available elsewhere in the same experience, you do not need a tooltip. A valuable tooltip will clarify an unclear action.
+-   **对象是否受益于相关说明或更详细的信息？**
+    如果是，请使用工具提示。 但是，文本必须是补充性的文本，也就是说不是主要任务必需的文本。 如果是必需的文本，请将它直接放在 UI 中，这样用户便不必查找或搜寻它。
 
-When should you use a tooltip? To decide, consider these questions:
+-   **补充信息是否为错误、警告或状态？**
+    如果是，请使用其他 UI 元素（如弹出窗口）。
 
--   **Should info become visible based on pointer hover?**
-    If not, use another control. Display tips only as the result of user interaction, never display them on their own.
+-   **用户是否需要与提示进行交互？**
+    如果是，请使用其他控件。 用户不能与提示进行交互，因为移动鼠标会导致提示消失。
 
--   **Does a control have a text label?**
-    If not, use a tooltip to provide the label. It is a good UX design practice to label most controls inline and for these you don't need tooltips. Toolbar controls and command buttons showing only icons need tooltips.
+-   **用户是否需要打印补充信息？**
+    如果是，请使用其他控件。
 
--   **Does an object benefit from a description or further info?**
-    If so, use a tooltip. But the text must be supplemental — that is, not essential to the primary tasks. If it is essential, put it directly in the UI so that users don't have to discover or hunt for it.
+-   **用户是否会觉得提示令人厌烦或者让人分心？**
+    如果是，请考虑使用其他解决方案（包括不执行任何操作）。 如果你的确使用了可能会让人分心的提示，请允许用户关闭它们。
 
--   **Is the supplemental info an error, warning, or status?**
-    If so, use another UI element, such as a flyout.
+## 示例
 
--   **Do users need to interact with the tip?**
-    If so, use another control. Users can't interact with tips because moving the mouse makes them disappear.
+“必应地图”应用中的工具提示。
 
--   **Do users need to print the supplemental info?**
-    If so, use another control.
+![“必应地图”应用中的工具提示](images/control-examples/tool-tip-maps.png)
 
--   **Will users find the tips annoying or distracting?**
-    If so, consider using another solution — including doing nothing at all. If you do use tips where they might be distracting, allow users to turn them off.
+## 建议
 
-## Example
+-   慎用工具提示（或者完全不使用）。 工具提示可使用户中断。 工具提示的干扰性类似于弹出窗口，因此不要使用它们，除非它们可以显著增加价值。
+-   使工具提示文本保持简单。 工具提示最适用简短语句和语句片段。 较大的文本块可能会让人不知所措，并且工具提示可能会在用户阅读完之前就超时了。
+-   创建有帮助的补充性工具提示文本。 工具提示文本的内容必须丰富。 不要使工具提示过于明显，也不要只是复制屏幕上已有的内容。 由于工具提示文本不总是可见，因此它应当是用户不必阅读的补充信息。 使用明白易懂的控件标签或就地的补充文本来表示重要信息。
+-   适当时使用图像。 有时最好在工具提示中使用图像。 例如，当用户将鼠标指针悬停在超链接上时，你可以使用工具提示显示链接页面的预览。
+-   不要使用工具提示来显示 UI 中已有的文本。 例如，不要在按钮上放置显示内容与按钮文本相同的工具提示。
+-   不要在工具提示内部放置交互式控件。
+-   不要将看上去像交互式控件的图像放在工具提示内部。
 
-A tooltip in the Bing Maps app.
-
-![A tooltip in the Bing Maps app](images/control-examples/tool-tip-maps.png)
-
-## Recommendations
-
--   Use tooltips sparingly (or not at all). Tooltips are an interruption. A tooltip can be as distracting as a pop-up, so don't use them unless they add significant value.
--   Keep the tooltip text concise. Tooltips are perfect for short sentences and sentence fragments. Large blocks of text can be overwhelming and the tooltip may time out before the user has finished reading.
--   Create helpful, supplemental tooltip text. Tooltip text must be informative. Don't make it obvious or just repeat what is already on the screen. Because tooltip text isn't always visible, it should be supplemental info that users don't have to read. Communicate important info using self-explanatory control labels or in-place supplemental text.
--   Use images when appropriate. Sometimes it's better to use an image in a tooltip. For example, when the user hovers over a hyperlink, you can use a tooltip to show a preview of the linked page.
--   Don't use a tooltip to display text already visible in the UI. For example, don't put a tooltip on a button that shows the same text of the button.
--   Don't put interactive controls inside the tooltip.
--   Don't put images that look like they are interactive inside the tooltip.
-
-Related topics
+<span id="related_topics"></span>相关主题
 -----------------------------------------------
 
-* [**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608)
+* [**ToolTip 类**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

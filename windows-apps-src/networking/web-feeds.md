@@ -1,63 +1,63 @@
 ---
 author: DelfCo
-description: Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the Windows.Web.Syndication namespace.
-title: RSS/Atom feeds
+description: "使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源通过 Windows.Web.Syndication 命名空间中的功能根据 RSS 和 Atom 标准生成。"
+title: "RSS/Atom 订阅源"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
+ms.openlocfilehash: 625a18203bd2d60acc97a6243d4f3e1e0cf2b297
 
 ---
 
-# RSS/Atom feeds
+# RSS/Atom 订阅源
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Important APIs**
+**重要的 API**
 
 -   [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819)
 -   [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)
 -   [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632)
 
-Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) namespace.
+使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源是使用 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的功能根据 RSS 和 Atom 标准生成的。
 
-## What is a feed?
+## 什么是订阅源？
 
-A web feed is a document that contains any number of individual entries made up of text, links, and images. Updates made to a feed are in the form of new entries used to promote the latest content across the Web. Content consumers can use a feed reader app to aggregate and monitor feeds from any number of individual content authors, gaining access to the latest content quickly and conveniently.
+Web 订阅源是一个文档，其中包含任意数量的由文本、链接和图像所组成的单个条目。 对订阅源的更新是以新条目的形式来进行的，这些新条目用于在整个 Web 上推广最新的内容。 内容消费者可以使用订阅源阅读器应用汇总和监视来自任何数量的单个内容作者的订阅源，并快速而方便地获取对最新内容的访问。
 
-## Which feed format standards are supported?
+## 支持哪些订阅源格式标准？
 
-The Universal Windows Platform (UWP) supports feed retrieval for RSS format standards from 0.91 to RSS 2.0, and Atom standards from 0.3 to 1.0. Classes in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) namespace can define feeds and feed items capable of representing both RSS and Atom elements.
+通用 Windows 平台 (UWP) 支持从 RSS 0.91 到 RSS 2.0 的 RSS 格式标准的订阅源检索，也支持从 0.3 到 1.0 的 Atom 标准的订阅源检索。 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类可定义订阅源和能够表示 RSS 和 Atom 元素的订阅源项目。
 
-Additionally, Atom 1.0 and RSS 2.0 formats both allow their feed documents to contain elements or attributes not defined in the official specifications. Over time, these custom elements and attributes have become a way to define domain-specific information consumed by other web service data formats like GData and OData. To support this added feature, the [**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) class represents generic XML elements. Using **SyndicationNode** with classes in the [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) namespace, allows apps to access attributes, extensions, and any content that they may contain.
+此外，Atom 1.0 和 RSS 2.0 格式都允许各自的订阅源文档包含在正式规范中未定义的元素或属性。 随着时间的推移，这些自定义元素和属性已经成为其他 Web 服务数据格式（如 GDATA 和 OData）用于指定域的特定信息的一种方式。 为了支持这一新增功能，[**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) 类表示泛型 XML 元素。 通过结合使用 **SyndicationNode** 和 [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) 命名空间中的类，应用可以访问属性、扩展以及它们可能包含的任何内容。
 
-Note that, for publication of syndicated content, the UWP implementation of the Atom Publication Protocol ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) only supports feed content operations according to the Atom and Atom Publication standards.
+请注意，对于综合内容的发布，根据 Atom 和 Atom Publication 标准，Atom 发布协议的 UWP 实现 ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) 仅支持订阅源内容操作。
 
-## Using syndicated content with network isolation
+## 使用带有网络隔离功能的综合内容
 
-The network isolation feature in the UWP enables a developer to control and limit network access by a UWP app. Not all apps may require access to the network. However for those apps that do, UWP provides different levels of access to the network that can be enabled by selecting appropriate capabilities.
+UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的网络访问。 并非所有的应用都需要访问网络。 然而，对于那些需要访问网络的应用，UWP 通过选择适当的功能为这些应用提供不同级别的网络访问权限。
 
-Network isolation allows a developer to define for each app the scope of required network access. An app without the appropriate scope defined is prevented from accessing the specified type of network, and specific type of network request (outbound client-initiated requests or both inbound unsolicited requests and outbound client-initiated requests). The ability to set and enforce network isolation ensures that if an app does get compromised, it can only access networks where the app has explicitly been granted access. This significantly reduces the scope of the impact on other applications and on Windows.
+网络隔离允许开发人员为每个应用定义所需网络访问的范围。 没有指定相应范围的应用被阻止访问特定类型的网络和特定类型的网络请求（出站客户端发起的请求或未经请求的入站请求和出站客户端发起的请求）。 设置并强制执行网络隔离功能可确保如果一个应用变得具有威胁，则该应用只能访问已明确授权它访问的网络。 这大大降低了对其他应用程序和 Windows 的范围影响。
 
-Network isolation affects any class elements in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) and [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) namespaces that try to access the network. Windows actively enforces network isolation. A call to a class element in the **Windows.Web.Syndication** or **Windows.Web.AtomPub** namespace that results in network access may fail because of network isolation if the appropriate network capability has not been enabled.
+网络隔离功能可影响尝试访问网络的 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 和 [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) 命名空间中的任何类元素。 Windows 会主动强制实现网络隔离。 如果尚未启用相应的网络功能，则调用 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空间中的类元素可能会因为网络隔离导致网络访问失败。
 
-The network capabilities for an app are configured in the app manifest when the app is built. Network capabilities are usually added using Microsoft Visual Studio 2015 when developing the app. Network capabilities may also be set manually in the app manifest file using a text editor.
+在生成应用时，在应用清单中配置其网络功能。 网络功能通常在开发应用时通过 Microsoft Visual Studio 2015 添加。 也可使用文本编辑器在应用清单文件中手动设置网络功能。
 
-For more detailed information on network isolation and networking capabilities, see the "Capabilities" section in the [Networking basics](networking-basics.md) topic.
+有关网络隔离和网络功能的详细信息，请参阅[网络基础知识](networking-basics.md)主题中的“功能”部分。
 
-## How to access a web feed
+## 如何访问 Web 订阅源
 
-This section shows how to retrieve and display a web feed using classes in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) namespace in your UWP app written in C# or Javascript.
+此部分展示了如何在采用 C# 或 Javascript 编写的 UWP 应用中使用 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类检索和显示 Web 订阅源。
 
-**Prerequisites**
+**先决条件**
 
-To ensure your UWP app is network ready, you must set any network capabilities that are needed in the project **Package.appxmanifest** file. If your app needs to connect as a client to remote services on the Internet, then the **internetClient** capability is needed. For more information, see the "Capabilities" section in the [Networking basics](networking-basics.md) topic.
+若要确保你的 UWP 应用能够使用网络，必须设置在项目 **Package.appxmanifest** 文件中所需的任何网络功能。 如果你的应用需要作为客户端连接到 Internet 上的远程服务，则需要具有**“internetClient”**功能。 有关详细信息，请参阅[网络基础知识](networking-basics.md)主题中的“功能”部分。
 
-**Retrieving syndicated content from a web feed**
+**检索来自 Web 订阅源的综合内容**
 
-Now we will review some code that demonstrates how to retrieve a feed, and then display each individual item that the feed contains. Before we can configure and send the request, we'll define a few variables we'll be using during the operation, and initialize an instance of [**SyndicationClient**](https://msdn.microsoft.com/library/windows/apps/br243456), which defines the methods and properties we'll use to retrieve and display the feed.
+现在，我们将查看一些代码，用于演示如何检索订阅源，然后显示订阅源所包含的每个单独项。 在我们可以配置和发送请求前，我们将定义一些将在操作期间使用的变量，并初始化 [**SyndicationClient**](https://msdn.microsoft.com/library/windows/apps/br243456) 的实例，该实例定义我们将用于检索和显示订阅源的方法和属性。
 
-The [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) constructor throws an exception if the *uriString* passed to the constructor is not a valid URI. So we validate the *uriString* using a try/catch block.
+如果传递给 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) 构造函数的 *uriString* 不是有效 URI，该构造函数将引起异常。 因此，我们使用 try/catch 块验证 *uriString*。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -95,13 +95,13 @@ try {
 }
 ```
 
-Next we configure the request by setting any Server credentials (the [**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) property), proxy credentials (the [**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) property), and HTTP headers (the [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462) method) needed. With the basic request parameters configured, a valid [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) object, created using a feed URI string provided by the app. The **Uri** object is then passed to the [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) function to request the feed.
+接下来，我们通过设置所有需要的服务器凭据（[**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) 属性）、代理凭据（[**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) 属性）和 HTTP 标头（[**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462) 方法）来配置请求。 已配置基本请求参数，即有效的 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) 对象，它是使用应用提供的订阅源 URI 字符串创建的。 然后，**Uri** 对象将传递给 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 函数以请求订阅源。
 
-Assuming the desired feed content was returned, the example code iterates through each feed item, calling **displayCurrentItem** (which we define next), to display items and their contents as a list through the UI.
+假设所需订阅源内容已返回，示例代码将在每个订阅源项上循环，从而调用 **displayCurrentItem**（将在下面定义），以通过 UI 以列表形式显示这些项及其内容。
 
-You must write code to handle exceptions when you call most asynchronous network methods. Your exception handler can retrieve more detailed information on the cause of the exception to better understand the failure and make appropriate decisions.
+当你调用大部分异步网络方法时，必须编写代码以处理异常。 异常处理程序可以检索关于异常原因的更详细的信息，以便更好地了解此次失败，然后作出正确的决策。
 
-The [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) method throws an exception if a connection could not be established with the HTTP server or the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) object does not point to a valid AtomPub or RSS feed. The Javascript sample code uses an **onError** function to catch any exceptions and print out more detailed information on the exception if an error occurs.
+如果不能与 HTTP 服务器建立连接，或者 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) 对象没有指向有效的 AtomPub 或 RSS 订阅源，[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 方法会引发异常。 如果发生错误，Javascrip 示例代码将使用 **onError** 函数捕捉任何异常，并打印出关于异常的更详细的信息。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -170,7 +170,7 @@ function retreiveFeed(uri) {
 }
 ```
 
-In the previous step, [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) returned the requested feed content and the example code got to work iterating through available feed items. Each of these items is represented using a [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) object that contains all of the item properties and content afforded by the relevant syndication standard (RSS or Atom). In the following example we observe the **displayCurrentItem** function working through each item and displaying its content through various named UI elements.
+在上面的步骤中，[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 返回了请求的订阅源内容，并且示例代码已在可用的订阅源项上实施循环访问。 这些项的每个项将使用 [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) 对象表示，其中包含相关联合标准（RSS 或 Atom）提供的所有项属性和内容。 在以下示例中，我们将看到作用于每个项和通过各种命名的 UI 元素显示其内容的 **displayCurrentItem** 函数。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -218,7 +218,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-As suggested earlier, the type of content represented by a [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) object will differ depending on the feed standard (RSS or Atom) employed to publish the feed. For example, an Atom feed is capable of providing a list of [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540), but an RSS feed is not. However, extension elements included in a feed item that are not supported by either standard (e.g., Dublin Core extension elements) can be accessed using the [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543) property and then displayed as demonstrated in the following example code.
+如上面所述，根据用于发布订阅源的不同订阅源标准（RSS 或 Atom），[**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) 对象所表示的内容类型会有所不同。 例如，Atom 订阅源能够提供 [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540) 的列表，但 RSS 订阅源则不能。 但是，不受任一标准支持的包含在订阅源项中的扩展元素（例如 Dublin Core 扩展元素）可以通过使用 [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543) 属性进行访问并随后显示，如以下示例代码所示。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -261,6 +261,6 @@ As suggested earlier, the type of content represented by a [**SyndicationItem**]
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

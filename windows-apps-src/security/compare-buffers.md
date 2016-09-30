@@ -1,20 +1,20 @@
 ---
-title: Compare buffers
-description: This example code shows how to compare buffers in an Universal Windows Platform (UWP) app.
+title: "比较缓冲区"
+description: "此示例代码显示了如何在通用 Windows 平台 (UWP) 应用中比较缓冲区。"
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 6c55e0dec2198110e0ddcbad743b04439cb3435e
+ms.openlocfilehash: fcbc3c8a3f70613635201732f3ca5053d58325c7
 
 ---
 
-# Compare buffers
+# 比较缓冲区
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This example code shows how to compare buffers in an Universal Windows Platform (UWP) app.
+此示例代码显示了如何在通用 Windows 平台 (UWP) 应用中比较缓冲区。
 
 ```cs
 public void CompareBuffers()
@@ -50,6 +50,6 @@ public void CompareBuffers()
 ```
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

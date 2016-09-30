@@ -1,65 +1,65 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Use speech recognition to provide input, specify an action or command, and accomplish tasks.
-title: Speech recognition
+Description: "使用语音识别提供输入内容、指定操作或命令并完成任务。"
+title: "语音识别"
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
+ms.openlocfilehash: 66bab97e7108a1728e9659a04ea2f1ecf15f68b7
 
 ---
 
-# Speech recognition
+# 语音识别
 
 
-Use speech recognition to provide input, specify an action or command, and accomplish tasks.
+使用语音识别提供输入内容、指定操作或命令并完成任务。
 
-**Important APIs**
+**重要的 API**
 
 -   [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
 
 
 
-Speech recognition is made up of a speech runtime, recognition APIs for programming the runtime, ready-to-use grammars for dictation and web search, and a default system UI that helps users discover and use speech recognition features.
+语音识别由以下部分构成：语音运行时、用于为运行时编程的识别 API、用于听写和 Web 搜索的现成语法，以及帮助用户发现和使用语音识别功能的默认系统 UI。
 
 
-## Set up the audio feed
+## 设置音频源
 
 
-Ensure that your device has a microphone or the equivalent.
+确保你的设备具有麦克风或等效硬件。
 
-Set the **Microphone** device capability ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) in the [App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474) (**package.appxmanifest** file) to get access to the microphone’s audio feed. This allows the app to record audio from connected microphones.
+在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474)（**package.appxmanifest** 文件）中设置“麦克风”****设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
 
-See [App capability declarations](https://msdn.microsoft.com/library/windows/apps/mt270968).
+请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
-## Recognize speech input
+## 识别语音输入
 
 
-A *constraint* defines the words and phrases (vocabulary) that an app recognizes in speech input. Constraints are at the core of speech recognition and give your app great over the accuracy of speech recognition.
+*约束*可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，它除了能提高语音识别准确度，还能为你的应用带来其他优势。
 
-You can use various types of constraints when performing speech recognition:
+执行语音识别时，你可以使用各种类型的约束：
 
-1.  **Predefined grammars** ([**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)).
+1.  **预定义的语法** ([**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446))。
 
-    Predefined dictation and web-search grammars provide speech recognition for your app without requiring you to author a grammar. When using these grammars, speech recognition is performed by a remote web service and the results are returned to the device.
+    预定义的听写和 Web 搜索语法在无需你创作语法的情况下为你的应用提供语音识别。 使用这些语法时，语音识别由远程 Web 服务执行，并且结果将返回到设备。
 
-    The default free-text dictation grammar can recognize most words and phrases that a user can say in a particular language, and is optimized to recognize short phrases. The predefined dictation grammar is used if you don't specify any constraints for your [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) object. Free-text dictation is useful when you don't want to limit the kinds of things a user can say. Typical uses include creating notes or dictating the content for a message.
+    默认自由文本听写语法可以识别用户以特定语言说出的大部分字词或短语，并且为识别短语进行了优化。 如果没有为 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 对象指定任何约束，将使用预定义的听写语法。 当你不希望限制用户可说内容的种类时，自由文本听写非常有用。 典型用法包括为一条消息创建笔记或听写其内容。
 
-    The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.
+    诸如听写语法等 Web 搜索语法包含了用户可能说出的大量字词和短语。 但是，优化它的目的是识别用户搜索 Web 时通常使用的术语。
 
-    **Note**  Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.
+    **注意** 由于预定义的听写和 Web 搜索语法可能很大，而且处于联机状态（不在设备上），性能可能不如安装在设备上的自定义语法快。
 
      
 
-    These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require a connection to a network.
+    可以使用这些预定义语法识别长达 10 秒的语音输入，并且不要求你进行任何创作。 然而，它们确实需要连接到网络。
 
-    To use web-service constraints, speech input and dictation support must be enabled in **Settings** by turning on the "Get to know me" option in the Settings -&gt; Privacy -&gt; Speech, inking, and typing page.
+    若要使用 Web 服务约束，必须在“设置”****中启用语音输入和听写支持，方法是在“设置”-&gt;“隐私”-&gt;“语音、墨迹书写和键入”页面中打开“了解我”选项。
 
-    Here, we show how to test whether speech input is enabled and open the Settings -&gt; Privacy -&gt; Speech, inking, and typing page, if not.
+    下面我们将介绍如何测试是否已启用语音输入，如果未启用，则打开“设置”-&gt;“隐私”-&gt;“语音、墨迹书写和键入”页面。
 
-    First, we initialize a global variable (HResultPrivacyStatementDeclined) to the HResult value of 0x80045509. See [Exception handling for in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
+    首先，我们将全局变量 (HResultPrivacyStatementDeclined) 初始化为 0x80045509 的 HResult 值。 请参阅[采用 C\# 或 Visual Basic 的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -102,32 +102,32 @@ catch (Exception exception)
     }
 ```
 
-2.  **Programmatic list constraints** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)).
+2.  **编程列表约束** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421))。
 
-    Programmatic list constraints provide a lightweight approach to creating simple grammars using a list of words or phrases. A list constraint works well for recognizing short, distinct phrases. Explicitly specifying all words in a grammar also improves recognition accuracy, as the speech recognition engine must only process speech to confirm a match. The list can also be programmatically updated.
+    编程列表约束提供一种轻型方法，用于使用字词或短语的列表创建一种简单的语法。 列表约束非常适用于识别清晰的短语。 因为语音识别引擎仅须处理语音即可确认匹配，所以采用某种语法明确指定所有字词也可提高识别准确度。 也可以以编程方式更新该列表。
 
-    A list constraint consists of an array of strings that represents speech input that your app will accept for a recognition operation. You can create a list constraint in your app by creating a speech-recognition list-constraint object and passing an array of strings. Then, add that object to the constraints collection of the recognizer. Recognition is successful when the speech recognizer recognizes any one of the strings in the array.
+    列表约束由字符串数组组成，此数组表示你的应用将为识别操作接受的语音输入。 你可以通过创建语音识别列表约束对象并传递字符串数组在应用中创建列表约束。 然后，将该对象添加到识别器的约束集合。 当语音识别器识别数组中的任何一个字符串时，识别成功。
 
-3.  **SRGS grammars** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)).
+3.  **SRGS 语法** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412))。
 
-    An Speech Recognition Grammar Specification (SRGS) grammar is a static document that, unlike a programmatic list constraint, uses the XML format defined by the [SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). An SRGS grammar provides the greatest control over the speech recognition experience by letting you capture multiple semantic meanings in a single recognition.
+    语音识别语法规范 (SRGS) 语法是一个静态文档，与编程列表约束不同，它使用由 [SRGS 版本 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302) 定义的 XML 格式。 SRGS 语法提供了对语音识别体验的最大控制，方法是让你在单个识别中捕获多个语义含义。
 
-4.  **Voice command constraints** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
+4.  **语音命令约束** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
 
-    Use a Voice Command Definition (VCD) XML file to define the commands that the user can say to initiate actions when activating your app. For more detail, see [Launch a foreground app with voice commands in Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md).
+    使用语音命令定义 (VCD) XML 文件定义用户可以在激活应用时说出以启动操作的命令。 有关详细信息，请参阅[在 Cortana 中使用语音命令启动前台应用](launch-a-foreground-app-with-voice-commands-in-cortana.md)。
 
-**Note**  Which type of constraint type you use depends on the complexity of the recognition experience you want to create. Any could be the best choice for a specific recognition task, and you might find uses for all types of constraints in your app.
-To get started with constraints, see [Define custom recognition constraints](define-custom-recognition-constraints.md).
+**注意** 使用哪种类型的约束类型取决于待创建识别体验的复杂程度。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
+要开始使用约束，请参阅[定义自定义识别约束](define-custom-recognition-constraints.md)。
 
  
 
-The predefined Universal Windows app dictation grammar recognizes most words and short phrases in a language. It is activated by default when a speech recognizer object is instantiated without custom constraints.
+预定义的通用 Windows 应用听写语法可识别使用某种语言的大部分字词和短语。 如果语音识别器对象在没有自定义约束的情况下实例化，它会自动激活。
 
-In this example, we show how to:
+在该示例中，我们展示如何：
 
--   Create a speech recognizer.
--   Compile the default Universal Windows app constraints (no grammars have been added to the speech recognizer's grammar set).
--   Start listening for speech by using the basic recognition UI and TTS feedback provided by the [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) method. Use the [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) method if the default UI is not required.
+-   创建语音识别器。
+-   编译默认 Universal Windows App 约束（未向语音识别器的语法集添加任何语法）。
+-   开始使用 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 方法提供的基本识别 UI 和 TTS 反馈侦听语音。 如果不需要默认 UI，则使用 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 方法。
 
 ```CSharp
 private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
@@ -147,32 +147,32 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Customize the recognition UI
+## 自定义识别 UI
 
 
-When your app attempts speech recognition by calling [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245), several screens are shown in the following order.
+当你的应用通过调用 [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 来尝试进行语音识别时，多个屏幕将按以下顺序显示。
 
-If you're using a constraint based on a predefined grammar (dictation or web search):
+如果你使用基于预定义语法的约束（听写或 Web 搜索）：
 
--   The **Listening** screen.
--   The **Thinking** screen.
--   The **Heard you say** screen or the error screen.
+-   “侦听”****屏幕。
+-   “思考”****屏幕。
+-   “听到你说”****屏幕或错误屏幕。
 
-If you're using a constraint based on a list of words or phrases, or a constraint based on a SRGS grammar file:
+如果你使用的约束基于字词或短语列表，或者基于 SRGS 语法文件：
 
--   The **Listening** screen.
--   The **Did you say** screen, if what the user said could be interpreted as more than one potential result.
--   The **Heard you say** screen or the error screen.
+-   “侦听”****屏幕。
+-   “你说的是”****屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+-   “听到你说”****屏幕或错误屏幕。
 
-The following image shows an example of the flow between screens for a speech recognizer that uses a constraint based on a SRGS grammar file. In this example, speech recognition was successful.
+下图演示了语音识别器在不同屏幕间的流程的示例，该识别器使用基于 SRGS 语法文件的约束。 在本例中，语音识别是成功的。
 
-![initial recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-initial.png)
+![基于 sgrs 语法文件的约束的初始识别屏幕](images/speech-listening-initial.png)
 
-![intermediate recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-intermediate.png)
+![基于 sgrs 语法文件的约束的中间识别屏幕](images/speech-listening-intermediate.png)
 
-![final recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-complete.png)
+![基于 sgrs 语法文件的约束的最终识别屏幕](images/speech-listening-complete.png)
 
-The **Listening** screen can provide examples of words or phrases that the app can recognize. Here, we show how to use the properties of the [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) class (obtained by calling the [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) property) to customize content on the **Listening** screen.
+“侦听”****屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 属性获取）自定义“侦听”****屏幕上的内容。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -204,15 +204,15 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Related articles
+## 相关文章
 
 
-**Developers**
-* [Speech interactions](speech-interactions.md)
-**Designers**
-* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+**开发人员**
+* [语音交互](speech-interactions.md) 
+           **设计人员**
+* [语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121) 
+           **示例**
+* [语音识别和语音合成示例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -223,6 +223,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,93 +1,91 @@
 ---
 author: jnHs
-Description: The Windows Dev Center dashboard gives you the option to make your app available only to specified people so that you can have testers try it out before you offer it to the public.
-title: Beta testing and targeted distribution
+Description: "Windows 开发人员中心仪表板为你提供仅向指定人员提供应用的选项，以便可以让测试人员在你向公众提供应用之前试用它。"
+title: "Beta 测试和目标分发"
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 translationtype: Human Translation
-ms.sourcegitcommit: 70020d3c6e0fb0fea321ce1951720803fd25f9c0
-ms.openlocfilehash: 48164cd255f776f700a08e389ba1d2d6754ddeca
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a544565bf7bb82f2be1ded3e60836d5d191c6e93
 
 ---
 
-# Beta testing and targeted distribution
+# Beta 测试和目标分发
 
 
-No matter how carefully you test your app, there’s nothing like the real-world test of having other people use it. The Windows Dev Center dashboard gives you the option to make your app available only to specified people so that you can have testers try it out before you offer it to the public. Your testers may discover issues that you’ve overlooked, such as misspellings, confusing app flow, or errors that could cause the app to crash. You’ll then have a chance to fix those problems before you release the app to the public, resulting in a more polished final product.
+无论你如何仔细地测试应用，都不如通过让其他人使用它来进行实际测试。 Windows 开发人员中心仪表板为你提供仅向指定人员提供应用的选项，以便可以让测试人员在你向公众提供应用之前试用它。 测试人员可能会发现你所忽略的问题，例如拼写错误、混乱的应用流程或可能导致该应用崩溃的错误。 然后，你将有机会在向公众发布应用之前修复这些问题，从而推出更完善的最终产品。
 
-We provide several ways to limit distribution of your apps to only your testers without needing to create a separate version of your app with a different name and package identity. (Of course, you can create a separate app for testing only if you prefer. If you do, make sure to give it a different name from what you intend to use as the final, public app name.)
+我们提供几种方法来限制仅向你的测试人员分发应用，而无需使用不同的名称和程序包标识创建单独的应用版本。 （如果你愿意，当然可以创建单独的应用仅供测试。 如果要这样做，请确保为其指定的名称不同于你打算使用的最终的公共应用名称。）
 
-The method of distributing your app to testers depends on which operating systems your app targets. Below you'll find options that work for Windows 10 and for Windows Phone 8.1 and earlier.
+向测试人员分发应用的方法取决于应用所面向的操作系统。 你将会在下面找到适用于 Windows 10 和适用于 Windows Phone 8.1 及更早版本的选项。
 
-## Making your app available to testers on Windows 10 devices
+## 在 Windows 10 设备上向测试人员提供应用
 
-We provide two options that let you limit distribution of your apps to only certain people on Windows 10 devices.
+我们提供两种选项，让你在 Windows 10 设备上将应用限制为仅分配给某些用户。
 
-### Package flights
+### 软件包外部测试版
 
-If you have published a version of your app already, you can create package flights to distribute a different set of packages to the people that you specify. You can create multiple package flights for the same app to use with different groups of people. This is a great way to try out different packages simultaneously, and allows you to pull packages from a flight into your non-flighted submission if you decide they're ready to distribute to everyone.
+如果你已发布了应用的某个版本，则可以创建软件包外部测试版来将不同的程序包集分配给指定用户。 可以为相同应用创建多个软件包外部测试版，以用于不同组的用户。 这是同时尝试不同程序包的绝佳方法，并且如果你决定外部测试版的程序包已准备好分配给所有人，这允许你将该程序包加入到非外部测试版提交中。
 
-For more info, see [Package flights](package-flights.md).
+有关详细信息，请参阅 [Package flights（软件包外部测试版）](package-flights.md)。
 
-> **Note** To distribute packages to a random selection of your Windows 10 customers in a specified percentage, rather than to a designated group of specific customers, you can use [gradual package rollout](gradual-package-rollout.md). You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
+### 在应用商店中隐藏应用和使用促销充值码
 
-### Hiding the app in the Store and using promotional codes
+如果你想要将应用限制为仅分配到某些测试人员组，并且无需首先发布广泛可用的提交，可使用与提交的任何应用都相同的[应用提交过程](app-submissions.md)。 若只允许某些用户可以免费获取应用，并阻止其他客户看到它的列表或下载它，请执行以下操作：
 
-If you want to limit distribution of an app to only a certain group of testers, **without** first publishing a submission that's broadly available, you can use the same [app submission process](app-submissions.md) as any app you submit. To allow only certain people to get the app free of charge, and prevent other customers from seeing its listing or downloading it, do the following:
+-   在提交中，在**定价和可用性**页面的[分发和可见性](set-app-pricing-and-availability.md#distribution-and-visibility)部分中，选择**“隐藏此应用并阻止获取。但具有促销充值码的客户仍可以在 Windows 10 设备上下载它”**。 这可以防止任何人在应用商店中通过搜索或浏览找到你的应用。
+-   应用通过认证后，为应用[生成促销充值码](generate-promotional-codes.md)并分配给测试人员。 你可以在六个月期间内为单个应用生成最多 250 个促销充值码。 这些代码将为测试人员提供指向应用一览的直接链接，并且将允许他们免费下载该应用，即使你在创建提交时为其设置了价格。
 
--   In your submission, on the **Pricing and availability** page, choose **Hide this app and prevent acquisition. Customers with a direct link can see the app's listing, but can only download the app if they have a promotional code and are using a Windows 10 device** in the [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) section. This prevents anyone from finding your app in the Store via searching or browsing.
--   After the app passes certification, [generate promotional codes](generate-promotional-codes.md) for the app and distribute to your testers. You can generate up to 250 promotional codes for a single app in a six month period. These codes will give your testers a direct link to the app’s listing, and will allow them to download it for free, even if you have set a price for it when you created your submission.
+将促销充值码链接分发给测试人员后，他们可以免费下载你的应用、试用它并向你提供反馈以帮助你改进应用。 然后，当你准备好向公众提供应用时，只需创建一个新提交并将**“分发和可见性”**选项更改为**“任何人都可以在应用商店中找到你的应用”**（以及你想要进行的其他任何更改）。
 
-After you distribute the promotional code links to your testers, they can download your app for free, try it out, and give you feedback to help you improve the app. Then, when you’re ready to make your app available to the public, simply create a new submission and change the **Distribution and visibility** option to **Make this app available in the Store** (along with any other changes you'd like to make).
+以下是在执行此操作时要记住的一些事项：
 
-Here are some things to keep in mind when doing this:
+-   你可以通过创建一个新提交来随时为测试人员提供应用的更新版本。 确保将**“分发和可见性”**选项保持设置为**“隐藏此应用并阻止获取。但具有促销充值码的客户仍可以在 Windows 10 设备上下载它”**。 在其完成认证过程后，测试人员将获取更新，但任何其他人都无法获取它。
+-   测试人员必须拥有可供他们安装应用的 Windows 10 设备。 （但是，你的应用无需为了使用此测试方法而包含 Windows 10 程序包。）
+-   你可以创建更多[促销充值码](generate-promotional-codes.md)来随时进行分发（每六个月最多 250 个充值码）。
+-   测试人员下载应用后，你无法撤销对该应用的访问权限。 一旦他们下载应用，他们便可以继续使用它，并且将获得你随后发布的任何更新。
+-   你将需要确定要如何收集测试人员的反馈。 请考虑在 Beta 应用中提供电子邮件或网站链接，以便他们可以轻松提供评论。
+-   你可以查看应用的[分析报告](analytics.md)，包括测试人员留下的任何评级或评论。
+-   向测试人员分发应用时，你可以包含应用内产品 (IAP)。 由于你可能不希望向他们收费，请确保在进行测试时将 IAP 的价格设置为免费。 然后，当你向其他客户提供应用时，可以为每个 IAP 创建一个新提交来更改其价格。
 
--   You can give your testers an updated version of your app at any time by creating a new submission. Make sure to keep the **Distribution and visibility** option set to **Hide this app and prevent acquisition. Customers with a direct link can see the app's listing, but can only download the app if they have a promotional code and are using a Windows 10 device**. The testers will get the update after it goes through the certification process, but no one else will be able to get it.
--   Your testers must have a Windows 10 device on which they can install the app. (However, your app doesn't have to include Windows 10 packages in order to use this method of testing.)
--   You can create more [promotional codes](generate-promotional-codes.md) to distribute at any time (up to 500 codes every six months).
--   You can’t revoke access to the app after your testers download it. Once they have downloaded the app, they can continue to use it, and they’ll get any updates that you subsequently publish.
--   You will need to determine how you’d like to collect feedback from your testers. Consider providing an email or website link in the beta app so that they can easily provide comments.
--   You can review [analytic reports](analytics.md) for your app, including any ratings or reviews left by your testers.
--   You can include add-ons when you distribute your app to testers. Since you probably don’t want to charge them, make sure to set the price for the add-ons to Free while you’re doing your testing. Then, when you make the app available to other customers, you can create a new submission for each add-on to change its price.
+## 向测试人员分发应用的其他方法
 
-## Other methods for distributing apps to testers
+通过使用应用提交的**定价和可用性**页面的[分发和可见性](set-app-pricing-and-availability.md#distribution-and-visibility)部分中的其他选项，你还可以将应用限制为仅分发给目标人群。 请记住，这些选项并非适用于所有操作系统上的客户。 当你在 Windows 10 设备上测试应用时，推荐使用上述选项。
 
-You can also limit distribution of your app only to a targeted group of people by using the additional options in the [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) section of the **Pricing and availability** page of an app submission. Keep in mind that these options don't work for customers on all operating systems. The options above are recommended when you are testing your app on Windows 10 devices.
+如果你选择上述选项之一，可以在准备结束测试期并使应用广泛可用时始终提交更新并将[“分发和可见性”](set-app-pricing-and-availability.md#distribution-and-visibility)选项设置为**“在应用商店中提供此应用”**。 你无需更改应用名称并创建一个完全独立的应用（除非你想要这样做）。
 
-If you choose either of these options above, you can always submit an update and set the [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) option to **Make this app available in the Store** when you’re ready to end the testing period and make the app broadly available. You don’t have to change the app’s name and create a completely separate app (unless you prefer to do so).
+### 向具有指向应用一览的链接的客户定向分发
 
-### Targeted distribution to customers with a link to your app's listing
+使用此选项，仅具有指向应用一览的直接链接的人员可以下载该应用。 你可以在仪表板的[“应用标识”](view-app-identity-details.md)页面上找到此链接（使用 **Windows Phone 的 URL** 或 **Windows 10 的 URL**）。 没有客户能够通过搜索或浏览应用商店找到该应用，但任何具有此链接的人员都可以下载它。 （请注意，你的应用必须定价为“免费”****才能使测试人员免费下载它。）
 
-With this option, only people with a direct link to your app's listing can download it. You can find this **URL** on the [App identity](view-app-identity-details.md) page in the dashboard. No customers will be able to find the app by searching or browsing the Store, but anyone with the link can download it. (Note that your app must be priced **Free** in order for testers to download it at no cost.)
+若要使用此选项，请在提交应用时，在**“定价和可用性”**页面的[“分发和可见性”](set-app-pricing-and-availability.md#distribution-and-visibility)部分中，选择**“在应用商店中隐藏此应用。但是具有指向应用一览的直接链接的客户仍然可以下载它，在 Windows 8 和 Windows 8.1 上除外:”**。
 
-To use this option, select **Hide this app in the Store. Customers with a direct link to the app’s listing can still download it, except on Windows 8 and Windows 8.1:** in the [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) section of the **Pricing and availability** page when submitting your app.
+> **重要提示** 此选项不适用于使用 Windows 8 或 Windows 8.1 的测试人员。
 
-> **Important**  This option does not work for testers on Windows 8 or Windows 8.1.
+### 向具有指定电子邮件地址的客户定向分配
 
-### Targeted distribution to customers with specified email addresses
+对于在 Windows Phone 8.1 及更早版本上进行测试，此选项提供了一种限制应用分发的方式。 仅具有你在框中输入的电子邮件地址（与其 Microsoft 帐户相关联）的人员可以使用指向应用一览的直接链接下载应用。
 
-For testing **on Windows Phone 8.1 and earlier only**, this option provides a way to limit distribution of your app. Only the people whose email addresses (associated with their Microsoft accounts) that you enter in the box can download your app by using the direct link to its listing.
-
-> **Important**  People with the email addresses you enter will only be able to download the app on devices running Windows Phone 8.1 or earlier.
+> **重要提示** 使用你输入的电子邮件地址的用户仅能够在运行 Windows Phone 8.1 或早期版本的设备上下载应用。
  
-You can find your app's direct link on the [App identity](view-app-identity-details.md) page in the dashboard. No customers will be able to find the app by searching or browsing the Store, and even if they have the link to your app's listing, they won't be able to download the app unless they are using a Microsoft account associated with an email address that you provided when submitting this app.
+你可以在仪表板中的[应用标识](view-app-identity-details.md)页面找到你的应用的直接链接（使用 **Windows Phone 的 URL**）。 任何客户都无法通过搜索或浏览应用商店找到该应用，并且即使他们有指向应用一览的链接，也无法下载该应用，除非他们使用与你在提交此应用时提供的电子邮件地址相关联的 Microsoft 帐户。
 
-> **Note**  If you use this option, you can still make the app available for testers on Windows 10 devices by [generating promotional codes](generate-promotional-codes.md) as described above. Anyone with one of your app's promotional codes can download it on a Windows 10 device, even if you didn't enter their email here.
+> **注意** 如果你使用此选项，你仍可通过[生成促销充值码](generate-promotional-codes.md)来向使用 Windows 10 设备的测试人员提供应用，如上所述。 具有其中一个应用促销充值码的任何人都可以在 Windows 10 设备上下载它，即使你未在此处输入其电子邮件。
 
-To use this option, select **Hide this app and make it available only to the people you specify below, who can download this app on Windows Phone 8.x devices. A promotional code may be used to download this app on Windows 10 devices** in the [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) section of the **Pricing and availability** page when submitting your app.
+若要使用此选项，请在提交你的应用时在“定价和可用性”****页面的[“分发和可见性”](set-app-pricing-and-availability.md#distribution-and-visibility)部分中，选择“隐藏此应用并仅提供给你指定的可在 Windows Phone 8.x 设备上下载此应用的以下用户。促销充值码可用于在 Windows 10 设备上下载此应用”****。
 
-If you choose this option, keep the following things in mind:
+如果你选择此选项，请记住以下事项：
 
--   This option can only be selected if you have never previously published the app with the [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) option set to **Make this app available in the Store**.
--   Your app must be priced **Free** in order for your testers to download it at no cost.
--   Your testers can only download the app on Windows Phone 8.1 and earlier. Testers must have a retail Windows Phone device in order to use the app, but the device doesn’t need to be unlocked or registered.
--   Your testers will need to have a Microsoft account in order to access the Windows Store and download your app. You’ll need to know the email address associated with each tester’s Microsoft account in order to add them to your list. To create a new Microsoft account, testers can go to [Microsoft account setup](http://go.microsoft.com/fwlink/p/?LinkId=618945).
--   You can provide up to 10,000 email addresses in the text box.
--   Email addresses must be separated with semicolons.
--   You can add additional addresses later, but will need to create a new submission to do so.
--   You can’t revoke access to the app after your testers download it. Once they have downloaded the app, they can continue to use it, and they’ll get any updates you submit.
+-   仅当你之前从未在将[“分发和可见性”](set-app-pricing-and-availability.md#distribution-and-visibility)选项设置为“任何人都可以在应用商店中找到你的应用”****的情况下发布应用时，才可以选择此选项。
+-   你的应用必须定价为“免费”****才能使测试人员免费下载它。
+-   测试人员只能在 Windows Phone 8.1 和更早版本上下载应用。 测试人员必须拥有零售 Windows Phone 设备才能使用应用，但是无需解锁或注册该设备。
+-   测试人员将需要拥有 Microsoft 帐户，才能访问 Windows 应用商店并下载你的应用。 你将需要知道与每个测试人员的 Microsoft 帐户相关联的电子邮件地址，才能将他们添加到你的列表。 若要创建新的 Microsoft 帐户，测试人员可以转到 [Microsoft 帐户设置](http://go.microsoft.com/fwlink/p/?LinkId=618945)。
+-   你可以在文本框中提供最多 10000 个电子邮件地址。
+-   电子邮件地址必须用分号分隔。
+-   你可以在以后添加其他地址，但是将需要创建一个新提交才能执行此操作。
+-   测试人员下载应用后，你无法撤销对该应用的访问权限。 一旦他们下载了应用，他们便可以继续使用它并且将获取你提交的任何更新。
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

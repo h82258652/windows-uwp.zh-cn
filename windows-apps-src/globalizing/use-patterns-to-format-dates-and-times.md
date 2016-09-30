@@ -7,7 +7,7 @@ label: Use patterns to format dates and times
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: f49af17ada36ceb2e5898d80047c2d616b1d0c6e
+ms.openlocfilehash: 17cd1619a13adced643b4c8983dbf874bebaa740
 
 ---
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: f49af17ada36ceb2e5898d80047c2d616b1d0c6e
 
 结合使用 [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API 和自定义模式以严格按照所需模式显示日期和时间。
 
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>简介
+## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>介绍
 
 
 [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) 为全球的语言和区域提供了各种正确设置日期和时间格式的方法。 你可以为年、月、日等使用标准格式，或使用标准字符串模板，例如“longdate”或“month day”。
@@ -192,6 +192,6 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

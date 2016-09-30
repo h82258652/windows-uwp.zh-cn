@@ -1,84 +1,77 @@
 ---
 author: normesta
-Description: "此中心主题涉及关于 Windows 信息保护 (EDP) 与文件、缓冲区、剪贴板、网络、后台任务以及锁屏下的数据保护有何关联的完整开发人员蓝图。"
-MS-HAID: dev\_enterprise.edp\_hub
-MSHAttr: PreferredLib:/library/windows/apps
+Description: 'This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.'
+MS-HAID: 'dev\_enterprise.edp\_hub'
+MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-title: "Windows 信息保护 (WIP)"
-translationtype: Human Translation
-ms.sourcegitcommit: 1070561ea95cd1d884303fdd476b40a9ec88e390
-ms.openlocfilehash: 2beec354ed7dbb3cc2d4cb502977ce028b4eaf1d
-
+title: 'Windows Information Protection (WIP)'
 ---
 
-# Windows 信息保护 (WIP)
+# Windows Information Protection (WIP)
 
-__注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows 10 版本 1607。
+__Note__ Windows Information Protection (WIP) policy can be applied to Windows 10, version 1607.
 
-WIP 通过强制执行组织定义的策略来保护属于组织的数据。 如果你的应用包括在这些策略中，则你的应用生成的所有数据都将受到策略限制。 本主题帮助你生成可更流畅地强制执行这些策略的应用，而不对用户的个人数据造成任何影响。
+This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
 
-## 首先，什么是 WIP？
+For more info about WIP from the point of view of end-users and administrators, see [Windows Information Protection (WIP) overview](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx).
 
-WIP 是支持组织的移动设备管理 (MDM) 系统的台式计算机、笔记本电脑、平板电脑和手机上的一组功能。 WIP 使组织可以更好地控制如何处理组织所管理的设备上的数据。 例如，管理员可以标识允许哪些应用访问属于组织的文件，以及用户是否可以从这些文件复制数据，然后将该数据粘贴到个人文档中。
+## What is WIP?
 
-它的工作原理如下。 用户将他们的设备注册到组织的移动设备管理 (MDM) 系统中。 管理组织中的管理员使用 Microsoft Intune 或 System Center Configuration Manager (SCCM) 定义一个策略，然后将其部署到注册的设备。
+WIP is a set of features on desktops, laptops, tablets, and phones for Mobile Device Management (MDM). WIP gives an enterprise greater control over how its data (enterprise files and data blobs) is handled on devices that the enterprise manages.
 
-该策略标识可以访问企业数据的应用（称为策略的*允许列表*）。 这些应用可以在剪贴板上或通过“共享”合约访问企业保护的文件、虚拟专用网 (VPN) 和企业数据。 此策略还定义管理数据的规则。 例如，是否可以从企业所有的文件复制数据，然后复制到非企业所有的文件中。
+-   Enterprise data is tagged with encryption. This is "enterprise-protected data", or just "protected data" for short.
+-   Only apps that the managing enterprise explicitly allows via WIP policy can access enterprise-protected data, for example, in files.
+-   Only apps explicitly allowed via WIP policy have enterprise Virtual Private Network (VPN) access.
+-   App-restriction policy also determines how allowed apps should handle enterprise data.
+-   Policy-based restrictions apply even to enterprise content exchanged via the Windows clipboard or via the Share contract.
+-   On demand, the managing enterprise can revoke the device's access to protected content, essentially wiping the device of enterprise data while leaving personal data intact.
+-   A channel app is an app that downloads protected data. Examples include mail and file-synchronization apps.
 
-如果用户从组织的 MDM 系统注销其设备，则管理员可以从该设备远程擦除企业数据。
+WIP enhances the [Encrypting File System (EFS)](http://technet.microsoft.com/library/cc700811.aspx) and [Windows Selective Wipe](https://technet.microsoft.com/library/dn486874.aspx) to provide more security and flexibility options. New WIP APIs let you create apps that protect and revoke access to enterprise content, work with protected file properties, and access encrypted data in its raw form. In addition to introducing new APIs for protecting files and folders, it introduces APIs for protecting buffers and streams. It also introduces a set of APIs that allow apps to identify and indicate the enterprise that must enforce data protection policy.
 
-![WIP 生命周期](images/wip-lifecycle.png)
+So that the managing enterprise can control access to its protected data, the app-restriction policy defines a list of apps, and restrictions on those apps. By default, an app is unable to autonomously access protected data. To gain access, the app must be added to a list called the allowed list, and apps on the allowed list are called allowed apps. On a managed device, Windows can restrict and/or audit access to protected data on the clipboard or via the share contract, so that access by an app not on the allowed list is audited and/or requires user consent, or else is completely blocked.
 
-> **阅读关于 WIP 的详细信息** <br>
-* [介绍 Windows 信息保护](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
-* [使用 Windows 信息保护 (WIP) 保护企业数据](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
+Policy for WIP is provided to a device by the managing enterprise (this makes the device a "managed device"). Provisioning of policy can happen through enrollment by the user in mobile device management (MDM), through manual configuration by IT, or through another management and policy delivery mechanism such as System Center Configuration Manager (SCCM).
 
-如果你的应用在允许列表上，则你的应用生成的所有数据都将受到策略限制。 这意味着，如果管理员吊销用户对企业数据的访问权限，则这些用户将失去对你的应用所生成的所有数据的访问权限。
+WIP file protection leverages Rights Management Service (RMS) keys, if provisioned, since these keys can roam across devices and therefore allow protected data to roam. In the absence of RMS keys, these APIs will fall back to local Selective Wipe keys and limit roaming functionality. Data that roams encrypted will be accessible on down-level Windows and on third-party devices via platform-specific RMS apps provided by Microsoft, as well as with RMS-enlightened third party apps.
 
-如果你的应用仅设计用于企业用途，则这没问题。 但是，如果你的应用创建用户认为属于其个人的数据，你将希望*启发*你的应用以便智能地辨别企业和个人数据。 我们调用此类型的应用*应用启发式*，因为它可以在保留用户个人数据的完整性时流畅地强制执行企业策略。
+In summary—data protected with the WIP APIs can be managed by the enterprise, so you can build your app in a way that helps the enterprise protect and manage its data. In other words, you can build an enterprise-ready app. And, helping you do just that is what the rest of this guide is about.
 
-## 创建企业启发式应用
+## Enterprise-enlightened apps
 
-使用 WIP API 启发你的应用，然后将你的应用声明为企业启发式应用。
+Once your app is on the allowed list, it can read protected data. And, by default, any data output by your app is automatically protected by the system. That automatic protection is because the managing enterprise must, one way or another, ensure that enterprise data stays under its own control. But, keeping your app on such a short leash is only the default way to achieve that. A better way is to ask the system to trust you enough to give you more power and flexibility. And, the price of admission for that is to make your app smarter. That means going a step further than getting on the allowed list; it means making your app—and declaring it to be—enterprise-enlightened.
 
-如果你的应用用于组织和个人用途，请启发该应用。
+Your app is enlightened if it uses the techniques we'll describe to autonomously keep enterprise data protected whether the data is at rest, in use, or in flight. Your enlightened app recognizes enterprise data sources and enterprise data, and protects it when it arrives in your app. Being enlightened also means being aware of, and abiding by, WIP policy whenever enterprise data leaves your app. This includes disallowing content from going to a non-enterprise network end-point, wrapping the data in a portable encrypted form before allowing it to roam, and potentially (depending on policy settings), prompting the user before pasting enterprise data into an app not on the allowed list. Once you've made your app enlightened, your app announces to the system that it is enlightened by declaring the restricted **enterpriseDataPolicy** capability. For more info about working with restricted capabilities, see [Special and restricted capabilities](https://msdn.microsoft.com/library/windows/apps/mt270968#special_and_restricted_capabilities).
 
-如果你希望流畅地处理策略元素的强制执行，请启发你的应用。
+Ideally, all enterprise data is protected data, both at rest and in flight. But, inevitably, there must be some brief period between enterprise data being initially generated and it being protected. And, sometimes enterprise data can exist on an enterprise network endpoint without being encrypted. An enlightened app is capable of autonomously protecting such data; allowed-but-not-enlightened apps will need to have protection imposed by the system.
 
-例如，如果策略允许用户将企业数据粘贴到个人文档中，则可以使用户在粘贴数据前无需响应同意对话框。 同样，你可以提供自定义信息对话框以响应这些类型的事件。
+This is because an unenlightened app always runs in enterprise mode. The system makes sure of that. But, an enlightened app is free to move between enterprise mode and personal mode at will and as appropriate for the kind of data the app is working with at any given time. It's also important for an enlightened app to respect personal data, and not to tag personal data as enterprise data. An enlightened app may concurrently handle both enterprise data and personal data, so long as these promises are kept. The next section shows how to switch modes in code.
 
-如果你已准备好启发你的应用，请参阅以下指南之一：
+## WIP features at a glance
 
-**对于使用 C 生成的通用 Windows 平台 (UWP) 应用#**
+**File and buffer protection**
 
-[生成使用企业和个人数据的启发式应用](wip-dev-guide.md)。
+-   Your app can protect, containerize and wipe data associated with an enterprise identity.
+-   Key-management is handled by Windows. Windows uses the enterprise’s RMS keys when they are available to the device; otherwise, Windows falls back to local Selective Wipe protection.
 
-**对于使用 C++ 生成的桌面应用**
+**Device policy management**
 
-[生成使用企业和个人数据的启发式应用 (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)。
+-   Your app can query the identity (enterprise or organization) that is managing the device.
+-   Your app can protect users from inadvertent data disclosure by associating an identity with the data in question.
+-   Your app can protect enterprise resources over the network by checking for enterprise-owned network endpoint connections (servers, IP ranges), and associating the data to a managed (that is, MDM-enrolled) identity.
+-   The WIP APIs only work with managed identities that have an WIP policy defined on the device. If an identity is not managed, then, the APIs indicate that to the application, when necessary.
 
-此外，企业启发式应用共享以下特性：
+## Enlighten your app
 
-* 无论企业数据处于静态、正在使用还是未送达状态，它们都会使数据受到保护。
-* 它们识别个人数据，并防止该数据受到策略限制。
-* 它们识别企业数据，并在该数据到达应用中时保护该数据。
-* 它们保护离开应用的企业数据。
+If you're ready to enlighten your app, see one of these guides:
 
-  例如，它们防止数据发送到非企业网络终结点、在允许数据漫游前采用可移植加密形式打包数据，以及在将企业数据粘贴到不在允许列表上的应用前提示用户（具体取决于策略设置）。
+**For Universal Windows Platform (UWP) apps that you build by using C#**
 
-> **注意** WIP 文件保护利用权限管理服务 (RMS) 密钥（如果已预配），因为这些密钥可以跨设备漫游，从而允许受保护数据漫游。 如果未预配 RMS 密钥，这些 API 将回退到本地选择性擦除密钥，并限制漫游功能。 加密的漫游数据可以通过 Microsoft 所提供的特定于平台的 RMS 应用在下层 Windows 上进行访问，也可以使用已启发 RMS 的第三方应用在第三方设备上进行访问。
+[Build an enlightened app that consumes both enterprise and personal data](wip-dev-guide.md).
 
+**For Desktop apps that you build by using C++**
 
-
-
-
-
-
-
- 
-
-
-
-<!--HONumber=Aug16_HO3-->
+[Build an enlightened app that consumes both enterprise and personal data (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
 
 
+ 

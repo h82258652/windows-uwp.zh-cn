@@ -1,49 +1,49 @@
 ---
 author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
-description: If you have a catalog of apps and add-ons, you can use the Windows Store collection API and Windows Store purchase API to access ownership information for these products from your services.
-title: View and grant products from a service
+description: "如果你有应用和应用内产品 (IAP) 的目录，你可以使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API 来访问你的服务中的这些产品的所有权信息。"
+title: "从服务查看和授予产品"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 2bd637985441cf2f8fbe8366f207369b3a4dc696
+ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
+ms.openlocfilehash: 1e17703442ce539de941890a0616fc5e08391d70
 
 ---
 
-# View and grant products from a service
+# 从服务查看和授予产品
 
 
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
+如果你有应用和应用内产品 (IAP) 的目录，你可以使用 *Windows 应用商店收集 API* 和 *Windows 应用商店购买 API* 来访问你的服务中的这些产品的所有权信息。
 
-If you have a catalog of apps and add-ons (also known as in-app products or IAPs), you can use the *Windows Store collection API* and *Windows Store purchase API* to access ownership information for these products from your services.
+这些 API 由 REST 方法组合而成，旨在供开发人员用于跨平台服务支持的 IAP 目录。 这些 API 支持你执行以下操作：
 
-These APIs consist of REST methods that are designed to be used by developers with add-on catalogs that are supported by cross-platform services. These APIs enable you to do the following:
+-   Windows 应用商店收集 API：查询给定用户拥有的应用和 IAP，或将可消费产品报告为已完成。
+-   Windows 应用商店购买 API：向给定用户授予免费应用或 IAP。
 
--   Windows Store collection API: Query for apps and add-ons owned by a given user, or report a consumable product as fulfilled.
--   Windows Store purchase API: Grant a free app or add-on to a given user.
-
-## Using the Windows Store collection API and Windows Store purchase API
+## 使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API
 
 
-The Windows Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information. Before you can call these APIs, you must apply Azure AD metadata to your application in the Windows Dev Center dashboard and generate several required access tokens and keys. The following steps describe the end-to-end process:
+Windows 应用商店收集 API 和购买 API 使用 Azure Active Directory (Azure AD) 身份验证访问客户所有权信息。 在你可以调用这些 API 前，必须在 Windows 开发人员中心仪表板中将 Azure AD 元数据应用到你的应用程序并生成若干个所需的访问令牌和密钥。 以下步骤介绍端到端过程：
 
-1.  [Configure a Web application in Azure AD](#step-1:-configure-a-web-application-in-azure-ad). This application represents your cross-platform services in the context of Azure AD.
-2.  [Associate your Azure AD client ID with your application in the Windows Dev Center dashboard](#step-2:-associate-your-azure-ad-client-id-with-your-application-in-the-windows-dev-denter-dashboard).
-3.  In your service, [generate Azure AD access tokens](#step-3:-retrieve-access-tokens-from-azure-ad) that represent your publisher identity.
-4.  In client-side code in your Windows app, [generate a Windows Store ID key](#step-4:-generate-a-windows-store-id-key-from-client-side-code-in-your-app) that represents the identity of the current user, and pass the Windows Store ID key back to your service.
-5.  After you have the required Azure AD access token and Windows Store ID key, [call the Windows Store collection API or purchase API from your service](#step-5:-call-the-windows-store-collection-api-or-purchase-api-from-your-service).
+1.  [在 Azure AD 中配置 Web 应用程序](#step-1:-configure-a-web-application-in-azure-ad)。 此应用程序在 Azure AD 的上下文中表示你的跨平台服务。
+2.  [在 Windows 开发人员中心仪表板中将你的 Azure AD 客户端 ID 与应用程序相关联](#step-2:-associate-your-azure-ad-client-id-with-your-application-in-the-windows-dev-denter-dashboard)。
+3.  在你的服务中，[生成 Azure AD 访问令牌](#step-3:-retrieve-access-tokens-from-azure-ad)，这些令牌表示你的发布者标识。
+4.  在 Windows 应用的客户端代码中，[生成 Windows 应用商店 ID 密钥](#step-4:-generate-a-windows-store-id-key-from-client-side-code-in-your-app)（表示当前用户的标识），并将 Windows 应用商店 ID 密钥传递回你的服务。
+5.  在你具有所需的 Azure AD 访问令牌和 Windows 应用商店 ID 密钥后，[从你的服务调用 Windows 应用商店收集 API 或购买 API](#step-5:-call-the-windows-store-collection-api-or-purchase-api-from-your-service)。
 
-The following sections provide more details about each of these steps.
+以下部分提供有关其中每个步骤的更多详细信息。
 
-### Step 1: Configure a Web application in Azure AD
+### 步骤 1：在 Azure AD 中配置 Web 应用程序
 
-1.  Follow the instructions in [Integrating Applications with Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502) to add a Web application to Azure AD.
+1.  按照[将应用程序与 Azure Active Directory 集成](http://go.microsoft.com/fwlink/?LinkId=722502)中的说明将 Web 应用程序添加到 Azure AD。
 
-    > **Note**  On the **Tell us about your application page**, make sure that you choose **Web application and/or web API**. This is required so that you can obtain a key (also called a *client secret*) for your application. In order to call the Windows Store collection API or purchase API, you must provide a client secret when you request an access token from Azure AD in a later step.
+    > **注意** **在向我们说明你的应用程序页**上，确保你已选择“Web 应用程序和/或 Web API”****。 这是必需的，以便你可以为你的应用程序获取密钥（也称为*客户端密码*）。 若要调用 Windows 应用商店收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
 
-2.  In the [Azure Management Portal](http://manage.windowsazure.com/), navigate to **Active Directory**. Select your directory, click the **Applications** tab at the top, and then select your application.
-3.  Click the **Configure** tab. On this tab, obtain the client ID for your application and request a key (this is called a *client secret* in later steps).
-4.  At the bottom of the screen, click **Manage manifest**. Download your Azure AD application manifest and replace the `"identifierUris"` section with the following text.
+2.  在 [Azure 管理门户](http://manage.windowsazure.com/)中，导航到“Active Directory”****。 选择你的目录、单击顶部的“应用程序”****选项卡，然后选择你的应用程序。
+3.  单击“配置”****选项卡。 在此选项卡上，为你的应用程序获取客户端 ID 并请求密钥（这在稍后的步骤中称为*客户端密码*）。
+4.  在屏幕底部，单击“管理清单”****。 下载你的 Azure AD 应用程序清单并使用以下文本替换 `"identifierUris"` 部分。
 
     ```json
     "identifierUris" : [                                
@@ -53,89 +53,89 @@ The following sections provide more details about each of these steps.
         ],
     ```
 
-    These strings represent the audiences supported by your application. In a later step, you will create Azure AD access tokens that are associated with each of these audience values. For more information about how to download your application manifest, see [Understanding the Azure Active Directory application manifest]( http://go.microsoft.com/fwlink/?LinkId=722500).
+    这些字符串表示你的应用程序支持的受众。 在稍后的步骤中，你将创建与其中每个受众值关联的 Azure AD 访问令牌。 有关如何下载应用程序清单的详细信息，请参阅[了解 Azure Active Directory 应用程序清单]( http://go.microsoft.com/fwlink/?LinkId=722500)。
 
-5.  Save your application manifest and upload it to your application in the [Azure Management Portal](http://manage.windowsazure.com/).
+5.  保存你的应用程序清单，并在 [Azure 管理门户](http://manage.windowsazure.com/)中将其上传到你的应用程序。
 
-### Step 2: Associate your Azure AD client ID with your application in the Windows Dev Center dashboard
+### 步骤 2：在 Windows 开发人员中心仪表板中将你的 Azure AD 客户端 ID 与应用程序相关联
 
-The Windows Store collection API and purchase API only provide access to a user's ownership information for apps and add-ons that you have associated with your Azure AD client ID.
+Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客户端 ID 关联的应用和 IAP 的用户所有权信息的访问权限。
 
-1.  Sign in to the [Windows Dev Center dashboard](https://dev.windows.com/overview) and select your app.
-2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD client ID into one of the available fields.
+1.  登录 [Windows 开发人员中心仪表板](https://dev.windows.com/overview)并选择你的应用。
+2.  转到“服务”****&gt;“产品收集和购买”****页并将你的 Azure AD 客户端 ID 输入到可用字段之一。
 
-### Step 3: Retrieve access tokens from Azure AD
+### 步骤 3：从 Azure AD 检索访问令牌
 
-Before you can retrieve a Windows Store ID key or call the Windows Store collection API or purchase API, your service must request three Azure AD access tokens that represent your publisher identity. Each of these access tokens is associated with a different audience URI, and each token will be used with a different API call. The lifetime of each token is 60 minutes, and you can refresh them after they expire.
+在你可以检索 Windows 应用商店 ID 密钥或调用 Windows 应用商店收集 API 或购买 API 前，你的服务必须请求三个表示你的发布者标识的 Azure AD 访问令牌。 其中每个访问令牌都与不同的受众 URI 相关联，每个令牌将通过不同的 API 调用使用。 每个令牌的生命周期为 60 分钟，你可以在它们到期后进行刷新。
 
-To create the access tokens, use the OAuth 2.0 API in your service by following the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/). For each token, specify the following parameter data:
+若要创建访问令牌，请按照[使用客户端凭据的服务到服务调用](https://msdn.microsoft.com/library/azure/dn645543.aspx)中的说明在你的服务中使用 OAuth 2.0 API。 对于每个令牌，请指定以下参数数据：
 
--   For the *client\_id* and *client\_secret* parameters, specify the client ID and the client secret for your application as obtained from the [Azure Management Portal](http://manage.windowsazure.com/). Both of these parameters are required in order to generate an access token with the level of authentication required by the Windows Store collection API or purchase API.
--   For the *resource* parameter, specify one of the following app ID URIs (these are the same URIs that you previously added to the `"identifierUris"` section of the application manifest). At the end of this process, you should have three access tokens that each have one of these app ID URIs associated with them:
-    -   `https://onestore.microsoft.com/b2b/keys/create/collections`: In a later step, you will use the access token that you create with this URI to request a Windows Store ID key that you can use with the Windows Store collection API.
-    -   `https://onestore.microsoft.com/b2b/keys/create/purchase`: In a later step, you will use the access token that you create with this URI to request a Windows Store ID key that you can use with the Windows Store purchase API.
-    -   `https://onestore.microsoft.com`: In a later step, you will use the access token that you create with this URI in direct calls to the Windows Store collection API or purchase API.
+-   对于 *client\_id* 和 *client\_secret* 参数，请为你的应用程序指定从 [Azure 管理门户](http://manage.windowsazure.com/)所获取的客户端 ID 和客户端密码。 若要生成带有 Windows 应用商店收集 API 或购买 API 所需的身份验证级别的访问令牌，这两个参数都是必需的。
+-   对于 *resource* 参数，请指定以下应用 ID URI 之一（这些 URI 是你以前添加到应用程序清单的 `"identifierUris"` 部分的相同 URI）。 在此过程结束时，你应有三个访问令牌，其中每一个都有与之相关联的这些应用 ID URI 之一：
+    -   `https://onestore.microsoft.com/b2b/keys/create/collections`：在稍后的步骤中，你将使用通过此 URI 创建的访问令牌请求与 Windows 应用商店收集 API 一起使用的 Windows 应用商店 ID 密钥。
+    -   `https://onestore.microsoft.com/b2b/keys/create/purchase`：在稍后的步骤中，你将使用通过此 URI 创建的访问令牌请求与 Windows 应用商店购买 API 一起使用的 Windows 应用商店 ID 密钥。
+    -   `https://onestore.microsoft.com`：在稍后的步骤中，你将在对 Windows 应用商店收集 API 或购买 API 的直接调用中使用你通过此 URI 创建的访问令牌。
 
-    > **Important**  Use the `https://onestore.microsoft.com` audience only with access tokens that are stored securely within your service. Exposing access tokens with this audience outside your service could make your service vulnerable to replay attacks.
+    > **重要提示** 将 `https://onestore.microsoft.com` 受众仅与安全存储在服务中的访问令牌一起使用。 在服务之外公开访问令牌和此受众会让你的服务易受到重播攻击。
 
-After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). For more details about the structure of an access token, see [Supported Token and Claim Types](http://go.microsoft.com/fwlink/?LinkId=722501).
+有关访问令牌的结构的更多详细信息，请参阅[受支持的令牌和声明类型](http://go.microsoft.com/fwlink/?LinkId=722501)。
 
-> **Important**  You should create Azure AD access tokens only in the context of your service, not in your app. Your client secret could be compromised if it is sent to your app.
+> **重要提示** 应仅在服务的上下文而非应用中创建 Azure AD 访问令牌。 客户端密码在发送到你的应用时可能会遭泄露。
 
-### Step 4: Generate a Windows Store ID key from client-side code in your app
+### 步骤 4：从应用中的客户端代码生成 Windows 应用商店 ID 密钥
 
-Before you can call the Windows Store collection API or purchase API, your service must obtain a Windows Store ID key. This is a JSON Web Token (JWT) that represents the identity of the user whose product ownership information you want to access. For more information about the claims in this key, see [Claims in a Windows Store ID key](#windowsstorekey).
+在你可以调用 Windows 应用商店收集 API 或购买 API 之前，你的服务必须获取 Windows 应用商店 ID 密钥。 这是 JSON Web 令牌 (JWT)，表示你想要访问其产品所有权信息的用户的标识。 有关此密钥中的声明的详细信息，请参阅 [Windows 应用商店 ID 密钥中的声明](#windowsstorekey)。
 
-Currently, the only way to obtain a Windows Store ID key is by calling a Universal Windows Platform (UWP) API from client-side code in your app to retrieve the identity of the user who is currently signed in to the Windows Store. To generate a Windows Store ID key:
+当前，获取 Windows 应用商店 ID 密钥的唯一方法是通过从应用中的客户端代码调用通用 Windows 平台 (UWP) API 以检索当前登录 Windows 应用商店的用户的标识。 若要生成 Windows 应用商店 ID 密钥：
 
-1.  Pass one of the following access tokens from your service to your client app:
-    -   To get a Windows Store ID key that you can use with the Windows Store collection API, pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/collections` audience URI.
-    -   To get a Windows Store ID key that you can use with the Windows Store purchase API, pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI.
+1.  将以下访问令牌之一从你的服务传递到客户端应用：
+    -   若要获取可以与 Windows 应用商店收集 API 一起使用的 Windows 应用商店 ID 密钥，请传递你通过 `https://onestore.microsoft.com/b2b/keys/create/collections` 受众 URI 创建的 Azure AD 访问令牌。
+    -   若要获取可以与 Windows 应用商店购买 API 一起使用的 Windows 应用商店 ID 密钥，请传递你通过 `https://onestore.microsoft.com/b2b/keys/create/purchase` 受众 URI 创建的 Azure AD 访问令牌。
 
-2.  In your app code, call one of the following methods of the [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) class to retrieve a Windows Store ID key.
+2.  在你的应用代码中，调用 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 类的以下方法之一来检索 Windows 应用商店 ID 密钥。
 
-    -   [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674): Call this method if you intend to use the Windows Store collection API.
-    -   [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675): Call this method if you intend to use the Windows Store purchase API.
+    -   [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674)：如果计划使用 Windows 应用商店收集 API，请调用此方法。
+    -   [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675)：如果计划使用 Windows 应用商店购买 API，请调用此方法。
 
-    For either method, pass your Azure AD access token to the *serviceTicket* parameter. You can optionally pass an ID to the *publisherUserId* parameter that identifies the current user in the context of your services. If you maintain user IDs for your services, you can use this parameter to correlate these user IDs with the calls you make to the Windows Store collection API or purchase API.
+    无论调用何种方法，都需要将你的 Azure AD 访问令牌传递给 *serviceTicket* 参数。 你可以选择将 ID 传递给在服务上下文中标识当前用户的 *publisherUserId* 参数。 如果你为服务维护用户 ID，可以使用此参数将这些用户 ID 与对 Windows 应用商店收集 API 或购买 API 进行的调用关联起来。
 
-3.  After your app successfully retrieves a Windows Store ID key, pass the key back to your service.
+3.  在你的应用成功检索 Windows 应用商店 ID 密钥后，请将该密钥传递回你的服务。
 
-> **Note**  Each Windows Store ID key is valid for 90 days. After a key expires, you can [renew the key](renew-a-windows-store-id-key.md). We recommend that you renew your Windows Store ID keys rather than creating new ones.
+> **注意** 每个 Windows 应用商店 ID 密钥的有效期为 90 天。 密钥到期后，可以[续订该密钥](renew-a-windows-store-id-key.md)。 我们建议你续订 Windows 应用商店 ID 密钥，而非创建新密钥。
 
-### Step 5: Call the Windows Store collection API or purchase API from your service
+### 步骤 5：从你的服务调用 Windows 应用商店收集 API 或购买 API
 
-After your service has a Windows Store ID key that enables it to access a specific user's product ownership information, your service can call the Windows Store collection API or purchase API. Use the instructions that apply to your scenario:
+在你的服务具有允许其访问特定用户的产品所有权信息的 Windows 应用商店 ID 密钥后，你的服务可以调用 Windows 应用商店收集 API 或购买 API。 使用适用于你的方案的说明：
 
--   [Query for products](query-for-products.md)
--   [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
--   [Grant free products](grant-free-products.md)
+-   [查询产品](query-for-products.md)
+-   [将可消费产品报告为已完成](report-consumable-products-as-fulfilled.md)
+-   [授予免费产品](grant-free-products.md)
 
-For each scenario, pass the following information to the API:
+对于每个方案，请将以下信息传递到 API：
 
--   The Azure AD access token that you created earlier with the `https://onestore.microsoft.com` audience URI. This token represents your publisher identity. Pass this token in the request header.
--   The Windows Store ID key you retrieved from [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) or [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) in your app. This key represents the identity of the user whose product ownership information you want to access.
+-   你之前通过 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。 此令牌代表你的发布者标识。 在请求标头中传递此令牌。
+-   你从应用中的 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 检索的 Windows 应用商店 ID 密钥。 此密钥表示你想要访问其产品所有权信息的用户的标识。
 
-## Claims in a Windows Store ID key
+## Windows 应用商店 ID 密钥中的声明
 
 
-A Windows Store ID key is a JSON Web Token (JWT) that represents the identity of the user whose product ownership information you want to access. When decoded using Base64, a Windows Store ID key contains the following claims.
+Windows 应用商店 ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想要访问其产品所有权信息的用户的标识。 当使用 Base64 解码时，Windows 应用商店 ID 密钥包含以下声明。
 
-| Claim name                                                             | Description                                                                                                                                                                                                                                                                                                                                                                             |
+| 声明名称                                                             | 说明                                                                                                                                                                                                                                                                                                                                                                             |
 |------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| iat                                                                    | Identifies the time at which the key was issued. This claim can be used to determine the age of the token. This value is expressed as epoch time.                                                                                                                                                                                                                                       |
-| iss                                                                    | Identifies the issuer. This has the same value as the *aud* claim.                                                                                                                                                                                                                                                                                                                      |
-| aud                                                                    | Identifies the audience. Must be one of the following values: `https://collections.mp.microsoft.com/v6.0/keys` or `https://purchase.mp.microsoft.com/v6.0/keys`.                                                                                                                                                                                                                    |
-| exp                                                                    | Identifies the expiration time on or after which the key will no longer be accepted for processing anything except for renewing keys. The value of this claim is expressed as epoch time.                                                                                                                                                                                               |
-| nbf                                                                    | Identifies the time at which the token will be accepted for processing. The value of this claim is expressed as epoch time.                                                                                                                                                                                                                                                             |
-| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`   | The client ID that identifies the developer.                                                                                                                                                                                                                                                                                                                                            |
-| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`    | An opaque payload (encrypted and Base64 encoded) that contains information that is intended only for use by Windows Store services.                                                                                                                                                                                                                                                     |
-| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`     | A user ID that identifies the current user in the context of your services. This is the same value you pass into the optional *publisherUserId* parameter of the [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) or [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) method when you create the key. |
-| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri` | The URI that you can use to renew the key.                                                                                                                                                                                                                                                                                                                                              |
+| iat                                                                    | 标识颁发密钥的时间。 此声明可用于确定令牌的 有效期。 此值表示为纪元时间。                                                                                                                                                                                                                                       |
+| iss                                                                    | 标识颁发者。 这与 *aud* 声明具有相同的值。                                                                                                                                                                                                                                                                                                                      |
+| aud                                                                    | 标识受众。 必须是下列值之一：`https://collections.mp.microsoft.com/v6.0/keys` 或 `https://purchase.mp.microsoft.com/v6.0/keys`。                                                                                                                                                                                                                    |
+| exp                                                                    | 标识在此时或之后不再接受密钥处理除续订密钥之外的任何操作的到期时间。 此声明的值表示为纪元时间。                                                                                                                                                                                               |
+| nbf                                                                    | 标识接受令牌进行处理的时间。 此声明的值表示为纪元时间。                                                                                                                                                                                                                                                             |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`   | 标识开发人员的客户端 ID。                                                                                                                                                                                                                                                                                                                                            |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`    | 包含计划仅供 Windows 应用商店服务使用的信息的不透明负载（已加密，并使用 Base64 编码）。                                                                                                                                                                                                                                                     |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`     | 标识服务上下文中的当前用户的用户 ID。 此值与你在创建密钥时传递给 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法的可选 *publisherUserId* 参数中的值相同。 |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri` | 可用于续订密钥的 URI。                                                                                                                                                                                                                                                                                                                                              |
 
  
 
-Here is an example of a decoded Windows Store ID key header.
+以下是一个解码的 Windows 应用商店 ID 密钥标头的示例。
 
 ```json
 {
@@ -145,7 +145,7 @@ Here is an example of a decoded Windows Store ID key header.
 }
 ```
 
-Here is an example of a decoded Windows Store ID key claim set.
+以下是一个解码的 Windows 应用商店 ID 密钥声明集的示例。
 
 ```json
 {
@@ -161,21 +161,21 @@ Here is an example of a decoded Windows Store ID key claim set.
 }
 ```
 
-## Related topics
+## 相关主题
 
-* [Query for products](query-for-products.md)
-* [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
-* [Grant free products](grant-free-products.md)
-* [Renew a Windows Store ID key](renew-a-windows-store-id-key.md)
-* [Integrating Applications with Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502)
-* [Understanding the Azure Active Directory application manifest]( http://go.microsoft.com/fwlink/?LinkId=722500)
-* [Supported Token and Claim Types](http://go.microsoft.com/fwlink/?LinkId=722501)
+* [查询产品](query-for-products.md)
+* [将可消费产品报告为已完成](report-consumable-products-as-fulfilled.md)
+* [授予免费产品](grant-free-products.md)
+* [续订 Windows 应用商店 ID 密钥](renew-a-windows-store-id-key.md)
+* [将应用程序与 Azure Active Directory 集成](http://go.microsoft.com/fwlink/?LinkId=722502)
+* [了解 Azure Active Directory 应用程序清单]( http://go.microsoft.com/fwlink/?LinkId=722500)
+* [支持的令牌和声明类型](http://go.microsoft.com/fwlink/?LinkId=722501)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO5-->
 
 

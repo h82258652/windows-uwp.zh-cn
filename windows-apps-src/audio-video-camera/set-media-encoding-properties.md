@@ -1,60 +1,60 @@
 ---
 author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
-description: This article shows you how to use the IMediaEncodingProperties interface to set the resolution and frame rate of the camera preview stream and captured photos and video.
-title: Set media encoding properties for MediaCapture
+description: "本文向你演示如何使用 IMediaEncodingProperties 界面设置相机预览流以及已捕获照片和视频的分辨率和帧速率。"
+title: "设置媒体编码属性"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d7b44ce9db2e3d540036525c4b43e155a9500010
 
 ---
 
-# Set media encoding properties for MediaCapture
+# 设置媒体编码属性
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article shows you how to use the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) interface to set the resolution and frame rate of the camera preview stream and captured photos and video. It also shows how to ensure that the aspect ratio of the preview stream matches that of the captured media.
+本文向你演示如何使用 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 界面设置相机预览流以及已捕获照片和视频的分辨率和帧速率。 还将演示如何确保预览流的纵横比与已捕获媒体的纵横比相匹配。
 
-Camera profiles offer a more advanced way of discovering and setting the stream properties of the camera, but they are not supported for all devices. For more information, see [Camera profiles](camera-profiles.md).
+相机配置文件提供发现和设置相机流属性的更高级方法，但并非所有设备均支持这些文件。 有关详细信息，请参阅[相机配置文件](camera-profiles.md)。
 
-The code in this article was adapted from the [CameraResolution sample](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
+本文中的代码源自 [CameraResolution 示例](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409)。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
-> [!NOTE] 
-> This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
+**注意**  
+本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码生成，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
-## A media encoding properties helper class
+## 媒体编码属性帮助程序类
 
-Creating a simple helper class to wrap the functionality of the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) interface makes it easier to select a set of encoding properties that meet particular criteria. This helper class is particularly useful due to the following behavior of the encoding properties feature:
+创建包装 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 界面功能的简单帮助程序类使选择一组符合特定标准的编码属性变得更简单。 此帮助程序类因具有以下编码属性功能的行为而极为有用：
 
-**Warning**  
-The [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) method takes a member of the [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) enumeration, such as **VideoRecord** or **Photo**, and returns a list of either [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) or [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) objects that convey the stream encoding settings, such as the resolution of the captured photo or video. The results of calling **GetAvailableMediaStreamProperties** may include **ImageEncodingProperties** or **VideoEncodingProperties** regardless of what **MediaStreamType** value is specified. For this reason, you should always check the type of each returned value and cast it to the appropriate type before attempting to access any of the property values.
+**警告**  
+[**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) 方法获取 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 枚举的成员（例如 **VideoRecord** 或 **Photo**），并返回 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 对象的列表，这些对象可传达流编码设置，例如已拍摄照片或视频的分辨率。 调用 **GetAvailableMediaStreamProperties** 的结果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，不论指定的 **MediaStreamType** 值是什么。 出于此原因，在尝试访问任何属性值之前，你都应始终查看每个返回的值的类型并将其转换到相应类型。
 
-The helper class defined below handles the type checking and casting for [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) or [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) so that your app code doesn't need to distinguish between the two types. In addition to this, the helper class exposes properties for the aspect ratio of the properties, the frame rate (for video encoding properties only), and a friendly name that makes it easier to display the encoding properties in the app's UI.
+以下定义的帮助程序类为 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 处理类型检查和转换，因此你的应用代码无需分辨这两种类型。 除此之外，此帮助程序类还会公开属性的纵横比属性、帧速率（仅适用于视频编码属性）以及使在应用 UI 中显示编码属性变得更简单的友好名称。
 
-You must include the [**Windows.Media.MediaProperties**](https://msdn.microsoft.com/library/windows/apps/hh701296) namespace in the source file for the helper class.
+必须将 [**Windows.Media.MediaProperties**](https://msdn.microsoft.com/library/windows/apps/hh701296) 命名空间包含在帮助程序类的源文件中。
 
 [!code-cs[MediaEncodingPropertiesUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaEncodingPropertiesUsing)]
 
 [!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
 
-## Determine if the preview and capture streams are independent
+## 确定预览流和捕获流是否独立。
 
-On some devices, the same hardware pin is used for both preview and capture streams. On these devices, setting the encoding properties of one will also set the other. On devices that use different hardware pins for capture and preview, the properties can be set for each stream independently. Use the following code to determine if the preview and capture streams are independent. You should adjust your UI to enable or disable the setting of the streams independently based on the result of this test.
+在某些设备上，相同的硬件引脚可同时用于预览流和捕获流。 在这些设备上，设置某个流的编码属性也将设置其他流的编码属性。 在将不同的硬件引脚用于捕获和预览的设备上，可单独为每个流设置属性。 使用以下代码确定预览流和捕获流是否独立。 你应该根据此测试结果，将 UI 调整为独立启用或禁用流设置。
 
 [!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
 
-## Get a list of available stream properties
+## 获取可用流属性列表
 
-Get a list of the available stream properties for a capture device by getting the [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) for your app's [MediaCapture](capture-photos-and-video-with-mediacapture.md) object and then calling [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) and passing in one of the [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) values, **VideoPreview**, **VideoRecord**, or **Photo**. In this example, Linq syntax is used to create a list of **StreamPropertiesHelper** objects, defined previously in this article, for each of the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) values returned from **GetAvailableMediaStreamProperties**. This example first uses Linq extension methods to order the returned properties based first on resolution and then on frame rate.
+通过获取应用 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 对象的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825)，然后调用 [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) 并在 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 值的 **VideoPreview**、**VideoRecord** 或 **Photo** 的其中一项属性中传递，获取捕获设备的可用流属性列表。 在此示例中，Linq 语法用于为从 **GetAvailableMediaStreamProperties** 返回的每个 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 值创建 **StreamPropertiesHelper** 对象（在本文前文中定义）列表。 该示例首先使用 Linq 扩展方法先基于分辨率随后基于帧速率为返回的属性排序。
 
-If your app has specific resolution or frame rate requirements, you can select a set of media encoding properties programmatically. A typical camera app will instead expose the list of available properties in the UI and allow the user to select their desired settings. A **ComboBoxItem** is created for each item in the list of **StreamPropertiesHelper** objects in the list. The content is set to the friendly name returned by the helper class and the tag is set to the helper class itself so it can be used later to retrieve the associated encoding properties. Each **ComboBoxItem** is then added to the **ComboBox** passed into the method.
+如果你的应用具有特定分辨率或帧速率要求，你可以按编程方式选择一组媒体编码属性。 典型的相机应用将公开 UI 中的可用属性列表，并允许用户选择所需设置。 在列表中为 **StreamPropertiesHelper** 对象列表中的每个项创建 **ComboBoxItem**。 内容设置为帮助程序类返回的友好名称，而标记设置为帮助程序类本身，以便可以在稍后用于检索相关联的编码属性。 然后将每个 **ComboBoxItem** 添加到传递到该方法中的 **ComboBox**。
 
 [!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
 
-## Set the desired stream properties
+## 设置所需的流属性
 
-Tell the video device controller to use your desired encoding properties by calling [**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895), passing in the **MediaStreamType** value indicating whether the photo, video, or preview properties should be set. This example sets the requested encoding properties when the user selects an item in one of the **ComboBox** objects populated with the **PopulateStreamPropertiesUI** helper method.
+通过调用 [**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895)、传递指示是应设置照片属性、视频属性还是预览属性的 **MediaStreamType**，告知视频设备控制器使用所需的编码属性。 本示例在用户选择使用 **PopulateStreamPropertiesUI** 帮助程序方法填充的 **ComboBox** 对象之一中的项目时，设置所请求的编码属性。
 
 [!code-cs[PreviewSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewSettingsChanged)]
 
@@ -62,21 +62,21 @@ Tell the video device controller to use your desired encoding properties by call
 
 [!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
 
-## Match the aspect ratio of the preview and capture streams
+## 匹配预览流和捕获流的纵横比
 
-A typical camera app will provide UI for the user to select the video or photo capture resolution but will programmatically set the preview resolution. There are a few different strategies for selecting the best preview stream resolution for your app:
+典型相机应用会为用户提供用于选择视频或照片捕获分辨率的 UI，但会以编程方式设置预览分辨率。 有以下几种不同的策略可用于选择最适合你的应用的预览流分辨率：
 
--   Select the highest available preview resolution, letting the UI framework perform any necessary scaling of the preview.
+-   选择最高可用的预览分辨率，从而让 UI 框架对预览执行任何必要的缩放。
 
--   Select the preview resolution closest to the capture resolution so that the preview displays the closest representation to the final captured media.
+-   选择最接近捕获分辨率的预览分辨率，以便预览向最终捕获的媒体显示最接近的表示形式。
 
--   Select the preview resolution closest to the size of the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) so that no more pixels than necessary are going through the preview stream pipeline.
+-   选择最接近 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 的大小的预览分辨率，以便仅必要的像素通过预览流管道。
 
-**Important**  
-It is possible, on some devices, to set a different aspect ratio for the camera's preview stream and capture stream. Frame cropping caused by this mismatch can result in content being present in the captured media that was not visible in the preview which can result in a negative user experience. It is strongly recommended that you use the same aspect ratio, within a small tolerance window, for the preview and capture streams. It is fine to have entirely different resolutions enabled for capture and preview as long as the aspect ratio match closely.
+**重要提示**  
+在某些设备上有可能设置相机预览流和捕获流的不同纵横比。 匹配失误引起的帧裁剪可能导致内容显示在预览中不可见的捕获媒体中，这会导致消极的用户体验。 强烈建议你为预览流和捕获流在容差较小的窗口中使用相同的纵横比。 只要纵横比密切匹配，为捕获和预览启用完全不同的分辨率便不会出现什么问题。
 
 
-To ensure that the photo or video capture streams match the aspect ratio of the preview stream, this example calls [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) and passes in the **VideoPreview** enum value to request the current stream properties for the preview stream. Next a small aspect ratio tolerance window is defined so that we can include aspect ratios that are not exactly the same as the preview stream, as long as they are close. Next, a Linq extension method is used to select just the **StreamPropertiesHelper** objects where the aspect ratio is within the defined tolerance range of the preview stream.
+为确保照片或视频捕获流与预览流的纵横比相匹配，此示例调用 [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 并传递 **VideoPreview** 枚举值以请求预览流的当前流属性。 接下来定义纵横比容差较小的窗口，以便我们可以包括可能不同于预览流（只要相近即可）的纵横比。 接下来，Linq 扩展方法用于选择纵横比处于预览流的定义容差范围内的 **StreamPropertiesHelper** 对象。
 
 [!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
 
@@ -90,6 +90,6 @@ To ensure that the photo or video capture streams match the aspect ratio of the 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

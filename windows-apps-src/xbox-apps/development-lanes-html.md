@@ -1,30 +1,24 @@
 ---
+title: "Xbox 上的 HTML 游戏开发"
 author: JordanEllis6809
-title: HTML game development on Xbox
-description: HTML UWP game development on Xbox.
 translationtype: Human Translation
-ms.sourcegitcommit: c20aaad74acde12cdf2b7db342dac2c8c376560b
-ms.openlocfilehash: 992182f69fe65967771b8bf75b1cb9883da3633a
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 9bc406a174528b82ec062f42ee87a0036a602ab4
 
 ---
 
-# Bringing HTML games to UWP on Xbox
-Xbox One is an excellent platform for HTML 5 games. HTML 5 games run on the [Edge](https://developer.microsoft.com/microsoft-edge/) browser engine. Edge is fast and fully supports HTML 5 and CSS 3 features such as WebGL and canvas.
+Xbox One 是适用于 HTML 5 游戏的一个优秀平台。 HTML 5 游戏在 [Edge](https://developer.microsoft.com/microsoft-edge/) 浏览器引擎上运行。 Edge 速度较快，且完全支持 HTML 5 和 CSS 3 功能（如 WebGL 和画布）。
 
-Popular game engines such as [Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta) have support for Xbox One. We haven't tested every HTML framework and engine, but from what we have seen so far, we believe most of them will work on Xbox One.
+[Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta) 等热门游戏引擎支持 Xbox One。 我们并未对每一个 HTML 框架和引擎都进行测试，但从我们目前所了解到的情况来看，它们中的大多数都适用于 Xbox One。
 
-HTML games are on a level playing field with any other type of game. Developers can get full access to native APIs such as controller input, Kinect, and more.
+HTML 游戏与任何其他类型的游戏势均力敌。 开发人员可以获取本机 API（如控制器输入）、Kinect 等的完全访问权限。
 
-Xbox One runs on the Universal Windows Platform and that means that, like other Microsoft devices, it supports Hosted Web Apps, which are applications that come completely from a server. To learn more, see [Hosted Web Apps](http://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm).
+Xbox One 是一个 UWP 平台，这意味着如同其他 Microsoft 设备一样，它支持托管的 Web 应用。 这些应用程序将完全来自服务器。 [了解详细信息](http://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm)
 
-To get started, download your engine of choice and look for instructions for Windows 10 apps. Also be sure to read the [getting started guide](getting-started.md) for information about turning your console into a development kit and how to deploy from Visual Studio.
-
-## See also
-- [Bringing existing games to Xbox](development-lanes-landing.md)
-- [UWP on Xbox One](index.md)
+若要开始操作，请下载你选择的引擎，然后查找适用于 Windows 10 应用的说明。 此外，请务必阅读[入门指南](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)，以了解有关将你的主机转变为开发工具包的信息以及如何通过 Visual Studio 进行部署。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

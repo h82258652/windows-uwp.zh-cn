@@ -1,45 +1,45 @@
 ---
 author: jnHs
-Description: You can cross-promote your app with apps published by other developers. We call this feature community ads.
-title: About community ads
+Description: "你可以使用其他开发人员发布的应用交叉推广你的应用。 我们将此功能称为社区广告。"
+title: "有关社区广告"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 translationtype: Human Translation
 ms.sourcegitcommit: 90e63d53c68e25816fd1f7b532792d9ad6dc2cc6
-ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
+ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 ---
 
-# About community ads
+# 有关社区广告
 
-If your app uses an **AdMediatorControl** or **AdControl** to display banner ads, you can cross-promote your app with other developers with apps in the Windows Store for free. We call this feature *community ads*.  
+如果你的应用使用 **AdMediatorControl** 或 **AdControl** 显示横幅广告，可以在 Windows 应用商店中通过应用与其他开发人员一起免费交叉推广你的应用。 我们将此功能称为*社区广告*。  
 
-Here's how this program works:
+以下是此计划的运作方式：
 
-* After you [opt-in to community ads](#how-to-opt-in-to-community-ads) and [create a free community ad campaign](create-an-ad-campaign-for-your-app.md), your app will share promotional ad space with other developers who also opt in to community ads. Your app will show ads for apps published by other developers who participate in community ads, and their apps will show ads for your app.
-* You earn credits for promotional ad space in other apps by showing community ads in your app. Credits are calculated according to the following process:
-  * For each country or region where an app that is serving community ads is available, the current market-rate eCPM (effective cost per thousand impressions) value for the country or region is multiplied by the number of requests for community ads made by your app in that country or region. This value is the credits you have earned for your app in that country or region.
-  * Your total credits earned for a given time period is equal to the sum of all credits earned in each country or region for each of your apps that is serving community ads.
-* Your credits are divided equally across all active community ad campaigns, and are converted to ad impressions for your app based on the current market-rate eCPM values of the countries your community ad campaigns target.
-* To track the performance of the community ads in your app, refer to the [account-level advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report).
+* 在你[选择加入社区广告](#how-to-opt-in-to-community-ads)并[创建免费的社区广告市场活动](create-an-ad-campaign-for-your-app.md)后，你的应用将与其他同样选择加入社区广告的开发人员共享推广广告空间。 你的应用将会显示其他加入社区广告的开发人员发布的应用的广告，而他们的应用也会显示你的应用的广告。
+* 通过在你的应用中显示社区广告，你可以获取在其他应用中拥有推广广告空间的信用。 信用根据以下过程计算：
+  * 对于每个有提供社区广告的应用的国家或地区，该国家或地区的当前市场行情 eCPM（每千次印象有效成本）值乘以你的应用在该国家或地区进行的社区广告请求数。 此值就是你在该国家或地区为你的应用获取的信用。
+  * 你在给定时间段内获取的总信用等于每个提供社区广告的应用在每个国家或地区获取的所有信用之和。
+* 你的信用会在所有活动社区广告市场活动中平均分配，并且会根据你的社区广告市场活动面向的国家/地区的当前市场行情 eCPM 值转换为应用广告印象。
+* 若要在应用中跟踪社区广告的性能，请参阅[帐户级别的广告性能报告](advertising-performance-report.md#account-level-advertising-performance-report)。
 
-## How to opt in to community ads
+## 如何选择加入社区广告
 
-To opt in to community ads:
+若要选择加入社区广告：
 
-1. Go to the **Monetization** &gt; **Monetize with ads** page in the Windows Dev Center dashboard.
-2. In the **Community ads** section, check the **Show community ads in my app** box.
-   > **Note**  After you check or uncheck this box, you do not need to republish your app for the changes to take effect.
+1. 在 Windows 开发人员中心仪表板中转到“盈利”****&gt;“利用广告来盈利”****页面。
+2. 在“社区广告”****部分中，选中“在我的应用中显示社区广告”****框。
+   > **注意** 选中或取消选中此框后，无需重新发布应用即可使更改生效。
 
-3. [Create an ad campaign](create-an-ad-campaign-for-your-app.md) for your app. For the campaign type, select **Free community ads**.
-
-
-## Related topics
-
-* [Monetize with ads](monetize-with-ads.md)
-* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
+3. 为你的应用[创建广告市场活动](create-an-ad-campaign-for-your-app.md)。 对于市场活动类型，选择“免费社区广告”****。
 
 
+## 相关主题
 
-<!--HONumber=Aug16_HO3-->
+* [利用广告来盈利](monetize-with-ads.md)
+* [为你的应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)
+
+
+
+<!--HONumber=Jun16_HO5-->
 
 

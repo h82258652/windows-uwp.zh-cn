@@ -5,7 +5,7 @@ description: "本文介绍如何读写图像元数据属性以及如何使用 Ge
 title: "图像元数据"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1f97bf89682bee430849a6b962c68a8c4877a609
+ms.openlocfilehash: 571d71d52931392a36c3c11030749f6ecb3cc961
 
 ---
 
@@ -92,6 +92,6 @@ GeotagHelper 是一个实用工具类，可以方便地直接使用 [**Windows.D
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

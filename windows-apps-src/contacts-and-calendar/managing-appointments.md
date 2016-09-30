@@ -1,24 +1,24 @@
 ---
 author: Xansky
-description: Through the Windows.ApplicationModel.Appointments namespace, you can create and manage appointments in a user's calendar app.
-title: Manage appointments
+description: "通过 Windows.ApplicationModel.Appointments 命名空间，你可以在用户的日历应用中创建和管理约会。"
+title: "管理约会"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
 translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: ae7fe9075a4c49c99a572087bf4b7b176555caef
+ms.openlocfilehash: 020b020d90a52d45fa989e0f630320b4630b955e
 
 ---
 
-# Manage appointments
+# 管理约会
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Through the [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) namespace, you can create and manage appointments in a user's calendar app. Here, we'll show you how to create an appointment, add it to a calendar app, replace it in the calendar app, and remove it from the calendar app. We'll also show how to display a time span for a calendar app and create an appointment-recurrence object.
+通过 [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 命名空间，你可以在用户的日历应用中创建和管理约会。 我们将在此处向你介绍如何创建约会、将其添加到日历应用、在日历应用中替换它以及从日历应用中删除它。 我们还将显示如何显示日历应用的时间跨度和创建一个约会循环对象。
 
-## Create an appointment and apply data to it
+## 创建一个约会并向其应用数据
 
-Create a [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) object and assign it to a variable. Then, apply to the **Appointment** the appointment properties that were supplied through the UI by a user.
+创建一个 [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) 对象并将其分配给某个变量。 然后，应用到由用户通过 UI 提供的 **Appointment** 约会属性。
 
 ```cs
 private void Create-Click(object sender, RoutedEventArgs e)
@@ -250,9 +250,9 @@ private void Create-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Add an appointment to the user's calendar
+## 向用户的日历添加约会
 
-Create a [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) object and assign it to a variable. Then, call the [**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261) method to show the default appointments provider add-appointment UI, to enable the user to add an appointment. If the user clicked **Add**, the sample prints the appointment identifier that **ShowAddAppointmentAsync** returned.
+创建一个 [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) 对象并将其分配给某个变量。 然后，调用 [**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261) 方法来显示默认约会提供程序添加约会 UI，以使用户能够添加约会。 如果用户单击了**“添加”**，该示例将打印 **ShowAddAppointmentAsync** 返回的约会标识符。
 
 ```cs
 private async void Add-Click(object sender, RoutedEventArgs e)
@@ -279,11 +279,11 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Note**  For Windows Phone Store apps, [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) functions just like [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) in that the dialog displayed for adding the appointment is editable.
+**注意** 对于 Windows Phone 应用商店应用，[**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 的功能与 [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) 相同，它们所显示的用于添加约会的对话框都可进行编辑。
 
-## Replace an appointment in the user's calendar
+## 在用户的日历中替换约会
 
-Create a [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) object and assign it to a variable. Then, call the appropriate [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync) method to show the default appointments provider replace-appointment UI to enable the user to replace an appointment. The user also provides the appointment identifier that they want to replace. This identifier was returned from [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync). If the user clicked **Replace**, the sample prints that it updated that appointment identifier.
+创建一个 [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) 对象并将其分配给某个变量。 然后，调用合适的 [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync) 方法来显示默认约会提供程序替换约会 UI，以使用户能够替换约会。 用户还可以提供他们想要替换的约会标识符。 此标识符已从 [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 中返回。 如果用户单击了**“替换”**，该示例将指示它已更新该约会标识符。
 
 ```cs
 private async void Replace-Click(object sender, RoutedEventArgs e)
@@ -335,9 +335,9 @@ private async void Replace-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Remove an appointment from the user's calendar
+## 从用户的日历中删除约会
 
-Call the appropriate [**AppointmentManager.ShowRemoveAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showremoveappointmentasync) method to show the default appointments provider remove-appointment UI, to enable the user to remove an appointment. The user also provides the appointment identifier that they want to remove. This identifier was returned from [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync). If the user clicked **Delete**, the sample prints that it removed the appointment specified by that appointment identifier.
+调用合适的 [**AppointmentManager.ShowRemoveAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showremoveappointmentasync) 方法来显示默认约会提供程序删除约会 UI，以使用户能够删除约会。 用户还可以提供他们想要删除的约会标识符。 此标识符已从 [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 中返回。 如果用户单击了**“删除”**，该示例将指示它已删除由该约会标识符指定的约会。
 
 ```cs
 private async void Remove-Click(object sender, RoutedEventArgs e)
@@ -385,9 +385,9 @@ private async void Remove-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Show a time span for the appointments provider
+## 显示约会提供程序的时间跨度
 
-Call the [**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) method to show a specific time span for the default appointments provider's primary UI if the user clicked **Show**. The sample prints that the default appointments provider appeared on screen.
+如果用户单击了“显示”****，则调用 [**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) 方法来为默认约会提供程序的主 UI 显示特定时间跨度。 该示例指示默认约会提供程序已显示在屏幕上。
 
 ```cs
 private async void Show-Click(object sender, RoutedEventArgs e)
@@ -399,9 +399,9 @@ private async void Show-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Create an appointment-recurrence object and apply data to it
+## 创建一个约会循环对象并向其应用数据
 
-Create an [**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence) object and assign it to a variable. Then, apply to the **AppointmentRecurrence** the recurrence properties that were supplied through the UI by a user.
+创建一个 [**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence) 对象并将其分配给某个变量。 然后，应用到由用户通过 UI 提供的 **AppointmentRecurrence** 循环属性。
 
 ```cs
 private void Create-Click(object sender, RoutedEventArgs e)
@@ -502,9 +502,9 @@ private void Create-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Add a new editable appointment
+## 添加新的可编辑约会
 
-[**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) works just like [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) except that the dialog for adding the appointment is editable so that the user can modify the appointment data before saving it.
+[**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) 的工作原理与 [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 类似，不同之处在于可编辑用于添加约会的对话框，以便用户可以先修改约会数据，然后再进行保存。
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -537,9 +537,9 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Show appointment details
+## 显示约会详细信息
 
-[**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) causes the system to show details for the specified appointment. An app that implements app calendars may choose to be activated to show details for appointments in calendars it owns. Otherwise, the system will show the appointment details. An overload of the method that accepts a start date argument is provided to show details for an instance of a recurring appointment.
+[**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) 可使系统显示有关特定约会的详细信息。 可以选择激活实现应用日历的应用，以显示它在日历中包含的约会的详细信息。 否则，系统将显示该约会的详细信息。 将提供可接受开始日期参数的方法重载，以显示有关重复约会实例的详细信息。
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)
@@ -560,19 +560,19 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 }
 ```
 
-## Summary and next steps
+## 摘要和后续步骤
 
-Now you have a basic understanding of how to manage appointments. Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to manage appointments.
+现在你已基本了解如何管理约会。 从 GitHub 下载[通用 Windows 应用示例](http://go.microsoft.com/fwlink/p/?linkid=619979)来查看有关如何管理约会的更多示例。
 
-## Related topics
+## 相关主题
 
-* [Appointments API sample](http://go.microsoft.com/fwlink/p/?linkid=309836)
+* [约会 API 示例](http://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

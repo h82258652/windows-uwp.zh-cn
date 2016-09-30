@@ -1,37 +1,37 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
-title: Identify input devices
+Description: "标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。"
+title: "标识输入设备"
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: df416821ad67a8eaf8a8a31879b6a1d39526df14
+ms.openlocfilehash: 2ebef9767520d9f54f35ba22e2681cb41766e181
 
 ---
 
-# Identify input devices
+# 标识输入设备
 
-Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
+标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
 
-**Important APIs**
+**重要的 API**
 
 -   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 
-## Retrieve mouse properties
+## 检索鼠标属性
 
 
-The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) class used to retrieve the properties exposed by one or more connected mice. Just create a new **MouseCapabilities** object and get the properties you're interested in.
+[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
 
-**Note**  The values returned by the properties discussed here are based on all detected mice: Boolean properties return non-zero if at least one mouse supports a specific capability, and numeric properties return the maximum value exposed by any one mouse.
+**注意** 此处讨论的属性返回的值基于所有检测到的鼠标：如果至少一个鼠标支持特定功能，则布尔属性返回非零值，数值属性返回任何一个鼠标公开的最大值。
 
  
 
-The following code uses a series of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) elements to display the individual mouse properties and values.
+以下代码使用一系列 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素来显示各个鼠标属性和值。
 
 ```CSharp
 private void GetMouseProperties()
@@ -45,12 +45,12 @@ private void GetMouseProperties()
 }
 ```
 
-## Retrieve keyboard properties
+## 检索键盘属性
 
 
-The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) class used to retrieve whether a keyboard is connected. Just create a new **KeyboardCapabilities** object and get the [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) property.
+[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) 类，用于检索是否已连接键盘。 只需创建新的 **KeyboardCapabilities** 对象并获取 [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) 属性。
 
-The following code uses a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element to display the keyboard property and value.
+以下代码使用 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素来显示键盘属性和值。
 
 ```CSharp
 private void GetKeyboardProperties()
@@ -60,16 +60,16 @@ private void GetKeyboardProperties()
 }
 ```
 
-## Retrieve touch properties
+## 检索触摸属性
 
 
-The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) class used to retrieve whether any touch digitizers are connected. Just create a new **TouchCapabilities** object and get the properties you're interested in.
+[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) 类，用于检索是否已连接任何触摸数字化器。 只需创建新的 **TouchCapabilities** 对象并获取感兴趣的属性。
 
-**Note**  The values returned by the properties discussed here are based on all detected touch digitizers: Boolean properties return non-zero if at least one digitizer supports a specific capability, and numeric properties return the maximum value exposed by any one digitizer.
+**注意** 此处讨论的属性返回的值基于所有检测到的触摸数字化器：如果至少一个数字化器支持特定功能，则布尔属性返回非零值，数值属性返回任何一个数字化器公开的最大值。
 
  
 
-The following code uses a series of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) elements to display the touch properties and values.
+以下代码使用一系列 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素来显示触摸属性和值。
 
 ```CSharp
 private void GetTouchProperties()
@@ -80,16 +80,16 @@ private void GetTouchProperties()
 }
 ```
 
-## Retrieve pointer properties
+## 检索指针属性
 
 
-The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) class used to retrieve whether any detected devices support pointer input (touch, touchpad, mouse, or pen). Just create a new **PointerDevice** object and get the properties you're interested in.
+[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
 
-**Note**  The values returned by the properties discussed here are based on all detected pointer devices: Boolean properties return non-zero if at least one device supports a specific capability, and numeric properties return the maximum value exposed by any one pointer device.
+**注意** 此处讨论的属性返回的值基于所有检测到的指针设备：如果至少一个设备支持特定功能，则布尔属性返回非零值，数值属性返回任何一个指针设备公开的最大值。
 
  
 
-The following code uses a table to display the properties and values for each pointer device.
+以下代码使用一个表格来显示每个指针设备的属性和值。
 
 ```CSharp
 private void GetPointerDevices()
@@ -176,16 +176,16 @@ private void GetPointerDevices()
     }
 ```
 
-## Related articles
+## 相关文章
 
 
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+**示例**
+* [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 
-**Archive samples**
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+**存档示例**
+* [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  
@@ -196,6 +196,6 @@ private void GetPointerDevices()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,65 +1,53 @@
 ---
 author: Jwmsft
-Description: Learn how to integrate images into your app, including how to use the APIs of the two main XAML classes, Image and ImageBrush.
-title: Images and image brushes
+Description: "了解如何将图像集成到应用中，包括如何使用以下两个主要 XAML 类的 API：Image 和 ImageBrush。"
+title: "图像和图像画笔"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
+ms.sourcegitcommit: 485f3069ff92995082550366839f14be50f674a5
+ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
 
 ---
-# Images and image brushes
+# 图像和图像画笔
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-To display an image, you can use either the **Image** object or the **ImageBrush** object. An Image object renders an image, and an ImageBrush object paints another object with an image. 
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx"><strong>Image class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx"><strong>Source property</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx"><strong>ImageBrush class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx"><strong>ImageSource property</strong></a></li>
-</ul>
-
-</div>
-</div>
+要显示图像，可使用 **Image** 对象或 **ImageBrush** 对象。 Image 对象呈现图像，而 ImageBrush 对象使用图像绘制其他对象。 
 
 
 
+-   [**Image 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
+-   [**Source 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)
+-   [**ImageBrush 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
+-   [**ImageSource 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
+
+## 这些是正确的元素吗？
+使用 **Image** 元素在应用中显示独立的图像。
+
+使用 **ImageBrush** 将图像应用到另一个对象。 ImageBrush 的用途包括文本的装饰效果，或者控件或布局容器的平铺背景。 你可以控制如何拉伸、对齐和平铺图像，从而生成图案和其他效果。 
 
 
+## 创建图像
 
-## Are these the right elements?
-Use an **Image** element to display a stand-alone image in your app.
-
-Use an **ImageBrush** to apply an image to another object. Uses for an ImageBrush include decorative effects for text, or tiled backgrounds for controls or layout containers. You can control how the image is stretched, aligned, and tiled, enabling you to produce patterns and other effects. 
-
-
-## Create an image
-
-### Image
-This example shows how to create an image by using the [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) object.
+### 图像
+本示例显示了如何使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) 对象创建图像。
 
 
 ```XAML
 <Image Width="200" Source="licorice.jpg" />
 ```
 
-Here's the rendered Image object.
+以下是呈现的 Image 对象。
 
-![Example of an image element](images/Image_Licorice.jpg)
+![图像元素示例](images/Image_Licorice.jpg)
 
-In this example, the [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) property specifies the location of the image that you want to display. You can set the Source by specifying an absolute URL (for example, http://contoso.com/myPicture.jpg) or by specifying a URL that is relative to your app packaging structure. For our example, we put the "licorice.jpg" image file in the root folder of our project and declare project settings that include the image file as content.
+在该示例中，[**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 属性用于指定要显示的图像的位置。 可以通过指定绝对 URL（例如 http://contoso.com/myPicture.jpg）或指定相对于你的应用包装结构的 URL 来设置 Source。 例如，我们将“licorice.jpg”图像文件放在项目的根目录文件夹中，并将包含图像文件的项目设置声明为内容。
 
 ### ImageBrush
 
-With the [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx) object, you can use an image to paint an area that takes a [**Brush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) object. For example, you can use an ImageBrush for the value of the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of an [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.ellipse.aspx) or the [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) property of a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx).
+借助 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx) 对象，你可使用图像来绘制获取 [**Brush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) 对象的区域。 例如，你可将 ImageBrush 用于 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.ellipse.aspx) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 属性或 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) 的 [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) 属性的值。
 
-The next example shows how to use an ImageBrush to paint an Ellipse.
+接来下的示例显示如何使用 ImageBrush 绘制 Ellipse。
 
 ```XAML
 <Ellipse Height="200" Width="300">
@@ -69,26 +57,26 @@ The next example shows how to use an ImageBrush to paint an Ellipse.
 </Ellipse>
 ```
 
-Here's the Ellipse painted by the ImageBrush.
+以下是通过 ImageBrush 绘制的 Ellipse。
 
-![An Ellipse painted by an ImageBrush.](images/Image_ImageBrush_Ellipse.jpg)
+![ImageBrush 绘制的椭圆。](images/Image_ImageBrush_Ellipse.jpg)
 
-### Stretch an image
+### 拉伸图像
 
-If you don't set the [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) or [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) values of an **Image**, it is displayed with the dimensions of the image specified by the **Source**. Setting the **Width** and **Height** creates a containing rectangular area in which the image is displayed. You can specify how the image fills this containing area by using the [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx) property. The Stretch property accepts these values, which the [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) enumeration defines:
+如果你没有设置 **Image** 的 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) 或 [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 值，将以 **Source** 指定的图像的尺寸显示。 设置 **Width** 和 **Height** 可创建显示图像所在的封闭矩形区域。 你可通过使用 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx) 属性指定图像填充此封闭区域的方式。 Stretch 属性接受 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) 枚举定义的以下值：
 
--   **None**: The image doesn't stretch to fill the output dimensions. Be careful with this Stretch setting: if the source image is larger than the containing area, your image will be clipped, and this usually isn't desirable because you don't have any control over the viewport like you do with a deliberate [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx).
--   **Uniform**: The image is scaled to fit the output dimensions. But the aspect ratio of the content is preserved. This is the default value.
--   **UniformToFill**: The image is scaled so that it completely fills the output area but preserves its original aspect ratio.
--   **Fill**: The image is scaled to fit the output dimensions. Because the content's height and width are scaled independently, the original aspect ratio of the image might not be preserved. That is, the image might be distorted to completely fill the output area.
+-   **None**：该图像未拉伸以适合输出尺寸。 注意此 Stretch 设置：如果源图像大于封闭区域，你的图像将被剪切，但通常不符合预期的，因为你对视口没有任何控制权，就像你处理精修的 [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) 一样。
+-   **Uniform**：缩放图像以适应输出尺寸。 但是会保留内容的纵横比。 这是默认值。
+-   **UniformToFill**：缩放图像以完全填满输出区域，但保留其原始的纵横比。
+-   **Fill**：缩放图像以适应输出尺寸。 因为内容的高度和宽度是独立缩放的，所以可能不能保留图像的原始纵横比。 即，图像可能为了完全填满输出区域而失真。
 
-![An example of stretch settings.](images/Image_Stretch.jpg)
+![拉伸设置示例。](images/Image_Stretch.jpg)
 
-### Crop an image
+### 裁剪图像
 
-You can use the [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) property to clip an area from the image output. You set the Clip property to a [**Geometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx). Currently, non-rectangular clipping is not supported.
+你可使用 [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) 属性从图像输出中剪切一个区域。 你可将 Clip 属性设置为 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx)。 目前不支持非矩形剪裁。
 
-The next example shows how to use a [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) as the clip region for an image. In this example, we define an **Image** object with a height of 200. A **RectangleGeometry** defines a rectangle for the area of the image that will be displayed. The [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) property is set to "25,25,100,150", which defines a rectangle starting at position "25,25" with a width of 100 and a height of 150. Only the part of the image that is within the area of the rectangle is displayed.
+接下来的示例显示如何将 [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) 用作图像的剪裁区域。 在该示例中，我们定义高度为 200 的 **Image** 对象。 **RectangleGeometry** 定义将显示图像区域的矩形。 [**Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) 属性设置为 25,25,100,150，即将矩形开始位置定义为“25,25”，将宽度和高度分别定义为 100 和 150。 仅显示矩形区域内的图像部分。
 
 ```xaml
 <Image Source="licorice.jpg" Height="200">
@@ -98,71 +86,67 @@ The next example shows how to use a [**RectangleGeometry**](https://msdn.microso
 </Image>
 ```
 
-Here's the clipped image on a black background.
+下面是黑色背景上的裁剪图像。
 
-![An Image object cropped by a RectangleGeometry.](images/Image_Cropped.jpg)
+![RectangleGeometry 剪切的图像对象。](images/Image_Cropped.jpg)
 
-### Apply an opacity
+### 应用不透明度
 
-You can apply an [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) to an image so that the image is rendered semi-translucent. The opacity values are from 0.0 to 1.0 where 1.0 is fully opaque and 0.0 is fully transparent. This example shows how to apply an opacity of 0.5 to an Image.
+你可将 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) 应用至图像中，以便图像显示为半透明。 不透明度值的范围为 0.0 到 1.0，其中 1.0 为完全不透明，而 0.0 为完全透明。 此示例显示了如何将 0.5 的不透明度应用到图像。
 
 ```xaml
 <Image Height="200" Source="licorice.jpg" Opacity="0.5" />
 ```
 
-Here's the rendered image with an opacity of 0.5 and a black background showing through the partial opacity.
+以下是呈现的图像，不透明度为 0.5，透过部分不透明的黑色背景。
 
-![An Image object with an opacity of .5.](images/Image_Opacity.jpg)
+![不透明度为 0.5 的图像对象。](images/Image_Opacity.jpg)
 
-### Image file formats
+### 图像文件格式
 
-**Image** and **ImageBrush** can display these image file formats:
+**Image** 和 **ImageBrush** 可显示以下图像文件格式：
 
--   Joint Photographic Experts Group (JPEG)
--   Portable Network Graphics (PNG)
--   bitmap (BMP)
--   Graphics Interchange Format (GIF)
--   Tagged Image File Format (TIFF)
+-   联合图像专家组 (JPEG)
+-   可移植网络图形 (PNG)
+-   位图 (BMP)
+-   图形交换格式 (GIF)
+-   标记图像文件格式 (TIFF)
 -   JPEG XR
--   icons (ICO)
+-   图标 (ICO)
 
-The APIs for [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) and [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) don't include any dedicated methods for encoding and decoding of media formats. All of the encode and decode operations are built-in, and at most will surface aspects of encode or decode as part of event data for load events. If you want to do any special work with image encode or decode, which you might use if your app is doing image conversions or manipulation, you should use the APIs that are available in the [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx) namespace. These APIs are also supported by the Windows Imaging Component (WIC) in Windows.
+[**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) 和 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) 的 API 不包含任何用于编码和解码媒体格式的专用方法。 所有的编码和解码操作都是内置的，并且至多将编码和解码方面展现为加载事件的事件数据的一部分。 如果你需要对图像编码或解码执行任何特殊工作（你可能会在你的应用执行图像转换或操作时使用该工作），那么你应该使用在 [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx) 命名空间中提供的 API。 这些 API 也受 Windows 的 Windows 图像处理组件 (WIC) 支持。
 
-Starting in Windows 10, version 1607, the **Image** element supports animated GIF images. When you use a **BitmapImage** as the image **Source**, you can access BitmapImage APIs to control playback of the animated GIF image. For more info, see the Remarks on the [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) class page.
-
-> **Note**&nbsp;&nbsp;Animated GIF support is available when your app is compiled for Windows 10, version 1607 and running on version 1607 (or later). When your app is compiled for or runs on previous versions, the first frame of the GIF is shown, but it is not animated.
-
-For more info about app resources and how to package image sources in an app, see [Defining app resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
+有关应用资源和如何在应用中打包图像源的详细信息，请参阅[定义应用资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。
 
 ### WriteableBitmap
 
-A [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx) provides a [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) that can be modified and that doesn't use the basic file-based decoding from the WIC. You can alter images dynamically and re-render the updated image. To define the buffer content of a **WriteableBitmap**, use the [**PixelBuffer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer.aspx) property to access the buffer and use a stream or language-specific buffer type to fill it. For example code, see [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx).
+[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx) 提供的 [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) 是可修改的，并且不使用 WIC 中的基于文件的基础解码。 你可动态更改图像，然后重新呈现更新的图像。 若要定义 **WriteableBitmap** 的缓冲区内容，请使用 [**PixelBuffer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer.aspx) 属性来访问该缓冲区并使用流或语言特定的缓冲区类型来填充它。 有关示例代码，请参阅 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx)。
 
 ### RenderTargetBitmap
 
-The [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) class can capture the XAML UI tree from a running app, and then represents a bitmap image source. After capture, that image source can be applied to other parts of the app, saved as a resource or app data by the user, or used for other scenarios. One particularly useful scenario is creating a runtime thumbnail of a XAML page for a navigation scheme, such as providing an image link from a [**Hub**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) control. **RenderTargetBitmap** does have some limitations on the content that will appear in the captured image. For more info, see the API reference topic for [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx).
+[**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) 类可从运行的应用中捕获 XAML UI 树，然后代表位图图像源。 捕获后，该图像源可以应用到应用的其他部分，由用户另存为资源或应用数据，或者用于其他方案。 一个非常有用的方案是为导航方案创建 XAML 页面的运行时缩略图，如提供 [**Hub**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 控件中的图像链接。 **RenderTargetBitmap** 对于捕获图像中出现的内容确实具有某些限制。 有关详细信息，请参阅 [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) 的 API 参考主题。
 
-### Image sources and scaling
+### 图像源和缩放
 
-You should create your image sources at several recommended sizes, to ensure that your app looks great when Windows scales it. When specifying a **Source** for an **Image**, you can use a naming convention that will automatically reference the correct resource for the current scaling. For specifics of the naming convention and more info, see [Quickstart: Using file or image resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325).
+你应该以多个推荐大小创建图像源，以确保你的应用在 Windows 进行缩放时具有良好的外观。 指定 **Image** 的 **Source** 时，你可以使用将为当前缩放自动引用正确资源的命名约定。 有关命名约定规范和详细信息，请参阅[快速入门：使用文件或图像资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325)。
 
-For more info about how to design for scaling, see [UX guidelines for layout and scaling](https://msdn.microsoft.com/library/windows/apps/dn611863).
+有关如何设计缩放的详细信息，请参阅[布局和缩放的 UX 指南](https://msdn.microsoft.com/library/windows/apps/dn611863)。
 
-### Image and ImageBrush in code
+### 代码中的 Image 和 ImageBrush
 
-It's typical to specify Image and ImageBrush elements using XAML rather than code. This is because these elements are often the output of design tools as part of a XAML UI definition.
+使用 XAML 指定 Image 和 ImageBrush 比使用代码指定更为典型。 这是因为这些元素通常是设计工具的输出，它们作为 XAML UI 定义的一部分。
 
-If you define an Image or ImageBrush using code, use the default constructors, then set the relevant source property ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) or [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)). The source properties require a [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (not a URI) when you set them using code. If your source is a stream, use the [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) method to initialize the value. If your source is a URI, which includes content in your app that uses the **ms-appx** or **ms-resource** schemes, use the [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) constructor that takes a URI. You might also consider handling the [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available. For example code, see [XAML images sample](http://go.microsoft.com/fwlink/p/?linkid=238575).
+如果要使用代码定义一个 Image 或 ImageBrush，请使用默认的构造函数，然后设置相关的源属性（[**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 或 [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)）。 在你使用代码设置源属性时，它们需要 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx)（而非 URI）。 如果源是一个流，请使用 [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) 方法来初始化该值。 如果源是一个 URI（其中包含应用中使用 **ms-appx** 或 **ms-resource** 方案的内容），请使用获取 URI 的 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) 构造函数。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) 事件。 有关示例代码，请参阅 [XAML 图像示例](http://go.microsoft.com/fwlink/p/?linkid=238575)。
 
-> **Note**&nbsp;&nbsp;If you establish images using code, you can use automatic handling for accessing unqualified resources with current scale and culture qualifiers, or you can use [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) and [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) with qualifiers for culture and scale to obtain the resources directly. For more info see [Resource management system](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
+> **注意** &nbsp;&nbsp;如果你使用代码建立图像，则可以使用对具有当前规模和文化限定符的非限定资源的访问的自动处理，或者可以使用具有文化和规模限定符的 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 来直接获取资源。 有关详细信息，请参阅[资源管理系统](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
 
-## Related articles
+## 相关文章
 
--   [Audio, video, and camera](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
--   [**Image class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
--   [**ImageBrush class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
+-   [音频、视频和相机](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
+-   [**Image 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
+-   [**ImageBrush 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

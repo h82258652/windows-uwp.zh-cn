@@ -1,560 +1,560 @@
 ---
 author: jnHs
-Description: The Windows Store reaches customers in over 200 countries and regions around the world.
-title: Define pricing and market selection
+Description: "Windows 应用商店的客户遍及世界 200 多个国家和地区。"
+title: "定义价格和市场选择"
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 3fb8594748d303216a4437983604b5d78c993934
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9a1d8b8fb57989091fe7b82ad34066240f62cb8b
 
 ---
 
-# Define pricing and market selection
+# 定义价格和市场选择
 
 
-The Windows Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, and you can determine the price to charge customers, with the option to customize prices on a per-market basis.
+Windows 应用商店的客户遍及世界 200 多个国家和地区。 可以选择想要在其中提供应用的市场，而且可以确定向客户收取的价格与基于市场的自定义价格的选项。
 
-**Note**  Be sure to consider our [guidelines to help you globalize your app](https://msdn.microsoft.com/library/windows/apps/hh969150).
-
- 
-
-## Base price
-
-
-When you select your app's **Base price**, that price will be used in every market where your app is sold, unless you specify a custom price for a particular market.
-
-You can set the **Base price** to **Free**, or you can choose an available price tier. which sets the sales price in all the countries where you choose to distribute your app. Price tiers start at .99 USD, with additional increments (1.29 USD, 1.49 USD, 1.99 USD, and so on). The increments increase as the price gets higher.
-
-> **Note**  These price tiers also apply to [add-ons](add-on-submissions.md).
-
-Each price tier has a corresponding value in each of the more than 60 currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. However, due to changes in foreign exchange rates, the exact sales amount may vary slightly from one currency to another.
-
-Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](tax-details-for-paid-apps.md). See also the [price considerations for specific markets](#price-considerations-for-specific-markets) below.
-
-## Markets and custom prices
-
-
-By default, your app will be listed in all possible markets, including any future markets that we may add later, at its base price.
-
-To change these settings, expand the **Markets and custom prices** section on the **Pricing and availability** page of your app's submission. You can unselect individual markets to exclude them, or click **Unselect all**, then add individual markets of your choice.
-
-> **Important**   It is your responsibility to meet any local legal requirements, even if those requirements aren't listed here or in the Windows Dev Center dashboard.
-
-If you'd like to set custom prices for your app in specific markets, you can do that here as well; otherwise, by default, your app will be offered at its base price (in the local currency of that market).
-
-> **Note**  You can also set custom prices for specific markets for [add-on submissions](add-on-submissions.md).
-
-Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](age-ratings.md) for more info.
-
-> **Note**  For apps targeting Windows 8 or Windows 8.1, some individual markets are treated as one single "Rest of World" market. For more info, see ["Rest of World" markets for Windows 8.x](#rest-of-world-markets-for-windows-8-x). Also keep in mind that customers on Windows 8 or Windows 8.1 will only see the app listed at its base price, even if you change the price in their market.
+**注意** 确保仔细考虑我们的[指南来帮助你将自己的应用全球化](https://msdn.microsoft.com/library/windows/apps/hh969150)。
 
  
 
-## Windows Store consumer markets
+## 基价
 
 
-You can choose to list your app (or add-on) in one or more of the following markets.
+当你选择应用的**基价**时，该价格将在所有出售应用的市场使用，除非为特定市场指定了自定义的价格。
 
--   Afghanistan
--   Åland Islands
--   Albania
--   American Samoa
--   Andorra
--   Angola
--   Anguilla
--   Antarctica
--   Antigua and Barbuda
--   Armenia
--   Aruba
--   Azerbaijan
--   Algeria
--   Argentina
--   Australia
--   Austria
--   Bahamas, The
--   Bahrain
--   Bangladesh
--   Barbados
--   Belarus
--   Belgium
--   Belize
--   Benin
--   Bermuda
--   Bhutan
--   Bolivia
--   Bonaire, Saint Eustatius and Saba
--   Bosnia and Herzegovina
--   Botswana
--   Bouvet Island
--   Brazil
--   British Indian Ocean Territory
--   British Virgin Islands
--   Brunei
--   Burkina Faso
--   Burundi
--   Bulgaria
--   Cabo Verde
--   Cambodia
--   Cameroon
--   Canada
--   Cayman Islands
--   Central African Republic
--   Chad
--   Chile
--   China
--   Christmas Island
--   Cocos (Keeling) Islands
--   Colombia
--   Comoros
--   Congo
--   Congo (DRC)
--   Cook Islands
--   Costa Rica
--   Côte d’Ivoire
--   Croatia
--   Curaçao
--   Cyprus
--   Czech Republic
--   Denmark
--   Djibouti
--   Dominica
--   Dominican Republic
--   Ecuador
--   Egypt
--   El Salvador
--   Equatorial Guinea
--   Eritrea
--   Estonia
--   Ethiopia
--   Falkland Islands
--   Faroe Islands
--   Fiji
--   Finland
--   France
--   French Guiana
--   French Polynesia
--   French Southern and Antarctic Lands
--   Gabon
--   Gambia, The
--   Georgia
--   Germany
--   Ghana
--   Gibraltar
--   Greece
--   Greenland
--   Grenada
--   Guadeloupe
--   Guam
--   Guatemala
--   Guernsey
--   Guinea
--   Guinea-Bissau
--   Guyana
--   Haiti
--   Heard Island and McDonald Islands
--   Holy See (Vatican City)
--   Honduras
--   Hong Kong SAR
--   Hungary
--   Iceland
--   India
--   Indonesia
--   Iraq
--   Ireland
--   Isle of Man
--   Israel
--   Italy
--   Japan
--   Jamaica
--   Jersey
--   Jordan
--   Kazakhstan
--   Kenya
--   Kiribati
--   Korea
--   Kyrgyzstan
--   Kuwait
--   Laos
--   Latvia
--   Lebanon
--   Lesotho
--   Liberia
--   Libya
--   Liechtenstein
--   Lithuania
--   Luxembourg
--   Macao SAR
--   Macedonia (FYROM)
--   Madagascar
--   Malawi
--   Malaysia
--   Maldives
--   Mali
--   Malta
--   Marshall Islands
--   Martinique
--   Mauritania
--   Mauritius
--   Mayotte
--   Mexico
--   Micronesia
--   Moldova
--   Monaco
--   Mongolia
--   Montenegro
--   Montserrat
--   Morocco
--   Mozambique
--   Myanmar
--   Namibia
--   Nauru
--   Nepal
--   Netherlands
--   New Caledonia
--   New Zealand
--   Nicaragua
--   Niger
--   Nigeria
--   Niue
--   Norfolk Island
--   Northern Mariana Islands
--   Norway
--   Oman
--   Pakistan
--   Palau
--   Palestinian Authority
--   Panama
--   Papua New Guinea
--   Paraguay
--   Peru
--   Philippines
--   Pitcairn Islands
--   Poland
--   Portugal
--   Puerto Rico
--   Qatar
--   Réunion
--   Romania
--   Russia
--   Rwanda
--   Saint Barthélemy
--   Saint Helena, Ascension and Tristan da Cunha
--   Saint Kitts and Nevis
--   Saint Lucia
--   Saint Martin (French Part)
--   Saint Pierre and Miquelon
--   Saint Vincent and the Grenadines
--   Samoa
--   San Marino
--   São Tomé and Príncipe
--   Saudi Arabia
--   Senegal
--   Serbia
--   Seychelles
--   Sierra Leone
--   Singapore
--   Sint Maarten (Dutch Part)
--   Slovakia
--   Slovenia
--   Solomon Islands
--   Somalia
--   South Georgia and the South Sandwich Islands
--   Sri Lanka
--   Suriname
--   Svalbard and Jan Mayen
--   Swaziland
--   Sweden
--   Switzerland
--   South Africa
--   Spain
--   Taiwan
--   Tajikistan
--   Tanzania
--   Thailand
--   Timor-Leste
--   Togo
--   Tokelau
--   Tonga
--   Trinidad and Tobago
--   Tunisia
--   Turkmenistan
--   Turks and Caicos Islands
--   Tuvalu
--   Turkey
--   Uganda
--   Ukraine
--   United Arab Emirates
--   United Kingdom
--   United States
--   Uruguay
--   U.S. Minor Outlying Islands
--   U.S. Virgin Islands
--   Uzbekistan
--   Venezuela
--   Vietnam
--   Vanuatu
--   Wallis and Futuna
--   Yemen
--   Zambia
--   Zimbabwe
+可以将**基价**设置为**免费**，或者可以选择一个可用的价格段。 它用来设置在你选择分发应用的所有国家/地区的销售价格。 价格段从 0.99 美元开始，并具有附加增量（1.29 美元、1.49 美元、1.99 美元，等等）。 价格越高，增量越大。
 
-## Price considerations for specific markets
+> **注意** 这些价格段也适用于[应用内产品 (IAP)](iap-submissions.md)。
+
+应用商店为每个价格段都提供了 60 多种不同货币相对应的值。 我们使用这些值来帮助你在世界范围内以相当的价格销售你的应用。 但由于外汇汇率的变化，从一种货币转换到另一种货币的确切销售金额可能会略有不同。
+
+请记住，你选择的价格段可能包含你的客户必须支付的营业税或增值税。 若要了解有关选定市场中你的应用的税收含义的详细信息，请参阅[付费应用的税收详细信息](tax-details-for-paid-apps.md)。 另请参阅以下[特定市场的价格考虑因素](#price-considerations-for-specific-markets)。
+
+## 市场和自定义价格
 
 
-Payment methods such as gift cards and mobile operator billing can help increase sales of paid apps and in-app purchase items. Due to the higher costs to enable such payment methods, a Commerce Expansion Adjustment is added to the Store Fee deducted from Net Receipts to calculate the App Proceeds payable for paid apps and in-app purchase transactions in the countries/regions and using the payment methods in the tables below. You may want to consider if the Commerce Expansion Adjustment applies in a country/region where your app is available and factor that into your market pricing strategy. Details about the Commerce Expansion Adjustment can be found in the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
+默认情况下，你的应用将以其基价在所有可能的市场中列出，包括任何我们稍后可能会添加的未来市场。
 
-The Commerce Expansion Adjustment will be applied to all transactions processed for the specified Country/Region and Payment Methods as of the Effective Date. This information will be updated monthly; new countries/regions and payment methods will be listed within thirty (30) days after the Commerce Expansion Adjustment takes effect for that country/region and payment method.
+若要更改这些设置，在应用提交的**“定价和可用性”**页面展开**“市场和自定义价格”**部分。 可以取消选择个别市场来排除它们，或单击**“取消全选”**，然后添加你所选择的个别市场。
 
-| Country/region | Payment methods         | Commerce Expansion Adjustment | Effective date |
+> **重要提示** 遵守所有当地法律规定是你的责任，尽管此处或 Windows 开发人员中心仪表板中并未列出这些规定，你也同样需要严格遵守。
+
+如果想要在特定市场中设置应用的自定义价格，也可以在此处执行该操作；否则，默认情况下，将以其基价提供应用（以该市场的本地货币提供）。
+
+> **注意** 还可以为特定市场的 [IAP提交](iap-submissions.md)设置自定义价格。
+
+请记住，即使你选择了所有市场，本地法律和限制或其他因素可能会阻止某些应用列入一些国家和地区。 此外，某些市场可能有与年龄分级相关的特定要求。 如果你的应用不满足这些要求，我们将无法在该市场中提供你的应用。 有关详细信息，请参阅[年龄分级](age-ratings.md)。
+
+> **注意** 对于面向 Windows 8 或 Windows 8.1 的应用，某些个别市场被视为单个“世界其他地区”市场。 有关详细信息，请参阅 [Windows 8.x 的“世界其他地区”市场](#rest-of-world-markets-for-windows-8-x)。 还请记住，使用 Windows 8 或 Windows 8.1 的客户将仅看到以其基价列出的应用，即使你在他们的市场中更改价格也是如此。
+
+ 
+
+## Windows 应用商店消费者市场
+
+
+可以选择在以下一个或多个市场中列出的应用（或 IAP）。
+
+-   阿富汗
+-   奥兰岛
+-   阿尔巴尼亚
+-   美属萨摩亚
+-   安道尔
+-   安哥拉
+-   安圭拉岛
+-   南极洲
+-   安提瓜和巴布达
+-   亚美尼亚
+-   阿鲁巴岛
+-   埃塞拜疆
+-   阿尔及利亚
+-   阿根廷
+-   澳大利亚
+-   奥地利
+-   巴哈马
+-   巴林
+-   孟加拉国
+-   巴巴多斯
+-   白俄罗斯
+-   比利时
+-   伯利兹
+-   贝宁
+-   百慕大
+-   不丹
+-   玻利维亚
+-   博内尔岛、圣尤斯特歇斯和萨巴岛
+-   波斯尼亚和黑塞哥维那
+-   博茨瓦纳
+-   布韦岛
+-   巴西
+-   英属印度洋领地
+-   英属维尔京群岛
+-   文莱
+-   布基纳法索
+-   布隆迪
+-   保加利亚
+-   佛得角
+-   柬埔寨
+-   喀麦隆
+-   加拿大
+-   开曼群岛
+-   中非共和国
+-   乍得
+-   智利
+-   中国
+-   圣延岛
+-   科科斯群岛
+-   哥伦比亚
+-   科摩罗
+-   刚果
+-   刚果民主共和国
+-   库克群岛
+-   哥斯达黎加
+-   科特迪瓦
+-   克罗地亚
+-   库拉索岛
+-   塞浦路斯
+-   捷克共和国
+-   丹麦
+-   吉布提
+-   多米尼克
+-   多米尼加共和国
+-   厄瓜多尔
+-   埃及
+-   萨尔瓦多
+-   赤道几内亚
+-   厄立特里亚
+-   爱沙尼亚
+-   埃塞俄比亚
+-   福克兰群岛
+-   法罗群岛
+-   斐济
+-   芬兰
+-   法国
+-   法属圭亚那
+-   法属玻里尼西亚
+-   法属南半球和南极洲领地
+-   加蓬
+-   冈比亚
+-   格鲁吉亚
+-   德国
+-   加纳
+-   直布罗陀
+-   希腊
+-   格陵兰
+-   格林纳达
+-   瓜德罗普岛
+-   关岛
+-   危地马拉
+-   格恩西岛
+-   几内亚
+-   几内亚比绍
+-   圭亚那
+-   海地
+-   赫德岛和麦克唐纳群岛
+-   梵蒂冈
+-   洪都拉斯
+-   香港特别行政区
+-   匈牙利
+-   冰岛
+-   印度
+-   印度尼西亚
+-   伊拉克
+-   爱尔兰
+-   曼岛
+-   以色列
+-   意大利
+-   日本
+-   牙买加
+-   泽西
+-   约旦
+-   哈萨克斯坦
+-   肯尼亚
+-   基里巴斯
+-   韩国
+-   吉尔吉斯斯坦
+-   科威特
+-   老挝
+-   拉脱维亚
+-   黎巴嫩
+-   莱索托
+-   利比里亚
+-   利比亚
+-   列支敦士登
+-   立陶宛
+-   卢森堡
+-   澳门特别行政区
+-   前南斯拉夫马其顿共和国
+-   马达加斯加
+-   马拉维
+-   马来西亚
+-   马尔代夫
+-   马里
+-   马耳他
+-   马绍尔群岛
+-   马提尼克
+-   毛利塔尼亚
+-   毛里求斯
+-   马约特
+-   墨西哥
+-   密克罗尼西亚
+-   摩尔多瓦
+-   摩纳哥
+-   蒙古
+-   黑山
+-   蒙特塞拉特
+-   摩洛哥
+-   莫桑比克
+-   缅甸
+-   纳米比亚
+-   瑙鲁
+-   尼泊尔
+-   荷兰
+-   新喀里多尼亚
+-   新西兰
+-   尼加拉瓜
+-   尼日尔
+-   尼日利亚
+-   纽埃
+-   诺福克岛
+-   北马里亚纳群岛
+-   挪威
+-   阿曼
+-   巴基斯坦
+-   帕劳
+-   巴勒斯坦民族权力机构
+-   巴拿马
+-   巴布亚新几内亚
+-   巴拉圭
+-   秘鲁
+-   菲律宾
+-   皮特凯恩群岛
+-   波兰
+-   葡萄牙
+-   波多黎各
+-   卡塔尔
+-   留尼汪
+-   罗马尼亚
+-   俄罗斯
+-   卢旺达
+-   圣巴泰勒米岛
+-   圣赫勒拿-阿森松-特里斯坦达库尼亚
+-   圣基茨和尼维斯
+-   圣卢西亚
+-   法属圣马丁
+-   圣皮埃尔和密克隆岛
+-   圣文森特和格林纳丁斯
+-   萨摩亚
+-   圣马力诺
+-   圣多美和普林西比
+-   沙特阿拉伯
+-   塞内加尔
+-   塞尔维亚共和国
+-   塞舌尔
+-   塞拉利昂
+-   新加坡
+-   荷属圣马丁
+-   斯洛伐克
+-   斯洛文尼亚
+-   所罗门群岛
+-   索马里
+-   南乔治亚和南德桑威奇群岛
+-   斯里兰卡
+-   苏里南
+-   斯瓦尔巴和扬马延
+-   斯威士兰
+-   瑞典
+-   瑞士
+-   南非
+-   西班牙
+-   台湾
+-   塔吉克斯坦
+-   坦桑尼亚
+-   泰国
+-   东帝汶
+-   多哥
+-   托克劳
+-   汤加
+-   特立尼达和多巴哥
+-   突尼斯
+-   土库曼斯坦
+-   特克斯和凯科斯群岛
+-   图瓦卢
+-   土耳其
+-   乌干达
+-   乌克兰
+-   阿拉伯联合酋长国
+-   英国
+-   美国
+-   乌拉圭
+-   美属外岛
+-   美属维尔京群岛
+-   乌兹别克斯坦
+-   委内瑞拉
+-   越南
+-   瓦努阿图
+-   瓦利斯和富图纳
+-   也门
+-   赞比亚
+-   津巴布韦
+
+## 特定市场的价格考虑因素
+
+
+付款方式（比如礼品卡和移动运营商结算）可以帮助提升付费应用和应用内购买产品的销售。 由于启用此类付款方式带来的成本较高，应用商店费用（从净收入中扣除）加入了商业扩张调整，以计算付费应用和应用内购买交易的应付应用收入。下表列出了涉及的国家/地区和使用的付款方式。 建议您考虑商业扩张调整是否适用于可销售您的应用的国家/地区，并将其纳入您的市场定价策略的考量之中。 有关商业扩张调整的详细信息，可以在[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)中查找。
+
+商业扩张调整将在生效日期应用于所有用于处理特定国家/地区和支付方式的交易。 此信息将每月更新。当商业扩张调整对相关国家/地区和支付方式生效后，将在三十 (30) 日内加入新的国家/地区。
+
+| 国家/地区 | 付款方式         | 商业扩张调整 | 生效日期 |
 |----------------|-------------------------|-------------------------------|----------------|
-| Brazil         | Mobile operator billing | 13.9%                         | December 2014  |
-| Chile          | Mobile operator billing | 13.9%                         | March 2014     |
-| China          | Mobile operator billing | 13.9%                         | December 2014  |
-| Colombia       | Mobile operator billing | 13.9%                         | March 2014     |
-| Costa Rica     | Mobile operator billing | 13.9%                         | March 2014     |
-| Ecuador        | Mobile operator billing | 13.9%                         | November 2014  |
-| Egypt          | Mobile operator billing | 13.9%                         | June 2014      |
-| Guatemala      | Mobile operator billing | 13.9%                         | October 2014   |
-| India          | Mobile operator billing | 13.9%                         | December 2014  |
-| Jordan         | Mobile operator billing | 13.9%                         | March 2015     |
-| Kenya          | Mobile operator billing | 13.9%                         | July 2014      |
-| Malaysia       | Mobile operator billing | 13.9%                         | March 2014     |
-| Mexico         | Mobile operator billing | 13.9%                         | March 2014     |
-| Pakistan       | Mobile operator billing | 13.9%                         | October 2015   |
-| Peru           | Mobile operator billing | 13.9%                         | March 2014     |
-| Philippines    | Mobile operator billing | 13.9%                         | June 2015      |
-| Puerto Rico    | Mobile operator billing | 13.9%                         | June 2015      |
-| South Africa   | Mobile operator billing | 13.9%                         | March 2014     |
-| Vietnam        | Mobile operator billing | 13.9%                         | October 2014   |
+| 巴西         | 移动运营商结算 | 13.9%                         | 2014 年 12 月  |
+| 智利          | 移动运营商结算 | 13.9%                         | 2014 年 3 月     |
+| 中国          | 移动运营商结算 | 13.9%                         | 2014 年 12 月  |
+| 哥伦比亚       | 移动运营商结算 | 13.9%                         | 2014 年 3 月     |
+| 哥斯达黎加     | 移动运营商结算 | 13.9%                         | 2014 年 3 月     |
+| 厄瓜多尔        | 移动运营商结算 | 13.9%                         | 2014 年 11 月  |
+| 埃及          | 移动运营商结算 | 13.9%                         | 2014 年 6 月      |
+| 危地马拉      | 移动运营商结算 | 13.9%                         | 2014 年 10 月   |
+| 印度          | 移动运营商结算 | 13.9%                         | 2014 年 12 月  |
+| 约旦         | 移动运营商结算 | 13.9%                         | 2015 年 3 月     |
+| 肯尼亚          | 移动运营商结算 | 13.9%                         | 2014 年 7 月      |
+| 马来西亚       | 移动运营商结算 | 13.9%                         | 2014 年 3 月     |
+| 墨西哥         | 移动运营商结算 | 13.9%                         | 2014 年 3 月     |
+| 巴基斯坦       | 移动运营商结算 | 13.9%                         | 2015 年 10 月   |
+| 秘鲁           | 移动运营商结算 | 13.9%                         | 2014 年 3 月     |
+| 菲律宾    | 移动运营商结算 | 13.9%                         | 2015 年 6 月      |
+| 波多黎各    | 移动运营商结算 | 13.9%                         | 2015 年 6 月      |
+| 南非   | 移动运营商结算 | 13.9%                         | 2014 年 3 月     |
+| 越南        | 移动运营商结算 | 13.9%                         | 2014 年 10 月   |
 
   
 
-| Country/region       | Payment methods | Commerce Expansion Adjustment | Effective date |
+| 国家/地区       | 付款方式 | 商业扩张调整 | 生效日期 |
 |----------------------|-----------------|-------------------------------|----------------|
-| Argentina            | Gift card       | 2.24%                         | March 2016     |
-| Australia            | Gift card       | 2.24%                         | March 2016     |
-| Austria              | Gift card       | 2.24%                         | March 2016     |
-| Belgium              | Gift card       | 2.24%                         | March 2016     |
-| Brazil               | Gift card       | 2.24%                         | March 2016     |
-| Canada               | Gift card       | 2.24%                         | March 2016     |
-| Chile                | Gift card       | 2.24%                         | March 2016     |
-| China                | Gift card       | 2.24%                         | March 2016     |
-| Colombia             | Gift card       | 2.24%                         | March 2016     |
-| Czech Republic       | Gift card       | 2.24%                         | March 2016     |
-| Denmark              | Gift card       | 2.24%                         | March 2016     |
-| Finland              | Gift card       | 2.24%                         | March 2016     |
-| France               | Gift card       | 2.24%                         | March 2016     |
-| Germany              | Gift card       | 2.24%                         | March 2016     |
-| Greece               | Gift card       | 2.24%                         | March 2016     |
-| Hong Kong            | Gift card       | 2.24%                         | March 2016     |
-| Hungary              | Gift card       | 2.24%                         | March 2016     |
-| India                | Gift card       | 2.24%                         | March 2016     |
-| Ireland              | Gift card       | 2.24%                         | March 2016     |
-| Israel               | Gift card       | 2.24%                         | March 2016     |
-| Italy                | Gift card       | 2.24%                         | March 2016     |
-| Japan                | Gift card       | 2.24%                         | March 2016     |
-| Mexico               | Gift card       | 2.24%                         | March 2016     |
-| Netherlands          | Gift card       | 2.24%                         | March 2016     |
-| New Zealand          | Gift card       | 2.24%                         | March 2016     |
-| Poland               | Gift card       | 2.24%                         | March 2016     |
-| Portugal             | Gift card       | 2.24%                         | March 2016     |
-| Russia               | Gift card       | 2.24%                         | March 2016     |
-| Saudi Arabia         | Gift card       | 2.24%                         | March 2016     |
-| Singapore            | Gift card       | 2.24%                         | March 2016     |
-| Slovakia             | Gift card       | 2.24%                         | March 2016     |
-| South Africa         | Gift card       | 2.24%                         | March 2016     |
-| South Korea          | Gift card       | 2.24%                         | March 2016     |
-| Spain                | Gift card       | 2.24%                         | March 2016     |
-| Sweden               | Gift card       | 2.24%                         | March 2016     |
-| Switzerland          | Gift card       | 2.24%                         | March 2016     |
-| Taiwan               | Gift card       | 2.24%                         | March 2016     |
-| Turkey               | Gift card       | 2.24%                         | March 2016     |
-| United Arab Emirates | Gift card       | 2.24%                         | March 2016     |
-| United Kingdom       | Gift card       | 2.24%                         | March 2016     |
-| United States        | Gift card       | 2.24%                         | March 2016     |
+| 阿根廷            | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 澳大利亚            | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 奥地利              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 比利时              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 巴西               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 加拿大               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 智利                | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 中国                | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 哥伦比亚             | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 捷克共和国       | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 丹麦              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 芬兰              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 法国               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 德国              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 希腊               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 香港特别行政区            | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 匈牙利              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 印度                | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 爱尔兰              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 以色列               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 意大利                | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 日本                | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 墨西哥               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 荷兰          | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 新西兰          | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 波兰               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 葡萄牙             | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 俄罗斯               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 沙特阿拉伯         | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 新加坡            | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 斯洛伐克             | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 南非         | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 韩国          | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 西班牙                | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 瑞典               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 瑞士          | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 台湾               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 土耳其               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 阿拉伯联合酋长国 | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 英国       | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 美国        | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 
  
 
-## "Rest of World" markets for Windows 8.x
+## Windows 8.x 的“世界其他地区”市场
 
 
-If your app includes packages targeting Windows 8.x, it's important to be aware that a number of markets are treated as a single "Rest of World" market for customers using the Store on Windows 8.x, even though they are now shown as individual markets in the Windows Dev Center dashboard (as opposed to the earlier Windows Store dashboard, where there was one selectable "Rest of World" market option).
+如果你的应用包含面向 Windows 8.x 的程序包，则请务必注意，对于在 Windows 8.x 上使用应用商店的客户，一些市场将被视为单个“世界其他地区”市场，即使它们现在在 Windows 开发人员中心仪表板中显示为个别市场也是如此（与早期的 Windows 应用商店仪表板相反，其中曾有一个可选择的“世界其他地区”市场选项）。
 
-If you leave the default selection when submitting your app, you don't have to worry about this, and your app will be available to all possible markets. However, if you want to exclude certain markets, keep in mind that excluding even one of these "Rest of World" markets means that your app won't be available in any of the "Rest of World" markets for customers on Windows 8 or Windows 8.1.
+如果你在提交应用时保留默认选择，则无需担心此问题，并且你的应用将向所有可能的市场提供。 但是，如果你希望排除特定市场，请记住，即使只排除其中一个“世界其他地区”市场，也意味着将无法在任何“世界其他地区”市场中向使用 Windows 8 或 Windows 8.1 的客户提供你的应用。
 
-The markets that are included in "Rest of World" for Windows 8.x are the following:
+包含在 Windows 8.x 的“世界其他地区”中的市场如下：
 
--   Afghanistan
--   Åland Islands
--   Albania
--   American Samoa
--   Andorra
--   Angola
--   Anguilla
--   Antarctica
--   Antigua and Barbuda
--   Armenia
--   Aruba
--   Azerbaijan
--   Bahamas, The
--   Bangladesh
--   Barbados
--   Belarus
--   Belize
--   Benin
--   Bermuda
--   Bhutan
--   Bolivia
--   Bonaire, Saint Eustatius and Saba
--   Bosnia and Herzegovina
--   Botswana
--   Bouvet Island
--   British Indian Ocean Territory
--   British Virgin Islands
--   Brunei
--   Burkina Faso
--   Burundi
--   Cabo Verde
--   Cambodia
--   Cameroon
--   Cayman Islands
--   Central African Republic
--   Chad
--   Christmas Island
--   Cocos (Keeling) Islands
--   Comoros
--   Congo
--   Congo (DRC)
--   Cook Islands
--   Côte d’Ivoire
--   Curaçao
--   Djibouti
--   Dominica
--   Dominican Republic
--   Ecuador
--   El Salvador
--   Equatorial Guinea
--   Eritrea
--   Ethiopia
--   Falkland Islands
--   Faroe Islands
--   Fiji
--   French Guiana
--   French Polynesia
--   French Southern and Antarctic Lands
--   Gabon
--   Gambia, The
--   Georgia
--   Ghana
--   Gibraltar
--   Greenland
--   Grenada
--   Guadeloupe
--   Guam
--   Guatemala
--   Guernsey
--   Guinea
--   Guinea-Bissau
--   Guyana
--   Haiti
--   Heard Island and McDonald Islands
--   Holy See (Vatican City)
--   Honduras
--   Iceland
--   Isle of Man
--   Jamaica
--   Jersey
--   Kenya
--   Kiribati
--   Kyrgyzstan
--   Laos
--   Lesotho
--   Liberia
--   Liechtenstein
--   Macao SAR
--   Macedonia, FYROM
--   Madagascar
--   Malawi
--   Maldives
--   Mali
--   Marshall Islands
--   Martinique
--   Mauritania
--   Mauritius
--   Mayotte
--   Micronesia
--   Moldova
--   Monaco
--   Mongolia
--   Montenegro
--   Montserrat
--   Morocco
--   Mozambique
--   Myanmar
--   Namibia
--   Nauru
--   Nepal
--   New Caledonia
--   Nicaragua
--   Niger
--   Nigeria
--   Niue
--   Norfolk Island
--   Northern Mariana Islands
--   Palau
--   Palestinian Authority
--   Panama
--   Papua New Guinea
--   Paraguay
--   Pitcairn Islands
--   Puerto Rico
--   Réunion
--   Rwanda
--   Saint Barthélemy
--   Saint Helena, Ascension and Tristan da Cunha
--   Saint Kitts and Nevis
--   Saint Lucia
--   Saint Martin (French Part)
--   Saint Pierre and Miquelon
--   Saint Vincent and the Grenadines
--   Samoa
--   San Marino
--   São Tomé and Príncipe
--   Senegal
--   Seychelles
--   Sierra Leone
--   Sint Maarten (Dutch Part)
--   Solomon Islands
--   Somalia
--   South Georgia and the South Sandwich Islands
--   Suriname
--   Svalbard and Jan Mayen
--   Swaziland
--   Tajikistan
--   Tanzania
--   Timor-Leste
--   Togo
--   Tokelau
--   Tonga
--   Turkmenistan
--   Turks and Caicos Islands
--   Tuvalu
--   Uganda
--   U.S. Minor Outlying Islands
--   U.S. Virgin Islands
--   Uzbekistan
--   Venezuela
--   Vietnam
--   Vanuatu
--   Wallis and Futuna
--   Yemen
--   Zambia
--   Zimbabwe
+-   阿富汗
+-   奥兰岛
+-   阿尔巴尼亚
+-   美属萨摩亚
+-   安道尔
+-   安哥拉
+-   安圭拉岛
+-   南极洲
+-   安提瓜和巴布达
+-   亚美尼亚
+-   阿鲁巴岛
+-   埃塞拜疆
+-   巴哈马
+-   孟加拉国
+-   巴巴多斯
+-   白俄罗斯
+-   伯利兹
+-   贝宁
+-   百慕大
+-   不丹
+-   玻利维亚
+-   博内尔岛、圣尤斯特歇斯和萨巴岛
+-   波斯尼亚和黑塞哥维那
+-   博茨瓦纳
+-   布韦岛
+-   英属印度洋领地
+-   英属维尔京群岛
+-   文莱
+-   布基纳法索
+-   布隆迪
+-   佛得角
+-   柬埔寨
+-   喀麦隆
+-   开曼群岛
+-   中非共和国
+-   乍得
+-   圣延岛
+-   科科斯群岛
+-   科摩罗
+-   刚果
+-   刚果民主共和国
+-   库克群岛
+-   科特迪瓦
+-   库拉索岛
+-   吉布提
+-   多米尼克
+-   多米尼加共和国
+-   厄瓜多尔
+-   萨尔瓦多
+-   赤道几内亚
+-   厄立特里亚国
+-   埃塞俄比亚
+-   福克兰群岛
+-   法罗群岛
+-   斐济
+-   法属圭亚那
+-   法属玻里尼西亚
+-   法属南半球和南极洲领地
+-   加蓬
+-   冈比亚
+-   格鲁吉亚
+-   加纳
+-   直布罗陀
+-   格陵兰
+-   格林纳达
+-   瓜德罗普岛
+-   关岛
+-   危地马拉
+-   格恩西岛
+-   几内亚
+-   几内亚比绍
+-   圭亚那
+-   海地
+-   赫德岛和麦克唐纳群岛
+-   梵蒂冈
+-   洪都拉斯
+-   冰岛
+-   曼岛
+-   牙买加
+-   泽西
+-   肯尼亚
+-   基里巴斯
+-   吉尔吉斯斯坦
+-   老挝
+-   莱索托
+-   利比里亚
+-   列支敦士登
+-   澳门特别行政区
+-   马其顿，马其顿共和国
+-   马达加斯加
+-   马拉维
+-   马尔代夫
+-   马里
+-   马绍尔群岛
+-   马提尼克
+-   毛利塔尼亚
+-   毛里求斯
+-   马约特
+-   密克罗尼西亚
+-   摩尔多瓦
+-   摩纳哥
+-   蒙古
+-   黑山
+-   蒙特塞拉特
+-   摩洛哥
+-   莫桑比克
+-   缅甸
+-   纳米比亚
+-   瑙鲁
+-   尼泊尔
+-   新喀里多尼亚
+-   尼加拉瓜
+-   尼日尔
+-   尼日利亚
+-   纽埃
+-   诺福克岛
+-   北马里亚纳群岛
+-   帕劳
+-   巴勒斯坦民族权力机构
+-   巴拿马
+-   巴布亚新几内亚
+-   巴拉圭
+-   皮特凯恩群岛
+-   波多黎各
+-   留尼汪
+-   卢旺达
+-   圣巴泰勒米岛
+-   圣赫勒拿-阿森松-特里斯坦达库尼亚
+-   圣基茨和尼维斯
+-   圣卢西亚
+-   法属圣马丁
+-   圣皮埃尔和密克隆岛
+-   圣文森特和格林纳丁斯
+-   萨摩亚
+-   圣马力诺
+-   圣多美和普林西比
+-   塞内加尔
+-   塞舌尔
+-   塞拉利昂
+-   荷属圣马丁
+-   所罗门群岛
+-   索马里
+-   南乔治亚和南德桑威奇群岛
+-   苏里南
+-   斯瓦尔巴和扬马延
+-   斯威士兰
+-   塔吉克斯坦
+-   坦桑尼亚
+-   东帝汶
+-   多哥
+-   托克劳
+-   汤加
+-   土库曼斯坦
+-   特克斯和凯科斯群岛
+-   图瓦卢
+-   乌干达
+-   美属外岛
+-   美属维尔京群岛
+-   乌兹别克斯坦
+-   委内瑞拉
+-   越南
+-   瓦努阿图
+-   瓦利斯和富图纳
+-   也门
+-   赞比亚
+-   津巴布韦
 
-> **Note**  For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](https://msdn.microsoft.com/library/windows/apps/jj863494).
+> **注意** 有关支持开发者帐户注册的国家和地区的列表，请参阅[帐户类型、位置和费用](https://msdn.microsoft.com/library/windows/apps/jj863494)。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

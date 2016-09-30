@@ -1,65 +1,65 @@
 ---
 author: jnHs
-Description: The Ad mediation report lets you see your effective fill rate and the respective fill rates for the ad networks you're using.
-title: Ad mediation report
+Description: "通过“广告中介”报告，你可以查看有效填充率，以及你所使用的广告网络的相应填充率。"
+title: "广告中介报告"
 ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 07b4e34cc5e91ec70b88631560dd1429f11d2d6b
+ms.openlocfilehash: 1597e21414dbb5d1b540a2dd67478fbcc83d574e
 
 ---
 
-# Ad mediation report
+# 广告中介报告
 
 
-The **Ad mediation** report lets you see your effective fill rate and the respective fill rates for the ad networks you're using. It also shows the adoption rates of each of your mediation configurations and provides visibility into errors reported by ad networks and the mediator. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+通过“广告中介”****报告，你可以查看你的有效填充率，以及你所使用的广告网络的相应填充率。 它还显示了你的每个中介配置的采用率，并使你能够看到广告网络和中介报告的错误。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。
 
-**Important**  The **Ad mediation** report only provides data if you are using [Windows ad mediation](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359) in your app.
-
- 
-
-## Page filters
-
-
-Near the top of the page, you can expand **Page filters** to filter all of the data on this page by date range and/or by market.
-
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show ratings from customers in that market.
--   **Platform**: The default setting is **All platforms**. If your app targets multiple platforms, you can choose a specific platform.
-
-The info in all of the charts listed below will reflect the period of time selected in **Page filters**. By default this will include data from all of the markets and platforms in which your app is listed, unless you've used the **Page filters** to specify a specific market and/or platform.
-
-## Ad mediation performance
-
-
-The **Ad mediation performance** chart shows the average total fill rate over the selected period of time. This is the average fill rate across all user sessions, regardless of your mediation configuration or how often different ad networks were called.
-
-You can click the **Mediation requests** heading to see the average number of individual mediation requests, or click **Ads delivered** to see the average total number of ads delivered.
-
-## Ad provider fill rates
-
-
-The **Ad provider fill rates** chart shows the average fill rate of each of your ad networks over the selected period of time.
-
-Info for each ad network is shown together to help you compare each ad network's performance.
-
-## Unique users per mediation configuration
-
-
-The **Unique users per mediation configuration** chart shows the total number of unique users who received each version of your mediation configuration over the selected period of time.
-
-## Errors by ad network
-
-
-The **Errors by ad network** chart shows the total number of requests and errors for each of your ad networks, along with the percentage of requests that resulted in an error.
-
-## Errors by type
-
-
-The **Errors by type** chart shows the specific errors experienced by each ad network. It also shows the percentage of total errors for that network that a specific error represents, so you can get an idea of which errors are coming up frequently per ad network.
+**重要提示** 如果你在应用中使用的是 [Windows 广告中介](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359)，则**“广告中介”**报告仅提供数据。
 
  
 
+## 页面筛选器
+
+
+在页面顶部附近，你可以展开“页面筛选器”****，按日期范围和/或市场筛选此页上的所有数据。
+
+-   **日期**：默认筛选器为“最近 30 天”****，但是你可以将此条件扩大到“最近 12 个月”****。
+-   **市场**：默认设置为“所有市场”****。 如果你希望此页面仅显示特定市场中客户的分级，你可以选择该市场。
+-   **平台**：默认设置为“所有平台”****。 如果你的应用面向多个平台，则可以选择某个特定平台。
+
+下面列出的所有图中的信息都将反映**“页面筛选器”**中所选的时段。 默认情况下，这将包括列出你的应用的所有市场和平台中的数据，除非你已使用“页面筛选器”****指定了某个特定市场和/或平台。
+
+## 广告中介性能
+
+
+“广告中介性能”****图显示了选定时段内的平均总填充率。 这是所有用户会话的平均填充率，不考虑你的中介配置或调用不同广告网络的频率。
+
+你可以单击“中介请求”****标题查看个别中介请求的平均数，或单击“已提交广告”****查看已提交广告的平均总数。
+
+## 广告提供商填充率
+
+
+“广告提供商填充率”****图显示了在选定时段内你的每个广告网络的平均填充率。
+
+每个广告网络的信息都集中显示，以帮助你比较每个广告网络的性能。
+
+## 每个中介配置的独特用户
+
+
+“每个中介配置的独特用户”****图显示了在选定时段内收到每个版本的中介配置的独特用户总数。
+
+## 广告网络错误
+
+
+“广告网络错误”****图显示了每个广告网络的请求和错误总数，以及产生错误的请求的百分比。
+
+## 类型错误
+
+
+“类型错误”****图显示了每个广告网络所遇到的特定错误。 它还显示了特定错误表示的该网络的总错误数百分比，以便你了解哪些错误将频繁出现在每个广告网络上。
+
+ 
+
  
 
 
@@ -68,6 +68,6 @@ The **Errors by type** chart shows the specific errors experienced by each ad ne
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

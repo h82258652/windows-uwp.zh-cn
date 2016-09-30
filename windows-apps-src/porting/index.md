@@ -1,42 +1,42 @@
 ---
 author: mcleblanc
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-description: This section describes how to port your existing app to the Universal Windows Platform (UWP) where you can create a single Windows 10 app package that your customers can install onto all types of devices. Your app will benefit from exciting new hardware, great monetization opportunities, a modern API set, adaptive UI controls, and a range of input modalities including mouse/keyboard, touch, and speech.
-title: Porting apps to Windows 10
+description: "本部分介绍如何将现有应用移植到通用 Windows 平台 (UWP)，你可以在该平台中创建可供客户安装到所有类型的设备的单个 Windows 10 应用包。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。"
+title: "将应用移植到 Windows 10"
 translationtype: Human Translation
 ms.sourcegitcommit: 5b7b5f985eccf905698d7995d1574967bbec176f
-ms.openlocfilehash: 777542dd6a105b432e25db082cb0e1b7b87101f2
+ms.openlocfilehash: fd7f2dc0d83ef8c4d075e25d3e2fa453d9ce849d
 
 ---
 
-# Porting apps to Windows 10
+# 将应用移植到 Windows 10
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section describes how to port your existing app to the Universal Windows Platform (UWP) where you can create a single Windows 10 app package that your customers can install onto all types of devices. Your app will benefit from exciting new hardware, great monetization opportunities, a modern API set, adaptive UI controls, and a range of input modalities including mouse/keyboard, touch, and speech.
+本部分介绍如何将现有应用移植到通用 Windows 平台 (UWP)，你可以在该平台中创建可供客户安装到所有类型的设备的单个 Windows 10 应用包。 你的应用将受益于精彩的新硬件、绝佳的营销机会、现代 API 集、自适应 UI 控件以及包括鼠标/键盘、触摸和语音在内的各种输入形式。
 
-The Windows Runtime (WinRT) is the technology that lets you build Universal Windows Platform (UWP) apps. You can refer to [What's a Universal Windows Platform (UWP) app?](https://msdn.microsoft.com/library/windows/apps/dn726767) for more background on WinRT and UWP apps.
+Windows 运行时 (WinRT) 是可让你生成通用 Windows 平台 (UWP) 应用的技术。 有关 WinRT 和 UWP 应用的更多背景知识，请参考[什么是通用 Windows 平台 (UWP) 应用？](https://msdn.microsoft.com/library/windows/apps/dn726767)。
 
-This porting guide explains the differences between your current app's technology and the Universal Windows Platform (UWP). Once the path between technologies is understood, you'll be able to dive into the rest of the Developer Center, which is a comprehensive resource for developing UWP apps. A good way to do that, when you're ready, is to start with [How to develop a Store app](https://msdn.microsoft.com/library/windows/apps/dn726537).
+此移植指南介绍当前应用的技术和通用 Windows 平台 (UWP) 之间的差异。 了解技术之间的差异后，将能够深入了解开发人员中心的其余部分，它是用于开发 UWP 应用的综合性资源。 实现此目的一个好方法是从[如何开发应用商店应用](https://msdn.microsoft.com/library/windows/apps/dn726537)开始。
 
-| Topic | Description |
+| 主题 | 说明 |
 |-------|-------------|
-| [Move from Windows Phone Silverlight to UWP](wpsl-to-uwp-root.md) | If you’re a developer with a Windows Phone Silverlight app, then you can make great use of your skill set and your source code in the move to Windows 10. With Windows 10, you can create a UWP app, which is a single app package that your customers can install onto every kind of device. |
-| [Move from Windows Runtime 8.x to UWP](w8x-to-uwp-root.md) | If you have a Universal 8.1 app—whether it's targeting Windows 8.1, Windows Phone 8.1, or both—then you'll find that your source code and skills will port smoothly to Windows 10. With Windows 10, you can create a UWP app, which is a single app package that your customers can install onto every kind of device. |
-| [Update your UWP Microsoft Visual Studio 2015 RC project to RTM](update-your-visual-studio-2015-rc-project-to-rtm.md) | If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then you have two options when it comes to updating the project files to the format suitable for Visual Studio 2015 RTM. The recommended method is to create a new Windows 10 project in Visual Studio 2015 RTM and copy your files into it. Alternatively, you can follow advanced documentation to edit your existing project files and move them over to the new format. |
-| [Windows apps concept mapping for Android and iOS developers](android-ios-uwp-map.md) | If you're a developer with Android or iOS skills or code, and you want to make the move to Windows 10 and the Universal Windows Platform, then this resource has all you need to map platform features—and your knowledge—between the three platforms. |
-| [Move from iOS to UWP](ios-to-uwp-root.md) | Are you an iOS developer, wondering how to make the move to Windows 10 and the UWP? It needn't be as scary as you think. We've got the tools, techniques, and info you need to make great apps that work as well on Windows as they do on your iOS devices: maybe better! |
-| [Move from desktop to UWP](desktop-to-uwp-root.md) | Convert your Win32 and .NET 4.6.1 desktop applications to Universal Windows Platform (UWP) apps. |
-| [Move a web app to UWP](hwa-to-uwp-root.md) | Convert your web application to Universal Windows Platform (UWP) apps. *Includes instructions for using either Windows or Mac as your development platform, as well as instruction for converting a Chrome app to work with UWP. |
+| [从 Windows Phone Silverlight 移动到 UWP](wpsl-to-uwp-root.md) | 如果你是一名 Windows Phone Silverlight 应用的开发人员，你可以在移动到 Windows 10 时充分使用你的技能集和源代码。 借助 Windows 10，你可以创建 UWP 应用，该应用是可供客户安装到各种设备的单个应用包。 |
+| [从 Windows 运行时 8.x 移动到 UWP](w8x-to-uwp-root.md) | 如果你有一个通用 8.1 应用（无论它是面向 Windows 8.1、Windows Phone 8.1 还是同时面向这两者），你会发现你的源代码和技能将顺利地移植到 Windows 10。 借助 Windows 10，你可以创建 UWP 应用，该应用是可供客户安装到各种设备的单个应用包。 |
+| [将 UWP Microsoft Visual Studio 2015 RC 项目更新为 RTM](update-your-visual-studio-2015-rc-project-to-rtm.md) | 如果你具有使用 Visual Studio 2015 RC 创建的 Windows 10 项目，则你在将项目文件更新为适合 Visual Studio 2015 RTM 的格式时拥有两个选项。 推荐的方法是在 Visual Studio 2015 RTM 中创建新的 Windows 10 项目，并将文件复制到其中。 或者，可按照高级文档内容，编辑现有项目文件并将它们移动到新格式。 |
+| [面向 Android 和 iOS 开发人员的 Windows 应用概念映射](android-ios-uwp-map.md) | 如果你是一名拥有 Android 或 iOS 技能或代码的开发人员，并且希望移动到 Windows 10 和通用 Windows 平台，此资源为你提供了在这三种平台之间映射平台功能（及知识）所需的一切。 |
+| [从 iOS 移动到 UWP](ios-to-uwp-root.md) | 你是否是一名 iOS 开发人员，正在思考如何转移到 Windows 10 和 UWP？ 这未必像你想象的那样困难。 我们提供创建在 Windows 上与在 iOS 设备上一样运行良好（甚至更好！）的出色应用所需的工具、技术和信息。 |
+| [从桌面版移动到 UWP](desktop-to-uwp-root.md) | 将 Win32 和 .NET 4.6.1 桌面应用程序转换为通用 Windows 平台 (UWP) 应用。 |
+| [将 Web 应用移到 UWP](hwa-to-uwp-root.md) | 将 Web 应用程序转换为通用 Windows 平台 (UWP) 应用。 *包括使用 Windows 或 Mac 作为开发平台的说明，以及将 Chrome 应用转换为使用 UWP 的说明。 |
  
-## Related topics
+## 相关主题
 
-* [Move from WPF and Silverlight to WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
-* [Move from Android to WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
-* [Move from the web to WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
+* [从 WPF 和 Silverlight 移动到 WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
+* [从 Android 移动到 WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
+* [从 Web 移动到 WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

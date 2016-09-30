@@ -1,31 +1,30 @@
 ---
 author: TylerMSFT
-title: Handle app suspend
-description: Learn how to save important application data when the system suspends your app.
+title: "处理应用暂停"
+description: "了解当系统挂起你的应用时如何保存重要的应用程序数据。"
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 translationtype: Human Translation
-ms.sourcegitcommit: 231161ba576a140859952a7e9a4e8d3bd0ba4596
-ms.openlocfilehash: 9d78ee8aceb40cacdb464a65c940ad13baf7bb81
+ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
+ms.openlocfilehash: 3ad58dc20a660d89622d215c46d263adf27a0542
 
 ---
 
-# Handle app suspend
+# 处理应用暂停
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Important APIs**
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-- [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341)
 
-Learn how to save important application data when the system suspends your app. The example registers an event handler for the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event and saves a string to a file.
+**重要的 API**
 
-## Important change introduced in Windows 10, version 1607
+-   [**暂停中**](https://msdn.microsoft.com/library/windows/apps/br242341)
 
-Prior to Windows 10, version 1607, you would put the code to save your state in your suspend handler. Now we recommend that you save your state when you enter the background state, as described in [Windows 10 universal Windows platform app lifecycle ](app-lifecycle.md).
+了解当系统挂起你的应用时如何保存重要的应用程序数据。 以下示例向事件处理程序注册 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件并将字符串保存到文件中。
 
-## Register the suspending event handler
+## 注册 suspending 事件处理程序
 
-Register to handle the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, which indicates that your app should save its application data before the system suspends it.
+
+注册以处理 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件，该事件指示在系统暂停你的应用之前，应用应该保存其应用程序数据。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -68,9 +67,10 @@ Register to handle the [**Suspending**](https://msdn.microsoft.com/library/windo
 > }
 > ```
 
-## Save application data before suspension
+## 在挂起之前保存应用程序数据
 
-When your app handles the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, it has the opportunity to save its important application data in the handler function. The app should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) storage API to save simple application data synchronously.
+
+当你的应用处理 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件时，它将有机会将其重要的应用程序数据保存到处理程序函数中。 应用应该使用 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 存储 API 来同步保存简单的应用程序数据。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -103,33 +103,28 @@ When your app handles the [**Suspending**](https://msdn.microsoft.com/library/wi
 > }
 > ```
 
-## Release resources
+## 备注
 
-You should release exclusive resources and file handles so that other apps can access them while your app is suspended. Examples of exclusive resources include cameras, I/O devices, external devices, and network resources. Explicitly releasing exclusive resources and file handles helps to ensure that other apps can access them while your app is suspended. When the app is resumed, it should reacquire  its exclusive resources and file handles.
 
-## Remarks
+每当用户切换到其他应用、桌面或“开始”屏幕时，系统都会暂停你的应用。 每当用户切回到你的应用时，系统就会恢复你的应用。 当系统恢复你的应用时，你的变量和数据结构的内容与系统将你的应用暂停之前的内容相同。 系统会将你的应用完全恢复到你离开时的状态，使用户感觉你的应用好像一直在后台运行一样。
 
-The system suspends your app whenever the user switches to another app or to the desktop or Start screen. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background.
+当你的应用被暂停后，系统会尝试将你的应用及其数据保留在内存中。 但是，如果系统没有资源将你的应用保存在内存里，则将终止你的应用。 当用户切换回已终止的暂停应用时，该应用会发送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，且应该在其 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中还原其应用程序数据。
 
-The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. When the user switches back to a suspended app that has been terminated, the system sends an [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event and should restore its application data in its [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method.
+当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且当在终止后又激活应用时还原这些内容。
 
-The system doesn't notify an app when it's terminated, so your app must save its application data and release exclusive resources and file handles when it's suspended, and restore them when the app is activated after termination.
+> **注意** 如果在应用暂停期间，你需要执行一些异步工作，则需要将暂停完成时间延迟到工作完成之后。 你可以使用 [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) 对象（可通过事件参数获取）上的 [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) 方法将暂停的完成延迟到你针对所返回的 [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) 对象调用 [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 方法位置。
 
-If you make an asynchronous call within your handler, control returns immediately from that asynchronous call. That means that execution can then return from your event handler and your app will move to the next state even though the asynchronous call hasn't completed yet. Use the [**GetDeferral**](http://aka.ms/Kt66iv) method on the [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) object that is passed to your event handler to delay suspension until after you call the [**Complete**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.deferral.complete.aspx) method on the returned [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.deferral.aspx) object.
+> **注意** 为了改进 Windows 8.1 中的系统响应，在应用暂停时，我们为应用提供低优先级的资源访问。 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。
 
-A deferral doesn't increase the amount you have to run your code before your app is terminated. It only delays termination until either the deferral's *Complete* method is called, or the deadline passes-*whichever comes first*.
+> **有关使用 Visual Studio 进行调试的注释：**Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保**“调试位置”**工具栏正在显示，然后单击**“暂停”**图标。
 
-> **Note**  To improve system responsiveness in Windows 8.1, apps are given low priority access to resources after they are suspended. To support this new priority, the suspend operation timeout is extended so that the app has the equivalent of the 5-second timeout for normal priority on Windows or between 1 and 10 seconds on Windows Phone. You cannot extend or alter this timeout window.
+## 相关主题
 
-> **A note about debugging using Visual Studio:**  Visual Studio prevents Windows from suspending an app that is attached to the debugger. This is to allow the user to view the Visual Studio debug UI while the app is running. When you're debugging an app, you can send it a suspend event using Visual Studio. Make sure the **Debug Location** toolbar is being shown, then click the **Suspend** icon.
 
-## Related topics
-
-* [App lifecycle](app-lifecycle.md)
-* [Handle app activation](activate-an-app.md)
-* [Handle app resume](resume-an-app.md)
-* [UX guidelines for launch, suspend, and resume](https://msdn.microsoft.com/library/windows/apps/dn611862)
-
+* [处理应用激活](activate-an-app.md)
+* [处理应用恢复](resume-an-app.md)
+* [启动、暂停和恢复的用户体验指南](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [应用生命周期](app-lifecycle.md)
 
  
 
@@ -137,6 +132,6 @@ A deferral doesn't increase the amount you have to run your code before your app
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,91 +1,90 @@
 ---
 author: Xansky
-Description: Learn to develop accessible Windows 10 UWP apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
+Description: "了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。"
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
-title: Developing inclusive Windows 10 apps
+title: "开发非独占 Windows 10 应用"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f68c2bdc92bfbdbc8328e4df161f7ecdfccf8e5
-ms.openlocfilehash: 19c90991ab86383fa259b05460cbd656d408e977
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 826c6984962ecbe3b49ba3753e9cc795344f5057
 
 ---
 
-# Developing inclusive Windows apps  
+# 开发非独占 Windows 应用  
 
-This article discusses how to develop accessible Universal Windows Platform (UWP) apps. Specifically, it assumes that you understand how to design the logical hierarchy for your app. Learn to develop accessible Windows 10 UWP apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
+了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
 
-If you have not yet done so, please start by reading [Designing inclusive software](designing-inclusive-software.md).
+本文讨论了如何开发辅助通用 Windows 平台 (UWP) 应用。 具体而言，它假定你了解如何为应用设计逻辑层次结构。  
 
-There are three things you should do to make sure that your app is accessible:
+如果你尚未了解，请首先阅读[设计非独占软件](designing-inclusive-software.md)。
 
-1. Expose your UI elements to [programmatic access](#programmatic-access).
-2. Ensure that your app supports [keyboard navigation](#keyboard-navigation) for people who are unable to use a mouse or touchscreen.
-3. Make sure that your app supports accessible [color and contrast](#color-and-contrast) settings.
+为了确保你的应用是辅助应用，你应执行以下三项操作：
+1. 向[编程访问](#programmatic-access)公开你的 UI 元素。
+2. 确保你的应用针对无法使用鼠标或触摸屏的用户支持[键盘导航](#keyboard-navigation)。
+3. 确保你的应用支持辅助[颜色和对比度](#color-and-contrast)设置。
 
-## Programmatic access  
-Programmatic access is critical for creating accessibility in apps. This is achieved by setting the accessible name (required) and description (optional) for content and interactive UI elements in your app. This ensures that UI controls are exposed to assistive technology (AT) such as screen readers (for example, Narrator) or alternative output devices (such as Braille displays). Without programmatic access, the APIs for assistive technology cannot interpret information correctly, leaving the user unable to use the products sufficiently, or forcing the AT to use undocumented programming interfaces or techniques never intended to be used as an accessibility interface. When UI controls are exposed to assistive technology, the AT is able to determine what actions and options are available to the user.  
+## 编程访问  
+在应用中创建辅助功能时，编程访问至关重要。 通过为应用中的内容和交互式 UI 元素设置辅助名称（必选）和描述（可选）来实现此操作。 这可确保将 UI 控件公开给屏幕阅读器（例如讲述人）或替代输出设备（如盲文屏幕）等辅助技术 (AT)。 如果没有编程访问，辅助技术的 API 将无法正确解释信息，从而导致用户无法充分使用产品，或者迫使辅助技术使用从未旨在用作辅助功能接口的未记录编程接口或技术。 当将 UI 控件公开给辅助技术时，辅助技术可以确定用户可以使用哪些操作和选项。  
 
-For more information about making your app UI elements available to assistive technologies (AT), see [Expose basic accessibility information](basic-accessibility-information.md).
+有关使应用 UI 元素可用于辅助技术 (AT) 的详细信息，请参阅[公开基本的辅助功能信息](basic-accessibility-information.md)。
 
-## Keyboard navigation  
-For users who are blind or have mobility issues, being able to navigate the UI with a keyboard is extremely important. However, only those UI controls that require user interaction to function should be given keyboard focus. Components that don’t require an action, such as static images, do not need keyboard focus.  
+## 键盘导航  
+对于失明或行动不便的用户，能够使用键盘导航 UI 极其重要。 但是，应仅向需要用户交互才能运作的 UI 控件提供键盘焦点。 不需要操作的组件（如静态图像）不需要键盘焦点。  
 
-It is important to remember that unlike navigating with a mouse or touch, keyboard navigation is linear. When considering keyboard navigation, think about how your user will interact with your product and what the logical navigation will be. In Western cultures, people read from left to right, top to bottom. It is, therefore, common practice to follow this pattern for keyboard navigation.  
+请务必记住，和使用鼠标或触摸导航不同，键盘导航是线性的。 在考虑键盘导航时，请考虑你的用户将如何与你的产品交互以及逻辑导航是什么。 在西方文化中，人们以从左到右、从上到下的顺序阅读。 因此，常见做法是针对键盘导航遵循此模式。  
 
-When designing keyboard navigation, examine your UI, and think about these questions:
-* How are the controls laid out or grouped in the UI?
-* Are there a few significant groups of controls?
-    * If yes, do those groups contain another level of groups?
-*   Among peer controls, should navigation be done by tabbing around, or via special navigation (such as arrow keys), or both?
+在设计键盘导航时，检查你的 UI，并思考以下问题：
+* 控件在 UI 中如何布局或分组？
+* 是否存在一些重要的控件组？
+    * 如果是，这些组是否包含其他级别的组？
+*   在对等控件之间，应通过按 Tab 键、通过特殊导航（如箭头键）还是同时使用两者来进行导航？
 
-The goal is to help the user understand how the UI is laid out and identify the controls that are actionable. If you are finding that there are too many tab stops before the user completes the navigation loop, consider grouping related controls together. Some controls that are related, such as a hybrid control, may need to be addressed at this early exploration stage. After you begin to develop your product, it is difficult to rework the keyboard navigation, so plan carefully and plan early!  
+目标是帮助用户了解 UI 的布局方式并识别可操作的控件。 如果你发现在用户完成导航循环前有太多制表位，请考虑将相关的控件分组在一起。 某些相关的控件（如混合控件）可能需要在此早期探索阶段进行处理。 在开始开发产品后，很难重新制定键盘导航，因此请尽早进行周密计划！  
 
-To learn more about keyboard navigation among UI elements, see [Keyboard accessibility](keyboard-accessibility.md).  
+若要了解有关 UI 元素之间的键盘导航的详细信息，请参阅[键盘辅助功能](keyboard-accessibility.md)。  
 
-Also, the [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262) eBook has an excellent chapter on this subject titled _Designing the Logical Hierarchy_.
+此外，[针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)电子书包含有关此主题的出色章节，标题为_设计逻辑层次结构_。
 
-## Color and contrast  
-One of the built-in accessibility features in Windows is the High Contrast mode, which heightens the color contrast of text and images on the computer screen. For some people, increasing the contrast in colors reduces eyestrain and makes it easier to read. When you verify your UI in high contrast, you want to check that controls have been coded consistently and with system colors (not with hard-coded colors) to ensure that they will be able to see all the controls on the screen that a user not using high contrast would see.  
+## 颜色和对比度  
+Windows 中的内置辅助功能之一是高对比度模式，该模式可增强计算机屏幕上的文本和图像的颜色对比度。 对于某些人来说，增加颜色对比度可以降低眼睛疲劳并且更易于阅读。 当你在高对比度下验证 UI 时，你要检查是否已使用系统颜色（而不是硬编码颜色）为控件一致编码，以确保他们能够在屏幕上看到不使用高对比度的用户所看到的所有控件。  
 
 XAML
 ```xml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
-For more information about using system colors and resources, see [XAML theme resources](../controls-and-patterns/xaml-theme-resources.md).
+有关使用系统颜色和资源的详细信息，请参阅 [XAML 主题资源](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)。
 
-As long as you haven’t overridden system colors, a UWP app supports high-contrast themes by default. If a user has chosen that they want the system to use a high-contrast theme from system settings or accessibility tools, the framework automatically uses colors and style settings that produce a high-contrast layout and rendering for controls and components in the UI.   
+只要你未替代系统颜色，UWP 应用在默认情况下就支持高对比度主题。 如果用户已经选择他们希望系统使用系统设置或辅助功能工具中的高对比度主题，则框架将自动使用为 UI 中的控件和组件生成高对比度布局和呈现的颜色和样式设置。   
 
-For more information, see [High-contrast themes](high-contrast-themes.md).  
+有关详细信息，请参阅[高对比度主题](high-contrast-themes.md)。  
 
-If you have decided to use you own color theme instead of system colors, consider these guidelines:  
+如果你已决定使用你自己的颜色主题而不是系统主题，请考虑以下指南：  
 
-**Color contrast ratio** – The updated Section 508 of the Americans with Disability Act, as well as other legislation, requires that the default color contrasts between text and its background must be 5:1. For large text (18-point font sizes, or 14 points and bolded), the required default contrast is 3:1.  
+**颜色对比度比率** - 更新后的美国残疾人法案第 508 节以及其他法规要求文本与其背景之间的默认颜色对比度必须为 5:1。 对于较大的文本（18 点字体大小或 14 点加粗），所需的默认对比度为 3:1。  
 
-**Color  combinations** – About 7 percent of males (and less than 1 percent of females) have some form of color deficiency. Users with colorblindness have problems distinguishing between certain colors, so it is important that color alone is never used to convey status or meaning in an application. As for decorative images (such as icons or backgrounds), color combinations should be chosen in a manner that maximizes the perception of the image by colorblind users.  
+**颜色组合** - 大约 7% 的男性（和小于 1 % 的女性）具有某种形式的色觉障碍。 色盲用户难以区分某些颜色，因此在应用程序中永远不单独使用颜色来传达状态或意义，这一点很重要。 对于装饰性图像（如图标或背景），应尽量选择能够使色盲用户识别图像的颜色组合。  
 
-## Accessibility checklist  
-Following is an abbreviated version of the accessibility checklist:
+## 辅助功能清单  
+下面是简化版的辅助功能清单：  
+1. 为应用中的内容和交互式 UI 元素设置辅助名称（必选）和描述（可选）。
+2. 实现键盘辅助功能。
+3. 以直观方式验证你的 UI 以确保文本对比度足够大、元素以高对比度主题正确呈现以及使用了正确的颜色。
+4. 运行辅助功能工具、解决报告的问题并验证屏幕阅读体验。 （请参阅辅助功能测试主题。）
+5. 确保你的应用清单设置遵循辅助功能指南。
+6. 在 Windows 应用商店中将你的应用声明为辅助应用。 （请参阅[应用商店中的辅助功能](accessibility-in-the-store.md)主题。）
 
-1. Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.
-2. Implement keyboard accessibility.
-3. Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
-4. Run accessibility tools, address reported issues, and verify the screen reading experience. (See Accessibility testing topic.)
-5. Make sure your app manifest settings follow accessibility guidelines.
-6. Declare your app as accessible in the Windows Store. (See the [Accessibility in the store](accessibility-in-the-store.md) topic.)
+有关更多详细信息，请参阅完整的[辅助功能清单](accessibility-checklist.md)主题。
 
-For more detail, please see the full [Accessibility checklist](accessibility-checklist.md) topic.
-
-## Related topics  
-* [Designing inclusive software](designing-inclusive-software.md)  
-* [Inclusive design](http://design.microsoft.com/inclusive)
-* [Accessibility practices to avoid](practices-to-avoid.md)
-* [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Microsoft accessibility developer hub](https://msdn.microsoft.com/enable)
-* [Accessibility](accessibility.md)
+## 相关主题  
+* [设计非独占软件](designing-inclusive-software.md)  
+* [非独占设计](http://design.microsoft.com/inclusive)
+* [要避免的辅助功能做法](practices-to-avoid.md)
+* [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Microsoft 辅助功能开发人员中心](https://msdn.microsoft.com/enable)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

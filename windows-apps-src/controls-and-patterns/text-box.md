@@ -4,52 +4,42 @@ ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 label: Text box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f9750e87516d38b16a589e5271de25d9f241e97b
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 873ca8f869f4303f8fc4a9a7ff08f81df29d367d
 
 ---
-# Text box
+# 文本框
+TextBox 控件可使用户在应用中键入文本。 它通常用于捕获单行文本，但可配置为捕获多行文本。 文本以简单、统一、纯文本的格式显示在屏幕上。
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置上下文菜单，并提供对复制和粘贴文本的支持。 “清除所有”按钮使用户可以快速删除所输入的所有文本。 它还内置了拼写检查功能，并且在默认情况下处于启用状态。
 
-The TextBox control lets a user type text into an app. It's typically used to capture a single line of text, but can be configured to capture multiple lines of text. The text displays on the screen in a simple, uniform, plaintext format.
+<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
 
-TextBox has a number of features that can simplify text entry. It comes with a familiar, built-in context menu with support for copying and pasting text. The "clear all" button lets a user quickly delete all text that has been entered. It also has spell checking capabilities built in and enabled by default.
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx"><strong>TextBox class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx"><strong>Text property</strong></a></li>
-</ul>
-
-</div>
-</div>
+-   [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
+-   [**Text 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
 
 
+## 这是正确的控件吗？
 
+使用 **TextBox** 控件允许用户输入和编辑无格式文本（例如在表单中）。 你可以使用 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) 属性在 TextBox 中获取和设置文本。
 
-## Is this the right control?
+你可以使 TextBox 只读，但只应是临时的、有条件的状态。 如果文本永远不可编辑，请考虑改用 [**TextBlock**](text-block.md)。
 
-Use a **TextBox** control to let a user enter and edit unformatted text, such as in a form. You can use the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) property to get and set the text in a TextBox.
+使用 [**PasswordBox**](password-box.md) 控件收集密码或其他隐私数据，如身份证号。 密码框看起来像文本输入框，区别在于它呈现项目符号来代替已输入的文本。
 
-You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a [**TextBlock**](text-block.md) instead.
+使用 [**AutoSuggestBox**](auto-suggest-box.md) 控件允许用户输入搜索词或向用户显示建议列表以供他们在键入时从其中选择。
 
-Use a [**PasswordBox**](password-box.md) control to collect a password or other private data, such as a Social Security number. A password box looks like a text input box, except that it renders bullets in place of the text that has been entered.
+使用 [**RichEditBox**](rich-edit-box.md) 显示和编辑 RTF 文件。
 
-Use an [**AutoSuggestBox**](auto-suggest-box.md) control to let the user enter search terms or to show the user a list of suggestions to choose from as they type.
+有关选择正确文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
-Use a [**RichEditBox**](rich-edit-box.md) to display and edit rich text files.
+## 示例
 
-For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
+![文本框](images/text-box.png)
 
-## Examples
+## 创建文本块
 
-![A text box](images/text-box.png)
-
-## Create a text box
-
-Here's the XAML for a simple text box with a header and placeholder text.
+下面是具有标题和占位符文本的简单文本框的 XAML。
 
 ```xaml
 <TextBox Width="500" Header="Notes" PlaceholderText="Type your notes here"/>
@@ -64,54 +54,53 @@ textBox.PlaceholderText = "Type your notes here";
 rootGrid.Children.Add(textBox);
 ```
 
-Here's the text box that results from this XAML.
+下面是此 XAML 所产生的文本框。
 
-![A simple text box](images/text-box-ex1.png)
+![简单文本框](images/text-box-ex1.png)
 
-### Use a text box for data input in a form
+### 为表单中的数据输入使用文本框
 
-It’s common to use a text box to accept data input on a form, and use the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) property to get the complete text string from the text box. You typically use an event like a submit button click to access the Text property, but you can handle the [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) or [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) event if you need to do something when the text changes.
+通常使用文本框接受表单上的数据输入，并使用 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) 属性获取来自文本框的完整文本字符串。 通常使用提交按钮单击之类的事件来访问 Text 属性，但如果你需要在文本发生更改时执行某些操作，可以处理 [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) 或 [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) 事件。 
 
-You can add a [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (or label) and [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (or watermark) to the text box to give the user an indication of what the text box is for. To customize the look of the header, you can set the [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) property instead of Header. *For design info, see Guidelines for labels*.
+你可以将 [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx)（或标签）和 [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx)（或水位线）添加到文本框，以向用户指示文本框的用途。 若要自定义标题外观，可设置 [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) 属性而非 Header。 *有关设计信息，请参阅标签指南*。
 
-You can restrict the number of characters the user can type by setting the [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx) property. However, MaxLength does not restrict the length of pasted text. Use the [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) event to modify pasted text if this is important for your app.
+可以通过设置 [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx) 属性来限制用户可键入的字符数。 但是，MaxLength 不会限制粘贴文本的长度。 使用 [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) 事件修改粘贴文本（如果这对你的应用很重要）。
 
-The text box includes a clear all button ("X") that appears when text is entered in the box. When a user clicks the "X", the text in the text box is cleared. It looks like this.
+文本框包含“清除所有”按钮（“X”），该按钮会在框中输入文本时显示。 当用户单击“X”时，将清除文本框中的文本。 它的外观如下所示。
 
-![A text box with a clear all button](images/text-box-clear-all.png)
+![带有“清除所有”按钮的文本框](images/text-box-clear-all.png)
 
-The clear all button is shown only for editable, single-line text boxes that contain text and have focus.
+“清除所有”按钮仅为包含文本并具有焦点的可编辑单行文本框显示。 
 
-The clear all button is not shown in any of these cases:
-- **IsReadOnly** is **true**
-- **AcceptsReturn** is **true**
-- **TextWrap** has a value other than **NoWrap**
+在以下任意情况下，不会显示“清除所有”按钮：
+- **IsReadOnly** 为 **true**
+- **AcceptsReturn** 为 **true**
+- **TextWrap** 具有非 **NoWrap** 的值
 
-### Make a text box read-only
+### 使文本框变为只读
 
-You can make a text box read-only by setting the [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx) property to **true**. You typically toggle this property in your app code based on conditions in your app. If need text that is always read-only, consider using a TextBlock instead.
+可以通过将 [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx) 属性设置为 **true** 使文本框变为只读。 通常根据应用中的条件在应用代码中切换此属性。 如果需要始终为只读的文本，请考虑改用 TextBlock。
 
-You can make a TextBox read-only by setting the IsReadOnly property to true. For example, you might have a TextBox for a user to enter comments that is enabled only under certain conditions. You can make the TextBox read-only until the conditions are met. If you need only to display text, consider using a TextBlock or RichTextBlock instead.
+可以通过将 IsReadOnly 属性设置为 true 使 TextBox 变为只读。 例如，你可以提供一个供用户输入评论的 TextBox，该文本框仅在特定条件下启用。 你可以使 TextBox 在不满足特定条件时变为只读。 如果你只需要显示文本，仅考虑改用 TextBlock 或 RichTextBlock。
 
-A read-only text box looks the same as a read/write text box, so it might be confusing to a user.
-A user can select and copy text.
+只读文本框外观与读/写文本框相同，因此它可能使用户产生困惑。 用户可以选择并复制文本。
 IsEnabled
 
 
-### Enable multi-line input
+### 启用多行输入
 
-There are two properties that you can use to control whether the text box displays text on more than one line. You typically set both properties to make a multi-line text box.
-- To let the text box allow and display the newline or return characters, set the [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) property to **true**.
-- To enable text wrapping, set the [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) property to **Wrap**. This causes the text to wrap when it reaches the edge of the text box, independent of line separator characters.
+有两个可用于控制 TextBox 是否在多行上显示文本的属性。 通常同时设置这两个属性来创建多行文本框。
+- 若要使文本框允许和显示新行或返回字符，请将 [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 属性设置为 **true**。
+- 若要启用文本换行，请将 [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 属性设置为 **Wrap**。 这会导致文本在其到达文本框边缘时独立于行分隔符换行。
 
-> **Note**&nbsp;&nbsp;TextBox and RichEditBox don't support the **WrapWholeWords** value for their TextWrapping properties. If you try to use WrapWholeWords as a value for TextBox.TextWrapping or RichEditBox.TextWrapping an invalid argument exception is thrown.
+> **注意** &nbsp;&nbsp;TextBox 和 RichEditBox 不支持其 TextWrapping 属性的 **WrapWholeWords** 值。 如果你尝试使用 WrapWholeWords 作为 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，将引发无效参数异常。
 
-A multi-line text box will continue to grow vertically as text is entered unless it’s constrained by its [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) or [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) property, or by a parent container. You should test that a multi-line text box doesn’t grow beyond its visible area, and constrain its growth if it does. We recommend that you always specify an appropriate height for a multi-line text box, and not let it grow in height as the user types.
+在输入文本时多行 TextBox 将持续在垂直方向上增长，除非它受到其 [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 或 [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) 属性或父容器的约束。 你应测试多行文本框是否会增长到其可见区域之外，如果确实如此，则约束其增长。 我们建议你始终为多行文本框指定相应的高度，使其在用户键入时高度不会增长。 
 
-Scrolling using a scroll-wheel or touch is automatically enabled when needed. However, the vertical scrollbars are not visible by default. You can show the vertical scrollbars by setting the [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) to **Auto** on the embedded ScrollViewer, as shown here.
+在需要时自动启用使用滚轮或触摸的滚动。 但是，垂直滚动条默认不可见。 你可以通过在嵌入的 ScrollViewer 上将 [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) 设置为 **Auto** 来显示垂直滚动条，如下所示。 
 
 ```xaml
-<TextBox AcceptsReturn="True" TextWrapping="Wrap"
+<TextBox AcceptsReturn="True" TextWrapping="Wrap" 
          MaxHeight="172" Width="300" Header="Description"
          ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 ```
@@ -126,22 +115,22 @@ textBox.Header = "Description";
 ScrollViewer.SetVerticalScrollBarVisibility(textBox, ScrollBarVisibility.Auto);
 ```
 
-Here's what the text box looks like after text is added.
+下面是添加文本后的文本框外观。
 
-![A multi line text box](images/text-box-multi-line.png)
+![多行文本框](images/text-box-multi-line.png)
 
-### Format the text display
+### 设置文本显示的格式
 
-Use the [TextAlignment]() property to align text within a text box. To align the text box within the layout of the page, use the [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) and [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) properties.
+使用 [TextAlignment]() 属性使文本在文本框内对齐。 若要使文本框在页面布局内对齐，请使用 [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 属性。
 
-While the text box supports only unformatted text, you can customize how the text is displayed in the text box to match your branding. You can set standard [Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) properties like [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx), [FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx), [FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx), [Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx), [Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx), and [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx) to change the look of the text. These properties affect only how the text box displays the text locally, so if you were to copy and paste the text into a rich text control, for example, no formatting would be applied.
+尽管文本 bBox 仅支持无格式文本，但你可以自定义文本在文本框中的显示方式来匹配你的品牌。 你可以设置标准 [Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) 属性（如 [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx)、[FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx)、[FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx)、[Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx)、[Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) 和 [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx)）以更改文本外观。 这些属性仅影响文本框在本地显示文本的方式，所以如果你要将文本复制并粘贴到格式文本控件，将无需应用任何格式。
 
-This example shows a read-only text box with several properties set to customize the appearance of the text.
+此示例显示一个设置了多个属性以自定义文本外观的只读 TextBox。
 
 ```xaml
-<TextBox Text="Sample Text" IsReadOnly="True"
+<TextBox Text="Sample Text" IsReadOnly="True" 
          FontFamily="Verdana" FontSize="24"
-         FontWeight="Bold" FontStyle="Italic"
+         FontWeight="Bold" FontStyle="Italic" 
          CharacterSpacing="200" Width="300"
          Foreground="Blue" Background="Beige"/>
 ```
@@ -162,39 +151,39 @@ textBox.Foreground = new SolidColorBrush(Windows.UI.Colors.Blue);
 rootGrid.Children.Add(textBox);
 ```
 
-The resulting text box looks like this.
+生成的文本框如下所示。
 
-![A formatted text box](images/text-box-formatted.png)
+![格式化的文本](images/text-box-formatted.png)
 
-### Modify the context menu
+### 修改上下文菜单
 
-By default, the commands shown in the text box context menu depend on the state of the text box. For example, the following commands can be shown when the text box is editable.
+默认情况下，文本框上下文菜单中显示的命令取决于文本框的状态。 例如，以下命令可以在文本框可编辑时显示。
 
-Command | Shown when...
+命令 | 在以下情况下显示...
 ------- | -------------
-Copy | text is selected.
-Cut | text is selected.
-Paste | the clipboard contains text.
-Select all | the TextBox contains text.
-Undo | text has been changed.
+复制 | 文本处于选中状态。 
+剪切 | 文本处于选中状态。 
+粘贴 | 剪贴板包含文本。 
+全选 | TextBox 包含文本。 
+撤销 | 文本已更改。 
 
-To modify the commands shown in the context menu, handle the [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx) event. For an example of this, see Scenario 2 of the [ContextMenu sample](http://go.microsoft.com/fwlink/p/?linkid=234891). For design info, see Guidelines for context menus.
+若要修改上下文菜单中显示的命令，请处理 [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx) 事件。 有关此内容的示例，请参阅 [ContextMenu 示例](http://go.microsoft.com/fwlink/p/?linkid=234891)的方案 2。 有关设计信息，请参阅上下文菜单指南。
 
-### Select, copy, and paste
+### 选择、复制和粘贴
 
-You can get or set the selected text in a text box using the [SelectedText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectedtext.aspx) property. Use the [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) and [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) properties, and the [Select](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.select.aspx) and [SelectAll](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectall.aspx) methods, to manipulate the text selection. Handle the [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) event to do something when the user selects or de-selects text. You can change the color used to highlight the selected text by setting the [SelectionHighlightColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionhighlightcolor.aspx) property.
+你可以使用 [SelectedText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectedtext.aspx) 属性在 TextBox 中获取或设置所选文本。 使用 [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) 和 [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) 属性以及 [Select](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.select.aspx) 和 [SelectAll](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectall.aspx) 方法来操作文本选择。 当用户选择或取消选择文本时，处理 [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) 事件以执行某些操作。 可以通过设置 [SelectionHighlightColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionhighlightcolor.aspx) 属性更改用于突出显示所选文本的颜色。
 
-TextBox supports copy and paste by default. You can provide custom handling of the [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) event on editable text controls in your app. For example, you might remove the line breaks from a multi-line address when pasting it into a single-line search box. Or, you might check the length of the pasted text and warn the user if it exceeds the maximum length that can be saved to a database. For more info and examples, see the [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) event.
+默认情况下，TextBox 支持复制和粘贴。 你可以在应用中的可编辑文本控件上提供 [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) 事件的自定义处理。 例如，在将多行地址粘贴到单行搜索框中时，你可以从该地址中删除换行符。 或者，你可以检查粘贴文本的长度，如果它超出可保存到数据库的最大长度，则警告用户。 有关详细信息和示例，请参阅 [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) 事件。
 
-Here, we have an example of these properties and methods in use. When you select text in the first text box, the selected text is displayed in the second text box, which is read-only. The values of the [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) and [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) properties are shown in two text blocks. This is done using the [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) event.
+下面是使用这些属性和方法的一个示例。 当你在第一个文本框中选择文本时，所选文本在第二个文本框中显示，该文本框为只读。 [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) 和 [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) 属性的值在两个文本块中显示。 此操作使用 [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) 事件完成。
 
 ```xaml
 <StackPanel>
    <TextBox x:Name="textBox1" Height="75" Width="300" Margin="10"
-         Text="The text that is selected in this TextBox will show up in the read only TextBox below."
+         Text="The text that is selected in this TextBox will show up in the read only TextBox below." 
          TextWrapping="Wrap" AcceptsReturn="True"
          SelectionChanged="TextBox1_SelectionChanged" />
-   <TextBox x:Name="textBox2" Height="75" Width="300" Margin="5"
+   <TextBox x:Name="textBox2" Height="75" Width="300" Margin="5" 
          TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True"/>
    <TextBlock x:Name="label1" HorizontalAlignment="Center"/>
    <TextBlock x:Name="label2" HorizontalAlignment="Center"/>
@@ -210,88 +199,88 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 }
 ```
 
-Here's the result of this code.
+下面是该代码的结果。
 
-![Selected text in a text box](images/text-box-selection.png)
+![文本框中的所选文本](images/text-box-selection.png)
 
-## Choose the right keyboard for your text control
+## 为文本控件选择正确的键盘
 
-To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.
+若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。
 
-The touch keyboard can be used for text entry when your app runs on a device with a touch screen. The touch keyboard is invoked when the user taps on an editable input field, such as a TextBox or RichEditBox. You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint to the system about the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type.
+当你的应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为与你期望用户输入的数据类型匹配，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
 
-For example, if a text box is used only to enter a 4-digit PIN, set the [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) property to **Number**. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.
+例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
-> **Important**&nbsp;&nbsp;The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.
+> **重要提示** &nbsp;&nbsp;输入范围不会导致任何输入验证的执行，并且不会阻止用户通过硬件键盘或其他输入设备提供任何输入。 你仍然负责按需在代码中验证输入。
 
-Other properties that affect the touch keyboard are [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx), [IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx), and [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx). (IsSpellCheckEnabled also affects the TextBox when a hardware keyboard is used.)
+影响触摸键盘的其他属性是 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx)、[IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) 和 [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx)。 （IsSpellCheckEnabled 还会在使用硬件键盘时影响 TextBox。） 
 
-For more info and examples, see [Use input scope to change the touch keyboard](https://msdn.microsoft.com/library/windows/apps/mt280229) and the property documentation.
+有关详细信息和示例，请参阅[使用输入范围更改触摸键盘]()和属性文档。
 
-## Recommendations
+## 建议
 
--   Use a label or placeholder text if the purpose of the text box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.
--   Give the text box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.
--   A text input box is typically single-line (`TextWrap = "NoWrap"`). When users need to enter or edit a long string, set the text input box to multi-line (`TextWrap = "Wrap"`).
--   Generally, a text input box is used for editable text. But you can make a text input box read-only so that its content can be read, selected, and copied, but not edited.
--   If you need to reduce clutter in a view, consider making a set of text input boxes appear only when a controlling checkbox is checked. You can also bind the enabled state of a text input box to a control such as a checkbox.
--   Consider how you want a text input box to behave when it contains a value and the user taps it. The default behavior is appropriate for editing the value rather than replacing it; the insertion point is placed between words and nothing is selected. If replacing is the most common use case for a given text input box, you can select all the text in the field whenever the control receives focus, and typing replaces the selection.
+-   如果文本框的用途不甚清楚，请使用标签或占位符文本。 无论文本输入框是否具有值，标签都可见。 占位符文本显示在文本输入框内，并在输入值后立即消失。
+-   针对可输入值的范围，为文本框提供适当的宽度。 字词长度因语言而异，因此如果你希望应用在全世界通用，请将本地化考虑在内。
+-   文本输入框通常为单行 (`TextWrap = "NoWrap"`)。 当用户需要输入或编辑长字符串时，将文本输入框设置为多行 (`TextWrap = "Wrap"`)。
+-   一般而言，文本输入框用于可编辑文本。 但你可以使文本输入框变为只读，以使其内容可供阅读、选择和复制，但不能编辑。
+-   如果你需要减少视图中的混乱感，请考虑让一组文本输入框仅在选中控制复选框时显示。 你还可以将文本输入框的启用状态绑定到诸如复选框等控件上。
+-   请考虑你希望文本输入框在包含值并且用户点击时表现怎样的行为。 默认行为适用于编辑值，而不是替代该值；插入点将位于字词之间，并且没有选择任何内容。 如果替代是给定文本输入框最常用的情况，你可以在控件接收焦点时选择字段中的所有文本，并且键入将替代选择的内容。
 
-**Single-line input boxes**
+**单行输入框**
 
--   Use several single-line text boxes to capture many small pieces of text information. If the text boxes are related in nature, group those together.
+-   使用多个单行文本框来捕获许多文本信息的较小部分。 如果文本框在本质上相关联，请将它们分在一组。
 
--   Make the size of single-line text boxes slightly wider than the longest anticipated input. If doing so makes the control too wide, separate it into two controls. For example, you could split a single address input into "Address line 1" and "Address line 2".
--   Set a maximum length for characters that can be entered. If the backing data source doesn't allow a long input string, limit the input and use a validation popup to let users know when they reach the limit.
--   Use single-line text input controls to gather small pieces of text from users.
+-   使单行文本框的大小比最长的预期输入稍微宽一些。 如果执行此操作后导致该控件变得过宽，请将其分成两个控件。 例如，可以将一个地址输入拆分为“地址行 1”和“地址行 2”。
+-   设置可输入字符的最大长度。 如果备份数据源不允许输入长字符串，请限制输入并使用验证弹出窗口来让用户知道何时达到限制。
+-   使用单行文本输入控件从用户那里收集小文本块。
+ 
+    下面的示例显示一个用来捕获安全问题答案的单行文本框。 答案应当简短，因此此处适合使用单行文本框。
 
-    The following example shows a single-line text box to capture an answer to a security question. The answer is expected to be short, and so a single-line text box is appropriate here.
+    ![基本数据输入](images/guidelines_and_checklist_for_singleline_text_input_type_text.png)
+    
+-   使用一组简短的、大小固定的单行输入文本控件可输入具有特定格式的数据。
 
-    ![Basic data input](images/guidelines_and_checklist_for_singleline_text_input_type_text.png)
+    ![格式化数据输出](images/textinput_example_productkey.png)
 
--   Use a set of short, fixed-sized, single-line text input controls to enter data with a specific format.
+-   将不受限制的单行文本输入控件与一个命令按钮结合使用可输入或编辑字符串。
 
-    ![Formatted data input](images/textinput_example_productkey.png)
-
--   Use a single-line, unconstrained text input control to enter or edit strings, combined with a command button that helps users select valid values.
-
-    ![Assisted data input](images/textinput_example_assisted.png)
-
-
-**Multi-line text input controls**
-
--   When you create a rich text box, provide styling buttons and implement their actions.
--   Use a font that's consistent with the style of your app.
--   Make the height of the text control tall enough to accommodate typical entries.
--   When capturing long spans of text with a maximum character or word count, use a plain text box and provide a live-running counter to show the user how many characters or words they have left before they reach the limit. You'll need to create the counter yourself; place it below the text box and dynamically update it as the user enters each character or word.
-
-    ![A long span of text](images/guidelines_and_checklist_for_multiline_text_input_text_limits.png)
-
--   Don't let your text input controls grow in height while users type.
--   Don't use a multi-line text box when users only need a single line.
--   Don't use a rich text control if a plain text control is adequate.
+    ![辅助数据输入](images/textinput_example_assisted.png)
 
 
+**多行文本输入控件**
 
-## Related articles
+-   创建富文本框时，提供样式按钮并实现它们的操作。
+-   使用与应用样式一致的字体。
+-   使文本控件的高度足够大，以便容纳典型输入。
+-   如果要捕获具有最大字符或字词计数的长文本，请使用纯文本框并提供实时运行计数器，以便向用户显示他们在达到上限前还能输入多少字符或字词。 你需要自行创建计数器、将它放在文本框下面，并在用户输入每个字符或字词时动态更新它。
 
-[Text controls](text-controls.md)
+    ![长文本](images/guidelines_and_checklist_for_multiline_text_input_text_limits.png)
 
-**For designers**
-- [Guidelines for spell checking](spell-checking-and-prediction.md)
-- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [Guidelines for text input](text-controls.md)
-
-**For developers (XAML)**
-- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**For developers (other)**
-- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+-   不要让文本输入控件在用户键入时增加高度。
+-   当用户仅需要一行时，不要使用多行文本框。
+-   如果纯文本控件足够使用，不要使用 RTF 控件。
 
 
 
-<!--HONumber=Aug16_HO3-->
+## 相关文章
+
+[文本控件](text-controls.md)
+
+**对于设计人员**
+- [拼写检查指南](spell-checking-and-prediction.md)
+- [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [文本输入指南](text-controls.md)
+
+**面向开发人员 (XAML)**
+- [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
+
+
+**对于开发人员（其他）**
+- [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,42 +1,42 @@
 ---
 author: jnHs
-Description: You can create an ad to promote one of your apps in your other apps, for free. We call these house ads.
-title: About house ads
+Description: "你可以创建一则广告以在你的其他应用中免费推广你的某个应用。 我们将其称为自家广告。"
+title: "关于自家广告"
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
+ms.openlocfilehash: c9b73bb1963839640243fce4caaa7f3701b1eb45
 
 ---
 
-# About house ads
+# 关于自家广告
 
 
-You can create an ad to promote one of your apps in your other apps, for free. We call these *house ads*.
+你可以创建一则广告以在你的其他应用中免费推广你的某个应用。 我们将这些广告称为*自家广告*。
 
-To set up a house ad, select **Free house campaign** as the **Campaign type** when you [create an ad campaign](create-an-ad-campaign-for-your-app.md). The ad will automatically be eligible to appear in any app of yours that meets the following criteria:
+若要设置自家广告，在[创建广告市场活动](create-an-ad-campaign-for-your-app.md)时，选择**“免费自家市场活动”**作为**“市场活动类型”**。 该广告将能够自动出现在你的符合以下标准的任一应用中：
 
--   The app must be for the same device type as the advertised app.
--   The app must have at least one ad unit set up.
+-   该应用适用的设备类型必须与宣传的应用相同。
+-   该应用必须至少已设置好一个广告单元。
 
-When a house ad for App A appears in App B, you will not be charged for the impression, nor will you receive revenue for displaying the ad in your App B ad unit. Paid ads have priority over house ads to appear in your ad units.
+当用于应用 A 的自家广告出现在应用 B 中时，不会因其曝光量而对你进行收费，你也不会因在应用 B 广告单元中显示该广告而获得收益。 付费广告在广告单元中出现的优先级高于自家广告。
 
-> **Note**  An individual end user will see any given house ad a maximum of five times per day.
+> **注意** 一位最终用户每天最多看到任一给定自家广告五次。
 
  
 
-## Related topics
+## 相关主题
 
 
-* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
-* [Managing your ad campaign](managing-your-ad-campaign.md)
-* [App install ads report](app-install-ads-reports.md)
-* [Common questions](common-questions.md)
+* [为你的应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)
+* [管理广告市场活动](managing-your-ad-campaign.md)
+* [应用安装广告报告](app-install-ads-reports.md)
+* [常见问题](common-questions.md)
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

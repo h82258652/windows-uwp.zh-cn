@@ -1,114 +1,112 @@
 ---
 author: jnHs
-Description: Your app needs to include various logos, screenshots, and images.
-title: App screenshots and images
+Description: "你的应用需要包含各种徽标、屏幕截图和图像。"
+title: "应用屏幕截图和图像"
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 translationtype: Human Translation
-ms.sourcegitcommit: 70020d3c6e0fb0fea321ce1951720803fd25f9c0
-ms.openlocfilehash: eb61c9bca6b8ddfba5287482508e7d04b240d29f
+ms.sourcegitcommit: ecb030b7c529f765eded46e4e3e9db99ad0c27e8
+ms.openlocfilehash: 9eac5658e2ac04b2abc1bf06abf5c73b16260bc7
 
 ---
 
-# App screenshots and images
+# 应用屏幕截图和图像
 
 
-Your app needs to include various logos, screenshots, and images. Some of these are required, and some are optional. Keep in mind that your images are one of the main ways in which you represent your app. Well-designed images can be a big help in making your app appeal to customers.
+你的应用需要包含各种徽标、屏幕截图和图像。 其中某些项目为必备项目，其他则为可选项目。 请牢记，图像是展示你的应用的主要途径之一。 设计精良的图像十分有助于吸引客户。
 
-During the [app submission process](app-submissions.md), you provide your [screenshots](#screenshots) and [promotional artwork](#promotional-artwork) in the [Store listings](create-app-store-listings.md) step. These images are used to help display your app in the Store.
+在[应用提交过程](app-submissions.md)中，你将在[描述](create-app-descriptions.md)步骤中提供你的[屏幕截图](#screenshots)和[促销插图](#promotional-artwork)。 这些图像将用于帮助你在应用商店中显示应用。
 
-The Store also uses your app's tile and other images that you include in your app's package. Run the [Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/mt186449) to determine if you're missing any required images. For guidance and recommendations about these images, see [Tile and icon assets](../controls-and-patterns/tiles-and-notifications-app-assets.md).
+应用商店还会使用你包含在你的应用包中的应用磁贴以及其他图像。 运行 [Windows 应用认证工具包](https://msdn.microsoft.com/library/windows/apps/mt186449)可确定你是否缺少任何必需的图像。 有关这些图像的指南和建议，请参阅[磁贴和图标资源](../controls-and-patterns/tiles-and-notifications-app-assets.md)。
 
-> **Note**  The way images are used in the Store, on the customer's Start screen, and within the app itself may vary, depending on the customer's operating system and other factors.
+> **注意** 在应用商店中、客户的“开始”屏幕上以及在应用本身内使用图像的方式可能有所不同，具体取决于客户的操作系统以及其他因素。
 
 
-## Images provided during the submission process
+## 在提交过程中所提供的图像
 
-When entering your app's Store listing info, you have the option to provide multiple screenshots (one screenshot is required) and promotional artwork. These images are not taken from your app's package; you'll need to provide them in the **Store listing** step for each of your languages.
+在输入应用描述信息时，你可以选择提供多张屏幕截图（至少需要一张屏幕截图）和促销插图。 这些图像并非来自应用包；你将需要在**描述**步骤中为每种语言提供它们。
 
-The following table lists the various images you can upload and explains how they are used. More details are provided in the sections below.
+下表会列出可以上传的各种图像并说明如何使用它们。 以下各节将提供更多详细信息。
 
-| Image                                                       | Pixel size                           | Usage                                                                                                                                                                           | When to include                                                                                                                                            |
+| 图像                                                       | 像素大小                           | 用法                                                                                                                                                                           | 何时包括                                                                                                                                            |
 |-------------------------------------------------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Desktop screenshots](#screenshots)                         | 1366 x 768 or larger                 | Displayed in your app's Store listing when viewed on a desktop device.                                                                                                          | Recommended for all apps, especially if your app is intended for use on desktop devices. At least one screenshot (for any device family) is required. |
-| [Mobile screenshots](#screenshots)                          | 768 x 1280, 720 x 1280, or 480 x 800 | Displayed in your app's Store listing when viewed on a mobile device.                                                                                                           | Recommended for all apps, especially if your app is intended for use on mobile devices. At least one screenshot (for any device family) is required. |
-| [Holographic screenshots](#screenshots)                          | 1268 x 720 or larger                 | Displayed in your app's Store listing when viewed on a holographic device.                                                                                                           | Recommended if your app is intended for use on Microsoft HoloLens. At least one screenshot (for any device family) is required. |
-| [App tile icon](#app-tile-icon)                             | 300 x 300                            | Displayed as your app's icon in the Store for Windows Phone 8.1 and earlier (and, if you only have packages targeting Windows Phone 8.1 or earlier, in the Store on Windows 10) | Required for proper display in the Store if your app targets Windows Phone 8.1 or earlier.                                                                 |
-| [Promotional image: Windows 10 Spotlight](#promotional-artwork) | 2400 x 1200                          | Used for promotional layouts in the Store on Windows 10.                                                                                                                        | Recommended for all apps, especially those with UWP packages targeting Windows 10 customers.                                                               |
-| [Promotional images: Windows Phone 8.1 and earlier](#promotional-artwork) | 1000 x 800, 358 x 358                | Used for promotional layouts in the Store on Windows Phone 8.1 and earlier.                                                                                                     | Recommended for all apps targeting Windows Phone 8.1 or earlier.                                                                                           |
-| [Promotional image: Windows 8.1 and earlier](#promotional-artwork)        | 414 x 180                            | Used for promotional layouts in the Store on Windows 8.1.                                                                                                                       | Recommended for all apps targeting Windows 8.1 or earlier.                                                                                                 |
+| [桌面屏幕截图](#screenshots)                         | 1366 x 768 或更大                 | 在桌面设备上查看时，会显示在应用的应用商店一览中。                                                                                                          | 适合所有应用，尤其是在你的应用适用于桌面设备时。 至少需要一张屏幕截图（适用于所有设备系列）。 |
+| [移动设备屏幕截图](#screenshots)                          | 768 x 1280、720 x 1280 或 480 x 800 | 在移动设备上查看时，会显示在应用的应用商店一览中。                                                                                                           | 适合所有应用，尤其是在你的应用适用于移动设备时。 至少需要一张屏幕截图（适用于所有设备系列）。 |
+| [全息屏幕截图](#screenshots)                          | 1268 x 720 或更大                 | 在全息设备上查看时，会显示在应用的应用商店一览中。                                                                                                           | 如果你的应用适用于 Microsoft HoloLens，则推荐。 至少需要一张屏幕截图（适用于所有设备系列）。 |
+| [应用磁贴图标](#app-tile-icon)                             | 300 x 300                            | 在 Windows Phone 8.1 及更早版本的应用商店中（以及当你在 Windows 10 上的应用商店中仅拥有面向 Windows Phone 8.1 或更早版本的程序包时）显示为应用的图标 | 当你的应用面向 Windows Phone 8.1 或更早版本时，要求在应用商店中正确显示。                                                                 |
+| [促销图像：Windows 10 Spotlight](#promotional-artwork) | 2400 x 1200                          | 可用在 Windows 10 的应用商店中的促销布局中。                                                                                                                        | 适合所有应用，尤其是那些具有面向 Windows 10 客户的 UWP 程序包的应用。                                                               |
+| [促销图像：Windows Phone 8.1 及更早版本](#promotional-artwork) | 1000 x 800、358 x 358                | 可用在 Windows Phone 8.1 及更早版本的应用商店中的促销布局中。                                                                                                     | 适合面向 Windows Phone 8.1 或更早版本的所有应用。                                                                                           |
+| [促销图像：Windows 8.1 及更早版本](#promotional-artwork)        | 414 x 180                            | 可用在 Windows 8.1 的应用商店中的促销布局中。                                                                                                                       | 适合面向 Windows 8.1 或更早版本的所有应用。                                                                                                 |
  
 
-## Screenshots
+## 屏幕截图
 
-Screenshots are images of your app that are displayed to your customers in your app's Store listing.
+屏幕截图是你的应用在应用的应用商店一览中显示给你的客户的图像。
 
-You'll see multiple fields on the **Store listing** page where you have the option to provide screenshots for different device families (that will be shown when a customer views your app's Store listing on that type of device).
+你将在**描述**页面上看到多个字段，你可以从中选择为不同设备系列提供相应的屏幕截图（当客户在该类型的设备上查看你的应用的应用商店一栏时就会显示这些屏幕截图）。
 
-Only one screenshot is required for your submission, though you can provide several; up to 9 desktop screenshots and up to 8 mobile and holographic screenshots). You are not required to provide separate screenshots for each device family, but we recommend providing screenshots for every one that your app supports, so that customers will see images that resemble how the app will look on their device.
+你的提交过程只需要一张屏幕截图（不过你也可以提供多张屏幕截图；最多可为桌面设备提供 9 张屏幕截图，而最多可为移动设备和全息设备提供 8 张屏幕截图）。 你不需要为每个设备系列提供单独的屏幕截图，但我们建议为应用支持的每个设备系列都提供相应的屏幕截图，以便客户看到图像就可以了解应用在其设备上的外观。
 
-> **Note**  Microsoft Visual Studio provides a [tool to help you capture  screenshots](http://go.microsoft.com/fwlink/p/?LinkId=221135).
+> **注意** Microsoft Visual Studio 提供了一个[可帮助你捕获屏幕截图的工具](http://go.microsoft.com/fwlink/p/?LinkId=221135)。
 
-Each screenshot must be a .png file in either landscape or portrait orientation, and the file size can't be larger than 2 MB.
+每张屏幕截图都必须是 .png 文件，采用横向或纵向布局，且文件大小不能大于 2 MB。
 
-The size requirements vary depending on the device family:
-- Mobile: either 768 x 1280, 720 x 1280, or 480 x 800 pixels
-- Desktop: 1366 x 768 pixels or larger
-- Holographic: 1268 x 720 pixels or larger
+大小要求因设备系列而异：
+- 移动设备：768 x 1280、720 x 1280 或 480 x 800 像素
+- 桌面设备：1366 x 768 像素或更大
+- 全息设备：1268 x 720 像素或更大
 
-You can provide a short caption that describes each screenshot in 200 characters or less.
+你可以提供一段简短描述，最多使用 200 个字符介绍每张屏幕截图。
 
-> **Note**  If you create Store listings for [multiple languages](supported-languages.md), you'll have a **Store listing** page for each one. You'll need to upload images for each language separately (even if you are using the same images), and provide captions to use for each language.
+> **注意** 如果你创建了[多种语言](supported-languages.md)的描述，你将为每种语言提供一个**描述**页面。 你将需要为每种语言单独上传图像（即使你使用相同的图像），并提供要用于每种语言的描述文字。
 
 
-## App tile icon
+## 应用磁贴图标
 
-This is not required for all submissions, but is strongly recommended if your app runs on Windows Phone 8.1 or earlier. The app tile icon is used when displaying your app's Store listing to customers on Windows Phone 8.1 and earlier. If you don't provide this image, customers on Windows Phone 8.1 or earlier will see a blank icon with your app's listing. (This also applies to customers on Windows 10, if your app only has packages targeting Windows Phone 8.1 or earlier.)
+这并非所有提交过程所必需的，但当你的应用在 Windows Phone 8.1 或更早版本上运行时，强烈建议你提供此类图标。 当在 Windows Phone 8.1 及更早版本上向客户显示你的应用一览时，需使用应用磁贴图标。 如果不提供此图像，Windows Phone 8.1 或更早版本上的客户将在你的应用一览中看到空白图标。 （如果你的应用仅包含面向 Windows Phone 8.1 或更早版本的程序包，这同样也适用于 Windows 10 上的客户。）
 
-If your submission **only** includes UWP packages, you don’t need to provide this image. Note that if your submission includes UWP packages and you provide an app tile icon, it may be displayed with your app’s listing on Windows 10 in some Store layouts. To completely prevent the app tile icon for displaying to customers on Windows 10, you can create a [platform-specific listing](create-platform-specific-descriptions.md) for the earlier OS versions and only include the app tile icon there.
+此应用磁贴图标必须是大小为 300 x 300 像素的 .png 文件。
 
-The app tile icon must be a .png file measuring 300 x 300 pixels.
+## 促销插图
 
-## Promotional artwork
+Windows 应用商店编辑团队使用不同图像在应用商店中展示应用。 借助提交促销插图，Windows 应用商店团队可以考虑将你的应用包含在促销布局中。
 
-The Windows Store editorial team uses different images to showcase apps in the Store. Submitting promotional artwork lets the Windows Store team consider your app in promotional layouts.
+> **重要提示** 为你的应用提供促销图像并不能保证你的应用获得特别推荐，但不提供促销图像则意味着我们不会考虑为其提供任何促销机会。 （有关详细信息，请参阅[轻松推广你的应用](make-your-app-easier-to-promote.md)。）
 
-> **Important**  Providing promotional images for your app doesn't guarantee that your app will be featured, but not providing them means that it can't be considered for all promotional opportunities. (See [Making your app easy to promote](make-your-app-easier-to-promote.md) for more information.)
+你可能需要提交不同大小的促销插图，具体视你的应用所面向的操作系统版本而定。 对于所有大小，图像必须采用 .png 格式。
 
-You may want to submit promotional artwork in different sizes, depending on which OS version(s) your app targets. For all sizes, images must be in .png format.
+下面是在设计促销插图时需要牢记的一些技巧：
 
-Here are some tips to keep in mind when designing your promotional artwork:
+-   选择与应用、驱动器识别和差异化有关的动态图像。 避免使用图片库里的图像或通用的视觉效果。
+-   请勿包含文本（你的品牌标记除外）。
+-   尽可能减少图像中的空白空间。
+-   避免显示你应用的 UI，并且请勿使用任何特定于设备的图像。
+-   避免使用政治和国家主题、标志或宗教符号。
+-   请勿提供包含以下内容的图像：无礼手势、裸体、赌博、货币、毒品、烟草或酒精。
+-   请勿使用指向观众的武器或过度暴力和血腥内容。
 
--   Select dynamic images that relate to the app and drive recognition and differentiation. Avoid stock photography or generic visuals.
--   Don't include text (aside from your branding).
--   Minimize empty space in the image.
--   Avoid showing your app's UI, and do not use any device-specific imagery.
--   Avoid political and national themes, flags, or religious symbols.
--   Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
--   Don't use weapons pointing at the viewer or excessive violence and gore.
+### 对于 Windows 10：2400 x 1200
 
-### For Windows 10: 2400 x 1200
+在 Windows 10 的应用商店中，“应用和游戏”类别页面的顶部将显示一个旋转的聚焦图像，用于提供推广内容。 若要使你的应用适合此聚焦布局，请务必提交 2400 x 1200 图像。
 
-In the Store on Windows 10, the top of the Apps and Games category pages features a rotating Spotlight image to promote content. To make your app eligible for this Spotlight placement, be sure to submit a 2400 x 1200 image.
+在设计你的图像时，请牢记，当我们将该图像用于聚焦时，我们会在底部的三分之一处进行渐变处理，以便我们可以在图像上清晰地显示市场营销文本。 因此，请确保避免在底部的三分之一处放置文本和关键视觉元素。 此外，我们还可能会裁剪你的图像，以便将你应用的品牌和最重要的细节内容放置在中心位置。
 
-When designing your image, keep in mind that if we use it for the Spotlight, we'll apply a gradient over the bottom third so that we can legibly display marketing text over the image. Because of this, make sure you avoid placing text and key visual elements in the bottom third. Additionally, we may crop your image, so place your app's branding and the most important details in the center.
+以下图像显示的关键比例需要牢记。 将突出显示中心位置的“安全区”，即使我们裁剪图像也是如此。 “动态文本区域”是文本和渐变可能出现的位置。
 
-The image below shows the key proportions to keep in mind. The "safe zone" in the center will be prominent even if we crop the image. The "dynamic text area" is where text and a gradient may appear.
+![聚焦图像指南](images/spotlight1.jpg) 以下示例中显示的设计良好的聚焦图像遵循了这些指南。 （该图像上的线条用于指示如何将插图放置到指定区域中，它们不会包含在最终图像中。）
 
-![guidelines for spotlight image](images/spotlight1.jpg) The example below shows a well-designed Spotlight image which keeps these guidelines in mind. (The lines on the image are to illustrate how the artwork fits into the designated areas, and would not be included in the final image.)
+![设计良好的聚焦图像](images/spotlight2.jpg)
+### 对于 Windows Phone 8.1 及更早版本：1000 x 800、358 x 358
 
-![well-designed spotlight image](images/spotlight2.jpg)
-### For Windows Phone 8.1 and earlier: 1000 x 800, 358 x 358
+在 Windows Phone 8.1 及更早版本的应用商店中，可以在促销布局中使用两种图像大小：1000 x 800 像素和 358 x 358 像素。 如果你的应用运行在 Windows Phone 8.1 或更早版本上，出于促销考虑，我们建议提供这两种大小的图像。
 
-In the Store on Windows Phone 8.1 and earlier, two image sizes can be used in promotional layouts: 1000 x 800 pixels and 358 x 358 pixels. If your app runs on Windows Phone 8.1 or earlier, we recommend providing images in both of these sizes for promotional consideration.
+> **提示** 此外，请务必提供 300 x 300 [应用磁贴图标图像](#app-tile-icon)，以确保你的应用在应用商店中不会显示为带有空白图标的应用。
 
-> **Tip**   Also be sure to provide a 300 x 300 [app tile icon image](#app-tile-icon) to ensure that your app does not appear in the Store with a blank icon.
+### 对于 Windows 8.1 及更早版本：414 x 180
 
-### For Windows 8.1 and earlier: 414 x 180
-
-In the Store on Windows 8.1 and earlier, promotional layouts may use an image in the 414 x 180 pixel size. If your app runs on Windows 8.1 or earlier, we recommend providing an image in this size for promotional consideration.
+在 Windows 8.1 及更早版本上的应用商店中，促销布局可以使用大小为 414 x 180 像素的图像。 如果你的应用运行在 Windows 8.1 或更早版本上，出于促销考虑，我们建议提供此大小的图像。
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -1,131 +1,120 @@
 ---
 author: Jwmsft
-Description: Date and time controls let you view and set the date and time. This article provides design guidelines and helps you pick the right control.
-title: Guidelines for date and time controls
+Description: "日期和时间控件使你可以查看并设置日期和时间。 本文提供设计指南，并帮助你选取正确的控件。"
+title: "日期和时间控件指南"
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e9d8d73c35e2e600e89330fbd54aea57a815aebf
 
 ---
-# Calendar, date, and time controls
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# 日历、日期和时间控件
 
-Date and time controls give you standard, localized ways to let a user view and set date and time values in your app. This article provides design guidelines and helps you pick the right control.
+日期和时间控件向你提供了标准的本地化方法，可供用户在你的应用中查看并设置日期和时间值。 本文提供设计指南，并帮助你选取正确的控件。
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx"><strong>CalendarView class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx"><strong>CalendarDatePicker class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx"><strong>DatePicker class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx"><strong>TimePicker class</strong></a></li>
-</ul>
+<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
 
-</div>
-</div>
+-   [**CalendarView 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
+-   [**CalendarDatePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
+-   [**DatePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
+-   [**TimePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
 
+## 应使用哪个日期或时间控件？
 
-
-
-
-
-## Which date or time control should you use?
-
-There are four date and time controls to choose from; the control you use depends on your scenario. Use this info to pick the right control to use in your app.
+有四个日期和时间控件可供选择；要使用的控件取决于你的方案。 使用此信息来选取要在你的应用中使用的正确控件。
 
 &nbsp;|&nbsp;|&nbsp;                                                                                                                      
 --------------------|-------|-------------------------------------------------------------------------------------------------------------------------------
-Calendar view       |![Example of calendar view](images/controls_calendar_monthview_small.png)|Use to pick a single date or a range of dates from an always visible calendar.                   
-Calendar date picker|![Example of calendar date picker](images/calendar-date-picker-closed.png)|Use to pick a single date from a contextual calendar. 
-Date picker         |![Example of date picker](images/date-picker-closed.png)|Use to pick a single known date when contextual info isn't important.
-Time picker         |![Example of time picker](images/time-picker-closed.png)|Use to pick a single time value.                                        
+日历视图       |![日历视图示例](images/controls_calendar_monthview_small.png)|用于从始终可见的日历中选取一个日期或日期范围。                   
+日历日期选取器|![日历日期选取器示例](images/calendar-date-picker-closed.png)|用于从上下文日历中选取一个日期。 
+日期选取器         |![日期选取器示例](images/date-picker-closed.png)|用于在上下文信息不重要时选取一个已知日期。
+时间选取器         |![时间选取器示例](images/time-picker-closed.png)|用于选取一个时间值。                                        
 
 <!-- This table seems redundant, not sure it's needed.-->
 
-### Calendar view
+### 日历视图
 
-**CalendarView** lets a user view and interact with a calendar that they can navigate by month, year, or decade. A user can select a single date or a range of dates. It doesn't have a picker surface and the calendar is always visible.
+**CalendarView** 让用户查看可按月份、年份或十年期浏览的日历，并与之交互。 用户可以选择一个日期或日期范围。 它没有选取器图面，并且日历始终可见。
 
-The calendar view is made up of 3 separate views: the month view, year view, and decade view. By default, it starts with the month view open, but you can specify any view as the startup view.
+日历视图中包含 3 个单独的视图：月视图、年视图和十年视图。 默认情况下，它通过打开月视图启动，但你可以将其他视图指定为启动视图。
 
-![Example of calendar date picker](images/calendar-view-3-views.png)
+![日历日期选取器示例](images/calendar-view-3-views.png)
 
-- If you need to let a user select multiple dates, you must use a **CalendarView**.
-- If you need to let a user pick only a single date and don’t need a calendar to be always visible, consider using a **CalendarDatePicker** or **DatePicker** control.
+- 如果需要允许用户选择多个日期，则必须使用 **CalendarView**。
+- 如果需要仅允许用户选取一个日期并且不需要日历始终可见，请考虑使用 **CalendarDatePicker** 或 **DatePicker** 控件。
 
-### Calendar date picker
+### 日历日期选取器
 
-**CalendarDatePicker** is a drop down control that’s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important. You can modify the calendar to provide additional context or to limit available dates.
+**CalendarDatePicker** 是一个下拉式控件，该控件已针对从日历视图中选取某个日期进行了优化，尤其是能够显示诸如星期几或丰富的日历信息等上下文信息。 可以修改日历以提供其他上下文或限制可用日期。
 
-The entry point displays placeholder text if a date has not been set; otherwise, it displays the chosen date. When the user selects the entry point, a calendar view expands for the user to make a date selection. The calendar view overlays other UI; it doesn't push other UI out of the way.
+如果尚未设置日期，入口点将显示占位符文本；否则，它将显示选择的日期。 当用户选择该入口点时，日历视图将进行扩展以供用户选择日期。 日历视图将会覆盖其他 UI；它不会将其他 UI 推开。
 
-![Example of calendar date picker](images/calendar-date-picker-2-views.png)
+![日历日期选取器示例](images/calendar-date-picker-2-views.png)
 
-- Use a calendar date picker for things like choosing an appointment or departure date. 
+- 日历日期选取器可用于选择约会或出发日期等事项。 
 
-### Date picker
+### 日期选取器
 
-The **DatePicker** control provides a standardized way to choose a specific date. 
+**DatePicker** 控件提供了一种用于选择特定日期的标准化方法。 
 
-The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.
+入口点显示选定的日期，当用户选择该入口点时，会从中间垂直展开一个选取器图面以供用户进行选择。 日期选取器会覆盖其他 UI；它不会将其他 UI 推开。
 
-![Example of the date picker expanding](images/controls_datepicker_expand.png)
+![日期选取器展开示例](images/controls_datepicker_expand.png)
 
-- Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.
+- 使用日期选取器以使用户选取日历上下文不重要的已知日期，例如生日。
 
-### Time picker
+### 时间选取器
 
-The **TimePicker** is used to select a single time value for things like appointments or a departure time. It's a static display that is set by the user or in code, but it doesn't update to display the current time. 
+**TimePicker** 用于为约会或出发时间等事项选择一个时间值。 它是由用户或使用代码设置的静态显示方式，但不会更新以显示当前时间。 
 
-The entry point displays the chosen time, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The time picker overlays other UI; it doesn't push other UI out of the way.
+入口点显示选定的时间，当用户选择该入口点时，会从中间垂直展开一个选取器图面以供用户进行选择。 时间选取器会覆盖其他 UI；它不会将其他 UI 推开。
 
-![Example of the time picker expanding](images/controls_timepicker_expand.png)
+![时间选取器展开示例](images/controls_timepicker_expand.png)
 
-- Use a time picker to let a user pick a single time value.
+- 使用时间选取器使用户可以选取单个时间值。
 
-## Create a date or time control
+## 创建一个日期或时间控件
 
-See these articles for info and examples specific to each date and time control.
+有关特定于每个日期和时间控件的信息和示例，请参阅以下这些文章。
 
-- [**Calendar view**](calendar-view.md)
-- [**Calendar date picker**](calendar-date-picker.md)
-- [**Date picker**](date-picker.md)
-- [**Time Picker**](time-picker.md)
+- [**日历视图**](calendar-view.md)
+- [**日历日期选取器**](calendar-date-picker.md)
+- [**日期选取器**](date-picker.md)
+- [**时间选取器**](time-picker.md)
 
-### Globalization
+### 全球化
 
-The XAML date controls support each of the calendar systems supported by Windows. These calendars are specified in the [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) class. Each control uses the correct calendar for your app's default language, or you can set the **CalendarIdentifier** property to use a specific calendar system.
+XAML 日期控件支持 Windows 支持的各种日历系统。 这些日历均在 [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) 类中指定。 每个控件均使用与应用的默认语言对应的正确日历，还可以设置 **CalendarIdentifier** 属性以使用特定的日历系统。
 
-The time picker control supports each of the clock systems specified in the [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) class. You can set the [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) property to use either a 12-hour clock or 24-hour clock. The type of the property is String, but you must use values that correspond to the static string properties of the ClockIdentifiers class. These are: TwelveHour (the string "12HourClock")and TwentyFourHour (the string "24HourClock"). "12HourClock" is the default value.
-
-
-### DateTime and Calendar values
-
-The date objects used in the XAML date and time controls have a different representation depending on your programming language. 
-- C# and Visual Basic use the [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) structure that is part of .NET. 
-- C++/CX uses the [**Windows::Foundation::DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx) structure. 
-
-A related concept is the Calendar class, which influences how dates are interpreted in context. All Windows Runtime apps can use the [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) class. C# and Visual Basic apps can alternatively use the [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) class, which has very similar functionality. (Windows Runtime apps can use the base .NET Calendar class but not the specific implementations; for example, GregorianCalendar.)
-
-.NET also supports a type named [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), which is implicitly convertible to a [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx). So you might see a "DateTime" type being used in .NET code that's used to set values that are really DateTimeOffset. For more info on the difference between DateTime and DateTimeOffset, see Remarks in the [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) class.
-
-> **Note**&nbsp;&nbsp;Properties that take date objects can't be set as a XAML attribute string, because the Windows Runtime XAML parser doesn't have a conversion logic for converting strings to dates as DateTime/DateTimeOffset objects. You typically set these values in code. Another possible technique is to define a date that's available as a data object or in the data context, then set the property as a XAML attribute that references a [\{Binding\} markup extension](../xaml-platform/binding-markup-extension.md) expression that can access the date as data.
+时间选取器控件支持在 [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) 类中指定的每个时钟系统。 若要使用 12 小时制时钟或 24 小时制时钟，可以设置 [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) 属性。 该属性的类型是字符串，但必须使用对应于 ClockIdentifiers 类的静态字符串属性的值。 如下所示：TwelveHour（字符串“12HourClock”）和TwentyFourHour（字符串“24HourClock”）。 “12HourClock”是默认值。
 
 
-## Related topics
+### DateTime 和日历值
 
-**For developers (XAML)**
-- [**CalendarView class**](https://msdn.microsoft.com/library/windows/apps/dn890052)
-- [**CalendarDatePicker class**](https://msdn.microsoft.com/library/windows/apps/dn950083)
-- [**DatePicker class**](https://msdn.microsoft.com/library/windows/apps/dn298584)
-- [**TimePicker class**](https://msdn.microsoft.com/library/windows/apps/dn299280)
+XAML 日期和时间控件中所使用的日期对象具有不同的表示形式，具体取决于你的编程语言。 
+- C# 和 Visual Basic 使用 [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 结构，它是 .NET 的一部分。 
+- C++/CX 使用 [**Windows::Foundation::DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx) 结构。 
+
+相关概念是 Calendar 类，它对在上下文中解释日期的方式产生影响。 所有 Windows 运行时应用都可以使用 [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) 类。 C# 和 Visual Basic 应用还可以使用 [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) 类，该类具有非常类似的功能。 （Windows 运行时应用可使用 .NET 日历基类而非诸如 GregorianCalendar 的特定实现。）
+
+.NET 还支持名为 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 的类型，该类型可隐式转换为 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)。 因此，可能会看到要在 .NET 代码中用于设置实际上是 DateTimeOffset 的值的“DateTime”类型。 有关 DateTime 和 DateTimeOffset 之间的区别的详细信息，请参阅 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 类中的“备注”。
+
+> **注意** &nbsp;&nbsp;获取日期对象的属性不可以设置为 XAML 属性字符串，因为 Windows 运行时 XAML 解析器不具有用于将字符串转换为日期（作为 DateTime/DateTimeOffset 对象）的转换逻辑。 通常使用代码设置这些值。 另一个可行的方法是定义可用作数据对象或在数据上下文中可用的日期，然后将该属性设置为引用 [\{Binding\} 标记扩展](../xaml-platform/binding-markup-extension.md)表达式的 XAML 属性，以便可以作为数据访问该日期。
+
+
+## 相关主题
+
+**对于开发人员 (XAML)**
+- [**CalendarView 类**](https://msdn.microsoft.com/library/windows/apps/dn890052)
+- [**CalendarDatePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn950083)
+- [**DatePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn298584)
+- [**TimePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn299280)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,36 +1,36 @@
 ---
 author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
-title: Printing and scanning
-description: This section describes how to print and scan from your Universal Windows app.
+title: "打印和扫描"
+description: "本部分介绍了如何从你的通用 Windows 应用进行打印和扫描。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e30bfb4f80d955d28799e6a6d5c22b82379a8fc
+ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
 
 ---
-# Printing and scanning
+# 打印和扫描
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section describes how to print and scan from your Universal Windows app.
+本部分介绍了如何从你的通用 Windows 应用进行打印和扫描。
 
-| Topic | Description | 
+| 主题 | 说明 | 
 |-------|-------------|
-| [Epson ESC/POS with formatting](epson-esc-pos-with-formatting.md) | Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer. |
-| [Print from your app](print-from-your-app.md) | Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages. |
-| [Customize the print preview UI](customize-the-print-preview-ui.md) | This section describes how to customize the print options and settings in the print preview UI. |
-| [Scan from your app](scan-from-your-app.md) | Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.|
+| [Epson ESC/POS（可进行格式设置）](epson-esc-pos-with-formatting.md) | 了解如何使用 ESC/POS 命令语言来为服务点打印机设置文本的格式（如粗体和双倍大小字符）。 |
+| [从应用打印](print-from-your-app.md) | 了解如何从通用 Windows 应用中打印文档。 本主题还介绍了如何打印特定页面。 |
+| [自定义打印预览 UI](customize-the-print-preview-ui.md) | 本部分介绍了如何在打印预览 UI 中自定义打印选项和设置。 |
+| [从应用扫描](scan-from-your-app.md) | 在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。|
 
-## Related topics
+## 相关主题
 
-* [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [打印的设计指南](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [//Build 2015 视频：开发可在 Windows 10 中打印的应用](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [UWP 打印示例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

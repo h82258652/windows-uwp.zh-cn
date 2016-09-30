@@ -1,222 +1,222 @@
 ---
 author: joannaleecy
-title: Making games accessible
-description: Learn how to make games accessible. Use the inclusive game design principle to achieve game accessibility.
+title: "使游戏成为辅助游戏"
+description: "了解如何使游戏成为辅助游戏。 使用非独占游戏设计原则实现游戏辅助功能。"
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: d61b834adb50e71ba67ea32662069f257c33a676
-ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
+ms.sourcegitcommit: 2492ff5c8b3ba0331e831234943a1db124f8fa4f
+ms.openlocfilehash: 2b78d767a7ac75e27f759c0eb06953e6158fb88b
 
 ---
-#  Making games accessible
+#  使游戏成为辅助游戏
 
-Accessibility can empower every person and every organization on the planet to achieve more, and this applies to making games more accessible too. This article is written for game developers; specifically game designers, producers, and managers. It provides an overview of game accessibility guidelines derived from various organizations (listed in the reference section below), and introduces the inclusive game design principle for creating more accessible games.
+辅助功能可支持地球上的每个人和每个组织实现更多目标，并且这也适用于使游戏更具辅助性。 本文面向游戏开发人员编写；尤其是游戏设计人员、生产商和管理人员。 它提供了从各种组织（在下方的参考部分中列出）派生的游戏辅助功能指南的概述，并介绍了创建更易于使用的游戏的非独占游戏设计原则。
 
-##  Why make games accessible?
+##  为什么使游戏成为辅助游戏？
 
-### Increased gamer base
+### 增加游戏受众
 
-At its most basic level, the business justification for accessibility is straightforward:
+在最基本的层面上，辅助功能的商业理由很简单：
 
-Number of users who can play your game x Awesomeness of game = Game sales
+能够玩你的游戏的用户数 x 游戏的精彩程度 = 游戏销量
 
-If you made an amazing game that is so complicated or convoluted that only a handful of people can play it, you limit your sales. Similarly, if you made a game that is unplayable by those with physical, sensory, or cognitive impairments, you are missing out on potential sales. Considering that, for example, [19% of people in the United States have some form of disability](http://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), this can potentially have a large impact on your title’s revenue. 
+如果你制作了一款精彩的游戏，但这款游戏很复杂，只有少量的用户可以玩，你的销量便会受到限制。 同样，如果你制作的游戏无法供具有肢体、感官或认知障碍的人士玩，那么你就错过了潜在的销量。 考虑到[单单美国就有 19% 的人口具有某种形式的残障](http://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)，这可能会对你的应用收益产生很大的影响。 
 
-For more business justifications, see [Making Video Games Accessible](https://msdn.microsoft.com/library/windows/desktop/ee415219).
+有关更多商业理由，请参阅[使视频游戏成为辅助游戏](https://msdn.microsoft.com/library/windows/desktop/ee415219)。
 
-### Better games
+### 更好的游戏
 
-Creating a more accessible game can create a better game in the end. 
+创建更易于使用的游戏最终有利于创建更好的游戏。 
 
-An example is subtitles in games. In the past, games rarely supported subtitles or closed captioning for game dialogues. Today, it’s expected that games include subtitles and closed captioning. This change was not driven by gamers with disabilities. Instead, it was driven by gamers who simply preferred to play with subtitles because it made the gaming experience better. Gamers turn subtitles and closed captioning on when they are playing with too much background noise, are having difficulty hearing voices with various sound effects or ambient sounds playing at the same time, or when they simply need to keep the volume low to avoid disturbing others. Subtitles and closed captions not only helped gamers to have a better gaming experience, but it also allows people with hearing disabilities to game as well.
+一个示例是游戏中的字幕。 过去，游戏很少支持游戏对话的字幕或隐藏式字幕。 今天，玩家预期游戏会包含字幕和隐藏式字幕。 这种改变不是具有残障的玩家推动的。 相反，它是由仅仅是偏好在玩游戏时带字幕的玩家推动的，因为它可使游戏体验更好。 当玩家在玩游戏时听到太多背景噪音、在同时播放各种音效或环境声音的情况下难以听到语音，或者当他们只是需要保持低音量来避免打扰其他人时，他们会打开字幕和隐藏式字幕。 字幕和隐藏式字母不仅帮助玩家获得更好的游戏体验，还使具有听觉障碍的人士能更好地玩游戏。
 
-Controller remapping is another feature that is slowly becoming a standard for the game industry for similar reasons. Gamers enjoy customizing their gaming experiences. What most people don’t realize is that the ability to remap buttons on an input device is actually an accessibility feature that was intended to make a game playable for people with various types of motor disabilities.
+控制器重新映射是另一个由于相似原因而正在慢慢成为游戏行业标准的功能。 玩家享受自定义游戏体验的感觉。 大部分人没有意识到的是，在输入设备上重新映射按钮的功能实际上是一种旨在使具有各种类型的运动障碍的人士更容易玩游戏的辅助功能。
 
-Ultimately, the thought process used to make your game more accessible will often result in a better game because you have designed a more user-friendly, customizable experience for your players to enjoy.
+最终，用于提高游戏辅助性的思维过程通常会产生更好的游戏，因为你设计出了更用户友好、更容易自定义的体验来供玩家享受。
 
-### A social space
+### 社交空间
 
-Gaming is a form of entertainment and can provide hours of joy. For some, gaming is not only a form of entertainment but it is an escape from a hospital bed, chronic pain, or debilitating social anxiety. Gamers are transported into a world where they become the main characters in the video game. Through gaming, they can create and participate in a social space for themselves that provides distraction from the day-to-day struggles brought on by their disabilities, and that provides an opportunity to communicate with people they might otherwise be unable to interact with.
+游戏是一种娱乐形式，可以提供几个小时的快乐。 对于某些人来说，游戏不仅是一种娱乐形式，还是一种从病床、慢性疼痛或使人衰弱的社交焦虑的逃避。 玩家被转移到另一个世界，在这个世界中他们可以成为视频游戏中的主角。 通过玩游戏，他们可以为自己创造社交空间并参与其中，从而使他们从由他们的障碍所引发的日常痛苦中解脱出来，并且得到与无法通过其他方式进行互动的人交流的机会。
 
-##  Is the game you are making today accessible?
+##  你现在正在制作的游戏是辅助游戏吗？
 
-If you are thinking about making your game accessible for the first time, here are some questions to ask yourself:
+如果你正在考虑第一次使你的游戏成为辅助游戏，下面是你需要自问的问题：
 
-* Can you complete the game using a single hand? 
-* Can an average person be able to pick the game up and play?
-* Can you effectively play the game on a small monitor or TV sitting at a distance?
-* Do you support more than one type of input device that can be used to play through the entire game?
-* Can you play the game with sound muted?
-* Can you play the game with your monitor set to black and white?
+* 你是否能够使用单手完成游戏？ 
+* 一般人是否能对游戏轻松上手？
+* 你是否能够在一段距离之外在小型监视器或电视上玩游戏？
+* 你是否支持使用多种类型的输入设备玩完整个游戏？
+* 你是否能够在静音的情况下玩游戏？
+* 你是否能够在将监视器设置为黑白的情况下玩游戏？
 
-If your answers are mostly no, or you do not know the answers, it is time to step up and put accessibility into your game.
+如果你的答案大部分都是否，或者你不知道答案，那么是时候设置辅助功能并将其放到你的游戏中了。
 
-## Defining disability
+## 定义残障
 
-Disability is defined as "a mismatch between the needs of the individual and the service, product or environment offered." ([Inclusive video](https://www.microsoft.com/design/inclusive), Microsoft.com.) This means that anyone can experience a disability, and that it can be a short-term or situational condition. Envision what challenges gamers with these conditions might have when playing your game, and think about how your game can be better designed for them. Here are some disabilities to consider:
+残障定义为“个体的需求与所提供的服务、产品或环境之间的不匹配”。 （[非独占视频](https://www.microsoft.com/design/inclusive)，Microsoft.com。）这意味着任何人都可能体验残障，它可以是短期或情境式的状况。 想象一下具有这些状况的玩家在玩游戏时可能遇到的挑战，并思考如何针对它们更好地设计你的游戏。 下面是需要考虑的某些残障：
 
-### Vision
+### 视觉
 
-*   Medical, long-term conditions like glaucoma, cataracts, color blindness, near-sightedness, and diabetic retinopathy
-*   Short-term, situational conditions like a small monitor or screen size, a low resolution screen, or screen glare due to bright light sources on a monitor
+*   医学的、长期的状况，如青光眼、白内障、色盲、近视和糖尿病视网膜病
+*   短期的、情境式的状况，如监视器或屏幕尺寸较小、屏幕分辨率低，或者由监视器上的明亮光源产生的屏幕炫光
         
-### Hearing
+### 听觉
 
-* Medical, long-term conditions like complete deafness or partial hearing loss due to diseases or genetics
-* Short-term, situational conditions like excessive background noise, or restricted volume to avoid disturbing others
+* 医学的、长期的状况，如由疾病或遗传引发的完全失聪或部分听力损失
+* 短期的、情境式的状况，如背景噪音过大，或为避免打扰他人而限制了音量
         
-### Motor
+### 运动
 
-* Medical, long-term conditions like Parkinson’s disease, amyotrophic lateral sclerosis (ALS), arthritis, and muscular dystrophy
-* Short-term, situational conditions like an injured hand, holding a beverage, or carrying a child in one arm
+* 医学的、长期的状况，如帕金森病、肌萎缩侧索硬化 (ALS)、关节炎和肌肉萎缩症
+* 短期的、情境式的状况，如手受伤、拿着饮料或手臂中怀抱孩子
   
-### Cognitive
+### 认知
 
-* Medical, long-term conditions like dyslexia, epilepsy, attention deficit hyperactivity disorder (ADHD), dementia, and amnesia
-* Short-term, situational conditions like lack of sleep, or temporary distractions like siren from an emergency vehicle driving by the house
+* 医学的、长期的状况，如诵读困难、癫痫、注意缺陷多动障碍、痴呆和健忘症
+* 短期的、情境式状况，如缺乏睡眠或者由房屋旁边驶过的紧急车辆发出的鸣笛等所引发的暂时分心
 
-### Speech
+### 发言
 
-* Medical, long-term conditions like vocal cord damage, dysarthria, and apraxia
-* Short-term, situational conditions like dental work, or eating and drinking
+* 医学的、长期的状况，如声带损伤、构音障碍和失用症
+* 短期的、情境式的状况，如牙科工作或正在吃饭和喝水
 
 
-## How to make games more accessible?
+## 如何提高游戏的辅助性？
 
-### Design shift: Inclusive game design approach
+### 设计转变：非独占游戏设计方法
 
-Inclusive design focuses on creating products and services more accessible to a broader spectrum of consumers, including people with disabilities.
+非独占设计侧重于创建更容易供更广泛的消费者（包括残障人士）使用的产品和服务。
 
-To be successful, today’s game designers need to think beyond creating fun games for a small, targeted audience. Game designers need to be aware of how their design decisions impact the overall accessibility of the game; the playability of the game for their overall potential audience, including those with disabilities.
+为了获取成功，当今的游戏设计师需要跳出为小部分目标受众创造有趣游戏的思维。 游戏设计师需要注意他们的设计决策如何影响游戏的总体辅助性；游戏对其总体潜在受众（包括残障人士）的可玩性。
 
-As such, traditional game design paradigms must shift to embrace the inclusive game design concept. Inclusive game design means going beyond the basic game design of creating fun for the target audience, to creating additional or modified personas to include a wider spectrum of players. 
+因此，传统游戏设计模式必须转变，以拥抱非独占游戏设计概念。 非独占游戏设计意味着超越为目标受众创造快乐的基本游戏设计；创造额外或经修改的人物角色以包含更广泛的人群。 
 
-This extra step helps to identify gaps in the original design. By identifying gaps, you can iterate on the original design concept and make it better. When you take the time to be more inclusive in your game design process, your final game becomes more accessible.
+此额外步骤有助于识别原始设计中的差异。 通过识别差异，你可以迭代原始设计概念，并使其更好。 当你花时间在游戏设计过程中更具包含性时，你最终的游戏也会变得更具辅助性。
 
-### Empower gamers: Give gamers options
+### 支持玩家：为玩家提供选择
 
-Accessibility is all about options. Give your gamers the options to customize their gaming experience. If you already have a huge fan base, you may have a significant portion of your audience who do not want the experience to change in any way. That’s okay. Give your gamers the ability to turn these features on and off, and make features configurable individually.
+辅助功能的关键在于提供选择。 为你的玩家提供自定义其游戏体验的选择。 如果你已经有大量粉丝群体，你的受众可能有很大一部分不希望体验发生任何形式的变化。 没关系。 为你的玩家提供打开和关闭这些功能的功能，并使这些功能可以单独配置。
 
-### Innovate: Be creative
+### 创新：有创意
 
-There are many creative ways to improve the accessibility of your game. Put on your creative hat and learn from other accessible games out there. If you already have an existing game, learn to identify current game features that could be improved while keeping the core game mechanics and experience as designed. As mentioned above, accessibility in games is all about providing gamers with options to customize their gaming experience.
+提高游戏的辅助性有许多有创意的方式。 戴上有创意的帽子，向现存的其他辅助游戏学习。 如果你已经有一个现有的游戏，请学会识别可进行改进的当前游戏功能，同时使核心游戏机制和体验保持设计原样。 如上所述，游戏中的辅助功能的关键在于为玩家提供自定义其游戏体验的选项。
 
-### Evangelize: Make accessibility a priority in your game studio
+### 布道：使辅助功能成为游戏工作室中的优先事项
 
-Game development is always running on a tight timeline, so prioritizing accessibility will help make it an easier process. One way is to design from the start with accessibility in mind. Share your knowledge about accessibility with your team, and share the business justifications.
+游戏开发始终按照紧凑的时间线进行，因此优先安排辅助功能将使此过程更轻松。 一种方法是从一开始是就带着辅助功能的思维。 与你的团队分享关于辅助功能的知识，并分享商业理由。
 
-### Review: Constantly evaluate your game
+### 审核：经常评估你的游戏
 
-During development, you can introduce a review process to make sure that at every step of the way you are thinking about accessibility. Make a checklist like the one below to help your team constantly evaluate whether what you are creating is accessible or not.
+在开发期间，你可以引入一个审核过程来确保你在途中的每个步骤都思考辅助功能。 制作类似如下的清单来帮助你的团队经常评估你正在创建的内容是否具有辅助性。
 
-| Checklist                                         | Accessibility features                                                                                                         |
+| 清单                                         | 辅助功能                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| In-game cinematics                                | Has subtitles and captions, photosensitivity tested                                                                           |
-| Overall artwork (2D and 3D graphics)              | Colorblind friendly colors and options, not dependent entirely on color for identification but use shapes and patterns as well|
-| Start screen, settings menu and other menus       | Ability to read options aloud, ability to remember settings, alternate command control input method, adjustable UI font size  |
-| Gameplay                                          | Wide adjustable difficulty levels, subtitles and captions, good visual and audio feedback for gamer                           |
-| HUD display                                       | Adjustable screen position, adjustable font size, colorblind friendly option                                                  |        
-| Control input                                     | Mappable controls to input device, custom controller support, simplified input for game allowed                               |        
+| 游戏内电影                                | 具有字幕和描述文字，经过光敏性测试                                                                           |
+| 整体插图（2D 和3D 图形）              | 色盲友好的颜色和选项，不完全依靠颜色来进行识别，还使用形状和图案|
+| “开始”评估、设置菜单和其他菜单       | 朗读选项的功能、记住设置的功能、备用命令控制输入法、可调整的 UI 字体大小  |
+| 游戏玩法                                          | 广泛的可调整难度级别、字幕和描述文字、对玩家的良好视觉和听觉反馈                           |
+| HUD 屏幕                                       | 可调整的屏幕位置、可调整的字体大小、色盲友好的选项                                                  |        
+| 控制输入                                     | 输入设备的可映射控制、自定义控制器支持、简化所允许游戏的输入                               |        
 
-### Playtest and iterate: Get gamers' feedback
+### 试玩和迭代：获取玩家的反馈
 
-When organizing playtesting sessions, invite play testers with disabilities that your game is designed for and get them to play your game. Observe how they play and get feedback from them. Figure out what changes need to be made to make the game better.
+在组织试玩会议时，邀请具有你的游戏设计所面向的残障的试玩人员，并使他们玩你的游戏。 观察他们如何玩，并获取他们的反馈。 确定为了使游戏更好需要进行哪些更改。
 
-### Shout it out: Let the world know your game is accessible
+### 大声宣布：让全世界知道你的游戏是辅助游戏
 
-Consumers will want to know if your game can be played by gamers with disabilities. State the game’s accessibility clearly on the game website and packaging to ensure that consumers know what to expect when they buy your game. Remember to make your website and all sales channels to the game accessible as well. Most importantly, reach out to the accessibility gaming community and tell them about your game.
+客户将希望知道具有残障的玩家是否可以玩你的游戏。 在游戏网站和包装上清楚地陈述游戏的辅助功能，以确保消费者在购买游戏时知道应该期待哪些内容。 记得使你的游戏的网站和所有销售渠道也具有辅助性。 最重要的是，向外扩展到游戏社区，告诉他们关于你的游戏的信息。
 
-## Game accessibility features
+## 游戏辅助功能
 
-This section outlines some features that can make your game more accessible. These features are derived from guidelines taken from the [Game accessibility guidelines](http://gameaccessibilityguidelines.com/), which represent the findings of a collaborative group of studios, specialists, and academics. For more information, see [Game accessibility guidelines](http://gameaccessibilityguidelines.com/). 
+本部分概述可使你的游戏更具辅助性的一些功能。 这些功能派生自[游戏辅助功能指南](http://gameaccessibilityguidelines.com/)中的指南，这些指南代表了由工作室、专家和学者组成的合作团体的研究成果。 有关详细信息，请参阅[游戏辅助功能指南](http://gameaccessibilityguidelines.com/)。 
 
-### Colorblind friendly graphics and user interface
+### 色盲友好图形和用户界面
 
-The retina of the eye has two types of light-sensitive cells: the cones for seeing where there is light, and the rods for seeing in low light conditions. There are three types of cones (red, green, and blue) to enable us to view colors correctly. Colorblindness occurs when one or more of these three types light cones is not functioning as expected. The degree of colorblindness can range from almost normal color perception with reduced sensitivity towards red, green, or blue light, to a complete inability to perceive red, green, or blue color. Since it’s less common to have reduced sensitivity to blue light, when designing for the colorblind, the selection of colors are geared towards people who are red or green colorblind:
+眼睛的视网膜具有两种类型的感光细胞：用于查看光所在位置的视锥细胞和用于在弱光条件下查看的视杆细胞。 有三种类型的视锥细胞（红色、蓝色和蓝色）来使我们能够正确查看颜色。 当这三种类型的光视锥细胞中的一种或多种无法按预期运作时，会发生色盲现象。 色盲程度的范围是，从几乎正常的颜色识别（仅对红色、绿色或蓝色光的敏感度较低），到完全无法识别红色、绿色或蓝色。 由于对蓝色光敏感度低的现象较少见，因此在针对色盲进行设计时，颜色的选择通常面向红色或绿色色盲：
  
-  + Use color combinations that can be differentiated by people with red/green colorblindness:
+  + 使用具有红色/绿色色盲的人士可识别的颜色组合：
   
-    * Colors that appear similar: All shades of red and green including brown and orange
-    * Colors that stand out: Blue and yellow
+    * 看起来相似的颜色：红色和绿色的所有色度，包括棕色和橙色
+    * 显眼的颜色：蓝色和黄色
     
-  + Do not rely solely on color to distinguish game objects—use shapes and patterns as well
+  + 不要单单依靠颜色区分游戏对象；还要使用形状和图案
   
-### Closed captioning and subtitles
+### 隐藏式字幕和字幕
 
-When designing the closed captions and subtitles for your game, the objective is provide readable captions as an option so that your game can also be enjoyed without audio. It should be possible to have game components like game dialogues, game audio, and sound effects displayed as text on screen.
+在为游戏设计隐藏式字幕和字幕时，目标是提供可读的描述文字作为一个选项，以便没有音频也可以享受你的游戏。 应该可以将游戏对话、游戏音频和音效等游戏组件在屏幕上以文字的形式显示。
 
-Here are some basic guidelines to consider when designing closed captions and subtitles:
+下面是在设计隐藏式字幕和字幕时需要考虑的一些基本指南：
 
-*   Select simple readable font.
-*   Select sufficiently large font size, or consider having adjustable font size option for more flexibility. (Ideal font size depends on screen size, viewing distance from screen, and so on.)
-*   Create high contrast between background and font color. (For more information, see [Information on contrast ratio](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements).)
-* Display short sentences on screen. (Remember not to give the game away by displaying the text before event occurs.)
-*   Differentiate what is making the sound or who is talking. (Example: "Daniel: Hi!")
-*   Provide the option to turn closed captions and subtitles on and off. (Additional feature: Ability to select how much sound information is displayed based on importance.)
+*   选择简单易读的字体。
+*   选择足够大的字体大小，或者考虑使用可调整的字体大小选项来增加灵活性。 （理想的字体大小取决于屏幕大小、离屏幕的观看的距离等。）
+*   在背景和字体颜色之间创造高对比度。 （有关详细信息，请参阅[关于对比度比率的信息](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements)。）
+* 在屏幕上显示较短的句子。 （记得不要在事件发生前就显示文字，从而泄露游戏情节。）
+*   区分制造声音的物体或说话的人。 （示例：“Daniel：嗨！”）
+*   提供打开和关闭隐藏式和字幕的选项。 （其他功能：基于重要性选择显示多少声音信息的功能。）
 
-### Sound feedback
+### 声音反馈
 
-Sound provides feedback to the player, in addition to visual feedback. Good game audio design can improve accessibility for players with visual impairment. Here are some guidelines to consider:
+声音可以向玩家提供视觉反馈之外的反馈。 出色的游戏音频设计可以使具有视觉障碍的玩家更容易使用。 下面是要考虑的某些指南：
 
-*   Use 3D audio cues to provide additional spatial information.
-* Separate music, speech and sound effects volume controls.
-*   Design speech that provides meaningful information for gamers. (Example: "Enemies are approaching" vs. "Enemies are entering from the back door.")
-*   Ensure speech is spoken at a reasonable rate, and provide rate control for better accessibility.
+*   使用 3D 音频提示来提供额外的空间信息。
+* 将音乐、语音和音效音量控件分离。
+*   设计为玩家提供有意义信息的语音。 （示例：“敌人正在靠近我们”与“敌人正在从后门进入”。）
+*   确保以合理的速率说出语音，并提供语速控件以提高辅助性。
 
-### Fully mappable controls
+### 完全可映射控制
 
-There are companies and organizations, such as [Special Effect](http://www.specialeffect.org.uk/), that design custom game controllers that can be used with various gaming systems like Windows and Xbox One. This customization allows people with different forms of disabilities to play games they might not be able to play otherwise. For more information on people who are now able to play games independently because of customized controllers, see [who they helped](http://www.specialeffect.org.uk/who-we-helped).
+有些公司和组织（如 [Special Effect](http://www.specialeffect.org.uk/)）设计可与各种游戏系统（如 Windows 和 Xbox One）结合使用的自定义游戏控制器。 此自定义使具有不同形式的残障的人士能够玩本来不能玩的游戏。 有关现在由于自定义控制器而能够独立玩游戏的人员的详细信息，请参阅[它们帮助了谁](http://www.specialeffect.org.uk/who-we-helped)。
 
-As a game developer, you can make your game more accessible by allowing fully mappable controls so that gamers have the option to plug in their custom controllers and remap the keys according to their needs.
+作为游戏开发人员，你可以通过允许完全可映射的控制来使游戏更具辅助性，以便使玩家可以选择插入其自己的自定义控制器，并根据需要重新映射按键。
 
-Both standard Xbox One and Xbox Elite controllers offer customization of the controllers for precision gaming. For more information, see [Xbox One](http://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) and [Xbox Elite](http://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller).
+标准 Xbox One 和 Xbox Elite 控制器都提供控制器的自定义用于精确游戏。 有关详细信息，请参阅 [Xbox One](http://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) 和 [Xbox Elite](http://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller)。
 
-### Wider selection of difficulty levels
+### 较广的难度级别选择
 
-Video games provide entertainment. The challenge for game developers is to tune the difficulty level such that the gamer experiences the right amount challenge. Firstly, not all gamers have the same skill level and capability, so designing a wider selection of difficulty options increases the chance of providing gamers with the right amount of challenge. At the same time, this wider selection also makes your video game more accessible because it could potentially allow more people with disabilities to play your game. Remember, gamers want to overcome challenges in a game and be rewarded for it. They do not want a game that they cannot win.
+视频游戏提供娱乐。 对游戏开发人员的挑战是调整难度级别，以便玩家体验适量的挑战。 首先，并非所有玩家都有相同的技巧水平和能力，因此设计较广的难度选项选择可增加为玩家提供适量挑战的几率。 同时，这种较广的选择还可使你的视频游戏更具辅助性，因为它可能会使更多的残障人士来玩你的游戏。 请记住，玩家希望在游戏中克服挑战，并为此获得奖赏。 他们不需要不能赢的游戏。
 
-Tweaking the difficulty level of your game is a delicate process. If it is too easy, gamers might get bored. If it is too difficult, gamers may give up and not play any further from that point on. The balancing process is both art and science. There are many ways to make a game level that has the right amount of challenge. Some games offer simplified inputs, like a single button press game option for their game, a rewind and replay option to make gameplay more forgiving, or less and weaker enemies to make it easier to proceed forward after several tries.
+调整游戏的难度级别是一个微秒的过程。 如果太简单，玩家可能会无聊。 如果太难，玩家可能会放弃，并且不再从该点继续玩下去。 权衡的过程同时具有艺术性和科学性。 有多种方法可使游戏关卡具有适量的挑战。 某些游戏提供简化的输入（如其游戏的单按钮游戏选项）、提供倒回和重玩的选项来使游戏玩法更宽松，或者在多次尝试后减少和弱化敌人以便更容易前进。
 
-### Photosensitivity epilepsy testing
+### 光敏性癫痫测试
 
-Photosensitive epilepsy (PSE) is a condition where seizures are triggered by visual stimuli like exposures to flashing lights or certain moving visual forms and patterns. This occurs in about three percent of people and is more common in children and adolescents.
+光敏性癫痫 (PSE) 是一种由视觉刺激（如暴露在闪光灯或特定的移动视觉形式和模式下）触发病情发作的病症。 大约 3% 的人会出现此病症，并且在儿童和青少年中更常见。
 
-There are many factors that can cause a photosensitive reaction when playing video games, including the duration of gameplay, the frequency of the flash, the intensity of the light, the contrast of the background and the light, the distance between the screen and the gamer, and the wavelength of the light.
+在玩视频游戏时，有许多因素可能会导致光敏反映，包括游戏的持续时间、闪光的频率、光的强度、背景和光的对比度、屏幕和玩家之间的距离以及光的波长。
 
-As a developer, here are some tips for designing a game to include gamers who have the tendency for photosensitive epilepsy:
+作为开发人员，下面是一些设计游戏的提示，用于包含具有光敏性癫痫倾向的玩家：
 
-*   Avoid having flashing lights with a frequency of 5 to 30 flashes per second (Hertz) because flashing lights in that range are most likely to trigger seizures.
-*   Use an automated system to check gameplay for stimuli that could trigger photosensitive epilepsy. (Example: [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/) developed by Cambridge Research System Ltd and Professor Graham Harding.) 
-*   Design for breaks between game levels, encouraging players to take a break from playing non-stop.
+*   避免使用频率为每秒 5 到 30 次闪光（赫兹）的闪光灯，因为该范围内的闪光灯最有可能触发病情发作。
+*   使用自动系统检查游戏中是否有可能触发光敏性癫痫的刺激物。 （示例：Cambridge Research System Ltd 和 Graham Harding 教授开发的 [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/)。） 
+*   在游戏关卡之间设计中断，鼓励玩家休息，避免不间断地玩。
 
-## Other accessibility resources
+## 其他辅助功能资源
 
-Here are some external sites that provide additional information about game accessibility.
+下面是一些提供关于游戏辅助功能的其他信息的外部站点。
 
-### Game accessibility guidelines
-* [Game accessibility guidelines](http://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation guidelines](http://www.includification.com/)
-* [Design Universally Accessible (UA) games](http://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+### 游戏辅助功能指南
+* [游戏辅助功能指南](http://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation 指南](http://www.includification.com/)
+* [设计通用辅助 (UA) 游戏](http://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
-### Custom input controllers
-* [Special effect](http://www.specialeffect.org.uk/)
-* [War fighter engaged](http://www.warfighterengaged.org/)
+### 自定义输入控制器
+* [特殊效果](http://www.specialeffect.org.uk/)
+* [参战的战争斗士](http://www.warfighterengaged.org/)
 
-## References used
-* [Game accessibility guidelines](http://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation guidelines](http://www.includification.com/)
-* [Color Blind Awareness, a Community Interest Company](http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [How to do subtitles well- a blog article on Gamasutra by Ian Hamilton](http://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [Innovation for All Programme](http://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+## 使用的参考
+* [游戏辅助功能指南](http://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation 指南](http://www.includification.com/)
+* [Color Blind Awareness，一家社区利益公司](http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [如何良好地添加字幕 - Gamasutra 上的一篇博客文章，作者 Ian Hamilton](http://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [面向所有人的创新计划](http://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 
-## Related links
-* [Inclusive Design](https://www.microsoft.com/design/inclusive)
-* [Microsoft Accessibility Developer Hub](https://developer.microsoft.com/windows/accessible-apps)
-* [Developing accessible UWP apps](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
-* [Engineering Software For Accessibility eBook](https://www.microsoft.com/download/details.aspx?id=19262)
+## 相关链接
+* [非独占设计](https://www.microsoft.com/design/inclusive)
+* [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
+* [开发辅助 UWP 应用](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
+* [针对辅助功能设计软件电子书](https://www.microsoft.com/download/details.aspx?id=19262)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

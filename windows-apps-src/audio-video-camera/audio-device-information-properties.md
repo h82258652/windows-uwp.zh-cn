@@ -1,33 +1,29 @@
 ---
 author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
-description: This article lists the DeviceInformation properties related to audio devices
-title: Audio device information properties
+description: "本文列出了与音频设备相关的 DeviceInformation 属性"
+title: "音频设备信息属性"
 translationtype: Human Translation
-ms.sourcegitcommit: 0745e96715ba49582ab762d4b25f1b8e681116f5
-ms.openlocfilehash: 08ebb37679d1dd93458a3ffe846d8bd33574635d
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b1bcb5b005e82303884c2e096356d5a0f542b1e1
 
 ---
 
-# Audio device information properties
+# 音频设备信息属性
 
-This article lists the device information properties related to audio devices. On Windows, each hardware device has associated [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) properties providing detailed information about a device that you can use when you need specific information about the device or when you are building a device selector. For general information about enumerating devices on Windows, see [Enumerate devices](../devices-sensors/enumerate-devices.md) and [Device information properties](../devices-sensors/device-information-properties.md).
+本文列出了与音频设备相关的设备信息属性。 在 Windows 上，每台硬件设备均已关联了 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 属性，该属性可提供在你需要关于设备的特定信息或生成设备选择器时可以使用的关于设备的详细信息。 有关在 Windows 上枚举设备的常规信息，请参阅 [**Enumerate devices（枚举设备）**](../devices-sensors/enumerate-devices.md)和 [**Device information properties（设备信息属性）**](../devices-sensors/device-information-properties.md)。
 
 
-|Name|Type|Description|
+|名称|类型|说明|
 |------------------------------------------------------------|------------|------------------------------------------------------|
-|**System.Devices.AudioDevice.Microphone.SensitivityInDbfs**|Double|Specifies the microphone sensitivity in decibels relative to full scale (dBFS) units.|
-|**System.Devices.AudioDevice.Microphone.SignalToNoiseRationInDb**|Double|Specifies the microphone signal to noise ratio (SNR) measured in decibel (dB) units.|
-|**System.Devices.AudioDevice.SpeechProcessingSupported**|Boolean|Indicates whether the audio device supports speech processing.|
-|**System.Devices.AudioDevice.RawProcessingSupported**|Boolean|Indicates whether the audio device supports raw processing.|
-|**System.Devices.MicrophoneArray.Geometry**|unsigned char[]|Geometry data for a microphone array.|
+|**System.Devices.AudioDevice.SpeechProcessingSupported**|布尔值|指示音频设备是否支持语音处理。|
+|**System.Devices.AudioDevice.RawProcessingSupported**|布尔值|指示音频设备是否支持原始处理。|
+|**System.Devices.MicrophoneArray.Geometry**|未签名的字符[]|麦克风阵列的几何结构数据。|
+## 相关主题
 
-## Related topics
-
-* [Enumerate devices](../devices-sensors/enumerate-devices.md)
-* [Device information properties](../devices-sensors/device-information-properties.md)
-* [Build a device selector](../devices-sensors/build-a-device-selector.md)
-* [Media playback](media-playback.md)
+* [**枚举设备**](../devices-sensors/enumerate-devices.md)
+* [**设备信息属性**](../devices-sensors/device-information-properties.md)
+* [**生成设备选择器**](../devices-sensors/build-a-device-selector.md)
 
 
 
@@ -35,6 +31,6 @@ This article lists the device information properties related to audio devices. O
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

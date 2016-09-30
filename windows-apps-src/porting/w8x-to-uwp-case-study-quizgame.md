@@ -1,120 +1,120 @@
 ---
 author: mcleblanc
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
-description: This topic presents a case study of porting a functioning peer-to-peer quiz game WinRT 8.1 sample app to a Windows 10 Universal Windows Platform (UWP) app.
-title: Windows Runtime 8.x to UWP case study, QuizGame peer-to-peer sample app
+description: "本主题介绍了一个将正在运行的对等测验游戏 WinRT 8.1 示例应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。"
+title: "Windows 运行时 8.x 到 UWP 案例研究，QuizGame 对等示例应用"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 353ee8511be38ad437a64e153d43523f355e080f
+ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
 
 ---
 
-# Windows Runtime 8.x to UWP case study: QuizGame peer-to-peer sample app
+# Windows 运行时 8.x 到 UWP 案例研究：QuizGame 对等示例应用
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This topic presents a case study of porting a functioning peer-to-peer quiz game WinRT 8.1 sample app to a Windows 10 Universal Windows Platform (UWP) app.
+本主题介绍了一个将正在运行的对等测验游戏 WinRT 8.1 示例应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。
 
-A Universal 8.1 app is one that builds two versions of the same app: one app package for Windows 8.1, and a different app package for Windows Phone 8.1. The WinRT 8.1 version of QuizGame uses a Universal Windows app project arrangement, but it takes a different approach and it builds a functionally distinct app for the two platforms. The Windows 8.1 app package serves as the host for a quiz game session, while the Windows Phone 8.1 app package plays the role of the client to the host. The two halves of the quiz game session communicate via peer-to-peer networking.
+通用 8.1 应用是生成同一应用的两个版本的应用：一个应用包用于 Windows 8.1，另一个应用包用于 Windows Phone 8.1。 QuizGame 的 WinRT 8.1 版本使用 Universal Windows App 项目安排，但它采用不同的方式，并且为两个平台构建功能不同的应用。 Windows 8.1 应用包可用作测验游戏会话的主机，而 Windows Phone 8.1 应用包用作该主机的客户端。 测验游戏会话的两个部分通过对等网络进行通信。
 
-Tailoring the two halves to PC, and phone, respectively makes good sense. But, wouldn't it be even better if you could run both the host and the client on just about any device of your choosing? In this case study, we'll port both apps to Windows 10 where they will each build into a single app package that users can install onto a wide range of devices.
+针对电脑和手机定制两个部分，每个部分都很有意义。 但是，如果你刚好可以在你选择的任何设备上运行主机和客户端不是更好吗？ 在此案例研究中，我们将两个应用都移植到 Windows 10，它们将在其中分别生成到单个应用包中，用户可将该应用包安装到种类广泛的设备上。
 
-The app uses patterns that make use of views and view models. As a result of this clean separation, the porting process for this app is very straightforward, as you'll see.
+该应用使用可充分利用视图和视图模型的模式。 由于此明确的分离，此应用的移植过程如你所将看到的一样，非常直观简单。
 
-**Note**  This sample assumes your network is configured to send and receive custom UDP group multicast packets (most home networks are, although your work network may not be). The sample also sends and receives TCP packets.
-
- 
-
-**Note**   When opening QuizGame10 in Visual Studio, if you see the message "Visual Studio update required", then follow the steps in [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
+**注意** 此示例假定你的网络已配置为发送和接收自定义 UDP 组多播数据包（大部分家庭网络都是如此，尽管你的工作网络可能不是）。 该示例还发送和接收 TCP 数据包。
 
  
 
-## Downloads
+**注意** 在 Visual Studio 中打开 QuizGame10 时，如果你看到消息“需要 Visual Studio 更新”，则按照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion) 中的步骤进行操作。
 
-[Download the QuizGame Universal 8.1 app](http://go.microsoft.com/fwlink/?linkid=532953). This is the initial state of the app prior to porting. 
+ 
 
-[Download the QuizGame10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532954). This is the state of the app just after  porting. 
+## 下载
 
-[See the latest version of this sample on GitHub](https://github.com/Microsoft/Windows-appsample-quizgame).
+[下载 QuizGame 通用 8.1 应用](http://go.microsoft.com/fwlink/?linkid=532953)。 这是应用在移植之前的初始状态。 
 
-## The WinRT 8.1 solution
+[下载 QuizGame10 Windows 10 应用](http://go.microsoft.com/fwlink/?linkid=532954)。 这是应用刚移植后的状态。 
+
+[在 GitHub 上查看此示例的最新版本](https://github.com/Microsoft/Windows-appsample-quizgame)。
+
+## WinRT 8.1 解决方案
 
 
-Here’s what QuizGame—the app that we're going to port—looks like.
+QuizGame（我们将移植的应用）的外观如下。
 
-![the quizgame host app running on windows](images/w8x-to-uwp-case-studies/c04-01-win81-how-the-host-app-looks.png)
+![在 Windows 上运行的 QuizGame 主机应用](images/w8x-to-uwp-case-studies/c04-01-win81-how-the-host-app-looks.png)
 
-The QuizGame host app running on Windows
+在 Windows 上运行的 QuizGame 主机应用
 
  
 
-![the quizgame client app running on windows phone](images/w8x-to-uwp-case-studies/c04-02-wp81-how-the-client-app-looks.png)
+![在 Windows Phone 上运行的 QuizGame 客户端应用](images/w8x-to-uwp-case-studies/c04-02-wp81-how-the-client-app-looks.png)
 
-The QuizGame client app running on Windows Phone
+在 Windows Phone 上运行的 QuizGame 客户端应用
 
-## A walkthrough of QuizGame in use
+## 正在使用的 QuizGame 的操作实例
 
-This is a short hypothetical account of the app in use, but it provides useful info should you want to try out the app for yourself over your wireless network.
+这是对正在使用的应用的简短假设描述，但是如果你希望在无线网络上亲自试用该应用，它将提供有用的信息。
 
-A fun quiz game is taking place in a bar. There's a big TV in the bar that everyone can see. The quizmaster has a PC whose output is being shown on the TV. That PC has "the host app" running on it. Anyone who wants to take part in the quiz just needs to install "the client app" on their phone or Surface.
+酒吧中正在举行一场有趣的测验。 酒吧中有一台每个人都可以看到的大电视机。 测验主持人有一台电脑，其输出正显示在电视机上。 该电脑上有一个“主机应用”正在运行。 任何想要参与测验的人只需在他们的手机或 Surface 上安装“客户端应用”。
 
-The host app is in lobby mode, and on the big TV, it's advertising that it's ready for client apps to connect. Joan launches the client app on her mobile device. She types her name into the **Player name** text box and taps **Join game**. The host app acknowledges that Joan has joined by displaying her name, and Joan’s client app indicates that it's waiting for the game to begin. Next, Maxwell goes through those same steps on his mobile device.
+主机应用处于大厅模式，在大电视机上，它宣告客户端应用可以连接。 Joan 在她的移动设备上启动客户端应用。 她将她的名字键入“玩家名称”****文本框并点击“加入游戏”****。 主机应用通过显示 Joan 的名字来示意她已加入，并且 Joan 的客户端应用指示它正在等待游戏开始。 接下来，Maxwell 在他的移动设备上完成这些相同的步骤。
 
-The quizmaster clicks **Start game** and the host app shows a question and the possible answers (it also shows a list of the joined players in normal fontweight, colored gray). Simultaneously, the answers appear displayed on buttons on joined client devices. Joan taps the button with the answer "1975" on it whereupon all her buttons become disabled. On the host app, Joan’s name is painted green (and becomes bold) in acknowledgment of the receipt of her answer. Maxwell answers, also. The quizmaster, noting that all players' names are green, clicks **Next question**.
+测验主持人单击“开始游戏”****，然后主机应用显示一个问题和可能的答案（它还以正常字体粗细和灰色显示已加入玩家的列表）。 同时，答案显示在已加入客户端设备的按钮上。 Joan 点击上面带有答案“1975”的按钮，此时她的所有按钮都变为禁用状态。 在主机应用上，Joan 的名字被涂成绿色（并且变为粗体），以此示意已收到她的答案。 Maxwell 也给出了答案。 测验主持人注意到所有玩家的名字都变为绿色后，单击“下一个问题”****。
 
-Questions continue to be asked and answered in this same cycle. When the last question is being shown on the host app, **Show results** is the content of the button, and not **Next question**. When **Show results** is clicked, the results are shown. Clicking **Return to lobby** returns to the beginning of the game lifecycle with the exception that joined players remain joined. But, going back to the lobby gives new players a chance to join, and even a convenient time for joined players to leave (although a joined player can leave at any time by tapping **Leave game**).
+以这一相同的循环方式继续提出问题和回答问题。 当最后一个问题显示在主机应用上时，按钮的内容是“显示结果”****，而不是“下一个问题”****。 当单击“显示结果”****时，将显示结果。 通过单击“返回大厅”****可返回到游戏开始时的状态，只是已加入的玩家仍然保持加入状态。 但是返回大厅为新玩家提供了加入的机会，甚至为已加入的玩家提供了便于离开的时间（尽管已加入玩家可随时通过点击“离开游戏”****离开）。
 
-## Local test mode
+## 本地测试模式
 
-To try out the app and its interactions on a single PC instead of distributed across devices, you can build the host app in local test mode. This mode completely bypasses use of the network. Instead, the UI of the host app displays the host portion to the left of the window and, to the right, two copies of the client app UI stacked vertically (note that, in this version, the local test mode UI is fixed for a PC display; it does not adapt to small devices). These segments of UI, all in the same app, communicate with one another via a mock client communicator, which simulates the interactions that would otherwise take place over the network.
+若要在单台电脑上而不是跨设备分布地电脑上试用应用及其交互，你可以在本地测试模式下构建主机应用。 通过此模式，完全不必使用网络。 相反，主机应用的 UI 在窗口左侧显示主机部分，在右侧显示两个垂直堆叠的客户端应用 UI 的副本（请注意，在此版本中，对于电脑显示，本地测试模式 UI 是固定的；它不适应小型设备）。 UI 的这些分段（全部在同一个应用中）通过模拟客户端通信器互相通信，这可模拟本应在网络上发生的交互。
 
-To activate local test mode, define **LOCALTESTMODEON** (in project properties) as a conditional compilation symbol, and rebuild.
+若要激活本地测试模式，请将 **LOCALTESTMODEON**（在项目属性中）定义为条件编译符号，并执行重新生成。
 
-## Porting to a Windows 10 project
+## 移植到 Windows 10 项目
 
-QuizGame has the following pieces.
+QuizGame 具有以下部分。
 
--   P2PHelper. This is a portable class library that contains the peer-to-peer networking logic.
--   QuizGame.Windows. This is the project that builds the app package for the host app, which targets Windows 8.1.
--   QuizGame.WindowsPhone. This is the project that builds the app package for the client app, which targets Windows Phone 8.1.
--   QuizGame.Shared. This is the project that contains source code, markup files, and other assets and resources, that are used by both of the other two projects.
+-   P2PHelper。 这是一个包含对等网络逻辑的可移植类库。
+-   QuizGame.Windows。 这是一个为主机应用构建应用包且面向 Windows 8.1的项目。
+-   QuizGame.WindowsPhone。 这是一个为客户端应用构建应用包且面向 Windows Phone 8.1的项目。
+-   QuizGame.Shared。 这是包含由其他两个项目同时使用的源代码、标记文件以及其他资源的项目。
 
-For this case study, we have the usual options described in [If you have a Universal 8.1 app](w8x-to-uwp-root.md#if-you-have-an-81-universal-windows-app) with respect to what devices to support.
+对于此案例研究，我们针对要支持的设备提供[如果你有通用 8.1 应用](w8x-to-uwp-root.md#if-you-have-an-81-universal-windows-app)中所述的常用选项。
 
-Based on those options, we'll port QuizGame.Windows to a new Windows 10 project called QuizGameHost. And, we'll port QuizGame.WindowsPhone to a new Windows 10 project called QuizGameClient. These projects will target the universal device family, so they will run on any device. And, we'll keep the QuizGame.Shared source files, etc, in their own folder, and we'll link those shared files into the two new projects. Just like before, we'll keep everything in one solution and we'll name it QuizGame10.
+基于这些选项，我们会将 QuizGame.Windows 移植到名为 QuizGameHost 的新 Windows 10 项目。 并且我们会将 QuizGame.WindowsPhone 移植到名为 QuizGameClient 的新 Windows 10 项目。 这些项目将面向通用设备系列，因此它们将在任何设备上运行。 我们会将 QuizGame.Shared 源文件等保留在它们自己的文件夹中，并且我们会将这些共享文件链接到两个新的项目中。 和以前一样，我们会将所有内容保留在一个解决方案中并将其命名为 QuizGame10。
 
-**The QuizGame10 solution**
+**QuizGame10 解决方案**
 
--   Create a new solution (**New Project** &gt; **Other Project Types** &gt; **Visual Studio Solutions**) and name it QuizGame10.
+-   创建一个新的解决方案（“新建项目”****&gt;“其他项目类型”****&gt;“Visual Studio 解决方案”****）并将其命名为 QuizGame10。
 
 **P2PHelper**
 
--   In the solution, create a new Windows 10 class library project (**New Project** &gt; **Windows Universal** &gt; **Class Library (Windows Universal)**) and name it P2PHelper.
--   Delete Class1.cs from the new project.
--   Copy P2PSession.cs, P2PSessionClient.cs, and P2PSessionHost.cs into the new project's folder and include the copied files in the new project.
--   The project will build without needing further changes.
+-   在解决方案中，创建一个新的 Windows 10 类库项目（“新建项目”****&gt;“Windows 通用”****&gt;“类库(Windows 通用)”****）并将其命名为 P2PHelper。
+-   从新项目中删除 Class1.cs。
+-   将 P2PSession.cs、P2PSessionClient.cs 和 P2PSessionHost.cs 复制到新项目的文件夹中，并在新项目中包括已复制的文件。
+-   该项目无需其他更改即可构建。
 
-**Shared files**
+**共享文件**
 
--   Copy the folders Common, Model, View, and ViewModel from \\QuizGame.Shared\\ to \\QuizGame10\\.
--   Common, Model, View, and ViewModel are what we'll mean when we refer to the shared folders on disk.
+-   将文件夹 Common、Model、View 和 ViewModel 从 \\QuizGame.Shared\\ 复制到 \\QuizGame10\\。
+-   Common、Model、View 和 ViewModel 是我们在提到磁盘上的共享文件夹时所指的文件夹。
 
 **QuizGameHost**
 
--   Create a new Windows 10 app project (**Add** &gt; **New Project** &gt; **Windows Universal** &gt; **Blank Application (Windows Universal)**) and name it QuizGameHost.
--   Add a reference to P2PHelper (**Add Reference** &gt; **Projects** &gt; **Solution** &gt; **P2PHelper**).
--   In **Solution Explorer**, create a new folder for each of the shared folders on disk. In turn, right-click each folder you just created and click **Add** &gt; **Existing Item** and navigate up a folder. Open the appropriate shared folder, select all files, and then click **Add As Link**.
--   Copy MainPage.xaml from \\QuizGame.Windows\\ to \\QuizGameHost\\ and change the namespace to QuizGameHost.
--   Copy App.xaml from \\QuizGame.Shared\\ to \\QuizGameHost\\ and change the namespace to QuizGameHost.
--   Instead of overwriting app.xaml.cs, we'll keep the version in the new project and just make one targeted change to it to support local test mode. In app.xaml.cs, replace this line of code:
+-   创建一个新的 Windows 10 应用项目（“添加”****&gt;“新建项目”****&gt;“Windows 通用”****&gt;“空白应用程序(Windows 通用)”****）并将其命名为 QuizGameHost。
+-   添加对 P2PHelper 的引用（“添加引用”****&gt;“项目”****&gt;“解决方案”****&gt;“P2PHelper”****）。
+-   在“解决方案资源管理器”****中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后依次单击“添加”****&gt;“现有项”****并向上导航文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”****。
+-   将 MainPage.xaml 从 \\QuizGame.Windows\\ 复制到 \\QuizGameHost\\ ，并将命名空间更改为 QuizGameHost。
+-   将 App.xaml 从 \\QuizGame.Shared\\ 复制到 \\QuizGameHost\\，并将命名空间更改为 QuizGameHost。
+-   我们会将该版本保留在新项目中，并只进行一个定向更改以支持本地测试模式，而不是覆盖 app.xaml.cs。 在 app.xaml.cs 中，将此行代码
 
 ```CSharp
 rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ```
 
-with this:
+替换为：
 
 ```CSharp
 #if LOCALTESTMODEON
@@ -124,35 +124,35 @@ with this:
 #endif
 ```
 
--   In **Properties** &gt; **Build** &gt; **conditional compilation symbols**, add LOCALTESTMODEON.
--   You'll now be able to go back to the code you added to app.xaml.cs and resolve the TestView type.
--   In package.appxmanifest, change the capability name from internetClient to internetClientServer.
+-   在“属性”****&gt;“生成”****&gt;“条件编译符号”****中，添加 LOCALTESTMODEON。
+-   现在可以返回到你向 app.xaml.cs 添加的代码并解析 TestView 类型。
+-   在 package.appxmanifest 中，将功能名称从 internetClient 更改为 internetClientServer。
 
 **QuizGameClient**
 
--   Create a new Windows 10 app project (**Add** &gt; **New Project** &gt; **Windows Universal** &gt; **Blank Application (Windows Universal)**) and name it QuizGameClient.
--   Add a reference to P2PHelper (**Add Reference** &gt; **Projects** &gt; **Solution** &gt; **P2PHelper**).
--   In **Solution Explorer**, create a new folder for each of the shared folders on disk. In turn, right-click each folder you just created and click **Add** &gt; **Existing Item** and navigate up a folder. Open the appropriate shared folder, select all files, and then click **Add As Link**.
--   Copy MainPage.xaml from \\QuizGame.WindowsPhone\\ to \\QuizGameClient\\ and change the namespace to QuizGameClient.
--   Copy App.xaml from \\QuizGame.Shared\\ to \\QuizGameClient\\ and change the namespace to QuizGameClient.
--   In package.appxmanifest, change the capability name from internetClient to internetClientServer.
+-   创建一个新的 Windows 10 应用项目（“添加”****&gt;“新建项目”****&gt;“Windows 通用”****&gt;“空白应用程序(Windows 通用)”****）并将其命名为 QuizGameClient。
+-   添加对 P2PHelper 的引用（“添加引用”****&gt;“项目”****&gt;“解决方案”****&gt;“P2PHelper”****）。
+-   在“解决方案资源管理器”****中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后依次单击“添加”****&gt;“现有项”****并向上导航文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”****。
+-   将 MainPage.xaml 从 \\QuizGame.WindowsPhone\\ 复制到 \\QuizGameClient\\，并将命名空间更改为 QuizGameClient。
+-   将 App.xaml 从 \\QuizGame.Shared\\ 复制到 \\QuizGameClient\\，并将命名空间更改为 QuizGameClient。
+-   在 package.appxmanifest 中，将功能名称从 internetClient 更改为 internetClientServer。
 
-You'll now be able to build and run.
+你现在可以进行构建并运行。
 
-## Adaptive UI
+## 自适应 UI
 
-The QuizGameHost Windows 10 app looks fine when the app is running in a wide window (which is only possible on a device with a large screen). When the app's window is narrow, though (which happens on a small device, and can also happen on a large device), the UI is squashed so much that it's unreadable.
+当 QuizGameHost Windows 10 应用在宽窗口（只可能出现在带有大屏幕的设备上）中运行时，它看起来很美观。 但是，当应用的窗口较窄时（会出现在小型设备上，但也可能出现在大型设备上），UI 会因过分拥挤而无法阅读。
 
-We can use the adaptive Visual State Manager feature to remedy this, as we explained in [Case study: Bookstore2](w8x-to-uwp-case-study-bookstore2.md). First, set properties on visual elements so that, by default, the UI is laid out in the narrow state. All of these changes take place in \\View\\HostView.xaml.
+我们可以使用自适应视觉状态管理器功能修复此问题，正如在我们在[案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) 中所说明的。 首先，在视觉元素上设置属性，以便在默认情况下以较窄的状态设置 UI 布局。 所有这些更改都发生在 \\View\\HostView.xaml 中。
 
--   In the main **Grid**, change the **Height** of the first **RowDefinition** from "140" to "Auto".
--   On the **Grid** that contains the **TextBlock** named `pageTitle`, set `x:Name="pageTitleGrid"` and `Height="60"`. These first two steps are so that we can effectively control the height of that **RowDefinition** via a setter in a visual state.
--   On `pageTitle`, set `Margin="-30,0,0,0"`.
--   On the **Grid** indicated by the comment `<!-- Content -->`, set `x:Name="contentGrid"` and `Margin="-18,12,0,0"`.
--   On the **TextBlock** immediately above the comment `<!-- Options -->`, set `Margin="0,0,0,24"`.
--   In the default **TextBlock** style (the first resource in the file), change the **FontSize** setter's value to "15".
--   In `OptionContentControlStyle`, change the **FontSize** setter's value to "20". This step and the previous one will give us a good type ramp that will work well on all devices. These are much more flexible sizes than the "30" we were using for the Windows 8.1 app.
--   Finally, add the appropriate Visual State Manager markup to the root **Grid**.
+-   在主 **Grid** 中，将第一个 **RowDefinition** 的 **Height** 从“140”更改为“Auto”。
+-   在包含名为 `pageTitle` 的 **TextBlock** 的 **Grid** 上，设置 `x:Name="pageTitleGrid"` 和 `Height="60"`。 其中前两个步骤是为了使我们可以通过视觉状态中的资源库有效控制该 **RowDefinition** 的高度。
+-   在 `pageTitle` 上，设置 `Margin="-30,0,0,0"`。
+-   在由注释 `<!-- Content -->` 指示的 **Grid** 上，设置 `x:Name="contentGrid"` 和 `Margin="-18,12,0,0"`。
+-   在紧挨在注释 `<!-- Options -->` 上方的 **TextBlock** 上，设置 `Margin="0,0,0,24"`。
+-   在默认 **TextBlock** 样式（文件中的第一个资源）中，将 **FontSize** 资源库的值更改为“15”。
+-   在 `OptionContentControlStyle` 中，将 **FontSize** 资源库的值更改为“20”。 此步骤和上一个步骤将为我们提供一个可在所有设备上良好工作的良好字型渐变。 这些大小比我们为 Windows 8.1 应用使用的“30”要灵活很多。
+-   最后，将相应的视觉状态管理器标记添加到根 **Grid**。
 
 ```xml
 <VisualStateManager.VisualStateGroups>
@@ -171,10 +171,10 @@ We can use the adaptive Visual State Manager feature to remedy this, as we expla
 </VisualStateManager.VisualStateGroups>
 ```
 
-## Universal styling
+## 通用样式设置
 
 
-You'll notice that in Windows 10, the buttons don't have the same touch-target padding in their template. Two small changes will remedy that. First, add this markup to app.xaml in both QuizGameHost and QuizGameClient.
+你会注意到在 Windows 10 中，按钮不具有其模板中面向触摸的相同填充。 可以通过两个小更改修复该问题。 第一，将此标记添加到 QuizGameHost 和 QuizGameClient 中的 app.xaml。
 
 ```xml
 <Style TargetType="Button">
@@ -182,20 +182,20 @@ You'll notice that in Windows 10, the buttons don't have the same touch-target p
 </Style>
 ```
 
-And second, add this setter to `OptionButtonStyle` in \\View\\ClientView.xaml.
+第二，将此资源库添加到 \\View\\ClientView.xaml 中的 `OptionButtonStyle`。
 
 ```xml
 <Setter Property="Margin" Value="6"/>
 ```
 
-With that last tweak, the app will behave and look just the same as it did before the port, with the additional value that it will now run everywhere.
+通过最后一项调整，该应用的行为和外观将与移植前完全相同，此外它现在可在任意位置运行。
 
-## Conclusion
+## 总结
 
-The app that we ported in this case study was a relatively complex one involving several projects, a class library, and quite a large amount of code and user interface. Even so, the port was straightforward. Some of the ease of porting is directly attributable to the similarity between the Windows 10 developer platform and the Windows 8.1 and Windows Phone 8.1 platforms. Some is due to the way the original app was designed to keep the models, the view models, and the views separate.
+我们在此案例研究中移植的应用是涉及到多个项目、一个类库以及大量代码和用户界面的相对复杂的应用。 即便如此，该移植仍然很简单。 移植的一些便利之处可以直接归功于 Windows 10 开发人员平台与 Windows 8.1 和 Windows Phone 8.1 平台之间的相似性。 另一些是由于原始应用的设计方式使模型、视图模型和视图保持分离。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

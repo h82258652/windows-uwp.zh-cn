@@ -2,14 +2,14 @@
 author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
 description: "本文介绍了如何使用 SceneAnalysisEffect 和 FaceDetectionEffect 分析媒体捕获预览流的内容。"
-title: "分析相机帧的效果"
+title: "媒体捕获的场景分析"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: a5af97156ade8574537e38e50c45b9b15f506980
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 891c0d274c2d3fb82f855011158ecd3ccdcd87b3
 
 ---
 
-# 分析相机帧的效果
+# 媒体捕获的场景分析
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -112,8 +112,7 @@ ms.openlocfilehash: a5af97156ade8574537e38e50c45b9b15f506980
 
 ## 相关主题
 
-* [相机](camera.md)
-* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
  
 
  
@@ -124,6 +123,6 @@ ms.openlocfilehash: a5af97156ade8574537e38e50c45b9b15f506980
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

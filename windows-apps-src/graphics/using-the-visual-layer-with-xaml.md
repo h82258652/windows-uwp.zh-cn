@@ -1,49 +1,45 @@
 ---
 author: jaster
-ms.assetid: 
-title: "将可视化层与 XAML 结合使用"
-description: "了解将可视化层 API 与现有 XAML 内容结合使用以创建高级动画和效果的技术。"
-translationtype: Human Translation
-ms.sourcegitcommit: dfda33c70224f32d9c3e8877eabdfcd965521757
-ms.openlocfilehash: 00d663b130202f4513cd1a9d82baed4068d909d3
-
+ms.assetid:
+title: Using the Visual Layer with XAML
+description: Learn techniques for using the Visual Layer API's in combination with existing XAML content to create advanced animations and effects.
 ---
 
-# 将可视化层与 XAML 结合使用
+# Using the Visual Layer with XAML
 
-## 简介
+## Introduction
 
-使用可视化层功能的大多数应用都将使用 XAML 定义主要 UI 内容。 在 Windows 10 周年更新中，XAML 框架和可视化层中有新功能，可使结合这两种技术来创建精美的用户体验变得更简单。
-XAML 和可视化层“互操作”功能可用于创建单独使用 XAML API 时无法实现的高级动画和效果。 这包括：
+Most apps that consume Visual Layer capabilities will use XAML to define the main UI content. In the Windows 10 Anniversary Update, there are new features in the XAML framework and the Visual Layer that make it easier to combine these two technologies to create stunning user experiences.
+XAML and Visual Layer “interop” functionality can be used to create advanced animations and effects not available using XAML API’s alone. This includes:
 
--              滚动驱动的动画和视差
--              自动布局动画
--              像素完美投影
--              模糊和毛玻璃效果
+-              Scroll driven animations and parallax
+-              Automatic layout animations
+-              Pixel perfect drop shadows
+-              Blur and frosted glass effects
 
-这些效果和动画可应用于现有 XAML 内容，因此你无需大幅重构 XAML 应用即可充分利用新功能。
-布局动画、阴影和模糊效果将在下面的秘诀部分进行介绍。 有关代码示例实现视差，请参阅 [ParallaxingListItems 示例](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)。 [WindowsUIDevLabs 存储库](https://github.com/Microsoft/WindowsUIDevLabs)还有用于实现动画、阴影和效果的其他示例。
+These effects and animations can be applied to existing XAML content, so you don’t have to dramatically restructure your XAML app to take advantage of the new functionality.
+Layout animations, shadows, and blur effects are covered in the Recipes section below. For a code sample implementing parallax, see the [ParallaxingListItems sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). The [WindowsUIDevLabs repository](https://github.com/Microsoft/WindowsUIDevLabs) also has several other samples for implementing animations, shadows and effects.
 
-## **ElementCompositionPreview** 类
+## The **ElementCompositionPreview** class
 
-[**ElementCompositionPreview**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) 是一个静态类，可提供 XAML 和可视化层互操作功能。 有关可视化层及其功能的概述，请参阅[可视化层](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)。 **ElementCompositionPreview** 类提供以下方法：
+[**ElementCompositionPreview**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) is a static class that provides XAML and Visual Layer interop functionality. For an overview of the Visual Layer and its functionality, see [Visual Layer](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer). The **ElementCompositionPreview** class provides the following methods:
 
--   [**GetElementVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx)：获取用于呈现此元素的“handout”视觉对象
--   [**SetElementChildVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx)：将“handin”视觉对象设置为此元素的可视化树的最后一个子项。 此视觉对象将在元素其余部分上进行绘制。 
--   [**GetElementChildVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx)：检索使用 **SetElementChildVisual** 设置的视觉对象
--   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx)：获取可用于基于 **ScrollViewer** 中的滚动偏移创建 60fps 动画的对象。
+-   [**GetElementVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Get a "handout" Visual that is used to render this element
+-   [**SetElementChildVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx): Sets a "handin" Visual as the last child of this element’s visual tree. This Visual will draw on top of the rest of the element. 
+-   [**GetElementChildVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Retrieve the Visual set using **SetElementChildVisual**
+-   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Get an object that can be used to create 60fps animations based on scroll offset in a **ScrollViewer**
 
-## 关于 **ElementCompositionPreview.GetElementVisual** 的备注
+## Remarks on **ElementCompositionPreview.GetElementVisual**
 
-**ElementCompositionPreview.GetElementVisual** 返回用于呈现给定 **UIElement** 的“handout”视觉对象。 诸如 **Visual.Opacity**、**Visual.Offset** 和 **Visual.Size** 之类的属性由 XAML 框架基于 UIElement 的状态设置。 这将支持隐式重新定位动画等技术（请参阅*秘诀*）。
+**ElementCompositionPreview.GetElementVisual** returns a “handout” Visual that is used to render the given **UIElement**. Properties such as **Visual.Opacity**, **Visual.Offset**, and **Visual.Size** are set by the XAML framework based on the state of the UIElement. This enables techniques such as implicit reposition animations (see *Recipes*).
 
-请注意，由于“偏移”****和“大小”****根据 XAML 框架布局设置，因此开发人员应在修改或对这些属性进行动画处理时小心。 开发人员应仅在元素的左上角在布局中与其父项的左上角位置相同时修改偏移或对其进行动画处理。 通常不应该修改大小，但访问属性可能很有用。 例如，下面的投影和毛玻璃示例使用 handout 视觉对象的大小作为对动画的输入。
+Note that since **Offset** and **Size** are set as the result of XAML framework layout, developers should be careful when modifying or animating these properties. Developers should only modify or animate Offset when the element’s top-left corner has the same position as that of its parent in layout. Size should generally not be modified, but accessing the property may be useful. For example, the Drop Shadow and Frosted Glass samples below use Size of a handout Visual as input to an animation.
 
-作为附加警告，handout 视觉对象的更新属性将不会反映在相应的 UIElement 中。 因此，例如，将 **UIElement.Opacity** 设置为 0.5 会将相应的 handout 视觉对象的不透明度设置为 0.5。 但是，将 handout 视觉对象的 Visual 的“不透明度”****设置为 0.5 会导致内容以 50% 的不透明度显示，但不会更改相应 UIElement 的 Opacity 属性的值。
+As an additional caveat, updated properties of the handout Visual will not be reflected in the corresponding UIElement. So for example, setting **UIElement.Opacity** to 0.5 will set the corresponding handout Visual’s Opacity to 0.5. However, setting the handout Visual’s **Opacity** to 0.5 will cause the content to appear at 50% opacity, but will not change the value of the corresponding UIElement’s Opacity property.
 
-### **Offset** 动画的示例
+### Example of **Offset** animation
 
-#### 错误
+#### Incorrect
 
 ```xml
 <Border>
@@ -56,7 +52,7 @@ XAML 和可视化层“互操作”功能可用于创建单独使用 XAML API �
 ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", parallaxAnimation);
 ```
 
-#### 正确
+#### Correct
 
 ```xml
 <Border>
@@ -71,25 +67,25 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", parallaxAnimation);
 ```
 
-## **ElementCompositionPreview.SetElementChildVisual** 方法
+## The **ElementCompositionPreview.SetElementChildVisual** method
 
-**ElementCompositionPreview.SetElementChildVisual** 允许开发人员提供将显示为元素的可视化树一部分的“handin”视觉对象。 这允许开发人员创建一个“复合岛”，在其内，基于视觉对象的内容可以显示在 XAML UI 内。 开发人员应谨慎使用此技术，因为基于视觉对象的内容将不具有与 XAML 内容相同的辅助功能和用户体验保证。 因此，通常建议，仅在有必要实现自定义效果（如下面的秘诀部分中所找到的效果）时使用此技术。
+**ElementCompositionPreview.SetElementChildVisual** allows the developer to supply a “handin” Visual that will appear as part of an element’s Visual Tree. This allows developers to create a “Composition Island” where Visual-based content can appear inside a XAML UI. Developers should be conservative about using this technique because Visual-based content will not have the same accessibility and user experience guarantees of XAML content. Therefore, it is generally recommended that this technique only be used when necessary to implement custom effects such as those found in the Recipes section below.
 
-## **GetAlphaMask** 方法
+## **GetAlphaMask** methods
 
-[**Image**](https://msdn.microsoft.com/library/windows/apps/br242752)、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 和 [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) 各自实现一个称为 **GetAlphaMask** 的方法，该方法返回一个 **CompositionBrush**，用于表示带有元素形状的灰度图像。 此 **CompositionBrush** 可充当复合 **DropShadow** 的输入，因此阴影可以反映元素的形状，而不是矩形。 这将为文本、带有 alpha 的图像和形状启用像素完美、基于轮廓的阴影。 有关此 API 的示例，请参阅下面的*投影*。
+[**Image**](https://msdn.microsoft.com/library/windows/apps/br242752), [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652), and [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) each implement a method called **GetAlphaMask** that returns a **CompositionBrush** representing a grayscale image with the shape of the element. This **CompositionBrush** can serve as an input for a Composition **DropShadow**, so the shadow can reflect the shape of the element instead of a rectangle. This enables pixel perfect, contour-based shadows for text, images with alpha, and shapes. See *Drop Shadow* below for an example of this API.
 
-## 秘诀
+## Recipes
 
-### 重新定位动画
+### Reposition animation
 
-使用复合隐式动画，开发人员可以在元素的布局中对相对于其父项的更改自动进行动画处理。 例如，如果你更改下面的按钮的“边距”****，它将自动动画处理到它的新布局位置。
+Using Composition Implicit Animations, a developer can automatically animate changes in an element’s layout relative to its parent. For example, if you change the **Margin** of the button below, it will automatically animate to its new layout position.
 
-#### 实现概述
+#### Implementation overview
 
-1.            获取目标元素的 handout **视觉对象**
-2.            创建可对 **Offset** 属性中的更改自动进行动画处理的 **ImplicitAnimationCollection**
-3.            将 **ImplicitAnimationCollection** 与后备视觉对象关联
+1.            Get the handout **Visual** for the target element
+2.            Create an **ImplicitAnimationCollection** that automatically animates changes in the **Offset** property
+3.            Associate the **ImplicitAnimationCollection** with the backing Visual
 
 #### XAML
 
@@ -125,18 +121,18 @@ private void InitializeRepositionAnimation(UIElement repositionTarget)
 }
 ```
 
-### 投影
+### Drop shadow
 
-将像素完美投影应用到 **UIElement**，例如包含图片的**椭圆**。 由于阴影需要由应用创建的 **SpriteVisual**，因此我们需要使用 **ElementCompositionPreview.SetElementChildVisual** 创建一个“主机”元素，该元素将包含 **SpriteVisual**。
+Apply a pixel-perfect drop shadow to a **UIElement**, for example an **Ellipse** containing a picture. Since the shadow requires a **SpriteVisual** created by the app, we need to create a “host” element which will contain the **SpriteVisual** using **ElementCompositionPreview.SetElementChildVisual**.
 
-#### 实现概述
+#### Implementation overview
 
-1.            获取主机元素的 handout **视觉对象**
-2.            创建一个 Windows.UI.Composition **DropShadow**
-3.            配置 **DropShadow** 以通过蒙板从目标元素中获取其形状
-    - **DropShadow** 默认为矩形，因此如果目标是矩形，则这不是必需的
-4.            将阴影附加到新的 **SpriteVisual**，并将该 **SpriteVisual** 设置为主机元素的子元素
-5.            使用 **ExpressionAnimation** 将 **SpriteVisual** 的大小绑定到主机的大小
+1.            Get the handout **Visual** for the host element
+2.            Create a Windows.UI.Composition **DropShadow**
+3.            Configure the **DropShadow** to get its shape from the target element via a mask
+    - **DropShadow** is rectangular by default, so this is not necessary if the target is rectangular
+4.            Attach shadow to a new **SpriteVisual**, and set the **SpriteVisual** as the child of the host element
+5.            Bind size of the **SpriteVisual** to the size of the host using an **ExpressionAnimation**
 
 #### XAML
 
@@ -188,18 +184,18 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-### 毛玻璃
+### Frosted glass
 
-创建使背景内容模糊和带色彩的效果。 请注意，开发人员需要安装 Win2D NuGet 程序包才能使用效果。 有关安装说明，请参阅 [Win2D 主页](http://microsoft.github.io/Win2D/html/Introduction.htm)。
+Create an effect that blurs and tints background content. Note that developers need to install the Win2D NuGet package to use effects. See the [Win2D homepage](http://microsoft.github.io/Win2D/html/Introduction.htm) for installation instructions.
 
-#### 实现概述
+#### Implementation overview
 
-1.            获取主机元素的 handout **视觉对象**
-2.            使用 Win2D 和 **CompositionEffectSourceParameter** 创建模糊效果树
-3.            基于效果树创建 **CompositionEffectBrush**
-4.            将 **CompositionEffectBrush** 的输入设置为 **CompositionBackdropBrush**，从而允许将效果应用到 **SpriteVisual** 背后的内容
-5.            将 **CompositionEffectBrush** 设置为新 **SpriteVisual** 的内容，并将该 **SpriteVisual** 设置为主机元素的子元素
-6.            使用 **ExpressionAnimation** 将 **SpriteVisual** 的大小绑定到主机的大小
+1.            Get handout **Visual** for the host element
+2.            Create a blur effect tree using Win2D and **CompositionEffectSourceParameter**
+3.            Create a **CompositionEffectBrush** based on the effect tree
+4.            Set input of the **CompositionEffectBrush** to a **CompositionBackdropBrush**, which allows an effect to be applied to the content behind a **SpriteVisual**
+5.            Set the **CompositionEffectBrush** as the content of a new **SpriteVisual**, and set the **SpriteVisual** as the child of the host element
+6.            Bind size of the **SpriteVisual** to the size of the host using an **ExpressionAnimation**
 
 #### XAML
 
@@ -271,16 +267,10 @@ private void InitializedFrostedGlass(UIElement glassHost)
 }
 ```
 
-## 其他资源：
+## Additional Resources:
 
--   [可视化层概述](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)
--   [**ElementCompositionPreview** 类](https://msdn.microsoft.com/library/windows/apps/mt608976)
--   [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 中的高级 UI 和复合示例
--   [BasicXamlInterop 示例](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
--   [ParallaxingListItems 示例](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-
+-   [Visual Layer overview](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)
+-   [**ElementCompositionPreview** class](https://msdn.microsoft.com/library/windows/apps/mt608976)
+-   Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs)
+-   [BasicXamlInterop sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
+-   [ParallaxingListItems sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

@@ -4,8 +4,8 @@ title: "启动文件的默认应用"
 description: "了解如何启动文件的默认应用。"
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
 translationtype: Human Translation
-ms.sourcegitcommit: c87f66a39e6ae7733ecc75006510b6aede699d4f
-ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: b9b2d8ba6aeedea7d9db12565de191b1b6307fa6
 
 ---
 
@@ -40,7 +40,10 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 | 默认启动 | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | 使用默认处理程序启动指定的文件。 |
 | 打开方式启动 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 启动指定的文件，该文件让用户通过“打开方式”对话框选取处理程序。 |
 | 使用推荐的应用反馈启动 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 使用默认处理程序启动指定的文件。 如果系统上未安装处理程序，则向用户推荐应用商店中的应用。 |
-| 以所需的其余视图启动 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465)（仅适用于 Windows） | 使用默认处理程序启动指定的文件。 指定首选项以便在启动后停留于屏幕上，然后请求特定窗口大小。 [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 在移动设备系列上不受支持。   |
+| 以所需的其余视图启动 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465)（仅适用于 Windows） | 使用默认处理程序启动指定的文件。 指定首选项以便在启动后停留于屏幕上，然后请求特定的窗口大小。 |
+|  |  |  |
+|  |  | **移动设备系列：**[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 在移动设备系列上不受支持。 |
+
  
 ### 默认启动
 
@@ -346,7 +349,7 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 
 调用 [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) 的源应用可请求在文件启动后停留于屏幕上。 默认情况下，Windows 会尝试在处理该文件的源应用和目标应用之间平等地共享所有可用空间。 源应用可使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 属性向操作系统指示希望其应用占用较多或较少的可用空间。 此外，还可使用 **DesiredRemainingView** 以指示源应用在文件启动后无需停留于屏幕上，并可由目标应用完全替代。 此属性仅指定调用应用的首选窗口大小。 不指定可能会同时显示在屏幕上的其他应用的行为。
 
-> **注意** Windows 在确定源应用的最终窗口尺寸时会考虑多个不同因素；例如，源应用的首选项、屏幕上的应用数量以及屏幕的方向等。 设置 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 并不能保证为源应用设定具体的窗口化行为。
+> **注意** Windows 在确定源应用的最终窗口尺寸时会考虑多个不同因素；例如，源应用的首选项、屏幕上的应用数量以及屏幕的方向等。 设置 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 并不保证为源应用设定具体的窗口化行为。
 
 **移动设备系列：**[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 在移动设备系列上不受支持。
 
@@ -420,9 +423,9 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 
 ## 备注
 
-你的应用不能选择要启动的应用。 用户确定启动哪个应用。 用户可以选择通用 Windows 平台 (UWP) 应用或 Windows 桌面应用。
+你的应用不能选择要启动的应用。 用户确定启动哪个应用。 用户可以选择通用 Windows 平台 (UWP) 应用或经典 Windows 平台 (CWP) 应用。
 
-启动文件时，你的应用必须是前台应用，即必须对用户可见。 此要求有助于确保用户保持控制。 为满足此要求，需确保将文件的所有启动都直接绑定到应用的 UI 中。 大多数情况下，用户总是必须采取某个操作来发起文件启动。
+启动文件时，你的应用必须是前台应用，即对于用户必须是可见的。 此要求有助于确保用户保持控制。 为满足此要求，需确保将文件的所有启动都直接绑定到应用的 UI 中。 大多数情况下，用户总是必须采取某个操作来发起文件启动。
 
 如果包含代码或脚本的文件类型（例如 .exe、.msi 和 .js 文件）由操作系统自动执行，则你无法启动这些文件类型。 此限制可防止用户遭受可能修改操作系统的潜在恶意文件的损害。 如果可以包含脚本的文件类型由可隔离脚本的应用来执行（例如 .docx 文件），则你可以使用此方法来启动这些文件类型。 Microsoft Word 之类的应用可防止 .docx 文件中的脚本修改操作系统。
 
@@ -454,6 +457,6 @@ Windows 提供了用于为文件启动默认处理程序的多个不同选项。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

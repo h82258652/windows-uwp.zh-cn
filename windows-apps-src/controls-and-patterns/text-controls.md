@@ -1,102 +1,91 @@
 ---
 author: Jwmsft
-Description: Consider how often we read text in our daily lives - in email, a book, a road sign, the prices on a menu, tire pressure markings, or posters on a street pole.
-title: Text controls
+Description: "请考虑我们在日常生活中阅读文本的频率 - 电子邮件、图书、路标、菜单上的价格、胎压指示或街道标牌上的海报。"
+title: "文本控件"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 ---
-# Text controls
+# 文本控件
+文本控件由文本输入框、密码框、自动建议框和文本块组成。 XAML 框架提供用于呈现、输入和编辑文本的多个控件，以及一组用于设置文本格式的属性。
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-Text controls consist of text input boxes, password boxes, auto-suggest boxes, and text blocks. The XAML framework provides several controls for rendering, entering, and editing text, and a set of properties for formatting the text.
-
-- The controls for displaying read-only text are [TextBlock](text-block.md) and [RichTextBlock](rich-text-block.md).
-- The controls for text entry and editing are: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md), and [RichEditBox](rich-edit-box.md).
+- 用于显示只读文本的控件是 [TextBlock](text-block.md) 和 [RichTextBlock](rich-text-block.md)。
+- 用于文本输入和编辑的控件是 [TextBox](text-box.md)、[AutoSuggestBox](auto-suggest-box.md)、[PasswordBox](password-box.md) 和 [RichEditBox](rich-edit-box.md)。
 
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx"><strong>AutoSuggestBox class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>PasswordBox class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>RichEditBox class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx"><strong>RichTextBlock class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx"><strong>TextBlock class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx"><strong>TextBox class</strong></a></li>
-</ul>
+**重要的 API**
 
-</div>
-</div>
+-   [**AutoSuggestBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
+-   [**PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
+-   [**RichEditBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)
+-   [**RichTextBlock 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)
+-   [**TextBlock 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)
+-   [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
 
+## 这是正确的控件吗？
 
+你使用的文本控件取决于你的方案。 使用此信息选取要在应用中使用的正确文本控件。
 
+### 呈现只读文本
 
-## Is this the right control?
+使用 **TextBlock** 显示应用中大部分只读文本。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。
 
-The text control you use depends on your scenario. Use this info to pick the right text control to use in your app.
+TextBlock 相比 RichTextBlock 通常更易于使用，并且提供更好的文本呈现性能，因此它优先用于大部分应用 UI 文本。 你可以通过获取 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) 属性的值轻松地访问和使用应用的 TextBlock 中的文本。
 
-### Render read-only text
+它还提供许多用于自定义文本呈现方式的相同格式设置选项。 虽然你可以在文本中放入换行符，但 TextBlock 设计为显示单个段落且不支持文本缩进。
 
-Use a **TextBlock** to display most read-only text in your app. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined.
+如果你需要支持多段落、多列文本或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。 RichTextBlock 提供适用于高级文本布局的若干功能。
 
-TextBlock is typically easier to use and provides better text rendering performance than RichTextBlock, so it's preferred for most app UI text. You can easily access and use text from a TextBlock in your app by getting the value of the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) property.
+RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) 属性，它通过 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素支持基于段落的文本。 它没有可以用来轻松访问应用中控件的文本内容的 **Text** 属性。  
 
-It also provides many of the same formatting options for customizing how your text is rendered. Although you can put line breaks in the text, TextBlock is designed to display a single paragraph and doesn’t support text indentation.
+### 文本输入
 
-Use a **RichTextBlock** when you need support for multiple paragraphs, multi-column text or other complex text layouts, or inline UI elements like images. RichTextBlock provides several features for advanced text layout.
+使用 **TextBox** 控件允许用户输入和编辑无格式文本（例如在表单中）。 你可以使用 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) 属性在 TextBox 中获取和设置文本。
 
-The content property of RichTextBlock is the [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) property, which supports paragraph based text via the [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) element. It doesn't have a **Text** property that you can use to easily access the control's text content in your app.  
+你可以使 TextBox 只读，但只应是临时的、有条件的状态。 如果文本永远不可编辑，请考虑改用 TextBlock。
 
-### Text input
+使用 **PasswordBox** 控件收集密码或其他隐私数据，如身份证号。 密码框是指出于隐私目的隐藏所键入的字符的文本输入框。 密码框看起来像文本输入框，区别在于它显示项目符号来代替已输入的文本。 可自定义项目符号字符。
 
-Use a **TextBox** control to let a user enter and edit unformatted text, such as in a form. You can use the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) property to get and set the text in a TextBox.
+使用 **AutoSuggestBox** 控件向用户显示建议列表以供他们在键入时从其中选择。 自动建议框是可触发基本搜索建议列表的文本输入框。 建议的搜索字词可取自热门搜索字词和用户以前所输入字词的组合。
 
-You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a TextBlock instead.
+你还应使用 AutoSuggestBox 控件实现搜索框。
 
-Use a **PasswordBox** control to collect a password or other private data, such as a Social Security number. A password box is a text input box that conceals the characters typed in it for the sake of privacy. A password box looks like a text input box, except that it renders bullets in place of the text that has been entered. The bullet character can be customized.
+使用 **RichEditBox** 显示和编辑文本文件。 不要像使用其他标准文本输入框那样使用 RichEditBox 在应用中获取用户输入。 而应使用它来处理独立于应用的文本文件。 通常需要将输入到 RichEditBox 中的文本保存到 .rtf 文件。
 
-Use an **AutoSuggestBox** control to show the user a list of suggestions to choose from as they type. An auto-suggest box is a text entry box that triggers a list of basic search suggestions. Suggested terms can draw from a combination of popular search terms and historical user-entered terms.
+**文本输入是否是最佳选项？**
 
-You should also use an AutoSuggestBox control to implement a search box.
+有多种在应用中获取用户输入的方法。 这些问题将有助于回答最适合用于获取用户输入的是标准文本输入框之一还是其他控件。
 
-Use a **RichEditBox** to display and edit text files. You don't use a RichEditBox to get user input into your app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.
+-   **高效枚举所有有效值是否可行？** 如果是，请考虑使用选择控件之一，例如[复选框](checkbox.md)、[下拉列表](lists.md)、列表框、[单选按钮](radio-button.md)、[滑块](slider.md)、[切换开关](toggles.md)、[日期选取器](date-and-time.md)或时间选取器。
+-   **有效值集是否非常小？** 如果是，请考虑使用[下拉列表](lists.md)或列表框，在值的长度超过几个字符的情况下尤其如此。
+-   **有效数据是否完全不受限制？ 或者有效数据是否仅受格式限制（长度或字符类型受限制）？** 如果是，请使用文本输入控件。 你可以限制可输入的字符数，并且可以在应用代码中验证格式。
+-   **该值是否表示具有常见专用控件的数据类型？** 如果是，请使用相应的控件，而不要使用文本输入控件。 例如，使用 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681)（而非文本输入控件）接受日期输入。
+-   如果数据完全为数值：
+    -   **输入的值是否为近似值，并且/或者与同一页面的另一个数量相关？** 如果是，请使用[滑块](slider.md)。
+    -   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用[滑块](slider.md)（可能带有随附控件）。
+    -   **输入的值是否很可能在观察结果后得到调整（例如，调节音量或屏幕亮度）？** 如果是，请使用[滑块](slider.md)。
 
-**Is text input the best option?**
+## 示例
 
-There are many ways you can get user input in your app. These questions will help answer whether one of the standard text input boxes or another control is the best fit for getting user input.
+文本框
 
--   **Is it practical to efficiently enumerate all valid values?** If so, consider using one of the selection controls, such as a [check box](checkbox.md), [drop-down list](lists.md), list box, [radio button](radio-button.md), [slider](slider.md), [toggle switch](toggles.md), [date picker](date-and-time.md), or time picker.
--   **Is there a fairly small set of valid values?** If so, consider a [drop-down list](lists.md) or a list box, especially if the values are more than a few characters long.
--   **Is the valid data completely unconstrained? Or is the valid data only constrained by format (constrained length or character types)?** If so, use a text input control. You can limit the number of characters that can be entered, and you can validate the format in your app code.
--   **Does the value represent a data type that has a specialized common control?** If so, use the appropriate control instead of a text input control. For example, use a [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) instead of a text input control to accept a date entry.
--   If the data is strictly numeric:
-    -   **Is the value being entered approximate and/or relative to another quantity on the same page?** If so, use a [slider](slider.md).
-    -   **Would the user benefit from instant feedback on the effect of setting changes?** If so, use a [slider](slider.md), possibly with an accompanying control.
-    -   **Is the value entered likely to be adjusted after the result is observed, such as with volume or screen brightness?** If so, use a [slider](slider.md).
+![文本框](images/text-box.png)
 
-## Examples
+自动建议框
 
-Text box
+![展开的自动建议控件示例](images/controls_autosuggest_expanded01.png)
 
-![A text box](images/text-box.png)
+密码框
 
-Auto suggest box
+![正在键入文本的密码框焦点状态](images/passwordbox-focus-typing.png)
 
-![Example of the expanded auto-suggest control](images/controls_autosuggest_expanded01.png)
+## 创建文本控件
 
-Password box
-
-![Password box focus state typing text](images/passwordbox-focus-typing.png)
-
-## Create a text control
-
-See these articles for info and examples specific to each text control.
+有关特定于每个文本控件的信息和示例，请参阅以下文章。
 
 -   [**AutoSuggestBox**](auto-suggest-box.md)
 -   [**PasswordBox**](password-box.md)
@@ -105,100 +94,100 @@ See these articles for info and examples specific to each text control.
 -   [**TextBlock**](text-block.md)
 -   [**TextBox**](text-box.md)
 
-## Font and style guidelines
-See these articles for font guidelines:
+## 字体和样式指南
+有关字体指南，请参阅以下文章：
 
-- [**Font guidelines**](fonts.md)
-- [**Segoe MDL2 icon list and guidelines**](segoe-ui-symbol-font.md)
+- [**字体指南**](fonts.md)
+- [**Segoe MDL2 图标列表和指南**](segoe-ui-symbol-font.md)
 
 
-## Choose the right keyboard for your text control
+## 为文本控件选择正确的键盘
 
-**Applies to:** TextBox, PasswordBox RichEditBox
+**适用于：**TextBox、PasswordBox、RichEditBox
 
-To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.
+若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。
 
->Tip This info applies only to the SIP. It does not apply to hardware keyboards or the On-Screen Keyboard available in the Windows Ease of Access options.
+>提示 此信息仅适用于 SIP。 它不适用于硬件键盘或 Windows“轻松使用”选项中提供的屏幕键盘。
 
-The touch keyboard can be used for text entry when your app runs on a device with a touch screen. The touch keyboard is invoked when the user taps on an editable input field, such as a TextBox or RichEditBox. You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint to the system about the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type.
+当你的应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为与你期望用户输入的数据类型匹配，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
 
-For example, if a text box is used only to enter a 4-digit PIN, set the [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) property to **Number**. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.
+例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
->Important  
->The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.
+>重要提示  
+>输入范围不会导致任何输入验证的执行，并且不会阻止用户通过硬件键盘或其他输入设备提供任何输入。 你仍然负责按需在代码中验证输入。
 
-For more info, see [Use input scope to change the touch keyboard](https://msdn.microsoft.com/library/windows/apps/mt280229).
+有关详细信息，请参阅[使用输入范围更改触摸键盘](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
-## Color fonts
+## 颜色字体
 
-**Applies to:** TextBlock, RichTextBlock, TextBox, RichEditBox
+**适用于：**TextBlock、RichTextBlock、TextBox、RichEditBox
 
-Windows has the ability for fonts to include multiple colored layers for each glyph. For example, the Segoe UI Emoji font defines color versions of the Emoticon and other Emoji characters.
+Windows 具有使字体为每个字形包含多个颜色层的功能。 例如，Segoe UI Emoji 字体定义表情和其他表情符号字符的颜色版本。
 
-The standard and rich text controls support display color fonts. By default, the **IsColorFontEnabled** property is **true** and fonts with these additional layers are rendered in color. The default color font on the system is Segoe UI Emoji and the controls will fall back to this font to display the glyphs in color.
+标准和格式文本控件支持显示颜色字体。 默认情况下，**IsColorFontEnabled** 属性为 **true**，并且带有这些附加层的字体使用颜色呈现。 系统上的默认颜色字体是 Segoe UI Emoji，并且控件将回退到此字体以使用颜色显示字形。
 
 ```xaml
 <TextBlock FontSize="30">Hello ☺⛄☂♨⛅</TextBlock>
 ```
 
-The rendered text looks like this:
+呈现的文本如下所示：
 
-![Text block with color font](images/text-block-color-fonts.png)
+![带有颜色字体的文本块](images/text-block-color-fonts.png)
 
-For more info, see the [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) property.
+有关详细信息，请参阅 [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) 属性。
 
-## Guidelines for line and paragraph separators
+## 行和段落分隔符指南
 
-**Applies to:** TextBlock, RichTextBlock, multi-line TextBox, RichEditBox
+**适用于：**TextBlock、RichTextBlock、multi-line TextBox、RichEditBox
 
-Use the line separator character (0x2028) and the paragraph separator character (0x2029) to divide plain text. A new line is begun after each line separator. A new paragraph is begun after each paragraph separator.
+使用行分隔符 (0x2028) 和段分隔符 (0x2029) 划分纯文本。 在每个行分隔符后开始新行。 在每个段分隔符后开始新段落。
 
-It isn't necessary to start the first line or paragraph in a file with these characters or to end the last line or paragraph with them; doing so indicates that there is an empty line or paragraph in that location.
+没有必要使用这些字符开始第一行或第一段，也不必使用它们结束最后一行或最后一段；执行此操作会指示在该位置存在空行或段落。
 
-Your app can use the line separator to indicate an unconditional end of line. However, line separators do not correspond to the separate carriage return and linefeed characters, or to a combination of these characters. Line separators must be processed separately from carriage return and linefeed characters.
+你的应用可以使用行分隔符指示无条件的行末尾。 但是，行分隔符不对应于单独的回车键和换行字符或这些字符的组合。 行分隔符必须与回车键和换行字符分开处理。
 
-Your app can insert a paragraph separator between paragraphs of text. Use of this separator allows creation of plain text files that can be formatted with different line widths on different operating systems. The target system can ignore any line separators and break paragraphs only at the paragraph separators.
+你的应用可以在文本段落之间插入段分隔符。 使用此分隔符，可以创建可在不同操作系统上使用不同行宽度设置格式的纯文本文件。 目标系统可忽略任何行分隔符，并且仅在段分隔符处分段。
 
-## Guidelines for spell checking
+## 拼写检查指南
 
-**Applies to:** TextBox, RichEditBox
+**适用于：**TextBox、RichEditBox
 
-During text entry and editing, spell checking informs the user that a word is misspelled by highlighting it with a red squiggle and provides a way for the user to correct the misspelling.
+在文本输入和编辑过程中，拼写检查通过使用红色波形曲线突出显示拼写错误的字词来通知用户，并提供一种供用户纠正拼写错误的方法。
 
-Here's an example of the built-in spell checker:
+下面是内置拼写检查器的示例：
 
-![the built-in spell checker](images/spellchecking.png)
+![内置拼写检查器](images/spellchecking.png)
 
-Use spell checking with text input controls for these two purposes:
+对文本输入控件使用拼写检查可用于以下两个目的：
 
--   **To auto-correct misspellings**
+-   **自动更正拼写错误**
 
-    The spell checking engine automatically corrects misspelled words when it's confident about the correction. For example, the engine automatically changes "teh" to "the."
+    拼写检查引擎会在有绝对把握的情况下自动更正拼错的词。 例如，该引擎会自动将“teh”更改为“the”。
 
--   **To show alternate spellings**
+-   **显示备选拼写**
 
-    When the spell checking engine is not confident about the corrections, it adds a red line under the misspelled word and displays the alternates in a context menu when you tap or right-click the word.
+    当拼写检查引擎对于更正不确信时，它会在拼错的字词下面显示一条红线，并在你点击或右键单击该字词时在上下文菜单中显示备选词。
 
--   Use spell checking to help users as they enter words or sentences into text input controls. Spell checking works with touch, mouse, and keyboard inputs.
--   Don't use spell checking when a word is not likely to be in the dictionary or if users wouldn't value spell checking. For example, don't turn it on if the text box is intended to capture a telephone number or name.
--   Don't disable spell checking just because the current spell checking engine doesn't support your app language. When the spell checker doesn't support a language, it doesn't do anything, so there's no harm in leaving the option on. Also, some users might use an Input Method Editor (IME) to enter another language into your app, and that language might be supported. For example, when building a Japanese language app, even though the spell checking engine might not currently recognize that language, don't turn spell checking off. The user may switch to an English IME and type English into the app; if spell checking is enabled, the English will get spell checked.
+-   使用拼写检查可以在用户向文本输入控件中输入字词或句子时提供帮助。 拼写检查适用于触摸、鼠标以及键盘输入。
+-   不要在以下情况中使用拼写检查：字词可能不在词典中，或者用户不重视拼写检查。 例如，如果文本框旨在捕获电话号码或姓名，请不要打开它。
+-   不要仅因为当前拼写检查引擎不支持你的应用语言就禁用拼写检查。 当拼写检查器不支持某种语言时，它不会进行任何操作，因此使该选项处于打开状态不会造成任何损害。 而且，某些用户可以使用输入法编辑器 (IME) 在你的应用中输入另一种语言，并且该语言可能受支持。 例如，在生成日语应用时，即使拼写检查引擎当前可能无法识别该语言，也不要关闭拼写检查。 用户可能会切换到英语 IME 并在应用中键入英语；如果拼写检查处于启用状态，则会进行英语拼写检查。
 
-For TextBox and RichEditBox controls, spell checking is turned on by default. You can turn it off by setting the **IsSpellCheckEnabled** property to **false**.
+对于 TextBox 和 RichEditBox 控件，拼写检查在默认情况下处于打开状态。 你可以通过将 **IsSpellCheckEnabled** 属性设置为 **false** 来关闭它。
 
-## Related articles
+## 相关文章
 
-**For designers**
-- [**Font guidelines**](fonts.md)
-- [**Segoe MDL2 icon list and guidelines**](segoe-ui-symbol-font.md)
-- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
+**面向设计人员**
+- [**字体指南**](fonts.md)
+- [**Segoe MDL2 图标列表和指南**](segoe-ui-symbol-font.md)
+- [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
 
-**For developers (XAML)**
-- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [String.Length property](https://msdn.microsoft.com/library/system.string.length.aspx)
+**面向开发人员 (XAML)**
+- [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [String.Length 属性](https://msdn.microsoft.com/library/system.string.length.aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

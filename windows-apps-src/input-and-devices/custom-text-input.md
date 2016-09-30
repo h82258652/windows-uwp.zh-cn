@@ -7,7 +7,7 @@ label: Custom text input
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
+ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 ---
 
@@ -99,7 +99,7 @@ ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
 
 -   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
 -   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
--   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
+-   [ **NewSelection** ](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 在你的编辑控件中，应用指定的更改并将 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) 设置为 **Succeeded**。 下面是该控件在应用更改后的状态。
 
@@ -165,6 +165,6 @@ ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

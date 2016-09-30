@@ -1,80 +1,83 @@
 ---
-description: Learn how to design and code a UWP app that's easy to navigate and looks great on a variety of devices and screen sizes.
-title: UWP app layout design - Windows app development
+description: "了解如何设计和编码在各种设备和屏幕大小上易于导航且外观优美的 UWP 应用。"
+title: "UWP 应用布局设计 – Windows 应用开发"
 author: mijacobs
 keywords: uwp app layout, universal windows platform, app design, interface
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
+ms.sourcegitcommit: fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9
+ms.openlocfilehash: 7a1233724b9b0fd9af709bbf114669fe102e6f0d
 
 ---
-# Layout for UWP apps
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
+<div class="uwpd-banner">
+<h1 class="uwpd-ruledheader">适用于 UWP 应用的布局</h1>
+</div>
 
-App structure, page layout, and navigation are the foundation of your app's user experience. The articles in this section help you create an app that is easy to navigate and looks great on a variety of devices and screen sizes.
+应用结构、页面布局和导航是应用用户体验的基础。 本节中的文章将帮助你创建在各种设备和屏幕大小上易于导航且外观优美的 UWP 应用。
 
-## Intro
+## 简介
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  <p><b>[Intro to app UI design](design-and-ui-intro.md)</b><br />
-When you design a UWP app, you create a user interface that suits a variety of devices with different display sizes. This article provides an overview of UI-related features and benefits of UWP apps and some tips & tricks for designing a responsive UI. </p>
+  <p><b>[应用 UI 设计简介](design-and-ui-intro.md)</b><br />
+在设计 UWP 应用时，可以创建一个适合具有不同屏幕大小的各种设备的用户界面。 本文概述 UWP 应用的 UI 相关功能和优势，以及用于设计响应式 UI 的一些提示和技巧。 </p>
   </div>
   <div class="side-by-side-content-right">
-    ![An app running on multiple devices](images/rspd-reposition-type1-sm.png)
+    ![在多台设备上运行的应用](images/rspd-reposition-type1-sm.png)
   </div>
 </div>
 </div>
 
-## App layout and structure
-Check out these recommendations for structuring your app and using the three types of UI elements: navigation, command, and content.
+## 应用布局和结构
+查看这些有关构建应用和使用以下三种 UI 元素的建议：导航、命令和内容。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
 <p>
-<b>[Navigation basics](navigation-basics.md)</b><br/>
-Navigation in UWP apps is based on a flexible model of navigation structures, navigation elements, and system-level features. This article introduces you to these components and shows you how to use them together to create a good navigation experience.
+<b>[导航基础知识](navigation-basics.md)</b><br/>
+UWP 应用中的导航基于导航结构、导航元素和系统级功能的灵活模型。 本文将向你介绍这些组件，并向你展示如何结合使用它们来创建良好的导航体验。
 </p>
 <p>
-<b>[Content basics](content-basics.md)</b><br/>
-The main purpose of any app is to provide access to content: in a photo-editing app, the photo is the content; in a travel app, maps and info about travel destinations is the content; and so on. This article provides content design recommendations for the three content scenarios: consumption, creation, and interaction.
+<b>[内容基础知识](content-basics.md)</b><br/>
+任何应用的主要用途都是提供对内容的访问权限：在照片编辑应用中，照片即是内容；在旅行应用中，地图和旅行目的地信息即是内容；等等。 本文提供了适用于三种内容方案的内容设计建议：使用、创建和交互。
 </p> 
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Command basics](commanding-basics.md)</b> <br />
-Command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form. This article describes the command elements, such as buttons and check boxes, the interactions they support, and the command surfaces (such as command bars and context menus) for hosting them.</p>
+<p><b>[命令基础知识](commanding-basics.md)</b> <br />
+命令元素是使用户能够执行发送电子邮件、删除项或提交表单等操作的交互式 UI 元素。 本文将介绍命令元素（如按钮和复选框）、它们支持的交互以及承载它们的命令图面（如命令栏和上下文菜单）。</p>
   </div>
 </div>
 </div>
 
-## Page layout 
-These articles help you create a flexible UI that looks great on different screen sizes, window sizes, resolutions, and orientations. 
+## 页面布局 
+这些文章将帮助你创建在不同的屏幕大小、窗口大小、分辨率和方向上外观良好的灵活 UI。 
 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>[Screen sizes and breakpoints](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
-The number of device targets and screen sizes across the Windows 10 ecosystem is too great to worry about optimizing your UI for each one. Instead, we recommended designing for a few key widths (also called "breakpoints"): 360, 640, 1024 and 1366 epx.</p>
+   <p><b>[屏幕大小和断点](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
+Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，无法针对每台设备来优化你的 UI。 我们建议应针对一些关键的宽度（也称为“断点”）进行设计：360、640、1024 和 1366 epx。</p>
   </div>
   <div class="side-by-side-content-right">
- <p><b>[Define layouts with XAML](layouts-with-xaml.md)</b> <br/>
-How to use XAML properties and layout panels to make your app responsive and adaptive.</p>
+ <p><b>[使用 XAML 定义布局](layouts-with-xaml.md)</b> <br/>
+如何使用 XAML 属性和布局面板使你的应用成为响应式和自适应应用。</p>
   </div>
 </div>
 </div>
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>[Layout panels](layout-panels.md)</b> <br />
-Learn about each type of layout each panel and show how to use them to layout XAML UI elements.</p>
+   <p><b>[布局面板](layout-panels.md)</b> <br />
+了解每种面板的每种布局类型，并且展示如何使用这些类型设置 XAML UI 元素的布局。</p>
   </div>
   <div class="side-by-side-content-right">
- <p><b>[Alignment, margins, and padding](alignment-margin-padding.md)</b> <br />
-In addition to dimension properties (width, height, and constraints) elements can also have alignment, margin, and padding properties that influence the layout behavior when an element goes through a layout pass and is rendered in a UI.</p> 
+ <p><b>[对齐、边距和填充](alignment-margin-padding.md)</b> <br />
+除了维度属性（宽度、高度和约束），元素还可以具有对齐、边距和填充属性，当元素经过布局传递并在 UI 中呈现时，这些属性可影响布局行为。</p> 
   </div>
 </div>
 </div>
@@ -83,6 +86,6 @@ In addition to dimension properties (width, height, and constraints) elements ca
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

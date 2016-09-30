@@ -6,29 +6,20 @@ ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 5752e1a7f7ac358043ec99c8db07cbfda9c4cd37
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dd947d0b55dad56fdd6c684ae236f1c31ac8da86
 
 ---
-# Web 视图
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
+# Web 视图
 
 
 
 Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Edge 呈现引擎来呈现 Web 内容。 超链接也可以在 Web 视图控件中显示并正常工作。
 
-<div class="important-apis" >
-<b>重要的 API</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227702"><strong>WebView 类</strong></a></li>
-</ul>
+**重要的 API**
 
-</div>
-</div>
-
-
-
+-   [**WebView 类**](https://msdn.microsoft.com/library/windows/apps/br227702)
 
 ## 这是正确的控件吗？
 
@@ -316,11 +307,11 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 默认情况下，Web 视图内容承载于属于桌面设备系列的设备的 UI 线程上，不会承载在所有其他设备的 UI 线程上。 你可以使用 [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) 静态属性来查询当前客户端的默认线程行为。 如有必要，可以使用 [**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) 构造函数替代此行为。 
 
-> **注意**&nbsp;&nbsp;在移动设备的 UI 线程上托管内容时可能存在性能问题，因此在更改 DefaultExecutionMode 时，请确保在所有目标设备上进行测试。
+> **注意** &nbsp;&nbsp;在移动设备的 UI 线程上承载内容时可能存在性能问题，因此请确保在更改 DefaultExecutionMode 时，在所有目标设备上进行测试。
 
-在 UI 线程外托管内容的 Web 视图与需要手势才能从 Web 视图控件向上传播到父级的父控件不兼容，例如 [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx)、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) 和其他相关控件。 这些控件将不能接收在线程外的 Web 视图中发起的手势。 此外，并不直接支持打印线程外的 Web 内容，应改为使用 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) 填充打印元素。
+在 UI 线程外承载内容的 Web 视图与需要手势才能从 Web 视图控件向上传播到父级的父控件不兼容，例如 [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx)、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) 和其他相关控件。 这些控件将不能接收在线程外的 Web 视图中发起的手势。 此外，并不直接支持打印线程外的 Web 内容，应改为使用 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) 填充打印元素。
 
-## 建议
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>建议
 
 
 -   确保针对设备正确地格式化加载的网站，并使用与应用的其他部分一致的颜色、版式和导航。
@@ -329,7 +320,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-## 相关主题
+## <span id="related_topics"></span>相关主题
 
 * [**WebView 类**](https://msdn.microsoft.com/library/windows/apps/br227702)
  
@@ -342,6 +333,6 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

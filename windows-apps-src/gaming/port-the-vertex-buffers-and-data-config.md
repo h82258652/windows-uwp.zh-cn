@@ -1,31 +1,31 @@
 ---
 author: mtoepke
-title: Port the vertex buffers and data
-description: In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.
+title: "移植顶点缓冲区和数据"
+description: "在此步骤中，你将定义将包含网格的顶点缓冲区以及允许着色器按照指定的顺序遍历顶点的索引缓冲区。"
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee8b3f693e40d9c0fba679a44ebcd4986d06d7ac
+ms.openlocfilehash: 9692b33303099f9d1193b93ab458a19a5d95abe3
 
 ---
 
-# Port the vertex buffers and data
+# 移植顶点缓冲区和数据
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**重要的 API**
 
 -   [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
 -   [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
 -   [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588)
 
-In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.
+在此步骤中，你将定义将包含网格的顶点缓冲区以及允许着色器按照指定的顺序遍历顶点的索引缓冲区。
 
-At this point, let's examine the hardcoded model for the cube mesh we are using. Both representations have the vertices organized as a triangle list (as opposed to a strip or other more efficient triangle layout). All vertices in both representations also have associated indices and color values. Much of the Direct3D code in this topic refers to variables and objects defined in the Direct3D project.
+此时，让我们检查一下所使用的立方体网格的硬编码模型。 这两个表示都将顶点组织为三角形列表（而不是条带或其他更有效的三角形布局）。 这两个表示中的所有顶点还都具有关联的索引和颜色值。 本主题中的大部分 Direct3D 代码都参考了 Direct3D 项目中定义的变量和对象。
 
-Here's the cube for processing by OpenGL ES 2.0. In the sample implementation, each vertex is 7 float values: 3 position coordinates followed by 4 RGBA color values.
+下面是由 OpenGL ES 2.0 进行处理的立方体。 在此示例实现中，每个顶点都是 7 位浮点值：3 个位置坐标，之后是 4 个 RGBA 颜色值。
 
 ```cpp
 #define CUBE_INDICES 36
@@ -65,7 +65,7 @@ GLuint cubeIndices[] =
 };
 ```
 
-And here's the same cube for processing by Direct3D 11.
+下面是由 Direct3D 11 进行处理的同一个立方体。
 
 ```cpp
 VertexPositionColor cubeVerticesAndColors[] = 
@@ -103,17 +103,17 @@ unsigned short cubeIndices[] =
 };
 ```
 
-Reviewing this code, you notice that the cube in the OpenGL ES 2.0 code is represented in a right-hand coordinate system, whereas the cube in the Direct3D-specific code is represented in a left-hand coordinate system. When importing your own mesh data, you must reverse the z-axis coordinates for your model and change the indices for each mesh accordingly to traverse the triangles according to the change in the coordinate system.
+查看该代码，你会注意到，OpenGL ES 2.0 代码中的立方体采用右手坐标系加以表示，而特定于 Direct3D 的代码采用左手坐标系表加以表示。 导入你自己的网格数据时，必须将你的模型的 z 轴坐标反向并相应地更改每个网格的索引以便根据坐标系的更改遍历三角形。
 
-Assuming that we have successfully moved the cube mesh from the right-handed OpenGL ES 2.0 coordinate system to the left-handed Direct3D one, let's see how to load the cube data for processing in both models.
+假定我们已经成功地将立方体网格从右手 OpenGL ES 2.0 坐标系移动到左手 Direct3D 坐标系，下面我们介绍一下如何在这两种模型中加载立方体数据以便进行处理。
 
-## Instructions
+## 说明
 
-### Step 1: Create an input layout
+### 步骤 1：创建输入布局
 
-In OpenGL ES 2.0, your vertex data is supplied as attributes that will be supplied to and read by the shader objects. You typically provide a string that contains the attribute name used in the shader's GLSL to the shader program object, and get a memory location back that you can supply to the shader. In this example, a vertex buffer object contains a list of custom Vertex structures, defined and formatted as follows:
+在 OpenGL ES 2.0 中，你的顶点数据以属性的形式提供，属性将提供给着色器对象并由着色器对象进行读取。 通常你会将包含在着色器的 GLSL 中使用的属性名称的字符串提供给着色器程序对象，并得到一个你可以提供给着色器的内存位置。 在此示例中，顶点缓冲区对象包含一个自定义的矢量结构列表，该列表是按照如下方式进行定义并设置格式的：
 
-OpenGL ES 2.0: Configure the attributes that contain the per-vertex information.
+OpenGL ES 2.0：配置包含每个顶点信息的属性。
 
 ``` syntax
 typedef struct 
@@ -123,13 +123,13 @@ typedef struct
 } Vertex;
 ```
 
-In OpenGL ES 2.0, input layouts are implicit; you take a general purpose GL\_ELEMENT\_ARRAY\_BUFFER and supply the stride and offset such that the vertex shader can interpret the data after uploading it. You inform the shader before rendering which attributes map to which portions of each block of vertex data with **glVertexAttribPointer**.
+在 OpenGL ES 2.0 中，输入布局是隐式的；你获取一个常规用途的 GL\_ELEMENT\_ARRAY\_BUFFER 并提供步幅和偏移，以便顶点着色器可以在上传数据之后解释该数据。 使用 **glVertexAttribPointer** 呈现哪些属性映射到每个顶点数据块的哪个部分之前，通知着色器。
 
-In Direct3D, you must provide an input layout to describe the structure of the vertex data in the vertex buffer when you create the buffer, instead of before you draw the geometry. To do this, you use an input layout which corresponds to layout of the data for our individual vertices in memory. It is very important to specify this accurately!
+在 Direct3D 中，必须提供输入布局以描述在创建缓冲区时（而不是绘制几何图形之前）顶点缓冲区中顶点数据的结构。 为此，使用一个与内存中各个顶点的数据布局相对应的输入布局。 精确地指定此内容非常重要！
 
-Here, you create an input description as an array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures.
+你在此处以 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 结构数组的形式创建一个输入描述。
 
-Direct3D: Define an input layout description.
+Direct3D：定义输入布局描述。
 
 ``` syntax
 struct VertexPositionColor
@@ -148,13 +148,13 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-This input description defines a vertex as a pair of 2 3-coordinate vectors: one 3D vector to store the position of the vertex in model coordinates, and another 3D vector to store the RGB color value associated with the vertex. In this case, you use 3x32 bit floating point format, elements of which we represent in code as `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. You should use types from the [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574) library whenever you are handling data that will be used by a shader, as it ensure the proper packing and alignment of that data. (For example, use [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) or [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) for vector data, and [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) for matrices.)
+该输入描述将顶点定义为两个 3 位坐标矢量对：一个三维矢量用于存储模型坐标中顶点的位置，另一个三维矢量用于存储与顶点关联的 RGB 颜色值。 在本例中，使用 3x32 位浮点格式，我们采用代码将其中的元素表示为 `XMFLOAT3(X.Xf, X.Xf, X.Xf)`。 处理将用于着色器的数据时，都应该使用来自 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574) 库的类型，因为它可以确保使该数据进行正确的打包和对齐。 （例如，对于矢量数据，使用 [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) 或 [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)；对于矩阵，使用 [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621)）。
 
-For a list of all the possible format types, refer to [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+有关所有可能的格式类型的列表，请参阅 [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)。
 
-With the per-vertex input layout defined, you create the layout object. In the following code, you write it to **m\_inputLayout**, a variable of type **ComPtr** (which points to an object of type [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** contains the compiled vertex shader object from the previous step, [Port the shaders](port-the-shader-config.md).
+定义了每个顶点输入布局后，可以创建布局对象。 在以下代码中，我们将其写入 **m\_inputLayout**，它是一个类型为 **ComPtr** 的变量（指向类型为 [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575) 的对象）。 **fileData** 包含上一步[移植着色器](port-the-shader-config.md)中已编译好的顶点着色器对象。
 
-Direct3D: Create the input layout used by the vertex buffer.
+Direct3D：创建顶点缓冲区使用的输入布局。
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11InputLayout>      m_inputLayout;
@@ -170,13 +170,13 @@ m_d3dDevice->CreateInputLayout(
 );
 ```
 
-We've defined the input layout. Now, let's create a buffer that uses this layout and load it with the cube mesh data.
+我们已经定义了输入布局。 现在，我们将创建一个使用该布局的缓冲区并将其与立方体网格数据一起加载。
 
-### Step 2: Create and load the vertex buffer(s)
+### 步骤 2：创建和加载顶点缓冲区
 
-In OpenGL ES 2.0, you create a pair of buffers, one for the position data and one for the color data. (You could also create a struct that contains both and a single buffer.) You bind each buffer and write position and color data into them. Later, during your render function, bind the buffers again and provide the shader with the format of the data in the buffer so it can correctly interpret it.
+在 OpenGL ES 2.0 中，创建一对缓冲区，一个用于位置数据，一个用于颜色数据。 （也可以创建一个包含两者和单个缓冲区的结构。）绑定每个缓冲区并向其中写入位置和颜色数据。 然后，在呈现函数期间，再次绑定缓冲区并为着色器提供缓冲区中数据的格式，以便它可以正确解释该数据。
 
-OpenGL ES 2.0: Bind the vertex buffers
+OpenGL ES 2.0：绑定顶点缓冲区
 
 ``` syntax
 // upload the data for the vertex position buffer
@@ -185,13 +185,13 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-In Direct3D, shader-accessible buffers are represented as [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structures. To bind the location of this buffer to shader object, you need to create a CD3D11\_BUFFER\_DESC structure for each buffer with [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), and then set the buffer of the Direct3D device context by calling a set method specific to the buffer type, such as [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
+在 Direct3D 中，着色器可以访问的缓冲区表示为 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 结构。 若要将该缓冲区的位置绑定到着色器对象，你需要使用 [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 为每个缓冲区创建一个 CD3D11_BUFFER_DESC 结构，然后通过调用特定于缓冲区类型的 set 方法（如 [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)）设置 Direct3D 设备上下文的缓冲区。
 
-When you set the buffer, you must set the stride (the size of the data element for an individual vertex) as well the offset (where the vertex data array actually starts) from the beginning of the buffer.
+设置缓冲区时，必须从缓冲区的开头设置步幅（单个顶点的数据元素大小）以及偏移（顶点数据数组实际开始的位置）。
 
-Notice that we assign the pointer to the **vertexIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure. If this isn't correct, your mesh will be corrupt or empty!
+注意，我们将 **vertexIndices** 数组的指针分配给 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 结构的 **pSysMem** 字段。 如果该操作不正确，你的网格将遭到破坏或为空！
 
-Direct3D: Create and set the vertex buffer
+Direct3D：创建和设置顶点缓冲区
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -217,13 +217,13 @@ m_d3dContext->IASetVertexBuffers(
   &offset);
 ```
 
-### Step 3: Create and load the index buffer
+### 步骤 3：创建和加载索引缓冲区
 
-Index buffers are an efficient way to allow the vertex shader to look up individual vertices. Although they are not required, we use them in this sample renderer. As with vertex buffers in OpenGL ES 2.0, an index buffer is created and bound as a general purpose buffer and the vertex indices you created earlier are copied into it.
+索引缓冲区是允许顶点着色器查找各个顶点的有效方法。 尽管不需要，但我们还是在该示例呈现器中使用它们。 同 OpenGL ES 2.0 中的顶点缓冲区一样，创建一个索引缓冲区并作为常规用途缓冲区绑定，将你之前创建的顶点索引复制到该缓冲区中。
 
-When you're ready to draw, you bind both the vertex and the index buffer again, and call **glDrawElements**.
+当你准备好绘图时，你需要再次绑定顶点缓冲区和索引缓冲区，并且调用 **glDrawElements**。
 
-OpenGL ES 2.0: Send the index order to the draw call.
+OpenGL ES 2.0：向绘图调用发送索引顺序。
 
 ``` syntax
 GLuint indexBuffer;
@@ -245,9 +245,9 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-With Direct3D, it's a bit very similar process, albeit a bit more didactic. Supply the index buffer as a Direct3D subresource to the [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) you created when you configured Direct3D. You do this by calling [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) with the configured subresource for the index array, as follows. (Again, notice that you assign the pointer to the **cubeIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure.)
+对于 Direct3D，虽然有点说教，但这个过程有点类似。 提供索引缓冲区作为配置 Direct3D 时创建的 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 的 Direct3D 子资源。 通过使用为索引数组配置的子资源调用 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) 来完成该操作，如下所示。 （再次注意，将 **cubeIndices** 数组的指针分配给 [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 结构的 **pSysMem** 字段。）
 
-Direct3D: Create the index buffer.
+Direct3D：创建索引缓冲区。
 
 ``` syntax
 m_indexCount = ARRAYSIZE(cubeIndices);
@@ -271,9 +271,9 @@ m_d3dContext->IASetIndexBuffer(
   0);
 ```
 
-Later, you will draw the triangles with a call to [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (or [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) for unindexed vertices), as follows. (For more details, jump ahead to [Draw to the screen](draw-to-the-screen.md).)
+之后，你将通过调用 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409)（对于无索引顶点，则通过调用 [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)）绘制三角形，如下所示。 （有关详细信息，请向前跳至[绘制到屏幕](draw-to-the-screen.md)。）
 
-Direct3D: Draw the indexed vertices.
+Direct3D：绘制索引的顶点。
 
 ``` syntax
 m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -287,37 +287,37 @@ m_d3dContext->DrawIndexed(
   0);
 ```
 
-## Previous step
+## 上一步
 
 
-[Port the shader objects](port-the-shader-config.md)
+[移植着色器对象](port-the-shader-config.md)
 
-## Next step
+## 下一步
 
-[Port the GLSL](port-the-glsl.md)
+[移植 GLSL](port-the-glsl.md)
 
-## Remarks
+## 备注
 
-When structuring your Direct3D, separate the code that calls methods on [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) into a method that is called whenever the device resources need to be recreated. (In the Direct3D project template, this code is in the renderer object's **CreateDeviceResource** methods. The code that updates the device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), on the other hand, is placed in the **Render** method, since this is where you actually construct the shader stages and bind the data.
+当构造你的 Direct3D 时，将在 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 上调用方法的代码分离成一个当需要重新创建设备资源时调用的方法。 （在 Direct3D 项目模板中，该代码位于呈现器对象的 **CreateDeviceResource** 方法中。） 另一方面，更新设备上下文 ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) 的代码位于 **Render** 方法中，因为这是你实际构造着色器阶段以及绑定数据的位置。
 
-## Related topics
+## 相关主题
 
 
-* [How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [Port the shader objects](port-the-shader-config.md)
-* [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
-* [Port the GLSL](port-the-glsl.md)
-
- 
+* [如何：将简单的 OpenGL ES 2.0 呈现器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [移植着色器对象](port-the-shader-config.md)
+* [移植顶点缓冲区和数据](port-the-vertex-buffers-and-data-config.md)
+* [移植 GLSL](port-the-glsl.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

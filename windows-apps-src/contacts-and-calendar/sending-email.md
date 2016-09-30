@@ -1,31 +1,31 @@
 ---
 author: Xansky
-description: Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button.
-title: Send email
+description: "显示如何启动撰写电子邮件对话框以允许用户发送电子邮件。 你可以在显示该对话框之前，使用数据预填充电子邮件的字段。 该消息将在用户点击发送按钮后发出。"
+title: "发送电子邮件"
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, email, send
 translationtype: Human Translation
 ms.sourcegitcommit: 252e144b2436f047f7b0849bb6e5aee87b2e3464
-ms.openlocfilehash: ff09393af072eb8aee8c3001e7323cc20201da70
+ms.openlocfilehash: ff0d2cd86f8ba422db7a26565c52293a3e21a018
 
 ---
 
-# Send email
+# 发送电子邮件
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button.
+显示如何启动撰写电子邮件对话框以允许用户发送电子邮件。 你可以在显示该对话框之前，使用数据预填充电子邮件的字段。 该消息将在用户点击发送按钮后发出。
 
-**In this article**
+**本文内容**
 
--   [Launch the compose email dialog](#launch-the-compose-email-dialog)
--   [Summary and next steps](#summary-and-next-steps)
--   [Related topics](#related-topics)
+-   [启动撰写电子邮件对话框](#launch-the-compose-email-dialog)
+-   [摘要和后续步骤](#summary-and-next-steps)
+-   [相关主题](#related-topics)
 
-## Launch the compose email dialog
+## 启动撰写电子邮件对话框
 
-Create a new [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) to show the dialog.
+创建新 [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) 对象，并设置你要在撰写电子邮件对话框中预填充的数据。 调用 [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) 显示对话框。
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient, 
@@ -58,14 +58,14 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 }
 ```
 
-## Summary and next steps
+## 摘要和后续步骤
 
-This topic has shown you how to launch the compose email dialog. For information on selecting contacts to use as recipients for an email message, see [Select contacts](selecting-contacts.md). See [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) to select a file to use as an email attachment.
+本主题已向你展示如何启动撰写电子邮件对话框。 有关选择用作电子邮件接收方联系人的信息，请参阅[选择联系人](selecting-contacts.md)。 请参阅 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) 以选择要用作电子邮件附件的文件。
 
-## Related topics
+## 相关主题
 
-* [Selecting contacts](selecting-contacts.md)
-* [How to continue your Windows Phone app after calling a file picker](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [选择联系人](selecting-contacts.md)
+* [如何在调用文件选取器后继续使用你的 Windows Phone 应用](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
  
@@ -76,6 +76,6 @@ This topic has shown you how to launch the compose email dialog. For information
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

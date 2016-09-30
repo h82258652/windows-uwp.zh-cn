@@ -1,43 +1,43 @@
 ---
 author: mcleblanc
-title: Getting started, What next
+title: "入门：下一步是什么"
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
-description: With this basic information, you can now start writing more interesting Universal Windows Platform (UWP) apps.
+description: "凭借此基本信息，你现在可以开始编写更有趣的通用 Windows 平台 (UWP) 应用。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
+ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
 
 ---
 
-# Getting started: What next?
+# 入门：下一步是什么？
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Next steps
+## 后续步骤
 
-With this basic information, you can now start writing more interesting Universal Windows Platform (UWP) apps. For your next steps, have a read through the following topics, and then fire up Microsoft Visual Studio and start writing some code!
+凭借此基本信息，你现在可以开始编写更有趣的通用 Windows 平台 (UWP) 应用。 在后续步骤中，请先通读以下主题，然后启动 Microsoft Visual Studio 并开始编写代码！
 
--   [App contracts and extensions](https://msdn.microsoft.com/library/windows/apps/hh464906): How to declare agreements between your apps and other apps and Windows, for example, the Play To contract and the Game Explorer extension.
--   [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259): How to create tiles, update tiles and their badges, send toast notifications, and show and update tile and badge updates on the lock screen.
--   [Launching, resuming, and multitasking](https://msdn.microsoft.com/library/windows/apps/hh770837): How to auto-launch, activate, suspend, and resume apps, and how to work with background tasks.
--   [Guidelines for roaming application data](https://msdn.microsoft.com/library/windows/apps/hh465094): How to provide a great end-user experience for apps where the user utilizes more than one device, such as a PC at work and a tablet at home.
--   [Create your first Windows Runtime app using C# or Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=394138): A topic focusing on Windows Phone development.
--   [Videos for iOS and Android devs](https://msdn.microsoft.com/library/windows/apps/dn393982): Some more help, this time in visual format.
+-   [应用合约和扩展](https://msdn.microsoft.com/library/windows/apps/hh464906)：如何在你的应用、其他应用和 Windows 之间声明协议，例如“播放到”合约和“游戏资源管理器”扩展。
+-   [使用磁贴、锁屏提醒和 Toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)：如何创建磁贴、更新磁贴及其锁屏提醒，发送 Toast 通知，以及在锁屏界面上显示和更新磁贴和锁屏提醒更新。
+-   [启动、恢复和执行多任务](https://msdn.microsoft.com/library/windows/apps/hh770837)：如何自动启动、激活、暂停和恢复应用，以及如何处理后台任务。
+-   [漫游应用程序数据指南](https://msdn.microsoft.com/library/windows/apps/hh465094)：如何为最终用户提供使用多台设备（例如办公电脑和家用平板电脑）的卓越应用体验。
+-   [创建你的第一个使用 C# 或 Visual Basic 的 Windows 运行时应用](http://go.microsoft.com/fwlink/p/?LinkID=394138)：该主题重点介绍 Windows Phone 开发。
+-   [适用于 iOS 和 Android 开发人员的视频](https://msdn.microsoft.com/library/windows/apps/dn393982)：以视频的形式提供更多帮助。
 
-Also, be sure to visit our [Community resources](http://go.microsoft.com/fwlink/p/?LinkId=263513) to learn how to get help and get connected through developer forums, blogs, developer camps and workshops, and local Microsoft events and contacts.
+此外，请确保访问我们的[社区资源](http://go.microsoft.com/fwlink/p/?LinkId=263513)，了解如何通过开发人员论坛、博客、开发人员营地和研讨会，以及本地 Microsoft 活动和联系人来获得帮助和取得联系。
 
-We think that Windows 10 will open up new app-building opportunities for you. We look forward to seeing all of the great apps that you're going to build!
+我们认为，Windows 10 将为你开启新的应用构建机会。 我们期待看到你即将生成的所有优秀应用！
 
-## Related topics
+## 相关主题
 
-**Topics for iOS devs**
-* [Resources for iOS devs](https://msdn.microsoft.com/library/windows/apps/jj945493)
-* [Windows controls for iOS devs](https://msdn.microsoft.com/library/windows/apps/dn263255)
-* [Windows cookbook for iOS devs](https://msdn.microsoft.com/library/windows/apps/dn263256)
-* [Building apps for Windows blog](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
+**适用于 iOS 开发人员的主题**
+* [适用于 iOS 开发人员的资源](https://msdn.microsoft.com/library/windows/apps/jj945493)
+* [适用于 iOS 开发人员的 Windows 控件](https://msdn.microsoft.com/library/windows/apps/dn263255)
+* [适用于 iOS 开发人员的 Windows Cookbook](https://msdn.microsoft.com/library/windows/apps/dn263256)
+* [生成适用于 Windows 的应用博客](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

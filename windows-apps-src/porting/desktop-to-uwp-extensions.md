@@ -1,66 +1,66 @@
 ---
 author: awkoren
-Description: In addition to the normal APIs available to all UWP apps, there are some extensions and APIs available only to converted desktop apps. This article describes these extensions and how to use them.
+Description: "除了适用于所有 UWP 应用的常规 API 之外，还有一些扩展和 API 仅适用于已转换的桌面应用。 本文将介绍这些扩展及其使用方法。"
 Search.Product: eADQiWindows 10XVcnh
-title: Converted desktop app extensions
+title: "已转换的桌面应用扩展"
 translationtype: Human Translation
-ms.sourcegitcommit: 09ddc8cad403a568a43e08f32abeaf0bbd40d59a
-ms.openlocfilehash: 2aa55797ed3a6588b3a27158282a02827fbd2109
+ms.sourcegitcommit: aa64c39c452beb2356186789a0d8bc44f79d82d2
+ms.openlocfilehash: 0ad7e8d0fe63ffbfa8668be8955859258887d6f0
 
 ---
 
-# Converted desktop app extensions
+# 已转换的桌面应用扩展
 
-You can enhance your converted Desktop application with a wide range of Universal Windows Platform (UWP) APIs. However, in addition to the normal APIs available to all UWP apps, there are some extensions and APIs available only to converted desktop apps. These features focus on scenarios such as launching a process when the user logs on and File Explorer integration, and are designed to smooth the transition between the original desktop app and the converted app package.
+可以使用各种通用 Windows 平台 (UWP) API 增强已转换的桌面应用程序。 但是，除了适用于所有 UWP 应用的常规 API 之外，还有一些扩展和 API 仅适用于已转换的桌面应用。 这些功能主要针对诸如在用户登录时启动进程和文件资源管理器集成之类的方案，旨在平滑处理原始桌面应用和已转换的应用包之间的转换。
 
-This article describes these extensions and how to use them. Most require manual modification of your converted app's manifest file, which contains declarations about the extensions your app makes use of. To edit the manifest, right-click the **Package.appxmanifest** file in your Visual Studio solution and select *View Code*. 
+本文将介绍这些扩展及其使用方法。 大多数扩展都要求手动修改已转换的应用的清单文件，其中包含有关你的应用将使用的扩展声明。 若要编辑清单，请右键单击 Visual Studio 解决方案中的 **Package.appxmanifest** 文件，然后选择“查看代码”**。 
 
-## Startup tasks
+## 启动任务
 
-Startup tasks allow your app to run an executable automatically whenever a user logs on. 
+启动任务允许你的应用在用户登录时自动运行一个可执行文件。 
 
-To declare a startup task, add the following to your app's manifest: 
+若要声明启动任务，请将以下内容添加到应用的清单中： 
 
 ```XML
 <desktop:Extension Category="windows.startupTask" Executable="bin\MyStartupTask.exe" EntryPoint="Windows.FullTrustApplication">
     <desktop:StartupTask TaskId="MyStartupTask" Enabled="true" DisplayName="My App Service" />
 </desktop:Extension>
 ```
-- *Extension Category* should always have the value "windows.startupTask ".
-- *Extension Executable* is the relative path to the .exe to start.
-- *Extension EntryPoint* should always have the value "Windows.FullTrustApplication".
-- *StartupTask TaskId* is a unique identifier for your task. Using this identifier, your app can call the APIs in the **Windows.ApplicationModel.StartupTask** class to programmatically enable or disable a startup task.
-- *StartupTask Enabled* indicates whether the task first starts enabled or disabled. Enabled tasks will run the next time the user logs on (unless the user disables it). 
-- *StartupTask DisplayName* is the name of the task that appears in Task Manager. This string is localizable using ```ms-resource```. 
+- *扩展类别*的值应始终为“windows.startupTask”。
+- *扩展可执行文件*是要启动的 .exe 的相对路径。
+- *扩展入口点*的值应始终为“Windows.FullTrustApplication”。
+- *StartupTask TaskId* 是任务的唯一标识符。 应用可以使用此标识符调用 **Windows.ApplicationModel.StartupTask** 类中的 API，以便以编程方式启用或禁用启动任务。
+- *StartupTask Enabled* 指示是启用还是禁用任务的首次启动。 启用的任务将在用户下次登录时运行（除非用户禁用它）。 
+- *StartupTask DisplayName* 是出现在任务管理器中的任务名称。 此字符串使用 ```ms-resource``` 进行本地化。 
 
-Apps can declare multiple startup tasks; each will fire and run independently. All startup tasks will appear in Task Manager under the **Startup** tab with the name specified in your app's manifest and your app's icon. Task Manager will automatically analyze the startup impact of your tasks. Users can opt to manually disable your app's startup task using Task Manager; if a user disables a task, you cannot programmatically re-enable it.
+应用可以声明多个启动任务；每一个任务都将独立引发和运行。 所有启动任务都将显示在任务管理器的“启动”****选项卡下，其名称在应用的清单和应用的图标中指定。 任务管理器将自动分析任务的启动影响。 用户可以选择使用任务管理器手动禁用你的应用的启动任务；如果用户禁用某个任务，则你无法以编程方式重新启用它。
 
-## App execution alias
+## 应用执行别名
 
-An app execution alias allows you to specify a keyword name for your app. Users or other processes can use this keyword to easily launch your app as though it were in the PATH variable - from Run or a command prompt, for instance - without providing the full path. For example, if you declare the alias "Foo," a user can type "Foo Bar.txt" from cmd.exe and your app will be activated with the path to "Bar.txt" as part of the activation event args.
+应用执行别名使你可以为你的应用指定关键字名称。 用户或其他进程可以使用该关键字轻松启动你的应用，如同该应用原本就在 PATH 变量中（例如从 Run 或命令提示符），无需提供完整路径。 例如，如果声明别名“Foo”，用户可以从 cmd.exe 键入“Foo Bar.txt”，将使用“Bar.txt”的路径作为激活事件参数的一部分来激活你的应用。
 
-To specify an app execution alias, add the following to your app's manifest: 
+若要指定应用执行别名，请将以下内容添加到应用的清单： 
 
 ```XML 
 <uap3:Extension Category="windows.appExecutionAlias" Executable="exes\launcher.exe" EntryPoint="Windows.FullTrustApplication">
     <uap3:AppExecutionAlias>
-        <desktop:ExecutionAlias Alias="Foo.exe" />
+        <desktop:ExecutionAlias Alias="Foo.exe">
     </uap3:AppExecutionAlias>
 </uap3:Extension>
 ```
 
-- *Extension Category* should always have the value "windows.appExecutionAlias".
-- *Extension Executable* is the relative path to the executable to launch when the alias is invoked.
-- *Extension EntryPont* should always have the value "Windows.FullTrustApplication".
-- *ExecutionAlias Alias* is the short name for your app. It must always end with the ".exe" extension. 
+- *扩展类别*的值应始终为“windows.appExecutionAlias”。
+- *扩展可执行文件*是调用别名时要启动的可执行文件的相对路径。
+- *扩展入口点*的值应始终为“Windows.FullTrustApplication”。
+- *ExecutionAlias 别名*是你的应用的短名称。 它必须始终以“.exe”扩展名结尾。 
 
-You can only specify a single app execution alias for each application in the package. If multiple apps register for the same alias, the system will invoke the last one that was registered, so make sure to choose a unique alias other apps are unlikely to override.
+只可以为程序包中每个应用程序指定一个应用执行别名。 如果多个应用都注册了同一个别名，系统会调用最后注册的一个应用，因此请确保选择其他应用不太可能覆盖的独特别名。
 
-## Protocol associations 
+## 协议关联 
 
-Protocols associations enable interop scenarios between your converted app and other programs or system components. When your converted app is launched using a protocol, you can specify specific parameters to pass to its activation event args so it can behave accordingly. Note that parameters are only supported for converted, full-trust apps; UWP apps cannot use parameters.  
+协议关联支持已转换的应用和其他程序或系统组件之间的互操作方案。 使用某个协议启动已转换的应用时，你可以指定要传递到其激活事件参数的特定参数，以使该应用具备相应行为。 请注意，参数仅适用于完全信任的已转换应用；UWP 应用无法使用参数。  
 
-To declare a protocol association, add the following to your app's manifest:
+若要声明协议关联，请将以下内容添加到应用的清单：
 
 ```XML
 <uap3:Extension Category="windows.protocol">
@@ -68,15 +68,15 @@ To declare a protocol association, add the following to your app's manifest:
 </uap3:Extension>
 ```
 
-- *Extension Category* should always have the value "windows.protocol". 
-- *Protocol Name* is the name of the protocol. 
-- *Protocol Parameters* is the list of parameters and values to pass to your app as event args when it is activated. Note that if a variable can contain a file path, you should wrap the value in quotes so it will not break if passed a path that includes spaces.
+- *扩展类别*的值应始终为“windows.protocol”。 
+- *协议名称*是协议的名称。 
+- *协议参数*是应用激活时向其传递用作事件参数的参数和值的列表。 请注意，如果变量可以包含文件路径，则应该用引号将该值括起来，使其在传递的路径中包含空格时不至于中断。
 
-## Files and File Explorer integration
+## 文件和文件资源管理器集成
 
-Converted apps have a variety of options for registering to handle certain file types and integrating into File Explorer. This allows users to easily access your app as part of their normal workflow.
+已转换的应用具有各种选项，用于注册以处理特定文件类型，以及集成到文件资源管理器中。 这使用户可以轻松将你的应用作为其常规工作流的一部分进行访问。
 
-To get started, first add the following to your app's manifest: 
+若要开始使用，请首先将以下内容添加到应用的清单： 
 
 ```XML
 <uap3:Extension Category="windows.fileTypeAssociation">
@@ -86,16 +86,16 @@ To get started, first add the following to your app's manifest:
 </uap3:Extension>
 ```
 
-- *Extension Category* should always have the value "windows.fileTypeAssociation". 
-- *FileTypeAssociation Name* is a unique Id. This Id is used internally to generate a hashed ProgID associated with your file type association. You can use this Id to manage changes in future versions of your app. For example, if you want to change the icon for a file extension, you can move it a new FileTypeAssociation with a different name.  
+- *扩展类别*的值应始终为“windows.fileTypeAssociation”。 
+- *FileTypeAssociation 名称*是唯一 ID。 此 ID 内部用于生成与文件类型关联相关联的经过哈希处理的 ProgID。 此 ID 可用于管理将来版本的应用中的更改。 例如，如果你想要更改某个文件扩展名的图标，可以将其移动到具有不同名称的新 FileTypeAssociation。  
 
-Next, add additional child elements to this entry based on the specific features you need. The available options are described below.
+接下来，根据所需的特定功能向该项添加其他子元素。 可用选项如下所述。
 
-### Supported file types
+### 支持的文件类型
 
-Your app can specify it supports opening specific types of files. If a user right-clicks a file and selects "Open With," your app will appear in the list of suggestions.
+应用可以指定它是否支持已打开的特定类型的文件。 如果用户右键单击某个文件并选择“打开方式”，你的应用将出现在建议列表中。
 
-Example:
+示例：
 
 ```XML
 <uap:SupportedFileTypes>
@@ -104,15 +104,15 @@ Example:
 </uap:SupportedFileTypes>
 ```
 
-- *FileType* is the extension your app supports.
+- *FileType* 是你的应用支持的扩展名。
 
-### Context menu verbs 
+### 上下文菜单动词命令 
 
-Users normally open files by simply double-clicking them. However, when a user right-clicks a file, the context menu presents them with various options (known as "Verbs") that provide additional detail on how they wish to interact with the file, such as "Open", "Edit", "Preview," or "Print." 
+用户通常通过双击打开文件。 但是，当用户右键单击某个文件时，上下文菜单会向他们呈现各种选项（称为“动词命令”），用于提供有关他们想要如何与文件进行交互（如“打开”、“编辑”、“预览”或“打印”）的其他详细信息。 
 
-Specifying a supported file type automatically adds the “Open” verb. However, apps can also add additional custom verbs to the File Explorer context menu. These allow the app to launch a certain way based on the user's selection when opening a file.
+指定支持的文件类型将自动添加“打开”动词命令。 但是，应用还可以将其他自定义动词命令添加到“文件资源管理器”上下文菜单。 这些动词命令使应用可以启动某种方式，具体取决于打开文件时用户的选择。
 
-Example: 
+示例： 
 
 ```XML
 <uap2:SupportedVerbs>
@@ -121,42 +121,42 @@ Example:
 </uap2:SupportedVerbs>
 ```
 
-- *Verb Id* is a unique Id of the verb. If your app is a UWP app, this is passed to your app as part of its activation event args so it can handle the user’s selection appropriately. If your app is a full-trust converted app, it receives parameters instead (see the next bullet). 
-- *Verb Parameters* is the list of argument parameters and values associated with the verb. If your app is a full-trust converted app, these are passed to it as event args when it’s activated so you can customize its behavior for different activation verbs. If a variable can contain a file path, you should wrap the value in quotes so it will not break if passed a path that includes spaces. Note that if your app is a UWP app, you can’t pass parameters – it receives the Id instead (see the previous bullet). 
-- *Verb Extended* specifies that the verb should only appear if the user holds the **Shift** key before right-clicking the file to show the context menu. This attribute is optional and defaults to *False* (e.g., always show the verb) if not listed. You specify this behavior individually for each verb (except for "Open," which is always *False*). 
-- *Verb* is the name to display in the File Explorer context menu. This string is localizable using ```ms-resource```.
+- *动词命令 ID* 是动词命令的唯一 ID. 如果你的应用为 UWP 应用，则会将该动词命令作为应用的激活事件参数的一部分向其传递，以便应用可以相应地处理用户的选择。 如果你的应用是完全信任的已转换应用，它将改为接收参数（请参阅下一项）。 
+- *动词命令参数*是与动词命令关联的实参参数和值的列表。 如果你的应用是完全信任的已转换应用，当激活该应用时会将这些参数作为其事件参数向应用传递，以便你可以针对不同激活动词命令自定义应用的行为。 如果变量可以包含文件路径，则应该用引号将该值括起来，使其在传递的路径中包含空格时不至于中断。 请注意，如果你的应用为 UWP 应用，你将无法传递参数 - 它将改为接收 ID（请参阅上一项）。 
+- *动词命令扩展*指定动词命令应仅在用户右键单击文件显示上下文菜单之前按住 **Shift** 键时才显示。 如果未列出该属性，则该属性是可选的，并且默认为 *False*（例如，始终显示动词命令）。 为每个动词命令逐个指定此行为（“打开”除外，它始终为 *False*）。 
+- *动词命令*是要在“文件资源管理器”上下文菜单中显示的名称。 此字符串使用 ```ms-resource``` 进行本地化。
 
-### Multiple Selection Model
+### 多选模式
 
-Multiple selections allow you to specify how your app handles a user opening multiple files with it simultaneously (for example, by selecting 10 files in File Explorer and tapping "Open").
+多选使你可以指定应用如何处理用户使用该应用同时打开多个文件的情形（例如，在“文件资源管理器”中选择 10 个文件并点击“打开”）。
 
-Converted desktop apps have the same three options as regular desktop apps. 
-- *Player*: Your app is activated once with all of the selected files passed as argument parameters.
-- *Single*: Your app is activated once for the first selected file. Other files are ignored. 
-- *Document*: A new, separate instance of your app is activated for each selected file.
+已转换的桌面应用具有与常规桌面应用相同的三个选项。 
+- *播放机*：将使用所有作为实参参数传入的选定文件激活一次应用。
+- *单一*：针对第一个选定的文件激活一次应用。 忽略其他文件。 
+- *文档*：针对每个选定的文件激活应用的一个新的单独实例。
 
-You can set different preferences for different file types and actions. For example, you may wish to open *Documents* in *Document* mode and *Images* in *Player* mode.
+可以为不同的文件类型和操作设置不同的首选项。 例如，你可能想要以*文档*模式打开“文档”**，以*播放机*模式打开“图像”**。
 
-To set your app's behavior, add the *MultiSelectModel* attribute to elements in your manifest that are related to file types and file launching. 
+若要设置应用的行为，请将 *MultiSelectModel* 属性添加到清单中与文件类型和文件启动相关的元素中。 
 
-Setting a model for a supported file type: 
+设置支持的文件类型的模型： 
 
 ```XML
 <uap:FileType MultiSelectModel="Document">.txt</uap:FileType>
 ```
 
-Setting a model for verbs:
+设置动词命令的模型：
 
 ```XML
 <uap3:Verb Id="Edit" MultiSelectModel="Player">Edit</uap:Verb>
 <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap:Verb>
 ```
 
-If your app doesn't specify a choice for multi-selection, the default is *Player* if the user is opening 15 or fewer files. Otherwise, if your app is a converted app, the default is *Document*. UWP apps are always launched as *Player*. 
+如果应用未针对多选情形指定选择，则默认为*播放机*（如果用户打开的文件不超过 15 个）。 此外，如果应用为已转换的应用，则默认为*文档*。 始终将 UWP 应用启动为*播放机*。 
 
-### Complete example
+### 完整示例
 
-The following is a complete example that integrates many of the file and File Explorer related elements described above: 
+以下完整示例中集成了许多与上述元素相关的文件和文件资源管理器： 
 
 ```XML
 <uap3:Extension Category="windows.fileTypeAssociation">
@@ -174,11 +174,11 @@ The following is a complete example that integrates many of the file and File Ex
 </uap3:Extension>
 ```
 
-## See also
+## 另请参阅
 
-- [App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)
+- [应用包清单](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

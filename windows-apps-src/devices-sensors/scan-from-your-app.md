@@ -1,43 +1,43 @@
 ---
 author: DBirtolo
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
-title: Scan from your app
-description: Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
+title: "从应用扫描"
+description: "在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。"
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 9f06f774fd1ed3a13386a4403f98336babeb1506
+ms.openlocfilehash: fe01ccf5b0b91ffcca7937842cf0152622d59f9e
 
 ---
-# Scan from your app
+# 从应用扫描
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Important APIs **
+** 重要的 API **
 
 -   [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
 -   [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)
 -   [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381)
 
-Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
+在此处了解如何通过使用平板扫描仪、送纸器或自动配置的扫描源从你的应用扫描内容。
 
-**Important**  The [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) APIs are part of the desktop [device family](https://msdn.microsoft.com/library/windows/apps/Dn894631). Apps can use these APIs only on the desktop version of Windows 10.
+**重要提示** [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API 是桌面[设备系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 应用仅可以在桌面版的 Windows 10 上使用这些 API。
 
-To scan from your app, you must first list the available scanners by declaring a new [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object and getting the [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) type. Only scanners that are installed locally with WIA drivers are listed and available to your app.
+若要从你的应用进行扫描，你必须首先声明一个新的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象并获取 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 类型，以此来列出可用的扫描仪。 仅列出并向应用提供带有 WIA 驱动程序的本地安装的扫描仪。
 
-After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration must not be equipped with both a flatbed and a feeder scanner. For more info, see [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393).
+在应用列出可用的扫描仪后，它可以使用基于扫描仪类型的自动配置的扫描设置，或使用可用的平板或送纸器扫描源进行扫描。 要使用自动配置的设置，扫描仪必须启用自动配置，并且不可同时配备平板和送纸器扫描仪。 有关详细信息，请参阅[自动配置的扫描](https://msdn.microsoft.com/library/windows/hardware/Ff539393)。
 
-## Enumerate available scanners
+## 枚举可用扫描仪
 
-Windows does not detect scanners automatically. You must perform this step in order for your app to communicate with the scanner. In this example, the scanner device enumeration is done using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace.
+Windows 不会自动检测扫描仪。 你必须执行此步骤以使应用与该扫描仪进行通信。 在本示例中，使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空间进行扫描仪设备枚举。
 
-1.  First, add these using statements to your class definition file.
+1.  首先，将这些 using 语句添加到你的类定义文件。
 
 ``` csharp
     using Windows.Devices.Enumeration;
     using Windows.Devices.Scanners;
 ```
 
-2.  Next, implement a device watcher to start enumerating scanners. For more info, see [Enumerate devices](enumerate-devices.md).
+2.  接着，实现一个设备查看器以开始枚举扫描仪。 有关详细信息，请参阅[枚举类](enumerate-devices.md)。
 
 ```csharp
     void InitDeviceWatcher()
@@ -51,7 +51,7 @@ Windows does not detect scanners automatically. You must perform this step in or
     }
 ```
 
-3.  Create an event handler for when a scanner is added.
+3.  为添加扫描仪创建事件处理程序。
 
 ```csharp
     private async void OnScannerAdded(DeviceWatcher sender,  DeviceInformation deviceInfo)
@@ -80,34 +80,34 @@ Windows does not detect scanners automatically. You must perform this step in or
     }
 ```
 
-## Scan
+## 扫描
 
-1.  **Get an ImageScanner object**
+1.  **获取 ImageScanner 对象**
 
-For each [**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238) enumeration type, whether it's **Default**, **AutoConfigured**, **Flatbed**, or **Feeder**, you must first create an [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) object by calling the [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) method, like this.
+对于每个 [**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238) 枚举类型，无论它是 **Default**、**AutoConfigured**、**Flatbed** 还是 **Feeder**，必须首先通过调用 [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) 方法来创建 [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) 对象，如下所示。
 
  ```csharp
     ImageScanner myScanner = await ImageScanner.FromIdAsync(deviceId);
  ```
 
-2.  **Just scan**
+2.  **仅扫描**
 
-To scan with the default settings, your app relies on the [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) namespace to select a scanner and scans from that source. No scan settings are changed. The possible scanners are auto-configure, flatbed, or feeder. This type of scan will most likely produce a successful scan operation, even if it scans from the wrong source, like flatbed instead of feeder.
+要以默认设置进行扫描，你的应用将依靠 [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 命名空间选择一个扫描仪并从该来源进行扫描。 未更改扫描设置。 可能的扫描仪为自动配置、平板或送纸器。 此类型的扫描最有可能产生成功的扫描操作，即使它从错误的来源进行扫描，如从平板扫描仪而不是从送纸器。
 
-**Note**  If the user places the document to scan in the feeder, the scanner will scan from the flatbed instead. If the user tries to scan from an empty feeder, the scan job won't produce any scanned files.
+**注意** 如果用户在送纸器中放置要扫描的文档，扫描仪将改为从平板扫描仪进行扫描。 如果用户尝试从空的送纸器进行扫描，扫描作业将不会产生任何扫描后的文件。
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default, 
         folder).AsTask(cancellationToken.Token, progress);
 ```
 
-3.  **Scan from Auto-configured, Flatbed, or Feeder source**
+3.  **从自动配置、平板或送纸器来源进行扫描**
 
-Your app can use the device's [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393) to scan with the most optimal scan settings. With this option, the device itself can determine the best scan settings, like color mode and scan resolution, based on the content being scanned. The device selects the scan settings at run time for each new scan job.
+应用可以使用设备的[自动配置的扫描](https://msdn.microsoft.com/library/windows/hardware/Ff539393)来以最佳的扫描设置进行扫描。 使用此选项，设备本身可以根据要扫描的内容确定最佳扫描设置，例如颜色模式和扫描分辨率。 设备在运行时为每个新的扫描作业选择扫描设置。
 
-**Note**  Not all scanners support this feature, so the app must check if the scanner supports this feature before using this setting.
+**注意** 并非所有扫描仪支持此功能，因此应用必须在使用此设置前检查扫描仪是否支持此功能。
 
-In this example, the app first checks if the scanner is capable of auto-configuration and then scans. To specify either flatbed or feeder scanner, simply replace **AutoConfigured** with **Flatbed** or **Feeder**.
+在本示例中，应用首先检查扫描仪是否可以进行自动配置，然后进行扫描。 要指定平板扫描仪或送纸器扫描仪，只需使用 **Flatbed** 或 **Feeder** 替换 **AutoConfigured**。
 
 ```csharp
     if (myScanner.IsScanSourceSupported(ImageScannerScanSource.AutoConfigured))
@@ -120,9 +120,9 @@ In this example, the app first checks if the scanner is capable of auto-configur
     }
 ```
 
-## Preview the scan
+## 预览扫描
 
-You can add code to preview the scan before scanning to a folder. In the example below, the app checks if the **Flatbed** scanner supports preview, then previews the scan.
+你可以在扫描到文件夹之前添加代码以预览该扫描。 在以下示例中，应用检查 **Flatbed** 扫描仪是否支持预览，然后预览该扫描。
 
 ```csharp
 if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
@@ -133,9 +133,9 @@ if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
                     ImageScannerScanSource.Flatbed, stream);
 ```
 
-## Cancel the scan
+## 取消扫描
 
-You can let users cancel the scan job midway through a scan, like this.
+你可以让用户在扫描中途取消扫描作业，如下所示。
 
 ```csharp
 void CancelScanning()
@@ -153,28 +153,28 @@ void CancelScanning()
 }
 ```
 
-## Scan with progress
+## 显示进度的扫描
 
-1.  Create a **System.Threading.CancellationTokenSource** object.
+1.  创建 **System.Threading.CancellationTokenSource** 对象。
 
 ```csharp
 cancellationToken = new CancellationTokenSource();
 ```
 
-2.  Set up the progress event handler and get the progress of the scan.
+2.  设置进度事件处理程序并获取扫描的进度。
 
 ```csharp
     rootPage.NotifyUser("Scanning", NotifyType.StatusMessage);
     var progress = new Progress<UInt32>(ScanProgress);
 ```
 
-## Scanning to the pictures library
+## 扫描到图片库
 
-Users can scan to any folder dynamically using the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) class, but you must declare the *Pictures Library* capability in the manifest to allow users to scan to that folder. For more info on app capabilities, see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
-
-
+用户可以使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) 类动态扫描到任何文件夹，但是你必须在清单中声明*图片库*功能以允许用户扫描到该文件夹。 有关应用功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

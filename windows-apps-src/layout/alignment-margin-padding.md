@@ -7,7 +7,7 @@ label: Alignment, margin, and padding
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
+ms.openlocfilehash: 86635255fbdae83fb2749e2aea7011a8b989e83f
 
 ---
 # 对齐、边距和填充
@@ -18,7 +18,7 @@ ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) 和 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749) 属性描述子元素应当如何在父元素的已分配布局空间中定位。 通过一起使用这些属性，容器的布局逻辑可以在容器（面板或控件）内定位子元素。 对齐属性旨在向自适应布局容器提示所需布局，所以基本上它们在 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 子元素上设置，并由另一个 **FrameworkElement** 容器父元素解释。 对齐值可指定元素是与某个方向的两个边缘中的其中一个对齐，还是与中心对齐。 但是，这两个对齐属性的默认值为 **Stretch**。 使用 **Stretch** 对齐，元素可以填充在布局中提供给它们的空间。 **Stretch** 为默认值，所以在没有明确度量或没有来自布局的度量传递的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值的情况下，更易于使用自适应布局技术。 使用此默认值，在你调整每个容器的大小之前，不存在明确高度/宽度不适合容器且进行剪裁的风险。
 
-> **注意**&nbsp;&nbsp;作为常规布局原则，最好仅将度量应用于特定关键元素，并为其他元素使用自适应布局行为。 当用户调整顶部应用窗口的大小（通常随时可能发生）时，这可提供灵活的布局行为。
+> **注意** &nbsp;&nbsp;作为常规布局原则，最好仅将度量应用于特定关键元素，并为其他元素使用自适应布局行为。 当用户调整顶部应用窗口的大小（通常随时可能发生）时，这可提供灵活的布局行为。
 
  
 如果自适应容器内有 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 值或剪裁，则即使 **Stretch** 设置为对齐值，布局仍然由其容器的行为控制。 在面板中，已由 **Height** 和 **Width** 消除的 **Stretch** 值的操作如同值为 **Center** 一样。
@@ -82,6 +82,6 @@ ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

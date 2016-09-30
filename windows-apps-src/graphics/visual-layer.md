@@ -4,8 +4,8 @@ ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: "可视化层"
 description: "Windows.UI.Composition API 使你能够访问框架层 (XAML) 和图形层 (DirectX) 之间的合成层。"
 translationtype: Human Translation
-ms.sourcegitcommit: 4a00847f0559d93eea199d7ddca0844b5ccaa5aa
-ms.openlocfilehash: 3a3dbf7b529d5d2848b161869d2f77fef3651488
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 1abb663d0ee27d7e57ab83dab2589557d1f9f29a
 
 ---
 # 可视化层
@@ -65,7 +65,7 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 -   阅读 Kenny Kerr 的关于此 API 的 MSDN 文章：[图形和动画 - Windows 合成支持 10 倍缩放](https://msdn.microsoft.com/magazine/mt590968)
 -   [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 中的高级 UI 和合成示例。
 -   [**API 的完全参考文档**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
--   已知问题：[已知问题](http://go.microsoft.com/fwlink/?LinkId=823237)。
+-   已知问题：[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)。
 
  
 
@@ -77,6 +77,6 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

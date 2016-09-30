@@ -1,39 +1,38 @@
 ---
 author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
-title: Data binding overview
-description: This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app.
+title: "数据绑定概述"
+description: "本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。"
 translationtype: Human Translation
-ms.sourcegitcommit: e89580ef62d5d6ae095aa27628181181aaac9666
-ms.openlocfilehash: d452751fd4ab0cc422c3eae94507923440ec45df
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 092df9799982dc5da5cc085b2e73a5dd376c0eb8
 
 ---
-Data binding overview
+数据绑定概述
 =====================
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app. In addition, we show how to control the rendering of items, implement a details view based on a selection, and convert data for display. For more detailed info, see [Data binding in depth](data-binding-in-depth.md).
+本主题介绍了如何在通用 Windows 平台 (UWP) 应用中将控件（或其他 UI 元素）绑定到单个项目，或者将项目控件绑定到项目集合。 此外，我们还介绍了如何控制项的呈现、基于所选内容实现详细信息视图，以及转换数据以供显示。 有关更多详细信息，请参阅[深入了解数据绑定](data-binding-in-depth.md)。
 
-Prerequisites
+先决条件
 -------------------------------------------------------------------------------------------------------------
 
-This topic assumes that you know how to create a basic UWP app. For instructions on creating your first UWP app, see [Get started with Windows apps](https://developer.microsoft.com/en-us/windows/getstarted).
+此主题假设你知晓如何创建基本的 UWP 应用。 有关创建你的第一个 UWP 应用的说明，请参阅[使用 C# 或 Visual Basic 创建你的第一个 UWP 应用](https://msdn.microsoft.com/library/windows/apps/Hh974581)。
 
-Create the project
+创建项目
 ---------------------------------------------------------------------------------------------------------------------------------
 
-Create a new **Blank Application (Windows Universal)** project. Name it "Quickstart".
+创建一个新的“空白应用程序(Windows 通用)”****项目。 将它命名为“Quickstart”。
 
-Binding to a single item
+绑定到单个项目
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Every binding consists of a binding target and a binding source. Typically, the target is a property of a control or other UI element, and the source is a property of a class instance (a data model, or a view model). This example shows how to bind a control to a single item. The target is the **Text** property of a **TextBlock**. The source is an instance of a simple class named **Recording** that represents an audio recording. Let's look at the class first.
+每个绑定均由一个绑定目标和一个绑定源构成。 通常，绑定目标是控件或其他 UI 元素的属性，而绑定源是类实例（数据模型或视图模型）的属性。 本示例演示了如何将控件绑定到单个项目。 绑定目标是 **TextBlock** 的 **Text** 属性。 绑定源是一个名为 **Recording** 的简单类的实例，该类表示音频录制。 我们先来看一下类。
 
-Add a new class to your project, name it Recording.cs (if you're using C#, C++ snippets provided below as well), and add this code to it.
+向项目添加一个新类、将其命名为 Recording.cs（如果使用的是 C#），并向其中添加此代码。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 namespace Quickstart
 {
@@ -42,12 +41,14 @@ namespace Quickstart
         public string ArtistName { get; set; }
         public string CompositionName { get; set; }
         public DateTime ReleaseDateTime { get; set; }
+
         public Recording()
         {
             this.ArtistName = "Wolfgang Amadeus Mozart";
             this.CompositionName = "Andante in C for Piano";
             this.ReleaseDateTime = new DateTime(1761, 1, 1);
         }
+
         public string OneLineSummary
         {
             get
@@ -57,6 +58,7 @@ namespace Quickstart
             }
         }
     }
+
     public class RecordingViewModel
     {
         private Recording defaultRecording = new Recording();
@@ -64,137 +66,151 @@ namespace Quickstart
     }
 }
 ```
+
 ```cpp
-    #include <sstream>
-    namespace Quickstart
-    {
-        public ref class Recording sealed
-        {
-        private:
-            Platform::String^ artistName;
-            Platform::String^ compositionName;
-            Windows::Globalization::Calendar^ releaseDateTime;
-        public:
-            Recording(Platform::String^ artistName, Platform::String^ compositionName,
-                Windows::Globalization::Calendar^ releaseDateTime) :
-                artistName{ artistName },
-                compositionName{ compositionName },
-                releaseDateTime{ releaseDateTime } {}
-            property Platform::String^ ArtistName
-            {
-                Platform::String^ get() { return this->artistName; }
-            }
-            property Platform::String^ CompositionName
-            {
-                Platform::String^ get() { return this->compositionName; }
-            }
-            property Windows::Globalization::Calendar^ ReleaseDateTime
-            {
-                Windows::Globalization::Calendar^ get() { return this->releaseDateTime; }
-            }
-            property Platform::String^ OneLineSummary
-            {
-                Platform::String^ get()
-                {
-                    std::wstringstream wstringstream;
-                    wstringstream << this->CompositionName->Data();
-                    wstringstream << L" by " << this->ArtistName->Data();
-                    wstringstream << L", released: " << this->ReleaseDateTime->MonthAsNumericString()->Data();
-                    wstringstream << L"/" << this->ReleaseDateTime->DayAsString()->Data();
-                    wstringstream << L"/" << this->ReleaseDateTime->YearAsString()->Data();
-                    return ref new Platform::String(wstringstream.str().c-str());
-                }
-            }
-        };
-        public ref class RecordingViewModel sealed
-        {
-        private:
-            Recording^ defaultRecording;
-        public:
-            RecordingViewModel()
-            {
-                Windows::Globalization::Calendar^ releaseDateTime = ref new Windows::Globalization::Calendar();
-                releaseDateTime->Month = 1;
-                releaseDateTime->Day = 1;
-                releaseDateTime->Year = 1761;
-                this->defaultRecording = ref new Recording{ L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime };
-            }
-            property Recording^ DefaultRecording
-            {
-                Recording^ get() { return this->defaultRecording; };
-            }
-        };
-    }
-```
+#include <sstream>
 
-Next, expose the binding source class from the class that represents your page of markup. We do that by adding a property of type **RecordingViewModel** to **MainPage**.
-
-> [!div class="tabbedCodeSnippets"]
-```csharp
-    namespace Quickstart
+namespace Quickstart
+{
+    public ref class Recording sealed
     {
-        public sealed partial class MainPage : Page
+    private:
+        Platform::String^ artistName;
+        Platform::String^ compositionName;
+        Windows::Globalization::Calendar^ releaseDateTime;
+
+    public:
+        Recording(Platform::String^ artistName, Platform::String^ compositionName,
+            Windows::Globalization::Calendar^ releaseDateTime) :
+            artistName{ artistName },
+            compositionName{ compositionName },
+            releaseDateTime{ releaseDateTime } {}
+
+        property Platform::String^ ArtistName
         {
-            public MainPage()
-            {
-                this.InitializeComponent();
-                this.ViewModel = new RecordingViewModel();
-            }
-            public RecordingViewModel ViewModel { get; set; }
+            Platform::String^ get() { return this->artistName; }
         }
-    }
-```
-```cpp
-    namespace Quickstart
-    {
-        public ref class MainPage sealed
+
+        property Platform::String^ CompositionName
         {
-        private:
-            RecordingViewModel^ viewModel;
-        public:
-            MainPage()
+            Platform::String^ get() { return this->compositionName; }
+        }
+
+        property Windows::Globalization::Calendar^ ReleaseDateTime
+        {
+            Windows::Globalization::Calendar^ get() { return this->releaseDateTime; }
+        }
+
+        property Platform::String^ OneLineSummary
+        {
+            Platform::String^ get()
             {
-                InitializeComponent();
-                this->viewModel = ref new RecordingViewModel();
+                std::wstringstream wstringstream;
+                wstringstream << this->CompositionName->Data();
+                wstringstream << L" by " << this->ArtistName->Data();
+                wstringstream << L", released: " << this->ReleaseDateTime->MonthAsNumericString()->Data();
+                wstringstream << L"/" << this->ReleaseDateTime->DayAsString()->Data();
+                wstringstream << L"/" << this->ReleaseDateTime->YearAsString()->Data();
+                return ref new Platform::String(wstringstream.str().c-str());
             }
-            property RecordingViewModel^ ViewModel
-            {
-                RecordingViewModel^ get() { return this->viewModel; };
-            }
-        };
-    }
+        }
+    };
+
+    public ref class RecordingViewModel sealed
+    {
+    private:
+        Recording^ defaultRecording;
+
+    public:
+        RecordingViewModel()
+        {
+            Windows::Globalization::Calendar^ releaseDateTime = ref new Windows::Globalization::Calendar();
+            releaseDateTime->Month = 1;
+            releaseDateTime->Day = 1;
+            releaseDateTime->Year = 1761;
+            this->defaultRecording = ref new Recording{ L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime };
+        }
+
+        property Recording^ DefaultRecording
+        {
+            Recording^ get() { return this->defaultRecording; };
+        }
+    };
+}
 ```
 
-The last piece is to bind a **TextBlock** to the **ViewModel.DefaultRecording.OneLiner** property.
+接下来，从表示标记页的类公开绑定源类。 我们通过将类型 **RecordingViewModel** 的属性添加到 **MainPage** 来执行此操作。
+
+```csharp
+namespace Quickstart
+{
+    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+            this.ViewModel = new RecordingViewModel();
+        }
+
+        public RecordingViewModel ViewModel { get; set; }
+    }
+}
+```
+
+```cpp
+namespace Quickstart
+{
+    public ref class MainPage sealed
+    {
+    private:
+        RecordingViewModel^ viewModel;
+
+    public:
+        MainPage()
+        {
+            InitializeComponent();
+            this->viewModel = ref new RecordingViewModel();
+        }
+
+        property RecordingViewModel^ ViewModel
+        {
+            RecordingViewModel^ get() { return this->viewModel; };
+        }
+    };
+}
+```
+
+最后一步是将 **TextBlock** 绑定到 **ViewModel.DefaultRecording.OneLiner** 属性。
 
 ```xml
-    <Page x:Class="Quickstart.MainPage" ... >
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <TextBlock Text="{x:Bind ViewModel.DefaultRecording.OneLineSummary}"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"/>
-        </Grid>
-    </Page>
+<Page x:Class="Quickstart.MainPage" ... >
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Text="{x:Bind ViewModel.DefaultRecording.OneLineSummary}"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"/>
+    </Grid>
+</Page>
 ```
 
-Here's the result.
+下面是结果。
 
-![Binding a textblock](images/xaml-databinding0.png)
+![绑定文本块](images/xaml-databinding0.png)
 
-Binding to a collection of items
+绑定到项目集合
 ------------------------------------------------------------------------------------------------------------------
 
-A common scenario is to bind to a collection of business objects. In C# and Visual Basic, the generic [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) class is a good collection choice for data binding, because it implements the [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) and [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) interfaces. These interfaces provide change notification to bindings when items are added or removed or a property of the list itself changes. If you want your bound controls to update with changes to properties of objects in the collection, the business object should also implement **INotifyPropertyChanged**. For more info, see [Data binding in depth](data-binding-in-depth.md).
+一个常见情形是绑定到业务对象的集合。 在 C# 和 Visual Basic 中，通用 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 类是数据绑定的一个很好的集合选择，因为它实现了 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 接口。 当添加或删除项目或者列表本身的属性更改时，这些接口将向绑定提供更改通知。 如果你希望你的绑定控件使用集合中的对象属性更改进行更新，则业务对象也应该实现 **INotifyPropertyChanged**。 有关详细信息，请参阅[深入了解数据绑定](data-binding-in-depth.md)。
 
-This next example binds a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to a collection of `Recording` objects. Let's start by adding the collection to our view model. Just add these new members to the **RecordingViewModel** class.
+下面这个示例演示了将 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 绑定到 `Recording` 对象的集合。 让我们先将该集合添加到视图模型。 只需将这些新成员添加到 **RecordingViewModel** 类。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
     public class RecordingViewModel
     {
         ...
+        
         private ObservableCollection<Recording> recordings = new ObservableCollection<Recording>();
         public ObservableCollection<Recording> Recordings { get { return this.recordings; } }
+
         public RecordingViewModel()
         {
             this.recordings.Add(new Recording() { ArtistName = "Johann Sebastian Bach",
@@ -206,28 +222,33 @@ This next example binds a [**ListView**](https://msdn.microsoft.com/library/wind
         }
     }
 ```
+
 ```cpp
     public ref class RecordingViewModel sealed
     {
     private:
         ...
         Windows::Foundation::Collections::IVector<Recording^>^ recordings;
+
     public:
         RecordingViewModel()
         {
             ...
+
             releaseDateTime = ref new Windows::Globalization::Calendar();
             releaseDateTime->Month = 7;
             releaseDateTime->Day = 8;
             releaseDateTime->Year = 1748;
             Recording^ recording = ref new Recording{ L"Johann Sebastian Bach", L"Mass in B minor", releaseDateTime };
             this->Recordings->Append(recording);
+
             releaseDateTime = ref new Windows::Globalization::Calendar();
             releaseDateTime->Month = 2;
             releaseDateTime->Day = 11;
             releaseDateTime->Year = 1805;
             recording = ref new Recording{ L"Ludwig van Beethoven", L"Third Symphony", releaseDateTime };
             this->Recordings->Append(recording);
+
             releaseDateTime = ref new Windows::Globalization::Calendar();
             releaseDateTime->Month = 12;
             releaseDateTime->Day = 3;
@@ -235,7 +256,9 @@ This next example binds a [**ListView**](https://msdn.microsoft.com/library/wind
             recording = ref new Recording{ L"George Frideric Handel", L"Serse", releaseDateTime };
             this->Recordings->Append(recording);
         }
+
         ...
+
         property Windows::Foundation::Collections::IVector<Recording^>^ Recordings
         {
             Windows::Foundation::Collections::IVector<Recording^>^ get()
@@ -250,7 +273,7 @@ This next example binds a [**ListView**](https://msdn.microsoft.com/library/wind
     };
 ```
 
-And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to the **ViewModel.Recordings** property.
+然后，将 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 绑定到 **ViewModel.Recordings** 属性。
 
 ```xml
 <Page x:Class="Quickstart.MainPage" ... >
@@ -261,11 +284,11 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 </Page>
 ```
 
-We haven't yet provided a data template for the **Recording** class, so the best the UI framework can do is to call [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) for each item in the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). The default implementation of **ToString** is to return the type name.
+我们尚未提供适用于 **Recording** 类的数据模板，因此 UI 框架的最佳做法是针对 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 中的每个项来调用 [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)。 **ToString** 的默认实现是返回类型名称。
 
-![Binding a list view](images/xaml-databinding1.png)
+![绑定列表视图](images/xaml-databinding1.png)
 
-To remedy this we can either override [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) to return the value of **OneLineSummary**, or we can provide a data template. The data template option is more common and arguably more flexible. You specify a data template by using the [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) property of a content control or the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) property of an items control. Here are two ways we could design a data template for **Recording** together with an illustration of the result.
+为了解决此问题，我们可以重写 [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) 以返回 **OneLineSummary** 的值，或者提供一个数据模板。 数据模板选项更为常见且更为灵活。 使用内容控件的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 属性或项目控件的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 属性来指定数据模板。 下面是可用于设计适用于 **Recording** 的数据模板以及结果图示的两种方式。
 
 ```xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -278,7 +301,7 @@ To remedy this we can either override [**ToString**](https://msdn.microsoft.com/
     </ListView>
 ```
 
-![Binding a list view](images/xaml-databinding2.png)
+![绑定列表视图](images/xaml-databinding2.png)
 
 ```xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -297,21 +320,20 @@ To remedy this we can either override [**ToString**](https://msdn.microsoft.com/
     </ListView>
 ```
 
-![Binding a list view](images/xaml-databinding3.png)
+![绑定列表视图](images/xaml-databinding3.png)
 
-For more information about XAML syntax, see [Create a UI with XAML](https://msdn.microsoft.com/library/windows/apps/Mt228349). For more information about control layout, see [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/Mt228350).
+有关 XAML 语法的详细信息，请参阅[使用 XAML 创建 UI](https://msdn.microsoft.com/library/windows/apps/Mt228349)。 有关控件布局的详细信息，请参阅[使用 XAML 定义布局](https://msdn.microsoft.com/library/windows/apps/Mt228350)。
 
-Adding a details view
+添加详细信息视图
 -----------------------------------------------------------------------------------------------------
 
-You can choose to display all the details of **Recording** objects in [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) items. But that takes up a lot of space. Instead, you can show just enough data in the item to identify it and then, when the user makes a selection, you can display all the details of the selected item in a separate piece of UI known as the details view. This arrangement is also known as a master/details view, or a list/details view.
+你可以选择在 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 项目中显示 **Recording** 对象的所有详细信息。 但这样做会占用大量空间。 不过，你可以在该项目中仅显示足够多的数据来标识它，然后在用户做出选择时，你可以在 UI 的单个部分（即，详细信息视图）中显示选定项的所有详细信息。 这种排列也称为主视图/详细信息视图或列表/详细信息视图。
 
-There are two ways to go about this. You can bind the details view to the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) property of the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Or you can use a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833): bind both the **ListView** and the details view to the **CollectionViewSource** (which will take care of the currently-selected item for you). Both techniques are shown below, and they both give the same results shown in the illustration.
+有两种方法可用来执行此操作。 你可以将详细信息视图绑定到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 属性。 或者，可以使用 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)：将 **ListView** 和详细信息视图同时绑定到 **CollectionViewSource**（这将为你处理当前选定的项目）。 下面介绍两种技术，它们均能提供相同的结果（如图示所示）。
 
-> [!NOTE]
-> So far in this topic we've only used the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783), but both of the techniques we'll show below require the more flexible (but less performant) [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782).
+**注意** 到目前为止，在本主题中我们仅使用了 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)，而将在下面介绍的这两种技术要求更为灵活（但性能较低）的 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-First, here's the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) technique. If you're using Visual C++ component extensions (C++/CX) then, because we'll be using [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), you'll need to add the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute to the **Recording** class.
+首先介绍的是 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 技术。 如果你使用的是 Visual C++ 组件扩展 (C++/CX)，则因为我们将使用 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)，因此你需要将 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 属性添加到 **Recording** 类。
 
 ```cpp
     [Windows::UI::Xaml::Data::Bindable]
@@ -321,7 +343,7 @@ First, here's the [**SelectedItem**](https://msdn.microsoft.com/library/windows/
     };
 ```
 
-The only other change necessary is to the markup.
+只需对标记进行更改。
 
 ```xml
 <Page x:Class="Quickstart.MainPage" ... >
@@ -350,7 +372,7 @@ The only other change necessary is to the markup.
 </Page>
 ```
 
-For the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) technique, first add a **CollectionViewSource** as a page resource.
+对于 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 技术，先添加 **CollectionViewSource** 作为页面资源。
 
 ```xml
     <Page.Resources>
@@ -358,7 +380,7 @@ For the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/ap
     </Page.Resources>
 ```
 
-And then adjust the bindings on the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) (which no longer needs to be named) and on the details view to use the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833). Note that by binding the details view directly to the **CollectionViewSource**, you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the **CurrentItem** property as the path for the binding, although you can do that if there's any ambiguity).
+然后，在 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)（无需再对其进行命名）和详细信息视图上调节绑定，以使用 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)。 请注意，如果将详细信息视图直接绑定到 **CollectionViewSource**，即表示你希望绑定到绑定中的当前项目，其中在集合本身上无法找到路径。 无需将 **CurrentItem** 属性指定为绑定路径，尽管由于不确定性你可以这样做）。
 
 ```xml
     ...
@@ -371,16 +393,16 @@ And then adjust the bindings on the [**ListView**](https://msdn.microsoft.com/li
     ...
 ```
 
-And here's the identical result in each case.
+而在每种情况下结果均相同。
 
-![Binding a list view](images/xaml-databinding4.png)
+![绑定列表视图](images/xaml-databinding4.png)
 
-Formatting or converting data values for display
+设置数据值的格式或对其进行转换，以供显示
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-There is one small issue with the rendering above. The **ReleaseDateTime** property is not just a date, it's a [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), so it's being displayed with more precision than we need. One solution is to add a string property to the **Recording** class that returns `this.ReleaseDateTime.ToString("d")`. Naming that property **ReleaseDate** would indicate that it returns a date, not a date-and-time. Naming it **ReleaseDateAsString** would further indicate that it returns a string.
+以上呈现有一个小问题。 **ReleaseDateTime** 属性不仅仅是一个日期，还可以是 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)，因此应以高于所需精度的精度来显示它。 一个解决方案是，将字符串属性添加到返回 `this.ReleaseDateTime.ToString("d")` 的 **Recording** 类。 将该属性命名为 **ReleaseDate** 可指示它将返回一个日期，而不是返回日期和时间。 将其命名为 **ReleaseDateAsString** 可进一步指示它将返回一个字符串。
 
-A more flexible solution is to use something known as a value converter. Here's an example of how to author your own value converter. Add this code to your Recording.cs source code file.
+一个更灵活的解决方案是使用称为值转换器的工具。 下面是如何创作你自己的值转换器的示例。 将此代码添加到你的 Recording.cs 源代码文件。
 
 ```csharp
 public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
@@ -411,7 +433,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 }
 ```
 
-Now we can add an instance of **StringFormatter** as a page resource and use it in our binding. We pass the format string into the converter from markup for ultimate formatting flexibility.
+现在，我们可以添加 **StringFormatter** 的实例作为页面资源并将其用于绑定。 我们将格式字符串从标记传递到该转换器，以便于更为灵活地设置格式。
 
 ```xml
     <Page.Resources>
@@ -426,18 +448,14 @@ Now we can add an instance of **StringFormatter** as a page resource and use it 
     ...
 ```
 
-Here's the result.
+此处是结果。
 
-![displaying a date with custom formatting](images/xaml-databinding5.png)
-
-> [!NOTE]
-> Starting in Windows 10, version 1607, the XAML framework provides a built in boolean to Visibility converter. The converter maps **true** to the **Visible** enumeration value and **false** to **Collapsed** so you can bind a Visibility property to a boolean without creating a converter. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
-
-## See also
-- [Data binding](index.md)
+![显示具有自定义格式的日期](images/xaml-databinding5.png)
 
 
 
-<!--HONumber=Sep16_HO1-->
+
+
+<!--HONumber=Jul16_HO2-->
 
 

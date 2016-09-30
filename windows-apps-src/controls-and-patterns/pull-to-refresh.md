@@ -1,55 +1,51 @@
 ---
 author: Jwmsft
-Description: "将下拉刷新模式与列表视图结合使用。"
-title: "下拉刷新"
+Description: Use the pull-to-refresh pattern with a list view.
+title: Pull-to-refresh
 label: Pull-to-refresh
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
-ms.openlocfilehash: ef5773f9885a5286ac7ca7c256e6a83167316389
-
 ---
-# 下拉刷新
-
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-下拉刷新模式允许用户使用触摸来下拉数据列表，以检索更多数据。 下拉刷新已在移动应用上广泛使用，但在任何具有触摸屏的设备上也很有用。 可以处理[操作事件](../input-and-devices/touch-interactions.md#manipulation-events)以在应用中实现下拉刷新。
+# Pull to refresh
 
-[下拉刷新示例](http://go.microsoft.com/fwlink/p/?LinkId=620635)展示了如何扩展 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 控件以支持这种模式。 在本文中，我们使用此示例解释实现下拉刷新的关键点。
+The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on mobile apps, but is useful on any device with a touch screen. You can handle [manipulation events]() to implement pull-to-refresh in your app.
 
-![下拉刷新示例](images/ptr-phone-1.png)
+The [pull-to-refresh sample](http://go.microsoft.com/fwlink/p/?LinkId=620635) shows how to extend a [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) control to support this pattern. In this article, we use this sample to explain the key points of implementing pull-to-refresh.
 
-## 这是正确的模式吗？
+![pull-to-refresh sample](images/ptr-phone-1.png)
 
-如果你拥有用户希望定期刷新的数据列表或网格，并且应用可能在触摸优先的移动设备上运行，请使用下拉刷新模式。
+## Is this the right pattern?
 
-## 实现下拉刷新
+Use the pull-to-refresh pattern when you have a list or grid of data that the user might want to refresh regularly, and your app is likely to be running on mobile, touch-first devices.
 
-若要实现下拉刷新，需要处理操作事件来检测用户下拉列表的时间、提供视觉反馈，并刷新数据。 此处，我们看一下[下拉刷新示例](http://go.microsoft.com/fwlink/p/?LinkId=620635)中实现此操作的方法。 我们在此处不会展示所有代码，你可以下载示例或在 GitHub 上查看代码。
+## Implement pull-to-refresh
 
-下拉刷新示例创建了名为 `RefreshableListView` 的自定义控件，用于扩展 **ListView** 控件。 此控件添加了刷新指示器来提供视觉反馈，并处理了列表视图内部滚动查看器上的操作事件。 它还添加了 2 个事件，以便通知你何时列表下拉以及何时应刷新数据。 RefreshableListView 仅提供关于应刷新的数据的通知。 需要处理应用中的事件以更新数据，并且每个应用的代码都不同。
+To implement pull-to-refresh, you need to handle manipulation events to detect when a user has pulled the list down, provide visual feedback, and refresh the data. Here, we look at how this is done in the [pull-to-refresh sample](http://go.microsoft.com/fwlink/p/?LinkId=620635). We don't show all the code here, so you should download the sample or view the code on GitHub.
 
-RefreshableListView 提供“自动刷新”模式，用于确定请求刷新的时间和刷新指示器超出视图的方式。 可以打开或关闭自动刷新。
-- 关闭：仅在超出 `PullThreshold` 的同时释放列表才请求刷新。 当用户释放滚动条时，指示器会以动画方式退出视图。 如果它（在手机上）可用，将显示状态栏指示器。
-- 打开：在超出 `PullThreshold` 时立即请求刷新，无论是否已释放列表。 指示器仍保留在视图中，直到检索到新数据，之后以动画方式退出视图。 **Deferral** 用于在提取数据完成时通知应用。
+The pull-to-refresh sample creates a custom control called `RefreshableListView` that extends the **ListView** control. This control adds a refresh indicator to provide visual feedback and handles the manipulation events on the list view's internal scroll viewer. It also adds 2 events to notify you when the list is pulled and when the data should be refreshed. RefreshableListView only provides notification that the data should be refreshed. You need to handle the event in your app to update the data, and that code will be different for every app.
 
-> **注意**&nbsp;&nbsp;示例中的代码也适用于 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)。 若要修改 GridView，请从 GridView（而非 ListView）派生自定义类，并修改默认 GridView 模板。
+RefreshableListView provides an 'auto refresh' mode that determines when the refresh is requested and how the refresh indicator goes out of view. Auto refresh can be on or off.
+- Off: A refresh is requested only if the list is released while the `PullThreshold` is exceded. The indicator animates out of view when the user releases the scroller. The status bar indicator is shown if it's available (on phone).
+- On: A refresh is requested as soon as the `PullThreshold` is exceded, whether released or not. The indicator remains in view until the new data is retrieved, then animates out of view. A **Deferral** is used to notify the app when fetching the data is complete.
 
-## 添加刷新指示器
+> **Note**&nbsp;&nbsp;The code in sample is also applicable to a [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). To modify a GridView, derive the custom class from GridView instead of ListView and modify the default GridView template.
 
-务必向用户提供视觉反馈，以便让他们知道应用支持下拉刷新。 RefreshableListView 具有 `RefreshIndicatorContent` 属性，可支持在 XAML 中设置指示器视觉效果。 如果未设置 `RefreshIndicatorContent`，则它还包括回退的默认文本指示器。
+## Add a refresh indicator
 
-以下是推荐的刷新指示器指南。
+It's important to provide visual feedback to the user so they know that your app supports pull-to-refresh. RefreshableListView has a `RefreshIndicatorContent` property that lets you set the indicator visual in your XAML. It also includes a default text indicator that it falls back to if you don't set the `RefreshIndicatorContent`.
 
-![刷新指示器红线](images/ptr-redlines-1.png)
+Here are recommended guidelines for the refresh indicator.
 
-**修改列表视图模板**
+![refresh indicator redlines](images/ptr-redlines-1.png)
 
-在下拉刷新示例中，`RefreshableListView` 控件模板通过添加刷新指示器来修改标准 **ListView** 模板。 刷新指示器放置在 [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) 上的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) 中，它是显示列表项目的部件。
+**Modify the list view template**
 
-> **注意**&nbsp;&nbsp;`DefaultRefreshIndicatorContent` 文本框提供仅在没有设置 `RefreshIndicatorContent` 属性时显示的文本回退指示器。
+In the pull-to-refresh sample, the `RefreshableListView` control template modifies the standard **ListView** template by adding a refresh indicator. The refresh indicator is placed in a [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) above the [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), which is the part that shows the list items.
 
-以下是在默认 ListView 模板中修改的控件模板的部件。
+> **Note**&nbsp;&nbsp;The `DefaultRefreshIndicatorContent` text box provides a text fallback indicator that is shown only if the `RefreshIndicatorContent` property is not set.
+
+Here's the part of the control template that's modified from the default ListView template.
 
 **XAML**
 ```xaml
@@ -79,9 +75,9 @@ RefreshableListView 提供“自动刷新”模式，用于确定请求刷新的
 </Grid>
 ```
 
-**在 XAML 中设置内容**
+**Set the content in XAML**
 
-在 XAML 中为列表视图设置刷新指示器的内容。 所设置的 XAML 内容由刷新指示器的 [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) (`<ContentPresenter Content="{TemplateBinding RefreshIndicatorContent}">`) 显示。 如果不设置此内容，将改为显示默认文本指示器。
+You set the content of the refresh indicator in the XAML for your list view. The XAML content you set is displayed by the refresh indicator's [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) (`<ContentPresenter Content="{TemplateBinding RefreshIndicatorContent}">`). If you don't set this content, the default text indicator is shown instead.
 
 **XAML**
 ```xaml
@@ -115,9 +111,9 @@ RefreshableListView 提供“自动刷新”模式，用于确定请求刷新的
 </c:RefreshableListView>
 ```
 
-**设置微调框的动画**
+**Animate the spinner**
 
-下拉列表时，将发生 RefreshableListView 的 `PullProgressChanged` 事件。 可以在应用中处理此事件以控制刷新指示器。 在该示例中，此情节提要开始设置指示器 [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) 的动画，并旋转刷新指示器。 
+When the list is pulled down, RefreshableListView's `PullProgressChanged` event occurs. You handle this event in your app to control the refresh indicator. In the sample, this storyboard is started to animate the indicator's [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) and spin the refresh indicator. 
 
 **XAML**
 ```xaml
@@ -134,31 +130,31 @@ RefreshableListView 提供“自动刷新”模式，用于确定请求刷新的
 </Storyboard>
 ```
 
-## 处理滚动查看器操作事件
+## Handle scroll viewer manipulation events
 
-列表视图控件模板包括支持用户滚动列表项目的内置 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx)。 若要实现下拉刷新，必须处理内置滚动查看器上的操作事件和几个相关事件。 有关操作事件的详细信息，请参阅[触摸交互](../input-and-devices/touch-interactions.md)。
+The list view control template includes a built-in [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) that lets a user scroll through the list items. To implement pull-to-refresh, you have to handle the manipulation events on the built-in scroll viewer, as well as several related events. For more info about manipulation events, see [Touch interactions](../input-and-devices/touch-interactions.md).
 
 ** OnApplyTemplate**
 
-若要访问滚动查看器和其他模板部件，以便可以添加事件处理程序并在以后在代码中调用它们，必须替代 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) 方法。 在 OnApplyTemplate 中，可以调用 [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) 以获取控件模板中已命名部件的引用，可保存该引用以待以后在代码中使用。
+To get access to the scroll viewer and other template parts so that you can add event handlers and call them later in your code, you must override the [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) method. In OnApplyTemplate, you call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) to get a reference to a named part in the control template, which you can save to use later in your code.
 
-在该示例中，用于存储模板部件的变量已在私有变量区域中声明。 在 OnApplyTemplate 方法中进行检索后，为 [**DirectManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx)、[**DirectManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx)、[**ViewChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx) 和 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件添加事件处理程序。
+In the sample, the variables used to store the template parts are declared in the Private Variables region. After they are retrieved in the OnApplyTemplate method, event handlers are added for the [**DirectManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx), [**DirectManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx), [**ViewChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx), and [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) events.
 
 **DirectManipulationStarted**
 
-为了启动下拉刷新操作，在用户开始下拉时，内容必须滚动到滚动查看器的顶部。 否则，系统将假设用户拉动是为了向上平移列表。 此处理程序中的代码确定操作是否从滚动查看器的顶部内容开始，并且确定是否会刷新列表。 控件的“可刷新”状态也会相应地进行设置。 
+In order to initiate a pull-to-refresh action, the content has to be scrolled to the top of the scroll viewer when the user starts to pull down. Otherwise, it's assumed that the user is pulling in order to pan up in the list. The code in this handler determines whether the manipulation started with the content at the top of the scroll viewer, and can result in the list being refreshed. The control's 'refreshable' status is set accordingly. 
 
-如果控件可以刷新，则还可以添加动画的事件处理程序。
+If the control can be refreshed, event handlers for animations are also added.
 
 **DirectManipulationCompleted**
 
-当用户停止下拉列表时，此处理程序中的代码会检查在操作期间是否激活了刷新。 如果刷新已激活，将引发 `RefreshRequested` 事件并执行 `RefreshCommand` 命令。
+When the user stops pulling the list down, the code in this handler checks whether a refresh was activated during the manipulation. If a refresh was activated, the `RefreshRequested` event is raised and the `RefreshCommand` command is executed.
 
-还将删除动画的事件处理程序。
+The event handlers for animations are also removed.
 
-根据 `AutoRefresh` 属性的值，列表可立即以动画形式备份，或者等到刷新完成后再以动画形式备份。 [**Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 对象用于标记刷新已完成。 此时将隐藏刷新指示器 UI。
+Based on the value of the `AutoRefresh` property, the list can animate back up immediately, or wait until the refresh is complete and then animate back up. A [**Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) object is used to to mark the completion of the refresh. At that point the refresh indicator UI is hidden.
 
-DirectManipulationCompleted 事件处理程序中的这个部件可以引发 `RefreshRequested` 事件，并在需要时获取 Deferral。
+This part of the DirectManipulationCompleted event handler raises the `RefreshRequested` event and get's the Deferral if needed.
 
 **C#**
 ```csharp
@@ -182,27 +178,27 @@ if (this.RefreshRequested != null)
 
 **ViewChanged**
 
-有两种情形需要在 ViewChanged 事件处理程序中进行处理。
+Two cases are handled in the ViewChanged event handler.
 
-第一，如果视图由于滚动查看器缩放而更改，则取消控件的“可刷新”状态。
+First, if the view changed due to the scroll viewer zooming, the control's 'refreshable' status is canceled.
 
-第二，如果内容在自动刷新结束时完成动画设置，则隐藏填充矩形、重新启用与滚动查看器的触摸交互，并且 [VerticalOffset](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticaloffset.aspx) 设为 0。
+Second, if the content finished animating up at the end of an auto refresh, the padding rectangles are hidden, touch interactions with the scroll viewer are re-anabled, the [VerticalOffset](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticaloffset.aspx) is set to 0.
 
 **PointerPressed**
 
-下拉刷新仅在通过触摸操作下拉列表时发生。 在 PointerPressed 事件处理程序中，代码会检查引发此事件的指针类型，并设置变量 (`m_pointerPressed`) 以指示它是否是触摸指针。 此变量在 DirectManipulationStarted 处理程序中使用。 如果指针不是触摸指针，无需执行任何操作便会返回 DirectManipulationStarted 处理程序。
+Pull-to-refresh happens only when the list is pulled down by a touch manipulation. In the PointerPressed event handler, the code checks what kind of pointer caused the event and sets a variable (`m_pointerPressed`) to indicate whether it was a touch pointer. This variable is used in the DirectManipulationStarted handler. If the pointer is not a touch pointer, the DirectManipulationStarted handler returns without doing anything.
 
-## 添加下拉刷新事件
+## Add pull and refresh events
 
-“RefreshableListView”添加可以在应用中处理的 2 个事件，以刷新数据和管理刷新指示器。
+'RefreshableListView' adds 2 events that you can handle in your app to refresh the data and manage the refresh indicator.
 
-有关事件的详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)。
+For more info about events, see [Events and routed events overview](https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 **RefreshRequested**
 
-“RefreshRequested”事件会通知应用用户已拉动列表以刷新它。 处理此事件可提取新数据，并更新列表。
+The 'RefreshRequested' event notifies your app that the user has pulled the list to refresh it. You handle this event to fetch new data and update your list.
 
-以下是来自示例的事件处理程序。 请务必注意，它检查列表视图的 `AutoRefresh` 属性，并在 Deferral 为 **true** 时获取它。 凭借 Deferral，在刷新完成前，系统不会停用和隐藏刷新指示器。
+Here's the event handler from the sample. The important thing to notice is that it check's the list view's `AutoRefresh` property and get's a Deferral if it's **true**. With a Deferral, the refresh indicator is not stopped and hidden until the refresh is complete.
 
 **C#**
 ```csharp
@@ -222,23 +218,18 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 
 **PullProgressChanged**
 
-在该示例中，提供了刷新指示器的内容，并且该内容由应用控制。 “PullProgressChanged”事件将在用户拉动列表时通知应用，以便你可以启动、停用和重置刷新指示器。 
+In the sample, content for the refresh indicator is provided and controlled by the app. The 'PullProgressChanged' event notifies your app when the use is pulling the list so that you can start, stop, and reset the refresh indicator. 
 
-## 合成动画
+## Composition animations
 
-默认情况下，当滚动条到达顶部时，滚动查看器中的内容将停止。 若要使用户继续下拉列表，需要访问可视化层，并设置列表内容的动画。 该示例将[合成动画](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation)用于此操作；具体而言，使用的是[表达式动画](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)。
+By default, content in a scroll viewer stops when the scrollbar reaches the top. To let the user continue to pull the list down, you need to access the visual layer and animate the list content. The sample uses [composition animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation) for this; specifically, [expression animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations).
 
-在该示例中，这项工作主要是使用 `CompositionTarget_Rendering` 事件处理程序和 `UpdateCompositionAnimations` 方法来完成。
+In the sample, this work is done primarily in the `CompositionTarget_Rendering` event handler and the `UpdateCompositionAnimations` method.
 
-## 相关文章
+## Related articles
 
-- [设置控件样式](styling-controls.md)
-- [触摸交互](../input-and-devices/touch-interactions.md)
-- [列表视图和网格视图](listview-and-gridview.md)
-- [列表视图项模板](listview-item-templates.md)
-- [表达式动画](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
-
-
-<!--HONumber=Aug16_HO3-->
-
-
+- [Styling controls](styling-controls.md)
+- [Touch interactions](../input-and-devices/touch-interactions.md)
+- [List view and grid view](listview-and-gridview.md)
+- [List view item templates](listview-item-templates.md)
+- [Expression animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)

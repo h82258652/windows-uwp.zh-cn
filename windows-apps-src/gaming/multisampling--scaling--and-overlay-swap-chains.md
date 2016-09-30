@@ -1,34 +1,34 @@
 ---
 author: mtoepke
-title: Swap chain scaling and overlays
-description: Learn how to create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains (when available) to increase the visual quality.
+title: "交换链缩放和覆盖"
+description: "了解如何创建已缩放的交换链以提高在移动设备上的呈现速度，以及如何使用覆盖交换链（可用时）来提高视觉质量。"
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
 translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 1eea87b2175872e5a3bc7c41e82cda47bb555f82
+ms.openlocfilehash: 3380c5156072a9853261ec6b706a612b42e7ba10
 
 ---
 
-# Swap chain scaling and overlays
+# 交换链缩放和覆盖
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Learn how to create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains (when available) to increase the visual quality.
+了解如何创建已缩放的交换链以提高在移动设备上的呈现速度，以及如何使用覆盖交换链（可用时）来提高视觉质量。
 
-## Swap chains in DirectX 11.2
-
-
-Direct3D 11.2 allows you to create Universal Windows Platform (UWP) apps with swap chains that are scaled up from non-native (reduced) resolutions, enabling faster fill rates. Direct3D 11.2 also includes APIs for rendering with hardware overlays so that you can present a UI in another swap chain at native resolution. This allows your game to draw UI at full native resolution while maintaining a high framerate, thereby making the best use of mobile devices and high DPI displays (such as 3840 by 2160). This article explains how to use overlapping swap chains.
-
-Direct3D 11.2 also introduces a new feature for reduced latency with flip model swap chains. See [Reduce latency with DXGI 1.3 swap chains](reduce-latency-with-dxgi-1-3-swap-chains.md).
-
-## Use swap chain scaling
+## DirectX 11.2 中的交换链
 
 
-When your game is running on downlevel hardware - or hardware optimized for power savings - it can be beneficial to render real-time game content at a lower resolution than the display is natively capable of. To do this, the swap chain that is used for rendering game content must be smaller than the native resolution, or a subregion of the swapchain must be used.
+Direct3D 11.2 使你可以使用从非原生（已降低）分辨率放大的交换链创建通用 Windows 平台 (UWP) 应用，从而实现更快速的填充率。 Direct3D 11.2 中还引入了用于通过硬件覆盖进行呈现的 API，这样你就可以在另一个交换链中使用原生分辨率显示 UI。 它允许你的游戏能够完全使用原始分辨率来绘制 UI，同时还能维持较高的帧速率，从而能够充分发挥移动设备和高 DPI 屏幕（如 3840 X 2160）的优势。 本文说明了如何使用覆盖交换链。
 
-1.  First, create a swap chain at full native resolution.
+Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的新功能。 请参阅[利用 DXGI 1.3 交换链减少延迟](reduce-latency-with-dxgi-1-3-swap-chains.md)。
+
+## 使用交换链缩放
+
+
+当你的游戏在下层硬件上或在已经为节能进行了优化的硬件上运行时，使用比屏幕自身能够提供的分辨率更低的分辨率渲染实时游戏内容有很多好处。 为此，用于渲染游戏内容的交换链必须小于原始分辨率，否则必须使用交换链的一个子区域。
+
+1.  首先，创建一个完全使用原始分辨率的交换链。
 
     ```cpp
     DXGI_SWAP_CHAIN_DESC1 swapChainDesc = {0};
@@ -77,9 +77,9 @@ When your game is running on downlevel hardware - or hardware optimized for powe
         );
     ```
 
-2.  Then, choose a subregion of the swap chain to scale up by setting the source size to a reduced resolution.
+2.  然后，选择此交换链的一个子区域，通过将源大小设置为降低的分辨率来扩大该交换链子区域。
 
-    The DX Foreground Swap Chains sample calculates a reduced size based on a percentage:
+    DX 前台交换链示例按百分比计算了缩小的尺寸：
 
     ```cpp
     m_d3dRenderSizePercentage = percentage;
@@ -96,7 +96,7 @@ When your game is running on downlevel hardware - or hardware optimized for powe
         );
     ```
 
-3.  Create a viewport to match the subregion of the swap chain.
+3.  创建一个与交换链子区域相匹配的视区。
 
     ```cpp
     // In Direct3D, change the Viewport to match the region of the swap
@@ -111,16 +111,16 @@ When your game is running on downlevel hardware - or hardware optimized for powe
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-4.  If Direct2D is being used, the rotation transform needs to be adjusted to compensate for the source region.
+4.  如果正在使用 Direct2D，需要对旋转转换进行调整以补偿源区域。
 
-## Create a hardware overlay swap chain for UI elements
+## 为 UI 元素创建一个硬件覆盖交换链。
 
 
-When using swap chain scaling, there is an inherent disadvantage in that the UI is also scaled down, potentially making it blurry and harder to use. On devices with hardware support for overlay swap chains, this problem is alleviated entirely by rendering the UI at native resolution in a swap chain that's separate from the real-time game content. Note that this technique applies only to [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) swap chains - it cannot be used with XAML interop.
+使用交换链缩放时，固有的一点不足是 UI 也随之缩小，可能会导致 UI 模糊和难于使用。 在硬件支持覆盖交换链的设备上，通过在与实时游戏内容不同的交换链中使用原生分辨率来呈现 UI，完全解决了这个问题。 请注意，此技术只适用于 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 交换链，不能用于 XAML 互操作。
 
-Use the following steps to create a foreground swap chain that uses hardware overlay capability. These steps are performed after first creating a swap chain for real-time game content as described above.
+使用以下步骤创建一个可使用硬件覆盖功能的前台交换链。 在执行这些步骤之前，需要先按照以上所述为实时游戏内容创建一个交换链。
 
-1.  First, determine whether the DXGI adapter supports overlays. Get the DXGI output adapter from the swap chain:
+1.  首先，确定 DXGI 适配器是否支持覆盖。 从交换链中获取 DXGI 输出适配器：
 
     ```cpp
     ComPtr<IDXGIAdapter> outputDxgiAdapter;
@@ -139,21 +139,21 @@ Use the following steps to create a foreground swap chain that uses hardware ove
         );
     ```
 
-    The DXGI adapter supports overlays if the output adapter returns True for [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411).
+    如果输出适配器为 [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) 返回 True，则 DXGI 适配器支持覆盖。
 
     ```cpp
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **Note**   If the DXGI adapter supports overlays, continue to the next step. If the device does not support overlays, rendering with multiple swap chains will not be efficient. Instead, render the UI at reduced resolution in the same swap chain as real-time game content.
+    > **注意** 如果 DXGI 适配器支持覆盖，则继续下一步骤。 如果设备不支持覆盖，使用多个交换链进行呈现时速度将会下降。 这时需要在相同的交换链中以降低的分辨率作为实时游戏内容来呈现 UI。
 
      
 
-2.  Create the foreground swap chain with [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). The following options must be set in the [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) supplied to the *pDesc* parameter:
+2.  使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 创建前台交换链。 必须在提供给 *pDesc* 参数的 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 中设置以下选项：
 
-    -   Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) swap chain flag to indicate a foreground swap chain.
-    -   Use the [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) alpha mode flag. Foreground swap chains are always premultiplied.
-    -   Set the [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) flag. Foreground swap chains always run at native resolution.
+    -   指定 [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) 交换链标志，以指示前台交换链。
+    -   使用 [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) Alpha 模式标志。 始终对前台交换链进行预乘。
+    -   设置 [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) 标志。 前台交换链始终以原生分辨率运行。
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -161,7 +161,7 @@ Use the following steps to create a foreground swap chain that uses hardware ove
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **Note**   Set the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) again every time the swap chain is resized.
+    > **注意** 每次调整交换链大小时都重新设置 [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076)。
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -173,7 +173,7 @@ Use the following steps to create a foreground swap chain that uses hardware ove
         );
     ```
 
-3.  When two swap chains are being used, increase the maximum frame latency to 2 so that the DXGI adapter has time to present both swap chains simultaneously (within the same VSync interval).
+3.  如果使用两个交换链，请将最大帧延迟增加到 2，以便 DXGI 适配器有时间同时（在同一 VSync 间隔内）显示两个交换链。
 
     ```cpp
     // Create a render target view of the foreground swap chain's back buffer.
@@ -194,15 +194,15 @@ Use the following steps to create a foreground swap chain that uses hardware ove
     }
     ```
 
-4.  Foreground swap chains always use premultiplied alpha. Each pixel's color values are expected to be already multiplied by the alpha value before the frame is presented. For example, a 100% white BGRA pixel at 50% alpha is set to (0.5, 0.5, 0.5, 0.5).
+4.  前台交换链始终使用预乘 Alpha。 每个像素的颜色值都应该在显示帧之前已经预乘 Alpha 值。 例如，一个 Alpha 值为 50% 的 100% 白色 BGRA 像素设置为 (0.5, 0.5, 0.5, 0.5)。
 
-    The alpha premultiplication step can be done in the output-merger stage by applying an app blend state (see [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) with the [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) structure's **SrcBlend** field set to **D3D11\_SRC\_ALPHA**. Assets with pre-multiplied alpha values can also be used.
+    可以通过应用一个应用混合状态（请参阅 [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)），并将 [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) 结构的 **SrcBlend** 字段设置为 **D3D11\_SRC\_ALPHA**，在输出合并阶段完成 Alpha 预乘步骤。 还可以使用已经预乘了 Alpha 值的资源。
 
-    If the alpha premultiplication step is not done, colors on the foreground swap chain will be brighter than expected.
+    如果未完成 Alpha 预乘步骤，前台交换链上的颜色会比预期明亮。
 
-5.  Depending on whether the foreground swap chain was created, the Direct2D drawing surface for UI elements might need be associated with the foreground swap chain.
+5.  根据是否已经创建前台交换链，可能需要将 UI 元素的 Direct2D 绘图图面与前台交换链相关联。
 
-    Creating render target views:
+    创建呈现目标视图：
 
     ```cpp
     // Create a render target view of the foreground swap chain's back buffer.
@@ -223,7 +223,7 @@ Use the following steps to create a foreground swap chain that uses hardware ove
     }
     ```
 
-    Creating the Direct2D drawing surface:
+    创建 Direct2D 绘图图面：
 
     ```cpp
     if (m_foregroundSwapChain)
@@ -278,7 +278,7 @@ Use the following steps to create a foreground swap chain that uses hardware ove
         );
     ```
 
-6.  Present the foreground swap chain together with the scaled swap chain used for real-time game content. Since frame latency was set to 2 for both swap chains, DXGI can present them both within the same VSync interval.
+6.  同时显示前台交换链和用于实时游戏内容的已缩放交换链。 由于两个交换链的帧延迟均已设置为 2， 因此 DXGI 可以在同一 VSync 间隔内显示它们。
 
     ```cpp
     // Present the contents of the swap chain to the screen.
@@ -329,6 +329,6 @@ Use the following steps to create a foreground swap chain that uses hardware ove
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

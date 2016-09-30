@@ -1,92 +1,92 @@
 ---
 author: jnHs
-Description: The Channels and conversions report in the Windows Dev Center dashboard lets you see how customers on Windows 10 have arrived at your app's listing.
-title: Channels and conversions report
+Description: "Windows 开发人员中心仪表板中的“通道和转换”报告可让你查看 Windows 10 客户找到你的应用一览的方式。"
+title: "通道和转换报告"
 ms.assetid: C359B9FB-A17B-4A8E-B8EE-19F2F98AA4FF
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 48128577d41a9810062288ae908646c391aae849
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e82299f156a7e4f82e9219dc9b0ef6171e72c74e
 
 ---
 
-# Channels and conversions report
+# 通道和转换报告
 
 
-The **Channels and conversions** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 have arrived at your app's listing. It lets you track [custom promotion campaigns](create-a-custom-app-promotion-campaign.md) for your app or its add-ons, and see how many of those visits resulted in new acquisitions. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+Windows 开发人员中心仪表板中的**“通道和转换”**报告可让你查看 Windows 10 客户找到你的应用一览的方式。 它可以让你跟踪应用及其 IAP 的[自定义促销活动](create-a-custom-app-promotion-campaign.md)，并查看这些访问中有多少可以产生新购买。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。
 
-> **Important**   This report only shows page view and conversion data from customers on Windows 10.
-
- 
-
-In this report, a *channel* refers to the method in which a customer arrived at your app's listing page (for example, browsing and searching in the Store, a link from an external website, a link from one of your custom campaigns, etc.). The following channel types are included:
-
--   **Store traffic:** The customer was browsing or searching within the Store when they viewed your app's listing.
--   **External website:** The customer followed a link (without any custom campaign ID) to your app's listing from a website.
--   **Search engine:** The customer followed a link to your app's listing that was returned by an online search engine.
--   **Custom campaign:** The customer followed a link that used a [custom campaign ID](create-a-custom-app-promotion-campaign.md).
-
-A *page view* means that a customer viewed your app's Store listing page, either via the web-based Store or from within the Store app on Windows 10.
-
-A *conversion* means that a customer has newly obtained a license to your app (whether you charged money or you've offered it for free) or to an add-on.
-
-> **Note**  Conversion data is provided only for your custom campaigns. For other channel types, only page view data is currently included in this report.
+> **重要提示** 此报告仅显示页面查看和 Windows 10 客户的转换数据。
 
  
 
-## Apply filters
+在此报告中，*通道*是指客户找到你的应用一览页的方法（例如，浏览并搜索应用商店、外部网站的链接、自定义市场活动之一的链接等）。 包括以下通道类型：
 
+-   **应用商店流量：**客户在看到你的应用一览时在应用商店中进行浏览或搜索。
+-   **外部网站：**客户从某个网站跟踪你的应用一览的链接（没有任何自定义市场活动 ID）。
+-   **搜索引擎：**客户跟踪联机搜索引擎返回的你的应用一览的链接。
+-   **自定义市场活动：**客户跟踪使用[自定义市场活动 ID](create-a-custom-app-promotion-campaign.md) 的链接。
 
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by market.
+*页面查看*是指客户通过基于 Web 的应用商店或从 Windows 10 应用商店应用，查看你的应用的应用商店一览页。
 
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show details from customers in that market.
--   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show data from customers using that type of device.
+*转换*是指客户最近获取了你的应用（无论你是否收费）或 IAP 的许可证。
 
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
-
-## App page views and conversions by channel
-
-
-The **App page views and conversions by channel** chart shows how often your app's listing page was viewed and how customers arrived there. It also shows the number of conversions from custom campaigns over the selected period of time.
-
-The **Page views** tab of this chart shows the number of times your app's listing page was viewed over the selected period of time. Views are grouped according to the type of channel by which the customer found your app's listing.
-
-The **Conversions** tab of this chart shows the number of conversions (new acquisitions) over the selected period of time for customers who arrived at your app's listing via a custom campaign.
-
-> **Note**  For info about all of your app's acquisitions, including those that did not occur via a custom campaign link and those from customers on other OS versions, see the [Acquisitions report](acquisitions-report.md).
+> **注意**仅提供自定义市场活动的转换数据。 对于其他通道类型，此报告当前仅包括页面查看数据。
 
  
 
-## Campaign performance by channel
+## 应用筛选器
 
 
-The **Campaign performance by channel** chart shows the number of page views for each channel type. It also shows the total number of app and add-on conversions from your custom campaigns during the selected period of time.
+在页面顶部附近，你可以展开“应用筛选器”****按日期范围和/或市场筛选此页上的所有数据。
 
-## App page views and conversions by campaign ID
+-   **日期**：默认筛选器为“最近 30 天”****，但是你可以将此条件扩大到“最近 12 个月”****。
+-   **市场**：默认设置为“所有市场”****。 如果你想要此页面仅显示特定市场中客户的详细信息，你可以选择该市场。
+-   **设备类型**：默认筛选器为“所有设备”****。 如果你想要此页面仅显示使用特定设备类型的客户的数据，你可以选择该设备类型。
 
+以下列出的所有图中的信息将反映在“应用筛选器”****部分中所选的时段，并将反映你选择的其他任何筛选器。
 
-The **App page views and conversions by campaign ID** chart shows the number of page views and conversions for each of your specific [campaign IDs](create-a-custom-app-promotion-campaign.md) during the selected period of time.
-
-##  Add-on conversions by campaign ID
-
-
-The **Add-on conversions by campaign ID** chart shows the number of add-on conversions per custom campaign ID.
-
-When an app install is counted as a conversion for a custom campaign, any add-on purchases in that app are also counted as conversions for the same custom campaign.
-
-By default, the report includes any add-on which had a conversion that resulted from a link using a custom campaign ID during the selected period of time. To view data for a specific add-on, select it from the **Section filters**.
-
-## Conversions breakdown
+## 应用页面查看和管道转换
 
 
-The **Conversions breakdown** chart shows more details about the page views that resulted from each of your channel types. Click each channel type to get more info about conversions from that channel:
+“应用页面查看和管道转换”****图显示你的应用一览页的查看频率和客户访问该页面的方式。 它还显示所选时段内自定义市场活动的转换量。
 
--   **Custom campaign:** Shows the specific campaign IDs.
--   **External website:** Shows the domain of the website that linked to the app.
--   **Store traffic:** Shows whether the customer was using the Store client app or the online Store.
--   **Search engine:** Shows the specific search terms used by the customer.
+此图中的**页面查看**选项卡显示在所选时段内查看你的应用一览页的次数。 查看次数根据客户找到你的应用一览的通道类型进行分组。
 
-For custom campaigns, you can also see the number of app conversions and add-on conversions which resulted from each specific campaign ID.
+此图中的**转换**选项卡显示通过自定义市场活动找到你的应用一览的客户在所选时段内的转换量（新购买）。
+
+> **注意**有关所有应用购置（包括不是通过自定义市场活动链接以及从其他操作系统版本的客户进行的购置）的信息，请参阅[购置报告](acquisitions-report.md)。
+
+ 
+
+## 通道的市场活动性能
+
+
+“通道的市场活动性能”****图显示每种通道类型的页面查看数。 它还显示所选时段内自定义市场活动的应用和 IAP 转换总量。
+
+## 应用页面查看和市场活动 ID 转换
+
+
+“应用页面查看和市场活动 ID 转换”****图显示所选时段内页面查看数和每个特定[市场活动 ID](create-a-custom-app-promotion-campaign.md) 的转换数。
+
+##  按市场活动 ID 的 IAP 转换
+
+
+“按市场活动 ID 的 IAP 转换”**** 图显示每个自定义市场活动 ID 的 IAP 转换数。
+
+当应用安装计为自定义市场活动转换时，该应用中的任何 IAP 购买也计为同一自定义市场活动的转换。
+
+默认情况下，报告包括具有从在所选时段内使用自定义市场活动 ID 的链接产生转换的任何 IAP。 若要查看特定 IAP 的数据，请从“部分筛选器”****中选择它。
+
+## 转换细分
+
+
+“转换细分”****图显示有关每种通道类型产生的页面查看的详细信息。 单击每种通道类型，获取有关该通道转换的详细信息：
+
+-   **自定义市场活动：**显示特定市场活动 ID。
+-   **外部网站：**显示链接到应用的网站的域。
+-   **应用商店流量：**显示客户是否使用应用商店客户端应用或在线应用商店。
+-   **搜索引擎：**显示客户使用的特定搜索词。
+
+对于自定义市场活动，你还可以查看从每个特定市场活动 ID 产生的应用转换数和 IAP 转换数。
 
  
 
@@ -98,6 +98,6 @@ For custom campaigns, you can also see the number of app conversions and add-on 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

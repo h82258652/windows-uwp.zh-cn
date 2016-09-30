@@ -1,173 +1,172 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but functionally consistent across input devices.
-title: Touch design guidelines
+Description: "创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行了优化，但在不同的输入设备上功能一致。"
+title: "触摸设计指南"
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
-redirect_url: https://msdn.microsoft.com/windows/uwp/input-and-devices/touch-interactions
 translationtype: Human Translation
-ms.sourcegitcommit: 2db7aaccfd56b1bdfda099b197a695bad8a9cba1
-ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 67b851ce854c803934c2b97dbe7519e2916383a3
 
 ---
 
-# Touch design guidelines
+# 触摸设计指南
 
 
 
 
 
-Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but functionally consistent across input devices.
+创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行了优化，但在不同的输入设备上功能一致。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos and don'ts
-
-
--   Design applications with touch interaction as the primary expected input method.
--   Provide visual feedback for interactions of all types (touch, pen, stylus, mouse, etc.)
--   Optimize targeting by adjusting touch target size, contact geometry, scrubbing and rocking.
--   Optimize accuracy through the use of snap points and directional "rails".
--   Provide tooltips and handles to help improve touch accuracy for tightly packed UI items.
--   Don't use timed interactions whenever possible (example of appropriate use: touch and hold).
--   Don't use the number of fingers used to distinguish the manipulation whenever possible.
-
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>应做事项和禁止事项
 
 
-First and foremost, design your app with the expectation that touch will be the primary input method of your users. If you use the platform controls, support for touchpad, mouse, and pen/stylus requires no additional programming, because Windows 8 provides this for free.
+-   设计将触摸交互作为预期的主要输入方法的应用程序。
+-   为所有类型的交互（触摸、笔、触笔和鼠标等）提供视觉反馈
+-   通过调整触摸目标大小、接触几何体、清理和摇动来优化定位。
+-   使用吸附点和带方向性的“围栏”优化精确度。
+-   对于紧凑的 UI 项目，提供工具提示和句柄以帮助提高触摸精确度。
+-   尽量不要使用计时的交互（适当使用的示例：长按）。
+-   尽量不要使用用于区别操作的手指数量。
 
-However, keep in mind that a UI optimized for touch is not always superior to a traditional UI. Both provide advantages and disadvantages that are unique to a technology and application. In the move to a touch-first UI, it is important to understand the core differences between touch (including touchpad), pen/stylus, mouse, and keyboard input. Do not take familiar input device properties and behaviors for granted, as touch in Windows 8 does more than simply emulate that functionality.
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指南
 
-You will find throughout these guidelines that touch input requires a different approach to UI design.
 
-**Compare touch interaction requirements**
+首先，以“触摸将是用户的主要输入方法”的初衷设计应用。 如果你使用平台控件，不要求额外编程，即可支持触摸板、鼠标和笔/触笔，因为 Windows 8 免费提供此类支持。
 
-The following table shows some of the differences between input devices that you should consider when you design touch-optimized Windows Store apps.
+但是请记住，为触摸优化的 UI 并非总是优于传统 UI。 两者都具有特定于技术和应用的优缺点。 在转换到主要使用触摸的 UI 时，重要的是了解触摸（包括触摸板）、笔/触笔、鼠标和键盘输入之间的核心差别。 不要认为熟悉的输入设备属性和行为会理所当然地出现，因为 Windows 8 中的触摸所做的不仅仅是模拟此类功能。
 
-Factor Touch interactions Mouse, keyboard, pen/stylus interactions Touchpad Precision The contact area of a fingertip is greater than a single x-y coordinate, which increases the chances of unintended command activations.
-The mouse and pen/stylus supply a precise x-y coordinate.
-Same as mouse.
-The shape of the contact area changes throughout the movement.
-Mouse movements and pen/stylus strokes supply precise x-y coordinates. Keyboard focus is explicit.
-Same as mouse.
-There is no mouse cursor to assist with targeting.
-The mouse cursor, pen/stylus cursor, and keyboard focus all assist with targeting.
-Same as mouse.
-Human anatomy Fingertip movements are imprecise, because a straight-line motion with one or more fingers is difficult. This is due to the curvature of hand joints and the number of joints involved in the motion.
-It's easier to perform a straight-line motion with the mouse or pen/stylus because the hand that controls them travels a shorter physical distance than the cursor on the screen.
-Same as mouse.
-Some areas on the touch surface of a display device can be difficult to reach due to finger posture and the user's grip on the device.
-The mouse and pen/stylus can reach any part of the screen while any control should be accessible by the keyboard through tab order.
-Finger posture and grip can be an issue.
-Objects might be obscured by one or more fingertips or the user's hand. This is known as occlusion.
-Indirect input devices do not cause occlusion.
-Same as mouse.
-Object state Touch uses a two-state model: the touch surface of a display device is either touched (on) or not (off). There is no hover state that can trigger additional visual feedback.
-A mouse, pen/stylus, and keyboard all expose a three-state model: up (off), down (on), and hover (focus).
+你将发现在这些指南中触摸输入需要采用设计 UI 的不同方法。
 
-Hover lets users explore and learn through tooltips associated with UI elements. Hover and focus effects can relay which objects are interactive and also help with targeting.
+**对比触摸交互要求**
 
-Same as mouse.
-Rich interaction Supports multi-touch: multiple input points (fingertips) on a touch surface.
-Supports a single input point.
-Same as touch.
-Supports direct manipulation of objects through gestures such as tapping, dragging, sliding, pinching, and rotating.
-No support for direct manipulation as mouse, pen/stylus, and keyboard are indirect input devices.
-Same as mouse.
+下表显示了设计为触摸而优化的 Windows 应用商店应用时应该考虑的一些输入设备之间的不同。
+
+因素 触摸交互 鼠标、键盘、笔/触笔交互 触摸板精度 指尖的接触区域大于单个 x-y 坐标，这样便增加了无意中激活命令的几率。
+鼠标和笔/触笔提供了精确的 x-y 坐标。
+与鼠标相同。
+接触区域的形状在整个移动过程中不断变化。
+鼠标移动和笔/触笔笔划都提供精确的 x-y 坐标。 键盘焦点非常清晰。
+与鼠标相同。
+没有鼠标光标来帮助确定目标。
+鼠标光标、笔/触笔光标以及键盘焦点都可以帮助确定目标。
+与鼠标相同。
+人体解剖学 指尖移动并不精确，因为使用一根或多根手指沿直线移动非常困难。 这是由于手关节的曲率和运动涉及的关节数量导致的。
+使用鼠标或笔/触笔进行直线移动就很容易，因为控制它们的手所移动的物理距离要比光标在屏幕上移动的物理距离短。
+与鼠标相同。
+由于手指的姿势以及用户对设备的控制，显示设备触摸表面上的某些区域可能很难接触到。
+鼠标和笔/触笔可以达到屏幕的任何一个部分，同时任何控件都应该可以通过键盘按照 Tab 键顺序进行访问。
+手指姿势和抓握可能产生问题。
+一个或多个指尖或用户的手可能会遮住对象。 这称为封闭。
+间接输入设备不会造成封闭。
+与鼠标相同。
+对象状态 触摸使用两个状态的模型：显示设备的触摸表面为已触摸（打开）或未触摸（关闭）。 没有可以触发其他视觉反馈的悬停状态。
+鼠标、笔/触笔以及键盘全都显示三种状态的模型：向上（关闭）、向下（打开）以及悬停（聚焦）。
+
+悬停允许用户通过与 UI 元素关联的工具提示来了解信息。 悬停和聚焦效果都可以传达哪些对象是交互对象，并且还可以帮助确定目标。
+
+与鼠标相同。
+丰富交互 支持多点触摸：触摸表面上的多个输入点（指尖）。
+支持单一输入点。
+与触摸相同。
+通过手势（点击、拖动、滑动、收缩和旋转）支持对象的直接操作。
+不支持直接操作，因为鼠标、笔/触笔以及键盘为间接输入设备。
+与鼠标相同。
  
 
-**Note**  
-Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.
+**注意**  
+非直接输入的优点是已经过 25 年的优化。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
 
  
 
-**Use touch feedback**
+**用户触摸反馈**
 
-Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and Windows 8. Visual feedback can indicate successful interactions, relay system status, improve the sense of control, reduce errors, help users understand the system and input device, and encourage interaction.
+与应用交互期间适当的视觉反馈可帮助用户识别、了解以及适应应用和 Windows 8 解释其交互的方式。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
 
-Visual feedback is critical when the user relies on touch input for activities that require accuracy and precision based on location. Display feedback whenever and wherever touch input is detected, to help the user understand any custom targeting rules that are defined by your app and its controls.
+当用户依赖触摸屏输入来进行要求基于位置的准确活动时，视觉反馈非常重要。 无论何时何地检测到触摸输入都显示反馈，以帮助用户了解应用及其控件定义的任何自定义目标启发。
 
-**Create an immersive interaction experience**
+**创建沉浸式交互体验**
 
-The following techniques enhance the immersive experience of Windows Store apps.
+以下技术将改善 Windows 应用商店应用的沉浸式体验。
 
-**Targeting**
+**目标**
 
-Targeting is optimized through:
+通过以下方式优化目标：
 
--   Touch target sizes
+-   触摸目标大小
 
-    Clear size guidelines ensure that applications provide a comfortable UI that contains objects and controls that are easy and safe to target.
+    清晰的大小指南确保应用程序提供舒适的 UI，即 UI 中包含的对象和控件都很容易确定目标并且非常安全。
 
--   Contact geometry
+-   接触几何图形
 
-    The entire contact area of the finger determines the most likely target object.
+    手指的整个接触区域可以确定最可能的目标对象。
 
--   Scrubbing
+-   推移
 
-    Items within a group are easily re-targeted by dragging the finger between them (for example, radio buttons). The current item is activated when the touch is released.
+    通过将手指在组中的项之间拖动可以很容易改变目标（例如，单选按钮）。 释放触摸时激活当前项。
 
--   Rocking
+-   摇摆
 
-    Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a tooltip or the status bar and is activated when the touch is released.
+    密集项目（如超链接）可以通过下压手指（无滑动），然后来回摇摆并停在项目上方来轻松改变目标。 由于存在封闭，当前项通过工具提示或状态栏来标识，并且释放触摸时会被激活。
 
-**Accuracy**
+**准确性**
 
-Design for sloppy interactions by using:
+使用以下方式设计草率交互：
 
--   Snap-points that can make it easier to stop at desired locations when users interact with content.
--   Directional "rails" that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see [Guidelines for panning](guidelines-for-panning.md).
+-   用户与内容交互时使用吸附点可以轻松在所需位置停止。
+-   使用方向“围栏”可帮助进行垂直或水平平移，甚至手出现轻微弧度的移动时都可以。 有关详细信息，请参阅[平移指南](guidelines-for-panning.md)。
 
-**Occlusion**
+**封闭**
 
-Finger and hand occlusion is avoided through:
+通过以下方式避免出现手指和手封闭：
 
--   Size and positioning of UI
+-   UI 的大小和位置
 
-    Make UI elements big enough so that they cannot be completely covered by a fingertip contact area.
+    使 UI 元素足够大，以便指尖接触区域无法完全覆盖。
 
-    Position menus and pop-ups above the contact area whenever possible.
+    将菜单和弹出窗口尽可能放在接触区域上方。
 
--   Tooltips
+-   工具提示
 
-    Show tooltips when a user maintains finger contact on an object. This is useful for describing object functionality. The user can drag the fingertip off the object to avoid invoking the tooltip.
+    当用户在对象上保持手指接触时，显示工具提示。 这对于描述对象功能非常有用。 用户可将指尖拖动到对象外，以避免调用工具提示。
 
-    For small objects, offset tooltips so they are not covered by the fingertip contact area. This is helpful for targeting.
+    对于小型对象，偏移工具提示以便指尖接触区域不会将对象覆盖。 这对于确定目标非常有用。
 
--   Handles for precision
+-   精确句柄
 
-    Where precision is required (for example, text selection), provide selection handles that are offset to improve accuracy. For more information, see [Guidelines for selecting text and images (Windows Runtime apps)](guidelines-for-textselection.md).
+    如果对精度有要求（例如文本选择），请提供偏移选择句柄以提高准确性。 有关详细信息，请参阅[选择文本和图像的指南（Windows 运行时应用）](guidelines-for-textselection.md)。
 
-**Timing**
+**定时**
 
-Avoid timed mode changes in favor of direct manipulation. Direct manipulation simulates the direct, real-time physical handling of an object. The object responds as the fingers are moved.
+在直接操作时，避免定时模式更改。 直接操作模拟对象的直接、实时的物理处理。 对象随着手指移动作出响应。
 
-A timed interaction, on the other hand, occurs after a touch interaction. Timed interactions typically depend on invisible thresholds like time, distance, or speed to determine what command to perform. Timed interactions have no visual feedback until the system performs the action.
+另一方面，定时交互发生在触摸交互之后。 定时交互通常依赖看不见的阈值（如时间、距离或速度）来确定要执行的命令。 定时交互在系统执行操作之前没有视觉反馈。
 
-Direct manipulation provides a number of benefits over timed interactions:
+与定时交互相比，直接操作提供了很多优势：
 
--   Instant visual feedback during interactions make users feel more engaged, confident, and in control.
--   Direct manipulations make it safer to explore a system because they are reversible—users can easily step back through their actions in a logical and intuitive manner.
--   Interactions that directly affect objects and mimic real world interactions are more intuitive, discoverable, and memorable. They don't rely on obscure or abstract interactions.
--   Timed interactions can be difficult to perform, as users must reach arbitrary and invisible thresholds.
+-   交互期间即时视觉反馈使用户感觉更吸引人、更自信并且控制力更好。
+-   直接操作比浏览系统更安全，因为这些操作是可逆的—用户可以采用逻辑和直观的方式轻松倒退其操作。
+-   直接影响对象的交互以及模拟现实的交互更直观、更容易发现并且更不容易忘记。 它们不依赖于模糊或抽象的交互。
+-   定时交互可能难以执行，因为用户数量必须达到任意且不可见的阈值。
 
-In addition, the following are strongly recommended:
+此外，还强烈建议遵循以下规则：
 
--   Manipulations should not be distinguished by the number of fingers used.
--   Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.
--   Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
+-   不应该按使用的手指数量来区分操作。
+-   交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
+-   不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
 
-    **Note**  An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
+    **注意** 其中的一个例外是使用特定的定时交互来帮助了解和探究（如长按）。
 
      
 
--   Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.
+-   正确的描述以及视觉提示对高级交互的使用有巨大影响。
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>相关文章
 
-**For developers (XAML)**
-* [Touch interactions](https://msdn.microsoft.com/library/windows/apps/mt185617)
-* [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/mt185599)
+**对于开发人员 (XAML)**
+* [触控交互](https://msdn.microsoft.com/library/windows/apps/mt185617)
+* [自定义用户交互](https://msdn.microsoft.com/library/windows/apps/mt185599)
  
 
  
@@ -178,6 +177,6 @@ In addition, the following are strongly recommended:
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

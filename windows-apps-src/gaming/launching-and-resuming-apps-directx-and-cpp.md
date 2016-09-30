@@ -1,26 +1,26 @@
 ---
 author: mtoepke
-title: Launching and resuming apps (DirectX and C++)
-description: Learn how to launch, suspend, and resume your Universal Windows Platform (UWP) DirectX app.
+title: "启动和恢复应用（DirectX 和 C++）"
+description: "了解如何启动、暂停和恢复你的通用 Windows 平台 (UWP) DirectX 应用。"
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9a0a1314aa0b174bfb1c44e5280455ab668a42b7
+ms.openlocfilehash: cc9468e278d651729740147cb21c70d53b43800f
 
 ---
 
-# Launching and resuming apps (DirectX and C++)
+# 启动和恢复应用（DirectX 和 C++）
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Learn how to launch, suspend, and resume your Universal Windows Platform (UWP) DirectX app.
+了解如何启动、暂停和恢复你的通用 Windows 平台 (UWP) DirectX 应用。
 
-| Topic | Description |
+| 主题 | 说明 |
 |---------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [How to activate an app](how-to-activate-an-app-directx-and-cpp.md) | This topic shows how to define the activation experience for a UWP DirectX app. |
-| [How to suspend an app](how-to-suspend-an-app-directx-and-cpp.md) | This topic shows how to save important system state and app data when the system suspends your UWP DirectX app. |
-| [How to resume an app](how-to-resume-an-app-directx-and-cpp.md) | This topic shows how to restore important application data when the system resumes your UWP DirectX app. |
+| [如何激活应用](how-to-activate-an-app-directx-and-cpp.md) | 本主题介绍了如何为 UWP DirectX 应用定义激活体验。 |
+| [如何暂停应用](how-to-suspend-an-app-directx-and-cpp.md) | 本主题介绍了在系统暂停 UWP DirectX 应用时，如何保存重要系统状态和应用数据。 |
+| [如何恢复应用](how-to-resume-an-app-directx-and-cpp.md) | 本主题介绍了在系统恢复 UWP DirectX 应用时，如何还原重要的应用程序数据。 |
  
 
  
@@ -33,6 +33,6 @@ Learn how to launch, suspend, and resume your Universal Windows Platform (UWP) D
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

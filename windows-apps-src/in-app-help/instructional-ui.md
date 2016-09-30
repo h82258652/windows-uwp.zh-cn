@@ -1,77 +1,77 @@
 ---
 author: QuinnRadich
-Description: Design an instructional UI that teaches users how to work with your Windows app.
-title: Guidelines for designing instructional UI
+Description: "设计说明性 UI，可向用户解释如何使用你的 Windows 应用。"
+title: "设计说明性 UI 指南"
 label: Instructional UI
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e
-ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
+ms.openlocfilehash: f9f1f34bb02cda89d31caa9453b6e3eb056e7bc9
 
 ---
 
-# Instructional UI guidelines
+# 说明性 UI 指南
 
-\[ Updated for Universal Windows Platform (UWP) apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的通用 Windows 平台 (UWP) 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Sometimes it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the UI so they can discover and use features they might have missed.
+有时，向用户解释应用中他们不熟悉的功能（例如特定的触摸交互）会很有用。 在这些情况下，你需要通过 UI 向用户显示说明，以便他们可以发现并使用可能错过的功能。
 
-## <span id="when_to_use_instructional_ui"></span><span id="WHEN_TO_USE_INSTRUCTIONAL_UI"></span>When to use instructional UI
+## <span id="when_to_use_instructional_ui"></span><span id="WHEN_TO_USE_INSTRUCTIONAL_UI"></span>何时使用说明性 UI
 
-Instructional UI has to be used carefully. When overused it can be easily ignored by, or annoy, the user, making it ineffective.
+说明性 UI 必须谨慎使用。 如果过度使用，它很容易被忽略或使用户感到厌烦，从而导致效率很低。
 
-Instructional UI should be used to help the user discover important and non-obvious features of your app, such as touch gestures or settings they may be interested in. It can also be used to inform users about new features or changes in your app that they might have otherwise overlooked.
+说明性 UI 应用于帮助用户发现重要但不明显的应用功能，例如触摸手势或他们可能感兴趣的设置。 它还可以用于提醒用户有关他们可能忽略的应用中的新功能或更改。
 
-Unless your app is dependent on touch gestures, instructional UI should not be used to teach users the fundamental features of your app.
+除非应用依赖触摸手势，否则说明性 UI 不应用于向用户解释应用的基本功能。
 
-## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>Principles of writing instructional UI
+## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>编写说明性 UI 的原则
 
-Good instructional UI is relevant and educational to the user, and enhances the user experience. It should be:
+好的说明性 UI 与用户息息相关，并对用户有教育意义，还能增强用户体验。 它应该：
 
--   **Simple:** Users don't want their experience to be interrupted with complicated information.
--   **Memorable:** Users don't want to see the same instructions every time they attempt a task, so instructions need to be something they'll remember.
--   **Immediately relevant:** If the instructional UI doesn't teach a user about something that they immediately want to do, they won't have a reason to pay attention to it.
+-   **简单：**用户不会想让他们的体验被复杂信息打断。
+-   **记忆深刻：**用户不会想在每次尝试某项任务时都看到相同的说明，因此说明应能让他们过目不忘。
+-   **直接相关：**如果说明性 UI 不能向用户解释他们想立即执行的操作，他们也就没有理由关注它。
 
-Avoid overusing instructional UI, and be sure to choose the right topics. Do not teach:
+避免过度使用说明性 UI，并确保选择正确的主题。 不要解释：
 
--   **Fundamental features:** If a user needs instructions to use your app, consider making the app design more intuitive.
--   **Obvious features:** If a user can figure out a feature on their own without instruction, then the instructional UI will just get in the way.
--   **Complex features:** Instructional UI needs to be concise. Users interested in complex features are usually willing to seek out instructions.
+-   **基本功能：**如果用户需要说明才能使用你的应用，请考虑将应用设计制作的更为直观。
+-   **明显的功能：**如果用户不用说明就能自行了解某项功能，则说明性 UI 会成为阻碍。
+-   **复杂功能：**说明性 UI 需要简洁。 对复杂功能感兴趣的用户通常愿意寻找说明。
 
-Avoid inconveniencing the user with your instructional UI. Do not:
+避免由于说明性 UI 而给用户造成不便。 错误做法：
 
--   **Obscure important information:** Instructional UI should never get in the way of other features of your app.
--   **Force users to participate:** Users should be able to ignore instructional UI and still progress through the app.
--   **Displaying repeat information:** Don't harass the user with instructional UI, even if they ignore it the first time. Adding a setting to display instructional UI again is a better solution.
+-   **遮盖重要信息：**说明性 UI 应永远不能妨碍应用的其他功能。
+-   **强制用户参与：**用户应能够忽略说明性 UI 并仍能继续使用应用。
+-   **显示重复信息：**不要让说明性 UI 给用户造成困扰，即使在他们第一次忽略此 UI 时也是如此。 添加用于重新显示说明性 UI 的设置是更好的解决方案。
 
-## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>Examples of instructional UI
+## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>说明性 UI 的示例
 
-Here are a few examples of instructional UI that can help your users:
+下面几个说明性 UI 的示例有助于你的用户：
 
--   **Help users discover touch interactions.** The following screen shot shows instructional UI teaching a player how to use touch gestures in the game *Cut the Rope*.
+-   **帮助用户发现触控交互。** 以下屏幕截图显示，说明性 UI 教玩家如何在 *Cut the Rope* 游戏中使用触控笔势。
 
-    ![screen shot from game showing instructional ui message, "slide acress to cut the rope"](images/in-game-controls-3.png)
+    ![显示说明性 UI 消息“Slide acress to cut the rope”的游戏屏幕截图](images/in-game-controls-3.png)
 
--   **Make a great first impression.** When Movie Moments launches for the first time, instructional UI prompts the user to begin creating movies without obstructing their experience.
+-   **留下良好的第一印象。** 当影音时光首次启动时，说明性 UI 会在不阻碍用户体验的情况下提示他们开始制作电影。
 
-    ![launch screen for movie moments app](images/instructional-ui-movie.png)
+    ![影音时光应用的启动屏幕](images/instructional-ui-movie.png)
 
--   **Guide users to take the next step in a complicated task.** In the Windows Mail app, a hint at the bottom of the Inbox directs users to **Settings** to access older messages.
+-   **指导用户在复杂的任务中采取下一步骤。** 在“Windows 邮件”应用中，收件箱底部的提示将用户指向“设置”****以访问较早的消息。
 
-    ![cropped screen shot of windows mail app showing instructional ui message](images/instructional-ui-mail-inbox.png)
+    ![显示说明性 UI 消息的“Windows 邮件”应用的裁剪屏幕截图](images/instructional-ui-mail-inbox.png)
 
-    When the user clicks the message, the app's **Settings** flyout appears on the right side of the screen, allowing the user to complete the task. These screen shots show the Mail app before and after a user selects the instructional UI message.
+    在用户单击该消息时，应用的“设置”****浮出控件会立即显示在屏幕的右侧，以便用户完成该任务。 下面的屏幕截图显示了用户选择说明性 UI 消息之前和之后的“邮件”应用。
 
-    | Before                                                               | After                                                                                                        |
+    | 之前                                                               | 调整后的文本                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-    | ![screen shot of windows mail app](images/instructional-ui-mail.png) | ![screen shot of windows mail app with an extended settings flyout](images/instructional-ui-mail-flyout.png) |
+    | ![“Windows 邮件”应用的屏幕截图](images/instructional-ui-mail.png) | ![带有扩展设置浮出控件的 Windows 邮件应用的屏幕截图](images/instructional-ui-mail-flyout.png) |
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>相关文章
 
-* [Guidelines for app help](guidelines-for-app-help.md)
+* [应用帮助指南](guidelines-for-app-help.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

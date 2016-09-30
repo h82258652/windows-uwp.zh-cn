@@ -1,129 +1,113 @@
 ---
 author: jnHs
-Description: If your app uses an AdMediatorControl or AdControl to display banner ads, you could increase your ad fill rate and revenue by showing Microsoft affiliate ads in your app.
-title: Package flights
+Description: "如果你的应用使用 AdMediatorControl 或 AdControl 显示横幅广告，可通过在应用中显示 Microsoft 关联广告来提高广告填充率和收益。"
+title: "软件包外部测试版"
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
 translationtype: Human Translation
-ms.sourcegitcommit: baa8212b7ec26be1f50e051fa06bff4bf8095227
-ms.openlocfilehash: 34321a5fd3db10833b958049597ebf830599cfb4
+ms.sourcegitcommit: 9e62a7aa18950f7e1cc26b42762e3bb937c389ac
+ms.openlocfilehash: c538da2a58f38925938b9e28ec7ca65cdb9858a3
 
 ---
 
-# Package flights
+# 软件包外部测试版
 
-You can use package flights to distribute packages that are only given to a limited test group. 
+你可以使用软件包外部测试版分配仅提供给有限测试组的程序包。 
 
-Package flights allow you to provide different packages to designated set of testers without disrupting the experience of your other customers. Only the packages are different; the Store listing details will be the same for all of your customers.
+软件包外部测试版允许你向指定的测试程序集提供不同的程序包，并且不会中断其他客户的体验。 只有程序包不同；所有客户看到的应用商店一览详细信息都将一致。
 
-Note that package flights must pass the [certification process](the-app-certification-process.md), just the same as a regular, non-flighted submission. If you later decide that you want to make packages from a package flight available to all your customers, you can pull those packages into your non-flighted submission as described below.
+请注意，软件包外部测试版必须通过[认证过程](the-app-certification-process.md)，这与常规的非外部测试版提交一样。 如果你以后决定向所有客户提供软件包外部测试版的程序包，可以将这些程序包放到非外部测试版的提交中，如下所述。
 
-When you set up package flights, you can choose the specific people who should get specific packages by adding them to a flight group. Anyone in a flight group who is using a device running a version of Windows 10 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later; or Xbox One) will get the packages from the package flight(s) that you designate for that particular group. Anyone who has not been added to one of your flight groups, or is using a device that doesn’t support package flights, will get packages from the non-flighted submission.
+当你设置软件包外部测试版时，可以通过将其添加到外部测试版组来选择应获取特定程序包的特定用户。 外部测试版组中使用运行支持软件包外部测试版（Windows.Desktop 版本 10586 或更高版本；Windows.Mobile 版本 10586.63 或更高版本）的 Windows 10 版本的设备的任何用户都将从为该特定组指定的软件包外部测试版中获取程序包。 未添加到软件包外部测试版组之一或使用不支持软件包外部测试版的设备的任何用户将从非外部测试版提交中获取程序包。
 
-> **Important** On desktop and mobile devices, people in your flight groups will get the packages in your flight automatically whenever you provide updates. However, **people in your flight groups who are using Xbox devices will need to check for updates manually** in order to get the latest packages, making sure they are signed into their device using their Microsoft account (with the associated email address that you included in your flight group).
+发布某个应用提交后，你将在“应用概览”页上看到“软件包外部测试版”****部分。 单击“新建软件包外部测试版”****以开始操作。 如果你尚未设置任何外部测试版组，在继续操作前系统将提示你创建一个组。
 
-Note that package flights will not be distributed via the [Windows Store for Business](https://www.microsoft.com/business-store). This is because people in your flight groups must be signed in with their Microsoft accounts in order to receive a package flight. All acquisitions made via the Windows Store for Business will receive your non-flighted packages.
+## 创建新的外部测试版组
 
-> **Tip** Package flights offer packages only to the selected customers that you specify. To distribute packages to a random selection of customers in a specified percentage, you can use [gradual package rollout](gradual-package-rollout.md). You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
+外部测试版组允许你指定要包括在该组中的用户。 为获取已进行外部测试的程序包，每个用户必须使用与所提供的电子邮件地址关联的 Microsoft 帐户在应用商店中进行身份验证，并且必须使用 Windows 10 设备（如上文所指定）下载该应用。
 
-> Unlike package flights, your gradual package rollout selections do apply to customers who acquire your app via the Windows Store for Business. 
+创建外部测试版组时，必须为其命名。 每个外部测试版组都必须包含至少一个电子邮件地址，最多可包含 10,000 个电子邮件地址。 你可以直接将电子邮件地址输入该字段中（使用空格、逗号或分号分隔），或者单击“导入 .csv”****链接以从 .csv 文件中的电子邮件地址列表创建外部测试版组。
 
-After you have published a submission for your app, you'll see a **Package flights** section on the App overview page. Click **New package flight** to get started. If you haven't set up any flight groups yet, you'll be prompted to create one before you can proceed.
+单击“创建组”****来保存该组，并继续设置软件包外部测试版。
 
-## Create a new flight group
+> **重要提示** 确保你已获取要添加到外部测试版组的用户的任何必要许可，并且他们知道会获取不同于非外部测试版提交的软件包。 
+> 你可能还会考虑使用软件包外部测试版的用户可以如何向你提供关于应用的输入。 我们建议[将控件添加到你的应用以启动反馈中心](../monetize/launch-feedback-hub-from-your-app.md)，以便客户可以直接提供他们的输入；然后可以在你的应用的[反馈报告](feedback-report.md)中查看他们的反馈。
 
-Flight groups let you specify the people that you'd like to include in the group. In order to get your flighted packages, each person must be authenticated with the Store using the Microsoft account associated with the email address you provide, and must be using a Windows 10 device (as specified above) to download the app.
+若要稍后编辑你的外部测试版组，可单击“Export .csv”****以将你的组信息保存到 .csv 文件。 在此文件中进行更改，然后单击“Import .csv”****以使用新版本更新组成员资格。 请注意，实现外部测试版组成员资格更改大约需要 30 分钟。 如果你在发布关联的软件包外部测试版后向外部测试组添加人员，该软件包将自动发送给新的人员；你无需为该软件包外部测试版创建和发布新的提交。 
 
-When you create a flight group, you must give it a name. Each flight group must contain at least one email address, with a maximum of 10,000 email addresses. You can enter email addresses directly into the field (separated by spaces, commas, or semicolons), or you can click the **Import .csv** link to create the flight group from a list of email addresses in a .csv file.
+## 创建新的软件包外部测试版
 
-Click **Create group** to save the group and continue setting up the package flight.
+创建完你的第一个外部测试版组后，你将看到可以添加详细信息以完成此设置的页面。 你将需要给软件包外部测试版命名，并指定至少一个外部测试版组。 如果你想设置一个新组，可以在此页中进行设置。
 
-> **Important** Be sure that you have obtained any necessary consent from people that you add to your flight group, and that they understand that they will be getting packages that are different from your non-flighted submission. 
-> You may also want to consider how the people in your package flight can give you their input about the app. We suggest [adding a control into your app to launch Feedback Hub](../monetize/launch-feedback-hub-from-your-app.md) so that customers can provide their input directly; you can then review their feedback in your app's [Feedback report](feedback-report.md)).
+在输入名称并选择外部测试版组后，单击“创建外部测试版”****。 这些详细信息以后将无法更改（但你始终可以删除它并创建新的软件包外部测试版以供使用）。
 
-To edit your flight group later, you can click **Export .csv** to save your group info to a .csv file. Make your changes in this file, then click **Import .csv** to use the new version to update the group membership. Note that it may take up to 30 minutes for flight group membership changes to be implemented. If you add people to a flight group after you've published an associated package flight, the packages will be delivered to the new people automatically; you don't have to create and publish a new submission for that package flight. 
+> 请注意，如果你有多个软件包外部测试版，将需要为每个版本分配排名。 有关详细信息，请参阅下面的添加其他软件包外部测试版并为其排名。
 
-## Create a new package flight
+## 指定要包含在你的软件包外部测试版中的程序包
 
-After you've created your first flight group, you'll see a page where you can add details to complete setting it up. You'll need to give the package flight a name and specify at least one flight group. If you want to set up a new group, you can do that from this page.
+在保存软件包外部测试版详细信息后，你可以看到其概述页。 单击“软件包”****以指定要包括在外部测试版中的软件包。
 
-Click **Create flight** once you've entered the name and selected the flight group(s). You won't be able to change these details later (though you can always delete it and create a new package flight to use instead).
+你可以选择与之前发布的提交关联的程序包（可以是非外部测试版的提交，或者是其他多个软件包外部测试版中的一个）。 如果你需要[上传新程序包](upload-app-packages.md)以供此软件包外部测试版使用，可以在此处上传它们（使用与向常规的非外部测试版提交上传应用包时相同的过程）。 完成指定要包括在此软件包外部测试版中的软件包后，单击“保存”****。
 
-> Note  If you have more than one package flight, you'll need to assign a rank to each one. For more info, see Add and rank additional package flights below.
+如果你的应用支持多个设备系列，请确保包含软件包，以便在外部测试版中支持同样的一组设备系列。 外部测试版组中的人员将**只**能从该外部测试版中获取软件包。 他们无法访问其他外部测试版或非外部测试版提交中的软件包。 
 
-## Specify packages to include in your package flight
+另外，要记住你的应用商店一览信息来自非外部测试版提交，包括你的应用支持哪些设备系列。 外部测试版组中的客户将只能在你的非外部测试版提交支持的设备系列上下载应用。 有关详细信息，请参阅[设备系列支持](#device-family-support)。 
 
-After you've saved your package flight details, you'll see its overview page. Click **Packages** to specify the packages you'd like to include in the flight.
+## 配置其他软件包外部测试版选项
 
-You have the option to select packages that were associated with a previous published submission (either a non-flighted submission, or one of your other package flights, if you have more than one). If you need to [upload new packages](upload-app-packages.md) to use for this package flight, you can upload them here (using the same process as when you upload app packages to a regular non-flighted submission). Click **Save** when you have finished specifying the packages to be included in this package flight.
+默认情况下，完成认证过程后即会发布软件包外部测试版，并将其提供给外部测试版组。 如果你想要更改[发布日期](set-app-pricing-and-availability.md#publish-date)，或想要添加[认证说明](notes-for-certification.md)，可以在“选项”****部分中执行该操作。 单击“保存”****以返回到软件包外部测试版概述页。 
 
-If your app supports multiple device families, make sure you include packages to support the same set of device families in your flight. People in your flight groups will **only** be able to get packages from that flight. They won't be able to access packages from other flights, or from your non-flighted submission. 
+## 将软件包外部测试版提交到应用商店
 
-Also remember that your Store listing info comes from your non-flighted submission, including which device families your app supports. customers in your flight groups will only be able to download the app on a device family that is supported by your non-flighted submission. For more info, see [Device family support](#device-family-support). 
+当已指定软件包并已配置任何所需选项时，单击“提交到应用商店”****。 你的软件包外部测试版随后将通过[应用认证过程](the-app-certification-process.md)。 请注意，包括在软件包外部测试版中的程序包必须遵守 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)，如所有提交一样。
 
-## Gradual package rollout
+在与该软件包外部测试版关联的外部测试版组中的用户已拥有你的应用，并且现在可以使用包括在软件包外部测试版中的程序包获取更新。 如果这些用户尚未获取你的应用，在安装软件包外部测试版时可从中获取程序包。 
 
-By default, the packages in your submission will be made available to everyone in your flight group at the same time. To change this, you can check the box that says **Roll out update gradually after this submission is published (to Windows 10 customers only)**. You can choose a percentage of people in your flight group to get the packages from the new submission, so that you can monitor feedback and analytic data to make sure you’re confident about the update before rolling it out more broadly to the rest of the flight group. You can increase the percentage (or halt the update) any time without having to create a new submission for your package flight. 
+> 请注意，拥有仅在软件包外部测试版中提供的程序包的用户可给应用进行星级评分并留下评价，但他们的评分和评价不会向其他客户显示。 （这不包括旧版 7.x 或 8.0 XAP 软件包；其他客户会通过这些软件包看到你的外部测试版组中的成员对应用进行的评分和留下的评价。）你可以看到所有客户提供的反馈，包括外部测试版组中的客户以及应用的评分和评价报告中的客户。
 
-> **Important** When gradually rolling out packages in a package flight, the people who aren't included in the percentage which gets your new packages will get the packages from the previous package flight submission (unless there is a higher-ranked flight available to them).
+## 设备系列支持
 
-For more info, see [Gradual package rollout](gradual-package-rollout.md).
+在大多数情况下，你想要包括支持非外部测试版提交支持的相同设备系列集的软件包。 应用的设备系列可用性将始终以非外部测试版提交为基础，无论客户是否在外部测试版组中。
 
-## Configure additional package flight options
+**如果你的非外部测试版提交支持软件包外部测试版不支持的设备系列**，那么外部测试版组中的人员将无法在该设备系列上下载应用。 例如，如果你的非外部测试版提交包含移动和桌面软件包，并且你随后创建了一个仅包含移动软件包的软件包外部测试版，那么外部测试版组中的人员将只能在移动设备上下载应用，即使你向不在外部测试版中的客户提供桌面软件包也是如此。 即使你仅使用软件包外部测试版来测试移动软件包中的更改，也应当在软件包外部测试版中包含来自非外部测试版提交的桌面软件包，以便外部测试版组中的客户能够在桌面设备上下载你的应用。
 
-By default, your package flight will be published and made available to your flight group as soon as it completes the certification process. If you'd like to change the [publish date](set-app-pricing-and-availability.md#publish-date), or want to add [Notes for certification](notes-for-certification.md), you can do so in the **Options** section. Click **Save** to return to the package flight overview page. 
+**如果你的软件包外部测试版支持非外部测试版提交不支持的设备系列**，那么任何人都将无法在该设备系列上下载应用，无论他们是否在外部测试版组中。 例如，如果你的非外部测试版提交仅包含移动软件包，并且你随后创建了一个同时包含移动和桌面软件包的软件包外部测试版，那么外部测试版组中的人员仍将只能在移动设备上下载应用。 桌面软件包不会提供给任何人，外部测试版组中的人员也不行。 如果你想要将桌面软件包提供给外部测试版组中的人员，你首先需要更新非外部测试版提交才能包含桌面软件包。 为了向应用的所有客户提供最佳体验，你的非外部测试版提交应支持与软件包外部测试版相同的设备系列。 
 
-## Submit your package flight to the Store
+**注意** 添加到软件包外部测试版的软件包可以支持任何 OS 版本（或任何版本的 Windows 10），但是如上所述，外部测试版组中的人员必须使用运行 Windows 10 版本的设备，该版本支持软件包外部测试版（Windows.Desktop 内部版本10586 或更高版本；Windows.Mobile 内部版本 10586.63 或更高版本），这样才能从软件包外部测试版中获取软件包。
 
-When you've specified packages and configured any options needed, click **Submit to the Store**. Your package flight will then go through the [app certification process](the-app-certification-process.md). Note that packages included in your package flight must comply with the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx), as with all submissions.
+## 更新或修改软件包外部测试版
 
-People in your flight group(s) associated with that package flight who already have your app will now get an update using the packages you included in your package flight. If those people don’t have your app yet, they’ll get the packages from your package flight when they install it. 
+若要为现有软件包外部测试版创建新提交，请在“应用概览”页面上单击外部测试版名称旁边的“更新”****。 然后，你可以上传新的程序包（和删除不需要的程序包），就像你处理非外部测试版提交一样。 进行任何其他所需更改，然后单击“提交到应用商店”****，以通过[应用认证过程](the-app-certification-process.md)发送更新的软件包外部测试版。
 
-> Note  People who have a package that is only available in a package flight can give the app a star rating and leave reviews, but their ratings and reviews won’t be shown to other customers. (This excludes legacy 7.x or 8.0 XAP packages; ratings and reviews left by members of your flight groups using those packages will be visible to other customers.) You can see their feedback from all customers, including those in your flight groups, in the Ratings and Reviews reports for the app.
+若要在不创建和提交新更新的情况下修改现有的外部测试版，请单击外部测试版名称旁边的“修改”****。 这可以让你更改详细信息（例如外部测试版组、名称和排名），而不需要软件包外部测试版再次完成认证过程。
 
-## Device family support
+## 添加其他软件包外部测试版并为其排名
 
-In most cases, you’ll want to include packages that support the same set of device families supported by your non-flighted submission. Device family availability for an app will always be based on the non-flighted submission, whether or not a customer is in a flight group.
+你可以为同一应用创建多个软件包外部测试版来将若干不同的程序包分配到不同的客户集。 
 
-**If your non-flighted submission supports a device family that your package flight doesn’t support**, people in your flight group won’t be able to download the app on that device family. For example, if your non-flighted submission includes Mobile and Desktop packages, and you then create a package flight that only includes a Mobile package, people in your flight group will only be able to download the app on mobile devices, even though you do have a desktop package available to customers who aren’t in the flight. Even if you're only using the package flight to test changes in your Mobile package, you should include the Desktop package from your non-flighted submission in the package flight so that customers in the flight group are able to download your app on desktop devices.
+创建了你的第一个软件包外部测试版后，你可以按照上述过程创建其他外部测试版。 唯一的区别在于，如果你已经创建了一个软件包外部测试版，将需要在“排名”****部分中指定所有软件包外部测试版的优先级顺序。 这让应用商店可以确定向任何一个客户提供哪个程序包，即使他们处在多个外部测试版组中。 你的外部测试版组中的用户将始终获取可用的排名最高的软件包外部测试版，即使排名较低的软件包外部测试版包含较高版本号的程序包。
 
-**If your package flight supports a device family that your non-flighted submission doesn’t support**, no one will be able to download the app on that device family, whether they’re in your flight group or not. For example, if your non-flighted submission only includes a Mobile package, and you then create a package flight that includes both Mobile and Desktop packages, people in your flight group will still only be able to download the app on mobile devices. The desktop package won’t be offered to anyone, even people in your flight group. If you want to make a desktop package available to people in your flight group, you’ll need to first update your non-flighted submission to include a desktop package. For the best experience for all of your app’s customers, your non-flighted submission should support the same device families as your package flight. 
+默认情况下，新的软件包外部测试版的排名将会最高。 如果你想更改排名，可以向下移动（或重新向上移动）以将其放置在其他软件包外部测试版中的合适位置。
 
-**Note**  Packages added to your package flights can support any OS version (or any build of Windows 10), but as noted above, people in flight groups must be using a device running a version of Windows 10 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later) in order to get packages from the package flight.
+请注意，非外部测试版提交的排名始终最低。 换言之，不属于任何外部测试版组的用户仅可通过应用商店从非外部测试版提交中获取程序包。 外部测试版组中的用户将始终从可用的排名最高的软件包外部测试版中获取程序包（但永远无法从非外部测试版提交中获取）。 这可让你灵活决定如何将程序包分配给属于多个外部测试版组的成员的用户。
 
-## Update or modify your package flight
+例如，假设你还想要在除常规的非外部测试版提交外创建两个软件包外部测试版：一个相对稳定并且已准备好接受广大受众的测试，一个不确定其性能并且只想限定于一些测试人员。 你可以创建名为 Testers 的外部测试版组，并将其包括在名为 Tester Flight 的软件包外部测试版中，然后创建成员更多的名为 Enthusiasts 的外部测试版组，并将其包括在另一个名为 Enthusiast Flight 的软件包外部测试版中。 如果 Tester Flight 的排名比 Enthusiast Flight 的高，你可以在 Enthusiast Flight 中使用抱有很大信心的程序包，而仅在 Tester Flight 中使用适用于 Testers 的风险更大的程序包。 Testers 组的成员将始终可以获取你在 Tester Flight 中提供的程序包，即使他们也属于 Enthusiasts 组。 （然后，如果可以证明 Tester Flight 中的程序包运行良好，则可以更新 Enthusiast Flight 以使用最初分配到 Tester Flight 的程序包，并且最终或许可以使用非外部测试版提交中的程序包。）
 
-To create a new submission for an existing package flight, click **Update** next to the flight name on your App overview page. You can then upload new packages (and remove unneeded packages), just as you would with a non-flighted submission. Make any other needed changes, and then click **Submit to the Store** to send the updated package flight through the [app certification process](the-app-certification-process.md).
+## 向所有客户提供软件包外部测试版中的程序包
 
-To modify an existing flight without creating and submitting a new update, click **Modify** next to the flight name. This lets you change details such as the flight groups, name, and rank, without  requiring that the package flight go through the certification process again.
+如果决定应该向不属于外部测试版组的客户提供包括在发布的软件包外部测试版中的一个或多个程序包，你可以更新非外部测试版提交以使用这些程序包，而无需重新上传相同的程序包。 
 
-## Add and rank additional package flights
+创建新提交时，你将在[**软件包**](upload-app-packages.md)页面上看到可以选择复制你的其中一个软件包外部测试版中的软件包的下拉列表。 选择具有你想要引入的程序包的软件包外部测试版。 然后，你可以选择要包括在非外部测试版提交中的任何或所有程序包。
 
-You can create multiple package flights for the same app in order to distribute several different packages to different sets of customers. 
+请注意，所有的相同程序包验证规则均适用，即使在使用之前发布的提交的程序包时也是如此。 
 
-Once you have created your first package flight, you create another by following the process outlined above. The only difference is that if you've already created one package flight, you'll need to specify the priority order of all package flights in the **Rank** section. This lets the Store can determine which package to give to any individual customer, even if they are in more than one of your flight groups. People in your flight groups will always get the highest-ranked package flight available to them, even if a lower-ranked package flight contains packages with a higher version number.
+## 删除软件包外部测试版
 
-By default, your new package flight will be ranked highest. If you'd like to change its rank, you can move it down (or back up) to place it in the right location among your other package flights.
+若要删除不想再支持的软件包外部测试版，请在“应用概览”页上单击它的名称。 在外部测试版概览页上，单击“修改”****，然后单击“删除”****链接即可删除软件包外部测试版。 （如果正在运行软件包外部测试版的未发布提交，你将需要首先删除该提交。）完成此过程最多需要 30 分钟。
 
-Note that your non-flighted submission is always ranked the lowest. That is, people who aren’t in any of your flight groups can only get packages from your non-flighted submission through the Store. People in a flight group will always get packages from the highest-ranked package flight available to them (but never the non-flighted submission). This gives you flexibility in determining how to distribute your packages to people who may be members of more than one of your flight groups.
-
-For example, let's say you want to create two package flights in addition to your regular non-flighted submission: one that is relatively stable and ready for testing with a wide audience, and one that you're not so sure about and want to limit to only a few testers. You could create a flight group called Testers and include it in a package flight called Tester Flight, then create a flight group called Enthusiasts with a larger membership and include it in another package flight called Enthusiast Flight. If you rank Tester Flight higher than Enthusiast Flight, you can use packages that you're fairly confident about in Enthusiast Flight, while using riskier packages meant for Testers only in Tester Flight. Members of your Testers group will always get the packages you provide in Tester Flight, even if they also belong to your Enthusiasts group. (Then later, if it turns out that the packages in Tester Flight are performing well, you could update Enthusiast Flight to use the packages originally distributed to Tester Flight—and maybe eventually use those packages in your non-flighted submission.)
-
-## Make packages from a package flight available to all your customers
-
-If you decide that one or more of the packages you included in a published package flight should be made available to customers who aren’t in a flight group, you can update your non-flighted submission to use those packages, without having to upload the same packages all over again. 
-
-When you create your new submission, on the [**Packages**](upload-app-packages.md) page you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in the non-flighted submission.
-
-Note that all of the same package validation rules will apply, even when using packages from a previously published submission. 
-
-## Delete a package flight
-
-To delete a package flight that you no longer want to support, click its name from the App overview page. On the flight overview page, click **Modify**, then click the **Delete** link to delete the package flight. (If you have an unpublished submission of the package flight in progress, you’ll need to delete that submission first.) It may take up to 30 minutes for this to be completed.
-
-When you delete a package flight, any customers who have the packages you distributed in that package flight will get an app update if there is a package with a higher version number (or as soon as such a package becomes available). If they uninstall the app and then install it again later, this will be treated as a new acquisition, and they'll get the highest version currently available. 
+当你删除软件包外部测试版时，如果有版本号更高的软件包（或者在此类软件包可用时），任何拥有你在该软件包外部测试版中分发的软件包的客户，都将获取应用更新。 如果他们卸载应用并在稍后重新安装，该应用将被视为新获取的应用，并且他们将获取当前可用的最高版本。 
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO5-->
 
 

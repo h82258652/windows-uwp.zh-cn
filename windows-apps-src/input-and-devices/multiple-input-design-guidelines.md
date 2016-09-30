@@ -1,50 +1,50 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
-title: Multiple inputs design guidelines
+Description: "正如人们在彼此交流时会结合使用语音和手势，在与应用交互时也会用到多种类型和模式的输入。"
+title: "多个输入设计指南"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
+ms.openlocfilehash: 71c5994e1a308993aef6603ba77ab5e695bde293
 
 ---
 
-# Multiple inputs
+# 多个输入
 
-Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
-
-
-To accommodate as many users and devices as possible, we recommend that you design your apps to work with as many input types as possible (gesture, speech, touch, touchpad, mouse, and keyboard). Doing so will maximize flexibility, usability, and accessibility.
-
-To begin, consider the various scenarios in which your app handles input. Try to be consistent throughout your app, and remember that the platform controls provide built-in support for multiple input types.
-
--   Can users interact with the application through multiple input devices?
--   Are all input methods supported at all times? With certain controls? At specific times or circumstances?
--   Does one input method take priority?
-
-## Single (or exclusive)-mode interactions
+正如人们在彼此交流时会结合使用语音和手势，在与应用交互时也会用到多种类型和模式的输入。
 
 
-With single-mode interactions, multiple input types are supported, but only one can be used per action. For example, speech recognition for commands, and gestures for navigation; or, text entry using touch or gestures, depending on proximity.
+若要尽可能容纳更多的用户和设备，我们建议你将应用设计为可与尽可能多的输入类型（手势、语音、触摸、触摸板、鼠标和键盘）结合使用。 这样做将使灵活性、可用性和辅助功能最大化。
 
-## Multimodal interactions
+若要开始操作，请考虑应用会在其中处理输入的各种应用场景。 尝试在你的应用中保持一致，并记住这些平台控件提供了对多个输入类型的内置支持。
 
+-   用户是否能通过多个输入设备与应用程序交互？
+-   所有输入方式都一直受支持吗？ 需使用某些控件？ 需在特定时间或环境下使用？
+-   是否有输入法优先？
 
-With multimodal interactions, multiple input methods in sequence are used to complete a single action.
-
-Speech + gesture  
-The user points to a product, and then says “Add to cart.”
-
-Speech + touch  
-The user selects a photo using press and hold, and then says “Send photo.”
+## 单一（或独占）模式交互
 
 
+借助单一模式交互，可支持多种输入类型，但每次操作只能使用一种。 例如，将语音识别用于命令，而将手势用于导航；或者将触摸或手势用于文本输入，具体取决于邻近感应。
+
+## 多模式交互
+
+
+借助多模式交互，多个输入法将依次用于完成某一操作。
+
+语音 + 手势  
+用户指向某一产品，然后说出“添加到购物车”。
+
+语音 + 触摸  
+用户通过长按选择照片，然后说出“发送照片”。
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO5-->
 
 

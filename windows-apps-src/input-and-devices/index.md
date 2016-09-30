@@ -1,33 +1,34 @@
 ---
-description: Customize your UWP app for specific types of inputs and devices. Take advantage of touch and voice commands. Run your apps on Xbox, phone and even TV.
-title: UWP app input and device design - Windows app development
+description: "针对特定类型的输入和设备自定义 UWP 应用。 充分利用触摸和语音命令。 在 Xbox、手机甚至是电视上运行你的应用。"
+title: "UWP 应用输入和设备设计 – Windows 应用开发"
 author: mijacobs
 keywords: device primer, app inputs, customize UWP application
 translationtype: Human Translation
-ms.sourcegitcommit: 5a6666d4e706d4d49d646b5bb2e43b82394eb215
-ms.openlocfilehash: 85bcd15d4b9262188f0821642faf0d3d0cb7dbad
+ms.sourcegitcommit: 350de23331f7fe951304ba877c40e07feb424adc
+ms.openlocfilehash: 2d3f0588b56b26e125652c12eeca3028bfe6573e
 
 ---
-# Inputs and devices
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-UWP apps automatically handle a wide variety of inputs and run on a variety of devices—there’s nothing extra you need to do to enable touch input or make your app run on a phone, for example. 
+# 输入和设备
 
-But there are times when you might want to optimize your app for certain types of input or devices. For example, if you’re creating a painting app, you might want to customize the way you handle pen input. 
+UWP 应用可自动处理各种各样的输入并在各种设备上运行，例如，无需执行任何额外操作即可支持触摸输入或让你的应用在手机上运行。 
 
-The design and coding instructions in this section help you customize your UWP app for specific types of inputs and devices. 
+但是，有时你可能希望为特定类型的输入或设备优化应用。 例如，如果你要创建绘画应用，可能需要自定义处理笔输入的方式。 
 
-## Inputs and interactions
+本部分中的设计和编码说明可帮助你针对特定类型的输入和设备自定义 UWP 应用。 
+
+## 输入和交互
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Input primer](input-primer.md)</b><br/> Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors.   
+<p><b>[输入基础版](input-primer.md)</b><br/> 当与特定的外形规格配对时，自行熟悉每个输入设备类型及其行为、功能和限制。   
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Cortana](cortana-interactions.md) </b><br/> Extend the basic functionality of Cortana with voice commands that launch and execute a single action in an external application.   
+<p><b>[Cortana](cortana-interactions.md) </b><br/> 通过语音命令扩展 Cortana 的基本功能，这些命令用于在外部应用程序中启动并执行一个单独操作。   
 </p>
   </div>
 </div>
@@ -36,21 +37,21 @@ The design and coding instructions in this section help you customize your UWP a
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<b>[Gamepad and remote control](gamepad-and-remote-interactions.md)</b><br/>UWP apps now support gamepad and remote control input. Gamepads and remote controls are the primary input devices for Xbox and TV experiences.  
+<b>[游戏板和遥控器](gamepad-and-remote-interactions.md)</b><br/>UWP 应用现在支持游戏板和遥控器输入。 游戏板和遥控器是 Xbox 和电视体验的主要输入设备。  
   </div>
   <div class="side-by-side-content-right">
-<b>[Keyboard](keyboard-interactions.md)</b><br/>Keyboard input is an important part of the overall user interaction experience for apps. The keyboard is indispensable to people with certain disabilities or users who just consider it a more efficient way to interact with an app.  
+<b>[键盘](keyboard-interactions.md)</b><br/>键盘输入是应用的整体用户交互体验的一个重要部分。 对于残疾人士，或者只是认为键盘是与应用交互的最有效方法的用户而言，键盘非常重要。  
   </div>
 </div>
 </div>
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Mouse](mouse-interactions.md)</b><br/>Mouse input is best suited for user interactions that require precision when pointing and clicking. This inherent precision is naturally supported by the UI of Windows, which is optimized for the imprecise nature of touch.
+<p><b>[鼠标](mouse-interactions.md)</b><br/>鼠标输入最适合那些需要精确指向和单击目标的用户交互。 由于 Windows 的 UI 针对触摸的不精确特性进行了优化，因此它自然支持这种固有的精确度。
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Pen](pen-and-stylus-interactions.md)</b><br/>Optimize your UWP app for pen input to provide both standard pointer device functionality and the best Windows Ink experience for your users.   
+<p><b>[笔](pen-and-stylus-interactions.md)</b><br/>针对笔输入优化 UWP 应用，以便为用户同时提供标准的指针设备功能和最佳的 Windows 墨迹体验。   
 </p>
   </div>
 </div>
@@ -59,11 +60,11 @@ The design and coding instructions in this section help you customize your UWP a
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Speech](speech-interactions.md)</b><br/>Integrate speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into the user experience of your app.
+<p><b>[语音](speech-interactions.md)</b><br/>将语音识别和文本到语音转换（又称 TTS 或语音合成）直接集成到你的应用的用户体验中。
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Touch](touch-interactions.md)</b><br/>UWP includes a number of different mechanisms for handling touch input, enabling you to create an immersive experience that your users can explore with confidence.
+<p><b>[触摸](touch-interactions.md)</b><br/>UWP 具有多种处理触摸输入的不同机制，使你能够创建用户能够放心浏览的沉浸式体验。
 </p>
   </div>
 </div>
@@ -72,11 +73,11 @@ The design and coding instructions in this section help you customize your UWP a
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Touchpad](touchpad-interactions.md)  </b><br/>Design your app so that users can interact with it through a touchpad. A touchpad combines both indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both a touch-optimized UI and the smaller targets of productivity apps.
+<p><b>[触摸板](touchpad-interactions.md)  </b><br/>设计你的应用，以便用户可以通过触摸板与其交互。 触摸板将间接式多点触控输入和定位设备（如鼠标）的精确输入结合起来。 这种结合使触摸板既适用于触摸优化的 UI，也适用于效率应用的较小目标。
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Multiple inputs](multiple-input-design-guidelines.md)  </b><br/>To accommodate as many users and devices as possible, we recommend that you design your apps to work with as many input types as possible (gesture, speech, touch, touchpad, mouse, and keyboard). Doing so will maximize flexibility, usability, and accessibility.
+<p><b>[多个输入](multiple-input-design-guidelines.md)  </b><br/>若要尽可能容纳更多的用户和设备，我们建议你将应用设计为可与尽可能多的输入类型（手势、语音、触摸、触摸板、鼠标和键盘）结合使用。 这样做将最大程度实现灵活性、可用性和辅助功能。
 </p>
   </div>
 </div>
@@ -85,11 +86,11 @@ The design and coding instructions in this section help you customize your UWP a
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Optical zoom and resizing](guidelines-for-optical-zoom.md)</b><br/>This article describes Windows zooming and resizing elements and provides user experience guidelines for using these interaction mechanisms in your apps.
+<p><b>[视觉缩放和调整大小](guidelines-for-optical-zoom.md)</b><br/>本文介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Panning](guidelines-for-panning.md)</b><br/>Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport.  
+<p><b>[平移](guidelines-for-panning.md)</b><br/>平移或滚动允许用户在单个视图中导航，以显示在视口内放不下的视图内容。  
 </p>
   </div>
 </div>
@@ -98,11 +99,11 @@ The design and coding instructions in this section help you customize your UWP a
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Rotation](guidelines-for-rotation.md)</b><br/> This article describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
+<p><b>[旋转](guidelines-for-rotation.md)</b><br/> 本文介绍用于旋转的新 Windows UI，并提供在 UWP 应用中使用这个新交互机制时应该考虑的用户体验指南。
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Selecting text and images](guidelines-for-textselection.md)</b><br/>This article describes selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these mechanisms in your apps.
+<p><b>[选择文本和图像](guidelines-for-textselection.md)</b><br/>本文介绍了选择和操作文本、图像和控件，并提供了将这些机制用于应用中时应考虑的用户体验指南。
 </p>
   </div>
 </div>
@@ -111,11 +112,11 @@ The design and coding instructions in this section help you customize your UWP a
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Targeting](guidelines-for-targeting.md)</b><br/>Touch targeting in Windows uses the full contact area of each finger that is detected by a touch digitizer. The larger, more complex set of input data reported by the digitizer is used to increase precision when determining the user's intended (or most likely) target.
+<p><b>[定向](guidelines-for-targeting.md)</b><br/>在 Windows 中确定触摸目标需使用触控数字化器检测到的每个手指的全部接触区域。 确定用户的预期（或最可能）目标时，数字化器报告的输入数据集越大、越复杂，精度越高。
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Visual feedback](guidelines-for-visualfeedback.md)</b><br/>Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.  
+<p><b>[视觉反馈](guidelines-for-visualfeedback.md)</b><br/>当检测、解释和处理用户的交互时，可使用视觉反馈显示给用户。 视觉反馈可通过鼓励交互来帮助用户。 它将指示交互是否成功，以加强用户的控制感觉。 它还可以传送系统状态并减少错误。  
 </p>
   </div>
 </div>
@@ -124,11 +125,11 @@ The design and coding instructions in this section help you customize your UWP a
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Identify input devices](identify-input-devices.md)</b><br/>Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes. 
+<p><b>[标识输入设备](identify-input-devices.md)</b><br/>标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。 
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Custom text input](custom-text-input.md)</b><br/>The core text APIs in the Windows.UI.Text.Core namespace enable a UWP app to receive text input from any text service supported on Windows devices. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
+<p><b>[自定义文本输入](custom-text-input.md)</b><br/>Windows.UI.Text.Core 命名空间中的核心文本 API 支持 UWP 应用通过 Windows 设备上受支持的任何文本服务接收文本输入。 这使应用接收的文本可以是任何语言以及来自任何输入类型，例如键盘、语音或笔。
 </p>
   </div>
 </div>
@@ -137,7 +138,7 @@ The design and coding instructions in this section help you customize your UWP a
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Handle pointer input](handle-pointer-input.md)</b><br/>Receive, process, and manage input data from pointing devices, such as touch, mouse, pen/stylus, and touchpad, in Universal Windows Platform (UWP) apps.
+<p><b>[处理指针输入](handle-pointer-input.md)</b><br/>在通用 Windows 平台 (UWP) 应用中接收、处理和管理来自指针设备的输入数据，例如触摸、鼠标、笔/触笔和触摸板。
 </p>
   </div>
   <div class="side-by-side-content-right">
@@ -148,18 +149,18 @@ The design and coding instructions in this section help you customize your UWP a
 </div>
 
 
-## Devices
+## 设备
 
-Getting to know the devices that support UWP apps will help you offer the best user experience for each form factor. When designing for a particular device, the main considerations include how the app will appear on that device, where, when, and how the app will be used on that device, and how the user will interact with that device.
+了解支持 UWP 应用的设备将帮助你提供每个外形规格的最佳用户体验。 针对特定设备进行设计时，主要注意事项包括应用将如何显示在该设备上，在该设备上使用应用的位置、时间和方式，以及用户将如何与该设备交互。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Device primer](device-primer.md)</b><br/>Getting to know the devices that support UWP apps will help you offer the best user experience for each form factor. 
+<p><b>[设备基础版](device-primer.md)</b><br/>了解支持 UWP 应用的设备将帮助你提供每个外形规格的最佳用户体验。 
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Designing for Xbox and TV](designing-for-tv.md)</b><br/>Design your Universal Windows Platform (UWP) app so that it looks good and functions well on Xbox One and television screens.
+<p><b>[针对 Xbox 和电视进行设计](designing-for-tv.md)</b><br/>设计你的通用 Windows 平台 (UWP) 应用，以便它在 Xbox One 和电视屏幕上外观良好且运行正常。
 </p>
   </div>
 </div>
@@ -168,6 +169,6 @@ Getting to know the devices that support UWP apps will help you offer the best u
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

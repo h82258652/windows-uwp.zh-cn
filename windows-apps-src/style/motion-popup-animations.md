@@ -1,57 +1,57 @@
 ---
 author: mijacobs
-Description: Use pop-up animations to show and hide pop-up UI for flyouts or custom pop-up UI elements. Pop-up elements are containers that appear over the app's content and are dismissed if the user taps or clicks outside of the pop-up element.
-title: Pop-up UI animations in UWP apps
+Description: "使用弹出动画显示和隐藏浮出控件或自定义弹出 UI 元素的弹出 UI。 弹出元素是显示在应用内容上方的容器，并且将在用户点击或单击弹出元素外部时取消。"
+title: "UWP 应用中的弹出 UI 动画"
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 45219532db704e76e8e85e2926ea9190fba3c7a4
+ms.openlocfilehash: 2b135fb62d871c559892e6b1e968767b7be716bd
 
 ---
 
-# Pop-up UI animations
+# 弹出 UI 动画
 
-Use pop-up animations to show and hide pop-up UI for flyouts or custom pop-up UI elements. Pop-up elements are containers that appear over the app's content and are dismissed if the user taps or clicks outside of the pop-up element.
-
-
-
-
-**Important APIs**
-
--   [**PopInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210383)
--   [**PopupThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh969172)
+使用弹出动画显示和隐藏浮出控件或自定义弹出 UI 元素的弹出 UI。 弹出元素是显示在应用内容上方的容器，并且将在用户点击或单击弹出元素外部时取消。
 
 
 
-## Do's and don'ts
+
+**重要的 API**
+
+-   [**PopInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210383)
+-   [**PopupThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
 
--   Use pop-up animations to show or hide custom pop-up UI elements that aren't a part of the app page itself. The common controls provided by Windows already have these animations built in.
--   Don't use pop-up animations for tooltips or dialogs.
--   Don't use pop-up animations to show or hide UI within the main content of your app; only use pop-up animations to show or hide a pop-up container that displays on top of the main app content.
 
-## Related articles
+## 应做事项和禁止事项
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating pop-up UI](https://msdn.microsoft.com/library/windows/apps/xaml/jj649433)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**PopInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210383)
-* [**PopOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210391)
-* [**PopupThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
- 
+-   使用弹出动画显示或隐藏不属于应用页本身的自定义弹出 UI 元素。 Windows 提供的常用控件已经内置了这些动画。
+-   不要将弹出动画用于工具提示或对话框。
+-   不要使用弹出动画显示或隐藏主要应用内容内的 UI：仅使用弹出动画显示或隐藏显示在主要应用内容顶部的弹出容器。
+
+## 相关文章
+
+**对于开发人员 (XAML)**
+* [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [创建弹出 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649433)
+* [快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**PopInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210383)
+* [**PopOutThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210391)
+* [**PopupThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

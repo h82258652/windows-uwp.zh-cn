@@ -6,8 +6,8 @@ title: "辅助文本要求"
 label: Accessible text requirements
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f36c6a8c191f48c6fb04820c19a98891e46ecf9d
-ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 1307b4f70cf7ffed300f4254a7d92b67b5afd085
 
 ---
 
@@ -48,59 +48,6 @@ UWP 应用可以使用以下默认元素（通常称为 *text* 元素或 *texted
 当控件报告它的角色为 [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182) 时，辅助技术假设用户可通过多种方法更改这些值。 因此，如果你在 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 中放置静态文本，则说明你向辅助功能用户报告的角色和应用结构有误。
 
 在 XAML 的文本模型中，针对静态文本，主要使用 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 和 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) 两种元素。 这两种元素均非 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 子类，因此两者均不可通过键盘聚焦，也不可按 Tab 键顺序显示。 但是，这并不意味着辅助技术现在和将来无法读取它们。 屏幕阅读器的设计通常支持多种读取应用内容的模式，包括摆脱聚焦和 Tab 键顺序限制的专用阅读模式或导航模式，例如“虚拟光标”。 因此，不要为能通过 Tab 键顺序向用户显示静态文本而将静态文本输入到可聚焦容器中。 辅助技术用户预期按 Tab 键顺序显示的所有内容均可交互，如果他们在这里看到静态文本，这不但起不到帮助作用，还会令其感到不解。 在使用屏幕阅读器检查应用的静态文本时，你应该通过“讲述人”功能亲自测试，以感受用户在你的应用上获得的体验。
-
-<span id="Auto-suggest_accessibility"/>
-<span id="auto-suggest_accessibility"/>
-<span id="AUTO-SUGGEST_ACCESSIBILITY"/>
-## 自动建议辅助功能  
-当用户在输入字段中进行键入后显示可能的建议列表时，此种情形称为“自动建议”。 这在邮件字段中的“收件人:”****行、Windows 中的 Cortana 搜索框、Microsoft Edge 中的 URL 输入字段、“天气”应用中的位置输入字段等方面很常见。 如果你使用的是 XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) 或 HTML 内部控件，则已默认为你关联了此体验。 若要使此体验可访问输入字段，必须关联列表。 这将在[实现自动建议](#implementing_auto-suggest)一节中介绍。
-
-已更新了讲述人，使此类型的体验可访问特殊建议模式。 在高级别上，当正确连接编辑字段和列表时，最终用户将：
-
-* 了解列表是否存在，以及列表关闭的时间
-* 了解可用的建议数目
-* 了解选定项（如果有）
-* 能够将“讲述人”焦点移动到列表
-* 能够使用所有其他阅读模式浏览建议
-
-![建议列表](images/autosuggest-list.png)<br/>
-_建议列表示例_
-
-<span id="Implementing_auto-suggest"/>
-<span id="implementing_auto-suggest"/>
-<span id="IMPLEMENTING_AUTO-SUGGEST"/>
-### 实现自动建议  
-若要使此体验可访问输入字段，必须在 UIA 树中关联列表。 在桌面应用中，通过 [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017) 属性实现此关联；在 UWP 应用中，通过 [ControlledPeers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) 属性实现此关联。
-
-在高级别上，存在 2 种类型的自动建议体验。
-
-**默认选择**  
-如果在列表中设置了默认选择，则“讲述人”会在桌面应用中查找 [**UIA_SelectionItem_ElementSelectedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223) 事件或在 UWP 应用中查找要引发的 [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件。 每次选择更改时，如果用户键入其他字母并且建议已更新，或者如果用户浏览该列表，则应引发 **ElementSelected** 事件。
-
-![带有默认选择的列表](images/autosuggest-default-selection.png)<br/>
-_存在默认选择的示例_
-
-**没有默认选择**  
-如果没有默认选择（如在“天气”应用的位置框中），则每次更新列表时，“讲述人”都会在列表上查找 [**UIA_LayoutInvalidatedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223 ) 事件（适用于桌面）或查找要引发的 [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件（适用于 UWP）。
-
-![不带有默认选择的列表](images/autosuggest-no-default-selection.png)<br/>
-_没有默认选择的示例_
-
-### XAML 实现  
-如果你使用的是默认 XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox)，则已为你关联了所有内容。 如果你要使用 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) 和列表自行实现自动建议体验，则需要在 **TextBox** 上将列表设置为 [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)。 必须在每次添加或删除 [**ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) 属性时触发该属性的 **AutomationPropertyChanged** 事件，此外还必须引发你自己的 [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件或 [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件，具体取决于方案类型（已在本文的前面部分介绍过）。
-
-### HTML 实现  
-如果你使用的是 HTML 中的内部控件，则已为你映射了 UIA 实现。 以下是已为你关联的实现示例。
-
-``` HTML
-<label>Sites <input id="input1" type="text" list="datalist1" /></label>
-<datalist id="datalist1">
-        <option value="http://www.google.com/" label="Google"></option>
-        <option value="http://www.reddit.com/" label="Reddit"></option>
-</datalist>
-```
-
- 如果你要创建自己的控件，则必须设置你自己的 ARIA 控件（将在 W3C 标准中进行介绍）。
 
 <span id="Text_in_graphics"/>
 <span id="text_in_graphics"/>
@@ -168,10 +115,10 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [基本的辅助功能信息](basic-accessibility-information.md)
 * [XAML 文本显示示例](http://go.microsoft.com/fwlink/p/?linkid=238579)
 * [XAML 文本编辑示例](http://go.microsoft.com/fwlink/p/?linkid=251417)
-* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570) 
+* [XAML 辅助功能示例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

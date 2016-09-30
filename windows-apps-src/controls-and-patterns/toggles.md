@@ -1,81 +1,71 @@
 ---
 author: Jwmsft
-Description: The toggle switch represents a physical switch that allows users to turn things on or off.
-title: Guidelines for toggle switch controls
+Description: "切换开关表示允许用户打开或关闭选项的物理开关。"
+title: "切换开关控件指南"
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e90760c6894ee5d32ba1063993a703023d23c152
 
 ---
-# Toggle switches
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# 切换开关
 
+切换开关表示用户用于打开或关闭选项的物理开关。 使用 **ToggleSwitch** 控件向用户显示两个相互排斥的选项（如开/关），选择其中一个选项会导致立即执行操作。
 
-The toggle switch represents a physical switch that allows users to turn things on or off. Use **ToggleSwitch** controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in an immediate action.
+<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx"><strong>ToggleSwitch class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx"><strong>IsOn property</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx"><strong>Toggled event</strong></a></li>
-</ul>
+-   [**ToggleSwitch 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)
+-   [**IsOn 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)
+-   [**Toggled 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)
 
-</div>
-</div>
+## 这是正确的控件吗？
 
+使用用户翻转切换开关后立即生效的二进制操作的切换开关。 例如，使用切换开关启用或禁用服务或硬件组件，例如 WiFi：
 
+![Wi-Fi 切换开关，打开和关闭](images/toggleswitches01.png)
 
+如果物理开关可用于该操作，则切换开关可能是最合适使用的控件。
 
-## Is this the right control?
+在用户打开或关闭切换开关后，我们建议立即执行相应操作。
 
-Use a toggle switch for binary operations that take effect right after the user flips the toggle switch. For example, use a toggle switch to turn services or hardware components on or off, such as WiFi:
+### 在切换开关和复选框之间进行选择
 
-![WiFi toggle switch, on and off](images/toggleswitches01.png)
+对于某些操作，既可使用切换开关也可使用复选框。 若要决定哪个控件效果更好，请按照以下提示操作：
 
-If a physical switch would work for the action, a toggle switch is probably the best control to use.
+-   对于用户更改后更改立即生效的二元设置，使用切换开关。
 
-After the user toggles the switch on or off, we recommend that the corresponding action is immediately performed.
+    ![切换开关与复选框](images/toggleswitches02.png)
 
-### Choosing between toggle switch and check box
+    在上述示例中， 很显然需在使用切换开关时将无线设置为“启用”。 但使用复选框时，用户需要考虑是立即启用无线还是需要用户选中该框来启用无线。
 
-For some actions, either a toggle switch or a check box might work. To decide which control would work better, follow these tips:
+-   当用户必须执行额外的步骤才能使更改生效时，使用复选框。 例如，如果用户必须单击“提交”或“下一步”按钮才能应用更改，则使用复选框。
 
--   Use a toggle switch for binary settings when changes become effective immediately after the user changes them.
+    ![复选框和“提交”按钮](images/submitcheckbox.png)
 
-    ![Toggle switch versus check box](images/toggleswitches02.png)
+-   当用户可以选择多个项目时，使用复选框或[列表框](lists.md)：
 
-    In the above example, it's clear with the toggle switch that the wireless is set to "On." But with the checkbox, the user needs to think about whether the wireless is on now or whether they need to check the box to turn wireless on.
+    ![选中了多个项目的复选框](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
 
--   Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.
+## 示例
 
-    ![A checkbox and a Submit button](images/submitcheckbox.png)
+“新闻”应用常规设置中的切换开关。
 
--   Use check boxes or a [list box](lists.md) when the user can select multiple items:
+![“新闻”应用常规设置中的切换开关](images/control-examples/toggle-switch-news.png)
 
-    ![A checkbox that has multiple items selected](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
+Windows“开始”菜单设置中的切换开关。
 
-## Examples
+![Windows“开始”菜单设置中的切换开关](images/control-examples/toggle-switch-start-settings.png)
 
-Toggle switches in the general settings of the News app.
+## 创建切换开关
 
-![Toggle switches in the general settings of the News app](images/control-examples/toggle-switch-news.png)
-
-Toggle switches in the start menu settings in Windows.
-
-![Toggle switches in the start menu settings in Windows](images/control-examples/toggle-switch-start-settings.png)
-
-## Create a toggle switch
-
-Here's how to create a simple toggle switch. This XAML creates the WiFi toggle switch shown previously.
+下面介绍了如何创建简单的切换开关。 此 XAML 创建前面所示的 WLAN 切换开关。
 
 ```xaml
 <ToggleSwitch x:Name="wiFiToggle" Header="Wifi"/>
 ```
-Here's how to create the same toggle switch in code.
+下面介绍了如何使用代码创建相同的切换开关。
 
 ```csharp
 ToggleSwitch wiFiToggle = new ToggleSwitch();
@@ -87,7 +77,7 @@ stackPanel1.Children.Add(wiFiToggle);
 
 ### IsOn
 
-The switch can be either on or off. Use the [**IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) property to determine the state of the switch. When the switch is used to control the state of another binary property, you can use a binding as shown here.
+该开关可以为开或关。 使用 [**IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) 属性确定该开关的状态。 当开关用于控制另一个二元属性的状态时，可以使用如下所示的绑定。
 
 ```
 <StackPanel Orientation="Horizontal">
@@ -98,16 +88,16 @@ The switch can be either on or off. Use the [**IsOn**](https://msdn.microsoft.co
 
 ### Toggled
 
-In other cases, you can handle the [**Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) event to respond to changes in the state.
+在其他情况下，你可以处理 [**Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) 事件来响应状态的更改。
 
-This example shows how to add a Toggled event handler in XAML and in code. The Toggled event is handled to turn a progress ring on or off, and change its visibility.
+此示例显示了如何使用 XAML 和代码添加一个 Toggled 事件处理程序。 处理 Toggled 事件以打开或关闭进度环，并更改其可见性。
 
 ```xaml
 <ToggleSwitch x:Name="toggleSwitch1" IsOn="True" 
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-Here's how to create the same toggle switch in code.
+下面介绍了如何使用代码创建相同的切换开关。
 
 ```csharp
 // Create a new toggle switch and add a Toggled event handler.
@@ -118,7 +108,7 @@ toggleSwitch1.Toggled += ToggleSwitch_Toggled;
 stackPanel1.Children.Add(toggleSwitch1);
 ```
 
-Here's the handler for the Toggled event.
+下面是 Toggled 事件的处理程序。
 
 ```csharp
 private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
@@ -140,11 +130,11 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 }
 ```
 
-### On/Off labels
+### 开/关标签
 
-By default, the toggle switch includes literal On and Off labels, which are localized automatically. You can replace these labels by setting the [**OnContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx), and [**OffContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx) properties.
+默认情况下，切换开关包括文本“开”和“关”标签，这些标签将自动本地化。 可以通过设置 [**OnContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx) 和 [**OffContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx) 属性来替换这些标签。
 
-This example replaces the On/Off labels with Show/Hide labels.  
+此示例将“开/关”标签替换为“显示/隐藏”标签。  
 
 ```xaml
 <ToggleSwitch x:Name="imageToggle" Header="Show images"
@@ -152,26 +142,26 @@ This example replaces the On/Off labels with Show/Hide labels.
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-You can also use more complex content by setting the [**OnContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) and [**OffContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx) properties.
+还可以通过设置 [**OnContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) 和 [**OffContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx) 属性来使用更复杂的内容。
 
-## Recommendations
+## 建议
 
--   Replace the On and Off labels when there are more specific labels for the setting. If there are short (3-4 characters) labels that represent binary opposites that are more appropriate for a particular setting, use those. For example, you could use "Show/Hide" if the setting is "Show images." Using more specific labels can help when localizing the UI.
--   Avoid replacing the On and Off labels unless you must; stick with the default labels unless the situation calls for custom ones.
--   Labels should be no more than 4 characters long.
+-   如果有更明确的标签可用于设置，则替换“开”和“关”标签。 如果有短（3-4 个字符）标签表示更适合特定设置的二元对立，则使用这些标签。 例如，如果设置为“显示图像”，则可以使用“显示/隐藏”。 在本地化 UI 时使用更具体的标签可能有帮助。
+-   如果没有必要，则避免替换“开”和“关”标签；除非情况需要使用自定义的标签，否则继续使用默认标签。
+-   标签长度不得大于 4 个字符。
 
-## Related articles
+## 相关文章
 
 [**ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/hh701411)
-- [Radio buttons](radio-button.md)
-- [Toggle switches](toggles.md)
-- [Check boxes](checkbox.md)
+- [单选按钮](radio-button.md)
+- [切换开关](toggles.md)
+- [复选框](checkbox.md)
 
-**For developers (XAML)**
-- [**ToggleSwitch class**](https://msdn.microsoft.com/library/windows/apps/br209712)
+**面向开发人员 (XAML)**
+- [**ToggleSwitch 类**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

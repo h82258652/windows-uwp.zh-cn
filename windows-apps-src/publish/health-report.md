@@ -1,69 +1,69 @@
 ---
 author: jnHs
-Description: The Health report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
-title: Health report
+Description: "你可以通过 Windows 开发人员中心仪表板中的“运行状况”报告获取有关应用性能和质量的数据，包括崩溃和无响应事件。"
+title: "运行状况报告"
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 72c5974da441e76f2fad8e844d3391999e42cd72
+ms.openlocfilehash: 78bedc3e0551feef8efe61b3b664145e29281714
 
 ---
 
-# Health report
+# 运行状况报告
 
 
-The **Health** report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Where applicable, you can view stack traces for further debugging. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+你可以通过 Windows 开发人员中心仪表板中的**“运行状况”**报告获取有关应用性能和质量的数据，包括崩溃和无响应事件。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。 如果适用，你可以查看堆栈跟踪以便进一步调试。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式检索此数据。
 
-> **Note**  If you had previously published apps and viewed performance data in the earlier dashboards, you may notice an increased number of crashes and events reported here. This is because we are able to include more data in this report to give you a more complete picture.
+> **注意** 如果你之前已在早期仪表板中发布应用和查看性能数据，则你可能在此处注意到报告崩溃和事件的次数增加。 这是因为我们能够将更多数据包含在此报告中，以使你获得更全面的了解。
 
-## Apply filters
-
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by package version.
-
--   **Date**: The default filter is **Last 72 hours**, but you can expand this up to **Last 6 months**.
--   **Package version**: The default setting is **All versions**. If your app includes more than one package version, you can choose a specific one.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section. By default this will include data for all of your package versions, unless you've used the **Apply filters** to choose only one.
-
-## Total crashes and events
+## 应用筛选器
 
 
-The **Total crashes and events** chart shows the number of daily crashes and events that customers experienced when using your app during the selected period of time. Each type of event that your app experienced is tracked separately: crashes, hangs, JavaScript exceptions, or memory failures.
+在页面顶部附近，你可以展开“应用筛选器”****，以按日期范围和/或程序包版本筛选此页上的所有数据。
 
-You can optionally filter the results by market and/or by OS version.
+-   **日期**：默认筛选器为“最近 72 小时”****，但你可以将此条件扩大到“最近 6 个月”****。
+-   **程序包版本**：默认设置为“所有版本”****。 如果应用包含多个程序包版本，则可以选择一个特定版本。
 
-## Crash and event breakdown
+以下列出的所有图中的信息将反映在**应用筛选器**部分中所选的时段。 除非你已使用“应用筛选器”****选择一个程序包版本，否则在默认情况下，这会包含所有程序包版本的数据。
 
-
-The **Crash and event breakdown** chart lets you see charts that track specific details related to the customers' configurations when a crash or unresponsive event occurred. Click the section headings to see details about:
-
--   OS version
--   Device type
--   Memory (MB)
--   Mass storage (GB)
--   CPU speed (GHz)
-
-You can optionally filter the results by **Crash type**: crashes, hangs, JavaScript exceptions, or memory failures. (The default setting is to show all crash types.)
-
-## Market
+## 崩溃和事件总数
 
 
-The **Market** chart shows the total number of crashes and events over the selected period of time by market. By default, we show you the market which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Crashes** column of this chart.
+“崩溃和事件总数”****图显示在所选时段内，客户在使用你的应用时每日遇到的崩溃和事件数量。 将单独跟踪你的应用所遇到的每种事件类型：崩溃、挂起、JavaScript 异常或内存故障。
 
-## Failure log
+你可以选择按市场和/或操作系统版本筛选结果。
+
+## 崩溃和事件细分
 
 
-If you have included PDB symbol files, the **Failure log** chart will show details related to occurrences of specific symbols, including the total number of crashes and the average daily number of crashes per symbol.
+通过“崩溃和事件细分”****图，可查看在发生崩溃或无响应事件时跟踪与客户配置相关的特定详细信息的图表。 单击节标题以查看有关以下内容的详细信息：
 
-This info is based on a percentage of your total events. Near the top of the chart, we'll indicate what percentage of events was sampled to provide this data.
+-   操作系统版本
+-   设备类型
+-   内存 (MB)
+-   大容量存储 (GB)
+-   CPU 速度 (GHz)
 
- 
+你可以选择按“崩溃类型”****筛选结果：崩溃、挂起、JavaScript 异常或内存故障。 （默认设置为显示所有崩溃类型。）
+
+## 市场
+
+
+“市场”****图按市场显示在选定时段内的崩溃和事件总数。 默认情况下，我们按购置量从高到低的顺序显示市场。 你可以通过切换此图的“崩溃”****列中的箭头颠倒此顺序。
+
+## 故障日志
+
+
+如果你已包含 PDB 符号文件，则“故障日志”****图将显示有关发生特定符号的详细信息，包括每个符号对应的崩溃总数和崩溃日均数。
+
+此信息基于事件总数的百分比。 在该图顶部附近，我们将指示为提供此数据而对事件进行采样的百分比。
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

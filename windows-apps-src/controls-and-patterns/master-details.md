@@ -1,94 +1,92 @@
 ---
 author: Jwmsft
-Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
-title: Master/details
+Description: "大纲/细节模式可显示主列表和当前选定项的详细信息。 此模式通常用于电子邮件和联系人列表/通讯簿。"
+title: "大纲/细节"
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5845aaf69bbcf561164c519f76f93578bf0da6db
 
 ---
-# Master/details pattern
+# 大纲/细节模式
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+大纲/细节模式具有一个大纲窗格（通常带有[列表视图](lists.md)）和一个用于内容的细节窗格。 当选择大纲列表中的项时，将更新细节窗格。 此模式通常用于电子邮件和通讯簿。
 
-The master/details pattern has a master pane (usually with a [list view](lists.md)) and a details pane for content. When an item in the master list is selected, the details pane is updated. This pattern is frequently used for email and address books.
+![大纲细节模式的示例](images/HIGSecOne_MasterDetail.png)
 
-![Example of master-details pattern](images/HIGSecOne_MasterDetail.png)
+## 这是正确的模式吗？
 
-## Is this the right pattern?
+如果你希望进行以下操作，则适用大纲/细节模式：
 
-The master/details pattern works well if you want to:
+-   构建一个电子邮件应用、通讯簿或任何基于列表细节布局的应用。
+-   定位并设置大型内容集合的优先级。
+-   允许从列表中快速添加和删除项，同时在上下文之间来回工作。
 
--   Build an email app, address book, or any app that is based on a list-details layout.
--   Locate and prioritize a large collection of content.
--   Allow the quick addition and removal of items from a list while working back-and-forth between contexts.
+## 选择正确的样式
 
-## Choose the right style
+在实现大纲/细节模式时，我们建议你根据可用屏幕空间量使用堆叠样式或并排样式。
 
-When implementing the master/details pattern, we recommend that you use either the stacked style or the side-by-side style, based on the amount of available screen space.
-
-| Available window width | Recommended style |
+| 可用窗口宽度 | 建议样式 |
 |------------------------|-------------------|
-| 320 epx-719 epx        | Stacked           |
-| 720 epx or wider       | Side-by-side      |
+| 320 epx-719 epx        | 堆叠           |
+| 720 epx 或更宽       | 并排对齐      |
 
  
-## Stacked style
+## 堆叠样式
 
-In the stacked style, only one pane is visible at a time: the master or the details.
+在堆叠样式中，一次只有一个窗格可见：大纲窗格或细节窗格。
 
-![A master detail in stacked mode](images/patterns-md-stacked.png)
+![堆叠模式下的大纲细节](images/patterns-md-stacked.png)
 
-The user starts at the master pane and "drills down" to the details pane by selecting an item in the master list. To the user, it appears as though the master and details views exist on two separate pages.
+用户从大纲窗格开始，然后通过在大纲列表中选择一个项来“深入”到细节窗格。 对用户来说，它表现为大纲和细节视图存在于两个单独的页面上。
 
-### Create a stacked master/details pattern
+### 创建堆叠大纲/细节模式
 
-One way to create the stacked master/details pattern is to use separate pages for the master pane and the details pane. Place the list view that provides the master list on one page, and the content element for the details pane on a separate page.
+创建堆叠大纲/细节模式的一种方法是为大纲窗格和细节窗格使用单独的页面。 将提供大纲列表的列表视图放置在一个页面上，将细节窗格的内容元素放置在单独的页面上。
 
-![Parts for the stacked-style master detail](images/patterns-md-stacked-parts.png)
+![堆叠样式大纲细节的各个部分](images/patterns-md-stacked-parts.png)
 
-For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
+对于大纲窗格，[列表视图](lists.md)控件适用于显示可包含图像和文本的列表。
 
-For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
+对于细节窗格，使用意义最明确的内容元素。 如果你有大量的单独字段，请考虑使用网格布局将元素排列为一个表单。
 
-## Side-by-side style
+## 并排样式
 
-In the side-by-side style, the master pane and details pane are visible at the same time.
+在并排样式中，大纲窗格和细节窗格同时可见。
 
-![The master/detail pattern](images/patterns-masterdetail-400x227.png)
+![大纲/细节模式](images/patterns-masterdetail-400x227.png)
 
-The list in the master pane has a selection visual to indicate the currently selected item. Selecting a new item in the master list updates the details pane.
+大纲模式中的列表具有一个选择可视，用于指示当前选定的项。 在大纲列表中选择一个新项将更新细节窗格。
 
-### Create a side-by-side master/details pattern
+### 创建并排大纲/细节模式
 
-For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
+对于大纲窗格，[列表视图](lists.md)控件适用于显示可包含图像和文本的列表。
 
-For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
+对于细节窗格，使用意义最明确的内容元素。 如果你有大量的单独字段，请考虑使用网格布局将元素排列为一个表单。
 
-## Examples
+## 示例
 
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on phone, the master pane/list is on the left, with the details pane on the right.
+此跟踪股票市场的应用的设计使用大纲/细节模式。 在此应用示例中，它将显示在手机上，大纲窗格/列表位于左侧，细节窗格位于右侧。
 
-![Example of an app using the master-details pattern, on phone](images/uap-finance-phone-masterdetails-600.png)
+![手机上使用大纲细节模式的应用示例](images/uap-finance-phone-masterdetails-600.png)
 
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on desktop, the master pane/list and details pane are both visible and full-screen. The master pane features a search box at the top and a command bar at the bottom.
+此跟踪股票市场的应用的设计使用大纲/细节模式。 在此应用示例中，它将显示在桌面上，大纲窗格/列表和细节窗格均可见且全屏显示。 大纲窗格在顶部带有一个搜索框，在底部带有一个命令栏。
 
-![Example of an app using the master-details pattern, on desktop](images/uap-finance-desktop700.png)
-
-
-
-## Related articles
-
-- [Lists](lists.md)
-- [Search](search.md)
-- [App and command bars](app-bars.md)
-- [**ListView class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+![使用大纲/细节模式的应用（桌面版）的示例](images/uap-finance-desktop700.png)
 
 
 
-<!--HONumber=Aug16_HO3-->
+## 相关文章
+
+- [列表](lists.md)
+- [搜索](search.md)
+- [应用和命令栏](app-bars.md)
+- [**ListView 类 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

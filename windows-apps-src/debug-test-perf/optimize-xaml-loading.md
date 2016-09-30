@@ -5,7 +5,7 @@ title: "优化 XAML 标记"
 description: "在内存中分析构造对象的 XAML 标记对于复杂的 UI 而言非常耗时。 你可以采取以下措施为你的应用提高 XAML 标记分析和加载时间以及内存效率。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 655603e7fa8687480b5376806bc199afecd425fd
+ms.openlocfilehash: c2131b084d8bb989f1f7767f54db697e1cdd8dcf
 
 ---
 # 优化 XAML 标记
@@ -291,6 +291,6 @@ XBF2 是在运行时避免所有文本分析成本的 XAML 标记的二进制表
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

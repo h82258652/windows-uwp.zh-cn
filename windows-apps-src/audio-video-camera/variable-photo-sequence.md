@@ -1,43 +1,43 @@
 ---
 author: drewbatgit
 ms.assetid: 7DBEE5E2-C3EC-4305-823D-9095C761A1CD
-description: This article shows you how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings.
-title: Variable photo sequence
+description: "本文向你演示如何捕获可变照片序列，允许你快速连续捕获图像的多个帧，并将每个帧配置为使用不同的焦点、闪光灯、ISO、曝光和曝光补偿设置。"
+title: "可变照片序列"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c6be6c0ea255c38bba65550ae44c7f88c140ca0f
 
 ---
 
-# Variable photo sequence
+# 可变照片序列
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article shows you how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings. This feature enables scenarios like creating High Dynamic Range (HDR) images.
+本文向你演示如何捕获可变照片序列，允许你快速连续捕获图像的多个帧，并将每个帧配置为使用不同的焦点、闪光灯、ISO、曝光和曝光补偿设置。 此功能启用了创建高动态范围 (HDR) 图像等方案。
 
-If you want to capture HDR images but don't want to implement your own processing algorithm, you can use the [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) API to use the HDR capabilities built-in to Windows. For more information, see [High Dynamic Range (HDR) photo capture](high-dynamic-range-hdr-photo-capture.md).
+如果你想要捕获 HDR 图像，但不想要实现你自己的处理算法，你可以使用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) API 来使用内置于 Windows 的 HDR 功能。 有关详细信息，请参阅[高动态范围 (HDR) 照片捕获](high-dynamic-range-hdr-photo-capture.md)。
 
-> [!NOTE] 
-> This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
+**注意**  
+本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码生成，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
-## Set up your app to use variable photo sequence capture
+## 设置你的应用以使用可变照片序列捕获
 
-In addition to the namespaces required for basic media capture, implementing a variable photo sequence capture requires the following namespaces.
+除了基本媒体捕获所需的命名空间，实现可变照片序列捕获还需要以下命名空间。
 
 [!code-cs[VPSUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSUsing)]
 
-Declare a member variable to store the [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) object, which is used to initiate the photo sequence capture. Declare an array of [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) objects to store each captured image in the sequence. Also, declare an array to store the [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020) object for each frame. This can be used by your image processing algorithm to determine what settings were used to capture each frame. Finally, declare an index that will be used to track which image in the sequence is currently being captured.
+声明成员变量以存储 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 对象，该对象用于启动照片序列捕获。 声明 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象的数组以在序列中存储每个捕获的图像。 此外，声明数组以针对每个帧存储 [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020) 对象。 可通过图像处理算法使用它，以确定哪些设置已用于捕获每个帧。 最后，声明一个将用于跟踪序列中当前正在捕获的图像的索引。
 
 [!code-cs[VPSMemberVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSMemberVariables)]
 
-## Prepare the variable photo sequence capture
+## 准备可变照片序列捕获
 
-After you have initialized your [MediaCapture](capture-photos-and-video-with-mediacapture.md), make sure that variable photo sequences are supported on the current device by getting an instance of the [**VariablePhotoSequenceController**](https://msdn.microsoft.com/library/windows/apps/dn640573) from the media capture's [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) and checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn640580) property.
+初始化你的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 之后，通过从媒体捕获的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 获取 [**VariablePhotoSequenceController**](https://msdn.microsoft.com/library/windows/apps/dn640573) 的实例并检查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn640580) 属性，确保可变照片序列在当前设备上受支持。
 
 [!code-cs[IsVPSSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
 
-Get a [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) object from the variable photo sequence controller. This object has a property for every setting that can be configured per frame of a photo sequence. These include:
+从可变照片序列控制器获取 [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) 对象。 此对象具有可针对照片序列的每帧配置的每个设置的属性。 其中包括：
 
 -   [**Exposure**](https://msdn.microsoft.com/library/windows/apps/dn652552)
 -   [**ExposureCompensation**](https://msdn.microsoft.com/library/windows/apps/dn652560)
@@ -46,52 +46,51 @@ Get a [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/
 -   [**IsoSpeed**](https://msdn.microsoft.com/library/windows/apps/dn652574)
 -   [**PhotoConfirmation**](https://msdn.microsoft.com/library/windows/apps/dn652578)
 
-This example will set a different exposure compensation value for each frame. To verify that exposure compensation is supported for photo sequences on the current device, check the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn278905) property of the [**FrameExposureCompensationCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652628) object accessed through the **ExposureCompensation** property.
+此示例将为每个帧设置一个不同的曝光补偿值。 若要验证照片序列的曝光补偿在当前设备上是否受支持，请检查通过 **ExposureCompensation** 属性访问的 [**FrameExposureCompensationCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652628) 对象的 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn278905) 属性。
 
 [!code-cs[IsExposureCompensationSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsExposureCompensationSupported)]
 
-Create a new [**FrameController**](https://msdn.microsoft.com/library/windows/apps/dn652582) object for each frame you want to capture. This example captures three frames. Set the values for the controls you want to vary for each frame. Then, clear the [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) collection of the **VariablePhotoSequenceController** and add each frame controller to the collection.
+为要捕获的每个帧创建一个新的 [**FrameController**](https://msdn.microsoft.com/library/windows/apps/dn652582) 对象。 此示例将捕获三个帧。 为你希望针对每个帧而变化的控件设置值。 接着，清除 **VariablePhotoSequenceController** 的 [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) 集合，然后将每个帧控制器添加到该集合。
 
 [!code-cs[InitFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitFrameControllers)]
 
-Create an [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) object to set the encoding you want to use for the captured images. Call the static method [**MediaCapture.PrepareVariablePhotoSequenceCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/dn608097), passing in the encoding properties. This method returns a [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) object. Finally, register event handlers for the [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) and [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) events.
+创建 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 对象以设置要用于捕获的图像的编码。 调用静态方法 [**MediaCapture.PrepareVariablePhotoSequenceCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/dn608097)，从而传入编码属性。 此方法返回 [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) 对象。 最后，为 [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) 和 [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) 事件注册事件处理程序。
 
 [!code-cs[PrepareVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPrepareVPS)]
 
-## Start the variable photo sequence capture
+## 启动可变照片序列捕获
 
-To start the capture of the variable photo sequence, call [**VariablePhotoSequenceCapture.StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn652577). Be sure to initialize the arrays for storing the captured images and frame control values and set the current index to 0. Set your app's recording state variable and update your UI to disable starting another capture while this capture is in progress.
+若要启动可变照片序列捕获，请调用 [**VariablePhotoSequenceCapture.StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn652577)。 请务必初始化用于存储捕获的图像和帧控件值的数组，并将当前索引设置为 0。 设置你的应用的录制状态变量并更新你的 UI，以禁止在执行此捕获时启动另一个捕获。
 
 [!code-cs[StartVPSCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartVPSCapture)]
 
-## Receive the captured frames
+## 接收捕获的帧
 
-The [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) event is raised for each captured frame. Save the frame control values and captured image for the frame and then increment the current frame index. This example shows how to get a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) representation of each frame. For more information on using **SoftwareBitmap**, see [Imaging](imaging.md).
+针对每个捕获的帧引发 [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) 事件。 保存帧控件值和该帧的已捕获图像，然后增加当前帧索引。 此示例显示了如何获取每个帧的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表示形式。 有关使用 **SoftwareBitmap** 的详细信息，请参阅[图像处理](imaging.md)。
 
 [!code-cs[OnPhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnPhotoCaptured)]
 
-## Handle the completion of the variable photo sequence capture
+## 处理可变照片序列捕获的完成
 
-The [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) event is raised when all of the frames in the sequence have been captured. Update the recording state of your app and update your UI to allow the user to initiate new captures. At this point, you can pass the captured images and frame control values to your image processing code.
+当已捕获序列中的所有帧时，将引发 [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) 事件。 更新你的应用的录制状态并更新你的 UI，以允许用户启动新的捕获。 此时，你可以将捕获的图像和帧控件值传递给图像处理代码。
 
 [!code-cs[OnStopped](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnStopped)]
 
-## Update frame controllers
+## 更新帧控制器
 
-If you want to perform another variable photo sequence capture with different per frame settings, you don't need to completely reinitialize the **VariablePhotoSequenceCapture**. You can either clear the [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) collection and add new frame controllers or you can modify the existing frame controller values. The following example checks the [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) object to verify that the current device supports flash and flash power for variable photo sequence frames. If so, each frame is updated to enable the flash at 100% power. The exposure compensation values that were previously set for each frame are still active.
+如果你想要使用不同的每帧设置执行另一个可变照片序列捕获，无需完全重新初始化 **VariablePhotoSequenceCapture**。 你可以清除 [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) 集合并添加新的帧控制器，也可以修改现有的帧控制器值。 以下示例将检查 [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) 对象，以验证当前设备是否支持可变照片序列帧的闪光灯和闪光电源。 如果支持，将更新每个帧，以便在电源已满时启用闪光灯。 之前为每个帧设置的曝光补偿值仍然处于活动状态。
 
 [!code-cs[UpdateFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateFrameControllers)]
 
-## Clean up the variable photo sequence capture
+## 清理可变照片序列捕获
 
-When you are done capturing variable photo sequences or your app is suspending, clean up the variable photo sequence object by calling [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/dn652569). Unregister the object's event handlers and set it to null.
+当你完成捕获可变照片序列或你的应用暂停时，通过调用 [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/dn652569) 清理可变照片序列对象。 取消注册对象的事件处理程序，并将其设置为 null。
 
 [!code-cs[CleanUpVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVPS)]
 
-## Related topics
+## 相关主题
 
-* [Camera](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
  
 
  
@@ -102,6 +101,6 @@ When you are done capturing variable photo sequences or your app is suspending, 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

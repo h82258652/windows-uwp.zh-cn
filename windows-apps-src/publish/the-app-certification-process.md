@@ -1,61 +1,61 @@
 ---
 author: jnHs
-Description: When you are finished creating your app's submission and click Submit to the Store, it enters the certification step.
-title: The app certification process
+Description: "当你完成应用提交的创建并单击“提交到应用商店”时，就会进入认证步骤。"
+title: "应用认证过程"
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 translationtype: Human Translation
-ms.sourcegitcommit: 865d71374cf7d678804ce16548edd819faafed33
-ms.openlocfilehash: 07b3631ccc875222b8d2ea30a2b69e2995a09e23
+ms.sourcegitcommit: 4ea19e85d1e151dd1e03d5acf085c186613be35f
+ms.openlocfilehash: 579d1ef306123f765e19fc9ab3b02c064b690aee
 
 ---
 
-# The app certification process
+# 应用认证过程
 
 
-When you are finished creating your app's submission and click **Submit to the Store**, it enters the certification step. This process usually is completed within a few hours, though in some cases it may take up to three business days. After your submission passes certification, it can take up to 16 hours for customers to see the app’s listing (or your updates to a previously published app) in the Store. You'll see a notification when your submission is published and available to customers, and the app's status in the dashboard will be **In the Store**.
+当你完成应用提交的创建并单击“提交到应用商店”****时，它将进入认证步骤。 此过程通常在几小时内完成，尽管在某些情况下可能需要最多一个工作日。 在你的提交通过认证后，客户最多可能需要 16 个小时即可在应用商店中看到该应用一览（或你对以前发布的应用的更新）。 在你的提交发布并向客户提供后，你会看到一条通知，并且仪表板中该应用的状态将为“已在应用商店”****。
 
-## Preprocessing
+## 预处理
 
-After you successfully upload the app's packages and submit the app for certification, the packages are queued for testing. We'll display a message if we detect any errors during preprocessing. For more info on possible errors, see [Resolve submission errors](resolve-submission-errors.md).
+成功上载应用包并提交应用进行认证后，应用包将排队接受测试。 如果在预处理过程中检测到任何错误，我们会显示一条消息。 有关可能错误的详细信息，请参阅[解决提交错误](resolve-submission-errors.md)。
 
-## Certification
+## 认证
 
-During this phase, several tests are conducted:
+在此阶段中，将执行多个测试：
 
--   **Security tests:** This first test checks your app's packages for viruses and malware. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system.
--   **Technical compliance tests:** Technical compliance is tested by the Windows App Certification Kit. (You should always make sure to [test your app with the Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) before you submit it to the Store.)
--   **Content compliance:** The amount of time this takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the [Notes for certification](notes-for-certification.md) page.
+-   **安全性测试：** 第一项测试检查应用包中是否存在病毒和恶意软件。 如果应用未能通过这项测试，您将需要运行最新防病毒软件检查开发系统，然后在安全的系统上重新生成您的应用包。
+-   **技术合规性测试：**由 Windows 应用认证工具包测试技术合规性。 （你应该始终确保先[使用 Windows 应用认证工具包测试应用](../debug-test-perf/windows-app-certification-kit.md)，然后再将其提交至应用商店。）
+-   **内容合规性：**测试所需的时间会有所不同，具体取决于应用的复杂程度、包含的视觉内容量以及近期提交的应用数量。 请务必在[认证说明](notes-for-certification.md)页中提供测试者需注意的全部信息。
 
-After the certification process is complete, you'll get a certification report telling you whether or not your app passed certification. If it didn't pass, the report will indicate which test failed or which [policy](https://msdn.microsoft.com/library/windows/apps/dn764944) was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
+认证流程完成后，你将会收到一份认证报告，告知你的应用是否已通过认证。 如果应用未通过认证，该报告将指出未能通过哪项测试，或者未能满足哪项[策略](https://msdn.microsoft.com/library/windows/apps/dn764944)。 修复问题后，你可以为应用创建新提交以再次开始认证过程。
 
-## Release
+## 发行
 
-When your app passes certification, it's ready to move to the to the **Publishing** process. If you've indicated that your submission should be published as soon as possible, this will happen right away. If you've specified that it should not be released until a certain date, we'll wait until that date, unless you click the link to **Change release date**. If you've indicated that you want to publish the submission manually, then we won't publish it until you indicate that we should by clicking the button to **Publish now**, or if you click the link to **Change release date** and pick a specific date.
+当你的应用通过认证时，便可以前进到**发布**过程。 如果你已指示应尽快发布你的提交，此提交将立即执行。 如果你已指定应用不应在特定日期之前发布，我们将等到该日期，除非你单击**“更改发布日期”**链接。 如果你已指示要手动发布提交，那么只有在你通过单击**“立即发布”**按钮指示我们这样做之后，我们才会发布；或者如果你单击**“更改发布日期”**链接并选取特定日期，我们将在该日期发布。
 
-## Publishing
+## 正在发布
 
-Your app's packages are digitally signed to protect them against tampering after they have been released. Once this phase has begun, you can no longer cancel your submission or change its release date.
+你的应用包已经过数字签名，目的是防止它们在发布后遭到篡改。 一旦开始执行此阶段，你将再也无法取消提交或更改其发布日期。
 
-While your app is in the publishing phase, the **Show details** link in the Status column for your app’s submission will let you know when your new packages and Store listing details become available to customers on each of your supported OS versions. Your app will remain in the publishing phase until the new packages and listing details are available to all of your app’s potential customers, which can take up to 16 hours. 
+当你的应用处于发布阶段时，应用提交的“状态”列中的**“显示详细信息”**链接将通知你新的程序包和应用商店一览详细信息何时可以提供给每个使用受支持操作系统版本的客户。 你的应用将继续处于发布阶段，直到新的程序包和一览详细信息提供给应用的所有潜在客户为止，这最多可能需要 16 个小时。 
 
-## In the Store 
+## 已在应用商店 
 
-After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Windows Store for customers to download (unless you have chosen another [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) option). 
+在成功完成上述步骤后，提交的状态将从“正在发布”****更改为“已在应用商店”****。 你的提交将在 Windows 应用商店中提供给客户进行下载（除非你选择了另外的[“分发和可见性”](set-app-pricing-and-availability.md#distribution-and-visibility)选项）。 
 
-**Note**  We also conduct spot checks of apps after they've been published so we can identity potential problems and ensure that your app complies with all of the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
-
- 
+**注意** 我们还会在应用发布后对应用进行抽查，以便可以找出潜在问题并确保你的应用符合所有 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944)。 如果我们发现任何问题，将通知你该问题及其解决方法（如果适用）或是否已从应用商店中删除。
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO5-->
 
 

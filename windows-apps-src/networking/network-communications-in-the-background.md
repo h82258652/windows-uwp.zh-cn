@@ -4,8 +4,8 @@ description: "当应用不在前台时，它们使用后台任务和两个主机
 title: "后台网络通信"
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 translationtype: Human Translation
-ms.sourcegitcommit: eea01135c60df0323b73bf3fda8b44e6d02cd04b
-ms.openlocfilehash: bea161a9eeac012aa7b09547212f021f1289afa6
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 4ab9ca2a1cd337bd0af8fbbfcf44d8fc6e6dda3e
 
 ---
 
@@ -18,13 +18,7 @@ ms.openlocfilehash: bea161a9eeac012aa7b09547212f021f1289afa6
 -   [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
 -   [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
-当应用不在前台时，它们使用后台任务和两个主机制来保持通信：套接字代理和控制通道触发器。 当使用套接字进行长期连接的应用离开前台时，它们可以将套接字的所有权委托给系统套接字代理。 在流量到达套接字上后，该代理会激活应用并将所有权传输回应用，并且应用会处理到达的流量。
-
-## 在后台任务中执行生存期较短的网络操作
-
-SocketActivityTrigger 和 ControlChannelTrigger（将在本主题后面讨论）专用于维护生存期较长的网络连接的应用，这些连接即使在应用在后台运行时也会保留。 对于需要生存期较短的网络交互作为其后台任务逻辑一部分的应用（例如，发送一个 HTTP 请求），可能会直接调用到核心网络 API（[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)）。 但是，此类任务必须按特定方式进行配置，才能在所有情况下正常工作。 后台任务必须将 [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) 条件与其后台任务结合使用，或者在其后台任务注册上使用 [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx) 标志。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。
-
-如果你的后台任务未使用此处介绍的 [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) 或 [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx)，当处于连接待机模式时（例如，手机屏幕处于关闭状态时），后台任务将无法访问网络。
+当应用不在前台时，它们使用后台任务和两个主机制来保持通信：套接字代理和控制通道触发器。 当使用套接字的应用离开前台时，它们可以将套接字的所有权委托给系统套接字代理。 在流量到达套接字上后，该代理会激活应用并将所有权传输回应用，并且应用会处理到达的流量。
 
 ## 套接字代理和 SocketActivityTrigger
 
@@ -32,8 +26,10 @@ SocketActivityTrigger 和 ControlChannelTrigger（将在本主题后面讨论）
 
 为了使应用能够在处于非活动状态时接收并处理在套接字上接收的数据，你的应用必须在启动时执行某种一次性设置，然后在应用过渡为非活动状态时，将套接字所有权传输给套接字代理。
 
-一次性设置步骤用于创建触发器、为触发器注册后台任务，以及为套接字代理启用套接字：
-  - 通过将 TaskEntryPoint 参数设置为用于处理接收的数据包的代码，创建一个 **SocketActivityTrigger** 并为该触发器注册后台任务。
+-   一次性设置步骤如下：
+
+    -   通过将 TaskEntryPoint 参数设置为用于处理接收的数据包的代码，创建一个 SocketActivityTrigger 并为该触发器注册后台任务。
+
 ```csharp
             var socketTaskBuilder = new BackgroundTaskBuilder(); 
             socketTaskBuilder.Name = _backgroundTaskName; 
@@ -42,7 +38,10 @@ SocketActivityTrigger 和 ControlChannelTrigger（将在本主题后面讨论）
             socketTaskBuilder.SetTrigger(trigger); 
             _task = socketTaskBuilder.Register(); 
 ```
-  - 在绑定套接字之前，调用该套接字上的 **EnableTransferOwnership**。
+
+    -   Call EnableTransferOwnership on the socket, before you bind the socket.
+
+
 ```csharp
            _tcpListener = new StreamSocketListener(); 
           
@@ -55,12 +54,15 @@ SocketActivityTrigger 和 ControlChannelTrigger（将在本主题后面讨论）
            await _tcpListener.BindServiceNameAsync("my-service-name"); 
 ```
 
-在正确设置套接字后，如果应用即将暂停，则调用该套接字上的 **TransferOwnership** 以将其传输给套接字代理。 代理会监视该套接字并在收到数据时激活你的后台任务。 以下示例包含了一个实用工具 **TransferOwnership** 函数来执行 **StreamSocketListener** 套接字的传输。 （注意，每一个不同类型的套接字都有其自己的 **TransferOwnership** 方法，因此你必须调用适用于正在传输其所有权的套接字的方法。 对于你使用的每个套接字类型，你的代码可能会包含带有一个实现的过载 **TransferOwnership** 帮助程序，以便 **OnSuspending** 代码可轻松读取。）
+-   暂停时要采取的操作如下：
 
-通过使用以下一种适当方法，应用会将套接字的所有权传输给套接字代理并传递后台任务的 ID：
--   [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) 方法之一。
--   [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) 方法之一。
--   [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) 方法之一。
+    当应用即将暂停时，调用该套接字上的 **TransferOwnership** 以将其传输给套接字代理。 代理会监视该套接字并在收到数据时激活你的后台任务。 以下示例包含了一个实用工具 **TransferOwnership** 函数来执行 **StreamSocketListener** 套接字的传输。 （注意，每一个不同类型的套接字都有其自己的 **TransferOwnership** 方法，因此你必须调用适用于正在传输其所有权的套接字的方法。 对于你使用的每个套接字类型，你的代码可能会包含带有一个实现的过载 **TransferOwnership** 帮助程序，以便 **OnSuspending** 代码可轻松读取。）
+
+    通过使用以下一种适当方法，应用会将套接字的所有权传输给套接字代理并传递后台任务的 ID：
+
+    -   [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) 方法之一。
+    -   [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) 方法之一。
+    -   [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 上的 [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) 方法之一。
 
 ```csharp
     private void TransferOwnership(StreamSocketListener tcpListener) 
@@ -82,20 +84,26 @@ SocketActivityTrigger 和 ControlChannelTrigger（将在本主题后面讨论）
         deferral.Complete(); 
     } 
 ```
-在后台任务的事件处理程序中：
+
+-  在后台任务的事件处理程序中：
+
    -  首先，延迟后台任务，以便你可以使用异步方法来处理事件。
+
 ```csharp
 var deferral = taskInstance.GetDeferral();
 ```
+
    -  然后，从事件参数中提取 SocketActivityTriggerDetails 并查找引发该事件的原因：
+
 ```csharp
 var details = taskInstance.TriggerDetails as SocketActivityTriggerDetails; 
     var socketInformation = details.SocketInformation; 
     switch (details.Reason) 
 ```
-   -   如果由于套接字活动而引发了该事件，请在该套接字上创建 DataReader、以异步方式加载阅读器，然后根据应用的设计使用数据。 请注意，必须将套接字的所有权返回到套接字代理，才能再次收到后续套接字活动的通知。
 
-   在以下示例中，在套接字上接收的文本显示在 Toast 中。
+    -   If the event was raised because of socket activity, create a DataReader on the socket, load the reader asynchronously, and then use the data according to your app's design. Note that you must return ownership of the socket back to the socket broker, in order to be notified of further socket activity again.
+
+        In the following example, the text received on the socket is displayed in a toast.
 
 ```csharp
 case SocketActivityTriggerReason.SocketActivity: 
@@ -109,7 +117,7 @@ case SocketActivityTriggerReason.SocketActivity:
             break; 
 ```
 
-   -   如果由于活动计时器到期而引发了该事件，则你的代码应该通过套接字发送某些数据，以便使套接字保持活动并重新启动活动计时器。 另请注意，将套接字的所有权返回到套接字代理，以便收到后续事件通知，这一点很重要：
+    -   If the event was raised because a keep alive timer expired, then your code should send some data over the socket in order to keep the socket alive and restart the keep alive timer. Again, it is important to return ownership of the socket back to the socket broker in order to receive further event notifications:
 
 ```csharp
 case SocketActivityTriggerReason.KeepAliveTimerExpired: 
@@ -123,7 +131,7 @@ case SocketActivityTriggerReason.KeepAliveTimerExpired:
             break; 
 ```
 
-   -   如果由于关闭了套接字而引发了该事件，请重新建立该套接字，从而确保在你创建新的套接字后，将其所有权传输给套接字代理。 在此示例中，主机名和端口存储在本地设置中，以便它们可以用于建立新的套接字连接：
+    -   If the event was raised because the socket was closed, re-establish the socket, making sure that after you create the new socket, you transfer ownership of it to the socket broker. In this sample, the hostname and port are stored in local settings so that they can be used to establish a new socket connection:
 
 ```csharp
 case SocketActivityTriggerReason.SocketClosed: 
@@ -140,7 +148,7 @@ case SocketActivityTriggerReason.SocketClosed:
             break; 
 ```
 
-   -   在完成处理事件通知后，不要忘记结束你的延迟：
+-   在完成处理事件通知后，不要忘记结束你的延迟：
 
 ```csharp
   deferral.Complete();
@@ -590,6 +598,6 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

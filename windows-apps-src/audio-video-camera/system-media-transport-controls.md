@@ -2,37 +2,52 @@
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
 description: "通过 SystemMediaTransportControls 类，你的应用可以使用内置于 Windows 的系统媒体传输控件，并更新控件显示的有关你的应用当前播放的媒体的元数据。"
-title: "手动控制系统媒体传输控件"
+title: "系统媒体传输控件"
 translationtype: Human Translation
-ms.sourcegitcommit: 2cf432bc9d6eb0e564b6d6aa7fdbfd78c7eef272
-ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 ---
 
-# 手动控制系统媒体传输控件
+# 系统媒体传输控件
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-从 Windows 10 版本 1607 开始，使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类播放媒体的 UWP 应用默认自动与系统媒体传输控件 (SMTC) 集成。 对于大多数方案，均推荐使用此方法与 SMTC 交互。 有关自定义 SMTC 与 **MediaPlayer** 的默认集成的详细信息，请参阅[与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)。
 
-在以下几个方案中，可能需要实现 SMTC 的手动控制。 这些方案包括使用 [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) 控制一个或多个媒体播放器的播放的情形。 或者使用多个媒体播放器，但仅希望应用拥有一个 SMTC 实例的情形。 如果使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaElement) 播放媒体，则必须手动控制 SMTC。
+通过 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 类，你的应用可以使用内置于 Windows 的系统媒体传输控件，并更新控件显示的有关你的应用当前播放的媒体的元数据。
+
+系统传输控件不同于 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 对象上的传输控件。 系统传输控件是在按下硬件媒体键时弹出的控件，例如耳机上的音量控制器，或者键盘上的媒体按钮。 如果用户按了键盘上的暂停键，并且你的应用支持 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)，该应用将收到通知，你也可以进行相应操作。
+
+你的应用还可以更新媒体信息，例如 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 显示的歌曲标题和缩略图。
+
+**注意**  
+[系统媒体传输控件 UWP 示例](http://go.microsoft.com/fwlink/?LinkId=619488)可实现在本概述中所讨论的代码。 你可以下载该示例以查看上下文中的代码，或将该示例用作你自己的应用的起点。
 
 ## 设置传输控件
-如果使用 **MediaPlayer** 播放媒体，则通过访问 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls) 属性可以获取 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) 类的实例。 如果要手动控制 SMTC，应该将 [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 属性设为 false 以禁用 **MediaPlayer** 提供的自动集成。
 
-[!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
+在页面的 XAML 文件中，定义将由系统媒体传输控件控制的 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) 和 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) 事件用于更新系统媒体传输控件，并且将在本文的后面部分中讨论。
 
-还可以通过调用 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 获取 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的实例。 如果使用 **MediaElement** 播放媒体，必须使用此方法获取该对象。
+[!code-xml[MediaElementSystemMediaTransportControls](./code/SMTCWin10/cs/MainPage.xaml#SnippetMediaElementSystemMediaTransportControls)]
 
-[!code-cs[InitSMTCMediaElement](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaElement)]
+将按钮添加到 XAML 文件，从而允许用户选择要播放的文件。
+
+[!code-xml[OpenButton](./code/SMTCWin10/cs/MainPage.xaml#SnippetOpenButton)]
+
+在代码隐藏页面中，为以下命名空间添加 using 指令。
+
+[!code-cs[命名空间](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
+
+添加使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 的按钮单击处理程序以允许用户选择某个文件，然后调用 [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) 以使其成为 **MediaElement** 的活动文件。
+
+[!code-cs[OpenMediaFile](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetOpenMediaFile)]
+
+通过调用 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 获取 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的实例。
 
 通过设置 **SystemMediaTransportControls** 对象的相应“已启用”属性（例如 [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714)、[**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713)、[**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) 和 [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715)），启用应用将使用的按钮。 有关可用控件的完整列表，请参阅 **SystemMediaTransportControls** 参考文档。
 
-[!code-cs[EnableContols](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetEnableContols)]
-
 为 [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) 事件注册处理程序，以在用户按下按钮时接收通知。
 
-[!code-cs[RegisterButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterButtonPressed)]
+[!code-cs[SystemMediaTransportControlsSetup](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsSetup)]
 
 ## 处理系统媒体传输控件按钮按下操作
 
@@ -97,16 +112,13 @@ ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
 
 ## 将系统媒体传输控件用于后台音频
 
-如果没有使用 **MediaPlayer** 提供的自动 SMTC 集成，必须手动与 SMTC 集成才能启用后台音频。 应用至少必须能通过将 [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) 和 [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) 设置为 true 来启用播放和暂停按钮。 你的应用还必须处理 [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) 事件。 如果应用不符合这些要求，当应用移至后台时，音频播放将停止。
+若要将系统媒体传输控件用于后台音频，你必须通过将 [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) 和 [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) 设置为 true 来启用播放和暂停按钮。 你的应用还必须处理 [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) 事件。
 
-对于将新的单进程模型用于后台音频的应用，应通过调用 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 获取 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的实例。 对于将传统的双进程模型用于后台音频的应用，必须使用 [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) 从后台进程访问 SMTC。
+若要从应用的后台任务内获取 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 的实例，你必须使用 [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635)（而非 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708)），并且仅可以从你的前台应用内使用它。
 
-有关在后台播放音频的详细信息，请参阅[在后台播放媒体](background-audio.md)。
+有关在后台播放音频的详细信息，请参阅[后台音频](background-audio.md)。
 
-## 相关主题
-* [媒体播放](media-playback.md)
-* [与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md) 
-* [系统媒体传输示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
+ 
 
  
 
@@ -116,6 +128,6 @@ ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

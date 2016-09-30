@@ -1,108 +1,106 @@
 ---
 author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
-description: This topic shows how to use the FaceDetector to detect faces in an image. The FaceTracker is optimized for tracking faces over time in a sequence of video frames.
-title: Detect faces in images or videos
+description: "本主题介绍如何使用 FaceDetector 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 FaceTracker。"
+title: "检测图像或视频中的人脸"
 translationtype: Human Translation
-ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
-ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 ---
 
-# Detect faces in images or videos
+# 检测图像或视频中的人脸
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-This topic shows how to use the [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) to detect faces in an image. The [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) is optimized for tracking faces over time in a sequence of video frames.
+本主题介绍如何使用 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150)。
 
-For an alternative method of tracking faces using the [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776), see [Scene analysis for media capture](scene-analysis-for-media-capture.md).
+有关使用 [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 跟踪人脸的替代方法，请参阅[媒体捕获的场景分析](scene-analysis-for-media-capture.md)。
 
-The code in this article was adapted from the [Basic Face Detection](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) and [Basic Face Tracking](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409) samples. You can download these samples to see the code used in context or to use the sample as a starting point for your own app.
+文本中的代码源自[基本人脸检测](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)和[基本人脸跟踪](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)示例。 你可以下载这些示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
-## Detect faces in a single image
+## 检测单张图像中的人脸
 
-The [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) class allows you to detect one or more faces in a still image.
+[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 类允许你检测静止图像中的一张或多张人脸。
 
-This example uses APIs from the following namespaces.
+此示例使用来自以下命名空间的 API。
 
 [!code-cs[FaceDetectionUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
 
-Declare a class member variable for the [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) object and for the list of [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) objects that will be detected in the image.
+为 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 对象和将在该图像中检测到的 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 对象列表声明一个类成员变量。
 
 [!code-cs[ClassVariables1](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables1)]
 
-Face detection operates on a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) object which can be created in a variety of ways. In this example a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) is used to allow the user to pick an image file in which faces will be detected. For more information about working with software bitmaps, see [Imaging](imaging.md).
+人脸检测在 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象上运行，可通过多种方法创建该对象。 在此示例中，[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 用于允许用户选取要检测人脸的图像文件。 有关使用软件位图的详细信息，请参阅[图像处理](imaging.md)。
 
 [!code-cs[Picker](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
 
-Use the [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) class to decode the image file into a **SoftwareBitmap**. The face detection process is quicker with a smaller image and so you may want to scale the source image down to a smaller size. This can be performed during decoding by creating a [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) object, setting the [**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) and [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) properties and passing it into the call to [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332), which returns the decoded and scaled **SoftwareBitmap**.
+使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 类将图像文件解码为 **SoftwareBitmap**。 人脸检测过程在处理较小的图像时速度更快，因此你可能希望将源图像缩小为较小的大小。 可以在解码期间执行此操作，方法是创建一个 [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) 对象、设置 [**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) 和 [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) 属性，并将其传递到对 [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) 的调用中，后者返回解码和缩放的 **SoftwareBitmap**。
 
 [!code-cs[Decode](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
 
-In the current version, the **FaceDetector** class only supports images in Gray8 or Nv12. The **SoftwareBitmap** class provides the [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) method, which converts a bitmap from one format to another. This example converts the source image into the Gray8 pixel format if it is not already in that format. If you want, you can use the [**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) and [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) methods to determine at runtime if a pixel format is supported, in case the set of supported formats is expanded in future versions.
+在当前版本中，**FaceDetector** 类仅支持 Gray8 或 Nv12 格式的图像。 **SoftwareBitmap** 类提供了 [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) 方法，可将位图从一种格式转换为另一种格式。 此示例将源图像转换为 Gray8 像素格式（如果它尚未采用该格式）。 如果需要，可以使用 [**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) 和 [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) 方法在运行时确定某个像素格式是否受支持，以免在将来的版本中扩展受支持的格式集。
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-Instantiate the **FaceDetector** object by calling [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) and then calling [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), passing in the bitmap that has been scaled to a reasonable size and converted to a supported pixel format. This method returns a list of [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) objects. **ShowDetectedFaces** is a helper method, shown below, that draws squares around the faces in the image.
+通过调用 [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) 实例化 **FaceDetector** 对象，然后调用 [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134)，从而传入已缩放到合理大小并转换为受支持的像素格式的位图。 此方法返回 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 对象的列表。 **ShowDetectedFaces** 是一个帮助程序方法（如下所示），用于在图像中的人脸周围绘制正方形。
 
 [!code-cs[Detect](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
-Be sure to dispose of the objects that were created during the face detection process.
+确保处理在人脸检测过程中创建的对象。
 
 [!code-cs[Dispose](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDispose)]
 
-To display the image and draw boxes around the detected faces, add a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) element to your XAML page.
+若要显示图像并在检测到的人脸周围绘制方框，请将 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 元素添加到你的 XAML 页面。
 
 [!code-xml[Canvas](./code/FaceDetection_Win10/cs/MainPage.xaml#SnippetCanvas)]
 
-Define some member variables to style the squares that will be drawn.
+定义一些成员变量以设置要绘制的正方形的样式。
 
 [!code-cs[ClassVariables2](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables2)]
 
-In the **ShowDetectedFaces** helper method, a new [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) is created and the source is set to a [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) created from the **SoftwareBitmap** representing the source image. The background of the XAML **Canvas** control is set to the image brush.
+在 **ShowDetectedFaces** 帮助程序方法中，将创建新的 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) 并将源设置为从表示源图像的 **SoftwareBitmap** 创建的 [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854)。 XAML **Canvas** 控件的背景设置为图像画笔。
 
-If the list of faces passed into the helper method isn't empty, loop through each face in the list and use the [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) property of the [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) class to determine the position and size of the rectangle within the image that contains the face. Because the **Canvas** control is very likely to be a different size than the source image, you should multiply both the X and Y coordinates and the width and height of the **FaceBox** by a scaling value that is the ratio of the source image size to the actual size of the **Canvas** control.
+如果传递到帮助程序方法中的人脸列表不为空，循环访问列表中的每张人脸，并使用 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 类的 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性来确定包含人脸的图像内的矩形位置和大小。 由于 **Canvas** 控件很可能采用与源图像不同的大小，你应该将 X 和 Y 坐标以及 **FaceBox** 的宽度和高度乘以缩放值，该值是源图像大小与 **Canvas** 控件的实际大小之比。
 
 [!code-cs[ShowDetectedFaces](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetShowDetectedFaces)]
 
-## Track faces in a sequence of frames
+## 在帧序列中跟踪人脸
 
-If you want to detect faces in video, it is more efficient to use the [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) class rather than the [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) class, although the implementation steps are very similar. The **FaceTracker** uses information about previously processed frames to optimize the detection process.
+如果你希望检测视频中的人脸，尽管实现步骤非常相似，但使用 [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 类比 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 类更有效。 **FaceTracker** 使用有关以前处理的帧的信息来优化检测过程。
 
 [!code-cs[FaceTrackingUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceTrackingUsing)]
 
-Declare a class variable for the **FaceTracker** object. This example uses a [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/br230587) to initiate face tracking on a defined interval. A [SemaphoreSlim](https://msdn.microsoft.com/library/system.threading.semaphoreslim.aspx) is used to make sure that only one face tracking operation is running at a time.
+声明 **FaceTracker** 对象的类变量。 此示例使用 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/br230587) 以定义的间隔启动人脸跟踪。 [SemaphoreSlim](https://msdn.microsoft.com/library/system.threading.semaphoreslim.aspx) 用于确保一次只运行一个人脸跟踪操作。
 
 [!code-cs[ClassVariables3](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables3)]
 
-To initialize the face tracking operation, create a new **FaceTracker** object by calling [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974151). Initialize the desired timer interval and then create the timer. The **ProcessCurrentVideoFrame** helper method will be called every time the specified interval elapses.
+若要初始化人脸跟踪操作，请通过调用 [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974151) 创建新的 **FaceTracker** 对象。 初始化所需的计时器间隔，然后创建计时器。 每次指定的间隔到期时，都将调用 **ProcessCurrentVideoFrame** 帮助程序方法。
 
 [!code-cs[TrackingInit](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetTrackingInit)]
 
-The **ProcessCurrentVideoFrame** helper is called asynchronously by the timer, so the method first calls the semaphore's **Wait** method to see if a tracking operation is ongoing, and if it is the method returns without trying to detect faces. At the end of this method, the semaphore's **Release** method is called, which allows the subsequent call to **ProcessCurrentVideoFrame** to continue.
+计时器将以异步方式调用 **ProcessCurrentVideoFrame** 帮助程序，因此该方法首先调用信号灯的 **Wait** 方法来查看跟踪操作是否正在进行；如果正在进行，该方法将在不尝试检测人脸的情况下返回。 在此方法结束时，将调用信号灯的 **Release** 方法，该方法允许继续执行对 **ProcessCurrentVideoFrame** 的后续调用。
 
-The [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) class operates on [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) objects. There are multiple ways you can obtain a **VideoFrame** including capturing a preview frame from a running [MediaCapture](capture-photos-and-video-with-mediacapture.md) object or by implementing the [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) method of the [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788). This example uses an undefined helper method that returns a video frame, **GetLatestFrame**, as a placeholder for this operation. For information about getting video frames from the preview stream of a running media capture device, see [Get a preview frame](get-a-preview-frame.md).
+[**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 类作用于 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) 对象。 有多种获取 **VideoFrame** 的方法，包括从正在运行的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 对象捕获预览帧，或通过实现 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 的 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法。 此示例使用未定义的帮助程序方法，该方法返回视频帧 **GetLatestFrame** 作为此操作的占位符。 有关从正在运行的媒体捕获设备的预览流获取视频帧的信息，请参阅[获取预览帧](get-a-preview-frame.md)。
 
-As with **FaceDetector**, the **FaceTracker** supports a limited set of pixel formats. This example abandons face detection if the supplied frame is not in the Nv12 format.
+和 **FaceDetector** 一样，**FaceTracker** 支持一组有限的像素格式。 如果所提供的帧未采用 Nv12 格式，则此示例将放弃人脸检测。
 
-Call [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) to retrieve a list of [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) objects representing the faces in the frame. After you have the list of faces, you can display them in the same manner described above for face detection. Note that, because the face tracking helper method is not called on the UI thread, you must make any UI updates in within a call [**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
+调用 [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) 来检索表示该帧中的人脸的 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 对象列表。 获得人脸列表后，你可以通过上述用于人脸检测的相同方式显示它们。 请注意，由于未在 UI 线程上调用人脸跟踪帮助程序方法，因此你必须在调用 [**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 内进行任何 UI 更新。
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## Related topics
+## 相关主题
 
-* [Scene analysis for media capture](scene-analysis-for-media-capture.md)
-* [Basic Face Detection sample](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Basic Face Tracking sample](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
-* [Camera](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Media playback](media-playback.md)
+* [媒体捕获的场景分析](scene-analysis-for-media-capture.md)
+* [基本人脸检测示例](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [基本人脸跟踪示例](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

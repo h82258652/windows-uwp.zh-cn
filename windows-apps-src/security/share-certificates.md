@@ -1,39 +1,39 @@
 ---
-title: Share certificates between apps
-description: Universal Windows Platform (UWP) apps that require secure authentication beyond a user Id and password combination can use certificates for authentication.
+title: "在应用之间共享证书"
+description: "要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。"
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
+ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
 
 ---
 
-# Share certificates between apps
+# 在应用之间共享证书
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Universal Windows Platform (UWP) apps that require secure authentication beyond a user Id and password combination can use certificates for authentication. Certificate authentication provides a high level of trust when authenticating a user. In some cases, a group of services will want to authenticate a user for multiple apps. This article shows how you can authenticate multiple apps using the same certificate, and how you can provide convenient code for a user to import a certificate that was provided to access secured web services.
+要求用户名和密码组合以上的安全身份认证的通用 Windows 平台 (UWP) 应用可以使用证书进行身份验证。 对用户进行身份验证时，证书身份验证将提供高级别的信任。 在某些情况下，一组服务将要针对多个应用对用户进行身份验证。 本文介绍了如何使用同一个证书对多个应用进行身份验证，以及如何提供方便代码，用户可使用此代码导入提供的证书以访问安全的 Web 服务。
 
-Apps can authenticate to a web service using a certificate, and multiple apps can use a single certificate from the certificate store to authenticate the same user. If a certificate does not exist in the store, you can add code to your app to import a certificate from a PFX file.
+应用可使用证书对 Web 服务进行身份验证，并且多个应用可使用来自证书存储的单个证书对相同的用户进行身份验证。 如果存储中不存在证书，可将代码添加到应用以从 PFX 文件导入证书。
 
-## Enable Microsoft Internet Information Services (IIS) and client certificate mapping
-
-
-This article uses Microsoft Internet Information Services (IIS) for example purposes. IIS is not enabled by default. You can enable IIS by using the Control Panel.
-
-1.  Open the Control Panel and select **Programs**.
-2.  Select **Turn Windows features on or off**.
-3.  Expand **Internet Information Services** and then expand **World Wide Web Services**. Expand **Application Development Features** and select **ASP.NET 3.5** and **ASP.NET 4.5**. Making these selections will automatically enable **Internet Information Services**.
-4.  Click **OK** to apply the changes.
-
-## Create and publish a secured web service
+## 启用 Microsoft Internet 信息服务 (IIS) 和客户端证书映射
 
 
-1.  Run Microsoft Visual Studio as administrator and select **New Project** from the start page. Administrator access is required to publish a web service to an IIS server. In the New Project dialog, change the framework to **.NET Framework 3.5**. Select **Visual C#** -&gt; **Web** -&gt; **Visual Studio** -&gt; **ASP.NET Web Service Application**. Name the application "FirstContosoBank". Click **OK** to create the project.
-2.  In the **Service1.asmx.cs** file, replace the default **HelloWorld** web method with the following "Login" method.
+本文以 Microsoft Internet 信息服务 (IIS) 为例。 默认情况下不启用 IIS。 可通过使用控制面板来启用 IIS。
+
+1.  打开“控制面板”，选择“程序”****。
+2.  选择“打开或关闭 Windows 功能”****。
+3.  展开“Internet 信息服务”****，然后展开“万维网服务”****。 展开“应用程序开发功能”****并选择“ASP.NET 3.5”****和“ASP.NET 4.5”****。 做出这些选择将自动启用 **Internet 信息服务**。
+4.  单击“确定”****以应用更改。
+
+## 创建并发布安全的 Web 服务
+
+
+1.  作为管理员运行 Microsoft Visual Studio 并从起始页选择“新建项目”****。 将 Web 服务发布到 IIS 服务器需要管理员访问权限。 在“新建项目”对话框中，将框架更改为“.NET Framework 3.5”****。 依次选择“Visual C#”**** -&gt;“Web”**** -&gt;“Visual Studio”**** -&gt;“ASP.NET Web 服务应用程序”****。 将应用程序命名为“FirstContosoBank”。 单击“确定”****以创建项目。
+2.  在 **Service1.asmx.cs** 文件中，用以下“登录”方法替换 **HelloWorld** Web 方法。
     ```cs
             [WebMethod]
             public string Login()
@@ -46,37 +46,37 @@ This article uses Microsoft Internet Information Services (IIS) for example purp
             }
     ```
 
-3.  Save the **Service1.asmx.cs** file.
-4.  In the **Solution Explorer**, right-click the "FirstContosoBank" app and select **Publish**.
-5.  In the **Publish Web** dialog, create a new profile and name it "ContosoProfile". Click **Next.**
-6.  On the next page, enter the server name for your IIS server, and specify a site name of "Default Web Site/FirstContosoBank". Click **Publish** to publish your web service.
+3.  保存 **Service1.asmx.cs** 文件。
+4.  在“解决方案资源管理器”****中，右键单击“FirstContosoBank”应用并选择“发布”****。
+5.  在“发布 Web”****对话框中，创建新的配置文件并将其命名为“ContosoProfile”。 单击“下一步”****。
+6.  在下一个页面上，为你的 IIS 服务器输入服务器名并指定“默认 Web 站点/FirstContosoBank”的站点名。 单击“发布”****以发布你的 Web 服务。
 
-## Configure your web service to use client certificate authentication
-
-
-1.  Run the **Internet Information Services (IIS) Manager**.
-2.  Expand the sites for your IIS server. Under the **Default Web Site**, select the new "FirstContosoBank" web service. In the **Actions** section, select **Advanced Settings...**.
-3.  Set the **Application Pool** to **.NET v2.0** and click **OK**.
-4.  In the **Internet Information Services (IIS) Manager**, select your IIS server and then double-click **Server Certificates**. In the **Actions** section, select **Create Self-Signed Certificate...**. Enter "ContosoBank" as the friendly name for the certificate and click **OK**. This will create a new certificate for use by the IIS server in the form of "&lt;server-name&gt;.&lt;domain-name&gt;".
-5.  In the **Internet Information Services (IIS) Manager**, select the default web site. In the **Actions** section, select **Binding** and then click **Add...**. Select "https" as the type, set the port to "443", and enter the full host name for your IIS server ("&lt;server-name&gt;.&lt;domain-name&gt;"). Set the SSL certificate to "ContosoBank". Click **OK**. Click **Close** in the **Site Bindings** window.
-6.  In the **Internet Information Services (IIS) Manager**, select the "FirstContosoBank" web service. Double-click **SSL Settings**. Check **Require SSL**. Under **Client certificates**, select **Require**. In the **Actions** section, click **Apply**.
-7.  You can verify that the web service is configured correctly by opening your web browser and entering the following web address: "https://&lt;server-name&gt;.&lt;domain-name&gt;/FirstContosoBank/Service1.asmx". For example, "https://myserver.example.com/FirstContosoBank/Service1.asmx". If your web service is configured correctly, you will be prompted to select a client certificate in order to access the web service.
-
-You can repeat the previous steps to create multiple web services that can be accessed using the same client certificate.
-
-## Create a Windows Store app that uses certificate authentication
+## 配置你的 Web 服务以使用客户端认证身份验证。
 
 
-Now that you have one or more secured web services, your apps can use certificates to authenticate to those web services. When you make a request to an authenticated web service using the [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) object, the initial request will not contain a client certificate. The authenticated web service will respond with a request for client authentication. When this occurs, the Windows client will automatically query the certificate store for available client certificates. Your user can select from these certificates to authenticate to the web service. Some certificates are password protected, so you will need to provide the user with a way to input the password for a certificate.
+1.  运行“Internet 信息服务 (IIS) 管理器”****。
+2.  展开你的 IIS 服务器的站点。 在“默认 Web 站点”****下，选择新的“FirstContosoBank”Web 服务。 在“操作”****部分中，选择“高级设置...”****。
+3.  将“应用程序池”****设置为“.NET v2.0”****并单击“确定”****。
+4.  在“Internet 信息服务 (IIS) 管理器”****中，选择你的 IIS 服务器，然后双击“服务器证书”****。 在“操作”****部分中，选择“创建自签名证书...”****。 输入“ContosoBank”作为证书的友好名称并单击“确定”****。 这将创建一个新的证书供 IIS 服务器以“&lt;server-name&gt;.&lt;domain-name&gt;”格式使用。
+5.  在“Internet 信息服务 (IIS) 管理器”****中，选择默认网站。 在“操作”****部分中，选择“绑定”****，然后单击“添加...”****。 选择“https”作为类型、将端口设置为“443”，然后输入 IIS 服务器的完整主机名（“&lt;server-name&gt;.&lt;domain-name&gt;”）。 将 SSL 证书设置为“ContosoBank”。 单击“确定”****。 单击“站点绑定”****窗口中的“关闭”****。
+6.  在“Internet 信息服务 (IIS) 管理器”****中，选择“FirstContosoBank”Web 服务。 双击“SSL 设置”****。 选中“要求 SSL”****。 在“客户端证书”****下，选择“要求”****。 在“操作”****部分中，单击“应用”****。
+7.  你可以通过打开 Web 浏览器并输入以下 Web 地址来验证 Web 服务是否正确配置：“https://&lt;server-name&gt;.&lt;domain-name&gt;/FirstContosoBank/Service1.asmx”。 例如，“https://myserver.example.com/FirstContosoBank/Service1.asmx”。 如果你的 Web 服务已正确配置，将提示你选择一个客户端证书以访问该 Web 服务。
 
-If there are no client certificates available, then the user will need to add a certificate to the certificate store. You can include code in your app that enables a user to select a PFX file that contains a client certificate and then import that certificate into the client certificate store.
+你可以重复之前的步骤以创建多个可使用相同客户端证书访问的 Web 服务。
 
-**Tip**  You can use makecert.exe to create a PFX file to use with this quickstart. For information on using makecert.exe, see [MakeCert.](https://msdn.microsoft.com/library/windows/desktop/aa386968)
+## 创建使用证书身份验证的 Windows 应用商店应用
+
+
+现在你已拥有一个或多个安全 Web 服务，应用可使用证书来验证这些 Web 服务。 在使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 对象发出对经过身份验证的 Web 服务的请求时，初始请求将不包含客户端证书。 经过身份验证的 Web 服务将以对客户端身份验证的请求进行响应。 当此情况发生时，Windows 客户端将自动查询证书存储以获取可用的客户端证书。 用户可以从这些证书中选择以对 Web 服务进行身份验证。 一些证书受密码保护，所以你将需要向用户提供输入证书密码的方法。
+
+如果没有可用的客户端证书，则用户将需要将证书添加到证书存储。 可将代码包括在 Windows 应用商店应用中，此应用使用户能够选择包含客户端证书的 PFX 文件，然后将该证书导入到客户端证书存储中。
+
+**提示** 你可以使用 makecert.exe 创建 PFX 文件以用于此快速入门。 有关使用 makecert.exe 的信息，请参阅 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
 
  
 
-1.  Open Visual Studio and create a new project from the start page. Name the new project "FirstContosoBankApp". Click **OK** to create the new project.
-2.  In the MainPage.xaml file, add the following XAML to the default **Grid** element. This XAML includes a button to browse for a PFX file to import, a text box to enter a password for a password-protected PFX file, a button to import a selected PFX file, a button to log in to the secured web service, and a text block to display the status of the current action.
+1.  打开 Visual Studio，然后在起始页创建新的项目。 将此新项目命名为“FirstContosoBankApp”。 单击“确定”****创建新项目。
+2.  在 MainPage.xaml 文件中，将以下 XAML 添加到默认 **Grid** 元素中。 此 XAML 包括一个用于浏览要导入的 PFX 文件的按钮、一个用于输入受密码保护的 PFX 文件的密码的文本框、一个用于导入选中的 PFX 文件的按钮、一个用于登录安全 Web 服务的按钮以及一个用于显示当前操作状况的文本块。
     ```xml
     <Button x:Name="Import" Content="Import Certificate (PFX file)" HorizontalAlignment="Left" Margin="352,305,0,0" VerticalAlignment="Top" Height="77" Width="260" Click="Import_Click" FontSize="16"/>
     <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="611,305,0,0" VerticalAlignment="Top" Height="75" Width="240" Click="Login_Click" FontSize="16"/>
@@ -87,8 +87,8 @@ If there are no client certificates available, then the user will need to add a 
     <TextBlock HorizontalAlignment="Left" Margin="717,271,0,0" TextWrapping="Wrap" Text="(Optional)" VerticalAlignment="Top" Height="32" Width="83" FontSize="16"/>
     ```
     
-3.  Save the MainPage.xaml file.
-4.  In the MainPage.xaml.cs file, add the following using statements.
+3.  保存 MainPage.xaml 文件。
+4.  在 MainPage.xaml.cs 文件中，添加以下 using 语句。
     ```cs
     using Windows.Web.Http;
     using System.Text;
@@ -98,13 +98,13 @@ If there are no client certificates available, then the user will need to add a 
     using Windows.Storage.Streams;
     ```
 
-5.  In the MainPage.xaml.cs file, add the following variables to the **MainPage** class. They specify the address for the secured "Login" method of your "FirstContosoBank" web service, and a global variable that holds a PFX certificate to import into the certificate store. Update the &lt;server-name&gt; to the fully-qualified server name for your Microsoft Internet Information Server (IIS) server.
+5.  在 MainPage.xaml.cs 文件中，将以下变量添加到 **MainPage** 类中。 它们指定“FirstContosoBank”Web 服务的安全“登录”方法的地址以及承载要导入到证书存储中的 PFX 证书的全局变量。 将 &lt;server-name&gt; 更新为 Microsoft Internet Information Server (IIS) 服务器的完全限定的服务器名称。
     ```cs
     private Uri requestUri = new Uri("https://<server-name>/FirstContosoBank/Service1.asmx?op=Login");
     private string pfxCert = null;
     ```
 
-6.  In the MainPage.xaml.cs file, add the following click handler for the login button and method to access the secured web service.
+6.  在 MainPage.xaml.cs 文件中，添加登录按钮的以下单击处理程序和访问安全 Web 服务的方法。
     ```cs
     private void Login_Click(object sender, RoutedEventArgs e)
     {
@@ -140,7 +140,7 @@ If there are no client certificates available, then the user will need to add a 
     }
     ```
 
-7.  In the MainPage.xaml.cs file, add the following click handlers for the button to browse for a PFX file and the button to import a selected PFX file into the certificate store.
+7.  在 MainPage.xaml.cs 文件中，添加以下用于浏览 PFX 文件的按钮和用于将选中的 PFX 文件导入到证书存储中的按钮的单击处理程序。
     ```cs
     private async void Import_Click(object sender, RoutedEventArgs e)
     {
@@ -200,11 +200,11 @@ If there are no client certificates available, then the user will need to add a 
     }
     ```
 
-8.  Run your app and log in to your secured web service as well as import a PFX file into the local certificate store.
+8.  运行应用并登录到安全 Web 服务以及将 PFX 文件导入到本地证书存储中。
 
-You can use these steps to create multiple apps that use the same user certificate to access the same or different secured web services.
+可使用这些步骤创建多个应用，这些应用使用同一个用户证书访问相同或不同的安全 Web 服务。
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

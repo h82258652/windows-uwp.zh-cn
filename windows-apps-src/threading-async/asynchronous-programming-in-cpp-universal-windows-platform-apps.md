@@ -1,43 +1,43 @@
 ---
 author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the task class defined in the concurrency namespace in ppltasks.h.
-title: Asynchronous programming in C++
+description: "本文介绍了在 Visual C++ 组件扩展 (C++/CX) 中，通过使用在 ppltasks.h 中的 concurrency 命名空间中定义的 task 类来使用异步方法的推荐方式。"
+title: "使用 C++ 进行异步编程"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 12fdf79cbf3a79e4789131d0da8eee978b82cdf8
+ms.openlocfilehash: b0a3faa56249ccfe693438c1077b7500736f3ec5
 
 ---
 
-# Asynchronous programming in C++
+# 使用 C++ 进行异步编程
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the `task` class that's defined in the `concurrency` namespace in ppltasks.h.
+本文介绍了在 Visual C++ 组件扩展 (C++/CX) 中，通过使用在 ppltasks.h 中的 `concurrency` 命名空间中定义的 `task` 类来使用异步方法的推荐方式。
 
-## Universal Windows Platform (UWP) asynchronous types
+## 通用 Windows 平台 (UWP) 异步类型
 
-The Universal Windows Platform (UWP) features a well-defined model for calling asynchronous methods and provides the types that you need to consume such methods. If you are not familiar with the UWP asynchronous model, read [Asynchronous Programming][AsyncProgramming] before you read the rest of this article.
+通用 Windows 平台 (UWP) 功能具有一个定义完善的用于调用异步方法的模型，并提供了使用此类方法所需的类型。 如果你对 UWP 异步模型不熟悉，请在阅读本文其余部分之前阅读[异步编程][AsyncProgramming]。
 
-Although you can consume the asynchronous UWP APIs directly in C++, the preferred approach is to use the [**task class**][task-class] and its related types and functions, which are contained in the [**concurrency**][concurrencyNamespace] namespace and defined in `<ppltasks.h>`. The **concurrency::task** is a general-purpose type, but when the **/ZW** compiler switch—which is required for Universal Windows Platform (UWP) apps and components—is used, the task class encapsulates the UWP asynchronous types so that it's easier to:
+尽管可在 C++ 中直接使用异步 UWP API，但首选方法是使用[**任务类**][task-class] 及其相关类型和函数，它们都包含在[**并发**][concurrencyNamespace] 命名空间中且在 `<ppltasks.h>` 中定义。 **concurrency::task** 是一个通用类型，但当使用 **/ZW** 编译器开关（对于通用 Windows 平台 (UWP) 应用和组件而言必不可少）时，task 类将封装 UWP 异步类型，以便更容易地完成以下工作：
 
--   chain multiple asynchronous and synchronous operations together
+-   将多个异步和同步操作结合在一起
 
--   handle exceptions in task chains
+-   在任务链中处理异常
 
--   perform cancellation in task chains
+-   在任务链中执行取消
 
--   ensure that individual tasks run in the appropriate thread context or apartment
+-   确保个别任务在相应的线程上下文或单元中运行
 
-This article provides basic guidance about how to use the **task** class with the UWP asynchronous APIs. For more complete documentation about **task** and its related methods including [**create\_task**][createTask], see [Task Parallelism (Concurrency Runtime)][taskParallelism]. For more information about how to create asynchronous public methods for consumption by JavaScript or other UWP-compatible languages, see [Creating Asynchronous Operations in C++ for Windows Runtime apps][createAsyncCpp].
+本文提供了有关如何将 **task** 类与 UWP 异步 API 一起使用的基本指南。 有关 **task** 及其相关方法（包括 [**create\_task**][createTask]）的更完整的文档，请参阅[任务并行度（并发运行时）][taskParallelism]。 有关如何创建由 JavaScript 或其他 UWP 兼容语言使用的异步公共方法的详细信息，请参阅[使用 C++ 为 Windows 运行时应用创建异步操作][createAsyncCpp]。
 
-## Consuming an async operation by using a task
+## 通过任务使用异步操作
 
-The following example shows how to use the task class to consume an **async** method that returns an [**IAsyncOperation**][IAsyncOperation] interface and whose operation produces a value. Here are the basic steps:
+以下示例说明如何利用 task 类来使用返回 [**IAsyncOperation**][IAsyncOperation] 接口且其操作会生成一个值的 **async** 方法。 以下是基本步骤：
 
-1.  Call the `create_task` method and pass it the **IAsyncOperation^** object.
+1.  调用 `create_task` 方法并将其传递到 **IAsyncOperation^** 对象。
 
-2.  Call the member function [**task::then**][taskThen] on the task and supply a lambda that will be invoked when the asynchronous operation completes.
+2.  对任务调用成员函数 [**task::then**][taskThen] 并提供一个将在异步操作完成时调用的 lambda。
 
 
 ``` cpp
@@ -72,17 +72,17 @@ void App::TestAsync()
 }
 ```
 
-The task that's created and returned by the [**task::then**][taskThen] function is known as a *continuation*. The input argument (in this case) to the user-provided lambda is the result that the task operation produces when it completes. It's the same value that would be retrieved by calling [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) if you were using the **IAsyncOperation** interface directly.
+由 [**task::then**][taskThen] 函数创建并返回的任务称为*延续*。 用户提供的 lambda 输入参数（在此情况下）是任务操作在完成时产生的结果。 它与你在直接使用 **IAsyncOperation** 接口时通过调用 [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) 检索到的值相同。
 
-The [**task::then**][taskThen] method returns immediately, and its delegate doesn't run until the asynchronous work completes successfully. In this example, if the asynchronous operation causes an exception to be thrown, or ends in the canceled state as a result of a cancellation request, the continuation will never execute. Later, we’ll describe how to write continuations that execute even if the previous task was cancelled or failed.
+[**task::then**][taskThen] 方法立即返回，并且其委托在异步工作成功完成后才运行。 在本示例中，如果异步操作导致引发异常，或由于取消请求而以取消状态结束，则延续永远不会执行。 稍后，我们将介绍如何编写即使上一个任务被取消或失败也会执行的延续。
 
-Although you declare the task variable on the local stack, it manages its lifetime so that it is not deleted until all of its operations complete and all references to it go out of scope, even if the method returns before the operations complete.
+尽管你在本地堆栈上声明任务变量，但它仍然管理其生存期，这样在其所有操作完成并且对其的所有引用离开作用域之前都不会被删除（即使该方法在操作完成之前返回）。
 
-## Creating a chain of tasks
+## 创建任务链
 
-In asynchronous programming, it's common to define a sequence of operations, also known as *task chains*, in which each continuation executes only when the previous one completes. In some cases, the previous (or *antecedent*) task produces a value that the continuation accepts as input. By using the [**task::then**][taskThen] method, you can create task chains in an intuitive and straightforward manner; the method returns a **task<T>** where **T** is the return type of the lambda function. You can compose multiple continuations into a task chain: `myTask.then(…).then(…).then(…);`
+在异步编程中，常见的做法是定义一个操作序列，也称作*任务链*，其中每个延续只有在前一个延续完成后才能执行。 在某些情况下，上一个（或*先行*）任务会产生一个延续接受为输入的值。 通过使用 [**task::then**][taskThen] 方法，你可以按照直观且简单的方式创建任务链；该方法返回一个 **task<T>**，其中 **T** 是 lambda 函数的返回类型。 你可以将多个延续组合到一个任务链中： `myTask.then(…).then(…).then(…);`
 
-Task chains are especially useful when a continuation creates a new asynchronous operation; such a task is known as an asynchronous task. The following example illustrates a task chain that has two continuations. The initial task acquires the handle to an existing file, and when that operation completes, the first continuation starts up a new asynchronous operation to delete the file. When that operation completes, the second continuation runs, and outputs a confirmation message.
+当延续创建一个新的异步操作时，任务链尤其有用；此类任务称为异步任务。 以下示例将介绍具有两个延续的任务链。 初始任务获取一个现有文件的句柄，当该操作完成后，第一个延续会启动一个新的异步操作来删除该文件。 当该操作完成后，第二个延续将运行，并且输出一条确认消息。
 
 ``` cpp
 #include <ppltasks.h>
@@ -102,38 +102,38 @@ void App::DeleteWithTasks(String^ fileName)
 }
 ```
 
-The previous example illustrates four important points:
+上一个示例说明了四个要点：
 
--   The first continuation converts the [**IAsyncAction^**][IAsyncAction] object to a **task<void>** and returns the **task**.
+-   第一个延续将 [**IAsyncAction^**][IAsyncAction] 对象转换为 **task<void>** 并返回 **task**。
 
--   The second continuation performs no error handling, and therefore takes **void** and not **task<void>** as input. It is a value-based continuation.
+-   第二个延续执行无错误处理，因此接受 **void** 而不是 **task<void>** 作为输入。 它是一个基于值的延续。
 
--   The second continuation doesn't execute until the [**DeleteAsync**][deleteAsync] operation completes.
+-   第二个延续在 [**DeleteAsync**][deleteAsync] 操作完成后才执行。
 
--   Because the second continuation is value-based, if the operation that was started by the call to [**DeleteAsync**][deleteAsync] throws an exception, the second continuation doesn't execute at all.
+-   因为第二个延续是基于值的，所以如果通过调用 [**DeleteAsync**][deleteAsync] 启动的操作引发异常，则第二个延续根本不会执行。
 
-**Note**  Creating a task chain is just one of the ways to use the **task** class to compose asynchronous operations. You can also compose operations by using join and choice operators **&&** and **||**. For more information, see [Task Parallelism (Concurrency Runtime)][taskParallelism].
+**注意** 创建任务链只是使用 **task** 类组合异步操作的一种方式。 还可以通过使用连接和选择运算符 **&&** 和 **||** 来组合操作。 有关详细信息，请参阅[任务并行度（并发运行时）][taskParallelism]。
 
-## Lambda function return types and task return types
+## Lambda 函数返回类型和任务返回类型
 
-In a task continuation, the return type of the lambda function is wrapped in a **task** object. If the lambda returns a **double**, then the type of the continuation task is **task<double>**. However, the task object is designed so that it doesn't produce needlessly nested return types. If a lambda returns an **IAsyncOperation<SyndicationFeed^>^**, the continuation returns a **task<SyndicationFeed^>**, not a **task<task<SyndicationFeed^>>** or **task<IAsyncOperation<SyndicationFeed^>^>^**. This process is known as *asynchronous unwrapping* and it also ensures that the asynchronous operation inside the continuation completes before the next continuation is invoked.
+在任务延续中，lambda 函数的返回类型包含在 **task** 对象中。 如果该 lambda 返回 **double**，则延续任务的类型为 **task<double>**。 但是，任务对象的设计目的是为了不生成无需嵌套的返回类型。 如果 lambda 返回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，则延续返回 **task&lt;SyndicationFeed^&gt;**，而不是 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 此过程称为*异步解包*，并且它还确保延续内部的异步操作在调用下一个延续之前完成。
 
-In the previous example, notice that the task returns a **task<void>** even though its lambda returned an [**IAsyncInfo**][IAsyncInfo] object. The following table summarizes the type conversions that occur between a lambda function and the enclosing task:
+请注意，在上一个示例中，即使其 lambda 返回 [**IAsyncInfo**][IAsyncInfo] 对象，该任务仍然会返回 **task<void>**。 下表总结了在 lambda 函数和封闭任务之间发生的类型转换：
 
 | | |
 |--------------------------------------------------------|---------------------|
-| lambda return type                                     | `.then` return type |
-| TResult                                                | task<TResult> |
-| IAsyncOperation<TResult>^                        | task<TResult> |
-| IAsyncOperationWithProgress<TResult, TProgress>^ | task<TResult> |
-|IAsyncAction^                                           | task<void>    |
-| IAsyncActionWithProgress<TProgress>^             |task<void>     |
-| task<TResult>                                    |task<TResult>  |
+| lambda 返回类型                                     | `.then` 返回类型 |
+| TResult                                                | 任务<TResult> |
+| IAsyncOperation<TResult>^                        | 任务<TResult> |
+| IAsyncOperationWithProgress&lt;TResult, TProgress&gt;^ | 任务<TResult> |
+|IAsyncAction^                                           | 任务<void>    |
+| IAsyncActionWithProgress<TProgress>^             |任务<void>     |
+| 任务<TResult>                                    |任务<TResult>  |
 
 
-## Canceling tasks
+## 取消任务
 
-It is often a good idea to give the user the option to cancel an asynchronous operation. And in some cases you might have to cancel an operation programmatically from outside the task chain. Although each \***Async** return type has a [**Cancel**][IAsyncInfoCancel] method that it inherits from [**IAsyncInfo**][IAsyncInfo], it's awkward to expose it to outside methods. The preferred way to support cancellation in a task chain is to use a [**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) to create a [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx), and then pass the token to the constructor of the initial task. If an asynchronous task is created with a cancellation token, and [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx) is called, the task automatically calls **Cancel** on the **IAsync\*** operation and passes the cancellation request down its continuation chain. The following pseudocode demonstrates the basic approach.
+为用户提供取消异步操作的选项通常是一个不错的方法。 另外，在某些情况下，你可能必须以编程方式从任务链外部取消操作。 尽管每个 \***Async** 返回类型都具有一个从 [**IAsyncInfo**][IAsyncInfo] 继承的 [**Cancel**][IAsyncInfoCancel] 方法，但将其公开给外部方法不可取。 在任务链中支持取消的首选方式是使用 [**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) 创建 [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx)，然后将该令牌传递给初始任务的构造函数。 如果使用取消令牌创建异步任务，并且调用 [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx)，则该任务会自动对 **IAsync\*** 操作调用 **Cancel**，并且将取消请求沿着其延续链向下传递。 下面的伪代码演示了基本方法。
 
 ``` cpp
 //Class member:
@@ -148,17 +148,17 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 //getFileTask2.then ...
 ```
 
-When a task is canceled, a [**task\_canceled**][taskCanceled] exception is propagated down the task chain. Value-based continuations will simply not execute, but task-based continuations will cause the exception to be thrown when [**task::get**][taskGet] is called. If you have an error-handling continuation, make sure that it catches the **task\_canceled** exception explicitly. (This exception is not derived from [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx).)
+取消任务后，[**task\_canceled**][taskCanceled] 异常将沿着任务链向下传播。 基于值的延续将不执行，但是基于任务的延续将在调用 [**task::get**][taskGet] 时导致引发异常。 如果存在错误处理延续，请确保它显式捕获 **task\_canceled** 异常。 （此异常不是派生自 [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx)。）
 
-Cancellation is cooperative. If your continuation does some long-running work beyond just invoking a UWP method, then it is your responsibility to check the state of the cancellation token periodically and stop execution if it is canceled. After you clean up all resources that were allocated in the continuation, call [**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx) to cancel that task and propagate the cancellation down to any value-based continuations that follow it. Here's another example: you can create a task chain that represents the result of a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) operation. If the user chooses the **Cancel** button, the [**IAsyncInfo::Cancel**][IAsyncInfoCancel] method is not called. Instead, the operation succeeds but returns **nullptr**. The continuation can test the input parameter and call **cancel\_current\_task** if the input is **nullptr**.
+取消是协作式操作。 如果延续要执行一些长时间的工作，而不仅是调用 UWP 方法，则需要负责定期检查取消令牌的状态，并且在其被取消后停止执行。 在清理延续中分配的所有资源之后，请调用 [**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx) 以取消该任务并将取消向下传播到后跟的任何基于值的延续。 下面是另外一个示例：你可以创建一个任务链用于表示 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 操作的结果。 如果用户选择“取消”****按钮，则不会调用 [**IAsyncInfo::Cancel**][IAsyncInfoCancel] 方法。 相反，操作成功，但返回 **nullptr**。 延续可以测试输入参数，如果输入是 **nullptr**，则调用 **cancel\_current\_task**。
 
-For more information, see [Cancellation in the PPL](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx)
+有关详细信息，请参阅 [PPL 中的取消](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx)
 
-## Handling errors in a task chain
+## 在任务链中处理错误
 
-If you want a continuation to execute even if the antecedent was canceled or threw an exception, then make the continuation a task-based continuation by specifying the input to its lambda function as a **task<TResult>** or **task<void>** if the lambda of the antecedent task returns an [**IAsyncAction^**][IAsyncAction].
+如果要让一个延续即使在先行被取消或引发异常的情况下也能够执行，请将该延续的 lambda 函数的输入指定为 **task<TResult>** 或 **task<void>**，使该延续成为基于任务的延续，但前提是先行任务的 lambda 返回 [**IAsyncAction^**][IAsyncAction]。
 
-To handle errors and cancellation in a task chain, you don't have to make every continuation task-based or enclose every operation that might throw within a `try…catch` block. Instead, you can add a task-based continuation at the end of the chain and handle all errors there. Any exception—this includes a [**task\_canceled**][taskCanceled] exception—will propagate down the task chain and bypass any value-based continuations, so that you can handle it in the error-handling task-based continuation. We can rewrite the previous example to use an error-handling task-based continuation:
+若要在任务链中处理错误和取消，则无需使每个延续成为基于任务的延续，也不用将每个可能引发异常的操作封装在 `try…catch` 块中。 相反，你可以将基于任务的延续添加至任务链的末尾，并且在那里处理所有错误。 任何异常（包括 [**task\_canceled**][taskCanceled] 异常）都将沿着任务链向下传播并绕过所有基于值的延续，因此你可以在基于任务的错误处理延续中处理它。 我们可以重写上一个示例以使用基于任务的错误处理延续：
 
 ``` cpp
 #include <ppltasks.h>
@@ -194,15 +194,15 @@ void App::DeleteWithTasksHandleErrors(String^ fileName)
 }
 ```
 
-In a task-based continuation, we call the member function [**task::get**][taskGet] to get the results of the task. We still have to call **task::get** even if the operation was an [**IAsyncAction**][IAsyncAction] that produces no result because **task::get** also gets any exceptions that have been transported down to the task. If the input task is storing an exception, it is thrown at the call to **task::get**. If you don't call **task::get**, or don't use a task-based continuation at the end of the chain, or don't catch the exception type that was thrown, then an **unobserved\_task\_exception** is thrown when all references to the task have been deleted.
+在基于任务的延续中，我们调用成员函数 [**task::get**][taskGet] 以获取任务结果。 即使该操作是不产生任何结果的 [**IAsyncAction**][IAsyncAction]，我们仍然需要调用 **task::get**，因为 **task::get** 也会获取已经向下传输到该任务的所有异常。 如果输入任务正在存储某个异常，则该异常将在调用 **task::get** 时被引发。 如果不调用 **task::get**，或者不在任务链的末尾使用基于任务的延续，或者不捕获所引发的异常类型，则当删除对该任务的所有引用时，会引发 **unobserved\_task\_exception**。
 
-Only catch the exceptions that you can handle. If your app encounters an error that you can't recover from, it's better to let the app crash than to let it continue to run in an unknown state. Also, in general, don't attempt to catch the **unobserved\_task\_exception** itself. This exception is mainly intended for diagnostic purposes. When **unobserved\_task\_exception** is thrown, it usually indicates a bug in the code. Often the cause is either an exception that should be handled, or an unrecoverable exception that's caused by some other error in the code.
+只捕获你可以处理的异常。 如果你的应用遇到无法恢复的错误，则最好让该应用崩溃，而不要让其继续在未知状态下运行。 另外，一般情况下，不要尝试捕获 **unobserved\_task\_exception** 本身。 该异常主要用于诊断目的。 当引发 **unobserved\_task\_exception** 时，通常表示代码中存在 Bug。 原因通常是应该处理的异常，或由代码中的某个其他错误导致的不可恢复的异常。
 
-## Managing the thread context
+## 管理线程上下文
 
-The UI of a UWP app runs in a single-threaded apartment (STA). A task whose lambda returns either an [**IAsyncAction**][IAsyncAction] or [**IAsyncOperation**][IAsyncOperation] is apartment-aware. If the task is created in the STA, then all of its continuations will run also run in it by default, unless you specify otherwise. In other words, the entire task chain inherits apartment-awareness from the parent task. This behavior helps simplify interactions with UI controls, which can only be accessed from the STA.
+UWP 应用的 UI 在单线程单元 (STA) 中运行。 其 lambda 返回 [**IAsyncAction**][IAsyncAction] 或 [**IAsyncOperation**][IAsyncOperation] 的任务具有单元意识。 如果该任务在 STA 中创建，则默认情况下，除非你另外指定，否则该任务的所有要运行的延续也将在该 STA 中运行。 换句话说，整个任务链从父任务继承单元意识。 该行为可帮助简化与 UI 控件的交互，这些 UI 控件只能从 STA 访问。
 
-For example, in a UWP app, in the member function of any class that represents a XAML page, you can populate a [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) control from within a [**task::then**][taskThen] method without having to use the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) object.
+例如，在 UWP 应用中，在任何表示 XAML 页面的类的成员函数中，可从 [**task::then**][taskThen] 方法内部填充 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 控件，而无需使用 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 对象。
 
 ``` cpp
 #include <ppltasks.h>
@@ -221,11 +221,11 @@ void App::SetFeedText()
 }
 ```
 
-If a task doesn't return an [**IAsyncAction**][IAsyncAction] or [**IAsyncOperation**][IAsyncOperation], then it's not apartment-aware and, by default, its continuations are run on the first available background thread.
+如果任务不返回 [**IAsyncAction**][IAsyncAction] 或 [**IAsyncOperation**][IAsyncOperation]，则它不具有单元意识，并且默认情况下，其延续在第一个可用的后台线程上运行。
 
-You can override the default thread context for either kind of task by using the overload of [**task::then**][taskThen] that takes a [**task\_continuation\_context**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749968.aspx). For example, in some cases, it might be desirable to schedule the continuation of an apartment-aware task on a background thread. In such a case, you can pass [**task\_continuation\_context::use\_arbitrary**][useArbitrary] to schedule the task’s work on the next available thread in a multi-threaded apartment. This can improve the performance of the continuation because its work doesn't have to be synchronized with other work that's happening on the UI thread.
+你可以使用 [**task::then**][taskThen] 的接受 [**task\_continuation\_context**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749968.aspx) 的重载来覆盖任一种任务的默认线程上下文。 例如，在某些情况下，在后台线程上计划具有单元意识的任务的延续或许是可取的。 在此情况下，你可以传递 [**task\_continuation\_context::use\_arbitrary**][useArbitrary]，以便在多线程单元中的下一个可用线程上计划该任务的工作。 这可以改善延续的性能，因为其工作不必与 UI 线程上发生的其他工作同步。
 
-The following example demonstrates when it's useful to specify the [**task\_continuation\_context::use\_arbitrary**][useArbitrary] option, and it also shows how the default continuation context is useful for synchronizing concurrent operations on non-thread-safe collections. In this code, we loop through a list of URLs for RSS feeds, and for each URL, we start up an async operation to retrieve the feed data. We can’t control the order in which the feeds are retrieved, and we don't really care. When each [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) operation completes, the first continuation accepts the [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) object and uses it to initialize an app-defined `FeedData^` object. Because each of these operations is independent from the others, we can potentially speed things up by specifying the **task\_continuation\_context::use\_arbitrary** continuation context. However, after each `FeedData` object is initialized, we have to add it to a [**Vector**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx), which is not a thread-safe collection. Therefore, we create a continuation and specify [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) to ensure that all the calls to [**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) occur in the same Application Single-Threaded Apartment (ASTA) context. Because [**task\_continuation\_context::use\_default**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) is the default context, we don’t have to specify it explicitly, but we do so here for the sake of clarity.
+以下示例将演示何时指定 [**task\_continuation\_context::use\_arbitrary**][useArbitrary] 选项有用，还说明了默认延续上下文在同步非线程安全集合上的并发操作方面的作用。 在此代码中，我们遍历 RSS 源的 URL 列表，并为每个 URL 启动一个异步操作以检索源数据。 我们无法控制检索订阅的顺序，而我们其实并不关心。 当每个 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) 操作完成时，第一个延续接受 [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) 对象并使用它来初始化应用定义的 `FeedData^` 对象。 因为上述每个操作都独立于其他操作，所以我们可以通过指定 **task\_continuation\_context::use\_arbitrary** 延续上下文来提高运行速度。 但是，在初始化每个 `FeedData` 对象之后，我们必须将其添加到一个不属于线程安全集合的 [**Vector**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) 中。 因此，我们要创建一个延续并且指定 [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx)，以确保所有对 [**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) 的调用都发生在相同的应用程序单线程单元 (ASTA) 上下文中。 由于 [**task\_continuation\_context::use\_default**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) 是默认上下文，因此我们无需进行明确指定，但是为了清楚起见需在此处进行指定。
 
 ``` cpp
 #include <ppltasks.h>
@@ -286,19 +286,19 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 }
 ```
 
-Nested tasks, which are new tasks that are created inside a continuation, don't inherit apartment-awareness of the initial task.
+嵌套任务（即在延续内部创建的新任务）不继承初始任务的单元意识。
 
-## Handing progress updates
+## 处理进度更新
 
-Methods that support [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) or [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx) provide progress updates periodically while the operation is in progress, before it completes. Progress reporting is independent from the notion of tasks and continuations. You just supply the delegate for the object’s [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) property. A typical use of the delegate is to update a progress bar in the UI.
+在操作完成之前，支持 [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) 或 [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx) 的方法会在操作执行过程中定期提供进度更新。 进度报告独立于任务和延续概念。 你只需为对象的 [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) 属性提供委托。 委派的一个典型用途是更新 UI 中的进度栏。
 
-## Related topics
+## 相关主题
 
-* [Creating Asynchronous Operations in C++ for Windows Store apps][createAsyncCpp]
-* [Visual C++ Language Reference](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
-* [Asynchronous Programming][AsyncProgramming]
-* [Task Parallelism (Concurrency Runtime)][taskParallelism]
-* [task class][task-class]
+* [使用 C++ 为 Windows 应用商店应用创建异步操作][createAsyncCpp]
+* [Visual C++ 语言参考](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
+* [异步编程][AsyncProgramming]
+* [任务并行度（并发运行时）][taskParallelism]
+* [任务类][task-class]
  
 <!-- LINKS -->
 [AsyncProgramming]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh464924.aspx> "AsyncProgramming"
@@ -319,6 +319,6 @@ Methods that support [**IAsyncOperationWithProgress**](https://msdn.microsoft.co
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

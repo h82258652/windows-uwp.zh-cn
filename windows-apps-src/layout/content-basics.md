@@ -1,77 +1,77 @@
 ---
 author: mijacobs
-Description: The main purpose of any app is to provide access to content. In a photo-editing app, the photo is the content; in a travel app, maps and info about travel destinations is the content; and so on.
-title: Content design basics for Universal Windows Platform (UWP) apps
+Description: "任何应用的主要用途都是提供对内容的访问权限。 在照片编辑应用中，照片即是内容；在旅行应用中，地图和旅行目的地信息即是内容；等等。"
+title: "通用 Windows 平台 (UWP) 应用的内容设计基础知识"
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
+ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
 
 ---
 
-#  Content design basics for UWP apps
+#  UWP 应用的内容设计基础知识
 
-The main purpose of any app is to provide access to content: in a photo-editing app, the photo is the content; in a travel app, maps and info about travel destinations is the content; and so on. Navigation elements provide access to content; command elements enable the user to interact with content; content elements display the actual content.
+任何应用的主要用途都是提供对内容的访问权限：在照片编辑应用中，照片即是内容；在旅行应用中，地图和旅行目的地信息即是内容；等等。 导航元素提供对内容的访问权限；命令元素使用户能够与内容进行交互；内容元素显示实际内容。
 
-This article provides content design recommendations for the three content scenarios.
+本文提供了适用于三种内容方案的内容设计建议。
 
-## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>Design for the right content scenario
-
-
-There are three main content scenarios:
-
--   **Consumption**: A primarily one-way experience where content is consumed. It includes tasks like reading, listening to music, watching videos, and photo and image viewing.
--   **Creation**: A primarily one-way experience where the focus is creating new content. It can be broken down into making things from scratch, like shooting a photo or video, creating a new image in a painting app, or opening a fresh document.
--   **Interactive**: A two-way content experience that includes consuming, creating, and revising content.
-
-## <span id="Consumption-focused_apps"></span><span id="consumption-focused_apps"></span><span id="CONSUMPTION-FOCUSED_APPS"></span>Consumption-focused apps
+## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>针对正确的内容方案进行设计
 
 
-Content elements receive the highest priority in a consumption-focused app, followed by the [navigation elements](navigation-basics.md) needed to help users find the content they want. Examples of consumption-focused apps include movie players, reading apps, music apps, and photo viewers.
+存在三种主要的内容方案：
 
-![a newsreader app](images/news-reader/v2/newsreader-v2-tablet-phone.png)
+-   **使用**：使用内容的主要单向体验。 它包括阅读、听音乐、观看视频以及照片和图像查看之类的任务。
+-   **创建**：侧重于创建新内容的主要单向体验。 它可细分为从无到有创建内容，如拍摄照片或视频、使用绘图应用创建新图像或打开一个全新文档。
+-   **交互式**：包括使用、创建和修改内容的双向内容体验。
 
-General recommendations for consumption-focused apps:
-
--   Consider creating dedicated [navigation](navigation-basics.md) pages and content-viewing pages, so that when users find the content they are looking for, they can view it on a dedicated page free of distractions.
--   Consider creating a full-screen view option that expands the content to fill the entire screen and hides all other UI elements.
-
-## <span id="Creation-focused_apps"></span><span id="creation-focused_apps"></span><span id="CREATION-FOCUSED_APPS"></span>Creation-focused apps
+## <span id="Consumption-focused_apps"></span><span id="consumption-focused_apps"></span><span id="CONSUMPTION-FOCUSED_APPS"></span>侧重于使用的应用
 
 
-Content and [command](commanding-basics.md) elements are the most import UI elements in a creation-focused app: command elements enable the user to create new content. Examples include painting apps, photo editing apps, video editing apps, and word processing apps.
+在侧重于使用的应用中，内容元素获得最高优先级，后跟所需的[导航元素](navigation-basics.md)，从而帮助用户查找他们所需的内容。 侧重于使用的应用示例包括电影播放器、阅读应用、音乐应用和照片查看器。
 
-As an example, here's a design for a photo app that uses command bars to provide access to tools and photo manipulation options. Because all the commands are in the command bar, the app can devote most of its screen space to its content, the photo being edited.
+![新闻阅读器应用](images/news-reader/v2/newsreader-v2-tablet-phone.png)
 
-![example of a photo editing app design that uses active canvas](images/photo-editor/uap-photo-tabletphone-sbs.png)
+针对侧重于使用的应用的一般建议：
 
-General recommendations for creation-focused apps:
+-   请考虑创建专用[导航](navigation-basics.md)页面和内容查看页面，以便当用户找到他们要查找的内容时，可以在专用页面上不受干扰地查看内容。
+-   请考虑创建一个全屏视图选项，用于扩展内容以填充整个屏幕并隐藏其他所有 UI 元素。
 
--   Minimize the use of [navigation](navigation-basics.md) elements.
--   [Command](commanding-basics.md) elements are especially important in creation-focused apps. Since users will be executing a lot of commands, we recommend providing a command history/undo functionality.
-
-## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>Apps with interactive content
+## <span id="Creation-focused_apps"></span><span id="creation-focused_apps"></span><span id="CREATION-FOCUSED_APPS"></span>侧重于创建的应用
 
 
-In an app with interactive content, users create, view, and edit content; many apps fit into this category. Examples of these types of apps include line of business apps, inventory management apps, cooking apps that enable the user to create or modify recipes.
+在侧重于创建的应用中，内容和[命令](commanding-basics.md)元素都是最重要的 UI 元素：命令元素使用户能够创建新的内容。 示例包括绘图应用、照片编辑应用、视频编辑应用和文字处理应用。
 
-![a design for a collaboration tool, an app that has interactive content](images/collaboration-tool/uap-collaboration-tabphone-700.png)
+例如，下面是一个照片应用的设计，该应用使用命令栏来访问工具和照片操作选项。 因为所有命令都位于命令栏中，所以该应用可将其大部分屏幕空间都分配给其内容以及要编辑的照片。
 
-These sort of apps need to balance all three UI elements:
+![使用活动画布的照片编辑应用的设计示例](images/photo-editor/uap-photo-tabletphone-sbs.png)
 
--   [Navigation](navigation-basics.md) elements help users find and view content. If viewing and finding content is the most important scenario, prioritize navigation elements, filtering and sorting, and search.
--   [Command](commanding-basics.md) elements let the user create, edit, and manipulate content.
+针对侧重于创建的应用的一般建议：
 
-General recommendations for apps with interactive content:
+-   尽量减少[导航](navigation-basics.md)元素的使用。
+-   [命令](commanding-basics.md)元素在侧重于创建的应用中尤为重要。 由于用户将会执行大量的命令，我们建议提供命令历史记录/撤消功能。
 
--   It can be difficult to balance navigation, content, and command elements when all three are important. If possible, consider creating separate screens for browsing, creating, and editing content, or providing mode switches.
-
-## <span id="Commonly_used_content_elements"></span><span id="commonly_used_content_elements"></span><span id="COMMONLY_USED_CONTENT_ELEMENTS"></span>Commonly used content elements
+## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>具有交互式内容的应用
 
 
-Here are some UI elements commonly used to display content. (For a complete list of UI elements, see [Controls and UI elements](https://msdn.microsoft.com/library/windows/apps/dn611856).)
+在具有交互式内容的应用中，用户将创建、查看和编辑内容；许多应用都属于此类别。 这些类型的应用的示例包括：业务线应用、库存管理应用，以及使用户能够创建或修改食谱的烹饪应用。
+
+![协作工具设计，具有交互式内容的应用](images/collaboration-tool/uap-collaboration-tabphone-700.png)
+
+这些种类的应用需要使所有三种 UI 元素保持平衡：
+
+-   [导航](navigation-basics.md)元素帮助用户查找和查看内容。 如果查看和查找内容都是最重要的应用场景，则优先考虑导航元素、筛选和排序以及搜索。
+-   [命令](commanding-basics.md)元素帮助用户创建、编辑和处理内容。
+
+针对具有交互式内容的应用的一般建议：
+
+-   当导航、内容和命令元素都非常重要时，可能很难使这三种元素保持平衡。 如果可能，请考虑创建单独的屏幕，以用于浏览、创建和编辑内容，或提供模式切换。
+
+## <span id="Commonly_used_content_elements"></span><span id="commonly_used_content_elements"></span><span id="COMMONLY_USED_CONTENT_ELEMENTS"></span>常用的内容元素
+
+
+以下是常用于显示内容的一些 UI 元素。 （有关 UI 元素的完整列表，请参阅[控件和 UI 元素](https://msdn.microsoft.com/library/windows/apps/dn611856)。）
 
 <table>
 <colgroup>
@@ -81,32 +81,32 @@ Here are some UI elements commonly used to display content. (For a complete list
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Category</th>
-<th align="left">Elements</th>
-<th align="left">Description</th>
+<th align="left">类别</th>
+<th align="left">元素</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Audio and video</td>
-<td align="left">[Media playback and transport controls](../controls-and-patterns/media-playback.md)</td>
-<td align="left">Plays audio and video.</td>
+<td align="left">音频和视频</td>
+<td align="left">[媒体播放和传输控件](../controls-and-patterns/media-playback.md)</td>
+<td align="left">播放音频和视频。</td>
 </tr>
 <tr class="even">
-<td align="left">Image viewers</td>
-<td align="left">[Flip view](../controls-and-patterns/flipview.md), [image](../controls-and-patterns/images-imagebrushes.md)</td>
-<td align="left">Displays images. The flip view displays images in a collection, such as photos in an album or items in a product details page, one image at a time.</td>
+<td align="left">图像查看器</td>
+<td align="left">[翻转视图](../controls-and-patterns/flipview.md)、[图像](../controls-and-patterns/images-imagebrushes.md)</td>
+<td align="left">显示图像。 翻转视图用于显示集锦中的图像（例如相册中的照片或产品详细信息页中的项目），一次显示一张图像。</td>
 </tr>
 <tr class="odd">
-<td align="left">Lists</td>
-<td align="left">[drop-down list, list box, list view and grid view](../controls-and-patterns/lists.md)</td>
-<td align="left">Presents items in an interactive list or a grid. Use these elements to let users select a movie from a list of new releases or manage an inventory.</td>
+<td align="left">列表</td>
+<td align="left">[下拉列表、列表框、列表视图和网格视图](../controls-and-patterns/lists.md)</td>
+<td align="left">显示交互式列表或网格中的项。 使用这些元素以使用户可以从新发行电影列表中选择一部电影或管理清单。</td>
 </tr>
 <tr class="even">
-<td align="left">Text and text input</td>
-<td align="left"><p>[Text block](../controls-and-patterns/text-block.md), [text box](../controls-and-patterns/text-box.md), [rich edit box](../controls-and-patterns/rich-edit-box.md)</p>
+<td align="left">文本和文本输入</td>
+<td align="left"><p>[文本块](../controls-and-patterns/text-block.md)、[文本框](../controls-and-patterns/text-box.md)、[可编辑对话框](../controls-and-patterns/rich-edit-box.md)</p>
 </td>
-<td align="left">Displays text. Some elements enable the user to edit text. For more info, see [Text controls](../controls-and-patterns/text-controls.md)</td>
+<td align="left">显示文本。 某些元素使用户能够编辑文本。 有关详细信息，请参阅[文本控件](../controls-and-patterns/text-controls.md)</td>
 </tr>
 </tbody>
 </table>
@@ -123,6 +123,6 @@ Here are some UI elements commonly used to display content. (For a complete list
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

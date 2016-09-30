@@ -1,31 +1,31 @@
 ---
-Description: "Here’s the info you need to create a Universal Windows app that can run on any Windows 10-based device, including phones, tablets, and PCs."
-title: How-to guides for Windows 10 apps - Windows app development
+Description: "下面是创建可在任何基于 Windows 10 的设备（包括手机、平板电脑和 PC）上运行的通用 Windows 应用所需的信息。"
+title: "Windows 10 应用的操作方法指南 - Windows 应用开发"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
 translationtype: Human Translation
 ms.sourcegitcommit: 753a917c0ecbf445560203dbc1406acae52e5265
-ms.openlocfilehash: 2b4bae1606f9b51e2d4901218ebd2d616e4c5edc
+ms.openlocfilehash: 97e016047c864026fe0c72e4b7cb819f0fc80748
 
 ---
 
 
-# How-to guides for UWP apps on Windows 10
+# Windows 10 上 UWP 应用的操作方法指南
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Here’s the info you need to create a Universal Windows app that can run on any Windows 10-based device, including phones, tablets, and PCs. This section offers both instructions and code examples organized by the kind of task you want to accomplish.
+下面是创建可在任何基于 Windows 10 的设备（包括手机、平板电脑和 PC）上运行的通用 Windows 应用所需的信息。 本部分中提供的说明和代码示例均按你需完成的任务类别进行组织。
 
-If you'd like an introduction to the Universal Windows Platform (UWP) and how it lets you use the same code to deliver appropriately tailored experiences to multiple Windows device types, see these articles:
+如果你希望大致了解通用 Windows 平台 (UWP) 以及它如何让你能够使用相同的代码正确地将定制体验传递给多种 Windows 设备类型，请参阅以下文章：
 
--   [Create your first Universal Windows Platform app](get-started/create-a-hello-world-app-xaml-universal.md)
--   [Guide to Universal Windows Platform (UWP) apps](get-started/universal-application-platform-guide.md)
--   [What's a Universal Windows Platform app?](get-started/whats-a-uwp.md)
-
-
+-   [创建你的第一个通用 Windows 平台应用](get-started/create-a-hello-world-app-xaml-universal.md)
+-   [通用 Windows 平台 (UWP) 应用指南](get-started/universal-application-platform-guide.md)
+-   [什么是通用 Windows 平台应用？](get-started/whats-a-uwp.md)
 
 
-<!--HONumber=Aug16_HO5-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

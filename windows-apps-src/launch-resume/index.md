@@ -4,23 +4,18 @@ title: "启动、恢复和后台任务"
 description: "本部分介绍在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 translationtype: Human Translation
-ms.sourcegitcommit: 5d0fffc46b1fc4ca2fba1422f2094bd411a65058
-ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
+ms.sourcegitcommit: a8e6145f7a5c75d3b37277b80b07b0b3ad739d5c
+ms.openlocfilehash: ab20c4af5b9a87dc73775d304c314c9861d989d4
 
 ---
 
 # 启动、恢复和后台任务
 
+
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本部分介绍以下内容：
 
-- 在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。
-- 如何使用收缩或扩展激活应用。  
-- 如何使用后台任务，从而允许 UWP 应用即使不在前台时也能执行工作。
-- 应用服务，允许通用 Windows 平台 (UWP) 应用提供可从其他 UWP 应用使用的服务，以便你可以生成以彼此为基础生成的应用。
-- 如何发现连接的设备、在其他设备上启动应用，以及与远程设备上的应用通信，以便你可以创建跨设备流动的用户体验。
-- 如何将初始屏幕添加到你的应用。
+本部分介绍在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。 涉及如何通过使用联系人或扩展激活应用，以及如何使用允许 UWP 应用执行操作的后台任务，即使该应用不在前台运行。 最后，涉及如何将初始屏幕添加到你的应用。
 
 ## 应用生命周期
 
@@ -31,37 +26,38 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 | [处理应用激活](activate-an-app.md)     | 了解如何处理应用激活。                                                                             |
 | [处理应用暂停](suspend-an-app.md)         | 了解当系统暂停你的应用时如何保存重要的应用程序数据。                                 |
 | [处理应用恢复](resume-an-app.md)           | 了解当系统恢复你的应用时如何刷新显示的内容。                                        |
-| [在将应用移动到后台时释放内存](reduce-memory-usage.md)           | 了解如何降低应用处于后台状态时所使用的内存量，以防止该应用终止。                                        |
+
+ 
 
 ## 启动应用
 
+
 | URI 和文件激活                                                                         | 说明                                                                                                                                                                |
 |-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [连接的应用和设备（项目“Rome”）](connected-apps-and-devices.md) | 了解如何发现连接的设备、在其他设备上启动应用，以及与远程设备上的应用通信。 |
-| [针对结果启动应用](how-to-launch-an-app-for-results.md)                               | 了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 |
-| [启动 URI 的默认应用](launch-default-app.md)                                      | 了解如何启动统一资源标识符 (URI) 的默认应用。  |
-| [启动远程设备上的应用](launch-a-remote-app.md)                                     | 了解如何针对远程设备上的 URI 启动应用。 |
-| [处理 URI 激活](handle-uri-activation.md)                                              | 了解如何将应用注册为 URI 方案名称的默认处理程序。 |
-| [支持使用应用 URI 处理程序的 Web 到应用链接](web-to-app-linking.md) | 了解如何将应用注册为 http 或 https 链接的默认处理程序。 |
-| [启动文件的默认应用](launch-the-default-app-for-a-file.md)                      | 了解如何启动某个文件类型的默认应用。  |
-| [处理文件激活](handle-file-activation.md)                                            | 了解如何将你的应用注册为某个文件类型的默认处理程序。  |
-| [保留文件和 URI 方案名称](reserved-uri-scheme-names.md)                             | 本主题列出了不可用于应用的保留文件和 URI 方案名称。  |
-| [使用自动播放自动启动](auto-launching-with-autoplay.md)                                | 了解如何使用自动播放在用户将设备连接到其电脑时，将应用作为一个选项提供。  |
-| [启动 Windows 设置应用](launch-settings-app.md)                                      | 了解如何启动 Windows 设置应用  |
-| [启动 Windows 应用商店应用](launch-store-app.md)                                            | 了解如何启动 Windows 应用商店应用  |
-| [启动 Windows 地图应用](launch-maps-app.md)                                              | 了解如何启动 Windows 地图应用。  |
-| [启动 Windows 人脉应用](launch-people-apps.md)                                                 | 了解如何启动 Windows 人脉应用。  |
+| [针对结果启动应用](how-to-launch-an-app-for-results.md)                               | 了解如何从其他应用启动某个应用，以及在这两者之间交换数据。                                                                                             |
+| [启动 URI 的默认应用](launch-default-app.md)                                      | 了解如何启动统一资源标识符 (URI) 的默认应用。                                                                                               |
+| [处理 URI 激活](handle-uri-activation.md)                                              | 了解如何将应用注册为 URI 方案名称的默认处理程序。                                                                                          |
+| [启动文件的默认应用](launch-the-default-app-for-a-file.md)                      | 了解如何启动某个文件类型的默认应用。                                                                                                                       |
+| [处理文件激活](handle-file-activation.md)                                            | 了解如何将你的应用注册为某个文件类型的默认处理程序。                                                                                                  |
+| [文件类型和 URI 的指南](https://msdn.microsoft.com/library/windows/apps/hh700321) | 通过了解 UWP 应用与其支持的文件类型和协议之间的关系，可以为用户提供更一致和简约的体验。 |
+| [保留文件和 URI 方案名称](reserved-uri-scheme-names.md)                             | 本主题将列出不可用于应用的保留文件和 URI 方案名称。                                                                                |
+| [启动 Windows 设置应用](launch-settings-app.md)                                      | 了解如何启动 Windows 设置应用                                                                                                                              |
+| [启动 Windows 应用商店应用](launch-store-app.md)                                            | 了解如何启动 Windows 应用商店应用                                                                                                                                 |
+| [启动 Windows 地图应用](launch-maps-app.md)                                              | 了解如何启动 Windows 地图应用                                                                                                                                  |
 
-## 后台任务
+ 
+
+## 后台任务和服务
+
+
 
 | 主题                                                                                                            | 说明                                                                                                                                                                                   |
 |------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [使用后台任务支持应用](support-your-app-with-background-tasks.md)                             | 本部分中的主题展示如何通过响应具有后台任务的触发器在后台运行你自己的轻型代码。                                                       |
 | [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
 | [后台任务指南](guidelines-for-background-tasks.md)                                           | 确保你的应用符合运行后台任务的要求。                                                                                                                          |
-| [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)                               | 创建一个后台任务类并注册它，以便在应用不在前台运行时在单独的进程中运行。                                                                                                 |
-| [创建和注册在单个进程中运行的后台任务](create-and-register-a-singleprocess-background-task.md)                               | 创建与前台应用在同一个进程中运行的后台任务类。                                                                                                 |
-| [将多进程的后台任务转换为单进程的后台任务](convert-multiple-process-background-task.md)                               | 了解如何将设计为当应用在后台时在单独进程中运行的后台任务，转换为与前台应用在同一个进程中运行的单进程后台任务。
+| [创建和使用应用服务](how-to-create-and-consume-an-app-service.md)                                | 了解如何编写可以向其他 UWP 应用提供服务的 UWP 应用，以及如何使用这些服务。                                                                                  |
+| [创建和注册后台任务](create-and-register-a-background-task.md)                               | 创建一个后台任务类并注册它，以便在应用不在前台运行时运行。                                                                                                 |
 | [调试后台任务](debug-a-background-task.md)                                                           | 了解如何调试后台任务，其中包括后台任务激活和调试 Windows 事件日志中的跟踪。                                                                        |
 | [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md) | 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。                                                                                                       |
 | [处理取消的后台任务](handle-a-cancelled-background-task.md)                                     | 介绍如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。                                     |
@@ -72,17 +68,12 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 | [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)                 | 了解如何设置控制何时运行后台任务的条件。                                                                                                                  |
 | [在后台传输数据](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | 使用后台传输 API 以便在后台复制文件。                                                                                                                              |
 | [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)                       | 使用后台任务，以最新内容更新应用的动态磁贴。                                                                                                                      |
-| [使用维护触发器](use-a-maintenance-trigger.md)                                                       | 了解如何在设备插入的情况下使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 类在后台运行轻型代码。                             |
+| [使用维护触发器](use-a-maintenance-trigger.md)                                                       | 了解如何在插入设备的情况下使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 类在后台运行轻型代码。                             |
 
-## 应用服务
-
-| 主题                                                                                                            | 说明                                                                                                                                                                                   |
-|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [创建和使用应用服务](how-to-create-and-consume-an-app-service.md)                                | 了解如何编写可以向其他 UWP 应用提供服务的 UWP 应用，以及如何使用这些服务。                                                                                  |
-| [与远程应用服务通信](communicate-with-a-remote-app-service.md) | 了解如何与在远程设备上运行的应用服务交换消息。 |
-| [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-single-process.md)                                | 了解如何将在单独的后台进程中运行的应用服务代码转换为与应用服务主机应用在同一个进程中运行的代码。                                                                                  |
+ 
 
 ## 添加初始屏幕
+
 
 所有 UWP 应用都必须包含初始屏幕，即初始屏幕图像与背景色的结合，两者均可自定义。
 
@@ -111,6 +102,6 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

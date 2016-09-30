@@ -1,67 +1,67 @@
 ---
 author: jwmsft
-description: Explains how to implement a XAML attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
-title: Custom attached properties
+description: "介绍如何将一个 XAML 附加属性实现为依赖属性，以及如何定义让附加属性可用于 XAML 所必需的访问器约定。"
+title: "自定义附加属性"
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 translationtype: Human Translation
-ms.sourcegitcommit: 21ca5391fc4f29c33b3501d05d5ebed986188a3e
-ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: cf6ca169623311e515f02a174224d57652afc753
 
 ---
 
-# Custom attached properties
+# 自定义附加属性
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-An *attached property* is a XAML concept. Attached properties are typically defined as a specialized form of dependency property. This topic explains how to implement an attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
+*附加属性*是一种 XAML 概念。 附加属性通常定义为一种特殊形式的依赖属性。 本主题介绍如何将一个 XAML 附加属性实现为依赖属性，如何定义让附加属性可用于 XAML 所必需的访问器约定。
 
-## Prerequisites
+## 先决条件
 
-We assume that you understand dependency properties from the perspective of a consumer of existing dependency properties, and that you have read the [Dependency properties overview](dependency-properties-overview.md). You should also have read [Attached properties overview](attached-properties-overview.md). To follow the examples in this topic, you should also understand XAML and know how to write a basic Windows Runtime app using C++, C#, or Visual Basic.
+我们假设你能从现有依赖属性的客户角度理解依赖属性，并且已阅读了[依赖属性概述](dependency-properties-overview.md)。 你还应该阅读了[附加属性概述](attached-properties-overview.md)。 要理解本主题中的示例，你还应该理解 XAML，知道如何编写使用 C++、C# 或 Visual Basic 的基本 Windows 运行时应用。
 
-## Scenarios for attached properties
+## 附加属性的使用场景
 
-You might create an attached property when there is a reason to have a property-setting mechanism available for classes other than the defining class. The most common scenarios for this are layout and services support. Examples of existing layout properties are [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772). In a layout scenario, elements that exist as child elements to layout-controlling elements can express layout requirements to their parent elements individually, each setting a property value that the parent defines as an attached property. An example of the services-support scenario in the Windows Runtime API is set of the attached properties of [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527), such as [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561).
+除了定义类，如果有理由提供其他属性设置机制，则可以创建一个附加属性。 最常见的情况是布局和服务支持。 现有布局属性的示例包括 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772)。 在布局场景中，以布局控制元素的子元素形式存在的元素可单独向其父元素表达布局需求，每个元素设置一个被其父元素定义为附加属性的属性值。 Windows 运行时 API 中服务支持方案的一个示例是 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的一组附加属性，例如 [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561)。
 
-**Caution**  An existing limitation of the Windows Runtime XAML implementation is that you cannot animate your custom attached property.
+**警告** Windows 运行时 XAML 实现的一个现有限制是，你无法为自定义附加属性创建动画。
 
-## Registering a custom attached property
+## 注册自定义附加属性
 
-If you are defining the attached property strictly for use on other types, the class where the property is registered does not have to derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). But you do need to have the target parameter for accessors use **DependencyObject** if you follow the typical model of having your attached property also be a dependency property, so that you can use the backing property store.
+如果将附加属性严格定义为在其他类型上使用，在其中注册该属性的类不必派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 但是，如果你采用将附加属性也用作依赖属性的典型模型，则需要让访问器的目标参数使用 **DependencyObject**，以便你可以使用支持属性存储。
 
-Define your attached property as a dependency property by declaring a **public** **static** **readonly** property of type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). You define this property by using the return value of the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) method. The property name must match the attached property name you specify as the **RegisterAttached** *name* parameter, with the string "Property" added to the end. This is the established convention for naming the identifiers of dependency properties in relation to the properties that they represent.
+要将附加属性定义为依赖属性，可声明一个 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 类型的 **public****static****readonly** 属性。 你可以使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法的返回值来定义此属性。 属性名称必须与你指定为 **RegisterAttached***name* 参数的附加属性名称相匹配，并在末尾添加字符串“Property”。 这是相对于其表示的属性来命名依赖属性标识符的既有约定。
 
-The main area where defining a custom attached property differs from a custom dependency property is in how you define the accessors or wrappers. Instead of the using the wrapper technique described in [Custom dependency properties](custom-dependency-properties.md), you must also provide static **Get***PropertyName* and **Set***PropertyName* methods as accessors for the attached property. The accessors are used mostly by the XAML parser, although any other caller can also use them to set values in non-XAML scenarios.
+定义自定义附加属性与自定义依赖属性的主要区别在定义访问器或包装器的方式上。 并不使用[自定义依赖属性](custom-dependency-properties.md)中介绍的包装器技术，你还必须提供静态的 **Get***PropertyName* 和 **Set***PropertyName* 方法作为附加属性的访问器。 访问器多数供 XAML 分析器使用，但任何其他调用方也可以使用它们来设置非 XAML 场景中的值。
 
-**Important**  If you don't define the accessors correctly, the XAML processor can't access your attached property and anyone who tries to use it will probably get a XAML parser error. Also, design and coding tools often rely on the "\*Property" conventions for naming identifiers when they encounter a custom dependency property in a referenced assembly.
+**重要提示** 如果未正确定义访问器，XAML 处理器将无法访问你的附加属性，尝试使用它的任何人都可能会得到一个 XAML 分析器错误。 另外，在引用的程序集中遇到自定义依赖属性时，设计和编码工具常常依赖于“\*Property”约定来命名标识符。
 
-## Accessors
+## 访问器
 
-The signature for the **Get**_PropertyName_ accessor must be this.
+**Get**_PropertyName_ 访问器的签名必须如下所示。
 
-`public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
+`public static` _valueType_ **Get** _PropertyName_ `(DependencyObject target)`
 
-For Microsoft Visual Basic, it is this.
+对于 Microsoft Visual Basic，如下所示。
 
-` Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
+` Public Shared Function Get`_PropertyName_ `(ByVal target As DependencyObject) As ` _valueType_`)`
 
-The *target* object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). The *valueType* return value can also be of a more specific type in your implementation. The basic **Object** type is acceptable, but often you'll want your attached property to enforce type safety. The use of typing in the getter and setter signatures is a recommended type-safety technique.
+*target* 对象可以是你的实现中一种更为具体的类型，但必须派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *valueType* 返回值也可以是你的实现中一种更为具体的类型。 基本的 **Object** 类型也可接受，但通常希望附加属性执行类型安全性。 getter 和 setter 签名中对类型的使用是一种推荐的类型安全技术。
 
-The signature for the **Set***PropertyName* accessor must be this.
+**Set***PropertyName* 访问器的签名必须如下所示。
 
-`  public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
+`  public static void Set`_PropertyName_ ` (DependencyObject target , ` _valueType_` value)`
 
-For Visual Basic, it is this.
+对于 Visual Basic，如下所示。
 
-`Public Shared Sub Set`_PropertyName_` (ByVal target As DependencyObject, ByVal value As `_valueType_`)`
+`Public Shared Sub Set`_PropertyName_ ` (ByVal target As DependencyObject, ByVal value As ` _valueType_`)`
 
-The *target* object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). The *value* object and its *valueType* can be of a more specific type in your implementation. Remember that the value for this method is the input that comes from the XAML processor when it encounters your attached property in markup. There must be type conversion or existing markup extension support for the type you use, so that the appropriate type can be created from an attribute value (which is ultimately just a string). The basic **Object** type is acceptable, but often you'll want further type safety. To accomplish that, put type enforcement in the accessors.
+*target* 对象可以是你的实现中一种更为具体的类型，但必须派生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *value* 对象和它的 *valueType* 可以是你的实现中一种更为具体的类型。 请记住，此方法的值是 XAML 处理器在标记中遇到你的附加属性时提供的输入。 你使用的类型必须具有类型转换或现有的标记扩展支持，这样才能通过该特性值（最终是一个字符串）创建合适的类型。 基本的 **Object** 类型也可接受，但通常希望进一步增强类型安全性。 为此，请在取值函数中增加类型增强措施。
 
-**Note**  It's also possible to define an attached property where the intended usage is through property element syntax. In that case you don't need type conversion for the values, but you do need to assure that the values you intend can be constructed in XAML. [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) is an example of an existing attached property that only supports property element usage.
+**注意** 还可以定义附加属性，它旨在通过属性元素语法使用。 在此情况下，你不需要对值进行类型转换，但需要确保所需的值可采用 XAML 构造。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是一个现有的附加属性示例，它仅支持属性元素用法。
 
-## Code example
+## 代码示例
 
-This example shows the dependency property registration (using the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) method), as well as the **Get** and **Set** accessors, for a custom attached property. In the example, the attached property name is `IsMovable`. Therefore, the accessors must be named `GetIsMovable` and `SetIsMovable`. The owner of the attached property is a service class named `GameService` that doesn't have a UI of its own; its purpose is only to provide the attached property services when the **GameService.IsMovable** attached property is used.
+此示例展示了依赖属性注册（使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法），以及一个自定义附加属性的 **Get** 和 **Set** 访问器。 在此示例中，附加属性名称为 `IsMovable`。 因此，访问器必须命名为 `GetIsMovable` 和 `SetIsMovable`。 附加属性的所有者是自身不具有 UI 的名为 `GameService` 服务类；其目的只是在使用 **GameService.IsMovable** 附加属性时提供附加属性服务。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -84,7 +84,6 @@ This example shows the dependency property registration (using the [**RegisterAt
         }
     }
 ```
-
 ```vb
 Public Class GameService
     Inherits DependencyObject
@@ -105,7 +104,7 @@ Public Class GameService
 End Class
 ```
 
-Defining the attached property in C++ is a bit more complex. You have to decide how to factor between the header and code file. Also, you should expose the identifier as a property with only a **get** accessor, for reasons discussed in [Custom dependency properties](custom-dependency-properties.md). In C++ you must define this property-field relationship explicitly rather than relying on .NET **readonly** keywording and implicit backing of simple properties. You also need to perform the registration of the attached property within a helper function that only gets run once, when the app first starts but before any XAML pages that need the attached property are loaded. The typical place to call your property registration helper functions for any and all dependency or attached properties is from within the **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) constructor in the code for your app.xaml file.
+在 C++ 中定义附加属性要更为复杂。 必须决定如何协调标头文件和代码文件。 另外，应该将标识符公开为只有一个 **get** 访问器的属性，原因如[自定义依赖属性](custom-dependency-properties.md)中所述。 在 C++ 中，必须显式定义这种属性-字段关系，而不是依赖于 .NET **readonly** 关键字和简单属性的隐式支持。 你还需要在首次启动应用时，在加载需要附加属性的任何 XAML 页面之前，在仅运行一次的帮助程序函数中执行附加属性的注册操作。 为所有依赖属性或附加属性调用属性注册帮助程序函数的典型位置是 app.xaml 文件代码的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 构造函数内。
 
 ```cpp
 //
@@ -174,11 +173,11 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## Using your custom attached property in XAML
+## 在 XAML 中使用自定义附加属性
 
-After you have defined your attached property and included its support members as part of a custom type, you must then make the definitions available for XAML usage. To do this, you must map a XAML namespace that will reference the code namespace that contains the relevant class. In cases where you have defined the attached property as part of a library, you must include that library as part of the app package for the app.
+定义附加属性并将它的支持成员包含在一个自定义类型中后，你必须让这些定义可供 XAML 使用。 为此，你必须映射一个 XAML 命名空间，它将引用其中包含相关类的代码命名空间。 如果在一个库中定义了附加属性，必须将该库包含在应用的应用程序包中。
 
-An XML namespace mapping for XAML is typically placed in the root element of a XAML page. For example, for the class named `GameService` in the namespace `UserAndCustomControls` that contains the attached property definitions shown in preceding snippets, the mapping might look like this.
+XAML 的 XML 命名空间映射通常位于一个 XAML 页面的根元素中。 例如，对于命名空间 `UserAndCustomControls` 中有一个名为 `GameService` 的类，它包含前面代码段中所示的附加属性定义，映射类似于这样。
 
 ```XML
 <UserControl
@@ -188,38 +187,38 @@ An XML namespace mapping for XAML is typically placed in the root element of a X
 >
 ```
 
-Using the mapping, you can set your `GameService.IsMovable` attached property on any element that matches your target definition, including an existing type that Windows Runtime defines.
+使用映射，你可以在任何与目标定义相匹配的元素（包括 Windows 运行时定义的一种现有类型）上设置 `GameService.IsMovable` 附加属性。
 
 ```XML
 <Image uc:GameService.IsMovable="true" .../>
 ```
 
-If you are setting the property on an element that is also within the same mapped XML namespace, you still must include the prefix on the attached property name. This is because the prefix qualifies the owner type. The attached property's attribute cannot be assumed to be within the same XML namespace as the element where the attribute is included, even though, by normal XML rules, attributes can inherit namespace from elements. For example, if you are setting `GameService.IsMovable` on a custom type of `ImageWithLabelControl` (definition not shown), and even if both were defined in the same code namespace mapped to same prefix, the XAML would still be this.
+如果在一个元素上设置附加属性并且该元素包含在同一个映射的 XML 命名空间中，则必须在附加属性名称中包含该前缀。 这是因为该前缀限定了所有者类型。 不能假设附加属性的特性与包含该特性的元素位于相同的 XML 命名空间中，尽管按照正常的 XML 规则，特性可从元素继承命名空间。 例如，如果在一种自定义类型 `ImageWithLabelControl`（未给出定义）上设置 `GameService.IsMovable`，即使二者都在映射到同一个前缀的同一个代码命名空间中定义，XAML 仍将是这样的。
 
 ```XML
 <uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../>
 ```
 
-**Note**  If you are writing a XAML UI with C++, you must include the header for the custom type that defines the attached property, any time that a XAML page uses that type. Each XAML page has an associated .xaml.h code-behind header. This is where you should include (using **\#include**) the header for the definition of the attached property's owner type.
+**注意** 如果使用 C++ 编写 XAML UI，只要一个 XAML 页面使用一种自定义类型，就必须包含定义附加属性的该类型的标头文件。 每个 XAML 页面都有一个与之关联的 .xaml.h 代码隐藏标头文件。 你应该在这里包含（使用 **\#include**）附加属性的所有者类型定义的标头文件。
 
-## Value type of a custom attached property
+## 自定义附加属性的值类型
 
-The type that is used as the value type of a custom attached property affects the usage, the definition, or both the usage and definition. The attached property's value type is declared in several places: in the signatures of both the **Get** and **Set** accessor methods, and also as the *propertyType* parameter of the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) call.
+用作自定义附加属性的值类型的类型会影响附加属性使用、定义或同时影响二者。 附加属性的值类型在多个位置声明：在 **Get** 和 **Set** 访问器方法的签名中，以及作为 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 调用的 *propertyType* 参数。
 
-The most common value type for attached properties (custom or otherwise) is a simple string. This is because attached properties are generally intended for XAML attribute usage, and using a string as the value type keeps the properties lightweight. Other primitives that have native conversion to string methods, such as integer, double, or an enumeration value, are also common as value types for attached properties. You can use other value types—ones that don't support native string conversion—as the attached property value. However, this entails making a choice about either the usage or the implementation:
+附加属性（无论是否为自定义的）最常用的值类型是一个简单字符串。 这是因为附加属性一般用作 XAML 特性，并且使用一个字符串作为值类型可保持属性的简单性。 可本地转换为字符串方法的其他原语（例如整型、双精度或枚举值）也是常用的附加属性值类型。 你可以使用其他值类型，不支持本地字符串转换的类型作为附加属性值。 但是，这需要选择是使用还是实现：
 
-- You can leave the attached property as it is, but the attached property can support usage only where the attached property is a property element, and the value is declared as an object element. In this case, the property type does have to support XAML usage as an object element. For existing Windows Runtime reference classes, check the XAML syntax to make sure that the type supports XAML object element usage.
-- You can leave the attached property as it is, but use it only in an attribute usage through a XAML reference technique such as a **Binding** or **StaticResource** that can be expressed as a string.
+- 你可以将附加属性保持不变，但附加属性只能在它是一个属性元素并且它的值声明为对象元素时才支持使用。 在此情况下，属性类型必须支持用作对象元素的 XAML 用法。 对于现有的 Windows 运行时引用类，请检查 XAML 语法，确保该类型支持 XAML 对象元素用法。
+- 你可以将附加属性保持不变，但只能通过一种 XAML 引用技术和特性用法来使用它，例如可表示为一个字符串的 **Binding** 或 **StaticResource**。
 
-## More about the **Canvas.Left** example
+## 有关 **Canvas.Left** 示例的详细信息
 
-In earlier examples of attached property usages we showed different ways to set the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) attached property. But what does that change about how a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) interacts with your object, and when does that happen? We'll examine this particular example further, because if you implement an attached property, it's interesting to see what else a typical attached property owner class intends to do with its attached property values if it finds them on other objects.
+在先前的附加属性用法示例中，我们显示了几种用来设置 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 附加属性的方法。 但是，这对于 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 与你的对象的交互方式有何更改，这是在何时发生的？ 我们将在这个特定示例中深入介绍，原因在于：如果你实现了一个附加属性，则会发现一个有趣的情况，那就是当典型的附加属性所有者类在其他对象上发现了它的附加属性值时，它应当会对这些值进行处理。
 
-The main function of a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) is to be an absolute-positioned layout container in UI. The children of a **Canvas** are stored in a base-class defined property [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514). Of all the panels **Canvas** is the only one that uses absolute positioning. It would've bloated the object model of the common [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) type to add properties that might only be of concern to **Canvas** and those particular **UIElement** cases where they are child elements of a **UIElement**. Defining the layout control properties of a **Canvas** to be attached properties that any **UIElement** can use keeps the object model cleaner.
+[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 的主要功能是成为 UI 中具有绝对位置的布局容器。 **Canvas** 的子项存储在由基类定义的 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 属性中。 在所有的面板中，**Canvas** 是唯一一个使用绝对位置的面板。 如果在添加属性时仅关注 **Canvas**，或者在 **UIElement** 作为 **UIElement** 的子元素的特定情况下，该面板中会充斥着常见 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 类的对象模型。 将 **Canvas** 的布局控件属性定义为可由任何 **UIElement** 用来使对象模型更简洁的附加属性。
 
-In order to be a practical panel, [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) has behavior that overrides the framework-level [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) and [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) methods. This is where **Canvas** actually checks for attached property values on its children. Part of both the **Measure** and **Arrange** patterns is a loop that iterates over any content, and a panel has the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property that makes it explicit what's supposed to be considered the child of a panel. So the **Canvas** layout behavior iterates through these children, and makes static [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) and [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) calls on each child to see whether those attached properties contain a non-default value (default is 0). These values are then used to absolutely position each child in the **Canvas** available layout space according to the specific values provided by each child, and committed using **Arrange**.
+为了成为实际的面板，[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 具有可替代框架级 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 和 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法的行为。 **Canvas** 就是在这里实际检查其子项上的附加属性值。 **Measure** 和 **Arrange** 模式的一部分就是一个遍历任何内容的循环，一个面板具有 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 属性，通过该属性可以明确假设被视为面板子项的内容。 因此，**Canvas** 布局行为会循环访问这些子项，并针对每个子项进行静态 [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) 和 [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) 调用，查看这些附加属性是否包含非默认值（默认值为 0）。 之后，系统将使用这些值，按照由每个子项提供的特定值将每个子项以绝对位置方式放置到 **Canvas** 中的可用布局空间中。然后系统将使用 **Arrange** 提交这些值。
 
-The code looks something like this pseudocode:
+此代码看上去与下面的伪代码相似：
 
 ``` syntax
     protected override Size ArrangeOverride(Size finalSize)
@@ -235,18 +234,18 @@ The code looks something like this pseudocode:
     }
 ```
 
-**Note**  For more info on how panels work, see [XAML custom panels overview](https://msdn.microsoft.com/library/windows/apps/mt228351).
+**注意** 有关面板工作原理的详细信息，请参阅 [XAML 自定义面板概述](https://msdn.microsoft.com/library/windows/apps/mt228351)。
 
-## Related topics
+## 相关主题
 
 * [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)
-* [Attached properties overview](attached-properties-overview.md)
-* [Custom dependency properties](custom-dependency-properties.md)
-* [XAML overview](xaml-overview.md)
+* [附加属性概述](attached-properties-overview.md)
+* [自定义依赖属性](custom-dependency-properties.md)
+* [XAML 概述](xaml-overview.md)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

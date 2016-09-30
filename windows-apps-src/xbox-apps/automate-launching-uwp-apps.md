@@ -1,53 +1,53 @@
 ---
-title: Automate launching Windows 10 Universal Windows Platform (UWP) apps
-description: Developers can use protocol activation and launch activation to automate launching their UWP apps or games for automated testing.
+title: "自动启动 Windows 10 通用 Windows 平台 (UWP) 应用"
+description: "开发人员可以使用协议激活和启动激活来自动启动他们的 UWP 应用或游戏以进行自动化测试。"
 author: listurm
 translationtype: Human Translation
-ms.sourcegitcommit: c5d0f685f4c733cbe4ba4c07aab565b888ddfe58
-ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
+ms.sourcegitcommit: adf2d16f9c208631f91fbcad19d1ea8087cd9cb5
+ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
 
 ---
 
-# Automate launching Windows 10 UWP apps
+# 自动启动 Windows 10 UWP 应用
 
-## Introduction
+## 简介
 
-Developers have several options for achieving automated launching of Universal Windows Platform (UWP) apps. In this paper we will explore methods of launching an app by using protocol activation and launch activation.
+开发人员有多种选项可用于实现自动启动通用 Windows 平台 (UWP) 应用。 在本文中，我们将探讨通过使用协议激活和启动激活来启动应用的方法。
 
-*Protocol activation* allows an app to register itself as a handler for a given protocol. 
+*协议激活*允许应用根据给定协议将自身注册为处理程序。 
 
-*Launch activation* is the normal launching of an app, such as launching from the app tile.
+*启动激活*是正常的应用启动，例如从应用磁贴启动。
 
-With each activation method, you have the option of using the command line or a launcher application. For all activation methods, if the app is currently running, the activation will bring the app to the foreground (which reactivates it) and provide the new activation arguments. This allows flexibility to use activation commands to provide new messages to the app. It is important to note that the project needs to be compiled and deployed for the activation method to run the newly updated app. 
+通过每个激活方法，你可以选择使用命令行或启动器应用程序。 对于所有的激活方法，如果应用当前正在运行，激活会将应用显示到前台（这将重新激活它）并提供新的激活参数。 这允许灵活使用激活命令向应用提供新消息。 请务必注意，需要针对激活方法编译和部署项目才能运行新更新的应用。 
 
-## Protocol activation
+## 协议激活
 
-Follow these steps to set up protocol activation for apps: 
+按照以下步骤来设置适用于应用的协议激活： 
 
-1. Open the **Package.appxmanifest** file in Visual Studio.
-2. Select the **Declarations** tab.
-3. Under the **Available Declarations** drop-down, select **Protocol**, and then select **Add**.
-4. Under **Properties**, in the **Name** field, enter a unique name to launch the app. 
+1. 在 Visual Studio 中打开 **Package.appxmanifest** 文件。
+2. 选择“声明”****选项卡。
+3. 在“可用声明”****下拉列表中，选择“协议”****，然后选择“添加”****。
+4. 在“属性”****下的“名称”****字段中，输入唯一名称以启动应用。 
 
-    ![Protocol activation](images/automate-uwp-apps-1.png)
+    ![协议激活](images/automate-uwp-apps-1.png)
 
-5. Save the file and deploy the project. 
-6. After the project has been deployed, the protocol activation should be set. 
-7. Go to **Control Panel\All Control Panel Items\Default Programs** and select **Associate a file type or protocol with a specific program**. Scroll to the **Protocols** section to see if the protocol is listed. 
+5. 保存文件并部署项目。 
+6. 在部署项目后，应设置协议激活。 
+7. 转到“控制面板”\“所有控制面板项”\“默认程序”****，然后选择“将文件类型或协议与特定程序关联”****。 滚动到“协议”****部分，查看协议是否列出。 
 
-Now that protocol activation is set up, you have two options (the command line or launcher application) for activating the app by using the protocol. 
+现在设置了协议激活，你可以通过两个选项（命令行或启动器应用程序）使用协议激活应用。 
 
-### Command line
+### 命令行
 
-The app can be protocol-activated by using the command line with the command start followed by the protocol name set previously, a colon (“:”), and any parameters. The parameters can be any arbitrary string; however, to take advantage of the Uniform Resource Identifier (URI) capabilities, it is advisable to follow the standard URI format: 
+可以通过使用命令行（命令启动后跟之前设置的协议名称、冒号（“:”）以及任何参数）来协议激活应用。 这些参数可以是任意字符串；但是，为了充分利用统一资源标识符 (URI) 功能，建议遵循标准的 URI 格式： 
 
   ```
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-The Uri object has methods of parsing a URI string in this format. For more information, see [Uri class (MSDN)](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx). 
+Uri 对象有分析此格式的 URI 字符串的方法。 有关详细信息，请参阅 [Uri 类 (MSDN)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.uri.aspx)。 
 
-Examples:
+示例：
 
   ```
   >start bingnews:
@@ -55,11 +55,11 @@ Examples:
   >start myapplication://single-player/level3?godmode=1&ammo=200
   ```
 
-Protocol command-line activation supports Unicode characters up to a 2038-character limit on the raw URI. 
+协议命令行激活在原始 URI 上最多支持 2038 个 Unicode 字符。 
 
-### Launcher application
+### 启动器应用程序
 
-For launching, create a separate application that supports the WinRT API. The C++ code for launching with protocol activation in a launcher program is shown in the following sample, where **PackageURI** is the URI for the application with any arguments; for example `myapplication:` or `myapplication:protocol activation arguments`.
+若要启动，请单独创建一个支持 WinRT API 的应用程序。 以下示例中显示了启动程序中用于通过协议激活启动的 C++ 代码，其中 **PackageURI** 是适用于具有任何参数的应用程序的 URI；例如 `myapplication:` 或 `myapplication:protocol activation arguments`。
 
 ```
 bool ProtocolLaunchURI(Platform::String^ URI)
@@ -98,42 +98,42 @@ Uri(URI));
        }
 }
 ```
-Protocol activation with the launcher application has the same limitations for arguments as protocol activation with the command line. Both support Unicode characters up to a 2038-character limit on the raw URI. 
+启动器应用程序的协议激活与命令行的协议激活具有相同的参数限制。 二者在原始 URI 上都最多支持 2038 个 Unicode 字符。 
 
-## Launch activation
+## 启动激活
 
-You can also launch the app by using launch activation. No setup is required, but the Application User Model ID (AUMID) of the UWP app is needed. The AUMID is the package family name followed by an exclamation point and the application ID. 
+你还可以通过使用启动激活来启动应用。 不需要进行设置，但需要 UWP 应用的应用程序用户模型 ID (AUMID)。 AUMID 是程序包系列名称，后跟一个感叹号和应用程序 ID。 
 
-The best way to obtain the package family name is to complete these steps:
+获取程序包系列名称的最佳方法是完成以下步骤：
 
-1. Open the **Package.appxmanifest** file.
-2. On the **Packaging** tab, enter the **Package name**.
+1. 打开 **Package.appxmanifest** 文件。
+2. 在“打包”****选项卡上，输入“程序包名称”****。
 
-    ![Launch activation](images/automate-uwp-apps-2.png)
+    ![启动激活](images/automate-uwp-apps-2.png)
 
-3. If the **Package family name** is not listed, open PowerShell and run `>get-appxpackage MyPackageName` to find the **PackageFamilyName**.
+3. 如果“程序包系列名称”****未列出，请打开 PowerShell 并运行 `>get-appxpackage MyPackageName` 来查找 **PackageFamilyName**。
 
-The application ID can be found in the **Package.appxmanifest** file (opened in XML view) under the `<Applications>` element.
+在 `<Applications>` 元素下的 **Package.appxmanifest** 文件（在 XML 视图中打开）中可找到应用程序 ID。
 
-### Command line
+### 命令行
 
-A tool for performing a launch activation of a UWP app is installed with the Windows 10 SDK. It can be run from the command line, and it takes the AUMID of the app to be launched as an argument.
+用于执行 UWP 应用启动激活的工具随 Windows 10 SDK 一起安装。 该工具可以从命令行运行，并且它会将应用的 AUMID 作为一个参数启动。
 
 ```
 C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.softwarelogo.appxlauncher.exe <AUMID>
 ```
 
-It would look something like this:
+它看起来如下所示：
 
 ```
 "C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.softwarelogo.appxlauncher.exe" MyPackageName_ph1m9x8skttmg!AppId
 ```
 
-This option does not support command-line arguments. 
+此选项不支持命令行参数。 
 
-### Launcher application
+### 启动器应用程序
 
-You can create a separate application that supports using COM to use for launching. The following example shows C++ code for launching with launch activation in a launcher program. With this code, you can create an **ApplicationActivationManager** object and call **ActivateApplication** passing in the AUMID found previously and any arguments. For more information about the other parameters, see [IApplicationActivationManager::ActivateApplication method (MSDN)](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx).
+你可以单独创建一个支持使用 COM 的应用程序以用于启动。 以下示例显示启动程序中用于通过启动激活启动的 C++ 代码。 使用此代码，你可以创建 **ApplicationActivationManager** 对象并调用传入之前查找的 AUMID 的 **ActivateApplication** 和任何参数。 有关其他参数的详细信息，请参阅 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh706903(v=vs.85).aspx)。
 
 ```
 #include <ShObjIdl.h>
@@ -175,13 +175,13 @@ Manager. hr = 0x%08lx \n", AUMID, hr);
 }
 ```
 
-It is worth noting that this method does support arguments being passed in, unlike the previous method for launching (that is, using the command line).
+值得注意的是，与前面的启动方法（即，使用命令行）不同，此方法支持传入的参数。
 
-## Accepting arguments
+## 接受参数
 
-To accept arguments passed in on activation of the UWP app, you must add some code to the app. To determine if protocol activation or launch activation occurred, override the **OnActivated** event and check the argument type, and then get the raw string or Uri object’s pre-parsed values. 
+若要在激活 UWP 应用时接受传入的参数，必须向该应用添加一些代码。 若要确定进行的是协议激活还是启动激活，请替代 **OnActivated** 事件，并检查参数类型，然后获取原始字符串或 Uri 对象的预分析的值。 
 
-This example shows how to get the raw string.
+此示例介绍如何获取原始字符串。
 
 ```
 void OnActivated(IActivatedEventArgs^ args)
@@ -204,15 +204,11 @@ Platform::String^ argval = launchArgs->Arguments;
     }
 ```
 
-## Summary
-In summary, you can use various methods to launch the UWP app. Depending on the requirements and use cases, different methods may be better suited than others. 
-
-## See also
-- [UWP on Xbox One](index.md)
+## 摘要
+总之，你可以使用各种方法来启动 UWP 应用。 根据要求和使用情况，可能还有更适合的其他方法。 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

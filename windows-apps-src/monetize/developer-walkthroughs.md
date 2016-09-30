@@ -1,32 +1,31 @@
 ---
 author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
-description: Use the walkthroughs in this section to learn how to add banner ads and video interstitial ads to apps by using the Microsoft advertising libraries.
-title: Developer walkthroughs for the Microsoft advertising libraries
+description: "使用本部分中的演练了解如何使用 Microsoft Advertising 库将横幅广告和视频间隙广告添加到应用。"
+title: "Microsoft Advertising 库的开发人员演练"
 translationtype: Human Translation
-ms.sourcegitcommit: 20baef9a06b6cdb4ca4f48f71a8e9e2a34192b0f
-ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b
 
 ---
 
-# Developer walkthroughs for the Microsoft advertising libraries
+# Microsoft Advertising 库的开发人员演练
 
 
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+本部分中的演练介绍如何使用 Microsoft Advertising 库将横幅广告和视频间隙广告添加到应用。
 
-The walkthroughs in this section show you how to add banner ads and video interstitial ads to apps by using the Microsoft advertising libraries.
+有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和视频间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
-For complete sample projects that demonstrate how to add banner and video interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
+## 本部分内容
 
-## In this section
-
-|  Topic    | Description |               
+|  主题    | 描述 |               
 |----------|-------|
-| [Interstitial Ads](interstitial-ads.md)    | Show a video interstitial ads in your app.        |
-| [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)     | Add a banner ad in your XAML/.NET app.        |
-| [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)     | Add a banner ad in your HTML5/JavaScript app.        |
-| [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md)       | Add a banner ad in your Windows Phone 8.x Silverlight app. |
-| [Add advertisements to video content in HTML 5 and JavaScript](add-advertisements-to-video-content.md)     |  Add advertisements to video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML. |
+| [间隙广告](interstitial-ads.md)    | 在应用中显示视频间隙广告。        |
+| [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)     | 在 XAML/.NET 应用中添加横幅广告。        |
+| [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)     | 在 HTML5/JavaScript 应用中添加横幅广告。        |
+| [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)       | 在 Windows Phone 8.x Silverlight 应用中添加横幅广告。 |
 
 
 
@@ -36,6 +35,6 @@ For complete sample projects that demonstrate how to add banner and video inters
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

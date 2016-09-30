@@ -1,95 +1,95 @@
 ---
 author: payzer
-title: Device Portal Xbox Live sandbox API reference
-description: Learn how to access the Xbox Live Sandbox programatically.
+title: "Device Portal Xbox Live 沙盒 API 参考"
+description: "了解如何以编程方式访问 Xbox Live 沙盒。"
 translationtype: Human Translation
 ms.sourcegitcommit: a857ba338a971e651653193ff2149f08b1665a36
-ms.openlocfilehash: 2a0bfa2eecffb2b0f5ed0bc691cb90bcd7191321
+ms.openlocfilehash: c1671db55dcb05ab7a126fad271a5e49146fe9ac
 
 ---
 
-# Xbox Live Sandbox API reference   
-You can get and set your Xbox Live sandbox using this REST API.
+# Xbox Live 沙盒 API 参考   
+你可以使用此 REST API 获取和设置 Xbox Live 沙盒。
 
-## Get the Xbox Live sandbox
+## 获取 Xbox Live 沙盒
 
-**Request**
+**请求**
 
-You can read the current value for the device's Xbox Live sandbox using the following request:
+你可以利用以下请求来读取设备的 Xbox Live 沙盒的当前值：
 
-Method      | Request URI
+方法      | 请求 URI
 :------     | :-----
 GET | /ext/xboxlive/sandbox
 <br />
-**URI parameters**
+**URI 参数**
 
-- None
+- 无
 
-**Request headers**
+**请求标头**
 
-- None
+- 无
 
-**Request body**
+**请求正文**
 
-- None
+- 无
 
-**Response**   
-Sandbox - (String) The current Sandbox the device is in.   
+**响应**   
+Sandbox -（字符串）设备当前所在的沙盒。   
 
-**Status code**
+**状态代码**
 
-This API has the following expected status codes.
+此 API 具有以下预期状态代码。
 
-HTTP status code      | Description
+HTTP 状态代码      | 说明
 :------     | :-----
-200 | The request to access the credentials for the file share was granted.
-4XX | Error codes
-5XX | Error codes
+200 | 已授予访问文件共享凭据的请求。
+4XX | 错误代码
+5XX | 错误代码
 
-## Set the Xbox Live sandbox
-You can change the Xbox Live sandbox for the device using the following request. Note that on Xbox One, the device needs to be restarted before the setting takes effect.
+## 设置 Xbox Live 沙盒
+你可以利用以下请求来更改设备的 Xbox Live 沙盒。 请注意，在 Xbox One 上，设备需要重新启动，设置才会生效。
 
-**Request**
+**请求**
 
-You can set the current value for the device's Xbox Live sandbox using the following request:
+你可以利用以下请求来设置设备的 Xbox Live 沙盒的当前值：
 
-Method      | Request URI
+方法      | 请求 URI
 :------     | :-----
 PUT | /ext/xboxlive/sandbox
 <br />
-**URI parameters**
+**URI 参数**
 
-- None
+- 无
 
-**Request headers**
+**请求标头**
 
-- None
+- 无
 
-**Request body**   
-The request body is a JSON object containing the following field:   
-Sandbox - (String) The new value to set the device's sandbox to.
+**请求正文**   
+请求正文是一个 JSON 对象，包含以下字段：   
+Sandbox -（字符串）要将设备的沙盒设置为该值的新值。
 
-**Response**   
-Sandbox - (String) The current Sandbox the device is in.   
+**响应**   
+Sandbox -（字符串）设备当前所在的沙盒。   
 
-**Status code**
+**状态代码**
 
-This API has the following expected status codes.
+此 API 具有以下预期状态代码。
 
-HTTP status code      | Description
+HTTP 状态代码      | 说明
 :------     | :-----
-200 | The request to access the credentials for the file share was granted.
-4XX | Error codes
-5XX | Error codes
+200 | 已授予访问文件共享凭据的请求。
+4XX | 错误代码
+5XX | 错误代码
 
 <br />
-**Available device families**
+**可用设备系列**
 
 * Windows Xbox
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

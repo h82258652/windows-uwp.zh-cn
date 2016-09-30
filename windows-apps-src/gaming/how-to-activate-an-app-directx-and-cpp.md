@@ -1,27 +1,27 @@
 ---
 author: mtoepke
-title: How to activate an app (DirectX and C++)
-description: This topic shows how to define the activation experience for a Universal Windows Platform (UWP) DirectX app.
+title: "如何激活应用（DirectX 和 C++）"
+description: "本主题介绍了如何为通用 Windows 平台 (UWP) DirectX 应用定义激活体验。"
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0b13604d2b0349817881a5c1c56c311931c90759
+ms.openlocfilehash: 14859d03c7af45a17772c76f8c79b3c1bc56272c
 
 ---
 
-# How to activate an app (DirectX and C++)
+# 如何激活应用（DirectX 和 C++）
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This topic shows how to define the activation experience for a Universal Windows Platform (UWP) DirectX app.
+本主题介绍了如何为通用 Windows 平台 (UWP) DirectX 应用定义激活体验。
 
-## Register the app activation event handler
+## 注册应用激活事件处理程序
 
 
-First, register to handle the [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event, which is raised when your app is started and initialized by the operating system.
+首先，注册以处理 [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，当启动你的应用并由操作系统对你的应用进行初始化时会引发该事件。
 
-Add this code to your implementation of the [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method of your view provider (named **MyViewProvider** in the example):
+将此代码添加到你的查看提供程序（在此示例中称为 **MyViewProvider**）的 [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) 方法的实现中：
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -36,10 +36,10 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## Activate the CoreWindow instance for the app
+## 为应用激活 CoreWindow 实例
 
 
-When your app starts, you must obtain a reference to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) for your app. **CoreWindow** contains the window event message dispatcher that your app uses to process window events. Obtain this reference in your callback for the app activation event by calling [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589). Once you have obtained this reference, activate the main app window by calling [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).
+当你的应用启动时，你必须为你的应用获取对 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的引用。 **CoreWindow** 包含你的应用用于处理窗口事件的窗口事件消息调度程序。 通过调用 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 在你的回调中为应用激活事件获取此引用。 获取此引用后，通过调用 [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254) 激活主应用窗口。
 
 ```cpp
 void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^ args)
@@ -49,10 +49,10 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 }
 ```
 
-## Start processing event message for the main app window
+## 为主屏窗口启动处理事件消息
 
 
-Your callbacks occur as event messages are processed by the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). This callback will not be invoked if you do not call [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's main loop (implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method of your view provider).
+对于应用的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，你的回调作为由 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 处理的事件消息发生。 如果你未从你的应用的主回路调用 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)（在你的查看提供程序的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中实现），将不会调用此回调。
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -79,22 +79,22 @@ void App::Run()
 }
 ```
 
-## Related topics
+## 相关主题
 
 
-* [How to suspend an app (DirectX and C++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [How to resume an app (DirectX and C++)](how-to-resume-an-app-directx-and-cpp.md)
-
- 
+* [如何暂停应用（DirectX 和 C++）](how-to-suspend-an-app-directx-and-cpp.md)
+* [如何恢复应用（DirectX 和 C++）](how-to-resume-an-app-directx-and-cpp.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

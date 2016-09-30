@@ -1,39 +1,39 @@
 ---
 author: drewbatgit
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
-description: This article lists the encoding options that can be used with BitmapEncoder.
-title: BitmapEncoder options reference
+description: "本文列出了可用于 BitmapEncoder 的编码选项。"
+title: "BitmapEncoder 选项参考"
 translationtype: Human Translation
-ms.sourcegitcommit: de54d389488d8298ea1341b0a6f27a476d38584e
-ms.openlocfilehash: 0ccaf55215cb82633313e145a126db92aa6d16e6
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 510cb363b258d20688ea212856af4b7ac0311e61
 
 ---
 
-# BitmapEncoder options reference
+# BitmapEncoder 选项参考
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This article lists the encoding options that can be used with [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). An encoding option is defined by its name, which is a string, and a value in a particular data type ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)). For information about working with images, see [Create, edit, and save bitmap images](imaging.md).
+本文列出了可用于 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 的编码选项。 编码选项由其名称（其名称是一个字符串）和一个采用特定数据类型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)) 的值定义。 有关处理图像的信息，请参阅[图像处理](imaging.md)。
 
-| Name                    | PropertyType | Usage notes                                                                                        | Valid formats |
+| 名称                    | PropertyType | 使用说明                                                                                        | 有效格式 |
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------|---------------|
-| ImageQuality            | single       | Valid values from 0 to 1.0. Higher values indicate higher quality                                 | JPEG, JPEG-XR |
-| CompressionQuality      | single       | Valid values from 0 to 1.0. Higher values indicate a more efficient and slower compression scheme | TIFF          |
-| Lossless                | boolean      | If this is set to true, the ImageQuality option is ignored                                        | JPEG-XR       |
-| InterlaceOption         | boolean      | Whether to interlace the image                                                                    | PNG           |
-| FilterOption            | uint8        | Use the [**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389) enumeration                                | PNG           |
-| TiffCompressionMethod   | uint8        | Use the [**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399) enumeration                    | TIFF          |
-| Luminance               | uint32Array  | An array of 64 elements containing luminance quantization constants                               | JPEG          |
-| Chrominance             | uint32Array  | An array of 64 elements containing chrominance quantization constants                             | JPEG          |
-| JpegYCrCbSubsampling    | uint8        | Use the [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) enumeration                    | JPEG          |
-| SuppressApp0            | boolean      | Whether to suppress the creation of an App0 metadata block                                        | JPEG          |
-| EnableV5Header32bppBGRA | boolean      | Whether to encode to a version 5 BMP which supports alpha                                         | BMP           |
+| ImageQuality            | 单个       | 有效值从 0 到 1.0。 较高的值表示较高的质量。                                 | JPEG、JPEG-XR |
+| CompressionQuality      | 单个       | 有效值从 0 到 1.0。 较高的值表示较高的效率和较低的压缩模式。 | TIFF          |
+| 无损                | boolean      | 如果此参数设置为 true，则将忽略 ImageQuality 选项。                                        | JPEG-XR       |
+| InterlaceOption         | boolean      | 是否隔行扫描图像。                                                                    | PNG           |
+| FilterOption            | uint8        | 使用 [**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389) 枚举。                                | PNG           |
+| TiffCompressionMethod   | uint8        | 使用 [**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399) 枚举。                    | TIFF          |
+| 亮度               | uint32Array  | 包含亮度量化常数的 64 个元素的数组。                               | JPEG          |
+| 色度             | uint32Array  | 包含色度量化常数的 64 个元素的数组。                             | JPEG          |
+| JpegYCrCbSubsampling    | uint8        | 使用 [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) 枚举。                    | JPEG          |
+| SuppressApp0            | boolean      | 是否取消 App0 元数据块的创建。                                        | JPEG          |
+| EnableV5Header32bppBGRA | boolean      | 是否编码到支持 alpha 的版本 5 BMP。                                         | BMP           |
 
  
 
-## Related topics
+## 相关主题
 
-* [Create, edit, and save bitmap images](imaging.md)
+* [图像处理](imaging.md)
  
 
  
@@ -44,6 +44,6 @@ This article lists the encoding options that can be used with [**BitmapEncoder**
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

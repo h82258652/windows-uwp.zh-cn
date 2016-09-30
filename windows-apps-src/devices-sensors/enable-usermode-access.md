@@ -1,30 +1,30 @@
 ---
 author: JordanRh1
-title: Enable usermode access on Windows 10 IoT Core
-description: This tutorial describes how to enable usermode access to GPIO, I2C, SPI, and UART on Windows 10 IoT Core.
+title: "启用对 Windows 10 IoT 核心版的用户模式访问"
+description: "本教程介绍如何对 Windows 10 IoT 核心版上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 363e73101157e1c9cc233d87b3964736c260f665
+ms.openlocfilehash: eddb2ca0aaa4bdbc19b2c3015ec8d599e0ef5584
 
 ---
-# Enable usermode access on Windows 10 IoT Core
+# 启用对 Windows 10 IoT 核心版的用户模式访问
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Windows 10 IoT Core contains new APIs for accessing GPIO, I2C, SPI, and UART directly from usermode. Development boards like Raspberry Pi 2 expose a subset of these connections which enable users to extend a base compute module with custom circuitry to address a particular application. These low level buses are usually shared with other critical onboard functions, with only a subset of GPIO pins and buses exposed on headers. To preserve system stability, it is necessary to specify which pins and buses are safe for modification by usermode applications. 
+Windows 10 IoT 核心版包含的新 API 可用于直接通过用户模式访问 GPIO、I2C、SPI 和 UART。 开发板（如 Raspberry Pi 2）将公开这些连接的子集，这些连接支持用户使用自定义电路扩展基本计算模块来处理特定应用程序。 通常，只需使用 GPIO 引脚的一个子集和标头上公开的总线，即可与其他关键板载功能共享这些低级别总线。 若要保持系统稳定性，必须通过用户模式应用程序指定可供安全修改的引脚和总线。 
 
-This document describes how to specify this configuration in ACPI and provides tools to validate that the configuration was specified correctly. 
+本文档介绍如何在 ACPI 中指定此配置，并提供工具来验证是否正确指定了配置。 
 
 > [!IMPORTANT]
-> The audience for this document is UEFI and ACPI developers. Some familiarity with ACPI, ASL authoring, and SpbCx/GpioClx is assumed.
+> 本文档适用于 UEFI 和 ACPI 开发人员。 假定略微熟悉 ACPI、ASL 编写和 SpbCx/GpioClx。
 
-Usermode access to low level buses on Windows is plumbed through the existing `GpioClx` and `SpbCx` frameworks. A new driver called *RhProxy*, only available on Windows 10 IoT Core, exposes `GpioClx` and `SpbCx` resources to usermode. To enable the APIs, a device node for rhproxy must be declared in your ACPI tables with each of the GPIO and SPB resources that should be exposed to usermode. This document walks through authoring and verifying the ASL. 
+Windows 上低级别总线的用户模式访问通过现有 `GpioClx` 和 `SpbCx` 框架实现。 称为 *RhProxy*、仅适用于 Windows 10 IoT 核心版的新驱动程序会向用户模式公开 `GpioClx` 和 `SpbCx` 资源。 若要启用这些 API，必须在 ACPI 表（内含应向用户模式公开的每个 GPIO 和 SPB 资源）中声明用于 RhProxy 的设备节点。 本文档演示了编写和验证 ASL。 
 
 
-## ASL by example
+## ASL 示例
 
-Let’s walk through the rhproxy device node declaration on Raspberry Pi 2. First, create the ACPI device declaration in the \\_SB scope.  
+演示 Raspberry Pi 2 上的 RhProxy 设备节点声明。 首先，在 \\_SB 作用域中创建 ACPI 设备声明。  
 
 ```cpp
 Device(RHPX) 
@@ -35,15 +35,15 @@ Device(RHPX)
     
 ```
 
-* _HID – Hardware Id. Set this to a vendor-specific hardware ID. 
-* _CID – Compatible Id. Must be “MSFT8000”.  
-* _UID – Unique Id. Set to 1.  
+* _HID – 硬件 ID。 将它设置为特定于供应商的硬件 ID。 
+* _CID – 兼容 ID。 必须为“MSFT8000”。  
+* _UID – 唯一 ID。 设置为 1。  
 
-Next we declare each of the GPIO and SPB resources that should be exposed to usermode. The order in which resources are declared is important because resource indexes are used to associate properties with resources. If there are multiple I2C or SPI busses exposed, the first declared bus is considered the ‘default’ bus for that type, and will be the instance returned by the `GetDefaultAsync()` methods of [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) and [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx). 
+接下来，声明应向用户模式公开的每个 GPIO 和 SPB 资源。 资源声明的顺序非常重要，因为使用资源索引将属性与资源关联起来。 如果存在多条公开的 I2C 或 SPI 总线，声明的第一条总线被视为该类型的“默认”总线，并且会是 [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) 和 [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) 的 `GetDefaultAsync()` 方法返回的实例。 
 
 ### SPI 
 
-Raspberry Pi has two exposed SPI buses. SPI0 has two hardware chip select lines and SPI1 has one hardware chip select line. One SPISerialBus() resource declaration is required for each chip select line for each bus. The following two SPISerialBus resource declarations are for the two chip select lines on SPI0. The DeviceSelection field contains a unique value which the driver interprets as a hardware chip select line identifier. The exact value that you put in the DeviceSelection field depends on how your driver interprets this field of the ACPI connection descriptor.  
+Raspberry Pi 具有两条公开的 SPI 总线。 SPI0 有两条硬件芯片选择线，SPI1 有一条硬件芯片选择线。 每条总线的每条芯片选择线需要一个 SPISerialBus\(\) 资源声明。 以下两个 SPISerialBus 资源声明适用于 SPI0 上的两条芯片选择线。 DeviceSelection 字段包含驱动程序将其解释为硬件芯片选择线标识符的唯一值。 放入 DeviceSelection 字段中的确切值取决于驱动程序解释 ACPI 连接描述符的这一字段的方式。  
 
 ```cpp
 // Index 0 
@@ -84,28 +84,28 @@ SPISerialBus(              // SCKL - GPIO 11 - Pin 23
 
 ```
 
-How does software know that these two resources should be associated with the same bus? The mapping between bus friendly name and resource index is specified in the DSD:  
+软件如何知道这两个资源应该与同一总线关联？ 总线友好名称和资源索引之间的映射在 DSD 中指定：  
 
 ```cpp
 Package(2) { "bus-SPI-SPI0", Package() { 0, 1 }}, 
 ```
 
-This creates a bus named “SPI0” with two chip select lines – resource indexes 0 and 1. Several more properties are required to declare the capabilities of the SPI bus.  
+这将创建名为“SPI0”、具有两条芯片选择线的总线 – 资源索引 0 和 1。 若要声明 SPI 总线的功能，还需要更多属性。  
 
 ```cpp
 Package(2) { "SPI0-MinClockInHz", 7629 }, 
 Package(2) { "SPI0-MaxClockInHz", 125000000 },
 ```
 
-The **MinClockInHz** and **MaxClockInHz** properties specify the minimum and maximum clock speeds that are supported by the controller. The API will prevent users from specifying values outside this range. The clock speed is passed to your SPB driver in the _SPE field of the connection descriptor (ACPI section 6.4.3.8.2.2).  
+**MinClockInHz** 和 **MaxClockInHz** 属性指定控制器所支持的最小和最大时钟速度。 API 会阻止用户指定超出此范围的值。 会将时钟速度传递给连接描述符（ACPI 章节 6.4.3.8.2.2）的 _SPE 字段中的 SPB 驱动程序。  
 
 ```cpp
 Package(2) { "SPI0-SupportedDataBitLengths", Package() { 8 }}, 
 ```
 
-The **SupportedDataBitLengths** property lists the data bit lengths supported by the controller. Multiple values can be specified in a comma-separated list. The API will prevent users from specifying values outside this list. The data bit length is passed to your SPB driver in the _LEN field of the connection descriptor (ACPI section 6.4.3.8.2.2).  
+**SupportedDataBitLengths** 属性列出控制器所支持的数据位长度。 可以在用逗号分隔的列表中指定多个值。 API 会阻止用户指定不在此列表范围内的值。 会将数据位长度传递给连接描述符（ACPI 章节 6.4.3.8.2.2）的 _LEN 字段中的 SPB 驱动程序。  
 
-You can think of these resource declarations as “templates.” Some of the fields are fixed at system boot while others are specified dynamically at runtime. The following fields of the SPISerialBus descriptor are fixed: 
+你可以将这些资源声明视为“模板”。 某些字段在系统启动时是固定的，而其他字段在运行时是动态指定的。 SPISerialBus 描述符的以下字段是固定的： 
 
 * DeviceSelection 
 * DeviceSelectionPolarity 
@@ -113,14 +113,14 @@ You can think of these resource declarations as “templates.” Some of the fie
 * SlaveMode 
 * ResourceSource 
 
-The following fields are placeholders for values specified by the user at runtime: 
+以下字段是由用户在运行时指定的值的占位符： 
 
 * DataBitLength 
 * ConnectionSpeed 
 * ClockPolarity 
 * ClockPhase 
 
-Since SPI1 contains only a single chip select line, a single `SPISerialBus()` resource is declared: 
+由于 SPI1 仅包含一条芯片选择线，因此单个 `SPISerialBus()` 资源如下声明： 
 
 ```cpp
 // Index 2 
@@ -144,25 +144,25 @@ SPISerialBus(              // SCKL - GPIO 21 - Pin 40
 
 ```
 
-The accompanying friendly name declaration – which is required – is specified in the DSD and refers to the index of this resource declaration. 
+随附友好名称声明（这是必需的）在 DSD 中指定，并引用此资源声明的索引。 
 
 ```cpp
 Package(2) { "bus-SPI-SPI1", Package() { 2 }}, 
 ```
 
-This creates a bus named “SPI1” and associates it with resource index 2.  
+这会创建名为“SPI1”的总线，并将其与资源索引 2 关联。  
 
-#### SPI Driver Requirements 
+#### SPI 驱动程序要求 
 
-* Must use `SpbCx` or be SpbCx-compatible 
-* Must have passed the [MITT SPI Tests](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
-* Must support 4Mhz clock speed 
-* Must support 8-bit data length 
-* Must support all SPI Modes: 0, 1, 2, 3 
+* 必须使用 `SpbCx` 或与 SpbCx 兼容 
+* 必须已通过 [MITT SPI 测试](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
+* 必须支持 4Mhz 时钟速度 
+* 必须支持 8 位数据长度 
+* 必须支持所有 SPI 模式：0、1、2、3 
 
 ### I2C 
 
-Next, we declare the I2C resources. Raspberry Pi exposes a single I2C bus on pins 3 and 5. 
+接下来，声明 I2C 资源。 Raspberry Pi 公开了引脚 3 和 5 上的一条 I2C 总线。 
 
 ```cpp
 // Index 3 
@@ -178,42 +178,42 @@ I2CSerialBus(              // Pin 3 (GPIO2, SDA1), 5 (GPIO3, SCL1)
 
 ```
 
-The accompanying friendly name declaration – which is required – is specified in the DSD: 
+随附友好名称声明（这是必需的）在 DSD 中指定： 
 
 ```cpp
 Package(2) { "bus-I2C-I2C1", Package() { 3 }}, 
 ```
 
-This declares an I2C bus with friendly name “I2C1” that refers to resource index 3, which is the index of the I2CSerialBus() resource that we declared above. 
+这将声明友好名称为“I2C1”、引用资源索引 3（它是以上声明的 I2CSerialBus() 资源的索引）的 I2C 总线。 
 
-The following fields of the I2CSerialBus() descriptor are fixed: 
+I2CSerialBus\(\) 描述符的以下字段是固定的： 
 
 * SlaveMode 
 * ResourceSource 
 
-The following fields are placeholders for values specified by the user at runtime. 
+以下字段是由用户在运行时指定的值的占位符。 
 
 * SlaveAddress 
 * ConnectionSpeed 
 * AddressingMode 
 
-#### I2C Driver Requirements 
+#### I2C 驱动程序要求 
 
-* Must use SpbCx or be SpbCx-compatible 
-* Must have passed the [MITT I2C Tests](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx) 
-* Must support 7-bit addressing 
-* Must support 100kHz clock speed 
-* Must support 400kHz clock speed 
+* 必须使用 SpbCx 或与 SpbCx 兼容 
+* 必须已通过 [MITT I2C 测试](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx) 
+* 必须支持 7 位寻址 
+* 必须支持 100kHz 时钟速度 
+* 必须支持 400kHz 时钟速度 
 
 ### GPIO 
 
-Next, we declare all the GPIO pins that are exposed to usermode. We offer the following guidance in deciding which pins to expose: 
+接下来，声明向用户模式公开的所有 GPIO 引脚。 提供以下用于确定要公开的引脚的指南： 
 
-* Declare all pins on exposed headers. 
-* Declare pins that are connected to useful onboard functions like buttons and LEDs. 
-* Do not declare pins that are reserved for system functions or are not connected to anything. 
+* 声明已公开标头上的所有引脚。 
+* 声明连接到有用板载功能（如按钮和 LED）的引脚。 
+* 不要声明为系统功能保留的引脚，也不要声明未连接任何内容的引脚。 
 
-The following block of ASL declares two pins – GPIO4 and GPIO5. The other pins are not shown here for brevity. Appendix C contains a sample powershell script which can be used to generate the GPIO resources. 
+以下 ASL 块声明两个引脚 – GPIO4 和 GPIO5。 为了简明起见，此处未显示其他引脚。 附录 C 包含可以用于生成 GPIO 资源的 PowerShell 脚本示例。 
 
 ```cpp
 // Index 4 – GPIO 4 
@@ -225,77 +225,77 @@ GpioIO(Shared, PullUp, , , , “\\_SB.GPI0”, , , , ) { 5 }
 GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 } 
 ```
 
-The following requirements must be observed when declaring GPIO pins: 
+声明 GPIO 引脚时，必须遵守以下要求： 
 
-* Only memory mapped GPIO controllers are supported. GPIO controllers interfaced over I2C/SPI are not supported. The controller driver is a memory mapped controller if it sets the [MemoryMappedController](https://msdn.microsoft.com/library/windows/hardware/hh439449.aspx) flag in the [CLIENT_CONTROLLER_BASIC_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/hh439358.aspx) structure in response to the [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) callback. 
-* Each pin requires both a GpioIO and a GpioInt resource. The GpioInt resource must immediately follow the GpioIO resource and must refer to the same pin number. 
-* GPIO resources must be ordered by increasing pin number. 
-* Each GpioIO and GpioInt resource must contain exactly one pin number in the pin list. 
-* The ShareType field of both descriptors must be Shared 
-* The EdgeLevel field of the GpioInt descriptor must be Edge 
-* The ActiveLevel field of the GpioInt descriptor must be ActiveBoth 
-* The PinConfig field 
-  * Must be the same in both the GpioIO and GpioInt descriptors 
-  * Must be one of PullUp, PullDown, or PullNone. It cannot be PullDefault.
-  * The pull configuration must match the power-on state of the pin. Putting the pin in the specified pull mode from power-on state must not change the state of the pin. For example, if the datasheet specifies that the pin comes up with a pull up, specify PinConfig as PullUp.  
+* 仅支持内存映射的 GPIO 控制器。 通过 I2C/SPI 交互的 GPIO 控制器不受支持。 如果控制器驱动程序在 [CLIENT_CONTROLLER_BASIC_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/hh439358.aspx) 结构中设置 [MemoryMappedController](https://msdn.microsoft.com/library/windows/hardware/hh439449.aspx) 标志来响应 [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) 回调，则它是内存映射的控制器。 
+* 每个引脚都需要 GpioIO 和 GpioInt 资源。 GpioInt 资源必须紧跟着 GpioIO 资源，并且必须引用相同的引脚编号。 
+* 必须按升序引脚编号对 GPIO 资源进行排序。 
+* 每个 GpioIO 和 GpioInt 资源都必须恰好包含引脚列表中的一个引脚编号。 
+* 这两个描述符的 ShareType 字段必须为“Shared” 
+* GpioInt 描述符的 EdgeLevel 字段必须为“Edge” 
+* GpioInt 描述符的 ActiveLevel 字段必须为“ActiveBoth” 
+* PinConfig 字段 
+  * 在 GpioIO 和 GpioInt 描述符中必须相同 
+  * 必须是 PullUp、PullDown 或 PullNone 之中的一个。 它不能是 PullDefault。
+  * 拉配置必须匹配引脚的通电状态。 将引脚从通电状态置于指定的拉模式不得改变引脚的状态。 例如，如果数据表指定引脚出现了一个上拉，请将“PinConfig”指定为“PullUp”。  
 
-Firmware, UEFI, and driver initialization code should not change the state of a pin from its power-on state during boot. Only the user knows what’s attached to a pin and therefore which state transitions are safe. The power-on state of each pin must be documented so that users can design hardware that correctly interfaces with a pin. A pin must not change state unexpectedly during boot. 
+启动期间，固件、UEFI 和驱动程序初始化代码不应改变处于通电状态的引脚的状态。 只有用户清楚附加到引脚的内容，从而知道哪些状态转换是安全的。 必须记录每个引脚的通电状态，以便用户可以设计与引脚正确交互的硬件。 启动期间，引脚不得意外改变状态。 
 
-If an exposed pin has multiple alternate functions, it is the responsibility of firmware to initialize the pin in the correct mux configuration for subsequent use by the OS. Dynamically changing the function of a pin (“muxing”) is not currently supported on Windows. 
+如果公开的引脚具有多个备用功能，则由固件负责使用正确的复用配置初始化引脚，以供操作系统后续使用。 动态改变引脚的功能（即“复用”）当前在 Windows 上不受支持。 
 
-#### Supported Drive Modes 
+#### 支持的驱动器模式 
 
-If your GPIO controller supports built-in pull up and pull down resistors in addition to high impedance input and CMOS output, you must specify this with the optional SupportedDriveModes property. 
+如果你的 GPIO 控制器除了支持内置的上拉和下拉电阻器之外，还支持高阻抗输入和 CMOS 输出，则必须使用可选 SupportedDriveModes 属性进行指定。 
 
 ```cpp
 Package (2) { “GPIO-SupportedDriveModes”, 0xf }, 
 ```
 
-The SupportedDriveModes property indicates which drive modes are supported by the GPIO controller. In the example above, all of the following drive modes are supported. The property is a bitmask of the following values: 
+SupportedDriveModes 属性指示哪些驱动器模式受 GPIO 控制器支持。 在上述示例中，以下所有驱动器模式都受支持。 属性是以下值的位掩码： 
 
-| Flag Value | Drive Mode | Description |
+| 标志值 | 驱动器模式 | 描述 |
 |------------|------------|-------------|
-| 0x1        | InputHighImpedance | The pin supports high impedance input, which corresponds to the “PullNone” value in ACPI. |
-| 0x2        | InputPullUp | The pin supports a built-in pull-up resistor, which corresponds to the “PullUp” value in ACPI. |
-| 0x4        | InputPullDown | The pin supports a built-in pull-down resistor, which corresponds to the “PullDown” value in ACPI. |
-| 0x8        | OutputCmos | The pin supports generating both strong highs and strong lows (as opposed to open drain). |
+| 0x1        | InputHighImpedance | 引脚支持高阻抗输入，对应于 ACPI 中的“PullNone”值。 |
+| 0x2        | InputPullUp | 引脚支持内置的上拉电阻器，对应于 ACPI 中的“PullUp”值。 |
+| 0x4        | InputPullDown | 引脚支持内置的下拉电阻器，对应于 ACPI 中的“PullDown”值。 |
+| 0x8        | OutputCmos | 引脚支持生成很强的高电平和很强的低电平（相对于开漏）。 |
 
-InputHighImpedance and OutputCmos are supported by almost all GPIO controllers. If the SupportedDriveModes property is not specified, this is the default. 
+几乎所有 GPIO 控制器都支持 InputHighImpedance 和 OutputCmos。 如果未指定 SupportedDriveModes 属性，则这是默认设置。 
 
-If a GPIO signal goes through a level shifter before reaching an exposed header, declare the drive modes supported by the SOC, even if the drive mode would not be observable on the external header. For example, if a pin goes through a bidirectional level shifter that makes a pin appear as open drain with resistive pull up, you will never observe a high impedance state on the exposed header even if the pin is configured as a high impedance input. You should still declare that the pin supports high impedance input. 
+如果 GPIO 信号在到达公开的标头之前经过电平位移器，请声明受 SOC 支持的驱动器模式，即使在外部标头上观察不到驱动器模式也是如此。 例如，如果引脚经过使引脚表现为具有电阻式上拉的开漏的双向电平位移器，你将永远不会在公开的标头上观察到高阻抗状态，即使该引脚配置为高阻抗输入也是如此。 你仍应声明引脚支持高阻抗输入。 
 
-#### Pin Numbering 
+#### 引脚编号 
 
-Windows supports two pin numbering schemes: 
+Windows 支持两种引脚编号方案： 
 
-* Sequential Pin Numbering – Users see numbers like 0, 1, 2 … up to the number of exposed pins. 0 is the first GpioIo resource declared in ASL, 1 is the second GpioIo resource declared in ASL, and so on. 
-* Native Pin Numbering – Users see the pin numbers specified in GpioIo descriptors, e.g. 4, 5, 12, 13, … .  
+* 顺序引脚编号 – 用户看到诸如 0、1、2 ... 的数字 一直到公开的引脚数。 0 是 ASL 中声明的第一个 GpioIo 资源，1 是 ASL 中声明的第二个 GpioIo 资源，依此类推。 
+* 本机引脚编号 – 用户看到 GpioIo 描述符中指定的引脚编号，例如 4、5、12、13 … 。  
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 }, 
 ```
 
-The **UseDescriptorPinNumbers** property tells Windows to use native pin numbering instead of sequential pin numbering. If the UseDescriptorPinNumbers property is not specified or its value is zero, Windows will default to Sequential pin numbering. 
+**UseDescriptorPinNumbers** 属性会告诉 Windows 使用本机引脚编号而不是顺序引脚编号。 如果未指定 UseDescriptorPinNumbers 属性或其值为零，Windows 将默认使用顺序引脚编号。 
 
-If native pin numbering is used, you must also specify the **PinCount** property. 
+如果使用本机引脚编号，还必须指定 **PinCount** 属性。 
 
 ```cpp
 Package (2) { “GPIO-PinCount”, 54 }, 
 ```
 
-The **PinCount** property should match the value returned through the **TotalPins** property in the [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) callback of the `GpioClx` driver. 
+**PinCount** 属性应与通过 `GpioClx` 驱动程序的 [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) 回调中的 **TotalPins** 属性返回的值相匹配。 
 
-Choose the numbering scheme that is most compatible with existing published documentation for your board. For example, Raspberry Pi uses native pin numbering because many existing pinout diagrams use the BCM2835 pin numbers. MinnowBoardMax uses sequential pin numbering because there are few existing pinout diagrams, and sequential pin numbering simplifies the developer experience because only 10 pins are exposed out of more than 200 pins. The decision to use sequential or native pin numbering should aim to reduce developer confusion. 
+选择与你的开发板的现有发布文档最兼容的编号方案。 例如，Raspberry Pi 使用本机引脚编号，因为许多现有的引出线图使用 BCM2835 引脚编号。 MinnowBoardMax 使用顺序引脚编号（因为有几个现有的引出线图），并且顺序引脚编号简化了开发人员体验（因为超过 200 个引脚中只公开了 10 个引脚）。 决定使用顺序引脚编号还是使用本机引脚编号应以减少开发人员混淆为目标。 
 
-#### GPIO Driver Requirements 
+#### GPIO 驱动程序要求 
 
-* Must use `GpioClx`
-* Must be on-SOC memory mapped 
-* Must use emulated ActiveBoth interrupt handling 
+* 必须使用 `GpioClx`
+* 必须是 SOC 上的内存映射 
+* 必须使用模拟 ActiveBoth 中断处理 
 
 ### UART 
 
-UART is not supported on Raspberry Pi at the time of writing, so the following UART declaration is from MinnowBoardMax. 
+编写时，UART 在 Raspberry Pi 上不受支持，因此以下 UART 声明来自 MinnowBoardMax。 
 
 ```cpp
 // Index 2 
@@ -316,59 +316,59 @@ UARTSerialBus(           // Pin 17, 19 of JP1, for SIO_UART2
     )
 ```
 
-Only the ResourceSource field is fixed while all other fields are placeholders for values specified at runtime by the user. 
+仅 ResourceSource 字段是固定的，而所有其他字段是由用户在运行时指定的值的占位符。 
 
-The accompanying friendly name declaration is: 
+随附友好名称声明如下所示： 
 
 ```cpp
 Package(2) { "bus-UART-UART2", Package() { 2 }}, 
 ```
 
-This assigns the friendly name “UART2” to the controller, which is the identifier users will use to access the bus from usermode.  
+这会将友好名称“UART2”分配给控制器，该名称是用户将用于从用户模式访问总线的标识符。  
 
-## Runtime Pin Muxing 
+## 运行时引脚复用 
 
-Pin muxing is the ability to use the same physical pin for different functions. Several different on-chip peripherals, such as an I2C controller, SPI controller, and GPIO controller, might be routed to the same physical pin on a SOC. The mux block controls which function is active on the pin at any given time. Traditionally, firmware is responsible for establishing function assignments at boot, and this assignment remains static through the boot session. Runtime pin muxing adds the ability to reconfigure pin function assignments at runtime. Enabling users to choose a pin’s function at runtime speeds development by enabling users to quickly reconfigure a board’s pins, and enables hardware to support a broader range of applications than would a static configuration. 
+引脚复用可以将同一物理引脚用于不同功能。 多个不同的芯片上外围设备（例如 I2C 控制器、SPI 控制器和 GPIO 控制器）可以路由到 SOC 上的同一物理引脚。 复用块控制哪项功能在任何给定时间在引脚上处于活动状态。 通常，固件负责在启动时建立功能分配，此分配通过启动会话保持静态。 运行时引脚复用允许在运行时重新配置引脚功能分配。 支持用户在运行时选择引脚的功能可加速开发（方法是支持用户快速重新配置开发板的引脚），同时使硬件可以支持范围更广的应用程序（相较于静态配置而言）。 
 
-Users consume muxing support for GPIO, I2C, SPI, and UART without writing any additional code. When a user opens a GPIO or bus using [OpenPin()](https://msdn.microsoft.com/library/dn960157.aspx) or [FromIdAsync()](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync), the underlying physical pins are automatically muxed to the requested function. If the pins are already in use by a different function, the OpenPin() or FromIdAsync() call will fail. When the user closes the device by disposing the [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx), [I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx), [SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx), or [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx) object, the pins are released, allowing them to later be opened for a different function. 
+无需编写任何其他代码，用户就可以使用对 GPIO、I2C、SPI 和 UART 的复用支持。 当用户使用 [OpenPin\(\)](https://msdn.microsoft.com/library/dn960157.aspx) 或 [FromIdAsync\(\)](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync) 打开 GPIO 或总线时，基础物理引脚会自动复用为请求的功能。 如果其他功能已在使用该引脚，OpenPin\(\) 或 FromIdAsync\(\) 调用将失败。 当用户通过释放 [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx)、[I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx)、[SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx) 或 [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx) 对象关闭设备时，会释放引脚，从而允许它们稍后供其他功能打开。 
 
-Windows contains built-in support for pin muxing in the [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439515.aspx), [SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh406203.aspx), and [SerCx](https://msdn.microsoft.com/library/windows/hardware/dn265349.aspx) frameworks. These frameworks work together to automatically switch a pin to the correct function when a GPIO pin or bus is accessed. Access to the pins is arbitrated to prevent conflicts among multiple clients. In addition to this built-in support, the interfaces and protocols for pin muxing are general purpose and can be extended to support additional devices and scenarios. 
+Windows 在 [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439515.aspx)、[SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh406203.aspx) 和 [SerCx](https://msdn.microsoft.com/library/windows/hardware/dn265349.aspx) 框架中包含对引脚复用的内置支持。 当访问 GPIO 引脚或总线时，这些框架协同工作，以自动将引脚切换到正确的功能。 仲裁对引脚的访问，以防止在多个客户端之间发生冲突。 除了此内置支持，适用于引脚复用的接口和协议是通用的，可以进行扩展以支持其他设备和方案。 
 
-This document first describes the underlying interfaces and protocols involved in pin muxing, and then describes how to add support for pin muxing to GpioClx, SpbCx, and SerCx controller drivers. 
+本文档首先介绍引脚复用所涉及的基础接口和协议，然后介绍如何将对引脚复用的支持添加到 GpioClx、SpbCx 和 SerCx 控制器驱动程序。 
 
-### Pin Muxing Architecture 
+### 引脚复用体系结构 
 
-This section describes the underlying interfaces and protocols involved in pin muxing. Knowledge of the underlying protocols is not necessarily needed to support pin muxing with GpioClx/SpbCx/SerCx drivers. For details on how to support pin muxing with GpioCls/SpbCx/SerCx drivers, see [Implementing pin muxing support in GpioClx client drivers](#supporting-muxing-support-in-GpioClx-client-drivers) and [Consuming muxing support in SpbCx and SerCx controller drivers](#supporting-muxing-in-SpbCx-and-SerCx-controller-drivers). 
+本部分介绍引脚复用所涉及的基础接口和协议。 支持 GpioClx/SpbCx/SerCx 驱动程序的引脚复用不一定非要了解基础协议的知识。 有关如何支持 GpioCls/SpbCx/SerCx 驱动程序的引脚复用的详细信息，请参阅[在 GpioClx 客户端驱动程序中实现引脚复用支持](#supporting-muxing-support-in-GpioClx-client-drivers)和[在 SpbCx 和 SerCx 控制器驱动程序中使用复用支持](#supporting-muxing-in-SpbCx-and-SerCx-controller-drivers)。 
 
-Pin muxing is accomplished by the cooperation of several components. 
+通过多个组件的协作实现引脚复用。 
 
-* Pin muxing servers – these are drivers that control the pin muxing control block. Pin muxing servers receive pin muxing requests from clients via requests to reserve muxing resources (via *IRP_MJ_CREATE*) requests, and requests to switch a pin’s function (via *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* requests). The pin muxing server is usually the GPIO driver, since the muxing block is sometimes part of the GPIO block. Even if the muxing block is a separate peripheral, the GPIO driver is a logical place to put muxing functionality. 
-* Pin muxing clients – these are drivers that consume pin muxing. Pin muxing clients receive pin muxing resources from ACPI firmware. Pin muxing resources are a type of connection resource and are managed by the resource hub. Pin muxing clients reserve pin muxing resources by opening a handle to the resource. To effect a hardware change, clients must commit the configuration by sending an *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* request. Clients release pin muxing resources by closing the handle, at which point muxing configuration is reverted to its default state. 
-* ACPI firmware – specifies muxing configuration with `MsftFunctionConfig()` resources. MsftFunctionConfig resources express which pins, in which muxing configuration, are required by a client. MsftFunctionConfig resources contain function number, pull configuration, and list of pin numbers. MsftFunctionConfig resources are supplied to pin muxing clients as hardware resources, which are received by drivers in their PrepareHardware callback similarly to GPIO and SPB connection resources. Clients receive a resource hub ID which can be used to open a handle to the resource. 
+* 引脚复用服务器 – 这些是控制引脚复用控制块的驱动程序。 引脚复用服务器通过请求保留复用资源（通过 *IRP_MJ_CREATE* 请求）和请求切换引脚的功能（通过 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求），从客户端接收引脚复用请求。 引脚复用服务器通常是 GPIO 驱动程序，因为复用块有时是 GPIO 块的一部分。 即使复用块是单独的外围设备，GPIO 驱动程序也是用于放置复用功能的逻辑位置。 
+* 引脚复用客户端 – 这些是使用引脚复用的驱动程序。 引脚复用客户端从 ACPI 固件接收引脚复用资源。 引脚复用资源是一种连接资源，受资源中心管理。 引脚复用客户端通过打开资源的句柄来保留引脚复用资源。 若要使硬件更改生效，客户端必须通过发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求来提交配置。 客户端通过关闭句柄释放引脚复用资源，其中点复用配置会还原为其默认状态。 
+* ACPI 固件 – 指定具有 `MsftFunctionConfig()` 资源的复用配置。 MsftFunctionConfig 资源表示的管脚中具有客户端所需的复用配置。 MsftFunctionConfig 资源包含功能编号、拉配置和管脚编号列表。 MsftFunctionConfig 资源提供给管脚复用客户端作为硬件资源，驱动程序在其 PrepareHardware 回调中接收这些资源（类似于 GPIO 和 SPB 连接资源）。 客户端接收可用于打开资源句柄的资源中心 ID。 
 
-> You must pass the `/MsftInternal` command line switch to `asl.exe` to compile ASL files containing `MsftFunctionConfig()` descriptors since these descriptors are currently under review by the ACPI working committee. For example: `asl.exe /MsftInternal dsdt.asl`
+> 必须将 `/MsftInternal` 命令行开关传递到 `asl.exe`，才能编译包含 `MsftFunctionConfig()` 描述符的 ASL 文件，因为 ACPI 工作委员会当前正在审查这些描述符。 例如： `asl.exe /MsftInternal dsdt.asl`
 
-The sequence of operations involved in pin muxing is shown below. 
+引脚复用中涉及的操作顺序如下所示。 
 
-![Pin muxing client server interaction](images/usermode-access-diagram-1.png)
+![引脚复用客户端服务器交互](images/usermode-access-diagram-1.png)
 
-1.  The client receives MsftFunctionConfig resources from ACPI firmware in its [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) callback.
-2.  The client uses the resource hub helper function `RESOURCE_HUB_CREATE_PATH_FROM_ID()` to create a path from the resource ID, then opens a handle to the path (using [ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx), [IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx), or [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)).
-3.  The server extracts the resource hub ID from the file path using resource hub helper functions `RESOURCE_HUB_ID_FROM_FILE_NAME()`, then queries the resource hub to get the resource descriptor.
-4.  The server performs sharing arbitration for each pin in the descriptor and completes the IRP_MJ_CREATE request.
-5.  The client issues an *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* request on the received handle.
-6.  In response to *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*, the server performs the hardware muxing operation by making the specified function active on each pin.
-7.  The client proceeds with operations that depend on the requested pin muxing configuration.
-8.  When the client no longer requires the pins to be muxed, it closes the handle.
-9.  In response to the handle being closed, the server reverts the pins back to their initial state.
+1.  客户端在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回调中从 ACPI 固件接收 MsftFunctionConfig 资源。
+2.  客户端使用资源中心帮助程序函数 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 从资源 ID 创建路径，然后打开路径句柄（使用 [ZwCreateFile\(\)](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer\(\)](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) 或 [WdfIoTargetOpen\(\)](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)）。
+3.  服务器使用资源中心帮助程序函数 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 从文件路径提取资源中心 ID，然后查询资源中心以获取资源描述符。
+4.  服务器为描述符中的每个引脚执行共享仲裁，然后完成 IRP_MJ_CREATE 请求。
+5.  客户端在收到的句柄上发出 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 请求。
+6.  为响应 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*，服务器通过使每个引脚上的特定功能处于活动状态来执行硬件复用操作。
+7.  客户端将继续执行取决于所请求的引脚复用配置的操作。
+8.  当客户端不再需要复用引脚时，它会关闭句柄。
+9.  为响应要关闭的句柄，服务器会将引脚恢复回其初始状态。
 
-### Protocol description for pin muxing clients
+### 引脚复用客户端的协议描述
 
-This section describes how a client consumes pin muxing functionality. This does not apply to `SerCx` and `SpbCx` controller drivers, since the frameworks implement this protocol on behalf of controller drivers.
+本部分介绍了客户端如何使用引脚复用功能。 这不适用于 `SerCx` 和 `SpbCx` 控制器驱动程序，因为框架会代表控制器驱动程序实现此协议。
 
-####    Parsing resources
+####    解析资源
 
-A WDF driver receives `MsftFunctionConfig()` resources in its [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) routine. MsftFunctionConfig resources can be identified by the following fields:
+WDF 驱动程序在其 [EvtDevicePrepareHardware\(\)](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 例程中接收 `MsftFunctionConfig()` 资源。 MsftFunctionConfig 资源可以由以下字段来标识：
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -376,7 +376,7 @@ CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Class = CM_RESOURCE_CONNECTION_CLAS
 CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Type = CM_RESOURCE_CONNECTION_TYPE_FUNCTION_CONFIG
 ```
 
-An `EvtDevicePrepareHardware()` routine might extract MsftFunctionConfig resources as follows:
+`EvtDevicePrepareHardware()` 例程可能会提取 MsftFunctionConfig 资源，如下所示：
 
 ```cpp
 EVT_WDF_DEVICE_PREPARE_HARDWARE evtDevicePrepareHardware;
@@ -430,9 +430,9 @@ evtDevicePrepareHardware (
 }
 ```
 
-####    Reserving and committing resources
+####    保留和提交资源
 
-When a client wants to mux pins, it reserves and commits the MsftFunctionConfig resource. The following example shows how a client might reserve and commit MsftFunctionConfig resources.
+当客户端想要复用管脚时，它会保留并提交 MsftFunctionConfig 资源。 以下示例演示客户端会如何保留并提交 MsftFunctionConfig 资源。
 
 ```cpp
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -503,57 +503,57 @@ NTSTATUS AcquireFunctionConfigResource (
 }
 ```
 
-The driver should store the WDFIOTARGET in one of its context areas so that it can be closed later. When the driver is ready to release the muxing configuration, it should close the resource handle by calling [WdfObjectDelete()](https://msdn.microsoft.com/library/windows/hardware/ff548734.aspx), or [WdfIoTargetClose()](https://msdn.microsoft.com/library/windows/hardware/ff548586.aspx) if you intend to reuse the WDFIOTARGET.
+驱动程序应该在它的其中一个上下文区域中存储 WDFIOTARGET，以便它可以稍后进行关闭。 当驱动程序准备释放复用配置时，它应该通过调用 [WdfObjectDelete\(\)](https://msdn.microsoft.com/library/windows/hardware/ff548734.aspx) 或 [WdfIoTargetClose\(\)](https://msdn.microsoft.com/library/windows/hardware/ff548586.aspx) 来关闭资源句柄（如果你打算重新使用 WDFIOTARGET）。
 
 ```cpp
     WdfObjectDelete(resourceHandle);
 ```
 
-When the client closes its resource handle, the pins are muxed back to their initial state, and can now be acquired by a different client.
+当客户端关闭其资源句柄时，引脚将复用回其初始状态，现在可以由其他客户端获取。
 
-### Protocol description for pin muxing servers
+### 引脚复用服务器的协议描述
 
-This section describes how a pin muxing server exposes its functionality to clients. This does not apply to `GpioClx` miniport drivers, since the framework implements this protocol on behalf of client drivers. For details on how to support pin muxing in `GpioClx` client drivers, see [Implementing muxing support in GpioClx Client Drivers](#supporting-muxing-support-in-GpioClx-client-drivers).
+本部分介绍引脚复用服务器如何向客户端公开其功能。 这不适用于 `GpioClx` 微型端口驱动程序，因为框架会代表客户端驱动程序实现此协议。 有关如何在 `GpioClx` 客户端驱动程序中支持引脚复用的详细信息，请参阅[在 GpioClx 客户端驱动程序中实现复用支持](#supporting-muxing-support-in-GpioClx-client-drivers)。
 
-####    Handling IRP_MJ_CREATE requests
+####    处理 IRP_MJ_CREATE 请求
 
-Clients open a handle to a resource when they want to reserve a pin muxing resource. A pin muxing server receives *IRP_MJ_CREATE* requests by way of a reparse operation from the resource hub. The trailing path component of the *IRP_MJ_CREATE* request contains the resource hub ID, which is a 64-bit integer in hexadecimal format. The server should extract the resource hub ID from the filename using `RESOURCE_HUB_ID_FROM_FILE_NAME()` from reshub.h, and send *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* to the resource hub to obtain the `MsftFunctionConfig()` descriptor.
+当客户端想要保留引脚复用资源时，它们会打开资源句柄。 引脚复用服务器通过资源中心的重分析操作来接收 *IRP_MJ_CREATE* 请求。 *IRP_MJ_CREATE* 请求的尾随路径组件包含资源中心 ID，该 ID 是十六进制格式的 64 位整数。 服务器应使用 reshub.h 中的 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 从文件名中提取资源中心 ID，然后向资源中心发送 *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* 以获取 `MsftFunctionConfig()` 描述符。
 
-The server should validate the descriptor and extract the sharing mode and pin list from the descriptor. It should then perform sharing arbitration for the pins, and if successful, mark the pins as reserved before completing the request.
+服务器应该验证描述符，然后从描述符中提取共享模式和引脚列表。 接下来，应该对引脚执行共享仲裁，在完成请求之前，如果成功，将该引脚标记为保留。
 
-Sharing arbitration succeeds overall if sharing arbitration succeeds for each pin in the pin list. Each pin should be arbitrated as follows:
+如果对引脚列表中的每个引脚成功执行共享仲裁，则共享仲裁总体成功。 应按如下方式对每个引脚进行仲裁：
 
-*   If the pin is not already reserved, sharing arbitration succeeds.
-*   If the pin is already reserved as exclusive, sharing arbitration fails.
-*   If the pin is already reserved as shared,
-  * and the incoming request is shared, sharing arbitration succeeds.
-  * and the incoming request is exclusive, sharing arbitration fails.
+*   如果尚未保留引脚，则共享仲裁成功。
+*   如果引脚已保留为独占，则共享仲裁失败。
+*   在引脚已保留为共享时，
+  * 如果传入的请求是共享的，则共享仲裁成功。
+  * 如果传入的请求是独占的，则共享仲裁失败。
 
-If sharing arbitration fails, the request should be completed with *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE*. If sharing arbitration succeeds, the request should completed with *STATUS_SUCCESS*.
+如果共享仲裁失败，应使用 *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE* 完成请求。 如果共享仲裁成功，应使用 *STATUS_SUCCESS* 完成请求。
 
-Note that the sharing mode of the incoming request should be taken from the MsftFunctionConfig descriptor, not [IrpSp->Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx).
+请注意，应从 MsftFunctionConfig 描述符而不是从 [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx) 中获取传入请求的共享模式。
 
-####    Handling IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS requests
+####    处理 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 请求
 
-After the client has successfully reserved a MsftFunctionConfig resource by opening a handle, it can send *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* to request the server to perform the actual hardware muxing operation. When the server receives *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*, for each pin in the pin list it should 
+在客户端通过打开句柄成功保留了 MsftFunctionConfig 资源后，它可以发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 以请求服务器执行实际的硬件复用操作。 当服务器接收 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 时，对于引脚列表中的每个引脚，它应该 
 
-*   Set the pull mode specified in the PinConfiguration member of the PNP_FUNCTION_CONFIG_DESCRIPTOR structure into hardware.
-*   Mux the pin to the function specified by the FunctionNumber member of the PNP_FUNCTION_CONFIG_DESCRIPTOR structure.
+*   将在 PNP_FUNCTION_CONFIG_DESCRIPTOR 结构的 PinConfiguration 成员中指定的拉模式设置到硬件。
+*   将引脚复用到由 PNP_FUNCTION_CONFIG_DESCRIPTOR 结构的 FunctionNumber 成员指定的功能。
 
-The server should then complete the request with *STATUS_SUCCESS*.
+然后服务器应使用 *STATUS_SUCCESS* 完成请求。
 
-The meaning of FunctionNumber is defined by the server, and it is understood that the MsftFunctionConfig descriptor was authored with knowledge of how the server interprets this field.
+FunctionNumber 的含义由服务器定义，据了解，MsftFunctionConfig 描述符是运用了服务器如何解释此字段这一方面的知识撰写的。
 
-Remember that when the handle is closed, the server will have to revert the pins to the configuration they were in when IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS was received, so the server may need to save the pins’ state before modifying them.
+请记住，当关闭该句柄时，服务器必须将引脚恢复为收到 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 时引脚所使用的配置，因此服务器在修改引脚之前，可能需要保存这些引脚的状态。
 
-####    Handling IRP_MJ_CLOSE requests
+####    处理 IRP_MJ_CLOSE 请求
 
-When a client no longer requires a muxing resource, it closes its handle. When a server receives a *IRP_MJ_CLOSE* request, it should revert the pins to the state they were in when *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* was received. If the client never sent a *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*, no action is necessary. The server should then mark the pins as available with respect to sharing arbitration, and complete the request with *STATUS_SUCCESS*. Be sure to properly synchronize *IRP_MJ_CLOSE* handling with *IRP_MJ_CREATE* handling.
+当客户端不再需要复用资源时，它会关闭其句柄。 当服务器接收 *IRP_MJ_CLOSE* 请求时，它应该将引脚恢复为收到 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 时引脚所处的状态。 如果客户端从未发送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*，则无需执行任何操作。 接下来，服务器应该在执行共享仲裁后将引脚标记为可用，然后使用 *STATUS_SUCCESS* 完成请求。 请确保正确同步 *IRP_MJ_CLOSE* 处理与 *IRP_MJ_CREATE* 处理。
 
-### Authoring guidelines for ACPI tables
+### ACPI 表的编写指南
 
-This section describes how to supply muxing resources to client drivers. Note that you will need Microsoft ASL compiler build 14327 or later to compile tables containing `MsftFunctionConfig()` resources. `MsftFunctionConfig()` resources are supplied to pin muxing clients as hardware resources. `MsftFunctionConfig()` resources should be supplied to drivers that require pin muxing changes, which are typically SPB and serial controller drivers, but should not be supplied to SPB and serial peripheral drivers, since the controller driver handles muxing configuration.
-The `MsftFunctionConfig()` ACPI macro is defined as follows:
+本部分介绍如何将复用资源提供给客户端驱动程序。 请注意，你需要 Microsoft ASL 编译器版本 14327 或更高版本来编译包含 `MsftFunctionConfig()` 资源的表。 `MsftFunctionConfig()` 资源提供给引脚复用客户端作为硬件资源。 `MsftFunctionConfig()` 应将资源提供给需要更改引脚复用的驱动程序，这些驱动程序通常是 SPB 和串行控制器驱动程序；但不应将资源提供给 SPB 和串行外设驱动程序，因为该控制器驱动程序将处理复用配置。
+`MsftFunctionConfig()` ACPI 宏按如下方式定义：
 
 ```cpp
   MsftFunctionConfig(Shared/Exclusive
@@ -566,20 +566,20 @@ The `MsftFunctionConfig()` ACPI macro is defined as follows:
 
 ```
 
-* Shared/Exclusive – If exclusive, this pin can be acquired by a single client at a time. If shared, multiple shared clients can acquire the resource. Always set this to exclusive since allowing multiple uncoordinated clients to access a mutable resource can lead to data races and therefore unpredictable results. 
-* PinPullConfig – one of 
-  * PullDefault – use the SOC-defined power-on default pull configuration 
-  * PullUp – enable pull-up resistor 
-  * PullDown – enable pull-down resistor 
-  * PullNone – disable all pull resistors 
-* FunctionNumber – the function number to program into the mux. 
-* ResourceSource – The ACPI namespace path of the pin muxing server 
-* ResourceSourceIndex – set this to 0 
-* ResourceConsumer/ResourceProducer – set this to ResourceConsumer 
-* VendorData – optional binary data whose meaning is defined by the pin muxing server. This should usually be left blank
-* Pin List – a comma separated list of pin numbers to which the configuration applies. When the pin muxing server is a GpioClx driver, these are GPIO pin numbers and have the same meaning as pin numbers in a GpioIo descriptor. 
+* 共享/独占 – 如果独占，则每次只有一个客户端可以获取此引脚。 如果共享，则多个共享客户端可以获取该资源。 始终将它设置为独占，因为允许多个未协调的客户端访问可变资源可能导致数据竞争，从而导致不可预知的结果。 
+* PinPullConfig – 其中之一 
+  * PullDefault – 使用 SOC 定义的通电默认拉配置 
+  * PullUp – 启用上拉电阻器 
+  * PullDown – 启用下拉电阻器 
+  * PullNone – 禁用所有拉电阻器 
+* FunctionNumber – 要编程进复用的功能编号。 
+* ResourceSource – 引脚复用服务器的 ACPI 命名空间路径 
+* ResourceSourceIndex – 将它设置为 0 
+* ResourceConsumer/ResourceProducer – 将它设置为 ResourceConsumer 
+* VendorData – 可选二进制数据，它的含义由引脚复用服务器进行定义。 通常它应该保留为空。
+* 引脚列表 – 配置所应用到的引脚编号的逗号分隔列表。 当引脚复用服务器为 GpioClx 驱动程序时，这些是 GPIO 引脚编号，并且所具有的含义与 GpioIo 描述符中的引脚编号相同。 
 
-The following example shows how one might supply a MsftFunctionConfig() resource to an I2C controller driver. 
+以下示例演示一个管脚复用服务器可能会如何将 MsftFunctionConfig() 资源提供给 I2C 控制器驱动程序。 
 
 ```cpp
 Device(I2C1) 
@@ -604,56 +604,56 @@ Device(I2C1)
 } 
 ```
 
-In addition to the memory and interrupt resources typically required by a controller driver, a `MsftFunctionConfig()` resource is also specified. This resource enables the I2C controller driver to put pins 2 and 3 - managed by the device node at \\_SB.GPIO0 – in function 4 with pull-up resistor enabled. 
+除了控制器驱动程序通常所需的内存和中断资源，还要指定 `MsftFunctionConfig()` 资源。 此资源允许 I2C 控制器驱动程序将引脚 2 和 3（由 \\_SB.GPIO0 处的设备节点进行管理）置于已启用上拉电阻器的功能 4 中。 
 
-### Supporting muxing support in GpioClx client drivers 
+### 在 GpioClx 客户端驱动器中支持复用支持 
 
-`GpioClx` has built-in support for pin muxing. GpioClx miniport drivers (also referred to as “GpioClx client drivers”), drive GPIO controller hardware. As of Windows 10 build 14327, GpioClx miniport drivers can add support for pin muxing by implementing two new DDIs: 
+`GpioClx` 具有对引脚复用的内置支持。 GpioClx 微型端口驱动程序（也称为“GpioClx 客户端驱动程序”），驱动 GPIO 控制器硬件。 从 Windows 10 内部版本 14327 开始，GpioClx 微型端口驱动程序可以通过实现两个新的 DDI 添加对引脚复用的支持： 
 
-* CLIENT_ConnectFunctionConfigPins – called by `GpioClx` to command the miniport driver to apply the specified muxing configuration. 
-* CLIENT_DisconnectFunctionConfigPins – called by `GpioClx` to command the miniport driver to revert the muxing configuration. 
+* CLIENT_ConnectFunctionConfigPins – 由 `GpioClx` 调用以命令微型端口驱动程序应用指定的复用配置。 
+* CLIENT_DisconnectFunctionConfigPins – 由 `GpioClx` 调用以命令微型端口驱动程序恢复复用配置。 
 
-See [GpioClx Event Callback Functions](https://msdn.microsoft.com/library/windows/hardware/hh439464.aspx) for a description of these routines.
+有关这些例程的描述，请参阅 [GpioClx 事件回调函数](https://msdn.microsoft.com/library/windows/hardware/hh439464.aspx)。
 
-In addition to these two new DDIs, existing DDIs should be audited for pin muxing compatibility: 
+除了这两个新的 DDI，应针对引脚复用兼容性审核现有 DDI： 
 
-* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins is called by GpioClx to command the miniport driver to configure a set pins for GPIO input or output. GPIO is mutually exclusive with MsftFunctionConfig, meaning a pin will never be connected for GPIO and MsftFunctionConfig at the same time. Since a pin’s default function is not required to be GPIO, a pin may not necessarily not be muxed to GPIO when ConnectIoPins is called. ConnectIoPins is required to perform all operations necessary to make the pin ready for GPIO IO, including muxing operations. *CLIENT_ConnectInterrupt* should behave similarly, since interrupts can be thought of as a special case of GPIO input. 
-* CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt – These routine should return pins to the state they were in when CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt was called, unless the PreserveConfiguration flag is specified. In addition to reverting the direction of pins to their default state, the miniport should also revert each pin’s muxing state to the state it was in when the _Connect routine was called. 
+* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins 由 GpioClx 调用以命令微型端口驱动程序配置一组用于 GPIO 输入或输出的引脚。 GPIO 与 MsftFunctionConfig 是互斥的，这意味着永远不会同时为 GPIO 和 MsftFunctionConfig 连接管脚。 由于引脚的默认功能不需要成为 GPIO，因此调用 ConnectIoPins 时，引脚未必不会复用为 GPIO。 需要调用 ConnectIoPins，才可以执行使引脚可供 GPIO IO 使用的所有必要操作，包括复用操作。 *CLIENT_ConnectInterrupt* 应具备类似行为，因为中断可以视为 GPIO 输入的一种特殊情况。 
+* CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt – 这些例程应该将引脚返回到调用 CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt 时引脚所处的状态，除非指定了 PreserveConfiguration 标志。 除了将引脚的方向恢复为其默认状态之外，微型端口还应该将每个引脚的复用状态恢复为调用 _Connect 例程时引脚所处的状态。 
 
-For example, assume that a pin’s default muxing configuration is UART, and the pin can also be used as GPIO. When CLIENT_ConnectIoPins is called to connect the pin for GPIO, it should mux the pin to GPIO, and in CLIENT_DisconnectIoPins, it should mux the pin back to UART. In general, the _Disconnect routines should undo operations done by the _Connect routines. 
+例如，假设引脚的默认复用配置为 UART，则也可以将引脚用作 GPIO。 调用 CLIENT_ConnectIoPins 以连接用于 GPIO 的引脚时，它应该将该引脚复用为 GPIO；在 CLIENT_DisconnectIoPins 中，它应该将该引脚复用回 UART。 一般情况下，_Disconnect 例程应撤消 _Connect 例程执行的操作。 
 
-### Supporting muxing in SpbCx and SerCx controller drivers 
+### 在 SpbCx 和 SerCx 控制器驱动程序中支持复用 
 
-As of Windows 10 build 14327, the `SpbCx` and `SerCx` frameworks contain built-in support for pin muxing that enables `SpbCx` and `SerCx` controller drivers to be pin muxing clients without any code changes to the controller drivers themselves. By extension, any SpbCx/SerCx peripheral driver that connects to a muxing-enabled SpbCx/SerCx controller driver will trigger pin muxing activity. 
+从 Windows 10 内部版本 14327 开始，`SpbCx` 和 `SerCx` 框架包含对引脚复用的内置支持，这允许在无需更改 `SpbCx` 和 `SerCx` 控制器驱动程序自身的任何代码的情况下，就可以使这些控制器驱动程序成为引脚复用客户端。 通过扩展，连接到支持复用的 SpbCx/SerCx 控制器驱动程序的任何 SpbCx/SerCx 外设驱动程序将触发引脚复用活动。 
 
-The following diagram shows the dependencies between each of these components. As you can see, pin muxing introduces a dependency from SerCx and SpbCx controller drivers to the GPIO driver, which is usually responsible for muxing. 
+下图显示了每个组件之间的依存关系。 如你所见，引脚复用将依存关系从 SerCx 和 SpbCx 控制器驱动程序引入了 GPIO 驱动程序，它通常负责复用。 
 
-![Pin muxing dependency](images/usermode-access-diagram-2.png)
+![引脚复用依存关系](images/usermode-access-diagram-2.png)
 
-At device initialization time, the `SpbCx` and `SerCx` frameworks parse all `MsftFunctionConfig()` resources supplied as hardware resources to the device. SpbCx/SerCx then acquire and release the pin muxing resources on demand.
+在设备初始化期间，`SpbCx` 和 `SerCx` 框架会解析作为硬件资源提供给设备的所有 `MsftFunctionConfig()` 资源。 然后 SpbCx/SerCx 按需获取和释放引脚复用资源。
 
-`SpbCx` applies pin muxing configuration in its *IRP_MJ_CREATE* handler, just before calling the client driver’s [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) callback. If muxing configuration could not be applied, the controller driver’s `EvtSpbTargetConnect()` callback will not be called. Therefore, an SPB controller driver may assume that pins are muxed to the SPB function by the time `EvtSpbTargetConnect()` is called.
+`SpbCx` 仅在调用客户端驱动程序的 [EvtSpbTargetConnect\(\)](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) 回调之前，在其 *IRP_MJ_CREATE* 处理程序中应用引脚复用配置。 如果无法应用复用配置，将不会调用控制器驱动程序的 `EvtSpbTargetConnect()` 回调。 因此，SPB 控制器驱动程序可能会假设在调用 `EvtSpbTargetConnect()` 时，引脚会复用为 SPB 功能。
 
-`SpbCx` reverts pin muxing configuration in its *IRP_MJ_CLOSE* handler, just after invoking the controller driver’s [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) callback. The result is that pins are muxed to the SPB function whenever a peripheral driver opens a handle to the SPB controller driver, and are muxed away when the peripheral driver closes their handle.
+`SpbCx` 仅在调用控制器驱动程序的 [EvtSpbTargetDisconnect\(\)](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) 回调之后，在其 *IRP_MJ_CLOSE* 处理程序中恢复引脚复用配置。 结果是，每当外设驱动程序打开 SPB 控制器驱动程序的句柄时，引脚就会复用为 SPB 功能；当外设驱动程序关闭其句柄时，会复用回引脚。
 
-`SerCx` behaves similarly. `SerCx` acquires all `MsftFunctionConfig()` resources in its *IRP_MJ_CREATE* handler just before invoking the controller driver’s [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) callback, and releases all resources in its IRP_MJ_CLOSE handler, just after invoking the controller driver’s [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) callback.
+`SerCx` 类似行为。 `SerCx` 仅在调用控制器驱动程序的 [EvtSerCx2FileOpen\(\)](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) 回调之前，在其 *IRP_MJ_CREATE* 处理程序中获取所有 `MsftFunctionConfig()` 资源；仅在调用控制器驱动程序的 [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) 回调之后，在其 IRP_MJ_CLOSE 处理程序中释放所有资源。
 
-The implication of dynamic pin muxing for `SerCx` and `SpbCx` controller drivers is that they must be able to tolerate pins being muxed away from SPB/UART function at certain times. Controller drivers need to assume that pins will not be muxed until `EvtSpbTargetConnect()` or `EvtSerCx2FileOpen()` is called. Pins are not necessary muxed to SPB/UART function during the following callbacks. The following is not a complete list, but represents the most common PNP routines implemented by controller drivers.
+适用于 `SerCx` 和 `SpbCx` 控制器驱动程序的动态引脚复用的含义就是：它们必须能够容忍在某些时候从 SPB/UART 功能复用回引脚。 控制器驱动程序需要假设：在调用 `EvtSpbTargetConnect()` 或 `EvtSerCx2FileOpen()` 之前，不会复用引脚。 在以下回调期间，引脚不必复用为 SPB/UART 功能。 以下列表虽然不完整，但呈现了控制器驱动程序所实现的最常用 PNP 例程。
 
 * DriverEntry 
 * EvtDriverDeviceAdd 
 * EvtDevicePrepareHardware/EvtDeviceReleaseHardware 
 * EvtDeviceD0Entry/EvtDeviceD0Exit 
 
-## Verification 
+## 验证 
 
-When you’ve finished authoring your ASL, you should run the [Hardware Lab Kit (HLK)](https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx) tests to verify that all resources are exposed correctly and the underlying busses meet the functional contract of the API. The following sections describe how to load the rhproxy device node for testing without recompiling your firmware and how to run the HLK tests. 
+在完成编写你的 ASL 时，应运行 [Hardware Lab Kit (HLK)](https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx) 测试，以验证所有资源已正确公开，并且基础总线满足 API 功能合约。 以下部分介绍在不重新编译你的固件的情况下如何加载 rhproxy 设备节点进行测试，以及如何运行 HLK 测试。 
 
-### Compile and load ASL with ACPITABL.dat 
+### 使用 ACPITABL.dat 编译和加载 ASL 
 
-The first step is to compile and load the ASL file onto your system under test. We recommend using ACPITABL.dat during development and validation as it does not require a full UEFI rebuild to test ASL changes. 
+第一步是将 ASL 文件编译并加载到你的在测系统。 我们建议在开发和验证期间使用 ACPITABL.dat，因为它不需要重新生成完整的 UEFI 即可测试 ASL 更改。 
 
-1. Create a file named yourboard.asl and put the RHPX device node inside a DefinitionBlock: 
+1. 创建名为“yourboard.asl”的文件，然后将 RHPX 设备节点放入 DefinitionBlock 中： 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 {
@@ -666,74 +666,74 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
     }
 }
 ```
-2.  Download the WDK and get asl.exe
-3.  Run the following command to generate ACPITABL.dat:
+2.  下载 WDK 并获取 asl.exe
+3.  运行以下命令以生成 ACPITABL.dat：
 ```
 asl.exe yourboard.asl
 ```
-4.  Copy the resulting ACPITABL.dat file to c:\windows\system32 on your system under test.
-5.  Turn on testsigning on your system under test:
+4.  将生成的 ACPITABL.dat 文件复制到在测系统上的 c:\windows\system32。
+5.  在在测系统上打开 testsigning：
 ```
 bcdedit /set testsigning on
 ```
-6.  Reboot the system under test. The system will append the ACPI tables defined in ACPITABL.dat to the system firmware tables. 
-7.  Verify that the RHPX device node was added to the system:
+6.  重启在测系统： 系统会将 ACPITABL.dat 中定义的 ACPI 表附加到系统固件表。 
+7.  验证 RHPX 设备节点是否已添加到系统：
 ```
 devcon status *msft8000
 ```
-The output of devcon should indicate that the device is present, although the driver may have failed to initialize if there are bugs in the ASL that need to be worked out.
+如果需要编写的 ASL 中存在多个 Bug，devcon 的输出应表示该设备存在，尽管驱动程序可能无法进行初始化。
 
-### Run the HLK Tests
+### 运行 HLK 测试
 
-When you select the rhproxy device node in HLK manager, the applicable tests will automatically be selected.
+当在 HLK 管理器中选择 rhproxy 设备节点时，将自动选择适用的测试。
 
-In the HLK manager, select “Resource Hub Proxy device”:
+在 HLK 管理器中，选择“资源中心代理设备”：
 
-![HLK manager screenshot](images/usermode-hlk-1.png)
+![HLK 管理器屏幕截图](images/usermode-hlk-1.png)
 
-Then click the Tests tab, and select I2C WinRT, Gpio WinRT, and Spi WinRT tests.
+随后单击“测试”选项卡，然后依次选择 I2C WinRT、Gpio WinRT 和 Spi WinRT 测试。
 
-![HLK manager screenshot](images/usermode-hlk-2.png)
+![HLK 管理器屏幕截图](images/usermode-hlk-2.png)
 
-Click Run Selected. Further documentation on each test is available by right clicking on the test and clicking “Test Description.”
+单击“运行所选项”。 通过右键单击某个测试，然后单击“测试描述”可以获得有关每个测试的进一步文档。
 
-### More testing resources
+### 更多测试资源
 
-Simple command line tools for Gpio, I2c, Spi, and Serial are available on the ms-iot github samples repository  (https://github.com/ms-iot/samples). These tools can be helpful for manual debugging.
+在 ms-iot github 示例存储库 (https://github.com/ms-iot/samples) 上提供了适用于 Gpio、I2c、Spi 和 Serial 的简单命令行工具。 这些工具对于手动调试很有帮助。
 
-| Tool | Link |
+| 工具 | 链接 |
 |------|------|
 | GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
 | I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
 | SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (Serial) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
-## Resources
+## 资源
 
-| Destination | Link |
+| 目标 | 链接 |
 |-------------|------|
-| ACPI 5.0 specification | http://acpi.info/spec.htm |
-| Asl.exe (Microsoft ASL Compiler) | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
+| ACPI 5.0 规范 | http://acpi.info/spec.htm |
+| Asl.exe（Microsoft ASL 编译器） | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
 | Windows.Devices.Gpio  | https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.aspx | 
 | Windows.Devices.I2c | https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.aspx |
 | Windows.Devices.Spi | https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.aspx |
 | Windows.Devices.SerialCommunication | https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.aspx |
-| Test Authoring and Execution Framework (TAEF) | https://msdn.microsoft.com/library/windows/hardware/hh439725.aspx |
+| 测试授权和执行框架 (TAEF) | https://msdn.microsoft.com/library/windows/hardware/hh439725.aspx |
 | SpbCx | https://msdn.microsoft.com/library/windows/hardware/hh450906.aspx |
 | GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
-| MITT I2C Tests | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
+| MITT I2C 测试 | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
 | GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
 | I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
 | SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (Serial) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
-## Apendix
+## 附录
 
-### Appendix A - Raspberry Pi ASL Listing
+### 附录 A - Raspberry Pi ASL 一览
 
-Header pinout: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
+标头引出线：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -893,9 +893,9 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ```
 
-### Appendix B - MinnowBoardMax ASL Listing
+### 附录 B - MinnowBoardMax ASL 一览
 
-Header pinout: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
+标头引出线：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1048,9 +1048,9 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-### Appendix C - Sample Powershell script to generate GPIO resources
+### 附录 C - 生成 GPIO 资源的示例 PowerShell 脚本
 
-The following script can be used to generate the GPIO resource declarations for Raspberry Pi:
+以下脚本可用于生成适用于 Raspberry Pi 的 GPIO 资源声明：
 
 ```
 $pins = @(
@@ -1086,6 +1086,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -7,15 +7,30 @@
 ## [你的第一个应用](get-started/your-first-app.md)
 ### [创建“Hello, world”应用 (C#)](get-started/create-a-hello-world-app-xaml-universal.md)
 ### [创建“Hello, world”应用 (JS)](get-started/create-a-hello-world-app-js-universal.md)
+<<<<<<< HEAD
 ### [创建“Hello, world”应用 (C++)](get-started/create-a-basic-windows-10-app-in-cpp.md)
 ### [规划应用](get-started/plan-your-app.md)
 ### [后续步骤是什么？](get-started/learn-more.md)
+=======
+### [创建“hello world”应用 (C++)](get-started/create-a-basic-windows-10-app-in-cpp.md)
+### [规划你的应用](get-started/plan-your-app.md)
+### [后续步骤是什么？](get-started/learn-more.md)
+## [Windows 中面向开发人员的新增功能](whats-new/windows-10-version-1607.md)
+### [Windows 10 版本 1607 中的 API 新增内容](whats-new/windows-10-version-1607-api-diff.md)
+### [Windows 10 Anniversary SDK Preview 中的新增功能](whats-new/windows-10-sdk-preview.md)
+### [Windows 10 版本 1511 中的新增功能](whats-new/windows-10-version-1511.md)
+### [Windows 10 RTM 中的新增功能](whats-new/windows-10-rtm.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 # [设计和 UI](https://developer.microsoft.com/windows/design)
 ## [布局](layout/index.md)
 ### [应用 UI 设计简介](layout/design-and-ui-intro.md)
 ### [导航基础知识](layout/navigation-basics.md)
 #### [历史记录和向后导航](layout/navigation-history-and-backwards-navigation.md)
+<<<<<<< HEAD
 #### [在两个页面之间导航](layout/navigate-between-two-pages.md)
+=======
+#### [实现对等导航](layout/peer-to-peer-navigation-between-two-pages.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 #### [显示多个视图](layout/show-multiple-views.md)
 ### [命令基础知识](layout/commanding-basics.md)
 #### [活动画布](layout/active-canvas.md)
@@ -193,10 +208,16 @@
 #### [用于照片和视频捕获的手动相机控件](audio-video-camera/capture-device-controls-for-photo-and-video-capture.md)
 #### [用于视频捕获的手动相机控件](audio-video-camera/capture-device-controls-for-video-capture.md)
 #### [用于视频捕获的视频防抖动效果](audio-video-camera/effects-for-video-capture.md)
+<<<<<<< HEAD
 #### [MediaCapture 的场景分析](audio-video-camera/scene-analysis-for-media-capture.md)
 #### [使用 VariablePhotoSequence 捕获照片序列](audio-video-camera/variable-photo-sequence.md)
 #### [使用 MediaFrameReader 处理媒体帧](audio-video-camera/process-media-frames-with-mediaframereader.md)
 #### [获取预览帧](audio-video-camera/get-a-preview-frame.md)
+=======
+#### [MediaCapture 场景分析](audio-video-camera/scene-analysis-for-media-capture.md)
+#### [使用 VariablePhotoSequence 捕获照片序列](audio-video-camera/variable-photo-sequence.md)
+#### [使用 MediaFrameReader 处理媒体帧](audio-video-camera/process-media-frames-with-mediaframereader.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [媒体播放](audio-video-camera/media-playback.md)
 #### [使用 MediaPlayer 播放音频和视频](audio-video-camera/play-audio-and-video-with-mediaplayer.md)
 #### [媒体项、播放列表和曲目](audio-video-camera/media-playback-with-mediasource.md)
@@ -208,7 +229,11 @@
 #### [自适应流式处理](audio-video-camera/adaptive-streaming.md)
 ##### [HLS 标记支持](audio-video-camera/hls-tag-support.md)
 #### [媒体转换](audio-video-camera/media-casting.md)
+<<<<<<< HEAD
 #### [PlayReady DRM](audio-video-camera/playready-client-sdk.md)
+=======
+#### [Playready DRM](audio-video-camera/playready-client-sdk.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ##### [硬件 DRM](audio-video-camera/hardware-drm.md)
 ##### [使用 PlayReady 的自适应流式处理](audio-video-camera/adaptive-streaming-with-playready.md)
 #### [PlayReady 加密媒体扩展](audio-video-camera/playready-encrypted-media-extension.md)
@@ -270,8 +295,11 @@
 #### [Windows 运行时组件和优化的互操作](debug-test-perf/windows-runtime-components-and-optimizing-interop.md)
 #### [用于分析和性能的工具](debug-test-perf/tools-for-profiling-and-performance.md)
 ### [版本自适应代码](debug-test-perf/version-adaptive-code.md)
+<<<<<<< HEAD
 ## [开发 UWP 教育应用](apps-for-education/index.md)
 ### [参加测验 API](apps-for-education/take-a-test-api.md)
+=======
+>>>>>>> parent of e632454... open localization: commit translated files
 ## [设备、传感器和电源](devices-sensors/index.md)
 ### [启用设备功能](devices-sensors/enable-device-capabilities.md)
 ### [启用用户模式访问](devices-sensors/enable-usermode-access.md)
@@ -281,9 +309,13 @@
 #### [设备信息属性](devices-sensors/device-information-properties.md)
 #### [AEP 服务类 ID](devices-sensors/aep-service-class-ids.md)
 ### [配对设备](devices-sensors/pair-devices.md)
+<<<<<<< HEAD
 ### [服务点](devices-sensors/point-of-service.md)
 #### [带外配对](devices-sensors/out-of-band-pairing.md)
 #### [Epson ESC/POS（可进行格式设置）](devices-sensors/epson-esc-pos-with-formatting.md)
+=======
+### [带外配对](devices-sensors/out-of-band-pairing.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [传感器](devices-sensors/sensors.md)
 #### [校准传感器](devices-sensors/calibrate-sensors.md)
 #### [传感器方向](devices-sensors/sensor-orientation.md)
@@ -298,6 +330,10 @@
 #### [GATT](devices-sensors/gatt-scenarios.md)
 #### [蓝牙开发人员常见问题](devices-sensors/bluetooth-dev-faq.md)
 ### [打印和扫描](devices-sensors/printing-and-scanning.md)
+<<<<<<< HEAD
+=======
+#### [Epson ESC/POS（可进行格式设置）](devices-sensors/epson-esc-pos-with-formatting.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 #### [从应用打印](devices-sensors/print-from-your-app.md)
 #### [自定义打印预览 UI](devices-sensors/customize-the-print-preview-ui.md)
 #### [从应用扫描](devices-sensors/scan-from-your-app.md)
@@ -365,7 +401,10 @@
 ### [游戏音频](gaming/working-with-audio-in-your-directx-game.md)
 ### [游戏的触摸控件](gaming/tutorial--adding-touch-controls-to-your-directx-game.md)
 ### [游戏的移动观看控件](gaming/tutorial--adding-move-look-controls-to-your-directx-game.md)
+<<<<<<< HEAD
 ### [相对鼠标移动](gaming/relative-mouse-movement.md)
+=======
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [优化输入和呈现循环](gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md)
 ### [交换链缩放和覆盖](gaming/multisampling--scaling--and-overlay-swap-chains.md)
 ### [利用 DXGI 1.3 交换链减少延迟](gaming/reduce-latency-with-dxgi-1-3-swap-chains.md)
@@ -377,7 +416,10 @@
 ### [游戏云](gaming/cloud-for-games.md)
 ### [DirectX 和 XAML 互操作](gaming/directx-and-xaml-interop.md)
 ### [打包游戏](gaming/package-your-windows-store-directx-game.md)
+<<<<<<< HEAD
 ### [概念审批](gaming/concept-approval.md)
+=======
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [游戏移植指南](gaming/porting-guides.md)
 #### [从 DirectX 9 移植到通用 Windows 平台](gaming/porting-your-directx-9-game-to-windows-store.md)
 ##### [从 DirectX 9 移到 DirectX 11.1 和通用 Windows 平台](gaming/porting-considerations.md)
@@ -431,16 +473,23 @@
 #### [处理应用恢复](launch-resume/resume-an-app.md)
 #### [在将应用移动到后台时释放内存](launch-resume/reduce-memory-usage.md)
 ### [连接的应用和设备](launch-resume/connected-apps-and-devices.md)
+<<<<<<< HEAD
 #### [发现远程设备](launch-resume/discover-remote-devices.md)
+=======
+#### [发现远程设备](launch-resume/discover-connected-devices.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 #### [启动远程设备上的应用](launch-resume/launch-a-remote-app.md)
 #### [与远程应用服务通信](launch-resume/communicate-with-a-remote-app-service.md)
 ### [针对结果启动应用](launch-resume/how-to-launch-an-app-for-results.md)
 ### [启动 URI 的默认应用](launch-resume/launch-default-app.md)
+<<<<<<< HEAD
 #### [使用 ms-tonepicker URI 方案选择并保存音调](launch-resume/launch-ringtone-picker.md)
 #### [启动 Windows 设置应用](launch-resume/launch-settings-app.md)
 #### [启动 Windows 应用商店应用](launch-resume/launch-store-app.md)
 #### [启动 Windows 地图应用](launch-resume/launch-maps-app.md)
 #### [启动“人脉”应用](launch-resume/launch-people-apps.md)
+=======
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [启动远程设备上的应用](launch-resume/launch-a-remote-app.md)
 ### [处理 URI 激活](launch-resume/handle-uri-activation.md)
 ### [使用应用 URI 处理程序处理支持 Web 到应用的链接](launch-resume/web-to-app-linking.md)
@@ -449,6 +498,13 @@
 ### [文件类型和 URI 指南](https://msdn.microsoft.com/library/windows/apps/hh700321)
 ### [保留的文件和 URI 方案名称](launch-resume/reserved-uri-scheme-names.md)
 ### [借助自动播放功能自动启动](launch-resume/auto-launching-with-autoplay.md)
+<<<<<<< HEAD
+=======
+### [启动“Windows 设置”应用](launch-resume/launch-settings-app.md)
+### [启动 Windows 应用商店应用](launch-resume/launch-store-app.md)
+### [启动 Windows 地图应用](launch-resume/launch-maps-app.md)
+### [启动“人脉”应用](launch-resume/launch-people-apps.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [使用后台任务支持应用](launch-resume/support-your-app-with-background-tasks.md)
 #### [从后台任务访问传感器和设备](launch-resume/access-sensors-and-devices-from-a-background-task.md)
 #### [后台任务指南](launch-resume/guidelines-for-background-tasks.md)
@@ -495,6 +551,7 @@
 ##### [启用可消费应用内产品购买](monetize/enable-consumable-in-app-product-purchases.md)
 ##### [管理应用内产品的大目录](monetize/manage-a-large-catalog-of-in-app-products.md)
 ##### [使用收据验证产品购买](monetize/use-receipts-to-verify-product-purchases.md)
+<<<<<<< HEAD
 ### [Microsoft Store Services SDK](monetize/microsoft-store-services-sdk.md)
 ### [在应用中显示广告](monetize/display-ads-in-your-app.md)
 #### [开始使用 Microsoft Advertising 库](monetize/get-started-with-microsoft-advertising-libraries.md)
@@ -539,6 +596,58 @@
 #### [在仪表板中定义实验](monetize/define-your-experiment-in-the-dev-center-dashboard.md)
 #### [在仪表板中管理实验](monetize/manage-your-experiment.md)
 #### [创建并运行你的第一个实验](monetize/create-and-run-your-first-experiment-with-a-b-testing.md)
+=======
+### [Microsoft 官方商城协定和盈利 SDK](monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)
+### [在应用中显示广告](monetize/display-ads-in-your-app.md)
+#### [使用 Microsoft Advertising 库显示广告](monetize/display-ads-using-the-microsoft-advertising-libraries.md)
+##### [开始使用 Microsoft Advertising 库](monetize/get-started-with-microsoft-advertising-libraries.md)
+###### [安装 Microsoft Advertising 库](monetize/install-the-microsoft-advertising-libraries.md)
+###### [区别是什么：AdMediatorControl 或 AdControl](monetize/what-is-the-difference-admediatorcontrol-or-adcontrol.md)
+###### [用于创建带广告的应用的工作流](monetize/workflows-for-creating-apps-with-ads.md)
+###### [发行说明](monetize/release-notes-for-the-advertising-libraries.md)
+###### [已知问题](monetize/known-issues-for-the-advertising-libraries.md)
+###### [附加帮助](monetize/additional-help.md)
+###### [重要提示 - EULA](monetize/important-notice-eula.md)
+##### [开发人员信息](monetize/developer-information.md)
+###### [UI 和用户体验指南](monetize/ui-and-user-experience-guidelines.md)
+###### [测试模式值](monetize/test-mode-values.md)
+###### [在应用中设置广告单元](monetize/set-up-ad-units-in-your-app.md)
+###### [错误处理](monetize/error-handling-with-advertising-libraries.md)
+###### [将带广告的应用提交到 Windows 应用商店](monetize/submit-an-app-with-ads-to-the-windows-store.md)
+###### [横幅广告的受支持广告大小](monetize/supported-ad-sizes-for-banner-ads.md)
+###### [Microsoft Advertising 的受支持市场](monetize/supported-markets-for-microsoft-advertising.md)
+##### [开发人员演练](monetize/developer-walkthroughs.md)
+###### [间隙广告](monetize/interstitial-ads.md)
+###### [XAML 和 .NET 中的 AdControl](monetize/adcontrol-in-xaml-and--net.md)
+###### [HTML 5 和 Javascript 中的 AdControl](monetize/adcontrol-in-html-5-and-javascript.md)
+###### [Windows Phone Silverlight 中的 AdControl](monetize/adcontrol-in-windows-phone-silverlight.md)
+##### [代码示例](monetize/code-samples.md)
+###### [HTML 属性示例](monetize/html-properties-example.md)
+###### [XAML 属性示例](monetize/xaml-properties-example.md)
+###### [使用 JavaScript 创建 AdControl](monetize/create-an-adcontrol-in-javascript.md)
+###### [JavaScript 中的 AdControl 事件](monetize/adcontrol-events-in-javascript.md)
+###### [C 中的 AdControl 事件#](monetize/adcontrol-events-in-c.md)
+###### [AdControl 错误处理](monetize/adcontrol-error-handling.md)
+####### [XAML/C# 中的错误处理演练](monetize/error-handling-in-xamlc-walkthrough.md) 
+#######  [JavaScript 中的错误处理演练](monetize/error-handling-in-javascript-walkthrough.md)
+###### [C 中的间隙广告示例代码#](monetize/interstitial-ad-sample-code-in-c.md)
+###### [JavaScript 中的间隙广告示例代码](monetize/interstitial-ad-sample-code-in-javascript.md)
+##### [疑难解答指南](monetize/troubleshooting-guides.md)
+###### [HTML 和 JavaScript 疑难解答指南](monetize/html-and-javascript-troubleshooting-guide.md)
+###### [XAML 和 C# 疑难解答指南](monetize/xaml-and-c-troubleshooting-guide.md)
+#### [使用广告中介使收益最大化](monetize/use-ad-mediation-to-maximize-revenue.md)
+##### [选择和管理广告网络](monetize/select-and-manage-your-ad-networks.md)
+##### [添加和使用广告中介控件](monetize/add-and-use-the-ad-mediator-control.md)
+##### [测试广告中介实现](monetize/test-your-ad-mediation-implementation.md)
+##### [提交应用和配置广告中介](monetize/submit-your-app-and-configure-ad-mediation.md)
+##### [广告中介疑难解答](monetize/troubleshoot-ad-mediation.md)
+### [通过 A/B 测试运行应用实验](monetize/run-app-experiments-with-a-b-testing.md)
+#### [在开发人员中心仪表板中创建项目和定义远程变量](monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+#### [针对实验为应用编码](monetize/code-your-experiment-in-your-app.md)
+#### [在开发人员中心仪表板中定义实验](monetize/define-your-experiment-in-the-dev-center-dashboard.md)
+#### [在开发人员中心仪表板中管理你的实验](monetize/manage-your-experiment.md)
+#### [通过 A/B 测试创建并运行你的第一个实验](monetize/create-and-run-your-first-experiment-with-a-b-testing.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [从应用启动“反馈中心”](monetize/launch-feedback-hub-from-your-app.md)
 ### [使用 Windows 应用商店服务](monetize/using-windows-store-services.md)
 #### [访问分析数据](monetize/access-analytics-data-using-windows-store-services.md)
@@ -547,6 +656,7 @@
 ##### [获取错误报告数据](monetize/get-error-reporting-data.md)
 ##### [获取应用评分](monetize/get-app-ratings.md)
 ##### [获取应用评价](monetize/get-app-reviews.md)
+<<<<<<< HEAD
 #### [创建和管理提交](monetize/create-and-manage-submissions-using-windows-store-services.md)
 ##### [获取应用数据](monetize/get-app-data.md)
 ###### [获取所有应用](monetize/get-all-apps.md)
@@ -587,6 +697,8 @@
 ###### [C# 代码示例](monetize/csharp-code-examples-for-the-windows-store-submission-api.md)
 ###### [Java 代码示例](monetize/java-code-examples-for-the-windows-store-submission-api.md)
 ###### [Python 代码示例](monetize/python-code-examples-for-the-windows-store-submission-api.md)
+=======
+>>>>>>> parent of e632454... open localization: commit translated files
 #### [从服务查看和授予产品](monetize/view-and-grant-products-from-a-service.md)
 ##### [查询产品](monetize/query-for-products.md)
 ##### [将可消费产品报告为已完成](monetize/report-consumable-products-as-fulfilled.md)
@@ -605,7 +717,10 @@
 ### [打包 UWP 应用](packaging/packaging-uwp-apps.md)
 ### [使用 WinAppDeployCmd.exe 工具安装应用](packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md)
 ### [应用功能声明](packaging/app-capability-declarations.md)
+<<<<<<< HEAD
 ### [下载并安装应用包更新](packaging/self-install-package-updates.md)
+=======
+>>>>>>> parent of e632454... open localization: commit translated files
 ## [将应用移植到 Windows 10](porting/index.md)
 ### [从 Windows Phone Silverlight 移动到 UWP](porting/wpsl-to-uwp-root.md)
 #### [命名空间和类映射](porting/wpsl-to-uwp-namespace-and-class-mappings.md)
@@ -626,7 +741,11 @@
 #### [案例研究：Bookstore2](porting/w8x-to-uwp-case-study-bookstore2.md)
 #### [案例研究：QuizGame](porting/w8x-to-uwp-case-study-quizgame.md)
 ### [从 Windows 桌面移动到 UWP](porting/desktop-to-uwp-root.md)
+<<<<<<< HEAD
 #### [桌面应用转换器](porting/desktop-to-uwp-run-desktop-app-converter.md)
+=======
+#### [桌面应用转换器预览 (Project Centennial)](porting/desktop-to-uwp-run-desktop-app-converter.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 #### [将 Windows 桌面应用手动转换为 UWP](porting/desktop-to-uwp-manual-conversion.md)
 #### [转换的桌面应用扩展](porting/desktop-to-uwp-extensions.md)
 #### [已转换的桌面应用的受支持 UWP API](porting/desktop-to-uwp-supported-api.md)
@@ -645,10 +764,17 @@
 ##### [入门：动画](porting/getting-started-animation.md)
 ##### [入门：下一步是什么？](porting/getting-started-what-next.md)
 #### [为 Mac 设置 Windows 10](porting/setting-up-your-mac-with-windows-10.md)
+<<<<<<< HEAD
 ### [托管的 Web 应用](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
 #### [在 Windows 上转换](porting/hwa-create-windows.md)
 #### [在 Mac 上转换](porting/hwa-create-mac.md)
 #### [访问 UWP 功能](porting/hwa-access-features.md)
+=======
+### [托管 Web 应用](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+#### [在 Windows 上转换](porting/hwa-create-windows.md)
+#### [在 Mac 上转换](porting/hwa-create-mac.md)
+#### [访问功能](porting/hwa-access-features.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 #### [转换 Chrome 应用](porting/hwa-chrome-conversion.md)
 ## [安全](security/index.md)
 ### [安全 Windows 应用开发简介](security/intro-to-secure-windows-app-development.md)
@@ -677,8 +803,13 @@
 ##### [编码和解码数据](security/encode-and-decode-data.md)
 ## [线程和异步编程](threading-async/index.md)
 ### [异步编程（UWP 应用）](threading-async/asynchronous-programming-universal-windows-platform-apps.md)
+<<<<<<< HEAD
 ### [使用 C++ 的异步编程（UWP 应用）](threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
 ### [使用线程池的最佳实践](threading-async/best-practices-for-using-the-thread-pool.md)
+=======
+### [使用 C++ 进行异步编程（UWP 应用）](threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
+### [使用线程池的最佳做法](threading-async/best-practices-for-using-the-thread-pool.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [使用 C# 或 Visual Basic 调用异步 API](threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md)
 ### [创建定期工作项](threading-async/create-a-periodic-work-item.md)
 ### [向线程池提交工作项](threading-async/submit-a-work-item-to-the-thread-pool.md)
@@ -686,14 +817,23 @@
 ## [Xbox One 上的 UWP](xbox-apps/index.md)
 ### [入门](xbox-apps/getting-started.md)
 ### [新增功能](xbox-apps/whats-new.md)
+<<<<<<< HEAD
 ### [Xbox 最佳做法](xbox-apps/tailoring-for-xbox.md)
+=======
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [已知问题](xbox-apps/known-issues.md)
 ### [常见问题](xbox-apps/frequently-asked-questions.md)
 ### [Xbox One 开发人员模式激活](xbox-apps/devkit-activation.md)
 ### [工具](xbox-apps/introduction-to-xbox-tools.md)
+<<<<<<< HEAD
 #### [Xbox 开发人员模式助手](xbox-apps/xbox-dev-mode-companion.md)
 #### [Fiddler](xbox-apps/uwp-fiddler.md)
 ### [开发环境设置](xbox-apps/development-environment-setup.md)
+=======
+#### [Fiddler](xbox-apps/uwp-fiddler.md)
+### [开发环境设置](xbox-apps/development-environment-setup.md)
+### [最佳做法](xbox-apps/tailoring-for-xbox.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 #### [如何禁用鼠标模式](xbox-apps/how-to-disable-mouse-mode.md)
 #### [如何关闭缩放](xbox-apps/disable-scaling.md)
 #### [如何关闭过度扫描](xbox-apps/turn-off-overscan.md)
@@ -716,7 +856,11 @@
 #### [/ext/xboxlive/sandbox](xbox-apps/wdp-sandbox-api.md)
 ## [Windows 运行时组件](winrt-components/index.md)
 ### [使用 C++ 创建 Windows 运行时组件](winrt-components/creating-windows-runtime-components-in-cpp.md)
+<<<<<<< HEAD
 ### [演练：使用 C++ 创建一个基本 Windows 运行时组件并通过 JavaScript 或 C 调用它#](winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+=======
+### [演练：使用 C++ 创建一个基本 Windows 运行时组件并从 JavaScript 或 C 中调用此组件#](winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [使用 C# 和 Visual Basic 创建 Windows 运行时组件](winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 #### [Windows 运行时组件中的自定义事件和事件访问器](winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md)
 #### [将数组传递到 Windows 运行时组件](winrt-components/passing-arrays-to-a-windows-runtime-component.md)
@@ -725,7 +869,11 @@
 #### [Windows 运行时类型的.NET framework 映射](winrt-components/net-framework-mappings-of-windows-runtime-types.md)
 ### [演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它](winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 ### [在 Windows 运行时组件中引发事件](winrt-components/raising-events-in-windows-runtime-components.md)
+<<<<<<< HEAD
 ### [适用于旁加载 Windows 应用商店应用的代理 Windows 运行时组件](winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md)
+=======
+### [适用于旁加载 Windows 应用商店应用的中转 Windows 运行时组件](winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ## [XAML 平台](xaml-platform/index.md)
 ### [XAML 概述](xaml-platform/xaml-overview.md)
 #### [XAML 语法指南](xaml-platform/xaml-syntax-guide.md)
@@ -757,6 +905,7 @@
 ### [自定义附加属性](xaml-platform/custom-attached-properties.md)
 ### [事件和路由事件概述](xaml-platform/events-and-routed-events-overview.md)
 ## [API 参考](https://msdn.microsoft.com/library/windows/apps/bg124285.aspx)
+<<<<<<< HEAD
 ## [面向 Windows 即服务的应用开发](updates-and-versions/application-development-for-windows-as-a-service.md)
 ## [选择 UWP 版本](updates-and-versions/choose-a-uwp-version.md)
 ## [服务](https://developer.microsoft.com/windows/develop/microsoft-services)
@@ -765,6 +914,9 @@
 ### [Windows 10 版本 1607 预览版中的新增功能](whats-new/windows-10-sdk-preview.md)
 ### [Windows 10 版本 1511 中的新增功能](whats-new/windows-10-version-1511.md)
 ### [Windows 10 版本 1507 中的新增功能](whats-new/windows-10-version-1507.md)
+=======
+## [服务](https://developer.microsoft.com/windows/develop/microsoft-services)
+>>>>>>> parent of e632454... open localization: commit translated files
 ## [Windows 8.x 指南](https://msdn.microsoft.com/library/windows/apps/mt244353.aspx)
 ## [Windows Phone Silverlight 8.x 指南](https://msdn.microsoft.com/library/windows/apps/ff402535.aspx)
 # [发布 Windows 应用](publish/index.md)
@@ -790,16 +942,25 @@
 #### [应用包要求](publish/app-package-requirements.md)
 #### [程序包版本编号](publish/package-version-numbering.md)
 #### [支持的语言](publish/supported-languages.md)
+<<<<<<< HEAD
 #### [解决程序包上传错误](publish/resolve-package-upload-errors.md)
 ### [创建应用应用商店一览](publish/create-app-store-listings.md)
 #### [编写出色的应用提要](publish/write-a-great-app-description.md)
 #### [应用屏幕截图和图像](publish/app-screenshots-and-images.md)
 #### [创建特定于平台的应用商店一览](publish/create-platform-specific-store-listings.md)
+=======
+#### [解决程序包上载错误](publish/resolve-package-upload-errors.md)
+### [创建应用提要](publish/create-app-descriptions.md)
+#### [编写出色的应用提要](publish/write-a-great-app-description.md)
+#### [应用屏幕截图和图像](publish/app-screenshots-and-images.md)
+#### [创建特定于平台的提要](publish/create-platform-specific-descriptions.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [认证说明](publish/notes-for-certification.md)
 ### [应用认证过程](publish/the-app-certification-process.md)
 #### [解决提交错误](publish/resolve-submission-errors.md)
 #### [避免常见的认证失败](publish/avoid-common-certification-failures.md)
 ### [软件包外部测试版](publish/package-flights.md)
+<<<<<<< HEAD
 ### [逐步部署程序包](publish/gradual-package-rollout.md)
 ### [Beta 测试和目标分配](publish/beta-testing-and-targeted-distribution.md)
 ### [将 LOB 应用分配到企业](publish/distribute-lob-apps-to-enterprises.md)
@@ -809,6 +970,16 @@
 ### [设置加载项定价和可用性](publish/set-add-on-pricing-and-availability.md)
 ### [创建加载项应用商店一览](publish/create-add-on-store-listings.md)
 ### [批量管理加载项](publish/manage-add-ons-in-bulk.md)
+=======
+### [Beta 测试和目标分配](publish/beta-testing-and-targeted-distribution.md)
+### [将 LOB 应用分配到企业](publish/distribute-lob-apps-to-enterprises.md)
+## [IAP 提交](publish/iap-submissions.md)
+### [设置 IAP 产品 ID](publish/set-your-iap-product-id.md)
+### [输入 IAP 属性](publish/enter-iap-properties.md)
+### [设置 IAP 的价格和可用性](publish/set-iap-pricing-and-availability.md)
+### [创建 IAP 描述](publish/create-iap-descriptions.md)
+### [批量管理 IAP](publish/manage-iaps-in-bulk.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ## [利用广告来盈利](publish/monetize-with-ads.md)
 ### [关于关联广告](publish/about-affiliate-ads.md)
 ### [pubCenter 开发人员中心集成](publish/pubcenter-dev-center-integration.md)
@@ -825,7 +996,11 @@
 ### [评价报告](publish/reviews-report.md)
 ### [反馈报告](publish/feedback-report.md)
 ### [使用情况报告](publish/usage-report.md)
+<<<<<<< HEAD
 ### [加载项购置报告](publish/add-on-acquisitions-report.md)
+=======
+### [IAP 购置报告](publish/iap-acquisitions-report.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [广告中介报告](publish/ad-mediation-report.md)
 ### [广告性能报告](publish/advertising-performance-report.md)
 ### [关联性能报告](publish/affiliates-performance-report.md)
@@ -840,15 +1015,22 @@
 #### [有关广告市场活动的常见问题](publish/common-questions.md)
 ### [创建自定义应用促销活动](publish/create-a-custom-app-promotion-campaign.md)
 ### [生成促销代码](publish/generate-promotional-codes.md)
+<<<<<<< HEAD
 ### [打折出售应用和加载项](publish/put-apps-and-add-ons-on-sale.md)
 ### [回复客户反馈](publish/respond-to-customer-feedback.md)
+=======
+### [打折出售应用和 IAP](publish/put-apps-and-iaps-on-sale.md)
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [回复客户评论](publish/respond-to-customer-reviews.md)
 ### [应用营销指南](publish/app-marketing-guidelines.md)
 ### [链接到你的应用](publish/link-to-your-app.md)
 ### [更方便地推广你的应用](publish/make-your-app-easier-to-promote.md)
 ## [获得收入](publish/getting-paid-apps.md)
 ### [设置你的付款帐户和税单](publish/setting-up-your-payout-account-and-tax-forms.md)
+<<<<<<< HEAD
 ### [付款阈值、方法和时间范围](publish/payment-thresholds-methods-and-timeframes.md)
+=======
+>>>>>>> parent of e632454... open localization: commit translated files
 ### [付款摘要](publish/payout-summary.md)
 ### [付费应用的税收明细](publish/tax-details-for-paid-apps.md)
 ### [移动运营商结算](publish/mobile-operator-billing.md)
@@ -858,8 +1040,12 @@
 #### [更改历史记录](https://msdn.microsoft.com/library/windows/apps/dn764945.aspx)
 ### [应用质量](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx)
 ### [开发人员行为准则](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx)
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of e632454... open localization: commit translated files
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Jul16_HO5-->
 
 

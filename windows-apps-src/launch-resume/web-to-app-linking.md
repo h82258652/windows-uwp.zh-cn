@@ -1,28 +1,27 @@
 ---
 author: TylerMSFT
-title: "支持使用应用 URI 处理程序的 Web 到应用链接"
-description: "通过使用应用 URI 处理程序推动用户与应用的互动"
-keywords: "深层链接 Windows"
-translationtype: Human Translation
-ms.sourcegitcommit: 9ef86dcd4ae3d922b713d585543f1def48fcb645
-ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
-
+title: Support web-to-app linking with app Uri handlers
+description: Drive user engagement with your app by using app URI handlers
+keywords: App Links Windows
+keywords: Universal Links Windows
+keywords: App Handlers Windows
+keywords: Deep Linking Windows
 ---
 
-# 支持使用应用 URI 处理程序的 Web 到应用链接
+# Support web-to-app linking with app URI handlers
 
-了解如何通过支持 Web 到应用链接来推动用户与应用的互动。 Web 到应用链接允许你将应用与网站关联。 当用户打开指向你的网站的 http 或 https 链接时，将启动你的应用，而不是打开浏览器。 如果未安装你的应用，则将提供在浏览器中打开你的网站的链接。 用户可以信任此体验，因为只有经验证的内容所有者可以注册链接。
+Learn how to drive user engagement with your app by supporting web-to-app linking. Web-to-app linking allows you to associate an app with a website. When users open an http or https link to your website, instead of opening the browser, your app is launched. If your app is not installed, a link is provided to open your website in the browser. Users can trust this experience because only verified content owners can register for a link.
 
-若要启用 Web 到应用链接，你将需要：
-- 在清单文件中标识你的应用将处理的 URI
-- 带有应用程序包系列名称的 JSON 文件，位于应用部件清单声明所在的相同主机根上。
-- 处理应用中的激活。
+In order to enable web to app linking you will need:
+- Identify the URIs your app will handle in the manifest file
+- A JSON file with the app Package Family Name at the same host root as the app manifest declaration.
+- Handle the activation in the app.
 
-## 注册以处理应用部件清单中的 http 和 https 链接
+## Register to handle http and https links in the app manifest
 
-你的应用需要针对它将处理的网站标识 URI。 若要执行此操作，请将 **Windows.appUriHandler** 扩展注册添加到你的应用部件清单文件 **Package.appxmanifest**。
+Your app needs to identify the URIs for the websites it will handle. To do so, add the **Windows.appUriHandler** extension registration to your app’s manifest file **Package.appxmanifest**.
 
-例如，如果你的网站地址是“msn.com”，你将在应用部件清单中创建以下条目：
+For example, if your website’s address is “msn.com” you would make the following entry in your app’s manifest:
 
 ```xml
 <Applications>
@@ -38,16 +37,13 @@ ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
 </Applications>
 ```
 
-上述声明将你的应用注册为处理来自指定主机的链接。 如果你的网站具有多个地址（例如：m.example.com、www.example.com 和 example.com），则针对每个地址在 `<uap3:AppUriHandler>` 内添加单独的 `<uap3:Host Name=... />` 条目。
+The declaration above registers your app to handle links from the specified host. If your website has multiple addresses (for example: m.example.com, www.example.com, and example.com) then add a separate `<uap3:Host Name=... />` entry inside of the `<uap3:AppUriHandler>` for each address.
 
-## 将你的应用和网站与 JSON 文件关联
+## Associate your app and website with a JSON file
 
-若要确保只有你的应用可以打开你的网站上的内容，请将应用的程序包系列名称包含在某个 JSON 文件中，该文件位于 Web 服务器根中或域上的已知目录中。 这表示你的网站同意列出的应用打开你的站点上的内容。 可以在应用部件清单设计器中的程序包部分中查找程序包系列名称。
+To ensure that only your app can open content on your website, include your app's package family name in a JSON file located in the web server root, or at the well-known directory on the domain. This signifies that your website gives consent for the listed apps to open content on your site. You can find the package family name in the Packages section in the app manifest designer.
 
->[!Important]
-> JSON 文件不应具有.json 文件后缀。
-
-创建一个名为 **windows-app-web-link** 的 JSON 文件（不带有 .json 文件扩展名），并提供你的应用的程序包系列名称。 例如：
+Create a JSON file named **microsoft-app-uri-handlers** and provide your app’s package family name. For example:
 
 ``` JSON
 [{
@@ -57,23 +53,23 @@ ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
  }]
 ```
 
-Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器上查找相应的 JSON 文件。
+Windows will make an https connection to your website and will look for the corresponding JSON file on your web server.
 
-### 通配符
+### Wildcards
 
-上述 JSON 文件示例演示了通配符的用法。 通配符允许你使用较少的代码行支持多种链接。 Web 到应用链接在 JSON 文件中支持两种类型的通配符：
+The JSON file example above demonstrates the use of wildcards. Wildcards allow you to support a wide variety of links with fewer lines of code. Web-to-app linking supports two types of wildcards in the JSON file:
 
-| **通配符** | **说明**               |
+| **Wildcard** | **Description**               |
 |--------------|-------------------------------|
-| *****       | 表示任何子字符串      |
-| **?**        | 表示单个字符 |
+| **\***       | Represents any substring      |
+| **?**        | Represents a single character |
 
-例如，给定上述示例中的 `"excludePaths" : [ "/news/*, /blog/*" ]`，你的应用将支持以你的网站地址（例如 msn.com）开头的所有路径，**除了** `/news/` 和 `/blog/` 下的路径。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
+For instance, given `"excludePaths" : [ "/news/*, /blog/*" ]` in the example above, your app will support all paths that start with your website’s address (e.g. msn.com), **except** those under `/news/` and `/blog/`. **msn.com/weather.html** will be supported, but not ****msn.com/news/topnews.html****.
 
 
-### 多个应用
+### Multiple apps
 
-如果你有两个应用要链接到你的网站，请在 **windows-app-web-link** JSON 文件中列出这两个应用程序程序包系列名称。 这两个应用都可以受支持。 如果同时安装这两个应用，用户将需要选择哪个应用是默认链接。 如果他们希望在以后更改默认链接，可以在“设置”&gt;“应用网站”****中更改它。 开发人员还可以随时更改 JSON 文件，并且最早在更新当天最晚在更新八天后就能看到更改。
+If you have two apps that you would like to link to your website, list both of the application package family names in your **microsoft-app-uri-handlers** JSON file. Both apps can be supported. The user will be presented with a choice of which is the default link if both are installed. If they want to change the default link later, they can change it in **Settings > Apps for Websites**. Developers can also change the JSON file at any time and see the change as early as the same day but no later than eight days after the update.
 
 ``` JSON
 [{
@@ -87,13 +83,13 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
  }]
 ```
 
-若要为用户提供最佳体验，请使用排除的路径以确保仅联机内容已从 JSON 文件中的受支持路径中排除。
+To provide the best experience for your users, use excluded paths to make sure that online-only content is excluded from the supported paths in your JSON file.
 
-先检查排除的路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上述示例中，“/news/\*”包括该路径下的任何页面，而“/news\*”（没有正斜杠结尾“news”）包括“news\*”下的任何路径，如“newslocal/”、“newsinternational/”等。
+Excluded paths are checked first and if there is a match the corresponding page will be opened with the browser instead of the designated app. In the example above, ‘/news/\*’ includes any pages under that path while ‘/news\*’ (no forward slash trails 'news') includes any paths under ‘news\*’ such as ‘newslocal/’, ‘newsinternational/’, and so on.
 
-## 处理用于链接到内容的“激活”上的链接
+## Handle links on Activation to link to content
 
-在应用的 Visual Studio 解决方案中导航到 **App.xaml.cs**，并在 **OnActivated()** 中添加对链接内容的处理。 在以下示例中，在应用中打开的页面取决于 URI 路径：
+Navigate to **App.xaml.cs** in your app’s Visual Studio solution and in **OnActivated()** add handling for linked content. In the following example, the page that is opened in the app depends on the URI path:
 
 ``` CS
 protected override void OnActivated(IActivatedEventArgs e)
@@ -141,60 +137,54 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-**重要提示** 请确保将最终的 `if (rootFrame.Content == null)` 路径替换为 `rootFrame.Navigate(deepLinkPageType, e);`，如上述示例所示。
+**Important** Make sure to replace the final `if (rootFrame.Content == null)` logic with `rootFrame.Navigate(deepLinkPageType, e);` as shown in the example above.
 
-## 测试它：本地验证工具
+## Test it out: Local validation tool
 
-你可以测试应用和网站的配置，方法是运行在以下位置提供的应用主机注册验证程序工具：
+You can test the configuration of your app and website by running the App host registration verifier tool which is available in:
 
 %windir%\\system32\\**AppHostRegistrationVerifier.exe**
 
-通过使用以下参数运行此工具来测试应用和网站的配置：
+Test the configuration of your app and website by running this tool with the following parameters:
 
-**AppHostRegistrationVerifier.exe** *主机名 packagefamilyname 文件路径*
+**AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*
 
--   主机名：你的网站（例如 microsoft.com）
--   程序包系列名称 (PFN)：你的应用的 PFN
--   文件路径：用于本地验证的 JSON 文件（例如 C:\\SomeFolder\\windows-app-web-link）
+-   Hostname: Your website (e.g. microsoft.com)
+-   Package Family Name (PFN): Your app’s PFN
+-   File path: The JSON file for local validation (e.g. C:\\SomeFolder\\microsoft-app-uri-handlers.json)
 
-## 测试它：Web 验证
+## Test it: Web validation
 
-关闭应用程序以验证当你单击某个链接时应用是否激活。 然后，在网站中复制受支持路径之一的地址。 例如，如果你的网站地址为“msn.com”，并且支持路径之一为“path1”，你将使用 `http://msn.com/path1`
+Close your application to verify that the app is activated when you click a link. Then, copy the address of one of the supported paths in your website. For example, if your website’s address is “msn.com”, and one of the support paths is “path1”, you would use `http://msn.com/path1`
 
-验证你的应用是否已关闭。 按 **Windows 键 + R** 打开“运行”****对话框，并在窗口中粘贴该链接。 应启动你的应用，而不是 Web 浏览器。
+Verify that your app is closed. Press **Windows Key + R** to open the **Run** dialog box and paste the link in the window. Your app should launch instead of the web browser.
 
-此外，你可以通过使用 [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) API 从其他应用启动你的应用来测试它。 你也可以使用此 API 在手机上进行测试。
+Additionally, you can test your app by launching it from another app using the [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) API. You can use this API to test on phones as well.
 
-如果你希望遵循协议激活逻辑，请在 **OnActivated** 事件处理程序中设置断点。
+If you would like to follow the protocol activation logic, set a breakpoint in the **OnActivated** event handler.
 
-**注意：**如果你在 Microsoft Edge 浏览器中单击某个链接，它不会启动你的应用，但会将你转到你的网站。
+**Note:** If you click a link in the Microsoft Edge browser, it will not launch your app but will take you to your website.
 
-## AppUriHandlers 提示：
+## AppUriHandlers tips:
 
-- 请确保仅指定你的应用可以处理的链接。
+- Make sure to only specify links that your app can handle.
 
-- 列出你将支持的所有主机。  请注意，www.example.com 和 example.com 是不同的主机。
+- List all of the hosts that you will support.  Note that www.example.com and example.com are different hosts.
 
-- 用户可以在“设置”中选择他们更希望哪个应用处理网站。
+- Users can choose which app they prefer to handle websites in Settings.
 
-- 你的 JSON 文件必须上载到 https 服务器。
+- Your JSON file must be uploaded to an https server.
 
-- 如果你需要更改你希望支持的路径，可以重新发布你的 JSON 文件，而无需重新发布你的应用。 用户将在 1-8 天内看到更改。
+- If you need to change the paths that you wish to support, you can republish your JSON file without republishing your app. Users will see the changes in 1-8 days.
 
-- 带有 AppUriHandlers 的所有旁加载应用都将在安装时验证主机的链接。 不需要上载 JSON 文件即可测试该功能。
+- All sideloaded apps with AppUriHandlers will have validated links for the host on install. You do not need to have a JSON file uploaded to test the feature.
 
-- 只要你的应用是使用 [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) 启动的 UWP 应用或使用 [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx) 启动的 Windows 桌面应用，此功能就可行。 如果 URL 对应于注册的应用 URI 处理程序，则将启动应用，而不是浏览器。
+- This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) or a Windows desktop app launched with  [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
 
-## 另请参阅
+## See also
 
-[windows.protocol 注册](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
+[windows.protocol registration](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
 
-[处理 URI 激活](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
+[Handle URI Activation](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 
-[关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)说明如何使用 LaunchUriAsync() API。
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-
+[Association Launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustrates how to use the LaunchUriAsync() API.

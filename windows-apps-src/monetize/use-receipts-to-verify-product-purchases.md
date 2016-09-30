@@ -1,34 +1,33 @@
 ---
 author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt.
-title: Use receipts to verify product purchases
+description: "每个成功购买产品的 Windows 应用商店交易都可以选择返回交易收据。"
+title: "使用收据验证产品购买"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 01b75d25c385d8dd856af79581fb4a346064c400
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: b1322b74bf1038f05cd1cba275e432e279ed362d
 
 ---
 
-# Use receipts to verify product purchases
+# 使用收据验证产品购买
 
 
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
->**Note**&nbsp;&nbsp;The examples in this article use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage in-app purchases instead of the Windows.ApplicationModel.Store namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
-
-**Important APIs**
+**重要的 API**
 
 -   [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
 -   [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
 
-Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt. This receipt provides information about the listed product and monetary cost to the customer.
+每个成功购买产品的 Windows 应用商店交易都可以选择返回交易收据。 此收据向客户提供所列出的产品和货币成本的信息。
 
-Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made in-app product purchases from the Windows Store. For example, imagine a game that offers downloaded content. If the user who purchased the game content wants to play it on a different device, you need to verify that the user already owns the content. Here's how.
+有权访问此信息可支持以下方案：你的应用需要验证用户是否购买了你的应用，或者是否已从 Windows 应用商店进行了应用内产品购买。 例如，请设想一个提供下载内容的游戏。 如果购买了该游戏内容的用户要在其他设备上玩这个游戏，则需要验证该用户是否已经拥有此项内容。 操作方法如下。
 
-## Requesting a receipt
+## 索要收据
 
 
-The **Windows.ApplicationModel.Store** namespace supports two ways of getting a receipt: by using the [**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) or [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) method and using the *includeReceipt* parameter, or by calling the [**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811) method. An app receipt looks something like this.
+**Windows.ApplicationModel.Store** 命名空间支持两种获取收据的方式：使用 [**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) 或 [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) 方法并使用 *includeReceipt* 参数，或调用 [**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811) 方法。 应用收据如下所示。
 
 ```XML
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:10:05Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
@@ -51,7 +50,7 @@ The **Windows.ApplicationModel.Store** namespace supports two ways of getting a 
 </Receipt>
 ```
 
-A product receipt looks like this.
+产品收据如下所示。
 
 ```XML
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:08:52Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
@@ -73,12 +72,12 @@ A product receipt looks like this.
 </Receipt>
 ```
 
-You can use either of these receipt examples to test your validation code.
+你可以使用任一收据示例来测试自己的验证代码。
 
-## Validating a receipt
+## 验证收据
 
 
-After you get a receipt, you need your back-end system (a web service or something similar) to validate it. Here's a .NET Framework example of that validation process.
+取得收据后，你需要通过后端系统（Web 服务或类似对象）来验证该收据。 以下是该验证过程的一个 .NET Framework 示例。
 
 ```CSharp
 using System;
@@ -157,7 +156,7 @@ namespace ReceiptVerificationSample
             {
                 const int MaxCertificateSize = 10000;
 
-                // We are attempting to retrieve the following url. The getAppReceiptAsync website at
+                // We are attempting to retrieve the following url. The getAppReceiptAsync website at 
                 // http://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.getappreceiptasync.aspx
                 // lists the following format for the certificate url.
                 String certificateUrl = String.Format("https://go.microsoft.com/fwlink/?LinkId=246509&cid={0}", certificateId);
@@ -242,6 +241,9 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=Aug16_HO5-->
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

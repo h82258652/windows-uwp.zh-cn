@@ -7,7 +7,7 @@ label: Touch interactions
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: ca4ab33a58391f36e376323ca29d27961a2a7404
+ms.openlocfilehash: a78dd1030e653d1cf0a1d7f191b4768e5a99860a
 
 ---
 
@@ -620,13 +620,13 @@ End Sub
 ## 相关文章
 
 * [处理指针输入](handle-pointer-input.md)
-* [标识输入设备](identify-input-devices.md)
-**示例**
+* [标识输入设备](identify-input-devices.md) 
+           **示例**
 * [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉效果示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**存档示例**
+* [焦点视觉效果示例](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
+           **存档示例**
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -641,6 +641,6 @@ End Sub
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

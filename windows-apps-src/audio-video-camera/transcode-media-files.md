@@ -1,68 +1,68 @@
 ---
 author: drewbatgit
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
-description: You can use the Windows.Media.Transcoding APIs to transcode video files from one format to another.
-title: Transcode media files
+description: "你可以使用 Windows.Media.Transcoding API 将视频文件代码从一种格式转换为另一种格式。"
+title: "转换媒体文件代码"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7e96f12881e4f210a1bba57d2a9c298dbb1c32e3
+ms.openlocfilehash: 06c452291f10acd35dde9659c08a386ea38fa90a
 
 ---
 
-# Transcode media files
+# 转换媒体文件代码
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-You can use the [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) APIs to transcode video files from one format to another.
+你可以使用 [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) API 将视频文件代码从一种格式转换为另一种格式。
 
-*Transcoding* is the conversion of a digital media file, such as a video or audio file, from one format to another. This is usually done by decoding and then re-encoding the file. For example, you might convert a Windows Media file to MP4 so that it can be played on a portable device that supports MP4 format. Or, you might convert a high-definition video file to a lower resolution. In that case, the re-encoded file might use the same codec as the original file, but it would have a different encoding profile.
+*转换代码*是指转换数字媒体文件，例如将视频或音频文件从一种格式转换为另一种格式。 这通常是通过解码文件，然后再重新编码文件实现的。 例如，你可以将 Windows Media 文件转换为 MP4 文件，以使此文件可以在支持 MP4 格式的便携式设备上播放。 或者，你可以将高清视频文件转换为较低分辨率的文件。 在此情况下，重新编码的文件可能使用与原始文件相同的编解码器，但是其编码配置文件不同。
 
-## Set up your project for transcoding
+## 设置你的项目以进行转换代码
 
-In addition to the namespaces referenced by the default project template, you will need to reference these namespaces in order to transcode media files using the code in this article.
+除了由默认项目模板引用的命名空间，你还需要引用这些命名空间，以便使用本文中的代码转换媒体文件代码。
 
-[!code-cs[Using](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetUsing)]
+[!code-cs[使用](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetUsing)]
 
-## Select source and destination files
+## 选择源文件和目标文件
 
-The way that your app determines the source and destination files for transcoding depends on your implementation. This example uses a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to allow the user to pick a source and a destination file.
+应用确定要转换代码的源文件和目标文件的方式取决于实现。 此示例使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)，以允许用户选取源文件和目标文件。
 
 [!code-cs[TranscodeGetFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeGetFile)]
 
-## Create a media encoding profile
+## 创建媒体编码配置文件
 
-The encoding profile contains the settings that determine how the destination file will be encoded. This is where you have the greatest number of options when you transcode a file.
+编码配置文件包含确定如何编码目标文件的设置。 转换文件代码时，此文件中包含的选项最多。
 
-The [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) class provides static methods for creating predefined encoding profiles:
+[**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 类提供用于创建预定义编码配置文件的静态方法：
 
 -   Wav
--   AAC audio (M4A)
--   MP3 audio
--   Windows Media Audio (WMA)
+-   AAC 音频 (M4A)
+-   MP3 音频
+-   Windows Media 音频 (WMA)
 -   Avi
--   MP4 video (H.264 video plus AAC audio)
--   Windows Media Video (WMV)
+-   MP4 视频（H.264 视频加 AAC 音频）
+-   Windows Media 视频 (WMV)
 
-The first four profiles in this list contain audio only. The other three contain video and audio.
+此列表中的前四个配置文件仅包含音频。 另外三个既包含视频又包含音频。
 
-The following code creates a profile for MP4 video.
+以下代码为 MP4 视频创建配置文件。
 
 [!code-cs[TranscodeMediaProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeMediaProfile)]
 
-The static [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078) method creates an MP4 encoding profile. The parameter for this method gives the target resolution for the video. In this case, [**VideoEncodingQuality.hd720p**](https://msdn.microsoft.com/library/windows/apps/hh701290) means 1280 x 720 pixels at 30 frames per second. ("720p" stands for 720 progressive scan lines per frame.) The other methods for creating predefined profiles all follow this pattern.
+静态 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078) 方法创建 MP4 编码配置文件。 此方法的参数为视频指定目标分辨率。 在这种情况下，[**VideoEncodingQuality.hd720p**](https://msdn.microsoft.com/library/windows/apps/hh701290) 表示在每秒 30 帧情况下的 1280 x 720 像素。 （“720p”表示每帧 720 个逐行扫描行。）用于创建预定义配置文件的其他方法均遵循此模式。
 
-Alternatively, you can create a profile that matches an existing media file by using the [**MediaEncodingProfile.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701047) method. Or, if you know the exact encoding settings that you want, you can create a new [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) object and fill in the profile details.
+或者，你可以通过使用 [**MediaEncodingProfile.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701047) 方法来创建与现有媒体文件相匹配的配置文件。 或者，如果你知道所需的确切编码设置，则可以创建一个新的 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 对象，然后填写配置文件详细信息。
 
-## Transcode the file
+## 转换文件代码
 
-To transcode the file, create a new [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) object and call the [**MediaTranscoder.PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936) method. Pass in the source file, the destination file, and the encoding profile. Then call the [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) method on the [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) object that was returned from the async transcode operation.
+若要转码文件，请创建新的 [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) 对象并调用 [**MediaTranscoder.PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936) 方法。 传入源文件、目标文件和编码配置文件。 然后，调用从异步转换代码操作中返回的 [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) 对象中的 [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) 方法。
 
 [!code-cs[TranscodeTranscodeFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeTranscodeFile)]
 
-## Respond to transcoding progress
+## 响应转换代码进度
 
-You can register events to respond when the progress of the asynchronous [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) changes. These events are part of the async programming framework for Universal Windows Platform (UWP) apps and are not specific to the transcoding API.
+你可以注册要在异步进度 [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) 发生更改时响应的事件。 这些事件是通用 Windows 平台 (UWP) 应用的异步编程框架的一部分，且不特定于转换 API 代码。
 
 [!code-cs[TranscodeCallbacks](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeCallbacks)]
 
@@ -76,6 +76,6 @@ You can register events to respond when the progress of the asynchronous [**Tran
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

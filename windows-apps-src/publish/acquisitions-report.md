@@ -1,73 +1,73 @@
 ---
 author: jnHs
-Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired your app, along with demographic and platform details.
-title: Acquisitions report
+Description: "通过 Windows 开发人员中心仪表板中的“购置”报告，你可以查看哪些用户购置了你的应用，以及客户统计和平台详细信息。"
+title: "购置报告"
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2556e7bd8f827287c917c3b9ffa2da980d0d5d88
+ms.openlocfilehash: bfdf4f9f2d94a31a1c159e947615c10abf556aad
 
 ---
 
-# Acquisitions report
+# 购置报告
 
 
-The **Acquisitions** report in the Windows Dev Center dashboard lets you see who has acquired your app, along with demographic and platform details. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+通过 Windows 开发人员中心仪表板中的“购置”****报告，你可以查看哪些用户购置了你的应用，以及客户统计和平台详细信息。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。 或者，也可以使用 [Windows 应用商店分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 以编程方式检索此数据。
 
-In this report, an acquisition means a new customer has obtained a license to your app (whether you charged money or you've offered it for free).
+在此报告中，购置意味着新客户已获得应用许可证（无论你是否收费）。
 
-> **Important**  The **Acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
-
-
-
-## Apply filters
+> **重要提示** **“购置”**报告不包括有关退款、回退、退单的数据。若要评估应用收入，请访问[付款摘要](payout-summary.md)。 在**“预定”**部分中，单击**“下载预定交易”**链接。
 
 
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by device type.
 
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Device type**: The default setting is **All devices**. If you want to show data for acquisitions from a certain device type only, you can choose a specific one here.
-
-The info in the charts listed below will reflect the period of time selected in the **Apply filters** section.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section. By default this will include data for all device types, unless you've used **Apply filters** to choose only one.
-
-## Acquisitions
+## 应用筛选器
 
 
-The **Acquisitions** chart shows the number of daily or weekly acquisitions of your app over the selected period of time. (When you use **Apply filters** to filter the data over a longer duration, the data will be grouped by week.)
+在页面顶部附近，你可以展开“应用筛选器”****按日期范围和/或设备类型筛选此页上的所有数据。
 
-You can also see the lifetime number of acquisitions for your app. This shows the cumulative total of all acquisitions, starting from when your app was first published.
+-   **日期**：默认筛选器为“最近 30 天”****，但是你可以将此条件扩大到“最近 12 个月”****。
+-   **设备类型**：默认设置为“所有设备”****。 如果你想要显示仅来自某个特定设备类型的购置数据，可以在此选择一个特定设备。
 
-You can optionally filter the results by market and/or by OS version.
+下面列出的图中的信息将反映在“应用筛选器”****部分中所选的时段。
 
-## Customer demographic
+以下列出的所有图中的信息将反映在**“应用筛选器”**部分中所选的时段。 除非你已使用“应用筛选器”****仅选择一个设备类型，否则在默认情况下，这会包含所有设备类型的数据。
 
-
-The **Customer demographic** chart shows demographic info about the people who acquired your app. You can see how many acquisitions (over the selected period of time) were made by people in a certain age group and by which gender.
-
-> **Note**  Some customers have opted not to share this info. If we were unable to determine the age group or gender, the acquisition is categorized as **Unknown**.
-
- 
-
-## Markets
+## 购置
 
 
-The **Markets** chart shows the total number of acquisitions over the selected period of time by market. By default, we show you the market which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Acquisitions** column of this chart.
+**“购置”**图显示了选定时段内应用的日购置数或周购置数。 （当你使用“应用筛选器”****筛选更长时间段内的数据时，数据将按周进行分组。）
 
-## OS version
+你还可以看到购置应用的生命周期。 这将显示从首次发布应用起所有购置的累计总数。
+
+你可以选择按市场和/或操作系统版本筛选结果。
+
+## 客户统计
 
 
-The **OS version** chart shows the total number of acquisitions based on the customer's operating system (or via [volume acquisition by organizations](organizational-licensing.md)). In some cases we may not be able to determine this info. In that case, the OS version will be listed as **Unknown**.
+“客户统计”****图显示有关已购置应用的用户的统计信息。 你可以看到按照特定年龄段内的人以及不同性别（在选定时段内）所进行的购置量。
 
-
+> **注意** 有些客户已选择不共享此信息。 如果我们无法确定年龄段或性别，则购置将归类为**“未知”**。
 
  
 
+## 市场
+
+
+“市场”****图显示了按照不同市场在选定时段内的购置总量。 默认情况下，我们按购置量从高到低的顺序显示市场。 你可以通过切换此图的“购置”****列中的箭头颠倒此顺序。
+
+## 操作系统版本
+
+
+“操作系统版本”****图基于客户的操作系统（或通过[组织批量购置](organizational-licensing.md)）显示购置总量。 在某些情况下，我们可能无法确定此信息。 在此情况下，操作系统版本将列为“未知”****。
+
+
+
+ 
+
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

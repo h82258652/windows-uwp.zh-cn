@@ -1,32 +1,32 @@
 ---
 author: jwmsft
-description: The Binding markup extension is converted at XAML load time into an instance of the Binding class.
-title: Binding markup extension'
+description: "Binding 标记扩展会在 XAML 加载时转换为 Binding 类的实例。"
+title: "Binding 标记扩展&#39;"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 translationtype: Human Translation
-ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
-ms.openlocfilehash: 95b48b55f11c4de0b4a51106b6cf5439bfa784b9
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 
 ---
 
-# {Binding} markup extension
+# {Binding} 标记扩展
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Note**  A new binding mechanism is available for Windows 10, which is optimized for performance and developer productivity. See [{x:Bind} markup extension](x-bind-markup-extension.md).
+**注意** 新的绑定机制可用于 Windows 10，该机制已针对性能和开发人员工作效率进行优化。 请参阅 [{x:Bind} 标记扩展](x-bind-markup-extension.md)。
 
-**Note**  For general info about using data binding in your app with **{Binding}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**注意** 有关将应用中的数据绑定与 **{Binding}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-The **{Binding}** markup extension is used to data bind properties on controls to values comming from a data source such as code. The **{Binding}** markup extension is converted at XAML load time into an instance of the [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) class. This binding object gets a value from a property on a data source, and pushes it to the property on the control. The binding object can optionally be configured to observe changes in the value of the data source property and update itself based on those changes. It can also optionally be configured to push changes to the control value back to the source property. The property that is the target of a data binding must be a dependency property. For more info, see [Dependency properties overview](dependency-properties-overview.md).
+**{Binding}** 标记扩展会在 XAML 加载时转换为 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类的实例。 此绑定对象将从数据源的某一属性中获取相关值。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新。 该对象也可以配置为将其自己的值的更改推送回源属性。 作为数据绑定目标的属性必须是依赖属性。 有关详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)。
 
-**{Binding}** has the same dependency property precedence as a local value, and setting a local value in imperative code removes the effect of any **{Binding}** set in markup.
+**{Binding}** 具有与本地值相同的依赖属性优先级，而在强制性代码中设置本地值将删除在标记中设置的任何 **{Binding}**。
 
-**Sample apps that demonstrate {Binding}**
+**用于演示 {Binding} 的应用示例**
 
--   Download the [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) app.
--   Download the [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) app.
+-   下载 [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) 应用。
+-   下载 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 应用。
 
-## XAML attribute usage
+## XAML 属性使用方法
 
 
 ``` syntax
@@ -39,60 +39,57 @@ The **{Binding}** markup extension is used to data bind properties on controls t
 <object property="{Binding propertyPath, bindingProperties}" .../>
 ```
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| *propertyPath* | A string that specifies the property path for the binding. More info is in the [Property path](#property-path) section below. |
-| *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>One or more binding properties that are specified using a name/value pair syntax. |
-| *propName* | The string name of the property to set on the [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) object. For example, "Converter". |
-| *value* | The value to set the property to. The syntax of the argument depends on the property of [Properties of the Binding class that can be set with {Binding}](#properties-of-binding) section below. |
+| *propertyPath* | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
+| *bindingProperties* | *propName* = *value*\[, *propName*=*value*\]*<br/>使用一个名称/值对语法指定的一个或多个绑定属性。 |
+| *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 对象上设置的属性的字符串名称。 例如，“Converter”。 | 
+| *value* | 要将属性设置为的值。 参数的语法取决于下面的[可使用 {Binding} 设置的 Binding 类的属性](#properties-of-binding)部分的属性。 |
 
-## Property path
+## 属性路径
 
-*PropertyPath* sets the value of [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830), which describes the property that you're binding to (the source property). PropertyPath is a positional parameter, so you can specify it as the first unnamed parameter: `{Binding Path=...}`. Or you can use the parameter name explicitly: `{Binding Path=...}`.
+*PropertyPath* 设置 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的值，后者是你要绑定到的属性（源属性）。 你可以明确指出属性名称：`{Binding Path=...}`。 也可以将其省略：`{Binding ...}`。
 
-The type of [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) is a property path, which is a string that evaluates to a property or sub-property of either your custom type or a framework type. The type can be, but does not need to be, a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Steps in a property path are delimited by dots (.), and you can include multiple delimiters to traverse successive sub-properties. Use the dot delimiter regardless of the programming language used to implement the object being bound to.
+[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 类型为属性路径，其求值结果为自定义类型或框架类型的属性或子属性的字符串。 该类型可能是（但并不一定是）[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 属性路径中的步骤由点号 (.) 分隔，并且可包含多个分隔符以遍历连续的子属性。 无论使用何种编程语言，均可将点号分隔符用于实现要绑定到的对象。
 
-For example, to bind UI to an employee object's first name property, your property path might be "Employee.FirstName". If you are binding an items control to a property that contains an employee's dependents, your property path might be "Employee.Dependents", and the item template of the items control would take care of displaying the items in "Dependents".
+例如，若要将 UI 绑定到员工对象的第一个名称属性，属性路径可能是“Employee.FirstName”。 如果将一个项目控件绑定到一个包含员工家属的属性，则属性路径可能是“Employee.Dependents”，并且项目控件的项目模板将负责显示“Dependents”中的项。
 
-If the data source is a collection, then a property path can specify items in the collection by their position or index. For example, "Teams\[0\].Players", where the literal "\[\]" encloses the "0" that specifies the first item in a collection.
+如果数据源是一个集合，则属性路径可以按照位置或索引来指定集合中的项目。 例如“Teams\[0\].Players”，其中文本“\[\]”中包含 “0”，用于指定集合中的第一个项目。
 
-When using an [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) binding to an existing [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), you can use attached properties as part of the property path. To disambiguate an attached property so that the intermediate dot in the attached property name is not considered a step into a property path, put parentheses around the owner-qualified attached property name; for example, `(AutomationProperties.Name)`.
+当使用绑定到现有 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 时，你可以使用附加属性作为属性路径的一部分。 若要消除附加属性的多义性，以使附加属性名称中的中间点不被视为属性路径中的一个步骤，可以将所有者限定的附加属性名称放在圆括号中；例如 `(AutomationProperties.Name)`。
 
-A property path intermediate object is stored as a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) object in a run-time representation, but most scenarios won't need to interact with a **PropertyPath** object in code. You can usually specify the binding info you need using XAML.
+属性路径中间对象作为 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 对象存储在运行时表示形式中，但大多数情况不需要与代码中的 **PropertyPath** 对象交互。 通常，可以使用 XAML 来指定所需的绑定信息。
 
-For more info about the string syntax for a property path, property paths in animation feature areas, and constructing a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) object, see [Property-path syntax](property-path-syntax.md).
+有关属性路径的字符串语法、动画功能区域中的属性路径和构造 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 对象的详细信息，请参阅 [Property-path 语法](property-path-syntax.md)。
 
-## Properties of the Binding class that can be set with {Binding}
+## 可使用 {Binding} 设置的 Binding 类的属性
 
 
-**{Binding}** is illustrated with the *bindingProperties* placeholder syntax because there are multiple read/write properties of a [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) that can be set in the markup extension. The properties can be set in any order with comma-separated *propName*=*value* pairs. Some of the properties require types that don't have a type conversion, so these require markup extensions of their own nested within the **{Binding}**.
+**{Binding}** 通过 *bindingProperties* 占位符语法来解释，因为 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 中存在多个可在标记扩展中进行设置的读/写属性。 这些属性可按任何顺序设置，并带有以逗号分隔的 *propName*=*value* 对。 由于其中一些属性需要不具有类型转换的类型，因此它们需要一些自己嵌套在 **{Binding}** 内的标记扩展。
 
-| Property | Description |
+| 属性 | 说明 |
 |----------|-------------|
-| [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) | See the [Property path](#property-path) section above. |
-| [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) | Specifies a converter object that is called by the binding engine. The converter can be set in markup using the [{StaticResource} markup extension](staticresource-markup-extension.md) to reference to that object from a resource dictionary. |
-| [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | Specifies the culture to be used by the converter. (If you're setting [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826).) The culture is set as a standards-based identifier. For more info, see [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) |
-| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | Specifies a converter parameter that can be used in converter logic. (If you're setting [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826).) Most converters use simple logic that get all the info they need from the passed value to convert, and don't need a **ConverterParameter** value. The **ConverterParameter** parameter is for more complex converter implementations that have conditional logic that keys off what's passed in **ConverterParameter**. You can write a converter that uses values other than strings but this is uncommon, see Remarks in **ConverterParameter** for more info. |
-| [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | Specifies a data source by referencing another element in the same XAML construct that has a **Name** property or [x:Name attribute](x-name-attribute.md). This is often use to share related values or use sub-properties of one UI element to provide a specific value for another element, for example in a XAML control template. |
-| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | Specifies a value to display when the source or path cannot be resolved. |
-| [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) | Specifies the binding mode, as one of these values: "OneTime", "OneWay", or "TwoWay". These correspond to the constant names of the [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) enumeration. The default depends on the binding target but in most cases it is "OneWay". Note that this differs from the default for **{x:Bind}**, which is "OneTime". | 
-| [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | Specifies a data source by describing the position of the binding source relative to the position of the binding target. This is most often used in bindings within XAML control templates. Setting the [{RelativeSource} markup extension](relativesource-markup-extension.md). |
-| [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) | Specifies the object data source. Within the **Binding** markup extension, the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) property requires an object reference, such as a [{StaticResource} markup extension](staticresource-markup-extension.md) reference. If this property is not specified, the acting data context specifies the source. It's more typical to not specify a Source value in individual bindings, and instead to rely on the shared **DataContext** for multiple bindings. For more info see [**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx) or [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946). |
-| [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | Specifies a value to display when the source value resolves but is explicitly **null**. |
-| [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | Specifies the timing of binding source updates. If unspecified, the default is **Default**. |
+| [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) | 请参阅上面的[属性路径](#property-path)部分。 |
+| [**转换器**](https://msdn.microsoft.com/library/windows/apps/br209826) | 指定绑定引擎所调用的转换器对象。 转换器可以在 XAML 中设置，但仅限于你引用你在对资源字典中的该对象的 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用中分配的对象实例。 |
+| [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | 指定转换器要使用的区域性。 （如果要设置 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)。）区域性可设置为一个基于标准的标识符。 有关详细信息，请参阅 **ConverterLanguage** | 
+| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | 指定可在转换器逻辑中使用的转换器参数。 （如果要设置 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)。）大多数转换器使用可从要转换的传递值获取所有所需信息的简单逻辑，不需要 **ConverterParameter** 值。 **ConverterParameter** 参数适用于具有多个逻辑的中等高级转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 **ConverterParameter** 中的备注以获取详细信息。 |
+| [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | 通过引用同一个 XAML 构造中的另一个元素（具有 **Name** 属性或 [x:Name 属性](x-name-attribute.md)）来指定数据源。 这种方法通常用于共享相关值，或者使用一个 UI 元素的子属性为另一个元素提供特定值，例如在 XAML 控件模板中。 |
+| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定要在无法解析源或路径时显示的值。 | 
+| [**模式**](https://msdn.microsoft.com/library/windows/apps/br209829) | 将绑定模式指定为以下字符串之一：“OneTime”、“OneWay”或“TwoWay”。 这些模式对应于 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 枚举的常量名称。 默认值取决于绑定目标，但在大多数情况下，该值为“OneWay”。 请注意，该值不是 **{x:Bind}** 的默认值，而是“OneTime”。 | 
+| [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | 通过描述绑定来源的位置相对于绑定目标的位置来指定数据源。 这通过运行时对象图表的方式表示，例如指定对象的父级。 设置 [{RelativeSource} 标记扩展](relativesource-markup-extension.md)。 |
+| [**源**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定对象数据源。 在 **Binding** 标记扩展中，[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) 属性需要一个对象引用，例如 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用。 如果未指定此属性，则操作数据上下文指定来源。 更加常见的做法是不在单个绑定中指定 Source 值，而是依赖于共享的 **DataContext** 进行多个绑定。 有关详细信息，请参阅 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx) 或[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
+| [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | 指定要在源值解析但并非显式 **null** 时显示的值。 |
+| [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | 指定绑定源更新的定时。 如果没有指定，则默认值为 **Default**。 |
 
-**Note**  If you're converting markup from **{x:Bind}** to **{Binding}**, then be aware of the differences in default values for the **Mode** property.
+**注意** 如果你要将标记从 **{x:Bind}** 转换为 **{Binding}**，请注意在 **Mode** 属性默认值方面的差异。
 
-[**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) and **ConverterLanguage** are all related to the scenario of converting a value or type from the binding source into a type or value that is compatible with the binding target property. For more info and examples, see the "Data conversions" section of [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+[**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 和 **ConverterLanguage** 都与如下方案相关：将绑定源中的值或类型转换为与绑定目标属性兼容的类型或值。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)的“数据转换”部分。
 
-> [!NOTE]
-> Starting in Windows 10, version 1607, the XAML framework provides a built in Boolean to Visibility converter. The converter maps **true** to the **Visible** enumeration value and **false** to **Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 和 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 都可指定绑定源，因此它们相互排斥。
 
-[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832), [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831), and [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) specify a binding source, so they are mutually exclusive.
+**提示** 如果你需要为某个值指定单个花括号（例如在 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中），请在其前面加上反斜杠：`\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
 
-**Tip**  If you need to specify a single curly brace for a value, such as in [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) or [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), then precede it with a backslash: `\{`. Alternatively, enclose the entire string that contains the braces that need escaping in a secondary quotation set, for example `ConverterParameter='{Mix}'`.
-
-## Examples
+## 示例
 
 ```XML
 <!-- binding a UI element to a view model -->    
@@ -115,22 +112,23 @@ For more info about the string syntax for a property path, property paths in ani
     <Slider x:Name="sliderValueConverter" ... />
     <TextBox Text="{Binding Path=Value, ElementName=sliderValueConverter,
         Mode=OneWay,
-        Converter={StaticResource GradeConverter}}"/>
+        Converter={StaticResource GradeConverter}}"/> 
 </Page>
 ```
 
-The second example sets four different [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) properties: [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828), [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830), [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) and [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826). **Path** in this case is shown explicitly named as a **Binding** property. The **Path** is evaluated to a data binding source that is another object in the same run-time object tree, a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) named `sliderValueConverter`.
+第二个示例设置了以下四个不同的 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 属性：[**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828)、[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830)、[**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) 和 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)。 本例中显示的 **Path** 明确命名为 **Binding** 属性。 **Path** 的求值结果是一个数据绑定源，该绑定源是同一个运行时对象树中的另一个对象（即，名为 `sliderValueConverter` 的 [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614)）。
 
-Note how the [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) property value uses another markup extension, [{StaticResource} markup extension](staticresource-markup-extension.md), so there are two nested markup extension usages here. The inner one is evaluated first, so that once the resource is obtained there's a practical [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) (a custom class that's instantiated by the `local:S2Formatter` element in resources) that the binding can use.
+请注意 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) 属性值如何使用另一个标记扩展 [{StaticResource} 标记扩展](staticresource-markup-extension.md)，以便在这里有两个嵌套标记扩展用法。 内部嵌套先求值，以便在获取资源之后，有一个可以由绑定使用的实际 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)（一个由资源中的 `local:S2Formatter` 元素实例化的自定义类）。
 
-## Tools support
+## 工具支持
 
-Microsoft IntelliSense in Microsoft Visual Studio displays the properties of the data context while authoring **{Binding}** in the XAML markup editor. As soon as you type "{Binding", data context properties appropriate for [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) are displayed in the dropdown. IntelliSense also helps with the other properties of [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). For this to work, you must have either the data context or the design-time data context set in the markup page. **Go To Definition** (F12) also works with **{Binding}**. Alternatively, you can use the data binding dialog.
+当在 XAML 标记编辑器中创作 **{Binding}** 时，Microsoft Visual Studio 中的 Microsoft IntelliSense 将显示数据上下文的相关属性。 只要你键入“{Binding”，适合 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的数据上下文属性便会显示在下拉列表中。 IntelliSense 对 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的其他属性也能起到帮助作用。 为实现此操作，你必须在标记页中设置数据上下文或设计时数据上下文。 “转到定义”****(F12) 也适用于 **{Binding}**。 或者，你也可以使用数据绑定对话框。
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

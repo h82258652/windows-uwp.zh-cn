@@ -1,54 +1,50 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "将默认的 InkToolbar 添加到通用 Windows 平台 (UWP) 墨迹书写应用、将自定义笔按钮添加到 InkToolbar，并将自定义笔按钮绑定到自定义笔定义。"
-title: "将 InkToolbar 添加到通用 Windows 平台 (UWP) 墨迹书写应用"
+Description: Add a default InkToolbar to a Universal Windows Platform (UWP) inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.
+title: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
 label: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 743ce43be6220d96d7e9bc295ab72bdec4905edc
-ms.openlocfilehash: 4c50c8ded127b2261df901d9da3210ff397b00ca
-
 ---
 
-# 将 InkToolbar 添加到通用 Windows 平台 (UWP) 墨迹书写应用
+# Add an InkToolbar to a Universal Windows Platform (UWP) inking app
 
-有两种不同的控件可促进通用 Windows 平台 (UWP) 应用中的墨迹书写：[**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 和 [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)。
+There are two different controls that facilitate inking in Universal Windows Platform (UWP) apps: [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) and [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
 
-[**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 控件提供基本 Windows Ink 功能。 使用它将笔输入呈现为笔划墨迹（使用颜色和粗细的默认设置）或擦除笔划。
+The [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) control provides basic Windows Ink functionality. Use it to render pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke.
 
-> 有关 InkCanvas 实现的详细信息，请参阅 [UWP 应用中的笔和触笔交互](pen-and-stylus-interactions.md)。
+> For InkCanvas implementation details, see [Pen and stylus interactions in UWP apps](pen-and-stylus-interactions.md).
 
-作为完全透明的覆盖层，InkCanvas 不提供任何用于设置笔划墨迹属性的内置 UI。 如果你希望更改默认的墨迹书写体验，请让用户设置笔划墨迹属性，并支持其他自定义墨迹书写功能，你有两个选项：
+As a completely transparent overlay, the InkCanvas does not provide any built-in UI for setting ink stroke properties. If you want to change the default inking experience, let users set ink stroke properties, and support other custom inking features, you have two options:
 
-- 在代码隐藏中，请使用绑定到 InkCanvas 的 [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 对象。
+- In code-behind, use the underlying [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) object bound to the InkCanvas.
 
-  InkPresenter API 支持墨迹书写体验的广泛自定义。 有关更多详细信息，请参阅 [UWP 应用中的笔和触笔交互](pen-and-stylus-interactions.md)。
+  The InkPresenter APIs support extensive customization of the inking experience. For more detail, see [Pen and stylus interactions in UWP apps](pen-and-stylus-interactions.md).
 
-- 将 [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) 绑定到 InkCanvas。 默认情况下，InkToolbar 提供用于激活墨迹功能和设置墨迹属性（如笔划大小、墨迹颜色和笔尖形状）的基本 UI。
+- Bind an [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) to the InkCanvas. By default, the InkToolbar provides a basic UI for activating ink features and setting ink properties such as stroke size, ink color, and pen tip shape.
 
-  我们将在本主题中讨论 InkToolbar。
+  We discuss the InkToolbar in this topic.
 
-## 重要的 API
+## Important APIs
 
-  -   [**InkCanvas 类**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)
-  -   [**InkToolbar 类**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)
-  -   [**InkPresenter 类**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)
+  -   [**InkCanvas class**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)
+  -   [**InkToolbar class**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)
+  -   [**InkPresenter class**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)
   -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
-## 默认 InkToolbar
+## Default InkToolbar
 
-默认情况下，InkToolbar 包括用于绘制、擦除、突出显示和显示标尺的按钮。 根据功能，在浮出控件中提供其他设置和命令，如墨迹颜色、笔划粗细、擦除所有墨迹。
+By default, the InkToolbar includes buttons for drawing, erasing, highlighting, and displaying a ruler. Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.
 
 ![InkToolbar](.\images\ink\ink-tools-invoked-toolbar-small.png)  
-*默认的 Windows Ink 工具栏*
+*Default Windows Ink toolbar*
 
-若要添加基本的默认 InkToolbar，请执行以下操作：
-1. 在 MainPage.xaml 中，为墨迹书写图面声明一个容器对象（对于此示例，我们使用 Grid 控件）。
-2. 声明一个 InkCanvas 对象作为容器的子项。 （InkCanvas 大小继承自该容器。）
-3. 声明一个 InkToolbar 并使用 TargetInkCanvas 属性将其绑定到 InkCanvas。
-  确保在 InkCanvas 之后声明 InkToolbar。 否则，InkCanvas 覆盖层会使 InkToolbar 不可访问。
+To add a basic default InkToolbar:
+1. In MainPage.xaml, declare a container object (for this example, we use a Grid control) for the inking surface.
+2. Declare an InkCanvas object as a child of the container. (The InkCanvas size is inherited from the container.)
+3. Declare an InkToolbar and use the TargetInkCanvas attribute to bind it to the InkCanvas.
+  Ensure the InkToolbar is declared after the InkCanvas. If not, the InkCanvas overlay renders the InkToolbar inaccessible.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -72,24 +68,24 @@ ms.openlocfilehash: 4c50c8ded127b2261df901d9da3210ff397b00ca
 </Grid>
 ```
 
-## 基本自定义
+## Basic customization
 
-在此部分中，我们将介绍一些基本的 Windows Ink 工具栏自定义方案。
+In this section, we cover some basic Windows Ink toolbar customization scenarios.
 
-### 指定所选的按钮  
-![在初始化时选择的铅笔按钮](.\images\ink\ink-tools-default-toolbar.png)  
-*带有在初始化时选择的铅笔按钮的 Windows Ink 工具栏*
+### Specify the selected button  
+![Pencil button selected at initialization](.\images\ink\ink-tools-default-toolbar.png)  
+*Windows Ink toolbar with pencil button selected at initialization*
 
-默认情况下，当你的应用启动并且工具栏初始化时，将选择第一个（或最左边的）按钮。 在默认的 Windows Ink 工具栏中，这是圆珠笔按钮。
+By default, the first (or leftmost) button is selected when your app is launched and the toolbar is initialized. In the default Windows Ink toolbar, this is the ballpoint pen button.
 
-由于该框架定义了内置按钮的顺序，因此第一个按钮可能不是你默认要激活的笔或工具。
+Because the framework defines the order of the built-in buttons, the first button might not be the pen or tool you want to activate by default.
 
-你可以替代此默认行为，并在工具栏上指定所选的按钮。
+You can override this default behavior and specify the selected button on the toolbar.
 
-对于此示例，我们初始化将选择铅笔按钮并激活铅笔（而不是圆珠笔）的默认工具栏。
+For this example, we initialize the default toolbar with the pencil button selected and the pencil activated (instead of the ballpoint pen).
 
-1. 为上一个示例中的 InkCanvas 和 InkToolbar 使用 XAML 声明。
-2. 在代码隐藏中，为 [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) 对象的 [Loaded](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loaded.aspx) 事件设置处理程序。
+1. Use the XAML declaration for the InkCanvas and InkToolbar from the previous example.
+2. In code-behind, set up a handler for the [Loaded](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loaded.aspx) event of the [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) object.
 
   ```csharp
   /// <summary>
@@ -104,12 +100,12 @@ ms.openlocfilehash: 4c50c8ded127b2261df901d9da3210ff397b00ca
   }
   ```
 
-3. 在 [Loaded](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loaded.aspx) 事件的处理程序中：
-  1. 获取对内置 [InkToolbarPencilButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx) 的引用。
+3. In the handler for the [Loaded](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loaded.aspx) event:
+  1. Get a reference to the built-in [InkToolbarPencilButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx).
 
-    传递 [GetToolButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.gettoolbutton.aspx) 方法中的 [InkToolbarTool.Pencil](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbartool.aspx) 对象会为 [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx) 返回 [InkToolbarToolButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbartoolbutton.aspx) 对象。
+    Passing an [InkToolbarTool.Pencil](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbartool.aspx) object in the [GetToolButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.gettoolbutton.aspx) method returns an [InkToolbarToolButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbartoolbutton.aspx) object for the [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx).
 
-  2. 将 [ActiveTool](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.activetool.aspx) 设置为上一步中返回的对象。
+  2. Set [ActiveTool](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.activetool.aspx) to the object returned in the previous step.
 
 ```CSharp
 /// <summary>
@@ -126,12 +122,12 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-### 指定内置按钮
+### Specify the built-in buttons
 
-![指定在初始化时包含的按钮](.\images\ink\ink-tools-specific.png)  
-*指定在初始化时包含的按钮*
+![Specific buttons included at initialization](.\images\ink\ink-tools-specific.png)  
+*Specific buttons included at initialization*
 
-如上所示，Windows Ink 工具栏包含默认内置按钮的集合。 这些按钮按照以下顺序（从左到右）显示：
+As mentioned, the Windows Ink toolbar includes a collection of default, built-in buttons. These buttons are displayed in the following order (from left to right):
 
 - [InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton.aspx)
 - [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx)
@@ -139,17 +135,17 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 - [InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton.aspx)
 - [InkToolbarRulerButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarrulerbutton.aspx)
 
-对于此示例，我们仅使用内置圆珠笔、铅笔和橡皮擦按钮初始化工具栏。
+For this example, we initialize the toolbar with only the built-in ballpoint pen, pencil, and eraser buttons.
 
-使用 XAML 或代码隐藏执行此操作。
+You can do this using either XAML or code-behind.
 
 **XAML**
 
-为第一个示例中的 InkCanvas 和 InkToolbar 修改 XAML 声明。
-- 添加 [InitialControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.initialcontrols.aspx) 属性并将其值设置为“[None](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarinitialcontrols.aspx)”。 这将清除内置按钮的默认集合。
-- 添加你的应用所需的特定 InkToolbar 按钮。 此处，我们将仅添加 [InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton.aspx)、[InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx) 和 [InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton.aspx)。
+Modify the XAML declaration for the InkCanvas and InkToolbar from the first example.
+- Add an [InitialControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.initialcontrols.aspx) attribute and set its value to "[None](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarinitialcontrols.aspx)". This clears the default collection of built-in buttons.
+- Add the specific InkToolbar buttons required by your app. Here, we add [InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton.aspx), [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx), and [InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton.aspx) only.
 > [!NOTE]
-> 按钮将按照框架定义的顺序（而不是此处指定的顺序）添加到工具栏。
+> Buttons are added to the toolbar in the order defined by the framework, not the order specified here.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -185,8 +181,8 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 </Grid>
 ```
 
-**代码隐藏**
-1. 为第一个示例中的 InkCanvas 和 InkToolbar 使用 XAML 声明。
+**Code-behind**
+1. Use the XAML declaration for the InkCanvas and InkToolbar from the first example.
 
   ```xaml
   <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -210,7 +206,7 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
   </Grid>
   ```
 
-2. 在代码隐藏中，为 [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) 对象的 [Loading](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loading.aspx) 事件设置处理程序。
+2. In code-behind, set up a handler for the [Loading](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.loading.aspx) event of the [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) object.
 
   ```csharp
   /// <summary>
@@ -225,12 +221,12 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
   }
   ```
 
-3. 将 [InitialControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.initialcontrols.aspx) 设置为“[None](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarinitialcontrols.aspx)”。
-4. 为你的应用所需的按钮创建对象引用。 此处，我们将仅添加 [InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton.aspx)、[InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx) 和 [InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton.aspx)。
+3. Set [InitialControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.initialcontrols.aspx) to "[None](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarinitialcontrols.aspx)".
+4. Create object references for the buttons required by your app. Here, we add [InkToolbarBallpointPenButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarballpointpenbutton.aspx), [InkToolbarPencilButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbarpencilbutton.aspx), and [InkToolbarEraserButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbareraserbutton.aspx) only.
   > [!NOTE]
-  > 按钮将按照框架定义的顺序（而不是此处指定的顺序）添加到工具栏。
+  > Buttons are added to the toolbar in the order defined by the framework, not the order specified here.
 
-5. 将这些按钮[添加](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobjectcollection.add.aspx)到 InkToolbar。
+5. [Add](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobjectcollection.add.aspx) the buttons to the InkToolbar.
 
   ```csharp
   /// <summary>
@@ -262,40 +258,40 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 By default, the InkToolbar supports both pen and mouse input, you have to enable support for touch input.
 -->
 
-## 自定义按钮和墨迹书写功能
+## Custom buttons and inking features
 
-你可以自定义和扩展通过 InkToolbar 提供的按钮（以及关联的墨迹书写功能）集合。
+You can customize and extend the collection of buttons (and associated inking features) that are provided through the InkToolbar.
 
-InkToolbar 由两组不同的按钮类型组成：
+The InkToolbar consists of two distinct groups of button types:
 
-1. 一组“工具”按钮，包含内置绘制、擦除和突出显示按钮。 在此处添加自定义的笔和工具。
-> **注意**&nbsp;&nbsp;功能选择相互排除。
+1. A group of "tool" buttons containing the built-in drawing, erasing, and highlighting buttons. Custom pens and tools are added here.
+> **Note**&nbsp;&nbsp;Feature selection is mutually exclusive.
 
-2. 一组“切换”按钮，包含内置标尺按钮。 在此处添加自定义切换。
-> **注意**&nbsp;&nbsp;功能相互不排斥，并且可以与其他活动工具同时使用。
+2. A group of "toggle" buttons containing the built-in ruler button. Custom toggles are added here.
+> **Note**&nbsp;&nbsp;Features are not mutually exclusive and can be used concurrently with other active tools.
 
-根据你的应用程序和所需的墨迹书写功能，你可以将以下任意按钮（绑定到你的自定义墨迹功能）添加到 InkToolbar：
+Depending on your application and the inking functionality required, you can add any of the following buttons (bound to your custom ink features) to the InkToolbar:
 
-- 自定义笔：由主机应用为其定义墨迹调色板和笔尖属性（如形状、旋转和大小）的笔。
-- 自定义工具：非笔工具，由主机应用定义。
-- 自定义切换：将应用定义的功能状态设置为开或关。 当打开时，功能将与活动工具结合使用。
+- Custom pen – a pen for which the ink color palette and pen tip properties, such as shape, rotation, and size, are defined by the host app.
+- Custom tool – a non-pen tool, defined by the host app.
+- Custom toggle – Sets the state of an app-defined feature to on or off. When turned on, the feature works in conjunction with the active tool.
 
-> **注意**&nbsp;&nbsp;你无法更改内置按钮的显示顺序。 默认的显示顺序为：圆珠笔、铅笔、荧光笔、橡皮擦和标尺。 自定义笔附加到最后一个默认笔，自定义工具按钮添加到最后一个笔按钮和橡皮擦按钮之间，而自定义切换按钮添加到标尺按钮之后。 （自定义按钮按照指定它们的顺序添加。）
+> **Note**&nbsp;&nbsp;You cannot change the display order of the built-in buttons. The default display order is: Ballpoint pen, pencil, highlighter, eraser, and ruler. Custom pens are appended to the last default pen, custom tool buttons are added between the last pen button and the eraser button and custom toggle buttons are added after the ruler button. (Custom buttons are added in the order they are specified.)
 
-### 自定义笔
+### Custom pen
 
-![自定义书法笔按钮](.\images\ink\ink-tools-custompen.png)  
-*自定义书法笔按钮*
+![Custom calligraphic pen button](.\images\ink\ink-tools-custompen.png)  
+*Custom calligraphic pen button*
 
-对于此示例，我们定义一个带有宽笔尖的自定义笔，可支持基本书法笔划墨迹。 我们还自定义按钮浮出控件中显示的调色板中的画笔集合。
+For this example, we define a custom pen with a broad tip that enables basic calligraphic ink strokes. We also customize the collection of brushes in the palette displayed on the button flyout.
 
-**代码隐藏**
+**Code-behind**
 
-首先，我们定义自定义笔，并在代码隐藏中指定绘图属性。 稍后，我们从 XAML 引用此自定义笔。
+First, we define our custom pen and specify the drawing attributes in code-behind. We reference this custom pen from XAML later.
 
-1. 在解决方案资源管理器中右键单击项目，并依次选择“添加”&gt;“新建项目”。
-2. 在“Visual C#”-&gt;“代码”下，添加新的类文件，并称它为 CalligraphicPen.cs。
-3. 在 Calligraphic.cs 中，将默认 using 块替换为以下内容：
+1. Right click the project in Solution Explorer and select Add -> New item.
+2. Under Visual C# -> Code, add a new Class file and call it CalligraphicPen.cs.
+3. In Calligraphic.cs, replace the default using block with the following:
 ```csharp
 using System.Numerics;
 using Windows.UI;
@@ -303,13 +299,13 @@ using Windows.UI.Input.Inking;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 ```
-4. 指定 CalligraphicPen 类派生自 [InkToolbarCustomPen](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen.aspx)。
+4. Specify that the CalligraphicPen class is derived from [InkToolbarCustomPen](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen.aspx).
 ```csharp
 class CalligraphicPen : InkToolbarCustomPen
 {
 }
 ```
-5. 替代 [CreateInkDrawingAttributesCore](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen.createinkdrawingattributescore.aspx) 以指定你自己的画笔和笔划大小。
+5. Override  [CreateInkDrawingAttributesCore](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompen.createinkdrawingattributescore.aspx)  to specify your own brush and stroke size.
 ```csharp
 class CalligraphicPen : InkToolbarCustomPen
 {
@@ -319,7 +315,7 @@ class CalligraphicPen : InkToolbarCustomPen
     }
 }
 ```
-6. 创建 [InkDrawingAttributes](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.aspx) 对象，并设置[笔尖形状](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.pentip.aspx)、[笔尖旋转](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.pentiptransform.aspx)、[笔划大小](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.size.aspx)和[墨迹颜色](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.color.aspx)。
+6. Create an [InkDrawingAttributes](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.aspx) object and set the [pen tip shape](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.pentip.aspx), [tip rotation](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.pentiptransform.aspx), [stroke size](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.size.aspx), and [ink color](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkdrawingattributes.color.aspx).
 ```csharp
 class CalligraphicPen : InkToolbarCustomPen
 {
@@ -351,9 +347,9 @@ class CalligraphicPen : InkToolbarCustomPen
 
 **XAML**
 
-接下来，我们在 MainPage.xaml 中将必要的引用添加到自定义笔。
+Next, we add the necessary references to the custom pen in MainPage.xaml.
 
-1. 我们声明一个本地页面资源字典，用于创建对 CalligraphicPen.cs 中定义的自定义笔 (`CalligraphicPen`) 的引用和该自定义笔所支持的[画笔集合](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.UI.Xaml.Media.BrushCollection.aspx) (`CalligraphicPenPalette`)。
+1. We declare a local page resource dictionary that creates a reference to the custom pen (`CalligraphicPen`) defined in CalligraphicPen.cs, and a [brush collection](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.UI.Xaml.Media.BrushCollection.aspx) supported by the custom pen (`CalligraphicPenPalette`).
 ```xaml
 <Page.Resources>
     <!-- Add the custom CalligraphicPen to the page resources. -->
@@ -365,11 +361,11 @@ class CalligraphicPen : InkToolbarCustomPen
     </BrushCollection>
 </Page.Resources>
 ```
-2. 然后，我们添加一个带有子 [InkToolbarCustomPenButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompenbutton.aspx) 元素的 InkToolbar。
+2. We then add an InkToolbar with a child [InkToolbarCustomPenButton](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarcustompenbutton.aspx) element.
 
-  自定义笔按钮包括页面资源中声明的两个静态资源引用：`CalligraphicPen` 和 `CalligraphicPenPalette`。
+  The custom pen button includes the two static resource references declared in the page resources: `CalligraphicPen` and `CalligraphicPenPalette`.
 
-  我们还指定笔划大小滑块的范围（[MinStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.minstrokewidth.aspx)、[MaxStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.maxstrokewidth.aspx) 和 [SelectedStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.selectedstrokewidthproperty.aspx)）、选定的画笔 ([SelectedBrushIndex](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.selectedbrushindex.aspx)) 和自定义笔按钮的图标 ([SymbolIcon](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.symbolicon.aspx))。
+  We also specify the range for the stroke size slider ([MinStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.minstrokewidth.aspx), [MaxStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.maxstrokewidth.aspx), and [SelectedStrokeWidth](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.selectedstrokewidthproperty.aspx)), the selected brush ([SelectedBrushIndex](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbarpenbutton.selectedbrushindex.aspx)), and the icon for the custom pen button ([SymbolIcon](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.symbolicon.aspx)).
 ```xaml
 <Grid Grid.Row="1">
     <InkCanvas x:Name="inkCanvas" />
@@ -399,17 +395,11 @@ Enable touch inking
 -->
 
 
-## 相关文章
+## Related articles
 
-* [笔和触笔交互](pen-and-stylus-interactions.md)
+* [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
-**示例**
-* [墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [简单墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [复杂墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-
+**Samples**
+* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)

@@ -1,269 +1,201 @@
 ---
 author: Jwmsft
-Description: Lists display and enable interaction with collection-based content.
-title: Lists
+Description: "列表显示并启用与基于集合的内容交互。"
+title: "列表"
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
-ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 ---
-# Lists
+# 列表
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+列表显示并启用与基于集合的内容交互。 本文中介绍的四种列表模式如下：
 
-Lists display and enable interactions with collection-based content. The four list patterns covered in this article include:
+-   列表视图，主要用于显示以文字为主的内容集合
+-   网格视图，主要用于显示以图像为主的内容集合
+-   下拉列表，用于让用户从展开式列表中选择某一项
+-   列表框，用于让用户从可滚动的框中选择一个或多个项
 
--   List views, which are primarily used to display text-heavy content collections
--   Grid views, which are primarily used to display image-heavy content collections
--   Drop-down lists, which let users choose one item from an expanding list
--   List boxes, which let users choose one item or multiple items from a box that can be scrolled
+已为每种列表模式提供了设计指南、功能和示例。 本文末尾处提供了指向相关主题及 API 的链接。
 
-Design guidelines, features, and examples are given for each list pattern. At the end of the article are links to related topics and APIs.
+## 重要的 API
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242878"><strong>ListView class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242705"><strong>GridView class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209348"><strong>ComboBox class</strong></a></li>
-</ul>
+-   [**ListView 类**](https://msdn.microsoft.com/library/windows/apps/br242878)
+-   [**GridView 类**](https://msdn.microsoft.com/library/windows/apps/br242705)
+-   [**ComboBox 类**](https://msdn.microsoft.com/library/windows/apps/br209348)
 
-</div>
-</div>
 
+## 列表视图
 
+借助列表视图，你可以对项目进行分类并为之分配组标头、拖放项目、规划内容以及重新对项目进行排序。
 
+### 这是正确的控件吗？
 
-## List views
+使用列表视图可执行以下操作：
 
-List views let you categorize items and assign group headers, drag and drop items, curate content, and reorder items.
+-   显示主要组成部分为文本的内容集合。
+-   导航单个或已分类的内容集合。
+-   在[大纲/细节模式](master-details.md)下创建大纲窗格。 大纲/细节模式常用于电子邮件应用中，其中一个窗格（大纲）具有一个包含可选项的列表，而另一个窗格（细节）具有一个包含选定项的详细视图。
 
-### Is this the right control?
+### 示例
 
-Use a list view to:
-
--   Display a content collection that primarily consists of text.
--   Navigate a single or categorized collection of content.
--   Create the master pane in the [master/details pattern](master-details.md). A master/details pattern is often used in email apps, in which one pane (the master) has a list of selectable items while the other pane (details) has a detailed view of the selected item.
-
-### Examples
-
-Here's a simple list view showing grouped data on a phone.
-
-![A list view with grouped data](images/simple-list-view-phone.png)
-
-### Recommendations
-
--   Items within a list should have the same behavior.
--   If your list is divided into groups, you can use [semantic zoom](semantic-zoom.md) to make it easier for users to navigate through grouped content.
-
-### List view articles
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>[List view and grid view](listview-and-gridview.md)</p></td>
-<td align="left"><p>Learn the essentials of using a list view or grid view in your app.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[List view item templates](listview-item-templates.md)</p></td>
-<td align="left"><p>The items you display in a list or grid can play a major role in the overall look of your app. Modify control templates and data templates to define the look of the items and make your app look great.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[Inverted lists](inverted-lists.md)</p></td>
-<td align="left"><p>Inverted lists have new items added at the bottom, like in a chat app. Follow this guidance to use an inverted list in your app.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[Pull-to-refresh](pull-to-refresh.md)</p></td>
-<td align="left"><p>The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Use this guidance to implement pull-to-refresh in your list view.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[Nested UI](nested-ui.md)</p></td>
-<td align="left"><p>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</p></td>
-</tr>
-</tbody>
-</table>
+使用[大纲/细节模式](master-details.md)时，你可以使用列表视图组织大纲窗格。 大纲窗格显示一个可选项列表。 当用户在大纲窗格中选择某个项目时，所选项目的其他信息会显示在细节窗格中。 细节窗格通常包含一个网格视图。
 
-## Grid views
+![大纲细节模式的示例](images/Stock_Tracker/uap_finance_desktop700.png)
 
-Grid views are suited for arranging and browsing image-based content collections. A grid view layout scrolls vertically and pans horizontally. Items are laid out in a left-to-right, then top-to-bottom reading order.
+你可以将多个列表链在一起，创建复杂的大纲/细节层次结构。 有关详细信息，请参阅[大纲/细节模式](master-details.md)。
 
-### Is this the right control?
+列表布局示例具有组标头且以单列形式进行显示：
 
-Use a list view to:
+![具有四种主要单位类型的列表视图示例](images/controls_listview_4types.png)
 
--   Display a content collection that primarily consists of images.
--   Display content libraries.
--   Format the two content views associated with [semantic zoom](semantic-zoom.md).
+### 建议
 
-### Examples
+-   列表内的项应具有相同的行为。
+-   如果你的列表划分为多个组，请使用[语义式缩放](semantic-zoom.md)，以便用户更轻松地浏览分组内容。
 
-This example shows a typical grid view layout, in this case for browsing apps. Metadata for grid view items is usually restricted to a few lines of text and an item rating.
+## 网格视图
 
-![Example of a grid view layout](images/controls_gridview_example02.png)
+网格视图适用于排列和浏览基于图像的内容集合。 网格视图布局沿垂直方向滚动，而沿水平方向平移。 项的布局顺序为从左到右，其阅读顺序为从上到下。
 
-A grid view is an ideal solution for a content library, which is often used to present media such as pictures and videos. In a content library, users expect to be able to tap an item to invoke an action.
+### 这是正确的控件吗？
 
-![Example of a content library](images/controls_list_contentlibrary.png)
+使用列表视图可执行以下操作：
 
-### Recommendations
+-   显示主要组成部分为图像的一个内容集合。
+-   显示内容库。
+-   设置与[语义式缩放](semantic-zoom.md)相关联的两个内容视图的格式。
 
--   Items within a list should have the same behavior.
--   If your list is divided into groups, you can use [semantic zoom](semantic-zoom.md) to make it easier for users to navigate through grouped content.
+### 示例
 
-### Grid view articles
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>[List view and grid view](listview-and-gridview.md)</p></td>
-<td align="left"><p>Learn the essentials of using a list view or grid view in your app.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[List view item templates](listview-item-templates.md)</p></td>
-<td align="left"><p>The items you display in a list or grid can play a major role in the overall look of your app. Modify control templates and data templates to define the look of the items and make your app look great.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[Nested UI](nested-ui.md)</p></td>
-<td align="left"><p>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</p></td>
-</tr>
-</tbody>
-</table>
+本示例显示了一个典型的网格视图布局，在该示例中用于浏览应用。 网格视图项目的元数据通常限制为几行文本和某一项目分级。
 
-## Drop-down lists
+![网格视图布局示例](images/controls_gridview_example02.png)
 
-Drop-down lists, also known as combo boxes, start in a compact state and expand to show a list of selectable items. The selected item is always visible, and non-visible items can be brought into view when the user taps the combo box to expand it.
+对于常用于显示图片和视频等媒体的内容库而言，网格视图为理想之选。 在内容库中，用户希望能够通过点击项目来激活某项操作。
 
-### Is this the right control?
+![内容库示例](images/controls_list_contentlibrary.png)
 
--   Use a drop-down list to let users select a single value from a set of items that can be adequately represented with single lines of text.
--   Use a list or grid view instead of a combo box to display items that contain multiple lines of text or images.
--   When there are fewer than five items, consider using [radio buttons](radio-button.md) (if only one item can be selected) or [check boxes](checkbox.md) (if multiple items can be selected).
--   Use a combo box when the selection items are of secondary importance in the flow of your app. If the default option is recommended for most users in most situations, showing all the items by using a list view might draw more attention to the options than necessary. You can save space and minimize distraction by using a combo box.
+### 建议
 
-### Examples
+-   列表内的项应具有相同的行为。
+-   如果你的列表划分为多个组，请使用[语义式缩放](semantic-zoom.md)，以便用户更轻松地浏览分组内容。
 
-A combo box in its compact state can show a header.
+## 下拉列表
 
-![Example of a drop-down list in its compact state](images/combo_box_collapsed.png)
+下拉列表（也称为组合框）最初处于紧凑状态，可展开以显示可选择项的列表。 选定项始终可见，而不可见的项可在用户点击组合框时进入视图以将其展开。
 
-Although combo boxes expand to support longer string lengths, avoid excessively long strings that are difficult to read.
+### 这是正确的控件吗？
 
-![Example of a drop-down list with long text string](images/combo_box_listitemstate.png)
+-   使用下拉列表可让用户从一组项中选择单个值，这些项可使用单行文本完全显示。
+-   使用列表视图或网格视图（而非组合框），显示包含多行文本或多张图像的项。
+-   当少于五项时，应考虑使用[单选按钮](radio-button.md)（当进行单项选择时）或[复选框](checkbox.md)（当进行多项选择时）。
+-   当选择项在应用流中不太重要时使用组合框。 如果在多数情况下为大部分用户推荐了默认选项，则通过使用列表视图显示所有项可能会导致用户过多地注意这些选项。 使用组合框可以节省空间并减少分心。
 
-If the collection in a combo box is long enough, a scroll bar will appear to accommodate it. Group items logically in the list.
+### 示例
 
-![Example of a scroll bar in a drop-down list](images/combo_box_scroll.png)
+处于紧凑状态的组合框可以显示标题。
 
-### Recommendations
+![处于紧凑状态的下拉列表示例](images/combo_box_collapsed.png)
 
--   Limit the text content of combo box items to a single line.
--   Sort items in a combo box in the most logical order. Group together related options and place the most common options at the top. Sort names in alphabetical order, numbers in numerical order, and dates in chronological order.
+尽管组合框可通过展开来支持较长的字符串，但应避免使用难以阅读的过长的字符串。
 
-### Text Search
+![带有长文本字符串的下拉列表示例](images/combo_box_listitemstate.png)
 
-Combo boxes automatically support search within their collections. As users type characters on a physical keyboard while focused on an open or closed combo box, candidates matching the user's string are brought into view. This functionality is especially helpful when navigating a long list. For example, when interacting with a drop-down containing a list of states, users can press the “w” key to bring “Washington” into view for quick selection. 
+如果组合框中的集合足够长，将显示滚动栏来容纳它。 以逻辑方式对列表中的项进行分组。
 
-## List boxes
+![下拉列表中的滚动栏示例](images/combo_box_scroll.png)
 
-A list box allows the user to choose either a single item or multiple items from a collection. List boxes are similar to drop-down lists, except that list boxes are always open—there is no compact (non-expanded) state for a list box. Items in the list can be scrolled if there isn't space to show everything.
+### 建议
 
-### Is this the right control?
+-   将组合框的文本内容限制为单行。
+-   以最合乎逻辑的顺序对组合框中的项进行排序。 将相关选项组合到一起并将最常见的选项置于顶部。 按字母顺序对名称进行排序、按数字顺序对数字进行排序，并按时间先后顺序对日期进行排序。
 
--   A list box can be useful when items in the list are important enough to prominently display, and when there's enough screen real estate, to show the full list.
--   A list box should draw the user's attention to the full set of alternatives in an important choice. By contrast, a drop-down list initially draws the user's attention to the selected item.
--   Avoid using a list box if:
-    -   There is a very small number of items for the list. A single-select list box that always has the same 2 options might be better presented as [radio buttons](radio-button.md). Also consider using radio buttons when there are 3 or 4 static items in the list.
-    -   The list box is single-select and it always has the same 2 options where one can be implied as not the other, such as "on" and "off." Use a single check box or a toggle switch.
-    -   There is a very large number of items. A better choice for long lists are grid view and list view. For very long lists of grouped data, semantic zoom is preferred.
-    -   The items are contiguous numerical values. If that's the case, consider using a [slider](slider.md).
-    -   The selection items are of secondary importance in the flow of your app or the default option is recommended for most users in most situations. Use a drop-down list instead.
+### 文本搜索
 
-### Recommendations
+组合框自动支持其集合内的搜索。 当焦点位于打开或关闭的组合框上时，如果用户在物理键盘上键入字符，与用户的字符串匹配的候选项将引入视图。 当在长列表中导航时，此功能尤其有用。 例如，当与包含状态列表的下拉列表交互时，用户可以按“w”键来将“Washington”引入视图，以供快速选择。 
 
--   The ideal range of items in a list box is 3 to 9.
--   A list box works well when its items can dynamically vary.
--   If possible, set the size of a list box so that its list of items don't need to be panned or scrolled.
--   Verify that the purpose of the list box, and which items are currently selected, is clear.
--   Reserve visual effects and animations for touch feedback, and for the selected state of items.
--   Limit the list box item's text content to a single line. If the items are visuals, you can customize the size. If an item contains multiple lines of text or images, instead use a grid view or list view.
--   Use the default font unless your brand guidelines indicate to use another.
--   Don't use a list box to perform commands or to dynamically show or hide other controls.
+## 列表框
 
-## Selection mode
+列表框允许用户从集合中选择单个项或多个项。 列表框类似于下拉列表，区别在于列表框始终处于打开状态，并且不存在紧凑式状态的列表框（不可进行展开）。 当没有空间来显示所有内容时，可滚动列表中的项。
 
-Selection mode lets users select and take action on a single item or on multiple items. It can be invoked through a context menu, by using CTRL+click or SHIFT+click on an item, or by rolling-over a target on an item in a gallery view. When selection mode is active, check boxes appear next to each list item, and actions can appear at the top or the bottom of the screen.
+### 这是正确的控件吗？
 
-There are three selection modes:
+-   当列表中的项重要到需突出显示时，以及当没有足够的屏幕空间可用来显示整个列表时，列表框会很有用。
+-   列表框应将用户的注意力吸引到一项重要选择的全套备选项。 相比之下，下拉列表的设计初衷则是将用户的注意力吸引到某一选定项。
+-   当出现以下情况时，应避免使用列表框：
+    -   列表中的项数非常少。 始终具有两个相同选项的单选列表框可能更适合呈现为[单选按钮](radio-button.md)。 当列表中有 3 到 4 个静态项时，也可考虑使用单选按钮。
+    -   列表框为单选式且始终具有两个相同选项，其中一个可表示为另一个的对立面，例如“打开”和“关闭”。 使用单个复选框或切换开关。
+    -   项目数非常多。 网格视图和列表视图更适用于较长列表。 对于很长的分组数据列表，首选语义式缩放。
+    -   项为相邻的数字值。 如果是这种情况，应考虑使用[滑块](slider.md)。
+    -   选择项在你的应用流中不太重要，或者说对于大部分情况下的大部分用户，建议使用默认选项。 改用下拉列表。
 
--   Single: The user can select only one item at a time.
--   Multiple: The user can select multiple items without using a modifier.
--   Extended: The user can select multiple items with a modifier, such as holding down the SHIFT key.
+### 建议
 
-Tapping anywhere on an item selects it. Tapping on the command bar action affects all selected items. If no item is selected, command bar actions should be inactive, except for "Select All".
+-   在列表框中，项数的理想范围为 3 到 9 个。
+-   当列表框中的项可以动态变化时，其效果颇佳。
+-   如果可以，请设置列表框的大小，这样便无需平移或滚动其项列表。
+-   验证列表框的目的以及当前选择的项目是否明确。
+-   保留用于触摸反馈和选择的项目状态的视觉效果和动画。
+-   将列表框项目的文本内容限制为单行。 如果项是视觉对象，你可以自定义其大小。 如果项包括多行文本或多个图像，请改用网格视图或列表视图。
+-   使用默认字体，除非你的品牌指南指示使用其他字体。
+-   不要使用列表框执行命令或者动态显示或隐藏其他控件。
 
-Selection mode doesn't have a light dismiss model; tapping outside of the frame in which selection mode is active won't cancel the mode. This is to prevent accidental deactivation of the mode. Clicking the back button dismisses the multi-select mode.
+## 选择模式
 
-Show a visual confirmation when an action is selected. Consider displaying a confirmation dialog for certain actions, especially destructive actions such as delete.
+选择模式允许用户选择单个或多个项并对其执行操作。 可通过上下文菜单调用此模式，方法是在项上使用 CTRL+单击或 SHIFT+单击组合键，或者在库视图中的某一项上滚动选择目标。 当选择模式处于活动状态时，每个列表项旁都将显示复选框，而操作将显示在屏幕的顶部或底部。
 
-Selection mode is confined to the page in which it is active, and can't affect any items outside of that page.
+有以下三种选择模式：
 
-The entry point to selection mode should be juxtaposed against the content it affects.
+-   单选：用户一次只能选择一个项目。
+-   多选：用户无需使用修改器即可选择多个项目。
+-   展开：用户可以使用修改器选择多个项目，例如长按 SHIFT 键。
 
-For command bar recommendations, see [guidelines for command bars](app-bars.md).
+在项目上点击任意位置即可将其选中。 点击命令栏操作会影响所有选定项。 如果没有选择任何项目，命令栏操作应处于非活动状态，除了“全选”。
 
-## Globalization and localization checklist
+选择模式没有弱解除模型；在选择模式处于活动状态的框架之外点击不会取消该模式。 这是为了防止意外停用该模式。 单击后退按钮可关闭多选模式。
+
+当选中某项操作时，会显示可视化确认。 请考虑为某些操作显示确认对话框，特别是诸如删除等破坏性操作。
+
+选择模式仅限于它处于活动状态的页面，并不会影响该页面之外的任何项。
+
+选择模式的入口点应对应于它所影响的内容。
+
+有关命令栏建议，请参阅[命令栏指南](app-bars.md)。
+
+## 全球化和本地化清单
 
 <table>
 <tr>
-<th>Wrapping</th><td>Allow two lines for the list label.</td>
+<th>总结</th><td>允许两行列表标签。</td>
 </tr>
 <tr>
-<th>Horizontal expansion</th><td>Make sure fields can accomdation text expension and are scrollable.</td>
+<th>水平扩展</th><td>确保字段可以适应文本扩展，并且可以滚动。</td>
 </tr>
 <tr>
-<th>Vertical spacing</th><td>Use non-Latin chracters for vertical spacing to ensure non-Latin scripts will display properly.</td>
+<th>垂直间距</th><td>为垂直间距使用非拉丁字符以确保非拉丁脚本能够正确显示。</td>
 </tr>
 </table>
 
 
-## Related articles
+## 相关文章
 
-- [Hub](hub.md)
-- [Master/details](master-details.md)
-- [Nav pane](nav-pane.md)
-- [Semantic zoom](semantic-zoom.md)
-- [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [中心](hub.md)
+- [大纲/细节](master-details.md)
+- [导航窗格](nav-pane.md)
+- [语义式缩放](semantic-zoom.md)
 
-**For developers**
-- [**ListView class**](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [**GridView class**](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [**ComboBox class**](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [**ListBox class**](https://msdn.microsoft.com/library/windows/apps/br242868)
-
+**对于开发人员**
+- [**ListView 类**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [**GridView 类**](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [**ComboBox 类**](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [**ListBox 类**](https://msdn.microsoft.com/library/windows/apps/br242868)
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jul16_HO1-->
 
 

@@ -1,33 +1,40 @@
 ---
 author: mijacobs
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
-title: Tiles, badges, and notifications
+Description: "了解如何使用磁贴、锁屏提醒、Toast 以及通知提供应用入口点并使用户了解最新信息。"
+title: "磁贴、锁屏提醒和通知"
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: dbc178f5df541e482f4a2e86c6662ead1992a1ce
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 32b1c3ec674a84ca4ed08d98119fe21f77e15554
 
 ---
-# Tiles, badges, and notifications for UWP apps
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+# 适用于 UWP 应用的磁贴、锁屏提醒和通知
 
 
-Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
-A tile is an app's representation on the Start menu. Every UWP app has a tile. You can enable different tile sizes (small, medium, wide, and large).</p>
 
-<p>You can use a <em>tile notification</em> to update the tile to communicate new information to the user, such as news headlines, or the subject of the most recent unread message.</p>
+了解如何使用磁贴、锁屏提醒、Toast 以及通知提供应用入口点并使用户了解最新信息。
 
-<p>You can use a <em>badge</em> to provide status or summary info in the form of a system-provided glyph or a number from 1-99. Badges also appear on the task bar icon for an app. </p>
-
-<p>A <em>toast notification</em> is a notification that your app sends to the user via a pop-up UI element called a <em>toast</em> (or <em>banner</em>). The notification can be seen whether the user is in your app or not.</p>
-<p>A <em>push notification</em> or <em>raw notification</em> is a notification sent to your app either from Windows Push Notification Services (WNS) or from a background task. Your app can respond to these notifications either by notifying the user that something of interest happened (via badge update, tile update, or toast) or it can respond in any way of your choice.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><img src="images/tile-and-live-tile.png" alt="Breakdown of tile elements" /></td>
+<td align="left"><p>每个应用都有一个磁贴。 <em>磁贴</em>是应用在“开始”菜单上的表示形式。 你可以启用不同的磁贴大小（小、中等、宽形和大）。 你可以使用<em>磁贴通知</em>更新磁贴，以向用户传达新信息，例如头条新闻或最近未读邮件的主题。 你可以使用<em>锁屏提醒</em>或<em>通知徽标</em>提供系统提供的字形或 1-99 的数字形式的状态或摘要信息。</p>
+<p><em>Toast 通知</em>是应用通过称为 <em>Toast</em>（或<em>横幅</em>）的弹出 UI 元素发送给用户的通知。 无论用户是否在使用应用，均可看到此通知。</p>
+<p><em>推送通知</em>或<em>原始通知</em>是从 Windows 推送通知服务 (WNS) 或后台任务发送到应用的通知。 应用可以通过通知用户发生了某些趣事（借助锁屏提醒更新、磁贴更新或 Toast）来响应这些通知，也可以以你选择的任意方式响应。</p></td>
+</tr>
+</tbody>
+</table>
 
  
-## Tiles 
+## 磁贴 
 <table>
 <colgroup>
 <col width="50%" />
@@ -35,35 +42,35 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">主题</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Create tiles](tiles-and-notifications-creating-tiles.md)</p></td>
-<td align="left"><p>Customize the default tile for your app and provide assets for different screen sizes.</p></td>
+<td align="left"><p>[创建磁贴](tiles-and-notifications-creating-tiles.md)</p></td>
+<td align="left"><p>为你的应用自定义默认磁贴，并提供适用于不同屏幕大小的资源。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)</p></td>
-<td align="left"><p>Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app.</p></td>
+<td align="left"><p>[创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)</p></td>
+<td align="left"><p>自适应磁贴模板是 Windows 10 中的一项新功能，允许你使用可适应不同屏幕密度的简单而灵活的标记语言来设计你自己的磁贴通知内容。 本文介绍了如何为通用 Windows 平台 (UWP) 应用创建自适应动态磁贴。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md)</p></td>
-<td align="left"><p>Here are the elements and attributes you use to create adaptive tiles.</p></td>
+<td align="left"><p>[自适应磁贴架构](tiles-and-notifications-adaptive-tiles-schema.md)</p></td>
+<td align="left"><p>以下是用于创建自适应磁贴的元素和属性。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md)</p></td>
-<td align="left"><p>Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.</p></td>
+<td align="left"><p>[特殊磁贴模板](tiles-and-notifications-special-tile-templates-catalog.md)</p></td>
+<td align="left"><p>特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[App icon assets](tiles-and-notifications-app-assets.md)</p></td>
-<td align="left"><p>App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app. These guidelines detail where app icon assets appear in the system, and provide in-depth design tips on how to create the most polished icons.</p></td>
+<td align="left"><p>[应用图标资源](tiles-and-notifications-app-assets.md)</p></td>
+<td align="left"><p>应用图标资源（它以各种形式出现在整个 Windows 10 操作系统中）是通用 Windows 平台 (UWP) 应用的调用卡。 这些指南详细介绍应用图标资源在系统中的显示位置，并提供有关如何创建最完美图标的深入设计提示。</p></td>
 </tr>
 </tbody>
 </table>
 
-## Notifications
+## 通知
 
 
 <table>
@@ -73,42 +80,42 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">主题</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Adaptive and interactive toast notifications](tiles-and-notifications-adaptive-interactive-toasts.md)</p></td>
-<td align="left"><p>Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.</p></td>
+<td align="left"><p>[自适应和交互式 Toast 通知](tiles-and-notifications-adaptive-interactive-toasts.md)</p></td>
+<td align="left"><p>自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Notifications Visualizer](tiles-and-notifications-notifications-visualizer.md)</p></td>
-<td align="left"><p>Notifications Visualizer is a new Universal Windows Platform (UWP) app in [the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) that helps developers design adaptive live tiles for Windows 10.</p></td>
+<td align="left"><p>[通知可视化工具](tiles-and-notifications-notifications-visualizer.md)</p></td>
+<td align="left"><p>通知可视化工具是[应用商店](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)中一款新的通用 Windows 平台 (UWP) 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Choose a notification delivery method](tiles-and-notifications-choosing-a-notification-delivery-method.md)</p></td>
-<td align="left"><p>This article covers the four notification options—local, scheduled, periodic, and push—that deliver tile and badge updates and toast notification content.</p></td>
+<td align="left"><p>[选择通知传递方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)</p></td>
+<td align="left"><p>本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项：本地、计划、定期和推送。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)</p></td>
-<td align="left"><p>This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.</p></td>
+<td align="left"><p>[发送本地磁贴通知](tiles-and-notifications-sending-a-local-tile-notification.md)</p></td>
+<td align="left"><p>本文介绍了如何使用自适应磁贴模板将本地磁贴通知发送到主要磁贴和辅助磁贴。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md)</p></td>
-<td align="left"><p>Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.</p></td>
+<td align="left"><p>[定期通知概述](tiles-and-notifications-periodic-notification-overview.md)</p></td>
+<td align="left"><p>定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md)</p></td>
-<td align="left"><p>The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.</p></td>
+<td align="left"><p>[Windows 推送通知服务 (WNS) 概述](tiles-and-notifications-windows-push-notification-services--wns--overview.md)</p></td>
+<td align="left"><p>Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Code generated by the push notification wizard](tiles-and-notifications-the-code-generated-by-the-push-notification-wizard.md)</p></td>
-<td align="left"><p>By using a wizard in Visual Studio, you can generate push notifications from a mobile service that was created with Azure Mobile Services. The Visual Studio wizard generates code to help you get started. This topic explains how the wizard modifies your project, what the generated code does, how to use this code, and what you can do next to get the most out of push notifications. See [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md).</p></td>
+<td align="left"><p>[由推送通知向导生成的代码](tiles-and-notifications-the-code-generated-by-the-push-notification-wizard.md)</p></td>
+<td align="left"><p>通过在 Visual Studio 中使用向导，你可以从使用 Azure 移动服务创建的某种移动服务生成推送通知。 Visual Studio 向导生成代码，以帮助你开始操作。 本主题说明向导如何修改你的项目、生成的代码有何作用、如何使用此代码，以及为了发挥推送通知的最大作用，你接下来可以如何操作。 请参阅 [Windows 推送通知服务 (WNS) 概述](tiles-and-notifications-windows-push-notification-services--wns--overview.md)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Raw notification overview](tiles-and-notifications-raw-notification-overview.md)</p></td>
-<td align="left"><p>Raw notifications are short, general purpose push notifications. They are strictly instructional and do not include a UI component. As with other push notifications, the WNS feature delivers raw notifications from your cloud service to your app.</p></td>
+<td align="left"><p>[原始通知概述](tiles-and-notifications-raw-notification-overview.md)</p></td>
+<td align="left"><p>原始通知是简短的一般用途的推送通知。 它们完全是说明性的，并且不包含 UI 组件。 与其他推送通知一样，WNS 功能将原始通知从云服务传递到应用。</p></td>
 </tr>
 </tbody>
 </table>
@@ -125,6 +132,6 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

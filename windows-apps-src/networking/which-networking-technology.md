@@ -1,143 +1,143 @@
 ---
 author: DelfCo
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
-title: Which networking technology?'
+description: "适用于 UWP 开发人员的网络技术概述，以及关于如何选择适合自己应用的技术的建议。"
+title: "选择哪一种网络技术？"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fc7793926275dd732ee6c814c9e65a6b656654d2
+ms.openlocfilehash: d2f7a4a2bd0f94c4923b33fbd62a8b2ff6eddd65
 
 
 ---
 
-# Which networking technology?
+# 选择哪一种网络技术？
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
+适用于 UWP 开发人员的网络技术概述，以及关于如何选择适合自己应用的技术的建议。
 
-## Sockets
+## 套接字
 
-Use [Sockets](sockets.md) when you are communicating with another device and want to use your own protocol.
+如果你正在与另一台设备通信而想要使用自己的协议，可使用[套接字](sockets.md)。
 
-Two implementations of sockets are available for Universal Windows Platform (UWP) developers: [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960), and [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673). If you are writing new code, then Windows.Networking.Sockets has the advantage of being a modern API, designed for use by UWP developers. If you are using cross-platform networking libraries or other existing Winsock code, or prefer the Winsock API, then use that.
+有以下两种套接字实现可供通用 Windows 平台 (UWP) 开发人员使用：[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 和 [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)。 如果你需要编写新的代码，则 Windows.Networking.Sockets 的优势在于 API 不仅先进且专为 UWP 开发人员“量身打造”。 若要使用跨平台网络库或其他现有 Winsock 代码，或者想要使用 Winsock API，则可以使用该套接字。
 
-### When to use sockets
+### 何时使用套接字
 
--   Both sockets implementations enable you to communicate with other devices using protocols of your own choice, using TCP or UDP.
+-   借助这两种套接字实现，你可以使用自己选择的协议（TCP 或 UDP）与其他设备通信。
 
--   Choose the sockets API that best meets your needs based on experience and any existing code you might be using.
+-   根据体验和使用的任何现有代码，选择最能满足你需求的套接字 API。
 
-### When not to use sockets
+### 何时不使用套接字
 
--   Don't implement your own HTTP(S) stack using sockets. Use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) instead.
--   If WebSockets (the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) classes) meet your communications needs (TCP to/from a web server), consider using them rather than spend your own time and development resources implementing similar functionality with sockets.
+-   不要使用套接字实现你自己的 HTTP 堆栈。 请改用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)。
+-   如果 WebSocket（[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 和 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 类）符合你的通信需要（指向/来自 Web 服务器的 TCP），请考虑使用它们，而不是花费自己的时间和开发资源通过套接字实现类似的功能。
 
-## Websockets
+## WebSocket
 
-The [WebSockets](websockets.md) protocol defines a mechanism for fast, secure two-way communication between a client and a server over the web. Data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in real-time gaming where instant social network notifications and up-to-date displays of information (like game statistics ) need to be secure and use fast data transfer. UWP developers can use the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) classes to connect with servers that support the Websocket protocol.
+[WebSocket](websockets.md) 协议定义了客户端与服务器之间通过 Web 进行快速而又安全的双向通信的机制。 数据通过全双工套接字连接立即传输，从而允许从两个终结点实时发送和接收消息。 WebSocket 非常适合在实时游戏中使用，由于即时社交网络通知和显示的最新信息（例如游戏统计信息）都需要是安全的，且需使用快速的数据传输。 UWP 开发人员可以使用 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 和 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 类与支持 Websocket 协议的服务器建立连接。
 
-### When to use Websockets
+### 何时使用 Websocket
 
--   When you want to send and receive data on an ongoing basis between a device and a server.
+-   当你想要在设备和服务器之间不断地发送和接收数据时。
 
-### When not to use Websockets
+### 何时不使用 Websocket
 
--   If you are sending or receiving data infrequently, you might find it simpler to make individual HTTP requests from the device to the server, rather than establish and maintain a WebSocket connection.
--   WebSockets may not be suitable for very high-volume situations. Consider modeling your data flows and simulating your traffic through WebSockets before committing to using them in your design.
+-   如果你不经常发送或接收数据，你可能会发现将各个 HTTP 请求从设备发送到服务器更简单些，而不是建立并保持 WebSocket 连接。
+-   WebSocket 可能不适用于容量非常大的情形。 请考虑先为你的数据流建模并通过 WebSocket 模拟流量，之后再将它们用于你的设计中。
 
 ## HttpClient
 
-Use [HttpClient](httpclient.md) (and the rest of the [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) namespace API) when you are using HTTP(S) to communicate with a web service or a web server.
+当你使用 HTTP 与 Web 服务或 Web 服务器通信时，请使用 [HttpClient](httpclient.md)（和其余的 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间 API）。
 
-### When to use HttpClient
+### 何时使用 HttpClient
 
--   When using HTTP(S) to communicate with web services.
--   When uploading or downloading a small number of smaller files.
--   If WebSockets (the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) classes) meet your communications needs (TCP to/from a web server), and the web server in question supports WebSockets, consider using them rather than spend your own time and development resources implementing similar functionality with HttpClient.
--   When you are streaming content over the network.
+-   当使用 HTTP 与 Web 服务通信时。
+-   当上载或下载少量小文件时。
+-   如果 WebSocket（[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 和 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 类）符合你的通信需要（指向/来自 Web 服务器的 TCP）且相关 Web 服务器支持 WebSocket，请考虑使用它们，而不是花费自己的时间和开发资源通过 HttpClient 实现类似的功能。
+-   当你正在通过网络流式传输内容时。
 
-### When not to use HttpClient
+### 不使用 HttpClient 的情况
 
--   If you are transferring large files, or large numbers of files, consider using background transfers instead.
--   If you want to be able to restrict upload/download limits based on connection type, or if you want to save progress and resume upload/download after an interruption, you must use background transfers.
--   If you are communicating between two devices and neither one is designed to act as an HTTP(S) server, you should use sockets. Do not attempt to implement your own HTTP server and use [HttpClient](httpclient.md) to communicate with it.
+-   如果你要传输大型文件或大量的文件，请考虑改为使用后台传输。
+-   如果你希望能够根据连接类型来限制上载/下载限制，或者希望保存进度并在中断后恢复上载/下载，则必须使用后台传输。
+-   如果你要在两台设备之间通信且这两者都不是设计用于充当 HTTP 服务器，则应使用套接字。 请不要尝试实现你自己的 HTTP 服务器和使用 [HttpClient](httpclient.md) 与之通信。
 
-## Background transfers
+## 后台传输
 
-Use the [background transfer API](background-transfers.md) when you want to reliably transfer files over the network. The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination. The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status. These capabilities are essential when your app is running on mobile or battery-powered devices. The API is ideal for uploading and downloading large files using HTTP(S). FTP is also supported, but only for downloads.
+当你希望通过网络可靠地传输文件时，请使用[后台传输 API](background-transfers.md)。 后台传输 API 提供了高级的上载和下载功能，这些功能可在应用暂停期间在后台运行，并且在应用终止后仍保持运行。 该 API 监视网络状态以及在失去连接时自动暂停和恢复传输，而且传输同样也既为数据敏感型又为电池敏感型，这意味着下载活动将根据当前连接性和设备电池状态进行调整。 当你的应用在移动设备或电池供电的设备上运行时，这些功能是必不可少的。 该 API 非常适合于使用 HTTP 上载和下载大型文件。 FTP 也受支持，但仅用于下载。
 
-A new background transfer feature in Windows 10 is the ability to trigger post-processing when a file transfer has completed, so that you can update local catalogs, activate other apps, or notify the user when a download is complete.
+Windows 10 中新后台传输功能可在文件传输完成后触发后处理，以便你可以更新本地目录、激活其他应用或在下载完成时通知用户。
 
-### When to use background transfers
+### 何时使用后台传输
 
--   Use background transfers to reliably transfer large files, or large numbers of files.
--   Use background transfers with background transfer completion groups when you want to post-process file transfers with a background task.
--   Use background transfers if you want to be able to resume a transfer in progress after a network interruption.
--   Use background transfers if you want to be able to change transfer behavior based on network conditions like being on a metered data plan.
+-   若要可靠地传输大型文件或大量的文件，可使用后台传输。
+-   如果你希望将以后台任务的形式传输处理后文件，可将后台传输与后台传输完成组搭配使用。
+-   如果你想要在网络中断后恢复进行中的传输，请使用后台传输。
+-   如果你希望能够根据网络条件（例如使用数据流量套餐时）来更改传输行为，请使用后台传输。
 
-### When not to use background transfers
+### 不使用后台传输的情况
 
--   If you are transferring a small number of small files, and you don't need to do any post-processing when the transfer is complete, consider using [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) PUT or POST methods.
--   If you want to stream data and use it locally as it arrives, use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639).
+-   如果你要传输少量的小文件，并且无需在传输完成后执行任何后续处理，应考虑使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) PUT 或 POST 方法。
+-   如果你希望流式传输数据并在其到达时在本地使用，请使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)。
 
-## Additional network-related technologies
+## 其他与网络相关的技术
 
-### Connection quality
+### 连接质量
 
-The [**Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/windows/apps/br207308) API enables you to access network connectivity, cost, and usage information. For more information about using this API, see [Accessing network connection state and managing network costs](https://msdn.microsoft.com/library/windows/apps/hh452983)
+[**Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/windows/apps/br207308) API 使你能够访问网络连接、成本以及使用情况信息。 有关使用此 API 的详细信息，请参阅[访问网络连接状态和管理网络成本](https://msdn.microsoft.com/library/windows/apps/hh452983)
 
-### DNS Service Discovery
+### DNS 服务发现
 
-The [**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API enables you to advertise a network service to other devices on the network using the DNS-SD protocol described in IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158).
+[**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API 使你能够使用 DNS-SD 协议（如 IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158) 中所述）在网络上向其他设备宣传某种网络服务。
 
-### Communicating over Bluetooth
+### 通过蓝牙进行通信
 
-Among other things, the [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/dn263413) API enables you to use Bluetooth to connect to other devices and transfer data. For more information, see [Send or receive files with RFCOMM](https://msdn.microsoft.com/library/windows/apps/mt270289).
+与其他 API 相比，[**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/dn263413) API 允许你使用蓝牙连接到其他设备并传输数据。 有关详细信息，请参阅[使用 RFCOMM 发送或接收文件](https://msdn.microsoft.com/library/windows/apps/mt270289)。
 
-### Push notifications (WNS)
+### 推送通知 (WNS)
 
-The [**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) API enables you to use the Windows Notification Service (WNS) to receive push notifications over the network. For more information about using this API, see [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/library/windows/apps/mt187203)
+[**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) API 使你能够使用 Windows 通知服务 (WNS) 通过网络接收推送通知。 有关使用此 API 的详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](https://msdn.microsoft.com/library/windows/apps/mt187203)
 
-### Near field communications
+### 近场通信
 
-The [**Windows.Networking.Proximity**](https://msdn.microsoft.com/library/windows/apps/br241250) API enables you to use near-field communications for apps that use proximity or tap with devices to enable easy data transfer. For more information about using this API, see [Supporting proximity and tapping](https://msdn.microsoft.com/library/windows/apps/hh465229).
+[**Windows.Networking.Proximity**](https://msdn.microsoft.com/library/windows/apps/br241250) API 允许你针对使用邻近感应或点击设备的应用使用近场通信，从而可轻松传输数据。 有关使用此 API 的详细信息，请参阅[支持邻近感应和点击](https://msdn.microsoft.com/library/windows/apps/hh465229)。
 
-### RSS/Atom feeds
+### RSS/Atom 订阅源
 
-The [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) API enables you to manage syndication feeds using RSS and Atom formats. For more information about using this API, see [RSS/Atom feeds](web-feeds.md).
+[**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) API 使你能够以 RSS 和 Atom 格式管理联合源。 有关使用此 API 的详细信息，请参阅 [RSS/Atom 订阅源](web-feeds.md)。
 
-### Wi-Fi enumeration and connection control
+### WLAN 枚举和连接控制
 
-The [**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/dn975224) API enables you to enumerate Wi-Fi adapters, scan for available Wi-Fi networks, and connect an adapter to a network.
+[**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/dn975224) API 使你能够枚举 Wi-Fi 适配器、扫描可用的 Wi-Fi 网络，以及将适配器连接到网络。
 
-### Radio control
+### 无线控制
 
-The [**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/dn996447) API allows you to find and control radios on the local device, including Wi-Fi and Bluetooth.
+[**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/dn996447) API 使你能够查找和控制本地设备上的无线，其中包括 Wi-Fi 和蓝牙。
 
 ### Wi-Fi Direct
 
-The [**Windows.Devices.WiFiDirect**](https://msdn.microsoft.com/library/windows/apps/dn297687) API allows you to connect and communicate with other local devices using Wi-Fi Direct to create ad-hoc local wireless networks.
+[**Windows.Devices.WiFiDirect**](https://msdn.microsoft.com/library/windows/apps/dn297687) API 使你能够通过使用 Wi-Fi Direct 创建临时的本地无线网络，来与其他本地设备进行连接和通信。
 
-### Wi-Fi Direct services
+### Wi-Fi Direct Services
 
-The [**Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/library/windows/apps/dn996481) API enables you to provide Wi-Fi Direct services and connect to them. Wi-Fi Direct Services are the way that one device on a Wi-Fi direct ad-hoc network (a Service Advertiser) offers capabilities to another device (a Service Seeker) over a Wi-Fi Direct connection.
+[**Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/library/windows/apps/dn996481) API 使你能够提供 Wi-Fi Direct Services 并连接到它们。 借助 Wi-Fi Direct Services，Wi-Fi Direct 临时网络上的设备（服务广告方）便能提供通过 Wi-Fi Direct 连接而连接到其他设备（服务寻求方）的功能。
 
-### Mobile operators
+### 移动运营商
 
-Windows 10 exposes to a wide developer audience some APIs that have previously only been exposed to device manufacturers and mobile operators. Note that while these APIs are exposed now, they are also gated by specific app capabilities that must be approved by Microsoft before an app can be published. Actual use of these APIs will still be limited primarily to device manufacturers and mobile operators.
+Windows 10 向广大开发人员受众公开了一些之前只公开给设备制造商和移动运营商的 API。 请注意，尽管这些 API 现已公开，但它们仍受特定应用功能的限制，即必须得到 Microsoft 批准之后，才能发布应用。 这些 API 的实际使用主要限于设备制造商和移动运营商。
 
-### Network operations
+### 网络运营
 
-The [**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/library/windows/apps/br241148) API deals primarily with the configuration and provisioning of phones. As such, permission to use the capabilities that control it are limited to device manufacturers and telecom providers.
+[**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/library/windows/apps/br241148) API 主要用于处理手机的配置和预配。 因此，用于对其进行控制的功能的相关权限仅限于设备制造商和电信提供商。
 
-### SMS
+### 短信
 
-The [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) namespace deals with SMS and related messages as low-level entities. It is provided for use by mobile operators for app-directed SMS use, and is controlled by a capability that will not be approved for use by most app developers. If you are writing an app to deal with messages, you should use the [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API instead, as it is designed to handle not just SMS messages, but also messages from other sources such as realtime chat apps, enabling a much richer chat/messaging experience.
-
-
+[**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) 命名空间用于以低级别实体形式处理短信和相关消息。 提供它供移动运营商作应用定向的短信之用，并使其受某一功能控制，该功能不被大多数应用开发人员批准使用。 如果你要编写一个用于处理消息的应用，应改为使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API，由于其设计初衷并非仅用于处理短信，还能用于处理来自其他来源（如实时聊天应用）的消息，从而能提供更为丰富的聊天/消息传递体验。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

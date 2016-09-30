@@ -1,54 +1,54 @@
 ---
 author: msatranjr
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
-title: Bluetooth GATT
-description: This article provides an overview of Bluetooth Generic Attribute Profile (GATT) for Universal Windows Platform (UWP) apps, along with sample code for three common GATT scenarios.
+title: "蓝牙 GATT"
+description: "本文提供用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性配置文件 (GATT) API 概述，以及用于三个常见 GATT 方案的示例代码。"
 translationtype: Human Translation
 ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
+ms.openlocfilehash: 664f6ce7829c9e9a6674daa6cdc21e7561ff094b
 
 ---
-# Bluetooth GATT
+# 蓝牙 GATT
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Important APIs **
+** 重要的 API **
 
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
 
-This article provides an overview of Bluetooth Generic Attribute Profile (GATT) for Universal Windows Platform (UWP) apps, along with sample code for three common GATT scenarios: retrieving Bluetooth data, controlling a Bluetooth LE thermometer device, and controlling the presentation of Bluetooth LE device data.
+本文提供用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性配置文件 (GATT) 的概述，以及用于三个常见 GATT 方案的示例代码：检索蓝牙数据、控制蓝牙 LE 温度计设备，以及控制蓝牙 LE 设备数据的显示。
 
-## Overview
+## 概述
 
-Developers can use the APIs in the [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) namespace to access Bluetooth LE services, descriptors, and characteristics. Bluetooth LE devices expose their functionality through a collection of:
+开发人员可使用 [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) 命名空间中的 API 访问蓝牙 LE 服务、描述符和特性。 蓝牙 LE 设备通过以下内容的集合公开其功能：
 
--   Primary Services
--   Included Services
--   Characteristics
--   Descriptors
+-   主要服务
+-   所包含的服务
+-   特性
+-   描述符
 
-Primary services define the functional contract of the LE device and contain a collection of characteristics that define the service. Those characteristics, in turn, contain descriptors that describe the characteristics.
+主要服务定义 LE 设备的功能合约，并且包含定义该服务的特性的集合。 这些特性反过来包括描述特性的描述符。
 
-The Bluetooth GATT APIs expose objects and functions, rather than access to the raw transport. At the driver level primary services are enumerated as Child Device Nodes of the Bluetooth LE device using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs.
+蓝牙 GATT API 公开对象和函数，而不是对原始传输的访问权限。 在驱动程序级别上，使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 将主要服务枚举为蓝牙 LE 设备的子设备节点。
 
-The Bluetooth GATT APIs also enable developers to work with Bluetooth LE devices with the ability to perform the following tasks:
+蓝牙 GATT API 还使开发人员可以在能够执行以下任务的情况下使用蓝牙 LE 设备：
 
--   Perform Service / Characteristic / Descriptor discovery
--   Read and Write Characteristic / Descriptor values
--   Register a callback for the Characteristic ValueChanged event
+-   执行服务/特性/描述符发现
+-   读取并写入特性/描述符值
+-   为 Characteristic ValueChanged 事件注册回调
 
-The Bluetooth GATT APIs simplify development by dealing with common properties and providing reasonable defaults to aid in device management and configuration. They provide a means for developers to access functionality of a Bluetooth LE device from an app.
+蓝牙 GATT API 通过处理常用属性并提供合理的默认值简化了开发，以此来帮助设备管理和配置。 它们为开发人员提供了从应用访问蓝牙 LE 设备功能的方法。
 
-To create a useful implementation a developer has to have prior knowledge of the GATT services and characteristics the application intends to consume, and to process the specific characteristic values such that the binary data provided by the API is transformed into useful data before being presented to the user. The Bluetooth GATT APIs expose only the basic primitives required to communicate with a Bluetooth LE device. To interpret the data, an application profile must be defined, either by a Bluetooth SIG standard profile, or a custom profile implemented by a device vendor. A profile creates a binding contract between the application and the device, as to what the exchanged data represents and how to interpret it.
+要创建有用的实现，开发人员必须具有应用程序要使用的 GATT 服务和特性的前期知识，并且必须处理特性的特性值，以便由 API 提供的二进制数据在向用户呈现之前转换为有用的数据。 蓝牙 GATT API 仅公开与蓝牙 LE 设备进行通信所需的基本基元。 要解释数据，应用程序配置文件必须经蓝牙 SIG 标准配置文件定义，或经由设备供应商实现的自定义配置文件定义。 配置文件创建应用程序和设备之间的绑定合约，此合约关于交换的数据所代表的内容以及如何解释它。
 
-For convenience the Bluetooth SIG maintains a [list of public profiles](http://go.microsoft.com/fwlink/p/?LinkID=317977) available.
+为方便起见，蓝牙 SIG 将持续提供[公共配置文件](http://go.microsoft.com/fwlink/p/?LinkID=317977)的列表。
 
-## Retrieve Bluetooth data
+## 检索蓝牙数据
 
-In this example, the app consumes temperature measurements from a Bluetooth device that implements the Bluetooth LE Health Thermometer Service. The app specifies that it wants to be notified when a new temperature measurement is available. By registering an event handler for the "Thermometer Characteristic Value Changed" event, the app will receive characteristic value changed event notifications while it is running in the foreground.
+在本示例中，应用使用来自蓝牙设备的温度度量，可实现蓝牙 LE 健康温度计服务。 应用指定其希望在新的温度度量可用时收到通知。 通过为“温度计特征值更改”事件注册事件处理程序，应用将在前台运行时收到特征值更改事件通知。
 
-Note that when the app is suspended, it must release all device resources and when it resumes, it must perform device enumeration and initialization once again. If device interaction in the background is desired, please take a look at  [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) or [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx). DeviceUseTrigger is typically better for higher frequency events whereas GattCharacteristicNotificationTrigger is better at handling infrequent events.  
+请注意，当应用暂停时，它必须释放所有设备资源；并且当它返回时，它必须重新执行设备枚举和初始化。 如果需要在后台执行设备交互，请查看 [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) 或 [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx)。 通常，DeviceUseTrigger 更适合处理高频事件；反之，GattCharacteristicNotificationTrigger 更适合处理低频率事件。  
 
 ```csharp
 double convertTemperatureData(byte[] temperatureData)
@@ -165,9 +165,9 @@ void MainPage::TemperatureMeasurementChanged(
 }
 ```
 
-## Control a Bluetooth LE thermometer device
+## 控制蓝牙 LE 温度计设备
 
-In this example, an UWP app acts as a controller for a fictitious Bluetooth LE Thermometer device. The device also declares a format characteristic which allows users to retrieve the value reading in either Celsius or Fahrenheit degrees, in addition to the standard characteristics of the [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603) profile. The app uses reliable write transactions to make sure that the format and measurement interval are set as a single value.
+在本示例中，UWP 应用充当虚拟蓝牙 LE 温度计设备的控制器。 除了 [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603) 配置文件的标准特性外，该设备还声明了允许用户检索以摄氏度或华氏度读取的值的格式特性。 该应用使用可靠的写入事务以确保格式和度量间隔设置为单个值。
 
 ```csharp
 // Uuid of the "Format" Characteristic Value
@@ -285,9 +285,9 @@ void MainPage::Initialize()
 
 ```
 
-## Control the presentation of Bluetooth LE device data
+## 控制蓝牙 LE 设备数据的显示
 
-A Bluetooth LE devices may expose a battery service that provides the current battery level to the user. The battery service includes an optional [**PresentationFormats**](https://msdn.microsoft.com/library/windows/apps/Dn263742) descriptor which allows some flexibility in interpretation of the battery level data. This scenario provides example of an app that works with such a device and uses the **PresentationFormats** property to format a characteristic value, before presenting it to the user.
+蓝牙 LE 设备可能公开向用户提供的当前电量的电池服务。 电池服务包括可选的 [**PresentationFormats**](https://msdn.microsoft.com/library/windows/apps/Dn263742) 描述符，此描述符在解释电量数据时提供一些灵活性。 此方案提供一个应用示例，此应用与此类设备兼容，并且在向用户显示前使用 **PresentationFormats** 属性格式化特性值。
 
 ```csharp
 async void Initialize()
@@ -401,6 +401,6 @@ void MainPage::BatteryLevelChanged(
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

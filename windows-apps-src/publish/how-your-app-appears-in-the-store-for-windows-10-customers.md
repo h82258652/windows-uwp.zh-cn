@@ -1,127 +1,127 @@
 ---
 author: jnHs
-Description: If you have previously published apps to the Store for either Windows or Windows Phone, those apps will be made available to customers on Windows 10 devices as well.
-title: How your app appears in the Store for Windows 10 customers
+Description: "如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，客户同样也可以通过 Windows 10 设备获取这些应用。"
+title: "你的应用如何显示在面向 Windows 10 客户的应用商店中"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 
 ---
 
-# How your app appears in the Store for Windows 10 customers
+# 你的应用如何显示在面向 Windows 10 客户的应用商店中
 
 
-If you have previously published apps to the Store for either Windows or Windows Phone, those apps will be made available to customers on Windows 10 devices as well. Since there are some changes in the way the Store presents and categorizes apps to customers running Windows 10, this topic will help you understand what may have changed.
+如果你之前已将应用发布到 Windows 应用商店或 Windows Phone 应用商店，则客户同样也可以通过 Windows 10 设备获取这些应用。 由于应用商店向运行 Windows 10 的客户提供应用的方式以及对应用进行分类的方式发生更改，本主题将帮助你了解哪些内容可能已更改。
 
-**Note**  If you want to change any of these details, [create a new submission](app-submissions.md) and make your changes, then submit the update to the Store.
+**注意** 如果你希望更改其中的任何详细信息，请[创建一个新提交](app-submissions.md)并进行更改，然后将更新提交到应用商店。
 
  
 
-## Consideration for apps that shared identity in the Windows Store and Windows Phone Store
+## 用于在 Windows 应用商店和 Windows Phone 应用商店中共享标识的应用的注意事项
 
 
-If you have used the same reserved name for an app published to both Stores (often referred to as sharing your app’s identity), these will now be considered one app, not two. In the dashboard, you'll see them as a single app with Windows and Windows Phone packages.
+如果你已为同时发布到这两个应用商店的应用使用了相同的保留名称（通常称之为“共享你的应用的标识”），此时这两个应用将被视为一个应用，而不是两个应用。 在仪表板中，你可以将它们视为具有 Windows 和 Windows Phone 程序包的单个应用。
 
-Most developers had set the same pricing and other properties for the app and any add-ons in each Store, but if some of these values were different, it's important to understand which ones are shown to your Windows 10 customers.
+大多数开发人员已为每个应用商店中的应用和任何应用内产品 (IAP) 设置了相同定价和其他属性，但如果其中某些值有所不同，则了解向 Windows 10 客户显示了哪些值非常重要。
 
-### Pricing
-If you had chosen different base prices for your app (or add-on) in each Store, the base price from the Windows Store is used.
+### 定价
+如果你已在每个应用商店中为你的应用（或 IAP）选择了不同的基本价格，将使用 Windows 应用商店中的基本价格。
 
-**Note**  If you had set per-market pricing in the Windows Phone Store, custom prices will also be shown to your Windows 10 customers.
+**注意** 如果你在 Windows Phone 应用商店中设置了按市场定价，则 Windows 10 客户同样也能看到自定义价格。
 
-### Free trials
-Trial options were different in the two earlier Stores, so if you used them, it's possible that chose different options for each Store. The trial option available to your Windows 10 customers are determined based on the following table.
+### 免费试用
+试用选项在上述这两个应用商店中有所不同，因此如果你已使用它们，则很可能你已为每个应用商店选择了不同的选项。 向 Windows 10 客户具体提供了哪些试用选项由下表确定。
 
-| Windows 8 app       | Windows Phone app   | Trial setting for Windows 10                                                  |
+| Windows 8 应用       | Windows Phone 应用   | 适用于 Windows 10 的试用设置                                                  |
 |---------------------|---------------------|-------------------------------------------------------------------------------|
-| No free trial       | No free trial       | No free trial                                                                 |
-| No free trial       | Trial never expires | No free trial                                                                 |
-| Trial never expires | Trial never expires | Trial never expires                                                           |
-| Trial never expires | No free trial       | No free trial                                                                 |
-| Time-limited trial  | Trial never expires | No free trial on Windows Phone 8.1 and earlier; otherwise, time-limited trial |
-| Time-limited trial  | No free trial       | No free trial on Windows Phone 8.1 and earlier; otherwise, time-limited trial |
+| 没有免费试用       | 没有免费试用       | 没有免费试用                                                                 |
+| 没有免费试用       | 试用永不过期 | 没有免费试用                                                                 |
+| 试用永不过期 | 试用永不过期 | 试用永不过期                                                           |
+| 试用永不过期 | 没有免费试用       | 没有免费试用                                                                 |
+| 限期试用  | 试用永不过期 | Windows Phone 8.1 和早期版本上没有免费试用；只提供限期试用 |
+| 限期试用  | 没有免费试用       | Windows Phone 8.1 和早期版本上没有免费试用；只提供限期试用 |
 
-### Markets
-Your app will be available to Windows 10 customers in every market where you had previously published the app. This applies even if you had different market selections for each Store.
+### 市场
+你的应用将在你之前发布它的每个市场中提供给 Windows 10 客户。 即使你为每个应用商店选择了不同的市场，也是如此。
 
-### Categories
-If your app appeared in different categories in the two Stores, we'll use the category from the Windows Store to determine its new category. Note that some categories are different in the Store for Windows 10 customers, so be sure to review the [table](#cat) below.
+### 类别
+如果你的应用以不同的类别显示在这两个应用商店中，我们将使用 Windows 应用商店中的类别来确定其新类别。 请注意，面向 Windows 10 客户的某些类别在应用商店中有所不同，所以请务必查看下[表](#cat)。
 
-### Age rating
-If you provided different age ratings, the stricter (higher age) rating is used.
+### 年龄分级
+如果你提供了不同的年龄分级，将使用更严格的（更高的年龄）分级。
 
-### Privacy policy
-If your app has a privacy policy, the one you provided when submitting your Windows 8 app is shown to your Windows 10 customers as well.
+### 隐私策略
+如果你的应用具有隐私策略，还会向 Windows 10 客户显示随 Windows 8 应用一同提交的隐私策略。
 
-### Screenshots
-We take all of the screenshots you've submitted and use the appropriate version to display to Windows 10 customers, based on the type of device they're using. In the rare case where your supported languages differ for each Store, some customers might see a screenshot from another language that best represents the experience they will get when buying the app.
+### 屏幕截图
+我们会保留你已提交的所有屏幕截图，并使用适当的版本将其显示给 Windows 10 客户，具体取决于他们所使用的设备类型。 在每个应用商店的支持语言不相同的罕见情况下，一些客户可能会看到采用其他语言形式的屏幕截图，因为该语言能最好地体现出他们在购买应用时将获得的体验。
 
-### Store listings
-We try to show the most appropriate Store listing to your Windows 10 customers, based on their language. When Store listings are available from more than one source in the same language, the listing fron your Windows Store app is shown to your Windows 10 customers. In the rare cases where your supported languages differ for each Store, some customers might see a Store listing from your Windows Phone app, if that is the only Store listing you provided in that language.
+### 提要
+我们将根据 Windows 10 客户所使用的语言，尝试向他们展示最合适的描述。 当采用相同语言的多个源都提供描述时，将为你的 Windows 10 客户展示 Windows 应用商店应用中的描述。 在支持的语言在每个应用商店中不相同的罕见情况下，如果你仅使用该语言提供了一种描述，则一些客户可能会从 Windows Phone 应用看到该描述。
 
-If you want to update the Store listing that your Windows 10 customers see to let them know about experiences that work across multiple devices, you can do this by updating [your app's description](create-app-store-listings.md). Customers on Windows 10 will see your app's default description, but you can also [create platform-specific Store listings](create-platform-specific-store-listings.md) if you want your Store listing to appear differently for customers on different OS versions.
+如果你希望更新 Windows 10 客户所能看到的描述，以便他们可了解跨多个设备工作的体验，你可以通过更新[应用提要](create-app-descriptions.md)来实现此目的。 Windows 10 客户将看到你的应用的默认描述，不过，如果你希望展示给使用不同操作系统版本的客户的描述有所不同，则还可以[创建特定于平台的描述](create-platform-specific-descriptions.md)。
 
-## Category changes
-
-
-In many cases, the new [categories and subcategories](category-and-subcategory-table.md) for apps and games are the same as they have been in the Store for previous OS versions. However, there have been a few changes. Review the table below to understand how your app is categorized in the Store for customers on Windows 10, based on its previous category.
-
-**Note**  You'll see the new category listed in the dashboard when viewing your [app's category](category-and-subcategory-table.md) in the [App properties](enter-app-properties.md) page of a submission, and customers viewing the Store on Windows 10 devices will see your app in the new category. However, customers viewing the Store from an earlier operating system will continue to see the app listed in its original category.
+## 类别更改
 
 
-**Category changes for Windows Phone apps:**
+在许多情况下，应用和游戏的新[类别和子类别](category-and-subcategory-table.md)与它们在适用于以前操作系统版本的应用商店中的类别和子类别相同。 但稍作了些变动。 查看下表，以了解你的应用基于其上一类别在面向 Windows 10 客户的应用商店中的分类方式。
 
-| Previous category                       | New category                  |
+**注意** 当在提交的[“应用属性”](enter-app-properties.md)页中查看[“应用类别”](category-and-subcategory-table.md)时，你将看到在仪表板中列出的新类别，而正在通过 Windows 10 设备查看该应用商店的客户将在新类别下看到你的应用。 而通过早期操作系统查看应用商店的客户将继续看到该应用列在其原始类别下。
+
+
+**面向 Windows Phone 应用的类别更改：**
+
+| 上一类别                       | 新类别                  |
 |-----------------------------------------|-------------------------------|
-| Government + politics &gt; commentary   | Government + politics         |
-| Government + politics &gt; legal issues | Government + politics         |
-| Government + politics &gt; politics     | Government + politics         |
-| Government + politics &gt; resources    | Government + politics         |
-| Health + fitness &gt; diet + nutrition  | Health + fitness              |
-| Health + fitness &gt; fitness           | Health + fitness              |
-| Health + fitness &gt; health            | Health + fitness              |
-| Lifestyle &gt; art + entertainment      | Lifestyle                     |
-| Lifestyle &gt; out + about              | Lifestyle                     |
-| Lifestyle &gt; food + dining            | Food + dining                 |
-| Lifestyle &gt; shopping                 | Shopping                      |
-| News + weather &gt; international       | News + weather                |
-| News + weather &gt; local + national    | News + weather                |
-| Utilities + productivity                | Utilities + tools             |
-| Travel + navigation                     | Travel                        |
-| Travel + navigation &gt; planning       | Travel                        |
-| Travel + navigation &gt; tools          | Travel                        |
-| Travel + navigation &gt; with kids      | Kids + family &gt; travel     |
-| Travel + navigation &gt; language       | Education &gt; Language       |
-| Travel + navigation &gt; mapping        | Navigation + maps             |
-| Travel + navigation &gt; navigation     | Navigation + maps             |
-| Games &gt; classics                     | Games &gt; Action + adventure |
-| Games &gt; family                       | Games &gt; Family + kids      |
-| Games &gt; sports + recreation          | Games &gt; Sports             |
-| Games &gt; strategy + simulation        | Games &gt; Strategy           |
+| 政策 + 时政 &gt; 评论   | 政策 + 时政         |
+| 政策 + 时政 &gt; 法律问题 | 政策 + 时政         |
+| 政策 + 时政 &gt; 时政     | 政策 + 时政         |
+| 政策 + 时政 &gt; 资源    | 政策 + 时政         |
+| 健康 + 健身 &gt; 饮食 + 营养  | 健康 + 健身              |
+| 健康 + 健身 &gt; 健身           | 健康 + 健身              |
+| 健康 + 健身 &gt; 健康            | 健康 + 健身              |
+| 生活方式 &gt; 艺术 + 娱乐      | 生活方式                     |
+| 生活方式 &gt; 户外活动              | 生活方式                     |
+| 生活方式 &gt; 餐饮            | 美食                 |
+| 生活方式 &gt; 购物                 | 购物                      |
+| 新闻 + 天气 &gt; 国际       | 新闻 + 天气                |
+| 新闻 + 天气 &gt; 本地 + 全国    | 新闻 + 天气                |
+| 实用工具 + 效率                | 实用工具 + 工具             |
+| 旅行 + 导航                     | 旅行                        |
+| 旅行 + 导航 &gt; 规划       | 旅行                        |
+| 旅行 + 导航 &gt; 工具          | 旅行                        |
+| 旅行 + 导航 &gt; 带孩子旅行      | 儿童 + 家庭 &gt; 旅行     |
+| 旅行 + 导航 &gt; 语言       | 教育 &gt; 语言       |
+| 旅行 + 导航 &gt; 地图        | 导航 + 地图             |
+| 旅行 + 导航 &gt; 导航     | 导航 + 地图             |
+| 游戏 &gt; 经典游戏                     | 游戏 &gt; 动作 + 冒险 |
+| 游戏 &gt; 家庭                       | 游戏 &gt; 家庭 + 儿童      |
+| 游戏 &gt; 体育 + 休闲          | 游戏 &gt; 体育             |
+| 游戏 &gt; 战略 + 模拟        | 游戏 &gt; 战略           |
 
  
 
-**Category changes for Windows 8 apps:**
+**Windows 8 应用的类别更改：**
 
-| Previous category           | New category                         |
+| 上一类别           | 新类别                         |
 |-----------------------------|--------------------------------------|
-| Books + Reference &gt; Kids | Kids + family &gt; Books + reference |
-| Music + Videos &gt; Video   | Photo + video                        |
-| Music + Videos &gt; Music   | Music                                |
-| Government                  | Government + politics                |
-| Finance                     | Personal Finance                     |
-| Games &gt; Action           | Games &gt; Action + adventure        |
-| Games &gt; Adventure        | Games &gt; Action + adventure        |
-| Games &gt; Arcade           | Games &gt; Action + adventure        |
-| Games &gt; Card             | Games &gt; Card + board              |
-| Games &gt; Kids             | Games &gt; Family + kids             |
-| Games &gt; Family           | Games &gt; Family + kids             |
-| Games &gt; Puzzle           | Games &gt; Puzzle + trivia           |
-| Games &gt; Racing           | Games &gt; Racing + flying           |
+| 书籍 + 书评 &gt; 儿童 | 儿童 + 家庭 &gt; 书籍 + 书评 |
+| 音乐 + 视频 &gt; 视频   | 照片 + 视频                        |
+| 音乐 + 视频 &gt; 音乐   | 音乐                                |
+| 政策                  | 政策 + 时政                |
+| 财经                     | 个人理财                     |
+| 游戏 &gt; 动作           | 游戏 &gt; 动作 + 冒险        |
+| 游戏 &gt; 冒险        | 游戏 &gt; 动作 + 冒险        |
+| 游戏 &gt; 游乐场           | 游戏 &gt; 动作 + 冒险        |
+| 游戏 &gt; 纸牌             | 游戏 &gt; 纸牌 + 棋类              |
+| 游戏 &gt; 儿童             | 游戏 &gt; 家庭 + 儿童             |
+| 游戏 &gt; 家庭           | 游戏 &gt; 家庭 + 儿童             |
+| 游戏 &gt; 拼图           | 游戏 &gt; 拼图 + 益智           |
+| 游戏 &gt; 赛车           | 游戏 &gt; 赛车 + 飞行类           |
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

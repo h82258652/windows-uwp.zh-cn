@@ -1,66 +1,66 @@
 ---
 author: mijacobs
-Description: Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
-title: Drag animations in UWP apps
+Description: "当用户移动对象时，使用拖放动画，例如在列表中移动项目，或将项目放在其他列表顶部。"
+title: "在 UWP 应用中拖动动画"
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
+ms.openlocfilehash: c975ba3d03c06009710f4f57edf8a4cc517ad90c
 
 ---
 
-# Drag animations
+# 拖动动画
 
 
 
 
-Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
+当用户移动对象时，使用拖放动画，例如在列表中移动项目，或将项目放在其他列表顶部。
 
-**Important APIs**
+**重要的 API**
 
--   [**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)
-
-
-## Do's and don'ts
+-   [**DragItemThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
 
-**Drag start animation**
-
--   Use the drag start animation when the user begins to move an object.
--   Include affected objects in the animation if and only if there are other objects that can be affected by the drag-and-drop operation.
--   Use the drag end animation to complete any animation sequence that began with the drag start animation. This reverses the size change in the dragged object that was caused by the drag start animation.
-
-**Drag end animation**
-
--   Use the drag end animation when the user drops a dragged object.
--   Use the drag end animation in combination with add and delete animations for lists.
--   Include affected objects in the drag end animation if and only if you included those same affected objects in the drag start animation.
--   Don't use the drag end animation if you have not first used the drag start animation. You need to use both animations to return objects to their original sizes after the drag sequence is complete.
-
-**Drag between enter animation**
-
--   Use the drag between enter animation when the user drags the drag source into a drop area where it can be dropped between two other objects.
--   Choose a reasonable drop target area. This area should not be so small that it is difficult for the user to position the drag source for the drop.
--   The recommended direction to move affected objects to show the drop area is directly apart from each other. Whether they move vertically or horizontally depends on the orientation of the affected objects to each other.
--   Don't use the drag between enter animation if the drag source cannot be dropped in an area. The drag between enter animation tells the user that the drag source can be dropped between the affected objects.
-
-**Drag between leave animation**
-
--   Use the drag between leave animation when the user drags an object away from an area where it could have been dropped between two other objects.
--   Don't use the drag between leave animation if you have not first used the drag between enter animation.
+## 应做事项和禁止事项
 
 
-## Related articles
+**拖动开始动画**
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating drag-and-drop sequences](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)
-* [**DropTargetItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243186)
-* [**DragOverThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243180)
+-   在用户开始移动对象时使用拖动开始动画。
+-   当且仅当有其他对象可能受到拖放操作影响时，才在动画中包括这些受影响的对象。
+-   使用拖动结束动画可完成以拖动开始动画开始的任何动画序列。 它将恢复由拖动开始动画引起的拖动对象的大小更改。
+
+**拖动结束动画**
+
+-   在用户放下拖动的对象时使用拖动结束动画。
+-   将拖动结束动画与列表的添加和删除动画结合使用。
+-   当且仅当拖动开始动画中包括了受影响的对象时，才应在拖动结束动画中包括这些受影响的对象。
+-   如果没有首先使用拖动开始动画，则不要使用拖动结束动画。 你需要使用这两个动画，才能在完成拖动序列之后，让对象还原为其原始大小。
+
+**在进入动画间拖动**
+
+-   当用户将拖动源拖入可以放在两个其他对象之间的放置区域时，使用在进入间拖动动画。
+-   选择一个合理的目标拖放区域。 此区域不应该太小，否则用户难以放置拖放源。
+-   移动受影响的对象以显示放置区域的建议方向是直接相互分开。 垂直移动还是水平移动取决于受影响的对象彼此的方向。
+-   如果拖放源无法放入某个区域，请不要使用在进入间拖动动画。 在进入间拖动动画告诉用户可以将拖动源放入受影响的对象之间。
+
+**在离开动画间拖动**
+
+-   当用户将对象从放置它的两个其他对象之间的区域拖开时，使用在离开间拖动动画。
+-   如果没有首先使用在进入间拖动动画，则不要使用在离开间拖动动画。
+
+
+## 相关文章
+
+**对于开发人员 (XAML)**
+* [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [创建拖放顺序动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
+* [快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**DragItemThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br243174)
+* [**DropTargetItemThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br243186)
+* [**DragOverThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br243180)
 
 
  
@@ -71,6 +71,6 @@ Use drag-and-drop animations when users move objects, such as moving an item wit
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

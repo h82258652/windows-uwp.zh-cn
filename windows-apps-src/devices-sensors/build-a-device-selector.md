@@ -1,103 +1,103 @@
 ---
 author: DBirtolo
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
-title: Build a device selector
-description: Building a device selector will enable you to limit the devices you are searching through when enumerating devices.
+title: "生成设备选择器"
+description: "生成设备选择器将使你可以在枚举设备时限制要搜索的设备。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 091767d6f223ce2b4538dafb1c81595015589013
+ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
 
 ---
-# Build a device selector
+# 生成设备选择器
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Important APIs **
+** 重要的 API **
 
 -   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-Building a device selector will enable you to limit the devices you are searching through when enumerating devices. This will enable you to only get relevant results and will also improve the performance of the system. In most scenarios you get a device selector from a device stack. For example, you might use [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Dn264015) for devices discovered over USB. These device selectors return an Advanced Query Syntax (AQS) string. If you are not familiar with the AQS format, you can read more at [Using Advanced Query Syntax Programmatically](https://msdn.microsoft.com/library/windows/desktop/Bb266512).
+生成设备选择器将使你可以在枚举设备时限制要搜索的设备。 这将使你能够仅获取相关结果，还将提高系统性能。 在大多数情况下，你都可以从设备堆栈获取设备选择器。 例如，你可能将 [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Dn264015) 用于在 USB 上发现的设备。 这些设备选择器将返回一个高级查询语法 (AQS) 字符串。 如果你不熟悉 AQS 格式，则可以访问[以编程方式使用高级查询语法](https://msdn.microsoft.com/library/windows/desktop/Bb266512)来阅读更多内容。
 
-## Building the filter string
+## 生成筛选器字符串
 
-There are some cases where you need to enumerate devices and a provided device selector is not available for your scenario. A device selector is an AQS filter string that contains the following information. Before creating a filter string, you need to know some key pieces of information about the devices you want to enumerate.
+在某些情况下，你需要枚举设备，而提供的设备选择器并不适用于你的方案。 设备选择器是包含以下信息的 AQS 筛选器字符串。 在创建筛选器字符串前，需要了解有关要枚举的设备的一些关键信息。
 
--   The [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of the devices you are interested in. For more information about how **DeviceInformationKind** impacts enumerating devices, see [Enumerate devices](enumerate-devices.md).
--   How to build an AQS filter string, which is explained in this topic.
--   The properties you are interested in. The available properties will depend upon the [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991). See [Device information properties](device-information-properties.md) for more information.
--   The protocols you are querying over. This is only needed if you are searching for devices over a wireless or wired network. For more information about doing this, see [Enumerate devices over a network](enumerate-devices-over-a-network.md).
+-   你感兴趣的设备的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)。 有关 **DeviceInformationKind** 如何影响枚举设备的详细信息，请参阅[枚举设备](enumerate-devices.md)。
+-   如何生成 AQS 筛选器字符串，这将在本主题中进行介绍。
+-   你感兴趣的属性。 可用属性将取决于 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)。 有关详细信息，请参阅[设备信息属性](device-information-properties.md)。
+-   执行查询要使用的协议。 这仅在你通过无线或有线网络搜索设备时才会需要。 有关执行此操作的详细信息，请参阅[通过网络枚举设备](enumerate-devices-over-a-network.md)。
 
-When using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs, you frequently combine the device selector with the device kind that you are interested in. The available list of device kinds is defined by the [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) enumeration. This combination of factors helps you to limit the devices that are available to the ones that you are interested in. If you do not specify the **DeviceInformationKind**, or the method you are using does not provide a **DeviceInformationKind** parameter, the default kind is **DeviceInterface**.
+在使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 时，你经常将设备选择器与你感兴趣的设备类型相结合。 设备类型的可用列表由 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 枚举定义。 此组因素可帮助你限制可用于你感兴趣的类型的设备。 如果未指定 **DeviceInformationKind** 或你要使用的方法不提供 **DeviceInformationKind** 参数，则默认类型为 **DeviceInterface**。
 
-The [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs use canonical AQS syntax, but not all of the operators are supported. For a list of properties that are available when you are constructing your filter string, see [Device information properties](device-information-properties.md).
+[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 使用规范 AQS 语法，但并非所有运营商都受支持。 有关构造筛选器字符串时可用的属性列表，请参阅[设备信息属性](device-information-properties.md)。
 
-**Caution**  Custom properties that are defined using the `{GUID} PID` format cannot be used when constructing your AQS filter string. This is because the property type is derived from the well-known property name.
+**警告** 在构造 AQS 筛选器字符串时，无法使用通过 `{GUID} PID` 格式定义的自定义属性。 这是因为属性类型派生自已知的属性名称。
 
  
 
-The following table lists the AQS operators and what types of parameters they support.
+下表列出了 AQS 运营商及其支持的参数类型。
 
-| Operator                       | Supported types                                                             |
+| 运算符                       | 支持的类型                                                             |
 |--------------------------------|-----------------------------------------------------------------------------|
-| **COP\_EQUAL**                 | String, boolean, GUID, UInt16, UInt32                                       |
-| **COP\_NOTEQUAL**              | String, boolean, GUID, UInt16, UInt32                                       |
-| **COP\_LESSTHAN**              | UInt16, UInt32                                                              |
-| **COP\_GREATERTHAN**           | UInt16, UInt32                                                              |
-| **COP\_LESSTHANOREQUAL**       | UInt16, UInt32                                                              |
-| **COP\_GREATERTHANOREQUAL**    | UInt16, UInt32                                                              |
-| **COP\_VALUE\_CONTAINS**       | String, string array, boolean array, GUID array, UInt16 array, UInt32 array |
-| **COP\_VALUE\_NOTCONTAINS**    | String, string array, boolean array, GUID array, UInt16 array, UInt32 array |
-| **COP\_VALUE\_STARTSWITH**     | String                                                                      |
-| **COP\_VALUE\_ENDSWITH**       | String                                                                      |
-| **COP\_DOSWILDCARDS**          | Not supported                                                               |
-| **COP\_WORD\_EQUAL**           | Not supported                                                               |
-| **COP\_WORD\_STARTSWITH**      | Not supported                                                               |
-| **COP\_APPLICATION\_SPECIFIC** | Not supported                                                               |
+| **COP\_EQUAL**                 | 字符串、布尔值、GUID、UInt16、UInt32                                       |
+| **COP\_NOTEQUAL**              | 字符串、布尔值、GUID、UInt16、UInt32                                       |
+| **COP\_LESSTHAN**              | UInt16、UInt32                                                              |
+| **COP\_GREATERTHAN**           | UInt16、UInt32                                                              |
+| **COP\_LESSTHANOREQUAL**       | UInt16、UInt32                                                              |
+| **COP\_GREATERTHANOREQUAL**    | UInt16、UInt32                                                              |
+| **COP\_VALUE\_CONTAINS**       | 字符串、字符串数组、布尔值数组、GUID 数组、UInt16 数组、UInt32 数组 |
+| **COP\_VALUE\_CONTAINS**    | 字符串、字符串数组、布尔值数组、GUID 数组、UInt16 数组、UInt32 数组 |
+| **COP\_VALUE\_STARTSWITH**     | 字符串                                                                      |
+| **COP\_VALUE\_ENDSWITH**       | 字符串                                                                      |
+| **COP\_DOSWILDCARDS**          | 不支持                                                               |
+| **COP\_WORD\_EQUAL**           | 不支持                                                               |
+| **COP\_WORD\_STARTSWITH**      | 不支持                                                               |
+| **COP\_APPLICATION\_SPECIFIC** | 不支持                                                               |
 
 
-> **Tip**  You can specify **NULL** for **COP\_EQUAL** or **COP\_NOTEQUAL**. This translates to a property with no value, or that the value does not exist. In AQS, you specify **NULL** by using empty brackets \[\].
+> **提示** 你可以为 **COP\_EQUAL** 或 **COP\_NOTEQUAL** 指定 **NULL**。 这将转换为一个没有值或值不存在的属性。 在 AQS 中，可以使用空括号 \[\] 指定 **NULL**。
 
-> **Important**  When using the **COP\_VALUE\_CONTAINS** and **COP\_VALUE\_NOTCONTAINS** operators, they behave differently with strings and string arrays. In the case of a string, the system will perform a case-insensitive search to see if the device contains the indicated string as a substring. In the case of a string array, substrings are not searched. With the string array, the array is searched to see if it contains the entire specified string. It is not possible to search a string array to see if the elements in the array contain a substring.
+> **重要提示** 当使用 **COP\_VALUE\_CONTAINS** 和 **COP\_VALUE\_NOTCONTAINS** 运算符时，它们会针对字符串和字符串数组产生不同行为。 如果是字符串，系统将执行不区分大小写的搜索，以查看设备是否将指定字符串作为子字符串包含起来。 如果是字符串数组，则不会搜索子字符串。 对于字符串数组，将搜索该数组，查看它是否包含整个指定字符串。 无法通过搜索字符串数组查看数组中的元素是否包含一个子字符串。
 
-If you cannot create a single AQS filter string that will scope your results appropriately, you can filter your results after you receive them. However, if you choose to do this, we recommend limiting the results from your initial AQS filter string as much as possible when you provide it to the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs. This will help improve the performance of your application.
+如果你无法创建可相应地设置结果范围的单个 AQS 筛选器字符串，则可以在接收结果后进行筛选。 但是，如果你选择执行此操作，我们建议你在将结果提供给 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 时，尽量从初始 AQS 筛选器字符串限制结果。 这将有助于提高你的应用程序的性能。
 
-## AQS string examples
+## AQS 字符串示例
 
-The following examples demonstrate how the AQS syntax can be used to limit the devices you want to enumerate. All of these filter strings are paired up with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) to create a complete filter. If no kind is specified, remember that the default kind is **DeviceInterface**.
+以下示例演示如何使用 AQS 语法来限制要枚举的设备。 所有这些筛选器字符串都与 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对才能创建完整的筛选器。 如果未指定任何类型，请记住默认类型为 **DeviceInterface**。
 
-When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **DeviceInterface**, it enumerates all objects that contain the Audio Capture interface class and that are currently enabled. **=** translates to **COP\_EQUALS**.
+当此筛选器与 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有包含音频捕获接口类并且当前已启用的对象。 **=** 转换为 **COP\_EQUALS**。
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **Device**, it enumerates all objects that have at least one hardware id of GenCdRom. **~~** translates to **COP\_VALUE\_CONTAINS**.
+当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有具有至少一个 GenCdRom 硬件 ID 的对象。 **~~** 转换为 **COP\_VALUE\_CONTAINS**。
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **DeviceContainer**, it enumerates all objects that have a model name containing the substring Microsoft. **~~** translates to **COP\_VALUE\_CONTAINS**.
+当此筛选器与 **DeviceContainer** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有模型名称中包含子字符串 Microsoft 的对象。 **~~** 转换为 **COP\_VALUE\_CONTAINS**。
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **DeviceInterface**, it enumerates all objects that have a name starting with the substring Microsoft. **~&lt;** translates to **COP\_STARTSWITH**.
+当此筛选器与 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有名称以子字符串 Microsoft 开头的对象。 **~&lt;** 转换为 **COP\_STARTSWITH**。
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **Device**, it enumerates all objects that have a **System.Devices.IpAddress** property set. **&lt;&gt;\[\]** translates to **COP\_NOTEQUALS** combined with a **NULL** value.
+当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有具有 **System.Devices.IpAddress** 属性集的对象。 **&lt;&gt;\[\]** 转换为结合了 **NULL** 值的 **COP\_NOTEQUALS**。
 
 ``` syntax
 System.Devices.IpAddress:<>[]
 ```
 
-When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **Device**, it enumerates all objects that do not have a **System.Devices.IpAddress** property set. **=\[\]** translates to **COP\_EQUALS** combined with a **NULL** value.
+当此筛选器与 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配对时，它将枚举所有不具有 **System.Devices.IpAddress** 属性集的对象。 **=\[\]** 转换为结合了 **NULL** 值的 **COP\_EQUALS**。
 
 ``` syntax
 System.Devices.IpAddress:=[]
@@ -113,6 +113,6 @@ System.Devices.IpAddress:=[]
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

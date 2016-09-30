@@ -1,245 +1,245 @@
 ---
 author: jwmsft
-description: Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value.
-title: Move and draw commands syntax
+description: "了解移动和绘制命令（小型语言），可用于将路径几何图形指定为 XAML 属性值。"
+title: "移动和绘制命令语法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
+ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 ---
 
-# Move and draw commands syntax
+# 移动和绘制命令语法
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value. Move and draw commands are used by many design and graphics tools that can output a vector graphic or shape, as a serialization and interchange format.
+了解移动和绘制命令（小型语言），可用于将路径几何图形指定为 XAML 属性值。 移动和绘制命令由许多设计和图形工具使用，用于按序列化和交换格式输出矢量图形或形状。
 
-## Properties that use move and draw command strings
+## 使用移动和绘制命令字符串的属性
 
-The move and draw command syntax is supported by an internal type converter for XAML, which parses the commands and produces a run-time graphics representation. This representation is basically a finished set of vectors that is ready for presentation. The vectors themselves don't complete the presentation details; you'll still need to set other values on the elements. For a [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) object you also need values for [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378), [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383), and other properties, and then that **Path** must be connected to the visual tree somehow. For a [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) object, set the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) property.
+移动和绘制命令语法受 XAML 的内部类型转换器支持，可分析命令并生成运行时图形表示形式。 此表示形式基本上是一组用于演示的完成矢量。 矢量本身不会完成表示细节；你仍然需要在元素上设置其他值。 对于 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 对象，你还需要适用于 [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378)、[**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) 和其他属性的值，然后 **Path** 必须通过某种途径连接到可视化树。 对于 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) 对象，设置 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) 属性。
 
-There are two properties in the Windows Runtime that can use a string representing move and draw commands: [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) and [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723). If you set one of these properties by specifying move and draw commands, you typically set it as a XAML attribute value along with other required attributes of that element. Without getting into the specifics, here's what that looks like:
+在 Windows 运行时中存在两种可使用字符串表示移动和绘制命令的属性：[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 和 [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723)。 如果你通过指定移动和绘制命令设置其中一个属性，通常会将其设置为 XAML 属性值以及该元素的其他所需属性。 在未获取细节的情况下，如此处所示：
 
 ```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) can also use move and draw commands. You might combine a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) object that uses move and draw commands with other [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) types in a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) object, which you'd then use as the value for [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). But that isn't nearly as common as using move and draw commands for attribute-defined data.
+[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移动和绘制命令。 你可以将使用移动和绘制命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 对象与 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 对象中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 类型结合起来，然后将其用作 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是此方法与使用属性定义的数据的移动和绘制命令相比并不常用。
 
-## Using move and draw commands versus using a **PathGeometry**
+## 使用移动和绘制命令与使用 **PathGeometry**
 
-For Windows Runtime XAML, the move and draw commands produce a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a single [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) object with a [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) property value. Each draw command produces a [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) derived class in that single **PathFigure**'s [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) collection, the move command changes the [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166), and existence of a close command sets [**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) to **true**. You can navigate this structure as an object model if you examine the **Data** values at run time.
+对于 Windows 运行时 XAML，移动和绘制命令将生成包含 [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 属性值的单个 [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) 对象的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168)。 每个绘制命令都将在此单个 **PathFigure** 的 [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) 集合中生成一个 [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) 派生类，移动命令将更改 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166)，并且存在的关闭命令可将 [**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) 设置为 **true**。 如果你在运行时检查 **Data** 值，则可以将此结构作为对象模型导航。
 
-## The basic syntax
+## 基本语法
 
-The syntax for move and draw commands can be summarized like this:
+移动和绘制命令的语法可总结如下：
 
-1.  Start with an optional fill rule. Typically you specify this only if you don't want the **EvenOdd** default. (More about **EvenOdd** later.)
-2.  Specify exactly one move command.
-3.  Specify one or more draw commands.
-4.  Specify a close command. You can omit a close command , but that would leave your figure open (that's uncommon).
+1.  以可选填充规则开始。 通常仅在不希望 **EvenOdd** 默认时指定它。 （稍后将详细介绍 **EvenOdd**。）
+2.  具体指定一个移动命令。
+3.  指定一个或多个绘制命令。
+4.  指定一个关闭命令。 你可以省略关闭命令，但是这会使你的图像处于打开状态（这不常见）。
 
-General rules of this syntax are:
+此语法的一般规则如下：
 
--   Each command is represented by exactly one letter.
--   That letter can be upper-case or lower-case. Case matters, as we'll describe.
--   Each command except the close command is typically followed by one or more numbers.
--   If more than one number for a command, separate with a comma or space.
+-   每个命令都由一个明确的字母表示。
+-   该字母可以大写，也可以小写。 按照我们的说明注意大小写。
+-   除关闭命令之外的每个命令通常都后跟一个或多个数字。
+-   如果命令中具有多个数字，则使用逗号或空格进行分隔。
 
-**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
+**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\*\]** **\[** _closeCommand_ **\]**
 
-Many of the draw commands use points, where you provide an _x,y_ value. Whenever you see a \*_points_ placeholder you can assume you're giving two decimal values for the _x,y_ value of a point.
+许多绘制命令都使用你可在其中提供 _x,y_ 值的点。 每当你看到 \*_points_ 占位符时，你可以假设你为某个点的 _x,y_ 值提供了两个十进制值。
 
-White space can often be omitted when the result is not ambiguous. You can in fact omit all white space if you use commas as your separator for all number sets (points and size). For example, this usage is legal: `F1M0,58L2,56L6,60L13,51L15,53L6,64z`. But it's more typical to include white space between commands for clarity.
+如果结果清晰，空白区域通常可以忽略。 事实上，如果你对所有数字集（点和大小）使用逗号作为分隔符，则可以忽略所有空白区域。 例如，下面的用法是合法的：`F1M0,58L2,56L6,60L13,51L15,53L6,64z`。 但是包括命令之间的空白区域以获取清晰度是更为典型的用法。
 
-Don't use commas as the decimal point for decimal numbers; the command string is interpreted by XAML and doesn't account for culture-specific number-formatting conventions that differ from those used in the **en-us** locale.
+不要将逗号用作十进制数字的小数点；命令字符串由 XAML 解释，并且不会说明特定于文化的数字格式约定，该约定与 **en-us** 当地使用的约定不同。
 
-## Syntax specifics
+## 语法细节
 
-**Fill rule**
+**填充规则**
 
-There are two possible values for the optional fill rule: **F0** or **F1**. (The **F** is always uppercase.) **F0** is the default value; it produces **EvenOdd** fill behavior, so you don't typically specify it. Use **F1** to get the **Nonzero** fill behavior. These fill values align with the values of the [**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030) enumeration.
+对于可选的填充规则，存在两个可能的值：**F0** 或 **F1**。 （**F** 始终大写。）**F0** 是默认值，它可生成 **EvenOdd** 填充行为，因此你通常无需指定它。 使用 **F1** 获取 **Nonzero** 填充行为。 这些填充值与 [**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030) 枚举的值一致。
 
-**Move command**
+**移动命令**
 
-Specifies the start point of a new figure.
+指定新图形的起点。
 
-| Syntax |
+| 语法 |
 |--------|
-| `M ` _startPoint_ <br/>- or -<br/>`m` _startPoint_|
+| `M ` _startPoint_ <br/>- 或 -<br/>`m` _startPoint_|
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| _startPoint_ | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>The start point of a new figure.|
+| _startPoint_ | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新图形的起点。|
 
-An uppercase **M** indicates that *startPoint* is an absolute coordinate; a lowercase **m** indicates that *startPoint* is an offset to the previous point, or (0,0) if there was no previous point.
+大写 **M** 指示 *startPoint* 是绝对坐标；小写 **m** 指示 *startPoint* 是上一个点的偏移或 (0,0)（如果没有上一个点）。
 
-**Note**  It's legal to specify multiple points after the move command. A line is drawn to those points as if you specified the line command. However that's not a recommended style; use the dedicated line command instead.
+**注意** 在移动命令后指定多个点是合法的。 向这些点绘制一条直线，就像你指定了直线命令一样。 但是这不是建议的样式；请改为使用专门的直线命令。
 
-**Draw commands**
+**绘制命令**
 
-A draw command can consist of several shape commands: line, horizontal line, vertical line, cubic Bezier curve, quadratic Bezier curve, smooth cubic Bezier curve, smooth quadratic Bezier curve, and elliptical arc.
+绘制命令可由多个形状命令组成：线、横线、竖线、三次方贝塞尔曲线、二次方贝塞尔曲线、平滑三次方贝塞尔曲线、平滑二次方贝塞尔曲线和椭圆弧。
 
-For all draw commands, case matters. Uppercase letters denote absolute coordinates and lowercase letters denote coordinates relative to the previous command.
+对于所有绘制命令，区分大小写。 大写字母指示绝对坐标，小写字母指示相对于上一个命令的坐标。
 
-The control points for a segment are relative to the end point of the preceding segment. When sequentially entering more than one command of the same type, you can omit the duplicate command entry. For example, `L 100,200 300,400` is equivalent to `L 100,200 L 300,400`.
+分段的控制点相对于前一段的端点。 当连续输入了同一类型的多个命令时，你可以忽略重复的命令输入。 例如，`L 100,200 300,400` 与 `L 100,200 L 300,400` 等效。
 
-**Line command**
+**直线命令**
 
-Creates a straight line between the current point and the specified end point. `l 20 30` and `L 20,30` are examples of valid line commands. Defines the equivalent of a [**LineGeometry**](https://msdn.microsoft.com/library/windows/apps/br210117) object.
+在当前点和指定的端点之间创建一条直线。 `l 20 30` 和 `L 20,30` 是有效直线命令的示例。 定义 [**LineGeometry**](https://msdn.microsoft.com/library/windows/apps/br210117) 对象的等效对象。
 
-| Syntax |
+| 语法 |
 |--------|
-| `L` _endPoint_ <br/>- or -<br/>`l` _endPoint_ |
+| `L` _endPoint_ <br/>- 或 -<br/>`l` _endPoint_ |
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| endPoint | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>The end point of the line.|
+| endPoint | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>直线的端点。|
 
-**Horizontal line command**
+**横线命令**
 
-Creates a horizontal line between the current point and the specified x-coordinate. `H 90` is an example of a valid horizontal line command.
+在当前点和指定的 x 坐标之间创建一条横线。 `H 90` 是一个有效横线命令的示例。
 
-| Syntax |
+| 语法 |
 |--------|
-| `H ` _x_ <br/> - or - <br/>`h ` _x_ |
+| `H ` _x_ <br/> - 或 - <br/>`h ` _x_ |
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| x | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> The x-coordinate of the end point of the line. |
+| x | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直线端点的 x 坐标。 |
 
-**Vertical line command**
+**竖线命令**
 
-Creates a vertical line between the current point and the specified y-coordinate. `v 90` is an example of a valid vertical line command.
+在当前点和指定的 y 坐标之间创建一条竖线。 `v 90` 是一个有效竖线命令的示例。
 
-| Syntax |
+| 语法 |
 |--------|
-| `V ` _y_ <br/> - or - <br/> `v ` _y_ |
+| `V ` _y_ <br/> - 或 - <br/> `v ` _y_ |
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> The y-coordinate of the end point of the line. |
+| *y* | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直线端点的 y 坐标。 |
 
-**Cubic Bézier curve command**
+**三次方贝塞尔曲线命令**
 
-Creates a cubic Bézier curve between the current point and the specified end point by using the two specified control points (*controlPoint1* and *controlPoint2*). `C 100,200 200,400 300,200` is an example of a valid curve command. Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) object with a [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) object.
+通过使用两个指定的控制点（*controlPoint1* 和 *controlPoint2*）在当前点和指定的端点之间创建一条三次方贝塞尔曲线。 `C 100,200 200,400 300,200` 是一个有效曲线命令的示例。 使用 [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) 对象定义 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 对象的等效对象。
 
-| Syntax |
+| 语法 |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - or - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - 或 - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The first control point of the curve, which determines the starting tangent of the curve. |
-| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The second control point of the curve, which determines the ending tangent of the curve. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The point to which the curve is drawn. | 
+| *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的第一个控制点，可确定曲线的开始切线。 |
+| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的第二个控制点，可确定曲线的结束切线。 |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制曲线的点。 | 
 
-**Quadratic Bézier curve command**
+**二次方贝塞尔曲线命令**
 
-Creates a quadratic Bézier curve between the current point and the specified end point by using the specified control point (*controlPoint*). `q 100,200 300,200` is an example of a valid quadratic Bézier curve command. Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249).
+通过使用指定的控制点 (*controlPoint*) 在当前点和指定的端点之间创建一条二次方贝塞尔曲线。 `q 100,200 300,200` 是一个有效二次方贝塞尔曲线命令的示例。 使用 [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) 定义 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 的等效对象。
 
-| Syntax |
+| 语法 |
 |--------|
-| `Q ` *controlPoint endPoint* <br/> - or - <br/> `q ` *controlPoint endPoint* |
+| `Q ` *controlPoint endPoint* <br/> - 或 - <br/> `q ` *controlPoint endPoint* |
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The control point of the curve, which determines the starting and ending tangents of the curve. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The point to which the curve is drawn. |
+| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的控制点，可确定曲线的开始切线和结束切线。 |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
 
-**Smooth cubic Bézier curve command**
+**平滑三次方贝塞尔曲线命令**
 
-Creates a cubic Bézier curve between the current point and the specified end point. The first control point is assumed to be the reflection of the second control point of the previous command relative to the current point. If there is no previous command or if the previous command was not a cubic Bézier curve command or a smooth cubic Bézier curve command, assume the first control point is coincident with the current point. The second control point—the control point for the end of the curve—is specified by *controlPoint2*. For example, `S 100,200 200,300` is a valid smooth cubic Bézier curve command. This command defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) where there was preceding curve segment.
+在当前点和指定的端点之间创建一条三次方贝塞尔曲线。 第一个控制点被假设为相对于当前点的上一个命令的第二个控制点的反射。 如果没有上一个命令或者如果上一个命令不是三次方贝塞尔曲线命令或平滑三次方贝塞尔曲线命令，则假设第一个控制点与当前点一致。 第二个控制点（曲线末端的控制点）由 *controlPoint2* 指定。 例如，`S 100,200 200,300` 是有效的平滑三次方贝塞尔曲线命令。 此命令使用 [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) 定义 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 的等效对象，其中存在之前的曲线段。
 
-| Syntax |
+| 语法 |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - or - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2* *endPoint* <br/> - 或 - <br/>`s` *controlPoint2 endPoint* |
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The control point of the curve, which determines the ending tangent of the curve. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The point to which the curve is drawn. |
+| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲线的控制点，可确定曲线的结束切线。 |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
 
-**Smooth quadratic Bézier curve command**
+**平滑二次方贝塞尔曲线命令**
 
-Creates a quadratic Bézier curve between the current point and the specified end point. The control point is assumed to be the reflection of the control point of the previous command relative to the current point. If there is no previous command or if the previous command was not a quadratic Bézier curve command or a smooth quadratic Bézier curve command, the control point is coincident with the current point. This command defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) where there was preceding curve segment.
+在当前点和指定的端点之间创建一条二次方贝塞尔曲线。 该控制点被假设为相对于当前点的上一个命令的控制点的反射。 如果没有上一个命令或者如果上一个命令不是二次方贝塞尔曲线命令或平滑二次方贝塞尔曲线命令，则该控制点与当前点一致。 此命令使用 [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) 定义 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 的等效对象，其中存在之前的曲线段。
 
-| Syntax |
+| 语法 |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - or - <br/> `t` *controlPoint* *endPoint* |
+| `T` *controlPoint* *endPoint* <br/> - 或 - <br/> `t` *controlPoint* *endPoint* |
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The control point of the curve, which determines the starting and tangent of the curve. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The point to which the curve is drawn. |
+| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲线的控制点，可确定曲线的开始切线。 |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 要绘制曲线的点。 |
 
-**Elliptical arc command**
+**椭圆弧命令**
 
-Creates an elliptical arc between the current point and the specified end point. Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with an [**ArcSegment**](https://msdn.microsoft.com/library/windows/apps/br228054).
+在当前点和指定的端点之间创建一条椭圆弧。 使用 [**ArcSegment**](https://msdn.microsoft.com/library/windows/apps/br228054) 定义 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 的等效对象。
 
-| Syntax |
+| 语法 |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - or - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - 或 - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| *size* | [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>The x-radius and y-radius of the arc. |
-| *rotationAngle* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> The rotation of the ellipse, in degrees. |
-| *isLargeArcFlag* | Set to 1 if the angle of the arc should be 180 degrees or greater; otherwise, set to 0. |
-| *sweepDirectionFlag* | Set to 1 if the arc is drawn in a positive-angle direction; otherwise, set to 0. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The point to which the arc is drawn.|
+| *大小* | [**大小**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>圆弧的 x 半径和 y 半径。 |
+| *rotationAngle* | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 椭圆的旋转角度（以度为单位）。 |
+| *isLargeArcFlag* | 如果圆弧的角度应为 180 度或更大，则设置为 1；否则，设置为 0。 |
+| *sweepDirectionFlag* | 如果圆弧以正角方向绘制，则设置为 1；否则，设置为 0。 |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 要绘制圆弧的点。|
  
-**Close command**
+**关闭命令**
 
-Ends the current figure and creates a line that connects the current point to the starting point of the figure. This command creates a line-join (corner) between the last segment and the first segment of the figure.
+结束当前图形，并创建一条可将当前点连接到图形起点的直线。 此命令将在该图形的最后一条线段和第一条线段之间创建一个直线接头（转角）。
 
-| Syntax |
+| 语法 |
 |--------|
-| `Z` <br/> - or - <br/> `z ` |
+| `Z` <br/> - 或 - <br/> `z ` |
 
-**Point syntax**
+**点语法**
 
-Describes the x-coordinate and y-coordinate of a point. See also [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870).
+介绍了某个点的 x 坐标和 y 坐标。 另请参阅 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)。
 
-| Syntax |
+| 语法 |
 |--------|
-| *x*,*y*<br/> - or - <br/>*x* *y* |
+| *x*,*y*<br/> - 或 - <br/>*x* *y* |
 
-| Term | Description |
+| 术语 | 说明 |
 |------|-------------|
-| *x* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> The x-coordinate of the point. |
-| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> The y-coordinate of the point. |
+| *x* | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点的 x 坐标。 |
+| *y* | [**双面**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点的 y 坐标。 |
 
-**Additional notes**
+**其他说明**
 
-Instead of a standard numerical value, you can also use the following special values. These values are case sensitive.
+你还可以使用以下特殊值，而不是标准数字值。 这些值区分大小写。
 
--   **Infinity**: Represents **PositiveInfinity**.
--   **\-Infinity**: Represents **NegativeInfinity**.
--   **NaN**: Represents **NaN**.
+-   **Infinity**：表示 **PositiveInfinity**。
+-   **\-Infinity**：表示 **NegativeInfinity**。
+-   **NaN**：表示 **NaN**。
 
-Instead of using decimals or integers, you can use scientific notation. For example, `+1.e17` is a valid value.
+你可以使用科学计数法，而不是使用小数或整数。 例如，`+1.e17` 是有效值。
 
-## Design tools that produce move and draw commands
+## 用于生成移动和绘制命令的设计工具
 
-Using the **Pen** tool and other drawing tools in Blend for Microsoft Visual Studio 2015 will usually produce a [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) object, with move and draw commands.
+在 Blend for Microsoft Visual Studio 2015 中使用**笔**工具和其他绘图工具通常会生成一个具有移动和绘制命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 对象。
 
-You might see existing move and draw command data in some of the control parts defined in the Windows Runtime XAML default templates for controls. For example, some controls use a [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) that has the data defined as move and draw commands.
+你可能在某些控件部件中看到现有移动和绘制命令数据，这些部件已在控件的 Windows 运行时 XAML 默认模板中定义。 例如，某些控件将已定义数据的 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) 用作移动和绘制命令。
 
-There are exporters or plug-ins available for other commonly used vector-graphics design tools that can output the vector in XAML form. These usually create [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) objects in a layout container, with move and draw commands for [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). There may be multiple **Path** elements in the XAML so that different brushes can be applied. Many of these exporters or plug-ins were originally written for Windows Presentation Foundation (WPF)  XAML or Silverlight, but the XAML path syntax is identical with Windows Runtime XAML. Usually, you can use chunks of XAML from an exporter and paste them right into a Windows Runtime XAML page. (However, you won't be able to use a **RadialGradientBrush**, if that was part of the converted XAML, because Windows Runtime XAML doesn't support that brush.)
+为其他常用矢量图形设计工具提供了输出程序或插件，这些工具用于采用 XAML 格式输出矢量。 它们通常使用 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的移动和绘制命令在布局容器中创建 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 对象。 XAML 中可能存在多个 **Path** 元素，因此可以应用不同的画笔。 许多此类导出程序或插件最初是为 Windows Presentation Foundation (WPF) XAML 或 Silverlight 编写的，但 XAML 路径语法与 Windows 运行时 XAML 一致。 通常，你可以使用来自导出程序的 XAML 区块，并将其正确粘贴到 Windows 运行时 XAML 页面中。 （但是，如果 **RadialGradientBrush** 是已转换的 XAML 的一部分，你将无法使用它，因为 Windows 运行时 XAML 不支持该画笔。）
 
-## Related topics
+## 相关主题
 
-* [Draw shapes](https://msdn.microsoft.com/library/windows/apps/mt280380)
-* [Use brushes](https://msdn.microsoft.com/library/windows/apps/mt280383)
+* [绘制形状](https://msdn.microsoft.com/library/windows/apps/mt280380)
+* [使用画笔](https://msdn.microsoft.com/library/windows/apps/mt280383)
 * [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
 * [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

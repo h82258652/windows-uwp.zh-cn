@@ -1,31 +1,31 @@
 ---
 author: Jwmsft
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
-title: Graphics and animation
-description: The topics in this section get you started with using graphics and animations in your store apps.
+title: "图形和动画"
+description: "本部分中的主题帮助你开始在应用商店应用中使用图形和动画。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e06be76cadffd0ee116b0cfd28c90176e25656d5
+ms.openlocfilehash: d46498e6e584d85cfce0be237878aff68dee9c50
 
 ---
-# Graphics and animation
+# 图形和动画
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-The topics in this section get you started with using graphics and animations in your store apps.
+本部分中的主题帮助你开始在应用商店应用中使用图形和动画。
 
-**Note**  
-Graphics and animation is designed for use by app developers using XAML. If you want to add graphics and animation to a game using Microsoft DirectX, see [Games and DirectX](https://msdn.microsoft.com/library/windows/apps/Mt228375).
+**注意**  
+设计图形和动画以供使用 XAML 的应用开发人员使用。 如果要将图形和动画添加到使用 Microsoft DirectX 的游戏，请参阅[游戏和 DirectX](https://msdn.microsoft.com/library/windows/apps/Mt228375)。
 
  
 
-| Topic | Description |
+| 主题 | 说明 |
 |-------|-------------|
-| [Draw shapes](drawing-shapes.md) | Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The [Path](https://msdn.microsoft.com/library/windows/apps/BR243355) class is the way to visualize a fairly complex vector-based drawing language in a XAML UI; for example, you can draw Bezier curves. |
-| [Use brushes](using-brushes.md) | [Brush](https://msdn.microsoft.com/library/windows/apps/BR228076) objects are used to paint the interiors or outlines of shapes, text, and parts of controls, so that the object being painted is visible in a UI. |
-| [Animations overview](animations-overview.md) | Use the animations from the Windows Runtime animation library to integrate the Windows look and feel into your app. |
-| [Transforms overview](transforms-overview.md)  | Learn how to use transforms in the Windows Runtime API, by changing the relative coordinate systems of elements in the UI. This can be used to adjust the appearance of individual XAML elements, such as scaling, rotating, or transforming the position in x-y space. |
-| [Visual layer](visual-layer.md) | The Windows.UI.Composition API gives you access to the composition layer between the framework layer (XAML), and the graphics layer (DirectX). The Windows.UI.Composition API allow you to create composition objects and apply powerful animations, effects and manipulations on those objects in your application. |
+| [绘制形状](drawing-shapes.md) | 了解如何绘制形状，如椭圆、长方形、多边形以及路径。 [Path](https://msdn.microsoft.com/library/windows/apps/BR243355) 类是在 XAML UI 中可视化基于相当复杂矢量的绘图语言的方法；例如，可以绘制贝塞尔曲线。 |
+| [使用画笔](using-brushes.md) | [Brush](https://msdn.microsoft.com/library/windows/apps/BR228076) 对象用于绘制形状、文本和控件各个部分的内部或轮廓，以便所绘制的对象在 UI 中可见。 |
+| [动画概述](animations-overview.md) | 使用 Windows 运行时动画库中的动画将 Windows 外观集成到你的应用中。 |
+| [转换概述](transforms-overview.md)  | 了解如何通过更改 UI 中元素的相对坐标系，在 Windows 运行时 API 中使用转换。 此方法可用于调整各个 XAML 元素的外观，比如缩放、旋转或转换在 x-y 空间中的位置。 |
+| [可视化层](visual-layer.md) | Windows.UI.Composition API 使你能够访问框架层 (XAML) 和图形层 (DirectX) 之间的合成层。 Windows.UI.Composition API 允许你创建合成对象并在应用程序的这些对象上应用功能强大的动画、效果和操作。 |
 
  
 
@@ -39,6 +39,6 @@ Graphics and animation is designed for use by app developers using XAML. If you 
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

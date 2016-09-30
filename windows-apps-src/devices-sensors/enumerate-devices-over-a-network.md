@@ -5,7 +5,7 @@ title: "通过网络枚举设备"
 description: "除了发现本地连接的设备以外，还可以使用 Windows.Devices.Enumeration API 通过无线和网络协议来枚举设备。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6eca7156c8f81a9a89e006c09a232a255f3a8725
-ms.openlocfilehash: 5f62063a7b9c80b8c3715b539a9ebe2505dc9ae0
+ms.openlocfilehash: 9d2d58f2423688f895da1de56eef6448bb42692d
 
 ---
 # 通过网络枚举设备
@@ -84,6 +84,6 @@ System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

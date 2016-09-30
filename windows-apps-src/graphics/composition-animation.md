@@ -1,52 +1,46 @@
 ---
 author: scottmill
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
-title: Composition animations
-description: Many composition object and effect properties can be animated using key frame and expression animations allowing properties of a UI element to change over time or based on a calculation.
+title: "合成动画"
+description: "许多合成对象和效果属性均可使用关键帧和表达式动画设置动画，以便 UI 元素的属性可以随时间变化或基于计算发生变化。"
 translationtype: Human Translation
-ms.sourcegitcommit: 9146f0d3771f1f3687c94dc9f4978b5db5765c5d
-ms.openlocfilehash: 9f098ef590e51547f066289965a7ce9fd02dc8cd
+ms.sourcegitcommit: 62f0ea80940ff862d26feaa063414d95b048f685
+ms.openlocfilehash: e0088692b9de10c188f15b85b1f20b98cc113517
 
 ---
-# Composition animations
+# 合成动画
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-The Windows.UI.Composition WinRT API allows you to create, animate, transform and manipulate compositor objects in a unified API layer. Composition animations provide a powerful and efficient way to run animations in your application UI. They have been designed from the ground up to ensure that your animations run at 60 FPS independent of the UI thread and to give you the flexibility to build amazing experiences using not only time, but input and other properties, to drive animations.
-This topic provides an overview of the functionality available that allows you to animate properties of the Composition object.
-This document assumes you are familiar with the basics of the Visual Layer structure. For more information, [see here](./composition-visual-tree.md). There are two types of Composition Animations: **KeyFrame Animations**, and **Expression Animations**  
+Windows.UI.Composition WinRT API 允许你在统一的 API 层中创建、设置动画、转换和操作合成器对象。 合成动画提供一种在应用程序 UI 中运行动画的强大且有效的方法。 它们从一开始就设计为确保你的动画可以独立于 UI 线程并以 60 FPS 的频率运行，并让你不仅可以使用时间，而且还可以使用输入和其他属性来灵活生成令人惊叹的体验以驱动动画。
+本主题概述了允许你设置合成对象属性的动画的可用功能。
+此文档假设你熟悉可视化层结构的基础知识。 有关详细信息，[请查看此处](./composition-visual-tree.md)。 合成动画有两种类型：**关键帧动画**和**表达式动画**  
 
 ![](./images/composition-animation-types.png)  
    
  
-##Types of Composition Animations
-**KeyFrame Animations** provide your traditional time-driven, *frame-by-frame* animation experiences. Developers can explicitly define *control points* describing values an animating property needs to be at specific points in the animation timeline. More importantly you are able to use Easing Functions (otherwise called Interpolators) to describe how to transition between these control points.  
+##合成动画类型
+**关键帧动画**提供传统的时间驱动、*逐帧*动画体验。 开发人员可以显式定义描述动画属性在动画时间线中的特定点处需要具有的值的*控制点*。 更重要的是，你能够使用缓动函数（或称为插入程序）来介绍如何在这些控制点之间过渡。  
 
-**Implicit Animations** are a type of animation that allows developers to define reusable individual animations or a series of animations separately from the core app logic. Implicit animations let developers create animation *templates* and hook them up with triggers. These triggers are property changes that result from explicit assignments. Developers can define a template as a single animation or an animation group. Animation groups are a collection of animation templates that can be started together either explicitly or with a trigger. Implicit animations remove the need for you to create explicit KeyFrameAnimations every time you want to change the value of a property and see it animate.
+**表达式动画**是在 Windows 10 11 月更新（版本 10586）的可视化层中引入的新型动画。 表达式动画隐藏的理念是，开发人员可以在可视化属性和会在每个帧中进行评估和更新的离散值之间创建数学关系。 开发人员可以在合成对象或属性集中引用属性、使用数学函数帮助程序，甚至引用输入以派生这些数学关系。 表达式使 Windows 平台支持视差和粘滞标头等体验并使之流畅展开。  
 
-**Expression Animations** are a type of animation introduced in the Visual Layer with the Windows 10 November Update (Build 10586). The idea behind expression animations is a developer can create mathematical relationships between [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) properties and discrete values that will get evaluated and updated every frame. Developers can reference properties on Composition objects or property sets, use mathematical function helpers and even reference input to derive these mathematical relationships. Expressions make experiences like parallax and sticky headers possible and smooth on the Windows platform.  
-
-##Why Composition Animations?
-**Performance**  
- When building Universal Windows applications, most developer code runs on the UI thread. To ensure that the animations run smoothly across the different device categories, the system performs the animation calculations and work on an independent thread in order to maintain 60 FPS. This means developers can count on the system to provide smooth animations while their applications perform other complex operations for advanced user experiences.    
+##为什么使用合成动画？
+**性能**  
+ 在生成通用 Windows 应用程序时，大多数开发人员代码在 UI 线程上运行。 因此，为了确保动画可以在不同设备类别上流畅运行，系统会执行动画计算，并处理独立线程以维持 60 FPS 的频率。 这意味着，开发人员可以依靠系统提供流畅的动画，同时应用程序可以执行高级用户体验的其他复杂操作。    
  
-**Possibilities**  
-The goal for composition animations in the Visual Layer is to make it easy to create beautiful UIs. We want to provide developers different types of animations that make it easy to build their amazing ideas.
+**可能性**  
+可视化层中的合成动画的目标是呈现优美的 UI。 我们想要向开发人员提供灵活性和不同类型的动画，以根据他们令人惊叹的想法进行构建并不遗余力地发展 UWP
  
-   
+ （还可以查看 [Composition GitHub](http://go.microsoft.com/fwlink/?LinkID=789439)，以获取有关如何使用 API 的示例和操作中 API 的一些保真度较高的示例。）  
 
-**Templating**  
- All composition animations in the Visual Layer are templates – this means that developers can use an animation on multiple objects without the need to create separate animations. This allows developers to use the same animation and tweak properties or parameters to meet some other needs without the worry of obstructing the previous uses.  
-
-You can check out our //BUILD talks for [Expression Animations](https://channel9.msdn.com/events/Build/2016/P486), [Interactive Experiences](https://channel9.msdn.com/Events/Build/2016/P405), [Implicit Animations](https://channel9.msdn.com/events/Build/2016/P484), and [Connected Animations](https://channel9.msdn.com/events/Build/2016/P485) to see some examples of what is possible.
-
-You can also check out the [Composition GitHub](http://go.microsoft.com/fwlink/?LinkID=789439) for samples on how to use the APIs and high fidelity samples of the APIs in action.
+**模板化**  
+ 可视层化中的所有合成动画都是模板，这意味着开发人员可以在多个对象上使用动画，而无需单独创建动画。 这允许开发人员使用相同的动画，并调整属性或参数以满足某些其他需求，无需担心阻碍以前的动画使用。  
  
-##What can you animate with Composition Animations?
-Composition animations can be applied to most properties of composition objects such as [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx), and **InsetClip**. You can also apply composition animations to composition effects and property sets. **When choosing what to animate, take note of the type – use this to determine what type of KeyFrame animation you construct or what type your expression must resolve to.**  
+##使用合成动画可以设置什么内容的动画？
+合成动画可应用于合成对象的大多数属性，例如 Visual 和 InsetClip。 还可以将合成动画应用到合成效果和属性集。 **在选择设置动画的内容时，请记下类型，这可用于确定所构造的关键帧动画的类型或者是表达式动画必须解析为的类型。**  
  
-###Visual
-|Animatable Visual Properties|  Type|
+###视觉
+|可进行动画设置的视觉属性|  类型|
 |------|------|
 |AnchorPoint|   Vector2|
 |CenterPoint|   Vector3|
@@ -59,56 +53,56 @@ Composition animations can be applied to most properties of composition objects 
 |Scale| Vector3|
 |Size|  Vector2|
 |TransformMatrix*|  Matrix4x4|
-*If you want to animate the entire TransformMatrix property as a Matrix4x4, you need to use an ExpressionAnimation to do so. Otherwise, you can target individual cells of the matrix and can use either a KeyFrame or ExpressionAnimation there.  
+*如果你想要将整个 TransformMatrix 属性作为 Matrix4x4 进行动画设置，需要使用表达式动画才能达到此目的。 否则，你可以定向矩阵的个别单元，并在该处使用关键帧或表达式动画。  
 
 ###InsetClip
-|Animatable InsetClip Properties|   Type|
+|可进行动画设置的 InsetClip 属性|   类型|
 |-------------------------------|-------|
 |BottomInset|   Scalar|
 |LeftInset| Scalar|
 |RightInset|    Scalar|
 |TopInset|  Scalar|
 
-##Visual Sub Channel Properties
-In addition to being able to animate properties of [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx), you are also able to target the *sub channel* components of these properties for animations as well. For example, say you simply want to animate the X Offset of a [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) rather than the entire Offset. The animation can either target the Vector3 Offset property, or the Scalar X component of the Offset property. In addition to being able to target an individual sub channel component of a property, you are also able to target multiple components. For example, you can target the X and Y component of Scale.
+##可视化子通道属性
+除了能够设置 Visual 属性的动画外，你还可以针对动画定向这些属性的*子通道*组件。 例如，假设你只想设置 Visual 的 X Offset 的动画，而非整个 Offset。 动画可以定向 Vector3 Offset 属性，或 Offset 属性的 Scalar X 组件。 除了能够定向属性的单个子通道组件，还可以定向多个组件。 例如，可以定向 Scale 的 X 和 Y 组件。
 
-|Animatable Visual Sub Channel Properties|  Type|
+|可进行动画处理的可视化子通道属性|  类型|
 |----------------------------------------|------|
-|AnchorPoint.x, y|Scalar|
+|AnchorPoint.x、y|Scalar|
 |AnchorPoint.xy|Vector2|
-|CenterPoint.x, y, z|Scalar|
-|CenterPoint.xy, xz, yz|Vector2|
-|Offset.x, y, z|Scalar|
-|Offset.xy, xz, yz|Vector2|
-|RotationAxis.x, y, z|Scalar|
-|RotationAxis.xy, xz, yz|Vector2|
-|Scale.x, y, z|Scalar|
-|Scale.xy, xz, yz|Vector2|
-|Size.x, y|Scalar|
+|CenterPoint.x、y、z|Scalar|
+|CenterPoint.xy、xz、yz|Vector2|
+|Offset.x、y、z|Scalar|
+|Offset.xy、xz、yz|Vector2|
+|RotationAxis.x、y、z|Scalar|
+|RotationAxis.xy、xz、yz|Vector2|
+|Scale.x、y、z|Scalar|
+|Scale.xy、xz、yz|Vector2|
+|Size.x、y|Scalar|
 |Size.xy|Vector2|
-|TransformMatrix._11 ... TransformMatrix._NN,|Scalar|
+|TransformMatrix._11 ... TransformMatrix._NN|Scalar|
 |TransformMatrix._11_12 ... TransformMatrix._NN_NN|Vector2|
 |TransformMatrix._11_12_13 ... TransformMatrix._NN_NN_NN|Vector3|
 |TransformMatrix._11_12_13_14|Vector4|
 |Color*|    Colors (Windows.UI)|
 
-*Animating the Color subchannel of the Brush property is a bit different. You attach StartAnimation() to the Visual.Brush, and declare the property to animate in the parameter as "Color". (More details about animating color discussed later)
+*设置 Brush 属性的 Color 子通道的动画会稍有不同。 需要将 StartAnimation() 附加到 Visual.Brush，并声明该属性以在参数中动画设置为“Color”。 （有关设置颜色动画的更多详细信息将在后面部分中讨论）
 
-##Property Sets and Effects
-In addition to animating properties of [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) and InsetClip, you are also able to animate properties in a PropertySet or an Effect. For property sets, you define a property and store it in a Composition Property Set – that property can later be the target of an animation (and also be referenced simultaneously in another). This will be discussed in more detail in the following sections.  
+##属性集和效果
+除了设置合成可视化和 InsetClip 属性的动画之外，还可以设置 PropertySet 或 Effect 中的属性的动画。 对于属性集，定义某个属性，并将其存储在合成属性集中。该属性在以后可以是动画的目标（也可以同时在另一个动画中引用）。 这将在接下来的部分中进行详细介绍。  
 
-For Effects, you are able to define graphical effects using the Composition Effects APIs (See here for the [Effects Overview](./composition-effects.md). In addition to defining Effects, you are also able to animate the property values of the Effect. This is done by targeting the properties component of the Brush property on Sprite Visuals.
+对于效果，可以使用合成效果 API 定义图形效果（查看此处的[效果概述](./composition-effects.md)）。 除了定义效果之外，还可以设置 Effect 的属性值的动画。 通过在 Sprite Visuals 上定向 Brush 属性的属性组件来完成此操作。
 
-##Quick Formula: Getting Started with Composition Animations
-Before diving into the details on how to construct and use the different types of animations, below is a quick, high level formula for how to put together Composition Animations.  
-1.  Decide which property, sub channel property or Effect you want to animate - make note of the type.  
-2.  Create a new object for your animation – this will either be a KeyFrame or Expression Animation.  
-    *  For KeyFrame animations, make sure you create a KeyFrame Animation type that matches the type of property you want to animate.  
-    *  There is only a single type of Expression Animation.  
-3.  Define the content for animation – Insert your Keyframes or define the Expression string  
-    *  For KeyFrame animations, make sure the value of your KeyFrames are the same type as the property you want to animate.  
-    *  For Expression animations, make sure your Expression string will resolve to the same type as the property you want to animate.  
-4.  Start your animation on the [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) whose property you want to animate – call StartAnimation and include as parameters:   the name of the property you want to animate (in string form) and the object for your animation.  
+##快速公式：合成动画入门
+在深入了解关于如何构造和使用不同类型的动画前，下面是有关如何汇集合成动画的快速高级公式。  
+1.  决定想要设置动画的属性、子通道属性或效果，并记录下类型。  
+2.  为你的动画创建新对象，动画可以是关键帧动画和表达式动画。  
+    *  对于关键帧动画，请确保创建可匹配要设置动画的属性类型的关键帧动画类型。  
+    *  表达式动画仅有一种类型。  
+3.  定义动画的内容，插入关键帧或定义表达式字符串。  
+    *  对于关键帧动画，请确保关键帧的值与想要设置动画的属性具有相同类型。  
+    *  对于表达式动画，请确保表达式字符串将解析为与想要设置动画的属性具有相同类型。  
+4.  在想要设置其属性的动画的 Visual 上启动动画，调用 StartAnimation 并包括为参数：想要设置动画的属性的名称（使用字符串形式）以及动画对象。  
 
 ```cs
 // KeyFrame Animation Example to target Opacity property
@@ -132,11 +126,11 @@ _targetVisual.StartAnimation("Opacity", expression);
 
 ```
 
-##Using KeyFrame Animations
-KeyFrame Animations are time-based animations that use one or more key frames to specify how the animated value should change over time. The frames represent markers or control points, allowing you to define what the animated value should be at a specific time.  
+##使用关键帧动画
+关键帧动画是基于时间的动画，此类动画使用一个或多个关键帧来指定已设置动画的值应该如何随时间变化。 帧表示标记或控制点，允许你定义已设置动画的值在特定时间应该是什么值。  
  
-###Creating your animation and defining KeyFrames
-To construct a KeyFrame Animation, use the constructor method of your Compositor object that correlates to the type of the property you wish to animate. The different types of KeyFrame Animation are:
+###创建你的动画和定义关键帧
+若要构造关键帧动画，请使用合成器对象（与你希望设置动画的属性类型相关）的构造函数方法。 不同种类的关键帧动画有：
 *   ColorKeyFrameAnimation
 *   QuaternionKeyFrameAnimation
 *   ScalarKeyFrameAnimation
@@ -144,119 +138,114 @@ To construct a KeyFrame Animation, use the constructor method of your Compositor
 *   Vector3KeyFrameAnimation
 *   Vector4KeyFrameAnimation  
 
-An example that creates a Vector3 KeyFrame Animation:     
+创建 Vector3 关键帧动画的示例：     
 ```cs
 var animation = _compositor.CreateVector3KeyFrameAnimation(); 
 ```
 
-Each KeyFrame animation is constructed by inserting individual KeyFrame segments that define two components (with an optional third)  
-*   Time: normalized progress state of the KeyFrame between 0.0 – 1.0
-*   Value: specific value of the animating value at the time state
-*   (Optional) Easing function: function to describe interpolation between previous and current KeyFrame (discussed later in this topic)  
+每个关键帧动画通过插入定义两个组件（第三个组件可选）的个别关键帧分段构造。  
+*   时间：介于 0.0 和 1.0 之间关键帧的标准化进度状态
+*   值：设置动画值在时间状态下的特定值
+*   （可选）缓动函数：用于描述上一个关键帧与当前关键帧之间的内插的函数（在本主题的后面部分进行讨论）  
 
-An example that inserts a KeyFrame at the halfway point of the animation:
+在动画的中间点插入关键帧的示例：
 ```cs
 animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f));
 ```
 
-**Note:** When animating color with KeyFrame Animations, there are a few additional things to keep in mind:
-1.  You attach StartAnimation to the Visual.Brush, instead of [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx), with **Color** as the property parameter you wish to animate.
-2.  The "value" component of the KeyFrame is defined by the Colors object off of the Windows.UI namespace.
-3.  You have the option to define the color space that the interpolation will go through by setting the InterpolationColorSpace property. Possible values include:
-    *   CompositionColorSpace.Rgb
-    *   CompositionColorSpace.Hsl
+**注意：**当使用关键帧动画设置颜色的动画时，还需要记住其他一些事项：
+1.  需将 StartAnimation 附加到 Visual.Brush，而非附加到 Visual，并且 **Color** 是你想要设置动画的属性参数。
+2.  关键帧的“value”组件由 Windows.UI 命名空间的 Colors 对象定义。
+3.  通过设置 InterpolationColorSpace 属性，可以选择定义内插将完成的颜色空间。 可能的值包括：a.  CompositionColorSpace.Rgb b.  CompositionColorSpace.Hsl
 
 
-##KeyFrame Animation Properties
-Once you've defined your KeyFrame Animation and the individual KeyFrames, you are able to define multiple properties off of your animation:
-*   DelayTime – time before an animation starts after StartAnimation() is called
-*   Duration – duration of the animation
-*   IterationBehavior – count or infinite repeat behavior for an animation
-*   IterationCount – number of finite times a KeyFrame Animation will repeat
-*   KeyFrame Count – read of how many KeyFrames in a particular KeyFrame Animation
-*   StopBehavior – specifies the behavior of an animating property value when StopAnimation is called  
-*   Direction – specifies the direction of the animation for playback  
+##关键帧动画属性
+在定义了关键帧动画和个别关键帧后，你可以为动画定义多个属性：
+*   DelayTime – 在 StartAnimation() 调用后到动画启动前这段时间
+*   Duration – 动画的时长
+*   IterationBehavior – 动画的计数或无限重复行为
+*   IterationCount – 关键帧动画将重复的有限次数
+*   KeyFrame Count – 特定关键帧动画中的关键帧读数
+*   StopBehavior – 用于在调用 StopAnimation 后指定设置动画的属性值的行为。  
 
-An example that sets the Duration of the animation to 5 seconds:  
+将动画的持续时间设置为 5 秒的示例：  
 ```cs
 animation.Duration = TimeSpan.FromSeconds(5);
 ```
 
-##Easing Functions
-Easing functions (CompositionEasingFunction) indicate how intermediate values progress from the previous key frame value to the current key frame value. If you do not provide an easing function for the KeyFrame, a default curve will be used.  
-There are two types of easing functions supported:
-*   Linear
-*   Cubic Bezier  
-*   Step  
+##缓动函数
+缓动函数 (CompositionEasingFunction) 指示从上一关键帧值到当前关键帧值的中间值进度。 如果你未针对关键帧提供缓动函数，将使用默认曲线。  
+支持的缓动函数有两种类型：
+*   线性
+*   三次方贝塞尔  
 
-Cubic Beziers are a parametric function frequently used to describe smooth curves that can be scaled. When using with Composition KeyFrame Animations, you define two control points that are Vector2 objects. These control points are used to define the shape of the curve. It is recommended to use similar sites such as [this](http://cubic-bezier.com/#0,-0.01,.48,.99) to visualize how the two control points construct the curve for a Cubic Bezier.
+三次方贝塞尔是经常用来描述可缩放的平滑曲线的参数函数。 在与合成关键帧动画一起使用时，你将定义属于 Vector2 对象的两个控制点。 这些控制点用于定义曲线的形状。 建议使用类似站点（例如[此站点](http://cubic-bezier.com/#0,-0.01,.48,.99)）来可视化两个控制点构造三次方贝塞尔曲线的方式。
 
-To create an easing function, utilize the constructor method off your Compositor object. Two examples below that create a Linear easing function and a basic Cubic Bezier easing function.    
+若要创建缓动函数，请使用合成器对象的构造函数方法。 下面的两个示例演示创建线性缓动函数和基本的 easeIn 三次方贝塞尔。  
 ```cs
 var linear = _compositor.CreateLinearEasingFunction();
 var easeIn = _compositor.CreateCubicBezierEasingFunction(new Vector2(0.5f, 0.0f), new Vector2(1.0f, 1.0f));
-var step = _compositor.CreateStepEasingFunction();
 ```
-To add your easing function into your KeyFrame, simply add in the third parameter to the KeyFrame when inserting into the Animation.   
-An example that adds in a easeIn easing function with the KeyFrame:  
+若要将缓动函数添加到关键帧，只需在插入到动画时将该函数从第三个参数添加到关键帧即可。   
+使用关键帧添加 easeIn 缓动函数的示例：  
 ```cs
 animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f), easeIn);
 ```
 
-##Starting and Stopping KeyFrame Animations
-After you have defined your animation and KeyFrames, you are ready to hook up your animation. When starting your animation, you specify the [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) to be animated, the target property to be animated and a reference to the animation. You do so by calling the StartAnimation() function. Remember that calling StartAnimation() on a property will disconnect and remove any previously running animations.  
-**Note:** The reference to the property you choose to animate is in the form of a string.  
+##启动和停止关键帧动画
+在定义了动画和关键帧后，你可以随时连接动画。 在启动动画时，你可以指定要设置动画的 Visual、目标属性以及该动画的引用。 通过调用 StartAnimation() 函数执行此操作。 请记住，在属性上调用 StartAnimation() 将断开连接并删除任何之前运行的动画。  
+**注意：**选择要设置动画的属性的引用采用字符串形式。  
 
-An example that sets and starts an animation on the [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)’s Offset property:  
+根据 Visual 的 Offset 属性设置并启动动画的示例：  
 ```cs
 targetVisual.StartAnimation("Offset", animation);
 ```  
 
-If you want to target a sub channel property, you add the subchannel into the string defining the property you want to animate. In the examples above, the syntax would change to StartAnimation("Offset.X, animation2), where animation2 is a ScalarKeyFrameAnimation.  
+如果想要定向子通道属性，需要将该子通道添加到定义想要设置动画的属性的字符串。 在以上示例中，语法将更改为 StartAnimation("Offset.X, animation2)，其中 animation2 是 ScalarKeyFrameAnimation。  
 
-After starting your animation, you also have the ability to stop it before it finishes. This is done by using the StopAnimation() function.  
-An example that stops an animation on the [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)’s Offset property:    
+在启动动画后，仍然能够在动画完成前阻止它。 通过使用 StopAnimation() 函数完成此操作。  
+根据 Visual 的 Offset 属性停止动画的示例：    
 ```cs
 targetVisual.StopAnimation("Offset");
 ```
 
-You also have the ability to define the behavior of the animation when it is explicitly stopped. To do so, you define the Stop Behavior property off your animation. There are three options:
-*   LeaveCurrentValue: The animation will mark the value of the animated property to be the last calculated value of the animation
-*   SetToFinalValue: The animation will mark the value of the animated property to be the value of the final keyframe
-*   SetToInitialValue: The animation will mark the value of the animated property to be the value of the first keyframe  
+在显式停止动画时，你还可以定义它的行为。 若要执行此操作，请定义动画的 Stop Behavior 属性。 有以下三种选项：
+*   LeaveCurrentValue：动画将已设置动画的属性值标记为动画的最后一个计算的值
+*   SetToFinalValue：动画将已设置动画的属性值标记为最后一个关键帧的值
+*   SetToInitialValue：动画将已设置动画的属性值标记为第一个关键帧的值  
 
-An example that sets the StopBehavior property for a KeyFrame Animation:  
+设置关键帧动画的 StopBehavior 属性的示例：  
 ```cs
 animation.StopBehavior = AnimationStopBehavior.LeaveCurrentValue;
 ```
 
-##Animation Completion Events
-With KeyFrame Animations, developers can use an Animation Batches to aggregate when a select animation (or group of animations) have completed. Only KeyFrame animation completion events can be batched. Expressions do not have a definite end so they do not fire a completion event. If an Expression animation is started within a batch, the animation will execute as expected and it will not affect when the batch fires.    
+##动画完成事件
+通过使用关键帧动画，开发人员可以在完成精选动画（或动画组）时使用动画批来进行聚合。 仅可以批处理关键帧动画完成事件。 表达式动画没有一个确切终点，因此它们不会引发完成事件。 如果表达式动画在批中启动，该动画将会像预期那样执行，并且不会影响引发批的时间。    
 
-A batch completion event fires when all animations within the batch have completed. The time it takes for a batch’s event to fire depends on the longest or most delayed animation in the batch.
-Aggregating end states is useful when you need to know when groups of select animations complete in order to schedule some other work.  
+当批内的所有动画都完成时，将引发批完成事件。 引发批的事件所需的时间取决于该批中时长最长的动画或延迟最为严重的动画。
+在你需要了解选定的动画组将于何时完成以便计划一些其他工作时，聚合结束状态非常有用。  
 
-Batches will dispose once the completion event is fired. You can also call Dispose() at any time to release the resource early. You may want to manually dispose the batch object if a batched animation is ended early and you do not wish to pick up the completion event. If an animation is interrupted or canceled the completion event will fire and count towards the batch it was set in. This is demonstrated in the Animation_Batch SDK sample on the [Windows/Composition GitHub](http://go.microsoft.com/fwlink/p/?LinkId=789439).  
+批在引发完成事件后释放。 还可以随时调用 Dispose() 来尽早释放资源。 如果批处理的动画结束较早，并且你不希望继续完成事件，你可能会想要手动释放批对象。 如果动画已中断或取消，将会引发完成事件，并且该事件会计入设置它的批。 这显示在 [Windows/Composition GitHub](http://go.microsoft.com/fwlink/p/?LinkId=789439) 上的 Animation_Batch SDK 示例中。  
  
-##Scoped batches
-To aggregate a specific group of animations or target a single animation’s completion event, you create a Scoped batch.    
+##Scoped 批
+若要聚合特定动画组或定向单个动画的完成事件，请创建 Scoped 批。    
 ```cs
 CompositionScopedBatch myScopedBatch = _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
 ``` 
-After creating a Scoped batch, all started animations aggregate until the batch is explicitly suspended or ended using the Suspend or End function.    
+创建 Scoped 批后，所有启动的动画均将聚合，直至使用 Suspend 或 End 函数显式暂停或停止该批。    
 
-Calling the Suspend function stops aggregating animates end states until Resume is called. This allows you to explicitly exclude content from a given batch.  
+调用 Suspend 函数将停止聚合动画结束状态，直到调用 Resume。 这将使你能够显式从给定批中排除内容。  
 
-In the example below, the animation targeting the Offset property of VisualA will not be included in the batch:  
+在下面的示例中，定向 VisualA 的 Offset 属性的动画不会包括在批中：  
 ```cs
 myScopedBatch.Suspend();
 VisualA.StartAnimation("Offset", myAnimation);
 myScopeBatch.Resume();
 ```
 
-In order to complete your batch you must call End(). Without an End call, the batch will remain open forever-collecting objects.  
+为了完成批操作，必须调用 End()。 如果不进行 End 调用，该批将保持打开永久收集对象。  
  
-The following code snippet and diagram below shows an example of how the Batch will aggregate animations to track end states. Note that in this example, Animations 1, 3, and 4 will have end states tracked by this Batch, but Animation 2 will not.  
+下面的代码片段和图表显示了批如何聚合动画来跟踪结束状态的示例。 请注意，在此示例中，动画 1、3 和 4 会使此批跟踪结束状态，但动画 2 不会。  
 ```cs
 myScopedBatch.End();
 CompositionScopedBatch myScopedBatch =  _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
@@ -274,82 +263,81 @@ myScopedBatch.End();
 ```  
 ![](./images/composition-scopedbatch.png)
  
-##Batching a single animation's completion event
-If you want to know when a single animation ends, you need to create a Scoped batch that will include just the animation you are targeting. For example:  
+##批处理单个动画的完成事件
+如果你想要了解单个动画何时结束，需要创建正好包括你定向的动画的 Scoped 批。 例如：  
 ```cs
 CompositionScopedBatch myScopedBatch =  _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
 Visual.StartAnimation("Opacity", myAnimation);
 myScopedBatch.End();
 ```
 
-##Retrieving a batch's completion event
+##检索批的完成事件
 
-When batching an animation or multiple animations, you will retrieve the batch’s completion event the same way. You register the event-handling method for the Completed event of the targeted batch.  
+在批处理一个动画或多个动画时，你将按照相同方法检索批的完成事件。 需要为定向批的 Completed 事件注册事件处理方法。  
 
 ```cs
 myScopedBatch.Completed += OnBatchCompleted;
 ``` 
 
-##Batch states
-There are two properties you can use to determine the state of an existing batch; IsActive and IsEnded.  
+##批状态
+你可以使用两种属性来确定现有批的状态：IsActive 和 IsEnded。  
 
-The IsActive property returns true if a targeted batch is open to aggregating animations. IsActive will return false when a batch is suspended or ended.   
+如果定向的批对聚合动画打开，IsActive 属性将返回 true。 批暂停或结束时，IsActive 将返回 false。   
 
-The IsEnded property returns true when you cannot add an animation to that specific batch. A batch will be ended when you call explicitly call End() for a specific batch.  
+当你无法向该特定批添加动画时，IsEnded 属性将返回 true。 当你为某个特定批显式调用 End() 时，批将结束。  
  
-##Using Expression Animations
-Expression Animations are a new type of animation the Composition Team introduced with the November Update for Windows 10 (10586). At a high level, Expression Animations are based on a mathematical equation/relationship between discrete values and references to other Composition object properties. In contrast to KeyFrame Animations that use an interpolator function (Cubic Bezier, Quad, Quintic, etc.) to describe how the value changes over time, Expression Animations use a mathematical equation to define how the animated value is calculated each frame. It’s important to point out that Expression Animations do not have a defined duration – once started, they will run and use the mathematical equation to determine the value of the animating property until they are explicitly stopped.
+##使用表达式动画
+表达式动画是合成团队在 Windows 10 (10586) 11 月更新中引入的新型动画。 在高级别上，表达式动画基于离散值和其他合成对象属性的引用之间的数学等式/关系。 与使用插入程序函数（三次方贝塞尔、Quad、Quintic 等）描述值如何随时间更改的关键帧动画相比，表达式动画使用数学等式来定义已设置动画的值如何计算每个帧。 请务必指出，表达式动画没有定义的持续时间。启动后，它们将运行并使用数学等式确定设置动画的属性的值，直到显式停止它们为止。
 
-**So why are Expression Animations useful?** The real power of Expression Animations comes from their ability to create a mathematical relationship that includes references to parameters or properties on other objects. This means you can have an equation referencing values of properties on other Composition objects, local variables, or even shared values in Composition Property Sets. Because of this reference model, and that the equation is evaluated every frame, if the values that define an equation change, so will the output of the equation. This opens up bigger possibilities beyond traditional KeyFrame Animations where values must be discrete and pre-defined. For example, experiences like Sticky Headers and Parallax can be easily described using Expression Animations.
+**那么表达式动画为什么有用呢？** 表达式动画的实际功能源于它们能够创建包含其他对象的参数或属性引用的数学关系。 这意味着你可以拥有引用其他合成对象、本地变量甚至是合成属性集中的共享值上的属性值。 由于此引用模型，并且计算每个帧的等式，所以如果定义等式的值发生更改，等式的输出也会更改。 这将超越值必须是离散值并且必须预定义的传统关键帧动画而开放更大的可能性。 例如，使用表达式动画可以轻松描述粘滞标头和视差等体验。
 
-**Note:** We use the terms "Expression" or "Expression String" as reference to your mathematical equation that defines your Expression Animation object.
+**注意：**我们使用“表达式”或“表达式字符串”作为定义表达式动画对象的数学等式的引用。
 
-##Creating and Attaching your Expression Animation
-Before we jump into the syntax of creating Expression Animations, there are a few core principles to mention:  
-*   Expression Animations use a defined mathematical equation to determine the value of the animating property every frame.
-*   The mathematical equation is inputted into the Expression as a string.
-*   The output of the mathematical equation must resolve to the same type as the property you plan to animate. If they don't match, you will get an error when the Expression gets calculated. If your equation resolves to Nan (number/0), the system will use the last previously calculated value.
-*   Expression Animations have an *infinite lifetime* – they will continue to run until they are stopped.  
+##创建和附加表达式动画
+在跳转到创建表达式动画的语法前，需要提及一些核心原则：  
+*   表达式动画使用定义的数学等式来确定每个帧设置动画的属性的值。
+*   数学等式作为字符串输入到表达式中。
+*   数学等式的输出必须解析为与计划设置动画的属性具有相同类型。 如果它们不匹配，你将在计算表达式时收到错误。 如果等式解析为 Nan (number/0)，系统会使用之前计算的最后一个值。
+*   表达式动画具有*无限生存期*，即它们会继续运行到停止为止。  
 
-To create your Expression Animation, simply use the constructor off your Composition object, where you define your Mathematical expression.  
+若要创建你的表达式动画，只需使用合成对象的构造函数，可在其中定义数学表达式。  
  
-An example of the constructor where a very basic expression is defined that sums two Scalar values together (We will dive into more complicated expressions in the next section):  
+下面是定义将两个 Scalar 值加在一起的非常基本的表达式的构造函数示例（我们将在下一节深入研究更复杂的表达式）：  
 ```cs
 var expression = _compositor.CreateExpressionAnimation("0.2 + 0.3");
 ```
-Similar to KeyFrame Animations, once you have defined your Expression Animation, you need to attach it to the Visual and declare the property you wish the animation to animate. Below, we continue with the above example and attach our Expression Animation to the [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)’s Opacity property (A Scalar type):  
+与关键帧动画相似，在定义了表达式动画后，你需要将其附加到 Visual 并声明希望动画来设置动画的属性。 在下面我们会继续操作上述示例，并将表达式动画附加到 Visual 的 Opacity 属性（Scalar 类型）：  
 ```cs
 targetVisual.StartAnimation("Opacity", expression);
 ```
 
-##Components of your Expression String
-The example in the previous section demonstrated two simple Scalar values being added together. Although this is a valid example of Expressions, it does not fully demonstrate the potential of what you can do with Expressions. One thing to note about the example above is that because these are discrete values, every frame the equation will resolve to 0.5 and never change throughout the lifetime of the animation. The real potential of Expressions comes from defining a mathematical relationship in which the values could change periodically or all the time.  
+##表达式字符串的组件
+前一部分中的示例展示了两个加在一起的简单 Scalar 值。 虽然这是表达式的有效示例，但它没有完全展示使用表达式的潜在用途。 上述示例有一点值得注意的是，因为这些值是离散值，所以每一帧的等式会解析为 0.5，并且在动画的生存期内永远不会更改。 表达式的真正潜力源自定义值可以周期性或一直更改的数学关系。  
  
-Let’s walk through the different pieces that can make up these types of Expressions.  
+让我们了解一下可以组成这些类型的表达式的不同部分。  
 
-###Operators, Precedence and Associativity
-The Expression string supports usage of typical operators you would expect to describe mathematical relationships between different components of the equation:  
+###运算符、优先级和结合性
+表达式字符串支持使用可以描述等式不同组件之间的数学关系的典型运算符：  
 
-|Category|  Operators|
+|类别|  运算符|
 |--------|-----------|
-|Unary| -|
-|Multiplicative|    * /|
-|Additive|  + -|
-|Mod| %|  
+|一元| -|
+|乘法|    * /|
+|加法|  + -|
 
-Similarly, when the Expression is evaluated, it will adhere to operator precedence and associativity as defined in the C# Language specification. Put another way, it will adhere to basic order of operations.  
+同样的，在计算表达式时，它将遵循运算符优先级和结合性，如 C# 语言规范中所定义： 换言之，它会遵循运算的基本顺序。  
 
-In the example below, when evaluated, the parentheses will be resolved first before resolving the rest of the equation based on order of operations:  
+在下面的示例中，在计算时，根据运算顺序将首先解析括号，然后再解析等式的其余部分：  
 ```cs
 "(5.0 * (72.4 – 36.0) + 5.0" // (5.0 * 36.4 + 5) -> (182 + 5) -> 187
 ```
 
-###Property Parameters
-Property parameters are one of the most powerful components of Expression Animations. In the expression string, you can reference values of properties from other objects such as [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx), Composition Property Set or other C# objects.   
+###属性参数
+属性参数是表达式动画最强大的组件之一。 在表达式字符串中，你可以引用其他对象（例如合成可视化、合成属性集或其他 C# 对象）的属性。   
 
-To use these in an Expression string, you simply need to define the references as parameters to the Expression Animation. This is done by mapping the string used in the Expression to the actual object. This allows the system when evaluating the equation to know what to inspect to calculate the value. There are different types of parameters that correlate to the type of the object you wish to include in the equation:  
+若要在表达式字符串中使用这些属性，只需将引用定义为表达式动画的参数。 通过将在表达式中使用的字符串映射到实际对象可完成此操作。 这允许系统在计算等式时知道要检查什么内容才能计算值。 有不同类型的参数与你想要包括在等式中的对象类型相关：  
 
-|Type|  Function to create parameter|
+|类型|  创建参数的函数|
 |----|------------------------------|
 |Scalar|    SetScalarParameter(String ref, Scalar obj)|
 |Vector|    SetVector2Parameter(String ref, Vector2 obj)<br/>SetVector3Parameter(String ref, Vector3 obj)<br/>SetVector4Parameter(String ref, Vector4 obj)|
@@ -357,9 +345,8 @@ To use these in an Expression string, you simply need to define the references a
 |Quaternion|    SetQuaternionParameter(String ref, Quaternion obj)|
 |Color| SetColorParameter(String ref, Color obj)|
 |CompositionObject| SetReferenceParameter(String ref, Composition object obj)|
-|Boolean| SetBooleanParameter(String ref, Boolean obj)|  
 
-In the example below, we create an Expression Animation that will reference the Offset of two other Composition [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)s and a basic System.Numerics Vector3 object.  
+在下面的示例中，我们将创建引用其他两个合成可视化和基本 System.Numerics Vector3 对象的 Offset 的表达式动画。  
 ```cs
 var commonOffset = new Vector3(25.0, 17.0, 10.0);
 var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + additionalOffset);
@@ -368,9 +355,9 @@ expression.SetVector3Parameter("ParentOffset", parentVisual.Offset);
 expression.SetVector3Parameter("additionalOffset", commonOffset);
 ```
 
-Additionally, you can reference a value in a Property Set from an expression using the same model described above. Composition Property Sets are a useful way to store data used by animations, and are useful for creating sharable, reusable data that isn’t tied to the lifetime of any other Composition objects. Property Set values can be referenced in an expression similar to other property references. (Property Sets are discussed in more detail in a later section)  
+此外，你可以使用与上述相同的模型来从表达式中引用属性集中的值。 合成属性集是动画用于存储数据的有用方法，并且可用于创建可共享、可重复使用、不依赖于任何其他合成对象的生存期的数据。 属性集值可在与其他属性引用类似的表达式中引用。 （属性集将在后文中详细讨论）  
 
-We can modify the example directly above, such that a property set is used to define the commonOffset instead of a local variable:
+我们可以直接修改上述示例，以便使用属性集来定义 commonOffset 而非本地变量：
 ```cs
 _sharedProperties = _compositor.CreatePropertySet();
 _sharedProperties.InsertVector3("commonOffset", offset);
@@ -380,32 +367,32 @@ expression.SetVector3Parameter("ParentOffset", parentVisual.Offset);
 expression.SetReferenceParameter("sharedProperties", _sharedProperties);
 ```
 
-Finally, when referencing properties of other objects, it also possible to reference the subchannel properties either in the Expression string or as part of the reference parameter.  
+最后，在引用其他对象的属性时，还可以在表达式字符串中引用子通道属性，或将其作为引用参数的一部分进行引用。  
  
-In the example below, we reference the x subchannel of Offset properties from two [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)s – one in the Expression string itself and the other when creating the parameter reference.
-Notice that when referencing the X component of Offset, we change our parameter type to a Scalar Parameter instead of a Vector3 like in the previous example:  
+在下面的示例中，我们引用两个 Visual 的 Offset 属性的 x 子通道：一个位于表达式字符串本身中，另一个在创建参数引用时生成。
+请注意，在引用 Offset 的 X 组件时，我们会更改 Scalar 参数的参数类型，而非之前示例中所示的 Vector3：  
 ```cs
 var expression = _compositor.CreateExpressionAnimation("xOffset/ ParentOffset.X");
 expression.SetScalarParameter("xOffset", childVisual.Offset.X);
 expression.SetVector3Parameter("ParentOffset", parentVisual.Offset);
 ```
 
-###Expression Helper Functions and Constructors
-In addition to having access to Operators and Property Parameters, you can leverage a list of mathematical functions to use in their expressions. These functions are provided to perform calculations and operations on different types that you would similarly do with System.Numerics objects.  
+###表达式帮助程序函数和构造函数
+除了能够访问 Operator 和 Property 参数，你还可以利用数学函数列表以用于它们的表达式。 提供这些函数以在与对 System.Numerics 对象处理方式相似的不同类型上执行计算和操作。  
 
-An example below creates an Expression targeted towards Scalars that takes advantage of the Clamp helper function:  
+下面的示例创建了定向利用 Clamp 帮助程序函数的 Scalar 的表达式：  
 ```cs
 var expression = _compositor.CreateExpressionAnimation("Clamp((scroller.Offset.y * -1.0) – container.Offset.y, 0, container.Size.y – header.Size.y)"
 ```
 
-In addition to a list of Helper functions, you are also able to use built-in Constructor methods inside an Expression string that will generate an instance of that type based on the provided parameters.  
+除了帮助程序函数外，你还可以使用内置于表达式字符串中的 Constructor 方法，它们根据提供的参数生成该类型的实例。  
 
-An example below creates an Expression that defines a new Vector3 in the Expression string:  
+下面的示例创建了在表达式字符串中定义新的 Vector3 的表达式：  
 ```cs
 var expression = _compositor.CreateExpressionAnimation("Offset / Vector3(targetX, targetY, targetZ");
 ```
 
-You can find the full extensive list of helper functions and constructors in the Appendix section, or for each type in the list below:  
+你可以在附录部分查找帮助程序函数和构造函数的完整扩展列表，或者在下表中找到每种类型的扩展列表：  
 *   [Scalar](#scalar)
 *   [Vector2](#vector2)
 *   [Vector3](#vector3)
@@ -414,60 +401,60 @@ You can find the full extensive list of helper functions and constructors in the
 *   [Quaternion](#quaternion)
 *   [Color](#color)  
 
-###Expression Keywords
-You can take advantage of special "keywords" that are treated differently when the Expression string is evaluated. Because they are considered "keywords" they can’t be used as the string parameter portion of their Property references.  
+###表达式关键字
+在计算表达式字符串时，你可以利用处理方式不同的特殊“关键字”。 由于它们被认为是“关键字”，所以无法用作属性引用的字符串参数部分。  
  
-|Keyword|   Description|
+|关键字|   描述|
 |-------|--------------|
-|This.StartingValue| Provides a reference to the original starting value of the property that is being animated.|
-|This.CurrentValue| Provides a reference to the currently "known" value of the property|
-|Pi| Provides a keyword reference to the value of PI|
+|This.StartingValue| 提供对要设置动画的属性的初始起始值的引用。|
+|This.CurrentValue| 提供对属性的当前“已知”值的引用|
+|Pi| 提供对 PI 值的关键字引用。|
 
-An example below that demonstrates using the this.StartingValue keyword:  
+下面的示例展示如何使用 this.StartingValue 关键字：  
 ```cs
 var expression = _compositor.CreateExpressionAnimation("this.StartingValue + delta");
 ```
 
-###Expressions with Conditionals
-In addition to supporting mathematical relationships using operators, property references, and functions and constructors, you can also create an expression that contains a ternary operator:  
+###使用条件的表达式
+除了支持使用运算符、属性引用、函数和构造函数的数学关系，你还可以创建包含三元运算符的表达式：  
 ```
 (condition ? ifTrue_expression : ifFalse_expression)
 ```
 
-Conditional statements enable you to write expressions such that based on a particular condition, different mathematical relationships will be used by the system to calculate the value of the animating property. Ternary operators can be nested as the expressions for the true or false statements.  
+条件语句可以让你根据特定条件编写表达式，系统将使用不同的数学关系来计算设置动画属性的值。 三元运算符可以嵌套为 true 或 false 语句的表达式。  
 
-The following conditional operators are supported in the condition statement: 
-*   Equals (==)
-*   Not Equals (!=)
-*   Less than (<)
-*   Less than or equal to (<=)
-*   Great than (>)
-*   Great than or equal to (>=)  
+以下条件运算符在条件语句中受支持： 
+*   等于 (==)
+*   不等于 (!=)
+*   小于 (&lt;)
+*   小于或等于 (&lt;=)
+*   大于 (&gt;)
+*   大于或等于 (&gt;=)  
 
-The following conjunctions are supported as operators or functions in the condition statement:
+支持将以下连词作为条件语句中的运算符或函数：
 *   Not: ! / Not(bool1)
-*   And: && / And(bool1, bool2)
+*   And: &amp;&amp; / And(bool1, bool2)
 *   Or: || / Or(bool1, bool2)  
 
-Below is an example of an Expression Animation using a conditional.  
+下面是使用条件的表达式动画示例。  
 ```cs
 var expression = _compositor.CreateExpressionAnimation("target.Offset.x > 50 ? 0.0f + (target.Offset.x / parent.Offset.x) : 1.0f");
 ```
 
-##Expression KeyFrames
-Earlier in this document, we described how you create KeyFrame Animations and introduced you to Expression Animations and all the different pieces that you can use to make up the Expression string. What if you wanted the power from Expressions Animations but wanted time interpolation provided by KeyFrame Animations? The answer is Expression KeyFrames!  
+##表达式关键帧
+在本文档的前面部分中，我们介绍了如何创建关键帧动画、表达式动画，以及可用于组成表达式字符串的全部不同部分。 如果你想获取表达式动画的功能，但又想拥有关键帧动画提供的时间内插，该怎么办？ 答案就是使用表达式关键帧！  
 
-Instead of defining a discrete value for each control points in the KeyFrame Animation, you can have the value be an Expression string. In this situation, the system will use the expression string to calculate what the value of the animating property should be at the given point in the timeline. The system will then simply interpolate to this value like in a normal keyframe animation.    
+你可以使值成为表达式字符串，而不用为关键帧动画中的每个控制点定义离散值。 在这种情况下，系统会使用表达式字符串计算时间线给定点处的设置动画属性的值。 然后，系统仅会内插入此值，就像在正常的关键帧动画中那样。    
 
-You don’t need to create special animations to use Expression KeyFrames – just insert an ExpressionKeyFrame into your standard KeyFrame animation, provide the time and your expression string as the value. The example below demonstrates this, using an Expression string as the value for one of the KeyFrames:   
+你无需创建特殊动画来使用表达式关键帧，只需将 ExpressionKeyFrame 插入标准的关键帧动画，提供作为值的时间和表达式字符串。 下面的示例展示了将表达式字符串用作关键帧之一的值：   
 ```cs
 var animation = _compositor.CreateScalarKeyFrameAnimation();
 animation.InsertExpressionKeyFrame(0.25, "VisualBOffset.X / VisualAOffset.Y");
 animation.InsertKeyFrame(1.00f, 0.8f);
 ```
 
-##Expression Sample
-The code below shows an example of setting up an expression animation for a basic Parallax experience that pulls input values from the Scroll Viewer.
+##表达式示例
+下面的代码显示了为从滚动查看器提取输入值的基本视差体验而设置表达式动画的示例。
 ```cs
 // Get scrollviewer
 ScrollViewer myScrollViewer = ThumbnailList.GetFirstDescendantOfType<ScrollViewer>();
@@ -482,27 +469,27 @@ _parallaxExpression.SetReferenceParameter("ScrollManipulation", _scrollPropertie
 _parallaxExpression.Expression = "(ScrollManipulation.Translation.Y + StartOffset - (0.5 *  ItemHeight)) * ParallaxValue - (ScrollManipulation.Translation.Y + StartOffset - (0.5   * ItemHeight))";
 ```
 
-##Animating With Property Sets
-Composition Property Sets provide you with the ability to store values that can be shared across multiple animations and are not tied to the lifetime of another Composition object. Property Sets are extremely useful to store common values and then easily reference them later on in animations. You can also use Property Sets to store data based on application logic to drive an expression.  
+##使用属性集设置动画
+合成属性集可让你存储可跨多个动画共享的值，并且不会依赖另一个合成对象的生存期。 属性集在存储常用值，然后再在动画中引用它们时非常有用。 你还可以根据应用程序逻辑使用属性集存储数据以驱动表达式。  
 
-To create a property set, use the constructor method off your Compositor object:  
+若要创建属性集，请使用合成器对象的构造函数方法：  
 ```cs
 _sharedProperties = _compositor.CreatePropertySet();
 ```
 
-Once you’ve created your Property Set, you can add a property and value to it:  
+在创建属性集后，你可以向其中添加属性和值：  
 ```cs
 _sharedProperties.InsertVector3("NewOffset", offset);
 ```
 
-Similar to what we’ve seen earlier, we can reference this property set value in an Expression Animation:  
+与我们之前看到的情况相似，我们可以在表达式动画中引用此属性集值：  
 ```cs
 var expression = _compositor.CreateExpressionAnimation("this.target.Offset + sharedProperties.NewOffset");
 expression.SetReferenceParameter("sharedProperties", _sharedProperties);
 targetVisual.StartAnimation("Offset", expression);
 ```
 
-Property set values can also be animated. This is done by attaching the animation to the PropertySet object, and then referring to the property name in the string. Below, we animate the NewOffset property in the property set using a KeyFrame Animation.  
+还可以设置属性集值的动画。 通过将动画附加到 PropertySet 对象，然后再在字符串中引用该属性名称来完成此操作。 在下面，我们使用关键帧动画在属性集中设置 NewOffset 属性的动画。  
 ```cs
 var keyFrameAnimation = _compositor.CreateVector3KeyFrameAnimation()
 keyFrameAnimation.InsertKeyFrame(0.5f, new Vector3(25.0f, 68.0f, 0.0f);
@@ -511,12 +498,12 @@ _sharedProperties.StartAnimation("NewOffset", keyFrameAnimation);
 ```
 
 
-You might be wondering if this code executed in an app, what happens to the animated property value the Expression Animation is attached to. In this situation, the expression would initially output to a value, however, once the KeyFrame Animation begins to animate the Property in the Property Set, the Expression value will update as well, since the equation is calculated every frame. This is the beauty of Property Sets with Expression and KeyFrame Animations!  
+你可能想知道此代码是否在应用中执行以及表达式动画附加到的已设置动画的属性值会发生什么。 在这种情况下，表达式最初输出到某个值，但在关键帧动画开始设置属性集中属性的动画后，表达式值也会更新，因为将计算每个帧的等式。 这就是带有表达式和关键帧动画的属性集的美妙之处！  
  
 ##ManipulationPropertySet
-In addition to utilizing Composition Property Sets, a developer is also able to gain access to the ManipulationPropertySet that allows access to properties off of a XAML ScrollViewer. These properties can then be used and referenced in an Expression Animation to power experiences like Parallax and Sticky Headers. Note: You can grab the ScrollViewer of any XAML control (ListView, GridView, etc.) that has scrollable content and use that ScrollViewer to get the ManipulationPropertySet for those scrollable controls.  
+除了利用合成属性集之外，开发人员也可以访问 ManipulationPropertySet，该属性集允许访问 XAML ScrollViewer 之外的属性。 然后可以在表达式动画中使用并引用这些属性，以支持视差和粘滞标头等体验。 注意：你可以从任何 XAML 控件（ListView、GridView 等）中获取具有可滚动内容的 ScrollViewer，然后使用该 ScrollViewer 获取这些可滚动控件的 ManipulationPropertySet。  
 
-In your Expression, you are able to reference the following properties of the Scroll Viewer:  
+在你的表达式中，可以引用滚动查看器的以下属性：  
 
 |Property| Type|  
 |--------|-----|  
@@ -526,248 +513,154 @@ In your Expression, you are able to reference the following properties of the Sc
 |CenterPoint| Vector3|  
 |Matrix| Matrix4x4|  
 
-To get a reference to the ManipulationPropertySet, utilize the GetScrollViewerManipulationPropertySet method of ElementCompositionPreview.  
+若要获取对 ManipulationPropertySet 的引用，请利用 ElementCompositionPreview 的 GetScrollViewerManipulationPropertySet 方法。  
 ```csharp
 CompositionPropertySet manipPropSet = ElementCompositionPreview.GetScrollViewerManipulationPropertySet(myScroller);
 ```
 
-Once you have a reference to this property set, you can reference properties of the Scroll Viewer that are found in the property set. First step is to create the reference parameter.  
+拥有对该属性集的引用后，可以引用在属性集中找到的滚动查看器的属性。 第一步是创建引用参数。  
 ```csharp
 ExpressionAnimation exp = compositor.CreateExpressionAnimation();
 exp.SetReferenceParameter("ScrollManipulation", manipPropSet);
 ```
 
-After setting up the reference parameter, you can reference the ManipulationPropertySet properties in the Expression.  
+在设置引用参数后，可以在表达式中引用 ManipulationPropertySet 属性。  
 ```csharp
 exp.Expression = “ScrollManipulation.Translation.Y / ScrollBounds”;
 _target.StartAnimation(“Opacity”, exp);
 ```
 
-##Using Implicit Animations  
-Animations are a great way for you to describe a behavior to your users. There are multiple ways you can animate your content, but all of the methods discussed so far require you to explicitly *Start* your animation. Although this allows you to have complete control to define when an animation will begin, it becomes difficult to manage when an animation is needed every time a property value will be changed. This occurs quite often when applications have separated the app “personality” that defines the animations from the app “logic” that defines core components and infrastructure of the app. Implicit animations provide an easier and cleaner way to define the animation separately from the core app logic. You can hook these animations up to run with specific property change triggers.
 
-###Setting up your ImplicitAnimationCollection  
-Implicit animations are defined by other **CompositionAnimation** objects (**KeyFrameAnimation** or **ExpressionAnimation**). The **ImplicitAnimationCollection** represents the  set of **CompositionAnimation** objects that will start when the property change *trigger* is met. Note when defining animations, make sure to set the **Target** property, this defines the [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) property the animation will target when it is started. The property of **Target** can only be a [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) property that is animatable.
-In the code snippet below, a single **Vector3KeyFrameAnimation** is created and defined as part of the **ImplicitAnimationCollection**. The **ImplicitAnimationCollection** is then attached to the **ImplicitAnimation** property of [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx), such that when the trigger is met, the animation will start.  
-```csharp
-Vector3KeyFrameAnimation animation = _compositor.CreateVector3KeyFrameAnimation();
-animation.DelayTime =  TimeSpan.FromMilliseconds(index);
-animation.InsertExpressionKeyFrame(1.0f, "this.FinalValue");
-animation.Target = "Offset";
-ImplicitAnimationCollection implicitAnimationCollection = compositor.CreateImplicitAnimationCollection();
-
-visual.ImplicitAnimations = implicitAnimationCollection;
-```
-
-
-###Triggering when the ImplicitAnimation starts  
-Trigger is the term used to describe when animations will start implicitly. Currently triggers are defined as changes to any of the animatable properties on [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) – these changes occur through explicit sets on the property. For example, by placing an **Offset** trigger on an **ImplicitAnimationCollection**, and associating an animation with it, updates to the **Offset** of the targeted [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) will animate to its new value using the animation in the collection.  
-From the example above, we add this additional line to set the trigger to the **Offset** property of the target [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx).  
-```csharp
-implicitAnimationCollection["Offset"] = animation;
-```  
-Note that an **ImplicitAnimationCollection** can have multiple triggers. This means that the implicit animation or group of animations can get started for changes to different properties. In the example above, the developer can potentially add a trigger for other properties such as Opacity.  
-###this.FinalValue     
-In the first implicit example, we used an ExpressionKeyFrame for the “1.0” KeyFrame and assigned the expression of **this.FinalValue** to it. **this.FinalValue** is a reserved keyword in the expression language that provides differentiating behavior for implicit animations. **this.FinalValue** binds the value set on the API property to the animation. This helps in creating true templates. **this.FinalValue** is not useful in explicit animations, as the API property is set instantly, whereas in case of implicit animations it is deferred.  
- 
-##Using Animation Groups  
-**CompositionAnimationGroup** provides an easy way for developers to group a list of animations that can be be used with implicit or explicit animations.   
-###Creating and Populating Animation Groups  
-The **CreateAnimationGroup** method of the of the Compositor object enables developers to create an Animation Group:  
-```sharp
-CompositionAnimationGroup animationGroup = _compositor.CreateAnimationGroup();
-animationGroup.Add(animationA);
-animationGroup.Add(animationB);
-```   
-Once the group is created, individual animations can be added to the animation group. Remember, that you do not need to explicitly start the individual animations – these will all get started when either **StartAnimationGroup** is called for the explicit scenario or when the trigger is met for the implicit one.  
-Note, ensure that the animations that are added to the group have their **Target** property defined. This will define what property of the target [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) they will animate.
-
-###Using Animation Groups with Implicit Animations  
-Developers can create implicit animations such that when a trigger is met, a set of animations in the form of an animation group are started. In this case, define the animation group as the set of animations that start when the trigger is met.  
-```csharp
-implicitAnimationCollection["Offset"] = animationGroup;
-```   
-###Using Animation Groups with Explicit Animations  
-Developers can create explicit animations such that the individual animations added will start when **StartAnimationGroup** is called. Note, that in this **StartAnimation** call, there is no targeted property for the group as individual animations could be targeting different properties. Ensure that the target property for each animation is set.  
-```csharp
-visual.StartAnimationGourp(AnimationGroup);
-```  
-
-###E2E sample 
-This example shows animating the Offset property implicitly when a new value is set.  
-```csharp 
-class PropertyAnimation
-{
-    PropertyAnimation(Compositor compositor, SpriteVisual heroVisual, SpriteVisual listVisual)
-    {
-        // Define ImplicitAnimationCollection
-        ImplicitAnimationCollection implicitAnimations = 
-        compositor.CreateImplicitAnimationCollection();
-
-        // Trigger animation when the “Offset” property changes.
-        implicitAnimations["Offset"] = CreateAnimation(compositor);
-
-        // Assign ImplicitAnimations to a visual. Unlike Visual.Children,    
-        // ImplicitAnimations can be shared by multiple visuals so that they 
-        // share the same implicit animation behavior (same as Visual.Clip).
-        heroVisual.ImplicitAnimations = implicitAnimations;
-
-        // ImplicitAnimations can be shared among visuals 
-        listVisual.ImplicitAnimations = implicitAnimations;
-
-        listVisual.Offset = new Vector3(20f, 20f, 20f);
-    }
-
-    Vector3KeyFrameAnimation CreateAnimation(Compositor compositor)
-    {
-        Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
-        animation.InsertExpressionKeyFrame(0f, "this.StartingValue");
-        animation.InsertExpressionKeyFrame(1f, "this.FinalValue");
-        animation.Target = “Offset”;
-        animation.Duration = TimeSpan.FromSeconds(0.25);
-        return animation;
-    }
-}
-```   
 
  
  
-##Appendix
-###Expression Functions by Structure Type
+##附录
+###按结构类型划分的表达式函数
 ###Scalar  
 
-|Function and Constructor Operations| Description|  
+|函数和构造函数运算| 描述|  
 |-----------------------------------|--------------|  
-|Abs(Float value)| Returns a Float representing the absolute value of the float parameter|  
-|Clamp(Float value, Float min, Float max)| Returns a  float value that is either greater than min and less than max or min if the value is less than min or max if the value is greater than max|  
-|Max (Float value1, Float value2)| Returns the greater float between value1 and value2.|  
-|Min (Float value1, Float value2)| Returns the lesser float between value1 and value2.|  
-|Lerp(Float value1, Float value2, Float progress)| Returns a float that represents the calculated linear interpolation calculation between the two Scalar values based on the progress (Note: Progress is between 0.0 and 1.0)|  
-|Slerp(Float value1, Float value2, Float progress)| Returns a Float that represents the calculated spherical interpolation between the two Float values based on the progress (Note: progress is between 0.0 and 1.0)|  
-|Mod(Float value1, Float value2)| Returns the Float remainder resulting from the division of value1 and value2|  
-|Ceil(Float value)| Returns the Float parameter rounded to next greater whole number|  
-|Floor(Float value)| Returns the Float parameter to the next lesser whole number|  
-|Sqrt(Float value)| Returns the square root of the Float parameter|  
-|Square(Float value)| Returns the square of the Float parameter|  
-|Sin(Float value1)| Returns the Sin of the Float parameter|
-|Asin(Float value2)| Returns the ArcSin of the Float parameter|
-|Cos(Float value1)| Returns the Cos of the Float parameter|
-|ACos(Float value2)| Returns the ArcCos of the Float parameter|
-|Tan(Float value1)| Returns the Tan of the Float parameter|
-|ATan(Float value2)| Returns the ArcTan of the Float parameter|
-|Round(Float value)| Returns the Float parameter rounded to the nearest whole number|
-|Log10(Float value)| Returns the Log (base 10) result of the Float parameter|
-|Ln(Float value)| Returns the Natural Log result of the Float parameter|
-|Pow(Float value, Float power)| Returns the result of the Float parameter raised to a particular power|
-|ToDegrees(Float radians)| Returns the Float parameter converted into Degrees|
-|ToRadians(Float degrees)| Returns the Float parameter converted into Radians|
+|Abs(Float value)|  返回表示浮点参数绝对值的 Float|  
+|Clamp(Float value, Float min, Float max)|  在值小于最小值或最大值，或者大于最大值时，返回大于最小值和小于最大值或最小值的浮点值|  
+|Max (Float value1, Float value2)|  返回 value1 和 value2 之间的较大浮点数。|  
+|Min (Float value1, Float value2)|  返回 value1 和 value2 之间的较小浮点数。|  
+|Lerp(Float value1, Float value2, Float progress)|  返回表示根据进度计算的两个 Scalar 值之间的线性内插计算的浮点数（注意：进度在 0.0 和 1.0 之间）|  
+|Slerp(Float value1, Float value2, Float progress)| 返回表示根据进度计算的两个 Float 值之间的球面内插的 Float（注意：进度在 0.0 和 1.0 之间）|  
+|Mod(Float value1, Float value2)|   返回 value1 和 value2 拆分后生成的 Float 剩余数|  
+|Ceil(Float value)|     返回舍入到下一个较大整数的 Float 参数|  
+|Floor(Float value)|    返回舍入到下一个较小整数的 Float 参数|  
+|Sqrt(Float value)| 返回 Float 参数的平方根|  
+|Square(Float value)|   返回 Float 参数的平方|  
+|Sin(Float value1)||
+|Asin(Float value2)|    返回 Float 参数的 Sin 或 ArcSin|
+|Cos(Float value1)||
+|ACos(Float value2)|    返回 Float 参数的 Cos 或 ArcCos|
+|Tan(Float value1)||
+|ATan(Float value2)|    返回 Float 参数的 Tan 或 ArcTan|
+|Round(Float value)|    返回舍入到最近整数的 Float 参数|
+|Log10(Float value)|    返回 Float 参数的 Log（基数 10）结果|
+|Ln(Float value)|   返回 Float 参数的自然对数结果|
+|Pow(Float value, Float power)| 返回提升到特定幂的 Float 参数的结果|
+|ToDegrees(Float radians)|  返回换算为度的 Float 参数|
+|ToRadians(Float degrees)|  返回换算为弧度的 Float 参数|
 
 ###Vector2  
 
-|Function and Constructor Operations|   Description|
+|函数和构造函数运算|   描述|
 |-----------------------------------|--------------|
-|Abs (Vector2 value)|   Returns a Vector2 with absolute value applied to each component|
-|Clamp (Vector2 value1, Vector2 min, Vector2 max)|  Returns a Vector2 that contains the clamped values for each respective component|
-|Max (Vector2 value1, Vector2 value2)|  Returns a Vector2 that has performed a Max on each of the corresponding components from value1 and value2|
-|Min (Vector2 value1, Vector2 value2)|  Returns a Vector2 that has performed a Min on each of the corresponding components from value1 and value2|
-|Scale(Vector2 value, Float factor)|    Returns a Vector2 with each component of the vector multiplied by the scaling factor.|
-|Transform(Vector2 value, Matrix3x2 matrix)|    Returns a Vector2 resulting from the linear transformation between a Vector2 and a Matrix3x2 (aka multiplying a vector by a matrix).|
-|Lerp(Vector2 value1, Vector2 value2, Float progress)|  Returns a Vector2 that represents the calculated linear interpolation calculation between the two Vector2 values based on the progress (Note: Progress is between 0.0 and 1.0)|
-|Length(Vector2 value)| Returns a Float value representing the length/magnitude of the Vector2|
-|LengthSquared(Vector2)|    Returns a Float value representing the square of the length/magnitude of a Vector2|
-|Distance(Vector2 value1, Vector2 value2)|  Returns a Float value representing the distance between two Vector2 values|
-|DistanceSquared(Vector2 value1, Vector2 value2)|   Returns a Float value representing the square of the distance between two Vector2 values|
-|Normalize(Vector2 value)|  Returns a Vector2 representing the unit vector of the parameter where all components have been normalized|
-|Vector2(Float x, Float y)| Constructs a Vector2 using two Float parameters|
+|Abs (Vector2 value)|   返回绝对值应用到每个组件的 Vector2|
+|Clamp (Vector2 value1, Vector2 min, Vector2 max)|  返回包含各个组件的受限值的 Vector2|
+|Max (Vector2 value1, Vector2 value2)|  返回在 value1 和 value2 的每个相应组件上执行 Max 的 Vector2|
+|Min (Vector2 value1, Vector2 value2)|  返回在 value1 和 value2 的每个相应组件上执行 Min 的 Vector2|
+|Scale(Vector2 value, Float factor)|    返回每个矢量乘以比例因子的组件的 Vector2。|
+|Transform(Vector2 value, Matrix3x2 matrix)|    返回在 Vector2 和 Matrix3x2 之间进行线性转换（又称为矢量乘以矩阵）后生成的 Vector2。|
+|Lerp(Vector2 value1, Vector2 value2, Float progress)|  返回表示根据进度计算的两个 Vector2 值之间的线性内插计算的 Vector2（注意：进度在 0.0 和 1.0 之间）|
+|Length(Vector2 value)| 返回表示 Vector2 长度/幅值的 Float 值|
+|LengthSquared(Vector2)|    返回表示 Vector2 长度/幅值平方的 Float 值|
+|Distance(Vector2 value1, Vector2 value2)|  返回表示两个 Vector2 值之间距离的 Float 值|
+|DistanceSquared(Vector2 value1, Vector2 value2)|   返回表示两个 Vector2 值之间距离的平方的 Float 值|
+|Normalize(Vector2 value)|  返回表示所有组件均已标准化的参数的单元矢量的 Vector2|
+|Vector2(Float x, Float y)| 使用两个 Float 参数构造 Vector2|
 
 ###Vector3  
 
-|Function and Constructor Operations|   Description|
+|函数和构造函数运算|   描述|
 |-----------------------------------|--------------|
-|Abs (Vector3 value)|   Returns a Vector3 with absolute value applied to each component|
-|Clamp (Vector3 value1, Vector3 min, Vector3 max)|  Returns a Vector3 that contains the clamped values for each respective component|
-|Max (Vector3 value1, Vector3 value2)|  Returns a Vector3 that has performed a Max on each of the corresponding components from value1 and value2|
-|Min (Vector3 value1, Vector3 value2)|  Returns a Vector3 that has performed a Min on each of the corresponding components from value1 and value2|
-|Scale(Vector3 value, Float factor)|    Returns a Vector3 with each component of the vector multiplied by the scaling factor.|
-|Lerp(Vector3 value1, Vector3 value2, Float progress)|  Returns a Vector3 that represents the calculated linear interpolation calculation between the two Vector3 values based on the progress (Note: Progress is between 0.0 and 1.0)|
-|Length(Vector3 value)| Returns a Float value representing the length/magnitude of the Vector3|
-|LengthSquared(Vector3)|    Returns a Float value representing the square of the length/magnitude of a Vector3|
-|Distance(Vector3 value1, Vector3 value2)|  Returns a Float value representing the distance between two Vector3 values|
-|DistanceSquared(Vector3 value1, Vector3 value2)|   Returns a Float value representing the square of the distance between two Vector3 values|
-|Normalize(Vector3 value)|  Returns a Vector3 representing the unit vector of the parameter where all components have been normalized|
-|Vector3(Float x, Float y, Float z)|    Constructs a Vector3 using three Float parameters|
+|Abs (Vector3 value)|   返回绝对值应用到每个组件的 Vector3|
+|Clamp (Vector3 value1, Vector3 min, Vector3 max)|  返回包含各个组件的受限值的 Vector3|
+|Max (Vector3 value1, Vector3 value2)|  返回在 value1 和 value2 的每个相应组件上执行 Max 的 Vector3|
+|Min (Vector3 value1, Vector3 value2)|  返回在 value1 和 value2 的每个相应组件上执行 Min 的 Vector3|
+|Scale(Vector3 value, Float factor)|    返回每个矢量乘以比例因子的组件的 Vector3。|
+|Lerp(Vector3 value1, Vector3 value2, Float progress)|  返回表示根据进度计算的两个 Vector3 值之间的线性内插计算的 Vector3（注意：进度在 0.0 和 1.0 之间）|
+|Length(Vector3 value)| 返回表示 Vector3 长度/幅值的 Float 值|
+|LengthSquared(Vector3)|    返回表示 Vector3 长度/幅值平方的 Float 值|
+|Distance(Vector3 value1, Vector3 value2)|  返回表示两个 Vector3 值之间距离的 Float 值|
+|DistanceSquared(Vector3 value1, Vector3 value2)|   返回表示两个 Vector3 值之间距离的平方的 Float 值|
+|Normalize(Vector3 value)|  返回表示所有组件均已标准化的参数的单元矢量的 Vector3|
+|Vector3(Float x, Float y, Float z)|    使用三个 Float 参数构造 Vector3|
 
 ###Vector4  
 
-|Function and Constructor Operations|   Description|
+|函数和构造函数运算|   描述|
 |-----------------------------------|--------------|
-|Abs (Vector4 value)|   Returns a Vector3 with absolute value applied to each component|
-|Clamp (Vector4 value1, Vector4 min, Vector4 max)|  Returns a Vector4 that contains the clamped values for each respective component|
-|Max (Vector4 value1 Vector4 value2)|   Returns a Vector4 that has performed a Max on each of the corresponding components from value1 and value2|
-|Min (Vector4 value1 Vector4 value2)|   Returns a Vector4 that has performed a Min on each of the corresponding components from value1 and value2|
-|Scale(Vector3 value, Float factor)|    Returns a Vector3 with each component of the vector multiplied by the scaling factor.|
-|Transform(Vector4 value, Matrix4x4 matrix)|    Returns a Vector4 resulting from the linear transformation between a Vector4 and a Matrix4x4 (aka multiplying a vector by a matrix).|
-|Lerp(Vector4 value1, Vector4 value2, Float progress)|  Returns a Vector4 that represents the calculated linear interpolation calculation between the two Vector4 values based on the progress (Note: progress is between 0.0 and 1.0)|
-|Length(Vector4 value)| Returns a Float value representing the length/magnitude of the Vector4|
-|LengthSquared(Vector4)|    Returns a Float value representing the square of the length/magnitude of a Vector4|
-|Distance(Vector4 value1, Vector4 value2)|  Returns a Float value representing the distance between two Vector4 values|
-|DistanceSquared(Vector4 value1, Vector4 value2)|   Returns a Float value representing the square of the distance between two Vector4 values|
-|Normalize(Vector4 value)|  Returns a Vector4 representing the unit vector of the parameter where all components have been normalized|
-|Vector4(Float x, Float y, Float z, Float w)|   Constructs a Vector4 using four Float parameters|
+|Abs (Vector4 value)|   返回绝对值应用到每个组件的 Vector3|
+|Clamp (Vector4 value1, Vector4 min, Vector4 max)|  返回包含各个组件的受限值的 Vector4|
+|Max (Vector4 value1 Vector4 value2)|   返回在 value1 和 value2 的每个相应组件上执行 Max 的 Vector4|
+|Min (Vector4 value1 Vector4 value2)|   返回在 value1 和 value2 的每个相应组件上执行 Min 的 Vector4|
+|Scale(Vector3 value, Float factor)|    返回每个矢量乘以比例因子的组件的 Vector3。|
+|Transform(Vector4 value, Matrix4x4 matrix)|    返回在 Vector4 和 Matrix4x4 之间进行线性转换（又称为矢量乘以矩阵）后生成的 Vector4。|
+|Lerp(Vector4 value1, Vector4 value2, Float progress)|  返回表示根据进度计算的两个 Vector4 值之间的线性内插计算的 Vector4（注意：进度在 0.0 和 1.0 之间）|
+|Length(Vector4 value)| 返回表示 Vector4 长度/幅值的 Float 值|
+|LengthSquared(Vector4)|    返回表示 Vector4 长度/幅值平方的 Float 值|
+|Distance(Vector4 value1, Vector4 value2)|  返回表示两个 Vector4 值之间距离的 Float 值|
+|DistanceSquared(Vector4 value1, Vector4 value2)|   返回表示两个 Vector4 值之间距离的平方的 Float 值|
+|Normalize(Vector4 value)|  返回表示所有组件均已标准化的参数的单元矢量的 Vector4|
+|Vector4(Float x, Float y, Float z, Float w)|   使用四个 Float 参数构造 Vector4|
 
 ###Matrix3x2  
 
-|Function and Constructor Operations|   Description|
+|函数和构造函数运算|   描述|
 |-----------------------------------|--------------|
-|Scale(Matrix3x2 value, Float factor)|  Returns a Matrix3x2 with each component of the matrix multiplied by the scaling factor.|
-|Inverse(Matrix 3x2 value)| Returns a Matrix3x2 object that represents the reciprocal matrix|
-|Lerp(Matrix3x2 value1, Matrix3x2 value2, Float progress)|  Returns a Matrix3x2 that represents the calculated linear interpolation calculation between the two Matrix3x2 values based on the progress (Note: progress is between 0.0 and 1.0)|
-|Matrix3x2(Float M11, Float M12, Float M21, Float M22, Float M31, Float M32)|   Constructs a Matrix3x2 using 6 Float parameters|
-|Matrix3x2.CreateFromScale(Vector2 scale)|  Constructs a Matrix3x2 from a Vector2   representing scale<br/>\[scale.X, 0.0<br/> 0.0, scale.Y<br/> 0.0, 0.0 \]|
-|Matrix3x2.CreateFromTranslation(Vector2 translation)|  Constructs a Matrix3x2 from a Vector2 representing translation<br/>\[1.0, 0.0,<br/> 0.0, 1.0,<br/> translation.X, translation.Y\]|  
-|Matrix3x2.CreateSkew(Float x, Float y, Vector2 centerpoint)| Constructs a Matrix3x2 from two Float and a Vector2 representing skew<br/>\[1.0, Tan(y),<br/>Tan(x), 1.0,<br/>-centerpoint.Y * Tan(x), -centerpoint.X * Tan(y)\]|  
-|Matrix3x2.CreateRotation(Float radians)| Constructs a Matrix3x2 from a rotation in radians<br/>\[Cos(radians), Sin(radians),<br/>-Sin(radians), Cos(radians),<br/>0.0, 0.0 \]|   
-|Matrix3x2.CreateTranslation(Vector2 translation)| Same as CreateFromTranslation|      
-|Matrix3x2.CreateScale(Vector2 scale)| Same as CreateFromScale|    
-
+|Scale(Matrix3x2 value, Float factor)|  返回每个矩阵乘以比例因子的组件的 Matrix3x2。|
+|Inverse(Matrix 3x2 value)| 返回表示倒数矩阵的 Matrix3x2 对象|
+|Lerp(Matrix3x2 value1, Matrix3x2 value2, Float progress)|  返回表示根据进度计算的两个 Matrix3x2 值之间的线性内插计算的 Matrix3x2（注意：进度在 0.0 和 1.0 之间）|
+|Matrix3x2(Float M11, Float M12, Float M21, Float M22, Float M31, Float M32)|   使用 6 个 Float 参数构造 Matrix3x2|
+|Matrix3x2.CreateFromScale(Vector2 scale)|  使用表示比例的 Vector2 构造 Matrix3x2<br/>\[scale.X, 0.0<br/> 0.0, scale.Y<br/> 0.0, 0.0 \]|
+|Matrix3x2.CreateFromTranslation(Vector2 translation)|  使用表示转换的 Vector2 构造 Matrix3x2<br/>\[1.0, 0.0,<br/> 0.0, 1.0,<br/> translation.X, translation.Y\]|
     
 ###Matrix4x4  
 
-|Function and Constructor Operations|   Description|
+|函数和构造函数运算|   描述|
 |-----------------------------------|--------------|
-|Scale(Matrix4x4 value, Float factor)|  Returns a Matrix 4x4 with each component of the matrix multiplied by the scaling factor.|
-|Inverse(Matrix4x4)|    Returns a Matrix4x4 object that represents the reciprocal matrix|
-|Lerp(Matrix4x4 value1, Matrix4x4 value2, Float progress)|  Returns a Matrix4x4 that represents the calculated linear interpolation calculation between the two Matrix4x4 values based on the progress (Note: progress is between 0.0 and 1.0)|
-|Matrix4x4(Float M11, Float M12, Float M13, Float M14,<br/>Float M21, Float M22, Float M23, Float M24,<br/>    Float M31, Float M32, Float M33, Float M34,<br/>    Float M41, Float M42, Float M43, Float M44)| Constructs a Matrix4x4 using 16 Float parameters|
-|Matrix4x4.CreateFromScale(Vector3 scale)|  Constructs a Matrix4x4 from a Vector3 representing scale<br/>\[scale.X, 0.0, 0.0, 0.0,<br/> 0.0, scale.Y, 0.0, 0.0,<br/> 0.0, 0.0, scale.Z, 0.0,<br/> 0.0, 0.0, 0.0, 1.0\]|
-|Matrix4x4.CreateFromTranslation(Vector3 translation)|  Constructs a Matrix4x4 from a Vector3 representing translation<br/>\[1.0, 0.0, 0.0, 0.0,<br/> 0.0, 1.0, 0.0, 0.0,<br/> 0.0, 0.0, 1.0, 0.0,<br/> translation.X, translation.Y, translation.Z, 1.0\]|
-|Matrix4x4.CreateFromAxisAngle(Vector3 axis, Float angle)|  Constructs a Matrix4x4 from a Vector3 axis and a Float representing an angle|
-|Matrix4x4(Matrix3x2 matrix)| Constructs a Matrix4x4 using a Matrix3x2<br/>\[matrix.11, matrix.12, 0, 0,<br/>matrix.21, matrix.22, 0, 0,<br/>0, 0, 1, 0,<br/>matrix.31, matrix.32, 0, 1\]|  
-|Matrix4x4.CreateTranslation(Vector3 translation)| Same as CreateFromTranslation|  
-|Matrix4x4.CreateScale(Vector3 scale)| Same as CreateFromScale|  
-
+|Scale(Matrix4x4 value, Float factor)|  返回每个矩阵乘以比例因子的组件的 Matrix 4x4。|
+|Inverse(Matrix4x4)|    返回表示倒数矩阵的 Matrix4x4 对象|
+|Lerp(Matrix4x4 value1, Matrix4x4 value2, Float progress)|  返回表示根据进度计算的两个 Matrix4x4 值之间的线性内插计算的 Matrix4x4（注意：进度在 0.0 和 1.0 之间）|
+|Matrix4x4(Float M11, Float M12, Float M13, Float M14,<br/>Float M21, Float M22, Float M23, Float M24,<br/>    Float M31, Float M32, Float M33, Float M34,<br/>    Float M41, Float M42, Float M43, Float M44)| 使用 16 个 Float 参数构造 Matrix4x4|
+|Matrix4x4.CreateFromScale(Vector3 scale)|  使用表示比例的 Vector3 构造 Matrix4x4<br/>\[scale.X, 0.0, 0.0, 0.0,<br/> 0.0, scale.Y, 0.0, 0.0,<br/> 0.0, 0.0, scale.Z, 0.0,<br/> 0.0, 0.0, 0.0, 1.0\]|
+|Matrix4x4.CreateFromTranslation(Vector3 translation)|  使用表示转换的 Vector3 构造 Matrix4x4<br/>\[1.0, 0.0, 0.0, 0.0,<br/> 0.0, 1.0, 0.0, 0.0,<br/> 0.0, 0.0, 1.0, 0.0,<br/> translation.X, translation.Y, translation.Z, 1.0\]|
+|Matrix4x4.CreateFromAxisAngle(Vector3 axis, Float angle)|  使用 Vector3 轴和表示角度的 Float 构造 Matrix4x4|
 
 ###Quaternion  
 
-|Function and Constructor Operations|   Description|
+|函数和构造函数运算|   描述|
 |-----------------------------------|--------------|
-|Slerp(Quaternion value1, Quaternion value2, Float progress)|   Returns a Quaternion that represents the calculated spherical interpolation between the two Quaternion values based on the progress (Note: progress is between 0.0 and 1.0)|
-|Concatenate(Quaternion value1 Quaternion value2)|  Returns a Quaternion representing a concatenation of two Quaternions (aka a Quaternion that represents a combined two individual rotations)|
-|Length(Quaternion value)|  Returns a Float value representing the length/magnitude of the Quaternion.|
-|LengthSquared(Quaternion)| Returns a Float value representing the square of the length/magnitude of a Quaternion|
-|Normalize(Quaternion value)|   Returns a Quaternion whose components have been normalized|
-|Quaternion.CreateFromAxisAngle(Vector3 axis, Scalar angle)|    Constructs a Quaternion from a Vector3 axis and a Scalar representing an angle|
-|Quaternion(Float x, Float y, Float z, Float w)|    Constructs a Quaternion from four Float values|
+|Slerp(Quaternion value1, Quaternion value2, Float progress)|   返回表示根据进度计算的两个 Quaternion 值之间的球面内插的 Quaternion（注意：进度在 0.0 和 1.0 之间）|
+|Concatenate(Quaternion value1 Quaternion value2)|  返回表示两个 Quaternion 串联的 Quaternion（又称为表示两个单个旋转组合的 Quaternion）|
+|Length(Quaternion value)|  返回表示 Quaternion 长度/幅值的 Float 值。|
+|LengthSquared(Quaternion)| 返回表示 Quaternion 长度/幅值平方的 Float 值|
+|Normalize(Quaternion value)|   返回组件已标准化的 Quaternion|
+|Quaternion.CreateFromAxisAngle(Vector3 axis, Scalar angle)|    使用 Vector3 轴和表示角度的 Scalar 构造 Quaternion|
+|Quaternion(Float x, Float y, Float z, Float w)|    使用四个 Float 值构造 Quaternion|
 
 ###Color
 
-|Function and Constructor Operations|   Description|
+|函数和构造函数运算|   描述|
 |-----------------------------------|--------------|
-|ColorLerp(Color colorTo, Color colorFrom, Float progress)| Returns a Color object that represents the calculated linear interpolation value between two color objects based on a given progress. (Note: Progress is between 0.0 and 1.0)|
-|ColorLerpRGB(Color colorTo, Color colorFrom, Float progress)|  Returns a Color object that represents the calculated linear interpolation value between two objects based on a given progress in the RGB color space.|
-|ColorLerpHSL(Color colorTo, Color colorFrom, Float progress)|  Returns a Color object that represents the calculated linear interpolation value between two objects based on a given progress in the HSL color space.|
-|ColorArgb(Float a, Float r, Float g, Float b)| Constructs an object representing Color defined by ARGB components|
-|ColorHsl(Float h, Float s, Float l)|   Constructs an object representing Color defined by HSL components (Note: Hue is defined from 0 and 2pi)|
+|ColorLerp(Color colorTo, Color colorFrom, Float progress)| 返回表示根据给定进度计算的两个颜色对象之间的线性内插值的 Color 对象。 （注意：进度在 0.0 和 1.0 之间）|
+|ColorLerpRGB(Color colorTo, Color colorFrom, Float progress)|  返回表示根据 RGB 颜色空间中的给定进度计算的两个对象之间的线性内插值的 Color 对象。|
+|ColorLerpHSL(Color colorTo, Color colorFrom, Float progress)|  返回表示根据 HSL 颜色空间中的给定进度计算的两个对象之间的线性内插值的 Color 对象。|
+|ColorArgb(Float a, Float r, Float g, Float b)| 构造表示由 ARGB 组件定义的 Color 的对象|
+|ColorHsl(Float h, Float s, Float l)|   构造表示由 HSL 组件定义的 Color 的对象（注意：色调在 0 到 2pi 之间定义）|
 
 
 
@@ -775,6 +668,6 @@ class PropertyAnimation
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

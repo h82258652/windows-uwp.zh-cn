@@ -1,119 +1,106 @@
 ---
 author: Jwmsft
-Description: The media player has customizable XAML transport controls to manage control of audio and video content.
-title: Create custom media transport controls
+Description: "媒体播放器具有管理音频和视频内容控件的可自定义 XAML 传输控件。"
+title: "创建自定义媒体传输控件"
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: d1f1b0575f9f1a968d21629a73df6146db156cf5
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5500f41b254b32b8d293181fba3acebbfffa90e7
 
 ---
-# Create custom transport controls
+# 创建自定义传输控件
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+MediaElement 具有可自定义的 XAML 传输控件来管理通用 Windows 平台 (UWP) 应用中的音频和视频内容的控件。 下面，我们演示如何自定义 MediaTransportControls 模板。 我们将向你演示如何使用溢出菜单、添加自定义按钮、修改滑块以及更改颜色。
 
-MediaPlayerElement has customizable XAML transport controls to manage control of audio and video content within a Universal Windows Platform (UWP) app. Here, we demonstrate how to customize the MediaTransportControls template. We’ll show you how to work with the overflow menu, add a custom button and modify the slider.
+在开始操作之前，你应当先熟悉 MediaElement 和 MediaTransportControls 类。 有关详细信息，请参阅 MediaElement 控件指南。 
 
-Before starting, you should be familiar with the MediaPlayerElement and the MediaTransportControls classes. For more info, see the MediaPlayerElement control guide.
+> **提示** &nbsp;&nbsp;本主题中的示例基于[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)。 你可以下载该示例来查看和运行完整代码。
 
-> **Tip**&nbsp;&nbsp;The examples in this topic are based on the [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023). You can download the sample to view and run the completed code.
+<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx"><strong>MediaPlayerElement</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled.aspx"><strong>MediaPlayerElement.AreTransportControlsEnabled</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn278677"><strong>MediaTransportControls</strong></a></li>
-</ul>
+-   [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)
+-   [**MediaElement.AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aretransportcontrolsenabled.aspx)
+-   [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)
 
-</div>
-</div>
+## 你应在何时自定义模板？
 
+**MediaElement** 中包含的内置传输控件旨在与大多数视频和音频播放应用实现良好的配合，而无需任何修改。 它们由 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 类提供，其中包含的按钮可播放、停止和导航媒体、调整音量、切换全屏、强制转换到第二台设备、启用字幕、切换音频曲目以及调整播放速率。 MediaTransportControls 中包含的属性使你可以控制每个按钮的显示和启用状态。 还可以设置 [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.iscompact.aspx) 属性，以指定控件显示为一行还是两行。
 
+但是，在某些情况下，可能需要进一步自定义控件的外观或更改其行为。 下面提供了一些示例：
+- 更改图标、滑块行为和颜色。
+- 将不常使用的命令按钮移动到“溢出”菜单中。
+- 更改控件调整大小时命令退出的顺序。
+- 提供未进行默认设置的命令按钮。
 
-> **Note**&nbsp;&nbsp;**MediaPlayerElement** is only available in Windows 10, version 1607 and up. If you are developing an app for an earlier version of Windows 10 you will need to use [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) instead. All of the examples on this page work with **MediaElement** as well.
+通过修改默认模板可以自定义控件的外观。 若要修改控件的行为或添加新的命令，可以创建从 MediaTransportControls 派生的自定义控件。
 
-## When should you customize the template?
+>**提示** &nbsp;&nbsp;可自定义控件模板是 XAML 平台的一项强大功能，但你还应当考虑所产生的后果。 当你自定义模板时，它会成为你的应用的静态部分，因此它将不会接收到 Microsoft 对该模板进行的任何平台更新。 如果已由 Microsoft 进行模板更新，你应采用新模板并将其重新修改，以便获取已更新模板所带来的好处。
 
-**MediaPlayerElement** has built-in transport controls that are designed to work well without modification in most video and audio playback apps. They’re provided by the [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) class and include buttons to play, stop, and navigate media, adjust volume, toggle full screen, cast to a second device, enable captions, switch audio tracks, and adjust the playback rate. MediaTransportControls has properties that let you control whether each button is shown and enabled. You can also set the [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.iscompact.aspx) property to specify whether the controls are shown in one row or two.
+## 模板结构
 
-However, there may be scenarios where you need to further customize the look of the control or change its behavior. Here are some examples:
-- Change the icons, slider behavior, and colors.
-- Move less commonly used command buttons into an overflow menu.
-- Change the order in which commands drop out when the control is resized.
-- Provide a command button that’s not in the default set.
+[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) 是默认样式的一部分。 传输控件的默认样式在 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 类引用页中显示。 可以将此默认样式复制到你的项目，以对其进行修改。 该 ControlTemplate 被划分为类似于其他 XAML 控件模板的若干部分。
+- 该模板的第一部分包含 MediaTransportControls 的各个组件的 [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) 定义。
+- 第二部分定义 MediaTransportControls 所使用的各个视觉状态。
+- 第三部分包含将各种 MediaTransportControls 元素保存在一起并定义组件布局方式的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)。
 
->**Note**&nbsp;&nbsp;The buttons visible on screen will drop out of the built-in transport controls in a predefined order if there is not enough room on screen. To change this ordering or put commands that don't fit into an overflow menu, you will need to customize the controls.
+> **提示** &nbsp;&nbsp;有关修改模板的详细信息，请参阅[控件模板]()。 可以在 IDE 中使用文本编辑器或类似编辑器打开 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 文件。 每个控件的默认样式和模板都在 **generic.xaml** 文件中定义。 你可以通过搜索“MediaTransportControls”找到 generic.xaml 中的 MediaTransportControls 模板。
 
-You can customize the appearance of the control by modifying the default template. To modify the control's behavior or add new commands, you can create a custom control that's derived from MediaTransportControls.
+在以下部分中，你将了解如何自定义传输控件的几个主要元素： 
+- [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)：允许用户在其媒体上进行推移，同时显示相关进度
+- [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx)：包含所有按钮。
+有关详细信息，请参阅 MediaTransportControls 参考主题的详细分析部分。 
 
->**Tip**&nbsp;&nbsp;Customizable control templates are a powerful feature of the XAML platform, but there are also consequences that you should take into consideration. When you customize a template, it becomes a static part of your app and therefore will not receive any platform updates that are made to the template by Microsoft. If template updates are made by Microsoft, you should take the new template and re-modify it in order to get the benefits of the updated template.
+## 自定义传输控件
 
-## Template structure
+如果你希望只修改 MediaTransportControls 的外观，可以创建一个默认控件样式和模板的副本，然后对其进行修改即可。 但是，如果你还想要添加或修改该控件的功能，你需要创建一个派生自 MediaTransportControls 的新类。
 
-The [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) is part of the default style. The transport control's default style is shown in the [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) class reference page. You can copy this default style into your project to modify it. The ControlTemplate is divided into sections similar to other XAML control templates.
-- The first section of the template contains the [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) definitions for the various components of the MediaTransportControls.
-- The second section defines the various visual states that are used by the MediaTransportControls.
-- The third section contains the [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) that holds that various MediaTransportControls elements together and defines how the components are laid out.
+### 重新模板化控件
 
-> **Note**&nbsp;&nbsp;For more info about modifying templates, see [Control templates](). You can use a text editor or similar editors in your IDE to open the XAML files in \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic. The default style and template for each control is defined in the **generic.xaml** file. You can find the MediaTransportControls template in generic.xaml by searching for "MediaTransportControls".
-
-In the following sections, you learn how to customize several of the main elements of the transport controls:
-- [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): allows a user to scrub through their media and also displays progress
-- [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx): contains all of the buttons.
-For more info, see the Anatomy section of the MediaTransportControls reference topic.
-
-## Customize the transport controls
-
-If you want to modify only the appearance of the MediaTransportControls, you can create a copy of the default control style and template, and modify that. However, if you also want to add to or modify the functionality of the control, you need to create a new class that derives from MediaTransportControls.
-
-### Re-template the control
-
-**To customize the MediaTransportControls default style and template**
-1. Copy the default style from MediaTransportControls styles and templates into a ResourceDictionary in your project.
-2. Give the Style an x:Key value to identify it, like this.
+**自定义 MediaTransportControls 默认样式和模板**
+1. 将默认样式从 MediaTransportControls 样式和模板复制到你的项目中的 ResourceDictionary。
+2. 为 Style 提供一个 x:Key 值来标识它，如下所示。 
 ```xaml
 <Style TargetType="MediaTransportControls" x:Key="myTransportControlsStyle">
     <!-- Style content ... -->
 </Style>
 ```
-3. Add a MediaPlayerElement with MediaTransportControls to your UI.
-4. Set the Style property of the MediaTransportControls element to your custom Style resource, as shown here.
+3. 向你的 UI 添加 MediaElement 和 MediaTransportControls。
+4. 将 MediaTransportControls 元素的 Style 属性设置为你的自定义 Style 资源，如下所示。 
 ```xaml
-<MediaPlayerElement AreTransportControlsEnabled="True">
-    <MediaPlayerElement.TransportControls>
+<MediaElement AreTransportControlsEnabled="True">
+    <MediaElement.TransportControls>
         <MediaTransportControls Style="{StaticResource myTransportControlsStyle}"/>
-    </MediaPlayerElement.TransportControls>
-</MediaPlayerElement>
+    </MediaElement.TransportControls>
+</MediaElement>
 ```
 
-For more info about modifying styles and templates, see [Styling controls]() and [Control templates]().
+有关修改样式和模板的详细信息，请参阅[样式控件]()和[控件模板]()。
 
-### Create a derived control
+### 创建派生控件
 
-To add to or modify the functionality of the transport controls, you must create a new class that's derived from MediaTransportControls. A derived class called `CustomMediaTransportControls` is shown in the [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023) and the remaining examples on this page.
+若要添加或修改传输控件的功能，必须创建一个派生自 MediaTransportControls 的新类。 名为 `CustomMediaTransportControls` 的派生类显示在[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)和此页面上的其他示例中。
 
-**To create a new class derived from MediaTransportControls**
-1. Add a new class file to your project.
-    - In Visual Studio, select Project > Add Class. The Add New Item dialog opens.
-    - In the Add New Item dialog, enter a name for the class file, then click Add. (In the Media Transport Controls sample, the class is named `CustomMediaTransportControls`.)
-2. Modify the class code to derive from the MediaTransportControls class.
+**创建一个派生自 MediaTransportControls 的新类**
+1. 向你的项目中添加一个新类文件。
+    - 在 Visual Studio 中，选择“项目”&gt;“添加类”。 随即打开“添加新项”对话框。
+    - 在“添加新项”对话框中，输入类文件的名称，然后单击“添加”。 （在媒体传输控件示例中，该类命名为 `CustomMediaTransportControls`。）
+2. 修改类代码以从 MediaTransportControls 类进行派生。
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
 }
 ```
-3. Copy the default style for [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) into a [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx) in your project. This is the style and template you modify.
-(In the Media Transport Controls sample, a new folder called "Themes" is created, and a ResourceDictionary file called generic.xaml is added to it.)
-4. Change the [**TargetType**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.targettype.aspx) of the style to the new custom control type. (In the sample, the TargetType is changed to `local:CustomMediaTransportControls`.)
+3. 在项目中将 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 的默认样式复制到 [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx)。 这是你修改后的样式和模板。
+（在媒体传输控件示例中，创建了名为“Themes”的新文件夹，并且向其中添加了名为 generic.xaml 的 ResourceDictionary 文件。）
+4. 将样式的 [**TargetType**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.targettype.aspx) 更改为新的自定义控件类型。 （在该示例中，TargetType 更改为 `local:CustomMediaTransportControls`。）
 ```xaml
 xmlns:local="using:CustomMediaTransportControls">
 ...
 <Style TargetType="local:CustomMediaTransportControls">
 ```
-5. Set the [**DefaultStyleKey**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.defaultstylekey.aspx) of your custom class. This tells your custom class to use a Style with a TargetType of `local:CustomMediaTransportControls`.
+5. 设置自定义类的 [**DefaultStyleKey**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.defaultstylekey.aspx)。 这会向你的自定义类告知将 Style 与 `local:CustomMediaTransportControls` 的 TargetType 结合使用。
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
@@ -123,10 +110,10 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
     }
 }
 ```
-6. Add a [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) to your XAML markup and add the custom transport controls to it. One thing to note is that the APIs to hide, show, disable, and enable the default buttons still work with a customized template.
+6. 将 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) 添加到你的 XAML 标记并向其添加自定义传输控件。 需要注意的一点是，用于隐藏、显示、禁用和启用默认按钮的 API 仍然使用自定义模板。
 ```xaml
-<MediaPlayerElement Name="MediaPlayerElement1" AreTransportControlsEnabled="True" Source="video.mp4">
-    <MediaPlayerElement.TransportControls>
+<MediaElement Name="MediaElement1" AreTransportControlsEnabled="True" Source="video.mp4">
+    <MediaElement.TransportControls>
         <local:CustomMediaTransportControls x:Name="customMTC"
                                             IsFastForwardButtonVisible="True"
                                             IsFastForwardEnabled="True"
@@ -136,22 +123,22 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
                                             IsPlaybackRateEnabled="True"
                                             IsCompact="False">
         </local:CustomMediaTransportControls>
-    </MediaPlayerElement.TransportControls>
-</MediaPlayerElement>
+    </MediaElement.TransportControls>
+</MediaElement>
 ```
-You can now modify the control style and template to update the look of your custom control, and the control code to update its behavior.
+现在可以修改控件样式和模板以更新自定义控件的外观，以及修改控件代码以更新其行为。
 
-### Working with the overflow menu
+### 使用“溢出”菜单
 
-You can move MediaTransportControls command buttons into an overflow menu, so that less commonly used commands are hidden until the user needs them.
+可以将 MediaTransportControls 命令按钮移动到“溢出”菜单，以便隐藏不常使用的命令，直至用户需要使用这些命令。
 
-In the MediaTransportControls template, the command buttons are contained in a [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) element. The command bar has the concept of primary and secondary commands. The primary commands are the buttons that appear in the control by default and are always visible (unless you disable the button, hide the button or there is not enough room). The secondary commands are shown in an overflow menu that appears when a user clicks the ellipsis (…) button. For more info, see the [App bars and command bars](app-bars.md) article.
+在 MediaTransportControls 模板中，命令按钮均包含在 [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) 元素中。 命令栏具有主要命令和辅助命令的概念。 主要命令是默认情况下在控件中显示的按钮，并且始终可见（除非禁用或隐藏该按钮）。 辅助命令显示在用户单击省略号 (…) 按钮时显示的溢出菜单中。 有关详细信息，请参阅[应用栏和命令栏](app-bars.md)文章。
 
-To move an element from the command bar primary commands to the overflow menu, you need to edit the XAML control template.
+若要将元素从命令栏主要命令移动到溢出菜单，你需要编辑 XAML 控件模板。 
 
-**To move a command to the overflow menu:**
-1. In the control template, find the CommandBar element named `MediaControlsCommandBar`.
-2. Add a [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) section to the XAML for the CommandBar. Put it after the closing tag for the [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx).
+**将命令移动到“溢出”菜单：**
+1. 在控件模板中，查找名为 `MediaControlsCommandBar` 的 CommandBar 元素。
+2. 将 [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) 部分添加到 CommandBar 的 XAML。 将其放置在 [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx) 的结束标记之后。 
 ```xaml
 <CommandBar x:Name="MediaControlsCommandBar" ... >  
   <CommandBar.PrimaryCommands>
@@ -172,10 +159,10 @@ To move an element from the command bar primary commands to the overflow menu, y
   </CommandBar.SecondaryCommands>
 </CommandBar>
 ```
-3. To populate the menu with commands, cut and paste the XAML for the desired [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) objects from the PrimaryCommands to the SecondaryCommands. In this example, we move the `PlaybackRateButton` to the overflow menu.
+3. 若要使用命令填充此菜单，请剪切所需的 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) 对象的 XAML 并将其从 PrimaryCommands 粘贴到 SecondaryCommands。 在此示例中，我们将 `PlaybackRateButton` 移动到溢出菜单。
 
-4. Add a label to the button and remove the styling information, as shown here.
-Because the overflow menu is comprised of text buttons, you must add a text label to the button and also remove the style that sets the height and width of the button. Otherwise, it won't appear correctly in the overflow menu.
+4. 为按钮添加标签并删除样式设置信息，如下所示。
+由于“溢出”菜单由文本按钮组成，因此必须为按钮添加文本标签，另外还要删除设置按钮高度和宽度的样式。 否则，它不会在溢出菜单中正确显示。
 ```xaml
 <CommandBar.SecondaryCommands>
     <AppBarButton x:Name='PlaybackRateButton'
@@ -184,58 +171,58 @@ Because the overflow menu is comprised of text buttons, you must add a text labe
 </CommandBar.SecondaryCommands>
 ```
 
-> **Important**&nbsp;&nbsp;You must still make the button visible and enable it in order to use it in the overflow menu. In this example, the PlaybackRateButton element isn't visible in the overflow menu unless the IsPlaybackRateButtonVisible property is true. It's not enabled unless the IsPlaybackRateEnabled property is true. Setting these properties is shown in the previous section.
+> **重要提示** &nbsp;&nbsp;必须仍然使按钮可见并启用它，才能在溢出菜单中使用它。 在此示例中，PlaybackRateButton 元素在溢出菜单中不可见，除非 IsPlaybackRateButtonVisible 属性是 true。 只有 IsPlaybackRateEnabled 属性是 true，才可启用它。 如上一节所示设置这些属性。
 
-### Adding a custom button
+### 添加自定义按钮
 
-One reason you might want to customize MediaTransportControls is to add a custom command to the control. Whether you add it as a primary command or a secondary command, the procedure for creating the command button and modifying its behavior is the same. In the [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023), a "rating" button is added to the primary commands.
+你可能想要自定义 MediaTransportControls 的原因之一是要将自定义命令添加到该控件。 无论将其添加为主要命令还是辅助命令，用于创建命令按钮和修改其行为的过程都是相同的。 在[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)中，“分级”按钮将添加到主要命令中。 
 
-**To add a custom command button**
-1. Create an AppBarButton object and add it to the CommandBar in the control template.
+**添加自定义命令按钮**
+1. 创建 AppBarButton 对象并将其添加到控件模板中的 CommandBar。 
 ```xaml
-<AppBarButton x:Name="LikeButton"
-              Icon="Like"
-              Style="{StaticResource AppBarButtonStyle}"
+<AppBarButton x:Name="LikeButton" 
+              Icon="Like" 
+              Style="{StaticResource AppBarButtonStyle}" 
               MediaTransportControlsHelper.DropoutOrder="3"
               VerticalAlignment="Center" />
 ```
     You must add it to the CommandBar in the appropriate location. (For more info, see the Working with the overflow menu section.) How it's positioned in the UI is determined by where the button is in the markup. For example, if you want this button to appear as the last element in the primary commands, add it at the very end of the primary commands list.
-
+    
     You can also customize the icon for the button. For more info, see the [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) reference.
 
-2. In the [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) override, get the button from the template and register a handler for its [**Click**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event. This code goes in the `CustomMediaTransportControls` class.
+2. 在 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) 替代中，从模板中获取该按钮并为其 [**Click**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件注册处理程序。 此代码会写入 `CustomMediaTransportControls` 类。 
 ```csharp
 public sealed class CustomMediaTransportControls :  MediaTransportControls
 {
     // ...
 
-    protected override void OnApplyTemplate()
-    {
-        // Find the custom button and create an event handler for its Click event.
-        var likeButton = GetTemplateChild("LikeButton") as Button;
-        likeButton.Click += LikeButton_Click;
-        base.OnApplyTemplate();
-    }
+    protected override void OnApplyTemplate() 
+    { 
+        // Find the custom button and create an event handler for its Click event. 
+        var likeButton = GetTemplateChild("LikeButton") as Button; 
+        likeButton.Click += LikeButton_Click; 
+        base.OnApplyTemplate(); 
+    } 
 
     //...
 }
 ```
 
-3. Add code to the Click event handler to perform the action that occurs when the button is clicked.
-Here's the complete code for the class.
+3. 将代码添加到 Click 事件处理程序以执行在单击按钮后发生的操作。
+以下是该类的完整代码。
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
     public event EventHandler< EventArgs> Liked;
 
-    public CustomMediaTransportControls()
+    public CustomMediaTransportControls() 
     {
         this.DefaultStyleKey = typeof(CustomMediaTransportControls);
     }
 
     protected override void OnApplyTemplate()
     {
-        // Find the custom button and create an event handler for its Click event.
+        // Find the custom button and create an event handler for its Click event. 
         var likeButton = GetTemplateChild("LikeButton") as Button;
         likeButton.Click += LikeButton_Click;
         base.OnApplyTemplate();
@@ -243,7 +230,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
     private void LikeButton_Click(object sender, RoutedEventArgs e)
     {
-        // Raise an event on the custom control when 'like' is clicked.
+        // Raise an event on the custom control when 'like' is clicked. 
         var handler = Liked;
         if (handler != null)
         {
@@ -253,27 +240,18 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-**Custom media transport controls with a "Like" button added**
-![Custom media transport control with additional like button](images/controls/mtc_double_custom_inprod.png)
+### 修改滑块
 
-### Modifying the slider
+MediaTransportControls 的“seek”控件由 [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 元素提供。 你可以自定义它的方法之一是更改查找行为的粒度。 
 
-The "seek" control of the MediaTransportControls is provided by a [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) element. One way you can customize it is to change the granularity of the seek behavior.
-
-The default seek slider is divided into 100 parts, so the seek behavior is limited to that many sections. You can change the granularity of the seek slider by getting the Slider from the XAML visual tree in your [**MediaOpened**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) event handler on [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). This example shows how to use [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) to get a reference to the Slider, then change the default step frequency of the slider from 1% to 0.1% (1000 steps) if the media is longer than 120 minutes. The MediaPlayerElement is named `MediaPlayerElement1`.
+由于默认查找滑块分为 100 个部分，因此查找行为仅限于这些若干区域。 可以通过从 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.mediaopened.aspx) 事件处理程序的 XAML 可视化树中获取 Slider 来更改查找滑块的粒度。 此示例介绍了如何使用 [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) 获取对 Slider 的引用，然后在媒体大于 120 分钟时，将滑块的默认步进频率从 1% 更改为 0.1%（1000 步）。 MediaElement 命名为 `MediaElement1`。
 
 ```csharp
-protected override void OnNavigatedTo(NavigationEventArgs e)
+private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
 {
-  MediaPlayerElement1.MediaPlayer.MediaOpened += MediaPlayerElement_MediaPlayer_MediaOpened;
-  base.OnNavigatedTo(e);
-}
-
-private void MediaPlayerElement_MediaPlayer_MediaOpened(object sender, RoutedEventArgs e)
-{
-  FrameworkElement transportControlsTemplateRoot = (FrameworkElement)VisualTreeHelper.GetChild(MediaPlayerElement1.TransportControls, 0);
+  FrameworkElement transportControlsTemplateRoot = (FrameworkElement)VisualTreeHelper.GetChild(MediaElement1.TransportControls, 0);
   Slider sliderControl = (Slider)transportControlsTemplateRoot.FindName("ProgressSlider");
-  if (sliderControl != null && MediaPlayerElement1.NaturalDuration.TimeSpan.TotalMinutes > 120)
+  if (sliderControl != null && MediaElement1.NaturalDuration.TimeSpan.TotalMinutes > 120)
   {
     // Default is 1%. Change to 0.1% for more granular seeking.
     sliderControl.StepFrequency = 0.1;
@@ -283,12 +261,12 @@ private void MediaPlayerElement_MediaPlayer_MediaOpened(object sender, RoutedEve
 
 
 
-## Related articles
+## 相关文章
 
-- [Media playback](media-playback.md)
+- [媒体播放](media-playback.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

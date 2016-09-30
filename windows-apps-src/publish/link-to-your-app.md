@@ -1,55 +1,55 @@
 ---
 author: jnHs
-Description: You can help customers discover your app by linking to your app's Store listing.
-title: Link to your app
+Description: "可以通过将你的应用链接到应用的应用商店一览来帮助客户发现它。"
+title: "链接到你的应用"
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 translationtype: Human Translation
 ms.sourcegitcommit: d36f14604bd8c2ce0d5778a67f5b5b9460d9fbf3
-ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
+ms.openlocfilehash: 891b99b52f7e3b347c0e2f9d298f144313cc7b2d
 
 ---
 
-# Link to your app
+# 链接到你的应用
 
 
-You can help customers discover your app by linking to your app's Store listing.
+可以通过将你的应用链接到应用的应用商店一览来帮助客户发现它。
 
-## Getting the link to your app's Store listing
-
-
-You can find the link to your app's Store listing on the [App identity](view-app-identity-details.md) page, in the **App management** section of each app in your dashboard.
-
-This link is in the format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**
-
-When a customer clicks this link, it will open the web-based listing page for your app. If your app is available for the customer's device, the Store app will also launch and display your app's listing.
-
-> **Note**  Depending on what OS versions you're targeting, you may see more than one link here. All apps will show the URL for Windows 10, which will work for any OS. You may see additional links for Windows 8.1 and earlier and/or Windows Phone 8.1 and earlier, which will work only on the specified OS versions.
-
- 
-
-## Linking to your app's Store listing with the Windows Store badge
+## 获取指向你的应用的应用商店一览的链接
 
 
-You can link directly to your app's listing with a custom badge to let customers know your app is in the Windows Store.
+在仪表板中的每个应用的**应用管理**部分中，你可以在[应用标识](view-app-identity-details.md)页面上找到应用的应用商店一览的链接。
 
-To create your badge, visit the [Windows Store badges](http://go.microsoft.com/fwlink/p/?LinkID=534236) page. You'll need to have your app's Store ID to use this form to generate the badge and link. This ID is the last 12 characters of the **URL for Windows 10** shown on the [App identity](view-app-identity-details.md) page in the **App management** section.
+此链接采用格式 **`https://www.microsoft.com/store/apps/<your app's Store ID>`**。
 
-> **Note**  See [App marketing guidelines](app-marketing-guidelines.md) for more info on using the Windows Store badge.
+当客户单击此链接时，它将打开基于 Web 的应用一览页。 如果应用适用于客户的设备，则应用商店应用还将启动并显示你的应用的一览。
+
+> **注意** 你可能会在此处看到多个链接，具体取决于你面向的操作系统版本。 所有应用都将显示 Windows 10 的 URL，这适用于任何操作系统。 你可能会看到适用于 Windows 8.1 及更早版本和/或 Windows Phone 8.1 及更早版本的其他链接，这些链接将仅适用于指定的操作系统版本。
 
  
 
-## Linking directly to your app in the Windows Store
+## 链接到具有 Windows 应用商店锁屏提醒的应用的应用商店一览
 
 
-You can create a link that launches the Windows Store and goes directly to your app's listing page without opening a browser by using the **ms-windows-store:** URI scheme.
+你可以直接链接到具有自定义锁屏提醒的应用一览，以让客户知道你的应用在 Windows 应用商店中。
 
-These links are useful if you know your users are on a Windows device and you want them to arrive directly at the listing page in the Store—for example, after checking user agent strings in a browser to confirm the user's operating system, or when you are already communicating via a UWP app, you may want to apply this protocol.
+若要创建锁屏提醒，请访问 [Windows 应用商店锁屏提醒](http://go.microsoft.com/fwlink/p/?LinkID=534236)页。 你将需要具有应用的应用商店 ID 才能使用此形式生成锁屏提醒和链接。 此 ID 为 **Windows 10 的 URL** 的最后 12 个字符，该 URL 显示在**应用管理**部分中的[应用标识](view-app-identity-details.md)页上。
 
-To use the Windows Store protocol to link directly to your app's Store listing, append your app's Store ID to this link:
+> **注意** 有关使用 Windows 应用商店锁屏提醒的详细信息，请参阅[应用营销指南](app-marketing-guidelines.md)。
+
+ 
+
+## 直接链接到 Windows 应用商店中的应用
+
+
+你可以创建一个链接，该链接启动 Windows 应用商店并直接转到应用的一览页，而无需通过使用 **ms-windows-store:** URI 方案来打开浏览器。
+
+如果你知道你的用户使用的是 Windows 设备，并且你希望他们直接到达应用商店中的一览页，这些链接将非常有用。例如，在检查浏览器中的用户代理字符串以确认用户的操作系统后，或在已通过 UWP 应用进行通信时，你可能需要应用此协议。
+
+若要使用 Windows 应用商店协议直接链接到应用的应用商店一览，请将应用的应用商店 ID 附加到此链接：
 
 `ms-windows-store://pdp/?ProductId=`
 
-For more about using the Windows Store protocol, see [Launch the Windows Store app](../launch-resume/launch-store-app.md).
+有关使用 Windows 应用商店协议的详细信息，请参阅[启动 Windows 应用商店应用](../launch-resume/launch-store-app.md)。
 
  
 
@@ -61,6 +61,6 @@ For more about using the Windows Store protocol, see [Launch the Windows Store a
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

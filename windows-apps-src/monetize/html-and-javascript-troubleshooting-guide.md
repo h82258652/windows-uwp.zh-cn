@@ -1,48 +1,48 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
-description: Read about solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
-title: HTML and JavaScript troubleshooting guide
+description: "阅读 JavaScript/HTML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。"
+title: "HTML 和 JavaScript 疑难解答指南"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
 
 
 ---
 
-# HTML and JavaScript troubleshooting guide
+# HTML 和 JavaScript 疑难解答指南
 
 
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
-This topic contains solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
+本主题包含 JavaScript/HTML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
 
 -   [HTML](#html)
 
-    -   [AdControl not appearing](#html-notappearing)
+    -   [AdControl 不显示](#html-notappearing)
 
-    -   [Black box blinks and disappears](#html-blackboxblinksdisappears)
+    -   [黑盒闪烁和消失](#html-blackboxblinksdisappears)
 
-    -   [Ads not refreshing](#html-adsnotrefreshing)
+    -   [广告不刷新](#html-adsnotrefreshing)
 
 -   [JavaScript](#js)
 
-    -   [AdControl not appearing](#js-adcontrolnotappearing)
+    -   [AdControl 不显示](#js-adcontrolnotappearing)
 
-    -   [Black box blinks and disappears](#js-blackboxblinksdisappears)
+    -   [黑盒闪烁和消失](#js-blackboxblinksdisappears)
 
-    -   [Ads not refreshing](#js-adsnotrefreshing)
+    -   [广告不刷新](#js-adsnotrefreshing)
 
 ## HTML
 
 <span id="html-notappearing"/>
-### AdControl not appearing
+### AdControl 不显示
 
-1.  Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.
+1.  确保在 Package.appxmanifest 中已选择“Internet(客户端)”****功能。
 
-2.  Ensure the JavaScript reference is present. Without the ad.js reference in the &lt;head&gt; section (after the default.js reference) the **AdControl** will be unable to display and an error will occur during build.
+2.  确保存在 JavaScript 参考。 如果 &lt;head&gt; 部分没有 ad.js 参考（位于 default.js 参考之后），**AdControl** 将无法显示，并且在生成期间还会发生错误。
 
-    Windows 10:
+    Windows 10：
 
     ``` syntax
     <head>
@@ -52,7 +52,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </head>
     ```
 
-    Windows 8.x:
+    Windows 8.x：
 
     ``` syntax
     <head>
@@ -62,7 +62,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </head>
     ```
 
-3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+3.  检查应用程序 ID 和广告单元 ID。 这些 ID 必须匹配在 Windows 开发人员中心中获取的应用程序 ID 和广告单元 ID。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md)。
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px;
@@ -73,7 +73,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-4.  Check the **height** and **width** properties. These must be set to one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+4.  查看 **height** 和 **width** 属性。 这些属性必须设置为[横幅广告的受支持广告大小](supported-ad-sizes-for-banner-ads.md)之一。
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px;
@@ -84,20 +84,9 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-5.  Check the element positioning. The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) must be inside the viewable area.
+5.  查看元素定位 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 必须在可视区域内。
 
-6.  Check the **visibility** property. This property must not be set to collapsed or hidden. This property can be set inline (as shown below) or in an external style sheet.
-
-    ``` syntax
-    <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
-                          left: 500px; width: 250px; height: 250px; z-index: 1"
-         data-win-control="MicrosoftNSJS.Advertising.AdControl"
-         data-win-options="{applicationId: 'ApplicationID',
-                            adUnitId: 'AdUnitID'}">
-    </div>
-    ```
-
-7.  Check the **position** property. The position property must be set to an appropriate value depending on the element’s other properties (for example, margins in parent element and z-index). This property can be set inline (as shown below) or in an external style sheet.
+6.  检查 **visibility** 属性。 此属性禁止设置为折叠或隐藏。 此属性可内联设置（如下所示）或在外部样式表中设置。
 
     ``` syntax
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
@@ -108,7 +97,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-8.  Check the **z-index** property. The **z-index** property must be set high enough so the **AdControl** always appears on top of other elements. This property can be set inline (as shown below) or in an external style sheet.
+7.  检查 **position** 属性。 position 属性必须设置为相应值，具体取决于元素的其他属性（例如父元素和 Z 索引的边距）。 此属性可内联设置（如下所示）或在外部样式表中设置。
 
     ``` syntax
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
@@ -119,7 +108,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-9.  Check external style sheets. If properties are set on the **AdControl** element through an external style sheet, ensure all of the above properties are correctly set.
+8.  检查 **z-index** 属性。 **z-index** 属性必须设置得足够高，才能使 **AdControl** 始终显示在其他元素顶部。 此属性可内联设置（如下所示）或在外部样式表中设置。
 
     ``` syntax
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
@@ -130,7 +119,18 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-10. Check the parent of the **AdControl**. If the **AdControl** resides in a parent element, the parent must be active and visible.
+9.  检查外部样式表。 如果属性是在 **AdControl** 元素上通过外部样式表设置的，请确保上述所有属性均已正确设置。
+
+    ``` syntax
+    <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
+                          left: 500px; width: 250px; height: 250px; z-index: 1"
+         data-win-control="MicrosoftNSJS.Advertising.AdControl"
+         data-win-options="{applicationId: 'ApplicationID',
+                            adUnitId: 'AdUnitID'}">
+    </div>
+    ```
+
+10. 查看 **AdControl** 的父元素。 如果 **AdControl** 驻留在父元素中，则父元素必须处于活动状态并且可见。
 
     ``` syntax
     <div style="position: absolute; width: 500px; height: 500px;">
@@ -143,16 +143,16 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-11. Ensure the **AdControl** is not hidden from the viewport. The **AdControl** must be visible for ads to display properly.
+11. 确保 **AdControl** 在视口中可见。 **AdControl** 必须可见才能正确显示广告。
 
-12. Live values for [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) and [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the test IDs for both **ApplicationId** and **AdUnitId** found in [Test mode values](test-mode-values.md).
+12. [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) 的实时值不应在仿真器中测试。 若要确保 **AdControl** 像预期那样运行，请使用在[测试模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的测试 ID。
 
 <span id="html-blackboxblinksdisappears"/>
-### Black box blinks and disappears
+### 黑盒闪烁和消失
 
-1.  Double-check all steps in the previous [AdControl not appearing](#html-notappearing) section.
+1.  仔细检查前面的 [AdControl 不显示](#html-notappearing)部分中的所有步骤。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. More details can be found in [Error handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md).
+2.  处理 **onErrorOccurred** 事件，并使用传递到事件处理程序的消息确定是否发生了错误以及引发了何种错误。 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
@@ -169,14 +169,14 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-    The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
+    导致黑盒的最常见错误是“无广告可用”。 此错误意味着请求返回不了任何广告。
 
-3.  The **AdControl** is behaving normally. By default, the **AdControl** will collapse when it cannot display an ad. If other elements are children of the same parent they may move to fill the gap of the collapsed **AdControl** and expand when the next request is made.
+3.  **AdControl** 行为正常。 默认情况下，**AdControl** 在它无法显示广告时会折叠。 如果其他元素均是相同父元素的子元素，它们可能会移动以填充折叠 **AdControl** 的间距，并在下一次提出请求时展开。
 
 <span id="html-adsnotrefreshing"/>
-### Ads not refreshing
+### 广告不刷新
 
-1.  Check the **isAutoRefreshEnabled** property. By default, this optional property is set to true. When set to false, the **refresh** method must be used to retrieve another ad.
+1.  查看 **isAutoRefreshEnabled** 属性。 默认情况下，此可选属性设置为 true。 在设置为 false 时，必须使用 **refresh** 方法检索其他广告。
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
@@ -189,9 +189,9 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-2.  Check calls to the **refresh** method. When using automatic refresh, **refresh** cannot be used to retrieve another ad. When using manual refresh, **refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  查看对 **refresh** 方法的调用。 当使用自动刷新时，**refresh** 无法用于检索其他广告。 当使用手动刷新时，**refresh** 应仅在最少 30 到 60 秒后调用，具体取决于设备的当前数据连接。
 
-    This example demonstrates how to use the **refresh** method. The following HTML code shows an example of how to instantiate the **AdControl** with **isAutoRefreshEnabled** set to false.
+    此示例演示了如何使用 **refresh** 方法。 以下的 HTML 代码显示如何通过将 **isAutoRefreshEnabled** 设置为 false 来实例化 **AdControl** 的示例。
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
@@ -204,7 +204,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-    Theis example demonstrates how to use the **refresh** function.
+    此示例演示了如何使用 **refresh** 函数。
 
     ``` syntax
     args.setPromise(WinJS.UI.processAll()
@@ -217,19 +217,19 @@ This topic contains solutions to common development issues with the Microsoft ad
     );
     ```
 
-3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  **AdControl** 行为正常。 有时如果广告不刷新，相同的广告会连续出现多次。
 
 <span id="js"/>
 ## JavaScript
 
 <span id="js-adcontrolnotappearing"/>
-### AdControl not appearing
+### AdControl 不显示
 
-1.  Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.
+1.  确保在 Package.appxmanifest 中选择“Internet (客户端)”****功能。
 
-2.  Ensure the **AdControl** is instantiated. If the **AdControl** is not instantiated. it will not be available.
+2.  确保 **AdControl** 已实例化。 如果 **AdControl** 未实例化。 它将不可用。
 
-    The following snippets show an example of instantiating the **AdControl**. This HTML code shows an example of setting up the UI for the **AdControl**
+    以下代码段显示了实例化 **AdControl** 的示例。 此 HTML 代码显示了设置 **AdControl** UI 的示例
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
@@ -238,7 +238,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-    The following JavaScript code shows an example of instantiating the **AdControl**
+    以下 JavaScript 代码显示了实例化 **AdControl** 的示例
 
     ``` syntax
     app.onactivated = function (args) {
@@ -260,7 +260,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-3.  Check the parent element. The parent **&lt;div&gt;** must be correctly assigned, active, and visible.
+3.  查看父元素。 父元素 **&lt;div&gt;** 必须正确分配、处于活动状态，并且可见。
 
     ``` syntax
     var adDiv = document.getElementById("myAd");
@@ -270,7 +270,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     });  
     ```
 
-4.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+4.  检查应用程序 ID 和广告单元 ID。 这些 ID 必须匹配在 Windows 开发人员中心中获取的应用程序 ID 和广告单元 ID。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md)。
 
     ``` syntax
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv, {
@@ -279,18 +279,18 @@ This topic contains solutions to common development issues with the Microsoft ad
     });  
     ```
 
-5.  Check the parent element of the **AdControl**. The parent must be active and visible.
+5.  查看 **AdControl** 的父元素。 父元素必须处于活动状态并且可见。
 
-6.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the test IDs for both **ApplicationId** and **AdUnitId** found in [Test mode values](test-mode-values.md).
+6.  **ApplicationId** 和 **AdUnitId** 的动态值不应在仿真器中测试。 若要确保 **AdControl** 像预期那样运行，请使用在[测试模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的测试 ID。
 
 <span id="js-blackboxblinksdisappears"/>
-### Black box blinks and disappears
+### 黑盒闪烁和消失
 
-1.  Double-check all steps in the [AdControl not appearing](#js-adcontrolnotappearing) section.
+1.  仔细检查 [AdControl 不显示](#js-adcontrolnotappearing)部分中的所有步骤。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. More details can be found in [Error handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md).
+2.  处理 **onErrorOccurred** 事件，并使用传递到事件处理程序的消息确定是否发生了错误以及引发了何种错误。 更多详细信息可在 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)中找到。
 
-    This example demonstrates how to implement an error handler that reports error messages. This snippet of HTML code provides an example of how to set up the UI to display error messages.
+    此示例展示了如何实现可报告错误消息的错误处理程序。 此 HTML 代码的代码段提供了如何设置 UI 以显示错误消息的示例。
 
     ``` syntax
     <div style="position:absolute; width:100%; height:130px; top:300px">
@@ -299,7 +299,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-    This example demonstrates how to instantiate the **AdControl**. This function would be inserted in the app.onactivated file.
+    此示例展示了如何实例化 **AdControl**。 此函数将插入 app.onactivated 文件中。
 
     ``` syntax
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
@@ -310,7 +310,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     myAdControl.onErrorOccurred = myAdError;
     ```
 
-    This example demonstrates how to report errors. This function would be inserted below the self-running function in the default.js file.
+    此示例展示了如何报告错误。 此函数将插入到 default.js 文件的自主运行的函数下面。
 
     ``` syntax
     WinJS.Utilities.markSupportedForProcessing
@@ -324,16 +324,16 @@ This topic contains solutions to common development issues with the Microsoft ad
     );
     ```
 
-    The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
+    导致黑盒的最常见错误是“无广告可用”。 此错误意味着请求返回不了任何广告。
 
-3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  **AdControl** 行为正常。 有时如果广告不刷新，相同的广告会连续出现多次。
 
 <span id="js-adsnotrefreshing"/>
-### Ads not refreshing
+### 广告不刷新
 
-1.  Check the **isAutoRefreshEnabled** property. By default, this optional property is set to **true**. When set to **false**, the **refresh** method must be used to retrieve another ad.
+1.  查看 **isAutoRefreshEnabled** 属性。 默认情况下，此可选属性设置为 **true**。 在设置为 **false** 时，必须使用 **refresh** 方法检索其他广告。
 
-    This example demonstrates how to use the **isAutoRefreshEnabled** property.
+    此示例展示了如何使用 **isAutoRefreshEnabled** 属性。
 
     ``` syntax
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
@@ -344,9 +344,9 @@ This topic contains solutions to common development issues with the Microsoft ad
     });  
     ```
 
-2.  Check calls to the **refresh** method. When using automatic refresh, **refresh** cannot be used to retrieve another ad. When using manual refresh, **refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  查看对 **refresh** 方法的调用。 当使用自动刷新时，**refresh** 无法用于检索其他广告。 当使用手动刷新时，**refresh** 应仅在最少 30 到 60 秒后调用，具体取决于设备的当前数据连接。
 
-    This example demonstrates how to create the **div** for the **AdControl**.
+    此示例展示了如何为 **AdControl** 创建 **div**。
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
@@ -355,7 +355,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-    This example shows how to use the **refresh** function
+    此示例显示了如何使用 **refresh** 函数。
 
     ``` syntax
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
@@ -375,7 +375,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     );
     ```
 
-3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  **AdControl** 行为正常。 有时如果广告不刷新，相同的广告会连续出现多次。
 
  
 
@@ -383,6 +383,6 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

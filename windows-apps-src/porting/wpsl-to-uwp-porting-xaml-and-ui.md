@@ -5,7 +5,7 @@ title: "将 Windows Phone Silverlight XAML 和 UI 移植到 UWP"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 344ea7a71fce744bcf90ac99ada9a6fe17568a9b
+ms.openlocfilehash: 7fa520443f242844cd661d70bad0fdeb2297fb1d
 
 ---
 
@@ -206,7 +206,7 @@ Windows Phone Silverlight 应用使用在 **Microsoft.Phone.Controls** 命名空
 
 ## 本地化和全球化
 
-对于本地化字符串，你可以在 UWP 应用项目中重复使用 Windows Phone Silverlight 项目中的 .resx 文件。 复制文件，将其添加到项目，并将其重命名为 Resources.resw，以便查找机制默认找到它。 将**“生成操作”**设置为**PRIResource**并将**“复制到输出目录”**设置为**“不要复制”**。 然后你可以通过在 XAML 元素上指定**“x:Uid”**属性来使用标记中的字符串。 请参阅[快速入门：使用字符串资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
+对于本地化字符串，你可以在 UWP 应用项目中重复使用 Windows Phone Silverlight 项目中的 .resx 文件。 复制文件，将其添加到项目，并将其重命名为 Resources.resw，以便查找机制默认找到它。 将**“生成操作”**设置为**“PRIResource”**并将**“复制到输出目录”**设置为**“不要复制”**。 然后你可以通过在 XAML 元素上指定**“x:Uid”**属性来使用标记中的字符串。 请参阅[快速入门：使用字符串资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
 Windows Phone Silverlight 应用使用 **CultureInfo** 类帮助实现应用全球化。 UWP 应用使用 MRT（现代资源技术），此技术支持在运行时和在 Visual Studio 设计图面中动态加载应用资源（本地化、比例和主题）。 有关详细信息，请参阅[文件、数据和全球化指南](https://msdn.microsoft.com/library/windows/apps/dn611859)。
 
@@ -395,6 +395,6 @@ Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -1,43 +1,43 @@
 ---
 author: DBirtolo
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
-title: Use the accelerometer
-description: Learn how to use the accelerometer to respond to user movement.
+title: "使用加速计"
+description: "了解如何使用加速计响应用户移动。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
+ms.openlocfilehash: f1ec749d7bec245632f1998ac5cc94b9bfcad533
 
 ---
-# Use the accelerometer
+# 使用加速计
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Important APIs **
+** 重要的 API **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[在商业发行之前会发生实质性修改的、与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-Learn how to use the accelerometer to respond to user movement.
+了解如何使用加速计响应用户移动。
 
-A simple game app relies on a single sensor, the accelerometer, as an input device. These apps typically use only one or two axes for input; but they may also use the shake event as another input source.
+一个简单的游戏应用依赖于单个传感器，即加速计，作为输入设备。 这些应用通常只使用单轴或双轴进行输入，但它们也会将抖动事件作为另一个输入源使用。
 
-## Prerequisites
+## 先决条件
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
 
-The device or emulator that you're using must support an accelerometer.
+你使用的设备或仿真器必须支持加速计。
 
-## Create a simple accelerometer app
+## 创建简单的加速计应用
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple accelerometer application from scratch. The following subsection explains the app you have just created.
+此部分划分为两个子部分。 第一个子部分将指导你完成从头开始创建简单的加速计应用程序所需的步骤。 以下子部分介绍你刚创建的应用。
 
-### Instructions
+### 说明
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   创建新项目，从“Visual C#”****项目模板中选择“空白应用(通用 Windows)”****。
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
 ```csharp
     using System;
@@ -102,9 +102,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **AccelerometerCS**, you'd replace `namespace App1` with `namespace AccelerometerCS`.
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“AccelerometerCS”**的项目，则将 `namespace App1` 替换为 `namespace AccelerometerCS`。
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
 ```xml
         <Page
@@ -128,25 +128,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **AccelerometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="AccelerometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:AccelerometerCS"`.
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“AccelerometerCS”**的项目，则将 `x:Class="App1.MainPage"` 替换为 `x:Class="AccelerometerCS.MainPage"`。 你还应当使用 `xmlns:local="using:AccelerometerCS"` 替换 `xmlns:local="using:App1"`。
 
--   Press F5 or select **Debug** &gt; **Start Debugging** to build, deploy, and run the app.
+-   按 F5 或依次选择“调试”****&gt;“开始调试”****来生成、部署并运行应用。
 
-Once the app is running, you can change the accelerometer values by moving the device or using the emulator tools.
+应用运行后，你可以通过移动设备或使用仿真器工具更改加速计的值。
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** &gt; **Stop Debugging** to stop the app.
+-   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”****&gt;“停止调试”****来停止应用。
 
-### Explanation
+### 描述
 
-The previous example demonstrates how little code you'll need to write in order to integrate accelerometer input in your app.
+前面的示例演示了，只需要写入极少的代码即可将加速计输入集成到你的应用。
 
-The app establishes a connection with the default accelerometer in the **MainPage** method.
+该应用在 **MainPage** 方法中建立了与默认加速计的连接。
 
 ```csharp
 _accelerometer = Accelerometer.GetDefault();
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+该应用在 **MainPage** 方法中建立了报告间隔。 此代码检索设备支持的最短间隔，并将它与所请求的间隔 16 毫秒（大约 60-Hz 刷新率）进行比较。 如果支持的最短间隔大于所请求的间隔，则此代码会将报告间隔设置为所支持的最短间隔。 否则，它会将报告间隔设置为所请求的间隔。
 
 ```csharp
 uint minReportInterval = _accelerometer.MinimumReportInterval;
@@ -154,27 +154,27 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _accelerometer.ReportInterval = reportInterval;
 ```
 
-The new accelerometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+在 **ReadingChanged** 方法中捕获新的加速计数据。 每当传感器驱动程序从传感器接收到新数据时，它都将使用此事件处理程序将该值传递到你的应用中。 应用在下行中注册此事件处理程序。
 
 ```csharp
 _accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer, 
 AccelerometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+这些新值写入项目 XAML 中的 TextBlock 中。
 
 ```xml
 <TextBlock x:Name="txtXAxis" HorizontalAlignment="Left" Height="15" Margin="70,16,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="61" Foreground="#FFF2F2F2"/>
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## Related topics
+## 相关主题
 
-* [Accelerometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241377)
-
-
+* [加速计示例](http://go.microsoft.com/fwlink/p/?linkid=241377)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

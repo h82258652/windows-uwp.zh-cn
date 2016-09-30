@@ -1,54 +1,54 @@
 ---
 author: jnHs
-Description: Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Windows Store and other sites to showcase your app and help it get more attention.
-title: Make your app easier to promote
+Description: "让你的应用得到关注！ 除了尽量改进你的应用，你还可以采取一些措施来让 Windows 应用商店和其他站点轻松展示你的应用，并帮助该应用获得更多关注。"
+title: "使你的应用更易于推广"
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: aa35a1e46c5fea9bb64602af3842735f1914b039
+ms.openlocfilehash: e0f993d703ccd3a4509de4350f07d50564893763
 
 ---
 
-# Make your app easier to promote
+# 使你的应用更易于推广
 
 
-Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Windows Store and other sites to showcase your app and help it get more attention.
+让你的应用得到关注！ 除了尽量改进你的应用，你还可以采取一些措施来让 Windows 应用商店和其他站点轻松展示你的应用，并帮助该应用获得更多关注。
 
-## Windows Store requirements for featured apps
+## Windows 应用商店针对特别推荐的应用的要求
 
 
-The Windows Store showcases different apps grouped by category or theme. There are too many great apps to feature them all, and there is no way to guarantee your app will get selected. However, there are some things you can do to make sure your app is eligible to be considered for promotion in the Store.
+Windows 应用商店中展示了各种应用，按类别或主题分组。 好的应用实在太多，因此无法全部都做特别推荐，也没有办法保证你的应用会被选中。 然而，你也可以采取一些措施，以确保你的应用在应用商店中有资格获得促销推广的机会。
 
--   **Include great screenshots and promo images**
+-   **包括出色的屏幕截图和促销图像**
 
-    When featuring apps, the Windows Store may use your [app screenshots and images](app-screenshots-and-images.md) in various layouts. Be sure to design great screenshots that represent your app, and make sure the first screenshot is especially representative and appealing.
+    在使应用具有特色时，Windows 应用商店可能会在各种布局中使用你的[应用屏幕截图和图像](app-screenshots-and-images.md)。 请确保设计代表你的应用的出色屏幕截图，并确保第一张屏幕截图特别具有代表性和吸引力。
 
-    To maximize your app's chance of getting featured in the Store, you'll also need to provide at least one promotional image in your app's submission. Providing the 2400 x 1200 pixel size is most important, as we can use that image in a number of ways in the Store for Windows 10 customers. Keep in mind that we may crop this image in some layouts, so the center of the picture should contain your app's key visual elements and branding/logo. You may also want to provide additional image sizes if your app runs on earlier OS versions. For more details and guidelines, see [Promotional artwork](app-screenshots-and-images.md#promotional-artwork).
+    若要在应用商店中最大限度地获取机会来使你的应用具有特色，你还将需要在应用的提交中至少提供一张促销图像。 提供 2400 x 1200 像素大小最重要，因为我们可以采用多种方式在面向 Windows 10 客户的应用商店中使用该图像。 请记住，我们可能会采用某些布局来裁剪此图像，以便图片中心可以包含你的应用的关键视觉元素和品牌/徽标。 如果你的应用在较早的操作系统版本上运行，你可能还需要提供其他图像大小。 有关详细信息和指南，请参阅[促销插图](app-screenshots-and-images.md#promotional-artwork)。
 
--   **Build one version of your app, not one free version and a distinct paid version**
+-   **只为你的应用生成一个版本，而不会生成一个免费版本和另外一个付费版本**
 
-    Rather than publishing separate free and paid versions of the same app, offer a free trial version for your paid app, or make it a free app with in-app purchases available to add enhanced functionality. This way your app will have one listing that works for all users: those only interested in free downloads, and those who might be ready to make a purchase.
+    与其分别发布同一应用的免费版本和付费版本，不如为付费应用提供免费试用版，或使付费应用成为免费应用，提供应用内购买来添加增强功能。 这样你的应用将具有一个适用于所有用户的列表：既包括只对免费下载感兴趣的用户，也包括可能准备购买应用的用户。
 
--   **Enable filters for apps containing 16+ and 18+ content**
+-   **针对包含 16+ 和 18+ 内容的应用启用筛选器**
 
-    In most cases the Windows Store doesn't consider featuring apps with 16+ content, unless the app uses content filtering so that any content that is only appropriate for age 16+ is hidden from users until they explicitly choose to show it. The content filter should be turned on by default, it should be password protected, and it should be available in the app itself (not on a separate website).
+    在大多数情况下，Windows 应用商店不会考虑对含有 16+ 内容的应用进行特别推荐，除非该应用使用内容筛选功能，以便将只适用于年满 16 岁人士的所有内容对用户隐藏，直到他们明确地选择显示该内容。 默认情况下，内容筛选器应处于打开状态，它应该受密码保护，并且应当由应用本身提供（而不是在某个单独的网站上）。
 
--   **List your app in all relevant markets and languages**
+-   **在所有相关市场用所有相关语言列出你的应用**
 
-    Submitting your app to all relevant [markets](define-pricing-and-market-selection.md) can help you get broader coverage for your app. Of course, you'll want to make sure that your app is appropriate and meets all local guidelines for the markets you choose. Localizing your app's content into as many [languages](supported-languages.md) as possible can also help.
+    向所有相关[市场](define-pricing-and-market-selection.md)提交应用可以帮助你的应用获得更广泛的覆盖范围。 当然，你会想要确保你的应用正合适，并且符合所选市场的所有当地指南。 将应用内容本地化为尽可能多的[语言](supported-languages.md)也有帮助。
 
-Following these guidelines will also make it easier for others to promote your app in reviews, social media, or other venues.
-
- 
+遵循这些指南也更易于其他人在评论、社交媒体或其他场合中推广你的应用。
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
