@@ -1,30 +1,34 @@
 ---
 author: mcleanbyron
 ms.assetid: 9630AF6D-6887-4BE3-A3CB-D058F275B58F
-description: Learn how to use the Windows.Services.Store namespace to get license info for the current app and its add-ons.
-title: Get license info for your app and add-ons
+description: "了解如何使用 Windows.Services.Store 命名空间获取当前应用及其加载项的许可证信息。"
+title: "获取应用和加载项的许可证信息"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 5cd43b951cededad24bf4e88156634906e5c5165
+
 ---
 
-# Get license info for your app and add-ons
+# 获取应用和加载项的许可证信息
 
-Apps that target Windows 10, version 1607 or later can use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to get license info for the current app its add-ons (also known as in-app products or IAPs). For example, you can use this info to determine if the licenses for the app or its add-ons are active, or if they are trial licenses.
+面向 Windows 10 版本 1607 或更高版本的应用可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的方法，获取当前应用及其加载项（也称为应用内产品或 IAP）的许可证信息。 例如，你可以使用此信息来确定应用或其加载项的许可证是否处于活动状态，或确定它们是否是试用许可证。
 
->**Note** This article is applicable to apps that target Windows 10, version 1607 or later. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace. For more information, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+>**注意**&nbsp;&nbsp;本文适用于面向 Windows 10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
-## Prerequisites
+## 先决条件
 
-This example has the following prerequisites:
-* A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607 or later.
-* You have created an app in the Windows Dev Center dashboard, and this app is published and available in the Store. This can be an app that you want to release to customers, or it can be a basic app that meets minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements that you are using for testing purposes only. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
+本示例有以下先决条件：
+* 适用于面向 Windows 10 版本 1607 或更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
+* 你已在 Windows 开发人员中心仪表板中创建了一个应用，并且该应用已发布，并在应用商店中上架。 该应用可以是你想要发布给客户的应用，也可以是符合 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)最低要求、仅用于测试目的的基本应用。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
 
-The code in this example assumes:
-* The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.
-* The code file has a **using** statement for the **Windows.Services.Store** namespace.
-* The app is a single-user app that runs only in the context of the user that launched the app. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).
+此示例中的代码假设：
+* 代码在含有 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx)（名为 ```workingProgressRing```）和 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)（名为 ```textBlock```）的 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 上下文中运行。 这些对象分别用于指示是否正在进行异步操作和显示输出消息。
+* 代码文件有一个适用于 **Windows.Services.Store** 命名空间的 **using** 语句。
+* 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md#api_intro)。
 
-## Code example
+## 代码示例
 
-To get license info for the current app and its add-ons, use the [GetAppLicenseAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getapplicenseasync.aspx) method. This is an asynchronous method that returns a   [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) object that provides license info. The [AddOnLicenses](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) property provides access to info about the add-on licenses for the app.
+若要获取当前应用及其加载项的许可证信息，请使用 [GetAppLicenseAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getapplicenseasync.aspx) 方法。 这是一种异步方法，可返回含有许可证信息的 [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) 对象。 借助 [AddOnLicenses](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 属性，可访问有关应用的加载项许可证的信息。
 
 ```csharp
 private StoreContext context = null;
@@ -49,7 +53,7 @@ public async void GetLicenseInfo()
     // Use members of the appLicense object to access license info...
 
     // Access the add on licenses for add-ons for this app.
-    foreach (var item in appLicense.AddOnLicenses)
+    foreach (KeyValuePair<string, StoreLicense> item in appLicense.AddOnLicenses)
     {
         StoreLicense addOnLicense = item.Value;
         // Use members of the addOnLicense object to access license info
@@ -58,11 +62,19 @@ public async void GetLicenseInfo()
 }
 ```
 
+有关完整的示例应用程序，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
-## Related topics
+## 相关主题
 
-* [In-app purchases and trials](in-app-purchases-and-trials.md)
-* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
-* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
-* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
+* [应用内购买和试用](in-app-purchases-and-trials.md)
+* [获取应用和加载项的产品信息](get-product-info-for-apps-and-add-ons.md)
+* [支持应用内购买应用和加载项](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [支持购买易耗型加载项](enable-consumable-add-on-purchases.md)
+* [实现应用的试用版](implement-a-trial-version-of-your-app.md)
+* [应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

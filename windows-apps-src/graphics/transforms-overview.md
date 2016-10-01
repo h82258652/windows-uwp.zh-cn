@@ -5,7 +5,7 @@ title: "转换概述"
 description: "了解如何通过更改 UI 中元素的相对坐标系，在 Windows 运行时&amp;\\#160;API 中使用转换。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 9e01a64f02d8a36e72c31263400130d0d808eb1b
+ms.openlocfilehash: 6534e7337ecaa081d0bb05335425f5b58557ab32
 
 ---
 
@@ -139,6 +139,6 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

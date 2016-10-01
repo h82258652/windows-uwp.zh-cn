@@ -3,23 +3,31 @@ author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
-ms.openlocfilehash: c7107599529d5af5b118a46cb065106f08afe113
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4ce59951387542124bcea1cbd0f636c0e44e0d1e
 
 ---
-
 # 应用栏和命令栏
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 命令栏（也称为“应用栏”）使用户能够轻松访问你的应用的最常用操作，还可用于显示特定于用户上下文的命令或选项，例如照片选择或绘图模式。 它们还可用于在应用页面或应用的各个部分之间导航。 命令栏可以与任何导航模式一起使用。
 
 ![带有图标的命令栏示例](images/controls_appbar_icons.png)
 
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx"><strong>CommandBar</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx"><strong>AppBarButton</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx"><strong>AppBarToggleButton</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx"><strong>AppBarSeparator</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
--   [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)
--   [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)
--   [**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)
--   [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
 ## 这是正确的控件吗？
 
@@ -213,7 +221,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->**注意** &nbsp;&nbsp;编辑命令的实现不在本示例范围内。 有关详细信息，请参阅 [RichEditBox](rich-edit-box.md) 文章。
+>**注意**&nbsp;&nbsp;编辑命令的实现不在本示例范围内。 有关详细信息，请参阅 [RichEditBox](rich-edit-box.md) 文章。
 
 尽管最小和隐藏模式在某些情况下很有用，但请记住，隐藏所有操作可能会使用户困惑。
 
@@ -279,14 +287,14 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 ## 相关文章
 
-**对于设计人员** 
-           [UWP 应用的命令设计基础知识](../layout/commanding-basics.md)
+**对于设计人员**
+[UWP 应用的命令设计基础知识](../layout/commanding-basics.md)
 
-**对于开发人员 (XAML)** 
-           [ **CommandBar** ](https://msdn.microsoft.com/library/windows/apps/dn279427)
+**对于开发人员 (XAML)**
+[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,11 +1,11 @@
 ---
 author: TylerMSFT
 title: "通用 Windows 平台 (UWP) 应用指南"
-description: "在本指南中，了解有关可跨多种设备运行的通用 Windows 平台 (UWP) 应用的信息。"
+description: "了解可跨多种设备运行的通用 Windows 平台 (UWP) 应用。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 4ad8dc5883b7edafa2c2579d3733eafba0b9cc1f
-ms.openlocfilehash: 8f4e906c9f1c685a5f6aeebd5fe0ebcc96ff9a7c
+ms.sourcegitcommit: 2df873ad451e2bb1196a1ce42e3fcd40f8c3ac8e
+ms.openlocfilehash: 925db2c5242eb49229f41298f1db4e2653f3499d
 
 ---
 
@@ -34,7 +34,7 @@ Windows10 引入了通用 Windows 平台 (UWP)，这进一步推动了 Windows �
 
 Windows 8.1 和 Windows Phone 8.1 应用面向以下任一操作系统 (OS)：Window 或 Windows Phone。 在 Windows 10 中，你将不再面向某一操作系统，而是让你的应用改为面向一个或多个设备系列。 设备系列可标识在其中的设备上所需的 API、系统特性和行为。 它还用于确定可从应用商店安装你的应用的设备集。 下面是设备系列的层次结构。
 
-![设备系列](images/devicefamilytree.png)
+![设备系列](images/device-family-tree.png)
 
 设备系列是汇总在一起的 API 集，具有给定名称和版本号。 设备系列是操作系统的基础构件。 运行桌面操作系统的电脑，基于桌面设备系列。 运行移动操作系统的手机和平板电脑等，基于移动设备系列。 以此类推。
 
@@ -51,6 +51,8 @@ Windows 8.1 和 Windows Phone 8.1 应用面向以下任一操作系统 (OS)：Wi
 -   可从应用商店安装你的应用的设备集（以及因此你需要考虑的外形规格）。
 
 选择设备系列将产生以下两个主要的结果：可以无条件地由应用调用的 API 图面，以及应用可访问的设备数目。 这两个因素涉及到取舍且成反比关系。 例如，UWP 应用是专门面向通用设备系列的应用，所以可供所有设备使用。 面向通用设备系列的应用可以假定仅存在通用设备系列中的 API（因为这是其目标对象）。 其他 API 必须按条件进行调用。 此外，因为此类应用可在多种设备上运行，所以它还必须具备高度自适应 UI 和综合性的输入功能。 Windows 移动应用是专门面向移动设备系列的应用，并且可用于其操作系统基于移动设备系列的设备（这包括手机、平板电脑以及类似的设备）。 移动设备系列应用可以假定存在移动设备系列中的所有 API，并且其 UI 必须具有适量的自适应性。 面向 IoT 设备系列的应用只能安装在 IoT 设备上，并且可以假定存在 IoT 设备系列中的所有 API。 该应用可能在很大程度上特定于其 UI 和输入功能，正如你知道的那样，它仅在特定类型的设备上运行。
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
 下面是一些注意事项，可帮助你确定要面向的设备系列：
 
@@ -280,12 +282,8 @@ Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外�
 
 若要了解如何在 Windows 应用商店中提交应用以供发布，请参阅[使用统一的 Windows 开发人员中心仪表板](../publish/using-the-windows-dev-center-dashboard.md)。
 
- 
-
- 
 
 
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

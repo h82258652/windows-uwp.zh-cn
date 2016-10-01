@@ -1,169 +1,179 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: This article shows you how to play media in your Universal Windows app with MediaPlayer.
-title: Play audio and video with MediaPlayer
+description: "本文介绍了如何在通用 Windows 应用中使用 MediaPlayer 播放媒体。"
+title: "使用 MediaPlayer 播放音频和视频"
+translationtype: Human Translation
+ms.sourcegitcommit: 3d6f79ea55718d988415557bc4ac9a1f746f9053
+ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
+
 ---
 
-# Play audio and video with MediaPlayer
+# 使用 MediaPlayer 播放音频和视频
 
-This article shows you how to play media in your Universal Windows app using the  [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) class. With Windows 10, version 1607, significant improvements were made to the media playback APIs, including a simplified single-process design for background audio, automatic integration with the System Media Transport Controls (SMTC), the ability to synchronize multiple media players, the ability to a Windows.UI.Composition surface, and an easy interface for creating and scheduling media breaks in your content. To take advantage of these improvements, the recommended best practice for playing media is to use the **MediaPlayer** class instead of **MediaElement** for media playback. The lightweight XAML control, [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement), has been introduced to allow you render media content in a XAML page. Many of the playback control and status APIs provided by **MediaElement** are now available through the new [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) object. **MediaElement** continues to function to support backwards compatibility, but no additional features will be added to this class.
+本文介绍了如何在通用 Windows 应用中使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类播放媒体。 Windows 10 版本 1607 对媒体播放 API 进行了显著改进，包括简化了后台音频的单进程设计、自动与系统媒体传输控件 (SMTC) 集成、能够同步多个媒体播放器、支持 Windows.UI.Composition 表面，并且提供用于创建和计划内容的媒体中断的简单界面。 若要充分利用这些改进功能，推荐用于播放媒体的最佳做法是将 **MediaPlayer** 类（而非 **MediaElement**）用于媒体播放。 引入了轻型 XAML 控件 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement)，该控件允许你在 XAML 页面中呈现媒体内容。 **MediaElement** 提供的许多播放控件和状态 API 现在都可通过新 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 对象获取。 **MediaElement** 将继续运行以支持向后兼容，但不会向此类添加其他功能。
 
-This article will walk you through the **MediaPlayer** features that a typical media playback app will use. Note that **MediaPlayer** uses the [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) class as a container for all media items. This class allows you to load and play media from many different sources, including local files, memory streams, and network sources, all using the same interface. There are also higher-level classes that work with **MediaSource**, such as [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) and [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList), that provide more advanced features like playlists and the ability to manage media sources with multiple audio, video, and metadata tracks. For more information on **MediaSource** and related APIs, see [Media items, playlists, and tracks](media-playback-with-mediasource.md).
+本文将向你介绍典型的媒体播放应用所使用的 **MediaPlayer** 功能。 请注意，**MediaPlayer** 将 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) 类用作所有媒体项目的容器。 此类允许你加载并播放来自许多不同源的媒体，这些来源包括本地文件、内存流和网络源等，但使用的都是同一界面。 此外，还有更高级的类能够与 **MediaSource** 一同使用，例如 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) 和 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList)，这些类提供更加高级的功能，例如播放列表，以及通过音频、视频和元数据多轨道管理媒体源的功能。 有关 **MediaSource** 和相关 API 的详细信息，请参阅[媒体项、播放列表和曲目](media-playback-with-mediasource.md)。
 
 
-##Play a media file with MediaPlayer  
-Basic media playback with **MediaPlayer** is very simple to implement. First, create a new instance of the **MediaPlayer** class. Your app can have multiple **MediaPlayer** instances active at once. Next, set the [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) property of the player to an object that implements the [**IMediaPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.IMediaPlaybackSource), such as a [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), a [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem), or a [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList). In this example, a **MediaSource** is created from a file in the app's local storage, and then a **MediaPlaybackItem** is created from the source and then assigned to the player's **Source** property.
+##使用 MediaPlayer 播放媒体文件  
+通过 **MediaPlayer** 进行基本媒体播放非常易于实现。 首先，创建 **MediaPlayer** 类的新实例。 应用可以同时使用多个 **MediaPlayer** 实例。 接下来，将播放器的 [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) 属性设为实现 [**IMediaPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.IMediaPlaybackSource) 的对象，例如 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource)、[**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) 或 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList)。 在本例中，**MediaSource** 创建于应用本地存储中的文件，**MediaPlaybackItem** 创建于源，随后分配到播放器的 **Source** 属性。
 
-Unlike **MediaElement**, **MediaPlayer** does not automatically begin playback by default. You can start playback by calling [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play), by setting the [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AutoPlay) property to true, or waiting for the user to initiate playback with the built-in media controls.
+与 **MediaElement** 不同，默认情况下，**MediaPlayer** 不会自动开始播放。 可以通过调用 [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play)、将 [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AutoPlay) 属性设为 True，或者等到用户使用内置媒体控件启动播放时开始播放。
 
 [!code-cs[SimpleFilePlayback](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSimpleFilePlayback)]
 
-When your app is done using a **MediaPlayer**, you should call the [**Close**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Close) method (projected to **Dispose** in C#) to clean up the resources used by the player.
+当应用结束使用 **MediaPlayer** 后，应该调用 [**Close**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Close) 方法（对应 C# 中的 **Dispose**）清理播放器使用的资源。
 
 [!code-cs[CloseMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCloseMediaPlayer)]
 
-##Use MediaPlayerElement to render video in XAML
-You can play media in a **MediaPlayer** without displaying it in XAML, but many media playback apps will want to render the media in a XAML page. To do this, use the lightweight [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) control. Like **MediaElement**, **MediaPlayerElement** allows you to specify whether the built-in transport controls should be shown.
+##使用 MediaPlayerElement 在 XAML 中呈现视频
+可以在 **MediaPlayer** 中播放媒体，无需在 XAML 中显示，但是许多媒体播放应用会希望在 XAML 页面中呈现媒体。 为此，请使用轻型 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) 控件。 与 **MediaElement** 一样，**MediaPlayerElement** 支持指定是否应显示内置传输控件。
 
 [!code-xml[MediaPlayerElementXAML](./code/MediaPlayer_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
-You can set the **MediaPlayer** instance that the element is bound to by calling [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764).
+可以通过调用 [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764)，设置绑定元素的 **MediaPlayer** 实例。
 
 [!code-cs[SetMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetMediaPlayer)]
 
-You can also set the playback source on the **MediaPlayerElement** and the element will automatically create a new **MediaPlayer** instance that you can access using the [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.MediaPlayer) property.
+还可以在 **MediaPlayerElement** 上设置播放源，元素将自动创建可以使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.MediaPlayer) 属性访问的新 **MediaPlayer** 实例。
 
 [!code-cs[GetPlayerFromElement](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetGetPlayerFromElement)]
 
-##Common MediaPlayer tasks
-This section shows you how to use some of the features of the **MediaPlayer**.
+##MediaPlayer 常见任务
+本部分介绍如何使用 **MediaPlayer** 的一些功能。
 
-###Set the audio category
-Set the [**AudioCategory**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AudioCategory) property of a **MediaPlayer** to one of the values of the [**MediaPlayerAudioCategory**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerAudioCategory) enumeration to let the system know what kind of media you are playing. Games should categorize their music streams as **GameMedia** so that game music mutes automatically if another application plays music in the background. Music or video applications should categorize their streams as **Media** or **Movie** so they will take priority over **GameMedia** streams.
+###设置音频类别
+将 **MediaPlayer** 的 [**AudioCategory**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AudioCategory) 属性设为 [**MediaPlayerAudioCategory**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerAudioCategory) 枚举的其中一个值，让系统知道播放的媒体种类。 游戏应该将其音乐流归类为 **GameMedia**，以使游戏音乐在其他应用程序在后台播放音乐时自动静音。 音乐或视频应用程序应该将它们的流归类为 **Media** 或 **Movie**，以使它们能够优先于 **GameMedia** 流。
 
 [!code-cs[SetAudioCategory](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetAudioCategory)]
 
-###Output to a specific audio endpoint
-By default, the audio output from a **MediaPlayer** is routed to the default audio endpoint for the system, but you can specify a specific audio endpoint that the **MediaPlayer** should use for output. In the example below, [**MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Devices.MediaDevice.GetAudioRenderSelector) returns a string that uniquely idenfies the audio render category of devices. Next, the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceInformation) method [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceInformation.FindAllAsync) is called to get a list of all available devices of the selected type. You may programmatically determine which device you want to use or add the returned devices to a [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ComboBox) to allow the user to select a device.
+###输出到特定音频终结点
+默认情况下，**MediaPlayer** 的音频输出路由到系统的默认音频终结点，但是可以指定 **MediaPlayer** 应该用于输出的特定音频终结点。 在以下示例中，[**MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Devices.MediaDevice.GetAudioRenderSelector) 返回了唯一标识设备音频呈现类别的字符串。 接下来，调用 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceInformation) 方法 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceInformation.FindAllAsync) 获取所选类型的所有可用设备列表。 可以通过编程方式确定希望使用的设备，或者将返回的设备添加到 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ComboBox) 以允许用户选择设备。
 
 [!code-cs[SetAudioEndpointEnumerate](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetAudioEndpointEnumerate)]
 
-In the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.Selector.SelectionChanged) event for the devices combo box, the [**AudioDevice**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AudioDevice) property of the **MediaPlayer** is set to the selected device, which was stored in the [**Tag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.Tag) property of the **ComboBoxItem**.
+在用于设备组合框的 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.Selector.SelectionChanged) 事件中，**MediaPlayer** 的 [**AudioDevice**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AudioDevice) 属性设置为所选设备，该属性存储在 **ComboBoxItem** 的 [**Tag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.Tag) 属性中。
 
 [!code-cs[SetAudioEndpontSelectionChanged](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetAudioEndpontSelectionChanged)]
 
-###Playback session
-As described previously in this article, many of the functions that are exposed by the **MediaElement** class have been moved to the [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) class. This includes information about the playback state of the player, such as the current playback position, whether the player is paused or playing, and the current playback speed. **MediaPlaybackSession** also provides several events to notify you when the state changes, including the current buffering and download status of content being played and the natural size and aspect ratio of the currently playing video content.
+###播放会话
+如前文所述，许多由 **MediaElement** 类公开的函数都已移到 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 类。 这包括有关播放器播放状态的信息，例如当前播放位置、播放器是已暂停还是正在播放，以及当前播放速度。 **MediaPlaybackSession** 还会提供几个事件，用于在状态更改时通知用户，这些更改包括所播放内容的当前缓冲和下载状态，以及当前播放视频内容的自然大小和纵横比。
 
-The following example shows you how to implement a button click handler that skips 10 seconds forward in the content. First, the **MediaPlaybackSession** object for the player is retrieved with the [**PlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.PlaybackSession) property. Next the [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.Position) property is set to the current playback position plus 10 seconds.
+以下示例演示了如何实现向前跳过 10 秒内容的按钮单击处理程序。 首先，使用 [**PlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.PlaybackSession) 属性检索播放器的 **MediaPlaybackSession** 对象。 接下来，将 [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.Position) 属性设置为当前播放位置向后 10 秒的值。
 
 [!code-cs[SkipForwardClick](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSkipForwardClick)]
 
-The next example illustrates using a toggle button to toggle between normal playback speed and 2X speed by setting the [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.PlaybackRate) property of the session.
+下一个示例介绍通过设置会话的 [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.PlaybackRate) 属性，使用切换按钮在正常播放速度和 2 倍播放速度之间切换。
 
 [!code-cs[SpeedChecked](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSpeedChecked)]
 
-###Pinch and zoom video
-**MediaPlayer** allows you to specify the source rectangle within video content that should be rendered, effectively allowing you to zoom into video. The rectangle you specify is relative to a normalized rectangle (0,0,1,1) where 0,0 is the upper left hand of the frame and 1,1 specifies the full width and height of the frame. So, for example, to set the zoom rectangle so that the top-right quadrant of the video is rendered, you would specify the rectangle (.5,0,.5,.5).  It is important that you check your values to make sure that your source rectangle is within the (0,0,1,1) normalized rectangle. Attempting to set a value outside of this range will cause an exception to be thrown.
+###使用收缩手势缩放视频
+**MediaPlayer** 支持在视频内容中指定应该呈现的源矩形，这可有效地支持视频放大。 所指定的矩形与规范化矩形 (0,0,1,1) 成比例，其中 0,0 是帧的左上角，1,1 指定帧的全宽和全高。 因此，如果要设置缩放矩形以呈现视频的右上角象限，需指定矩形 (.5,0,.5,.5)。  请务必检查这些值，确保源矩形位于 (0,0,1,1) 规范化矩形内。 尝试设置超出此范围的值将引发异常。
 
-To implement pinch and zoom using multi-touch gestures, you must first specify which gestures you want to support. In this example, scale and translate gestures are requested. The [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.ManipulationDelta) event is raised when one of the subscribed gestures occurs. The [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DoubleTapped) event will be used to reset the zoom to the full frame. 
+若要使用多点触控手势实现收缩以缩放，必须先指定要支持的手势。 在本例中，请求了缩放和平移手势。 发生一个订阅手势即会引发 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.ManipulationDelta) 事件。 [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DoubleTapped) 事件用于将缩放重置为完整的帧。 
 
 [!code-cs[RegisterPinchZoomEvents](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetRegisterPinchZoomEvents)]
 
-Next, declare a **Rect** object that will store the current zoom source rectangle.
+接下来，声明存储当前缩放源矩形的 **Rect** 对象。
 
 [!code-cs[DeclareSourceRect](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareSourceRect)]
 
-The **ManipulationDelta** handler adjusts either the scale or the translation of the zoom rectangle. If the delta scale value is not 1, it means that the user performed a pinch gesture. If the value is greater than 1, the source rectangle should be made smaller to zoom into the content. If the value is less than 1, then the source rectangle should be made bigger to zoom out. Before setting the new scale values, the resulting rectangle is checked to make sure it lies entirely within the (0,0,1,1) limits.
+**ManipulationDelta** 处理程序调整缩放矩形的缩放或平移。 如果增量缩放值不为 1，则意味着用户执行了收缩手势。 如果值大于 1，源矩形应变小以放大内容。 如果值小于 1，源矩形应变大以缩小内容。 在设置新缩放值前，请检查生成的矩形，确保它完全处于 (0,0,1,1) 限定范围内。
 
-If the scale value is 1, then the translation gesture is handled. The rectangle is simply translated by the number of pixels in gesture divided by the width and height of the control. Again, the resulting rectangle is checked to make sure it lies within the (0,0,1,1) bounds.
+如果缩放值为 1，则处理平移手势。 矩形仅根据手势的像素数除以控件的宽度和高度所得结果平移。 同样，检查生成的矩形，确保它位于 (0,0,1,1) 边界内。
 
-Finally, the [**NormalizedSourceRect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NormalizedSourceRect) of the **MediaPlaybackSession** is set to the newly adjusted rectangle, specifying the area within the video frame that should be rendered.
+最后，将 **MediaPlaybackSession** 的 [**NormalizedSourceRect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NormalizedSourceRect) 设置为新调整的矩形，从而指定视频帧中应该呈现的区域。
 
 [!code-cs[ManipulationDelta](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-In the [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DoubleTapped) event handler, the source rectangle is set back to (0,0,1,1) to cause the entire video frame to be rendered.
+在 [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DoubleTapped) 事件处理程序中，源矩形重新设为 (0,0,1,1)，以呈现整个视频帧。
 
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
-		
-##Use MediaPlayerSurface to render video to a Windows.UI.Composition surface
-Starting with Windows 10, version 1607, you can use **MediaPlayer** to render video to an to render video to an [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.ICompositionSurface), which allows the player to interoperate with the APIs in the [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition) namespace. The composition framework allows you to work with graphics in the visual layer between XAML and the low-level DirectX graphics APIs. This enables scenarios like rendering video into any XAML control. For more information on using the composition APIs, see [Visual Layer](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer).
+        
+##使用 MediaPlayerSurface 将视频呈现到 Windows.UI.Composition 界面
+从 Windows 10 版本 1607 开始，可以使用 **MediaPlayer** 将视频呈现到 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.ICompositionSurface)，这可以支持播放器与 [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition) 命名空间中的 API 进行互操作。 合成框架允许你在 XAML 与低级别 DirectX 图形 API 之间的可视化层处理图形。 这可以使任意 XAML 控件都能够执行呈现视频等方案。 有关使用合成 API 的详细信息，请参阅[可视化层](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)。
 
-The following example illustrates how to render video player content onto a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Canvas) control. The media player-specific calls in this example are [**SetSurfaceSize**](https://msdn.microsoft.com/library/windows/apps/mt489968) and [**GetSurface**](https://msdn.microsoft.com/library/windows/apps/mt489963). **SetSurfaceSize** tells the system the size of the buffer that should be allocated for rendering content. **GetSurface** takes a [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.Compositor) as an arguemnt and retreives an instance of the [**MediaPlayerSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerSurface) class. This class provides access to the **MediaPlayer** and **Compositor** used to create the surface and exposes the surface itself through the [**CompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerSurface.CompositionSurface) property.
+以下示例介绍了如何将视频播放器内容呈现到 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Canvas) 控件。 本例中特定于媒体播放器的调用为 [**SetSurfaceSize**](https://msdn.microsoft.com/library/windows/apps/mt489968) 和 [**GetSurface**](https://msdn.microsoft.com/library/windows/apps/mt489963)。 **SetSurfaceSize** 告知系统为呈现内容应该分配的缓冲区大小。 **GetSurface** 将 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.Compositor) 视作参数，并且检索 [**MediaPlayerSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerSurface) 类的实例。 使用此类可以访问用于通过 [**CompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerSurface.CompositionSurface) 属性创建表面和公开表面自身的 **MediaPlayer** 和 **Compositor**。
 
-The rest of the code in this example creates a [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.SpriteVisual) to which the video is rendered and sets the size to the size of the canvas element that will display the visual. Next a [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.CompositionBrush) is created from the [**MediaPlayerSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerSurface) and assigned to the [**Brush**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.SpriteVisual.Brush) property of the visual. Next a [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.ContainerVisual) is created and the **SpriteVisual** is inserted at the top of its visual tree. Finally, [**SetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/mt608981) is called to assign the container visual to the **Canvas**.
+本例中的其余代码创建视频要呈现到的 [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.SpriteVisual)，还将大小设为显示视觉效果的画布元素大小。 接下来，从 [**MediaPlayerSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerSurface) 创建 [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.CompositionBrush)，并将其分配到视觉效果的 [**Brush**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.SpriteVisual.Brush) 属性。 然后，创建 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.ContainerVisual)，在它的可视树顶部插入 **SpriteVisual**。 最后，调用 [**SetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/mt608981)，将容器视觉效果分配到 **Canvas**。
 
 [!code-cs[Compositor](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCompositor)]
-		
-##Use MediaTimelineController to synchronize content across multiple players.
-As discussed previously in this article, your app can have several **MediaPlayer** objects active at a time. By default, each **MediaPlayer** you create operates independently. For some scenarios, such as synchronizing a commentary track to a video, you may want to synchronize the player state, playback position, and playback speed of multiple players. Starting with Windows 10, version 1607, you can implement this behavior by using the [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) class.
+        
+##使用 MediaTimelineController 跨多台播放器同步内容。
+如前文所述，应用可以同时使用多个 **MediaPlayer** 对象。 默认情况下，所创建的每个 **MediaPlayer** 都独立操作。 在某些情况下（例如同步视频的解说音轨），你可能希望同步多台播放器的状态、播放位置和播放速度。 从 Windows 10 版本 1607 开始，可以使用 [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) 类实现这种行为。
 
-###Implement playback controls
-The following example shows how to use a **MediaTimelineController** to control two instances of **MediaPlayer**. First, each instance of the **MediaPlayer** is instantiated and the **Source** is set to a media file. Next, a new **MediaTimelineController** is created. For each **MediaPlayer**, the [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) associated with each player is disabled by setting the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) property to false. And then then the [**TimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.TimelineController) property is set to the timeline controller object.
+###实现播放控件
+以下示例展示了如何使用 **MediaTimelineController** 控制 **MediaPlayer** 的两个实例。 首先，**MediaPlayer** 的每个实例均进行实例化，并且 **Source** 设置为媒体文件。 接下来，创建新 **MediaTimelineController**。 对于每个 **MediaPlayer**，将 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 属性设为 False 禁用与每台播放器关联的 [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager)。 然后，[**TimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.TimelineController) 属性设置为时间线控制器对象。
 
 [!code-cs[DeclareMediaTimelineController](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaTimelineController)]
 
 [!code-cs[SetTimelineController](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetTimelineController)]
 
-**Caution** The [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) provides automatic integration between **MediaPlayer** and the System Media Transport Controls (SMTC), but this automatic integration can't be used with media players that are controlled with a **MediaTimelineController**. Therefore you must disable the command manager for the media player before setting the player's timeline controller. Failure to do so will result in an exception being thrown with the following message: "Attaching Media Timeline Controller is blocked because of the current state of the object." For more information on media player integration with the SMTC, see [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md). If you are using a **MediaTimelineController** you can still control the SMTC manually. For more information, see [Manual control of the System Media Transport Controls](system-media-transport-controls.md).
+**警告** [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) 在 **MediaPlayer** 和系统媒体传输控件 (SMTC) 之间提供自动集成，但是这种自动集成无法和使用 **MediaTimelineController** 控制的媒体播放器一起使用。 因此，必须先禁用媒体播放器的命令管理器才能设置播放器的时间线控制器。 否则将引发异常，并且显示以下消息：“由于对象的当前状态，附加媒体时间线控制器的操作被阻止”。 有关媒体播放器与 SMTC 集成的详细信息，请参阅[与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)。 使用 **MediaTimelineController** 时仍然可以手动控制 SMTC。 有关详细信息，请参阅[手动控制系统媒体传输控件](system-media-transport-controls.md)。
 
-Once you have attached a **MediaTimelineController** to one or more media players, you can control the playback state by using the methods exposed by the controller. The following example calls [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController.Start) to begin playback of all associated media players at the beginning of the media.
+将 **MediaTimelineController** 附加到一个或多个媒体播放器后，可以通过使用控制器公开的方法控制播放状态。 以下示例调用 [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController.Start) 使所有关联的媒体播放器从媒体开头处开始播放。
 
 [!code-cs[PlayButtonClick](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetPlayButtonClick)]
 
-This example illustrates pausing and resuming all of the attached media players.
+本例介绍暂停并恢复所有附加的媒体播放器。
 
 [!code-cs[PauseButtonClick](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetPauseButtonClick)]
 
-To fast-forward all connected media players, set the playback speed to a value greater that 1.
+为了使所有连接的媒体播放器快进，请将播放速度设置为大于 1 的值。
 
 [!code-cs[FastForwardButtonClick](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetFastForwardButtonClick)]
 
-The next example shows how to use a **Slider** control to show the current playback position of the timeline controller relative to the duration of the content of one of the connected media players. First, a new **MediaSource** is created and a handler for the [**OpenOperationCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource.OpenOperationCompleted) of the media source is registered. 
+下一个示例介绍如何使用 **Slider** 控件显示时间线控制器的当前播放位置，该位置与某一个连接的媒体播放器播放的内容持续时间有关。 首先，创建新 **MediaSource**，并且为媒体源的 [**OpenOperationCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource.OpenOperationCompleted) 注册处理程序。 
 
 [!code-cs[CreateSourceWithOpenCompleted](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCreateSourceWithOpenCompleted)]
 
-The **OpenOperationCompleted** handler is used as an opportunity to discover the duration of the media source content. Once the duration is determined, the maximum value of the **Slider** control is set to the total number of seconds of the media item. The value is set inside a call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) to make sure it is run on the UI thread.
+使用 **OpenOperationCompleted** 处理程序有机会发现媒体源内容的持续时间。 确定持续时间后，**Slider** 控件的最大值设置为媒体项的总秒数。 此值在 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 调用中设置，以确保它在 UI 线程上运行。
 
 [!code-cs[DeclareDuration](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareDuration)]
 
 [!code-cs[OpenCompleted](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenCompleted)]
 
-Next, a handler for the timeline controller's  [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController.PositionChanged) event is registered. This is called periodically by the system, approximately 4 times per second.
+接下来，为时间线控制器的 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController.PositionChanged) 事件注册处理程序。 系统将定期调用它，频率大约为每秒 4 次。
 
 [!code-cs[RegisterPositionChanged](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetRegisterPositionChanged)]
 
-In the handler for **PositionChanged**, the slider value is updated to reflect the current position of the timeline controller.
+在 **PositionChanged** 的处理程序中，更新滑块值以反映时间线控制器的当前位置。
 
 [!code-cs[PositionChanged](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetPositionChanged)]
 
-###Offset the playback position from the timeline position
-In some cases you may want the playback position of one or more media players associated with a timeline controller to be offset from the other players. You can do this by setting the [**TimelineControllerPositionOffset**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.TimelineControllerPositionOffset) property of the **MediaPlayer** object you want to be offset. The following example uses the durations of the content of two media players to set the minimum and maximum values of two slider control to plus and minus the length of the item.  
+###使播放位置偏离时间线位置
+在某些情况下，与时间线控制器关联的一个或多个媒体播放器的播放位置可能需要偏离其他播放器。 为此，可以设置要偏离的 **MediaPlayer** 对象的 [**TimelineControllerPositionOffset**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.TimelineControllerPositionOffset) 属性。 以下示例使用两个媒体播放器的内容持续时间设置两个滑块控件的最小值和最大值，以增加或减少项目的时间长度。  
 
 [!code-cs[OffsetSliders](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOffsetSliders)]
 
-In the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.RangeBase.ValueChanged) event for each slider, the **TimelineControllerPositionOffset** for each player is set to the corresponding value.
+在每个滑块的 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.RangeBase.ValueChanged) 事件中，将每个播放器的 **TimelineControllerPositionOffset** 设置为相应值。
 
 [!code-cs[TimelineOffset](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetTimelineOffset)]
 
-Note that if the offset value of a player maps to a negative playback position, the clip will remain paused until the offset reaches zero and then playback will begin. Likewise, if the offset value maps to a playback position greater than the duration of the media item, the final frame will be shown, just as it does when a single media player reached the end of its content.
+请注意，如果播放器的偏离值映射到反向播放位置，剪辑将保持暂停状态，直到偏离值达到零后才开始播放。 同样地，如果偏离值映射到的播放位置大于媒体项的持续时间，将显示最后一帧，就像单个媒体播放器播放完内容一样。
 
-## Related topics
-* [Media playback](media-playback.md)
-* [Media items, playlists, and tracks](media-playback-with-mediasource.md)
-* [Integrate with the Sytem Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
-* [Create, schedule, and manage media breaks](create-schedule-and-manage-media-breaks.md)
-* [Play media in the background](background-audio.md)
-
-
+## 相关主题
+* [媒体播放](media-playback.md)
+* [媒体项、播放列表和曲目](media-playback-with-mediasource.md)
+* [与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)
+* [创建、计划和管理媒体中断](create-schedule-and-manage-media-breaks.md)
+* [在后台播放媒体](background-audio.md)
 
 
 
- 
-
- 
 
 
+ 
+
+ 
+
+
+
+
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

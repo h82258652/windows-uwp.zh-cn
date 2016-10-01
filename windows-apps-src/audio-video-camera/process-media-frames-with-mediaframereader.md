@@ -1,158 +1,168 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: This article shows you how to use a MediaFrameReader with MediaCapture to get media frames from one or more available sources, including color, depth, and infrared cameras, audio devices, or even custom frame sources such as those that produce skeletal tracking frames.
-title: Process media frames with MediaFrameReader
+description: "本文介绍如何将 MediaFrameReader 与 MediaCapture 结合使用，以获取一个或多个可用源提供的媒体帧，这些可用源包括彩色、深度、红外线相机，音频设备，甚至是自定义的帧源（例如生成骨架跟踪帧的帧源）。"
+title: "使用 MediaFrameReader 处理媒体帧"
+translationtype: Human Translation
+ms.sourcegitcommit: 21433f812915a2b4da6b4d68151bbc922a97a7a7
+ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
+
 ---
 
-# Process media frames with MediaFrameReader
+# 使用 MediaFrameReader 处理媒体帧
 
-This article shows you how to use a [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) with [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) to get media frames from one or more available sources, including color, depth, and infrared cameras, audio devices, or even custom frame sources such as those that produce skeletal tracking frames. This feature is designed to be used by apps that perform real-time processing of media frames, such as augmented reality and depth-aware camera apps.
+本文介绍如何将 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 与 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 结合使用，以获取一个或多个可用源提供的媒体帧，这些可用源包括彩色、深度、红外线相机，音频设备，甚至是自定义的帧源（例如生成骨架跟踪帧的帧源）。 此功能旨在由执行实时处理媒体帧的应用使用，例如增强现实和感知深度的相机应用。
 
-If you are interested in simply capturing video or photos, such as a typical photography app, then you probably want to use one of the other capture techniques supported by [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). For a list of available media capture techniques and articles showing how to use them, see [**Camera**](camera.md).
-
-> [!NOTE] 
-> The features discussed in this article are only available starting with Windows 10, version 1607.
+如果你对仅捕获视频或照片感兴趣（例如典型的摄影应用），则可能希望使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 支持的其他捕获技术。 有关可用的媒体捕获技术列表和演示如何使用这些技术的文章，请参阅[**相机**](camera.md)。
 
 > [!NOTE] 
-> There is an Universal Windows app sample that demonstrates using **MediaFrameReader** to display frames from different frame sources, including color, depth, and infrared camreas. For more information, see [Camera frames sample](http://go.microsoft.com/fwlink/?LinkId=823230).
+> 本文中讨论的功能仅从 Windows 10 版本 1607 开始提供。
 
-## Setting up your project
-As with any app that uses **MediaCapture**, you must declare that your app uses the *webcam* capability before attempting to access any camera device. If your app will capture from an audio device, you should also declare the *microphone* device capability. 
+> [!NOTE] 
+> 文中提供了一个通用 Windows 应用示例，介绍使用 **MediaFrameReader** 显示不同帧源（包括彩色、深度和红外相机）的帧。 有关详细信息，请参阅[相机帧示例](http://go.microsoft.com/fwlink/?LinkId=823230)。
 
-**Add capabilities to the app manifest**
+## 设置项目
+对于使用 **MediaCapture** 的任何应用，在尝试访问任何相机设备前都必须声明应用使用 *webcam* 功能。 如果应用从音频设备捕获音频，还应声明 *microphone* 设备功能。 
 
-1.  In Microsoft Visual Studio, in **Solution Explorer**, open the designer for the application manifest by double-clicking the **package.appxmanifest** item.
-2.  Select the **Capabilities** tab.
-3.  Check the box for **Webcam** and the box for **Microphone**.
-4.  For access to the Pictures and Videos library check the boxes for **Pictures Library** and the box for **Videos Library**.
+**将功能添加到应用清单**
 
-The example code in this article uses APIs from the following namespaces, in addition to those included by the default project template.
+1.  在 Microsoft Visual Studio 的“解决方案资源管理器”****中，通过双击“package.appxmanifest”****项，打开应用程序清单的设计器。
+2.  选择“功能”****选项卡。
+3.  选中“摄像头”****框和“麦克风”****框。
+4.  若要访问图片库和视频库，请选中“图片库”****框和“视频库”****框。
+
+除了默认项目模板包含的这些 API，本文的示例代码还使用来自以下命名空间的 API。
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
-## Select frame sources and frame source groups
-Many apps that process media frames need to get frames from multiple sources at once, such as a device's color and depth cameras. The [**MediaFrameSourceGroup**] (https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) object represents a set of media frame sources that can be used simultaneously. Call the static method [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) to get a list of all of the groups of frame sources supported by the current device.
+## 选择帧源和帧源组
+处理媒体帧的许多应用都需要同时从多个源获取帧，例如设备的彩色和深度相机。 [**MediaFrameSourceGroup**] (https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 对象表示一组可同时使用的媒体帧源。 调用静态方法 [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) 获取当前设备支持的所有帧源组列表。
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-You can also create a [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) using [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) and the value retuned from [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector) to receive notifications when the available frame source groups on the device changes, such as when an external camera is plugged in. For more information see [**Enumerate devices**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
+还可以使用 [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) 和从 [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector) 返回的值创建 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)，以便在设备上的可用帧源组更改时（例如接入外部相机时）接收通知。 有关详细信息，请参阅[**枚举设备**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
-A [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) has a collection of [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) objects that describe the frame sources included in the group. After retrieving the frame source groups available on the device, you can select the group that exposes the frame sources you are interested in.
+[**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 具有 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象集合，用于描述组内包括的帧源。 检索可在设备上使用的帧源组后，可以选择公开所关注帧源的组。
 
-The following example shows the simplest way to select a frame source group. This code simply loops over all of the available groups and then loops over each item in the [**SourceInfos**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.SourceInfos) collection. Each **MediaFrameSourceInfo** is checked to see if it supports the features we are seeking. In this case, the [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.MediaStreamType) property is checked for the value [**VideoPreview**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType), meaning the device provides a video preview stream, and the [**SourceKind**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.SourceKind) property is checked for the value [**Color**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceKind), indicating that the source provides color frames.
+以下示例展示了选择帧源组的最简方法。 此代码只是循环访问所有可用组，然后循环访问 [**SourceInfos**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.SourceInfos) 集合中的每个项目。 检查每个 **MediaFrameSourceInfo**，了解相应项目是否支持我们正在寻找的功能。 在本例中，检查 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.MediaStreamType) 属性以查看 [**VideoPreview**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType) 值（该值表示设备提供视频预览流），并且检查 [**SourceKind**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.SourceKind) 属性以查看 [**Color**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceKind) 值（该值指示源提供颜色帧）。
 
 [!code-cs[SimpleSelect](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSimpleSelect)]
 
-This method of identifying the desired frame source group and frame sources works for simple cases, but if you want to select frame sources based on more complex criteria, it can quickly become cumbersome. Another method is to use Linq syntax and anonymous objects to make the selection. The following example uses the **Select** extension method to transform the **MediaFrameSourceGroup** objects in the *frameSourceGroups* list into an anonymous object with two fields: *sourceGroup*, representing the group itself, and *colorSourceInfo*, which represents the color frame source in the group. The *colorSourceInfo* field is set to the result of **FirstOrDefault**, which selects the first object for which the provided predicate resolves to true. In this case, the predicate is true if the stream type is **VideoPreview**, the source kind is **Color**, and if the camera is on the front panel of the device.
+这种标识所需帧源组和帧源的方法对简单情况有效，但如果要依据更复杂的条件选择帧源，这会很快变得难以实现。 另一种方法是使用 Linq 语法和匿名对象进行选择。 以下示例使用 **Select** 扩展方法将 *frameSourceGroups* 列表中的 **MediaFrameSourceGroup** 对象转换为具有两个字段的匿名对象：*sourceGroup* 表示组本身，*colorSourceInfo* 表示组中的颜色帧源。 *colorSourceInfo* 字段设为 **FirstOrDefault** 的结果，后者用于选择所提供的谓词解析为 true 的第一个对象。 在本例中，如果流类型为 **VideoPreview**、源种类为 **Color**，并且相机是设备的前置相机，则谓词为 true。
 
-From the list of anonymous objects returned from the query described above, the **Where** extension method is used to select only those objects where the *colorSourceInfo* field is not null. Finally, **FirstOrDefault** is called to select the first item in the list.
+在从上述查询返回的匿名对象列表中，**Where** 扩展方法用于仅选择 *colorSourceInfo* 字段不为 null 的对象。 最后，调用 **FirstOrDefault** 以选择列表中的第一个项目。
 
-Now you can use the fields of the selected object to get references to the selected **MediaFrameSourceGroup** and the **MediaFrameSourceInfo** object representing the color camera. These will be used later to initialize the **MediaCapture** object and create a **MediaFrameReader** for the selected source. Finally, you should test to see if the source group is null, meaning the current device doesn't have your requested capture sources.
+此时，可以使用所选对象的字段获取所选 **MediaFrameSourceGroup** 和表示彩色相机的 **MediaFrameSourceInfo** 对象的引用。 这些引用将在稍后用于初始化 **MediaCapture** 对象并为所选源创建 **MediaFrameReader**。 最后应进行测试，以查看源组是否为 null，如果是，则意味着当前设备没有所请求的捕获源。
 
 [!code-cs[SelectColor](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColor)]
 
-The following example uses the same technique described above, but selects a source group that contains color, depth, and infrared cameras.
+以下示例使用与上述技术相类似的技术选择包含彩色、深度和红外相机的源组。
 
 [!code-cs[ColorInfraredDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetColorInfraredDepth)]
 
-## Initialize the MediaCapture object to use the selected frame source group
-The next step is to initialize the **MediaCapture** object to use the frame source group you selected in the previous step.
+## 初始化 MediaCapture 对象以使用所选帧源组
+下一步是初始化 **MediaCapture** 对象以使用在上一步中所选的帧源组。
 
-The **MediaCapture** object is typically used from multiple locations within your app, so you should declare a class member variable to hold it.
+**MediaCapture** 对象通常在应用的多个位置中使用，因此应声明某个类成员变量以保留它。
 
 [!code-cs[DeclareMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-Create an instance of the **MediaCapture** object by calling the constructor. Next, create a [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings) object that will be used to initialize the **MediaCapture** object. In this example, the following settings are used:
+通过调用构造函数创建 **MediaCapture** 对象实例。 接下来，创建用于初始化 **MediaCapture** 对象的 [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings) 对象。 本示例使用以下设置：
 
-* [**SourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SourceGroup) - This tells the system which source group you will be using to get frames. Remember that the source group defines a set of media frame sources that can be used simultaneously.
-* [**SharingMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SharingMode) - This tells the system whether you need exclusive control over the capture source devices. If you set this to  [**ExclusiveControl**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode), it means that you can change the settings of the capture device, such as the format of the frames it produces, but this means that if another app already has exclusive control, your app will fail when it tries to initialize the media capture device. If you set this to [**SharedReadOnly**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode), you can receive frames from the frame sources even if they are in use by another app, but you can't change the settings for the devices.
-* [**MemoryPreference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.MemoryPreference) - If you specify [**CPU**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference), the system will use CPU memory which guarantees that when frames arrive, they will be available as [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) objects. If you specify [**Auto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference), the system will dynamically choose the optimal memory location to store frames. If the system chooses to use GPU memory, the media frames will arrive as an [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) object and not as a  **SoftwareBitmap**.
-* [**StreamingCaptureMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.StreamingCaptureMode) - Set this to [**Video**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.StreamingCaptureMode) to indicate that audio doesn't need to be streamed.
+* [**SourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SourceGroup) - 告知系统用于获取帧的源组。 请记住，源组定义可以同时使用的一组媒体帧源。
+* [**SharingMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SharingMode) - 告知系统是否需要捕获源设备的独占控制权。 如果将它设置为 [**ExclusiveControl**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode)，意味着可以更改捕获设备的设置（例如它生成的帧格式），但也意味着如果其他应用已经拥有独占控制权，你的应用在尝试初始化媒体捕获设备时会失败。 如果将它设置为 [**SharedReadOnly**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode)，则可以检索帧源的帧，即使其他应用已经在使用这些帧也是如此，但无法更改设备设置。
+* [**MemoryPreference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.MemoryPreference) - 如果指定 [**CPU**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference)，系统将使用可以保证到达的帧能够用作 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) 对象的 CPU 内存。 如果指定 [**Auto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference)，系统将动态选择存储帧的最佳内存位置。 如果系统选择使用 GPU 内存，媒体帧将作为 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 对象（而非 **SoftwareBitmap** 对象）到达。
+* [**StreamingCaptureMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.StreamingCaptureMode) - 将它设置为 [**Video**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.StreamingCaptureMode)，以指示无需流式处理音频。
 
-Call [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) to initialize the **MediaCapture** with your desired settings. Be sure to call this within a *try* block in case initialization fails.
+调用 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) 以使用所需设置初始化 **MediaCapture**。 请确保在 *try* 块中调用此函数，防止初始化失败。
 
 [!code-cs[InitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## Set the preferred format for the frame source
-To set the preferred format for a frame source, you need to get a [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource) object representing the source. You get this object by accessing the [**Frames**](https://msdn.microsoft.com/library/windows/apps/Windows.Phone.Media.Capture.CameraCaptureSequence.Frames) dictionary of the initialized **MediaCapture** object, specifying the identifier of the frame source you want to use. This is why we saved the [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) object when we were selecting a frame source group.
+## 为帧源设置首选格式
+若要为帧源设置首选格式，需要获取表示源的 [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource) 对象。 通过访问已初始化的 **MediaCapture** 对象的 [**Frames**](https://msdn.microsoft.com/library/windows/apps/Windows.Phone.Media.Capture.CameraCaptureSequence.Frames) 字典，并指定希望使用的帧源的标识符，获取此对象。 这就是我们在选择帧源组时保存 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象的原因。
 
-The  [**MediaFrameSource.SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) property contains a list of [**MediaFrameFormat**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameFormat) objects describing the supported formats for the frame source. Use the **Where** Linq extension method to select a format based on desired properties. In this example, a format is selected that has a width of 1080 pixels and can supply frames in 32-bit RGB format. The **FirstOrDefault** extension method selects the first entry in the list. If the selected format is null, then the requested format is not supported by the frame source. If the format is supported, you can request that the source use this format by calling [**SetFormatAsync**](https://msdn.microsoft.com/library/windows/apps/).
+[**MediaFrameSource.SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) 属性包含 [**MediaFrameFormat**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameFormat) 对象列表，此类对象用于描述帧源的受支持格式。 使用 **Where** Linq 扩展方法以根据所需属性选择某种格式。 在本例中，选择了宽度为 1080 像素并且可以提供 32 位 RGB 格式的帧格式。 **FirstOrDefault** 扩展方法选择列表中的第一个条目。 如果所选格式为 null，则请求的格式不受帧源支持。 如果该格式受支持，可以请求源通过调用 [**SetFormatAsync**](https://msdn.microsoft.com/library/windows/apps/) 来使用此格式。
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
-## Create a frame reader for the frame source
-To receive frames for a media frame source, use a [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader).
+## 为帧源创建帧阅读器
+若要为媒体帧源接收帧，请使用 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader)。
 
 [!code-cs[DeclareMediaFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaFrameReader)]
 
-Instantiate the frame reader by calling [**CreateFrameReaderAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CreateFrameReaderAsync) on your initialized **MediaCapture** object. The first argument to this method is the frame source from which you want to receive frames. You can create a separate frame reader for each frame source you want to use. The second argument tells the system the output format in which you want frames to arrive. This can save you from having to do your own conversions to frames as they arrive. Note that if you specify a format that is not supported by the frame source, an exception will be thrown, so be sure that this value is in the [**SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) collection.  
+通过在已初始化的 **MediaCapture** 对象上调用 [**CreateFrameReaderAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CreateFrameReaderAsync)，实例化帧阅读器。 此方法的第一个参数是你希望从中接收帧的帧源。 可以为每个要使用的帧源创建单独的帧阅读器。 第二个参数告知系统你希望帧到达时使用的输出格式。 这可以省去在帧到达时需要自行转换到帧的工作。 请注意，如果所指定的格式不受帧源支持，将引发异常，因此请确保该值在 [**SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) 集合中。  
 
-After creating the frame reader, register a handler for the [**FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) event which is raised whenever a new frame is available from the source.
+创建帧阅读器后，请为源提供新帧时引发的 [**FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) 事件注册处理程序。
 
-Tell the system to start reading frames from the source by calling [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.StartAsync).
+调用 [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.StartAsync) 以告知系统开始读取源的帧。
 
 [!code-cs[CreateFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateFrameReader)]
 
-## Handle the frame arrived event
-The [**MediaFrameReader.FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) event is raised whenever a new frame is available. You can choose to process every frame that arrives or only use frames when you need them. Because the frame reader raises the event on its own thread, you may need to implement some synchronization logic to make sure that you aren't attempting to access the same data from multiple threads. This section shows you how to synchronize drawing color frames to an image control in a XAML page. This scenario addresses the additional synchronization constraint that requires all updates to XAML controls be performed on the UI thread.
+## 处理帧到达事件
+新帧可用时即引发 [**MediaFrameReader.FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) 事件。 可以选择处理到达的每个帧，或者仅在需要时使用它们。 因为帧阅读器在自己的线程上引发事件，所以可能需要实现某些同步逻辑，以确保你不会尝试从多个线程访问相同数据。 本节介绍如何在 XAML 页面中将图形颜色帧同步到图像控件。 这套方案解决需要在 UI 线程上执行 XAML 控件的所有更新的其他同步约束。
 
-The first step in displaying frames in XAML is to create an Image control. 
+在 XAML 中显示帧的第一步是创建 Image 控件。 
 
 [!code-xml[ImageElementXAML](./code/Frames_Win10/Frames_Win10/MainPage.xaml#SnippetImageElementXAML)]
 
-In your code behind page, declare a class member variable of type **SoftwareBitmap** which will be used as a back buffer that all incoming images will be copied to. Note that the image data itself isn't copied, just the object references. Also, declare a boolean to track whether our UI operation is currently running.
+在代码隐藏页面中，声明 **SoftwareBitmap** 类型的类成员变量，该变量用作所有传入图像都会复制到的后台缓冲区。 请注意，图像数据本身不会复制，复制的仅是对象引用。 此外，声明某个布尔值以跟踪 UI 操作当前是否正在运行。
 
 [!code-cs[DeclareBackBuffer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareBackBuffer)]
 
-Because the frames will arrive as **SoftwareBitmap** objects, you need to create a [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) object which allows you to use a **SoftwareBitmap** as the source for a XAML **Control**. You should set the image source somewhere in your code before you start the frame reader.
+由于帧将作为 **SoftwareBitmap** 对象到达，因此需要创建 [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 对象，该对象支持将 **SoftwareBitmap** 用作 XAML **Control** 的源。 在启动帧阅读器前，应该在代码的某个位置设置图像源。
 
 [!code-cs[ImageElementSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetImageElementSource)]
 
-Now it's time to implement the **FrameArrived** event handler. When the handler is called, the *sender* parameter contains a reference to the **MediaFrameReader** object which raised the event. Call [**TryAcquireLatestFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.TryAcquireLatestFrame) on this object to attempt to get the latest frame. As the name implies, **TryAcquireLatestFrame** may not succeed in returning a frame. So, when you access the VideoMediaFrame and then SoftwareBitmap properties, be sure to test for null. In this example the null condtional operator ? is used to access the **SoftwareBitmap** and then the retrieved object is checked for null.
+此时可以实现 **FrameArrived** 事件处理程序。 调用处理程序时，*sender* 参数包含对引发该事件的 **MediaFrameReader** 对象的引用。 调用此对象上的 [**TryAcquireLatestFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.TryAcquireLatestFrame) 以尝试获取最新帧。 如名称所示，**TryAcquireLatestFrame** 可能不会成功返回帧。 因此，当依次访问 VideoMediaFrame 和 SoftwareBitmap 属性时，请确保测试它们是否为 null。 在本示例中，null 条件运算符 用于访问 **SoftwareBitmap**，然后检查检索的对象是否为 null。
 
-The **Image** control can only display images in BRGA8 format with either pre-multiplied or no alpha. If the arriving frame is not in that format, the static method [**Convert**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap.Covert) is used to convert the software bitmap to the correct format.
+**Image** 控件仅可以显示格式为 BRGA8 并且已经预乘或者没有 alpha 的图像。 如果到达的帧不是这种格式，则使用静态方法 [**Convert**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap.Covert) 将软件位图转换为正确的格式。
 
-Next, the [**Interlocked.Exchange**](https://msdn.microsoft.com/en-us/library/bb337971) method is used to swap the reference of to arriving bitmap with the backbuffer bitmap. This method swaps these references in an atomic operation that is thread-safe. After swapping, the old backbuffer image, now in the *softwareBitmap* variable is disposed of to clean up its resources.
+接下来，使用 [**Interlocked.Exchange**](https://msdn.microsoft.com/en-us/library/bb337971) 方法来将到达位图的引用交换为后台缓冲区位图。 此方法在线程安全的原子操作中交换这些引用。 交换后，以前的后台缓冲区图像现在位于 *softwareBitmap* 变量中，释放该图像可以清理资源。
 
-Next, the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher) associated with the **Image** element is used to create a task that will run on the UI thread by calling [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317). Because the asynchronous tasks will be performed within the task, the lambda expression passed to **RunAsync** is declared with the *async* keyword.
+接下来，使用与 **Image** 元素关联的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher) 通过调用 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 创建在 UI 线程上运行的任务。 由于异步任务将在任务中执行，因此传递到 **RunAsync** 的 lambda 表达式使用 *async* 关键字声明。
 
-Within the task, the *_taskRunning* variable is checked to make sure that only one instance of the task is running at a time. If the task isn't already running, *_taskRunning* is set to true to prevent the task from running again. In a *while* loop, **Interlocked.Exchange** is called to copy from the backbuffer into a temporary **SoftwareBitmap** until the backbuffer image is null. For each time the temporary bitmap is populated, the **Source** property of the **Image** is cast to a **SoftwareBitmapSource**, and then [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856) is called to set the source of the image.
+在任务中，查看 *_taskRunning* 变量以确保一次只运行任务的一个实例。 如果尚未运行该任务，将 *_taskRunning* 设置为 true，以防止任务再次运行。 在 *while* 循环中，调用 **Interlocked.Exchange** 以将后台缓冲区的内容复制到临时 **SoftwareBitmap**，直到后台缓冲区图像为 null。 每次在填充临时位图时，**Image** 的 **Source** 属性转换为 **SoftwareBitmapSource**，然后调用 [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856) 以设置图像源。
 
-Finally, the *_taskRunning* variable is set back to false so that the task can be run again the next time the handler is called.
+最后，*_taskRunning* 变量重新设置为 false，以便下次调用处理程序时任务会重新运行。
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFrameArrived)]
 
-## Cleanup resources
-When you are done reading frames, be sure to stop the media frame reader by calling [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.StopAsync), unregistering the **FrameArrived** handler, and disposing of the **MediaCapture** object.
+## 清理资源
+在读取帧完成后，通过调用 [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.StopAsync)、注销 **FrameArrived** 处理程序，并释放 **MediaCapture** 对象，确保停止媒体帧阅读器。
 
 [!code-cs[Cleanup](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCleanup)]
 
-For more information about cleaning up media capture objects when your application is suspended, see [**Display the camera preview**](simple-camera-preview-access.md).
+有关在挂起应用程序时清理媒体捕获对象的详细信息，请参阅[**显示相机预览**](simple-camera-preview-access.md)。
 
-## The FrameRenderer helper class
-The Universal Windows [Camera frames sample](http://go.microsoft.com/fwlink/?LinkId=823230) provides a helper class that makes it easy to display the frames from color, infrared, and depth sources in your app. Typically, you will want to do something more with depth and infrared data than just display it to the screen, but this helper class is a helpful tool for demonstrating the frame reader feature and for debugging your own frame reader implementation.
+## FrameRenderer 帮助程序类
+通用 Windows [相机帧示例](http://go.microsoft.com/fwlink/?LinkId=823230)提供在应用中轻松显示彩色、红外和深度源的帧的帮助程序类。 通常，对深度和红外数据的操作不止将其显示到屏幕，因此这个帮助程序类是显示帧阅读器功能和调试帧阅读器实现的有用工具。
 
-The **FrameRenderer** helper class implements the following methods.
+**FrameRenderer** 帮助程序类实现以下方法。
 
-* **FrameRenderer** constructor - The constructor initializes the helper class to use the XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Image) element you pass in for displaying media frames.
-* **ProcessFrame** - This method displays a media frame, represented by a [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference), in the **Image** element you passed into the constructor. You should typically call this method from your [**FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) event handler, passing in the frame returned by [**TryAcquireLatestFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.TryAcquireLatestFrame).
-* **ConvertToDisplayableImage** - This methods checks the format of the media frame and, if necessary, converts it to a displayable format. For color images, this means making sure that the color format is BGRA8 and that the bitmap alpha mode is premultiplied. For depth or infrared frames, each scanline is processed to convert the depth or infrared values to a psuedocolor gradient, using the **PsuedoColorHelper** class that is also included in the sample and listed below.
+* **FrameRenderer** 构造函数 - 此构造函数初始化帮助程序类以将传递的 XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Image) 元素用于显示媒体帧。
+* **ProcessFrame** - 此方法在传递到构造函数的 **Image** 元素中显示由 [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference) 表示的媒体帧。 通常应该从 [**FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) 事件处理程序（传递到 [**TryAcquireLatestFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.TryAcquireLatestFrame) 返回的帧）中调用此方法。
+* **ConvertToDisplayableImage** - 此方法检查媒体帧的格式，并在需要时将其转换为可显示的格式。 对于彩色图像，这意味着可以确保颜色格式为 BGRA8，并且位图 alpha 模式已预乘。 对于深度或红外帧，每个扫描行都经过处理，以使用也包含在示例中并且在下面列出的 **PsuedoColorHelper** 类将深度或红外值转换为伪色渐变。
 
 > [!NOTE] 
-> In order to do pixel manipulation on **SoftwareBitmap** images, you must access a native memory buffer. To do this, you must use the IMemoryBufferByteAccess COM interface included in the code listing below and you must update your project properties to allow compilation of unsafe code. For more information, see [Create, edit, and save bitmap images](imaging.md).
+> 为了在 **SoftwareBitmap** 图像上操作像素，必须访问本机内存缓冲区。 为此，必须使用包括在以下代码列表中的 IMemoryBufferByteAccess COM 接口，并且必须更新项目属性，以支持编译不安全代码。 有关详细信息，请参阅[创建、编辑和保存位图图像](imaging.md)。
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
 
-## Related topics
+## 相关主题
 
-* [Camera](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Camera frames sample](http://go.microsoft.com/fwlink/?LinkId=823230)
- 
+* [相机](camera.md)
+* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [相机帧示例](http://go.microsoft.com/fwlink/?LinkId=823230)
+ 
 
- 
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

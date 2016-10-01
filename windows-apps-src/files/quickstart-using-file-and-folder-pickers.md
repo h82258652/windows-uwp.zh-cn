@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "使用选取器打开文件和文件夹"
 description: "通过让用户与选取器交互来访问文件和文件夹。 你可以使用 FileOpenPicker 和 FileSavePicker 类获取对文件的访问权限，并使用 FolderPicker 获取对文件夹的访问权限。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 387529636eb44206a23356b0a8bb2748d7c10748
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 91128639cea8948579ec128e4cd695bdfeb5fe86
 
 ---
 
@@ -70,7 +70,7 @@ ms.openlocfilehash: 387529636eb44206a23356b0a8bb2748d7c10748
 ```CSharp
 var picker = new Windows.Storage.Pickers.FileOpenPicker();
 picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-picker.SuggestedStartLocation = 
+picker.SuggestedStartLocation =
     Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
 picker.FileTypeFilter.Add(".jpg");
 picker.FileTypeFilter.Add(".jpeg");
@@ -100,7 +100,7 @@ else
 ```CSharp
 var picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-    picker.SuggestedStartLocation = 
+    picker.SuggestedStartLocation =
         Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
     picker.FileTypeFilter.Add(".jpg");
     picker.FileTypeFilter.Add(".jpeg");
@@ -187,10 +187,6 @@ else
 
 
 
-
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

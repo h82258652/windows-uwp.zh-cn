@@ -5,7 +5,7 @@ description: "本文向你显示了如何使用 MediaProcessingTrigger 和后台
 title: "在后台处理媒体文件"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
+ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 ---
 
@@ -140,6 +140,6 @@ ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

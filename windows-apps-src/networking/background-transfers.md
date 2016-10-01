@@ -4,8 +4,8 @@ description: "使用后台传输 API 以通过网络可靠地复制文件。"
 title: "后台传输"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 translationtype: Human Translation
-ms.sourcegitcommit: b15d01ec4fd41a8f03345a4416b4795455928533
-ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
+ms.sourcegitcommit: 177ada6ea8934ca74636454946dfa9c450285167
+ms.openlocfilehash: f8548c85e571d3f0f72f775af4ca40d85e86c163
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
 
 **重要的 API**
 
--   [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
+-   [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
 -   [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
@@ -317,6 +317,6 @@ Windows 10 中的新功能可以在完成后台传输时运行应用程序代码
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

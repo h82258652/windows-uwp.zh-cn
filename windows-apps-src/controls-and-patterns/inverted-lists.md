@@ -1,26 +1,30 @@
 ---
 author: Jwmsft
-Description: Use an inverted list to add new items at the bottom.
-title: Inverted lists
+Description: "使用反转列表在底部添加新项。"
+title: "反转列表"
 label: Inverted lists
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
+
 ---
+# 反转列表
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Inverted lists
-
-You can use a list view to present a conversation in a chat experience with items that are visually distinct to represent the sender/receiver.  Using different colors and horizontal alignment to separate messages from the sender/receiver helps the user quickly orient themselves in a conversation.
+在采用外观不同的项表示发送方/接收方的聊天体验中，你可以使用列表视图表示对话。  使用不同的颜色和水平对齐方式将来自发送方/接收方的消息分隔开来有助于用户在对话中快速适应。
  
-You will typically need to present the list such that it appears to grow from the bottom up instead of from the top down.  When a new message arrives and is added to the end, the previous messages slide up to make room drawing the user’s attention to the latest arrival.  However, if a user has scrolled up to view previous replies then the arrival of a new message must not cause a visual shift that would disrupt their focus.
+你通常需要将列表呈现为看起来从底部向上增长，而不是从顶部向下增长。  当新消息到达并添加到末尾时，之前的消息会向上滑动，以留出空间，从而将用户的注意力吸引到最新到达的内容上。  但是，如果用户向上滚动以查看之前的回复，则新消息的到达不得引起会干扰用户注意力的视觉转移。
 
-![chat app with inverted list](images/listview-inverted.png)
+![带有反转列表的聊天应用](images/listview-inverted.png)
 
 <div class="important-apis" >
-<b>Important APIs</b><br/>
+<b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx"><strong>ItemsStackPanel class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx"><strong>ItemsUpdatingScrollMode property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView 类</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx"><strong>ItemsStackPanel 类</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx"><strong>ItemsUpdatingScrollMode 属性</strong></a></li>
 </ul>
 
 </div>
@@ -31,13 +35,13 @@ You will typically need to present the list such that it appears to grow from th
 
 
 
-## Create an inverted list
+## 创建反转列表
 
-To create an inverted list, use a list view with an [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) as its items panel. On the ItemsStackPanel, set the [**ItemsUpdatingScrollMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) to [**KeepLastItemInView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx).
+若要创建反转列表，请使用将 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) 作为其项目面板的列表视图。 在 ItemsStackPanel 上，将 [**ItemsUpdatingScrollMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) 设置为 [**KeepLastItemInView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx)。
 
-> **Important**&nbsp;&nbsp;The **KeepLastItemInView** enum value is available starting with Windows 10, version 1607. You can't use this value when your app runs on earlier versions of Windows 10.
+> **重要提示**&nbsp;&nbsp;**KeepLastItemInView** 枚举值从 Windows 10 版本 1607 开始可用。 当你的应用在较早版本的 Windows 10 上运行时，你无法使用此值。
 
-This example shows how to align the list view’s items to the bottom and indicate that when there is a change to the items the last item should remain in view.
+此示例显示如何将列表视图的项对齐到底部，并指示当项发生更改时，最后一项应保留在视图中。
  
  **XAML**
  ```xaml
@@ -51,8 +55,14 @@ This example shows how to align the list view’s items to the bottom and indica
 </ListView>
 ```
 
-## Recommendations
+## 建议
 
-- Align messages from the sender/receiver on opposite sides to make the flow of conversation clear to users.
-- Animate the existing messages out of the way to display the latest message if the user is already at the end of the conversation awaiting the next message.
-- Don’t disrupt the users focus by moving items if they’re not reading the end of the conversation.
+- 将来自发送方/接收方的消息在两边对齐，使用户可以清楚地了解对话流程。
+- 如果用户已经在对话末尾等待下一条消息，则以动画方式将现有消息移开，以显示最新消息。
+- 如果用户未在对话末尾阅读，请不要移动项，以免干扰用户注意力。
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

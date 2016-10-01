@@ -3,8 +3,8 @@ title: "通过 Web 帐户管理器连接到标识提供者"
 description: "本文将介绍如何通过新的 Windows 10 Web 帐户管理器 API，使用 AccountsSettingsPane 将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: c9f6a0183edc3c01566311360417c256329ef904
-ms.openlocfilehash: 6ab12d6da9c4858cf6ab16d4143cf073bb0cb275
+ms.sourcegitcommit: f3cdb187ec4056d4c7db6acde471b0bc91c78390
+ms.openlocfilehash: 093ca8906853121bbf33a729c523717d26cb7b0d
 
 ---
 # 通过 Web 帐户管理器连接到标识提供者
@@ -106,7 +106,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory，网址为" https://login.microsoft.com "。 
+接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory，网址为“https://login.microsoft.com”。 
 
 ```C#
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -189,7 +189,9 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-在获得令牌之后，可以使用它来调用提供程序的 API。 在下面的代码中，我们将调用 Microsoft Live API，以获取有关用户的基本信息并将其显示在我们的 UI 中。 
+> 注意：如果你在请求令牌时收到错误，请确保你已将应用与应用商店关联，如步骤一中所述。 如果你跳过此步骤，你的应用将无法获取令牌。 
+
+获得令牌后，可以使用它来调用提供程序的 API。 在下面的代码中，我们将调用 Microsoft Live API，以获取有关用户的基本信息并将其显示在我们的 UI 中。 
 
 ```C#
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -388,6 +390,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

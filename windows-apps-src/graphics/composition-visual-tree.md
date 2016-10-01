@@ -5,7 +5,7 @@ title: "合成可视化树"
 description: "合成视觉效果组成了可使用和生成合成 API 的所有其他功能的可视化树结构。 该 API 允许开发人员定义并创建一个或多个可视化对象，其中每个对象表示可视化树中的单个节点。"
 translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
+ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 
 ---
 # 合成可视化树
@@ -39,7 +39,7 @@ ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 在该示例中，也会提供三种不同的正在工作的视觉对象：
 
 -   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基对象，大部分属性均位于此处且继承自其他视觉对象。
--   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自 Visual，并添加了创建子视觉对象的功能。
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 派生自视觉对象，并添加了创建子视觉对象的功能。
 -   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 派生自视觉对象并添加了关联画笔的功能，以便视觉对象可以呈现像素，包括图像、效果或纯色。
 
 尽管此示例不介绍诸如动画或更复杂的效果等概念，但它包含所有这些系统需要使用的构成要素。
@@ -508,6 +508,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

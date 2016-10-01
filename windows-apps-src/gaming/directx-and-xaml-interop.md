@@ -5,7 +5,7 @@ description: "你可以在通用 Windows 平台 (UWP) 游戏中同时使用 Exte
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: dda452a6f9b2a47d7ddaee9732bb714f0f5dbe5d
+ms.openlocfilehash: 167709c7ba3470c144924801cb8cf18ffa544c5d
 
 ---
 
@@ -372,6 +372,6 @@ DirectX 提供了两个分别针对 2D 和 3D 图形的强大库：Direct2D 和 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ description: "通过使用 MapControl 类，在应用中显示可自定义的地
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 249503f6a43ef8c38e76ed29aed4a1bfdb26e9fb
+ms.openlocfilehash: 5569722bdfc8dfb78d43dbe6abf23dcd06f619c0
 
 ---
 
@@ -321,6 +321,6 @@ private async void display3DLocation()
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

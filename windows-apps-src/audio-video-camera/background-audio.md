@@ -1,20 +1,16 @@
 ---
 author: drewbatgit
-ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
-description: "本文介绍了如何创建可在后台播放音频的通用 Windows 平台 (UWP) 应用。"
-title: "后台音频"
+ms.assetid: 
+description: "本文将向你介绍当应用在后台运行时如何播放媒体。"
+title: "在后台播放媒体"
 translationtype: Human Translation
-ms.sourcegitcommit: 99d1ffa637fd8beca5d1e829cc7cacc18a9c21e9
-ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
+ms.sourcegitcommit: c8cbc538e0979f48b657197d59cb94a90bc61210
+ms.openlocfilehash: a477827553ac1780ac625deeee08d84ab638d4c2
 
 ---
 
-# 后台音频
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-本文介绍了如何创建可在后台播放音频的通用 Windows 平台 (UWP) 应用。 这意味着，即使在用户已最小化你的应用、返回到主屏幕，或已以其他方式离开你的应用之后，你的应用仍可继续播放音频。 本文讨论了后台音频应用组件以及同时使用这些组件的方式。
+# 在后台播放媒体
+本文介绍了如何配置应用，以便在应用从前台移至后台后，媒体可以继续播放。 这意味着，即使在用户已最小化你的应用、返回到主屏幕，或已以其他方式离开你的应用后，你的应用仍可继续播放音频。 
 
 后台音频播放的方案包括：
 
@@ -24,114 +20,101 @@ ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
 
 本文所述的后台音频实现将使你的应用通常在所有 Windows 设备（包括移动设备、桌面设备和 Xbox）上运行。
 
-**注意**  
-[后台音频 UWP 示例](http://go.microsoft.com/fwlink/?LinkId=619485)可实现本概述中所讨论的代码。 你可以下载该示例以查看上下文中的代码，或将该示例用作你自己的应用的起点。
+> [!NOTE]
+> 本文中的代码源自 UWP [后台音频示例](http://go.microsoft.com/fwlink/p/?LinkId=800141)。
 
- 
+## 单进程模型说明。
+Windows 10 版本 1607 引入的全新单进程模型极大地简化了启用后台音频的进程。 以前，需要你的应用管理后台进程以及前台应用，然后在两个进程之间手动通知状态更改。 在新的模型下，只需将后台音频功能添加到应用部件清单，该应用就会在移至后台之后自动继续播放音频。 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 这两个新的应用程序生命周期事件使应用可以得知它何时进入和退出后台。 当你的应用移至、过渡到后台或从中移出时，系统强制执行的内存约束可能会发生改变，因此你可以使用这些事件检查当前内存消耗并释放资源，以便保持在限制之下。
 
-## 后台音频体系结构
+通过消除复杂的进程间通信和状态管理，新模型使你可以使用明显减少的代码极快地实现后台音频。 但是，当前版本中仍支持双进程模型，以实现向后兼容性。 有关详细信息，请参阅[传统后台音频模型](background-audio.md)。
 
-执行后台播放的应用包含两个进程。 第一个进程是在前台运行的主要应用，包含了应用 UI 和客户端逻辑。 第二个进程是后台播放任务，可实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)，如所有 UWP 应用后台任务。 后台任务包含音频播放逻辑和后台服务。 后台任务通过系统媒体传输控件与系统通信。
+## 后台音频要求
+当应用在后台运行时，该应用必须满足音频播放的以下要求。
 
-下图是系统设计方式的概述。
+* 将**后台媒体播放**功能添加到应用部件清单，如本文中的后面部分所述。
+* 如果应用禁止自动将 **MediaPlayer** 与系统媒体传输控件 (SMTC) 集成（例如，将 [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 属性设置为 false），那么必须手动实现与 SMTC 的集成，才可以支持后台媒体播放。 如果使用的是 **MediaPlayer** 之外的 API（如 [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph)），还必须手动与 SMTC 集成，才可以播放音频（如果你希望应用移至后台之后音频继续播放）。 [手动控制系统媒体传输控件](system-media-transport-controls.md)的“将系统媒体传输控件用于后台音频”部分介绍了 SMTC 集成的最低要求。
+* 应用处于后台时，不得超出系统为后台应用设置的内存使用量限制。 管理后台内存的指南将在文本后面部分提供。
 
-![Windows 10 后台音频体系结构](images/backround-audio-architecture-win10.png)
-## MediaPlayer
+## 后台媒体播放清单功能
+若要支持后台音频，必须将后台媒体播放功能添加到应用部件清单文件（即 Package.appxmanifest）。 
 
-[**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空间包含用于在后台播放音频的 API。 每个应用都存在一个用于进行播放的 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 实例。 你的后台音频应用将调用 **MediaPlayer** 类上的方法并设置相关属性，以设置当前曲目、开始播放、暂停、快进、快退等等。 始终可通过 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 属性访问媒体播放器对象实例。
+**使用清单设计器将功能添加到应用部件清单**
 
-## MediaPlayer 代理和存根
+1.  在 Microsoft Visual Studio 的“解决方案资源管理器”****中，通过双击“package.appxmanifest”****项，打开应用程序清单的设计器。
+2.  选择“功能”****选项卡。
+3.  选择“后台媒体播放”****复选框。
 
-当从应用的后台进程访问 **BackgroundMediaPlayer.Current** 时，将激活后台任务主机中的 **MediaPlayer** 实例并且可对其进行直接操作。
+若要通过手动编辑应用部件清单 xml 来设置功能，请首先确保已在 **Package** 元素中定义 *uap3* 命名空间前缀。 如果尚未定义，请如下所示进行添加。
+```xml
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  IgnorableNamespaces="uap uap3 mp">
+```
 
-当从前台应用程序访问 **BackgroundMediaPlayer.Current** 时，返回的 **MediaPlayer** 实例实际是一个可与后台进程中的存根通信的代理。 此存根将与实际的 **MediaPlayer** 实例通信，后者也托管在后台进程中。
+接下来，将 *backgroundMediaPlayback* 功能添加到 **Capabilities** 元素：
+```xml
+<Capabilities>
+    <uap3:Capability Name="backgroundMediaPlayback"/>
+</Capabilities>
+```
 
-前台和后台进程都可以访问 **MediaPlayer** 实例的大多数属性，但 [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 和 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) 是例外，仅可从后台进程访问它们。 前台应用和后台进程都可以接收特定于媒体的事件（例如 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609)、[**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603) 和 [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606)）的通知。
+##处理前台和后台之间的转换
+当应用从前台移至后台时，将引发 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件。 并且当应用返回前台时，将引发 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 事件。 由于这些事件都是应用生命周期事件，因此应该在创建应用时为这些事件注册处理程序。 在默认项目模板中，这意味着将它添加到 App.xaml.cs 中的 **App** 类构造函数。 由于在后台运行会减少系统允许应用保留的内存资源，因此还应该注册 [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) 和 [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) 事件，这两个事件将用于检查应用的当前内存使用量和当前限制。 这些事件的处理程序如以下示例中所示。 有关 UWP 应用的应用程序生命周期的详细信息，请参阅[应用生命周期](../\launch-resume\app-lifecycle.md)。
 
-## 播放列表
+[!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
 
-后台音频应用程序的常见方案是连续播放多个项目。 这最容易通过使用 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 对象在你的后台进程中完成，可通过将该对象分配给 [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 属性来将其设置为 **MediaPlayer** 上的源。
+添加一个变量以跟踪你当前是否在后台运行。
 
-不可以从前台进程访问在后台进程中设置的 **MediaPlaybackList**。
+[!code-cs[DeclareBackgroundMode](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetDeclareBackgroundMode)]
 
-## 系统媒体传输控件
+当引发 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件时，请设置跟踪变量以表明你当前在后台运行。 不得在 **EnteredBackground** 事件中执行长时间运行的任务，因为这可能会导致用户感觉过渡到后台非常慢。
 
-用户可以通过蓝牙设备、SmartGlass 和系统媒体传输控件等方式，在不直接使用你的应用 UI 的情况下控制音频播放。 你的后台任务使用 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 类订阅这些用户引发的系统事件。
+[!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
 
-若要从后台进程中获取 **SystemMediaTransportControls** 实例，请使用 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) 属性。 前台应用通过调用 [**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) 获取类的实例，但返回的实例是与后台任务无关的仅限于前台的实例。
+当应用过渡到后台时，系统会降低针对该应用的内存限制，以确保当前的前台应用具有的资源足以提供响应迅速的用户体验。 [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) 事件处理程序使你的应用可以得知其分配的内存已减少，同时在传递给该处理程序的事件参数中提供新限制。 将 [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsage) 属性（提供应用的当前使用量）与事件参数的 [**NewLimit**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLimitChangingEventArgs.NewLimit) 属性（指定新限制）比较。 如果内存使用量超过该限制，则需要减少内存使用量。 在此示例中，使用帮助程序方法 **ReduceMemoryUsage**（将在本文后面部分定义）执行此操作。
 
-## 在任务之间发送消息
+[!code-cs[MemoryUsageLimitChanging](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetMemoryUsageLimitChanging)]
 
-有时，你将希望在后台音频应用的两个进程之间进行通信。 例如，你可能希望后台任务在开始播放新歌曲时通知前台任务，然后将新歌曲标题发送到要在屏幕上显示的前台任务。
+> [!NOTE] 
+> 某些设备配置会允许应用程序在超出新内存限制的情况下继续运行，直到系统遇到资源压力，而有些设备则不允许。 尤其是在 Xbox 上，如果应用在 2 秒内未将内存使用量降低至新限制下，就会被暂停或终止。 这意味着，通过使用此事件在引发该事件的 2 秒内将资源使用量降低至限制下，就可以在大部分设备上实现最佳体验。
 
-简单的通信机制可同时在前台和后台进程中引发事件。 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) 和 [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) 方法分别调用相应进程中的事件。 消息可通过订阅 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 和 [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) 事件来接收。
 
-可将数据作为参数传递给发送消息方法，这些方法随后会传入消息接收的事件处理程序中。 使用 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 类传递数据。 此类是一个字典，包含了作为键的字符串和作为值的其他值类型。 你可以传递整数、字符串和布尔值等简单的值类型。
+当应用首次过渡到后台时，其内存使用量可能低于后台应用的内存限制，但在之后的某个时间点，其使用量就会增加，开始接近限制。 处理程序 [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) 使你有机会检查使用量增加时的当前使用量，并释放内存（如果需要）。 查看 [**AppMemoryUsageLevel**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLevel) 是否为 **High** 或 **OverLimit**，如果是，请降低内存使用量。 此外，在此示例中，本进程由帮助程序方法 **ReduceMemoryUsage** 进行处理。 还可以订阅 [**AppMemoryUsageDecreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageDecreased) 事件，查看应用是否低于限制，如果是，你便知晓可以分配其他资源。
 
-**注意**  
-当前台应用运行时，应用应仅调用 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533)。 在前台应用未运行时尝试调用此方法将引发异常。 应用负责将前台应用状态传递给后台进程。 这可以通过使用应用生命周期事件、保存在本地存储中的状态值和进程之间的消息来完成。 
+[!code-cs[MemoryUsageIncreased](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetMemoryUsageIncreased)]
 
-## 后台任务生命周期
+**ReduceMemoryUsage** 是一个帮助程序方法，当应用超过在后台运行的应用的使用量限制时，它可以实现内存释放。 释放内存的方法因应用的特性而异，但用于释放内存的一个建议方法是释放 UI 以及与应用视图关联的其他资源。 首先，确保在后台模式下运行，然后将应用窗口的 [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) 属性设置为 null。 调用 **GC.Collect** 指示系统立即回收释放的内存。
 
-后台任务的生命周期与应用的当前播放状态紧密相连。 例如，当用户暂停音频播放时，系统可能会根据情况终止或取消你的应用。 在音频播放停止一段时间后，系统可能会自动关闭后台任务。
+[!code-cs[UnloadViewContent](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetUnloadViewContent)]
 
-在你的应用第一次通过在前台应用中运行的代码访问 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) 时，或当你为 [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) 事件注册处理程序时（以先发生的为准），将调用 [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法。 建议你第一次先注册消息接收的处理程序，再调用 **BackgroundMediaPlayer.Current**，以便前台应用不会错过从后台进程发来的任何消息。
+当窗口内容收集完成时，每个框架都开始其断开连接处理。 如果窗口内容下的可视化对象树中存在页面，这些页面将开始引发其 [**Unloaded**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.Unloaded) 事件。 除非已删除对页面的所有引用，否则不会从内存中彻底清除它们。 在 **Unloaded** 回调中，执行以下操作以确保快速释放该内存：
+* 清除页面中任何较大的数据结构，并将它们设置为 null。
+* 注销页面内具有回调方法的所有事件处理程序。 确保在页面的 Loaded 事件处理程序期间注册这些回调。 当 UI 已完成重建，并且页面已添加到可视化对象树时，将引发 Loaded 事件。
+* 在 Unloaded 回调的末尾调用 **GC.Collect**，以快速垃圾回收刚刚设置为 null 的任何较大数据结构。
 
-若要使后台任务保持活动状态，你的应用必须请求 **Run** 方法中的 [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) 并在任务实例接收 [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) 或 [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) 事件时调用 [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504)。 不要使用 **Run** 方法进行循环或等待，因为这将使用资源，并且可能会导致应用的后台任务被系统终止。
+[!code-cs[Unloaded](./code/BackgroundAudio_RS1/cs/MainPage.xaml.cs#SnippetUnloaded)]
 
-当完成 **Run** 方法且未请求延迟时，你的后台任务将获取 **Completed** 事件。 在某些情况下，当你的应用获取 **Canceled** 事件时，该事件后面还跟有 **Completed** 事件。 在执行 **Run** 时，你的任务可能会收到 **Canceled** 事件，因此请务必管理此潜在的并发情况。
+在 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 事件处理程序中，应该设置跟踪变量，以指示应用不再在后台运行。 接下来，查看当前窗口的 [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) 是否为 null，如果你释放应用视图以清除内存（处于后台运行时），它就会为 null。 如果窗口内容为 null，请重新生成应用视图。 在此示例中，使用帮助程序方法 **CreateRootFrame** 创建窗口内容。
 
-可取消后台任务的情况包括：
+[!code-cs[LeavingBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetLeavingBackground)]
 
--   带有音频播放功能的新应用在强制执行独有性子策略的系统上启动。 请参阅下面的[适用于后台音频任务生命周期的系统策略](#system-policies-for-background-audio-task-lifetime)部分。
+**CreateRootFrame** 帮助程序方法将重新创建应用的视图内容。 此方法中的代码等效于默认项目模板中提供的 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 处理程序代码。 一个区别是：**Launching** 处理程序确定 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 的 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.PreviousExecutionState) 属性中的之前执行状态，而 **CreateRootFrame** 方法只是获取作为参数传入的之前执行状态。 若要最大程度地减少重复代码，可以重构默认的 **Launching** 事件处理程序代码以调用 **CreateRootFrame**（如果你愿意）。
 
--   后台任务已启动但还未播放音乐，接着前台应用暂停。
+[!code-cs[CreateRootFrame](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetCreateRootFrame)]
 
--   其他媒体中断，例如来电或 VoIP 呼叫。
+## 后台媒体应用的网络可用性
+不会从流或文件创建的所有网络感知的媒体源将使网络连接保持活动状态（在检索远程内容时），不需要检索时会释放网络连接。 尤其是 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource)，依赖应用程序使用 [**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762) 向平台正确报告已正确缓存的范围。 完全缓存整个内容后，网络不再以应用的名义保留。
 
-可终止后台任务而不另行通知的情况包括：
+如果需要在媒体不在下载时在后台执行网络调用，则必须在诸如 [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.ApplicationTrigger)、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger) 等相应任务中包括这些网络调用。 有关详细信息，请参阅[使用后台任务支持应用](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
--   VoIP 呼叫接入，而系统上没有使后台任务保持活动状态的足够可用内存。
-
--   违反资源策略。
-
--   任务取消或完成操作不会顺利结束。
-
-## 适用于后台音频任务生命周期的系统策略
-
-以下策略将帮助确定系统管理后台音频任务生命周期的方式。
-
-### 独有性
-
-如果启用，则此子策略会将在任何给定时间的后台音频任务数上限都限制为 1。 它在移动 SKU 和其他非桌面 SKU 上处于启用状态。
-
-### 不活动超时
-
-由于资源限制，系统可能会在后台任务处于非活动状态一段时间后终止它。
-
-如果同时满足以下这两个条件，则将后台任务视为“非活动”：
-
--   前台应用不可见（暂停或终止）。
-
--   后台媒体播放器未处于播放状态。
-
-如果同时满足这两个条件，则后台媒体系统策略将启动一个计时器。 如果在计时器到期时这两个条件都未发生更改，则后台媒体系统策略将终止后台任务。
-
-### 共享生命周期
-
-如果启用，则此子策略将强制后台任务依赖前台任务的生命周期。 如果前台任务关闭（无论是由用户还是由系统关闭），后台任务也会关闭。
-
-但是，请注意这并不意味着前台依赖后台。 如果后台任务关闭，这并不会强制关闭前台任务。
-
-下表列出了对哪些设备类型强制执行哪些策略。
-
-| 子策略             | 桌面  | 移动   | 其他    |
-|------------------------|----------|----------|----------|
-| **独有性**        | 已禁用 | 已启用  | 已启用  |
-| **不活动超时** | 已禁用 | 已启用  | 已禁用 |
-| **共享生命周期**    | 已启用  | 已禁用 | 已禁用 |
-
- 
+## 相关主题
+* [媒体播放](media-playback.md)
+* [使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)
+* [与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)
+* [后台音频示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
  
 
@@ -143,6 +126,6 @@ ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 
