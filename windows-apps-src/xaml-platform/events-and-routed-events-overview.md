@@ -5,7 +5,7 @@ title: "事件和路由事件概述"
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 4e4e21789dd76ad691f3828d23c73adcfc31efdf
+ms.openlocfilehash: 1debd0c60fbfb12ff63e27140c4a769565d98f2a
 
 ---
 
@@ -85,7 +85,7 @@ void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, W
 
 ### 使用 **async** 模式的事件处理程序
 
-在某些情况下，可能想要在事件处理程序内使用采用 **async** 模式的 API。 例如，可以在 [**AppBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 中使用 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 来显示文件选取器并与之交互。 但是，许多文件选取器 API 都是异步的。 必须在 **async**/awaitable 作用域中调用它们，编译器将强制执行此操作。 因此，你可以执行的操作是将 **async** 关键字添加到你的事件处理程序，以使该处理程序现在为 **async****void**。 现在允许你的事件处理程序执行 **async**/awaitable 调用。
+在某些情况下，可能想要在事件处理程序内使用采用 **async** 模式的 API。 例如，可以在 [**AppBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 中使用 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 来显示文件选取器并与之交互。 但是，许多文件选取器 API 都是异步的。 必须在 **async**/awaitable 作用域中调用它们，编译器将强制执行此操作。 因此，你可以执行的操作是将 **async** 关键字添加到你的事件处理程序，以使该处理程序现在为 **async** **void**。 现在允许你的事件处理程序执行 **async**/awaitable 调用。
 
 有关使用 **async** 模式的用户交互事件处理示例，请参阅[文件访问和选取器](https://msdn.microsoft.com/library/windows/apps/jj655411)（[创建你的第一个使用 C# 或 Visual Basic 的 Windows 运行时应用](https://msdn.microsoft.com/library/windows/apps/hh974581)系列的一部分）。 另请参阅 [使用 C 调用异步 API]。
 
@@ -246,7 +246,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 确定某个元素是否对鼠标、触摸和触笔输入可见以及其在 UI 中的位置称为*点击测试*。 对于触摸操作以及特定于交互的事件或一个触摸操作引起的操作事件，一个元素必须对点击测试可见，以用作事件源并触发与该操作关联的事件。 否则，该操作会通过该元素传递到可与该输入交互的可视化树中的任意基础元素或父元素。 影响点击测试的因素有很多，但你可以通过检查给定元素的 [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) 属性来确定该元素是否会引发输入事件。 只有当该元素符合以下条件时，该属性才返回 **true**：
 
 -   元素的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 属性值为 [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006)。
--   元素的 **Background** 或 **Fill** 属性值不是 **null**。 **null**[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 值会导致透明性和点击测试不可见。 （若要使元素透明而且可执行点击测试，可使用 [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) 画笔代替 **null**。）
+-   元素的 **Background** 或 **Fill** 属性值不是 **null**。 **null** [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 值会导致透明性和点击测试不可见。 （若要使元素透明而且可执行点击测试，可使用 [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) 画笔代替 **null**。）
 
 **注意** **Background** 和 **Fill** 不由 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 定义，而是由不同的派生类定义，例如 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 和 [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377)。 但你为前景和背景属性使用的画笔含义对点击测试和输入事件而言是相同的，无论是哪些子类实现了这些属性。
 
@@ -292,6 +292,6 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

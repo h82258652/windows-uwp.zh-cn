@@ -4,8 +4,8 @@ Description: "通过 Windows 开发人员中心仪表板，你可以在同一位
 title: "使用 Windows 开发人员中心仪表板"
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7478a832cea6114c7a6e7f6be5cc3e908981a64c
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: 2ccec6e85666ef328f4aa0baa8ba6a705986a4c4
 
 ---
 
@@ -16,9 +16,9 @@ ms.openlocfilehash: 7478a832cea6114c7a6e7f6be5cc3e908981a64c
 
 > **注意** 必须具有[开发人员帐户](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能访问 Windows 开发人员中心仪表板。
 
-当（首次或以更新形式）[为应用创建提交](app-submissions.md)时，可以为任何受支持的操作系统[上载应用包](upload-app-packages.md)，并且应用商店将自动为客户提供最适合他们的程序包。 你可以为应用支持的所有操作系统使用相同的[描述](create-app-descriptions.md)和[插图](app-screenshots-and-images.md)，也可以[为特定的平台自定义描述](create-platform-specific-descriptions.md)。
+当（首次或以更新形式）[为应用创建提交](app-submissions.md)时，可以为任何受支持的操作系统[上载应用包](upload-app-packages.md)，并且应用商店将自动为客户提供最适合他们的程序包。 你可以为应用支持的所有操作系统使用相同的[应用商店一览](create-app-store-listings.md)和[插图](app-screenshots-and-images.md)，也可以[自定义适用于特定操作系统版本的应用商店一览](create-platform-specific-Store-listings.md)。
 
-可以独立于应用的提交管理应用内产品 (IAP)。 这可为使你拥有更大的灵活性和独立进行更改的能力。 有关详细信息，请参阅 [IAP 提交](iap-submissions.md)。
+可以独立于应用的提交管理加载项（应用内产品）。 这可为使你拥有更大的灵活性和独立进行更改的能力。 有关详细信息，请参阅[加载项提交](add-on-submissions.md)。
 
 开发人员中心仪表板还提供了[应用管理和配置服务](app-management-and-services.md)、[查看分析数据](analytics.md)、[付款报告](payout-summary.md)、[推广和客户参与](app-promotion-and-customer-engagement.md)、[Beta 测试](beta-testing-and-targeted-distribution.md)、[将 LOB 应用分发到企业](distribute-lob-apps-to-enterprises.md)等功能。
 
@@ -38,6 +38,6 @@ ms.openlocfilehash: 7478a832cea6114c7a6e7f6be5cc3e908981a64c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

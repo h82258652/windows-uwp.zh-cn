@@ -4,8 +4,8 @@ ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
 description: "了解有关开发和发布带广告的应用的端到端过程。"
 title: "用于创建带广告的应用的工作流"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
 # 用于创建带广告的应用的工作流
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 若要在应用中显示广告，你的应用需要能够接收来自广告网络的广告。 Microsoft 提供的 Web 服务允许 Windows 应用开发人员接收广告。 当用户单击应用中的广告时，你（作为广告的*发布者*）就会从广告的创建者（*广告商*）获取收益。 从广告商赚取的收益会通过你的帐户支付给你。
 
@@ -66,6 +66,6 @@ ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

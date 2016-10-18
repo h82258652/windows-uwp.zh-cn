@@ -4,18 +4,27 @@ ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "枚举设备"
 description: "枚举命名空间可以让你找到内部连接到系统的、外部连接的或通过无线或网络协议可检测到的设备。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
+ms.sourcegitcommit: 23a600fdcf972fcb291653e8aac447e035c12c6d
+ms.openlocfilehash: 2aa1a86a2cb0b413fae5fbcd87599a9f1a822324
 
 ---
 # 枚举设备
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+## 示例
 
-** 重要的 API **
+枚举所有可用设备的最简单方法是使用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) 命令拍摄快照（会在以下部分进一步介绍）。
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+```CSharp
+async void enumerateSnapshot(){
+  DeviceInformationCollection collection = await DeviceInformation.FindAllAsync();
+}
+```
+
+若要下载演示 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 的更多高级用法的示例，请单击[此处](http://go.microsoft.com/fwlink/?LinkID=620536)。
+
+## 枚举 API
 
 枚举命名空间可以让你找到内部连接到系统的、外部连接的或通过无线或网络协议可检测到的设备。 用于枚举可能的设备而使用的 API 为 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空间。 使用这些 API 的一些原因包括以下方面。
 
@@ -82,7 +91,13 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 若要枚举设备快照，请使用 [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) 方法。 此方法会一直等待直到整个枚举进程完成并且会将所有的结果返回为一个 [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx) 对象。 此方法还将重载，为你提供多种选项以便进行筛选结果并将其限制到你感兴趣的设备。 你可以通过提供 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 或在设备选择器中传递来执行此操作。 设备选择器是一个 AQS 字符串，可以指定你想要枚举的设备。 有关详细信息，请参阅[生成设备选择器](build-a-device-selector.md)。
 
+提供的设备枚举快照的示例如下所示：
+
+
+
 除了限制结果以外，你还可以指定要为设备检索的属性。 如果你执行了此操作，则指定的属性将会在每个 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象（返回在集合中）的属性包中可用。 请务必注意并不是所有的属性都可用于所有的设备种类。 要查看哪些属性可用于哪些设备种类，请参阅[设备信息属性](device-information-properties.md)。
+
+
 
 ## 枚举并监视设备
 
@@ -136,10 +151,6 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 任何 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 对象都可由两条信息的组合来唯一地标识：[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果保留了这两条信息，可以在 **DeviceInformation** 对象丢失之后，通过向 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 提供此信息以重新创建它。 如果执行此操作，则可以保存与你的应用集成的设备的用户首选项。
 
-## 示例
-
-
-若要下载展示如何使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 的示例，请单击[此处](http://go.microsoft.com/fwlink/?LinkID=620536)。
 
  
 
@@ -151,6 +162,6 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

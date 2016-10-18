@@ -5,7 +5,7 @@ title: "打印和扫描"
 description: "本部分介绍了如何从你的通用 Windows 应用进行打印和扫描。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
+ms.openlocfilehash: 1e30bfb4f80d955d28799e6a6d5c22b82379a8fc
 
 ---
 # 打印和扫描
@@ -31,6 +31,6 @@ ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

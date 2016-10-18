@@ -1,31 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用内产品 (IAP) 的聚合购置数据。"
-title: "获取 IAP 购置"
+description: "在 Windows 应用商店分析 API 中使用此方法，获取给定日期范围和其他可选筛选器内某一加载项的聚合购置数据。"
+title: "获取加载项购置"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
+ms.sourcegitcommit: ecb0f5263b7f7f470484e9bd579b7bdb6efcdfa4
+ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 
 ---
 
-# 获取 IAP 购置
+# 获取加载项购置
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用内产品 (IAP) 的聚合购置数据。 此方法返回采用 JSON 格式的数据。
+
+在 Windows 应用商店分析 API 中使用此方法，获取给定日期范围和其他可选筛选器内某一加载项（也称为应用内产品或 IAP）的聚合购置数据。 此方法返回采用 JSON 格式的数据。
 
 ## 先决条件
 
 
-若要使用此方法，你需要满足以下条件：
+若要使用此方法，首先需要执行以下操作：
 
--   将需要用于调用此方法的 Azure AD 应用程序与你的开发人员中心帐户相关联。
-
--   针对你的应用程序获取 Azure AD 访问令牌。
-
-有关详细信息，请参阅[使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)。
+* 如果尚未开始操作，请先完成 Windows 应用商店分析 API 的所有[先决条件](access-analytics-data-using-windows-store-services.md#prerequisites)。
+* [获取 Azure AD 访问令牌](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
 ## 请求
 
@@ -42,13 +39,13 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
 <span/> 
 
 ### 请求参数
 
-*applicationId* 或 *inAppProductId* 参数是必需参数。 若要检索注册到该应用的所有 IAP 的购置数据，请指定 *applicationId* 参数。 若要检索单个 IAP 的购置数据，请指定 *inAppProductId* 参数。 如果同时指定这两个参数，会忽略 *inAppProductId* 参数。
+*applicationId* 或 *inAppProductId* 参数是必需参数。 若要检索注册到该应用的所有加载项的购置数据，请指定 *applicationId* 参数。 若要检索单个加载项的购置数据，请指定 *inAppProductId* 参数。 如果同时指定这两个参数，会忽略 *inAppProductId* 参数。
 
 <table>
 <colgroup>
@@ -69,25 +66,25 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">字符串</td>
-<td align="left">要检索 IAP 购置数据的应用的存储 ID。 存储 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。</td>
+<td align="left">要检索加载项购置数据的应用的应用商店 ID。 应用商店 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。</td>
 <td align="left">是</td>
 </tr>
 <tr class="even">
 <td align="left">inAppProductId</td>
 <td align="left">字符串</td>
-<td align="left">要检索购置数据的 IAP 的产品 ID。</td>
+<td align="left">要检索购置数据的加载项的应用商店 ID。 应用商店 ID 在开发人员中心仪表板的加载项的概述页面 URL 中提供。 例如，如果加载项的仪表板页面 URL 为 ```https://developer.microsoft.com/en-us/dashboard/iaps/9NBLGGH4SCZS?appId=9NBLGGH29DM8```，该加载项的应用商店 ID 为字符串 9NBLGGH4SCZS。</td>
 <td align="left">是</td>
 </tr>
 <tr class="odd">
 <td align="left">startDate</td>
-<td align="left">date</td>
-<td align="left">要检索的 IAP 购置数据日期范围中的开始日期。 默认值为当前日期。</td>
+<td align="left">日期</td>
+<td align="left">要检索的加载项购置数据日期范围中的开始日期。 默认值为当前日期。</td>
 <td align="left">否</td>
 </tr>
 <tr class="even">
 <td align="left">endDate</td>
-<td align="left">date</td>
-<td align="left">要检索的 IAP 购置数据日期范围中的结束日期。 默认值为当前日期。</td>
+<td align="left">日期</td>
+<td align="left">要检索的加载项购置数据日期范围中的结束日期。 默认值为当前日期。</td>
 <td align="left">否</td>
 </tr>
 <tr class="odd">
@@ -117,7 +114,7 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 <tr class="odd">
 <td align="left">orderby</td>
 <td align="left">字符串</td>
-<td align="left">对每个 IAP 购置的结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 参数可以是以下字符串之一。
+<td align="left">对每个加载项购置的结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 参数可以是以下字符串之一。
 <ul>
 <li><strong>date</strong></li>
 <li><strong>acquisitionType</strong></li>
@@ -247,7 +244,7 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 
 ### 请求示例
 
-以下示例演示用于获取 IAP 购置数据的多个请求。 将 *inAppProductId* 和 *applicationId* 值替换为你的 IAP 的相应产品 ID 和你的应用的相应存储 ID。
+以下示例演示了用于获取加载项购置数据的多个请求。 将 *inAppProductId* 和 *applicationId* 值替换为你的加载项或应用的相应应用商店 ID。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -267,22 +264,23 @@ Authorization: Bearer <your access token>
 
 | 值      | 类型   | 说明                                                                                                                                                                                                                                                                                |
 |------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array  | 包含聚合 IAP 购置数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下 [IAP 购置值](#iap-acquisition-values)部分。                                                                                                              |
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的 IAP 购置数据超过 10000 行时，就会返回此值。 |
+| 值      | 数组  | 包含聚合加载项购置数据的对象数组。 有关每个对象中的数据的详细信息，请参阅下面的[加载项购置值](#add-on-acquisition-values)部分。                                                                                                              |
+| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10000，但查询的加载项购置数据超过 10000 行时，就会返回此值。 |
 | TotalCount | int    | 查询的数据结果中的行总数。                                                                                                                                                                                                                                 |
 
 <span/>
 
-### IAP 购置值
+<span id="add-on-acquisition-values" />
+### 加载项购置值
 
 *Value* 数组中的元素包含以下值。
 
 | 值               | 类型    | 说明                                                                                                                                                                                                                              |
 |---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                | 字符串  | 购置数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
-| inAppProductId      | 字符串  | 要检索购置数据的 IAP 的产品 ID。                                                                                                                                                                 |
-| inAppProductName    | 字符串  | IAP 的显示名称。                                                                                                                                                                                                             |
-| applicationId       | 字符串  | 要检索 IAP 购置数据的应用的存储 ID。                                                                                                                                                           |
+| inAppProductId      | 字符串  | 要检索购置数据的加载项的应用商店 ID。                                                                                                                                                                 |
+| inAppProductName    | 字符串  | 加载项的显示名称。                                                                                                                                                                                                             |
+| applicationId       | 字符串  | 要检索加载项购置数据的应用的应用商店 ID。                                                                                                                                                           |
 | applicationName     | 字符串  | 应用的显示名称。                                                                                                                                                                                                             |
 | deviceType          | 字符串  | 购置已完成的设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                  |
 | orderName           | 字符串  | 订单名称。                                                                                                                                                                                                                   |
@@ -306,7 +304,7 @@ Authorization: Bearer <your access token>
     {
       "date": "2015-01-02",
       "inAppProductId": "9NBLGGH3LHKL",
-      "inAppProductName": "Contoso IAP 7",
+      "inAppProductName": "Contoso add-on 7",
       "applicationId": "9NBLGGGZ5QDR",
       "applicationName": "Contoso Demo",
       "deviceType": "Phone",
@@ -316,7 +314,7 @@ Authorization: Bearer <your access token>
       "market": "GB",
       "gender": "m",
       "ageGroup": "50orover",
-      "acquisitionType": "Iap",
+      "acquisitionType": "iap",
       "acquisitionQuantity": 1
     }
   ],
@@ -339,6 +337,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO2-->
 
 

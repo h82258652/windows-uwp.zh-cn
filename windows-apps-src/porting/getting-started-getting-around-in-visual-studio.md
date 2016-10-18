@@ -5,7 +5,7 @@ title: "熟悉 Visual Studio 环境"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d31e6e940f0b03667f1e19abec17804f6f3e16a6
+ms.openlocfilehash: 3f23745d161965d08a35abbef31b8e4342cf1ff6
 
 ---
 
@@ -37,7 +37,7 @@ Microsoft Visual Studio 与此非常相似，只不过默认视图的控件在�
 
 让我们在 Visual Studio 中执行一些类似的操作。 在“工具箱”****中，拖动“按钮”****控件，然后将其拖放到 MainPage.xaml 文件的设计图面。
 
-对“TextBlock”****控件执行相同操作，使其外观如下所示：
+对TextBlock****控件执行相同操作，使其外观如下所示：
 
 ![在 Visual Studio 中设计 UI](images/ios-to-uwp/vs-add-button-label.png)
 
@@ -49,7 +49,7 @@ Microsoft Visual Studio 与此非常相似，只不过默认视图的控件在�
 
 ![Visual Studio 中的“按钮属性”窗口](images/ios-to-uwp/vs-button-properties.png)
 
-现在让我们写一些代码，以便在用户点击该按钮时将“TextBlock”****控件的内容更改为“Hello, World!” 。
+现在让我们写一些代码，以便在用户点击该按钮时将TextBlock****控件的内容更改为“Hello, World!” 。
 
 在 Xcode 中，通过编写代码，然后将此代码与控件关联（通常通过将按钮控件拖动至源代码的方法），从而将事件与控件关联，如下所示：
 
@@ -76,7 +76,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-现在让我们关联“TextBlock”****控件。 在 Xcode 中，将按钮控件拖动至源代码文件，以将控件与其定义关联，如下所示。
+现在让我们关联TextBlock****控件。 在 Xcode 中，将按钮控件拖动至源代码文件，以将控件与其定义关联，如下所示。
 
 ![在 Xcode 中将标签与其定义关联](images/ios-to-uwp/xcode-add-button-reference.png)
 
@@ -89,7 +89,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 在 Visual Studio 中，无需关联控件，因为系统始终会为你执行此操作。 让我们来更改某些属性：
 
 1.  点击“MainPage.xaml 文件”选项卡。
-2.  在“设计”****窗格中，点击“TextBlock”****控件。
+2.  在“设计”****窗格中，点击TextBlock****控件。
 3.  在“属性”****窗格中，点击扳手按钮以显示其属性。
 4.  在“名称”****框中，将“&lt;No Name&gt;”更改为“myLabel”。
 
@@ -126,6 +126,6 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

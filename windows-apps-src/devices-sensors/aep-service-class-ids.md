@@ -5,7 +5,7 @@ title: "AEP 服务类 ID"
 description: "关联终结点 (AEP) 服务为设备通过给定协议支持的服务提供编程合约。 其中多个服务具有现成的标识符，应在引用它们时使用。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f201293d1288c8a065723ee2c05a7da45e5e95ab
+ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
 
 ---
 # AEP 服务类 ID
@@ -131,6 +131,6 @@ System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

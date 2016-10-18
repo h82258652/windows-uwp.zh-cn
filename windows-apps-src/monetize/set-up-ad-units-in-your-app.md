@@ -4,8 +4,8 @@ ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: "了解如何在将应用提交到应用商店之前，从 Windows 开发人员中心仪表板向应用添加应用程序 ID 和广告单元 ID 值。"
 title: "在应用中设置广告单元"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
+ms.sourcegitcommit: c6e0cf98c6eb2cdc656d5b4555d794ff6a94d2bc
+ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 # 在应用中设置广告单元
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 当你使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 在应用中显示广告时，必须指定应用程序 ID 和广告单元 ID。 当你开发应用时，请使用适当的[测试应用程序 ID 和广告单元 ID 值](test-mode-values.md)以查看应用在测试期间如何呈现广告。
 
@@ -28,9 +28,7 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 
     * 如果你的应用显示横幅广告，请将这些值分配给 **AdControl** 对象的 **ApplicationId** 和 **AdUnitId** 属性。
 
-    * 如果你的应用显示间隙视频广告，请将这些值传递给 **InterstitialAd** 对象的 **RequestAd** 方法。
-
-> **重要提示** 如果你的应用使用广告中介显示来自 Microsoft 的横幅广告（即，它使用 **AdMediatorControl** 对象），你不需要请求广告单元。 在此情况下，将为你自动生成广告单元。 有关详细信息，请参阅[区别是什么：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
+    * 如果你的应用显示视频间隙广告，请将这些值传递给 **InterstitialAd** 对象的 **RequestAd** 方法。
 
  
 
@@ -45,6 +43,6 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

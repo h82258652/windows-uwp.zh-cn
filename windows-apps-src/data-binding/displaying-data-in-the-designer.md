@@ -5,7 +5,7 @@ title: "设计面图上以及用于原型制作的示例数据"
 description: "也许是不可能或不需要（可能是出于隐私或性能的原因）为你的应用在 Microsoft Visual Studio 或 Blend for Visual Studio 中的设计图面上显示实时数据。"
 translationtype: Human Translation
 ms.sourcegitcommit: 53e807c0d9de8faf2d0b5dc0e1c8e9c380e42d86
-ms.openlocfilehash: 2f7ac4b269a167c3b521fa94d77e27091fa490a8
+ms.openlocfilehash: 6f157688cba014ffc1f8d09c2a291d62c564c8c9
 
 ---
 设计面图上以及用于原型制作的示例数据
@@ -35,7 +35,7 @@ public MainPage()
 
 ![稀疏的设计 UI。](images/displaying-data-in-the-designer-01.png)
 
-第一个补救方法是尝试注释掉该 **DataContext** 分配，改为在页面标记中设置 **DataContext**。 这样，你的实时数据在设计时和运行时都会显示出来。 若要执行此操作，请首先打开你的 XAML 页面。 然后，在**“文档大纲”**窗口中，单击根可设计元素（通常带有标签 **\[Page\]**）来选择它。 在**“属性”**窗口中，查找**“DataContext”**属性（位于“通用”类别内），然后单击**“新建”**。 从**“选择对象”**对话框中单击你的视图模型类型，然后单击**“确定”**。
+第一个补救方法是尝试注释掉该 **DataContext** 分配，改为在页面标记中设置 **DataContext**。 这样，你的实时数据在设计时和运行时都会显示出来。 若要执行此操作，请首先打开你的 XAML 页面。 然后，在**“文档大纲”**窗口中，单击根可设计元素（通常带有标签 **\[Page\]**）来选择它。 在**“属性”**窗口中，查找**DataContext**属性（位于“通用”类别内），然后单击**“新建”**。 从**“选择对象”**对话框中单击你的视图模型类型，然后单击**“确定”**。
 
 ![用于设置 DataContext 的 UI。](images/displaying-data-in-the-designer-02.png)
 
@@ -145,6 +145,6 @@ else
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

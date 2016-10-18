@@ -5,7 +5,7 @@ title: "管理广告市场活动"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
+ms.openlocfilehash: 71fb1e13c3db45043b312d24ea739ae68751dfb0
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
 ## 报告
 
 
-若要查看你的广告市场活动的执行方式，请在仪表板的导航窗格中依次单击“分析”****&gt;“应用安装广告”****。 有关此报告的详细信息，请参阅[应用安装广告报告](app-install-ads-reports.md)。
+若要查看你的广告市场活动效果，请在仪表板的导航窗格中依次单击“分析”****&gt;“应用安装广告”****。 有关此报告的详细信息，请参阅[应用安装广告报告](app-install-ads-reports.md)。
 
 ## 编辑广告市场活动
 
@@ -51,6 +51,6 @@ ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

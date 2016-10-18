@@ -1,19 +1,17 @@
 ---
 author: TylerMSFT
-title: "创建和注册后台任务"
+title: "创建和注册在单独进程中运行的后台任务"
 description: "创建一个后台任务类并注册它，以便在应用不在前台运行时运行。"
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 translationtype: Human Translation
-ms.sourcegitcommit: 579547b7bd2ee76390b8cac66855be4a9dce008e
-ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
+ms.sourcegitcommit: 95c34f70e9610907897cfe9a2bf82aaac408e486
+ms.openlocfilehash: 4eb67f8f63134ab33df79b0b98b252b2b27b2dda
 
 ---
 
-# 创建和注册后台任务
-
+# 创建和注册在单独进程中运行的后台任务
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 **重要的 API**
 
@@ -21,10 +19,12 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-创建一个后台任务类并注册它，以便在应用不在前台运行时运行。
+创建一个后台任务类并注册它，以便在应用不在前台运行时运行。 本主题演示了如何创建和注册在单独进程（而不是前台进程）中运行的后台任务。 若要直接在前台应用程序中执行后台任务，请参阅[创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)。
+
+> [!Note]
+> 如果你使用后台任务在后台播放媒体，请参阅[在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)，了解有关 Windows 10 版本 1607 中使此操作更加简单的改进信息。
 
 ## 创建后台任务类
-
 
 你可以通过编写用于实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的类来在后台运行代码。 在使用诸如 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 或 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 等触发器触发特定事件时，将运行该代码。
 
@@ -110,9 +110,10 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
-    >     BackgroundTaskDeferral _deferral = taskInstance.GetDeferral(); // Note: define at class scope
+    >     BackgroundTaskDeferral _deferral; // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
     >     public async void Run(IBackgroundTaskInstance taskInstance)
     >     {
+    >         _deferral = taskInstance.GetDeferral()
     >         //
     >         // TODO: Insert code to start one or more asynchronous methods using the
     >         //       await keyword, for example:
@@ -124,7 +125,7 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
     >     }
     > ```
     > ```cpp
-    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: define at class scope
+    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
     >     void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
     >     {
     >         //
@@ -150,7 +151,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 > [!NOTE]
 > 你还可以创建专用于注册后台任务的函数 - 请参阅[注册后台任务](register-a-background-task.md)。 在这种情况下，你可以简单构造触发器并将其随任务名称、任务入口点以及（可选）条件一起提供给注册函数，而不是使用接下来的 3 个步骤。
-
 
 ## 注册要运行的后台任务
 
@@ -242,10 +242,11 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 > [!NOTE]
 > 通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
 
-若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
+若要确保通用 Windows 应用在你发布更新后继续正常运行，请使用 **ServicingComplete**（请参阅 [SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839)）触发器执行任何更新后配置更改（如迁移应用的数据库和注册后台任务）。 最佳做法是注销与以前版本的应用关联的后台任务（请参阅 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)），同时为新版本的应用注册后台任务（请参阅 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)）。
+
+有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
 ## 使用事件处理程序处理后台任务完成
-
 
 你应该使用 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 注册一个方法，以便应用可以从后台任务中获取结果。 当启动或恢复应用时，如果自从上次在应用前台运行后后台任务就已完成，将调用标记方法。 （如果应用当前位于前台时后台任务完成，将立即调用 OnCompleted 方法。）
 
@@ -275,7 +276,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
     > [!NOTE]
     > UI 更新应该异步执行，为的是避免占用 UI 线程。 有关示例，请参阅[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)中的 UpdateUI 方法。
-
 
 
 2.  回到已注册后台任务的位置。 在该代码行之后，添加一个新的 [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) 对象。 提供 OnCompleted 方法作为 **BackgroundTaskCompletedEventHandler** 构造函数的参数。
@@ -315,7 +315,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 ## 摘要和后续步骤
 
-
 现在，你应该已基本了解如何编写后台任务类、如何从应用中注册后台任务，以及如何让应用识别后台任务何时完成。 你还应该了解如何更新应用程序清单，以便你的应用可以成功注册后台任务。
 
 > [!NOTE]
@@ -337,6 +336,8 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
+* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)。
+[将多进程后台任务转换为单进程后台任务](convert-multiple-process-background-task.md)  
 
 **后台任务指南**
 
@@ -350,6 +351,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

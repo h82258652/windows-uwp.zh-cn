@@ -5,7 +5,7 @@ description: "使用 Visual Studio 将你的网站转换为适用于 Windows 10 
 kw: Hosted Web Apps tutorial, Porting to Windows 10 with Visual Studio, How to convert website to Windows, How to add website to Windows Store, Packaging web application for Microsoft Store, Test Windows 10 native features and runtime APIs with CodePen, How to use Windows Cortana Live Tiles Built-in Camera on my Website with remote JavaScript
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
+ms.openlocfilehash: e6dfda4a0f4f8b5760f08cfeb3562d9e42ba8a10
 
 ---
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 启动 Visual Studio。
 1. 单击“文件”。
 2. 单击“新建项目”。
-3. 在“JavaScript”下的“Windows 通用”中，单击“空白应用\(Windows 通用\)”。
+3. 在JavaScript下的“Windows 通用”中，单击“空白应用\(Windows 通用\)”。
 
 ![步骤 2：创建一个空白 JavaScript 应用](images/hwa-to-uwp/windows_step2.png)
 
@@ -99,6 +99,6 @@ function cameraCapture() {
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

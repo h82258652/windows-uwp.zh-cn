@@ -4,13 +4,13 @@ ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: "管理你的帐户设置和个人资料信息"
 description: "你可以在统一 Windows 开发人员中心仪表板的“帐户设置”部分中，查看和更新你的开发者帐户设置和个人资料信息。"
 translationtype: Human Translation
-ms.sourcegitcommit: a9aae8fdc3cb4eaf151934a773a7cc3e6ced177f
-ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 3859918d94ad7ffcf1c331ca5a0ca6540387886f
 
 ---
 # 管理你的帐户设置和个人资料信息
 
-你可以在 [Windows 开发人员中心仪表板](https://msdn.microsoft.com/library/windows/apps/Mt169843)的“帐户设置”****部分中，查看和更新你的开发者帐户设置和个人资料信息。
+你可以在 [Windows 开发人员中心仪表板](using-the-windows-dev-center-dashboard.md)的“帐户设置”****部分中，查看和更新你的开发者帐户设置和个人资料信息。
 
 ## 帐户设置
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
 
 在“帐户详细信息”****部分中，你可以查看帐户的状态和类型。 你可以在此页面上查找你的发布者 ID，其中包括你的卖家 ID、Windows 发布者 ID 和 Windows Phone 发布者 ID。 这些值由 Microsoft 分配以唯一地标识你的开发者帐户，你无法编辑这些值。
 
-**注意** 可以在每个应用的[“应用标识”](https://msdn.microsoft.com/library/windows/apps/Mt148561)页中找到你的个别应用的标识详细信息。
+**注意** 可以在每个应用的[“应用标识”](view-app-identity-details.md)页中找到你的个别应用的标识详细信息。
 
 ## 联系人信息
 
@@ -30,13 +30,13 @@ ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
 
 ## 其他设置和信息
 
-本部分还包含指向[设置付款帐户和税单](https://msdn.microsoft.com/library/windows/apps/Bg124529)的链接。 你将需要先执行此操作，然后才可以收取应用或应用内产品 (IAP) 的费用。
+本部分还包含指向[设置付款帐户和税单](setting-up-your-payout-account-and-tax-forms.md)的链接。 需要先执行此操作，然后才可以收取应用或加载项的费用。
 
 某些程序可能提供让你扩展帐户功能的代码；可以在“帐户设置”****中输入这些内容。 此页面还允许你查看[已解锁用于测试的任何 Windows Phone 8 或 Windows Phone 8.1 设备](http://go.microsoft.com/fwlink/p/?LinkId=533897)的详细信息，并选择加入或退出[开发人员中心会员计划](dev-center-insider-program.md)。
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

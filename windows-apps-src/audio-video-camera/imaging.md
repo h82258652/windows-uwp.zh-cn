@@ -2,14 +2,14 @@
 author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: "本文介绍了如何使用 BitmapDecoder 和 BitmapEncoder 加载和保存图像文件，以及如何使用 SoftwareBitmap 对象表示位图图像。"
-title: "图像处理"
+title: "创建、编辑和保存位图图像"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
+ms.sourcegitcommit: c61bad4b4a5440531c0177247c425addaf452920
+ms.openlocfilehash: ff6bff692c4e0e73b2c99e06b46e8a3050ba12c4
 
 ---
 
-# 图像处理
+# 创建、编辑和保存位图图像
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -61,6 +61,8 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 若要使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 控件在 XAML 页面内显示图像，首先在你的 XAML 页面中定义 **Image** 控件。
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
+
+当前，**Image** 控件仅支持使用 BGRA8 编码和预乘 alpha 或不带 alpha 的通道的图像。 在尝试显示某个图像前，进行测试以确保它具有正确的格式，如果没有，则使用 **SoftwareBitmap** 静态 [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) 方法将该图像转换为受支持的格式。
 
 创建新的 [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) 对象。 通过调用 [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856) 设置源对象的内容，从而传入 **SoftwareBitmap**。 然后，你可以将 **Image** 控件的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) 属性设置为新创建的 **SoftwareBitmapSource**。
 
@@ -130,6 +132,6 @@ ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

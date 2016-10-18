@@ -1,20 +1,20 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: "了解如何使用 Microsoft 官方商城协议和盈利 SDK 中的 Microsoft Advertising 库来将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。"
+description: "了解如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 库，将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。"
 title: "间隙广告"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 ---
 
 # 间隙广告
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-此演练显示如何使用 Microsoft 官方商城协议和盈利 SDK 中的 Microsoft Advertising 库来将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。
+
+本演练演示了如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 库，将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。
 
 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
@@ -36,16 +36,13 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 ### 先决条件
 
-1.  使用 Visual Studio 2015 或 Visual Studio 2013 安装 [Microsoft 官方商城协定和盈利 SDK](http://aka.ms/store-em-sdk)。
-
-2.  在 Visual Studio 中，打开项目或创建新项目。
+* 对于 UWP 应用：使用 Visual Studio 2015 安装 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)。
+* 对于 Windows 8.1 或 Windows Phone 8.1 应用：使用 Visual Studio 2015 或 Visual Studio 2013 安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。
 
 ### 代码开发
 
 * [适用于 XAML/.NET 应用的步骤](#interstitialadsxaml10)
-
 * [适用于 HTML/JavaScript 的步骤](#interstitialadshtml10)
-
 * [适用于 C++（DirectX 互操作）的步骤](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
@@ -354,7 +351,7 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 ### 使用 Windows 开发人员中心发布带有实时广告的应用
 
-1.  在“开发人员中心仪表板”中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，指定“视频间隙”****。 记下广告单元 ID 和应用程序 ID。
+1.  在开发人员中心仪表板中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，指定“视频间隙”****。 记下广告单元 ID 和应用程序 ID。
 
 2.  在你的代码中，将测试广告单元值替换为你在开发人员中心生成的实时值。
 
@@ -387,6 +384,6 @@ ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

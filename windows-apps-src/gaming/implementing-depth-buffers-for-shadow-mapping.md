@@ -5,7 +5,7 @@ description: "本操作实例演示如何使用深度映射呈现阴影卷，并
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4bb1f5c71d83b2dc3271b5b2ceaa9a1156b00004
+ms.openlocfilehash: a323c299d588cdcff7b83d538a705d64207c96b2
 
 ---
 
@@ -90,6 +90,6 @@ Windows 8 为功能级别 9\_1 和 9\_3 添加了深度比较功能。 现在，
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

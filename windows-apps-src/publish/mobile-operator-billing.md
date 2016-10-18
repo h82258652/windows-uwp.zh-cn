@@ -4,8 +4,8 @@ Description: "Windows 应用商店为支持此功能的移动运营商提供移�
 title: "移动运营商结算"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: 80a20f4f87ce2ef40ce4ff7c6551d74ac375da1c
-ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
+ms.sourcegitcommit: 3afac16fb79262dd6a75cd44804747d173e60edf
+ms.openlocfilehash: 114783cb93d1d49eb1b2cd0d5218a35318a02df0
 
 ---
 
@@ -27,14 +27,16 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 
 移动运营商结算的 Windows 10 实现当前受这些移动运营商支持。
 
-| 国家/地区 | 移动运营商 |
-|----------------|------------------|
-| 芬兰        | DNA、Elisa       |
-| 德国        | O2               |
-| 意大利          | Wind             |
-| 挪威         | Telenor          |
-| 瑞士    | Swisscom         |
-| 美国  | Sprint           |
+| 国家/地区  | 移动运营商 |
+|-----------------|------------------|
+| 芬兰         | DNA、Elisa       |
+| 德国         | O2               |
+| 匈牙利         | Telenor          |
+| 意大利           | Wind             |
+| 挪威          | Telenor          |
+| 瑞士     | Swisscom         |
+| 美国   | Sprint           |
+| 英国  | O2               |
 
  
 
@@ -50,10 +52,10 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 | 澳大利亚            | Telstra                                                            |
 | 奥地利              | A1 Telekom、T-Mobile                                               |
 | 巴林              | Zain、VIVA                                                         |
-| 比利时              | BASE、Mobistar、Proximus                                                     |
+| 比利时              | BASE、Mobistar、Proximus                                           |
 | 巴西               | Claro                                                              |
 | 保加利亚             | Telenor                                                            |
-| 加拿大               | Fido、Rogers、Telus                                                |
+| 加拿大               | Fido、Rogers                                                       |
 | 智利                | Claro                                                              |
 | 中国                | China Mobile                                                       |
 | 哥伦比亚             | Claro、Movistar                                                    |
@@ -70,26 +72,25 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 | 危地马拉            | Claro                                                              |
 | 匈牙利              | Telenor、T-Mobile                                                  |
 | 印度                | Idea                                                               |
-| 印度尼西亚            | Indosat、Telkomsel、XL Axiata、AXIS                                |
-| 爱尔兰              | O2、Vodafone、Three                                                      |
+| 印度尼西亚            | Indosat、Telkomsel、XL Axiata、Hutchinson CP Telecommunications (HCPT)     |
+| 爱尔兰              | O2、Vodafone、Three                                                |
 | 意大利                | Telecom Italia、Vodafone、Wind、3 Italia                           |
 | 约旦               | Zain、Umniah                                                       |
 | 肯尼亚                | Safaricom                                                          |
-| 科威特               | Zain、VIVA                                                         |
+| 科威特               | Zain、Viva、Ooredoo                                                |
 | 拉脱维亚               | Tele2                                                              |
 | 立陶宛            | Tele2                                                              |
 | 马来西亚             | DiGi                                                               |
-| 墨西哥               | Iusacell、Telcel、Unefon、Movistar                                 |
+| 墨西哥               | Iusacell、Telcel、Movistar                                         |
 | 荷兰          | T-Mobile、Vodafone                                                 |
 | 挪威               | Telenor                                                            |
 | 阿曼                 | Ooredoo                                                            |
 | 巴基斯坦             | Telenor                                                            |
 | 秘鲁                 | Claro                                                              |
-| 菲律宾          | Globe、Sun                                                         |
-| 波兰               | T-Mobile、Orange、Polkomtel (Plus)                                 |
-| 波多黎各          | Claro                                                              |
+| 菲律宾          | Globe、Sun、Smart Communications                                   |
+| 波兰               | T-Mobile、Orange、Polkomtel (Plus)、Play                           |
 | 罗马尼亚              | Orange、Vodafone                                                   |
-| 俄罗斯               | Beeline、MTS                                                          |
+| 俄罗斯               | Beeline、MTS                                                       |
 | 沙特阿拉伯         | Zain                                                               |
 | 新加坡            | M1、SingTel、StarHub                                               |
 | 斯洛伐克             | T-Mobile                                                           |
@@ -98,7 +99,6 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 | 西班牙                | Movistar、Vodafone、Orange                                         |
 | 瑞典               | Telenor、Tele2                                                     |
 | 瑞士          | Swisscom                                                           |
-| 泰国             | DTAC                                                               |
 | 阿拉伯联合酋长国 | Etisalat、Du                                                       |
 | 英国       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
 | 美国        | AT&amp;T、Sprint、T-Mobile、Verizon                                    |
@@ -118,6 +118,6 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

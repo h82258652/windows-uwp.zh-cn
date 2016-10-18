@@ -5,7 +5,7 @@ description: "本演练演示了如何将 .NET Framework 与 Visual Basic 或 C#
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: c521061d9fdd3eb2c25e3072182fb1d7823f13ba
+ms.openlocfilehash: ff9db6298fd6d0083ae6923f3666ce4315573058
 
 ---
 
@@ -33,7 +33,7 @@ ms.openlocfilehash: c521061d9fdd3eb2c25e3072182fb1d7823f13ba
 
 本部分将创建为使用 JavaScript 的 Windows 生成的通用 Windows 应用，并添加 Visual Basic 或 C# Windows 运行时组件项目。 它演示了如何定义托管的 Windows 运行时类型、创建 JavaScript 中类型的实例并调用静态和实例成员。 特意将示例应用的视觉显示设置为单调效果，从而重点关注组件。 可以随意设置使其更加美观。
 
-1.  在 Visual Studio 中，创建新的 JavaScript 项目：在菜单栏上，依次选择“文件”、“新建”、“项目”****。 在“新建项目”****对话框的“已安装模板”****部分中，依次选择“JavaScript”****、“Windows”****和“通用”****。 （如果 Windows 不可用，请确保使用的是 Windows 8 或更高版本。）选择“空白应用程序”****模板，然后输入 SampleApp 作为项目名称。
+1.  在 Visual Studio 中，创建新的 JavaScript 项目：在菜单栏上，依次选择“文件”、“新建”、“项目”****。 在“新建项目”****对话框的“已安装模板”****部分中，依次选择JavaScript****、“Windows”****和“通用”****。 （如果 Windows 不可用，请确保使用的是 Windows 8 或更高版本。）选择“空白应用程序”****模板，然后输入 SampleApp 作为项目名称。
 2.  创建组件项目：在“解决方案资源管理器”中，打开 SampleApp 解决方案的快捷菜单，然后依次选择“添加”****、“新建项目”****将新的 C# 或 Visual Basic 项目添加到解决方案。 在“添加新项目”****对话框的“已安装模板”****部分中，选择“Visual Basic”****或“Visual C#”****，然后依次选择“Windows”****、“通用”****。 选择“Windows 运行时组件”****模板，然后输入 **SampleComponent** 作为项目名称。
 3.  将类名更改为 **Example**。 请注意，该类在默认情况下标记为 **public sealed**（Visual Basic 中为 **Public NotInheritable**）。 必须封装通过你的组件公开的所有 Windows 运行时类。
 4.  将两个简单的成员添加到类：**static** 方法（在 Visual Basic 中为 **Shared** 方法）和实例属性：
@@ -738,6 +738,6 @@ asyncCancel 函数只调用 WinJS.Promise 对象的取消方法。
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

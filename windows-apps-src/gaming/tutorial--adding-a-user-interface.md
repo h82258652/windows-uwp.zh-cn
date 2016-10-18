@@ -5,7 +5,7 @@ description: "你已经了解示例游戏如何实现主游戏对象以及基本
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d7af6683ab2def1af62e73be008e9189190cde95
+ms.openlocfilehash: 4f4ca9626e38ce7449b6476345205d136b3d9a2d
 
 ---
 
@@ -1493,6 +1493,6 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

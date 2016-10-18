@@ -6,7 +6,7 @@ Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 5b11c3d4757d7da0c4c99d8f74a8988babfc26fd
+ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
 
 ---
 
@@ -148,9 +148,9 @@ namespace BackgroundTasks
 
 1.  在解决方案资源管理器中，打开“Package.appxmanifest”。
 2.  单击或点击“声明”****选项卡。
-3.  在“可用声明”****下，选择“BackgroundTasks”****，然后单击“添加”****。 Visual Studio 即会将“BackgroundTasks”****添加到“支持的声明”****下。
+3.  在“可用声明”****下，选择BackgroundTasks****，然后单击“添加”****。 Visual Studio 即会将BackgroundTasks****添加到“支持的声明”****下。
 4.  在“支持的任务类型”****下，确保已选中“计时器”****。
-5.  在“应用设置”****下，将入口点设置为“BackgroundTasks.BlogFeedBackgroundTask”****。
+5.  在“应用设置”****下，将入口点设置为BackgroundTasks.BlogFeedBackgroundTask****。
 6.  单击或点击“应用程序 UI”****选项卡。
 7.  将“锁屏界面通知”****设置为“锁屏提醒和磁贴文本”****。
 8.  在“锁屏提醒徽标”****字段中，将路径设置为 24x24 像素图标。
@@ -249,7 +249,7 @@ namespace ContosoApp
 2.  按 F5 或点击“调试”&gt;“开始调试”****以部署和运行该应用。
 3.  应用启动后，切换回 Visual Studio。
 4.  确保显示“调试位置”****工具栏。 该工具栏位于“查看”&gt;“工具栏”****菜单上。
-5.  在“调试位置”****工具栏上，单击“暂停”****下拉菜单，然后选择“BlogFeedBackgroundTask”****。
+5.  在“调试位置”****工具栏上，单击“暂停”****下拉菜单，然后选择BlogFeedBackgroundTask****。
 6.  Visual Studio 会在断点位置暂停执行。
 7.  按 F5 或点击“调试”&gt;“继续”****以继续运行该应用。
 8.  按 Shift+F5 或点击“调试”&gt;“停止调试”****以停止调试。
@@ -270,6 +270,6 @@ namespace ContosoApp
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

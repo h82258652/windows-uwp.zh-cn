@@ -5,7 +5,7 @@ description: "Entity Framework (EF) 是一个对象关系映射程序，支持�
 title: "C# 应用的带有 SQLite 的 Entity Framework 7"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4c9b674445e901a370f9822f8f11acdeba6061b6
+ms.openlocfilehash: b453a2a6c3ab0b9418122ae27bf6a3a1c56e5873
 
 ---
 
@@ -29,6 +29,6 @@ Entity Framework (EF) 是一个对象关系映射程序，支持使用特定于�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

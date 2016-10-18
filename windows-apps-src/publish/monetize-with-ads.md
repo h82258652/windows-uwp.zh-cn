@@ -5,14 +5,14 @@ title: "通过广告盈利"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
+ms.openlocfilehash: af322795be849bdaa2b1babeaec29d09f5d73fcf
 
 ---
 
-# 通过广告盈利
+# 利用广告来盈利
 
 
-如果你的应用使用 **AdMediatorControl**、**AdControl** 或者 **InterstitialAd** 控件来显示横幅或间隙视频广告，请使用“盈利”****&gt;“利用广告来盈利”****页面管理你的广告的使用。
+如果你的应用使用 **AdMediatorControl**、**AdControl** 或者 **InterstitialAd** 控件显示横幅或视频间隙广告，请使用“盈利”****&gt;“利用广告来盈利”****页面管理广告的使用。
 
 ## Windows 广告中介
 
@@ -70,6 +70,6 @@ ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

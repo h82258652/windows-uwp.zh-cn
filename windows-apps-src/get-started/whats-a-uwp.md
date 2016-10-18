@@ -1,23 +1,29 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: "什么是通用 Windows 平台 (UWP) 应用？"
 description: "了解我们称之为“通用 Windows 应用”的不同应用类型：Windows 应用商店应用、Windows Phone 应用商店应用和 Windows 运行时应用。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f02851d848a82af7104a6038c5d8850d5362c832
+ms.sourcegitcommit: 6be8bb0a78b614e160fb40629601bdab2d7fc71a
+ms.openlocfilehash: 3fd9f4d539977c4b531e08efe0719328365c757c
 
 ---
 
 # 什么是通用 Windows 平台 (UWP) 应用？
 
+如果不熟悉 Windows 平台，或来自 .NET、Windows Forms 或 Silverlight 领域，可能会对 UWP 应用实际上*是*什么感到疑惑。 
+
+正如名著中所说：“不必惊慌！”。 所有一切很快便会清清楚楚。 
+
 通用 Windows 平台 (UWP) 应用是一种基于通用 Windows 平台 (UWP) 生成的 Windows 体验，它首次作为 Windows 运行时在 Windows 8 中引入。 用户希望其*体验*在所有设备上均为移动版，并且希望使用现有的最方便或最高效的设备完成任务，此理念是 UWP 应用的核心。
 
-通过 Windows 10，你可以更加轻松地开发适用于 UWP 的应用，并且只需一个 API 集、一个应用包和一个应用商店，即可访问所有 Windows 10 设备 – PC、平板电脑、手机等。 对许多屏幕大小以及各种交互模型（无论是触控、鼠标和键盘、游戏控制器还是笔）的支持也更加轻松。
+通过 Windows 10，你可以更加轻松地开发适用于 UWP 的应用，并且只需一个 API 集、一个应用包和一个应用商店，即可访问所有 Windows 10 设备 – PC、平板电脑、手机、Xbox、HoloLens、Surface Hub 等。 对许多屏幕大小以及各种交互模型（无论是触控、鼠标和键盘、游戏控制器还是笔）的支持也更加轻松。
+
+总而言之：完全可以在单个项目中使用你属性的编程语言和 API，将几乎相同的代码运行在现存的大量 Windows 硬件上。
 
 ![Windows 支持的设备](images/1894834-hig-device-primer-01-500.png)
 
-##那么，UWP 应用是什么呢？
+##那么，UWP 应用*确切*的定义是什么？
 
 
 什么使 UWP 应用与众不同？ 以下特性使 Windows 10 上的 UWP 应用与众不同。
@@ -93,8 +99,14 @@ Microsoft Visual Studio 2015 为每种语言提供 UWP 应用模板，该模板�
 * [通用 Windows 平台应用指南](universal-application-platform-guide.md)
 * [准备工作](get-set-up.md)
 
+## 更多高级主题
+
+* [.NET 本机 - 对于通用 Windows 平台 (UWP) 开发人员的意义](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
+* [.NET 中的通用 Windows 应用](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)
+* [适用于 UWP 应用的 .NET](https://msdn.microsoft.com/en-us/library/mt185501.aspx)
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Sep16_HO3-->
 
 

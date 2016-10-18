@@ -32,6 +32,8 @@
 
 下面是在已转换的应用中受支持的 UWP API 的完整列表。 你可以查看[在已转换的应用中最新受支持的 API](#new) 或[在已转换的应用和桌面应用程序中均受支持的 API](#both)。 
 
+有关如何从已转换的应用中调用 UWP API 的示例，请参阅 [GitHub 上的桌面桥代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)。
+
 <span id="new" />
 ### 在新转换的应用中受支持的 API
 
@@ -1028,6 +1030,6 @@
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Sep16_HO5-->
 
 

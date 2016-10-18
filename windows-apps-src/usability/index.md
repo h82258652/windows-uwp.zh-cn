@@ -1,17 +1,16 @@
 ---
 description: "了解如何使你的应用针对全世界用户都具有包容性和辅助性。"
-keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
+keywords: "uwp 应用辅助功能, 全球化, 设计包容应用, 辅助功能应用要求"
 title: "UWP 应用中的可用性 - Windows 应用开发"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 5370dd078db81de606b7a4bbfcf6dd36b2280a17
-ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
+ms.sourcegitcommit: 589e3290a47a9245ddb5e43f64d13bae1244ac8b
+ms.openlocfilehash: d7246bc898e36155996941875b6c00da7891809d
 
 ---
-
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
 # UWP 应用中的可用性
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 这些较小的优化额外关注了细节方面，可将良好的用户体验转换为一次能满足全球用户需求的真正具有包容性的用户体验。
 
@@ -104,7 +103,7 @@ ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 
 ## 全球化和本地化
 
-Windows 的使用遍及世界各地，用户的文化背景、区域及语言也各不相同。 用户可以说任意一种语言，甚至是多种语言。 用户可能位于世界的任何地方，可能在任何地方说任何语言。 通过使用全球化和本地化对应用进行设计使其更具有适应性，可以拓展其潜在市场。 
+Windows 的使用遍及世界各地，用户的文化背景、区域及语言也各不相同。 用户可以说任意一种语言，甚至是多种语言。 用户可能位于世界的任何地方，可能在任何地方说任何语言。 通过使用全球化和本地化对应用进行设计使其更具有适应性，可以拓展其潜在市场。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -154,7 +153,7 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 
 ## 应用设置
 
-借助应用设置，用户可以自定义你的应用，从而可以针对其个人需求和偏好来优化它。 通过提供适当的设置并妥善存储它们，可使用户体验更加出色。 
+借助应用设置，用户可以自定义你的应用，从而可以针对其个人需求和偏好来优化它。 通过提供适当的设置并妥善存储它们，可使用户体验更加出色。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -168,16 +167,16 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 </div>
 
 ## 应用内帮助
-无论你设计的应用有多好，某些用户仍将需要一些额外帮助。 
+无论你设计的应用有多好，某些用户仍将需要一些额外帮助。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[应用帮助指南](../app-help-guidelines/guidelines-for-app-help.md)</b><br/>应用程序可能会很复杂，而为用户提供有效的帮助可大幅改善他们的体验。 
+<p><b>[应用帮助指南](../in-app-help/guidelines-for-app-help.md)</b><br/>应用程序可能会很复杂，而为用户提供有效的帮助可大幅改善他们的体验。
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[说明性 UI](../app-help-guidelines/instructional-ui.md)</b><br/>有时，向用户解释应用中他们不熟悉的功能（例如特定的触摸交互）会很有用。 在这些情况下，你需要通过 UI 向用户显示说明，以便他们可以发现并使用可能错过的功能。</p>
+<p><b>[说明性 UI](../in-app-help/instructional-ui.md)</b><br/>有时，向用户解释应用中他们不熟悉的功能（例如特定的触摸交互）会很有用。 在这些情况下，你需要通过 UI 向用户显示说明，以便他们可以发现并使用可能错过的功能。</p>
   </div>
 </div>
 </div>
@@ -185,19 +184,16 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[应用内帮助](../app-help-guidelines/in-app-help.md)</b><br/>在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。 在创建应用内帮助时，请考虑以下指南。</p>
+<p><b>[应用内帮助](../in-app-help/in-app-help.md)</b><br/>在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。 在创建应用内帮助时，请考虑以下指南。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[外部帮助](../app-help-guidelines/external-help.md)</b><br/>在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。 在创建应用内帮助时，请考虑以下指南。</p>
+<p><b>[外部帮助](../in-app-help/external-help.md)</b><br/>在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。 在创建应用内帮助时，请考虑以下指南。</p>
   </div>
 </div>
 </div>
 
 
 
-
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

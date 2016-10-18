@@ -5,7 +5,7 @@ title: "关联性能报告"
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
 translationtype: Human Translation
 ms.sourcegitcommit: 577b238875b2d0edd47d9ad0e5e73ca79a6acf75
-ms.openlocfilehash: 8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e
+ms.openlocfilehash: cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d
 
 ---
 
@@ -50,6 +50,6 @@ ms.openlocfilehash: 8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

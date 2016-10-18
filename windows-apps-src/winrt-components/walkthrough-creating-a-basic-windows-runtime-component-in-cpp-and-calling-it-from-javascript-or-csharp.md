@@ -5,7 +5,7 @@ description: "本演练演示了如何创建一个可通过 JavaScript、C# 或 
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 860333e3239198cd54eea061195e2a51d786821b
+ms.openlocfilehash: 0085d3edb2ec1fbe14ce268c54532cd246a73dde
 
 ---
 
@@ -494,7 +494,7 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 
 ## 为按钮添加事件处理程序
 
-在“解决方案资源管理器”中，打开“MainPage.xaml.cs”。 （文件可能嵌套在 MainPage.xaml 下。）为 System.Text 添加 using 指令，然后在 MainPage 类中为对数计算添加事件处理程序。
+在“解决方案资源管理器”中，打开MainPage.xaml.cs。 （文件可能嵌套在 MainPage.xaml 下。）为 System.Text 添加 using 指令，然后在 MainPage 类中为对数计算添加事件处理程序。
 
 ```csharp
 private void Button1_Click_1(object sender, RoutedEventArgs e)
@@ -635,6 +635,6 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

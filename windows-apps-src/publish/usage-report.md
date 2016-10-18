@@ -4,8 +4,8 @@ Description: "Windows 开发人员中心仪表板中的“使用情况报告”�
 title: "使用情况报告"
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 translationtype: Human Translation
-ms.sourcegitcommit: 6dac44032ac217969148ff73c594f99d8a733355
-ms.openlocfilehash: 0cb9d09504a024cabe66661a5c77e21752b7e2e6
+ms.sourcegitcommit: c413ff1d4fe709e92f7a306e671f9a4fe22a5999
+ms.openlocfilehash: 21be2064914189abe8ef68c858d33346b947550c
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: 0cb9d09504a024cabe66661a5c77e21752b7e2e6
 
 Windows 开发人员中心仪表板中的“使用情况”****报告可使你查看使用 Windows 10 的客户如何使用你的应用，并获取有关已定义的自定义事件的信息。 你可以在仪表板中查看此数据，或[下载该报告](download-analytic-reports.md)以供脱机查看。
 
-> **注意** 之前，如果你已在应用中激活了 Visual Studio Application Insights SDK，则“使用情况”****报告仅提供数据。 更新了“使用情况”****报告后，便不再需要它。
+> **注意** 之前，如果你已在应用中激活了 Visual Studio Application Insights SDK，则**使用情况**报告仅提供数据。 更新了**使用情况**报告后，这就不再需要了。
 
 ## 应用筛选器
 
@@ -43,9 +43,9 @@ Windows 开发人员中心仪表板中的“使用情况”****报告可使你�
 
 ## 自定义事件
 
-“自定义事件”****图显示你为应用定义的任何自定义事件的总发生次数。 这可以包括同一个客户的多次发生。
+“自定义事件”****图显示你为应用定义的任何自定义事件的总发生次数。 这可以包括与同一个客户有关的多次发生次数。
 
-自定义事件通过在 [Microsoft 官方商城协定和盈利 SDK](../monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) 中使用 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) 方法实现。
+自定义事件使用 [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md) 中的 [StoreServicesCustomEventLogger.Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) 方法实现。
 
 
 
@@ -53,10 +53,6 @@ Windows 开发人员中心仪表板中的“使用情况”****报告可使你�
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

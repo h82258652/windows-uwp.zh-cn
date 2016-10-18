@@ -7,8 +7,8 @@ isNew: true
 label: History and backwards navigation
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
+ms.sourcegitcommit: 75e8c342775f7d6c564cb1014519f8e4707a0632
+ms.openlocfilehash: f18fc0806313cc1656860b0fd8b5ae692fa3d4c6
 
 ---
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
     <tr>
         <td>手机</td>
-        <td>![system back on a phone](images/back-systemback-phone.png)</td>
+        <td>![手机上的系统后退功能](images/back-systemback-phone.png)</td>
         <td>
         <ul>
 <li>始终显示。</li>
@@ -41,7 +41,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
      <tr>
         <td>平板电脑</td>
-        <td>![system back on a tablet (in tablet mode)](images/back-systemback-tablet.png)</td>
+        <td>![平板电脑上的系统后退功能（在平板电脑模式下）](images/back-systemback-tablet.png)</td>
         <td>
 <ul>
 <li>始终在平板电脑模式下显示。
@@ -56,7 +56,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
     <tr>
         <td>PC、笔记本电脑、平板电脑</td>
-        <td>![system back on a pc or laptop](images/back-systemback-pc.png)</td>
+        <td>![PC 或笔记本电脑上的系统后退功能](images/back-systemback-pc.png)</td>
         <td>
 <ul>
 <li>在桌面模式下可选。
@@ -73,7 +73,7 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
      </tr>
     <tr>
         <td>Surface Hub</td>
-        <td>![system back on a surface hub](images/nav/nav-back-surfacehub.png)</td>
+        <td>![Surface Hub 上的系统后退功能](images/nav/nav-back-surfacehub.png)</td>
         <td>
 <ul>
 <li>可选。</li>
@@ -90,74 +90,75 @@ ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
 
 <table>
 <tr><td colspan="3">输入设备</td></tr>
-<tr><td>键盘</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Windows 键 + Backspace</td></tr>
-<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>说“你好小娜，请返回”</td></tr>
+<tr><td>键盘</td><td>![键盘](images/keyboard-wireframe.png)</td><td>Windows 键 + Backspace</td></tr>
+<tr><td>Cortana</td><td>![语音](images/speech-wireframe.png)</td><td>说“你好小娜，请返回”</td></tr>
 </table>
  
 
 当你的应用在手机、平板电脑上或者在支持系统后退功能的 PC 或笔记本电脑上运行时，系统会在按下“后退”按钮时通知你的应用。 用户预期后退按钮导航到应用导航历史记录中的上一个位置。 由你来决定要将哪些导航操作添加到导航历史记录以及如何响应后退按钮按下操作。
 
 
-## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>如何启用系统后退导航支持
+## 如何启用系统后退导航支持
 
 
 应用必须启用所有硬件和软件系统后退按钮的后退导航。 执行此操作的方法是注册 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件的侦听器并定义相应处理程序。
 
 在此处我们为 App.xaml 代码隐藏文件中的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件注册全局侦听器。 如果你想要从后退导航排除特定页面，或想要在显示页面前执行页面级别代码，可以在每个页面中注册此事件。
 
-```CSharp
+> [!div class="tabbedCodeSnippets"]
+```csharp
+Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
+    App_BackRequested;
+```
+```cpp
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
     BackRequested += ref new Windows::Foundation::EventHandler<
     Windows::UI::Core::BackRequestedEventArgs^>(
         this, &amp;App::App_BackRequested);
 ```
 
-```CSharp
-Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
-    App_BackRequested;
-```
-
 以下是在应用的根框架上调用 [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) 的相应 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件处理程序。
 
 此处理程序在全局后退事件上调用。 如果应用内后退堆栈为空，系统可能导航至 应用堆栈中的上一个应用或“开始”屏幕。 桌面模式没有应用后退堆栈，并且即使在应用内后退堆栈耗尽时，用户也将停留在该应用中。
 
-```CSharp
-void App::App_BackRequested(
-    Platform::Object^ sender, 
-    Windows::UI::Core::BackRequestedEventArgs^ e)
-{
-    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
-    if (rootFrame == nullptr)
-        return;
-
-    // Navigate back if possible, and if the event has not
-    // already been handled.
-    if (rootFrame->CanGoBack &amp;&amp; e->Handled == false)
-    {
-        e->Handled = true;
-        rootFrame->GoBack();
-    }
-}
+> [!div class="tabbedCodeSnippets"]
+```csharp
+>private void App_BackRequested(object sender, 
+>    Windows.UI.Core.BackRequestedEventArgs e)
+>{
+>    Frame rootFrame = Window.Current.Content as Frame;
+>    if (rootFrame == null)
+>        return;
+>
+>    // Navigate back if possible, and if the event has not 
+>    // already been handled .
+>    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
+>    {
+>        e.Handled = true;
+>        rootFrame.GoBack();
+>    }
+>}
+```
+```cpp
+>void App::App_BackRequested(
+>    Platform::Object^ sender, 
+>    Windows::UI::Core::BackRequestedEventArgs^ e)
+>{
+>    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
+>    if (rootFrame == nullptr)
+>        return;
+>
+>    // Navigate back if possible, and if the event has not
+>    // already been handled.
+>    if (rootFrame->CanGoBack && e->Handled == false)
+>    {
+>        e->Handled = true;
+>        rootFrame->GoBack();
+>    }
+>}
 ```
 
-```CSharp
-private void App_BackRequested(object sender, 
-    Windows.UI.Core.BackRequestedEventArgs e)
-{
-    Frame rootFrame = Window.Current.Content as Frame;
-    if (rootFrame == null)
-        return;
-
-    // Navigate back if possible, and if the event has not 
-    // already been handled .
-    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
-    {
-        e.Handled = true;
-        rootFrame.GoBack();
-    }
-}
-```
-## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>如何启用标题栏后退按钮
+## 如何启用标题栏后退按钮
 
 
 支持桌面模式（通常是 PC 和笔记本电脑，但也有一些平板电脑）并启用了设置（“设置”&gt;“系统”&gt;“平板电脑模式”****）的设备不提供带有系统后退按钮的全局导航栏。
@@ -181,63 +182,64 @@ private void App_BackRequested(object sender,
 
 例如，如果帧的 [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) 属性值为 **true**，我们将在后退堆栈中列出每个页面并启用后退按钮。
 
-```ManagedCPlusPlus
-void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
-{
-    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
+> [!div class="tabbedCodeSnippets"]
+>```csharp
+>protected override void OnNavigatedTo(NavigationEventArgs e)
+>{
+>    Frame rootFrame = Window.Current.Content as Frame;
+>
+>    string myPages = "";
+>    foreach (PageStackEntry page in rootFrame.BackStack)
+>    {
+>        myPages += page.SourcePageType.ToString() + "\n";
+>    }
+>    stackCount.Text = myPages;
+>
+>    if (rootFrame.CanGoBack)
+>    {
+>        // Show UI in title bar if opted-in and in-app backstack is not empty.
+>        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+>            AppViewBackButtonVisibility.Visible;
+>    }
+>    else
+>    {
+>        // Remove the UI from the title bar if in-app back stack is empty.
+>        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+>            AppViewBackButtonVisibility.Collapsed;
+>    }
+>}
+>```
+>```cpp
+>void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
+>{
+>    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
+>
+>    Platform::String^ myPages = "";
+>
+>    if (rootFrame == nullptr)
+>        return;
+>
+>    for each (PageStackEntry^ page in rootFrame->BackStack)
+>    {
+>        myPages += page->SourcePageType.ToString() + "\n";
+>    }
+>    stackCount->Text = myPages;
+>
+>    if (rootFrame->CanGoBack)
+>    {
+>        // If we have pages in our in-app backstack and have opted in to showing back, do so
+>        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
+>            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
+>    }
+>    else
+>    {
+>        // Remove the UI from the title bar if there are no pages in our in-app back stack
+>        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
+>            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
+>    }
+>}
+>```
 
-    Platform::String^ myPages = "";
-
-    if (rootFrame == nullptr)
-        return;
-
-    for each (PageStackEntry^ page in rootFrame->BackStack)
-    {
-        myPages += page->SourcePageType.ToString() + "\n";
-    }
-    stackCount->Text = myPages;
-
-    if (rootFrame->CanGoBack)
-    {
-        // If we have pages in our in-app backstack and have opted in to showing back, do so
-        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
-            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
-    }
-    else
-    {
-        // Remove the UI from the title bar if there are no pages in our in-app back stack
-        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
-            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
-    }
-}
-```
-
-```CSharp
-protected override void OnNavigatedTo(NavigationEventArgs e)
-{
-    Frame rootFrame = Window.Current.Content as Frame;
-
-    string myPages = "";
-    foreach (PageStackEntry page in rootFrame.BackStack)
-    {
-        myPages += page.SourcePageType.ToString() + "\n";
-    }
-    stackCount.Text = myPages;
-
-    if (rootFrame.CanGoBack)
-    {
-        // Show UI in title bar if opted-in and in-app backstack is not empty.
-        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
-            AppViewBackButtonVisibility.Visible;
-    }
-    else
-    {
-        // Remove the UI from the title bar if in-app back stack is empty.
-        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
-            AppViewBackButtonVisibility.Collapsed;
-    }
-}
-```
 
 ### 自定义后退导航行为指南
 
@@ -295,14 +297,17 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </table>
 
 
-### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>恢复中
+### 恢复中
 
 当用户切换到其他应用并返回到你的应用时，我们建议返回到导航历史记录中的最后一页。
 
 
+## 获取示例
+*   [后退按钮示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackButton)<br/>
+    演示如何设置后退按钮事件的事件处理程序，以及如何针对应用位于窗口化的桌面模式下的情形启用标题栏后退按钮。
 
-
-
+## 相关文章
+* [导航基础知识](navigation-basics.md)
 
  
 
@@ -312,6 +317,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

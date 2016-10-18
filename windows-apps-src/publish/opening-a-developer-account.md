@@ -5,7 +5,7 @@ title: "开设开发者帐户"
 description: "有关如何为 Windows 应用商店和其他 Microsoft 计划注册开发者帐户的此概述将有助于你了解设置帐户的过程。"
 translationtype: Human Translation
 ms.sourcegitcommit: c4a753b7642354c4fe42cff721fb21337b14528f
-ms.openlocfilehash: 979df6390fef01a32fb1728956622fbfe38bafa9
+ms.openlocfilehash: b9ccd8e4756dd35fd775d91747710dd13b9ca7ed
 
 ---
 # 开设开发者帐户
@@ -82,6 +82,6 @@ ms.openlocfilehash: 979df6390fef01a32fb1728956622fbfe38bafa9
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

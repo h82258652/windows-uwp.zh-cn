@@ -4,16 +4,14 @@ title: "注册后台任务"
 description: "了解如何创建可以重复使用以安全注册大部分后台任务的函数。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 
 ---
 
 # 注册后台任务
 
-
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 **重要的 API**
 
@@ -23,9 +21,9 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 了解如何创建可以重复使用以安全注册大部分后台任务的函数。
 
-本主题假定你已拥有需要注册的后台任务。 （请参阅[创建和注册后台任务](create-and-register-a-background-task.md)以获取有关如何编写后台任务的信息）。
+本主题适用于单进程后台任务和在单独进程中运行的后台任务。 本主题假定你已拥有需要注册的后台任务。 （有关如何编写后台任务的信息，请参阅[创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)或[创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)）。
 
-本主题指导完成注册后台任务的实用工具函数。 此实用工具函数在注册任务前首先多次检查现有注册以避免多次注册产生的错误，并且该函数可以将系统条件应用于后台任务。 本操作实例包括此实用工具函数的正常运行的完整示例。
+本主题介绍了注册后台任务的实用工具函数。 此实用工具函数在注册任务前首先多次检查现有注册以避免多次注册产生的错误，并且该函数可以将系统条件应用于后台任务。 本操作实例包括此实用工具函数的正常运行的完整示例。
 
 **注意**  
 
@@ -35,8 +33,11 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 ## 定义方法签名并返回类型
 
-
 此方法包含任务入口点、任务名称、预构建的后台任务触发器以及后台任务的 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)（可选）。 此方法返回 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) 对象。
+
+> [!Important]
+> `taskEntryPoint` - 用于在单独进程中运行的后台任务，这必须构建为命名空间 '.' 以及包含后台类的类名称。 该字符串区分大小写。  例如，如果你有包含后台类代码的命名空间“MyBackgroundTasks”和类“BackgroundTask1”，`taskEntryPoint` 的字符串将为“MyBackgroundTasks.BackgruondTask1”。
+> 如果你的后台任务在应用所在的同一进程中运行（即单进程后台任务），不应设置 `taskEntryPoint`。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -65,7 +66,6 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > ```
 
 ## 检查现有注册
-
 
 检查任务是否已注册。 请务必检查此项，因为如果任务已多次注册，则将在该任务触发时运行多次，这可占用过多的 CPU 并可能导致意外行为。
 
@@ -144,9 +144,10 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 否则，使用新 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象注册任务。 此代码应检查条件参数是否为空，如果不为空，则将条件添加到注册对象。 返回 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法返回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)。
 
-> **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
+> **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
+> **注意** 如果你要注册在应用所在的同一进程中运行的后台任务，请向 `taskEntryPoint` 参数发送 `String.Empty` 或 `null`。
 
-下例可能返回现有任务，也可能添加注册后台任务的代码（如果有，包含可选系统条件）：
+以下示例可能返回现有任务，也可能添加注册后台任务的代码（如果有，包含可选系统条件）：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -180,12 +181,16 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 >     var builder = new BackgroundTaskBuilder();
 >
 >     builder.Name = name;
->     builder.TaskEntryPoint = taskEntryPoint;
+>
+>     // single-process background tasks don't set TaskEntryPoint
+>     if ( taskEntryPoint != null && taskEntryPoint != String.Empty)
+>     {
+>         builder.TaskEntryPoint = taskEntryPoint;
+>     }
 >     builder.SetTrigger(trigger);
 >
 >     if (condition != null)
 >     {
->
 >         builder.AddCondition(condition);
 >     }
 >
@@ -368,13 +373,12 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 > **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
 ## 相关主题
-
 
 ****
 
-* [创建和注册后台任务](create-and-register-a-background-task.md)
+* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)
+* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -396,6 +400,6 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ description: "适用于 UWP 开发人员的网络技术概述，以及关于如�
 title: "选择哪一种网络技术？"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d2f7a4a2bd0f94c4923b33fbd62a8b2ff6eddd65
+ms.openlocfilehash: fc7793926275dd732ee6c814c9e65a6b656654d2
 
 
 ---
@@ -138,6 +138,6 @@ Windows 10 向广大开发人员受众公开了一些之前只公开给设备制
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

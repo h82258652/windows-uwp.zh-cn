@@ -7,7 +7,7 @@ label: Panning
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 45a2d3cb8cd1db1b138d62b7d6525ed7077207b0
+ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
 
 ---
 
@@ -121,7 +121,7 @@ Windows 8 支持三种类型的平移：
 ![显示两个长度不同的可平移区域及其平移指示器的图像。](images/scrolling-indicators.png)
 
 **平移行为** 
-           **吸附点** 在抬起触摸接触时，使用轻扫手势平移可以将惯性行为引入交互。 无需用户直接输入，内容将借助惯性继续平移，直到达到某些距离阈值为止。 使用吸附点修改此类惯性行为。
+ **吸附点** 在抬起触摸接触时，使用轻扫手势平移可以将惯性行为引入交互。 无需用户直接输入，内容将借助惯性继续平移，直到达到某些距离阈值为止。 使用吸附点修改此类惯性行为。
 
 吸附点可以在你的应用内容中指定逻辑停止。 从认知的角度看，在较大的可平移区域中，吸附点为用户充当分页机制，并尽量减少因过度滑动或轻扫而带来的疲劳。 借助它们，你可以处理不精确的用户输入，并确保在视口中显示内容或关键信息的特定子集。
 
@@ -195,6 +195,6 @@ Windows 8 支持三种类型的平移：
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

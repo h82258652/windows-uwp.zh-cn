@@ -6,11 +6,13 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
+ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
+ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 
 ---
 # 列表
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 列表显示并启用与基于集合的内容交互。 本文中介绍的四种列表模式如下：
 
@@ -21,11 +23,18 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 已为每种列表模式提供了设计指南、功能和示例。 本文末尾处提供了指向相关主题及 API 的链接。
 
-## 重要的 API
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242878"><strong>ListView 类</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242705"><strong>GridView 类</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209348"><strong>ComboBox 类</strong></a></li>
+</ul>
 
--   [**ListView 类**](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**GridView 类**](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**ComboBox 类**](https://msdn.microsoft.com/library/windows/apps/br209348)
+</div>
+</div>
+
+
 
 
 ## 列表视图
@@ -42,20 +51,50 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 ### 示例
 
-使用[大纲/细节模式](master-details.md)时，你可以使用列表视图组织大纲窗格。 大纲窗格显示一个可选项列表。 当用户在大纲窗格中选择某个项目时，所选项目的其他信息会显示在细节窗格中。 细节窗格通常包含一个网格视图。
+下面是在手机上显示分组数据的简单列表视图。
 
-![大纲细节模式的示例](images/Stock_Tracker/uap_finance_desktop700.png)
-
-你可以将多个列表链在一起，创建复杂的大纲/细节层次结构。 有关详细信息，请参阅[大纲/细节模式](master-details.md)。
-
-列表布局示例具有组标头且以单列形式进行显示：
-
-![具有四种主要单位类型的列表视图示例](images/controls_listview_4types.png)
+![具有分组数据的列表视图](images/simple-list-view-phone.png)
 
 ### 建议
 
 -   列表内的项应具有相同的行为。
--   如果你的列表划分为多个组，请使用[语义式缩放](semantic-zoom.md)，以便用户更轻松地浏览分组内容。
+-   如果你的列表划分为多个组，可以使用[语义式缩放](semantic-zoom.md)，使用户更轻松地浏览分组内容。
+
+### 列表视图文章
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">主题</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[列表视图和网格视图](listview-and-gridview.md)</p></td>
+<td align="left"><p>了解在应用中使用列表视图或网格视图的基本知识。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[列表视图项模板](listview-item-templates.md)</p></td>
+<td align="left"><p>你在列表或网格中显示的项目可能在应用的整体外观中扮演重要的角色。 修改控件模板和数据模板以定义项目的外观，并使应用外观精美。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[反转列表](inverted-lists.md)</p></td>
+<td align="left"><p>反转列表在底部添加新项目，例如在聊天应用中。 遵循本指南在应用中使用反转列表。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[下拉刷新](pull-to-refresh.md)</p></td>
+<td align="left"><p>下拉刷新模式允许用户使用触摸来下拉数据列表，以便检索更多数据。 使用本指南在列表视图中实现下拉刷新。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[嵌套 UI](nested-ui.md)</p></td>
+<td align="left"><p>嵌套 UI 是公开包含在容器内的可操作控件的用户界面，并且用户同样可以对该容器执行操作。 例如，你可能有包含一个按钮的列表视图项，并且用户可以选择该列表项，或按嵌套在其中的按钮。 按照这些最佳做法为用户提供最佳的嵌套 UI 体验。</p></td>
+</tr>
+</tbody>
+</table>
 
 ## 网格视图
 
@@ -82,7 +121,35 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 ### 建议
 
 -   列表内的项应具有相同的行为。
--   如果你的列表划分为多个组，请使用[语义式缩放](semantic-zoom.md)，以便用户更轻松地浏览分组内容。
+-   如果你的列表划分为多个组，可以使用[语义式缩放](semantic-zoom.md)，使用户更轻松地浏览分组内容。
+
+### 网格视图文章
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">主题</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[列表视图和网格视图](listview-and-gridview.md)</p></td>
+<td align="left"><p>了解在应用中使用列表视图或网格视图的基本知识。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[列表视图项模板](listview-item-templates.md)</p></td>
+<td align="left"><p>你在列表或网格中显示的项目可能在应用的整体外观中扮演重要的角色。 修改控件模板和数据模板以定义项目的外观，并使应用外观精美。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[嵌套 UI](nested-ui.md)</p></td>
+<td align="left"><p>嵌套 UI 是公开包含在容器内的可操作控件的用户界面，并且用户同样可以对该容器执行操作。 例如，你可能有包含一个按钮的列表视图项，并且用户可以选择该列表项，或按嵌套在其中的按钮。 按照这些最佳做法为用户提供最佳的嵌套 UI 体验。</p></td>
+</tr>
+</tbody>
+</table>
 
 ## 下拉列表
 
@@ -187,6 +254,7 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 - [大纲/细节](master-details.md)
 - [导航窗格](nav-pane.md)
 - [语义式缩放](semantic-zoom.md)
+- [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **对于开发人员**
 - [**ListView 类**](https://msdn.microsoft.com/library/windows/apps/br242878)
@@ -196,6 +264,6 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

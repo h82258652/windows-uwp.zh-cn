@@ -4,8 +4,8 @@ Description: "应用提交过程的定价和可用性页可让你确定你的应
 title: "设置应用定价和可用性"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
+ms.sourcegitcommit: fc5265cf7d455e34225fd74f9792cdb46b0029d7
+ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
 
 ---
 
@@ -40,7 +40,7 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 ## 促销价格
 
 
-如果你想要限时降价出售你的应用，你可以创建和计划一次促销。 有关详细信息，请参阅[打折出售应用和 IAP](put-apps-and-iaps-on-sale.md)。
+如果你想要限时降价出售你的应用，可以创建和计划一次促销。 有关详细信息，请参阅[打折出售应用和加载项](put-apps-and-add-ons-on-sale.md)。
 
 ## 分发和可见性
 
@@ -59,21 +59,7 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 
 ## Windows 10 设备系列
 
-本部分允许你指示哪些类型的 Windows 10 设备客户可以获取你的应用。 （如果你的程序包无法在某一设备类型上运行，我们将不会提供它以供下载到该设备类型。）
-
-> **重要提示** 若要完全阻止某个 Windows 10 设备系列获取你的应用，你需要将 appx 清单中的 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 元素更新为仅面向你想要支持的设备系列（即，**Windows.Mobile** 或 **Windows.Desktop**），而不是（针对通用设备系列）将其保留为 **Windows.Universal** 值，Microsoft Visual Studio 默认将该值包含在 appx 清单中。
-
-默认情况下，将选中**“移动设备”**框和**“桌面设备”**框。 我们建议你将这些框均保持选中状态，除非你有特殊原因需要限制可以获取你的应用的 Windows 10 设备类型。 例如，你可能已创建 Windows 通用程序包，但你知道你仍需要在移动设备上测试该应用是否存在某些问题。 若要防止新客户在Windows 10 移动设备上下载该应用，你可以取消选中此处的**“移动设备”**复选框。 如果你之后确定可随时将该应用提供给 Windows 10 移动设备上的客户，可通过选中**“移动设备”**框创建新提交。
-
-如果已测试你的应用来确保应用在 Microsoft HoloLens 上正确运行，还可以检查**“全息”**复选框以向 HoloLens 客户提供此应用。 有关生成、测试以及发布全息应用的详细信息，请参阅 [Windows 全息开发概述](http://dev.windows.com/holographic/development_overview)。
-
-请注意，无论它们面向哪种 OS 版本（Windows 10、Windows 8.x、Windows Phone 8.x 等），在此部分中所做的选择将应用于你的所有应用包。 但是，它们仅影响对使用 Windows 10 设备（而不是 Windows 8.x 或 Windows Phone 8.x 设备）的客户的提供。
-
-了解下面一点也很重要：你在此处所做的选择仅应用于全新购买。 已拥有你的应用的任何用户都可以继续使用它，并且将获得你提交的任何更新，即使你已在此处将其从设备系列中删除也是如此。 这甚至也适用于在升级到 Windows 10 之前获取你的应用的客户。 例如，如果你先发布了一个带有 Windows Phone 8.1 程序包的应用，而在之后又将 Windows 10 (UWP) 程序包添加到面向通用设备系列的同一应用，将会向拥有你的 Windows Phone 8.1 程序包的 Windows 10 移动客户提供此 Windows 10 (UWP) 程序包的更新，即便你已取消选中“移动设备”****复选框也是如此（因为这并不是全新购买，而是一次更新）。 但是，如果你没有提供面向通用或移动设备系列的任何 Windows 10 (UWP) 程序包，则你的 Windows 10 移动客户将继续使用 Windows Phone 8.1 程序包。
-
-有关设备系列的详细信息，请参阅[通用 Windows 平台 (UWP) 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)和 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903)。
-
-> **注意** 你还会看到一个复选框，用于指示是否要允许 Microsoft 将应用提供给未来的 Windows 10 设备系列。 我们建议将此复选框保持选中状态，以便你的应用可随着新设备系列的引入而提供给更多潜在客户。
+现在可通过有关提交的“程序包”****页面管理设备系列可用性。 有关详细信息，请参阅[设备系列可用性](upload-app-packages.md#device-family-availability)。
 
 ## 组织授权
 
@@ -90,7 +76,8 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 -   选择“通过认证后立即发布此提交”****以尽快在应用商店中提供此提交。
 -   如果你不希望在你指示应发布提交的日期之前发布提交，请选择**“手动发布此提交”**。 你可以通过单击**“立即发布”**或选择如下所述的特定日期来从认证状态页面执行此操作。
 -   选择**“不早于 \[日期\]”**来确保在特定日期之前不发布提交。 使用此选项，你的提交将在你指定的日期当天或之后立即发布。 该日期必须为 24 小时之后的一个日期。 除了日期，你还可以指定提交应该开始发布的时间。
-    > **注意** 认证或发布期间的延迟可能导致实际发布日期比你要求的日期更晚。 Windows 应用商店不能保证你的应用（或更新）将在特定的日期可用。
+
+   > **注意** 认证或发布期间的延迟可能导致实际发布日期比你要求的日期更晚。 Windows 应用商店不能保证你的应用（或更新）将在特定的日期可用。
 
 你还可以在提交应用后更改发布日期，只要它尚未进入“发布”****步骤。
  
@@ -103,6 +90,6 @@ ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

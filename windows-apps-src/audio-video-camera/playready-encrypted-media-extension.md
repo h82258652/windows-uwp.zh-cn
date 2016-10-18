@@ -1,11 +1,11 @@
 ---
 author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: "本部分介绍了如何修改 PlayReady Web 应用以支持从以前的 Windows 8.1 版本到 Windows 10 版本所做的更改。"
+description: "本部分介绍如何修改 PlayReady Web 应用以支持从以前的 Windows 8.1 版本到 Windows 10 版本所做的更改。"
 title: "PlayReady 加密媒体扩展"
 translationtype: Human Translation
-ms.sourcegitcommit: 965443672e52938d39069f14fe23b0c5dbd0ffa8
-ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
+ms.sourcegitcommit: 15b8c2cac08e59cfd9bd2c97c3a146cbc2be5548
+ms.openlocfilehash: eb85d9ea29917788612e0aa755465dbd6d1b9ba9
 
 ---
 
@@ -14,13 +14,13 @@ ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本部分介绍了如何修改 PlayReady Web 应用以支持从以前的 Windows 8.1 版本到 Windows 10 版本所做的更改。
+本部分介绍如何修改 PlayReady Web 应用以支持从以前的 Windows 8.1 版本到 Windows 10 版本所做的更改。
 
-在 Internet Explorer 中使用 PlayReady 媒体元素允许开发人员在强制执行内容提供商定义的访问规则的同时，创建能够向用户提供 PlayReady 内容的 Web 应用。 本部分介绍如何将 PlayReady 媒体元素添加到仅使用 HTML5 和 JavaScript 的现有 Web 应用。
+通过在 Internet Explorer 中使用 PlayReady 媒体元素，开发人员可以在强制执行内容提供商定义的访问规则的同时，创建能够向用户提供 PlayReady 内容的 Web 应用。 本部分介绍如何仅使用 HTML5 和 JavaScript 将 PlayReady 媒体元素添加到现有 Web 应用。
 
 ## PlayReady 加密媒体扩展中的新增功能
 
-本部分提供为 PlayReady 加密媒体扩展所做的更改列表，这些更改可在 Windows 10 上启用 PlayReady 内容保护。
+本部分提供对 PlayReady 加密媒体扩展 (EME) 所做的更改列表，这些更改用于在 Windows 10 上启用 PlayReady 内容保护。
 
 下表介绍适用于 Windows 10 的 PlayReady 加密媒体扩展的新增功能和所做更改：
 
@@ -33,11 +33,10 @@ ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
 
     可结合多个密钥标识符 (KeyID) 使用 PlayReady 对象（与在 Windows 8.1 中一样），或结合多个 KeyID 使用[内容解密模型数据 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)。
 
-    **注意** 在 Windows 10 中，CDMData 中的 &lt;KeyID&gt; 支持多个密钥标识符。
+    > [!NOTE]
+    > 在 Windows 10 中，在 CDMData 中的 &lt;KeyID&gt; 下支持多个密钥标识符。
 
-     
-
--   添加了实时过期支持，或有限持续时间许可证 (LDL)。
+-   添加了实时到期支持，或有限持续时间许可证 (LDL)。
 
     提供在许可证上设置实时过期时间的功能。
 
@@ -57,25 +56,24 @@ ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
 
 ## PlayReady 中的加密媒体扩展支持
 
-本部分将介绍 PlayReady 支持的 W3C 加密媒体扩展版本。
+本部分介绍 PlayReady 支持的 W3C 加密媒体扩展的版本。
 
 适用于 Web 应用的 PlayReady 当前已绑定到 [2013 年 5 月 10 日的 W3C 加密媒体扩展 (EME) 草稿](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/)。 这项支持将在将来版本的 Windows 中更改为更新的 EME 规范。
 
 ## 使用硬件 DRM
 
-本部分介绍了 Web 应用可如何使用 PlayReady 硬件 DRM，以及在受保护内容不支持硬件 DRM 时，如何禁用它。
+本部分介绍 Web 应用可如何使用 PlayReady 硬件 DRM，以及在受保护内容不支持硬件 DRM 时，如何禁用它。
 
 若要使用 PlayReady 硬件 DRM，JavaScript Web 应用应结合使用 **isTypeSupported** EME 方法和 `com.microsoft.playready.hardware` 的主要系统标识符，以查询来自浏览器的 PlayReady 硬件 DRM 支持。
 
 硬件 DRM 有时不支持某些内容。 硬件 DRM 从不支持 Cocktail 内容；如果想要播放 Cocktail 内容，必须选择退出硬件 DRM。 一些硬件 DRM 支持 HEVC，而一些则不支持；如果希望播放 HEVC 内容，但硬件 DRM 不支持该内容，你也可能想要选择退出。
 
-**注意** 若要确定 HEVC 内容是否受支持，请在实例化 `com.microsoft.playready` 后，使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法。
-
- 
+> [!NOTE]
+> 若要确定 HEVC 内容是否受支持，请在实例化 `com.microsoft.playready` 后，使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法。
 
 ## 向 Web 应用添加安全停止
 
-本部分将介绍如何向 Web 应用添加安全停止。
+本部分介绍如何向 Web 应用添加安全停止。
 
 安全停止为 PlayReady 设备能够有效地断定因任何给定内容而停止媒体播放的媒体流服务提供了方法。 此功能可确保你的媒体流服务能够准确地执行和报告给定帐户在不同设备上的使用限制。
 
@@ -100,7 +98,7 @@ ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
 
 -   在发生自定义用户操作时，应用需要将源设置为 **NULL**，它可以触发媒体基础以关闭拓扑、销毁解密器以及设置停止状态。
 
-以下示例将演示如何在 Web 应用中使用安全停止：
+以下示例演示如何在 Web 应用中使用安全停止：
 
 ```JavaScript
 // JavaScript source code
@@ -260,7 +258,8 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 }
 ```
 
-**注意** 以上示例中安全停止数据的 `<SessionID>B64 encoded session ID</SessionID>` 可以是星号 (\*)，它是所有记录的安全停止会话的通配符。 也就是说，**SessionID** 标记可以是特定会话，或者是选择所有安全停止会话的通配符 (\*)。
+> [!NOTE]
+> 以上示例中安全停止数据的 `<SessionID>B64 encoded session ID</SessionID>` 可以是星号 (*)，它是所有记录的安全停止会话的通配符。 即，**SessionID** 标记既可以是特定会话，也可以是选择所有安全停止会话的通配符 (\*)。
 
 ## 加密媒体扩展的编程注意事项
 
@@ -296,16 +295,15 @@ function foo() {
 
 有关详细信息，请参阅[示例应用程序](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)。
 
- 
-
- 
-
+## 另请参阅
+- [PlayReady DRM](playready-client-sdk.md)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

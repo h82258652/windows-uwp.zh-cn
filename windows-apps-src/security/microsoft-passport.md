@@ -5,7 +5,7 @@ ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 781866bbbef755815422d1aa5bf71010bb08630d
+ms.openlocfilehash: 979eb3c6ac41f304e19093055574db7805a115ff
 
 ---
 
@@ -454,6 +454,6 @@ Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提
 * [Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

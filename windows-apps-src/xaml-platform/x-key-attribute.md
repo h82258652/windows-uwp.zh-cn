@@ -4,12 +4,12 @@ description: "唯一标识作为资源被创建和引用的元素，这些资源
 title: "xKey 属性"
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 00d801dc3ebb8894f8e21ba0c1b9f3aecc981f30
+ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
+ms.openlocfilehash: 35d4e02ce477757e1a97a54fd9d200dd31675f4d
 
 ---
 
-# x&#58;Key 特性
+# x:Key 特性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -59,7 +59,7 @@ CombiningCharacter::= none
 
 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的子元素一般包含一个 **x:Key** 属性，该属性在该词典中指定一个唯一的键值。 键唯一性在加载时由 XAML 处理器执行。 非唯一的 **x:Key** 值将导致 XAML 分析异常。 如果 [{StaticResource} 标记扩展](staticresource-markup-extension.md)发出请求，任何未解析的键也会导致 XAML 分析异常。
 
-**x:Key** 和 [x:Name](x-name-attribute.md) 不是同一概念。 **x:Key** 仅用于资源词典中。 x:Name 适用于 XAML 的所有区域。 一个使用键值的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 调用不会检索键资源。
+**x:Key** 和 [x:Name](x-name-attribute.md) 不是同一概念。 **x:Key** 仅用于资源词典中。 x:Name 适用于 XAML 的所有区域。 一个使用键值的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 调用不会检索键资源。 在资源字典中定义的对象可能有一个 **x:Key**、一个 **x:Name** 或两者皆有。 不要求键和名称互相匹配。
 
 请注意，在给出的隐式语法中，[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 对象在 XAML 处理器生成一个新对象来填充 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 集合的方式上是隐式的。
 
@@ -70,6 +70,6 @@ CombiningCharacter::= none
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

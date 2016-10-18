@@ -5,7 +5,7 @@ ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
+ms.openlocfilehash: 45dd0b2cb34e724313fe431a5b8b7a6df9b5a5cf
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
 可以使用两种方法来访问开发人员中心中的**应用安装广告报告**页面：
 
 -   在应用页面的左侧导航菜单上，依次单击“分析”****&gt;“应用安装广告”****。
--   在应用页面的左侧导航菜单上，依次单击“盈利”****&gt;“推广你的应用”****，然后单击市场活动的“报告”****链接。
+-   在应用页面的左侧导航菜单上，依次单击“盈利”****&gt;“推广你的应用”****，然后单击活动的“报告”****链接。
 
 你将在此处看到两个部分：“广告效果”****和“帐户帐单历史记录”****。
 
@@ -70,6 +70,6 @@ ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -2,10 +2,9 @@
 author: Mtoepke
 title: "Xbox One 开发人员模式停用"
 description: "如何停用开发人员模式。"
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
+ms.sourcegitcommit: c80849904eccae1ef0e0740bb4e882f7f0f37cc8
+ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
 
 ---
 
@@ -43,9 +42,10 @@ ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
 
 ## 重置主机
 
-也可以通过重置你的主机来停用开发人员模式。  
+也可以通过重置主机停用开发人员模式。  
 
-> **注意** &nbsp;&nbsp;在重置主机时，将丢失所有本地保存的游戏数据。
+> [!NOTE]
+> 在重置主机时，将丢失所有本地保存的游戏数据。
 
 若要重置主机，请执行以下步骤：
 
@@ -88,6 +88,6 @@ ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ description: "导航入门"
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c542faa6365c8558988162bee12f266d67474461
+ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
 
 ---
 
@@ -15,7 +15,7 @@ ms.openlocfilehash: c542faa6365c8558988162bee12f266d67474461
 
 ## 添加导航
 
-iOS 提供 **UINavigationController** 类以帮助应用内导航：可按下和弹出视图，以创建定义应用的**“UIViewControllers”**层次结构。
+iOS 提供 **UINavigationController** 类以帮助应用内导航：可按下和弹出视图，以创建定义应用的**UIViewControllers**层次结构。
 
 相比之下，包含多个视图的 Windows 10 应用需要更多网站方法进行导航。 想象一下，用户在单击控件以其自己的方式浏览应用时，在页面间来回跳跃。 有关详细信息，请参阅[导航设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958438)。
 
@@ -87,6 +87,6 @@ public BlankPage()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

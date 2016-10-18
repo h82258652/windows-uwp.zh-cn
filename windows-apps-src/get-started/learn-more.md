@@ -1,77 +1,167 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
 title: "后续步骤是什么？"
-description: "既然你已经创建了你的第一个应用，你便可以查看开发人员中心的其他部分了。 以下是它所包含的其他部分的简介。"
-keywords: Dev Center, Getting started
+description: "既然你已经创建了你的第一个应用，你便可以查看开发人员中心的其他部分了。 以下是它所包含的其他部分的简介。'"
+keywords: "开发人员中心, 入门"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 5d8f036b7dcaba1c697f574011875cadbf1970c1
+ms.sourcegitcommit: 743a3649613d39083520f8d79f4c0daf97336568
+ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 
 ---
-# 下一步操作
 
-既然你已经创建了你的第一个应用，你便可以查看开发人员中心的其他部分了。 以下是开发人员中心所包含的其他部分的简介。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-## 设计通用 Windows 平台 (UWP) 应用
+# 后续步骤是什么？
 
+因此你想要编写应用 - 从何处着手？ 下面是一些可帮助你开始操作的开发人员中心主题。 如果你完全不熟悉 UWP 平台，请尝试一些<a href="https://channel9.msdn.com/">第 9 频道</a>视频和 <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> 课程。 如果你已经熟悉 XAML 和 C#，即可开始阅读下面的主题。
 
-通过了解如何设计出色的用户界面来使你的应用脱颖而出。 此部分中的主题提供了应用设计指南、规划注意事项、案例研究、图形资源以及设计模板。
+我们建议你查看整个 UWP 主题来熟悉该平台，然后了解如何通过使用并自定义 XAML 控件创建用户界面。 XAML 的主要优势是使用*数据绑定*（可将控件与你的应用要显示的信息连接起来）：如果你不熟悉 Windows 平台，这将是一个需要了解的重要概念。
 
-转至[设计](http://go.microsoft.com/fwlink/p/?LinkId=533896)。
+你还可以浏览[开发人员工具包](https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox)站点，其中包含大量入门信息。
 
-## 开发应用
+<table class="wdg-noborder">
 
-
-“开发”部分为应用中的许多可用功能都提供了详细信息和代码编写示例。
-
-转至[开发](http://go.microsoft.com/fwlink/p/?LinkId=529575)
-
-## 销售应用
-
-
-Windows 应用商店可使你能够接触到使用 Microsoft Windows 的数百万客户。 你可以通过 Windows 应用商店将应用销售到实际位于世界各地任意位置的客户。 无论用户使用什么样的设备，他们都能以同样的方式找到所在国家或地区中提供的应用。 你可以选择在哪些特定的国家或地区销售你的应用，并且只需指定一个价格区间，就能以各种本地货币对应用进行定价。
-
-转至[发布](http://go.microsoft.com/fwlink/p/?linkid=268275)。
-
-## API 参考
-
-
-本部分包含有关以下内容的详细信息：类、属性、方法、事件、样式以及可用于创建通用 Windows 平台 (UWP) 应用的其他 API。
-
-转至[API 参考](https://msdn.microsoft.com/library/windows/apps/br211369.aspx)。
-
-## 语言参考
-
-
-本部分介绍了你可以使用的编程语言以及这些语言在通用 Windows 平台 (UWP) 实现中的所有变体。 如果在语言的理解和编程方面需要帮助，本部分内容将为你提供帮助。
-
-转至[语言参考](http://go.microsoft.com/fwlink/p/?LinkId=534184)。
-
-## 开发游戏
-
-
-如果你对使用 DirectX 开发游戏感兴趣，本部分将提供你所需的信息。
-
-转至[开发游戏](http://go.microsoft.com/fwlink/p/?LinkId=534184)。
-
-## 开发物联网 (IoT) 应用
-
-
-如果你对开发物联网 (IoT) 感兴趣，本部分将提供你所需的信息。
-
-转至[开发 IoT 应用](http://go.microsoft.com/fwlink/p/?LinkId=534186)。
-
+<tr>
+ <td width=60><img src="images/icon3.png" width=64></td>
+    <td><h2>UWP 和 UWP 应用生命周期</h2><p>如何开始使用应用，开始使用另一个应用会发生什么情况？ 描述如下。</p> <ul>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">通用 Windows 平台 (UWP) 应用指南</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP 应用生命周期</a></li>
+    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows 10 中的超酷功能</a></ul></td>  
+</tr>
+ 
+ 
+<tr>
+ <td width=60><img src="images/icon7.png" width=64></td>
+    <td><h2>UX 和 UI</h2><p>你可以使用哪些控件，如何使用它们？ 这些主题介绍了如何结合使用控件和代码，以及如何自定义它们以满足你的应用的外观。</p> <ul>
+    <li><a href="https://developer.microsoft.com/windows/design">设计和 UI</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml">使用 XAML 定义页面布局</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function">按功能列出控件</a></li>
+      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro">控件和模式简介</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">设置控件样式</a></li>
+      <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">响应式设计的屏幕大小和断点</a></li>
+    </ul></td>  
+</tr>
+ 
+ 
+<tr>
+ <td width=60><img src="images/icon6.png" width=64></td>
+    <td><h2>数据和服务</h2><p>了解有关数据绑定的信息，可让你的代码自动填充列表和网格。 了解如何链接到外部资源以将数据获取到你的应用。</p> <ul>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/data-binding/index">数据绑定</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/listview-and-gridview">ListViews、GridViews 和数据绑定</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/data-access/index">数据访问</a></li>
+    </ul></td>  
+</tr>
  
 
+<tr>
+ <td width=60><img src="images/icon4.png" width=64></td>
+    <td><h2>发布</h2><p>与世界共享你的工作，获得收益。 我们介绍了将应用提交到应用商店的过程。</p> <ul>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/publish/index">发布 Windows 应用</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">打包应用</a></li>
+    </ul></td>  
+</tr>
+ 
+<tr>
+ <td width=60><img src="images/icon2.png" width=64></td>
+    <td><h2>其他资源</h2><p>示例、教程、视频、其他工具和 SDK。 进入下一级别。</p>
+    <ul>
+    <li><a href="https://developer.microsoft.com/windows/develop">操作方法文章</a></li>
+    <li><a href="https://developer.microsoft.com/windows/samples">代码示例</a></li>
+    <li><a href="https://msdn.microsoft.com/library/618ayhy6(VS.110).aspx">C# 参考</a></li>
+    <li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">API 参考</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">编写适用于 Xbox One 的应用</a></li>
+     <li><a href="https://www.microsoft.com/microsoft-hololens/developers">针对 HoloLens 进行开发</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">将应用移植到 Windows 10</a></li>
+      <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">编写适用于企业的应用</a></li>
+      <li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">UWP 社区工具包</a></li>
+    </ul>
+    </td>  
+</tr>
  
 
 
+</table>
+
+<hr>
+
+## 在开发人员中心中查找帮助
+
+[Microsoft 开发人员中心](http://devcenter.microsoft.com)包含大量有关许多不同的工具、框架和平台的文档。 如果你要搜索主题和示例，应确保你正在阅读 UWP 特定内容。 如何确保你正在阅读的是合适的内容？
+概念性内容（即非 API 参考内容）将具有主题 URL 中的 UWP。 API 内容将具有包含 Windows 运行时 API 的路径。 
+
+![示例 UWP 概念性主题](images/devcenter-topic2.png)
+
+![示例 UWP 参考主题](images/devcenter-topic1.png)
+
+使用搜索引擎时，将“Windows 应用开发”附加到你的搜索字符串通常会将你定向到 UWP 内容。
+
+
+<hr>
+
+
+## 重要的开发人员中心主题
+
+下面是开发人员中心中的内容的关键部分列表。 
+
+
+<table style="width:100%">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+
+
+<tbody>
+
+<tr class="even" style="background-color: #f2f2f2">
+<td align="left"><strong>设计</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">UWP 应用的设计指南</a></td>
+</tr>
+
+
+<tr class="odd" style="background-color: #ffffff">
+<td align="left"><strong>开发</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=529575">应用中的许多可用功能的详细信息和代码编写示例。</a></td>
+</tr>
+<tr class="even" style="background-color: #f2f2f2">
+<td align="left"><strong>语言参考</strong></td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">适用于 UWP 开发的编程语言。</a></td>
+</tr>
+<tr class="odd" style="background-color: #ffffff">
+<td align="left"><strong>游戏</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=534184">使用 DirectX 开发游戏。</a></td>
+</tr>
+<tr class="even" style="background-color: #f2f2f2">
+<td align="left"><strong>物联网</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=534186">生成你自己的已连接的设备。</a></td>
+</tr>
+<tr class="odd" style="background-color: #ffffff">
+<td align="left"><strong>移植</strong></td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">利用你的 Android 和 iOS 技能快速创建 UWP 应用。</a></td>
+</tr>
+<tr class="odd" style="background-color: #f2f2f2">
+<td align="left"><strong>Windows 桥</strong></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/bridges">用于将较旧的应用和 iOS 应用更新到 UWP 的工具。</a></td>
+</tr>
+<tr class="odd" style="background-color: #ffffff">
+<td align="left"><strong>Xamarin</strong></td>
+<td align="left"><a href="https://www.xamarin.com">使用 C# 编写适用于 iOS、Android 和 Windows 10 的应用。</a></td>
+</tr>
+<tr class="odd" style="background-color: #ffffff">
+<td align="left"><strong>任务代码段</strong></td>
+<td align="left"><a href="https://github.com/Microsoft/Windows-task-snippets">完成较小但有用任务的现成代码。</a></td>
+</tr>
+<tr class="odd" style="background-color: #f2f2f2">
+<td align="left"><strong>操作方法主题</strong></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/develop">包含特定 UWP 功能的示例代码。</a></td>
+</tr>
+</table>
 
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

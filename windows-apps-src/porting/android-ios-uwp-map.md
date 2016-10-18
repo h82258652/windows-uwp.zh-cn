@@ -4,8 +4,8 @@ Description: "比较 iOS、Android 和 Windows 10 之间的平台功能。"
 Search.Product: eADQiWindows 10XVcnh
 title: "适用于 Android 和 iOS 开发人员的 Windows 应用概念映射"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
+ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
+ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 
 ---
 
@@ -120,16 +120,16 @@ ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 <td align="left">XAML 提供了一个灵活的布局系统，该系统由用于静态和响应式布局的<strong>布局面板类</strong>（如 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.canvas.aspx">Canvas</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx">Grid</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.relativepanel.aspx">RelativePanel</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx">StackPanel</a></strong>）组成。 <strong><a href="https://msdn.microsoft.com/library/ms171352.aspx">属性</a></strong>用于控制元素的大小和位置。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx">使用 XAML 定义布局</a><br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>对等导航。</strong> <br><br>通过在具有同等层次结构重要性的页面之间导航呈现用户。</td>
+<td align="left"><strong>对等导航。</strong> <br><br>通过在具有同等层次结构重要性的页面之间导航向用户呈现。</td>
 <td align="left"><strong>选项卡</strong>、<strong>轻扫视图</strong>和<strong>导航箱</strong>均提供<strong>横向导航</strong>。</td>
 <td align="left"><strong>选项卡栏控制器</strong>、<strong>拆分视图控制器</strong>和<strong>页面视图控制器</strong>允许在同等层次结构的页面之间导航。</td>
-<td align="left">你可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">选项卡/透视</a></strong>在内容上方显示链接/选项卡的永久性列表。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">导航窗格/拆分视图</a></strong>允许你在内容旁显示一列链接。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">导航</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465735.aspx">两个页面之间的对等导航</a></td>
+<td align="left">你可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">选项卡/透视</a></strong>在内容上方显示链接/选项卡的永久性列表。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">导航窗格/拆分视图</a></strong>允许你在内容旁显示一列链接。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>分层导航。</strong> <br><br>在层次结构的父页面和子页面之间导航。</td>
 <td align="left"><strong>当与<strong>意图</strong>一起用于加载其他<strong>活动</strong>时，列表</strong>、<strong>网格列表</strong>、<strong>按钮</strong>及其他控件提供<strong>下级导航</strong>。</td>
 <td align="left"><strong>导航控制器</strong>允许用户在层次结构的各级别之间导航。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中心</a></strong>使你可以向用户展示可以选来用于导航到子页面的内容的预览。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">大纲/细节</a></strong>使用户可以从显示在相应细节部分旁边的项目列表中进行选取。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">导航</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中心</a></strong>使你可以向用户展示可以选来用于导航到子页面的内容的预览。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">大纲/细节</a></strong>使用户可以从显示在相应细节部分旁边的项目列表中进行选取。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">导航</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在两个页面之间导航</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>“后退”按钮导航。</strong> <br><br>在应用中进行后退导航。</td>
@@ -665,6 +665,6 @@ ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

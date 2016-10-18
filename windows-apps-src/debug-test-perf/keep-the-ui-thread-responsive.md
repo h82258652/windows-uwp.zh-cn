@@ -5,7 +5,7 @@ title: "保持 UI 线程有响应"
 description: "用户期望应用在执行计算时保持响应，无论计算机的类型如何都是如此。"
 translationtype: Human Translation
 ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 6144b5b60a0092efd1056dd5de166a64733356ec
+ms.openlocfilehash: 2a215264db018dfecff897b13b24ba535e7483ec
 
 ---
 # 保持 UI 线程有响应
@@ -106,6 +106,6 @@ public class AsyncExample
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

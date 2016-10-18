@@ -3,8 +3,8 @@ title: "自动启动 Windows 10 通用 Windows 平台 (UWP) 应用"
 description: "开发人员可以使用协议激活和启动激活来自动启动他们的 UWP 应用或游戏以进行自动化测试。"
 author: listurm
 translationtype: Human Translation
-ms.sourcegitcommit: adf2d16f9c208631f91fbcad19d1ea8087cd9cb5
-ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
+ms.sourcegitcommit: c5d0f685f4c733cbe4ba4c07aab565b888ddfe58
+ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
 
 ---
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-Uri 对象有分析此格式的 URI 字符串的方法。 有关详细信息，请参阅 [Uri 类 (MSDN)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.uri.aspx)。 
+Uri 对象有分析此格式的 URI 字符串的方法。 有关详细信息，请参阅 [Uri 类 (MSDN)](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx)。 
 
 示例：
 
@@ -133,7 +133,7 @@ C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.s
 
 ### 启动器应用程序
 
-你可以单独创建一个支持使用 COM 的应用程序以用于启动。 以下示例显示启动程序中用于通过启动激活启动的 C++ 代码。 使用此代码，你可以创建 **ApplicationActivationManager** 对象并调用传入之前查找的 AUMID 的 **ActivateApplication** 和任何参数。 有关其他参数的详细信息，请参阅 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh706903(v=vs.85).aspx)。
+你可以单独创建一个支持使用 COM 的应用程序以用于启动。 以下示例显示启动程序中用于通过启动激活启动的 C++ 代码。 使用此代码，你可以创建 **ApplicationActivationManager** 对象并调用传入之前查找的 AUMID 的 **ActivateApplication** 和任何参数。 有关其他参数的详细信息，请参阅 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx)。
 
 ```
 #include <ShObjIdl.h>
@@ -207,8 +207,12 @@ Platform::String^ argval = launchArgs->Arguments;
 ## 摘要
 总之，你可以使用各种方法来启动 UWP 应用。 根据要求和使用情况，可能还有更适合的其他方法。 
 
+## 另请参阅
+- [Xbox One 上的 UWP](index.md)
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

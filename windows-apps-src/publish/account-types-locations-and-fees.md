@@ -5,7 +5,7 @@ title: "帐户类型、位置和费用"
 description: "我们在许多国家和地区都提供个人开发者帐户和公司开发者帐户。"
 translationtype: Human Translation
 ms.sourcegitcommit: 93b6d952e42949917a0fff5b39f3f194f49531d5
-ms.openlocfilehash: b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b10
+ms.openlocfilehash: 0712a74ffaa691a90a1f57d0ee7f9c0ea3fcc510
 
 ---
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b10
 
 > **注意** 某些市场不支持付费应用（**付款**）。 在这些市场中，只能提交免费应用。
 
-“PayPal”****列说明了是否支持[付款帐户](https://msdn.microsoft.com/library/windows/apps/Bg124529)使用 PayPal 作为付款方式（以及使用该付款方式支付开发者帐户注册费，除非另有说明）。
+PayPal****列说明了是否支持[付款帐户](https://msdn.microsoft.com/library/windows/apps/Bg124529)使用 PayPal 作为付款方式（以及使用该付款方式支付开发者帐户注册费，除非另有说明）。
 
 | 国家/地区 | 个人注册 费用 | 公司注册 费用 | 付款 | PayPal |
 |----------------|---------------------|------------------|--------|--------|
@@ -260,6 +260,6 @@ ms.openlocfilehash: b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b10
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

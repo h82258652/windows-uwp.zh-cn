@@ -5,7 +5,7 @@ title: "使用加速计"
 description: "了解如何使用加速计响应用户移动。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f1ec749d7bec245632f1998ac5cc94b9bfcad533
+ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
 
 ---
 # 使用加速计
@@ -102,7 +102,7 @@ ms.openlocfilehash: f1ec749d7bec245632f1998ac5cc94b9bfcad533
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“AccelerometerCS”**的项目，则将 `namespace App1` 替换为 `namespace AccelerometerCS`。
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**AccelerometerCS**的项目，则将 `namespace App1` 替换为 `namespace AccelerometerCS`。
 
 -   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
@@ -128,15 +128,15 @@ ms.openlocfilehash: f1ec749d7bec245632f1998ac5cc94b9bfcad533
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“AccelerometerCS”**的项目，则将 `x:Class="App1.MainPage"` 替换为 `x:Class="AccelerometerCS.MainPage"`。 你还应当使用 `xmlns:local="using:AccelerometerCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**AccelerometerCS**的项目，则将 `x:Class="App1.MainPage"` 替换为 `x:Class="AccelerometerCS.MainPage"`。 还应将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:AccelerometerCS"`。
 
--   按 F5 或依次选择“调试”****&gt;“开始调试”****来生成、部署并运行应用。
+-   按 F5 或依次选择“调试”****&gt;“启动调试”****来生成、部署并运行应用。
 
-应用运行后，你可以通过移动设备或使用仿真器工具更改加速计的值。
+应用运行后，可以通过移动设备或使用仿真器工具更改加速计的值。
 
 -   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”****&gt;“停止调试”****来停止应用。
 
-### 描述
+### 说明
 
 前面的示例演示了，只需要写入极少的代码即可将加速计输入集成到你的应用。
 
@@ -175,6 +175,6 @@ AccelerometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

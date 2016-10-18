@@ -1,24 +1,37 @@
 ---
 author: Jwmsft
+redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/dialogs
 Description: "浮出控件是轻型弹出窗口，用来临时显示与用户当前正在执行的操作相关的 UI。"
 title: "上下文菜单和对话框"
 ms.assetid: 7CA2600C-A1DB-46AE-8F72-24C25E224417
 label: Menus, dialogs, and popups
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 6572acefa25e464b6edaca9fee5b2b3e3b46ff3f
 
 ---
 # 菜单、对话框、浮出控件和弹出窗口
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 菜单、对话框、浮出控件和弹出窗口显示的瞬态 UI 元素在用户请求这些元素或是发生需要通知或许可的操作时出现。
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn299030">MenuFlyout 类</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Flyout 类</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">ContentDialog 类</a></li>
+</ul>
 
--   [MenuFlyout 类](https://msdn.microsoft.com/library/windows/apps/dn299030)
--   [Flyout 类](https://msdn.microsoft.com/library/windows/apps/dn279496)
--   [ContentDialog 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+</div>
+</div>
+
+
+
+
+
 
 上下文菜单向用户提供即时操作。 可以使用文本命令填充它。 可以通过点击或单击菜单之外的某个位置来轻型消除上下文菜单。
 
@@ -98,33 +111,13 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
     -   按钮是用户消除对话框的唯一机制。
     -   使用带有文本的按钮，该文本可标识对于主要说明或内容的响应。 例如，“你是否希望允许 AppName 访问你的位置”，后跟“允许”和“拒绝”按钮。 具体的响应可以使用户更快速的理解，以便进行高效的决策。
 -   错误对话框在对话框中显示错误消息，以及任何相关的信息。 在错误对话框中使用的唯一按钮应为“关闭”或类似操作。
--   不要将对话框用于针对页面上特定位置的上下文错误（例如，密码字段等位置的验证错误），请使用应用的画布本身显示内联错误。
+-   不要为与页面上的特定位置具有上下文关系的错误（例如，密码字段等位置的验证错误）使用对话框，请使用应用的画布本身显示内联错误。
 
-## 上下文菜单和浮出控件
+## 浮出控件
 
-上下文菜单和浮出控件是紧密相关的控件，两者共享交互行为。 这些控件之间的主要区别在于它们接受的内容类型。
+浮出控件是可显示任意 UI 作为其内容的开放式容器。  浮出控件没有其自己的可视部分，它们只是内容控件。 浮出控件具有它们在其内容周围添加的边距和可选滚动栏。 若要设置浮出控件的样式，请修改其 [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx)。
 
-### MenuFlyout
-一个使用 MenuFlyout 类实现的上下文菜单，可以包含 [**MenuFlyoutItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutitem.aspx)、[**ToggleMenuFlyoutItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)、[**MenuFlyoutSubItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutsubitem.aspx) 和 [**MenuFlyoutSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutseparator.aspx)。 若要显示任何其他类型的 UI，请使用浮出控件。
-
-- **使用指南**
-  - 在上下文菜单中的命令组之间使用分隔符，以便：
-    - 区分多组相关命令。
-    - 将多个命令集分为一组。
-    - 将可预测的命令集从特定于应用或视图的命令中分离出来，例如剪贴板命令（剪切/复制/粘贴）。
-  -   在笔记本电脑和台式机上，上下文菜单和工具提示不限于应用程序窗口，可以部分显示在其外部。 如果应用尝试完全在其窗口外呈现上下文菜单，将引发异常。
-
-- **应做事项和禁止事项**
-  -   使上下文菜单命令保持简短。 较长的命令最终会被截断。
-  -   对每个命令名称均应用句子大小写规则。
-  -   在任意上下文菜单中，显示可能的最少数量的命令。
-  -   如果可以直接操作 UI 元素，请避免在上下文菜单中放置该命令。 对于无法以其他方式显示在屏幕上的上下文命令，应保留上下文菜单。
-
-### 浮出控件
-
-浮出控件是可显示任意 UI 作为其内容的开放式容器。  浮出控件没有其自己的可视部分，它们只是内容控件。 浮出控件具有它们在其内容周围添加的边距和可选滚动栏。 若要设置某个浮出控件的样式，请修改其 `FlyoutPresenterStyle`。
-
-以下代码显示自动换行段落，并使屏幕阅读器可以访问该文本块。
+以下代码显示一个环绕文本段落，并使屏幕阅读器可以访问该文本块。
 
 ````xaml
 <Flyout>
@@ -142,9 +135,9 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 
 ### 调用和放置
 
-浮出控件和上下文菜单附加到特定控件。 当可见时，它们应固定到调用对象，并将其首选相对位置指定为对象：顶部、左侧、底部或右侧。 浮出控件还具有一种完整放置模式，该模式尝试拉伸浮出控件，并在应用窗口内部居中放置。
+浮出控件和上下文菜单附加到特定控件。 当可见时，它们应固定到调用对象，并将其首选相对位置指定为对象：顶部、左侧、底部或右侧。 浮出控件还有一种完整放置模式，该模式尝试拉伸浮出控件，并使其在应用窗口内居中。
 
-[Button 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)包含一个 `Flyout` 属性，该属性可使你指定将在用户单击或点击按钮时打开的瞬态 UI。
+[Button 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)包含一个 [**Flyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) 属性，该属性可使你指定将在用户单击或点击按钮时打开的瞬态 UI。
 
 ````xaml
 <Button Content="Click me">
@@ -156,24 +149,6 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 </Button>
 ````
 
-若要打开上下文菜单，用户可以执行以下操作之一：
-- 使用鼠标右键单击
-- 通过触摸长按
-- 键入 Shift + F10
-- 按键盘菜单键
-- 按游戏板菜单按钮
-
-若要轻松打开上下文菜单或浮出控件以响应上述任何操作，应用可以利用 [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx)（大多数控件的基类）上的新 [`ContextFlyout`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 属性。
-
-````xaml
-<Rectangle Height="100" Width="100" Fill="Red">
-  <Rectangle.ContextFlyout>
-     <MenuFlyout>
-        <MenuFlyoutItem Text="Close"/>
-     </MenuFlyout>
-  </Rectangle.Flyout>
-</Rectangle>
-````
 
 ## 相关文章
 
@@ -184,6 +159,6 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

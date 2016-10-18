@@ -5,7 +5,7 @@ title: "企业共享的存储"
 description: "企业共享的存储为要共享数据的业务线应用定义本地数据位置。"
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 6f0e479081c361d69ab0c9e8cf4c531627304d32
+ms.openlocfilehash: bd4663b25c351551cd2f4e1e780a76431d1c3a19
 
 ---
 # 企业共享的存储
@@ -74,6 +74,6 @@ foreach (StorageFile file in sortedItems)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

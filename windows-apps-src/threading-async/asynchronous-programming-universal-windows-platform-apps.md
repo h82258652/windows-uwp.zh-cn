@@ -5,7 +5,7 @@ title: "异步编程"
 description: "本主题介绍通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C\\+\\+ 组件扩展 (C\\+\\+/CX) 和 JavaScript 中的表示形式。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
+ms.openlocfilehash: c033c1d985b9373d9cbadf38463610aa1922163e
 
 ---
 # 异步编程
@@ -81,6 +81,6 @@ ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

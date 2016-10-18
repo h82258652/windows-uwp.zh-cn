@@ -4,8 +4,8 @@ title: "监视后台任务进度和完成"
 description: "了解应用如何识别后台任务报告的进度和完成情况。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 translationtype: Human Translation
-ms.sourcegitcommit: 6e6e28bc339364e70282a9db84593188c70a59c4
-ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28
 
 ---
 
@@ -21,7 +21,9 @@ ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
 -   [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-了解应用如何识别后台任务报告的进度和完成情况。 后台任务从应用中分离开来，并且它们单独运行，但可以通过应用代码监视后台任务进度和完成。 若要进行该操作，应用订阅已向系统注册的后台任务事件。
+了解应用如何识别在单独进程中运行的后台任务报告的进度和完成情况。 （对于单一进程后台任务，可以设置共享变量来表示进度和完成情况。）
+
+ 后台任务从应用中分离，并且单独运行，但你可以通过应用代码监视后台任务进度和完成情况。 若要进行该操作，应用订阅已向系统注册的后台任务事件。
 
 -   本主题假定你拥有一个注册后台任务的应用。 若要快速生成后台任务，请参阅[创建和注册后台任务](create-and-register-a-background-task.md)。 有关条件和触发器的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
@@ -210,7 +212,6 @@ ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

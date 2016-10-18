@@ -5,7 +5,7 @@ title: "规划性能"
 description: "用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。"
 translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 39d57811a07b4c404da4b7e369e3bf5441fa99c0
+ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
 
 ---
 # 规划性能
@@ -161,7 +161,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   针对各种不同硬件配置进行测试，包括一体机和台式电脑、笔记本电脑、超极本和平板电脑以及其他移动设备。
 -   针对各种不同屏幕尺寸进行测试。 尽管更大的屏幕可以显示更多的内容，但呈现所有额外内容可能会对性能产生负面影响。
 -   尽量消除测试因素。
-    -   在测试设备上关闭后台应用。 若要执行此操作，请从 Windows 的“开始”菜单中依次选择“设置”****&gt;“个性化”****&gt;“锁屏界面”****。 选择每个活动应用，然后选择“无”****。
+    -   在测试设备上关闭后台应用。 若要执行此操作，请依次从 Windows 中的“开始”菜单中选择“设置”****&gt;“个性化”****&gt;“锁屏界面”****。 选择每个活动应用，然后选择“无”****。
     -   在将应用部署到测试设备之前，通过使用发布配置生成应用将其编译为本机代码。
     -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的“开始”菜单中，搜索“安全和维护”****。 在“维护”****区域的“自动维护”****下，选择“开始维护”****并等待状态从“正在进行维护”****发生变化。
     -   多次运行应用有助于消除随机测试变量，并且有助于确保一致的测量结果。
@@ -194,6 +194,6 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

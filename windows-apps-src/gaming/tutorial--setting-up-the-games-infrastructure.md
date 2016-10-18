@@ -5,7 +5,7 @@ description: "装配游戏的第一步是在 Microsoft Visual Studio 中设置�
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d4d7864f9689df0919b53ee70b8e18f8d812b2b0
+ms.openlocfilehash: fd8e676e66c1df530aca41e05f2ea68d96d01a32
 
 ---
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: d4d7864f9689df0919b53ee70b8e18f8d812b2b0
 
 Visual Studio 模板是一个设置和代码文件集合，专用于基于首选语言和技术的特定类型的应用。 在 Microsoft Visual Studio 2015 中，你可以找到许多模板，这可以大大简化游戏和图形应用的开发。 如果不使用模板，则必须亲自开发大量的基本图形呈现和显示框架，这对于游戏开发新手而言可能是一件苦差事。
 
-适用于本教程的模板是标题为 DirectX 11 应用（通用 Windows）的模板。 在 Visual Studio 2015 中，依次单击“文件...”****&gt;“新建项目”****，然后：
+适用于本教程的模板是标题为“DirectX 11 应用(通用 Windows)”的模板。 在 Visual Studio 2015 中，依次单击“文件...”****&gt;“新建项目”****，然后：
 
 1.  从“模板”****中，依次选择“Visual C++”****、“Windows”****、“通用”****。
 2.  在中心窗格中，选择“DirectX 11 应用（通用 Windows）”****。
@@ -169,6 +169,6 @@ void App::Run()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

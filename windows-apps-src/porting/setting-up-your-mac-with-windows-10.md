@@ -5,7 +5,7 @@ title: "在 Mac 上设置 Windows 10"
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 10ebdb0a534d8f2931d15481c1bee4705268b0bb
+ms.openlocfilehash: b0a6c701237e7eeb1d96964ad429d73373e55252
 
 ---
 
@@ -44,6 +44,6 @@ VirtualBox 是一款用于在计算机上运行虚拟机的免费应用程序，
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

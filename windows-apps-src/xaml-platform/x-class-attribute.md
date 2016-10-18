@@ -1,15 +1,15 @@
 ---
 author: jwmsft
 description: "配置 XAML 编译，在标记和代码隐藏之间连接分部类。 代码分部类在一个独立的代码文件中定义，标记分部类由代码生成过程在 XAML 编译期间创建。"
-title: "x&#58;Class 属性"
+title: "x:Class 属性"
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
+ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
+ms.openlocfilehash: 1d04755cc9a2b7689d5373772803b6697227b18a
 
 ---
 
-# x&#58;Class 属性
+# x:Class 属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -33,7 +33,7 @@ ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
 
 ## 备注
 
-**x:Class** 可声明为作为一个 XAML 文件/对象树的根并由生成操作编译的任何元素的属性，或者已编译应用程序的应用程序定义中 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根的属性。 在页面根或应用程序根以外的任何元素上，以及在不会使用**“页面”**生成操作编译 XAML 文件的任何环境中声明 **x:Class**，会导致编译时错误。
+**x:Class** 可声明为作为一个 XAML 文件/对象树的根并由生成操作编译的任何元素的属性，或者已编译应用程序的应用程序定义中 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根的属性。 在根节点以外的任何元素上，以及在不会使用“页面”****生成操作编译 XAML 文件的任何环境中声明 **x:Class**，会导致编译时错误。
 
 用作 **x:Class** 的类不能是嵌套类。
 
@@ -46,6 +46,6 @@ ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

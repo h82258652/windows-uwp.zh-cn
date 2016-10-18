@@ -1,11 +1,11 @@
 ---
 author: jwmsft
 description: "Binding 标记扩展会在 XAML 加载时转换为 Binding 类的实例。"
-title: "Binding 标记扩展&#39;"
+title: "Binding 标记扩展'"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
+ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
+ms.openlocfilehash: 95b48b55f11c4de0b4a51106b6cf5439bfa784b9
 
 ---
 
@@ -17,7 +17,7 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 
 **注意** 有关将应用中的数据绑定与 **{Binding}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-**{Binding}** 标记扩展会在 XAML 加载时转换为 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类的实例。 此绑定对象将从数据源的某一属性中获取相关值。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新。 该对象也可以配置为将其自己的值的更改推送回源属性。 作为数据绑定目标的属性必须是依赖属性。 有关详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)。
+**{Binding}** 标记扩展用于将控件上的属性数据绑定到来自数据源（例如代码）的值。 **{Binding}** 标记扩展会在 XAML 加载时转换为 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类的实例。 此绑定对象可获取来自数据源上的某个属性的值，并将其推送到控件上的该属性。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行更新。 该对象也可以配置为将对控件值的更改推送回源属性。 作为数据绑定目标的属性必须是依赖属性。 有关详细信息，请参阅[依赖属性概述](dependency-properties-overview.md)。
 
 **{Binding}** 具有与本地值相同的依赖属性优先级，而在强制性代码中设置本地值将删除在标记中设置的任何 **{Binding}**。
 
@@ -42,13 +42,13 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 | 术语 | 说明 |
 |------|-------------|
 | *propertyPath* | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
-| *bindingProperties* | *propName* = *value*\[, *propName*=*value*\]*<br/>使用一个名称/值对语法指定的一个或多个绑定属性。 |
-| *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 对象上设置的属性的字符串名称。 例如，“Converter”。 | 
+| *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>使用一个名称/值对语法指定的一个或多个绑定属性。 |
+| *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 对象上设置的属性的字符串名称。 例如，“Converter”。 |
 | *value* | 要将属性设置为的值。 参数的语法取决于下面的[可使用 {Binding} 设置的 Binding 类的属性](#properties-of-binding)部分的属性。 |
 
 ## 属性路径
 
-*PropertyPath* 设置 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的值，后者是你要绑定到的属性（源属性）。 你可以明确指出属性名称：`{Binding Path=...}`。 也可以将其省略：`{Binding ...}`。
+*PropertyPath* 设置 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的值，后者介绍了你要绑定到的属性（源属性）。 PropertyPath 是位置参数，因此你可以将它指定为第一个未命名参数：`{Binding Path=...}`。 也可以显式使用参数名称：`{Binding Path=...}`。
 
 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 类型为属性路径，其求值结果为自定义类型或框架类型的属性或子属性的字符串。 该类型可能是（但并不一定是）[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 属性路径中的步骤由点号 (.) 分隔，并且可包含多个分隔符以遍历连续的子属性。 无论使用何种编程语言，均可将点号分隔符用于实现要绑定到的对象。
 
@@ -70,13 +70,13 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 | 属性 | 说明 |
 |----------|-------------|
 | [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) | 请参阅上面的[属性路径](#property-path)部分。 |
-| [**转换器**](https://msdn.microsoft.com/library/windows/apps/br209826) | 指定绑定引擎所调用的转换器对象。 转换器可以在 XAML 中设置，但仅限于你引用你在对资源字典中的该对象的 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用中分配的对象实例。 |
-| [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | 指定转换器要使用的区域性。 （如果要设置 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)。）区域性可设置为一个基于标准的标识符。 有关详细信息，请参阅 **ConverterLanguage** | 
-| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | 指定可在转换器逻辑中使用的转换器参数。 （如果要设置 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)。）大多数转换器使用可从要转换的传递值获取所有所需信息的简单逻辑，不需要 **ConverterParameter** 值。 **ConverterParameter** 参数适用于具有多个逻辑的中等高级转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 **ConverterParameter** 中的备注以获取详细信息。 |
+| [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) | 指定绑定引擎所调用的转换器对象。 可使用 [{StaticResource} 标记扩展](staticresource-markup-extension.md)在标记中设置转换器，以从资源字典引用该对象。 |
+| [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | 指定转换器要使用的区域性。 （如果要设置 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)。）区域性可设置为一个基于标准的标识符。 有关详细信息，请参阅 [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) |
+| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | 指定可在转换器逻辑中使用的转换器参数。 （如果要设置 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)。）大多数转换器使用可从要转换的传递值获取所有所需信息的简单逻辑，不需要 **ConverterParameter** 值。 **ConverterParameter** 参数适用于具有条件逻辑的更复杂转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 **ConverterParameter** 中的备注获取详细信息。 |
 | [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | 通过引用同一个 XAML 构造中的另一个元素（具有 **Name** 属性或 [x:Name 属性](x-name-attribute.md)）来指定数据源。 这种方法通常用于共享相关值，或者使用一个 UI 元素的子属性为另一个元素提供特定值，例如在 XAML 控件模板中。 |
-| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定要在无法解析源或路径时显示的值。 | 
-| [**模式**](https://msdn.microsoft.com/library/windows/apps/br209829) | 将绑定模式指定为以下字符串之一：“OneTime”、“OneWay”或“TwoWay”。 这些模式对应于 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 枚举的常量名称。 默认值取决于绑定目标，但在大多数情况下，该值为“OneWay”。 请注意，该值不是 **{x:Bind}** 的默认值，而是“OneTime”。 | 
-| [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | 通过描述绑定来源的位置相对于绑定目标的位置来指定数据源。 这通过运行时对象图表的方式表示，例如指定对象的父级。 设置 [{RelativeSource} 标记扩展](relativesource-markup-extension.md)。 |
+| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | 指定要在无法解析源或路径时显示的值。 |
+| [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) | 将绑定模式指定为以下值之一：“OneTime”、“OneWay”或“TwoWay”。 这些模式对应于 [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 枚举的常量名称。 默认值取决于绑定目标，但在大多数情况下，该值为“OneWay”。 请注意，该值不是 **{x:Bind}** 的默认值，而是“OneTime”。 | 
+| [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | 通过描述绑定源的位置相对于绑定目标的位置指定数据源。 这在 XAML 控件模板内的绑定中最常用。 设置 [{RelativeSource} 标记扩展](relativesource-markup-extension.md)。 |
 | [**源**](https://msdn.microsoft.com/library/windows/apps/br209832) | 指定对象数据源。 在 **Binding** 标记扩展中，[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) 属性需要一个对象引用，例如 [{StaticResource} 标记扩展](staticresource-markup-extension.md)引用。 如果未指定此属性，则操作数据上下文指定来源。 更加常见的做法是不在单个绑定中指定 Source 值，而是依赖于共享的 **DataContext** 进行多个绑定。 有关详细信息，请参阅 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx) 或[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。 |
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | 指定要在源值解析但并非显式 **null** 时显示的值。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | 指定绑定源更新的定时。 如果没有指定，则默认值为 **Default**。 |
@@ -84,6 +84,9 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 **注意** 如果你要将标记从 **{x:Bind}** 转换为 **{Binding}**，请注意在 **Mode** 属性默认值方面的差异。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 和 **ConverterLanguage** 都与如下方案相关：将绑定源中的值或类型转换为与绑定目标属性兼容的类型或值。 有关详细信息和相关示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)的“数据转换”部分。
+
+> [!NOTE]
+> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 和 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 都可指定绑定源，因此它们相互排斥。
 
@@ -112,7 +115,7 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
     <Slider x:Name="sliderValueConverter" ... />
     <TextBox Text="{Binding Path=Value, ElementName=sliderValueConverter,
         Mode=OneWay,
-        Converter={StaticResource GradeConverter}}"/> 
+        Converter={StaticResource GradeConverter}}"/>
 </Page>
 ```
 
@@ -128,7 +131,6 @@ ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

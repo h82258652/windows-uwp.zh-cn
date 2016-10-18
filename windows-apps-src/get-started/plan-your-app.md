@@ -1,11 +1,11 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 title: "规划你的通用 Windows 平台 (UWP) 应用"
 description: "在 Microsoft 设计团队中，我们创建应用的流程由五个不同的阶段组成：概念、结构、动态、视觉和原型。 我们鼓励你采用相似的流程，并且在创造供公众享受的新体验时获得乐趣。"
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9a3058aabdc6f710149a14d8f125b66efd076007
+ms.sourcegitcommit: 43214b9e2c786a007b8d9cdef7700e275101aba5
+ms.openlocfilehash: 4d17f7da6969910d2738377174cec9f1c1517dde
 
 ---
 
@@ -238,6 +238,6 @@ ms.openlocfilehash: 9a3058aabdc6f710149a14d8f125b66efd076007
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

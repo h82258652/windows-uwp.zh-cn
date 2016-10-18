@@ -5,7 +5,7 @@ ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: "在此项目中，我们将移动一个矩形、应用淡出效果，然后再使其显示在视图中。"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
+ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
 
 ![Blend 开发环境](images/ios-to-uwp/blend-1.png)
 
-在左侧的**“解决方案资源管理器”**中，双击**“MainPage.xaml”**。 接下来，从中心**“设计视图”**边缘上的工具垂直条上，选择**“矩形”**工具，然后在**“设计视图”**中绘制矩形，如下图所示。
+在左侧的**“解决方案资源管理器”**中，双击**MainPage.xaml**。 接下来，从中心**“设计视图”**边缘上的工具垂直条上，选择**“矩形”**工具，然后在**“设计视图”**中绘制矩形，如下图所示。
 
 ![向设计视图添加矩形](images/ios-to-uwp/blend-2.png)
 
@@ -131,6 +131,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

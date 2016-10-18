@@ -2,15 +2,16 @@
 author: QuinnRadich
 title: "Windows 10 版本 1511 中的新增功能 - 2015 年 11 月"
 description: "Windows 10 版本 1511 和新开发人员工具将提供受新通用 Windows 平台支持的工具、功能和体验。"
+keywords: "新增功能, 新功能, 更新, 新, 功能, 新增, Windows 10, 1511, 11 月"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 0bcec2e82afd81f68b36eab5719902d5fb7991fb
+ms.sourcegitcommit: 5646bf7681b5b028031eab02f8dd5c352d4b9cc1
+ms.openlocfilehash: 7f6a0879db5e3ec660866c0c08b9b7c7ca773644
 
 ---
 
 # Windows 中的新增功能
 
-Windows 10 周年 SDK 预览版 14295 和 Windows 开发人员工具更新继续提供受通用 Windows 平台支持的工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](https://msdn.microsoft.com/library/windows/apps/bg124288)，或了解如何使用 [Windows 上的现有应用代码](https://msdn.microsoft.com/library/windows/apps/mt238321)。
+Windows 10 版本 1511 和 Windows 开发人员工具更新继续提供受通用 Windows 平台支持的工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](https://msdn.microsoft.com/library/windows/apps/bg124288)，或了解如何使用 [Windows 上的现有应用代码](https://msdn.microsoft.com/library/windows/apps/mt238321)。
 
 ## Windows 10 版本 1511 - 2015 年 11 月
 
@@ -31,6 +32,6 @@ Windows 应用认证工具包 | Windows 应用认证工具包已更新为包含�
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

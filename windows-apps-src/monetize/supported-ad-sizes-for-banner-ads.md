@@ -4,17 +4,17 @@ ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: "了解支持的横幅广告大小。"
 title: "横幅广告的受支持广告大小"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: f83febcb6c96ad85329633e652978f5c7724e743
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 488c47e7fd3ab55c51454e867d802d632a0b4df2
 
 
 ---
 
 # 横幅广告的受支持广告大小
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Microsoft Advertising 支持以下广告大小的横幅广告。
+
+Microsoft Advertising 支持采用以下广告大小的横幅广告。
 
 ## Windows 10 移动版和 Windows Phone 8.x
 
@@ -39,7 +39,7 @@ Microsoft Advertising 支持以下广告大小的横幅广告。
 <td align="left"><img src="images/13-f6f413da-ddde-4424-9364-41d8ba536d21.jpg" alt="AdSizesPhone320x50" /></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>480x80</p><p>**注意** 仅 Windows Phone Silverlight 支持此大小。</p></td>
+<td align="left"><p>480x80</p><p>**注意**&nbsp;&nbsp;仅 Windows Phone Silverlight 支持此大小。</p></td>
 <td align="left"><img src="images/13-0f11f562-0624-40d6-9720-400420f0a486.jpg" alt="AdSizesPhone480x80" /></td>
 </tr>
 <tr class="even">
@@ -92,6 +92,6 @@ Microsoft Advertising 支持以下广告大小的横幅广告。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

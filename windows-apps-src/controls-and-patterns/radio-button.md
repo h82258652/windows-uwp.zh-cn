@@ -6,22 +6,35 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 317df548e72f9aff475ba0959668b6441ac29d3d
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 435a2a6f1b9707d1f64587a693bd9a60d587ca83
 
 ---
 # 单选按钮
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 单选按钮允许用户从两个或多个选项中选择一个选项。 每个选项都表示为一个单选按钮；用户只能选择单选按钮组中的一个单选按钮。
 
 （如果你对名称感到好奇，单选按钮根据收音机上的频道预设按钮命名。）
 
 ![单选按钮](images/controls/radio-button.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br227544"><strong>RadioButton 类</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked 事件</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked 属性</strong></a></li>
+</ul>
 
--   [**RadioButton 类**](https://msdn.microsoft.com/library/windows/apps/br227544)
--   [**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
--   [**IsChecked 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## 这是正确的控件吗？
 
@@ -58,7 +71,7 @@ Microsoft Edge 浏览器设置中的单选按钮。
 - 将它们放在同一个父容器内。
 - 在每个单选按钮上将 [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 属性设置为相同的值。
 
-> **注意** &nbsp;&nbsp;通过键盘访问时，一组单选按钮的行为类似于单个控件。 只有选定选项可以使用 Tab 键访问，但用户可以使用箭头键循环浏览该组。
+> **注意**&nbsp;&nbsp;通过键盘访问时，一组单选按钮的行为类似于单个控件。 使用 Tab 键只能访问选定选项，但用户可以使用箭头键循环浏览该组。
 
 在此示例中，单选按钮的第一组在相同的堆栈面板中进行隐式分组。 第二组分为两个堆栈面板，它们按照 GroupName 进行显式分组。
 
@@ -185,6 +198,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

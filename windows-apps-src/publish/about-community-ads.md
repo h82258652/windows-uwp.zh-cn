@@ -5,7 +5,7 @@ title: "有关社区广告"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 translationtype: Human Translation
 ms.sourcegitcommit: 90e63d53c68e25816fd1f7b532792d9ad6dc2cc6
-ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
+ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
 
 ---
 
@@ -24,9 +24,9 @@ ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 ## 如何选择加入社区广告
 
-若要选择加入社区广告：
+若要选择加入社区广告，请执行以下操作：
 
-1. 在 Windows 开发人员中心仪表板中转到“盈利”****&gt;“利用广告来盈利”****页面。
+1. 在 Windows 开发人员中心仪表板中转到“盈利”****&gt;“利用广告来盈利”****页。
 2. 在“社区广告”****部分中，选中“在我的应用中显示社区广告”****框。
    > **注意** 选中或取消选中此框后，无需重新发布应用即可使更改生效。
 
@@ -40,6 +40,6 @@ ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

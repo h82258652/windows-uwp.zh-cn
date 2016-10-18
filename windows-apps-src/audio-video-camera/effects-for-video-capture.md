@@ -1,11 +1,11 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: "本主题介绍专用于视频捕获方案的效果。 其中包括视频防抖动效果。"
+description: "本主题展示如何使用视频防抖动效果。"
 title: "视频捕获的效果"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
+ms.sourcegitcommit: 367ab34663d66d8c454ff305c829be66834e4ebe
+ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 ---
 
@@ -13,10 +13,10 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主题介绍专用于视频捕获方案的效果。 其中包括视频防抖动效果。
+本主题展示如何使用视频防抖动效果。
 
-**注意**  
-本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码生成，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
+> [!NOTE] 
+> 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 我们建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
 ## 视频防抖动效果
 
@@ -34,7 +34,7 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 [!code-cs[DeclareVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
-在本文[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中所述的基本视频捕获实现中，媒体编码配置文件对象将分配给本地变量，因为不会在代码的其他位置使用它。 对于此方案，你应该将该对象分配给成员变量以便以后进行访问。
+对于此方案，你应该将媒体编码配置文件对象分配给成员变量以便以后进行访问。
 
 [!code-cs[EncodingProfileMember](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
 
@@ -56,7 +56,7 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 调用 [**VideoDeviceController.SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) 以设置新的编码属性。 在设置新的属性之前，使用成员变量来存储初始编码属性，以便当你禁用该效果时可以改回该设置。
 
-如果视频防抖动效果必须裁剪输出视频，则建议的输出编码属性将是已裁剪的视频的大小。 这意味着输出分辨率将匹配已裁剪的视频大小。 如果未使用建议的输出属性，将放大视频以匹配初始输出大小，这将导致丢失视觉保真度。
+如果视频防抖动效果必须裁剪输出视频，则建议的输出编码属性将是已裁剪的视频的大小。 这意味着输出分辨率将匹配已裁剪的视频大小。 如果未使用建议的输出属性，视频将放大以匹配初始输出大小，这将导致丢失视觉保真度。
 
 设置 **MediaEncodingProfile** 对象的 [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) 属性。 在设置新的属性之前，使用成员变量来存储初始编码属性，以便当你禁用该效果时可以改回该设置。
 
@@ -78,7 +78,8 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 ## 相关主题
 
-* [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
+* [相机](camera.md)
+* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -89,6 +90,6 @@ ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

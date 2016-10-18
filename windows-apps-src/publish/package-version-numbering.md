@@ -4,8 +4,8 @@ Description: "Windows 应用商店强制执行某些与版本号相关的规则�
 title: "程序包版本编号"
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9910ca5b5a3fd5d24643a1dfc6da3644d561c617
+ms.sourcegitcommit: ca273ab6d881b350c2f5a48eafee38c74ac0f36a
+ms.openlocfilehash: 2668152ba471986e00831bdcf46e5a2feba54dcd
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 9910ca5b5a3fd5d24643a1dfc6da3644d561c617
 
 任何 Windows 10 程序包的版本号均必须始终高于你正在为相同应用发布的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 程序包（或你以前发布的那些操作系统版本的程序包）的任一版本号。 （有关详细信息，请参阅[将适用于 Windows 10 的程序包添加到以前发布的应用](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)。）
 
-> **注意** 会保留版本号的最后（第四个）部分以供应用商店使用，并且必须保留为 0。
+> **重要提示** 当你生成程序包时，会保留版本号的最后（第四个）部分以供应用商店使用，并且必须保留为 0（尽管应用商店可能会更改此部分的值）。
 
 从已发布的提交中选择 Windows 10 程序包后，Windows 应用商店将始终使用适用于客户设备的版本最高的程序包。 这将为你提供更大的灵活性，并让你可以控制在特定设备类型上提供给客户的程序包。 重要的是，你可以按任意顺序提交这些程序包；你将并不局限于提供每个后续提交中的更高版本的程序包。
 
@@ -82,6 +82,6 @@ Windows 10 使你能够编写一个可在任意位置上运行的单个基本代
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

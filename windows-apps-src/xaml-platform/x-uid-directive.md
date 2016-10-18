@@ -5,11 +5,11 @@ title: "xUid 指令"
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4f8aa553c99b6071cedc4f9d93cf8258b75eca49
+ms.openlocfilehash: c94db1dc1095f53dc836f78768ecc826470343d5
 
 ---
 
-# x&#58;Uid 指令
+# x:Uid 指令
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -50,6 +50,6 @@ UWP XAML 在 **x:Uid** 唯一性上使用的规则不同于以前利用 XAML 的
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

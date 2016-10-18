@@ -1,13 +1,21 @@
 ---
-Description&#58; 作者：mijacobs 精心设计的有针对性的动画可以使应用变得更丰富，并且使体验感觉精良和完美。 帮助用户理解上下文更改，将体验与视觉转换紧密相连。
-title&#58; UWP 应用中的动作和动画 ms.assetid：21AA1335-765E-433A-85D8-560B340AE966 标签：动作 模板：detail.hbs testmetadata：测试 tocnode：设计和 UI
+author: mijacobs
+Description: "精心设计的有针对性的动画可以使应用变得更丰富，并且使体验感觉精良和完美。 帮助用户理解上下文更改，将体验与视觉转换紧密相连。"
+title: "UWP 应用中的动作和动画"
+ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
+label: Motion
+template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
+
 ---
 
 # 适用于 UWP 应用的动作
 
 精心设计的有针对性的动画可以使应用变得更丰富，并且使体验感觉精良和完美。 帮助用户理解上下文环境变动，将体验与视觉转换紧密相连。
 
-## <span id="Benefits_of_animation"></span><span id="benefits_of_animation"></span><span id="BENEFITS_OF_ANIMATION"></span>动画的优势
+## 动画的优势
 
 
 动画不仅仅是让物体移动。 动画是一种用于创建物理生态系统的工具，用户可在该系统内驻留并通过触摸进行操作。 体验的质量取决于应用对用户的响应程度以及 UI 传达了怎样的个性。
@@ -54,7 +62,7 @@ title&#58; UWP 应用中的动作和动画 ms.assetid：21AA1335-765E-433A-85D8-
         </td>
         <td>列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
         </td>
-    </tr> 
+    </tr>
     <tr>
         <td>[拖放](motion-dragdrop.md)
         </td>
@@ -103,10 +111,6 @@ title&#58; UWP 应用中的动作和动画 ms.assetid：21AA1335-765E-433A-85D8-
 
 
 
-
-
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

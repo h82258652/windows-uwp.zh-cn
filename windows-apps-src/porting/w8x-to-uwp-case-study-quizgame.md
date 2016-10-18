@@ -5,7 +5,7 @@ description: "本主题介绍了一个将正在运行的对等测验游戏 WinRT
 title: "Windows 运行时 8.x 到 UWP 案例研究，QuizGame 对等示例应用"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
+ms.openlocfilehash: 353ee8511be38ad437a64e153d43523f355e080f
 
 ---
 
@@ -91,7 +91,7 @@ QuizGame 具有以下部分。
 
 **P2PHelper**
 
--   在解决方案中，创建一个新的 Windows 10 类库项目（“新建项目”****&gt;“Windows 通用”****&gt;“类库(Windows 通用)”****）并将其命名为 P2PHelper。
+-   在解决方案中，创建一个新的 Windows 10 类库项目（“新建项目”****&gt;“Windows 通用”****&gt;“类库 (Windows 通用)”****）并将其命名为 P2PHelper。
 -   从新项目中删除 Class1.cs。
 -   将 P2PSession.cs、P2PSessionClient.cs 和 P2PSessionHost.cs 复制到新项目的文件夹中，并在新项目中包括已复制的文件。
 -   该项目无需其他更改即可构建。
@@ -103,9 +103,9 @@ QuizGame 具有以下部分。
 
 **QuizGameHost**
 
--   创建一个新的 Windows 10 应用项目（“添加”****&gt;“新建项目”****&gt;“Windows 通用”****&gt;“空白应用程序(Windows 通用)”****）并将其命名为 QuizGameHost。
+-   创建一个新的 Windows 10 应用项目（“添加”****&gt;“新建项目”****&gt;“Windows 通用”****&gt;“空白应用程序 (Windows 通用)”****），并将其命名为 QuizGameHost。
 -   添加对 P2PHelper 的引用（“添加引用”****&gt;“项目”****&gt;“解决方案”****&gt;“P2PHelper”****）。
--   在“解决方案资源管理器”****中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后依次单击“添加”****&gt;“现有项”****并向上导航文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”****。
+-   在“解决方案资源管理器”****中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后单击“添加”****&gt;“现有项”****并向上导航到文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”****。
 -   将 MainPage.xaml 从 \\QuizGame.Windows\\ 复制到 \\QuizGameHost\\ ，并将命名空间更改为 QuizGameHost。
 -   将 App.xaml 从 \\QuizGame.Shared\\ 复制到 \\QuizGameHost\\，并将命名空间更改为 QuizGameHost。
 -   我们会将该版本保留在新项目中，并只进行一个定向更改以支持本地测试模式，而不是覆盖 app.xaml.cs。 在 app.xaml.cs 中，将此行代码
@@ -130,9 +130,9 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 **QuizGameClient**
 
--   创建一个新的 Windows 10 应用项目（“添加”****&gt;“新建项目”****&gt;“Windows 通用”****&gt;“空白应用程序(Windows 通用)”****）并将其命名为 QuizGameClient。
+-   创建一个新的 Windows 10 应用项目（“添加”****&gt;“新建项目”****&gt;“Windows 通用”****&gt;“空白应用程序 (Windows 通用)”****），并将其命名为 QuizGameClient。
 -   添加对 P2PHelper 的引用（“添加引用”****&gt;“项目”****&gt;“解决方案”****&gt;“P2PHelper”****）。
--   在“解决方案资源管理器”****中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后依次单击“添加”****&gt;“现有项”****并向上导航文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”****。
+-   在“解决方案资源管理器”****中，为磁盘上的每个共享文件夹创建一个新文件夹。 反过来，右键单击你刚刚创建的每个文件夹，然后单击“添加”****&gt;“现有项”****并向上导航到文件夹。 打开相应的共享文件夹、选择所有文件，然后单击“添加为链接”****。
 -   将 MainPage.xaml 从 \\QuizGame.WindowsPhone\\ 复制到 \\QuizGameClient\\，并将命名空间更改为 QuizGameClient。
 -   将 App.xaml 从 \\QuizGame.Shared\\ 复制到 \\QuizGameClient\\，并将命名空间更改为 QuizGameClient。
 -   在 package.appxmanifest 中，将功能名称从 internetClient 更改为 internetClientServer。
@@ -196,6 +196,6 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

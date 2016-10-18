@@ -5,7 +5,7 @@ title: "图形和动画"
 description: "本部分中的主题帮助你开始在应用商店应用中使用图形和动画。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d46498e6e584d85cfce0be237878aff68dee9c50
+ms.openlocfilehash: e06be76cadffd0ee116b0cfd28c90176e25656d5
 
 ---
 # 图形和动画
@@ -39,6 +39,6 @@ ms.openlocfilehash: d46498e6e584d85cfce0be237878aff68dee9c50
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

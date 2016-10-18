@@ -5,7 +5,7 @@ title: "自定义打印预览 UI"
 description: "本部分介绍了如何在打印预览 UI 中自定义打印选项和设置。"
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 36c1499b51aa5b8b5ab4b0b354197c67dc89801f
+ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
 
 ---
 # 自定义打印预览 UI
@@ -188,6 +188,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

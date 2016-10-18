@@ -2,10 +2,9 @@
 author: WilliamsJason
 title: "在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One"
 description: "介绍如何使用免费 Fiddler 工具查看 UWP Xbox One 开发工具包上的网络流量。"
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 0f0840992afe5eeae8ec5ac6897e728ec183a2f4
-ms.openlocfilehash: 6d02d7c4fe9c1804e3b63a1d1156fbb3981d0536
+ms.sourcegitcommit: 11c6cffab7934937b6d89c30e4d03ae752f6b3b7
+ms.openlocfilehash: 241fa495c7277fe2bf4feafeb4062842f97e59b1
 
 ---
 
@@ -45,6 +44,7 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
   | AllowedUsers      | 任意                            |
   | AllowedComputers  | 任意                            |
 
+
 6. 通过执行以下操作将 Fiddler 配置为捕获和解密 HTTPS 流量：
   1. 若要实现最佳性能，请通过单击按钮栏上的“流”****按钮来将 Fiddler设置为使用流模式。
   2. 在 Fiddler“工具”****菜单中，选择“Fiddler 选项”****，然后单击“HTTPS”****。
@@ -66,9 +66,8 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
 1. 导航到 Xbox Device Portal UI 中的“网络”****工具。
 2. 单击“禁用”****。
 
-###注意
-
-每台安装了 Fiddler 的电脑都使用不同的 Fiddler 根证书。 如果你有多台电脑可用于为开发工具包提供 Fiddler 代理，你将需要在它们之间进行切换时选择新的根证书。 如果你只使用一台电脑，则只需在首次启用 Fiddler 时选择根证书。 你仍然必须指定 IP 地址和端口。
+> [!NOTE]
+> 每台安装了 Fiddler 的电脑都使用不同的 Fiddler 根证书。 如果你有多台电脑可用于为开发工具包提供 Fiddler 代理，你将需要在它们之间进行切换时选择新的根证书。 如果你只使用一台电脑，则只需在首次启用 Fiddler 时选择根证书。 你仍然必须指定 IP 地址和端口。
 
 ## 另请参阅
 - [Fiddler 设置 API 参考](wdp-fiddler-api.md)
@@ -80,6 +79,6 @@ Fiddler 可能影响主机所报告的网络状态。 如果从运行 Fiddler �
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

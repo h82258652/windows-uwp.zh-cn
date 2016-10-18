@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "音乐、图片和视频库中的文件和文件夹"
 description: "将现有的音乐、图片和视频文件夹添加到相应的库。 你还可以从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
+ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
+ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 ---
 
@@ -62,7 +62,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
     using Windows.Foundation.Collections;
 
     // ...
-            
+
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
@@ -136,6 +136,33 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 ## 查询媒体库
 
+若要获取一组文件，请指定所需库和文件类型。
+
+```cs
+...
+using Windows.Storage;
+using Windows.Storage.Search;
+...
+
+private async void getSongs()
+{
+    QueryOptions queryOption = new QueryOptions
+        (CommonFileQuery.OrderByTitle, new string[] { ".mp3", ".mp4", ".wma" });
+
+    queryOption.FolderDepth = FolderDepth.Deep
+
+    Queue<IStorageFolder> folders = new Queue<IStorageFolder>();
+
+    var files = await KnownFolders.MusicLibrary.CreateFileQueryWithOptions
+      (queryOption).GetFilesAsync();
+
+    foreach (var file in files)
+    {
+        // do something with the music files.
+    }
+
+}
+```
 
 ### 查询结果包括内部存储和可移动存储
 
@@ -147,112 +174,8 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 ![电话和 SD 卡中的图像](images/phone-media-locations.png)
 
-如果你通过调用 `await KnownFolders.PicturesLibrary.GetFilesAsync()` 查询图片库的内容，结果将同时包括 internalPic.jpg 和 SDPic.jpg。
+如果通过调用 `await KnownFolders.PicturesLibrary.GetFilesAsync()` 查询图片库的内容，结果将同时包括 internalPic.jpg 和 SDPic.jpg。
 
-### 深入查询
-
-使用深入查询可快速枚举媒体库的整个内容。
-
-深入查询仅返回指定媒体类型的文件。 例如，如果你通过深入查询查询音乐库，查询结果不会包括在“音乐”文件夹中找到的任何图片文件。
-
-在相机保存每个图片的低分辨率图像和高分辨率图像所在的设备上，深入查询仅返回低分辨率图像。
-
-“本机照片”和“已保存图片”文件夹不支持深入查询。
-
-下面提供了支持深入查询的项：
-
-**图片库**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-**音乐库**
-
--   `GetFilesAsync(CommonFileQuery.OrderByName)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByArtist)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbum)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbumArtist)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByGenre)`
-
-**视频库**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-### Flat 查询
-
-若要获取库中所有文件和文件夹的完整列表，请调用 `GetFilesAsync(CommonFileQuery.DefaultQuery)`。 此方法将返回库中的所有文件，不管其类型如何。 这是 Shallow 查询，因此如果用户在库中创建了子文件夹，你必须递归枚举子文件夹的内容。
-
-使用 Flat 查询返回内置查询不能识别的类型的媒体文件，或返回库中的所有文件（包括不属于指定类型的文件）。 例如，如果你通过 Flat 查询查询音乐库，查询结果将包括通过查询在“音乐”文件夹中找到的任何图片文件。
-
-### 示例查询
-
-假设设备及其可选 SD 卡包含在以下图像中显示的文件夹和文件：
-
-![相关文件 ](images/phone-media-queries.png)
-
-下面是它们返回的查询和结果的几个示例。
-
-| 查询 | 结果 |
-|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| KnownFolders.PicturesLibrary.GetItemsAsync();  | - 内部存储中的“本机照片”文件夹 <br>- SD 卡中的“本机照片”文件夹 <br>- 内部存储中的“已保存图片”文件夹 <br>- SD 卡中的“已保存图片”文件夹 <br><br>这是 Flat 查询，因此仅返回“图片”文件夹的直属子级。 |
-| KnownFolders.PicturesLibrary.GetFilesAsync()  | 无结果。 <br><br>这是 Flat 查询，“图片”文件夹与其直属子级一样不包含任何文件。 |
-| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - SD 卡中的 4-3-2012.jpg 文件 <br>- 内部存储中的 1-1-2014.jpg 文件 <br>- 内部存储中的 1-2-2014.jpg 文件 <br>- SD 卡中的 1-6-2014.jpg 文件 <br><br>这是深入查询，因此将返回“图片”文件夹及其子文件夹的内容。 |
-| KnownFolders.CameraRoll.GetFilesAsync(); | - 内部存储中的 1-1-2014.jpg 文件 <br>- SD 卡中的 4-3-2012.jpg 文件 <br><br>这是 Flat 查询。 不保证排序结果。 |
-
- 
-## 媒体库功能和文件类型
-
-
-下面提供了用于访问你的应用中的媒体文件的功能，你可以在应用部件清单文件中指定这些功能。
-
--   **音乐**。 在应用清单文件中指定**“音乐库”**功能，以使你的应用看到并访问以下文件类型的文件：
-
-    -   .qcp
-    -   .wav
-    -   .mp3
-    -   .m4r
-    -   .m4a
-    -   .aac
-    -   .amr
-    -   .wma
-    -   .3g2
-    -   .3gp
-    -   .mp4
-    -   .wm
-    -   .asf
-    -   .3gpp
-    -   .3gp2
-    -   .mpa
-    -   .adt
-    -   .adts
-    -   .pya
--   **照片**。 在应用清单文件中指定**“图片库”**功能，以使你的应用看到并访问以下文件类型的文件：
-
-    -   .jpeg
-    -   .jpe
-    -   .jpg
-    -   .gif
-    -   .tiff
-    -   .tif
-    -   .png
-    -   .bmp
-    -   .wdp
-    -   .jxr
-    -   .hdp
--   **视频**。 在应用清单文件中指定**“视频库”**功能，以使你的应用看到并访问以下文件类型的文件：
-
-    -   .wm
-    -   .m4v
-    -   .wmv
-    -   .asf
-    -   .mov
-    -   .mp4
-    -   .3g2
-    -   .3gp
-    -   .mp4v
-    -   .avi
-    -   .pyv
-    -   .3gpp
-    -   .3gp2
 
 ## 使用照片
 
@@ -270,7 +193,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
   propertiesToSave.Add("System.CreatorOpenWithUIOptions", 1);
   propertiesToSave.Add("System.CreatorAppId", appId);
- 
+
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
@@ -323,10 +246,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

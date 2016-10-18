@@ -4,8 +4,8 @@ Description: "如果你之前已将应用发布到 Windows 应用商店或 Windo
 title: "你的应用如何显示在面向 Windows 10 客户的应用商店中"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
 
 ---
 
@@ -23,10 +23,10 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 
 如果你已为同时发布到这两个应用商店的应用使用了相同的保留名称（通常称之为“共享你的应用的标识”），此时这两个应用将被视为一个应用，而不是两个应用。 在仪表板中，你可以将它们视为具有 Windows 和 Windows Phone 程序包的单个应用。
 
-大多数开发人员已为每个应用商店中的应用和任何应用内产品 (IAP) 设置了相同定价和其他属性，但如果其中某些值有所不同，则了解向 Windows 10 客户显示了哪些值非常重要。
+大多数开发人员已为每个应用商店中的应用和任何加载项设置了相同定价和其他属性，但如果其中某些值有所不同，则了解向 Windows 10 客户显示了哪些值非常重要。
 
 ### 定价
-如果你已在每个应用商店中为你的应用（或 IAP）选择了不同的基本价格，将使用 Windows 应用商店中的基本价格。
+如果你已在每个应用商店中为你的应用（或加载项）选择了不同的基本价格，将使用 Windows 应用商店中的基本价格。
 
 **注意** 如果你在 Windows Phone 应用商店中设置了按市场定价，则 Windows 10 客户同样也能看到自定义价格。
 
@@ -57,10 +57,10 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 ### 屏幕截图
 我们会保留你已提交的所有屏幕截图，并使用适当的版本将其显示给 Windows 10 客户，具体取决于他们所使用的设备类型。 在每个应用商店的支持语言不相同的罕见情况下，一些客户可能会看到采用其他语言形式的屏幕截图，因为该语言能最好地体现出他们在购买应用时将获得的体验。
 
-### 提要
-我们将根据 Windows 10 客户所使用的语言，尝试向他们展示最合适的描述。 当采用相同语言的多个源都提供描述时，将为你的 Windows 10 客户展示 Windows 应用商店应用中的描述。 在支持的语言在每个应用商店中不相同的罕见情况下，如果你仅使用该语言提供了一种描述，则一些客户可能会从 Windows Phone 应用看到该描述。
+### 应用商店一览
+我们将根据 Windows 10 客户所使用的语言，尝试向他们展示最合适的应用商店一览。 当采用相同语言的多个源都提供应用商店一览时，将为你的 Windows 10 客户展示 Windows 应用商店应用中的一览。 在支持的语言在每个应用商店中不相同的罕见情况下，如果你仅使用该语言提供了一种应用商店一览，则一些客户可能会从 Windows Phone 应用看到该应用商店一览。
 
-如果你希望更新 Windows 10 客户所能看到的描述，以便他们可了解跨多个设备工作的体验，你可以通过更新[应用提要](create-app-descriptions.md)来实现此目的。 Windows 10 客户将看到你的应用的默认描述，不过，如果你希望展示给使用不同操作系统版本的客户的描述有所不同，则还可以[创建特定于平台的描述](create-platform-specific-descriptions.md)。
+如果你希望更新 Windows 10 客户所能看到的应用商店一览，以便他们可了解跨多个设备工作的体验，你可以通过更新[应用提要](create-app-store-listings.md)来实现此目的。 Windows 10 客户将看到你的应用的默认描述，不过，如果你希望展示给使用不同操作系统版本的客户的应用商店一览有所不同，则还可以[创建特定于平台的应用商店一览](create-platform-specific-store-listings.md)。
 
 ## 类别更改
 
@@ -122,6 +122,6 @@ ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

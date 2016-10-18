@@ -4,8 +4,8 @@ ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal 概述"
 description: "了解 Windows Device Portal 如何支持你通过网络或 USB 连接远程配置和管理你的设备。"
 translationtype: Human Translation
-ms.sourcegitcommit: 01e83c14304891ff5eaa895e98bbebac33ee7614
-ms.openlocfilehash: 55cbdc077f839166f32605bbada8e0cc707cf5b3
+ms.sourcegitcommit: 7f6aba331ba27d2c0c2ca7925c452da58e155cb8
+ms.openlocfilehash: b316eab1f269dadbe65b7e93b5a33a8e4c4924d7
 
 ---
 # Windows Device Portal 概述
@@ -35,7 +35,7 @@ Xbox | 在开发人员模式内启用 | 已禁用 | 11443 | 不适用
 
 有关特定于设备的设置说明，请参阅：
 - [适用于 HoloLens 的 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
-- [适用于 IoT 的 Device Portal](http://ms-iot.github.io/content/win10/tools/DevicePortal.htm)
+- [适用于 IoT 的 Device Portal](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [适用于移动设备的 Device Portal](device-portal-mobile.md#set-up-device-portal-on-window-phone)
 - [适用于 Xbox 的 Device Portal](device-portal-xbox.md)
 - [适用于桌面设备的 Device Portal](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -198,6 +198,6 @@ T | 字符串的 null 字符分隔列表 | 用户应用的设备标记。 有关
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

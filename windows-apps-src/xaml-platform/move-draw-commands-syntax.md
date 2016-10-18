@@ -5,7 +5,7 @@ title: "移动和绘制命令语法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
+ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 ---
 
@@ -48,9 +48,9 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 -   除关闭命令之外的每个命令通常都后跟一个或多个数字。
 -   如果命令中具有多个数字，则使用逗号或空格进行分隔。
 
-**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[** _drawCommand_ **\*\]** **\[** _closeCommand_ **\]**
+**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
 
-许多绘制命令都使用你可在其中提供 _x,y_ 值的点。 每当你看到 \*_points_ 占位符时，你可以假设你为某个点的 _x,y_ 值提供了两个十进制值。
+许多绘制命令都使用你为其提供 _x,y_ 值的点。 每当你看到 \*_points_ 占位符时，你可以假设你为某个点的 _x,y_ 值提供了两个十进制值。
 
 如果结果清晰，空白区域通常可以忽略。 事实上，如果你对所有数字集（点和大小）使用逗号作为分隔符，则可以忽略所有空白区域。 例如，下面的用法是合法的：`F1M0,58L2,56L6,60L13,51L15,53L6,64z`。 但是包括命令之间的空白区域以获取清晰度是更为典型的用法。
 
@@ -240,6 +240,6 @@ ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

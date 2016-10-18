@@ -5,7 +5,7 @@ description: "本部分介绍如何将现有应用移植到通用 Windows 平台
 title: "将应用移植到 Windows 10"
 translationtype: Human Translation
 ms.sourcegitcommit: 5b7b5f985eccf905698d7995d1574967bbec176f
-ms.openlocfilehash: fd7f2dc0d83ef8c4d075e25d3e2fa453d9ce849d
+ms.openlocfilehash: 777542dd6a105b432e25db082cb0e1b7b87101f2
 
 ---
 
@@ -37,6 +37,6 @@ Windows 运行时 (WinRT) 是可让你生成通用 Windows 平台 (UWP) 应用�
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

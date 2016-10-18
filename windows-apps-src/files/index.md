@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "文件、文件夹和库"
 description: "了解有关应用设置的读取和写入、文件和文件夹选取器，以及诸如视频/音乐库的特殊“沙盒式”位置的信息。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: ea52cafab084f202705282d63f4a37ec0d65bd03
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
 
 ---
  # 文件、文件夹和库
@@ -21,8 +21,6 @@ ms.openlocfilehash: ea52cafab084f202705282d63f4a37ec0d65bd03
 | [获取文件属性](quickstart-getting-file-properties.md) | 获取由 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 对象表示的文件的属性：顶级、基本和扩展属性。 |
 | [使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md) | 通过让用户选取器交互来访问文件和文件夹。 你可以使用 [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) 来获取对文件夹的访问权限。 |
 | [使用选取器保存文件](quickstart-save-a-file-with-a-picker.md) | 使用 [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) 让用户指定名称和他们要让应用保存文件的位置。 |
-| [使用企业数据保护 (EDP) 来保护文件](protect-your-enterprise-data-with-edp.md) | 本主题演示了实现一些与文件相关的最常见企业数据保护 (EDP) 方案所需的编码任务示例。 |
-| [使用企业数据保护 (EDP) 来保护流和缓冲区](use-edp-to-protect-streams-and-buffers.md) | 本主题介绍了实现一些与流和缓冲区相关的最常见企业数据保护 (EDP) 方案所需的编码任务示例。 |
 | [访问家庭组内容](quickstart-accessing-homegroup-content.md) | 访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。 |
 | [确定 Microsoft OneDrive 文件的可用性](quickstart-determining-availability-of-microsoft-onedrive-files.md) | 使用 [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 属性确定 Microsoft OneDrive 文件是否可用。 |
 | [音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | 将现有的音乐、图片和视频文件夹添加到相应的库。 你还可以从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。 |
@@ -42,10 +40,6 @@ ms.openlocfilehash: ea52cafab084f202705282d63f4a37ec0d65bd03
 
 
 
-
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

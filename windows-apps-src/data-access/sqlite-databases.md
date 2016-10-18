@@ -5,7 +5,7 @@ title: "SQLite 数据库"
 description: "SQLite 是一种无服务器的嵌入式数据库引擎。 本文介绍了如何使用包含在 SDK 中的 SQLite 库、如何将自己的 SQLite 库打包在通用 Windows 应用中或从源生成该库。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dd628d16b3ee230ddc0c56b47fd381a518b8af00
+ms.openlocfilehash: 33148e8cfe301c6016d3f8a16bbcc904ca403d0e
 
 ---
 # SQLite 数据库
@@ -39,9 +39,9 @@ SQLite 最适用于手机应用、面向 Windows 10 IoT 核心版（IoT 核心�
 
 `#include <winsqlite/winsqlite3.h>`
 
-配置要链接到 winsqlite3.lib 的项目。 在“解决方案资源管理器”****中，右键单击你的项目，依次选择“属性”****&gt;“链接器”****&gt;“输入”****，然后将 winsqlite3.lib 添加到“其他依赖项”****。
+配置要链接到 winsqlite3.lib 的项目。 在“解决方案资源管理器”****中，右键单击你的项目并依次选择“属性”****&gt;“链接器”****&gt;“输入”****，然后将 winsqlite3.lib 添加到“其他依赖项”****。
 
-### 2. 将 SQLite 包含在应用包中
+### 2. 将 SQLite 包括在应用包中
 
 你有时可能想要打包自己的库而非使用 SDK 版本，例如，你可能想要在跨平台客户端中使用与 SDK 中所含 SQLite 版本不同的特定版本。
 
@@ -95,6 +95,6 @@ SQLite 源代码可在 [SQLite.org 下载页面](https://www.sqlite.org/download
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

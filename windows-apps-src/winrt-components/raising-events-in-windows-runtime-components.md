@@ -5,7 +5,7 @@ ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 54934cba0e26da547e09b95a63d2c63363eaf85d
+ms.openlocfilehash: cd1d92e584616a642a20d3df3ec52f3609061021
 
 ---
 
@@ -134,7 +134,7 @@ toastCompletedEventHandler: function (event) {
 
 ## 创建 Windows 运行时组件
 
-在 Visual Studio 中的菜单栏上，依次选择“文件”&gt;“新建项目”****。 在“新建项目”****对话框中，依次展开“JavaScript”&gt;“通用 Windows”****，然后选择“空白应用”****。 将该项目命名为 ToasterApplication，然后选择“确定”****按钮。
+在 Visual Studio 中的菜单栏上，依次选择“文件”&gt;“新建项目”****。 在“新建项目”****对话框中，依次展开JavaScript&gt;“通用 Windows”****，然后选择“空白应用”****。 将该项目命名为 ToasterApplication，然后选择“确定”****按钮。
 
 向解决方案中添加一个 C# Windows 运行时组件：在“解决方案资源管理器”中，打开解决方案的快捷菜单，然后依次选择“添加”&gt;“新建项目”****。 依次展开“Visual C#”&gt;“Windows 应用商店”****，然后选择“Windows 运行时组件”****。 将该项目命名为 ToasterComponent，然后选择“确定”****按钮。 ToasterComponent 将是你在后面步骤中创建的组件的根命名空间。
 
@@ -429,6 +429,6 @@ The project should now build. Run the project and verify that you can make toast
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

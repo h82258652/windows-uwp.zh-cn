@@ -5,7 +5,7 @@ title: "适用于 iOS 开发人员的 UWP 入门"
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3fef53e5d6c9259bf5157b1221643d07e1d8be5e
+ms.openlocfilehash: 14f93a3cc8f5ada23f95a503acd2703044defe61
 
 ---
 
@@ -42,6 +42,6 @@ ms.openlocfilehash: 3fef53e5d6c9259bf5157b1221643d07e1d8be5e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

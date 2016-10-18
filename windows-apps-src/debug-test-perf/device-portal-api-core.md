@@ -4,8 +4,8 @@ ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Device Portal 核心 API 参考"
 description: "了解 Windows Device Portal 核心 REST API，可用于访问数据和以编程方式控制设备。"
 translationtype: Human Translation
-ms.sourcegitcommit: 30aeffcf090c881f84331ced4f7199fd0092b676
-ms.openlocfilehash: 0fa515d28431d4256b977ee3c3c41169661f129f
+ms.sourcegitcommit: fae2c6b31c9c6c07026abc4718959b02a36e6600
+ms.openlocfilehash: 226ecaecd93e4996e438f56f780926ca63c184fd
 
 ---
 
@@ -40,7 +40,8 @@ package   | （**必需**）要安装的程序包的文件名。
 
 **请求正文**
 
-- 无
+- .appx 或 .appxbundle 文件，以及应用需要的任何依赖关系。 
+- 用于为应用签名的证书（如果设备是 IoT 或 Windows 台式机）。 其他平台不需要证书。 
 
 **响应**
 
@@ -58,6 +59,7 @@ HTTP 状态代码      | 说明
 
 * Windows 移动版
 * Windows 桌面版
+* Xbox
 * HoloLens
 * IoT
 
@@ -100,6 +102,7 @@ HTTP 状态代码      | 说明
 
 * Windows 移动版
 * Windows 桌面版
+* Xbox
 * HoloLens
 * IoT
 
@@ -117,7 +120,9 @@ DELETE | /api/app/packagemanager/package
 
 **URI 参数**
 
-- 无
+URI 参数 | 说明
+:---          | :---
+package   | （**必需**）目标应用的 PackageFullName（来自 GET /api/app/packagemanager/packages）
 
 **请求标头**
 
@@ -3297,6 +3302,58 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
+### 重命名文件
+
+**请求**
+
+重命名文件夹中的文件。
+
+方法      | 请求 URI
+:------     | :-----
+POST | /api/filesystem/apps/rename
+
+<br />
+**URI 参数**
+
+URI 参数 | 说明
+:------     | :-----
+knownfolderid | （**必需**）文件所在的顶级目录。 将 **LocalAppData** 用于访问旁加载的应用。 
+filename | （**必需**）要重命名的文件的原始名称。 
+newfilename | （**必需**）文件的新名称。
+packagefullname | （**如果 *knownfolderid* == LocalAppData，则为必需项**）你感兴趣的应用的程序包全名。 
+path | （**可选**）上面指定的文件夹或程序包内的子目录。 
+
+**请求标头**
+
+- 无
+
+**请求正文**
+
+- 无
+
+**响应**
+
+- 无
+
+**状态代码**
+
+此 API 具有以下预期状态代码。
+
+HTTP 状态代码      | 说明
+:------     | :-----
+200 | 确定。 文件已重命名
+404 | 找不到文件
+5XX | 错误代码
+<br />
+**可用设备系列**
+
+* Windows 移动版
+* Windows 桌面版
+* HoloLens
+* Xbox
+* IoT
+
+---
 ### 删除文件
 
 **请求**
@@ -3325,6 +3382,8 @@ path | （**可选**）上面指定的文件夹或程序包内的子目录。
 - 无
 
 **响应**
+
+- 无 
 
 **状态代码**
 
@@ -3393,6 +3452,6 @@ HTTP 状态代码      | 说明
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "购置报告"
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bfdf4f9f2d94a31a1c159e947615c10abf556aad
+ms.openlocfilehash: 2556e7bd8f827287c917c3b9ffa2da980d0d5d88
 
 ---
 
@@ -68,6 +68,6 @@ ms.openlocfilehash: bfdf4f9f2d94a31a1c159e947615c10abf556aad
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

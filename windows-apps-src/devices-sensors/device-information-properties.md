@@ -5,7 +5,7 @@ title: "设备信息属性"
 description: "每台设备都具有相关联的 DeviceInformation 属性，在你需要特定的信息或生成设备选择器时可以使用这些属性。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d9cdd55df69941754729d8779ba11d7ce5fafc51
+ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
 ---
 # 设备信息属性
@@ -161,6 +161,6 @@ ms.openlocfilehash: d9cdd55df69941754729d8779ba11d7ce5fafc51
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

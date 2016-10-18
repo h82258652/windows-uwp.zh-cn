@@ -5,7 +5,7 @@ title: "应用启动性能的最佳实践"
 description: "通过用户改进处理启动和激活的方式，创建启动时间得到优化的通用 Windows 平台 (UWP) 应用。"
 translationtype: Human Translation
 ms.sourcegitcommit: 5411faa3af685e1a285119ba456a440725845711
-ms.openlocfilehash: 46e78612c0f4391b9448ea9bd7a001722fb08a28
+ms.openlocfilehash: 2224c6c2ca0a606492d381af85e665170601f054
 
 ---
 # 应用的启动性能的最佳做法
@@ -364,6 +364,6 @@ PageStackEntry 还包括已传递给 Frame.Navigate() 方法的参数。 建议�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

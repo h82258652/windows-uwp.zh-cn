@@ -4,8 +4,8 @@ ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "本文将列出 UWP 应用的音频和视频编解码器以及格式支持。"
 title: "支持的编解码器"
 translationtype: Human Translation
-ms.sourcegitcommit: b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc
-ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
 
 ---
 
@@ -22,8 +22,8 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 下表显示每个设备系列的音频编解码器和格式支持。
 
-**注意**  
--   其中表明 AMR-NB 支持，此编解码器在服务器 SKU 上不受支持。
+> [!NOTE] 
+> 其中表明 AMR-NB 支持，此编解码器在服务器 SKU 上不受支持。
 
  
 
@@ -1586,9 +1586,9 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 下表显示每个设备系列的视频编解码器和格式支持。
 
-**注意**  
--   其中表明 H.265 支持，该设备系列内的所有设备不一定都受支持。
--   其中表明 MPEG-2/MPEG-1 支持，只在安装可选的 Microsoft DVD 通用 Windows 应用后才受支持。
+> [!NOTE] 
+> 其中表明 H.265 支持，该设备系列内的所有设备不一定都受支持。
+> 其中表明 MPEG-2/MPEG-1 支持，只在安装可选的 Microsoft DVD 通用 Windows 应用后才受支持。
 
  
 
@@ -2697,6 +2697,6 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

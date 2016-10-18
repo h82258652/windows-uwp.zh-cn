@@ -5,7 +5,7 @@ description: "使用 Mac 将你的网站转换为适用于 Windows 10 的通用 
 kw: Hosted Web Apps with a Mac, Porting to Windows 10 with a Mac, Convert website to Windows with Mac, Packaging web application with ManfoldJS for Windows Store, Add website to Windows Store with App Studio
 translationtype: Human Translation
 ms.sourcegitcommit: 0458dcd2aab862ccdecf1ebbc51e883405a929a6
-ms.openlocfilehash: 775963ae3d12023488c79ded1cc83d464e84169c
+ms.openlocfilehash: 3ba820e2ec8a3556874c0c7c7e328831bab783ca
 
 ---
 
@@ -37,9 +37,9 @@ npm install -g manifoldjs
 manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 ```
 
-4. 遵循以下视频中的步骤完成打包并将你的托管 Web 应用发布到 Windows 应用商店。
+4. 遵循以下视频中的步骤完成打包并将托管 Web 应用发布到 Windows 应用商店。
 
-[ ![使用 ManifoldJS 在 Mac 上发布 UWP Web 应用] (images/hwa-to-uwp/mac_manifoldjs_video.png)](https://sec.ch9.ms/ch9/0a67/9b06e5c7-d7aa-478d-b30d-f99e145a0a67/ManifoldJS_high.mp4 "使用 ManifoldJS 在 Mac 上发布 UWP Web 应用")
+[![使用 ManifoldJS 在 Mac 上发布 UWP Web 应用](images/hwa-to-uwp/mac_manifoldjs_video.png)](https://sec.ch9.ms/ch9/0a67/9b06e5c7-d7aa-478d-b30d-f99e145a0a67/ManifoldJS_high.mp4 "使用 ManifoldJS 在 Mac 上发布 UWP Web 应用")
 
 ## 选项 2：App Studio
 
@@ -61,6 +61,6 @@ manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

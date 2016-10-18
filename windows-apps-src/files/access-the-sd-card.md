@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: "访问 SD 卡"
 description: "你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制的低成本移动设备。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c515d36c76a8363861a72cb58229ff857e1bb2b8
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
 
 ---
 # 访问 SD 卡
@@ -148,10 +148,6 @@ using Windows.Storage;
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

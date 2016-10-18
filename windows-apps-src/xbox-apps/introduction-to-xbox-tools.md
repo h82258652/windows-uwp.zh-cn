@@ -2,10 +2,9 @@
 author: Mtoepke
 title: "Xbox One 工具简介"
 description: "特定于 Xbox One 且使用 Windows Device Portal 的工具“开发人员主页”。"
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
+ms.sourcegitcommit: b3e1a6f1dfe3537d0db8e917163cfbba7b8705fe
+ms.openlocfilehash: 6030f666f213865a92d071210fe66f587c1bffb1
 
 ---
 
@@ -32,7 +31,7 @@ ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
 #### 工具窗口
 标题下面是应用的主区域，其中包括一组可配置的工具窗口。 这些窗口旨在支持开发人员自定义应用以提供对各种工具和信息集的访问权限。 有关工具的更多详细信息，请参阅以下个别工具描述。 有关如何配置工具窗口布局和外观的信息，请参阅本页后面的[自定义开发人员主页](#customizing-dev-home)部分。
 
-##### 主菜单
+#### 主菜单
 通过按控制器上的“菜单”****按钮或导航到屏幕左上方的菜单（“汉堡包”）按钮，你可以访问支持配置应用工作区的主题色和背景图的主菜单，并提供有关应用的反馈。
 
   ![主菜单](images/devhome_mainmenu.png)
@@ -48,7 +47,7 @@ ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
 
   ![Nexus](images/devhome_nexus.png)
 
-##### 工具描述
+#### 工具描述
 | 工具  | 功能 |
 |-------|--------------|
 | 游戏和应用  | 列出在开发人员工具包中安装的标题和应用以及快速打开它们的功能。 你还可以查看游戏和应用的进程周期管理 (PLM) 状态，并在上下文菜单中更改 PLM 状态。 |
@@ -57,10 +56,11 @@ ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
 | Visual Studio | 能让你将控制台与 Visual Studio 实例配对，以支持部署。 如有必要，清除所有现有的已配对 VS 实例以防止将 UWP 应用部署到工具包。 |
 | [Windows Device Portal](#windows-device-portal) | 在工具包上支持 WDP（基于浏览器的设备管理工具）。 |
 | Xbox Live 状态 | 提供 Xbox Live 服务的当前状态。 |
-
+<br/>
 ### 管理开发人员存储分配的大小
 
-若要增大或减小用于开发人员存储的磁盘空间量，请从主菜单中选择“管理开发人员存储”****。 更改“开发人员存储”****栏的值，然后选择“保存并重新启动”****以重新启动主机。
+若要增大或减小用于开发人员存储的磁盘空间量，请从主菜单中选择“管理开发人员存储”****。 更改“开发人员存储”****栏的值，然后选择“保存并重新启动”****重新启动主机。
+
   ![管理开发人员存储分配](images/devhome_storage.png)
 
 ### 自定义开发人员主页
@@ -90,10 +90,14 @@ ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
 
 若要定义一个开发工具包的主机名，请转到主机设置工具，并在“主机名”____框中键入主机名。  
 
-  > **注意**&nbsp;&nbsp;创建主机名时，不需要该名称是唯一名称。 请注意避免名称重复。 达到此目的的一种方法是从开发计算机名称中派生主机名，开发计算机名称通常在组织中是唯一的。
+> [!NOTE]
+> 创建主机名时，不需要该名称是唯一名称。 请注意避免名称重复。 达到此目的的一种方法是从开发计算机名称中派生主机名，开发计算机名称通常在组织中是唯一的。
 
 ## Windows Device Portal
 Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 OneCore 设备管理工具。
+
+> [!NOTE]
+> 有关 WDP 的详细信息，请参阅 [Windows Device Portal 概述](../debug-test-perf/device-portal.md)。
 
 若要在 Xbox One 控制台上启用 WDP：
 
@@ -114,17 +118,19 @@ Windows Device Portal (WDP) 是提供基于浏览器的设备管理体验的 One
 
   ![安全证书警告](images/security_cert_warning.jpg)
 
+## Xbox 开发人员模式助手
+Xbox 开发人员模式助手是一个工具，使你无需离开电脑就可以在你的主机上工作。 该应用使你可以查看主机屏幕以及向主机发送输入。 有关详细信息，请参阅 [Xbox 开发人员模式助手](xbox-dev-mode-companion.md)。
+
 ## 另请参阅
 - [在针对 UWP 进行开发时如何将 Fiddler 用于 Xbox One](uwp-fiddler.md)
-- [Microsoft 开发人员技术：Windows Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox)
+- [Windows Device Portal 概述](../debug-test-perf/device-portal.md)
 - [Xbox One 上的 UWP](index.md)
-
 
 
 ----
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO1-->
 
 

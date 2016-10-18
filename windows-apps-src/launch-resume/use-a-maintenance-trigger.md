@@ -4,16 +4,14 @@ title: "使用维护触发器"
 description: "了解如何在插入设备的情况下使用 MaintenanceTrigger 类在后台运行轻型代码。"
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
 
 ---
 
 # 使用维护触发器
 
-
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 **重要的 API**
 
@@ -25,14 +23,13 @@ ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
 
 ## 创建一个维护触发器对象
 
+本示例假定在插入设备时你已具有可以在后台运行的轻型代码以增强你的应用。 此主题重点介绍 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)，它类似于 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)。
 
-本示例假定在插入设备时你已具有可以在后台运行的轻型代码以增强你的应用。 此主题重点介绍 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 类，它类似于 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)。 有关编写后台任务类的详细信息可以在[创建和注册后台任务](create-and-register-a-background-task.md)中找到。
+有关编写后台任务类的详细信息可以在[创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)或[创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)中找到。
 
-创建新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 对象。 第二个参数 *OneShot* 指定维护任务是运行一次还是继续定期运行。 如果 *OneShot* 被设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 被设置为 false，则 *FreshnessTime* 会指定后台任务的运行频率。
+创建新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 对象。 第二个参数 *OneShot* 指定维护任务是只运行一次还是继续定期运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，则 *FreshnessTime* 会指定后台任务运行的频率。
 
 > **注意** 如果 *FreshnessTime* 设置为少于 15 分钟，则在尝试注册后台任务时将引发异常。
-
- 
 
 本示例代码会创建一个每小时运行一次的触发器：
 
@@ -52,24 +49,23 @@ ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
 
 -   如果需要，创建一个后台任务条件以控制任务何时运行。 防止后台任务在未满足条件之前运行的条件，有关详细信息，请参阅[设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)
 
-    在该示例中，条件设置为 **InternetAvailable** 以便在 Internet 可用时（或者变为可用时）运行维护。 有关可能的后台任务条件列表，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+在该示例中，条件设置为 **InternetAvailable** 以便在 Internet 可用时（或者变为可用时）运行维护。 有关可能的后台任务条件列表，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
-    以下代码向维护任务生成器中添加一个条件：
+以下代码向维护任务生成器中添加一个条件：
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > SystemCondition exampleCondition = new SystemCondition(SystemConditionType.InternetAvailable);
-    > ```
-    > ```cpp
-    > SystemCondition ^ exampleCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> SystemCondition exampleCondition = new SystemCondition(SystemConditionType.InternetAvailable);
+> ```
+> ```cpp
+> SystemCondition ^ exampleCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
+> ```
 
 ## 注册后台任务
 
-
 -   通过调用后台任务注册函数注册后台任务。 有关注册后台任务的详细信息，请参阅[注册后台任务](register-a-background-task.md)。
 
-    以下代码将注册维护任务：
+    以下代码将注册维护任务。 请注意，假设后台任务将在独立于应用的进程中运行，因为它指定 `entryPoint`。 如果后台任务将在应用的同一个进程中运行，不要指定 `entryPoint`。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -89,7 +85,7 @@ ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
 
     > **注意** 通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
 
-    若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
+    若要确保通用 Windows 应用在你发布应用的更新后继续正常运行，则必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
     > **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
 
@@ -98,10 +94,10 @@ ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
 
 ## 相关主题
 
-
 ****
 
-* [创建和注册后台任务](create-and-register-a-background-task.md)
+* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)。
+* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -117,12 +113,8 @@ ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
- 
-
- 
 
 
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

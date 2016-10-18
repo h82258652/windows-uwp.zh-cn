@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: "使用选取器保存文件"
 description: "使用 FileSavePicker 让用户指定名称和他们想让应用保存文件的位置。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 68c7fcedbea40541632aa0a7ae65aa77db206280
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
 
 ---
 
@@ -46,7 +46,7 @@ ms.openlocfilehash: 68c7fcedbea40541632aa0a7ae65aa77db206280
 
 ```cs
 var savePicker = new Windows.Storage.Pickers.FileSavePicker();
-savePicker.SuggestedStartLocation = 
+savePicker.SuggestedStartLocation =
     Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
 // Dropdown of file types the user can save the file as
 savePicker.FileTypeChoices.Add("Plain Text", new List<string>() { ".txt" });
@@ -62,7 +62,7 @@ savePicker.SuggestedFileName = "New Document";
 
      
 - 由于我们的用户正在保存文档或文本文件，因此该示例通过使用 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) 设置为应用的本地文件夹。 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 设置为适用于被保存的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
- 
+
 - 由于我们希望确保我们的应用可以在其保存后能打开该文件，我们将使用 [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875).指定支持该示例的文件类型（Microsoft Word 文档和文本文件）。 确保你的应用支持你指定的所有文件类型。 用户将能够以你指定的任意文件类型保存他们的文件。 他们还可以通过选择另一个你指定的文件类型更改文件类型。 默认情况下，将选择列表中的第一个文件类型选项：若要控制该选项，请设置 [**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873) 属性。
 
 > **注意** 文件选取器还使用当前选中的文件类型筛选显示的文件，以便仅向用户显示与选中的文件类型匹配的文件类型。
@@ -85,7 +85,7 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
         // Let Windows know that we're finished changing the file so
         // the other app can update the remote version of the file.
         // Completing updates may require Windows to ask for user input.
-        Windows.Storage.Provider.FileUpdateStatus status = 
+        Windows.Storage.Provider.FileUpdateStatus status =
             await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
         if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
         {
@@ -114,10 +114,6 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

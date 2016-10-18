@@ -5,7 +5,7 @@ description: "你可以通过文件副本分配 Windows 运行时组件。"
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 3d7a51ed13f63ca9d6070fbbe860c653c4deaf07
+ms.openlocfilehash: 3a82ee44b748c2c8748ed063cbc67e02200a4e31
 
 ---
 
@@ -53,11 +53,11 @@ For example: Microsoft.Cpp.Build.dll
 
 1.  请确保已安装 Visual Studio SDK。 你可以从 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页面下载 Visual Studio SDK。
 2.  使用 VSIX 项目模板创建新项目。 你可以在“扩展性”类别的 Visual C# 或 Visual Basic 下找到该模板。 此模板作为 Visual Studio SDK 的一部分进行安装。 （[演练：使用 C# 或 Visual Basic 创建 SDK](https://msdn.microsoft.com/library/jj127119.aspx) 或[演练：使用 C++ 创建 SDK](https://msdn.microsoft.com/library/jj127117.aspx)，通过非常简单的方案展示此模板的用法。 ）
-3.  确定 SDK 的文件夹结构。 该文件夹结构和“引用”****、“Redist”****以及“DesignTime”****文件夹开始于 VSIX 项目的根级别。
+3.  确定 SDK 的文件夹结构。 该文件夹结构和“引用”****、“Redist”****以及DesignTime****文件夹开始于 VSIX 项目的根级别。
 
     -   “引用”****是用户可据以进行编程的二进制文件的位置。 扩展 SDK 在用户的 Visual Studio 项目中创建对这些文件的引用。
     -   “Redist”****是其他必须使用二进制文件分配的文件的位置，位于使用组件创建的应用内。
-    -   “DesignTime”****是仅在开发人员创建使用组件的应用时使用的文件的位置。
+    -   DesignTime****是仅在开发人员创建使用组件的应用时使用的文件的位置。
 
     在其中每个文件夹中，你都可以创建配置文件夹。 允许的名称为调试、零售和 CommonConfiguration。 CommonConfiguration 文件夹适用于无论是由零售版本还是由调试版本使用都相同的文件。 如果仅分配组件的零售版本，你可以将所有内容置于 CommonConfiguration 内并忽略其他两个文件夹。
 
@@ -76,6 +76,6 @@ For example: Microsoft.Cpp.Build.dll
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

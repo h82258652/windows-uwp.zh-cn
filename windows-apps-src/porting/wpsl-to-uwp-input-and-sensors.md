@@ -5,7 +5,7 @@ title: "针对 I/O、设备和应用模型将 Windows Phone Silverlight 移植�
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6b29e741c9cad68083502b25445b965fc266ef6e
+ms.openlocfilehash: f3b3e32461b7804639c1c0e8ff9b55fa57a23cf0
 
 ---
 
@@ -96,6 +96,6 @@ Windows Phone Silverlight 应用可以使用 **Microsoft.Phone.Info.DeviceStatus
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

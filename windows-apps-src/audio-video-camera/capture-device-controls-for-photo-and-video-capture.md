@@ -1,26 +1,27 @@
 ---
 author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
-description: "本文向你介绍了视频设备控件如何实现增强的照片和视频捕获方案，包括光学图像防抖动和平滑缩放。"
-title: "用于照片和视频捕获的捕获设备控件"
+description: "本文介绍如何使用手动设备控件实现增强的照片和视频捕获方案，包括光学图像防抖动和平滑缩放。"
+title: "用于照片和视频捕获的手动相机控件"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
+ms.sourcegitcommit: 4c6a7aabb39b3835e042481ccae7da60e899e7cf
+ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 ---
 
-# 用于照片和视频捕获的捕获设备控件
+# 用于照片和视频捕获的手动相机控件
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文向你介绍了视频设备控件如何实现增强的照片和视频捕获方案，包括光学图像防抖动和平滑缩放。
+本文介绍如何使用手动设备控件实现增强的照片和视频捕获方案，包括光学图像防抖动和平滑缩放。
 
-将采用相同模式将本文中讨论的控件全部添加到你的应用中。 首先，检查以查看运行你的应用的当前设备是否支持该控件。 如果控件受支持，则为控件设置所需模式。 通常，如果特定控件在当前设备上不受支持，你应禁用或隐藏允许用户启用该功能的 UI 元素。
+本文中讨论的控件全部使用相同模式添加到你的应用中。 首先，检查运行你的应用的当前设备是否支持该控件。 如果控件受支持，则为控件设置所需模式。 通常，如果特定控件在当前设备上不受支持，你应禁用或隐藏允许用户启用该功能的 UI 元素。
 
-本文中的代码改编自[相机手动控件 SDK 示例](http://go.microsoft.com/fwlink/?LinkId=619479)。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
+本文中的代码改编自[相机手动控件 SDK 示例](http://go.microsoft.com/fwlink/p/?LinkId=619479)。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
-**注意** 本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码，介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
+> [!NOTE]
+> 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 我们建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
 本文中讨论的所有设备控件 API 都是 [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) 命名空间的成员。
 
@@ -34,7 +35,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[ExposureXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetExposureXAML)]
 
-通过选中 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297710) 属性，查看当前捕获设备是否支持 **ExposureControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 将该复选框设置为选中状态，以指示自动曝光调整当前对 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn278911) 属性值是否处于活动状态。
+通过检查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297710) 属性来检查当前捕获设备是否支持 **ExposureControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 将用于指示自动曝光调整当前是否处于活动状态的复选框的选中状态设置为 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn278911) 属性的值。
 
 曝光值必须在设备支持的范围内，且必须是受支持步长的增值。 获取当前设备的支持值，方法是选中 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278919)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn278914) 和 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278930) 属性，它们用于设置滑块控件的对应属性。
 
@@ -50,7 +51,8 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[ExposureCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureCheckBox)]
 
-**重要提示** 自动曝光模式仅在预览流运行时才受支持。 在打开自动曝光之前，检查以确保预览流正在运行。
+> [!IMPORTANT]
+> 自动曝光模式仅在预览流运行时才受支持。 在打开自动曝光之前，检查以确保预览流正在运行。
 
 ## 曝光补偿
 
@@ -60,9 +62,9 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[EvXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetEvXAML)]
 
-通过选中 [Supported](supported-codecs.md) 属性，查看当前捕获设备是否支持 **ExposureCompensationControl**。 如果该控件受支持，可针对此功能显示和启用 UI。
+通过检查 [Supported](supported-codecs.md) 属性来检查当前捕获设备是否支持 **ExposureCompensationControl**。 如果该控件受支持，可针对此功能显示和启用 UI。
 
-曝光补偿值必须在设备支持的范围内，且必须是受支持步长的增值。 获取当前设备的支持值，方法是选中 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278901)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn278899) 和 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278904) 属性，它们用于设置滑块控件的对应属性。
+曝光补偿值必须在设备支持的范围内，并且必须是受支持步长的增量。 获取当前设备的支持值，方法是选中 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278901)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn278899) 和 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278904) 属性，它们用于设置滑块控件的对应属性。
 
 在将滑块控件的值设置为 **ExposureCompensationControl** 的当前值之前，需先注销 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件处理程序，以便在设置该值时不触发该事件。
 
@@ -80,7 +82,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[FlashXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFlashXAML)]
 
-通过选中 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 属性，查看当前捕获设备是否支持 **FlashControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 当 **FlashControl** 受支持时，自动消除红眼不一定受支持，因此请在启用 UI 前选中 [**RedEyeReductionSupported**](https://msdn.microsoft.com/library/windows/apps/dn297766) 属性。 由于 **TorchControl** 独立于闪光控件，因此在使用它之前，还必须先选中其 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279081) 属性。
+通过检查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 属性来检查当前捕获设备是否支持 **FlashControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 如果 **FlashControl** 受支持，自动消除红眼不一定受支持，因此请在启用 UI 前检查 [**RedEyeReductionSupported**](https://msdn.microsoft.com/library/windows/apps/dn297766) 属性。 由于 **TorchControl** 独立于闪光控件，因此在使用它之前，你也必须先检查它的 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279081) 属性。
 
 对于每个闪光单选按钮，可在 [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) 事件处理程序中启用或禁用相应的闪光设置。 注意，如果要将闪光设置为始终使用，你必须将 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn297733) 属性设置为 true，而将 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn297728) 属性设置为 false。
 
@@ -96,7 +98,8 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[Torch](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
 
-**注意** 在某些设备上聚光控件不发光，除非设备上的预览流处于运行中且正在积极地捕获视频，否则即便是 [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 设置为 true，该控件也不会发光。 建议按如下顺序执行操作：先打开视频预览，然后通过将 **Enabled** 设置为 true 打开聚光，最后启动视频捕获。 在一些设备上，在预览启动后，聚光便会亮起。 在其他设备上，在视频捕获启动后，聚光才会亮起。
+> [!NOTE] 
+>  在某些设备上，除非设备正在运行预览流并且正在主动捕获视频，否则即使 [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 设置为 true，手电筒也不会发光。 建议按如下顺序执行操作：先打开视频预览，然后通过将 **Enabled** 设置为 true 打开手电筒，最后启动视频捕获。 在某些设备上，手电筒将在预览启动后亮起。 在其他设备上，在视频捕获启动后，聚光才会亮起。
 
 ## 对焦
 
@@ -108,7 +111,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[CAFXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetCAFXAML)]
 
-通过选中 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 属性，查看当前捕获设备是否支持 **FocusControl**。 然后，查看连续自动对焦是否受支持，方式是查看 [**SupportedFocusModes**](https://msdn.microsoft.com/library/windows/apps/dn608079) 列表中是否包含值 [**FocusMode.Continuous**](https://msdn.microsoft.com/library/windows/apps/dn608084)；如果包含，将显示连续自动对焦单选按钮。
+通过检查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 属性来检查当前捕获设备是否支持 **FocusControl**。 接下来，确定连续自动对焦是否受支持，方法是检查 [**SupportedFocusModes**](https://msdn.microsoft.com/library/windows/apps/dn608079) 列表中是否包含值 [**FocusMode.Continuous**](https://msdn.microsoft.com/library/windows/apps/dn608084)；如果包含，将显示连续自动对焦单选按钮。
 
 [!code-cs[CAF](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCAF)]
 
@@ -118,7 +121,8 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[CafFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCafFocusRadioButton)]
 
-**重要提示** 自动对焦模式仅在预览流运行时才受支持。 在打开连续自动对焦之前，检查以确保预览流正在运行。
+> [!IMPORTANT]
+> 自动对焦模式仅在预览流运行时才受支持。 在打开连续自动对焦之前，检查以确保预览流正在运行。
 
 ### 点按对焦
 
@@ -132,7 +136,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[TapFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocus)]
 
-在点按对焦单选按钮的 [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) 事件处理程序中，使用 [**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) 属性可获取该控件的一个实例。 如果你的应用先前调用了 [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081)，则调用 [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) 以解锁该控件，以便启用连续自动对焦。 然后，等待用户点击屏幕以更改对焦。
+在点按对焦单选按钮的 [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) 事件处理程序中，使用 [**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) 属性获取该控件的一个实例。 如果你的应用之前调用了 [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) 来启用连续对焦，则调用 [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) 以解锁该控件，然后等待用户点击屏幕更改焦点。
 
 [!code-cs[TapFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusRadioButton)]
 
@@ -140,11 +144,11 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[IsFocused](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsFocused)]
 
-接下来，在用户点击屏幕时通过处理当前正在显示捕获预览流的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 的 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) 事件来侦听相关事件。 如果相机当前未进行预览，或者如果点击对焦模式处于禁用状态，则从该处理程序返回而无需执行任何操作。
+下一步是，在用户点击屏幕时通过处理当前正在显示捕获预览流的 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 的 [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) 事件来侦听相关事件。 如果相机当前未进行预览，或者如果点按对焦模式处于禁用状态，则从该处理程序返回而不执行任何操作。
 
-如果跟踪变量 *\_isFocused* 已切换为 false，或者如果相机当前不在对焦进程中（由 **FocusControl** 的 [**FocusState**](https://msdn.microsoft.com/library/windows/apps/dn608074) 属性确定），则开始点击对焦进程。 从传入处理程序的事件参数获取用户点按的位置。 该示例还利用此机会选取将对焦的区域大小。 在本例中，大小为捕获元素最小尺寸的 1/4。 将点击位置和区域大小传入 **TapToFocus** 帮助程序方法，该方法将在下一部分中进行定义。
+如果跟踪变量 *\_isFocused* 已切换为 false，并且如果相机当前不在对焦进程中（由 **FocusControl** 的 [**FocusState**](https://msdn.microsoft.com/library/windows/apps/dn608074) 属性确定），则开始点击对焦进程。 从传入处理程序的事件参数获取用户点按的位置。 该示例还利用此机会选取将对焦的区域大小。 在本例中，大小为捕获元素最小尺寸的 1/4。 将点击位置和区域大小传入 **TapToFocus** 帮助程序方法，该方法将在下一部分中进行定义。
 
-如果 *\_isFocused* 切换设置为 true，则用户点击应该会从先前的区域中清除焦点。 这将在下面显示的 **TapUnfocus** 帮助程序方法中执行。
+如果 *\_isFocused* 切换设置为 true，用户点击应该会从之前的区域中清除焦点。 这将在下面显示的 **TapUnfocus** 帮助程序方法中执行。
 
 [!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
 
@@ -162,11 +166,12 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 最后，在 **FocusControl** 上调用 [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) 以启动对焦。
 
-**重要提示** 当实现点击对焦时，操作顺序很重要。 我们按照以下顺序调用这些 API：
-
-**1.** [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) 
-           **2.** [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) 
-           **3.** [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
+> [!IMPORTANT]
+> 当实现点按对焦时，操作顺序很重要。 我们按照以下顺序调用这些 API：
+>
+> 1. [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
+> 2. [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
+> 3. [**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
@@ -174,7 +179,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[TapUnfocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapUnfocus)]
 
-**GetPreviewStreamRectInControl** 帮助程序方法使用预览流的分辨率和设备方向，确定包含预览流的预览元素内的矩形并修去上下黑边形式的填充，以便控件可以保持该流的纵横比。 此方法使用基本媒体捕获示例代码中定义的类成员变量，该代码可从[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中获取。
+**GetPreviewStreamRectInControl** 帮助程序方法使用预览流的分辨率和设备方向来确定包含预览流的预览元素内的矩形，并修去控件可能提供的任何上下黑边形式的填充，以保持该流的纵横比。 此方法使用[使用 MediaCapture 的照片、视频和音频捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)中提供的基本媒体捕获示例代码中定义的类成员变量。
 
 [!code-cs[GetPreviewStreamRectInControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetGetPreviewStreamRectInControl)]
 
@@ -188,9 +193,9 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[ManualFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetManualFocusXAML)]
 
-通过选中 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 属性，查看当前捕获设备是否支持 **FocusControl**。 如果该控件受支持，可针对此功能显示和启用 UI。
+通过检查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) 属性来检查当前捕获设备是否支持 **FocusControl**。 如果该控件受支持，可针对此功能显示和启用 UI。
 
-对焦值必须在设备支持的范围内，且必须是受支持步长的增值。 获取当前设备的支持值，方法是选中 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn297808)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn297802) 和 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn297833) 属性，它们用于设置滑块控件的对应属性。
+对焦值必须在设备支持的范围内，并且必须是受支持步长的增量。 获取当前设备的支持值，方法是选中 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn297808)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn297802) 和 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn297833) 属性，它们用于设置滑块控件的对应属性。
 
 在将滑块控件的值设置为 **FocusControl** 的当前值之前，需先注销 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件处理程序，以便在设置该值时不触发该事件。
 
@@ -210,7 +215,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[FocusLightXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFocusLightXAML)]
 
-通过选中 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 属性，查看当前捕获设备是否支持 **FlashControl**。 还应选中 [**AssistantLightSupported**](https://msdn.microsoft.com/library/windows/apps/dn608066)，以确保该辅助灯仍受支持。 如果两者均受支持，可针对此功能显示和启用 UI。
+通过选中 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) 属性，查看当前捕获设备是否支持 **FlashControl**。 还应检查 [**AssistantLightSupported**](https://msdn.microsoft.com/library/windows/apps/dn608066)以确保辅助灯也受支持。 如果两者均受支持，可针对此功能显示和启用 UI。
 
 [!code-cs[FocusLight](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLight)]
 
@@ -226,7 +231,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[IsoXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetIsoXAML)]
 
-通过选中 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297869) 属性，查看当前捕获设备是否支持 **IsoSpeedControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 将该复选框设置为选中状态，以指示自动 ISO 感光度调整当前对 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn608093) 属性值是否处于活动状态。
+通过检查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297869) 属性来检查当前捕获设备是否支持 **IsoSpeedControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 将用于指示自动 ISO 感光度调整当前是否处于活动状态的复选框的选中状态设置为 [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn608093) 属性的值。
 
 ISO 感光度值必须在设备支持的范围内，且必须是受支持步长的增值。 获取当前设备的支持值，方法是选中 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn608095)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn608094) 和 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn608129) 属性，它们用于设置滑块控件的对应属性。
 
@@ -254,6 +259,13 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 [!code-cs[SetOpticalImageStabilizationMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetOpticalImageStabilizationMode)]
 
+## Powerline frequency
+某些相机设备支持防闪烁处理，该功能依赖于获知当前环境中的电力线 AC 频率。 某些设备支持自动确定电力线频率，而另一些设备需要手动设置该频率。 以下代码示例显示如何确定设备上的电力线频率支持以及如何手动设置该频率（如果需要）。 
+
+首先，调用 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，从而传入 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 类型的输出参数；如果此调用失败，则电力线频率控制在当前设备上不受支持。 如果该功能受支持，则你可以通过尝试设置自动模式来确定自动模式在设备上是否可用。 通过调用 [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) 并传入值 **Auto** 来执行此操作。 如果调用成功，这意味着你的自动电力线频率受支持。 如果设备上支持电力线频率控制器，但不支持自动频率检测，你仍然可以使用 **TrySetPowerlineFrequency** 手动设置频率。 在此示例中，**MyCustomFrequencyLookup** 是你实现的自定义方法，用于为设备的当前位置确定正确的频率。 
+
+[!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
+
 ## 白平衡
 
 [**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) 允许你设置照片或视频捕获期间所使用的白平衡。
@@ -262,7 +274,7 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 [!code-xml[WhiteBalanceXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetWhiteBalanceXAML)]
 
-通过选中 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279120) 属性，查看当前捕获设备是否支持 **WhiteBalanceControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 将组合框中的项设置为 [**ColorTemperaturePreset**](https://msdn.microsoft.com/library/windows/apps/dn278894) 枚举的值。 并且将选定项设置为 [**Preset**](https://msdn.microsoft.com/library/windows/apps/dn279110) 属性的当前值。
+通过检查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279120) 属性来检查当前捕获设备是否支持 **WhiteBalanceControl**。 如果该控件受支持，可针对此功能显示和启用 UI。 将组合框的项目设置为 [**ColorTemperaturePreset**](https://msdn.microsoft.com/library/windows/apps/dn278894) 枚举的值。 并且将选定项设置为 [**Preset**](https://msdn.microsoft.com/library/windows/apps/dn279110) 属性的当前值。
 
 对于手动控件，白平衡值必须在设备支持的范围内，且必须是受支持步长的增值。 获取当前设备的支持值，方法是选中 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn279109)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn279107) 和 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn279119) 属性，它们用于设置滑块控件的对应属性。 在启用手动控件前，检查以确保最小受支持值和最大支持值之差大于该步长。 如果不是这样，则表明当前设备不支持手动控件。
 
@@ -278,9 +290,11 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 [!code-cs[WhiteBalanceSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalanceSlider)]
 
-**重要提示** 调整白平衡仅在预览流运行时才受支持。 在设置白平衡值或预设前，检查以确保预览流正在运行。
+> [!IMPORTANT]
+> 调整白平衡仅在预览流运行时才受支持。 在设置白平衡值或预设前，检查以确保预览流正在运行。
 
-**重要提示** **ColorTemperaturePreset.Auto** 预设值指示系统自动调整白平衡级别。 在某些情况（如捕获照片序列，其中对于每个帧而言白平衡级别均相同）下，你需要将控件锁定为当前自动值。 为此，请调用 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 并指定 **Manual** 预设，但不要在控件上使用 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) 设置值。 这样做会导致设备锁定当前值。 请不要尝试读取当前控件值，并将该值传递给 **SetValueAsync**，因为不能保证该值是正确的。
+> [!IMPORTANT]
+> **ColorTemperaturePreset.Auto** 预设值指示系统自动调整白平衡级别。 在某些情况（如捕获照片序列，其中每个帧的平衡级别均相同）下，你需要将控件锁定为当前自动值。 为此，请调用 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 并指定 **Manual** 预设，但不要在控件上使用 [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) 设置值。 这样做会导致设备锁定当前值。 请不要尝试读取当前控件值，并将该值传递给 **SetValueAsync**，因为不能保证该值是正确的。
 
 ## 缩放
 
@@ -290,9 +304,9 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 [!code-xml[ZoomXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetZoomXAML)]
 
-通过选中 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) 属性，查看当前捕获设备是否支持 **ZoomControl**。 如果该控件受支持，可针对此功能显示和启用 UI。
+通过检查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) 属性来检查当前捕获设备是否支持 **ZoomControl**。 如果该控件受支持，可针对此功能显示和启用 UI。
 
-缩放级别值必须在设备支持的范围内，且必须是受支持步长的增值。 获取当前设备的支持值，方法是选中 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn633817)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 和 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) 属性，它们用于设置滑块控件的对应属性。
+缩放级别值必须在设备支持的范围内，并且必须是受支持步长的增量。 获取当前设备的支持值，方法是选中 [**Min**](https://msdn.microsoft.com/library/windows/apps/dn633817)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 和 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) 属性，它们用于设置滑块控件的对应属性。
 
 在将滑块控件的值设置为 **ZoomControl** 的当前值之前，需先注销 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件处理程序，以便在设置该值时不触发该事件。
 
@@ -326,10 +340,11 @@ OIS 控件支持以下三种模式：开、关和自动。这意味着设备可�
 
 ## 相关主题
 
-* [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
+* [相机](camera.md)
+* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

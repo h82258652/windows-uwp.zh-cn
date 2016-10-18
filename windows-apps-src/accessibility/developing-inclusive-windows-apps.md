@@ -6,20 +6,19 @@ title: "开发非独占 Windows 10 应用"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 826c6984962ecbe3b49ba3753e9cc795344f5057
+ms.sourcegitcommit: 9f68c2bdc92bfbdbc8328e4df161f7ecdfccf8e5
+ms.openlocfilehash: 19c90991ab86383fa259b05460cbd656d408e977
 
 ---
 
 # 开发非独占 Windows 应用  
 
-了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
-
-本文讨论了如何开发辅助通用 Windows 平台 (UWP) 应用。 具体而言，它假定你了解如何为应用设计逻辑层次结构。  
+本文讨论了如何开发辅助通用 Windows 平台 (UWP) 应用。 具体而言，它假定你了解如何为应用设计逻辑层次结构。 了解如何开发辅助 Windows 10 UWP 应用，该应用包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
 
 如果你尚未了解，请首先阅读[设计非独占软件](designing-inclusive-software.md)。
 
 为了确保你的应用是辅助应用，你应执行以下三项操作：
+
 1. 向[编程访问](#programmatic-access)公开你的 UI 元素。
 2. 确保你的应用针对无法使用鼠标或触摸屏的用户支持[键盘导航](#keyboard-navigation)。
 3. 确保你的应用支持辅助[颜色和对比度](#color-and-contrast)设置。
@@ -53,7 +52,7 @@ XAML
 ```xml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
-有关使用系统颜色和资源的详细信息，请参阅 [XAML 主题资源](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)。
+有关使用系统颜色和资源的详细信息，请参阅 [XAML 主题资源](../controls-and-patterns/xaml-theme-resources.md)。
 
 只要你未替代系统颜色，UWP 应用在默认情况下就支持高对比度主题。 如果用户已经选择他们希望系统使用系统设置或辅助功能工具中的高对比度主题，则框架将自动使用为 UI 中的控件和组件生成高对比度布局和呈现的颜色和样式设置。   
 
@@ -66,7 +65,8 @@ XAML
 **颜色组合** - 大约 7% 的男性（和小于 1 % 的女性）具有某种形式的色觉障碍。 色盲用户难以区分某些颜色，因此在应用程序中永远不单独使用颜色来传达状态或意义，这一点很重要。 对于装饰性图像（如图标或背景），应尽量选择能够使色盲用户识别图像的颜色组合。  
 
 ## 辅助功能清单  
-下面是简化版的辅助功能清单：  
+下面是简化版的辅助功能清单：
+
 1. 为应用中的内容和交互式 UI 元素设置辅助名称（必选）和描述（可选）。
 2. 实现键盘辅助功能。
 3. 以直观方式验证你的 UI 以确保文本对比度足够大、元素以高对比度主题正确呈现以及使用了正确的颜色。
@@ -82,9 +82,10 @@ XAML
 * [要避免的辅助功能做法](practices-to-avoid.md)
 * [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 辅助功能开发人员中心](https://msdn.microsoft.com/enable)
+* [辅助功能](accessibility.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

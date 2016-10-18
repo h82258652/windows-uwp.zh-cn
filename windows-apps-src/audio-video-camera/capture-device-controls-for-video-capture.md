@@ -1,35 +1,35 @@
 ---
 author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
-description: "本文向你介绍了视频设备控件如何实现增强的视频捕获方案，包括 HDR 视频和曝光优先级。"
-title: "用于视频捕获的捕获设备控件"
+description: "本文介绍如何使用手动设备控件实现增强的视频捕获方案，包括 HDR 视频和曝光优先级。"
+title: "用于视频捕获的手动相机控件"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 65883f1be1a014b6c7e211e2e060ae97fbd9eb0d
+ms.sourcegitcommit: daeb92e51a005825f1e410da9c924afc723297f1
+ms.openlocfilehash: 5a51ee9c67eb421c2478ca46f415879afb609210
 
 ---
 
-# 用于视频捕获的捕获设备控件
+# 用于视频捕获的手动相机控件
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文向你介绍了视频设备控件如何实现增强的视频捕获方案，包括 HDR 视频和曝光优先级。
+本文介绍如何使用手动设备控件实现增强的视频捕获方案，包括 HDR 视频和曝光优先级。
 
-本文中讨论的所有视频设备控件已使用相同的模式添加到你的应用。 首先，检查以查看运行你的应用的当前设备是否支持该控件。 如果控件受支持，则为控件设置所需模式。 通常，如果特定控件在当前设备上不受支持，你应禁用或隐藏允许用户启用该功能的 UI 元素。
+本文中讨论的视频设备控件全部使用相同模式添加到你的应用中。 首先，检查运行你的应用的当前设备是否支持该控件。 如果控件受支持，则为控件设置所需模式。 通常，如果特定控件在当前设备上不受支持，你应禁用或隐藏允许用户启用该功能的 UI 元素。
 
 本文中讨论的所有设备控件 API 都是 [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) 命名空间的成员。
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-**注意**  
-本文基于[使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)中讨论的概念和代码生成，详细介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
+> [!NOTE] 
+> 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 我们建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
 ## HDR 视频
 
-高动态范围 (HDR) 视频功能将 HDR 处理应用到捕获设备的视频流。 通过检查 [**HdrVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926682) 属性，确定 HDR 视频是否受支持。
+高动态范围 (HDR) 视频功能将 HDR 处理应用到捕获设备的视频流。 通过选择 [**HdrVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926682) 属性来确定 HDR 视频是否受支持。
 
-HDR 视频控件支持以下三种模式：开、关和自动。这意味着设备可以动态方式确定 HDR 视频处理是否会改进媒体捕获；如果可以改进，则启用 HDR 视频。 若要确定特定模式在当前设备上是否受支持，请检查以查看 [**HdrVideoControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926683) 集合是否包含所需模式。
+HDR 视频控件支持以下三种模式：开、关和自动。这意味着设备以动态方式确定 HDR 视频处理是否会改进媒体捕获；如果会改进，则启用 HDR 视频。 若要确定特定模式在当前设备上是否受支持，请检查以查看 [**HdrVideoControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926683) 集合是否包含所需模式。
 
 通过将 [**HdrVideoControl.Mode**](https://msdn.microsoft.com/library/windows/apps/dn926681) 设置为所需模式，启用或禁用 HDR 视频处理。
 
@@ -47,7 +47,8 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 
 ## 相关主题
 
-* [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
+* [相机](camera.md)
+* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -58,6 +59,6 @@ HDR 视频控件支持以下三种模式：开、关和自动。这意味着设�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

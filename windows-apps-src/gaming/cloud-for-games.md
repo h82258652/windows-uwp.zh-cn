@@ -4,8 +4,8 @@ title: "使用适用于 UWP 游戏的云服务"
 description: "了解有关实现云作为 UWP 游戏后端的详细信息。"
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8bf42e9c2c2e074240eb8e7b94efdfbca65cc7f9
+ms.sourcegitcommit: 0b2d81daa8bd0fd5694b81fa14fcd064e1600d35
+ms.openlocfilehash: b23c33fac9ac8fe5e2d5563a0af6824c82a3969b
 
 ---
 #  使用适用于 UWP 游戏的云服务
@@ -29,7 +29,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发
 
 此外，可以使用云服务实现需要具备密集游戏数据管理功能的游戏，如具有多玩家异步机制的社交游戏。
 
-##  游戏公司以什么方式使用云技术？
+##  游戏公司以什么方式使用云技术
 
 了解其他开发商在其游戏中实现云解决方案的方式。
 
@@ -152,7 +152,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发
 | 可扩展的关系型游戏数据库| 关系型数据的结构化存储，如数据库中的游戏内事务 | [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)| SQL 数据库即服务（[比较 VM 上的 SQL](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)）  |
 | 可扩展分配的低延迟游戏数据库| 借助模式灵活性快速读、写以及查询游戏和玩家数据 | [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)| 低延迟 NoSQL 文档数据库即服务   |
 | 借助 Azure 服务使用自己的数据中心 | 从你自己的数据中心检索游戏，并发送到客户端设备 | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | 使你的组织可以通过自己的数据中心提供 Azure 服务，以助你一臂之力  |
-| 大数据块传输| 可以通过 Azure CDN 从最近的内容分发网络 (CDN) pop 位置向用户发送游戏图像、音频和视频文件等大型文件。  | [Azure 内容分发网络](https://azure.microsoft.com/services/cdn/) | Azure CDN 基于现代网络拓扑的大型集中式节点构建，用于处理突发的大数据流量和严重负载以显著提升速度和可用性，从而明显改善用户体验  |
+| 大数据块传输| 可以通过 Azure CDN 从最近的内容分发网络 (CDN) pop 位置向用户发送游戏图像、音频和视频等大型文件。    | [Azure 内容分发网络](https://azure.microsoft.com/services/cdn/) | Azure CDN 基于现代网络拓扑的大型集中式节点构建，用于处理突发的大数据流量和严重负载以显著提升速度和可用性，从而明显改善用户体验  |
 | 低延迟               | 执行缓存以生成内含更多控制和保证隔离数据的快速运行且可扩展的游戏；还可用于改善游戏的配对功能。 | [Azure Redis 缓存](https://azure.microsoft.com/services/cache/) | 高吞吐量、一贯的低延迟数据访问，可增强快速运行且可扩展的 Azure 应用程序  |
 | 高可扩展性，低延迟 | 以低延迟的读写处理游戏用户变幻莫测的数量 | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | 能够应对最复杂、低延迟、数据密集型情形并且进行可靠扩展，从而实现一次处理较多用户。 Service Fabric 使你无需创建无状态应用所需的单独存储或缓存，即可生成游戏。 |
 | 能够每秒从设备中收集数百万个事件                         | 每秒从设备中记录数百万个事件 | [Azure 事件中心](https://azure.microsoft.com/services/event-hubs/) | 从游戏、网站、应用和设备的云级别遥测引入  |
@@ -202,6 +202,6 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

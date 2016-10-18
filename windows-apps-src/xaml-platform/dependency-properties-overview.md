@@ -4,8 +4,8 @@ description: "本主题介绍了在使用 C++、C# 或 Visual Basic 编写 Windo
 title: "依赖属性概述"
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 translationtype: Human Translation
-ms.sourcegitcommit: 2791b5b80bf1405d3efdce5d81824dbe6d347b4f
-ms.openlocfilehash: 5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91
+ms.sourcegitcommit: bd08d102aa5de2d9dec89136caf683755db72391
+ms.openlocfilehash: 7a8c39494b69d36553db3a2df7526ba61e57a228
 
 ---
 
@@ -48,8 +48,8 @@ ms.openlocfilehash: 5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91
 | 术语 | 说明 |
 |------|-------------|
 | 依赖属性 | 存在于 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 标识符上的一个属性（如下所示）。 通常该标识符可用作定义 **DependencyObject** 派生类的一个静态成员。 |
-| 依赖属性标识符 | [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)，这就是为什么它通常是公有的原因，即使它是只读的。 |
-| 属性包装器 | Windows 运行时属性的可调用 **get** 和 **set** 实现。 或者原始定义的特定于语言的投影。 **get** 属性包装器实现调用 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)，从而传递相关的依赖属性标识符作为一个输入并将该值设置为第二个输入。 | 
+| 依赖属性标识符 | 用于标识属性的常量值，它通常公开显示且只读。 |
+| 属性包装器 | Windows 运行时属性的可调用 **get** 和 **set** 实现。 或者原始定义的特定于语言的投影。 **get** 属性包装器实现调用 [**GetValue**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx)，传递相关的依赖属性标识符。 | 
 
 属性包装器不仅给调用方带来了方便，它还向任何为属性使用 Windows 运行时定义的过程、工具或投影公开该依赖属性。
 
@@ -100,7 +100,7 @@ public bool IsSpinning
 
 ###  绑定和优先级
 
-绑定操作对于任何适用范围都具有相应的优先级。 例如，对于应用于本地值的绑定，其作用相当于本地值；对于属性设置器的绑定（[{TemplateBinding} 标记扩展](templatebinding-markup-extension.md)），其作用相当于样式设置器。 由于绑定必须一直等到运行时才能获取来自数据源的值，因此确定任何属性的属性值优先级这一过程也会延迟到运行时。
+绑定操作对于任何适用范围都具有相应的优先级。 例如，对于应用于本地值的 [{Binding}](binding-markup-extension.md)，其作用相当于本地值；对于属性设置器应用的 [{TemplateBinding} 标记扩展](templatebinding-markup-extension.md)，其作用相当于样式设置器。 由于绑定必须一直等到运行时才能获取来自数据源的值，因此确定任何属性的属性值优先级这一过程也会延迟到运行时。
 
 绑定不仅具有与本地值相同的优先级，而且它们确实是本地值，区别在于绑定是延迟值的占位符。 如果一个属性值具有相应的绑定，则可在运行时为其设置一个本地值，用于完整替换该绑定。 同样地，如果你通过调用 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 来定义只在运行时才存在的绑定，则会替换可能在 XAML 中应用过的所有本地值或之前执行的代码。
 
@@ -133,7 +133,7 @@ public bool IsSpinning
 
 ### 数据绑定
 
-依赖属性可使它的值通过应用数据绑定进行设置。 数据绑定在 XAML 中使用 [{Binding} 标记扩展](binding-markup-extension.md)语法，或在代码中使用 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类。 对于数据绑定属性，其属性值的最终确定要延迟到运行时。 届时，将从数据源中获取值。 依赖属性系统在这里所起到的作用是在值还未知时为诸如加载 XAML 等操作启用占位符行为，然后在运行时通过与 Windows 运行时数据绑定引擎交互来提供值。
+依赖属性可使它的值通过应用数据绑定进行设置。 数据绑定使用 XAML 中的 [{Binding} 标记扩展](binding-markup-extension.md)语法、[{x:Bind} 标记扩展](x-bind-markup-extension.md)或代码中的 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类。 对于数据绑定属性，其属性值的最终确定要延迟到运行时。 届时，将从数据源中获取值。 依赖属性系统在这里所起到的作用是在值还未知时为诸如加载 XAML 等操作启用占位符行为，然后在运行时通过与 Windows 运行时数据绑定引擎交互来提供值。
 
 以下示例使用 XAML 中的绑定设置 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 值。 该绑定使用继承的数据上下文和对象数据源。 （这个简短示例中没有展示这些方面；有关展示上下文和来源的更完整示例，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。）
 
@@ -145,17 +145,17 @@ public bool IsSpinning
 
 你也可以使用代码（而不是 XAML）来建立绑定。 请参阅 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)。
 
-**注意** 为了考虑依赖属性值的优先级，会将类似的绑定视为本地值。 如果你为最初存放 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 值的属性设置其他本地值，则将完全改写绑定，而不只是改写绑定的运行时值。
+**注意** 为了考虑依赖属性值的优先级，会将类似的绑定视为本地值。 如果你为最初存放 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 值的属性设置其他本地值，则将完全改写绑定，而不只是改写绑定的运行时值。 {x:Bind} 绑定使用生成的代码（将为该属性设置本地值）实现。 如果为使用 {x:Bind} 的属性设置本地值，将在下次评估绑定时替换该值，例如在其源对象上观察属性更改时。
 
-### 绑定来源、绑定目标、FrameworkElement 的角色
+### 绑定源、绑定目标、FrameworkElement 的角色
 
-要作为绑定的来源，属性不需要是依赖属性，一般可以使用任何属性作为绑定来源，不过这取决于你的编程语言，而且每个属性都具有特定的边缘方案。 但是，要作为绑定的目标，该属性必须是依赖属性。
+要作为绑定的来源，属性不需要是依赖属性；一般可以使用任何属性作为绑定源，不过这取决于你的编程语言，而且每个属性都具有特定的边缘方案。 但是，要作为 [{Binding} 标记扩展](binding-markup-extension.md)或 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的目标，该属性必须是依赖属性。 {x:Bind} 没有此项要求，因为它使用生成的代码应用其绑定值。
 
 如果在代码中创建绑定，请注意 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) API 仅为 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 定义。 但是，也可以使用 [**BindingOperations**](https://msdn.microsoft.com/library/windows/apps/br209823) 创建绑定定义，从而引用任何 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 属性。
 
 对于代码或 XAML，请记住 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 是一个 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 属性。 通过使用一种父子属性继承的形式（通常在 XAML 标记中建立），绑定系统可解析父元素上存在的 **DataContext**。 即使子对象（具有目标属性）不是 **FrameworkElement** 并且因此没有自身的 **DataContext** 值，此继承也可以进行评估。 但是，所继承的父元素必须是一个 **FrameworkElement**，才能设置和具有 **DataContext**。 否则，你必须定义绑定，这样它才可以使用 **DataContext** 的 **null** 值。
 
-对于大部分数据绑定方案，连接绑定并不是唯一需要的。 要让单向或双向绑定生效，来源属性必须支持能够传播到绑定系统并进而传播到目标的更改通知。 对于自定义绑定源，这意味着该属性必须支持 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。 集合应支持 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。 某些类在其实现中支持这些接口，以便它们可在数据绑定方案中用作基类；这种类的一个示例是 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)。 有关数据绑定和数据绑定与属性系统之间关系的详细信息，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+对于大部分数据绑定方案，连接绑定并不是唯一需要的。 要让单向或双向绑定生效，来源属性必须支持能够传播到绑定系统并进而传播到目标的更改通知。 对于自定义绑定源，这意味着该属性必须是依赖属性，或者该对象必须支持 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。 集合应支持 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。 某些类在其实现中支持这些接口，以便它们可在数据绑定方案中用作基类；这种类的一个示例是 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)。 有关数据绑定和数据绑定与属性系统之间关系的详细信息，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 **注意** 此处所列的类型支持 Microsoft .NET 数据源。 C++/CX 数据源可针对更改通知或可观察行为使用不同的接口，请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
@@ -179,6 +179,8 @@ public bool IsSpinning
 
 属性已更改行为是依赖属性术语中“依赖”部分的一个主要原因。 在另一个属性可以影响第一个属性值的情形下，维护一个属性的有效值是许多框架中一个很难的开发问题。 在 Windows 运行时属性系统中，每个依赖属性可指定一个回调，只要它的属性值更改，就会调用该回调。 此回调可用于通知或更改相关的属性值（通常采用一种同步方式）。 许多现有的依赖属性有一个属性已更改行为。 也可以向自定义依赖属性添加类似的回调行为，实现你自己的属性已更改回调。 有关示例，请参阅[自定义依赖属性](custom-dependency-properties.md)。
 
+Windows 10 引入了 [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 方法。 这使应用程序代码可以注册更改通知（如果指定的依赖属性在 [**DependencyObject**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) 的实例上发生更改）。
+
 ### 默认值和 **ClearValue**
 
 一个依赖属性可在其属性元数据中定义一个默认值。 对于依赖属性而言，在首次对该属性进行设置之后，其默认值并不会完全失效。 只要值优先级中其他某个决定因素消失，就可以在运行时再次应用默认值。 （依赖属性值优先级将在下一节中讨论。）例如，你可能特意删除适用于属性的样式值或动画，但希望在执行此操作后有用作合理默认值的值。 依赖属性默认值可以提供此值，无需将专门设置每个属性的值作为额外步骤。
@@ -199,14 +201,14 @@ public bool IsSpinning
 * [深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [情节提要动画](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [XAML 用户和自定义控件示例](http://go.microsoft.com/fwlink/p/?linkid=238581) 
-           **与依赖属性相关的 API**
+* [XAML 用户和自定义控件示例](http://go.microsoft.com/fwlink/p/?linkid=238581)
+**与依赖属性相关的 API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

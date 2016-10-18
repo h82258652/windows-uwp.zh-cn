@@ -4,8 +4,8 @@ Description: "将你的应用列在正确的类别和子类别中，可帮助客
 title: "类别和子类别表"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
+ms.sourcegitcommit: b31e399d950a99f0cb6f1e912e391429b5463136
+ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
 
 ---
 
@@ -18,11 +18,11 @@ ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
 
 > **注意** 如果选择**游戏**作为类别，则子类别是必需的。
 
- 
-
 应用只能列在一个类别（以及一个子类别，如果有的话）中。如果你不确定要使用哪一类别或子类别，请选择你认为客户在尝试查找与你的应用类似的应用时，最有可能查看的类别或子类别。
 
 如果要更改已存在于应用商店中的某个应用的类别或子类别，可以通过[创建新提交](app-submissions.md)和选择新类别来实现。
+
+> **重要提示** 如果以**游戏**类别发布应用，将无法在新提交中选取其他类别。 还无法在之前以其他类别发布的应用的更新中选择**游戏**类别。
 
 Windows 应用商店将应用整理为以下类别和子类别。
 
@@ -64,6 +64,6 @@ Windows 应用商店将应用整理为以下类别和子类别。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

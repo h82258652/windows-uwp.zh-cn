@@ -1,19 +1,16 @@
 ---
 description: "了解如何依据 Windows 开发人员中心 UWP 样式指南使用颜色、版式和动作定义你的 UWP 应用的个性。"
-keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
+keywords: "uwp 样式指南, 设计指导, 版式, 动作, 声音, 动画, 应用开发"
 title: "UWP 样式指南 - Windows 应用开发"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 0a7f655a6f122787873adac76ac4dec9d775a154
-ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
+ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
+ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
 
 ---
+# UWP 样式指南
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-<div class="uwpd-banner">
-<h1 class="uwpd-ruledheader">UWP 样式指南</h1>
-</div>
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -35,7 +32,7 @@ ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
   </div>
   <div class="side-by-side-content-right">
    <p><b>[图标](icons.md)</b><br/>
-设计良好的图标与版式和设计语言的剩余部分都能融为一体。 它们不会夹杂隐喻，只会尽可能简单快速地表达需要的内容。</p>
+良好的图标可与版式和设计语言的其余部分协调一致。 它们不会夹杂隐喻，只会尽可能简单快速地表达需要的内容。</p>
   </div>
 </div>
 </div>
@@ -77,6 +74,6 @@ ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

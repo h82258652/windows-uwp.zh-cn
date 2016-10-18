@@ -4,8 +4,8 @@ Description: "为从 Windows 应用商店的应用销售中获得收益，你需
 title: "设置你的付款帐户和税单"
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 translationtype: Human Translation
-ms.sourcegitcommit: f17132514a42c50d6bfe716f6be706748c287043
-ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
+ms.sourcegitcommit: ea9ea2d39ecd0fc54381df8d5fa7dd7cdc2fae51
+ms.openlocfilehash: 7de230aeee932f781a282ab7555e1c90bcd76460
 
 ---
 
@@ -16,12 +16,12 @@ ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
 
 > **注意** 从 2016 年 4 月 1 日开始，将向在开发人员中心中设置的相同付款帐户支付你的 Microsoft Advertising 收入。 有关详细信息，请参阅 [pubCenter-DevCenter 付款帐户和税务资料整合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
 
-如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果你以后改变主意并决定要售卖应用（或应用内产品），则可以设置付款帐户并于此时填写税单。 在付款帐户和纳税配置文件设置完成前，你将无法提交任何付费应用或 IAP。
+如果你仅计划列出免费应用（未计划提供应用内购买或使用 Microsoft Advertising），则无需设置付款帐户或填写任何税单。 如果你以后改变主意并决定要售卖应用（或应用内产品），则可以设置付款帐户并于此时填写税单。 在付款帐户和纳税配置文件设置完成前，你将无法提交任何付费应用或加载项。
 
 > **注意** 在[某些市场](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，开发人员只可以提交免费应用。 如果在其中一个市场中注册帐户，则无法设置付款帐户。
 
 
-[设置开发者帐户](opening-a-developer-account.md)后，需要先执行两项操作，然后才能在 Windows 应用商店中出售应用（或 IAP）：
+[设置开发者帐户](opening-a-developer-account.md)后，需要先执行两项操作，然后才能在 Windows 应用商店中出售应用（或加载项）：
 
 -   [设置付款帐户](#setting_up_your_payout_account)
 -   [填写税单](#paying_taxes)
@@ -86,9 +86,9 @@ ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
 
 ### 俄罗斯
 
-如果你是居住在俄罗斯的开发人员，可能需要在银行将资金存入你的帐户前向银行提供文档。 当您有资格获得付款时，我们将在电子邮件中为您提供以下文档：
+如果你是居住在俄罗斯的开发人员，可能需要在银行将资金存入你的帐户前向银行提供文档。 当你有资格获得付款时，我们将在电子邮件中为你提供以下文档：
 
-1.  认可证书 (CoA) - 包含转移到您的帐户的付款额。
+1.  验收证书 (AC) - 包含转移到你的帐户的付款金额。
 2.  应用开发人员协议 (ADA) - 需要副签的开发人员协议的已签署副本。
 
 为了确保付款成功，请谨记以下事项：
@@ -102,11 +102,11 @@ ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
 
 如果你是居住在乌克兰的开发人员，可能需要在银行将资金存入你的帐户前向银行提供文档。 当你有资格获得付款时，我们将在电子邮件中为你提供以下文档：
 
-1.  认可证书 (CoA) - 包含转移到您的帐户的付款额。
+1.  验收证书 (AC) - 包含转移到你的帐户的付款金额。
 2.  应用开发人员协议 (ADA) - 需要副签的开发人员协议的已签署副本。
 3.  修订协议 (AA) - 你的银行可使用此文档帮助识别你的付款资金。
 
-当尝试首次付款时，Microsoft 将提供所有三个文档。 对于任何后续付款，你将仅接收 CoA 文档。 请保留 ADA 和 AA 文档，以防你从银行接收将来付款时需要它们。
+当尝试首次付款时，Microsoft 将提供所有三个文档。 对于任何后续付款，你将仅收到 AC 文档。 请保留 ADA 和 AA 文档，以防你从银行接收将来付款时需要它们。
 
 为了确保付款成功，请记住以下事项：
 
@@ -160,6 +160,6 @@ ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

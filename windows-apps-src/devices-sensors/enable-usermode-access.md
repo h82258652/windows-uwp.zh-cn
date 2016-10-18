@@ -4,7 +4,7 @@ title: "启用对 Windows 10 IoT 核心版的用户模式访问"
 description: "本教程介绍如何对 Windows 10 IoT 核心版上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: eddb2ca0aaa4bdbc19b2c3015ec8d599e0ef5584
+ms.openlocfilehash: 363e73101157e1c9cc233d87b3964736c260f665
 
 ---
 # 启用对 Windows 10 IoT 核心版的用户模式访问
@@ -233,11 +233,11 @@ GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 }
 * 每个 GpioIO 和 GpioInt 资源都必须恰好包含引脚列表中的一个引脚编号。 
 * 这两个描述符的 ShareType 字段必须为“Shared” 
 * GpioInt 描述符的 EdgeLevel 字段必须为“Edge” 
-* GpioInt 描述符的 ActiveLevel 字段必须为“ActiveBoth” 
+* GpioInt 描述符的 ActiveLevel 字段必须为ActiveBoth 
 * PinConfig 字段 
   * 在 GpioIO 和 GpioInt 描述符中必须相同 
   * 必须是 PullUp、PullDown 或 PullNone 之中的一个。 它不能是 PullDefault。
-  * 拉配置必须匹配引脚的通电状态。 将引脚从通电状态置于指定的拉模式不得改变引脚的状态。 例如，如果数据表指定引脚出现了一个上拉，请将“PinConfig”指定为“PullUp”。  
+  * 拉配置必须匹配引脚的通电状态。 将引脚从通电状态置于指定的拉模式不得改变引脚的状态。 例如，如果数据表指定引脚出现了一个上拉，请将PinConfig指定为PullUp。  
 
 启动期间，固件、UEFI 和驱动程序初始化代码不应改变处于通电状态的引脚的状态。 只有用户清楚附加到引脚的内容，从而知道哪些状态转换是安全的。 必须记录每个引脚的通电状态，以便用户可以设计与引脚正确交互的硬件。 启动期间，引脚不得意外改变状态。 
 
@@ -1086,6 +1086,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

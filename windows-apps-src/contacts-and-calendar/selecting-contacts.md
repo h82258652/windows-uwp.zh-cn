@@ -3,10 +3,10 @@ author: Xansky
 description: "Windows.ApplicationModel.Contacts 命名空间提供了多个用来选择联系人的选项。"
 title: "选择联系人"
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-keywords: contact, selecting specific fields
+keywords: "联系人, 选择特定的字段"
 translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8
+ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
 
 ---
 
@@ -232,6 +232,6 @@ public class ContactItemAdapter
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

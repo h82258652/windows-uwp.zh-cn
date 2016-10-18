@@ -3,8 +3,8 @@ author: payzer
 title: "Device Portal Xbox 开发人员设置 API 参考"
 description: "了解如何访问 Xbox 开发人员设置。"
 translationtype: Human Translation
-ms.sourcegitcommit: a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0
-ms.openlocfilehash: e3637f5a8481c0800af42c011fb811b908b946b1
+ms.sourcegitcommit: c51eff41e63d815f6298b4fc46a9b11314bc8bc9
+ms.openlocfilehash: 5a983714cda9b5a5f45e555e2cb6f980f082a003
 
 ---
 
@@ -60,7 +60,7 @@ HTTP 状态代码      | 说明
 
 方法      | 请求 URI
 :------     | :-----
-GET | /ext/settings/<setting name>
+GET | /ext/settings/\&lt;setting name\&gt;
 <br />
 **URI 参数**
 
@@ -101,7 +101,7 @@ HTTP 状态代码      | 说明
 
 方法      | 请求 URI
 :------     | :-----
-PUT | /ext/settings/<setting name>
+PUT | /ext/settings/\&lt;setting name\&gt;
 <br />
 **URI 参数**
 
@@ -137,6 +137,6 @@ HTTP 状态代码      | 说明
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

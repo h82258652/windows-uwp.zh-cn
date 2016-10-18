@@ -3,8 +3,8 @@ title: "适用于游戏开发的 CPUSets"
 description: "本文概述了通用 Windows 平台 (UWP) 新增的 CPUSets API，涵盖了对于游戏和应用程序开发相当重要的核心信息。"
 author: hammondsp
 translationtype: Human Translation
-ms.sourcegitcommit: 3cefaf4e527d2a0da412dab474a348b55ad409c9
-ms.openlocfilehash: f125ae7e268a8d35b477a1557c498762869f859b
+ms.sourcegitcommit: 9f15d551715d9ccf23e4eb397637f4fafacec350
+ms.openlocfilehash: 6065435dc3add0d9bde15dc6bdd355935b8f53cd
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: f125ae7e268a8d35b477a1557c498762869f859b
 
 ## CPUSets API
 
-CPUSets API 控制可用于在其上调度线程的 CPU 设置。 两个函数可用于控制调度线程的位置：
+CPUSets API 控制可用于在其上调度线程的 CPU 集。 两个函数可用于控制调度线程的位置：
 - **SetProcessDefaultCpuSets** – 如果新线程未分配给特定的 CPU 设置，可使用此函数指定新线程可在其上运行的 CPU 设置。
 - **SetThreadSelectedCpuSets** – 此函数允许你限制特定线程可在其上运行的 CPU 设置。
 
@@ -38,7 +38,7 @@ PSYSTEM_CPU_SET_INFORMATION cpuSets = reinterpret_cast<PSYSTEM_CPU_SET_INFORMATI
 GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 ```
 
-每个返回的 **SYSTEM_CPU_SET_INFORMATION** 实例包含有关一个唯一的处理单元的信息，也称为“CPU 设置”。 这并不一定意味着它表示硬件的独特物理部分。 利用超线程的 CPU 将具有在单个物理处理内核上运行的多个逻辑核心。 在不同逻辑核心（位于同一物理核心上）上调度多个线程允许执行硬件级别的资源优化，否则会以内核级别执行额外工作。 在同一物理核心的单独逻辑核心上调度的两个线程必须共享 CPU 时间，但相比于它们在同一逻辑核心上调度而言，可以更高效地运行。
+每个返回的 **SYSTEM_CPU_SET_INFORMATION** 实例包含有关一个唯一的处理单元（也称为“CPU 集”）的信息。 这并不一定意味着它表示硬件的独特物理部分。 利用超线程的 CPU 将具有在单个物理处理内核上运行的多个逻辑核心。 在不同逻辑核心（位于同一物理核心上）上调度多个线程允许执行硬件级别的资源优化，否则会以内核级别执行额外工作。 在同一物理核心的单独逻辑核心上调度的两个线程必须共享 CPU 时间，但相比于它们在同一逻辑核心上调度而言，可以更高效地运行。
 
 ### SYSTEM_CPU_SET_INFORMATION
 
@@ -190,10 +190,11 @@ for (size_t i = 0; i < count; ++i)
 ## 其他资源
 - [CPU 设置 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
 - [ATG 提供的 CPUSets 示例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [Xbox One 上的 UWP](index.md)
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

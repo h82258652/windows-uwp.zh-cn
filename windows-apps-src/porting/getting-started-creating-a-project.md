@@ -5,7 +5,7 @@ description: "Microsoft Visual Studio 与 Windows 的关系就像 Xcode 与 iOS 
 title: "在 Visual Studio 中创建项目"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 23d9ed066e2909a15b3106fd19bf6ce5ab09e7a9
+ms.openlocfilehash: 40dc6a52dbd495a78e5aa0d95a590d3e878d4068
 
 ---
 
@@ -56,6 +56,6 @@ Visual Studio 与此非常相似。 你将看到“起始页”****，如下图�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

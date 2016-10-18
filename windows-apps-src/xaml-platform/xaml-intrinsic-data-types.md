@@ -5,7 +5,7 @@ title: "XAML 固有数据类型"
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
 translationtype: Human Translation
 ms.sourcegitcommit: 60e328ca8652baeb226e78f5a9d99fbf8c4f5208
-ms.openlocfilehash: 479b900ca14497712f25a7825fde6775a3c1ab60
+ms.openlocfilehash: a204f1d000dd28a9159b4ca795107046ca4ef92e
 
 ---
 
@@ -46,6 +46,6 @@ XAML 2009 规范还介绍了其他 XAML 语言级原语，例如 **x:Uri** 和 *
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

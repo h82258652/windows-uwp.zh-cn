@@ -4,15 +4,15 @@ ms.assetid: 15d8cc6c-80f9-49b7-8036-0abf80ffebba
 description: "了解用于开发带有广告的应用的其他资源"
 title: "其他帮助"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: bacda14bc48d6707a8f717c554fe7aaa22b202e0
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: a45a09efabf7014658029b0302a56cefac8b0141
 
 ---
 
 # 其他帮助
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 以下资源提供有关开发带有广告的应用的详细信息。
 
@@ -34,6 +34,6 @@ ms.openlocfilehash: bacda14bc48d6707a8f717c554fe7aaa22b202e0
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

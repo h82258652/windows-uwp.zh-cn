@@ -5,7 +5,7 @@ description: "Windows 运行时组件是自包含对象，可将其实例化，�
 ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 translationtype: Human Translation
 ms.sourcegitcommit: 4e9f3de68c44cf545ceee2efd99d9db8cab08676
-ms.openlocfilehash: ddbfc30f765bdb1dacbf5c6b72255233fe134073
+ms.openlocfilehash: e0dfdce921ee910d0440f01b4f816598499925f5
 
 ---
 
@@ -37,6 +37,6 @@ Windows 运行时组件是自包含对象，可将其实例化，并可采用任
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

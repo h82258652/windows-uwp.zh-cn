@@ -5,7 +5,7 @@ description: "本文介绍如何使用 C++ 创建 Windows 运行时组件，该�
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 1497175723738cc23ec21b280c9639b216a33ddd
+ms.openlocfilehash: 65114d476da1a7f9113987ebccc8bdbaca6381a7
 
 ---
 
@@ -598,6 +598,6 @@ C# 和 Visual Basic 均支持枚举语言。 这些语言将 C++ 公共枚举类
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

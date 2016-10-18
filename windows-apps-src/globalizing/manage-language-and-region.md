@@ -7,7 +7,7 @@ label: Manage language and region
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 294f087fffeefda67ddacd09636915144bf18ff4
+ms.openlocfilehash: 5a7519d9ea7a121e3e3087debba6d6193b1d8155
 
 ---
 
@@ -124,11 +124,11 @@ Windows 以一个标准的易于理解的方式排定语言匹配的优先顺序
 
 ### <span id="Set_the_HTTP_Accept_Language_header."></span><span id="set_the_http_accept_language_header."></span><span id="SET_THE_HTTP_ACCEPT_LANGUAGE_HEADER."></span>设置 HTTP 接受的语言标头。
 
-从 Windows 应用商店应用和桌面应用发出的典型 Web 请求和 XMLHttpRequest (XHR) 中的 HTTP 请求使用标准的 HTTP Accept-Language 标头。 默认情况下，HTTP 标头设置为在“设置”****&gt;“时间和语言”****&gt;“区域和语言”****中指定的用户语言首选项（按用户的首选顺序）。 列表中的每种语言进一步扩展为包含中性语言和权重 (q)。 例如，fr-FR 和 en-US 的用户语言列表会产生 fr-FR、fr、en-US、en 的 HTTP Accept-Language 标头（“fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3”）。
+从 Windows 应用商店应用和桌面应用发出的典型 Web 请求和 XMLHttpRequest (XHR) 中的 HTTP 请求使用标准的 HTTP Accept-Language 标头。 默认情况下，HTTP 标头设置为在“设置”****&gt;“时间和语言”****&gt;“区域和语言”****中指定的用户语言首选项（按用户的首选顺序排列）。 列表中的每种语言进一步扩展为包含中性语言和权重 (q)。 例如，fr-FR 和 en-US 的用户语言列表会产生 fr-FR、fr、en-US、en 的 HTTP Accept-Language 标头（“fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3”）。
 
 ### <span id="Use_the_APIs_in_the_Windows.Globalization_namespace."></span><span id="use_the_apis_in_the_windows.globalization_namespace."></span><span id="USE_THE_APIS_IN_THE_WINDOWS.GLOBALIZATION_NAMESPACE."></span>使用 Windows.Globalization 命名空间中的 API。
 
-通常，[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 命名空间中的 API 元素使用应用程序语言列表确定语言。 如果没有任何一种语言有匹配的格式，则使用用户区域设置。 该区域设置即系统时钟所使用的区域设置。 用户区域设置在“设置”****&gt;“时间和语言”****&gt;“区域和语言”****&gt;“其他日期、时间和区域设置”****&gt;“区域: 更改日期、时间或数字格式”****中提供。 **Windows.Globalization** API 还接受替代来指定要使用的语言列表，而不使用应用程序语言列表。
+通常，[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 命名空间中的 API 元素使用应用程序语言列表确定语言。 如果没有任何一种语言有匹配的格式，则使用用户区域设置。 该区域设置即系统时钟所使用的区域设置。 “设置”****&gt;“时间和语言”****&gt;“区域和语言”****&gt;“其他日期、时间和区域设置”****&gt;“区域：更改日期、时间或数字格式”****中提供了用户区域设置。 **Windows.Globalization** API 还接受替代来指定要使用的语言列表，而不使用应用程序语言列表。
 
 [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 还具有作为帮助程序对象提供的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象。 它帮助应用检查有关语言的详细信息，例如，语言的脚本、显示名称和本地名称。
 
@@ -224,6 +224,6 @@ Windows 以一个标准的易于理解的方式排定语言匹配的优先顺序
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

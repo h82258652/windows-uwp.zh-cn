@@ -4,15 +4,15 @@ ms.assetid: 5efb4f40-a021-4dd2-82b4-7c95c3849485
 description: "请完整地阅读最终用户许可协议 (EULA) 以获取重要信息。"
 title: "重要提示 - EULA"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 89af54f5b8cf52366100b4751ed37ddd7a7bacb7
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 1482450a8e5039ffd61a90f7cd38738115c5f2f0
 
 ---
 
 # 重要提示 - EULA
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 请完整地阅读最终用户许可协议 (EULA)。
 
@@ -30,6 +30,6 @@ EULA 可在扩展 SDK 所在的文件夹中找到。 此文件夹可能不同，
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

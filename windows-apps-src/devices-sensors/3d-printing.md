@@ -4,15 +4,19 @@ ms.assetid: 551d4e70-312d-4b40-8d3e-336ce934e0ad
 title: "3D 打印"
 description: "本部分介绍如何在通用 Windows 应用中使用 3D 打印功能。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d06659defe0c866297049bb7a937d066f6afd6b7
+ms.sourcegitcommit: d6158b654b3d9edcb9bd3a52b0fe58154ce40565
+ms.openlocfilehash: f3e01344bf7879e8992f4f7976c65ca0b7e616b1
 
 ---
 # 3D 打印
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本部分介绍如何在通用 Windows 应用中使用 3D 打印功能。
+本部分介绍了如何利用 [3D 打印 API](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) 向你的通用 Windows 应用添加 3D 打印功能。  
+
+<!-- ![the 3D printing from Unity sample uses Windows 3D print APIs to facilitate the printing of a textured model asset from Unity software](images/unity-app-screenshot-002.png) -->
+
+有关 Windows 10 中的 3D 打印的详细信息（包括面向硬件合作伙伴的资源、社区论坛和有关 3D 打印功能的常规信息），请参阅硬件开发人员中心上的 [Windows 10 中的 3D 打印](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)站点。
 
 | 主题 | 描述 | 
 |-------|-------------|
@@ -21,14 +25,15 @@ ms.openlocfilehash: d06659defe0c866297049bb7a937d066f6afd6b7
 
 ## 相关主题
 
+* [Windows 10 的 3D 打印（硬件开发人员中心）](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)
 * [UWP 3D 打印示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
 * [通过 Unity 实现 UWP 3D 打印示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
-* [硬件：Windows 10 的 3D 打印](https://msdn.microsoft.com/windows/hardware/bg183398.aspx)
+
  
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

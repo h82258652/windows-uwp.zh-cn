@@ -3,8 +3,8 @@ Description: "介绍如何将 Windows 桌面应用程序（如 Win32、WPF 和 W
 Search.Product: eADQiWindows 10XVcnh
 title: "将 Windows 桌面使用程序手动转换为通用 Windows 平台 (UWP) 应用"
 translationtype: Human Translation
-ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
-ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
+ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
+ms.openlocfilehash: 646a5b88cb7ca97f18bf4552950979a2ceead398
 
 ---
 
@@ -12,9 +12,9 @@ ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-使用转换器方便并且自动，如果你不确定安装程序的用途，则它很有用。 但是如果应用使用 xcopy 安装，或者你熟悉应用的安装程序对系统所做的更改，可以选择手动创建应用包和清单。
+使用转换器方便并且自动，如果你不确定安装程序的用途，则它很有用。 但是，如果应用使用 xcopy 安装，或者你熟悉应用的安装程序对系统所做的更改，可以选择手动创建应用包和清单。
 
-以下是手动创建 Centennial 程序包的步骤：
+以下是手动创建程序包的步骤：
 
 ## 手动创建清单。
 
@@ -103,6 +103,6 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -1,16 +1,20 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: "准备工作"
 description: "准备工作比想像中的简单。 按照以下说明开始为 Windows 10 创建通用 Windows 平台 (UWP) 应用。"
 translationtype: Human Translation
-ms.sourcegitcommit: a47dc36129daaed02cb181dde625d440fa4cf6e4
-ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
+ms.sourcegitcommit: 75c036fc934a8071f17a8690a22a03e10c4fe1d4
+ms.openlocfilehash: 729c71fbe0db202bd4f5ce15bea87caa973adf80
 
 ---
 # 准备工作
 
 准备工作比想像中的简单。 按照以下说明开始为 Windows 10 创建通用 Windows 平台 (UWP) 应用。
+
+> [!NOTE]
+> 你是 Mac 用户吗？ 或者，你现在还不想在电脑上安装任何内容？ 请尝试[设置基于 Web 的虚拟机完成 Build2016 编码挑战](https://developer.microsoft.com/windows/projects/events/build2016/all/codingchallenges)。
+
 
 ## 1. 获取 Windows 10
 
@@ -21,6 +25,8 @@ ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
 你是一位 MSDN 订户吗？ 可以从此处获取 ISO 下载：
 
 -   从 [MSDN 订户下载](http://go.microsoft.com/fwlink/p/?LinkId=266384)获取 Windows 10
+
+
 
 ## 2. 下载或更新 Visual Studio
 
@@ -59,7 +65,6 @@ Microsoft Visual Studio 2015 可帮助你设计、编码、测试和调试应用
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

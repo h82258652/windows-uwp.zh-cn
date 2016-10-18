@@ -2,16 +2,14 @@
 description: "获取有关向 UWP 应用添加控件 &amp; 模式的设计指南和编码说明。 为你找到了超过 45 种功能强大的控件，这些控件可与你的应用结合使用。"
 title: "UWP 控件和模式 - Windows 应用开发"
 author: mijacobs
-keywords: uwp controls, user interface, app controls
+keywords: "UWP 控件, 用户界面, 应用控件"
 translationtype: Human Translation
-ms.sourcegitcommit: 7c45a464be250e210df48d3fdef35f00d77e16d5
-ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
+ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
+ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
 # UWP 应用的控件和模式
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 在 UWP 应用开发中，<i>控件</i>是一种显示内容或支持交互的 UI 元素。 控件是用户界面的构建基块。 我们提供了超过 45 种控件供你使用，范围从简单按钮到网格视图之类的功能强大的数据控件。 <i>模式</i>是合并多个控件来创造新内容的一种方式。
 
@@ -67,7 +65,7 @@ ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
 </li>
 
 
-<li>[对话框、弹出窗口和菜单](dialogs-popups-menus.md)</li>
+<li>[对话框和浮出控件](dialogs.md)</li>
 
 <li>[翻转视图](flipview.md)</li>
 
@@ -88,6 +86,8 @@ ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
 <li>[自定义传输控件](custom-transport-controls.md)</li>
 </ul>
 </li>
+
+<li>[菜单和上下文菜单](menus.md)</li>
 
 <li>[导航窗格](nav-pane.md)</li>
 
@@ -143,6 +143,8 @@ ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
 
 <li>[自适应和交互式 Toast 通知](tiles-and-notifications-adaptive-interactive-toasts.md)</li>
 
+<li>[锁屏提醒通知](tiles-and-notifications-badges.md)</li>
+
 <li>[通知可视化工具](tiles-and-notifications-notifications-visualizer.md)</li>
 
 <li>[通知传递方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)</li>
@@ -167,6 +169,6 @@ ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

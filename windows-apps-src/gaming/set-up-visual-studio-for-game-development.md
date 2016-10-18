@@ -5,7 +5,7 @@ description: "概要介绍了 Visual Studio 中提供的 DirectX 特定工具。
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2202474f24e93aab32ec9f4e85e765616cbae056
+ms.openlocfilehash: 59fe007601d16f6586ec52c0026e161ad6350a1e
 
 ---
 
@@ -152,6 +152,6 @@ Visual Studio 提供特定于图形的调试工具。 可使用这些工具来�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

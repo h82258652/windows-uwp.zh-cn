@@ -4,8 +4,8 @@ title: "处理取消的后台任务"
 description: "了解如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。"
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 ---
 
@@ -19,19 +19,19 @@ ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 -   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)
 -   [**ApplicationData.Current**](https://msdn.microsoft.com/library/windows/apps/br241619)
 
-了解如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。
+了解如何创建一个后台任务，该任务识别取消请求、停止工作，并向使用永久性存储的应用报告取消。
 
-> **注意** 对于除台式机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或者应用没有处理该异常，则后台任务将在没有警告且不引发 OnCanceled 事件的情况下终止。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此方案。
+本主题假定你已创建一个后台任务类，其中包含用作后台任务入口点的 Run 方法。 若要开始快速生成后台任务，请参阅[创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)。 有关条件和触发器的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-本主题假定你已创建一个后台任务类，其中包含用作后台任务入口点的 Run 方法。 若要快速生成后台任务，请参阅[创建和注册后台任务](create-and-register-a-background-task.md)。 有关条件和触发器的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+本主题也适用于单进程后台任务。 但是，使用 OnBackgroundActivated() 替换 Run() 方法。 单进程后台任务不需要你使用永久性存储发送取消信号，因为你可以使用应用状态传达取消（如果后台任务与前台应用在同一进程中运行）。
 
 ## 使用 OnCanceled 方法识别取消请求
 
 编写一个用于处理取消事件的方法。
 
-创建一个名为 OnCanceled 的方法，该方法具有以下足迹。 该方法是 Windows 运行时在针对后台任务进行取消请求时调用的入口点。
+> **注意** 对于除台式计算机以外的所有设备系列，如果设备内存不足，后台任务可能会终止。 如果没有呈现内存不足异常，或者应用没有处理该异常，则后台任务将在没有警告且不引发 OnCanceled 事件的情况下终止。 这有助于确保前台中应用的用户体验。 应该将后台任务设计为处理此情形。
 
-OnCanceled 方法需要具有以下占用：
+创建一个名为 OnCanceled 的方法，如下所示。 该方法是 Windows 运行时在针对后台任务进行取消请求时调用的入口点。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -86,7 +86,7 @@ OnCanceled 方法需要具有以下占用：
 >     }
 > ```
 
-在后台任务的 Run 方法中，在开始工作之前注册 OnCanceled 事件处理程序方法。 例如，使用以下代码行：
+在后台任务的 Run 方法中，在开始工作之前注册 OnCanceled 事件处理程序方法。 在单进程后台任务中，执行此注册操作可能是应用程序初始化的一部分。 例如，使用以下代码行：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -96,12 +96,11 @@ OnCanceled 方法需要具有以下占用：
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## 通过退出 Run 方法来处理取消
+## 通过退出后台任务处理取消
 
+当收到取消请求时，执行后台工作的方法需要通过识别 **\_cancelRequested** 何时设置为 **true** 停止工作并退出。 对于单进程后台任务，这意味着从 `OnBackgroundActivated()` 方法返回。 对于在单独进程中运行的后台任务，这意味着从 `Run()` 方法返回。
 
-当收到取消请求时，Run 方法需要通过识别 **\_cancelRequested** 何时设置为 **true** 来停止工作并退出。
-
-修改后台任务的代码以在它工作时检查该标志变量。 如果 **\_cancelRequested** 设置为 true，则停止工作。
+修改后台任务类的代码以在它工作时检查该标志变量。 如果 **\_cancelRequested** 设置为 true，则停止工作。
 
 [后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包含一个检查，该检查在后台任务取消时停止定期计时器回调：
 
@@ -135,7 +134,7 @@ OnCanceled 方法需要具有以下占用：
 
 > **注意** 上面所示的代码示例使用用于记录后台任务进度的 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) 属性。 使用 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 类将进度报告回应用。
 
-修改 Run 方法以便停止工作后，它记录该任务是已完成还是已取消。
+修改 Run 方法，以便在停止工作后，它记录该任务是已完成还是已取消。 此步骤适用于在单独进程中运行的后台任务，因为你需要一种取消后台任务后在进程之间通信的方法。 对于单进程后台任务，可以仅与应用程序共享状态，以指示该任务已取消。
 
 [后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)将状态记录在 LocalSettings 中：
 
@@ -348,6 +347,6 @@ OnCanceled 方法需要具有以下占用：
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

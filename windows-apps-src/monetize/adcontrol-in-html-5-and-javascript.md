@@ -2,17 +2,17 @@
 author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: "了解如何使用 AdControl 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML 应用中显示横幅广告。"
-title: "HTML 5 和 Javascript 中的 AdControl"
+title: "HTML 5 和 JavaScript 中的 AdControl"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
 
 ---
 
-# HTML 5 和 Javascript 中的 AdControl
+# HTML 5 和 JavaScript 中的 AdControl
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 本演练介绍如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 类在适用于 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML 应用中显示横幅广告。 本演练不使用 **AdMediatorControl** 或广告中介。
 
@@ -21,7 +21,8 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 ## 先决条件
 
 
-* 使用 Visual Studio 2015 或 Visual Studio 2013 安装 [Microsoft 官方商城协定和盈利 SDK](http://aka.ms/store-em-sdk)。
+* 对于 UWP 应用：使用 Visual Studio 2015 安装 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)。
+* 对于 Windows 8.1 或 Windows Phone 8.1 应用：使用 Visual Studio 2015 或 Visual Studio 2013 安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。
 
 > **注意** 如果你已使用 Visual Studio 2015 安装了 Windows 10 Anniversary SDK Preview Build 14295 或更高版本，还必须安装 WinJS 库。 此库过去包含在以前版本的 Windows SDK（适用于 Windows 10）中，但从 Windows 10 Anniversary SDK Preview Build 14295 开始，此库必须单独安装。 若要安装 WinJS，请参阅[获取 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
 
@@ -65,12 +66,11 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > **注意** 在包含了 default.js 之后，此行必须放置在**&lt;标题&gt;**部分；否则，当你生成项目时将遇到错误。
+    > **注意**&nbsp;&nbsp;在包含了 default.js 之后，此行必须放置在 **&lt;head&gt;** 部分；否则，在生成项目时会遇到错误。
 
-8.  修改 default.html 文件（或其他适用于你的项目的 html 文件）的**&lt;正文&gt;**部分，以便包含 **AdControl** 的 div。 将 **AdControl** 中的 **applicationId** 和 **adUnitId** 属性分配给[测试模式值](test-mode-values.md)中提供的测试值，然后调整控件的高度和宽度，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
+8.  修改 default.html 文件（或其他适用于你的项目的 html 文件）的 **&lt;body&gt;** 部分，以便包含 **AdControl** 的 div。 将 **AdControl** 中的 **applicationId** 和 **adUnitId** 属性分配给[测试模式值](test-mode-values.md)中提供的测试值，然后调整控件的高度和宽度，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
 
-    > **注意**  
-    在提交应用之前，你需要将测试 **applicationId** 和 **adUnitId** 值替换为实时值。
+    > **注意**&nbsp;&nbsp;在提交应用之前，你需要将这些测试 **applicationId** 和 **adUnitId** 值替换为实时值。
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -84,7 +84,7 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 ## 使用 Windows 开发人员中心发布带有实时广告的应用
 
 
-1.  在“开发人员中心仪表板”中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，请指定“横幅”****。 记下广告单元 ID 和应用程序 ID。
+1.  在开发人员中心仪表板中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，请指定“横幅”****。 记下广告单元 ID 和应用程序 ID。
 
 2.  在你的代码中，将测试广告单元值（**applicationId** 和 **adUnitId**）替换为你在开发人员中心生成的实时值。
 
@@ -133,6 +133,6 @@ ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

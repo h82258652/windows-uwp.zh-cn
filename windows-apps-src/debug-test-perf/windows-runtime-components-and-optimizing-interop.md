@@ -5,7 +5,7 @@ title: "通用 Windows 平台组件和优化互操作"
 description: "创建使用 UWP 组件的通用 Windows 平台 (UWP) 应用并在本机和托管类型之间进行互操作，同时避免互操作性能问题。"
 translationtype: Human Translation
 ms.sourcegitcommit: 5c7a49558ed11f82b7afea1ea96271c45c2f9139
-ms.openlocfilehash: b9300b3feb1e5229951f3e1ebe454b61ba8065ae
+ms.openlocfilehash: bfbf4a630b1874f718a1ebd41caf96c72e2f05c5
 
 ---
 # 通用 Windows 平台组件和优化互操作
@@ -90,6 +90,6 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,18 +1,15 @@
 ---
 author: TylerMSFT
-title: "通用 Windows 平台 (UWP) 应用指南"
-description: "了解可跨多种设备运行的通用 Windows 平台 (UWP) 应用。"
+title: "通用 Windows 平台简介"
+description: "了解通用 Windows 平台 (UWP) 应用，此类应用可跨多种使用 Windows 10 的设备运行。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 2df873ad451e2bb1196a1ce42e3fcd40f8c3ac8e
-ms.openlocfilehash: 925db2c5242eb49229f41298f1db4e2653f3499d
+ms.sourcegitcommit: 0f2ed552898f7cbb476055a6d6b7aa76545113b1
+ms.openlocfilehash: c433bd2eba2a5be114680f52a8da0b5c7b563186
 
 ---
 
-# 通用 Windows 平台 (UWP) 应用指南
-
-
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+# 通用 Windows 平台简介
 
 在本指南中，你将了解如下内容：
 
@@ -284,6 +281,6 @@ Windows 10 引入了现有缩放模型的演变。 除了缩放矢量内容外�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 

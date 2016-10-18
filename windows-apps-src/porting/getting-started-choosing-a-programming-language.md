@@ -5,7 +5,7 @@ ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: "选择编程语言"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
+ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
 
 ---
 
@@ -145,6 +145,6 @@ C# 是一种简单易学的语言，并附带构成 .NET 的许多支持类和�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

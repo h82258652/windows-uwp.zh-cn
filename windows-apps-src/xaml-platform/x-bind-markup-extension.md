@@ -4,12 +4,12 @@ description: "xBind 标记扩展是 Binding 的备用选项。 虽然 xBind 缺�
 title: "xBind 标记扩展"
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
+ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
+ms.openlocfilehash: 7380386a77338c1fce7a7184b558a06605ffdf33
 
 ---
 
-# {x&#58;Bind} 标记扩展
+# {x:Bind} 标记扩展
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,7 +17,7 @@ ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
 
 **{x:Bind}** 标记扩展（Windows 10 的新增内容）是 **{Binding}** 的备用选项。 虽然 **{x:Bind}** 缺少 **{Binding}** 中的一些功能，但它运行时所花费的时间和使用的内存量均比 **{Binding}** 要少，且支持更好的调试。
 
-在 XAML 加载时，**{x:Bind}** 将转换为你所需的绑定对象，此对象将从数据源上的某一属性中获取相关值。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新。 该对象也可以配置为将其自己的值的更改推送回源属性。 由 **{x:Bind}** 和 **{Binding}** 创建的绑定对象在功能上大致等同。 不过，**{x:Bind}** 执行编译时所生成的专用代码，而 **{Binding}** 使用通用的运行时对象检查。 因此，**{x:Bind}** 绑定（通常指已编译的绑定）具有出色的性能、提供编译时对绑定表达式的验证，并支持通过允许你在作为页面的部分类生成的代码文件中设置断点进行调试。 可以在 `obj` 文件夹中找到这些文件，其名称类似于（适用于 C#）`<view name>.g.cs`。
+XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获取相关值的代码，并将其设置到标记中指定的属性上。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新。 该对象也可以配置为将其自己的值的更改推送回源属性。 由 **{x:Bind}** 和 **{Binding}** 创建的绑定对象在功能上大致等同。 不过，**{x:Bind}** 执行编译时所生成的专用代码，而 **{Binding}** 使用通用的运行时对象检查。 因此，**{x:Bind}** 绑定（通常指已编译的绑定）具有出色的性能、提供编译时对绑定表达式的验证，并支持通过允许你在作为页面的部分类生成的代码文件中设置断点进行调试。 可以在 `obj` 文件夹中找到这些文件，其名称类似于（适用于 C#）`<view name>.g.cs`。
 
 **用于演示 {x:Bind} 的应用示例**
 
@@ -41,13 +41,15 @@ ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
 |------|-------------|
 | _propertyPath_ | 一个指定绑定的属性路径的字符串。 下面的[属性路径](#property-path)部分中提供了更多信息。 |
 | _bindingProperties_ |
-| _propName_ = _value_\[, _propName_=_value_\]* | 使用一个名称/值对语法指定的一个或多个绑定属性。 |
-| _propName_ | 要在绑定对象上设置的属性的字符串名称。 例如，“Converter”。 | 
+| _propName_=_value_\[, _propName_=_value_\]* | 使用一个名称/值对语法指定的一个或多个绑定属性。 |
+| _propName_ | 要在绑定对象上设置的属性的字符串名称。 例如，“Converter”。 |
 | _value_ | 要将属性设置为的值。 参数的语法取决于要设置的属性。 下面是 _propName_=_value_ 用法的示例，其中该值本身就是一个标记扩展：`Converter={StaticResource myConverterClass}`。 有关详细信息，请参阅下面的[可使用 {x:Bind} 设置的属性](#properties-you-can-set)部分。 | 
 
 ## 属性路径
 
 *PropertyPath* 为 **{x:Bind}** 表达式设置 **Path**。 **Path** 是一个属性路径，用于指定要绑定到的（源）属性、子属性、字段或方法的值。 你可以明确指出 **Path** 属性名称：`{Binding Path=...}`。 也可以将其省略：`{Binding ...}`。
+
+### 属性路径解决方案
 
 **{x:Bind}** 不会将 **DataContext** 用作默认源，而是将改用页面或用户控件本身。 因此，它将针对属性、字段和方法查找代码隐藏的页面或用户控件。 要向 **{x:Bind}** 显示视图模型，你通常需要将新字段或属性添加到代码隐藏的页面或用户控件。 属性路径中的步骤由点号 (.) 分隔，并且可包含多个分隔符以遍历连续的子属性。 无论使用何种编程语言，均可将点号分隔符用于实现要绑定到的对象。
 
@@ -55,19 +57,99 @@ ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
 
 对于 C++/CX，**{x:Bind}** 无法绑定到页面或数据模型中的私有字段和属性，你需要具有其可绑定的公共属性。 绑定的图面区域需显示为 CX 类/接口，以便我们可以获取相关的元数据。 无需使用 **\[Bindable\]** 属性。
 
+使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 使用 **x:Bind** 时，你可以使用元素的名称作为绑定路径的第一部分，因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。
+
+### 集合
+
 如果数据源是一个集合，则属性路径可以按照位置或索引来指定集合中的项目。 例如“Teams\[0\].Players”，其中文本“\[\]”中包含“0”，用以请求从零开始编制索引的集合中的第一个项目。
 
 若要使用索引器，该模型需要在将编入索引的属性类型上实现 **IList&lt;T&gt;** 或 **IVector&lt;T&gt;**。 如果已编入索引的属性类型支持 **INotifyCollectionChanged** 或 **IObservableVector** 且绑定是单向或双向，则它将针对这些接口上的更改通知进行注册和侦听。 更改检测逻辑将基于所有集合更改进行更新，即使这不会影响特定的索引值也是如此。 这是因为侦听逻辑在集合的所有实例中是通用的。
 
+如果数据源是字典或地图，则属性路径可以按字符串名称指定集合中的项。 例如，**&lt;TextBlock Text="{x:Bind Players\['John Smith'\]" /&gt;** 将在字典中查找名为“John Smith”的项。 名称需要使用引号括起来，单引号或双引号都可以使用。 乘幂号 (^) 可用于转义字符串中的引号。 通常最简单的做法是替换使用用于 XAML 属性的引号。
+
+若要使用字符串索引器，该模型需要在将编入索引的属性类型上实现 **IDictionary&lt;string, T&gt;** 或 **IMap&lt;string, T&gt;**。 如果已编入索引的属性类型支持 **IObservableMap** 且绑定是单向或双向，则它将针对这些接口上的更改通知进行注册和侦听。 更改检测逻辑将基于所有集合更改进行更新，即使这不会影响特定的索引值也是如此。 这是因为侦听逻辑在集合的所有实例中是通用的。
+
+### 附加属性
+
 若要绑定到附加属性，你需要将类和属性名称放入点号后面的括号内。 例如 **Text="{x:Bind Button22.(Grid.Row)}"**。 如果未在 Xaml 命名空间中声明该属性，你需要在其前面加上 xml 命名空间，这应该映射到文档的标头处的代码命名空间中。
 
-已编译的绑定为强类型，并且将解析路径中的每个步骤的类型。 如果返回的类型没有成员，则它将在编译时失败。 你可以指定转换来告知绑定对象的实际类型。 在以下用例中，**obj** 为类型对象的属性，但包含一个文本框，因此我们可以使用 **Text="{x:Bind obj.(TextBox.Text)}"**。
+### 强制转换
 
-**Text="{x:Bind groups3\[0\].(data:SampleDataGroup.Title)}"** 中的 **groups3** 字段是一个对象字典，因此必须将其转换为 **data:SampleDataGroup**。 请注意 **data:** 命名空间前缀的用法，可用于将对象类型映射到不是默认 XAML 命名空间组成部分的某一命名空间。
+已编译的绑定为强类型，并且将解析路径中的每个步骤的类型。 如果返回的类型没有成员，则它将在编译时失败。 你可以指定转换来告知绑定对象的实际类型。 在以下用例中，**obj** 为类型对象的属性，但包含一个文本框，因此我们可以使用 **Text="{x:Bind ((TextBox)obj).Text}"** 或 **Text="{x:Bind obj.(TextBox.Text)}"**。
+**Text="{x:Bind ((data:SampleDataGroup)groups3\[0\]).Title}"** 中的 **groups3** 字段是一个对象字典，因此必须将其转换为 **data:SampleDataGroup**。 请注意 xml **data:** 命名空间前缀的用法，可用于将对象类型映射到不是默认 XAML 命名空间组成部分的某一代码命名空间。
 
-使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 使用 **x:Bind** 时，你可以使用元素的名称作为绑定路径的第一部分，因为已命名的元素变为表示根绑定源的页面或用户控件内的字段。
+_注意：C# 样式的强制转换语法较附加属性语法更灵活，是接下来建议使用的语法。_
 
-事件绑定是编译绑定的一项新功能。 它允许你使用绑定为事件指定处理程序，而无需使其成为代码隐藏的方法。 例如：**Click="{x:Bind rootFrame.GoForward}"**。
+## 绑定路径中的函数
+
+从 Windows 10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作
+- 实现值转换的更简单方法
+- 依赖多个参数适用于绑定的方法
+
+> [!NOTE]
+> 若要使用 **{x:Bind}** 的函数，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，无法使用这些函数。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+
+在以下示例中，项目的背景和前景会绑定到这些函数，根据颜色参数执行转换。
+
+``` Xamlmarkup
+<DataTemplate x:DataType="local:ColorEntry">
+    <Grid Background="{x:Bind Brushify(Color)}" Width="240">
+        <TextBlock Text="{x:Bind ColorName}" Foreground="{x:Bind TextColor(Color)}" Margin="10,5" />
+    </Grid>
+</DataTemplate>
+```
+``` C#
+class ColorEntry
+{
+    public string ColorName { get; set; }
+    public Color Color { get; set; }
+
+    public static SolidColorBrush Brushify(Color c)
+    {
+        return new SolidColorBrush(c);
+    }
+
+    public static SolidColorBrush TextColor(Color c)
+    {
+        return new SolidColorBrush(((c.R * 0.299 + c.G * 0.587 + c.B * 0.114) > 150) ? Colors.Black : Colors.White);
+    }
+}
+
+```
+### 函数语法
+``` Syntax
+Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Order.ShipAddr.Zip, 'Contoso'), Mode=OneTime}"
+             |      Path to function         |    Path argument   |       Path argument       | Const arg |  Bind Props
+```
+
+### 函数的路径
+与其他属性路径一样指定该函数的路径，可以包含用于定位该函数的点 (.)、索引器或强制转换。
+
+可以使用 XMLNamespace:ClassName.MethodName 语法指定静态函数。 例如，**&lt;CalendarDatePicker Date="\{x:Bind sys:DateTime.Parse(TextBlock1.Text)\}" /&gt;** 将映射到 DateTime.Parse 函数（假定在页面顶部指定了 **xmlns:sys="using:System"**）。
+
+如果模式为单向/双向，函数路径将对它执行更改检测，并且将重新计算绑定（如果对这些对象进行了更改）。
+
+要绑定的函数需要：
+- 可以访问代码和元数据 - 因此 internal / private 在 C# 中有效，但 C++/CX 需要方法为公有 WinRT 方法。
+- 重载基于参数数目，而不是基于参数类型，并且它将尝试匹配第一个带有许多参数的重载。
+- 参数类型需要匹配将传入的数据 - 我们不执行收缩转换
+- 函数的返回类型需要匹配正使用绑定的属性的类型
+
+
+### 函数参数
+可以指定多个函数参数，用逗号 (,) 分隔
+- 绑定路径 - 类似直接绑定该对象的语法。
+  - 如果模式为单向/双向，将执行更改检查，并在更改对象后重新计算绑定
+- 使用引号括起来的常量字符串 - 需要使用引号将它指定为一个字符串。 乘幂号 (^) 可用于转义字符串中的引号
+- 常数 - 例如，-123.456
+- 布尔值 – 指定为“x:True”或“x:False”
+
+### 双向函数绑定
+在双向绑定方案中，必须针对绑定的相反方向指定第二个函数。 使用 **BindBack** 绑定属性执行此操作，例如 **Text="\{x:Bind a.MyFunc(b), BindBack=a.MyFunc2\}"**。 该函数应该具有一个参数，其值需要返回给模型。
+
+## 事件绑定
+
+事件绑定是编译绑定的一项独特功能。 它允许你使用绑定为事件指定处理程序，而无需使其成为代码隐藏的方法。 例如：**Click="{x:Bind rootFrame.GoForward}"**。
 
 对于事件，目标方法不能重载，而且还必须：
 
@@ -94,7 +176,8 @@ ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
 | **ConverterParameter** | 指定可在转换器逻辑中使用的转换器参数。 （如果要设置 **ConverterParameter**，还应该设置 **Converter**。）大多数转换器使用可从要转换的传递值获取所有所需信息的简单逻辑，不需要 **ConverterParameter** 值。 **ConverterParameter** 参数适用于具有多个逻辑的中等高级转换器实现，这些逻辑可切断传入 **ConverterParameter** 的内容。 你可以编写一个转换器，使用除字符串之外的值，但这种情况并不常见，请参阅 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中的备注，以获取详细信息。 |
 | **FallbackValue** | 指定要在无法解析源或路径时显示的值。 |
 | **模式** | 将绑定模式指定为以下字符串之一：“OneTime”、“OneWay”或“TwoWay”。 默认值是“OneTime”。 请注意，该值不是 **{Binding}** 的默认值，大多数情况下为“OneWay”。 |
-| **TargetNullValue** | 指定要在源值解析但并非显式 **null** 时显示的值。 | 
+| **TargetNullValue** | 指定要在源值解析但并非显式 **null** 时显示的值。 |
+| **BindBack** | 指定要用于双向绑定的相反方向的函数。 | 
 
 **注意** 如果你要将标记从 **{Binding}** 转换为 **{x:Bind}**，请注意在 **Mode** 属性默认值方面的差异。
  
@@ -106,7 +189,13 @@ ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
 
 已编译的绑定取决于代码生成。 因此，如果你在资源字典中使用 **{x:Bind}**，则该资源字典需要有一个代码隐藏类。 有关代码示例，请参阅[带有 {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind) 的资源字典。
 
-**重要提示** 如果你为某一属性设置了本地值，而该属性之前具有一个用于提供本地值的 **{x:Bind}** 标记扩展，则绑定将完全删除。
+包含编译绑定的页面和用户控件将在生成的代码中具有“Bindings”属性。 这包括以下方法：
+- **Update()** - 此方法将更新所有编译绑定的值。 任何单向/双向绑定都将具有与检测更改挂钩的侦听器。
+- **Initiatlize()** - 如果尚未初始化绑定，则该方法会调用 Update() 初始化绑定
+- **StopTracking()** - 此方法将脱钩为单向和双向绑定创建的所有侦听器。 可以 Update() 方法重新初始化这些绑定。
+
+> [!NOTE]
+> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 **提示** 如果你需要为某个值指定单个花括号（例如在 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中），请在它前面加上反斜杠：`\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
 
@@ -135,7 +224,6 @@ ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

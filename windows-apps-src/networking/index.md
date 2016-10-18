@@ -4,8 +4,8 @@ ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: "用于访问网络和 Web 服务的技术。"
 title: "网络和 Web 服务"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b4e291c0948a7734b8ba188bc060dfba2e9a83d1
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 03a5ce2b8d5f501d4254cbe0ee3d47f575775f7a
 
 ---
 
@@ -24,11 +24,10 @@ ms.openlocfilehash: b4e291c0948a7734b8ba188bc060dfba2e9a83d1
 | [WebSockets](websockets.md)                                                             | WebSocket 提供了一种机制，用于使用 HTTP 通过 Web 在客户端与服务器之间进行既快捷又安全的双向通信。                 |
 | [HttpClient](httpclient.md)                                                             | 依据 HTTP 2.0 和 HTTP 1.1 协议，使用 [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空间 API 发送和接收信息。             |
 | [RSS/Atom 源](web-feeds.md)                                                          | 使用综合源检索或创建最新和最热门的 Web 内容，这些源通过 [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的功能根据 RSS 和 Atom 标准生成。                   |
-| [后台传输](background-transfers.md)                                         | 使用后台传输 API 以通过网络可靠地复制文件。           |
-| [使用 EDP 标识标记网络连接](tagging_network_connections_with_edp_identity.md) | 本主题介绍了如何在企业数据保护 (EDP) 方案中创建网络连接之前创建受保护的线程上下文。 |
+| [后台传输](background-transfers.md)                                         | 使用后台传输 API 通过网络可靠地复制文件。           |
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

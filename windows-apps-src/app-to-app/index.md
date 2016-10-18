@@ -4,8 +4,8 @@ description: "本部分介绍了如何在通用 Windows 平台 (UWP) 应用之�
 title: "应用到应用的通信"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: dcd542257761083f3ec04eb0da2b13d5d68a19e2
-ms.openlocfilehash: 63550064b6f31b85cd3b6fa2a09bac4b7cfcf895
+ms.sourcegitcommit: 94e1586a73743e8918ef160897b1b22c8c545ea0
+ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
 
 ---
 
@@ -29,10 +29,12 @@ ms.openlocfilehash: 63550064b6f31b85cd3b6fa2a09bac4b7cfcf895
 | [接收数据](receive-data.md) | 本文介绍如何接收使用“共享”合约从另一个应用共享的 UWP 应用中的内容。 此“共享”合约允许在用户调用“共享”时，将你的应用表示为一个选项。 |
 | [复制和粘贴](copy-and-paste.md) | 本文介绍如何支持在 UWP 应用中通过使用剪贴板进行复制和粘贴。 复制和粘贴是在应用之间或在应用内交换数据的传统方法，并且在一定程度上，几乎每个应用都可以支持剪贴板操作。 |
 | [拖放](drag-and-drop.md) | 本文说明如何将拖放操作添加到你的通用 UWP 应用中。 拖放是一种与内容（例如图像和文件）交互的经典且自然的方法。 实现后，拖放会在所有方向上无缝运行，包括应用到应用、应用到桌面和桌面到应用。 |
-| [使用 EDP 保护在应用之间传输的企业数据](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | 本主题演示了实现一些与数据传输相关的最常见企业数据保护 (EDP) 方案所需的编码任务示例。 |
+
+## 另请参阅
+- [开发 UWP 应用](https://developer.microsoft.com/en-us/windows/develop)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

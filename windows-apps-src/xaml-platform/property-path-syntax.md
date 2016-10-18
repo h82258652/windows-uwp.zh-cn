@@ -1,11 +1,11 @@
 ---
 author: jwmsft
 description: "可以使用 PropertyPath 类和字符串语法来实例化 XAML 或代码中的 PropertyPath 值。"
-title: "Property-path 语法&#39;"
+title: "Property-path 语法'"
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
+ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
+ms.openlocfilehash: 867fd859823c23cec9666095793871a4b78e7e52
 
 ---
 
@@ -13,7 +13,7 @@ ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-可以使用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 类和字符串语法来实例化 XAML 或代码中的 **PropertyPath** 值。 **PropertyPath** 值由数据绑定使用。 目标情节提要动画使用相似的语法。 但是动画目标不创建基础 Property-path 语法值，它将此信息保持为字符串。 对于这两种情形，都有属性路径来描述最终解析为单个属性的一个或多个对象-属性关系的遍历。
+可以使用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 类和字符串语法来实例化 XAML 或代码中的 **PropertyPath** 值。 **PropertyPath** 值由数据绑定使用。 目标情节提要动画使用相似的语法。 对于这两种情形，都由属性路径来描述最终解析为单个属性的一个或多个对象-属性关系的遍历。
 
 可将属性路径字符串直接设置为 XAML 中的属性。 可使用相同的字符串语法在代码中构造设置 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，或者使用 [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503) 在代码中设置动画目标。 Windows 运行时中有两个不同的使用属性路径的功能区域：数据绑定和动画目标。 动画目标不在 Windows 运行时实现中创建基础 Property-path 语法值，它将此信息保留为字符串，但对象-属性遍历的概念非常相似。 数据绑定和动画目标各自计算属性路径的方式略有不同，因此我们分别描述它们的属性路径语法。
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
 指示对象图中对象-属性关系的遍历的语法元素是点 (**.**) 字符。 属性路径字符串中的每个点指示对象（点左侧）与该对象的属性（点右侧）的分界。 字符串按从左到右的顺序计算，这样可以逐一遍历多个对象-属性关系。 我们来看个示例：
 
 ``` syntax
-<Binding Path="Customer.Address.StreetAddress1"
+"{Binding Path=Customer.Address.StreetAddress1}"
 ```
 
 以下是评估此路径的方法：
@@ -104,7 +104,7 @@ ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
 
 大多数情况下，你可以在 XAML 中应用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)，而根本不使用任何代码。 但在某些情况下，你可能希望使用代码定义一个 **PropertyPath** 对象并在运行时将其分配给某个属性。
 
-[ **PropertyPath** ](https://msdn.microsoft.com/library/windows/apps/br244259) 有一个 [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) 构造函数，没有默认构造函数。 你传递给此构造函数的字符串是一个使用我们前面介绍的属性路径语法定义的字符串。 这也是你用于将 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 分配为 XAML 属性的同一字符串。 **PropertyPath** 类的另一个（也是唯一一个）API 是 [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) 属性，该属性是只读的。 你可以将此属性用作另一个 **PropertyPath** 实例的构造字符串。
+[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 有一个 [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) 构造函数，没有默认构造函数。 你传递给此构造函数的字符串是一个使用我们前面介绍的属性路径语法定义的字符串。 这也是你用于将 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 分配为 XAML 属性的同一字符串。 **PropertyPath** 类的另一个（也是唯一一个）API 是 [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) 属性，该属性是只读的。 你可以将此属性用作另一个 **PropertyPath** 实例的构造字符串。
 
 ## 相关主题
 
@@ -119,6 +119,6 @@ ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

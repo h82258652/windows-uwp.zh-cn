@@ -5,7 +5,7 @@ title: "Epson ESC/POS（可进行格式设置）"
 description: "了解如何使用 ESC/POS 命令语言来为服务点打印机设置文本的格式（如粗体和双倍大小字符）。"
 translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 33231abb1e573d837193daeee21713f09c7d8448
+ms.openlocfilehash: b645e41d7456f1dff664e3f61721a3564d554202
 
 ---
 # Epson ESC/POS（可进行格式设置）
@@ -61,6 +61,6 @@ printJob.ExecuteAsync();
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

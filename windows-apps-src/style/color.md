@@ -1,14 +1,13 @@
 ---
 author: mijacobs
-Description: "颜色提供查找应用的各种级别的信息的直观方法，并用作强化交互模型的重要工具。"
+description: "颜色提供查找应用的各种级别的信息的直观方法，并用作强化交互模型的重要工具。"
 title: "颜色"
 ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
-label: Color
 template: detail.hbs
 extraBodyClass: style-color
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: 8e253c93f932e04b825478cf0801e4c8c0d43b9d
 
 ---
 
@@ -28,34 +27,19 @@ ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
 ![Xbox 主题色](images/accentcolorswatch_xbox.png) Xbox 主题色
 
 
-
 当用户选择了某种主题色时，它会显示为系统主题的一部分。 受影响的区域有“开始”菜单、任务栏、窗口镶边、选择的交互状态以及[常用控件](https://dev.windows.com/design/controls-patterns)中的超链接。 每个应用可以通过版式、背景和交互进一步合并主题色，或覆盖它以保留它们的特定品牌。
 
-## 颜色覆盖
+## 颜色调色板构建基块
 
 选定主题色后，会根据颜色亮度的 HSB 值创建浅色和深色的主题色。 应用可使用阴影变量创建可视化层次结构和提供交互指示。
 
 默认情况下，超链接将使用用户的主题色。 如果页面背景颜色相似，你可以选择将较浅（或较深）色调的主题色分配给超链接，以获取更好的对比度。
 
-<figure class="figure-img" >
-    <img src="images/shades.png" alt="A single accent color with its 6 shades"  />
-        <figcaption><p>默认主题色的各种浅色调/深色调。</p>
-</figcaption>
-</figure>
+![内含 6 种色调的单个主题色](images/shades.png) 默认主题色的各种浅色调/深色调。
 
-<figure class="figure-img" >
-    <img src="images/action_center_redline_zoom.png" alt="Redlines for Colored Action Center"  />
-        <figcaption><p>颜色逻辑如何应用于设计规范的示例。</p>
-</figcaption>
-</figure>
+![色彩操作中心的规范](images/action_center_redline_zoom.png) 颜色逻辑如何应用于设计规范的示例。
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-在 XAML 中，主要主题色显示为名为 `SystemAccentColor` 的[主题资源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 这些色调可用作 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 和 `SystemAccentColorDark3`。 也可以通过 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 和 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 枚举，以编程方式获得。
-    </div>
-</aside>
+**注意**&nbsp;&nbsp;在 XAML 中，主要主题色显示为名为 `SystemAccentColor` 的[主题资源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 这些色调可用作 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 和 `SystemAccentColorDark3`。 也可以通过 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 和 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 枚举，以编程方式获得。
 
 ## 颜色主题
 
@@ -89,20 +73,37 @@ ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
 #### 镶边
 ![镶边深色主题](images/themes-dark-chrome.png)
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-每种颜色都可用作遵循 `System*Color` 命名约定（`SystemChromeHighColor` 除外）的 XAML [主题资源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes)。 你可以通过 [Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx) 或 [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx) 控制你的应用的主题。
-    </div>
-</aside>
+
+## 更改主题
+
+可通过更改 App.xaml 中的 **RequestedTheme** 属性轻松更改主题：
+
+```XAML
+<Application
+    x:Class="App9.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App9"
+    RequestedTheme="Dark">
+
+</Application>
+```
+
+删除 **RequestedTheme** 意味着应用程序将沿用用户的应用模式设置，可以将这些设置选择为以深色或浅色主题查看你的应用。 
+
+确保在创建应用时考虑主题，因为主题对应用外观的影响较大。
 
 ## 辅助功能
 
 我们的调色板已经过优化，可在屏幕上使用。 我们建议文本与背景保持 4.5:1 的对比率，以达到最佳可读性。 有许多免费工具可用于测试你的颜色是否可行，如[对比率](http://leaverou.github.io/contrast-ratio/)。
 
+## 相关文章
+
+* [XAML 样式](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
+* [XAML 主题资源](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

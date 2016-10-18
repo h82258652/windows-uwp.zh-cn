@@ -4,8 +4,8 @@ title: "游戏和 DirectX"
 description: "通用 Windows 平台 (UWP) 提供了创建、分配游戏以及通过游戏获益的新机会。 了解有关启动新游戏或移植现有游戏的信息。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 translationtype: Human Translation
-ms.sourcegitcommit: 41ee0d2a45408b5b1a0dbc0b102f1b59843814b2
-ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
+ms.sourcegitcommit: adaff9abeb0ae8f9c9deb964b18e673c4d4c5f73
+ms.openlocfilehash: fccc85584e84bf3364130fe80c61b75c6377c0c8
 
 ---
 
@@ -31,7 +31,8 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 | [支持屏幕方向](supporting-screen-rotation-directx-and-cpp.md) | 下面我们将讨论在你的 UWP DirectX 应用中处理屏幕旋转的最佳做法，以便有效地使用 Windows 10 设备的图形硬件。 |
 | [游戏音频](working-with-audio-in-your-directx-game.md) | 学习如何开发音乐和声音并将其融入你的 DirectX 游戏，以及如何处理音频信号以创建动态和有方位感的声音。 |
 | [游戏的触摸控件](tutorial--adding-touch-controls-to-your-directx-game.md) | 学习如何将基本触摸控件添加到使用 DirectX 的 UWP C++ 游戏。 我们将介绍如何添加基于触摸的控件以便在 Direct3D 环境中移动固定平台相机，其中包括使用手指拖动或触笔改变相机视景。 |
-| [游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md) | 学习如何向你的 DirectX 游戏添加传统的鼠标和键盘移动观看控件（也称为鼠标观看控件）。 |
+| [游戏的移动观看控件](tutorial--adding-move-look-controls-to-your-directx-game.md) | 了解如何向你的 DirectX 游戏添加传统的鼠标和键盘移动观看控件（也称为鼠标观看控件）。 |
+| [相对鼠标移动](relative-mouse-movement.md) | 了解如何添加相对鼠标控件，这些控件不使用系统光标且不返回绝对屏幕坐标，而是跟踪鼠标移动之间的像素增量。 |
 | [优化输入和呈现循环](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) | 输入延迟可能会大大影响游戏体验，将其优化可使游戏更美观。 此外，适当的输入事件优化可延长电池寿命。 了解如何选择正确的 [CoreDispatcher](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) 输入事件处理选项，以确保你的游戏尽可能流畅地处理输入。 |
 | [交换链缩放和覆盖](multisampling--scaling--and-overlay-swap-chains.md) | 了解如何创建已缩放的交换链以提高在移动设备上的渲染速度，以及如何使用覆盖交换链（如果可用）来提高视觉质量。 |
 | [利用 DXGI 1.3 交换链减少延迟](reduce-latency-with-dxgi-1-3-swap-chains.md) | 使用 DXGI 1.3 通过等待交换链发信号通知开始呈现新帧的正确时间来减少有效的帧延迟。 |
@@ -42,7 +43,8 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 | [游戏的辅助功能](accessibility-for-games.md) | 了解如何使游戏更易于访问。 |
 | [游戏的云](cloud-for-games.md) | 了解如何利用云技术进行游戏开发。 |
 | [DirectX 和 XAML 互操作](directx-and-xaml-interop.md) | 你可以在 UWP 游戏中同时使用 Extensible Application Markup Language (XAML) 和 Microsoft DirectX。 |
-| [打包游戏](package-your-windows-store-directx-game.md) | 较大的 UWP 游戏可能会轻易地膨胀得很大，尤其是那些支持具有特定于区域的资源的多语言游戏或具有可选的高清晰度资源的游戏。 在本主题中，了解如何使用应用包和应用程序包来自定义应用，使你的客户仅收到真正需要的资源。 |
+| [打包游戏](package-your-windows-store-directx-game.md) | 较大的 UWP 游戏可能会轻易地膨胀得很大，尤其是那些支持具有特定于区域的资源的多语言游戏或具有可选的高清晰度资源的游戏。 在本主题中，了解如何使用应用包和应用程序包来自定义应用，以使你的客户仅收到真正需要的资源。 |
+| [概念审批](concept-approval.md) | 了解如何提交产品以供概念审批，产品需要通过该审批才能在 Xbox 上运行或使用 Xbox Live。 |
 | [游戏移植指南](porting-guides.md) | 提供将现有游戏移植到 Direct3D 11、UWP 和 Windows 10 的指南。 |
 | [游戏编程资源](additional-directx-game-programming-resources.md) | 有关在 Windows 上进行游戏编程的详细信息，请查看以下资源。 |
 
@@ -70,6 +72,6 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

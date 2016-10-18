@@ -7,7 +7,7 @@ label: Put UI strings into resources
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: b44d9235e34b8d4c75f663029d1dde3f87bd0eb7
+ms.openlocfilehash: e404eceb4aad562474cff264bb992a3d71a3bed4
 
 ---
 
@@ -36,11 +36,11 @@ ms.openlocfilehash: b44d9235e34b8d4c75f663029d1dde3f87bd0eb7
 3.  创建用于包含资源文件的文件夹。
     1.  在“解决方案资源管理器”中，右键单击该项目（如果你的解决方案包含多个项目，则为共享的项目），然后依次选择“添加”****&gt;“新建文件夹”****。
     2.  将新文件夹命名为“Strings”。
-    3.  如果未在“解决方案资源管理器”中看见新文件夹，请在该项目仍然处于选中状态时从 Microsoft Visual Studio 菜单中依次选择“项目”****&gt;“显示所有文件”****。
+    3.  如果没有在解决方案资源管理器中看见新文件夹，请在选中该项目时从 Microsoft Visual Studio 菜单中依次选择“项目”****&gt;“显示所有文件”****。
 
-4.  创建一个子文件夹和用于英语(美国)的资源文件。
+4.  创建一个子文件夹和用于英语（美国）的资源文件。
     1.  右键单击“Strings”文件夹，并在它下面添加新文件夹。 将它命名为“en-US”。 资源文件将放置在已为 [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) 语言标记命名的文件夹中。 有关语言限定符以及常用语言标记列表的详细信息，请参阅[如何使用限定符命名资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)。
-    2.  右键单击 en-US 文件夹，然后依次选择“添加”****&gt;“新建项…”****。
+    2.  右键单击 en-US 文件夹，然后依次选择“添加”****&gt;“新建项目…”****。
     3.  **XAML：**选择“资源文件 (.resw)”。
         <br>**HTML：**选择“资源文件 (.resjson)”。
 
@@ -249,6 +249,6 @@ auto str = loader->GetString("Farewell");
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

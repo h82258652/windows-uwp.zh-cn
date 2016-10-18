@@ -5,7 +5,7 @@ description: "了解如何创建已缩放的交换链以提高在移动设备上
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
 translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 3380c5156072a9853261ec6b706a612b42e7ba10
+ms.openlocfilehash: 1eea87b2175872e5a3bc7c41e82cda47bb555f82
 
 ---
 
@@ -329,6 +329,6 @@ Direct3D 11.2 中还引入了一项通过翻转模型交换链来减少延迟的
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

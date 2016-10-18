@@ -4,8 +4,8 @@ title: "处理 URI 激活"
 description: "了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。"
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 translationtype: Human Translation
-ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
-ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
+ms.sourcegitcommit: 0e0fa6cf082034110e11b9bde910564de8f5048c
+ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
 
 ---
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
 -   [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
 -   [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
 
-了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。 经典 Windows 平台 (CWP) 应用和通用 Windows 平台 (UWP) 应用都可以注册为 URI 方案名称的默认处理程序。 如果用户将你的应用选作 URI 方案名称的默认处理程序，则每次启动该类型 URI 时都将激活你的应用。
+了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。 Windows 桌面应用和通用 Windows 平台 (UWP) 应用都可以注册为 URI 方案名称的默认处理程序。 如果用户将你的应用选作 URI 方案名称的默认处理程序，则每次启动该类型 URI 时都将激活你的应用。
 
 如果希望处理该类型 URI 方案的所有 URI 启动，建议你仅针对 URI 方案名称进行注册。 如果选择了针对某个 URI 方案名称进行注册，则为该 URI 方案激活应用时必须向最终用户提供预期的功能。 例如，针对 mailto: URI 方案名称注册的应用应该能够打开新的电子邮件，以便用户编写新电子邮件。 有关 URI 关联的详细信息，请参阅[文件类型和 URI 指南和清单](https://msdn.microsoft.com/library/windows/apps/hh700321)。
 
@@ -176,6 +176,6 @@ ms.openlocfilehash: ac65b46ea06e64b3b431326db365ce23505c1096
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

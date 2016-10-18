@@ -4,8 +4,8 @@ ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: "本主题介绍如何使用 FaceDetector 检测图像中的人脸。 在视频帧的序列中，将随着时间的推移针对人脸跟踪优化 FaceTracker。"
 title: "检测图像或视频中的人脸"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
+ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
+ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 ---
 
@@ -34,7 +34,7 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 [!code-cs[ClassVariables1](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables1)]
 
-人脸检测在 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象上运行，可通过多种方法创建该对象。 在此示例中，[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 用于允许用户选取要检测人脸的图像文件。 有关使用软件位图的详细信息，请参阅[图像处理](imaging.md)。
+人脸检测在 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象上运行，可通过多种方法创建该对象。 在此示例中，[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 用于允许用户选取要检测人脸的图像文件。 有关处理软件位图的详细信息，请参阅[图像处理](imaging.md)。
 
 [!code-cs[Picker](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
 
@@ -44,9 +44,9 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 在当前版本中，**FaceDetector** 类仅支持 Gray8 或 Nv12 格式的图像。 **SoftwareBitmap** 类提供了 [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) 方法，可将位图从一种格式转换为另一种格式。 此示例将源图像转换为 Gray8 像素格式（如果它尚未采用该格式）。 如果需要，可以使用 [**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) 和 [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) 方法在运行时确定某个像素格式是否受支持，以免在将来的版本中扩展受支持的格式集。
 
-[!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
+[!code-cs[格式](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-通过调用 [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) 实例化 **FaceDetector** 对象，然后调用 [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134)，从而传入已缩放到合理大小并转换为受支持的像素格式的位图。 此方法返回 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 对象的列表。 **ShowDetectedFaces** 是一个帮助程序方法（如下所示），用于在图像中的人脸周围绘制正方形。
+通过依次调用 [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) 和 [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134) 来实例化 **FaceDetector**，从而传入已缩放到合理大小并转换为受支持的像素格式的位图。 此方法返回 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 对象的列表。 **ShowDetectedFaces** 是一个帮助程序方法（如下所示），用于在图像中的人脸周围绘制正方形。
 
 [!code-cs[Detect](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
@@ -64,7 +64,7 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 在 **ShowDetectedFaces** 帮助程序方法中，将创建新的 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) 并将源设置为从表示源图像的 **SoftwareBitmap** 创建的 [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854)。 XAML **Canvas** 控件的背景设置为图像画笔。
 
-如果传递到帮助程序方法中的人脸列表不为空，循环访问列表中的每张人脸，并使用 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 类的 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性来确定包含人脸的图像内的矩形位置和大小。 由于 **Canvas** 控件很可能采用与源图像不同的大小，你应该将 X 和 Y 坐标以及 **FaceBox** 的宽度和高度乘以缩放值，该值是源图像大小与 **Canvas** 控件的实际大小之比。
+如果传递到帮助程序方法中的人脸列表不为空，循环访问列表中的每张人脸，并使用 [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) 类的 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 属性来确定图像内包含人脸的的矩形位置和大小。 由于 **Canvas** 控件很可能采用与源图像不同的大小，你应该将 X 和 Y 坐标以及 **FaceBox** 的宽度和高度乘以缩放值，该值是源图像大小与 **Canvas** 控件的实际大小之比。
 
 [!code-cs[ShowDetectedFaces](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetShowDetectedFaces)]
 
@@ -97,10 +97,12 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 * [媒体捕获的场景分析](scene-analysis-for-media-capture.md)
 * [基本人脸检测示例](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
 * [基本人脸跟踪示例](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
-* [使用 MediaCapture 捕获照片和视频](capture-photos-and-video-with-mediacapture.md)
+* [Camera](camera.md)
+* [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [媒体播放](media-playback.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

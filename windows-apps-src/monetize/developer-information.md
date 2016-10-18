@@ -1,11 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: "获取有关 Microsoft 官方商城协定和盈利 SDK 中的 Microsoft Advertising 库的一般开发人员信息。"
+description: "获取有关 Microsoft Store Services SDK 中的 Microsoft Advertising 库的一般开发人员信息。"
 title: "有关 Microsoft Advertising 库的开发人员信息"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
 
 
 ---
@@ -13,13 +13,12 @@ ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
 # 有关 Microsoft Advertising 库的开发人员信息
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本部分中的主题向开发人员提供有关 Microsoft 官方商城协定和盈利 SDK 中的 Microsoft Advertising 库的有用信息。
 
-  > **重要提示** Microsoft Advertising 库是一组不同于广告中介库的扩展。 如果要在 XAML 或 JavaScript 应用中显示来自 Microsoft 的横幅或视频间隙广告，请使用 Microsoft Advertising 库中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 类。 如果要在 XAML 应用中显示来自多个广告网络的横幅广告，请使用广告中介库中的 **AdMediatorControl** 类。 有关详细信息，请参阅[区别是什么：AdMediatorControl 或 AdControl](what-is-the-difference-admediatorcontrol-or-adcontrol.md)。
+本部分中的该主题向开发人员提供有关 Microsoft Store Services SDK（适用于 UWP 应用）以及适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK（适用于 Windows 8.1 和 Windows Phone 8.x 应用）中的 Microsoft Advertising 库的有用信息。
 
-## 本节内容
+
+## 本部分内容
 
 | 主题                                                                                                       | 描述                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
@@ -39,6 +38,6 @@ ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

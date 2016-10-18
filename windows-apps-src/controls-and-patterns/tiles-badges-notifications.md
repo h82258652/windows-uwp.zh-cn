@@ -6,32 +6,25 @@ ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 32b1c3ec674a84ca4ed08d98119fe21f77e15554
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: dbc178f5df541e482f4a2e86c6662ead1992a1ce
 
 ---
-
 # 适用于 UWP 应用的磁贴、锁屏提醒和通知
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
+了解如何使用磁贴、锁屏提醒、Toast 和通知提供应用入口点并使用户了解最新信息。
 
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
+磁贴是应用在“开始”菜单上的表示形式。 每个 UWP 应用都有一个磁贴。 你可以启用不同的磁贴大小（小、中等、宽形和大）。</p>
 
-了解如何使用磁贴、锁屏提醒、Toast 以及通知提供应用入口点并使用户了解最新信息。
+<p>你可以使用<em>磁贴通知</em>更新磁贴，以向用户传达新信息，如头条新闻或最近未读邮件的主题。</p>
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="images/tile-and-live-tile.png" alt="Breakdown of tile elements" /></td>
-<td align="left"><p>每个应用都有一个磁贴。 <em>磁贴</em>是应用在“开始”菜单上的表示形式。 你可以启用不同的磁贴大小（小、中等、宽形和大）。 你可以使用<em>磁贴通知</em>更新磁贴，以向用户传达新信息，例如头条新闻或最近未读邮件的主题。 你可以使用<em>锁屏提醒</em>或<em>通知徽标</em>提供系统提供的字形或 1-99 的数字形式的状态或摘要信息。</p>
+<p>你可以使用<em>锁屏提醒</em>提供采用系统提供的字形或 1-99 的数字的形式的状态或摘要信息。 锁屏提醒还显示在应用的任务栏上。 </p>
+
 <p><em>Toast 通知</em>是应用通过称为 <em>Toast</em>（或<em>横幅</em>）的弹出 UI 元素发送给用户的通知。 无论用户是否在使用应用，均可看到此通知。</p>
-<p><em>推送通知</em>或<em>原始通知</em>是从 Windows 推送通知服务 (WNS) 或后台任务发送到应用的通知。 应用可以通过通知用户发生了某些趣事（借助锁屏提醒更新、磁贴更新或 Toast）来响应这些通知，也可以以你选择的任意方式响应。</p></td>
-</tr>
-</tbody>
-</table>
+<p><em>推送通知</em>或<em>原始通知</em>是从 Windows 推送通知服务 (WNS) 或后台任务发送到应用的通知。 应用可以通过通知用户发生了某些趣事（借助锁屏提醒更新、磁贴更新或 Toast）来响应这些通知，也可以以你选择的任意方式响应。</p>
 
  
 ## 磁贴 
@@ -132,6 +125,6 @@ ms.openlocfilehash: 32b1c3ec674a84ca4ed08d98119fe21f77e15554
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

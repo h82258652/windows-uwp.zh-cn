@@ -4,15 +4,15 @@ ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "获取演示如何使用 Microsoft Advertising 库中 AdControl 和 InterstitialAd 类的属性、方法和事件的其他示例。"
 title: "示例代码"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
 
 ---
 
-# 示例代码
+# 代码示例
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 本部分针对目标用户提供的示例演示了如何使用 Microsoft Advertising 库中 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 类的属性、方法和事件，如何手动刷新广告以及如何处理事件。 有关演示如何向应用添加这些控件的介绍性演练，请参阅[开发人员演练](developer-walkthroughs.md)。
 
@@ -41,6 +41,6 @@ ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

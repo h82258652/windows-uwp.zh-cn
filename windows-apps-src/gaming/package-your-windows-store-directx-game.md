@@ -5,7 +5,7 @@ description: "较大的通用 Windows 平台 (UWP) 游戏可能会轻易地膨�
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 14043fffc22849ca8d31f85e1035c38c07f1cdd4
+ms.openlocfilehash: bc861d98563107b2c67e94281e79d97bed6dee9b
 
 ---
 
@@ -229,6 +229,6 @@ DirectX 功能级别 10 或更高级别所支持的纹理格式应该添加到�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

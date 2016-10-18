@@ -4,8 +4,8 @@ ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
 description: "本文介绍如何将使用 Microsoft PlayReady 内容保护的多媒体内容自适应流式处理添加到通用 Windows 平台 (UWP) 应用。"
 title: "使用 PlayReady 的自适应流式处理"
 translationtype: Human Translation
-ms.sourcegitcommit: 176f8989aea5402106e3c14144948cec87a5dc27
-ms.openlocfilehash: d76f50e97f16699f34f138fcd25af8a90696085a
+ms.sourcegitcommit: 8534598b1f3cf49b15a73d03f6f19e67877b25d0
+ms.openlocfilehash: 22e430fd6dafe49fb3bf599fec91a9ab3dbd6b95
 
 ---
 
@@ -23,9 +23,9 @@ HLS（Apple 的 HTTP 实时流）不受 PlayReady 支持。
 
 本文仅介绍特定于 PlayReady 的自适应流式处理方面的内容。 有关一般实现自适应流式处理的信息，请参阅[自适应流式处理](adaptive-streaming.md)。
 
-本文使用的代码来自 GitHub 上 Microsoft 的 **Windows-universal-samples** 存储库中的[自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 方案 4 介绍自适应流式处理与 PlayReady 的结合使用。 你可以通过导航到存储库的根级别并单击“下载 ZIP”****按钮，下载 ZIP 文件形式的存储库。
+本文使用的代码来自 GitHub 上 Microsoft 的 **Windows-universal-samples** 存储库中的[自适应流式处理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 方案 4 介绍自适应流式处理与 PlayReady 的结合使用。 你可以下载 ZIP 文件形式的存储库，方法是导航到存储库的根级别并选择“下载 ZIP”****按钮。
 
-你将需要以下 using 语句：
+你将需要以下 **using** 语句：
 
 ```csharp
 using LicenseRequest;
@@ -189,7 +189,7 @@ async void ProActiveIndivRequest()
 
 ## 许可证获取服务请求
 
-如果请求改为 [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285)，我们将调用以下函数以进行请求并获取 PlayReady 许可证。 我们根据传入的 MediaProtectionServiceCompletion 对象来判断请求是否成功，并完成以下请求：
+如果请求改为 [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285)，我们将调用以下函数以进行请求并获取 PlayReady 许可证。 我们告知我们传入的 **MediaProtectionServiceCompletion** 对象请求是否已成功，并完成以下请求：
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -290,18 +290,17 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 }
 ```
 
-你可以在开始对自适应流式处理进行处理的事件中调用此函数（例如在按钮单击事件中）。
+你可以在处理自适应流式处理开始的任何事件中调用此函数；例如在按钮单击事件中。
 
- 
-
- 
-
+## 另请参阅
+- [PlayReady DRM](playready-client-sdk.md)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

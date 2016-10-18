@@ -4,8 +4,8 @@ Description: "你可以通过适用于企业的 Windows 应用商店向企业直
 title: "将 LOB 应用分配到企业"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 translationtype: Human Translation
-ms.sourcegitcommit: 9ad7589344d2af986e52ae43acc3e48de6374ae6
-ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
+ms.sourcegitcommit: 44485b32a7c5580e1a7a0ca9ca7c642e0b9b29d2
+ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 ---
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 ## 提交 LOB 应用
 
 
-在准备好发布供企业专门使用的应用后，该过程类似于应用提交过程。 应用完成相同的认证过程，并且必须遵循所有 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944)。 仅有两部分过程不同。
+在准备好发布供企业专门使用的应用后，该过程类似于应用提交过程。 应用完成相同的认证过程，并且必须遵循所有 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944)。 仅有数个部分过程不同。
 
 ### 分发和可见性
 
@@ -50,6 +50,9 @@ ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 
 有关详细信息，请参阅[组织授权选项](organizational-licensing.md)。
 
+### 年龄分级
+对于 LOB 应用，提交过程的[年龄分级](age-ratings.md)步骤的工作方式与零售应用相同，但还具有其他选项供你手动指示你的应用的应用商店年龄分级，而不是完成问卷或导入现有的 IARC 分级 ID。 此手动分级仅适用于 LOB 分发，因此如果你曾经将该应用的“分发和可见性”****设置更改为“零售分发”****，在可以发布该提交之前，需要先完成年龄分级问卷。
+
 ### LOB 应用的企业部署
 
 单击“提交到应用商店”****后，应用将完成认证过程。 准备就绪后，企业管理员必须在适用于企业的 Windows 应用商店门户中将应用添加到其专用存储。 企业稍后可以将应用部署到其用户。
@@ -63,6 +66,8 @@ ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 若要发布对已经发布为 LOB 的应用的更新，只需创建新的提交即可。 你可以上传新程序包或进行任何其他更改，然后单击“提交到应用商店”****使更新的版本可用。 请确保使“分发和可见性”****中的企业选择保持不变（除非你打算更改这些选择，例如选择获取应用的其他企业，或删除一家之前分配了应用的企业）。
 
 如果想要停止提供之前作为业务线应用发布的应用，并阻止任何新的购置，你需要创建新的提交。 首先，你需要将“分发和可见性”****选择从“业务线 (LOB) 分配”****更改为“零售分配”****。 然后，在“分发和可见性”****选项中，选择“隐藏此应用并阻止购置”****。 提交完成认证过程后，应用将不再用于新的购置（虽然任何已拥有该应用的用户可以继续使用它）。
+
+> **注意** 将应用更改为“零售分发”****时，如果尚未填写[年龄分级问卷](age-ratings.md)，请完成该问卷（即使该应用不适用于新的购置也是如此）。
 
 ### 通过旁加载分配 LOB 应用
 
@@ -82,6 +87,6 @@ ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO1-->
 
 

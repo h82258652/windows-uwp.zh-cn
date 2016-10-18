@@ -4,8 +4,8 @@ ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
 description: "了解如何使用 AdControl 类在适用于 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight 应用中显示横幅广告。"
 title: "Windows Phone Silverlight 中的 AdControl"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
+ms.sourcegitcommit: 3a09b37a5cae0acaaf97a543cae66e4de3eb3f60
+ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
 
 
 ---
@@ -13,30 +13,36 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 # Windows Phone Silverlight 中的 AdControl
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-本演练介绍如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) 类在适用于 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight 应用中显示横幅广告。
-
-## 先决条件
-
-*  使用 Visual Studio 2015 或 Visual Studio 2013 安装 [Microsoft 官方商城协定和盈利 SDK](http://aka.ms/store-em-sdk)。
 
 
-## 添加广告程序集引用
+本演练介绍了如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) 类在适用于 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight 应用中显示横幅广告。
 
-适用于 Windows Phone Silverlight 项目的 Microsoft Advertising 程序集未随 Microsoft 官方商城协定和盈利 SDK 安装在本地。 在你开始更新代码之前，必须先使用“已连接的服务”****与 Microsoft 官方商城协定和盈利 SDK 中提供的广告中介支持下载这些程序集，然后在你的项目中引用它们。
+> **Windows Phone Silverlight 8.0 说明**&nbsp;&nbsp;横幅广告仍受使用早期版本的 Universal Ad Client SDK 或 Microsoft Advertising SDK 中的 **AdControl** 并已在应用商店中提供的现有 Windows Phone 8.0 Silverlight 应用支持。 但是，横幅广告在新的 Windows Phone 8.0 Silverlight 项目中不再受支持。 此外，某些调试和测试方案限制在 Windows Phone 8.x Silverlight 项目中。 有关详细信息，请参阅[在应用中显示广告](display-ads-in-your-app.md#silverlight_support)。
 
-1.  在 Visual Studio 中，依次单击“项目”****和“添加已连接的服务”****。
 
-2.  在“添加已连接的服务”****对话框中，单击“广告中介”****，然后单击“配置”****。
+## 将广告程序集添加到你的项目
 
-3.  单击“选择广告网络”****，然后仅选择“Microsoft Advertising”****。
+若要开始使用，将包含适用于 Windows Phone Silverlight 的 Microsoft Advertising 程序集的 NuGet 包下载并安装到你的项目中。
 
-    此时，所有必要的 Microsoft Advertising 程序集（适用于 Silverlight）均已通过 NuGet 程序包下载到你的本地项目，并且对这些程序集的引用会自动添加到项目。 此外，对该广告中介程序集的引用也已添加到你的项目。 你将在稍后的步骤中删除该广告中介程序集，因为在这种情况下不需要。
+1.  在 Visual Studio 中打开你的项目。
 
-4.  在“选择广告网络”****对话框中，单击“确定”****。 在随后的“获取状态”****确认页面中，再次单击“确定”****，最后单击“添加”****以关闭“广告中介”****对话框。
+2.  单击“工具”****、指向“NuGet 包管理器”****，然后单击“程序包管理器控制台”****。
 
-5.  在“解决方案资源管理器”****中，展开“引用”****节点。 右键单击“Microsoft.AdMediator.WindowsPhone81SL.MicrosoftAdvertising”****，然后单击“删除”****。 在这种情况下不需要此程序集引用。
+3.  在“程序包管理器控制台”****窗口中，输入以下命令之一。
+
+  * 如果你的项目面向 Windows Phone 8.0，请输入此命令。
+
+      ```
+      Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
+      ```
+
+  * 如果你的项目面向 Windows Phone 8.1，请输入此命令。
+
+      ```
+      Install-Package Microsoft.Advertising.WindowsPhone.SL81 -Version 8.1.50112
+      ```
+
+    输入该命令后，所有必要的 Microsoft Advertising 程序集（适用于 Silverlight）均已通过 NuGet 包下载到你的本地项目，并且对这些程序集的引用会自动添加到项目。
 
 ## 对你的应用进行编码
 
@@ -88,10 +94,9 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
         x:Class="PhoneApp1.MainPage"
     ```
 
-6.  在“网格”****标记中，为 **AdControl** 添加以下代码。 将 **ApplicationId** 和 **AdUnitId** 属性分配给[测试模式值](test-mode-values.md)中提供的测试值，然后调整 **Height** 和 **Width** 属性以适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
+6.  在“网格”****标记中，为 **AdControl** 添加以下代码。 将 **ApplicationId** 和 **AdUnitId** 属性分配给[测试模式值](test-mode-values.md)中提供的测试值，然后调整 **Height** 和 **Width** 属性以适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)之一。
 
-    > **注意**  
-    在提交应用之前，你需要将这些测试 **ApplicationId** 和 **AdUnitId** 值替换为实时值。
+    > **注意**&nbsp;&nbsp;在提交应用之前，你需要将这些测试 **ApplicationId** 和 **AdUnitId** 值替换为实时值。
 
     ``` syntax
     <Grid x:Name="ContentPanel" Grid.Row="1">
@@ -114,7 +119,7 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 ## 使用开发人员中心发布带有实时广告的应用
 
 
-1.  在“开发人员中心仪表板”中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，请指定“横幅”****。 记下广告单元 ID 和应用程序 ID。
+1.  在开发人员中心仪表板中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，请指定“横幅”****。 记下广告单元 ID 和应用程序 ID。
 
 2.  在你的代码中，将测试广告单元值（**applicationId** 和 **adUnitId**）替换为你在开发人员中心生成的实时值。
 
@@ -127,6 +132,6 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -6,20 +6,30 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 ---
 # 超链接
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。 可使用两种方法向 XAML 应用添加超链接：**Hyperlink** 文本元素和 **HyperlinkButton** 控件。
 
-![超链接按钮](images/controls/hyperlink-button.png)
+![“超链接”按钮](images/controls/hyperlink-button.png)
+
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279356"><strong>Hyperlink 文本元素</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242739"><strong>HyperlinkButton 控件</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
 
--   [**超链接文本元素**](https://msdn.microsoft.com/library/windows/apps/dn279356)
--   [**HyperlinkButton 控件**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ## 这是正确的控件吗？
 
@@ -54,7 +64,7 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ![作为文本元素的超链接示例](images/controls_hyperlink-element.png) 
 
-> **提示** &nbsp;&nbsp;当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="default"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
+> **提示**&nbsp;&nbsp;当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
 
 ## 创建 HyperlinkButton
 
@@ -85,7 +95,7 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 若要使用超链接导航到 URI，请设置 NavigateUri 属性。 当用户单击或点击超链接时，指定的 URI 将在默认浏览器中打开。 默认浏览器将在独立于应用的进程中运行。
 
-> **注意** &nbsp;&nbsp;无需使用 http: 或 https: 方案。 你可以使用诸如 ms-appx:、ms-appdata: 或 ms-resources: 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 file: 方案。 有关详细信息，请参阅 [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
+> **注意**&nbsp;&nbsp;无需使用 http: 或 https: 方案。 你可以使用诸如 ms-appx:、ms-appdata: 或 ms-resources: 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 file: 方案。 有关详细信息，请参阅 [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
 
 > 当用户单击超链接时，NavigateUri 属性的值传递到 URI 类型和方案的系统处理程序。 然后，系统启动针对为 NavigateUri 提供的 URI 的方案注册的应用。
 
@@ -155,6 +165,6 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

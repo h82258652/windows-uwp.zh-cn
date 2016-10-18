@@ -6,8 +6,8 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "生成 3MF 程序包"
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
+ms.sourcegitcommit: c790d57e72a75ec28e376722f8d87c2655b18c42
+ms.openlocfilehash: 1d291173cc68d4eedcbc2918f308be1489105a08
 
 ---
 
@@ -23,13 +23,13 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 \[在商业发行之前会发生实质性修改的、与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
-介绍 3D 制造格式文档的结构以及如何使用 [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API 创建和操作该文档。
+本指南介绍了 3D 制造格式文档的结构以及如何使用 [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API 创建和操作该文档。
 
 ## 什么是 3MF？
 
 3D 制造格式是有关出于制造目的（3D 打印）使用 XML 描述 3D 模型的外观和结构的一组约定。 它定义一组部件（有些必选，有些可选）及其关系，目的是向 3D 制造设备提供所有必要的信息。 符合 3D 制造格式的数据集可以另存为带有 .3mf 扩展名的文件。
 
-在 Windows 10 中，**Windows.Graphics.Printing3D** 命名空间中的 [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) 类类似于单个 .3mf 文件，并且其他类映射到该文件中的特定 XML 元素。 本指南介绍如何以编程方式创建和设置 3MF 文档的每个主要部分、如何利用 3MF Materials Extension 以及最后如何将采用 C\# 的 **Printing3D3MFPackage** 对象转换并另存为 .3mf 文件。 有关 3MF 的标准或 3MF Materials Extension 的详细信息，请参阅 [3MF 规范](http://3mf.io/what-is-3mf/3mf-specification/)。
+在 Windows 10 中，**Windows.Graphics.Printing3D** 命名空间中的 [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) 类类似于单个 .3mf 文件，并且其他类映射到该文件中的特定 XML 元素。 本指南介绍如何以编程方式创建和设置 3MF 文档的每个主要部分、如何利用 3MF Materials Extension 以及最后如何将 **Printing3D3MFPackage** 对象转换并另存为 .3mf 文件。 有关 3MF 的标准或 3MF Materials Extension 的详细信息，请参阅 [3MF 规范](http://3mf.io/what-is-3mf/3mf-specification/)。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -60,7 +60,8 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 [!code-cs[TriangleIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTriangleIndices)]
 
-> **注意** 所有三角形都必须以逆时针方向的顺序（当从网格对象外部查看三角形时）定义其索引，以便使它们的面法线矢量指向外部。
+> [!NOTE]
+> 所有三角形都必须以逆时针方向的顺序（当从网格对象外部查看三角形时）定义其索引，以便使它们的面法线矢量指向外部。
 
 当 Printing3DMesh 对象包含有效的顶点和三角形集时，应该随后将其添加到模型的 **Meshes** 属性。 程序包中的所有 **Printing3DMesh** 对象都必须存储在 **Printing3DModel** 类的 **Meshes** 属性下。
 
@@ -82,7 +83,8 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
-**注意** 3D 制造设备将确定哪些可用物理材料映射到存储在 3MF 中的哪些虚拟材料元素。 材料映射并不一定是 1:1：如果 3D 打印机只使用一种材料，无论向哪些对象或面分配了不同的材料，它都将以该材料打印整个模型。
+> [!NOTE]
+> 3D 制造设备将确定哪些可用物理材料映射到存储在 3MF 中的哪些虚拟材料元素。 材料映射并不一定是 1:1：如果 3D 打印机只使用一种材料，无论向哪些对象或面分配了不同的材料，它都将以该材料打印整个模型。
 
 ### 颜色材料
 
@@ -102,7 +104,8 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 [!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
 
-**注意** 纹理数据属于 3MF 程序包本身，而不属于程序包内的模型部件。
+> [!NOTE]
+> 纹理数据属于 3MF 程序包本身，而不属于程序包内的模型部件。
 
 接下来，我们必须填写 **Texture3Coord 材料**。 其中每一个都引用一个纹理资源，并在图像上指定一个特定的点（在 UV 坐标中）。
 
@@ -137,14 +140,16 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 ## 相关主题
 
-[从应用进行 3D 打印](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)
-
+[从应用进行 3D 打印](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
+[3D 打印 UWP 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO4-->
 
 

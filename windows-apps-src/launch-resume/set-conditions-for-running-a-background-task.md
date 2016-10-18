@@ -4,16 +4,14 @@ title: "设置后台任务的运行条件"
 description: "了解如何设置控制何时运行后台任务的条件。"
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 0d90511c9fcfd722dfcc51a8ff8e5163e31e9fdf
 
 ---
 
 # 设置后台任务的运行条件
 
-
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 **重要的 API**
 
@@ -23,18 +21,17 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 
 了解如何设置控制何时运行后台任务的条件。
 
-有时，除了触发该任务的事件之外，后台任务还需要满足某些条件以便后台任务可以继续。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的一个或多个条件。 引发触发器之后将检查条件；后台任务将进入队列，但在满足所有所需条件之前不会运行。
+有时，除了触发该任务的事件之外，后台任务还需要满足某些条件，才可以使后台任务继续进行。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的一个或多个条件。 引发触发器之后将检查条件；后台任务将进入队列，但在满足所有所需条件之前不会运行。
 
-对后台任务设置条件可阻止任务不必要地运行，从而节省电池电量和 CPU 运行时。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 通过在计时器时间过去以及 Internet 可用时让任务运行，有助于防止任务使用不必要的系统资源和电池寿命。
+对后台任务设置条件可阻止任务不必要地运行，从而节省电池电量和 CPU 运行时。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 仅当计时器时间过去以及 Internet 可用时运行后台任务，这有助于防止任务不必要地使用系统资源和**电池使用时间。
 
-**注意** 通过多次调用同一 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 上的 AddCondition 可组合多个条件。 注意不要添加冲突条件，如 **UserPresent** 和 **UserNotPresent**。
-
- 
+还可以通过在同一 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 上多次调用 AddCondition 组合多个条件。 注意不要添加冲突条件，如 **UserPresent** 和 **UserNotPresent**。
 
 ## 创建 SystemCondition 对象
 
+本主题假定你的后台任务已与你的应用关联，且你的应用已包含用于创建名为 **taskBuilder** 的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象的代码  如果需要先创建一个后台任务，请参阅[创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)或[创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)。
 
-本主题假定你的后台任务已与你的应用关联，且你的应用已包含用于创建名为 **taskBuilder** 的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象的代码
+本主题适用于在单独进程中运行的后台任务以及在与前台应用相同的进程中运行的那些后台任务。
 
 添加该条件之前，创建一个代表该条件的 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 对象，该对象必须实际用于运行后台任务。 在构造函数中，通过提供一个 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 枚举值指定必须满足的条件。
 
@@ -156,18 +153,16 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 ## 备注
 
 
-> **注意** 为你的后台任务选择合适的条件，以便它仅在需要时运行，不在不工作时运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+> **注意** 为你的后台任务选择条件，以便它仅在需要时运行，不在不应该运行时运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
 > **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
-
 ## 相关主题
-
 
 ****
 
-* [创建和注册后台任务](create-and-register-a-background-task.md)
+* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)
+* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -189,6 +184,6 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

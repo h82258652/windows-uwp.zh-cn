@@ -4,8 +4,8 @@ Description: "除了创建将在 Windows 应用中运行的应用的广告市场
 title: "创建自定义应用促销活动"
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: a6e97968df4e9ab986d364b2573a31b4ba9d1958
 
 ---
 
@@ -22,7 +22,7 @@ ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
 你可以通过以下方式检索自定义市场活动表现数据：
 
 -   如果你的应用是通用 Windows 平台 (UWP) 应用，则它可以使用 [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) 方法以编程方式检索导致转换的自定义市场活动 ID。
--   你可以从开发人员中心仪表板上的[通道和转换报告](channels-and-conversions-report.md)中查看有关应用或 IAP 的页面查看和转换的数据。
+-   你可以从开发人员中心仪表板上的[通道和转换报告](channels-and-conversions-report.md)中查看有关应用或加载项的页面查看和转换的数据。
 
 > **重要提示** 将仅为运行 Windows 10 的客户跟踪此数据。 使用其他操作系统的客户仍可以跟踪你的应用一览的链接，但有关这些客户的活动的数据将不包括在内。
 
@@ -38,7 +38,7 @@ ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
 -   她将发布到其 Facebook 页面的 URL 包含自定义市场活动 ID `my-facebook-campaign`。
 -   她将发布到 Twitter 的 URL 包含自定义市场活动 ID `my-twitter-campaign`。
 
-当她的 Facebook 和 Twitter 关注者单击这些 URL 时，Microsoft 将跟踪每次单击，并将其与相应的自定义市场活动相关联。 后续的合格游戏购置行为和任何应用内产品 (IAP) 的购买将与自定义市场活动相关联并报告为转换。
+当她的 Facebook 和 Twitter 关注者单击这些 URL 时，Microsoft 将跟踪每次单击，并将其与相应的自定义市场活动相关联。 后续的合格游戏购置行为和任何加载项的购买将与自定义市场活动相关联并报告为转换。
 
 ## 了解应用安装如何限定为转换
 
@@ -49,7 +49,7 @@ ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
 
 -   具有已识别的 Microsoft 帐户的客户单击包含自定义市场活动 ID 的应用 URL，然后重定向到该应用的 Windows 应用商店页面。
 -   同一名客户（由相同的 Microsoft 帐户标识）在首次单击具有自定义市场活动 ID 的 Windows 应用商店 URL 后 24 小时内安装该应用。 即使客户单击了自定义市场活动 ID 的 Windows 应用商店 URL，但在另一台计算机或设备上安装该应用，这仍然限定为转换。
-    > **注意** 对于计为自定义市场活动转换的应用安装，该应用中的任何 IAP 购买也计为同一自定义市场活动的转换。
+    > **注意** 对于计为自定义市场活动转换的应用安装，该应用中的任何加载项购买也计为同一自定义市场活动的转换。
 
      
 
@@ -135,6 +135,6 @@ HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

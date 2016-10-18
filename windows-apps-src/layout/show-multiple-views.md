@@ -6,8 +6,8 @@ ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
 label: Show multiple views for an app
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 23e999f86fb0552b96cddbd3b9d11803106bf6c2
+ms.sourcegitcommit: 0d67e3cef26ca6aca07556312a18be93fe758c85
+ms.openlocfilehash: ccbcb1f3f5ee31724416f512138757865ffabc98
 
 ---
 
@@ -94,9 +94,9 @@ int newViewId = 0;</code></pre></td>
 
     使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法在新视图的 UI 线程上安排工作。 使用 [lambda 表达式](http://go.microsoft.com/fwlink/p/?LinkId=389615)将函数作为参数传递到 **RunAsync** 方法。 你在 lambda 函数中执行的工作将在新视图的线程上进行。
 
-    在 XAML中，通常向 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 的 [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) 属性添加 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)，然后将 **Frame** 导航到你已在其中定义了应用内容的 XAML [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)。 有关详细信息，请参阅[两个页面之间的对等导航](peer-to-peer-navigation-between-two-pages.md)。
+    在 XAML中，通常向 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 的 [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) 属性添加 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)，然后将 **Frame** 导航到你已为其定义应用内容的 XAML [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)。 有关详细信息，请参阅[在两个页面之间导航](navigate-between-two-pages.md)。
 
-    在填充新 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 后，必须调用 **Window** 的 [**Activate**](https://msdn.microsoft.com/library/windows/apps/br209046) 方法以便稍后显示 **Window**。 这项工作在新视图的线程上进行，因此会激活新 **Window**。
+    在填充新 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 后，必须调用 **Window** 的 [**Activate**](https://msdn.microsoft.com/library/windows/apps/br209046) 方法才能在稍后显示 **Window**。 这项工作在新视图的线程上进行，因此会激活新 **Window**。
 
     最后，获取新视图的 [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120)，用于稍后显示该视图。 同样，此项工作在新视图的线程上进行，因此 [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672) 会获取新视图的 **Id**。
 
@@ -182,10 +182,6 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);</code></pre></td>
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

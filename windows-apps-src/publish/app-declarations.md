@@ -4,8 +4,8 @@ Description: "在提交过程中，你可以在“应用属性”页面的“应
 title: "应用声明"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
 
 ---
 
@@ -17,7 +17,7 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 ## 此应用使用户可以进行购买，但不使用 Windows 应用商店商务系统。
 
-大部分应用应使此框保持未选中的状态，因为提供应用内购买机会的应用通常使用 Microsoft 应用内购买 API 创建和[提交 IAP](iap-submissions.md)。 根据[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)，在 2015 年 6 月 29 日之前创建和提交的应用可在不使用 Microsoft 商务引擎的情况下继续提供应用内购买功能，只要该购买功能符合 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8)。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
+大部分应用都应使此框保持未选中状态，因为提供应用内购买机会的应用通常使用 Microsoft 应用内购买 API 创建和[提交加载项](add-on-submissions.md)。 根据[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)，在 2015 年 6 月 29 日之前创建和提交的应用可在不使用 Microsoft 商务引擎的情况下继续提供应用内购买功能，前提是该购买功能符合 [Windows 应用商店策略](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8)。 如果这适用于你的应用，你必须选中此框。 否则，请不要选中。
 
 ## 已对此应用进行辅助功能指南符合度测试。
 
@@ -67,6 +67,6 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -2,16 +2,15 @@
 description: "针对特定类型的输入和设备自定义 UWP 应用。 充分利用触摸和语音命令。 在 Xbox、手机甚至是电视上运行你的应用。"
 title: "UWP 应用输入和设备设计 – Windows 应用开发"
 author: mijacobs
-keywords: device primer, app inputs, customize UWP application
+keywords: "设备基础版, 应用输入, 自定义 UWP 应用程序"
 translationtype: Human Translation
-ms.sourcegitcommit: 350de23331f7fe951304ba877c40e07feb424adc
-ms.openlocfilehash: 2d3f0588b56b26e125652c12eeca3028bfe6573e
+ms.sourcegitcommit: 5a6666d4e706d4d49d646b5bb2e43b82394eb215
+ms.openlocfilehash: 85bcd15d4b9262188f0821642faf0d3d0cb7dbad
 
 ---
+# 输入和设备
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-# 输入和设备
 
 UWP 应用可自动处理各种各样的输入并在各种设备上运行，例如，无需执行任何额外操作即可支持触摸输入或让你的应用在手机上运行。 
 
@@ -169,6 +168,6 @@ UWP 应用可自动处理各种各样的输入并在各种设备上运行，例�
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

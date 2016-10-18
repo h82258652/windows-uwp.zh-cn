@@ -4,8 +4,8 @@ ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "适用于桌面设备的 Device Portal"
 description: "了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。"
 translationtype: Human Translation
-ms.sourcegitcommit: f09f0233ec11b41989cf52da3c5e8cb37a97b607
-ms.openlocfilehash: 7be27f5fb15676c5330f22995dd044899eddfd3d
+ms.sourcegitcommit: b5d259172a7e3975d48a5ba669cfbe345869aebf
+ms.openlocfilehash: 3436a95124071045c8ec89ed8ddf644ccc80c29f
 
 ---
 # 适用于桌面设备的 Device Portal
@@ -74,8 +74,10 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
     - HttpsPort：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。  
     - HttpsPort：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
 
-## 无法安装开发人员程序包
-有时，由于网络或兼容性问题，开发人员模式无法正确安装。 开发人员模式程序包对远程部署是必需的（Device Portal 和 SSH），但对本地部署并非如此。  
+## 无法安装开发人员程序包或启动 Device Portal
+有时，由于网络或兼容性问题，开发人员模式无法正确安装。 开发人员模式程序包对**远程**部署是必需的（Device Portal 和 SSH），但对本地部署并非如此。  即使你遇到这些问题，你仍然可以使用 Visual Studio 本地部署应用。 
+
+请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛，查找这些问题的解决方法以及其他内容。 
 
 ### 无法找到该程序包
 
@@ -106,6 +108,6 @@ Device Portal 允许你查看诊断信息，并通过 HTTP 从浏览器与你的
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -5,7 +5,7 @@ title: "从 Windows Phone Silverlight 移动到 UWP"
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 19dde1c9b0df3b2a5e464feb15e43af9dd283661
+ms.openlocfilehash: c75d1871364a837047c1bd81bc094c5120900a4e
 
 ---
 
@@ -79,16 +79,16 @@ Windows Phone Silverlight 具有基于 Silverlight 4.0 的 XAML UI 框架，并�
 * [Windows 10 中面向开发人员的新增功能](https://dev.windows.com/getstarted/whats-new-windows-10)
 * [通用 Windows 平台 (UWP) 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)
 * [使用 C# 或 Visual Basic 的通用 Windows 平台 (UWP) 应用的路线图](https://msdn.microsoft.com/library/windows/apps/br229583)
-* [Windows Phone 8 开发人员接下来将执行的操作](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx) 
-           **杂志文章**
-* [Visual Studio 杂志：Windows Phone 8.1：面向融合的巨大飞跃](http://go.microsoft.com/fwlink/p/?LinkID=398541) 
-           **演示文稿**
+* [Windows Phone 8 开发人员的下一步计划](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx)
+**杂志文章**
+* [Visual Studio 杂志：Windows Phone 8.1：面向融合的巨大飞跃](http://go.microsoft.com/fwlink/p/?LinkID=398541)
+**演示文稿**
 * [有关将 Nokia 音乐从 Windows Phone 带入 Windows 8 的案例](http://go.microsoft.com/fwlink/p/?LinkId=321521)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,11 +1,11 @@
 ---
 author: mcleblanc
 description: "我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。"
-title: "将 Windows 运行时 8.x 移植到 UWP 疑难解答&#39;"
+title: "将 Windows 运行时 8.x 移植到 UWP 疑难解答'"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: e5758472d303f4baaf80d45d6b23b54f2a21e002
+ms.openlocfilehash: a6901946f873b751515cb5d9805158e4b78b92bb
 
 ---
 
@@ -54,6 +54,6 @@ XAML 分析异常可能难以诊断出来，特别是在此类异常中没有含
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

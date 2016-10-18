@@ -4,14 +4,14 @@ ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: "了解 XAML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。"
 title: "XAML 和 C# 疑难解答指南"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 ---
 
 # XAML 和 C# 疑难解答指南
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 本主题包含 XAML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
 
@@ -340,6 +340,6 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

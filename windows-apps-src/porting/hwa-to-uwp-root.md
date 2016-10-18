@@ -3,8 +3,8 @@ title: "托管 Web 应用 - 将 Web 应用程序转换为通用 Windows 平台 (
 description: "从你的网站 URL 创建通用 Windows 平台 (UWP) 应用。 从 Web 应用内的代码访问 Windows 10 本地设备功能。 适用于托管 Web 应用的 Microsoft Windows 桥（以前称为 Project Westminster）可使你快速轻松地将 Web 应用包含在 Windows 应用商店中。"
 author: seksenov
 translationtype: Human Translation
-ms.sourcegitcommit: 765789ef83f9b6a845ab79505b1b9ecbfd987126
-ms.openlocfilehash: 491665558f713dcbaae7ea20739ed72c61a12cd2
+ms.sourcegitcommit: 7fe6e240e4ef221b49f9b103cf30192449ce4502
+ms.openlocfilehash: 95d50aa37f349f494f260ea3af97211a085623a9
 
 ---
 
@@ -45,6 +45,6 @@ ms.openlocfilehash: 491665558f713dcbaae7ea20739ed72c61a12cd2
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

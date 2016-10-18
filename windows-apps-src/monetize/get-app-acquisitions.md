@@ -4,28 +4,23 @@ ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。"
 title: "获取应用购置"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: e28c309a51d28e14e57b8bd027dc8c353311d89a
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
 
 ---
 
 # 获取应用购置
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。 此方法返回采用 JSON 格式的数据。
+在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。 此方法返回采用 JSON 格式的数据。
 
 ## 先决条件
 
 
-若要使用此方法，你需要满足以下条件：
+若要使用此方法，首先需要执行以下操作：
 
--   将需要用于调用此方法的 Azure AD 应用程序与你的开发人员中心帐户相关联。
-
--   针对你的应用程序获取 Azure AD 访问令牌。
-
-有关详细信息，请参阅[使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)。
+* 如果尚未开始操作，请先完成 Windows 应用商店分析 API 的所有[先决条件](access-analytics-data-using-windows-store-services.md#prerequisites)。
+* [获取 Azure AD 访问令牌](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
 ## 请求
 
@@ -42,7 +37,7 @@ ms.openlocfilehash: e28c309a51d28e14e57b8bd027dc8c353311d89a
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。 |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
 <span/> 
 
@@ -313,13 +308,13 @@ Authorization: Bearer <your access token>
 ## 相关主题
 
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
-* [获取 IAP 购置](get-in-app-acquisitions.md)
+* [获取加载项购置](get-in-app-acquisitions.md)
 * [获取错误报告数据](get-error-reporting-data.md)
 * [获取应用评分](get-app-ratings.md)
 * [获取应用评价](get-app-reviews.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

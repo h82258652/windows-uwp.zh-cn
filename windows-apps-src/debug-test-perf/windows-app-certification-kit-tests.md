@@ -5,7 +5,7 @@ title: "Windows 应用认证工具包测试"
 description: "Windows 应用认证工具包包含大量测试，可以帮助确保应用已准备好，可在 Windows 应用商店中发布。"
 translationtype: Human Translation
 ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 816b147c91a340505348aa579c8b1540962a1df5
+ms.openlocfilehash: 78a1a2ad4aea11275aa3db1d13790c490a50c232
 
 ---
 ## Windows 应用认证工具包测试
@@ -671,6 +671,6 @@ WinJS 后台任务测试可确保 JavaScript 应用具有适当的 close 语句�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

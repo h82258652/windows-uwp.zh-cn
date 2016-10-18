@@ -4,8 +4,8 @@ ms.assetid: 5fa16a27-fdc0-43b2-84cd-8547fd4915de
 description: "了解如何在 HTML 中分配 **AdControl** 属性。"
 title: "HTML 属性示例"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 53b9afdcdc697e3ed508ef6e5ed5d684bdf5aa69
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 1898ed2ccad74ac33c5130c627363e0a9daebceb
 
 
 ---
@@ -13,9 +13,9 @@ ms.openlocfilehash: 53b9afdcdc697e3ed508ef6e5ed5d684bdf5aa69
 # HTML 属性示例
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-以下示例显示了如何在 HTML 中分配 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 属性。 **applicationId** 和 **adUnitId** 是必需属性。 其他属性和事件是可选的。 如果没有提供可选属性的值，控件将使用默认值，可创建与应用的用户体验一致的广告。
+
+以下示例演示了如何在 HTML 中分配 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 属性。 **applicationId** 和 **adUnitId** 是必需属性。 其他属性和事件是可选的。 如果没有提供可选属性的值，控件将使用默认值，可创建与应用的用户体验一致的广告。
 
 最后五行是将函数注册到 **AdControl** 事件的示例。 仅可以注册已在 JavaScript 代码中定义的函数。
 
@@ -41,6 +41,6 @@ data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1',
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

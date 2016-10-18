@@ -6,11 +6,10 @@ title: "声音"
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 translationtype: Human Translation
-ms.sourcegitcommit: 7bb23094d569bb29c7227ccd628abd0989b575a4
-ms.openlocfilehash: e6dab48935cd5345ee734e6fda7e6fd4d333bb90
+ms.sourcegitcommit: e240197b4cc233b9fc1ecaa4a1835c4a4dcd3bf8
+ms.openlocfilehash: 91021d76b180e2bc26c0d502098e0a0b21f0219f
 
 ---
-[在商业发行之前会发生实质性修改的、与预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。]*本文提供了尚不可用的功能的预览版。*
 
 # 声音
 
@@ -20,13 +19,13 @@ ms.openlocfilehash: e6dab48935cd5345ee734e6fda7e6fd4d333bb90
 
 UWP 提供了一个可轻松访问的声音系统，使你只需“翻转开关”即可在你的整个应用中获取沉浸式的音频体验。
 
-**ElementSoundPlayer** 是 XAML 中的集成声音系统，并且在打开所有默认控件时，将自动播放声音。
+**ElementSoundPlayer** 是 XAML 中的集成声音系统，并且在所有默认控件都打开时自动播放声音。
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
 **ElementSoundPlayer** 有三种不同的状态：**开**、**关**和**自动**。
 
-如果设置为“关”****，无论你的应用在何处运行，将永远不会播放声音。 如果设置为“开”****，你的应用将在每个平台上播放声音。
+如果设置为“关”****，无论你的应用在何处运行，都始终不会播放声音。 如果设置为“开”****，你的应用将在每个平台上播放声音。
 
 ### 电视和 Xbox 的声音
 
@@ -148,6 +147,6 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

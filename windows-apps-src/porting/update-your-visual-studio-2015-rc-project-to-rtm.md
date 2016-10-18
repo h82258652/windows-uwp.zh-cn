@@ -5,7 +5,7 @@ title: "将 UWP Microsoft Visual Studio 2015 RC 项目更新为 RTM"
 ms.assetid: 104E36CE-36DE-4E9C-A944-711C200B44EF
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9c2b9f164b6578a9e1d269295b3fa0d7a863a6a0
+ms.openlocfilehash: 10c65c359f3a0791ba03288a745bc732b94251b7
 
 ---
 
@@ -42,6 +42,6 @@ Visual Studio 2015 RC 和 Visual Studio 2015 RTM 之间的 Windows 10 项目格�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,28 +1,30 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: "了解 Microsoft 官方商城协定和盈利 SDK 当前版本中的 Microsoft Advertising 库的已知问题。"
+description: "了解 Microsoft Store Services SDK 中当前版本的 Microsoft Advertising 库的已知问题。"
 title: "Microsoft Advertising 库的已知问题"
 translationtype: Human Translation
-ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
-ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 ---
 
 # Microsoft Advertising 库的已知问题
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主题列出 Microsoft 官方商城协定和盈利 SDK 中当前版本的 Microsoft Advertising 库的已知问题。
 
-## 安装需要适用于通用 Windows 应用的 Visual Studio Tools
+本主题列出了 Microsoft Store Services SDK（适用于 UWP 应用）以及适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK（适用于 Windows 8.1 和 Windows Phone 8.x 应用）中当前版本的 Microsoft Advertising 库的已知问题。
 
-若要使用 Visual Studio 2015 安装 [Microsoft 官方商城协定和盈利 SDK](http://aka.ms/store-em-sdk)，你必须安装适用于通用 Windows 应用的 Visual Studio Tools 的版本 1.1 或更高版本。 有关详细信息，请参阅 Visual Studio [发行说明](http://go.microsoft.com/fwlink/?LinkID=624516)。
+## 安装 Microsoft Store Services SDK 需要适用于通用 Windows 应用的 Visual Studio Tools
+
+若要使用 Visual Studio 2015 安装 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)，必须安装适用于通用 Windows 应用的 Visual Studio Tools 的版本 1.1 或更高版本。 有关详细信息，请参阅 Visual Studio [发行说明](http://go.microsoft.com/fwlink/?LinkID=624516)。
 
 ## Windows Phone 8.x Silverlight 项目
 
-若要获取 Windows Phone 8.x Silverlight 项目的 Microsoft Advertising 程序集，请安装 [Microsoft 官方商城协定和盈利 SDK](http://aka.ms/store-em-sdk)、在 Visual Studio 中打开你的项目，然后转到“项目”**** > “添加连接的服务”**** > “广告中介”****以自动下载程序集。 在执行此操作之后，如果你不想要使用广告中介，可以将广告中介引用从项目中删除。 有关详细信息，请参阅 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK 有限支持 Windows Phone 8.x Silverlight 项目。 有关详细信息，请参阅[在应用中显示广告](display-ads-in-your-app.md#silverlight_support)。
+
+若要获取适用于 Windows Phone 8.x Silverlight 项目的 Microsoft Advertising 程序集，请安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)、在 Visual Studio 中打开你的项目，然后转到“项目”**** > “添加连接的服务”**** > “广告中介”****即可自动下载程序集。 在执行此操作之后，如果你不想要使用广告中介，可以将广告中介引用从项目中删除。 有关详细信息，请参阅 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
 ## XAML 中的 AdControl 接口未知
 
@@ -117,6 +119,6 @@ JavaScript/HTML 应用不得将元素放入 Z 顺序的保留 MAX-10 范围。 �
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

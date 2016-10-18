@@ -4,8 +4,8 @@ ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: "合成动画"
 description: "许多合成对象和效果属性均可使用关键帧和表达式动画设置动画，以便 UI 元素的属性可以随时间变化或基于计算发生变化。"
 translationtype: Human Translation
-ms.sourcegitcommit: 62f0ea80940ff862d26feaa063414d95b048f685
-ms.openlocfilehash: e0088692b9de10c188f15b85b1f20b98cc113517
+ms.sourcegitcommit: 9146f0d3771f1f3687c94dc9f4978b5db5765c5d
+ms.openlocfilehash: 9f098ef590e51547f066289965a7ce9fd02dc8cd
 
 ---
 # 合成动画
@@ -22,24 +22,30 @@ Windows.UI.Composition WinRT API 允许你在统一的 API 层中创建、设置
 ##合成动画类型
 **关键帧动画**提供传统的时间驱动、*逐帧*动画体验。 开发人员可以显式定义描述动画属性在动画时间线中的特定点处需要具有的值的*控制点*。 更重要的是，你能够使用缓动函数（或称为插入程序）来介绍如何在这些控制点之间过渡。  
 
-**表达式动画**是在 Windows 10 11 月更新（版本 10586）的可视化层中引入的新型动画。 表达式动画隐藏的理念是，开发人员可以在可视化属性和会在每个帧中进行评估和更新的离散值之间创建数学关系。 开发人员可以在合成对象或属性集中引用属性、使用数学函数帮助程序，甚至引用输入以派生这些数学关系。 表达式使 Windows 平台支持视差和粘滞标头等体验并使之流畅展开。  
+**隐式动画**是一种动画类型，让开发人员可以定义可重用的单个动画，或者定义独立于核心应用逻辑的一系列动画。 隐式动画让开发人员可以创建动画*模板*，并将它们与触发器连接。 这些触发器是由显式分配引起的属性更改。 开发人员可以将模板定义为单个动画或动画组。 动画组是可通过显式方式或者使用触发器一起启动的动画模板集合。 借助隐式动画，用户可以在每次希望更新属性值和查看其是否设置动画时，无需创建显式 KeyFrameAnimations。
+
+**表达式动画**是在 Windows 10 11 月更新（版本 10586）的可视化层中引入的动画类型。 表达式动画背后的理念是，开发人员可以在[可视化](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)属性与将在每个帧中进行评估和更新的离散值之间创建数学关系。 开发人员可以在合成对象或属性集中引用属性、使用数学函数帮助程序，甚至引用输入以派生这些数学关系。 表达式使 Windows 平台支持视差和粘滞标头等体验并使之流畅展开。  
 
 ##为什么使用合成动画？
 **性能**  
- 在生成通用 Windows 应用程序时，大多数开发人员代码在 UI 线程上运行。 因此，为了确保动画可以在不同设备类别上流畅运行，系统会执行动画计算，并处理独立线程以维持 60 FPS 的频率。 这意味着，开发人员可以依靠系统提供流畅的动画，同时应用程序可以执行高级用户体验的其他复杂操作。    
+ 在生成通用 Windows 应用程序时，大多数开发人员代码在 UI 线程上运行。 为了确保动画可以在不同设备类别上流畅运行，系统会执行动画计算，并处理独立线程以维持 60 FPS 的频率。 这意味着，开发人员可以依靠系统提供流畅的动画，同时应用程序可以执行高级用户体验的其他复杂操作。    
  
 **可能性**  
-可视化层中的合成动画的目标是呈现优美的 UI。 我们想要向开发人员提供灵活性和不同类型的动画，以根据他们令人惊叹的想法进行构建并不遗余力地发展 UWP
+可视化层中的合成动画的目标是方便创建优美的 UI。 我们希望为开发人员提供不同类型的动画，以便他们提供出色的想法。
  
- （还可以查看 [Composition GitHub](http://go.microsoft.com/fwlink/?LinkID=789439)，以获取有关如何使用 API 的示例和操作中 API 的一些保真度较高的示例。）  
+   
 
 **模板化**  
- 可视层化中的所有合成动画都是模板，这意味着开发人员可以在多个对象上使用动画，而无需单独创建动画。 这允许开发人员使用相同的动画，并调整属性或参数以满足某些其他需求，无需担心阻碍以前的动画使用。  
+ 可视层化中的所有合成动画都是模板，这意味着开发人员可以在多个对象上使用动画，而无需创建单独的动画。 这允许开发人员使用相同的动画，并调整属性或参数以满足某些其他需求，无需担心阻碍以前的动画使用。  
+
+可以针对[表达式动画](https://channel9.msdn.com/events/Build/2016/P486)、[交互式体验](https://channel9.msdn.com/Events/Build/2016/P405)、[隐式动画](https://channel9.msdn.com/events/Build/2016/P484)和[连接的动画](https://channel9.msdn.com/events/Build/2016/P485)查看我们的 //BUILD 会话，了解一些示例是可能的。
+
+还可以查看 [Composition GitHub](http://go.microsoft.com/fwlink/?LinkID=789439)，以获取有关如何使用 API 的示例和操作中 API 的高保真度示例。
  
 ##使用合成动画可以设置什么内容的动画？
-合成动画可应用于合成对象的大多数属性，例如 Visual 和 InsetClip。 还可以将合成动画应用到合成效果和属性集。 **在选择设置动画的内容时，请记下类型，这可用于确定所构造的关键帧动画的类型或者是表达式动画必须解析为的类型。**  
+合成动画可应用于合成对象的大多数属性，例如 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 和 **InsetClip**。 还可以将合成动画应用到合成效果和属性集。 **在选择设置动画的内容时，请记下类型，这可用于确定所构造的关键帧动画的类型或者是表达式动画必须解析为的类型。**  
  
-###视觉
+###可视
 |可进行动画设置的视觉属性|  类型|
 |------|------|
 |AnchorPoint|   Vector2|
@@ -64,7 +70,7 @@ Windows.UI.Composition WinRT API 允许你在统一的 API 层中创建、设置
 |TopInset|  Scalar|
 
 ##可视化子通道属性
-除了能够设置 Visual 属性的动画外，你还可以针对动画定向这些属性的*子通道*组件。 例如，假设你只想设置 Visual 的 X Offset 的动画，而非整个 Offset。 动画可以定向 Vector3 Offset 属性，或 Offset 属性的 Scalar X 组件。 除了能够定向属性的单个子通道组件，还可以定向多个组件。 例如，可以定向 Scale 的 X 和 Y 组件。
+除了能够设置 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 属性的动画外，你还可以针对动画定向这些属性的*子通道*组件。 例如，假设你只想设置 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 X Offset 的动画，而非整个 Offset。 动画可以定向 Vector3 Offset 属性，或 Offset 属性的 Scalar X 组件。 除了能够定向属性的单个子通道组件，还可以定向多个组件。 例如，可以定向 Scale 的 X 和 Y 组件。
 
 |可进行动画处理的可视化子通道属性|  类型|
 |----------------------------------------|------|
@@ -89,7 +95,7 @@ Windows.UI.Composition WinRT API 允许你在统一的 API 层中创建、设置
 *设置 Brush 属性的 Color 子通道的动画会稍有不同。 需要将 StartAnimation() 附加到 Visual.Brush，并声明该属性以在参数中动画设置为“Color”。 （有关设置颜色动画的更多详细信息将在后面部分中讨论）
 
 ##属性集和效果
-除了设置合成可视化和 InsetClip 属性的动画之外，还可以设置 PropertySet 或 Effect 中的属性的动画。 对于属性集，定义某个属性，并将其存储在合成属性集中。该属性在以后可以是动画的目标（也可以同时在另一个动画中引用）。 这将在接下来的部分中进行详细介绍。  
+除了设置 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 和 InsetClip 属性的动画之外，还可以设置 PropertySet 或 Effect 中的属性的动画。 对于属性集，定义某个属性并将其存储在合成属性集中，该属性在以后可以是动画的目标（也可以同时在另一个动画中引用）。 这将在接下来的部分中进行详细介绍。  
 
 对于效果，可以使用合成效果 API 定义图形效果（查看此处的[效果概述](./composition-effects.md)）。 除了定义效果之外，还可以设置 Effect 的属性值的动画。 通过在 Sprite Visuals 上定向 Brush 属性的属性组件来完成此操作。
 
@@ -102,7 +108,7 @@ Windows.UI.Composition WinRT API 允许你在统一的 API 层中创建、设置
 3.  定义动画的内容，插入关键帧或定义表达式字符串。  
     *  对于关键帧动画，请确保关键帧的值与想要设置动画的属性具有相同类型。  
     *  对于表达式动画，请确保表达式字符串将解析为与想要设置动画的属性具有相同类型。  
-4.  在想要设置其属性的动画的 Visual 上启动动画，调用 StartAnimation 并包括为参数：想要设置动画的属性的名称（使用字符串形式）以及动画对象。  
+4.  在想要设置其属性的动画的 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 上启动动画，调用 StartAnimation 并包括为参数：想要设置动画的属性的名称（使用字符串形式）以及动画对象。  
 
 ```cs
 // KeyFrame Animation Example to target Opacity property
@@ -154,9 +160,11 @@ animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f));
 ```
 
 **注意：**当使用关键帧动画设置颜色的动画时，还需要记住其他一些事项：
-1.  需将 StartAnimation 附加到 Visual.Brush，而非附加到 Visual，并且 **Color** 是你想要设置动画的属性参数。
+1.  需要将 StartAnimation 附加到 Visual.Brush，而非附加到 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)，并且 **Color** 是你想要设置动画的属性参数。
 2.  关键帧的“value”组件由 Windows.UI 命名空间的 Colors 对象定义。
-3.  通过设置 InterpolationColorSpace 属性，可以选择定义内插将完成的颜色空间。 可能的值包括：a.  CompositionColorSpace.Rgb b.  CompositionColorSpace.Hsl
+3.  通过设置 InterpolationColorSpace 属性，可以选择定义内插将完成的颜色空间。 可能值的包括：
+    *   CompositionColorSpace.Rgb
+    *   CompositionColorSpace.Hsl
 
 
 ##关键帧动画属性
@@ -166,7 +174,8 @@ animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f));
 *   IterationBehavior – 动画的计数或无限重复行为
 *   IterationCount – 关键帧动画将重复的有限次数
 *   KeyFrame Count – 特定关键帧动画中的关键帧读数
-*   StopBehavior – 用于在调用 StopAnimation 后指定设置动画的属性值的行为。  
+*   StopBehavior – 用于在调用 StopAnimation 后指定设置动画的属性值的行为  
+*   Direction – 指定动画的播放方向  
 
 将动画的持续时间设置为 5 秒的示例：  
 ```cs
@@ -178,13 +187,15 @@ animation.Duration = TimeSpan.FromSeconds(5);
 支持的缓动函数有两种类型：
 *   线性
 *   三次方贝塞尔  
+*   步骤  
 
 三次方贝塞尔是经常用来描述可缩放的平滑曲线的参数函数。 在与合成关键帧动画一起使用时，你将定义属于 Vector2 对象的两个控制点。 这些控制点用于定义曲线的形状。 建议使用类似站点（例如[此站点](http://cubic-bezier.com/#0,-0.01,.48,.99)）来可视化两个控制点构造三次方贝塞尔曲线的方式。
 
-若要创建缓动函数，请使用合成器对象的构造函数方法。 下面的两个示例演示创建线性缓动函数和基本的 easeIn 三次方贝塞尔。  
+若要创建缓动函数，请使用合成器对象的构造函数方法。 下面的两个示例演示创建线性缓动函数和基本的三次方贝塞尔缓动函数。    
 ```cs
 var linear = _compositor.CreateLinearEasingFunction();
 var easeIn = _compositor.CreateCubicBezierEasingFunction(new Vector2(0.5f, 0.0f), new Vector2(1.0f, 1.0f));
+var step = _compositor.CreateStepEasingFunction();
 ```
 若要将缓动函数添加到关键帧，只需在插入到动画时将该函数从第三个参数添加到关键帧即可。   
 使用关键帧添加 easeIn 缓动函数的示例：  
@@ -193,10 +204,10 @@ animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f), easeIn);
 ```
 
 ##启动和停止关键帧动画
-在定义了动画和关键帧后，你可以随时连接动画。 在启动动画时，你可以指定要设置动画的 Visual、目标属性以及该动画的引用。 通过调用 StartAnimation() 函数执行此操作。 请记住，在属性上调用 StartAnimation() 将断开连接并删除任何之前运行的动画。  
-**注意：**选择要设置动画的属性的引用采用字符串形式。  
+在定义了动画和关键帧后，你可以随时连接动画。 在启动动画时，指定要设置动画的 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 和目标属性以及动画的引用。 通过调用 StartAnimation() 函数执行此操作。 请记住，在属性上调用 StartAnimation() 将断开连接并删除任何之前运行的动画。  
+**注意：**选择用来设置动画的属性的引用采用字符串形式。  
 
-根据 Visual 的 Offset 属性设置并启动动画的示例：  
+根据 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 Offset 属性设置并启动动画的示例：  
 ```cs
 targetVisual.StartAnimation("Offset", animation);
 ```  
@@ -204,7 +215,7 @@ targetVisual.StartAnimation("Offset", animation);
 如果想要定向子通道属性，需要将该子通道添加到定义想要设置动画的属性的字符串。 在以上示例中，语法将更改为 StartAnimation("Offset.X, animation2)，其中 animation2 是 ScalarKeyFrameAnimation。  
 
 在启动动画后，仍然能够在动画完成前阻止它。 通过使用 StopAnimation() 函数完成此操作。  
-根据 Visual 的 Offset 属性停止动画的示例：    
+根据 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 Offset 属性停止动画的示例：    
 ```cs
 targetVisual.StopAnimation("Offset");
 ```
@@ -306,7 +317,7 @@ myScopedBatch.Completed += OnBatchCompleted;
 ```cs
 var expression = _compositor.CreateExpressionAnimation("0.2 + 0.3");
 ```
-与关键帧动画相似，在定义了表达式动画后，你需要将其附加到 Visual 并声明希望动画来设置动画的属性。 在下面我们会继续操作上述示例，并将表达式动画附加到 Visual 的 Opacity 属性（Scalar 类型）：  
+与关键帧动画相似，在定义了表达式动画后，你需要将其附加到 Visual 并声明希望动画来设置动画的属性。 下面我们继续操作上述示例，并将表达式动画附加到 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 Opacity 属性（Scalar 类型）：  
 ```cs
 targetVisual.StartAnimation("Opacity", expression);
 ```
@@ -324,8 +335,9 @@ targetVisual.StartAnimation("Opacity", expression);
 |一元| -|
 |乘法|    * /|
 |加法|  + -|
+|Mod| %|  
 
-同样的，在计算表达式时，它将遵循运算符优先级和结合性，如 C# 语言规范中所定义： 换言之，它会遵循运算的基本顺序。  
+同样，在计算表达式时，它将遵循运算符优先级和结合性，如 C# 语言规范中所定义。 换言之，它会遵循运算的基本顺序。  
 
 在下面的示例中，在计算时，根据运算顺序将首先解析括号，然后再解析等式的其余部分：  
 ```cs
@@ -333,7 +345,7 @@ targetVisual.StartAnimation("Opacity", expression);
 ```
 
 ###属性参数
-属性参数是表达式动画最强大的组件之一。 在表达式字符串中，你可以引用其他对象（例如合成可视化、合成属性集或其他 C# 对象）的属性。   
+属性参数是表达式动画最强大的组件之一。 在表达式字符串中，你可以引用其他对象（例如 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)、合成属性集或其他 C# 对象）中的属性值。   
 
 若要在表达式字符串中使用这些属性，只需将引用定义为表达式动画的参数。 通过将在表达式中使用的字符串映射到实际对象可完成此操作。 这允许系统在计算等式时知道要检查什么内容才能计算值。 有不同类型的参数与你想要包括在等式中的对象类型相关：  
 
@@ -345,8 +357,9 @@ targetVisual.StartAnimation("Opacity", expression);
 |Quaternion|    SetQuaternionParameter(String ref, Quaternion obj)|
 |Color| SetColorParameter(String ref, Color obj)|
 |CompositionObject| SetReferenceParameter(String ref, Composition object obj)|
+|布尔型| SetBooleanParameter(String ref, Boolean obj)|  
 
-在下面的示例中，我们将创建引用其他两个合成可视化和基本 System.Numerics Vector3 对象的 Offset 的表达式动画。  
+在下面的示例中，我们将创建引用其他两个合成[可视化](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)和基本 System.Numerics Vector3 对象的 Offset 的表达式动画。  
 ```cs
 var commonOffset = new Vector3(25.0, 17.0, 10.0);
 var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + additionalOffset);
@@ -355,7 +368,7 @@ expression.SetVector3Parameter("ParentOffset", parentVisual.Offset);
 expression.SetVector3Parameter("additionalOffset", commonOffset);
 ```
 
-此外，你可以使用与上述相同的模型来从表达式中引用属性集中的值。 合成属性集是动画用于存储数据的有用方法，并且可用于创建可共享、可重复使用、不依赖于任何其他合成对象的生存期的数据。 属性集值可在与其他属性引用类似的表达式中引用。 （属性集将在后文中详细讨论）  
+此外，你可以使用与上述相同的模型从表达式引用属性集中的值。 合成属性集是动画用于存储数据的有用方法，并且可用于创建可共享、可重复使用、不依赖于任何其他合成对象的生存期的数据。 属性集值可在与其他属性引用类似的表达式中引用。 （属性集将在后文中详细讨论）  
 
 我们可以直接修改上述示例，以便使用属性集来定义 commonOffset 而非本地变量：
 ```cs
@@ -369,7 +382,7 @@ expression.SetReferenceParameter("sharedProperties", _sharedProperties);
 
 最后，在引用其他对象的属性时，还可以在表达式字符串中引用子通道属性，或将其作为引用参数的一部分进行引用。  
  
-在下面的示例中，我们引用两个 Visual 的 Offset 属性的 x 子通道：一个位于表达式字符串本身中，另一个在创建参数引用时生成。
+在下面的示例中，我们引用两个 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 Offset 属性的 x 子通道：一个位于表达式字符串本身中，另一个在创建参数引用时生成。
 请注意，在引用 Offset 的 X 组件时，我们会更改 Scalar 参数的参数类型，而非之前示例中所示的 Vector3：  
 ```cs
 var expression = _compositor.CreateExpressionAnimation("xOffset/ ParentOffset.X");
@@ -530,7 +543,92 @@ exp.Expression = “ScrollManipulation.Translation.Y / ScrollBounds”;
 _target.StartAnimation(“Opacity”, exp);
 ```
 
+##使用隐式动画  
+动画是向用户介绍行为的绝佳方法。 有多种方法可以设置内容的动画，但到目前为止所讨论的所有方法都要求显式*启动*动画。 尽管这使你可以实现对定义动画开始时间的完全控制，但每次更改属性值时，将使得管理变得很困难（如果需要动画）。 在应用程序已分离了基于应用“逻辑”（该逻辑用于定义应用的核心组件和基础结构）定义动画的应用“个性化”时，通常会出现这种情况。 隐式动画提供了一种更轻松、更简洁的方式来定义独立于核心应用逻辑的动画。 可以连接这些动画，以便通过特定的属性更改触发器运行。
 
+###设置 ImplicitAnimationCollection  
+隐式动画由其他 **CompositionAnimation** 对象（**KeyFrameAnimation** 或 **ExpressionAnimation**）定义。 **ImplicitAnimationCollection** 表示 **CompositionAnimation** 对象集，它们将在到达属性更改*触发器*时启动。 请注意，在定义动画时，确保设置 **Target** 属性，这将定义动画在启动后将定向的 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 属性。 **Target** 属性只能是可进行动画设置的 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 属性。
+在下面的代码片段中，创建了单个 **Vector3KeyFrameAnimation** 并将其定义为 **ImplicitAnimationCollection** 的一部分。 然后 **ImplicitAnimationCollection** 将附加到 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 **ImplicitAnimation** 属性，这样一来，在到达触发器时，动画便会启动。  
+```csharp
+Vector3KeyFrameAnimation animation = _compositor.CreateVector3KeyFrameAnimation();
+animation.DelayTime =  TimeSpan.FromMilliseconds(index);
+animation.InsertExpressionKeyFrame(1.0f, "this.FinalValue");
+animation.Target = "Offset";
+ImplicitAnimationCollection implicitAnimationCollection = compositor.CreateImplicitAnimationCollection();
+
+visual.ImplicitAnimations = implicitAnimationCollection;
+```
+
+
+###当 ImplicitAnimation 启动时触发  
+触发器是用于描述动画将何时隐式启动的术语。 当前，触发器定义为 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 上的任何动画属性的变化，当显式对该属性进行设置时将出现这些变化。 例如，通过将 **Offset** 触发器放在 **ImplicitAnimationCollection** 上并将动画与该触发器关联，已定向 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 **Offset** 更新将使用该集合中的动画，对它的新值进行动画设置。  
+通过上面的示例，我们添加这一附加行来将触发器设置为目标 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的 **Offset** 属性。  
+```csharp
+implicitAnimationCollection["Offset"] = animation;
+```  
+请注意，**ImplicitAnimationCollection** 可具有多个触发器。 这意味着，对于不同属性的变化，隐式动画或动画组可进行启动。 在上面的示例中，开发人员可以为其他属性（例如 Opacity）添加触发器。  
+###this.FinalValue     
+在第一个隐式示例中，我们将 ExpressionKeyFrame 用于“1.0”关键帧，并为它指定了 **this.FinalValue** 的表达式。 **this.FinalValue** 是表达式语言中的保留关键字，用于提供隐式动画的区分行为。 **this.FinalValue** 将 API 属性上设置的值绑定到了动画。 这将有助于创建真实的模板。 **this.FinalValue** 在显式动画中不适用，由于 API 属性立即设定；而对于隐式动画，它将出现延迟。  
+ 
+##使用动画组  
+**CompositionAnimationGroup** 为开发人员对动画列表进行分组提供了简单的方法，它可以与隐式或显式动画一起使用。   
+###创建和填充动画组  
+Compositor 对象的 **CreateAnimationGroup** 方法允许开发人员创建动画组：  
+```sharp
+CompositionAnimationGroup animationGroup = _compositor.CreateAnimationGroup();
+animationGroup.Add(animationA);
+animationGroup.Add(animationB);
+```   
+一旦创建了组，便可以将各个动画添加到动画组。 请记住无需显式启动各个动画，它们在以下情况下都将全部启动：当针对显式方案调用 **StartAnimationGroup** 时，或者在某一隐式动画中到达触发器时。  
+请注意，确保添加到组的动画都已定义 **Target** 属性。 这将定义设置动画的目标 [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) 的属性。
+
+###将动画组用于隐式动画  
+开发人员可以创建隐式动画，以便在到达触发器时，将启动一组动画组形式的动画。 在此情况下，将动画组定义为在到达触发器时启动的动画集。  
+```csharp
+implicitAnimationCollection["Offset"] = animationGroup;
+```   
+###将动画组用于显式动画  
+开发人员可以创建显式动画，以便在调用 **StartAnimationGroup** 时，将启动已添加的各个动画。 请注意，在此 **StartAnimation** 调用中，当各个动画可以定向不同的属性时，不存在组的定向属性。 请确保已设置每个动画的目标属性。  
+```csharp
+visual.StartAnimationGourp(AnimationGroup);
+```  
+
+###E2E 示例 
+此示例显示了在设置新值时以隐式方式对 Offset 属性进行动画设置。  
+```csharp 
+class PropertyAnimation
+{
+    PropertyAnimation(Compositor compositor, SpriteVisual heroVisual, SpriteVisual listVisual)
+    {
+        // Define ImplicitAnimationCollection
+        ImplicitAnimationCollection implicitAnimations = 
+        compositor.CreateImplicitAnimationCollection();
+
+        // Trigger animation when the “Offset” property changes.
+        implicitAnimations["Offset"] = CreateAnimation(compositor);
+
+        // Assign ImplicitAnimations to a visual. Unlike Visual.Children,    
+        // ImplicitAnimations can be shared by multiple visuals so that they 
+        // share the same implicit animation behavior (same as Visual.Clip).
+        heroVisual.ImplicitAnimations = implicitAnimations;
+
+        // ImplicitAnimations can be shared among visuals 
+        listVisual.ImplicitAnimations = implicitAnimations;
+
+        listVisual.Offset = new Vector3(20f, 20f, 20f);
+    }
+
+    Vector3KeyFrameAnimation CreateAnimation(Compositor compositor)
+    {
+        Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
+        animation.InsertExpressionKeyFrame(0f, "this.StartingValue");
+        animation.InsertExpressionKeyFrame(1f, "this.FinalValue");
+        animation.Target = “Offset”;
+        animation.Duration = TimeSpan.FromSeconds(0.25);
+        return animation;
+    }
+}
+```   
 
  
  
@@ -540,29 +638,29 @@ _target.StartAnimation(“Opacity”, exp);
 
 |函数和构造函数运算| 描述|  
 |-----------------------------------|--------------|  
-|Abs(Float value)|  返回表示浮点参数绝对值的 Float|  
-|Clamp(Float value, Float min, Float max)|  在值小于最小值或最大值，或者大于最大值时，返回大于最小值和小于最大值或最小值的浮点值|  
-|Max (Float value1, Float value2)|  返回 value1 和 value2 之间的较大浮点数。|  
-|Min (Float value1, Float value2)|  返回 value1 和 value2 之间的较小浮点数。|  
-|Lerp(Float value1, Float value2, Float progress)|  返回表示根据进度计算的两个 Scalar 值之间的线性内插计算的浮点数（注意：进度在 0.0 和 1.0 之间）|  
+|Abs(Float value)| 返回表示浮点参数绝对值的 Float|  
+|Clamp(Float value, Float min, Float max)| 在值小于最小值或最大值，或者大于最大值时，返回大于最小值和小于最大值或最小值的浮点值|  
+|Max (Float value1, Float value2)| 返回 value1 和 value2 之间的较大浮点数。|  
+|Min (Float value1, Float value2)| 返回 value1 和 value2 之间的较小浮点数。|  
+|Lerp(Float value1, Float value2, Float progress)| 返回表示根据进度计算的两个 Scalar 值之间的线性内插计算的浮点数（注意：进度在 0.0 和 1.0 之间）|  
 |Slerp(Float value1, Float value2, Float progress)| 返回表示根据进度计算的两个 Float 值之间的球面内插的 Float（注意：进度在 0.0 和 1.0 之间）|  
-|Mod(Float value1, Float value2)|   返回 value1 和 value2 拆分后生成的 Float 剩余数|  
-|Ceil(Float value)|     返回舍入到下一个较大整数的 Float 参数|  
-|Floor(Float value)|    返回舍入到下一个较小整数的 Float 参数|  
+|Mod(Float value1, Float value2)| 返回 value1 和 value2 拆分后生成的 Float 剩余数|  
+|Ceil(Float value)| 返回舍入到下一个较大整数的 Float 参数|  
+|Floor(Float value)| 返回舍入到下一个较小整数的 Float 参数|  
 |Sqrt(Float value)| 返回 Float 参数的平方根|  
-|Square(Float value)|   返回 Float 参数的平方|  
-|Sin(Float value1)||
-|Asin(Float value2)|    返回 Float 参数的 Sin 或 ArcSin|
-|Cos(Float value1)||
-|ACos(Float value2)|    返回 Float 参数的 Cos 或 ArcCos|
-|Tan(Float value1)||
-|ATan(Float value2)|    返回 Float 参数的 Tan 或 ArcTan|
-|Round(Float value)|    返回舍入到最近整数的 Float 参数|
-|Log10(Float value)|    返回 Float 参数的 Log（基数 10）结果|
-|Ln(Float value)|   返回 Float 参数的自然对数结果|
+|Square(Float value)| 返回 Float 参数的平方|  
+|Sin(Float value1)| 返回 Float 参数的 Sin|
+|Asin(Float value2)| 返回 Float 参数的 ArcSin|
+|Cos(Float value1)| 返回 Float 参数的 Cos|
+|ACos(Float value2)| 返回 Float 参数的 ArcCos|
+|Tan(Float value1)| 返回 Float 参数的 Tan|
+|ATan(Float value2)| 返回 Float 参数的 ArcTan|
+|Round(Float value)| 返回舍入到最近整数的 Float 参数|
+|Log10(Float value)| 返回 Float 参数的 Log（基数 10）结果|
+|Ln(Float value)| 返回 Float 参数的自然对数结果|
 |Pow(Float value, Float power)| 返回提升到特定幂的 Float 参数的结果|
-|ToDegrees(Float radians)|  返回换算为度的 Float 参数|
-|ToRadians(Float degrees)|  返回换算为弧度的 Float 参数|
+|ToDegrees(Float radians)| 返回换算为度的 Float 参数|
+|ToRadians(Float degrees)| 返回换算为弧度的 Float 参数|
 
 ###Vector2  
 
@@ -626,7 +724,12 @@ _target.StartAnimation(“Opacity”, exp);
 |Lerp(Matrix3x2 value1, Matrix3x2 value2, Float progress)|  返回表示根据进度计算的两个 Matrix3x2 值之间的线性内插计算的 Matrix3x2（注意：进度在 0.0 和 1.0 之间）|
 |Matrix3x2(Float M11, Float M12, Float M21, Float M22, Float M31, Float M32)|   使用 6 个 Float 参数构造 Matrix3x2|
 |Matrix3x2.CreateFromScale(Vector2 scale)|  使用表示比例的 Vector2 构造 Matrix3x2<br/>\[scale.X, 0.0<br/> 0.0, scale.Y<br/> 0.0, 0.0 \]|
-|Matrix3x2.CreateFromTranslation(Vector2 translation)|  使用表示转换的 Vector2 构造 Matrix3x2<br/>\[1.0, 0.0,<br/> 0.0, 1.0,<br/> translation.X, translation.Y\]|
+|Matrix3x2.CreateFromTranslation(Vector2 translation)|  使用表示转换的 Vector2 构造 Matrix3x2<br/>\[1.0, 0.0,<br/> 0.0, 1.0,<br/> translation.X, translation.Y\]|  
+|Matrix3x2.CreateSkew(Float x, Float y, Vector2 centerpoint)| 使用表示倾斜的两个 Float 和一个 Vector2 构造 Matrix3x2<br/>\[1.0, Tan(y),<br/>Tan(x), 1.0,<br/>-centerpoint.Y * Tan(x), -centerpoint.X * Tan(y)\]|  
+|Matrix3x2.CreateRotation(Float radians)| 使用以弧度表示的旋转构造 Matrix3x2<br/>\[Cos(radians), Sin(radians),<br/>-Sin(radians), Cos(radians),<br/>0.0, 0.0 \]|   
+|Matrix3x2.CreateTranslation(Vector2 translation)| 与 CreateFromTranslation 相同|      
+|Matrix3x2.CreateScale(Vector2 scale)| 与 CreateFromScale 相同|    
+
     
 ###Matrix4x4  
 
@@ -639,8 +742,12 @@ _target.StartAnimation(“Opacity”, exp);
 |Matrix4x4.CreateFromScale(Vector3 scale)|  使用表示比例的 Vector3 构造 Matrix4x4<br/>\[scale.X, 0.0, 0.0, 0.0,<br/> 0.0, scale.Y, 0.0, 0.0,<br/> 0.0, 0.0, scale.Z, 0.0,<br/> 0.0, 0.0, 0.0, 1.0\]|
 |Matrix4x4.CreateFromTranslation(Vector3 translation)|  使用表示转换的 Vector3 构造 Matrix4x4<br/>\[1.0, 0.0, 0.0, 0.0,<br/> 0.0, 1.0, 0.0, 0.0,<br/> 0.0, 0.0, 1.0, 0.0,<br/> translation.X, translation.Y, translation.Z, 1.0\]|
 |Matrix4x4.CreateFromAxisAngle(Vector3 axis, Float angle)|  使用 Vector3 轴和表示角度的 Float 构造 Matrix4x4|
+|Matrix4x4(Matrix3x2 matrix)| 使用 Matrix3x2 构造 Matrix4x4<br/>\[matrix.11, matrix.12, 0, 0,<br/>matrix.21, matrix.22, 0, 0,<br/>0, 0, 1, 0,<br/>matrix.31, matrix.32, 0, 1\]|  
+|Matrix4x4.CreateTranslation(Vector3 translation)| 与 CreateFromTranslation 相同|  
+|Matrix4x4.CreateScale(Vector3 scale)| 与 CreateFromScale 相同|  
 
-###Quaternion  
+
+###四元  
 
 |函数和构造函数运算|   描述|
 |-----------------------------------|--------------|
@@ -668,6 +775,6 @@ _target.StartAnimation(“Opacity”, exp);
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -4,12 +4,12 @@ Description: "使用桌面转换扩展部署和调试从 Windows 桌面应用程
 Search.Product: eADQiWindows 10XVcnh
 title: "部署和调试从 Windows 桌面应用程序转换的通用 Windows 平台 (UWP) 应用"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
+ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
+ms.openlocfilehash: 75e176f17845bdbd618c6ca63fbbb5765bef54fb
 
 ---
 
-# 部署和调试转换的 UWP 应用 (Project Centennial)
+# 部署和调试转换的 UWP 应用
 
 \[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
 
@@ -17,7 +17,7 @@ ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
 
 ## 调试转换的 UWP 应用
 
-使用 Visual Studio 调试转换的应用有两个主要选项。
+有几个用于调试已转换应用的选项。
 
 ### 附加到进程
 
@@ -29,7 +29,7 @@ Visual Studio 现在支持新的打包项目，可使你将在生成应用程序
 
 下面介绍了如何开始使用： 
 
-1. 首先，确保你已做好使用 Centennial 的准备。 有关说明，请参阅[桌面应用转换器预览 (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)。 
+1. 首先，确保已经过设置，可以使用桌面应用转换器。 有关说明，请参阅[桌面应用转换器预览](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)。 
 
 2. 依次运行转换器和 Win32 应用程序的安装程序。 转换器会捕获布局以及对注册表所做的任何更改，并输出一个带有清单和 registery.dat 的 Appx 以虚拟化该注册表：
 
@@ -164,7 +164,30 @@ Visual Studio 现在支持新的打包项目，可使你将在生成应用程序
 
 4.  如果要面向你添加的 UWP API 进行生成，你现在可以将生成目标切换为 DesktopUWP。
 
+### PLMDebug 
+
+如果要在应用运行时进行调试，Visual Studio F5 和“附加到进程”将很有用。 但是，在某些情况下，你可能希望更精细的控制调试过程，包括能够在应用启动前调试应用。 在这些更高级的方案中，使用 [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)。 此工具允许使用 Windows 调试程序调试转换的应用，并提供对应用生命周期（包括暂停、恢复和终止）的完全控制。 
+
+PLMDebug 包含在 Windows SDK 中。 有关详细信息，请参阅 [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)。 
+
+### 在完全信任的容器内运行另一个进程 
+
+你可以在指定应用包的容器内调用自定义进程。 这对于测试方案（例如，如果你有自定义测试工具并想要测试应用的输出）很有用。 若要执行此操作，请使用 ```Invoke-CommandInDesktopPackage``` PowerShell cmdlet： 
+
+```CMD
+Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
+    <string>]  [<CommonParameters>]
+```
+
 ## 部署转换的 UWP 应用
+
+有 2 种方法可部署转换的应用：松散文件注册和部署 appx 程序包。 
+
+松散文件注册非常适用于调试目的，即文件放置在磁盘上你可以轻松访问和更新的位置中并且不需要签名或证书。  
+
+Appx 程序包部署提供了一种跨多台计算机部署和旁加载应用程序的简单方法，但需要程序包进行签名或在该计算机上受信任的证书。
+
+### 松散文件注册
 
 若要在部署期间部署应用，请运行以下 PowerShell cmdlet： 
 
@@ -174,15 +197,24 @@ Visual Studio 现在支持新的打包项目，可使你将在生成应用程序
 
 注意以下情况： 
 
-安装转换的应用的任何驱动器都必须设置为 NTFS 格式。
+* 安装转换的应用的任何驱动器都必须设置为 NTFS 格式。
 
-转换的应用始终以交互用户身份运行。 对于其清单指定 __requireAdministrator__ 的执行级别的 .NET 应用，这具有特定的意义。 如果交互用户具有管理员权限，则将在_每次启动应用时_显示 UAC 提示。 对于标准用户，应用将无法启动。
+* 转换的应用始终以交互用户身份运行。
 
-如果你尝试在未导入你所创建的证书的计算机上运行 Add-AppxPackage cmdlet，则你将收到错误。
+### Appx 程序包部署 
 
 在你部署应用前，你将需要使用证书对其进行签名。 有关创建证书的信息，请参阅[对 .Appx 程序包进行签名](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx)。 
 
-下面介绍如何导入你之前创建的证书。 你可以直接安装它，或者可以从你已签名的 appx 中安装它，就像客户所做的那样。
+下面介绍如何导入你之前创建的证书。 你可以直接使用 CERTUTIL 导入证书，或者可以从你已签名的 appx 中安装它，就像客户所做的那样。 
+
+若要通过 CERTUTIL 安装证书，请从管理员命令提示符中运行以下命令：
+
+```cmd
+Certutil -addStore TrustedPeople <testcert.cer>
+```
+
+若要像客户所做的那样从 appx 导入证书：
+
 1.  在“文件资源管理器”中，右键单击你已使用测试证书签名的 appx，然后从上下文菜单中选择“属性”****。
 2.  单击或点击“数字签名”****选项卡。
 3.  单击或点击该证书并选择“详细信息”****。
@@ -195,7 +227,7 @@ Visual Studio 现在支持新的打包项目，可使你将在生成应用程序
 10. 单击或点击“下一步”****。 将出现新屏幕。 单击或点击“完成”****。
 11. 应出现确认对话框。 如果出现，请单击“确定”****。 如果出现另一个指示证书存在问题的对话框，则可能需要执行某些证书疑难解答操作。
 
-若要使 Windows 信任证书，证书必须位于“证书(本地计算机)”&gt;“受信任根证书颁发机构”&gt;“证书”****节点或“证书(本地计算机)”&gt;“受信任人”&gt;“证书”****节点中。 仅这两个位置中的证书可以在本地计算机的上下文中验证证书信任。 否则，将显示类似于以下字符串的错误消息：
+注意：若要使 Windows 信任证书，证书必须位于“证书(本地计算机)”&gt;“受信任根证书颁发机构”&gt;“证书”****节点或“证书(本地计算机)”&gt;“受信任人”&gt;“证书”****节点中。 仅这两个位置中的证书可以在本地计算机的上下文中验证证书信任。 否则，将显示类似于以下字符串的错误消息：
 ```CMD
 "Add-AppxPackage : Deployment failed with HRESULT: 0x800B0109, A certificate chain processed,
 but terminated in a rootcertificate which is not trusted by the trust provider.
@@ -203,7 +235,13 @@ but terminated in a rootcertificate which is not trusted by the trust provider.
 in the app package must be trusted."
 ```
 
-### 后台操作
+现在证书已获得信任，可使用 2 种方法安装程序包：通过 PowerShell 或只需双击应用包文件即可安装。  若要通过 PowerShell 安装，请运行以下 cmdlet：
+
+```powershell
+Add-AppxPackage <MyApp>.appx
+```
+
+## 后台操作
 
 当你运行转换的应用时，你的 UWP 应用包将从 \Program Files\WindowsApps\\&lt;_package name_&gt;\\&lt;_appname_&gt;.exe 启动。 如果你查看该处，你将看到你的应用具有一个应用程序包清单（名为 AppxManifest.xml），该清单引用用于转换的应用的特殊 xml 命名空间。 该清单文件内部是一个 __&lt;EntryPoint&gt;__ 元素，该元素引用完全信任应用。 当启动该应用时，它不会在应用容器内部运行，而是像往常一样以用户身份运行。
 
@@ -211,16 +249,37 @@ in the app package must be trusted."
 
 在一个名为 VFS 的文件夹内，你将看到包含你的应用具有依赖项的 DLL 的文件夹。 对于应用的经典桌面版本，这些 DLL 将安装到系统文件夹中。 但是，作为 UWP 应用，DLL 位于应用本地。 这样，在安装和卸载 UWP 应用时不会有版本控制问题。
 
+### 打包的 VFS 位置
+
+以下显示了针对应用在系统上的哪个位置覆盖作为程序包一部分交付的文件。 当这些文件实际上位于 [Package Root]\VFS\ 内的重定向位置中时，你的应用将发现这些文件将要位于所列的系统位置中。 根据 [**KNOWNFOLDERID**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd378457.aspx) 常量确定 FOLDERID 位置。
+
+系统位置 | 重定向位置（在 [PackageRoot]\VFS\ 下） | 支持的体系结构
+ :---- | :---- | :---
+FOLDERID_SystemX86 | SystemX86 | x86, amd64 
+FOLDERID_System | SystemX64 | amd64 
+FOLDERID_ProgramFilesX86 | ProgramFilesX86 | x86, amd6 
+FOLDERID_ProgramFilesX64 | ProgramFilesX64 | amd64 
+FOLDERID_ProgramFilesCommonX86 | ProgramFilesCommonX86 | x86, amd64
+FOLDERID_ProgramFilesCommonX64 | ProgramFilesCommonX64 | amd64 
+FOLDERID_Windows | Windows | x86, amd64 
+FOLDERID_ProgramData | Common AppData | x86, amd64 
+FOLDERID_System\catroot | AppVSystem32Catroot | x86, amd64 
+FOLDERID_System\catroot2 | AppVSystem32Catroot2 | x86, amd64 
+FOLDERID_System\drivers\etc | AppVSystem32DriversEtc | x86, amd64 
+FOLDERID_System\driverstore | AppVSystem32Driverstore | x86, amd64 
+FOLDERID_System\logfiles | AppVSystem32Logfiles | x86, amd64 
+FOLDERID_System\spool | AppVSystem32Spool | x86, amd64 
+
 ## 另请参阅
 [将桌面应用程序转换为通用 Windows 平台 (UWP) 应用](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
 
-[桌面应用转换器预览 (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+[桌面应用转换器预览](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 
 [将 Windows 桌面应用程序手动转换为通用 Windows 平台 (UWP) 应用](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)
 
 [GitHub 上的 UWP 代码示例的桌面应用桥](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

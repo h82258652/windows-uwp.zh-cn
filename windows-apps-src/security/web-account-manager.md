@@ -168,9 +168,9 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 有关需要指定哪些作用域才能获得用以与它们的服务结合使用的令牌，服务提供程序将提供相关文档。 
 
-有关 Office 365 和 Outlook.com 作用域，请参阅（使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证）[ https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2 ]。 
+有关 Office 365 和 Outlook.com 作用域，请参阅（使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证）[https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2]。 
 
-有关 OneDrive，请参阅（OneDrive 身份验证和登录）[ https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes ]。 
+有关 OneDrive，请参阅（OneDrive 身份验证和登录）[https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes]。 
 
 ## 使用令牌
 

@@ -4,15 +4,15 @@ ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: "使用本部分中的演练了解如何使用 Microsoft Advertising 库将横幅广告和视频间隙广告添加到应用。"
 title: "Microsoft Advertising 库的开发人员演练"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b
+ms.sourcegitcommit: 20baef9a06b6cdb4ca4f48f71a8e9e2a34192b0f
+ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
 
 ---
 
 # Microsoft Advertising 库的开发人员演练
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 本部分中的演练介绍如何使用 Microsoft Advertising 库将横幅广告和视频间隙广告添加到应用。
 
@@ -26,6 +26,7 @@ ms.openlocfilehash: b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b
 | [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)     | 在 XAML/.NET 应用中添加横幅广告。        |
 | [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)     | 在 HTML5/JavaScript 应用中添加横幅广告。        |
 | [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)       | 在 Windows Phone 8.x Silverlight 应用中添加横幅广告。 |
+| [使用 HTML 5 和 JavaScript 向视频内容添加广告](add-advertisements-to-video-content.md)     |  在使用 JavaScript 与 HTML 编写的通用 Windows 平台 (UWP) 应用中，向视频内容添加广告。 |
 
 
 
@@ -35,6 +36,6 @@ ms.openlocfilehash: b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,8 +6,8 @@ title: "在 Windows 10 中设计非独占软件"
 label: Designing inclusive software
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: cdd41595ee2727c0eeefab7b041c1adfefc15dfa
+ms.sourcegitcommit: c5ccae0e095b7c8e403a230fe8f3442754aa2ad7
+ms.openlocfilehash: 94848fd1acf51e7ab8dab0f45584d3214be58830
 
 ---
 
@@ -105,10 +105,11 @@ Windows 中的内置辅助功能之一是高对比度模式，该模式可增强
 * [非独占设计](http://design.microsoft.com/inclusive)
 * [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
-* [开发非独占 Windows 应用](developing-inclusive-windows-apps.md)  
+* [开发非独占 Windows 应用](developing-inclusive-windows-apps.md) 
+* [辅助功能](accessibility.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

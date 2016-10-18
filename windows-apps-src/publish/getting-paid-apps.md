@@ -4,13 +4,13 @@ Description: "下面是一些重要信息，你将需要使用它们来确保你
 title: "获取付款"
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b7c9bcf36aaee0344c6916fcc81aca189ef0f481
+ms.sourcegitcommit: eaf2c2d7032d7df1184a988afce7dbd4f28d3622
+ms.openlocfilehash: 76bce0070da266cc2bc53cda785136a372e2f3bc
 
 ---
 
-# 获取付款
-下面是一些重要信息，你将需要使用它们来确保你会收到对你的应用和应用内产品 (IAP) 的付款以及 Microsoft Advertising 收入。
+# 获取收入
+下面是一些重要信息，你将需要使用它们来确保你会收到对你的应用和加载项的付款以及 Microsoft Advertising 收入。
 
 > **重要提示** 在从 Windows 应用商店的应用销售中获得收益之前，你需要[设置付款帐户并填写必要的税单](setting-up-your-payout-account-and-tax-forms.md)。
 
@@ -20,13 +20,13 @@ ms.openlocfilehash: b7c9bcf36aaee0344c6916fcc81aca189ef0f481
 
 在大多数情况下，应用商店费用是 30%。 费用已在[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/hh694058)中正式规定。 如果你有任何问题，请随时查看该文档。
 
-Windows 应用商店费用适用于通过 Windows 应用商店收到的所有应用销售，包括 IAP。
+Windows 应用商店费用适用于通过 Windows 应用商店收到的所有应用销售，包括加载项。
 
 ## 价格段
 
 价格段用来设置在你选择分发应用的所有国家/地区的销售价格。 你可以免费提供你的应用，也可以设定客户获取你的应用所需支付的价格金额。 价格段从 0.99 美元开始，并具有附加增量（1.29 美元、1.49 美元、1.99 美元，等等）。 价格越高，价格段之间的增量就越大。
 
-> **注意** 这些价格段也适用于从应用中提供的任何 IAP。
+> **注意** 这些价格段也适用于从应用中提供的任何加载项。
 
 应用商店为每个价格段都提供了 60 多种不同货币相对应的值。 我们使用这些值来帮助你在世界范围内以相当的价格销售你的应用。 但由于外汇汇率的变化，从一种货币转换到另一种货币的确切销售金额可能会略有不同。
 
@@ -38,7 +38,7 @@ Windows 应用商店费用适用于通过 Windows 应用商店收到的所有应
 
 ## 付款时限
 
-每月进行付款（前提是已达到适用的付款阈值，并且你未暂停你的付款，如下所述）。 我们通常在指定月的第 15 日发送该月的所有到期付款。 请注意，付款通常需要 3 到 10 个工作日才会到达你的付款帐户。
+每月进行付款（前提是已达到适用的付款阈值，并且你未暂停你的付款，如下所述）。 我们通常在指定月的第 15 日发送该月的所有到期付款。 请注意，付款通常需要 3 到 10 个工作日才会到达你的付款帐户。 有关详细信息，请参阅[付款阈值、方法和时间范围](payment-thresholds-methods-and-timeframes.md)。
 
 ##  付款暂停状态
 
@@ -61,6 +61,6 @@ Windows 应用商店费用适用于通过 Windows 应用商店收到的所有应
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

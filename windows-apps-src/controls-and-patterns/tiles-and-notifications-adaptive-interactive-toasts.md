@@ -6,16 +6,13 @@ ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 
 ---
-
 # 自适应和交互式 Toast 通知
 
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。
 
@@ -29,7 +26,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
  
 
-## <span id="toast_structure"></span><span id="TOAST_STRUCTURE"></span>Toast 通知结构
+## Toast 通知结构
 
 
 Toast 通知使用 XML 构建，这通常包含以下关键元素：
@@ -61,7 +58,7 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
 ![Toast 通知结构](images/adaptivetoasts-structure.jpg)
 
-### <span id="Visual"></span><span id="visual"></span><span id="VISUAL"></span>视觉
+### 视觉
 
 在视觉元素内，你必须正好有一个包含 Toast 的视觉内容的绑定元素。
 
@@ -72,7 +69,7 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
 有关视觉部分及其子元素中受支持的所有属性，请参阅下面的“架构”部分。 有关更多示例，请参阅下面的 XML 示例部分。
 
-### <span id="Actions"></span><span id="actions"></span><span id="ACTIONS"></span>操作
+### 操作
 
 在 UWP 应用中，你可以将按钮和其他输入添加到 Toast 通知，这可使用户在应用外执行更多操作。 这些操作在 &lt;actions&gt; 元素下指定，其中有两个可以指定的类型：
 
@@ -90,7 +87,7 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
 有关视觉部分及其子元素中受支持的所有属性，请参阅下面的“架构”部分。 有关更多示例，请参阅下面的 XML 示例部分。
 
-### <span id="Audio"></span><span id="audio"></span><span id="AUDIO"></span>音频
+### 音频
 
 自定义声音当前在面向桌面平台的 UWP 应用上不受支持；相反，你可以为你的桌面上的应用从 ms-winsoundevents 列表中进行选择。 移动平台上的 UWP 应用支持 ms-winsoundevents 以及采用以下格式的自定义声音：
 
@@ -99,7 +96,7 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
 有关 Toast 通知中的音频的信息（其中包括 ms-winsoundevents 的完整列表），请参阅[音频架构页面](https://msdn.microsoft.com/library/windows/apps/br230842)。
 
-## <span id="Alarms__reminders__and_incoming_calls"></span><span id="alarms__reminders__and_incoming_calls"></span><span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"></span>闹钟、提醒和来电
+## 闹钟、提醒和来电
 
 
 你可以将 Toast 通知用于闹钟、提醒和来电。 这些特殊 Toasts 具有与标准 Toast 一致的外观，尽管特殊 Toast 具有某些自定义、基于方案的 UI 和模式：
@@ -108,7 +105,7 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 -   除了与提醒通知共享上述行为，闹钟通知还会自动播放循环音频。
 -   来电通知将在 Windows Mobile 设备上全屏显示。 这通过在 Toast 通知的根元素内指定方案属性来实现 - &lt;toast&gt;：&lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
 
-## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>XML 示例
+## XML 示例
 
 
 **注意** 这些示例的 Toast 通知屏幕截图取自桌面上的应用。 在移动设备上，Toast 通知可在弹出时处于折叠状态，并且 Toast 底部带有用于展开它的捕获器。
@@ -290,7 +287,7 @@ Toast 通知使用 XML 构建，这通常包含以下关键元素：
 
  
 
-## <span id="Activation_samples"></span><span id="activation_samples"></span><span id="ACTIVATION_SAMPLES"></span>激活示例
+## 激活示例
 
 
 如上所述，Toast 中的正文和操作能够以不同方式激活应用。 下面的示例向你介绍如何处理 Toast 正文和/或 Toast 操作中的不同类型的激活。
@@ -352,7 +349,7 @@ namespace ToastNotificationTask
 }
 ```
 
-## <span id="Schemas___visual__and__audio_"></span><span id="schemas___visual__and__audio_"></span><span id="SCHEMAS___VISUAL__AND__AUDIO_"></span>架构：&lt;visual&gt; 和 &lt;audio&gt;
+## 架构：&lt;visual&gt; 和 &lt;audio&gt;
 
 
 在以下架构中，“?”后缀表示属性为可选属性。
@@ -492,7 +489,7 @@ silent?
 
 -   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230842)。
 
-## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>架构：&lt;action&gt;
+## 架构：&lt;action&gt;
 
 
 在以下架构中，“?”后缀表示属性为可选属性。
@@ -584,7 +581,7 @@ hint-inputId
 -   此值需要是要关联的输入元素的 id。
 -   在移动和桌面中，这会将按钮放置在输入框的右侧。
 
-## <span id="Attributes_for_system-handled_actions"></span><span id="attributes_for_system-handled_actions"></span><span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"></span>用于系统处理的操作的属性
+## 用于系统处理的操作的属性
 
 
 如果你不希望应用将通知的推迟/重新计划作为后台任务处理，系统可以处理推迟和取消通知的操作。 系统处理的操作可以组合（或单独指定），但我们不建议在没有取消操作的情况下实现推迟操作。
@@ -647,6 +644,6 @@ hint-inputId
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

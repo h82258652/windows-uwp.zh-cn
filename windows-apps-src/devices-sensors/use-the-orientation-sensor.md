@@ -5,7 +5,7 @@ title: "使用方向传感器"
 description: "了解如何使用方向传感器确定设备方向。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
+ms.openlocfilehash: 1265697f03e0de74444fc936a3041d1e88147e77
 
 ---
 # 使用方向传感器
@@ -120,7 +120,7 @@ ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“OrientationSensorCS”**的项目，则使用 `namespace OrientationSensorCS` 替换 `namespace App1`。
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**OrientationSensorCS**的项目，则使用 `namespace OrientationSensorCS` 替换 `namespace App1`。
 
 -   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
@@ -166,7 +166,7 @@ ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“OrientationSensorCS”**的项目，则使用 `x:Class="OrientationSensorCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:OrientationSensorCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**OrientationSensorCS**的项目，则使用 `x:Class="OrientationSensorCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:OrientationSensorCS"` 替换 `xmlns:local="using:App1"`。
 
 -   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
 
@@ -290,7 +290,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“SimpleOrientationCS”**的项目，则使用 `namespace SimpleOrientationCS` 替换 `namespace App1`。
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**SimpleOrientationCS**的项目，则使用 `namespace SimpleOrientationCS` 替换 `namespace App1`。
 
 -   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
@@ -312,7 +312,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“SimpleOrientationCS”**的项目，则使用 `x:Class="SimpleOrientationCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:SimpleOrientationCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**SimpleOrientationCS**的项目，则使用 `x:Class="SimpleOrientationCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:SimpleOrientationCS"` 替换 `xmlns:local="using:App1"`。
 
 -   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
 
@@ -353,6 +353,6 @@ SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

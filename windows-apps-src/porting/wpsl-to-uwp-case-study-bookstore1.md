@@ -5,7 +5,7 @@ description: "本主题介绍将一个非常简单的将 Windows Phone Silverlig
 title: "从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
+ms.openlocfilehash: 86cccfd462717483720c412c1de9eaf6bbc1c5cd
 
 ---
 
@@ -84,7 +84,7 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，而无需键入任何内容。 若要执行该操作，右键单击 **TextBlock**，然后依次单击“编辑样式”****&gt;“应用资源”****。 若要对项模板中的 **TextBlock** 执行该操作，右键单击 **ListBox**，然后依次单击“编辑其他模板”****&gt;“编辑生成的项 (ItemTemplate)”****。
+若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，无需键入任何内容。 若要执行该操作，请右键单击“TextBlock”****，然后单击“编辑样式”****&gt;&gt;“应用资源”****。 若要对项模板中的 **TextBlock** 执行该操作，请右键单击“ListBox”****，然后依次单击“编辑其他模板”****&gt;“编辑生成的项 (ItemTemplate)****”。
 
 项目后有一个 80% 不透明的白色背景，因为 **ListBox** 控件的默认样式将其背景设置为 `ListBoxBackgroundThemeBrush` 系统资源。 在 **ListBox** 上设置 `Background="Transparent"` 以清除该背景。 若要使项模板中的 **TextBlock** 向左对齐，请采用上述的相同方式再次编辑它，并在两个 **TextBlock** 上都设置 `"9.6,0"` 的 **Margin**。
 
@@ -136,6 +136,6 @@ Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

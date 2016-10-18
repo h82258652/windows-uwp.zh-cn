@@ -4,8 +4,8 @@ Description: "按照以下指南准备要提交到 Windows 应用商店的应用
 title: "应用包要求"
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 951c00f9fd2c945ac44d47bfae701049e937b98f
+ms.sourcegitcommit: c15d4153f6ae83cc7bf1ae02d834bd07189e38ab
+ms.openlocfilehash: 250e94c2766227cabad791db6d994bcfb1a2ac33
 
 ---
 
@@ -21,10 +21,10 @@ ms.openlocfilehash: 951c00f9fd2c945ac44d47bfae701049e937b98f
 
 如果你使用 Microsoft Visual Studio 作为开发环境，则你已经拥有可使创建应用包的过程变得快速而轻松的内置工具。 有关详细信息，请参阅[打包应用](https://msdn.microsoft.com/library/windows/apps/mt270969)。
 
-> **注意** 请确保你的所有文件名都使用 ANSI。 
+> **注意** 请确保所有文件名都使用 ANSI。 
 
 
-在 Visual Studio 中创建程序包时，请确保你使用与你的开发者帐户关联的相同 Microsoft 帐户登录。 程序包清单的某些部分具有与你的帐户相关的特定详细信息。 将自动检测和添加此信息。
+在 Visual Studio 中创建程序包时，请确保使用与你的开发者帐户关联的相同帐户登录。 程序包清单的某些部分具有与你的帐户相关的特定详细信息。 将自动检测和添加此信息。
 
 在生成应用包时，Visual Studio 可以创建 .appx 文件或 .appxupload 文件（对于 Windows Phone 8.1 及更早版本，创建 .xap 文件）。 对于面向 Windows 10 的应用，始终在[程序包](upload-app-packages.md)页面中上传 .appxupload 文件。 有关打包适用于应用商店的 UWP 应用的详细信息，请参阅[打包适用于 Windows 10 的通用 Windows 应用](http://go.microsoft.com/fwlink/p/?LinkId=620193 )。
 
@@ -85,6 +85,6 @@ StoreManifest.xml 是一种可选的配置文件，可包含在应用包中。 �
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

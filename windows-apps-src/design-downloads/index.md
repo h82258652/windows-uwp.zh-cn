@@ -1,11 +1,11 @@
 ---
 description: "获取适用于 UWP 应用用户界面布局和控件设计的最新下载和工具。"
-keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
+keywords: "UWP 应用布局, UI, 用户界面设计, 下载, UWP 工具"
 title: "适用于 UWP 应用的设计下载 - Windows 应用开发"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 1370af75dcd45d52d0d31f57acb958d366f9bee5
-ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
+ms.sourcegitcommit: f1ea979f5179cce0bb059534b064c2ecf805ce89
+ms.openlocfilehash: da21817eea3a26ffd162bd19c8eb69345ac1d726
 
 ---
 
@@ -73,7 +73,7 @@ ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>适用于 Adobe Illustrator 的红线工具</b><br/>
-从 Illustrator 原型轻松生成红线。 <br/>[下载适用于 Adobe Illustrator 的红线工具](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>    
+从 Illustrator 原型轻松生成红线。 （需要 Adobe Illustrator CC 或更高版本。）<br/>[下载适用于 Adobe Illustrator 的红线工具](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>  
   </div>
   <div class="side-by-side-content-right">
 <a href="https://go.microsoft.com/fwlink/p/?LinkId=534641"><img src="images/redliner-tool.png" alt="Download the Redliner tool for Adobe Illustrator" /></a>
@@ -109,6 +109,6 @@ ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 <b>想要更多代码？</b> 有关我们的所有 UWP 应用示例的完整列表，请查看 Windows 示例页。 [转到示例门户](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

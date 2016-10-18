@@ -5,7 +5,7 @@ description: "本主题介绍 DirectX 9 和 DirectX 11 之间更高级别的差�
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d63aebaf656b62481675eebf7c0bf9ea51784a8
+ms.openlocfilehash: 9812e3a4528b0ce8abd76b1bfcfb93b1268f362c
 
 ---
 
@@ -116,6 +116,6 @@ Direct3D 9 使用 SetVertexShaderConstant 和 SetPixelShaderConstant 为采用�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

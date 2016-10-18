@@ -5,7 +5,7 @@ title: "校准传感器"
 description: "基于磁力计的设备中的传感器（指南针、测斜仪和方向传感器）因环境因素需要校准。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4652d20b8dd0d04932dcbda330efa8e9367f53d1
+ms.openlocfilehash: 8b669d7f939da9ee93e5a49d2f6434d5573e23c0
 
 ---
 # 校准传感器
@@ -34,6 +34,6 @@ ms.openlocfilehash: 4652d20b8dd0d04932dcbda330efa8e9367f53d1
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

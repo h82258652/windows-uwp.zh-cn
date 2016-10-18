@@ -5,7 +5,7 @@ title: "用于分析和性能的工具"
 description: "Microsoft 提供多种有助于提高通用 Windows 平台 (UWP) 应用性能的工具。"
 translationtype: Human Translation
 ms.sourcegitcommit: 5bbd14fb53cae67bbb827f94e695b2703e07fc34
-ms.openlocfilehash: f7f9821be7d1423b2f89367bd20c09981eca24eb
+ms.openlocfilehash: 3d0cf5f983efdee116bcf8b87398fe376efca3c6
 
 ---
 # 用于分析和性能的工具
@@ -30,6 +30,6 @@ Microsoft 提供多种有助于提高通用 Windows 平台 (UWP) 应用性能的
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

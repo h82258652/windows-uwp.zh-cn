@@ -5,7 +5,7 @@ title: "适用于 HoloLens 的 Device Portal"
 description: "了解适用于 HoloLens 的 Windows Device Portal 是如何支持你远程配置和管理你的 HoloLens 设备。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bd1ae8ccdd81f319fc36ca04b8b839cb313b2854
+ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 
 ---
 # 适用于 HoloLens 的 Device Portal
@@ -171,6 +171,6 @@ HoloLens 上的“系统性能”工具有 3 个可以记录的附加指标。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

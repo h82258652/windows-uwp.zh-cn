@@ -4,16 +4,14 @@ title: "使用后台任务响应系统事件"
 description: "了解如何创建响应 SystemTrigger 事件的后台任务。"
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 37a11b573267726707ee3743309083b774727886
 
 ---
 
 # 使用后台任务响应系统事件
 
-
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 **重要的 API**
 
@@ -23,14 +21,14 @@ ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
 
 了解如何创建响应 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的后台任务。
 
-本主题假定你已经为你的应用编写了一个后台任务类，并且该任务需要运行以响应系统触发的某个事件（如 Internet 变为可用或用户登录）。 此主题重点介绍 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 类。 有关编写后台任务类的详细信息可以在[创建和注册后台任务](create-and-register-a-background-task.md)中找到。
+本主题假定你已经为你的应用编写了一个后台任务类，并且需要运行该任务以响应系统触发的某个事件（如 Internet 可用性发生改变或用户登录时）。 此主题重点介绍 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 类。 有关编写后台任务类的详细信息，请参阅[创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)或
+* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)。
 
 ## 创建 SystemTrigger 对象
 
-
 -   在应用代码中，创建一个新的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 对象。 第一个参数 *triggerType* 指定了将激活此后台任务的系统事件触发器的类型。 有关事件类型的列表，请参阅 [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)。
 
-    第二个参数 *OneShot* 指定后台任务是否将在下次发生系统事件并触发后台任务时，或在每次系统事件发生时运行一次，直至任务注销为止。
+    第二个参数 *OneShot* 指定后台任务是否在下次发生系统事件时，或在每次发生系统事件时仅运行一次，直至任务注销为止。
 
     以下代码指定当 Internet 变为可用时运行后台任务：
 
@@ -44,20 +42,19 @@ ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
 
 ## 注册后台任务
 
-
 -   通过调用后台任务注册函数注册后台任务。 有关注册后台任务的详细信息，请参阅[注册后台任务](register-a-background-task.md)。
 
-    以下代码将注册后台任务：
+    以下代码将为在单独进程中运行的后台进程注册后台任务。 如果要调用在与主机应用相同的进程中运行的后台任务，请不要设置 `entrypoint`：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
-    > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > string entryPoint = "Tasks.ExampleBackgroundTaskClass"; // Namespace name, '.', and the name of the class containing the background task
     > string taskName   = "Internet-based background task";
     >
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
     > ```cpp
-    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass"; // don't set for single-process background tasks
     > String ^ taskName   = "Internet-based background task";
     >
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
@@ -68,11 +65,8 @@ ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
     若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
     > **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
-
-     
-
+ 
 ## 备注
-
 
 若要实际查看后台任务注册，请下载[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)。
 
@@ -82,13 +76,12 @@ ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
 
 > **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
 ## 相关主题
-
 
 ****
 
-* [创建和注册后台任务](create-and-register-a-background-task.md)
+* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)
+* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -104,12 +97,8 @@ ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
- 
-
- 
 
 
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

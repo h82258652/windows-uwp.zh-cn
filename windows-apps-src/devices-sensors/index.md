@@ -5,7 +5,7 @@ title: "设备、传感器和电源"
 description: "为了向用户提供丰富的体验，你可能会发现有必要将外部设备或传感器集成到你的应用中。"
 translationtype: Human Translation
 ms.sourcegitcommit: d6757aba4be1a9e326e9e0dade16663286d24f72
-ms.openlocfilehash: ae6ab11963ed06083e581ce42f39ce483d53e0d6
+ms.openlocfilehash: 25eb40c8e6e1c840d2943b4dca3e42e1c164478d
 
 ---
 # 设备、传感器和电源
@@ -35,6 +35,6 @@ ms.openlocfilehash: ae6ab11963ed06083e581ce42f39ce483d53e0d6
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

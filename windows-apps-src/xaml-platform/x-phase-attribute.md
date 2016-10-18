@@ -5,11 +5,11 @@ description: "将 xPhase 与 xBind 标记扩展结合使用，以便能以增量
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: dfa12909d19a44ed38939c612712c8fe90f3f584
+ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
 
 ---
 
-# x&#58;Phase 属性
+# x:Phase 属性
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -81,6 +81,6 @@ ms.openlocfilehash: dfa12909d19a44ed38939c612712c8fe90f3f584
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

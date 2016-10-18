@@ -1,13 +1,13 @@
 ---
 author: mtoepke
 title: "扩展游戏示例"
-description: "恭喜你！ 此时，你已了解了基本通用 Windows 平台 (UWP) DirectX 3D 游戏的关键组件。"
+description: "恭喜你！ 此时，你已了解基本的通用 Windows 平台 (UWP) DirectX 3D 游戏的关键组件。"
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 keywords:
 - DirectX, XAML
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 02b8681c45c84e1cdd5b97dfc717a68015df1252
+ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
 
 ---
 
@@ -1521,6 +1521,6 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

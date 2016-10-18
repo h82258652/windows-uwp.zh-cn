@@ -5,7 +5,7 @@ title: "使用光传感器"
 description: "了解如何使用氛围光传感器检测照明变化。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
+ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 
 ---
 # 使用光传感器
@@ -101,7 +101,7 @@ ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
     }
 ```
 
-你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**“LightingCS”**的项目，则使用 `namespace LightingCS` 替换 `namespace App1`。
+你需要使用你给予项目的名称重命名以上代码片段中的命名空间。 例如，如果你创建了一个名为**LightingCS**的项目，则使用 `namespace LightingCS` 替换 `namespace App1`。
 
 -   打开文件 MainPage.xaml 并使用以下 XML 替换原始内容。
 
@@ -125,7 +125,7 @@ ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
     </Page>
 ```
 
-你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**“LightingCS”**的项目，则使用 `x:Class="LightingCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:LightingCS"` 替换 `xmlns:local="using:App1"`。
+你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**LightingCS**的项目，则使用 `x:Class="LightingCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 你还应当使用 `xmlns:local="using:LightingCS"` 替换 `xmlns:local="using:App1"`。
 
 -   按 F5 或依次选择“调试”**** > “开始调试”****来生成、部署并运行应用。
 
@@ -172,6 +172,6 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

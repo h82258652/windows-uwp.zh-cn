@@ -1,23 +1,34 @@
 ---
 author: Jwmsft
+Description: "按钮为用户提供了触发即时操作的方法。"
 label: Buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: de5af77435b34b8f28005351a7de125f211ca522
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 845aa9935908aa68b64c856ee5e263490a3340c4
 
 ---
 # 按钮
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 按钮为用户提供了触发即时操作的方法。
 
 ![按钮示例](images/controls/button.png)
 
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx"><strong>Button 类</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx"><strong>RepeatButton 类</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx"><strong>Click 事件</strong></a></li>
+</ul>
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
+</div>
+</div>
 
--   [**Button 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
--   [**RepeatButton 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
--   [**Click 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
+
+
+
 
 ## 这是正确的控件吗？
 
@@ -71,7 +82,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 当你用手指或触笔点击某个按钮或在指针位于其上时按鼠标左键时，按钮会引发 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 如果按钮具有键盘焦点，则按 Enter 键或空格键也会引发 Click 事件。
 
-你通常无法处理按钮上的低级别 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件，因为它具有 Click 行为。 有关详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx)。
+你通常无法处理按钮上的低级别 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件，因为它具有 Click 行为。 有关详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx)。
 
 你可以通过更改 [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) 属性来更改按钮引发 Click 事件的方式。 默认的 ClickMode 值为 **Release**。 如果 ClickMode 为 **Hover**，则无法通过键盘或触摸引发 Click 事件。 
 
@@ -150,85 +161,24 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   不要在按钮中放入太多内容。 使内容简洁且易于理解（仅使用一张图片和一些文本）。
 
 ## 后退按钮
-后退按钮是一项系统提供的 UI 提示，支持在后退堆栈或用户导航历史记录中向后导航。
+后退按钮是一种系统提供的 UI 元素，可支持在后退堆栈或用户导航历史记录中向后导航。 你无需创建自己的后退按钮，但可能必须进行一些工作才能支持良好的后退导航体验。 有关详细信息，请参阅[历史记录和向后导航](../layout/navigation-history-and-backwards-navigation.md)
 
-导航历史记录的范围（应用内或全局）取决于设备和设备模式。
+## 获取示例
+*   [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    以交互式格式查看所有 XAML 控件。
 
-## <span id="examples"></span><span id="EXAMPLES"></span>示例
-
-
-系统后退按钮的 UI 将针对每种设备和输入类型进行优化，但设备和通用 Windows 平台 (UWP) 应用上的导航体验却具有全局性和一致性。 这些不同的体验包括：
-
-手机设备 ![手机上的系统后退功能](images/nav-back-phone.png)
--   始终显示。
--   设备底部的软件或硬件按钮。
--   应用内和应用间的全局后退导航。
-
-<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>平板电脑 ![平板电脑上的系统后退功能（在平板电脑模式下）](images/nav-back-tablet.png)
--   始终在平板电脑模式下显示。
-
-    在桌面模式下不可用。 但可启用标题栏后退按钮。 请参阅[PC、笔记本电脑、平板电脑](#PC)。
-
-    用户可以在平板电脑模式下运行和桌面模式下运行之间切换，方法是转到“设置”&gt;“系统”&gt;“平板电脑模式”****，然后设置“在将设备用作平板电脑时使 Windows 更易于触摸”****。
-
--   设备底部的导航栏中的软件按钮。
--   应用内和应用间的全局后退导航。
-
-<span id="PC"></span><span id="pc"></span>PC、笔记本电脑、平板电脑 ![PC 或笔记本电脑上的系统后退功能](images/nav-back-pc.png)
--   在桌面模式下可选。
-
-    在平板电脑模式下不可用。 请参阅[平板电脑](#Tablet)。
-
-    默认情况下处于禁用状态。 必须选择启用它。
-
-    用户可以在平板电脑模式下运行和桌面模式下运行之间切换，方法是转到“设置”&gt;“系统”&gt;“平板电脑模式”****，然后设置“在将设备用作平板电脑时使 Windows 更易于触摸”****。
-
--   应用标题栏中的软件按钮。
--   仅应用内的后退导航。 不支持应用间的导航。
-
-Surface Hub ![Surface Hub 上的系统后退功能](images/nav-back-surfacehub.png)
--   始终显示。
--   设备底部的软件按钮。
--   应用内和应用间的后退导航。
-
- 
-
-## 应做事项和禁止事项
-
-
--   启用后退导航。
-
-    如果未启用后退导航，你的应用将包括在全局后退堆栈中，但不保留应用内页面导航历史记录。
-
--   启用桌面模式下的标题栏后退按钮。
-
-    将保留应用内页面导航历史记录，不支持应用间的后退导航。
-
-    **注意** 在平板电脑模式下，在用户从设备顶部向下轻扫或在设备顶部附件移动鼠标指针时，会显示标题栏。 若要避免重复和混淆，平板电脑模式下不显示标题栏后退按钮。
-
-     
-
--   在应用内导航历史记录耗尽或不可用时，隐藏或禁用桌面模式下的标题栏后退按钮。
-
-    清楚告诉用户，它们已经尽可能地向后导航。
-
--   每个后退命令应该返回到后退堆栈中的一个页面，或者如果不是处于桌面模式下，应转到前面紧挨着的应用。
-
-    用户可能会对不直观、不一致和不可预测的后退导航感到疑惑。
 
 ## 相关文章
 
 - [单选按钮](radio-button.md)
 - [切换开关](toggles.md)
 - [复选框](checkbox.md)
-
-**对于开发人员 (XAML)**
 - [**Button 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
 
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,22 +4,22 @@ ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: "打包 UWP 应用"
 description: "若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要为其创建一个 appxupload 程序包。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a77e441cbd1b6826e06064dbd4be449813754b25
+ms.sourcegitcommit: 68081887e16801cd28726a2a33fb7993edf71e89
+ms.openlocfilehash: e274557883071c65313893ce725cc2307856174b
 
 ---
 # 打包 UWP 应用
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要为其创建一个 appxupload 程序包。 当你创建 appxupload 时，将生成另一个 appx 程序包用于测试和旁加载。 你可以通过将 appx 程序包旁加载到设备来直接分配你的应用。 本文介绍了配置、创建和测试 UWP 应用包的过程。 有关旁加载的详细信息，请参阅[使用 DISM 旁加载应用](http://go.microsoft.com/fwlink/?LinkID=231020)。
+若要出售你的通用 Windows 平台 (UWP) 应用或将其分配给其他用户，你需要为其创建一个 appxupload 程序包。 当你创建 appxupload 时，将生成另一个 appx 程序包用于测试和旁加载。 你可以通过将 appx 程序包旁加载到设备来直接分配你的应用。 本文介绍了配置、创建和测试 UWP 应用包的过程。 有关旁加载的详细信息，请参阅 [Windows 10 中的旁加载应用](https://technet.microsoft.com/library/mt269549.aspx)。
 
 在 Windows 10 中，生成一个可上传到 Windows 应用商店的程序包 (.appxupload)。 然后，你的应用就可以在所有 Windows 10 设备上安装和运行。 下面是创建应用包的步骤。
 
 1.  [在打包应用前](#before-packaging-your-app)。 按照这些步骤来确保你的应用可以随时打包以进行应用商店提交。
 2.  [配置应用包](#configure-an-app-package)。 使用清单设计器配置程序包。 例如，添加磁贴图像并选择应用支持的方向。
-3.  [创建应用包](#create-an-app-package)。 使用 Microsoft Visual Studio 中的向导创建应用包，然后使用 Windows 应用认证工具包验证你的程序包。
-4.  [旁加载应用包](#sideload-your-app-package)。 在将应用旁加载到设备后，你可以测试其是否正常运行。
+3.  [创建应用包](#create-an-app-package)。 使用 Microsoft Visual Studio 中的向导创建应用包，然后使用 Windows 应用认证工具包验证程序包。
+4.  [旁加载应用包](#sideload-your-app-package)。 将应用旁加载到设备后，你可以测试该应用是否能够正常运行。
 
 完成上述步骤之后，你可以随时在应用商店中出售你的应用。 如果你不打算出售仅供内部用户使用的业务线” (LOB) 应用，你可以旁加载该应用以在任一 Windows 10 设备上安装它。
 
@@ -141,6 +141,6 @@ Visual Studio 可以将你的程序包与应用商店相关联。 当执行此�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

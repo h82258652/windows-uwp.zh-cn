@@ -6,8 +6,8 @@ title: "辅助功能"
 label: Accessibility
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
+ms.sourcegitcommit: 13894c199a95060395886635ebb7c294f18c9d6b
+ms.openlocfilehash: 8974ea067e033796c491781997067aafea773d96
 
 ---
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
 | 文章 | 描述 |
 |---------|-------------|
 | [辅助功能概述](accessibility-overview.md) | 本文概述了与 UWP 应用的辅助功能方案相关的概念和技术。 |
-| [设计非独占软件](designing-inclusive-software.md) | 了解如何改进适用于 Windows 10 的通用 Windows 平台 (UWP) 应用的非独占设计。  以辅助功能为中心来设计和生成非独占软件。 |
+| [设计非独占软件](designing-inclusive-software.md) | 了解如何改进适用于 Windows 10 的 UWP 应用的非独占设计。  以辅助功能思维设计和生成非独占软件。 |
 | [开发非独占 Windows 应用](developing-inclusive-windows-apps.md) | 本文是开发辅助 UWP 应用的路线图。 |
 | [辅助功能测试](accessibility-testing.md) | 为确保 UWP 应用为辅助应用所要遵循的测试过程。 |
 | [应用商店中的辅助功能](accessibility-in-the-store.md) | 介绍有关在 Windows 应用商店中将 UWP 应用声明为辅助应用的要求。 |
@@ -40,10 +40,10 @@ ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
 
 <span id="related_topics"/>
 ## 相关主题  
-* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
+* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

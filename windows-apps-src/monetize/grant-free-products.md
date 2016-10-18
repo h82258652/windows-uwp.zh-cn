@@ -1,19 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: "在 Windows 应用商店购买 API 中使用此方法，以向给定用户授予免费应用或应用内产品 (IAP)。"
+description: "在 Windows 应用商店购买 API 中使用此方法，可向给定用户授予免费应用或加载项。"
 title: "授予免费产品"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
 
 ---
 
 # 授予免费产品
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在 Windows 应用商店购买 API 中使用此方法，以向给定用户授予免费应用或应用内产品 (IAP)。
+
+在 Windows 应用商店购买 API 中使用此方法，可向给定用户授予免费应用或加载项（也称为应用内产品或 IAP）。
 
 当前，你仅可以授予免费产品。 如果你的服务尝试使用此方法授予付费产品，此方法会返回一个错误。
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
 
 | 标头         | 类型   | 说明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer**&lt;*token*&gt;。                           |
+| 授权  | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字符串 | 必须设置为值 **collections.mp.microsoft.com**。                                            |
 | Content-Length | 数字 | 请求正文的长度。                                                                       |
 | Content-Type   | 字符串 | 指定请求和响应类型。 当前，唯一受支持的值为 **application/json**。 |
@@ -58,7 +58,7 @@ ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
 | language       | 字符串 | 用户的语言。                                                                                                                                                                                                                                                                                              | 是      |
 | market         | 字符串 | 用户的市场。                                                                                                                                                                                                                                                                                                | 是      |
 | orderId        | GUID   | 为订单生成的 GUID。 此值对用户而言是唯一的，但不 要求对所有订单都唯一。                                                                                                                                                                                              | 是      |
-| productId      | 字符串 | Windows 应用商店目录中的存储 ID。 存储 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 | 是      |
+| productId      | 字符串 | Windows 应用商店目录中的应用商店 ID。 对于应用，开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上会提供应用商店 ID。 对于加载项，Windows 开发人员中心仪表板中的加载项概述页面的 URL 中会提供应用商店 ID。 应用商店 ID 的一个示例是 9WZDNCRFJ3Q8。 | 是      |
 | quantity       | int    | 要购买的数量。 当前，唯一受支持的值为 1。 如果未指定，默认值为 1。                                                                                                                                                                                                                | 否       |
 | skuId          | 字符串 | Windows 应用商店目录中的 SKU ID。 SKU ID 的一个示例为“0010”。                                                                                                                                                                                                                                                | 是      |
 
@@ -128,7 +128,7 @@ OrderLineItemV6 对象包含以下参数。
 | billingState            | 字符串         | 订单的帐单状态。 在完成时，此值设置为 **Charged**。                                   | 否       |
 | campaignId              | 字符串         | 此订单的市场活动 ID。                                                                              | 否       |
 | currencyCode            | 字符串         | 用于显示价格明细的货币代码。                                                                    | 是      |
-| 说明             | 字符串         | 行项的本地化说明。                                                                    | 是      |
+| 描述             | 字符串         | 行项的本地化说明。                                                                    | 是      |
 | devofferId              | 字符串         | 特定订单的优惠 ID（如果存在）。                                                           | 否       |
 | fulfillmentDate         | datetimeoffset | 完成日期。                                                                           | 否       |
 | fulfillmentState        | 字符串         | 此项的完成状态。 在完成时，此值设置为 **Fulfilled**。                      | 否       |
@@ -137,9 +137,9 @@ OrderLineItemV6 对象包含以下参数。
 | legacyBillingOrderId    | 字符串         | 传统的帐单 ID。                                                                                       | 否       |
 | lineItemId              | 字符串         | 此订单中项目的行项 ID。                                                                 | 是      |
 | listPrice               | 十进制        | 此订单中项目的价目表。                                                                    | 是      |
-| productId               | 字符串         | 行项的 Windows 应用商店产品 ID。                                                               | 是      |
+| productId               | 字符串         | 行项的应用商店 ID。                                                               | 是      |
 | productType             | 字符串         | 产品的类型。 支持的值包括 **Durable**、**Application** 和 **UnmanagedConsumable**。 | 是      |
-| Quantity                | int            | 订购项的数量。                                                                            | 是      |
+| quantity                | int            | 订购项的数量。                                                                            | 是      |
 | retailPrice             | 十进制        | 订购项的零售价格。                                                                        | 是      |
 | revenueRecognitionState | 字符串         | 收入识别状态。                                                                               | 是      |
 | skuId                   | 字符串         | 行项的 Windows 应用商店 SKU ID。                                                                   | 是      |
@@ -245,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

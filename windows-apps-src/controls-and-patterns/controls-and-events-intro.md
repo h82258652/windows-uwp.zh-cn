@@ -1,20 +1,28 @@
 ---
 author: Jwmsft
-Description: "通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。 下面我们将向你显示如何将控件添加到应用。"
-title: "添加控件和处理事件"
+Description: "通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。 下面我们将介绍如何向控件添加应用。"
+title: "控件和模式简介"
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
-label: Intro to controls and events
+label: Intro to controls and patterns
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 709771424daba7c034dc6f19d6998469705a24da
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
 
 ---
-# 控件和事件简介
+# 控件和模式简介
 
-通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。 下面，我们将向你显示如何将控件添加到应用。 可通过 3 个关键步骤将控件添加到应用： 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-- 将控件添加到你的应用 UI。 
+在 UWP 应用开发中，*控件*是一种显示内容或支持交互的 UI 元素。 通过使用按钮、文本框和组合框等控件来显示数据和获取用户输入，你可以为你的应用创建 UI。
+
+*模式*是修改控件或组合多个控件来创造新内容的一种诀窍。 例如，[导航窗格](nav-pane.md)模式是一种可将 [SplitView](split-view.md) 控件用于应用导航的方式。 同样，你可以自定义 [Pivot](tabs-pivot.md) 控件的模板来实现选项卡模式。
+
+在许多情况下，你可以按原样使用控件。 但 XAML 控件将函数与结构和外观分离开来，因此你可以进行各种级别的修改来使它们符合你的需求。 在[样式](../style/index.md)部分中，你可以了解如何使用 [XAML 样式](xaml-styles.md)和[控件模板](control-templates.md)来修改控件。
+
+在此部分中，我们为可用于生成应用 UI 的每个 XAML 控件提供指南。 首先，本文介绍如何向应用添加控件。 对应用使用控件有 3 个关键步骤： 
+
+- 向应用 UI 添加控件。 
 - 设置控件的属性，如宽度、高度或前景色。 
 - 将代码添加到控件的事件处理程序，从而使其执行一些任务。 
 
@@ -132,12 +140,14 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 ## 相关主题
 
--   [**命令栏**](app-bars.md)
--   [搜索](search.md)
--   [浮出控件](dialogs-popups-menus.md)
+-   [按功能的控件索引](controls-by-function.md)
+-   [Windows.UI.Xaml.Controls 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+-   [布局](../layout/index.md)
+-   [样式](../style/index.md)
+-   [可用性](../usability/index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,11 +1,11 @@
 ---
 author: mcleblanc
 description: "在开始移植过程时，你有两个选择。"
-title: "将 Windows 运行时 8.x 项目移植到 UWP 项目&#39;"
+title: "将 Windows 运行时 8.x 项目移植到 UWP 项目'"
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: 60f59c58aedc56da58350a050acd184a376b8067
+ms.openlocfilehash: 97b187b5e1ee988d4e1d514f139cec48088be3f2
 
 ---
 
@@ -177,6 +177,6 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

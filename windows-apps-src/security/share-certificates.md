@@ -5,7 +5,7 @@ ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
+ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 
 ---
 
@@ -205,6 +205,6 @@ ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
 可使用这些步骤创建多个应用，这些应用使用同一个用户证书访问相同或不同的安全 Web 服务。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "为你的应用创建广告市场活动"
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 translationtype: Human Translation
 ms.sourcegitcommit: ce26f020480c3f45e3fc4130a49eb66ecbdf5ba7
-ms.openlocfilehash: 9596dd4de0c05ee6f85189e529ad18e528e954df
+ms.openlocfilehash: 856643dca5b7b25e20b7b5a782de6cef792b94a8
 
 ---
 
@@ -16,9 +16,9 @@ ms.openlocfilehash: 9596dd4de0c05ee6f85189e529ad18e528e954df
 
 > **注意** 你可以仅为通过[应用认证过程](the-app-certification-process.md)的最终发布阶段的应用创建广告市场活动。
 
-下面介绍了如何创建广告市场活动以推广你的应用。
+下面介绍了如何创建广告市场活动来推广你的应用。
 
-1.  在开发人员中心仪表板中的应用页的左侧导航菜单上，依次单击“盈利”****&gt;“推广你的应用”****。
+1.  在开发人员中心仪表板中，从应用页的左侧导航菜单上依次单击“盈利”****&gt;“推广你的应用”****。
 2.  执行下列操作之一：
 
     -   如果你尚未针对此应用创建广告市场活动，“推广你的应用”****页面将显示有关广告市场活动优势的信息。 单击“开始使用”****或“创建广告市场活动”****。
@@ -85,6 +85,6 @@ ms.openlocfilehash: 9596dd4de0c05ee6f85189e529ad18e528e954df
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

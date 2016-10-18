@@ -2,26 +2,46 @@
 author: awkoren
 Description: "运行桌面转换器应用以将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）转换为通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
-title: "桌面应用转换器预览 (Project Centennial)"
+title: "桌面应用转换器"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8a22285467005722ad6ee5bf4f129a7dfdea944c
+ms.sourcegitcommit: ed4da94f2732c279c3071135168da9e4b18953cb
+ms.openlocfilehash: c0ed8386cb823ea83e5b1f80cd584f370a85f278
 
 ---
 
-# 桌面应用转换器预览 (Project Centennial)
+# 桌面应用转换器
 
-\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
+[获取桌面应用转换器](https://aka.ms/converter)
 
-[获取桌面应用转换器。](http://go.microsoft.com/fwlink/?LinkId=785437)
+桌面应用转换器是一款工具，允许你将为 .NET 4.6.1 或 Win32 编写的现有桌面应用发布到通用 Windows 平台 (UWP)。 你可以在无人参与（无提示）模式下通过转换器运行桌面安装程序，并获取可在开发计算机上使用 Add-AppxPackage PowerShell cmdlet 安装的 AppX 程序包。
 
-桌面应用转换器是一款预发布工具，可使你将为 .NET 4.6.1 或 Win32 编写的现有桌面应用发布到通用 Windows 平台 (UWP)。 你可以在无人参与（无提示）模式下通过转换器运行桌面安装程序，并获取可在开发计算机上使用 Add-AppxPackage PowerShell cmdlet 安装的 AppX 程序包。
+桌面应用转换器现已在 [Windows 应用商店](https://aka.ms/converter)中提供。
 
 转换器使用作为转换器下载的一部分提供的干净基本映像在隔离的 Windows 环境中运行桌面安装程序。 它捕获桌面安装程序进行的任何注册表和文件系统 I/O，并将其作为输出的一部分打包。 转换器输出一个带有程序包标识和调用各种 WinRT API 的功能的 AppX。
 
 ## 新增功能
 
 本部分概述桌面应用转换器的各版本之间的更改。 
+
+### 9/14/2016 (v1.0)
+
+* 桌面应用转换器现可在 [Windows 应用商店](https://aka.ms/converter)中下载！ 
+* 在[下载中心](https://www.microsoft.com/download/details.aspx?id=53833)获取最新的 Windows 10 基本映像 (.wim) 以供与 DAC 一起使用。
+* 通过应用商店应用，你现在可以使用新入口点 *DesktopAppConverter.exe <arguments>* 在提升的命令提示符下或 PowerShell 窗口中从任意位置运行转换器。  
+
+### 9/2/2016 (v0.1.25)
+
+* 集成了最新的 dotnet-computervirtualization NuGet 包。
+* 在 common.dll 上添加了新引入的依赖项。
+* 多个 Bug 修复。
+
+### 8/4/2016 (v0.1.24)
+
+* 添加了对自动签署 DAC 生成的已转换应用以供测试的支持。 查看 ```–Sign``` 标识，试一试。 
+* 添加了虚拟注册表配置单元中的 COM 注册在打包的 AppX 内不受支持时的警告。  
+* 添加了对在 VC++ 库上自动检测应用依赖项并随后将其转换为 AppX 清单依赖项的支持。 请注意，为了使用 VC++ 运行时旁加载和测试应用，你需要下载 VCLib 框架包，如博客文章[在 Centennial 项目中使用 Visual C++ 运行时](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)所述。 在你的计算机上的文件夹 ```Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop``` 下查找程序包、导航到你所依赖的版本（例如 11.0、12.0、14.0），然后双击相应的体系结构程序包（x64、x86）进行安装。
+* 更新了清单框架以与 Windows 10 周年更新 (10.0.14393.0) 一致。 
+* 多个 Bug 修复和改进的输出布局。 
 
 ### 7/7/2016 (v0.1.22)
 
@@ -52,7 +72,7 @@ ms.openlocfilehash: 8a22285467005722ad6ee5bf4f129a7dfdea944c
 - 添加了文件类型关联和协议的自动检测。
 - 改进了检测“开始”菜单快捷方式的逻辑。
 - 改进了文件系统筛选以保留应用安装的 MUI 文件。
-- 在清单中更新了 Project Centennial 的最低受支持桌面版本 (10.0.14342.0)。
+- 在清单中更新了最低受支持桌面版本 (10.0.14342.0)。
 
 ## 系统要求
 
@@ -66,10 +86,12 @@ ms.openlocfilehash: 8a22285467005722ad6ee5bf4f129a7dfdea944c
 + 硬件辅助虚拟化
 + 二级地址转换 (SLAT)
 
-### 推荐资源
-+ [适用于 Windows 10 的 Windows 软件开发工具包 (SDK)](http://go.microsoft.com/fwlink/?LinkId=615097)
+### 所需资源
+
++ [适用于 Windows 10 的 Windows 软件开发工具包 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
 
 ## 设置桌面应用转换器   
+
 桌面应用转换器依赖于作为 Windows Insider Preview 版本进行外部测试的 Windows 10 功能。 确保你使用最新版本来利用转换器。
 
 1. 确保你具有最新的 Windows 10 Insider Preview 操作系统 - 企业版或专业版 (http://insider.windows.com)。 
@@ -120,38 +142,34 @@ PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe
 ```
 
 ## 部署转换的 AppX
-在 PowerShell 中使用 [Add-AppxPackage](https://technet.microsoft.com/library/hh856048.aspx) cmdlet 将已签名的应用包 (.appx) 部署到用户帐户。 若要对 .appx 程序包进行签名，请参考以下部分“对 .Appx 程序包进行签名”。 此外，你可以包含该 cmdlet 的 *Register* 参数，以在开发过程中从已解压缩文件的文件夹中进行安装。 有关详细信息，请参阅[部署和调试转换的 UWP 应用](desktop-to-uwp-deploy-and-debug.md)。
+
+在 PowerShell 中使用 [Add-AppxPackage](https://technet.microsoft.com/library/hh856048.aspx) cmdlet 将已签名的应用包 (.appx) 部署到用户帐户。 
+
+可以使用桌面应用转换器 (v0.1.24) 中的 ```-Sign``` 标志对已转换应用进行自动签名。 此外，若要了解如何对 AppX 程序包进行自动签名，请参阅[对已转换的桌面应用进行签名](desktop-to-uwp-signing.md)。
+
+你还可以利用 Add-AppXPackage PowerShell cmdlet 的 ```-Register``` 参数，在开发过程中从已解压缩文件的文件夹中进行安装。 
+
+有关部署和调试已转换应用的详细信息，请参阅[部署和调试转换的 UWP 应用](desktop-to-uwp-deploy-and-debug.md)。 
 
 ## 对 .Appx 程序包进行签名
 
-Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用 Microsoft Windows 10 SDK 附带的 SignTool.exe 对 .appx 程序包进行签名。
+Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用作为转换器命令行的一部分的 ```-Sign``` 标志或 Microsoft Windows 10 SDK 附带的 SignTool.exe 对 .appx 程序包进行签名。
 
-### 示例
-```CMD
-C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
-C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
-C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
-```
-**注意：**当你运行 MakeCert.exe 并且系统要求你输入密码时，请选择“无”****。
+有关如何对.appx 程序包进行签名的其他详细信息，请参阅[对已转换的桌面应用进行签名](desktop-to-uwp-signing.md)。 
 
-有关证书和签名的详细信息，请参阅：
+## 警告
 
-+ [操作方法：创建在部署期间使用的临时证书](https://msdn.microsoft.com/library/ms733813.aspx)
-+ [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
-+ [SignTool.exe（签名工具）](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
-
-### 警告
 1. 主机上的 Windows 10 版本必须与作为桌面应用转换器下载的一部分获取的基本映像匹配。  
 2. 确保桌面安装程序是独立的目录，因为转换器会将目录的所有内容复制到隔离的 Windows 环境中。  
 3. 当前，桌面应用转换器仅支持在 64 位操作系统上运行转换过程。 你仅可以将转换的.appx 程序包部署到 64 位 (x64) 操作系统。  
 4. 桌面应用转换器需要桌面安装程序在无人参与模式下运行。 确保使用 *-InstallerArguments* 参数将安装程序的无提示标志传递到转换器。
-5. 发布公共 SxS Fusion 程序集不起作用。 在安装期间，应用程序可以发布公共并行 Fusion 程序集，这些程序集可供任何其他进程访问。 在进程激活上下文创建期间，这些程序集将由名为 CSRSS.exe 的系统进程检索。 当 Centennial 进程执行此操作时，这些程序集的激活上下文创建和模块加载将失败。 内置程序集（如 ComCtl）随操作系统附带，因此从 Centennial 进程获取它们的依赖项很安全。 SxS Fusion 程序集在以下位置注册：
+5. 发布公共 SxS Fusion 程序集不起作用。 在安装期间，应用程序可以发布公共并行 Fusion 程序集，这些程序集可供任何其他进程访问。 在进程激活上下文创建期间，这些程序集将由名为 CSRSS.exe 的系统进程检索。 当已转换的进程执行此操作时，这些程序集的激活上下文创建和模块加载将失败。 内置程序集（如 ComCtl）随操作系统附带，因此获取它们的依赖项很安全。 SxS Fusion 程序集在以下位置注册：
   + 注册表： `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
   + 文件系统：%windir%\\SideBySide
 
 ## 已知问题
 
-+ 如果你在之前已安装桌面应用转换器预览的开发人员计算机上收到 Windows 预览体验成员外部测试版，你可能会在设置新的基本映像时收到错误 `New-ContainerNetwork: The object already exists`。 作为解决方法，请从提升的命令提示符运行命令 `Netsh int ipv4 reset`，然后重启你的计算机。 
++ 如果你在之前已安装桌面应用转换器的开发人员计算机上收到 Windows 预览体验成员外部测试版，你可能会在设置新的基本映像时收到错误 `New-ContainerNetwork: The object already exists`。 作为解决方法，请从提升的命令提示符运行命令 `Netsh int ipv4 reset`，然后重启你的计算机。 
 + 如果主可执行文件或任何依赖项放置在“Program Files”或“Windows\System32”下，使用“AnyCPU”版本选项编译的 .NET 应用将无法安装。 作为解决方法，请使用特定于体系结构的桌面安装程序（32 位或 64 位）成功生成 AppX 程序包。
 
 ## 来自桌面应用转换器的遥测  
@@ -197,7 +215,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 ### 可选 Appx Manifest 参数  
 |参数|描述|
 |---------|-----------|
-|```-AppExecutable <String>``` [可选] | 应用程序的主可执行文件的完整路径（如果要安装，但并非必须安装），例如“C:\Program Files (x86)\MyApp\MyApp.exe”。|
+|```-AppExecutable <String> [optional]``` [可选] | 你的应用程序的主可执行文件的名称（“MyApp.exe”）。 |
 |```-AppFileTypes <String>``` [可选] | 应用程序将与其关联的文件类型的逗号分隔列表（例如 “.txt, .doc”，不包含引号）。|
 |```-AppId <String>``` [可选] | 在 appx 清单中指定要将 Application Id 设置为的值。 如果未指定，则将其设置为 *PackageName* 传入的值。|
 |```-AppDisplayName <String>``` [可选] | 在 appx 清单中指定要将应用程序显示名称设置为的值。 如果未指定，则将其设置为 *PackageName* 传入的值。 |
@@ -211,6 +229,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```-ExpandedBaseImage <String>``` [可选] | 已扩展的基本映像的完整路径。|
 |```-MakeAppx [<SwitchParameter>]``` [可选] | 一个告知此脚本对输出调用 MakeAppx 的开关（当存在时）。 |
 |```-LogFile <String>``` [可选] | 指定日志文件。 如果省略，将创建一个日志文件临时位置。 |
+| ```Sign [<SwitchParameter>] [optional]``` | 指示此脚本对输出 appx 进行签名。 此开关应该位于开关 ```-MakeAppx``` 旁边。 
 |```<Common parameters>``` | 此 cmdlet 支持通用参数：*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable* 和 *OutVariable*。 有关详细信息，请参阅 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。 |
 
 ### 清除参数
@@ -219,25 +238,44 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```Cleanup [<Option>]``` | 为 DesktopAppConverter 项目运行清除。 清除模式有 3 个有效的选项。 |
 |```Cleanup All``` | 删除所有已扩展的基本映像、删除任何临时转换器文件、删除容器网络并禁用可选的 Windows 功能，即容器。 |
 |```Cleanup WorkDirectory``` | 删除所有临时转换器文件。 |
-|```Cleanup ExpandedImages``` | 删除安装在主机上的所有已扩展的基本映像。 |
+|```Cleanup ExpandedImage``` | 删除安装在主机上的所有已扩展的基本映像。 |
 
 ### 程序包体系结构
-桌面应用转换器预览现在支持创建可在 x86 和 amd64 计算机上安装和运行的 x86 和 x64 应用包。 请注意，桌面应用转换器仍然需要在 AMD64 计算机上运行才能执行成功的转换。
+桌面应用转换器现在支持创建可在 x86 和 amd64 计算机上安装和运行的 x86 和 x64 应用包。 请注意，桌面应用转换器仍然需要在 AMD64 计算机上运行才能执行成功的转换。
 
 |参数|描述|
 |---------|-----------|
-|```-PackageArch <String>``` | 生成指定了体系结构的程序包。 有效选项为“x86”或“x64”，例如 -PackageArch x86。 该参数为可选参数。 如果未指定，DesktopAppConverter 将尝试自动检测程序包体系结构。 如果自动检测失败，它将默认为 x64 程序包。 |
+|```-PackageArch <String>``` | 生成指定了体系结构的程序包。 有效选项为“x86”或“x64”，例如 -PackageArch x86。 该参数为可选参数。 如果未指定，DesktopAppConverter 将尝试自动检测程序包体系结构。 如果自动检测失败，它将默认为 x64 程序包。 
+
+### 运行 PEHeaderCertFixTool
+
+在转换过程中，DesktopAppConverter 将自动运行 PEHeaderCertFixTool，以便修复任何损坏的 PE 标头。 但是，还可以在 UWP appx、松散文件或指定二进制文件上运行 PEHeaderCertFixTool。 
+
+PEHeaderCertFixTool 随附在 DesktopAppConverter.zip 中。 示例用法： 
+
+```CMD
+PEHeaderCertFixTool.exe <binary file>|<.appx package>|<folder> [/c] [/v]
+ /c   -- check for corrupted certificate but do not fix (optional)
+ /v   -- verbose (optional)
+example1: PEHeaderCertFixTool app.exe
+example2: PEHeaderCertFixTool c:\package.appx /c
+example3: PEHeaderCertFixTool c:\myapp /c /v
+```
+
+## 语言支持
+
+桌面应用转换器不支持 Unicode；因此，没有用于该工具的任何中文字符或非 ASCII 字符。
 
 ## 另请参阅
 + [获取桌面应用转换器](http://go.microsoft.com/fwlink/?LinkId=785437)
 + [将你的桌面应用发布到通用 Windows 平台](https://developer.microsoft.com/windows/bridges/desktop)
 + [使用桌面应用转换器将桌面应用发布到 UWP](https://channel9.msdn.com/events/Build/2016/P504)
 + [Project Centennial：将现有桌面应用程序发布到通用 Windows 平台](https://channel9.msdn.com/events/Build/2016/B829)  
-+ [适用于 Desktop Bridge 的 UserVoice (Project Centennial)](http://aka.ms/UserVoiceDesktopToUwp)
++ [适用于桌面桥的 UserVoice](http://aka.ms/UserVoiceDesktopToUwp)
 + [GitHub 上的 UWP 代码示例的桌面应用桥](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO5-->
 
 

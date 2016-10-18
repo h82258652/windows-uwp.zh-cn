@@ -1,26 +1,26 @@
 ---
 author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
-description: "如果你有应用和应用内产品 (IAP) 的目录，你可以使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API 来访问你的服务中的这些产品的所有权信息。"
+description: "如果你有应用和加载项的目录，你可以使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API 访问你的服务中的这些产品的所有权信息。"
 title: "从服务查看和授予产品"
 translationtype: Human Translation
-ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
-ms.openlocfilehash: 1e17703442ce539de941890a0616fc5e08391d70
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: 2bd637985441cf2f8fbe8366f207369b3a4dc696
 
 ---
 
 # 从服务查看和授予产品
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-如果你有应用和应用内产品 (IAP) 的目录，你可以使用 *Windows 应用商店收集 API* 和 *Windows 应用商店购买 API* 来访问你的服务中的这些产品的所有权信息。
 
-这些 API 由 REST 方法组合而成，旨在供开发人员用于跨平台服务支持的 IAP 目录。 这些 API 支持你执行以下操作：
+如果你有应用和加载项（也称为应用内产品或 IAP）的目录，你可以使用 *Windows 应用商店收集 API* 和 *Windows 应用商店购买 API* 访问你的服务中的这些产品的所有权信息。
 
--   Windows 应用商店收集 API：查询给定用户拥有的应用和 IAP，或将可消费产品报告为已完成。
--   Windows 应用商店购买 API：向给定用户授予免费应用或 IAP。
+这些 API 由 REST 方法组合而成，旨在供开发人员用于跨平台服务支持的加载项目录。 这些 API 支持你执行以下操作：
+
+-   Windows 应用商店收集 API：查询给定用户拥有的应用和加载项，或将可消费产品报告为已完成。
+-   Windows 应用商店购买 API：向给定用户授予免费应用或加载项。
 
 ## 使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API
 
@@ -59,7 +59,7 @@ Windows 应用商店收集 API 和购买 API 使用 Azure Active Directory (Azur
 
 ### 步骤 2：在 Windows 开发人员中心仪表板中将你的 Azure AD 客户端 ID 与应用程序相关联
 
-Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客户端 ID 关联的应用和 IAP 的用户所有权信息的访问权限。
+Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客户端 ID 关联的应用和加载项的用户所有权信息的访问权限。
 
 1.  登录 [Windows 开发人员中心仪表板](https://dev.windows.com/overview)并选择你的应用。
 2.  转到“服务”****&gt;“产品收集和购买”****页并将你的 Azure AD 客户端 ID 输入到可用字段之一。
@@ -68,7 +68,7 @@ Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客�
 
 在你可以检索 Windows 应用商店 ID 密钥或调用 Windows 应用商店收集 API 或购买 API 前，你的服务必须请求三个表示你的发布者标识的 Azure AD 访问令牌。 其中每个访问令牌都与不同的受众 URI 相关联，每个令牌将通过不同的 API 调用使用。 每个令牌的生命周期为 60 分钟，你可以在它们到期后进行刷新。
 
-若要创建访问令牌，请按照[使用客户端凭据的服务到服务调用](https://msdn.microsoft.com/library/azure/dn645543.aspx)中的说明在你的服务中使用 OAuth 2.0 API。 对于每个令牌，请指定以下参数数据：
+若要创建访问令牌，请按照[使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)中的说明在你的服务中使用 OAuth 2.0 API。 对于每个令牌，请指定以下参数数据：
 
 -   对于 *client\_id* 和 *client\_secret* 参数，请为你的应用程序指定从 [Azure 管理门户](http://manage.windowsazure.com/)所获取的客户端 ID 和客户端密码。 若要生成带有 Windows 应用商店收集 API 或购买 API 所需的身份验证级别的访问令牌，这两个参数都是必需的。
 -   对于 *resource* 参数，请指定以下应用 ID URI 之一（这些 URI 是你以前添加到应用程序清单的 `"identifierUris"` 部分的相同 URI）。 在此过程结束时，你应有三个访问令牌，其中每一个都有与之相关联的这些应用 ID URI 之一：
@@ -78,7 +78,7 @@ Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客�
 
     > **重要提示** 将 `https://onestore.microsoft.com` 受众仅与安全存储在服务中的访问令牌一起使用。 在服务之外公开访问令牌和此受众会让你的服务易受到重播攻击。
 
-有关访问令牌的结构的更多详细信息，请参阅[受支持的令牌和声明类型](http://go.microsoft.com/fwlink/?LinkId=722501)。
+在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。 有关访问令牌的结构的更多详细信息，请参阅[受支持的令牌和声明类型](http://go.microsoft.com/fwlink/?LinkId=722501)。
 
 > **重要提示** 应仅在服务的上下文而非应用中创建 Azure AD 访问令牌。 客户端密码在发送到你的应用时可能会遭泄露。
 
@@ -176,6 +176,6 @@ Windows 应用商店 ID 密钥是 JSON Web 令牌 (JWT)，该令牌表示你想�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

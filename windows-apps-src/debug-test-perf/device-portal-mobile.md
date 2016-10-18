@@ -5,7 +5,7 @@ title: "适用于移动设备的 Device Portal"
 description: "了解 Windows Device Portal 是如何支持你远程配置和管理你的移动设备。"
 translationtype: Human Translation
 ms.sourcegitcommit: df6d42d6a91b8721e905fe9bc3a339dc33408459
-ms.openlocfilehash: eeeb8f98d97468544cc30e3d9884cce15cb913a9
+ms.openlocfilehash: 802030f12f2ca3e29eec053d89ab806298974dc7
 
 ---
 # 适用于移动设备的 Device Portal
@@ -77,6 +77,6 @@ Windows 移动版 Device Portal 中并未包含可以终止任意进程的功能
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

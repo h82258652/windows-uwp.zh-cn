@@ -1,16 +1,16 @@
 ---
 author: msatranjr
 title: "Windows 运行时组件"
-description: "本文讨论 Windows 10 支持的面向企业的功能，此功能允许触摸友好的 .NET 应用使用对主要关键业务操作负责的现有代码。"
+description: "本文讨论 Windows 10 支持的面向企业的功能，此功能允许兼容触摸功能的 .NET 应用使用对主要关键业务操作负责的现有代码。"
 translationtype: Human Translation
-ms.sourcegitcommit: 4e9f3de68c44cf545ceee2efd99d9db8cab08676
-ms.openlocfilehash: fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569
+ms.sourcegitcommit: 700eeb0416ba73a761030e15df8c7c6d8d212785
+ms.openlocfilehash: f1d9c4f782ddd0933ee82d766bf9c70acde4dc19
 
 ---
 
 #适用于旁加载 Windows 应用商店应用的中转 Windows 运行时组件
 
-本文讨论 Windows 10 支持的面向企业的功能，此功能允许触摸友好的 .NET 应用使用对主要关键业务操作负责的现有代码。
+本文讨论 Windows 10 支持的面向企业的功能，此功能允许兼容触摸功能的 .NET 应用使用对主要关键业务操作负责的现有代码。
 
 ##介绍
 
@@ -39,7 +39,7 @@ Windows 包含的一项新功能称为*适用于旁加载应用程序的中转 W
 
 **合约**
 
-旁加载应用程序和桌面组件之间的合约根据 UWP 类型系统进行描述。 这涉及到要声明可表示 UWP 的一个或多个 C\# 类。 有关使用 C\# 创建 Windows 运行时类的具体要求，请参阅 MSDN 主题[使用 C\# 和 Visual Basic 创建 Windows 运行时组件](https://msdn.microsoft.com/en-us/library/br230301.aspx)
+旁加载应用程序和桌面组件之间的合约根据 UWP 类型系统进行描述。 这涉及到要声明可表示 UWP 的一个或多个 C\# 类。 有关使用 C\# 创建 Windows 运行时类的具体要求，请参阅 MSDN 主题[使用 C\# 和 Visual Basic 创建 Windows 运行时组件](https://msdn.microsoft.com/library/br230301.aspx)
 
 >**注意** 目前，桌面组件和旁加载应用程序之间的 Windows 运行时组件合约中不支持枚举。
 
@@ -379,7 +379,7 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 
 以上引用是对此混合服务器的正确操作至关重要的引用的周密组合。 该协议旨在打开 .csproj 文件（在如何编辑项目 OutputType 中有所说明），并根据需要添加这些引用。
 
-正确配置引用后，下一个任务是实现服务器的功能。 请参阅 MSDN 主题 [Windows 运行时组件的互操作性最佳做法（使用 C\#/VB/C++ 和 XAML 的 Windows 应用商店应用）](https://msdn.microsoft.com/en-us/library/windows/apps/hh750311.aspx)。
+正确配置引用后，下一个任务是实现服务器的功能。 请参阅 MSDN 主题 [Windows 运行时组件的互操作性最佳做法（使用 C\#/VB/C++ 和 XAML 的 Windows 应用商店应用）](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx)。
 该任务是创建一个 Windows 运行时组件 dll，可调用桌面代码作为其实现的一部分。 附带的样本包括在 Windows 运行时中使用的主要模式：
 
 -   方法调用
@@ -449,7 +449,7 @@ return Task<int>.Run(async () =>
 
 **在 Visual Studio 中创建代理**
 
-[在 Windows 运行时组件中引发事件](https://msdn.microsoft.com/en-us/library/windows/apps/dn169426.aspx)主题介绍了用于创建并注册代理和存根，以在常规 Windows 应用商店应用包内部使用的过程。
+[在 Windows 运行时组件中引发事件](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx)主题介绍了用于创建并注册代理和存根，以在常规 Windows 应用商店应用包内部使用的过程。
 本文中介绍的步骤比下面介绍的过程更复杂，因为它涉及到在应用程序包内部注册代理/存根（与全局注册相对）。
 
 **步骤 1：**使用适用于桌面组件项目的解决方案，在 Visual Studio 中创建代理/存根项目。
@@ -569,7 +569,7 @@ struct PersonStruct
 
 -   [提供可靠且值得信任的 Windows 应用商店应用](http://go.microsoft.com/fwlink/p/?LinkID=393644)
 
--   [应用合约和扩展（Windows 应用商店应用）](https://msdn.microsoft.com/en-us/library/windows/apps/hh464906.aspx)
+-   [应用合约和扩展（Windows 应用商店应用）](https://msdn.microsoft.com/library/windows/apps/hh464906.aspx)
 
 -   [如何在 Windows 10 中旁加载应用](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
@@ -579,6 +579,6 @@ struct PersonStruct
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO2-->
 
 

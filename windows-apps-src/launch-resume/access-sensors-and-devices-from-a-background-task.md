@@ -4,8 +4,8 @@ title: "从后台任务访问传感器和设备"
 description: "DeviceUseTrigger 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。"
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
+ms.sourcegitcommit: 42697a185eb941d44714a682931b3e418a123ad1
+ms.openlocfilehash: dcaae6cace6a95cbd03af1571395656a8ee3a4fa
 
 ---
 
@@ -19,8 +19,10 @@ ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
 
 若要访问后台中的传感器或外围设备，请创建一个使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
 
-## 设备后台任务概述
+> [!Important]
+> **DeviceUseTrigger** 不能用于单一进程后台任务。 本主题中的信息仅适用于在单独进程中运行的后台任务。
 
+## 设备后台任务概述
 
 当你的应用不再对用户可见时，Windows 会暂停或终止应用以回收内存和 CPU 资源。 这允许其他应用在前台运行并减少电池消耗。 出现这种情况时，如未获得后台任务的帮助，正在进行的数据事件将丢失。 Windows 提供了后台任务触发器 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)，让你的应用从后台安全地在设备和传感器上执行长时间运行的同步和监视操作，即使你的应用暂停也是如此。 有关应用生命周期的详细信息，请参阅[启动、恢复和后台任务](index.md)。 有关后台任务的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
@@ -31,7 +33,6 @@ ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
 某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅 [Windows 应用商店设备应用的设备同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
 
 ## DeviceUseTrigger 后台任务中支持的协议/API
-
 
 使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务使你的应用可以跨许多协议/API 通信，其中大部分协议/API 不受系统触发的后台任务支持。 通用 Windows 应用支持以下内容。
 
@@ -47,10 +48,7 @@ ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
 | IDeviceIOControl | ![DeviceServicingTrigger 支持 IDeviceIOControl](images/ap-tools.png)                                                                                                                       |
 | 传感器 API      | ![DeviceServicingTrigger 支持通用传感器 API](images/ap-tools.png)（仅限于[通用设备系列](https://msdn.microsoft.com/library/windows/apps/dn894631)中的传感器） |
 
- 
-
 ## 在应用包清单中注册后台任务
-
 
 你的应用将在运行后台任务期间以代码的形式执行同步和更新操作。 此代码嵌入在可实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 的 Windows 运行时类中（或 JavaScript 应用的专用 JavaScript 页中）。 若要使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务，你的应用必须在前台应用的应用部件清单文件中声明该任务，这一点与系统触发的后台任务类似。
 
@@ -60,14 +58,13 @@ ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
 <Extensions>
   <Extension Category="windows.backgroundTasks" EntryPoint="DeviceLibrary.SyncContent">
     <BackgroundTasks>
-      <m2:Task Type="deviceUse" /> 
+      <m2:Task Type="deviceUse" />
     </BackgroundTasks>
   </Extension>
 </Extensions>
 ```
 
 ## 使用 DeviceUseTrigger 简介
-
 
 若要使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)，请执行以下基本步骤。 有关后台任务的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
@@ -92,26 +89,19 @@ ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
 
 -   当不再符合某些策略要求（包括最长后台时间（时钟时间）量时，Windows 可能会取消使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务。 使用这些后台任务与外围设备交互时考虑这些策略要求很重要。
 
- 
-
 **提示** 若要了解这些后台任务的工作原理，请下载相关示例。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
-
  
-
 ## 频率和前台限制
-
 
 应用启动操作频率方面没有相关限制，但应用每次只能运行一项 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务操作（这不会对其他类型的后台任务造成影响），并且只有当你的应用位于前台时才能启动后台任务。 当你的应用不在前台时，将无法启动使用 **DeviceUseTrigger** 的后台任务。 在前一项后台任务完成之前，应用无法启动另一项 **DeviceUseTrigger** 后台任务。
 
 ## 设备限制
-
 
 当每个应用仅限于注册并运行一项 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务时，设备（在其上运行你的应用）可能允许多个应用注册并运行 **DeviceUseTrigger** 后台任务。 对于所有应用，**DeviceUseTrigger** 后台任务的总数量可能存在限制，具体取决于设备。 这有助于在资源受限的设备上维持电池寿命。 有关详细信息，请参阅下表。
 
 在单个 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务中，你的应用可以访问无限数量的外围设备或传感器，仅受在上表中列出的受支持的 API 和协议限制。
 
 ## 后台任务策略
-
 
 当应用使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务时，Windows 将强制执行策略。 如果不符合这些策略要求，可能会取消该后台任务。 使用此类型的后台任务与设备或传感器交互时考虑这些策略要求很重要。
 
@@ -132,7 +122,6 @@ ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
 | 当使用受支持的 API/协议时，你的应用可以从单个 [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务中访问的最大数量的外围设备或传感器。 | 无限制 |
 | 当屏幕锁定时，你的后台任务每分钟消耗 400 毫秒的 CPU 时间（假设 1GHz CPU），或者当屏幕未锁定时，每五分钟消耗该时间。 未能满足此策略可能导致任务被取消。 | ![策略适用](images/ap-tools.png) |
  
-
 ### 运行时策略检查
 
 当你的任务在后台运行时，Windows 将强制执行以下运行时策略要求。 如果不能达到任意一项运行时要求，Windows 将取消你的设备后台任务。
@@ -149,10 +138,7 @@ ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
 |  | 移动设备系列：无时间限制。 若要节省资源，不要一次执行多于 1 个或 2 个任务。 |
 | 应用未退出。 | ![策略检查适用](images/ap-tools.png) |
 
- 
-
 ## 最佳做法
-
 
 以下是针对使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 后台任务的应用的最佳做法。
 
@@ -190,15 +176,8 @@ ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
 
 除了 [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869)，你的应用还需要调用 [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504)。 这会通知系统与后台任务关联的异步操作已完成。
 
- 
-
- 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

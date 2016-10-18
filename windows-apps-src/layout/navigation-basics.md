@@ -6,8 +6,8 @@ ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 6926d70c7140b1545a8b5492981d6d0b61af3784
+ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
+ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 
 ---
 
@@ -99,7 +99,7 @@ ms.openlocfilehash: 6926d70c7140b1545a8b5492981d6d0b61af3784
 
 导航元素可以提供两种服务：它们可以帮助用户访问所需的内容，而且某些元素还可让用户知道他们在应用内所处的位置。 但是，它们也会占用应用本来可用于内容或命令元素的空间，因此使用适合应用结构的导航元素非常重要。
 
-### <span id="Peer-to-peer_navigation_elements"></span><span id="peer-to-peer_navigation_elements"></span><span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"></span>对等导航元素
+### <span id="Peer_navigation_elements"></span><span id="peer_navigation_elements"></span><span id="PEER_NAVIGATION_ELEMENTS"></span>对等导航元素
 
 对等导航元素支持在同一个子树的相同级别中的页面之间导航。
 
@@ -265,10 +265,6 @@ ms.openlocfilehash: 6926d70c7140b1545a8b5492981d6d0b61af3784
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

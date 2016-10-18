@@ -5,7 +5,7 @@ title: "线程和异步编程"
 description: "线程和异步编程可让你的应用在并行线程中以异步方式完成工作。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d69259d449ffb7d4dfc1824c77c16eb9e1cdb026
+ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
 
 ---
 # 线程和异步编程
@@ -42,6 +42,6 @@ ms.openlocfilehash: d69259d449ffb7d4dfc1824c77c16eb9e1cdb026
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

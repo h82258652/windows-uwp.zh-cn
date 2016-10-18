@@ -4,7 +4,7 @@ title: "蓝牙广告"
 description: "本部分包含有关如何通过 AdvertisementWatcher 和 AdvertisementPublisher API 的用户将蓝牙低功耗 (LE) 广告集成到通用 Windows 平台 (UWP) 应用的文章。"
 translationtype: Human Translation
 ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: a419ad04fe4f21867f2f1bd1664fbce39a7da792
+ms.openlocfilehash: c8210fd07cdea4095d1f989fe5f55cda529d8de1
 
 ---
 
@@ -29,6 +29,6 @@ Github 上的[蓝牙广告示例](http://go.microsoft.com/fwlink/p/?LinkId=61999
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,24 +6,37 @@ ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 
 ---
 # 滚动栏
 
-<span class="sidebar_heading" style="font-weight: bold;">重要的 API</span>
-
--   [**ScrollViewer 类**](https://msdn.microsoft.com/library/windows/apps/br209527)
--   [**ZoomMode 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 平移和滚动使用户可以获取超出屏幕边界的内容。
 
 滚动查看器控件包含的内容量以适合视区为准，并具有一个或两个滚动条。 触摸手势可用于平移和缩放（滚动条仅在操作期间淡入），指针可用于滚动。 轻拂手势可以利用惯性平移。
 
-**注意** Windows：基于检测到的输入设备，提供两种平移显示模式：适用于触控的平移指示器；适用于其他输入设备（包括鼠标、触摸板、键盘和触笔）的滚动栏。
+**注意**Windows 具有两种滚动条可视化，它们基于用户的输入模式：使用触摸或游戏板时的滚动指示器；以及用于其他输入设备（包括鼠标、键盘和笔）的交互式滚动条。
 
 ![标准滚动栏和平移指示器控件的外观示例](images/SCROLLBAR.png)
+
+
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209527"><strong>ScrollViewer 类</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx"><strong>ScrollBar 类</strong></a></li>
+</ul>
+
+</div>
+</div>
+
+
+
+
+
 
 ## 示例
 
@@ -32,11 +45,27 @@ ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
 ![说明标准滚动栏控件的屏幕截图](images/ScrollBar_Standard.jpg)
 
 ## 创建滚动查看器
+若要向页面添加垂直滚动，请将页面内容打包在滚动查看器中。
 
+```xaml
+<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1">
+
+    <ScrollViewer>
+        <StackPanel>
+            <TextBlock Text="My Page Title" Style="{StaticResource TitleTextBlockStyle}"/>
+            <!-- more page content -->
+        </StackPanel>
+    </ScrollViewer>
+</Page>
+```
 此 XAML 显示如何在滚动查看器中放置图像并启用缩放。
 
 ```xaml
-<ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10" 
+<ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
               HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Visible"
               Height="200" Width="200">
     <Image Source="Assets/Logo.png" Height="400" Width="400"/>
@@ -54,18 +83,18 @@ ScrollViewer 控件作为其他控件复合部分的形式存在是普遍情况�
 **ScrollViewer XAML 附加属性**
 
 ScrollViewer 定义以下 XAML 附加属性：
-- [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx) 
-- [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx) 
+- [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx)
+- [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx)
 - [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
-- [ScrollViewer.IsDeferredScrollingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isdeferredscrollingenabled.aspx) 
+- [ScrollViewer.IsDeferredScrollingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isdeferredscrollingenabled.aspx)
 - [ScrollViewer.IsHorizontalRailEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalrailenabled.aspx)
-- [ScrollViewer.IsHorizontalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalscrollchainingenabled.aspx) 
+- [ScrollViewer.IsHorizontalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalscrollchainingenabled.aspx)
 - [ScrollViewer.IsScrollInertiaEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isscrollinertiaenabled.aspx)
 - [ScrollViewer.IsVerticalRailEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalrailenabled.aspx)
-- [ScrollViewer.IsVerticalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled.aspx) 
+- [ScrollViewer.IsVerticalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled.aspx)
 - [ScrollViewer.IsZoomChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
 - [ScrollViewer.IsZoomInertiaEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
-- [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty.aspx) 
+- [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty.aspx)
 - [ScrollViewer.VerticalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx)
 - [ScrollViewer.ZoomMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
 
@@ -73,7 +102,7 @@ ScrollViewer 定义以下 XAML 附加属性：
 
 例如，下面是如何使 ListView 内置滚动查看器的垂直滚动条始终可见的示例。
 ```xaml
-<ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/> 
+<ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/>
 ```
 
 对于在 XAML 中 ScrollViewer 处于显式状态的情况，正如示例代码所示，你无需使用附加属性语法。 只需使用属性语法，例如 `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`。
@@ -81,11 +110,13 @@ ScrollViewer 定义以下 XAML 附加属性：
 
 ## 建议
 
--   对于超出一条视口边界（垂直或水平）的内容区域使用单轴平移。 对于超出两条视区边界（垂直和水平）的内容区域使用双轴平移。
--   在列表框、下拉列表、文本输入框、网格视图、列表视图和中心控件中使用内置滚动功能。 如果项目过多不能一次显示，用户可以借助这些控件在项目列表中水平或垂直滚动。
+-   尽可能针对垂直滚动（而不是水平）进行设计。
+-   对于超出一条视口边界（垂直或水平）的内容区域使用单轴平移。 对于超出两条视口边界（垂直和水平）的内容区域使用双轴平移。
+-   在列表视图、网格视图、组合框、列表框、文本输入框和中心控件中使用内置滚动功能。 如果项目过多无法同时显示，用户可以借助这些控件在项目列表中水平或垂直滚动。
 -   如果你希望用户可在较大的区域中在两个方向上平移并缩放，请将该图像放置到滚动查看器中。例如，如果你希望用户可以在完整大小的图像（不是调整大小以适应屏幕的图像）中平移和缩放。
 -   如果用户将滚动查看一段较长的文本，请配置滚动查看器，使其仅在垂直方向滚动。
 -   使用滚动查看器仅包含一个对象。 请注意，该唯一对象可能是版式面板，它反过来包含自身的任意数量的对象。
+-   不要将 [Pivot](tabs-pivot.md) 控件放置在滚动查看器内，避免与透视表的滚动逻辑发生冲突。
 
 ## 相关主题
 
@@ -94,6 +125,6 @@ ScrollViewer 定义以下 XAML 附加属性：
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

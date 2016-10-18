@@ -5,7 +5,7 @@ description: "使用 Microsoft Visual Studio 2015 设置你的应用的初始屏
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
+ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
 
 ---
 
@@ -23,7 +23,7 @@ ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
 使用 Visual Studio 2015 模板创建你的应用，一个默认的图像已添加到你的项目并设置为初始屏幕图像。 初始屏幕的背景色默认为浅灰色。 如果要更改应用初始屏幕的默认图像或颜色，请按照以下步骤进行操作：
 
 1.  在 Visual Studio 2015 中打开现有通用 Windows 平台 (UWP) 应用项目。
-2.  在“解决方案资源管理器”****中，打开“Package.appxmanifest”文件。 也可以通过依次选择“项目”****&gt;“存储”****&gt;“编辑应用清单”****，从菜单栏中打开此文件。
+2.  在“解决方案资源管理器”****中，打开“Package.appxmanifest”文件。 也可以通过依次选择“项目”****&gt;“应用商店”****&gt;“编辑应用清单”****，从菜单栏中打开此文件。
 3.  打开“可视资源”****选项卡并从“Package.appxmanifest”窗口左侧的“所有图像资源”****窗格中选择“初始屏幕”****。 如果你是首次更改初始屏幕，你将看到“初始屏幕”****字段中的“Assets\SplashScreen.png”路径。
 
     以下屏幕快照显示了 Visual Studio 2015 中的 “Package.appxmanifest”窗口。 根据对象的类型，你将看到一组稍有不同的可视资源。
@@ -77,6 +77,6 @@ ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

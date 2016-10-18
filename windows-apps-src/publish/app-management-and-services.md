@@ -4,8 +4,8 @@ Description: "你可以在 Windows 开发人员中心仪表板中管理和查看
 title: "应用管理和服务"
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 9787ef724622a95d291b4631196b3e13bcb1298a
 
 ---
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
 
 ### 产品收集和购买
 
-若要使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API 来访问应用和 IAP 的所有权信息，需要在此处输入相关联的 Azure AD 客户端 ID。 请注意，需要 16 个小时才能使这些更改生效。
+若要使用 Windows 应用商店收集 API 和 Windows 应用商店购买 API 来访问应用和加载项的所有权信息，需要在此处输入相关联的 Azure AD 客户端 ID。 请注意，需要 16 个小时才能使这些更改生效。
 
 有关详细信息，请参阅[从服务查看和授予产品](https://msdn.microsoft.com/library/windows/apps/mt609002)。
 
@@ -83,6 +83,6 @@ ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

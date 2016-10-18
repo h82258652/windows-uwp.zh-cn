@@ -4,8 +4,8 @@ Description: "可以直接回复应用的相关评价，让客户知道你正在
 title: "回复客户评价"
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 06228d7816f371f669ad4e6db7310e903f5f0683
+ms.sourcegitcommit: 934715cc2681f613982d081335155e29fa7af775
+ms.openlocfilehash: 24d327a92a6a58ecf265f9cdadd5a49d24c0857d
 
 ---
 
@@ -43,7 +43,7 @@ ms.openlocfilehash: 06228d7816f371f669ad4e6db7310e903f5f0683
 > **注意** 客户可以将开发人员不恰当的评价回复报告给 Microsoft。 他们也可以选择不接收评价回复。
 Microsoft 保留出于任何原因（包括以下情形：你的回复引发了非常多的不恰当评论报告，或非常多的客户选择不接收评论回复）撤消开发人员发送回复权限的权利。
 
-你与客户的关系与你自己相关。 如果开发人员与客户之间有争议，Microsoft 将不介入其中。 但是，如果你认为客户关于你应用的评价内容不合理，请提交[支持票证](http://go.microsoft.com/fwlink/p/?LinkID=401178)。
+你与客户的关系与你自己相关。 如果开发人员与客户之间有争议，Microsoft 将不介入其中。 但是，如果应用评价包含冒犯性、亵渎或侮辱性语言，请提交[支持票证](http://go.microsoft.com/fwlink/p/?LinkID=401178)。
 
 ## 利用客户反馈改善你的应用
 
@@ -52,6 +52,6 @@ Microsoft 保留出于任何原因（包括以下情形：你的回复引发了�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

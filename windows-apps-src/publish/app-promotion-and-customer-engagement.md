@@ -4,20 +4,21 @@ Description: "一旦你的应用在 Windows 应用商店中上架，就应该向
 title: "应用推广和客户参与度"
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3511533f76294767ca409b09a718555a6194e451
+ms.sourcegitcommit: 4dec7ebaaeb0bc0dba24002f8cd8a805285de3d6
+ms.openlocfilehash: 1f43cb9fdf633cecf6848a4ef0dd49a0f07f79c3
 
 ---
 
 # 应用推广和客户参与度
 
 
-一旦你的应用位于 Windows 应用商店中，就应该使尽可能多的客户看到该应用。 我们为你提供了多个选择，帮助你推广应用并留住客户。
+一旦你的应用在 Windows 应用商店中上架，就应该向尽可能多的客户推广该应用。 我们提供了推广产品的选项，可帮助吸引客户注意力。
 
--   [为你的应用创建广告活动](create-an-ad-campaign-for-your-app.md)
+-   [为应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)
 -   [创建自定义应用宣传活动](create-a-custom-app-promotion-campaign.md)
 -   [生成促销代码](generate-promotional-codes.md)
--   [打折出售应用和 IAP](put-apps-and-iaps-on-sale.md)
+-   [打折出售应用和加载项](put-apps-and-add-ons-on-sale.md)
+-   [回复客户反馈](respond-to-customer-feedback.md)
 -   [回复客户评论](respond-to-customer-reviews.md)
 -   [Windows 应用商店应用营销指南](app-marketing-guidelines.md)
 -   [链接到你的应用](link-to-your-app.md)
@@ -29,10 +30,6 @@ ms.openlocfilehash: 3511533f76294767ca409b09a718555a6194e451
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

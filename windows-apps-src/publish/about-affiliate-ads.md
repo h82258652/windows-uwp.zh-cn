@@ -5,7 +5,7 @@ title: "关于关联广告"
 ms.assetid: 7B5478FB-7E68-4956-82EF-B43C2873E3EF
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0ac051d5774dadde48e2692683a6bcfae8264d1c
+ms.openlocfilehash: e60ed6b6237b053a370a42bdb87f9366b265e4d0
 
 ---
 
@@ -33,9 +33,9 @@ ms.openlocfilehash: 0ac051d5774dadde48e2692683a6bcfae8264d1c
 
 ## 如何选择加入关联广告计划
 
-若要选择加入 Microsoft 关联广告计划：
+若要选择加入 Microsoft 关联广告计划，请执行以下操作：
 
-1. 在 Windows 开发人员中心仪表板中转到“盈利”****&gt;“利用广告来盈利”****页面。
+1. 在 Windows 开发人员中心仪表板中转到“盈利”****&gt;“利用广告来盈利”****页。
 2. 在“Microsoft 关联广告”****部分中，选中“在我的应用中显示 Microsoft 关联广告”****复选框。
 
 选中或取消选中此复选框后，你无需重新发布应用以让更改生效。
@@ -49,6 +49,6 @@ ms.openlocfilehash: 0ac051d5774dadde48e2692683a6bcfae8264d1c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
