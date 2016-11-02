@@ -1,19 +1,51 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\windows-wheel-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/68fea5f0abed83618833e7b1f242cd1167f33dac?path=windows-apps-src%2Finput-and-devices%2Fwindows-wheel-interactions.md&_a=contents) | HandedOffSuccess | [Details](#5a5c3bc08e7579b5a7496c88800ac76f48f931714663)
+ [windows-apps-src\monetize\microsoft-store-services-sdk.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/011b370b7bd7ad7c7d8f60281261b6da954e2256?path=windows-apps-src%2Fmonetize%2Fmicrosoft-store-services-sdk.md&_a=contents) | HandedOffSuccess | [Details](#840a5e76d409f547d55e558262af09c8fa36a5445204)
+ [windows-apps-src\publish\images\push-notifications-template.png](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a05580923f3c12ad5d2649b3276e5789f33b051b?path=windows-apps-src%2Fpublish%2Fimages%2Fpush-notifications-template.png&_a=contents) | HandedOffSuccess | [Details](#7c9a4c602aa2fa3168760486354734e4fb3401dc5470)
+ [windows-apps-src\publish\send-push-notifications-to-your-apps-customers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3e3c9737784c81f5eb882296a82a4dcd879363e1?path=windows-apps-src%2Fpublish%2Fsend-push-notifications-to-your-apps-customers.md&_a=contents) | HandedOffSuccess | [Details](#817043579cfd068267c54f2eab9210ef303ca3645502)
 
 ## Item Details
-##### <a name='5a5c3bc08e7579b5a7496c88800ac76f48f931714663'></a> Source: [windows-apps-src\input-and-devices\windows-wheel-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/68fea5f0abed83618833e7b1f242cd1167f33dac?path=windows-apps-src%2Finput-and-devices%2Fwindows-wheel-interactions.md&_a=contents)
+##### <a name='840a5e76d409f547d55e558262af09c8fa36a5445204'></a> Source: [windows-apps-src\monetize\microsoft-store-services-sdk.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/011b370b7bd7ad7c7d8f60281261b6da954e2256?path=windows-apps-src%2Fmonetize%2Fmicrosoft-store-services-sdk.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [windows-wheel-interactions.6079f0cc244480085000a25018f624dac5fbfa3c.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/1cbfbf25d462004532e4faa9f6c2a342bb08f0e3?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fwindows-wheel-interactions.6079f0cc244480085000a25018f624dac5fbfa3c.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2016-11-02 17:03:31
+* Handoff File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/08e0808ae0c3dab0c48a7b610bfea04bc335f775?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-11-02 19:05:11
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\monetize\microsoft-store-services-sdk.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/11c6f80bbf2ccc3046f5fa5daa88e05410ced1a6?path=windows-apps-src%2Fmonetize%2Fmicrosoft-store-services-sdk.md&_a=contents)
+* Current Handback File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/bd47a1155ede93606c57887cab98e601fbd394da?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-cn%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-18 13:19:08
+* Bilingual File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/bd47a1155ede93606c57887cab98e601fbd394da?path=ol-handback%2FMicrosoft%2Fwindows-apps.zh-cn%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-18 13:28:17
+* [Back to Top](#report-top)
+
+##### <a name='7c9a4c602aa2fa3168760486354734e4fb3401dc5470'></a> Source: [windows-apps-src\publish\images\push-notifications-template.png](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a05580923f3c12ad5d2649b3276e5789f33b051b?path=windows-apps-src%2Fpublish%2Fimages%2Fpush-notifications-template.png&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [7c9a4c602aa2fa3168760486354734e4fb3401dc.png](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/08e0808ae0c3dab0c48a7b610bfea04bc335f775?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2F7c9a4c602aa2fa3168760486354734e4fb3401dc.png&_a=contents)
+* Handoff Datetime: 2016-11-02 19:05:11
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\publish\send-push-notifications-to-your-apps-customers.md
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='817043579cfd068267c54f2eab9210ef303ca3645502'></a> Source: [windows-apps-src\publish\send-push-notifications-to-your-apps-customers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3e3c9737784c81f5eb882296a82a4dcd879363e1?path=windows-apps-src%2Fpublish%2Fsend-push-notifications-to-your-apps-customers.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [send-push-notifications-to-your-apps-customers.64e46845492836f2978a6630ffedd93a5af45530.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/08e0808ae0c3dab0c48a7b610bfea04bc335f775?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fsend-push-notifications-to-your-apps-customers.64e46845492836f2978a6630ffedd93a5af45530.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-11-02 19:05:11
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
