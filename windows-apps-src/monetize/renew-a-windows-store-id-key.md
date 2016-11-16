@@ -4,30 +4,27 @@ ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "使用此方法续订 Windows 应用商店密钥。"
 title: "续订 Windows 应用商店 ID 密钥"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 1a2cb625f95a5ad8e94911ead2402cb2589e209a
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 ---
 
 # 续订 Windows 应用商店 ID 密钥
 
 
-
-
-使用此方法续订 Windows 应用商店密钥。 在你通过调用 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法生成 Windows 应用商店 ID 密钥时，该密钥在 90 天内有效。 在密钥过期后，你可以通过此方法使用已过期的密钥重新协商一个新密钥。
+使用此方法续订 Windows 应用商店密钥。 [生成 Windows 应用商店 ID 密钥时](view-and-grant-products-from-a-service.md#step-4)，该密钥在 90 天内有效。 在密钥过期后，你可以通过此方法使用已过期的密钥重新协商一个新密钥。
 
 ## 先决条件
 
 
 若要使用此方法，你需要：
 
--   使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
--   通过在应用中从客户端代码调用 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 或 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法所生成的已过期 Windows 应用商店 ID 密钥。
+* 使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
+* [从应用中的客户端代码生成](view-and-grant-products-from-a-service.md#step-4)的过期 Windows 应用商店 ID 密钥。
 
 有关详细信息，请参阅[从服务查看和授予产品](view-and-grant-products-from-a-service.md)。
 
 ## 请求
-
 
 ### 请求语法
 
@@ -119,6 +116,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

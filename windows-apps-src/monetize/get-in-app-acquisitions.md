@@ -4,8 +4,8 @@ ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: "在 Windows 应用商店分析 API 中使用此方法，获取给定日期范围和其他可选筛选器内某一加载项的聚合购置数据。"
 title: "获取加载项购置"
 translationtype: Human Translation
-ms.sourcegitcommit: ecb0f5263b7f7f470484e9bd579b7bdb6efcdfa4
-ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 642bcab934a18631477e3709dcdeab0a9289844e
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 
 
 
-在 Windows 应用商店分析 API 中使用此方法，获取给定日期范围和其他可选筛选器内某一加载项（也称为应用内产品或 IAP）的聚合购置数据。 此方法返回采用 JSON 格式的数据。
+在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内你的应用的加载项（也称为应用内产品或 IAP）购置聚合数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[加载项购置报告](../publish/add-on-acquisitions-report.md)中获取此信息。
 
 ## 先决条件
 
@@ -130,6 +130,33 @@ ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 <p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,market</em></p></td>
 <td align="left">否</td>
 </tr>
+<tr class="even">
+<td align="left">groupby</td>
+<td align="left">字符串</td>
+<td align="left"><p>仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：</p>
+<ul>
+<li><strong>日期型</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>inAppProductName</strong></li>
+<li><strong>acquisitionType</strong></li>
+<li><strong>ageGroup</strong></li>
+<li><strong>storeClient</strong></li>
+<li><strong>gender</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>orderName</strong></li>
+</ul>
+<p>返回的数据行会包含 <em>groupby</em> 参数中指定的字段，以及以下字段：</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>inAppProductId</strong></li>
+<li><strong>acquisitionQuantity</strong></li>
+</ul>
+<p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 
@@ -213,9 +240,9 @@ ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -279,7 +306,7 @@ Authorization: Bearer <your access token>
 |---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                | 字符串  | 购置数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
 | inAppProductId      | 字符串  | 要检索购置数据的加载项的应用商店 ID。                                                                                                                                                                 |
-| inAppProductName    | 字符串  | 加载项的显示名称。                                                                                                                                                                                                             |
+| inAppProductName    | 字符串  | 加载项的显示名称。 当 *aggregationLevel* 参数设置为 **day** 时，该值仅显示在响应数据中，除非在 *groupby* 参数中指定 **inAppProductName** 字段。                                                                                                                                                                                                            |
 | applicationId       | 字符串  | 要检索加载项购置数据的应用的应用商店 ID。                                                                                                                                                           |
 | applicationName     | 字符串  | 应用的显示名称。                                                                                                                                                                                                             |
 | deviceType          | 字符串  | 购置已完成的设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                  |
@@ -325,6 +352,7 @@ Authorization: Bearer <your access token>
 
 ## 相关主题
 
+* [加载项购置报告](../publish/add-on-acquisitions-report.md)
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取应用购置](get-app-acquisitions.md)
 * [获取错误报告数据](get-error-reporting-data.md)
@@ -337,6 +365,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

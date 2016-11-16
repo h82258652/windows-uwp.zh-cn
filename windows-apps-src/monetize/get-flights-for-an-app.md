@@ -4,8 +4,8 @@ ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: "在 Windows 应用商店提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用检索软件包外部测试版信息。"
 title: "使用 Windows 应用商店提交 API 为应用获取软件包外部测试版"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: a49e4f2cf7110e12dd33a5baa37e328a39bae348
+ms.sourcegitcommit: ef90390fcf7d4aa2e040eae65119ac7959f3423f
+ms.openlocfilehash: eddac4b37f6f00bad33f543f0e55415a5dcea887
 
 ---
 
@@ -45,10 +45,10 @@ ms.openlocfilehash: a49e4f2cf7110e12dd33a5baa37e328a39bae348
 
 ### 请求参数
 
-| 名称        | 类型   | 说明  |  必需  |    
-|---------------|--------|----------------------------------|
-| applicationId | 字符串 | 必需。 要检索软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
-|  top  |  int  |  要在请求中返回的项数（即，要返回的软件包外部测试版数）。 如果应用具有的软件包外部测试版超过在查询中指定的值，响应正文将包括可追加到方法 URI 的相对 URI 路径，用于请求下一页数据。  |  否  |
+|  名称  |  类型  |  说明  |  必需  |
+|------|------|------|------|
+|  applicationId  |  字符串  |  要检索软件包外部测试版的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
+|  top  |  int  |  要在请求中返回的项数（即，要返回的软件包外部测试版数）。 如果你的帐户具有的软件包外部测试版超过在查询中指定的值，响应正文将包括可追加到方法 URI 的相对 URI 路径，用于请求下一页数据。  |  否  |
 |  skip  |  int  |  返回剩余项之前，在查询中绕过的项数。 使用此参数分页浏览数据集。 例如，top=10 和 skip=0 可检索项目 1 到 10，top=10 和 skip=10 可检索项目 11 到 20，依此类推。  |  否  |
 
 <span/>
@@ -131,6 +131,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

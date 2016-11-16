@@ -6,14 +6,15 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Windows 信息保护 (WIP)"
 translationtype: Human Translation
-ms.sourcegitcommit: 1070561ea95cd1d884303fdd476b40a9ec88e390
-ms.openlocfilehash: 2beec354ed7dbb3cc2d4cb502977ce028b4eaf1d
+ms.sourcegitcommit: 724d9edf67d0f73ceb3eb2ac323e0a0f42f2dd0d
+ms.openlocfilehash: f9cfa8d1d7ea4e78208a4fb3fc853884a13a676c
 
 ---
 
 # Windows 信息保护 (WIP)
 
-__注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows 10 版本 1607。
+
+  __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows10 版本 1607。
 
 WIP 通过强制执行组织定义的策略来保护属于组织的数据。 如果你的应用包括在这些策略中，则你的应用生成的所有数据都将受到策略限制。 本主题帮助你生成可更流畅地强制执行这些策略的应用，而不对用户的个人数据造成任何影响。
 
@@ -66,9 +67,6 @@ WIP 是支持组织的移动设备管理 (MDM) 系统的台式计算机、笔记
 
   例如，它们防止数据发送到非企业网络终结点、在允许数据漫游前采用可移植加密形式打包数据，以及在将企业数据粘贴到不在允许列表上的应用前提示用户（具体取决于策略设置）。
 
-> **注意** WIP 文件保护利用权限管理服务 (RMS) 密钥（如果已预配），因为这些密钥可以跨设备漫游，从而允许受保护数据漫游。 如果未预配 RMS 密钥，这些 API 将回退到本地选择性擦除密钥，并限制漫游功能。 加密的漫游数据可以通过 Microsoft 所提供的特定于平台的 RMS 应用在下层 Windows 上进行访问，也可以使用已启发 RMS 的第三方应用在第三方设备上进行访问。
-
-
 
 
 
@@ -79,6 +77,6 @@ WIP 是支持组织的移动设备管理 (MDM) 系统的台式计算机、笔记
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

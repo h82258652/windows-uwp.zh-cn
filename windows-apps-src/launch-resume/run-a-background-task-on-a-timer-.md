@@ -4,14 +4,14 @@ title: "在计时器上运行后台任务"
 description: "了解如何计划一次性后台任务，或运行定期后台任务。"
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 translationtype: Human Translation
-ms.sourcegitcommit: 16202eeb37421acf75a9032dfc1eec397d23ce4f
-ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
 
 ---
 
 # 在计时器上运行后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -22,7 +22,7 @@ ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
 了解如何计划一次性后台任务，或运行定期后台任务。
 
 -   此示例假定你的后台任务需要定期运行，或在特定时间运行以支持你的应用。 如果你已调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，后台任务将仅使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 运行。
--   本主题假定你已经创建了一个后台任务类。 若要开始快速生成后台任务，请参阅[创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)或[创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)。 有关条件和触发器的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+-   本主题假定你已经创建了一个后台任务类。 若要快速生成后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
 ## 创建时间触发器
 
@@ -80,7 +80,7 @@ ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
 > [!Important]
 > 对于在应用所在的同一进程中运行的后台任务，不要设置 `entryPoint`。对于在与应用分开的单独进程中运行的后台任务，将 `entryPoint` 设置为命名空间 '.' 和包含后台任务实现的类名称。
 
-    The following code registers a background task that runs in a separate process:
+    The following code registers a background task that runs out-of-process:
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -101,14 +101,16 @@ ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
 
 ## 备注
 
-> **注意** 从 Windows 10 开始，用户无须再将你的应用添加到锁屏界面，即可利用后台任务。 有关后台任务触发器类型的指南，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+> 
+  **注意** 从 Windows10 开始，用户无须再将你的应用添加到锁屏界面，即可利用后台任务。 有关后台任务触发器类型的指南，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 
+  **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows10 开发人员。 如果你面向 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相关主题
 
-* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)。
-* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
+* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -123,6 +125,6 @@ ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

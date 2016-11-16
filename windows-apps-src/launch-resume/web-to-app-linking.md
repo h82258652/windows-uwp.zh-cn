@@ -4,8 +4,8 @@ title: "支持使用应用 URI 处理程序的 Web 到应用链接"
 description: "通过使用应用 URI 处理程序推动用户与应用的互动"
 keywords: "深层链接 Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: 9ef86dcd4ae3d922b713d585543f1def48fcb645
-ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
+ms.sourcegitcommit: cb3dbf7fd55c92339c77124bd22b3484fa389285
+ms.openlocfilehash: d7ce1dbfdf8ce0069b4d882323de8fd6f1b242f7
 
 ---
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
 [{
   "packageFamilyName": "YourAppsPFN",
   "paths": [ "*" ],
-  "excludePaths" : [ "/news/*, /blog/*" ]
+  "excludePaths" : [ "/news/*", "/blog/*" ]
  }]
 ```
 
@@ -68,28 +68,28 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 | *****       | 表示任何子字符串      |
 | **?**        | 表示单个字符 |
 
-例如，给定上述示例中的 `"excludePaths" : [ "/news/*, /blog/*" ]`，你的应用将支持以你的网站地址（例如 msn.com）开头的所有路径，**除了** `/news/` 和 `/blog/` 下的路径。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
+例如，给定上述示例中的 `"excludePaths" : [ "/news/*", "/blog/*" ]`，你的应用将支持以你的网站地址（例如 msn.com）开头的所有路径，**除了**`/news/` 和 `/blog/` 下的路径。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
 
 
 ### 多个应用
 
-如果你有两个应用要链接到你的网站，请在 **windows-app-web-link** JSON 文件中列出这两个应用程序程序包系列名称。 这两个应用都可以受支持。 如果同时安装这两个应用，用户将需要选择哪个应用是默认链接。 如果他们希望在以后更改默认链接，可以在“设置”&gt;“应用网站”****中更改它。 开发人员还可以随时更改 JSON 文件，并且最早在更新当天最晚在更新八天后就能看到更改。
+如果你有两个应用要链接到你的网站，请在 **windows-app-web-link** JSON 文件中列出这两个应用程序程序包系列名称。 这两个应用都可以受支持。 如果同时安装这两个应用，用户将需要选择哪个应用是默认链接。 如果他们希望在以后更改默认链接，可以在“设置”&gt;“应用网站”中更改它。 开发人员还可以随时更改 JSON 文件，并且最早在更新当天最晚在更新八天后就能看到更改。
 
 ``` JSON
 [{
   "packageFamilyName": "YourAppsPFN",
   "paths": [ "*" ],
-  "excludedPaths" : [ "/news/*, /blog/*" ]
+  "excludePaths" : [ "/news/*", "/blog/*" ]
  },
  {
   "packageFamilyName": "Your2ndAppsPFN",
-  "paths": [ "/example/*, /links/*" ]
+  "paths": [ "/example/*", "/links/*" ]
  }]
 ```
 
-若要为用户提供最佳体验，请使用排除的路径以确保仅联机内容已从 JSON 文件中的受支持路径中排除。
+若要为用户提供最佳体验，请使用排除路径以确保仅联机内容已从 JSON 文件中的受支持路径中排除。
 
-先检查排除的路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上述示例中，“/news/\*”包括该路径下的任何页面，而“/news\*”（没有正斜杠结尾“news”）包括“news\*”下的任何路径，如“newslocal/”、“newsinternational/”等。
+先检查排除路径，如果存在匹配项，则将使用浏览器（而不是指定应用）打开相应的页面。 在上述示例中，“/news/\*”包括该路径下的任何页面，而“/news\*”（没有正斜杠结尾“news”）包括“news\*”下的任何路径，如“newslocal/”、“newsinternational/”等。
 
 ## 处理用于链接到内容的“激活”上的链接
 
@@ -141,7 +141,8 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-**重要提示** 请确保将最终的 `if (rootFrame.Content == null)` 路径替换为 `rootFrame.Navigate(deepLinkPageType, e);`，如上述示例所示。
+
+            **重要提示** 请确保将最终的 `if (rootFrame.Content == null)` 路径替换为 `rootFrame.Navigate(deepLinkPageType, e);`，如上述示例所示。
 
 ## 测试它：本地验证工具
 
@@ -151,7 +152,10 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 通过使用以下参数运行此工具来测试应用和网站的配置：
 
-**AppHostRegistrationVerifier.exe** *主机名 packagefamilyname 文件路径*
+
+            **AppHostRegistrationVerifier.exe**
+            *主机名 packagefamilyname 文件路径*
+          
 
 -   主机名：你的网站（例如 microsoft.com）
 -   程序包系列名称 (PFN)：你的应用的 PFN
@@ -161,13 +165,14 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 关闭应用程序以验证当你单击某个链接时应用是否激活。 然后，在网站中复制受支持路径之一的地址。 例如，如果你的网站地址为“msn.com”，并且支持路径之一为“path1”，你将使用 `http://msn.com/path1`
 
-验证你的应用是否已关闭。 按 **Windows 键 + R** 打开“运行”****对话框，并在窗口中粘贴该链接。 应启动你的应用，而不是 Web 浏览器。
+验证你的应用是否已关闭。 按 **Windows 键 + R** 打开“运行”对话框，并在窗口中粘贴该链接。 应启动你的应用，而不是 Web 浏览器。
 
 此外，你可以通过使用 [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) API 从其他应用启动你的应用来测试它。 你也可以使用此 API 在手机上进行测试。
 
 如果你希望遵循协议激活逻辑，请在 **OnActivated** 事件处理程序中设置断点。
 
-**注意：**如果你在 Microsoft Edge 浏览器中单击某个链接，它不会启动你的应用，但会将你转到你的网站。
+
+            **注意：**如果你在 Microsoft Edge 浏览器中单击某个链接，它不会启动你的应用，但会将你转到你的网站。
 
 ## AppUriHandlers 提示：
 
@@ -191,10 +196,11 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 [处理 URI 激活](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 
-[关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)说明如何使用 LaunchUriAsync() API。
+
+            [关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)说明如何使用 LaunchUriAsync() API。
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

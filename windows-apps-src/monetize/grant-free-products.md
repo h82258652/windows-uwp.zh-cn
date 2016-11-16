@@ -4,8 +4,8 @@ ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: "在 Windows 应用商店购买 API 中使用此方法，可向给定用户授予免费应用或加载项。"
 title: "授予免费产品"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 2eca8712075ce1f9d876f3ae441381734bd52370
 
 ---
 
@@ -21,8 +21,8 @@ ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
 
 若要使用此方法，你需要：
 
--   使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
--   通过在应用中从客户端代码调用 [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) 方法生成的 Windows 应用商店 ID 密钥。
+* 使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
+* [从应用中的客户端代码生成](view-and-grant-products-from-a-service.md#step-4)的 Windows 应用商店 ID 密钥。
 
 有关详细信息，请参阅[从服务查看和授予产品](view-and-grant-products-from-a-service.md)。
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
 | 参数      | 类型   | 说明                                                                                                                                                                                                                                                                                                            | 必需 |
 |----------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | availabilityId | 字符串 | 从 Windows 应用商店目录中购买的产品的可用性 ID。                                                                                                                                                                                                                                     | 是      |
-| b2bKey         | 字符串 | 表示客户标识的 Windows 应用商店 ID 密钥。                                                                                                                                                                                                                                                        | 是      |
+| b2bKey         | 字符串 | [从应用中的客户端代码生成](view-and-grant-products-from-a-service.md#step-4)的 Windows 应用商店 ID 密钥。                                                                                                                                                                                                                                                        | 是      |
 | devOfferId     | 字符串 | 购买后显示在“集合”项中的开发人员指定的优惠 ID。                                                                                                                                                                                                                                 | 否       |
 | language       | 字符串 | 用户的语言。                                                                                                                                                                                                                                                                                              | 是      |
 | market         | 字符串 | 用户的市场。                                                                                                                                                                                                                                                                                                | 是      |
@@ -245,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

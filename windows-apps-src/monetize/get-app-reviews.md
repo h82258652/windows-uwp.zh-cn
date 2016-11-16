@@ -4,8 +4,8 @@ ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的评价数据。"
 title: "获取应用评价"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 4190012c08e22f4efb086c711183332b23ccee38
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 581532b56851d486f7804364d1d555b81829c1d1
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: 4190012c08e22f4efb086c711183332b23ccee38
 
 
 
-使用 Windows 应用商店分析 API 中的此方法，获取给定日期范围和其他可选筛选器的评价数据。 此方法返回采用 JSON 格式的数据。
+使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的评价数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[评价报告](../publish/reviews-report.md)中获取此信息。
 
 ## 先决条件
 
@@ -168,9 +168,9 @@ ms.openlocfilehash: 4190012c08e22f4efb086c711183332b23ccee38
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -378,6 +378,7 @@ Authorization: Bearer <your access token>
 
 ## 相关主题
 
+* [评价报告](../publish/reviews-report.md)
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取应用购置](get-app-acquisitions.md)
 * [获取加载项购置](get-in-app-acquisitions.md)
@@ -386,6 +387,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

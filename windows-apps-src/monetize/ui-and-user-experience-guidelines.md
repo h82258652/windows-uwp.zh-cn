@@ -4,8 +4,8 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "了解应用中广告的 UI 和用户体验指南。"
 title: "应用中广告的 UI 和用户体验指南"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
+ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
+ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 
 ---
@@ -29,7 +29,7 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 
 * 将广告设计到体验中。 为你的设计人员提供示例广告，以设计广告的外观。 应用中两个精心设计的广告示例是广告即内容布局和拆分布局。
 
-  若要查看应用中广告大小的外观和运行状况的差异，可以利用我们适用于 Windows Phone、Windows 8.1 和 Windows 10 的测试模式广告单元。 在结束使用测试模式广告单元后，请记得[使用实际广告单元 ID 更新应用](set-up-ad-units-in-your-app.md)，然后再提交应用以供认证。
+  若要查看应用中广告大小的外观和运行状况的差异，可以利用我们适用于 Windows Phone、Windows8.1 和 Windows10 的测试模式广告单元。 在结束使用测试模式广告单元后，请记得[使用实际广告单元 ID 更新应用](set-up-ad-units-in-your-app.md)，然后再提交应用以供认证。
 
 * 针对广告不可用时进行设计。 可能会多次出现广告未发送到应用的情况。 设计页面的版式，以使其不管是否显示广告都看起来很精美。 有关详细信息，请参阅[错误处理](error-handling-with-advertising-libraries.md)。
 
@@ -43,7 +43,7 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 * 使用户无法专注其核心任务。 主要关注点应该始终在应用上。 应合并广告空间，使其保持为次要关注点。
 
 <span id="interstitialbestpractices10"/>
-## 间隙最佳做法
+## 间隙最佳做法和策略
 
 * [间隙最佳做法：应做事项](#interstitialbestpracticesdo10)
 * [间隙最佳做法：避免事项](#interstitialbestpracticesavoid10)
@@ -124,18 +124,23 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 <span id="interstitialbestpracticesnever10"/>
 ### 间隙最佳做法：禁止事项（强制执行的策略）
 
-* 将所有 UI 元素都放在广告容器上。
+* 永远不要将所有 UI 元素都放在广告容器上。
 
     * 广告商已为全屏显示广告付款。
 
+<span/>
 
-* 当用户在使用应用时，调用 **Show**。
+* 永远不要在用户使用应用时调用 **Show**。
 
     * 由于 **InterstitialAd** 将创建全屏覆盖层，用户将发现这样会产生抖动。
 
     * 还可能会导致过大的点击率。
 
-* 使用广告获取任何可以作为货币消费或与其他用户交易的东西。
+* 永远不要使用广告获取任何可以作为货币消费或与其他用户交易的内容。
+
+* 永远不要在 [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) 事件的事件处理程序的上下文请求新广告。 这可能导致无限循环，并且可能导致广告服务的操作问题。
+
+* 永远不要在请求间隙广告后，忘记显示向应用提供的广告。 如果你请求某个广告，然后收到 [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件作为对你请求的响应，则你必须显示该广告。 如果你正在使用其他广告网络实现你自己的广告中介解决方案，请仅在对其他广告网络的请求不成功后为 **InterstitialAd** 控件请求广告。
 
  
 
@@ -143,6 +148,6 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

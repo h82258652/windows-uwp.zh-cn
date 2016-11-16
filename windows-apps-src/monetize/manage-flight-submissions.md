@@ -4,8 +4,8 @@ ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "在 Windows 应用商店提交 API 中使用这些方法，为注册到 Windows 开发人员中心帐户的应用管理软件包外部测试版提交。"
 title: "使用 Windows 应用商店提交 API 管理软件包外部测试版提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
+ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
+ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 ---
 
@@ -16,16 +16,22 @@ ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
 
 在 Windows 应用商店提交 API 中使用以下方法，为注册到 Windows 开发人员中心帐户的应用管理软件包外部测试版提交。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 在使用这些方法创建或管理软件包外部测试版的提交前，该软件包外部测试版必须已存在于开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，或者使用[管理软件包外部测试版](manage-flights.md)中所述的 Windows 应用商店提交 API 方法，可以创建软件包外部测试版。
+>
+            **注意**
+            &nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 在使用这些方法创建或管理软件包外部测试版的提交前，该软件包外部测试版必须已存在于开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，或者使用[管理软件包外部测试版](manage-flights.md)中所述的 Windows 应用商店提交 API 方法，可以创建软件包外部测试版。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 获取现有软件包外部测试版提交的数据。 有关详细信息，请参阅[获取软件包外部测试版提交](get-a-flight-submission.md)。 |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status``` | 获取现有软件包外部测试版提交的状态。 有关详细信息，请参阅[获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/applications/{applicationId}/flights/{flightId}/submissions``` | 为注册到 Windows 开发人员中心帐户的应用创建新的软件包外部测试版提交。 有关详细信息，请参阅[创建软件包外部测试版提交](create-a-flight-submission.md)。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit``` | 向 Windows 开发人员中心确认新的或更新的软件包外部测试版提交。 有关详细信息，请参阅[确认软件包外部测试版提交](commit-a-flight-submission.md)。 |
-| PUT | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 更新现有软件包外部测试版提交。 有关详细信息，请参阅[更新软件包外部测试版提交](update-a-flight-submission.md)。 |
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 删除软件包外部测试版提交。 有关详细信息，请参阅[删除软件包外部测试版提交](delete-a-flight-submission.md)。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 获取现有软件包外部测试版提交的数据。 有关详细信息，请参阅[此文章](get-a-flight-submission.md)。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status``` | 获取现有软件包外部测试版提交的状态。 有关详细信息，请参阅[此文章](get-status-for-a-flight-submission.md)。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` | 为注册到 Windows 开发人员中心帐户的应用创建新的软件包外部测试版提交。 有关详细信息，请参阅[此文章](create-a-flight-submission.md)。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit``` | 向 Windows 开发人员中心确认新的或更新的软件包外部测试版提交。 有关详细信息，请参阅[此文章](commit-a-flight-submission.md)。 |
+| PUT | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 更新现有软件包外部测试版提交。 有关详细信息，请参阅[此文章](update-a-flight-submission.md)。 |
+| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 删除软件包外部测试版提交。 有关详细信息，请参阅[此文章](delete-a-flight-submission.md)。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout``` | 获取软件包外部测试版提交的逐步推出信息。 有关详细信息，请参阅[此文章](get-package-rollout-info-for-a-flight-submission.md)。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage``` | 更新软件包外部测试版提交的逐步推出百分比。 有关详细信息，请参阅[此文章](update-the-package-rollout-percentage-for-a-flight-submission.md)。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout``` | 终止软件包外部测试版提交的逐步推出。 有关详细信息，请参阅[此文章](halt-the-package-rollout-for-a-flight-submission.md)。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout``` | 完成软件包外部测试版提交的逐步推出。 有关详细信息，请参阅[此文章](finalize-the-package-rollout-for-a-flight-submission.md)。 |
 
 <span id="create-a-package-flight-submission">
 ## 创建软件包外部测试版提交
@@ -34,9 +40,10 @@ ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
 
 1. 如果尚未执行此操作，请完成[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)中所述的先决条件，包括将 Azure AD 应用程序与 Windows 开发人员中心帐户相关联并获取客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
 
-2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Windows 应用商店提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
+2. 
+            [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Windows 应用商店提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
-3. 在 Windows 应用商店提交 API 中执行以下方法。 此方法会创建新的正在进行的提交，这是你上一发布的提交副本。 有关详细信息，请参阅[创建软件包外部测试版提交](create-a-flight-submission.md)。
+3. 通过执行 Windows 应用商店提交 API 中的以下方法[创建软件包外部测试版提交](create-a-flight-submission.md)。 此方法创建新的正在进行的提交，这是你上次发布的提交的副本。
 
   ```
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
@@ -46,13 +53,15 @@ ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
 
 4. 如果要为提交添加新的软件包，请[准备软件包](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)并将它们添加到 ZIP 存档。
 
-5. 使用新提交所需的任何更改来更新提交数据，并执行以下方法来更新提交。 有关详细信息，请参阅[更新软件包外部测试版提交](update-a-flight-submission.md)。
+5. 使用新提交所需的任何更改修订提交数据，并执行以下方法来[更新软件包外部测试版提交](update-a-flight-submission.md)。
 
   ```
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
   ```
 
-  >**注意**&nbsp;&nbsp;如果要为提交添加新软件包，请确保更新提交数据，以便在 ZIP 存档中引用这些文件的名称和相对路径。
+  >
+            **注意**
+            &nbsp;&nbsp;如果要为提交添加新软件包，请确保更新提交数据，以便在 ZIP 存档中引用这些文件的名称和相对路径。
 
 4. 如果要为提交添加新软件包，请将 ZIP 存档上传到 SAS URI，该 URI 已在步骤 2 中调用的 POST 方法的响应正文中提供。 有关详细信息，请参阅[共享访问签名，第 2 部分：使用 Blob 存储创建和使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
@@ -66,13 +75,13 @@ ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
   await blockBob.UploadFromStreamAsync(stream);
   ```
 
-5. 通过执行以下方法确认提交。 这将向开发人员中心发出警报：已完成提交，更新现在应该应用到了帐户。 有关详细信息，请参阅[确认软件包外部测试版提交](commit-a-flight-submission.md)。
+5. 通过执行以下方法[确认软件包外部测试版提交](commit-a-flight-submission.md)。 这将向开发人员中心发出警报：已完成提交，更新现在应该应用到了帐户。
 
   ```
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
   ```
 
-6. 通过执行以下方法来检查提交状态。 有关详细信息，请参阅[获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)。
+6. 通过执行以下方法来检查提交状态以[获取软件包外部测试版提交的状态](get-status-for-a-flight-submission.md)。
 
   ```
   GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
@@ -81,6 +90,52 @@ ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
   若要确认提交状态，请查看响应正文中的 *status* 值。 如果请求成功，此值应该从 **CommitStarted** 更改为 **PreProcessing**；如果请求中存在错误，此值应该更改为 **CommitFailed**。 如果存在错误，*statusDetails* 字段将包含有关错误的更多详细信息。
 
 7. 在提交成功完成之后，提交会发送至应用商店以供引入。 可以通过使用前面的方法，或者通过访问开发人员中心仪表板，继续监视提交进度。
+
+<span id="manage-gradual-package-rollout">
+## 管理软件包外部测试版提交的逐步软件包推出
+
+可在软件包外部测试版提交中逐步向 Windows10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定软件包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新放心。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关详细信息，包括有关如何在开发人员中心仪表板中启用和管理逐步软件包推出的说明，请参阅[本文章](../publish/gradual-package-rollout.md)。
+
+还可使用 Windows 应用商店提交 API 中的以下方法以编程方式启用和管理软件包外部测试版提交的逐步软件包推出。
+
+* 若要启用软件包外部测试版提交的逐步软件包推出：
+
+  1. 
+            [创建软件包外部测试版提交](create-a-flight-submission.md)或[获取软件包外部测试版提交](get-a-flight-submission.md)。
+  2. 在响应数据中，找到 [packageRollout](#package-rollout-object) 资源、将“isPackageRollout”字段设置为 true，然后将“packageRolloutPercentage”字段设置为应获取已更新的软件包的应用客户百分比。
+  3. 将已更新的软件包外部测试版提交数据传递到[更新软件包外部测试版提交](update-a-flight-submission.md)方法。
+
+<span/>
+
+* 若要[获取软件包外部测试版提交的软件包推出信息](get-package-rollout-info-for-a-flight-submission.md)，请执行以下方法。
+
+  ```
+  GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout
+  ```
+
+<span/>
+
+* 若要[更新软件包外部测试版提交的软件包推出百分比](update-the-package-rollout-percentage-for-a-flight-submission.md)，请执行以下方法。
+
+  ```
+  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage  
+  ```
+
+<span/>
+
+* 若要[终止软件包外部测试版提交的软件包推出](halt-the-package-rollout-for-a-flight-submission.md)，请执行以下方法。
+
+  ```
+  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout   
+  ```  
+
+<span/>
+
+* 若要[完成软件包外部测试版提交的软件包推出](finalize-the-package-rollout-for-a-flight-submission.md)，请执行以下方法。
+
+  ```
+  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout
+  ```
 
 ## 资源
 
@@ -113,6 +168,16 @@ ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
       "minimumSystemRam": "None"
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "fileUploadUrl": "https://productingestionbin1.blob.core.windows.net/ingestion/8b389577-5d5e-4cbe-a744-1ff2e97a9eb8?sv=2014-02-14&sr=b&sig=wgMCQPjPDkuuxNLkeG35rfHaMToebCxBNMPw7WABdXU%3D&se=2016-06-17T21:29:44Z&sp=rwl",
   "targetPublishMode": "Immediate",
   "targetPublishDate": "",
@@ -129,6 +194,7 @@ ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
 | status           | 字符串  | 提交的状态。 这可以是以下值之一： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 对象  |  包含有关提交状态的附加详细信息，其中包括任何错误的相关信息。 有关详细信息，请参阅下面[状态详细信息](#status-details-object)部分。 |
 | flightPackages           | 数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅下面的[外部测试版软件包](#flight-package-object)部分。  |
+| packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置。 有关详细信息，请参阅下面的[软件包传递选项对象](#package-delivery-options-object)部分。  |
 | fileUploadUrl           | 字符串  | 用于为提交上载任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包，请将包含这些程序包的 ZIP 存档上载到此 URI。 有关详细信息，请参阅[创建软件包外部测试版提交](#create-a-package-flight-submission)。  |
 | targetPublishMode           | 字符串  | 提交的发布模式。 这可以是以下值之一： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字符串  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |
@@ -192,7 +258,9 @@ ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
 
 此资源具有以下值。
 
->**注意**&nbsp;&nbsp;当调用[更新软件包外部测试版提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。
+>
+            **注意**
+            &nbsp;&nbsp;当调用[更新软件包外部测试版提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。
 
 | 值           | 类型    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|------|
@@ -203,12 +271,53 @@ ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
 | architecture    |  字符串   |  应用包的体系结构（例如 ARM）。   |     
 | languages    | 数组    |  应用所支持的语言的语言代码数组。 有关详细信息，请参阅[支持的语言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
 | capabilities    |  数组   |  程序包所需的功能数组。 有关功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
-| minimumDirectXVersion    |  字符串   |  应用包支持的最低 DirectX 版本。 这可以仅针对面向 Windows 8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | 字符串    |  应用包所需的最小 RAM。 这可以仅针对面向 Windows 8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>Memory2GB</li></ul>   |    
+| minimumDirectXVersion    |  字符串   |  应用包支持的最低 DirectX 版本。 这可以仅针对面向 Windows8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | 字符串    |  应用包所需的最小 RAM。 这可以仅针对面向 Windows8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>Memory2GB</li></ul>   |    
+
+
+<span id="package-delivery-options-object" />
+### 软件包传递选项对象
+
+此资源包含提交的逐步软件包推出和强制更新设置。 以下示例演示了此资源的格式。
+
+```json
+{
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
+}
+```
+
+此资源具有以下值。
+
+| 值           | 类型    | 说明        |
+|-----------------|---------|------|
+| packageRollout   |   对象      |  包含提交的逐步软件包推出设置。 有关详细信息，请参阅[软件包推出对象](#package-rollout-object)部分。    |  
+| isMandatoryUpdate    | 布尔值    |  指示是否要将此提交中的软件包视为对自行安装的应用更新强制。 有关自行安装的应用更新的强制软件包的详细信息，请参阅[为应用下载并安装包更新](../packaging/self-install-package-updates.md)。    |  
+| mandatoryUpdateEffectiveDate    |  日期   |  此提交中的软件包变为强制的日期和时间，采用 ISO 8601 格式和 UTC 时区。   |        
+
+<span id="package-rollout-object" />
+### 软件包推出对象
+
+此资源包含提交的逐步[软件包推出设置](#manage-gradual-package-rollout)。 此资源具有以下值。
+
+| 值           | 类型    | 说明        |
+|-----------------|---------|------|
+| isPackageRollout   |   布尔值      |  指示是否为提交启用逐步软件包推出。    |  
+| packageRolloutPercentage    | 浮点数    |  将在逐步推出中收到软件包的用户百分比。    |  
+| packageRolloutStatus    |  字符串   |  以下指示逐步软件包推出状态的字符串之一： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| fallbackSubmissionId    |  字符串   |  将由不获取逐步推出软件包的客户接收的提交 ID。   |          
 
 <span/>
 
-## 枚举
+## Enums
 
 这些方法使用以下枚举。
 
@@ -249,6 +358,6 @@ ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,17 +4,15 @@ ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: "每个成功购买产品的 Windows 应用商店交易都可以选择返回交易收据。"
 title: "使用收据验证产品购买"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 01b75d25c385d8dd856af79581fb4a346064c400
+ms.sourcegitcommit: 18d5c2ecf7d438355c3103ad2aae32dc84fc89ed
+ms.openlocfilehash: ea79a33a52bc45a9c8609e12bfac953c3f92db09
 
 ---
 
 # 使用收据验证产品购买
 
 
-
-
->**注意**&nbsp;&nbsp;本文中的示例使用了 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员管理应用内购买，而不是使用 Windows.ApplicationModel.Store 命名空间。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
+>**注意**&nbsp;&nbsp;本文中的示例使用了 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 如果你的应用面向 Windows10 版本 1607 或更高版本，我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员管理应用内购买，而不是使用 **Windows.ApplicationModel.Store** 命名空间。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
 
 **重要的 API**
 
@@ -242,6 +240,6 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

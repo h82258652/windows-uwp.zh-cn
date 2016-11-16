@@ -4,8 +4,8 @@ ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: "在 Windows 应用商店提交 API 中使用此方法，可获取现有应用提交的数据。"
 title: "使用 Windows 应用商店提交 API 获取应用提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 178b70db1583790c174d65e060c8bce6e4f69243
-ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
+ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
+ms.openlocfilehash: d7e4e0f355828b3d9b7bbcdd5ceee43dad9fe37c
 
 ---
 
@@ -15,6 +15,8 @@ ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
 
 
 在 Windows 应用商店提交 API 中使用此方法，可获取现有应用提交的数据。 有关通过使用 Windows 应用商店提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
+
+>**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的应用提交的定价数据模型。 实现此更改后，此方法的响应数据中的**定价**资源将为空，并且你将暂时无法使用此方法获取应用提交的试用期、定价和销售数据。 我们会在将来更新 Windows 应用商店提交 API，以引入以编程方式访问应用提交的定价信息的新方法。 有关详细信息，请参阅[定价资源](manage-app-submissions.md#pricing-object)。
 
 ## 先决条件
 
@@ -49,7 +51,7 @@ ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 要更新提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | 字符串 | 必需。 要获取提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | submissionId | 字符串 | 必需。 要获取的提交的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。  |
 
 <span/>
@@ -148,6 +150,16 @@ Authorization: Bearer <your access token>
       ]
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "enterpriseLicensing": "Online",
   "allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies": true,
   "allowTargetFutureDeviceFamilies": {
@@ -184,6 +196,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

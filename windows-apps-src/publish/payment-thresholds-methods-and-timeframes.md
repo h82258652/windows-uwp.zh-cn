@@ -3,9 +3,8 @@
 Description: "作者：jnHs 转移支付的预计时间、适用的付款阈值和可以收到付款的 Microsoft 市场可能会有所不同，具体取决于你所在的国家/地区和付款帐户类型。 本主题介绍了各个国家/地区支持的阈值和付款方式。"
 title: "付款阈值、方法和时间范围"
 translationtype: Human Translation
-ms.sourcegitcommit: 842221e9596f5bb132e9109a1c4f8a5d9e9439dd
-ms.openlocfilehash: 1513c5b7714a1f2169ad7f5b08819dd06448d58c
-
+ms.sourcegitcommit: 85b9993334ecfb3ea2dc5a196cb5b5f9dc99c985
+ms.openlocfilehash: b4f98e31b52b77f6675771fc09bb492ca5cf9021
 
 ---
 
@@ -3383,6 +3382,6 @@ ms.openlocfilehash: 1513c5b7714a1f2169ad7f5b08819dd06448d58c
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

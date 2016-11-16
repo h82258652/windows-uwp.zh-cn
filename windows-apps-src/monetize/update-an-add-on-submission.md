@@ -4,19 +4,19 @@ ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: "在 Windows 应用商店提交 API 中使用此方法，更新现有加载项提交。"
 title: "使用 Windows 应用商店提交 API 更新加载项提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: b7a8e1d39d5ee0a0858382b84ab00cc2c481da5d
+ms.sourcegitcommit: 7307ca70467a751d5adb53f3718c7e9cf0b70dbb
+ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 ---
 
 # 使用 Windows 应用商店提交 API 更新加载项提交
 
 
-
-
 在 Windows 应用商店提交 API 中使用此方法，更新现有加载项（也称为应用内产品或 IAP）提交。 使用此方法成功更新提交后，必须[确认提交](commit-an-add-on-submission.md)才可以实现引入和发布。
 
 有关此方法如何适用通过使用 Windows 应用商店提交 API 创建应用提交过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
+
+>**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的加载项提交的定价数据模型。 实现此更改后，将忽略此方法的请求正文中的**定价**资源，并且你将暂时无法使用此方法更改加载项提交的定价和销售数据。 我们将在将来更新 Windows 应用商店提交 API，以引入以编程方式访问加载项提交的定价信息的新方法。 有关详细信息，请参阅[定价资源](manage-add-on-submissions.md#pricing-object)。
 
 ## 先决条件
 
@@ -62,15 +62,15 @@ ms.openlocfilehash: b7a8e1d39d5ee0a0858382b84ab00cc2c481da5d
 
 | 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| contentType           | 字符串  |  加载项中提供的[内容类型](../publish/enter-iap-properties.md#content-type)。 这可以是以下值之一： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | 数组  | 字符串数组，其中最多包含加载项的 10 个[关键字](../publish/enter-iap-properties.md#keywords)。 应用可以使用这些关键字来查询加载项。   |
+| contentType           | 字符串  |  加载项中提供的[内容类型](../publish/enter-add-on-properties.md#content-type)。 这可以是以下值之一： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | 数组  | 字符串数组，其中最多包含加载项的 10 个[关键字](../publish/enter-add-on-properties.md#keywords)。 应用可以使用这些关键字来查询加载项。   |
 | lifetime           | 字符串  |  加载项的生存期。 这可以是以下值之一： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | 对象  | 包含加载项列表信息的对象。 有关详细信息，请参阅[列表资源](manage-add-on-submissions.md#listing-object)。  |
 | pricing           | 对象  | 包含加载项定价信息的对象。 有关详细信息，请参阅[定价资源](manage-add-on-submissions.md#pricing-object)。  |
 | targetPublishMode           | 字符串  | 提交的发布模式。 这可以是以下值之一： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字符串  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |
-| tag           | 字符串  |  加载项的[标记](../publish/enter-iap-properties.md#tag)。   |
-| visibility  | 字符串  |  加载项的可见性。 这可以是以下值之一： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| tag           | 字符串  |  加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（此信息之前称为 *tag*）。   |
+| 可见性  | 字符串  |  加载项的可见性。 这可以是以下值之一： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 
 <span/>
 
@@ -231,6 +231,6 @@ Content-Type: application/json
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

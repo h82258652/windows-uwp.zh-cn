@@ -4,8 +4,8 @@ ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "合成效果"
 description: "效果 API 使开发人员可以自定义其 UI 的呈现方式。"
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
+ms.sourcegitcommit: 7f8660eae59219f15a083b41c581e427c140d299
+ms.openlocfilehash: 23d28144de3d051b4b569cf633f9eee30c13368d
 
 ---
 # 合成效果
@@ -14,7 +14,7 @@ ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
 
 [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API 允许将实时效果应用于图像和附带动画效果属性的 UI。 在此概述中，我们将详细描述可用于允许效果应用于合成视觉效果的功能。
 
-为了支持[通用 Windows 平台 \(UWP\)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供开发人员在其应用程序中描述效果，合成效果利用 Win2D 的 IGraphicsEffect 接口通过 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 命名空间来使用效果描述。
+为了支持[通用 Windows 平台 \(UWP\)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供开发人员在其应用程序中描述效果，合成效果利用 Win2D 的 IGraphicsEffect 接口通过 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空间来使用效果描述。
 
 画笔效果通过将效果应用于一组现有图像来绘制应用程序的区域。 Windows 10 合成效果 API 专用于子画面视觉效果。 在创建颜色、图形和效果方面，SpriteVisual 具有灵活性和互动性。 SpriteVisual 是合成视觉效果类型，该效果可以使用画笔填充 2D 矩形。 该视觉效果定义矩形的边框，而画笔定义用于绘制矩形的像素。
 
@@ -36,9 +36,9 @@ ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2D 仿射变换  | 将 2D 仿射变换矩阵应用到图像。 我们使用此效果在我们的效果[示例](http://go.microsoft.com/fwlink/?LinkId=785341)中对 alpha 蒙板进行动画处理。       |
 | 算术合成 | 使用灵活方程组合两张图像。 我们使用算术合成在我们的[示例](http://go.microsoft.com/fwlink/?LinkId=785341)中创建交叉淡入淡出效果。 |
-| 混合效果         | 创建组合两张图像的混合效果。 合成提供 Win2D 中受支持的 21 种[混合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md)（共 26 种）。        |
+| 混合效果         | 创建组合两张图像的混合效果。 合成提供 Win2D 中受支持的 21 种[混合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm)（共 26 种）。        |
 | 颜色源         | 生成包含纯色的图像。                                                                                                                                                                               |
-| 合成            | 组合两张图像。 合成提供 Win2D 中受支持的全部 13 种[合成模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md)。                                              |
+| 合成            | 组合两张图像。 合成提供 Win2D 中受支持的全部 13 种[合成模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm)。                                              |
 | 对比度             | 增加或降低图像的对比度。                                                                                                                                                                           |
 | 曝光             | 增加或降低图像的曝光。                                                                                                                                                                           |
 | 灰度            | 将图像转换为单色灰度。                                                                                                                                                                                   |
@@ -51,7 +51,7 @@ ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
 
  
 
-有关更多详细信息，请参阅 Win2D 的 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 命名空间。 合成中不受支持的效果会标注为 \[NoComposition\]。
+有关更多详细信息，请参阅 Win2D 的 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空间。 合成中不受支持的效果会标注为 \[NoComposition\]。
 
 ### 链接效果
 
@@ -248,6 +248,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

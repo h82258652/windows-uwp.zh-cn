@@ -1,22 +1,42 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: "本主题展示如何使用视频防抖动效果。"
+description: "本主题介绍了如何将效果应用到相机预览和录制视频流，还介绍了如何使用视频防抖动效果。"
 title: "视频捕获的效果"
 translationtype: Human Translation
-ms.sourcegitcommit: 367ab34663d66d8c454ff305c829be66834e4ebe
-ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
+ms.sourcegitcommit: 25212fede7640c12ea4f1484a9f3c540bf4a0c12
+ms.openlocfilehash: ec7c285df48f37842fe757ef619da3a0d76cd690
 
 ---
 
 # 视频捕获的效果
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主题展示如何使用视频防抖动效果。
+本主题介绍了如何将效果应用到相机预览和录制视频流，还介绍了如何使用视频防抖动效果。
 
 > [!NOTE] 
 > 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 我们建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
+
+## 从相机视频流添加和删除效果
+若要从设备的相机捕获或预览视频，请使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 对象，如[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中所述。 初始化 **MediaCapture** 对象之后，你可以通过调用 [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) 向预览或捕获流添加一个或多个视频效果，从而传递表示要添加效果的 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IVideoEffectDefinition) 对象以及指示是否应向相机的预览流或录制流添加该效果的 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType) 枚举的成员。
+
+> [!NOTE]
+> 在某些设备上，预览流和捕获流相同，这意味着如果你在调用 **AddVideoEffectAsync** 时指定 **MediaStreamType.VideoPreview** 或 **MediaStreamType.VideoRecord**，将同时向预览流和录制流应用效果。 可通过检查 **MediaCapture** 对象的 [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.MediaCaptureSettings) 的 [**VideoDeviceCharacteristic**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings.VideoDeviceCharacteristic) 属性，确定预览流和录制流在当前设备上是否相同。 如果此属性的值为 **VideoDeviceCharacteristic.AllStreamsIdentical** 或 **VideoDeviceCharacteristic.PreviewRecordStreamsIdentical**，这些流是相同的，并且应用到其中一个的任何效果也会影响另一个。
+
+以下示例将效果添加到相机预览流和录制流。 此示例说明了用于查看录制流和预览流是否相同的相关检查。
+
+[!code-cs[BasicAddEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetBasicAddEffect)]
+
+请注意，**AddVideoEffectAsync** 返回可实现 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.IMediaExtension) 的对象，它表示添加的视频效果。 某些效果允许你通过将 [**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet) 传递到 [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法更改效果设置。
+
+从 Windows10 版本 1607 开始，你还可以使用 **AddVideoEffectAsync** 返回的对象，通过将效果传入到 [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957) 从视频管道中删除该效果。 **RemoveEffectAsync** 自动确定效果对象参数是否已添加到预览流或录制流，因此无需在进行调用时指定流类型。
+
+[!code-cs[RemoveOneEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetRemoveOneEffect)]
+
+你还可以通过调用 [**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) 并指定应删除所有效果的流，从预览流或捕获流中删除所有效果。
+
+[!code-cs[ClearAllEffects](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetClearAllEffects)]
 
 ## 视频防抖动效果
 
@@ -28,15 +48,15 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 除了基本媒体捕获所需的命名空间，使用视频防抖动效果还需要以下命名空间。
 
-[!code-cs[VideoStabilizationEffectUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEffectUsing)]
+[!code-cs[VideoStabilizationEffectUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEffectUsing)]
 
 声明成员变量以存储 [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) 对象。 作为效果实现的一部分，你将修改用于编码已捕获视频的编码属性。 声明两个变量以存储初始输入和输出编码属性的备份副本，以便以后当禁用该效果时你可以还原它们。 最后，声明类型 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 的成员变量，因为将从你的代码内的多个位置访问此对象。
 
-[!code-cs[DeclareVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
+[!code-cs[DeclareVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
 对于此方案，你应该将媒体编码配置文件对象分配给成员变量以便以后进行访问。
 
-[!code-cs[EncodingProfileMember](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
+[!code-cs[EncodingProfileMember](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetEncodingProfileMember)]
 
 ### 初始化视频防抖动效果
 
@@ -44,7 +64,7 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 注册 [**EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) 事件的事件处理程序并调用帮助程序方法 **SetUpVideoStabilizationRecommendationAsync**，两者将在本文稍后部分讨论。 最后，将该效果的 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) 属性设置为 True 以启用该效果。
 
-[!code-cs[CreateVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateVideoStabilizationEffect)]
+[!code-cs[CreateVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCreateVideoStabilizationEffect)]
 
 ### 使用建议的编码属性
 
@@ -60,7 +80,7 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 设置 **MediaEncodingProfile** 对象的 [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) 属性。 在设置新的属性之前，使用成员变量来存储初始编码属性，以便当你禁用该效果时可以改回该设置。
 
-[!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
+[!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
 
 ### 处理禁用的视频防抖动效果
 
@@ -68,13 +88,13 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 通常使用此事件来调节应用的 UI 以指示视频防抖动的当前状态。
 
-[!code-cs[VideoStabilizationEnabledChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
+[!code-cs[VideoStabilizationEnabledChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
 
 ### 清理视频防抖动效果
 
-若要清理视频防抖动效果，则调用 [**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) 以清除视频管道中的所有效果。 如果包含初始编码属性的成员变量都不为 Null，可使用它们来还原编码属性。 最后，删除 **EnabledChanged** 事件处理程序并将该效果设置为 Null。
+若要清理视频防抖动效果，请调用 [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957) 以从视频管道中删除该效果。 如果包含初始编码属性的成员变量都不为 Null，可使用它们还原编码属性。 最后，删除 **EnabledChanged** 事件处理程序并将该效果设置为 Null。
 
-[!code-cs[CleanUpVisualStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
+[!code-cs[CleanUpVisualStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
 
 ## 相关主题
 
@@ -90,6 +110,6 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

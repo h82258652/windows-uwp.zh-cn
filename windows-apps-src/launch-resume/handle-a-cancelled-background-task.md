@@ -4,14 +4,14 @@ title: "处理取消的后台任务"
 description: "了解如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。"
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 
 ---
 
 # 处理取消的后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -21,9 +21,9 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 了解如何创建一个后台任务，该任务识别取消请求、停止工作，并向使用永久性存储的应用报告取消。
 
-本主题假定你已创建一个后台任务类，其中包含用作后台任务入口点的 Run 方法。 若要开始快速生成后台任务，请参阅[创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)。 有关条件和触发器的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+本主题假定你已创建一个后台任务类，其中包含用作后台任务入口点的 Run 方法。 若要快速生成后台任务，请参阅[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)或[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-本主题也适用于单进程后台任务。 但是，使用 OnBackgroundActivated() 替换 Run() 方法。 单进程后台任务不需要你使用永久性存储发送取消信号，因为你可以使用应用状态传达取消（如果后台任务与前台应用在同一进程中运行）。
+本主题也适用于进程内后台任务。 但是，使用 OnBackgroundActivated() 替换 Run() 方法。 进程内后台任务不需要你使用永久性存储发送取消信号，因为你可以使用应用状态传达取消（如果后台任务与前台应用在同一进程中运行）。
 
 ## 使用 OnCanceled 方法识别取消请求
 
@@ -86,7 +86,7 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 >     }
 > ```
 
-在后台任务的 Run 方法中，在开始工作之前注册 OnCanceled 事件处理程序方法。 在单进程后台任务中，执行此注册操作可能是应用程序初始化的一部分。 例如，使用以下代码行：
+在后台任务的 Run 方法中，在开始工作之前注册 OnCanceled 事件处理程序方法。 在进程内后台任务中，执行此注册操作可能是应用程序初始化的一部分。 例如，使用以下代码行：
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -98,7 +98,7 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 ## 通过退出后台任务处理取消
 
-当收到取消请求时，执行后台工作的方法需要通过识别 **\_cancelRequested** 何时设置为 **true** 停止工作并退出。 对于单进程后台任务，这意味着从 `OnBackgroundActivated()` 方法返回。 对于在单独进程中运行的后台任务，这意味着从 `Run()` 方法返回。
+当收到取消请求时，执行后台工作的方法需要通过识别 **\_cancelRequested** 何时设置为 **true** 停止工作并退出。 对于进程内后台任务，这意味着从 `OnBackgroundActivated()` 方法返回。 对于进程外后台任务，这意味着从 `Run()` 方法返回。
 
 修改后台任务类的代码以在它工作时检查该标志变量。 如果 **\_cancelRequested** 设置为 true，则停止工作。
 
@@ -134,7 +134,7 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 > **注意** 上面所示的代码示例使用用于记录后台任务进度的 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) 属性。 使用 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 类将进度报告回应用。
 
-修改 Run 方法，以便在停止工作后，它记录该任务是已完成还是已取消。 此步骤适用于在单独进程中运行的后台任务，因为你需要一种取消后台任务后在进程之间通信的方法。 对于单进程后台任务，可以仅与应用程序共享状态，以指示该任务已取消。
+修改 Run 方法，以便在停止工作后，它记录该任务是已完成还是已取消。 此步骤适用于进程外后台任务，因为你需要一种取消后台任务后在进程之间通信的方法。 对于进程内后台任务，可以仅与应用程序共享状态，以指示该任务已取消。
 
 [后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)将状态记录在 LocalSettings 中：
 
@@ -327,11 +327,13 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 > }
 > ```
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 
+  **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows10 开发人员。 如果你面向 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相关主题
 
-* [创建和注册后台任务](create-and-register-a-background-task.md)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
+* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -341,12 +343,11 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 * [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
 * [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
 * [使用维护触发器](use-a-maintenance-trigger.md)
-
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

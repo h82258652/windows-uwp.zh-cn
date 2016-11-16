@@ -4,16 +4,22 @@ ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: "本文介绍了如何使用 MediaSource，该类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。"
 title: "媒体项、播放列表和轨"
 translationtype: Human Translation
-ms.sourcegitcommit: c2e337e88f9dda3380dd62c32ca6e5d942366636
-ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
+ms.sourcegitcommit: 9999805c8a3bf946aa323b921cea6d63f9a48789
+ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 
 ---
 
 # 媒体项、播放列表和轨
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
- 本文介绍如何使用 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) 类，该类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) 类扩展 **MediaSource** 的功能，从而允许你管理并从媒体项中所含的多个音频、视频和元数据曲目中进行选择。 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 允许你从一个或多个媒体播放项中创建播放列表。
+ 本文介绍如何使用 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) 类，该类提供从不同的源（例如本地或远程文件）引用和播放媒体的常用方法，并公开用于访问媒体数据的常用模型，而不考虑基础媒体格式。 
+            [
+              **MediaPlaybackItem**
+            ](https://msdn.microsoft.com/library/windows/apps/dn930939) 类扩展 **MediaSource** 的功能，从而允许你管理并从媒体项中所含的多个音频、视频和元数据曲目中进行选择。 
+            [
+              **MediaPlaybackList**
+            ](https://msdn.microsoft.com/library/windows/apps/dn930955) 允许你从一个或多个媒体播放项中创建播放列表。
 
 
 ## 创建并播放 MediaSource
@@ -29,7 +35,7 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
 
-创建 **MediaSource** 后，你可以通过设置 [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 属性来使用. [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 播放它。 从 Windows 10 版本 1607 开始，你可以通过调用 [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) 将 **MediaPlayer** 分配给 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement)，以便在 XAML 页面中呈现媒体播放器内容。 这是优先于使用 **MediaElement** 的方法。 有关使用 **MediaPlayer** 的详细信息，请查阅[**使用 MediaPlayer 播放音频和视频**](play-audio-and-video-with-mediaplayer.md)。
+创建 **MediaSource** 后，你可以通过设置 [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) 属性来使用. [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) 播放它。 从 Windows10 版本 1607 开始，你可以通过调用 [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) 将 **MediaPlayer** 分配给 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement)，以便在 XAML 页面中呈现媒体播放器内容。 这是优先于使用 **MediaElement** 的方法。 有关使用 **MediaPlayer** 的详细信息，请查阅[**使用 MediaPlayer 播放音频和视频**](play-audio-and-video-with-mediaplayer.md)。
 
 以下示例演示如何在 **MediaPlayer** 中使用 **MediaSource** 播放用户选择的媒体文件。
 
@@ -106,7 +112,7 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 
 [!code-cs[TimedMetadataTrackschanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedMetadataTrackschanged)]
 
-由于多个元数据轨可以同时处于活动状态，因此你不仅要设置元数据轨列表的活动索引。 而且还要调用 **MediaPlaybackItem** 对象的 [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) 方法，从而传入你希望切换的轨的索引，然后从 [**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016) 枚举中提供一个值。 你选择的演示模式取决于你的应用的实现。 在此示例中，元数据轨在启用时设置为 **PlatformPresented**。 对于基于文本的轨，这意味着系统将在该轨中自动显示文本提示。 当关闭切换按钮时，演示模式设置为“已禁用”****，这意味着不显示任何文本，并且不引发任何提示事件。 将在本文的后面部分讨论提示事件。
+由于多个元数据轨可以同时处于活动状态，因此你不仅要设置元数据轨列表的活动索引。 而且还要调用 **MediaPlaybackItem** 对象的 [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) 方法，从而传入你希望切换的轨的索引，然后从 [**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016) 枚举中提供一个值。 你选择的演示模式取决于你的应用的实现。 在此示例中，元数据轨在启用时设置为 **PlatformPresented**。 对于基于文本的轨，这意味着系统将在该轨中自动显示文本提示。 当关闭切换按钮时，演示模式设置为“已禁用”，这意味着不显示任何文本，并且不引发任何提示事件。 将在本文的后面部分讨论提示事件。
 
 [!code-cs[ToggleChecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleChecked)]
 
@@ -115,7 +121,7 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 当你处理元数据轨时，可以通过访问 [**Cues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.Cues) 或 [**ActiveCues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.ActiveCues) 属性来访问该轨内的提示集。 你可以执行此操作来更新你的 UI，从而为媒体项显示提示位置。
 
 ## 在打开媒体项时，处理不受支持的编解码器和未知错误
-从 Windows 10 版本 1607 开始，你可以检查播放媒体项所需的编解码器在运行应用的设备上是否受支持或部分受支持。 在 **MediaPlaybackItem** 轨更改事件的事件处理程序（如 [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged)）中，先检查轨更改是否是插入新轨。 如果是，你可以通过将传入 **IVectorChangedEventArgs.Index** 参数的索引与 **MediaPlaybackItem** 参数的相应轨集合（如 [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks) 集合）结合使用来获取对要插入的轨的引用。
+从 Windows10 版本 1607 开始，你可以检查播放媒体项所需的编解码器在运行应用的设备上是否受支持或部分受支持。 在 **MediaPlaybackItem** 轨更改事件的事件处理程序（如 [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged)）中，先检查轨更改是否是插入新轨。 如果是，你可以通过将传入 **IVectorChangedEventArgs.Index** 参数的索引与 **MediaPlaybackItem** 参数的相应轨集合（如 [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks) 集合）结合使用来获取对要插入的轨的引用。
 
 获取对插入的轨的引用后，检查该轨的 [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) 属性的 [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus)。 如果值为 [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus)，则设备上存在播放该轨所需的相应编解码器。 如果值为 [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus)，则该轨可以由系统播放，但播放将以某种方式降级。 例如，5.1 音频轨可能作为 2 通道立体声进行播放。 如果是这种情况，你可能希望更新你的 UI 以提醒用户发生降级。 如果值为 [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) 或 [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus)，则该轨完全无法使用设备上的当前编解码器进行播放。 你可能希望提醒用户并跳过播放该项目，或实现允许用户下载正确编解码器的 UI。 可以使用该轨的 [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) 方法来确定播放所需的编解码器。
 
@@ -128,7 +134,7 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 [!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
 
 ## 设置系统媒体传输控件使用的显示属性
-从 Windows 10 版本 1607 开始，[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 中播放的媒体默认自动集成到系统媒体传输控件 (SMTC) 中。 你可以通过更新 **MediaPlaybackItem** 的显示属性来指定将由 SMTC 显示的元数据。 通过调用 [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties) 获取表示某个项目的显示属性的对象。 通过设置 [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type) 属性来设置播放项目是音乐还是视频。 然后，设置对象的 [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) 或 [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) 的属性。 调用 [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) 以将项目属性的更新设置为你提供的值。 通常，应用将从 Web 服务动态检索显示值，但以下示例使用硬编码的值演示此过程。
+从 Windows10 版本 1607 开始，[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 中播放的媒体默认自动集成到系统媒体传输控件 (SMTC) 中。 你可以通过更新 **MediaPlaybackItem** 的显示属性来指定将由 SMTC 显示的元数据。 通过调用 [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties) 获取表示某个项目的显示属性的对象。 通过设置 [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type) 属性来设置播放项目是音乐还是视频。 然后，设置对象的 [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) 或 [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) 的属性。 调用 [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) 以将项目的属性更新为你提供的值。 通常，应用将从 Web 服务动态检索显示值，但以下示例使用硬编码的值演示此过程。
 
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
@@ -162,7 +168,7 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 
 [!code-cs[AddDataTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddDataTrack)]
 
-当已达到提示的开始时间时，将引发 **CueEntered** 事件，前提是相关联的轨具有 **ApplicationPresented**、**Hidden** 或 **PlatformPresented.** 的演示模式。 对于元数据轨，当轨的演示模式为“已禁用”****时，不会引发提示事件。 此示例仅将与该提示相关联的自定义数据输出到调试窗口。
+当已达到提示的开始时间时，将引发 **CueEntered** 事件，前提是相关联的轨具有 **ApplicationPresented**、**Hidden** 或 **PlatformPresented.** 的演示模式。 对于元数据轨，当轨的演示模式为“已禁用”时，不会引发提示事件。 此示例仅将与该提示相关联的自定义数据输出到调试窗口。
 
 [!code-cs[DataCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDataCueEntered)]
 
@@ -174,9 +180,16 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 
 ## 使用 MediaPlaybackList 播放媒体项的列表
 
-[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 允许你创建媒体项的播放列表，这些项由 **MediaPlaybackItem** 对象表示。
 
-**注意** [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 中的项使用无缝播放进行呈现。 系统将使用 MP3 或 AAC 编码的文件中所提供的元数据来确定无缝播放所需的延迟或填充补偿。 如果 MP3 或 AAC 编码的文件不提供此元数据，则系统将试探性确定延迟或填充。 对于无损格式（如 PCM、FLAC 或 ALAC），系统不执行任何操作，因为这些编码器不会引入延迟或填充。
+            [
+              **MediaPlaybackList**
+            ](https://msdn.microsoft.com/library/windows/apps/dn930955) 允许你创建媒体项的播放列表，这些项由 **MediaPlaybackItem** 对象表示。
+
+
+            **注意**
+            [
+              **MediaPlaybackList**
+            ](https://msdn.microsoft.com/library/windows/apps/dn930955) 中的项使用无缝播放进行呈现。 系统将使用 MP3 或 AAC 编码的文件中所提供的元数据来确定无缝播放所需的延迟或填充补偿。 如果 MP3 或 AAC 编码的文件不提供此元数据，则系统将试探性确定延迟或填充。 对于无损格式（如 PCM、FLAC 或 ALAC），系统不执行任何操作，因为这些编码器不会引入延迟或填充。
 
 若要开始使用，请声明用于存储你的 **MediaPlaybackList** 的变量。
 
@@ -191,7 +204,7 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 > [!NOTE] 
 > 在播放媒体项后，系统不会自动处理媒体项。 这意味着，如果用户在列表中向后导航，可以无间隔地再次播放之前播放的歌曲，但这意味着随着列表中播放的项目增加，应用的内存使用量也将增加。 你必须确保定期为之前播放的媒体项释放资源。 当应用在后台播放并且资源比较有限时，处理此问题尤其重要。 
 
-你可以将 **CurrentItemChanged** 事件用作从之前播放的媒体项释放资源的机会。 若要保留对之前播放的项目的引用，请创建一个“队列”****集合。 然后设置一个变量，该变量确定要保留在内存中的最大媒体项数。 在处理程序中，获取对之前播放的项目的引用并将其添加到队列中，然后将队列中最早的项移出队列。 在返回的项目上调用 [**Reset**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource.Reset) 以释放其资源，但先进行检查以确保它已不在队列中或当前正在播放，以处理多次播放该项的情况。
+你可以将 **CurrentItemChanged** 事件用作从之前播放的媒体项释放资源的机会。 若要保留对之前播放的项目的引用，请创建一个“队列”集合。 然后设置一个变量，该变量确定要保留在内存中的最大媒体项数。 在处理程序中，获取对之前播放的项目的引用并将其添加到队列中，然后将队列中最早的项移出队列。 在返回的项目上调用 [**Reset**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource.Reset) 以释放其资源，但先进行检查以确保它已不在队列中或当前正在播放，以处理多次播放该项的情况。
 
 [!code-cs[DeclareItemQueue](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareItemQueue)]
 
@@ -226,6 +239,6 @@ ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

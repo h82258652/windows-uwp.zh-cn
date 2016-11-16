@@ -1,4 +1,14 @@
-# 已转换的桌面应用支持的 UWP API
+---
+author: awkoren
+Description: "本文介绍如何对已转换为通用 Windows 平台 (UWP) 的桌面应用进行签名。"
+Search.Product: eADQiWindows 10XVcnh
+title: "已转换的桌面应用支持的 UWP API"
+translationtype: Human Translation
+ms.sourcegitcommit: 3751b16837a1e12f68954b2dec7dfaf0fb8554b6
+ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
+
+---
+# 使用桌面桥转换的应用支持的 UWP API
 
 已转换的桌面应用可以使用各种不同的通用 Windows 平台 (UWP) API，即使它们没有完全转换为 UWP 应用。 本文列出了已转换的应用可以使用的可用类。 
 
@@ -32,7 +42,7 @@
 
 下面是在已转换的应用中受支持的 UWP API 的完整列表。 你可以查看[在已转换的应用中最新受支持的 API](#new) 或[在已转换的应用和桌面应用程序中均受支持的 API](#both)。 
 
-有关如何从已转换的应用中调用 UWP API 的示例，请参阅 [GitHub 上的桌面桥代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)。
+有关如何使用 WinRT API 的示例，请参阅 GitHub 上的[到 UWP 的桌面应用桥示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples)。
 
 <span id="new" />
 ### 在新转换的应用中受支持的 API
@@ -1030,6 +1040,6 @@
 
 
 
-<!--HONumber=Sep16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

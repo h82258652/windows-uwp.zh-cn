@@ -4,8 +4,8 @@ ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "在 Windows 应用商店提交 API 中使用此方法，可为注册到 Windows 开发人员中心帐户的应用创建一个新的软件包外部测试版提交。"
 title: "使用 Windows 应用商店提交 API 创建软件包外部测试版提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 33f008c7b2bd32aacaf5a31d0b3201a00d145276
+ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
+ms.openlocfilehash: 8689fa9d314d2ba1d31a16c47aa4c7168e44c69f
 
 ---
 
@@ -97,6 +97,16 @@ Authorization: Bearer <your access token>
       "minimumSystemRam": "None"
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "fileUploadUrl": "https://productingestionbin1.blob.core.windows.net/ingestion/8b389577-5d5e-4cbe-a744-1ff2e97a9eb8?sv=2014-02-14&sr=b&sig=wgMCQPjPDkuuxNLkeG35rfHaMToebCxBNMPw7WABdXU%3D&se=2016-06-17T21:29:44Z&sp=rwl",
   "targetPublishMode": "Immediate",
   "targetPublishDate": "",
@@ -127,6 +137,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

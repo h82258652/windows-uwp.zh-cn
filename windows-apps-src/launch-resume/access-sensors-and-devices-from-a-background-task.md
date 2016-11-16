@@ -4,15 +4,15 @@ title: "从后台任务访问传感器和设备"
 description: "DeviceUseTrigger 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。"
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 translationtype: Human Translation
-ms.sourcegitcommit: 42697a185eb941d44714a682931b3e418a123ad1
-ms.openlocfilehash: dcaae6cace6a95cbd03af1571395656a8ee3a4fa
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
 
 ---
 
 # 从后台任务访问传感器和设备
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 例如，根据应用运行所在的位置，它可以使用后台任务将数据与设备或监视器传感器同步。 为了帮助延长电池使用时间并确保相应的用户同意，使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 需遵循本主题中所述的策略。
@@ -20,7 +20,7 @@ ms.openlocfilehash: dcaae6cace6a95cbd03af1571395656a8ee3a4fa
 若要访问后台中的传感器或外围设备，请创建一个使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
 
 > [!Important]
-> **DeviceUseTrigger** 不能用于单一进程后台任务。 本主题中的信息仅适用于在单独进程中运行的后台任务。
+> **DeviceUseTrigger** 不能用于进程内的后台任务。 本主题中的信息仅适用于进程外运行的后台任务。
 
 ## 设备后台任务概述
 
@@ -81,7 +81,7 @@ ms.openlocfilehash: dcaae6cace6a95cbd03af1571395656a8ee3a4fa
 **重要提示**  
 使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 时，请考虑以下几个要点：
 
--   首次在 Windows 8.1 和 Windows Phone 8.1 中引入了通过编程方式触发可使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务功能。
+-   首次在 Windows8.1 和 Windows Phone 8.1 中引入了通过编程方式触发可使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的后台任务功能。
 
 -   Windows 会强制执行某些策略，从而确保获得用户同意才能更新电脑上的外围设备。
 
@@ -178,6 +178,6 @@ ms.openlocfilehash: dcaae6cace6a95cbd03af1571395656a8ee3a4fa
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,19 +4,22 @@ ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: "本文向你显示了如何使用 MediaProcessingTrigger 和后台任务在后台处理媒体文件。"
 title: "在后台处理媒体文件"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
+ms.sourcegitcommit: fb0e8a535ff4e27530fa45aca80b21f17a523c7b
+ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 
 ---
 
 # 在后台处理媒体文件
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向你显示了如何使用 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 和后台任务在后台处理媒体文件。
 
-本文中介绍的示例应用允许用户选择要转换代码的输入媒体文件，并指定用于转换结果代码的输出文件。 然后，启动后台任务以执行转换代码操作。 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 旨在支持转换代码之外的许多不同媒体处理方案，包括将媒体组合呈现到磁盘，以及在完成处理后上载已处理的媒体文件。
+本文中介绍的示例应用允许用户选择要转换代码的输入媒体文件，并指定用于转换结果代码的输出文件。 然后，启动后台任务以执行转换代码操作。 
+            [
+              **MediaProcessingTrigger**
+            ](https://msdn.microsoft.com/library/windows/apps/dn806005) 旨在支持转换代码之外的许多不同媒体处理方案，包括将媒体组合呈现到磁盘，以及在完成处理后上载已处理的媒体文件。
 
 有关此示例中利用的不同通用 Windows 应用功能的更多详细信息，请参阅：
 
@@ -28,12 +31,12 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 若要在 Microsoft Visual Studio 中将后台任务添加到现有解决方案，请输入你的组件的名称
 
-1.  在“文件”****菜单上，依次选择“添加”****和“新建项目...”****。
-2.  选择“Windows 运行时组件(通用 Windows)”****项目类型。
+1.  在“文件”菜单上，依次选择“添加”和“新建项目...”。
+2.  选择“Windows 运行时组件(通用 Windows)”项目类型。
 3.  输入新的组件项目的名称。 此示例使用 **MediaProcessingBackgroundTask** 项目名称。
 4.  单击“确定”。
 
-在“解决方案资源管理器”****，右键单击默认情况下创建的“Class1.cs”文件的图标，然后选择“重命名”****。 将该文件重命名为“MediaProcessingTask.cs”。 当 Visual Studio 询问是否想要重命名对此类的所有引用时，请单击**“是”**。
+在“解决方案资源管理器”，右键单击默认情况下创建的“Class1.cs”文件的图标，然后选择“重命名”。 将该文件重命名为“MediaProcessingTask.cs”。 当 Visual Studio 询问是否想要重命名对此类的所有引用时，请单击**“是”**。
 
 在重命名的类文件中，添加以下 **using** 指令以在你的项目中包含这些命名空间。
                                   
@@ -45,10 +48,20 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 将下列成员变量添加到你的类：
 
--   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)，将用于通过后台任务的进度更新前台应用。
--   [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)，用于在以异步方式执行媒体转换代码时，防止系统关闭你的后台任务。
--   **CancellationTokenSource** 对象，可用于取消异步转换代码操作。
--   [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) 对象，将用于转换媒体文件代码。
+-   
+            [
+              **IBackgroundTaskInstance**
+            ](https://msdn.microsoft.com/library/windows/apps/br224797)，将用于通过后台任务的进度更新前台应用。
+-   
+            [
+              **BackgroundTaskDeferral**
+            ](https://msdn.microsoft.com/library/windows/apps/hh700499)，用于在以异步方式执行媒体转换代码时，防止系统关闭你的后台任务。
+-   
+            **CancellationTokenSource** 对象，可用于取消异步转换代码操作。
+-   
+            [
+              **MediaTranscoder**
+            ](https://msdn.microsoft.com/library/windows/apps/br207080) 对象，将用于转换媒体文件代码。
 
 [!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
@@ -66,7 +79,8 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 调用 [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936)，从而传入输入文件、输出文件和编码配置文件。 从此调用返回的 [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) 对象使你获知是否可以执行转换代码。 如果 [**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) 属性为 true，将调用 [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) 以执行转换代码操作。
 
-**AsTask** 方法允许你跟踪异步操作进度，或将其取消。 创建新的 **Progress** 对象，从而指定所需的进度单元以及方法的名称，可调用该方法来通知你任务的当前进度。 向 **AsTask** 方法传入 **Progress** 对象以及允许你取消任务的取消标记。
+
+            **AsTask** 方法允许你跟踪异步操作进度，或将其取消。 创建新的 **Progress** 对象，从而指定所需的进度单元以及方法的名称，可调用该方法来通知你任务的当前进度。 向 **AsTask** 方法传入 **Progress** 对象以及允许你取消任务的取消标记。
 
 [!code-cs[TranscodeFileAsync](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetTranscodeFileAsync)]
 
@@ -74,16 +88,21 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 [!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
 
-**SendToastNotification** 帮助程序方法通过获取模板 XML 文档为只含有文本内容的 Toast 创建新的 Toast 通知。 将设置 Toast XML 的文本元素，然后从 XML 文档创建新的 [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 对象。 最后，通过调用 [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) 向用户显示 Toast。
+
+            **SendToastNotification** 帮助程序方法通过获取模板 XML 文档为只含有文本内容的 Toast 创建新的 Toast 通知。 将设置 Toast XML 的文本元素，然后从 XML 文档创建新的 [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 对象。 最后，通过调用 [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) 向用户显示 Toast。
 
 [!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
+
+在 [**Canceled**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.IBackgroundTaskInstance.Canceled) 事件（在系统取消后台任务时调用）的处理程序中，可出于遥测目的记录错误。
+
+[!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
 
 ## 注册和启动后台任务
 
 可以从前台应用启动后台任务之前，你必须更新前台应用的 Package.appmanifest 文件，才能让系统知道你的应用可以使用后台任务。
 
-1.  在“解决方案资源管理器”****中，双击 Package.appmanifest 文件图标以打开清单编辑器。
-2.  选择“声明”****选项卡。
+1.  在“解决方案资源管理器”中，双击 Package.appmanifest 文件图标以打开清单编辑器。
+2.  选择“声明”选项卡。
 3.  在**“可用声明”**中，选择**“后台任务”**，然后单击**“添加”**。
 4.  在**“支持的声明”**下，确保已选择**“后台任务”**项。 在**“属性”**下，选中**“媒体处理”**的复选框。
 5.  在**“入口点”**文本框中，为你的后台测试指定命名空间和类名称，以句点分隔。 对于此示例，该项是：
@@ -91,9 +110,9 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
    MediaProcessingBackgroundTask.MediaProcessingTask
    ```
 接下来，你需要将对后台任务的引用添加到前台应用。
-1.  在“解决方案资源管理器”****的前台应用项目下，右键单击“引用”****文件夹，然后选择“添加引用...”****。
-2.  展开“项目”****节点，然后选择“解决方案”****。
-3.  选中后台任务项目旁边的框，然后单击“确定”****。
+1.  在“解决方案资源管理器”的前台应用项目下，右键单击“引用”文件夹，然后选择“添加引用...”。
+2.  展开“项目”节点，然后选择“解决方案”。
+3.  选中后台任务项目旁边的框，然后单击“确定”。
 
 应将此示例中代码的其余部分添加到前台应用。 首先，需要将以下命名空间添加到你的项目。
 
@@ -103,7 +122,8 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 [!code-cs[ForegroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
 
-**PickFilesToTranscode** 帮助程序方法使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 打开输入和输出文件以进行转换代码。 用户可能选择你的应用无权访问的位置中的文件。 若要确保你的后台任务可以打开这些文件，请将它们添加到你的应用的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 中。
+
+            **PickFilesToTranscode** 帮助程序方法使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 打开输入和输出文件以进行转换代码。 用户可能选择你的应用无权访问的位置中的文件。 若要确保你的后台任务可以打开这些文件，请将它们添加到你的应用的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 中。
 
 最后，设置你的应用的 [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) 中的输入和输出文件名的项目。 后台任务从该位置检索文件名。
 
@@ -140,6 +160,6 @@ ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

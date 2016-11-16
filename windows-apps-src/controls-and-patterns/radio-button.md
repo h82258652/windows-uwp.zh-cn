@@ -6,8 +6,8 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 435a2a6f1b9707d1f64587a693bd9a60d587ca83
+ms.sourcegitcommit: f26b042bb7efb6599993b8fd7cee6ee35e1765fd
+ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 
 ---
 # 单选按钮
@@ -73,7 +73,7 @@ Microsoft Edge 浏览器设置中的单选按钮。
 
 > **注意**&nbsp;&nbsp;通过键盘访问时，一组单选按钮的行为类似于单个控件。 使用 Tab 键只能访问选定选项，但用户可以使用箭头键循环浏览该组。
 
-在此示例中，单选按钮的第一组在相同的堆栈面板中进行隐式分组。 第二组分为两个堆栈面板，它们按照 GroupName 进行显式分组。
+在此示例中，单选按钮的第一组在相同的堆栈面板中进行隐式分组。 第二组分为两个堆栈面板，以便它们按照 GroupName 进行显式分组。
 
 ```xaml
 <StackPanel>
@@ -155,7 +155,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-单选按钮组的外观如下所示。
+在用户选定蓝色背景和绿色边框后，单选按钮组将如下所示。
 
 ![两个组中的单选按钮](images/radio-button-groups.png)
 
@@ -198,6 +198,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

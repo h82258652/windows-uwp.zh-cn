@@ -4,8 +4,8 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "使用 Windows 应用商店提交 API，以编程方式创建和管理已注册到 Windows 开发人员中心帐户的应用的提交。"
 title: "使用 Windows 应用商店服务创建和管理提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 47e0ac11178af98589e75cc562631c6904b40da4
-ms.openlocfilehash: 0a566dfee8f7fe08c06ce4963435a70c30b1650d
+ms.sourcegitcommit: 03942eb9015487cfd5690e4b1933e4febd705971
+ms.openlocfilehash: 40855465fa2f9b1c32602b1b636761b608d88fc0
 
 ---
 
@@ -18,16 +18,20 @@ ms.openlocfilehash: 0a566dfee8f7fe08c06ce4963435a70c30b1650d
 
 1.  确保已完成所有[先决条件](#prerequisites)。
 3.  在 Windows 应用商店提交 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Windows 应用商店提交 API。 该令牌到期后，可以重新生成一个。
-4.  [调用 Windows 应用商店提交 API](#call-the-windows-store-submission-api)。
+4.  
+            [调用 Windows 应用商店提交 API](#call-the-windows-store-submission-api)。
 
 
 
 <span id="not_supported" />
 >**重要提示**
 
-> * 此 API 只可以用于已授权使用该 API 的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的“反馈”****、选择反馈区域的“提交 API”****，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
-
+> * 此 API 只可以用于已授权使用该 API 的 Windows 开发人员中心帐户。 会阶段性地向开发人员帐户启用此权限，但此时所有帐户并非都已启用了此权限。 若要请求先前的访问权限，请登录到开发人员中心仪表板、单击仪表板底部的“反馈”、选择反馈区域的“提交 API”，然后提交你的请求。 当为你的帐户启用了此权限时，你会收到一封电子邮件。
+<br/><br/>
 > * 此 API 不可用于使用以下功能的应用或加载项：2016 年 8 月引入开发人员中心仪表板的功能，包括但不限于强制应用更新和应用商店管理的可消费加载项。 如果将 Windows 应用商店提交 API 用于使用以下功能之一的应用或加载项，该 API 会返回错误代码 409。 在这种情况下，必须使用仪表板管理应用或加载项的提交。
+<br/><br/>
+> * 在不久的将来，Microsoft 将更改 Windows 开发人员中心中的应用提交的定价数据模型。 实现此更改后，适用于应用和加载项提交的**定价**资源将不再受支持，并且你将暂时无法使用 Windows 应用商店提交 API 获取这些提交的试用期、定价和销售数据。 我们将在将来更新该 API，以引入以编程方式访问应用和加载项提交的定价信息的新方法。 有关详细信息，请参阅[应用提交的定价资源](manage-app-submissions.md#pricing-object)和[加载项提交的定价资源](manage-add-on-submissions.md#pricing-object)。
+
 
 <span id="prerequisites" />
 ## 步骤 1：完成使用 Windows 应用商店提交 API 的先决条件
@@ -55,15 +59,17 @@ ms.openlocfilehash: 0a566dfee8f7fe08c06ce4963435a70c30b1650d
 
 在可以使用 Windows 应用商店提交 API 之前，必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索该应用程序的租户 ID 和客户端 ID，然后生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Windows 应用商店提交 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
 
->**注意**&nbsp;&nbsp;只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
+>
+            **注意**
+            &nbsp;&nbsp;只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
-1.  在开发人员中心中，转到“帐户设置”****、单击“管理用户”****，然后将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+1.  在开发人员中心中，转到“帐户设置”、单击“管理用户”，然后将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
-2.  在“管理用户”****页面中，单击“添加 Azure AD 应用程序”****、添加 Azure AD 应用程序（是指要用于访问你的开发人员中心帐户的提交的应用或服务），然后为其分配“管理者”****角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在“添加 Azure AD 应用程序”****页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在“添加 Azure AD 应用程序”****页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
+2.  在“管理用户”页面中，单击“添加 Azure AD 应用程序”、添加 Azure AD 应用程序（是指要用于访问你的开发人员中心帐户的提交的应用或服务），然后为其分配“管理者”角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在“添加 Azure AD 应用程序”页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在“添加 Azure AD 应用程序”页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
 
-3.  返回到“管理用户”****页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下“租户 ID”****和“客户端 ID”****值。
+3.  返回到“管理用户”页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下“租户 ID”和“客户端 ID”值。
 
-4. 单击“添加新密钥”****。 在接下来的屏幕上，记下“密钥”****值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
+4. 单击“添加新密钥”。 在接下来的屏幕上，记下“密钥”值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
 
 <span id="obtain-an-azure-ad-access-token" />
 ## 步骤 2：获取 Azure AD 访问令牌
@@ -92,7 +98,9 @@ grant_type=client_credentials
 
 获取 Azure AD 访问令牌后，可以在 Windows 应用商店提交 API 中调用方法。 API 中包含的许多方法按照所适用的应用、加载项和软件包外部测试版方案进行分组。 若要创建或更新提交，通常在 Windows 应用商店提交 API 中按特定顺序调用多个方法。 有关每个方案和每个方法的语法的信息，请参阅下表中的文章。
 
->**注意**&nbsp;&nbsp;获取访问令牌后，可以在 60 分钟的令牌有效期内，在 Windows 应用商店提交 API 中调用方法。
+>
+            **注意**
+            &nbsp;&nbsp;获取访问令牌后，可以在 60 分钟的令牌有效期内，在 Windows 应用商店提交 API 中调用方法。
 
 | 方案       | 描述                                                                 |
 |---------------|----------------------------------------------------------------------|
@@ -121,7 +129,7 @@ grant_type=client_credentials
 如果你对 Windows 应用商店提交 API 有疑问或需要使用此 API 管理你的提交的帮助，请使用以下资源：
 
 * 在我们的[论坛](https://social.msdn.microsoft.com/Forums/windowsapps/en-us/home?forum=wpsubmit)上提问。
-* 访问我们的[支持页面](https://developer.microsoft.com/windows/support)，请求一个开发人员中心仪表板的辅助支持选项。 如果系统提示你选择问题类型和类别，请分别选择“应用提交和认证”****和“提交应用”****。  
+* 访问我们的[支持页面](https://developer.microsoft.com/windows/support)，请求一个开发人员中心仪表板的辅助支持选项。 如果系统提示你选择问题类型和类别，请分别选择“应用提交和认证”和“提交应用”。  
 
 ## 相关主题
 
@@ -135,6 +143,6 @@ grant_type=client_credentials
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

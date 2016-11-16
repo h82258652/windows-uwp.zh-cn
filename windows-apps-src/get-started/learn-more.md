@@ -2,11 +2,11 @@
 author: GrantMeStrength
 ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
 title: "后续步骤是什么？"
-description: "既然你已经创建了你的第一个应用，你便可以查看开发人员中心的其他部分了。 以下是它所包含的其他部分的简介。'"
+description: "既然你已经创建了你的第一个应用，你便可以查看开发人员中心的其他部分了。 以下是它所包含的其他部分的简介。&quot;"
 keywords: "开发人员中心, 入门"
 translationtype: Human Translation
-ms.sourcegitcommit: 743a3649613d39083520f8d79f4c0daf97336568
-ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
+ms.sourcegitcommit: 1c059edde92a48af610af1033c3b18ca729410aa
+ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
 
 ---
 
@@ -18,16 +18,15 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 
 我们建议你查看整个 UWP 主题来熟悉该平台，然后了解如何通过使用并自定义 XAML 控件创建用户界面。 XAML 的主要优势是使用*数据绑定*（可将控件与你的应用要显示的信息连接起来）：如果你不熟悉 Windows 平台，这将是一个需要了解的重要概念。
 
-你还可以浏览[开发人员工具包](https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox)站点，其中包含大量入门信息。
+如果你想要浏览最新的 Windows10 编程技术（例如将动画和效果添加到你的应用），请查看 [Windows 开发人员博客](https://blogs.windows.com/buildingapps)。
 
 <table class="wdg-noborder">
-
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
     <td><h2>UWP 和 UWP 应用生命周期</h2><p>如何开始使用应用，开始使用另一个应用会发生什么情况？ 描述如下。</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">通用 Windows 平台 (UWP) 应用指南</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP 应用生命周期</a></li>
-    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows 10 中的超酷功能</a></ul></td>  
+    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows10 中的超酷功能</a></ul></td>  
 </tr>
  
  
@@ -40,6 +39,7 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
       <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro">控件和模式简介</a></li>
      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">设置控件样式</a></li>
       <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">响应式设计的屏幕大小和断点</a></li>
+      <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">若要选择预生成的控件和模式，请使用 UWP 社区工具包</a></li>
     </ul></td>  
 </tr>
  
@@ -72,7 +72,7 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
     <li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">API 参考</a></li>
      <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">编写适用于 Xbox One 的应用</a></li>
      <li><a href="https://www.microsoft.com/microsoft-hololens/developers">针对 HoloLens 进行开发</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">将应用移植到 Windows 10</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">将应用移植到 Windows10</a></li>
       <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">编写适用于企业的应用</a></li>
       <li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">UWP 社区工具包</a></li>
     </ul>
@@ -146,7 +146,7 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>Xamarin</strong></td>
-<td align="left"><a href="https://www.xamarin.com">使用 C# 编写适用于 iOS、Android 和 Windows 10 的应用。</a></td>
+<td align="left"><a href="https://www.xamarin.com">使用 C# 编写适用于 iOS、Android 和 Windows10 的应用。</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>任务代码段</strong></td>
@@ -162,6 +162,6 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -1,7 +1,7 @@
 ---
 author: mcleblanc
 description: "在开始移植过程时，你有两个选择。"
-title: "将 Windows 运行时 8.x 项目移植到 UWP 项目'"
+title: "将 Windows 运行时 8.x 项目移植到 UWP 项目&quot;"
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786

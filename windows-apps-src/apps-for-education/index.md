@@ -1,38 +1,42 @@
 ---
 author: TylerMSFT
 title: "开发教育应用。"
-description: "本部分介绍可供你针对 Windows 10 平台编写教育应用的通用 Window 应用资源。"
+description: "本部分介绍可供你针对 Windows10 平台编写教育应用的通用 Window 应用资源。"
 translationtype: Human Translation
-ms.sourcegitcommit: a8baa3ef15bd521a3e53b35ebcb7f0914e76a5ba
-ms.openlocfilehash: 2b553e9adc0c31eed9266853a158c622dd4deb31
+ms.sourcegitcommit: 48fcfe2b033614b445a1be6d757a8d208c7b1292
+ms.openlocfilehash: bb401b73432c072d551814dec9504a7d1742b7d4
 
 ---
-# 开发通用 Windows 教育应用
-以下资源将有助于你编写通用 Windows 教育应用。
+# 开发通用 Windows 应用教育版
+以下资源将有助于你编写通用 Windows 应用教育版。
 
 ### 辅助功能
-- 教育应用需要可供访问。 请参阅[开发辅助功能]( https://developer.microsoft.com/en-us/windows/accessible-apps)。
+教育应用需要可供访问。 有关详细信息，请参阅[针对辅助功能开发应用](https://developer.microsoft.com/windows/accessible-apps)。
 
-### Windows 应用商店
--  将教育应用提交到[特定的组织](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)。
 
-### 创建安全的评估
-- [参加测验](https://technet.microsoft.com/en-us/edu/windows/take-tests-in-windows-10)是基于浏览器的应用，可为高利害关系测试提供锁定的在线评估。
-- 使用[参加测验 API](take-a-test-api.md) 防止学生在测试时使用其他计算机或 Internet 资源。
+### 安全评估
+为了防止学生在测试时使用其他计算机或 Internet 资源，评估/测试应用通常需要生成*锁定*环境。 此功能通过[参加测验 API](take-a-test-api.md)提供。 有关为高利害关系测试锁定了在线评估的测试环境的示例，请参阅 Windows IT 中心中的[参加测验](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) Web 应用。
 
-### 笔和墨迹
-- [笔和触笔交互](https://msdn.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)提供 Windows 墨迹平台的概述。
-- [识别笔划墨迹](https://msdn.microsoft.com/windows/uwp/input-and-devices/convert-ink-to-text)介绍基本手写识别。
-- [存储和检索笔划墨迹](https://msdn.microsoft.com/windows/uwp/input-and-devices/save-and-load-ink)介绍如何将笔划墨迹序列化和反序列化为墨迹序列化格式 (ISF) 文件。
-- [墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Ink)介绍如何在使用 JavaScript 的通用 Windows 应用中使用墨迹功能（如捕获、操作和解释笔划墨迹）。
-- [简单的墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)介绍如何在使用 C# 的通用 Windows 应用中使用墨迹功能（如从用户输入中捕获墨迹和对笔划墨迹执行手写识别）。
-- [复杂的墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)演示如何使用高级 InkPresenter 功能使墨迹与其他对象交错、选择墨迹、复制/粘贴和处理事件。 它以使用 C++ 的通用 Windows 平台 (UWP) 为基础生成，并且可以在桌面版和移动版 Windows 10 SKU 上运行。
+### 用户输入
+用户输入是教育应用的关键部分；UI 控件必须具有响应性且直观显示，以便中断其用户的焦点。 有关可用于通用 Windows 应用的输入选项的一般概述，请参阅“设计和 UI”部分中的[输入基础版](https://msdn.microsoft.com/windows/uwp/input-and-devices/input-primer)及其下方的主题。 此外，以下示例应用展示了在通用 Windows 平台中处理的基本 UI。
 - [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)显示如何在通用 Windows 应用中处理输入。
 - [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)显示如何检测和响应用户交互模式。
 - [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)显示如何充分利用新的系统绘制焦点视觉对象，或者如果系统绘制的焦点视觉对象不符合你的需求，如何创建你自己的自定义焦点视觉对象。
 
+Windows Ink 平台通过使教育应用适应学生惯于使用的输入模式，使这些应用引人注目。 有关在应用中实现 Windows Ink 的综合指南，请参阅[笔交互和 Windows Ink](https://msdn.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions) 及其下方的主题。 以下示例应用提供此 API 的工作示例。
+- [墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Ink)介绍如何在使用 JavaScript 的通用 Windows 应用中使用墨迹功能（如捕获、操作和解释笔划墨迹）。
+- [简单的墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)介绍如何在使用 C# 的通用 Windows 应用中使用墨迹功能（如从用户输入中捕获墨迹和对笔划墨迹执行手写识别）。
+- [复杂的墨迹示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)介绍如何使用高级 InkPresenter 功能使墨迹与其他对象交错、选择墨迹、复制/粘贴和处理事件。 它以使用 C++ 的通用 Windows 平台为基础生成，并且可以在桌面版和移动版 Windows10 SKU 上运行。
 
 
-<!--HONumber=Aug16_HO5-->
+### Windows 应用商店
+教育应用通常在特定情况下发布给特定组织。 若要获取相关信息，请参阅[将业务线应用分配到企业](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)。
+
+## 相关主题
+- Windows IT 中心上的 [Windows10 教育版](https://technet.microsoft.com/edu/windows/index)
+
+
+
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: "使用画笔"
 description: "Brush 对象用于绘制形状、文本和控件各个部分的内部或轮廓，以便所绘制的对象在 UI 中可见。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
+ms.sourcegitcommit: f5934600cc185c952acc57ae38e0b190466e0dfa
+ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 ---
 # 使用画笔
@@ -13,7 +13,7 @@ ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
@@ -179,6 +179,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

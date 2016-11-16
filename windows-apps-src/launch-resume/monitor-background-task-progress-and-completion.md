@@ -4,15 +4,15 @@ title: "监视后台任务进度和完成"
 description: "了解应用如何识别后台任务报告的进度和完成情况。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
 
 ---
 
 # 监视后台任务进度和完成情况
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -21,11 +21,11 @@ ms.openlocfilehash: 0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28
 -   [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-了解应用如何识别在单独进程中运行的后台任务报告的进度和完成情况。 （对于单一进程后台任务，可以设置共享变量来表示进度和完成情况。）
+了解应用如何识别在进程外运行的后台任务报告的进度和完成情况。 （对于进程内后台任务，可以设置共享变量来表示进度和完成情况。）
 
- 后台任务从应用中分离，并且单独运行，但你可以通过应用代码监视后台任务进度和完成情况。 若要进行该操作，应用订阅已向系统注册的后台任务事件。
+ 可以由应用代码监视后台任务进度和完成情况。 为此，应用订阅已向系统注册的后台任务事件。
 
--   本主题假定你拥有一个注册后台任务的应用。 若要快速生成后台任务，请参阅[创建和注册后台任务](create-and-register-a-background-task.md)。 有关条件和触发器的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+-   本主题假定你拥有一个注册后台任务的应用。 若要快速生成后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
 ## 创建一个事件处理程序以处理完成的后台任务
 
@@ -197,7 +197,8 @@ ms.openlocfilehash: 0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28
 
 ## 相关主题
 
-* [创建和注册后台任务](create-and-register-a-background-task.md)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
+* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [注册后台任务](register-a-background-task.md)
@@ -212,6 +213,6 @@ ms.openlocfilehash: 0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ Description: "运行桌面转换器应用以将 Windows 桌面应用程序（如
 Search.Product: eADQiWindows 10XVcnh
 title: "桌面应用转换器"
 translationtype: Human Translation
-ms.sourcegitcommit: ed4da94f2732c279c3071135168da9e4b18953cb
-ms.openlocfilehash: c0ed8386cb823ea83e5b1f80cd584f370a85f278
+ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
+ms.openlocfilehash: fcff283e0d97d76fefe3f42a6cd1076b6cdd2aae
 
 ---
 
@@ -26,8 +26,9 @@ ms.openlocfilehash: c0ed8386cb823ea83e5b1f80cd584f370a85f278
 ### 9/14/2016 (v1.0)
 
 * 桌面应用转换器现可在 [Windows 应用商店](https://aka.ms/converter)中下载！ 
-* 在[下载中心](https://www.microsoft.com/download/details.aspx?id=53833)获取最新的 Windows 10 基本映像 (.wim) 以供与 DAC 一起使用。
+* 在[下载中心](https://aka.ms/converterimages)获取最新的 Windows10 基本映像 (.wim) 以供与 DAC 一起使用。
 * 通过应用商店应用，你现在可以使用新入口点 *DesktopAppConverter.exe <arguments>* 在提升的命令提示符下或 PowerShell 窗口中从任意位置运行转换器。  
+
 
 ### 9/2/2016 (v0.1.25)
 
@@ -40,7 +41,7 @@ ms.openlocfilehash: c0ed8386cb823ea83e5b1f80cd584f370a85f278
 * 添加了对自动签署 DAC 生成的已转换应用以供测试的支持。 查看 ```–Sign``` 标识，试一试。 
 * 添加了虚拟注册表配置单元中的 COM 注册在打包的 AppX 内不受支持时的警告。  
 * 添加了对在 VC++ 库上自动检测应用依赖项并随后将其转换为 AppX 清单依赖项的支持。 请注意，为了使用 VC++ 运行时旁加载和测试应用，你需要下载 VCLib 框架包，如博客文章[在 Centennial 项目中使用 Visual C++ 运行时](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)所述。 在你的计算机上的文件夹 ```Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop``` 下查找程序包、导航到你所依赖的版本（例如 11.0、12.0、14.0），然后双击相应的体系结构程序包（x64、x86）进行安装。
-* 更新了清单框架以与 Windows 10 周年更新 (10.0.14393.0) 一致。 
+* 更新了清单框架以与 Windows10 周年更新 (10.0.14393.0) 一致。 
 * 多个 Bug 修复和改进的输出布局。 
 
 ### 7/7/2016 (v0.1.22)
@@ -50,7 +51,7 @@ ms.openlocfilehash: c0ed8386cb823ea83e5b1f80cd584f370a85f278
 
 ### 6/16/2016 (v0.1.20)
 
-* 解决了最新 Windows 10 Insider Preview 版本上阻碍成功转换的问题。 
+* 解决了最新 Windows10 Insider Preview 版本上阻碍成功转换的问题。 
 * 使用 ```–PackageArch``` 替换了 ```–CreateX86Package```，这允许你指定生成的程序包的体系结构。 
 
 ### 6/8/2016
@@ -76,43 +77,54 @@ ms.openlocfilehash: c0ed8386cb823ea83e5b1f80cd584f370a85f278
 
 ## 系统要求
 
-### 支持的操作系统
-+ Windows 10 周年更新企业版预览（内部版本 10.0.14342.0 和更高版本）
+### 操作系统
 
-### 所需的硬件配置
++ Windows10 周年更新（10.0.14393.0 和更高版本）专业版或企业版。
 
-你的计算机必须具有以下最低功能：
+### 硬件配置
+
 + 64 位 (x64) 处理器
 + 硬件辅助虚拟化
 + 二级地址转换 (SLAT)
 
 ### 所需资源
 
-+ [适用于 Windows 10 的 Windows 软件开发工具包 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
++ [适用于 Windows10 的 Windows 软件开发工具包 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
 
-## 设置桌面应用转换器   
+## 设置桌面应用转换器
 
-桌面应用转换器依赖于作为 Windows Insider Preview 版本进行外部测试的 Windows 10 功能。 确保你使用最新版本来利用转换器。
+桌面应用转换器依靠最新的 Windows10 功能。 请确保你使用的是 Windows10 周年更新 (14393.0) 或更高版本。
 
-1. 确保你具有最新的 Windows 10 Insider Preview 操作系统 - 企业版或专业版 (http://insider.windows.com)。 
-2. 下载 DesktopAppConverter.zip 和与你的 Insider Preview 版本匹配的基本映像 .wim 文件 (http://aka.ms/converter)。 
-3. 将 DesktopAppConverter.zip 解压缩到本地文件夹。
-4. 从管理员 PowerShell 窗口：  
-```CMD
-PS C:\> Set-ExecutionPolicy bypass
-```
-5. 从管理员 PowerShell 窗口运行以下命令来设置转换器：
-```CMD
-PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose
-```
-6. 如果运行以前的命令后提示你重启，请重启计算机并再次运行该命令。
+### 应用商店下载
+
+1.  
+            [从 Windows 应用商店下载 StoreDesktopAppConverter](https://aka.ms/converter) 和[与你的版本匹配的基本映像 .wim 文件](https://aka.ms/converterimages)。  
+2.  以管理员身份运行 DesktopAppConverter。 可从“开始”菜单执行此操作，方法是右键单击磁贴并从“更多”下选择“以管理员身份运行”，或者从任务栏执行此操作，方法是右键单击磁贴、第二次右键单击弹出的应用名称，然后选择“以管理员身份运行”。
+3.  从应用控制台窗口中，运行 ```CMD PS C:\> Set-ExecutionPolicy bypass```。
+4.  通过从控制台窗口运行 ```CMD PS C:\> DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` 来设置转换器。
+5.  如果运行以前的命令后提示你重启，请重新启动计算机。
+
+### Zip 文件 
+
+DAC 在[下载中心](https://aka.ms/converterimages)中仍以 Zip 文件形式提供以促进离线方案。 但是，所有将来的更新都将仅在应用商店版本中发布。
+
+1.  下载 DAC zip 文件和[与你的版本匹配的基本映像 .wim 文件](https://aka.ms/converterimages)。  
+2. 将 DesktopAppConverter.zip 提取到本地文件夹。
+3. 从管理员 PowerShell 窗口中，运行 ```CMD PS C:\> Set-ExecutionPolicy bypass```。
+4. 通过从管理员 PowerShell 窗口运行 ```CMD PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` 来设置转换器。
+5. 如果运行以前的命令后提示你重启，请重新启动计算机。
 
 ## 运行桌面应用转换器
-桌面应用转换器具有两个入口点：PowerShell 和 Command Shell。 你可以使用这些入口点之一启动转换过程。
 
-### 用法
++ 
+            **应用商店下载**：使用 ```DesktopAppConverter.exe``` 运行转换器。
++ 
+            **Zip 文件**：使用 ```DesktopAppConverter.ps1``` 运行转换器。 
+
+### 用途
+
 ```CMD
-DesktopAppConverter.ps1
+DesktopAppConverter.exe
 -Installer <String> [-InstallerArguments <String>] [-InstallerValidExitCodes <Int32>]
 -Destination <String>
 -PackageName <String>
@@ -132,16 +144,16 @@ DesktopAppConverter.ps1
 ```
 
 ### 示例
-以下示例介绍如何将 *&lt;publisher_name&gt;* 发布的名为 *MyApp* 的桌面应用转换为 UWP 程序包 (AppX)。
 
-+ 从管理员 PowerShell 窗口，运行以下命令：
+以下示例介绍如何将 *&lt;publisher_name&gt;* 发布的名为 *MyApp* 的桌面应用转换为 UWP 软件包 (AppX)。
+
 ```CMD
-PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe 
+DesktopAppConverter.exe -Installer C:\Installer\MyApp.exe 
 -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" 
 -Publisher "CN=<publisher_name>" -Version 0.0.0.1 -MakeAppx -Verbose
 ```
 
-## 部署转换的 AppX
+## 部署已转换的 AppX
 
 在 PowerShell 中使用 [Add-AppxPackage](https://technet.microsoft.com/library/hh856048.aspx) cmdlet 将已签名的应用包 (.appx) 部署到用户帐户。 
 
@@ -153,13 +165,13 @@ PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe
 
 ## 对 .Appx 程序包进行签名
 
-Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用作为转换器命令行的一部分的 ```-Sign``` 标志或 Microsoft Windows 10 SDK 附带的 SignTool.exe 对 .appx 程序包进行签名。
+Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用作为转换器命令行的一部分的 ```-Sign``` 标志或 Microsoft Windows10 SDK 附带的 SignTool.exe 对 .appx 程序包进行签名。
 
 有关如何对.appx 程序包进行签名的其他详细信息，请参阅[对已转换的桌面应用进行签名](desktop-to-uwp-signing.md)。 
 
 ## 警告
 
-1. 主机上的 Windows 10 版本必须与作为桌面应用转换器下载的一部分获取的基本映像匹配。  
+1. 主机上的 Windows10 版本必须与作为桌面应用转换器下载的一部分获取的基本映像匹配。  
 2. 确保桌面安装程序是独立的目录，因为转换器会将目录的所有内容复制到隔离的 Windows 环境中。  
 3. 当前，桌面应用转换器仅支持在 64 位操作系统上运行转换过程。 你仅可以将转换的.appx 程序包部署到 64 位 (x64) 操作系统。  
 4. 桌面应用转换器需要桌面安装程序在无人参与模式下运行。 确保使用 *-InstallerArguments* 参数将安装程序的无提示标志传递到转换器。
@@ -183,12 +195,15 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DesktopAppConverter
 + 若要启用遥测，请删除该项或将值设置为 0。
 
 ## 桌面应用转换器用法
-下面是桌面应用转换器的参数列表。 你还可以通过运行以下命令在 Windows Powershell 窗口中查看此列表：  
+
+下面是桌面应用转换器的参数列表。 还可通过运行以下内容查看此列表：   
+
 ```CMD
-get-help .\DesktopAppConverter.ps1 -detailed
+Get-Help DesktopAppConverter.exe -detailed
 ```
 
 ### Setup 参数  
+
 |参数|说明|
 |---------|-----------|
 |```-Setup [<SwitchParameter>]``` | 在设置模式下运行 DesktopAppConverter。 设置模式支持扩展所提供的基本映像。|
@@ -198,14 +213,17 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```-NoRestart [<SwitchParameter>]``` | 在运行设置时不要提示重启（需要重启才能启用容器功能）。 |
 
 ### Conversion 参数  
+
 |参数|说明|
 |---------|-----------|
+|```-AppInstallPath <String> [optional]``` | 应用程序针对已安装文件（如果已安装）的根文件夹的完整路径（例如“C:\Program Files (x86)\MyApp”）。| 
+|```-Destination <String>``` | 如果转换器的 appx 输出的所需目标尚未存在，DesktopAppConverter 可以创建此位置。|
 |```-Installer <String>``` | 应用程序的安装程序的路径 - 必须能够在无人参与/无提示的情况下运行。|
 |```-InstallerArguments <String>``` [可选] | 用于强制安装程序在无人参与/无提示的情况下运行的参数的逗号分隔列表或字符串。 如果安装程序是 msi，则此参数为可选参数。 若要从安装程序中获取日志，请在此处为安装程序提供日志记录参数，并使用路径 ```<log_folder>```，该路径是转换器替换为相应路径的标记。 <br><br>**注意：无人参与/无提示标志和日志参数将因安装程序技术而有所不同。** <br><br>此参数的用法示例：```-InstallerArguments "/silent /log <log_folder>\install.log"```另一个不产生日志文件的示例可能如下所示：```-InstallerArguments "/quiet", "/norestart"```同样，如果你希望转换器捕获日志并将其放置在最终日志文件夹中，你必须逐字节地将任何日志直接指向标记路径 ```<log_folder>```。|
 |```-InstallerValidExitCodes <Int32>``` [可选] | 指示安装程序成功运行的退出代码的逗号分隔列表（例如，0, 1234, 5678）。  默认情况下，对于非 msi，它为 0，对于 msi，它为 0, 1641, 3010。|
-|```-Destination <String>``` | 如果转换器的 appx 输出的所需目标尚未存在，DesktopAppConverter 可以创建此位置。|
 
 ### Appx Identity 参数  
+
 |参数|描述|
 |---------|-----------|
 |```-PackageName <String>``` | 通用 Windows 应用程序包的名称
@@ -213,6 +231,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```-Version <Version>``` | 通用 Windows 应用程序包的版本号
 
 ### 可选 Appx Manifest 参数  
+
 |参数|描述|
 |---------|-----------|
 |```-AppExecutable <String> [optional]``` [可选] | 你的应用程序的主可执行文件的名称（“MyApp.exe”）。 |
@@ -224,6 +243,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```-PackagePublisherDisplayName <String>``` [可选] | 在 appx 清单中指定要将程序包发布者显示名称设置为的值。 如果未指定，则将其设置为 *Publisher* 传入的值。 |
 
 ### 其他 Conversion 参数  
+
 |参数|描述|
 |---------|-----------|
 |```-ExpandedBaseImage <String>``` [可选] | 已扩展的基本映像的完整路径。|
@@ -233,6 +253,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```<Common parameters>``` | 此 cmdlet 支持通用参数：*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable* 和 *OutVariable*。 有关详细信息，请参阅 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。 |
 
 ### 清除参数
+
 |参数|说明|
 |---------|-----------|
 |```Cleanup [<Option>]``` | 为 DesktopAppConverter 项目运行清除。 清除模式有 3 个有效的选项。 |
@@ -241,6 +262,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```Cleanup ExpandedImage``` | 删除安装在主机上的所有已扩展的基本映像。 |
 
 ### 程序包体系结构
+
 桌面应用转换器现在支持创建可在 x86 和 amd64 计算机上安装和运行的 x86 和 x64 应用包。 请注意，桌面应用转换器仍然需要在 AMD64 计算机上运行才能执行成功的转换。
 
 |参数|描述|
@@ -267,15 +289,11 @@ example3: PEHeaderCertFixTool c:\myapp /c /v
 桌面应用转换器不支持 Unicode；因此，没有用于该工具的任何中文字符或非 ASCII 字符。
 
 ## 另请参阅
-+ [获取桌面应用转换器](http://go.microsoft.com/fwlink/?LinkId=785437)
-+ [将你的桌面应用发布到通用 Windows 平台](https://developer.microsoft.com/windows/bridges/desktop)
+
 + [使用桌面应用转换器将桌面应用发布到 UWP](https://channel9.msdn.com/events/Build/2016/P504)
 + [Project Centennial：将现有桌面应用程序发布到通用 Windows 平台](https://channel9.msdn.com/events/Build/2016/B829)  
-+ [适用于桌面桥的 UserVoice](http://aka.ms/UserVoiceDesktopToUwp)
-+ [GitHub 上的 UWP 代码示例的桌面应用桥](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-
-<!--HONumber=Sep16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

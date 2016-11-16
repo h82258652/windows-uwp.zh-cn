@@ -1,7 +1,7 @@
 ---
 author: mcleblanc
 description: "我们强烈建议阅读到此移植指南的末尾，但是我们也理解你希望尽快前进到项目生成和运行的阶段。"
-title: "将 Windows 运行时 8.x 移植到 UWP 疑难解答'"
+title: "将 Windows 运行时 8.x 移植到 UWP 疑难解答&quot;"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4

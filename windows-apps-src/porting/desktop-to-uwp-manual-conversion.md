@@ -1,18 +1,17 @@
 ---
+author: awkoren
 Description: "介绍如何将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）手动转换为通用 Windows 平台 (UWP) 应用。"
 Search.Product: eADQiWindows 10XVcnh
-title: "将 Windows 桌面使用程序手动转换为通用 Windows 平台 (UWP) 应用"
+title: "将 Windows 桌面应用程序手动转换为通用 Windows 平台 (UWP) 应用"
 translationtype: Human Translation
-ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
-ms.openlocfilehash: 646a5b88cb7ca97f18bf4552950979a2ceead398
+ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
+ms.openlocfilehash: 6ca48fd829b7437fe2db8aa1251f6ed8976919ab
 
 ---
 
-# 将 Windows 桌面应用程序手动转换为通用 Windows 平台 (UWP) 应用
+# 使用桌面桥手动将你的应用转换到 UWP
 
-\[有些信息与可能在商业发行之前就经过实质性修改的预发布产品相关。 Microsoft 不对此处提供的信息作任何明示或默示的担保。\]
-
-使用转换器方便并且自动，如果你不确定安装程序的用途，则它很有用。 但是，如果应用使用 xcopy 安装，或者你熟悉应用的安装程序对系统所做的更改，可以选择手动创建应用包和清单。
+使用桌面应用转换器 (DAC) 方便并且自动，如果你不确定安装程序的用途，则它很有用。 但是，如果应用使用 xcopy 安装，或者你熟悉应用的安装程序对系统所做的更改，可以选择手动创建应用包和清单。
 
 以下是手动创建程序包的步骤：
 
@@ -60,7 +59,7 @@ ms.openlocfilehash: 646a5b88cb7ca97f18bf4552950979a2ceead398
 
 ## 运行 MakeAppX 工具
 
-使用[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) 为你的项目生成 AppX。 MakeAppx.exe 包含在 Windows 10 SDK 中。 
+使用[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) 为你的项目生成 AppX。 MakeAppx.exe 包含在 Windows10 SDK 中。 
 
 若要运行 MakeAppx，请先确保你已创建清单文件，如上所述。 
 
@@ -82,7 +81,7 @@ MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 
 ## 对 AppX 程序包进行签名
 
-Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用 Microsoft Windows 10 SDK 附带的 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) 对 .appx 程序包进行签名。
+Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用 Microsoft Windows10 SDK 附带的 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) 对 .appx 程序包进行签名。
 
 示例用法： 
 
@@ -92,7 +91,7 @@ C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
 
-当你运行 MakeCert.exe 并且系统要求你输入密码时，请选择“无”****。 有关证书和签名的详细信息，请参阅以下内容： 
+当你运行 MakeCert.exe 并且系统要求你输入密码时，请选择“无”。 有关证书和签名的详细信息，请参阅以下内容： 
 
 - [操作方法：创建在部署期间使用的临时证书](https://msdn.microsoft.com/library/ms733813.aspx)
 
@@ -103,6 +102,6 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

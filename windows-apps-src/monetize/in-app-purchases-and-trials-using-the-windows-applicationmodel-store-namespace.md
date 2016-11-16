@@ -1,11 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: "了解如何启用 UWP 应用中的应用内购买和试用（定向 Windows 10 版本 1607 之前的版本）。"
+description: "了解如何启用 UWP 应用中的应用内购买和试用（定向 Windows10 版本 1607 之前的版本）。"
 title: "使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
+ms.sourcegitcommit: 812fa1789c5c86657b8e73e45a851c7a58a1c84e
+ms.openlocfilehash: 5a4f943357660a22217351f04d735c14cab828ff
 
 ---
 
@@ -13,11 +13,15 @@ ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
 
 Windows SDK 提供可用于将应用内购买和试用功能添加到通用 Windows 平台 (UWP) 应用的 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间中的成员，帮助通过应用盈利和添加新功能。 这些 API 还提供应用的许可证信息访问权限。
 
->**注意**&nbsp;&nbsp;如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员，而非使用 **Windows.ApplicationModel.Store** 命名空间。 **Windows.Services.Store** 命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 **Windows.Services.Store** 命名空间还设计用于提供更好的性能。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
-
 本部分中的文章提供有关针对多个常见方案使用 **Windows.ApplicationModel.Store** 命名空间中的成员的深入指南和代码示例。 有关与 UWP 中的应用内购买相关的概念概述，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
 
 有关演示如何使用 **Windows.ApplicationModel.Store** 命名空间实现试用和应用内购买的完整示例，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
+
+>**注意**&nbsp;&nbsp;
+>
+> * 如果你的应用面向 Windows10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员，而非使用 **Windows.ApplicationModel.Store** 命名空间。 **Windows.Services.Store** 命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 **Windows.Services.Store** 命名空间还设计用于提供更好的性能。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
+<br/><br/>
+> * **Windows.ApplicationModel.Store** 命名空间在使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序中不受支持。 这些应用程序必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
 
 ## 本部分内容
 
@@ -32,6 +36,6 @@ Windows SDK 提供可用于将应用内购买和试用功能添加到通用 Wind
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

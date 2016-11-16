@@ -4,8 +4,8 @@ ms.assetid:
 description: "本文列出 UWP 应用支持的 HTTP Live Streaming (HLS) 协议标记。"
 title: "HTTP Live Streaming (HLS) 标记支持"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
+ms.sourcegitcommit: 3d61f5272e4d11acfb7e0a85436ca60ba458dcae
+ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
 > 以“X-”开头的自定义标记可以作为定时元数据加以访问，如文章[媒体项、播放列表和曲目](media-playback-with-mediasource.md)中所述。
 
 |标记 |已引入 HLS 协议版本中|HLS 协议文档草案版本|客户端要求|7 月发布的 Windows 10|Windows 10 版本 1511|Windows 10 版本 1606 |
-|---------------------|-----------|--------------|---------|--------------|
+|---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  基本标记                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|必填|支持|支持|支持|
 | 4.3.1.2.  EXT-X-VERSION |2|3|必填|支持|支持|支持
@@ -86,6 +86,6 @@ ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

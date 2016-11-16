@@ -4,21 +4,24 @@ ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
 description: "通过 SystemMediaTransportControls 类，你的应用可以使用内置于 Windows 的系统媒体传输控件，并更新控件显示的有关你的应用当前播放的媒体的元数据。"
 title: "手动控制系统媒体传输控件"
 translationtype: Human Translation
-ms.sourcegitcommit: 2cf432bc9d6eb0e564b6d6aa7fdbfd78c7eef272
-ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 471cf095109fc9bbfcb241dd6eb480603c3df655
 
 ---
 
 # 手动控制系统媒体传输控件
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-从 Windows 10 版本 1607 开始，使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类播放媒体的 UWP 应用默认自动与系统媒体传输控件 (SMTC) 集成。 对于大多数方案，均推荐使用此方法与 SMTC 交互。 有关自定义 SMTC 与 **MediaPlayer** 的默认集成的详细信息，请参阅[与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)。
+从 Windows10 版本 1607 开始，使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类播放媒体的 UWP 应用默认自动与系统媒体传输控件 (SMTC) 集成。 对于大多数方案，均推荐使用此方法与 SMTC 交互。 有关自定义 SMTC 与 **MediaPlayer** 的默认集成的详细信息，请参阅[与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)。
 
 在以下几个方案中，可能需要实现 SMTC 的手动控制。 这些方案包括使用 [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) 控制一个或多个媒体播放器的播放的情形。 或者使用多个媒体播放器，但仅希望应用拥有一个 SMTC 实例的情形。 如果使用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaElement) 播放媒体，则必须手动控制 SMTC。
 
 ## 设置传输控件
-如果使用 **MediaPlayer** 播放媒体，则通过访问 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls) 属性可以获取 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) 类的实例。 如果要手动控制 SMTC，应该将 [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 属性设为 false 以禁用 **MediaPlayer** 提供的自动集成。
+如果使用 **MediaPlayer** 播放媒体，则通过访问 [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls) 属性可以获取 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) 类的实例。 如果要手动控制 SMTC，应该通过将 [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 属性设置为 false，禁用 **MediaPlayer** 提供的自动集成。
+
+> [!NOTE] 
+> 如果你通过将 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 设置为 false 禁用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 的 [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager)，它将中断 **MediaPlayer** 和 **MediaPlayerElement** 提供的 [**TransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.TransportControls) 之间的链接，以致内置传输控件不再自动控制播放器的播放。 作为替代方法，你必须实现自己的控件才能控制 **MediaPlayer**。
 
 [!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
 
@@ -116,6 +119,6 @@ ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

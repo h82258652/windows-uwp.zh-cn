@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 description: "可以使用 PropertyPath 类和字符串语法来实例化 XAML 或代码中的 PropertyPath 值。"
-title: "Property-path 语法'"
+title: "Property-path 语法&quot;"
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 translationtype: Human Translation
 ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104

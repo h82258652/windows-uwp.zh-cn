@@ -7,8 +7,8 @@ label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
 translationtype: Human Translation
-ms.sourcegitcommit: 8bc5612c0fc9273d32ccbfcd5b4334566d24b017
-ms.openlocfilehash: 67149f51cc16fee6f5ba818915432b18d2c1a549
+ms.sourcegitcommit: f7bc2ccbdd34bec671864323df53ab7bdda25a87
+ms.openlocfilehash: 4c87dea0387b2da055d07df5bab14c4ad61638d7
 
 ---
 
@@ -304,7 +304,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
     ![选择套索](images/ink-unprocessed-3-small.png)
 
       ```csharp
-        // Handle unprocessed pointer events from modifed input.
+        // Handle unprocessed pointer events from modified input.
         // The input is used to provide selection functionality.
         // Selection UI is drawn on a canvas under the InkCanvas.
         private void UnprocessedInput_PointerPressed(
@@ -437,6 +437,9 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 有关该功能的完整示例，请参阅[复杂墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620314)。
 
+> [!NOTE]
+> 自定义烘干和 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
+> 如果你的应用将 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的默认墨迹呈现行为替代为自定义烘干实现，呈现的笔划墨迹不再可用于 InkToolbar，并且 InkToolbar 的内置擦除命令不会按预期工作。 若要提供擦除功能，必须处理所有指针事件、在每个笔划上执行命中测试，并替代内置的“清除所有墨迹”命令。
 
 ## 本部分中的其他文章
 
@@ -471,6 +474,6 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

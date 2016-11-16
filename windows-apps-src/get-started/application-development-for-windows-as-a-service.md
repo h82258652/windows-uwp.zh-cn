@@ -2,13 +2,16 @@
 title: "面向 Windows 即服务的应用程序开发 (Windows 10)"
 description: "将应用版本和支持与特定的 Windows 版本分离。"
 author: jdeckerMS
+redirect_url: ../updates-and-versions/application-development-for-windows-as-a-service/
 translationtype: Human Translation
 ms.sourcegitcommit: a86002c944841536d37735bb8c4b657905582144
-ms.openlocfilehash: 72ac67b17fc519d374798e5121b309f664ff6b1b
+ms.openlocfilehash: 561f5ea0ab4ba5b456456cedf786479ef168e7c0
 
 ---
 
 # 面向 Windows 即服务的应用程序开发
+
+**此页面已重定向到 ../updates-and-versions/application-development-for-windows-as-a-service/**
 
 **适用于**
 -   Windows 10
@@ -159,6 +162,6 @@ Windows 操作系统外部测试版是指在向一般大众发布最终版本之
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

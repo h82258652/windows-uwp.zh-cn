@@ -4,8 +4,8 @@ ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: "在 Windows 应用商店提交 API 中使用此方法，可更新现有应用提交。"
 title: "使用 Windows 应用商店提交 API 更新应用提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 178b70db1583790c174d65e060c8bce6e4f69243
-ms.openlocfilehash: ad1c565f1ec84127b2ac689cc7cb23d2b39764ef
+ms.sourcegitcommit: 819843c8ba1e4a073f70f7de36fe98dd4087cdc6
+ms.openlocfilehash: 8b1a6da557b966e69345e90c48f90a6df0f27442
 
 ---
 
@@ -17,6 +17,8 @@ ms.openlocfilehash: ad1c565f1ec84127b2ac689cc7cb23d2b39764ef
 在 Windows 应用商店提交 API 中使用此方法，可更新现有应用提交。 使用此方法成功更新提交后，必须[确认提交](commit-an-app-submission.md)才可以实现引入和发布。
 
 有关此方法如何适用通过使用 Windows 应用商店提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
+
+>**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的应用提交的定价数据模型。 实现此更改后，将忽略此方法的请求正文中的**定价**资源，并且你将暂时无法使用此方法更改应用提交的试用期限、定价和销售数据。 我们会在将来更新 Windows 应用商店提交 API，以引入以编程方式访问应用提交的定价信息的新方法。 有关详细信息，请参阅[定价资源](manage-app-submissions.md#pricing-object)。
 
 ## 先决条件
 
@@ -75,10 +77,11 @@ ms.openlocfilehash: ad1c565f1ec84127b2ac689cc7cb23d2b39764ef
 | hasExternalInAppProducts           |     布尔型          |   指示应用是否允许用户在 Windows 应用商店商务系统之外进行购买。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
 | meetAccessibilityGuidelines           |    布尔型           |  指示应用是否经测试符合辅助功能准则。 有关详细信息，请参阅[应用声明](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
 | notesForCertification           |  字符串  |   包含应用的[认证说明](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
-| applicationPackages           |   数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅[应用程序包](manage-app-submissions.md#application-package-object)部分。 调用此方法更新应用提交时，请求正文中仅需要这些对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。   |    
-| enterpriseLicensing           |  字符串  |  [企业授权值](#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 布尔型   |  指示是否允许应用[以未来 Windows 10 设备系列为目标](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |    
+| applicationPackages           |   数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅[应用程序包](manage-app-submissions.md#application-package-object)部分。 调用此方法更新应用提交时，请求正文中仅需要这些对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心填充。   |    
+| packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置。 有关详细信息，请参阅[软件包传递选项对象](manage-app-submissions.md#package-delivery-options-object)部分。  |
+| enterpriseLicensing           |  字符串  |  [企业授权值](manage-app-submissions.md#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
+| allowTargetFutureDeviceFamilies           | 布尔型   |  指示是否允许应用[以未来 Windows10 设备系列为目标](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |    
 
 <span/>
 
@@ -144,6 +147,16 @@ Content-Type: application/json
       "minimumSystemRam": "None"
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "enterpriseLicensing": "Online",
   "allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies": true,
   "allowTargetFutureDeviceFamilies": {
@@ -237,6 +250,16 @@ Content-Type: application/json
       ]
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "enterpriseLicensing": "Online",
   "allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies": true,
   "allowTargetFutureDeviceFamilies": {
@@ -273,6 +296,6 @@ Content-Type: application/json
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

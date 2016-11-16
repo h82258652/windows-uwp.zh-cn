@@ -4,14 +4,14 @@ title: "使用维护触发器"
 description: "了解如何在插入设备的情况下使用 MaintenanceTrigger 类在后台运行轻型代码。"
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
 
 ---
 
 # 使用维护触发器
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
 
 本示例假定在插入设备时你已具有可以在后台运行的轻型代码以增强你的应用。 此主题重点介绍 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)，它类似于 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)。
 
-有关编写后台任务类的详细信息可以在[创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)或[创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)中找到。
+有关编写后台任务类的详细信息可以在[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)中找到。
 
 创建新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 对象。 第二个参数 *OneShot* 指定维护任务是只运行一次还是继续定期运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，则 *FreshnessTime* 会指定后台任务运行的频率。
 
@@ -90,14 +90,15 @@ ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
     > **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
 
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 
+  **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows10 开发人员。 如果你面向 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相关主题
 
 ****
 
-* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)。
-* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
+* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -107,14 +108,11 @@ ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
 * [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
-
-****
-
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,17 +4,17 @@ ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "本文将列出 UWP 应用的音频和视频编解码器以及格式支持。"
 title: "支持的编解码器"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
+ms.sourcegitcommit: 7bd0002d62519757cf582d6070a22890a0e1837e
+ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
 ---
 
 # 支持的编解码器
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文将列出 UWP 应用的音频和视频编解码器以及格式支持。
+本文将列出 UWP 应用的音频、视频和图像编解码器以及格式支持。
 
 在下表中，“D”表示解码器支持，而“E”表示编码器支持。
 
@@ -2685,18 +2685,80 @@ ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
 </tbody>
 </table>
 
- 
+## 图像编解码器和格式支持 
 
- 
+<table>
+<colgroup>
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">编解码器</th>
+<th align="left">桌面</th>
+<th align="left">其他设备系列</th>
+</tr>
+</thead>
+<tr class="odd">
+<td align="left">BMP</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">DDS</td>
+<td align="left">D/E<sup>1</sup></td>
+<td align="left">D/E<sup>1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">DNG</td>
+<td align="left">D<sup>2</sup></td>
+<td align="left">D<sup>2</sup></td>
+</tr>
+<tr class="even">
+<td align="left">GIF</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">ICO</td>
+<td align="left">D</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">JPEG</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">JPEG-XR</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">PNG</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">TIFF</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">相机 RAW</td>
+<td align="left">D<sup>3</sup></td>
+<td align="left">否</td>
+</tr>
+</table>
 
- 
+<sup>1</sup> 支持使用 BC1 至 BC5 压缩的 DDS 图像。  
+<sup>2</sup> 支持具有非 RAW 嵌入预览的 DNG 图像。  
+<sup>3</sup> 仅支持某些相机 RAW 格式。  
+
+有关图像编解码器的详细信息，请参阅[本机 WIC 编解码器](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx)。
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

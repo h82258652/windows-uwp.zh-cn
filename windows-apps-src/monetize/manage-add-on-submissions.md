@@ -4,8 +4,8 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "在 Windows 应用商店提交 API 中使用这些方法，来管理已注册到 Windows 开发人员中心帐户的应用的加载项提交。"
 title: "使用 Windows 应用商店提交 API 管理加载项提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
+ms.sourcegitcommit: 4a1ea50d72e0f754658d8ee99755b873619e1969
+ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 ---
 
@@ -16,6 +16,8 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 在 Windows 应用商店提交 API 中使用以下方法，来管理已注册到 Windows 开发人员中心帐户的应用的加载项（也称为应用内产品或 IAP）提交。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 >**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 在使用这些方法来创建或管理加载项的提交前，该加载项必须已存在于开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)，或者使用[管理加载项](manage-add-ons.md)中所述的 Windows 应用商店提交 API 方法，可以创建加载项。
+
+>**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的加载项提交的定价数据模型。 实现此更改后，**定价**资源将不再受支持，并且你将暂时无法使用 Windows 应用商店提交 API 获取或修改加载项提交的定价和销售数据。 我们将在将来更新该 API，以引入以编程方式访问加载项提交的定价信息的新方法。 有关详细信息，请参阅[定价资源](#pricing-object)部分。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -168,15 +170,15 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 | 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | 字符串  | 提交的 ID。  |
-| contentType           | 字符串  |  加载项中提供的[内容类型](https://msdn.microsoft.com/windows/uwp/publish/enter-iap-properties#content-type)。 这可以是以下值之一： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | 数组  | 字符串数组，其中最多包含加载项的 10 个[关键字](../publish/enter-iap-properties.md#keywords)。 应用可以使用这些关键字来查询加载项。   |
+| contentType           | 字符串  |  加载项中提供的[内容类型](../publish/enter-add-on-properties.md#content-type)。 这可以是以下值之一： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | 数组  | 字符串数组，其中最多包含加载项的 10 个[关键字](../publish/enter-add-on-properties.md#keywords)。 应用可以使用这些关键字来查询加载项。   |
 | lifetime           | 字符串  |  加载项的生存期。 这可以是以下值之一： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | 对象  |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为含有加载项列表信息的[列表资源](#listing-object)对象。  |
 | pricing           | 对象  | 包含加载项定价信息的对象。 有关详细信息，请参阅下面的[定价资源](#pricing-object)部分。  |
 | targetPublishMode           | 字符串  | 提交的发布模式。 这可以是以下值之一： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字符串  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |
-| tag           | 字符串  |  加载项的[标记](../publish/enter-iap-properties.md#tag)。   |
-| visibility  | 字符串  |  加载项的可见性。 这可以是以下值之一： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| tag           | 字符串  |  加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（此信息之前称为 *tag*）。   |
+| 可见性  | 字符串  |  加载项的可见性。 这可以是以下值之一： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 | status  | 字符串  |  提交的状态。 这可以是以下值之一： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 对象  |  包含有关提交状态的附加详细信息，其中包括任何错误的相关信息。 有关详细信息，请参阅下面[状态详细信息](#status-details-object)部分。 |
 | fileUploadUrl           | 字符串  | 用于为提交上载任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包，请将包含这些程序包的 ZIP 存档上载到此 URI。 有关详细信息，请参阅[创建加载项提交](#create-an-add-on-submission)。  |
@@ -206,19 +208,32 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 <span id="pricing-object" />
 ### 定价
 
-此资源包含加载项的定价信息。 此资源具有以下值。
+此资源包含加载项的定价信息。
+
+>**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的加载项提交的定价数据模型。 实现此更改后，**定价**资源将不再受支持，并且你将暂时无法使用 Windows 应用商店提交 API 获取或修改加载项提交的定价和销售数据。 你将注意到以下行为更改：
+
+   > * 调用 [GET 方法以获取加载项提交](get-an-add-on-submission.md)后，**定价**资源将为空。 可继续使用开发人员中心仪表板获取加载项提交的定价数据。
+   > * 调用 [PUT 方法更新加载项提交](update-an-add-on-submission.md)时，将忽略**定价**资源中的信息。 可继续使用开发人员中心仪表板更改加载项提交的定价数据。
+
+> 将来，我们将更新 Windows 应用商店提交 API，以引入以编程方式获取和更新加载项提交的定价信息的新方法。
+
+此资源具有以下值。
 
 | 值           | 类型    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[加载项在特定市场中的自定义价格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。     |     
 |  sales               |   数组      |  包含加载项销售信息的对象数组。 有关详细信息，请参阅下面的[销售](#sale-object)部分。    |     
-|  priceId               |   字符串      |  用于指定加载项[基价](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)的[价格段](#price-tier)。    |
+|  priceId               |   字符串      |  用于指定加载项[基价](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)的[价格段](#price-tiers)。    |
 
 
 <span id="sale-object" />
 ### 销售
 
-此资源包含加载项的销售信息。 此资源具有以下值。
+此资源包含加载项的销售信息。
+
+>**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的加载项提交的定价数据模型。 实现此更改后，**销售**资源将不再受支持，并且你将暂时无法使用 Windows 应用商店提交 API 获取或修改加载项提交的销售数据。 我们将在将来更新该 API，以引入以编程方式访问加载项提交的销售信息的新方法。 有关详细信息，请参阅[定价资源](#pricing-object)部分。
+
+此资源具有以下值。
 
 | 值           | 类型    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|------|
@@ -315,6 +330,6 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -5,20 +5,22 @@ description: "了解如何使用 Windows.Services.Store 命名空间处理可消
 title: "支持购买可消耗加载项"
 keywords: "应用内付费选项代码示例"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 1e9ecad5abb9addbe41b38d0b56b84404716f2a8
+ms.sourcegitcommit: 962bee0cae8c50407fe1509b8000dc9cf9e847f8
+ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
 
 ---
 
 # 支持购买可消耗加载项
 
-面向 Windows 10 版本 1607 或更高版本的应用可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的方法，管理 UWP 应用中可消耗加载项的实施情况（加载项也称为应用内产品或 IAP）。 对可以购买、使用并再次购买的商品使用可消耗加载项。 这对游戏内货币（金子、硬币等）等来说尤为有用，可以购买此类货币，然后将其用于购买特定道具。
+面向 Windows10 版本 1607 或更高版本的应用可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的方法，管理 UWP 应用中可消耗加载项的实施情况（加载项也称为应用内产品或 IAP）。 对可以购买、使用并再次购买的商品使用可消耗加载项。 这对游戏内货币（金子、硬币等）等来说尤为有用，可以购买此类货币，然后将其用于购买特定道具。
 
->**注意**&nbsp;&nbsp;本文适用于面向 Windows 10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+>
+  **注意**
+  &nbsp;&nbsp;本文适用于面向 Windows10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 ## 可消耗加载项概述
 
-面向 Windows 10 版本 1607 或更高版本的应用可以提供在实施情况管理方式上大不相同的两种类型的可消耗加载项：
+面向 Windows10 版本 1607 或更高版本的应用可以提供在实施情况管理方式上大不相同的两种类型的可消耗加载项：
 
 * **开发人员管理的消耗品**。 对于此类型的消耗品，你负责跟踪加载项所表示的商品的用户余量，并在用户消耗完所有商品后向应用商店将加载项购买报告为已完成。 在你的应用将之前的加载项购买报告为已完成前，用户无法再次购买该加载项。
 
@@ -28,7 +30,9 @@ ms.openlocfilehash: 1e9ecad5abb9addbe41b38d0b56b84404716f2a8
 
   例如，如果你的加载项在游戏中表示 100 个硬币的初始数量，并且用户消耗了 10 个硬币，则你的应用将向应用商店报告 10 个单位的加载项已完成，然后应用商店会更新剩余余额。 用户消耗完全部 100 个硬币后，可以再次购买 100 个硬币的加载项。
 
-  >**注意**&nbsp;&nbsp;应用商店管理的易耗品从 Windows 10 版本 1607 开始可用。 在 Windows 开发人员中心仪表板中创建应用商店管理的易耗品的功能即将推出。
+  >
+  **注意**
+  &nbsp;&nbsp;应用商店管理的易耗品从 Windows10 版本 1607 开始可用。 在 Windows 开发人员中心仪表板中创建应用商店管理的易耗品的功能即将推出。
 
 若要向用户提供可消耗加载项，请遵循此一般过程：
 
@@ -40,7 +44,7 @@ ms.openlocfilehash: 1e9ecad5abb9addbe41b38d0b56b84404716f2a8
 ## 先决条件
 
 这些示例有以下先决条件：
-* 适用于面向 Windows 10 版本 1607 或更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
+* 适用于面向 Windows10 版本 1607 或更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
 * 你已使用可消耗加载项（也称为应用内产品或 IAP）在 Windows 开发人员中心仪表板中创建了一个应用，并且该应用已发布，并在应用商店中上架。 该应用可以是你想要发布给客户的应用，也可以是符合 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)最低要求、仅用于测试目的的基本应用。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
 
 这些示例中的代码假设：
@@ -49,6 +53,8 @@ ms.openlocfilehash: 1e9ecad5abb9addbe41b38d0b56b84404716f2a8
 * 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md#api_intro)。
 
 有关完整的示例应用程序，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+
+>**注意**&nbsp;&nbsp;如果你有使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序，可能需要添加未在这些示例中显示的额外代码来配置 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象。 有关详细信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](in-app-purchases-and-trials.md#desktop)。
 
 <span id="report_fulfilled" />
 ## 将可消耗加载项报告为已完成
@@ -71,6 +77,9 @@ public async void ConsumeAddOn(string storeId)
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     // This is an example for a Store-managed consumable, where you specify the actual number
@@ -133,6 +142,9 @@ public async void GetRemainingBalance(string storeId)
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     string addOnStoreId = "9NBLGGH4TNNR";
@@ -180,6 +192,6 @@ public async void GetRemainingBalance(string storeId)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

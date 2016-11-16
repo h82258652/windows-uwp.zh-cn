@@ -1,15 +1,15 @@
 ---
 author: PatrickFarley
 title: "发现远程设备"
-description: "了解如何使用项目“Rome”通过应用发现远程设备。"
+description: Learn how to discover remote devices from your app using Project "Rome".
 translationtype: Human Translation
-ms.sourcegitcommit: ff8e16d0e376d502157ae42b9cdae11875008554
-ms.openlocfilehash: cb1f9cf6915378203919fdf63bcebc935af74a30
+ms.sourcegitcommit: dc5030fea8e149b3926b926b09bfec3eeb5092ee
+ms.openlocfilehash: b4b4eb28ea56ab3d84e2fe0bc0c281cb53149d5d
 
 ---
 
 # 发现远程设备
-你的应用可以使用无线网络、蓝牙和云连接来发现与发现设备使用同一 Microsoft 帐户登录的基于 Windows 的设备。 也可以发现可接受匿名连接的公用设备（如 Surface Hub 和 Xbox One）。 无需安装任何特殊软件，即可发现远程设备。
+你的应用可以使用无线网络、蓝牙和云连接来发现使用发现设备的相同 Microsoft 帐户登录的 Windows 设备。 也可以发现可接受匿名连接的公用设备（如 Surface Hub 和 Xbox One）。 无需安装任何特殊软件，即可发现远程设备。
 
 > [!NOTE]
 > 本指南假设你已经按照[启动远程应用](launch-a-remote-app.md)中的步骤授予远程系统功能的访问权限。
@@ -50,6 +50,6 @@ ms.openlocfilehash: cb1f9cf6915378203919fdf63bcebc935af74a30
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

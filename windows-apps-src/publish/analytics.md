@@ -4,8 +4,8 @@ Description: "你可以在 Windows 开发人员中心仪表板中查看应用的
 title: "分析"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
+ms.sourcegitcommit: fa6e5945855defc99e9f5636543ec072eb777a5a
+ms.openlocfilehash: c628b1fb29601ff1d4ff3629da45409586274f6b
 
 ---
 
@@ -18,9 +18,7 @@ ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 
 ## 针对所有应用的分析
 
-你的仪表板概述页面还包含一个用于收集有关所有应用的详细信息的汇总视图。 概述页面上显示的统计信息将有所不同，具体取决于你的应用。
-
-[下载分析报告](download-analytic-reports.md)时，你也可以选择下载有关所有应用的报告。 请注意，你将需要针对你的应用之一访问“分析”****部分中的“下载报告”****页面，但你不会仅限于下载该特定应用的数据。
+若要查看下载量最多的应用的关键分析，请在顶部导航菜单中选择“分析” > “概述”。 默认情况下，“分析概述”页显示有关五个在生命周期内购置量最多的应用的信息。 若要选择用于显示的不同应用，请选择“更改筛选器”。
 
 ## 每个应用的可用报告
 
@@ -35,6 +33,7 @@ ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 -   [加载项购置报告](add-on-acquisitions-report.md)
 -   [广告中介报告](ad-mediation-report.md)
 -   [广告性能报告](advertising-performance-report.md)
+-   [关联性能报告](affiliates-performance-report.md)
 -   [应用安装广告报告](app-install-ads-reports.md)
 -   [通道和转换报告](channels-and-conversions-report.md)
 
@@ -43,7 +42,7 @@ ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 
 ## 页面和部分筛选器
 
-每个报告都包含可用于深入了解数据的筛选器。 你将在页面顶部附近看到“应用筛选器”****。 你可以使用这些筛选器限制或扩展页面上所有图表和信息的范围。
+每个报告都包含可用于深入了解数据的筛选器。 你将在页面顶部附近看到“应用筛选器”。 你可以使用这些筛选器限制或扩展页面上所有图表和信息的范围。
 
 在每个特定图表中，你可能还会看到个别部分筛选器。 这些筛选器将限制为仅针对该特定图表显示数据。
 
@@ -73,13 +72,13 @@ ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 
 ### 开发人员中心应用
 
-安装[开发人员中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)应用，以快速查看有关你的应用在所有 Windows 10 设备上的运行状况和性能的详细信息。 
+安装[开发人员中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)应用，以快速查看有关你的应用在所有 Windows10 设备上的运行状况和性能的详细信息。
 
 ## 相关主题
 - [发布 Windows 应用](index.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

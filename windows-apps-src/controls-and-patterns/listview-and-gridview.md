@@ -5,8 +5,8 @@ title: "列表视图和网格视图"
 label: List view and grid view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: aeb339e54a1363dbfe5ee5a764ad762a42a40ed9
+ms.sourcegitcommit: 8f9d85f0cb15c9fe4ceec9c397e23a134a442d3f
+ms.openlocfilehash: 8a14fa69089f6d796a803c1c1ff9bb678af3c913
 
 ---
 # ListView 和 GridView
@@ -314,8 +314,8 @@ myGridView.IsItemClickEnabled = true;
 
 修改键 | 交互
 -------------|------------
-无 | <li>用户可以使用空格键、鼠标单击或触摸点击来选择单个项。</li>
-Ctrl | <li>用户可以使用空格键、鼠标单击或触摸点击来取消选择单个项。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li>
+无 | <ul><li>用户可以使用空格键、鼠标单击或触摸点击来选择单个项。</li></ul>
+Ctrl | <ul><li>用户可以使用空格键、鼠标单击或触摸点击来取消选择单个项。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li></ul>
 
 当 SelectionMode 设置为 **Single** 时，可以从 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx) 属性获取选定的数据项。 你可以使用 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx) 属性获取选定项目集合中的索引。 如果没有选择任何项目，则 SelectedItem 为 **null**，并且 SelectedIndex 为 -1。 
  
@@ -327,8 +327,8 @@ Ctrl | <li>用户可以使用空格键、鼠标单击或触摸点击来取消选
 
 修改键 | 交互
 -------------|------------
-无 | <li>用户可以使用空格键、鼠标单击或触摸点击来选择多个项目，以在聚焦项目上切换选择。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li>
-Shift | <li>用户可以通过先后单击或点击选择中的第一个和最后一个项目来选择多个连续项目。</li><li>通过使用箭头键，用户可以创建从在按下 Shift 时选择的项目开始的连续选择。</li>
+无 | <ul><li>用户可以使用空格键、鼠标单击或触摸点击来选择多个项目，以在聚焦项目上切换选择。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li></ul>
+Shift | <ul><li>用户可以通过先后单击或点击选择中的第一个和最后一个项目来选择多个连续项目。</li><li>通过使用箭头键，用户可以创建从在按下 Shift 时选择的项目开始的连续选择。</li></ul>
 
 ### 扩展选择
 
@@ -336,9 +336,9 @@ Shift | <li>用户可以通过先后单击或点击选择中的第一个和最�
 
 修改键 | 交互
 -------------|------------
-无 | <li>该行为与 **Single** 选择相同。</li>
-Ctrl | <li>用户可以使用空格键、鼠标单击或触摸点击来选择多个项目，以在聚焦项目上切换选择。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li>
-Shift | <li>用户可以通过先后单击或点击选择中的第一个和最后一个项目来选择多个连续项目。</li><li>通过使用箭头键，用户可以创建从在按下 Shift 时选择的项目开始的连续选择。</li>
+无 | <ul><li>该行为与 **Single** 选择相同。</li></ul>
+Ctrl | <ul><li>用户可以使用空格键、鼠标单击或触摸点击来选择多个项目，以在聚焦项目上切换选择。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li></ul>
+Shift | <ul><li>用户可以通过先后单击或点击选择中的第一个和最后一个项目来选择多个连续项目。</li><li>通过使用箭头键，用户可以创建从在按下 Shift 时选择的项目开始的连续选择。</li></ul>
 
 当 SelectionMode 设置为 **Multiple** 或 **Extended** 时，可以从 [**SelectedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx) 属性获取选定的数据项。 
 
@@ -522,6 +522,6 @@ ListView 和 GridView 控件支持在其自身内部以及它们自身与其他 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,16 +4,16 @@ ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: "绘制图形"
 description: "了解如何绘制形状，如椭圆、矩形、多边形以及路径。 Path 类是在 XAML UI 中可视化基于相当复杂矢量的绘图语言的方法；例如，可以绘制贝塞尔曲线。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 2fd20e07c9b7e54559baeeb8324f11065a25444c
+ms.sourcegitcommit: f5934600cc185c952acc57ae38e0b190466e0dfa
+ms.openlocfilehash: 1d3c0f50487aa6204f758303e0e5b05b9087eae5
 
 ---
 # 绘制形状
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要的 API **
+**重要的 API**
 
 -   [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)
 -   [**Windows.UI.Xaml.Shapes 命名空间**](https://msdn.microsoft.com/library/windows/apps/BR243401)
@@ -43,6 +43,15 @@ ms.openlocfilehash: 2fd20e07c9b7e54559baeeb8324f11065a25444c
 <Ellipse Fill="SteelBlue" Height="200" Width="200" />
 ```
 
+```csharp
+var ellipse1 = new Ellipse();
+ellipse1.Fill = new SolidColorBrush(Windows.UI.Colors.SteelBlue);
+ellipse1.Width = 200;
+ellipse1.Height = 200;
+
+layoutRoot.Children.Add(ellipse1);
+```
+
 此处是呈现的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343)。
 
 ![显示的椭圆。](images/shapes-ellipse.jpg)
@@ -69,29 +78,57 @@ ms.openlocfilehash: 2fd20e07c9b7e54559baeeb8324f11065a25444c
            StrokeThickness="3"
            RadiusX="50"
            RadiusY="10" />
-           ```
+```
 
-Here's the rendered [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371).
+```csharp
+var rectangle1 = new Rectangle();
+rectangle1.Fill = new SolidColorBrush(Windows.UI.Colors.Blue);
+rectangle1.Width = 200;
+rectangle1.Height = 100;
+rectangle1.Stroke = new SolidColorBrush(Windows.UI.Colors.Black);
+rectangle1.StrokeThickness = 3;
+rectangle1.RadiusX = 50;
+rectangle1.RadiusY = 10;
 
-![A rendered Rectangle.](images/shapes-rectangle.jpg)
+layoutRoot.Children.Add(rectangle1);
 
-**Tip**  There are some scenarios for UI definitions where instead of using a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371), a [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) might be more appropriate. If your intention is to create a rectangle shape around other content, it might be better to use **Border** because it can have child content and will automatically size around that content, rather than using the fixed dimensions for height and width like **Rectangle** does. A **Border** also has the option of having rounded corners if you set the [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) property.
+```
+
+此处是呈现的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)。
+
+![呈现的矩形。](images/shapes-rectangle.jpg)
+
+**提示** 对于 UI 定义来说，在某些情况下，不使用 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)，使用 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 可能更合理。 如果你打算在其他内容周围创建一个矩形形状，最好使用 **Border**，因为它可能会有子内容而且将自动在子内容周围调整大小，而不是像 **Rectangle** 那样使用固定的高度和宽度尺寸。 **Border** 在你设置了 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) 属性的情况下还提供了创建圆角的选项。
 
  
 
-On the other hand, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) is probably a better choice for control composition. A **Rectangle** shape is seen in many control templates because it's used as a "FocusVisual" part for focusable controls. Whenever the control is in a "Focused" visual state, this rectangle is made visible, in other states it's hidden.
+另一方面，[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 可能是控件组合的较好选择。 **Rectangle** 形状可以在很多控件模板中看到，因为它用作可获得焦点的控件的“FocusVisual”部分。 当控件处于“已设置焦点”视觉状态时，此矩形可见，在其他状态时，它处于隐藏状态。
 
 ## Polygon
 
-A [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) is a shape with a boundary defined by an arbitrary number of points. The boundary is created by connecting a line from one point to the next, with the last point connected to the first point. The [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polygon.points.aspx) property defines the collection of points that make up the boundary. In XAML, you define the points with a comma-separated list. In code-behind you use a [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) to define the points and you add each individual point as a [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) value to the collection.
+[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 是通过任意数量的点来定义边的形状。 边通过用直线将点一个一个连接起来（最后一个点与第一个点相连）而创建。 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polygon.points.aspx) 属性定义组成边的点集。 在 XAML 中，使用逗号分隔的列表定义点。 在代码隐藏文件中，使用 [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) 定义各个点，并将每个点作为一个 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值添加到集合中。
 
-You don't need to explicitly declare the points such that the start point and end point are both specified as the same [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) value. The rendering logic for a [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) assumes that you are defining a closed shape and will connect the end point to the start point implicitly.
+你不必为了将起点和终点指定为相同的 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值而明确声明点。 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 的呈现逻辑假设你要定义闭合形状而且会自动将终点与起点连起来。
 
-The next example creates a [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) with 4 points set to `(10,200)`, `(60,140)`, `(130,140)`, and `(180,200)`. It uses a [**LightBlue**](https://msdn.microsoft.com/library/windows/apps/Hh747960) value of [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) for its [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), and has no value for [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) so it has no perimeter outline.
+下一个示例创建 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)，其 4 个顶点分别设置为 `(10,200)`、`(60,140)`、`(130,140)` 和 `(180,200)`。 它使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 的 [**LightBlue**](https://msdn.microsoft.com/library/windows/apps/Hh747960) 值作为其 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，而且其 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 没有值，以便它没有外围轮廓。
 
 ```xml
 <Polygon Fill="LightBlue"
          Points="10,200,60,140,130,140,180,200" />
+```
+
+```csharp
+var polygon1 = new Polygon();
+polygon1.Fill = new SolidColorBrush(Windows.UI.Colors.LightBlue);
+
+var points = new PointCollection();
+points.Add(new Windows.Foundation.Point(10, 200));
+points.Add(new Windows.Foundation.Point(60, 140));
+points.Add(new Windows.Foundation.Point(130, 140));
+points.Add(new Windows.Foundation.Point(180, 200));
+polygon1.Points = points;
+
+layoutRoot.Children.Add(polygon1);
 ```
 
 此处是呈现的 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)。
@@ -100,13 +137,24 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 **提示** 在除了声明形状顶点的其他方案的 XAML 中，[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值通常用作类型。 例如，**Point** 属于触摸事件的事件数据，因此你可以精确了解触摸操作发生在坐标空间的哪个位置。 有关 **Point** 以及如何将其用于 XAML 或代码的详细信息，请参阅 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 的 API 参考主题。
 
- 
-
 ## Line
 
 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 只是一条在坐标空间中的两个点之间绘制的直线。 **Line** 忽略为 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 提供的任何值，因为它没有内部空间。 对于 **Line**，请确保为 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 和 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 属性指定值，否则 **Line** 将不呈现。
 
 不要使用 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值指定 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 形状，而应针对 [**X1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx)、[**Y1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx)、[**X2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) 和 [**Y2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx) 使用离散的 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值。 这会使得横线或竖线的标记最少。 例如，`<Line Stroke="Red" X2="400"/>` 定义一条长为 400 个像素的横线。 另一对 X,Y 属性在默认情况下为 0，因此，从点的角度看，此 XAML 将绘制一条从 `(0,0)` 到 `(400,0)` 的直线。 如果你希望它从 (0,0) 之外的任意点开始，则可以使用 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) 移动整个 **Line**。
+
+```xml
+<Line Stroke="Red" X2="400"/>
+```
+
+```csharp
+var line1 = new Line();
+line1.Stroke = new SolidColorBrush(Windows.UI.Colors.Red);
+line1.X2 = 400;
+
+layoutRoot.Children.Add(line1);
+
+```
 
 ## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
 
@@ -114,7 +162,6 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 **注意** 你可以在 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 中为 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 明确设置相同的起点和终点，但是，在这种情况下，你可能已改用 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)。
 
- 
 
 如果你指定 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，则 **Fill** 会绘制形状的内部空间，即使为 **Polyline** 设置的 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 的起点和终点不相交也是如此。 如果你没有指定 **Fill**，则 **Polyline** 与指定了多个单独的、其连续直线的起点和终点相交的 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 元素时所呈现的内容相似。
 
@@ -126,6 +173,21 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 <Polyline Stroke="Black"
         StrokeThickness="4"
         Points="10,200,60,140,130,140,180,200" />
+```
+
+```csharp
+var polyline1 = new Polyline();
+polyline1.Stroke = new SolidColorBrush(Windows.UI.Colors.Black);
+polyline1.StrokeThickness = 4;
+
+var points = new PointCollection();
+points.Add(new Windows.Foundation.Point(10, 200));
+points.Add(new Windows.Foundation.Point(60, 140));
+points.Add(new Windows.Foundation.Point(130, 140));
+points.Add(new Windows.Foundation.Point(180, 200));
+polyline1.Points = points;
+
+layoutRoot.Children.Add(polyline1);
 ```
 
 此处是呈现的 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365)。 请注意，第一个点和最后一个点不像在 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 那样由 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 轮廓连接起来。
@@ -153,40 +215,93 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 <Path Stroke="DarkGoldenRod" 
       StrokeThickness="3"
       Data="M 100,200 C 100,25 400,350 400,175 H 280" />
-      ```
+```
 
-Here's the rendered [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355).
+此处是显示的 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)。
 
-![A rendered Path.](images/shapes-path.jpg)
+![显示的路径。](images/shapes-path.jpg)
 
-The next example shows a usage of the other technique we discussed: a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup) with a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168). This example exercises some of the contributing geometry types that can be used as part of a **PathGeometry**: [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) and the various elements that can be a segment in [**PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164).
+下一示例将介绍我们讨论过的其他技术的用法：具有 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) 的 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup)。 本例对某些可用作 **PathGeometry** 的一部分的参与几何类型进行练习：[**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) 和在 [**PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164) 中作为片段的各种元素。
 
 ```xml
 <Path Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">
-            <Path.Data>
-              <GeometryGroup>
-                  <RectangleGeometry Rect="50,5 100,10" />
-                  <RectangleGeometry Rect="5,5 95,180" />
-                  <EllipseGeometry Center="100, 100" RadiusX="20" RadiusY="30"/>
-                  <RectangleGeometry Rect="50,175 100,10" />
-                  <PathGeometry>
-                    <PathGeometry.Figures>
-                      <PathFigureCollection>
+    <Path.Data>
+        <GeometryGroup>
+            <RectangleGeometry Rect="50,5 100,10" />
+            <RectangleGeometry Rect="5,5 95,180" />
+            <EllipseGeometry Center="100, 100" RadiusX="20" RadiusY="30"/>
+            <RectangleGeometry Rect="50,175 100,10" />
+            <PathGeometry>
+                <PathGeometry.Figures>
+                    <PathFigureCollection>
                         <PathFigure IsClosed="true" StartPoint="50,50">
-                          <PathFigure.Segments>
-                            <PathSegmentCollection>
-                              <BezierSegment Point1="75,300" Point2="125,100" Point3="150,50"/>
-                              <BezierSegment Point1="125,300" Point2="75,100"  Point3="50,50"/>
-                            </PathSegmentCollection>
-                          </PathFigure.Segments>
+                            <PathFigure.Segments>
+                                <PathSegmentCollection>
+                                    <BezierSegment Point1="75,300" Point2="125,100" Point3="150,50"/>
+                                    <BezierSegment Point1="125,300" Point2="75,100"  Point3="50,50"/>
+                                </PathSegmentCollection>
+                            </PathFigure.Segments>
                         </PathFigure>
-                      </PathFigureCollection>
-                    </PathGeometry.Figures>
-                  </PathGeometry>               
-              </GeometryGroup>
-            </Path.Data>
-          </Path>
+                    </PathFigureCollection>
+                </PathGeometry.Figures>
+            </PathGeometry>
+        </GeometryGroup>
+    </Path.Data>
+</Path>
 ```
+
+```csharp
+var path1 = new Windows.UI.Xaml.Shapes.Path();
+path1.Fill = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 204, 204, 255));
+path1.Stroke = new SolidColorBrush(Windows.UI.Colors.Black);
+path1.StrokeThickness = 1;
+
+var geometryGroup1 = new GeometryGroup();
+var rectangleGeometry1 = new RectangleGeometry();
+rectangleGeometry1.Rect = new Rect(50, 5, 100, 10);
+var rectangleGeometry2 = new RectangleGeometry();
+rectangleGeometry2.Rect = new Rect(5, 5, 95, 180);
+geometryGroup1.Children.Add(rectangleGeometry1);
+geometryGroup1.Children.Add(rectangleGeometry2);
+
+var ellipseGeometry1 = new EllipseGeometry();
+ellipseGeometry1.Center = new Point(100, 100);
+ellipseGeometry1.RadiusX = 20;
+ellipseGeometry1.RadiusY = 30;
+geometryGroup1.Children.Add(ellipseGeometry1);
+
+var pathGeometry1 = new PathGeometry();
+var pathFigureCollection1 = new PathFigureCollection();
+var pathFigure1 = new PathFigure();
+pathFigure1.IsClosed = true;
+pathFigure1.StartPoint = new Windows.Foundation.Point(50, 50);
+pathFigureCollection1.Add(pathFigure1);
+pathGeometry1.Figures = pathFigureCollection1;
+
+var pathSegmentCollection1 = new PathSegmentCollection();
+var pathSegment1 = new BezierSegment();
+pathSegment1.Point1 = new Point(75, 300);
+pathSegment1.Point2 = new Point(125, 100);
+pathSegment1.Point3 = new Point(150, 50);
+pathSegmentCollection1.Add(pathSegment1);
+
+var pathSegment2 = new BezierSegment();
+pathSegment2.Point1 = new Point(125, 300);
+pathSegment2.Point2 = new Point(75, 100);
+pathSegment2.Point3 = new Point(50, 50);
+pathSegmentCollection1.Add(pathSegment2);
+pathFigure1.Segments = pathSegmentCollection1;
+
+geometryGroup1.Children.Add(pathGeometry1);
+path1.Data = geometryGroup1;
+
+layoutRoot.Children.Add(path1);
+
+```
+
+此处是呈现的 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)。
+
+![呈现的路径。](images/shapes-path-2.png)
 
 使用 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) 可能比填充 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 字符串更具可读性。 另一方面，[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 使用兼容于可缩放的向量图形 (SVG) 图像路径定义的语法，因此它可用于从 SVG 移植图形，或者用作工具（例如 Blend）的输出。
 
@@ -200,6 +315,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

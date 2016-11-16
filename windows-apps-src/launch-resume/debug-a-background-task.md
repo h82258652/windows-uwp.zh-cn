@@ -4,26 +4,26 @@ title: "调试后台任务"
 description: "了解如何调试后台任务，包括后台任务激活和调试 Windows 事件日志中的跟踪。"
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 translationtype: Human Translation
-ms.sourcegitcommit: c05c004f99e5892291aaca0dcc85c176a821d351
-ms.openlocfilehash: f7b311cef1d6a28b472f47985ebca437b7a80e3d
+ms.sourcegitcommit: e094ed9e0110fee33275721c4b6547ba53c1da3e
+ms.openlocfilehash: c4717ac41992d9a0c04d098067881ce5ca6952f0
 
 ---
 
 # 调试后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 -   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
 
 了解如何调试后台任务，其中包括后台任务激活和调试 Windows 事件日志中的跟踪。
 
-## 调试多进程与单进程后台任务
-本主题主要介绍在单独进程（而非主机应用）中运行的后台任务。 如果你正在调试单进程后台任务，则不会获得单独的后台任务项目，并且可以在 **OnBackgroundActivated()**（单进程后台代码运行时所在的位置）上设置断点，并请查看下面[手动触发后台任务以调试后台任务代码](#Trigger-background-tasks-manually-to-debug-background-task-code)中的步骤 2，了解有关如何触发要执行的后台代码的说明。
+## 调试进程外后台任务与进程内后台任务
+本主题主要介绍在单独进程（而非主机应用）中运行的后台任务。 如果你正在调试进程内后台任务，则不会获得单独的后台任务项目，并且可以在 **OnBackgroundActivated()**（进程内后台代码运行时所在的位置）上设置断点，并请查看下面[手动触发后台任务以调试后台任务代码](#Trigger-background-tasks-manually-to-debug-background-task-code)中的步骤 2，了解有关如何触发要执行的后台代码的说明。
 
 ## 请确保正确设置了后台任务项目
 
-本主题假设你已拥有一个带有要调试的后台任务的现有应用。 以下内容特定于在单独进程中运行的后台任务，并且不适用于单进程后台任务。
+本主题假设你已拥有一个带有要调试的后台任务的现有应用。 以下内容特定于在进程外运行的后台任务，并且不适用于进程内后台任务。
 
 -   在 C# 和 C++ 中，确保主项目引用后台任务项目。 如果此引用没有就位，则后台任务将不包括在应用包中。
 -   在 C# 和 C++ 中，确保后台任务项目的 **Output type** 是“Windows 运行时组件”。
@@ -33,17 +33,18 @@ ms.openlocfilehash: f7b311cef1d6a28b472f47985ebca437b7a80e3d
 
 通过 Microsoft Visual Studio，可以手动触发后台任务。 然后可以单步执行代码并对其进行调试。
 
-1.  在 C# 中，在后台类的 Run 方法中放置一个断点（对于单进程后台任务，请将断点放在 App.OnBackgroundActivated() 中），和/或通过使用 [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx) 编写调试输出。
+1.  在 C# 中，在后台类的 Run 方法中放置一个断点（对于进程内后台任务，请将断点放在 App.OnBackgroundActivated() 中），和/或通过使用 [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx) 编写调试输出。
 
-    在 C++ 中，在后台类的 Run 函数中放置一个断点（对于单进程后台任务，请将断点放在 App.OnBackgroundActivated() 中），和/或通过使用 [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362) 编写调试输出。
+    在 C++ 中，在后台类的 Run 函数中放置一个断点（对于进程内后台任务，请将断点放在 App.OnBackgroundActivated() 中），和/或通过使用 [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362) 编写调试输出。
 
-2.  在调试程序中运行你的应用程序，然后使用“生命周期事件”****工具栏触发该后台任务。 此下拉菜单显示可以由 Visual Studio 激活的后台任务的名称。
+2.  在调试程序中运行你的应用程序，然后使用“生命周期事件”工具栏触发该后台任务。 此下拉菜单显示可以由 Visual Studio 激活的后台任务的名称。
 
     若要此功能正常运行，则后台任务必须已注册并且必须仍等待触发。 例如，如果后台任务已使用一次性 TimeTrigger 注册，并且该触发器已引发，则通过 Visual Studio 启动该任务将无效。
 
 > [!Note]
 > 使用以下触发器的后台任务以及使用触发器类型为 [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) 的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 的后台任务均无法采用此方式激活：[**Application trigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx)、[**MediaProcessing trigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)。  
-> **应用程序触发器**和 **MediaProcessingTrigger** 可以在带有 `trigger.RequestAsync()` 的代码中以信号形式手动发出。     
+> 
+>             **应用程序触发器**和 **MediaProcessingTrigger** 可以在带有 `trigger.RequestAsync()` 的代码中以信号形式手动发出。     
 
     ![debugging background tasks](images/debugging-activation.png)
 
@@ -52,7 +53,7 @@ ms.openlocfilehash: f7b311cef1d6a28b472f47985ebca437b7a80e3d
 ## 调试后台任务激活
 
 > [!NOTE]
-> 本部分特定于在单独进程中运行的后台任务，并且不适用于单进程后台任务。
+> 本部分特定于在进程外运行的后台任务，并且不适用于进程内后台任务。
 
 后台任务能否激活取决于以下三项内容：
 
@@ -75,9 +76,9 @@ ms.openlocfilehash: f7b311cef1d6a28b472f47985ebca437b7a80e3d
     如果你遵循此过程，但事件日志显示后台任务的入口点或触发器有误，则你的应用无法正确注册后台任务。 有关此任务的帮助，请参阅[注册后台任务](register-a-background-task.md)。
 
     1.  通过转到“开始”屏幕并搜索 eventvwr.exe 来打开事件查看器。
-    2.  在事件查看器中转到“应用程序和服务日志”**** -&gt;“Microsoft”**** -&gt;“Windows”**** -&gt;“BackgroundTaskInfrastructure”****。
-    3.  在“操作”窗格中，选择“查看”**** -&gt;“显示分析和调试日志”****以启用诊断日志记录。
-    4.  选择“诊断日志”****并单击“启用日志”****。
+    2.  在事件查看器中转到“应用程序和服务日志” -&gt;“Microsoft” -&gt;“Windows” -&gt;“BackgroundTaskInfrastructure”。
+    3.  在“操作”窗格中，选择“查看” -&gt;“显示分析和调试日志”以启用诊断日志记录。
+    4.  选择“诊断日志”并单击“启用日志”。
     5.  现在尝试使用你的应用再次注册并激活后台任务。
     6.  查看诊断日志以了解更详细的错误信息。 这将包括为后台任务注册的入口点。
 
@@ -102,8 +103,8 @@ ms.openlocfilehash: f7b311cef1d6a28b472f47985ebca437b7a80e3d
 
 ## 相关主题
 
-* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)
-* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
 * [注册后台任务](register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
@@ -116,6 +117,6 @@ ms.openlocfilehash: f7b311cef1d6a28b472f47985ebca437b7a80e3d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

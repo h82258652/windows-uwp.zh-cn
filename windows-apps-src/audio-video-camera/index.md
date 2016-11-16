@@ -4,14 +4,14 @@ ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "本部分将提供有关创建可捕获、播放或编辑照片、视频或音频的通用 Windows 平台 (UWP) 应用的信息。"
 title: "音频、视频和相机"
 translationtype: Human Translation
-ms.sourcegitcommit: 18e97dd5e607960c1c1fd640fe6fe6ae5e9f9085
-ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
+ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
+ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 
 ---
 
 # 音频、视频和相机
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分将提供有关创建可捕获、播放或编辑照片、视频或音频的通用 Windows 平台 (UWP) 应用的信息。
  
@@ -30,7 +30,7 @@ ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
 | [MIDI](midi.md) | 介绍如何枚举 MIDI（乐器数字接口）设备以及从 UWP 应用发送和接收 MIDI 消息。 |
 | [从设备导入媒体](import-media-from-a-device.md) | 介绍如何从设备导入媒体，包括搜索可用媒体源、导入文件（如视频、照片和 sidecar 文件）以及从源设备中删除导入的文件。 |
 | [独立于相机的手电筒](camera-independent-flashlight.md) | 介绍如何访问和使用设备灯（如果存在）。 灯功能的管理独立于设备的相机和相机闪光灯功能。 |
-| [支持的编解码器](supported-codecs.md) | 列出 UWP 应用的音频和视频编解码器以及格式支持。 |
+| [支持的编解码器](supported-codecs.md) | 列出 UWP 应用的音频、视频和图像编解码器以及格式支持。 |
 
 
 ## 另请参阅
@@ -48,6 +48,6 @@ ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

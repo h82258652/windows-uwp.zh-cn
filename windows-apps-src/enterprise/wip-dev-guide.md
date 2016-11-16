@@ -5,14 +5,15 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "生成使用企业数据和个人数据的启发式应用"
 translationtype: Human Translation
-ms.sourcegitcommit: 0da731e1211544ce6b07e783ddc2407da57781c2
-ms.openlocfilehash: 8ead30471371b9b6aca32088f115da9f68784922
+ms.sourcegitcommit: bf1c47e9cca45b626a45ca664bf2bb4be9c529e0
+ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
 
 ---
 
 # 生成使用企业数据和个人数据的启发式应用
 
-__注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows 10 版本 1607。
+
+  __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows10 版本 1607。
 
 *启发式*应用可区分公司和个人数据，并且知道应基于管理员定义的 Windows 信息保护 (WIP) 策略保护哪些数据。
 
@@ -28,25 +29,17 @@ __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows 10 版本 16
 
 你将需要以下内容：
 
-* 对 Microsoft Intune 帐户的访问权限。
+* 运行 Windows10 版本 1607 的测试虚拟机 (VM)。 你将针对此测试 VM 调试你的应用。
 
-* 运行 Windows 10 版本 1607 的开发计算机。
-
-* 运行 Windows 10 版本 1607 的测试设备。 你将针对此测试设备调试你的应用。
-
-  你无法针对在 MDM 中注册的相同设备进行调试。 这就是你需要单独的测试设备的原因。
-
-  为简单起见，我们假设你的测试设备是计算机或虚拟机。
+* 运行 Windows10 版本 1607 的开发计算机。 这可能是你的测试 VM，前提是你已在其上安装了 Visual Studio。
 
 ## 设置你的开发环境
 
 你将执行以下操作：
 
-* 注册你的测试计算机。
+* 在测试 VM 上安装 WIP 设置开发人员助手。
 
-* 创建一个保护策略。
-
-* 将策略下载到测试计算机。
+* 通过使用 WIP 设置开发人员助手创建保护策略。
 
 * 设置 Visual Studio 项目。
 
@@ -54,23 +47,17 @@ __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows 10 版本 16
 
 * 将命名空间添加到你的代码文件
 
-**注册测试计算机**
+**在测试 VM 上安装 WIP 设置开发人员助手**
 
- 若要注册测试计算机，请在测试计算机上将你的 Intune 帐户添加到“设置”****->“访问工作或学校”****页面。
+ 使用此工具在测试 VM 上设置 Windows 信息保护策略。
 
- ![连接到 MDM](images/connect-v2.png)
-
- 然后，你的计算机名称将出现在 Intune 管理员控制台中。
+ 在此处下载工具：[WIP 设置开发人员助手](https://www.microsoft.com/store/p/wip-setup-developer-assistant/9nblggh526jf)。
 
 **创建一个保护策略**
 
-创建一个策略，并将其部署到测试计算机上。 请参阅[使用 Microsoft Intune 创建 Windows 信息保护 (WIP) 策略](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-intune)。
+通过将信息添加到 WIP 设置开发人员助手中的每个部分定义你的策略。 选择任何设置旁边的帮助图标，了解使用方法的详细信息。
 
-**将该策略下载到设备**
-
-在测试计算机上，转到“设置”****页面，然后依次选择“访问工作或学校”****-> “信息”****->“同步”****。
-
-![使用 MDM 同步设置](images/sync.png)
+有关如何使用此工具的更一般指南，请参阅应用下载页面上的版本说明部分。
 
 **设置 Visual Studio 项目**
 
@@ -103,7 +90,7 @@ __注意__ Windows 信息保护 (WIP) 策略可以应用于 Windows 10 版本 16
 
 **设置远程调试**
 
-在测试计算机上安装 Visual Studio 远程工具。 然后，在你的开发计算机上，启动远程调试程序，并查看你的应用是否在目标计算机上运行。
+如果你要在 VM 之外的计算机上开发你的应用，将仅在测试 VM 上安装 Visual Studio 远程工具。 然后，在你的开发计算机上，启动远程调试程序，并查看你的应用是否在测试 VM 上运行。
 
 请参阅[远程电脑说明](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#remote-pc-instructions)。
 
@@ -141,7 +128,7 @@ else
 }
 ```
 
-Windows 信息保护在 Windows 10 版本 1607 上受支持。
+Windows 信息保护在 Windows10 版本 1607 上受支持。
 
 ## 读取企业数据
 
@@ -1104,6 +1091,6 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

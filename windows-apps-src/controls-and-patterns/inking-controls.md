@@ -5,8 +5,8 @@ title: "墨迹书写控件"
 label: Inking Controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7198f4084df8ce484cdc5f6b3231a4bdb02f18b5
+ms.sourcegitcommit: 2fe53747da7995b5442eda0a6c20b120b3b615e5
+ms.openlocfilehash: aacf45c90458d3ca1bd295f904e8f2393d27542d
 
 ---
 # 墨迹书写控件
@@ -142,7 +142,8 @@ InkToolbar 由两组不同的按钮类型组成：
 - InkCanvas 和通常的墨迹书写可通过主动笔获得最佳体验。 但是，如果应用需要，我们建议支持使用鼠标和触控（包括被动笔）输入的墨迹书写。
 - 将 InkToolbar 控件与 InkCanva 结合使用来提供基本墨迹书写功能和设置。 InkCanvas 和 InkToolbar 均可以采用编程方式自定义。
 - InkToolbar 和通常的墨迹书写可通过主动笔获得最佳体验。 但是，如果应用需要，可以支持使用鼠标和触控的墨迹书写。
-- 如果支持使用触控输入的墨迹书写，我们建议为切换图标使用 Segoe MLD2 Assets 中的 ED5F 图标，并附带“触控书写”工具提示。
+- 如果支持使用触控输入的墨迹书写，我们建议为切换按钮使用 Segoe MLD2 Assets 字体中的 ED5F 图标，并附带“触控书写”工具提示。
+- 如果提供笔划选择，我们建议为工具按钮使用 Segoe MLD2 Assets 字体中的 EF20 图标，并附带“选择工具”工具提示。
 - 如果使用多个 InkCanvas，我们建议使用单个 InkToolbar 控制跨画布的墨迹书写。
 - 为了实现最佳性能，我们建议更改默认的浮出控件，而不是为默认和自定义工具都创建一个自定义浮出控件。
 
@@ -160,6 +161,6 @@ InkToolbar 由两组不同的按钮类型组成：
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

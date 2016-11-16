@@ -1,41 +1,40 @@
 ---
 author: TylerMSFT
 Description: "适用于 Microsoft 参加测验应用的 JavaScript API 使你可以进行安全的评估。 参加测验提供了安全的浏览器，可防止学生在测试时使用其他计算机或 Internet 资源。"
-title: "Microsoft 参加测验 JavaScript API。"
+title: "参加测验 JavaScript API。"
 translationtype: Human Translation
-ms.sourcegitcommit: f2838d95da66eda32d9cea725a33fc4084d32359
-ms.openlocfilehash: d7f185e83e81583fd6d7920e5412f76f3a97edd0
+ms.sourcegitcommit: 7f578d73a9a625b0ac7d9c10f6dc8118c36b07d0
+ms.openlocfilehash: c2e1832489d36f4ccbeae4e2f67e18caf941a68f
 
 ---
 
-# Microsoft 参加测验 JavaScript API
+# 参加测验 JavaScript API
 
-**参加测验**是基于浏览器的应用，可为高利害关系测试提供锁定的在线评估。 它支持高利害关系通用核心测试的 SBAC 浏览器 API 标准，并使你可以专注于评估内容，而不是锁定 Windows 的方法。
+[参加测验](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是基于浏览器的应用，可为高利害关系测试提供锁定的在线评估。 它支持高利害关系通用核心测试的 SBAC 浏览器 API 标准，并使你可以专注于评估内容，而不是锁定 Windows 的方法。
 
-Microsoft Edge 浏览器支持的**参加测验**提供一个 JavaScript API，Web 应用程序可使用它为参加测验提供锁定体验。
+Microsoft Edge 浏览器支持的参加测验具有一个 JavaScript API，Web 应用程序可使用它为参加测验提供锁定体验。
 
-该 API（基于[通用核心 SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)）提供文本到语音转换以及查询设备是否处于锁定状态、正在运行的用户和系统运行进程等的功能。
+该 API（基于[通用核心 SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)）提供文本到语音转换功能以及查询设备是否处于锁定状态、正在运行的用户和系统进程等功能。
 
 有关应用本身的信息，请参阅[参加测验应用技术参考](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。
 
-**重要提示**
-
-这些 API 在远程会话中不起作用。  
-参加测验不处理 HTTP 新窗口请求。
+> [!Important]
+> 这些 API 在远程会话中不起作用。  
 
 有关疑难解答帮助，请参阅[使用事件查看器对 Microsoft 参加测验进行疑难解答](troubleshooting.md)。
 
-**参加测验 API 由以下命名空间组成：**  
+## 参考文档
+参加测验 API 由以下命名空间组成。 
 
 | 命名空间 | 说明 |
 |-----------|-------------|
-|[安全命名空间](#security-namespace)| 文本到语音转换功能|
-|[tts 命名空间](#tts-namespace)|使你可以锁定设备|
+|[安全命名空间](#security-namespace)|使你可以锁定设备|
+|[TTS 命名空间](#tts-namespace)|文本到语音转换功能|
 
 
- ## 安全命名空间
+ ### 安全命名空间
 
-使你可以锁定设备、检查用户和系统进程列表、获取 MAC 和 IP 地址以及清除缓存的 Web 资源。
+安全命名空间使你可以锁定设备、检查用户和系统进程列表、获取 MAC 和 IP 地址以及清除缓存的 Web 资源。
 
 | 方法 | 说明   |
 |--------|---------------|
@@ -45,9 +44,10 @@ Microsoft Edge 浏览器支持的**参加测验**提供一个 JavaScript API，W
 |[getIPAddressList](#getIPAddressList) | 获取设备的 IP 地址列表 |
 |[getMACAddress](#getMACAddress)|获取设备的 MAC 地址列表|
 |[getProcessList](#getProcessList)|获取正在运行的用户和系统进程的列表|
-|[isEnvironmentSecure](#isEnvironmentSecure)|确定锁定上下文是否仍然应用于设备|
+|[isEnvironmentSecure](#isEnvironmentSecure)|确定锁定上下文是否仍然应用于设备|  
 
-<span id="clearCache" />
+---
+<span id="clearCache"/>
 ### void clearCache()
 清除缓存的 Web 资源。
 
@@ -61,7 +61,7 @@ Microsoft Edge 浏览器支持的**参加测验**提供一个 JavaScript API，W
 `None`
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
 
@@ -79,7 +79,7 @@ Windows 10 版本 1607
 `None`
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
 
@@ -97,7 +97,7 @@ Windows 10 版本 1607
 `None`
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
 
@@ -114,6 +114,8 @@ Windows 10 版本 1607
 **返回值**  
 `An array of IP addresses.`
 
+---
+
 <span id="getMACAddress" />
 ### string[] getMACAddress()
 获取设备的 MAC 地址列表。
@@ -128,7 +130,7 @@ Windows 10 版本 1607
 `An array of MAC addresses.`
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
 
@@ -148,7 +150,7 @@ Windows 10 版本 1607
 **备注** 该列表不包括系统进程。
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
 
@@ -166,11 +168,14 @@ Windows 10 版本 1607
 `True indicates that the lockdown context is applied to the device; otherwise false.`
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
 
-## tts 命名空间
+### TTS 命名空间
+
+TTS 命名空间处理应用的文本到语音转换功能。
+
 | 方法 | 说明 |
 |--------|-------------|
 |[getStatus](#getStatus) | 获取语音播放状态|
@@ -182,6 +187,8 @@ Windows 10 版本 1607
 
 > [!Tip]
 > [Microsoft Edge 语音合成 API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) 是 [W3C 语音 API](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) 的一个实现，我们建议开发人员尽可能使用此 API。
+
+---
 
 <span id="getStatus" />
 ### string getStatus()
@@ -197,7 +204,7 @@ Windows 10 版本 1607
 `The speech playback status. Possible values are: “available”, “idle”, “paused”, and “speaking”.`
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
 
@@ -215,7 +222,7 @@ Windows 10 版本 1607
 `The available voice packs. For example: “Microsoft Zira Mobile”, “Microsoft Mark Mobile”`
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
 
@@ -236,7 +243,7 @@ Windows 10 版本 1607
 `None`
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
 
@@ -254,13 +261,13 @@ Windows 10 版本 1607
 `None`
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
 
 <span id="speak" />
 ### void speak(string text, object options, function callback)
-客户端文本到语音合成。
+启动客户端文本到语音合成。
 
 **语法**  
 `void browser.tts.speak(“Hello world”, options, callback);`
@@ -283,13 +290,13 @@ var options = {
 
 **备注** 选项变量必须为小写。 性别、语言和语音参数采用字符串。
 音量、音调和语速必须在语音合成标记语言文件 (SSML) 内标记，而不是在选项对象内标记。
-
 选项对象必须遵循上述示例中所示的顺序、命名和大小写。
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 ---
+
 <span id="stop" />
 ### void stop()
 停止语音合成。
@@ -304,10 +311,10 @@ Windows 10 版本 1607
 `None`
 
 **要求**  
-Windows 10 版本 1607
+Windows10 版本 1607
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

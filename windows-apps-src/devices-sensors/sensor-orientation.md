@@ -4,13 +4,13 @@ ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: "传感器方向"
 description: "来自 Accelerometer、Gyrometer、Compass、Inclinometer 和 OrientationSensor 类的传感器数据由其参考轴定义。 这些轴由设备的横向方向定义，并在用户转动设备时与其一起旋转。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: f0f9c7184c81edf8136849bf8a7bd9d04c340f62
+ms.sourcegitcommit: 62b4042cf1c6296c908a12feb5b2fcbd2b9b8734
+ms.openlocfilehash: 9deb0327f67350af49ba19224a75e766ff9805d7
 
 ---
 # 传感器方向
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** 重要的 API **
 
@@ -21,30 +21,30 @@ ms.openlocfilehash: f0f9c7184c81edf8136849bf8a7bd9d04c340f62
 
 ## 显示方向和设备方向对比
 
-为了了解传感器的参考轴，你需要区分显示方向和设备方向。 显示方向是方向文本且图像均显示在屏幕上，而设备方向则是设备的物理定位。 在下图中，设备和显示方向都采用 **Landscape**。
+为了了解传感器的参考轴，你需要区分显示方向和设备方向。 显示方向是指方向文本且图像均显示在屏幕上，设备方向是指设备的物理定位。 在下图中，设备和显示方向都采用 **Landscape**（请注意，所示的传感器轴仅适用于横向优先设备）。
 
-![采用 Landscape 的显示和设备方向](images/accelerometer-axis-orientation-landscape-with-text.png)
+![采用 Landscape 的显示和设备方向](images/sensor-orientation-a.PNG)
 
 下图显示了采用 **LandscapeFlipped** 的显示和设备方向。
 
-![显示和设备方向采用 LandscapeFlipped 的显示和设备方向](images/accelerometer-axis-orientation-landscape-180-with-text.png)
+![显示和设备方向采用 LandscapeFlipped 的显示和设备方向](images/sensor-orientation-b.PNG)
 
 下一张图片显示了采用 Landscape 的显示方向和采用 LandscapeFlipped 的设备方向。
 
-![采用 Landscape 的显示方向和采用 LandscapeFlipped 的设备方向](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
+![采用 Landscape 的显示方向和采用 LandscapeFlipped 的设备方向](images/sensor-orientation-c.PNG)
 
 你可以使用具有 [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) 属性的 [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) 方法以通过 [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) 类查询方向值。 然后，你可以通过与 [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) 枚举进行比较来创建逻辑。 请记住，对于你支持的每一个方向，必须支持该方向的参考轴的转换。
 
 ## 横向优先设备和纵向优先设备对比
 
-制造商既生产横向优先设备，也生产纵向优先设备。 当制造商将组件集成到设备中时，他们采用统一且一致的方式来完成，以便所有设备均可在相同的参考帧中运行。 下表显示了适用于优先横向设备和优先纵向设备的传感器轴。
+制造商既生产横向优先设备，也生产纵向优先设备。 参考帧在横向优先设备（如台式机和笔记本电脑）和纵向优先设备（如手机和某些平板电脑）之间各不相同。 下表显示了适用于横向优先设备和纵向优先设备的传感器轴。
 
-| 方向 | 优先横向 | 优先纵向 |
+| Orientation | 优先横向 | 优先纵向 |
 |-------------|-----------------|----------------|
-| **Landscape** | ![采用 Landscape 方向的优先横向设备](images/accelerometer-axis-orientation-landscape.png) | ![采用 Landscape 方向的优先纵向设备](images/accelerometer-axis-orientation-portrait-270.png) |
-| **Portrait** | ![采用 Portrait 方向的优先横向设备](images/accelerometer-axis-orientation-landscape-90.png) | ![采用 Portrait 方向的优先纵向设备](images/accelerometer-axis-orientation-portrait.png) |
-| **LandscapeFlipped ** | ![采用 LandscapeFlipped 方向的优先横向设备](images/accelerometer-axis-orientation-landscape-180.png) | ![采用 LandscapeFlipped 方向的优先纵向设备](images/accelerometer-axis-orientation-portrait-90.png) | 
-| **PortraitFlipped** | ![采用 PortraitFlipped 方向的优先横向设备](images/accelerometer-axis-orientation-landscape-270.png)| ![采用 PortraitFlipped 方向的优先纵向设备](images/accelerometer-axis-orientation-portrait-180.png) |
+| **Landscape** | ![采用 Landscape 方向的优先横向设备](images/sensor-orientation-0.PNG) | ![采用 Landscape 方向的优先纵向设备](images/sensor-orientation-1.PNG) |
+| **Portrait** | ![采用 Portrait 方向的优先横向设备](images/sensor-orientation-2.PNG) | ![采用 Portrait 方向的优先纵向设备](images/sensor-orientation-3.PNG) |
+| **LandscapeFlipped ** | ![采用 LandscapeFlipped 方向的优先横向设备](images/sensor-orientation-4.PNG) | ![采用 LandscapeFlipped 方向的优先纵向设备](images/sensor-orientation-5.PNG) | 
+| **PortraitFlipped** | ![采用 PortraitFlipped 方向的优先横向设备](images/sensor-orientation-6.PNG)| ![采用 PortraitFlipped 方向的优先纵向设备](images/sensor-orientation-7.PNG) |
 
 ## 广播屏幕和无外设设备的设备
 
@@ -171,6 +171,6 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

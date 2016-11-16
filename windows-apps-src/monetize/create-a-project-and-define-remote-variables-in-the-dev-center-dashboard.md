@@ -4,14 +4,18 @@ Description: "必须先在开发人员中心仪表板中创建项目并定义远
 title: "在开发人员中心仪表板中创建项目和定义远程变量"
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: ea455892717546f7f789054609664ca1c0017699
+ms.sourcegitcommit: 32c1b379ee3913e267664e6d125fbc3daf480bb3
+ms.openlocfilehash: 88a55c9ed64d5f52f959a1c68618dc5296dc24d6
 
 ---
 
 # 在开发人员中心仪表板中创建项目和定义远程变量
 
 若要开始实验，请在开发人员中心仪表板中为应用创建实验[项目](run-app-experiments-with-a-b-testing.md#terms)，并定义应用可访问的远程变量。
+
+以下说明介绍了用于创建项目的核心步骤。 有关演示如何创建项目、然后运行实验的端到端过程的详细演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
+
+## 说明
 
 1. 登录到[开发人员中心仪表板](https://dev.windows.com/overview)。
 2. 在**“你的应用”**下，选择你想为之创建实验的应用。
@@ -41,6 +45,6 @@ ms.openlocfilehash: ea455892717546f7f789054609664ca1c0017699
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

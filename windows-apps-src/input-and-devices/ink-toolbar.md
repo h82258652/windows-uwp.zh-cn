@@ -6,8 +6,8 @@ label: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 71b73605bab71dad36977d0506c090c34359a3e2
-ms.openlocfilehash: c4a5b0ae2893fda7697457b9e7449a996707de4b
+ms.sourcegitcommit: 9e971104a7f7de9425787f32edcb7c376fb0c934
+ms.openlocfilehash: f5c8f7f8e60317a3ef30ff1900d99f9f6d63d391
 
 ---
 
@@ -284,6 +284,8 @@ InkToolbar 由两组不同的按钮类型组成：
 
 ### 自定义笔
 
+你可以在定义墨迹调色板和笔尖属性（如形状、旋转和大小）的位置创建自定义笔（通过自定义笔按钮激活）。
+
 ![自定义书法笔按钮](.\images\ink\ink-tools-custompen.png)  
 *自定义书法笔按钮*
 
@@ -394,14 +396,404 @@ class CalligraphicPen : InkToolbarCustomPen
 </Grid>
 ```
 
-<!--
-### Custom toggle
+### 自定义切换
 
-Enable touch inking
+你可以创建一个自定义切换（通过自定义切换按钮激活），将应用定义的功能状态设置为开或关。 当打开时，功能将与活动工具结合使用。
 
->**Note**&nbsp;&nbsp;InkToolbar supports pen and mouse input and can be configured to recognize touch input.
--->
+在此示例中，我们定义一个启用使用触控输入的墨迹书写的自定义切换按钮（默认情况下，触控墨迹书写不启用）。
 
+> [!NOTE]  
+> 如果你需要支持使用触控的墨迹书写，我们建议你使用 CustomToggleButton（附带在此示例中指定的图标和工具提示）启用它。
+
+通常，触控输入用于直接处理对象或应用 UI。 为了演示启用触控墨迹书写时的行为差异，我们将 InkCanvas 放置在 ScrollViewer 容器内，并将 ScrollViewer 尺寸设置为小于 InkCanvas。 
+
+启动应用时，仅支持笔墨迹书写，并使用触控平移或缩放墨迹书写图面。 启用触控墨迹书写时，无法通过触控输入平移或缩放墨迹书写图面。
+
+> [!NOTE]
+> 有关 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) 和 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) UX 指南，请参阅[墨迹书写控件](..\controls-and-patterns\inking-controls.md)。 以下建议与此示例相关：
+> - [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) 和通常的墨迹书写可通过主动笔获得最佳体验。 但是，如果应用需要，可以支持使用鼠标和触控的墨迹书写。 
+> - 如果支持使用触控输入的墨迹书写，我们建议为切换按钮使用“Segoe MLD2 Assets”中的“ED5F”图标，并附带“触控书写”工具提示。 
+
+**XAML**
+
+1. 首先，我们声明带有 Click 事件侦听程序的 [**InkToolbarCustomToggleButton**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton) 元素 (toggleButton)，可指定事件处理程序 (Toggle_Custom)。
+
+```xaml 
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <StackPanel Grid.Row="0" 
+                x:Name="HeaderPanel" 
+                Orientation="Horizontal">
+        <TextBlock x:Name="Header" 
+                   Text="Basic ink sample" 
+                   Style="{ThemeResource HeaderTextBlockStyle}" 
+                   Margin="10" />
+    </StackPanel>
+
+    <ScrollViewer Grid.Row="1" 
+                  HorizontalScrollBarVisibility="Auto" 
+                  VerticalScrollBarVisibility="Auto">
+        
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <InkToolbar Grid.Row="0" 
+                        Margin="10"
+                        x:Name="inkToolbar" 
+                        VerticalAlignment="Top"
+                        TargetInkCanvas="{x:Bind inkCanvas}">
+                <InkToolbarCustomToggleButton 
+                x:Name="toggleButton" 
+                Click="CustomToggle_Click" 
+                ToolTipService.ToolTip="Touch Writing">
+                    <SymbolIcon Symbol="{x:Bind TouchWritingIcon}"/>
+                </InkToolbarCustomToggleButton>
+            </InkToolbar>
+            
+            <ScrollViewer Grid.Row="1" 
+                          Height="500"
+                          Width="500"
+                          x:Name="scrollViewer" 
+                          ZoomMode="Enabled" 
+                          MinZoomFactor=".1" 
+                          VerticalScrollMode="Enabled" 
+                          VerticalScrollBarVisibility="Auto" 
+                          HorizontalScrollMode="Enabled" 
+                          HorizontalScrollBarVisibility="Auto">
+                
+                <Grid x:Name="outputGrid" 
+                      Height="1000"
+                      Width="1000"
+                      Background="{ThemeResource SystemControlBackgroundChromeWhiteBrush}">
+                    <InkCanvas x:Name="inkCanvas"/>
+                </Grid>
+                
+            </ScrollViewer>
+        </Grid>
+    </ScrollViewer>
+</Grid>
+```
+
+**代码隐藏**
+
+2. 在上面的代码片段中，我们在自定义切换按钮上为触控墨迹书写 (toggleButton) 声明了 Click 事件侦听程序和处理程序 (Toggle_Custom)。 此处理程序仅通过 InkPresenter 的 InputDeviceTypes 属性切换对 CoreInputDeviceTypes.Touch 的支持。
+
+   我们还使用 SymbolIcon 元素和 {x:Bind} 标记扩展（可将它绑定到在代码隐藏文件 (TouchWritingIcon) 中定义的字段）为按钮指定了图标。
+
+   以下代码片段包括 Click 事件处理程序和 TouchWritingIcon 的定义。
+
+```csharp 
+namespace Ink_Basic_InkToolbar
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class MainPage_AddCustomToggle : Page
+    {
+        Symbol TouchWritingIcon = (Symbol)0xED5F;
+
+        public MainPage_AddCustomToggle()
+        {
+            this.InitializeComponent();
+        }
+
+        // Handler for the custom toggle button that enables touch inking.
+        private void CustomToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if (toggleButton.IsChecked == true)
+            {
+                inkCanvas.InkPresenter.InputDeviceTypes |= CoreInputDeviceTypes.Touch;
+            }
+            else
+            {
+                inkCanvas.InkPresenter.InputDeviceTypes &= ~CoreInputDeviceTypes.Touch;
+            }
+        }
+    }
+}
+```
+
+### 自定义工具
+
+你可以创建自定义工具按钮，调用由你的应用定义的非笔工具。
+
+默认情况下，[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter) 将所有输入作为笔划墨迹或擦除笔划进行处理。 这包括由辅助硬件提示（例如笔桶按钮、鼠标右键按钮或类似提示）修改的输入。 但是，[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter) 可以配置为不处理特定输入，它随后可传递到你的应用以供自定义处理。
+
+在此示例中，我们定义自定义工具按钮，选中该按钮后，后续笔划将进行处理并呈现为所选套索（虚线）而非墨迹。 所选区域边界内的所有笔划墨迹都设置为[**已选中**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkStroke.Selected)。
+
+> [!NOTE]
+> 有关 InkCanvas 和 InkToolbar UX 指南，请参阅墨迹书写控件。 以下建议与此示例相关：
+> - 如果提供笔划选择，我们建议为工具按钮使用“Segoe MLD2 Assets”字体中的“EF20”图标，并附带“选择工具”工具提示。 
+ 
+**XAML**
+
+1. 首先，我们声明带有 Click 事件侦听程序的 [**InkToolbarCustomToolButton**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbarCustomToolButton) 元素 (customToolButton)，可在配置笔划选择的情况下指定事件处理程序 (customToolButton_Click)。 （我们还添加了一组用于复制、剪切和粘贴笔划选择的按钮。）
+
+2. 我们还添加用于绘制选择笔划的 Canvas 元素。 使用单独的图层绘制选择笔划可确保 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) 及其内容保持不变。 
+
+```xaml
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Grid.Row="0">
+        <TextBlock x:Name="Header" 
+                   Text="Basic ink sample" 
+                   Style="{ThemeResource HeaderTextBlockStyle}" 
+                   Margin="10,0,0,0" />
+    </StackPanel>
+    <StackPanel x:Name="ToolPanel" Orientation="Horizontal" Grid.Row="1">
+        <InkToolbar x:Name="inkToolbar" 
+                    VerticalAlignment="Top" 
+                    TargetInkCanvas="{x:Bind inkCanvas}">
+            <InkToolbarCustomToolButton 
+                x:Name="customToolButton" 
+                Click="customToolButton_Click" 
+                ToolTipService.ToolTip="Selection tool">
+                <SymbolIcon Symbol="{x:Bind SelectIcon}"/>
+            </InkToolbarCustomToolButton>
+        </InkToolbar>
+        <Button x:Name="cutButton" 
+                Content="Cut" 
+                Click="cutButton_Click"
+                Width="100"
+                Margin="5,0,0,0"/>
+        <Button x:Name="copyButton" 
+                Content="Copy"  
+                Click="copyButton_Click"
+                Width="100"
+                Margin="5,0,0,0"/>
+        <Button x:Name="pasteButton" 
+                Content="Paste"  
+                Click="pasteButton_Click"
+                Width="100"
+                Margin="5,0,0,0"/>
+    </StackPanel>
+    <Grid Grid.Row="2" x:Name="outputGrid" 
+              Background="{ThemeResource SystemControlBackgroundChromeWhiteBrush}" 
+              Height="Auto">
+        <!-- Canvas for displaying selection UI. -->
+        <Canvas x:Name="selectionCanvas"/>
+        <!-- Canvas for displaying ink. -->
+        <InkCanvas x:Name="inkCanvas" />
+    </Grid>
+</Grid>
+```
+
+**代码隐藏**
+
+2. 然后在 MainPage.xaml.cs 代码隐藏文件中处理 [**InkToolbarCustomToolButton**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbarCustomToolButton) 的 Click 事件。
+
+   此处理程序配置 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter)，以将未处理的输入传递到应用。 
+
+   有关单步执行此代码的更详细信息，请参阅 [UWP 应用中的笔交互和 Windows Ink](pen-and-stylus-interactions.md) 的“传递输入以进行高级处理”部分。
+
+   我们还使用 SymbolIcon 元素和 {x:Bind} 标记扩展（可将它绑定到在代码隐藏文件 (SelectIcon) 中定义的字段）为按钮指定了图标。
+
+   以下代码片段包括 Click 事件处理程序和 SelectIcon 的定义。
+
+```csharp
+namespace Ink_Basic_InkToolbar
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class MainPage_AddCustomTool : Page
+    {
+        // Icon for custom selection tool button.
+        Symbol SelectIcon = (Symbol)0xEF20;
+
+        // Stroke selection tool.
+        private Polyline lasso;
+        // Stroke selection area.
+        private Rect boundingRect;
+
+        public MainPage_AddCustomTool()
+        {
+            this.InitializeComponent();
+
+            // Listen for new ink or erase strokes to clean up selection UI.
+            inkCanvas.InkPresenter.StrokeInput.StrokeStarted +=
+                StrokeInput_StrokeStarted;
+            inkCanvas.InkPresenter.StrokesErased +=
+                InkPresenter_StrokesErased;
+        }
+
+        private void customToolButton_Click(object sender, RoutedEventArgs e)
+        {
+            // By default, the InkPresenter processes input modified by 
+            // a secondary affordance (pen barrel button, right mouse 
+            // button, or similar) as ink.
+            // To pass through modified input to the app for custom processing 
+            // on the app UI thread instead of the background ink thread, set 
+            // InputProcessingConfiguration.RightDragAction to LeaveUnprocessed.
+            inkCanvas.InkPresenter.InputProcessingConfiguration.RightDragAction =
+                InkInputRightDragAction.LeaveUnprocessed;
+
+            // Listen for unprocessed pointer events from modified input.
+            // The input is used to provide selection functionality.
+            inkCanvas.InkPresenter.UnprocessedInput.PointerPressed +=
+                UnprocessedInput_PointerPressed;
+            inkCanvas.InkPresenter.UnprocessedInput.PointerMoved +=
+                UnprocessedInput_PointerMoved;
+            inkCanvas.InkPresenter.UnprocessedInput.PointerReleased +=
+                UnprocessedInput_PointerReleased;
+        }
+
+        // Handle new ink or erase strokes to clean up selection UI.
+        private void StrokeInput_StrokeStarted(
+            InkStrokeInput sender, Windows.UI.Core.PointerEventArgs args)
+        {
+            ClearSelection();
+        }
+
+        private void InkPresenter_StrokesErased(
+            InkPresenter sender, InkStrokesErasedEventArgs args)
+        {
+            ClearSelection();
+        }
+
+        private void cutButton_Click(object sender, RoutedEventArgs e)
+        {
+            inkCanvas.InkPresenter.StrokeContainer.CopySelectedToClipboard();
+            inkCanvas.InkPresenter.StrokeContainer.DeleteSelected();
+            ClearSelection();
+        }
+
+        private void copyButton_Click(object sender, RoutedEventArgs e)
+        {
+            inkCanvas.InkPresenter.StrokeContainer.CopySelectedToClipboard();
+        }
+
+        private void pasteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (inkCanvas.InkPresenter.StrokeContainer.CanPasteFromClipboard())
+            {
+                inkCanvas.InkPresenter.StrokeContainer.PasteFromClipboard(
+                    new Point(0, 0));
+            }
+            else
+            {
+                // Cannot paste from clipboard.
+            }
+        }
+
+        // Clean up selection UI.
+        private void ClearSelection()
+        {
+            var strokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
+            foreach (var stroke in strokes)
+            {
+                stroke.Selected = false;
+            }
+            ClearBoundingRect();
+        }
+
+        private void ClearBoundingRect()
+        {
+            if (selectionCanvas.Children.Any())
+            {
+                selectionCanvas.Children.Clear();
+                boundingRect = Rect.Empty;
+            }
+        }
+
+        // Handle unprocessed pointer events from modifed input.
+        // The input is used to provide selection functionality.
+        // Selection UI is drawn on a canvas under the InkCanvas.
+        private void UnprocessedInput_PointerPressed(
+            InkUnprocessedInput sender, PointerEventArgs args)
+        {
+            // Initialize a selection lasso.
+            lasso = new Polyline()
+            {
+                Stroke = new SolidColorBrush(Windows.UI.Colors.Blue),
+                StrokeThickness = 1,
+                StrokeDashArray = new DoubleCollection() { 5, 2 },
+            };
+
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
+
+            selectionCanvas.Children.Add(lasso);
+        }
+
+        private void UnprocessedInput_PointerMoved(
+            InkUnprocessedInput sender, PointerEventArgs args)
+        {
+            // Add a point to the lasso Polyline object.
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
+        }
+
+        private void UnprocessedInput_PointerReleased(
+            InkUnprocessedInput sender, PointerEventArgs args)
+        {
+            // Add the final point to the Polyline object and 
+            // select strokes within the lasso area.
+            // Draw a bounding box on the selection canvas 
+            // around the selected ink strokes.
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
+
+            boundingRect =
+                inkCanvas.InkPresenter.StrokeContainer.SelectWithPolyLine(
+                    lasso.Points);
+
+            DrawBoundingRect();
+        }
+
+        // Draw a bounding rectangle, on the selection canvas, encompassing 
+        // all ink strokes within the lasso area.
+        private void DrawBoundingRect()
+        {
+            // Clear all existing content from the selection canvas.
+            selectionCanvas.Children.Clear();
+
+            // Draw a bounding rectangle only if there are ink strokes 
+            // within the lasso area.
+            if (!((boundingRect.Width == 0) ||
+                (boundingRect.Height == 0) ||
+                boundingRect.IsEmpty))
+            {
+                var rectangle = new Rectangle()
+                {
+                    Stroke = new SolidColorBrush(Windows.UI.Colors.Blue),
+                    StrokeThickness = 1,
+                    StrokeDashArray = new DoubleCollection() { 5, 2 },
+                    Width = boundingRect.Width,
+                    Height = boundingRect.Height
+                };
+
+                Canvas.SetLeft(rectangle, boundingRect.X);
+                Canvas.SetTop(rectangle, boundingRect.Y);
+
+                selectionCanvas.Children.Add(rectangle);
+            }
+        }
+    }
+}
+```
+
+
+
+### 自定义墨迹呈现
+
+默认情况下，墨迹输入在低延迟后台线程上进行处理，并在绘制时呈现“墨迹未干”。 笔划完成时（抬起笔或手指，或者释放鼠标按钮），笔划将在 UI 线程上进行处理并向 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 图层呈现“墨迹已干”（在应用程序内容之上，并且替换未干墨迹）。
+
+墨迹平台支持你替代此行为并通过自定义烘干墨迹输入来完全自定义墨迹书写体验。
+
+有关自定义烘干的详细信息，请参阅 [UWP 应用中的笔交互和 Windows Ink](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/pen-and-stylus-interactions#custom-ink-rendering)。
+
+> [!NOTE]
+> 自定义烘干和 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
+> 如果你的应用将 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的默认墨迹呈现行为替代为自定义烘干实现，呈现的笔划墨迹不再可用于 InkToolbar，并且 InkToolbar 的内置擦除命令不会按预期工作。 若要提供擦除功能，必须处理所有指针事件、在每个笔划上执行命中测试，并替代内置的“清除所有墨迹”命令。
 
 ## 相关文章
 
@@ -414,6 +806,6 @@ Enable touch inking
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

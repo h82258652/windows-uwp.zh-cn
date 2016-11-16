@@ -4,17 +4,14 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合错误报告数据。"
 title: "获取错误报告数据"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 89b1c9b44aaabb49f78953877ae11d2d7a0a2a2f
 
 ---
 
 # 获取错误报告数据
 
-
-
-
-在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的聚合错误报告数据。 此方法返回采用 JSON 格式的数据。
+在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的聚合错误报告数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)中获取此信息。
 
 ## 先决条件
 
@@ -195,9 +192,9 @@ ms.openlocfilehash: 64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -322,6 +319,7 @@ Authorization: Bearer <your access token>
 
 ## 相关主题
 
+* [运行状况报告](../publish/health-report.md)
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取应用购置](get-app-acquisitions.md)
 * [获取加载项购置](get-in-app-acquisitions.md)
@@ -330,6 +328,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

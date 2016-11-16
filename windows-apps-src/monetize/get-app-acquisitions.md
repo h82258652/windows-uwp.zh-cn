@@ -4,15 +4,15 @@ ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。"
 title: "获取应用购置"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: db271b0d1ec3b20ab2ead2e35e06fd97adb2ce0c
 
 ---
 
 # 获取应用购置
 
 
-在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。 此方法返回采用 JSON 格式的数据。
+使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的购置聚合数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[购置报告](../publish/acquisitions-report.md)中获取此信息。
 
 ## 先决条件
 
@@ -120,6 +120,31 @@ ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
 <p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,market</em></p></td>
 <td align="left">否</td>
 </tr>
+<tr class="odd">
+<td align="left">groupby</td>
+<td align="left">字符串</td>
+<td align="left"><p>仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：</p>
+<ul>
+<li><strong>日期型</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>acquisitionType</strong></li>
+<li><strong>ageGroup</strong></li>
+<li><strong>storeClient</strong></li>
+<li><strong>gender</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>orderName</strong></li>
+</ul>
+<p>返回的数据行会包含 <em>groupby</em> 参数中指定的字段，以及以下字段：</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>acquisitionQuantity</strong></li>
+</ul>
+<p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 
@@ -203,9 +228,9 @@ ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -307,6 +332,7 @@ Authorization: Bearer <your access token>
 
 ## 相关主题
 
+* [购置报告](../publish/acquisitions-report.md)
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取加载项购置](get-in-app-acquisitions.md)
 * [获取错误报告数据](get-error-reporting-data.md)
@@ -315,6 +341,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

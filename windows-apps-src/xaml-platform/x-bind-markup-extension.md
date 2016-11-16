@@ -4,18 +4,19 @@ description: "xBind 标记扩展是 Binding 的备用选项。 虽然 xBind 缺�
 title: "xBind 标记扩展"
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 translationtype: Human Translation
-ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
-ms.openlocfilehash: 7380386a77338c1fce7a7184b558a06605ffdf33
+ms.sourcegitcommit: 2dc706412684ded7fe4e98c6d01fb75ae65abd5f
+ms.openlocfilehash: b7d1dd183ba35e4b694a80d3e43628c928b218e5
 
 ---
 
 # {x:Bind} 标记扩展
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **注意** 有关将应用中的数据绑定与 **{x:Bind}** 结合使用的常规信息（以及有关 **{x:Bind}** 和 **{Binding}** 之间的全方位比较），请参阅[深入了解数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-**{x:Bind}** 标记扩展（Windows 10 的新增内容）是 **{Binding}** 的备用选项。 虽然 **{x:Bind}** 缺少 **{Binding}** 中的一些功能，但它运行时所花费的时间和使用的内存量均比 **{Binding}** 要少，且支持更好的调试。
+
+  **{x:Bind}** 标记扩展（Windows10 的新增内容）是 **{Binding}** 的备用选项。 虽然 **{x:Bind}** 缺少 **{Binding}** 中的一些功能，但它运行时所花费的时间和使用的内存量均比 **{Binding}** 要少，且支持更好的调试。
 
 XAML 编译时，**{x:Bind}** 将转换为从数据源上的某一属性中获取相关值的代码，并将其设置到标记中指定的属性上。 绑定对象可以配置为观察数据源属性值的更改，并基于这些更改自行刷新。 该对象也可以配置为将其自己的值的更改推送回源属性。 由 **{x:Bind}** 和 **{Binding}** 创建的绑定对象在功能上大致等同。 不过，**{x:Bind}** 执行编译时所生成的专用代码，而 **{Binding}** 使用通用的运行时对象检查。 因此，**{x:Bind}** 绑定（通常指已编译的绑定）具有出色的性能、提供编译时对绑定表达式的验证，并支持通过允许你在作为页面的部分类生成的代码文件中设置断点进行调试。 可以在 `obj` 文件夹中找到这些文件，其名称类似于（适用于 C#）`<view name>.g.cs`。
 
@@ -82,12 +83,12 @@ _注意：C# 样式的强制转换语法较附加属性语法更灵活，是接�
 
 ## 绑定路径中的函数
 
-从 Windows 10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作
+从 Windows10 版本 1607 开始，**{x:Bind}** 支持使用某个函数作为绑定路径的叶步。 这样做可以实现以下操作
 - 实现值转换的更简单方法
 - 依赖多个参数适用于绑定的方法
 
 > [!NOTE]
-> 若要使用 **{x:Bind}** 的函数，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，无法使用这些函数。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 若要使用 **{x:Bind}** 的函数，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，无法使用这些函数。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 在以下示例中，项目的背景和前景会绑定到这些函数，根据颜色参数执行转换。
 
@@ -191,11 +192,11 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 
 包含编译绑定的页面和用户控件将在生成的代码中具有“Bindings”属性。 这包括以下方法：
 - **Update()** - 此方法将更新所有编译绑定的值。 任何单向/双向绑定都将具有与检测更改挂钩的侦听器。
-- **Initiatlize()** - 如果尚未初始化绑定，则该方法会调用 Update() 初始化绑定
+- **Initialize()** - 如果尚未初始化绑定，则该方法会调用 Update() 初始化绑定
 - **StopTracking()** - 此方法将脱钩为单向和双向绑定创建的所有侦听器。 可以 Update() 方法重新初始化这些绑定。
 
 > [!NOTE]
-> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 从 Windows10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 **提示** 如果你需要为某个值指定单个花括号（例如在 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) 中），请在它前面加上反斜杠：`\{`。 此外，将包含需要转义的括号的整个字符串放在第二组引号中，例如 `ConverterParameter='{Mix}'`。
 
@@ -224,6 +225,6 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

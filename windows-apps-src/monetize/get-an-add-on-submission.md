@@ -4,8 +4,8 @@ ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "在 Windows 应用商店提交 API 中使用此方法，可获取现有加载项提交的数据。"
 title: "使用 Windows 应用商店提交 API 获取加载项提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 699f26e8a73e1777f5966faf346945807d460315
+ms.sourcegitcommit: 03942eb9015487cfd5690e4b1933e4febd705971
+ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 
 ---
 
@@ -15,6 +15,8 @@ ms.openlocfilehash: 699f26e8a73e1777f5966faf346945807d460315
 
 
 在 Windows 应用商店提交 API 中使用此方法，可获取现有加载项（也称为应用内产品或 IAP）提交的数据。 有关通过使用 Windows 应用商店提交 API 创建加载项提交过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
+
+>**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的加载项提交的定价数据模型。 实现此更改后，此方法的响应数据中的**定价**资源将为空，并且你将暂时无法使用此方法获取加载项提交的定价和销售数据。 我们会在将来更新 Windows 应用商店提交 API，以引入以编程方式访问加载项提交的定价信息的新方法。 有关详细信息，请参阅[定价资源](manage-add-on-submissions.md#pricing-object)。
 
 ## 先决条件
 
@@ -167,6 +169,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

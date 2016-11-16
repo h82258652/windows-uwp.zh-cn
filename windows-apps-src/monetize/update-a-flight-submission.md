@@ -4,8 +4,8 @@ ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: "在 Windows 应用商店提交 API 中使用此方法，更新现有软件包外部测试版提交。"
 title: "使用 Windows 应用商店提交 API 更新软件包外部测试版提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 9dfad9c0cc6b6e03a2196946ac578ca3170fccc5
+ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
+ms.openlocfilehash: baf9f4a3b72ab439439be4f73ca7fc11d48a3c84
 
 ---
 
@@ -61,7 +61,8 @@ ms.openlocfilehash: 9dfad9c0cc6b6e03a2196946ac578ca3170fccc5
 
 | 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightPackages           | 数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关响应正文中这些值的更多详细信息，请参阅[外部测试版软件包资源](manage-flight-submissions.md#flight-package-object)。 调用此方法更新应用提交时，请求正文中仅需要这些对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。 |
+| flightPackages           | 数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关响应正文中这些值的更多详细信息，请参阅[外部测试版软件包资源](manage-flight-submissions.md#flight-package-object)。 调用此方法更新应用提交时，请求正文中仅需要这些对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心填充。 |
+| packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置。 有关详细信息，请参阅[软件包传递选项对象](manage-flight-submissions.md#package-delivery-options-object)部分。  |
 | targetPublishMode           | 字符串  | 提交的发布模式。 这可以是以下值之一： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字符串  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |
 | notesForCertification           | 字符串  |  提供认证测试人员的其他信息，例如测试帐户凭据以及访问和验证功能的步骤。 有关详细信息，请参阅[认证说明](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。 |
@@ -85,6 +86,16 @@ Content-Type: application/json
       "minimumSystemRam": "None"
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "targetPublishMode": "Immediate",
   "targetPublishDate": "",
   "notesForCertification": "No special steps are required for certification of this app."
@@ -117,6 +128,16 @@ Content-Type: application/json
       "minimumSystemRam": "None"
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "fileUploadUrl": "https://productingestionbin1.blob.core.windows.net/ingestion/8b389577-5d5e-4cbe-a744-1ff2e97a9eb8?sv=2014-02-14&sr=b&sig=wgMCQPjPDkuuxNLkeG35rfHaMToebCxBNMPw7WABdXU%3D&se=2016-06-17T21:29:44Z&sp=rwl",
   "targetPublishMode": "Immediate",
   "targetPublishDate": "",
@@ -148,6 +169,6 @@ Content-Type: application/json
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

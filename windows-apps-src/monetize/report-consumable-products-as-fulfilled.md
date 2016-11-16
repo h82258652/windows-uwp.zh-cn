@@ -4,8 +4,8 @@ ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: "使用 Windows 应用商店收集 API 中的此方法，以面向给定客户将可消费产品报告为已完成。 在用户可以重新购买可消费产品前，你的应用或服务必须面向该用户将可消费产品报告为已完成。"
 title: "将可消费产品报告为已完成。"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: dd3e687d49e538187c123b7123c184f9182905de
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
 
 ---
 
@@ -18,16 +18,16 @@ ms.openlocfilehash: dd3e687d49e538187c123b7123c184f9182905de
 
 若要使用此方法来将可消费产品报告为已完成，可采用以下两种方式：
 
--   提供消费品的项目 ID（如[查询产品](query-for-products.md)的 **itemId** 参数中返回所示）和你提供的唯一跟踪 ID。 如果将同一跟踪 ID 用于多次尝试，那么即使该项目已经使用过，也仍然会返回相同的结果。 如果你不确定消耗请求是否成功，你的服务应重新提交具有同一跟踪 ID 的消耗请求。 跟踪 ID 始终与该消耗请求关联并且可以无限期地重新提交。
--   提供产品 ID（如[查询产品](query-for-products.md)的 **productId** 参数中返回所示）和从以下请求正文部分中的 **transactionId** 参数的描述中所列的源之一获取的事务 ID。
+* 提供消费品的项目 ID（如[查询产品](query-for-products.md)的 **itemId** 参数中返回所示）和你提供的唯一跟踪 ID。 如果将同一跟踪 ID 用于多次尝试，那么即使该项目已经使用过，也仍然会返回相同的结果。 如果你不确定消耗请求是否成功，你的服务应重新提交具有同一跟踪 ID 的消耗请求。 跟踪 ID 始终与该消耗请求关联并且可以无限期地重新提交。
+* 提供产品 ID（如[查询产品](query-for-products.md)的 **productId** 参数中返回所示）和从以下请求正文部分中的 **transactionId** 参数的描述中所列的源之一获取的事务 ID。
 
 ## 先决条件
 
 
 若要使用此方法，你需要：
 
--   使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
--   一种通过从应用中的客户端代码调用 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 方法所生成的Windows 应用商店 ID 密钥。
+* 使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
+* [从应用中的客户端代码生成](view-and-grant-products-from-a-service.md#step-4)的 Windows 应用商店 ID 密钥。
 
 有关详细信息，请参阅[从服务查看和授予产品](view-and-grant-products-from-a-service.md)。
 
@@ -71,7 +71,7 @@ UserIdentity 对象包含以下参数。
 | 参数            | 类型   | 说明                                                                                                                                 | 必需 |
 |----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | IdentityType         | 字符串 | 指定字符串值 **b2b**。                                                                                                           | 是      |
-| identityValue        | 字符串 | Windows 应用商店 ID 密钥的字符串值。                                                                                                   | 是      |
+| identityValue        | 字符串 | [从应用中的客户端代码生成](view-and-grant-products-from-a-service.md#step-4)的 Windows 应用商店 ID 密钥。                                                                                                   | 是      |
 | localTicketReference | 字符串 | 已返回响应的请求标识符。 我们建议你使用与 Windows 应用商店 ID 密钥中的 *userId* 声明相同的值。 | 是      |
 
 <span/> 
@@ -158,6 +158,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

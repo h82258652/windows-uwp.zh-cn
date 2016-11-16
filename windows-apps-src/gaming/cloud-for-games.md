@@ -4,13 +4,13 @@ title: "使用适用于 UWP 游戏的云服务"
 description: "了解有关实现云作为 UWP 游戏后端的详细信息。"
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: 0b2d81daa8bd0fd5694b81fa14fcd064e1600d35
-ms.openlocfilehash: b23c33fac9ac8fe5e2d5563a0af6824c82a3969b
+ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
+ms.openlocfilehash: 598384993e0e2931773cdb30e0909af6b771590e
 
 ---
 #  使用适用于 UWP 游戏的云服务
 
-Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发跨 Microsoft 设备的游戏。 当开发跨平台和设备的游戏时，可以充分利用云后端来帮助你根据需求扩展游戏。
+Windows10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发跨 Microsoft 设备的游戏。 当开发跨平台和设备的游戏时，可以充分利用云后端来帮助你根据需求扩展游戏。
 
 ##  什么是云计算？
 
@@ -111,7 +111,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发
 
 ## 如何设计云后端
 
-制作方和游戏设计人员在讨论游戏中需要具备哪些游戏特性和功能的同时，最好一开始就考虑想要如何设计游戏的基础架构。 如果想要开发适用于各种设备和跨不同主流平台的游戏，可以将 Azure 云用作你的游戏后端。
+制作方和游戏设计人员在讨论游戏中需要具备哪些游戏特性和功能的同时，最好一开始就考虑想要如何设计游戏基础架构。 如果想要开发适用于各种设备和跨不同主流平台的游戏，可以将 Azure 用作你的游戏后端。
 
 ### 分步学习指南
 
@@ -138,7 +138,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发
 
 ### 使用 Azure 设计游戏的基础架构
 
-以下是一些 Azure 云服务/产品适用于游戏的方式。 Azure 适用于 Windows、Linux 以及诸如 Ruby、Python、Java 和 PHP 等熟悉的开源技术。 有关详细信息，请参阅 [Azure 云](https://azure.microsoft.com)。
+以下是一些 Azure 云服务/产品适用于游戏的方式。 Azure 适用于 Windows、Linux 以及诸如 Ruby、Python、Java 和 PHP 等熟悉的开源技术。 有关详细信息，请参阅[面向游戏的 Azure](https://azure.microsoft.com/solutions/gaming/)。
 
 | 要求                 | 活动方案                            | 产品供应                      | 产品功能                               |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
@@ -170,7 +170,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发
     
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
-    如果你想要将诸如多玩家游戏玩法、跨平台配对、玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows 10 游戏，请注册 ID@Xbox 以获取用于发挥你的创造力以及尽最大可能获得成功所需的工具和支持。 在申请 ID@Xbox 之前，请在 [Windows 开发人员中心](https://developer.microsoft.com/windows/programs/join)注册开发人员帐户。
+    如果你想要将诸如多玩家游戏玩法、跨平台配对、玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows10 游戏，请注册 ID@Xbox 以获取用于发挥你的创造力以及尽最大可能获得成功所需的工具和支持。 在申请 ID@Xbox 之前，请在 [Windows 开发人员中心](https://developer.microsoft.com/windows/programs/join)注册开发人员帐户。
 
 ## 适用于游戏后端的软件即服务
 
@@ -190,8 +190,8 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发
 
 ## 相关链接
 
-* [Windows 10 游戏开发指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
-* [Microsoft Azure](https://azure.microsoft.com/)
+* [Windows10 游戏开发指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [面向游戏的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
@@ -202,6 +202,6 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供的一组 API 可用于开发
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,14 +4,14 @@ ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
 description: "Windows.Media.Editing 命名空间中的 API 允许你快速开发应用，从而使用户从音频和视频源文件创建媒体合成。"
 title: "媒体合成和编辑"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
+ms.sourcegitcommit: 018d7c85aae007a1fd887de0daf6625ccce37a64
+ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 ---
 
 # 媒体合成和编辑
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向你介绍如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空间中的 API 来快速开发应用，从而使用户从音频和视频源文件创建媒体合成。 框架的功能包括以编程方式同时追加多个视频剪辑、添加视频和图像覆盖、添加后台音频，以及同时应用音频和视频效果。 创建媒体合成后，可在平面媒体文件中进行呈现以供播放或共享，但合成还可通过磁盘进行序列化和反序列化，从而允许用户加载并修改之前创建的合成。 这一完整功能将在易于使用的 Windows 运行时接口中提供，与低级别 [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) API 相比，它可大大减少执行这些任务所需的代码数量和复杂性。
@@ -21,6 +21,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 类是包含组成合成的所有媒体剪辑的容器，用于负责呈现最终合成、将合成加载并保存到光盘，以及提供合成的预览流，以便用户可以在 UI 中查看它。 若要在你的应用中使用 **MediaComposition**，需包括 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空间以及提供你将需要的相关 API 的 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空间。
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
+
 
 在你的代码中可通过多个点访问 **MediaComposition** 对象，因此，你通常将声明一个要在其中存储该对象的成员变量。
 
@@ -54,7 +55,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 ## 在 MediaElement 中预览合成
 
-若要使用户能够查看媒体合成，将 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 添加到定义 UI 的 XAML 文件中。
+若要使用户能够查看媒体合成，将 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) 添加到定义 UI 的 XAML 文件中。
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
@@ -63,16 +64,16 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
 
-调用 **MediaComposition** 对象的 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 方法来为合成创建 **MediaStreamSource**，然后调用 **MediaElement** 的 [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) 方法。 现在，可以在 UI 中查看合成。
+调用 **MediaComposition** 对象的 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 方法，为合成创建 **MediaStreamSource**。 通过调用工厂方法 [**CreateFromMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn930907) 创建 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) 对象，并将其分配给 **MediaPlayerElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) 属性。 现在，可以在 UI 中查看合成。
 
 
 [!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
 
 -   **MediaComposition** 必须包含至少一个媒体剪辑才能调用 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674)，否则返回的对象将为 null。
 
--   **MediaElement** 时间线不会自动更新为反映合成中的更改。 建议在每次对合成进行一组更改并在希望更新 UI 时，同时调用 **GeneratePreviewMediaStreamSource** 和 **SetMediaStreamSource**。
+-   **MediaElement** 时间线不会自动更新为反映合成中的更改。 建议在每次对合成进行一组更改并希望更新 UI 时，调用 **GeneratePreviewMediaStreamSource** 并设置 **MediaPlayerElement** 的 **Source** 属性。
 
-建议在用户导航离开页面，以便发布关联的资源时，将 **MediaElement** 的 **MediaStreamSource** 对象和 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 属性设置为 null。
+建议在用户导航离开页面，以便发布关联的资源时，将 **MediaPlayerElement** 的 **MediaStreamSource** 对象和 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) 属性设置为 null。
 
 [!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
@@ -94,7 +95,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 [!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
 
--   你可以使用所需的任何 UI，以让用户指定开始和结束剪裁值。 上述示例使用 **MediaElement** 的 [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) 属性，以便通过检查 [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) 和 [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618)，先确定在合成中的当前位置上播放的是哪个 MediaClip。 然后，再次使用 **Position** 和 **StartTimeInComposition** 属性，以计算要从剪辑开始处剪裁的时间量。 **FirstOrDefault** 方法是 **System.Linq** 命名空间中的扩展方法，可简化用于从列表中选择项目的代码。
+-   你可以使用所需的任何 UI，让用户指定开始和结束剪裁值。 上述示例使用与 **MediaPlayerElement** 关联的 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 的 [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.Position) 属性，通过检查 [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) 和 [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618)，先确定在合成中的当前位置上播放的是哪个 **MediaClip**。 然后，再次使用 **Position** 和 **StartTimeInComposition** 属性，计算要从剪辑开始处剪裁的时间量。 **FirstOrDefault** 方法是 **System.Linq** 命名空间中的扩展方法，可简化用于从列表中选择项目的代码。
 -   通过 **MediaClip** 对象的 [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) 属性，你可以在未应用任何剪辑的情况下知道媒体剪辑的持续时间。
 -   通过 [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) 属性，你可以在应用剪裁后知道媒体剪辑的持续时间。
 -   指定一个大于剪辑原始持续时间的剪裁值不会引发错误。 但是，如果合成仅包含单个剪辑，并且通过指定较大的剪裁值将其长度剪裁为零，则对 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 的后续调用将返回 null，就像合成没有剪辑一样。
@@ -127,7 +128,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 ## 将效果添加到媒体剪辑
 
-合成中的每个 **MediaClip** 都具有音频和视频效果列表，可向其中添加多个效果。 效果必须分别实现 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) 和 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047)。 以下示例使用当前媒体元素位置选择当前查看的 **MediaClip**，然后创建 [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) 的新实例并将其追加到媒体剪辑的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 列表。
+合成中的每个 **MediaClip** 都具有音频和视频效果列表，可向其中添加多个效果。 效果必须分别实现 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) 和 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047)。 以下示例使用当前 **MediaPlayerElement** 位置选择当前查看的 **MediaClip**，然后创建 [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) 的新实例并将其追加到媒体剪辑的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 列表。
 
 [!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
@@ -155,6 +156,6 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

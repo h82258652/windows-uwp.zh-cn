@@ -4,14 +4,14 @@ title: "注册后台任务"
 description: "了解如何创建可以重复使用以安全注册大部分后台任务的函数。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
+ms.sourcegitcommit: 0f1bf88b1470cc5205f2e98ef15300da705203b1
+ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 
 ---
 
 # 注册后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 
 了解如何创建可以重复使用以安全注册大部分后台任务的函数。
 
-本主题适用于单进程后台任务和在单独进程中运行的后台任务。 本主题假定你已拥有需要注册的后台任务。 （有关如何编写后台任务的信息，请参阅[创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)或[创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)）。
+本主题适用于进程内后台任务和进程外后台任务。 本主题假定你已拥有需要注册的后台任务。 （有关如何编写后台任务的信息，请参阅[创建和注册进程外运行的后台任务](create-and-register-an-outofproc-background-task.md)或[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)）。
 
 本主题介绍了注册后台任务的实用工具函数。 此实用工具函数在注册任务前首先多次检查现有注册以避免多次注册产生的错误，并且该函数可以将系统条件应用于后台任务。 本操作实例包括此实用工具函数的正常运行的完整示例。
 
@@ -36,8 +36,8 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 此方法包含任务入口点、任务名称、预构建的后台任务触发器以及后台任务的 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)（可选）。 此方法返回 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) 对象。
 
 > [!Important]
-> `taskEntryPoint` - 用于在单独进程中运行的后台任务，这必须构建为命名空间 '.' 以及包含后台类的类名称。 该字符串区分大小写。  例如，如果你有包含后台类代码的命名空间“MyBackgroundTasks”和类“BackgroundTask1”，`taskEntryPoint` 的字符串将为“MyBackgroundTasks.BackgruondTask1”。
-> 如果你的后台任务在应用所在的同一进程中运行（即单进程后台任务），不应设置 `taskEntryPoint`。
+> `taskEntryPoint` - 对于在进程外运行的后台任务，这必须构建为命名空间名称 '.' 以及包含后台类的类名称。 该字符串区分大小写。  例如，如果你有包含后台类代码的命名空间“MyBackgroundTasks”和类“BackgroundTask1”，`taskEntryPoint` 的字符串将为“MyBackgroundTasks.BackgruondTask1”。
+> 如果你的后台任务在应用所在的同一进程中运行（即进程内后台任务），不应设置 `taskEntryPoint`。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -182,7 +182,7 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 >
 >     builder.Name = name;
 >
->     // single-process background tasks don't set TaskEntryPoint
+>     // in-process background tasks don't set TaskEntryPoint
 >     if ( taskEntryPoint != null && taskEntryPoint != String.Empty)
 >     {
 >         builder.TaskEntryPoint = taskEntryPoint;
@@ -371,14 +371,15 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 > }
 > ```
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 
+  **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows10 开发人员。 如果你面向 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相关主题
 
 ****
 
-* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)
-* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -388,9 +389,6 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 * [使用维护触发器](use-a-maintenance-trigger.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
-
-****
-
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
@@ -400,6 +398,6 @@ ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

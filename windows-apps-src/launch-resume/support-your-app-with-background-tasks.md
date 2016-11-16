@@ -4,37 +4,37 @@ title: "使用后台任务支持应用"
 description: "本部分中的主题展示如何通过响应具有后台任务的触发器在后台运行你自己的轻型代码。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 translationtype: Human Translation
-ms.sourcegitcommit: 30b3b8b3b40a96c4cd063ebab2794617568fa7a3
-ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
+ms.sourcegitcommit: 0f1bf88b1470cc5205f2e98ef15300da705203b1
+ms.openlocfilehash: 35b64637904e35413217d4cf500658999db07088
 
 ---
 
 # 使用后台任务支持应用
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分中的主题展示如何通过使用后台任务在后台运行你自己的轻型代码。 你可以使用后台任务在应用暂停或未运行时提供功能。 也可以将后台任务用于实时通信应用，例如 VOIP、邮件和 IM。
 
 ## 在后台播放媒体
 
-从 Windows 10 版本 1607 开始，在后台播放音频变得更简单。 有关详细信息，请参阅[在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)。
+从 Windows10 版本 1607 开始，在后台播放音频变得更简单。 有关详细信息，请参阅[在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)。
 
-## 多个进程和单个进程的后台任务
+## 进程内后台任务和进程外后台任务
 
-有两种方法可以实现后台任务：进程内和进程外。 进程内后台支持在 Windows 10 版本 1607 中引入，目的是简化编写后台任务。 但仍可以编写进程外后台任务。 有关在何时编写进程内和进程外后台任务的建议，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
+有两种方法可以实现后台任务：进程内，即应用及其后台进程在同一进程中运行；进程外，即应用及其后台进程分别在单独的进程中运行。 进程内后台支持在 Windows10 版本 1607 中引入，目的是简化编写后台任务。 但仍可以编写进程外后台任务。 有关在何时编写进程内和进程外后台任务的建议，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
 进程外后台任务更容易复原，因为在出现错误时，后台进程不会使应用崩溃。 但复原的代价在于管理跨进程通信的复杂性会升高。
 
 进程外后台任务实现为操作系统在独立进程 (backgroundtaskhost.exe) 中运行的轻型类。 进程外后台任务编写来实现 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 接口的类。 通过使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类注册后台任务。 注册后台任务时，类名称将用于指定入口点。
 
-在 Windows 10 版本 1607 中，可以在无需创建后台任务的情况下启用后台活动。 可以直接在前台应用程序中运行后台代码。
+在 Windows10 版本 1607 中，可以在无需创建后台任务的情况下启用后台活动。 可以直接在前台应用程序中运行后台代码。
 
-若要快速开始使用单个进程的后台任务，请参阅[创建和注册单个进程的后台任务](create-and-register-a-singleprocess-background-task.md)。
+若要快速开始使用进程内后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 
-若要快速开始使用多个进程的后台任务，请参阅[创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)。
+若要快速开始使用进程外后台任务，请参阅[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)。
 
 > [!TIP]
-> 从 Windows 10 开始，无需将应用放置在锁屏界面上以充当为该应用注册后台任务的先决条件。
+> 从 Windows10 开始，无需将应用放置在锁屏界面上以充当为该应用注册后台任务的先决条件。
 
 ## 系统事件的后台任务
 
@@ -68,7 +68,7 @@ ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
 
 ## 应用程序清单要求
 
-在应用成功注册可以在单独进程中运行的后台任务前，必须在应用程序清单中声明该任务。 在与主机应用运行的相同进程中运行的后台任务无需在应用程序清单中声明。 有关详细信息，请参阅[在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)。
+在应用成功注册可以在进程外运行的后台任务前，必须在应用程序清单中声明该任务。 在与主机应用运行的相同进程中运行的后台任务无需在应用程序清单中声明。 有关详细信息，请参阅[在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)。
 
 ## 后台任务
 
@@ -140,7 +140,7 @@ ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
 你的应用可以使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 类从后台任务访问传感器和外围设备。 你可以针对运行时间较长的操作（例如数据同步或监视）使用此触发器。 与用于系统事件的任务不同，**DeviceUseTrigger** 任务仅在你的应用在前台运行且在其上无法设置任何条件时触发。
 
 > [!IMPORTANT]
-> **DeviceUseTrigger** 和 **DeviceServicingTrigger** 不能用于单一进程的后台任务。
+> **DeviceUseTrigger** 和 **DeviceServicingTrigger** 不能用于进程内后台任务。
 
 某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有的话）作为设备的特权应用。 有关详细信息，请参阅 [Windows 应用商店设备应用的设备同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
 
@@ -152,11 +152,11 @@ ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
 [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 
 **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows10 开发人员。 如果你要针对 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  ## 相关主题
 
-**在 Windows 10 中使用多任务的概念指南**
+**在 Windows10 中使用多任务的概念指南**
 
 * [启动、恢复和多任务](index.md)
 
@@ -165,8 +165,8 @@ ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
 * [在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 * [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
-* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)
-* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
 * [调试后台任务](debug-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
@@ -182,6 +182,6 @@ ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

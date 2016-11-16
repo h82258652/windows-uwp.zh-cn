@@ -4,21 +4,23 @@ ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: "了解如何使用 Windows.Services.Store 命名空间获取当前应用或其中一项加载项的与应用商店相关的产品信息。"
 title: "获取应用和加载项的产品信息"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: c453dc74730fc451bbe9babdffb2ce4d72712082
+ms.sourcegitcommit: 962bee0cae8c50407fe1509b8000dc9cf9e847f8
+ms.openlocfilehash: 8471dfd24b189ff6ca4f50c4461b72ac5d81659d
 
 ---
 
 # 获取应用和加载项的产品信息
 
-面向 Windows 10 版本 1607 或更高版本的应用可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的方法，来访问当前应用或其中一项加载项（亦称为应用内产品或 IAP）的与应用商店相关的信息。 本文中的以下示例展示了如何针对不同的情况执行此操作。 有关完整示例，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+面向 Windows10 版本 1607 或更高版本的应用可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的方法，来访问当前应用或其中一项加载项（亦称为应用内产品或 IAP）的与应用商店相关的信息。 本文中的以下示例展示了如何针对不同的情况执行此操作。 有关完整示例，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
->**注意**&nbsp;&nbsp;本文适用于面向 Windows 10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows 10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+>
+  **注意**
+  &nbsp;&nbsp;本文适用于面向 Windows10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 ## 先决条件
 
 这些示例有以下先决条件：
-* 适用于面向 Windows 10 版本 1607 或更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
+* 适用于面向 Windows10 版本 1607 或更高版本的通用 Windows 平台 (UWP) 应用的 Visual Studio 项目。
 * 你已在 Windows 开发人员中心仪表板中创建了一个应用，并且该应用已发布，并在应用商店中上架。 该应用可以是你想要发布给客户的应用，也可以是符合 [Windows 应用认证工具包](https://developer.microsoft.com/windows/develop/app-certification-kit)最低要求、仅用于测试目的的基本应用。 有关详细信息，请参阅[测试指南](in-app-purchases-and-trials.md#testing)。
 
 这些示例中的代码假设：
@@ -27,6 +29,8 @@ ms.openlocfilehash: c453dc74730fc451bbe9babdffb2ce4d72712082
 * 该应用是单用户应用，仅在启动该应用的用户上下文中运行。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md#api_intro)。
 
 有关完整的示例应用程序，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+
+>**注意**&nbsp;&nbsp;如果你有使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的桌面应用程序，可能需要添加未在这些示例中显示的额外代码来配置 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象。 有关详细信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](in-app-purchases-and-trials.md#desktop)。
 
 ## 获取当前应用的信息
 
@@ -40,6 +44,9 @@ public async void GetAppInfo()
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     // Get app store product details. Because this might take several moments,   
@@ -81,6 +88,9 @@ public async void GetProductInfo()
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     // Specify the kinds of add-ons to retrieve.
@@ -126,6 +136,9 @@ public async void GetAddOnInfo()
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     // Specify the kinds of add-ons to retrieve.
@@ -170,6 +183,9 @@ public async void GetUserCollection()
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     // Specify the kinds of add-ons to retrieve.
@@ -209,6 +225,6 @@ public async void GetUserCollection()
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

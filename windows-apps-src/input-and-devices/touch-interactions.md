@@ -6,8 +6,8 @@ ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: ca4ab33a58391f36e376323ca29d27961a2a7404
+ms.sourcegitcommit: 526493614666424089199063013b5fc72d9bc5d8
+ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
 ---
 
@@ -621,12 +621,16 @@ End Sub
 
 * [处理指针输入](handle-pointer-input.md)
 * [标识输入设备](identify-input-devices.md)
+
 **示例**
+
 * [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦点视觉效果示例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **存档示例**
+
 * [输入：设备功能示例](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [输入：XAML 用户输入事件示例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 滚动、平移以及缩放示例](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -641,6 +645,6 @@ End Sub
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

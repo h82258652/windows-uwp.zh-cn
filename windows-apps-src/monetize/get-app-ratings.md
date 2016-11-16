@@ -4,17 +4,14 @@ ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据。"
 title: "获取应用评分"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
+ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
+ms.openlocfilehash: 45df3a1296ba06551e08705e9d72a693ad3d33e5
 
 ---
 
 # 获取应用评分
 
-
-
-
-在 Windows 应用商店分析 API 中使用此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据。 此方法返回采用 JSON 格式的数据。
+使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器的聚合评分数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[评分报告](../publish/ratings-report.md)中获取此信息。
 
 ## 先决条件
 
@@ -119,6 +116,31 @@ ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
 <p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,market</em></p></td>
 <td align="left">否</td>
 </tr>
+<tr class="odd">
+<td align="left">groupby</td>
+<td align="left">字符串</td>
+<td align="left"><p>仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>isRevised</strong></li>
+</ul>
+<p>返回的数据行会包含 <em>groupby</em> 参数中指定的字段，以及以下字段：</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>fiveStars</strong></li>
+<li><strong>fourStars</strong></li>
+<li><strong>threeStars</strong></li>
+<li><strong>twoStars</strong></li>
+<li><strong>oneStar</strong></li>
+</ul>
+<p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如：<em>&amp;groupby=osVersion,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 
@@ -156,9 +178,9 @@ ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -261,6 +283,7 @@ Authorization: Bearer <your access token>
 
 ## 相关主题
 
+* [评分报告](../publish/ratings-report.md)
 * [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
 * [获取应用购置](get-app-acquisitions.md)
 * [获取加载项购置](get-in-app-acquisitions.md)
@@ -269,6 +292,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

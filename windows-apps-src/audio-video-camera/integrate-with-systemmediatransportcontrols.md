@@ -4,8 +4,8 @@ ms.assetid:
 description: "本文介绍如何与系统媒体传输控件交互。"
 title: "与系统媒体传输控件集成"
 translationtype: Human Translation
-ms.sourcegitcommit: 53b1cb94f90cd697a96bca49c5f2109d4749dbd1
-ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 702d5911f6e76d6c047fcc97c1117456ae04c3e5
 
 ---
 
@@ -70,6 +70,7 @@ ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
 正如本文前面提到的，SMTC 将针对你的应用创建的 **MediaPlayer** 的每个实例检测并显示信息。 如果你希望使用 **MediaPlayer** 的多个实例，但希望 SMTC 为应用提供单个条目，则必须手动控制 SMTC 的行为，而不是依靠自动集成。 此外，如果你将使用 [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) 控制一个或多个媒体播放器，则必须使用手动 SMTC 集成。 此外，如果你的应用使用 API 而不是 **MediaPlayer**（如 [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph) 类）来播放媒体，则必须实现手动 SMTC 集成，以便使用户使用 SMTC 控制你的应用。 有关如何手动控制 SMTC 的信息，请参阅[系统媒体传输控件的手动控制](system-media-transport-controls.md)。
 
 
+
 ## 相关主题
 * [媒体播放](media-playback.md)
 * [使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)
@@ -85,6 +86,6 @@ ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

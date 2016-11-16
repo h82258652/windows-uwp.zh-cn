@@ -4,8 +4,8 @@ ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
 description: "在 Windows 应用商店提交 API 中使用此方法，可检索注册到 Windows 开发人员中心帐户的应用的应用内购买相关信息。"
 title: "使用 Windows 应用商店提交 API 获取应用的加载项"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 1edf52b45578078f7abb7e499723b072832d6628
+ms.sourcegitcommit: ef90390fcf7d4aa2e040eae65119ac7959f3423f
+ms.openlocfilehash: 5a2dc318509b99c4d58632d5eedaeb3e465c524d
 
 ---
 
@@ -45,11 +45,12 @@ ms.openlocfilehash: 1edf52b45578078f7abb7e499723b072832d6628
 
 ### 请求参数
 
-| 名称        | 类型   | 说明  |  必需  |    
-|---------------|--------|----------------------------------|
-| applicationId | 字符串 | 必需。 要检索加载项的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
+
+|  名称  |  类型  |  说明  |  必需  |
+|------|------|------|------|
+|  applicationId  |  字符串  |  要检索加载项的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
 |  top  |  int  |  要在请求中返回的项数（即，要返回的加载项数）。 如果应用具有的加载项超过在查询中指定的值，响应正文将包括可追加到方法 URI 的相对 URI 路径，用于请求下一页数据。  |  否  |
-|  skip  |  int  |  返回剩余项之前，在查询中绕过的项数。 使用此参数分页浏览数据集。 例如，top=10 和 skip=0 可检索项目 1 到 10，top=10 和 skip=10 可检索项目 11 到 20，依此类推。  |  否  |
+|  skip |  int  | 返回剩余项之前，在查询中绕过的项数。 使用此参数分页浏览数据集。 例如，top=10 和 skip=0 可检索项目 1 到 10，top=10 和 skip=10 可检索项目 11 到 20，依此类推。   |  否  |
 
 <span/>
 
@@ -126,6 +127,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

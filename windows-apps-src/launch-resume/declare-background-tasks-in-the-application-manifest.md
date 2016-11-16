@@ -4,15 +4,15 @@ title: "在应用程序清单中声明后台任务"
 description: "通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。"
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
 
 ---
 
 # 在应用程序清单中声明后台任务
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -23,9 +23,9 @@ ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。
 
 > [!Important]
->  本文特定于在单独进程中运行的后台任务。 单进程后台任务未在该清单中声明。
+>  本文特定于进程外后台任务。 进程内后台任务未在该清单中声明。
 
-必须在应用清单中声明在单独进程中运行的后台任务，否则你的应用将无法注册它们（将引发异常）。 此外，必须在应用程序清单中声明后台任务才能通过认证。
+必须在应用清单中声明进程外后台任务，否则你的应用将无法注册它们（会引发异常）。 此外，必须在应用程序清单中声明进程外后台任务才能通过认证。
 
 本主题假定你已创建一个或多个后台任务类，并且你的应用注册了为响应至少一个触发器而运行的所有后台任务。
 
@@ -149,7 +149,7 @@ ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
 
 ## 声明要在不同进程中运行后台任务
 
-Windows 10 版本 1507 中的新功能允许你在不同于 BackgroundTaskHost.exe 的进程（默认情况下运行后台任务的进程）中运行后台任务。  有两个选项：在前台应用程序所处的同一进程中运行；在独立于同一应用程序的其他后台任务实例的 BackgroundTaskHost.exe 实例中运行。  
+Windows10 版本 1507 中的新功能允许你在不同于 BackgroundTaskHost.exe 的进程（默认情况下运行后台任务的进程）中运行后台任务。  有两个选项：在前台应用程序所处的同一进程中运行；在独立于同一应用程序的其他后台任务实例的 BackgroundTaskHost.exe 实例中运行。  
 
 ### 在前台应用程序中运行
 
@@ -212,6 +212,6 @@ Windows 10 版本 1507 中的新功能允许你在不同于 BackgroundTaskHost.e
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

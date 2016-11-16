@@ -4,14 +4,14 @@ title: "启动、恢复和后台任务"
 description: "本部分介绍在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 translationtype: Human Translation
-ms.sourcegitcommit: 5d0fffc46b1fc4ca2fba1422f2094bd411a65058
-ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
+ms.sourcegitcommit: 7ed2596c33338c3954b6cfe1e779284283ae7769
+ms.openlocfilehash: 3b1be5b6951b72d5699e7b31e95702b827b741b5
 
 ---
 
 # 启动、恢复和后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分介绍以下内容：
 
@@ -59,9 +59,9 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 | [使用后台任务支持应用](support-your-app-with-background-tasks.md)                             | 本部分中的主题展示如何通过响应具有后台任务的触发器在后台运行你自己的轻型代码。                                                       |
 | [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
 | [后台任务指南](guidelines-for-background-tasks.md)                                           | 确保你的应用符合运行后台任务的要求。                                                                                                                          |
-| [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)                               | 创建一个后台任务类并注册它，以便在应用不在前台运行时在单独的进程中运行。                                                                                                 |
-| [创建和注册在单个进程中运行的后台任务](create-and-register-a-singleprocess-background-task.md)                               | 创建与前台应用在同一个进程中运行的后台任务类。                                                                                                 |
-| [将多进程的后台任务转换为单进程的后台任务](convert-multiple-process-background-task.md)                               | 了解如何将设计为当应用在后台时在单独进程中运行的后台任务，转换为与前台应用在同一个进程中运行的单进程后台任务。
+| [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)                               | 创建和注册一个与你的应用不在同一个进程中运行的后台任务，然后将它注册为在应用不在前台运行时运行。                                                                                                 |
+| [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)                               | 创建和注册在前台应用所在的同一进程中运行的后台任务。                                                                                                 |
+| [将进程外后台任务转换为进程内后台任务](convert-out-of-process-background-task.md)                               | 了解如何将进程外后台任务转换为在前台应用所在的同一进程中运行的进程内后台任务。
 | [调试后台任务](debug-a-background-task.md)                                                           | 了解如何调试后台任务，其中包括后台任务激活和调试 Windows 事件日志中的跟踪。                                                                        |
 | [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md) | 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。                                                                                                       |
 | [处理取消的后台任务](handle-a-cancelled-background-task.md)                                     | 介绍如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。                                     |
@@ -80,7 +80,7 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 |------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [创建和使用应用服务](how-to-create-and-consume-an-app-service.md)                                | 了解如何编写可以向其他 UWP 应用提供服务的 UWP 应用，以及如何使用这些服务。                                                                                  |
 | [与远程应用服务通信](communicate-with-a-remote-app-service.md) | 了解如何与在远程设备上运行的应用服务交换消息。 |
-| [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-single-process.md)                                | 了解如何将在单独的后台进程中运行的应用服务代码转换为与应用服务主机应用在同一个进程中运行的代码。                                                                                  |
+| [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md)                                | 了解如何将在单独的后台进程中运行的应用服务代码转换为托管你的应用服务的应用所在的同一进程中运行的代码。                                                                                  |
 
 ## 添加初始屏幕
 
@@ -111,6 +111,6 @@ ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

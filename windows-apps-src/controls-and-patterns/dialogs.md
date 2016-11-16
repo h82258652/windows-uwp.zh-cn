@@ -5,8 +5,8 @@ title: "对话框和浮出控件"
 label: Dialogs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
+ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
+ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 
 ---
 # 对话框和浮出控件
@@ -48,7 +48,7 @@ ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>对话框</b> <br/><br/>
-   ![全按钮对话框示例](images/controls_dialog_twobutton.png)</p>
+    ![对话框示例](images/dialogs/dialog-delete-file-example.png)</p>
 <p>对话框是用于提供上下文应用信息的模式 UI 覆盖。 除非明确取消对话框，否则它会阻止与应用窗口的交互。 它们通常会请求用户进行某种类型的操作。   
 </p><br/>
 
@@ -130,7 +130,8 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 
 
-## 对话框使用指南
+## 对话框
+### 一般指南
 
 -   在对话框的第一行文本中清楚地标识问题或用户的目标。
 -   对话框标题是主要说明并且是可选的。
@@ -146,7 +147,23 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 -   错误对话框在对话框中显示错误消息，以及任何相关的信息。 在错误对话框中使用的唯一按钮应为“关闭”或类似操作。
 -   不要为与页面上的特定位置具有上下文关系的错误（例如，密码字段等位置的验证错误）使用对话框，请使用应用的画布本身显示内联错误。
 
-## 创建对话框
+### 确认对话框（确定/取消）
+通过确认对话框，用户可以确认他们是否要执行操作。 他们可以确认操作，也可以选择取消。  
+典型的确认对话框有两个按钮：一个确认（“确定”）按钮和一个取消按钮。  
+
+<ul>
+    <li>
+        <p>一般情况下，确认按钮（主要按钮）应位于左侧，取消按钮（辅助按钮）应位于右侧。</p>
+         ![确定/取消对话框](images/dialogs/dialog-delete-file-example.png)
+        
+    </li>
+    <li>如一般建议部分中所述，使用带有文本的按钮，该文本可标识特定于主要说明或内容的响应。
+    </li>
+</ul>
+
+> 某些平台将确认按钮放置在右侧，而不是左侧。 那么，为什么我们建议将它放在左侧呢？  如果你假设大多数用户惯用右手并且他们用右手拿着手机，按位于左侧的确认按钮实际上更为舒适，因为该按钮更有可能处于用户的拇指弧范围内。 位于屏幕右侧的按钮需要用户将拇指向内收缩到不太舒适的位置。
+
+### 创建对话框
 若要创建对话框，你使用 [ContentDialog 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)。 你可以使用代码或标记创建对话框。 尽管使用 XAML 定义 UI 元素通常更容易，但对于简单对话框，实际上只使用代码更容易。 此示例创建一个对话框来通知用户没有 WiFi 连接，然后使用 [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) 方法显示它。
 
 ```csharp
@@ -174,23 +191,23 @@ private async void displayDeleteFileDialog()
     {
         Title = "Delete file permanently?",
         Content = "If you delete this file, you won't be able to recover it. Do you want to delete it?",
-        PrimaryButtonText = "Cancel",
-        SecondaryButtonText = "Delete file permanently"
+        PrimaryButtonText = "Delete",
+        SecondaryButtonText = "Cancel"
     };
 
     ContentDialogResult result = await deleteFileDialog.ShowAsync();
     
-    // Delete the file if the user clicked the second button. 
+    // Delete the file if the user clicked the primary button. 
     /// Otherwise, do nothing. 
-    if (result == ContentDialogResult.Secondary)
+    if (result == ContentDialogResult.Primary)
     {
         // Delete the file. 
     }
 }
 ```
 
-
-##  创建浮出控件
+## 浮出控件
+###  创建浮出控件
 
 浮出控件是可显示任意 UI 作为其内容的开放式容器。  
 
@@ -278,7 +295,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-## 设置浮出控件的样式
+### 设置浮出控件的样式
 若要设置浮出控件的样式，请修改其 [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx)。 此示例显示一个环绕文本段落，并使屏幕阅读器可以访问该文本块。
 
 ````xaml
@@ -308,6 +325,6 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

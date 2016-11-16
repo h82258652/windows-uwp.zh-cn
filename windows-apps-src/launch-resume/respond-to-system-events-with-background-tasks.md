@@ -4,14 +4,14 @@ title: "使用后台任务响应系统事件"
 description: "了解如何创建响应 SystemTrigger 事件的后台任务。"
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 37a11b573267726707ee3743309083b774727886
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
 
 ---
 
 # 使用后台任务响应系统事件
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -21,8 +21,7 @@ ms.openlocfilehash: 37a11b573267726707ee3743309083b774727886
 
 了解如何创建响应 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的后台任务。
 
-本主题假定你已经为你的应用编写了一个后台任务类，并且需要运行该任务以响应系统触发的某个事件（如 Internet 可用性发生改变或用户登录时）。 此主题重点介绍 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 类。 有关编写后台任务类的详细信息，请参阅[创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)或
-* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)。
+本主题假定你已经为你的应用编写了一个后台任务类，并且需要运行该任务以响应系统触发的某个事件（如 Internet 可用性发生改变或用户登录时）。 此主题重点介绍 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 类。 有关编写后台任务类的详细信息可以在[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)中找到。
 
 ## 创建 SystemTrigger 对象
 
@@ -44,7 +43,7 @@ ms.openlocfilehash: 37a11b573267726707ee3743309083b774727886
 
 -   通过调用后台任务注册函数注册后台任务。 有关注册后台任务的详细信息，请参阅[注册后台任务](register-a-background-task.md)。
 
-    以下代码将为在单独进程中运行的后台进程注册后台任务。 如果要调用在与主机应用相同的进程中运行的后台任务，请不要设置 `entrypoint`：
+    以下代码将为在进程外运行的后台进程注册后台任务。 如果要调用在与主机应用相同的进程中运行的后台任务，请不要设置 `entrypoint`：
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -54,7 +53,7 @@ ms.openlocfilehash: 37a11b573267726707ee3743309083b774727886
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
     > ```cpp
-    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass"; // don't set for single-process background tasks
+    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass"; // don't set for in-process background tasks
     > String ^ taskName   = "Internet-based background task";
     >
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
@@ -74,14 +73,15 @@ ms.openlocfilehash: 37a11b573267726707ee3743309083b774727886
 
 应用可以注册响应 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 和 [**NetworkOperatorNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/br224831) 事件的后台任务，从而使这些事件可以提供与用户的实时通信，即使该应用不在前台也是如此。 有关详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 
+  **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows10 开发人员。 如果你面向 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相关主题
 
 ****
 
-* [创建和注册在单独进程中运行的后台任务](create-and-register-a-background-task.md)
-* [创建和注册单进程后台任务](create-and-register-a-singleprocess-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -91,14 +91,11 @@ ms.openlocfilehash: 37a11b573267726707ee3743309083b774727886
 * [使用维护触发器](use-a-maintenance-trigger.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
-
-****
-
 * [调试后台任务](debug-a-background-task.md)
 * [如何在 Windows 应用商店应用中触发暂停、恢复和后台事件（在调试时）](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

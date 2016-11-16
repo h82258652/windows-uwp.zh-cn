@@ -1,11 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: "了解如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 库，将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。"
+description: "了解如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 库，将间隙广告纳入到 Windows10、Windows8.1 或 Windows Phone 8.1 应用中。"
 title: "间隙广告"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
+ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
+ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 
 
-本演练演示了如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 库，将间隙广告纳入到 Windows 10、Windows 8.1 或 Windows Phone 8.1 应用中。
+本演练演示了如何使用 Microsoft Store Services SDK 中的 Microsoft Advertising 库，将间隙广告纳入到 Windows10、Windows8.1 或 Windows Phone 8.1 应用中。
 
 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
@@ -37,7 +37,7 @@ ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 ### 先决条件
 
 * 对于 UWP 应用：使用 Visual Studio 2015 安装 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)。
-* 对于 Windows 8.1 或 Windows Phone 8.1 应用：使用 Visual Studio 2015 或 Visual Studio 2013 安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。
+* 对于 Windows8.1 或 Windows Phone 8.1 应用：使用 Visual Studio 2015 或 Visual Studio 2013 安装[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。
 
 ### 代码开发
 
@@ -48,16 +48,17 @@ ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 <span id="interstitialadsxaml10"/>
 ### 间隙广告 (XAML/.NET)
 
-> **注意** 本部分提供 C# 示例，但 Visual Basic 和 C++ 也受支持。
+> 
+            **注意** 本部分提供 C# 示例，但 Visual Basic 和 C++ 也受支持。
  
 1. 在 Visual Studio 中打开你的项目。
-2. 在“引用管理器”****中，根据你的项目类型选择以下引用之一：
+2. 在“引用管理器”中，根据你的项目类型选择以下引用之一：
 
-    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”****、单击“扩展”****，然后选中“适用于 XAML 的 Microsoft Advertising SDK”****（版本 10.0）旁边的复选框。
+    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
 
-    -   对于 Windows 8.1 项目：展开“Windows 8.1”****、单击“扩展”****，然后选中“适用于 Windows 8.1 XAML 的广告中介 SDK”****旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+    -   对于 Windows8.1 项目：展开“Windows8.1”、单击“扩展”，然后选中“适用于 Windows8.1 XAML 的广告中介 SDK”旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
-    -   对于 Windows Phone 8.1 项目：展开“Windows Phone 8.1”****、单击“扩展”****，然后选中“适用于 Windows Phone 8.1 XAML 的广告中介 SDK”****旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+    -   对于 Windows Phone 8.1 项目：展开“Windows Phone 8.1”、单击“扩展”，然后选中“适用于 Windows Phone 8.1 XAML 的广告中介 SDK”旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
 3.  在应用代码中，包含以下命名空间引用。
 
@@ -80,7 +81,8 @@ ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 #endif
     ```
 
-    > **注意** 在提交应用之前，你需要将测试值替换为实时值。
+    > 
+            **注意** 在提交应用之前，你需要将测试值替换为实时值。
 
 5.  实例化 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)、绑定所有事件处理程序，并请求某个广告。
 
@@ -151,13 +153,13 @@ ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 此示例假设你已在 Visual Studio 2015 中为 JavaScript 创建了通用应用项目，并且面向特定的 CPU。
 
 1. 在 Visual Studio 中打开你的项目。
-2.  在“引用管理器”****中，根据你的项目类型选择以下引用之一：
+2.  在“引用管理器”中，根据你的项目类型选择以下引用之一：
 
-    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”****、单击“扩展”****，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”****（版本 10.0）旁边的复选框。
+    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”、单击“扩展”，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
 
-    -   对于 Windows 8.1 项目：展开“Windows 8.1”****、单击“扩展”****，然后选中“适用于 Windows 8.1 Native (JS) 的 Microsoft Advertising SDK”****旁边的复选框。
+    -   对于 Windows8.1 项目：展开“Windows8.1”、单击“扩展”，然后选中“适用于 Windows8.1 Native (JS) 的 Microsoft Advertising SDK”旁边的复选框。
 
-    -   对于 Windows 8.1 项目：展开“Windows Phone 8.1”****、单击“扩展”****，然后选中“适用于 Windows Phone 8.1 本机 (JS) 的 Microsoft Advertising SDK”****旁边的复选框。
+    -   对于 Windows8.1 项目：展开“Windows Phone 8.1”、单击“扩展”，然后选中“适用于 Windows Phone 8.1 本机 (JS) 的 Microsoft Advertising SDK”旁边的复选框。
 
 3.  在 HTML 中，包括以下脚本引用。
 
@@ -238,17 +240,18 @@ ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 此示例假设你已在 Visual Studio 2015 中为 XAML 创建了通用应用项目，并且面向特定的 CPU 体系结构。
 
-> **重要提示** 根据 DirectX 的要求使用 C++ 编写此代码。
+> 
+            **重要提示** 根据 DirectX 的要求使用 C++ 编写此代码。
 
  
 1. 在 Visual Studio 中打开你的项目。
-1.  在“引用管理器”****中，根据你的项目类型选择以下引用之一：
+1.  在“引用管理器”中，根据你的项目类型选择以下引用之一：
 
-    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”****、单击“扩展”****，然后选中“适用于 XAML 的 Microsoft Advertising SDK”****（版本 10.0）旁边的复选框。
+    -   对于通用 Windows 平台 (UWP) 项目：展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
 
-    -   对于 Windows 8.1 项目：展开“Windows 8.1”****、单击“扩展”****，然后选中“适用于 Windows 8.1 XAML 的广告中介 SDK”****旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+    -   对于 Windows8.1 项目：展开“Windows8.1”、单击“扩展”，然后选中“适用于 Windows8.1 XAML 的广告中介 SDK”旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
-    -   对于 Windows Phone 8.1 项目：展开“Windows Phone 8.1”****、单击“扩展”****，然后选中“适用于 Windows Phone 8.1 XAML 的广告中介 SDK”****旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
+    -   对于 Windows Phone 8.1 项目：展开“Windows Phone 8.1”、单击“扩展”，然后选中“适用于 Windows Phone 8.1 XAML 的广告中介 SDK”旁边的复选框。 此选项会将 Microsoft Advertising 库和广告中介库都添加到你的项目，但是你可以忽略广告中介库。
 
 2.  在应用的相应标头文件中，声明间隙广告对象和相关的属性/方法。
 
@@ -351,19 +354,19 @@ ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 ### 使用 Windows 开发人员中心发布带有实时广告的应用
 
-1.  在开发人员中心仪表板中，转到应用的“盈利”****&gt;“利用广告来盈利”****页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，指定“视频间隙”****。 记下广告单元 ID 和应用程序 ID。
+1.  在开发人员中心仪表板中，转到应用的“盈利”&gt;“利用广告来盈利”页面，然后[创建独立的 Microsoft Advertising 单元](../publish/monetize-with-ads.md)。 对于广告单元类型，指定“视频间隙”。 记下广告单元 ID 和应用程序 ID。
 
 2.  在你的代码中，将测试广告单元值替换为你在开发人员中心生成的实时值。
 
 3.  使用 Windows 开发人员中心仪表板[将应用提交](../publish/app-submissions.md)到应用商店。
 
-4.  在开发人员中心仪表板中查看你的[广告性能报告](../publish/advertising-performance-report.md)。
+4.  在开发人员中心仪表板中查看[广告性能报告](../publish/advertising-performance-report.md)。
 
 <span id="interstitialbestpractices10"/>
-## 间隙最佳做法
+## 间隙最佳做法和策略
 
 
-有关如何有效地使用间隙广告的详细信息，请参阅 [UI 和用户体验指南](ui-and-user-experience-guidelines.md)。
+有关如何有效使用间隙广告和必须遵循的策略的详细信息，请参阅[间隙最佳做法和策略](ui-and-user-experience-guidelines.md#interstitialbestpractices10)。
 
 <span id="targetplatform10"/>
 ## 删除引用错误：面向特定的 CPU 平台（XAML 和 HTML）
@@ -384,6 +387,6 @@ ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

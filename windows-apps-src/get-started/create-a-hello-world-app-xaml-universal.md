@@ -2,30 +2,34 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "创建“Hello, world”应用 \\(XAML\\)"
-description: "本教程指导你如何使用 Extensible Application Markup Language \\(XAML\\) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。"
+description: "本教程指导你如何使用 Extensible Application Markup Language \\(XAML\\) 和 C# 创建一个面向 Windows10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。"
 translationtype: Human Translation
-ms.sourcegitcommit: 275c5cf8f8960f2be7cd9566e59eeb3bf4ee8f46
-ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
+ms.sourcegitcommit: 344ffda398c789f82973b5f08a0e3b791fc5ad10
+ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 
 ---
 
 # 创建“Hello, world”应用 \(XAML\)
 
-本教程指导你如何使用 XAML 和 C# 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows 10 设备上运行的应用。
+本教程指导你如何使用 XAML 和 C# 创建一个简单的“Hello, world”应用，该应用面向 Windows10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows10 设备上运行的应用。
 
 在此处，你将了解如何：
 
--   创建面向 **Windows 10** 和 **UWP** 的新 **Visual Studio 2015** 项目。
+-   创建面向 **Windows10** 和 **UWP** 的新 **Visual Studio 2015** 项目。
 -   编写 XAML 即可更改起始页上的 UI。
 -   在 Visual Studio 中，在本地桌面和手机仿真器中运行该项目。
 -   使用 SpeechSynthesizer，可在你按下某个按钮时使应用说话。
 
 ## 开始之前...
 
--   [什么是通用 Windows 应用](whats-a-uwp.md)？
--   [Windows 10 中的新增功能](https://dev.windows.com/whats-new-windows-10-dev-preview)
--   若要完成本教程，你需要 Windows 10 和 Visual Studio 2015。 [准备工作](get-set-up.md)。
--   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在“窗口”****菜单中，通过使用“重置窗口布局”****命令来重置它。
+-   
+            [什么是通用 Windows 应用](whats-a-uwp.md)？
+-   
+            [Windows10 中的新增功能](https://dev.windows.com/whats-new-windows-10-dev-preview)
+          
+-   若要完成本教程，你需要 Windows10 和 Visual Studio 2015。 
+            [准备工作](get-set-up.md)。
+-   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在“窗口”菜单中，通过使用“重置窗口布局”命令来重置它。
 
 
 ## 如果你宁愿观看视频...
@@ -38,30 +42,30 @@ ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
 
 1.  启动 Visual Studio 2015。
 
-2.  在“文件”****菜单中，依次选择“新建”&gt;“项目...”****打开“新建项目”**对话框。
+2.  在“文件”菜单中，依次选择“新建”&gt;“项目...”打开“新建项目”对话框。
 
-3.  在左侧的模板列表中，依次打开“已安装”&gt;“模板”&gt;“Visual C#”&gt;“Windows”****，然后选择“通用”****查看 UWP 项目模板列表。
+3.  在左侧的模板列表中，依次打开“已安装”&gt;“模板”&gt;“Visual C#”&gt;“Windows”，然后选择“通用”查看 UWP 项目模板列表。
 
     （如果未看到任何通用模板，可能未安装 Visual Studio 2015，也可能缺少用于创建 UWP 应用的组件。 请参阅[准备工作](get-set-up.md)，准备必要工具。）
 
-4.  选择“空白应用(通用 Windows)”****模板，然后输入“HelloWorld”作为“名称”****。 选择“确定”****。
+4.  选择“空白应用(通用 Windows)”模板，然后输入“HelloWorld”作为“名称”。 选择“确定”。
 
     ![“新建项目”窗口](images/win10-cs-01.png)
 
-5.  将显示“目标版本/最低版本”对话框。 默认设置都合适，因此选择“确定”****以创建项目。
+5.  将显示“目标版本/最低版本”对话框。 默认设置都合适，因此选择“确定”以创建项目。
 
     ![“解决方案资源管理器”窗口](images/win10-cs-02.png)
 
-6.  新项目打开时，项目文件将显示在右侧的“解决方案资源管理器”****窗格中。 若要查看你的文件，可能需要选择“解决方案资源管理器”****选项卡，而不是“属性”****选项卡。
+6.  新项目打开时，项目文件将显示在右侧的“解决方案资源管理器”窗格中。 若要查看你的文件，可能需要选择“解决方案资源管理器”选项卡，而不是“属性”选项卡。
 
     ![“解决方案资源管理器”窗口](images/win10-cs-03.png)
 
-尽管“空白应用(通用 Windows)”****为最基本的模板，但该模板仍包含很多文件。 这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
+尽管“空白应用(通用 Windows)”为最基本的模板，但该模板仍包含很多文件。 这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
 
 
 ### 文件中包含哪些内容？
 
-若要查看和编辑项目中的文件，请双击“解决方案资源管理器”****中的文件。 像展开文件夹一样展开 XAML 文件即可查看其关联的代码文件。 XAML 文件在拆分视图中打开，可同时显示设计界面和 XAML 编辑器。
+若要查看和编辑项目中的文件，请双击“解决方案资源管理器”中的文件。 像展开文件夹一样展开 XAML 文件即可查看其关联的代码文件。 XAML 文件在拆分视图中打开，可同时显示设计界面和 XAML 编辑器。
 > [!NOTE]
 > 什么是 XAML？ Extensible Application Markup Language (XAML) 是用于定义应用的用户界面的语言。 可以手动输入，也可以使用 Visual Studio 设计工具创建。 一个 .xaml 文件具有一个包含逻辑的 .xaml.cs 代码隐藏文件。 XAML 与代码隐藏一同组成完整的类。 有关详细信息，请参阅 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595)。
 
@@ -99,31 +103,31 @@ ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
 
     ![“解决方案资源管理器”窗口](images/win10-cs-04.png)
 
-2.  单击左侧垂直的“工具箱”****，打开 UI 控件列表。 （可以单击“工具箱”的标题栏中的固定图标使其始终可见。）
+2.  单击左侧垂直的“工具箱”，打开 UI 控件列表。 （可以单击“工具箱”的标题栏中的固定图标使其始终可见。）
 
     ![“解决方案资源管理器”窗口](images/win10-cs-05.png)
 
-3.  展开“常见 XAML 控件”****，然后将 **Button** 拖动到设计画面的中间。
+3.  展开“常见 XAML 控件”，然后将 **Button** 拖动到设计画面的中间。
 
     ![“解决方案资源管理器”窗口](images/win10-cs-06.png)
 
     如果查看 XAML 代码窗口，你会发现 Button 已添加到此窗口中：
 
-    ```XAML
+ ```XAML
 <Button x:name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
-```
+ ```
 
 4.  更改按钮的文本。
 
     在 XAML 代码视图中单击一下，然后将内容从“Button”更改为“Hello, world!”。
 
-    ```XAML
+```XAML
 <Button x:name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
-    注意设计画布中显示的按钮如何更新显示新文本。
+注意设计画布中显示的按钮如何更新显示新文本。
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-07.png)
+![“解决方案资源管理器”窗口](images/win10-cs-07.png)
 
 ## 步骤 3：启动应用
 
@@ -147,7 +151,7 @@ ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
 
    -或者-
 
-   在“调试”****菜单中，单击“开始调试”****。
+   在“调试”菜单中，单击“开始调试”。
 
    -或者-
 
@@ -159,7 +163,7 @@ ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
 
 ![初始应用屏幕](images/win10-cs-08.png)
 
-按 Windows 键以打开“开始”****菜单，然后显示所有应用。 请注意，本地部署应用会将其磁贴添加到“开始”****菜单。 若要稍后再次运行该应用（不是在调试模式下），请在“开始”****菜单中点击或单击其磁贴。
+按 Windows 键以打开“开始”菜单，然后显示所有应用。 请注意，本地部署应用会将其磁贴添加到“开始”菜单。 若要稍后再次运行该应用（不是在调试模式下），请在“开始”菜单中点击或单击其磁贴。
 
 它还无法执行很多操作，但祝贺你已生成了第一个 UWP 应用！
 
@@ -169,7 +173,7 @@ ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
 
    -或者-
 
-   在“调试”****菜单中，单击“停止调试”****。
+   在“调试”菜单中，单击“停止调试”。
 
    -或者-
 
@@ -177,7 +181,7 @@ ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
 
 ### 在移动设备仿真器上启动该应用
 
-你的应用可在任何 Windows 10 设备上运行，让我们看一下它在 Windows Phone 上的情况如何。
+你的应用可在任何 Windows10 设备上运行，让我们看一下它在 Windows Phone 上的情况如何。
 
 除了在桌面设备上执行调试的选项，Visual Studio 还提供用于在连接到计算机的物理移动设备上或移动设备仿真器上部署和调试应用的选项。 你可以为带有不同内存和显示配置的设备在仿真器中进行选择。
 
@@ -190,13 +194,13 @@ ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
 
 **在移动设备仿真器上开始调试**
 
-1.  最好是在具有较小屏幕和有限内存的设备上测试你的应用，为此在“标准”****工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取“仿真器 10.0.14393.0 WVGA 4 英寸 512MB”****。
+1.  最好是在具有较小屏幕和有限内存的设备上测试你的应用，为此在“标准”工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取“仿真器 10.0.14393.0 WVGA 4 英寸 512MB”。
 
-2.  单击工具栏中的“开始调试”****按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
+2.  单击工具栏中的“开始调试”按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
 
    -或者-
 
-   在“调试”****菜单中，单击“开始调试”****。
+   在“调试”菜单中，单击“开始调试”。
 
    -或者-
 
@@ -206,7 +210,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 ![移动设备上的初始应用屏幕](images/win10-cs-09.png)
 
-如果你有运行 Windows 10 的 Windows Phone，还可以将它连接到计算机，然后直接在其上部署并运行应用（尽管首选需要[启用开发人员模式](enable-your-device-for-development.md)）。
+如果你有运行 Windows10 的 Windows Phone，还可以将它连接到计算机，然后直接在其上部署并运行应用（尽管首选需要[启用开发人员模式](enable-your-device-for-development.md)）。
 
 
 ## 步骤 3：事件处理程序
@@ -217,7 +221,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 2.  双击设计画布中的按钮控件，让 Visual Studio 为该按钮创建事件处理程序。
 
-  当然，你可以手动创建所有代码。 也可以单击按钮选中它，然后访问右下方的“属性”****窗格。 如果切换到“事件”****（小闪电球），可以添加事件处理程序的名称。
+  当然，你可以手动创建所有代码。 也可以单击按钮选中它，然后访问右下方的“属性”窗格。 如果切换到“事件”（小闪电球），可以添加事件处理程序的名称。
 
 3.  编辑 *MainPage.xaml.cs*（即代码隐藏页面）中的事件处理程序代码。 这是事情变得有趣的所在之处。 默认的事件处理程序如下所示：
 
@@ -253,10 +257,10 @@ private async void button_Click(object sender, RoutedEventArgs e)
 ## 小结
 
 
-祝贺你，你已创建了自己的第一个适用于 Windows 10 和 UWP 的应用！
+祝贺你，你已创建了自己的第一个适用于 Windows10 和 UWP 的应用！ 为[下一步](learn-more.md)做好准备？
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

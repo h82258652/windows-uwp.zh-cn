@@ -4,8 +4,8 @@ ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: "在 Windows 应用商店收集 API 中使用此方法，以获取客户在与你的 Azure AD 客户端 ID 相关联的应用中所拥有的所有产品。 你可以将查询范围设置为特定产品，或使用其他筛选器。"
 title: "查询产品"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: ea517d66dbb6f373b191937de8c1cbe42c74846f
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: d614919debd979a475e93909199851390d242deb
 
 ---
 
@@ -23,8 +23,8 @@ ms.openlocfilehash: ea517d66dbb6f373b191937de8c1cbe42c74846f
 
 若要使用此方法，你需要：
 
--   使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
--   一种通过从应用中的客户端代码调用 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) 方法所生成的Windows 应用商店 ID 密钥。
+* 使用 `https://onestore.microsoft.com` 受众 URI 创建的 Azure AD 访问令牌。
+* [从应用中的客户端代码生成](view-and-grant-products-from-a-service.md#step-4)的 Windows 应用商店 ID 密钥。
 
 有关详细信息，请参阅[从服务查看和授予产品](view-and-grant-products-from-a-service.md)。
 
@@ -69,7 +69,7 @@ UserIdentity 对象包含以下参数。
 | 参数            | 类型   | 说明                                                                                                                                                                                                                  | 必需 |
 |----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | IdentityType         | 字符串 | 指定字符串值 **b2b**。                                                                                                                                                                                            | 是      |
-| identityValue        | 字符串 | Windows 应用商店 ID 密钥的字符串值。                                                                                                                                                                                    | 是      |
+| identityValue        | 字符串 | [从应用中的客户端代码生成](view-and-grant-products-from-a-service.md#step-4)的 Windows 应用商店 ID 密钥。                                                                                                                                                                                     | 是      |
 | localTicketReference | 字符串 | 已返回产品的请求标识符。 响应正文中返回的项目将具有匹配的 *localTicketReference*。 我们建议你使用与 Windows 应用商店 ID 密钥中的 *userId* 声明相同的值。 | 是      |
 
 <span/> 
@@ -217,6 +217,6 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ Description: "使用 Windows 开发人员中心仪表板通过 A/B 测试运行�
 title: "通过 A/B 测试运行应用实验"
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 50f7ad90c04d5b5672fa7910f2df669798761472
+ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
+ms.openlocfilehash: f6c8e830a3ffcff8db9c280b6a9df5b515b1a356
 
 ---
 
@@ -33,7 +33,7 @@ Windows 开发人员中心中的 A/B 测试仅受 UWP 应用支持。
 在可以通过 A/B 测试运行实验之前，必须设置你的开发计算机：
 
 * 按照[此处](../get-started/get-set-up.md)的说明为 UWP 开发设置你的开发计算机。
-* 安装 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)。 除了实验的 API，此 SDK 还提供了其他功能（例如，可在应用上显示广告并引导你的客户到“反馈中心”收集反馈）的 API。 有关此 SDK 的详细信息，请参阅 [Microsoft Store Services SDK](microsoft-store-services-sdk.md)。
+* [安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 除了实验的 API，此 SDK 还提供了其他功能（例如，可在应用上显示广告并引导你的客户到“反馈中心”收集反馈）的 API。 
 
 ## 最佳做法
 
@@ -65,6 +65,6 @@ Windows 开发人员中心中的 A/B 测试仅受 UWP 应用支持。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

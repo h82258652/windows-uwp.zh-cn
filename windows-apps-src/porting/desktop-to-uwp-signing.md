@@ -1,4 +1,15 @@
-# 对已转换的桌面应用进行签名
+---
+author: awkoren
+Description: "本文介绍如何对已转换为通用 Windows 平台 (UWP) 的桌面应用进行签名。"
+Search.Product: eADQiWindows 10XVcnh
+title: "对使用桌面到 UWP 桥转换的应用签名。"
+translationtype: Human Translation
+ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
+ms.openlocfilehash: 2db978089a6334214c3b4c85dbde8d4a4e846092
+
+---
+
+# 对使用桌面桥转换的应用签名
 
 本文介绍如何对已转换为通用 Windows 平台 (UWP) 的桌面应用进行签名。 你必须先使用证书对 .appx 程序包进行签名，然后才能部署它。
 
@@ -27,7 +38,7 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 有关其他详细信息，请参阅[如何使用 SignTool 对应用包进行签名](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)。 
 
-所有三个工具都随附在 Microsoft Windows 10 SDK 中。 若要直接调用它们，请从命令提示符调用 ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat``` 脚本。
+所有三个工具都随附在 Microsoft Windows10 SDK 中。 若要直接调用它们，请从命令提示符调用 ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat``` 脚本。
 
 ## 常见错误
 
@@ -45,11 +56,11 @@ Appx 清单中的发布者条目必须与要签名的证书的使用者匹配。
 
 **选项 2：文件资源管理器**
 
-在文件资源管理器中双击证书、选择“详细信息”**选项卡，然后在列表中选择“使用者”**字段。 接着，就可以复制内容。 
+在文件资源管理器中双击证书、选择“详细信息”选项卡，然后在列表中选择“使用者”字段。 接着，就可以复制内容。 
 
 **选项 3：CertUtil**
 
-从命令行对 PFX 文件运行 **certutil**，然后从输出中复制“使用者”**字段。 
+从命令行对 PFX 文件运行 **certutil**，然后从输出中复制“使用者”字段。 
 
 ```cmd
 certutil -dump <cert_file.pfx>
@@ -64,8 +75,10 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
 若要使验证码签名正确，验证码签名必须符合以下情况：
 
 - PE 文件中 **WIN_CERTIFICATE** 项的开头不得超过可执行文件的末尾
-- **WIN_CERTIFCATE** 项应位于映像的末尾
-- **WIN_CERTIFICATE** 项的大小必须为正数
+- 
+            **WIN_CERTIFCATE** 项应位于映像的末尾
+- 
+            **WIN_CERTIFICATE** 项的大小必须为正数
 - 对于 32 位可执行文件，**WIN_CERTIFICATE** 项必须在 **IMAGE_NT_HEADERS32** 结构之后开始，对于 64 位可执行文件，必须在 IMAGE_NT_HEADERS64 结构之后开始
 
 有关更多详细信息，请参考[验证码门户可执行文件规范](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)和 [PE 文件格式规范](https://msdn.microsoft.com/windows/hardware/gg463119.aspx)。 
@@ -80,6 +93,7 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
 - [SignTool.exe（签名工具）](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 - [如何使用 SignTool 对应用包进行签名](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)
 
-<!--HONumber=Sep16_HO2-->
+
+<!--HONumber=Nov16_HO1-->
 
 

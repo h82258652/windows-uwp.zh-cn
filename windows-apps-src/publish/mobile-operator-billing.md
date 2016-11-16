@@ -4,8 +4,8 @@ Description: "Windows 应用商店为支持此功能的移动运营商提供移�
 title: "移动运营商结算"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: 3afac16fb79262dd6a75cd44804747d173e60edf
-ms.openlocfilehash: 114783cb93d1d49eb1b2cd0d5218a35318a02df0
+ms.sourcegitcommit: ac4cf2fd0514fba5446f11f07719f62bec75d960
+ms.openlocfilehash: 827a07f45c64722eaf8be25c4f3eb3fb03780494
 
 ---
 
@@ -16,16 +16,13 @@ Windows 应用商店为支持此功能的移动运营商提供移动运营商结
 
 > **注意** 如果客户的移动运营商提供移动运营商结算，但是客户在其设备上没有此选项，请参阅以下[疑难解答步骤](http://go.microsoft.com/fwlink/p/?LinkId=523993)。
 
- 
+我们定期与移动运营商合作以扩展此付款方式的可用性。 如果建议我们应该支持下表中没有看到的移动运营商，请联系该移动运营商。
 
-我们定期与移动运营商合作以扩展此付款方式的可用性。 如果你希望建议我们支持你未在下表中看到的移动运营商，请联系该移动运营商。
+## 适用于 Windows10 和 Xbox One 设备的移动运营商计费
 
-## 适用于 Windows 10 设备的移动运营商结算
+Windows10 引入了对移动运营商计费的新实现方式。 此实现可用于所有运行 Windows10 的设备、运行 Windows10 移动版的手机和 Xbox One 主机。 在这些设备上，客户可将“移动运营商计费”添加为支付方式，并用以购物。 
 
-
-Windows 10 引入了移动运营商结算的新实现。 在包含此实现的设备上，客户可以将移动运营商结算作为支付方式添加到设备。 此实现可用于运行 Windows 10 的 PC 和平板电脑与运行 Windows 10 移动版的手机。
-
-移动运营商结算的 Windows 10 实现当前受这些移动运营商支持。
+移动运营商计费的 Windows10 实现当前受以下这些移动运营商支持。
 
 | 国家/地区  | 移动运营商 |
 |-----------------|------------------|
@@ -34,16 +31,19 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 | 匈牙利         | Telenor          |
 | 意大利           | Wind             |
 | 挪威          | Telenor          |
+| 波兰          | Orange           |
+| 俄罗斯          | Beeline          |
+| 瑞典          | Telenor          |
 | 瑞士     | Swisscom         |
 | 美国   | Sprint           |
 | 英国  | O2               |
 
  
 
-## 适用于 Windows Phone 8.x 和 Windows 10 移动版设备的移动运营商结算
+## 适用于 Windows Phone 8.x 和 Windows10 移动版设备的移动运营商结算
 
 
-移动运营商结算的旧实现适用于 Windows Phone 8.x 设备。 某些移动运营商可能选择在专用于 Windows 10 移动版的手机上包含此实现。 在包含此实现的设备上，向用户自动提供移动运营商结算作为支付方法。
+移动运营商结算的旧实现适用于 Windows Phone 8.x 设备。 某些移动运营商可能选择在专用于 Windows10 移动版的手机上包含此实现。 在包含此实现的设备上，向用户自动提供移动运营商结算作为支付方法。
 
 移动运营商结算的旧实现受这些移动运营商支持。
 
@@ -98,7 +98,6 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 | 南非         | Vodacom                                                            |
 | 西班牙                | Movistar、Vodafone、Orange                                         |
 | 瑞典               | Telenor、Tele2                                                     |
-| 瑞士          | Swisscom                                                           |
 | 阿拉伯联合酋长国 | Etisalat、Du                                                       |
 | 英国       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
 | 美国        | AT&amp;T、Sprint、T-Mobile、Verizon                                    |
@@ -118,6 +117,6 @@ Windows 10 引入了移动运营商结算的新实现。 在包含此实现的�
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,14 +4,14 @@ ms.assetid:
 description: "本文介绍了如何在通用 Windows 应用中使用 MediaPlayer 播放媒体。"
 title: "使用 MediaPlayer 播放音频和视频"
 translationtype: Human Translation
-ms.sourcegitcommit: 3d6f79ea55718d988415557bc4ac9a1f746f9053
-ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 66240809d47247312d9d4c49c7bf36ff70295559
 
 ---
 
 # 使用 MediaPlayer 播放音频和视频
 
-本文介绍了如何在通用 Windows 应用中使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类播放媒体。 Windows 10 版本 1607 对媒体播放 API 进行了显著改进，包括简化了后台音频的单进程设计、自动与系统媒体传输控件 (SMTC) 集成、能够同步多个媒体播放器、支持 Windows.UI.Composition 表面，并且提供用于创建和计划内容的媒体中断的简单界面。 若要充分利用这些改进功能，推荐用于播放媒体的最佳做法是将 **MediaPlayer** 类（而非 **MediaElement**）用于媒体播放。 引入了轻型 XAML 控件 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement)，该控件允许你在 XAML 页面中呈现媒体内容。 **MediaElement** 提供的许多播放控件和状态 API 现在都可通过新 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 对象获取。 **MediaElement** 将继续运行以支持向后兼容，但不会向此类添加其他功能。
+本文介绍了如何在通用 Windows 应用中使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 类播放媒体。 Windows10 版本 1607 对媒体播放 API 进行了显著改进，包括简化了后台音频的单进程设计、自动与系统媒体传输控件 (SMTC) 集成、能够同步多个媒体播放器、支持 Windows.UI.Composition 表面，并且提供用于创建和计划内容的媒体中断的简单界面。 若要充分利用这些改进功能，推荐用于播放媒体的最佳做法是将 **MediaPlayer** 类（而非 **MediaElement**）用于媒体播放。 引入了轻型 XAML 控件 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement)，该控件允许你在 XAML 页面中呈现媒体内容。 **MediaElement** 提供的许多播放控件和状态 API 现在都可通过新 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 对象获取。 **MediaElement** 将继续运行以支持向后兼容，但不会向此类添加其他功能。
 
 本文将向你介绍典型的媒体播放应用所使用的 **MediaPlayer** 功能。 请注意，**MediaPlayer** 将 [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) 类用作所有媒体项目的容器。 此类允许你加载并播放来自许多不同源的媒体，这些来源包括本地文件、内存流和网络源等，但使用的都是同一界面。 此外，还有更高级的类能够与 **MediaSource** 一同使用，例如 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) 和 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList)，这些类提供更加高级的功能，例如播放列表，以及通过音频、视频和元数据多轨道管理媒体源的功能。 有关 **MediaSource** 和相关 API 的详细信息，请参阅[媒体项、播放列表和曲目](media-playback-with-mediasource.md)。
 
@@ -39,6 +39,9 @@ ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
 还可以在 **MediaPlayerElement** 上设置播放源，元素将自动创建可以使用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.MediaPlayer) 属性访问的新 **MediaPlayer** 实例。
 
 [!code-cs[GetPlayerFromElement](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetGetPlayerFromElement)]
+
+> [!NOTE] 
+> 如果你通过将 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 设置为 false 禁用 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 的 [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager)，它将中断 **MediaPlayer** 和 **MediaPlayerElement** 提供的 [**TransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.TransportControls) 之间的链接，以致内置传输控件不再自动控制播放器的播放。 作为替代方法，你必须实现自己的控件才能控制 **MediaPlayer**。
 
 ##MediaPlayer 常见任务
 本部分介绍如何使用 **MediaPlayer** 的一些功能。
@@ -92,7 +95,7 @@ ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
         
 ##使用 MediaPlayerSurface 将视频呈现到 Windows.UI.Composition 界面
-从 Windows 10 版本 1607 开始，可以使用 **MediaPlayer** 将视频呈现到 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.ICompositionSurface)，这可以支持播放器与 [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition) 命名空间中的 API 进行互操作。 合成框架允许你在 XAML 与低级别 DirectX 图形 API 之间的可视化层处理图形。 这可以使任意 XAML 控件都能够执行呈现视频等方案。 有关使用合成 API 的详细信息，请参阅[可视化层](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)。
+从 Windows10 版本 1607 开始，可以使用 **MediaPlayer** 将视频呈现到 [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.ICompositionSurface)，这可以支持播放器与 [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition) 命名空间中的 API 进行互操作。 合成框架允许你在 XAML 与低级别 DirectX 图形 API 之间的可视化层处理图形。 这可以使任意 XAML 控件都能够执行呈现视频等方案。 有关使用合成 API 的详细信息，请参阅[可视化层](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)。
 
 以下示例介绍了如何将视频播放器内容呈现到 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Canvas) 控件。 本例中特定于媒体播放器的调用为 [**SetSurfaceSize**](https://msdn.microsoft.com/library/windows/apps/mt489968) 和 [**GetSurface**](https://msdn.microsoft.com/library/windows/apps/mt489963)。 **SetSurfaceSize** 告知系统为呈现内容应该分配的缓冲区大小。 **GetSurface** 将 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.Compositor) 视作参数，并且检索 [**MediaPlayerSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerSurface) 类的实例。 使用此类可以访问用于通过 [**CompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerSurface.CompositionSurface) 属性创建表面和公开表面自身的 **MediaPlayer** 和 **Compositor**。
 
@@ -101,7 +104,7 @@ ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
 [!code-cs[Compositor](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCompositor)]
         
 ##使用 MediaTimelineController 跨多台播放器同步内容。
-如前文所述，应用可以同时使用多个 **MediaPlayer** 对象。 默认情况下，所创建的每个 **MediaPlayer** 都独立操作。 在某些情况下（例如同步视频的解说音轨），你可能希望同步多台播放器的状态、播放位置和播放速度。 从 Windows 10 版本 1607 开始，可以使用 [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) 类实现这种行为。
+如前文所述，应用可以同时使用多个 **MediaPlayer** 对象。 默认情况下，所创建的每个 **MediaPlayer** 都独立操作。 在某些情况下（例如同步视频的解说音轨），你可能希望同步多台播放器的状态、播放位置和播放速度。 从 Windows10 版本 1607 开始，可以使用 [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) 类实现这种行为。
 
 ###实现播放控件
 以下示例展示了如何使用 **MediaTimelineController** 控制 **MediaPlayer** 的两个实例。 首先，**MediaPlayer** 的每个实例均进行实例化，并且 **Source** 设置为媒体文件。 接下来，创建新 **MediaTimelineController**。 对于每个 **MediaPlayer**，将 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) 属性设为 False 禁用与每台播放器关联的 [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager)。 然后，[**TimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.TimelineController) 属性设置为时间线控制器对象。
@@ -174,6 +177,6 @@ ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

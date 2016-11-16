@@ -4,8 +4,8 @@ Description: "应用提交过程的定价和可用性页可让你确定你的应
 title: "设置应用定价和可用性"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 translationtype: Human Translation
-ms.sourcegitcommit: fc5265cf7d455e34225fd74f9792cdb46b0029d7
-ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
+ms.sourcegitcommit: 2ce776b69eed7d5803db7a37b54c4b00f58dc6c0
+ms.openlocfilehash: e5b956f819af3cbbd7e00d77de77a15678a2ab4c
 
 ---
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
 
 许多开发人员选择允许客户使用应用商店提供的试用功能免费试用他们的应用。 默认情况下，应用将不作为免费试用提供，但如果你希望提供免费试用，请从“免费试用”****下拉菜单中选择一个值。
 
-选择**“试用永不过期”**，即可让客户无限期地免费访问你的应用。 如果你想要鼓励他们购买完整版本，请确保添加相关代码以[排除或限制试用版中的某些功能](https://msdn.microsoft.com/library/windows/apps/mt219685)。
+选择**“试用永不过期”**，即可让客户无限期地免费访问你的应用。 如果你想要鼓励他们购买完整版本，请确保添加相关代码以[排除或限制试用版中的某些功能](../monetize/in-app-purchases-and-trials.md)。
 
 也可以使用相关选项选择**“1 天”**、**“7 天”**、**“15 天”**或**“30 天”**的限期试用。 你仍然可以在试用期内限制某些功能，或者可以允许客户在该时间段内访问全部功能。
 
@@ -86,10 +86,6 @@ ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
 
 
 
-
-
-
-
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

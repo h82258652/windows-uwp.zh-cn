@@ -6,8 +6,8 @@ ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: fe012189566a20203b2bf8cae72f80655eeadfd1
-ms.openlocfilehash: 29a33550c3b8c80c1ae2c8349fc0b771717325f1
+ms.sourcegitcommit: 19e033455caf677c4e65ffb7bd7ce11a5a93b7a9
+ms.openlocfilehash: 5f6aee51984f86c67db9dc77eace614e385df088
 
 ---
 
@@ -22,9 +22,27 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 当与特定的外形规格配对时，自行熟悉每个输入设备类型及其行为、功能和限制。 这可以帮助你决定平台控件和提示是足够用于应用，还是要求你提供自定义的交互体验。
 
+## Surface Dial
+
+对于 Windows10 周年更新，我们引入了称为 Windows Wheel 的新输入设备类别。 Surface Dial 是此类设备中的第一项。 
+
+### 设备支持
+
+-   平板电脑
+-   电脑和笔记本电脑
+
+### 典型用法
+
+借助基于旋转操作（或手势）的外形规格，Surface Dial 旨在成为对主设备输入进行补充或修改的多模态辅助输入设备。 在大多数情况下，用户使用其惯用手执行某个任务（如使用笔进行墨迹书写）期间，该设备由其非惯用手操控。
+
+### 详细信息
+
+[Surface Dial 设计指南](windows-wheel-interactions.md)
+
+
 ## Cortana
 
-在 Windows 10 中，你可以使用 **Cortana** 扩展性来处理用户的语音命令，并启动应用程序来执行单个操作。
+在 Windows10 中，你可以使用 **Cortana** 扩展性来处理用户的语音命令，并启动应用程序来执行单个操作。
 
 ### 设备支持
 
@@ -194,7 +212,7 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 
 键盘是主要的文本输入设备。对于残障人士，或者认为键盘是与应用交互的最快和最有效方法的用户而言，键盘通常非常重要。
 
-通过兼容 Windows 10 移动版设备新体验的[适用于手机的 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)，用户可以将手机连接鼠标和键盘来使手机像笔记本电脑一样工作。
+通过兼容 Windows10 移动版设备新体验的[适用于手机的 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)，用户可以将手机连接鼠标和键盘来使手机像笔记本电脑一样工作。
 
 ### 设备支持
 
@@ -332,6 +350,6 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
