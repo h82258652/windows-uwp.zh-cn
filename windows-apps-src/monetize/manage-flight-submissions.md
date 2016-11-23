@@ -16,8 +16,7 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 在 Windows 应用商店提交 API 中使用以下方法，为注册到 Windows 开发人员中心帐户的应用管理软件包外部测试版提交。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->
-            **注意**
+>**注意**
             &nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 在使用这些方法创建或管理软件包外部测试版的提交前，该软件包外部测试版必须已存在于开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，或者使用[管理软件包外部测试版](manage-flights.md)中所述的 Windows 应用商店提交 API 方法，可以创建软件包外部测试版。
 
 | 方法        | URI    | 描述                                                                 |
@@ -40,8 +39,7 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 1. 如果尚未执行此操作，请完成[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)中所述的先决条件，包括将 Azure AD 应用程序与 Windows 开发人员中心帐户相关联并获取客户端 ID 和密钥。 你只需执行此操作一次；有了客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。  
 
-2. 
-            [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Windows 应用商店提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
+2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Windows 应用商店提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
 3. 通过执行 Windows 应用商店提交 API 中的以下方法[创建软件包外部测试版提交](create-a-flight-submission.md)。 此方法创建新的正在进行的提交，这是你上次发布的提交的副本。
 
@@ -59,8 +57,7 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
   ```
 
-  >
-            **注意**
+  >**注意**
             &nbsp;&nbsp;如果要为提交添加新软件包，请确保更新提交数据，以便在 ZIP 存档中引用这些文件的名称和相对路径。
 
 4. 如果要为提交添加新软件包，请将 ZIP 存档上传到 SAS URI，该 URI 已在步骤 2 中调用的 POST 方法的响应正文中提供。 有关详细信息，请参阅[共享访问签名，第 2 部分：使用 Blob 存储创建和使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
@@ -100,8 +97,7 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 * 若要启用软件包外部测试版提交的逐步软件包推出：
 
-  1. 
-            [创建软件包外部测试版提交](create-a-flight-submission.md)或[获取软件包外部测试版提交](get-a-flight-submission.md)。
+  1. [创建软件包外部测试版提交](create-a-flight-submission.md)或[获取软件包外部测试版提交](get-a-flight-submission.md)。
   2. 在响应数据中，找到 [packageRollout](#package-rollout-object) 资源、将“isPackageRollout”字段设置为 true，然后将“packageRolloutPercentage”字段设置为应获取已更新的软件包的应用客户百分比。
   3. 将已更新的软件包外部测试版提交数据传递到[更新软件包外部测试版提交](update-a-flight-submission.md)方法。
 
@@ -258,8 +254,7 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 此资源具有以下值。
 
->
-            **注意**
+>**注意**
             &nbsp;&nbsp;当调用[更新软件包外部测试版提交](update-a-flight-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。
 
 | 值           | 类型    | 描述                                                                                                                                                                                                                          |

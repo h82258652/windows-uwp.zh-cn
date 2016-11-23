@@ -20,8 +20,7 @@ zip 文件始终具有最新示例。 无需 GitHub 帐户即可下载它。 当
 ![示例下载](images/SamplesDownloadButton.png)
 
 
-> 
->             **注意**：UWP 示例需要使用 Visual Studio 2015 和 Windows SDK 才能打开、生成并运行。 如果尚未安装 Visual Studio，可获取 Visual Studio 2015 Community Edition 的免费副本，其中包含对[此处](http://go.microsoft.com/fwlink/p/?LinkID=280676)生成 UWP 应用的支持。  
+> **注意**：UWP 示例需要使用 Visual Studio 2015 和 Windows SDK 才能打开、生成并运行。 如果尚未安装 Visual Studio，可获取 Visual Studio 2015 Community Edition 的免费副本，其中包含对[此处](http://go.microsoft.com/fwlink/p/?LinkID=280676)生成 UWP 应用的支持。  
 >
 > 此外，请确保解压缩整个存档，而不只是个别示例。 所有示例都依赖于该存档中的 SharedContent 文件夹。 UWP 功能示例使用 Visual Studio 中的“已链接”文件减少重复的常见文件，包括示例模板文件和图像资源。 这些常见文件存储在存储库根的 SharedContent 文件夹中，并且指代使用链接的项目文件。
 

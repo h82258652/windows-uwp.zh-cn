@@ -22,13 +22,10 @@ ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 
 ## 开始之前...
 
--   
-            [什么是通用 Windows 应用](whats-a-uwp.md)？
--   
-            [Windows10 中的新增功能](https://dev.windows.com/whats-new-windows-10-dev-preview)
+-   [什么是通用 Windows 应用](whats-a-uwp.md)？
+-   [Windows10 中的新增功能](https://dev.windows.com/whats-new-windows-10-dev-preview)
           
--   若要完成本教程，你需要 Windows10 和 Visual Studio 2015。 
-            [准备工作](get-set-up.md)。
+-   若要完成本教程，你需要 Windows10 和 Visual Studio 2015。 [准备工作](get-set-up.md)。
 -   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在“窗口”菜单中，通过使用“重置窗口布局”命令来重置它。
 
 ## 步骤 1：在 Visual Studio 中创建新项目
@@ -269,8 +266,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 在 UWP 应用中，你无需担心触控、鼠标与其他指针输入形式之间的区别。 你只需使用你了解的事件（如 [click](https://msdn.microsoft.com/library/windows/apps/Hh441312)），这些事件适用于所有输入形式。
 
-
-            **提示** 应用还可以使用新的 *MSPointer\** 和 *MSGesture\** 事件，这些事件适用于触控、鼠标以及笔输入，并可以提供有关触发事件的设备的其他信息。 有关详细信息，请参阅[响应用户交互](https://msdn.microsoft.com/library/windows/apps/Hh700412)和[手势、操作以及交互](https://msdn.microsoft.com/library/windows/apps/Hh761498)。
+**提示** 应用还可以使用新的 *MSPointer\** 和 *MSGesture\** 事件，这些事件适用于触控、鼠标以及笔输入，并可以提供有关触发事件的设备的其他信息。 有关详细信息，请参阅[响应用户交互](https://msdn.microsoft.com/library/windows/apps/Hh700412)和[手势、操作以及交互](https://msdn.microsoft.com/library/windows/apps/Hh761498)。
 
 我们继续并创建事件处理程序。
 
@@ -302,11 +298,9 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 在 [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) 处理程序内，该代码会检查发生了何种类型的激活。 存在多种不同类型的激活。 例如，当用户启动应用和用户希望打开与应用关联的文件时会激活应用。 （有关详细信息，请参阅[应用生命周期](https://msdn.microsoft.com/library/windows/apps/Mt243287)。）
 
-我们对 [launch](https://msdn.microsoft.com/library/windows/apps/BR224693) 激活感兴趣。 只要应用未在运行而后由用户激活，就会*启动*该应用。 不论应用过去是否关闭，或者是否属于首次启动，激活都会调用 [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 
-            **WinJS.UI.processAll** 包含在对 [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的调用中，这样可确保初始屏幕不会在应用页面准备就绪前停止。
+我们对 [launch](https://msdn.microsoft.com/library/windows/apps/BR224693) 激活感兴趣。 只要应用未在运行而后由用户激活，就会*启动*该应用。 不论应用过去是否关闭，或者是否属于首次启动，激活都会调用 [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 **WinJS.UI.processAll** 包含在对 [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的调用中，这样可确保初始屏幕不会在应用页面准备就绪前停止。
 
-
-            **提示**
+**提示**
             **WinJS.UI.processAll** 函数扫描 default.html 文件中是否存在 WinJS 控件并初始化这些控件。 到目前为止，我们尚未添加其中任何控件，但最好保留此代码，以便在以后需要时进行添加。
 
 为非 WinJS 控件注册事件处理程序的较好时机是在调用 **WinJS.UI.processAll** 之后。
@@ -333,8 +327,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 运行应用。 当你在文本框中输入姓名并单击按钮时，应用会显示个性化问候。
 
-
-            **注意** 如果你想知道我们为何在代码中使用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) 注册事件而不是在 HTML 中设置 [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，请参阅[基本应用编码](https://msdn.microsoft.com/library/windows/apps/Hh780660)以获得详细说明。
+**注意** 如果你想知道我们为何在代码中使用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) 注册事件而不是在 HTML 中设置 [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，请参阅[基本应用编码](https://msdn.microsoft.com/library/windows/apps/Hh780660)以获得详细说明。
 
 ## 步骤 6：添加 Windows JavaScript 库控件
 
@@ -373,8 +366,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 ## 步骤 7：为 Windows JavaScript 库控件注册事件处理程序
 
 
-为 WinJS 控件注册事件处理程序的方法与为标准 HTML 控件注册事件处理程序稍有不同。 如前所述，**onactivated** 事件处理程序调用 **WinJS.UI.processAll** 方法来初始化标记中的 WinJS。 
-            **WinJS.UI.processAll** 调用包含在对 **setPromise** 方法的调用中，如下所示：
+为 WinJS 控件注册事件处理程序的方法与为标准 HTML 控件注册事件处理程序稍有不同。 如前所述，**onactivated** 事件处理程序调用 **WinJS.UI.processAll** 方法来初始化标记中的 WinJS。 **WinJS.UI.processAll** 调用包含在对 **setPromise** 方法的调用中，如下所示：
 
 ```javascript
             args.setPromise(WinJS.UI.processAll());           
@@ -384,12 +376,9 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 如果 **WinJS.UI.processAll** 是典型方法，我们可以在调用该方法后立即注册 **Rating** 事件处理程序。 但是，**WinJS.UI.processAll** 方法是异步的，因此它后面的任何代码都可能在 **WinJS.UI.processAll** 完成之前运行。 那么我们该怎么办？ 我们使用 [Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) 对象在 **WinJS.UI.processAll** 完成时接收通知。
 
-与所有异步 WinJS 方法类似，**WinJS.UI.processAll** 会返回一个 **Promise** 对象。 
-            **Promise** 是对某件事将在将来发生的“承诺”，当该事件发生时，表示 **Promise** 已完成。
+与所有异步 WinJS 方法类似，**WinJS.UI.processAll** 会返回一个 **Promise** 对象。 **Promise** 是对某件事将在将来发生的“承诺”，当该事件发生时，表示 **Promise** 已完成。
 
-
-            [Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) 对象具有 [then](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，该方法接受“completed”函数作为参数。 
-            **Promise** 在完成时调用此函数。
+[Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) 对象具有 [then](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，该方法接受“completed”函数作为参数。 **Promise** 在完成时调用此函数。
 
 通过向“completed”函数添加代码并将其传递到 **Promise** 对象的 **then** 方法，你可以确保代码在 **WinJS.UI.processAll** 完成后执行。
 
@@ -413,8 +402,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
     </body>
 ```
 
-2.  在 main.js 文件中，为 **Rating** 控件的 [change](https://msdn.microsoft.com/library/windows/apps/BR211891) 事件创建一个名为 `ratingChanged` 的事件处理程序。 
-            [eventInfo](https://msdn.microsoft.com/library/windows/apps/Hh465776) 参数包含 **detail.tentativeRating** 属性，该属性可提供新的用户分级。 检索该值并在输出 **div** 中显示该值。
+2.  在 main.js 文件中，为 **Rating** 控件的 [change](https://msdn.microsoft.com/library/windows/apps/BR211891) 事件创建一个名为 `ratingChanged` 的事件处理程序。 [eventInfo](https://msdn.microsoft.com/library/windows/apps/Hh465776) 参数包含 **detail.tentativeRating** 属性，该属性可提供新的用户分级。 检索该值并在输出 **div** 中显示该值。
 
 ```javascript
         function ratingChanged(eventInfo) {

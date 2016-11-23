@@ -96,8 +96,7 @@ Windows 零售商店团队可能直接联系开发人员，以设置有关如何
 
 ## 准备代码库用于零售演示模式开发
 
-
-  [
+[
     **RetailInfo**
   ](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.aspx) 实用程序类中的 [**IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) 属性（作为 Windows10 SDK 中的 [Windows.System.Profile](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.aspx) 命名空间的一部分）用作指定应用程序在哪个代码路径上运行的布尔值指示器 - _正常_模式或_零售_模式。 
 

@@ -141,8 +141,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-
-            **重要提示** 请确保将最终的 `if (rootFrame.Content == null)` 路径替换为 `rootFrame.Navigate(deepLinkPageType, e);`，如上述示例所示。
+**重要提示** 请确保将最终的 `if (rootFrame.Content == null)` 路径替换为 `rootFrame.Navigate(deepLinkPageType, e);`，如上述示例所示。
 
 ## 测试它：本地验证工具
 
@@ -152,8 +151,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 通过使用以下参数运行此工具来测试应用和网站的配置：
 
-
-            **AppHostRegistrationVerifier.exe**
+**AppHostRegistrationVerifier.exe**
             *主机名 packagefamilyname 文件路径*
           
 
@@ -171,8 +169,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 如果你希望遵循协议激活逻辑，请在 **OnActivated** 事件处理程序中设置断点。
 
-
-            **注意：**如果你在 Microsoft Edge 浏览器中单击某个链接，它不会启动你的应用，但会将你转到你的网站。
+**注意：**如果你在 Microsoft Edge 浏览器中单击某个链接，它不会启动你的应用，但会将你转到你的网站。
 
 ## AppUriHandlers 提示：
 
@@ -196,8 +193,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 [处理 URI 激活](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 
-
-            [关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)说明如何使用 LaunchUriAsync() API。
+[关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)说明如何使用 LaunchUriAsync() API。
 
 
 

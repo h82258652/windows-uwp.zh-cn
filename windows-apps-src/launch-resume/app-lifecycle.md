@@ -53,8 +53,7 @@ Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**
 |**Running** | 当用户尝试再次启动应用时，该应用已经打开。 | 无。 请注意，不会启动应用的另一个实例。 只需激活已在运行的实例。 |
 
 
-
-            **注意**
+**注意**
             *当前用户会话*基于 Windows 登录。 只要当前用户未注销、关机或者重新启动 Windows，当前用户会话便可以保留在诸如锁屏界面身份验证、切换用户等的多个事件中。 
 
 需要注意的一种重要情形是：如果设备具有足够资源，操作系统会预启动针对该行为选择的常用应用，以优化响应性。 在后台启动要预启动的应用，然后快速暂停，以便当用户切换到这些应用时，可以恢复它们，这比启动应用的速度要快得多。
@@ -71,12 +70,10 @@ Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**
 
 除了由用户启动之外，应用还可以由系统激活。 应用可以由合约（如“共享”合约）激活。 或者应用可能会激活以处理自定义 URI 协议或文件（附带注册应用以处理的扩展名）。 有关可激活应用的方法的列表，请参阅 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)。
 
-
-            [
+[
               **Windows.UI.Xaml.Application**
             ](https://msdn.microsoft.com/library/windows/apps/br242324) 类定义可替代以处理各种应用激活方法的方法。
-
-            [
+[
               **OnActivated**
             ](https://msdn.microsoft.com/library/windows/apps/br242330) 可以处理所有可能的激活类型。 但是，更常见的做法是使用特定方法来处理最常见的激活类型，而对于不太常见的激活类型，则使用 **OnActivated** 作为回滚方法。 有其他方法可用于特定激活：
 
@@ -89,8 +86,7 @@ Windows10 版本 1607 又引入了两个应用模型状态：**在前台运行**
 
 这些方法的事件数据包含我们之前所见的相同 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 属性，这会告诉你应用在激活之前处于哪种状态。 解释状态以及应该对它采取的操作，方法与上面[应用启动](#App launch)部分中所述的方法相同。
 
-
-            **注意** 如果你使用计算机的管理员帐户登录，则你将无法激活 UWP 应用。
+**注意** 如果你使用计算机的管理员帐户登录，则你将无法激活 UWP 应用。
 
 ## 在后台运行 ##
 
@@ -108,16 +104,13 @@ Running in the foreground 意味着应用 UI 可见。
 
 以前，用于加载 UI 资源的最佳位置是在 **Activated** 或 **Resuming** 事件处理程序中。 现在，**LeavingBackground** 是用于验证 UI 是否准备就绪的最佳位置。
 
-请务必在此时检查可视化资源是否已准备就绪，因为这是应用程序对用户可见之前执行此操作的最后机会。 适用于此事件处理程序的所有 UI 都应快速完成，因为会影响用户体验的启动和恢复时间。 
-            **LeavingBackground** 用于确保 UI 的第一帧已准备就绪时。 然后，应该异步处理长时间运行的存储或网络调用，以便事件处理程序可能会返回。
+请务必在此时检查可视化资源是否已准备就绪，因为这是应用程序对用户可见之前执行此操作的最后机会。 适用于此事件处理程序的所有 UI 都应快速完成，因为会影响用户体验的启动和恢复时间。 **LeavingBackground** 用于确保 UI 的第一帧已准备就绪时。 然后，应该异步处理长时间运行的存储或网络调用，以便事件处理程序可能会返回。
 
 当用户离开应用程序时，应用会重新进入 Running in background 状态。
 
 ## 重新进入后台状态
 
-
-            **EnteredBackground** 事件表明应用在前台不再可见。 
-            **EnteredBackground** 在最小化应用时（在台式计算机上）引发，而在切换到主屏幕或另一个应用时（在手机上）引发。
+**EnteredBackground** 事件表明应用在前台不再可见。 **EnteredBackground** 在最小化应用时（在台式计算机上）引发，而在切换到主屏幕或另一个应用时（在手机上）引发。
 
 ### 减少应用的内存使用量
 
@@ -167,8 +160,7 @@ Running in the foreground 意味着应用 UI 可见。
 
 当应用确定它在终止后被激活时，它应该加载它保存的应用程序数据，以使应用处于与其终止之前相同的状态。 当用户切换回已终止的暂停应用时，该应用应该在其 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中还原其应用程序数据。 当终止应用时系统不会通知应用，因此在暂停应用之前，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且当在终止后又激活应用时还原这些内容。
 
-
-            **有关使用 Visual Studio 进行调试的注释：**Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保“调试位置”工具栏显示出来，然后单击“暂停”图标。
+**有关使用 Visual Studio 进行调试的注释：**Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保“调试位置”工具栏显示出来，然后单击“暂停”图标。
 
 ## 应用恢复
 
@@ -184,8 +176,7 @@ Running in the foreground 意味着应用 UI 可见。
 
 当应用暂停时，它不会收到它注册用于接收的任何网络事件。 这些网络事件没有排队，它们只是丢失了。 因此，你的应用应该在恢复时测试网络状态。
 
-
-            **注意** 由于 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件未从 UI 线程中引发，因此如果恢复处理程序中的代码与 UI 通信，则必须使用调度程序。 请参阅[从后台线程更新 UI 线程](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)以获取有关如何执行此操作的代码示例。
+**注意** 由于 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件未从 UI 线程中引发，因此如果恢复处理程序中的代码与 UI 通信，则必须使用调度程序。 请参阅[从后台线程更新 UI 线程](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)以获取有关如何执行此操作的代码示例。
 
 有关一般准则，请参阅[应用暂停和恢复指南](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 
@@ -195,8 +186,7 @@ Running in the foreground 意味着应用 UI 可见。
 
 没有事件指示用户关闭了应用。 当用户关闭应用时，应用首先处于暂停状态，以使你有机会保存其状态。 在 Windows8.1 和更高版本中，在用户关闭应用之后，该应用将从屏幕和切换列表中删除，但不会显式终止。
 
-
-            **用户关闭行为：**如果应用在被用户关闭时需要执行不同于被 Windows 关闭时的操作，你可以使用激活事件处理程序确定应用是被用户还是被 Windows 终止的。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
+**用户关闭行为：**如果应用在被用户关闭时需要执行不同于被 Windows 关闭时的操作，你可以使用激活事件处理程序确定应用是被用户还是被 Windows 终止的。 请参阅 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 枚举的参考中 **ClosedByUser** 和 **Terminated** 状态的说明。
 
 我们建议，应用不要以编程方式自行关闭，除非绝对必要。 例如，如果应用检测到内存泄漏，它可以关闭自身来确保用户个人数据的安全性。
 
@@ -218,24 +208,19 @@ Running in the foreground 意味着应用 UI 可见。
 
 ## 关键应用程序生命周期 API
 
--   
-            [
+-   [
               **Windows.ApplicationModel**
             ](https://msdn.microsoft.com/library/windows/apps/br224691) 命名空间
--   
-            [
+-   [
               **Windows.ApplicationModel.Activation**
             ](https://msdn.microsoft.com/library/windows/apps/br224766) 命名空间
--   
-            [
+-   [
               **Windows.ApplicationModel.Core**
             ](https://msdn.microsoft.com/library/windows/apps/br205865) 命名空间
--   
-            [
+-   [
               **Windows.UI.Xaml.Application**
             ](https://msdn.microsoft.com/library/windows/apps/br242324) 类 (XAML)
--   
-            [
+-   [
               **Windows.UI.Xaml.Window**
             ](https://msdn.microsoft.com/library/windows/apps/br209041) 类 (XAML)
 

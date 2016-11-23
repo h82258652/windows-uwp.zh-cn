@@ -41,8 +41,7 @@ ms.openlocfilehash: 0652bd1c3e52c9026b26e14b2475a4b34997ac91
 
   ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
 
-    > 
-            **注意** 此图像适用于生成 Windows10 UWP 项目的 Visual Studio 2015。 如果你正在生成 Windows8.1 或 Windows Phone 8.1 应用，或正在使用 Visual Studio 2013，你的屏幕看起来有所不同。
+    > **注意** 此图像适用于生成 Windows10 UWP 项目的 Visual Studio 2015。 如果你正在生成 Windows8.1 或 Windows Phone 8.1 应用，或正在使用 Visual Studio 2013，你的屏幕看起来有所不同。
 
 3.  在“引用管理器”中，单击“确定”。
 4.  修改你要在其中嵌入广告的页面的 XAML，以包含 **Microsoft.Advertising.WinRT.UI** 命名空间。 例如，在由 Visual Studio 生成的默认示例应用中（即，在应用 MyAdFundedWindows10AppXAML 中），XAML 页面是 **MainPage.XAML**。
@@ -88,8 +87,7 @@ ms.openlocfilehash: 0652bd1c3e52c9026b26e14b2475a4b34997ac91
 
     1.  将**页面**中的 [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) 属性分配给[测试模式值](test-mode-values.md)中提供的测试值。
 
-        > 
-            **注意** 在提交应用之前，你需要将测试值替换为实时值。
+        > **注意** 在提交应用之前，你需要将测试值替换为实时值。
 
     2.  调整控件的高度和宽度，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
 
@@ -149,8 +147,7 @@ ms.openlocfilehash: 0652bd1c3e52c9026b26e14b2475a4b34997ac91
 
 * C#：有关如何向 **AdControl** 事件分配事件处理程序的示例，请参阅 [XAML 属性示例](xaml-properties-example.md)。 有关介绍采用 C# 编写的事件处理程序的示例代码，请参阅 [C# 中的 AdControl 事件](adcontrol-events-in-c.md)。
 
-* C++：当前版本的 Microsoft Advertising 库支持 C++。 
-            **AdControl** 类采用本机 C++ 实现，并且不会加载 .NET CLR。 有关演示如何在 C++ 中使用 **AdControl** 的代码示例，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
+* C++：当前版本的 Microsoft Advertising 库支持 C++。 **AdControl** 类采用本机 C++ 实现，并且不会加载 .NET CLR。 有关演示如何在 C++ 中使用 **AdControl** 的代码示例，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
 * Visual Basic：有关如何向 **AdControl** 事件分配事件处理程序的示例，请参阅 [XAML 属性示例](xaml-properties-example.md)。
 

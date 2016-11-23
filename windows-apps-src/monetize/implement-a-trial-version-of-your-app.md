@@ -16,8 +16,7 @@ ms.openlocfilehash: 8858c9f7f9b40e2bca30054b99ab47c7388aef57
 
 面向 Windows10 版本 1607 或更高版本的应用可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类的成员，确定用户是否有应用的试用许可证，并在应用运行时许可证的状态发生更改的情况下获得通知。
 
->
-  **注意**
+>**注意**
   &nbsp;&nbsp;本文适用于面向 Windows10 版本 1607 或更高版本的应用。 如果你的应用面向 Windows10 的较早版本，则必须使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间来替代 **Windows.Services.Store** 命名空间。 有关详细信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 ## 实现试用版的指南

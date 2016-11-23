@@ -23,8 +23,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 如果你遇到任何问题或需要帮助，请[联系支持人员](http://go.microsoft.com/fwlink/?LinkId=393643)。
 
->
-            **注意**
+>**注意**
             &nbsp;&nbsp;如果你之前已将应用更新为使用 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)（适用于 UWP 应用）或 [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk)（适用于 Windows8.1 和 Windows Phone 8.x 应用），则应用已使用最新的可用广告 SDK，并且你无需对应用进行任何进一步的更改。
 
 ## 先决条件
@@ -33,8 +32,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 * 应用的 .appx 或 .xap 包。
 
-  >
-            **注意**
+  >**注意**
             &nbsp;&nbsp;如果你不再有应用的 .appx 或 .xap 包，但仍然有包含曾用于生成应用的 Visual Studio 和广告 SDK 版本的开发计算机，则可以在 Visual Studio 中重新生成 .appx 或 .xap 包。
 
 <span id="part-1" />
@@ -166,8 +164,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 1. 确保开发计算机已安装 Visual Studio 2015（适用于 UWP、Windows8.1 或 Windows Phone 8.x 项目）或 Visual Studio 2013（适用于 Windows8.1 或 Windows Phone 8.x 项目）。
 
-  >
-            **注意**
+  >**注意**
             &nbsp;&nbsp;如果 Visual Studio 在开发计算机上处于打开状态，请在执行以下步骤前关闭它。
 
 1.  从开发计算机中卸载 Microsoft Advertising SDK 和广告中介 SDK 的所有以前版本。

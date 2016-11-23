@@ -13,8 +13,7 @@ ms.openlocfilehash: d535af06ab720753980a1125df61323a96e2f406
 # Surface Dial 交互
 
 ![适配 Surface Studio 的 Surface Dial 的图像](images/windows-wheel/dial-pen-studio-600px.png)  
-
-            *适配 Surface Studio 和触控笔的 Surface Dial*（可通过 [Microsoft 官方商城](https://aka.ms/purchasesurfacedial)购买）。
+*适配 Surface Studio 和触控笔的 Surface Dial*（可通过 [Microsoft 官方商城](https://aka.ms/purchasesurfacedial)购买）。
 
 ## 概述
 
@@ -83,8 +82,7 @@ Surface Dial 与 Windows 紧密集成，并且支持菜单上的一组内置工�
 
 ### UX 指南
 
-
-            **确保工具对应于当前上下文**当你彻底了解了工具执行的具体操作和 Surface Dial 交互的工作原理后，可帮助用户快速上手，并使他们专注于自己的任务。
+**确保工具对应于当前上下文**当你彻底了解了工具执行的具体操作和 Surface Dial 交互的工作原理后，可帮助用户快速上手，并使他们专注于自己的任务。
 
 **尽可能减少应用工具的数量**  
 Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需要转动 Dial 才能在溢出的浮出控件中看到可用的工具，使菜单难以导航，并且使工具难以发现和选择。
@@ -381,8 +379,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 #### 开发人员指南
 
-单击 Surface Dial 时，会触发 [**RadialController.ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 事件。 
-            [
+单击 Surface Dial 时，会触发 [**RadialController.ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 事件。 [
               **RadialControllerButtonClickedEventArgs**
             ](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs) 包括 [**Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs.Contact) 属性，该属性包含 Surface Dial 与 Surface Studio 屏幕接触的位置和边界区域。 Surface Dial 未与屏幕保持接触，则该属性为 null。 
 
@@ -648,30 +645,18 @@ private void ActivateGridAtLocation(Point Location)
 ### API 参考
 
 
-- [
-            **RadialController** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
-- [
-            **RadialControllerButtonClickedEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
-- [
-            **RadialControllerConfiguration** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 
-- [
-            **RadialControllerControlAcquiredEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
-- [
-            **RadialControllerMenu** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenu) 
-- [
-            **RadialControllerMenuItem** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 
-- [
-            **RadialControllerRotationChangedEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
-- [
-            **RadialControllerScreenContact** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact) 
-- [
-            **RadialControllerScreenContactContinuedEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
-- [
-            **RadialControllerScreenContactStartedEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
-- [
-            **RadialControllerMenuKnownIcon** 枚举](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuKnownIcon) 
-- [
-            **RadialControllerSystemMenuItemKind** 枚举](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+- [**RadialController** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
+- [**RadialControllerButtonClickedEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**RadialControllerConfiguration** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 
+- [**RadialControllerControlAcquiredEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**RadialControllerMenu** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenu) 
+- [**RadialControllerMenuItem** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 
+- [**RadialControllerRotationChangedEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**RadialControllerScreenContact** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact) 
+- [**RadialControllerScreenContactContinuedEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**RadialControllerScreenContactStartedEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**RadialControllerMenuKnownIcon** 枚举](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuKnownIcon) 
+- [**RadialControllerSystemMenuItemKind** 枚举](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### 示例
 

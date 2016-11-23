@@ -48,8 +48,7 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 <span id="interstitialadsxaml10"/>
 ### 间隙广告 (XAML/.NET)
 
-> 
-            **注意** 本部分提供 C# 示例，但 Visual Basic 和 C++ 也受支持。
+> **注意** 本部分提供 C# 示例，但 Visual Basic 和 C++ 也受支持。
  
 1. 在 Visual Studio 中打开你的项目。
 2. 在“引用管理器”中，根据你的项目类型选择以下引用之一：
@@ -81,8 +80,7 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 #endif
     ```
 
-    > 
-            **注意** 在提交应用之前，你需要将测试值替换为实时值。
+    > **注意** 在提交应用之前，你需要将测试值替换为实时值。
 
 5.  实例化 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)、绑定所有事件处理程序，并请求某个广告。
 
@@ -240,8 +238,7 @@ ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 
 此示例假设你已在 Visual Studio 2015 中为 XAML 创建了通用应用项目，并且面向特定的 CPU 体系结构。
 
-> 
-            **重要提示** 根据 DirectX 的要求使用 C++ 编写此代码。
+> **重要提示** 根据 DirectX 的要求使用 C++ 编写此代码。
 
  
 1. 在 Visual Studio 中打开你的项目。

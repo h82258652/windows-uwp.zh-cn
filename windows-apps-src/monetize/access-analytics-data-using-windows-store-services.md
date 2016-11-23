@@ -17,8 +17,7 @@ ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
 
 1.  确保已完成所有[先决条件](#prerequisites)。
 2.  在 Windows 应用商店提交 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Windows 应用商店分析 API。 该令牌到期后，可以重新生成一个。
-3.  
-            [调用 Windows 应用商店分析 API](#call-the-windows-store-analytics-api)。
+3.  [调用 Windows 应用商店分析 API](#call-the-windows-store-analytics-api)。
 
 <span id="prerequisites" />
 ## 步骤 1：完成使用 Windows 应用商店分析 API 的先决条件
@@ -29,8 +28,7 @@ ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
 
 * 你必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索租户 ID 和应用程序的客户端 ID 并生成密钥。 Azure AD 应用程序是指你想要从中调用 Windows 应用商店分析 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
 
-  >
-            **注意**
+  >**注意**
             &nbsp;&nbsp;只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
 若要将 Azure AD 应用程序与你的开发人员中心帐户相关联并检索所需值：
