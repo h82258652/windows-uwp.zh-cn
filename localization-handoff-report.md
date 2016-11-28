@@ -6,23 +6,23 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\how-to-create-and-consume-an-app-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fadfab2f03d5cfda46d5c9f29c28ad561e6ab2db?path=windows-apps-src%2Flaunch-resume%2Fhow-to-create-and-consume-an-app-service.md&_a=contents) | HandedOffSuccess | [Details](#81786f6bf76d1d3840d5cd8c6191550b98a248b24754)
+ [windows-apps-src\app-to-app\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ea67ae5b568d1c51af3bb951fe3a68a8def8a556?path=windows-apps-src%2Fapp-to-app%2Findex.md&_a=contents) | HandedOffSuccess | [Details](#951e2ea29a47e362d9fdee0f597d2e7c808212b6142)
 
 ## Item Details
-##### <a name='81786f6bf76d1d3840d5cd8c6191550b98a248b24754'></a> Source: [windows-apps-src\launch-resume\how-to-create-and-consume-an-app-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fadfab2f03d5cfda46d5c9f29c28ad561e6ab2db?path=windows-apps-src%2Flaunch-resume%2Fhow-to-create-and-consume-an-app-service.md&_a=contents)
+##### <a name='951e2ea29a47e362d9fdee0f597d2e7c808212b6142'></a> Source: [windows-apps-src\app-to-app\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ea67ae5b568d1c51af3bb951fe3a68a8def8a556?path=windows-apps-src%2Fapp-to-app%2Findex.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [how-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/68de6153a085853b199c601aa5a4bb9b5f5d35a8?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fhow-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2016-11-24 02:39:58
+* Handoff File: [index.41a30c2304522206dc610cca50cfa8c5d9af32f3.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/532a0419310c49baf3dd160f7b526aef58852f76?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Findex.41a30c2304522206dc610cca50cfa8c5d9af32f3.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-11-28 18:41:04
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\launch-resume\how-to-create-and-consume-an-app-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Flaunch-resume%2Fhow-to-create-and-consume-an-app-service.md&_a=contents)
-* Current Handback File: [how-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fhow-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.zh-cn.xlf&_a=contents)
+* Current Target File: [windows-apps-src\app-to-app\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fapp-to-app%2Findex.md&_a=contents)
+* Current Handback File: [index.41a30c2304522206dc610cca50cfa8c5d9af32f3.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Findex.41a30c2304522206dc610cca50cfa8c5d9af32f3.zh-cn.xlf&_a=contents)
 * Current Handback Datetime: 2016-11-16 18:54:46
-* Bilingual File: [how-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fhow-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.zh-cn.xlf&_a=contents)
+* Bilingual File: [index.41a30c2304522206dc610cca50cfa8c5d9af32f3.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Findex.41a30c2304522206dc610cca50cfa8c5d9af32f3.zh-cn.xlf&_a=contents)
 * Bilingual Datetime: 2016-11-16 19:00:10
 * [Back to Top](#report-top)
 
