@@ -48,21 +48,13 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 系统会对你的效果调用 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884)，以便让你知道要应用该效果的音频流的编码属性。 为了实现回声效果，此示例使用缓冲区存储 1 秒的音频数据。 使用此方法，有机会根据编码音频的采样率，将缓冲区大小初始化为一秒音频中的采样数。 延迟效果还使用整数计数器跟踪在延迟缓冲区中的当前位置。 因为在将效果添加到音频管道时会调用 **SetEncodingProperties**，因此此时是将该值初始化为 0 的好时机。 你还可能想要捕获传递到此方法中的 **AudioEncodingProperties** 对象，以在你的效果中的其他位置使用。
 
-[!code-cs
-              [DeclareEchoBuffer](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetDeclareEchoBuffer)
-            ]
-            
-            [!code-cs
-              [SetEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetEncodingProperties)
-            ]
-          
+[!code-cs[DeclareEchoBuffer](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetDeclareEchoBuffer)]
+[!code-cs[SetEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetEncodingProperties)]
 
 
 ### SetProperties 方法
 
-[
-              **SetProperties**
-            ](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允许正在使用你的效果的应用调整效果参数。 属性将作为属性名称和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 映射传递。
+[**SetProperties** ](https://msdn.microsoft.com/library/windows/apps/br240986) 方法允许正在使用你的效果的应用调整效果参数。 属性将作为属性名称和值的 [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) 映射传递。
 
 [!code-cs[SetProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetProperties)]
 
@@ -72,9 +64,7 @@ ms.openlocfilehash: 9cdaa63563dc08f2a17d1624b0a795fb84f8d39e
 
 ### ProcessFrame 方法
 
-[
-              **ProcessFrame**
-            ](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法是你的效果修改流音频数据的位置。 针对每一帧调用一次该方法，并将 [**ProcessAudioFrameContext**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext) 对象传递给它。 此对象包含一个输入 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioFrame) 对象（包含要处理的传入帧）和一个你要向其写入音频数据（将传递到剩余的音频管道）的输出 **AudioFrame** 对象。 音频帧是表示一小段音频数据的音频采样的缓冲区。
+[**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) 方法是你的效果修改流音频数据的位置。 针对每一帧调用一次该方法，并将 [**ProcessAudioFrameContext**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.ProcessAudioFrameContext) 对象传递给它。 此对象包含一个输入 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioFrame) 对象（包含要处理的传入帧）和一个你要向其写入音频数据（将传递到剩余的音频管道）的输出 **AudioFrame** 对象。 音频帧是表示一小段音频数据的音频采样的缓冲区。
 
 访问 **AudioFrame** 的数据缓冲区需要 COM 互操作，所以你应该在效果类文件中包括 **System.Runtime.InteropServices** 命名空间，然后针对你的效果将以下代码添加到该命名空间内，以便导入用于访问音频缓冲区的接口。
 
