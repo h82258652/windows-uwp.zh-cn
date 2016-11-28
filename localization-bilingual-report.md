@@ -1,26 +1,41 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
+ [windows-apps-src\audio-video-camera\custom-audio-effects.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ba9b78c5eafc949c6942acbcbf55620f60cc0d29?path=windows-apps-src%2Faudio-video-camera%2Fcustom-audio-effects.md&_a=contents) | InSyncHandedBackSuccess | [Details](#9cdaa63563dc08f2a17d1624b0a795fb84f8d39e1626)
  [windows-apps-src\monetize\microsoft-store-services-sdk.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/011b370b7bd7ad7c7d8f60281261b6da954e2256?path=windows-apps-src%2Fmonetize%2Fmicrosoft-store-services-sdk.md&_a=contents) | InSyncHandedBackSuccess | [Details](#840a5e76d409f547d55e558262af09c8fa36a5445228)
 
 ## Item Details
+##### <a name='9cdaa63563dc08f2a17d1624b0a795fb84f8d39e1626'></a> Source: [windows-apps-src\audio-video-camera\custom-audio-effects.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ba9b78c5eafc949c6942acbcbf55620f60cc0d29?path=windows-apps-src%2Faudio-video-camera%2Fcustom-audio-effects.md&_a=contents)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\audio-video-camera\custom-audio-effects.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/64071f99e26a653db2e847745304646ed8be241f?path=windows-apps-src%2Faudio-video-camera%2Fcustom-audio-effects.md&_a=contents)
+* Handoff File: [custom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/1809d68ff38f7e9f4e69ad0d6795be33ea8f0775?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fcustom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-11-01 06:04:18
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [custom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/ae43c59aff141b1ae4f7ad9f7e4491789aa0ed9b?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fcustom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-cn.xlf&_a=contents)
+* Handback Datetime: 2016-11-28 16:40:42
+* Bilingual File: [custom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/ae43c59aff141b1ae4f7ad9f7e4491789aa0ed9b?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fcustom-audio-effects.1121be01d9ae2bf3997edcca3b3b494baaa8ec5a.zh-cn.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-28 16:43:25
+* [Back to Top](#report-top)
+
 ##### <a name='840a5e76d409f547d55e558262af09c8fa36a5445228'></a> Source: [windows-apps-src\monetize\microsoft-store-services-sdk.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/011b370b7bd7ad7c7d8f60281261b6da954e2256?path=windows-apps-src%2Fmonetize%2Fmicrosoft-store-services-sdk.md&_a=contents)
 * Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\monetize\microsoft-store-services-sdk.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/d143a1af88a98116bc4005928ce0ba8cb679a0de?path=windows-apps-src%2Fmonetize%2Fmicrosoft-store-services-sdk.md&_a=contents)
+* Target File: [windows-apps-src\monetize\microsoft-store-services-sdk.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/64071f99e26a653db2e847745304646ed8be241f?path=windows-apps-src%2Fmonetize%2Fmicrosoft-store-services-sdk.md&_a=contents)
 * Handoff File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/08e0808ae0c3dab0c48a7b610bfea04bc335f775?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf&_a=contents)
 * Handoff Datetime: 2016-11-02 19:05:11
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4371bc41ce271c0ec541ea14383353305b7aaa94?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf&_a=contents)
-* Handback Datetime: 2016-11-25 16:38:05
-* Bilingual File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4371bc41ce271c0ec541ea14383353305b7aaa94?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-25 16:40:49
+* Handback File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/ae43c59aff141b1ae4f7ad9f7e4491789aa0ed9b?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf&_a=contents)
+* Handback Datetime: 2016-11-28 16:40:42
+* Bilingual File: [microsoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/ae43c59aff141b1ae4f7ad9f7e4491789aa0ed9b?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fmicrosoft-store-services-sdk.d3b62fc3b977619643ceecfd26fc7b191dbe8895.zh-cn.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-28 16:43:25
 * [Back to Top](#report-top)
 
 
