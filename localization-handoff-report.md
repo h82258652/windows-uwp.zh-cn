@@ -1,28 +1,77 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 4
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ee0a2f5a34cbbef198a9012d0425bb84e65f3b33?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents) | HandedOffSuccess | [Details](#de76a3c6d4949b9203df79855e1748a81d76ca644357)
+ [windows-apps-src\launch-resume\communicate-with-a-remote-app-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/4cc562ac78a32aea5a6e96e9ecbba7077e5fbde3?path=windows-apps-src%2Flaunch-resume%2Fcommunicate-with-a-remote-app-service.md&_a=contents) | HandedOffSuccess | [Details](#3d50330e6a6f81718a83439acda3ad0680e7311e4739)
+ [windows-apps-src\packaging\create-app-package-with-makeappx-tool.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/28cd2b2a922a20e0b9ffc4d1ca65f6a55e92aa8f?path=windows-apps-src%2Fpackaging%2Fcreate-app-package-with-makeappx-tool.md&_a=contents) | HandedOffSuccess | [Details](#c99c76fac9303e174b5d804c2f1b99856be250065279)
+ [windows-apps-src\packaging\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/28cd2b2a922a20e0b9ffc4d1ca65f6a55e92aa8f?path=windows-apps-src%2Fpackaging%2Findex.md&_a=contents) | HandedOffSuccess | [Details](#8aa4bfc8004b4d0739fe09e6e49e66de372569c45306)
+ [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/28cd2b2a922a20e0b9ffc4d1ca65f6a55e92aa8f?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#ae1bb800a24ef9c7dca0f66d99671affa6c20bae8423)
 
 ## Item Details
-##### <a name='de76a3c6d4949b9203df79855e1748a81d76ca644357'></a> Source: [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ee0a2f5a34cbbef198a9012d0425bb84e65f3b33?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents)
+##### <a name='3d50330e6a6f81718a83439acda3ad0680e7311e4739'></a> Source: [windows-apps-src\launch-resume\communicate-with-a-remote-app-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/4cc562ac78a32aea5a6e96e9ecbba7077e5fbde3?path=windows-apps-src%2Flaunch-resume%2Fcommunicate-with-a-remote-app-service.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/64b2ecd2ae4e60682c0ac493deb5e1d042331256?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2016-11-29 22:35:50
+* Handoff File: [communicate-with-a-remote-app-service.69868a774210ff17c04a11fc7511d0ac1dca3d9d.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/c0fc0e9b37b018f489ec91a30f85d030bbe0cc8f?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fcommunicate-with-a-remote-app-service.69868a774210ff17c04a11fc7511d0ac1dca3d9d.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-11-30 23:17:21
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents)
-* Current Handback File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf&_a=contents)
+* Current Target File: [windows-apps-src\launch-resume\communicate-with-a-remote-app-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Flaunch-resume%2Fcommunicate-with-a-remote-app-service.md&_a=contents)
+* Current Handback File: [communicate-with-a-remote-app-service.69868a774210ff17c04a11fc7511d0ac1dca3d9d.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fcommunicate-with-a-remote-app-service.69868a774210ff17c04a11fc7511d0ac1dca3d9d.zh-cn.xlf&_a=contents)
 * Current Handback Datetime: 2016-11-16 18:54:46
-* Bilingual File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.zh-cn.xlf&_a=contents)
+* Bilingual File: [communicate-with-a-remote-app-service.69868a774210ff17c04a11fc7511d0ac1dca3d9d.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fcommunicate-with-a-remote-app-service.69868a774210ff17c04a11fc7511d0ac1dca3d9d.zh-cn.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-16 19:00:10
+* [Back to Top](#report-top)
+
+##### <a name='c99c76fac9303e174b5d804c2f1b99856be250065279'></a> Source: [windows-apps-src\packaging\create-app-package-with-makeappx-tool.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/28cd2b2a922a20e0b9ffc4d1ca65f6a55e92aa8f?path=windows-apps-src%2Fpackaging%2Fcreate-app-package-with-makeappx-tool.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [create-app-package-with-makeappx-tool.8a283ddd81f93b803caed2cc0d5a18e862337a2d.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/c0fc0e9b37b018f489ec91a30f85d030bbe0cc8f?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fcreate-app-package-with-makeappx-tool.8a283ddd81f93b803caed2cc0d5a18e862337a2d.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-11-30 23:17:21
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='8aa4bfc8004b4d0739fe09e6e49e66de372569c45306'></a> Source: [windows-apps-src\packaging\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/28cd2b2a922a20e0b9ffc4d1ca65f6a55e92aa8f?path=windows-apps-src%2Fpackaging%2Findex.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [index.4eb3a86427b760af0fe03321faacbb40d33523b8.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/c0fc0e9b37b018f489ec91a30f85d030bbe0cc8f?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Findex.4eb3a86427b760af0fe03321faacbb40d33523b8.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-11-30 23:17:21
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\packaging\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fpackaging%2Findex.md&_a=contents)
+* Current Handback File: [index.4eb3a86427b760af0fe03321faacbb40d33523b8.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Findex.4eb3a86427b760af0fe03321faacbb40d33523b8.zh-cn.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-16 18:54:46
+* Bilingual File: [index.4eb3a86427b760af0fe03321faacbb40d33523b8.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Findex.4eb3a86427b760af0fe03321faacbb40d33523b8.zh-cn.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-16 19:00:10
+* [Back to Top](#report-top)
+
+##### <a name='ae1bb800a24ef9c7dca0f66d99671affa6c20bae8423'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/28cd2b2a922a20e0b9ffc4d1ca65f6a55e92aa8f?path=windows-apps-src%2FTOC.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/c0fc0e9b37b018f489ec91a30f85d030bbe0cc8f?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-11-30 23:17:21
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2FTOC.md&_a=contents)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-16 18:54:46
+* Bilingual File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf&_a=contents)
 * Bilingual Datetime: 2016-11-16 19:00:10
 * [Back to Top](#report-top)
 
