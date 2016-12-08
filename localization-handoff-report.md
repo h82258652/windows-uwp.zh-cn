@@ -1,46 +1,28 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a652189d0595bb6dffbc5228a91a68261eb7e5ef?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents) | HandedOffSuccess | [Details](#c6d295a21825d1e89eaafcba59ca3a1b85669da91680)
- [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a652189d0595bb6dffbc5228a91a68261eb7e5ef?path=windows-apps-src%2Fcontrols-and-patterns%2Ftabs-pivot.md&_a=contents) | HandedOffSuccess | [Details](#865969a7c965a502acd9fe24df28128399efd3803194)
+ [windows-apps-src\monetize\interstitial-ad-sample-code-in-javascript.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/850558af2947a890b4f63f847318e8911fc737d6?path=windows-apps-src%2Fmonetize%2Finterstitial-ad-sample-code-in-javascript.md&_a=contents) | HandedOffSuccess | [Details](#2d016b24213d658951f97253bf5f8569db1a9e135307)
 
 ## Item Details
-##### <a name='c6d295a21825d1e89eaafcba59ca3a1b85669da91680'></a> Source: [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a652189d0595bb6dffbc5228a91a68261eb7e5ef?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents)
+##### <a name='2d016b24213d658951f97253bf5f8569db1a9e135307'></a> Source: [windows-apps-src\monetize\interstitial-ad-sample-code-in-javascript.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/850558af2947a890b4f63f847318e8911fc737d6?path=windows-apps-src%2Fmonetize%2Finterstitial-ad-sample-code-in-javascript.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/8d0be2da8d594794bde4bd3481fa97e443dc0dbf?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2016-12-07 23:22:10
+* Handoff File: [interstitial-ad-sample-code-in-javascript.67d4d65d545dde89c37899b180fe4d57421c8f22.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dbe283d4d03665c3ff36c801a39d8cbeae5970b3?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Finterstitial-ad-sample-code-in-javascript.67d4d65d545dde89c37899b180fe4d57421c8f22.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-12-08 01:23:46
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents)
-* Current Handback File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.zh-cn.xlf&_a=contents)
+* Current Target File: [windows-apps-src\monetize\interstitial-ad-sample-code-in-javascript.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fmonetize%2Finterstitial-ad-sample-code-in-javascript.md&_a=contents)
+* Current Handback File: [interstitial-ad-sample-code-in-javascript.67d4d65d545dde89c37899b180fe4d57421c8f22.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Finterstitial-ad-sample-code-in-javascript.67d4d65d545dde89c37899b180fe4d57421c8f22.zh-cn.xlf&_a=contents)
 * Current Handback Datetime: 2016-11-16 18:54:46
-* Bilingual File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.zh-cn.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-16 19:00:10
-* [Back to Top](#report-top)
-
-##### <a name='865969a7c965a502acd9fe24df28128399efd3803194'></a> Source: [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a652189d0595bb6dffbc5228a91a68261eb7e5ef?path=windows-apps-src%2Fcontrols-and-patterns%2Ftabs-pivot.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/8d0be2da8d594794bde4bd3481fa97e443dc0dbf?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Ftabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2016-12-07 23:22:10
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\controls-and-patterns\tabs-pivot.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fcontrols-and-patterns%2Ftabs-pivot.md&_a=contents)
-* Current Handback File: [tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Ftabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.zh-cn.xlf&_a=contents)
-* Current Handback Datetime: 2016-11-16 18:54:46
-* Bilingual File: [tabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Ftabs-pivot.dcd84e6c02857e20e52641fbfa5fb013015d8e36.zh-cn.xlf&_a=contents)
+* Bilingual File: [interstitial-ad-sample-code-in-javascript.67d4d65d545dde89c37899b180fe4d57421c8f22.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Finterstitial-ad-sample-code-in-javascript.67d4d65d545dde89c37899b180fe4d57421c8f22.zh-cn.xlf&_a=contents)
 * Bilingual Datetime: 2016-11-16 19:00:10
 * [Back to Top](#report-top)
 
