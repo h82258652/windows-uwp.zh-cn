@@ -1,52 +1,52 @@
 ---
 author: mcleblanc
-description: "在开始移植过程时，你有两个选择。"
-title: "将 Windows 运行时 8.x 项目移植到 UWP 项目&quot;"
+description: You have two options when you begin the porting process.
+title: Porting a Windows Runtime 8.x project to a UWP project&quot;
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 translationtype: Human Translation
-ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: 97b187b5e1ee988d4e1d514f139cec48088be3f2
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: bd0526404f7e8f7fb87a0798c4e0c06bd9305c19
 
 ---
 
-# 将 Windows 运行时 8.x 项目移植到 UWP 项目
+# <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>Porting a Windows Runtime 8.x project to a UWP project
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-在开始移植过程时，你有两个选择。 一是编辑现有项目文件的副本，包括应用包清单（对于该选项，请参阅[将应用迁移到通用 Windows 平台应用 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中有关更新项目文件的信息）。 另一个是在 Visual Studio 中创建一个新的 Windows 10 项目，并将你的文件复制到其中。 本主题的第一部分描述了第二个选择，但本主题的其余部分提供了同时适用于这两个选择的其他信息。 你还可以选择将新的 Windows 10 项目保留在与你的现有项目相同的解决方案中，并使用已共享的项目共享源代码文件。 或者，你也可以将新项目保留在它自己的解决方案中，并使用 Visual Studio 中链接的文件功能共享源代码文件。
+You have two options when you begin the porting process. One is to edit a copy of your existing project files, including the app package manifest (for that option, see the info about updating your project files in [Migrate apps to the Universal Windows Platform (UWP)](https://msdn.microsoft.com/library/mt148501.aspx)). The other option is to create a new Windows 10 project in Visual Studio and copy your files into it. The first section in this topic describes that second option, but the rest of the topic has additional info applicable to both options. You can also choose to keep your new Windows 10 project in the same solution as your existing projects and share source code files using a shared project. Or, you can keep the new project in a solution of its own and share source code files using the linked files feature in Visual Studio.
 
-## 创建项目并向其复制文件
+## <a name="create-the-project-and-copy-files-to-it"></a>Create the project and copy files to it
 
-这些步骤侧重于以下内容：在 Visual Studio 中创建一个新的 Windows 10 项目，并将你的文件复制到其中。 某些围绕着所创建的项目数和要复制的文件展开的特定步骤，将依赖于[如果你有一个通用 8.1 应用](w8x-to-uwp-root.md#if-you-have-an-81-universal-windows-app)及其后的部分中所述的规格和决策。 这些步骤中假设了最简单的应用场景。
+These steps focus on the option to create a new Windows 10 project in Visual Studio and copy your files into it. Some of the specifics around how many projects you create, and which files you copy over, will depend on the factors and decisions described in [If you have a Universal 8.1 app](w8x-to-uwp-root.md) and the sections that follow it. These steps assume the simplest case.
 
-1.  启动 Microsoft Visual Studio 2015 并创建新的空白应用程序（Windows 通用）项目。 有关详细信息，请参阅[使用模板（C#、C++、Visual Basic）快速启动 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/hh768232)。 新建项目会构建一个可在所有设备系统上运行的应用包（appx 文件）。
-2.  在 Universal 8.1 App 项目中，标识要重用的所有源代码文件和视觉资产文件。 通过使用文件资源管理器，将数据模型、视图模型、视觉资产、资源词典，文件夹结构和想要重用的任何其他内容复制到新项目中。 根据需要在磁盘上复制或创建子文件夹。
-3.  还可以将视图（例如，MainPage.xaml 和 MainPage.xaml.cs）复制到新项目中。 同样，也可根据需要创建新的子文件夹，并从项目中删除现有视图。 但在覆盖或删除 Visual Studio 生成的视图之前，请保留一份副本，因为在以后引用它时，这可能会很有用。 移植通用 8.1 应用的第一个阶段侧重于使其在某一设备系列上正常显示并良好运行。 之后，将侧重点转到确保视图能自行适应所有外观规格，也可以选择添加任何自适应代码以最大程度地利用特定的设备系列。
-4.  在“解决方案资源管理器”****中，请确保将“显示所有文件”****切换为打开。 选择要复制的文件，右键单击这些文件，然后单击“包括在项目中”****。 这将自动包括其所包含的文件夹。 然后，可根据需要将**“显示所有文件”**切换为关闭。 备用工作流（如果选择）旨在使用**“添加现有项”**命令，以便在 Visual Studio**“解决方案资源管理器”**中创建任何必要子文件夹。 仔细检查可见资源是否已将“生成操作”****设置为“内容”****，并将“复制到输出目录”****设置为“不复制”****。
-5.  你很可能会在此阶段看到一些生成错误。 不过，如果你知道需要更改哪些内容，则可以使用 Visual Studio 的 **Find and Replace** 命令批量更改源代码；并且可以在 Visual Studio 的强制性代码编辑器中，使用上下文菜单上的 **Resolve** 和 **Organize Usings** 命令了解更多目标更改。
+1.  Launch Microsoft Visual Studio 2015 and create a new Blank Application (Windows Universal) project. For more info, see [Jumpstart your Windows Store app using templates (C#, C++, Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232). Your new project builds an app package (an appx file) that will run on all device families.
+2.  In your Universal 8.1 app project, identify all the source code files and visual asset files that you want to reuse. Using File Explorer, copy data models, view models, visual assets, Resource Dictionaries, folder structure, and anything else that you wish to re-use, to your new project. Copy or create sub-folders on disk as necessary.
+3.  Copy views (for example, MainPage.xaml and MainPage.xaml.cs) into the new project, too. Again, create new sub-folders as necessary, and remove the existing views from the project. But, before you over-write or remove a view that Visual Studio generated, keep a copy because it may be useful to refer to it later. The first phase of porting a Universal 8.1 app focuses on getting it to look good and work well on one device family. Later, you'll turn your attention to making sure the views adapt themselves well to all form factors, and optionally to adding any adaptive code to get the most from a particular device family.
+4.  In **Solution Explorer**, make sure **Show All Files** is toggled on. Select the files that you copied, right-click them, and click **Include In Project**. This will automatically include their containing folders. You can then toggle **Show All Files** off if you like. An alternative workflow, if you prefer, is to use the **Add Existing Item** command, having created any necessary sub-folders in the Visual Studio **Solution Explorer**. Double-check that your visual assets have **Build Action** set to **Content** and **Copy to Output Directory** set to **Do not copy**.
+5.  You are likely to see some build errors at this stage. But, if you know what you need to change, then you can use Visual Studio's **Find and Replace** command to make bulk changes to your source code; and in the imperative code editor in Visual Studio, use the **Resolve** and **Organize Usings** commands on the context menu for more targeted changes.
 
-## 最大程度地重新使用标记和代码
+## <a name="maximizing-markup-and-code-reuse"></a>Maximizing markup and code reuse
 
-你会发现，只需稍作重构和/或添加自适应代码（将在下文进行介绍），即可最大程度地重新使用可跨所有设备系列运行的标记和代码。 下面提供了更多详细信息。
+You will find that refactoring a little, and/or adding adaptive code (which is explained below), will allow you to maximize the markup and code that works across all device families. Here are more details.
 
--   无需特别考虑在所有设备系列上均通用的文件。 这些文件将由可在所有设备系列上运行的应用使用。 这包括 XAML 标记文件、强制性源代码文件和资产文件。
--   你的应用既能检测到正在运行它的设备系列，又能导航到专门为该设备系列设计的视图。 有关详细信息，请参阅[检测应用所运行的平台](w8x-to-uwp-input-and-sensors.md#detecting-the-platform)。
--   在以下情况中，你可能会发现一种类似的技术也许会很有用：必须要为某个标记文件或 **ResourceDictionary** 文件（或者包含该文件的文件夹）提供一个特殊名称，以便它仅当应用在特定设备系列上运行时才自动在运行时加载。 此技术将在 [Bookstore1](w8x-to-uwp-case-study-bookstore1.md#an-optional-adjustment) 案例研究中进行介绍。
--   如果你仅需要支持 Windows 10，你应该能够删除通用 8.1 应用源代码中的大量条件编译指令。 请参阅本主题中的[条件编译和自适应代码](#reviewing-conditional-compilation)。
--   若要使用未在所有设备系列上提供的功能（例如打印机、扫描仪或相机按钮），你可以编写自适应代码。 请参阅本主题的[条件编译和自适应代码](#reviewing-conditional-compilation)中的第三个示例。
--   如果你想要同时支持 Windows 8.1、Windows Phone 8.1 和 Windows 10，你可以将三个项目都保留在同一个解决方案中并与共享的项目共享代码。 此外，你可以在项目之间共享源代码文件。 以下是操作方法：在 Visual Studio 中，在“解决方案资源管理器”****中右键单击项目、选择“添加现有项”****、选择要共享的文件，然后单击“添加为链接”****。 将源代码文件存储在文件系统上的常用文件夹中，可在指向它们的链接所在的项目中看到这些文件。 不要忘记将它们添加到源控件中。
--   有关在二进制级别（而不是源代码级别）上重复使用的信息，请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx)。 还存在一些可移植类库，这些库支持在适用于 Windows 8.1、Windows Phone 8.1 和 Windows 10 应用 (.NET Core) 的 .NET Framework 以及整个 .NET Framework 中可用的 .NET API 子集。 可移植类库程序集为二进制形式，可与所有这些平台兼容。 使用 Visual Studio 创建一个面向可移植类库的项目。 请参阅[使用可移植类库的跨平台开发](http://msdn.microsoft.com/library/gg597391.aspx)。
+-   Files that are common to all device families need no special consideration. Those files will be used by the app on all the device families that it runs on. This includes XAML markup files, imperative source code files, and asset files.
+-   It is possible for your app to detect the device family that it is running on and navigate to a view that has been designed specifically for that device family. For more details, see [Detecting the platform your app is running on](w8x-to-uwp-input-and-sensors.md).
+-   A similar technique that you may find useful if there is no alternative is give a markup file or **ResourceDictionary** file (or the folder that contains the file) a special name such that it is automatically loaded at runtime only when your app runs on a particular device family. This technique is illustrated in the [Bookstore1](w8x-to-uwp-case-study-bookstore1.md) case study.
+-   You should be able to remove a lot of the conditional compilation directives in your Universal 8.1 app's source code if you only need to support Windows 10. See [Conditional compilation, and adaptive code](#reviewing-conditional-compilation) in this topic.
+-   To use features that are not available on all device families (for example, printers, scanners, or the camera button), you can write adaptive code. See the third example in [Conditional compilation, and adaptive code](#reviewing-conditional-compilation) in this topic.
+-   If you want to support Windows 8.1, Windows Phone 8.1, and Windows 10, then you can keep three projects in the same solution and share code with a Shared project. Alternatively, you can share source code files between projects. Here's how: in Visual Studio, right-click the project in **Solution Explorer**, select **Add Existing Item**, select the files to share, and then click **Add As Link**. Store your source code files in a common folder on the file system where the projects that link to them can see them. And don't forget to add them to source control.
+-   For reuse at the binary level, rather than the source code level, see [Creating Windows Runtime Components in C# and Visual Basic](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). There are also Portable Class Libraries, which support the subset of .NET APIs that are available in the .NET Framework for Windows 8.1, Windows Phone 8.1, and Windows 10 apps (.NET Core), and the full .NET Framework. Portable Class Library assemblies are binary compatible with all these platforms. Use Visual Studio to create a project that targets a Portable Class Library. See [Cross-Platform Development with the Portable Class Library](http://msdn.microsoft.com/library/gg597391.aspx).
 
-## 扩展 SDK
+## <a name="extension-sdks"></a>Extension SDKs
 
-大多数已由通用 8.1 应用调用的 Windows 运行时 API 都在所谓的通用设备系列的 API 集中实现。 但是，部分 API 在扩展 SDK 中实现，并且 Visual Studio 只能识别由应用的目标设备系列或所引用的任何扩展 SDK 实现的 API。
+Most of the Windows Runtime APIs your Universal 8.1 app already calls are implemented in the set of APIs known as the universal device family. But, some are implemented in extension SDKs, and Visual Studio only recognizes APIs that are implemented by your app's target device family or by any extension SDKs that you have referenced.
 
-如果你收到有关找不到命名空间、类型或成员的编译错误，这很可能是导致此类错误出现的原因。 打开 API 参考文档中的 API 主题并导航到“要求”部分：你可以从中了解到设备系列实现的内容。 如果这不是你的目标设备系列，但需要使相应 API 适用于你的项目，你将需要一个对该设备系列的扩展 SDK 的引用。
+If you get compile errors about namespaces or types or members that could not be found, then this is likely to be the cause. Open the API's topic in the API reference documentation and navigate to the Requirements section: that will tell you what the implementing device family is. If that's not your target device family, then to make the API available to your project, you will need a reference to the extension SDK for that device family.
 
-依次单击“项目”****&gt;“添加引用”****&gt;“Windows 通用”****&gt;“扩展”****，然后选择相应的扩展 SDK。 例如，如果要调用的 API 仅在移动设备系列中可用，且它们已在版本 10.0.x.y 中引入，请选择“适用于 UWP 的 Windows 移动版扩展”****。
+Click **Project** &gt; **Add Reference** &gt; **Windows Universal** &gt; **Extensions** and select the appropriate extension SDK. For example, if the APIs you want to call are available only in the mobile device family, and they were introduced in version 10.0.x.y, then select **Windows Mobile Extensions for the UWP**.
 
-这将向你的项目文件添加以下引用：
+That will add the following reference to your project file:
 
 ```XML
 <ItemGroup>
@@ -56,21 +56,21 @@ ms.openlocfilehash: 97b187b5e1ee988d4e1d514f139cec48088be3f2
 </ItemGroup>
 ```
 
-名称和版本号需与 SDK 的安装位置所在的文件夹匹配。 例如，上述信息需与以下文件夹名称匹配：
+The name and version number match the folders in the installed location of your SDK. For example, the above information matches this folder name:
 
 `\Program Files (x86)\Windows Kits\10\Extension SDKs\WindowsMobile\10.0.x.y`
 
-除非你的应用面向可实现此 API 的设备系列，否则你将需要先使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 类测试该 API 是否存在，然后才能调用它（这称为自适应代码）。 然后，评估此条件（无论你的应用在何处运行），但其仅针对存在相应 API 的设备才评估为 True，从而可调用该 API。 仅在首次检查是否存在通用 API 后，才能使用扩展 SDK 和自适应代码。 下面的部分中提供了一些示例。
+Unless your app targets the device family that implements the API, you'll need to use the [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) class to test for the presence of the API before you call it (this is called adaptive code). This condition will then be evaluated wherever your app runs, but it will only evaluate to true on devices where the API is present and therefore available to call. Only use extension SDKs and adaptive code after first checking whether a universal API exists. Some examples are given in the section below.
 
-另请参阅[应用包清单](#appxpackage)。
+Also, see [App package manifest](#appxpackage).
 
-## 条件编译和自适应代码
+## <a name="conditional-compilation-and-adaptive-code"></a>Conditional compilation, and adaptive code
 
-如果你为了让代码文件能同时在 Windows 8.1 和 Windows Phone 8.1 上运行而（借助 C# 预处理器指令）使用条件编译，你现在可以根据 Windows 10 中已完成的融合工作查看该条件编译。 融合意味着在 Windows 10 应用中，某些条件可能已被彻底删除。 而其他条件将更改为运行时检查，如下面的示例所示。
+If you're using conditional compilation (with C# preprocessor directives) so that your code files work on both Windows 8.1 and Windows Phone 8.1, then you can now review that conditional compilation in light of the convergence work done in Windows 10. Convergence means that, in your Windows 10 app, some conditions can be removed altogether. Others change to run-time checks, as demonstrated in the examples below.
 
-**注意** 如果你想要使用单个代码文件支持 Windows 8.1、Windows Phone 8.1 和 Windows 10，也可以执行此操作。 如果你在项目属性页中查找 Windows 10 项目，你将看到该项目将 WINDOWS\_UAP 定义为条件编译符号。 这样，你便可以将其与 WINDOWS\_APP 和 WINDOWS\_PHONE\_APP 结合使用。 这些示例将演示有关从通用 8.1 应用删除条件编译并用等效代码针对 Windows 10 应用进行替换的更为简单的案例。
+**Note**   If you want to support Windows 8.1, Windows Phone 8.1, and Windows 10 in a single code file, then you can do that too. If you look in your Windows 10 project at the project properties pages, you'll see that the project defines WINDOWS\_UAP as a conditional compilation symbol. So, you can use that in combination with WINDOWS\_APP and WINDOWS\_PHONE\_APP. These examples show the simpler case of removing the conditional compilation from a Universal 8.1 app and substituting the equivalent code for a Windows 10 app.
 
-第一个示例将演示 **PickSingleFileAsync** API（仅适用于 Windows 8.1）和 **PickSingleFileAndContinue** API（仅适用于 Windows Phone 8.1）的使用模式。
+This first example shows the usage pattern for the **PickSingleFileAsync** API (which applies only to Windows 8.1) and the **PickSingleFileAndContinue** API (which applies only to Windows Phone 8.1).
 
 ```csharp
 #if WINDOWS_APP
@@ -80,13 +80,13 @@ ms.openlocfilehash: 97b187b5e1ee988d4e1d514f139cec48088be3f2
 #endif // WINDOWS_APP
 ```
 
-由于 Windows 10 在 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API 上融合，因此可对你的代码作如下简化：
+Windows 10 converges on the [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API, so your code simplifies to this:
 
 ```csharp
     // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
 ```
 
-在此示例中，我们将处理硬件后退按钮，但仅在 Windows Phone 上才进行处理。
+In this example, we handle the hardware back button—but only on Windows Phone.
 
 ```csharp
 #if WINDOWS_PHONE_APP
@@ -103,7 +103,7 @@ ms.openlocfilehash: 97b187b5e1ee988d4e1d514f139cec48088be3f2
 #endif // WINDOWS_PHONE_APP
 ```
 
-在 Windows 10 中，后退按钮事件是一个通用概念。 已在硬件或软件中实现的后退按钮都将引发 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件（即，为要处理的事件）。
+In Windows 10, the back button event is a universal concept. Back buttons implemented in hardware or in software will all raise the [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event, so that's the one to handle.
 
 ```csharp
     Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
@@ -117,7 +117,7 @@ private void ViewModelLocator_BackRequested(object sender, Windows.UI.Core.BackR
 }
 ```
 
-最后一个示例与上一个示例类似。 下面我们将处理硬件相机按钮，但同样仅在已编译到 Windows Phone 应用包的代码中才进行处理。
+This final example is similar to the previous one. Here, we handle the hardware camera button—but again, only in the code compiled into the Windows Phone app package.
 
 ```csharp
 #if WINDOWS_PHONE_APP
@@ -134,7 +134,7 @@ void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input.CameraE
 #endif // WINDOWS_PHONE_APP
 ```
 
-在 Windows 10 中，硬件相机按钮是一个特定于移动设备系列的概念。 因为某一应用包将在所有设备上运行，所以我们将使用所谓的自适应代码，将编译时条件更改为运行时条件。 为此，我们将使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 类在运行时查询是否存在 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 类。 由于 **HardwareButtons** 在移动扩展 SDK 中进行了定义，因此我们需要针对要编译的代码将对该 SDK 的引用添加到我们的项目。 但需要注意的是，处理程序仅在实现移动扩展 SDK 中定义的类型且属于移动设备系列的设备上执行。 因此，此代码在特意只使用存在的功能方面，原则上与通用 8.1 代码等效，尽管它采用了不同的实现方式。
+In Windows 10, the hardware camera button is a concept particular to the mobile device family. Because one app package will be running on all devices, we change our compile-time condition into a run-time condition using what is known as adaptive code. To do that, we use the [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) class to query at run-time for the presence of the [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) class. **HardwareButtons** is defined in the mobile extension SDK, so we'll need to add a reference to that SDK to our project for this code to compile. Note, though, that the handler will only be executed on a device that implements the types defined in the mobile extension SDK, and that's the mobile device family. So, this code is morally equivalent to the Universal 8.1 code in that it is careful only to use features that are present, although it achieves that in a different way.
 
 ```csharp
     // Note: Cache the value instead of querying it more than once.
@@ -155,28 +155,28 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 }
 ```
 
-另请参阅[检测正运行你的应用的平台](w8x-to-uwp-input-and-sensors.md#detecting-the-platform)。
+Also, see [Detecting the platform your app is running on](w8x-to-uwp-input-and-sensors.md).
 
-## 应用包清单
+## <a name="app-package-manifest"></a>App package manifest
 
-[Windows 10 中的更改内容](https://msdn.microsoft.com/library/windows/apps/dn705793)主题针对 Windows 10 列出了对程序包清单架构参考所做的更改，其中包括已添加、删除和更改的元素。 有关该架构中所有元素、属性和类型的参考信息，请参阅[元素层次结构](https://msdn.microsoft.com/library/windows/apps/dn934819)。 如果你要移植 Windows Phone 应用商店应用，请确保移植的应用清单中的 **pm:PhoneIdentity** 元素与你要移植的应用的应用清单中的相应项相匹配（有关完整的详细信息，请参阅 [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) 主题）。
+The [What's changed in Windows 10](https://msdn.microsoft.com/library/windows/apps/dn705793) topic lists changes to the package manifest schema reference for Windows 10, including elements that have been added, removed, and changed. For reference info on all elements, attributes, and types in the schema, see [Element Hierarchy](https://msdn.microsoft.com/library/windows/apps/dn934819). If you're porting a Windows Phone Store app, then ensure that the **pm:PhoneIdentity** element in the ported app manifest matches what is in the app manifest of the app you're porting (see the [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) topic for full details).
 
-你的项目中的设置（包括任何扩展 SDK 引用）决定了你的应用可以调用的 API 图面区域。 但是，你的应用包清单决定了你的客户可以从应用商店将你的应用安装在哪些实际的设备集上。 有关详细信息，请参阅 [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 中的相关示例。
+The settings in your project (including any extension SDKs references) determine the API surface area that your app can call. But, your app package manifest is what determines the actual set of devices that your customers can install your app onto from the Store. For more info, see examples in [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903).
 
-你可以编辑应用包清单以设置各种声明、功能和某些功能所需的其他设置。 你可以使用 Visual Studio 应用包清单编辑器来编辑它。 如果未显示“解决方案资源管理器”****，请从“视图”****菜单中选择它。 双击“Package.appxmanifest”****。 此时会打开“清单编辑器”窗口。 选择要更改的相应选项卡，然后进行保存。
+You can edit the app package manifest to set various declarations, capabilities, and other settings that some features need. You can use the Visual Studio app package manifest editor to edit it. If the **Solution Explorer** is not shown, choose it from the **View** menu. Double-click **Package.appxmanifest**. This opens the manifest editor window. Select the appropriate tab to make changes and then save.
 
-下一主题为[疑难解答](w8x-to-uwp-troubleshooting.md)。
+The next topic is [Troubleshooting](w8x-to-uwp-troubleshooting.md).
 
-## 相关主题
+## <a name="related-topics"></a>Related topics
 
-* [开发通用 Windows 平台应用](http://msdn.microsoft.com/library/dn975273.aspx)
-* [使用模板（C#、C++ 和 Visual Basic）快速启动你的 Windows 应用商店应用](https://msdn.microsoft.com/library/windows/apps/hh768232)
-* [创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [使用可移植类库的跨平台开发](http://msdn.microsoft.com/library/gg597391.aspx)
-
-
+* [Develop apps for the Universal Windows Platform](http://msdn.microsoft.com/library/dn975273.aspx)
+* [Jumpstart your Windows Store app using templates (C#, C++, Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
+* [Creating Windows Runtime Components](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
+* [Cross-Platform Development with the Portable Class Library](http://msdn.microsoft.com/library/gg597391.aspx)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Dec16_HO1-->
 
 

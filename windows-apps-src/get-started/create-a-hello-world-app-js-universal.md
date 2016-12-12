@@ -2,149 +2,147 @@
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
 title: Create a "Hello, world" app (JS)
-description: "本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的&amp;\\#0034;Hello, world&amp;\\#0034;应用，该应用面向 Windows10 上的通用 Windows 平台 (UWP)。"
+description: This tutorial teaches you how to use JavaScript and HTML to create a simple &\#0034;Hello, world&\#0034; app that targets the Universal Windows Platform (UWP) on Windows 10.
 translationtype: Human Translation
-ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
-ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
+ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
+ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 ---
-# 创建“Hello, world”应用 (JS)
+# <a name="create-a-hello-world-app-js"></a>Create a "Hello, world" app (JS)
 
-本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 Windows10 设备上运行的应用。
+This tutorial teaches you how to use JavaScript and HTML to create a simple "Hello, world" app that targets the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device.
 
-在此处，你将了解如何：
+Here you'll learn how to:
 
--   创建面向 **Windows10** 和 **UWP** 的新 **Visual Studio 2015** 项目。
--   向起始页中添加 HTML 内容
--   处理触控、笔以及鼠标输入
--   在 Visual Studio 中，在本地桌面和手机仿真器中运行该项目
--   使用 Windows JavaScript 库控件
+-   Create a new **Visual Studio 2015** project that targets **Windows 10** and the **UWP**.
+-   Add HTML content to your start page
+-   Handle touch, pen, and mouse input
+-   Run the project on the local desktop and on the phone emulator in Visual Studio
+-   Use a Windows Library for JavaScript control
 
-## 开始之前...
+## <a name="before-you-start"></a>Before you start...
 
--   [什么是通用 Windows 应用](whats-a-uwp.md)？
--   [Windows10 中的新增功能](https://dev.windows.com/whats-new-windows-10-dev-preview)
-          
--   若要完成本教程，你需要 Windows10 和 Visual Studio 2015。 [准备工作](get-set-up.md)。
--   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在“窗口”菜单中，通过使用“重置窗口布局”命令来重置它。
+-   [What's a Universal Windows app](whats-a-uwp.md)?
+-   To complete this tutorial, you need Windows 10 and Visual Studio 2015. [Get set up](get-set-up.md).
+-   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
-## 步骤 1：在 Visual Studio 中创建新项目
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>Step 1: Create a new project in Visual Studio
 
-我们来创建名为 `HelloWorld` 的新应用。 以下是操作方法：
-1.  启动 Visual Studio 2015。
+Let's create a new app named `HelloWorld`. Here's how:
+1.  Launch Visual Studio 2015.
 
-2.  在“文件”菜单中，依次选择“新建”&gt;“项目...”以打开“新建项目”对话框。
+2.  From the **File** menu, select **New > Project...** to open the *New Project* dialog.
 
-3.  在左侧的模板列表中，依次展开“已安装”&gt;“模板”&gt;“JavaScript”&gt;“Windows”，然后选择“通用”以查看 UWP 项目模板列表。 选择“WinJS App(通用 Windows)”。
+3.  From the list of templates on the left, expand **Installed > Templates > JavaScript > Windows**, and then choose **Universal** to see the list of UWP project templates. Choose **WinJS App (Universal Windows)**.
 
-    ![“新建项目”窗口 ](images/winjs-tut-newproject.png)
+    ![The New Project window ](images/winjs-tut-newproject.png)
 
-    在本教程中，我们使用“WinJS App”模板。 此模板创建一个最基本的 UWP 应用，该应用能够编译和运行，但不包含用户界面控件或数据。 本教程中的课程将指导你向应用中添加控件和数据。
+    For this tutorial, we use the **WinJS App** template. This template creates a minimal UWP app that compiles and runs, but contains no user interface controls or data. You add controls and data to the app over the course of this tutorials.
 
-   （如果你没有看到这些选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
+   (If you don't see these options, make sure you have the Universal Windows App Development Tools installed. See [Get set up](get-set-up.md) for more info.)
 
-4.  在“名称”文本框中，键入“HelloWorld”。
-5.  单击“确定”以创建项目。
-6.  系统将要求你选择 Windows 支持的“目标版本”和“最低版本”。 默认设置都合适，因此单击“确定”。
+4.  In the **Name** text box, type "HelloWorld".
+5.  Click **OK** to create the project.
+6.  You will be asked to select a **Target Version** and **Minimum Version** of Windows to support. The default settings are fine, so click **OK**.
 
-    Visual Studio 将创建项目并在“解决方案资源管理器”中显示该项目。
+    Visual Studio creates your project and displays it in the **Solution Explorer**.
 
-    ![HelloWorld 项目的 Visual Studio 解决方案资源管理器](images/winjs-tut-helloworld.png)
+    ![Visual Studio Solution Explorer for the HelloWorld project](images/winjs-tut-helloworld.png)
 
-尽管“WinJS App”是最基本的模板，但该模板仍包含少量文件：
+Although the **WinJS App** is a minimal template, it still contains a handful of files:
 
--   介绍应用（它的名称、说明、磁贴、起始页、初始屏幕等等）并列出应用包含的文件的清单文件 (package.appxmanifest)。
--   用于在“开始”菜单中显示的一组徽标图像（images/Square150x150Logo.scale-200.png、images/Square44x44Logo.scale-200.png 和 images/Wide310x150Logo.scale-200.png）。
--   用于在 Windows 应用商店中表示应用的图像 (images/StoreLogo.png)。
--   用于在应用启动时显示的初始屏幕 (images/SplashScreen.scale-200.png)。
--   用于在应用启动时运行的起始页 (index.html) 和附带的 JavaScript 文件 (main.js)。
+-   A manifest file (package.appxmanifest) that describes your app (its name, description, tile, start page, splash screen, and so on) and lists the files that your app contains.
+-   A set of logo images (images/Square150x150Logo.scale-200.png, images/Square44x44Logo.scale-200.png, and images/Wide310x150Logo.scale-200.png)to display in the start menu.
+-   An image (images/StoreLogo.png) to represent your app in the Windows Store.
+-   A splash screen (images/SplashScreen.scale-200.png) to show when your app starts.
+-   A start page (index.html) and an accompanying JavaScript file (main.js) that run when your app starts.
 
-若要查看和编辑文件，请双击“解决方案资源管理器”中的文件。
+To view and edit the files, double-click the file in the **Solution Explorer**.
 
-这些文件是所有使用 JavaScript 的 UWP 应用必不可少的文件。 在 Visual Studio 中创建的所有项目都包含这些文件。
+These files are essential to all UWP apps using JavaScript. Any project that you create in Visual Studio contains them.
 
-## 步骤 2：启动应用
+## <a name="step-2-launch-the-app"></a>Step 2: Launch the app
 
 
-此时，你已创建了一个非常简单的应用。 现在是构建、部署和启动应用并查看其外观的好时机。 你可以在本地计算机上、模拟器或仿真器中或者在远程设备上调试应用。 下面是 Visual Studio 中的目标设备菜单。
+At this point, you've created a very simple app. This is a good time to build, deploy, and launch your app and see what it looks like. You can debug your app on the local machine, in a simulator or emulator, or on a remote device. Here's the target device menu in Visual Studio.
 
-![用于调试应用的设备目标下拉列表](images/uap-debug.png)
+![Drop-down list of device targets for debugging your app](images/uap-debug.png)
 
-### 在桌面设备上启动应用
+### <a name="start-the-app-on-a-desktop-device"></a>Start the app on a Desktop device
 
-默认情况下，应用在本地计算机上运行。 目标设备菜单提供用于在桌面设备系列中的设备上调试应用的多个选项。
+By default, the app runs on the local machine. The target device menu provides several options for debugging your app on devices from the desktop device family.
 
--   **模拟器**
--   **本地计算机**
--   **远程计算机**
+-   **Simulator**
+-   **Local Machine**
+-   **Remote Machine**
 
-**在本地计算机上开始调试**
+**To start debugging on the local machine**
 
-1.  在**“标准”**工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，确保已选中**“本地计算机”**。 （它是默认选择。）
-2.  单击工具栏中的**“开始调试”**按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
+1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, make sure that **Local Machine** is selected. (It's the default selection.)
+2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) on the toolbar.
 
-   -或者-
+   –or–
 
-   在“调试”菜单中，单击“开始调试”。
+   From the **Debug** menu, click **Start Debugging**.
 
-   -或者-
+   –or–
 
-   按 F5。
+   Press F5.
 
-应用将在窗口中打开，并且将首先显示默认初始屏幕。 初始屏幕由一个图像 \(SplashScreen.png\) 和背景色（在应用的清单文件中指定）定义。
+The app opens in a window, and a default splash screen appears first. The splash screen is defined by an image (SplashScreen.png) and a background color (specified in your app's manifest file).
 
-初始屏幕会消失，然后会出现你的应用。 它包含带有文本“内容在此处”的黑屏。
+The splash screen disappears, and then your app appears. It contains a black screen with the text "Content goes here".
 
-![电脑上的 HelloWorld 应用](images/helloworld-1-winjs.png)
+![The HelloWorld app on a PC](images/helloworld-1-winjs.png)
 
-按 Windows 键以打开**“开始”**菜单，然后显示所有应用。 请注意，本地部署应用会将其磁贴添加到**“开始”**菜单。 若要再次运行该应用（不是在调试模式下），请在**“开始”**菜单中点击或单击其磁贴。
+Press the Windows key to open the **Start** menu, then show all apps. Notice that deploying the app locally adds its tile to the **Start** menu. To run the app again (not in debugging mode), tap or click its tile in the **Start** menu.
 
-它还无法执行很多操作，但祝贺你已构建了第一个 UWP 应用！
+It doesn't do much—yet—but congratulations, you've built your first UWP app!
 
-**停止调试**
+**To stop debugging**
 
--   单击工具栏中的**“停止调试”**按钮（![“停止调试”按钮](images/stopdebug.png)）。
+-   Click the **Stop Debugging** button (![Stop debugging button](images/stopdebug.png)) in the toolbar.
 
-   -或者-
+   –or–
 
-   在“调试”菜单中，单击“停止调试”。
+   From the **Debug** menu, click **Stop debugging**.
 
-   -或者-
+   –or–
 
-   关闭应用窗口。
+   Close the app window.
 
-### 在移动设备仿真器上启动该应用
+### <a name="start-the-app-on-a-mobile-device-emulator"></a>Start the app on a mobile device emulator
 
-你的应用可在任何 Windows10 设备上运行，让我们看一下它在 Windows Phone 上的情况如何。
+Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone.
 
-除了在桌面设备上执行调试的选项，Visual Studio 还提供用于在连接到计算机的物理移动设备上或移动设备仿真器上部署和调试应用的选项。 你可以为带有不同内存和显示配置的设备在仿真器中进行选择。
+In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
 
--   **设备**
--   **仿真器 <SDK version> WVGA 4 英寸 512MB**
--   **仿真器 <SDK version> WVGA 4 英寸 1GB**
--   等（采用其他配置的各种仿真器）
+-   **Device**
+-   **Emulator <SDK version> WVGA 4 inch 512MB**
+-   **Emulator <SDK version> WVGA 4 inch 1GB**
+-   etc... (Various emulators in other configurations)
 
-（如果你没有看到这些仿真器，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。）
+(If you don't see the emulators, make sure you have the Universal Windows App Development Tools installed. See [Get set up](get-set-up.md) for more info.)
 
-最好在具有小型屏幕和有限内存的设备上测试应用，因此请使用“仿真器 10.0.14393.0 WVGA 4 英寸 512MB”选项。
+It's a good idea to test your app on a device with a small screen and limited memory, so use the **Emulator 10.0.14393.0 WVGA 4 inch 512MB** option.
 
-**在移动设备仿真器上开始调试**
+**To start debugging on a mobile device emulator**
 
-1.  在“标准”工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取“仿真器 10.0.14393.0 WVGA 4 英寸 512MB”。
-2.  单击工具栏中的“开始调试”按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
+1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.14393.0 WVGA 4 inch 512MB**.
+2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
 
-   -或者-
+   –or–
 
-   在**“调试”**菜单中，单击**“开始调试”**。
+   From the **Debug** menu, click **Start Debugging**.
 
 
-Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。 在初始启动时，仿真器可能需要一些时间来启动。 你可能会看到有关 HyperV 的错误，单击“重试”应该可以解决此问题。 在移动设备仿真器上，应用外观如下所示。
+Visual Studio starts the selected emulator and then deploys and starts your app. On the initial launch, the emulator may take a little time to start. You may see an error regarding HyperV, and clicking **Retry** should resolve this. On the mobile device emulator, the app looks like this.
 
-![移动设备上的初始应用屏幕](images/helloworld-1-winjs-phone.png)
+![Initial app screen on mobile device](images/helloworld-1-winjs-phone.png)
 
-## 步骤 3：修改你的起始页
+## <a name="step-3-modify-your-start-page"></a>Step 3: Modify your start page
 
-Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起始页。 应用运行时，会显示其起始页的内容。 起始页还包含对应用的代码文件和样式表的引用。 以下是 Visual Studio 为你创建的起始页：
+One of the files that Visual Studio created for you is **index.html**, your app's start page. When the app runs, it displays the content of its start page. The start page also contains references to the app's code files and style sheets. Here's the start page that Visual Studio created for you:
 
 ```html
 <!DOCTYPE html>
@@ -168,11 +166,11 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 </html>
 ```
 
-让我们向 default.html 文件中添加一些新内容。 正如你向任何其他 HTML 文件添加内容一样，在 [body](https://msdn.microsoft.com/library/windows/apps/Hh453011) 元素内添加内容。 你可以使用 HTML5 元素创建应用（[少数情况例外](https://msdn.microsoft.com/library/windows/apps/Hh465380)）。 这表示你可以使用 HTML5 元素，如 [h1](https://msdn.microsoft.com/library/windows/apps/Hh441078)、[p](https://msdn.microsoft.com/library/windows/apps/Hh453431)、[button](https://msdn.microsoft.com/library/windows/apps/Hh453017)、[div](https://msdn.microsoft.com/library/windows/apps/Hh453133) 以及 [img](https://msdn.microsoft.com/library/windows/apps/Hh466114)。
+Let's add some new content to your default.html file. Just as you would add content to any other HTML file, you add your content inside the [body](https://msdn.microsoft.com/library/windows/apps/Hh453011) element. You can use HTML5 elements to create your app (with a [few exceptions](https://msdn.microsoft.com/library/windows/apps/Hh465380)). That means you can use HTML5 elements like [h1](https://msdn.microsoft.com/library/windows/apps/Hh441078), [p](https://msdn.microsoft.com/library/windows/apps/Hh453431), [button](https://msdn.microsoft.com/library/windows/apps/Hh453017), [div](https://msdn.microsoft.com/library/windows/apps/Hh453133), and [img](https://msdn.microsoft.com/library/windows/apps/Hh466114).
 
-**编辑起始页**
+**Edit your start page**
 
-1.  使用以下内容替代 **body** 元素中的现有内容：显示“Hello, world!”的一级标题、询问用户名的一些文本、用于接受用户名的 **input** 元素、**button** 以及 **div** 元素。 向 **input**、**button** 和 **div** 分配 ID。
+1.  Replace the existing content in the **body** element with a first-level heading that says "Hello, world!", some text that asks the user's name, an **input** element to accept the user's name, a **button**, and a **div** element. Assign IDs to the **input**, the **button**, and the **div**.
 
  ```html
     <body class="win-type-body">
@@ -184,21 +182,21 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
     </body>
  ```
 
-2.  在本地计算机上运行应用。 它的外观如下所示。
+2.  Run the app on the local machine. It look like this.
 
-![带有新内容的 HelloWorld 应用](images/helloworld-2-winjs.png)
+![The HelloWorld app with new content](images/helloworld-2-winjs.png)
 
-   你可以在 **input** 元素中键入内容，但现在单击 **button** 不会执行任何操作。 某些对象（例如 **button**）可以在发生特定事件时发送消息。 这些事件消息为你提供了可以采取一些操作响应事件的机会。 将用于响应事件的代码放在事件处理程序方法中。
+   You can type in the **input** element, but right now, clicking the **button** doesn't do anything. Some objects, such as **button**, can send messages when certain events occur. These event messages give you the opportunity to take some action in response to the event. You put code to respond to the event in an event handler method.
 
-   在后续步骤中，我们为显示个性化问候的 **button** 创建事件处理程序。 我们向 main.js 文件添加事件处理程序代码。
+   In the next steps, we create an event handler for the **button** that displays a personalized greeting. We add our event handler code to our main.js file.
 
-## 步骤 4：创建事件处理程序
+## <a name="step-4-create-an-event-handler"></a>Step 4: Create an event handler
 
-创建新项目后，Visual Studio 为我们创建了 /js/main.js 文件。 此文件包含用于处理应用生命周期的代码。 你还可以在此文件中编写为 index.html 文件提供交互性的其他代码。
+When we created our new project, Visual Studio created a /js/main.js file for us. This file contains code for handling your app's life cycle. It's also where you write additional code that provides interactivity for your index.html file.
 
-打开 main.js 文件。
+Open the main.js file.
 
-在开始添加自己的代码之前，我们来看一下该文件中代码的头几行和最后几行：
+Before we start adding our own code, let's take a look at the first and the last few lines of code in the file:
 
 ```javascript
 (function () {
@@ -209,11 +207,11 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
  })();
 ```
 
-你可能会对此处发生的情况感到疑惑。 代码的这些行覆盖了自我执行匿名函数中 main.js 代码的其他位置。 自我执行匿名函数使避免命名冲突或意外修改原本无意修改的值的情况变得更简单。 此操作还可防止全局命名空间中出现不需要的标识符，这有助于提高性能。 它看上去有一点奇怪，但却是良好的编程实践。
+You might be wondering what's going on here. These lines of code wrap the rest of the main.js code in a self-executing anonymous function. A self-executing anonymous function makes it easier to avoid naming conflicts or situations where you accidently modify a value that you didn't intend to modify. It also keeps unnecessary identifiers out of the global namespace, which helps performance. It looks a little strange, but it's a good programming practice.
 
-代码的下一行为 JavaScript 代码打开了[严格模式](https://msdn.microsoft.com/library/windows/apps/br230269.aspx)。 严格模式为代码提供了额外的错误检查。 例如，它防止你使用隐式声明的变量或为只读属性分配值。
+The next line of code turns on [strict mode](https://msdn.microsoft.com/library/windows/apps/br230269.aspx) for your JavaScript code. Strict mode provides additional error checking for your code. For example, it prevents you from using implicitly declared variables or assigning a value to a read-only property.
 
-查看 main.js 中代码的剩余部分。 它处理应用的 [activated](https://msdn.microsoft.com/library/windows/apps/BR212679) 和 [checkpoint](https://msdn.microsoft.com/library/windows/apps/BR229839) 事件。 我们在以后讨论这些事件的更多详细信息。 现在，只要了解启动应用时将引发 **activated** 事件。
+Take a look at the rest of the code in main.js. It handles your app's [activated](https://msdn.microsoft.com/library/windows/apps/BR212679) and [checkpoint](https://msdn.microsoft.com/library/windows/apps/BR229839) events. We go into more detail about these events later. For now, just know that the **activated** event fires when your app starts.
 
 ```javascript
    (function () {
@@ -260,26 +258,26 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
     };
 ```
 
-让我们为 [button](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定义事件处理程序。 新事件处理程序从 `nameInput`[input](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件获取用户名并使用该用户名向在上一部分中创建的 `greetingOutput`**div** 元素输出问候语。
+Let's define an event handler for your [button](https://msdn.microsoft.com/library/windows/apps/Hh453017). Our new event handler gets the user's name from the `nameInput` [input](https://msdn.microsoft.com/library/windows/apps/Hh453271) control and uses it to output a greeting to the `greetingOutput` **div** element that you created in the last section.
 
-### 使用用于触控、鼠标和笔输入的事件
+### <a name="using-events-that-work-for-touch-mouse-and-pen-input"></a>Using events that work for touch, mouse, and pen input
 
-在 UWP 应用中，你无需担心触控、鼠标与其他指针输入形式之间的区别。 你只需使用你了解的事件（如 [click](https://msdn.microsoft.com/library/windows/apps/Hh441312)），这些事件适用于所有输入形式。
+In a UWP app, you don’t need to worry about the differences between touch, mouse, and other forms of pointer input. You can just use events that you know, like [click](https://msdn.microsoft.com/library/windows/apps/Hh441312), and they work for all forms of input.
 
-**提示** 应用还可以使用新的 *MSPointer\** 和 *MSGesture\** 事件，这些事件适用于触控、鼠标以及笔输入，并可以提供有关触发事件的设备的其他信息。 有关详细信息，请参阅[响应用户交互](https://msdn.microsoft.com/library/windows/apps/Hh700412)和[手势、操作以及交互](https://msdn.microsoft.com/library/windows/apps/Hh761498)。
+**Tip**   Your app can also use the new *MSPointer\** and *MSGesture\** events, which work for touch, mouse, and pen input and can provide additional info about the device that triggered the event. For more info, see [Responding to user interaction](https://msdn.microsoft.com/library/windows/apps/Hh700412) and [Gestures, manipulations, and interactions](https://msdn.microsoft.com/library/windows/apps/Hh761498).
 
-我们继续并创建事件处理程序。
+Let's go ahead and create the event handler.
 
-**创建事件处理程序**
+**Create the event handler**
 
-1.  在 main.js 中，在 [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) 事件处理程序之后且对 [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705) 的调用之前，创建名为 `buttonClickHandler` 的 [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件处理程序函数，该函数接受名为 `eventInfo` 的单个参数。
+1.  In main.js, after the [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) event handler and before the call to [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705), create a [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) event handler function named `buttonClickHandler` that takes a single parameter named `eventInfo`.
 ```javascript
     function buttonClickHandler(eventInfo) {
 
         }
 ```
 
-2.  在事件处理程序内，从 `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件检索用户名并使用该用户名创建问候语。 使用 `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 显示相关结果。
+2.  Inside our event handler, retrieve the user's name from the `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) control and use it to create a greeting. Use the `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) to display the result.
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -288,26 +286,25 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
         }
  ```
 
-你已将事件处理程序添加到 main.js。 现在你需要注册该处理程序。
+You added your event handler to main.js. Now you need to register it.
 
-## 步骤 5：在应用启动时注册事件处理程序
-
-
-此时，你只需向该按钮注册该事件处理程序。 注册事件处理程序的建议方法是从代码中调用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145)。 注册事件处理程序的较好时机是在激活应用之时。 幸运的是，正如你所见，Visual Studio 为我们在 main.js 文件中生成了一些代码，可处理应用激活。
+## <a name="step-5-register-the-event-handler-when-your-app-launches"></a>Step 5: Register the event handler when your app launches
 
 
-在 [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) 处理程序内，该代码会检查发生了何种类型的激活。 存在多种不同类型的激活。 例如，当用户启动应用和用户希望打开与应用关联的文件时会激活应用。 （有关详细信息，请参阅[应用生命周期](https://msdn.microsoft.com/library/windows/apps/Mt243287)。）
+The only thing we need to do now is register the event handler with the button. The recommended way to register an event handler is to call [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) from our code. A good place to register the event handler is when our app is activated. Fortunately, as you saw Visual Studio generated some code for us in our main.js file that handles our app's activation.
 
-我们对 [launch](https://msdn.microsoft.com/library/windows/apps/BR224693) 激活感兴趣。 只要应用未在运行而后由用户激活，就会*启动*该应用。 不论应用过去是否关闭，或者是否属于首次启动，激活都会调用 [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 **WinJS.UI.processAll** 包含在对 [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的调用中，这样可确保初始屏幕不会在应用页面准备就绪前停止。
 
-**提示**
-            **WinJS.UI.processAll** 函数扫描 default.html 文件中是否存在 WinJS 控件并初始化这些控件。 到目前为止，我们尚未添加其中任何控件，但最好保留此代码，以便在以后需要时进行添加。
+Inside the [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) handler, the code checks to see what type of activation occurred. There are many different types of activations. For example, your app is activated when the user launches your app and when the user wants to open a file that is associated with your app. (For more info, see [App lifecycle](https://msdn.microsoft.com/library/windows/apps/Mt243287).)
 
-为非 WinJS 控件注册事件处理程序的较好时机是在调用 **WinJS.UI.processAll** 之后。
+We're interested in the [launch](https://msdn.microsoft.com/library/windows/apps/BR224693) activation. An app is *launched* whenever it is not running and then a user activates it. It calls [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) regardless of whether the app had been shut down in the past or whether this is the very first time it's being launched. The **WinJS.UI.processAll** is enclosed in a call to the [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) method, which makes sure the splash screen isn't taken down until the app's page is ready.
 
-**注册事件处理程序**
+**Tip**   The **WinJS.UI.processAll** function scans your default.html file for WinJS controls and initializes them. So far, we haven't added any of these controls, but it's a good idea to leave this code in case you want to add them later.
 
--   在 main.js 的 [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 事件处理程序中，检索 `helloButton` 并使用 [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) 为 [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件注册事件处理程序。 在调用 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 之后添加此代码。
+A good place to register event handlers for non-WinJS controls is just after the call to **WinJS.UI.processAll**.
+
+**Register your event handler**
+
+-   In the [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) event handler in main.js, retrieve `helloButton` and use [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) to register our event handler for the [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) event. Add this code after the call to [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975).
 
 ```javascript
    app.onactivated = function (args) {
@@ -325,20 +322,20 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 
 
-运行应用。 当你在文本框中输入姓名并单击按钮时，应用会显示个性化问候。
+Run the app. When you enter your name in the text box and click the button, the app displays a personalized greeting.
 
-**注意** 如果你想知道我们为何在代码中使用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) 注册事件而不是在 HTML 中设置 [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，请参阅[基本应用编码](https://msdn.microsoft.com/library/windows/apps/Hh780660)以获得详细说明。
+**Note**   If you're curious as to why we use [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) to register our event in code rather than setting the [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) event in our HTML, see [Coding basic apps](https://msdn.microsoft.com/library/windows/apps/Hh780660) for a detailed explanation.
 
-## 步骤 6：添加 Windows JavaScript 库控件
+## <a name="step-6-add-a-windows-library-for-javascript-control"></a>Step 6: Add a Windows Library for JavaScript control
 
 
-除了标准 HTML 控件外，你的应用还可以使用 [Windows JavaScript 库](https://msdn.microsoft.com/library/windows/apps/BR229782)中的任何控件，例如 [WinJS.UI.DatePicker](https://msdn.microsoft.com/library/windows/apps/BR211681)、[WinJS.UI.FlipView](https://msdn.microsoft.com/library/windows/apps/BR211711)、[WinjS.UI.ListView](https://msdn.microsoft.com/library/windows/apps/BR211837) 和 [WinJS.UI.Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件。
+In addition to standard HTML controls, your app can use any of the controls in the [Windows Library for JavaScript](https://msdn.microsoft.com/library/windows/apps/BR229782), such as the [WinJS.UI.DatePicker](https://msdn.microsoft.com/library/windows/apps/BR211681), [WinJS.UI.FlipView](https://msdn.microsoft.com/library/windows/apps/BR211711), [WinjS.UI.ListView](https://msdn.microsoft.com/library/windows/apps/BR211837), and [WinJS.UI.Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) controls.
 
-与 HTML 控件不同，WinJS 控件没有专用的标记元素：例如，你不能通过添加 `<rating />` 元素创建 [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件。 若要添加 WinJS 控件，可以创建 **div** 元素并使用 [data-win-control](https://msdn.microsoft.com/library/windows/apps/Hh440969) 属性指定所需控件的类型。 若要添加 **Rating** 控件，请将该属性设置为“WinJS.UI.Rating”。
+Unlike HTML controls, WinJS controls don't have dedicated markup elements: you can't create a [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) control by adding a `<rating />` element, for example. To add a WinJS control, you create a **div** element and use the [data-win-control](https://msdn.microsoft.com/library/windows/apps/Hh440969) attribute to specify the type of control you want. To add a **Rating** control, you set the attribute to "WinJS.UI.Rating".
 
-**将 Rating 控件添加到应用。**
+**Add a Rating control to your app.**
 
-1.  在 index.html 文件中，在 `greetingOutput`**div** 之后添加 [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) 和 [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件。
+1.  In your index.html file, add a [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) and a [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) control after the `greetingOutput` **div**.
 
 ```html
     <body class="win-type-body">
@@ -355,36 +352,36 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
     </body>
 ```
 
-2.  在本地计算机上运行应用。 请注意新的 [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件。
+2.  Run the app on the local machine. Notice the new [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control.
 
-   ![具有 Windows JavaScript 库控件的 Hello, world 应用](images/helloworld-4-winjs.png)
+   ![The Hello, world app, with a Windows Library for JavaScript control](images/helloworld-4-winjs.png)
 
-> 对于要加载的 **Rating**，你的页面必须调用 [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 由于我们的应用使用的是 Visual Studio 模板之一，你的 main.js 已包含对 **WinJS.UI.processAll** 的调用，如前面所述，因此你无需添加任何代码。
+> For the **Rating** to load, your page must call [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975). Because our app is using one of the Visual Studio templates, your main.js already includes a call to **WinJS.UI.processAll**, as described earlier, so you don't have to add any code.
 
-现在，单击 **Rating** 控件可更改分级（但它不会执行任何其他操作）。 当用户更改分级时，让我们使用事件处理程序来执行一些操作。
+Right now, clicking the **Rating** control changes the rating, but it doesn't do anything else. Let's use an event handler to do something when the user changes the rating.
 
-## 步骤 7：为 Windows JavaScript 库控件注册事件处理程序
+## <a name="step-7-register-an-event-handler-for-a-windows-library-for-javascript-control"></a>Step 7: Register an event handler for a Windows Library for JavaScript control
 
 
-为 WinJS 控件注册事件处理程序的方法与为标准 HTML 控件注册事件处理程序稍有不同。 如前所述，**onactivated** 事件处理程序调用 **WinJS.UI.processAll** 方法来初始化标记中的 WinJS。 **WinJS.UI.processAll** 调用包含在对 **setPromise** 方法的调用中，如下所示：
+Registering an event handler for a WinJS control is a little different than registering an event handler for a standard HTML control. Earlier, we mentioned that the **onactivated** event handler calls **WinJS.UI.processAll** method to initialize WinJS in your markup. The **WinJS.UI.processAll** call is enclosed in a call to the **setPromise** method, like this:
 
 ```javascript
             args.setPromise(WinJS.UI.processAll());           
 ```
 
-如果 **Rating** 是标准 HTML 控件，则你可以在对 **WinJS.UI.processAll** 的调用之后添加事件处理程序。 但是，对于类似于我们的 **Rating** 的 WinJS 控件，情况稍复杂一些。 由于 **WinJS.UI.processAll** 为我们创建 **Rating** 控件，因此我们无法向 **Rating** 添加事件处理程序，直到 **WinJS.UI.processAll** 完成其处理。
+If **Rating** was a standard HTML control, you could add your event handler after this call to **WinJS.UI.processAll**. But it's a little more complicated for a WinJS control like our **Rating**. Because **WinJS.UI.processAll** creates the **Rating** control for us, we can't add the event handler to **Rating** until after **WinJS.UI.processAll** has finished its processing.
 
-如果 **WinJS.UI.processAll** 是典型方法，我们可以在调用该方法后立即注册 **Rating** 事件处理程序。 但是，**WinJS.UI.processAll** 方法是异步的，因此它后面的任何代码都可能在 **WinJS.UI.processAll** 完成之前运行。 那么我们该怎么办？ 我们使用 [Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) 对象在 **WinJS.UI.processAll** 完成时接收通知。
+If **WinJS.UI.processAll** were a typical method, we could register the **Rating** event handler right after we call it. But the **WinJS.UI.processAll** method is asynchronous, so any code that follows it might run before **WinJS.UI.processAll** completes. So, what do we do? We use a [Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) object to receive notification when **WinJS.UI.processAll** completes.
 
-与所有异步 WinJS 方法类似，**WinJS.UI.processAll** 会返回一个 **Promise** 对象。 **Promise** 是对某件事将在将来发生的“承诺”，当该事件发生时，表示 **Promise** 已完成。
+Like all asynchronous WinJS methods, **WinJS.UI.processAll** returns a **Promise** object. A **Promise** is a "promise" that something will happen in the future; when that thing happens, the **Promise** is said to have completed.
 
-[Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) 对象具有 [then](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法，该方法接受“completed”函数作为参数。 **Promise** 在完成时调用此函数。
+[Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) objects have a [then](https://msdn.microsoft.com/library/windows/apps/BR229728) method that takes a "completed" function as a parameter. The **Promise** calls this function when it completes.
 
-通过向“completed”函数添加代码并将其传递到 **Promise** 对象的 **then** 方法，你可以确保代码在 **WinJS.UI.processAll** 完成后执行。
+By adding your code to a "completed" function and passing it to the **Promise** object's **then** method, you can be sure your code executes after **WinJS.UI.processAll** is complete.
 
-**输出用户选择的 Rating 值**
+**Output the rating value the user selects**
 
-1.  在 index.html 文件中，创建一个 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 元素以显示分级值，并向其提供 **id**“ratingOutput”。
+1.  In your index.html file, create a [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) element to display the rating value and give it the **id** "ratingOutput".
 
 ```html
         <body class="win-type-body">
@@ -402,7 +399,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
     </body>
 ```
 
-2.  在 main.js 文件中，为 **Rating** 控件的 [change](https://msdn.microsoft.com/library/windows/apps/BR211891) 事件创建一个名为 `ratingChanged` 的事件处理程序。 [eventInfo](https://msdn.microsoft.com/library/windows/apps/Hh465776) 参数包含 **detail.tentativeRating** 属性，该属性可提供新的用户分级。 检索该值并在输出 **div** 中显示该值。
+2.  In our main.js file, create an event handler for the **Rating** control's [change](https://msdn.microsoft.com/library/windows/apps/BR211891) event named `ratingChanged`. The [eventInfo](https://msdn.microsoft.com/library/windows/apps/Hh465776) parameter contains a **detail.tentativeRating** property that provides the new user rating. Retrieve this value and display it in the output **div**.
 
 ```javascript
         function ratingChanged(eventInfo) {
@@ -412,7 +409,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
         }
 ```
 
-3.  更新调用 [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) 的 [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) 事件处理程序中的代码，方法是添加对 [then](https://msdn.microsoft.com/library/windows/apps/BR229728) 方法的调用并将其传递给 `completed` 函数。 在 `completed` 函数中，检索托管 [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件的 `ratingControlDiv` 元素。 然后使用 [winControl](https://msdn.microsoft.com/library/windows/apps/Hh770814) 属性来检索实际的 **Rating** 控件。 （此示例定义 `completed` 内联函数。）
+3.  Update the code in the [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) event handler that calls [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) by adding a call to the [then](https://msdn.microsoft.com/library/windows/apps/BR229728) method and passing it a `completed` function. In the `completed` function, retrieve the `ratingControlDiv` element that hosts the [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) control. Then use the [winControl](https://msdn.microsoft.com/library/windows/apps/Hh770814) property to retrieve the actual **Rating** control. (This example defines the `completed` function inline.)
 
 ```javascript
            args.setPromise(WinJS.UI.processAll().then(function completed() {
@@ -429,9 +426,9 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
                 }));
 ```
 
-4.  可以在调用 [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 之后为 HTML 控件注册事件处理程序，也可在 `completed` 函数中注册它们。 为简单起见，我们继续将所有事件处理程序注册移到 [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) 事件处理程序内。
+4.  While it's fine to register event handlers for HTML controls after the call to [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975), it's also OK to register them inside your `completed` function. For simplicity, let's go ahead and move all your event handler registrations inside the [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) event handler.
 
-    下面是更新后的 [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) 事件处理程序：
+    Here's the updated [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) event handler:
 
 ```javascript
     (function () {
@@ -490,14 +487,16 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
     Run the app. When you select a rating value, it outputs the numeric value below the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control.
 
-![电脑上已完成的 Hello world 应用](images/helloworld-5-winjs.png)
+![The completed Hello world app on a PC](images/helloworld-5-winjs.png)
 
-## 摘要
+## <a name="summary"></a>Summary
 
-祝贺你，你已使用 JavaScript 和 HTML创建了你的第一款适用于 Windows10 和 UWP 的应用！
+Congratulations, you've created your first app for Windows 10 and the UWP using JavaScript and HTML!
+
+What's next? The [WinJS](https://developer.microsoft.com/en-us/windows/develop/winjs) docs will get you going with the Windows library for JavaScript.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

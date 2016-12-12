@@ -1,99 +1,99 @@
 ---
-title: "安全 Windows 应用开发简介"
-description: "本入门文章可以帮助应用架构师和开发人员更好地了解可加速创建安全通用 Windows 平台 (UWP) 应用的各种 Windows 10 平台功能。"
+title: Intro to secure Windows app development
+description: This introductory article helps app architects and developers better understand the various Windows 10 platform capabilities that accelerate creating secure Universal Windows Platform (UWP) apps.
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
+ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
+ms.openlocfilehash: 2ac9edf074ceb91d5cfea17228f0a39fef200b74
 
 ---
 
-# 安全 Windows 应用开发简介
+# <a name="intro-to-secure-windows-app-development"></a>Intro to secure Windows app development
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本入门文章可以帮助应用架构师和开发人员更好地了解可加速创建安全通用 Windows 平台 (UWP) 应用的各种 Windows 10 平台功能。 它详细介绍了如何在以下各个阶段使用可用的 Windows 安全功能：身份验证、未送达数据和静态数据。 可以通过查看包括在每章中的其他资源来查找有关每个主题的更详细信息。
+This introductory article helps app architects and developers better understand the various Windows 10 platform capabilities that accelerate creating secure Universal Windows Platform (UWP) apps. It details how to use the Windows security features available at each of the following stages: authentication, data-in-flight, and data-at-rest. You can find more in-depth information on each topic by reviewing the additional resources included in each chapter.
 
-## 1 简介
-
-
-开发安全应用非常具有挑战性。 在当今充斥着移动、社交、云和复杂企业应用的快节奏世界中，客户希望比以前更快地使用和更新应用。 他们还使用许多类型的设备，这会进一步增加创建应用体验的复杂性。 如果为 Windows 10 通用 Windows 平台 (UWP) 生成应用，除了日益增长的一列跨越物联网、Xbox One、Microsoft Surface Hub 和 HoloLens 的新设备外，还包括一列传统的台式机、笔记本电脑、平板电脑和移动设备。 作为开发人员，必须确保应用在涉及到的所有平台和设备上能够安全通信和存储数据。
-
-以下是一些使用 Windows 10 安全功能的优势。
-
--   通过将一致的 API 用于安全组件和技术，你可以在所有支持 Windows 10 的设备上拥有标准化安全性。
--   如果你实现了自定义代码来覆盖这些安全方案，则所编写、测试和维护的代码要比实际的少。
--   由于你使用操作系统控制应用访问其资源和本地或远程系统资源的方式，因此应用变得更加稳定和安全。
-
-在身份验证期间，将验证请求访问特定服务的用户的身份。 Microsoft Passport 和 Windows Hello 是 Windows 10 中的组件，可帮助在 Windows 应用中创建更安全的身份验证机制。 通过它们，你可以使用个人标识号 (PIN) 或生物识别（例如用户指纹、面部或虹膜）来为应用实现多重身份验证。
-
-未送达数据是指连接和通过该连接传输的消息。 它的一个示例是使用 Web 服务在远程服务器中检索数据。 使用安全套接字层 (SSL) 和安全超文本传输协议 (HTTPS) 可确保连接的安全性。 阻止中间方访问这些消息，或阻止未经授权的应用与 Web 服务进行通信对保护未送达数据而言很关键。
-
-最后，静态数据与驻留在内存或存储媒体上的数据相关。 Windows 10 具有在应用间阻止未经授权的数据访问和提供进一步保护设备数据的加密 API 的应用模型。 称为“凭据保险箱”的功能可以用于在设备上安全存储用户凭据，该设备上配有阻止其他应用访问这些凭据的操作系统。
-
-## 2 身份验证因素
+## <a name="1-introduction"></a>1 Introduction
 
 
-若要保护数据，必须标识请求访问它的人员并向其授予所请求的数据资源的访问权限。 标识用户的过程称为身份验证，而确定对某项资源的访问权限称为授权。 这些操作紧密相关，用户可能无法辨别。 它们可以是相对简单或复杂的操作，具体取决于许多因素：例如数据驻留在一台服务器上还是分配在许多系统上。 提供身份验证和授权服务的服务器被称为标识提供程序。
+Developing a secure app can be a challenge. In today’s fast-paced world of mobile, social, cloud, and complex enterprise apps, customers expect apps to become available and updated faster than ever. They also use many types of devices, further adding to the complexity of creating app experiences. If you build for the Windows 10 Universal Windows Platform (UWP), that could include the traditional list of desktops, laptops, tablets, and mobile devices; in addition to a growing list of new devices spanning the Internet of Things, Xbox One, Microsoft Surface Hub, and HoloLens. As the developer, you must ensure your apps communicate and store data securely, across all the platforms or devices involved.
 
-为了针对特定服务和/或应用对自己进行身份验证，用户要利用包含他们所知信息的凭据、他们拥有的内容和/或他们的身份。 其中的每项内容均称为身份验证因素。
+Here are some of the benefits of utilizing Windows 10 security features.
 
--   **Something the user knows** 通常是密码，但它也可以是个人标识号 (PIN) 或“密码”问答对。
--   **Something the user has** 通常是包含用户独有的身份验证数据的硬件内存设备（例如 U 盘）。
--   **Something the user is** 通常包括其指纹，但诸如用户语音、面部、眼部（眼睛）特征或行为模式等因素越来越流行。 在存储为数据时，这些度量值称为生物识别。
+-   You will have standardized security across all devices that support Windows 10, by using consistent APIs for security components and technologies.
+-   You write, test, and maintain less code than you would if you implemented custom code to cover these security scenarios.
+-   Your apps become more stable and secure because you use the operating system to control how the app accesses its resources and local or remote system resources.
 
-用户创建的密码本身是一个身份验证因素，但它通常不同分；任何知道密码的人都可以冒充拥有该密码的用户。 智能卡可以提供较高级别的安全性，但它可能被盗、丢失或遗忘。 通过指纹或眼部扫描对用户进行身份验证的系统可提供最高和最便利的安全级别，但它需要昂贵且专业的硬件（如用于面部识别的 Intel RealSense 相机），这些硬件并非可供所有用户使用。
+During authentication, the identity of a user requesting access to a particular service is validated. Microsoft Passport and Windows Hello are the components in Windows 10 that help create a more secure authentication mechanism in Windows apps. With them, you can use a Personal Identification Number (PIN), or biometrics such as the user’s fingerprints, face, or iris to implement multi-factor authentication for your apps.
 
-设计系统使用的身份验证方法是数据安全的一个复杂且重要的方面。 通常，你在身份验证中使用的因素数量越多，系统就越安全。 同时，身份验证必须可以便于使用。 用户通常在一天内多次登录，因此该过程必须快速。 选择身份验证类型时需权衡安全性和易用性；单因素身份验证最不安全但最易于使用，而多重身份验证随着因素的增加而变得越来越安全但也越来越复杂。
+Data-in-flight refers to the connection and the messages transferred across it. An example of this is retrieving data from a remote server using web services. The use of Secure Sockets Layer (SSL) and Secure Hypertext Transfer Protocol (HTTPS) ensures the security of the connection. Preventing intermediary parties from accessing these messages, or unauthorized apps from communicating with the web services, is key to securing data in flight.
 
-## 2.1 单因素身份验证
+Lastly, data-at-rest relates to data residing in memory or on storage media. Windows 10 has an app model that prevents unauthorized data access between apps, and offers encryption APIs to further secure data on the device. A feature called Credential Locker can be used to securely store user credentials on the device, with the operating system preventing other apps from accessing them.
 
-
-这种形式的身份验证基于单个用户凭据。 这通常是一个密码，但它也可以是个人标识号 (PIN)。
-
-下面是单因素身份验证的过程。
-
--   用户向标识提供程序提供其用户名和密码。 标识提供程序是验证用户身份的服务器进程。
--   标识提供程序检查用户名和密码是否与系统中存储的用户名和密码相同。 在大多数情况下，将加密密码来提供额外的安全性，以便其他人无法读取密码。
--   标识提供程序返回一个身份验证状态，用于指示身份验证是否已成功。
--   如果成功，开始数据交换。 如果不成功，用户必须重新进行身份验证。
-
-![单因素身份验证](images/secure-sfa.png)
-
-如今此身份验证方法是服务中最常用的方法。 当用作身份验证的唯一方法时，它也是最不安全的身份验证形式。 密码复杂性要求、“密码问题”和定期密码更改可使密码更安全，但它们对用户造成了更大的负担，并且无法有效抵御黑客攻击。
-
-密码质询比具有多个因素的系统更易于成功猜测密码。 如果他们从一家小型 Web 商店窃取了具有用户帐户和已进行哈希操作的密码的数据库，则他们可以使用在其他网站上使用过的密码。 用户通常会一直重复使用帐户，因为复杂的密码难以记住。 对于 IT 部门，管理密码也会带来一定的复杂性，他们必须提供重置机制、需要频繁更新密码和以安全方式存储密码。
-
-相对于它的所有缺点，单因素身份验证使用户可以控制凭据。 他们创建和修改它，并且在身份验证过程中只需要一个键盘。 这是将单因素和多重身份验证区分开来的主要方面。
-
-## 2.1.1 Web 身份验证代理
+## <a name="2-authentication-factors"></a>2 Authentication Factors
 
 
-如前所述，IT 部门所面临的密码身份验证的挑战之一是管理用户名/密码基础、重置机制等的开销增加。越来越受欢迎的选择是依靠通过 OAuth（身份验证的开放标准）提供身份验证的第三方标识提供商。
+To protect data, the person requesting access to it must be identified and authorized to access the data resources they request. The process of identifying a user is called authentication, and determining access privileges to a resource is called authorization. These are closely related operations, and to the user they might be indistinguishable. They can be relatively simple or complex operations, depending on many factors: for example, whether the data resides on one server or is distributed across many systems. The server providing the authentication and authorization services is referred to as the identity provider.
 
-通过使用 OAuth，IT 部门可以有效地将维护带有用户名和密码的数据库、重置密码功能等复杂事务“外包”给第三方标识提供商（例如 Facebook、Twitter 或 Microsoft）。
+To authenticate themselves with a particular service and/or app, the user employs credentials made up of something they know, something they have, and/or something they are. Each of these are called authentication factors.
 
-用户在这些平台上可以完全控制其标识，但是在用户经过身份验证并征得他们的同意后，应用可以向提供商请求可用于授权经过身份验证的用户的令牌。
+-   **Something the user knows** is usually a password, but it can also be a personal identification number (PIN) or a “secret” question-and-answer pair.
+-   **Something the user has** is most often a hardware memory device such as a USB stick containing the authentication data unique to the user.
+-   **Something the user is** often encompasses their fingerprints, but there are increasingly popular factors like the user’s speech, facial, ocular (eye) characteristics, or patterns of behavior. When stored as data, these measurements are called biometrics.
 
-Windows 10 中的 Web 身份验证代理为应用提供了一组 API 和基础结构，以便使用身份验证和授权协议（如 OAuth 和 OpenID）。 应用可以通过 [**WebAuthenticationBroker**](https://msdn.microsoft.com/library/windows/apps/br227025) API 启动身份验证操作，从而可以返回 [**WebAuthenticationResult**](https://msdn.microsoft.com/library/windows/apps/br227038)。 下图阐释了通信流概述。
+A password created by the user is an authentication factor in itself, but it often isn’t sufficient; anyone who knows the password can impersonate the user who owns it. A smart card can provide a higher level of security, but it might be stolen, lost, or misplaced. A system that can authenticate a user by their fingerprint or by an ocular scan might provide the highest and most convenient level of security, but it requires expensive and specialized hardware (for example, an Intel RealSense camera for facial recognition) that might not be available to all users.
 
-![WAB 工作流](images/secure-wab.png)
+Designing the method of authentication used by a system is a complex and important aspect of data security. In general, the greater number of factors you use in authentication, the more secure the system is. At the same time, authentication must be usable. A user will usually log in many times a day, so the process must be fast. Your choice of authentication type is a trade-off between security and ease of use; single-factor authentication is the least secure and easiest to use, and multi-factor authentication becomes more secure, but more complex as more factors are added.
 
-应用充当代理，通过应用中的 [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) 使用标识提供程序启动身份验证。 当标识提供程序已对用户进行身份验证时，它将向应用返回一个令牌，可用于从标识提供程序请求有关该用户的信息。 作为一项安全措施，应用必须先向标识提供程序注册才能通过标识提供程序代理身份验证过程。 对于每个提供程序，注册步骤都不同。
+## <a name="21-single-factor-authentication"></a>2.1 Single-factor authentication
 
-下面是在调用 [**WebAuthenticationBroker**](https://msdn.microsoft.com/library/windows/apps/br227025) API 来与提供程序通信时所使用的常规工作流。
 
--   构建要发送到标识提供程序的请求字符串。 对于每项 Web 服务，字符串的数量以及每个字符串中的信息都不相同，但它通常包括两个各自均包含一个 URL 的 URI 字符串：一个是身份验证请求的发送对象，一个是用户在授权完成后重定向到的对象。
--   调用 [**WebAuthenticationBroker.AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066)、传入请求字符串，然后等待来自标识提供程序的响应。
--   调用 [**WebAuthenticationResult.ResponseStatus**](https://msdn.microsoft.com/library/windows/apps/br227041) 以在收到响应时获取状态。
--   如果通信成功，则处理标识提供程序返回的响应字符串。 如果不成功，则处理错误。
+This form of authentication is based on a single user credential. This is usually a password, but it could also be a personal identification number (PIN).
 
-如果通信成功，则处理标识提供程序返回的响应字符串。 如果不成功，则处理错误。
+Here’s the process of single-factor authentication.
 
-此过程的示例 C# 代码如下所示。 有关信息和详细演练，请参阅 [WebAuthenticationBroker](web-authentication-broker.md)。 有关完整代码示例，请查看 [GitHub 上的 WebAuthenticationBroker 示例](http://go.microsoft.com/fwlink/p/?LinkId=620622)。
+-   The user provides their username and password to the identity provider. The identity provider is the server process that verifies the identity of the user.
+-   The identity provider checks whether the username and password are the same as those stored in the system. In most cases, the password will be encrypted, providing additional security so that others cannot read it.
+-   The identity provider returns an authentication status that indicates whether the authentication was successful.
+-   If successful, data exchange begins. If unsuccessful, the user must be re-authenticated.
+
+![single-factor authentication](images/secure-sfa.png)
+
+Today, this method of authentication is the most commonly used one across services. It is also the least secure form of authentication when used as the only means of authentication. Password complexity requirements, "secret questions," and regular password changes can make using passwords more secure, but they put more burden on users and they’re not an effective deterrent against hackers.
+
+The challenge with passwords is that it is easier to guess them successfully than systems that have more than one factor. If they steal a database with user accounts and hashed password from a little web shop, they can use the passwords used on other web sites. Users tend to reuse accounts all the time, because complex passwords are hard to remember. For an IT department, managing passwords also brings with it the complexity of having to offer reset mechanisms, requiring frequent updates to passwords, and storing them in a safe manner.
+
+For all of its disadvantages, single-factor authentication gives the user control of the credential. They create it and modify it, and only a keyboard is needed for the authentication process. This is the main aspect that distinguishes single-factor from multi-factor authentication.
+
+## <a name="211-web-authentication-broker"></a>2.1.1 Web authentication broker
+
+
+As previously discussed, one of the challenges with password authentication for an IT department is the added overhead of managing the base of usernames/passwords, reset mechanisms, etc. An increasingly popular option is to rely on third-party identity providers that offer authentication through OAuth, an open standard for authentication.
+
+Using OAuth, IT departments can effectively "outsource" the complexity of maintaining a database with usernames and passwords, reset password functionality, etc. to a third party identity provider like Facebook, Twitter or Microsoft.
+
+Users have complete control over their identity on these platforms, but apps can request a token from the provider, after the user is authenticated and with their consent, which can be used to authorize authenticated users.
+
+The web authentication broker in Windows 10 provides a set of APIs and infrastructure for apps to use authentication and authorization protocols like OAuth and OpenID. Apps can initiate authentication operations through the [**WebAuthenticationBroker**](https://msdn.microsoft.com/library/windows/apps/br227025) API, resulting in the return of a [**WebAuthenticationResult**](https://msdn.microsoft.com/library/windows/apps/br227038). An overview of the communication flow is illustrated in the following figure.
+
+![wab workflow](images/secure-wab.png)
+
+The app acts as the broker, initiating the authentication with the identity provider through a [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) in the app. When the identity provider has authenticated the user, it returns a token to the app that can be used to request information about the user from the identity provider. As a security measure, the app must be registered with the identity provider before it can broker the authentication processes with the identity provider. This registration steps differ for each provider.
+
+Here’s the general workflow for calling the [**WebAuthenticationBroker**](https://msdn.microsoft.com/library/windows/apps/br227025) API to communicate with the provider.
+
+-   Construct the request strings to be sent to the identity provider. The number of strings, and the information in each string, is different for each web service but it usually includes two URI strings each containing a URL: one to which the authentication request is sent, and one to which the user is redirected after authorization is complete.
+-   Call [**WebAuthenticationBroker.AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), passing in the request strings, and wait for the response from the identity provider.
+-   Call [**WebAuthenticationResult.ResponseStatus**](https://msdn.microsoft.com/library/windows/apps/br227041) to get the status when the response is received.
+-   If the communication is successful, process the response string returned by the identity provider. If unsuccessful, process the error.
+
+If the communication is successful, process the response string returned by the identity provider. If unsuccessful, process the error.
+
+Sample C# code that for this process is below. For information and a detailed walkthrough, see [WebAuthenticationBroker](web-authentication-broker.md). For a complete code sample, check out the [WebAuthenticationBroker sample on GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>;
@@ -128,90 +128,90 @@ catch (Exception ex)
 }
 ```
 
-## 2.2 多重身份验证
+## <a name="22-multi-factor-authentication"></a>2.2 Multi-factor authentication
 
 
-多重身份验证利用多个身份验证因素。 通常情况下，将“已知信息”（例如密码）与“已有事物”（可以是手机或智能卡）组合起来。 即使攻击者发现了用户的密码，他仍然无法在没有设备或卡的情况下访问帐户。 并且如果设备或卡受到损害，在没有密码的情况下它对攻击者无用。 因此多重身份验证比单因素身份验证更安全但也更复杂。
+Multi-factor authentication makes use of more than one authentication factor. Usually, "something you know," such as a password, is combined with "something you have," which can be a mobile phone or a smart card. Even if an attacker discovers the user’s password, the account is still inaccessible without the device or card. And if only the device or card is compromised, it is not useful to the attacker without the password. Multi-factor authentication is therefore more secure, but also more complex, than single-factor authentication.
 
-使用多重身份验证的服务经常让用户选择如何接收第二个凭据。 此类型身份验证的一个示例是使用短信向用户的移动电话发送验证码的常用过程。
+Services that use multi-factor authentication will often give the user a choice in how they receive the second credential. An example of this type of authentication is a commonly used process where a verification code is sent to the user’s mobile phone using SMS.
 
--   用户向标识提供程序提供其用户名和密码。
--   标识提供程序像在单因素身份验证中一样验证用户名和密码，然后查找存储在系统中的该用户的移动电话号码。
--   服务器将一条包含生成的验证码的短信发送到用户的移动电话。
--   用户向标识提供程序提供验证码；通过某种形式向用户呈现。
--   标识提供程序返回一个身份验证状态，用于指示这两个凭据的身份验证是否已成功。
--   如果成功，开始数据交换。 否则，用户必须重新进行身份验证。
+-   The user provides their username and password to the identity provider.
+-   The identity provider verifies the username and password as in single-factor authorization, and then looks up the user’s mobile phone number stored in the system.
+-   The server sends an SMS message containing a generated verification code to the user’s mobile phone.
+-   The user provides the verification code to the identity provider; through a form presented to the user.
+-   The identity provider returns an authentication status that indicates whether the authentication of both credentials were successful.
+-   If successful, data exchange begins. Otherwise, the user must be re-authenticated.
 
-![双重身份验证](images/secure-tfa.png)
+![two-factor authentication](images/secure-tfa.png)
 
-如你所见，此过程也不同于单因素身份验证，因为第二个用户凭据发送给用户，而不是由用户创建或提供。 因此用户并没有对必要凭据的完全控制。 这还适用于将智能卡用作第二个凭据的情况：组织负责创建它和将其提供给用户。
+As you can see, this process also differs from single-factor authentication in that the second user credential is sent to the user instead of being created or provided by the user. The user is therefore not in complete control of the necessary credentials. This also applies when a smart card is used as the second credential: the organization is in charge of creating and providing it to the user.
 
-## 2.2.1 Azure Active Directory
-
-
-Azure Active Directory (Azure AD) 是一种基于云的标识和访问权限管理服务，可用作单因素或多重身份验证中的标识提供程序。 Azure AD 身份验证可以与验证码一起使用，也可以单独使用。
-
-虽然 Azure AD 也可以实现单因素身份验证，但企业通常需要安全性更高的多重身份验证。 在多重身份验证配置中，使用 Azure AD 帐户的用户身份验证可以选择以短信形式将验证码发送到他们的移动电话或 Azure Authenticator 移动应用上。
-
-另外，Azure AD 可用作 OAuth 提供程序，以便向标准用户提供各种平台上应用的身份验证和授权机制。 若要了解详细信息，请参阅 [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) 和 [Azure 上的多重身份验证](https://azure.microsoft.com/services/multi-factor-authentication/)。
-
-## 2.4 Microsoft Passport 和 Windows Hello
+## <a name="221-azure-active-directory"></a>2.2.1 Azure Active Directory
 
 
-在 Windows 10 中，操作系统内置了方便的多重身份验证机制。 所涉及到的两个组件称为 Microsoft Passport 和 Windows Hello。 Windows Hello 是内置于 Windows 10 的新生物识别登录系统。 因为它直接内置于操作系统，所以 Windows Hello 允许面部或指纹标识解锁用户的设备。 Windows 安全凭据存储可保护设备上的生物识别数据。
+Azure Active Directory (Azure AD) is a cloud-based identity and access management service that can serve as the identity provider in single-factor or multi-factor authentication. Azure AD authentication can be used with or without a verification code.
 
-Windows Hello 为设备识别个人用户提供了可靠的方法；这解决了用户和请求的服务或数据项之间的路径的第一部分。 在设备已识别该用户后，它仍然必须先对该用户进行身份验证，然后确定是否要授予所请求的资源的访问权限。 Microsoft Passport 提供完全集成到 Windows 的强双因素身份验证 (2FA)，并将可重复使用的密码替换为特定设备和生物识别手势或 PIN 的组合。 该 PIN 在用户的 Microsoft Passport 注册过程中由用户指定。
+While Azure AD can also implement single-factor authentication, enterprises usually require the higher security of multi-factor authentication. In a multi-factor authentication configuration, a user authenticating with an Azure AD account has the option of having a verification code sent as an SMS message either to their mobile phone or the Azure Authenticator mobile app.
 
-不过，Microsoft Passport 不仅仅是传统 2FA 系统的替代品。 它在概念上类似于智能卡：通过使用加密基元而不是字符串比较来执行身份验证，并且用户的密钥材料在防篡改的硬件内很安全。 Microsoft Passport 也不需要智能卡部署所需的额外基础结构组件。 尤其是，无需公钥基础结构 (PKI) 即可管理证书（如果你当前没有）。 Microsoft Passport 结合了智能卡的主要优点，即虚拟智能卡的部署灵活性和物理智能卡的可靠安全性，而没有它们的任何缺点。
+Additionally, Azure AD can be used as an OAuth provider, providing the standard user with an authentication and authorization mechanism to apps across various platforms. To learn more, see [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) and [Multi-Factor Authentication on Azure](https://azure.microsoft.com/services/multi-factor-authentication/).
 
-设备必须先向 Microsoft Passport 注册，然后用户才能使用它进行身份验证。 Microsoft Passport 使用非对称（公钥/私钥）加密，其中一方使用公钥对另一方可以使用私钥解密的数据进行加密。 Microsoft Passport 创建一组公钥/私钥对，并且将私钥写入设备的受信任的平台模块 (TPM) 芯片。 设备注册后，UWP 应用可以调用系统 API 检索可用于在服务器上注册用户的用户公钥。
-
-应用的注册工作流可能如下所示：
-
-![Microsoft Passport 注册](images/secure-passport.png)
-
-你收集的注册信息可能比在此简单方案中要包括更多的标识信息。 例如，如果你的应用访问受保护的服务（如银行服务），你需要在注册过程中请求标识证明和其他内容。 满足所有条件后，此用户的公钥将存储在后端，并用于在用户下次使用该服务时进行验证。
-
-有关 Microsoft Passport 和 Windows Hello 的详细信息，请参阅 [Microsoft Passport 指南](https://msdn.microsoft.com/library/mt589441)和 [Microsoft Passport 开发人员指南](microsoft-passport.md)。
-
-## 3 未送达数据安全方法
+## <a name="24-microsoft-passport-and-windows-hello"></a>2.4 Microsoft Passport and Windows Hello
 
 
-未送达数据安全方法适用于在连接到网络的设备之间传输的数据。 该数据可能在高度安全的专用企业 Intranet 环境的系统之间传输，也可能在不安全的 Web 环境中的客户端和 Web 服务之间传输。 Windows 10 应用通过其网络 API 支持 SSL 等标准，并且使用 Azure API 管理等技术（开发人员可以通过这些技术确保其应用的相应安全级别）。
+In Windows 10, a convenient multi-factor authentication mechanism is built into the operating system. The two components involved are called Microsoft Passport and Windows Hello. Windows Hello is the new biometric sign-in system built into Windows 10. Because it is built directly into the operating system, Windows Hello allows face or fingerprint identification to unlock users’ devices. The Windows secure credential store protects biometric data on the device.
 
-## 3.1 远程系统身份验证
+Windows Hello provides a robust way for a device to recognize an individual user, which addresses the first part of the path between a user and a requested service or data item. After the device has recognized the user, it still must authenticate the user before determining whether to grant access to a requested resource. Microsoft Passport provides strong two-factor authentication (2FA) that is fully integrated into Windows and replaces reusable passwords with the combination of a specific device, and a biometric gesture or PIN. The PIN is specified by the user as part of their Microsoft Passport enrollment.
 
+Microsoft Passport isn’t just a replacement for traditional 2FA systems, though. It’s conceptually similar to smart cards: authentication is performed by using cryptographic primitives instead of string comparisons, and the user’s key material is secure inside tamper-resistant hardware. Microsoft Passport doesn’t require the extra infrastructure components required for smart card deployment, either. In particular, you don’t need a Public Key Infrastructure (PKI) to manage certificates, if you don’t currently have one. Microsoft Passport combines the major advantages of smart cards—deployment flexibility for virtual smart cards and robust security for physical smart cards—without any of their drawbacks.
 
-与远程计算机系统发生通信的常规方案有两种。
+A device must be registered with Microsoft Passport before users can authenticate with it. Microsoft Passport uses asymmetric (public/private key) encryption in which one party uses a public key to encrypt the data that the other party can decrypt using a private key. In the case of Microsoft Passport, it creates a set of public/private key pairs and writes the private keys to the device’s Trusted Platform Module (TPM) chip. After a device has been registered, UWP apps can call system APIs to retrieve the user’s public key, which can be used to register the user on the server.
 
--   本地服务器通过直接连接对用户进行身份验证。 例如，当服务器和客户端位于公司 Intranet 上时。
--   通过 Internet 与 Web 服务通信。
+The registration workflow of an app might look like the following:
 
-Web 服务通信的安全要求比直接连接方案中的安全要求要高，因为数据不再仅是安全网络的一部分，并且恶意攻击者伺机截获数据的可能性也更高。 因为各类设备都会访问服务，例如与 WCF 相比，它们可能会生成为 RESTful 服务，这意味着服务的身份验证和授权还会引入新挑战。 我们将谈论安全的远程系统通信的两个要求。
+![microsoft passport registration](images/secure-passport.png)
 
-第一个要求是消息保密性：在客户端和 Web 服务器之间传递的信息（例如用户的身份和其他个人信息）在传输时不得被第三方读取。 满足此要求的方式通常是加密发送消息所使用的连接和加密消息本身。 在私钥/公钥加密中，公钥可供所有人使用，并用于加密要发送到特定接收方的消息。 私钥仅由接收方保留，并且用于解密消息。
+The registration information you collect may include a lot more identifying information than it does in this simple scenario. For example, if your app accesses a secured service such as one for banking, you’d need to request proof of identity and other things as part of the sign-up process. Once all the conditions are met, the public key of this user will be stored in the back-end and used to validate the next time the user uses the service.
 
-第二个要求是消息完整性：客户端和 Web 服务必须能够验证他们接收的消息是其他方试图发送的消息，并且该消息未在传输过程中发生更改。 通过使用数字签名对消息进行签名并使用证书身份验证，可完成此操作。
+For more information on Microsoft Passport and Windows Hello, see the [Microsoft Passport guide](https://msdn.microsoft.com/library/mt589441) and the [Microsoft Passport developer guide](microsoft-passport.md).
 
-## 3.2 SSL 连接
-
-
-为了建立和维护到客户端的安全连接，Web 服务可使用安全套接字层 (SSL)，后者受安全超文本传输协议 (HTTPS) 支持。 SSL 通过支持公钥加密与服务器证书来为消息提供保密性和完整性。 SSL 被传输层安全 (TLS) 所取代，但 TLS 通常却被随意称为 SSL。
-
-当客户端请求访问服务器上的资源时，SSL 会使用服务器启动协商过程。 这称为 SSL 握手。 同意加密级别、一组公钥和私钥加密密钥以及客户端和服务器证书中的标识信息作为 SSL 连接的持续时间内所有通信的基础。 服务器可能还要求在此时对客户端进行身份验证。 建立连接后，使用经协商的公钥加密所有消息，直到连接关闭。
-
-## 3.2.1 SSL 固定
+## <a name="3-data-in-flight-security-methods"></a>3 Data-in-flight security methods
 
 
-虽然 SSL 可以使用加密和证书提供消息保密性，但它对验证与客户端通信的服务器是否是正确的服务器却不执行任何操作。 未经授权的第三方可以模拟服务器的行为，从而截获客户端传输的敏感数据。 若要避免此问题，可以使用一种称为 SSL 固定的技术来验证服务器上的证书是否是客户端预期和信任的证书。
+Data-in-flight security methods apply to data in transit between devices connected to a network. The data may be transferred between systems on the high-security environment of a private corporate intranet, or between a client and web service in the non-secure environment of the web. Windows 10 apps support standards such as SSL through their networking APIs, and work with technologies such as Azure API Management with which developers can ensure the appropriate level of security for their apps.
 
-可使用几种不同方法在应用中实现 SSL 固定，每个方法都各有利弊。 最简单的方法是通过应用的程序包清单中的证书声明。 此声明支持应用包安装数字证书并向它们指定独占信任。 这导致仅在其证书链中拥有相应证书的应用和服务器之间允许 SSL 连接。 此机制还支持安全使用自签名证书，因为受信任的公共证书颁发机构无需第三方依赖关系。
+## <a name="31-remote-system-authentication"></a>3.1 Remote system authentication
 
-![ssl 清单](images/secure-ssl-manifest.png)
 
-有关对验证逻辑的更多控制，API 可用于验证服务器返回的证书，以响应 HTTPS 请求。 请注意，此方法需要发送请求和检查响应，因此请确保在请求中实际发送敏感信息前将其添加为验证。
+There are two general scenarios where communication occurs with a remote computer system.
 
-以下 C# 代码演示此 SSL 固定方法。 **ValidateSSLRoot** 方法使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类执行 HTTP 请求。 客户端发送响应后，它使用 [**RequestMessage.TransportInformation.ServerIntermediateCertificates**](https://msdn.microsoft.com/library/windows/apps/dn279681) 集合检查服务器返回的证书。 然后客户端可以使用它所包括的指纹来验证整个证书链。 在服务器证书过期并续订后，此方法确实需要在应用中更新证书指纹。
+-   A local server authenticates a user over a direct connection. For example, when the server and the client are on a corporate intranet.
+-   A web service is communicated with over the Internet.
+
+Security requirements for web service communication are higher than those in direct connection scenarios, as data is no longer only a part of a secure network and the likelihood of malicious attackers looking to intercept data is also higher. Because various types of devices will access the service, they will likely be built as RESTful services, as opposed to WCF, for instance, which means authentication and authorization to the service also introduces new challenges. We’ll discuss two requirements for secure remote system communication.
+
+The first requirement is message confidentiality: The information passed between the client and the web services (for example, the identity of the user and other personal information) must not be readable by third parties while in transit. This is usually accomplished by encrypting the connection over which messages are sent and by encrypting the message itself. In private/public key encryption, the public key is available to anyone, and is used to encrypt messages to be sent to a specific receiver. The private key is only held by the receiver and is used to decrypt the message.
+
+The second requirement is message integrity: The client and the web service must be able to verify that the messages they receive are the ones intended to be sent by the other party, and that the message has not been altered in transit. This is accomplished by signing messages with digital signatures and using certificate authentication.
+
+## <a name="32-ssl-connections"></a>3.2 SSL connections
+
+
+To establish and maintain secure connections to clients, web services can use Secure Sockets Layer (SSL), which is supported by the Secure Hypertext Transfer Protocol (HTTPS). SSL provides message confidentiality and integrity by supporting public key encryption as well as server certificates. SSL is superseded by Transport Layer Security (TLS), but TLS is often casually referred to as SSL.
+
+When a client requests access to a resource on a server, SSL starts a negotiation process with the server. This is called an SSL handshake. An encryption level, a set of public and private encryption keys, and the identity information in the client and server certificates are agreed upon as the basis of all communication for the duration of the SSL connection. The server may also require the client to be authenticated at this time. Once the connection is established, all messages are encrypted with the negotiated public key until the connection closes.
+
+## <a name="321-ssl-pinning"></a>3.2.1 SSL pinning
+
+
+While SSL can provide message confidentiality using encryption and certificates, it does nothing to verify that the server with which the client is communicating is the correct one. The server’s behavior can be mimicked by an unauthorized third-party, intercepting the sensitive data that the client transmits. To prevent this, a technique called SSL pinning is used to verify that the certificate on the server is the certificate that the client expects and trusts.
+
+There are a few different ways to implement SSL pinning in apps, each with their own pros and cons. The easiest approach is via the Certificates declaration in the app’s package manifest. This declaration enables the app package to install digital certificates and specify exclusive trust in them. This results in SSL connections being allowed only between the app and servers that have the corresponding certificates in their certificate chain. This mechanism also enables the secure use of self-signed certificates, as no third party dependency is needed on trusted public certification authorities.
+
+![ssl manifest](images/secure-ssl-manifest.png)
+
+For more control over the validation logic, APIs are available to validate the certificate(s) returned by the server in response to an HTTPS request. Note that this method requires sending a request and inspecting the response, so be sure to add this as a validation before actually sending sensitive information in a request.
+
+The following C# code illustrates this method of SSL pinning. The **ValidateSSLRoot** method uses the [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class to execute an HTTP request. After the client sends the response, it uses the [**RequestMessage.TransportInformation.ServerIntermediateCertificates**](https://msdn.microsoft.com/library/windows/apps/dn279681) collection to inspect the certificates returned by the server. The client can then validate the entire certificate chain with the thumbprints it has included. This method does require the certificate thumbprints to be updated in the app when the server certificate expires and is renewed.
 
 ```cs
 private async Task ValidateSSLRoot()
@@ -260,52 +260,52 @@ private bool ValidateCertificates(IReadOnlyList<Certificate> certs)
 }
 ```
 
-## 3.3 发布和保护对 REST API 的访问
+## <a name="33-publishing-and-securing-access-to-rest-apis"></a>3.3 Publishing and securing access to REST APIs
 
 
-若要确保对 Web 服务的访问经过授权，它们必须在每次调用 API 时要求身份验证。 能够控制性能和可扩展性也是在 Web 上公开 Web 服务时要考虑的事情。 Azure API 管理是一项在提供三个级别功能的同时可以帮助在 Web 上公开 API 的服务。
+To ensure authorized access to web services, they must require authentication every time an API call is made. Being able to control performance and scale is also something to consider when web services are exposed across the web. Azure API Management is a service that can help expose APIs across the web, while providing features on three levels.
 
-API 的 **Publishers/Administrators** 可以通过 Azure API 管理的发布者门户轻松配置 API。 可以在此处创建 API 集，并且可以通过管理对它们的访问权限来控制谁有权访问哪些 API。
+**Publishers/Administrators** of the API can easily configure the API through the Publisher Portal of Azure API Management. Here, API sets can be created and access to them can be managed to control who has access to which APIs.
 
-要访问这些 API 的 **Developers** 可以通过开发人员门户提出请求，这可以立即提供访问权限，或需要获取发布者/管理员的批准。 开发人员也可以在开发人员门户中查看 API 文档和示例代码，以快速采用 Web 服务提供的 API。
+**Developers** wanting access to these APIs can make requests through the Developer Portal, which can either immediately provide access or require approval by the publisher/administrator. Developers can also view the API documentation and sample code in the Developer Portal, to rapidly adopt the APIs offered by the web service.
 
-开发人员先创建 **apps**，然后通过 Azure API 管理提供的代理访问 API。 代理可以提供隐匿层以在发布者/管理员服务器上隐藏 API 的实际终结点，还可以包括其他逻辑（例如 API 转换）以确保在一个 API 的调用重定向到另一个 API 时，公开的 API 保持一致。 它还可以使用 IP 筛选来阻止来源于特定 IP 域或域组的 API 调用。 Azure API 管理还通过使用一组称为 API 密钥的公钥来对每个 API 调用进行身份验证和授权，从而使其 Web 服务保持安全。 当授权失败时，将阻止对 API 的访问和它所支持的功能。
+The **apps** that these developers create then access the API through the proxy offered by Azure API Management. The proxy both provides a layer of obscurity, hiding the actual end-point of the API on the publisher/administrator’s server and can also include additional logic like API translation to ensure the exposed API is kept consistent when a call to one API is redirected to another. It can also use IP filtering to block API calls originating from a specific IP domain or set of domains. Azure API Management also keeps its web services secure by using a set of public keys, called API keys, to authenticate and authorize each API call. When authorization fails, access to the API and the functionality it supports is blocked.
 
-Azure API 管理还可以减少对某个服务的 API 调用数（称为限制的过程），以优化 Web 服务的性能。 若要了解详细信息，请参阅 [Azure API 管理](https://azure.microsoft.com/services/api-management/)和 [AzureCon 2015 上的 Azure API 管理](https://channel9.msdn.com/events/Microsoft-Azure/AzureCon-2015/ACON313)。
+Azure API Management can also reduce the number of API calls to a service (a procedure called throttling) to optimizes the performance of the web service. To learn more, review [Azure API Management](https://azure.microsoft.com/services/api-management/) and [Azure API Management at AzureCon 2015.](https://channel9.msdn.com/events/Microsoft-Azure/AzureCon-2015/ACON313)
 
-## 4 静态数据安全方法
-
-
-当数据到达某个设备上时，我们将其称为“静态数据”。 此数据需要以安全方式存储在设备上，以便未经授权的用户或应用无法访问它。 Windows 10 中的应用模型执行许多操作来确保任何应用存储的数据仅可由该应用访问，同时提供用于在必要时共享该数据的 API。 还提供其他 API 来确保数据可以加密并且凭据可以安全存储。
-
-## 4.1 Windows 应用模型
+## <a name="4-data-at-rest-security-methods"></a>4 Data-at-rest security methods
 
 
-传统上来讲，Windows 从未对应用下过定义。 它通常是指可执行文件 (.exe)，但从来不包括安装、状态存储、执行长度、版本控制、操作系统集成和应用到应用通信。 通用 Windows 平台模型定义涵盖安装、运行时环境、资源管理、更新、数据模型和卸载的应用模型。
+When data arrives on a device, we refer to it as "data-at-rest." This data needs to be stored on the device in a secure manner, so that it cannot be accessed by unauthorized users or apps. The app model in Windows 10 does a lot to ensure that the data stored by any app is only accessible to that app, while providing APIs to share the data when necessary. Additional APIs are also available to ensure that data can be encrypted and credentials can be stored safely.
 
-Windows 10 应用在某个容器中运行，这意味着默认情况下它们的权限有限（可以请求额外权限，用户也可以授予额外权限）。 例如，如果某个应用想要在系统上访问文件，必须使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空间的文件选取器才可以让用户选取某个文件（不支持任何对文件的直接访问权限）。 另一个示例是，如果某个应用想要访问用户的位置数据，它需要启用要声明的位置设备功能，从而在下载时提示用户此应用会请求访问用户的位置。 除此之外，应用首次想要访问用户位置时，会向用户显示请求访问数据的权限的额外许可提示。
-
-请注意，此应用模型充当应用的“监狱”，这意味着无法访问它们，但它不是无法从外部访问的“城堡”（具有管理员权限的应用程序当然仍可以访问里面的内容）。 Windows 10 中的 Device Guard 因为支持组织/IT 指定允许执行哪些 (Win32) 应用，所以可以进一步帮助限制此访问权限。
-
-该应用模型还管理应用生命周期。 例如，它默认限制在后台执行应用；只要应用进入后台，过程就将暂停（会给予应用一点时间在代码中处理应用暂停），并且内存也会被冻结。 操作系统会向应用提供要求特定后台任务执行的机制（这会发生在由 Internet/蓝牙连接、电源更换等各种事件触发的计划上和类似音乐播放和 GPS 跟踪等特定方案中）。
-
-当设备上的内存资源不足时，Windows 将通过终止应用来释放内存空间。 此生命周期模型强制应用在每当它们暂停时保留数据，因为暂停和终止之间没有额外时间。
-
-有关详细信息，请参阅[通用：了解 Windows 10 应用程序的生命周期](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx)。
-
-## 4.2 存储凭据保护
+## <a name="41-windows-app-model"></a>4.1 Windows app model
 
 
-访问经身份验证的服务的 Windows 应用通常向用户提供将他们的凭据存储在本地设备上的选项。 这对于用户来说是一项便利；当他们提供用户名和密码时，应用将在应用的后续启动中自动使用它们。 由于如果攻击者获取此存储数据的访问权限，这可能成为安全问题，因此 Windows 10 为 Windows 应用提供了将用户凭据存储在安全凭据保险箱中的功能。 应用调用凭据保险箱 API 来存储凭据并从保险箱进行检索，而不是将它们存储在应用的存储容器中。 凭据保险箱由操作系统管理，但访问权限仅限于存储它们的应用，从而为凭据存储提供了安全托管的解决方案。
+Traditionally, Windows has never had a definition of an app. It was most commonly referred to as an executable (.exe), and this never included installation, storage of state, execution length, versioning, OS integration, or app-to-app communication. The Universal Windows Platform model defines an app model that covers installation, runtime environment, resource management, updates, data model, and uninstallation.
 
-当用户提供要存储的凭据时，应用使用 [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 命名空间中的 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 对象来获取对凭据保险箱的引用。 然后，它创建一个 [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) 对象，其中包含 Windows 应用以及用户名和密码的标识符。 这会传递到 [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) 方法以将凭据存储在保险箱中。 以下 C# 代码示例演示如何执行此操作。
+Windows 10 apps run in a container, which means that they have limited privileges by default (additional privileges can be requested and granted by the user). For example, if an app wants to access files on the system, a file picker from the [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) namespace has to be used to let the user pick a file (no direct access to files is enabled). Another example is if an app wants to access the user’s location data, it needs to enable the location device capability needs to be declared, prompting the user at download time that this app will request access to the user’s location. On top of that, the first time the app wants to access the user’s location, an additional consent prompt is shown to the user, requesting permission to access the data.
+
+Note that this app model acts as a "jail" for apps, meaning that they can’t reach out, but it is not a “castle” that cannot be reached from the outside (applications with administrator privileges can of course still reach in). Device Guard in Windows 10, which enables organizations/IT to specify which (Win32) apps are allowed to execute, can further help limit this access.
+
+The app model also manages the app lifecycle. It limits the background execution of apps by default, for example; as soon as an app goes into the background, the process is suspended – after giving the app a brief period to address app suspension in code – and its memory is frozen. The operating system does provide mechanisms for apps to ask for specific background task execution (on a schedule, triggered by various events such as Internet/Bluetooth connectivity, power changes, etc., and in specific scenarios such as music playing or GPS tracking).
+
+When memory resources on the device are running low, Windows frees memory space by terminating apps. This lifecycle model forces apps to persist data whenever they’re suspended, because there is no additional time available between suspension and termination.
+
+For more information, see [It's Universal: Understanding the Lifecycle of a Windows 10 Application](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx).
+
+## <a name="42-stored-credential-protection"></a>4.2 Stored credential protection
+
+
+Windows apps that access authenticated services often provide the users the option of storing their credentials on the local device. This is a convenience for the users; when they provide their username and password, the app automatically uses them in subsequent launches of the app. Because this can be a security issue if an attacker gains access to this stored data, Windows 10 provides the ability for Windows apps to store user credentials in a secure credential locker. The app calls the Credential Locker API to store and retrieve the credentials from the locker instead of storing them in the app’s storage container. The credential locker is managed by the operating system, but access is limited to the app that stores them, providing a securely managed solution for credential storage.
+
+When a user supplies the credentials to be stored, the app gets a reference to the credential locker using the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object in the [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) namespace. It then creates a [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) object containing an identifier for the Windows app and the username and password. This is passed to the [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) method to store the credentials in the locker. The following C# code example shows how this is done.
 
 ```cs
 var vault = new PasswordVault();
 vault.Add(new PasswordCredential("My App", username, password));
 ```
 
-在以下 C# 代码示例中，应用通过调用 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 对象的 [**FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083) 方法来请求对应于该应用的所有凭据。 如果返回多个凭据，它将提示用户输入其用户名。 如果凭据不在保险箱中，应用将提示用户输入它们。 然后用户将使用这些凭据登录服务器。
+In the following C# code example, the app requests all of the credentials corresponding to the app by calling the [**FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083) method of the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object. If more than one is returned, it prompts the user to enter their username. If the credentials are not in the locker, the app prompts the user for them. The user is then logged into the server using the credentials.
 
 ```cs
 private string resourceName = "My App";
@@ -357,44 +357,44 @@ private PasswordCredential GetCredentialFromLocker()
 }
 ```
 
-有关详细信息，请参阅[凭据保险箱](credential-locker.md)。
+For more information, see [Credential locker](credential-locker.md).
 
-## 4.3 存储数据保护
-
-
-当处理存储的数据（通常称为静态数据）时，进行加密可以防止未经授权的用户访问存储的数据。 加密数据的两个常见机制是使用对称密钥或使用非对称密钥。 但是，数据加密无法确保数据在发送它和存储它的时间之间不发生更改。 换言之，无法确保数据完整性。 使用消息验证码、哈希和数字签名是解决此问题的常见技术。
-
-## 4.3.1 数据加密
+## <a name="43-stored-data-protection"></a>4.3 Stored data protection
 
 
-使用对称加密，发送方和接收方均拥有相同的密钥，并使用它加密和解密数据。 此方法的困难之处是安全共享密钥，以便双方都知道它。
+When you are dealing with stored data, commonly referred to as data-at-rest, encrypting it can prevent unauthorized users from accessing the stored data. The two common mechanisms to encrypt data are using either symmetric keys or using asymmetric keys. However, data encryption can’t ensure that the data is unaltered between the time it was sent and the time it was stored. In other words, the data integrity cannot be ensured. Using message authentication codes, hashes, and digital signing are common techniques to solve this problem.
 
-此问题的一个解答是非对称加密，即使用公钥/私钥对。 公钥可免费共享给任何要加密消息的人。 私钥会始终保密，以便只有你可以使用它解密数据。 允许发现公钥的常用技术是使用数字证书，也简称为证书。 除有关用户的信息或服务器的信息（例如名称、颁发者、电子邮件地址和国家/地区）外，证书还托管有关公钥的信息。
-
-Windows 应用开发人员可以使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 和 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 类在他们的 UWP 应用中实现对称和非对称加密。 此外，[**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 类可用于加密和解密数据、对内容进行签名和验证数字签名。 应用还可以使用 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空间中的 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 类来加密和解密存储的本地数据。
-
-## 4.3 检测消息篡改（MAC、哈希和签名）
+## <a name="431-data-encryption"></a>4.3.1 Data encryption
 
 
-MAC 是通过使用对称密钥（称为密钥）产生的代码（或标记）或作为对 MAC 加密算法的输入的消息。 发送方和接收方在消息传输前商定密钥和算法。
+With symmetric encryption, both the sender and recipient have the same key and use it to both encrypt and decrypt the data. The challenge with this approach is securely sharing the key so both parties are aware of it.
 
-MAC 以如下方式验证消息。
+One answer to this is asymmetric encryption, in which a public/private key pair is used. The public key is shared freely with anyone who wants to encrypt a message. The private key is always kept secret so that only you can use it to decrypt the data. A common technique to allow for discovery of the public key is by using digital certificates, also simply referred to as certificates. The certificate holds information about the public key, in addition to information about the user or server such as the name, issuer, email address and country.
 
--   发送方通过使用密钥作为对 MAC 算法的输入来派生 MAC 标记。
--   发送方将 MAC 标记和消息发送给接收方。
--   发送方通过使用密钥和消息作为对 MAC 算法的输入来派生 MAC 标记。
--   接收方将它们的 MAC 标记与发送方的 MAC 标记进行比较。 如果它们是相同的，那么我们知道消息未被篡改。
+Windows app developers can use the [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) and [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) classes to implement symmetric and asymmetric encryption in their UWP apps. Additionally, the [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) class can be used to encrypt and decrypt data, sign content and verify digital signatures. Apps can also use the [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt stored local data.
 
-![](images/secure-macs.png)
-
-Windows 应用可以实现 MAC 消息验证，方法是调用 [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) 类来生成密钥和调用 [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 类来执行 MAC 加密算法。
-
-## 4.3.1 使用哈希
+## <a name="432-detecting-message-tampering-macs-hashes-and-signatures"></a>4.3.2 Detecting message tampering (MACs, hashes, and signatures)
 
 
-哈希函数是一种加密算法，用于获取任意长度的数据块并返回固定大小的位字符串（称为哈希值）。 整个系列的哈希函数都可以执行此操作。
+A MAC is a code (or tag) that results from using a symmetric key (called the secret key) or a message as input to a MAC encryption algorithm. The secret key and the algorithm are agreed upon by the sender and receiver before the message transfer.
 
-在上述消息传输方案中可以使用哈希值代替 MAC。 发送方发送哈希值和消息，接收方从发送方的哈希值和消息派生其自己的哈希值并比较这两个哈希值。 在 Windows 10 上运行的应用可以调用 [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 类来枚举可用的哈希算法并运行其中一个算法。 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 类表示哈希值。 [**CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法可用于重复对不同的数据进行哈希操作，而无需在每次使用时重新创建对象。 **CryptographicHash** 类的 Append 方法将新数据添加到缓冲区以进行哈希操作。 以下 C# 代码示例中显示了这一完整过程。
+MACs verify messages like this.
+
+-   The sender derives the MAC tag by using the secret key as input to the MAC algorithm.
+-   The sender sends the MAC tag and the message to the receiver.
+-   The receiver derives the MAC tag by using the secret key and the message as inputs to the MAC algorithm.
+-   The receiver compares their MAC tag with the sender's MAC tag. If they are the same then we know that the message has not been tampered with.
+
+![mac verification](images/secure-macs.png)
+
+Windows apps can implement MAC message verification by calling the [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) class to generate the key and [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) class to perform the MAC encryption algorithm.
+
+## <a name="433-using-hashes"></a>4.3.3 Using hashes
+
+
+A hash function is a cryptographic algorithm that takes an arbitrarily long block of data and returns a fixed-size bit string called a hash value. There is an entire family of hash functions that can do this.
+
+A hash value can be used in place of a MAC in the message-transfer scenario above. The sender sends a hash value and a message, and the receiver derives their own hash value from the sender's hash value and message and compares the two hash values. Apps running on Windows 10 can call the [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) class to enumerate the hash algorithms that are available and run one of them. The [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) class represents the hash value. The [**CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) method can be used to repeatedly hash different data without having to re-create the object for each use. The Append method of the **CryptographicHash** class adds new data to a buffer to be hashed. This entire process is shown in the following C# code example.
 
 ```cs
 public void SampleReusableHash()
@@ -428,63 +428,63 @@ public void SampleReusableHash()
 }
 ```
 
-## 4.3.2 数字签名
+## <a name="434-digital-signatures"></a>4.3.4 Digital signatures
 
 
-数字签名存储消息的数据完整性使用与 MAC 身份验证类似的方法进行验证。 下面是数字签名工作流的运行方式。
+The data integrity of a digitally signed stored message is verified in a similar way to MAC authentication. Here is the way the digital signature workflow operates.
 
--   发送方通过将消息用作对哈希算法的输入来派生一个哈希值（也称为摘要）。
--   接收方使用其私钥加密摘要。
--   发送方发送消息、加密摘要以及曾使用的哈希算法的名称。
--   接收方使用公钥来解密它所接收的加密摘要。 然后，它使用哈希算法来对消息进行哈希操作，从而创建它自己的摘要。 最后，接收方比较这两个摘要（它接收并解密的摘要和它创建的摘要）。 仅当两者匹配时，接收方才可以确保消息由私钥的持有人发送，从而确定他们是他们所声称的身份以及消息在传输过程中未经过更改。
+-   The sender derives a hash value (also known as a digest) by using the message as the input to a hash algorithm.
+-   The sender encrypts the digest using their private key.
+-   The sender sends the message, the encrypted digest, and the name of the hash algorithm that was used.
+-   The receiver uses the public key to decrypt the encrypted digest it received. It then uses the hash algorithm to hash the message to create a digest of its own. And finally the receiver compares the two digests (the one it received and decrypted, and the one it made). Only if the two match can the receiver be sure that the message was sent by the possessor of the private key, and therefore they are who they say they are, and that the message was not altered in transit.
 
-![数字签名](images/secure-digital-signatures.png)
+![digital signatures](images/secure-digital-signatures.png)
 
-哈希算法非常快，因此甚至从较大的消息中都可以快速派生哈希值。 生成的哈希值的长度是任意的，并且可能比完整消息更短，因此使用公钥和私钥仅加密和解密摘要，而不是优化完整消息。
+Hashing algorithms are very fast, so hash values can be derived quickly from even large messages. The resulting hash value is an arbitrary length and can be shorter than the full message, so using public and private keys to encrypt and decrypt only the digest rather than the full message is an optimization.
 
-有关详细信息，请查看以下主题中的文章：[数字签名](https://msdn.microsoft.com/library/windows/desktop/aa381977)、[MAC、哈希以及签名](macs-hashes-and-signatures.md)和[加密](cryptography.md)。
+For more information, take a look articles on [Digital signatures](https://msdn.microsoft.com/library/windows/desktop/aa381977), [MACs, hashes, and signatures](macs-hashes-and-signatures.md), and [Cryptography.](cryptography.md)
 
-## 5 摘要
-
-
-Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创建更多安全应用的方法。 在不同的身份验证方案（例如单因素、多重或使用 OAuth 标识提供程序的代理身份验证）中，存在 API 以减少最常见的身份验证挑战。 Windows Hello 提供了新的生物识别登录系统，可识别用户并主动挫败绕开正常标识的尝试。 Microsoft Passport 与 Windows Hello 协作来提供永远无法泄露或在受信任的平台模块外使用的多层密钥和证书。 此外，可以选择使用证明标识密钥和证书来增加一层安全性。
-
-为保护未送达数据，在可能使用 SSL 固定验证服务器的真实性的同时，存在 API 以通过 SSL 安全地与远程系统通信。 Azure API 管理可帮助以可控的安全方式发布 API，方法是使用提供 API 终结点的额外混淆的代理提供在 Web 上公开 API 的强大配置选项。 使用 API 密钥可以保护对这些 API 的访问，并且 API 调用可以限制为控制性能。
-
-当数据到达设备时，在防止 Windows 应用模型以未经授权的方式访问其他应用的数据时，它会更好地控制如何安装、更新应用以及如何访问其数据。 凭据保险箱可以安全存储操作系统管理的用户凭据，而其他数据可以在设备上使用通用 Windows 平台提供的加密和哈希 API 进行保护。
-
-## 6. 资源
+## <a name="5-summary"></a>5 Summary
 
 
-### 6.1 操作方法文章
+The Universal Windows Platform in Windows 10 offers a number of ways to leverage operating system capabilities to create more secure apps. In different authentication scenarios, such as single-factor, multi-factor, or brokered authentication with an OAuth identity provider, APIs exist to mitigate the most common challenges with authentication. Windows Hello provides a new biometric sign-in system that recognizes the user and actively defeats efforts to circumvent proper identification. Microsoft Passport works with Windows Hello to deliver multiple layers of keys and certificates that can never be revealed or used outside the trusted platform module. Plus, a further layer of security is available through the optional use of attestation identity keys and certificates.
 
--   [身份验证和用户身份](authentication-and-user-identity.md)
+To secure data in flight, APIs exist to communicate with remote systems securely over SSL, while providing the possibility to validate the server’s authenticity with SSL pinning. Publishing APIs securely and in a controlled manner is something in which Azure API Management aids by providing powerful configuration options for exposing APIs across the web using a proxy that provides additional obfuscation of the API endpoint. Access to these APIs is secured by using API keys and API calls can be throttled to control performance.
+
+When the data arrives on the device, the Windows app model provides more control over how the app is installed, updated and accesses it data, while keeping it from accessing data of other apps in an unauthorized manner. Credential locker can provide secure storage of user credentials that is managed by the operating system and other data can be protected on the device by using the encryption and hashing APIs offered by the Universal Windows Platform.
+
+## <a name="6-resources"></a>6 Resources
+
+
+### <a name="61-how-to-articles"></a>6.1 How-to articles
+
+-   [Authentication and user identity](authentication-and-user-identity.md)
 -   [Microsoft Passport](microsoft-passport.md)
--   [凭据保险箱](credential-locker.md)
--   [Web 身份验证代理](web-authentication-broker.md)
--   [指纹生物识别](fingerprint-biometrics.md)
--   [智能卡](smart-cards.md)
--   [共享的证书](share-certificates.md)
--   [加密](cryptography.md)
--   [证书](certificates.md)
--   [加密密钥](cryptographic-keys.md)
--   [数据保护](data-protection.md)
--   [MAC、哈希以及签名](macs-hashes-and-signatures.md)
--   [有关加密的出口限制](export-restrictions-on-cryptography.md)
--   [常见的加密任务](common-cryptography-tasks.md)
+-   [Credential locker](credential-locker.md)
+-   [Web authentication broker](web-authentication-broker.md)
+-   [Fingerprint biometrics](fingerprint-biometrics.md)
+-   [Smart cards](smart-cards.md)
+-   [Shared certificates](share-certificates.md)
+-   [Cryptography](cryptography.md)
+-   [Certificates](certificates.md)
+-   [Cryptographic keys](cryptographic-keys.md)
+-   [Data protection](data-protection.md)
+-   [MACs, hashes, and signatures](macs-hashes-and-signatures.md)
+-   [Export restrictions on cryptography](export-restrictions-on-cryptography.md)
+-   [Common cryptography tasks](common-cryptography-tasks.md)
 
-### 6.2 代码示例
+### <a name="62-code-samples"></a>6.2 Code samples
 
--   [凭据保险箱](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
--   [凭据选取器](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
--   [使用 Azure 登录锁定设备](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
--   [企业数据保护](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/EnterpriseDataProtection)
+-   [Credential locker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
+-   [Credential picker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
+-   [Device lockdown with Azure login](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
+-   [Enterprise data protection](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/EnterpriseDataProtection)
 -   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/KeyCredentialManager)
--   [智能卡](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SmartCard)
--   [Web 帐户管理](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
+-   [Smart cards](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SmartCard)
+-   [Web account management](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
 -   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
 
-### 6.3 API 参考
+### <a name="63-api-reference"></a>6.3 API reference
 
 -   [**Windows.Security.Authentication.OnlineId**](https://msdn.microsoft.com/library/windows/apps/hh701371)
 -   [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044)
@@ -501,6 +501,6 @@ Windows 10 中的通用 Windows 平台提供许多种利用操作系统功能创
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

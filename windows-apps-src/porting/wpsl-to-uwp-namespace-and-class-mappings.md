@@ -1,254 +1,254 @@
 ---
 author: mcleblanc
-description: "本主题提供 Windows Phone Silverlight API 到其通用 Windows 平台 (UWP) 等效项的全面映射。"
-title: "Windows Phone Silverlight 到 UWP 命名空间和类映射"
+description: This topic provides a comprehensive mapping of Windows Phone Silverlight APIs to their Universal Windows Platform (UWP) equivalents.
+title: Windows Phone Silverlight to UWP namespace and class mappings
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: dcdf17263dadd71572c942bff5e795928e855c03
 
 ---
 
-# Windows Phone Silverlight 到 UWP 命名空间和类映射
+# <a name="windows-phone-silverlight-to-uwp-namespace-and-class-mappings"></a>Windows Phone Silverlight to UWP namespace and class mappings
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本主题提供 Windows Phone Silverlight API 到其通用 Windows 平台 (UWP) 等效项的全面映射。 但是，通常不存在一对一的功能映射：任一平台都可能比其在命名空间或类中的对应平台具有更多或更少的功能。
+This topic provides a comprehensive mapping of Windows Phone Silverlight APIs to their Universal Windows Platform (UWP) equivalents. There is generally not a one-to-one mapping of functionality, though: either platform may have more or less functionality than its counterpart in a namespace or class.
 
-当你要在 UWP 项目中工作并重复使用 Windows Phone Silverlight 项目中的源代码时，映射表将提供帮助。 这两个平台之间的命名空间和类（包括 UI 控件）的名称存在差异。 在许多情况下，只需更改命名空间名称，就可以编译代码。 有时，类或 API 名称以及命名空间名称已发生更改。 在其他情况下，映射需要处理更多工作，而在极少数情况下需要更改方法。
+The mapping table will help you when you're working in a UWP project and you're re-using source code from a Windows Phone Silverlight project. There are differences in the names of namespaces and classes (including UI controls) between the two platforms. In many cases, it's as easy as changing a namespace name and then your code will compile. Sometimes, a class or API name has changed as well as the namespace name. Other times, the mapping takes a bit more work, and in rare cases requires a change in approach.
 
-**如何使用该表：**首先，搜索你要使用的类的名称。 只要进行映射比仅更改命名空间名称更复杂，类就会在此处列出。 如果你的类未列出，则该映射只是命名空间的更改。 因此，找到你的类的命名空间名称后，你将找到等效的 UWP 命名空间名称。 你的类将位于该命名空间中。 如果你的命名空间未列出，则其名称并未更改。
+**How to use the table:  ** First, search for the name of the class you're using. Classes are listed whenever the mapping is more complicated than simply changing the namespace name. If your class is not listed, then the mapping is just a namespace change. So, find your class's namespace name and you'll find the equivalent UWP namespace name. Your class will be in that namespace. If your namespace is not listed, then its name has not changed.
 
-**注意** Windows 10 支持的 .NET Framework 数目远远超过 Windows Phone 应用商店应用支持的数目。 例如，Windows 10 具有多个 System.ServiceModel.\* 命名空间，以及 System.Net、System.Net.NetworkInformation 和 System.Net.Sockets。
-此外，在 Windows 10 应用中，你将受益于 .NET Native，这是一种先进的编译技术，可将 MSIL 转换为可本机运行的计算机代码。 .NET Native 应用启动速度更快、使用的内存更少，并且比其对应的 MSIL 更省电。
+**Note**  Windows 10 supports much more of the .NET Framework than a Windows Phone Store app does. For example, Windows 10 has several System.ServiceModel.\* namespaces as well as System.Net, System.Net.NetworkInformation, and System.Net.Sockets.
+Also, in a Windows 10 app, you will benefit from .NET Native, which an ahead-of-time compilation technology that converts MSIL into natively-runnable machine code. .NET Native apps start faster, use less memory, and use less battery than their MSIL counterparts.
 
-| Windows Phone Silverlight | Windows 运行时 |
+| Windows Phone Silverlight | Windows Runtime |
 |---------------------------|-----------------|
-| 广告 | |
-| **Microsoft.Advertising.Mobile.UI.AdControl** 类 | [AdControl](http://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) 类 |
-| 警报、提醒和后台代理程序 | |
-| **Microsoft.Phone.BackgroundAgent** 类 | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类 |
-| **Microsoft.Phone.Scheduler** 命名空间 | [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847) 命名空间 |
-| **Microsoft.Phone.Scheduler.Alarm** 类 | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 和 [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642) 类 |
-| **Microsoft.Phone.Scheduler.PeriodicTask**、**ScheduledAction**、**ScheduledActionService**、**ScheduledTask**、**ScheduledTaskAgent** 类 | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类 |
-| **Microsoft.Phone.Scheduler.Reminder** 类 | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 和 [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642) 类 |
-| **Microsoft.Phone.PictureDecoder** 类 | [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 类 |
-| **Microsoft.Phone.BackgroundAudio** 命名空间 | [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 命名空间 |
-| **Microsoft.Phone.BackgroundTransfer** 命名空间 | [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空间 |
-| 应用模型和环境 | |
-| **System.AppDomain** 类 | 无直接等效项。 请参阅 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324)、[**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016) 类 |
-| **System.Environment** 类 | 无直接等效项 |
-| **System.ComponentModel.Annotations** 类  | 无直接等效项 |
-| **System.ComponentModel.BackgroundWorker** 类 | [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229621) 类 |
-| **System.ComponentModel.DesignerProperties** 类 | [**DesignMode**](https://msdn.microsoft.com/library/windows/apps/br224664) 类 |
-| **System.Threading.Thread**、**System.Threading.ThreadPool** 类 | [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229621) 类 |
-| (ST = **System.Threading**) <br/> **ST.Thread.MemoryBarrier** 方法 | (ST = **System.Threading**) <br/> **ST.Interlocked.MemoryBarrier** 方法 |
-| (ST = **System.Threading**) <br/> **ST.Thread.ManagedThreadId** 属性 | (S = **System**) <br/> **S.Environment.ManagedThreadId** 属性 |
-| **System.Threading.Timer** 类 | [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/br230587) 类 |
-| (SWT = **System.Windows.Threading**) <br/> **SWT.Dispatcher** 类 | [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 类 |
-| (SWT = **System.Windows.Threading**) <br/> **SWT.DispatcherTimer** 类 | [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) 类 |
+| Advertising | |
+| **Microsoft.Advertising.Mobile.UI.AdControl** class | [AdControl](http://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) class |
+| Alarms, reminders, and background agents | |
+| **Microsoft.Phone.BackgroundAgent** class | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class |
+| **Microsoft.Phone.Scheduler** namespace | [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847) namespace |
+| **Microsoft.Phone.Scheduler.Alarm** class | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) and [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642) classes |
+| **Microsoft.Phone.Scheduler.PeriodicTask**, **ScheduledAction**, **ScheduledActionService**, **ScheduledTask** , **ScheduledTaskAgent** classes | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class |
+| **Microsoft.Phone.Scheduler.Reminder** class | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) and [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642) classes |
+| **Microsoft.Phone.PictureDecoder** class | [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) class |
+| **Microsoft.Phone.BackgroundAudio** namespace | [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) namespace |
+| **Microsoft.Phone.BackgroundTransfer** namespace | [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) namespace |
+| App model and environment | |
+| **System.AppDomain** class | No direct equivalent. See [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324), [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016), classes |
+| **System.Environment** class | No direct equivalent |
+| **System.ComponentModel.Annotations** class  | No direct equivalent |
+| **System.ComponentModel.BackgroundWorker** class | [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229621) class |
+| **System.ComponentModel.DesignerProperties** class | [**DesignMode**](https://msdn.microsoft.com/library/windows/apps/br224664) class |
+| **System.Threading.Thread**, **System.Threading.ThreadPool** classes | [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229621) class |
+| (ST = **System.Threading**) <br/> **ST.Thread.MemoryBarrier** method | (ST = **System.Threading**) <br/> **ST.Interlocked.MemoryBarrier** method |
+| (ST = **System.Threading**) <br/> **ST.Thread.ManagedThreadId** property | (S = **System**) <br/> **S.Environment.ManagedThreadId** property |
+| **System.Threading.Timer** class | [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/br230587) class |
+| (SWT = **System.Windows.Threading**) <br/> **SWT.Dispatcher** class | [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) class |
+| (SWT = **System.Windows.Threading**) <br/> **SWT.DispatcherTimer** class | [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) class |
 | Blend for Visual Studio | |
-| (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> **MEDC.GeometryHelper** 类 | 无直接等效项 |
-| **Microsoft.Expression.Interactivity** 命名空间 | [Microsoft.Xaml.Interactivity](http://go.microsoft.com/fwlink/p/?LinkId=328776) 命名空间 |
-| **Microsoft.Expression.Interactivity.Core** 命名空间 | [Microsoft.Xaml.Interactions.Core](http://go.microsoft.com/fwlink/p/?LinkId=328773) 命名空间 |
-| (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> **MEIC.ExtendedVisualStateManager** 类 | 无直接等效项 |
-| **Microsoft.Expression.Interactivity.Input** 命名空间 | 无直接等效项 |
-| **Microsoft.Expression.Interactivity.Media** 命名空间 | [Microsoft.Xaml.Interactions.Media](http://go.microsoft.com/fwlink/p/?LinkId=328775) 命名空间 |
-| **Microsoft.Expression.Shapes** 命名空间 | 无直接等效项 |
-| (MI = **Microsoft.Internal**) <br/> **MI.IManagedFrameworkInternalHelper** 接口 | 无直接等效项 |
-| 联系人和日历数据 | |
-| **Microsoft.Phone.UserData** 命名空间 | [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/br225002)、[**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/dn263359) 命名空间 |
-| (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Account**、**ContactAddress**、**ContactCompanyInformation**、**ContactEmailAddress**、**ContactPhoneNumber** 类 | [**Contact**](https://msdn.microsoft.com/library/windows/apps/br224849) 类 |
-| (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Appointments** 类 | [**AppointmentCalendar**](https://msdn.microsoft.com/library/windows/apps/dn596134) 类 |
-| (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Contacts** 类 | [**ContactStore**](https://msdn.microsoft.com/library/windows/apps/dn624859) 类 |
-| 控件和 UI 基础结构 | |
-| **ControlTiltEffect.TiltEffect** 类 | Windows 运行时动画库中的动画内置于常用控件的默认样式中。 请参阅[动画](wpsl-to-uwp-porting-xaml-and-ui.md#animation)。 |
-| **Microsoft.Phone.Controls** 命名空间 | [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空间 |
-| (MPC = **Microsoft.Phone.Controls**) <br/> **MPC.ContextMenu** 类 | [**PopupMenu**](https://msdn.microsoft.com/library/windows/apps/br208693) 类 |
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.DatePickerPage** 类 | [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) 类 |
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.GestureListener** 类 | [**GestureRecognizer**](https://msdn.microsoft.com/library/windows/apps/br241937) 类 |
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.LongListSelector** 类 | [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 类 |
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.ObscuredEventArgs** 类 | [**SystemProtection**](https://msdn.microsoft.com/library/windows/apps/jj585394)、[**WindowActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208377) 类 | 
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.Panorama** 类 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 类 | 
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.PhoneApplicationFrame**、<br/>(SWN = **System.Windows.Navigation**) <br/>**SWN.NavigationService** 类 | [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 类 |
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.PhoneApplicationPage** 类 | [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 类|
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.TiltEffect** 类 | [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/hh969164) 类 | 
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.TimePickerPage** 类 | [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313) 类 |
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WebBrowser** 类 | [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) 类 | 
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WebBrowserExtensions** 类 | 无直接等效项 | 
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WrapPanel** 类 | 无常规布局用途的直接等效项。 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) 和 [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) 可以在项目控件的项目面板模板中使用。 | 
-| (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq** 命名空间 | 无直接等效项 | 
-| (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq.Mapping** 命名空间 | 无直接等效项 |
-| **Microsoft.Phone.Globalization** 命名空间 | 无直接等效项 | 
-| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.DeviceExtendedProperties**、**DeviceStatus** 类 | [**EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390)、[**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) 类 有关详细信息，请参阅[设备状态](wpsl-to-uwp-input-and-sensors.md#device-status)。 | 
-| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.MediaCapabilities** 类 | 无直接等效项 | 
-| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.UserExtendedProperties** 类 | [**AdvertisingManager**](https://msdn.microsoft.com/library/windows/apps/dn363391) 类 | 
-| **System.Windows** 命名空间 | [**Windows.UI.Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) 命名空间 | 
-| **System.Windows.Automation** 命名空间 | [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/br209179) 命名空间 | 
-| **System.Windows.Controls**、**System.Windows.Input** 命名空间 | [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、[**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空间 | 
-| **System.Windows.Controls.DrawingSurface**、**DrawingSurfaceBackgroundGrid** 类 | [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 类 | 
-| **System.Windows.Controls.RichTextBox** 类 | [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) 类 | 
-| **System.Windows.Controls.WrapPanel** 类 | 无常规布局用途的直接等效项。 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) 和 [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) 可以在项目控件的项目面板模板中使用。 | 
-| **System.Windows.Controls.Primitives** 命名空间 | [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空间 |
-| **System.Windows.Controls.Shapes** 命名空间 | [**Windows.UI.Xaml.Controls.Shapes**](https://msdn.microsoft.com/library/windows/apps/br243401) 命名空间 | 
-| **System.Windows.Data** 命名空间 | [**Windows.UI.Xaml.Data**](https://msdn.microsoft.com/library/windows/apps/br209917) 命名空间 | 
-| **System.Windows.Documents** 命名空间 | [**Windows.UI.Xaml.Documents**](https://msdn.microsoft.com/library/windows/apps/br209984) 命名空间 | 
-| **System.Windows.Ink** 命名空间 | 无直接等效项 |
-| **System.Windows.Markup** 命名空间 | [**Windows.UI.Xaml.Markup**](https://msdn.microsoft.com/library/windows/apps/br228046) 命名空间 | 
-| **System.Windows.Navigation** 命名空间 | [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) 命名空间 |
-| **System.Windows.UIElement.Tap** 事件、**EventHandler&lt;GestureEventArgs&gt;** 委托 | [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) 事件、[**TappedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227993) 委托 | 
-| 数据和服务 |  | 
-| **System.Data.Linq.DataContext** 类 | 无直接等效项 | 
-| **System.Data.Linq.Mapping.ColumnAttribute** 类 | 无直接等效项 | 
-| **System.Data.Linq.SqlClient.SqlHelpers** 类 | 无直接等效项 | 
-| 设备 | |应用
-| **Microsoft.Devices**、**Microsoft.Devices.Sensors** 命名空间 | [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459)、[**Windows.Devices.Enumeration.Pnp**](https://msdn.microsoft.com/library/windows/apps/br225517)、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)、[**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/br206408) 命名空间 |
-| **Microsoft.Devices.Camera**、**Microsoft.Devices.PhotoCamera** 类 | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类。 此外，[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 类（仅限 Windows）。 |
-| **Microsoft.Devices.CameraButtons** 类 | [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 类 |
-| **Microsoft.Devices.CameraVideoBrushExtensions** 类 | [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 类 |
-| **Microsoft.Devices.Environment** 类 | 无直接等效项。 使用条件编译并定义自定义符号作为解决方法。 或者你可以使用 [IsAttached](http://msdn.microsoft.com/library/e299w87h.aspx) 属性设计一个解决方法。 |
-| **Microsoft.Devices.MediaHistory** 类 | 无直接等效项 | 
-| **Microsoft.Devices.VibrateController** 类 | [**VibrationDevice**](https://msdn.microsoft.com/library/windows/apps/jj207230) 类 |
-| **Microsoft.Devices.Radio.FMRadio** 类 | 无直接等效项 | 
-| **Microsoft.Devices.Sensors.Accelerometer**、**Compass** 类 | 在 [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/br206408) 命名空间中 |
-| **Microsoft.Devices.Sensors.Gyroscope** 类 | [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/br225718) 类 |
-| **Microsoft.Devices.Sensors.Motion** 类 | [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/br225766) 类 |
-| 全球化 | |
-| **System.Globalization** 命名空间 | [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 命名空间 |
-| (ST = **System.Threading**) <br/> **ST.Thread.CurrentCulture** 属性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** 属性 |
-| (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** 属性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** 属性 |
-| 图形和动画 | |
-| **Microsoft.Xna.Framework.\*** 命名空间、[XNA Framework 类库](http://go.microsoft.com/fwlink/p/?LinkId=263769)、[Content Pipeline 类库](http://go.microsoft.com/fwlink/p/?LinkId=263770) | 无直接等效项。 通常情况下，结合使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 和 C++。 请参阅[开发游戏](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 和 XAML 互操作](https://msdn.microsoft.com/library/windows/apps/hh825871)。 |
-| **Microsoft.Xna.Framework.Audio.Microphone** 类 | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类 |
-| **Microsoft.Xna.Framework.Audio.SoundEffect** 类 | [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 类 |
-| **Microsoft.Xna.Framework.GamerServices** 命名空间 | (WPS = **Windows.Phone.System**) <br/> [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) 命名空间 |
-| **Microsoft.Xna.Framework.GamerServices.Guide** 类 | 无直接等效项 | 
-| **Microsoft.Xna.Framework.Input.GamePad** 类 | [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 类 |
-| **Microsoft.Xna.Framework.Input.Touch.TouchPanel** 类 | [**GestureRecognizer**](https://msdn.microsoft.com/library/windows/apps/br241937) 类 |
-| (MXFM = **Microsoft.Xna.Framework.Media**) <br/> **MXFM.MediaLibrary**、**MXFM.PhoneExtensions.MediaLibraryExtensions** 类 | [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 类 |
-| **Microsoft.Xna.Framework.Media.MediaQueue** 类 | [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) 类 |
-| **Microsoft.Xna.Framework.Media.Playlist** 类 | [**BackgroundMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652527) 类 |
-| **System.Windows.Media** 命名空间 | [**Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/br243045) 命名空间 |
-| **System.Windows.Media.RadialGradientBrush** 类 | 无直接等效项。 请参阅[媒体和图形](wpsl-to-uwp-porting-xaml-and-ui.md#media)。 |
-| **System.Windows.Media.Animation** 命名空间 | [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/br243232) 命名空间 |
-| **System.Windows.Media.Effects** 命名空间 | 无直接等效项 | 
-| **System.Windows.Media.Imaging** 命名空间 | [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 命名空间 |
-| **System.Windows.Media.Media3D** 命名空间 | [**Windows.UI.Xaml.Media.Media3D**](https://msdn.microsoft.com/library/windows/apps/br243274) 命名空间 |
-| **System.Windows.Shapes** 命名空间 | [**Windows.UI.Xaml.Shapes**](https://msdn.microsoft.com/library/windows/apps/br243401) 命名空间 |
-| 启动器和选择器 | |
-| **Microsoft.Phone.Tasks.AddressChooserTask**、**EmailAddressChooserTask**、**PhoneNumberChooserTask** 类 | [**ContactPicker**](https://msdn.microsoft.com/library/windows/apps/br224913) 类 |
-| **Microsoft.Phone.Tasks.AddWalletItemTask**、**AddWalletItemResult** 类 | [**Windows.ApplicationModel.Wallet**](https://msdn.microsoft.com/library/windows/apps/dn631399) 命名空间 |
-| **Microsoft.Phone.Tasks.BingMapsDirectionsTask**、**BingMapsTask** 类 | 无直接等效项 | 
-| **Microsoft.Phone.Tasks.CameraCaptureTask** 类 | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 类。 此外，[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 类（仅限 Windows）。 |
-| **Microsoft.Phone.Tasks.MarketplaceDetailTask** | [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 类（[**RequestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) 方法） |
-| **Microsoft.Phone.Tasks.ConnectionSettingsTask**、**MarketplaceHubTask**、**MarketplaceReviewTask**、**MarketplaceSearchTask**、**MediaPlayerLauncher**、**SearchTask**、**SmsComposeTask**、**WebBrowserTask** 类 | [**Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) 类 |
-| **Microsoft.Phone.Tasks.EmailComposeTask** 类 | [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/dn631270) 类 |
-| **Microsoft.Phone.Tasks.GameInviteTask** 类 | 无直接等效项 | 
-| **Microsoft.Phone.Tasks.MapDownloaderTask**、**MapsDirectionsTask**、**MapsTask**、**MapUpdaterTask** 类 | 无直接等效项 | 
-| **Microsoft.Phone.Tasks.PhoneCallTask** 类 | [**PhoneCallManager**](https://msdn.microsoft.com/library/windows/apps/dn624832) 类 |
-| **Microsoft.Phone.Tasks.PhotoChooserTask** 类 | [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 类 |
-| **Microsoft.Phone.Tasks.SaveAppointmentTask** 类 | [**AppointmentManager**](https://msdn.microsoft.com/library/windows/apps/dn297254) 类 |
-| **Microsoft.Phone.Tasks.SaveContactTask**、**SaveEmailAddressTask**、**SavePhoneNumberTask** 类 | [**StoredContact**](https://msdn.microsoft.com/library/windows/apps/jj207727) 类（仅限 Windows Phone） | 
-| **Microsoft.Phone.Tasks.SaveRingtoneTask** 类 | 无直接等效项 | 
-| **Microsoft.Phone.Tasks.ShareLinkTask**、**ShareMediaTask**、**ShareStatusTask** 类 | [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/br205873) 类 |
-| 位置 | |
-| **System.Device.Location** 命名空间 | [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 命名空间 |
-| **System.Device.GeoCoordinateWatcher** 类 | [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 类 |
-| 地图 | |
-| **Microsoft.Phone.Maps** 命名空间 | [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间 |
-| **Microsoft.Phone.Maps.Controls** 命名空间 | [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 命名空间 |
-| **Microsoft.Phone.Maps.Controls.Map** 类 | [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 类 |
-| **Microsoft.Phone.Maps.Services** 命名空间 | [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空间 |
-| **Microsoft.Phone.Maps.Services.GeocodeQuery**、**ReverseGeocodeQuery** 类 | [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 类 |
-| **System.Device.Location.GeoCoordinate** 类 | [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675) 类 |
-| **Microsoft.Phone.Maps.Services.Route** 类 | [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) 类 |
-| **Microsoft.Phone.Maps.Services.RouteQuery** 类 | [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) 类 |
-| 盈利 | |
-| **Microsoft.Phone.Marketplace** 命名空间 | [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197) 命名空间 |
-| 媒体 | |
-| **Microsoft.Phone.Media** 命名空间 | [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 类 |
-| 网络 | |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.DeviceNetworkInformation** 类 | [**Hostname**](https://msdn.microsoft.com/library/windows/apps/br207113)、[**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) 类
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterface** 类 | [**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) 类 |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterfaceInfo** 类 | [**ConnectionProfile**](https://msdn.microsoft.com/library/windows/apps/br207249) 类 |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterfaceList** 类 | [**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) 类 |
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.SocketExtensions** 类 | 无直接等效项 | 
-| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.WebRequestExtensions** 类 | 无直接等效项 | 
-| **Microsoft.Phone.Networking.Voip** 命名空间 | 无直接等效项 | 
-| **System.Net.CookieCollection** 类 | 仍受支持，但部分属性已丢失（例如 IsReadOnly） |
-| **System.Net.DownloadProgressChangedEventArgs** 类，以及与 **System.Net.WebClient** 相关的类似的类 | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 派生自 [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx)，用于测量进度。 |
-| **System.Net.DnsEndPoint**、**IPAddress** 类 | 这些类仍受支持，但部分属性已丢失。 或者，移植到 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 类。 |
-| **System.Net.HttpUtility** 类 | [**HtmlFormatHelper**](https://msdn.microsoft.com/library/windows/apps/hh738437) 类 |
-| **System.Net.HttpWebRequest** 类 | 部分支持，但推荐的预期备用项为 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 这些 API 使用 [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) 来表示 HTTP 请求。 |
-| **System.Net.HttpWebResponse** 类 | 仍受支持，但使用的是 Dispose() 而不是 Close()。 但是，推荐的预期备用项为 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 这些 API 使用 [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx) 表示 HTTP 响应。 |
-| (SNN = **System.Net.NetworkInformation**) <br/> **SNN.NetworkChange** 类 | 仍受支持，但构造函数除外。 |
-| **System.Net.OpenReadCompletedEventArgs** 类，以及与 **System.Net.WebClient** 相关的类似的类 | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)） |
-| **System.Net.Sockets.Socket** 类 | 仍受支持，但使用的是 Dispose() 而不是 Close()。 或者，移植到 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类。 |
-| **System.Net.Sockets.SocketException** 类 | 仍受支持，但使用的是 SocketErrorCode 属性而不是 ErrorCode。
-| **System.Net.Sockets.UdpAnySourceMulticastClient**、**UdpSingleSourceMulticastClient** 类 | [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 类 | 
-| **System.Net.UploadProgressChangedEventArgs** 类，以及与 **System.Net.WebClient** 相关的类似的类 | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)）
-| **System.Net.WebClient** 类 | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)）
-| **System.Net.WebRequest** 类 | 部分支持（另一组属性），但推荐的预期备用项为 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 这些 API 使用 [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) 来表示 HTTP 请求。
-| **System.Net.WebResponse** 类 | 仍受支持，但使用的是 Dispose() 而不是 Close()。 但是，推荐的预期备用项为 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)）。 这些 API 使用 [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx) 表示 HTTP 响应。
-| (SN = **System.Net**) <br/> **SN.WriteStreamClosedEventArgs** 类 | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)）
-| (SN = **System.Net**) <br/> **SN.WriteStreamClosedEventHandler** 类 | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 类（或 [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)）
-| **System.UriFormatException** 类 | **System.FormatException** 类 |
-| 通知 | |
-| MPN = **Microsoft.Phone.Notification** 命名空间 | [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661)、[**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) 命名空间 |
-| MPN = **Microsoft.Phone.Notification** <br/> **MPN.HttpNotification** 类 | [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) 类 |
-| MPN = **Microsoft.Phone.Notification** <br/> **MPN.HttpNotificationChannel** 类 | [**PushNotificationChannel**](https://msdn.microsoft.com/library/windows/apps/br241283) 类 |
-| 编程 | |
-| **System** 命名空间 | [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021) 命名空间 |
-| **System.Diagnostics.StackFrame**、**StackTrace** 类 | 无直接等效项 | 
-| **System.Diagnostics** 命名空间 | [**Windows.Foundation.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/br206677) 命名空间 |
-| **System.ICloneable** 接口 | 可返回相应类型的自定义方法。 |
-| **System.Reflection.Emit.ILGenerator** 类 | 无直接等效项 | 
-| 反应性扩展框架 | |
-| **Microsoft.Phone.Reactive** 命名空间 | 无直接等效项 | 
-| 反射 | |
-| **System.Type** 类 | **System.Reflection.TypeInfo** 类。 请参阅[适用于 Windows 应用商店应用的 .NET Framework 中的反射](https://msdn.microsoft.com/library/hh535795.aspx)。 |
-| 资源 | |
-| **System.Resources.ResourceManager** 类 | (WA = **Windows.ApplicationModel**)<br/>[**WA.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) 以及 [**WA.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) 命名空间、[**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) 类。 请参阅[在 Windows 运行时应用中创建和检索资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh694557.aspx)。 |
-| 安全元素 | |
-| (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementChannel**、**MPS.SecureElementSession** 类 | [**SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/dn608002) 类 |
-| (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementReader** 类 | [**SmartCardReader**](https://msdn.microsoft.com/library/windows/apps/dn263857) 类 |
-| 安全 | |
-| (SSC = **System.Security.Cryptography**) <br/> **SSC.Aes**、**SSC.RSA** 类 | [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 类 |
-| (SSC = **System.Security.Cryptography**) <br/> **SSC.HMACSHA256**、**SSC.SHA256** 类 | [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) 类 |
-| (SSC = **System.Security.Cryptography**) <br/> **SSC.ProtectedData** 类 | [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 类 |
-| (SSC = **System.Security.Cryptography**) <br/> **SSC.RandomNumberGenerator** 类 | [**CryptographicBuffer**](https://msdn.microsoft.com/library/windows/apps/br227092) 类 |
-| (SSC = **System.Security.Cryptography**) <br/> **SSC.X509Certificates.X509Certificate** 类 | [**CertificateEnrollmentManager**](https://msdn.microsoft.com/library/windows/apps/br212075) 类 |
+| (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> **MEDC.GeometryHelper** class | No direct equivalent |
+| **Microsoft.Expression.Interactivity** namespace | [Microsoft.Xaml.Interactivity](http://go.microsoft.com/fwlink/p/?LinkId=328776) namespace |
+| **Microsoft.Expression.Interactivity.Core** namespace | [Microsoft.Xaml.Interactions.Core](http://go.microsoft.com/fwlink/p/?LinkId=328773) namespace |
+| (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> **MEIC.ExtendedVisualStateManager** class | No direct equivalent |
+| **Microsoft.Expression.Interactivity.Input** namespace | No direct equivalent |
+| **Microsoft.Expression.Interactivity.Media** namespace | [Microsoft.Xaml.Interactions.Media](http://go.microsoft.com/fwlink/p/?LinkId=328775) namespace |
+| **Microsoft.Expression.Shapes** namespace | No direct equivalent |
+| (MI = **Microsoft.Internal**) <br/> **MI.IManagedFrameworkInternalHelper** interface | No direct equivalent |
+| Contact and calendar data | |
+| **Microsoft.Phone.UserData** namespace | [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/br225002), [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/dn263359) namespaces |
+| (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Account**, **ContactAddress**, **ContactCompanyInformation**, **ContactEmailAddress**, **ContactPhoneNumber** classes | [**Contact**](https://msdn.microsoft.com/library/windows/apps/br224849) class |
+| (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Appointments** class | [**AppointmentCalendar**](https://msdn.microsoft.com/library/windows/apps/dn596134) class |
+| (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Contacts** class | [**ContactStore**](https://msdn.microsoft.com/library/windows/apps/dn624859) class |
+| Controls and UI infrastructure | |
+| **ControlTiltEffect.TiltEffect** class | Animations from the Windows Runtime animation library are built into the default Styles of the common controls. See [Animation](wpsl-to-uwp-porting-xaml-and-ui.md). |
+| **Microsoft.Phone.Controls** namespace | [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) namespace |
+| (MPC = **Microsoft.Phone.Controls**) <br/> **MPC.ContextMenu** class | [**PopupMenu**](https://msdn.microsoft.com/library/windows/apps/br208693) class |
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.DatePickerPage** class | [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) class |
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.GestureListener** class | [**GestureRecognizer**](https://msdn.microsoft.com/library/windows/apps/br241937) class |
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.LongListSelector** class | [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) class |
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.ObscuredEventArgs** class | [**SystemProtection**](https://msdn.microsoft.com/library/windows/apps/jj585394), [**WindowActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208377) classes | 
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.Panorama** class | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) class | 
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.PhoneApplicationFrame**,<br/>(SWN = **System.Windows.Navigation**) <br/>**SWN.NavigationService** classes | [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class |
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.PhoneApplicationPage** class | [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class|
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.TiltEffect** class | [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/hh969164) class | 
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.TimePickerPage** class | [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313) class |
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WebBrowser** class | [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) class | 
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WebBrowserExtensions** class | No direct equivalent | 
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WrapPanel** class | No direct equivalent for general layout purposes. [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) and [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) can be used in the items panel template of an items control. | 
+| (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq** namespace | No direct equivalent | 
+| (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq.Mapping** namespace | No direct equivalent |
+| **Microsoft.Phone.Globalization** namespace | No direct equivalent | 
+| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.DeviceExtendedProperties**, **DeviceStatus** classes | [**EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390), [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) classes. For more details, see [Device status](wpsl-to-uwp-input-and-sensors.md). | 
+| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.MediaCapabilities** class | No direct equivalent | 
+| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.UserExtendedProperties** class | [**AdvertisingManager**](https://msdn.microsoft.com/library/windows/apps/dn363391) class | 
+| **System.Windows** namespace | [**Windows.UI.Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) namespace | 
+| **System.Windows.Automation** namespace | [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/br209179) namespace | 
+| **System.Windows.Controls**, **System.Windows.Input** namespaces | [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) namespaces | 
+| **System.Windows.Controls.DrawingSurface**, **DrawingSurfaceBackgroundGrid** classes | [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) class | 
+| **System.Windows.Controls.RichTextBox** class | [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) class | 
+| **System.Windows.Controls.WrapPanel** class | No direct equivalent for general layout purposes. [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) and [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) can be used in the items panel template of an items control. | 
+| **System.Windows.Controls.Primitives** namespace | [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) namespace |
+| **System.Windows.Controls.Shapes** namespace | [**Windows.UI.Xaml.Controls.Shapes**](https://msdn.microsoft.com/library/windows/apps/br243401) namespace | 
+| **System.Windows.Data** namespace | [**Windows.UI.Xaml.Data**](https://msdn.microsoft.com/library/windows/apps/br209917) namespace | 
+| **System.Windows.Documents** namespace | [**Windows.UI.Xaml.Documents**](https://msdn.microsoft.com/library/windows/apps/br209984) namespace | 
+| **System.Windows.Ink** namespace | No direct equivalent |
+| **System.Windows.Markup** namespace | [**Windows.UI.Xaml.Markup**](https://msdn.microsoft.com/library/windows/apps/br228046) namespace | 
+| **System.Windows.Navigation** namespace | [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) namespace |
+| **System.Windows.UIElement.Tap** event, **EventHandler&lt;GestureEventArgs&gt;** delegate | [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) event, [**TappedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227993) delegate | 
+| Data and services |  | 
+| **System.Data.Linq.DataContext** class | No direct equivalent | 
+| **System.Data.Linq.Mapping.ColumnAttribute** class | No direct equivalent | 
+| **System.Data.Linq.SqlClient.SqlHelpers** class | No direct equivalent | 
+| Devices | |appli
+| **Microsoft.Devices**, **Microsoft.Devices.Sensors** namespaces | [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459), [**Windows.Devices.Enumeration.Pnp**](https://msdn.microsoft.com/library/windows/apps/br225517), [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/br206408) namespaces |
+| **Microsoft.Devices.Camera**, **Microsoft.Devices.PhotoCamera** classes | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) class. Also, [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) class (Windows only). |
+| **Microsoft.Devices.CameraButtons** class | [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) class |
+| **Microsoft.Devices.CameraVideoBrushExtensions** class | [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) class |
+| **Microsoft.Devices.Environment** class | No direct equivalent. As a workaround, use conditional compilation and define a custom symbol. Or you may be able to engineer a workaround using the [IsAttached](http://msdn.microsoft.com/library/e299w87h.aspx) property. |
+| **Microsoft.Devices.MediaHistory** class | No direct equivalent | 
+| **Microsoft.Devices.VibrateController** class | [**VibrationDevice**](https://msdn.microsoft.com/library/windows/apps/jj207230) class |
+| **Microsoft.Devices.Radio.FMRadio** class | No direct equivalent | 
+| **Microsoft.Devices.Sensors.Accelerometer**, **Compass** classes | In the [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/br206408) namespace |
+| **Microsoft.Devices.Sensors.Gyroscope** class | [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/br225718) class |
+| **Microsoft.Devices.Sensors.Motion** class | [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/br225766) class |
+| Globalization | |
+| **System.Globalization** namespace | [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) namespace |
+| (ST = **System.Threading**) <br/> **ST.Thread.CurrentCulture** property | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** property |
+| (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** property | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** property |
+| Graphics and animation | |
+| **Microsoft.Xna.Framework.\*** namespaces, [XNA Framework Class Library](http://go.microsoft.com/fwlink/p/?LinkId=263769), [Content Pipeline Class Library](http://go.microsoft.com/fwlink/p/?LinkId=263770) | No direct equivalent. In general, use [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) with C++. See [Developing games](https://msdn.microsoft.com/library/windows/apps/hh452744) and [DirectX and XAML interop](https://msdn.microsoft.com/library/windows/apps/hh825871). |
+| **Microsoft.Xna.Framework.Audio.Microphone** class | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) class |
+| **Microsoft.Xna.Framework.Audio.SoundEffect** class | [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) class |
+| **Microsoft.Xna.Framework.GamerServices** namespace | (WPS = **Windows.Phone.System**) <br/> [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) namespace |
+| **Microsoft.Xna.Framework.GamerServices.Guide** class | No direct equivalent | 
+| **Microsoft.Xna.Framework.Input.GamePad** class | [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) class |
+| **Microsoft.Xna.Framework.Input.Touch.TouchPanel** class | [**GestureRecognizer**](https://msdn.microsoft.com/library/windows/apps/br241937) class |
+| (MXFM = **Microsoft.Xna.Framework.Media**) <br/> **MXFM.MediaLibrary**, **MXFM.PhoneExtensions.MediaLibraryExtensions** classes | [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) class |
+| **Microsoft.Xna.Framework.Media.MediaQueue** class | [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) class |
+| **Microsoft.Xna.Framework.Media.Playlist** class | [**BackgroundMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652527) class |
+| **System.Windows.Media** namespace | [**Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/br243045) namespace |
+| **System.Windows.Media.RadialGradientBrush** class | No direct equivalent. See [Media and graphics](wpsl-to-uwp-porting-xaml-and-ui.md). |
+| **System.Windows.Media.Animation** namespace | [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/br243232) namespace |
+| **System.Windows.Media.Effects** namespace | No direct equivalent | 
+| **System.Windows.Media.Imaging** namespace | [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) namespace |
+| **System.Windows.Media.Media3D** namespace | [**Windows.UI.Xaml.Media.Media3D**](https://msdn.microsoft.com/library/windows/apps/br243274) namespace |
+| **System.Windows.Shapes** namespace | [**Windows.UI.Xaml.Shapes**](https://msdn.microsoft.com/library/windows/apps/br243401) namespace |
+| Launchers and Choosers | |
+| **Microsoft.Phone.Tasks.AddressChooserTask**, **EmailAddressChooserTask**, **PhoneNumberChooserTask** classes | [**ContactPicker**](https://msdn.microsoft.com/library/windows/apps/br224913) class |
+| **Microsoft.Phone.Tasks.AddWalletItemTask**, **AddWalletItemResult** classes | [**Windows.ApplicationModel.Wallet**](https://msdn.microsoft.com/library/windows/apps/dn631399) namespace |
+| **Microsoft.Phone.Tasks.BingMapsDirectionsTask**, **BingMapsTask** classes | No direct equivalent | 
+| **Microsoft.Phone.Tasks.CameraCaptureTask** class | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) class. Also, [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) class (Windows only). |
+| **Microsoft.Phone.Tasks.MarketplaceDetailTask** | [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) class ([**RequestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) method) |
+| **Microsoft.Phone.Tasks.ConnectionSettingsTask**, **MarketplaceHubTask**, **MarketplaceReviewTask**, **MarketplaceSearchTask**, **MediaPlayerLauncher**, **SearchTask**, **SmsComposeTask**, **WebBrowserTask** classes | [**Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) class |
+| **Microsoft.Phone.Tasks.EmailComposeTask** class | [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/dn631270) class |
+| **Microsoft.Phone.Tasks.GameInviteTask** class | No direct equivalent | 
+| **Microsoft.Phone.Tasks.MapDownloaderTask**, **MapsDirectionsTask**, **MapsTask**, **MapUpdaterTask** classes | No direct equivalent | 
+| **Microsoft.Phone.Tasks.PhoneCallTask** class | [**PhoneCallManager**](https://msdn.microsoft.com/library/windows/apps/dn624832) class |
+| **Microsoft.Phone.Tasks.PhotoChooserTask** class | [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) class |
+| **Microsoft.Phone.Tasks.SaveAppointmentTask** class | [**AppointmentManager**](https://msdn.microsoft.com/library/windows/apps/dn297254) class |
+| **Microsoft.Phone.Tasks.SaveContactTask**, **SaveEmailAddressTask**, **SavePhoneNumberTask** classes | [**StoredContact**](https://msdn.microsoft.com/library/windows/apps/jj207727) class (Windows Phone only) | 
+| **Microsoft.Phone.Tasks.SaveRingtoneTask** class | No direct equivalent | 
+| **Microsoft.Phone.Tasks.ShareLinkTask**, **ShareMediaTask**, **ShareStatusTask** classes | [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/br205873) class |
+| Location | |
+| **System.Device.Location** namespace | [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) namespace |
+| **System.Device.GeoCoordinateWatcher** class | [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) class |
+| Maps | |
+| **Microsoft.Phone.Maps** namespaces | [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace |
+| **Microsoft.Phone.Maps.Controls** namespace | [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) namespace |
+| **Microsoft.Phone.Maps.Controls.Map** class | [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) class |
+| **Microsoft.Phone.Maps.Services** namespace | [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace |
+| **Microsoft.Phone.Maps.Services.GeocodeQuery**, **ReverseGeocodeQuery** classes | [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class |
+| **System.Device.Location.GeoCoordinate** class | [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675) class |
+| **Microsoft.Phone.Maps.Services.Route** class | [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) class |
+| **Microsoft.Phone.Maps.Services.RouteQuery** class | [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) class |
+| Monetization | |
+| **Microsoft.Phone.Marketplace** namespace | [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197) namespace |
+| Media | |
+| **Microsoft.Phone.Media** namespace | [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) class |
+| Networking | |
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.DeviceNetworkInformation** class | [**Hostname**](https://msdn.microsoft.com/library/windows/apps/br207113), [**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) classes
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterface** class | [**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) class |
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterfaceInfo** class | [**ConnectionProfile**](https://msdn.microsoft.com/library/windows/apps/br207249) class |
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.NetworkInterfaceList** class | [**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293) class |
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.SocketExtensions** class | No direct equivalent | 
+| (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> **MPNN.WebRequestExtensions** class | No direct equivalent | 
+| **Microsoft.Phone.Networking.Voip** namespace | No direct equivalent | 
+| **System.Net.CookieCollection** class | Still supported, but some properties are missing (for example, IsReadOnly) |
+| **System.Net.DownloadProgressChangedEventArgs** class, and similar classes related to **System.Net.WebClient** | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). Derive from [System.Net.Http.StreamContent](https://msdn.microsoft.com/library/system.net.http.streamcontent.aspx) to measure progress. |
+| **System.Net.DnsEndPoint**, **IPAddress** classes | These classes are still supported, but some properties are missing. Alternatively, port to the [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) class. |
+| **System.Net.HttpUtility** class | [**HtmlFormatHelper**](https://msdn.microsoft.com/library/windows/apps/hh738437) class |
+| **System.Net.HttpWebRequest** class | Partial support, but the recommended, forward-looking alternative is the [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). These APIs use [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) to represent an HTTP request. |
+| **System.Net.HttpWebResponse** class | Still supported, but use Dispose() instead of Close(). But, the recommended, forward-looking alternative is the [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). These APIs use [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx) to represent an HTTP response. |
+| (SNN = **System.Net.NetworkInformation**) <br/> **SNN.NetworkChange** class | Still supported, except for the constructor. |
+| **System.Net.OpenReadCompletedEventArgs** class, and similar classes related to **System.Net.WebClient** | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx)) |
+| **System.Net.Sockets.Socket** class | Still supported, but use Dispose() instead of Close(). Alternatively, port to the[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class. |
+| **System.Net.Sockets.SocketException** class | Still supported, but use the SocketErrorCode property instead of ErrorCode.
+| **System.Net.Sockets.UdpAnySourceMulticastClient**, **UdpSingleSourceMulticastClient** classes | [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) class | 
+| **System.Net.UploadProgressChangedEventArgs** class, and similar classes related to **System.Net.WebClient** | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
+| **System.Net.WebClient** class | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
+| **System.Net.WebRequest** class | Partial support (a different set of properties), but the recommended, forward-looking alternative is the [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). These APIs use [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) to represent an HTTP request.
+| **System.Net.WebResponse** class | Still supported, but use Dispose() instead of Close(). But, the recommended, forward-looking alternative is the [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)). These APIs use [System.Net.Http.HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx) to represent an HTTP response.
+| (SN = **System.Net**) <br/> **SN.WriteStreamClosedEventArgs** class | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
+| (SN = **System.Net**) <br/> **SN.WriteStreamClosedEventHandler** class | [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient.aspx))
+| **System.UriFormatException** class | **System.FormatException** class |
+| Notifications | |
+| MPN = **Microsoft.Phone.Notification** namespace | [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661), [**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) namespaces |
+| MPN = **Microsoft.Phone.Notification** <br/> **MPN.HttpNotification** class | [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) class |
+| MPN = **Microsoft.Phone.Notification** <br/> **MPN.HttpNotificationChannel** class | [**PushNotificationChannel**](https://msdn.microsoft.com/library/windows/apps/br241283) class |
+| Programming | |
+| **System** namespace | [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021) namespace |
+| **System.Diagnostics.StackFrame**, **StackTrace** classes | No direct equivalent | 
+| **System.Diagnostics** namespace | [**Windows.Foundation.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/br206677) namespace |
+| **System.ICloneable** interface | A custom method that returns the appropriate type. |
+| **System.Reflection.Emit.ILGenerator** class | No direct equivalent | 
+| Reactive Extensions | |
+| **Microsoft.Phone.Reactive** namespace | No direct equivalent | 
+| Reflection | |
+| **System.Type** class | **System.Reflection.TypeInfo** class. See [Reflection in the .NET Framework for Windows Store Apps](https://msdn.microsoft.com/library/hh535795.aspx). |
+| Resources | |
+| **System.Resources.ResourceManager** class | (WA = **Windows.ApplicationModel**)<br/>[**WA.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) and [**WA.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) namespaces, [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) class. See [Creating and retrieving resources in Windows Runtime apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh694557.aspx). |
+| Secure Element | |
+| (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementChannel**, **MPS.SecureElementSession** classes | [**SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/dn608002) class |
+| (MPS = **Microsoft.Phone.SecureElement**) <br/> **MPS.SecureElementReader** class | [**SmartCardReader**](https://msdn.microsoft.com/library/windows/apps/dn263857) class |
+| Security | |
+| (SSC = **System.Security.Cryptography**) <br/> **SSC.Aes**, **SSC.RSA** classes | [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) class |
+| (SSC = **System.Security.Cryptography**) <br/> **SSC.HMACSHA256**, **SSC.SHA256** classes | [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) class |
+| (SSC = **System.Security.Cryptography**) <br/> **SSC.ProtectedData** class | [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) class |
+| (SSC = **System.Security.Cryptography**) <br/> **SSC.RandomNumberGenerator** class | [**CryptographicBuffer**](https://msdn.microsoft.com/library/windows/apps/br227092) class |
+| (SSC = **System.Security.Cryptography**) <br/> **SSC.X509Certificates.X509Certificate** class | [**CertificateEnrollmentManager**](https://msdn.microsoft.com/library/windows/apps/br212075) class |
 | Shell | |
-| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBar** 类 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427) 类 |
-| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBarIconButton** 类 | [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 类（当在 [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/dn279430) 属性内部使用时）
-| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBarMenuItem** 类 | [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) 类（当在 [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/dn279434) 属性内部使用时）
-| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.CycleTileData**、**MPSh.FlipTileData**、**MPSh.IconicTileData**、**MPSh.ShellTileData**、**MPSh.StandardTileData** 类 | [**TileTemplateType**](https://msdn.microsoft.com/library/windows/apps/br208621) 类 |
-| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.PhoneApplicationService** 类 | [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016)、[**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 类
-| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ProgressIndicator** 类 | [**StatusBarProgressIndicator**](https://msdn.microsoft.com/library/windows/apps/dn633865) 类 |
-| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ShellTile** 类 | [**SecondaryTile**](https://msdn.microsoft.com/library/windows/apps/br242183) 类 |
-| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ShellTileSchedule** 类 | [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) 类 |
-| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ShellToast** 类 | [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642) 类 |
-| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.SystemTray** 类 | [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) 类 |
-| 存储和 I/O | |
-| **Microsoft.Phone.Storage.ExternalStorage**、**ExternalStorageDevice**、**ExternalStorageFile**、**ExternalStorageFolder** 类 | [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 类 |
-| **System.IO** 命名空间 | [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346)、[**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) 命名空间
-| **System.IO.Directory** 类 | [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 类 |
-| **System.IO.File** 类 | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 [**PathIO**](https://msdn.microsoft.com/library/windows/apps/hh701663) 类
-| (SII = **System.IO.IsolatedStorage**) <br/> **SII.IsolatedStorageFile** 类 | [**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 属性 |
-| (SII = **System.IO.IsolatedStorage**) <br/> **SII.IsolatedStorageSettings** 类 | [**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.localsettings.aspx) 属性 |
-| **System.IO.Stream** 类 | 仍受支持，但使用的是 ReadAsync() 和 WriteAsync()，而不是 BeginRead()/EndRead() 和 BeginWrite()/EndWrite()。 |
-| 电子钱包 | |
-| **Microsoft.Phone.Wallet** 命名空间 | [**Windows.ApplicationModel.Wallet**](https://msdn.microsoft.com/library/windows/apps/dn631399) 命名空间 |
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBar** class | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427) class |
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBarIconButton** class | [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) class (when used inside the [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/dn279430) property)
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ApplicationBarMenuItem** class | [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) class (when used inside the [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/dn279434) property)
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.CycleTileData**, **MPSh.FlipTileData**, **MPSh.IconicTileData**, **MPSh.ShellTileData**, **MPSh.StandardTileData** classes | [**TileTemplateType**](https://msdn.microsoft.com/library/windows/apps/br208621) class |
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.PhoneApplicationService** class | [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016), [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) classes
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ProgressIndicator** class | [**StatusBarProgressIndicator**](https://msdn.microsoft.com/library/windows/apps/dn633865) class |
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ShellTile** class | [**SecondaryTile**](https://msdn.microsoft.com/library/windows/apps/br242183) class |
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ShellTileSchedule** class | [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) class |
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.ShellToast** class | [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642) class |
+| (MPSh = **Microsoft.Phone.Shell**) <br/> **MPSh.SystemTray** class | [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) class |
+| Storage and I/O | |
+| **Microsoft.Phone.Storage.ExternalStorage**, **ExternalStorageDevice**, **ExternalStorageFile**, **ExternalStorageFolder** classes | [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) class |
+| **System.IO** namespace | [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346), [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) namespaces
+| **System.IO.Directory** class | [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) class |
+| **System.IO.File** class | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) and [**PathIO**](https://msdn.microsoft.com/library/windows/apps/hh701663) classes
+| (SII = **System.IO.IsolatedStorage**) <br/> **SII.IsolatedStorageFile** class | [**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) property |
+| (SII = **System.IO.IsolatedStorage**) <br/> **SII.IsolatedStorageSettings** class | [**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.localsettings.aspx) property |
+| **System.IO.Stream** class | Still supported, but use ReadAsync() and WriteAsync() instead of BeginRead()/EndRead() and BeginWrite()/EndWrite(). |
+| Wallet | |
+| **Microsoft.Phone.Wallet** namespace | [**Windows.ApplicationModel.Wallet**](https://msdn.microsoft.com/library/windows/apps/dn631399) namespace |
 | Xml | |
-| (SX = **System.Xml**) | **SX.XmlConvert.ToDateTime** 方法 |
-| (SX = **System.Xml**) | **SX.XmlConvert.ToDateTimeOffset** 方法 |
+| (SX = **System.Xml**) | **SX.XmlConvert.ToDateTime** method |
+| (SX = **System.Xml**) | **SX.XmlConvert.ToDateTimeOffset** method |
  
 
-下一主题是[移植项目](wpsl-to-uwp-porting-to-a-uwp-project.md)。
+The next topic is [Porting the project](wpsl-to-uwp-porting-to-a-uwp-project.md).
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,57 +1,59 @@
 ---
 author: awkoren
-Description: "使用桌面到 UWP 桥部署和调试从 Windows 桌面应用程序（Win32、WPF 和 Windows 窗体）转换的通用 Windows 平台 (UWP) 应用。"
+Description: Deploy and debug a Universal Windows Platform (UWP) app converted from a Windows desktop application (Win32, WPF, and Windows Forms) by using the Desktop to UWP Bridge.
 Search.Product: eADQiWindows 10XVcnh
-title: "调试使用桌面桥转换的应用"
+title: Debug apps converted with the Desktop Bridge
 translationtype: Human Translation
-ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
-ms.openlocfilehash: 9dcc39c51e61b24c25bcbfa216c6e51b49bbfd3a
+ms.sourcegitcommit: dba00371b29b3179a6dc3bdd96a092437331e61a
+ms.openlocfilehash: 537ac8e83d5f54bf83ec0e05b71be354651000f2
 
 ---
 
-# 调试使用桌面桥转换的应用
+# <a name="debug-apps-converted-with-the-desktop-bridge"></a>Debug apps converted with the Desktop Bridge
 
-本主题包含有助于你在使用桌面到 UWP 桥转换应用后成功调试应用的信息。 有几个用于调试已转换应用的选项。
+This topic contains info to help you be successful debugging your app after converting it with the Desktop to UWP Bridge. You have a few options for debugging your converted app.
 
-## 附加到进程
+## <a name="attach-to-process"></a>Attach to process
 
-当 Microsoft Visual Studio“以管理员身份”运行时，“开始调试”和“开始执行”命令将适用于转换应用的项目，但已启动的应用将以[中等完整性级别](https://msdn.microsoft.com/library/bb625963)运行（即，它不会具有提升的权限）。 若要向已启动的应用授予管理员权限，首先你需要通过快捷方式或磁贴启动“以管理员身份”。 应用运行后，从“以管理员身份”运行的 Microsoft Visual Studio 的实例调用__附加到进程__，然后从对话框中选择应用的进程。
+When Microsoft Visual Studio is running "as administrator", the *Start Debugging* and *Start Without * commands will work for a converted app's project, but the launched app will run with [medium integrity level](https://msdn.microsoft.com/library/bb625963) (that is, it will not have elevated privileges). To confer administrator privileges onto the launched app, first you need to launch the "as administrator" via a shortcut or a tile. Once the app is running, from an instance of Microsoft Visual Studio running "as administrator", invoke the __Attach to Process__ and select your app's process from the dialog.
 
-## F5 调试
+## <a name="f5-debug"></a>F5 debug
 
-Visual Studio 现在支持新的打包项目。 新项目可使你在将应用程序生成到从应用程序安装程序上的转换器创建的 Appx 包中时自动复制任何更新。 配置打包项目后，你现在还可以使用 F5 直接在 AppX 程序包中调试。 
+Visual Studio now supports a new packaging project. The new project enables you to automatically copy any updates when you build your application into the Appx package created from the converter on your application's installer. Once you configure the packaging project you can now also use F5 to debug directly into the AppX package. 
 
-下面介绍了如何开始使用： 
+>Note: You can also use the option to debug an existing Appx package, using the option Debug -> Other Debug Targets -> Debug Installed App Package.
 
-1. 首先，确保已经过设置，可以使用桌面应用转换器。 有关说明，请参阅[桌面应用转换器](desktop-to-uwp-run-desktop-app-converter.md)。
+Here's how to get started: 
 
-2. 依次运行转换器和 Win32 应用程序的安装程序。 转换器会捕获布局以及对注册表所做的任何更改，并输出一个带有清单和 registery.dat 的 Appx 以虚拟化该注册表：
+1. First, ensure you're set up to use the Desktop App Converter. For instructions, see [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md).
+
+2. Run the converter and then installer for your Win32 application. The converter captures the layout, and any changes made to the registry and outputs an Appx with manifest and registery.dat to virtualize the registry:
 
 ![alt](images/desktop-to-uwp/debug-1.png)
 
-3. 安装并启动 [Visual Studio "15" Preview 2](https://www.visualstudio.com/downloads/visual-studio-next-downloads-vs.aspx)。 
+3. Install and launch [Visual Studio 2017 RC](https://www.visualstudio.com/downloads/#visual-studio-community-2017-rc). 
 
-4. 从[Visual Studio 库](http://go.microsoft.com/fwlink/?LinkId=797871)中安装“桌面到 UWP 打包 VSIX 项目”。 
+4. Install the Desktop to UWP Packaging VSIX project from the [Visual Studio Gallery](http://go.microsoft.com/fwlink/?LinkId=797871). 
 
-5. 打开已在 Visual Studio 中转换的相应 Win32 解决方案。
+5. Open the corresponding Win32 solution that was converted in Visual Studio.
  
-6. 将新的打包项目添加到你的解决方案，方法是右键单击该解决方案并选择“添加新项目”。 然后在“安装和部署”下选取“桌面到 UWP 打包项目”：
+6. Add the new packaging project to your solution by right clicking on the solution and choosing "Add New Project". Then pick the Desktop to UWP Packaging Project under Setup and Deployment:
 
     ![alt](images/desktop-to-uwp/debug-2.png)
 
-    所产生的项目将添加到你的解决方案：
+    The resulting project will be added to your solution:
 
     ![alt](images/desktop-to-uwp/debug-3.png)
 
-    在打包项目中，AppXFileList 提供文件到 AppX 布局的映射。 引用开始为空，但应手动设置为 .exe 项目以用于生成排序。 
+    In the Packaging project, the AppXFileList provides a mapping of files into the AppX layout. References begins empty, but should be manually set to the .exe project for build ordering. 
 
-7. DesktopToUWPPackaging 项目具有一个属性页，该页允许你配置 AppX 程序包根以及要执行的磁贴：
+7. The DesktopToUWPPackaging project has a property page which allows you to configure the AppX package root and which tile to execute:
 
     ![alt](images/desktop-to-uwp/debug-4.png)
 
-    将 PackageLayout 设置为转换器（上述）所创建的 AppX 的根位置。 然后选取要执行的磁贴。
+    Set the PackageLayout to the root location of the AppX that was created by the converter (above). Then pick which tile to execute.
 
-8.  打开并编辑 AppXFileList.xml。 此文件定义如何将 Win32 调试生成的输出复制到转换器所生成的 AppX 布局中。 默认情况下，文件中有一个带有示例标签和注释的占位符：
+8.  Open and edit the AppXFileList.xml. This file defines how to copy the output of the Win32 debug build into the AppX layout  the converter built. By default, we have a placeholder in the file with an example tag and comment:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -67,13 +69,13 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
     </Project>
     ```
 
-    下面是创建映射的示例。 在此情况下，我们将 .exe 和 .dll 从 Win32 生成位置复制到程序包布局位置中。 
+    Below is an example of creating the mapping. In this case, we copy the .exe and .dll from the Win32 build location into the package layout location. 
 
     ```XML
     <?xml version="1.0" encoding=utf-8"?>
     <Project ToolsVersion=14.0" xmlns="http://scehmas.microsoft.com/developer/msbuild/2003">
         <PropertyGroup>
-            <MyProjectOutputPath>C:\{path}</MyProjectOutputPath>
+            <MyProjectOutputPath>{relativepath}</MyProjectOutputPath>
         </PropertyGroup>
         <ItemGroup>
             <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.exe">
@@ -86,19 +88,19 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
     </Project>
     ```
 
-    此文件的定义如下： 
+    The file is defined as follows: 
 
-    首先，我们将 *MyProjectOutputPath* 定义为指向 Win32 项目将生成到的位置：
+    First, we define *MyProjectOutputPath* to point at the location where the Win32 project is building to:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
         <PropertyGroup>
-            <MyProjectOutputPath>C:\Users\peterfar\Desktop\ProjectTracker\ProjectTracker\bin\DesktopUWP</MyProjectOutputPath>
+            <MyProjectOutputPath>..\ProjectTracker\bin\DesktopUWP</MyProjectOutputPath>
         </PropertyGroup>
     ```
 
-    然后，每个 *LayoutFile* 都指定要从 Win32 生成位置复制到 Appx 程序包布局的文件。 在此情况下，依次复制 .exe 和 .dll。 
+    Then, each *LayoutFile* specifies a file to copy from the Win32 build location to the Appx Package layout. In this case first a .exe, then a .dll are copied. 
 
     ```XML
         <ItemGroup>
@@ -112,15 +114,15 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
     </Project>
     ```
 
-9. 将打包项目设置为启动项目。 这会将 Win32 文件复制到 AppX，然后在生成和运行该项目时启动调试程序。  
+9. Set the packaging project the start-up project. This will copy the Win32 files into the AppX and then launch the debugger when the project is built and run.  
 
     ![alt](images/desktop-to-uwp/debug-5.png)
 
-10. 最后，你现在可以在 Win32 代码中设置断点，并按 F5 启动调试程序。 它会将你对 Win32 应用程序所做的所有更新复制到 AppX 程序包，并允许你直接从 Visual Studio 内进行调试。
+10. Finally, you can now set a breakpoint in the Win32 code and hit F5 to launch the debugger. It will copy any updates you have made to your Win32 application across to the AppX package and allow you to debug directly from within Visual Studio.
 
-11. 如果你更新应用程序，将需要使用 MakeAppX 重新打包你的应用。 有关详细信息，请参阅[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)。 
+11. If you update your application, you'll need to use MakeAppX to repackage your app again. For more information, see [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx). 
 
-如果你有多个生成配置（例如用于发布和调试），可以将以下内容添加到 AppXFileList.xml 文件以从不同的位置复制 Win32 生成：
+If you have multiple build configurations (for instance for release and debug), you can add the following to the AppXFileList.xml file to copy the Win32 build from different locations:
 
 ```XML
 <PropertyGroup>
@@ -130,9 +132,9 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
 </PropertyGroup>
 ```
 
-如果你将应用程序更新到 UWP，但仍然希望也针对 Win32 生成它，则还可以使用条件编译来启用特定代码路径。 
+You can also use conditional compilation to enable particular code paths if you update your application to UWP but also still want to build it for Win32. 
 
-1.  在以下示例中，代码仅针对 DesktopUWP 进行编译，并且将使用 WinRT API 显示磁贴。 
+1.  In the example below the code will only be compiled for DesktopUWP and will show a tile using the WinRT API. 
 
     ```C#
     [Conditional("DesktopUWP")]
@@ -146,27 +148,27 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
     }
     ```
 
-2.  你可以使用“配置管理器”添加新的生成配置：
+2.  You can use Configuration Manager to add the new build configuration:
 
     ![alt](images/desktop-to-uwp/debug-6.png)
 
     ![alt](images/desktop-to-uwp/debug-7.png)
 
-3.  然后在项目属性下，添加对条件编译符号的支持：
+3.  Then under the project properties add support for conditional compilation symbols:
 
     ![alt](images/desktop-to-uwp/debug-8.png)
 
-4.  如果要面向你添加的 UWP API 进行生成，你现在可以将生成目标切换为 DesktopUWP。
+4.  You can now toggle the build target to DesktopUWP if you want to build to target the UWP API you added.
 
-## PLMDebug 
+## <a name="plmdebug"></a>PLMDebug 
 
-如果要在应用运行时进行调试，Visual Studio F5 和“附加到进程”将很有用。 但是，在某些情况下，你可能希望更精细的控制调试过程，包括能够在应用启动前调试应用。 在这些更高级的方案中，使用 [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)。 此工具允许使用 Windows 调试程序调试转换的应用，并提供对应用生命周期（包括暂停、恢复和终止）的完全控制。 
+Visual Studio F5 and Attach to Process are useful for debugging your app while it runs. In some cases, however, you may want finer-grained control over the debugging process, including the ability to debug your app before it starts. In these more advanced scenarios, use [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx). This tool allows you to debug your converted app using the Windows debugger and offers full control over app lifecycle including suspending, resuming, and termination. 
 
-PLMDebug 包含在 Windows SDK 中。 有关详细信息，请参阅 [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)。 
+PLMDebug is included with the Windows SDK. For more information, see [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx). 
 
-## 在完全信任的容器内运行另一个进程 
+## <a name="run-another-process-inside-the-full-trust-container"></a>Run another process inside the full trust container 
 
-你可以在指定应用包的容器内调用自定义进程。 这对于测试方案（例如，如果你有自定义测试工具并想要测试应用的输出）很有用。 若要执行此操作，请使用 ```Invoke-CommandInDesktopPackage``` PowerShell cmdlet： 
+You can invoke custom processes inside the container of a specified app package. This can be useful for testing scenarios (for example, if you have a custom test harness and want to test output of the app). To do so, use the ```Invoke-CommandInDesktopPackage``` PowerShell cmdlet: 
 
 ```CMD
 Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
@@ -175,6 +177,6 @@ Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

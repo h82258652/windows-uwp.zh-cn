@@ -1,39 +1,41 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
-title: "枚举和查询文件和文件夹"
-description: "访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。"
+title: Enumerate and query files and folders
+description: Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 ---
-# 枚举和查询文件和文件夹
+# <a name="enumerate-and-query-files-and-folders"></a>Enumerate and query files and folders
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。
+Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
 
-**注意** 另请参阅[文件夹枚举示例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
+For detailed guidance on how to store your Universal Windows Platform app's data, see the [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) class.
+
+**Note**  Also see the [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
  
-## 先决条件
+## <a name="prerequisites"></a>Prerequisites
 
--   **了解通用 Windows 平台 (UWP) 应用的异步编程**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **对位置的访问权限**
+-   **Access permissions to the location**
 
-    例如，这些示例中的代码需要 **picturesLibrary** 功能，但是你的位置可能需要其他功能或根本不需要任何功能。 若要了解详细信息，请参阅[文件访问权限](file-access-permissions.md)。
+    For example, the code in these examples require the **picturesLibrary** capability, but your location may require a different capability or no capability at all. To learn more, see [File access permissions](file-access-permissions.md).
 
-## 枚举某个位置中的文件和文件夹
+## <a name="enumerate-files-and-folders-in-a-location"></a>Enumerate files and folders in a location
 
-> **注意** 记得声明 **picturesLibrary** 功能。
+> **Note**  Remember to declare the **picturesLibrary** capability.
 
-在此示例中，我们首先使用 [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) 方法获取 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 的根文件夹（而不是在子文件夹）中的所有文件，并列出每个文件的名称。 接下来，我们使用 [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) 方法获取 **PicturesLibrary** 中的所有子文件夹并列出每个子文件夹的名称。
+In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) method to get all the files in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders) and list the name of each file. Next, we use the [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) method to get all the subfolders in the **PicturesLibrary** and list the name of each subfolder.
 
 <!--BUGBUG: IAsyncOperation<IVectorView<StorageFolder^>^>^  causes build to flake out-->
 > [!div class="tabbedCodeSnippets"]
@@ -136,10 +138,10 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 > ```
 
 
-> **注意** 在 C# 或 Visual Basic 中，请记得在使用 **await** 运算符的任何方法的方法声明中放入 **async** 关键字。
+> **Note**  In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
  
 
-或者，你可以使用 [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) 方法获取某个特定位置中的所有项（文件和子文件夹）。 以下示例使用 **GetItemsAsync** 方法获取 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 的根文件夹（而不是在子文件夹）中的所有文件和子文件夹。 然后，该示例会列出每个文件和子文件夹的名称。 如果该项是子文件夹，则该示例会向该名称追加 `"folder"`。
+Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) method to get all items (both files and subfolders) in a particular location. The following example uses the **GetItemsAsync** method to get all files and subfolders in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders). Then the example lists the name of each file and subfolder. If the item is a subfolder, the example appends `"folder"` to the name.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -208,11 +210,11 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 > Next item
 > ```
 
-## 查询某个位置中的文件并枚举匹配的文件
+## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>Query files in a location and enumerate matching files
 
-在此示例中，我们查询按月分组的 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 中的所有文件，此时该示例会递归到子文件夹。 首先，我们调用 [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) 并将 [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) 值传递给该方法。 这向我们提供了一个 [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) 对象。
+In this example we query for all the files in the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) grouped by the month, and this time the example recurses into subfolders. First, we call [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) and pass the [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) value to the method. That gives us a [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) object.
 
-接下来，我们调用 [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074)，它将返回表示虚拟文件夹的 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 对象。 在此示例中，我们按月分组，因此每个虚拟文件夹都表示一组具有相同月份的文件。
+Next we call [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074) which returns [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects representing virtual folders. In this case we're grouping by month, so the virtual folders each represent a group of files with the same month.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -311,7 +313,7 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 > Next folder
 > ```
 
-该示例的输出与以下内容类似。
+The output of the example looks similar to the following.
 
 ``` syntax
 July ‎2015 (2)
@@ -324,6 +326,6 @@ July ‎2015 (2)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

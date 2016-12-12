@@ -1,77 +1,73 @@
 ---
 author: mcleanbyron
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
-description: "在 Windows 应用商店提交 API 中使用此方法，可获取现有应用提交的数据。"
-title: "使用 Windows 应用商店提交 API 获取应用提交"
+description: Use this method in the Windows Store submission API to get data for an existing app submission.
+title: Get an app submission using the Windows Store submission API
 translationtype: Human Translation
-ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
-ms.openlocfilehash: d7e4e0f355828b3d9b7bbcdd5ceee43dad9fe37c
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: b092658a22b76f044000fb6accc90382dc3bd360
 
 ---
 
-# 使用 Windows 应用商店提交 API 获取应用提交
+# <a name="get-an-app-submission-using-the-windows-store-submission-api"></a>Get an app submission using the Windows Store submission API
 
 
+Use this method in the Windows Store submission API to get data for an existing app submission. For more information about the process of process of creating an app submission by using the Windows Store submission API, see [Manage app submissions](manage-app-submissions.md).
 
+## <a name="prerequisites"></a>Prerequisites
 
-在 Windows 应用商店提交 API 中使用此方法，可获取现有应用提交的数据。 有关通过使用 Windows 应用商店提交 API 创建应用提交过程的详细信息，请参阅[管理应用提交](manage-app-submissions.md)。
+To use this method, you need to first do the following:
 
->**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的应用提交的定价数据模型。 实现此更改后，此方法的响应数据中的**定价**资源将为空，并且你将暂时无法使用此方法获取应用提交的试用期、定价和销售数据。 我们会在将来更新 Windows 应用商店提交 API，以引入以编程方式访问应用提交的定价信息的新方法。 有关详细信息，请参阅[定价资源](manage-app-submissions.md#pricing-object)。
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+* Create a submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [create an app submission](create-an-app-submission.md) method.
 
-## 先决条件
+>**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
 
-若要使用此方法，首先需要执行以下操作：
+## <a name="request"></a>Request
 
-* 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
-* [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-* 使用你的开发人员中心帐户为应用创建提交。 可以使用开发人员中心仪表板执行此操作，也可以通过以下方式执行此操作：使用[创建应用提交](create-an-app-submission.md)方法。
+This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
 
->**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
-
-## 请求
-
-此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
-
-| 方法 | 请求 URI                                                      |
+| Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId} ``` |
 
 <span/>
  
 
-### 请求头
+### <a name="request-header"></a>Request header
 
-| 标头        | 类型   | 说明                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
-### 请求参数
+### <a name="request-parameters"></a>Request parameters
 
-| 名称        | 类型   | 描述                                                                 |
+| Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字符串 | 必需。 要获取提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| submissionId | 字符串 | 必需。 要获取的提交的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建应用提交](create-an-app-submission.md)请求的响应数据中。  |
+| applicationId | string | Required. The Store ID of the app with the submission you want to get. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| submissionId | string | Required. The ID of the submission to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create an app submission](create-an-app-submission.md).  |
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>Request body
 
-请勿为此方法提供请求正文。
+Do not provide a request body for this method.
 
-### 请求示例
+### <a name="request-example"></a>Request example
 
-以下示例演示了如何获取应用提交。
+The following example demonstrates how to get an app submission.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243680 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>Response
 
-以下示例演示了成功调用此方法的 JSON 响应正文。 响应正文包含指定提交的相关信息。 有关响应正文中这些值的更多详细信息，请参阅[应用提交资源](manage-app-submissions.md#app-submission-object)。
+The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the specified submission. For more details about the values in the response body, see [App submission resource](manage-app-submissions.md#app-submission-object).
 
 ```json
 {
@@ -173,29 +169,29 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 错误代码
+## <a name="error-codes"></a>Error codes
 
-如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
+If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
 
-| 错误代码 |  描述   |
+| Error code |  Description   |
 |--------|------------------|
-| 404  | 找不到提交。 |
-| 409  | 提交不属于指定的应用，或者应用使用的开发人员中心仪表板功能[当前不受 Windows 应用商店提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
+| 404  | The submission could not be found. |
+| 409  | The submission does not belong to the specified app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 <span/>
 
 
-## 相关主题
+## <a name="related-topics"></a>Related topics
 
-* [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [创建应用提交](create-an-app-submission.md)
-* [确认应用提交](commit-an-app-submission.md)
-* [更新应用提交](update-an-app-submission.md)
-* [删除应用提交](delete-an-app-submission.md)
-* [获取应用提交的状态](get-status-for-an-app-submission.md)
+* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create an app submission](create-an-app-submission.md)
+* [Commit an app submission](commit-an-app-submission.md)
+* [Update an app submission](update-an-app-submission.md)
+* [Delete an app submission](delete-an-app-submission.md)
+* [Get the status of an app submission](get-status-for-an-app-submission.md)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

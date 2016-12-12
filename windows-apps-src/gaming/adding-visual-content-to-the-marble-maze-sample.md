@@ -1,74 +1,74 @@
 ---
 author: mtoepke
-title: "向 Marble Maze 添加可视内容示例"
-description: "本文档介绍了 Marble Maze 游戏如何在通用 Windows 平台 (UWP) 应用环境中使用 Direct3D 和 Direct2D，以便你可了解相关模式并在处理自己的游戏内容时调整它们。"
+title: Adding visual content to the Marble Maze sample
+description: This document describes how the Marble Maze game uses Direct3D and Direct2D in the Universal Windows Platform (UWP) app environment so that you can learn the patterns and adapt them when you work with your own game content.
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 70f35fe423b8ceb3e3e3e0c1c3c2563dc0d8cd61
+ms.sourcegitcommit: eb0115bf83627a9ba8209cce6bdd9edecc165ddf
+ms.openlocfilehash: 6b7880703d40d6ef5ed5f42f3e09bc5573170e1f
 
 ---
 
-# 向 Marble Maze 添加可视内容示例
+# <a name="adding-visual-content-to-the-marble-maze-sample"></a>Adding visual content to the Marble Maze sample
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文档介绍了 Marble Maze 游戏如何在通用 Windows 平台 (UWP) 应用环境中使用 Direct3D 和 Direct2D，以便你可了解相关模式并在处理自己的游戏内容时调整它们。 若要了解可视游戏组件如何融入 Marble Maze 的总体应用程序结构中，请参阅 [Marble Maze 应用程序结构](marble-maze-application-structure.md)。
+This document describes how the Marble Maze game uses Direct3D and Direct2D in the Universal Windows Platform (UWP) app environment so that you can learn the patterns and adapt them when you work with your own game content. To learn how visual game components fit in the overall application structure of Marble Maze, see [Marble Maze application structure](marble-maze-application-structure.md).
 
-我们在开发 Marble Maze 的可视方面时遵循以下基本步骤：
+We followed these basic steps as we developed the visual aspects of Marble Maze:
 
-1.  创建一个初始化 Direct3D 和 Direct2D 环境的基本框架。
-2.  使用图像和模型编辑程序来设计在游戏中显示的 2D 和 3D 资源。
-3.  确保 2D 和 3D 资源在游戏中正确加载并显示。
-4.  集成可增强游戏资源可视质量的顶点和像素着色器。
-5.  集成游戏逻辑，例如动画和用户输入。
+1.  Create a basic framework that initializes the Direct3D and Direct2D environments.
+2.  Use image and model editing programs to design the 2-D and 3-D assets that appear in the game.
+3.  Ensure that 2-D and 3-D assets properly load and appear in the game.
+4.  Integrate vertex and pixel shaders that enhance the visual quality of the game assets.
+5.  Integrate game logic, such as animation and user input.
 
-我们同样首先介绍添加 3D 资源，然后介绍 2D 资源。 例如，我们在添加菜单系统和计时器之前，会重点介绍核心游戏逻辑。
+We also focused first on adding 3-D assets and then on 2-D assets. For example, we focused on core game logic before we added the menu system and timer.
 
-我们在开发过程中还需要重复一些步骤多次。 例如，在更改网格和弹珠模型时，我们还需要更改一些支持这些模型的着色器代码。
+We also needed to iterate through some of these steps multiple times during the development process. For example, as we make changes to the mesh and marble models, we had to also change some of the shader code that supports those models.
 
-> **注意** 与本文档对应的示例代码位于 [DirectX Marble Maze 游戏示例](http://go.microsoft.com/fwlink/?LinkId=624011)中。
+> **Note**   The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011).
 
  
-本文档讨论了在处理 DirectX 和可视游戏内容时（即在初始化 DirectX 图形库、加载场景资源，以及更新和呈现场景时）的一些重要事项：
+Here are some of the key points that this document discusses for when you work with DirectX and visual game content, namely, when you initialize the DirectX graphics libraries, load scene resources, and update and render the scene:
 
--   添加游戏内容通常涉及到许多步骤。 这些步骤也常常需要重复执行。 游戏开发人员常常首先关注添加 3D 游戏内容，然后才是添加 2D 内容。
--   通过尽可能支持更大范围的图形硬件，获得更多客户并为他们提供出色的体验。
--   将设计时和运行时格式明确分开。 构建设计时资源结构，以最大限度提高灵活性并在内容上实现快速迭代。 格式化并压缩资源，以在运行时尽可能高效地加载和渲染。
--   在 UWP 应用中创建 Direct3D 和 Direct2D 设备，与在经典的 Windows 桌面应用中非常相似。 一个重要的区别是交换链与输出窗口的关联方式。
--   设计游戏时，请确保所选择的网格格式支持你的重要方案。 例如，如果游戏需要碰撞，请确保你可从网格获取碰撞数据。
--   通过在渲染所有场景对象之前首先更新它们，将游戏逻辑与渲染逻辑分开。
--   通常先绘制 3D 场景对象，然后绘制出现在场景前面的任何 2D 对象。
--   将图形与垂直空白同步，以确保游戏不会花时间绘制从不会在显示器上实际显示的帧。
+-   Adding game content typically involves many steps. These steps also often require iteration. Game developers often focus first on adding 3-D game content and then on adding 2-D content.
+-   Reach more customers and give them all a great experience by supporting the greatest range of graphics hardware as possible.
+-   Cleanly separate design-time and run-time formats. Structure your design-time assets to maximize flexibility and enable rapid iterations on content. Format and compress your assets to load and render as efficiently as possible at run time.
+-   You create the Direct3D and Direct2D devices in a UWP app much like you do in a classic Windows desktop app. One important difference is how the swap chain is associated with the output window.
+-   When you design your game, ensure that the mesh format that you choose supports your key scenarios. For example, if your game requires collision, make sure that you can obtain collision data from your meshes.
+-   Separate game logic from rendering logic by first updating all scene objects before you render them.
+-   You typically draw your 3-D scene objects, and then any 2-D objects that appear in front of the scene.
+-   Synchronize drawing to the vertical blank to ensure that your game does not spend time drawing frames that will never be actually shown on the display.
 
-## DirectX 图形入门
-
-
-在计划 Marble Maze 通用 Windows 平台 (UWP) 游戏时，我们选择了 C++ 和 Direct3D 11.1，因为它们是创建需要最大限度控制渲染和高性能的 3D 游戏的最佳选择。 DirectX 11.1 支持从 DirectX 9 到 DirectX 11 的硬件，因此可帮助你更高效地获得更多客户，因为你无需为每个早期的 DirectX 版本重写代码。
-
-Marble Maze 使用 Direct3D 11.1 渲染 3D 游戏资产，也就是弹珠和迷宫。 Marble Maze 还使用 Direct2D、DirectWrite 和 Windows 图像处理组件 (WIC) 来绘制 2D 游戏资产，例如菜单和计时器。 最终，Marble Maze 使用 XAML 来提供应用栏并允许你添加 XAML 控件。
-
-游戏开发需要规划。 如果不熟悉 DirectX 图形，我们建议你阅读“创建 DirectX 游戏”，自行熟悉创建 UWP DirectX 游戏的基本概念。 在阅读本文档和浏览 Marble Maze 源代码时，你可参阅以下资源来了解 DirectX 图形的更多深入信息。
-
--   [Direct3D 11 图形](https://msdn.microsoft.com/library/windows/desktop/ff476080)介绍 Direct3D 11，一种强大的、硬件加速的 3D 图形 API，用于在 Windows 平台上渲染 3D 几何图形。
--   [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) 介绍 Direct2D，一种硬件加速的 2D 图形 API，为 2D 几何图形、位图和文本提供了高性能、高质量的渲染。
--   [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) 介绍 DirectWrite，它支持高质量文本渲染。
--   [Windows 图像处理组件](https://msdn.microsoft.com/library/windows/desktop/ee719902) 介绍 WIC，一个可扩展的平台，提供了低级别 API 来处理数字图像。
-
-### 功能级别
-
-Direct3D 11 引入了一种名为功能级别的范例。 功能级别是明确定义的 GPU 功能的集合。 使用功能级别，可让你的游戏能在较早版本的 Direct3D 硬件上运行。 Marble Maze 支持功能级别 9.1，因为它不需要来自更高级别的高级功能。 我们建议你尽可能支持大范围的硬件并扩展游戏内容，以便拥有高端或低端计算机的客户都拥有出色的体验。 有关功能级别的详细信息，请参阅[下层硬件上的 Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476872)。
-
-## 初始化 Direct3D 和 Direct2D
+## <a name="getting-started-with-directx-graphics"></a>Getting started with DirectX graphics
 
 
-设备代表显示适配器。 在 UWP 应用中创建 Direct3D 和 Direct2D 设备，与在经典的 Windows 桌面应用中非常相似。 主要区别在于将 Direct3D 交换链连接到窗口化系统的方式。
+When we planned the Marble Maze Universal Windows Platform (UWP) game, we chose C++ and Direct3D 11.1 because they are the best choices for creating 3-D games that require maximum control over rendering and high performance. DirectX 11.1 supports hardware from DirectX 9 to DirectX 11, and therefore can help you reach more customers more efficiently because you don't have to rewrite code for each of the earlier DirectX versions.
 
-*DirectX 11 和 XAML 应用（通用 Windows）*从特定于游戏的功能中剔除了一些一般性的操作系统和 3D 呈现功能。 **DeviceResources** 类是管理 Direct3D 和 Direct2D 的基础。 该类处理一般结构，而不是特定于游戏的资源。 Marble Maze 定义 **MarbleMaze** 类来处理特定于游戏的资源，该类具有对 **DeviceResources** 对象的引用以使其可以访问 Direct3D 和 Direct2D。
+Marble Maze uses Direct3D 11.1 to render the 3-D game assets, namely the marble and the maze. Marble Maze also uses Direct2D, DirectWrite, and Windows Imaging Component (WIC) to draw the 2-D game assets, such as the menus and the timer. Finally, Marble Maze uses XAML to provide an app bar and allows you to add XAML controls.
 
-在初始化期间，**DeviceResources::Initialize** 方法创建与设备独立的资源以及 Direct3D 和 Direct2D 设备。
+Game development requires planning. If you are new to DirectX graphics, we recommend that you read Creating a DirectX game to familiarize yourself with the basic concepts of creating a UWP DirectX game. As you read this document and work through the Marble Maze source code, you can refer to the following resources for more in-depth information about DirectX graphics.
+
+-   [Direct3D 11 Graphics](https://msdn.microsoft.com/library/windows/desktop/ff476080) Describes Direct3D 11, a powerful, hardware-accelerated 3-D graphics API for rendering 3-D geometry on the Windows platform.
+-   [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) Describes Direct2D, a hardware-accelerated, 2-D graphics API that provides high performance and high-quality rendering for 2-D geometry, bitmaps, and text.
+-   [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) Describes DirectWrite, which supports high-quality text rendering.
+-   [Windows Imaging Component](https://msdn.microsoft.com/library/windows/desktop/ee719902) Describes WIC, an extensible platform that provides low-level API for digital images.
+
+### <a name="feature-levels"></a>Feature levels
+
+Direct3D 11 introduces a paradigm named feature levels. A feature level is a well-defined set of GPU functionality. Use feature levels to target your game to run on earlier versions of Direct3D hardware. Marble Maze supports feature level 9.1 because it requires no advanced features from the higher levels. We recommend that you support the greatest range of hardware possible and scale your game content so that your customers that have either high or low-end computers all have a great experience. For more information about feature levels, see [Direct3D 11 on Downlevel Hardware](https://msdn.microsoft.com/library/windows/desktop/ff476872).
+
+## <a name="initializing-direct3d-and-direct2d"></a>Initializing Direct3D and Direct2D
+
+
+A device represents the display adapter. You create the Direct3D and Direct2D devices in a UWP app much like you do in a classic Windows desktop app. The main difference is how you connect the Direct3D swap chain to the windowing system.
+
+The *DirectX 11 and XAML App (Universal Windows)* factors out some generic operating system and 3-D rendering functions from the game-specific functions. The **DeviceResources** class is a foundation for managing Direct3D and Direct2D. This class handles general infrastructure, and not game-specific assets. Marble Maze defines the **MarbleMaze** class to handle game-specific assets, which has a reference to a **DeviceResources** object to give it access to Direct3D and Direct2D.
+
+During initialization, the **DeviceResources::Initialize** method creates device-independent resources and the Direct3D and Direct2D devices.
 
 ```cpp
 // Initialize the Direct3D resources required to run. 
@@ -83,11 +83,11 @@ void DeviceResources::DeviceResources(CoreWindow^ window, float dpi)
 }
 ```
 
-**DeviceResources** 类将此功能分开，以便它可更轻松地响应环境变化。 例如，它在窗口大小更改时调用 **CreateWindowSizeDependentResources** 方法。
+The **DeviceResources** class separates this functionality so that it can more easily respond when the environment changes. For example, it calls the **CreateWindowSizeDependentResources** method when the window size changes.
 
-###  初始化 Direct2D、DirectWrite 和 WIC 工厂
+###  <a name="initializing-the-direct2d-directwrite-and-wic-factories"></a>Initializing the Direct2D, DirectWrite, and WIC factories
 
-**DeviceResources::CreateDeviceIndependentResources** 方法为 Direct2D、DirectWrite 和 WIC 创建工厂。 在 DirectX 图形中，工厂是创建图形资源的起点。 Marble Maze 指定 **D2D1\_FACTORY\_TYPE\_SINGLE\_THREADED**，因为它在主线程上执行所有绘制工作。
+The **DeviceResources::CreateDeviceIndependentResources** method creates the factories for Direct2D, DirectWrite, and WIC. In DirectX graphics, factories are the starting points for creating graphics resources. Marble Maze specifies **D2D1\_FACTORY\_TYPE\_SINGLE\_THREADED** because it performs all drawing on the main thread.
 
 ```cpp
 // These are the resources required independent of hardware. 
@@ -129,9 +129,9 @@ void DeviceResources::CreateDeviceIndependentResources()
 }
 ```
 
-###  创建 Direct3D 和 Direct2D 设备
+###  <a name="creating-the-direct3d-and-direct2d-devices"></a>Creating the Direct3D and Direct2D devices
 
-**DeviceResources::CreateDeviceResources** 方法调用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 来创建代表 Direct3D 显示适配器的设备对象。 因为 Marble Maze 支持 9.1 和更高的功能级别，所以 **DeviceResources::CreateDeviceResources** 方法在 **\\** 值的数组中指定级别 9.1 到 11.1。 Direct3D 按顺序遍历该列表并为应用提供第一个可用的功能级别。 因此，**D3D\_FEATURE\_LEVEL** 数组条目按从高到低的顺序列出，以便应用将获得最高级的可用功能级别。 **DeviceResources::CreateDeviceResources** 方法通过查询从 **D3D11CreateDevice** 返回的 Direct3D 11 设备来获取 Direct3D 11.1 设备。
+The **DeviceResources::CreateDeviceResources** method calls [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) to create the device object that represents the Direct3D display adapter. Because Marble Maze supports feature level 9.1 and above, the **DeviceResources::CreateDeviceResources** method specifies levels 9.1 through 11.1 in the array of **\\** values. Direct3D walks the list in order and gives the app the first feature level that is available. Therefore the **D3D\_FEATURE\_LEVEL** array entries are listed from highest to lowest so that the app will get the highest level feature level available. The **DeviceResources::CreateDeviceResources** method obtains the Direct3D 11.1 device by querying the Direct3D 11 device that's returned from **D3D11CreateDevice**.
 
 ```cpp
 // This array defines the set of DirectX hardware feature levels this app will support. 
@@ -173,7 +173,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-然后，**DeviceResources::CreateDeviceResources** 方法创建 Direct2D 设备。 Direct2D 使用 Microsoft DirectX 图形基础结构 (DXGI) 来与 Direct3D 互操作。 DXGI 支持在图形运行时之间共享视频内存表面。 Marble Maze 使用来自 Direct3D 设备的基础 DXGI 设备，通过 Direct2D 工厂创建 Direct2D 设备。
+The **DeviceResources::CreateDeviceResources** method then creates the Direct2D device. Direct2D uses Microsoft DirectX Graphics Infrastructure (DXGI) to interoperate with Direct3D. DXGI enables video memory surfaces to be shared between graphics runtimes. Marble Maze uses the underlying DXGI device from the Direct3D device to create the Direct2D device from the Direct2D factory.
 
 ```cpp
 // Obtain the underlying DXGI device of the Direct3D 11.1 device.
@@ -215,11 +215,11 @@ DX::ThrowIfFailed(
     );
 ```
 
-有关 DXGI 及 Direct2D 与 Direct3D 之间互操作性的详细信息，请参阅 [DXGI 概述](https://msdn.microsoft.com/library/windows/desktop/bb205075)和 [Direct2D 和 Direct3D 互操作性概述](https://msdn.microsoft.com/library/windows/desktop/dd370966)。
+For more information about DXGI and interoperability between Direct2D and Direct3D, see [DXGI Overview](https://msdn.microsoft.com/library/windows/desktop/bb205075) and [Direct2D and Direct3D Interoperability Overview](https://msdn.microsoft.com/library/windows/desktop/dd370966).
 
-### 将 Direct3D 与视图关联
+### <a name="associating-direct3d-with-the-view"></a>Associating Direct3D with the view
 
-**DeviceResources::CreateWindowSizeDependentResources** 方法根据给定的窗口大小创建图形资源，例如交换链及 Direct3D 和 Direct2D 呈现目标。 DirectX UWP 应用与桌面应用的一个重要区别在于交换链与输出窗口的关联方式。 交换链负责显示缓冲区，设备在监视器上要渲染到该缓冲区。 文档“Marble Maze 应用程序结构”介绍了 UWP 应用的窗口化系统与桌面应用的区别。 因为 Windows 应用商店应用不使用 **HWND** 对象，所以 Marble Maze 必须使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 方法将设备输出关联到视图。 下面的示例展示了 **DeviceResources::CreateWindowSizeDependentResources** 方法创建交换链的部分。
+The **DeviceResources::CreateWindowSizeDependentResources** method creates the graphics resources that depend on a given window size such as the swap chain and Direct3D and Direct2D render targets. One important way that a DirectX UWP app differs from a desktop app is how the swap chain is associated with the output window. A swap chain is responsible for displaying the buffer to which the device renders on the monitor. The document Marble Maze application structure describes how the windowing system for a UWP app differs from a desktop app. Because a Windows Store app does not work with **HWND** objects, Marble Maze must use the [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) method to associate the device output to the view. The following example shows the part of the **DeviceResources::CreateWindowSizeDependentResources** method that creates the swap chain.
 
 ```cpp
 // Obtain the final swap chain for this window from the DXGI factory.
@@ -234,7 +234,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-若要最大限度降低能耗（这在笔记本电脑和平板电脑等电池供电设备上很重要），**DeviceResources::CreateWindowSizeDependentResources** 方法调用 [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334) 方法来确保仅在垂直空白后才会呈现游戏。 与垂直空白同步将在本文档的“呈现场景”一节中详细介绍。
+To minimize power consumption, which is important to do on battery-powered devices such as laptops and tablets, the **DeviceResources::CreateWindowSizeDependentResources** method calls the [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334) method to ensure that the game is rendered only after the vertical blank. Synchronizing with the vertical blank is described in greater detail in the section Presenting the scene in this document.
 
 ```cpp
 // Ensure that DXGI does not queue more than one frame at a time. This both reduces  
@@ -245,34 +245,34 @@ DX::ThrowIfFailed(
     );
 ```
 
-**DeviceResources::CreateWindowSizeDependentResources** 方法以一种适合大部分游戏的方式初始化图形资源。
+The **DeviceResources::CreateWindowSizeDependentResources** method initializes graphics resources in a way that works for most games.
 
-> **注意** 术语*视图*在 Windows 运行时中的含义与 Direct3D 中的不同。 在 Windows 运行时中，视图指的是应用的用户界面设置集合，包括显示区域和输入行为及其用于处理的线程。 指定你在创建视图时需要的配置和设置。 设置应用视图的过程将在 [Marble Maze 应用程序结构](marble-maze-application-structure.md)中介绍。 在 Direct3D 中，术语“视图”有多种含义。 首先，资源视图定义一种资源可访问的子资源。 例如，将一个纹理对象与一个着色器资源视图关联后，该着色器可访问该纹理。 资源视图的一个优点是，你可在呈现管道中的不同阶段以不同方式解释数据。 有关资源视图的详细信息，请参阅[纹理视图 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 在视图转换或视图转换矩阵的上下文中使用时，视图指的是相机的位置和方向。 视图转换会在围绕相机的位置和方向的世界中重新定位各个对象。 有关视图转换的详细信息，请参阅[视图转换 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342)。 本主题将详细介绍 Marble Maze 如何使用资源和矩阵视图。
+> **Note**   The term *view* has a different meaning in the Windows Runtime than it has in Direct3D. In the Windows Runtime, a view refers to the collection of user interface settings for an app, including the display area and the input behaviors, plus the thread it uses for processing. You specify the configuration and settings you need when you create a view. The process of setting up the app view is described in [Marble Maze application structure](marble-maze-application-structure.md). In Direct3D, the term view has multiple meanings. First, a resource view defines the subresources that a resource can access. For example, when a texture object is associated with a shader resource view, that shader can later access the texture. One advantage of a resource view is that you can interpret data in different ways at different stages in the rendering pipeline. For more information about resource views, see [Texture Views (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128). When used in the context of a view transform or view transform matrix, view refers to the location and orientation of the camera. A view transform relocates objects in the world around the camera’s position and orientation. For more information about view transforms, see [View Transform (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342). How Marble Maze uses resource and matrix views is described in greater detail in this topic.
 
  
 
-## 加载场景资源
+## <a name="loading-scene-resources"></a>Loading scene resources
 
 
-Marble Maze 使用 **BasicLoader** 类（在 BasicLoader.h 中声明）加载纹理和着色器。 Marble Maze 使用 **SDKMesh** 类加载迷宫和弹珠的 3D 网格。
+Marble Maze uses the **BasicLoader** class, which is declared in BasicLoader.h, to load textures and shaders. Marble Maze uses the **SDKMesh** class to load the 3-D meshes for the maze and the marble.
 
-若要确保应用能迅速响应，Marble Maze 以异步方式或在后台加载场景资源。 资产加载到后台后，游戏即可响应窗口事件。 这个过程将在本指南的[在后台加载游戏资产](marble-maze-application-structure.md#loading_game_assets)中详细介绍。
+To ensure a responsive app, Marble Maze loads scene resources asynchronously, or in the background. As assets load in the background, your game can respond to window events. This process is explained in greater detail in [Loading game assets in the background](marble-maze-application-structure.md#loading-game-assets-in-the-background) in this guide.
 
-###  加载 2D 覆盖图和用户界面
+###  <a name="loading-the-2-d-overlay-and-user-interface"></a>Loading the 2-D overlay and user interface
 
-在 Marble Maze 中，覆盖图是显示在屏幕顶层的图像。 覆盖图始终显示在场景前面。 在 Marble Maze 中，覆盖包含 Windows 徽标和文本字符串“DirectX Marble Maze game sample”。 覆盖的管理由 **SampleOverlay** 类执行，该类在 SampleOverlay.h 中定义。 尽管我们使用覆盖作为 Direct3D 示例的一部分，但你可适应此代码以显示任何出现在场景前面的图像。
+In Marble Maze, the overlay is the image that appears at the top of the screen. The overlay always appears in front of the scene. In Marble Maze, the overlay contains the Windows logo and the text string "DirectX Marble Maze game sample". The management of the overlay is performed by the **SampleOverlay** class, which is defined in SampleOverlay.h. Although we use the overlay as part of the Direct3D samples, you can adapt this code to display any image that appears in front of your scene.
 
-覆盖的一个重要方面是，因为它的内容不会更改，所以 **SampleOverlay** 类在初始化期间将它的内容绘制或缓存到一个 [**ID2D1Bitmap1**](https://msdn.microsoft.com/library/windows/desktop/hh404349) 对象。 在绘制时，**SampleOverlay** 类仅需要向屏幕绘制位图。 这样，无需为每一帧都执行文本绘制等需要大量资源的例行任务。
+One important aspect of the overlay is that, because its contents do not change, the **SampleOverlay** class draws, or caches, its contents to an [**ID2D1Bitmap1**](https://msdn.microsoft.com/library/windows/desktop/hh404349) object during initialization. At draw time, the **SampleOverlay** class only has to draw the bitmap to the screen. In this way, expensive routines such as text drawing do not have to be performed for every frame.
 
-用户界面 (UI) 由 2D 组件组成，例如菜单和抬头显示器 (HUD)，它们显示在场景前面。 Marble Maze 定义了以下 UI 元素：
+The user interface (UI) consists of 2-D components, such as menus and heads-up displays (HUDs), which appear in front of your scene. Marble Maze defines the following UI elements:
 
--   使用户能够启动游戏或查看高分的菜单项。
--   在游戏开始前计时 3 秒的计时器。
--   跟踪已用游戏时间的计时器。
--   列出最快完成时间的表格。
--   在游戏暂停时显示 “Paused”的文本。
+-   Menu items that enable the user to start the game or view high scores.
+-   A timer that counts down for three seconds before play begins.
+-   A timer that tracks the elapsed play time.
+-   A table that lists the fastest finish times.
+-   Text that reads "Paused" when the game is paused.
 
-Marble Maze 在 UserInterface.h 中定义特定于游戏的 UI 元素。 Marble Maze 将 **ElementBase** 类定义为所有 UI 元素的基础类型。 **ElementBase** 类定义 UI 元素的属性，例如大小、位置、对齐方式和可视性。 它还控制元素的更新和呈现方式。
+Marble Maze defines game-specific UI elements in UserInterface.h. Marble Maze defines the **ElementBase** class as a base type for all UI elements. The **ElementBase** class defines attributes such as the size, position, alignment, and visibility of a UI element. It also controls how elements are updated and rendered.
 
 ```cpp
 class ElementBase
@@ -302,25 +302,25 @@ protected:
 };
 ```
 
-通过为 UI 元素提供一个通用的基类，**UserInterface** 类（管理用户界面）仅需要具有一个 **ElementBase** 对象集合，这简化了 UI 管理并提供了一个可重用的用户界面管理器。 Marble Maze 定义派生自 **ElementBase** 的类型来实现特定于游戏的行为。 例如，**HighScoreTable** 定义了高分表的行为。 有关这些类型的详细信息，请参阅源代码。
+By providing a common base class for UI elements, the **UserInterface** class, which manages the user interface, need only hold a collection of **ElementBase** objects, which simplifies UI management and provides a user interface manager that is reusable. Marble Maze defines types that derive from **ElementBase** that implement game-specific behaviors. For example, **HighScoreTable** defines the behavior for the high score table. For more info about these types, refer to the source code.
 
-> **注意** 因为 XAML 支持更轻松地创建复杂的用户界面（例如模拟和战略游戏中的用户界面），所以应考虑是否使用 XAML 来定义 UI。 有关如何使用 XAML 在 DirectX UWP 游戏中开发用户界面的信息，请参阅[扩展游戏示例 (Windows)](tutorial-resources.md)。 本文档参考了 DirectX 3D 射击游戏示例。
+> **Note**   Because XAML enables you to more easily create complex user interfaces, like those found in simulation and strategy games, consider whether to use XAML to define your UI. For info about how to develop a user interface in XAML in a DirectX UWP game, see [Extend the game sample (Windows)](tutorial-resources.md). This document refers to the DirectX 3-D shooting game sample.
 
  
 
-###  加载着色器
+###  <a name="loading-shaders"></a>Loading shaders
 
-Marble Maze 使用 **BasicLoader::LoadShader** 方法从文件加载着色器。
+Marble Maze uses the **BasicLoader::LoadShader** method to load a shader from a file.
 
-现在着色器是游戏中的 GPU 编程的基本单元。 几乎所有 3D 图形处理都由着色器驱动，无论是模型转换和场景照明，还是更复杂的几乎图形处理，从角色皮肤到分割都是如此。 有关着色器编程模型的详细信息，请参阅 [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)。
+Shaders are the fundamental unit of GPU programming in games today. Nearly all 3-D graphics processing is driven through shaders, whether it is model transformation and scene lighting, or more complex geometry processing, from character skinning to tessellation. For more information about the shader programming model, see [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561).
 
-Marble Maze 使用顶点和像素着色器。 顶点着色器始终在一个输入顶点上操作并生成一个顶点作为输出。 像素着色器接受数字值、纹理数据、插值的顶点值，以及其他数据，生成一种像素颜色作为输出。 因为着色器一次转换一个元素，所以提供多个着色器管道的图形硬件可并行处理多组元素。 可供 GPU 使用的并行管道数量可能比可供 CPU 使用的数量要多得多。 因此，即使基本着色器也能大大改善吞吐量。
+Marble Maze uses vertex and pixel shaders. A vertex shader always operates on one input vertex and produces one vertex as output. A pixel shader takes numeric values, texture data, interpolated per-vertex values, and other data to produce a pixel color as output. Because a shader transforms one element at a time, graphics hardware that provides multiple shader pipelines can process sets of elements in parallel. The number of parallel pipelines that are available to the GPU can be vastly greater than the number that is available to the CPU. Therefore, even basic shaders can greatly improve throughput.
 
-**MarbleMaze::LoadDeferredResources** 方法在加载覆盖后，加载一个顶点着色器和一个像素着色器。 这些着色器的设计时版本分别在 BasicVertexShader.hlsl 和 BasicPixelShader.hlsl 中定义。 Marble Maze 在渲染阶段将这些着色器同时应用到球和迷宫。
+The **MarbleMaze::LoadDeferredResources** method loads one vertex shader and one pixel shader after it loads the overlay. The design-time versions of these shaders are defined in BasicVertexShader.hlsl and BasicPixelShader.hlsl, respectively. Marble Maze applies these shaders to both the ball and the maze during the rendering phase.
 
-Marble Maze 项目同时包含着色器文件的 .hlsl（设计时格式）和 .cso（运行时格式）。 在生成时，Visual Studio 使用 fxc.exe 效果编译器将 .hlsl 源文件编译为 .cso 库着色器。 有关效果编译器工具的详细信息，请参阅[效果编译器工具](https://msdn.microsoft.com/library/windows/desktop/bb232919)。
+The Marble Maze project includes both .hlsl (the design-time format) and .cso (the run-time format) versions of the shader files. At build time, Visual Studio uses the fxc.exe effect-compiler to compile your .hlsl source file into a .cso binary shader. For more information about the effect-compiler tool, see [Effect-Compiler Tool](https://msdn.microsoft.com/library/windows/desktop/bb232919).
 
-顶点着色器使用提供的模型、视图和投影矩阵来转换输入几何图形。 来自输入几何图形的位置数据被转换并输出两次，一次在屏幕空间中（这是渲染所必需的），另一次在世界空间中，让像素着色器能够执行照明计算。 表面法线矢量被转换到世界空间，这也由像素着色器用于照明。 纹理坐标原封不动地传递到像素着色器。
+The vertex shader uses the supplied model, view and projection matrices to transform the input geometry. Position data from the input geometry is transformed and output twice: once in screen space, which is necessary for rendering, and again in world space to enable the pixel shader to perform lighting calculations. The surface normal vector is transformed to world space, which is also used by the pixel shader for lighting. The texture coordinates are passed through unchanged to the pixel shader.
 
 ```hlsl
 sPSInput main(sVSInput input)
@@ -338,7 +338,7 @@ sPSInput main(sVSInput input)
 }
 ```
 
-像素着色器接收顶点着色器的输出作为输入。 这个着色器执行照明计算来模拟一种虚边聚光效果，该聚光效果悬浮在迷宫上方且与弹珠的位置对齐。 直接朝向光源的表面的照明最强。 随着法线变为与光线垂直，散射组件逐渐缩小到 0；随着法线点远离光源，环境光逐渐消失。 接近弹珠（因此接近聚光效果的中心）的点的照明更强。 但是，弹珠下方的点的照明要柔和一些，以模拟虚化的阴影。 在真实环境中，一个像白色弹珠这样的物体会将聚光灯的光漫反射到场景中的其他对象上。 这非常接近弹珠的明亮部分的表面。 其他的照明因素包括相对角和离弹珠的距离。 最终的像素颜色包括采样的纹理和照明计算的结果。
+The pixel shader receives the output of the vertex shader as input. This shader performs lighting calculations to mimic a soft-edged spotlight that hovers over the maze and is aligned with the position of the marble. Lighting is strongest for surfaces that point directly toward the light. The diffuse component tapers off to zero as the surface normal becomes perpendicular to the light, and the ambient term diminishes as the normal points away from the light. Points closer to the marble (and therefore closer to the center of the spotlight) are lit more strongly. However, lighting is modulated for points underneath the marble to simulate a soft shadow. In a real environment, an object like the white marble would diffusely reflect the spotlight onto other objects in the scene. This is approximated for the surfaces that are in view of the bright half of the marble. The additional illumination factors are in relative angle and distance to the marble. The resulting pixel color is a composition of the sampled texture with the result of the lighting calculations.
 
 ```hlsl
 float4 main(sPSInput input) : SV_TARGET
@@ -376,11 +376,11 @@ float4 main(sPSInput input) : SV_TARGET
 }
 ```
 
-> **注意** 已编译的像素着色器包含 32 个算术指令和 1 个纹理指令。 此着色器应能在桌面计算机和高端平板电脑上出色地运行。 但是，低端计算机可能无法处理此着色器并仍然提供一种交互式帧速率。 考虑你的目标受众的典型硬件，设计你的着色器来符合该硬件的功能。
+> **Caution**  The compiled pixel shader contains 32 arithmetic instructions and 1 texture instruction. This shader should perform well on desktop computers and higher-end tablets. However, a lower-end computer might not be able to process this shader and still provide an interactive frame rate. Consider the typical hardware of your target audience and design your shaders to meet the capabilities of that hardware.
 
  
 
-**MarbleMaze::LoadDeferredResources** 方法使用 **BasicLoader::LoadShader** 方法加载着色器。 下面的示例加载顶点着色器。 此着色器的运行时格式为 BasicVertexShader.cso。 **m\_vertexShader** 成员变量是一个 [**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641) 对象。
+The **MarbleMaze::LoadDeferredResources** method uses the **BasicLoader::LoadShader** method to load the shaders. The following example loads the vertex shader. The run-time format for this shader is BasicVertexShader.cso. The **m\_vertexShader** member variable is an [**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641) object.
 
 ```cpp
 \loader->LoadShader(
@@ -392,7 +392,7 @@ float4 main(sPSInput input) : SV_TARGET
     );
 ```
 
-**m\_inputLayout** 成员变量是一个 [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575) 对象。 输入布局对象封装了输入装配器 (IA) 阶段的输入状态。 IA 阶段的一个工作是提高着色器的效率，方法是使用系统生成的值（也称为*语义*）仅处理尚未处理的基元或顶点。 使用 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) 方法从输入元素描述数组创建一个输入布局。 该数组包含一个或多个输入元素；每个输入元素描述来自一个顶点缓冲区的一个顶点数据元素。 整个输入元素描述集合描述了来自将绑定到 IA 阶段的所有顶点缓冲区的顶点数据元素。 下面的示例展示了 Marble Maze 使用的布局描述。 布局描述说明了一个包含 4 个顶点数据元素的顶点缓冲区。 数组中每个条目的重要部分是语义名称、数据格式和字节偏移。 例如，**POSITION** 元素指定对象空间中的顶点位置。 它从字节偏移 0 开始，包含 3 个浮点组件（共 12 个字节）。 **NORMAL** 元素指定法线矢量。 它从字节偏移 12 开始，因为它紧挨布局中的 **POSITION** 后出现，这需要 12 个字节。 **NORMAL** 元素包含一个 4 个组件、32 位的无符号整数。
+The **m\_inputLayout** member variable is an [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575) object. The input-layout object encapsulates the input state of the input assembler (IA) stage. One job of the IA stage is to make shaders more efficient by using system-generated values, also known as *semantics*, to process only those primitives or vertices that have not already been processed. Use the [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) method to create an input-layout from an array of input-element descriptions. The array contains one or more input elements; each input element describes one vertex-data element from one vertex buffer. The entire set of input-element descriptions describes all of the vertex-data elements from all of the vertex buffers that will be bound to the IA stage. The following example shows the layout description that Marble Maze uses. The layout description describes a vertex buffer that contains four vertex-data elements. The important parts of each entry in the array are the semantic name, data format, and byte offset . For example, the **POSITION** element specifies the vertex position in object space. It starts at byte offset 0 and contains three floating-point components (for a total of 12 bytes). The **NORMAL** element specifies the normal vector. It starts at byte offset 12 because it appears directly after **POSITION** in the layout, which requires 12 bytes. The **NORMAL** element contains a four-component, 32-bit unsigned-integer.
 
 ```cpp
 D3D11_INPUT_ELEMENT_DESC layoutDesc[] = 
@@ -405,7 +405,7 @@ D3D11_INPUT_ELEMENT_DESC layoutDesc[] =
 m_vertexStride = 44; // You must set this to match the size of layoutDesc above.
 ```
 
-将输入布局与顶点着色器定义的 **sVSInput** 结构对比，如下面的示例所示。 **sVSInput** 结构定义 **POSITION**、**NORMAL** 和 **TEXCOORD0** 元素。 DirectX 运行时将布局中的每个元素映射到着色器定义的输入结构。
+Compare the input layout with the **sVSInput** structure that is defined by the vertex shader, as shown in the following example. The **sVSInput** structure defines the **POSITION**, **NORMAL**, and **TEXCOORD0** elements. The DirectX runtime maps each element in the layout to the input structure that is defined by the shader.
 
 ```hlsl
 struct sVSInput
@@ -438,21 +438,21 @@ sPSInput main(sVSInput input)
 }
 ```
 
-文档[语义](https://msdn.microsoft.com/library/windows/desktop/bb509647)详细介绍了每种可用的语义。
+The document [Semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647) describes each of the available semantics in greater detail.
 
-> **注意** 在布局中，你可指定不使用的其他组件，从而让多个着色器能共享同一个布局。 例如，着色器未使用 **TANGENT** 元素。 如果希望试验法线映射等技术，可使用 **TANGENT** 元素。 通过使用法线映射（也称为凹凸贴图），你可在对象表面创建凹凸效果。 有关凹凸贴图的详细信息，请参阅[凹凸贴图 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb172379)。
+> **Note**   In a layout, you can specify additional components that are not used to enable multiple shaders to share the same layout. For example, the **TANGENT** element is not used by the shader. You can use the **TANGENT** element if you want to experiment with techniques such as normal mapping. By using normal mapping, also known as bump mapping, you can create the effect of bumps on the surfaces of objects. For more information about bump mapping, see [Bump Mapping (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb172379).
 
  
 
-有关输入装配阶段状态的详细信息，请参阅[输入装配器阶段](https://msdn.microsoft.com/library/windows/desktop/bb205116)和[输入装配器阶段入门](https://msdn.microsoft.com/library/windows/desktop/bb205117)。
+For more information about the input assembly stage state, see [Input-Assembler Stage](https://msdn.microsoft.com/library/windows/desktop/bb205116) and [Getting Started with the Input-Assembler Stage](https://msdn.microsoft.com/library/windows/desktop/bb205117).
 
-使用顶点和像素着色器呈现场景的过程将在本文后面的[呈现场景](#rendering_the_scene)一节介绍。
+The process of using the vertex and pixel shaders to render the scene are described in the section [Rendering the scene](#rendering_the_scene) later in this document.
 
-### 创建常量缓冲区
+### <a name="creating-the-constant-buffer"></a>Creating the constant buffer
 
-Direct3D 缓冲区将一组对象分组到一起。 常量缓冲区是一种可用于将数据传递给着色器的缓冲区。 Marble Maze 使用常量缓冲区来保留活动的场景对象的模型（或世界）视图，以及投影指标。
+Direct3D buffer groups a collection of data. A constant buffer is a kind of buffer that you can use to pass data to shaders. Marble Maze uses a constant buffer to hold the model (or world) view, and the projection matrices for the active scene object.
 
-下面的示例展示了 **MarbleMaze::LoadDeferredResources** 方法如何创建一个将在以后具有矩阵数据的常量缓冲区。 该实例创建一个 **D3D11\_BUFFER\_DESC** 结构，该结构使用 **D3D11\_BIND\_CONSTANT\_BUFFER** 标志指定用作常量缓冲区。 然后，该示例将该结构传递到 [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) 方法。 **m\_constantBuffer** 变量是一个 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) 对象。
+The following example shows how the **MarbleMaze::LoadDeferredResources** method creates a constant buffer that will later hold matrix data. The example creates a **D3D11\_BUFFER\_DESC** structure that uses the **D3D11\_BIND\_CONSTANT\_BUFFER** flag to specify usage as a constant buffer. This example then passes that structure to the [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) method. The **m\_constantBuffer** variable is an [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) object.
 
 ```cpp
 // Create the constant buffer for updating model and camera data.
@@ -474,7 +474,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-**MarbleMaze::Update** 方法稍后更新 **ConstantBuffer** 对象，一个用于迷宫，一个用于弹珠。 然后，**MarbleMaze::Render** 方法在呈现每个对象之前，将每个 **ConstantBuffer** 对象绑定到常量缓冲区。 下面的示例展示了 **ConstantBuffer** 结构，它位于 MarbleMaze.h 中。
+The **MarbleMaze::Update** method later updates **ConstantBuffer** objects, one for the maze and one for the marble. The **MarbleMaze::Render** method then binds each **ConstantBuffer** object to the constant buffer before each object is rendered. The following example shows the **ConstantBuffer** structure, which is in MarbleMaze.h.
 
 ```cpp
 // Describes the constant buffer that draws the meshes.
@@ -490,7 +490,7 @@ struct ConstantBuffer
 };
 ```
 
-若要更好地理解常量缓冲区如何映射到着色器代码，可比较 **ConstantBuffer** 结构与 BasicVertexShader.hlsl 中的顶点着色器所定义的 **SimpleConstantBuffer** 常量缓冲区：
+To better understand how constant buffers map to shader code, compare the **ConstantBuffer** structure to the **SimpleConstantBuffer** constant buffer that is defined by the vertex shader in BasicVertexShader.hlsl:
 
 ```hlsl
 cbuffer ConstantBuffer : register(b0)
@@ -504,23 +504,23 @@ cbuffer ConstantBuffer : register(b0)
 };
 ```
 
-**ConstantBuffer** 结构的布局可匹配 **cbuffer** 对象。 **cbuffer** 变量指定寄存器 b0，这意味着常量缓冲区数据存储在寄存器 0 中。 **MarbleMaze::Render** 方法在激活常量缓冲区时指定寄存器 0。 此过程将在本文档后面详细介绍。
+The layout of the **ConstantBuffer** structure matches the **cbuffer** object. The **cbuffer** variable specifies register b0, which means that the constant buffer data is stored in register 0. The **MarbleMaze::Render** method specifies register 0 when it activates the constant buffer. This process is described in greater detail later in this document.
 
-有关常量缓冲区的详细信息，请参阅 [Direct3D 11 中的缓冲区简介](https://msdn.microsoft.com/library/windows/desktop/ff476898)。 有关 register 关键字的详细信息，请参阅 [**register**](https://msdn.microsoft.com/library/windows/desktop/dd607359)。
+For more information about constant buffers, see [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898). For more information about the register keyword, see [**register**](https://msdn.microsoft.com/library/windows/desktop/dd607359).
 
-###  加载网格
+###  <a name="loading-meshes"></a>Loading meshes
 
-Marble Maze 使用 SDK-Mesh 作为运行时格式，因为此格式提供了一种加载示例应用的网格数据的基本方式。 对于生产用途，你应使用一种可满足游戏具体要求的网格格式。
+Marble Maze uses SDK-Mesh as the run-time format because this format provides a basic way to load mesh data for sample applications. For production use, you should use a mesh format that meets the specific requirements of your game.
 
-**MarbleMaze::LoadDeferredResources** 方法在加载顶点和像素着色器后加载网格数据。 网格是一个顶点数据集合，通常包含位置、法线数据、颜色、材料和纹理坐标等信息。 网格通常在 3D 创作软件中创建，在与应用代码分开的文件中维护。 弹珠和迷宫是该游戏使用的两个网格示例。
+The **MarbleMaze::LoadDeferredResources** method loads mesh data after it loads the vertex and pixel shaders. A mesh is a collection of vertex data that often includes information such as positions, normal data, colors, materials, and texture coordinates. Meshes are typically created in 3-D authoring software and maintained in files that are separate from application code. The marble and the maze are two examples of meshes that the game uses.
 
-Marble Maze 使用 **SDKMesh** 类管理网格。 此类在 SDKMesh.h 中声明。 **SDKMesh** 提供了加载、呈现和销毁网格数据的方法。
+Marble Maze uses the **SDKMesh** class to manage meshes. This class is declared in SDKMesh.h. **SDKMesh** provides methods to load, render, and destroy mesh data.
 
-> **重要提示** Marble Maze 使用 SDK-Mesh 格式并仅提供 **SDKMesh** 类用于演示。 尽管 SDK-Mesh 格式对学习和创建原型很有用，但它是一种非常基本的格式，可能无法满足大多数游戏开发的需求。 我们建议使用一种可满足游戏具体要求的网格格式。
+> **Important**   Marble Maze uses the SDK-Mesh format and provides the **SDKMesh** class for illustration only. Although the SDK-Mesh format is useful for learning, and for creating prototypes, it is a very basic format that might not meet the requirements of most game development. We recommend that you use a mesh format that meets the specific requirements of your game.
 
  
 
-下面的示例展示了 **MarbleMaze::LoadDeferredResources** 方法如何使用 **SDKMesh::Create** 方法加载迷宫和球的网格数据。
+The following example shows how the **MarbleMaze::LoadDeferredResources** method uses the **SDKMesh::Create** method to load mesh data for the maze and for the ball.
 
 ```cpp
 // Load the meshes.
@@ -541,9 +541,9 @@ DX::ThrowIfFailed(
     );
 ```
 
-###  加载碰撞数据
+###  <a name="loading-collision-data"></a>Loading collision data
 
-尽管本节不会着重介绍 Marble Maze 如何实现弹珠与迷宫之间的力学模拟，但请注意，力学系统的网格几何图形在加载网格时已准备就绪。
+Although this section does not focus on how Marble Maze implements the physics simulation between the marble and the maze, note that mesh geometry for the physics system is read when the meshes are loaded.
 
 ```cpp
 // Extract mesh geometry for the physics system.
@@ -576,24 +576,24 @@ float radius = m_marbleMesh.GetMeshBoundingBoxExtents(0).x / 2;
 m_physics.SetRadius(radius);
 ```
 
-加载碰撞数据的方式在很大程度上取决于你使用的运行时格式。 有关 Marble Maze 如何从 SDK-Mesh 文件加载碰撞几何图形的详细信息，请参阅源代码中的 **MarbleMaze::ExtractTrianglesFromMesh** 方法。
+The way that you load collision data large depends on the run-time format that you use. For more information about how Marble Maze loads the collision geometry from an SDK-Mesh file, see the **MarbleMaze::ExtractTrianglesFromMesh** method in the source code.
 
-## 更新游戏状态
+## <a name="updating-game-state"></a>Updating game state
 
 
-通过在渲染所有场景对象之前首先更新它们，Marble Maze 将游戏逻辑与渲染逻辑分开。
+Marble Maze separates game logic from rendering logic by first updating all scene objects before rendering them.
 
-文档“Marble Maze 应用结构”介绍了主要的游戏循环。 更新场景（这是游戏循环的一部分）在处理 Windows 事件和输入之后和渲呈现场景之前执行。 **MarbleMaze::Update** 方法处理 UI 和游戏的更新。
+The document Marble Maze application structure describes the main game loop. Updating the scene, which is part of the game loop, happens after Windows events and input are processed and before the scene is rendered. The **MarbleMaze::Update** method handles the update of the UI and the game.
 
-### 更新用户界面
+### <a name="updating-the-user-interface"></a>Updating the user interface
 
-**MarbleMaze::Update** 方法调用 **UserInterface::Update** 方法来更新 UI 的状态。
+The **MarbleMaze::Update** method calls the **UserInterface::Update** method to update the state of the UI.
 
 ```cpp
 UserInterface::GetInstance().Update(timeTotal, timeDelta);
 ```
 
-**UserInterface::Update** 方法更新 UI 集合中的每个元素。
+The **UserInterface::Update** method updates each element in the UI collection.
 
 ```cpp
 void UserInterface::Update(float timeTotal, float timeDelta)
@@ -605,7 +605,7 @@ void UserInterface::Update(float timeTotal, float timeDelta)
 }
 ```
 
-派生自 **ElementBase** 的类通过实现 **Update** 方法来执行特定的行为。 例如，**StopwatchTimer::Update** 方法通过所提供的时间量来更新已经过去的时间，并更新它稍后将显示的文本。
+Classes that derive from **ElementBase** implement the **Update** method to perform specific behaviors. For example, the **StopwatchTimer::Update** method updates the elapsed time by the provided amount and updates the text that it later displays.
 
 ```cpp
 void StopwatchTimer::Update(float timeTotal, float timeDelta)
@@ -623,11 +623,11 @@ void StopwatchTimer::Update(float timeTotal, float timeDelta)
 }
 ```
 
-###  更新场景
+###  <a name="updating-the-scene"></a>Updating the scene
 
-**MarbleMaze::Update** 方法根据当前的状态机状态来更新游戏。 游戏处于活动状态时，Marble Maze 更新相机以跟踪弹珠、更新常量缓冲区的视图矩阵部分，以及更新力学模拟。
+The **MarbleMaze::Update** method updates the game based on the current state machine state. When the game is in the active state, Marble Maze updates the camera to follow the marble, updates the view matrix part of the constant buffers, and updates the physics simulation.
 
-下面的示例展示了 **MarbleMaze::Update** 方法如何更新相机的位置。 Marble Maze 使用 **m\_resetCamera** 变量表明必须重置相机，才能将其放在弹珠正上方。 相机在游戏开始或弹珠从迷宫掉落时重置。 主菜单或高分显示屏幕处于活动状态时，相机设置在一个固定位置上。 否则，Marble Maze 使用 *timeDelta* 参数将相机的位置插入其当前位置与目标位置之间。 目标位置在弹珠的前方稍微靠上的位置。 使用已经过的帧时间，可使相机不断跟踪或追踪弹珠。
+The following example shows how the **MarbleMaze::Update** method updates the position of the camera. Marble Maze uses the **m\_resetCamera** variable to flag that the camera must be reset to be located directly above the marble. The camera is reset when the game starts or the marble falls through the maze. When the main menu or high score display screen is active, the camera is set at a constant location. Otherwise, Marble Maze uses the *timeDelta* parameter to interpolate the position of the camera between its current and target positions. The target position is slightly above and in front of the marble. Using the elapsed frame time enables the camera to gradually follow, or chase, the marble.
 
 ```cpp
 static float eyeDistance = 200.0f;
@@ -658,7 +658,7 @@ else
 }
 ```
 
-下面的示例展示了 **MarbleMaze::Update** 方法如何更新弹珠和迷宫的常量缓冲区。 迷宫的模型或世界矩阵始终保留单位矩阵。 除了主要的对角（它包含所有元素），单位矩阵是一个由 0 组成的方形矩阵。 弹珠的模型矩阵基于它的位置矩阵与旋转矩阵的乘积。 **mul** 和 **translation** 函数在 BasicMath.h 中定义。
+The following example shows how the **MarbleMaze::Update** method updates the constant buffers for the marble and the maze. The maze’s model, or world, matrix always remains the identity matrix. Except for the main diagonal, whose elements are all ones, the identity matrix is a square matrix composed of zeros. The marble’s model matrix is based on its position matrix times its rotation matrix. The **mul** and **translation** functions are defined in BasicMath.h.
 
 ```cpp
 // Update the model matrices based on the simulation.
@@ -675,27 +675,27 @@ m_mazeConstantBufferData.view = view;
 m_marbleConstantBufferData.view = view;
 ```
 
-有关 **MarbleMaze::Update** 方法如何读取用户输入和模拟弹珠移动的信息，请参阅[向 Marble Maze 添加输入和交互性示例](adding-input-and-interactivity-to-the-marble-maze-sample.md)。
+For information about how the **MarbleMaze::Update** method reads user input and simulates the motion of the marble, see [Adding input and interactivity to the Marble Maze sample](adding-input-and-interactivity-to-the-marble-maze-sample.md).
 
-## 呈现场景
+## <a name="rendering-the-scene"></a>Rendering the scene
 
 
-渲染一个场景时，通常包含以下步骤。
+When a scene is rendered, these steps are typically included.
 
-1.  设置当前渲染目标的深度模具缓冲区。
-2.  清除渲染和模具视图。
-3.  为绘制准备顶点和像素着色器。
-4.  渲染场景中的 3D 对象。
-5.  渲染你希望出现在场景前面的任何 2D 对象。
-6.  向监视器显示已呈现的图像。
+1.  Set the current render target depth-stencil buffer.
+2.  Clear the render and stencil views.
+3.  Prepare the vertex and pixel shaders for drawing.
+4.  Render the 3-D objects in the scene.
+5.  Render any 2-D object that you want to appear in front of the scene.
+6.  Present the rendered image to the monitor.
 
-**MarbleMaze::Render** 方法绑定呈现目标和深度模具视图、清除这些视图、绘制场景，然后绘制覆盖。
+The **MarbleMaze::Render** method binds the render target and depth stencil views, clears those views, draws the scene, and then draws the overlay.
 
-###  准备呈现目标
+###  <a name="preparing-the-render-targets"></a>Preparing the render targets
 
-渲染场景之前，必须设置当前渲染目标的深度模具缓冲区。 如果你的场景无法保证在屏幕上的所有像素上绘制，应清除渲染和模具视图。 Marble Maze 清除每一帧上的呈现和模具视图，以确保没有来自前一帧的可视工件。
+Before you render your scene, you must set the current render target depth-stencil buffer. If your scene is not guaranteed to draw over every pixel on the screen, also clear the render and stencil views. Marble Maze clears the render and stencil views on every frame to ensure that there are no visible artifacts from the previous frame.
 
-下面的示例展示了 **MarbleMaze::Render** 方法如何调用 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 方法来将呈现目标和深度模具缓冲区设置为当前缓冲区。 **m\_renderTargetView** 成员变量（一个 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 对象）和 **m\_depthStencilView** 成员变量（一个 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 对象）由 **DirectXBase** 类定义和初始化。
+The following example shows how the **MarbleMaze::Render** method calls the [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) method to set the render target and the depth-stencil buffer as the current ones. The **m\_renderTargetView** member variable, an [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) object, and the **m\_depthStencilView** member variable, an [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) object, are defined and initialized by the **DirectXBase** class.
 
 ```cpp
 // Bind the render targets.
@@ -721,27 +721,27 @@ m_d3dContext->ClearDepthStencilView(
     );
 ```
 
-[**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 和 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 接口支持 Direct3D 10 和更高版本所提供的纹理视图机制。 有关纹理视图的详细信息，请参阅[纹理视图 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 [**OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 方法准备 Direct3D 管道的输出合并阶段。 有关输出合并阶段的详细信息，请参阅[输出合并阶段](https://msdn.microsoft.com/library/windows/desktop/bb205120)。
+The [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) and [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) interfaces support the texture view mechanism that is provided by Direct3D 10 and later. For more information about texture views, see [Texture Views (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128). The [**OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) method prepares the output-merger stage of the Direct3D pipeline. For more information about the output-merger stage, see [Output-Merger Stage](https://msdn.microsoft.com/library/windows/desktop/bb205120).
 
-### 准备顶点和像素着色器
+### <a name="preparing-the-vertex-and-pixel-shaders"></a>Preparing the vertex and pixel shaders
 
-渲染场景对象之前，执行以下步骤来准备用于绘制的顶点和像素着色器：
+Before you render the scene objects, perform the following steps to prepare the vertex and pixel shaders for drawing:
 
-1.  将着色器输入布局设置为当前布局。
-2.  将顶点和像素着色器设置为当前着色器。
-3.  使用你需要传递到着色器的数据更新任何常量缓冲区。
+1.  Set the shader input layout as the current layout.
+2.  Set the vertex and pixel shaders as the current shaders.
+3.  Update any constant buffers with data that you have to pass to the shaders.
 
-> **重要提示** Marble Maze 为所有 3D 对象使用一对顶点和像素着色器。 如果游戏使用多对着色器，必须在每次绘制使用不同着色器的对象时执行这些步骤。 要减少与更改着色器状态相关的开销，我们建议将对使用相同着色器的所有对象的渲染调用分为一组。
+> **Important**  Marble Maze uses one pair of vertex and pixel shaders for all 3-D objects. If your game uses more than one pair of shaders, you must perform these steps each time you draw objects that use different shaders. To reduce the overhead that is associated with changing the shader state, we recommend that you group render calls for all objects that use the same shaders.
 
  
 
-本文档中的[加载着色器](#loading_shaders)一节介绍了在创建顶点着色器时如何创建输入布局。 下面的示例展示了 **MarbleMaze::Render** 方法如何使用 [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) 方法来将此布局设置为当前布局。
+The section [Loading shaders](#loading_shaders) in this document describes how the input layout is created when the vertex shader is created. The following example shows how the **MarbleMaze::Render** method uses the [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) method to set this layout as the current layout.
 
 ```cpp
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 ```
 
-下面的示例展示了 **MarbleMaze::Render** 方法如何使用 [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) 和 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 方法来将顶点和像素着色器分别设置为当前着色器。
+The following example shows how the **MarbleMaze::Render** method uses the [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) methods to set the vertex and pixel shaders as the current shaders, respectively.
 
 ```cpp
 // Set the vertex shader stage state.
@@ -765,7 +765,7 @@ m_d3dContext->PSSetSamplers(
     );
 ```
 
-**MarbleMaze::Render** 设置着色器及其输入布局后，它使用 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) 方法以及迷宫的模型、视图和投影矩阵来更新常量缓冲区。 **UpdateSubresource** 方法将矩阵数据从 CPU 内存复制到 GPU 内存。 回想一下，**ConstantBuffer** 结构的模型和视图组件在 **MarbleMaze::Update** 方法中更新。 然后，**MarbleMaze::Render** 方法调用 [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) 和 [**ID3D11DeviceContext::PSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476470) 方法来将此常量缓冲区设置为当前缓冲区。
+After the **MarbleMaze::Render** sets the shaders and their input layout, it uses the [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) method to update the constant buffer with the model, view, and projection matrices for the maze. The **UpdateSubresource** method copies the matrix data from CPU memory to GPU memory. Recall that the model and view components of the **ConstantBuffer** structure are updated in the **MarbleMaze::Update** method. The **MarbleMaze::Render** method then calls the [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) and [**ID3D11DeviceContext::PSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476470) methods to set this constant buffer as the current one.
 
 ```cpp
 // Update the constant buffer with the new data.
@@ -791,25 +791,25 @@ m_d3dContext->PSSetConstantBuffers(
     );
 ```
 
-**MarbleMaze::Render** 方法执行类似的步骤来准备要呈现的弹珠。
+The **MarbleMaze::Render** method performs similar steps to prepare the marble to be rendered.
 
-### 呈现迷宫和弹珠
+### <a name="rendering-the-maze-and-the-marble"></a>Rendering the maze and the marble
 
-激活当前着色器后，即可绘制场景对象。 **MarbleMaze::Render** 方法调用 **SDKMesh::Render** 方法来呈现迷宫网格。
+After you activate the current shaders, you can draw your scene objects. The **MarbleMaze::Render** method calls the **SDKMesh::Render** method to render the maze mesh.
 
 ```cpp
 m_mazeMesh.Render(m_d3dContext.Get(), 0, INVALID_SAMPLER_SLOT, INVALID_SAMPLER_SLOT);
 ```
 
-**MarbleMaze::Render** 方法执行类似的步骤来呈现弹珠。
+The **MarbleMaze::Render** method performs similar steps to render the marble.
 
-如本文档前面所述，**SDKMesh** 类仅用于演示用途，我们不建议将它用于生产质量游戏中。 但是请注意，**SDKMesh::RenderMesh** 方法（由 **SDKMesh::Render** 调用）使用 [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 方法来设置可定义网格的当前顶点和索引缓冲区，使用 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476410) 方法绘制缓冲区。 有关如何使用顶点和索引缓冲区的详细信息，请参阅 [Direct3D 11 中的缓冲区简介](https://msdn.microsoft.com/library/windows/desktop/ff476898)。
+As mentioned earlier in this document, the **SDKMesh** class is provided for demonstration purposes, but we do not recommend it for use in a production-quality game. However, notice that the **SDKMesh::RenderMesh** method, which is called by **SDKMesh::Render**, uses the [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) methods to set the current vertex and index buffers that define the mesh, and the [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476410) method to draw the buffers. For more information about how to work with vertex and index buffers, see [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898).
 
-### 绘制用户界面和覆盖
+### <a name="drawing-the-user-interface-and-overlay"></a>Drawing the user interface and overlay
 
-绘制 3D 场景对象后，Marble Maze 绘制出现在场景前面的 2D UI 元素。
+After drawing 3-D scene objects, Marble Maze draws the 2-D UI elements that appear in front of the scene.
 
-**MarbleMaze::Render** 方法最终绘制用户界面和覆盖。
+The **MarbleMaze::Render** method ends by drawing the user interface and the overlay.
 
 ```cpp
 // Draw the user interface and the overlay.
@@ -818,7 +818,7 @@ UserInterface::GetInstance().Render();
 m_sampleOverlay->Render();
 ```
 
-**UserInterface::Render** 方法使用一个 [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) 对象绘制 UI 元素。 此方法设置绘制状态、绘制所有活动的 UI 元素，然后还原以前的绘制状态。
+The **UserInterface::Render** method uses an [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) object to draw the UI elements. This method sets the drawing state, draws all active UI elements, and then restores the previous drawing state.
 
 ```cpp
 void UserInterface::Render()
@@ -839,13 +839,13 @@ void UserInterface::Render()
 }
 ```
 
-**SampleOverlay::Render** 方法使用一种类似技术来绘制覆盖位图。
+The **SampleOverlay::Render** method uses a similar technique to draw the overlay bitmap.
 
-###  呈现场景
+###  <a name="presenting-the-scene"></a>Presenting the scene
 
-绘制所有 2D 和 3D 场景对象后，Marble Maze 向监视器呈现已渲染的图像。 它将图形与垂直空白同步，确保游戏不会花时间绘制从不会在显示器上实际显示的帧。 Marble Maze 在呈现场景时还会处理设备更改。
+After drawing all 2-D and 3-D scene objects, Marble Maze presents the rendered image to the monitor. It synchronizes drawing to the vertical blank to ensure that time is not spent time drawing frames that will never be actually shown on the display. Marble Maze also handles device changes when it presents the scene.
 
-**MarbleMaze::Render** 方法返回后，游戏循环调用 **MarbleMaze::Present** 方法来将已呈现的图像发送到监视器或屏幕。 **MarbleMaze** 类不会替代 **DirectXBase::Present** 方法。 **DirectXBase::Present** 方法调用 [**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 来执行呈现操作，如以下示例所示：
+After the **MarbleMaze::Render** method returns, the game loop calls the **MarbleMaze::Present** method to send the rendered image to the monitor or display. The **MarbleMaze** class does not override the **DirectXBase::Present** method. The **DirectXBase::Present** method calls [**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) to perform the present operation, as shown in the following example:
 
 ```cpp
 // The application may optionally specify "dirty" or "scroll" rects 
@@ -864,11 +864,11 @@ parameters.pScrollOffset = nullptr;
 HRESULT hr = m_swapChain->Present1(1, 0, &parameters);
 ```
 
-在此示例中，**m\_swapChain** 是一个 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) 对象。 此对象的初始化已在本文档的[初始化 Direct3D 和 Direct2D](#initializing) 一节中介绍。
+In this example, **m\_swapChain** is an [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) object. The initialization of this object is described in the section [Initializing Direct3D and Direct2D](#initializing) in this document.
 
-[**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 的第一个参数 *SyncInterval* 指定在呈现帧之前等待的垂直空白数量。 Marble Maze 指定 1，以便它等到下一个垂直空白。 垂直空白是一帧完成向监视器的绘制后与下一帧开始时之间的时间。
+The first parameter to [**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797), *SyncInterval*, specifies the number of vertical blanks to wait before presenting the frame. Marble Maze specifies 1 so that it waits until the next vertical blank. A vertical blank is the time between when one frame finishes drawing to the monitor and the next frame begins.
 
-[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 方法返回一个错误代码，表明设备已删除或失败。 在此情况下，Marble Maze 重新初始化设备。
+The [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) method returns an error code that indicates that the device was removed or otherwise failed. In this case, Marble Maze reinitializes the device.
 
 ```cpp
 // Reinitialize the renderer if the device was disconnected  
@@ -883,28 +883,28 @@ else
 }
 ```
 
-## 后续步骤
+## <a name="next-steps"></a>Next steps
 
 
-查阅[向 Marble Maze 示例添加输入和交互性](adding-input-and-interactivity-to-the-marble-maze-sample.md)，了解在使用输入设备时要记住的一些重要实践。 此文档讨论了 Marble Maze 如何支持触摸、加速计、Xbox 360 控制器和鼠标输入。
+Read [Adding input and interactivity to the Marble Maze sample](adding-input-and-interactivity-to-the-marble-maze-sample.md) for information about some of the key practices to keep in mind when you work with input devices. This document discusses how Marble Maze supports touch, accelerometer, Xbox 360 controller, and mouse input.
 
-## 相关主题
+## <a name="related-topics"></a>Related topics
 
 
-* [向 Marble Maze 添加输入和交互性示例](adding-input-and-interactivity-to-the-marble-maze-sample.md)
-* [Marble Maze 应用程序结构](marble-maze-application-structure.md)
-* [开发 Marble Maze，一款使用 C++ 和 DirectX 的 UWP 游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
-
- 
+* [Adding input and interactivity to the Marble Maze sample](adding-input-and-interactivity-to-the-marble-maze-sample.md)
+* [Marble Maze application structure](marble-maze-application-structure.md)
+* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Dec16_HO1-->
 
 

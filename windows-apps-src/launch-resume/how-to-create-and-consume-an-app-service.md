@@ -1,34 +1,34 @@
 ---
 author: TylerMSFT
-title: "创建和使用应用服务"
-description: "了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。"
+title: Create and consume an app service
+description: Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps, and how to consume those services.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: app to app communication interprocess communication IPC Background messaging background communication app to app
+keywords: app to app communication, interprocess communication, IPC, Background messaging, background communication, app to app
 translationtype: Human Translation
-ms.sourcegitcommit: aec7b768ae3bcf0a45a48b2f9a204484b9059dc9
-ms.openlocfilehash: 2449a3198e9265d187557608e097c1369eb471c2
+ms.sourcegitcommit: fadfab2f03d5cfda46d5c9f29c28ad561e6ab2db
+ms.openlocfilehash: 81786f6bf76d1d3840d5cd8c6191550b98a248b2
 
 ---
 
-# 创建和使用应用服务
+# <a name="create-and-consume-an-app-service"></a>Create and consume an app service
 
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。
+Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps, and how to consume those services.
 
-从 Windows10 版本 1607 开始，可以创建在与主机应用相同的进程中运行的应用服务。 本文主要就创建在单独后台进程中运行的应用服务进行介绍。 有关在提供程序所在的同一进程中运行的应用服务的更多详细信息，请参阅[将应用服务转换为在其托管应用所在的同一进程中运行的服务](convert-app-service-in-process.md)。
+Starting in Windows 10, version 1607, you can create app services that run in the same process as the host app. This article focuses on creating app services that run in a separate background process. See [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) for more details about app services that run in the same process as the provider.
 
-## 创建新的应用服务提供程序项目
+## <a name="create-a-new-app-service-provider-project"></a>Create a new app service provider project
 
-在本操作方法中，我们将创建一个适用于简单解决方案的所有内容。
+In this how-to, we'll create everything in one solution for simplicity.
 
--   在 Microsoft Visual Studio 2015 中，创建一个新的 UWP 应用项目，并将其命名为AppServiceProvider。 （在“新建项目”对话框中，依次选择“模板”&gt;“其他语言”&gt;“Visual C#”&gt;“Windows”&gt;“Windows 通用”&gt;“空白应用(Windows 通用)”）。 这将是可提供应用服务的应用。
+-   In Microsoft Visual Studio 2015, create a new UWP app project and name it AppServiceProvider. (In the **New Project** dialog box, select **Templates &gt; Other Languages &gt; Visual C# &gt; Windows &gt; Windows Universal &gt; Blank app (Windows Universal)**). This will be the app that provides the app service.
 
-## 将应用服务扩展添加到 package.appxmanifest
+## <a name="add-an-app-service-extension-to-packageappxmanifest"></a>Add an app service extension to package.appxmanifest
 
-在 AppServiceProvider 项目的 Package.appxmanifest 文件中，将以下 AppService 扩展添加到 **&lt;Application&gt;** 元素。 此示例介绍了 `com.Microsoft.Inventory` 服务，以及将此应用识别为应用服务提供程序的内容。 实际服务将作为后台任务来实现。 应用服务应用将该服务公开给其他应用。 我们建议将反向域名样式用于服务名称。
+In the AppServiceProvider project's Package.appxmanifest file, add the following AppService extension to the **&lt;Application&gt;** element. This example advertises the `com.Microsoft.Inventory` service and is what identifies this app as an app service provider. The actual service will be implemented as a background task. The app service app exposes the service to other apps. We recommend using a reverse domain name style for the service name.
 
 ``` syntax
 ...
@@ -46,24 +46,22 @@ ms.openlocfilehash: 2449a3198e9265d187557608e097c1369eb471c2
 </Applications>
 ```
 
+The **Category** attribute identifies this application as an app service provider.
 
-            **Category** 属性将该应用程序识别为应用服务提供程序。
+The **EntryPoint** attribute identifies the class that implements the service, which we'll implement next.
 
+## <a name="create-the-app-service"></a>Create the app service
 
-            **EntryPoint** 属性可识别实现服务的类，我们将在下一步实现它。
-
-## 创建应用服务
-
-1.  应用服务作为后台任务实现。 这允许前台应用程序调用另一个应用程序中的应用服务以便执行后台任务。 将新的 Windows 运行时组件项目添加到名为MyAppService的解决方案（“文件”&gt;“添加”&gt;“新建项目”）。 （在“添加新项目”对话框中，依次选择“已安装”&gt;“其他语言”&gt;“Visual C#”&gt;“Windows”&gt;“Windows 通用”&gt;“Windows 运行时组件(Windows 通用)”）
-2.  在 AppServiceProvider 项目中，添加对 MyAppService 项目的引用。
-3.  在 MyappService 项目中，将以下 **using** 语句添加到 Class1.cs 的顶部：
+1.  An app service is implemented as a background task. This enables a foreground application to invoke an app service in another application to perform tasks behind the scenes. Add a new Windows Runtime Component project to the solution (**File &gt; Add &gt; New Project**) named MyAppService. (In the **Add New Project** dialog box, choose **Installed &gt; Other Languages &gt; Visual C# &gt; Windows &gt; Windows Universal &gt; Windows Runtime Component (Windows Universal)**
+2.  In the AppServiceProvider project, add a reference to the MyAppService project.
+3.  In the MyappService project, add the following **using** statements to the top of Class1.cs:
     ```cs
     using Windows.ApplicationModel.AppService;
     using Windows.ApplicationModel.Background;
     using Windows.Foundation.Collections;
     ```
 
-4.  将 **Class1** 的存根区域代码替换为名为 **Inventory** 的新后台任务类：
+4.  Replace the stub code for **Class1** with a new background task class named **Inventory**:
 
     ```cs
     public sealed class Inventory : IBackgroundTask
@@ -99,16 +97,15 @@ ms.openlocfilehash: 2449a3198e9265d187557608e097c1369eb471c2
     }
     ```
 
-    此类位于应用服务将起作用的位置。
+    This class is where the app service will do its work.
 
-    创建后台任务时会调用 **Run()**。 由于 **Run** 完成后会终止后台任务，因此代码执行延迟，以便后台任务可以继续服务请求。
+    **Run()** is called when the background task is created. Because background tasks are terminated after **Run** completes, the code takes a deferral so that the background task will stay up to serve requests.
 
-    取消任务时会调用 **OnTaskCanceled()**。 当出现以下情形时会取消该任务：客户端应用释放 [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704)，客户端应用暂停，操作系统关闭或处于睡眠状态，或操作系统耗尽用于运行该任务的资源。
+    **OnTaskCanceled()** is called when the task is canceled. The task is cancelled when the client app disposes the [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704), the client app is suspended, the OS is shut down or sleeps, or the OS runs out of resources to run the task.
 
-## 编写应用服务的代码
+## <a name="write-the-code-for-the-app-service"></a>Write the code for the app service
 
-
-            **OnRequestedReceived()** 跟随应用服务的代码出现。 将 MyAppService 的 Class1.cs 中的存根区域 **OnRequestedReceived()** 替换为此示例中的代码。 此代码获取库存项目的索引，并将该索引以及命令字符串传递到服务以检索指定库存项目的名称和价格。 为了简便起见，已删除错误处理代码。
+**OnRequestedReceived()** is where the code for the app service goes. Replace the stub **OnRequestedReceived()** in MyAppService's Class1.cs with the code from this example. This code gets an index for an inventory item and passes it, along with a command string, to the service to retrieve the name and the price of the specified inventory item. Error handling code has been removed for brevity.
 
 ```cs
 private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
@@ -160,41 +157,34 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 }
 ```
 
-请注意，**OnRequestedReceived()** 为 **async**，因为我们在此示例中使用对 [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) 的可等待方法调用。
+Note that **OnRequestedReceived()** is **async** because we make an awaitable method call to [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) in this example.
 
-将使用延迟，以便该服务可以在 OnRequestReceived 处理程序中使用 **async** 方法。 确保对 OnRequestReceived 的调用不会在完成处理消息之前结束。 
-            [
-              **SendResponseAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/dn921722) 用于在完成时发送响应。 
-            **SendResponseAsync** 不会在调用完成时发出信号。 延迟完成时会发信号给 [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712)，以表明 OnRequestReceived 已完成。
+A deferral is taken so that the service can use **async** methods in the OnRequestReceived handler. It ensures that the call to OnRequestReceived does not complete until it is done processing the message. [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) is used to send a response alongside the completion. **SendResponseAsync** does not signal the completion of the call. It is the completion of the deferral that signals to [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) that OnRequestReceived has completed.
 
-应用服务使用 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 交换信息。 可以传递的数据大小仅受限于系统资源。 没有你可以在 **ValueSet** 中使用的预定义项。 你必须确定哪些项值将用于定义你的应用服务的协议。 请牢记，必须使用该协议编写调用方。 在此示例中，我们选择了名为“Command”的项，它具有一个值，用于指示我们是否希望应用服务提供库存项目的名称或其价格。 库存名称的索引存储在“ID”项下。 返回值存储在“Result”项下。
+App services use a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) to exchange information. The size of the data you may pass is only limited by system resources. There are no predefined keys for you to use in your **ValueSet**. You must determine which key values you will use to define the protocol for your app service. The caller must be written with that protocol in mind. In this example, we have chosen a key named "Command" that has a value that indicates whether we want the app service to provide the name of the inventory item or its price. The index of the inventory name is stored under the "ID" key. The return value is stored under the "Result" key.
 
+An [**AppServiceClosedStatus**](https://msdn.microsoft.com/library/windows/apps/dn921703) enum is returned to the caller to indicate whether the call to the app service succeeded or failed. An example of how the call to the app service could fail is if the OS aborts the service endpoint, resources are exceeded, and so forth. You can return additional error information via the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). In this example, we use a key named "Status" to return more detailed error information to the caller.
 
-            [
-              **AppServiceClosedStatus**
-            ](https://msdn.microsoft.com/library/windows/apps/dn921703) 枚举将返回给调用方，以指示对应用服务的调用是否成功。 对应用服务的调用可能失败的原因示例：操作系统中止服务端点，资源耗尽等。 可以通过 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 返回其他错误信息。 在此示例中，我们使用名为“Status”的项将更详细的错误信息返回给调用方。
+The call to [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) returns the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) to the caller.
 
-对 [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) 的调用将 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 返回给调用方。
+## <a name="deploy-the-service-app-and-get-the-package-family-name"></a>Deploy the service app and get the package family name
 
-## 部署服务应用并获取程序包系列名称
+The app service provider app must be deployed before you can call it from a client. You will also need the package family name of the app service app in order to call it.
 
-必须先部署应用服务提供程序应用，才可以通过客户端调用它。 还需要应用服务应用的程序包系列名称，以便调用它。
+-   One way to get the package family name of the app service application is to call [**Windows.ApplicationModel.Package.Current.Id.FamilyName**](https://msdn.microsoft.com/library/windows/apps/br224670) from within the **AppServiceProvider** project (for example, from `public App()` in App.xaml.cs) and note the result. To run AppServiceProvider in Microsoft Visual Studio, set it as the startup project in the Solution Explorer window and run the project.
+-   Another way to get the package family name is to deploy the solution (**Build &gt; Deploy solution**) and note the full package name in the output window (**View &gt; Output**). You must remove the platform information from the string in the output window to derive the package name. For example, if the full package name reported in the output window was "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra", you would extract "1.0.0.0\_x86\_\_" leaving "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra" as the package family name.
 
--   获取应用服务应用程序的程序包系列名称的一个方法是从 **AppServiceProvider** 项目内（例如，从 App.xaml.cs 中的 `public App()`）调用 [**Windows.ApplicationModel.Package.Current.Id.FamilyName**](https://msdn.microsoft.com/library/windows/apps/br224670) 并记下结果。 若要在 Microsoft Visual Studio 中运行 AppServiceProvider，请在“解决方案资源管理器”窗口中将其设置为启动项目并运行该项目。
--   获取程序包系列名称的另一个方法是部署解决方案（“生成”&gt;“部署解决方案”）并记下输出窗口中的完整程序包名称（“查看”&gt;“输出”）。 必须从输出窗口中的字符串中删除平台信息，以获取程序包名称。 例如，如果输出窗口中呈现的完整程序包名称为“9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra”，可以通过去除“9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra”提取“1.0.0.0\_x86\_\_”作为程序包系列名称。
+## <a name="write-a-client-to-call-the-app-service"></a>Write a client to call the app service
 
-## 编写客户端以调用应用服务
-
-1.  将新的空白 Windows 通用应用项目添加到名为 ClientApp 的解决方案（“文件”&gt;“添加”&gt;“新建项目”）。 （在“添加新项目”对话框中，依次选择“已安装”&gt;“其他语言”&gt;“Visual C#”&gt;“Windows”&gt;“Windows 通用”&gt;“空白应用(Windows 通用)”）。
-2.  在 ClientApp 项目中，将以下 **using** 语句添加到 MainPage.xaml.cs 的顶部：
+1.  Add a new blank Windows Universal app project to the solution (**File &gt; Add &gt; New Project**) named ClientApp. (In the **Add New Project** dialog box, choose **Installed &gt; Other languages &gt; Visual C# &gt; Windows &gt; Windows Universal &gt; Blank App (Windows Universal)**).
+2.  In the ClientApp project, add the following **using** statement to the top of MainPage.xaml.cs:
     ```cs
     >using Windows.ApplicationModel.AppService;
     ```
 
-3.  将文本框和按钮添加到 MainPage.xaml。
-4.  添加按钮的按钮单击处理程序，并将关键字 **async** 添加到按钮处理程序的签名。
-5.  将按钮单击处理程序内的存根区域替换为以下代码。 请确保包含 `inventoryService` 字段声明。
+3.  Add a text box and a button to MainPage.xaml.
+4.  Add a button click handler for the button and add the keyword **async** to the button handler's signature.
+5.  Replace the stub of your button click handler with the following code. Be sure to include the `inventoryService` field declaration.
 
    ```cs
    private AppServiceConnection inventoryService;
@@ -254,47 +244,47 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
     }
     ```
 
-    使用在 \[步骤 5：部署服务应用并获取程序包系列名称\] 中获取的 **AppServiceProvider** 项目的程序包系列名称来替换行 `this.inventoryService.PackageFamilyName = "replace with the package family name";` 中的程序包系列名称。
+    Replace the package family name in the line `this.inventoryService.PackageFamilyName = "replace with the package family name";` with the package family name of the **AppServiceProvider** project that you obtained in \[Step 5: Deploy the service app and get the package family name\].
 
-    该代码首先建立了与应用服务的连接。 该连接将保持打开状态，直到你释放 **this.inventoryService**。 应用服务名必须匹配添加到 AppServiceProvider 项目的 Package.appxmanifest 文件的 **AppService 名称**属性。 在此示例中为 `<uap:AppService Name="com.microsoft.inventory"/>`。
+    The code first establishes a connection with the app service. The connection will remain open until you dispose **this.inventoryService**. The app service name must match the **AppService Name** attribute that you added to the AppServiceProvider project's Package.appxmanifest file. In this example, it is `<uap:AppService Name="com.microsoft.inventory"/>`.
 
-    创建了名为 **message** 的 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)，以指定想要发送到应用服务的命令。 示例应用服务需要命令指示要采取两种操作中的哪一种操作。 我们从 ClientApp 中的文本框获取索引，然后通过“Item”命令调用该服务，以获取项目描述。 然后，我们使用“Price”命令进行调用，以获取项目的价格。 按钮文本设置为结果。
+    A [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) named **message** is created to specify the command that we want to send to the app service. The example app service expects a command to indicate which of two actions to take. We get the index from the textbox in the ClientApp, and then call the service with the "Item" command to get the description of the item. Then, we make the call with the "Price" command to get the item's price. The button text is set to the result.
 
-    由于 [**AppServiceResponseStatus**](https://msdn.microsoft.com/library/windows/apps/dn921724) 仅指示操作系统是否能够将调用连接到应用服务，所以我们要查看从应用服务中接收的 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 的“Status”密钥，以确保它能满足该请求。
+    Because [**AppServiceResponseStatus**](https://msdn.microsoft.com/library/windows/apps/dn921724) only indicates whether the operating system was able to connect the call to the app service, we check the "Status" key in the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) we receive from the app service to ensure that it was able to fulfill the request.
 
-6.  在 Visual Studio 的“解决方案资源管理器”窗口中，将 ClientApp 项目设置为启动项目，并运行该解决方案。 在文本框中输入数字 1 并单击该按钮。 你应该从服务取回“Chair : Price = 88.99”。
+6.  In Visual Studio, set the ClientApp project to be the startup project in the Solution Explorer window and run the solution. Enter the number 1 into the text box and click the button. You should get "Chair : Price = 88.99" back from the service.
 
-    ![显示 chair price=88.99 的示例应用](images/appserviceclientapp.png)
+    ![sample app displaying chair price=88.99](images/appserviceclientapp.png)
 
-如果应用服务调用失败，则检查 ClientApp 中的以下内容：
+If the app service call fails, check the following in the ClientApp:
 
-1.  验证分配给库存服务连接的程序包系列名称是否匹配 AppServiceProvider 应用的程序包系列名称。 请参阅：**button\_Click()**`this.inventoryService.PackageFamilyName = "...";`)。
-2.  在 **button\_Click()** 中，验证分配给库存服务连接的应用服务名称是否匹配 AppServiceProvider 的 Package.appxmanifest 文件中的应用服务名称。 请参阅 `this.inventoryService.AppServiceName = "com.microsoft.inventory";`。
-3.  确保已部署 AppServiceProvider 应用（在“解决方案资源管理器”中，右键单击该解决方案，然后选择“部署”）。
+1.  Verify that the package family name assigned to the inventory service connection matches the package family name of the AppServiceProvider app. See: **button\_Click()**`this.inventoryService.PackageFamilyName = "...";`).
+2.  In **button\_Click()**, verify that the app service name that is assigned to the inventory service connection matches the app service name in the AppServiceProvider's Package.appxmanifest file. See: `this.inventoryService.AppServiceName = "com.microsoft.inventory";`.
+3.  Ensure that the AppServiceProvider app has been deployed (In the Solution Explorer, right-click the solution and choose **Deploy**).
 
-## 调试应用服务
+## <a name="debug-the-app-service"></a>Debug the app service
 
 
-1.  确保调试之前已部署整个解决方案，因为必须先部署应用服务提供程序应用，服务才可以进行调用。 （在 Visual Studio 中，“生成”&gt;“部署解决方案”。）
-2.  在“解决方案资源管理器”中，右键单击 AppServiceProvider 项目，然后选择“属性”。 在“调试”选项卡上，将“开始操作”更改为“不启动，但在开始时调试我的代码”。
-3.  在 MyAppService 项目的 Class1.cs 文件中，在 OnRequestReceived() 中设置断点。
-4.  将 AppServiceProvider 项目设置为启动项目，并按 F5。
-5.  从“开始”菜单（而不是从 Visual Studio）启动 ClientApp。
-6.  在文本框中输入数字 1 并按该按钮。 调试程序将停止应用服务中的断点上的应用服务调用。
+1.  Ensure that the entire solution is deployed before debugging because the app service provider app must be deployed before the service can be called. (In Visual Studio, **Build &gt; Deploy Solution**).
+2.  In the Solution Explorer, right-click the AppServiceProvider project and choose **Properties**. From the **Debug** tab, change the **Start action** to **Do not launch, but debug my code when it starts**.
+3.  In the MyAppService project, in the Class1.cs file, set a breakpoint in OnRequestReceived().
+4.  Set the AppServiceProvider project to be the startup project and press F5.
+5.  Start ClientApp from the Start menu (not from Visual Studio).
+6.  Enter the number 1 into the text box and press the button. The debugger will stop in the app service call on the breakpoint in your app service.
 
-## 调试客户端
+## <a name="debug-the-client"></a>Debug the client
 
-1.  按照前面步骤中的说明来调试应用服务。
-2.  从“开始”菜单启动 ClientApp。
-3.  将调试程序附加到 ClientApp.exe 进程（而不是 ApplicationFrameHost.exe 进程）。 （在 Visual Studio 中，依次选择“调试”&gt;“附加到进程...”。）
-4.  在 ClientApp 项目的 **button\_Click()** 中设置断点。
-5.  在 ClientApp 的文本框中输入数字 1 并单击按钮时，将立刻命中客户端和应用服务中的断点。
+1.  Follow the instructions in the preceding step to debug the app service.
+2.  Launch ClientApp from the Start menu.
+3.  Attach the debugger to the ClientApp.exe process (not the ApplicationFrameHost.exe process). (In Visual Studio, choose **Debug &gt; Attach to Process...**.)
+4.  In the ClientApp project, set a breakpoint in **button\_Click()**.
+5.  The breakpoints in both the client and the app service will now be hit when you enter the number 1 into the text box of the ClientApp and click the button.
 
-## 备注
+## <a name="remarks"></a>Remarks
 
-本示例简单介绍了创建应用服务并从另一个应用调用它的情形。 需要注意的重要事项是：创建后台任务以承载应用服务；添加 windows.appservice 扩展到应用服务提供程序应用的 Package.appxmanifest 文件；获取应用服务提供程序应用的程序包系列名称，以便我们可以从客户端应用与其连接，并使用 [**Windows.ApplicationModel.AppService.AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704) 调用该服务。
+This example provides a simple introduction to creating an app service and calling it from another app. The key things to note are the creation of a background task to host the app service, the addition of the windows.appservice extension to the app service provider app's Package.appxmanifest file, obtaining the package family name of the app service provider app so that we can connect to it from the client app, and using [**Windows.ApplicationModel.AppService.AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704) to call the service.
 
-## MyAppService 的完整代码
+## <a name="full-code-for-myappservice"></a>Full code for MyAppService
 
 ```cs
 using System;
@@ -383,13 +373,13 @@ namespace MyAppService
 }
 ```
 
-## 相关主题
+## <a name="related-topics"></a>Related topics
 
-* [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md)
-* [使用后台任务支持应用](support-your-app-with-background-tasks.md)
+* [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md)
+* [Support your app with background tasks](support-your-app-with-background-tasks.md)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

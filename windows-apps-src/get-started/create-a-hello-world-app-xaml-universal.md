@@ -1,229 +1,225 @@
 ---
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: "创建“Hello, world”应用 \\(XAML\\)"
-description: "本教程指导你如何使用 Extensible Application Markup Language \\(XAML\\) 和 C# 创建一个面向 Windows10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。"
+title: Create a Hello, world app (XAML)
+description: This tutorial teaches you how to use Extensible Application Markup Language (XAML) with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) on Windows 10.
 translationtype: Human Translation
-ms.sourcegitcommit: 344ffda398c789f82973b5f08a0e3b791fc5ad10
-ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
+ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
+ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
 
 ---
 
-# 创建“Hello, world”应用 \(XAML\)
+# <a name="create-a-hello-world-app-xaml"></a>Create a "Hello, world" app (XAML)
 
-本教程指导你如何使用 XAML 和 C# 创建一个简单的“Hello, world”应用，该应用面向 Windows10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows10 设备上运行的应用。
+This tutorial teaches you how to use XAML and C# to create a simple "Hello, world" app for the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device.
 
-在此处，你将了解如何：
+Here you'll learn how to:
 
--   创建面向 **Windows10** 和 **UWP** 的新 **Visual Studio 2015** 项目。
--   编写 XAML 即可更改起始页上的 UI。
--   在 Visual Studio 中，在本地桌面和手机仿真器中运行该项目。
--   使用 SpeechSynthesizer，可在你按下某个按钮时使应用说话。
+-   Create a new **Visual Studio 2015** project that targets **Windows 10** and the **UWP**.
+-   Write XAML to change the UI on your start page.
+-   Run the project on the local desktop and on the phone emulator in Visual Studio.
+-   Use a SpeechSynthesizer to make the app talk when you press a button.
 
-## 开始之前...
+## <a name="before-you-start"></a>Before you start...
 
--   
-            [什么是通用 Windows 应用](whats-a-uwp.md)？
--   
-            [Windows10 中的新增功能](https://dev.windows.com/whats-new-windows-10-dev-preview)
-          
--   若要完成本教程，你需要 Windows10 和 Visual Studio 2015。 
-            [准备工作](get-set-up.md)。
--   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在“窗口”菜单中，通过使用“重置窗口布局”命令来重置它。
+-   [What's a Universal Windows app](whats-a-uwp.md)?
+-   [What's new in Windows 10](https://dev.windows.com/whats-new-windows-10-dev-preview)?
+-   To complete this tutorial, you need Windows 10 and Visual Studio 2015. [Get set up](get-set-up.md).
+-   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
 
-## 如果你宁愿观看视频...
+## <a name="if-you-would-rather-watch-a-video"></a>If you would rather watch a video...
 
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
-如果你偏爱分步指南的可视化方法，这段视频介绍了相同的资料，但内含精彩的原声带。
+If you prefer a visual approach over a step-by-step guide, this video covers the same material but with a nice soundtrack.
 
-## 步骤 1：在 Visual Studio 中创建新项目。
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>Step 1: Create a new project in Visual Studio.
 
-1.  启动 Visual Studio 2015。
+1.  Launch Visual Studio 2015.
 
-2.  在“文件”菜单中，依次选择“新建”&gt;“项目...”打开“新建项目”对话框。
+2.  From the **File** menu, select **New > Project...** to open the *New Project* dialog.
 
-3.  在左侧的模板列表中，依次打开“已安装”&gt;“模板”&gt;“Visual C#”&gt;“Windows”，然后选择“通用”查看 UWP 项目模板列表。
+3.  From the list of templates on the left, open **Installed > Templates > Visual C# > Windows**, and then choose **Universal** to see the list of UWP project templates.
 
-    （如果未看到任何通用模板，可能未安装 Visual Studio 2015，也可能缺少用于创建 UWP 应用的组件。 请参阅[准备工作](get-set-up.md)，准备必要工具。）
+    (If you don't see any Universal templates, you might not have Visual Studio 2015, or may be missing the components for creating UWP apps. Please see [Get set up](get-set-up.md) to fix your tools.)
 
-4.  选择“空白应用(通用 Windows)”模板，然后输入“HelloWorld”作为“名称”。 选择“确定”。
+4.  Choose the **Blank App (Universal Windows)** template, and enter "HelloWorld" as the **Name**. Select **OK**.
 
-    ![“新建项目”窗口](images/win10-cs-01.png)
+    ![The new project window](images/win10-cs-01.png)
 
-5.  将显示“目标版本/最低版本”对话框。 默认设置都合适，因此选择“确定”以创建项目。
+5.  The target version/minimum version dialog appears. The default settings are fine, so select **OK** to create the project.
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-02.png)
+    ![The solution explorer window](images/win10-cs-02.png)
 
-6.  新项目打开时，项目文件将显示在右侧的“解决方案资源管理器”窗格中。 若要查看你的文件，可能需要选择“解决方案资源管理器”选项卡，而不是“属性”选项卡。
+6.  When your new project opens, its files are displayed in the **Solution Explorer** pane on the right. You may need to choose the **Solution Explorer** tab instead of the **Properties** tab to see your files.
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-03.png)
+    ![The solution explorer window](images/win10-cs-03.png)
 
-尽管“空白应用(通用 Windows)”为最基本的模板，但该模板仍包含很多文件。 这些文件是使用 C# 的所有 UWP 应用必不可少的文件。 在 Visual Studio 中创建的每一个项目都包含这些文件。
+Although the **Blank App (Universal Window)** is a minimal template, it still contains a lot of files. These files are essential to all UWP apps using C#. Every project that you create in Visual Studio contains them.
 
 
-### 文件中包含哪些内容？
+### <a name="whats-in-the-files"></a>What's in the files?
 
-若要查看和编辑项目中的文件，请双击“解决方案资源管理器”中的文件。 像展开文件夹一样展开 XAML 文件即可查看其关联的代码文件。 XAML 文件在拆分视图中打开，可同时显示设计界面和 XAML 编辑器。
+To view and edit a file in your project, double-click the file in the **Solution Explorer**. Expand a XAML file just like a folder to see its associated code file. XAML files open in a split view that shows both the design surface and the XAML editor.
 > [!NOTE]
-> 什么是 XAML？ Extensible Application Markup Language (XAML) 是用于定义应用的用户界面的语言。 可以手动输入，也可以使用 Visual Studio 设计工具创建。 一个 .xaml 文件具有一个包含逻辑的 .xaml.cs 代码隐藏文件。 XAML 与代码隐藏一同组成完整的类。 有关详细信息，请参阅 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/Mt185595)。
+> What is XAML? Extensible Application Markup Language (XAML) is the language used to define your app's user interface. It can be entered manually, or created using the Visual Studio design tools. A .xaml file has a .xaml.cs code-behind file which contains the logic. Together, the XAML and code-behind make a complete class. For more information, see [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 
-*App.xaml 和 App.xaml.cs*
+*App.xaml and App.xaml.cs*
 
--   App.xaml 是你声明应用中所使用的资源的位置。
--   App.xaml.cs 是 App.xaml 的代码隐藏文件。 与所有代码隐藏页面一样，它包含一个调用 `InitializeComponent` 方法的构造函数。 你不必编写 `InitializeComponent` 方法。 该方法由 Visual Studio 生成，其主要作用是初始化在 XAML 文件中声明的元素。
--   App.xaml.cs 是应用的入口点。
--   App.xaml.cs 还包含一些处理应用激活和挂起的方法。
+-   App.xaml is where you declare resources that are used across the app.
+-   App.xaml.cs is the code-behind file for App.xaml. Like all code-behind pages, it contains a constructor that calls the `InitializeComponent` method. You don't write the `InitializeComponent` method. It's generated by Visual Studio, and its main purpose is to initialize the elements declared in the XAML file.
+-   App.xaml.cs is the entry point for your app.
+-   App.xaml.cs also contains methods to handle activation and suspension of the app.
 
 *MainPage.xaml*
 
--   在 MainPage.xaml 中，为应用定义 UI。 你可以直接使用 XAML 标记添加元素，也可以使用 Visual Studio 提供的设计工具。
--   MainPage.xaml.cs 是 MainPage.xaml 的代码隐藏页面。 你可以在其中添加应用逻辑和事件处理程序。
--   这两个文件一起定义称为 `MainPage` 的新类，该类继承自 `HelloWorld` 命名空间中的 [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503)。
+-   MainPage.xaml is where you define the UI for your app. You can add elements directly using XAML markup, or you can use the design tools provided by Visual Studio.
+-   MainPage.xaml.cs is the code-behind page for MainPage.xaml. It's where you add your app logic and event handlers.
+-   Together these two files define a new class called `MainPage`, which inherits from [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503), in the `HelloWorld` namespace.
 
 *Package.appxmanifest*
--   描述应用的清单文件：应用的名称、描述、磁贴、起始页等等。
--   包括应用包含的文件列表。
+-   A manifest file that describes your app: its name, description, tile, start page, etc.
+-   Includes a list of the files that your app contains.
 
-*一组徽标图像*
--   Assets/Square150x150Logo.scale-200.png 表示“开始”菜单中的应用。
--   Assets/StoreLogo.png 表示 Windows 应用商店中的应用。
--   Assets/SplashScreen.scale-200.png 是应用启动时显示的初始屏幕。
+*A set of logo images*
+-   Assets/Square150x150Logo.scale-200.png represents your app in the start menu.
+-   Assets/StoreLogo.png represents your app in the Windows Store.
+-   Assets/SplashScreen.scale-200.png is the splash screen that appears when your app starts.
 
-## 步骤 2：添加按钮
+## <a name="step-2-adding-a-button"></a>Step 2: Adding a button
 
-### 使用设计器视图
+### <a name="using-the-designer-view"></a>Using the designer view
 
-让我们向我们的页面中添加一个按钮。 在本教程中，你可以只使用少量以前列出的文件：App.xaml、MainPage.xaml 和 MainPage.xaml.cs。
+Let's add a button to our page. In this tutorial, you work with just a few of the files listed previously: App.xaml, MainPage.xaml, and MainPage.xaml.cs.
 
-1.  双击 **MainPage.xaml** 即可在设计视图中打开它。
+1.  Double-click on **MainPage.xaml** to open it in the Design view.
 
-    你将发现图形视图位于屏幕顶部，而 XAML 代码视图位于底部。 可以对任一视图进行更改，但现在我们将使用图形视图。
+    You'll notice there is a graphical view on the top part of the screen, and the XAML code view underneath. You can make changes to either, but for now we'll use the graphical view.
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-04.png)
+    ![The solution explorer window](images/win10-cs-04.png)
 
-2.  单击左侧垂直的“工具箱”，打开 UI 控件列表。 （可以单击“工具箱”的标题栏中的固定图标使其始终可见。）
+2.  Click on the vertical **Toolbox** tab on the left to open the list of UI controls. (You can click the pin icon in its title bar to keep it visible.)
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-05.png)
+    ![The solution explorer window](images/win10-cs-05.png)
 
-3.  展开“常见 XAML 控件”，然后将 **Button** 拖动到设计画面的中间。
+3.  Expand **Common XAML Controls**, and drag the **Button** out to the middle of the design canvas.
 
-    ![“解决方案资源管理器”窗口](images/win10-cs-06.png)
+    ![The solution explorer window](images/win10-cs-06.png)
 
-    如果查看 XAML 代码窗口，你会发现 Button 已添加到此窗口中：
+    If you look at the XAML code window, you'll see that the Button has been added there too:
 
  ```XAML
 <Button x:name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
  ```
 
-4.  更改按钮的文本。
+4.  Change the button's text.
 
-    在 XAML 代码视图中单击一下，然后将内容从“Button”更改为“Hello, world!”。
+    Click in the XAML code view, and change the Content from "Button" to "Hello, world!".
 
 ```XAML
 <Button x:name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
-注意设计画布中显示的按钮如何更新显示新文本。
+Notice how the button displayed in the design canvas updates to display the new text.
 
-![“解决方案资源管理器”窗口](images/win10-cs-07.png)
+![The solution explorer window](images/win10-cs-07.png)
 
-## 步骤 3：启动应用
-
-
-至此，你已创建了一个非常简单的应用。 现在是构建、部署和启动应用并查看其外观的好时机。 你可以在本地计算机上、模拟器或仿真器中或者在远程设备上调试应用。 下面是 Visual Studio 中的目标设备菜单。
-
-![用于调试应用的设备目标下拉列表](images/uap-debug.png)
-
-### 在桌面设备上启动应用
-
-默认情况下，应用在本地计算机上运行。 目标设备菜单提供用于在桌面设备系列中的设备上调试应用的多个选项。
-
--   **模拟器**
--   **本地计算机**
--   **远程计算机**
-
-**在本地计算机上开始调试**
-
-1.  在**“标准”**工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，确保已选中**“本地计算机”**。 （它是默认选择。）
-2.  单击工具栏中的**“开始调试”**按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
-
-   -或者-
-
-   在“调试”菜单中，单击“开始调试”。
-
-   -或者-
-
-   按 F5。
-
-应用将在窗口中打开，并且将首先显示默认初始屏幕。 初始屏幕由一个图像 \(SplashScreen.png\) 和背景色（在应用的清单文件中指定）定义。
-
-初始屏幕会消失，然后会出现你的应用。 它的外观如下所示。
-
-![初始应用屏幕](images/win10-cs-08.png)
-
-按 Windows 键以打开“开始”菜单，然后显示所有应用。 请注意，本地部署应用会将其磁贴添加到“开始”菜单。 若要稍后再次运行该应用（不是在调试模式下），请在“开始”菜单中点击或单击其磁贴。
-
-它还无法执行很多操作，但祝贺你已生成了第一个 UWP 应用！
-
-**停止调试**
-
-   单击工具栏中的**“停止调试”**按钮（![“停止调试”按钮](images/stopdebug.png)）。
-
-   -或者-
-
-   在“调试”菜单中，单击“停止调试”。
-
-   -或者-
-
-   关闭应用窗口。
-
-### 在移动设备仿真器上启动该应用
-
-你的应用可在任何 Windows10 设备上运行，让我们看一下它在 Windows Phone 上的情况如何。
-
-除了在桌面设备上执行调试的选项，Visual Studio 还提供用于在连接到计算机的物理移动设备上或移动设备仿真器上部署和调试应用的选项。 你可以为带有不同内存和显示配置的设备在仿真器中进行选择。
-
--   **设备**
--   **仿真器 <SDK version> WVGA 4 英寸 512MB**
--   **仿真器 <SDK version> WVGA 4 英寸 1GB**
--   等（采用其他配置的各种仿真器）
-
-（没有看到仿真器？ 参阅[准备工作](get-set-up.md)，确保已安装通用 Windows 应用开发工具。）
-
-**在移动设备仿真器上开始调试**
-
-1.  最好是在具有较小屏幕和有限内存的设备上测试你的应用，为此在“标准”工具栏上的目标设备菜单（![“开始调试”菜单](images/startdebug-full.png)）中，选取“仿真器 10.0.14393.0 WVGA 4 英寸 512MB”。
-
-2.  单击工具栏中的“开始调试”按钮（![“开始调试”按钮](images/startdebug-sm.png)）。
-
-   -或者-
-
-   在“调试”菜单中，单击“开始调试”。
-
-   -或者-
-
-   按 F5。
-
-Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。 应用首次启动时，可能需要一些时间。 在移动设备仿真器中，应用的外观如下所示。
-
-![移动设备上的初始应用屏幕](images/win10-cs-09.png)
-
-如果你有运行 Windows10 的 Windows Phone，还可以将它连接到计算机，然后直接在其上部署并运行应用（尽管首选需要[启用开发人员模式](enable-your-device-for-development.md)）。
+## <a name="step-3-start-the-app"></a>Step 3: Start the app
 
 
-## 步骤 3：事件处理程序
+At this point, you've created a very simple app. This is a good time to build, deploy, and launch your app and see what it looks like. You can debug your app on the local machine, in a simulator or emulator, or on a remote device. Here's the target device menu in Visual Studio.
 
-“事件处理程序”听起来很复杂，但它只是事件发生（如用户单击按钮）时调用的代码的另一个名称。
+![Drop-down list of device targets for debugging your app](images/uap-debug.png)
 
-1.  如果你尚未这样做，请停止应用运行。
+### <a name="start-the-app-on-a-desktop-device"></a>Start the app on a Desktop device
 
-2.  双击设计画布中的按钮控件，让 Visual Studio 为该按钮创建事件处理程序。
+By default, the app runs on the local machine. The target device menu provides several options for debugging your app on devices from the desktop device family.
 
-  当然，你可以手动创建所有代码。 也可以单击按钮选中它，然后访问右下方的“属性”窗格。 如果切换到“事件”（小闪电球），可以添加事件处理程序的名称。
+-   **Simulator**
+-   **Local Machine**
+-   **Remote Machine**
 
-3.  编辑 *MainPage.xaml.cs*（即代码隐藏页面）中的事件处理程序代码。 这是事情变得有趣的所在之处。 默认的事件处理程序如下所示：
+**To start debugging on the local machine**
+
+1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, make sure that **Local Machine** is selected. (It's the default selection.)
+2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) on the toolbar.
+
+   –or–
+
+   From the **Debug** menu, click **Start Debugging**.
+
+   –or–
+
+   Press F5.
+
+The app opens in a window, and a default splash screen appears first. The splash screen is defined by an image (SplashScreen.png) and a background color (specified in your app's manifest file).
+
+The splash screen disappears, and then your app appears. It looks like this.
+
+![Initial app screen](images/win10-cs-08.png)
+
+Press the Windows key to open the **Start** menu, then show all apps. Notice that deploying the app locally adds its tile to the **Start** menu. To run the app again later (not in debugging mode), tap or click its tile in the **Start** menu.
+
+It doesn't do much—yet—but congratulations, you've built your first UWP app!
+
+**To stop debugging**
+
+   Click the **Stop Debugging** button (![Stop debugging button](images/stopdebug.png)) in the toolbar.
+
+   –or–
+
+   From the **Debug** menu, click **Stop debugging**.
+
+   –or–
+
+   Close the app window.
+
+### <a name="start-the-app-on-a-mobile-device-emulator"></a>Start the app on a mobile device emulator
+
+Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone.
+
+In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
+
+-   **Device**
+-   **Emulator <SDK version> WVGA 4 inch 512MB**
+-   **Emulator <SDK version> WVGA 4 inch 1GB**
+-   etc... (Various emulators in other configurations)
+
+(Don't see the emulators? See [Get set up](get-set-up.md) to make sure you have the Universal Windows App Development Tools installed.)
+
+**To start debugging on a mobile device emulator**
+
+1.  It's a good practice to test your app on a device with a small screen and limited memory, so in the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.14393.0 WVGA 4 inch 512MB**.
+
+2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
+
+   –or–
+
+   From the **Debug** menu, click **Start Debugging**.
+
+   –or–
+
+   Press F5.
+
+Visual Studio starts the selected emulator and then deploys and starts your app. This might take a little time the first time it starts up. On the mobile device emulator, the app looks like this.
+
+![Initial app screen on mobile device](images/win10-cs-09.png)
+
+If you have a Windows Phone running Windows 10, you can also connect it to the computer and deploy and run the app on it directly (although you will need to [enable developer mode](enable-your-device-for-development.md) first).
+
+
+## <a name="step-3-event-handlers"></a>Step 3: Event handlers
+
+An "event handler" sounds complicated, but it's just another name for the code that is called when an event happens (such as the user clicking on your button).
+
+1.  Stop the app from running, if you haven't already.
+
+2.  Double-click on the button control on the design canvas to make Visual Studio create an event handler for your button.
+
+  You can of course, create all the code manually too. Or you can click on the button to select it, and look in the **Properties** pane on the lower right. If you switch to **Events** (the little lightning bolt) you can add the name of your event handler.
+
+3.  Edit the event handler code in *MainPage.xaml.cs*, the code-behind page. This is where things get interesting. The default event handler looks like this:
 
 ```C#
 private void button_Click(object sender, RouteEventArgs e)
@@ -232,7 +228,7 @@ private void button_Click(object sender, RouteEventArgs e)
 }
 ```
 
-  让我们更改它，使它如下所示：
+  Let's change it, so it looks like this:
 
 ```C#
 private async void button_Click(object sender, RoutedEventArgs e)
@@ -245,22 +241,24 @@ private async void button_Click(object sender, RoutedEventArgs e)
         }
 ```
 
-此外，确保包含了 **async** 关键字，否则尝试运行应用时会出错。
+Make sure you include the **async** keyword as well, or you'll get an error when you try to run the app.
 
-### 我们刚才做了什么？
+### <a name="what-did-we-just-do"></a>What did we just do?
 
-此代码使用一些 Windows API 创建一个语音合成对象，然后提供给该对象一些要说的文本。 （有关使用 SpeechSynthesis 的详细信息，请参阅 [SpeechSynthesis 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx)文档。）
+This code uses some Windows APIs to create a speech synthesis object, and then gives it some text to say. (For more information on using SpeechSynthesis, see the [SpeechSynthesis namespace](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx) docs.)
 
-运行该应用并单击按钮时，计算机（或手机）会逐字地说出“Hello, World!”。
-
-
-## 小结
+When you run the app and click on the button, your computer (or phone) will literally say "Hello, World!".
 
 
-祝贺你，你已创建了自己的第一个适用于 Windows10 和 UWP 的应用！ 为[下一步](learn-more.md)做好准备？
+## <a name="summary"></a>Summary
+
+
+Congratulations, you've created your first app for Windows 10 and the UWP!
+
+To learn how to use XAML to lay out the controls your app will use, try the ([grid tutorial](../layout/grid-tutorial.md), or jump straight to the [next step](learn-more.md)?
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

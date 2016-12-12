@@ -1,98 +1,93 @@
 ---
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
-title: "开设开发者帐户"
-description: "有关如何为 Windows 应用商店和其他 Microsoft 计划注册开发者帐户的此概述将有助于你了解设置帐户的过程。"
+title: Opening a developer account
+description: This overview of how to register for a developer account for the Windows Store and other Microsoft programs will help you understand the process of setting up your account.
 translationtype: Human Translation
-ms.sourcegitcommit: 10446e136d324cd8490f7547f853e75b534368b0
-ms.openlocfilehash: 1f847b9c3302b092dce6eb73dd01f761ec17c0a5
+ms.sourcegitcommit: 323577311d328da6ad1e7bf0a976d3cea099816a
+ms.openlocfilehash: 19096e3f1f94fb4eb98646163c6542a94f8612d4
 
 ---
-# 开设开发者帐户
+# <a name="opening-a-developer-account"></a>Opening a developer account
 
-有关如何为 Windows 应用商店和其他 Microsoft 计划注册开发者帐户的此概述将有助于你了解设置帐户的过程。
+This overview of how to register for a developer account for the Windows Store and other Microsoft programs will help you understand the process of setting up your account.
 
-> 
-            **注意** 当你注册开发者帐户时，我们将使用你在联系人信息中提供的电子邮件地址，以发送与你的帐户相关的电子邮件通信。 有时，其中可能包括有关我们的计划的信息性电子邮件。 如果你通过单击[退出](http://go.microsoft.com/fwlink/p/?LinkId=533280)选择不接收这些信息电子邮件，则请注意，我们仍然会向你发送交易电子邮件（例如，为了让你知道你的应用已经通过认证，或付款已在路上）。 这些电子邮件是你的帐户的必要组成部分，除非关闭你的帐户，否则你将继续收到这些交易电子邮件。
+> **Note**  When you sign up for a developer account, we'll use the email address you provide in your contact info to send email communications related to your account. At times, these may include informational emails about our programs. If you choose not to receive these informational emails by [opting out](http://go.microsoft.com/fwlink/p/?LinkId=533280), be aware that we will still send you transactional emails (for example, to let you know that your app has passed certification or that a payment is on the way). These emails are a necessary part of your account, and unless you close your account, you will continue to receive these transactional emails.
 
-## 帐户注册过程
+## <a name="the-account-signup-process"></a>The account signup process
 
-> 
-            **注意** 在某些情况下，在注册开发者帐户时所看到的屏幕和字段可能与下方所述内容略有不同，但基本信息和过程都相同。
+> **Note**  In some cases, the screens and fields you see when registering for a developer account may vary slightly from what is outlined below, though the basic information and process is the same.
 
-1.  转到[注册页面](http://go.microsoft.com/fwlink/p/?LinkId=615100)，然后单击“注册”。
-2.  选择你所居住的或你的企业所在的[国家/地区](account-types-locations-and-fees.md#account-markets)。 你将无法在以后更改此设置。
-3.  选择[开发者帐户类型](account-types-locations-and-fees.md)（个人或公司）。 你之后将无法更改该设置，因此请确保选择正确的帐户类型。 对于公司帐户，请确保查看下面的[指南](#additional-guidelines-for-company-accounts)。
-4.  为你的开发者帐户输入要使用的联系人信息。
+1.  Go to the [registration page](http://go.microsoft.com/fwlink/p/?LinkId=615100) and click **Sign up**.
+2.  Select the [country/region](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) in which you live, or where your business is located. You won't be able to change this later.
+3.  Select your [developer account type](account-types-locations-and-fees.md) (individual or company). You won't be able to change this later, so be sure to choose the right type of account. For a company account, be sure to review the [guidelines](#additional-guidelines-for-company-accounts) below.
+4.  Enter the contact info you want to use for your developer account.
 
-  > 
-            **注意** 遇到帐户相关事宜时，我们将通过此联系信息与你联系。 例如，完成注册后，你将会收到一封确认电子邮件。 在这之后，我们将在向你支付时或你需要使用你的帐户修复某些内容时发送电子邮件。 我们还可能发送上述信息之类的电子邮件，除非你选择了接收非交易类电子邮件。
+  > **Note**  We'll use this to contact you about account-related matters. For example, you'll receive an email confirmation message after you complete your registration. After that, we'll send messages when we pay you, or if you need to fix something with your account. We may also send informational emails as described above, unless you opt out of receiving non-transactional emails.
 
-   如果要注册公司帐户，还需要输入负责审批贵公司帐户的人员的姓名、电子邮件地址和电话号码。
+   If you are registering as a company, you'll also need to enter the name, email address, and phone number of the person who will approve your company's account.
 
-5.  对于个人帐户，输入要使用的“发布者显示名称”（不超过 50 个字符）。 客户在浏览应用时将看到此名称，并通过此名称记住你的应用，因此请谨慎选择该名称。
+5.  For individual accounts, enter the **publisher display name** that you wish to use (50 characters or fewer). Select this carefully, as customers will see this name when browsing and will come to know your apps by this name.
 
-    对于公司帐户，输入公司的“注册名称”（组织的注册公司名称或商标），用作发布者显示名称。
+    For company accounts, enter the **Registered name** of your company (your organization's registered business name or trade name); this will be used as the publisher display name.
     
-    请注意，如果输入其他人已选择的名称，或者系统显示其他人有权使用该名称，我们将不允许你使用该名称。 
+    Note that if you enter a name that someone else has already selected, or if it appears that someone else has the rights to use that name, we will not allow you to use that name. 
 
-  >  
-            **注意** 确保有权使用在此输入的名称。 如果其他人拥有所选名称的商标或版权，帐户可能会关闭。 有关详细信息，请参阅你的[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/Hh694058)。 如果其他人正在使用你对其持有商标或其他法定权利的发布者显示名称，请[联系 Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777)。    
+  >  **Note**  Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See your [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/Hh694058) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
 
-6.  为帐户输入联系人信息。 对于公司帐户，你还需要提供可验证你有权代表组织创建帐户的人员的联系人信息。 完成后，单击“下一步”以继续转到“付款”部分。
+6.  Enter the contact info for the account. For a company account, you'll also need to provide contact info for the person who can verify that you are authorized to create the account on behalf of your organization. When you are finished, click **Next** to move on to the **Payment** section.
 
-7.  输入一次性注册费用的付款信息。 如果你有涵盖注册成本的促销充值码，可以在此处进行输入。 否则，请提供你的信用卡信息（或在受支持的市场中提供 PayPal）。 请注意，预付款的信用卡无法用于此项购买。 完成后，请单击“下一步”以继续转到“审查”屏幕。
+7.  Enter your payment info for the one-time registration fee. If you have a promo code that covers the cost of registration, you can enter that here. Otherwise, provide your credit card info (or PayPal in supported markets). Note that prepaid credit cards can't be used for this purchase. When you are finished, click **Next** to move on to the **Review** screen.
 
-8.  审查你的帐户信息并确认所有内容都正确无误。 然后，阅读并接受[应用开发人员协议](https://msdn.microsoft.com/library/windows/apps/Hh694058)的条款和条件。 选中该框以指示你已阅读并接受这些条款。
+8.  Review your account info and confirm that everything is correct. Then, read and accept the terms and conditions of the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/Hh694058). Check the box to indicate you have read and accepted these terms.
 
-9.  单击“完成”以确认购买。 我们将向开发人员电子邮件地址发送一封确认邮件。
+9.  Click **Finish** to confirm your purchase. We'll send a confirmation message to your developer email address.
 
-完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，过程所花时间会长一点，因为我们还需要确认用户得到授权，可设置公司帐户。 此验证需要几天到几周时间，通常还会致电你的公司。 可在“帐户设置”页上查看验证状态。 
+After you've completed the signup process, your account will go through the verification process. For individual accounts, we check to make sure another company isn't already using your publisher display name. For company accounts, the process takes a little longer, as we also need to confirm that you’re authorized to set up the account for your company. This verification can take from a few days to a couple of weeks, and often includes a phone call to your company. You can check your verification status on the **Account settings** page. 
 
-## 有关公司帐户的其他指南
+## <a name="additional-guidelines-for-company-accounts"></a>Additional guidelines for company accounts
 
-创建公司帐户时，如果有多人需要通过使用打开该帐户的 Microsoft 帐户登录来访问该帐户，请按照以下指南进行操作。 
+When creating a company account, follow these guidelines if more than one person will need to access the account by logging in with the Microsoft account that opened the account. 
 
-> 
-            **重要提示** 若要允许多个用户访问开发人员中心帐户，我们建议使用 Azure Active Directory 将角色分配给个别用户，这些用户可以通过使用其个别 Azure AD 凭据登录来访问该帐户。 有关详细信息，请参阅[管理帐户用户](manage-account-users.md)。
+> **Important** To allow multiple users to access your Dev Center account, we recommend using Azure Active Directory to assign roles to individual users, who can access the account by signing in with their individual Azure AD credentials. For more info, see [Manage account users](manage-account-users.md).
 
--   使用属于公司的域但不属于个人的电子邮件地址（例如 windowsapps@fabrikam.com）创建 Microsoft 帐户。
--   将此 Microsoft 帐户的访问权限限制为尽可能少的开发人员。
--   设置企业电子邮件分发列表，其中包括每位需要访问开发者帐户的人员，并将该电子邮件地址添加到你的安全信息中。 这将使该列表上的所有员工可以在需要时收到安全代码，并管理 Microsoft 帐户的安全信息。 如果不可以设置分发列表，各个电子邮件帐户的所有者需要能够在收到提示时（例如将新的安全信息添加到帐户时，或者必须从新设备访问帐户时）访问和共享安全代码。
--   添加无需分机号的公司电话号码，该号码可供关键团队成员使用。
--   通常情况下，须让开发人员使用受信任的设备登录到公司的开发者帐户。 所有关键团队成员都应具有对这些受信任的设备的访问权限。 这将减少访问帐户时对发送安全代码的需求。
--   如果需要允许从不受信任的电脑访问帐户，请将开发人员访问人数上限限制为五人。 理想情况下，这些开发人员应从共享相同地理和网络位置的计算机访问该帐户。
--   请经常在 [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) 上查看公司的安全信息以确保它都是当前信息。
+-   Create your Microsoft account using an email address that belongs to your company's domain, but not to a single individual—for example, windowsapps@fabrikam.com.
+-   Limit access to this Microsoft account to the smallest possible number of developers.
+-   Set up a corporate email distribution list that includes everyone who needs to access the developer account, and add this email address to your security info. This allows all of the employees on the list to receive security codes when needed and to manage your Microsoft account’s security info. If setting up a distribution list is not feasible, the owner of the individual email account will need to be available to access and share the security code when prompted (such as when new security info is added to the account or when it must be accessed from a new device).
+-   Add a company phone number that does not require an extension and is accessible to key team members.
+-   In general, have developers use trusted devices to log in to your company's developer account. All key team members should have access to these trusted devices. This will reduce the need for security codes to be sent when accessing the account.
+-   If you need to allow access to the account from a non-trusted PC, limit that access to a maximum of five developers. Ideally, these developers should access the account from machines that share the same geographical and network location.
+-   Frequently review your company’s security info at [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) to make sure it's all current.
 
-应主要从受信任的电脑访问你的开发者帐户。 这一点至关重要，因为每个帐户每周生成的代码的数量是有限的。 这也可带来最完美的登录体验。
+Your developer account should be accessed primarily from trusted PCs. This is critical because there is a limit to the number of codes generated per account, per week. It also enables the most seamless sign-in experience.
 
-## 开发者帐户安全
+## <a name="developer-account-security"></a>Developer account security
 
-我们通过将帐户与多种形式的身份验证相结合，使用你提供的安全信息来提高你的开发者帐户的安全级别。 这样一来，未经授权访问你的 Microsoft 帐户的难度将大大提高。 此外，如果你忘记密码或有人试图访问你的帐户，我们可联系你以恢复帐户相应控制权限。
+We use security info that you provide to raise the security level of your developer account by associating it with multiple forms of identification. This makes unauthorized access to your Microsoft account substantially more difficult. Also, if you ever forget your password or someone tries to access your account, we’ll be able to reach you to reestablish appropriate control of your account.
 
-你的帐户上必须具有至少两个电子邮件地址和/或电话号码。 我们建议添加尽可能多的信息。 请记住，必须对某些安全信息进行确认，它才能生效。 同样，确保经常查看你的安全信息并确保它处于最新状态。
+You must have at least two email addresses and/or phone numbers on your account. We recommend adding as many as possible. Remember that some security info must be confirmed before it will be valid. Also, make sure to review your security info frequently and ensure it's up to date.
 
-你可以通过转到 [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) 并使用 Microsoft 帐户登录来管理你的安全信息。 有关详细信息，请参阅 [Microsoft 帐户安全信息：常见问题](http://go.microsoft.com/fwlink/p/?LinkID=272177)。
+You can manage your security info by going to [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) and signing in with your Microsoft account. See [Microsoft account security info: FAQ](http://go.microsoft.com/fwlink/p/?LinkID=272177) for more info.
 
-在登录到 Windows 开发人员中心仪表板时，系统会要求你验证身份。 使用电子邮件地址或电话号码验证时，我们将向你发送一个安全代码，之后你必须提供此代码来完成登录过程。
+When you sign in to your Windows Dev Center dashboard, the system requests that you verify your identity. In the case of an email address or a phone number, we send a security code that you must then supply to complete the sign-in process.
 
-我们建议将常用电脑指定为受信任的设备。 当你从受信任的设备进行登录时，系统通常不会提示你提供代码，但是系统有时可能会在特定情况下或者在你长时间未登录该设备时提示你提供一个代码。 有关详细信息，请参阅[受信任的设备：常见问题](http://go.microsoft.com/fwlink/p/?LinkID=331123)。
+We recommend designating PCs that you use frequently as trusted devices. When you sign in from a trusted device, you usually won’t be prompted for a code, although you may occasionally be prompted to provide one in specific situations, or if you haven’t signed in on that device in a long time. See [Trusted devices: FAQ](http://go.microsoft.com/fwlink/p/?LinkID=331123) for more info.
 
-## 关闭你的帐户
+## <a name="closing-your-account"></a>Closing your account
 
-开发人员帐户不会过期，因此无需续订你的帐户即可使其保持开设状态。 如果你决定完全关闭你的帐户，你可以通过联系技术支持人员来执行此操作。
+Developer accounts don't expire, so there is no need to renew your account in order to keep it open. If you decide to close your account completely, you can do so by contacting support.
 
-当关闭你的帐户时，务必了解你在 Windows 应用商店中发布的任何应用会发生什么情况：
+When you close your account, it's important to understand what happens to any app that you have published in the Windows Store:
 
--   应用的当前客户仍然可以使用该应用。 不过，他们将无法执行应用内购买。
--   尽管应用仍可供以前购买的客户使用，但你的应用一览将从应用商店中删除。 新用户将无法购买你的应用。
--   将释放你的应用的名称，以供其他开发人员使用。
--   如果以前的应用销售中还有欠款，即使所欠金额不符合通常的支付阈值要求，也可以请求支付该欠款。
+-   Your app's current customers will still be able to use the app. However, they will not be able to make in-app purchases.
+-   Even though the app is still available to customers who have previously acquired it, your app listing will be removed from the Store. No new customers will be able to acquire your app.
+-   Your app's name will be released for potential use by another developer.
+-   If you have a balance due from previous app sales, you can request payment for that balance even if the amount due does not meet the usual payment threshold.
 
 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

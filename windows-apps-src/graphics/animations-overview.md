@@ -1,132 +1,136 @@
 ---
 author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
-title: "动画概述"
-description: "使用 Windows 运行时动画库中的动画将 Windows 外观集成到你的应用中。"
+title: Animations overview
+description: Use the animations from the Windows Runtime animation library to integrate the Windows look and feel into your app.
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d622465ce3da70cdb8dbd064b68ea6983f9fe3f7
+ms.sourcegitcommit: 2a08d1def7c4d2fde0ae08eb26076526058e8aae
+ms.openlocfilehash: e3e21c55ea8ddeab0969e304080394b940da010d
 
 ---
-# 动画概述
+# <a name="animations-overview"></a>Animations overview
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-Windows 运行时中的动画可通过添加动作和交互性来增强你的应用。 通过使用 Windows 运行时动画库中的动画，你可以将其 Windows 外观集成到你的应用中。 本主题提供了使用每个动画的典型方案的动画和示例汇总。
-
-**提示** 用于 XAML 的 Windows 运行时控件包含某些类型的动画作为动画库中的内置行为。 通过在你的应用中使用这些控件，无需自己编程，即可获得动画外观。
-
-来自 Windows 运行时动画库的动画提供以下优势：
-
--   符合[动画指南](https://msdn.microsoft.com/library/windows/apps/Dn611854)的运动
--   在 UI 状态之间进行快速流畅的过渡，使用户知晓但不会分心
--   向用户指示应用内过渡的视觉行为
-
-例如，当用户将某个项添加到列表时，新项不会立即出现在列表中，而是采用动画形式过渡到相应的位置。 在很短的时间内，列表中的其他项也会采用动画形式移动到它们的新位置，以便为添加的项腾出空间。 此处的过渡行为可使控件更明显地与用户交互。
-
-Windows 10 版本 1607 引入了一个用于实现动画的新 [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) API，其中某一元素似乎在导航期间在视图之间进行动画处理。 此 API 具有不同于其他动画库 API 的使用模式。 将在[参考页面](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx)中介绍 **ConnectedAnimationService** 的用法。
-
-该动画库不会为每个可能方案提供动画。 在某些情况下，你可能希望采用 XAML 创建自定义动画。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。
-
-此外，对于根据 ScrollViewer 的滚动位置设置项目动画等某些高级方案，开发人员可能希望使用可视化层互操作来实现自定义动画。 有关详细信息，请参阅[可视化层](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)。
-
-## 动画类型
-
-Windows 运行时动画系统和动画库实现了更大的目标，即允许控件和 UI 的其他部分具备动画行为。 以下是几个不同类型的动画。
-
--   *主题过渡*会在 UI 中的某些条件（其中涉及预定义 Windows 运行时 XAML UI 类型的控件或元素）更改时自动应用。 这些称为*“主题过渡”*，原因是动画支持 Windows 外观，并且定义所有应用从一个交互模式更改为另一个交互模式时为特定 UI 方案执行的操作。 主题过渡是动画库的一部分。
--   *“主题动画”*是具备预定义 Windows 运行时 XAML UI 类型一个或多个属性的动画。 主题动画与主题过渡不同，因为主题动画面向一个特定元素并存在于控件中的特定视觉状态，而主题过渡将分配到存在于视觉状态外部的控件属性并影响这些状态之间的过渡。 许多 Windows 运行时 XAML 控件在情节提要中包含主题动画，这些主题动画是其控件模板的一部分且包含由视觉状态引发的动画。 只要你未修改模板，你都可以将这些内置主题动画用于 UI 中的控件。 但是，如果你替换了模板，则也将删除内置控件主题动画。 若要重新获取它们，你必须在视觉状态的控件集中定义包含主题动画的情节提要。 你也可以从不在视觉状态中的情节提要运行主题动画，并通过 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491) 方法开始运行，但这并不常见。 主题动画是动画库的一部分。
--   *“视觉转换”*会在控件从其定义的视觉状态之一转换到其他状态时应用。 这些是你编写的自定义动画，通常与为控件编写的自定义模板和该模板中的视觉状态定义相关。 该动画仅在两个状态之间的时间运行，这个时间通常很短，最多几秒钟。 有关详细信息，请参阅[视觉状态的情节提要动画的“视觉转换”部分](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition)。
--   *情节提要动画*可以随时间推移设置 Windows 运行时依赖属性的值的动画。 情节提要可以定义为可视化过渡的一部分，或者在运行时由应用程序触发。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。 有关依赖属性及其所处位置的详细信息，请参阅[依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)。
--   通过新 [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) API 提供的*已连接动画*允许开发人员轻松创建以下效果：某一元素似乎在导航期间在视图之间进行动画处理。 从 Windows 10 版本 1607 开始，将提供此 API。 有关详细信息，请参阅 [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx)。
-
-## 库中提供的动画
-
-动画库提供以下动画。 单击动画的名称即可了解有关其主要使用方案、这些方案的定义方式的详细信息，还可以查看动画示例。
-
--   [页面过渡](./animations-overview.md#page-transition)：在 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 中设置页面过渡动画。
--   [内容和进入过渡](./animations-overview.md#content-transition-and-entrance-transition)：让一条或一组内容以动画方式进入或退出视图。
--   [淡入/淡出和交叉进出](./animations-overview.md#fade-in-out-and-crossfade)：显示过渡元素或控件，或者刷新内容区域。
--   [指针向上/向下](./animations-overview.md#pointer-up-down)：提供点击或单击磁贴的视觉反馈。
--   [重新定位](./animations-overview.md#reposition)：将元素移动到新位置。
--   [显示/隐藏弹出元素](./animations-overview.md#show-hide-popup)：在视图顶部显示上下文 UI。
--   [显示/隐藏边缘 UI](./animations-overview.md#show-hide-edge-ui)：将基于边缘的 UI（包括诸如面板的较大 UI）滑入或滑出视图。
--   [列表项更改](./animations-overview.md#list-item-changes)：从列表中添加或删除某个项目，或者重新排序项目。
--   [拖放](./animations-overview.md#drag-drop)：在拖放操作期间提供视觉反馈。
-
-### 页面过渡
-
-使用页面过渡，在应用中设置导航动画。 由于几乎所有应用均会使用某种类型的导航，所以页面过渡动画是应用使用的最常见主题动画类型。 有关页面过渡 API 的详细信息，请参阅 [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)。
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
+Animations in the Windows Runtime can enhance your app by adding movement and interactivity. By using the animations from the Windows Runtime animation library, you can integrate the Windows look and feel into your app. This topic provides a summary of the animations and examples of typical scenarios where each is used.
 
-### 内容过渡和进入过渡
+**Tip**  The Windows Runtime controls for XAML include certain types of animations as built-in behaviors that come from an animation library. By using these controls in your app, you can get the animated look and feel without having to program it yourself.
 
-使用内容过渡动画 ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103)) 可以将一条或一组内容移入或移出当前视图。 例如，内容过渡动画显示在首次加载页面时或者在更改页面某部分的内容时，不准备显示的内容。
+Animations from the Windows Runtime animation library provide these benefits:
 
-[**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 表示可以在首次加载页面或大部分 UI 时应用到内容的动作。 这样，首次出现的内容可以提供不同于对内容的更改的反馈。 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 等同于具有默认参数的 [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)，但可在 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 外部使用。
+-   Motions that align to the [Guidelines for animations](https://msdn.microsoft.com/library/windows/apps/Dn611854)
+-   Fast, fluid transitions between UI states that inform but do not distract the user
+-   Visual behavior that indicates transitions within an app to the user
+
+For example, when the user adds an item to a list, instead of the new item instantly appearing in the list, the new item animates into place. The other items in the list animate to their new positions over a short period of time, making room for the added item. The transition behavior here makes the control interaction more apparent to the user.
+
+Windows 10, version 1607 introduces a new [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) API for implementing animations where an element appears to animate between views during a navigation. This API has a different usage pattern from the other animation library API's. Usage of **ConnectedAnimationService** is covered in the [reference page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx).
+
+The animation library does not provide animations for every possible scenario. There are cases where you might wish to create a custom animation in XAML. For more info, see [Storyboarded animations](storyboarded-animations.md).
+
+Additionally, for certain advanced scenarios like animating an item based on scroll position of a ScrollViewer, developers may wish to use Visual Layer interoperation to implement custom animations. See [Visual Layer](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer) for more information.
+
+## <a name="types-of-animations"></a>Types of animations
+
+The Windows Runtime animation system and the animation library serve the larger goal of enabling controls and other parts of UI to have an animated behavior. There are several distinct types of animations.
+
+-   *Theme transitions* are applied automatically when certain conditions change in the UI, involving controls or elements from the predefined Windows Runtime XAML UI types. These are termed *theme transitions* because the animations support the Windows look and feel, and define what all apps do for particular UI scenarios when they change from one interaction mode to another. The theme transitions are part of the animation library.
+-   *Theme animations* are animations to one or more properties of predefined Windows Runtime XAML UI types. Theme animations differ from theme transitions because theme animations target one specific element and exist in specific visual states within a control, whereas the theme transitions are assigned to properties of the control that exist outside of the visual states and influence the transitions between those states. Many of the Windows Runtime XAML controls include theme animations within storyboards that are part of their control template, with the animations triggered by visual states. So long as you're not modifying the templates, you'll have those built-in theme animations available for the controls in your UI. However, if you do replace templates, then you'll be removing the built-in control theme animations too. To get them back, you must define a storyboard that includes theme animations within the control's set of visual states. You can also run theme animations from storyboards that aren't within visual states and start them with the [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491) method, but that's less common. Theme animations are part of the animation library.
+-   *Visual transitions* are applied when a control transitions from one of its defined visual states to another state. These are custom animations that you write, and are typically related to the custom template you write for a control and the visual state definitions within that template. The animation only runs during the time between states, and that's typically a short amount of time, a few seconds at most. For more info, see ["VisualTransition" section of Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition).
+-   *Storyboarded animations* animate the value of a Windows Runtime dependency property over time. Storyboards can be defined as part of a visual transition, or triggered at runtime by the application. For more info, see [Storyboarded animations](storyboarded-animations.md). For more info about dependency properties and where they exist, see [Dependency properties overview](https://msdn.microsoft.com/library/windows/apps/Mt185583).
+-   *Connected animations* provided by the new [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) API allow developers to easily create an effect where an element appears to animate between views during a navigation. This API is available starting in Windows 10, version 1607. See [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) for more information.
+
+## <a name="animations-available-in-the-library"></a>Animations available in the library
+
+The following animations are supplied in the animation library. Click on the name of an animation to learn more about their main usage scenarios, how to define them, and to see an example of the animation.
+
+-   [Page transition](./animations-overview.md#page-transition): Animates page transitions in a [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682).
+-   [Content and entrance transition](./animations-overview.md#content-transition-and-entrance-transition): Animates one piece or set of content into or out of view.
+-   [Fade in/out, and crossfade](./animations-overview.md#fade-in-out-and-crossfade): Shows transient elements or controls, or refreshes a content area.
+-   [Pointer up/down](./animations-overview.md#pointer-up-down): Gives visual feedback of a tap or click on a tile.
+-   [Reposition](./animations-overview.md#reposition): Moves an element into a new position.
+-   [Show/hide popup](./animations-overview.md#show-hide-popup): Displays contextual UI on top of the view.
+-   [Show/hide edge UI](./animations-overview.md#show-hide-edge-ui): Slides edge-based UI, including large UI such as a panel, into or out of view.
+-   [List item changes](./animations-overview.md#list-item-changes): Adds or deletes an item from a list, or reordering of the items.
+-   [Drag/drop](./animations-overview.md#drag-drop): Gives visual feedback during a drag-and-drop operation.
+
+### <a name="page-transition"></a>Page transition
+
+Use page transitions to animate navigation within an app. Since almost all apps use some kind of navigation, page transition animations are the most common type of theme animation used by apps. See [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) for more information about the page transition APIs.
+
+
+
+### <a name="content-transition-and-entrance-transition"></a>Content transition and entrance transition
+
+Use content transition animations ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103)) to move a piece or a set of content into or out of the current view. For example, the content transition animations show content that was not ready to display when the page was first loaded, or when the content changes on a section of a page.
+
+[**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) represents a motion that can apply to content when a page or large section of UI is first loaded. Thus the first appearance of content can offer different feedback than a change to content does. [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) is equivalent to a [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) with the default parameters, but may be used outside of a [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682).
  
  
+<span id="fade-in-out-and-crossfade"/>
+### <a name="fade-inout-and-crossfade"></a>Fade in/out, and crossfade
 
-### 淡入/淡出和交叉进出
+Use fade in and fade out animations to show or hide transient UI or controls. In XAML these are represented as [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) and [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302). One example is in an app bar in which new controls can appear due to user interaction. Another example is a transient scroll bar or panning indicator that is faded out after no user input has been detected for some amount of time. Apps should also use the fade in animation when they transition from a placeholder item to the final item as content loads dynamically.
 
-使用淡入和淡出动画可以显示或隐藏过渡 UI 或控件。 在 XAML 中，这些动画将表示为 [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302)。 一个示例就是在可能会由于用户交互而显示新控件的应用栏中。 另一个示例涉及到临时滚动条或平移指示器，它们将在一段时间内未检测到任何用户输入时淡出。 在随着动态加载内容而从占位符项过渡到最终项时，应用还应使用淡入动画。
+Use a crossfade animation to smooth the transition when an item's state is changing; for example, when the app refreshes the current contents of a view. The XAML animation library does not supply a dedicated crossfade animation (no equivalent for [**crossFade**](https://msdn.microsoft.com/library/windows/apps/BR212661)), but you can achieve the same result using [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) and [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) with overlapped timing.
 
-使用交叉进出动画可以在某个项的状态发生改变时顺利进行过渡；例如，应用刷新视图的当前内容时。 XAML 动画库不提供专用交叉进出动画（不等效于 [**crossFade**](https://msdn.microsoft.com/library/windows/apps/BR212661)），但是你可以使用 [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 与重叠计时来获取相同的效果。
+<span id="pointer-up-down"/>
+### <a name="pointer-updown"></a>Pointer up/down
 
-### 指针向上/向下
+Use the [**PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969168) and [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969164) animations to give the user feedback for a successful tap or click on a tile. For example, when a user clicks or taps down on a tile, the pointer down animation is played. Once the click or tap has been released, the pointer up animation is played.
 
-使用 [**PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969168) 和 [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969164) 动画可以为用户成功点击或单击磁贴提供反馈。 例如，当用户单击或点击磁贴时，播放指针向下动画。 释放单击或点击后，播放指针向上动画。
+### <a name="reposition"></a>Reposition
 
-### 重新定位
+Use the reposition animations ([**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) or [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)) to move an element into a new position. For example, moving the headers in an items control uses the reposition animation.
 
-使用重新定位动画（[**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) 或 [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)）可以将某个元素移动到新位置。 例如，在项目控件中移动标题将使用重新定位动画。
+<span id="show-hide-popup"/>
+### <a name="showhide-popup"></a>Show/hide popup
 
-### 显示/隐藏弹出元素
+Use the [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) and [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) when you show and hide a [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) or similar contextual UI on top of the current view. [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) is a theme transition that's useful feedback if you want to light dismiss a popup.
 
-当你在当前视图顶部显示和隐藏 [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) 或类似的上下文 UI 时，请使用 [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391)。 [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) 是主题过渡，如果要轻型消除弹出元素，它是有用的反馈。
+<span id="show-hide-edge-ui"/>
+### <a name="showhide-edge-ui"></a>Show/hide edge UI
 
-### 显示/隐藏边缘 UI
+Use the [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) animation to slide small, edge-based UI into and out of view. For example, use these animations when you show a custom app bar at the top or bottom of the screen or a UI surface for errors and warnings at the top of the screen.
 
-使用 [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) 动画可以将较小的基于边缘的 UI 滑入和滑出视图。 例如，在屏幕顶部或底部显示自定义应用栏或在屏幕顶部显示用于错误和警告的 UI 表面时使用这些动画。
+Use the [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969160) animation to show and hide a pane or panel. This is for large edge-based UI such as a custom keyboard or a task pane.
 
-使用 [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969160) 动画可显示和隐藏窗格或面板。 此操作适用于基于边缘的较大 UI（例如自定义键盘或任务窗格）。
+### <a name="list-item-changes"></a>List item changes
 
-### 列表项更改
+Use the [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) animation to add animated behavior when you add or delete an item in an existing list. For add, the transition will first reposition existing items in the list to make space for the new items, and then add the new items. For delete, the transition removes items from a list and, if necessary, repositions the remaining list items once the deleted items have been removed.
 
-当你在现有列表中添加或删除某个项目时，将使用 [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) 动画添加动画的表现方式。 若要添加，过渡将首先重新定位列表中的现有项，以便为新项腾出空间，然后添加新项。 若要删除，过渡将从列表中删除项目，然后在移除删除的项目后，重新定位其余的列表项（如有必要）。
+There's also a separate [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409) that you apply if an item changes position in a list. This is animated differently than deleting an item and adding it in a new place with the associated delete/add animations.
 
-还存在一个当某个项目在列表中更改位置时应用的单独 [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409)。 创建该过渡动画与使用关联的删除/添加动画删除某个项和将其添加到新位置中不同。
+Note that these animations are included in the default [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) templates so you do not need to manually add these animations if you are already using these controls.
 
-请注意，这些动画包括在默认 [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 模板中，因此如果你已使用这些控件，则无需手动添加这些动画。
+<span id="drag-drop"/>
+### <a name="dragdrop"></a>Drag/drop
 
-### 拖放
+Use the drag animations ([**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173), [**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177)) and drop animation ([**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185)) to give visual feedback when the user drags or drops an item.
 
-使用拖动动画（[**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173)、[**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177)）和放置动画 ([**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185)) 可以在用户拖放一个项时提供视觉反馈。
+When active, the animations show the user that the list can be rearranged around a dropped item. It is helpful for users to know where the item will be placed in a list if it is dropped at the current location. The animations give visual feedback that an item being dragged can be dropped between two other items in the list and that those items will move out of the way.
 
-在激活时，动画将向用户显示该列表可以在放置的项目周围重新排列。 如果用户需要知道在当前位置放下该项目时会将该项目置于列表中的何处，则这样会很有帮助。 动画会提供视觉反馈，表明正在拖动的项目可以放到列表中的其他两个项目之间，以及这些项目将腾出空间。
+## <a name="using-animations-with-custom-controls"></a>Using animations with custom controls
 
-## 将动画与自定义控件结合使用
+The following table summarizes our recommendations for which animation you should use when you create a custom version of these Windows Runtime controls:
 
-下表概述了在创建这些 Windows 运行时控件的自定义版本时应当使用的动画建议：
-
-| UI 类型 | 推荐动画 |
+| UI type | Recommended animation |
 |---------|-----------------------|
-| 对话框 | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| 浮出控件 | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| 工具提示 | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| 上下文菜单 | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| 命令栏 | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
-| 任务窗格或基于边缘的面板 | [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
-| 任意 UI 容器的内容 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| 适用于控件或不应用其他动画时 | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| Dialog box | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) and [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| Flyout | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) and [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| Tooltip | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) and [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| Context menu | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) and [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| Command bar | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
+| Task pane or edge-based panel | [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
+| Contents of any UI container | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
+| For controls or if no other animation applies | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) and [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
  
 
-## 过渡动画示例
+## <a name="transition-animation-examples"></a>Transition animation examples
 
-理想情况下，你的应用使用动画来增强用户界面效果，或使它更具吸引力，而不会使用户觉得厌烦。 能够实现此目的的一种方式是为 UI 应用动画过渡，这样如果某些内容进入或离开了屏幕，或者发生了更改，动画可以提示用户注意所发生的更改。 例如，你的按钮可以快速淡入和淡出视图，而不仅仅是显示和消失。 我们创建了很多 API，可用于创建一致的建议或典型动画过渡。 此处的示例显示了如何为按钮应用动画，以使按钮轻快地滑入视图。
+Ideally, your app uses animations to enhance the user interface or to make it more attractive without annoying your users. One way you can do this is to apply animated transitions to UI so that when something enters or leaves the screen or otherwise changes, the animation draws the attention of the user to the change. For example, your buttons may rapidly fade in and out of view rather than just appear and disappear. We created a number of APIs that can be used to create recommended or typical animation transitions that are consistent. The example here shows how to apply an animation to a button so that it swiftly slides into view.
 
 ```xml
 <Button Content="Transitioning Button">
@@ -138,9 +142,9 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
  </Button>
  ```
 
-在此代码中，我们将 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 对象添加到按钮的过渡集中。 现在，首次呈现按钮时，它轻快地滑入视图，而不是突兀地直接显示。 你可以在动画对象上设置一些属性，以调整它滑动的距离以及从什么方向滑动，但是它确实是一个针对特定方案的非常简单的 API，只用于做出引人注目的进入效果。
+In this code, we add the [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) object to the transition collection of the button. Now, when the button is first rendered, it swiftly slides into view rather than just appear. You can set a few properties on the animation object in order to adjust how far it slides and from what direction, but it's really meant to be a simple API for a specific scenario, that is, to make an eye-catching entrance.
 
-你也可以在应用的风格资源中定义过渡动画主题，这样可以统一地应用效果。 此示例与前一个示例效果相当，只不过它是使用 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) 来进行应用的：
+You can also define transition animation themes in the style resources of your app, allowing you to apply the effect uniformly. This example is equivalent to the previous one, only it is applied using a [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849):
 
 ```xml
 <UserControl.Resources>
@@ -160,7 +164,7 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 </StackPanel>
 ```
 
-前面的示例为一个单独的控件应用了主题过渡，而在对象容器中应用主题过渡时会更有趣。 这样做时，容器的所有子对象都会参与过渡。 在下面的示例中，[**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 应用到矩形的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 中。
+The previous examples apply a theme transition to an individual control, however, theme transitions are even more interesting when you apply them to a container of objects. When you do this, all the child objects of the container take part in the transition. In the following example, an [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) is applied to a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) of rectangles.
 
 ```xml
 <!-- If you set an EntranceThemeTransition animation on a panel, the
@@ -196,15 +200,13 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 </ItemsControl>
 ```
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 的多个子矩形以令人视觉愉悦的方式一个接一个过渡到视图中，而如果你将此动画分别应用到每个矩形，这些矩形将一次全部显示过渡到视图。
+The child rectangles of the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) transition into view one after the other in a visually pleasing way rather than all at once as would be the case if you applied this animation to the rectangles individually.
 
-以下是演示此动画的视频：
+Here's a demonstration of this animation:
 
-![显示过渡到视图中的子矩形的动画](./images/animation-child-rectangles.gif)
+![Animation showing child rectangle transitioning into view](./images/animation-child-rectangles.gif)
 
-<iframe src="https://videoplayercdn.osi.office.net/embed/bb48c68b-c15d-44e4-86e5-8a8065da7a2e?autoplay=true&mkt=en-us&csid=IA-en-us" width="640" height="360" allowFullScreen="true" frameBorder="0" scrolling="no" ></iframe>
-
-容器的子对象还可以在其中一个或多个子对象更改位置时重新流动。 在下面的示例中，我们将 [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) 应用到多个矩形的网格中。 如果你删除其中一个矩形，其他所有矩形将重新流动到新位置。
+Child objects of a container can also re-flow when one or more of those children change position. In the following example, we apply a [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) to a grid of rectangles. When you remove one of the rectangles, all the other rectangles re-flow into their new position.
 
 ```xml
 <Button Content="Remove Rectangle" Click="RemoveButton_Click"/>
@@ -266,9 +268,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 }
 ```
 
-此视频演示了为要删除的矩形运行的动画：
-
-你可以将多个过渡动画应用到单个对象或对象容器。 例如，如果你想要矩形列表以动画方式进入视图，而且在更改位置时也采用动画方式，你可以按如下所示应用 [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) 和 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288)：
+You can apply multiple transition animations to a single object or object container. For example, if you want the list of rectangles to animate into view and also animate when they change position, you can apply the [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) and [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) like this:
 
 ```xml
 ...
@@ -281,25 +281,25 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 ...      
 ```
 
-在对 UI 元素进行添加、删除、重新排序等操作时，可用多个过渡效果在 UI 元素上创建动画。 这些 API 的名称都包含“ThemeTransition”：
+There are several transition effects to create animations on your UI elements as they are added, removed, reordered, and so on. The names of these APIs all contain "ThemeTransition":
 
-| API | 描述 |
+| API | Description |
 |-----|-------------|
-| [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) | 在 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 中提供用于页面导航的 Windows 个性化动画。 |
-| [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) | 为控件添加或删除子对象或内容的情况提供动画过渡表现方式。 通常，控件是项目容器。 |
-| [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103) | 为控件的内容发生更改的情况提供动画过渡表现方式。 可以在应用 [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) 后再应用它。 |
-| [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) | 为（较小）边缘 UI 过渡提供动画过渡表现方式。 |
-| [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) | 为控件第一次显示的情况提供动画过渡表现方式。 |
-| [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969160) | 为（较大边缘 UI）UI 过渡提供动画过渡表现方式。 |
-| [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) | 提供在控件的弹入组件（例如，对象上类似于工具提示的 UI）显示时应用到它们的动画过渡表现方式。 |
-| [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409) | 为列表视图控件项目更改顺序的情况提供动画过渡表现方式。 通常它作为拖放操作的结果出现。 不同的控件和主题可能具有不同的动画特征。 |
-| [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) | 为控件更改位置的情况提供动画过渡表现方式。 |
+| [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) | Provides a Windows personality animation for page navigation in a [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682). |
+| [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) | Provides the animated transition behavior for when controls add or delete children or content. Typically the control is an item container. |
+| [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103) | Provides the animated transition behavior for when the content of a control is changing. You can apply this in addition to [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047). |
+| [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) | Provides the animated transition behavior for a (small) edge UI transition. |
+| [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) | Provides the animated transition behavior for when controls first appear. |
+| [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969160) | Provides the animated transition behavior for a panel (large edge UI) UI transition. |
+| [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) | Provides the animated transition behavior that applies to pop-in components of controls (for example, tooltip-like UI on an object) as they appear. |
+| [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409) | Provides the animated transition behavior for when list-view controls items change order. Typically this happens as a result of a drag-drop operation. Different controls and themes can have varying characteristics for the animations. |
+| [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) | Provides the animated transition behavior for when controls change position. |
 
  
 
-## 主题动画示例
+## <a name="theme-animation-examples"></a>Theme animation examples
 
-过渡动画的应用很简单。 但是你可能想要对动画效果的计时和顺序进行稍多的控制。 你可以使用主题动画来获得更多的控制，同时对动画的表现方式仍使用一致的主题。 而且，与自定义动画相比，主题动画需要的标记较少。 此处，我们使用 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 将一个矩形淡出视图。
+Transition animations are simple to apply. But you may want to have a bit more control over the timing and order of your animation effects. You can use theme animations to enable more control while still using a consistent theme for how your animation behaves. Theme animations also require less markup than custom animations. Here, we use the [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) to make a rectangle fade out of view.
 
 ```xml
 <StackPanel>    
@@ -339,51 +339,51 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 }
 ```
 
-与过渡动画不同，主题动画没有自动运行的内置触发器（过渡）。 你必须使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 来包含主题动画，才能在 XAML 中定义它。 还可以更改动画的默认表现方式。 例如，可以通过增加 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 上的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 时间值来放缓淡出。
+Unlike transition animations, a theme animation doesn't have a built-in trigger (the transition) that runs it automatically. You must use a [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) to contain a theme animation when you define it in XAML. You can also change the default behavior of the animation. For example, you can slow down the fade-out by increasing the [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) time value on the [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302).
 
-**注意** 有关显示基本动画技术的用途，我们将通过调用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 方法来使用应用代码启动动画。 你可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 和 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard** 方法来控制 **Storyboard** 动画的运行方式。 但是，这并不是你将库动画包含在应用中的典型操作。 相反，你通常将库动画集成到应用于控件或元素的 XAML 样式和模板中。 了解模板和视觉状态会稍微复杂一些。 但是我们介绍了你可以如何使用视觉状态中的库动画，并将其作为[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主题的一部分。
+**Note**  For purposes of showing basic animation techniques, we're using app code to start the animation by calling methods of [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490). You can control how the **Storyboard** animations run using the [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop), [**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx), and [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard** methods. However, that's not typically how you include library animations in apps. Rather, you usually integrate the library animations into the XAML styles and templates applied to controls or elements. Learning about templates and visual states is a little more involved. But we do cover how you'd use library animations in visual states as part of the [Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808) topic.
 
  
 
-你可以为 UI 元素应用多个其他主题动画以创建动画效果。 这些 API 的名称都包含“ThemeAnimation”：
+You can apply several other theme animations to your UI elements to create animation effects. The names of these API all contain "ThemeAnimation":
 
-| API | 说明 |
+| API | Description |
 |-----|-------------|
-| [**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173) | 表示应用到正在拖动的项元素的预配置动画。 |
-| [**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177) | 表示应用到位于正在拖动的元素下方的元素的预配置动画。 |
-| [**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185) | 应用到潜在的拖放目标元素的预配置动画。 |
-| [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) | 控件第一次出现时应用到控件的预配置不透明度动画。 |
-| [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) | 控件从 UI 中删除或隐藏时应用到控件的预配置不透明度动画。 |
-| [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969164) | 用于用户点击或单击项目或元素操作的预配置动画。 |
-| [**PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969168) | 用于在用户点击项目或元素并释放该操作后运行的用户操作的预配置动画。 |
-| [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) | 控件的弹入组件显示时应用到它们的预配置动画。 此动画结合了不透明度和转换。 |
-| [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) | 控件的弹入组件关闭或删除时应用到它们的预配置动画。 此动画结合了不透明度和转换。 |
-| [**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) | 对象重新放置时该对象的预配置动画。 |
-| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | 使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) 打开和关闭样式的动画隐藏目标 UI 的预配置动画。 |
-| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | 使用 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) 打开和关闭样式的动画显示目标 UI 的预配置动画。 |
-| [**DrillInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | 表示在用户在逻辑层次结构中前进（如从主页到详细信息页）时运行的预配置动画。 |
-| [**DrillOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | 表示在用户在逻辑层次结构中后退（如从详细信息页到主页）时运行的预配置动画。 |
+| [**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173) | Represents the preconfigured animation that applies to item elements being dragged. |
+| [**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177) | Represents the preconfigured animation that applies to the elements underneath an element being dragged. |
+| [**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185) | The preconfigured animation that applies to potential drop target elements. |
+| [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) | The preconfigured opacity animation that applies to controls when they first appear. |
+| [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) | The preconfigured opacity animation that applies to controls when they are removed from UI or hidden. |
+| [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969164) | The preconfigured animation for user action that taps or clicks an item or element. |
+| [**PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969168) | The preconfigured animation for user action that runs after a user taps down on an item or element and the action is released. |
+| [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) | The preconfigured animation that applies to pop-in components of controls as they appear. This animation combines opacity and translation. |
+| [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) | The preconfigured animation that applies to pop-in components of controls as they are closed or removed. This animation combines opacity and translation. |
+| [**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) | The preconfigured animation for an object as it is repositioned. |
+| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | The preconfigured animation that conceals a target UI using an animation in the style of a [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) opening and closing. |
+| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | The preconfigured animation that reveals a target UI using an animation in the style of a [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) opening and closing. |
+| [**DrillInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | Represents a preconfigured animation that runs when a user navigates forward in a logical hierarchy, like from a master page to a detail page. |
+| [**DrillOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | Represents a preconfigured animation that runs when a user navigates backward in a logical hierarchy, like from a detail page to a master page. |
 
  
 
-## 创建你自己的动画
+## <a name="create-your-own-animations"></a>Create your own animations
 
-如果主题动画不能满足你的需求，你可以创建自己的动画。 你可以通过创建一个或多个对象属性值的动画来创建对象的动画。 例如，你可以创建矩形的宽度、[**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) 的角度或按钮的颜色值的动画。 我们将此类型的自定义动画称为情节提要动画，用于将其从 Windows 运行时提供为预配置动画类型的库动画中区分出来。 对于情节提要动画，你可以使用可更改特定类型的值的动画（例如 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 可创建 **Double** 动画），并将该动画放置在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 中以对其进行控制。
+When theme animations are not enough for your needs, you can create your own animations. You animate objects by animating one or more of their property values. For example, you can animate the width of a rectangle, the angle of a [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932), or the color value of a button. We term this type of custom animation a storyboarded animation, to distinguish it from the library animations that the Windows Runtime already provides as a preconfigured animation type. For storyboarded animations, you use an animation that can change values of a particular type (for example [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) to animate a **Double**) and put that animation within a [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) to control it.
 
-为了创建动画，要动画显示的属性必须是*依赖属性*。 有关依赖属性的详细信息，请参阅[依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)。 有关创建自定义情节提要动画的详细信息，包括如何确定动画目标以及控制动画，请参阅[情节提要动画](storyboarded-animations.md)。
+In order to be animated, the property you are animating must be a *dependency property*. For more info about dependency properties, see [Dependency properties overview](https://msdn.microsoft.com/library/windows/apps/Mt185583). For more info on creating custom storyboarded animations, including how to target and control them, see [Storyboarded animations](storyboarded-animations.md).
 
-XAML（可以在其中定义自定义情节提要动画）中应用 UI 定义的最大领域是在 XAML 中定义控件的视觉状态。 你执行此操作的原因有两个：你要创建一个新控件类；或者你要重新创建现有控件的模板，且该控件的控件模板中具有视觉状态。 有关详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
-
- 
+The biggest area of app UI definition in XAML where you'll define custom storyboarded animations is if you are defining visual states for controls in XAML. You'll be doing this either because you are creating a new control class, or because you are re-templating an existing control that has visual states in its control template. For more info, see [Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Dec16_HO1-->
 
 

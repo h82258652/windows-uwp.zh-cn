@@ -1,48 +1,48 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
-title: "使用选取器保存文件"
-description: "使用 FileSavePicker 让用户指定名称和他们想让应用保存文件的位置。"
+title: Save a file with a picker
+description: Use FileSavePicker to let users specify the name and location where they want your app to save a file.
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
 
 ---
 
-# 使用选取器保存文件
+# <a name="save-a-file-with-a-picker"></a>Save a file with a picker
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要的 API**
+**Important APIs**
 
 -   [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)
 -   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
-使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 让用户指定名称和他们想让应用保存文件的位置。
+Use [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to let users specify the name and location where they want your app to save a file.
 
-> **注意** 另请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
+> **Note**  Also see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
 
-## 先决条件
+## <a name="prerequisites"></a>Prerequisites
 
 
--   **了解通用 Windows 平台 (UWP) 应用的异步编程**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    若要了解如何使用 C# 或 Visual Basic 编写异步应用，请参阅[使用 C# 或 Visual Basic 调用异步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)。 若要了解如何使用 C++ 编写异步应用，请参阅[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **对位置的访问权限**
+-   **Access permissions to the location**
 
-    请参阅[文件访问权限](file-access-permissions.md)。
+    See [File access permissions](file-access-permissions.md).
 
-## FileSavePicker：分步
+## <a name="filesavepicker-step-by-step"></a>FileSavePicker: step-by-step
 
 
-使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)，以便你的用户可以指定要保存的文件的名称、类型以及位置。 创建、自定义并显示文件选取器对象，然后通过返回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象保存数据，该对象表示选取的文件。
+Use a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) so that your users can specify the name, type, and location of a file to save. Create, customize, and show a file picker object, and then save data via the returned [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object that represents the file picked.
 
-1.  **创建并自定义 FileSavePicker**
+1.  **Create and customize the FileSavePicker**
 
 ```cs
 var savePicker = new Windows.Storage.Pickers.FileSavePicker();
@@ -54,24 +54,24 @@ savePicker.FileTypeChoices.Add("Plain Text", new List<string>() { ".txt" });
 savePicker.SuggestedFileName = "New Document";
 ```
 
-在文件选取器对象上设置与你的用户和你的应用相关的属性。 有关帮助你确定如何自定义文件选取器的指南，请参阅[文件选取器指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465182)。
+Set properties on the file picker object that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182).
 
-此示例设置了三个属性：[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880)[**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) 和 [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878)。
+This example sets three properties: [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880), [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) and [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878).
 
-> **注意** [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 对象使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891) 显示文件选取器。
+> **Note**  [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) objects display the file picker using the [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891).
 
      
-- 由于我们的用户正在保存文档或文本文件，因此该示例通过使用 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) 设置为应用的本地文件夹。 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 设置为适用于被保存的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
+- Because our user is saving a document or text file, the sample sets [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) to the app's local folder by using [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621). Set [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to a location appropriate for the type of file being saved, for example Music, Pictures, Videos, or Documents. From the start location, the user can navigate to other locations.
 
-- 由于我们希望确保我们的应用可以在其保存后能打开该文件，我们将使用 [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875).指定支持该示例的文件类型（Microsoft Word 文档和文本文件）。 确保你的应用支持你指定的所有文件类型。 用户将能够以你指定的任意文件类型保存他们的文件。 他们还可以通过选择另一个你指定的文件类型更改文件类型。 默认情况下，将选择列表中的第一个文件类型选项：若要控制该选项，请设置 [**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873) 属性。
+- Because we want to make sure our app can open the file after it is saved, we use [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) to specify file types that the sample supports (Microsoft Word documents and text files). Make sure all the file types that you specify are supported by your app. Users will be able to save their file as any of the file types you specify. They can also change the file type by selecting another of the file types that you specified. The first file type choice in the list will be selected by default: to control that, set the [**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873) property.
 
-> **注意** 文件选取器还使用当前选中的文件类型筛选显示的文件，以便仅向用户显示与选中的文件类型匹配的文件类型。
+> **Note**  The file picker also uses the currently selected file type to filter which files it displays, so that only file types that match the selected files types are displayed to the user.
 
-- 为了给用户省去一些键入，示例设置了 [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878)。 请确保你建议的文件名与正在保存的文件相关。 例如，和 Word 一样，你可以建议现有的文件名（如果有），或者文档的第一行（如果用户正在保存还没有名称的文件）。
+- To save the user some typing, the example sets a [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878). Make your suggested file name relevant to the file being saved. For example, like Word, you can suggest the existing file name if there is one, or the first line of a document if the user is saving a file that does not yet have a name.
 
-2.  **显示 FileSavePicker 并将其保存到已选取的文件**
+2.  **Show the FileSavePicker and save to the picked file**
 
-    通过调用 [**PickSaveFileAsync**](https://msdn.microsoft.com/library/windows/apps/br207876) 显示文件选取器。 在用户指定名称、文件类型和位置并确认保存文件之后，**PickSaveFileAsync** 将返回一个表示已保存文件的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象。 由于你对此文件具有读取和写入权限，因此你可以捕获和处理此文件。
+    Display the file picker by calling [**PickSaveFileAsync**](https://msdn.microsoft.com/library/windows/apps/br207876). After the user specifies the name, file type, and location, and confirms to save the file, **PickSaveFileAsync** returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object that represents the saved file. You can capture and process this file now that you have read and write access to it.
 
 ```cs
 Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
@@ -102,9 +102,9 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
     }
 ```
 
-该示例检查了文件是否有效并将其自己的文件名写入其中。 另请参阅[创建、写入和读取文件](quickstart-reading-and-writing-files.md)。
+The example checks that the file is valid and writes its own file name into it. Also see [Creating, writing, and reading a file](quickstart-reading-and-writing-files.md).
 
-**提示** 应始终检查已保存的文件，以确保在执行任何其他处理之前该文件有效。 然后，你可以将内容保存到适合你的应用的文件，并在已选取的文件无效时提供相应的行为。
+**Tip**  You should always check the saved file to make sure it is valid before you perform any other processing. Then, you can save content to the file as appropriate for your app, and provide appropriate behavior if the picked file is not valid.
 
      
 
@@ -114,6 +114,6 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

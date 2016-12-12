@@ -1,239 +1,128 @@
 ---
 author: mcleanbyron
-Description: "如果允许客户在试用期内免费使用你的应用，则可以通过排除或限制试用期内的某些功能，吸引客户升级到完整版应用。"
-title: "排除或限制试用版中的功能"
+Description: If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period.
+title: Exclude or limit features in a trial version
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-keywords: "免费试用代码示例"
+keywords: free trial code sample
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: fdca95a6e925ca2238fdcd8791ade2ed4ea5a310
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: 0d377677237264e2dad290c7d49c47800c255138
 
 ---
 
-# 排除或限制试用版中的功能
+# <a name="exclude-or-limit-features-in-a-trial-version"></a>Exclude or limit features in a trial version
 
 
+>**Note**&nbsp;&nbsp;This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to implement a trial version instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [Implement a trial version of your app](implement-a-trial-version-of-your-app.md).
 
+If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.
 
->**注意**&nbsp;&nbsp;本文演示了如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间的成员。 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议你使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员实现试用版，而不是使用 **Windows.ApplicationModel.Store** 命名空间。 有关详细信息，请参阅[实现应用的试用版](implement-a-trial-version-of-your-app.md)。
+Let's look at how to add this to your app.
 
-如果允许客户在试用期内免费使用你的应用，则可以通过排除或限制试用期内的某些功能，吸引客户升级到完整版应用。 请在开始编码之前确定哪些功能应受到限制，然后确保你的应用只在已购买完整版许可之后才允许这些功能运作。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
+## <a name="prerequisites"></a>Prerequisites
 
-让我们看看如何在应用中添加此功能。
+A Windows app in which to add features for customers to buy.
 
-## 先决条件
+## <a name="step-1-pick-the-features-you-want-to-enable-or-disable-during-the-trial-period"></a>Step 1: Pick the features you want to enable or disable during the trial period
 
-可添加供客户购买的功能的 Windows 应用。
+The current license state of your app is stored as properties of the [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) class. Typically, you put the functions that depend on the license state in a conditional block, as we describe in the next step. When considering these features, make sure you can implement them in a way that will work in all license states.
 
-## 步骤 1：选取要在试用期内启用或禁用的功能
+Also, decide how you want to handle changes to the app's license while the app is running. Your trial app can be full-featured, but have in-app ad banners where the paid-for version doesn't. Or, your trial app can disable certain features, or display regular messages asking the user to buy it.
 
-应用的当前许可证状态存储为 [**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) 类的属性。 通常，将那些取决于许可证状态的功能放在我们下一步介绍的条件块中。 在考虑这些功能时，确保实现该功能的方式允许这些功能在所有许可证状态下均能正常工作。
+Think about the type of app you're making and what a good trial or expiration strategy is for it. For a trial version of a game, a good strategy is to limit the amount of game content that a user can play. For a trial version of a utility, you might consider setting an expiration date, or limiting the features that a potential buyer can use.
 
-另外，决定你希望在应用运行时如何处理对应用许可证的更改。 你的试用版可以是全功能的，但具有付费版所没有的应用内广告横幅。 或者，你的试用应用可以禁用某些功能，或定期显示消息要求用户购买应用。
+For most non-gaming apps, setting an expiration date works well, because users can develop a good understanding of the complete app. Here are a few common expiration scenarios and your options for handling them.
 
-考虑你正设计的应用类型，什么是适合它的试用或到期策略。 对于试用版的游戏，一个好的策略是限制用户可以玩的游戏内容量。 对于试用版的实用工具，可能需要考虑设置一个到期日期，或限制潜在购买者可以使用的功能。
+-   **Trial license expires while the app is running**
 
-对于大部分非游戏应用，设置一个过期日期很有用，因为用户可很好地理解整个应用。 以下是一些常见的过期场景和处理它们的选项。
+    If the trial expires while your app is running, your app can:
 
--   **试用许可证在应用正在运行时过期。**
+    -   Do nothing.
+    -   Display a message to your customer.
+    -   Close.
+    -   Prompt your customer to buy the app.
 
-    如果应用正在运行时试用许可证过期，应用可以：
+    The best practice is to display a message with a prompt for buying the app, and if the customer buys it, continue with all features enabled. If the user decides not to buy the app, close it or remind them to buy the app at regular intervals.
 
-    -   不执行任何操作。
-    -   向客户显示一条消息。
-    -   关闭。
-    -   提示客户购买应用。
+-   **Trial license expires before the app is launched**
 
-    最佳做法是显示一条消息，提示客户购买应用，如果客户购买它，则继续启用所有功能。 如果用户决定不购买应用，则关闭它或定期提醒他们购买应用。
+    If the trial expires before the user launches the app, your app won't launch. Instead, users see a dialog box that gives them the option to purchase your app from the Store.
 
--   **在应用启动前试用许可证过期。**
+-   **Customer buys the app while it is running**
 
-    如果在应用启动前试用许可证过期，应用将不会启动。 相反，用户将看到一个对话框，该对话框为用户提供从应用商店购买你的应用的选项。
+    If the customer buys your app while it is running, here are some actions your app can take.
 
--   **客户在应用运行时购买它**
+    -   Do nothing and let them continue in trial mode until they restart the app.
+    -   Thank them for buying or display a message.
+    -   Silently enable the features that are available with a full-license (or disable the trial-only notices).
 
-    如果客户在应用运行时购买它，以下是应用可执行的一些操作。
+If you want to detect the license change and take some action in your app, you must add an event handler for this as described in the next step.
 
-    -   不执行任何操作，让他们继续在试用模式下操作，直到重新启动应用。
-    -   感谢他们购买，或者显示一条消息。
-    -   静默地启用在完整许可证下可用的功能（或禁用仅限试用的通知）。
+## <a name="step-2-initialize-the-license-info"></a>Step 2: Initialize the license info
 
-如果希望检测许可证更改并在应用中执行某种操作，你必须为此添加一个事件处理程序，如下一步中所述。
-## 步骤 2：初始化许可证信息
+When your app is initializing, get the [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) object for your app as shown in this example. We assume that **licenseInformation** is a global variable or field of type **LicenseInformation**.
 
-在你的应用初始化时，获取你的应用的 [**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) 对象，如该示例所示。 我们假设 **licenseInformation** 是 **LicenseInformation** 类型的全局变量或字段。
+For now, you will get simulated license information by using [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) instead of [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Before you submit the release version of your app to the **Store**, you must replace all **CurrentAppSimulator** references in your code with **CurrentApp**.
 
-初始化 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 或 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 以访问应用的许可证信息。
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
 
-```CSharp
-void initializeLicense()
-{
-    // Initialize the license info for use in the app that is uploaded to the Store.
-    // uncomment for release
-    //   licenseInformation = CurrentApp.LicenseInformation;
+Next, add an event handler to receive notifications when the license changes while the app is running. The app's license could change if the trial period expires or the customer buys the app through a Store, for example.
 
-    // Initialize the license info for testing.
-    // comment the next line for release
-    licenseInformation = CurrentAppSimulator.LicenseInformation;
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
 
-}
-```
+## <a name="step-3-code-the-features-in-conditional-blocks"></a>Step 3: Code the features in conditional blocks
 
-添加事件处理程序，以便许可证在应用运行的情况下发生更改时接收通知。 如果在试用期到期或客户通过应用商店购买应用等情况下，应用的许可证将发生更改。
+When the license change event is raised, your app must call the License API to determine if the trial status has changed. The code in this step shows how to structure your handler for this event. At this point, if a user bought the app, it is a good practice to provide feedback to the user that the licensing status has changed. You might need to ask the user to restart the app if that's how you've coded it. But make this transition as seamless and painless as possible.
 
-```CSharp
-void InitializeLicense()
-{
-    // Initialize the license info for use in the app that is uploaded to the Store.
-    // uncomment for release
-    //   licenseInformation = CurrentApp.LicenseInformation;
+This example shows how to evaluate an app's license status so that you can enable or disable a feature of your app accordingly.
 
-    // Initialize the license info for testing.
-    // comment the next line for release
-    licenseInformation = CurrentAppSimulator.LicenseInformation;
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
 
-    // Register for the license state change event.
-     licenseInformation.LicenseChanged += new LicenseChangedEventHandler(licenseChangedEventHandler);
+## <a name="step-4-get-an-apps-trial-expiration-date"></a>Step 4: Get an app's trial expiration date
 
-}
+Include code to determine the app's trial expiration date.
 
-// ...
+The code in this example defines a function to get the expiration date of the app's trial license. If the license is still valid, display the expiration date with the number of days left until the trial expires.
 
-void licenseChangedEventHandler()
-{
-    ReloadLicense(); // code is in next steps
-}
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
 
-## 步骤 3：将功能编码到条件块中
+## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>Step 5: Test the features using simulated calls to the License API
 
-在引发许可证更改事件时，你的应用必须调用许可证 API 以确定试用状态是否已发生更改。 本步骤中的代码显示如何构造此事件的处理程序。 此时，如果用户购买了应用，则向用户提供许可状态已发生更改的反馈是一个好做法。 你可能需要请求用户重新启动应用（如果你已经这样编码）。 但是一定要让这一过渡尽可能无缝和轻松地进行。
+Now, test your app using simulated data. **CurrentAppSimulator** gets test-specific licensing info from an XML file called WindowsStoreProxy.xml, located in %UserProfile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. You can edit WindowsStoreProxy.xml to change the simulated expiration dates for your app and for its features. Test all your possible expiration and licensing configurations to make sure everything works as intended. For more info, see [Using the WindowsStoreProxy.xml file with CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
 
-此示例显示如何评估应用的许可证状态，以便你可以相应启用或禁用应用的功能。
+If this path and file don't exist, you must create them, either during installation or at run-time. If you try to access the [CurrentAppSimulator.LicenseInformation](https://msdn.microsoft.com/library/windows/apps/hh779768) property without WindowsStoreProxy.xml present in that specific location, you will get an error.
 
-```CSharp
-void ReloadLicense()
-{
-    if (licenseInformation.IsActive)
-    {
-         if (licenseInformation.IsTrial)
-         {
-             // Show the features that are available during trial only.
-         }
-         else
-         {
-             // Show the features that are available only with a full license.
-         }
-     }
-     else
-     {
-         // A license is inactive only when there' s an error.
-     }
-}
-```
-
-## 步骤 4：获取应用的试用过期日期
-
-包含用于确定应用的试用到期日期的代码。
-
-此示例中的代码定义一个函数来获取应用试用许可证的过期日期。 如果许可证仍然有效，则显示到期日期及试用到期之前剩余的天数。
-
-```CSharp
-void DisplayTrialVersionExpirationTime()
-{
-    if (licenseInformation.IsActive)
-    {
-        if (licenseInformation.IsTrial)
-        {
-            var longDateFormat = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longdate");
-
-            // Display the expiration date using the DateTimeFormatter.
-            // For example, longDateFormat.Format(licenseInformation.ExpirationDate)
-
-            var daysRemaining = (licenseInformation.ExpirationDate - DateTime.Now).Days;
-
-            // Let the user know the number of days remaining before the feature expires
-        }
-        else
-        {
-            // ...
-        }
-    }
-    else
-    {
-       // ...
-    }
-}
-```
-
-## 步骤 5：使用对许可证 API 的模拟调用测试功能
-
-现在，使用对许可证服务器的模拟调用测试你的应用。 在 JavaScript、C#、Visual Basic 或 Visual C++ 中，在应用的初始化代码中将对 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 的引用替换为 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)。
-
-[**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 从称为“WindowsStoreProxy.xml”的 XML 文件（位于 %userprofile%\\AppData\\local\\packages\\&lt;程序包名称&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData）中获取测试特定的许可信息。 如果此路径和文件不存在，则必须在安装或运行时期间创建它们。 如果尝试在 WindowsStoreProxy.xml 未出现在特定位置的情况下访问 [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) 属性，则会出现错误。
-
-此示例说明如何将代码添加到你的应用，以在不同的许可状态下测试它。
-
-```CSharp
-void appInit()
-{
-    // some app initialization functions
-
-    // Initialize the license info for use in the app that is uploaded to the Store.
-    // uncomment for release
-    //   licenseInformation = CurrentApp.LicenseInformation;
-
-    // Initialize the license info for testing.
-    // comment the next line for release
-    licenseInformation = CurrentAppSimulator.LicenseInformation;
-
-    // other app initialization functions
-}
-```
-
-你可以编辑 WindowsStoreProxy.xml 以更改你的应用及其功能的模拟到期日期。 测试所有可能的到期和许可配置，以确保任一方面都按预期运行。
-
-## 步骤 6：将模拟的许可证 API 方法替换为实际 API
-
-在使用模拟的许可证服务器测试你的应用后，以及向应用商店提交应用进行认证前，将 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 替换为 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)，如下一个代码示例所示。
-
-**重要提示** 在将应用提交到应用商店时，你的应用必须使用 [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 对象，否则它将无法通过认证。
-
-```CSharp
-void appInit()
-{
-    // some app initialization functions
-
-    // Initialize the license info for use in the app that is uploaded to the Store.
-    // uncomment for release
-    licenseInformation = CurrentApp.LicenseInformation;
-
-    // Initialize the license info for testing.
-    // comment the next line for release
-    //   licenseInformation = CurrentAppSimulator.LicenseInformation;
-
-    // other app initialization functions
-}
-```
-
-## 步骤 7：描述免费试用版如何为你的客户所用
-
-请务必阐述你的应用在免费试用期间及之后的行为，以便客户不会对应用行为感到惊讶。
-
-有关描述应用的详细信息，请参阅[创建应用提要](https://msdn.microsoft.com/library/windows/apps/mt148529)。
-
-## 相关主题
-
-* [应用商店示例（演示试用版和应用内购买）](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-* [设置应用定价和可用性](https://msdn.microsoft.com/library/windows/apps/mt148548)
-* [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
-* [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
+## <a name="step-6-replace-the-simulated-license-api-methods-with-the-actual-api"></a>Step 6: Replace the simulated License API methods with the actual API
+
+After you test your app with the simulated license server, and before you submit your app to a Store for certification, replace **CurrentAppSimulator** with **CurrentApp**, as shown in the next code sample.
+
+>**Important**&nbsp;&nbsp;Your app must use the **CurrentApp** object when you submit your app to a Store or it will fail certification.
+
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
+
+## <a name="step-7-describe-how-the-free-trial-works-to-your-customers"></a>Step 7: Describe how the free trial works to your customers
+
+Be sure to explain how your app will behave during and after the free trial period so your customers won't be surprised by your app's behavior.
+
+For more info about describing your app, see [Create app descriptions](https://msdn.microsoft.com/library/windows/apps/mt148529).
+
+## <a name="related-topics"></a>Related topics
+
+* [Store sample (demonstrates trials and in-app purchases)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
+* [Set app pricing and availability](https://msdn.microsoft.com/library/windows/apps/mt148548)
+* [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765)
+* [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

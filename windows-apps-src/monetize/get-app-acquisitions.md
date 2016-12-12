@@ -1,265 +1,87 @@
 ---
 author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
-description: "使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的聚合购置数据。"
-title: "获取应用购置"
+description: Use this method in the Windows Store analytics API to get aggregate acquisition data for an application during a given date range and other optional filters.
+title: Get app acquisitions
 translationtype: Human Translation
-ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
-ms.openlocfilehash: db271b0d1ec3b20ab2ead2e35e06fd97adb2ce0c
+ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
+ms.openlocfilehash: b82136348936d436a374cfef42d5e349ed0d0f36
 
 ---
 
-# 获取应用购置
+# <a name="get-app-acquisitions"></a>Get app acquisitions
 
 
-使用 Windows 应用商店分析 API 中的此方法，可获取给定日期范围和其他可选筛选器内某一应用程序的购置聚合数据（格式为 JSON）。 还可以在 Windows 开发人员中心仪表板的[购置报告](../publish/acquisitions-report.md)中获取此信息。
+Use this method in the Windows Store analytics API to get aggregate acquisition data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md) in the Windows Dev Center dashboard.
 
-## 先决条件
-
-
-若要使用此方法，首先需要执行以下操作：
-
-* 如果尚未开始操作，请先完成 Windows 应用商店分析 API 的所有[先决条件](access-analytics-data-using-windows-store-services.md#prerequisites)。
-* [获取 Azure AD 访问令牌](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
-
-## 请求
+## <a name="prerequisites"></a>Prerequisites
 
 
-### 请求语法
+To use this method, you need to first do the following:
 
-| 方法 | 请求 URI                                                              |
-|--------|--------------------------------------------------------------------------|
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+
+## <a name="request"></a>Request
+
+
+### <a name="request-syntax"></a>Request syntax
+
+| Method | Request URI       |
+|--------|----------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions``` |
 
 <span/>
 
-### 请求头
+### <a name="request-header"></a>Request header
 
-| 标头        | 类型   | 说明                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
+| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
 <span/> 
 
-### 请求参数
+### <a name="request-parameters"></a>Request parameters
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">参数</th>
-<th align="left">类型</th>
-<th align="left">说明</th>
-<th align="left">必需</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">applicationId</td>
-<td align="left">字符串</td>
-<td align="left">要检索购置数据的应用的存储 ID。 存储 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。</td>
-<td align="left">是</td>
-</tr>
-<tr class="even">
-<td align="left">startDate</td>
-<td align="left">date</td>
-<td align="left">要检索的购置数据日期范围中的开始日期。 默认值为当前日期。</td>
-<td align="left">否</td>
-</tr>
-<tr class="odd">
-<td align="left">endDate</td>
-<td align="left">date</td>
-<td align="left">要检索的购置数据日期范围中的结束日期。 默认值为当前日期。</td>
-<td align="left">否</td>
-</tr>
-<tr class="even">
-<td align="left">top</td>
-<td align="left">int</td>
-<td align="left">要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。</td>
-<td align="left">否</td>
-</tr>
-<tr class="odd">
-<td align="left">skip</td>
-<td align="left">int</td>
-<td align="left">要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10000 和 skip=0，将检索前 10000 行数据；top=10000 和 skip=10000，将检索之后的 10000 行数据，依此类推。</td>
-<td align="left">否</td>
-</tr>
-<tr class="even">
-<td align="left">filter</td>
-<td align="left">字符串</td>
-<td align="left">在响应中筛选行的一条或多条语句。 有关详细信息，请参阅下面的[筛选器字段](#filter-fields)部分。</td>
-<td align="left">否</td>
-</tr>
-<tr class="odd">
-<td align="left">aggregationLevel</td>
-<td align="left">字符串</td>
-<td align="left">指定用于检索聚合数据的时间范围。 可以是以下字符串之一：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果未指定，默认值为 <strong>day</strong>。</td>
-<td align="left">否</td>
-</tr>
-<tr class="even">
-<td align="left">orderby</td>
-<td align="left">字符串</td>
-<td align="left">对每个购置的结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 参数可以是以下字符串之一。
-<ul>
-<li><strong>date</strong></li>
-<li><strong>acquisitionType</strong></li>
-<li><strong>ageGroup</strong></li>
-<li><strong>storeClient</strong></li>
-<li><strong>gender</strong></li>
-<li><strong>market</strong></li>
-<li><strong>osVersion</strong></li>
-<li><strong>deviceType</strong></li>
-<li><strong>orderName</strong></li>
-</ul>
-<p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p>
-<p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,market</em></p></td>
-<td align="left">否</td>
-</tr>
-<tr class="odd">
-<td align="left">groupby</td>
-<td align="left">字符串</td>
-<td align="left"><p>仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示：</p>
-<ul>
-<li><strong>日期型</strong></li>
-<li><strong>applicationName</strong></li>
-<li><strong>acquisitionType</strong></li>
-<li><strong>ageGroup</strong></li>
-<li><strong>storeClient</strong></li>
-<li><strong>gender</strong></li>
-<li><strong>market</strong></li>
-<li><strong>osVersion</strong></li>
-<li><strong>deviceType</strong></li>
-<li><strong>orderName</strong></li>
-</ul>
-<p>返回的数据行会包含 <em>groupby</em> 参数中指定的字段，以及以下字段：</p>
-<ul>
-<li><strong>date</strong></li>
-<li><strong>applicationId</strong></li>
-<li><strong>acquisitionQuantity</strong></li>
-</ul>
-<p><em>groupby</em> 参数可以与 <em>aggregationLevel</em> 参数结合使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
+| Parameter        | Type   |  Description      |  Required  
+|---------------|--------|---------------|------|
+| applicationId | string | The Store ID of the app for which you want to retrieve acquisition data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
+| startDate | date | The start date in the date range of acquisition data to retrieve. The default is the current date. |  No  |
+| endDate | date | The end date in the date range of acquisition data to retrieve. The default is the current date. |  No  |
+| top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
+| skip | int | The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10000 and skip=0 retrieves the first 10000 rows of data, top=10000 and skip=10000 retrieves the next 10000 rows of data, and so on. |  No  |
+| filter | string  | One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below. | No   |
+| aggregationLevel | string | Specifies the time range for which to retrieve aggregate data. Can be one of the following strings: <strong>day</strong>, <strong>week</strong>, or <strong>month</strong>. If unspecified, the default is <strong>day</strong>. | No |
+| orderby | string | A statement that orders the result data values for each acquisition. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
+| groupby | string | A statement that applies data aggregation only to the specified fields. You can specify the following fields:<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>The returned data rows will contain the fields specified in the <em>groupby</em> parameter as well as the following:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p>The <em>groupby</em> parameter can be used with the <em>aggregationLevel</em> parameter. For example: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  No  |
 
 <span/>
  
-### 筛选器字段
+### <a name="filter-fields"></a>Filter fields
 
-请求中的 *filter* 参数包含一条或多条语句，用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 下面是一些示例 *filter* 参数：
+The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. Here are some example *filter* parameters:
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
 
-有关支持的字段列表，请参阅下表。 *filter* 参数中的字符串值必须使用单引号括起来。
+For a list of the supported fields, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">字段</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">acquisitionType</td>
-<td align="left">以下字符串之一：
-<ul>
-<li><strong>free</strong></li>
-<li><strong>trial</strong></li>
-<li><strong>paid</strong></li>
-<li><strong>promotional code</strong></li>
-<li><strong>iap</strong></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td align="left">ageGroup</td>
-<td align="left">以下字符串之一：
-<ul>
-<li><strong>less than 13</strong></li>
-<li><strong>13-17</strong></li>
-<li><strong>18-24</strong></li>
-<li><strong>25-34</strong></li>
-<li><strong>35-44</strong></li>
-<li><strong>44-55</strong></li>
-<li><strong>greater than 55</strong></li>
-<li><strong>Unknown</strong></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td align="left">storeClient</td>
-<td align="left">以下字符串之一：
-<ul>
-<li><strong>Windows Phone Store (client)</strong></li>
-<li><strong>Windows Store (client)</strong></li>
-<li><strong>Windows Store (web)</strong></li>
-<li><strong>Volume purchase by organizations</strong></li>
-<li><strong>Other</strong></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td align="left">gender</td>
-<td align="left">以下字符串之一：
-<ul>
-<li><strong>m</strong></li>
-<li><strong>f</strong></li>
-<li><strong>Unknown</strong></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td align="left">market</td>
-<td align="left">包含购置行为所在地市场的 ISO 3166 国家/地区代码的字符串。</td>
-</tr>
-<tr class="even">
-<td align="left">osVersion</td>
-<td align="left">以下字符串之一：
-<ul>
-<li><strong>Windows Phone 7.5</strong></li>
-<li><strong>Windows Phone 8</strong></li>
-<li><strong>Windows Phone 8.1</strong></li>
-<li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows8</strong></li>
-<li><strong>Windows8.1</strong></li>
-<li><strong>Windows10</strong></li>
-<li><strong>Unknown</strong></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td align="left">deviceType</td>
-<td align="left">以下字符串之一：
-<ul>
-<li><strong>PC</strong></li>
-<li><strong>Tablet</strong></li>
-<li><strong>Phone</strong></li>
-<li><strong>IoT</strong></li>
-<li><strong>Wearable</strong></li>
-<li><strong>Server</strong></li>
-<li><strong>Collaborative</strong></li>
-<li><strong>Other</strong></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td align="left">orderName</td>
-<td align="left">指定促销充值码（用于获取应用）订单名称的字符串（仅当用户通过兑换促销充值码获取应用后才可用）。</td>
-</tr>
-</tbody>
-</table>
+| Fields        |  Description        |
+|---------------|-----------------|
+| acquisitionType | One of the following strings:<ul><li><strong>free</strong></li><li><strong>trial</strong></li><li><strong>paid</strong></li><li><strong>promotional code</strong></li><li><strong>iap</strong></li></ul> |
+| ageGroup | One of the following strings:<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul> |
+| storeClient | One of the following strings:<ul><li><strong>Windows Phone Store (client)</strong></li><li><strong>Windows Store (client)</strong></li><li><strong>Windows Store (web)</strong></li><li><strong>Volume purchase by organizations</strong></li><li><strong>Other</strong></li></ul> |
+| gender | One of the following strings:<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul> |
+| market | A string that contains the ISO 3166 country code of the market where the acquisition occurred. |
+| osVersion | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
+| deviceType | One of the following strings:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
+| orderName | A string that specifies the name of the order for the promotional code that was used to acquire the app (this only applies if the user acquired the app by redeeming a promotional code). |
 
 <span/> 
 
-### 请求示例
+### <a name="request-example"></a>Request example
 
-以下示例演示用于获取应用购置数据的多个请求。 将 *applicationId* 值替换为你的应用的存储 ID。
+The following example demonstrates several requests for getting app acquisition data. Replace the *applicationId* value with the Store ID for your app.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0  HTTP/1.1
@@ -269,43 +91,43 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?app
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>Response
 
 
-### 响应正文
+### <a name="response-body"></a>Response body
 
-| 值      | 类型   | 说明                                                                                                                                                                                                                                                                            |
-|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array  | 包含聚合评分数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[购置值](#acquisition-values)部分。                                                                                                                      |
-| @nextLink  | 字符串 | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求数据的下一页。 例如，当请求的 **top** 参数设置为 10000，但查询的购置数据超过 10000 行时，就会返回此值。 |
-| TotalCount | int    | 查询的数据结果中的行总数。                                                                                                                                                                                                                             |
+| Value      | Type   | Description                  |
+|------------|--------|-------------------------------------------------------|
+| Value      | array  | An array of objects that contain aggregate ratings data. For more information about the data in each object, see the [acquisition values](#acquisition-values) section below.                                                                                                                      |
+| @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of acquisition data for the query. |
+| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             |
 
 <span/>
  
-### 购置值
+### <a name="acquisition-values"></a>Acquisition values
 
-*Value* 数组中的元素包含以下值。
+Elements in the *Value* array contain the following values.
 
-| 值               | 类型   | 说明                                                                                                                                                                                                                              |
-|---------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| date                | 字符串 | 购置数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
-| applicationId       | 字符串 | 要检索购置数据的应用的存储 ID。                                                                                                                                                                 |
-| applicationName     | 字符串 | 应用的显示名称。                                                                                                                                                                                                             |
-| deviceType          | 字符串 | 购置已完成的设备的类型。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                  |
-| orderName           | 字符串 | 订单名称。                                                                                                                                                                                                                   |
-| storeClient         | 字符串 | 发生购置行为的应用商店版本。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                            |
-| osVersion           | 字符串 | 发生购置行为的操作系统版本。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                   |
-| market              | 字符串 | 发生购置行为的市场的 ISO 3166 国家/地区代码。                                                                                                                                                                  |
-| gender              | 字符串 | 进行购置的用户的性别。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                    |
-| ageGroup            | 字符串 | 进行购置的用户的年龄组。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                 |
-| acquisitionType     | 字符串 | 购置类型（免费、付费等）。 有关支持的字符串列表，请参阅上述[筛选器字段](#filter-fields)部分。                                                                                                    |
-| acquisitionQuantity | 数字 | 在指定的聚合级别期间发生的购置数。                                                                                                                                                         |
+| Value               | Type   | Description                           |
+|---------------------|--------|-------------------------------------------|
+| date                | string | The first date in the date range for the acquisition data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
+| applicationId       | string | The Store ID of the app for which you are retrieving acquisition data.                                                                                                                                                                 |
+| applicationName     | string | The display name of the app.                                                                                                                                                                                                             |
+| deviceType          | string | The type of device that completed the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                  |
+| orderName           | string | The name of the order.                                                                                                                                                                                                                   |
+| storeClient         | string | The version of the Store where the acquisition occurred. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                            |
+| osVersion           | string | The OS version on which the acquisition occurred. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                   |
+| market              | string | The ISO 3166 country code of the market where the acquisition occurred.                                                                                                                                                                  |
+| gender              | string | The gender of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
+| ageGroup            | string | The age group of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                 |
+| acquisitionType     | string | The type of acquisition (free, paid, and so on). For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
+| acquisitionQuantity | number | The number of acquisitions that occurred during the specified aggregation level.                                                                                                                                                         |
 
 <span/> 
 
-### 响应示例
+### <a name="response-example"></a>Response example
 
-以下示例举例说明此请求的 JSON 响应正文。
+The following example demonstrates an example JSON response body for this request.
 
 ```json
 {
@@ -330,17 +152,17 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 相关主题
+## <a name="related-topics"></a>Related topics
 
-* [购置报告](../publish/acquisitions-report.md)
-* [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
-* [获取加载项购置](get-in-app-acquisitions.md)
-* [获取错误报告数据](get-error-reporting-data.md)
-* [获取应用评分](get-app-ratings.md)
-* [获取应用评价](get-app-reviews.md)
+* [Acquisitions report](../publish/acquisitions-report.md)
+* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Get add-on acquisitions](get-in-app-acquisitions.md)
+* [Get error reporting data](get-error-reporting-data.md)
+* [Get app ratings](get-app-ratings.md)
+* [Get app reviews](get-app-reviews.md)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

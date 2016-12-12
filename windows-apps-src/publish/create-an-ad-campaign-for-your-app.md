@@ -1,126 +1,110 @@
 ---
 author: jnHs
-Description: "可以使用开发人员中心仪表板来创建广告活动，从而有助于推广你的应用并扩大使用你的应用的用户群。"
-title: "为你的应用创建广告市场活动"
+Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app&quot;s user base.
+title: Create an ad campaign for your app
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 translationtype: Human Translation
-ms.sourcegitcommit: 0cd83d5e93952689386bf2ae08fa3bf4e924dbdb
-ms.openlocfilehash: fd756ffa54cf6d81ff2d78878d03aadf0e46ca52
+ms.sourcegitcommit: 65b82f422e602515e9531664e35f1e1c1e9f5932
+ms.openlocfilehash: 3ea67f9e4f0d834bd77ef116c5e0b16008f4ae5f
 
 ---
 
-# 为你的应用创建广告市场活动
+# <a name="create-an-ad-campaign-for-your-app"></a>Create an ad campaign for your app
 
 
-可以使用开发人员中心仪表板来创建广告活动，从而有助于推广你的应用并扩大使用你的应用的用户群。 默认情况下，我们将根据你的应用在开发人员中心仪表板中的设置来为你的广告选择目标受众，不过你也可以选择定义你自己的受众。 你还可以使用一组默认的广告模板，或者上载你自己的广告设计。 有关广告市场活动的更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md)。
+You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base. By default, we will choose the target audience for your ads based on the settings for your app in the Dev Center dashboard, but you can optionally define your own audience. You can also use a default set of ad templates or upload your own ad designs. For more details about ad campaigns, see [Common questions about ad campaigns](common-questions.md).
 
-> 
-            **注意** 你可以仅为通过[应用认证过程](the-app-certification-process.md)的最终发布阶段的应用创建广告市场活动。
+> **Note**  You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
 
-下面介绍了如何创建广告市场活动来推广你的应用。
+Here's how to create an ad campaign to promote your app.
 
-1.  在开发人员中心仪表板中，从应用页的左侧导航菜单上依次单击“盈利”&gt;“推广你的应用”。
-2.  执行下列操作之一：
+1.  From the left navigation menu on your app's page in the Dev Center dashboard, click **Monetization** &gt; **Promote your app**.
+2.  Do one of the following:
 
-    -   如果你尚未针对此应用创建广告市场活动，“推广你的应用”页面将显示有关广告市场活动优势的信息。 单击“开始使用”或“创建广告市场活动”。
-    -   如果你已为此应用创建广告市场活动，“推广你的应用”页面将列出你的现有广告市场活动。 单击“新建市场活动”。
-3.  在“新建市场活动”页的“市场活动目标”部分中，选择以下目标之一：
-    -   
-            **增加应用安装量**。 如果广告市场活动的目的是使用户安装应用，请选择此选项。
-    -   
-            **提升应用参与度**。 如果广告市场活动的目的是使客户增加应用使用频率，请选择此选项。
+    -   If you have not yet created an ad campaign for this app, the **Promote your app** page displays information about the benefits of ad campaigns. Click **Get started** or **Create an ad campaign**.
+    -   If you have already created an ad campaign for this app, the **Promote your app** page lists your existing ad campaigns. Click **New campaign**.
+3.  On the **New campaign** page, in the **Campaign objective** section, choose one of the following:
+    -   **Increase installs for your app**. Select this option if your ad campaign is intended to get people to install your app.
+    -   **Increase engagement in your app**. Select this option if your ad campaign is intended to get your customers to increase their usage of your app. When you select this option, you can target your ad campaign at specific [customer segments](create-customer-segments.md) that you define.
 
-4.  在“市场活动详细信息”部分中，定义市场活动的整体设置。
-    -   在“市场活动名称”字段中命名广告市场活动。
-    -   在“活动类型”下，选择其中一个选项：
-        -   
-            **付费**：这些广告将在与应用的设备和类别相匹配的任何应用中运行。
-        -   
-            **社区（免费）**：这些广告将在其他也创建社区广告市场活动的开发人员发布的应用中运行。 在能够选择此选项前，必须先选中仪表板“利用广告来盈利”页面的“在我的应用中显示社区广告”框。 有关详细信息，请参阅[关于社区广告](about-community-ads.md)。
-        -   
-            **自家（免费）**：这些广告仅在你的应用（与所宣传应用的设备相匹配）中运行。 自家广告不收取任何费用。 有关详细信息，请参阅[关于自家广告](about-house-ads.md)。
-    -   在“市场活动持续时间”下，选择以下选项中的其中一个选项：
-        - 
-            **自定义**。 如果选择此选项，市场活动预算将在指定的日期和时间范围内使用。
-        - 
-            **按月份**。 如果选择此选项，市场活动预算将在每个月定期使用，直到市场活动停止。
+4.  In the **Campaign details** section, define the overall settings for your campaign.
+    -   Name your ad campaign in the **Campaign name** field.
+    -   Under **Campaign type**, choose one of these options:
+        -   **Paid**: These ads will run in any app that matches your app’s device and category.
+        -   **Community (free)**: These ads will run in apps published by other developers who also create community ad campaigns. Before you can select this option, you must first check the **Show community ads in my app** box in the **Monetize with ads** page of the dashboard. For more information, see [About community ads](about-community-ads.md).
+        -   **House (free)**: These ads will only run in your apps (that match the advertised app’s device). House ads are free of charge. For more information, see [About house ads](about-house-ads.md).
+    -   Under **Campaign duration**, choose one of these options:
+        - **Custom**. If you choose this option, your campaign budget will be spent during the date and time range you specify. This option is only available to developers who have a premium account. For more info about premium accounts, see [Common questions about ad campaigns](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
+        - **Monthly**. If you choose this option, your campaign budget will be spent every month on a recurring basis until you stop the campaign.
 
-    > 
-            **注意** 如果应用尚未发布，将在“新建市场活动”页面上收到一条错误消息。 必须等到应用发布，才能为该应用创建广告市场活动。
+    > **Note**  If your app is not yet published, you will receive an error message on the **New campaign** page. You must wait for your app to be published before you can create an ad campaign for it.
 
-5.  如果选择“增加应用安装量”作为市场活动目标，我们将根据你在开发人员中心仪表板中创建应用时所选的设置，选择广告受众。 如果希望自行选择广告受众，选择“手动”，展开“受众”部分。 如果希望返回到默认目标，请选择“自动”。
+5.  If you chose **Increase app installations** as your campaign objective, we will choose the audience for your ads, based on the settings you selected when creating the app in the Dev Center dashboard. If you would rather choose the audience for your ads yourself, select **Manual** to expand the **Audience** section. If you want to go back to default targeting, select **Automatic**.
 
-    如果选择“手动”，可编辑以下目标信息：
+    If you select **Manual**, you can edit the following targeting information:
 
-    -   选择希望显示这些广告的国家或地区。 最多可以选择 5 个。 有关受支持的国家或地区列表，请参阅[常见问题](common-questions.md)。
-    -   选择你希望显示这些广告的设备类型。 仅显示你的应用支持的设备类型。
-    -   选择操作系统。 仅显示你的应用支持的操作系统。
-    -   选择所需受众的性别和年龄范围。
+    -   Choose the countries or regions in which you want these ads to appear. You can choose up to 5. For a list of the supported countries or regions, see [Common questions about ad campaigns](common-questions.md#where-will-my-ad-appear).
+    -   Choose the device types on which you want these ads to appear. Only the device types supported by your app are shown.
+    -   Choose the operating system. Only the operating systems supported by your app are shown.
+    -   Select the gender and age range of your desired audience.
 
-    此部分还显示了“预计受众”图。 根据选定市场中所有支持 Windows 广告的应用用户的百分比，此图显示了通过当前目标选择可触及到的受众。
+    This section also displays an **Estimated Reach** graph. This graph shows the audience you can reach with your current targeting selections as a percentage of all Windows ad-enabled app users in the selected markets.
 
-6.  如果选择“提升应用参与度”作为市场活动目标，可选择一个客户类别作为目标。
+6.  If you chose **Increase app engagement** as your campaign objective, you can select one of your customer segments to target.
 
-    > 
-            **注意** 使用此广告活动创建的广告将仅向包含在此类别中的客户显示。 每个市场活动仅可选择一个客户类别。
+    > **Note**  Ads created using this campaign will be shown only to the customers who are included in the segment. Only one segment can be selected per ad campaign. For info about segments, see [Create customer segments](create-customer-segments.md).
 
 
-7.  在“广告设计”部分中，选择以下选项之一：
-    -   
-            **自定义**。 选择此选项可使用自己的广告设计。 请注意，如果在步骤 6 中选择了客户类别，则必须使用自定义创意。 可以为每个可用的广告大小上传不同文件。 文件必须满足以下要求和指南：
-        -   每个文件都必须是 40 KB 或更小的 .png 或 .jpg 格式的文件。
-        -   广告设计必须满足 [Microsoft 创意承诺策略](http://go.microsoft.com/fwlink?LinkId=532595)中指定的要求。
-        -   广告设计的内容必须与你要推广的应用密切相关。 与应用不相关的广告设计将不会分发给其他应用中的广告。
-        -   广告设计中的所有内容应清晰易读。 例如，呈现的内容不能模糊不清、像素化或拉伸。
-    -   
-            **自动生成**。 选择此选项可使用默认模板列表中的广告。 你可以通过以下选项来自定义广告中的内容。 做出选择后，广告预览将自动更新。
-        -   在“语言”下拉列表中，选择广告语言。 Windows 应用商店锁屏提醒的文本和你的自定义标记行文本（如果指定）将以你选择的语言显示。
-        -   若要向你的广告添加额外的文本行，可在“自定义标记行”字段中输入文本。
-            > 
-            **注意** 必须将你输入的文本本地化为所选语言。 如果文本违反[必应广告策略](http://go.microsoft.com/fwlink?LinkId=398341)，将拒绝该自定义标记行。 有关样式和禁止内容的指南，请参考此页面。
+7.  In the **Ad design** section, choose one of these options:
+    -   **Custom**. Choose this option to use your own ad designs. Note that if you selected a customer segment in Step 6, you must use custom creatives. You can upload different files for each of the available ad sizes. The files must meet the following requirements and guidelines:
+        -   Each file must be a .png or .jpg that is 40 KB or smaller.
+        -   Your ad designs must meet the requirements specified in the [Microsoft Creative Acceptance Policy](http://go.microsoft.com/fwlink?LinkId=532595).
+        -   The content in your ad designs must be relevant to the app you are promoting. Ad designs that are not related to the app will not be distributed to ads in other apps.
+        -   All content in your ad designs should be clearly legible. For example, content should not be blurred, pixelated or stretched.
+    -   **Auto-generated**. Choose this option to use ads from a list of default templates. You have the following options to customize the content in the ads. As you make selections, the previews of your ads will update automatically.
+        -   In the **Language** drop-down, select the language of the ads. The text for the Windows Store badge and your custom tag line text (if specified) will show in the language you select.
+        -   To add an extra line of text to your ad, enter the text in the **Custom tag line** field.
+            > **Note**  The text you enter must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](http://go.microsoft.com/fwlink?LinkId=398341). Consult this page for guidance on style and disallowed content.
 
-        -   若要选择进一步自定义广告，请展开“自定义广告设计 / 查看所有广告大小”，然后选择以下任意选项之一：
-            - 
-            **背景色**。 在可用选项中选择。
-            - 
-            **图像**。 可用图像是与应用商店中应用相关联的图像。
-            - 
-            **显示应用分级**。 如果希望显示应用分级，请选中此框。
-            - 
-            **显示应用免费**。 如果应用在所有选定市场中免费，还可以选中此框。
-            - 
-            **行动号召**。 选择“打开”、“播放”、“阅读”、“收听”或“购物”。
+        -   To further customize the ad, expand **Customize ad design / See all ad sizes** and choose any of the following:
+            - **Background color**. Choose from the available options.
+            - **Images**. The available images are the images you have associated with your app in the Store.
+            - **Show my app rating**. Select this checkbox if you want to show the app's rating.
+            - **Show that my app is free**. If your app is free in all the selected markets, you will also have the option to select this checkbox.
+            - **Call to action**. If you chose **Increase app engagement** as your campaign objective, you can set your ad's call to action button to **Open**, **Play**, **Read**, **Listen**, or **Shop**.  
 
+8.  If you have a [premium account](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), you can use the **Destination URL** box to control what happens when a customer clicks your ad.
+    - If you leave the box empty, when a customer clicks your ad, your app's Store listing will be displayed.
+    - If you are using Kochava or Tune to measure install analytics for your app, enter your install tracking URL from Kochava or Tune. When you save the campaign, the tracking URL is validated to make sure that it resolves to the listing page for your app in the Windows Store. For more information about install tracking with Kochava and Tune, see the [Kochava](http://support.kochava.com/) and [Tune](https://help.tune.com/) documentation.
+    - If you chose **Increase app engagement** as your campaign objective, you can specify a [deep-link URI](../launch-resume/handle-uri-activation.md) to redirect customers in the selected segment to a specific page within your app.
+    - If you specify any destination that is not your app description page or a page inside of your app, your campaign will automatically be paused.
 
-8. 如果使用 Kochava 或 Tune 测量应用的安装分析，请单击“第三方安装跟踪 URL(Kochava 或 Tune)”，然后输入 Kochava 或 Tune 中的安装跟踪 URL。 当你保存市场活动时，将验证跟踪 URL 以确保它在 Windows 应用商店中解析为应用的一览页。 有关 Kochava 和 Tune 的安装跟踪的详细信息，请参阅 [Kochava](http://support.kochava.com/) 和 [Tune](https://help.tune.com/) 文档。
+9.  Now choose your ad campaign's financial settings in the **Budget and payment** section.
+   > **Note**  If you are creating a house campaign or community campaign, the **Budget and payment** section will not appear, since these campaigns are free of charge.
 
-9.  现在，在“预算和付款”部分选择广告市场活动的财务设置。
-   > 
-            **注意** 如果你要创建自家市场活动或社区市场活动，将不会显示“预算和付款”部分，因为这些市场活动不收取任何费用。
+    -   Under **Budget**, use the slider to set the amount of money you want to spend each month to run this ad.
 
-    -   在“预算”下，使用滑块设置你希望每月为运行此广告所花费的金额。
+        The monthly budget is prorated for the month in which the ad campaign is created. In other words, if you create an ad campaign halfway through a calendar month, you will be charged for half of your monthly budget for that month.
 
-        每月预算针对创建广告市场活动的月份按比例分配。 换言之，如果你在日历月中途创建广告市场活动，在该月你只需支付每月预算的一半。
+    -   Set a payment instrument for your ad campaign by clicking **Add new payment instrument** and fill in your account details.
+        > **Important**  The country/region of your payment instrument's billing address must match the country/region associated with your Dev Center account.
+-   If you have received a coupon from a Microsoft representative to pay for an ad campaign, click **Use a coupon**, enter the coupon code, and click **Apply** to apply the coupon to the campaign.
 
-    -   单击“添加新的付款方式”并填写帐户详细信息，设置广告市场活动的付款方式。
-        > 
-            **重要提示** 付款方式帐单地址所在的国家/地区必须与你的开发人员中心帐户相关联的国家/地区相匹配。
-- 如果你已从 Microsoft 代表收到优惠券来支付广告市场活动，请单击“使用优惠券”、输入优惠券代码，然后单击“应用”即可将优惠券应用到该市场活动。
+10.  Finally, click **Review** to confirm your ad campaign's settings and, if it's a paid ad campaign, its budget and payment information. Click **Confirm** and your ads will typically start appearing on devices within a few hours.
+   > **Tip**  To see how your campaigns are performing, in the top navigation menu of the dashboard, select **Promotions**. Select **Section filters** to scope what's included in the report by **Date**, **Campaign objective**, **App name**, **Campaign type**, or **Status**. In addition to seeing info about your campaign's **Impressions**, **Clicks**, **Conversions**, and **Spend**, you can use the report to **Pause** or **Resume** a campaign. To edit a campaign, select its name in the list.
 
-10.  最后，单击“查看”以确认广告市场活动设置及其预算和付款信息（如果为付费广告市场活动）。 单击“确认”，你的广告通常会在数小时内开始出现在设备上。
+## <a name="related-topics"></a>Related topics
 
-## 相关主题
-
-* [管理广告市场活动](managing-your-ad-campaign.md)
-* [关于自家广告](about-house-ads.md)
-* [应用安装广告报告](app-install-ads-reports.md)
-* [有关广告市场活动的常见问题](common-questions.md)
+* [Managing your ad campaign](managing-your-ad-campaign.md)
+* [About house ads](about-house-ads.md)
+* [App install ads report](app-install-ads-reports.md)
+* [Common questions about ad campaigns](common-questions.md)
  
 
  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

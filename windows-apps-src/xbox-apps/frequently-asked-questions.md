@@ -1,105 +1,105 @@
 ---
 author: Mtoepke
-title: "常见问题"
-description: "有关 Xbox 上的 UWP 的常见问题。"
+title: Frequently asked questions
+description: FAQ about UWP on Xbox.
 translationtype: Human Translation
-ms.sourcegitcommit: 07e7ec6a5816d4b8d33322b2b1af05ffc3e1b820
-ms.openlocfilehash: 38e5d48b2b0303b5f7d13fdaf6f71e1b3fa56978
+ms.sourcegitcommit: 1ee75d73cc42455677bc2c0df08b41f33fc4f7b0
+ms.openlocfilehash: a6d410e3a4873bb96fba46789b28185c392a7492
 
 ---
 
-# 常见问题
+# <a name="frequently-asked-questions"></a>Frequently asked questions
 
-是否未按预期工作？ 查看此常见问题页面。 另外，请查看[已知问题](known-issues.md)主题和[开发通用 Windows 应用](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)论坛。 
+Things not working the way you expected? Look through this page of frequently asked questions. Also check out the [Known issues](known-issues.md) topic and the [Developing Universal Windows apps](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) forum. 
 
-### 为什么我的游戏和应用不工作？
+### <a name="why-are-my-games-and-apps-not-working"></a>Why are my games and apps not working?
 
-如果你的游戏和应用不工作，或者如果你无法访问应用商店或 Live 服务，你可能在开发人员模式下运行。 当你选择“主页”并在你屏幕的右侧看到较大的“开发人员主页”磁贴（而不是常规的 Gold/Live 内容）时，可以得知你是在开发人员模式下运行。 如果想要玩游戏，你可以打开“开发人员主页”，然后通过使用“退出开发人员模式”****按钮切换回零售模式。
+If your games and apps are not working, or if you don’t have access to the store or to Live services, you are probably running in Developer Mode. You can tell you’re running in Developer Mode if you select Home and you see a big Dev Home tile on the right side of your screen, instead of the usual Gold/Live content. If you want to play games, you can open Dev Home and switch back to Retail Mode by using the **Leave developer mode** button.
 
-### 为什么我无法使用 Visual Studio 连接到 Xbox One？
+### <a name="why-cant-i-connect-to-my-xbox-one-using-visual-studio"></a>Why can’t I connect to my Xbox One using Visual Studio?
 
-首先要确认是在开发人员模式下运行，而不是在零售模式下运行。 你无法连接到在零售模式下运行的 Xbox One。 只需按“主页”****按钮并查看你屏幕右侧的“开发人员主页”磁贴，即可对此问题进行检查。 如果你看到的不是该磁贴，而是金会员/Live 内容，这表明你处于零售模式。 若要切换到开发人员模式，需要运行“开发人员模式激活”应用。
-
-> [!NOTE]
-> 必须进行用户登录才能部署应用。
-
-有关详细信息，请参阅此页面后面部分的[修复部署失败](#fixing-deployment-failures)。
-
-### 如何在零售模式和开发人员模式之间切换？
-
-请遵循 [Xbox One 开发人员模式激活](devkit-activation.md)说明以了解有关这些状态的详细信息。
-
-### 我如何知道我是在零售模式下还是在开发人员模式下？
-
-请遵循 [Xbox One 开发人员模式激活](devkit-activation.md)说明以了解有关这些状态的详细信息。 
-
-只需按“主页”****按钮并查看你的屏幕右侧，即可对此问题进行检查。 如果你在开发人员模式下，你将在右侧看到“开发人员主页”磁贴。 如果你在零售模式下，你将看到常规的金会员/Live 内容。
-
-### 当我激活开发人员模式时，我的游戏和应用是否仍可以运行？
-
-是的，你可以从开发人员模式切换到零售模式，同时可以玩游戏。 有关详细信息，请参阅 [Xbox One 开发人员模式激活](devkit-activation.md)页。 
-
-### 我的游戏和应用或保存的更改是否会丢失？
-
-如果决定退出开发人员计划，不会丢失安装的游戏和应用。 此外，只要你在玩游戏时处于联机状态，保存的游戏就全部保存在你的 Live 帐户云配置文件中，因此不会丢失它们。
-
-### 如何退出开发人员计划？
-
-有关如何退出开发人员计划的详细信息，请参阅 [Xbox One 开发人员模式停用](devkit-deactivation.md)主题。
-
-### 我已出售我的 Xbox One，并且将它保留在开发人员模式下。 如何停用开发人员模式？
-
-如果你不再能够访问你的 Xbox One，可以在 Windows 开发人员中心中停用它。 有关详细信息，请参阅 [Xbox One 开发人员模式停用](devkit-deactivation.md#deactivate-your-console-through-windows-dev-center)主题中的**使用 Windows 开发人员中心停用主机**部分。
-
-### 我已使用 Windows 开发人员中心退出了开发人员计划，但我仍处于开发人员模式下。 我该怎么办？
-
-启动“开发人员主页”，然后选择“退出开发人员模式”****按钮。 这将在零售模式下重新启动主机。 
-
-### 我是否可以发布我的应用？
-
-如果你有[开发者帐户](https://developer.microsoft.com/store/register)，可以通过开发人员中心[发布应用](../publish/index.md)。 在零售 Xbox One 主机上创建和测试的 UWP 应用将经过当今 Windows 执行的相同引入、审阅和发布过程，以及符合当今 Xbox One 标准的其他审阅。
-
-### 我是否可以发布我的游戏？
-
-你可以在开发人员模式下使用 UWP 和你的 Xbox One，在 Xbox One 上生成和测试你的游戏。 若要发布 UWP 游戏，你必须注册 [ID@XBOX](http://www.xbox.com/Developers/id)。 
-[ID@XBOX](http://www.xbox.com/Developers/id) 向开发人员提供适用于其游戏的 Xbox Live API 的完整访问权限，包括玩家分数和成就以及在设备之间畅玩多人游戏、云存储和 Xbox One 上 Xbox Live 的所有功能。 
-[ID@XBOX](http://www.xbox.com/Developers/id) 还可以为需要访问 Xbox One 硬件最大潜能的游戏提供对 Xbox One 开发工具包的访问权限。
-
-### 标准游戏引擎是否工作？
-
-请查看此版本的[已知问题](known-issues.md)页。
-
-### 哪些功能和系统资源将提供给 Xbox One 上的 UWP 游戏？ 
-
-有关信息，请参阅 [Xbox One 上的 UWP 应用和游戏的系统资源](system-resource-allocation.md)。
-
-### 如果我创建了 DirectX 12 UWP 游戏，那么它是否可以在开发人员模式下在我的 Xbox One 上运行？
-
-有关信息，请参阅 [Xbox One 上的 UWP 应用和游戏的系统资源](system-resource-allocation.md)。
-
-### 在 Xbox 上整个 UWP API 图面是否可用？
-
-请查看此版本的[已知问题](known-issues.md)页。
-
-### 修复部署失败
-
-如果无法从 Visual Studio 部署你的应用，以下步骤可能有助于你修复该问题。 如果遇到问题，请通过论坛寻求帮助。
+Start by verifying that you are running in Developer Mode, and not in Retail Mode. You cannot connect to your Xbox One when it is in Retail Mode. You can simply check this by pressing the **Home** button and looking for the Dev Home tile on the right side of your screen. If the tile is not there, but instead you see Gold/Live content, you are in Retail Mode. You need to run the Dev Mode Activation app to switch to Developer Mode.
 
 > [!NOTE]
-> 必须进行用户登录才能部署应用。 如果收到 0x87e10008 错误消息，请确保已进行用户登录，然后再试一次。
+> You must have a user signed in to deploy an app.
 
-如果 Visual Studio 无法连接到你的 Xbox One：
+For more information, see [Fixing deployment failures](#fixing-deployment-failures) later on this page.
 
-1. 请确保你在开发人员模式下（已在本页的前面部分讨论过）。
-2. 确保已正确设置了你的开发电脑。 是否按照 [Xbox One 上的 UWP 应用开发入门](getting-started.md)中的*全部*指示进行操作？ 
+### <a name="how-do-i-switch-between-retail-mode-and-developer-mode"></a>How do I switch between Retail Mode and Developer Mode?
 
-3. 如果尚未执行此操作，请通读[开发环境设置](development-environment-setup.md)主题和 [Xbox One 工具简介](introduction-to-xbox-tools.md)主题。
+Follow the [Xbox One Developer Mode Activation](devkit-activation.md) instructions to understand more about these states.
 
-4. 确保可以从你的开发电脑对你的主机 IP 地址执行“ping”操作。
+### <a name="how-do-i-know-if-i-am-in-retail-mode-or-developer-mode"></a>How do I know if I am in Retail Mode or Developer Mode?
+
+Follow the [Xbox One Developer Mode Activation](devkit-activation.md) instructions to understand more about these states. 
+
+You can simply check this by pressing the **Home** button and looking at the right side of the screen. If you are in Developer Mode, you will see the Dev Home tile on the right side. If you are in Retail Mode, you will see the usual Gold/Live content.
+
+### <a name="will-my-games-and-apps-still-work-if-i-activate-developer-mode"></a>Will my games and apps still work if I activate Developer Mode?
+
+Yes, you can switch from Developer Mode to Retail Mode, where you can play your games. For more information, see the [Xbox One Developer Mode Activation](devkit-activation.md) page. 
+
+### <a name="will-i-lose-my-games-and-apps-or-saved-changes"></a>Will I lose my games and apps or saved changes?
+
+If you decide to leave the Developer Program, you won't lose your installed games and apps. In addition, as long as you were online when you played them, your saved games are all saved on your Live account cloud profile, so you won’t lose them.
+
+### <a name="how-do-i-leave-the-developer-program"></a>How do I leave the Developer Program?
+
+See the [Xbox One Developer Mode Deactivation](devkit-deactivation.md) topic for details about how to leave the Developer Program.
+
+### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>I sold my Xbox One and left it in Developer Mode. How do I deactivate Developer Mode?
+
+If you no longer have access to your Xbox One, you can deactivate it in Windows Dev Center. For details, see the **Deactivate your console using Windows Dev Center** section in the [Xbox One Developer Mode Deactivation](devkit-deactivation.md#deactivate-your-console-using-windows-dev-center) topic. 
+
+### <a name="i-left-the-developer-program-using-windows-dev-center-but-im-in-still-developer-mode-what-do-i-do"></a>I left the Developer Program using Windows Dev Center but I’m in still Developer Mode. What do I do?
+
+Start Dev Home and select the **Leave developer mode** button. This will restart your console in Retail Mode. 
+
+### <a name="can-i-publish-my-app"></a>Can I publish my app?
+
+You can [publish apps](../publish/index.md) through Dev Center if you have a [developer account](https://developer.microsoft.com/store/register). UWP apps created and tested on a retail Xbox One console will go through the same ingestion, review, and publication process that Windows conducts today, with additional reviews to meet today’s Xbox One standards.
+
+### <a name="can-i-publish-my-game"></a>Can I publish my game?
+
+You can use UWP and your Xbox One in Developer Mode to build and test your games on Xbox One. To publish UWP games, you must register with [ID@XBOX](http://www.xbox.com/Developers/id). 
+[ID@XBOX](http://www.xbox.com/Developers/id) provides developers full access to Xbox Live APIs for their games, including Gamerscore and Achievements, as well as the ability to take advantage of multiplayer between devices, cloud saves, and all the features of Xbox Live on Xbox One. 
+[ID@XBOX](http://www.xbox.com/Developers/id) can also provide access to Xbox One development kits for games that require access to the maximum potential of the Xbox One hardware.
+
+### <a name="will-the-standard-game-engines-work"></a>Will the standard Game engines work?
+
+Check out the [Known issues](known-issues.md) page for this release.
+
+### <a name="what-capabilities-and-system-resources-are-available-to-uwp-games-on-xbox-one"></a>What capabilities and system resources are available to UWP games on Xbox One? 
+
+For information, see [System resources for UWP apps and games on Xbox One](system-resource-allocation.md).
+
+### <a name="if-i-create-a-directx-12-uwp-game-will-it-run-on-my-xbox-one-in-developer-mode"></a>If I create a DirectX 12 UWP game, will it run on my Xbox One in Developer Mode?
+
+For information, see [System resources for UWP apps and games on Xbox One](system-resource-allocation.md).
+
+### <a name="will-the-entire-uwp-api-surface-be-available-on-xbox"></a>Will the entire UWP API surface be available on Xbox?
+
+Check out the [Known issues](known-issues.md) page for this release.
+
+### <a name="fixing-deployment-failures"></a>Fixing deployment failures
+
+If you can’t deploy your app from Visual Studio, these steps may help you fix the problem. If you get stuck, ask for help on the forum.
+
+> [!NOTE]
+> You must have a user signed in to deploy an app. If you receive a 0x87e10008 error message, make sure you have a user signed in and try again.
+
+If Visual Studio cannot connect to your Xbox One:
+
+1. Make sure that you are in Developer Mode (discussed earlier on this page).
+2. Make sure that you have set up your development PC correctly. Did you follow *all* of the directions in [Getting started with UWP app development on Xbox One](getting-started.md)? 
+
+3. If you haven’t yet, read through the [Development environment setup](development-environment-setup.md) topic and the [Introduction to Xbox One tools](introduction-to-xbox-tools.md) topic.
+
+4. Make sure that you can “ping” your console IP address from your development PC.
   > [!NOTE]
-  > 为了获得最佳部署性能，我们建议你采用有线连接方式连接你的主机。
+  > In order to get the best deployment performance, we recommend that you use a wired connection to your console.
 
-5. 确保使用的是“调试”****选项卡上的“身份验证”下拉列表中的“通用(未加密协议)”。 有关更多详细信息，请参阅[开发环境设置](development-environment-setup.md)。
+5. Make sure that you are using the Universal (Unencrypted Protocol) in the Authentication drop-down list on the **Debug** tab. For more details, see [Development environment setup](development-environment-setup.md).
 
 <!--6. Make sure you are not hitting a PIN pairing issue; see "Visual Studio/Xbox PIN pairing failures" in the [Known Issues](known-issues.md) topic.-->
 
@@ -122,18 +122,18 @@ Go to Settings > System > Console info & updates > Reset console, and select the
 This will delete all of your games, apps, settings and content and deactivate Developer Mode.
 -->
 
-### 如果我要使用 HTML/JavaScript 生成应用，如何启用游戏板导航？
+### <a name="if-im-building-an-app-using-htmljavascript-how-do-i-enable-gamepad-navigation"></a>If I’m building an app using HTML/JavaScript, how do I enable Gamepad navigation?
 
-TVHelpers 是一套 JavaScript 和 XAML/C# 示例和库，可帮助你使用 JavaScript 和 C# 生成出色的 Xbox One 和电视体验。 TVJS 是一个库，可帮助你生成适用于 Xbox One 的高级 UWP 应用。 TVJS 包括对自动控制器导航、丰富媒体播放、搜索以及更多内容的支持。 将 TVJS 用于托管的 Web 应用就像将其用于拥有对 Windows 运行时 API 的完全访问权限的打包 Web UWP 应用一样轻松。
+TVHelpers is a set of JavaScript and XAML/C# samples and libraries to help you build great Xbox One and TV experiences in JavaScript and C#. TVJS is a library that helps you build premium UWP apps for Xbox One. TVJS includes support for automatic controller navigation, rich media playback, search, and more. You can use TVJS with your hosted web app just as easily as with a packaged web UWP app with full access to the Windows Runtime APIs.
 
-有关详细信息，请参阅 [TVHelpers](https://github.com/Microsoft/TVHelpers) 项目和 [wiki](https://github.com/Microsoft/TVHelpers/wiki) 项目。
+For more information, see the [TVHelpers](https://github.com/Microsoft/TVHelpers) project and the project [wiki](https://github.com/Microsoft/TVHelpers/wiki).
 
-## 另请参阅
-- [Xbox One 上的 UWP 的已知问题](known-issues.md)
-- [Xbox One 上的 UWP](index.md)
+## <a name="see-also"></a>See also
+- [Known issues with UWP on Xbox One](known-issues.md)
+- [UWP on Xbox One](index.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

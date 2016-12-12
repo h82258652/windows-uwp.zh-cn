@@ -1,82 +1,82 @@
 ---
 author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: "适用于移动设备的 Device Portal"
-description: "了解 Windows Device Portal 是如何支持你远程配置和管理你的移动设备。"
+title: Device Portal for Mobile
+description: Learn how the Windows Device Portal lets you remotely configure and manage your mobile device.
 translationtype: Human Translation
-ms.sourcegitcommit: df6d42d6a91b8721e905fe9bc3a339dc33408459
-ms.openlocfilehash: 802030f12f2ca3e29eec053d89ab806298974dc7
+ms.sourcegitcommit: ea4f755afbf16d4ba5043ebb6be586f19dcc4370
+ms.openlocfilehash: c39c1a843c4f466e1999b4e80bf87f5842ad1996
 
 ---
-# 适用于移动设备的 Device Portal
+# <a name="device-portal-for-mobile"></a>Device Portal for Mobile
 
-从版本 1511 的 Windows 10 开始，附加的开发人员功能可用于移动设备系列。 这些功能仅在设备上启用了“开发人员模式”时才可用。
+Starting in Windows 10, Version 1511, additional developer features are available for the mobile device family. These features are available only when Developer mode is enabled on the device.
 
-有关如何启用“开发人员模式”的信息，请参阅[启用设备进行开发](../get-started/enable-your-device-for-development.md)。
+For info about how to enable Developer mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
-![Device Portal 设置](images/device-portal/mob-dev-mode-options.png)
+![Device Portal settings](images/device-portal/mob-dev-mode-options.png)
 
-## 在 Windows Phone 上设置 Device Portal
+## <a name="set-up-device-portal-on-windows-phone"></a>Set up Device Portal on Windows Phone
 
-### 打开设备发现和配对
+### <a name="turn-on-device-discovery-and-pairing"></a>Turn on device discovery and pairing
 
-若要连接 Device Portal，必须启用设备发现。 这允许你将手机与电脑或其他 Windows 10 设备进行配对。 两台设备均必须通过有线或无线的连接方式连接到网络的同一子网，或者它们必须通过 USB 进行连接。
+To connect to Device Portal, you must enable Device discovery and Device Portal. This lets you pair your phone with a PC or other Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB.
 
-首次连接 Device Portal 时，要求输入区分大小写的 6 个字符的安全代码。 这可确保你对手机拥有访问权限，并且使你的手机免受攻击。 在手机上按“配对”按钮将生成和显示 6 个字符的代码，然后在浏览器的文本框中输入该代码。
+The first time you connect to Device Portal, you are asked for a case-sensitive, 6 character security code. This ensures that you have access to the phone, and keeps you safe from attackers. Press the Pair button on your phone to generate and display the code, then enter the 6 characters into the text box in the browser.
 
-![开发人员模式设备发现设置](images/device-portal/mob-dev-mode-pairing.png)
+![Developer mode device discovery settings](images/device-portal/mob-dev-mode-pairing.png)
 
-你可以从 3 种方法中选择一种方法连接到 Device Portal：USB、本地主机和通过本地网络（包括 VPN 和网络共享）。
+You can choose from 3 ways to connect to Device Portal: USB, local host, and over the local network (including VPN and tethering).
 
-**连接到 Device Portal**
+**To connect to Device Portal**
 
-1. 在浏览器中，针对使用的连接类型输入地址，如下所示。
+1. In your browser, enter the address shown here for the connection type you're using.
 
-    - USB： `http://127.0.0.1:10080`
+    - USB: `http://127.0.0.1:10080`
 
-    当手机通过 USB 连接连接到电脑时，使用此地址。 两台设备必须具有版本 1511 或更高版本的 Windows 10。
+    Use this address when the phone is connected to a PC via a USB connection. Both devices must have Windows 10, Version 1511 or later.
     
-    - Localhost： `http://127.0.0.1`
+    - Localhost: `http://127.0.0.1`
 
-    使用此地址，可通过手机上的 Windows 10 移动版 Microsoft Edge 以本地方式查看 Device Portal。
+    Use this address to view Device Portal locally on the phone in Microsoft Edge for Windows 10 Mobile.
     
-    - 本地网络： `https://<The IP address of the phone>`
+    - Local Network: `https://<The IP address or hostname of the phone>`
 
-    使用此地址通过本地网络进行连接。
+    Use this address to connect over a local network.
 
-    手机的 IP 地址显示在其 Device Portal 设置中。 身份验证和安全通信要求使用 HTTPS。 主机名\（可在“设置”&gt;“系统”&gt;“关于”中进行编辑\）还可用于访问本地网络\（例如 http://Phone360\）上的 Device Portal，这对于可能频繁更改网络或 IP 地址的设备或者需要共享的设备非常有用。 
+    The IP address of the phone is shown in the Device Portal settings on the phone. HTTPS is required for authentication and secure communication. The hostname (editable in Settings > System > About) can also be used to access Device Portal on the local network (e.g. http://Phone360), which is useful for devices that may change networks or IP addresses frequently, or need to be shared. 
 
-2. 在手机上按“配对”按钮以生成和显示所需的安全代码
+2. Press the Pair button on your phone to generate and display the required security code
 
-3. 在浏览器的 Device Portal 密码框中输入 6 个字符的安全代码。
+3. Enter the 6 character security code into the Device Portal password box in your browser.
 
-4. （可选）在浏览器中选中“记住我的计算机”复选框以在以后记住此配对。
+4. (Optional) Check the Remember my computer box in your browser to remember this pairing in the future.
 
-以下是 Windows Phone 上开发人员设置页面的 Device Portal 部分。
+Here's the Device Portal section of the developer settings page on Windows Phone.
 
-![Device Portal 设置](images/device-portal/mob-dev-mode-portal.png)
+![Device Portal settings](images/device-portal/mob-dev-mode-portal.png)
 
-如果在信任本地网络上的所有用户、设备上没有任何私人信息并且具有独特要求的受保护环境（例如测试实验室）中使用 Device Portal，你可以禁用身份验证。 这支持未加密的通信，并允许任何拥有手机 IP 地址的用户控制通信。
+If you are using Device Portal in a protected environment, like a test lab, where you trust everyone on your local network, have no personal information on the device, and have unique requirements, you can disable authentication. This enables unencrypted communication, and allows anyone with the IP address of your phone to control it.
 
-## 工具说明
+## <a name="tool-notes"></a>Tool Notes
 
-## Device Portal 页面
-### 进程
+## <a name="device-portal-pages"></a>Device Portal pages
+### <a name="processes"></a>Processes
 
-Windows 移动版 Device Portal 中并未包含可以终止任意进程的功能。 
+The ability to terminate arbitrary processes is not included in the Windows Mobile Device Portal. 
 
-移动设备上的 Device Portal 提供了一组标准页面。 有关详细说明，请参阅 [Windows Device Portal 概述](device-portal.md)。
+Device Portal on mobile devices provides the standard set of pages. For detailed descriptions, see [Windows Device Portal overview](device-portal.md).
 
-- 应用
-- 进程
-- 性能
-- Windows 事件跟踪 \(ETW\)
-- 性能跟踪
-- 设备
-- 网络
+- App Manager
+- App File Explorer (Isolated Storage Explorer)
+- Processes
+- Performance charts
+- Event Tracing for Windows (ETW)
+- Performance tracing (WPR) 
+- Devices
+- Networking
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

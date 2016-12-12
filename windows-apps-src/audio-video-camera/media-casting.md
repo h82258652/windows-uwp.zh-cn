@@ -1,152 +1,152 @@
 ---
 author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: "本文向你演示了如何将媒体从通用 Windows 应用转换到远程设备。"
-title: "媒体转换"
+description: This article shows you how to cast media to remote devices from a Universal Windows app.
+title: Media casting
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
+ms.sourcegitcommit: ebcd2f2b28a7cd2a8a9dad16c30239b06e147ec3
+ms.openlocfilehash: fc69e3b5bb814752480fa0151c36ae0a8c783c4e
 
 ---
 
-# 媒体转换
+# <a name="media-casting"></a>Media casting
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文向你演示了如何将媒体从通用 Windows 应用转换到远程设备。
+This article shows you how to cast media to remote devices from a Universal Windows app.
 
-## 通过 MediaElement 的内置媒体转换
+## <a name="built-in-media-casting-with-mediaplayerelement"></a>Built-in media casting with MediaPlayerElement
 
-从通用 Windows 应用转换媒体的最简单方法是使用 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) 控件的内置转换功能。
+The simplest way to cast media from a Universal Windows app is to use the built-in casting capability of the [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) control.
 
-若要允许用户打开一个要在 **MediaPlayerElement** 控件中播放的视频文件，请将以下命名空间添加到你的项目。
+To allow the user to open a video file to be played in the **MediaPlayerElement** control, add the following namespaces to your project.
 
 [!code-cs[BuiltInCastingUsing](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetBuiltInCastingUsing)]
 
-在应用的 XAML 文件中，添加 **MediaPlayerElement** 并将 [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) 设置为 true。
+In your app's XAML file, add a **MediaPlayerElement** and set [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) to true.
 
 [!code-xml[MediaElement](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetMediaElement)]
 
-添加按钮以让用户启动选取文件操作。
+Add a button to let the user initiate picking a file.
 
 [!code-xml[OpenButton](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetOpenButton)]
 
-在按钮的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件处理程序中，创建 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 的新实例、将视频文件类型添加到 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) 集合，并将起始位置设置为用户的视频库。
+In the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event handler for the button, create a new instance of the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), add video file types to the [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) collection, and set the starting location to the user's videos library.
 
-调用 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 以启动“文件选取器”对话框。 当此方法返回时，结果是表示视频文件的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象。 检查以确保文件不是 null，如果用户取消选取操作，该文件将是 null。 调用文件的 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227221.aspx) 方法来为该文件获取一个 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731)。 最后，通过调用 [**CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909) 从选定文件创建新的 **MediaSource** 对象，并将其分配给 **MediaPlayerElement** 对象的 [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) 属性以使视频文件成为控件的视频源。
+Call [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) to launch the file picker dialog. When this method returns, the result is a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object representing the video file. Check to make sure the file isn't null, which it will be if the user cancels the picking operation. Call the file's [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227221.aspx) method to get an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) for the file. Finally, create a new **MediaSource** object from the selected file by calling [**CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909) and assign it to the **MediaPlayerElement** object's [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) property to make the video file the video source for the control.
 
 [!code-cs[OpenButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetOpenButtonClick)]
 
-在 **MediaPlayerElement** 中加载视频后，用户只需按传输控件上的转换按钮即可启动内置对话框，他们可以在该对话框中选择已加载媒体将转换到的设备。
+Once the video is loaded in the **MediaPlayerElement**, the user can simply press the casting button on the transport controls to launch a built-in dialog that allows them to choose a device to which the loaded media will be cast.
 
-![MediaElement 转换按钮](images/media-element-casting-button.png)
+![mediaelement casting button](images/media-element-casting-button.png)
 
 > [!NOTE] 
-> 从 Windows 10 版本 1607 开始，建议你使用 **MediaPlayer** 类播放媒体项。 **MediaPlayerElement** 是一种轻型 XAML 控件，用于在 XAML 页面中呈现 **MediaPlayer** 的内容。 为了实现向后兼容性，继续支持 **MediaElement** 控件。 有关使用 **MediaPlayer** 和 **MediaPlayerElement** 播放媒体内容的详细信息，请参阅[使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)。 有关使用 **MediaSource** 和相关 API 处理媒体内容的信息，请参阅[媒体项、播放列表和轨](media-playback-with-mediasource.md)。
+> Starting with Windows 10, version 1607, it is recommended that you use the **MediaPlayer** class to play media items. The **MediaPlayerElement** is a lightweight XAML control that is used to render the content of a **MediaPlayer** in a XAML page. The **MediaElement** control continues to be supported for backwards compatibility. For more information on using **MediaPlayer** and **MediaPlayerElement** to play media content, see [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md). For information on using **MediaSource** and related APIs to work with media content, see [Media items, playlists, and tracks](media-playback-with-mediasource.md).
 
-## 通过 CastingDevicePicker 的媒体转换
+## <a name="media-casting-with-the-castingdevicepicker"></a>Media casting with the CastingDevicePicker
 
-将媒体转换到设备的第二个方法是使用 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525)。 若要使用此类型，请在项目中包括 [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) 命名空间。
+A second way to cast media to a device is to use the [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525). To use this class, include the [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) namespace in your project.
 
 [!code-cs[CastingNamespace](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingNamespace)]
 
-声明 **CastingDevicePicker** 对象的成员变量。
+Declare a member variable for the **CastingDevicePicker** object.
 
 [!code-cs[DeclareCastingPicker](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDeclareCastingPicker)]
 
-初始化你的页面时，创建转换选取器的新实例并将 [**Filter**](https://msdn.microsoft.com/library/windows/apps/dn972540) 设置为 [**SupportsVideo**](https://msdn.microsoft.com/library/windows/apps/dn972526) 属性，以指示由选取器列出的转换设备应支持视频。 为 [**CastingDeviceSelected**](https://msdn.microsoft.com/library/windows/apps/dn972539) 事件注册处理程序，它将在用户选取某台设备进行转换时引发。
+When you page is initialized, create a new instance of the casting picker and set the [**Filter**](https://msdn.microsoft.com/library/windows/apps/dn972540) to [**SupportsVideo**](https://msdn.microsoft.com/library/windows/apps/dn972526) property to indicate that the casting devices listed by the picker should support video. Register a handler for the [**CastingDeviceSelected**](https://msdn.microsoft.com/library/windows/apps/dn972539) event, which is raised when the user picks a device for casting.
 
 [!code-cs[InitCastingPicker](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetInitCastingPicker)]
 
-在你的 XAML 文件中，添加按钮以允许用户启动选取器。
+In your XAML file, add a button to allow the user to launch the picker.
 
 [!code-xml[CastPickerButton](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetCastPickerButton)]
 
-在按钮的 **Click** 事件处理程序中，调用 [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/br208986) 以获取相对于另一个元素的 UI 元素转换。 在此示例中，转换是相对于应用程序窗口的可视根的转换选取器按钮的位置。 调用 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) 对象的 [**Show**](https://msdn.microsoft.com/library/windows/apps/dn972542) 方法，以启动“转换选取器”对话框。 指定转换选取器按钮的位置和尺寸，以便系统可以使对话框在用户按下该按钮时弹出。
+In the **Click** event handler for the button, call [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/br208986) to get the transform of a UI element relative to another element. In this example, the transform is the position of the cast picker button relative to the visual root of the application window. Call the [**Show**](https://msdn.microsoft.com/library/windows/apps/dn972542) method of the [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) object to launch the casting picker dialog. Specify the location and dimensions of the cast picker button so that the system can make the dialog fly out from the button that the user pressed.
 
 [!code-cs[CastPickerButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
 
-在 **CastingDeviceSelected** 事件处理程序中，调用事件参数的 [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) 属性的 [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) 方法，该方法表示用户所选的转换设备。 为 [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) 和 [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) 事件注册处理程序。 最后，调用 [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) 以开始转换，从而将结果传入 **MediaPlayerElement** 控件的 **MediaPlayer** 对象的 [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) 方法，以便指定要转换的媒体是与 **MediaPlayerElement** 关联的 **MediaPlayer** 的内容。
+In the **CastingDeviceSelected** event handler, call the [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) method of the [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) property of the event args, which represents the casting device selected by the user. Register handlers for the [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) and [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) events. Finally, call [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) to begin casting, passing in the result to the **MediaPlayerElement** control's **MediaPlayer** object's [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) method to specify that the media to be cast is the content of the **MediaPlayer** associated with the **MediaPlayerElement**.
 
 > [!NOTE] 
-> 必须在 UI 线程上启动转换连接。 由于未在 UI 线程上调用 **CastingDeviceSelected**，因此你必须将这些调用放置在对 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317)（可使这些调用在 UI 线程上调用）的调用内。
+> The casting connection must be initiated on the UI thread. Since the **CastingDeviceSelected** is not called on the UI thread, you must place these calls inside a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) which causes them to be called on the UI thread.
 
 [!code-cs[CastingDeviceSelected](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
-在 **ErrorOccurred** 和 **StateChanged** 事件处理程序中，应更新 UI 以通知用户当前转换状态。 在有关创建自定义转换设备选取器的下一节中详细讨论了这些事件。
+In the **ErrorOccurred** and **StateChanged** event handlers, you should update your UI to inform the user of the current casting status. These events are discussed in detail in the following section on creating a custom casting device picker.
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
-## 通过自定义设备选取器的媒体转换
+## <a name="media-casting-with-a-custom-device-picker"></a>Media casting with a custom device picker
 
-下一节介绍了如何通过从你的代码枚举转换设备和启动连接，创建你自己的转换设备选取器 UI。
+The following section describes how to create your own casting device picker UI by enumerating the casting devices and initiating the connection from your code.
 
-若要枚举可用的转换设备，请在你的项目中包括 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空间。
+To enumerate the available casting devices, include the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) namespace in your project.
 
 [!code-cs[EnumerationNamespace](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
 
-将以下控件添加到 XAML 页面，以实现此示例的基本 UI：
+Add the following controls to your XAML page to implement the rudimentary UI for this example:
 
--   用于启动查找可用转换设备的设备观察程序的按钮。
--   用于向正在运行转换枚举的用户提供反馈的 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控件。
--   用于列出发现的转换设备的 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)。 为控件定义 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830)，以便我们可以将转换设备对象直接分配给该控件，并仍然显示 [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) 属性。
--   允许用户断开转换设备连接的按钮。
+-   A button to start the device watcher that looks for available casting devices.
+-   A [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control to provide feedback to the user that casting enumeration is ongoing.
+-   A [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) to list the discovered casting devices. Define an [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) for the control so that we can assign the casting device objects directly to the control and still display the [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) property.
+-   A button to allow the user to disconnect the casting device.
 
 [!code-xml[CustomPickerXAML](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetCustomPickerXAML)]
 
-在代码隐藏中，声明 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) 和 [**CastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972510) 的成员变量。
+In your code behind, declare member variables for the [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) and the [**CastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972510).
 
 [!code-cs[DeclareDeviceWatcher](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDeclareDeviceWatcher)]
 
-在 *startWatcherButton* 的 **Click** 处理程序中，首先通过禁用该按钮，并在正在运行设备枚举时激活进度环来更新 UI。 清除转换设备的列表框。
+In the **Click** handler for the *startWatcherButton*, first update the UI by disabling the button and making the progress ring active while device enumeration is ongoing. Clear the list box of casting devices.
 
-接下来，通过调用 [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) 创建设备观察程序。 此方法可用于观察许多不同类型的设备。 指明你想要通过使用 [**CastingDevice.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn972551) 返回的设备选择器字符串，观察支持视频转换的设备。
+Next, create a device watcher by calling [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427). This method can be used to watch for many different types of devices. Specify that you want to watch for devices that support video casting by using the device selector string returned by [**CastingDevice.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn972551).
 
-最后，为 [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450)、[**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453)、[**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) 和 [**Stopped**](https://msdn.microsoft.com/library/windows/apps/br225457) 事件注册事件处理程序。
+Finally, register event handlers for the [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450), [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453), [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451), and [**Stopped**](https://msdn.microsoft.com/library/windows/apps/br225457) events.
 
 [!code-cs[StartWatcherButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetStartWatcherButtonClick)]
 
-当观察程序发现新设备时，将引发 **Added** 事件。 在此事件的处理程序中，通过调用 [**CastingDevice.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn972550) 并传入发现的转换设备的 ID 来创建新的 [**CastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972524) 对象，它包含在已传入到处理程序中的 **DeviceInformation** 对象中。
+The **Added** event is raised when a new device is discovered by the watcher. In the handler for this event, create a new [**CastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972524) object by calling [**CastingDevice.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn972550) and passing in the ID of the discovered casting device, which is contained in the **DeviceInformation** object passed into the handler.
 
-将 **CastingDevice** 添加到转换设备 **ListBox**，以便用户可以选择它。 由于在 XAML 中定义的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830)，[**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) 属性将用作列表框中的项文本。 因为未在 UI 线程上调用此事件处理程序，因此你必须在对 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的调用内更新 UI。
+Add the **CastingDevice** to the casting device **ListBox** so that the user can select it. Because of the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) defined in the XAML, the [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) property will be used as the item text for in the list box. Because this event handler is not called on the UI thread, you must update the UI from within a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
 
 [!code-cs[WatcherAdded](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherAdded)]
 
-当观察程序检测到转换设备不再存在时，将引发 **Removed** 事件。 比较已传入到处理程序中 **Added** 对象的 ID 属性与列表框的 [**Items**](https://msdn.microsoft.com/library/windows/apps/br242823) 集合中每个 **Added** 的 ID。 如果 ID 匹配，则从集合中删除该对象。 同样，因为 UI 已得到更新，因此必须从 **RunAsync** 调用内进行此调用。
+The **Removed** event is raised when the watcher detects that a casting device is no longer present. Compare the ID property of the **Added** object passed into the handler to the ID of each **Added** in the list box's [**Items**](https://msdn.microsoft.com/library/windows/apps/br242823) collection. If the ID matches, remove that object from the collection. Again, because the UI is being updated, this call must be made from within a **RunAsync** call.
 
 [!code-cs[WatcherRemoved](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherRemoved)]
 
-当观察程序完成设备检测时，将引发 **EnumerationCompleted** 事件。 在此事件的处理程序中，更新 UI 以让用户知道设备枚举已完成，并通过调用 [**Stop**](https://msdn.microsoft.com/library/windows/apps/br225456) 停止设备观察程序。
+The **EnumerationCompleted** event is raised when the watcher has finished detecting devices. In the handler for this event, update the UI to let the user know that device enumeration has completed and stop the device watcher by calling [**Stop**](https://msdn.microsoft.com/library/windows/apps/br225456).
 
 [!code-cs[WatcherEnumerationCompleted](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherEnumerationCompleted)]
 
-当设备观察程序已停止时，应引发 Stopped 事件。 在此事件的处理程序中，停止 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 控件并重新启用 *startWatcherButton*，以便用户可以重新启动设备枚举过程。
+The Stopped event is raised when the device watcher has finished stopping. In the handler for this event, stop the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control and reenable the *startWatcherButton* so that the user can restart the device enumeration process.
 
 [!code-cs[WatcherStopped](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherStopped)]
 
-当用户从列表框中选择转换设备之一时，将引发 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) 事件。 它位于将创建转换连接并且将启动转换的这一处理程序中。
+When the user selects one of the casting devices from the list box, the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) event is raised. It is within this handler that the casting connection will be created and casting will be started.
 
-首先，请确保设备观察程序已停止，以便设备枚举不会干扰媒体转换。 通过在用户所选的 **CastingDevice** 对象上调用 [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) 来创建转换连接。 为 [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) 和 [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) 事件添加事件处理程序。
+First, make sure the device watcher is stopped so that device enumeration doesn't interfere with media casting. Create a casting connection by calling [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) on the **CastingDevice** object selected by the user. Add event handlers for the [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) and [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) events.
 
-通过调用 [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) 启动媒体转换，从而传入通过调用 **MediaPlayer** 方法 [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) 返回的转换源。 最后，使断开连接按钮可见，以允许用户停止媒体转换。
+Start media casting by calling [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520), passing in the casting source returned by calling the **MediaPlayer** method [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012). Finally, make the disconnect button visible to allow the user to stop media casting.
 
 [!code-cs[SelectionChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetSelectionChanged)]
 
-在状态发生更改的处理程序中，要采取的操作取决于转换连接的新状态：
+In the state changed handler, the action you take depends on the new state of the casting connection:
 
--   如果状态为 **Connected** 或 **Rendering**，确保 **ProgressRing** 控件处于非活动状态，并且断开连接按钮可见。
--   如果状态为 **Disconnected**，取消选择列表框中的当前转换设备、使 **ProgressRing** 控件处于非活动状态，并隐藏断开连接按钮。
--   如果状态为 **Connecting**，使 **ProgressRing** 控件处于活动状态，并隐藏断开连接按钮。
--   如果状态为 **Disconnecting**，使 **ProgressRing** 控件处于活动状态，并隐藏断开连接按钮。
+-   If the state is **Connected** or **Rendering**, make sure the **ProgressRing** control is inactive and the disconnect button is visible.
+-   If the state is **Disconnected**, unselect the current casting device in the list box, make the **ProgressRing** control inactive, and hide the disconnect button.
+-   If the state is **Connecting**, make the **ProgressRing** control active and hide the disconnect button.
+-   If the state is **Disconnecting**, make the **ProgressRing** control active and hide the disconnect button.
 
 [!code-cs[StateChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetStateChanged)]
 
-在 **ErrorOccurred** 事件的处理程序中，更新你的 UI 以让用户知道发生了转换错误，并取消选择列表框中的当前 **CastingDevice** 对象。
+In the handler for the **ErrorOccurred** event, update your UI to let the user know that a casting error occurred and unselect the current **CastingDevice** object in the list box.
 
 [!code-cs[ErrorOccurred](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 
-最后，实现断开连接按钮的处理程序。 通过调用 **CastingConnection** 对象的 [**DisconnectAsync**](https://msdn.microsoft.com/library/windows/apps/dn972518) 方法，停止媒体转换并从转换设备断开连接。 此调用必须已通过调用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 调度到 UI 线程。
+Finally, implement the handler for the disconnect button. Stop media casting and disconnect from the casting device by calling the **CastingConnection** object's [**DisconnectAsync**](https://msdn.microsoft.com/library/windows/apps/dn972518) method. This call must be dispatched to the UI thread by calling [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
 
 [!code-cs[DisconnectButton](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDisconnectButton)]
 
@@ -160,6 +160,6 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

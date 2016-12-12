@@ -1,50 +1,50 @@
 ---
 author: Mtoepke
-title: "Xbox One 开发人员计划上的 UWP 已知问题"
+title: Known issues with UWP on Xbox One Developer Program
 description: 
 translationtype: Human Translation
-ms.sourcegitcommit: 5774ada049e5f300e9cb990f5a079c8c21796f8b
-ms.openlocfilehash: 5892e00f4da74af5aa4e24fdd12b0df0e8a4a7d9
+ms.sourcegitcommit: 20ac6fb738de1c8aaf10f46c359842f31714dbbf
+ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
 
 ---
 
-# Xbox 开发人员计划上的 UWP 已知问题
+# <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Known issues with UWP on Xbox Developer Program
 
-本主题介绍 Xbox One 开发人员计划上的 UWP 已知问题。 有关此计划的详细信息，请参阅 [Xbox 上的 UWP](index.md)。 
+This topic describes known issues with the UWP on Xbox One Developer Program. For more information about this program, see [UWP on Xbox](index.md). 
 
-\[如果你通过某个 API 参考主题中的链接转到此处，并且要查找通用设备系列 API 信息，请参阅 [Xbox 上尚不支持的 UWP 功能](http://go.microsoft.com/fwlink/?LinkID=760755)。\]
+\[If you came here from a link in an API reference topic, and are looking for Universal device family API information, please see [UWP features that aren't yet supported on Xbox](http://go.microsoft.com/fwlink/?LinkID=760755).\]
 
-下表重点介绍你可能在此版本中遇到的某些已知问题，但该列表并没有包括所有问题。 
+The following list highlights some known issues that you may encounter, but this list is not exhaustive. 
 
-**我们希望收到你的反馈**，因此请在[开发通用 Windows 平台应用](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)论坛上报告你发现的任何问题。 
+**We want to get your feedback**, so please report any issues that you find on the [Developing Universal Windows Platform apps](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop) forum. 
 
-如果遇到问题，请阅读本主题中的信息、参阅[常见问题](frequently-asked-questions.md)以及使用论坛来寻求帮助。
+If you get stuck, read the information in this topic, see [Frequently asked questions](frequently-asked-questions.md), and use the forums to ask for help.
 
 
 <!--## Developing games-->
  
-## 后台应用的内存限制已部分强制执行
+## <a name="memory-limits-for-background-apps-are-partially-enforced"></a>Memory limits for background apps are partially enforced
  
-在后台运行的应用最大内存占用量是 128 兆字节。 在 Xbox One 上单前版本的 UWP 中，如果在应用在移至后台时超过此限制，应用将该暂停运行。 如果应用在后台中运行时超过此上限，则该限制当前不会强制执行，这意味着如果应用在后台运行时超过了 128 MB，它将仍能分配内容。
+The maximum memory footprint for apps running in the background is 128 megabytes. In the current version of UWP on Xbox One, your app will be suspended if it is above this limit when it is moved to the background. This limit is not currently enforced if your app exceeds the limit while it is already running in the background—this means that if your app exceeds 128 MB while running in the background, it will still be able to allocate memory.
  
-对于此问题，目前尚没有解决方法。 在后台运行时，应用应相应控制其内存使用量，使之保持在 128 MB 上限之下。
+There is currently no workaround for this issue. Apps should govern their memory usage accordingly and continue to stay under the 128 MB limit while running in the background.
  
-## 在“家长控制”处于打开状态的情况下，无法通过 VS 进行部署
+## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>Deploying from VS fails with Parental Controls turned on
 
-如果主机在“设置”中打开了“家长控制”，则通过 VS 启动你的应用会失败。
+Launching your app from VS will fail if the console has Parental Controls turned on in Settings.
 
-若要解决该问题，可以临时禁用“家长控制”，也可以：
-1. 在“家长控制”处于关闭状态的情况下，将你的应用部署到该主机。
-2. 打开“家长控制”。
-3. 从主机启动你的应用。
-4. 输入 PIN 或密码以允许应用启动。
-5. 应用将启动。
-6. 关闭应用。
-7. 从 VS 中使用 F5 进行启动，然后应用将在没有任何提示的情况下启动。
+To work around this issue, either temporarily disable Parental Controls, or:
+1. Deploy your app to the console with Parental Controls turned off.
+2. Turn on Parental Controls.
+3. Launch your app from the console.
+4. Enter a PIN or password to allow the app to launch.
+5. App will launch.
+6. Close the app.
+7. Launch from VS using F5, and the app will launch with no prompting.
 
-此时，权限是“粘连的”__，除非你注销用户，否则即使卸载并重新安装该应用也是如此。
+At this point the permission is _sticky_ until you sign the user out, even if you uninstall and reinstall the app.
  
-有另外一种仅适用于子女帐户的免除类型。 子女帐户需要家长登录以授予权限，但当家长将选项选择为“始终”****时，他们就可以允许孩子启动该应用。 该免除存储在云中且持续有效，即使孩子注销并重新登录也是如此。   
+There is another type of exemption that is only available for child accounts. A child account requires a parent to sign in to grant permission, but when they do, the parent has the option of choosing to **Always** allow the child to launch the app. That exemption is stored in the cloud and will persist even if the child signs out and signs back in.   
 
 <!--### x86 vs. x64
 
@@ -67,11 +67,11 @@ The following game engines have been confirmed to work:
 There are likely others that are working too. We would love to get your feedback on what you find. 
 Please use the forum to report any issues you see.-->
 
-## DirectX 12 支持
+## <a name="directx-12-support"></a>DirectX 12 support
 
-Xbox One 上的 UWP 支持 DirectX 11 功能级别 10。 DirectX 12 在此情况下不受支持。 
+UWP on Xbox One supports DirectX 11 Feature Level 10. DirectX 12 is not supported at this time. 
 
-Xbox One（类似于所有的传统游戏主机）是一个专门的硬件，需要特定 SDK 才可以充分发挥其潜能。 如果你正在开发需要最大限度发挥 Xbox One 硬件潜能的游戏，你可以注册 [ID@XBOX](http://www.xbox.com/Developers/id) 计划来获取该 SDK 的访问权限（包括 DirectX 12 支持）。
+Xbox One, like all traditional games consoles, is a specialized piece of hardware that requires a specific SDK to access its full potential. If you are working on a game that requires access to the maximum potential of the Xbox One hardware, you can register with the [ID@XBOX](http://www.xbox.com/Developers/id) program to get access to that SDK, which includes DirectX 12 support.
 
 <!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
@@ -91,13 +91,13 @@ In this developer preview, inbound and outbound network access from the console 
 Developers can still use HTTP and WebSockets.
 --> 
 
-## 阻止 Xbox One 上的网络端口
+## <a name="blocked-networking-ports-on-xbox-one"></a>Blocked networking ports on Xbox One
 
-限制 Xbox One 设备上的通用 Windows 平台 (UWP) 应用绑定到 [49152, 65535] 范围中的端口。 尽管在运行时可能显示已成功绑定到这些端口，但网络流量在到达应用前已悄然断掉。 应用应在允许条件下绑定到端口 0，这支持系统选择本地端口。 如果需要使用特定端口，端口号必须在 [1025, 49151] 范围中，而且应该查看 IANA 注册表并避免与之相冲突。 有关详细信息，请参阅[服务名称和传输协议端口号注册表](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)。
+Universal Windows Platform (UWP) apps on Xbox One devices are restricted from binding to ports in the range [49152, 65535]. Although binding to these ports might appear to succeed at run-time, network traffic can be silently dropped before reaching your app. Your app should bind to port 0 wherever possible, which allows the system to select the local port. If you need to use a specific port, the port number must be in the range [1025, 49151], and you should check and avoid conflicts with the IANA registry. For more information, see the [Service Name and Transport Protocol Port Number Registry](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
-## UWP API 覆盖范围
+## <a name="uwp-api-coverage"></a>UWP API coverage
 
-并非所有 UWP API 在 Xbox 上都受支持。 对于我们已知不起作用的 API 列表，请参阅 [Xbox 上尚不支持的 UWP 功能](http://go.microsoft.com/fwlink/p/?LinkId=760755)。 如果你发现其他 API 的问题，请通过论坛报告它们。 
+Not all UWP APIs are supported on Xbox. For the list of APIs that we know don’t work, see [UWP features that aren't yet supported on Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). If you find issues with other APIs, please report them on the forums. 
 
 <!--## XAML controls do not look like or behave like the controls in the Xbox One shell
 
@@ -160,23 +160,23 @@ This will delete all of your games, apps, settings and content, deactivate Devel
 
 Sometimes this is resolved by sorting a column on the table.-->
 
-## 导航到 WDP 导致证书警告
+## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>Navigating to WDP causes a certificate warning
 
-你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 控制台签名的安全证书不被视为众所周知的受信任发布者。 若要访问 Windows Device Portal，请单击“继续浏览此网站”****。
+You will receive a warning about the certificate that was provided, similar to the following screenshot, because the security certificate signed by your Xbox One console is not considered a well-known trusted publisher. To access the Windows Device Portal, click **Continue to this website**.
 
-![网站安全证书警告](images/security_cert_warning.jpg)
+![Website security certificate warning](images/security_cert_warning.jpg)
 
 <!--## Dev Home
 
 Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
 This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
 
-## 另请参阅
-- [常见问题](frequently-asked-questions.md)
-- [Xbox One 上的 UWP](index.md)
+## <a name="see-also"></a>See also
+- [Frequently asked questions](frequently-asked-questions.md)
+- [UWP on Xbox One](index.md)
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

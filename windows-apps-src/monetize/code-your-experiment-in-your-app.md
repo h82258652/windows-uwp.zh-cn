@@ -1,205 +1,118 @@
 ---
 author: mcleanbyron
-Description: "若要在具有 A/B 测试的通用 Windows 平台 (UWP) 应用中运行实验，必须在你的应用中为实验编码。"
-title: "针对实验为你的应用编码"
+Description: To run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must code the experiment in your app.
+title: Code your app for experimentation
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
 translationtype: Human Translation
-ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
-ms.openlocfilehash: ae0ddedf09913d42a036f48d2f60d7a62769b4bb
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
 
 ---
 
-# 针对实验为你的应用编码
+# <a name="code-your-app-for-experimentation"></a>Code your app for experimentation
+
+After you [create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md), you are ready to update the code in your Universal Windows Platform (UWP) app to:
+* Receive remote variable values from Windows Dev Center.
+* Use remote variables to configure app experiences for your users.
+* Log events to Dev Center that indicate when users have viewed your experiment and performed a desired action (also called a *conversion*).
+
+To add this behavior to your app, you'll use APIs provided by the Microsoft Store Services SDK.
+
+The following sections describe the general process of getting variations for your experiment and logging events to Dev Center. After you code your app for experimentation, you can [define an experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md). For a walkthrough that demonstrates the end-to-end process of creating and running an experiment, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
+
+>**Note**&nbsp;&nbsp;Some of the experimentation APIs in the Windows Store Services SDK use the [asynchronous pattern](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) to retrieve data from Dev Center. This means that part of the execution of these methods may take place after the methods are invoked, so your app's UI can remain responsive while the operations complete. The asynchronous pattern requires your app to use the **async** keyword and **await** operator when calling the APIs, as demonstrated by the code examples in this article. By convention, asynchronous methods end with **Async**.
+
+## <a name="configure-your-project"></a>Configure your project
+
+To get started, install the Microsoft Store Services SDK on your development computer and add the necessary references to your project.
+
+1. [Install the Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk).
+2. Open your project in Visual Studio.
+3. In Solution Explorer, expand your project node, right-click **References**, and click **Add Reference**.
+3. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.
+4. In the list of SDKs, select the check box next to **Microsoft Engagement Framework** and click **OK**.
+
+>**Note**&nbsp;&nbsp;The code examples in this article assume that your code file has **using** statements for the **System.Threading.Tasks** and **Microsoft.Services.Store.Engagement** namespaces.
+
+## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>Get variation data and log the view event for your experiment
+
+In your project, locate the code for the feature that you want to modify in your experiment. Add code that retrieves data for a variation, use this data to modify the behavior of the feature you are testing, and then log the view event for your experiment to the A/B testing service in Dev Center.
+
+The specific code you need will depend on your app, but the following example demonstrates the basic process. For a complete code example, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
+
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#ExperimentCodeSample)]
+
+The following steps describe the important parts of this process in detail.
+
+1. Declare a [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) object that represents the current variation assignment and a [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.aspx) object that you will use to log view and conversion events to Dev Center.
+
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
+
+1. Declare a string variable that is assigned to the [project ID](run-app-experiments-with-a-b-testing.md#terms) for the experiment you want to retrieve.
+  >**Note**&nbsp;&nbsp;You obtain a project ID when you [create a project in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). The project ID shown below is for example purposes only.
+
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
+
+2. Get the current cached variation assignment for your experiment by calling the static [GetCachedVariationAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getcachedvariationasync.aspx) method, and pass the project ID for your experiment to the method. This method returns a [StoreServicesExperimentVariationResult](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariationresult.aspx) object that provides access to the variation assignment via the [ExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariationresult.experimentvariation.aspx) property.
+
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet3)]
+
+4. Check the [IsStale](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale.aspx) property to determine whether the cached variation assignment needs to be refreshed with a remote variation assignment from the server. If it does need to be refreshed, call the static [GetRefreshedVariationAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync.aspx) method to check for an updated variation assignment from the server and refresh the local cached variation.
+
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
+
+5. Use the [GetBoolean](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean.aspx), [GetDouble](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble.aspx), [GetInt32](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32.aspx), or [GetString](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring.aspx) methods of the [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) object to get the values for the variation assignment. In each method, the first parameter is the name of the variation that you want to retrieve (this is the same name of a variation that you enter in your Dev Center dashboard). The second parameter is the default value that the method should return if it is not able to retrieve the specified value from Dev Center (for example, if there is no network connectivity), and a cached version of the variation is not available.
+
+  The following example uses [GetString](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring.aspx) to get a variable named *buttonText* and specifies a default variable value of **Grey Button**.
+
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet5)]
+
+4. In your code, use the variable values to modify the behavior of the feature you are testing. For example, the following code assigns the *buttonText* value to the content of a button in your app. This example assumes you have already defined this button elsewhere in your project.
+
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
+
+5. Finally, log the [view event](run-app-experiments-with-a-b-testing.md#terms) for your experiment to the A/B testing service in Dev Center. Initialize the ```logger``` field to a [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.aspx) object and call the [LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) method. Pass the [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) object that represents the current variation assignment (this object provides context about the event to Dev Center) and the name of the view event for your experiment. This must match the view event name that you enter for your experiment in the Dev Center dashboard. Your code should log the view event when the user starts viewing a variation that is part of your experiment.
+
+  The following example shows how to log a view event named **userViewedButton**. In this example, the goal of the experiment is to get the user to click a button in the app, so the view event is logged after the app has retrieved the variation data (in this case, the button text) and assigned it to the content of the button.
+
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet7)]
+
+## <a name="log-conversion-events-to-dev-center"></a>Log conversion events to Dev Center
+
+Next, add code that logs [conversion events](run-app-experiments-with-a-b-testing.md#terms) to the A/B testing service in Dev Center. Your code should log a conversion event when the user reaches an objective for your experiment. The specific code you need will depend on your app, but here are the general steps. For a complete code example, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
+
+1. In code that runs when the user reaches an objective for one of the goals of the experiment, call the [LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) method again and pass the [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) object and the name of a conversion event for your experiment. This must match one of the conversion event names that you enter for your experiment in the Dev Center dashboard.
+
+  The following example logs a conversion event named **userClickedButton** from the **Click** event handler for a button. In this example, the goal of the experiment is to get the user to click the button.
+
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet8)]
+
+## <a name="next-steps"></a>Next steps
+
+After you code the experiment in your app, you are ready for the following steps:
+1. [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md). Create an experiment that defines the view events, conversion events, and unique variations for your A/B test.
+2. [Run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md).
 
 
-            [在开发人员中心仪表板中创建项目并定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)后，你可以随时在通用 Windows 平台 (UWP) 应用中更新代码，以便：
-* 从 Windows 开发人员中心接收远程变量值。
-* 使用远程变量为你的用户配置应用体验。
-* 将指示用户查看实验并执行所需操作时（也称为*转换*）的事件记录到开发人员中心。
+## <a name="related-topics"></a>Related topics
 
-若要向你的应用添加此行为，请使用 Microsoft Store Services SDK 所提供的 API。
-
-以下部分介绍了获取实验变体和将事件记录到开发人员中心的一般过程。 针对实验为你的应用编码后，你可以[在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)。 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
-
->
-            **注意**
-            &nbsp;&nbsp;Windows 应用商店服务 SDK 中的某些实验性 API 使用[异步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)从开发人员中心中检索数据。 这意味着，这些方法的部分执行可能会在调用这些方法后发生，以便你的应用的 UI 可以一边保持响应，一边完成操作。 异步模式要求你的应用在调用该 API 时使用 **async** 关键字和 **await** 运算符，如本文中的代码示例所示。 按照惯例，异步方法以 **Async** 结尾。
-
-## 配置项目
-
-若要开始，请在开发计算机上安装 Microsoft Store Services SDK，并将必要的参考添加到项目。
-
-1. 
-            [安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。
-2. 在 Visual Studio 中打开你的项目。
-3. 在“解决方案资源管理器”中，展开项目节点、右键单击**“引用”**，然后选择**“添加引用”**。
-3. 在“引用管理器”中，展开“通用 Windows”并单击“扩展”。
-4. 在 SDK 列表中，选中“Microsoft 协议框架”旁边的复选框，然后单击“确定”。
-
->
-            **注意**
-            &nbsp;&nbsp;本文中的代码示例假设代码文件中已有 **System.Threading.Tasks** 和 **Microsoft.Services.Store.Engagement** 命名空间的 **using** 语句。
-
-## 获取变体数据并记录实验的视图事件
-
-在你的项目中，找到你想要在实验中修改的功能代码。 添加检索变体数据的代码、使用此数据修改正在测试的功能的行为，然后将实验的视图事件记录到开发人员中心中的 A/B 测试服务。
-
-你需要的具体代码将依应用而定，但以下示例演示了基本过程。 有关完整的代码示例，请参阅[通过 A/B 测试创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
-
-```CSharp
-private StoreServicesExperimentVariation variation;
-private StoreServicesCustomEventLogger logger;
-
-// Assign this variable to the project ID for your experiment from Dev Center.
-// The project ID shown below is for example purposes only.
-private string projectId = "F48AC670-4472-4387-AB7D-D65B095153FB";
-
-private async Task InitializeExperiment()
-{
-    // Get the current cached variation assignment for the experiment.
-    var result = await StoreServicesExperimentVariation.GetCachedVariationAsync(projectId);
-    variation = result.ExperimentVariation;
-
-    // Refresh the cached variation assignment if necessary.
-    if (result.ErrorCode != StoreServicesEngagementErrorCode.None || result.ExperimentVariation.IsStale)
-    {
-        result = await StoreServicesExperimentVariation.GetRefreshedVariationAsync(projectId);
-
-        if (result.ErrorCode == StoreServicesEngagementErrorCode.None)
-        {
-            variation = result.ExperimentVariation;
-        }
-    }
-
-    // Get the remote variable named "buttonText" and assign the value
-    // to the button.
-    var buttonText = variation.GetString("buttonText", "Grey Button");
-    await button.Dispatcher.RunAsync(
-        Windows.UI.Core.CoreDispatcherPriority.Normal,
-        () =>
-        {
-            button.Content = buttonText;
-        });
-
-    // Log the view event named "userViewedButton" to Dev Center.
-    if (logger == null)
-    {
-        logger = StoreServicesCustomEventLogger.GetDefault();
-    }
-
-    logger.LogForVariation(variation, "userViewedButton");
-}
-```
-
-以下步骤详细描述了此过程的重要部分。
-
-1. 声明可表示当前变体分配的 [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) 对象和用于将视图和转换事件记录到开发人员中心的 [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.aspx) 对象。
-  ```CSharp
-  private StoreServicesExperimentVariation variation;
-  private StoreServicesCustomEventLogger logger;
-  ```
-
-1. 声明将分配给要检索的实验的[项目 ID](run-app-experiments-with-a-b-testing.md#terms) 的字符串变量。
-  >
-            **注意**
-            &nbsp;&nbsp;当[在开发人员中心仪表板中创建一个项目](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)时获取项目 ID。 以下所示的项目 ID 仅用作示例。
-
-  ```CSharp
-  private string projectId = "F48AC670-4472-4387-AB7D-D65B095153FB";
-  ```
-
-2. 通过调用静态 [GetCachedVariationAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getcachedvariationasync.aspx) 方法为你的实验获取当前缓存的变体分配，并将你的实验的项目 ID 传递给该方法。 此方法将返回可通过 [ExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariationresult.experimentvariation.aspx) 属性访问变体分配的 [StoreServicesExperimentVariationResult](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariationresult.aspx) 对象。
-
-   ```CSharp
-   var result = await StoreServicesExperimentVariation.GetCachedVariationAsync(projectId);
-   variation = result.ExperimentVariation;
-   ```
-
-4. 检查 [IsStale](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale.aspx) 属性，确定是否需要通过服务器的远程变体分配刷新缓存的变体分配。 如果它确实需要刷新，请调用静态 [GetRefreshedVariationAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync.aspx) 方法检查服务器的更新的变体分配，并刷新本地缓存的变体。
-
-  ```CSharp
-  if (result.ErrorCode != StoreServicesEngagementErrorCode.None || result.ExperimentVariation.IsStale)
-  {
-        result = await StoreServicesExperimentVariation.GetRefreshedVariationAsync(projectId);
-
-        if (result.ErrorCode == StoreServicesEngagementErrorCode.None)
-        {
-            variation = result.ExperimentVariation;
-        }
-  }
-  ```
-
-5. 使用 [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) 对象的 [GetBoolean](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean.aspx)、[GetDouble](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble.aspx)、[GetInt32](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32.aspx) 或 [GetString](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring.aspx) 方法获取变体分配的值。 在每种方法中，第一个参数即是你要检索的变体名称（这与你在开发人员中心仪表板中输入的变体名称相同）。 第二个参数是该方法无法检索开发人员中心的特定值（例如没有网络连接）并且缓存的变体版本不可用时所返回的默认值。
-
-  以下示例使用 [GetString](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring.aspx) 获取名为 *buttonText* 的变量，并指定 **Grey Button** 的默认变量值。
-
-  ```CSharp
-  var buttonText = variation.GetString("buttonText", "Grey Button");
-  ```
-
-4. 在代码中，使用变量值修改正在测试的功能的行为。 例如，以下代码将 *buttonText* 值分配给你的应用中某个按钮的内容。 此示例假设已在项目的别处定义了该按钮。
-
-  ```CSharp
-  await button.Dispatcher.RunAsync(
-      CoreDispatcherPriority.Normal,
-      () =>
-      {
-          button.Content = buttonText;
-      });
-  ```
-
-5. 最后，将实验的[视图事件](run-app-experiments-with-a-b-testing.md#terms)记录到开发人员中心中的 A/B 测试服务。 将 ```logger``` 字段初始化为 [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.aspx) 对象，然后调用 [LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) 方法。 传递表示当前变量分配的 [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) 对象（此对象向开发人员中心提供事件的相关上下文）和实验的视图事件名称。 这必须匹配你在开发人员中心仪表板中为实验输入的视图事件名称。 你的代码应在用户开始查看实验的一部分变体时记录视图事件。
-
-  以下示例演示了如何记录名为 **userViewedButton** 的视图事件。 在此示例中，实验的目标是获取单击应用中按钮的用户，以便在应用完成变体数据（在这种情况下，为按钮文本）检索并将它分配给该按钮的内容后，会记录视图事件。
-
-  ```CSharp
-  if (logger == null)
-  {
-      logger = StoreServicesCustomEventLogger.GetDefault();
-  }
-
-  logger.LogForVariation(variation, "userViewedButton");
-  ```
-
-## 将转换事件记录到开发人员中心
-
-接下来，在开发人员中心中将记录[转换事件](run-app-experiments-with-a-b-testing.md#terms)的代码添加到 A/B 测试服务。 你的代码应在用户达到实验目标时记录转换事件。 你需要的具体代码将依应用而定，但在此处是一般步骤。 有关完整的代码示例，请参阅[通过 A/B 测试创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
-
-1. 在用户达到实验其中一个目标时运行的代码中，重新调用 [LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) 方法，并传递 [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) 对象和实验的转换事件名称。 这必须匹配你在开发人员中心仪表板中为实验输入的其中一个转换事件名称。
-
-  以下示例从按钮的 **Click** 事件处理程序中记录名为 **userClickedButton** 的转换事件。 在此示例中，实验的目标是获取单击按钮的用户。
-
-  ```CSharp
-  private void button_Click(object sender, RoutedEventArgs e)
-  {
-      if (logger == null)
-      {
-          logger = StoreServicesCustomEventLogger.GetDefault();
-      }
-
-      logger.LogForVariation(variation, "userClickedButton");
-  }
-  ```
-
-## 后续步骤
-
-在你的应用中为实验编码后，你可以随时执行以下步骤：
-1. 
-            [在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)。 创建可为 A/B 测试定义视图事件、转换事件和唯一变体的实验。
-2. 
-            [在开发人员中心仪表板中运行和管理实验](manage-your-experiment.md)。
-
-
-## 相关主题
-
-* [在开发人员中心仪表板中创建项目和定义远程变量](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)
-* [在开发人员中心仪表板中管理你的实验](manage-your-experiment.md)
-* [通过 A/B 测试创建和运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)
-* [通过 A/B 测试运行应用实验](run-app-experiments-with-a-b-testing.md)
+* [Create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md)
+* [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

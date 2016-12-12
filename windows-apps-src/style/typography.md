@@ -1,42 +1,42 @@
 ---
 author: mijacobs
-description: "作为语言的可视化表示形式，版式的主要任务是清楚简洁。 它的样式应永远不妨碍该目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）对设计的用户体验有着重大作用。"
-title: "版式"
+description: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
+title: Typography
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 8338b4ebcdd73f1b7ebf1dedafe68d861cd9d93b
-ms.openlocfilehash: 481c66e3edd42722cfd59bf420fe5b6286706245
+ms.sourcegitcommit: 0356d9420d85fbf54718223df77ed501d4b6f5e5
+ms.openlocfilehash: 45b4bbc86c69cabae4a2ee83d2d43c7189a710ce
 
 ---
 
-# 版式
+# <a name="typography"></a>Typography
 
-作为语言的视觉表现形式，版式的主要任务是清晰。 它的样式应永远不妨碍该目标。 但是版式作为布局组件（对设计的密度和复杂程度有着强大的影响）对设计的用户体验有着重大作用。
+As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
 
-## 字样
+## <a name="typeface"></a>Typeface
 
-我们选择了 Segoe UI 以用于所有 Microsoft 数字设计。 Segoe UI 提供了各种各样的字符，其设计目的是在不同大小和像素密度之间保持最佳的易读性。 它提供了简洁清雅、落落大方的美感，从而丰富了系统内容。
+We’ve selected Segoe UI for use on all Microsoft digital designs. Segoe UI provides a wide range of characters and is designed to maintain optimal legibility across sizes and pixel densities. It offers a clean, light, and open aesthetic that complements the content of the system.
 
-![Segoe UI 字体的示例文本](images/segoe-sample.png)
+![Sample text of Segoe UI font](images/segoe-sample.png)
 
-## 粗细
+## <a name="weights"></a>Weights
 
-我们使版式一眼望去非常简洁且有效率。 我们选择使用一种粗细和大小均为最小的字样和清晰的层次结构。 排版和对齐遵循给定语言的默认样式。 英语版本的顺序是从左往右，从上到下。 文本和图像之间的关系清晰明了。
+We approach typography with an eye to simplicity and efficiency. We choose to use one typeface, a minimum of weights and sizes, and a clear hierarchy. Positioning and alignment follow the default style for the given language. In English the sequence runs left to right, top to bottom. Relationships between text and images are clear and straightforward.
 
-![显示了支持的字体粗细。 细体、半细体、常规、半粗体和粗体](images/weights.png)
+![Shows supported font weights. Light, semilight, regular, semibold, and bold](images/weights.png)
 
-## 行距
+## <a name="line-spacing"></a>Line spacing
 
-![行距为 125% 的示例](images/line-spacing.png)
+![Example of line spacing at 125%](images/line-spacing.png)
 
-行距应为字体大小的 125%，如有必要，则舍入为最近的 4 的倍数。 以 15 像素的 Segoe UI 为例，15 像素的 125% 就是 18.75 像素。 我们建议四舍五入，将行高设置为 20 像素以保持在 4 像素网格上。 这将确保良好的阅读体验，并且为变音符提供了足够的空间。 有关具体示例，请参阅下面的“字体渐变”部分。
+Line spacing should be calculated at 125% of the font size, rounding to the closest multiple of four when necessary. For example with 15px Segoe UI, 125% of 15px is 18.75px. We recommend rounding up and setting line height to 20px to stay on the 4px grid. This ensures a good reading experience and adequate space for diacritical marks. See the Type ramp section below for specific examples.
 
-在较小字体上堆叠较大字体时，较大字体的最后一个基线与较小字体的第一个基线之间的距离应与较大字体的行高相等。
+When stacking larger type on top of smaller type, the distance from the last baseline of the larger type to the first baseline of the smaller type should be equal to the larger type's line height.
 
-![显示较大字体如何在较小字体上进行堆叠](images/line-height-stacking.png)
+![Shows how large type stacks on small type](images/line-height-stacking.png)
 
-在 XAML 中，可通过将两个 [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 堆叠起来并设置适当的边距来实现这一点。
+In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) and setting the appropriate margin.
 
 ```xml
 <StackPanel Width="200">
@@ -60,128 +60,128 @@ ms.openlocfilehash: 481c66e3edd42722cfd59bf420fe5b6286706245
 
 
 
-## 字距调整和字距
+## <a name="kerning-and-tracking"></a>Kerning and tracking
 
-Segoe 是一种人性化的字样，有着柔和友好的外观和基于手写文本的有机开放形式。 为了确保最佳的易读性并保持其人性化的完整性，字距调整和字距必须具有特定的值。
+Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text. To ensure optimum legibility and maintain it’s humanist integrity, the kerning and tracking settings must have specific values.
 
-字距调整应设置为“标准”，字距应设置为“0”。
+Kerning should be set to “metrics” and tracking should be set to “0”.
 
 
-![显示字距调整和字距之间的差异](images/kerning-tracking.png)
+![Shows the difference between kerning and tracking](images/kerning-tracking.png)
 
 
 
-## 单词和字母间距
+## <a name="word-and-letter-spacing"></a>Word and letter spacing
 
-类似于字距调整和字距，单词间距和字母间距使用特定设置来确保最佳的易读性和人性化的完整性。
+Similar to kerning and tracking, word spacing and letter spacing use specific settings to ensure optimum legibility and humanist integrity.
 
-默认情况下，单词间距始终为 100%，而字母间距应设置为“0”。
+Word spacing by default is always 100% and letter spacing should be set to “0”.
 
 
-![显示单词和字母间距之间的差异](images/word-letter.png)
+![Shows the difference between word and letter spacing](images/word-letter.png)
 
-**注意**&nbsp;&nbsp;在 XAML 文本控件中，[Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 用于控制字距调整，而 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 用于控制字距。 Typography.Kerning 的默认设置为“true”，FontStretch 的默认设置为“Normal”，它们都是推荐值。
+**Note**&nbsp;&nbsp;In a XAML text control use [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) to control kerning and [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) to control tracking. By default Typography.Kerning is set to “true” and FontStretch is set to “Normal”, which are the recommended values.
 
 
 
 
-## 对齐
+## <a name="alignment"></a>Alignment
 
-通常情况下，我们建议字体的可视元素和列应左对齐。 在大多数情况下，这种左边对齐但右边未对齐的方法可提供一致的内容编排和统一的布局。
+Generally, we recommend that visual elements and columns of type be left-aligned. In most instances, this flush-left and ragged-right approach provides consistent anchoring of the content and a uniform layout.
 
 
-![显示左对齐的文本](images/alignment.png)
+![Shows flush-left text](images/alignment.png)
 
 
 
-## 行尾
+## <a name="line-endings"></a>Line endings
 
-当版式未按照左边对齐但右边非对齐的形式进行排版时，请尝试确保行尾整齐，避免有连字符。
+When typography is not positioned as flush left and ragged right, try to ensure even line endings and avoid hyphenation.
 
 
-![显示整齐的行尾](images/line-endings.png)
+![Shows even line endings](images/line-endings.png)
 
-## 段落
+## <a name="paragraphs"></a>Paragraphs
 
-若要确保列边缘对齐，应通过无缩进跳行指示段落。
+To provide aligned column edges, paragraphs should be indicated by skipping a line without indentation.
 
-![显示段落之间的完整行距](images/paragraphs.png)
+![Shows a full line of space between paragraphs](images/paragraphs.png)
 
-## 字符数
+## <a name="character-count"></a>Character count
 
-如果一行太短，眼睛将需要过于频繁地左右来回扫视，从而破坏读者的节奏。 如果可以，每行最好有 50 到 60 个字母以便于阅读。
+If a line is too short, the eye will have to travel left and right too often, breaking the reader’s rhythm. If possible, 50–60 letters per line is best for ease of reading.
 
-Segoe 提供了各种各样的字符，其设计目的是在小字体和大字体以及低像素密度和高像素密度之间保持最佳的易读性。 在文本列行中使用最佳的字母数量可确保在应用程序中有着良好的易读性。
+Segoe provides a wide range of characters and is designed to maintain optimal legibility in both small and large sizes as well as low and high pixel densities. Using the optimal number of letters in a text column line ensures good legibility in an application.
 
-行太长会使眼睛疲劳，并且可能会使用户感到迷惑。 行太短会强制读者的眼睛过多地来回扫视，并且会导致眼睛疲劳。
+Lines that are too long will strain the eye and may disorient the user. Lines that are too short force the reader’s eye to travel too much and can cause fatigue.
 
-![显示 3 个行的长度不同的段落](images/character-count.png)
+![Shows 3 paragraphs with different line lengths](images/character-count.png)
 
-## 悬挂式文字对齐
+## <a name="hanging-text-alignment"></a>Hanging text alignment
 
-可以通过方式处理带有文字的图标的水平对齐，具体取决于图标的大小和文字的数量。 当文字（不论是单行还是多行）符合图标的高度时，文本应该垂直居中。
+The horizontal alignment of icons with text can be handled in a number of ways depending on the size of the icon and the amount of text. When the text, either single or multiple lines, fits within the height of the icon, the text should be vertically centered.
 
-如果文字的高度超出了图标的高度，则文字的第一行应垂直对齐，其他文字应自然顺流下来。 当与大写字母一起使用时（无论高度是升序还是降序），应仔细查看相同的对齐指南。
+Once the height of the text extends beyond the height of the icon, the first line of text should align vertically and the additional text should flow on naturally below. When using characters with larger cap, ascender and descender heights, care should be taken to observe the same alignment guidance.
 
-![显示若干图标和文字的配对](images/hanging-text-alignment.png)
+![Shows several icon and text pairings](images/hanging-text-alignment.png)
 
-**注意**&nbsp;&nbsp;XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 属性提供了对大写字母高度和基线字体指标的访问权限。 它可以用于使文字在视觉上垂直居中或顶部对齐。
+**Note**&nbsp;&nbsp;XAML's [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) property provides access to the cap height and baseline font metrics. It can be used to visually vertically center or top-align type.
 
-## 剪切和省略号
+## <a name="clipping-and-ellipses"></a>Clipping and ellipses
 
-默认进行剪裁：假定文字将自动换行，除非另有去除规定。 在使用非换行文字时，我们建议使用剪裁，而不是使用省略号。 剪裁可能会发生在容器、设备、滚动条等的边缘处。
+Clip by default—assume that text will wrap unless the redline specifies otherwise. When using non-wrapping text, we recommend clipping rather than using ellipses. Clipping can occur at the edge of the container, at the edge of the device, at the edge of a scrollbar, etc.
 
-例外情况：对于未明确定义的容器（例如，不区分背景颜色），可以去除非换行文字而使用省略号“…”。
+Exceptions—for containers which are not well-defined (e.g. no differentiating background color), then non-wrapping text can be redlined to use the ellipse ”…”.
 
-![显示剪裁一些文字的设备框架](images/clipping.png)
+![Shows a device frame with some text clipping](images/clipping.png)
 
-## 字体渐变
-类型渐变建立了从标题行到正文文本的关键设计关系，并确保不同层次之间具有清晰和易于理解的层次结构。 此层次结构会生成一个使用户可以轻松地通过书面交流进行导航的结构。
+## <a name="type-ramp"></a>Type ramp
+The type ramp establishes a crucial design relationship from headlines to body text and ensures a clear and understandable hierarchy between the different levels. This hierarchy builds a structure which enables users to easily navigate through written communication.
 
-![显示字体渐变](images/type-ramp.png) 所有大小都是以有效像素为单位。 
+![Shows the type ramp](images/type-ramp.png) All sizes are in effective pixels. 
 
 
-**注意**&nbsp;&nbsp;大多数级别的渐变都可用作遵循 `*TextBlockStyle` 命名约定（`HeaderTextBlockStyle` 除外）的 XAML [静态资源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)。
+**Note**&nbsp;&nbsp;Most levels of the ramp are available as XAML [static resources](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) that follow the `*TextBlockStyle` naming convention (ex: `HeaderTextBlockStyle`).
 
 
-## 主要文字和次要文字
+## <a name="primary-and-secondary-text"></a>Primary and secondary text
 
-若要在字体渐变之外创建其他层次结构，请将次要文字的不透明度设置为 60%。 在[“主题调色板”](color.md#color-themes)中，可使用 BaseMedium。 主要文字的不透明度应始终为 100% 或 BaseHigh。
+To create additional hierarchy beyond the type ramp, set secondary text to 60% opacity. In the [theming color palette](color.md#color-theming), you would use BaseMedium. Primary text should always be at 100% opacity, or BaseHigh.
 
 
-## 全部大写标题
+## <a name="all-caps-titles"></a>All caps titles
 
-某些页面标题应采用“ALL CAPS”以便添加其他维度的层次结构。 这些标题应使用 BaseAlt，字符间距设置为字体高度的 7.5%。 也可以使用这种处理方式帮助应用导航。
+Certain page titles should be in ALL CAPS to add yet another dimension of hierarchy. These titles should use BaseAlt with the character spacing set to 75 thousandths of an em. This treatment may also be used to help with app navigation.
 
-但是，在某些语言中，专有名词大写会更改其含义，因此所有基于名称或用户输入的页面标题*不*应转换为全部大写。
+However, proper names change their meaning when capitalized in certain languages, so any page titles based on names or user input should *not* be converted to all caps.
 
 
-**应做事项**
+**Do**
 
 
 
-* 对大部分文字使用“Body”
-* 对空间受限的标题使用“Base”
-* 合并 SubtitleAlt 以便通过强调顶级内容来创建对比和层次结构
+* Use Body for most text
+* Use Base for titles when space is constrained
+* Incorporate SubtitleAlt to create contrast and hierarchy by emphasizing top level content
 
 
 
-**禁止事项**
+**Don't**
 
 
 
-* 请勿对长字符串或任何主要操作使用“大写”
-* 如果文字需要换行，请勿使用“Header”或“Subheader”
-* 请勿在同一页面上合并 Subtitle 和 SubtitleAlt
+* Don't use Caption for long strings or any primary action
+* Don't use Header or Subheader if text needs to wrap
+* Don't combine Subtitle and SubtitleAlt on the same page
 
 
 
-## 相关文章
+## <a name="related-articles"></a>Related articles
 
-* [文本控件](../controls-and-patterns/text-controls.md)
+* [Text controls](../controls-and-patterns/text-controls.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 
