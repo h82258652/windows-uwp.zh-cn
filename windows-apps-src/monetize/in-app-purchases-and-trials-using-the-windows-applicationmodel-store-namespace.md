@@ -1,62 +1,62 @@
 ---
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: Learn how to enable in-app purchases and trials in UWP apps that target releases before Windows 10, version 1607.
-title: In-app purchases and trials using the Windows.ApplicationModel.Store namespace
+description: "了解如何启用 UWP 应用中的应用内购买和试用（定向 Windows&nbsp;10 版本 1607 之前的版本）。"
+title: "使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
 ms.openlocfilehash: ee2a52a54be8510b962f1ef5c40570f3836d28c3
 
 ---
 
-# <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>In-app purchases and trials using the Windows.ApplicationModel.Store namespace
+# <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用
 
-You can use members in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to add in-app purchases and trial functionality to your Universal Windows Platform (UWP) app to help monetize your app. These APIs also provide access to the license info for your app.
+可以使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空间中的成员，将应用内购买和试用功能添加到通用 Windows 平台 (UWP) 应用，以帮助通过应用盈利。 这些 API 还提供应用的许可证信息访问权限。
 
-The articles in this section provide in-depth guidance and code examples for using the members in the **Windows.ApplicationModel.Store** namespace for several common scenarios. For an overview of basic concepts related to in-app purchases in UWP apps, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+本部分中的文章提供有关针对多个常见方案使用 **Windows.ApplicationModel.Store** 命名空间中的成员的深入指南和代码示例。 有关与 UWP 中的应用内购买相关的基本概念概述，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
 
-For a complete sample that demonstrates how to implement trials and in-app purchases using the **Windows.ApplicationModel.Store** namespace, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
+有关演示如何使用 **Windows.ApplicationModel.Store** 命名空间实现试用和应用内购买的完整示例，请参阅[应用商店示例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
 
->**Notes**&nbsp;&nbsp;
+>**注意**&nbsp;&nbsp;
 >
-> * If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead of the **Windows.ApplicationModel.Store** namespace. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons, and is designed to be compatible with future types of products and features supported by Windows Dev Center and the Store. The **Windows.Services.Store** namespace is also designed to have better performance. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+> * 如果你的应用面向 Windows&nbsp;10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员，而非使用 **Windows.ApplicationModel.Store** 命名空间。 **Windows.Services.Store** 命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 **Windows.Services.Store** 命名空间还设计用于提供更好的性能。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
 <br/><br/>
-> * The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop). These applications must use the **Windows.Services.Store** namespace to implement in-app purchases and trials.
+> * **Windows.ApplicationModel.Store** 命名空间在使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序中不受支持。 这些应用程序必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
 
-## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Get started with the CurrentApp and CurrentAppSimulator classes
+## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>开始使用 CurrentApp 和 CurrentAppSimulator 类
 
-The main entry point to the **Windows.ApplicationModel.Store** namespace is the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) class. This class provides static properties and methods you can use to get info for the current app and its available add-ons (also known as in-app products or IAPs), get license info for the current app or its add-ons, purchase an app or add-on for the current user, and perform other tasks.
+**Windows.ApplicationModel.Store** 命名空间的主要入口点是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 类。 此类提供的静态属性和方法可用于获取当前应用及其可用加载项（也称为应用内产品或 IAP）的信息、获取当前应用或其加载项的许可证信息、为当前用户购买应用或加载项以及执行其他任务。
 
-The [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) class obtains its data from the Windows Store, so you must have a developer account and the app must be published in the Store before you can successfully use this class in your app. Before you submit your app to the Store, you can test your code with a simulated version of this class called [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx). After you test your app, and before you submit it to the Windows Store, you must replace the instances of **CurrentAppSimulator** with **CurrentApp**. Your app will fail certification if it uses **CurrentAppSimulator**.
+[CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 类从 Windows 应用商店获取其数据，因此必须拥有一个开发人员帐户，而且必须在应用商店中发布应用，才能在你的应用中成功使用此类。 在将应用提交到应用商店之前，可以使用此类的模拟版本（称为 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx)）测试代码。 测试应用后，并将其提交到 Windows 应用商店之前，必须将 **CurrentAppSimulator** 的实例替换为 **CurrentApp**。 如果应用使用 **CurrentAppSimulator**，则无法通过认证。
 
-When the **CurrentAppSimulator** is used, the initial state of your app's licensing and in-app products is described in a local file on your development computer named WindowsStoreProxy.xml. For more information about this file, see [Using the WindowsStoreProxy.xml file with CurrentAppSimulator](#proxy).
+当使用 **CurrentAppSimulator** 时，应用许可和应用内产品的初始状态在本地文件中进行介绍，该文件位于名为 WindowsStoreProxy.xml 的开发计算机上。 有关此文件的详细信息，请参阅[将 WindowsStoreProxy.xml 文件与 CurrentAppSimulator 一起使用](#proxy)。
 
-For more information about common tasks you can perform using **CurrentApp** and **CurrentAppSimulator**, see the following articles.
+有关可使用 **CurrentApp** 和 **CurrentAppSimulator** 执行的常见任务的详细信息，请参阅以下文章。
 
-| Topic       | Description                 |
+| 主题       | 说明                 |
 |----------------------------|-----------------------------|
-| [Exclude or limit features in a trial version](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. |
-| [Enable in-app product purchases](enable-in-app-product-purchases.md)      |  Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.  |
-| [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md)      | Offer consumable in-app products—items that can be purchased, used, and purchased again—through the Store commerce platform to provide your customers with a purchase experience that is both robust and reliable. This is especially useful for things like in-game currency (gold, coins, etc.) that can be purchased and then used to purchase specific power-ups. |
-| [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md)      |   If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog.    |
-| [Use receipts to verify product purchases](use-receipts-to-verify-product-purchases.md)      |   Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt that provides information about the listed product and monetary cost to the customer. Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made in-app product purchases from the Windows Store. |
+| [排除或限制试用版中的功能](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | 如果允许客户在试用期内免费使用你的应用，则可以通过排除或限制试用期内的某些功能，吸引客户升级到完整版应用。 |
+| [启用应用内产品购买](enable-in-app-product-purchases.md)      |  无论你的应用是否免费，你都可以直接从应用中销售内容、其他应用或新的应用功能（例如解锁游戏的下一关）。 我们在此处显示了如何在应用中启用这些产品。  |
+| [启用可消费应用内产品购买](enable-consumable-in-app-product-purchases.md)      | 通过应用商店商业平台提供可消费应用内产品（这些项目可以进行购买、使用和再次购买），以便为客户提供强大可靠的购买体验。 这对游戏内货币（金子、金币等）等来说尤为有用，可以购买此类货币，然后将其用于购买特定道具。 |
+| [管理应用内产品的大目录](manage-a-large-catalog-of-in-app-products.md)      |   如果你的应用提供较大的应用内产品目录，可以选择按照本主题中描述的过程帮助管理你的目录。    |
+| [使用收据验证产品购买](use-receipts-to-verify-product-purchases.md)      |   每个促成成功产品购买的 Windows 应用商店交易都可以选择返回交易收据，该收据可向客户提供有关所列产品和货币成本的信息。 有权访问此信息可支持以下方案：你的应用需要验证用户是否购买了你的应用，或者是否已从 Windows 应用商店进行了应用内产品购买。 |
 
 <span id="proxy" />
-## <a name="using-the-windowsstoreproxyxml-file-with-currentappsimulator"></a>Using the WindowsStoreProxy.xml file with CurrentAppSimulator
+## <a name="using-the-windowsstoreproxyxml-file-with-currentappsimulator"></a>将 WindowsStoreProxy.xml 文件与 CurrentAppSimulator 一起使用
 
-When the **CurrentAppSimulator** is used, the initial state of your app's licensing and in-app products is described in a local file on your development computer named WindowsStoreProxy.xml. **CurrentAppSimulator** methods that alter the app's state, for example by buying a license or handling an in-app purchase, only update the state of the **CurrentAppSimulator** object in memory. The contents of WindowsStoreProxy.xml are not changed. When the app starts again, the license state reverts to what is described in WindowsStoreProxy.xml.
+当使用 **CurrentAppSimulator** 时，应用许可和应用内产品的初始状态在本地文件中进行介绍，该文件位于名为 WindowsStoreProxy.xml 的开发计算机上。 改变应用状态的 **CurrentAppSimulator** 方法（例如，通过购买许可证或处理应用内购买）仅更新内存中 **CurrentAppSimulator** 对象的状态。 WindowsStoreProxy.xml 的内容不会更改。 当应用再次启动时，许可证状态将还原到 WindowsStoreProxy.xml 中所述的内容。
 
-A WindowsStoreProxy.xml file is created by default at the following location: %UserProfile%\AppData\Local\Packages\\&lt;app package folder&gt;\LocalState\Microsoft\Windows Store\ApiData. You can edit this file to define the scenario that you want to simulate in the **CurrentAppSimulator** properties.
+WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\Local\Packages\\&lt;应用包文件夹&gt;\LocalState\Microsoft\Windows Store\ApiData。 你可以编辑此文件以定义想要模拟 **CurrentAppSimulator** 属性的场景。
 
-Although you can modify the values in this file, we recommend that you create your own WindowsStoreProxy.xml file (in a data folder of your Visual Studio project) for **CurrentAppSimulator** to use instead. When simulating the transaction, call [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) to load your file. If you do not call **ReloadSimulatorAsync** to load your own WindowsStoreProxy.xml file, **CurrentAppSimulator** will create/load (but not overwrite) the default WindowsStoreProxy.xml file.
+尽管可以修改此文件中的值，但我们建议创建自己的 WindowsStoreProxy.xml 文件（在 Visual Studio 项目的数据文件夹中）以供 **CurrentAppSimulator** 改用。 模拟交易时，调用 [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) 以加载文件。 如果不调用 **ReloadSimulatorAsync** 加载你自己的 WindowsStoreProxy.xml 文件， **CurrentAppSimulator** 将创建/加载（但不是会覆盖）默认 WindowsStoreProxy.xml 文件。
 
->**Note**&nbsp;&nbsp;Be aware that **CurrentAppSimulator** is not fully initialized until **ReloadSimulatorAsync** completes. And, since **ReloadSimulatorAsync** is an asynchronous method, care should be taken to avoid the race condition of querying **CurrentAppSimulator** on one thread while it is being initialized on another. One technique is to use a flag to indicate that initialization is complete. An app that is installed from the Windows Store must use **CurrentApp** instead of **CurrentAppSimulator**, and in that case **ReloadSimulatorAsync** is not called and therefore the race condition just mentioned does not apply. For this reason, design your code so that it will work in both cases, both asychronously and synchronously.
+>**注意**&nbsp;&nbsp;请注意，**CurrentAppSimulator** 不会完全初始化，直到 **ReloadSimulatorAsync** 完成。 并且，由于 **ReloadSimulatorAsync** 是异步方法，应格外小心以避免在初始化一个线程时，同时对另一个线程查询 **CurrentAppSimulator** 会出现争用情况。 有一种方法是使用一个标志来指示初始化已完成。 从 Windows 应用商店安装的应用必须使用 **CurrentApp** 而不是 **CurrentAppSimulator**，并且在这种情况下不调用 **ReloadSimulatorAsync**，因此刚刚提到的争用情况不适用。 出于此原因，请设计你的代码，以便它可在这两种情况下（异步和同步）都起作用。
 
 
 <span id="proxy-examples" />
-### <a name="examples"></a>Examples
+### <a name="examples"></a>示例
 
-This example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes an app with a trial mode that expires at 05:00 (UTC) on Jan. 19, 2015.
+此示例是一个 WindowsStoreProxy.xml 文件（UTF-16 编码），描述了试用模式的应用在 2015 年 1 月 19 日 05:00 (UTC) 过期。
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -89,7 +89,7 @@ This example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes an 
 </CurrentApp>
 ```
 
-The next example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes an app that has been purchased, has a feature that expires at 05:00 (UTC) on Jan. 19, 2015, and has a consumable in-app purchase.
+下一个示例是一个 WindowsStoreProxy.xml 文件（UTF-16 编码），描述了应用已购买，但有一项功能在 2015 年 1 月 19 日 05:00 (UTC) 过期，并具有易耗型应用内购买。
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -141,18 +141,18 @@ The next example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes
 
 
 <span id="proxy-schema" />
-### <a name="schema"></a>Schema
+### <a name="schema"></a>架构
 
-This section lists the XSD file that defines the structure of the WindowsStoreProxy.xml file. To apply this schema to the XML editor in Visual Studio when working with your WindowsStoreProxy.xml file, do the following:
+本部分列出的 XSD 文件定义 WindowsStoreProxy.xml 文件的结构。 若要在使用 WindowsStoreProxy.xml 文件时将此架构应用到 Visual Studio 中的 XML 编辑器，请执行以下操作：
 
-1. Open the WindowsStoreProxy.xml file in Visual Studio.
-2. On the **XML** menu, click **Create Schema**. This will create a temporary WindowsStoreProxy.xsd file based on the contents of the XML file.
-3. Replace the contents of that .xsd file with the schema below.
-4. Save the file to a location where you can apply it to multiple app projects.
-5. Switch to your WindowsStoreProxy.xml file in Visual Studio.
-6. On the **XML** menu, click **Schemas**, then locate the row in the list for the WindowsStoreProxy.xsd file. If the location for the file is not the one you want (for example, if the temporary file is still shown), click **Add**. Navigate to the right file, then click **OK**. You should now see that file in the list. Make sure a checkmark appears in the **Use** column for that schema.
+1. 在 Visual Studio 中打开 WindowsStoreProxy.xml 文件。
+2. 在“XML”菜单上，单击“创建架构”。 这将基于 XML 文件的内容创建一个临时 WindowsStoreProxy.xsd 文件。
+3. 将该 .xsd 文件的内容替换为以下架构。
+4. 将文件保存到可以将其应用到多个应用项目的位置。
+5. 在 Visual Studio 中切换到 WindowsStoreProxy.xml 文件。
+6. 在“XML”菜单上，单击“架构”，然后在列表中找到 WindowsStoreProxy.xsd 文件所在的行。 如果该文件的位置不是你需要的（例如，如果仍然显示临时文件），则单击“添加”。 导航到正确的文件，然后单击“确定”。 你现在应该可以在列表中看到该文件。 确保在该架构的“使用”列中出现复选标记。
 
-Once you've done this, edits you make to WindowsStoreProxy.xml will be subject to the schema. For more information, see [How to: Select the XML Schemas to Use](http://go.microsoft.com/fwlink/p/?LinkId=403014).
+一旦完成这些操作，对 WindowsStoreProxy.xml 进行的编辑将遵循该架构。 有关详细信息，请参阅[如何：选择要使用的 XML 架构](http://go.microsoft.com/fwlink/p/?LinkId=403014)。
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -345,198 +345,198 @@ Once you've done this, edits you make to WindowsStoreProxy.xml will be subject t
 
 
 <span id="proxy-descriptions" />
-### <a name="element-and-attribute-descriptions"></a>Element and attribute descriptions
+### <a name="element-and-attribute-descriptions"></a>元素和属性说明
 
-This section describes the elements and attributes in the WindowsStoreProxy.xml file.
+本部分介绍 WindowsStoreProxy.xml 文件中的元素和属性。
 
-The root element of this file is the **CurrentApp** element, which represents the current app. This element contains the following child elements.
+此文件的根元素是 **CurrentApp** 元素，它表示当前应用。 此元素包含以下子元素。
 
-|  Element  |  Required  |  Quantity  |  Description   |
+|  元素  |  必需  |  数量  |  描述   |
 |-------------|------------|--------|--------|
-|  [ListingInformation](#listinginformation)  |    Yes        |  1  |  Contains data from the app's listing.            |
-|  [LicenseInformation](#licenseinformation)  |     Yes       |   1    |   Describes the licenses available for this app and its durable add-ons.     |
-|  [ConsumableInformation](#consumableinformation)  |      No      |   0 or 1   |   Describes the consumable add-ons that are available for this app.      |
-|  [Simulation](#simulation)  |     No       |      0 or 1      |   Describes how calls to various [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) methods will work in the app during testing.    |
+|  [ListingInformation](#listinginformation)  |    是        |  1  |  包含应用列表的数据。            |
+|  [LicenseInformation](#licenseinformation)  |     是       |   1    |   描述了可用于此应用及其持久型加载项的许可证。     |
+|  [ConsumableInformation](#consumableinformation)  |      否      |   0 或 1   |   描述了可用于此应用的易耗型加载项。      |
+|  [模拟](#simulation)  |     否       |      0 或 1      |   描述了对各种 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) 方法的调用在测试过程如何在应用中工作。    |
 
 <span id="listinginformation" />
-#### <a name="listinginformation-element"></a>ListingInformation element
+#### <a name="listinginformation-element"></a>ListingInformation 元素
 
-This element contains data from the app's listing. **ListingInformation** is a required child of the **CurrentApp** element.
+此元素包含应用列表的数据。 **ListingInformation** 是 **CurrentApp** 元素的必需子元素。
 
-**ListingInformation** contains the following child elements.
+**ListingInformation** 包含以下子元素。
 
-|  Element  |  Required  |  Quantity  |  Description   |
+|  元素  |  必需  |  数量  |  描述   |
 |-------------|------------|--------|--------|
-|  [App](#app-child-of-listinginformation)  |    Yes   |  1   |    Provides data about the app.         |
-|  [Product](#product-child-of-listinginformation)  |    No  |  0 or more   |      Describes an add-on for the app.     |     |
+|  [App](#app-child-of-listinginformation)  |    是   |  1   |    提供有关应用的数据。         |
+|  [Product](#product-child-of-listinginformation)  |    否  |  0 或更多   |      描述了该应用的加载项。     |     |
 
 <span id="app-child-of-listinginformation"/>
-#### <a name="app-element-child-of-listinginformation"></a>App element (child of ListingInformation)
+#### <a name="app-element-child-of-listinginformation"></a>应用元素（ListingInformation 的子元素）
 
-This element describes the app's license. **App** is a required child of the [ListingInformation](#listinginformation) element.
+此元素描述了应用的许可证。 **App** 是 [ListingInformation](#listinginformation) 元素的必需子元素。
 
-**App** contains the following child elements.
+**App** 包含以下子元素。
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  元素  |  必需  |  数量  | 描述   |
 |-------------|------------|--------|--------|
-|  **AppId**  |    Yes   |  1   |   The GUID that identifies the app in the Store. This can be any GUID for testing.        |
-|  **LinkUri**  |    Yes  |  1   |    The URI of the listing page in the store. This can be any valid URI for testing.         |
-|  **CurrentMarket**  |    Yes  |  1   |    The customer's country/region.         |
-|  **AgeRating**  |    Yes  |  1   |     An integer that represents the minimum age rating of the app. This is the same value you would specify in the Dev Center dashboard when you submit the app. The values used by the Store are: 3, 7, 12, and 16. For more info on these ratings, see [Age ratings](../publish/age-ratings.md).        |
-|  [MarketData](#marketdata-child-of-app)  |    Yes  |  1 or more      |    Contains info about the app for a given country/region. For each country/region in which the app is listed, you must include a **MarketData** element.       |    |
+|  **AppId**  |    是   |  1   |   识别应用商店中应用的 GUID。 这可以是用于测试的任何 GUID。        |
+|  **LinkUri**  |    是  |  1   |    应用商店中列表页面的 URI。 这可以是用于测试的任何有效 URI。         |
+|  **CurrentMarket**  |    是  |  1   |    客户所在的国家/地区。         |
+|  **AgeRating**  |    是  |  1   |     一个整数，表示应用的最低年龄分级。 该值与提交应用时，在开发人员中心仪表板中指定的值相同。 由应用商店使用的值是：3、7、12 和 16。 有关这些分级的详细信息，请参阅[年龄分级](../publish/age-ratings.md)。        |
+|  [MarketData](#marketdata-child-of-app)  |    是  |  1 或更多      |    包含有关给定国家/地区的应用的信息。 对于在其中列出了应用的每个国家/地区，必须包含 **MarketData** 元素。       |    |
 
 <span id="marketdata-child-of-app"/>
-#### <a name="marketdata-element-child-of-app"></a>MarketData element (child of App)
+#### <a name="marketdata-element-child-of-app"></a>MarketData 元素（App 的子元素）
 
-This element provides info about the app for a given country/region. For each country/region in which the app is listed, you must include a **MarketData** element. **MarketData** is a required child of the [App](#app-child-of-listinginformation) element.
+此元素提供有关给定国家/地区的应用的信息。 对于在其中列出了应用的每个国家/地区，必须包含 **MarketData** 元素。 **MarketData** 是 [App](#app-child-of-listinginformation) 元素的必需子元素。
 
-**MarketData** contains the following child elements.
+**MarketData** 包含以下子元素。
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  元素  |  必需  |  数量  | 描述   |
 |-------------|------------|--------|--------|
-|  **Name**  |    Yes   |  1   |   The name of the app in this country/region.        |
-|  **Description**  |    Yes  |  1   |      The description of the app for this country/region.       |
-|  **Price**  |    Yes  |  1   |     The price of the app in this country/region.        |
-|  **CurrencySymbol**  |    Yes  |  1   |     The currency symbol used in this country/region.        |
-|  **CurrencyCode**  |    No  |  0 or 1      |      The currency code used in this country/region.         |  |
+|  **Name**  |    是   |  1   |   在此国家/地区中应用的名称。        |
+|  **Description**  |    是  |  1   |      在此国家/地区中应用的描述。       |
+|  **Price**  |    是  |  1   |     在此国家/地区中应用的价格 。        |
+|  **CurrencySymbol**  |    是  |  1   |     在此国家/地区使用的货币符号。        |
+|  **CurrencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |  |
 
-**MarketData** has the following attributes.
+**MarketData** 具有以下属性。
 
-|  Attribute  |  Required  |  Description   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |  |
+|  **xml:lang**  |    是        |     指定市场数据信息适用的国家/地区。          |  |
 
 <span id="product-child-of-listinginformation"/>
-#### <a name="product-element-child-of-listinginformation"></a>Product element (child of ListingInformation)
+#### <a name="product-element-child-of-listinginformation"></a>Product 元素（ListingInformation 的子元素）
 
-This element describes an add-on for the app. **Product** is an optional child of the [ListingInformation](#listinginformation) element, and it contains one or more [MarketData](#marketdata-child-of-product) elements.
+此元素描述了应用的加载项。 **Product** 是 [ListingInformation](#listinginformation) 元素的可选子元素，它包含一个或多个 [MarketData](#marketdata-child-of-product) 元素。
 
-**Product** has the following attributes.
+**Product** 具有以下属性。
 
-|  Attribute  |  Required  |  Description   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Yes        |    Contains the string used by the app to identify the add-on.           |
-|  **LicenseDuration**  |    No        |    Indicates the number of days for which the license will be valid after the item has been purchased. The expiration date of the new license created by a product purchase is the purchase date plus the license duration. This attribute is used only if the **ProductType** attribute is **Durable**; this attribute is ignored for consumable add-ons.           |
-|  **ProductType**  |    No        |    Contains a value to identify the persistence of the in-app product. The supported values are **Durable** (the default) and **Consumable**. For durable types, additional information is described by a [Product](#product-child-of-licenseinformation) element under [LicenseInformation](#licenseinformation); for consumable types, additional information is described by a [Product](#product-child-of-consumableinformation) element under [ConsumableInformation](#consumableinformation).           |  |
+|  **ProductId**  |    是        |    包含应用用来标识加载项的字符串。           |
+|  **LicenseDuration**  |    否        |    指示已购买商品后，许可证有效的天数。 由产品购买创建的新许可证的过期日期是购买日期加许可证持续时间。 此属性仅在 **ProductType** 属性是 **Durable** 时使用；对于易耗型加载项，将忽略此属性。           |
+|  **ProductType**  |    否        |    包含标识应用内产品的持久性的一个值。 受支持的值有 **Durable**（默认值）和 **Consumable**。 对于持久类型，其他信息由 [LicenseInformation](#licenseinformation) 下的 [Product](#product-child-of-licenseinformation) 元素描述；对于易耗类型，其他信息由 [ConsumableInformation](#consumableinformation) 下的 [Product](#product-child-of-consumableinformation) 元素描述。           |  |
 
 <span id="marketdata-child-of-product"/>
-#### <a name="marketdata-element-child-of-product"></a>MarketData element (child of Product)
+#### <a name="marketdata-element-child-of-product"></a>MarketData 元素（Product 的子元素）
 
-This element provides info about the add-on for a given country/region. For each country/region in which the add-on is listed, you must include a **MarketData** element. **MarketData** is a required child of the [Product](#product-child-of-listinginformation) element.
+此元素提供有关给定国家/地区的加载项的信息。 对于在其中列出了加载项的每个国家/地区，必须包含 **MarketData** 元素。 **MarketData** 是 [Product](#product-child-of-listinginformation) 元素的必需子元素。
 
-**MarketData** contains the following child elements.
+**MarketData** 包含以下子元素。
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  元素  |  必需  |  数量  | 描述   |
 |-------------|------------|--------|--------|
-|  **Name**  |    Yes   |  1   |   The name of the add-on in this country/region.        |
-|  **Price**  |    Yes  |  1   |     The price of the add-on in this country/region.        |
-|  **CurrencySymbol**  |    Yes  |  1   |     The currency symbol used in this country/region.        |
-|  **CurrencyCode**  |    No  |  0 or 1      |      The currency code used in this country/region.         |  
-|  **Description**  |    No  |   0 or 1   |      The description of the add-on for this country/region.       |
-|  **Tag**  |    No  |   0 or 1   |      The [custom developer data](../publish/enter-add-on-properties.md#custom-developer-data) (also called tag) for the add-on.       |
-|  **Keywords**  |    No  |   0 or 1   |      Contains up to 10 **Keyword** elements that contain the [keywords](../publish/enter-add-on-properties.md#keywords) for the add-on.       |
-|  **ImageUri**  |    No  |   0 or 1   |      The [URI for the image](../publish/create-add-on-store-listings.md#icon) in the add-on's listing.           |  |
+|  **Name**  |    是   |  1   |   在此国家/地区中加载项的名称。        |
+|  **Price**  |    是  |  1   |     在此国家/地区中加载项的价格。        |
+|  **CurrencySymbol**  |    是  |  1   |     在此国家/地区使用的货币符号。        |
+|  **CurrencyCode**  |    否  |  0 或 1      |      在此国家/地区使用的货币代码。         |  
+|  **Description**  |    否  |   0 或 1   |      在此国家/地区中加载项的描述。       |
+|  **Tag**  |    否  |   0 或 1   |      加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（也称为标记）。       |
+|  **关键字**  |    否  |   0 或 1   |      包含最多 10 个 **Keyword** 元素，这些元素包含加载项的[关键字](../publish/enter-add-on-properties.md#keywords)。       |
+|  **ImageUri**  |    否  |   0 或 1   |      加载项列表中[图像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
 
-**MarketData** has the following attributes.
+**MarketData** 具有以下属性。
 
-|  Attribute  |  Required  |  Description   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |  |
+|  **xml:lang**  |    是        |     指定市场数据信息适用的国家/地区。          |  |
 
 <span id="licenseinformation"/>
-#### <a name="licenseinformation-element"></a>LicenseInformation element
+#### <a name="licenseinformation-element"></a>LicenseInformation 元素
 
-This element describes the licenses available for this app and its durable in-app products. **LicenseInformation** is a required child of the **CurrentApp** element.
+此元素描述了可用于此应用及其持久型应用内产品的许可证。 **LicenseInformation** 是 **CurrentApp** 元素的必需子元素。
 
-**LicenseInformation** contains the following child elements.
+**LicenseInformation** 包含以下子元素。
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  元素  |  必需  |  数量  | 描述   |
 |-------------|------------|--------|--------|
-|  [App](#app-child-of-licenseinformation)  |    Yes   |  1   |    Describes the app's license.         |
-|  [Product](#product-child-of-licenseinformation)  |    No  |  0 or more   |      Describes the license status of a durable add-on in the app.         |   |
+|  [App](#app-child-of-licenseinformation)  |    是   |  1   |    描述应用的许可证。         |
+|  [Product](#product-child-of-licenseinformation)  |    否  |  0 或更多   |      描述了应用中持久型加载项的许可证状态。         |   |
 
-The following table shows how to simulate some common conditions by combining values under the **App** and **Product** elements.
+下表显示了如何通过组合 **App** 和 **Product** 元素下的值来模拟某些常见情形。
 
-|  Condition to simulate  |  IsActive  |  IsTrial  | ExpirationDate   |
+|  要模拟的条件  |  IsActive  |  IsTrial  | ExpirationDate   |
 |-------------|------------|--------|--------|
-|  Fully licensed  |    true   |  false  |    Absent. It actually may be present and specify a future date, but you're advised to omit the element from the XML file. If it is present and specifies a date in the past, then **IsActive** will be ignored and taken to be false.          |
-|  In trial period  |    true  |  true   |      &lt;a datetime in the future&gt; This element must be present because **IsTrial** is true. You can visit a website showing the current Coordinated Universal Time (UTC) to know how far in the future to set this to get the remaining trial period you want.         |
-|  Expired trial  |    false  |  true   |      &lt;a datetime in the past&gt; This element must be present because **IsTrial** is true. You can visit a website showing the current Coordinated Universal Time (UTC) to know when "the past" is in UTC.         |
-|  Invalid  |    false  | false       |     &lt;any value or omitted&gt;          |  |
+|  完全授权  |    true   |  false  |    不存在。 它实际上可能会出现并指定将来的日期，但我们建议您从 XML 文件省略该元素。 如果它存在并指定过去的日期，那么 **IsActive** 将被忽略并为 false。          |
+|  在试用期内  |    true  |  true   |      &lt;将来的日期时间&gt; 此元素必须存在，因为 **IsTrial** 为 true。 你可以访问显示当前协调世界时 (UTC) 的网站，了解要设置的日期时间距离现在多久，以便获取想要的剩余试用期。         |
+|  试用过期  |    false  |  true   |      &lt;过去的日期时间&gt; 此元素必须存在，因为 **IsTrial** 为 true。 你可以访问显示当前协调世界时 (UTC) 的网站，了解“过去”的 UTC 时间。         |
+|  无效  |    false  | false       |     &lt;任何值或省略&gt;          |  |
 
 <span id="app-child-of-licenseinformation"/>
-#### <a name="app-element-child-of-licenseinformation"></a>App element (child of LicenseInformation)
+#### <a name="app-element-child-of-licenseinformation"></a>App 元素（ListingInformation 的子元素）
 
-This element describes the app's license. **App** is a required child of the [LicenseInformation](#licenseinformation) element.
+此元素描述了应用的许可证。 **App** 是 [LicenseInformation](#licenseinformation) 元素的必需子元素。
 
-**App** contains the following child elements.
+**App** 包含以下子元素。
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  元素  |  必需  |  数量  | 描述   |
 |-------------|------------|--------|--------|
-|  **IsActive**  |    Yes   |  1   |    Describes the current license state of this app. The value **true** indicates the license is valid; **false** indicates an invalid license. Normally this value is **true**, whether the app has a trial mode or not.  Set this value to **false** to test how your app behaves when it has an invalid license.           |
-|  **IsTrial**  |    Yes  |  1   |      Describes the current trial state of this app. The value **true** indicates the app is being used during the trial period; **false** indicates the app is not in a trial, either because the app has been purchased or the trial period has expired.         |
-|  **ExpirationDate**  |    No  |  0 or 1       |     The date the trial period for this app expires, in Coordinated Universal Time (UTC). The date must be expressed as: yyyy-mm-ddThh:mm:ss.ssZ. For example, 05:00 on January 19, 2015 would be specified as 2015-01-19T05:00:00.00Z. This element is required when **IsTrial** is **true**. Otherwise, it is not required.          |  |
+|  **IsActive**  |    是   |  1   |    描述了此应用的当前许可证状态。 值 **true** 指示许可证有效。**false** 指示许可证无效。 通常此值为 **true**，无论该应用是否具有试用模式。  将此值设置为 **false** 来测试你的应用在具有无效许可证时的行为。           |
+|  **IsTrial**  |    是  |  1   |      描述此应用的当前试用状态。 值 **true** 指示应用在试用期内使用；**false** 指示应用不在试用期内，或者因为已购买应用，或者因为试用期已过。         |
+|  **ExpirationDate**  |    否  |  0 或 1       |     此应用的过期日期，以协调世界时 (UTC) 表示。 该日期必须表示为：yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 将被指定为 2015-01-19T05:00:00.00Z。 当 **IsTrial** 是 **true** 时，此元素是必需的。 否则，不是必需的。          |  |
 
 <span id="product-child-of-licenseinformation"/>
-#### <a name="product-element-child-of-licenseinformation"></a>Product element (child of LicenseInformation)
+#### <a name="product-element-child-of-licenseinformation"></a>Product 元素（LicenseInformation 的子元素）
 
-This element describes the license status of a durable add-on in the app. **Product** is an optional child of the [LicenseInformation](#licenseinformation) element.
+此元素描述应用中持久型加载项的许可证状态。 **Product** 是 [LicenseInformation](#licenseinformation) 元素的可选子元素。
 
-**Product** contains the following child elements.
+**Product** 包含以下子元素。
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  元素  |  必需  |  数量  | 描述   |
 |-------------|------------|--------|--------|
-|  **IsActive**  |    Yes   |  1     |    Describes the current license state of this add-on. The value **true** indicates the add-on can be used; **false** indicates the add-on cannot be used or has not been purchased           |
-|  **ExpirationDate**  |    No   |  0 or 1     |     The date the add-on expires, in Coordinated Universal Time (UTC). The date must be expressed as: yyyy-mm-ddThh:mm:ss.ssZ. For example, 05:00 on January 19, 2015 would be specified as 2015-01-19T05:00:00.00Z. If this element is present, the add-on has an expiration date. If it's not present, the add-on does not expire.  |  
+|  **IsActive**  |    是   |  1     |    描述此加载项的当前许可证状态。 值 **true** 指示可以使用该加载项；**false** 指示不能使用或未购买该加载项           |
+|  **ExpirationDate**  |    否   |  0 或 1     |     加载项的过期日期，以协调世界时 (UTC) 表示。 该日期必须表示为：yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 将被指定为 2015-01-19T05:00:00.00Z。 如果该元素存在，该加载项将具有一个过期日期。 如果不存在，该加载项不会到期。  |  
 
-**Product** has the following attributes.
+**Product** 具有以下属性。
 
-|  Attribute  |  Required  |  Description   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Yes        |   Contains the string used by the app to identify the add-on.            |
-|  **OfferId**  |     No       |   Contains the string used by the app to identify the category in which the add-on belongs. This provides support for large item catalogs, as described in [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md).           |
+|  **ProductId**  |    是        |   包含应用用来标识加载项的字符串。            |
+|  **OfferID**  |     否       |   包含应用用来标识加载项所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |
 
 <span id="simulation"/>
-#### <a name="simulation-element"></a>Simulation element
+#### <a name="simulation-element"></a>模拟元素
 
-This element describes how calls to various [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) methods will work in the app during testing. **Simulation** is an optional child of the **CurrentApp** element, and it contains zero or more [DefaultResponse](#defaultresponse) elements.
+此元素描述了在测试过程中对各种 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) 方法的调用如何在应用中工作。 **Simulation** 是 **CurrentApp** 元素的可选子元素，它包含零个或多个 [DefaultResponse](#defaultresponse) 元素。
 
-**Simulation** has the following attributes.
+**Simulation** 具有以下属性。
 
-|  Attribute  |  Required  |  Description   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **SimulationMode**  |    No        |      Values can be **Interactive** or **Automatic**. When this attribute is set to **Automatic**, the methods will automatically return the specified HRESULT error codes. This can be used when running automated test cases.       |
+|  **SimulationMode**  |    否        |      值可以是 **Interactive** 或 **Automatic**。 当此属性设置为 **Automatic** 时，这些方法将自动返回指定的 HRESULT 错误代码。 这可运行自动测试用例时使用。       |
 
 <span id="defaultresponse"/>
-#### <a name="defaultresponse-element"></a>DefaultResponse element
+#### <a name="defaultresponse-element"></a>DefaultResponse 元素
 
-This element describes the default error code returned by a **CurrentAppSimulator** method. **DefaultResponse** is an optional child of the [Simulation](#simulation) element.
+此元素描述了 **CurrentAppSimulator** 方法返回的默认错误代码。 **DefaultResponse** 是 [Simulation](#simulation) 元素的可选子元素。
 
-**DefaultResponse** has the following attributes.
+**DefaultResponse** 具有以下属性。
 
-|  Attribute  |  Required  |  Description   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **MethodName**  |    Yes        |   Assign this attribute to one of the enum values shown for the **StoreMethodName** type in the [schema](#schema). Each of these enum values represents a **CurrentAppSimulator** method for which you want to simulate an error code return value in your app during testing. For example, the value **RequestAppPurchaseAsync_GetResult** indicates you want to simulate the error code return value of the [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync.aspx) method.            |
-|  **HResult**  |     Yes       |   Assign this attribute to one of the enum values shown for the **ResponseCodes** type in the [schema](#schema). Each of these enum values represents the error code you want to return for the method that is assigned to the **MethodName** attribute for this **DefaultResponse** element.           |
+|  **MethodName**  |    是        |   将此属性分配给为[架构](#schema)中的 **StoreMethodName** 类型显示的枚举值之一。 每个枚举值表示 **CurrentAppSimulator** 方法，你希望在测试期间为其模拟应用中的错误代码返回值。 例如，值 **RequestAppPurchaseAsync_GetResult** 指示你想要模拟 [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync.aspx) 方法的错误代码返回值。            |
+|  **HResult**  |     是       |   将此属性分配给为[架构](#schema)中的 **ResponseCodes** 类型显示的枚举值之一。 每个枚举值表示你希望为方法返回的错误代码，该方法已分配给 **DefaultResponse** 元素的 **MethodName** 属性。           |
 
 <span id="consumableinformation"/>
-#### <a name="consumableinformation-element"></a>ConsumableInformation element
+#### <a name="consumableinformation-element"></a>ConsumableInformation 元素
 
-This element describes the consumable add-ons available for this app. **ConsumableInformation** is an optional child of the **CurrentApp** element, and it can contain zero or more [Product](#product-child-of-consumableinformation) elements.
+此元素描述了可用于此应用的易耗型加载项。 **ConsumableInformation** 是 **CurrentApp** 元素的可选子元素，它可以包含零个或多个 [Product](#product-child-of-consumableinformation) 元素。
 
 <span id="product-child-of-consumableinformation"/>
-#### <a name="product-element-child-of-consumableinformation"></a>Product element (child of ConsumableInformation)
+#### <a name="product-element-child-of-consumableinformation"></a>Product 元素（ConsumableInformation 的子元素）
 
-This element describes a consumable add-on. **Product** is an optional child of the [ConsumableInformation](#consumableinformation) element.
+此元素描述易耗型加载项。 **Product** 是 [ConsumableInformation](#consumableinformation) 元素的可选子元素。
 
-**Product** has the following attributes.
+**Product** 具有以下属性。
 
-|  Attribute  |  Required  |  Description   |
+|  属性  |  必需  |  描述   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Yes        |   Contains the string used by the app to identify the consumable add-on.            |
-|  **TransactionId**  |     Yes       |   Contains a GUID (as a string) used by the app to track the purchase transaction of a consumable through the process of fulfillment. See [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md).            |
-|  **Status**  |      Yes      |  Contains the string used by the app to indicate the fulfillment status of a consumable. Values can be **Active**, **PurchaseReverted**, **PurchasePending**, or **ServerError**.             |
-|  **OfferId**  |     No       |    Contains the string used by the app to identify the category in which the consumable belongs. This provides support for large item catalogs, as described in [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md).           |
+|  **ProductId**  |    是        |   包含应用用来标识易耗型加载项的字符串。            |
+|  **TransactionId**  |     是       |   包含在实施过程中应用用于跟踪易耗品购买交易的 GUID（作为字符串）。 请参阅[启用易耗型应用内产品购买](enable-consumable-in-app-product-purchases.md)。            |
+|  **状态**  |      是      |  包含应用用于指示易耗品的实施状态的字符串。 值可以是 **Active**、**PurchaseReverted**、**PurchasePending** 或 **ServerError**。             |
+|  **OfferID**  |     否       |    包含应用用来标识易耗品所属的类别的字符串。 这为大型项目目录提供了支持，如[管理应用内产品的大型目录](manage-a-large-catalog-of-in-app-products.md)所述。           |
 
 
 

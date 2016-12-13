@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
-Description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
-title: Launch Feedback Hub from your app
+Description: "你可以通过从应用启动“反馈中心”来鼓励客户留下反馈。"
+title: "从应用启动“反馈中心”"
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
@@ -9,73 +9,73 @@ ms.openlocfilehash: 4296bd4007ae5109c9a3736c977ba68f312b208c
 
 ---
 
-# <a name="launch-feedback-hub-from-your-app"></a>Launch Feedback Hub from your app
+# <a name="launch-feedback-hub-from-your-app"></a>从应用启动“反馈中心”
 
-You can encourage your customers to leave feedback by adding a control (such as a button) to your Universal Windows Platform (UWP) app that launches Feedback Hub. Feedback Hub is a preinstalled app that provides a single place to gather feedback on Windows and installed apps. All customer feedback that is submitted for your app through Feedback Hub is collected and presented to you in the [Feedback report](../publish/feedback-report.md) in the Windows Dev Center dashboard, so you can see the problems, suggestions, and upvotes that your customers have submitted in one report.
+你可以通过将用于启动“反馈中心”的控件（如按钮）添加到通用 Windows 平台 (UWP) 应用来鼓励客户留下反馈。 “反馈中心”是预安装的应用，该应用提供了一个用于收集有关 Windows 和已安装应用的反馈的位置。 将收集通过“反馈中心”针对应用提交的所有客户反馈，并在 Windows 开发人员中心仪表板中的[反馈报告](../publish/feedback-report.md)中向你呈现，以便你可以在单个报告看到客户已提交的问题、建议和投票。
 
-To launch Feedback Hub from your app, use an API that is provided by the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). We recommend that you use this API to launch Feedback Hub from a UI element in your app that follows our design guidelines.
+若要从应用启动“反馈中心”，请使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 所提供的 API。 我们建议你使用此 API 从遵循我们的设计指南的应用中的 UI 元素启动“反馈中心”。
 
->**Note**&nbsp;&nbsp;Feedback Hub is available only on devices that run version 10.0.14271 or later of a Windows 10 OS that is based on the desktop and mobile [device families](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families). We recommend that you show a feedback control in your app only if the Feedback Hub is available on the user's device. The code in this topic demonstrates how to do this.
+>**注意**&nbsp;&nbsp;反馈中心仅在运行基于桌面和移动[设备系列](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)的 Windows 10 操作系统的版本 10.0.14271 或更高版本的设备上可用。 我们建议你仅当“反馈中心”在用户设备上可用时才在应用中显示反馈控件。 本主题中的代码演示如何执行此操作。
 
-## <a name="how-to-launch-feedback-hub-from-your-app"></a>How to launch Feedback Hub from your app
+## <a name="how-to-launch-feedback-hub-from-your-app"></a>如何从应用启动“反馈中心”
 
-To launch Feedback Hub from your app:
+若要从应用启动“反馈中心”：
 
-1. [Install the Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk). In addition to the API for launching Feedback Hub, this SDK also provides APIs for other features such as running experiments in your apps with A/B testing and displaying ads.
-2. Open your project in Visual Studio.
-3. In Solution Explorer, right-click the **References** node for your project and click **Add Reference**.
-4. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.
-5. In the list of SDKs, click the check box next to **Microsoft Engagement Framework** and click **OK**.
-6. In your project, add the control that you want to show to users to launch Feedback Hub, such as a button. We recommend that you configure the control as follows:
-  * Set the font of the content shown in the control to **Segoe MDL2 Assets**.
-  * Set the text in the control to the hexadecimal Unicode character code E939. This is the character code for the recommended feedback icon in the **Segoe MDL2 Assets** font.
-  * Set the visibility of the control to hidden.
+1. [安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 除了用于启动“反馈中心”的 API 外，此 SDK 还提供用于其他功能的 API，例如通过 A/B 测试运行实验和显示广告。
+2. 在 Visual Studio 中打开你的项目。
+3. 在“解决方案资源管理器”中，右键单击你的项目的“引用”节点，然后单击“添加引用”。
+4. 在“引用管理器”中，展开“通用 Windows”并单击“扩展”。
+5. 在 SDK 列表中，单击“Microsoft 协议框架”旁边的复选框，然后单击“确定”。
+6. 在项目中，添加要向用户显示的用于启动“反馈中心”的控件，如按钮。 我们建议你按如下方式配置该控件：
+  * 将控件中显示的内容的字体设置为 **Segoe MDL2 Assets**。
+  * 将控件中的文本设置为十六进制的 Unicode 字符代码 E939。 这是 **Segoe MDL2 Assets** 字体中推荐的反馈图标的字符代码。
+  * 将控件的可见性设置为隐藏。
 
-    > **Note**&nbsp;&nbsp;We recommend that you hide your feedback control by default and show it in your initialization code only if the Feedback Hub is available on the user's device. The next step demonstrates how to do this.
+    > **请注意**&nbsp;&nbsp;我们建议你默认隐藏反馈控件，并且仅当“反馈中心”在用户设备上可用时才在初始化代码中显示它。 下一步演示如何执行此操作。
 
-  The following code demonstrates the XAML definition of a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) that is configured as described above.
+  以下代码演示按上述方式配置的 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 的 XAML 定义。
 
   > [!div class="tabbedCodeSnippets"]
   ```xml
   <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
   ```
 
-7. In your initialization code for the app page that hosts your feedback control, use the static [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported.aspx) method of the [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) class to determine whether the Feedback Hub is available on the user's device. Feedback Hub is available only on devices that run version 10.0.14271 or later of a Windows 10 OS that is based on the desktop and mobile [device families](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families).
+7. 在承载反馈控件的应用页面的初始化代码中，使用 [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) 类的静态 [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported.aspx) 方法确定“反馈中心”在用户设备上是否可用。 反馈仅在运行基于桌面和移动[设备系列](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)的 Windows&nbsp;10 操作系统的版本 10.0.14271 或更高版本的设备上可用。
 
-  If this property returns **true**, make the control visible. The following code demonstrates how to do this for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
+  如果此属性返回 **true**，则使该控件可见。 以下代码演示如何为 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 执行此操作。
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
 
   <span/>
-  >**Note**&nbsp;&nbsp;Although Feedback Hub is not supported on Xbox devices at this time, the **IsSupported** property currently returns **true** on Xbox devices that run version 10.0.14271 or later of Windows 10. This is a known issue that will be fixed in a future release of the Microsoft Store Services SDK.  
+  >**注意**&nbsp;&nbsp;尽管反馈中心目前在 Xbox 设备上不受支持，但 **IsSupported** 属性当前在运行 Windows 10 的版本 10.0.14271 或更高版本的 Xbox 设备上返回 **true**。 这是一个已知问题，将在 Microsoft Store Services SDK 的将来版本中得到修复。  
 
-8. In the event handler that runs when the user clicks the control, get a [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) object and call the [LaunchAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync.aspx) method to launch the Feedback Hub app. There are two overloads for this method: one without parameters, and another one that accepts a dictionary of key and value pairs that contain metadata that you want to associate with the feedback. The following example demonstrates how to launch Feedback Hub in the [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event handler for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
+8. 在用户单击控件时运行的事件处理程序中，获取 [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) 对象并调用 [LaunchAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync.aspx) 方法来启动“反馈中心”应用。 此方法有两个重载：一个不带有参数，另一个接受包含要与反馈相关联的元数据的键值对字典。 以下示例演示如何在 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 的 [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件处理程序中启动“反馈应用”。
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
 
-## <a name="design-recommendations-for-your-feedback-ui"></a>Design recommendations for your feedback UI
+## <a name="design-recommendations-for-your-feedback-ui"></a>对反馈 UI 的设计建议
 
-To launch Feedback Hub, we recommend that you add a UI element in your app (such as a button) that displays the following standard feedback icon from the Segoe MDL2 Assets font and the character code E939.
+若要启动“反馈中心”，我们建议在应用中添加 UI 元素（如按钮），用于从 Segoe MDL2 Assets 字体和字符代码 E939 显示以下标准反馈图标。
 
 ![]Feedback icon](images/feedback_icon.PNG)
 
-We also recommend that you use one or more of the following placement options for linking to Feedback Hub in your app.
-* **Directly in the app bar**. Depending on your implementation, you may wish to use the icon only or add text (as shown below).
+我们还建议你在应用中使用以下一个或多个链接到“反馈中心”的放置选项。
+* **直接在应用栏中**。 根据你的实现，你可能希望仅使用图标或添加文本（如下所示）。
 
   ![]Feedback icon](images/feedback_appbar_placement.png)
 
-* **In your app's settings**. This is a more subtle way to provide access to Feedback Hub. In the example below, the Feedback link appears as one of the links under App.
+* **在应用的“设置”中**。 这是提供对“反馈中心”的访问的更巧妙的方法。 在以下示例中，“反馈”链接显示为“应用”下的链接之一。
 
   ![]Feedback icon](images/feedback_settings_placement.png)
 
-* **In an event-driven flyout**. This is useful when you want to query your customers about a specific question before launching into the Windows Feedback Hub. For example, after your app uses a certain feature, you might prompt the customer with a specific question about their satisfaction with that feature. If the customer chooses to respond, your app launches Feedback Hub.
+* **在事件驱动的浮出控件中**。 如果你要在启动到 Windows 反馈中心前向客户询问某个特定问题，这将非常有用。 例如，在你的应用使用某个功能后，你可能会就用户对该功能的满意度向客户提出特定问题。 如果用户选择回应，你的应用将启动“反馈中心”。
 
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Feedback report](../publish/feedback-report.md)
+* [反馈报告](../publish/feedback-report.md)
 
 
 

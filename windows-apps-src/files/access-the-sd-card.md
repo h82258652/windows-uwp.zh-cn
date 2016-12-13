@@ -1,72 +1,72 @@
 ---
 author: laurenhughes
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
-title: Access the SD card
-description: You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.
+title: "访问 SD 卡"
+description: "你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制的低成本移动设备。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
 ms.openlocfilehash: a13f351af3cba8d3d9e645a6f6040dff6e81e1ff
 
 ---
-# <a name="access-the-sd-card"></a>Access the SD card
+# <a name="access-the-sd-card"></a>访问 SD 卡
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.
+你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制的低成本移动设备。
 
-In most cases, you have to specify the **removableStorage** capability in the app manifest file before your app can store and access files on the SD card. Typically you also have to register to handle the type of files that your app stores and accesses.
+大多数情况下，你必须在应用清单文件中指定 **removableStorage** 功能，然后你的应用才能在 SD 卡上存储和访问文件。 通常，你还需要注册才能处理你的应用存储和访问的文件类型。
 
-You can store and access files on the optional SD card by using the following methods:
+你可以通过使用以下方法在可选 SD 卡上存储和访问文件。
 
-- File pickers.
+- 文件选取器。
 
-- The [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) APIs.
+- [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
 
-## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>What you can and can't access on the SD card
+## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>SD 卡上的可访问内容和不可访问内容
 
-### <a name="what-you-can-access"></a>What you can access
+### <a name="what-you-can-access"></a>你可以访问的内容
 
-- Your app can only read and write files of file types that the app has registered to handle in the app manifest file.
+- 你的应用仅可以读取和写入以下类型的文件，该文件类型是应用已注册可在应用部件清单文件中处理的类型。
 
-- Your app can also create and manage folders.
+- 你的应用还可以创建和管理文件夹。
 
-### <a name="what-you-cant-access"></a>What you can't access
+### <a name="what-you-cant-access"></a>你无法访问的内容
 
-- Your app can't see or access system folders and the files that they contain.
+- 你的应用无法查看或访问系统文件夹及其包含的文件。
 
-- Your app can't see files that are marked with the Hidden attribute. The Hidden attribute is typically used to reduce the risk of deleting data accidentally.
+- 你的应用无法查看使用“隐藏”属性标记的文件。 “隐藏”属性通常用于减少意外删除数据的风险。
 
-- Your app can't see or access the Documents library by using [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152). However you can access the Documents library on the SD card by traversing the file system.
+- 你的应用无法通过使用 [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) 查看或访问文档库。 但是，你可以通过遍历文件系统在 SD 卡上访问文档库。
 
-## <a name="security-and-privacy-considerations"></a>Security and privacy considerations
+## <a name="security-and-privacy-considerations"></a>安全和隐私注意事项
 
-When an app saves files in a global location on the SD card, those files are not encrypted so they are typically accessible to other apps.
+当应用将文件保存在 SD 卡上的全局位置中时，这些文件不会加密，因此通常可供其他应用访问。
 
-- While the SD card is in the device, your files are accessible to other apps that have registered to handle the same file type.
+- 当 SD 卡位于该设备中时，已注册可处理相同文件类型的其他应用可以访问你的文件。
 
-- When the SD card is removed from the device and opened from a PC, your files are visible in File Explorer and accessible to other apps.
+- 当从该设备删除并从电脑中打开 SD 卡时，你的文件将在“文件资源管理器”中可见，并可供其他应用访问。
 
-When an app installed on the SD card saves files in its [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621), however, those files are encrypted and are not accessible to other apps.
+但是，当安装在 SD 卡上的应用将文件保存在其 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 中时，这些文件将会加密，且不可供其他应用访问。
 
-## <a name="requirements-for-accessing-files-on-the-sd-card"></a>Requirements for accessing files on the SD card
+## <a name="requirements-for-accessing-files-on-the-sd-card"></a>访问 SD 卡上的文件的要求
 
-To access files on the SD card, typically you have to specify the following things.
+若要访问 SD 卡上的文件，通常你必须指定以下内容。
 
-1.  You have to specify the **removableStorage** capability in the app manifest file.
-2.  You also have to register to handle the file extensions associated with the type of media that you want to access.
+1.  必须在应用清单文件中指定 **removableStorage** 功能。
+2.  还必须注册以处理与你希望访问的媒体类型相关联的文件扩展名。
 
-Use the preceding method also to access media files on the SD card without referencing a known folder like **KnownFolders.MusicLibrary**, or to access media files that are stored outside of the media library folders.
+也可以使用前述方法访问 SD 卡上的媒体文件，无需引用已知文件夹（如 **KnownFolders.MusicLibrary**），或者访问存储在媒体库文件夹外部的媒体文件。
 
-To access media files stored in the media libraries—Music, Photos, or Videos—by using known folders, you only have to specify the associated capability in the app manifest file—**musicLibrary**, **picturesLibrary**, or **videoLibrary**. You do not have to specify the **removableStorage** capability. For more info, see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
+若要通过使用已知文件夹访问存储在媒体库（音乐、照片或视频）中的媒体文件，只需在应用清单文件中（**musicLibrary**、**picturesLibrary** 或 **videoLibrary**）指定关联功能。 无需指定 **removableStorage** 功能。 有关详细信息，请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。
 
-## <a name="accessing-files-on-the-sd-card"></a>Accessing files on the SD card
+## <a name="accessing-files-on-the-sd-card"></a>访问 SD 卡上的文件
 
-### <a name="getting-a-reference-to-the-sd-card"></a>Getting a reference to the SD card
+### <a name="getting-a-reference-to-the-sd-card"></a>为 SD 卡获取引用。
 
-The [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) folder is the logical root [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) for the set of removable devices currently connected to the device. If an SD card is present, the first (and only) **StorageFolder** underneath the **KnownFolders.RemovableDevices** folder represents the SD card.
+[**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 文件夹是适用于一组可移动设备（当前已连接到该设备）的逻辑根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果存在 SD 卡，**KnownFolders.RemovableDevices** 文件夹下的第一个（且唯一一个）**StorageFolder** 代表 SD 卡。
 
-Use code like the following to determine whether an SD card is present and to get a reference to it as a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230).
+使用如下所示的代码确定 SD 卡是否存在，并为其获取 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 引用。
 
 ```csharp
 using Windows.Storage;
@@ -89,27 +89,27 @@ using Windows.Storage;
             }
 ```
 
-### <a name="querying-the-contents-of-the-sd-card"></a>Querying the contents of the SD card
+### <a name="querying-the-contents-of-the-sd-card"></a>查询 SD 卡的内容
 
-The SD card can contain many folders and files that aren't recognized as known folders and can't be queried by using a location from [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151). To find files, your app has to enumerate the contents of the card by traversing the file system recursively. Use [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) and [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) to get the contents of the SD card efficiently.
+SD 卡可以包含系统无法识别为已知文件夹且无法通过使用 [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 的位置查询的许多文件夹和文件。 若要查找文件，你的应用必须通过递归遍历文件系统来枚举该卡的内容。 使用 [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) 和 [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) 有效获取 SD 卡的内容。
 
-We recommend that you use a background thread to traverse the SD card. An SD card may contain many gigabytes of data.
+我们建议你使用后台线程遍历 SD 卡。 一个 SD 卡可以包含数 GB 的数据。
 
-Your app can also require the user to choose specific folders by using the folder picker.
+你的应用还可以要求用户通过使用文件夹选取器选择特定文件夹。
 
-When you access the file system on the SD card with a path that you derived from [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158), the following methods behave in the following way.
+当你使用派生自 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 的路径访问 SD 卡上的文件系统时，下列方法的行为方式如下。
 
--   The [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) method returns the union of the file extensions that you have registered to handle and the file extensions associated with any media library capabilities that you have specified.
+-   [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法将返回你要通过注册来处理的文件扩展名和与你指定的任何媒体库功能相关联的文件扩展名的联合。
 
--   The [**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) method fails if you have not registered to handle the file extension of the file you are trying to access.
+-   如果你尚未注册即处理正尝试访问的文件的文件扩展名，[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) 方法会失败。
 
-## <a name="identifying-the-individual-sd-card"></a>Identifying the individual SD card
+## <a name="identifying-the-individual-sd-card"></a>标识单个 SD 卡
 
-When the SD card is first mounted, the operating system generates a unique identifier for the card. It stores this ID in a file in the WPSystem folder at the root of the card. An app can use this ID to determine whether it recognizes the card. If an app recognizes the card, the app may be able to postpone certain operations that were completed previously. However the contents of the card may have changed since the card was last accessed by the app.
+首先装载 SD 卡时，操作系统将为该卡生成一个唯一标识符。 它将此 ID 存储在该卡的根 WPSystem 文件夹的某个文件中。 应用可以使用此 ID 确定它是否可以识别该卡。 如果应用可以识别该卡，该应用将能够推迟之前完成的某些操作。 但是，由于该卡最后由应用访问，因此卡上的内容可能会发生变化。
 
-For example, consider an app that indexes ebooks. If the app has previously scanned the whole SD card for ebook files and created an index of the ebooks, it can display the list immediately if the card is reinserted and the app recognizes the card. Separately it can start a low-priority background thread to search for new ebooks. It can also handle a failure to find an ebook that existed previously when the user tries to access the deleted ebook.
+例如，考虑索引电子书的应用。 如果该应用之前扫描了整个 SD 卡以查找电子书文件并创建了电子书索引，它在重新插入该卡时会立即显示列表，并且应用可以识别该卡。 此外，它可以启动低优先级后台线程以搜索新电子书。 当用户尝试访问删除的电子书时，它还可以处理故障以查找之前存在的电子书。
 
-The name of the property that contains this ID is **WindowsPhone.ExternalStorageId**.
+包含此 ID 的属性名称为 **WindowsPhone.ExternalStorageId**。
 
 ```csharp
 using Windows.Storage;

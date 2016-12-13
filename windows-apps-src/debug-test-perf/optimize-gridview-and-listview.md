@@ -1,47 +1,47 @@
 ---
 author: mcleblanc
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
-title: ListView and GridView UI optimization
-description: Improve ListView and GridView performance and startup time through UI virtualization, element reduction, and progressive updating of items.
+title: "ListView 和 GridView UI 优化"
+description: "通过 UI 虚拟化、元素减少和项目的进度更新来改进 ListView 和 GridView 性能和启动时间。"
 translationtype: Human Translation
 ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
 ms.openlocfilehash: dca6c9c2cde4240da4b2eff4f4786ec5b81051c6
 
 ---
-# <a name="listview-and-gridview-ui-optimization"></a>ListView and GridView UI optimization
+# <a name="listview-and-gridview-ui-optimization"></a>ListView 和 GridView UI 优化
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Note**  
-For more details, see the //build/ session [Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView](https://channel9.msdn.com/events/build/2013/3-158).
+**注意**  
+有关更多详细信息，请参阅 //build/ 会话：[当用户与 GridView 和 ListView 中的大量数据交互时可以显著提高性能](https://channel9.msdn.com/events/build/2013/3-158)。
 
-Improve [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) performance and startup time through UI virtualization, element reduction, and progressive updating of items. For data virtualization techniques, see [ListView and GridView data virtualization](listview-and-gridview-data-optimization.md).
+通过 UI 虚拟化、元素减少和项目的进度更新来改进 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 有关数据虚拟化技术，请参阅 [ListView 和 GridView 数据虚拟化](listview-and-gridview-data-optimization.md)。
 
-## <a name="two-key-factors-in-collection-performance"></a>Two key factors in collection performance
+## <a name="two-key-factors-in-collection-performance"></a>集锦性能的两个关键因素
 
-Manipulating collections is a common scenario. A photo viewer has collections of photos, a reader has collections of articles/books/stories, and a shopping app has collections of products. This topic shows what you can do to make your app efficient at manipulating collections.
+操作集锦是一个常见方案。 照片查看器具有照片集锦，阅读器具有文章/书籍/故事的集锦，而购物应用具有产品集锦。 本主题介绍可以采取哪些措施来提高应用操作集锦的效率。
 
-There are two key factors in performance when it comes to collections: one is the time spent by the UI thread creating items; the other is the memory used by both the raw data set and the UI elements used to render that data.
+对于集锦有两个关键性能因素：一个是 UI 线程创建项目的时间；另一个是原始数据集和用于呈现该数据的 UI 元素这两者所使用的内存。
 
-For smooth panning/scrolling, it's vital that the UI thread do an efficient and smart job of instantiating, data-binding, and laying out items.
+对于平滑平移/滚动，UI 线程是否高效、智能地完成实例化、数据绑定和设置项目布局至关重要。
 
-## <a name="ui-virtualization"></a>UI virtualization
+## <a name="ui-virtualization"></a>UI 虚拟化
 
-UI virtualization is the most important improvement you can make. This means that UI elements representing the items are created on demand. For an items control bound to a 1000-item collection, it would be a waste of resources to create the UI for all the items at the same time, because they can't all be displayed at the same time. [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (and other standard [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803)-derived controls) perform UI virtualization for you. When items are close to being scrolled into view (a few pages away), the framework generates the UI for the items and caches them. When it's unlikely that the items will be shown again, the framework re-claims the memory.
+UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 UI 元素根据需求而创建。 对于绑定到 1000 个项目的集合的项目控件，同时为所有项目创建 UI 会造成资源浪费，因为它们不可能全部同时显示。 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)（及其他标准 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 派生的控件）可为你执行 UI 虚拟化。 当项目即将滚动到视图中时（只距离几页），框架将为这些项目生成 UI 并将其缓存。 如果这些项目不太可能再次显示，框架将回收内存。
 
-If you provide a custom items panel template (see [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)) then make sure you use a virtualizing panel such as [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) or [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795). If you use [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651), [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717), or [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), then you will not get virtualization. Additionally, the following [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) events are raised only when using an [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) or an [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795): [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer), [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer), and [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging).
+如果提供自定义项目面板模板（请参阅 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)），务必使用虚拟化面板，例如 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795)。 如果使用 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717) 或 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)，则不会实现虚拟化。 此外，只有当使用 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795) 时才会引发以下 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 事件：[**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 和 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging)。
 
-The concept of a viewport is critical to UI virtualization because the framework must create the elements that are likely to be shown. In general, the viewport of an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) is the extent of the logical control. For example, the viewport of a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) is the width and height of the **ListView** element. Some panels allow child elements unlimited space, examples being [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) and a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), with auto-sized rows or columns. When a virtualized **ItemsControl** is placed in a panel like that, it takes enough room to display all of its items, which defeats virtualization. Restore virtualization by setting a width and height on the **ItemsControl**.
+视口的概念对于 UI 虚拟化至关重要，因为该框架必须创建可能显示的元素。 通常，[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 的视口是逻辑控件的范围。 例如 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的视口是 **ListView** 元素的宽度和高度。 某些面板允许子元素使用无限的空间（例如 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) 和 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)），并自动调整行或列的大小。 将虚拟化的 **ItemsControl** 放置在类似的面板中后，它有足够的空间用于显示它的所有项目，此时虚拟化便失去意义。 还原虚拟化的方法是对 **ItemsControl** 设置宽度和高度。
 
-## <a name="element-reduction-per-item"></a>Element reduction per item
+## <a name="element-reduction-per-item"></a>按项目减少元素
 
-Keep the number of UI elements used to render your items to a reasonable minimum.
+将用于呈现项目的 UI 元素数量保持在合理的最小值范围内。
 
-When an items control is first shown, all the elements needed to render a viewport full of items are created. Also, as items approach the viewport, the framework updates the UI elements in cached item templates with the bound data objects. Minimizing the complexity of the markup inside templates pays off in memory and in time spent on the UI thread, improving responsiveness especially while panning/scrolling. The templates in question are the item template (see [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)) and the control template of a [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) or a [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridviewitem.aspx) (the item control template, or [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)). The benefit of even a small reduction in element count is multiplied by the number of items displayed.
+当一个项目控件首次显示时，将创建呈现完整项目的视口所需的所有元素。 此外，当项目接近视口时，框架将使用绑定数据对象更新缓存项目模板中的 UI 元素。 最大程度地降低模板内标记的复杂度可节省 UI 线程所占用的内存以及所花费的时间，从而提高响应速度（尤其在平移/滚动时）。 所讨论的模板为项目模板（请参阅 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)）和 [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) 或 [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridviewitem.aspx) 的控件模板（项目控件模板，或 [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)）。 即使仅少量减少元素数量，由此带来的优势也因显示的项目数量而成倍增加。
 
-For examples of element reduction, see [Optimize your XAML markup](optimize-xaml-loading.md).
+有关减少元素的示例，请参阅[优化 XAML 标记](optimize-xaml-loading.md)。
 
-The default control templates for [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) and [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridviewitem.aspx) contain a [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) element. This presenter is a single optimized element that displays complex visuals for focus, selection, and other visual states. If you already have custom item control templates ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)), or if in future you edit a copy of an item control template, then we recommend you use a **ListViewItemPresenter** because that element will give you optimum balance between performance and customizability in the majority of cases. You customize the presenter by setting properties on it. For example, here's markup that removes the check mark that appears by default when an item is selected, and changes the background color of the selected item to orange.
+[**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) 和 [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridviewitem.aspx) 的默认控件模板包含一个 [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) 元素。 此表示器是已优化的单个元素，用于显示焦点、选择和其他视觉状态的复杂视觉效果。 如果你已拥有自定义项目控件模板 ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle))，或者如果你将来要编辑项目控件模板的副本，建议你使用 **ListViewItemPresenter**，因为在大多数情况下，该元素可以最好地平衡性能与自定义。 你可以自定义该表示器，方法是为其设置属性。 例如，以下提供的标记可删除在选定项目时默认出现的复选标记，并将选定项目的背景色更改为橙色。
 
 ```xml
 ...
@@ -62,26 +62,26 @@ The default control templates for [**ListViewItem**](https://msdn.microsoft.com/
 <!-- ... -->
 ```
 
-There are about 25 properties with self-describing names similar to [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) and [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground.aspx). Should the presenter types prove not to be customizable enough for your use case, you can edit a copy of the `ListViewItemExpanded` or `GridViewItemExpanded` control template instead. These can be found in `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml`. Be aware that using these templates means trading some performance for the increase in customization.
+存在大约 25 个属性，自描述名称类似于 [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) 和 [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground.aspx)。 如果表示器类型已证实不足以为你的用例进行自定义，你可以改为编辑 `ListViewItemExpanded` 或 `GridViewItemExpanded` 控件模板的副本。 它们位于 `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml` 中。 请注意，使用这些模板意味着将要付出一些性能的代价来增加自定义项。
 
 <span id="update-items-incrementally"/>
-## <a name="update-listview-and-gridview-items-progressively"></a>Update ListView and GridView items progressively
+## <a name="update-listview-and-gridview-items-progressively"></a>渐进更新 ListView 和 GridView 项目
 
-If you're using data virtualization then you can keep [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) responsiveness high by configuring the control to render temporary UI elements for the items still being (down)loaded. The temporary elements are then progressively replaced with actual UI as data loads.
+如果要使用数据虚拟化，则可以保持 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 的较高响应速度，方法是配置控件以针对仍在加载的项目呈现临时 UI 元素。 在数据加载时，临时元素随后会逐步替换为实际 UI。
 
-Also—no matter where you're loading data from (local disk, network, or cloud)—a user can pan/scroll a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) so rapidly that it's not possible to render each item with full fidelity while preserving smooth panning/scrolling. To preserve smooth panning/scrolling you can choose to render an item in multiple phases in addition to using placeholders.
+此外，无论从何处加载数据（本地磁盘、网络或云），用户都可能会快速平移/滚动 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)，从而无法在保持平滑平移/滚动的同时完全保真地呈现每个项目。 若要保持平滑平移/滚动，除了使用占位符之外，还可以选择在多个阶段呈现项目。
 
-An example of these techniques is often seen in photo-viewing apps: even though not all of the images have been loaded and displayed, the user can still pan/scroll and interact with the collection. Or, for a "movie" item, you could show the title in the first phase, the rating in the second phase, and an image of the poster in the third phase. The user sees the most important data about each item as early as possible, and that means they're able to take action at once. Then the less important info is filled-in as time allows. Here are the platform features you can use to implement these techniques.
+这些技术的示例常见于照片查看应用：即使并不加载和显示所有图像，用户仍可以平移/滚动并与集合交互。 或者，对于“电影”项，你可以在第一阶段显示标题，在第二阶段显示评级，在第三阶段显示海报的图像。 用户将尽早看到关于每个项目的最重要数据，这意味着他们可以立刻采取行动。 然后在时间允许的情况下填入次要信息。 下面是可以用于实现这些技术的平台功能。
 
-### <a name="placeholders"></a>Placeholders
+### <a name="placeholders"></a>占位符
 
-The temporary placeholder visuals feature is on by default, and it's controlled with the [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) property. During fast panning/scrolling, this feature gives the user a visual hint that there are more items yet to fully display while also preserving smoothness. If you use one of the techniques below then you can set **ShowsScrollingPlaceholders** to false if you prefer not to have the system render placeholders.
+默认情况下启用临时占位符视觉功能，它受 [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 属性控制。 在快速平移/滚动期间，此功能为用户提供还有更多项目需要完全显示的视觉提示，同时还可保持平滑度。 如果你使用以下技术之一，当你不希望使系统呈现占位符时，可以将 **ShowsScrollingPlaceholders** 设置为 false。
 
-**Progressive data template updates using x:Phase**
+**使用 x:Phase 的渐进数据模板更新**
 
-Here's how to use the [x:Phase attribute](https://msdn.microsoft.com/library/windows/apps/Mt204790) with [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) bindings to implement progressive data template updates.
+下面介绍了如何将 [x:Phase 属性](https://msdn.microsoft.com/library/windows/apps/Mt204790)与 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 绑定结合使用来实现渐进数据模板更新。
 
-1.  Here's what the binding source looks like (this is the data source that we'll bind to).
+1.  绑定源如下所示（这是我们将要绑定到其中的数据源）。
 
     ```csharp
 namespace LotsOfItems
@@ -112,7 +112,7 @@ namespace LotsOfItems
         }
     }
     ```
-2.  Here's the markup that `DeferMainPage.xaml` contains. The grid view contains an item template with elements bound to the **Title**, **Subtitle**, and **Description** properties of the **MyItem** class. Note that **x:Phase** defaults to 0. Here, items will be initially rendered with just the title visible. Then the subtitle element will be data bound and made visible for all the items and so on until all the phases have been processed.
+2.  下面是 `DeferMainPage.xaml` 包含的标记。 网格视图包含的项目模板具有绑定到 **MyItem** 类的 **Title**、**Subtitle** 和 **Description** 属性的元素。 请注意，**x:Phase** 默认值为 0。 此时，最初呈现的项目将只有标题可见。 然后，所有项目的副标题元素将进行数据绑定并变为可见，以此类推直到所有阶段都已处理。
     ```xml
     <Page
         x:Class="LotsOfItems.DeferMainPage"
@@ -139,15 +139,15 @@ namespace LotsOfItems
     </Page>
     ```
 
-3.  If you run the app now and pan/scroll quickly through the grid view then you'll notice that as each new item appears on the screen, at first it is rendered as a dark gray rectangle (thanks to the [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) property defaulting to **true**), then the title appears, followed by subtitle, followed by description.
+3.  如果立即运行应用并在网格视图中快速平移/滚动，你会注意到当每个新项目出现在屏幕上时，首先呈现为深灰色矩形（由于 [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 属性默认设置为 **true**），然后依次显示标题、副标题和描述。
 
-**Progressive data template updates using ContainerContentChanging**
+**使用 ContainerContentChanging 的渐进数据模板更新**
 
-The general strategy for the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) event is to use **Opacity** to hide elements that don’t need to be immediately visible. When elements are recycled, they will retain their old values so we want to hide those elements until we've updated those values from the new data item. We use the **Phase** property on the event arguments to determine which elements to update and show. If additional phases are needed, we register a callback.
+[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件的常规策略是使用 **Opacity** 隐藏无需立即可见的元素。 当元素已回收时，它们将保留原来的值，因此我们希望在从新的数据项目更新这些值之前隐藏这些元素。 我们对事件参数使用 **Phase** 属性以确定要更新和显示的元素。 如果需要其他阶段，则注册一个回调。
 
-1.  We'll use the same binding source as for **x:Phase**.
+1.  我们将使用 **x:Phase** 所使用的同一绑定源。
 
-2.  Here's the markup that `MainPage.xaml` contains. The grid view declares a handler to its [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) event, and it contains an item template with elements used to display the **Title**, **Subtitle**, and **Description** properties of the **MyItem** class. To get the maximum performance benefits of using **ContainerContentChanging**, we don't use bindings in the markup but we instead assign values programmatically. The exception here is the element displaying the title, which we consider to be in phase 0.
+2.  下面是 `MainPage.xaml` 包含的标记。 网格视图向其 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件声明一个处理程序，并且它包含的项目模板具有用于显示 **MyItem** 类的 **Title**、**Subtitle** 和 **Description** 属性的元素。 为了最大程度地获得因使用 **ContainerContentChanging** 所带来的性能优势，我们不在标记中使用绑定，而是改为以编程方式分配值。 此处的例外是显示标题的元素，我们认为它应处于 0 阶段。
     ```xml
     <Page
         x:Class="LotsOfItems.MainPage"
@@ -173,7 +173,7 @@ The general strategy for the [**ContainerContentChanging**](https://msdn.microso
         </Grid>
     </Page>
     ```
-3.  Lastly, here's the implementation of the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) event handler. This code also shows how we add a property of type **RecordingViewModel** to **MainPage** to expose the binding source class from the class that represents our page of markup. As long as you don't have any [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) bindings in your data template, then mark the event arguments object as handled in the first phase of the handler to hint to the item that it needn't set a data context.
+3.  最后，以下是 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件处理程序的实现。 此代码还演示了如何将类型 **RecordingViewModel** 的属性添加到 **MainPage** 以公开用于表示标记页面的类中的绑定源类。 只要在数据模板中没有任何 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 绑定，便将事件参数对象标记为已在处理程序的第一阶段中处理，从而提示项目无需设置数据上下文。
     ```csharp
     namespace LotsOfItems
     {
@@ -238,15 +238,15 @@ The general strategy for the [**ContainerContentChanging**](https://msdn.microso
     }
     ```
 
-4.  If you run the app now and pan/scroll quickly through the grid view then you'll see the same behavior as for as for **x:Phase**.
+4.  如果立即运行应用并快速在网格视图中平移/滚动，你看到的行为与使用 **x:Phase** 时相同。
 
-## <a name="container-recycling-with-heterogeneous-collections"></a>Container-recycling with heterogeneous collections
+## <a name="container-recycling-with-heterogeneous-collections"></a>带有异类集锦的容器循环
 
-In some applications, you need to have different UI for different types of item within a collection. This can create a situation where it is impossible for virtualizing panels to reuse/recycle the visual elements used to display the items. Recreating the visual elements for an item during panning undoes many of the performance wins provided by virtualization. However, a little planning can allow virtualizing panels to reuse the elements. Developers have a couple of options depending on their scenario: the [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) event, or an item template selector. The **ChoosingItemContainer** approach has better performance.
+在某些应用程序中，你需要为集锦中的不同类型的项目使用不同类型的 UI。 这可能造成虚拟化面板无法重复使用/循环使用用于显示项目的可视元素。 在平移期间为某个项目重新创建可视元素会撤销虚拟化所提供的许多性能优势。 但是，进行一些规划便可以允许虚拟化面板重复使用这些元素。 开发人员可以根据其方案选择一组选项：[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 事件或项目模板选择器。 **ChoosingItemContainer** 方法具有更好的性能。
 
-**The ChoosingItemContainer event**
+**ChoosingItemContainer 事件**
 
-[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) is an event that allows you to provide an item (**ListViewItem**/**GridViewItem**) to the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) whenever a new item is needed during start-up or recycling. You can create a container based on the type of data item the container will display (shown in the example below). **ChoosingItemContainer** is the higher-performing way to use different data templates for different items. Container caching is something that can be achieved using **ChoosingItemContainer**. For example, if you have five different templates, with one template occurring an order of magnitude more often than the others, then ChoosingItemContainer allows you not only to create items at the ratios needed but also to keep an appropriate number of elements cached and available for recycling. [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) provides the same functionality for group headers.
+[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 是一个事件，可允许你每当在启动或循环期间需要新项目时向 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 提供项目 (**ListViewItem**/**GridViewItem**)。 你可以根据容器将显示的数据项目类型创建容器（如以下示例所示）。 **ChoosingItemContainer** 是针对不同项目使用不同数据模板的性能更高的方法。 容器缓存是可以使用 **ChoosingItemContainer** 实现的某些内容。 例如，如果你有五个不同的模板，其中一个模板发生的频率比其他模板高一个数量级，则 ChoosingItemContainer 允许你不仅可以以所需的比率创建项目，还可以保留相应数量的缓存且可用于循环的元素。 [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) 为组标头提供相同的功能。
 
 ```csharp
 // Example shows how to use ChoosingItemContainer to return the correct
@@ -308,13 +308,13 @@ private void lst-ChoosingItemContainer
 }
 ```
 
-**Item template selector**
+**项目模板选择器**
 
-An item template selector ([**DataTemplateSelector**](https://msdn.microsoft.com/library/windows/apps/BR209469)) allows an app to return a different item template at runtime based on the type of the data item that will be displayed. This makes development more productive, but it makes UI virtualization more difficult because not every item template can be reused for every data item.
+项目模板选择器 ([**DataTemplateSelector**](https://msdn.microsoft.com/library/windows/apps/BR209469)) 允许应用根据要显示的数据项目类型在运行时返回不同的项目模板。 这使开发更高效，但也使 UI 虚拟化更困难，因为不是每一个项目模板都可重复用于每个数据项目。
 
-When recycling an item (**ListViewItem**/**GridViewItem**), the framework must decide whether the items that are available for use in the recycle queue (the recycle queue is a cache of items that are not currently being used to display data) have an item template that will match the one desired by the current data item. If there are no items in the recycle queue with the appropriate item template then a new item is created, and the appropriate item template is instantiated for it. If, on other hand, the recycle queue contains an item with the appropriate item template then that item is removed from the recycle queue and is used for the current data item. An item template selector works in situations where only a small number of item templates are used and there is a flat distribution throughout the collection of items that use different item templates.
+在循环使用项目 (**ListViewItem**/**GridViewItem**) 时，框架必须确定可用于循环队列（循环队列是当前未用于显示数据的项目的缓存）的项目是否具有可与当前数据项目所需的项目模板匹配的项目模板。 如果循环队列中没有带有相应项目模板的项目，则将创建一个新项目，并为其实例化相应的项目模板。 另一方面，如果循环队列包含带有相应项目模板的项目，则该项目将从循环队列中删除并用于当前数据项目。 在仅使用少量项目模板以及在使用不同项目模板的项目集锦分布均匀的情况下，项目模板选择器有效。
 
-When there is an uneven distribution of items that use different item templates then new item templates will likely need to be created during panning, and this negates many of the gains provided by virtualization. Additionally, an item template selector only considers five possible candidates when evaluating whether a particular container can be reused for the current data item. So you should carefully consider whether your data is appropriate for use with an item template selector before using one in your app. If your collection is mostly homogeneous then the selector is returning the same type most (possibly all) of the time. Just be aware of the price you're paying for the rare exceptions to that homegeneity, and consider whether using [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (or two items controls) is preferable.
+当使用不同项目模板的项目分布不均匀时，可能需要在平移期间创建新项目模板，并且这将取消虚拟化所提供的许多好处。 此外，在评估是否可为当前数据项目重复使用特定的容器时，项目模板选择器仅考虑五个可能的候选项。 因此，在应用中使用项目模板选择器前，你应谨慎考虑你的数据是否适用于项目模板选择器。 如果你的集锦大部分是同类，则选择器将在大多数时间（可能是所有时间）返回相同的类型。 请注意你要为上述罕见的同质例外所付出的代价，并考虑是否首选使用 [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer)（或两个项目控件）。
 
  
 

@@ -1,96 +1,96 @@
 ---
 author: mcleanbyron
-Description: Learn how to register your UWP app to receive push notifications that you send from Windows Dev Center.
-title: Configure your app to receive Dev Center push notifications
+Description: "了解如何注册 UWP 应用，以接收从 Windows 开发人员中心发送的推送通知。"
+title: "配置应用以接收开发人员中心推送通知"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
 ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
 
 ---
 
-# <a name="configure-your-app-to-receive-dev-center-push-notifications"></a>Configure your app to receive Dev Center push notifications
+# <a name="configure-your-app-to-receive-dev-center-push-notifications"></a>配置应用以接收开发人员中心推送通知
 
-You can use the **Push notifications** page in the Windows Dev Center dashboard to directly engage with customers by sending targeted push notifications to the devices on which your Universal Windows Platform (UWP) app is installed. For example, you can use targeted push notifications to encourage your customers to take an action, such as rating your app or trying a new feature. You can send several different types of push notifications, including toast notifications, tile notifications, and raw XML notifications. You can also track the rate of app launches that resulted from your push notifications. For more information about this feature, see [Send push notifications to your app's customers](../publish/send-push-notifications-to-your-apps-customers.md).
+可以使用 Windows 开发人员中心仪表板中的**推送通知**页面，通过向已安装通用 Windows 平台 (UWP) 应用的设备发送定向推送通知来直接与客户交流。 例如，可以使用定向推送通知鼓励客户采取行动（如为应用评分或试用新功能）。 可以发送多个不同类型的推送通知，包括 Toast 通知、磁贴通知和 XML 原始通知。 还可以跟踪由推送通知导致的应用启动的速度。 有关此功能的详细信息，请参阅[将推送通知发送到应用客户](../publish/send-push-notifications-to-your-apps-customers.md)。
 
-Before you can send targeted push notifications to your customers from Dev Center, you must use a method of the [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) class in the Microsoft Store Services SDK to register your app to receive notifications. You can use additional methods of this class to notify Dev Center that your app was launched in response to a targeted push notification (if you want to track the rate of app launches that resulted from your notifications) and to stop receiving notifications.
+在可以从开发人员中心向客户发送定向推送通知之前，必须使用 Microsoft Store Services SDK 中的 [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) 类的方法注册应用，才能接收通知。 可以使用此类的其他方法通知开发人员中心，应用为响应定向推送通知已启动（如果想要跟踪由推送通知导致的应用启动的速度），也可以使用此类的其他方法停止接收通知。
 
-## <a name="configure-your-project"></a>Configure your project
+## <a name="configure-your-project"></a>配置项目
 
-Before you write any code, follow these steps to add a reference to the Microsoft Store Services SDK in your project:
+在编写任何代码之前，请遵循以下步骤在你的项目中添加对 Microsoft Store Services SDK 的引用：
 
-1. If you have not done so already, [Install the Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) on your development computer. In addition to the API for registering an app to receive notifications, this SDK also provides APIs for other features such as running experiments in your apps with A/B testing and displaying ads.
-2. Open your project in Visual Studio.
-3. In Solution Explorer, right-click the **References** node for your project and click **Add Reference**.
-4. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.
-5. In the list of SDKs, click the check box next to **Microsoft Engagement Framework** and click **OK**.
+1. 如果先前尚未这样做，请在开发计算机上[安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 除了用于注册应用接收通知的 API 外，此 SDK 还提供了用于其他功能的 API，例如在应用中通过 A/B 测试运行实验和显示广告。
+2. 在 Visual Studio 中打开你的项目。
+3. 在“解决方案资源管理器”中，右键单击你的项目的“引用”节点，然后单击“添加引用”。
+4. 在“引用管理器”中，展开“通用 Windows”并单击“扩展”。
+5. 在 SDK 列表中，单击“Microsoft 协议框架”旁边的复选框，然后单击“确定”。
 
-## <a name="register-for-push-notifications"></a>Register for push notifications
+## <a name="register-for-push-notifications"></a>注册推送通知
 
-To register your app to receive targeted push notifications from Dev Center:
+若要注册应用以从开发人员中心接收定向推送通知，请执行以下操作：
 
-1. In your project, locate a section of code that runs during startup in which you can register your app to receive Dev Center notifications.
-2. Add the following statement to the top of the code file.
+1. 在项目中，找到启动过程中运行的代码部分，可以在其中注册用于接收开发人员中心通知的应用。
+2. 将以下语句添加到代码文件顶部。
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#EngagementNamespace)]
 
-3. Get a [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) object and call one of the [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync.aspx) overloads in the startup code you identified earlier. This method should be called each time that your app is launched.
+3. 在之前确定的启动代码中，获取 [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) 对象，并调用其中一个 [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync.aspx) 重载。 每次启动应用时，都应该调用此方法。
 
-  * If you want Dev Center to create its own channel URI for the notifications, call the [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) overload.
+  * 如果要开发人员中心为通知创建其自己的通道 URI，请调用 [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) 重载。
 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync1)]
 
     <span/>
-    >**Important**&nbsp;&nbsp;If your app also calls [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) to create a notification channel for WNS, make sure that your code does not call [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) and the [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) overload simultaneously. If you need to call both of these methods, make sure that you call them sequentially and await the return of one method before calling the other.
+    >**重要信息**&nbsp;&nbsp;如果应用还会调用 [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) 为 WNS 创建通知通道，请确保代码不会同时调用 [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) 和 [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) 重载。 如果需要调用这两个方法，请确保按序调用它们，即等待一个方法返回，然后再调用另一个方法。
 
-  * If you want to specify the channel URI to use for targeted push notifications from Dev Center, call the [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx) overload. For example, might want to do this if your app already uses Windows Push Notification Services (WNS) and you want to use the same channel URI. You must first create a [StoreServicesNotificationChannelParameters](https://msdns.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) object and assign the [CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) property to your channel URI.
+  * 如果想要从开发人员中心指定用于定向推送通知的通道 URI，请调用 [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx) 重载。 例如，在应用已使用 Windows 推送通知服务 (WNS) 并且想要使用同一通道 URI 时，可能希望这样做。 必须先创建 [StoreServicesNotificationChannelParameters](https://msdns.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) 对象，并将 [CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) 属性分配给你的通道 URI。
 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
 
-  >#### <a name="understanding-how-your-app-responds-when-the-user-launches-your-app"></a>Understanding how your app responds when the user launches your app
+  >#### <a name="understanding-how-your-app-responds-when-the-user-launches-your-app"></a>了解应用在用户启动应用时如何响应
 
-  >After your app is registered to receive notifications and you [send a push notification to your app's customers from Dev Center](../publish/send-push-notifications-to-your-apps-customers.md), one of the following entry points in your app will be called when the user launches your app in response to your push notification. If you have some code that you want to run when the user launches your app, you can add the code to one of these entry points in your app.
+  >完成用于接收通知的应用注册并且[从开发人员中心向应用客户发送推送通知](../publish/send-push-notifications-to-your-apps-customers.md)之后，当用户为响应推送通知启动应用时，将调用应用中的以下入口点之一。 如果有一些代码想要在用户启动应用时运行，可以将该代码添加到应用中的这些入口点之一。
 
-  >* If the push notification has a foreground activation type, override the [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) method of the **App** class in your project and add your code to this method.
+  >* 如果推送通知中含有前台激活类型，请覆盖项目中 **App** 类的 [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) 方法，然后向该方法中添加你的代码。
 
-  >* If the push notification has a background activation type, add your code to the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method for your [background task](../launch-resume/support-your-app-with-background-tasks.md).
+  >* 如果推送通知中含有后台激活类型，请将你的代码添加到[后台任务](../launch-resume/support-your-app-with-background-tasks.md)的 [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) 方法中。
 
-  >For example, you might want to reward the users of your app that have purchased any paid add-ons in your app by granting them a free add-on. In this case, you can send a push notification to a [customer segment](../publish/create-customer-segments.md) that targets these users. Then, you can add code to grant them a free [in-app purchase](in-app-purchases-and-trials.md) in one of the entry points listed above.
+  >例如，你可能想要通过以下方式对在你的应用中购买过任何付费加载项的用户进行奖励：给予这些用户免费的加载项。 在此情况下，可以将推送通知发送给面向这些用户的[客户群](../publish/create-customer-segments.md)。 然后，可以在上述所列的其中一个入口点中添加用于给予他们免费[应用内购买](in-app-purchases-and-trials.md)的代码。
 
-## <a name="notify-dev-center-of-your-app-launch"></a>Notify Dev Center of your app launch
+## <a name="notify-dev-center-of-your-app-launch"></a>通知开发人员中心应用启动
 
-If you select the **Track app launch rate** option for a Dev Center push notification, call the [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) method from the appropriate entry point in your app to notify Dev Center that your app was launched in response to a push notification.
+如果选择开发人员中心推送通知的“跟踪应用启动速率”选项，请从应用的相应入口点中调用 [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) 方法，以通知开发人员中心，应用为响应推送通知已启动。
 
-This method also returns the original launch arguments for your app. After you choose to track the app launch rate for a Dev Center push notification, an opaque tracking ID is added to the launch arguments to help track the app launch in Dev Center. You must pass the launch arguments for your app to the [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) method, and this method sends the tracking ID to Dev Center, removes the tracking ID from the launch arguments, and returns the original launch arguments to your code.
+该方法还会返回应用的原始启动参数。 在选择跟踪开发人员中心推送通知的应用启动速率后，会将不透明跟踪 ID 添加到启动参数，以帮助在开发人员中心跟踪应用启动。 必须将应用的启动参数传递到 [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) 方法，该方法将向开发人员中心发送跟踪 ID、从启动参数中删除跟踪 ID，然后将原始启动参数返回到你的代码。
 
-The way you call this method depends on the activation type of the targeted push notification:
+调用此方法的方式取决于定向推送通知的激活类型：
 
-* If the push notification has a foreground activation type, call this method from the [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) method override in your app and pass the arguments that are available in the [ToastNotificationActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.toastnotificationactivatedeventargs.aspx) object that is passed to this method. The following code example assumes that your code file has **using** statements for the **Microsoft.Services.Store.Engagement** and  **Windows.ApplicationModel.Activation** namespaces.
+* 如果推送通知中含有前台激活类型，请从应用的 [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) 方法重写中调用此方法，然后传递在向此方法传递的 [ToastNotificationActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.toastnotificationactivatedeventargs.aspx) 对象中可用的参数。 以下代码示例假设你的代码文件中已有 **Microsoft.Services.Store.Engagement** 和 **Windows.ApplicationModel.Activation** 命名空间的 **using** 语句。
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/App.xaml.cs#OnActivated)]
 
-* If the push notification has a background activation type, call this method from the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method for your [background task](../launch-resume/support-your-app-with-background-tasks.md) and pass the arguments that are available in the [ToastNotificationActionTriggerDetail](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.toastnotificationactiontriggerdetail.aspx) object that is passed to this method. The following code example assumes that your code file has **using** statements for the **Microsoft.Services.Store.Engagement**, **Windows.ApplicationModel.Background**, and **Windows.UI.Notifications** namespaces.
+* 如果推送通知中含有后台激活类型，请从[后台任务](../launch-resume/support-your-app-with-background-tasks.md)的 [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) 方法中调用此方法，然后传递在向此方法传递的 [ToastNotificationActionTriggerDetail](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.toastnotificationactiontriggerdetail.aspx) 对象中可用的参数。 以下代码示例假设你的代码文件中已有 **Microsoft.Services.Store.Engagement**、**Windows.ApplicationModel.Background** 和 **Windows.UI.Notifications** 命名空间的 **using** 语句。
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#Run)]
 
-## <a name="unregister-for-push-notifications"></a>Unregister for push notifications
+## <a name="unregister-for-push-notifications"></a>注销推送通知
 
-If you want your app to stop receiving targeted Windows Dev Center push notifications, call the [UnregisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) method.
+如果想要应用停止接收定向 Windows 开发人员中心推送通知，请调用 [UnregisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) 方法。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#UnregisterNotificationChannelAsync)]
 
-Note that this method invalidates the channel that is being used for notifications so the app no longer receives push notifications from *any* services. After it has been closed, the channel can never be used again for any services, including targeted Windows Dev Center push notifications and other notifications using WNS. To resume sending push notifications to this app, the app must request a new channel.
+请注意，此方法会使用于通知的通道失效，因此该应用不再从*任何*服务接收推送通知。 通道已关闭后，该通道再也不能用于任何服务，其中包括定向 Windows 开发人员中心推送通知和使用 WNS 的其他通知。 若要恢复向此应用发送推送通知，该应用必须请求新的通道。
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Send push notifications to your app's customers](../publish/send-push-notifications-to-your-apps-customers.md)
-* [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [How to request, create, and save a notification channel](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868221)
+* [向应用客户发送推送通知](../publish/send-push-notifications-to-your-apps-customers.md)
+* [Windows 推送通知服务 (WNS) 概述](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [如何请求、创建和保存通知通道](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868221)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
 
 

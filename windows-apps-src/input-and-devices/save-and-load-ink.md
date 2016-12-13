@@ -1,24 +1,24 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: UWP apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
-title: Store and retrieve Windows Ink stroke data
+Description: "支持 Windows 墨迹的 UWP 应用可以在笔划墨迹和墨迹序列化格式 (ISF) 文件之间进行序列化，也可以进行反序列化。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。"
+title: "存储和检索 Windows 笔划墨迹数据"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
-keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
+keywords: "Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanvas, ISF, 墨迹序列化格式"
 translationtype: Human Translation
 ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
 ms.openlocfilehash: d4458b66f4f1917e99495353a088680b19cb94c9
 
 ---
 
-# <a name="store-and-retrieve-windows-ink-stroke-data"></a>Store and retrieve Windows Ink stroke data
+# <a name="store-and-retrieve-windows-ink-stroke-data"></a>存储和检索 Windows 笔划墨迹数据
 
 
-UWP apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
+支持 Windows 墨迹的 UWP 应用可以在笔划墨迹和墨迹序列化格式 (ISF) 文件之间进行序列化，也可以进行反序列化。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。
 
 
-**Important APIs**
+**重要的 API**
 
 -   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
 -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
@@ -26,18 +26,18 @@ UWP apps that support Windows Ink can serialize and deserialize ink strokes to a
 
 
 > [!NOTE]
-> ISF is the most compact persistent representation of ink. It can be embedded within a binary document format, such as a GIF file, or placed directly on the Clipboard.
+> ISF 为墨迹的最紧凑持久表现形式。 该格式可以嵌入到二进制文档格式（例如 GIF 文件），也可以直接放置在剪贴板上。
 
  
 
-## <a name="save-ink-strokes-to-a-file"></a>Save ink strokes to a file
+## <a name="save-ink-strokes-to-a-file"></a>将笔划墨迹保存到文件
 
 
-Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
+在此，我们展示如何保存在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件上绘制的笔划墨迹。
 
-1.  First, we set up the UI.
+1.  首先，我们设置 UI。
 
-    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    UI 包括“保存”、“加载”、“清除”按钮和 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -65,9 +65,9 @@ Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](https:/
     </Grid>
 ```
 
-2.  We then set some basic ink input behaviors.
+2.  然后，我们设置一些基本墨迹输入行为。
 
-    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and listeners for the click events on the buttons are declared.
+    [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，并且将声明用于按钮上的单击事件的侦听器。
 ```    CSharp
 public MainPage()
     {
@@ -87,13 +87,13 @@ public MainPage()
     }
 ```
 
-3.  Finally, we save the ink in the click event handler of the **Save** button.
+3.  最终，我们将墨迹保存在“保存”按钮的单击事件处理程序中。
 
-    A [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) lets the user select both the file and the location where the ink data is saved.
+    [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 允许用户选择保存墨迹数据的文件和位置。
 
-    Once a file is selected, we open an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) stream set to [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635).
+    选定文件后，我们打开设置为 [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635)的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 流。
 
-    We then call [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114) to serialize the ink strokes managed by the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) to the stream.
+    然后，调用 [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114) 将由 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 管理的笔划墨迹序列化到流。
 ```    CSharp
 // Save ink data to a file.
     private async void btnSave_Click(object sender, RoutedEventArgs e)
@@ -158,15 +158,15 @@ public MainPage()
 ```
 
 > [!NOTE]  
-> GIF is the only file format supported for saving ink data. However, the [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) method (demonstrated in the next section) does support additional formats for backward compatibility.
+> GIF 是保存墨迹数据的唯一受支持的文件格式。 但是，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法（在下一部分中演示）不支持向后兼容的其他格式。
 
-## <a name="load-ink-strokes-from-a-file"></a>Load ink strokes from a file
+## <a name="load-ink-strokes-from-a-file"></a>从文件加载笔划墨迹
 
-Here, we demonstrate how to load ink strokes from a file and render them on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
+在此，我们展示如何从文件加载笔划墨迹，并在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件上呈现它们。
 
-1.  First, we set up the UI.
+1.  首先，我们设置 UI。
 
-    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    UI 包括“保存”、“加载”、“清除”按钮和 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -194,9 +194,9 @@ Here, we demonstrate how to load ink strokes from a file and render them on an [
     </Grid>
 ```
 
-2.  We then set some basic ink input behaviors.
+2.  然后，我们设置一些基本墨迹输入行为。
 
-    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and listeners for the click events on the buttons are declared.
+    [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，并且将声明用于按钮上的单击事件的侦听器。
 ```    CSharp
 public MainPage()
     {
@@ -216,16 +216,16 @@ public MainPage()
     }
 ```
 
-3.  Finally, we load the ink in the click event handler of the **Load** button.
+3.  最终，我们将墨迹加载到“加载”按钮的单击事件处理程序中。
 
-    A [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) lets the user select both the file and the location from where to retrieve the saved ink data.
+    [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 允许用户选择检索已保存墨迹数据的文件和位置。
 
-    Once a file is selected, we open an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) stream set to [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635).
+    选定文件后，我们打开设置为 [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635) 的 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) 流。
 
-    We then call [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) to read, de-serialize, and load the saved ink strokes into the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Loading the strokes into the **InkStrokeContainer** causes the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to immediately render them to the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    然后，调用 [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 读取、反序列化已保存的笔划墨迹，并将其加载到 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492)。 将笔划加载到 **InkStrokeContainer** 会使 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 立即将它们呈现到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
 
     > [!NOTE]
-    > All existing strokes in the InkStrokeContainer are cleared before new strokes are loaded.
+    > 在加载新笔划之前，InkStrokeContainer 中的所有现有笔划都将清除。
 
 ``` csharp
 // Load ink data from a file.
@@ -261,27 +261,27 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!NOTE]
-> GIF is the only file format supported for saving ink data. However, the [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) method does support the following formats for backward compatibility.
+> GIF 是保存墨迹数据的唯一受支持的文件格式。 但是，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法不支持向后兼容的以下格式。
 
-| Format                    | Description |
+| 格式                    | 说明 |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| InkSerializedFormat       | Specifies ink that is persisted using ISF. This is the most compact persistent representation of ink. It can be embedded within a binary document format or placed directly on the Clipboard.                                                                                                                                                                                                         |
-| Base64InkSerializedFormat | Specifies ink that is persisted by encoding the ISF as a base64 stream. This format is provided so ink can be encoded directly in an XML or HTML file.                                                                                                                                                                                                                                                |
-| Gif                       | Specifies ink that is persisted by using a GIF file that contains ISF as metadata embedded within the file. This enables ink to be viewed in applications that are not ink-enabled and maintain its full ink fidelity when it returns to an ink-enabled application. This format is ideal when transporting ink content within an HTML file and for making it usable by ink and non-ink applications. |
-| Base64Gif                 | Specifies ink that is persisted by using a base64-encoded fortified GIF. This format is provided when ink is to be encoded directly in an XML or HTML file for later conversion into an image. A possible use of this is in an XML format generated to contain all ink information and used to generate HTML through Extensible Stylesheet Language Transformations (XSLT). 
+| InkSerializedFormat       | 指定使用 ISF 持久保存的墨迹。 这是墨迹的最紧凑持久表现形式。 该格式可以嵌入到二进制文档格式，也可以直接放置在剪贴板上。                                                                                                                                                                                                         |
+| Base64InkSerializedFormat | 指定通过将 ISF 编码为 base64 流来持久保存墨迹。 提供该格式是为了在 XML 或 HTML 文件中直接对墨迹进行编码。                                                                                                                                                                                                                                                |
+| Gif                       | 指定使用作为嵌入到文件中的元数据包含 ISF 的 GIF 文件持久保存的墨迹。 此格式能够在不支持墨迹的应用程序中查看墨迹，并且当返回支持墨迹的应用程序时保持全部墨迹保真度。 此格式适合传输 HTML 文件中的墨迹内容并使其可由墨迹和非墨迹应用程序使用。 |
+| Base64Gif                 | 指定使用 base64 编码的加强 GIF 持久保存墨迹。 当在 XML 或 HTML 文件中对墨迹直接进行编码，之后转换为图像时，提供此格式。 该格式的可能用法是采用生成的 XML 格式包含所有墨迹信息，并用于通过可扩展样式表语言转换 (XSLT) 生成 HTML。 
 
-## <a name="copy-and-paste-ink-strokes-with-the-clipboard"></a>Copy and paste ink strokes with the clipboard
+## <a name="copy-and-paste-ink-strokes-with-the-clipboard"></a>使用剪贴板复制并粘贴墨迹笔划
 
 
-Here, we demonstrate how to use the clipboard to transfer ink strokes between apps.
+在此，我们演示如何使用剪贴板在应用之间传输笔划墨迹。
 
-To support clipboard functionality, the built-in [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) cut and copy commands require one or more ink strokes be selected.
+若要支持剪贴板功能，内置 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 剪切和复制命令需要一条或多条笔划墨迹已选定。
 
-For this example, we enable stroke selection when input is modified with a pen barrel button (or right mouse button). For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in [Pen and stylus interactions](pen-and-stylus-interactions.md).
+在此示例中，我们会在使用笔桶按钮（或鼠标右键按钮）修改输入时启用笔划选择。 有关如何实现笔划选择的完整示例，请参阅[笔和触笔交互](pen-and-stylus-interactions.md)中的传递输入以进行高级处理。
 
-1.  First, we set up the UI.
+1.  首先，我们设置 UI。
 
-    The UI includes "Cut", "Copy", "Paste", and "Clear" buttons, along with the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) and a selection canvas.
+    UI 包括“剪切”、“复制”、“粘贴”和“清除”按钮以及 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 和选择画布。
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -315,11 +315,11 @@ For this example, we enable stroke selection when input is modified with a pen b
     </Grid>
 ```
 
-2.  We then set some basic ink input behaviors.
+2.  然后，我们设置一些基本墨迹输入行为。
 
-    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Listeners for the click events on the buttons as well as pointer and stroke events for selection functionality are also declared here.
+    将 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 适用于按钮上的单击事件的侦听器以及适用于选择功能的指针和笔划事件也在此处声明。
 
-    For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in [Pen and stylus interactions](pen-and-stylus-interactions.md).
+    有关如何实现笔划选择的完整示例，请参阅[笔和触笔交互](pen-and-stylus-interactions.md)中的传递输入以进行高级处理。
 ```    CSharp
 public MainPage()
     {
@@ -365,13 +365,13 @@ public MainPage()
     }
 ```
 
-3.  Finally, after adding stroke selection support, we implement clipboard functionality in the click event handlers of the **Cut**, **Copy**, and **Paste** buttons.
+3.  最终，在添加笔划选择支持后，我们在“剪切”、“复制”和“粘贴”按钮的单击事件处理程序中实现剪贴板功能。
 
-    For cut, we first call [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) on the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
+    对于剪切，我们首先在 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 上调用 [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232)。
 
-    We then call [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) to remove the strokes from the ink canvas.
+    然后再调用 [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) 从墨迹画布中删除笔划。
 
-    Finally, we delete all selection strokes from the selection canvas.
+    最终，我们从选择画布中删除所有选择笔划。
 ```    CSharp
 private void btnCut_Click(object sender, RoutedEventArgs e)
     {
@@ -428,16 +428,16 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## <a name="related-articles"></a>Related articles
+## <a name="related-articles"></a>相关文章
 
-* [Pen and stylus interactions](pen-and-stylus-interactions.md)
+* [笔和触笔交互](pen-and-stylus-interactions.md)
 
-**Samples**
-* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
-* [Family notes sample](https://aka.ms/cpubsample-familynotessample)
+**示例**
+* [墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [简单墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [复杂墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Coloring Book 示例](https://aka.ms/cpubsample-coloringbook)
+* [系列说明示例](https://aka.ms/cpubsample-familynotessample)
 
 
  

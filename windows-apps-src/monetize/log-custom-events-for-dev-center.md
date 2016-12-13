@@ -1,44 +1,44 @@
 ---
 author: mcleanbyron
-Description: You can log custom events from your UWP app and review those events in the Usage report on the Windows Dev Center dashboard.
-title: Log custom events for Dev Center
+Description: "可记录 UWP 应用中的自定义事件，并查看开发人员中心仪表板上的使用情况报告中的事件。"
+title: "记录开发人员中心的自定义事件"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
 ms.openlocfilehash: e0012d586d9b79db77bdeded6f0e1d2ce848bbea
 
 ---
 
-# <a name="log-custom-events-for-dev-center"></a>Log custom events for Dev Center
+# <a name="log-custom-events-for-dev-center"></a>记录开发人员中心的自定义事件
 
-The [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in the Windows Dev Center dashboard lets you get info about custom events that you've defined in your Universal Windows Platform (UWP) app. A custom event is an arbitrary string that represents an event or activity in your app. For example, a game might define custom events named *firstLevelPassed*, *secondLevelPassed*, and so on, which are logged when the user passes each level in the game.
+Windows 开发人员中心仪表板中的[使用情况](https://msdn.microsoft.com/windows/uwp/publish/usage-report)报告可使你获取有关在通用 Windows 平台 (UWP) 应用中已定义的自定义事件的信息。 自定义事件是表示应用中的某个事件或活动的任意字符串。 例如，游戏可能定义名为 *firstLevelPassed*、*secondLevelPassed* 等的自定义事件，用户在游戏中通过每个关卡时记录这些事件。
 
-To log a custom event from your app, pass the custom event string to the [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) method provided by the Microsoft Store Services SDK. You can review the total occurrences for your custom events in the **Custom events** section of the [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in the Dev Center dashboard.
+若要记录应用中的自定义事件，请将自定义事件字符串传递到 Microsoft Store Services SDK 提供的 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) 方法。 可在开发人员中心仪表板中的[使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的“自定义事件”部分中查看自定义事件的总发生次数。
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>先决条件
 
-Before you can review custom logging events in the **Usage report** for your app in the dashboard, your app must be published in the Store.
+必须先在应用商店中发布应用，然后才能在仪表板中查看应用的**使用情况报告**中的自定义日志记录事件。
 
-## <a name="how-to-log-custom-events"></a>How to log custom events
+## <a name="how-to-log-custom-events"></a>如何记录自定义事件
 
-1. If you have not done so already, [Install the Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) on your development computer. In addition to the API for logging custom events, this SDK also provides APIs for other features such as running experiments in your apps with A/B testing and displaying ads.
-2. Open your project in Visual Studio.
-3. In Solution Explorer, right-click the **References** node for your project and click **Add Reference**.
-4. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.
-5. In the list of SDKs, click the check box next to **Microsoft Engagement Framework** and click **OK**.
-7. Add the following statement to the top of each code file where you want to log custom events.
+1. 如果先前尚未这样做，请在开发计算机上[安装 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 除了用于记录自定义事件的 API 外，此 SDK 还提供用于其他功能的 API，例如通过 A/B 测试运行实验和显示广告。
+2. 在 Visual Studio 中打开你的项目。
+3. 在“解决方案资源管理器”中，右键单击你的项目的“引用”节点，然后单击“添加引用”。
+4. 在“引用管理器”中，展开“通用 Windows”并单击“扩展”。
+5. 在 SDK 列表中，单击“Microsoft 协议框架”旁边的复选框，然后单击“确定”。
+7. 将以下语句添加到要记录自定义事件的每个代码文件的顶部。
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
 
-8. In each section of your code where you want to log a custom event, get a [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) object and then call the [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) method. Pass your custom event string to the method.
+8. 在要记录自定义事件的每个代码部分中，获取 [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) 对象，然后调用 [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) 方法。 将自定义事件字符串传递到该方法。
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
-* [Log method](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx)
+* [使用情况报告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
+* [记录方法](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
 
 

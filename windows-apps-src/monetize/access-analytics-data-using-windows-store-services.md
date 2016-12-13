@@ -1,51 +1,51 @@
 ---
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: Use the Windows Store analytics API to programmatically retrieve analytics data for apps that are registered to your or your organization&quot;&quot;s Windows Dev Center account.
-title: Access analytics data using Windows Store services
+description: "使用 Windows 应用商店分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。"
+title: "使用 Windows 应用商店服务访问分析数据"
 translationtype: Human Translation
 ms.sourcegitcommit: dcf4c263ff3fd8df846d1d5620ba31a9da7a5e6c
 ms.openlocfilehash: 5ae5dcbe6684aa34a1428760cd5c7e9b8f599ebf
 
 ---
 
-# <a name="access-analytics-data-using-windows-store-services"></a>Access analytics data using Windows Store services
+# <a name="access-analytics-data-using-windows-store-services"></a>使用 Windows 应用商店服务访问分析数据
 
-Use the *Windows Store analytics API* to programmatically retrieve analytics data for apps that are registered to your or your organization's Windows Dev Center account. This API enables you to retrieve data for app and add-on (also known as in-app product or IAP) acquisitions, errors, app ratings and reviews. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
+使用 *Windows 应用商店分析 API*，为注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。 此 API 使你可以针对应用和加载项（也称为应用内产品或 IAP）购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
-The following steps describe the end-to-end process:
+以下步骤介绍端到端过程：
 
-1.  Make sure that you have completed all the [prerequisites](#prerequisites).
-2.  Before you call a method in the Windows Store analytics API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token). After you obtain a token, you have 60 minutes to use this token in calls to the Windows Store analytics API before the token expires. After the token expires, you can generate a new token.
-3.  [Call the Windows Store analytics API](#call-the-windows-store-analytics-api).
+1.  确保已完成所有[先决条件](#prerequisites)。
+2.  在 Windows 应用商店提交 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Windows 应用商店分析 API。 该令牌到期后，可以重新生成一个。
+3.  [调用 Windows 应用商店分析 API](#call-the-windows-store-analytics-api)。
 
 <span id="prerequisites" />
-## <a name="step-1-complete-prerequisites-for-using-the-windows-store-analytics-api"></a>Step 1: Complete prerequisites for using the Windows Store analytics API
+## <a name="step-1-complete-prerequisites-for-using-the-windows-store-analytics-api"></a>步骤 1：完成使用 Windows 应用商店分析 API 的先决条件
 
-Before you start writing code to call the Windows Store analytics API, make sure that you have completed the following prerequisites.
+在开始编写调用 Windows 应用商店分析 API 的代码之前，确保已完成以下先决条件。
 
-* You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Dev Center](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users) for no additional charge.
+* 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](http://go.microsoft.com/fwlink/?LinkId=746654)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在开发人员中心中创建新的 Azure AD](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
-* You must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Windows Store analytics API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
+* 你必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索租户 ID 和应用程序的客户端 ID 并生成密钥。 Azure AD 应用程序是指你想要从中调用 Windows 应用商店分析 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
 
-  >**Note**&nbsp;&nbsp;You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
+  >**注意**&nbsp;&nbsp;只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
-To associate an Azure AD application with your Dev Center account and retrieve the required values:
+若要将 Azure AD 应用程序与你的开发人员中心帐户相关联并检索所需值：
 
-1.  In Dev Center, go to your **Account settings**, click **Manage users**, and associate your organization's Dev Center account with your organization's Azure AD directory. For detailed instructions, see [Manage account users](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users).
+1.  在开发人员中心中，转到“帐户设置”、单击“管理用户”，然后将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
-2.  In the **Manage users** page, click **Add Azure AD applications**, add the Azure AD application that represents the app or service that you will use to access analytics data for your Dev Center account, and assign it the **Manager** role. If this application already exists in your Azure AD directory, you can select it on the **Add Azure AD applications** page to add it to your Dev Center account. Otherwise, you can create a new Azure AD application on the **Add Azure AD applications** page. For more information, see [Add and manage Azure AD applications](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
+2.  在“管理用户”页面中，单击“添加 Azure AD 应用程序”、添加表示应用或服务并且将用于访问你的开发人员中心帐户的分析数据的 Azure AD 应用程序，然后为其分配“管理者”角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在“添加 Azure AD 应用程序”页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在“添加 Azure AD 应用程序”页面上创建新的 Azure AD 应用程序。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
 
-3.  Return to the **Manage users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
+3.  返回到“管理用户”页面、单击 Azure AD 应用程序的名称以转到应用程序设置，然后记下“租户 ID”和“客户端 ID”值。
 
-4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see the information about managing keys in [Add and manage Azure AD applications](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
+4. 单击“添加新密钥”。 在接下来的屏幕上，记下“密钥”值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
 
 <span id="obtain-an-azure-ad-access-token" />
-## <a name="step-2-obtain-an-azure-ad-access-token"></a>Step 2: Obtain an Azure AD access token
+## <a name="step-2-obtain-an-azure-ad-access-token"></a>步骤 2：获取 Azure AD 访问令牌
 
-Before you call any of the methods in the Windows Store analytics API, you must first obtain an Azure AD access token that you pass to the **Authorization** header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
+在 Windows 应用商店分析 API 中调用任何方法之前，首先必须获取将传递给该 API 中每个方法的 **Authorization** 标头的 Azure AD 访问令牌。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以对它进行刷新，以便可以在之后调用该 API 时继续使用。
 
-To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
+若要获取访问令牌，请按照[使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)中的说明将 HTTP POST 发送到以下 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
 
 ```
 POST https://login.microsoftonline.com/<your_tenant_id>/oauth2/token HTTP/1.1
@@ -58,29 +58,29 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-For the *tenant\_id*, *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Dev Center in the previous section. For the *resource* parameter, you must specify the ```https://manage.devcenter.microsoft.com``` URI.
+对于 *tenant\_id*、*client\_id* 和 *client\_secret* 参数，请为从上一部分的开发人员中心中检索得到的应用程序指定租户 ID、客户端 ID 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com``` URI。
 
-After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
+在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
 
 <span id="call-the-windows-store-analytics-api" />
-## <a name="step-3-call-the-windows-store-analytics-api"></a>Step 3: Call the Windows Store analytics API
+## <a name="step-3-call-the-windows-store-analytics-api"></a>步骤 3：调用 Windows 应用商店分析 API
 
-After you have an Azure AD access token, you are ready to call the Windows Store analytics API. For information about the syntax of each method, see the following articles. You must pass the access token to the **Authorization** header of each method.
+获取 Azure AD 访问令牌后，可以随时调用 Windows 应用商店分析 API。 有关每个方法的语法信息，请参阅以下文章。 必须将访问令牌传递到每个方法的 **Authorization** 标头。
 
-* [Get app acquisitions](get-app-acquisitions.md)
-* [Get add-on acquisitions](get-in-app-acquisitions.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get details for an error in your app](get-details-for-an-error-in-your-app.md)
-* [Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)
-* [Get app ratings](get-app-ratings.md)
-* [Get app reviews](get-app-reviews.md)
-* [Get ad performance data](get-ad-performance-data.md)
-* [Get ad campaign performance data](get-ad-campaign-performance-data.md)
+* [获取应用购置](get-app-acquisitions.md)
+* [获取加载项购置](get-in-app-acquisitions.md)
+* [获取错误报告数据](get-error-reporting-data.md)
+* [获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)
+* [获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)
+* [获取应用评分](get-app-ratings.md)
+* [获取应用评价](get-app-reviews.md)
+* [获取广告性能数据](get-ad-performance-data.md)
+* [获取广告市场活动性能数据](get-ad-campaign-performance-data.md)
 
-## <a name="code-example"></a>Code example
+## <a name="code-example"></a>代码示例
 
 
-The following code example demonstrates how to obtain an Azure AD access token and call the Windows Store analytics API from a C# console app. To use this code example, assign the *tenantId*, *clientId*, *clientSecret*, and *appID* variables to the appropriate values for your scenario. This example requires the [Json.NET package](http://www.newtonsoft.com/json) from Newtonsoft to deserialize the JSON data returned by the Windows Store analytics API.
+以下代码示例演示了如何获取 Azure AD 访问令牌以及如何从 C# 控制台应用调用 Windows 应用商店分析 API。 若要使用此代码示例，请将 *tenantId*、*clientId*、*clientSecret* 和 *appID* 变量分配给你的方案的相应值。 此示例需要 Newtonsoft 中的 [Json.NET 程序包](http://www.newtonsoft.com/json)，以便反序列化 Windows 应用商店分析 API 返回的 JSON 数据。
 
 ```CSharp
 using Newtonsoft.Json;
@@ -206,10 +206,10 @@ namespace TestAnalyticsAPI
 }
 ```
 
-## <a name="error-responses"></a>Error responses
+## <a name="error-responses"></a>错误响应
 
 
-The Windows Store analytics API returns error responses in a JSON object that contains error codes and messages. The following example demonstrates an error response caused by an invalid parameter.
+Windows 应用商店分析 API 会在 JSON 对象中返回含有错误代码和消息的错误响应。 以下示例演示了由无效参数引起的错误响应。
 
 ```json
 {
@@ -230,17 +230,17 @@ The Windows Store analytics API returns error responses in a JSON object that co
 }
 ```
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Get app acquisitions](get-app-acquisitions.md)
-* [Get add-on acquisitions](get-in-app-acquisitions.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get details for an error in your app](get-details-for-an-error-in-your-app.md)
-* [Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)
-* [Get app ratings](get-app-ratings.md)
-* [Get app reviews](get-app-reviews.md)
-* [Get ad performance data](get-ad-performance-data.md)
-* [Get ad campaign performance data](get-ad-campaign-performance-data.md)
+* [获取应用购置](get-app-acquisitions.md)
+* [获取加载项购置](get-in-app-acquisitions.md)
+* [获取错误报告数据](get-error-reporting-data.md)
+* [获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)
+* [获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)
+* [获取应用评分](get-app-ratings.md)
+* [获取应用评价](get-app-reviews.md)
+* [获取广告性能数据](get-ad-performance-data.md)
+* [获取广告市场活动性能数据](get-ad-campaign-performance-data.md)
  
 
 

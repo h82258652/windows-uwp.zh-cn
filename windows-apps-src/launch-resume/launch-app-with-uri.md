@@ -1,31 +1,31 @@
 ---
 author: PatrickFarley
-title: Launch an app with a URI
-description: This section describes how to use a Uniform Resource Identifier (URI) to launch one app from another app.
+title: "使用 URI 启动应用"
+description: "本部分介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用。"
 translationtype: Human Translation
 ms.sourcegitcommit: dfbfe75d19c08e549263b97350dfca1dbfb96447
 ms.openlocfilehash: e4b070db5180538732e08b10ace1aaa196ae5eaa
 
 ---
 
-# <a name="launch-an-app-with-a-uri"></a>Launch an app with a URI
+# <a name="launch-an-app-with-a-uri"></a>使用 URI 启动应用
 
-This section describes how to use a Uniform Resource Identifier (URI) to launch one app from another app, enabling helpful app-to-app scenarios.
+本部分介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用，从而支持有用的应用到应用方案。
 
-| Topic | Description |
+| 主题 | 描述 |
 |-------|-------------|
-| [Launch the default app for a URI](launch-default-app.md) | Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows. |
-| [Handle URI activation](handle-uri-activation.md) | Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name. |
-| [Launch an app for results](how-to-launch-an-app-for-results.md) | Learn how to launch an app from another app and exchange data between the two. This is called launching an app for results. |
-| [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) | This topic describes the ms-tonepicker URI scheme and how to use it to display a tone picker to select a tone, save a tone, and get the friendly name for a tone. |
-| [Launch the Windows Settings app](launch-settings-app.md) | Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages. |
-| [Launch the Windows Store app](launch-store-app.md) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Windows Store app to specific pages in the Store. |
-| [Launch the Windows Maps app](launch-maps-app.md) | Learn how to launch the Windows Maps app from your app. |
-| [Launch the People app](launch-people-apps.md) | This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions. |
-| [Support web-to-app linking with app URI handlers](web-to-app-linking.md) | Drive user engagement with your app by using app URI handlers. |
+| [启动 URI 的默认应用](launch-default-app.md) | 了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。 |
+| [处理 URI 激活](handle-uri-activation.md) | 了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。 |
+| [针对结果启动应用](how-to-launch-an-app-for-results.md) | 了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是针对结果启动应用。 |
+| [使用 ms-tonepicker URI 方案选择并保存音调](launch-ringtone-picker.md) | 本主题介绍了 ms-tonepicker URI 方案，以及如何使用它显示音调选取器，以便选择音调、保存音调和获取音调的友好名称。 |
+| [启动 Windows 设置应用](launch-settings-app.md) | 了解如何从你的应用启动 Windows 设置应用。 本主题介绍了 ms-settings URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。 |
+| [启动 Windows 应用商店应用](launch-store-app.md) | 本主题介绍了 ms-windows-store URI 方案。 你的应用可以使用此 URI 方案将 Windows 应用商店应用启动到应用商店中的特定页面。 |
+| [启动 Windows 地图应用](launch-maps-app.md) | 了解如何从你的应用启动 Windows 地图应用。 |
+| [启动“人脉”应用](launch-people-apps.md) | 本主题介绍了 ms-people URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。 |
+| [支持使用应用 URI 处理程序的 Web 到应用链接](web-to-app-linking.md) | 通过使用应用 URI 处理程序推动用户与应用的互动。 |
 
-## <a name="related-topics"></a>Related Topics
-* [Launch an app on a remote device](launch-a-remote-app.md)
+## <a name="related-topics"></a>相关主题
+* [启动远程设备上的应用](launch-a-remote-app.md)
 
 
 <!--HONumber=Dec16_HO1-->

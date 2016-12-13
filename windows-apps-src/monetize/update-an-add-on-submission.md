@@ -1,80 +1,80 @@
 ---
 author: mcleanbyron
 ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
-description: Use this method in the Windows Store submission API to update an existing add-on submission.
-title: Update an add-on submission using the Windows Store submission API
+description: "在 Windows 应用商店提交 API 中使用此方法，更新现有加载项提交。"
+title: "使用 Windows 应用商店提交 API 更新加载项提交"
 translationtype: Human Translation
 ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
 ms.openlocfilehash: ac126d8e8cf8301399a3248a1d65e19805e70255
 
 ---
 
-# <a name="update-an-add-on-submission-using-the-windows-store-submission-api"></a>Update an add-on submission using the Windows Store submission API
+# <a name="update-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 更新加载项提交
 
 
-Use this method in the Windows Store submission API to update an existing add-on (also known as in-app product or IAP) submission. After you successfully update a submission by using this method, you must [commit the submission](commit-an-add-on-submission.md) for ingestion and publishing.
+在 Windows 应用商店提交 API 中使用此方法，更新现有加载项（也称为应用内产品或 IAP）提交。 使用此方法成功更新提交后，必须[确认提交](commit-an-add-on-submission.md)才可以实现引入和发布。
 
-For more information about how this method fits into the process of creating an add-on submission by using the Windows Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
+有关此方法如何适用通过使用 Windows 应用商店提交 API 创建应用提交过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>先决条件
 
-To use this method, you need to first do the following:
+若要使用此方法，首先需要执行以下操作：
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Create an add-on submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [Create an add-on submission](create-an-add-on-submission.md) method.
+* 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
+* [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
+* 使用你的开发人员中心帐户为应用创建加载项提交。 可以使用开发人员中心仪表板执行此操作，也可以通过以下方式执行此操作：使用[创建加载项提交](create-an-add-on-submission.md)方法。
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## <a name="request"></a>Request
+## <a name="request"></a>请求
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
-| Method | Request URI                                                      |
+| 方法 | 请求 URI                                                      |
 |--------|------------------------------------------------------------------|
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ``` |
 
 <span/>
  
 
-### <a name="request-header"></a>Request header
+### <a name="request-header"></a>请求标头
 
-| Header        | Type   | Description                                                                 |
+| 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
 <span/>
 
-### <a name="request-parameters"></a>Request parameters
+### <a name="request-parameters"></a>请求参数
 
-| Name        | Type   | Description                                                                 |
+| 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | Required. The Store ID of the add-on for which you want to update a submission. The Store ID is available on the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on](create-an-add-on.md) or [get add-on details](get-all-add-ons.md).  |
-| submissionId | string | Required. The ID of the submission to update. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
+| inAppProductId | 字符串 | 必需。 要更新提交的加载项的应用商店 ID。 可通过开发人员中心仪表板获取应用商店 ID，它包含在[创建加载项](create-an-add-on.md)或[获取加载项详细信息](get-all-add-ons.md)请求的响应数据中。  |
+| submissionId | 字符串 | 必需。 要更新的提交的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建加载项提交](create-an-add-on-submission.md)请求的响应数据中。  |
 
 <span/>
 
-### <a name="request-body"></a>Request body
+### <a name="request-body"></a>请求正文
 
-The request body has the following parameters.
+请求正文具有以下参数。
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| 值      | 类型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| contentType           | string  |  The [type of content](../publish/enter-add-on-properties.md#content-type) that is provided in the add-on. This can be one of the following values: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | array  | An array of strings that contain up to 10 [keywords](../publish/enter-add-on-properties.md#keywords) for the add-on. Your app can query for add-ons using these keywords.   |
-| lifetime           | string  |  The lifetime of the add-on. This can be one of the following values: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
-| listings           | object  | An object that contains listing info for the add-on. For more information, see [Listing resource](manage-add-on-submissions.md#listing-object).  |
-| pricing           | object  | An object that contains pricing info for the add-on. For more information, see [Pricing resource](manage-add-on-submissions.md#pricing-object).  |
-| targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
-| tag           | string  |  The [custom developer data](../publish/enter-add-on-properties.md#custom-developer-data) for the add-on (this information was previously called the *tag*).   |
-| visibility  | string  |  The visibility of the add-on. This can be one of the following values: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| contentType           | 字符串  |  加载项中提供的[内容类型](../publish/enter-add-on-properties.md#content-type)。 这可以是以下值之一： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | 数组  | 字符串数组，其中最多包含加载项的 10 个[关键字](../publish/enter-add-on-properties.md#keywords)。 应用可以使用这些关键字来查询加载项。   |
+| lifetime           | 字符串  |  加载项的生存期。 这可以是以下值之一： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
+| listings           | 对象  | 包含加载项列表信息的对象。 有关详细信息，请参阅[列表资源](manage-add-on-submissions.md#listing-object)。  |
+| pricing           | 对象  | 包含加载项定价信息的对象。 有关详细信息，请参阅[定价资源](manage-add-on-submissions.md#pricing-object)。  |
+| targetPublishMode           | 字符串  | 提交的发布模式。 这可以是以下值之一： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | 字符串  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |
+| tag           | 字符串  |  加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（此信息之前称为 *tag*）。   |
+| 可见性  | 字符串  |  加载项的可见性。 这可以是以下值之一： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 
 <span/>
 
-### <a name="request-example"></a>Request example
+### <a name="request-example"></a>请求示例
 
-The following example demonstrates how to update an add-on submission.
+以下示例演示了如何更新加载项提交。
 
 ```json
 PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621230023 HTTP/1.1
@@ -119,9 +119,9 @@ Content-Type: application/json
 }
 ```
 
-## <a name="response"></a>Response
+## <a name="response"></a>响应
 
-The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the updated submission. For more details about the values in the response body, see [Add-on submission resource](manage-add-on-submissions.md#add-on-submission-object).
+以下示例演示了成功调用此方法的 JSON 响应正文。 该响应正文包含已更新提交的相关信息。 有关响应正文中这些值的更多详细信息，请参阅[加载项提交资源](manage-add-on-submissions.md#add-on-submission-object)。
 
 ```json
 {
@@ -185,27 +185,27 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-## <a name="error-codes"></a>Error codes
+## <a name="error-codes"></a>错误代码
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
-| Error code |  Description   |
+| 错误代码 |  描述   |
 |--------|------------------|
-| 400  | The submission could not be updated because the request is invalid. |
-| 409  | The submission could not be updated because of the current state of the add-on, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 400  | 由于请求无效，无法更新提交。 |
+| 409  | 由于加载项的当前状态，或者加载项使用的开发人员中心仪表板功能[当前不受 Windows 应用商店提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)，无法更新提交。 |   
 
 <span/>
 
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage add-on submissions](manage-add-on-submissions.md)
-* [Get an add-on submission](get-an-add-on-submission.md)
-* [Create an add-on submission](create-an-add-on-submission.md)
-* [Commit an add-on submission](commit-an-add-on-submission.md)
-* [Delete an add-on submission](delete-an-add-on-submission.md)
-* [Get the status of an add-on submission](get-status-for-an-add-on-submission.md)
+* [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [管理加载项提交](manage-add-on-submissions.md)
+* [获取加载项提交](get-an-add-on-submission.md)
+* [创建加载项提交](create-an-add-on-submission.md)
+* [确认加载项提交](commit-an-add-on-submission.md)
+* [删除加载项提交](delete-an-add-on-submission.md)
+* [获取加载项提交的状态](get-status-for-an-add-on-submission.md)
 
 
 

@@ -1,62 +1,62 @@
 ---
 author: shawjohn
-Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
-title: Create customer segments
+Description: "了解如何创建客户类别，以便面向客户群子集进行推销或提升参与度。"
+title: "创建客户类别"
 translationtype: Human Translation
 ms.sourcegitcommit: eed71b2fc06db71fd105df37a73bd0cd0832931f
 ms.openlocfilehash: 28906c98d2826f5312e01713e2621159c6b24923
 
 ---
 
-# <a name="create-customer-segments"></a>Create customer segments
+# <a name="create-customer-segments"></a>创建客户类别
 
-There are times when you may want to target a subset of your customer base for promotional and engagement purposes. You can accomplish this in Windows Dev Center by creating a type of [customer group](create-customer-groups.md) known as a *segment* that includes the Windows 10 customers who meet the demographic or revenue criteria that you choose.
+有时出于促销和提升参与度的目的，可能需要面向客户群子集。 可在 Windows 开发人员仪表板中创建一类名为“类别”的[客户组](create-customer-groups.md)，该组包含符合所选人口统计或收益条件的 Windows 10 客户。
 
-For example, you could create a segment that includes only customers who are age 50 or older, or that includes customers who’ve spent more than $10 in the Windows Store. You could also combine these criteria and create a segment that includes all customers over 50 who have spent more than $10 in the Store. We provide a few segment templates to help get you started, but you can define and combine the criteria however you'd like.
+例如，可创建仅包含年龄在 50 岁或以上的客户的类别，或创建包含在 Windows 应用商店中花费超过 10 美元的客户。 还可将这些条件组合起来，创建包含年龄在 50 岁以上并且在应用商店中花费超过 10 美元的所有客户。 我们提供一些类别模板，帮助用户入门，但用户可根据喜好来定义和合并条件。
 
-> **Tip** Segments can be used to [send targeted push notifications](send-push-notifications-to-your-apps-customers.md) to a group of customers as part of an engagement campaign.
+> **使用技巧** 客户类别通常用于向一组客户[发送目标推送通知](send-push-notifications-to-your-apps-customers.md)，这是参与市场活动的一部分。
 
-## <a name="to-create-a-customer-segment"></a>To create a customer segment
+## <a name="to-create-a-customer-segment"></a>创建客户类别
 
-1.  In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), select **Customers** in the top menu.
-2.  On the **Customer groups** page, do one of the following:
- - In the **My customer groups** section, select **Create new group** to define a segment from scratch. Be sure that **Segment** is selected in the **Group type** dropdown list.
- - In the **Segment templates** section, select **Copy to use a predefined segment** that you can use as is or modify to suit your needs.
-3.  In the **Include customers from this app** list, select one of your apps to target.
-4.  In the **Segment name** box, choose a name for your segment.
-5.  In the **Define inclusion conditions** section, choose the filter criteria for the segment.
+1.  在 [Windows 开发人员中心仪表板](https://developer.microsoft.com/dashboard/overview)中，选择顶部菜单的“客户”。
+2.  在“客户组”页面上，执行以下操作之一：
+ - 在“我的客户组”部分中选择“创建新组”，从最开始定义类别。 请确保在“组类别”下拉列表中选择了“类别”。
+ - 在“类别模板”部分中，选择可按现样使用或修改的“复制使用预定义类别”，以满足需要。
+3.  在“包含此应用的客户”列表中，选择一个目标应用。
+4.  在“类别名称”框中，选择类别名称。
+5.  在“定义包含条件”部分中，选择类别的筛选条件。
 
-    You can choose from a variety of filter criteria, including **Acquisition source**, **Acquisitions**, **Demographic**, **Rating**, **Store acquisitions**, **Store purchases**, and **Store spend**.
+    可以选择各种筛选条件，包括“购置源”、“购置”、“人口统计”、“分级”、“应用商店购置”、“应用商店购买”和“应用商店花费”。
 
-    For example, if you wanted to create a segment that only included your app customers who are 18- to 24-years old, you’d select the filter criteria [**Demographic**] [**Age group**] [**is**] [**18 to 24**] from the drop-down lists.
+    例如，如果希望创建仅包含 18 至 24 岁的应用客户的类别，可从下拉列表中选择筛选条件 \[**人口统计**\] \[**年龄组**\]\ [**是**\] \[**18 至 24**\]。
 
-    You can build more complex segments by using AND/OR queries to include or exclude customers based on various attributes. To add an OR query, select **+ OR statement**. To add an ADD query, select **Add another filter**.
+    可根据各种属性使用 AND/OR 查询包含或排除客户，生成更复杂的类别。 若要添加 OR 查询，请选择“+ OR 声明”。 若要添加 ADD 查询，请选择“添加其他筛选器”。
 
-    So, if you wanted to refine that segment to only include male customers who are in the specified age range, you would select **Add another filter** and then select the additional filter criteria [**Demographic**] [**Gender**] [**is**] [**Male**]. For this example, the **Segment definition** would display **Age group == 18 to 24 && Gender == Male**.
+    因此，如果要优化该类别，仅包含指定年龄范围的男性客户，可选择“添加其他筛选器”，然后选择其他筛选条件 \[**人口统计**\] \[**性别**\] \[**是**\] \[**男性**\]。 对于此示例，“类别定义”显示为“年龄组 == 18 至 24 &amp;&amp; 性别 == 男性”。
 
-    ![Example of filter criteria for a segment](images/create-segment-inclusions.png)
-6. Select **Save**.
+    ![类别筛选条件示例](images/create-segment-inclusions.png)
+6. 选择“保存”。
 
-> **Important** You won't be able to use a segment that includes too few customers. If your segment definition does not include enough customers, you can adjust the segment criteria, or try again later, when your app may have acquired more customers that meet your segment criteria.
+> **重要提示** 无法使用所含客户数过低的类别。 如果类别定义所含客户数不足，可调整类别条件，或者等到应用获取更多符合类别条件的客户后再重试。
 
-Things to keep in mind about customer segments:
-- After you save a segment, it takes 24 hours before you’ll be able to use it for [targeted push notifications](send-push-notifications-to-your-apps-customers.md).
-- Segment results are refreshed daily, so you may see the total count of customers in a segment change from day to day as customers drop in or out of the segment criteria.
-- Most of these attributes are calculated using all historical data, although there are some exceptions. For example, **App acquisition date**, **Campaign ID**, **Store page view date**, and **Referrer URI domain** are limited to the last 90 days of data.
-- The segment will only include customers who have acquired your app on Windows 10. If your app supports older OS versions, customers using those older OS versions will not be included in any segments you create.
-- Segments automatically exclude any customers who are younger than 17 years old.
+对于客户类别需要记住以下事项：
+- 保存类别后，需要 24 小时才能将其用于发送[目标推送通知](send-push-notifications-to-your-apps-customers.md)。
+- 类别结果每天更新，因此可能会看到，随着符合类别条件的客户数增加或减少，类别中的客户总数每天都在变化。
+- 虽然存在例外情况，但大多数属性均通过使用所有历史记录数据进行计算。 例如，“应用购置日期”、“市场活动 ID”、“应用商店页面查看日期”以及“引荐 URI 域”均限制为使用过去 90 天的数据。
+- 类别将仅包含在 Windows&nbsp;10 上获取应用的客户。 如果应用支持较早的操作系统版本，则使用这些早期操作系统版本的客户将不会包含在所创建的任何类别中。
+- 类别将自动排除任何小于 17 岁的客户。
 
 
-## <a name="app-statistics"></a>App statistics
+## <a name="app-statistics"></a>应用统计信息
 
-The **App statistics** section on the segment provides some info about your app, as well as the size of the segment you just created.
+类别上的“应用统计信息”部分提供一些有关应用和所创建类别的大小的信息。
 
-Note that **Available app customers** does not reflect the actual number of customers who have acquired your app, but only the number of customers that are available to be included in segments (that is, customers that we can determine meet age requirements, have acquired your app on Windows 10, and who are associated with a valid Microsoft account).
+请注意，“可用应用客户数”不反映获取应用的实际客户数，仅反映可包含在类别中的客户数（即这些客户可以确定为符合年龄要求、在 Windows&nbsp;10 上获取了应用，并且与有效的 Microsoft 帐户关联）。
 
-If you view the results and **Customers in this segment** says **Small**, the segment doesn't include enough customers and the segment is marked inactive. Inactive segments can't be used for notifications or other features. You might be able to activate and use a segment by doing one of the following:
+如果在查看结果时看到“此类别中的客户数”显示“少数”，则表明该类别所含客户数不足，并且将标记为非活动状态。 处于非活动状态的类别不可用于通知或其他功能。 执行以下其中一项操作，或许可以激活并使用类别：
 
-- In the **Define inclusion conditions** section, adjust the filter criteria so the segment includes more customers.
-- On the **Customer groups** page, in the **Inactive segments** section, select **Refresh** to see if the segment currently contains enough customers. This tactic might work, for example, if more customers who meet your segment criteria have downloaded your app since you first created the segment.
+- 在“定义包含条件”部分中，调整筛选条件，使类别包含更多客户。
+- 在“客户组”页的“非活动类别”部分中，选择“刷新”，查看该类别当前是否包含足够多的客户。 这种方法可能会起作用，例如自从第一次创建类别后，越来越多符合类别条件的客户下载了应用的情况。
 
 
 

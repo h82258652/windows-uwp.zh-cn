@@ -1,7 +1,7 @@
 ---
 author: mijacobs
-Description: Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
-title: Adaptive and interactive toast notifications
+Description: "自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。"
+title: "自适应和交互式 Toast 通知"
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
@@ -10,38 +10,38 @@ ms.sourcegitcommit: 2ac3a4a1efa85a3422d8964ad4ee62db28bc975f
 ms.openlocfilehash: cfbbf110ed6df1b7e81e0505dcf55a63ba8739aa
 
 ---
-# <a name="adaptive-and-interactive-toast-notifications"></a>Adaptive and interactive toast notifications
+# <a name="adaptive-and-interactive-toast-notifications"></a>自适应和交互式 Toast 通知
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
+自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。
 
-The adaptive and interactive toast notifications model has these updates over the legacy toast template catalog:
+自适应和交互式 Toast 通知模型具有以下针对传统 Toast 模板目录的更新：
 
--   The option to include buttons and inputs on the notifications.
--   Three different activation types for the main toast notification and for each action.
--   The option to create a notification for certain scenarios, including alarms, reminders, and incoming calls.
+-   在通知上包含按钮和输入的选项。
+-   主 Toast 通知和每个操作的三个不同的激活类型。
+-   为特定方案创建通知的选项，包括闹钟、提醒和来电。
 
-**Note**   To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
-
-
-## <a name="getting-started"></a>Getting started
-
-**Install Notifications library.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (search for "notifications uwp"). The C# samples provided in this article use version 1.0.0 of the NuGet package.
-
-**Install Notifications Visualizer.** This free UWP app helps you design interactive toast notifications by providing an instant visual preview of your toast as you edit it, similar to Visual Studio's XAML editor/design view. You can read [this blog post](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx) for more information, and you can download Notifications Visualizer [here](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
+**注意** 若要查看 Windows 8.1 和 Windows Phone 8.1 中的传统模板，请参阅[传统 Toast 模板目录](https://msdn.microsoft.com/library/windows/apps/hh761494)。
 
 
-## <a name="toast-notification-structure"></a>Toast notification structure
+## <a name="getting-started"></a>入门
+
+**安装通知库。** 如果希望使用 C# 而不是 XML 来生成通知，请安装名为 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 程序包（搜索“notifications uwp”）。 本文中提供的 C# 示例使用 NuGet 程序包的版本 1.0.0。
+
+**安装通知可视化工具。** 此免费 UWP 应用通过在你编辑时提供 toast 的即时可视预览来帮助你设计交互 toast 通知，类似于 Visual Studio 的 XAML 编辑器/设计视图。 你可以阅读[此博客文章](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx)获取详细信息，并且可以在[此处](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)下载通知可视化工具。
 
 
-Toast notifications are constructed using XML, which would typically contain these key elements:
+## <a name="toast-notification-structure"></a>Toast 通知结构
 
--   &lt;visual&gt; covers the content available for the users to visually see, including text and images
--   &lt;actions&gt; contains buttons/inputs the developer wants to add inside the notification
--   &lt;audio&gt; specifies the sound played when the notification pops
 
-Here's a code example:
+Toast 通知使用 XML 构建，这通常包含以下关键元素：
+
+-   &lt;visual&gt; 涵盖可供用户从视觉上查看的内容，包括文本和图像
+-   &lt;actions&gt; 包含开发人员希望在通知内添加的按钮/输入
+-   &lt;audio&gt; 指定在通知弹出时播放的声音
+
+下面是代码示例：
 
 ```XML
 <toast launch="app-defined-string">
@@ -112,82 +112,82 @@ ToastContent content = new ToastContent()
 };
 ```
 
-You can then use this code to create and send the toast:
+然后，你可以使用此代码来创建和发送 toast：
 
 ```CSharp
 ToastNotification notification = new ToastNotification(content.GetXml());
 ToastNotificationManager.CreateToastNotifier().Show(notification);
 ```
 
-To see a complete working app that shows toast notifications in action, see the [Quickstart on Sending a local toast notifications](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10).
+若要查看显示操作中的 toast 通知的完整工作应用，请参阅[发送本地 toast 通知的快速入门](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)。
 
-And a visual representation of the structure:
+以及该结构的可视化表示形式：
 
-![toast notification structure](images/adaptivetoasts-structure.jpg)
+![Toast 通知结构](images/adaptivetoasts-structure.jpg)
 
-### <a name="visual"></a>Visual
+### <a name="visual"></a>视觉
 
-Inside the visual element, you must have exactly one binding element that contains the visual content of the toast.
+在视觉元素内，你必须正好有一个包含 Toast 的视觉内容的绑定元素。
 
-Tile notifications in Universal Windows Platform (UWP) apps support multiple templates that are based on different tile sizes. Toast notifications, however, have only one template name: **ToastGeneric**. Having just the one template name means:
+通用 Windows 平台 (UWP) 应用中的磁贴通知支持基于不同磁贴大小的多个模板。 但是，Toast 通知只有一个模板名称：**ToastGeneric**。 只有一个模板名称意味着：
 
--   You can change the toast content, such as adding another line of text, adding an inline image, or changing the thumbnail image from displaying the app icon to something else, and do any of these things without worrying about changing the entire template or creating an invalid payload due to a mismatch between the template name and the content.
--   You can use the same code to construct the same payload for the **toast notification** that targets to deliver to different types of Microsoft Windows devices, including phones, tablets, PCs, and Xbox One. Each of these devices will accept the notification and display it to the user under their UI policies with the appropriate visual affordances and interaction model.
+-   你可以更改 Toast 内容，例如添加另一行文本、添加嵌入式图像或将缩略图图像从显示应用图标更改为其他内容，并且在执行任意上述操作时无需担心更改整个模板或由于模板名称和内容之间的不匹配而创建无效的负载。
+-   你可以使用相同代码为专用于传递到不同类型的 Microsoft Windows 设备（包括手机、平板电脑、PC 和 Xbox One）的 **Toast 通知**构建相同的负载。 其中每台设备都将接受通知，并使用相应的视觉提示和交互模型根据其 UI策略向用户显示通知。
 
-For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
+有关视觉部分及其子元素中受支持的所有属性，请参阅下面的“架构”部分。 有关更多示例，请参阅下面的 XML 示例部分。
 
-Your app's identity is conveyed via your app icon. However, if you use appLogoOverride, we will display your app name beneath your lines of text.
+应用标识通过应用图标传达。 但是，如果使用 appLogoOverride，我们将在文本行下显示应用名称。
 
-| Normal toast                                                                              | Toast with appLogoOverride                                                          |
+| 正常 toast                                                                              | 使用 appLogoOverride 的 toast                                                          |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| ![notification without appLogoOverride](images/adaptivetoasts-withoutapplogooverride.jpg) | ![notification with appLogoOverride](images/adaptivetoasts-withapplogooverride.jpg) |
+| ![无 appLogoOverride 的通知](images/adaptivetoasts-withoutapplogooverride.jpg) | ![有 appLogoOverride 的通知](images/adaptivetoasts-withapplogooverride.jpg) |
 
-### <a name="actions"></a>Actions
+### <a name="actions"></a>操作
 
-In UWP apps, you can add buttons and other inputs to your toast notifications, which lets users do more outside of the app. These actions are specified under the &lt;actions&gt; element, of which there are two types that you can specify:
+在 UWP 应用中，你可以将按钮和其他输入添加到 Toast 通知，这可使用户在应用外执行更多操作。 这些操作在 &lt;actions&gt; 元素下指定，其中有两个可以指定的类型：
 
--   &lt;action&gt; This appears as a button on desktop and mobile devices. You can specify up to five custom or system actions inside a toast notification.
--   &lt;input&gt; This allows users to provide input, such as quick replying to a message, or selecting an option from a drop-down menu.
+-   &lt;action&gt; 这将显示为桌面和移动设备上的按钮。 你可以在 Toast 通知内指定最多五个自定义或系统操作。
+-   &lt;input&gt; 这允许用户提供输入，如对消息的快速回复或从下拉菜单中选择一个选项。
 
-Both &lt;action&gt; and &lt;input&gt; are adaptive within the Windows family of devices. For example, on mobile or desktop devices, an &lt;action&gt; to a user is a button on which to tap/click. A text &lt;input&gt; is a box in which users can input text using either a physical keyboard or an on-screen keyboard. These elements will also adapt to future interaction scenarios, such as an action announced by voice or a text input taken by dictation.
+&lt;action&gt; 和 &lt;input&gt; 在 Windows 设备系列内均是自适应的。 例如，在移动或桌面设备上，面向用户的 &lt;action&gt; 是可点击/单击的按钮。 文本 &lt;input&gt; 是用户可使用物理键盘或屏幕键盘输入文本的框。 这些元素还会适应将来的交互方案，如通过语音宣布的操作或通过听写获取的文本输入。
 
-When an action is taken by the user, you can do one of the following by specifying the [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) attribute inside the &lt;action&gt; element:
+当用户采用某个操作时，你可以通过在 &lt;action&gt; 元素内指定 [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) 属性来执行以下操作之一：
 
--   Activating the app in the foreground, with an action-specific argument that can be used to navigate to a specific page/context.
--   Activating the app's background task without affecting the user.
--   Activating another app via protocol launch.
--   Specify a system action to perform. The current available system actions are snoozing and dismissing scheduled alarm/reminder, which will be further explained in a section below.
+-   使用特定于操作的参数在前台激活应用，该参数可用于导航到特定页面/上下文。
+-   在不影响用户的情况下激活应用的后台任务。
+-   通过协议启动激活另一个应用。
+-   执行要执行的系统操作。 当前可用系统操作将推迟和解除计划的警报/提醒，这将在下面部分中进一步介绍。
 
-For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
+有关视觉部分及其子元素中受支持的所有属性，请参阅下面的“架构”部分。 有关更多示例，请参阅下面的 XML 示例部分。
 
-### <a name="audio"></a>Audio
+### <a name="audio"></a>音频
 
-Custom sounds aren't currently supported on UWP apps that target the desktop platform; instead, you can choose from the list of ms-winsoundevents for your app on desktop. UWP apps on mobile platforms support both ms-winsoundevents, along with custom sounds in these formats:
+自定义声音当前在面向桌面平台的 UWP 应用上不受支持；相反，你可以为你的桌面上的应用从 ms-winsoundevents 列表中进行选择。 移动平台上的 UWP 应用支持 ms-winsoundevents 以及采用以下格式的自定义声音：
 
 -   ms-appx:///
 -   ms-appdata:///
 
-See the [audio schema page](https://msdn.microsoft.com/library/windows/apps/br230842) for information on audio in toast notifications, which includes a complete list of ms-winsoundevents.
+有关 Toast 通知中的音频的信息（其中包括 ms-winsoundevents 的完整列表），请参阅[音频架构页面](https://msdn.microsoft.com/library/windows/apps/br230842)。
 
-## <a name="alarms-reminders-and-incoming-calls"></a>Alarms, reminders, and incoming calls
-
-
-You can use toast notifications for alarms, reminders, and incoming calls. These special toasts have an appearance that's consistent with standard toasts, though special toasts feature some custom, scenario-based UI and patterns:
-
--   A reminder toast notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the reminder toast notifications will also show up pre-expanded.
--   In addition to sharing the above behaviors with reminder notifications, alarm notifications also automatically play looping audio.
--   Incoming call notifications are displayed full screen on Windows Mobile devices. This is done by specifying the scenario attribute inside the root element of a toast notification – &lt;toast&gt;: &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
-
-## <a name="xml-examples"></a>XML examples
+## <a name="alarms-reminders-and-incoming-calls"></a>闹钟、提醒和来电
 
 
-**Note**  The toast notification screenshots for these examples were taken from an app on desktop. On mobile devices, a toast notification may be collapsed when it pops up, with a grabber at the bottom of the toast to expand it.
+你可以将 Toast 通知用于闹钟、提醒和来电。 这些特殊 Toasts 具有与标准 Toast 一致的外观，尽管特殊 Toast 具有某些自定义、基于方案的 UI 和模式：
+
+-   提醒 Toast 通知将保留在屏幕上，直到用户取消它或执行操作。 在 Windows 移动版上，提醒 Toast 通知还会以预先展开的形式显示。
+-   除了与提醒通知共享上述行为，闹钟通知还会自动播放循环音频。
+-   来电通知将在 Windows Mobile 设备上全屏显示。 这通过在 Toast 通知的根元素内指定方案属性来实现 - &lt;toast&gt;：&lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
+
+## <a name="xml-examples"></a>XML 示例
+
+
+**注意** 这些示例的 Toast 通知屏幕截图取自桌面上的应用。 在移动设备上，Toast 通知可在弹出时处于折叠状态，并且 Toast 底部带有用于展开它的捕获器。
 
  
 
-**Notification with rich visual contents**
+**带有丰富视觉内容的通知**
 
-This example shows how you can have multiple lines of text, an optional small image to override the application logo, and an optional inline image thumbnail.
+此示例向你介绍如何具有多行文本、一个用于替代应用程序徽标的可选小图像和一个可选的嵌入式图像缩略图。
 
 ```XML
 <toast launch="app-defined-string">
@@ -245,13 +245,13 @@ ToastContent content = new ToastContent()
 };
 ```
 
-![notification with rich visual contents](images/adaptivetoasts-xmlsample01.jpg)
+![带有丰富视觉内容的通知](images/adaptivetoasts-xmlsample01.jpg)
 
  
 
-**Notification with actions, example 1**
+**带有操作的通知，示例 1**
 
-This example shows...
+此示例显示...
 
 ```XML
 <toast launch="app-defined-string">
@@ -307,13 +307,13 @@ ToastContent content = new ToastContent()
 };
 ```
 
-![notification with actions, example 1](images/adaptivetoasts-xmlsample02.jpg)
+![带有操作的通知，示例 1](images/adaptivetoasts-xmlsample02.jpg)
 
  
 
-**Notification with actions, example 2**
+**带有操作的通知，示例 2**
 
-This example shows...
+此示例显示...
 
 ```XML
 <toast launch="app-defined-string">
@@ -369,13 +369,13 @@ ToastContent content = new ToastContent()
 };
 ```
 
-![notification with actions, example 2](images/adaptivetoasts-xmlsample03.jpg)
+![带有操作的通知，示例 2](images/adaptivetoasts-xmlsample03.jpg)
 
  
 
-**Notification with text input and actions, example 1**
+**带有文本输入和操作的通知，示例 1**
 
-This example shows...
+此示例显示...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -450,13 +450,13 @@ ToastContent content = new ToastContent()
 };
 ```
 
-![notification with text and input actions](images/adaptivetoasts-xmlsample04.jpg)
+![带有文本和输入操作的通知](images/adaptivetoasts-xmlsample04.jpg)
 
  
 
-**Notification with text input and actions, example 2**
+**带有文本输入和操作的通知，示例 2**
 
-This example shows...
+此示例显示...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -527,13 +527,13 @@ ToastContent content = new ToastContent()
 };
 ```
 
-![notification with text input and actions](images/adaptivetoasts-xmlsample05.jpg)
+![带有文本输入和操作的通知](images/adaptivetoasts-xmlsample05.jpg)
 
  
 
-**Notification with selection input and actions**
+**带有选择输入和操作的通知**
 
-This example shows...
+此示例显示...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -611,13 +611,13 @@ ToastContent content = new ToastContent()
 };
 ```
 
-![notification with selection input and actions](images/adaptivetoasts-xmlsample06.jpg)
+![带有选择输入和操作的通知](images/adaptivetoasts-xmlsample06.jpg)
 
  
 
-**Reminder notification**
+**提醒通知**
 
-This example shows...
+此示例显示...
 
 ```XML
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
@@ -710,19 +710,19 @@ ToastContent content = new ToastContent()
 };
 ```
 
-![reminder notification](images/adaptivetoasts-xmlsample07.jpg)
+![提醒通知](images/adaptivetoasts-xmlsample07.jpg)
 
  
 
-## <a name="handling-activation-foreground-and-background"></a>Handling activation (foreground and background)
+## <a name="handling-activation-foreground-and-background"></a>处理激活（前台和后台）
 
-To learn how to handle toast activations (the user clicking on your toast or buttons on the toast), see [Quicstart: Sending a local toast notification and handling activation](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/).
-
-
-## <a name="schemas-ltvisualgt-and-ltaudiogt"></a>Schemas: &lt;visual&gt; and &lt;audio&gt;
+若要了解如何处理 toast 激活（用户单击 toast 或 toast 上的按钮），请参阅[快速入门：发送本地 toast 通知和处理激活](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)。
 
 
-In the following XML schemas, a "?" suffix means that an attribute is optional.
+## <a name="schemas-ltvisualgt-and-ltaudiogt"></a>架构：&lt;visual&gt; 和 &lt;audio&gt;
+
+
+在以下 XML 架构中，“?”后缀表示属性为可选属性。
 
 ```
 <toast launch? duration? activationType? scenario? >
@@ -803,125 +803,125 @@ ToastContent content = new ToastContent()
 };
 ```
 
-**Attributes in &lt;toast&gt;**
+**&lt;toast 中的属性&gt;**
 
 launch?
 
 -   launch? = string
--   This is an optional attribute.
--   A string that is passed to the application when it is activated by the toast.
--   Depending on the value of activationType, this value can be received by the app in the foreground, inside the background task, or by another app that's protocol launched from the original app.
--   The format and contents of this string are defined by the app for its own use.
--   When the user taps or clicks the toast to launch its associated app, the launch string provides the context to the app that allows it to show the user a view relevant to the toast content, rather than launching in its default way.
--   If the activation is happened because user clicked on an action, instead of the body of the toast, the developer retrieves back the "arguments" pre-defined in that &lt;action&gt; tag, instead of "launch" pre-defined in the &lt;toast&gt; tag.
+-   这是可选属性。
+-   当应用程序由 Toast 激活时向其传递的字符串。
+-   根据 activationType 的值，此值可由前台中的应用在后台任务内接收或由从原始应用协议启动的另一个应用接收。
+-   此字符串的格式和内容由应用根据其自身用途定义。
+-   当用户点击或单击 Toast 来启动其关联应用时，启动字符串会向应用提供上下文，以允许该应用向用户显示与 Toast 内容相关的视图，而不是以其默认方式启动。
+-   如果由于用户单击某个操作（而不是 Toast 的正文）而发生激活，开发人员会检索回在该 &lt;action&gt; 标记中预定义的“arguments”，而不是在 &lt;toast&gt; 标记中预定义的“launch”。
 
 duration?
 
 -   duration? = "short|long"
--   This is an optional attribute. Default value is "short".
--   This is only here for specific scenarios and appCompat. You don't need this for the alarm scenario anymore.
--   We don't recommend using this property.
+-   这是可选属性。 默认值为“short”。
+-   此属性只适用于特定方案和 appCompat。 对于闹钟方案，你不再需要此属性。
+-   我们不建议使用此属性。
 
 activationType?
 
 -   activationType? = "foreground | background | protocol | system"
--   This is an optional attribute.
--   The default value is "foreground".
+-   这是可选属性。
+-   默认值为“foreground”。
 
 scenario?
 
 -   scenario? = "default | alarm | reminder | incomingCall"
--   This is an optional attribute, default value is "default".
--   You do not need this unless your scenario is to pop an alarm, reminder, or incoming call.
--   Do not use this just for keeping your notification persistent on screen.
+-   这是可选属性，默认值为“default”。
+-   你不需要此属性，除非你的方案是弹出警报、提醒或来电。
+-   不要将此属性仅用于使通知持续显示在屏幕上。
 
-**Attributes in &lt;visual&gt;**
+**&lt;visual 中的属性&gt;**
 
 lang?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
 baseUri?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
 addImageQuery?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
-**Attributes in &lt;binding&gt;**
+**&lt;binding 中的属性&gt;**
 
 template?
 
 -   \[Important\] template? = "ToastGeneric"
--   If you are using any of the new adaptive and interactive notification features, please make sure you start using "ToastGeneric" template instead of the legacy template.
--   Using the legacy templates with the new actions might work now, but that is not the intended use case, and we cannot guarantee that will continue working.
+-   如果你要使用任意新的自适应和交互式通知功能，请确保开始使用“ToastGeneric”模板而不是传统模板。
+-   使用带有新操作的传统模板现在可能有效，但这不是预定用例，我们无法保证它会继续工作。
 
 lang?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
 baseUri?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
 addImageQuery?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
-**Attributes in &lt;text&gt;**
+**&lt;text 中的属性&gt;**
 
 lang?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230847)。
 
-**Attributes in &lt;image&gt;**
+**&lt;image 中的属性&gt;**
 
 src
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this required attribute.
+-   有关此必需属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230844)。
 
 placement?
 
 -   placement? = "inline" | "appLogoOverride"
--   This attribute is optional.
--   This specifies where this image will be displayed.
--   "inline" means inside the toast body, below the text; "appLogoOverride" means replace the application icon (that shows up on the top left corner of the toast).
--   You can have up to one image for each placement value.
+-   此属性是可选的。
+-   这会指定将显示此图像的位置。
+-   “inline”表示在 Toast 正文内部，在文本下； “appLogoOverride”表示替换应用程序图标（显示在 Toast 的左上角）。
+-   对于每个位置值，你最多可以有一个图像。
 
 alt?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230844)。
 
 addImageQuery?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230844)。
 
 hint-crop?
 
 -   hint-crop? = "none" | "circle"
--   This attribute is optional.
--   "none" is the default value which means no cropping.
--   "circle" crops the image to a circular shape. Use this for profile images of a contact, images of a person, and so on.
+-   此属性是可选的。
+-   “none”是默认值，表示没有裁剪。
+-   “circle”将图像裁剪为圆形。 将此属性用于联系人的头像、用户图像等。
 
-**Attributes in &lt;audio&gt;**
+**&lt;audio 中的属性&gt;**
 
 src?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230842)。
 
 loop?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230842)。
 
 silent?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
+-   有关此可选属性的详细信息，请参阅[此元素架构文章](https://msdn.microsoft.com/library/windows/apps/br230842)。
 
-## <a name="schemas-ltactiongt"></a>Schemas: &lt;action&gt;
+## <a name="schemas-ltactiongt"></a>架构：&lt;action&gt;
 
 
-In the following XML schemas, a "?" suffix means that an attribute is optional.
+在以下 XML 架构中，“?”后缀表示属性为可选属性。
 
 ```
 <toast>
@@ -984,85 +984,85 @@ ToastContent content = new ToastContent()
 };
 ```
 
-**Attributes in &lt;input&gt;**
+**&lt;input 中的属性&gt;**
 
 id
 
 -   id = string
--   This attribute is required.
--   The id attribute is required and is used by developers to retrieve user inputs once the app is activated (in the foreground or background).
+-   此属性是必需的。
+-   id 属性是必需的，并由开发人员用于在激活应用（在前台或后台）后检索用户输入。
 
 type
 
 -   type = "text | selection"
--   This attribute is required.
--   It is used to specify a text input or input from a list of pre-defined selections.
--   On mobile and desktop, this is to specify whether you want a textbox input or a listbox input.
+-   此属性是必需的。
+-   它用于指定文本输入或预定义的选择列表中的输入。
+-   在移动或桌面上，这用于指定你需要文本框输入还是列表框输入。
 
 title?
 
 -   title? = string
--   The title attribute is optional and is for developers to specify a title for the input for shells to render when there is affordance.
--   For mobile and desktop, this title will be displayed above the input.
+-   title 属性是可选的，它由开发人员用于为输入指定在出现提示时可供 shell 呈现的标题。
+-   对于移动和桌面，此标题将显示在输入上方。
 
 placeHolderContent?
 
 -   placeHolderContent? = string
--   The placeHolderContent attribute is optional and is the grey-out hint text for text input type. This attribute is ignored when the input type is not "text".
+-   placeHolderContent 属性是可选的，并且是文本输入类型的灰色提示文本。 当输入类型不是“text”时，忽略此属性。
 
 defaultInput?
 
 -   defaultInput? = string
--   The defaultInput attribute is optional and is used to provide a default input value.
--   If the input type is "text", this will be treated as a string input.
--   If the input type is "selection", this is expected to be the id of one of the available selections inside this input's elements.
+-   defaultInput 属性是可选的，用于提供默认输入值。
+-   如果输入类型是“text”，将其视为字符串输入。
+-   如果输入类型是“selection”，这应是此输入的元素内的可用选择之一的 id。
 
-**Attributes in &lt;selection&gt;**
+**&lt;selection 中的属性&gt;**
 
 id
 
--   This attribute is required. It's used to identify user selections. The id is returned to your app.
+-   此属性是必需的。 它用于标识用户选择。 id 将返回到你的应用。
 
 content
 
--   This attribute is required. It provides the string to display for this selection element.
+-   此属性是必需的。 它为此选择元素提供要显示的字符串。
 
-**Attributes in &lt;action&gt;**
+**&lt;action 中的属性&gt;**
 
 content
 
 -   content = string
--   The content attribute is required. It provides the text string displayed on the button.
+-   content 属性是必需的。 它提供在按钮上显示的文本字符串。
 
 arguments
 
 -   arguments = string
--   The arguments attribute it required. It describes the app-defined data that the app can later retrieve once it is activated from user taking this action.
+-   arguments 属性是必需的。 它描述应用定义的数据，在执行此操作的用户激活它以后应用可检索该数据。
 
 activationType?
 
 -   activationType? = "foreground | background | protocol | system"
--   The activationType attribute is optional and its default value is "foreground".
--   It describes the kind of activation this action will cause: foreground, background, or launching another app via protocol launch, or invoking a system action.
+-   activationType 属性是可选的，其默认值为“foreground”。
+-   它描述此操作将导致的激活类型：前台、后台，或者通过协议启动来启动另一个应用或调用系统操作。
 
 imageUri?
 
 -   imageUri? = string
--   imageUri is optional and is used to provide an image icon for this action to display inside the button alone with the text content.
+-   imageUri 是可选的，用于针对此操作提供一个图像图标，以在按钮内仅与文本内容一起显示。
 
 hint-inputId
 
 -   hint-inputId = string
--   The hint-inpudId attribute is required. It's specifically used for the quick reply scenario.
--   The value needs to be the id of the input element desired to be associated with.
--   In mobile and desktop, this will put the button right next to the input box.
+-   hint-inpudId 属性是必需的。 它专门用于快速回复方案。
+-   此值需要是要关联的输入元素的 id。
+-   在移动和桌面中，这会将按钮放置在输入框的右侧。
 
-## <a name="attributes-for-system-handled-actions"></a>Attributes for system-handled actions
+## <a name="attributes-for-system-handled-actions"></a>用于系统处理的操作的属性
 
 
-The system can handle actions for snoozing and dismissing notifications if you don't want your app to handle the snoozing/rescheduling of notifications as a background task. System-handled actions can be combined (or individually specified), but we don't recommend implementing a snooze action without a dismiss action.
+如果你不希望应用将通知的推迟/重新计划作为后台任务处理，系统可以处理推迟和取消通知的操作。 系统处理的操作可以组合（或单独指定），但我们不建议在没有取消操作的情况下实现推迟操作。
 
-System commands combo: SnoozeAndDismiss
+系统命令组合：SnoozeAndDismiss
 
 ```
 <toast>
@@ -1081,7 +1081,7 @@ ToastContent content = new ToastContent()
 };
 ```
 
-Individual system-handled actions
+单独系统处理的操作
 
 ```
 <toast>
@@ -1137,29 +1137,29 @@ ToastContent content = new ToastContent()
 };
 ```
 
-To construct individual snooze and dismiss actions, do the following:
+若要构建单独的推迟和取消操作，请执行以下步骤：
 
 -   Specify activationType = "system"
 -   Specify arguments = "snooze" | "dismiss"
--   Specify content:
-    -   If you want localized strings of "snooze" and "dismiss" to be displayed on the actions, specify content to be an empty string: &lt;action content = ""/&gt;
-    -   If you want a customized string, just provide its value: &lt;action content="Remind me later" /&gt;
--   Specify input:
-    -   If you don't want the user to select a snooze interval and instead just want your notification to snooze only once for a system-defined time interval (that is consistent across the OS), then don't construct any &lt;input&gt; at all.
-    -   If you want to provide snooze interval selections:
-        -   Specify hint-inputId in the snooze action
-        -   Match the id of the input with the hint-inputId of the snooze action: &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
-        -   Specify selection id to be a nonNegativeInteger which represents snooze interval in minutes: &lt;selection id="240" /&gt; means snoozing for 4 hours
-        -   Make sure that the value of defaultInput in &lt;input&gt; matches with one of the ids of the &lt;selection&gt; children elements
-        -   Provide up to (but no more than) 5 &lt;selection&gt; values
+-   指定内容：
+    -   如果你希望“snooze”和“dismiss”的本地化字符串在操作上显示，请将内容指定为空字符串：&lt;action content = ""/&gt;
+    -   如果你需要自定义字符串，只需提供其值：&lt;action content="Remind me later" /&gt;
+-   指定输入：
+    -   如果你不希望用户选择推迟间隔，而只是希望你的通知仅在系统定义的时间间隔内推迟一次（这在整个操作系统上都一致），则不要构建任何 &lt;input&gt;。
+    -   如果你希望提供推迟间隔选择：
+        -   在推迟操作中指定 hint-inputId
+        -   将输入的 id 与推迟操作的 hint-inputId 相匹配：&lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
+        -   将选择 id 指定为以分钟为单位表示推迟间隔的 nonNegativeInteger：&lt;selection id="240" /&gt; 表示推迟 4 小时
+        -   请确保 &lt;input&gt; 中的 defaultInput 值与 &lt;selection&gt; 子元素的 id 之一相匹配
+        -   提供最多（但不多于）5 个 &lt;selection&gt; 值
 
  
 
  
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Quickstart: Send a local toast and handle activation](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10.aspx)
-* [Notifications library on GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
+* [快速入门：发送本地 toast 和句柄激活](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10.aspx)
+* [GitHub 上的通知库](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 
 
 <!--HONumber=Dec16_HO1-->

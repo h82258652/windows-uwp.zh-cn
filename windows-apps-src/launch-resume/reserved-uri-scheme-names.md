@@ -1,24 +1,24 @@
 ---
 author: TylerMSFT
-title: Reserved file and URI scheme names
-description: This topic lists the reserved file and URI scheme names that are not available to your app.
+title: "保留的文件和 URI 方案名称"
+description: "本主题将列出不可用于应用的保留文件和 URI 方案名称。"
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 translationtype: Human Translation
 ms.sourcegitcommit: 6f46f5973b9c18ffd7c38bd27cee0a0a21be50e5
 ms.openlocfilehash: c514ae4831f21b4c471b0445b3cf54a6a08ff92a
 
 ---
-# <a name="reserved-file-and-uri-scheme-names"></a>Reserved file and URI scheme names
+# <a name="reserved-file-and-uri-scheme-names"></a>保留的文件和 URI 方案名称
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-You can use URI associations to automatically launch your app when another app launches a specific URI scheme. But there are some URI associations that you can’t use because they are reserved. If your app registers for a reserved association, that registration will be ignored. This topic lists the reserved file and URI scheme names that are not available to your app.
+当另一个应用启动特定的 URI 方案时，你可以使用 URI 关联自动启动你的应用。 但是你无法使用某些 URI 关联，因为它们是保留的关联。 如果你的应用注册为保留的关联，该注册将被忽略。 本主题将列出不可用于应用的保留文件和 URI 方案名称。
 
-## <a name="reserved-file-types"></a>Reserved file types
+## <a name="reserved-file-types"></a>保留文件类型
 
-There are two types of reserved file types: file types reserved for built-in apps and file types reserved for the operating system. When a file type reserved for a built-in app is launched, only the built-in app will launch. Any attempt to register your app with that file type is ignored. Similarly, any attempt to register your app with a file type reserved for the operating system also will be ignored.
+有两种保留文件类型：为内置应用保留的文件类型和为操作系统保留的文件类型。 启动为内置应用保留的文件类型时，只有内置应用会启动。 任何利用该文件类型注册应用的企图都会被忽略。 同样，任何利用为操作系统保留的文件类型注册应用的企图也会被忽略。
 
-File types reserved for built-in apps
+为内置应用保留的文件类型
 
 <table>
 <tr><td>.aac</td><td>.icon</td><td>.pem</td><td>.wdp</td></tr>
@@ -35,12 +35,12 @@ File types reserved for built-in apps
 <tr><td>.ico</td><td>.p7b</td><td>.wav</td><td></td></tr>
 </table> 
 
-## <a name="file-types-reserved-for-the-operating-system"></a>File types reserved for the operating system
+## <a name="file-types-reserved-for-the-operating-system"></a>为操作系统保留的文件类型
 
-The following file types are reserved for the operating system
+为操作系统保留以下文件类型
 
 <table>
-<tr><td>.accountpicture-ms</td><td>its</td><td>.ops</td><td>.url</td></tr>
+<tr><td>.accountpicture-ms</td><td>.its</td><td>.ops</td><td>.url</td></tr>
 <tr><td>.ade</td><td>.jar</td><td>.pcd</td><td>.vb</td></tr>
 <tr><td>.adp</td><td>.js</td><td>.pif</td><td>.vbe</td></tr>
 <tr><td>.app</td><td>.jse</td><td>.pl</td><td>.vbp</td></tr>
@@ -78,7 +78,7 @@ The following file types are reserved for the operating system
 <tr><td>.isp</td><td>.ocx</td><td>.ttf</td><td></td></tr>
 </table>
 
-## <a name="reserved-uri-scheme-names"></a>Reserved URI scheme names
+## <a name="reserved-uri-scheme-names"></a>保留 URI 方案名称
 
 <table>
 <tr><td>application.manifest</td><td>internetshortcut</td><td>ms-settings:network-mobilehotspot</td><td>shbfile</td></tr>

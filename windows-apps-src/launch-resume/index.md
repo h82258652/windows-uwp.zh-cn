@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
-title: Launching, resuming, and background tasks
-description: This section describes what happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated.
+title: "启动、恢复和后台任务"
+description: "本部分介绍在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 translationtype: Human Translation
 ms.sourcegitcommit: a21b2e9bb41e951660916bbbdb09b0bd3e5ecf2d
@@ -9,118 +9,112 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 
 ---
 
-# <a name="launching-resuming-and-background-tasks"></a>Launching, resuming, and background tasks
+# <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows&nbsp;10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section includes information on the following:
+此部分包含有关以下内容的信息：
 
-- What happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated.
-- How to launch apps by using a URI or by file activation. 
-- How to use App services, which allow your Universal Windows Platform (UWP) app to share data and functionality with other apps.
-- How to use background tasks, which allow a UWP app to do work while the app itself is not in the foreground.
-- How to discover connected devices, launch an app on another device, and communicate with an app service on a remote device so that you can create user experiences that flow across devices.
-- How to add and configure a splash screen for your app.
+- 在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。
+- 如何通过使用 URI 或文件激活启动应用。
+- 如何使用应用服务，从而允许通用 Windows 平台 (UWP) 应用与其他应用共享数据和功能。
+- 如何使用后台任务，从而允许 UWP 应用在应用自身不在前台时也能执行工作。
+- 如何发现连接的设备、在其他设备上启动应用，以及与远程设备上的应用服务通信，以便你可以创建跨设备流动的用户体验。
+- 如何为应用添加和配置初始屏幕。
 
-## <a name="the-app-lifecycle"></a>The app lifecycle
+## <a name="the-app-lifecycle"></a>应用生命周期
 
-This section details the lifecycle of a Windows 10 Universal Windows Platform (UWP) app, from the time it is activated until it is closed.
+本部分详细介绍 Windows 10 通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。
 
-| Topic | Description |
+| 主题 | 说明 |
 |-------|-------------|
-| [App lifecycle](app-lifecycle.md)               | Learn about the life cycle of a UWP app and what happens when Windows launches, suspends, and resumes your app. |
-| [Handle app prelaunch](handle-app-prelaunch.md) | Learn how to handle app prelaunch.                                                                              |
-| [Handle app activation](activate-an-app.md)     | Learn how to handle app activation.                                                                             |
-| [Handle app suspend](suspend-an-app.md)         | Learn how to save important application data when the system suspends your app.                                 |
-| [Handle app resume](resume-an-app.md)           | Learn how to refresh displayed content when the system resumes your app.                                        |
-| [Free memory when your app moves to the background](reduce-memory-usage.md)           | Learn how to reduce the amount of memory that your app uses when it is in the background state so that it won't be terminated.                                        |
+| [应用生命周期](app-lifecycle.md)               | 了解有关 UWP 应用的生命周期，以及在 Windows 启动、暂停和恢复你的应用时会发生什么情况。 |
+| [处理应用预启动](handle-app-prelaunch.md) | 了解如何处理应用预启动。                                                                              |
+| [处理应用激活](activate-an-app.md)     | 了解如何处理应用激活。                                                                             |
+| [处理应用暂停](suspend-an-app.md)         | 了解当系统暂停你的应用时如何保存重要的应用程序数据。                                 |
+| [处理应用恢复](resume-an-app.md)           | 了解当系统恢复你的应用时如何刷新显示的内容。                                        |
+| [在将应用移动到后台时释放内存](reduce-memory-usage.md)           | 了解如何降低应用处于后台状态时所使用的内存量，以防止该应用终止。                                        |
 
-## <a name="launch-apps"></a>Launch apps
+## <a name="launch-apps"></a>启动应用
 
-the [Launch an app with a URI](launch-app-with-uri.md) section details how to use a Uniform Resource Identifier (URI) to launch one app from another app.
+[启动 URI 的应用](launch-app-with-uri.md)部分详细介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用。
 
-| Topic | Description |
+| 主题 | 描述 |
 |-------|-------------|
-| [Launch the default app for a URI](launch-default-app.md) | Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows. |
-| [Handle URI activation](handle-uri-activation.md) | Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name. |
-| [Launch an app for results](how-to-launch-an-app-for-results.md) | Learn how to launch an app from another app and exchange data between the two. This is called launching an app for results. |
-| [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) | This topic describes the ms-tonepicker URI scheme and how to use it to display a tone picker to select a tone, save a tone, and get the friendly name for a tone. |
-| [Launch the Windows Settings app](launch-settings-app.md) | Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages. |
-| [Launch the Windows Store app](launch-store-app.md) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Windows Store app to specific pages in the Store. |
-| [Launch the Windows Maps app](launch-maps-app.md) | Learn how to launch the Windows Maps app from your app. |
-| [Launch the People app](launch-people-apps.md) | This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions. |
-| [Support web-to-app linking with app URI handlers](web-to-app-linking.md) | Drive user engagement with your app by using app URI handlers. |
+| [启动 URI 的默认应用](launch-default-app.md) | 了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。 |
+| [处理 URI 激活](handle-uri-activation.md) | 了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。 |
+| [针对结果启动应用](how-to-launch-an-app-for-results.md) | 了解如何从其他应用启动某个应用，以及在这两者之间交换数据。 这就是针对结果启动应用。 |
+| [使用 ms-tonepicker URI 方案选择并保存音调](launch-ringtone-picker.md) | 本主题介绍了 ms-tonepicker URI 方案，以及如何使用它显示音调选取器，以便选择音调、保存音调和获取音调的友好名称。 |
+| [启动 Windows 设置应用](launch-settings-app.md) | 了解如何从你的应用启动 Windows 设置应用。 本主题介绍了 ms-settings URI 方案。 使用此 URI 方案将 Windows 设置应用启动到特定设置页面。 |
+| [启动 Windows 应用商店应用](launch-store-app.md) | 本主题介绍了 ms-windows-store URI 方案。 你的应用可以使用此 URI 方案将 Windows 应用商店应用启动到应用商店中的特定页面。 |
+| [启动 Windows 地图应用](launch-maps-app.md) | 了解如何从你的应用启动 Windows 地图应用。 |
+| [启动“人脉”应用](launch-people-apps.md) | 本主题介绍了 ms-people URI 方案。 你的应用可以使用此 URI 方案来针对特定操作启动“人脉”应用。 |
+| [支持使用应用 URI 处理程序的 Web 到应用链接](web-to-app-linking.md) | 通过使用应用 URI 处理程序推动用户与应用的互动。 |
 
-The [Launch an app through file activation](launch-app-from-file.md) section details how to set up your app to launch when a file of a certain type is opened. 
+[通过文件激活启动应用](launch-app-from-file.md)部分详细介绍如何将应用设置为在打开特定类型的文件时启动。
 
-| Topic | Description |
+| 主题 | 描述 |
 |-------|-------------|
-| [Launch the default app for a file](launch-the-default-app-for-a-file.md) | Learn how to launch the default app for a file. |
-| [Handle file activation](handle-file-activation.md) | Learn how to register your app to become the default handler for a certain file type. |
+| [启动文件的默认应用](launch-the-default-app-for-a-file.md) | 了解如何启动文件的默认应用。 |
+| [处理文件激活](handle-file-activation.md) | 了解如何注册你的应用以成为某个文件类型的默认处理程序。 |
 
-See other topics related to launching an app below.
+请参阅下面与启动应用相关的其他主题。
 
-| Topic | Description |
+| 主题 | 描述 |
 |-------|-------------|
-| [Reserved file and URI scheme names](reserved-uri-scheme-names.md) | This topic lists the reserved file and URI scheme names that are not available to your app. |
-| [Auto-launching with AutoPlay](auto-launching-with-autoplay.md) | You can use AutoPlay to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD. |
+| [保留的文件和 URI 方案名称](reserved-uri-scheme-names.md) | 本主题列出了不可用于应用的保留文件和 URI 方案名称。 |
+| [使用自动播放自动启动](auto-launching-with-autoplay.md) | 可以使用自动播放功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 |
 
-## <a name="app-services"></a>App services
+## <a name="app-services"></a>应用服务
 
-The [App services](app-services.md) section describes how to integrate app services into your UWP app to allow the sharing of data and functionality across apps.
+[应用服务](app-services.md)部分介绍如何将应用服务集成到你的 UWP 应用，以允许跨应用共享数据和功能。
 
-| Topic | Description |
+| 主题 | 说明 |
 |-------|-------------|
-| [Create and consume an app service](how-to-create-and-consume-an-app-service.md) | Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps and how to consume those services. |
-| [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) | Convert app service code that ran in a separate background process into code that runs inside the same process as your app service provider. |
+| [创建和使用应用服务](how-to-create-and-consume-an-app-service.md) | 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。 |
+| [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md) | 将在单独的后台进程中运行的应用服务代码转换为在与应用服务提供程序相同的进程中运行的代码。 |
 
-## <a name="background-tasks"></a>Background tasks
+## <a name="background-tasks"></a>后台任务
 
-The [Background tasks](support-your-app-with-background-tasks.md) section shows you how to make lightweight code run in the background in response to triggers.
+[后台任务](support-your-app-with-background-tasks.md)部分显示了如何使在后台运行的轻型代码响应触发器。
 
-| Topic | Description |
+| 主题 | 描述 |
 |-------|-------------|
-| [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended. |
-| [Guidelines for background tasks](guidelines-for-background-tasks.md)                                           | Ensure your app meets the requirements for running background tasks.                                                                                                                          |
-| [Create and register an out-of-process background task](create-and-register-an-outofproc-background-task.md)                               | Create and register a background task that that runs in a separate process from your app, and register it to run when your app is not in the foreground.                                                                                                 |
-| [Create and register an in-process background task](create-and-register-an-inproc-background-task.md)                               | Create and register a background task that runs in the same process as your foreground app.                                                                                                 |
-| [Convert an out-of-process background task to an in-process background task](convert-out-of-process-background-task.md)                               | Learn how to convert an out-of-process background task into an in-process background task that runs in the same process as your foreground app.
-| [Debug a background task](debug-a-background-task.md)                                                           | Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.                                                                        |
-| [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md) | Enable the use of background tasks by declaring them as extensions in the app manifest.                                                                                                       |
-| [Handle a cancelled background task](handle-a-cancelled-background-task.md)                                     | Learn how to make a background task that recognizes cancellation requests and stops work, reporting the cancellation to the app using persistent storage.                                     |
-| [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)           | Learn how your app can recognize background task progress and completion.                                                                                                                     |
-| [Register a background task](register-a-background-task.md)                                                     | Learn how to create a function that can be re-used to safely register most background tasks.                                                                                                  |
-| [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)             | Learn how to create a background task that responds to [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) events.                                                                         |
-| [Run a background task on a timer](run-a-background-task-on-a-timer-.md)                                        | Learn how to schedule a one-time background task, or run a periodic background task.                                                                                                          |
-| [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)                 | Learn how to set conditions that control when your background task will run.                                                                                                                  |
-| [Transfer data in the background](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | Use the background transfer API to copy files in the background.                                                                                                                              |
-| [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)                       | Use a background task to update your app's live tile with fresh content.                                                                                                                      |
-| [Use a maintenance trigger](use-a-maintenance-trigger.md)                                                       | Learn how to use the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) class to run lightweight code in the background while the device is plugged in.                             |
+| [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
+| [后台任务指南](guidelines-for-background-tasks.md)                                           | 确保你的应用符合运行后台任务的要求。                                                                                                                          |
+| [创建和注册进程外后台任务](create-and-register-a-background-task.md)                               | 创建和注册一个与你的应用不在同一个进程中运行的后台任务，然后将它注册为在应用不在前台运行时运行。                                                                                                 |
+| [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)                               | 创建和注册在前台应用所在的同一进程中运行的后台任务。                                                                                                 |
+| [将进程外后台任务转换为进程内后台任务](convert-out-of-process-background-task.md)                               | 了解如何将进程外后台任务转换为在前台应用所在的同一进程中运行的进程内后台任务。
+| [调试后台任务](debug-a-background-task.md)                                                           | 了解如何调试后台任务，其中包括后台任务激活和调试 Windows 事件日志中的跟踪。                                                                        |
+| [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md) | 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。                                                                                                       |
+| [处理取消的后台任务](handle-a-cancelled-background-task.md)                                     | 介绍如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。                                     |
+| [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)           | 了解应用可以识别后台任务进度和完成的方式。                                                                                                                     |
+| [注册后台任务](register-a-background-task.md)                                                     | 了解如何创建可以重新使用以安全注册大部分后台任务的函数。                                                                                                  |
+| [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)             | 了解如何创建响应 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的后台任务。                                                                         |
+| [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)                                        | 了解如何计划一次性后台任务，或运行周期性后台任务。                                                                                                          |
+| [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)                 | 了解如何设置控制何时运行后台任务的条件。                                                                                                                  |
+| [在后台传输数据](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | 使用后台传输 API 以便在后台复制文件。                                                                                                                              |
+| [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)                       | 使用后台任务，以最新内容更新应用的动态磁贴。                                                                                                                      |
+| [使用维护触发器](use-a-maintenance-trigger.md)                                                       | 了解如何在插入设备的情况下使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 类在后台运行轻型代码。                             |
 
-## <a name="remote-systems"></a>Remote Systems
+## <a name="remote-systems"></a>远程系统
 
-The [Connected apps and devices (Project "Rome")](connected-apps-and-devices.md) section describes how to use the Remote Systems platform to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.
+[连接的应用和设备（项目“Rome”）](connected-apps-and-devices.md)介绍如何使用远程系统平台发现远程设备、在远程设备上启动应用，以及与远程设备上的应用服务通信。
 
-| Topic | Description |
+| 主题 | 描述 |
 |-------|-------------|
-| [Discover remote devices](discover-remote-devices.md)  | Learn how to discover devices that you can connect to. |
-| [Launch an app on a remote device](launch-a-remote-app.md) | Learn how to launch an app on a remote device.  |
-| [Communicate with a remote app service](communicate-with-a-remote-app-service.md) | Learn how to interact with an app on a remote device. |
+| [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |
+| [启动远程设备上的应用](launch-a-remote-app.md) | 了解如何启动远程设备上的应用。  |
+| [与远程应用服务通信](communicate-with-a-remote-app-service.md) | 了解如何与远程设备上的应用交互。 |
 
-## <a name="splash-screens"></a>Splash screens
+## <a name="splash-screens"></a>初始屏幕
 
-The [Splash screens](splash-screens.md) section describes how to set and configure your app's splash screen.
+[初始屏幕](splash-screens.md)部分介绍如何设置和配置应用的初始屏幕。
 
-| Topic | Description |
+| 主题 | 说明 |
 |-------|-------------|
-| [Add a splash screen](add-a-splash-screen.md) | Set your app's splash screen image and background color. |
-| [Display a splash screen for more time](create-a-customized-splash-screen.md) | Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, and can be customized. |
-
- 
-
- 
-
- 
+| [添加初始屏幕](add-a-splash-screen.md) | 设置你的应用的初始屏幕图像和背景色。 |
+| [延长显示初始屏幕的时间](create-a-customized-splash-screen.md) | 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，并且可以进行自定义。 |
 
 
 

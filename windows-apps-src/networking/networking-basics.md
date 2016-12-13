@@ -1,7 +1,7 @@
 ---
 author: DelfCo
-description: Things you must do for any network-enabled app.
-title: Networking basics
+description: "针对任何支持网络的应用的必做事项。"
+title: "网络基础知识"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 translationtype: Human Translation
 ms.sourcegitcommit: 28cf7084fd7ea6ad41c7c2817522891617928abb
@@ -9,86 +9,86 @@ ms.openlocfilehash: 13457b7da3472f3530805198a74b3a6b2ff78f50
 
 ---
 
-# <a name="networking-basics"></a>Networking basics
+# <a name="networking-basics"></a>网络基础知识
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Things you must do for any network-enabled app.
+针对任何支持网络的应用的必做事项。
 
-## <a name="capabilities"></a>Capabilities
+## <a name="capabilities"></a>功能
 
-In order to use networking, you must add appropriate capability elements to your app manifest. If no network capability is specified in your app's manifest, your app will have no networking capability, and any attempt to connect to the network will fail.
+要使用网络功能，你必须将相应的功能元素添加到你的应用清单中。 如果你的应用清单中未指定任何网络功能，则你的应用将不具备任何网络功能，从而连接到网络的任何尝试都将失败。
 
-The following are the most-used networking capabilities.
+以下是最常用的网络功能。
 
-| Capability | Description |
+| 功能 | 描述 |
 |------------|-------------|
-| **internetClient** | Provides outbound access to the Internet and networks in public places, like airports and coffee shop. Most apps that require Internet access should use this capability. |
-| **internetClientServer** | Gives the app inbound and outbound network access from the Internet and networks in public places like airports and coffee shops. |
-| **privateNetworkClientServer** | Gives the app inbound and outbound network access at the user's trusted places, like home and work. |
+| **internetClient** | 提供对 Internet 及公共场所（如机场和咖啡厅）网络的出站访问。 多数需要进行 Internet 访问的应用都应使用此功能。 |
+| **internetClientServer** | 为应用提供来自 Internet 及公共场所（如机场和咖啡厅）网络的入站和出站访问。 |
+| **privateNetworkClientServer** | 为应用提供用户信任场所（如家里和办公室）中的入站和出站网络访问。 |
 
-There are other capabilities that might be necessary for your app, in certain circumstances.
+在某些情况下，你的应用可能还需要具备其他功能。
 
-| Capability | Description |
+| 功能 | 描述 |
 |------------|-------------|
-| **enterpriseAuthentication** | Allows an app to connect to network resources that require domain credentials. This capability will require a domain administrator to enable the functionality for all apps. An example would be an app that retrieves data from SharePoint servers on a private Intranet. <br/> With this capability your credentials can be used to access network resources on a network that requires credentials. An app with this capability can impersonate you on the network. <br/> This capability is not required to allow an app to access the Internet via an authenticating proxy. |
-| **proximity** | Required for near-field proximity communication with devices in close proximity to the computer. Near-field proximity may be used to send or connect with an application on a nearby device. <br/> This capability allows an app to access the network to connect to a device in close proximity, with user consent to send an invite or accept an invite. |
-| **sharedUserCertificates** | This capability allows an app to access software and hardware certificates, such as smart card certificates. When this capability is invoked at runtime, the user must take action, such as inserting a card or selecting a certificate. <br/> With this capability, your software and hardware certificates or a smart card are used for identification in the app. This capability may be used by your employer, bank, or government services for identification. |
+| **enterpriseAuthentication** | 允许应用连接至要求提供域凭据的网络资源。 如要启用此功能，域管理员必须为所有应用均启用此功能。 示例将是从专用 Intranet 上的 Sharepoint 服务器中检索数据的应用。 <br/> 通过此功能可以使用你的凭据来访问要求提供凭据的网络中的网络资源。 具有此功能的应用可在网络上模拟其用户。 <br/> 无需此功能，应用即可通过身份验证的代理访问 Internet。 |
+| **proximity** | 与邻近计算机的设备进行近距离感应通信所必需的功能。 近距离感应可用于向附近设备上的应用程序发送邀请或与其进行连接。 <br/> 此功能让应用可以访问邻近设备网络，并在用户同意发送或接受邀请的情况下与这些设备进行连接。 |
+| **sharedUserCertificates** | 此功能让应用可以访问软件和硬件证书，如智能卡证书。 在运行过程中调用此功能时，用户必须采取插入卡或选择证书等操作。 <br/> 使用此功能时，应用会将你的软件和硬件证书或智能卡用于识别。 你的雇主、银行或政府服务机构可以使用此功能来进行识别。 |
 
-## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>Communicating when your app is not in the foreground
+## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>当你的应用不在前台时通信
 
-[Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/mt299103) contains general information about using background tasks to do work when your app is not in the foreground. More specifically, your code must take special steps to be notified when it is not the current foreground app and data arrives over the network for it. You used Control Channel Triggers for this purpose in Windows 8, and they are still supported in Windows 10. Full information about using Control Channel Triggers is available [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032). A new technology in Windows 10 provides better functionality with lower overhead for some scenarios, such as push-enabled stream sockets: the socket broker and socket activity triggers.
+[使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 为此，你在 Windows 8 中使用了控制通道触发器，这些触发器在 Windows 10 中仍受支持。 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032) 提供了有关使用控制通道触发器的完整信息。 Windows 10 中的新技术提供了更好的功能，可在某些应用场景中降低开销，例如已启用推送的流套接字：套接字代理和套接字活动触发器。
 
-If your app uses [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), then your app can transfer ownership of an open socket to a socket broker provided by the system, and then leave the foreground, or even terminate. When a connection is made on the transferred socket, or traffic arrives on that socket, then your app or its designated background task are activated. If your app is not running, it is started. The socket broker then notifies your app using a [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) that new traffic has arrived. Your app reclaims the socket from the socket broker and process the traffic on the socket. This means that your app consumes far less system resources when it is not actively processing network traffic.
+如果你的应用使用了 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)，则你的应用可以将开放套接字的所有权转移给系统提供的套接字代理，然后退出前台甚至终止。 在已传输的套接字上建立连接或流量送达该套接字后，你的应用或其指定的后台任务将被激活。 如果你的应用未运行，它将启动。 然后，套接字代理将使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 通知你的应用收到新流量。 你的应用将从套接字代理回收套接字并处理该套接字上的流量。 这意味着，当你的应用未处理网络流量时，将消耗非常少的系统资源。
 
-The socket broker is intended to replace Control Channel Triggers where it is applicable, because it provides the same functionality, but with fewer restrictions and a smaller memory footprint. Socket broker can be used by apps that are not lock screen apps, and it is used the same way on phones as on other devices. Apps need not be running when traffic arrives in order to be activated by the socket broker. And the socket broker supports listening on TCP sockets, which Control Channel Triggers do not support.
+套接字代理旨在替代控制通道触发器（如果适用），因为前者能够提供相同的功能，但限制更少且内存占用更小。 套接字代理可由非锁屏应用使用，并且其在手机上的使用方式与其他设备上的使用方式相同。 当流量送达以便由套接字代理激活应用时，这些应用无需处于运行状态。 并且套接字代理支持在 TCP 套接字上侦听，而控制通道触发器不支持此操作。
 
 
-### <a name="choosing-a-network-trigger"></a>Choosing a network trigger
+### <a name="choosing-a-network-trigger"></a>选择网络触发器
 
-There are some scenarios where either kind of trigger would be suitable. When you are choosing which kind of trigger to use in your app, consider the following advice.
+在一些应用场景中，这两种触发器均适宜。 当你选择要在应用中使用的触发器类型时，请考虑以下建议。
 
--   If you are using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) or [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638), you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
--   If you are using push-enabled **StreamSockets**, you can use control channel triggers, but should prefer [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). The latter choice allows the system to free up memory and reduce power requirements when the connection is not being actively used.
--   If you want to minimize the memory footprint of your app when it is not actively servicing network requests, prefer [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) when possible.
--   If you want your app to be able to receive data while the system is in Connected Standby mode, use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009).
+-   如果你使用的是 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 或 [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638)，则必须使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
+-   如果使用的是已启用推送的 **StreamSockets**，则可以使用控制通道触发器，不过应该首选 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。 当目前未使用连接时，选择后者允许系统释放内存并会降低电源要求。
+-   如果你想要在当前没有服务网络请求时最大程度减少你的应用的内存占用，则首选 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)（如果可能）。
+-   如果你希望你的应用能够在系统处于连接待机模式下时接收数据，应使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。
 
-For details and examples of how to use the socket broker, see [Network communications in the background](network-communications-in-the-background.md).
+有关如何使用套接字代理的详细信息和示例，请参阅[后台网络通信](network-communications-in-the-background.md)。
 
-## <a name="secured-connections"></a>Secured connections
+## <a name="secured-connections"></a>安全连接
 
-Secure Sockets Layer (SSL) and the more recent Transport Layer Security (TLS) are cryptographic protocols designed to provide authentication and encryption for network communication. These protocols are designed to prevent eavesdropping and tampering when sending and receiving network data. These protocols use a client-server model for the protocol exchanges. These protocols also use digital certificates and certificate authorities to verify that the server is who it claims to be.
+安全套接字层 (SSL) 和最新的传输层安全 (TLS) 都是旨在为网络通信提供身份验证和加密功能的加密协议。 这些协议专门用于在发送和接收网络数据时防止发生窃听和篡改。 这些协议使用一种客户端-服务器模型进行协议交换。 这些协议还会使用数字证书和证书颁发机构来验证服务器是否是其声明的服务器。
 
-### <a name="creating-secure-socket-connections"></a>Creating secure socket connections
+### <a name="creating-secure-socket-connections"></a>创建安全套接字连接
 
-A [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object can be configured to use SSL/TLS for communications between the client and the server. This support for SSL/TLS is limited to using the **StreamSocket** object as the client in the SSL/TLS negotiation. You cannot use SSL/TLS with the **StreamSocket** created by a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) when incoming communications are received, because SSL/TLS negotiation as a server is not implemented by the **StreamSocket** class.
+[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象可以配置为在客户端和服务器之间使用 SSL/TLS 进行通信。 对 SSL/TLS 的这一支持仅限于在 SSL/TLS 协商中将 **StreamSocket** 对象用作客户端。 当收到传入通信时，你无法将 SSL/TLS 与 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 所创建的 **StreamSocket** 一起使用，因为 **StreamSocket** 类没有实现作为服务器的 SSL/TLS 协商。
 
-There are two ways to secure a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) connection with SSL/TLS:
+有以下两种方法可以借助 SSL/TLS 确保 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 连接的安全：
 
--   [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) - Make the initial connection to a network service and negotiate immediately to use SSL/TLS for all communications.
--   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) - Connect initially to a network service without encryption. The app may send or receive data. Then, upgrade the connection to use SSL/TLS for all further communications.
+-   [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) - 建立到网络服务的初始连接并立即协商对所有通信使用 SSL/TLS。
+-   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) - 先不加密连接到网络服务。 应用可以发送或接收数据。 然后升级连接，对此后所有通信使用 SSL/TLS。
 
-The SocketProtectionLevel value that you provide sets the minimum protection level you are willing to allow. However, the eventual protection level of the established connection is determined in a negotiation process between both endpoints of the connection. The result can be a more-secure protection level than the one you specified, if the other endpoint requires a higher level. The SSL strength actually negotiated using [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) or [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation has completed successfully.
+你提供的 SocketProtectionLevel 值会设置你愿意允许的最低保护级别。 但是，对于已建立的连接，其最终保护级别取决于连接的两个终结点之间的协商进程。 如果另一个终结点需要更高的级别，则最终的保护级别可能要比你指定的级别更加安全。 实际上使用 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 或 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 协商得到的 SSL 强度可在异步操作成功完成后通过获取 [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) 属性来确定。
 
-> **Note**  Your code should never implicitly depend on using a particular protection level, or on the assumption that a given security level is used by default. The security landscape changes constantly, and protocols and default protection levels will be changed over time in order to avoid the use of protocols with known weaknesses. Defaults can vary depending on individual machine configuration, or on which software is installed and which patches have been applied. If your app depends on the use of a particular security level, you must explicitly specify that level and then check to be sure that it is actually in use on the established connection.
+> **注意** 你的代码决不应该隐式依赖于使用特定的保护级别或默认使用给定安全级别的假设。 安全状况会不断更改，而且为了避免使用带有已知缺陷的协议，协议和默认保护级别也将随着时间的推移而发生更改。 默认值可能会因单个计算机配置或已安装的软件和已应用的修补程序而异。 如果你的应用依赖于使用特定的安全级别，则必须明确指定该级别，然后进行检查以确保在已建立的连接上实际使用了该安全级别。
 
-### <a name="use-connectasync"></a>Use ConnectAsync
+### <a name="use-connectasync"></a>使用 ConnectAsync
 
-[**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) can be used to establish the initial connection with a network service and then negotiate immediately to use SSL/TLS for all communications. There are two **ConnectAsync** methods that support passing a *protectionLevel* parameter:
+[**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 可用于建立与网络服务的初始连接，并随后立即协商对所有通信使用 SSL/TLS。 有两种 **ConnectAsync** 方法支持传递 *protectionLevel* 参数：
 
--   [**ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - Starts an asynchronous operation on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object to connect to a remote network destination specified as an [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) object and a [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
--   [**ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - Starts an asynchronous operation on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object to connect to a remote destination specified by a remote hostname, a remote service name, and a [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
+-   [**ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象上启动异步操作以连接到指定为 [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) 对象和 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 的远程网络目标。
+-   [**ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - 在 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象上启动异步操作以连接到由远程主机名、远程服务名和 [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) 所指定的远程目标。
 
-If the *protectionLevel* parameter is set to **Windows.Networking.Sockets.SocketProtectionLevel.Ssl** when calling either of the above [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods, the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) must will be established to use SSL/TLS for encryption. This value requires encryption and never allows a NULL cipher to be used.
+如果 *protectionLevel* 参数设置为 **Windows.Networking.Sockets.SocketProtectionLevel.Ssl**，当调用上述任一 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法时，必须建立 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 才能使用 SSL/TLS 进行加密。 此值需要加密而且绝不允许使用 NULL 密码。
 
-The normal sequence to use with one of these [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods is the same.
+一般来说，使用这些 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法的顺序都是相同的。
 
--   Create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
--   If an advanced option on the socket is needed, use the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) property to get the [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) instance associated with a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object. Set a property on the **StreamSocketControl**.
--   Call one of the above [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods to start an operation to connect to a remote destination and immediately negotiate the use of SSL/TLS.
--   The SSL strength actually negotiated using [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation has completed successfully.
+-   创建一个 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)。
+-   如果需要在套接字上使用高级选项，请使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 属性获取与 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象相关联的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 实例。 针对 **StreamSocketControl** 设置一个属性。
+-   调用上述 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法之一以启动连接到远程目标的操作，并立即协商使用 SSL/TLS。
+-   实际上使用 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 协商得到的 SSL 强度可在异步操作成功完成后通过获取 [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) 属性来确定。
 
-The following example creates a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and tries to establish a connection to the network service and negotiate immediately to use SSL/TLS. If the negotiation is successful, all network communication using the **StreamSocket** between the client the network server will be encrypted.
+以下示例将会创建 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)，尝试建立与网络服务的连接并立即协商使用 SSL/TLS。 如果协商成功，则在客户端和网络服务器之间使用 **StreamSocket** 的所有网络通信都将加密。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -162,21 +162,21 @@ using Windows::Networking::Sockets;
     // Then close the clientSocket when done
 ```
 
-### <a name="use-upgradetosslasync"></a>Use UpgradeToSslAsync
+### <a name="use-upgradetosslasync"></a>使用 UpgradeToSslAsync
 
-When your code uses [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922), it first establishes a connection to a network service without encryption. The app may send or receive some data, then upgrade the connection to use SSL/TLS for all further communications.
+当你的代码使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 时，它将首先在不加密的情况下建立与网络服务的连接。 应用可以发送或接收某些数据，然后升级连接，以对此后所有通信使用 SSL/TLS。
 
-The [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method takes two parameters. The *protectionLevel* parameter indicates the protection level desired. The *validationHostName* parameter is the hostname of the remote network destination that is used for validation when upgrading to SSL. Normally the *validationHostName* would be the same hostname that the app used to initially establish the connection. If the *protectionLevel* parameter is set to **Windows.System.Socket.SocketProtectionLevel.Ssl** when calling **UpgradeToSslAsync**, the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) must use the SSL/TLS for encryption on further communications over the socket. This value requires encryption and never allows a NULL cipher to be used.
+[**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法有两个参数。 *protectionLevel* 参数表示所需的保护级别。 *validationHostName* 参数是在升级到 SSL 时用于进行验证的远程网络目标的主机名。 通常情况下，*validationHostName* 将是应用最初建立连接时所使用的相同主机名。 如果 *protectionLevel* 参数设置为 **Windows.System.Socket.SocketProtectionLevel.Ssl**，当调用 **UpgradeToSslAsync** 时，[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 必须通过套接字在此后的通信上使用 SSL/TLS 进行加密。 此值需要加密而且绝不允许使用 NULL 密码。
 
-The normal sequence to use with the [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method is as follows:
+一般来说，使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法的顺序都是：
 
--   Create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
--   If an advanced option on the socket is needed, use the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) property to get the [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) instance associated with a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object. Set a property on the **StreamSocketControl**.
--   If any data needs to be sent and received unencrypted, send it now.
--   Call the [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method to start an operation to upgrade the connection to use SSL/TLS.
--   The SSL strength actually negotiated using [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation completes successfully.
+-   创建一个 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)。
+-   如果需要在套接字上使用高级选项，请使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 属性获取与 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象相关联的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 实例。 针对 **StreamSocketControl** 设置一个属性。
+-   如果任何数据需要以不加密的形式进行发送和接收，则立即发送。
+-   调用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 方法以启动将连接升级为使用 SSL/TLS 的操作。
+-   实际上使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 协商得到的 SSL 强度可在异步操作成功完成后通过获取 [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) 属性来确定。
 
-The following example creates a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), tries to establish a connection to the network service, sends some initial data, and then negotiates to use SSL/TLS. If the negotiation is successful, all network communication using the **StreamSocket** between the client and the network server will be encrypted.
+以下示例将会创建 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、尝试建立与网络服务的连接、发送一些初始数据，然后协商使用 SSL/TLS。 如果协商成功，则在客户端和网络服务器之间使用 **StreamSocket** 的所有网络通信都会加密。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -351,25 +351,25 @@ using Windows::Storage::Streams;
     });
 ```
 
-### <a name="creating-secure-websocket-connections"></a>Creating secure WebSocket connections
+### <a name="creating-secure-websocket-connections"></a>创建安全 WebSocket 连接
 
-Like traditional socket connections, WebSocket connections can also be encrypted with Transport Layer Security (TLS)/Secure Sockets Layer (SSL) when using the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) features in Windows 8 for a Windows Store app. In most cases you'll want to use a secure WebSocket connection. This will increase the chances that your connection will succeed, as many proxies will reject unencrypted WebSocket connections.
+与传统套接字连接相同，为 Windows 应用商店应用使用 Windows 8 中的 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 和 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 功能时，使用传输层安全性 (TLS)/安全套接字层 (SSL) 也可以加密 WebSocket 连接。 一般来说，你希望使用安全的 WebSocket 连接。 这会提高连接成功的可能性，因为许多代理会拒绝未加密的 WebSocket 连接。
 
-For examples of how to create, or upgrade to, a secure socket connection to a network service, see [How to secure WebSocket connections with TLS/SSL](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399).
+有关如何创建或升级到网络服务的安全套接字连接的示例，请参阅[如何借助 TLS/SSL 确保 WebSocket 连接的安全](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399)。
 
-In addition to TLS/SSL encryption, a server may require a **Sec-WebSocket-Protocol** header value to complete the initial handshake. This value, represented by the [**StreamWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701514) and [**MessageWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701358) properties, indicate the protocol version of the connection and enables the server to correctly interpret the opening handshake and the data being exchanged afterwards. Using this protocol information, if at any point if the server cannot interpret the incoming data in a safe manner the connection can be closed.
+除了 TLS/SSL 加密之外，服务器可能需要 **Sec-WebSocket-Protocol** 标头值才能完成初始握手。 该值由 [**StreamWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701514) 和 [**MessageWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701358) 属性表示，用于指示连接的协议版本，并让服务器可以正确解释开始握手和随后交换的数据。 如果服务器在任何时刻无法以可关闭连接的安全方式解释传入数据，则使用此协议信息。
 
-If the initial request from the client either does not contain this value, or provides a value that doesn't match what the server expects, the expected value is sent from the server to the client on WebSocket handshake error.
+如果客户端发出的初始请求不包含此值，或提供了与服务器的预期不相符的值，则预期值会在发生 WebSocket 握手错误时 从服务器发送到客户端。
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>身份验证
 
-How to provide authentication credentials when connecting over the network.
+如何在通过网络进行连接时提供身份验证凭据。
 
-### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Providing a client certificate with the StreamSocket class
+### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
 
-The [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class supports using SSL/TLS to authenticate the server the app is talking to. In certain cases, the app also needs to authenticate itself to the server using a TLS client certificate. In Windows 10, you can provide a client certificate on the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) object (this must be set before the TLS handshake is started). If the server requests the client certificate, Windows will respond with the certificate provided.
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 Windows 10 中，你可以在 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 对象上提供客户端证书（这必须在启动 TLS 握手之前进行设置）。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
 
-Here is a code snippet showing how to implement this:
+下面是演示如何实现此目的的代码段：
 
 ```csharp
 var socket = new StreamSocket();
@@ -378,9 +378,9 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-### <a name="providing-authentication-credentials-to-a-web-service"></a>Providing authentication credentials to a web service
+### <a name="providing-authentication-credentials-to-a-web-service"></a>向 Web 服务提供身份验证凭据
 
-The networking APIs that enable apps to interact with secure web services each provide their own methods to either initialize a client or set a request header with server and proxy authentication credentials. Each method is set with a [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) object that indicates a user name, password, and the resource for which these credentials are used. The following table provides a mapping of these APIs:
+使应用可与安全 Web 服务交互的每个网络 API 均提供其自有方法来初始化客户端，或者使用服务器和代理身份验证凭据来设置请求头。 每个方法均使用 [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) 对象进行设置，该对象指示用户名、密码和将这些凭据用于的资源。 下表提供这些 API 的映射：
 
 | **WebSockets** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
 |-------------------------|----------------------------------------------------------------------------------------------------------|
@@ -401,22 +401,22 @@ The networking APIs that enable apps to interact with secure web services each p
 |  | [**AtomPubClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243428) |
 |  | [**AtomPubClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243423) |
  
-## <a name="handling-network-exceptions"></a>Handling network exceptions
+## <a name="handling-network-exceptions"></a>处理网络异常
 
-In most areas of programming, an exception indicates a significant problem or failure, caused by some flaw in the program. In network programming, there is an additional source for exceptions: the network itself, and the nature of network communications. Network communications are inherently unreliable and prone to unexpected failure. For each of the ways your app uses networking, you must maintain some state information; and your app code must handle network exceptions by updating that state information and initiating appropriate logic for your app to re-establish or retry communication failures.
+在大多数编程领域中，异常均表示由程序中的某些缺陷而导致的重大问题或失败。 在网络编程中，还存在额外的来源会导致异常，即网络本身，这是网络通信的特性。 网络通信本身是不可靠的，且易出现出乎意料的失败。 对于你的应用使用网络的每一种方式，你都必须保留一些状态信息，而且你的应用代码必须通过更新该状态信息和启动适合应用的逻辑来处理网络异常，从而重新建立或重试失败的通信。
 
-When Universal Windows apps throw an exception, your exception handler can retrieve more detailed information on the cause of the exception to better understand the failure and make appropriate decisions.
+当通用 Windows 应用引发异常时，异常处理程序可以检索关于异常原因的更详细的信息，以更好地了解此次失败，并作出正确的决策。
 
-Each language projection supports a method to access this more detailed information. An exception projects as an **HRESULT** value in Universal Windows apps. The *Winerror.h* include file contains a very large list of possible **HRESULT** values that includes network errors.
+每个语言投影都支持一种访问该详细信息的方法。 异常在通用 Windows 应用中投影为 **HRESULT** 值。 *Winerror.h* include 文件包含一个可能的 **HRESULT** 值的大型列表，其中包含网络错误。
 
-The networking APIs support different methods for retrieving this detailed information on the cause of an exception.
+网络 API 支持不同方法来检索关于异常原因的详细信息。
 
--   Some APIs provide a helper method that converts the **HRESULT** value from the exception to an enumeration value.
--   Other APIs provide a method to retrieve the actual **HRESULT** value.
+-   一些 API 提供了一种帮助程序方法，可将异常中的 **HRESULT** 值转换为枚举值。
+-   而另一些 API 提供一种方法来检索实际的 **HRESULT** 值。
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Networking API Improvements in Windows 10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+* [Windows 10 中的网络 API 改进](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
 
 

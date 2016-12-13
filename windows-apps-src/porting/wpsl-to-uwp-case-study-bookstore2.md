@@ -1,70 +1,70 @@
 ---
 author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: This case study, which builds on the info given in Bookstore, begins with a Windows Phone Silverlight app that displays grouped data in a LongListSelector.
-title: Windows Phone Silverlight to UWP case study, Bookstore2
+description: "此案例研究以 Bookstore 中所提供的信息为基础，首先研究可显示 LongListSelector 中的分组数据的 Windows Phone Silverlight 应用。"
+title: "从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2"
 translationtype: Human Translation
 ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
 ms.openlocfilehash: c85473d8c3267e4f0ccd6018fe5ee349fdf39284
 
 ---
 
-# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore2"></a>Windows Phone Silverlight to UWP case study: Bookstore2
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore2"></a>从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore2
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This case study—which builds on the info given in [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)—begins with a Windows Phone Silverlight app that displays grouped data in a **LongListSelector**. In the view model, each instance of the class **Author** represents the group of the books written by that author, and in the **LongListSelector**, we can either view the list of books grouped by author or we can zoom out to see a jump list of authors. The jump list affords much quicker navigation than scrolling through the list of books. We walk through the steps of porting the app to a Windows 10 Universal Windows Platform (UWP) app.
+此案例研究以 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 中所提供的信息为基础，首先研究可显示 **LongListSelector** 中的分组数据的 Windows Phone Silverlight 应用。 在视图模型中，类 **Author** 的每个实例都表示一组由该作者创作的书籍，而在 **LongListSelector** 中，我们可以按作者查看分组书籍的列表，或者可以缩小到可以看到包含作者的跳转列表。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 我们将分步演示将应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的步骤。
 
-**Note**   When opening Bookstore2Universal\_10 in Visual Studio, if you see the message "Visual Studio update required", then follow the steps for setting Target Platform Version in [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md).
+**注意** 在 Visual Studio 中打开 Bookstore2Universal\_10 时，如果你看到消息“需要 Visual Studio 更新”，则按照 [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md) 中用于设置目标平台版本的步骤进行操作。
 
-## <a name="downloads"></a>Downloads
+## <a name="downloads"></a>下载
 
-[Download the Bookstore2WPSL8 Windows Phone Silverlight app](http://go.microsoft.com/fwlink/p/?linkid=522601).
+[下载 Bookstore2WPSL8 Windows Phone Silverlight 应用](http://go.microsoft.com/fwlink/p/?linkid=522601)。
 
-[Download the Bookstore2Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532952).
+[下载 Bookstore2Universal\_10 Windows 10 应用](http://go.microsoft.com/fwlink/?linkid=532952)。
 
-##  <a name="the-windows-phone-silverlight-app"></a>The Windows Phone Silverlight app
+##  <a name="the-windows-phone-silverlight-app"></a>Windows Phone Silverlight 应用
 
-The illustration below shows what Bookstore2WPSL8—the app that we're going to port—looks like. It's a vertically-scrolling **LongListSelector** of books grouped by author. You can zoom out to the jump list, and from there, you can navigate back into any group. There are two main pieces to this app: the view model that provides the grouped data source, and the user interface that binds to that view model. As we'll see, both of these pieces port easily from Windows Phone Silverlight technology to the Universal Windows Platform (UWP).
+下图显示了 Bookstore2WPSL8（我们要移植的应用）的外观。 它是垂直滚动的 **LongListSelector**，其中包含按作者进行分组的书籍。 你可以缩小到跳转列表，并且可以从该列表导航回任一组。 此应用包含两个主要部分：提供分组数据源的视图模型，以及绑定到该视图模型的用户界面。 正如我们将看到的，这两部分都可以轻松地从 Windows Phone Silverlight 技术移植到通用 Windows 平台 (UWP)。
 
-![how bookstore2wpsl8 looks](images/wpsl-to-uwp-case-studies/c02-01-wpsl-how-the-app-looks.png)
+![Bookstore2WPSL8 的外观](images/wpsl-to-uwp-case-studies/c02-01-wpsl-how-the-app-looks.png)
 
-##  <a name="porting-to-a-windows-10-project"></a>Porting to a Windows 10 project
+##  <a name="porting-to-a-windows-10-project"></a>移植到 Windows 10 项目
 
-It's a quick task to create a new project in Visual Studio, copy files over to it from Bookstore2WPSL8, and include the copied files in the new project. Start by creating a new Blank Application (Windows Universal) project. Name it Bookstore2Universal\_10. These are the files to copy over from Bookstore2WPSL8 to Bookstore2Universal\_10.
+可快速完成以下任务：在 Visual Studio 中创建新项目、将文件从 Bookstore2WPSL8 复制到其中并将已复制的文件包含在新项目中。 首先创建一个新的空白应用程序（Windows 通用）项目。 将其命名为 Bookstore2Universal\_10。 这些是要从 Bookstore2WPSL8 复制到 Bookstore2Universal\_10 的文件。
 
--   Copy the folder containing the book cover image PNG files (the folder is \\Assets\\CoverImages). After copying the folder, in **Solution Explorer**, make sure **Show All Files** is toggled on. Right-click the folder that you copied and click **Include In Project**. That command is what we mean by "including" files or folders in a project. Each time you copy a file or folder, click **Refresh** in **Solution Explorer** and then include the file or folder in the project. There's no need to do this for files that you're replacing in the destination.
--   Copy the folder containing the view model source file (the folder is \\ViewModel).
--   Copy MainPage.xaml and replace the file in the destination.
+-   复制包含书籍封面图像 PNG 文件的文件夹（该文件夹是 \\Assets\\CoverImages）。 复制该文件夹后，在**“解决方案资源管理器”**中，请确保将**“显示所有文件”**切换为打开。 右键单击你复制的文件夹，然后单击“包括在项目中”。 该命令的意思是将文件或文件夹“包括”在某个项目中。 每次你复制文件或文件夹时，请在“解决方案资源管理器”中单击“刷新”，然后将文件或文件夹包括在项目中。 无需为你将在目标位置替换的文件执行此操作。
+-   复制包含视图模型源文件的文件夹（该文件夹是 \\ViewModel）。
+-   复制 MainPage.xaml 并替换目标位置中的文件。
 
-We can keep the App.xaml, and App.xaml.cs that Visual Studio generated for us in the Windows 10 project.
+我们可以将 Visual Studio 生成的 App.xaml 和 App.xaml.cs 保存在 Windows 10 项目中。
 
-Edit the source code and markup files that you just copied and change any references to the Bookstore2WPSL8 namespace to Bookstore2Universal\_10. A quick way to do that is to use the **Replace In Files** feature. In the imperative code in the view model source file, these porting changes are needed.
+编辑你刚刚复制的源代码和标记文件，并将对 Bookstore2WPSL8 命名空间的任何引用更改为 Bookstore2Universal\_10。 执行此操作的快速方法是使用“在文件中替换”功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改。
 
--   Change `System.ComponentModel.DesignerProperties` to `DesignMode` and then use the **Resolve** command on it. Delete the `IsInDesignTool` property and use IntelliSense to add the correct property name: `DesignModeEnabled`.
--   Use the **Resolve** command on `ImageSource`.
--   Use the **Resolve** command on `BitmapImage`.
--   Delete `using System.Windows.Media;` and `using System.Windows.Media.Imaging;`.
--   Change the value returned by the **Bookstore2Universal\_10.BookstoreViewModel.AppName** property from "BOOKSTORE2WPSL8" to "BOOKSTORE2UNIVERSAL".
--   Just as we did for [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), update the implementation of the **BookSku.CoverImage** property (see [Binding an Image to a view model](wpsl-to-uwp-case-study-bookstore1.md)).
+-   将 `System.ComponentModel.DesignerProperties` 更改为 `DesignMode`，然后对其使用 **Resolve** 命令。 删除 `IsInDesignTool` 属性并使用 IntelliSense 添加正确的属性名称：`DesignModeEnabled`。
+-   对 `ImageSource` 使用 **Resolve** 命令。
+-   对 `BitmapImage` 使用 **Resolve** 命令。
+-   删除 `using System.Windows.Media;` 和 `using System.Windows.Media.Imaging;`。
+-   将 **Bookstore2Universal\_10.BookstoreViewModel.AppName** 属性返回的值从“BOOKSTORE2WPSL8”更改为“BOOKSTORE2UNIVERSAL”。
+-   更新 **BookSku.CoverImage** 属性的实现，正如我们对 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 所执行的操作一样（请参阅[将图像绑定到视图模型](wpsl-to-uwp-case-study-bookstore1.md)）。
 
-In MainPage.xaml, these initial porting changes are needed.
+在 MainPage.xaml 中，需要进行以下初始移植更改。
 
--   Change `phone:PhoneApplicationPage` to `Page` (including the occurrences in property element syntax).
--   Delete the `phone` and `shell` namespace prefix declarations.
--   Change "clr-namespace" to "using" in the remaining namespace prefix declaration.
--   Delete `SupportedOrientations="Portrait"`, and `Orientation="Portrait"`, and configure **Portrait** in the app package manifest in the new project.
--   Delete `shell:SystemTray.IsVisible="True"`.
--   The types of the jump list item converters (which are present in the markup as resources) have moved to the [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) namespace. So, add the namespace prefix declaration Windows\_UI\_Xaml\_Controls\_Primitives and map it to **Windows.UI.Xaml.Controls.Primitives**. On the jump list item converter resources, change the prefix from `phone:` to `Windows_UI_Xaml_Controls_Primitives:`.
--   Just as we did for [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), replace all references to the `PhoneTextExtraLargeStyle` **TextBlock** style with a reference to `SubtitleTextBlockStyle`, replace `PhoneTextSubtleStyle` with `SubtitleTextBlockStyle`, replace `PhoneTextNormalStyle` with `CaptionTextBlockStyle`, and replace `PhoneTextTitle1Style` with `HeaderTextBlockStyle`.
--   There is one exception in `BookTemplate`. The style of the second **TextBlock** should reference `CaptionTextBlockStyle`.
--   Remove the FontFamily attribute from the **TextBlock** inside `AuthorGroupHeaderTemplate` and set the Background of the **Border** to reference `SystemControlBackgroundAccentBrush` instead of `PhoneAccentBrush`.
--   Because of [changes related to view pixels](wpsl-to-uwp-porting-xaml-and-ui.md), go through the markup and multiply any fixed size dimension (margins, width, height, etc) by 0.8.
+-   将 `phone:PhoneApplicationPage` 更改为 `Page`（包括出现在属性元素语法中的相应项）。
+-   删除 `phone` 和 `shell` 命名空间前缀声明。
+-   在其余的命名空间前缀声明中将“clr-namespace”更改为“using”。
+-   删除 `SupportedOrientations="Portrait"` 和 `Orientation="Portrait"`，然后在新项目的应用包清单中配置**“纵向”**。
+-   删除 `shell:SystemTray.IsVisible="True"`。
+-   跳转列表项目转换器的类型（在标记中以资源形式存在）已移动到 [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 命名空间。 因此，请添加命名空间前缀声明 Windows\_UI\_Xaml\_Controls\_Primitives 并将其映射到 **Windows.UI.Xaml.Controls.Primitives**。 在跳转列表项目转换器资源上，将该前缀从 `phone:` 更改为 `Windows_UI_Xaml_Controls_Primitives:`。
+-   将对 `PhoneTextExtraLargeStyle` **TextBlock** 样式的所有引用替换为对 `SubtitleTextBlockStyle` 的引用、将 `PhoneTextSubtleStyle` 替换为 `SubtitleTextBlockStyle`、将 `PhoneTextNormalStyle` 替换为 `CaptionTextBlockStyle`，然后将 `PhoneTextTitle1Style` 替换为 `HeaderTextBlockStyle`，正如我们对 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 所执行的操作一样。
+-   `BookTemplate` 中存在一个例外。 第二个 **TextBlock** 的样式应引用 `CaptionTextBlockStyle`。
+-   从 `AuthorGroupHeaderTemplate` 内的 **TextBlock** 中 删除 FontFamily 属性，并将 **Border** 的 Background 设置为引用 `SystemControlBackgroundAccentBrush` 而非 `PhoneAccentBrush`。
+-   由于[更改与视图像素有关](wpsl-to-uwp-porting-xaml-and-ui.md)，请检查标记并将所有大小尺寸（边距、宽度、高度等）均乘以 0.8。
 
-## <a name="replacing-the-longlistselector"></a>Replacing the LongListSelector
+## <a name="replacing-the-longlistselector"></a>替换 LongListSelector
 
 
-Replacing the **LongListSelector** with a [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) control will take several steps, so let's make a start on that. A **LongListSelector** binds directly to the grouped data source, but a **SemanticZoom** contains [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) controls, which bind indirectly to the data via a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) adapter. The **CollectionViewSource** needs to be present in the markup as a resource, so let's begin by adding that to the markup in MainPage.xaml inside `<Page.Resources>`.
+将 **LongListSelector** 替换为 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件需要几个步骤，让我们开始吧。 **LongListSelector** 将直接绑定到分组的数据源，但 **SemanticZoom** 中包含 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 控件，它们将通过 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 适配器间接绑定到数据。 **CollectionViewSource** 必须以资源形式存在于标记中，因此，让我们先将其添加到 `<Page.Resources>` 内 MainPage.xaml 的标记中。
 
 ```xml
     <CollectionViewSource
@@ -73,9 +73,9 @@ Replacing the **LongListSelector** with a [**SemanticZoom**](https://msdn.micros
         IsSourceGrouped="true"/>
 ```
 
-Note that the binding on **LongListSelector.ItemsSource** becomes the value of **CollectionViewSource.Source**, and **LongListSelector.IsGroupingEnabled** becomes **CollectionViewSource.IsSourceGrouped**. The **CollectionViewSource** has a name (note: not a key, as you might expect) so that we can bind to it.
+请注意，**LongListSelector.ItemsSource** 上的绑定将成为 **CollectionViewSource.Source** 的值，而 **LongListSelector.IsGroupingEnabled** 上的绑定将成为 **CollectionViewSource.IsSourceGrouped** 的值。 **CollectionViewSource** 具有一个名称（请注意：不是你可能期望的键），因此我们可以绑定到它。
 
-Next, replace the `phone:LongListSelector` with this markup, which will give us a preliminary **SemanticZoom** to work with.
+接下来，用此标记来替换 `phone:LongListSelector`，这将向我们提供一个可使用的初步 **SemanticZoom**。
 
 ```xml
     <SemanticZoom>
@@ -98,9 +98,9 @@ Next, replace the `phone:LongListSelector` with this markup, which will give us 
     </SemanticZoom>
 ```
 
-The **LongListSelector** notion of flat list and jump list modes is answered in the **SemanticZoom** notion of a zoomed-in and a zoomed-out view, respectively. The zoomed-in view is a property, and you set that property to an instance of a **ListView**. In this case, the zoomed-out view is also set to a **ListView**, and both **ListView** controls are bound to our **CollectionViewSource**. The zoomed-in view uses the same item template, group header template, and **HideEmptyGroups** setting (now named **HidesIfEmpty**) as the **LongListSelector**'s flat list does. And the zoomed-out view uses an item template very much like the one inside the **LongListSelector**'s jump list style (`AuthorNameJumpListStyle`). Also, note that the zoomed-out view binds to a special property of the **CollectionViewSource** named **CollectionGroups**, which is a collection containing the groups rather than the items.
+包含简单列表和跳转列表模式的 **LongListSelector** 概念将在包含放大和缩小视图的 **SemanticZoom** 概念中分别解答。 放大视图是一个属性，你可以将该属性设置为 **ListView** 的一个实例。 在此情况下，缩小视图也设置为 **ListView**，并且两个 **ListView** 控件都绑定到我们的 **CollectionViewSource**。 放大的视图与 **LongListSelector** 的简单列表使用相同的项目模板、组标题模板和 **HideEmptyGroups** 设置（现在称为 **HidesIfEmpty**）。 而缩小的视图所使用的项目模板十分类似于 **LongListSelector** 的跳转列表样式 (`AuthorNameJumpListStyle`) 内的项目模板。 此外请注意，缩小的视图将绑定到名为 **CollectionGroups** 的 **CollectionViewSource** 的特殊属性，这是一个包含组而不是项目的集合。
 
-We no longer need `AuthorNameJumpListStyle`, at least not all of it. We only need the data template for the groups (which are authors in this app) in the zoomed-out view. So, we delete the `AuthorNameJumpListStyle` style and replace it with this data template.
+我们不再需要 `AuthorNameJumpListStyle`，至少不需要它的所有部分。 我们只需要缩小视图中的组（在此应用中即作者）的数据模板。 因此，我们删除 `AuthorNameJumpListStyle` 样式并将其替换为此数据模板。
 
 ```xml
    <DataTemplate x:Key="ZoomedOutAuthorTemplate">
@@ -111,39 +111,39 @@ We no longer need `AuthorNameJumpListStyle`, at least not all of it. We only nee
     </DataTemplate>
 ```
 
-Note that, since the data context of this data template is a group rather than an item, we bind to a special property named **Group**.
+请注意，由于此数据模板中的数据上下文是一个组而不是一个项目，因此我们将绑定到名为 **Group** 的特殊属性。
 
-You can build and run the app now. Here's how it looks on the mobile emulator.
+现在，你可以生成并运行该应用。 下面是它在移动仿真器上所呈现的外观。
 
-![the uwp app on mobile with initial source code changes](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
+![移动设备上初始源代码发生更改的 UWP 应用](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
 
-The view model and the zoomed-in and zoomed-out views are working together correctly, although one issue is that we need to do a little more styling and templating work. For example, the correct styles and brushes are not yet being used, so the text is invisible on the group headers that you can click to zoom out. If you run the app on a desktop device, then you'll see a second issue, which is that the app doesn't yet adapt its user-interface to give the best experience and use of space on larger devices where windows can be potentially much larger than the screen of a mobile device. So, in the next few sections ([Initial styling and templating](#initial-styling-and-templating), [Adaptive UI](#adaptive-ui), and [Final styling](#final-styling)), we'll remedy those issues.
+视图模型与放大和缩小视图正确协作，不过，我们面临着需再多做一些样式设置和模板方面的工作这一问题。 例如，尚未使用正确的样式和画笔，使得文本在可通过单击操作缩小的组标题上不可见。 当你在桌面设备上运行应用时，你将会遇到第二个问题，即应用尚未适应其用户界面，使得无法在较大的设备上提供最佳的体验和空间的使用，并且窗口的大小可能会比移动设备的屏幕大小大很多。 因此，在后面的几个部分（[初始样式设置和模板](#initial-styling-and-templating)、[自适应 UI](#adaptive-ui) 和 [最终样式设置](#final-styling)）中我们将解决这些问题。
 
-## <a name="initial-styling-and-templating"></a>Initial styling and templating
+## <a name="initial-styling-and-templating"></a>初始样式设置和模板
 
-To space out the group headers nicely, edit `AuthorGroupHeaderTemplate` and set a **Margin** of `"0,0,0,9.6"` on the **Border**.
+若要很好地分隔开组标题，请编辑 `AuthorGroupHeaderTemplate` 并在 **Border** 上设置 `"0,0,0,9.6"` 的 **Margin**。
 
-To space out the book items nicely, Edit `BookTemplate` and set the **Margin** to `"9.6,0"` on both **TextBlock**s.
+若要很好地分隔开书籍项，请编辑 `BookTemplate` 并在 **TextBlock** 上将 **Margin** 设置为 `"9.6,0"`。
 
-To lay out the app name and the page title a little better, inside `TitlePanel`, remove the top **Margin** on the second **TextBlock** by setting the value to `"7.2,0,0,0"`. And on `TitlePanel` itself, set the margin to `0` (or whatever value looks good to you)
+若要将应用名称和页面标题的布局设置得更美观一些，则在 `TitlePanel` 内，通过该值设置为 `"7.2,0,0,0"` 来删除第二个 **TextBlock** 上的顶部 **Margin**。 并在 `TitlePanel` 上将边距设置为 `0`（或你认为合适的任意值）
 
-Change `LayoutRoot`'s Background to `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`.
+将 `LayoutRoot` 的 Background 更改为 `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`。
 
-## <a name="adaptive-ui"></a>Adaptive UI
+## <a name="adaptive-ui"></a>自适应 UI
 
-Because we started out with a phone app, it's no surprise that our ported app's UI layout really only makes sense for small devices and narrow windows at this stage in the process. But, we'd really like the UI layout to adapt itself and make better use of space when the app is running in a wide window (which is only possible on a device with a large screen), and for it only to use the UI that we have currently when the app's window is narrow (which happens on a small device, and can also happen on a large device).
+因为我们是从手机应用入手，所以你不必惊讶于在此阶段我们已移植应用的 UI 布局的确只能适应较小的设备和较窄的窗口。 不过，我们真正希望的是，UI 布局能在应用在较宽的窗口中运行时自行适应并能很好地利用空间（这只能在具有大屏幕的设备上实现），而在应用的窗口较窄时仅使用我们当前拥有的 UI（这种情况出现在较小的设备上，也可能会出现在较大的设备上）。
 
-We can use the adaptive Visual State Manager feature to achieve this. We'll set properties on visual elements so that, by default, the UI is laid out in the narrow state using the templates that we're using right now. Then, we'll detect when the app's window is wider-than-or-equal-to a specific size (measured in units of [effective pixels](wpsl-to-uwp-porting-xaml-and-ui.md)), and in response, we'll change the properties of visual elements so that we get a larger, and wider, layout. We'll put those property changes in a visual state, and we'll use an adaptive trigger to continuously monitor and determine whether to apply that visual state, or not, depending on the width of the window in effective pixels. We're triggering on window width in this case, but it's possible to trigger on window height, too.
+我们可以使用自适应视觉状态管理器功能来实现此目的。 我们将在视觉元素上设置属性，以便默认使用我们正在使用的模板以较窄的状态设置 UI 的布局。 然后，我们将检测到应用窗口大于或等于特定大小（以[有效像素](wpsl-to-uwp-porting-xaml-and-ui.md)为测量单位）的情况，并更改视觉元素的属性作为回应，以获取更大且更宽的布局。 我们将这些属性更改置于视觉状态中，并且将使用自适应触发器持续监视并确定是否要应用该视觉状态，具体取决于窗口的宽度（以有效像素为单位）。 在此情况下，我们既可以针对窗口宽度进行触发，也可以针对窗口高度进行触发。
 
-A minimum window width of 548 epx is appropriate for this use case because that's the size of the smallest device we would want to show the wide layout on. Phones are typically smaller than 548 epx, so on a small device like that, we'd remain in the default narrow layout. On a PC, the window will launch by default wide enough to trigger the switch to the wide state, which will display 250x250-sized items. From there, you'll be able to drag the window narrow enough to display a minimum of two columns of the 250x250 items. Any narrower than that and the trigger will deactivate, the wide visual state will be removed, and the default narrow layout will be in effect.
+最小窗口宽度 548 epx 适用于此用例，因为这是我们希望在其上显示宽布局的最小设备大小。 手机通常小于 548 epx，因此在诸如此类的小型设备上，我们将保留默认的较窄布局。 在电脑上，默认情况下窗口将在足够宽的状态下启动，以触发向较宽状态的切换，这将显示大小为 250x250 的项。 你可在此处将窗口拖动到最窄宽度，以显示两列最小大小为 250x250 的项。 只要比这更窄一些，触发器便会停用，宽视觉状态将被删除，默认的窄布局将生效。
 
-Before tackling the adaptive Visual State Manager piece, we first need to design the wide state and that means adding some new visual elements and templates to our markup. These steps describe how to do that. By way of naming conventions for visual elements and templates, we'll include the word "wide" in the name of any element or template that is for the wide state. If an element or template does not contain the word "wide", then you can assume that it is for the narrow state, which is the default state and whose property values are set as local values on visual elements in the page. Only the property values for the wide state are set via an actual Visual State in the markup.
+在处理自适应视觉状态管理器这一部分之前，我们首先需要设计宽状态，这意味着需要向我们标记中添加一些新的视觉元素和模板。 以下步骤将介绍如何执行此操作。 依据视觉元素和模板的命名约定，我们将单词“宽”纳入到适用于宽状态的任意元素或模板中。 如果元素或模板不包含单词“宽”，你可以假定它属于窄状态（这是默认状态），且在页面的可视元素上其属性值已设为本地值。 在标记中，仅宽状态的属性值才能通过实际的视觉状态进行设置。
 
--   Make a copy of the [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) control in the markup and set `x:Name="narrowSeZo"` on the copy. On the original, set `x:Name="wideSeZo"` and also set `Visibility="Collapsed"` so that the wide one is not visible by default.
--   In `wideSeZo`, change the **ListView**s to **GridView**s in both the zoomed-in view and the zoomed-out view.
--   Make a copy of these three resources `AuthorGroupHeaderTemplate`, `ZoomedOutAuthorTemplate`, and `BookTemplate` and append the word `Wide` to the keys of the copies. Also, update `wideSeZo` so that it references the keys of these new resources.
--   Replace the contents of `AuthorGroupHeaderTemplateWide` with `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`.
--   Replace the contents of `ZoomedOutAuthorTemplateWide` with:
+-   在标记中，创建 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控件的副本并对其设置 `x:Name="narrowSeZo"`。 在原始副本上，依次设置 `x:Name="wideSeZo"` 和 `Visibility="Collapsed"`，以便在默认情况下使宽状态不可见。
+-   在 `wideSeZo` 中，针对放大视图和缩小视图将 **ListView** 更改为 **GridView**。
+-   创建 `AuthorGroupHeaderTemplate`、`ZoomedOutAuthorTemplate` 和 `BookTemplate` 这三个资源的副本，并将单词 `Wide` 附加到这些副本的相关键。 此外，还需更新 `wideSeZo`，以便它可引用这些新资源的相关键。
+-   将 `AuthorGroupHeaderTemplateWide` 中的内容替换为 `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`。
+-   将 `ZoomedOutAuthorTemplateWide` 中的内容替换为：
 
 ```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250" >
@@ -156,7 +156,7 @@ Before tackling the adaptive Visual State Manager piece, we first need to design
     </Grid>
 ```
 
--   Replace the contents of `BookTemplateWide` with:
+-   将 `BookTemplateWide` 中的内容替换为：
 
 ```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250">
@@ -174,7 +174,7 @@ Before tackling the adaptive Visual State Manager piece, we first need to design
     </Grid>
 ```
 
--   For the wide state, the groups in the zoomed-in view will need more vertical breathing space around them. Creating and referencing an items panel template will give us the results we want. Here's how the markup looks.
+-   对于宽状态，在放大视图中的组的周围将需要多留出一些垂直空间。 创建和引用项目面板模板将为我们提供想要的结果。 下面是标记的外观。
 
 ```xml
    <ItemsPanelTemplate x:Key="ZoomedInItemsPanelTemplate">
@@ -190,7 +190,7 @@ Before tackling the adaptive Visual State Manager piece, we first need to design
             ...
 ```
 
--   Finally, add the appropriate Visual State Manager markup as the first child of `LayoutRoot`.
+-   最后，添加相应的视觉状态管理器标记作为 `LayoutRoot` 的第一个子项。
 
 ```xml
     <Grid x:Name="LayoutRoot" ... >
@@ -211,13 +211,13 @@ Before tackling the adaptive Visual State Manager piece, we first need to design
     ...
 ```
 
-## <a name="final-styling"></a>Final styling
+## <a name="final-styling"></a>最终样式设置
 
-All that remains are some final styling tweaks.
+所有这些仍是某些最终样式设置的调整。
 
--   In `AuthorGroupHeaderTemplate`, set `Foreground="White"` on the **TextBlock** so that it looks correct when running on the mobile device family.
--   Add `FontWeight="SemiBold"` to the **TextBlock** in both `AuthorGroupHeaderTemplate` and `ZoomedOutAuthorTemplate`.
--   In `narrowSeZo`, the group headers and the authors in the zoomed-out view are left-aligned instead of stretched, so let's work on that. We'll create a [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841) for the zoomed-in view with [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) set to `Stretch`. And we'll create an [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817) for the zoomed-out view containing that same [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817). Here's what that looks like.
+-   在 `AuthorGroupHeaderTemplate` 的 **TextBlock** 上设置 `Foreground="White"`，以便它在移动设备系列上运行时显示正确的外观。
+-   在 `AuthorGroupHeaderTemplate` 和 `ZoomedOutAuthorTemplate` 中，将 `FontWeight="SemiBold"` 添加到 **TextBlock**。
+-   在 `narrowSeZo` 中，缩小视图中的组标题和作者是左对齐而不是拉伸的，那么让我们开始吧。 我们通过将 [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) 设置为 `Stretch`，为放大视图创建 [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841)。 并且将为包含同一 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 的缩小视图创建 [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817)。 其外观如下所示。
 
 ```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
@@ -246,37 +246,37 @@ All that remains are some final styling tweaks.
                 ...
 ```
 
-That last sequence of styling operations leaves the app looking like this.
+在样式设置操作的最后一步中，应用的外观如下所示。
 
-![the ported windows 10 app running on a desktop device, zoomed-in view, two sizes of window](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
+![在桌面设备上运行的已移植的 Windows 10 应用，放大视图，两个窗口大小](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-The ported Windows 10 app running on a Desktop device, zoomed-in view, two sizes of window  
-![the ported windows 10 app running on a desktop device, zoomed-out view, two sizes of window](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
+在桌面设备上运行的已移植的 Windows 10 应用，放大视图，两个窗口大小 
+![在桌面设备上运行的已移植的 Windows 10 应用，缩小视图，两个窗口大小](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
-The ported Windows 10 app running on a Desktop device, zoomed-out view, two sizes of window
+在桌面设备上运行的已移植的 Windows 10 应用，缩小视图，两个窗口大小
 
-![the ported windows 10 app running on a mobile device, zoomed-in view](images/w8x-to-uwp-case-studies/c02-09-mob10-zi-ported.png)
+![在移动设备上运行的已移植的 Windows 10 应用，放大视图](images/w8x-to-uwp-case-studies/c02-09-mob10-zi-ported.png)
 
-The ported Windows 10 app running on a Mobile device, zoomed-in view
+在移动设备上运行的已移植的 Windows 10 应用，放大视图
 
-![the ported windows 10 app running on a mobile device, zoomed-out view](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
+![在移动设备上运行的已移植的 Windows 10 应用，缩小视图](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-The ported Windows 10 app running on a Mobile device, zoomed-out view
+在移动设备上运行的已移植的 Windows 10 应用，缩小视图
 
-## <a name="making-the-view-model-more-flexible"></a>Making the view model more flexible
+## <a name="making-the-view-model-more-flexible"></a>使视图模型更灵活
 
-This section contains an example of facilities that open up to us by virtue of having moved our app to use the UWP. Here, we explain optional steps that you can follow to make your view model more flexible when accessed via a **CollectionViewSource**. The view model (the source file is in ViewModel\\BookstoreViewModel.cs) that we ported from the Windows Phone Silverlight app Bookstore2WPSL8 contains a class named Author, which derives from **List&lt;T&gt;**, where **T** is BookSku. That means that the Author class *is a* group of BookSku.
+本部分包含多种设施的示例，这些设施是由于移动我们的应用以使用 UWP 而对我们开放的。 下面介绍一些可选步骤，你可以利用它们在通过 **CollectionViewSource** 访问视图模型时使之更灵活。 我们从 Windows Phone Silverlight 应用 Bookstore2WPSL8 移植的视图模型（源文件位于 ViewModel\\BookstoreViewModel.cs 中）包含一个派生自 **List&lt;T&gt;** 的名为 Author 的类，其中 **T** 是 BookSku。 这意味着，Author 类*是一*组 BookSku。
 
-When we bind **CollectionViewSource.Source** to Authors, the only thing we're communicating is that each Author in Authors is a group of *something*. We leave it to the **CollectionViewSource** to determine that Author is, in this case, a group of BookSku. That works: but it's not flexible. What if we want Author to be *both* a group of BookSku *and* a group of the addresses where the author has lived? Author can't *be* both of those groups. But, Author can *have* any number of groups. And that's the solution: use the *has-a-group* pattern instead of, or in addition to, the *is-a-group* pattern that we're using currently. Here's how:
+当我们将 **CollectionViewSource.Source** 绑定到 Authors 时，我们要传达的唯一信息是 Authors 中的每个 Author 都是一个包含*某些内容*的组。 我们将其保留为 **CollectionViewSource**，以确定在此情况下 Author 确实是一组 BookSku。 该方法可用：但是不灵活。 如果我们希望 Author *既属于*一组 BookSku *又属于*一组作者的住址呢？ Author 不可能同时*属于*这两个组。 但 Author 可以*包含*任意数量的组。 而这就是解决方案：使用*包含组*模式而不是我们当前在使用的*属于组*模式。 操作方法如下：
 
--   Change Author so that it no longer derives from **List&lt;T&gt;**.
--   Add this field to Author: `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`.
--   Add this property to Author: `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`.
--   And of course we can repeat the above two steps to add as many groups to Author as we need.
--   Change the implementation of the AddBookSku method to `this.BookSkus.Add(bookSku);`.
--   Now that Author *has* at least one group, we need to communicate to the **CollectionViewSource** which of those groups it should use. To do that, add this property to the **CollectionViewSource**: `ItemsPath="BookSkus"`
+-   更改 Author，这样它就不再从 **List&lt;T&gt;** 派生。
+-   将此字段添加到 Author：`private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`。
+-   将此属性添加到 Author：`public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`。
+-   当然，我们可以重复上述两个步骤，向 Author 添加所需数量的组。
+-   将 AddBookSku 方法的实现更改为 `this.BookSkus.Add(bookSku);`。
+-   既然 Author *包含*至少一个组，我们需要向 **CollectionViewSource** 表明它应该使用其中的哪个组。 为此，请将此属性添加到 **CollectionViewSource**： `ItemsPath="BookSkus"`
 
-Those changes leave this app functionally unchanged, but you now know how you could extend Author, and the **CollectionViewSource**, should you need to. Let's make one last change to Author so that, if we use it *without* specifying **CollectionViewSource.ItemsPath**, a default group of our choosing will be used:
+这些更改将使此应用在功能上保持不变，但现在你已知道可以如何扩展 Author 和 **CollectionViewSource**（如果需要）。 让我们对 Author 做出最后一项更改，以便如果我们在*没有*指定 **CollectionViewSource.ItemsPath** 的情况下使用它，我们将使用一个包含所选项的默认组：
 
 ```csharp
     public class Author : IEnumerable<BookSku>
@@ -294,11 +294,11 @@ Those changes leave this app functionally unchanged, but you now know how you co
     }
 ```
 
-And now we can choose to remove `ItemsPath="BookSkus"` if we like and the app will still behave the same way.
+现在，如果我们乐意，我们可以选择删除 `ItemsPath="BookSkus"`，而该应用仍将正常运行。
 
-## <a name="conclusion"></a>Conclusion
+## <a name="conclusion"></a>总结
 
-This case study involved a more ambitious user interface than the previous one. All of the facilities and concepts of the Windows Phone Silverlight **LongListSelector**—and more—were found to be available to a UWP app in the form of **SemanticZoom**, **ListView**, **GridView**, and **CollectionViewSource**. We showed how to re-use, or copy-and-edit, both imperative code and markup in a UWP app to achieve functionality, UI, and interactions tailored to suit the narrowest and widest Windows device form factors and all sizes in-between.
+此案例研究涉及了一个比上一个用户界面更为大胆的用户界面。 经发现，Windows Phone Silverlight **LongListSelector** 的所有设施和概念以及其他更多内容都可以采用 **SemanticZoom**、**ListView**、**GridView** 和 **CollectionViewSource** 的形式供 UWP 应用使用。 我们展示了如何在 UWP 应用中重复使用、或复制并编辑强制性代码和标记，以实现为适合最窄和最宽以及介于这两者之间的所有大小的 Windows 设备外形规格而定制的功能、UI 和交互。
 
 
 

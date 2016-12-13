@@ -1,138 +1,138 @@
 ---
 author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: This topic presents a case study of porting a very simple Windows Phone Silverlight app to a Windows 10 Universal Windows Platform (UWP) app.
-title: Windows Phone Silverlight to UWP case study, Bookstore1
+description: "本主题介绍将一个非常简单的将 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。"
+title: "从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1"
 translationtype: Human Translation
 ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
 ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
 
 ---
 
-# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight to UWP case study: Bookstore1
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>从 Windows Phone Silverlight 移植到 UWP 案例研究：Bookstore1
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This topic presents a case study of porting a very simple Windows Phone Silverlight app to a Windows 10 Universal Windows Platform (UWP) app. With Windows 10, you can create a single app package that your customers can install onto a wide range of devices, and that's what we'll do in this case study. See [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
+本主题介绍将一个非常简单的将 Windows Phone Silverlight 应用移植到 Windows 10 通用 Windows 平台 (UWP) 应用的案例研究。 在 Windows 10 中，你可以创建可供客户安装到种类广泛的设备上的单个应用包，而这正是我们要在此案例研究中实现的目标。 请参阅 [UWP 应用指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-The app we'll port consists of a **ListBox** bound to a view model. The view model has a list of books that shows title, author, and book cover. The book cover images have **Build Action** set to **Content** and **Copy to Output Directory** set to **Do not copy**.
+我们将移植的应用包含绑定到视图模型的 **ListBox**。 该视图模型具有显示标题、作者和书籍封面的书籍列表。 书籍封面已将“生成操作”设置为“内容”，并将“复制到输出目录”设置为“不要复制”。
 
-The previous topics in this section describe the differences between the platforms, and they give details and guidance on the porting process for various aspects of an app from XAML markup, through binding to a view model, down to accessing data. A case study aims to complement that guidance by showing it in action in a real example. The case studies assume you've read the guidance, which they do not repeat.
+本部分中之前的主题介绍了平台之间的差异，并且提供有关将应用的各个方面从 XAML 标记移植到访问数据（通过绑定到视图模型）这一过程的详细信息和指南。 案例研究旨在通过在真实示例中实际显示指南来补充该指南。 案例研究假设你已阅读该指南，因此不会重复该指南。
 
-**Note**   When opening Bookstore1Universal\_10 in Visual Studio, if you see the message "Visual Studio update required", then follow the steps for selecting a Target Platform Versioning in [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md).
+**注意** 在 Visual Studio 中打开 Bookstore1Universal\_10 时，如果你看到消息“需要 Visual Studio 更新”，则按照 [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md) 中用于设置目标平台版本的步骤进行操作。
 
-## <a name="downloads"></a>Downloads
+## <a name="downloads"></a>下载
 
-[Download the Bookstore1WPSL8 Windows Phone Silverlight app](http://go.microsoft.com/fwlink/?linkid=517053).
+[下载 Bookstore1WPSL8 Windows Phone Silverlight 应用](http://go.microsoft.com/fwlink/?linkid=517053)。
 
-[Download the Bookstore1Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532950).
+[下载 Bookstore1Universal\_10 Windows 10 应用](http://go.microsoft.com/fwlink/?linkid=532950)。
 
-## <a name="the-windows-phone-silverlight-app"></a>The Windows Phone Silverlight app
+## <a name="the-windows-phone-silverlight-app"></a>Windows Phone Silverlight 应用
 
-Here’s what Bookstore1WPSL8—the app that we're going to port—looks like. It's just a vertically-scrolling list box of books beneath the heading of the app's name and page title.
+Bookstore1WPSL8（我们将移植的应用）的外观如下。 它只是一个垂直滚动的书籍列表框，位于应用名称和页面标题下。
 
-![how bookstore1wpsl8 looks](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
+![Bookstore1WPSL8 的外观](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
 
-## <a name="porting-to-a-windows-10-project"></a>Porting to a Windows 10 project
+## <a name="porting-to-a-windows-10-project"></a>移植到 Windows 10 项目
 
-It's a very quick task to create a new project in Visual Studio, copy files over to it from Bookstore1WPSL8, and include the copied files in the new project. Start by creating a new Blank Application (Windows Universal) project. Name it Bookstore1Universal\_10. These are the files to copy over from Bookstore1WPSL8 to Bookstore1Universal\_10.
+可快速完成以下任务：在 Visual Studio 中创建新项目、将文件从 Bookstore1WPSL8 复制到其中并将已复制的文件包含在新项目中。 首先创建一个新的空白应用程序（Windows 通用）项目。 将它命名为 Bookstore1Universal\_10。 这些是要从 Bookstore1WPSL8 复制到 Bookstore1Universal\_10 的文件。
 
--   Copy the folder containing the book cover image PNG files (the folder is \\Assets\\CoverImages). After copying the folder, in **Solution Explorer**, make sure **Show All Files** is toggled on. Right-click the folder that you copied and click **Include In Project**. That command is what we mean by "including" files or folders in a project. Each time you copy a file or folder, click **Refresh** in **Solution Explorer** and then include the file or folder in the project. There's no need to do this for files that you're replacing in the destination.
--   Copy the folder containing the view model source file (the folder is \\ViewModel).
--   Copy MainPage.xaml and replace the file in the destination.
+-   复制包含书籍封面图像 PNG 文件的文件夹（该文件夹是 \\Assets\\CoverImages）。 复制该文件夹后，在**“解决方案资源管理器”**中，请确保将**“显示所有文件”**切换为打开。 右键单击你复制的文件夹，然后单击“包括在项目中”。 该命令的意思是将文件或文件夹“包括”在某个项目中。 每次你复制文件或文件夹时，请在“解决方案资源管理器”中单击“刷新”，然后将文件或文件夹包括在项目中。 无需为你将在目标位置替换的文件执行此操作。
+-   复制包含视图模型源文件的文件夹（该文件夹是 \\ViewModel）。
+-   复制 MainPage.xaml 并替换目标位置中的文件。
 
-We can keep the App.xaml, and App.xaml.cs that Visual Studio generated for us in the Windows 10 project.
+我们可以将 Visual Studio 生成的 App.xaml 和 App.xaml.cs 保存在 Windows 10 项目中。
 
-Edit the source code and markup files that you just copied and change any references to the Bookstore1WPSL8 namespace to Bookstore1Universal\_10. A quick way to do that is to use the **Replace In Files** feature. In the imperative code in the view model source file, these porting changes are needed:
+编辑你刚刚复制的源代码和标记文件，并将对 Bookstore1WPSL8 命名空间的任何引用更改为 Bookstore1Universal\_10。 执行此操作的快速方法是使用“在文件中替换”功能。 在视图模型源文件的强制性代码中，需要进行以下移植更改：
 
--   Change `System.ComponentModel.DesignerProperties` to `DesignMode` and then use the **Resolve** command on it. Delete the `IsInDesignTool` property and use IntelliSense to add the correct property name: `DesignModeEnabled`.
--   Use the **Resolve** command on `ImageSource`.
--   Use the **Resolve** command on `BitmapImage`.
--   Delete using `System.Windows.Media;` and `using System.Windows.Media.Imaging;`.
--   Change the value returned by the **Bookstore1Universal\_10.BookstoreViewModel.AppName** property from "BOOKSTORE1WPSL8" to "BOOKSTORE1UNIVERSAL".
+-   将 `System.ComponentModel.DesignerProperties` 更改为 `DesignMode`，然后对其使用 **Resolve** 命令。 删除 `IsInDesignTool` 属性并使用 IntelliSense 添加正确的属性名称：`DesignModeEnabled`。
+-   对 `ImageSource` 使用 **Resolve** 命令。
+-   对 `BitmapImage` 使用 **Resolve** 命令。
+-   使用 `System.Windows.Media;` 和 `using System.Windows.Media.Imaging;` 删除。
+-   将 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 属性返回的值从“BOOKSTORE1WPSL8”更改为“BOOKSTORE1UNIVERSAL”。
 
-In MainPage.xaml, these porting changes are needed:
+在 MainPage.xaml 中，需要进行以下移植更改：
 
--   Change `phone:PhoneApplicationPage` to `Page` (don't forget the occurrences in property element syntax).
--   Delete the `phone` and `shell` namespace prefix declarations.
--   Change "clr-namespace" to "using" in the remaining namespace prefix declaration.
+-   将 `phone:PhoneApplicationPage` 更改为 `Page`（不要忘记出现在属性元素语法中的相应项）。
+-   删除 `phone` 和 `shell` 命名空间前缀声明。
+-   在其余的命名空间前缀声明中将“clr-namespace”更改为“using”。
 
-We can choose to correct markup compilation errors very cheaply if we want to see results soonest, even if that means temporarily removing markup. But, let's keep a record of the debt we accrue by doing so. Here it is in this case.
+如果我们要尽快看到结果，可以选择经济地更正标记编译错误，即使这意味着临时删除标记。 但是，让我们保留通过执行此操作获取的债务记录。 它在此情况下如下所示。
 
-1.  In the root **Page** element in **MainPage.xaml**, delete `SupportedOrientations="Portrait"`.
-2.  In the root **Page** element in **MainPage.xaml**, delete `Orientation="Portrait"`.
-3.  In the root **Page** element in **MainPage.xaml**, delete `shell:SystemTray.IsVisible="True"`.
-4.  In the `BookTemplate` data template, delete the references to the `PhoneTextExtraLargeStyle` and `PhoneTextSubtleStyle` **TextBlock** styles.
-5.  In the `TitlePanel` **StackPanel**, delete the references to the `PhoneTextNormalStyle` and `PhoneTextTitle1Style` **TextBlock** styles.
+1.  在 **MainPage.xaml** 的根 **Page** 元素中，删除 `SupportedOrientations="Portrait"`。
+2.  在 **MainPage.xaml** 的根 **Page** 元素中，删除 `Orientation="Portrait"`。
+3.  在 **MainPage.xaml** 的根 **Page** 元素中，删除 `shell:SystemTray.IsVisible="True"`。
+4.  在 `BookTemplate` 数据模板中，删除对 `PhoneTextExtraLargeStyle` 和 `PhoneTextSubtleStyle` **TextBlock** 样式的引用。
+5.  在 `TitlePanel` **StackPanel** 中，删除对 `PhoneTextNormalStyle` 和 `PhoneTextTitle1Style` **TextBlock** 样式的引用。
 
-Let's work on the UI for the mobile device family first, and we can consider other form factors after that. You can build and run the app now. Here's how it looks on the mobile emulator.
+让我们先使用适用于移动设备系列的 UI，在这之后我们可以考虑其他外形规格。 现在，你可以生成并运行该应用。 下面是它在移动仿真器上所呈现的外观。
 
-![the uwp app on mobile with initial source code changes](images/wpsl-to-uwp-case-studies/c01-02-mob10-initial-source-code-changes.png)
+![移动设备上初始源代码发生更改的 UWP 应用](images/wpsl-to-uwp-case-studies/c01-02-mob10-initial-source-code-changes.png)
 
-The view and the view model are working together correctly, and the **ListBox** is functioning. We mostly just need to fix the styling and get the images to show up.
+视图和视图模型正确地协同工作，并且 **ListBox** 处于运行状态。 我们通常只需修复样式设置并使图像显示。
 
-## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>Paying off the debt items, and some initial styling
+## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>支付债务项和一些初始样式设置
 
-By default, all orientations are supported. The Windows Phone Silverlight app explicitly constrains itself to portrait-only, though, so debt items \#1 and \#2 are paid off by going into the app package manifest in the new project and checking **Portrait** under **Supported orientations**.
+默认情况下，支持所有方向。 但是，Windows Phone Silverlight 应用将自身明确约束为仅限纵向，因此债务项 \#1 和 \#2 通过转到新项目中的应用包清单中并选中“支持的方向”下的“纵向”来支付。
 
-For this app, item \#3 is not a debt since the status bar (formerly called the system tray) is shown by default. For items \#4 and \#5, we need to find four Universal Windows Platform (UWP) **TextBlock** styles that correspond to the Windows Phone Silverlight styles that we were using. You can run the Windows Phone Silverlight app in the emulator and compare it side-by-side with the illustration in the [Text](wpsl-to-uwp-porting-xaml-and-ui.md) section. From doing that, and from looking at the properties of the Windows Phone Silverlight system styles, we can make this table.
+对于此应用，项 \#3 不是债务，因为默认情况下会显示状态栏（以前称为系统托盘）。 对于项 \#4 和 \#5，我们需要找到与已在使用的 Windows Phone Silverlight 样式相对应的四个通用 Windows 平台 (UWP) **TextBlock** 样式。 可以在仿真器中运行 Windows Phone Silverlight 应用并将其与[文本](wpsl-to-uwp-porting-xaml-and-ui.md)部分中的图示并排比较。 通过执行该操作以及查看 Windows Phone Silverlight 系统样式的属性，我们可以生成此表。
 
-| Windows Phone Silverlight style key | UWP style key          |
+| Windows Phone Silverlight 样式键 | UWP 样式键          |
 |-------------------------------------|------------------------|
 | PhoneTextExtraLargeStyle            | TitleTextBlockStyle    |
 | PhoneTextSubtleStyle                | SubtitleTextBlockStyle |
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-To set those styles, you can just type them into the markup editor or you can use the Visual Studio XAML Tools and set them without typing a thing. To do that, you right-click a **TextBlock** and click **Edit Style** &gt; **Apply Resource**. To do that with the **TextBlock**s in the item template, right click the **ListBox** and click **Edit Additional Templates** &gt; **Edit Generated Items (ItemTemplate)**.
+若要设置这些样式，你可以将它们键入标记编辑器，或者可以使用 Visual Studio XAML 工具设置它们，无需键入任何内容。 若要执行该操作，请右键单击“TextBlock”，然后单击“编辑样式”&gt;&gt;“应用资源”。 若要对项模板中的 **TextBlock** 执行该操作，请右键单击“ListBox”，然后依次单击“编辑其他模板”&gt;“编辑生成的项 (ItemTemplate)”。
 
-There is an 80% opaque white background behind the items, because the default style of the **ListBox** control sets its background to the `ListBoxBackgroundThemeBrush` system resource. Set `Background="Transparent"` on the **ListBox** to clear that background. To left-align the **TextBlock**s in the item template, edit it again the same way as described above and set a **Margin** of `"9.6,0"` on both **TextBlock**s.
+项目后有一个 80% 不透明的白色背景，因为 **ListBox** 控件的默认样式将其背景设置为 `ListBoxBackgroundThemeBrush` 系统资源。 在 **ListBox** 上设置 `Background="Transparent"` 以清除该背景。 若要使项模板中的 **TextBlock** 向左对齐，请采用上述的相同方式再次编辑它，并在两个 **TextBlock** 上都设置 `"9.6,0"` 的 **Margin**。
 
-After that is done, because of [changes related to view pixels](wpsl-to-uwp-porting-xaml-and-ui.md), we need to go through and multiply any fixed size dimension that we haven’t yet changed (margins, width, height, etc) by 0.8. So, for example, the images should change from 70x70px to 56x56px.
+完成该操作后，由于[更改与视图像素有关](wpsl-to-uwp-porting-xaml-and-ui.md)，因此我们需要检查尚未更改的大小维度（边距、宽度、高度等）并将其乘以 0.8。 例如，因此图像应该从 70x70px 更改为 56x56px。
 
-But, let’s get those images to render before we show the results of our styling.
+但是，让我们在显示样式设置的结果前获取要呈现的图像。
 
-## <a name="binding-an-image-to-a-view-model"></a>Binding an Image to a view model
+## <a name="binding-an-image-to-a-view-model"></a>将图像绑定到视图模型
 
-In Bookstore1WPSL8, we did this:
+在 Bookstore1WPSL8 中，我们执行了以下操作：
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-In Bookstore1Universal, we use the ms-appx [URI scheme](https://msdn.microsoft.com/library/windows/apps/jj655406). So that we can keep the rest of our code the same, we can use a different overload of the **System.Uri** constructor to put the ms-appx URI scheme in a base URI and append the rest of the path onto that. Like this:
+在 Bookstore1Universal 中，我们使用 ms-appx [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406)。 因此，我们可以使其余的代码保持原样，可以使用 **System.Uri** 构造函数的不同重载将 ms-appx URI 方案放在基 URI 中，并在其中追加路径的其余部分。 如下所示：
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
     return new BitmapImage(new Uri(new Uri("ms-appx://"), this.CoverImagePath));
 ```
 
-## <a name="universal-styling"></a>Universal styling
+## <a name="universal-styling"></a>通用样式设置
 
-Now, we just need to make some final styling tweaks and confirm that the app looks good on desktop (and other) form factors as well as mobile. The steps are below. And you can use the links at the top of this topic to download the projects and see the results of all the changes between here and the end of the case study.
+现在，我们只需要进行一些最终样式设置的调整，并确认应用在桌面设备（和其他）外形规格以及移动设备上外观良好。 具体步骤如下。 并且你可以使用本主题顶部的链接下载这些项目，并查看此处和案例研究末尾之间的所有更改结果。
 
--   To tighten up the spacing between items, find the `BookTemplate` data template in MainPage.xaml and delete the `Margin` attribute from the root **Grid**.
--   If you want to give the page title a little more breathing room, you can reset the bottom margin of `-5.6` to `0` on the page title **TextBlock**.
--   Now, we need to set `LayoutRoot`'s Background to the correct default value so that the app looks appropriate when running on all devices no matter what the theme is. Change it from `"Transparent"` to `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`.
+-   若要缩短项目之间的间距，请在 MainPage.xaml 中查找 `BookTemplate` 数据模板并从根 **Grid** 中删除 `Margin` 属性。
+-   如果你想要为页面标题多提供一些空间，你可以在页面标题 **TextBlock** 上将 `-5.6` 的底部边距重置为 `0`。
+-   现在，我们需要将 `LayoutRoot` 的 Background 设置为正确的默认值，以便无论使用何种主题，应用在所有设备上运行时都具有合适的外观。 将其从 `"Transparent"` 更改为 `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`。
 
-With a more sophisticated app, this would be the point at which we'd use the guidance in [Porting for form factor and user experience](wpsl-to-uwp-form-factors-and-ux.md) and really make optimal use of the form factor of each of the many devices the app can now run on. But, for this simple app, we can stop here and see how the app looks after that last sequence of styling operations. It actually looks the same on mobile and desktop devices, although it's not making best use of space on wide form factors (but we'll investigate how to do that in a later case study).
+对于较复杂的应用，这将是我们使用[针对外形规格和用户体验进行移植](wpsl-to-uwp-form-factors-and-ux.md)中的指南的原因，并且真正充分利用现在可运行此类应用的每一种设备外形规格。 但对于此简单应用，我们可以在此处停止操作，并查看该应用在样式设置操作的最后一步中的外观。 实际上，该应用在移动设备和桌面设备上的外观均相同，尽管它并未充分利用较宽的外形规格上的空间（不过，我们将在以后的案例研究中调查如何实现该目的）。
 
-See [Theme changes](wpsl-to-uwp-porting-xaml-and-ui.md) to see how to control the theme of your app.
+请参阅[主题更改](wpsl-to-uwp-porting-xaml-and-ui.md)以查看如何控制你的应用的主题。
 
-![the ported windows 10 app](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
+![已移植的 Windows 10 应用](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
-The ported Windows 10 app running on a Mobile device
+在移动设备上运行的已移植的 Windows 10 应用
 
-## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>An optional adjustment to the list box for Mobile devices
+## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>对移动设备的列表框的可选调整
 
-When the app is running on a Mobile device, the background of a list box is light by default in both themes. That may be the style that you prefer and, if so, then there's nothing more to do. But, controls are designed so that you can customize their look while leaving their behavior unaffected. So, if you want the list box to be dark in the dark theme—the way the original app looked—then follow [these instructions](w8x-to-uwp-case-study-bookstore1.md) under "An optional adjustment".
+当应用在移动设备上运行时，列表框的背景在两种主题下都默认为浅色。 这可能是你喜欢的样式，如果是，则无需执行其他任何操作。 但控件的设计目的是你可以自定义它们的外观，同时使其行为不受影响。 因此，如果你希望列表框在深色主题下显示为深色（这是原始应用的外观），请按照“可选调整”下的[这些说明](w8x-to-uwp-case-study-bookstore1.md)操作。
 
-## <a name="conclusion"></a>Conclusion
+## <a name="conclusion"></a>总结
 
-This case study showed the process of porting a very simple app—arguably an unrealistically simple one. For instance, list controls can be used for selection or for establishing a context for navigation; the app navigates to a page with more details about the item that was tapped. This particular app does nothing with the user's selection, and it has no navigation. Even so, the case study served to break the ice, to introduce the porting process, and to demonstrate important techniques that you can use in real UWP apps.
+此案例研究介绍了移植非常简单的应用（可以认为是一个过分简单的应用）的过程。 例如，列表控件可用于选择或者用于建立导航的上下文；应用导航到具有有关所点击的项的更多详细信息的页面。 根据用户的选择，此特定应用不执行任何操作，并且它没有导航。 即便如此，案例研究仍可用于打破僵局、介绍移植过程以及演示可在真实的 UWP 应用中使用的重要技术。
 
-The next case study is [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md), in which we look at accessing and displaying grouped data.
+下一个案例研究是 [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md)，我们将从中了解访问和显示分组数据。
 
 
 

@@ -1,41 +1,41 @@
 ---
 author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-description: This section provides information about creating Universal Windows Platform (UWP) apps that capture, play back, or edit photos, videos, or audio.
-title: Audio, video, and camera
+description: "本部分将提供有关创建可捕获、播放或编辑照片、视频或音频的通用 Windows 平台 (UWP) 应用的信息。"
+title: "音频、视频和相机"
 translationtype: Human Translation
 ms.sourcegitcommit: 77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0
 ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 ---
 
-# <a name="audio-video-and-camera"></a>Audio, video, and camera
+# <a name="audio-video-and-camera"></a>音频、视频和相机
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows&nbsp;10 上的 UWP 应用更新。 有关 Windows&nbsp;8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section provides information about creating Universal Windows Platform (UWP) apps that capture, play back, or edit photos, videos, or audio.
+本部分将提供有关创建可捕获、播放或编辑照片、视频或音频的通用 Windows 平台 (UWP) 应用的信息。
  
-| Topic                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+| 主题                                                                                             | 说明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Camera](camera.md) | Lists the camera features that are available for UWP apps, and links to the how-to articles that show how to use them. |
-| [Media playback](media-playback.md) | Provides information about creating UWP apps that use audio and video playback. |
-| [Detect faces in images or videos](detect-and-track-faces-in-an-image.md) | Shows you how to use the [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150) for tracking faces over time in a sequence of video frames. |
-| [Media compositions and editing](media-compositions-and-editing.md) | Shows you how to use the APIs in the [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) namespace to quickly develop apps that enable the users to create media compositions from audio and video source files. |
-| [Custom video effects](custom-video-effects.md) | Describes how to create a Windows Runtime component that implements the **IBasicVideoEffect** interface to allow you to create custom effects for video streams. |
-| [Custom audio effects](custom-audio-effects.md) | Describes how to create a Windows Runtime component that implements the **IBasicAudioEffect** interface to allow you to create custom effects for audio streams. |
-| [Create, edit, and save bitmap images](imaging.md) | Explains how to load and save image files by using the [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) object to represent bitmap images.  |
-| [Audio device information properties](audio-device-information-properties.md)  | Lists the device information properties related to audio devices. |
-| [Transcode media files](transcode-media-files.md) | Shows you how to use the [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) APIs to transcode video files from one format to another. |
-| [Process media files in the background](process-media-files-in-the-background.md) | Shows you how to use the [MediaProcessingTrigger](https://msdn.microsoft.com/library/windows/apps/dn806005) and a background task to process media files in the background. |
-| [Audio graphs](audio-graphs.md) | Shows you how to use the APIs in the [Windows.Media.Audio](https://msdn.microsoft.com/library/windows/apps/dn914341) namespace to create audio graphs for audio routing, mixing, and processing scenarios. |
-| [MIDI](midi.md) | Shows you how to enumerate MIDI (Musical Instrument Digital Interface) devices and send and receive MIDI messages from a UWP app. |
-| [Import media from a device](import-media-from-a-device.md) | Describes how to import media from a device, including searching for available media sources, importing files such as videos, photos, and sidecar files, and deleting the imported files from the source device. |
-| [Camera-independent Flashlight](camera-independent-flashlight.md) | Shows you how to access and use a device's lamp, if one is present. Lamp functionality is managed separately from the device's camera and camera flash functionality. |
-| [Supported codecs](supported-codecs.md) | Lists the audio, video, and image codec and format support for UWP apps. |
+| [Camera](camera.md) | 列出了 UWP 应用可用的相机功能以及指向显示如何使用这些功能的操作方法文章的链接。 |
+| [媒体播放](media-playback.md) | 提供有关创建使用音频和视频播放的 UWP 应用的信息。 |
+| [检测图像或视频中的人脸](detect-and-track-faces-in-an-image.md) | 介绍如何使用 [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150) 在视频帧序列中随着时间的推移跟踪人脸。 |
+| [媒体合成和编辑](media-compositions-and-editing.md) | 介绍如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空间中的 API 来快速开发应用，从而使用户从音频和视频源文件创建媒体合成。 |
+| [自定义视频效果](custom-video-effects.md) | 介绍如何创建可实现 **IBasicVideoEffect** 接口的 Windows 运行时组件，以允许你为视频流创建自定义效果。 |
+| [自定义音频效果](custom-audio-effects.md) | 介绍如何创建可实现 **IBasicAudioEffect** 接口的 Windows 运行时组件，以允许为音频流创建自定义效果。 |
+| [创建、编辑和保存位图图像](imaging.md) | 介绍如何通过使用 [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象表示位图图像来加载和保存图像文件。  |
+| [音频设备信息属性](audio-device-information-properties.md)  | 列出了与音频设备相关的设备信息属性。 |
+| [转换媒体文件代码](transcode-media-files.md) | 介绍如何使用 [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) API 将视频文件代码从一种格式转换为另一种格式。 |
+| [在后台处理媒体文件](process-media-files-in-the-background.md) | 介绍如何使用 [MediaProcessingTrigger](https://msdn.microsoft.com/library/windows/apps/dn806005) 和后台任务在后台处理媒体文件。 |
+| [音频图](audio-graphs.md) | 介绍如何使用 [Windows.Media.Audio](https://msdn.microsoft.com/library/windows/apps/dn914341) 命名空间中的 API 为音频路由、混合和处理方案创建音频图。 |
+| [MIDI](midi.md) | 介绍如何枚举 MIDI（乐器数字接口）设备以及从 UWP 应用发送和接收 MIDI 消息。 |
+| [从设备导入媒体](import-media-from-a-device.md) | 介绍如何从设备导入媒体，包括搜索可用媒体源、导入文件（如视频、照片和 sidecar 文件）以及从源设备中删除导入的文件。 |
+| [独立于相机的手电筒](camera-independent-flashlight.md) | 介绍如何访问和使用设备灯（如果存在）。 灯功能的管理独立于设备的相机和相机闪光灯功能。 |
+| [支持的编解码器](supported-codecs.md) | 列出 UWP 应用的音频、视频和图像编解码器以及格式支持。 |
 
 
-## <a name="see-also"></a>See also
-- [Develop UWP apps](https://developer.microsoft.com/en-us/windows/develop)
+## <a name="see-also"></a>另请参阅
+- [开发 UWP 应用](https://developer.microsoft.com/en-us/windows/develop)
 
  
 

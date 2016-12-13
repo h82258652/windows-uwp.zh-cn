@@ -1,54 +1,54 @@
 ---
 author: PatrickFarley
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
-title: Utilize battery-saving features
-description: Create UWP apps that work with the system to use background tasks in a battery-efficient way.
+title: "利用电池节省功能"
+description: "创建 UWP 应用，这些应用与系统一起以电池高效方式使用后台任务。"
 translationtype: Human Translation
 ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
 ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
 
 ---
 
-# <a name="optimize-background-activity"></a>Optimize background activity
+# <a name="optimize-background-activity"></a>优化后台活动
 
-Universal Windows apps should perform consistently well across all device families. On battery-powered devices, power consumption is a critical factor in the user's overall experience with your app. All-day battery life is a desirable feature to every user, but it requires efficiency from all of the software installed on the device, including your own. 
+通用 Windows 应用应跨所有设备系列一致地执行。 在电池供电的设备上，电源消耗在应用的用户整体体验中是一个关键因素。 全天的电池使用时间对每个用户都是想要的功能，但它要求设备上安装的所有软件（包括你自己的软件）都可节电。 
 
-Background task behavior is arguably the greatest factor in the total energy cost of an app. A background task is any program activity that has been registered with the system to run without the app being open. See [Create and register an out-of-process background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task) for more.
+后台任务行为可以说是应用的总能耗成本的最大因素。 后台任务是已在系统上注册为无需打开应用即可运行的任何程序活动。 请参阅[创建和注册进程外后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)以获取详细信息。
 
-## <a name="background-activity-allowance"></a>Background activity allowance
+## <a name="background-activity-allowance"></a>后台活动余量
 
-In Windows 10, version 1607, users can view their "Battery usage by app" in the **Battery** section of the Settings app. Here, they will see a list of apps and the percentage of battery life (out of the amount of battery life that has been used since the last charge) that each app has consumed. 
+在 Windows 10 版本 1607 中，用户可以在“设置”应用的“电池”部分查看其“按应用查看电池使用情况”。 此处，他们将看到应用列表和每个应用已使用的电池使用时间百分比（占自上次冲电以来已使用的电池使用时间量的百分比）。 
 
-![battery usage by app](images/battery-usage-by-app.png)
+![按应用查看电池使用情况](images/battery-usage-by-app.png)
 
-For UWP apps on this list, users have some control over how the system treats their background activity. Background activity can be specified as "Always allowed," "Managed by Windows" (the default setting), or "Never allowed" (more details on these below). Use the **BackgroundAccessStatus** enum value returned from the [**BackgroundExecutionManager.RequestAccessAsync()**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync.aspx) method to see what background activity allowance your app has.
+对于此列表上的 UWP 应用，用户对系统如何处理其后台活动有一些控制。 后台活动可指定为“始终允许”、“通过 Windows 管理”（默认设置），或“从不允许”（下面是更多详细信息）。 使用从 [**BackgroundExecutionManager.RequestAccessAsync()**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync.aspx) 方法返回的**BackgroundAccessStatus** 枚举值，查看应用具有哪些后台活动余量。
 
-![background task permissions](images/background-task-permissions.png)
+![后台任务权限](images/background-task-permissions.png)
 
-All this is to say that if your app doesn't implement responsible background activity management, the user may deny background permissions to your app altogether, which is not desirable for either party.
+这表示如果你的应用不实现负责的后台活动管理，用户可能完全拒绝应用的后台权限，这对任何一方都是不想看到的。
 
-## <a name="work-with-the-battery-saver-feature"></a>Work with the Battery Saver feature
-Battery Saver is a system-level feature that users can configure in Settings. It cuts off all background activity of all apps when the battery level drops below a user-defined threshold, *except* for the background activity of apps that have been set to "Always allowed."
+## <a name="work-with-the-battery-saver-feature"></a>使用节电模式功能
+节电模式是一种系统级功能，用户可以在“设置”中配置。 当电池电量低于用户定义的阈值时，它将关闭所有应用的所有后台活动，*除了*已设置为“始终允许”的应用的后台活动。
 
-If your app is marked as "Managed by Windows" and calls **BackgroundExecutionManager.RequestAccessAsync()** to register a background activity while Battery Saver is on, it will return a **DeniedSubjectToSystemPolicy** value. Your app should handle this by notifying the user that the given background task(s) will not run until Battery Saver is off and they are re-registered with the system. If a background task has already been registered to run, and Battery Saver is on at the time of its trigger, the task will not run and the user will not be notified. To reduce the chance of this happening, it is a good practice to program your app to re-register its background tasks each time it is opened.
+如果你的应用标记为“通过 Windows 管理”，并在打开节电模式的情况下调用 **BackgroundExecutionManager.RequestAccessAsync()** 来注册后台活动，它将返回 **DeniedSubjectToSystemPolicy** 值。 通过通知用户给定的后台任务将不会运行，直到节电模式关闭并且他们重新注册系统，你的应用应该会处理此情况。 如果后台任务已注册为运行，并且节电模式在触发时处于打开状态，则该任务将不会运行并且不会通知用户。 若要减少发生这种情况的几率，较好的做法是对应用编程，使其在每次打开时重新注册后台任务。
 
-While background activity management is the primary purpose of the Battery Saver feature, your app can make additional adjustments to further conserve energy when Battery Saver is on. Check the status of Battery Saver mode from within your app by referencing the [**PowerManager.PowerSavingMode**](https://msdn.microsoft.com/library/windows/apps/windows.phone.system.power.powermanager.powersavingmode.aspx) property. It is an enum value: either **PowerSavingMode.Off** or **PowerSavingMode.On**. In the case where Battery Saver is on, your app could reduce its use of animations, stop location polling, or delay syncs and backups. 
+尽管后台活动管理是节电模式功能的主要用途，但你的应用可以进行其他调整，以进一步在节电模式打开时节省能源。 通过引用 [**PowerManager.PowerSavingMode**](https://msdn.microsoft.com/library/windows/apps/windows.phone.system.power.powermanager.powersavingmode.aspx) 属性，检查应用中的节电模式状态。 它是一个枚举值：**PowerSavingMode.Off** 或 **PowerSavingMode.On**。 在节电模式打开的情况下，应用可以减少其使用的动画、停止位置轮询，或延迟同步和备份。 
 
-## <a name="further-optimize-background-tasks"></a>Further optimize background tasks
-The following are additional steps you can take when registering your background tasks to make them more battery-aware.
+## <a name="further-optimize-background-tasks"></a>进一步优化后台任务
+以下是注册后台任务时可以采取的其他步骤，以使它们更省电。
 
-Use a maintenance trigger. A [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx) object can be used instead of a [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx) object to determine when a background task starts. Tasks that use maintenance triggers will only run when the device is connected to AC power, and they are allowed to run for longer. See [Use a maintenance trigger](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger) for instructions.
+使用维护触发器。 可以使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx) 对象而不是 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx) 对象来确定后台任务的启动时间。 当设备连接到交流电源且允许它们运行较长时间时，使用维护触发器的任务才会运行。 有关说明，请参阅[使用维护触发器](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger)。
 
-Use the **BackgroundWorkCostNotHigh** system condition type. System conditions must be met in order for background tasks to run (see [Set conditions for running a background task](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task) for more). The background work cost is a measurement that denotes the *relative* energy impact of running the background task. A task running when the device is plugged into AC power would be marked as **low** (little/no impact on battery). A task running when the device is on battery power with the screen off is marked as **high** because there is presumably little program activity running on the device at the time, so the background task would have a greater relative cost. A task running when the device is on battery power with the screen *on* is marked as **medium**, because there is presumably already some program activity running, and the background task would add a bit more to the energy cost. The **BackgroundWorkCostNotHigh** system condition simply delays your task's ability to run until either the screen is on or the device is connected to AC power.
+使用 **BackgroundWorkCostNotHigh** 系统条件类型。 必须满足系统条件才能使后台任务运行（请参阅[设置运行后台任务的条件](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task)以获取详细信息)。 后台工作成本是表示运行后台任务的*相对*能量影响的度量方法。 将设备插入到交流电源时运行的任务会标记为“低”（少/不影响电池）。 当设备使用电池电源且屏幕关闭时运行的任务会标记为“高”，因为可能当时在设备上运行的程序活动很少，因此后台任务有更高的相对成本。 当设备使用电池电源且屏幕“打开”时运行的任务会标记为“中等”，因为可能已有某些程序活动在运行，而且后台任务将增加一点能源成本。 **BackgroundWorkCostNotHigh** 系统条件只会延迟你的任务运行，直到屏幕打开或设备连接到交流电源。
 
-## <a name="test-battery-efficiency"></a>Test battery efficiency
+## <a name="test-battery-efficiency"></a>测试电池效率
 
-Make sure to test your app on real devices for any high-power-consumption scenarios. It's a good idea to test your app on many different devices, with Battery Saver on and off, and in environments of varying network strength.
+请确保针对任何高能耗方案在真实设备上测试应用。 它是在许多不同设备上、节电模式处于打开和关闭状态，以及在各种网络强度的环境中测试应用的一个好方法。
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Create and register an out-of-process background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)  
-* [Planning for performance](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
+* [创建和注册进程外后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)  
+* [规划性能](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 
 
 

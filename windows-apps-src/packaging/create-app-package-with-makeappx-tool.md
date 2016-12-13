@@ -1,107 +1,107 @@
 ---
 author: laurenhughes
-title: Create an app package with the MakeAppx.exe tool
-description: MakeAppx.exe creates, encrypts, decrypts, and extracts files from app packages and bundles.
+title: "使用 MakeAppx.exe 工具创建应用包"
+description: "MakeAppx.exe 创建、加密、解密应用程序包和捆绑包，并从中提取文件。"
 translationtype: Human Translation
 ms.sourcegitcommit: 28cd2b2a922a20e0b9ffc4d1ca65f6a55e92aa8f
 ms.openlocfilehash: c99c76fac9303e174b5d804c2f1b99856be25006
 
 ---
 
-# <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Create an app package with the MakeAppx.exe tool
+# <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具创建应用包
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**MakeAppx.exe** creates both app packages and app package bundles. **MakeAppx.exe** also extracts files from an app package or bundle and encrypts or decrypts app packages and bundles. This tool is included in the Windows 10 SDK and can be used from a command prompt or a script file.
+**MakeAppx.exe** 创建应用包和应用捆绑包。 **MakeAppx.exe** 还从应用包或捆绑包中提取文件，并加密或解密应用程序包和捆绑包。 此工具包含在 Windows 10 SDK 中，并且可以从命令提示符或脚本文件中使用。
 
-If you would like to use the Microsoft Visual Studio wizard to create an app package, or if you would like a complete guide on how to configure, create, and test your app package for the Store, see [Packaging UWP apps](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+如果想要使用 Microsoft Visual Studio 向导创建应用包，或者如果想要有关如何配置、创建应用包并为应用商店测试应用包的完整指南，请参阅[打包 UWP 应用](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-Note that **MakeAppx.exe** does not create an .appxupload file. The .appxupload file is created as part of the Visual Studio packaging process and contains two other files: .appx and .appxsym. The .appxsym file is a compressed .pdb file containing public symbols of your app used for [crash analytics](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) in the Windows Dev Center. A regular .appx file can be submitted as well, but there will be no crash analytic or debugging information available. For more information on submitting packages to the store, see [Upload app packages](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages). 
+请注意， **MakeAppx.exe** 不会创建.appxupload 文件。 .Appxupload 文件作为 Visual Studio 打包过程的一部分进行创建，并包含其他两个文件：.appx 和 .appxsym。 .Appxsym 文件是一个压缩的 .pdb 文件，包含在 Windows 开发人员中心中用于[崩溃分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)的应用的公共符号。 也可以提交常规 .appx 文件，但崩溃分析或调试信息将不可用。 有关将程序包提交到应用商店的详细信息，请参阅[上载应用包](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)。 
 
-To manually create an .appxupload file:
-- Place the .appx and the .appxsym in a folder
-- Zip the folder
-- Change the zipped folder extension name from .zip to .appxupload
+手动创建一个 .appxupload 文件：
+- 将 .appx 和 .appxsym 放在一个文件夹中
+- 压缩该文件夹
+- 将压缩的文件夹扩展名从 .zip 更改为 .appxupload
 
-## <a name="using-makeappxexe"></a>Using MakeAppx.exe
+## <a name="using-makeappxexe"></a>使用 MakeAppx.exe
 
-Based on your installation path of the SDK, this is where **MakeAppx.exe** is on your Windows 10 PC:
+根据 SDK 的安装路径，以下是 **MakeAppx.exe** 在 Windows 10 电脑上的位置：
 - x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe
 - x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
 
-There is no ARM version of this tool.
+没有此工具的 ARM 版本。
 
-### <a name="makeappxexe-syntax-and-options"></a>MakeAppx.exe syntax and options
+### <a name="makeappxexe-syntax-and-options"></a>MakeAppx.exe 语法和选项
 
-General **MakeAppx.exe** syntax:
+常规 **MakeAppx.exe** 语法：
 
 ``` Usage
 MakeAppx <command> [options]      
 ```
 
-The following table describes the commands for **MakeAppx.exe**.
+下表介绍了 **MakeAppx.exe** 的命令。
 
-| **Command**   | **Description**                       |
+| **命令**   | **描述**                       |
 |---------------|---------------------------------------|
-| pack          | Creates a package.                    |
-| unpack        | Extracts all files in the specified package to the specified output directory. |
-| bundle        | Creates a bundle.                     |
-| unbundle      | Unpacks all packages to a subdirectory under the specified output path named after the bundle full name. |
-| encrypt       | Creates an encrypted app package or bundle from the input package/bundle at the specified output package/bundle. |
-| decrypt       | Creates an decrypted app package or bundle from the input app package/bundle at the specified output package/bundle. |
+| pack          | 创建程序包。                    |
+| unpack        | 将指定程序包中的所有文件提取到指定的输出目录。 |
+| bundle        | 创建捆绑包。                     |
+| unbundle      | 将所有程序包解压到以捆绑包完整名称命名的指定输出路径下的子目录中。 |
+| encrypt       | 在指定的输出程序包/捆绑包中，从输入程序包/捆绑包中创建加密的应用包或捆绑包。 |
+| decrypt       | 在指定的输出程序包/捆绑包中，从输入应用包/捆绑包中创建解密的应用包或捆绑包。 |
 
 
-This list of options applies to all commands:
+此选项列表适用于所有命令：
 
-| **Option**    | **Description**                       |
+| **选项**    | **描述**                       |
 |---------------|---------------------------------------|
-| /d            | Specifies the input, output, or content directory. |
-| /l            | Used for localized packages. The default validation trips on localized packages. This options disables only that specific validation, without requiring that all validation be disabled. |
-| /kf           | Encrypts or decrypts the package or bundle using the key from the specified key file. This can't be used with /kt. |
-| /kt           | Encrypts the or decrypts package or bundle using the global test key. This can't be used with /kf. |
-| /no           | Prevents an overwrite of the output file if it exists. If you don't specify this option or the /o option, the user is asked whether they want to overwrite the file. |
-| /nv           | Skips semantic validation. If you don't specify this option, the tool performs a full validation of the package. |
-| /o            | Overwrites the output file if it exists. If you don't specify this option or the /no option, the user is asked whether they want to overwrite the file. |
-| /p            | Specifies the app package or bundle.  |
-| /v            | Enables verbose logging output to the console. |
-| /?            | Displays help text.                   |
+| /d            | 指定输入、输出或内容目录。 |
+| /l            | 用于本地化的程序包。 本地化程序包上的默认验证过程。 此选项仅禁用特定验证，无需禁用所有验证。 |
+| /kf           | 使用指定密钥文件中的键加密或解密程序包或捆绑包。 它不能与 /kt 一起使用。 |
+| /kt           | 使用全局测试密钥加密或解密程序包或捆绑包。 它不能与 /kf 一起使用。 |
+| /no           | 如果存在，会阻止输出文件的覆盖。 如果不指定此选项或 /o 选项，将询问用户是否要覆盖文件。 |
+| /nv           | 跳过语义验证。 如果不指定此选项，该工具将执行程序包的完整验证。 |
+| /o            | 覆盖输出文件（如果存在）。 如果不指定此选项或 /no 选项，将询问用户是否要覆盖文件。 |
+| /p            | 指定应用包或捆绑包。  |
+| /v            | 使详细日志记录输出到控制台。 |
+| /?            | 显示帮助文本。                   |
 
 
-The following list contains possible arguments:
+下面的列表包含可能的参数：
 
-| **Argument**                          | **Description**                       |
+| **参数**                          | **描述**                       |
 |---------------------------------------|---------------------------------------|
-| &lt;output package name&gt;           | The name of the package created. This is the file name appended with .appx. |
-| &lt;encrypted output package name&gt; | The name of the encrypted package created. This is the file name appended with .eappx. |
-| &lt;input package name&gt;            | The name of the package. This is the file name appended with .appx. |
-| &lt;encrypted input package name&gt;  | The name of the encrypted package. This is the file name appended with .eappx. |
-| &lt;output bundle name&gt;            | The name of the bundle created. This is the file name appended with .appxbundle. |
-| &lt;encrypted output bundle name&gt;  | The name of the encrypted bundle created. This is the file name appended with .eappxbundle. |
-| &lt;input bundle name&gt;             | The name of the bundle. This is the file name appended with .appxbundle. |
-| &lt;encrypted input bundle name&gt;   | The name of the encrypted bundle. This is the file name appended with .eappxbundle. |
-| &lt;content directory&gt;             | Path for the app package or bundle content. |
-| &lt;mapping file&gt;                  | File name that specifies the package source and destination. |
-| &lt;output directory&gt;              | Path to the directory for output packages and bundles. |
-| &lt;key file&gt;                      | Name of the file containing a key for encryption or decryption. |
-| &lt;algorithm ID&gt;                  | Algorithms used when creating a block map. Valid algorithms include: SHA256 (default), SHA384, SHA512. |
+| &lt;output package name&gt;           | 创建的程序包的名称。 这是附有 .appx 的文件名。 |
+| &lt;encrypted output package name&gt; | 创建的加密包的名称。 这是附有 .eappx 的文件名。 |
+| &lt;input package name&gt;            | 程序包的名称。 这是附有 .appx 的文件名。 |
+| &lt;encrypted input package name&gt;  | 加密包的名称。 这是附有 .eappx 的文件名。 |
+| &lt;output bundle name&gt;            | 创建的捆绑包的名称。 这是附有 .appxbundle 的文件名。 |
+| &lt;encrypted output bundle name&gt;  | 创建的加密捆绑包的名称。 这是附有 .eappxbundle 的文件名。 |
+| &lt;input bundle name&gt;             | 捆绑包的名称。 这是附有 .appxbundle 的文件名。 |
+| &lt;encrypted input bundle name&gt;   | 加密捆绑包的名称。 这是附有 .eappxbundle 的文件名。 |
+| &lt;content directory&gt;             | 应用包或捆绑包内容的路径。 |
+| &lt;mapping file&gt;                  | 指定程序包源和目标的文件名。 |
+| &lt;output directory&gt;              | 输出程序包和捆绑包的目录路径。 |
+| &lt;密钥文件&gt;                      | 含有加密或解密的密钥的文件名。 |
+| &lt;algorithm ID&gt;                  | 创建块映射时使用的算法。 有效算法包括：SHA256（默认值）、SHA384、SHA512。 |
 
 
-### <a name="create-an-app-package"></a>Create an app package
+### <a name="create-an-app-package"></a>创建应用包
 
-An app package is a complete set of the app's files packaged in to an .appx package file. To create an app package using the **pack** command, you must provide either a content directory or a mapping file for the location of the package. You can also encrypt a package while creating it. If you want to encrypt the package, you must use /ep and specify if you are using a key file (/kf) or the global test key (/kt). For more information on creating an encrypted package, see [Encrypt or decrypt a package or bundle](#encrypt-or-decrypt-a-package-or-bundle).
+应用包是一个打包到 .appx 程序包文件的完整应用文件集合。 若要使用 **pack** 命令创建应用包，必须提供程序包位置的内容目录或映射文件。 你还可以在创建它时加密程序包。 如果你想要加密程序包，必须使用 /ep 并指定是否使用密钥文件 (/kf) 或全局测试密钥 (/kt)。 有关创建加密程序包的详细信息，请参阅[加密或解密程序包或捆绑包](#encrypt-or-decrypt-a-package-or-bundle)。
 
-Options specific to the **pack** command:
+特定于 **pack** 命令的选项：
 
-| **Option**    | **Description**                       |
+| **选项**    | **描述**                       |
 |---------------|---------------------------------------|
-| /f            | Specifies the mapping file.           |
-| /h            | Specifies the hash algorithm to use when creating the block map. This can only be used with the pack command. Valid algorithms include: SHA256 (default), SHA384, SHA512. |
-| /m            | Specifies the path to an input app manifest which will be used as the basis for generating the output app package or resource package's manifest.  When you use this option, you must also use /f and include a [ResourceMetadata] section in the mapping file to specify the resource dimensions to be included in the generated manifest.|
-| /nc           | Prevents compression of the package files. By default, files are compressed based on detected file type. |
-| /r            | Builds a resource package. This must be used with /m and implies the use of the /l option. |  
+| /f            | 指定映射文件。           |
+| /h            | 指定创建块映射时使用的哈希算法。 它仅可以与 pack 命令一起使用。 有效算法包括：SHA256（默认值）、SHA384、SHA512。 |
+| /m            | 指定输入应用清单的路径，该清单将用于生成输出应用包或资源包清单的基础。  当使用此选项时，还必须使用 /f 并在映射文件中包含 [ResourceMetadata] 部分，来指定要包含在生成的清单中的资源维度。|
+| /nc           | 阻止程序包文件的压缩。 默认情况下，将基于检测到的文件类型压缩文件。 |
+| /r            | 生成资源包。 它必须与 /m 一起使用，并表示使用 /l 选项。 |  
 
 
-The following usage examples show some possible syntax options for the **pack** command:
+下面的用法示例演示了一些可能的 **pack** 命令语法选项：
 
 ``` syntax 
 MakeAppx pack [options] /d <content directory> /p <output package name>
@@ -112,7 +112,7 @@ MakeAppx pack [options] /d <content directory> /ep <encrypted output package nam
 MakeAppx pack [options] /d <content directory> /ep <encrypted output package name> /kt
 
 ```
-The following shows command line examples for the **pack** command:
+下面显示了 **pack** 命令的命令行示例：
 
 ``` examples
 MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.appx
@@ -123,20 +123,20 @@ MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kf MyKeyFile.tx
 MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kt
 ```
 
-### <a name="create-an-app-bundle"></a>Create an app bundle
+### <a name="create-an-app-bundle"></a>创建应用程序包
 
-An app bundle is similar to an app package, but a bundle can reduce the size of the app that users download. App bundles are helpful for language-specific assets, varying image-scale assets, or resources that apply to specific versions of Microsoft DirectX, for example. Similar to creating an encrypted app package, you can also encrypt the app bundle while bundling it. To encrypt the app bundle, use the /ep option and specify if you are using a key file (/kf) or the global test key (/kt). For more information on creating an encrypted bundle, see [Encrypt or decrypt a package or bundle](#encrypt-or-decrypt-a-package-or-bundle).
+应用程序包类似于应用包，但应用程序包可以减少用户下载的应用大小。 例如，对于特定于语言的资源、各种图像缩放资源或适用于特定版本的 Microsoft DirectX 的资源，应用程序包很有用。 类似于创建加密应用包，还可以在绑定它时加密应用程序包。 要加密应用程序包，请使用 /ep 选项并指定是否使用密钥文件 (/kf) 或全局测试密钥 (/kt)。 有关创建加密捆绑包的详细信息，请参阅[加密或解密程序包或捆绑包](#encrypt-or-decrypt-a-package-or-bundle)。
 
-Options specific to the **bundle** command:
+特定于 **bundle** 命令的选项：
 
-| **Option**    | **Description**                       |
+| **选项**    | **描述**                       |
 |---------------|---------------------------------------|
-| /bv           | Specifies the version number of the bundle. The version number must be in four parts separated by periods in the form: &lt;Major&gt;.&lt;Minor&gt;.&lt;Build&gt;.&lt;Revision&gt;. |
-| /f            | Specifies the mapping file.           |
+| /bv           | 指定捆绑包的版本号。 版本号必须以句号分为四部分，格式为：&lt;主要&gt;.&lt;次要&gt;.&lt;内部版&gt;.&lt;修订版&gt;。 |
+| /f            | 指定映射文件。           |
 
-Note that if the bundle version is not specified or if it is set to "0.0.0.0" the bundle is created using the current date-time.
+请注意，如果未指定捆绑包版本，或如果已设置为“0.0.0.0”，则使用当前日期时间创建捆绑包。
 
-The following usage examples show some possible syntax options for the **bundle** command:
+下面的用法示例演示了一些可能的 **bundle** 命令语法选项：
 
 ``` syntax
 MakeAppx bundle [options] /d <content directory> /p <output bundle name>
@@ -144,7 +144,7 @@ MakeAppx bundle [options] /f <mapping file> /p <output bundle name>
 MakeAppx bundle [options] /d <content directory> /ep <encrypted output bundle name> /kf MyKeyFile.txt
 MakeAppx bundle [options] /f <mapping file> /ep <encrypted output bundle name> /kt
 ```
-The following block contains examples for the **bundle** command:
+下面的块包含 **bundle** 命令的示例：
 
 ``` examples
 MakeAppx bundle /v /d "C:\My Files" /p MyBundle.appxbundle
@@ -153,18 +153,18 @@ MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /
 MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kt
 ```
 
-### <a name="extract-files-from-a-package-or-bundle"></a>Extract files from a package or bundle
+### <a name="extract-files-from-a-package-or-bundle"></a>从程序包或捆绑包中解压缩文件
 
-In addition to packaging and bundling apps, **MakeAppx.exe** can also unpack or unbundle existing packages. You must provide the content directory as a destination for the extracted files. If you are trying to extract files from an encrypted package or bundle, you can decrypt and extract the files at the same time using the /ep option and specifying whether it should be decrypted using a key file (/kf) or the global test key (/kt). For more information on decrypting a package or bundle, see [Encrypt or decrypt a package or bundle](#encrypt-or-decrypt-a-package-or-bundle).
+除了打包和捆绑应用，**MakeAppx.exe** 还可以解压缩或解包现有程序包。 必须提供内容目录作为解压缩文件的目标。 如果要从加密的程序包或捆绑包中解压缩文件，可以使用 /ep 选项并指定它是否应使用密钥文件 (/kf) 或全局测试密钥 (/kt) 进行解密，同时解密和解压缩文件。 有关解密程序包或捆绑包的详细信息，请参阅[加密或解密程序包或捆绑包](#encrypt-or-decrypt-a-package-or-bundle)。
 
-Options specific to **unpack** and **unbundle** commands:
+特定于 **unpack** 和 **unbundle** 命令的选项：
 
-| **Option**    | **Description**                       |
+| **选项**    | **描述**                       |
 |---------------|---------------------------------------|
-| /nd           | Does not perform decryption when unpacking or unbundling the package/bundle. |
-| /pfn          | Unpacks/unbundles all files to a subdirectory under the specified output path, named after the package or bundle full name |
+| /nd           | 解压缩或解包软件包/捆绑包时，不执行解密。 |
+| /pfn          | 将所有文件解压缩/解包到指定输出路径下的子目录中，以程序包或捆绑包的完整名称命名 |
 
-The following usage examples show some possible syntax options for the **unpack** and **unbundle** commands:
+下面的用法示例演示了一些可能的 **unpack** 和 **unbundle** 命令语法选项：
 
 ``` syntax
 MakeAppx unpack [options] /p <input package name> /d <output directory>
@@ -176,7 +176,7 @@ MakeAppx unbundle [options] /ep <encrypted input bundle name> /d <output directo
 MakeAppx unbundle [options] /ep <encrypted input bundle name> /d <output directory> /kt
 ```
 
-The following block contains examples for using the **unpack** and **unbundle** commands:
+下面的块包含 **unpack** 和 **unbundle** 命令的使用示例：
 
 ``` examples
 MakeAppx unpack /v /p MyPackage.appx /d "C:\My Files"
@@ -188,19 +188,19 @@ MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kf MyKeyFile.txt
 MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kt
 ```
 
-### <a name="encrypt-or-decrypt-a-package-or-bundle"></a>Encrypt or decrypt a package or bundle
+### <a name="encrypt-or-decrypt-a-package-or-bundle"></a>加密或解密程序包或捆绑包
 
-The **MakeAppx.exe** tool can also encrypt or decrypt an existing package or bundle. You must simply provide the package name, the output package name, and whether encryption or decryption should use a key file (/kf) or the global test key (/kt).
+**MakeAppx.exe** 工具也可以加密或解密现有程序包或捆绑包。 只需提供程序包名称、输出程序包名称，以及加密或解密是否应使用密钥文件 (/kf) 或全局测试密钥 (/kt)。
 
-Encryption and decryption are not available through the Visual Studio packaging wizard. 
+Visual Studio 打包向导不提供加密和解密。 
 
-Options specific to **encrypt** and **decrypt** commands:
+特定于 **encrypt** 和 **decrypt** 命令的选项：
 
-| **Option**    | **Description**                       |
+| **选项**    | **描述**                       |
 |---------------|---------------------------------------|
-| /ep           | Specifies an encrypted app package or bundle. |
+| /ep           | 指定加密的应用包或捆绑包。 |
 
-The following usage examples show some possible syntax options for the **encrypt** and **decrypt** commands:
+下面的用法示例演示了一些可能的 **encrypt** 和 **decrypt** 命令语法选项：
 
 ``` syntax
 MakeAppx encrypt [options] /p <package name> /ep <output package name> /kf <key file>
@@ -210,7 +210,7 @@ MakeAppx decrypt [options] /ep <package name> /p <output package name> /kf <key 
 MakeAppx decrypt [options] /ep <package name> /p <output package name> /kt
 ```
 
-The following block contains examples for using the **encrypt** and **decrypt** commands:
+下面的块包含 **encrypt** 和 **decrypt** 命令的使用示例：
 
 ``` examples
 MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
@@ -220,21 +220,21 @@ MakeAppx.exe decrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
 MakeAppx.exe decrypt p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
 ```
 
-## <a name="key-files"></a>Key files
+## <a name="key-files"></a>密钥文件
 
-Key files must begin with a line containing the string "[Keys]" followed by lines describing the keys to encrypt each package with. Each key is represented by a pair of strings in quotation marks, separated by either spaces or tabs. The first string represents the base64 encoded 32-byte key ID and the second represents the base64 encoded 32-byte encryption key. A key file should be a simple text file.
+关键文件必须以包含字符串“[密钥]”的行开始，后跟描述要用于加密每个程序包的密钥的行。 每个密钥由一对引号内的字符串表示，以空格或制表符分隔。 第一个字符串表示 base64 编码的 32 字节键 ID，第二个表示 base64 编码的 32 字节加密密钥。 密钥文件应该是一个简单的文本文件。
 
-Example of a key file:
+密钥文件的示例：
 
 ``` Example
 [Keys]
 "OWVwSzliRGY1VWt1ODk4N1Q4R2Vqc04zMzIzNnlUREU="    "MjNFTlFhZGRGZEY2YnVxMTBocjd6THdOdk9pZkpvelc="
 ```
 
-## <a name="mapping-files"></a>Mapping files
-Mapping files must begin with a line containing the string "[Files]" followed by lines describing the files to add to the package. Each file is described by a pair of paths in quotation marks, separated by either spaces or tabs. Each file represents its source (on disk) and destination (in the package). A mapping file should be a simple text file.
+## <a name="mapping-files"></a>映射文件
+映射文件必须以包含字符串“[文件]”的行开始，后跟描述要添加到程序包的文件的行。 每个文件由一对引号内的路径表示，以空格或制表符分隔。 每个文件表示其源（在磁盘上）和目标（在程序包中）。 映射文件应该是一个简单的文本文件。
 
-Example of a mapping file (without the /m option):
+映射文件（无 /m 选项）的示例：
 
 ``` Example
 [Files]
@@ -245,9 +245,9 @@ Example of a mapping file (without the /m option):
 "CustomManifest.xml"                    "AppxManifest.xml"
 ``` 
 
-When using a mapping file, you can choose whether you would like to use the /m option. The /m option allows the user to specify the resource metadata in the mapping file to be included in the generated manifest. If you use the /m option, the mapping file must contain a section that begins with the line "[ResourceMetadata]", followed by lines that specify "ResourceDimensions" and "ResourceId." It is possible for an app package to contain multiple "ResourceDimensions", but there can only ever be one "ResourceId."
+使用映射文件时，可以选择是否想要使用 /m 选项。 /M 选项允许用户指定映射文件中的资源元数据，该文件将包含在生成的清单中。 如果使用 /m 选项，映射文件必须包含以“[ResourceMetadata]”行开始的部分，后跟指定“ResourceDimensions”和“ResourceId”的行。 应用程序包可以包含多个“ResourceDimensions”，但永远只会存在一个“ResourceId”。
 
-Example of a mapping file (with the /m option):
+映射文件（带 /m 选项）的示例：
 
 ``` Example
 [ResourceMetadata]
@@ -259,16 +259,16 @@ Example of a mapping file (with the /m option):
 "en-us.pri"                             "resources.pri"
 ```
 
-## <a name="semantic-validation-performed-by-makeappxexe"></a>Semantic validation performed by MakeAppx.exe
+## <a name="semantic-validation-performed-by-makeappxexe"></a>由 MakeAppx.exe 执行的语义式验证
 
-**MakeAppx.exe** performs limited sematic validation that is designed to catch the most common deployment errors and help ensure that the app package is valid. See the /nv option if you want to skip validation while using **MakeAppx.exe**. 
+**MakeAppx.exe** 执行有限的语义式验证，旨在捕获最常见的部署错误并帮助确保应用包有效。 如果想要在使用 **MakeAppx.exe** 时跳过验证，请参阅 /nv 选项。 
 
-This validation ensures that:
-- All files referenced in the package manifest are included in the app package.
-- An application does not have two identical keys.
-- An application does not register for a forbidden protocol from this list: SMB, FILE, MS-WWA-WEB, MS-WWA. 
+此验证确保：
+- 在程序包清单中引用的所有文件都包含在应用包中。
+- 应用程序没有两个相同的密钥。
+- 应用程序不会注册此列表中的禁用协议：SMB、FILE、MS-WWA-WEB、MS-WWA。 
 
-This is not a complete semantic validation as it is only designed to catch common errors. Packages built by **MakeAppx.exe** are not guaranteed to be installable.
+这不是完整的语义式验证，因为它仅用于捕获常见错误。 不能保证通过 **MakeAppx.exe** 生成的程序包均可安装。
 
 
 <!--HONumber=Dec16_HO1-->

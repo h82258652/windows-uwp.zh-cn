@@ -1,7 +1,7 @@
 ---
 author: jnHs
-Description: Common questions about ad campaigns
-title: Common questions about ad campaigns
+Description: "有关广告市场活动的常见问题"
+title: "有关广告市场活动的常见问题"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 translationtype: Human Translation
 ms.sourcegitcommit: 584407ea0e0fee4ec74dac0b656db59b7f694391
@@ -9,61 +9,61 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 
 ---
 
-# <a name="common-questions-about-ad-campaigns"></a>Common questions about ad campaigns
+# <a name="common-questions-about-ad-campaigns"></a>有关广告市场活动的常见问题
 
-## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>How much does it cost to run an ad for my app?
+## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>为我的应用投放广告需要多少钱？
 
-It’s really up to you, but remember: the more you spend, the more people will see your ad. The more people see your ad, the more clicks and installs you should get. Take a look at [this article](create-an-ad-campaign-for-your-app.md) for information about creating an ad campaign for your app.
+这其实取决于你，但请记住：花费越高，看到你的广告的用户越多。 看到你的广告的用户越多，你获得的点击量和安装量应越高。 有关为应用创建广告市场活动的信息，请查看[此文章](create-an-ad-campaign-for-your-app.md)。
 
-## <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>How can I increase the maximum monthly budget amount allowed for my ad campaign?
+## <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>如何提高我的广告活动的每月最高预算额？
 
-If you plan to spend more than $10,000 in a month on your ad campaigns, please contact [aiacare@microsoft.com](mailto:aiacare@microsoft.com). We will upgrade you to a premium account, which lets you spend up to $50,000 per campaign. A premium account also gives you additional capabilities, such as the ability to set campaign start and end dates and to specify a destination URL for your campaign.
+如果你打算每月在广告活动上花费超过 10000 美元，请联系 [aiacare@microsoft.com](mailto:aiacare@microsoft.com)。 我们会将你升级到高级帐户，它允许你每个市场活动最多花费 50000 美元。 高级帐户还提供了额外的功能，例如，设置市场活动的开始和结束日期，以及为市场活动指定目标 URL。
 
-## <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>Can I run ads for one of my apps in my other apps?
+## <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>我是否可以在我的其他应用中为我的某个应用投放广告？
 
-Yes. We call these *house ads*, and you can run them free of charge. Check out [this article](about-house-ads.md) for more information about community ads.
+是。 我们将其称为*自家广告*，你可以免费投放它们。 有关社区广告的详细信息，请查看[此文章](about-house-ads.md)。
 
-## <a name="can-i-cross-promote-my-app-with-apps-from-other-developers-in-the-store"></a>Can I cross-promote my app with apps from other developers in the Store?
+## <a name="can-i-cross-promote-my-app-with-apps-from-other-developers-in-the-store"></a>我可以使用应用商店中其他开发人员的应用交叉推广我的应用吗？
 
-Yes. We call these *community ads*, and you can run them free of charge. After you [opt-in to community ads](about-community-ads.md#how-to-opt-in-to-community-ads), you can [create a free community ad campaign](create-an-ad-campaign-for-your-app.md) and your app will share promotional ad space with other developers who also opt in to community ads. Check out [this article](about-community-ads.md) for more information.
+是。 我们将其称为*社区广告*，你可以免费投放它们。 在你[选择加入社区广告](about-community-ads.md#how-to-opt-in-to-community-ads)后，你可以[创建免费的社区广告市场活动](create-an-ad-campaign-for-your-app.md)，并且你的应用将与其他同样选择加入社区广告的开发人员的应用共享推广广告空间。 有关详细信息，请查看[此文章](about-community-ads.md)。
 
-## <a name="how-can-i-customize-my-ad"></a>How can I customize my ad?
+## <a name="how-can-i-customize-my-ad"></a>如何自定义我的广告？
 
-If you use one of the default ad templates, you can choose the size, imagery, and background color of your ad. You can also add a custom tag line to your ad if you want. Alternatively, you can upload your own ad designs that meet our requirements. For more information, see [Create an ad campaign for your app.](create-an-ad-campaign-for-your-app.md)
+当你使用其中一个默认广告模板时，你可以选择广告的大小、图像和背景颜色。 如果你愿意，你还可以向广告添加自定义广告语。 或者，你可以上载符合我们要求的你自己的广告设计。 有关详细信息，请参阅[为你的应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)。
 
-## <a name="where-will-my-ad-appear"></a>Where will my ad appear?
+## <a name="where-will-my-ad-appear"></a>我的广告将出现在哪个位置？
 
-Your ad will appear in apps that share your app's age rating and OS version. You set these properties when you publish your app in the Windows Store.
+您的广告将出现在共享您的应用年龄分级和操作系统版本的应用中。 当您在 Windows 应用商店中发布应用时，可以设置这些属性。
 
-Ad campaigns are currently supported in these countries and regions:
+广告市场活动当前在以下国家和地区中受支持：
 
-Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
+阿尔及利亚、阿根廷、澳大利亚、奥地利、巴哈马、巴林、巴巴多斯、比利时、伯利兹、玻利维亚、巴西、加拿大、智利、中国、哥伦比亚、丹麦、多米尼加共和国、厄瓜多尔、埃及、萨尔瓦多、芬兰、法国、德国、危地马拉、海地、洪都拉斯、香港特別行政区、印度、印度尼西亚、伊拉克、爱尔兰、意大利、牙买加、约旦、科威特、黎巴嫩、马来西亚、墨西哥、摩洛哥、新西兰、荷兰、尼加拉瓜、挪威、阿曼、巴拿马、巴拉圭、秘鲁、菲律宾、波多黎各、卡塔尔、沙特阿拉伯、新加坡、西班牙、南非、瑞典、瑞士、台湾、泰国、特立尼达和多巴哥、突尼斯、阿拉伯联合酋长国、英国、美国、乌拉圭、委内瑞拉、越南。
 
-## <a name="what-languages-are-supported-for-ad-campaigns"></a>What languages are supported for ad campaigns?
+## <a name="what-languages-are-supported-for-ad-campaigns"></a>广告市场活动支持哪些语言？
 
-You can create ad campaigns in the following languages:
+可以使用以下语言创建广告市场活动：
 
-Arabic, Chinese (Simplified), Chinese (Traditional), Danish, Dutch, English, Finnish, French, German, Italian, Norwegian, Portuguese (Brazil), Portuguese (Portugal), Spanish, Swedish.
+阿拉伯语、中文(简体)、中文(繁体)、丹麦语、荷兰语、英语、芬兰语、法语、德语、意大利语、挪威语、葡萄牙语(巴西)、葡萄牙语(葡萄牙)、西班牙语、瑞典语。
 
-## <a name="when-will-i-be-billed"></a>When will I be billed?
+## <a name="when-will-i-be-billed"></a>何时开始计费？
 
-You will be billed each time your account accrues $50 of charges (or the equivalent amount in the local currency of your market or region) for all paid campaigns for your account.
+对于你的帐户的所有付费市场活动，每次你的帐户获得 50 美元的费用（或以你的市场或地区的当地货币为单位的等价金额）时，都将对你计费。
 
-If your account accrues less than $50 of charges in the 30-day period after your last billing date, you will be billed for those charges early in the following month. This helps to ensure that your account doesn’t maintain a running balance of ad campaign charges for more than a month.
+如果你的帐户在你的最后计费日期之后的 30 天时间内获得小于 50 美元的费用，将在下个月月初针对这些费用对你计费。 这有助于确保你的帐户不会维持广告市场活动费用的收支状态超过一个月。
 
-If you don’t want to wait to be billed, you can pay your bill immediately by selecting **Charge now** on the **Billing summary** page (**Promotions** > **Billing history**). Your payment method will be charged the amount listed under **Unbilled amount**.
+如果不想等待帐单，可以通过选择“帐单摘要”页面（“促销” > “帐单历史记录”）上的“立即支付帐单”来支付帐单。 将按 **未出票金额**下列出的金额对付款方式收费。
 
-## <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>How do I delete a credit card or edit the details of a credit card?
+## <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>如何删除信用卡或编辑信用卡详细信息？
 
-Go to <http://commerce.microsoft.com>, log in with your Microsoft account credentials, and make the necessary changes.
+转到 <http://commerce.microsoft.com>、使用你的 Microsoft 帐户凭据登录，然后做出必要更改。
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
-* [Managing your ad campaign](managing-your-ad-campaign.md)
-* [About house ads](about-house-ads.md)
-* [About community ads](about-community-ads.md)
-* [App install ads report](app-install-ads-reports.md)
+* [为你的应用创建广告市场活动](create-an-ad-campaign-for-your-app.md)
+* [管理广告活动](managing-your-ad-campaign.md)
+* [关于自家广告](about-house-ads.md)
+* [关于社区广告](about-community-ads.md)
+* [应用安装广告报告](app-install-ads-reports.md)
 
 
 

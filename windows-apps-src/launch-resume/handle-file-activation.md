@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
-title: Handle file activation
-description: An app can register to become the default handler for a certain file type.
+title: "处理文件激活"
+description: "应用可注册为特定文件类型的默认处理程序。"
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 translationtype: Human Translation
 ms.sourcegitcommit: ed7aee6add80d31b48006d9dec9e207c449a1912
@@ -9,49 +9,49 @@ ms.openlocfilehash: ffcfa8991e9eb73b8d6a47bb7dd1cd23220097e0
 
 ---
 
-# <a name="handle-file-activation"></a>Handle file activation
+# <a name="handle-file-activation"></a>处理文件激活
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Important APIs**
+**重要的 API**
 
 -   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
 -   [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
 
-An app can register to become the default handler for a certain file type. Both Windows desktop applications and Universal Windows Platform (UWP) apps can register to be a default file handler. If the user chooses your app as the default handler for a certain file type, your app will be activated when that type of file is launched.
+应用可注册为特定文件类型的默认处理程序。 Windows 桌面应用程序和通用 Windows 平台 (UWP) 应用可以注册为默认文件处理程序。 如果用户将你的应用选作特定文件类型的默认处理程序，则每次启动该类型文件时都将激活你的应用。
 
-We recommend that you only register for a file type if you expect to handle all file launches for that type of file. If your app only needs to use the file type internally, then you don't need to register to be the default handler. If you do choose to register for a file type, you must provide the end user with the functionality that is expected when your app is activated for that file type. For example, a picture viewer app may register to display a .jpg file. For more info on file associations, see [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321).
+如果希望处理某种类型文件的所有文件启动，建议你仅针对该文件类型进行注册。 如果你的应用仅需要在内部使用该文件类型，则无需注册为默认的处理程序。 如果选择了针对某种文件类型进行注册，则为该文件类型激活应用时必须向最终用户提供预期的功能。 例如，某个图片查看器应用可以注册为显示 .jpg 文件。 有关文件关联的详细信息，请参阅[文件类型和 URI 指南](https://msdn.microsoft.com/library/windows/apps/hh700321)。
 
-These steps show how to register for a custom file type, .alsdk, and how to activate your app when the user launches an .alsdk file.
+这些步骤显示了如何注册自定义文件类型 .alsdk，以及在用户启动 .alsdk 文件时如何激活你的应用。
 
-> **Note**  In UWP apps, certain URIs and file extensions are reserved for use by built-in apps and the operating system. Attempts to register your app with a reserved URI or file extension will be ignored. For more information, see [Reserved file and URI scheme names](reserved-uri-scheme-names.md).
+> **注意** 在 UWP 应用中，保留某些 URI 和文件扩展以供内置应用和操作系统使用。 使用保留的 URI 或文件扩展名注册应用的尝试将被忽略。 有关详细信息，请参阅[保留的文件和 URI 方案名](reserved-uri-scheme-names.md)。
 
-## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>Step 1: Specify the extension point in the package manifest
+## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>步骤 1：指定程序包清单中的扩展点
 
 
-The app receives activation events only for the file extensions listed in the package manifest. Here's how you indicate that your app handles the files with the `.alsdk` extension.
+应用仅接收程序包清单中列出的文件扩展名的激活事件。 下面是指示应用处理扩展名为 `.alsdk` 的文件的方法。
 
-1.  In the **Solution Explorer**, double-click package.appxmanifest to open the manifest designer. Select the **Declarations** tab and in the **Available Declarations** drop-down, select **File Type Associations** and then click **Add**. See [Programmatic Identifiers](https://msdn.microsoft.com/library/windows/desktop/cc144152) for more details of identifiers used by file associations.
+1.  在“解决方案资源管理器”中，双击 package.appxmanifest 以打开清单设计器。 选择“声明”选项卡，并在“可用声明”下拉列表中，选择“文件类型关联”，然后单击“添加”。 有关文件关联使用的标识符的更多详细信息，请参阅[编程标识符](https://msdn.microsoft.com/library/windows/desktop/cc144152)。
 
-    Here is a brief description of each of the fields that you may fill in the manifest designer:
+    以下是清单设计器中每个可以填写的字段的简短描述：
 
-| Field | Description |
+| 字段 | 说明 |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Display Name** | Specify the display name for a group of file types. The display name is used to identify the file type in the [Set Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154) on the **Control Panel**. |
-| **Logo** | Specify the logo that is used to identify the file type on the desktop and in the [Set Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154) on the **Control Panel**. If no Logo is specified, the application’s small logo is used. |
-| **Info Tip** | Specify the [info tip](https://msdn.microsoft.com/library/windows/desktop/cc144152) for a group of file types. This tool tip text appears when the user hovers on the icon for a file of this type. |
-| **Name** | Choose a name for a group of file types that share the same display name, logo, info tip, and edit flags. Choose a group name that can stay the same across app updates. **Note**  The Name must be in all lower case letters. |
-| **Content Type** | Specify the MIME content type, such as **image/jpeg**, for a particular file type. **Important Note about allowed content types:** Here is an alphabetic list of MIME content types that you cannot enter into the package manifest because they are either reserved or forbidden: **application/force-download**, **application/octet-stream**, **application/unknown**, **application/x-msdownload**. |
-| **File type** | Specify the file type to register for, preceded by a period, for example, “.jpeg”. **Reserved and forbidden file types:** See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of file types for built-in apps that you can't register for your UWP apps because they are either reserved or forbidden. |
+| **显示名称** | 为一组文件类型指定显示名称。 该显示名称用于在“控制面板”上的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中标识文件类型。 |
+| **徽标** | 指定用于标识桌面上以及“控制面板”的[设置默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)中的文件类型的徽标。 如果不指定徽标，则使用应用程序的小徽标。 |
+| **信息提示** | 为一组文件类型指定[信息提示](https://msdn.microsoft.com/library/windows/desktop/cc144152)。 当用户将光标悬停在此类型的文件的图标上时，将显示此工具提示文本。 |
+| **名称** | 为共享相同显示名称、徽标、信息提示和编辑标志的一组文件类型选择一个名称。 选择一个可在整个应用更新期间保持不变的组名称。 **注意**“名称”必须全部为小写字母。 |
+| **内容类型** | 对于特定文件类型，请指定 MIME 内容类型，如 **image/jpeg**。 **有关允许的内容类型的重要说明：**以下是由于被保留或禁止而无法输入到程序包清单中的 MIME 内容类型的字母顺序列表：**application/force-download**、**application/octet-stream**、**application/unknown**、**application/x-msdownload**。 |
+| **文件类型** | 指定要注册的文件类型，前面带有句点，如“.jpeg”。 **保留和禁止的文件类型：**请参阅[保留 URI 方案名称和文件类型](reserved-uri-scheme-names.md)以获取因为被保留或禁止而无法为 UWP 应用注册的内置应用的文件类型的字母顺序列表。 |
 
-2.  Enter `alsdk` as the **Name**.
-3.  Enter `.alsdk` as the **File Type**.
-4.  Enter “images\\Icon.png” as the Logo.
-5.  Press Ctrl+S to save the change to package.appxmanifest.
+2.  输入 `alsdk` 作为“名称”。
+3.  输入 `.alsdk` 作为**“文件类型”**。
+4.  输入“images\\Icon.png”作为徽标。
+5.  按 Ctrl+S 保存对 package.appxmanifest 的更改。
 
-The steps above add an [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) element like this one to the package manifest. The **windows.fileTypeAssociation** category indicates that the app handles files with the `.alsdk` extension.
+上述步骤会向程序包清单中添加一个类似于此的 [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 元素。 **windows.fileTypeAssociation** 类别指示应用处理扩展名为 `.alsdk` 的文件。
 
 ```xml
       <Extensions>
@@ -66,23 +66,23 @@ The steps above add an [**Extension**](https://msdn.microsoft.com/library/window
       </Extensions>
 ```
 
-## <a name="step-2-add-the-proper-icons"></a>Step 2: Add the proper icons
+## <a name="step-2-add-the-proper-icons"></a>步骤 2：添加适当的图标
 
 
-Apps that become the default for a file type have their icons displayed in various places throughout the system. For example these icons are shown in:
+成为文件类型默认应用的应用在整个系统中的各个位置显示其图标。 例如，这些图标显示在以下位置中：
 
--   Windows Explorer ItemsView, context menus, and the Ribbon
--   Default programs Control Panel
--   File picker
--   Search results on the Start screen
+-   Windows 资源管理器 ItemsView、上下文菜单以及功能区
+-   默认程序控制面板
+-   文件选取器
+-   在“开始”屏幕上搜索结果
 
-Match the look of the app tile logo and use your app's background color rather than making the icon transparent. Have the logo extend to the edge without padding it. Test your icons on white backgrounds. For example icons, see the [Association launching sample](http://go.microsoft.com/fwlink/p/?LinkID=620490).
-![the solution explorer with a view of the files in the images folder. there are 16, 32, 48, and 256 pixel versions of both ‘icon.targetsize’ and ‘smalltile-sdk’](images/seviewofimages.png)
+匹配应用磁贴徽标的外观，并使用应用的背景色而不是使图标透明。 将徽标扩展到边缘而无需填充。 在白色背景上测试你的图标。 有关示例图标，请参阅[关联启动示例](http://go.microsoft.com/fwlink/p/?LinkID=620490)。
+![带有图像文件夹中的文件视图的解决方案资源管理器。 “icon.targetsize”和“smalltile-sdk”都有 16、32、48 和 256 像素版本](images/seviewofimages.png)
 
-## <a name="step-3-handle-the-activated-event"></a>Step 3: Handle the activated event
+## <a name="step-3-handle-the-activated-event"></a>步骤 3：处理激活的事件
 
 
-The [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) event handler receives all file activation events.
+[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) 事件处理程序接收所有文件激活事件。
 
 > [!div class="tabbedCodeSnippets"]
 ```vb
@@ -111,40 +111,40 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
     > **Note**  When launched via File Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
-It is recommended that apps create a new XAML Frame for each activation event that opens a new page. This way, the navigation backstack for the new XAML Frame will not contain any previous content that the app might have on the current window when suspended. Apps that decide to use a single XAML Frame for Launch and File Contracts should clear the pages on the Frame's navigation journal before navigating to a new page.
+建议应用为打开新页面的每个激活事件创建一个新的 XAML 框架。 通过此方式，新 XAML 框架的导航 Backstack 将不包含应用暂停时可能在当前窗口中显示的所有早期内容。 确定针对启动和文件合约使用单个 XAML 框架的应用在导航到新页面之前，应该清除该框架的导航日志上的页面。
 
-When launched via File activation, apps should consider including UI that allows the user to go back to the top page of the app.
+通过文件激活启动后，应用应该考虑包括允许用户返回到应用顶部页面的 UI。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>备注
 
 
-The files that you receive could come from an untrusted source. We recommend that you validate the content of a file before taking action on it. For more info on input validation, see [Writing Secure Code](http://go.microsoft.com/fwlink/p/?LinkID=142053)
+收到的文件可能来自不受信任的来源。 我们建议在对该文件采取操作之前，先对文件的内容进行验证。 有关输入验证的详细信息，请参阅[编写安全代码](http://go.microsoft.com/fwlink/p/?LinkID=142053)
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows&nbsp;8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-**Complete example**
+**完整示例**
 
-* [Association launching sample](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [关联启动示例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
 
-**Concepts**
+**概念**
 
-* [Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [File Type and Protocol Associations Model](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+* [默认程序](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [文件类型和协议关联模式](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
-**Tasks**
+**任务**
 
-* [Launch the default app for a file](launch-the-default-app-for-a-file.md)
-* [Handle URI activation](handle-uri-activation.md)
+* [启动文件的默认应用](launch-the-default-app-for-a-file.md)
+* [处理 URI 激活](handle-uri-activation.md)
 
-**Guidelines**
+**指南**
 
-* [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [文件类型和 URI 的指南](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**Reference**
+**参考**
 * [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
 * [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
 

@@ -1,33 +1,33 @@
 ---
 author: PatrickFarley
-title: Splash screens
-description: This section describes how to set and configure your app&quot;s splash screen.
+title: "初始屏幕"
+description: "此部分介绍如何设置和配置应用的初始屏幕。"
 translationtype: Human Translation
 ms.sourcegitcommit: 023e37bb6f9b8d8d780bb0a536cb469c87a31ed4
 ms.openlocfilehash: bb0f3ff68b7dc15623e4f337e589989354e08b65
 
 ---
 
-# <a name="splash-screens"></a>Splash screens
+# <a name="splash-screens"></a>初始屏幕
 
-All UWP apps must have a splash screen, which is a composite of an image and a background color, both of which can be customized.
+所有 UWP 应用都必须包含初始屏幕，即图像与背景色的结合，两者均可自定义。
 
-Your splash screen is displayed immediately when the user launches your app. This provides immediate feedback to users while app resources are initialized. As soon as your app is ready for interaction, the splash screen is dismissed.
+当用户启动应用时，将立即显示你的初始屏幕。 这可以在初始化应用资源的同时向用户提供即时反馈。 应用准备好交互后，会立刻取消初始屏幕。
 
-A well-designed splash screen can make your app more inviting. Here's a simple, understated splash screen:
+设计良好的初始屏幕可以使你的应用更加吸引人。 下面是一个简单易懂的初始屏幕：
 
-![a 75% scaled screen capture of the splash screen from the splash screen sample.](images/regularsplashscreen.png)
+![从初始屏幕示例中捕获初始屏幕 75% 比例的屏幕。](images/regularsplashscreen.png)
 
-This splash screen is created by combining a green background color with a transparent-background PNG image.
+此初始屏幕通过组合绿色背景色与透明背景 PNG 图像进行创建。
 
-A simple image with a background color looks good regardless of the device your app is running on. Only the size of the background changes to compensate for a variety of screen sizes. Your image always remains intact.
+具有背景色的简单图像看起来不错，不管应用运行在哪个设备。 只有背景的大小会更改以补偿各种屏幕大小。 你的图像会始终保持完整。
 
-Additionally, you can use the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class to customize your app's launch experience. You can position an extended splash screen, which you create, to give your app more time to complete additional tasks like preparing app UI or completing networking operations. You can also use the **SplashScreen** class to notify you when the splash screen is dismissed, so that you can begin entrance animations.
+此外，你可以使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 类来自定义你的应用的启动体验。 你可以对你创建的延长初始屏幕进行适当定位，以使你的应用具有更多时间来完成诸如准备应用 UI 或完成网络操作等附加任务。 你还可以使用 **SplashScreen** 类以在初始屏幕消失时通知你，以便你可以开始进入动画。
 
-| Topic | Description |
+| 主题 | 说明 |
 |-------|-------------|
-| [Add a splash screen](add-a-splash-screen.md) | Set your app's splash screen image and background color. |
-| [Display a splash screen for more time](create-a-customized-splash-screen.md) | Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, and can be customized. |
+| [添加初始屏幕](add-a-splash-screen.md) | 设置你的应用的初始屏幕图像和背景色。 |
+| [延长显示初始屏幕的时间](create-a-customized-splash-screen.md) | 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，并且可以进行自定义。 |
 
 
 <!--HONumber=Dec16_HO1-->

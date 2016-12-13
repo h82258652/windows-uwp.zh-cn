@@ -1,7 +1,7 @@
 ---
 author: mcleblanc
-description: The practice of defining UI in the form of declarative XAML markup translates extremely well from Windows Phone Silverlight to Universal Windows Platform (UWP) apps.
-title: Porting Windows Phone Silverlight XAML and UI to UWP
+description: "以声明性 XAML 标记的形式定义 UI 的做法非常好地将 Windows Phone Silverlight 转换为通用 Windows 平台 (UWP) 应用。"
+title: "将 Windows Phone Silverlight XAML 和 UI 移植到 UWP"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 translationtype: Human Translation
 ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
@@ -9,39 +9,39 @@ ms.openlocfilehash: 3aa68943724c008e18df63d8b0ae20f448146303
 
 ---
 
-#  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>Porting Windows Phone Silverlight XAML and UI to UWP
+#  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-The previous topic was [Troubleshooting](wpsl-to-uwp-troubleshooting.md).
-
-The practice of defining UI in the form of declarative XAML markup translates extremely well from Windows Phone Silverlight to Universal Windows Platform (UWP) apps. You'll find that large sections of your markup are compatible once you've updated system Resource key references, changed some element type names, and changed "clr-namespace" to "using". Much of the imperative code in your presentation layer—view models, and code that manipulates UI elements—will also be straightforward to port.
-
-## <a name="a-first-look-at-the-xaml-markup"></a>A first look at the XAML markup
-
-The previous topic showed you how to copy your XAML and code-behind files into your new Windows 10 Visual Studio project. One of the first issues you might notice highlighted in the Visual Studio XAML designer is that the `PhoneApplicationPage` element at the root of your XAML file is not valid for a Universal Windows Platform (UWP) project. In the previous topic, you saved a copy of the XAML files that Visual Studio generated when it created the Windows 10 project. If you open that version of MainPage.xaml, you'll see that at the root is the type [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), which is in the [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) namespace. So, you can change all `<phone:PhoneApplicationPage>` elements to `<Page>` (don't forget property element syntax) and you can delete the `xmlns:phone` declaration.
-
-For a more general approach to finding the UWP type that corresponds to a Windows Phone Silverlight type, you can refer to [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md).
-
-## <a name="xaml-namespace-prefix-declarations"></a>XAML namespace prefix declarations
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-If you use instances of custom types in your views—perhaps a view model instance or a value converter—then you will have XAML namespace prefix declarations in your XAML markup. The syntax of these differs between Windows Phone Silverlight and the UWP. Here are some examples:
+上一主题是[疑难解答](wpsl-to-uwp-troubleshooting.md)。
+
+以声明性 XAML 标记的形式定义 UI 的做法非常好地将 Windows Phone Silverlight 转换为通用 Windows 平台 (UWP) 应用。 你将发现，更新了系统资源键引用、更改了某些元素类型名称并将“clr-namespace”更改为“using”后，标记的一大部分将可兼容。 表示层中的大部分强制性代码（操作 UI 元素的视图模型和代码）也将易于移植。
+
+## <a name="a-first-look-at-the-xaml-markup"></a>XAML 标记一览
+
+上一主题向你介绍了如何将 XAML 和代码隐藏文件复制到新的 Windows 10 Visual Studio 项目中。 你可能注意到的最早出现的 Visual Studio XAML 设计器中突出显示的问题之一是，XAML 文件的根中的 `PhoneApplicationPage` 元素对通用 Windows 平台 (UWP) 项目无效。 在上一主题中，你保存了一个 Visual Studio 在创建 Windows 10 项目时生成的 XAML 文件的副本。 如果你打开该版本的 MainPage.xaml，你将看到根中的类型为 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)，此类型在 [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空间中。 因此，你可以将所有 `<phone:PhoneApplicationPage>` 元素更改为 `<Page>`（不要忘记属性元素语法），并且可以删除 `xmlns:phone` 声明。
+
+有关查找对应于 Windows Phone Silverlight 类型的 UWP 类型的较常规方法，可以参考[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)。
+
+## <a name="xaml-namespace-prefix-declarations"></a>XAML 命名空间前缀声明
+
+
+如果你在视图中使用自定义类型的实例（可能是视图模型实例或值转换器），则 XAML 标记中将具有 XAML 命名空间前缀声明。 它们的语法在 Windows Phone Silverlight 和 UWP 之间有所不同。 下面提供了一些例子：
 
 ```xml
     xmlns:ContosoTradingCore="clr-namespace:ContosoTradingCore;assembly=ContosoTradingCore"
     xmlns:ContosoTradingLocal="clr-namespace:ContosoTradingLocal"
 ```
 
-Change "clr-namespace" to "using" and delete any assembly token and semi-colon (the assembly will be inferred). The result looks like this:
+将“clr-namespace”更改为“using”并删除任何程序集令牌和分号（将推断程序集） 结果如下所示：
 
 ```xml
     xmlns:ContosoTradingCore="using:ContosoTradingCore"
     xmlns:ContosoTradingLocal="using:ContosoTradingLocal"
 ```
 
-You may have a resource whose type is defined by the system:
+你可能具有其类型由系统定义的资源：
 
 ```xml
     xmlns:System="clr-namespace:System;assembly=mscorlib"
@@ -49,51 +49,51 @@ You may have a resource whose type is defined by the system:
     <System:Double x:Key="FontSizeLarge">40</System:Double>
 ```
 
-In the UWP, omit the "System" prefix declaration and use the (already declared) "x" prefix instead:
+在 UWP 中，省略“System”前缀声明并改用（已经声明的）“x”前缀：
 
 ```xml
     <x:Double x:Key="FontSizeLarge">40</x:Double>
 ```
 
-## <a name="imperative-code"></a>Imperative code
+## <a name="imperative-code"></a>强制性代码
 
 
-Your view models are one place where there's imperative code that references UI types. Another place is any code-behind files that directly manipulate UI elements. For example, you might find that a line of code like this one doesn't compile yet:
+视图模型是引用 UI 类型的强制性代码所在的位置之一。 另一个位置是直接操作 UI 元素的任何代码隐藏文件。 例如，你可能发现一行代码（如以下代码）尚未编译：
 
 
 ```csharp
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-**BitmapImage** is in the **System.Windows.Media.Imaging** namespace in Windows Phone Silverlight, and a using directive in the same file allows **BitmapImage** to be used without namespace qualification as in the snippet above. In a case like this, you can right-click the type name (**BitmapImage**) in Visual Studio and use the **Resolve** command on the context menu to add a new namespace directive to the file. In this case, the [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) namespace is added, which is where the type lives in the UWP. You can remove the **System.Windows.Media.Imaging** using directive, and that will be all it takes to port code like that in the snippet above. When you're done, you'll have removed all Windows Phone Silverlight namespaces.
+**BitmapImage** 在 Windows Phone Silverlight 的 **System.Windows.Media.Imaging** 命名空间中，同一文件中的 using 指令允许使用 **BitmapImage**，而无需如以上代码段中一样的命名空间限定。 在这种情况下，你可以在 Visual Studio 中右键单击类型名称 (**BitmapImage**) 并在上下文菜单上使用 **Resolve** 命令以将新的命名空间指令添加到该文件。 在此情况下，添加 [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 命名空间，这是该类型在 UWP 中所处的位置。 你可以删除 **System.Windows.Media.Imaging** using 指令，这是在以上代码段中移植类似代码所需的全部操作。 当你完成时，你将已经删除所有 Windows Phone Silverlight 命名空间。
 
-In simple cases like this, where you're mapping the types in an old namespace to the same types in a new one, you can use Visual Studio's **Find and Replace** command to make bulk changes to your source code. The **Resolve** command is a great way of discovering a type's new namespace. As another example, you can replace all "System.Windows" with "Windows.UI.Xaml". That will essentially port all using directives and all fully-qualified type names that refer to that namespace.
+在像这样将旧命名空间中的类型映射到新命名空间中的相同类型的简单案例中，可以使用 Visual Studio 的 **Find and Replace** 命令对源代码进行批量更改。 **Resolve** 命令是发现类型的新命名空间的绝佳方法。 作为另一个示例，你可以将所有“System.Windows”替换为“Windows.UI.Xaml”。 这实质上将移植所有引用该命名空间的 using 指令和完全限定的类型名称。
 
-Once all the old using directives are removed and the new ones added, you can use Visual Studio's **Organize Usings** command to sort your directives and remove unused ones.
+删除所有旧的 using 指令并添加新指令后，可以使用 Visual Studio 的 **Organize Usings** 命令为指令排序并删除未使用的指令。
 
-Sometimes, fixing imperative code will be as minor as changing a parameter's type. Other times, you will need to use UWP APIs instead of .NET APIs for Windows Store apps. To identify which APIs are supported, use the rest of this porting guide in combination with [.NET for Windows Store apps overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx) and the [Windows Runtime reference](https://msdn.microsoft.com/library/windows/apps/br211377).
+有时只需修复少量的强制性代码，例如更改参数类型。 其他时间，将需要使用 UWP API，而不是 Windows 应用商店应用的 .NET API。 若要标识哪些 API 受支持，请将本移植指南中的其余部分与[适用于 Windows 应用商店应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)和 [Windows 运行时参考](https://msdn.microsoft.com/library/windows/apps/br211377)结合使用。
 
-And, if you just want to get to the stage where your project builds, you can comment or stub out any non-essential code. Then iterate, one issue at a time, and refer to the following topics in this section (and the previous topic: [Troubleshooting](wpsl-to-uwp-troubleshooting.md)), until any build and runtime issues are ironed-out and your port is complete.
+并且，如果你希望转到项目构建阶段，可以注释或去掉任何非必要的代码。 然后一次一个问题进行迭代，并参考本部分中的以下主题（和上一个主题：[疑难解答](wpsl-to-uwp-troubleshooting.md)），直到消除所有构建和运行时问题并且完成移植。
 
-## <a name="adaptiveresponsive-ui"></a>Adaptive/responsive UI
+## <a name="adaptiveresponsive-ui"></a>自适应/响应式 UI
 
-Because your Windows 10 app can run on a potentially wide range of devices—each with its own screen size and resolution—you'll want to go beyond the minimal steps to port your app and you'll want to tailor your UI to look its best on those devices. You can use the adaptive Visual State Manager feature to dynamically detect window size and to change layout in response, and an example of how to do that is shown in the section [Adaptive UI](wpsl-to-uwp-case-study-bookstore2.md) in the Bookstore2 case study topic.
+由于你的 Windows 10 应用可以在种类可能很广泛的设备上运行（每种设备都具有其自己的屏幕大小和分辨率），你将不仅需要完成移植应用的最少步骤，并且将需要定制你的 UI 以使其在这些设备上具有最佳的外观。 你可以使用自适应视觉状态管理器功能来动态检测窗口大小并更改布局作为响应，还可以使用 Bookstore2 案例研究主题中的[自适应 UI](wpsl-to-uwp-case-study-bookstore2.md) 部分中所示的有关如何执行此操作的示例。
 
-## <a name="alarms-and-reminders"></a>Alarms and Reminders
+## <a name="alarms-and-reminders"></a>警告和提醒
 
-Code using the **Alarm** or **Reminder** classes should be ported to use the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class to create and register a background task, and display a toast at the relevant time. See [Background processing](wpsl-to-uwp-business-and-data.md) and [Toasts](#toasts).
+应该移植使用 **Alarm** 或 **Reminder** 类的代码，以使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类创建和注册后台任务，并在相关的时间显示 Toast。 请参阅[后台处理](wpsl-to-uwp-business-and-data.md)和 [Toast](#toasts)。
 
-## <a name="animation"></a>Animation
+## <a name="animation"></a>动画
 
-As a preferred alternative to keyframe animations and from/to animations, the UWP animation library is available to UWP apps. These animations have been designed and tuned to run smoothly, to look great, and to make your app appear as integrated with Windows as the built-in apps do. See [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703).
+作为关键帧动画和 from/to 动画的首选替代方法，UWP 动画库对 UWP 应用可用。 为了运行流畅、外观美观以及使你的应用看起来像内置应用一样与 Windows 集成，这些动画已经过了设计和微调。 请参阅[快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)。
 
-If you do use keyframe animations or from/to animations in your UWP apps, then you may want to understand the distinction between independent and dependent animations that the new platform has introduced. See [Optimize animations and media](https://msdn.microsoft.com/library/windows/apps/mt204774). Animations that run on the UI thread (ones that animate layout properties, for example) are known as dependent animations, and when run on the new platform, they will have no effect unless you do one of two things. You can either re-target them to animate different properties, such as [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980), thereby making them independent. Or you can set `EnableDependentAnimation="True"` on the animation element in order to confirm your intention to run an animation that cannot be guaranteed to run smoothly. If you use Blend for Visual Studio to author new animations, then that property will be set for you where necessary.
+如果你确实在 UWP 应用中使用关键帧动画或 from/to 动画，则可能希望了解新的平台所引入的独立动画和从属动画之间的区别。 请参阅[优化动画和媒体](https://msdn.microsoft.com/library/windows/apps/mt204774)。 在 UI 线程上运行的动画（如对布局属性进行动画处理的动画）被称为从属动画，在新的平台上运行时，它们将没有效果，除非你执行以下两项操作之一。 你可以将它们重定目标为对不同的属性进行动画处理（例如 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980)），从而使它们独立。 或者可以在动画元素上设置 `EnableDependentAnimation="True"` 以确认你要运行无法保证流畅运行的动画的意图。 如果你使用 Blend 或 Visual Studio 创作新的动画，那么将在必要时为你设置该属性。
 
-## <a name="back-button-handling"></a>Back button handling
+## <a name="back-button-handling"></a>后退按钮处理
 
-In a Windows 10 app, you can use a single approach to handling the back button and it will work on all devices. On mobile devices, the button is provided for you as a capacitive button on the device, or as a button in the shell. On a desktop device, you add a button to your app's chrome whenever back-navigation is possible within the app, and this appears in the title bar for windowed apps or in the task bar for Tablet mode. The back button event is a universal concept across all device families, and buttons implemented in hardware or in software raise the same [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event.
+在 Windows 10 应用中，你可以使用单个方法处理后退按钮，它将适用于所有设备。 在移动设备上，该按钮作为设备上的电容性按钮或外壳中的按钮向你提供。 在桌面设备上，只要你的应用内可进行后退导航，你便可以向该应用的镶边添加一个按钮，它将显示在窗口化的应用的标题栏中或平板电脑模式下的任务栏中。 后退按钮事件是所有设备系列的通用概念，并且硬件或软件中实现的按钮会引发相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
 
-The example below works for all device families and it is good for cases where the same processing applies to all pages, and where you needn't confirm navigation (for example, to warn about unsaved changes).
+以下示例适用于所有设备系列，并且对将相同的处理操作应用于所有页面的情形以及不需要确认导航的情形（例如，就未保存的更改发出警告）十分有用。
 
 ```csharp
    // app.xaml.cs
@@ -135,94 +135,94 @@ The example below works for all device families and it is good for cases where t
     }
 ```
 
-There's also a single approach for all device families for programmatically exiting the app.
+还有一个适用于所有设备系列的以编程方式退出应用的方法。
 
 ```csharp
    Windows.UI.Xaml.Application.Current.Exit();
 ```
 
-## <a name="binding-and-compiled-bindings-with-xbind"></a>Binding, and compiled bindings with {x:Bind}
+## <a name="binding-and-compiled-bindings-with-xbind"></a>绑定，并且使用 {x:Bind} 编译绑定
 
-The topic of binding includes:
+绑定的主题包括：
 
--   Binding a UI element to "data" (that is, to the properties and commands of a view model)
--   Binding a UI element to another UI element
--   Writing a view model that is observable (that is, it raises notifications when a property value changes and when the availability of a command changes)
+-   将 UI 元素绑定到“数据”（即，视图模型的属性和命令）
+-   将 UI 元素绑定到另一个 UI 元素
+-   编写可观察的视图模型（即，当属性值更改时和命令的可用性更改时它将引发通知）。
 
-All of these aspects are largely still supported, but there are namespace differences. For example, **System.Windows.Data.Binding** maps to [**Windows.UI.Xaml.Data.Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), **System.ComponentModel.INotifyPropertyChanged** maps to [**Windows.UI.Xaml.Data.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/br209899), and **System.Collections.Specialized.INotifyPropertyChanged** maps to [**Windows.UI.Xaml.Interop.INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/hh702001).
+所有这些方面大部分仍受支持，但是有命名空间差异。 例如，**System.Windows.Data.Binding** 映射到 [**Windows.UI.Xaml.Data.Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)、**System.ComponentModel.INotifyPropertyChanged** 映射到 [**Windows.UI.Xaml.Data.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/br209899)、**System.Collections.Specialized.INotifyPropertyChanged** 映射到 [**Windows.UI.Xaml.Interop.INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/hh702001)。
 
-Windows Phone Silverlight app bars and app bar buttons can't be bound like they can in a UWP app. You may have imperative code that constructs your app bar and its buttons, binds them to properties and localized strings, and handles their events. If so, you now have the option to port that imperative code by replacing it with declarative markup bound to properties and commands, and with static resource references, thus making your app incrementally safer and more maintainable. You can use Visual Studio or Blend for Visual Studio to bind and style UWP app bar buttons just like any other XAML element. Note that in a UWP app the type names you use are [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427) and [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244).
+Windows Phone Silverlight 应用栏和应用栏按钮无法像在 UWP 应用中一样绑定。 你可能具有强制性代码，用于构造应用栏及其按钮、将它们绑定到属性和本地化字符串并处理其事件。 如果有，你现在可以选择移植该强制性代码，方法是将其替换为绑定到属性和命令的声明性标记以及静态资源引用，从而逐渐增加你的应用的安全性和可维护性。 你可以使用 Visual Studio 或 Blend for Visual Studio 绑定 UWP 应用栏按钮并为其设置样式，就像任何其他 XAML 元素一样。 请注意，在 UWP 应用中，你使用的类型名称是 [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427) 和 [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244)。
 
-The binding-related features of UWP apps currently have the following limitations:
+UWP 应用的绑定相关的功能当前具有以下限制：
 
--   There is no built-in support for data-entry validation and the [**IDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.idataerrorinfo.aspx) and [**INotifyDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.inotifydataerrorinfo.aspx) interfaces.
--   The [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) class does not include the extended formatting properties available in Windows Phone Silverlight. However, you can still implement [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) to provide custom formatting.
--   The [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) methods take language strings as parameters instead of [**CultureInfo**](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx) objects.
--   The [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) class does not provide built-in support for sorting and filtering, and grouping works differently. For more info, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946) and the [Data binding sample](http://go.microsoft.com/fwlink/p/?linkid=226854).
+-   没有对数据输入验证以及 [**IDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.idataerrorinfo.aspx) 和 [**INotifyDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.inotifydataerrorinfo.aspx) 接口的内置支持。
+-   [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 类不包含 Windows Phone Silverlight 中所提供的扩展格式属性。 不过，你仍然可以实现 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 以提供自定义格式。
+-   [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) 方法将语言字符串视为参数而不是 [**CultureInfo**](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx) 对象。
+-   [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 类不内置支持排序和筛选以及对工作执行差异化分组。 有关详细信息，请参阅[深度数据绑定](https://msdn.microsoft.com/library/windows/apps/mt210946)和[数据绑定示例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
 
-Although the same binding features are still largely supported, Windows 10 offers the option of a new and more performant binding mechanism called compiled bindings, which use the {x:Bind} markup extension. See [Data Binding: Boost Your Apps' Performance Through New Enhancements to XAML Data Binding](http://channel9.msdn.com/Events/Build/2015/3-635), and the [x:Bind Sample](http://go.microsoft.com/fwlink/p/?linkid=619989).
+尽管相同的绑定功能仍然大部分受支持，但 Windows 10 提供性能更佳的全新绑定机制（称为编译绑定），它使用 {x:Bind} 标记扩展。 请参阅[数据绑定：通过对 XAML 数据绑定的新增功能提升应用性能](http://channel9.msdn.com/Events/Build/2015/3-635)和 [x:Bind 示例](http://go.microsoft.com/fwlink/p/?linkid=619989)。
 
-## <a name="binding-an-image-to-a-view-model"></a>Binding an Image to a view model
+## <a name="binding-an-image-to-a-view-model"></a>将图像绑定到视图模型
 
-You can bind the [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/br242760) property to any property of a view model that's of type [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210107). Here's a typical implementation of such a property in a Windows Phone Silverlight app:
+你可以将 [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/br242760) 属性绑定到属于类型 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210107) 的视图模型的任何属性。 下面是 Windows Phone Silverlight 应用中此类属性的典型实现：
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-In a UWP app, you use the ms-appx [URI scheme](https://msdn.microsoft.com/library/windows/apps/jj655406). So that you can keep the rest of your code the same, you can use a different overload of the **System.Uri** constructor to put the ms-appx URI scheme in a base URI and append the rest of the path onto that. Like this:
+在 UWP 应用中，使用 ms-appx [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406)。 因此，你可以使其余的代码保持原样，还可以使用 **System.Uri** 构造函数的不同重载将 ms-appx URI 方案放置在基 URI 中并将路径的其余部分附加到其中。 如下所示：
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
     return new BitmapImage(new Uri(new Uri("ms-appx://"), this.CoverImagePath));
 ```
 
-That way, the rest of the view model, the path values in the image path property, and the bindings in the XAML markup, can all stay exactly the same.
+这样，视图模型的其余部分、图像路径属性中的路径值以及 XAML 标记中的绑定可以全部保持原样。
 
-## <a name="controls-and-control-stylestemplates"></a>Controls, and control styles/templates
+## <a name="controls-and-control-stylestemplates"></a>控件和控件样式/模板
 
-Windows Phone Silverlight apps use controls defined in the **Microsoft.Phone.Controls** namespace and the **System.Windows.Controls** namespace. XAML UWP apps use controls defined in the [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) namespace. The architecture and design of XAML controls in the UWP is virtually the same as Windows Phone Silverlight controls. But, some changes have been made to improve the set of available controls and to unify them with Windows apps. Here are specific examples.
+Windows Phone Silverlight 应用使用在 **Microsoft.Phone.Controls** 命名空间和 **System.Windows.Controls** 命名空间中定义的控件。 XAML UWP 应用使用 [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空间中定义的控件。 UWP 中的 XAML 控件的体系结构和设计几乎与 Windows Phone Silverlight 控件相同。 但是，进行了一些更改以改进可用的控件组并将它们与 Windows 应用统一。 以下是具体示例。
 
-| Control name | Change |
+| 控件名称 | 更改 |
 |--------------|--------|
-| ApplicationBar | The [Page.TopAppBar](https://msdn.microsoft.com/library/windows/apps/hh702575) property. |
-| ApplicationBarIconButton | The UWP equivalent is the [Glyph](https://msdn.microsoft.com/library/windows/apps/dn279538) property. PrimaryCommands is the content property of CommandBar. The XAML parser interprets an element's inner xml as the value of its content property. |
-| ApplicationBarMenuItem | The UWP equivalent is the [AppBarButton.Label](https://msdn.microsoft.com/library/windows/apps/dn279261) set to the menu item text. |
-| ContextMenu (in the Windows Phone Toolkit) | For a single selection fly-out, use [Flyout](https://msdn.microsoft.com/library/windows/apps/dn279496). |
-| ControlTiltEffect.TiltEffect class | Animations from the UWP animation library are built into the default Styles of the common controls. See the [Animating pointer actions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432). |
-| LongListSelector with grouped data | The Windows Phone Silverlight LongListSelector functions in two ways, which can be used in concert. First, it is able to display data that is grouped by a key, for example, a list of names grouped by initial letter. Second, it is able to "zoom" between two semantic views: the grouped list of items (for example, names), and a list of just the group keys themselves (for example, initial letters). With the UWP, you can display grouped data with the [Guidelines for list and grid view controls](https://msdn.microsoft.com/library/windows/apps/mt186889). |
-| LongListSelector with flat data | For performance reasons, in the case of very long lists, we recommended LongListSelector instead of a Windows Phone Silverlight list box even for flat, non-grouped data. In a UWP app, [GridView](https://msdn.microsoft.com/library/windows/apps/br242705) are preferred for long lists of items whether or not the data are amenable to grouping. |
-| Panorama | The Windows Phone Silverlight Panorama control maps to the [Guidelines for hub controls in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/dn449149) and Guidelines for the hub control. <br/> Note that a Panorama control wraps around from the last section to the first, and its background image moves in parallax relative to the sections. [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) sections do not wrap around, and parallax is not used. |
-| Pivot | The UWP equivalent of the Windows Phone Silverlight Pivot control is [Windows.UI.Xaml.Controls.Pivot](https://msdn.microsoft.com/library/windows/apps/dn608241). It is available for all device families. |
+| ApplicationBar | [Page.TopAppBar](https://msdn.microsoft.com/library/windows/apps/hh702575) 属性。 |
+| ApplicationBarIconButton | UWP 等效项是 [Glyph](https://msdn.microsoft.com/library/windows/apps/dn279538) 属性。 PrimaryCommands 是 CommandBar 的内容属性。 XAML 分析器将元素的内部 xml 解释为其内容属性的值。 |
+| ApplicationBarMenuItem | UWP 等效项是设置为菜单项文本的 [AppBarButton.Label](https://msdn.microsoft.com/library/windows/apps/dn279261)。 |
+| ContextMenu（在 Windows Phone 工具包中） | 对于单选浮出控件，请使用 [Flyout](https://msdn.microsoft.com/library/windows/apps/dn279496)。 |
+| ControlTiltEffect.TiltEffect 类 | UWP 动画库中的动画内置于常用控件的默认样式中。 请参阅[创建指针操作动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432)。 |
+| 带有分组数据的 LongListSelector | Windows Phone Silverlight LongListSelector 以两种方式运作，这两种方式可结合使用。 第一，它可以显示按某个键分组的数据，例如按首字母分组的名称列表。 第二，它可以在两个语义视图之间“缩放”：项（例如名称）的分组列表和只有组键（例如首字母）本身的列表。 借助 UWP，你可以按照[列表和网格视图控件指南](https://msdn.microsoft.com/library/windows/apps/mt186889)进行操作来显示分组数据。 |
+| 带有平面数据的 LongListSelector | 出于性能原因，在列表非常长的情况下，即使对于平面的非分组数据，我们也建议使用 LongListSelector 而不是 Windows Phone Silverlight 列表框。 在 UWP 应用中，[GridView](https://msdn.microsoft.com/library/windows/apps/br242705) 优先用于项的长列表，无论数据是否适合分组。 |
+| Panorama | Windows Phone Silverlight Panorama 控件映射到 [Windows 应用商店应用中的中心控件指南](https://msdn.microsoft.com/library/windows/apps/dn449149)和“中心控件指南”。 <br/> 请注意，Panorama 控件从最后一部分环绕到第一部分，并且其背景图像相对于具体部分在视差中移动。 [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) 部分不会环绕，并且不使用视差。 |
+| Pivot | Windows Phone Silverlight Pivot 控件的 UWP 等效项是 [Windows.UI.Xaml.Controls.Pivot](https://msdn.microsoft.com/library/windows/apps/dn608241)。 它适用于所有设备系列。 |
 
-**Note**   The PointerOver visual state is relevant in custom styles/templates in Windows 10 apps, but not in Windows Phone Silverlight apps. There are other reasons why your existing custom styles/templates may not be appropriate for Windows 10 apps, including system resource keys you are using, changes to the sets of visual states used, and performance improvements made to the Windows 10 default styles/templates. We recommend that you edit a fresh copy of a control's default template for Windows 10 and then re-apply your style and template customization to that.
+**注意** PointerOver 视觉状态与 Windows 10 应用中的自定义样式/模板有关，但与 Windows Phone Silverlight 应用无关。 存在其他原因导致你的现有自定义样式/模板不适用于 Windows 10 应用，包括你正在使用的系统资源键、对所使用的视觉状态集的更改以及对 Windows 10 默认样式/模板所做的性能改进。 我们建议你为 Windows 10 编辑一个控件默认模板的全新副本，然后对其重新应用你的样式和模板自定义。
 
-For more info on UWP controls, see [Controls by function](https://msdn.microsoft.com/library/windows/apps/mt185405), [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406), and [Guidelines for controls](https://msdn.microsoft.com/library/windows/apps/dn611856).
+有关 UWP 控件的详细信息，请参阅[按功能列出的控件](https://msdn.microsoft.com/library/windows/apps/mt185405)、[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)和[控件指南](https://msdn.microsoft.com/library/windows/apps/dn611856)。
 
-##  <a name="design-language-in-windows-10"></a>Design language in Windows 10
+##  <a name="design-language-in-windows-10"></a>Windows 10 设计语言
 
-There are some differences in design language between Windows Phone Silverlight apps and Windows 10 apps. For all the details, see [Design](http://dev.windows.com/design). Despite the design language changes, our design principles remain consistent: be attentive to detail but always strive for simplicity through focusing on content not chrome, fiercely reducing visual elements, and remaining authentic to the digital domain; use visual hierarchy especially with typography; design on a grid; and bring your experiences to life with fluid animations.
+设计语言 Windows Phone Silverlight 应用和 Windows 10 应用之间有一些区别。 有关所有详细信息，请参阅[设计](http://dev.windows.com/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
 
-## <a name="localization-and-globalization"></a>Localization and globalization
+## <a name="localization-and-globalization"></a>本地化和全球化
 
-For localized strings, you can re-use the .resx file from your Windows Phone Silverlight project in your UWP app project. Copy the file over, add it to the project, and rename it to Resources.resw so that the lookup mechanism will find it by default. Set **Build Action** to **PRIResource** and **Copy to Output Directory** to **Do not copy**. You can then use the strings in markup by specifying the **x:Uid** attribute on your XAML elements. See [Quickstart: Using string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+对于本地化字符串，你可以在 UWP 应用项目中重复使用 Windows Phone Silverlight 项目中的 .resx 文件。 复制文件，将其添加到项目，并将其重命名为 Resources.resw，以便查找机制默认找到它。 将**“生成操作”**设置为**PRIResource**并将**“复制到输出目录”**设置为**“不要复制”**。 然后你可以通过在 XAML 元素上指定**“x:Uid”**属性来使用标记中的字符串。 请参阅[快速入门：使用字符串资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
-Windows Phone Silverlight apps use the **CultureInfo** class to help globalize an app. UWP apps use MRT (Modern Resource Technology), which enables the dynamic loading of app resources (localization, scale, and theme) both at runtime and in the Visual Studio design surface. For more information, see [Guidelines for files, data, and globalization](https://msdn.microsoft.com/library/windows/apps/dn611859).
+Windows Phone Silverlight 应用使用 **CultureInfo** 类帮助实现应用全球化。 UWP 应用使用 MRT（现代资源技术），此技术支持在运行时和在 Visual Studio 设计图面中动态加载应用资源（本地化、比例和主题）。 有关详细信息，请参阅[文件、数据和全球化指南](https://msdn.microsoft.com/library/windows/apps/dn611859)。
 
-The [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) topic describes how to load device family-specific resources based on the device family resource selection factor.
+[**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
 
-## <a name="media-and-graphics"></a>Media and graphics
+## <a name="media-and-graphics"></a>媒体和图形
 
-As you read about UWP media and graphics, bear in mind that the Windows design principles encourage a fierce reduction of anything superfluous, including graphical complexity and clutter. Windows design is typified by clean and clear visuals, typography, and motion. If your app follows the same principles, then it will seem more like the built-in apps.
+当你阅读到有关 UWP 媒体和图形的内容时，请记住 Windows 设计准则鼓励尽量减少任何多余的内容，包括图形的复杂度和混乱度。 Windows 设计以整洁清晰的视觉效果、版式和动作为特征。 如果你的应用遵循相同的准则，那么它看起来将更像内置应用。
 
-Windows Phone Silverlight has a **RadialGradientBrush** type which is not present in the UWP, although other [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) types are. In some cases, you will be able to get a similar effect with a bitmap. Note that you can [create a radial gradient brush](https://msdn.microsoft.com/library/windows/desktop/dd756679) with Direct2D in a [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) and XAML C++ UWP.
+Windows Phone Silverlight 具有 UWP 中不存在的 **RadialGradientBrush** 类型，尽管存在其他 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 类型。 在某些情况下，你将可以使用位图获得类似的效果。 请注意，你可以使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 中的 Direct2D 和 XAML C++ UWP [创建径向渐变画笔](https://msdn.microsoft.com/library/windows/desktop/dd756679)。
 
-Windows Phone Silverlight has the **System.Windows.UIElement.OpacityMask** property, but that property is not a member of the UWP [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) type. In some cases, you will be able to get a similar effect with a bitmap. And you can [create an opacity mask](https://msdn.microsoft.com/library/windows/desktop/ee329947) with Direct2D in a [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) and XAML C++ UWP app. But, a common use case for **OpacityMask** is to use a single bitmap that adapts to both light and dark themes. For vector graphics, you can use theme-aware system brushes (such as the pie charts illustrated below). But, to make a theme-aware bitmap (such as the check marks illustrated below), requires a different approach.
+Windows Phone Silverlight 具有 **System.Windows.UIElement.OpacityMask** 属性，但是该属性不是 UWP [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 类型的成员。 在某些情况下，你将可以使用位图获得类似的效果。 并且你可以使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 中的 Direct2D 和 XAML C++ UWP 应用[创建不透明蒙板](https://msdn.microsoft.com/library/windows/desktop/ee329947)。 但是，**OpacityMask** 的常见用例是使用适应浅色和深色主题的单个位图。 对于矢量图形，你可以使用与主题有关的系统画笔（例如下面所示的饼图）。 但是，若要创建与主题有关的位图（例如下面所示的复选标记），则需要使用其他方法。
 
-![a theme-aware bitmap](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
+![与主题有关的位图](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 
-In a Windows Phone Silverlight app, the technique is to use an alpha mask (in the form of a bitmap) as the **OpacityMask** for a **Rectangle** filled with the foreground brush:
+在 Windows Phone Silverlight 应用中，技巧是使用 alpha 蒙板（以位图的形式）作为使用前景画笔填充的 **Rectangle** 的 **OpacityMask**。
 
 ```xml
     <Rectangle Fill="{StaticResource PhoneForegroundBrush}" Width="26" Height="26">
@@ -232,21 +232,21 @@ In a Windows Phone Silverlight app, the technique is to use an alpha mask (in th
     </Rectangle>
 ```
 
-The most straightforward way to port this to a UWP app is to use a [**BitmapIcon**](https://msdn.microsoft.com/library/windows/apps/dn279306), like this:
+将它移植到 UWP 应用的最简单的方法是使用 [**BitmapIcon**](https://msdn.microsoft.com/library/windows/apps/dn279306)，如下所示：
 
 ```xml
     <BitmapIcon UriSource="Assets/winrt_check.png" Width="21" Height="21"/>
 ```
 
-Here, winrt\_check.png is an alpha mask in the form of a bitmap just as wpsl\_check.png is, and it could very well be the same file. However, you may want to provide several different sizes of winrt\_check.png to be used for different scaling factors. For more info on that, and for an explanation of the changes to the **Width** and **Height** values, see [View/effective pixels, viewing distance, and scale factors](#view-effective-pixels-viewing-distance-and-scale-factors) in this topic.
+此处，winrt\_check.png 是采用位图形式的 alpha 蒙板，就像 wpsl\_check.png 一样，并且它完全可以是同一个文件。 但是，你可能会需要提供多个不同大小的 winrt\_check.png 以用于不同的比例系数。 有关详细信息和对 **Width** 和 **Height** 值进行更改的说明，请参阅本主题中的[视图/有效像素、观看距离和比例系数](#view-effective-pixels-viewing-distance-and-scale-factors)。
 
-A more general approach, which is appropriate if there are differences between the light and dark theme form of a bitmap, is to use two image assets—one with a dark foreground (for light theme) and one with a light foreground (for dark theme). For further details about how to name this set of bitmap assets, see [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324). Once a set of image files are correctly named, you can refer to them in the abstract, using their root name, like this:
+较常规的方法（适用于位图的浅色和深色主题之间有差异的情况）是使用两个图像资源：一个带有深色前景（用于浅色主题），而另一个带有浅色前景（用于深色主题）。 有关如何为这组位图资源命名的详细信息，请参阅[如何使用限定符为资源命名](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)。 为一组图像文件正确命名后，你可以使用它们的根名称在摘要中引用它们，如下所示：
 
 ```xml
     <Image Source="Assets/winrt_check.png" Stretch="None"/>
 ```
 
-In Windows Phone Silverlight, the **UIElement.Clip** property can be any shape that you can express with a **Geometry** and is typically serialized in XAML markup in the **StreamGeometry** mini-language. In the UWP, the type of the [**Clip**](https://msdn.microsoft.com/library/windows/apps/br208919) property is [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/br210259), so you can only clip a rectangular region. Allowing a rectangle to be defined using mini-language would be too permissive. So, to port a clipping region in markup, replace the **Clip** attribute syntax and make it into property element syntax similar to the following:
+在 Windows Phone Silverlight 中，**UIElement.Clip** 属性可以是可使用 **Geometry** 表达的任何形状，并且通常在 XAML 标记中使用 **StreamGeometry** 小型语言序列化。 在 UWP 中，[**Clip**](https://msdn.microsoft.com/library/windows/apps/br208919) 属性的类型是 [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/br210259)，以便你可以只剪裁矩形区域。 允许使用小型语言定义矩形这一做法过于宽松。 因此，若要在标记中移植裁剪区域，请替换 **Clip** 属性语法并使其成为与以下内容类似的属性元素语法：
 
 ```xml
     <UIElement.Clip>
@@ -254,17 +254,17 @@ In Windows Phone Silverlight, the **UIElement.Clip** property can be any shape t
     </UIElement.Clip>
 ```
 
-Note that you can [use arbitrary geometry as a mask in a layer](https://msdn.microsoft.com/library/windows/desktop/dd756654) with Direct2D in a [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) and XAML C++ UWP app.
+请注意，你可以凭借 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 中的 Direct2D 和 XAML C++ UWP 应用[使用任意几何图形作为层中的蒙板](https://msdn.microsoft.com/library/windows/desktop/dd756654)。
 
-## <a name="navigation"></a>Navigation
+## <a name="navigation"></a>导航
 
-When you navigate to a page in a Windows Phone Silverlight app, you use a Uniform Resource Identifier (URI) addressing scheme:
+当你在 Windows Phone Silverlight 应用中导航到某个页面时，可使用统一资源标识符 (URI) 寻址方案：
 
 ```csharp
     NavigationService.Navigate(new Uri("/AnotherPage.xaml", UriKind.Relative)/*, navigationState*/);
 ```
 
-In a UWP app, you call the [**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) method and specify the type of the destination page (as defined by the **x:Class** attribute of the page's XAML markup definition):
+在 UWP 应用中，调用 [**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 方法并指定目标页面的类型（如该页面的 XAML 标记定义的 **x:Class** 属性中所述）：
 
 
 ```csharp
@@ -276,47 +276,47 @@ In a UWP app, you call the [**Frame.Navigate**](https://msdn.microsoft.com/libra
     rootFrame.Navigate(typeof(AnotherPage)/*, parameter*/);
 ```
 
-You define the startup page for a Windows Phone Silverlight app in WMAppManifest.xml:
+在 WMAppManifest.xml 中定义 Windows Phone Silverlight 应用的启动页面：
 
 ```xml
     <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
 ```
 
-In a UWP app, you use imperative code to define the startup page. Here's some code from App.xaml.cs that illustrates how:
+在 UWP 应用中，使用强制性代码定义启动页面。 下面是 App.xaml.cs 中一些演示方法的代码：
 
 ```csharp
     if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
 ```
 
-URI mapping and fragment navigation are URI navigation techniques, and so they are not applicable to UWP navigation, which is not based on URIs. URI mapping exists in response to the weakly-typed nature of identifying a target page with a URI string, which leads to fragility and maintainability issues should the page move to a different folder and hence to a different relative path. UWP apps use type-based navigation, which is strongly-typed and compiler-checked, and does not have the problem that URI mapping solves. The use case for fragment navigation is to pass along some context to the target page so that the page can cause a particular fragment of its content to be scrolled into view, or otherwise displayed. The same goal can be achieved by passing a navigation parameter when you call the [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) method.
+URI 映射和片段导航是 URI 导航技术，因此它们不适用于 UWP 导航，后者不基于 URI。 URI 映射的存在是为了响应使用 URI 字符串标识目标页面的弱类型性质，如果页面移动到不同的页面，从而移动到不同的相对路径，此性质可能导致易坏性和可维护性问题。 UWP 应用使用基于类型的导航，它是强类型且经过编译器检查的，因此没有 URI 映射所解决的问题。 片段导航的用例是将一些上下文一起传递到目标页面，以便该页面可以使其内容的特定片段显示或者滚动到视图中。 调用 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 方法时，可以通过传递导航参数实现相同的目标。
 
-For more info, see [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344).
+有关详细信息，请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344)。
 
-## <a name="resource-key-reference"></a>Resource key reference
+## <a name="resource-key-reference"></a>资源键引用
 
-The design language has evolved for Windows 10 and consequently certain system styles have changed, and many system resource keys have been removed or renamed. The XAML markup editor in Visual Studio highlights references to resource keys that can't be resolved. For example, the XAML markup editor will underline a reference to the style key `PhoneTextNormalStyle` with a red squiggle. If that isn't corrected, then the app will immediately terminate when you try to deploy it to the emulator or device. So, it's important to attend to XAML markup correctness. And you will find Visual Studio to be a great tool for catching such issues.
+已针对 Windows 10 发展了设计语言，因此某些系统样式已发生更改，并且已删除或重命名许多系统资源键。 Visual Studio 中的 XAML 标记编辑器突出显示对无法解析的资源键的引用。 例如，XAML 标记编辑器将使用红色波形曲线为对样式键 `PhoneTextNormalStyle` 的引用加下划线。 如果未更正该错误，则应用将在你尝试将其部署到模拟器或设备时立即终止。 因此，请务必留意 XAML 标记的正确性。 而且你将发现 Visual Studio 是捕获此类问题的绝佳工具。
 
-Also, see [Text](#text), below.
+另请参阅下面的[文本](#text)。
 
-## <a name="status-bar-system-tray"></a>Status bar (system tray)
+## <a name="status-bar-system-tray"></a>状态栏（系统托盘）
 
-The system tray (set in XAML markup with `shell:SystemTray.IsVisible`) is now called the status bar, and it is shown by default. You can control its visibility in imperative code by calling the [**Windows.UI.ViewManagement.StatusBar.ShowAsync**](https://msdn.microsoft.com/library/windows/apps/dn610343) and [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) methods.
+系统托盘(使用 `shell:SystemTray.IsVisible` 在 XAML 标记中进行设置）现在称为状态栏，并默认处于显示状态。 你可以在强制性代码中通过调用 [**Windows.UI.ViewManagement.StatusBar.ShowAsync**](https://msdn.microsoft.com/library/windows/apps/dn610343) 和 [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) 方法控制其可见性。
 
-## <a name="text"></a>Text
+## <a name="text"></a>文本
 
-Text (or typography) is an important aspect of a UWP app and, while porting, you may want to revisit the visual designs of your views so that they are in harmony with the new design language. Use these illustrations to find the UWP **TextBlock** system styles that are available. Find the ones that correspond to the Windows Phone Silverlight styles you used. Alternatively, you can create your own universal styles and copy the properties from the Windows Phone Silverlight system styles into those.
+文本（或版式）是 UWP 应用的重要方面，并且在移植时，你可能希望回顾你的视图的视觉设计，以便它们与新设计语言相协调。 使用这些图示查找可用的 UWP **TextBlock** 系统样式。 查找对应于你所使用的 Windows Phone Silverlight 样式的样式。 或者，你可以创建自己的通用样式并将 Windows Phone Silverlight 系统样式中的属性复制到这些样式中。
 
-![system textblock styles for windows 10 apps](images/label-uwp10stylegallery.png) System TextBlock styles for Windows 10 apps
+![适用于 Windows 10 应用的 TextBlock 系统样式](images/label-uwp10stylegallery.png) 适用于 Windows 10 应用的 TextBlock 系统样式
 
-In a Windows Phone Silverlight app, the default font family is Segoe WP. In a Windows 10 app, the default font family is Segoe UI. As a result, font metrics in your app may look different. If you want to reproduce the look of your Windows Phone Silverlight text, you can set your own metrics using properties such as [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) and [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362). For more info, see [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) and [Design UWP apps](http://dev.windows.com/design).
+在 Windows Phone Silverlight 应用中，默认字体系列是 Segoe WP。 在 Windows 10 应用中，默认字体系列是 Segoe UI。 因此，你的应用中的字体指标可能看起来不同。 如果你希望重新生成 Windows Phone Silverlight 文本的外观，可以使用 [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) 和 [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362) 等属性设置你自己的指标。 有关详细信息，请参阅[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[设计 UWP 应用](http://dev.windows.com/design)。
 
-## <a name="theme-changes"></a>Theme changes
+## <a name="theme-changes"></a>主题更改
 
-For a Windows Phone Silverlight app, the default theme is dark by default. For Windows 10 devices, the default theme has changed, but you can control the theme used by declaring a requested theme in App.xaml. For example, to use a dark theme on all devices, add `RequestedTheme="Dark"` to the root Application element.
+对于 Windows Phone Silverlight 应用，默认主题默认为深色。 对于 Windows 10 设备，默认主题已更改，但是你可以通过在 App.xaml 中声明所请求的主题来控制所使用的主题。 例如，若要在所有设备上都使用深色主题，请将 `RequestedTheme="Dark"` 添加到根 Application 元素。
 
-## <a name="tiles"></a>Tiles
+## <a name="tiles"></a>磁贴
 
-Tiles for UWP apps have behaviors similar to Live Tiles for Windows Phone Silverlight apps, although there are some differences. For example, code that calls the **Microsoft.Phone.Shell.ShellTile.Create** method to create secondary tiles should be ported to call [**SecondaryTile.RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/br230606). Here is a before-and-after example, first the Windows Phone Silverlight version:
+尽管有些差异，但适用于 UWP 应用的磁贴与适用于 Windows Phone Silverlight 的动态磁贴具有相似的行为。 例如，调用 **Microsoft.Phone.Shell.ShellTile.Create** 方法以创建辅助磁贴的代码应该移植为调用 [**SecondaryTile.RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/br230606)。 下面是一个对比示例，第一个是 Windows Phone Silverlight 版本：
 
 
 ```csharp
@@ -332,7 +332,7 @@ Tiles for UWP apps have behaviors similar to Live Tiles for Windows Phone Silver
     ShellTile.Create(this.selectedBookSku.NavigationUri, tileData, true);
 ```
 
-And the UWP equivalent:
+第二个是 UWP 等效项：
 
 ```csharp
     var tile = new SecondaryTile(
@@ -345,52 +345,52 @@ And the UWP equivalent:
     await tile.RequestCreateAsync();
 ```
 
-Code that updates a tile with the **Microsoft.Phone.Shell.ShellTile.Update** method, or the **Microsoft.Phone.Shell.ShellTileSchedule** class, should be ported to use the [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622), [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628), [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616), and/or [**ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) classes.
+使用 **Microsoft.Phone.Shell.ShellTile.Update** 方法或 **Microsoft.Phone.Shell.ShellTileSchedule** 类更新磁贴的代码应该移植为使用 [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)、[**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628)、[**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) 和/或 [**ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) 类。
 
-For more info on tiles, toasts, badges, banners, and notifications, see [Creating tiles](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260) and [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259). For specifics about sizes of visual assets used for UWP Tiles, see [Tile and toast visual assets](https://msdn.microsoft.com/library/windows/apps/hh781198).
+有关磁贴、toast、锁屏提醒、横幅和通知的详细信息，请参阅[创建磁贴](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260)以及[使用磁贴、徽章和 Toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)。 有关用于 UWP 磁贴的视觉资源的大小的具体信息，请参阅[磁贴和 Toast 视觉资源](https://msdn.microsoft.com/library/windows/apps/hh781198)。
 
-## <a name="toasts"></a>Toasts
+## <a name="toasts"></a>Toast
 
-Code that displays a toast with the **Microsoft.Phone.Shell.ShellToast** class should be ported to use the [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642), [**ToastNotifier**](https://msdn.microsoft.com/library/windows/apps/br208653), [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641), and/or [**ScheduledToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208607) classes. Note that on mobile devices, the consumer-facing term for "toast" is "banner".
+使用 **Microsoft.Phone.Shell.ShellToast** 类显示 Toast 的代码应该移植为使用 [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642)、[**ToastNotifier**](https://msdn.microsoft.com/library/windows/apps/br208653)、[**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 和/或 [**ScheduledToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208607) 类。 请注意，在移动设备上，“Toast”的面向消费者的术语是“横幅”。
 
-See [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
+请参阅[使用磁贴、锁屏提醒和 Toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)。
 
-## <a name="vieweffective-pixels-viewing-distance-and-scale-factors"></a>View/effective pixels, viewing distance, and scale factors
+## <a name="vieweffective-pixels-viewing-distance-and-scale-factors"></a>视图/有效像素、观看距离和比例系数
 
-Windows Phone Silverlight apps and Windows 10 apps differ in the way they abstract the size and layout of UI elements away from the actual physical size and resolution of devices. A Windows Phone Silverlight app uses view pixels to do this. With Windows 10, the concept of view pixels has been refined into that of effective pixels. Here's an explanation of that term, what it means, and the extra value it offers.
+Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大小和分辨率抽象表示 UI 元素的大小和布局的方法不同。 Windows Phone Silverlight 应用使用视图像素来执行此操作。 在 Windows 10 中，视图像素的概念已优化为有效像素的概念。 以下是该术语的解释、它的意义以及它所提供的额外价值。
 
-The term "resolution" refers to a measure of pixel density and not, as is commonly thought, pixel count. "Effective resolution" is the way the physical pixels that compose an image or glyph resolve to the eye given differences in viewing distance and the physical pixel size of the device (pixel density being the reciprocal of physical pixel size). Effective resolution is a good metric to build an experience around because it is user-centric. By understanding all the factors, and controlling the size of UI elements, you can make the user's experience a good one.
+术语“分辨率”是指像素密度的度量，而不是通常认为的像素计数。 “有效分辨率”是构成图像或字形的物理像素对肉眼解析的方法，因为设备的观看距离和物理像素大小之间有差异（像素密度是物理像素大小的倒数）。 有效分辨率是构建周围体验的良好指标，因为它是以用户为中心的。 通过了解所有因素并控制 UI 元素的大小，你可以优化用户的体验。
 
-To a Windows Phone Silverlight app, all phone screens are exactly 480 view pixels wide, without exception, no matter how many physical pixels the screen has, nor what its pixel density or physical size is. This means that an **Image** element with `Width="48"` will be exactly one tenth of the width of the screen of any phone that can run the Windows Phone Silverlight app.
+对于 Windows Phone Silverlight 应用，所有手机屏幕的宽都正好是 480 视图像素，无一例外，无论屏幕有多少物理像素，或者其像素密度和物理大小是多少。 这意味着带有 `Width="48"` 的 **Image** 元素将正好是可运行 Windows Phone Silverlight 应用的任何手机的屏幕宽度的十分之一。
 
-To a Windows 10 app, it is *not* the case that all devices are some fixed number of effective pixels wide. That's probably obvious, given the wide range of devices that a UWP app can run on. Different devices are a different number of effective pixels wide, ranging from 320 epx for the smallest devices, to 1024 epx for a modest-sized monitor, and far beyond to much higher widths. All you have to do is continue to use auto-sized elements and dynamic layout panels as you always have. There will also be some cases where you'll set the properties of your UI elements to a fixed size in XAML markup. A scale factor is automatically applied to your app depending on what device it runs on and the display settings made by the user. And that scale factor serves to keep any UI element with a fixed size presenting a more-or-less constant-sized touch (and reading) target to the user across a wide variety of screen sizes. And together with dynamic layout your UI won't merely optically scale on different devices, it will instead do what's necessary to fit the appropriate amount of content into the available space.
+对于 Windows 10 应用，这*不*是所有设备都是某个固定有效像素数宽的情况。 鉴于 UWP 应用可运行的设备种类广泛，这可能很明显。 不同设备的宽度的有效像素是不同的，范围从最小设备的 320 像素到中等大小监视器的 1024 像素，甚至更高宽度的有效像素。 你只需像往常那样继续使用可自动调整大小的元素和动态布局面板。 在某些情况下，你还需要将 XAML 标记中的 UI 元素的相关属性设置为固定大小。 根据应用运行所在的设备和用户所设置的显示设置，比例因子将自动应用于应用。 并且，该比例因子可使具有固定大小的任何 UI 元素在各种尺寸的屏幕上都能向用户显示一些大小恒定的触摸（和阅读）目标。 此外通过与动态布局结合使用，你的 UI 不仅能在不同设备上进行视觉上的缩放，还能改为执行任何必要的操作以将相应的内容量纳入可用空间。
 
-Because 480 was formerly the fixed width in view pixels for a phone-sized screen, and that value is now typically smaller in effective pixels, a rule of thumb is to multiply any dimension in your Windows Phone Silverlight app markup by a factor of 0.8.
+由于 480 以前是手机大小屏幕的固定视图像素宽度，并且该值现在通常在以有效像素为单位时更小，经验法则是将 Windows Phone Silverlight 应用标记中的任何维度乘以系数 0.8。
 
-So that your app has the best experience across all displays, we recommend that you create each bitmap asset in a range of sizes, each suitable for a particular scale factor. Providing assets at 100%-scale, 200%-scale, and 400%-scale (in that priority order) will give you excellent results in most cases at all the intermediate scale factors.
+这样，应用便可在所有屏幕上提供最佳体验。我们建议你针对各种屏幕大小创建每个位图资源，其中每个资源均适用于特定的比例因子。 在大多数情况下，提供 100% 缩放、200% 缩放和 400% 缩放的资源（按优先级顺序）能在采用所有中间比例系数时均可提供极佳效果。
 
-**Note**  If, for whatever reason, you cannot create assets in more than one size, then create 100%-scale assets. In Microsoft Visual Studio, the default project template for UWP apps provides branding assets (tile images and logos) in only one size, but they are not 100%-scale. When authoring assets for your own app, follow the guidance in this section and provide 100%, 200%, and 400% sizes, and use asset packs.
+**注意** 如果出于任何原因无法使用多种大小创建资源，则创建 100% 缩放的资源。 在 Microsoft Visual Studio 中，UWP 应用的默认项目模板仅使用一个大小提供品牌标识资源（磁贴图像和徽标），但这些资源并非 100% 缩放。 为自己的应用编写资源时，请按照本部分中的指南进行编写、提供 100%、200% 和 400% 尺寸，并使用资源包。
 
-If you have intricate artwork, then you may want to provide your assets in even more sizes. If you're starting with vector art, then it's relatively easy to generate high-quality assets at any scale factor.
+如果具有繁复的图案，则可能希望在更多尺寸中提供资源。 如果要从矢量图像开始，则生成采用任意比例系数的高质量资源相对容易。
 
-We don't recommend that you try to support all of the scale factors, but the full list of scale factors for Windows 10 apps is 100%, 125%, 150%, 200%, 250%, 300%, and 400%. If you provide them, the Store will pick the correct-sized asset(s) for each device, and only those assets will be downloaded. The Store selects the assets to download based on the DPI of the device.
+但我们不建议你尝试支持所有比例系数，因为 Windows 10 应用的比例系数的完整列表为 100%、125%、150%、200%、250%、300%和 400%。 如果你支持这些比例系数，应用商店将针对每台设备选取大小适合的资源，然后将仅下载这些资源。 应用商店将根据设备的 DPI 选择要下载的资源。
 
-For more info, see [Responsive design 101 for UWP apps](https://msdn.microsoft.com/library/windows/apps/dn958435).
+有关详细信息，请参阅[适用于 UWP 应用的响应式设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958435)。
 
-## <a name="window-size"></a>Window size
+## <a name="window-size"></a>窗口大小
 
-In your UWP app, you can specify a minimum size (both width and height) with imperative code. The default minimum size is 500x320epx, and that's also the smallest minimum size accepted. The largest minimum size accepted is 500x500epx.
+在 UWP 应用中，你可以使用命令式代码指定最小大小（宽度以及高度）。 默认的最小大小为 500x320 epx，这也是可接受的最小大小的最小值。 可接受的最小大小的最大值为 500x500epx。
 
 ```csharp
    Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize
         (new Size { Width = 500, Height = 500 });
 ```
 
-The next topic is [Porting for I/O, device, and app model](wpsl-to-uwp-input-and-sensors.md).
+下一主题是[针对 I/O、设备和应用模型进行移植](wpsl-to-uwp-input-and-sensors.md)。
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md)
+* [命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)
 
 
 

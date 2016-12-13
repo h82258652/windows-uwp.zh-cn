@@ -1,88 +1,88 @@
 ---
 author: mcleanbyron
 ms.assetid: 
-description: Use this method in the Windows Store analytics API to get detailed data for a specific error for your app.
-title: Get details for an error in your app
+description: "使用 Windows 应用商店分析 API 中的此方法，可获取应用的特定错误的详细数据。"
+title: "获取应用中的错误的详细信息"
 translationtype: Human Translation
 ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
 ms.openlocfilehash: cd72e58ec252c556cf0f2e5ce071744e8fac6c9e
 
 ---
 
-# <a name="get-details-for-an-error-in-your-app"></a>Get details for an error in your app
+# <a name="get-details-for-an-error-in-your-app"></a>获取应用中的错误的详细信息
 
-Use this method in the Windows Store analytics API to get detailed data for a specific error for your app in JSON format. This method can only retrieve details for errors that occurred in the last 30 days. Detailed error data is also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
+使用 Windows 应用商店分析 API 中的此方法，可以 JSON 格式获取应用的特定错误的详细数据。 此方法仅可以检索过去 30 天内发生的错误的详细信息。 还可以在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中获取详细错误数据。
 
-Before you can use this method, you must first use the [get error reporting data](get-error-reporting-data.md) method to retrieve the ID of the error for which you want to get detailed info.
+可以使用此方法之前，必须首先使用[获取错误报告数据](get-error-reporting-data.md)方法来检索希望获取详细信息的错误的 ID。
 
-## <a name="prerequisites"></a>Prerequisites
-
-
-To use this method, you need to first do the following:
-
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
-* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Get the ID of the error for which you want to get detailed info. To get this ID, use the [get error reporting data](get-error-reporting-data.md) method and use the **failureHash** value in the response body of that method.
-
-## <a name="request"></a>Request
+## <a name="prerequisites"></a>先决条件
 
 
-### <a name="request-syntax"></a>Request syntax
+若要使用此方法，首先需要执行以下操作：
 
-| Method | Request URI                                                          |
+* 如果尚未开始操作，请先完成 Windows 应用商店分析 API 的所有[先决条件](access-analytics-data-using-windows-store-services.md#prerequisites)。
+* [获取 Azure AD 访问令牌](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
+* 获取希望获取详细信息的错误的 ID。 若要获取此 ID，请使用[获取错误报告数据](get-error-reporting-data.md)方法，并使用该方法的响应正文中的 **failureHash** 值。
+
+## <a name="request"></a>请求
+
+
+### <a name="request-syntax"></a>请求语法
+
+| 方法 | 请求 URI                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails``` |
 
 <span/> 
 
-### <a name="request-header"></a>Request header
+### <a name="request-header"></a>请求头
 
-| Header        | Type   | Description                                                                 |
+| 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| 授权 | 字符串 | 必需。 Azure AD 访问令牌的格式为 **Bearer** &lt;*token*&gt;。 |
 
 <span/> 
 
-### <a name="request-parameters"></a>Request parameters
+### <a name="request-parameters"></a>请求参数
 
-| Parameter        | Type   |  Description      |  Required  
+| 参数        | 类型   |  说明      |  必需  
 |---------------|--------|---------------|------|
-| applicationId | string | The Store ID of the app for which you want to retrieve detailed error data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
-| failureHash | string | The unique ID of the error for which you want to get detailed info. To get this value for the error you are interested in, use the [get error reporting data](get-error-reporting-data.md) method and use the **failureHash** value in the response body of that method. |  Yes  |
-| startDate | date | The start date in the date range of detailed error data to retrieve. The default is 30 days before the current date. |  No  |
-| endDate | date | The end date in the date range of detailed error data to retrieve. The default is the current date. |  No  |
-| top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
-| skip | int | The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10 and skip=0 retrieves the first 10 rows of data, top=10 and skip=10 retrieves the next 10 rows of data, and so on. |  No  |
-| filter |string  | One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below. | No   |
-| orderby | string | A statement that orders the result data values. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
+| applicationId | 字符串 | 要检索详细错误数据的应用的应用商店 ID。 应用商店 ID 在开发人员中心仪表板的[应用标识页](../publish/view-app-identity-details.md)上提供。 存储 ID 的一个示例是 9WZDNCRFJ3Q8。 |  是  |
+| failureHash | 字符串 | 你希望获取详细信息的错误的唯一 ID。 若要获取感兴趣的错误的此值，请使用[获取错误报告数据](get-error-reporting-data.md)方法，并使用该方法的响应正文中的 **failureHash** 值。 |  是  |
+| startDate | date | 要检索的详细错误数据日期范围中的开始日期。 默认值为当前日期之前 30 天。 |  否  |
+| endDate | date | 要检索的详细错误数据日期范围中的结束日期。 默认值为当前日期。 |  否  |
+| top | int | 要在请求中返回的数据行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。 |  否  |
+| skip | int | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，top=10 和 skip=0，将检索前 10 行数据；top=10 和 skip=10，将检索之后的 10 行数据，依此类推。 |  否  |
+| filter |字符串  | 在响应中筛选行的一条或多条语句。 有关详细信息，请参阅下面的[筛选器字段](#filter-fields)部分。 | 否   |
+| orderby | 字符串 | 对结果数据值进行排序的语句。 语法是 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 参数可以是以下字符串之一。<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul><p><em>order</em> 参数是可选的，可以是 <strong>asc</strong> 或 <strong>desc</strong>，用于指定每个字段的升序或降序排列。 默认值为 <strong>asc</strong>。</p><p>下面是一个 <em>orderby</em> 字符串的示例：<em>orderby=date,market</em></p> |  否  |
 
 <span/>
  
-### <a name="filter-fields"></a>Filter fields
+### <a name="filter-fields"></a>筛选器字段
 
-The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. Here are some example *filter* parameters:
+请求中的 *filter* 参数包含一条或多条语句，用于在响应中筛选行。 每条语句包含的字段和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 下面是一些示例 *filter* 参数：
 
 -   *filter=market eq 'US' and osVersion eq 'Windows 10'*
 -   *filter=market ne 'US' and osVersion ne 'Windows 8'*
 
-For a list of the supported fields, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
+有关支持的字段列表，请参阅下表。 *filter* 参数中的字符串值必须使用单引号括起来。
 
-| Fields        |  Description        |
+| 字段        |  描述        |
 |---------------|-----------------|
-| osVersion | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
-| osBuild | The build number of the OS on which the app was running when the error occurred. |
-| market | A string that contains the ISO 3166 country code of the market of the device on which the app was running when the error occurred. |
-| deviceType | One of the following strings that specifies the type of the device on which the app was running when the error occurred:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
-| deviceModel | A string that specifies the model of the device on which the app was running when the error occurred. |
-| cabId | The unique ID of the CAB file that is associated with this error. |
-| cabExpirationTime | The date and time when the CAB file is expired and can no longer be downloaded, in ISO 8601 format. |
-| packageVersion | The version of the app package that is associated with this error. |
+| osVersion | 以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows&nbsp;8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows&nbsp;10</strong></li><li><strong>未知</strong></li></ul> |
+| osBuild | 发生错误时，运行应用的操作系统的版本号。 |
+| market | 一个字符串，其中包含发生错误时，运行应用的设备所在市场的 ISO 3166 国家/地区代码。 |
+| deviceType | 指定发生错误时，运行应用的设备类型的以下字符串之一：<ul><li><strong>电脑</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul> |
+| deviceModel | 指定发生错误时，运行应用的设备型号的字符串。 |
+| cabId | 与此错误相关联的 CAB 文件的唯一 ID。 |
+| cabExpirationTime | CAB 文件已过期且不能再下载时的日期和时间，以 ISO 8601 格式表示。 |
+| packageVersion | 与此错误相关联的应用包的版本。 |
 
 <span/> 
 
-### <a name="request-example"></a>Request example
+### <a name="request-example"></a>请求示例
 
-The following examples demonstrate several requests for getting detailed error data. Replace the *applicationId* value with the Store ID for your app.
+以下示例演示用于获取详细错误数据的多个请求。 将 *applicationId* 值替换为应用的应用商店 ID。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?applicationId=9NBLGGGZ5QDR&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
@@ -92,43 +92,43 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?appl
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>Response
+## <a name="response"></a>响应
 
 
-### <a name="response-body"></a>Response body
+### <a name="response-body"></a>响应正文
 
-| Value      | Type    | Description    |
+| 值      | 类型    | 说明    |
 |------------|---------|------------|
-| Value      | array   | An array of objects that contain detailed error data. For more information about the data in each object, see the [error detail values](#error-detail-values) section below.          |
-| @nextLink  | string  | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10 but there are more than 10 rows of errors for the query. |
-| TotalCount | inumber | The total number of rows in the data result for the query.        |
+| 值      | array   | 包含详细错误数据的对象数组。 有关每个对象中的数据的详细信息，请参阅以下[错误详细信息值](#error-detail-values)部分。          |
+| @nextLink  | 字符串  | 如果存在数据的其他页，此字符串中包含的 URI 可用于请求下一页数据。 例如，当请求的 **top** 参数设置为 10，但查询的错误超过 10 行时，就会返回此值。 |
+| TotalCount | inumber | 查询的数据结果中的行总数。        |
 
 <span id="error-detail-values"/>
-### <a name="error-detail-values"></a>Error detail values
+### <a name="error-detail-values"></a>错误详细信息值
 
-Elements in the *Value* array contain the following values.
+*Value* 数组中的元素包含以下值。
 
-| Value           | Type    | Description     |
+| 值           | 类型    | 说明     |
 |-----------------|---------|----------------------------|
-| date            | string  | The first date in the date range for the error data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
-| applicationId   | string  | The Store ID of the app for which you retrieved detailed error data.      |
-| failureName     | string  | The name of the error. This is the same name that appears in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.            |
-| failureHash     | string  | The unique identifier for the error.     |
-| osVersion       | string  | The OS version on which the error occurred.    |
-| market          | string  | The ISO 3166 country code of the device market.     |
-| deviceType      | string  | The type of device that on which the error occurred.     |
-| packageVersion  | string  | The version of the app package that is associated with this error.    |
-| osBuild         | string  | The build number of the OS on which the error occurred.       |
-| cabId           | string  | The unique ID of the CAB file that is associated with this error.   |
-| cabExpirationTime  | string  | The date and time when the CAB file is expired and can no longer be downloaded, in ISO 8601 format.   |
-| deviceModel           | string  | A string that specifies the model of the device on which the app was running when the error occurred.   |
-| cabDownloadable           | Boolean  | Indicates whether the CAB file is downloadable for this user.   |
+| date            | 字符串  | 错误数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
+| applicationId   | 字符串  | 检索其详细错误数据的应用的应用商店 ID。      |
+| failureName     | 字符串  | 错误的名称。 它与在 Windows 开发人员中心仪表板的[运行状况报告](../publish/health-report.md)的**故障**中显示的名称相同。            |
+| failureHash     | 字符串  | 错误的唯一标识符。     |
+| osVersion       | 字符串  | 出现错误的操作系统版本。    |
+| market          | 字符串  | 设备市场的 ISO 3166 国家/地区代码。     |
+| deviceType      | 字符串  | 出现错误的设备的类型。     |
+| packageVersion  | 字符串  | 与此错误相关联的应用包的版本。    |
+| osBuild         | 字符串  | 发生错误的操作系统的版本号。       |
+| cabId           | 字符串  | 与此错误相关联的 CAB 文件的唯一 ID。   |
+| cabExpirationTime  | 字符串  | CAB 文件已过期且不能再下载时的日期和时间，以 ISO 8601 格式表示。   |
+| deviceModel           | 字符串  | 指定发生错误时，运行应用的设备型号的字符串。   |
+| cabDownloadable           | 布尔值  | 指示是否可为此用户下载 CAB 文件。   |
 
 <span/> 
 
-### <a name="response-example"></a>Response example
+### <a name="response-example"></a>响应示例
 
-The following example demonstrates an example JSON response body for this request.
+以下示例举例说明此请求的 JSON 响应正文。
 
 ```json
 {
@@ -154,12 +154,12 @@ The following example demonstrates an example JSON response body for this reques
 }
 ```
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>相关主题
 
-* [Health report](../publish/health-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)
+* [运行状况报告](../publish/health-report.md)
+* [使用 Windows 应用商店服务访问分析数据](access-analytics-data-using-windows-store-services.md)
+* [获取错误报告数据](get-error-reporting-data.md)
+* [获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)
 
 
 
