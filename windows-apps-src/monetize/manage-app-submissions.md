@@ -14,7 +14,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 在 Windows 应用商店提交 API 中使用以下方法，来管理已注册到 Windows 开发人员中心帐户的应用提交。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**  这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
 
 | 方法        | URI    | 描述                                                                 |
@@ -37,7 +37,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 1. 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 
-  >**注意**&nbsp;&nbsp;确保应用至少已有一个已完成的提交并且已完成[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)信息。
+  >**注意**  确保应用至少已有一个已完成的提交并且已完成[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)信息。
 
 2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Windows 应用商店提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
@@ -57,7 +57,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}
   ```
 
-  >**注意**&nbsp;&nbsp;如果要为提交添加新软件包或图像，请确保更新提交数据在 ZIP 存档中以引用这些文件的名称和相对路径。
+  >**注意**  如果要为提交添加新软件包或图像，请确保更新提交数据在 ZIP 存档中以引用这些文件的名称和相对路径。
 
 4. 如果要为提交添加新的程序包或图像，请将 ZIP 存档上载到 SAS URI，该 URI 已在步骤 2 中调用的 POST 方法的响应正文中提供。 有关详细信息，请参阅[共享访问签名，第 2 部分：使用 Blob 存储创建和使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
@@ -90,7 +90,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 <span id="manage-gradual-package-rollout">
 ## <a name="manage-a-gradual-package-rollout-for-an-app-submission"></a>管理应用提交的逐步软件包推出
 
-可在应用提交中逐步向 Windows&nbsp;10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定软件包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新放心。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关详细信息，包括有关如何在开发人员中心仪表板中启用和管理逐步软件包推出的说明，请参阅[本文章](../publish/gradual-package-rollout.md)。
+可在应用提交中逐步向 Windows 10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定软件包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新放心。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关详细信息，包括有关如何在开发人员中心仪表板中启用和管理逐步软件包推出的说明，请参阅[本文章](../publish/gradual-package-rollout.md)。
 
 还可使用 Windows 应用商店提交 API 中的以下方法以编程方式启用和管理应用提交的逐步软件包推出。
 
@@ -265,8 +265,8 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 | applicationPackages           |   数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅下面的[应用软件包](#application-package-object)部分。 |    
 | packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置。 有关详细信息，请参阅下面的[软件包传递选项对象](#package-delivery-options-object)部分。  |
 | enterpriseLicensing           |  字符串  |  [企业授权值](#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows&nbsp;10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows&nbsp;10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔型，指示是否允许应用面向指定的设备系列。     |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
+| allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔型，指示是否允许应用面向指定的设备系列。     |    
 | friendlyName           |   字符串  |  用于显示的应用友好名称。       |  
 
 
@@ -333,7 +333,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 此资源包含应用的销售信息。
 
->**重要信息**&nbsp;&nbsp; **销售**资源不再受支持，并且当前不能使用 Windows 应用商店提交 API 获取或修改应用提交的销售数据：
+>**重要信息**   **销售**资源不再受支持，并且当前不能使用 Windows 应用商店提交 API 获取或修改应用提交的销售数据：
 
    > * 调用 [GET 方法以获取应用提交](get-an-app-submission.md)后，*销售*值将为空。 可继续使用开发人员中心仪表板获取应用提交的销售数据。
    > * 调用 [PUT 方法更新应用提交](update-an-app-submission.md)时，将忽略*销售*值中的信息。 你可以继续使用开发人员中心仪表板更改应用提交的销售数据。
@@ -408,7 +408,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 此资源具有以下值。  
 
->**注意**&nbsp;&nbsp;当调用[更新应用提交](update-an-app-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。
+>**注意**  当调用[更新应用提交](update-an-app-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。
 
 | 值           | 类型    | 描述                   |
 |-----------------|---------|------|
@@ -421,7 +421,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 | capabilities    |  数组   |  程序包所需的功能数组。 有关功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
 | minimumDirectXVersion    |  字符串   |  应用包支持的最低 DirectX 版本。 这可以仅针对面向 Windows 8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
 | minimumSystemRam    | 字符串    |  应用包所需的最小 RAM。 这可以仅针对面向 Windows 8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>Memory2GB</li></ul>   |       
-| targetDeviceFamilies    | 数组    |  一个字符串数组，它表示程序包所面向的设备系列。 此值仅用于面向 Windows&nbsp;10 的程序包；对于面向早期版本的程序包，此值具有值 **None**。 Windows&nbsp;10 程序包当前支持以下设备系列字符串，其中 *{0}* 是 Windows&nbsp;10 版本字符串（例如 10.0.10240.0、10.0.10586.0 或 10.0.14393.0）： <ul><li>Windows.Universal 最低版本 *{0}*</li><li>Windows.Desktop 最低版本 *{0}*</li><li>Windows.Mobile 最低版本 *{0}*</li><li>Windows.Xbox 最低版本 *{0}*</li><li>Windows.Holographic 最低版本 *{0}*</li></ul>   |    
+| targetDeviceFamilies    | 数组    |  一个字符串数组，它表示程序包所面向的设备系列。 此值仅用于面向 Windows 10 的程序包；对于面向早期版本的程序包，此值具有值 **None**。 Windows 10 程序包当前支持以下设备系列字符串，其中 *{0}* 是 Windows 10 版本字符串（例如 10.0.10240.0、10.0.10586.0 或 10.0.14393.0）： <ul><li>Windows.Universal 最低版本 *{0}*</li><li>Windows.Desktop 最低版本 *{0}*</li><li>Windows.Mobile 最低版本 *{0}*</li><li>Windows.Xbox 最低版本 *{0}*</li><li>Windows.Holographic 最低版本 *{0}*</li></ul>   |    
 
 <span/>
 

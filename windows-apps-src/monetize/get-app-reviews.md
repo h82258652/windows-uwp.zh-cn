@@ -64,7 +64,7 @@ ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 | 字段        | 支持的运算符   |  说明        |
 |---------------|--------|-----------------|
 | market | eq, ne | 包含设备市场的 ISO 3166 国家/地区代码的字符串。 |
-| osVersion  | eq, ne  | 以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows&nbsp;8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows&nbsp;10</strong></li><li><strong>Unknown</strong></li></ul>  |
+| osVersion  | eq, ne  | 以下字符串之一：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul>  |
 | deviceType  | eq, ne  | 以下字符串之一：<ul><li><strong>电脑</strong></li><li><strong>电话</strong></li><li><strong>控制台</strong></li><li><strong>IoT</strong></li><li><strong>全息</strong></li><li><strong>未知</strong></li></ul>  |
 | isRevised  | eq, ne  | 指定 <strong>true</strong> 可筛选已修改的评价，否则指定 <strong>false</strong>。  |
 | packageVersion  | eq, ne  | 已评价的应用程序包版本。  |

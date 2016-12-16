@@ -15,7 +15,7 @@ ms.openlocfilehash: a5e1f8940f53f228808e5a6540759199c4440645
 
 在 Windows 应用商店提交 API 中使用以下方法，来管理已注册到 Windows 开发人员中心帐户的应用的加载项（也称为应用内产品或 IAP）提交。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 在使用这些方法来创建或管理加载项的提交前，该加载项必须已存在于开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)，或者使用[管理加载项](manage-add-ons.md)中所述的 Windows 应用商店提交 API 方法，可以创建加载项。
+>**注意**  这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 在使用这些方法来创建或管理加载项的提交前，该加载项必须已存在于开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)，或者使用[管理加载项](manage-add-ons.md)中所述的 Windows 应用商店提交 API 方法，可以创建加载项。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -51,7 +51,7 @@ ms.openlocfilehash: a5e1f8940f53f228808e5a6540759199c4440645
   PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
   ```
 
-  >**注意**&nbsp;&nbsp;如果要为提交添加新的图标，请确保更新提交数据以便在 ZIP 存档中引用这些文件的名称和相对路径。
+  >**注意**  如果要为提交添加新的图标，请确保更新提交数据以便在 ZIP 存档中引用这些文件的名称和相对路径。
 
 4. 如果要为提交添加新的图标，请将 ZIP 存档上载到 SAS URI，该 URI 已在步骤 2 中调用的 POST 方法的响应正文中提供。 有关详细信息，请参阅[共享访问签名，第 2 部分：使用 Blob 存储创建和使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
@@ -210,7 +210,7 @@ ms.openlocfilehash: a5e1f8940f53f228808e5a6540759199c4440645
 
 此资源包含加载项的销售信息。
 
->**重要信息**&nbsp;&nbsp; **销售**资源不再受支持，并且当前不能使用 Windows 应用商店提交 API 获取或修改加载项提交的销售数据：
+>**重要信息**   **销售**资源不再受支持，并且当前不能使用 Windows 应用商店提交 API 获取或修改加载项提交的销售数据：
 
    > * 调用 [GET 方法以获取加载项提交](get-an-add-on-submission.md)后，*销售*值将为空。 你可以继续使用开发人员中心仪表板获取加载项提交的销售数据。
    > * 调用 [PUT 方法以更新加载项提交](update-an-add-on-submission.md)时，将忽略*销售*值中的信息。 你可以继续使用开发人员中心仪表板更改加载项提交的销售数据。

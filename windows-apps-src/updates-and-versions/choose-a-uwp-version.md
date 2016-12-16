@@ -14,7 +14,7 @@ ms.openlocfilehash: 5d05c427ecc1ec57856b7c3909be50c3d87daa28
 
 | 版本 | 描述 |
 | --- | --- |
-| 版本 14393（周年版本） | 这是最新版本的 Windows 10，已于 2016 年 7 月发布。 此版本中的一些突出功能如下： </br> \* **Windows Ink：**新的 InkCanvas 和 InkToolbar 控件。 </br> \* **Cortana API：**使用新的 Cortana 操作将 Cortana 支持与应用的特殊功能集成。 </br> \* **Windows Hello：**Microsoft Edge 现在支持 Windows Hello，使 Web 开发人员能够访问生物识别身份验证。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/en-us/windows/windows-10-for-developers)，或[面向开发人员的 Windows&nbsp;10 中的新增功能](../whats-new/windows-10-version-1607.md)上的详细信息页面。  |
+| 版本 14393（周年版本） | 这是最新版本的 Windows 10，已于 2016 年 7 月发布。 此版本中的一些突出功能如下： </br> \* **Windows Ink：**新的 InkCanvas 和 InkToolbar 控件。 </br> \* **Cortana API：**使用新的 Cortana 操作将 Cortana 支持与应用的特殊功能集成。 </br> \* **Windows Hello：**Microsoft Edge 现在支持 Windows Hello，使 Web 开发人员能够访问生物识别身份验证。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/en-us/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-version-1607.md)上的详细信息页面。  |
 | 版本 10586 | 此版本的 Windows 10 已于 2015 年 11 月发布。 突出功能包括引入了用于在 Microsoft Edge 中进行视频通信的 ORTC（对象实时通信）和用于支持应用使用 Windows Hello 人脸身份验证的提供者 API。 [有关此版本中引入的功能的详细信息。](../whats-new/windows-10-version-1511.md) |
 | 版本 10240 | 这是 Windows 10 的初始发行版本，已于 2015 年 7 月发布。 [有关此版本中引入的功能的详细信息。](../whats-new/windows-10-version-1507.md) |
 

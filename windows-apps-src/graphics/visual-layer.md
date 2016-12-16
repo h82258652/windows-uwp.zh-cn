@@ -10,9 +10,9 @@ ms.openlocfilehash: de6fe0688bec196fc90433ab9274f2e4c4fd9b90
 ---
 # <a name="visual-layer"></a>可视化层
 
-\[ 已针对 Windows&nbsp;10 上的 UWP 应用更新。 有关 Windows&nbsp;8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-在 Windows&nbsp;10 中，已针对创建适用于所有 Windows 应用程序（桌面版或移动版）的全新统一的合成器和呈现引擎完成了大量工作。 该工作生成了称为 Windows.UI.Composition 的统一合成 WinRT API，用于提供对新的轻型合成对象以及 受动画和效果驱动的全新合成器的访问权限。
+在 Windows 10 中，已针对创建适用于所有 Windows 应用程序（桌面版或移动版）的全新统一的合成器和呈现引擎完成了大量工作。 该工作生成了称为 Windows.UI.Composition 的统一合成 WinRT API，用于提供对新的轻型合成对象以及 受动画和效果驱动的全新合成器的访问权限。
 
 Windows.UI.Composition 是可以从任何通用 Windows 平台 (UWP) 应用程序调用的声明性[保留模式](https://msdn.microsoft.com/library/windows/desktop/ff684178.aspx) API ，从而可以直接在应用程序中创建合成对象、 动画和效果。 该 API 是对诸如 XAML 等现有框架的一个强大补充，从而为 UWP 应用程序开发人员提供了一个熟悉的 C# 图面以供添加到其应用程序。 这些 API 还可以用于创建 DX 样式框架较少的应用程序。
 
@@ -57,7 +57,7 @@ Windows.UI.Composition 包含一个极具表现力的框架不可知的动画系
 
 
 **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows&nbsp;8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 

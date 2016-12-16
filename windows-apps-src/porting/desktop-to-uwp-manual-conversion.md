@@ -75,7 +75,7 @@ ms.openlocfilehash: f55f3bd6479cdf076c51cf574b07bfb5ce3a805c
 
 ## <a name="run-the-makeappx-tool"></a>运行 MakeAppX 工具
 
-使用[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) 为你的项目生成 AppX。 MakeAppx.exe 包含在 Windows&nbsp;10 SDK 中。 
+使用[应用包生成工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) 为你的项目生成 AppX。 MakeAppx.exe 包含在 Windows 10 SDK 中。 
 
 若要运行 MakeAppx，请先确保你已创建清单文件，如上所述。 
 
@@ -97,7 +97,7 @@ MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 
 ## <a name="sign-your-appx-package"></a>对 AppX 程序包进行签名
 
-Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用 Microsoft Windows&nbsp;10 SDK 附带的 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) 对 .appx 程序包进行签名。
+Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用 Microsoft Windows 10 SDK 附带的 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) 对 .appx 程序包进行签名。
 
 示例用法： 
 

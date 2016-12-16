@@ -129,7 +129,7 @@ PasswordBox 具有内置按钮，用户按下该按钮可显示密码文本。 �
 
 [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) 属性值不是确定用户能否看到密码显示按钮的唯一因素。 其他因素包括控件所示宽度是否大于最小值、PasswordBox 是否具有焦点以及文本输入字段是否至少包含一个字符。 密码显示按钮仅在 PasswordBox 首次接收焦点并且在用户输入一个字符后显示。 如果 PasswordBox 失去焦点后又重新获得焦点，除非已清除密码并从头开始输入字符，否则显示按钮将不会再次显示。
 
-> **注意**&nbsp;&nbsp;在 Windows 10 之前，密码显示按钮在默认情况下不显示。 如果应用安全要求始终掩盖密码，请确保将 PasswordRevealMode 设置为 Hidden。
+> **注意**  在 Windows 10 之前，密码显示按钮在默认情况下不显示。 如果应用安全要求始终掩盖密码，请确保将 PasswordRevealMode 设置为 Hidden。
 
 ### 隐藏和可见模式
 

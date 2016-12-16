@@ -20,7 +20,7 @@ ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
 
 以下部分介绍了获取实验变体和将事件记录到开发人员中心的一般过程。 针对实验为你的应用编码后，你可以[在开发人员中心仪表板中定义实验](define-your-experiment-in-the-dev-center-dashboard.md)。 有关演示如何创建并运行实验的端到端过程的演练，请参阅[通过 A/B 测试来创建并运行你的第一个实验](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
->**注意**&nbsp;&nbsp;Windows 应用商店服务 SDK 中的某些实验性 API 使用[异步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)从开发人员中心中检索数据。 这意味着，这些方法的部分执行可能会在调用这些方法后发生，以便你的应用的 UI 可以一边保持响应，一边完成操作。 异步模式要求你的应用在调用该 API 时使用 **async** 关键字和 **await** 运算符，如本文中的代码示例所示。 按照惯例，异步方法以 **Async** 结尾。
+>**注意**  Windows 应用商店服务 SDK 中的某些实验性 API 使用[异步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)从开发人员中心中检索数据。 这意味着，这些方法的部分执行可能会在调用这些方法后发生，以便你的应用的 UI 可以一边保持响应，一边完成操作。 异步模式要求你的应用在调用该 API 时使用 **async** 关键字和 **await** 运算符，如本文中的代码示例所示。 按照惯例，异步方法以 **Async** 结尾。
 
 ## <a name="configure-your-project"></a>配置项目
 
@@ -32,7 +32,7 @@ ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
 3. 在“引用管理器”中，展开“通用 Windows”并单击“扩展”。
 4. 在 SDK 列表中，选中“Microsoft 协议框架”旁边的复选框，然后单击“确定”。
 
->**注意**&nbsp;&nbsp;本文中的代码示例假设代码文件中已有 **System.Threading.Tasks** 和 **Microsoft.Services.Store.Engagement** 命名空间的 **using** 语句。
+>**注意**  本文中的代码示例假设代码文件中已有 **System.Threading.Tasks** 和 **Microsoft.Services.Store.Engagement** 命名空间的 **using** 语句。
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>获取变体数据并记录实验的视图事件
 
@@ -51,7 +51,7 @@ ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
   [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
 1. 声明将分配给要检索的实验的[项目 ID](run-app-experiments-with-a-b-testing.md#terms) 的字符串变量。
-  >**注意**&nbsp;&nbsp;当[在开发人员中心仪表板中创建一个项目](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)时获取项目 ID。 以下所示的项目 ID 仅用作示例。
+  >**注意**  当[在开发人员中心仪表板中创建一个项目](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)时获取项目 ID。 以下所示的项目 ID 仅用作示例。
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]

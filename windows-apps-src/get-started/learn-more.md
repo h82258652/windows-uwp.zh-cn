@@ -25,7 +25,7 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
     <td><h2>UWP 和 UWP 应用生命周期</h2><p>如何开始使用应用，开始使用另一个应用会发生什么情况？ 描述如下。</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">通用 Windows 平台 (UWP) 应用指南</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP 应用生命周期</a></li>
-    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows&nbsp;10 中的超酷功能</a></ul></td>  
+    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows 10 中的超酷功能</a></ul></td>  
 </tr>
 <tr>
  <td width=60><img src="images/icon7.png" width=64></td>
@@ -64,7 +64,7 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
     <li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">API 参考</a></li>
      <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">编写适用于 Xbox One 的应用</a></li>
      <li><a href="https://www.microsoft.com/microsoft-hololens/developers">针对 HoloLens 进行开发</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">将应用移植到 Windows&nbsp;10</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">将应用移植到 Windows 10</a></li>
       <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">编写适用于企业的应用</a></li>
       <li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">UWP 社区工具包</a></li>
     </ul>
@@ -148,7 +148,7 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>Xamarin</strong></td>
-<td align="left"><a href="https://www.xamarin.com">使用 C# 编写适用于 iOS、Android 和 Windows&nbsp;10 的应用。</a></td>
+<td align="left"><a href="https://www.xamarin.com">使用 C# 编写适用于 iOS、Android 和 Windows 10 的应用。</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>任务代码段</strong></td>

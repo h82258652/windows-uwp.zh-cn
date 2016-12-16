@@ -97,11 +97,11 @@ ms.openlocfilehash: 19874f940798e76a18b3377a295505f0aef201c7
 <table>
     <thead>
     <tr class="header">
-    <th align="left">权限&nbsp;名称</th>
-    <th align="left">只&nbsp;读</th>
+    <th align="left">权限 名称</th>
+    <th align="left">只 读</th>
     <th align="left">读取/写入</th>
-    <th align="left">只&nbsp;读&nbsp;（加载&#8209;项） </th>
-    <th align="left">读取&#8209;写入&nbsp;（加载&#8209;项）</th>
+    <th align="left">只 读 （加载&#8209;项） </th>
+    <th align="left">读取&#8209;写入 （加载&#8209;项）</th>
     </tr>
     </thead>
     <tbody>
@@ -119,11 +119,11 @@ ms.openlocfilehash: 19874f940798e76a18b3377a295505f0aef201c7
 <table>
     <thead>
     <tr class="header">
-    <th align="left">权限&nbsp;名称</th>
-    <th align="left">只&nbsp;读</th>
+    <th align="left">权限 名称</th>
+    <th align="left">只 读</th>
     <th align="left">读取/写入</th>
-    <th align="left">只&nbsp;读&nbsp;（加载&#8209;项） </th>
-    <th align="left">读取&#8209;写入&nbsp;（加载&#8209;项）</th>
+    <th align="left">只 读 （加载&#8209;项） </th>
+    <th align="left">读取&#8209;写入 （加载&#8209;项）</th>
     </tr>
     </thead>
     <tbody>
@@ -138,11 +138,11 @@ ms.openlocfilehash: 19874f940798e76a18b3377a295505f0aef201c7
 <table>
     <thead>
     <tr class="header">
-    <th align="left">权限&nbsp;名称</th>
-    <th align="left">只&nbsp;读</th>
+    <th align="left">权限 名称</th>
+    <th align="left">只 读</th>
     <th align="left">读取/写入</th>
-    <th align="left">只&nbsp;读&nbsp;（加载&#8209;项） </th>
-    <th align="left">读取&#8209;写入&nbsp;（加载&#8209;项）</th>
+    <th align="left">只 读 （加载&#8209;项） </th>
+    <th align="left">读取&#8209;写入 （加载&#8209;项）</th>
     </tr>
     </thead>
     <tbody>
@@ -163,11 +163,11 @@ ms.openlocfilehash: 19874f940798e76a18b3377a295505f0aef201c7
 <table>
     <thead>
     <tr class="header">
-    <th align="left">权限&nbsp;名称</th>
-    <th align="left">只&nbsp;读</th>
+    <th align="left">权限 名称</th>
+    <th align="left">只 读</th>
     <th align="left">读取/写入</th>
-    <th align="left">只&nbsp;读&nbsp;（加载&#8209;项） </th>
-    <th align="left">读取&#8209;写入&nbsp;（加载&#8209;项）</th>
+    <th align="left">只 读 （加载&#8209;项） </th>
+    <th align="left">读取&#8209;写入 （加载&#8209;项）</th>
     </tr>
     </thead>
     <tbody>

@@ -17,13 +17,13 @@ ms.openlocfilehash: aacf45c90458d3ca1bd295f904e8f2393d27542d
 
 InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默认设置）或擦除笔划。 此控件是一个透明的覆盖层，该覆盖层不包含任何用于更改默认笔划墨迹属性的内置 UI。
 
->**注意**&nbsp;&nbsp;InkCanvas 可以配置为针对鼠标和触控输入支持类似功能。
+>**注意**  InkCanvas 可以配置为针对鼠标和触控输入支持类似功能。
 
 由于 InkCanvas 控件不包括对更改默认笔划墨迹设置的支持，因此它可以与 InkToolbar 控件配对。 InkToolbar 包含一组可自定义和可扩展的按钮，用于在关联的 InkCanvas 中激活墨迹相关的功能。
 
 默认情况下，InkToolbar 包括用于绘制、擦除、突出显示和显示标尺的按钮。 根据功能，在浮出控件中提供其他设置和命令，如墨迹颜色、笔划粗细、擦除所有墨迹。
 
->**注意**&nbsp;&nbsp;InkToolbar 支持笔和鼠标输入，并且可配置为识别触控输入。
+>**注意**  InkToolbar 支持笔和鼠标输入，并且可配置为识别触控输入。
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300">
 
@@ -50,7 +50,7 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 
 将 InkCanvas 与 InkToolbar 配对以提供用于激活墨迹功能和设置基本墨迹属性（如笔划大小、颜色和笔尖形状）的 UI。
 
->**注意**&nbsp;&nbsp;若要实现在 InkCanvas 上呈现的更广泛的笔划墨迹自定义，请使用基础 [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 对象。
+>**注意**  若要实现在 InkCanvas 上呈现的更广泛的笔划墨迹自定义，请使用基础 [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 对象。
 
 ## 示例
 
@@ -72,7 +72,7 @@ InkCanvas 和 InkToolbar 还用于 **Windows Ink 工作区**中的**草图板**�
 <InkCanvas x:Name=“myInkCanvas”/>
 ```
 
->**注意**&nbsp;&nbsp;有关使用 InkPresenter 的详细 InkCanvas 自定义，请参阅[“UWP 应用中的笔和触笔交互”](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)文章。
+>**注意**  有关使用 InkPresenter 的详细 InkCanvas 自定义，请参阅[“UWP 应用中的笔和触笔交互”](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)文章。
 
 InkToolbar 控件必须与 InkCanvas 结合使用。 将 InkToolbar（以及所有内置工具）合并到应用需要一行额外的标记：
 
@@ -111,10 +111,10 @@ InkToolbar 包含以下内置按钮：
 InkToolbar 由两组不同的按钮类型组成：
 
 1. 一组“工具”按钮，包含内置绘制、擦除和突出显示按钮。 在此处添加自定义的笔和工具。
-> **注意**&nbsp;&nbsp;功能选择相互排除。
+> **注意**  功能选择相互排除。
 
 2. 一组“切换”按钮，包含内置标尺按钮。 在此处添加自定义切换。
-> **注意**&nbsp;&nbsp;功能相互不排斥，并且可以与其他活动工具同时使用。
+> **注意**  功能相互不排斥，并且可以与其他活动工具同时使用。
 
 根据你的应用程序和所需的墨迹书写功能，你可以将以下任意按钮（绑定到你的自定义墨迹功能）添加到 InkToolbar：
 
@@ -122,7 +122,7 @@ InkToolbar 由两组不同的按钮类型组成：
 - 自定义工具：非笔工具，由主机应用定义。
 - 自定义切换：将应用定义的功能状态设置为开或关。 当打开时，功能将与活动工具结合使用。
 
-> **注意**&nbsp;&nbsp;你无法更改内置按钮的显示顺序。 默认的显示顺序为：圆珠笔、铅笔、荧光笔、橡皮擦和标尺。 自定义笔附加到最后一个默认笔，自定义工具按钮添加到最后一个笔按钮和橡皮擦按钮之间，而自定义切换按钮添加到标尺按钮之后。 （自定义按钮按照指定它们的顺序添加。）
+> **注意**  你无法更改内置按钮的显示顺序。 默认的显示顺序为：圆珠笔、铅笔、荧光笔、橡皮擦和标尺。 自定义笔附加到最后一个默认笔，自定义工具按钮添加到最后一个笔按钮和橡皮擦按钮之间，而自定义切换按钮添加到标尺按钮之后。 （自定义按钮按照指定它们的顺序添加。）
 
 尽管 InkToolbar 可以是顶级项目，但它通常通过“墨迹书写”按钮或命令公开。 我们建议使用 Segoe MLD2 Assets 字体中的 EE56 字形作为顶级图标。
 

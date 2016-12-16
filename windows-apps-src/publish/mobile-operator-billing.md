@@ -18,11 +18,11 @@ Windows 应用商店为支持此功能的移动运营商提供移动运营商结
 
 我们定期与移动运营商合作以扩展此付款方式的可用性。 如果建议我们应该支持下表中没有看到的移动运营商，请联系该移动运营商。
 
-## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>适用于 Windows&nbsp;10 和 Xbox One 设备的移动运营商计费
+## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>适用于 Windows 10 和 Xbox One 设备的移动运营商计费
 
-Windows&nbsp;10 引入了对移动运营商计费的新实现方式。 此实现可用于所有运行 Windows&nbsp;10 的设备、运行 Windows&nbsp;10 移动版的手机和 Xbox One 主机。 在这些设备上，客户可将“移动运营商计费”添加为支付方式，并用以购物。 
+Windows 10 引入了对移动运营商计费的新实现方式。 此实现可用于所有运行 Windows 10 的设备、运行 Windows 10 移动版的手机和 Xbox One 主机。 在这些设备上，客户可将“移动运营商计费”添加为支付方式，并用以购物。 
 
-移动运营商计费的 Windows&nbsp;10 实现当前受以下这些移动运营商支持。
+移动运营商计费的 Windows 10 实现当前受以下这些移动运营商支持。
 
 | 国家/地区  | 移动运营商 |
 |-----------------|------------------|
@@ -40,10 +40,10 @@ Windows&nbsp;10 引入了对移动运营商计费的新实现方式。 此实现
 
  
 
-## <a name="mobile-operator-billing-for-windows-phone-8x-and-windows-10-mobile-devices"></a>适用于 Windows Phone 8.x 和 Windows&nbsp;10 移动版设备的移动运营商结算
+## <a name="mobile-operator-billing-for-windows-phone-8x-and-windows-10-mobile-devices"></a>适用于 Windows Phone 8.x 和 Windows 10 移动版设备的移动运营商结算
 
 
-移动运营商结算的旧实现适用于 Windows Phone 8.x 设备。 某些移动运营商可能选择在专用于 Windows&nbsp;10 移动版的手机上包含此实现。 在包含此实现的设备上，向用户自动提供移动运营商结算作为支付方法。
+移动运营商结算的旧实现适用于 Windows Phone 8.x 设备。 某些移动运营商可能选择在专用于 Windows 10 移动版的手机上包含此实现。 在包含此实现的设备上，向用户自动提供移动运营商结算作为支付方法。
 
 移动运营商结算的旧实现受这些移动运营商支持。
 

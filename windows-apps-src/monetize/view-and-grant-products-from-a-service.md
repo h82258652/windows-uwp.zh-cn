@@ -37,7 +37,7 @@ Windows 应用商店收集 API 和购买 API 使用 Azure Active Directory (Azur
 1.  按照[将应用程序与 Azure Active Directory 集成](http://go.microsoft.com/fwlink/?LinkId=722502)中的说明将 Web 应用程序添加到 Azure AD。
 
     > **注意**
-            &nbsp;&nbsp;在“向我们说明你的应用程序”页上，确保你选择“Web 应用程序和/或 Web API”。 这是必需的，以便你可以为你的应用程序获取密钥（也称为*客户端密码*）。 若要调用 Windows 应用商店收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
+              在“向我们说明你的应用程序”页上，确保你选择“Web 应用程序和/或 Web API”。 这是必需的，以便你可以为你的应用程序获取密钥（也称为*客户端密码*）。 若要调用 Windows 应用商店收集 API 或购买 API，必须在稍后步骤从 Azure AD 中请求访问令牌时提供客户端密码。
 
 2.  在 [Azure 管理门户](http://manage.windowsazure.com/)中，导航到“Active Directory”。 选择你的目录、单击顶部的“应用程序”选项卡，然后选择你的应用程序。
 3.  单击“配置”选项卡。 在此选项卡上，为你的应用程序获取客户端 ID 并请求密钥（这在稍后的步骤中称为*客户端密码*）。
@@ -77,12 +77,12 @@ Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客�
     -   `https://onestore.microsoft.com`：在稍后的步骤中，你将在对 Windows 应用商店收集 API 或购买 API 的直接调用中使用你通过此 URI 创建的访问令牌。
 
     > **重要提示**
-            &nbsp;&nbsp;将 `https://onestore.microsoft.com` 受众仅与安全存储在服务中的访问令牌一起使用。 在服务之外公开访问令牌和此受众会让你的服务易受到重播攻击。
+              将 `https://onestore.microsoft.com` 受众仅与安全存储在服务中的访问令牌一起使用。 在服务之外公开访问令牌和此受众会让你的服务易受到重播攻击。
 
 在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。 有关访问令牌的结构的更多详细信息，请参阅[受支持的令牌和声明类型](http://go.microsoft.com/fwlink/?LinkId=722501)。
 
 > **重要提示**
-            &nbsp;&nbsp;应仅在服务的上下文而非应用中创建 Azure AD 访问令牌。 客户端密码在发送到你的应用时可能会遭泄露。
+              应仅在服务的上下文而非应用中创建 Azure AD 访问令牌。 客户端密码在发送到你的应用时可能会遭泄露。
 
 <span id="step-4"/>
 ### 步骤 4：从应用中的客户端代码生成 Windows 应用商店 ID 密钥
@@ -106,12 +106,12 @@ Windows 应用商店收集 API 和购买 API 仅提供已与你的 Azure AD 客�
     对于每种方法，都将 Azure AD 访问令牌传递给 *serviceTicket* 参数。 可以选择将 ID 传递给在服务上下文中标识当前用户的 *publisherUserId* 参数。 如果你为服务维护用户 ID，可以使用此参数将这些用户 ID 与对 Windows 应用商店收集 API 或购买 API 进行的调用关联起来。
 
     >**注意**
-            &nbsp;&nbsp;有关 **Windows.Services.Store** 和 **Windows.ApplicationModel.Store** 命名空间之间的区别的详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
+              有关 **Windows.Services.Store** 和 **Windows.ApplicationModel.Store** 命名空间之间的区别的详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
 
 3.  在应用成功检索 Windows 应用商店 ID 密钥后，请将该密钥传递回服务。
 
 > **注意**
-            &nbsp;&nbsp;每个 Windows 应用商店 ID 密钥的有效期为 90 天。 密钥到期后，可以[续订该密钥](renew-a-windows-store-id-key.md)。 我们建议你续订 Windows 应用商店 ID 密钥，而非创建新密钥。
+              每个 Windows 应用商店 ID 密钥的有效期为 90 天。 密钥到期后，可以[续订该密钥](renew-a-windows-store-id-key.md)。 我们建议你续订 Windows 应用商店 ID 密钥，而非创建新密钥。
 
 <span id="step-5"/>
 ### 步骤 5：从你的服务调用 Windows 应用商店收集 API 或购买 API

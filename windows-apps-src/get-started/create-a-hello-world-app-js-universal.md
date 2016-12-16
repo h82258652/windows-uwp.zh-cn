@@ -2,7 +2,7 @@
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
 title: Create a "Hello, world" app (JS)
-description: "本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的&amp;\\#0034;Hello, world&amp;\\#0034;应用，该应用面向 Windows&nbsp;10 上的通用 Windows 平台 (UWP)。"
+description: "本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的&amp;\\#0034;Hello, world&amp;\\#0034;应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。"
 translationtype: Human Translation
 ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
 ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c

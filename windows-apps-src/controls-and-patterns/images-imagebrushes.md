@@ -130,7 +130,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 从 Windows 10 版本 1607 开始，**Image** 元素支持动态 GIF 图像。 当你使用 **BitmapImage** 作为图像 **Source** 时，可以访问 BitmapImage API 来控制动态 GIF 图像的播放。 有关详细信息，请参阅 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) 类页面上的“备注”。
 
-> **注意**&nbsp;&nbsp;当你的应用针对 Windows 10 版本 1607 编译并且正在版本 1607（或更高版本）上运行时，动态 GIF 支持可用。 当应用针对以前版本编译或在以前版本上运行时，将显示 GIF 的第一帧，但不对其进行动画处理。
+> **注意**  当你的应用针对 Windows 10 版本 1607 编译并且正在版本 1607（或更高版本）上运行时，动态 GIF 支持可用。 当应用针对以前版本编译或在以前版本上运行时，将显示 GIF 的第一帧，但不对其进行动画处理。
 
 有关应用资源和如何在应用中打包图像源的详细信息，请参阅[定义应用资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。
 
@@ -154,7 +154,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 如果要使用代码定义一个 Image 或 ImageBrush，请使用默认的构造函数，然后设置相关的源属性（[**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 或 [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)）。 在你使用代码设置源属性时，它们需要 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx)（而非 URI）。 如果源是一个流，请使用 [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) 方法来初始化该值。 如果源是一个 URI（其中包含应用中使用 **ms-appx** 或 **ms-resource** 方案的内容），请使用获取 URI 的 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) 构造函数。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) 事件。 有关示例代码，请参阅 [XAML 图像示例](http://go.microsoft.com/fwlink/p/?linkid=238575)。
 
-> **注意**&nbsp;&nbsp;如果你使用代码建立图像，可以针对访问具有当前规模和区域性限定符的非限定资源使用自动处理，或者可以使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 与区域性和规模限定符来直接获取资源。 有关详细信息，请参阅[资源管理系统](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
+> **注意**  如果你使用代码建立图像，可以针对访问具有当前规模和区域性限定符的非限定资源使用自动处理，或者可以使用 [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) 和 [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) 与区域性和规模限定符来直接获取资源。 有关详细信息，请参阅[资源管理系统](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)。
 
 ## 相关文章
 

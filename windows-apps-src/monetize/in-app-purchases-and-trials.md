@@ -13,20 +13,20 @@ ms.openlocfilehash: 7783b6017a314ddb24509c55db8134a4c214430f
 
 Windows SDK 提供可用于实现以下功能的 API，以从通用 Windows 平台 (UWP) 应用获取更多收益：
 
-* **应用内购买**&nbsp;&nbsp;无论你的应用是否免费，你都可以直接从应用中销售内容或新的应用功能（例如解锁游戏的下一关卡）。
+* **应用内购买**  无论你的应用是否免费，你都可以直接从应用中销售内容或新的应用功能（例如解锁游戏的下一关卡）。
 
-* **试用功能**&nbsp;&nbsp;如果你[在 Windows 开发人员中心仪表板中将应用配置为免费试用](../publish/set-app-pricing-and-availability.md#free-trial)，则可通过在试用期内排除或限制某些功能吸引客户购买应用的完整版。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
+* **试用功能**  如果你[在 Windows 开发人员中心仪表板中将应用配置为免费试用](../publish/set-app-pricing-and-availability.md#free-trial)，则可通过在试用期内排除或限制某些功能吸引客户购买应用的完整版。 也可以在客户购买你的应用之前，启用仅在试用期才会出现的某些功能，如横幅或水印。
 
 本文提供应用内购买和试用在 UWP 应用内的工作原理概述。
 
 <span id="choose-namespace" />
 ## <a name="choose-which-namespace-to-use"></a>选择要使用哪个命名空间
 
-有两个不同的命名空间可用于向 UWP 应用添加应用内购买和试用功能，具体取决于应用面向 Windows&nbsp;10 的哪个版本。 尽管这些命名空间中的 API 用于相同目标，但它们的设计完全不同，并且代码在两个 API 之间并不兼容。
+有两个不同的命名空间可用于向 UWP 应用添加应用内购买和试用功能，具体取决于应用面向 Windows 10 的哪个版本。 尽管这些命名空间中的 API 用于相同目标，但它们的设计完全不同，并且代码在两个 API 之间并不兼容。
 
-* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;从 Windows 10 版本 1607 开始，应用可使用此命名空间中的 API 实现应用内购买和试用。 如果应用面向 Windows 10 版本 1607 或更高版本，我们建议使用此命名空间中的成员。 此命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 有关此命名空间的详细信息，请参阅本文中的[使用 Windows.Services.Store 命名空间](#api_intro)部分。
+* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**  从 Windows 10 版本 1607 开始，应用可使用此命名空间中的 API 实现应用内购买和试用。 如果应用面向 Windows 10 版本 1607 或更高版本，我们建议使用此命名空间中的成员。 此命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 有关此命名空间的详细信息，请参阅本文中的[使用 Windows.Services.Store 命名空间](#api_intro)部分。
 
-* **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;Windows 10 的所有版本还支持此命名空间中用于应用内购买和试用的较早 API。 尽管适用于 Windows 10 的任何 UWP 应用都可以使用此命名空间，但将来可能不会更新此命名空间以支持开发人员中心和应用商店中的新产品和功能类型。 有关此命名空间的信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+* **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**  Windows 10 的所有版本还支持此命名空间中用于应用内购买和试用的较早 API。 尽管适用于 Windows 10 的任何 UWP 应用都可以使用此命名空间，但将来可能不会更新此命名空间以支持开发人员中心和应用商店中的新产品和功能类型。 有关此命名空间的信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 <span id="concepts" />
 ## <a name="basic-concepts"></a>基本概念
@@ -45,16 +45,16 @@ UWP 应用可提供以下类型的加载项。
 |---------|-------------------|
 | 耐用品  |  持续时间为你在 [Windows 开发人员仪表板](../publish/enter-iap-properties.md)中所指定生存期的加载项。 <p/><p/>默认情况下，耐用型加载项永远不会过期，在此情况下只能购买它们一次。 如果你为加载项指定特定的持续时间，则用户可以在它过期后重新购买该加载项。 |
 | 开发人员管理的易耗品  |  可以购买、使用并再次购买的加载项。 此类型的加载项通常用于获取应用内收入。 <p/><p/>对于此类型的易耗品，你负责跟踪加载项所表示的商品的用户余量，并在用户消耗完所有商品后向应用商店将加载项购买报告为已完成。 在你的应用将之前的加载项购买报告为已完成前，用户无法再次购买该加载项。 <p/><p/>例如，如果你的加载项表示游戏中的 100 个硬币，并且用户消耗了 10 个硬币，则你的用户或服务必须为该用户保留 90 个硬币的新剩余余额。 在用户消耗完全部 100 个硬币后，你的应用必须将加载项报告为已完成，然后用户才可以再次购买 100 个硬币的加载项。    |
-| 应用商店管理的易耗品  |  可以购买、使用并再次购买的加载项。 此类型的加载项通常用于获取应用内收入。<p/><p/>对于此类型的易耗品，应用商店会跟踪用户拥有的加载项所表示商品的余量。 当用户消耗任何商品时，你负责向应用商店报告这些商品已完成，然后应用商店会更新用户的余量。 你的应用可以随时查询用户的当前余量。 用户消耗完所有商品后，可以再次购买加载项。  <p/><p/> 例如，如果你的加载项在游戏中表示 100 个硬币的初始数量，并且用户消耗了 10 个硬币，则你的应用将向应用商店报告 10 个单位的加载项已完成，然后应用商店会更新剩余余额。 用户消耗完全部 100 个硬币后，可以再次购买 100 个硬币的加载项。 <p/><p/>**注意**&nbsp;&nbsp;应用商店管理的易耗品从 Windows 10 版本 1607 开始可用。 若要使用应用商店管理的易耗品，应用必须面向 Windows 10 版本 1607 或更高版本，并且必须使用 **Windows.Services.Store** 命名空间（而不是 **Windows.ApplicationModel.Store** 命名空间）中的 API。  |
+| 应用商店管理的易耗品  |  可以购买、使用并再次购买的加载项。 此类型的加载项通常用于获取应用内收入。<p/><p/>对于此类型的易耗品，应用商店会跟踪用户拥有的加载项所表示商品的余量。 当用户消耗任何商品时，你负责向应用商店报告这些商品已完成，然后应用商店会更新用户的余量。 你的应用可以随时查询用户的当前余量。 用户消耗完所有商品后，可以再次购买加载项。  <p/><p/> 例如，如果你的加载项在游戏中表示 100 个硬币的初始数量，并且用户消耗了 10 个硬币，则你的应用将向应用商店报告 10 个单位的加载项已完成，然后应用商店会更新剩余余额。 用户消耗完全部 100 个硬币后，可以再次购买 100 个硬币的加载项。 <p/><p/>**注意**  应用商店管理的易耗品从 Windows 10 版本 1607 开始可用。 若要使用应用商店管理的易耗品，应用必须面向 Windows 10 版本 1607 或更高版本，并且必须使用 **Windows.Services.Store** 命名空间（而不是 **Windows.ApplicationModel.Store** 命名空间）中的 API。  |
 
 <span />
 
->**注意**&nbsp;&nbsp;其他类型的加载项，如使用软件包的耐用型加载项（也称为可下载内容或 DLC），仅适用于有限的开发人员群体，本文档中未涉及。
+>**注意**  其他类型的加载项，如使用软件包的耐用型加载项（也称为可下载内容或 DLC），仅适用于有限的开发人员群体，本文档中未涉及。
 
 <span id="api_intro" />
 ## <a name="using-the-windowsservicesstore-namespace"></a>使用 Windows.Services.Store 命名空间
 
-本文的其余部分介绍了如何使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间实现应用内购买和试用。 此命名空间仅适用于面向 Windows&nbsp;10 版本 1607 或更高版本的应用，我们建议应用使用此命名空间，而非 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)（如果可能）。
+本文的其余部分介绍了如何使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间实现应用内购买和试用。 此命名空间仅适用于面向 Windows 10 版本 1607 或更高版本的应用，我们建议应用使用此命名空间，而非 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)（如果可能）。
 
 如果你正在查找有关 **Windows.ApplicationModel.Store** 命名空间的信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
@@ -77,7 +77,7 @@ UWP 应用可提供以下类型的加载项。
   Windows.Services.Store.StoreContext context = StoreContext.GetForUser(users[0]);
   ```
 
->**注意**&nbsp;&nbsp;使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序必须执行额外步骤来配置 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象，然后才可以使用此对象。 有关详细信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](#desktop)。
+>**注意**  使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序必须执行额外步骤来配置 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象，然后才可以使用此对象。 有关详细信息，请参阅[在使用桌面桥的桌面应用程序中使用 StoreContext 类](#desktop)。
 
 拥有 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 对象后，可开始调用方法来获取当前应用以及加载项的应用商店产品信息、检索当前应用及其加载项许可证信息、为当前用户购买应用或加载项并执行其他任务。 有关可使用此命名空间执行的常见任务的详细信息，请参阅以下文章：
 
@@ -134,7 +134,7 @@ UWP 应用可提供以下类型的加载项。
 
 3. 在项目在 Visual Studio 中打开的情况下，单击“项目菜单”、指向“应用商店”，然后单击“将应用与应用商店关联”。 完成向导中的说明以将应用项目与 Windows 开发人员中心帐户中要用于测试的应用关联。
 
-  >**注意**&nbsp;&nbsp;如果你未将项目与应用商店中的应用关联，则 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 方法会将其返回值的 **ExtendedError** 属性设置为错误代码值 0x803F6107。 此值指示应用商店并不了解关于该应用的任何信息。
+  >**注意**  如果你未将项目与应用商店中的应用关联，则 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 方法会将其返回值的 **ExtendedError** 属性设置为错误代码值 0x803F6107。 此值指示应用商店并不了解关于该应用的任何信息。
 
 4. 如果您尚未关联，请从应用商店安装您在上一步中指定的应用、运行该应用一次，然后关闭此应用。 这可确保将应用的有效许可证安装到你的开发设备。
 

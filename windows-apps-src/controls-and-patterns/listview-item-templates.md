@@ -169,11 +169,11 @@ namespace ColorsListApp
 
 你通常希望更丰富地呈现你的数据。 若要具体地指定列表视图中的项目的显示方式，可以创建 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx)。 DataTemplate 中的 XAML 定义用于显示各项的控件的布局和外观。 该布局中的控件可绑定到数据对象的属性，或者具有在内联中定义的静态内容。 将 DataTemplate 分配给列表控件的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 属性。
 
-> **重要提示**&nbsp;&nbsp;不能同时使用 **ItemTemplate** 和 **DisplayMemberPath**。 如果同时设置这两个属性，会发生异常。
+> **重要提示**  不能同时使用 **ItemTemplate** 和 **DisplayMemberPath**。 如果同时设置这两个属性，会发生异常。
 
 你在此处定义一个 DataTemplate，它通过项目的颜色以及颜色名称和 RGB 值显示 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.aspx)。 
 
-> **注意**&nbsp;&nbsp;当在 DataTemplate 中使用 [x:Bind 标记扩展](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，必须在 DataTemplate 上指定 DataType (`x:DataType`)。
+> **注意**  当在 DataTemplate 中使用 [x:Bind 标记扩展](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，必须在 DataTemplate 上指定 DataType (`x:DataType`)。
 
 **XAML**
 ```XAML
@@ -300,7 +300,7 @@ namespace ColorsListApp
 
 对 ListView 和 GridView 控件进行优化，以便减少针对每个项目创建的 XAML 元素数。 **ListViewItem** 视觉对象由 [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) 创建，后者是一个特殊的 XAML 元素，用于为对焦、选择和其他视觉状态显示复杂的视觉效果，而无需大量 UIElement 开销。
  
-> **注意**&nbsp;&nbsp;在适用于 Windows 10 的 UWP 应用中，**ListViewItem** 和 **GridViewItem** 都使用 **ListViewItemPresenter**；GridViewItemPresenter 已弃用，因此不应使用它。 ListViewItem 和 GridViewItem 在 ListViewItemPresenter 上设置不同的属性值来实现不同的默认外观。）
+> **注意**  在适用于 Windows 10 的 UWP 应用中，**ListViewItem** 和 **GridViewItem** 都使用 **ListViewItemPresenter**；GridViewItemPresenter 已弃用，因此不应使用它。 ListViewItem 和 GridViewItem 在 ListViewItemPresenter 上设置不同的属性值来实现不同的默认外观。）
 
 若要修改项目容器的外观，请使用 [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) 属性，并提供 [**Style**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx)，其中 [**TargetType**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.targettype.aspx) 已设为 **ListViewItem** 或 **GridViewItem**。
 
@@ -328,7 +328,7 @@ namespace ColorsListApp
 
 若要修改未绑定到 ListViewItem 属性的模板的其他 ListViewItemPresenter 属性，你需要使用新的 ListViewItemPresenter（可在其上修改属性）为 ListViewItem 重新设置模板。 
 
-> **注意**&nbsp;&nbsp;ListViewItem 和 GridViewItem 默认样式在 ListViewItemPresenter 上设置了很多属性。 你始终应该从默认样式的副本开始，同时仅修改所需属性。 否则，视觉对象可能不按预期方式显示，因为某些属性未正确设置。
+> **注意**  ListViewItem 和 GridViewItem 默认样式在 ListViewItemPresenter 上设置了很多属性。 你始终应该从默认样式的副本开始，同时仅修改所需属性。 否则，视觉对象可能不按预期方式显示，因为某些属性未正确设置。
 
 **在 Visual Studio 中创建默认模板的副本**
  
@@ -411,7 +411,7 @@ SelectionMode：&nbsp;&nbsp; | 单选/扩展 | 多选
 内联 | ![内联单选或扩展选择](images/listview-single-selection.png) | ![内联多选](images/listview-multi-selection.png)
 覆盖 | ![覆盖单选或扩展选择](images/gridview-single-selection.png) | ![覆盖多选](images/gridview-multi-selection.png)
 
-> **注意**&nbsp;&nbsp;在此示例和以下示例中，会显示简单的字符串数据项，不过没有数据模板来强调控件模板所提供的视觉对象。
+> **注意**  在此示例和以下示例中，会显示简单的字符串数据项，不过没有数据模板来强调控件模板所提供的视觉对象。
 
 还有一些画笔属性，可用于更改复选框的颜色。 我们接下来就来看一下这些属性以及其他画笔属性。
 
@@ -421,7 +421,7 @@ SelectionMode：&nbsp;&nbsp; | 单选/扩展 | 多选
 
 此表显示 ListViewItem 的常见和选择视觉状态，以及用于呈现每个状态的视觉对象的画笔。 这些图像显示内联和覆盖选择视觉样式上的画笔效果。
 
-> **注意**&nbsp;&nbsp;在此表中，已修改的画笔颜色值为经过硬编码的命名颜色，并且颜色已选定，以便在它们应用到模板时更明显。 这些颜色并非视觉状态的默认颜色。 如果要在应用中修改默认颜色，应使用画笔资源来修改在默认模板中完成的颜色值。
+> **注意**  在此表中，已修改的画笔颜色值为经过硬编码的命名颜色，并且颜色已选定，以便在它们应用到模板时更明显。 这些颜色并非视觉状态的默认颜色。 如果要在应用中修改默认颜色，应使用画笔资源来修改在默认模板中完成的颜色值。
 
 状态/画笔名称 | 内联样式 | 覆盖样式
 ------------|--------------|--------------
@@ -441,7 +441,7 @@ ListViewItemPresenter 具有数据占位符和拖动状态的其他画笔属性�
 
 如前面所述，项模板中的 UIElement 数量会对列表视图的性能产生重大影响。 将 ListViewItemPresenter 替换为扩展的 XAML 模板会大大增加元素计数，当列表视图将显示大量项目或者性能成为关注的问题时，不建议这样做。
 
-> **注意**&nbsp;&nbsp;仅当列表视图的 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) 是 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) 时，才支持 **ListViewItemPresenter**。 如果你将 ItemsPanel 更改为使用 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.wrapgrid.aspx) 或 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx)，项模板将自动切换为扩展的 XAML 模板。 有关详细信息，请参阅 [ListView 和 GridView UI 优化](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)。
+> **注意**  仅当列表视图的 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) 是 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) 时，才支持 **ListViewItemPresenter**。 如果你将 ItemsPanel 更改为使用 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.wrapgrid.aspx) 或 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx)，项模板将自动切换为扩展的 XAML 模板。 有关详细信息，请参阅 [ListView 和 GridView UI 优化](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)。
 
 若要自定义扩展的 XAML 模板，你需要在应用中为其创建副本，并将 **ItemContainerStyle** 属性设置为副本。
 

@@ -31,7 +31,7 @@ ms.openlocfilehash: 6945708f0d81cd9f2edd363ed193c76601ec5652
 
 
 
-> **注意**&nbsp;&nbsp;**MediaPlayerElement** 仅在 Windows 10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 此页面上的所有建议均同样适用于 MediaElement。
+> **注意**  **MediaPlayerElement** 仅在 Windows 10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 此页面上的所有建议均同样适用于 MediaElement。
 
 ## 这是正确的控件吗？
 
@@ -80,7 +80,7 @@ Windows 10 入门应用中的媒体播放器。
 
 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 自动与系统媒体传输控件集成。 系统媒体传输控件是在按下硬件媒体键时弹出的控件，例如键盘上的媒体按钮。 有关详细信息，请参阅 [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)。
 
-> **注意**&nbsp;&nbsp; [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 不会与系统媒体传输控件自动集成，因此你必须自行连接它们。 有关详细信息，请参阅[系统媒体传输控件](https://msdn.microsoft.com/library/windows/apps/mt228338)。
+> **注意**   [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 不会与系统媒体传输控件自动集成，因此你必须自行连接它们。 有关详细信息，请参阅[系统媒体传输控件](https://msdn.microsoft.com/library/windows/apps/mt228338)。
 
 
 ### 设置媒体源
@@ -233,7 +233,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 -   播放停止。 例如，视频播放完毕或完成演示文稿。
 -   出现播放错误。 例如，存在网络连接问题或损坏的文件。
 
-> **注意**&nbsp;&nbsp;如果 [**MediaPlayerElement.IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) 设置为 true 并且正在播放媒体，将自动阻止屏幕停用。
+> **注意**  如果 [**MediaPlayerElement.IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) 设置为 true 并且正在播放媒体，将自动阻止屏幕停用。
 
 **使屏幕保持活动状态**
 
@@ -374,7 +374,7 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 如果你有足够的屏幕空间或要针对 10 英尺体验进行设计，请选择双行布局。 它为控件提供比紧凑的单行布局更多的空间，并且更易于在 10 体验中使用游戏板导航。
 
-> **注意**&nbsp;&nbsp;有关针对 10 英尺体验优化应用程序的详细信息，请访问[针对 Xbox 和 TV 进行设计](../input-and-devices/designing-for-tv.md)文章。
+> **注意**  有关针对 10 英尺体验优化应用程序的详细信息，请访问[针对 Xbox 和 TV 进行设计](../input-and-devices/designing-for-tv.md)文章。
 
 默认控件已针对媒体播放进行优化，但你能够将所需的自定义选项添加到媒体播放器，以便为应用提供最佳的体验。 若要了解有关添加自定义控件的详细信息，请访问[创建自定义传输控件](custom-transport-controls.md)。
 

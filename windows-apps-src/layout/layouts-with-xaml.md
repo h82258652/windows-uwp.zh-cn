@@ -16,7 +16,7 @@ XAML 为你提供了灵活的布局系统，以便你可以使用自动调整大
 
 此处，我们讨论如何使用 XAML 属性和布局面板使你的应用成为响应式和自适应应用。 我们基于 [UWP 应用设计简介](../layout/design-and-ui-intro.md)中提供的有关响应式 UI 设计和技术的重要信息进行生成。 你应该了解有效像素的定义以及每一种响应式设计技术：重新定位、调整大小、重排、显示、替换和重新构建。
 
-> **注意**&nbsp;&nbsp;应用布局开始于所选的导航模型，例如是使用带有[“表和透视表”](../controls-and-patterns/tabs-pivot.md)模型的 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx)，还是使用带有[“导航窗格”](../controls-and-patterns/nav-pane.md)模型的 [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx)。 有关上述内容的详细信息，请参阅 [UWP 应用的导航设计基础知识](../layout/navigation-basics.md)。 在此处，我们讨论的技术可使单个页面或一组元素的布局更具响应性。 无论为你的应用选择了哪一种导航模型，此信息都适用。
+> **注意**  应用布局开始于所选的导航模型，例如是使用带有[“表和透视表”](../controls-and-patterns/tabs-pivot.md)模型的 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx)，还是使用带有[“导航窗格”](../controls-and-patterns/nav-pane.md)模型的 [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx)。 有关上述内容的详细信息，请参阅 [UWP 应用的导航设计基础知识](../layout/navigation-basics.md)。 在此处，我们讨论的技术可使单个页面或一组元素的布局更具响应性。 无论为你的应用选择了哪一种导航模型，此信息都适用。
 
 你可以使用 XAML 框架提供的多个级别的优化来创建响应式 UI。
 - **动态布局**
@@ -31,7 +31,7 @@ XAML 为你提供了灵活的布局系统，以便你可以使用自动调整大
 
 - **定制布局**
    定制的布局针对特定设备系列或各种屏幕大小进行优化。 在设备系列内，布局仍应响应并适应各种受支持窗口大小范围内的更改。
-    > **注意**&nbsp;&nbsp; 借助[适用于手机的 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)，用户可以将他们的手机连接到监视器、鼠标和键盘。 此功能模糊手机和桌面设备系列之间的界限。
+    > **注意**   借助[适用于手机的 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)，用户可以将他们的手机连接到监视器、鼠标和键盘。 此功能模糊手机和桌面设备系列之间的界限。
 
     定制的方法包括
     - 创建自定义触发器
@@ -66,7 +66,7 @@ XAML 布局系统支持静态布局和动态布局。 在静态布局中，你�
 
 自动调整大小可用于 UI 元素调整大小以适应其内容或父容器。 还可以将自动调整大小用于网格的行和列。 若要使用自动调整大小，请将 UI 元素的高度和/或宽度设置为“自动”****。
 
-> **注意**&nbsp;&nbsp;元素是否调整大小以容纳其内容或其容器，取决于其 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 属性的值以及父容器处理其子元素调整大小的方式。 有关详细信息，请参阅本文后面部分的[对齐]()和[布局面板]()。
+> **注意**  元素是否调整大小以容纳其内容或其容器，取决于其 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 属性的值以及父容器处理其子元素调整大小的方式。 有关详细信息，请参阅本文后面部分的[对齐]()和[布局面板]()。
 
 你可以使用成比例调整大小（也称为*比例缩放*）以按加权比例来分配网格的行和列的可用空间。 在 XAML 中，比例缩放值用 \* 表示（或使用 *n*\* 表示加权比例缩放）。 例如，若要在两列布局中指定一列比另一列宽五倍，则在 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx) 元素中对 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) 属性分别使用“5\*”和“\*”。
 
@@ -150,7 +150,7 @@ Margin 和 Padding 的左侧、右侧、顶部和底部值均不需要对称，�
 
 可以在代码中或视觉状态中更改元素的 Visibility 属性。 更改元素的 Visibility 后，其所有子元素也会相应更改。 可以通过折叠一个面板的同时显示另一个面板来替换 UI 部分。
 
-> **提示**&nbsp;&nbsp;默认情况下，当 UI 中的元素是 **Collapsed** 时，启动时仍会创建这些对象，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../xaml-platform/x-deferloadstrategy-attribute.md)。
+> **提示**  默认情况下，当 UI 中的元素是 **Collapsed** 时，启动时仍会创建这些对象，即使它们不可见。 可以延迟加载这些元素，直至通过将 **x:DeferLoadStrategy 属性**设置为“Lazy”以使它们显示。 这可以改善启动性能。 有关详细信息，请参阅 [x:DeferLoadStrategy 属性](../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 ### 样式资源
 
@@ -277,7 +277,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 </Page>
 ```
 
-> **重要提示**&nbsp;&nbsp;在上一个示例中，对 **Grid** 元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
+> **重要提示**  在上一个示例中，对 **Grid** 元素设置 VisualStateManager.VisualStateGroups 附加属性。 使用 StateTrigger 时，请务必将 VisualStateGroups 附加到根元素的第一个子元素，以便触发器自动生效。 （在此处，**Grid** 是根 **Page** 元素的第一个子元素。）
 
 ### 附加属性语法
 
@@ -381,7 +381,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 **向应用添加 XAML 视图**
 1. 依次选择“项目”&gt;“添加新项目”。 将打开“添加新项目”对话框。
-    > **提示**&nbsp;&nbsp;确保在“解决方案资源管理器”中选中文件夹或项目，而不是解决方案。
+    > **提示**  确保在“解决方案资源管理器”中选中文件夹或项目，而不是解决方案。
 2. 在左侧窗格中的 Visual C# 或 Visual Basic 下，选取 XAML 模板类型。
 3. 在中心窗格中，选取“XAML 视图”。
 4. 为该视图输入名称。 必须正确命名该视图。 有关命名的详细信息，请参阅本部分的其余内容。
@@ -415,7 +415,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 **向应用添加 XAML 页面**
 1. 依次选择“项目”&gt;“添加新项目”。 将打开“添加新项目”对话框。
-    > **提示**&nbsp;&nbsp;确保在“解决方案资源管理器”中选中项目，而不是解决方案。
+    > **提示**  确保在“解决方案资源管理器”中选中项目，而不是解决方案。
 2. 在左侧窗格中的 Visual C# 或 Visual Basic 下，选取 XAML 模板类型。
 3. 在中心窗格中，选取“空白页面”。
 4. 为该页面输入名称。 例如，“MainPage_Mobile”。 创建 MainPage_Mobile.xaml 和 MainPage_Mobile.xaml.cs/vb/cpp 代码文件。

@@ -12,7 +12,7 @@ ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
 # <a name="open-files-and-folders-with-a-picker"></a>使用选取器打开文件和文件夹
 
 
-\[ 已针对 Windows&nbsp;10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**

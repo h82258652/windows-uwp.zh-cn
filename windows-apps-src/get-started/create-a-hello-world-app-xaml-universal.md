@@ -2,7 +2,7 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "创建“Hello, world”应用 \\(XAML\\)"
-description: "本教程指导你如何使用 Extensible Application Markup Language \\(XAML\\) 和 C# 创建一个面向 Windows&nbsp;10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。"
+description: "本教程指导你如何使用 Extensible Application Markup Language \\(XAML\\) 和 C# 创建一个面向 Windows 10 上通用 Windows 平台 (UWP) 的简单“Hello, world”应用。"
 translationtype: Human Translation
 ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
 ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
@@ -11,11 +11,11 @@ ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
 
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
-本教程指导你如何使用 XAML 和 C# 创建一个简单的“Hello, world”应用，该应用面向 Windows&nbsp;10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows&nbsp;10 设备上运行的应用。
+本教程指导你如何使用 XAML 和 C# 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows 10 设备上运行的应用。
 
 在此处，你将了解如何：
 
--   创建面向 **Windows&nbsp;10** 和 **UWP** 的新 **Visual Studio 2015** 项目。
+-   创建面向 **Windows 10** 和 **UWP** 的新 **Visual Studio 2015** 项目。
 -   编写 XAML 即可更改起始页上的 UI。
 -   在 Visual Studio 中，在本地桌面和手机仿真器中运行该项目。
 -   使用 SpeechSynthesizer，可在你按下某个按钮时使应用说话。
@@ -206,7 +206,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 ![移动设备上的初始应用屏幕](images/win10-cs-09.png)
 
-如果你有运行 Windows&nbsp;10 的 Windows Phone，还可以将它连接到计算机，然后直接在其上部署并运行应用（尽管首选需要[启用开发人员模式](enable-your-device-for-development.md)）。
+如果你有运行 Windows 10 的 Windows Phone，还可以将它连接到计算机，然后直接在其上部署并运行应用（尽管首选需要[启用开发人员模式](enable-your-device-for-development.md)）。
 
 
 ## <a name="step-3-event-handlers"></a>步骤 3：事件处理程序
@@ -253,7 +253,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 ## <a name="summary"></a>小结
 
 
-祝贺你，你已创建了自己的第一个适用于 Windows&nbsp;10 和 UWP 的应用！
+祝贺你，你已创建了自己的第一个适用于 Windows 10 和 UWP 的应用！
 
 若要了解如何使用 XAML 来布置你的应用将使用的控件，请尝试[网格教程](../layout/grid-tutorial.md)，或直接跳至 [下一步](learn-more.md)？
 

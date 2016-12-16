@@ -42,7 +42,7 @@ ms.openlocfilehash: 35dfe2864958a15cf01133d6017b7dd03f382e4a
 
 对于 Windows 8.1 和 Windows Phone 8.x 应用，可以使用 **AdMediatorControl** 类以通过显示多个广告网络的横幅广告以优化广告收益。 将此控件添加到应用后，在 Windows 开发人员中心仪表板上配置广告中介设置，我们将负责调解所选广告网络提出的横幅广告请求。 有关详细信息，请参阅[使用广告中介使广告收益最大化](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)。
 
->**注意**&nbsp;&nbsp;Windows 10 的 UWP 应用当前不支持使用 **AdMediatorControl** 类的广告中介。 即将使用与用于横幅广告 (**AdControl**) 和视频间隙广告 (**InterstitialAd**) 相同的 API 推出用于 UWP 应用的服务器端中介。 有关在 UWP 应用中从 **AdMediatorControl** 迁移到 **AdControl** 的指南，请参阅[针对 UWP 应用从 AdMediatorControl 迁移到 AdControl](migrate-from-admediatorcontrol-to-adcontrol.md)。
+>**注意**  Windows 10 的 UWP 应用当前不支持使用 **AdMediatorControl** 类的广告中介。 即将使用与用于横幅广告 (**AdControl**) 和视频间隙广告 (**InterstitialAd**) 相同的 API 推出用于 UWP 应用的服务器端中介。 有关在 UWP 应用中从 **AdMediatorControl** 迁移到 **AdControl** 的指南，请参阅[针对 UWP 应用从 AdMediatorControl 迁移到 AdControl](migrate-from-admediatorcontrol-to-adcontrol.md)。
 
 <span id="silverlight_support"/>
 ## 用于 Windows Phone 8.x Silverlight 项目的广告支持

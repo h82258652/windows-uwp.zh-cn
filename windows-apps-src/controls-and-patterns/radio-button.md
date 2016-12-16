@@ -71,7 +71,7 @@ Microsoft Edge 浏览器设置中的单选按钮。
 - 将它们放在同一个父容器内。
 - 在每个单选按钮上将 [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 属性设置为相同的值。
 
-> **注意**&nbsp;&nbsp;通过键盘访问时，一组单选按钮的行为类似于单个控件。 使用 Tab 键只能访问选定选项，但用户可以使用箭头键循环浏览该组。
+> **注意**  通过键盘访问时，一组单选按钮的行为类似于单个控件。 使用 Tab 键只能访问选定选项，但用户可以使用箭头键循环浏览该组。
 
 在此示例中，单选按钮的第一组在相同的堆栈面板中进行隐式分组。 第二组分为两个堆栈面板，以便它们按照 GroupName 进行显式分组。
 

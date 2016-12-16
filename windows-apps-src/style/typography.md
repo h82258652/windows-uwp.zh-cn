@@ -80,7 +80,7 @@ Segoe 是一种人性化的字样，有着柔和友好的外观和基于手写�
 
 ![显示单词和字母间距之间的差异](images/word-letter.png)
 
-**注意**&nbsp;&nbsp;在 XAML 文本控件中，[Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 用于控制字距调整，而 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 用于控制字距。 Typography.Kerning 的默认设置为“true”，FontStretch 的默认设置为“Normal”，它们都是推荐值。
+**注意**  在 XAML 文本控件中，[Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) 用于控制字距调整，而 [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 用于控制字距。 Typography.Kerning 的默认设置为“true”，FontStretch 的默认设置为“Normal”，它们都是推荐值。
 
 
 
@@ -125,7 +125,7 @@ Segoe 提供了各种各样的字符，其设计目的是在小字体和大字�
 
 ![显示若干图标和文字的配对](images/hanging-text-alignment.png)
 
-**注意**&nbsp;&nbsp;XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 属性提供了对大写字母高度和基线字体指标的访问权限。 它可以用于使文字在视觉上垂直居中或顶部对齐。
+**注意**  XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 属性提供了对大写字母高度和基线字体指标的访问权限。 它可以用于使文字在视觉上垂直居中或顶部对齐。
 
 ## <a name="clipping-and-ellipses"></a>剪切和省略号
 
@@ -141,7 +141,7 @@ Segoe 提供了各种各样的字符，其设计目的是在小字体和大字�
 ![显示字体渐变](images/type-ramp.png) 所有大小都是以有效像素为单位。 
 
 
-**注意**&nbsp;&nbsp;大多数级别的渐变都可用作遵循 `*TextBlockStyle` 命名约定（`HeaderTextBlockStyle` 除外）的 XAML [静态资源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)。
+**注意**  大多数级别的渐变都可用作遵循 `*TextBlockStyle` 命名约定（`HeaderTextBlockStyle` 除外）的 XAML [静态资源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)。
 
 
 ## <a name="primary-and-secondary-text"></a>主要文字和次要文字

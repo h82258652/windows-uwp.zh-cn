@@ -66,11 +66,11 @@ ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > **注意**&nbsp;&nbsp;在包含了 default.js 之后，此行必须放置在 **&lt;head&gt;** 部分；否则，在生成项目时会遇到错误。
+    > **注意**  在包含了 default.js 之后，此行必须放置在 **&lt;head&gt;** 部分；否则，在生成项目时会遇到错误。
 
 8.  修改 default.html 文件（或其他适用于你的项目的 html 文件）的 **&lt;body&gt;** 部分，以便包含 **AdControl** 的 div。 将 **AdControl** 中的 **applicationId** 和 **adUnitId** 属性分配给[测试模式值](test-mode-values.md)中提供的测试值，然后调整控件的高度和宽度，以使其适应[横幅广告支持的广告大小](supported-ad-sizes-for-banner-ads.md)。
 
-    > **注意**&nbsp;&nbsp;在提交应用之前，你需要将这些测试 **applicationId** 和 **adUnitId** 值替换为实时值。
+    > **注意**  在提交应用之前，你需要将这些测试 **applicationId** 和 **adUnitId** 值替换为实时值。
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"

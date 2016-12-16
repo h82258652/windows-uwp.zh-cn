@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: "了解如何启用 UWP 应用中的应用内购买和试用（定向 Windows&nbsp;10 版本 1607 之前的版本）。"
+description: "了解如何启用 UWP 应用中的应用内购买和试用（定向 Windows 10 版本 1607 之前的版本）。"
 title: "使用 Windows.ApplicationModel.Store 命名空间进行应用内购买和试用"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
@@ -19,7 +19,7 @@ ms.openlocfilehash: ee2a52a54be8510b962f1ef5c40570f3836d28c3
 
 >**注意**&nbsp;&nbsp;
 >
-> * 如果你的应用面向 Windows&nbsp;10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员，而非使用 **Windows.ApplicationModel.Store** 命名空间。 **Windows.Services.Store** 命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 **Windows.Services.Store** 命名空间还设计用于提供更好的性能。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
+> * 如果你的应用面向 Windows 10 版本 1607 或更高版本，我们建议使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间的成员，而非使用 **Windows.ApplicationModel.Store** 命名空间。 **Windows.Services.Store** 命名空间支持最新的加载项类型（如应用商店管理的易耗型加载项），并且设计为与 Windows 开发人员中心和应用商店将来支持的产品和功能类型兼容。 **Windows.Services.Store** 命名空间还设计用于提供更好的性能。 有关详细信息，请参阅[应用内购买和试用](in-app-purchases-and-trials.md)。
 <br/><br/>
 > * **Windows.ApplicationModel.Store** 命名空间在使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序中不受支持。 这些应用程序必须使用 **Windows.Services.Store** 命名空间才能实现应用内购买和试用。
 
@@ -50,7 +50,7 @@ WindowsStoreProxy.xml 文件默认创建在以下位置：%UserProfile%\AppData\
 
 尽管可以修改此文件中的值，但我们建议创建自己的 WindowsStoreProxy.xml 文件（在 Visual Studio 项目的数据文件夹中）以供 **CurrentAppSimulator** 改用。 模拟交易时，调用 [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) 以加载文件。 如果不调用 **ReloadSimulatorAsync** 加载你自己的 WindowsStoreProxy.xml 文件， **CurrentAppSimulator** 将创建/加载（但不是会覆盖）默认 WindowsStoreProxy.xml 文件。
 
->**注意**&nbsp;&nbsp;请注意，**CurrentAppSimulator** 不会完全初始化，直到 **ReloadSimulatorAsync** 完成。 并且，由于 **ReloadSimulatorAsync** 是异步方法，应格外小心以避免在初始化一个线程时，同时对另一个线程查询 **CurrentAppSimulator** 会出现争用情况。 有一种方法是使用一个标志来指示初始化已完成。 从 Windows 应用商店安装的应用必须使用 **CurrentApp** 而不是 **CurrentAppSimulator**，并且在这种情况下不调用 **ReloadSimulatorAsync**，因此刚刚提到的争用情况不适用。 出于此原因，请设计你的代码，以便它可在这两种情况下（异步和同步）都起作用。
+>**注意**  请注意，**CurrentAppSimulator** 不会完全初始化，直到 **ReloadSimulatorAsync** 完成。 并且，由于 **ReloadSimulatorAsync** 是异步方法，应格外小心以避免在初始化一个线程时，同时对另一个线程查询 **CurrentAppSimulator** 会出现争用情况。 有一种方法是使用一个标志来指示初始化已完成。 从 Windows 应用商店安装的应用必须使用 **CurrentApp** 而不是 **CurrentAppSimulator**，并且在这种情况下不调用 **ReloadSimulatorAsync**，因此刚刚提到的争用情况不适用。 出于此原因，请设计你的代码，以便它可在这两种情况下（异步和同步）都起作用。
 
 
 <span id="proxy-examples" />

@@ -13,12 +13,12 @@ ms.openlocfilehash: 81786f6bf76d1d3840d5cd8c6191550b98a248b2
 # <a name="create-and-consume-an-app-service"></a>创建和使用应用服务
 
 
-\[ 已针对 Windows&nbsp;10 上的 UWP 应用更新。 有关 Windows&nbsp;8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。
 
-从 Windows&nbsp;10 版本 1607 开始，可以创建在与主机应用相同的进程中运行的应用服务。 本文主要就创建在单独后台进程中运行的应用服务进行介绍。 有关在提供程序所在的同一进程中运行的应用服务的更多详细信息，请参阅[将应用服务转换为在其托管应用所在的同一进程中运行的服务](convert-app-service-in-process.md)。
+从 Windows 10 版本 1607 开始，可以创建在与主机应用相同的进程中运行的应用服务。 本文主要就创建在单独后台进程中运行的应用服务进行介绍。 有关在提供程序所在的同一进程中运行的应用服务的更多详细信息，请参阅[将应用服务转换为在其托管应用所在的同一进程中运行的服务](convert-app-service-in-process.md)。
 
 ## <a name="create-a-new-app-service-provider-project"></a>创建新的应用服务提供程序项目
 

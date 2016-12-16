@@ -11,7 +11,7 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 
 # <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
-\[ 已针对 Windows&nbsp;10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此部分包含有关以下内容的信息：
 

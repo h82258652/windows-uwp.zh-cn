@@ -27,7 +27,7 @@ ms.openlocfilehash: 97feb4f79e0592a7b54a8263b15cd2b85dd3243d
 
 * 将广告设计到体验中。 为你的设计人员提供示例广告，以设计广告的外观。 应用中两个精心设计的广告示例是广告即内容布局和拆分布局。
 
-  若要查看应用中广告大小的外观和运行状况的差异，可以利用我们适用于 Windows Phone、Windows&nbsp;8.1 和 Windows&nbsp;10 的测试模式广告单元。 在结束使用测试模式广告单元后，请记得[使用实际广告单元 ID 更新应用](set-up-ad-units-in-your-app.md)，然后再提交应用以供认证。
+  若要查看应用中广告大小的外观和运行状况的差异，可以利用我们适用于 Windows Phone、Windows 8.1 和 Windows 10 的测试模式广告单元。 在结束使用测试模式广告单元后，请记得[使用实际广告单元 ID 更新应用](set-up-ad-units-in-your-app.md)，然后再提交应用以供认证。
 
 * 针对广告不可用时进行设计。 可能会多次出现广告未发送到应用的情况。 设计页面的版式，以使其不管是否显示广告都看起来很精美。 有关详细信息，请参阅[错误处理](error-handling-with-advertising-libraries.md)。
 

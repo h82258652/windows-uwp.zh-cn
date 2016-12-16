@@ -50,7 +50,7 @@ XAML 资源是多次从标记中引用的对象。 资源在 [**ResourceDictiona
 -   `<x:String>` - 定义带有键“greeting”的资源。
 -   `{StaticResource greeting}` — 查找带有键“greeting”的资源，它已分配给 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 属性。
 
-> **注意**&nbsp;&nbsp;不要将 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 相关的概念与“资源”****生成操作、资源 (.resw) 文件或在构建生成应用包的代码项目上下文中讨论的其他“资源”相混淆。
+> **注意**  不要将 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 相关的概念与“资源”****生成操作、资源 (.resw) 文件或在构建生成应用包的代码项目上下文中讨论的其他“资源”相混淆。
 
 资源不需要作为字符串；它们可以作为任何可共享的对象，例如样式、目标、画笔和颜色。 但是，控件、形状和其他 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 不可共享，因此不能将其声明为可重复使用的资源。 有关共享的详细信息，请参阅本主题后面的 [XAML 资源必须可共享](#xaml_resources_must_be_sharable)部分。
 
@@ -104,7 +104,7 @@ XAML 资源是多次从标记中引用的对象。 资源在 [**ResourceDictiona
 
 像任何其他字典一样，访问资源字典的成员。
 
-> **注意**&nbsp;&nbsp;当你执行在代码中查找资源的操作时，仅找到 `Page.Resources` 字典中的资源。 与 [StaticResource 标记扩展](../xaml-platform/staticresource-markup-extension.md)不同，如果未在第一个字典中找到这些资源，该代码不会回退到 `Application.Resources` 字典。
+> **注意**  当你执行在代码中查找资源的操作时，仅找到 `Page.Resources` 字典中的资源。 与 [StaticResource 标记扩展](../xaml-platform/staticresource-markup-extension.md)不同，如果未在第一个字典中找到这些资源，该代码不会回退到 `Application.Resources` 字典。
 
  
 
@@ -254,7 +254,7 @@ sealed partial class App : Application
 
 *合并的资源字典*将一个资源字典合并到通常在其他文件中的另一个字典。
 
-> **使用技巧**&nbsp;&nbsp;可以在 Microsoft Visual Studio 中创建资源字典文件，方法是在“项目”****菜单中依次使用“添加”&gt;“新建项目…”&gt;“资源字典”****选项。
+> **使用技巧**  可以在 Microsoft Visual Studio 中创建资源字典文件，方法是在“项目”****菜单中依次使用“添加”&gt;“新建项目…”&gt;“资源字典”****选项。
 
 此时，可以在名为 Dictionary1.xaml 的单独 XAML 文件中定义资源字典。
 
@@ -396,7 +396,7 @@ sealed partial class App : Application
 
 查找序列随后检查应用的运行时对象树中的下一个父对象。 如果存在一个 [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 并且它持有一个 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)，将请求具有指定键字符串的字典项。 如果找到资源，查找序列就会停止，并将该对象提供到执行引用的位置。 否则，查找行为会向对象树根方向前进到下一个父级对象。 此搜索会继续递归前进，直至到达 XAML 的根元素，从而完成对所有可能直接资源位置的搜索。
 
-> **注意**&nbsp;&nbsp;一种常见的做法是在页面的根级别定义所有直接资源，以利用该资源查找行为并将其用作 XAML 标记样式的一个惯例。
+> **注意**  一种常见的做法是在页面的根级别定义所有直接资源，以利用该资源查找行为并将其用作 XAML 标记样式的一个惯例。
 
  
 

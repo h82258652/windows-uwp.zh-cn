@@ -13,7 +13,7 @@ ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
 
 在 Windows 应用商店提交 API 中使用以下方法，为注册到 Windows 开发人员中心帐户的应用获取数据。 有关 Windows 应用商店提交 API 的介绍，请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 这些方法仅可以用于获取应用的数据。 若要创建或管理应用提交，请参阅[管理应用提交](manage-app-submissions.md)中的方法。
+>**注意**  这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 这些方法仅可以用于获取应用的数据。 若要创建或管理应用提交，请参阅[管理应用提交](manage-app-submissions.md)中的方法。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|

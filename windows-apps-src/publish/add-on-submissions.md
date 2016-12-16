@@ -17,7 +17,7 @@ ms.openlocfilehash: 1e7c02621da528c4635ab47bd7c2a898f2441da1
 
 加载项提交过程的第一步是通过[定义其产品类型和产品 ID](set-your-add-on-product-id.md) 来在仪表板中创建加载项。 然后，你可以创建一个提交，以便你的加载项可以通过 Windows 应用商店购买。 你可以在[提交应用](app-submissions.md)的同时提交加载项，或者可以单独处理它。 并且你可以在应用在应用商店中上架后[更新](#updating-an-add-on-after-submission)加载项，而无需重新提交该应用。
 
-> **注意**&nbsp;&nbsp;文档的此部分介绍如何在开发人员中心仪表板中提交加载项。 此外，你也可以使用 [Windows Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行加载项提交。
+> **注意**  文档的此部分介绍如何在开发人员中心仪表板中提交加载项。 此外，你也可以使用 [Windows Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行加载项提交。
 
 ## <a name="checklist-for-submitting-an-add-on"></a>加载项提交清单
 
@@ -73,7 +73,7 @@ ms.openlocfilehash: 1e7c02621da528c4635ab47bd7c2a898f2441da1
 
 你可以随时更改已发布的加载项。 加载项更改会独立于应用提交和发布，因此通常不需要更新整个应用即可对加载项进行更改，如更新其价格或说明。
 
-> **重要提示** 如果你的应用要提供给使用 Windows&nbsp;8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows&nbsp;8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows&nbsp;8.x 的客户将无法看到新的加载项。
+> **重要提示** 如果你的应用要提供给使用 Windows 8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows 8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows 8.x 的客户将无法看到新的加载项。
 
 若要提交更新，请转到仪表板中的加载项页面，然后单击“更新”。 这将使用之前提交中的信息作为起始点，为该加载项创建新的提交。 按需更改信息，然后单击“提交到应用商店”。
 

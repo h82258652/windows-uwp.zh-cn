@@ -18,7 +18,7 @@ ms.openlocfilehash: de76a3c6d4949b9203df79855e1748a81d76ca64
 
 ## <a name="overview"></a>概述
 
-通用 Windows 平台可使你在多台 Windows&nbsp;10 设备上创建令人愉快的体验。 UWP 框架提供的大部分功能使应用能够在这些设备上使用相同的用户界面 (UI)，而无需附加工作。 但是，定制和优化你的应用以使其在 Xbox One 和电视屏幕上良好工作需要考虑特殊的注意事项。
+通用 Windows 平台可使你在多台 Windows 10 设备上创建令人愉快的体验。 UWP 框架提供的大部分功能使应用能够在这些设备上使用相同的用户界面 (UI)，而无需附加工作。 但是，定制和优化你的应用以使其在 Xbox One 和电视屏幕上良好工作需要考虑特殊的注意事项。
 
 坐在房间中的沙发上使用游戏板或遥控器与电视交互的体验称为 **10 英尺体验**。 如此命名是因为用户通常坐在离屏幕大约 10 英尺的位置。 这提出了 *2 英尺*体验（假设）中或与电脑交互时所不存在的独特挑战。 如果你要为 Xbox One 或任何输出到电视屏幕和使用控制器进行输入的其他设备开发应用，应始终牢记这一点。
 
@@ -473,7 +473,7 @@ public App()
 
 焦点视觉对象是当前具有焦点的 UI 元素周围的边框。 这有助于使用户定位，以便他们可以轻松导航你的 UI而不会迷失。
 
-借助添加到焦点视觉对象的视觉更新和大量自定义选项，开发人员可以相信，单个焦点视觉对象将适用于电脑和 Xbox One 以及支持键盘和/或游戏板/遥控器的任何其他 Windows&nbsp;10 设备。
+借助添加到焦点视觉对象的视觉更新和大量自定义选项，开发人员可以相信，单个焦点视觉对象将适用于电脑和 Xbox One 以及支持键盘和/或游戏板/遥控器的任何其他 Windows 10 设备。
 
 尽管可以在不同的平台上使用相同的焦点视觉对象，但对于 10 英尺体验，用户遇到此情况的上下文稍有不同。 你应假设用户不会对整个电视屏幕投入完全的注意力，因此当前具有焦点的元素始终对用户清晰可见以避免其在搜寻视觉对象时感到沮丧，这一点很重要。
 
@@ -1031,7 +1031,7 @@ if (IsTenFoot)
 
 请访问[媒体播放](../controls-and-patterns/media-playback.md)，了解有关将媒体添加到应用的详细信息。
 
-> ![注意] `MediaPlayerElement` 仅在 Windows&nbsp;10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows&nbsp;10 开发应用，你将需要改用 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926)。 上述建议也适用于 `MediaElement`，并且可通过相同方式访问 `TransportControls` 属性。
+> ![注意] `MediaPlayerElement` 仅在 Windows 10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926)。 上述建议也适用于 `MediaElement`，并且可通过相同方式访问 `TransportControls` 属性。
 
 ### <a name="search-experience"></a>搜索体验
 

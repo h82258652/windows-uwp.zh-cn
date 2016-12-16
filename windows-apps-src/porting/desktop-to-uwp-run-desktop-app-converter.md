@@ -33,7 +33,7 @@ ms.openlocfilehash: 4095cfbe96f239afb5f3173e0a7f84e01d63452c
 ### <a name="9142016-v10"></a>9/14/2016 (v1.0)
 
 * 桌面应用转换器现可在 [Windows 应用商店](https://aka.ms/converter)中下载！ 
-* 在[下载中心](https://aka.ms/converterimages)获取最新的 Windows&nbsp;10 基本映像 (.wim) 以供与 DAC 一起使用。
+* 在[下载中心](https://aka.ms/converterimages)获取最新的 Windows 10 基本映像 (.wim) 以供与 DAC 一起使用。
 * 通过应用商店应用，你现在可以使用新入口点 *DesktopAppConverter.exe <arguments>* 在提升的命令提示符下或 PowerShell 窗口中从任意位置运行转换器。  
 
 
@@ -48,7 +48,7 @@ ms.openlocfilehash: 4095cfbe96f239afb5f3173e0a7f84e01d63452c
 * 添加了对自动签署 DAC 生成的已转换应用以供测试的支持。 查看 ```–Sign``` 标识，试一试。 
 * 添加了虚拟注册表配置单元中的 COM 注册在打包的 AppX 内不受支持时的警告。  
 * 添加了对在 VC++ 库上自动检测应用依赖项并随后将其转换为 AppX 清单依赖项的支持。 请注意，为了使用 VC++ 运行时旁加载和测试应用，你需要下载 VCLib 框架包，如博客文章[在 Centennial 项目中使用 Visual C++ 运行时](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project)所述。 在你的计算机上的文件夹 ```Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop``` 下查找程序包、导航到你所依赖的版本（例如 11.0、12.0、14.0），然后双击相应的体系结构程序包（x64、x86）进行安装。
-* 更新了清单框架以与 Windows&nbsp;10 周年更新 (10.0.14393.0) 一致。 
+* 更新了清单框架以与 Windows 10 周年更新 (10.0.14393.0) 一致。 
 * 多个 Bug 修复和改进的输出布局。 
 
 ### <a name="772016-v0122"></a>7/7/2016 (v0.1.22)
@@ -58,7 +58,7 @@ ms.openlocfilehash: 4095cfbe96f239afb5f3173e0a7f84e01d63452c
 
 ### <a name="6162016-v0120"></a>6/16/2016 (v0.1.20)
 
-* 解决了最新 Windows&nbsp;10 Insider Preview 版本上阻碍成功转换的问题。 
+* 解决了最新 Windows 10 Insider Preview 版本上阻碍成功转换的问题。 
 * 使用 ```–PackageArch``` 替换了 ```–CreateX86Package```，这允许你指定生成的程序包的体系结构。 
 
 ### <a name="682016"></a>6/8/2016
@@ -86,7 +86,7 @@ ms.openlocfilehash: 4095cfbe96f239afb5f3173e0a7f84e01d63452c
 
 ### <a name="operating-system"></a>操作系统
 
-+ Windows&nbsp;10 周年更新（10.0.14393.0 和更高版本）专业版或企业版。
++ Windows 10 周年更新（10.0.14393.0 和更高版本）专业版或企业版。
 
 ### <a name="hardware-configuration"></a>硬件配置
 
@@ -96,11 +96,11 @@ ms.openlocfilehash: 4095cfbe96f239afb5f3173e0a7f84e01d63452c
 
 ### <a name="required-resources"></a>所需资源
 
-+ [适用于 Windows&nbsp;10 的 Windows 软件开发工具包 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
++ [适用于 Windows 10 的 Windows 软件开发工具包 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
 
 ## <a name="set-up-the-desktop-app-converter"></a>设置桌面应用转换器
 
-桌面应用转换器依靠最新的 Windows&nbsp;10 功能。 请确保你使用的是 Windows&nbsp;10 周年更新 (14393.0) 或更高版本。
+桌面应用转换器依靠最新的 Windows 10 功能。 请确保你使用的是 Windows 10 周年更新 (14393.0) 或更高版本。
 
 ### <a name="store-download"></a>应用商店下载
 
@@ -169,13 +169,13 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp.exe
 
 ## <a name="sign-your-appx-package"></a>对 .Appx 程序包进行签名
 
-Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用作为转换器命令行的一部分的 ```-Sign``` 标志或 Microsoft Windows&nbsp;10 SDK 附带的 SignTool.exe 对 .appx 程序包进行签名。
+Add-AppxPackage cmdlet 要求必须对要部署的应用程序包 (.appx) 进行签名。 使用作为转换器命令行的一部分的 ```-Sign``` 标志或 Microsoft Windows 10 SDK 附带的 SignTool.exe 对 .appx 程序包进行签名。
 
 有关如何对.appx 程序包进行签名的其他详细信息，请参阅[对已转换的桌面应用进行签名](desktop-to-uwp-signing.md)。 
 
 ## <a name="caveats"></a>警告
 
-1. 主机上的 Windows&nbsp;10 版本必须与作为桌面应用转换器下载的一部分获取的基本映像匹配。  
+1. 主机上的 Windows 10 版本必须与作为桌面应用转换器下载的一部分获取的基本映像匹配。  
 2. 确保桌面安装程序是独立的目录，因为转换器会将目录的所有内容复制到隔离的 Windows 环境中。  
 3. 当前，桌面应用转换器仅支持在 64 位操作系统上运行转换过程。 你仅可以将转换的.appx 程序包部署到 64 位 (x64) 操作系统。  
 4. 桌面应用转换器需要桌面安装程序在无人参与模式下运行。 确保使用 *-InstallerArguments* 参数将安装程序的无提示标志传递到转换器。
