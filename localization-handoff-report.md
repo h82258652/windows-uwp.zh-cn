@@ -1,60 +1,29 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/32737991b31eaceb33fc2ecb5152def167c36fdd?path=windows-apps-src%2Flaunch-resume%2Findex.md&_a=contents) | HandedOffSuccess | [Details](#6b350ef65f381d18585c8b080c6259f7607c7bf94788)
- [windows-apps-src\launch-resume\run-minimized-with-extended-execution.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e9fcb1f0d1248de25d576029d50070792ad72182?path=windows-apps-src%2Flaunch-resume%2Frun-minimized-with-extended-execution.md&_a=contents) | HandedOffSuccess | [Details](#40b2a15379129142a84c4a5caf4317dc50041e064806)
- [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/32737991b31eaceb33fc2ecb5152def167c36fdd?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#4b6cc924805f060da4c1091c9718afe114fdc7358703)
+ [windows-apps-src\layout\navigation-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/d0c1858727d4a19e699d2ec9cf5d869460873524?path=windows-apps-src%2Flayout%2Fnavigation-basics.md&_a=contents) | HandedOffSuccess | [Details](#25a84e7a72fb87faea47845d7d32a5c3071a78a75082)
 
 ## Item Details
-##### <a name='6b350ef65f381d18585c8b080c6259f7607c7bf94788'></a> Source: [windows-apps-src\launch-resume\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/32737991b31eaceb33fc2ecb5152def167c36fdd?path=windows-apps-src%2Flaunch-resume%2Findex.md&_a=contents)
+##### <a name='25a84e7a72fb87faea47845d7d32a5c3071a78a75082'></a> Source: [windows-apps-src\layout\navigation-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/d0c1858727d4a19e699d2ec9cf5d869460873524?path=windows-apps-src%2Flayout%2Fnavigation-basics.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.7f38ebfeadef5946145c54c9dd9fb44894d2175a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/f69b0b1ec2d2b00fe6aaba8faf73c04d3fc52680?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Findex.7f38ebfeadef5946145c54c9dd9fb44894d2175a.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2016-12-17 02:02:16
+* Handoff File: [navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/1734652a2c7e5c59edc4c3a6dcffc1fdbae7383f?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fnavigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-12-19 20:01:55
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\launch-resume\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/bf3f10ec08c544dbea574cca452c0fc7f3416ccf?path=windows-apps-src%2Flaunch-resume%2Findex.md&_a=contents)
-* Current Handback File: [index.7f38ebfeadef5946145c54c9dd9fb44894d2175a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/b726a7c9c8e8be0e08c2f41cb31934920df03711?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Findex.7f38ebfeadef5946145c54c9dd9fb44894d2175a.zh-cn.xlf&_a=contents)
-* Current Handback Datetime: 2016-12-16 08:02:11
-* Bilingual File: [index.7f38ebfeadef5946145c54c9dd9fb44894d2175a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/b726a7c9c8e8be0e08c2f41cb31934920df03711?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Findex.7f38ebfeadef5946145c54c9dd9fb44894d2175a.zh-cn.xlf&_a=contents)
-* Bilingual Datetime: 2016-12-16 08:08:54
-* [Back to Top](#report-top)
-
-##### <a name='40b2a15379129142a84c4a5caf4317dc50041e064806'></a> Source: [windows-apps-src\launch-resume\run-minimized-with-extended-execution.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e9fcb1f0d1248de25d576029d50070792ad72182?path=windows-apps-src%2Flaunch-resume%2Frun-minimized-with-extended-execution.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [run-minimized-with-extended-execution.cc3e491e5329f6ff69f0d7de209075d6a4e2bae6.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/f69b0b1ec2d2b00fe6aaba8faf73c04d3fc52680?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Frun-minimized-with-extended-execution.cc3e491e5329f6ff69f0d7de209075d6a4e2bae6.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2016-12-17 02:02:16
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='4b6cc924805f060da4c1091c9718afe114fdc7358703'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/32737991b31eaceb33fc2ecb5152def167c36fdd?path=windows-apps-src%2FTOC.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/f69b0b1ec2d2b00fe6aaba8faf73c04d3fc52680?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2016-12-17 02:02:16
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/bf3f10ec08c544dbea574cca452c0fc7f3416ccf?path=windows-apps-src%2FTOC.md&_a=contents)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/b726a7c9c8e8be0e08c2f41cb31934920df03711?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf&_a=contents)
-* Current Handback Datetime: 2016-12-16 08:02:11
-* Bilingual File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/b726a7c9c8e8be0e08c2f41cb31934920df03711?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.zh-cn.xlf&_a=contents)
-* Bilingual Datetime: 2016-12-16 08:08:54
+* Current Target File: [windows-apps-src\layout\navigation-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Flayout%2Fnavigation-basics.md&_a=contents)
+* Current Handback File: [navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fnavigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.zh-cn.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-16 18:54:46
+* Bilingual File: [navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fnavigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.zh-cn.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-16 19:00:10
 * [Back to Top](#report-top)
 
 
