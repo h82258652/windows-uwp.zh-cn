@@ -10,20 +10,20 @@ ms.openlocfilehash: 4da8ffe72435501876a1e859d10a16cf19eb11fd
 ---
 # 为你的应用下载并安装程序包更新
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-从 Windows10 版本 1607 开始，你可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中的 API，以编程方式检查当前应用中的程序包更新，下载并安装更新的程序包。 还可以查询已[在 Windows 开发人员中心仪表板上标记为必需](#mandatory-dashboard)的程序包，并在安装必需更新前禁用应用中的功能。
+从 Windows 10 版本 1607 开始，你可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空间中的 API，以编程方式检查当前应用中的程序包更新，下载并安装更新的程序包。 还可以查询已[在 Windows 开发人员中心仪表板上标记为必需](#mandatory-dashboard)的程序包，并在安装必需更新前禁用应用中的功能。
 
 这些功能有助于通过最新版本的应用和相关服务，自动使你的用户群保持最新状态。
 
 ## API 概述
 
-面向 Windows10 版本 1607 或更高版本的应用可以使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类中的以下方法下载并安装包更新。
+面向 Windows 10 版本 1607 或更高版本的应用可以使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 类中的以下方法下载并安装包更新。
 
 |  方法  |  说明  |
 |----------|---------------|
 | [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) | 调用此方法来获取可用的包更新列表。<br/><br/>**重要提示**
-            &nbsp;&nbsp;软件包通过认证过程时和 [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) 方法识别包更新可用于应用时之间的延迟不超过一天。 |
+              软件包通过认证过程时和 [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) 方法识别包更新可用于应用时之间的延迟不超过一天。 |
 | [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) | 调用此方法来下载（但不安装）可用的包更新。 此操作系统显示询问用户下载更新的权限的对话框， |
 | [RequestDownloadAndInstallStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706585.aspx) | 调用此方法来下载并安装可用的包更新。 操作系统显示询问用户下载并安装更新的权限的对话框。 如果已通过调用 [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) 下载包更新，此方法将跳过下载过程并仅安装更新。  |
 
@@ -216,10 +216,10 @@ private void HandleMandatoryPackageError()
 <span id="mandatory-dashboard" />
 ## 在开发人员中心仪表板中使程序包提交为必需
 
-当为面向 Windows10 版本 1607 或更高版本的应用创建程序包提交时，可以将该程序包标记为必需并标记变为必需的日期/时间。 当设置此属性，并且你的应用发现可使用本文前面部分中所述的 API 提供包更新时，你的应用可以确定该更新包是否为必需，并在安装更新前更改其行为（例如你的应用可以禁用功能）。
+当为面向 Windows 10 版本 1607 或更高版本的应用创建程序包提交时，可以将该程序包标记为必需并标记变为必需的日期/时间。 当设置此属性，并且你的应用发现可使用本文前面部分中所述的 API 提供包更新时，你的应用可以确定该更新包是否为必需，并在安装更新前更改其行为（例如你的应用可以禁用功能）。
 
 >**注意**
-            &nbsp;&nbsp;Microsoft 不强制包更新处于必需状态，并且操作系统不提供向用户指示必须安装必需更新应用的 UI。 开发人员旨在使用必需设置通过其自己的代码强制执行必需的应用更新。  
+              Microsoft 不强制包更新处于必需状态，并且操作系统不提供向用户指示必须安装必需更新应用的 UI。 开发人员旨在使用必需设置通过其自己的代码强制执行必需的应用更新。  
 
 若要将软件包提交标记为必需：
 
@@ -230,7 +230,7 @@ private void HandleMandatoryPackageError()
 有关在开发人员中心仪表板中配置软件包的详细信息，请参阅[上传应用包](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)。
 
   >**注意**
-            &nbsp;&nbsp;如果你创建[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，可在外部测试版的“软件包”页面上使用类似 UI 将软件包标记为必需。 在此情况下，必需包更新仅适用于属于外部测试版组的客户。
+              如果你创建[软件包外部测试版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，可在外部测试版的“软件包”页面上使用类似 UI 将软件包标记为必需。 在此情况下，必需包更新仅适用于属于外部测试版组的客户。
 
 
 

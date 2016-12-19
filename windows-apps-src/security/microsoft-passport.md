@@ -4,12 +4,12 @@ description: "本文介绍了作为 Windows 10 操作系统的一部分随附的
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 979eb3c6ac41f304e19093055574db7805a115ff
+ms.sourcegitcommit: 6dbc98867c3a1a14a04590c65ba54ca3c37cd426
+ms.openlocfilehash: cb24b1e75dbb8f37fcd4482e3e0d468855155f04
 
 ---
 
-# Microsoft Passport 和 Windows Hello
+# <a name="microsoft-passport-and-windows-hello"></a>Microsoft Passport 和 Windows Hello
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,76 +23,76 @@ ms.openlocfilehash: 979eb3c6ac41f304e19093055574db7805a115ff
 
 有关使用 Microsoft Passport 创建 UWP 应用和支持身份验证服务的分步演练，请参阅 [Microsoft Passport 登录应用](microsoft-passport-login.md)和 [Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)文章。
 
-## 1 简介
+## <a name="1-introduction"></a>1 简介
 
 
 有关信息安全的基本假设是系统可以标识谁在使用它。 标识用户使系统可以确定用户是否已相应地标识其自身（此过程称为身份验证），然后确定经过正确身份验证的用户应能够执行哪些操作（授权）。 在全世界部署的绝大多数计算机系统依靠用户凭据进行身份验证和授权决策，这意味着这些系统依靠可重复使用、用户创建的密码作为其安全性的基础。 经常被引用的格言：身份验证可能涉及到“已知信息、已有事物或你的身份”恰到好处地强调了这一问题：可重复使用的密码是单一的身份验证因素，因此任何知道密码的人都可以模拟拥有它的用户。
 
-## 1.1 传统凭据的问题
+## <a name="11-problems-with-traditional-credentials"></a>1.1 传统凭据的问题
 
 
 自从 1960 年代中期 Fernando Corbató 和他的麻省理工学院团队成功引入了密码开始，用户和管理员就必须使用密码来进行用户身份验证和授权。 随着时间的推移，密码存储和使用的技术发展水平已取得某种程度的进步（例如，通过安全哈希和盐析法），但我们仍然面临两个问题。 密码易于克隆，并且易于窃取。 此外，实现错误可能会使它们不安全，而且用户难以在便利和安全之间取得平衡。
 
-## 1.1.1 凭据盗窃
+## <a name="111-credential-theft"></a>1.1.1 凭据盗窃
 
 
 密码的最大风险是简单：攻击者可以轻易地窃取它们。 每个输入、处理或存储密码的位置都易受攻击。 例如，攻击者可以通过窃听对应用程序服务器的网络通信、在应用程序或设备中植入恶意软件、日志记录用户在设备上的击键或观察用户键入的字符来从身份验证服务器窃取密码或哈希的集合。 这些只是最常见的攻击方法。
 
 另一个相关风险是凭据重播的风险，即攻击者可以通过窃听不安全的网络来捕获有效凭据，然后在稍后重播它来模拟有效用户。 大多数身份验证协议（包括 Kerberos 和 OAuth）通过在凭据交换过程中包含时间戳来抵御重播攻击，但是该策略只能保护身份验证系统颁发的令牌，而无法保护用户一开始提供的用于获取票证的密码。
 
-## 1.1.2 凭据重复使用
+## <a name="112-credential-reuse"></a>1.1.2 凭据重复使用
 
 
 
 
 将电子邮件地址用作用户名这一常见做法使本已糟糕的问题变得更糟。 攻击者从损坏的系统成功恢复用户名/密码对后，可以在其他系统上尝试同一个对。 这种手段在相当多的情况下使攻击者得以从损坏的系统转到其他系统中。 将电子邮件地址用作用户名会导致其他问题，我们稍后将在本指南中进行探索。
 
-## 1.2 解决凭据问题
+## <a name="12-solving-credential-problems"></a>1.2 解决凭据问题
 
 
 解决密码带来的问题很棘手。 仅收紧密码策略不会起效：用户可能只会循环使用、共享或者写下密码。 尽管用户教育对于身份验证安全很关键，但仅凭教育也无法消除该问题。
 
 Microsoft Passport 使用强双因素身份验证 (2FA) 来替换密码，方法是验证现有凭据和创建一个受用户手势（基于生物识别或 PIN）保护的特定于设备的凭据。 
 
-## 2 什么是 Microsoft Passport？
+## <a name="2-what-is-microsoft-passport"></a>2 什么是 Microsoft Passport？
 
 
-## 2.1 什么是 Windows Hello？
+## <a name="21-what-is-windows-hello"></a>2.1 什么是 Windows Hello？
 
 
 Windows Hello 是 Microsoft 为内置于 Windows 10 的新生物识别登录系统所取的名称。 因为它直接内置于操作系统，所以 Windows Hello 允许面部或指纹标识解锁用户的设备。 当用户提供其唯一生物识别标识符来访问特定于设备的 Microsoft Passport 凭据时会发生身份验证，这意味着窃取设备的攻击者无法登录它，除非该攻击者具有 PIN。 Windows 安全凭据存储可保护设备上的生物识别数据。 通过使用 Windows Hello 解锁设备，未经授权的用户可以获取其所有 Windows 体验、应用、数据、网站和服务的访问权限。
 
 Windows Hello 验证器称为 Hello。 Hello 特定于单个设备和特定用户的组合。 它不会跨设备漫游、不与服务器或调用应用共享，并且无法轻易地从设备中提取。 如果多个用户共享一台设备，每个用户都需要设置他或她自己的帐户。 每个帐户都获取该设备的唯一 Hello。 你可以将 Hello 视为可用于解锁（或释放）已存储凭据的令牌。 Hello 本身不会针对应用或服务对你进行身份验证，但它会释放可以执行此操作的凭据。 换言之，Hello 不是用户凭据，而是 Microsoft Passport 的第二个因素。
 
-## 2.2 什么是 Microsoft Passport？
+## <a name="22-what-is-microsoft-passport"></a>2.2 什么是 Microsoft Passport？
 
 
 Windows Hello 为设备识别个人用户提供了可靠的方法；这解决了用户和请求的服务或数据项之间的路径的第一部分。 在设备识别用户后，它仍然必须先对用户进行身份验证，然后才能确定是否授予对所请求资源的访问权限。 Microsoft Passport 提供完全集成到 Windows 的强 2FA，并将可重复使用的密码替换为特定设备和生物识别手势或 PIN 的组合。
 
 不过，Microsoft Passport 不仅仅是传统 2FA 系统的替代品。 它在概念上类似于智能卡：通过使用加密基元而不是字符串比较来执行身份验证，并且用户的密钥材料在防篡改的硬件内很安全。 Microsoft Passport 也不要求智能卡部署所需的额外基础结构组件。 尤其是，无需公钥基础结构 (PKI) 即可管理证书（如果你当前没有）。 Microsoft Passport 结合了智能卡的主要优点，即虚拟智能卡的部署灵活性和物理智能卡的可靠安全性，而摒弃了其所有缺点。
 
-## 2.3 Microsoft Passport 的工作原理
+## <a name="23-how-microsoft-passport-works"></a>2.3 Microsoft Passport 的工作原理
 
 
-当用户在其计算机上设置 Microsoft Passport 时，Microsoft Passport 将在该设备上生成一个新的公钥/私钥对。 TPM 生成并保护此私钥。 如果设备没有 TPM，私钥将由软件进行加密和保护。 此外，支持 TPM 的设备生成一个数据块，可用于保证将密钥绑定到 TPM。 例如，此保证信息可在你的解决方案中使用，用于确定是否向用户授予了不同的授权级别。
+当用户在其计算机上设置 Microsoft Passport 时，Microsoft Passport 将在该设备上生成一个新的公钥/私钥对。 [受信任的平台模块](https://technet.microsoft.com/itpro/windows/keep-secure/trusted-platform-module-overview) (TPM) 生成并保护此私钥。 如果设备没有 TPM 芯片，私钥将由软件进行加密和保护。 此外，支持 TPM 的设备生成一个数据块，可用于保证将密钥绑定到 TPM。 例如，此保证信息可在你的解决方案中使用，用于确定是否向用户授予了不同的授权级别。
 
 若要在设备上启用 Microsoft Passport，用户必须在 Windows 设置中连接其 Azure Active Directory 帐户或 Microsoft 帐户。
 
-## 2.3.1 如何保护密钥
+## <a name="231-how-keys-are-protected"></a>2.3.1 如何保护密钥
 
 
 每当生成密钥材料时，必须保护它免受攻击。 执行此操作的最可靠方法是通过专用硬件。 使用硬件安全模块 (HSM) 为安全关键应用程序生成、存储和处理密钥有很长的历史。 智能卡是一种特殊类型的 HSM，符合受信任的计算组 TPM 标准的设备也是如此。 在任何可能的情况下，Microsoft Passport 实现充分利用板载 TPM 硬件来生成、存储和处理密钥。 但是，Microsoft Passport 和 Microsoft Passport for Work 不需要板载 TPM。
 
 在任何可行的情况下，Microsoft 建议使用 TPM 硬件。 TPM 可抵御各种已知和潜在的攻击，包括 PIN 暴力攻击。 TPM 在帐户锁定后也会提供一层额外的保护。 当 TPM 已锁定密钥材料时，用户必须重置 PIN。 重置 PIN 意味着使用旧密钥材料加密的所有密钥和证书都将删除。
 
-## 2.3.2 身份验证
+## <a name="232-authentication"></a>2.3.2 身份验证
 
 
 当用户希望访问受保护的密钥材料时，身份验证过程将从用户输入 PIN 或生物识别手势以解锁设备开始，此过程有时称为“释放密钥”。
 
 应用程序永远无法使用其他应用程序的密钥，并且任何人都永远无法使用其他用户的密钥。 这些密钥用对发送给标识提供程序或 IDP 的请求进行签名，从而寻找对特定资源的访问权限。 应用程序可以使用特定 API 请求需要将密钥材料用于特定操作的操作。 通过这些 API 进行访问确实需要通过用户手势的显式验证，并且密钥材料不会向请求的应用程序公开。 相反，应用程序会要求特定的操作（如对一部分数据进行签名），并且 Microsoft Passport 层将处理实际工作并返回结果。
 
-## 2.4 准备实现 Passport
+## <a name="24-getting-ready-to-implement-passport"></a>2.4 准备实现 Passport
 
 
 现在我们已基本了解了 Microsoft Passport 和 Windows Hello 的工作原理，让我们查看一下如何在自己的应用程序中实现它们。 请明确了解：我们所谈论的 API 指的是 Microsoft Passport API。 目前，不存在用于 Windows Hello 的 API。
@@ -101,14 +101,14 @@ Windows Hello 为设备识别个人用户提供了可靠的方法；这解决了
 
 最后，请注意 Microsoft Passport APIs 需要使用与将使用该应用的操作系统匹配的 Windows 10 SDK。 换句话说，10.0.10240 Windows SDK 必须用于将部署到 Windows 10 的应用，并且 10.0.10586 必须用于将部署到 Windows 10 版本 1511 的应用。
 
-## 3 实现 Microsoft Passport
+## <a name="3-implementing-microsoft-passport"></a>3 实现 Microsoft Passport
 
 
 在本章节中，我们将从没有现有身份验证系统的全新方案开始，并且将说明如何实现 Microsoft Passport。
 
 下一部分介绍如何从现有用户名/密码系统迁移。 但是，即使该章节更吸引你，你可能希望浏览本章节以大致了解所需的过程和代码。
 
-## 3.1 注册新用户
+## <a name="31-enrolling-new-users"></a>3.1 注册新用户
 
 
 我们从将使用 Microsoft Passport 的全新服务和一个准备在新设备上注册的假想新用户开始。
@@ -213,7 +213,7 @@ static async void RegisterUser(string AccountId)
 }
 ```
 
-## 3.1.1 证明
+## <a name="311-attestation"></a>3.1.1 证明
 
 
 在创建密钥对时，还可以选择请求证明信息，该信息由 TMP 芯片生成。 此可选信息可发送到服务器作为注册过程的一部分。 TPM 密钥证明是以加密方式证明密钥是 TPM 绑定密钥的协议。 此类型的证明可用于保证特定加密操作在特定计算机的 TPM 中发生。
@@ -231,12 +231,12 @@ static async void RegisterUser(string AccountId)
 
 你的应用可能为用户分配不同的授权级别，具体取决于这些条件。 例如，如果其中一项检查失败，它可能不会注册用户或可能限制用户可以执行的操作。
 
-## 3.2 使用 Microsoft Passport 登录
+## <a name="32-logging-on-with-microsoft-passport"></a>3.2 使用 Microsoft Passport 登录
 
 
 用户在系统中注册后，他或她可以使用该应用。 根据方案，你可以要求用户先进行身份验证，然后才允许他们开始使用该应用，或者只在他们开始使用后端服务后要求他们进行身份验证。
 
-## 3.3 强制用户再次登录
+## <a name="33-force-the-user-to-sign-in-again"></a>3.3 强制用户再次登录
 
 
 对于某些方案，你可能希望用户在访问应用前或有时在应用内执行特定操作前证明他或她是当前登录的人员。 例如，在银行应用向服务器发送转帐命令前，你希望确保是用户而不是某个捡到已登录设备的人正在尝试执行该事务。 你可以通过使用 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) 类强制用户再次登录。 以下代码行将强制用户输入他们的凭据。
@@ -253,7 +253,7 @@ if (consentResult.Equals(UserConsentVerificationResult.Verified))
 
 当然，你还可以从服务器使用质询响应机制，这要求用户输入他或她的 PIN 码或生物识别凭据。 它取决于你作为开发人员需要实现的方案。 以下部分中将介绍此机制。
 
-## 3.4 后端的身份验证
+## <a name="34-authentication-at-the-backend"></a>3.4 后端的身份验证
 
 
 当应用尝试访问受保护的后端服务时，服务将向应用发送质询。 该应用使用来自用户的私钥来对该质询进行签名，并将其发送回服务器。 由于服务器已存储该用户的公钥，因此它使用标准加密 API 来确保消息确实已使用正确的私钥进行签名。 在客户端上，签名通过 Microsoft Passport API 来完成，开发人员将永远无法访问任何用户的私钥。
@@ -355,7 +355,7 @@ static async Task<IBuffer> GetAuthenticationMessageAsync(IBuffer message, String
 
 实现正确的质询响应机制不在本文档的范围内，但是为了成功创建安全机制来防止重播攻击或中间人攻击等威胁，本主题是需要注意的内容。
 
-## 3.5 注册其他设备
+## <a name="35-enrolling-another-device"></a>3.5 注册其他设备
 
 
 如今，用户通常拥有安装了相同应用的多台设备。 Microsoft Passport 在多台设备上使用时的工作原理是什么？
@@ -375,7 +375,7 @@ var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
 
 若要使用户更容易识别注册了哪些设备，你可以选择发送设备名称或另一个标识符作为注册的一部分。 例如，如果你希望在后端上实现一项服务，以便用户可以在丢失设备时注销设备，这也非常有用。
 
-## 3.6 在应用中使用多个帐户
+## <a name="36-using-multiple-accounts-in-your-app"></a>3.6 在应用中使用多个帐户
 
 
 除了为单个帐户支持多台设备，在单个应用中支持多个帐户也很常见。 例如，也许你正从应用内连接到多个 Twitter 帐户。 借助 Microsoft Passport，你可以创建多个密钥对并在应用内支持多个帐户。
@@ -390,7 +390,7 @@ var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
 
 其余流程与之前所述的相同。 需要明确的是，所有这些帐户都受相同的 PIN 或生物识别手势保护，因为在此方案中，在使用了同一 Windows 帐户的单台设备上使用这些帐户。
 
-## 4 将现有系统迁移到 Microsoft Passport
+## <a name="4-migrating-an-existing-system-to-microsoft-passport"></a>4 将现有系统迁移到 Microsoft Passport
 
 
 在此简短部分中，我们将处理现有通用 Windows 平台应用和使用可存储用户名和哈希密码的数据库的后端系统。 这些应用会在应用启动时收集用户的凭据，并在后端系统返回身份验证质询时使用它们。
@@ -415,7 +415,7 @@ UI 外观可能如下所示：
 
 迁移到完整 Microsoft Passport 方案的最后步骤是在应用中禁用登录名和密码选项，并从数据库中删除已存储的哈希密码。
 
-## 5 摘要
+## <a name="5-summary"></a>5 摘要
 
 
 Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提供了新的生物识别登录系统，可识别用户并主动挫败绕开正常标识的尝试。 Microsoft Passport 与 Windows Hello 协作来提供永远无法泄露或在受信任的平台模块外使用的多层密钥和证书。 此外，可以选择使用证明标识密钥和证书来增加一层安全性。
@@ -426,16 +426,16 @@ Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提
 
 任务完成！ 你刚刚使 Internet 变得更安全了！
 
-## 6. 资源
+## <a name="6-resources"></a>6. 资源
 
 
-### 6.1 文章和示例代码
+### <a name="61-articles-and-sample-code"></a>6.1 文章和示例代码
 
 -   [Windows Hello 概述](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
 -   [Microsoft Passport 和 Windows Hello 的实现详细信息](https://msdn.microsoft.com/library/mt589441)
 -   [GitHub 上的 Microsoft Passport 代码示例](http://go.microsoft.com/fwlink/?LinkID=717812)
 
-### 6.2 术语
+### <a name="62-terminology"></a>6.2 术语
 
 |                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -448,12 +448,12 @@ Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [Microsoft Passport 登录应用](microsoft-passport-login.md)
 * [Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

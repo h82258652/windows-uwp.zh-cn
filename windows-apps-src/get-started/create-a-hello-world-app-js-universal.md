@@ -2,33 +2,31 @@
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
 title: Create a "Hello, world" app (JS)
-description: "本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的&amp;\\#0034;Hello, world&amp;\\#0034;应用，该应用面向 Windows10 上的通用 Windows 平台 (UWP)。"
+description: "本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的&amp;\\#0034;Hello, world&amp;\\#0034;应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
-ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
+ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
+ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 ---
-# 创建“Hello, world”应用 (JS)
+# <a name="create-a-hello-world-app-js"></a>创建“Hello, world”应用 (JS)
 
-本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 Windows10 设备上运行的应用。
+本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，你可以生成可在任何 Windows 10 设备上运行的应用。
 
 在此处，你将了解如何：
 
--   创建面向 **Windows10** 和 **UWP** 的新 **Visual Studio 2015** 项目。
+-   创建面向 **Windows 10** 和 **UWP** 的新 **Visual Studio 2015** 项目。
 -   向起始页中添加 HTML 内容
 -   处理触控、笔以及鼠标输入
 -   在 Visual Studio 中，在本地桌面和手机仿真器中运行该项目
 -   使用 Windows JavaScript 库控件
 
-## 开始之前...
+## <a name="before-you-start"></a>开始之前...
 
 -   [什么是通用 Windows 应用](whats-a-uwp.md)？
--   [Windows10 中的新增功能](https://dev.windows.com/whats-new-windows-10-dev-preview)
-          
--   若要完成本教程，你需要 Windows10 和 Visual Studio 2015。 [准备工作](get-set-up.md)。
+-   若要完成本教程，你需要 Windows 10 和 Visual Studio 2015。 [准备工作](get-set-up.md)。
 -   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 如果要更改默认布局，你可以在“窗口”菜单中，通过使用“重置窗口布局”命令来重置它。
 
-## 步骤 1：在 Visual Studio 中创建新项目
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>步骤 1：在 Visual Studio 中创建新项目
 
 我们来创建名为 `HelloWorld` 的新应用。 以下是操作方法：
 1.  启动 Visual Studio 2015。
@@ -63,14 +61,14 @@ ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 
 这些文件是所有使用 JavaScript 的 UWP 应用必不可少的文件。 在 Visual Studio 中创建的所有项目都包含这些文件。
 
-## 步骤 2：启动应用
+## <a name="step-2-launch-the-app"></a>步骤 2：启动应用
 
 
 此时，你已创建了一个非常简单的应用。 现在是构建、部署和启动应用并查看其外观的好时机。 你可以在本地计算机上、模拟器或仿真器中或者在远程设备上调试应用。 下面是 Visual Studio 中的目标设备菜单。
 
 ![用于调试应用的设备目标下拉列表](images/uap-debug.png)
 
-### 在桌面设备上启动应用
+### <a name="start-the-app-on-a-desktop-device"></a>在桌面设备上启动应用
 
 默认情况下，应用在本地计算机上运行。 目标设备菜单提供用于在桌面设备系列中的设备上调试应用的多个选项。
 
@@ -113,9 +111,9 @@ ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 
    关闭应用窗口。
 
-### 在移动设备仿真器上启动该应用
+### <a name="start-the-app-on-a-mobile-device-emulator"></a>在移动设备仿真器上启动该应用
 
-你的应用可在任何 Windows10 设备上运行，让我们看一下它在 Windows Phone 上的情况如何。
+你的应用可在任何 Windows 10 设备上运行，让我们看一下它在 Windows Phone 上的情况如何。
 
 除了在桌面设备上执行调试的选项，Visual Studio 还提供用于在连接到计算机的物理移动设备上或移动设备仿真器上部署和调试应用的选项。 你可以为带有不同内存和显示配置的设备在仿真器中进行选择。
 
@@ -142,7 +140,7 @@ Visual Studio 将启动选定的仿真器，然后部署和启动你的应用。
 
 ![移动设备上的初始应用屏幕](images/helloworld-1-winjs-phone.png)
 
-## 步骤 3：修改你的起始页
+## <a name="step-3-modify-your-start-page"></a>步骤 3：修改你的起始页
 
 Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起始页。 应用运行时，会显示其起始页的内容。 起始页还包含对应用的代码文件和样式表的引用。 以下是 Visual Studio 为你创建的起始页：
 
@@ -192,7 +190,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
    在后续步骤中，我们为显示个性化问候的 **button** 创建事件处理程序。 我们向 main.js 文件添加事件处理程序代码。
 
-## 步骤 4：创建事件处理程序
+## <a name="step-4-create-an-event-handler"></a>步骤 4：创建事件处理程序
 
 创建新项目后，Visual Studio 为我们创建了 /js/main.js 文件。 此文件包含用于处理应用生命周期的代码。 你还可以在此文件中编写为 index.html 文件提供交互性的其他代码。
 
@@ -260,9 +258,9 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
     };
 ```
 
-让我们为 [button](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定义事件处理程序。 新事件处理程序从 `nameInput`[input](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件获取用户名并使用该用户名向在上一部分中创建的 `greetingOutput`**div** 元素输出问候语。
+让我们为 [button](https://msdn.microsoft.com/library/windows/apps/Hh453017) 定义事件处理程序。 新事件处理程序从 `nameInput` [input](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件获取用户名并使用该用户名向在上一部分中创建的 `greetingOutput` **div** 元素输出问候语。
 
-### 使用用于触控、鼠标和笔输入的事件
+### <a name="using-events-that-work-for-touch-mouse-and-pen-input"></a>使用用于触控、鼠标和笔输入的事件
 
 在 UWP 应用中，你无需担心触控、鼠标与其他指针输入形式之间的区别。 你只需使用你了解的事件（如 [click](https://msdn.microsoft.com/library/windows/apps/Hh441312)），这些事件适用于所有输入形式。
 
@@ -279,7 +277,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
         }
 ```
 
-2.  在事件处理程序内，从 `nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件检索用户名并使用该用户名创建问候语。 使用 `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 显示相关结果。
+2.  在事件处理程序内，从 `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 控件检索用户名并使用该用户名创建问候语。 使用 `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 显示相关结果。
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -290,7 +288,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 你已将事件处理程序添加到 main.js。 现在你需要注册该处理程序。
 
-## 步骤 5：在应用启动时注册事件处理程序
+## <a name="step-5-register-the-event-handler-when-your-app-launches"></a>步骤 5：在应用启动时注册事件处理程序
 
 
 此时，你只需向该按钮注册该事件处理程序。 注册事件处理程序的建议方法是从代码中调用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145)。 注册事件处理程序的较好时机是在激活应用之时。 幸运的是，正如你所见，Visual Studio 为我们在 main.js 文件中生成了一些代码，可处理应用激活。
@@ -300,8 +298,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 我们对 [launch](https://msdn.microsoft.com/library/windows/apps/BR224693) 激活感兴趣。 只要应用未在运行而后由用户激活，就会*启动*该应用。 不论应用过去是否关闭，或者是否属于首次启动，激活都会调用 [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 **WinJS.UI.processAll** 包含在对 [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的调用中，这样可确保初始屏幕不会在应用页面准备就绪前停止。
 
-**提示**
-            **WinJS.UI.processAll** 函数扫描 default.html 文件中是否存在 WinJS 控件并初始化这些控件。 到目前为止，我们尚未添加其中任何控件，但最好保留此代码，以便在以后需要时进行添加。
+**提示** **WinJS.UI.processAll** 函数扫描 default.html 文件中是否存在 WinJS 控件并初始化这些控件。 到目前为止，我们尚未添加其中任何控件，但最好保留此代码，以便在以后需要时进行添加。
 
 为非 WinJS 控件注册事件处理程序的较好时机是在调用 **WinJS.UI.processAll** 之后。
 
@@ -329,7 +326,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 **注意** 如果你想知道我们为何在代码中使用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) 注册事件而不是在 HTML 中设置 [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，请参阅[基本应用编码](https://msdn.microsoft.com/library/windows/apps/Hh780660)以获得详细说明。
 
-## 步骤 6：添加 Windows JavaScript 库控件
+## <a name="step-6-add-a-windows-library-for-javascript-control"></a>步骤 6：添加 Windows JavaScript 库控件
 
 
 除了标准 HTML 控件外，你的应用还可以使用 [Windows JavaScript 库](https://msdn.microsoft.com/library/windows/apps/BR229782)中的任何控件，例如 [WinJS.UI.DatePicker](https://msdn.microsoft.com/library/windows/apps/BR211681)、[WinJS.UI.FlipView](https://msdn.microsoft.com/library/windows/apps/BR211711)、[WinjS.UI.ListView](https://msdn.microsoft.com/library/windows/apps/BR211837) 和 [WinJS.UI.Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件。
@@ -338,7 +335,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 **将 Rating 控件添加到应用。**
 
-1.  在 index.html 文件中，在 `greetingOutput`**div** 之后添加 [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) 和 [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件。
+1.  在 index.html 文件中，在 `greetingOutput` **div** 之后添加 [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) 和 [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) 控件。
 
 ```html
     <body class="win-type-body">
@@ -363,7 +360,7 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 现在，单击 **Rating** 控件可更改分级（但它不会执行任何其他操作）。 当用户更改分级时，让我们使用事件处理程序来执行一些操作。
 
-## 步骤 7：为 Windows JavaScript 库控件注册事件处理程序
+## <a name="step-7-register-an-event-handler-for-a-windows-library-for-javascript-control"></a>步骤 7：为 Windows JavaScript 库控件注册事件处理程序
 
 
 为 WinJS 控件注册事件处理程序的方法与为标准 HTML 控件注册事件处理程序稍有不同。 如前所述，**onactivated** 事件处理程序调用 **WinJS.UI.processAll** 方法来初始化标记中的 WinJS。 **WinJS.UI.processAll** 调用包含在对 **setPromise** 方法的调用中，如下所示：
@@ -492,12 +489,14 @@ Visual Studio 为你创建了一个 **index.html** 文件，它是应用的起�
 
 ![电脑上已完成的 Hello world 应用](images/helloworld-5-winjs.png)
 
-## 摘要
+## <a name="summary"></a>摘要
 
-祝贺你，你已使用 JavaScript 和 HTML创建了你的第一款适用于 Windows10 和 UWP 的应用！
+祝贺你，你已使用 JavaScript 和 HTML创建了你的第一款适用于 Windows 10 和 UWP 的应用！
+
+后续步骤是什么？ [WinJS](https://developer.microsoft.com/en-us/windows/develop/winjs) 文档将帮助你使用 Windows JavaScript 库。
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

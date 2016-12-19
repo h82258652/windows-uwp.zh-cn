@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: "枚举和查询文件和文件夹"
 description: "访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 ---
-# 枚举和查询文件和文件夹
+# <a name="enumerate-and-query-files-and-folders"></a>枚举和查询文件和文件夹
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -16,10 +16,12 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 
 访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。
 
+有关如何存储通用 Windows 平台应用数据的详细指南，请参阅 [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) 类。
+
 **注意** 另请参阅[文件夹枚举示例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
 
  
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
@@ -29,7 +31,7 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 
     例如，这些示例中的代码需要 **picturesLibrary** 功能，但是你的位置可能需要其他功能或根本不需要任何功能。 若要了解详细信息，请参阅[文件访问权限](file-access-permissions.md)。
 
-## 枚举某个位置中的文件和文件夹
+## <a name="enumerate-files-and-folders-in-a-location"></a>枚举某个位置中的文件和文件夹
 
 > **注意** 记得声明 **picturesLibrary** 功能。
 
@@ -208,7 +210,7 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 > Next item
 > ```
 
-## 查询某个位置中的文件并枚举匹配的文件
+## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>查询某个位置中的文件并枚举匹配的文件
 
 在此示例中，我们查询按月分组的 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 中的所有文件，此时该示例会递归到子文件夹。 首先，我们调用 [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) 并将 [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) 值传递给该方法。 这向我们提供了一个 [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) 对象。
 
@@ -324,6 +326,6 @@ July ‎2015 (2)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

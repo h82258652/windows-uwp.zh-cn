@@ -5,14 +5,14 @@ title: "访问键"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Access keys
 template: detail.hbs
-keyword: Access keys, keyboard, accessibility
+keywords: "访问键, 键盘, 辅助功能"
 translationtype: Human Translation
-ms.sourcegitcommit: ac86012b63646e53dbde492eef504cb8230f2afd
-ms.openlocfilehash: d96d507c6ce8537888619ce174e2ff0e5284dcce
+ms.sourcegitcommit: 2b6b1d7b1755aad4d75a29413d989c6e8112128a
+ms.openlocfilehash: dfe89e4d4fd089dde6b7b307325b8fe43de82c10
 
 ---
 
-# 访问键
+# <a name="access-keys"></a>访问键
 
 使用鼠标有困难的用户（如行动有障碍的用户）通常依赖键盘在应用上导航并与应用交互。  XAML 框架使你可以实现通过 Tab 键导航和访问键来键盘访问 UI 元素。
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: d96d507c6ce8537888619ce174e2ff0e5284dcce
 
 有关键盘导航和辅助功能的详细信息，请参阅[键盘交互](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)和[键盘辅助功能](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)。 文本假定你了解这些文章中所讨论的概念。
 
-## 访问键概述
+## <a name="access-key-overview"></a>访问键概述
 
 借助访问键，用户使用键盘就可以直接调用按钮或设置焦点，无需他们反复按箭头键和 Tab 键。 访问键要易于发现，因此应该将它们直接公布在 UI 中；例如，基于访问键控制的浮动锁屏提醒。
 
@@ -49,7 +49,7 @@ _图 2：Microsoft Word 中“主页”选项卡作用域的访问键以及关�
 
 某些元素会在被调用后结束访问键序列（如“格式刷”按钮），而其他元素则不会（如“主页”选项卡）。 调用访问键可能会导致执行命令、移动焦点、更改访问键作用域或相关联的某些其他操作。
 
-## 访问键用户交互
+## <a name="access-key-user-interaction"></a>访问键用户交互
 
 若要了解访问键 API，首先需要了解用户交互模型。 可以从下面找到访问键用户交互模型的摘要：
 
@@ -79,7 +79,7 @@ _图 2：Microsoft Word 中“主页”选项卡作用域的访问键以及关�
  - 用于退出访问键序列的特殊键：即 Esc、Alt、箭头键、Enter 和 Tab。
  - 已分配给访问键的字母数字字符。
 
-## 访问键 API
+## <a name="access-key-apis"></a>访问键 API
 
 为了支持访问键用户交互，XAML 框架提供了此处所述的 API。
 
@@ -125,7 +125,7 @@ _图 2：Microsoft Word 中“主页”选项卡作用域的访问键以及关�
 
 访问键可以本地化为多种语言，并在运行时使用 [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx) API 进行加载。
 
-## 调用访问键时所用的控件模式
+## <a name="control-patterns-used-when-an-access-key-is-invoked"></a>调用访问键时所用的控件模式
 
 控件模式是公开常见控件功能的接口实现；例如，按钮实现 **Invoke** 控件模式，这将引发 **Click** 事件。 当调用访问键时，XAML 框架会查找已调用的元素是否实现控件模式并执行它（如果要执行）。 如果元素具有多个控件模式，将仅调用一个控件模式，忽略其余控件模式。 按以下顺序搜索控件模式：
 
@@ -137,7 +137,7 @@ _图 2：Microsoft Word 中“主页”选项卡作用域的访问键以及关�
 如果未找到控件模式，访问键调用将显示为空操作，会记录调试消息以帮助你调试此种情况：“未找到此组件的任何自动化模式。 在 AccessKeyInvoked 的事件处理程序中实现所需行为。 在事件处理程序中将 Handled 设置为 true 会取消显示此消息。”
 
 > [!NOTE]
-> 在 Visual Studio 调试设置中，调试器的应用程序处理类型必须为“混合(托管和本机)”__或“本机”__才可以看到此消息。
+> 在 Visual Studio 调试设置中，调试器的应用程序处理类型必须为“混合(托管和本机)”或“本机”才可以看到此消息。
 
 如果不希望访问键执行其默认控件模式，或者如果元素不具有控件模式，则应该处理 [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) 事件并实现所需行为。
 ```csharp
@@ -150,11 +150,11 @@ private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args
 
 有关控件模式的详细信息，请参阅 [UI 自动化控件模式概述](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx)。
 
-## 访问键和讲述人
+## <a name="access-keys-and-narrator"></a>访问键和讲述人
 
 Windows 运行时具有的 UI 自动化提供程序会公开 Microsoft UI 自动化元素上的属性。 通过这些属性，UI 自动化客户端应用程序可以发现有关用户界面部分的信息。 通过 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) 属性，客户端（如“讲述人”）可以发现与某个元素关联的访问键。 每当元素获得焦点时，“讲述人”都会读取此属性。 如果 AutomationProperties.AccessKey 未赋值，XAML 框架会返回 UIElement 或 TextElement 的 [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) 属性值。 如果 AccessKey 属性已赋值，则不需要设置 AutomationProperties.AccessKey。
 
-## 示例：按钮的访问键
+## <a name="example-access-key-for-button"></a>示例：按钮的访问键
 
 本示例演示如何为按钮创建访问键。 它将工具提示用作可视化提示来实现包含访问键的浮动锁屏提醒。
 
@@ -229,7 +229,7 @@ XAML 框架会自动调用 Click 事件的处理程序，因此无需处理 Acce
     }
 ```
 
-## 示例：限定作用域的访问键
+## <a name="example-scoped-access-keys"></a>示例：限定作用域的访问键
 
 本示例演示如何创建限定作用域的访问键。 当用户按下 Alt 时，PivotItem 的 IsAccessKeyScope 属性会阻止显示 PivotItem 子元素的访问键。 仅当用户调用 PivotItem 时才会显示这些访问键，因为 XAML 框架会自动切换作用域。 该框架还会隐藏其他作用域的访问键。
 
@@ -385,6 +385,6 @@ public sealed partial class ScopedAccessKeys : Page
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

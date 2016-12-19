@@ -4,12 +4,12 @@ ms.assetid:
 description: "本文介绍使用 MediaCapture 类捕获照片和视频的最简单方法。"
 title: "使用 MediaCapture 捕获基本的照片、视频和音频"
 translationtype: Human Translation
-ms.sourcegitcommit: 0c7355d442cd650f110042d5e01f51becbb51d0e
-ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
+ms.sourcegitcommit: 9cbe7948767ba45e8ef495a9349621969957ab04
+ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 
 ---
 
-# 使用 MediaCapture 捕获基本的照片、视频和音频
+# <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 捕获基本的照片、视频和音频
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,30 +17,31 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 如果你仅希望捕获照片或视频，不想添加任何其他媒体捕获功能，或者如果你不想创建自己的相机 UI，则可能希望使用 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) 类，它允许你仅启动 Windows 内置相机应用，并且接收捕获的照片或视频文件。 有关详细信息，请参阅[**使用 Windows 内置相机 UI 捕获照片和视频**](capture-photos-and-video-with-cameracaptureui.md)
 
+本文中的代码源自 [**Camera starter kit**](https://go.microsoft.com/fwlink/?linkid=619479) 示例。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
-## 向应用清单中添加功能声明
+## <a name="add-capability-declarations-to-the-app-manifest"></a>向应用清单中添加功能声明
 
 为了让你的应用可以访问设备的相机，必须声明你的应用要使用 *webcam* 和 *microphone* 设备功能。 如果你想要将已捕获的照片和视频保存到用户的图片库或视频库，还必须声明 *picturesLibrary* 和 *videosLibrary* 功能。
 
 **将功能添加到应用部件清单**
 
 1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。
-2.  选择“功能”****选项卡。
-3.  选中“摄像头”****框和“麦克风”****框。
+2.  选择“功能”选项卡。
+3.  选中“摄像头”框和“麦克风”框。
 4.  若要访问图片库和视频库，请选中“图片库”框和“视频库”框。
 
 
-## 初始化 MediaCapture 对象
+## <a name="initialize-the-mediacapture-object"></a>初始化 MediaCapture 对象
 本文介绍的所有捕获方法都需要通过依次调用构造函数和 [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.InitializeAsync)，首先初始化 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 对象。 由于在应用中可从多个位置访问 **MediaCapture** 对象，所以请声明某个类变量以保留该对象。  如果捕获操作失败，请为待通知的 **MediaCapture** 对象的 [**Failed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.Failed) 事件实现处理程序。
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
 [!code-cs[InitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## 设置相机预览
+## <a name="set-up-the-camera-preview"></a>设置相机预览
 使用 **MediaCapture** 无需显示相机预览即可捕获照片、视频和音频，但通常需要显示预览流，以便用户可以看到捕获的内容。 此外，一些 **MediaCapture** 功能在可以启用前需要运行预览流，这些功能包括自动对焦、自动曝光以及自动白平衡。 若要了解如何设置相机预览，请参阅[**显示相机预览**](simple-camera-preview-access.md)。
 
-## 将照片捕获到 SoftwareBitmap
+## <a name="capture-a-photo-to-a-softwarebitmap"></a>将照片捕获到 SoftwareBitmap
 Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) 类，可跨多项功能提供图像的通用表示形式。 如果你想捕获照片并立即在应用中使用捕获的图像（例如在 XAML 中显示它，而非捕获到某个文件），则应捕获到 **SoftwareBitmap**。 你仍可选择在以后将图像保存到磁盘。
 
 初始化 **MediaCapture** 对象后，可使用 [**LowLagPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoCapture) 类将照片捕获到 **SoftwareBitmap**。 通过调用 [**PrepareLowLagPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagPhotoCaptureAsync)（该函数在指定所需图像格式的 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties) 对象中传递），获取此类的实例。 [**CreateUncompressed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties.CreateUncompressed) 使用指定的像素格式创建未压缩的编码。 通过调用返回 [**CapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedPhoto) 对象的 [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoCapture.CaptureAsync) 捕获照片。 通过依次访问 [**Frame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedPhoto.Frame) 属性和 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame.SoftwareBitmap) 属性，获取 **SoftwareBitmap**。
@@ -51,7 +52,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 
 有关使用 **SoftwareBitmap** 对象的信息（包括如何在 XAML 页面中显示一个此类对象），请参阅[**创建、编辑和保存位图图像**](imaging.md)。
 
-## 将照片捕获到文件
+## <a name="capture-a-photo-to-a-file"></a>将照片捕获到文件
 典型的摄影应用会将捕获的照片保存到磁盘或云存储，并且需要将元数据（例如照片方向）添加到文件。 以下示例显示如何将照片捕获到文件。 你仍可选择在以后从图像文件中创建 **SoftwareBitmap**。 
 
 此示例中显示的技术将照片捕获到内存流，然后从该内存流将照片转码到磁盘上的某个文件。 此示例使用 [**GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.GetLibraryAsync) 获取用户的图片库，然后使用 [**SaveFolder**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.SaveFolder) 属性获取参考默认保存文件夹。 请记住，将“图片库”功能添加到应用部件清单才能访问此文件夹。 [**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFolder.CreateFileAsync) 创建保存照片的新 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile)。
@@ -66,7 +67,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 
 有关使用文件和文件夹的详细信息，请参阅[**文件、文件夹和库**](https://msdn.microsoft.com/windows/uwp/files/index)。
 
-## 捕获视频
+## <a name="capture-a-video"></a>捕获视频
 通过使用 [**LowLagMediaRecording**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording) 类将视频捕获快速添加到应用。 首先，声明对象的类变量。
 
 [!code-cs[LowLagMediaRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetLowLagMediaRecording)]
@@ -91,7 +92,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 
 [!code-cs[RecordLimitationExceededHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceededHandler)]
 
-## 暂停和恢复视频录制
+## <a name="pause-and-resume-video-recording"></a>暂停和恢复视频录制
 通过依次调用 [**PauseAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseAsync) 和 [**ResumeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.ResumeAsync)，可暂停并恢复视频录制，无需创建单独的输出文件。
 
 [!code-cs[PauseRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseRecordingSimple)]
@@ -111,7 +112,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 请注意，在通过调用 [**StopWithResultAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StopWithResultAsync) 停止视频时也可获得结果帧。
 
 
-## 捕获音频 
+## <a name="capture-audio"></a>捕获音频 
 使用上述用于捕获视频的相同技术，可将音频捕获快速添加到应用。 以下示例在应用程序数据文件夹中创建 **StorageFile**。 调用 [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync) 以初始化捕获会话，该会话在文件和 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile)（本例中由 [**CreateMp3**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp3) 静态方法生成）中传递。 若要开始录制，请调用 [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StartAsync)。
 
 [!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
@@ -125,7 +126,7 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [相机](camera.md)
 * [使用 Windows 内置相机 UI 捕获照片和视频](capture-photos-and-video-with-cameracaptureui.md)
@@ -136,6 +137,6 @@ Windows 10 引入了 [**SoftwareBitmap**](https://msdn.microsoft.com/library/win
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

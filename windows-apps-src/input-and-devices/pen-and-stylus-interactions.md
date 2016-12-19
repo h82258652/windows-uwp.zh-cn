@@ -5,27 +5,39 @@ title: "UWP 应用中的笔交互和 Windows Ink"
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
-keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
+keywords: "Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanvas"
 translationtype: Human Translation
-ms.sourcegitcommit: f7bc2ccbdd34bec671864323df53ab7bdda25a87
-ms.openlocfilehash: 4c87dea0387b2da055d07df5bab14c4ad61638d7
+ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
+ms.openlocfilehash: 49098df1bf7fb72264a633aae37f941951cee2cf
 
 ---
 
-# UWP 应用中的笔交互和 Windows Ink
+# <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>UWP 应用中的笔交互和 Windows Ink
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
+<!--
+![touchpad](images/input-patterns/input-pen.jpg)
+-->
+
+<!--
+![Surface Pen](images/ink/hero2-small.png)  
+*Surface Studio with Surface Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacepen)).
+-->
+
+![Surface 触控笔](images/ink/hero-small.png)  
+*Surface 触控笔*（可通过 [Microsoft 官方商城](https://aka.ms/purchasesurfacepen)购买）。
+
+## <a name="overview"></a>概述
 
 针对笔输入优化通用 Windows 平台 (UWP) 应用，以便为用户同时提供标准的[**指针设备**](https://msdn.microsoft.com/library/windows/apps/br225633)功能和最佳的 Windows Ink 体验。
 
 > [!NOTE]
 > 本主题重点介绍 Windows Ink 平台。 对于常规指针输入处理（类似于鼠标、触摸和触摸板），请参阅[处理指针输入](handle-pointer-input.md)。
 
-![触摸板](images/input-patterns/input-pen.jpg)
-
-**重要的 API**
-
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
--   [**Windows.UI.Input.Inking.Core**](https://msdn.microsoft.com/library/windows/apps/dn958452)
+| 视频 |   |
+| --- | --- |
+| <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
+| *在 UWP 应用中使用墨迹* | *使用 Windows 触笔和墨迹构建更吸引人的企业应用* |
 
 Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、绘图和批注的自然方法。 该平台支持将数字化器输入捕获为墨迹数据、生成墨迹数据、管理墨迹数据、在输出设备上以笔划墨迹形式呈现墨迹数据以及通过手写识别将墨迹转换为文本。
 
@@ -36,11 +48,9 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 
 墨迹平台具有很高的灵活性。 它旨在根据不同要求支持各类功能级别。
 
-
-
 有关 Windows Ink 用户体验指南，请参阅[墨迹书写控件](../controls-and-patterns/inking-controls.md)。
 
-## Windows Ink 平台组件
+## <a name="components-of-the-windows-ink-platform"></a>Windows Ink 平台组件
 
 | 组件 | 说明 |
 | --- | --- |
@@ -49,7 +59,7 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 | [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | 将默认的 InkToolbar 添加到通用 Windows 平台 (UWP) 墨迹应用、将自定义笔按钮添加到 InkToolbar，并将自定义笔按钮绑定到自定义笔定义。XAML UI 平台控件，包含一组可自定义且可扩展的按钮，这些按钮可激活关联的 InkCanvas 中与墨迹相关的功能。<br/>有关如何使用 InkToolbar 的详细信息，请参阅[将 InkToolbar 添加到通用 Windows 平台 (UWP) 墨迹书写应用](ink-toolbar.md)。 |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | 支持将笔划墨迹呈现到通用 Windows 应用的指定 Direct2D 设备上下文，而非默认的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件。 这支持完全自定义墨迹书写体验。<br/>有关详细信息，请参阅[复杂墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620314)。 |
 
-## 通过 InkCanvas 实现基本墨迹书写
+## <a name="basic-inking-with-inkcanvas"></a>通过 InkCanvas 实现基本墨迹书写
 
 对于基本的墨迹书写功能，只需将 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 放置在页面上的任意位置即可。
 
@@ -89,7 +99,7 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 
 对于基本墨迹书写，你不必考虑 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011)。 但是，若要在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上自定义和配置墨迹书写行为，则必须访问其相应的 **InkPresenter** 对象。
 
-## 通过 InkPresenter 实现基本自定义
+## <a name="basic-customization-with-inkpresenter"></a>通过 InkPresenter 实现基本自定义
 
 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 对象通过每个 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件进行实例化。
 
@@ -193,7 +203,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 若要提供墨迹书写和擦除之外的功能（例如笔划选择），你的应用必须为 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 标识特定输入，从而在未处理的情况下进行传递以供应用处理。
 
-## 传递输入以进行高级处理
+## <a name="pass-through-input-for-advanced-processing"></a>传递输入以进行高级处理
 
 默认情况下，[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 将所有输入作为墨迹笔划或擦除笔划进行处理。 这包括由辅助硬件提供（例如笔桶按钮、鼠标右键按钮或类似提供）修改的输入。
 
@@ -425,7 +435,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
         }
       ```
 
-## 自定义墨迹呈现
+## <a name="custom-ink-rendering"></a>自定义墨迹呈现
 
 默认情况下，墨迹输入在低延迟后台线程上进行处理，并在绘制时呈现“墨迹未干”。 笔划完成时（抬起笔或手指，或者释放鼠标按钮），笔划将在 UI 线程上进行处理并向 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 图层呈现“墨迹已干”（在应用程序内容之上，并且替换未干墨迹）。
 
@@ -441,7 +451,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 > 自定义烘干和 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
 > 如果你的应用将 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的默认墨迹呈现行为替代为自定义烘干实现，呈现的笔划墨迹不再可用于 InkToolbar，并且 InkToolbar 的内置擦除命令不会按预期工作。 若要提供擦除功能，必须处理所有指针事件、在每个笔划上执行命中测试，并替代内置的“清除所有墨迹”命令。
 
-## 本部分中的其他文章
+## <a name="other-articles-in-this-section"></a>本部分中的其他文章
 
 | 主题 | 描述 |
 | --- | --- |
@@ -449,15 +459,23 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 | [存储和检索笔划墨迹](save-and-load-ink.md) | 使用嵌入的墨迹序列化格式 (ISF) 元数据在图形交换格式 (GIF) 文件中存储笔划墨迹数据。 |
 | [将 InkToolbar 添加到 UWP 墨迹书写应用](ink-toolbar.md) | 将默认的 InkToolbar 添加到通用 Windows 平台 (UWP) 墨迹书写应用、将自定义笔按钮添加到 InkToolbar，并将自定义笔按钮绑定到自定义笔定义。 |
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 * [处理指针输入](handle-pointer-input.md)
 * [标识输入设备](identify-input-devices.md)
+
+**API**
+
+* [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
+* [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+* [**Windows.UI.Input.Inking.Core**](https://msdn.microsoft.com/library/windows/apps/dn958452)
 
 **示例**
 * [墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [简单墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [复杂墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Coloring Book 示例](https://aka.ms/cpubsample-coloringbook)
+* [系列说明示例](https://aka.ms/cpubsample-familynotessample)
 * [基本输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [低延迟输入示例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [用户交互模式示例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
@@ -474,6 +492,6 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

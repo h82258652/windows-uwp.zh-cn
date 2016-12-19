@@ -4,12 +4,12 @@ description: "以声明性 XAML 标记的形式定义 UI 的做法非常好地�
 title: "将 Windows 运行时 8.x XAML 和 UI 移植到 UWP"
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 translationtype: Human Translation
-ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 
 ---
 
-# 将 Windows 运行时 8.x XAML 和 UI 移植到 UWP
+# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>将 Windows 运行时 8.x XAML 和 UI 移植到 UWP
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,15 +17,15 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 
 以声明性 XAML 标记的形式定义 UI 的做法非常好地将 Universal 8.1 App 转换为 Universal Windows Platform (UWP) App。 你会发现，你的大多数标记是兼容的，尽管你可能需要针对正在使用的系统资源键或自定义模板对其作相应调整。 视图模型中的强制性代码只需稍作更改或无需更改。 操纵 UI 元素的表示层中的许多强制性代码（甚至是大部分代码）也应易于移植。
 
-## 强制性代码
+## <a name="imperative-code"></a>强制性代码
 
 如果你只是希望转到项目构建阶段，你可以注释或去掉任何非必要的代码。 然后一次一个问题进行迭代，并参考本部分中的以下主题（和上一主题：[疑难解答](w8x-to-uwp-troubleshooting.md)），直到消除所有生成和运行时问题并且完成移植。
 
-## 自适应/响应式 UI
+## <a name="adaptiveresponsive-ui"></a>自适应/响应式 UI
 
-由于你的应用可以在种类可能很广泛的设备上运行（每种设备都具有自己的屏幕大小和分辨率），你不仅需要完成移植应用的最少步骤，而且还需要定制你的 UI 以使其在这些设备上具有最佳的外观。 你可以使用自适应视觉状态管理器功能来动态检测窗口大小并更改布局作为响应，还可以使用 Bookstore2 案例研究主题中的[自适应 UI](w8x-to-uwp-case-study-bookstore2.md#adaptive-ui) 部分中所示的有关如何执行此操作的示例。
+由于你的应用可以在种类可能很广泛的设备上运行（每种设备都具有自己的屏幕大小和分辨率），你不仅需要完成移植应用的最少步骤，而且还需要定制你的 UI 以使其在这些设备上具有最佳的外观。 你可以使用自适应视觉状态管理器功能来动态检测窗口大小并更改布局作为响应，还可以使用 Bookstore2 案例研究主题中的[自适应 UI](w8x-to-uwp-case-study-bookstore2.md) 部分中所示的有关如何执行此操作的示例。
 
-## 后退按钮处理
+## <a name="back-button-handling"></a>后退按钮处理
 
 对于通用 8.1 应用、Windows 应用商店应用和 Windows Phone 应用商店应用，创建要显示的 UI 和为后退按钮处理事件的方式均不同。 但对于 Windows 10 应用，你可以在你的应用中使用单一的方法。 在移动设备上，该按钮作为设备上的电容性按钮或外壳中的按钮向你提供。 在桌面设备上，只要你的应用内可进行后退导航，你便可以向该应用的镶边添加一个按钮，它将显示在窗口化的应用的标题栏中或平板电脑模式下的任务栏中。 后退按钮事件是所有设备系列的通用概念，并且硬件或软件中实现的按钮会引发相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
 
@@ -77,11 +77,11 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
    Windows.UI.Xaml.Application.Current.Exit();
 ```
 
-## 超级按钮
+## <a name="charms"></a>超级按钮
 
 你无需更改任何与超级按钮集成的代码，但是你需要将某些 UI 添加到应用，以替换不属于 Windows 10 外壳的超级按钮栏。 在 Windows 10 上运行的通用 8.1 应用将具有其自己的替换 UI，该 UI 由应用标题栏中的系统呈现的镶边提供。
 
-## 控件和控件样式/模板
+## <a name="controls-and-control-stylestemplates"></a>控件和控件样式/模板
 
 对于控件，在 Windows 10 上运行的通用 8.1 应用将保留 8.1 的外观和行为。 但当你将该应用移植为 Windows 10 应用时，请注意其外观和行为的一些差异。 Windows 10 应用的控件的体系结构和设计实质上保持不变，因此更改主要围绕[设计语言](#design-language)、简化和可用性改进。
 
@@ -117,11 +117,11 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 
 有关 UWP 应用控件的详细信息，请参阅[按功能列出的控件](https://msdn.microsoft.com/library/windows/apps/mt185405)、[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)和[控件指南](https://msdn.microsoft.com/library/windows/apps/dn611856)。
 
-##  Windows 10 设计语言
+##  <a name="design-language-in-windows-10"></a>Windows 10 设计语言
 
 Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的设计语言差异。 有关所有详细信息，请参阅[设计](http://dev.windows.com/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
 
-## 有效像素、观看距离和比例因子
+## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>有效像素、观看距离和比例因子
 
 以前，视图像素是从设备的实际物理大小和分辨率抽象表示 UI 元素的大小和布局的方法。 视图像素现在已发展为有效像素，下面是对该术语、该术语的意义以及它所提供的额外价值的说明。
 
@@ -139,7 +139,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 你可能重复使用 Windows 应用商店应用中的 XAML 标记，该标记中使用了文本维度值（可能用于大小形状或其他元素，也可能用于版式）。 但在某些情况下，在某一设备上针对 Windows 10 应用所使用的比例系数大于针对通用 8.1 应用所使用的比例系数（例如，之前使用的比例系数为 140% 而现在使用的为 150%，之前使用的比例系数为 180% 而现在使用的为 200%）。 因此如果你发现这些文本值现在在 Windows 10 中过大，则尝试将它们乘以 0.8。 有关详细信息，请参阅[适用于 UWP 应用的响应式设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958435)。
 
-## GridView/ListView 更改
+## <a name="gridviewlistview-changes"></a>GridView/ListView 更改
 
 已对 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 默认样式资源库进行多个更改，以使控件垂直滚动（而不是像之前默认的那样水平滚动）。 如果你编辑过你的项目中的默认样式副本，则副本将不会具有这些更改，因此你将需要手动进行更改。 下面是这些更改的列表。
 
@@ -230,15 +230,15 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 -   在 SelectionStates 视觉状态组中，将 Selected 视觉状态移动到 CommonStates 视觉状态组中。
 -   删除整个 SelectionStates 视觉状态组。
 
-## 本地化和全球化
+## <a name="localization-and-globalization"></a>本地化和全球化
 
 在 UWP App 项目中，你可以重新使用通用 8.1 项目中的 Resources.resw 文件。 复制完该文件后，将其添加到项目，然后将**“生成操作”**设置为**PRIResource**，并将**“复制到输出目录”**设置为**“不复制”**。 [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
 
-## 播放到
+## <a name="play-to"></a>播放到
 
 在 Windows 10 应用中，[**Windows.Media.PlayTo**](https://msdn.microsoft.com/library/windows/apps/br207025) 命名空间的 API 已弃用，而改为支持 [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) API。
 
-## 资源键和 TextBlock 样式大小
+## <a name="resource-keys-and-textblock-style-sizes"></a>资源键和 TextBlock 样式大小
 
 设计语言已针对 Windows 10 进行开展，因此某些系统样式已更改。 在某些情况下，你需要重新访问视图的视觉设计，以查看它们是否能与已更改的样式属性协调运行。
 
@@ -405,7 +405,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 -   TextStyleSmallFontSize
 -   TimeRemainingElementMargin
 
-## 弃用搜索框以支持 AutoSuggestBox
+## <a name="searchbox-deprecated-in-favor-of-autosuggestbox"></a>弃用搜索框以支持 AutoSuggestBox
 
 尽管已在通用设备系列中实现了 [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803)，但它无法在移动设备上正常运行。 将 [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) 用于通用搜索体验。 下面介绍通常如何使用 **AutoSuggestBox** 实现搜索体验。
 
@@ -423,7 +423,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 另请参阅 [AutoSuggestBox 移植示例](http://go.microsoft.com/fwlink/p/?linkid=619996)。
 
-## SemanticZoom 更改
+## <a name="semanticzoom-changes"></a>SemanticZoom 更改
 
 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 的缩小手势已在 Windows Phone 模型上进行了融合，该手势是点击或单击组标题（因此，在桌面计算机上，不再显示提供的用于缩小的减号按钮）。 现在，我们可以随意在所有设备上获取相同且一致的行为。 与 Windows Phone 模型相比的一个外观区别是缩小视图（跳转列表）替换放大视图，而不是覆盖它。 出于此原因，你可以从缩小视图中删除任何半透明背景。
 
@@ -435,7 +435,7 @@ Universal 8.1 应用和 Windows 10 应用之间存在一些细小但很重要的
 
 在 Windows Phone 应用商店应用和 Windows 10 应用中，在按下后退按钮后，缩小视图将消失。 在 Windows 应用商店应用中，不存在任何内置后退按钮的处理，因此不会遇到此类问题。
 
-## 设置
+## <a name="settings"></a>设置
 
 Windows 运行时 8.x **SettingsPane** 类不适用于 Windows 10。 除了生成“设置”页面，还应为用户提供从应用内访问它的方式。 我们建议你在最高级别公开此应用“设置”页面来作为导航窗格上的最后一个固定项，但下面依然提供完整的选项集。
 
@@ -447,7 +447,7 @@ Windows 运行时 8.x **SettingsPane** 类不适用于 Windows 10。 除了生�
 
 “设置”页面应填充整个应用窗口，并且“设置”页面也是“关于”和“反馈”所在的位置。 有关“设置”页面的设计指南，请参阅[应用设置指南](https://msdn.microsoft.com/library/windows/apps/hh770544)。
 
-## 文本
+## <a name="text"></a>文本
 
 文本（或版式）是 UWP 应用的重要方面，并且在移植时，你可能希望回顾你的视图的视觉设计，以便它们与新设计语言相协调。 使用这些图示查找可用的通用 Windows 平台 (UWP) **TextBlock** 系统样式。 查找对应于你所使用的 Windows Phone Silverlight 样式的样式。 或者，你可以创建自己的通用样式并将 Windows Phone Silverlight 系统样式中的属性复制到这些样式中。
 
@@ -459,11 +459,11 @@ Windows 运行时 8.x **SettingsPane** 类不适用于 Windows 10。 除了生�
 
 有关详细信息，请参阅[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[设计 UWP 应用](http://go.microsoft.com/fwlink/p/?LinkID=533896)。 有关对文本控件更改的信息，另请参阅上面的[控件](#controls)部分。
 
-## 主题更改
+## <a name="theme-changes"></a>主题更改
 
 对于通用 8.1 应用，默认主题为深色。 对于 Windows 10 设备，默认主题已更改，但是你可以通过在 App.xaml 中声明所请求的主题来控制所使用的主题。 例如，若要在所有设备上都使用深色主题，请将 `RequestedTheme="Dark"` 添加到根 Application 元素。
 
-## 磁贴和 Toast
+## <a name="tiles-and-toasts"></a>磁贴和 Toast
 
 对于磁贴和 Toast，当前使用的模板将继续适用于你的 Windows 10 应用。 但有新的自适应模板可供你使用，它们在[通知、磁贴、Toast 和锁屏提醒](https://msdn.microsoft.com/library/windows/apps/mt185606)中有相关说明。
 
@@ -471,7 +471,7 @@ Windows 运行时 8.x **SettingsPane** 类不适用于 Windows 10。 除了生�
 
 若要发送 Toast 通知，不再需要声明一个功能。
 
-## 窗口大小
+## <a name="window-size"></a>窗口大小
 
 对于 Universal 8.1 应用，将使用 [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/dn391667) 应用清单元素声明最小窗口宽度。 在 UWP 应用中，你可以使用命令式代码指定最小大小（宽度以及高度）。 默认的最小大小为 500x320 epx，这也是可接受的最小大小的最小值。 可接受的最小大小的最大值为 500x500epx。
 
@@ -485,6 +485,6 @@ Windows 运行时 8.x **SettingsPane** 类不适用于 Windows 10。 除了生�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,12 +4,12 @@ Description: "本文列出了在使用桌面到 UWP 桥转换应用前你需要�
 Search.Product: eADQiWindows 10XVcnh
 title: "为桌面到 UWP 桥准备应用"
 translationtype: Human Translation
-ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
-ms.openlocfilehash: 4cf9c509be52a8b2c03cdaa9ac68b98ba49b7094
+ms.sourcegitcommit: f7a8b8d586983f42fe108cd8935ef084eb108e35
+ms.openlocfilehash: 81a2485d5be22dd392c21aaff281c1c9263883a9
 
 ---
 
-# 准备应用以使用桌面桥转换
+# <a name="prepare-an-app-for-conversion-with-the-desktop-bridge"></a>准备应用以使用桌面桥转换
 
 本文列出了在使用桌面到 UWP 桥转换应用前你需要知道的事项。 你可能不需要执行很多操作即可使应用为转换过程准备就绪，但是如果以下任意一项适用于你的应用程序，则你需要在转换前解决该问题。 请记住，Windows 应用商店为你处理许可和自动更新，以便你可以从基本代码中删除这些功能。
 
@@ -61,7 +61,14 @@ ms.openlocfilehash: 4cf9c509be52a8b2c03cdaa9ac68b98ba49b7094
 
 + __你的应用从 Windows 并行文件夹安装和加载程序集。__ 例如，你的应用使用 C 运行时库 VC8 或 VC9，并且正在从 Windows 并行文件夹动态链接它们，这意味着你的代码正在使用来自共享文件夹的常见 DLL 文件。 这不受支持。 你将需要静态链接它们，方法是将可再发行库文件直接链接到你的代码中。
 
++ __你的应用使用 System32/SysWOW64 文件夹中的依赖项__。 若要使这些 DLL 有效，必须将其包含在 AppX 程序包的虚拟文件系统部分中。 这可确保应用的行为就像 DLL 已安装在 **System32**/**SysWOW64** 文件夹中一样。 在程序包的根目录中，创建一个名为 **VFS** 的文件夹。 在该文件夹内创建 **SystemX64** 和 **SystemX86** 文件夹。 然后，将 DLL 的 32 位版本放置在 **SystemX86** 文件夹，并将 64 位版本放置在 **SystemX64** 文件夹。
 
-<!--HONumber=Nov16_HO1-->
++ __你的应用使用 Dev11 VCLibs 框架程序包__。 如果 VCLibs 11 库被定义为 AppX 程序包中的依赖项，则可以直接从 Windows 应用商店中安装。 若要执行此操作，请对应用包清单进行以下更改：在 `<Dependencies>` 节点下，添加：  
+`<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
+在从 Windows 应用商店安装期间，将在安装应用之前先安装 VCLibs 11 框架的适当版本（x86 或 x64）。  
+如果通过旁加载安装应用，将不安装这些依赖项。 若要在计算机上手动安装这些依赖项，必须下载并安装[桌面应用桥的 VC 11.0 框架包](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064)。 有关这些方案的详细信息，请参阅[在 Centennial 项目中使用 Visual C++ 运行时](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)。
+
+
+<!--HONumber=Dec16_HO1-->
 
 

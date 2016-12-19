@@ -4,18 +4,18 @@ description: "针对任何支持网络的应用的必做事项。"
 title: "网络基础知识"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
+ms.sourcegitcommit: 28cf7084fd7ea6ad41c7c2817522891617928abb
+ms.openlocfilehash: 13457b7da3472f3530805198a74b3a6b2ff78f50
 
 ---
 
-# 网络基础知识
+# <a name="networking-basics"></a>网络基础知识
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 针对任何支持网络的应用的必做事项。
 
-## 功能
+## <a name="capabilities"></a>功能
 
 要使用网络功能，你必须将相应的功能元素添加到你的应用清单中。 如果你的应用清单中未指定任何网络功能，则你的应用将不具备任何网络功能，从而连接到网络的任何尝试都将失败。
 
@@ -31,12 +31,11 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 | 功能 | 描述 |
 |------------|-------------|
-| **pushNotifications** | 如果你的应用使用套接字活动触发器，则你必须在应用清单中指定此功能。 |
 | **enterpriseAuthentication** | 允许应用连接至要求提供域凭据的网络资源。 如要启用此功能，域管理员必须为所有应用均启用此功能。 示例将是从专用 Intranet 上的 Sharepoint 服务器中检索数据的应用。 <br/> 通过此功能可以使用你的凭据来访问要求提供凭据的网络中的网络资源。 具有此功能的应用可在网络上模拟其用户。 <br/> 无需此功能，应用即可通过身份验证的代理访问 Internet。 |
 | **proximity** | 与邻近计算机的设备进行近距离感应通信所必需的功能。 近距离感应可用于向附近设备上的应用程序发送邀请或与其进行连接。 <br/> 此功能让应用可以访问邻近设备网络，并在用户同意发送或接受邀请的情况下与这些设备进行连接。 |
 | **sharedUserCertificates** | 此功能让应用可以访问软件和硬件证书，如智能卡证书。 在运行过程中调用此功能时，用户必须采取插入卡或选择证书等操作。 <br/> 使用此功能时，应用会将你的软件和硬件证书或智能卡用于识别。 你的雇主、银行或政府服务机构可以使用此功能来进行识别。 |
 
-## 当你的应用不在前台时通信
+## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>当你的应用不在前台时通信
 
 [使用后台任务支持应用](https://msdn.microsoft.com/library/windows/apps/mt299103)包含了有关应用不在前台时使用后台任务进行工作的常规信息。 更具体地说，当它不是当前的前台应用，但数据仍通过网络发送给它时，你的代码必须采取特殊的步骤以接收通知。 为此，你在 Windows 8 中使用了控制通道触发器，这些触发器在 Windows 10 中仍受支持。 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032) 提供了有关使用控制通道触发器的完整信息。 Windows 10 中的新技术提供了更好的功能，可在某些应用场景中降低开销，例如已启用推送的流套接字：套接字代理和套接字活动触发器。
 
@@ -44,9 +43,8 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 套接字代理旨在替代控制通道触发器（如果适用），因为前者能够提供相同的功能，但限制更少且内存占用更小。 套接字代理可由非锁屏应用使用，并且其在手机上的使用方式与其他设备上的使用方式相同。 当流量送达以便由套接字代理激活应用时，这些应用无需处于运行状态。 并且套接字代理支持在 TCP 套接字上侦听，而控制通道触发器不支持此操作。
 
-如果你的应用使用套接字活动触发器，则你必须在应用清单中指定 **pushNotifications** 功能。
 
-### 选择网络触发器
+### <a name="choosing-a-network-trigger"></a>选择网络触发器
 
 在一些应用场景中，这两种触发器均适宜。 当你选择要在应用中使用的触发器类型时，请考虑以下建议。
 
@@ -57,11 +55,11 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 有关如何使用套接字代理的详细信息和示例，请参阅[后台网络通信](network-communications-in-the-background.md)。
 
-## 安全连接
+## <a name="secured-connections"></a>安全连接
 
 安全套接字层 (SSL) 和最新的传输层安全 (TLS) 都是旨在为网络通信提供身份验证和加密功能的加密协议。 这些协议专门用于在发送和接收网络数据时防止发生窃听和篡改。 这些协议使用一种客户端-服务器模型进行协议交换。 这些协议还会使用数字证书和证书颁发机构来验证服务器是否是其声明的服务器。
 
-### 创建安全套接字连接
+### <a name="creating-secure-socket-connections"></a>创建安全套接字连接
 
 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 对象可以配置为在客户端和服务器之间使用 SSL/TLS 进行通信。 对 SSL/TLS 的这一支持仅限于在 SSL/TLS 协商中将 **StreamSocket** 对象用作客户端。 当收到传入通信时，你无法将 SSL/TLS 与 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 所创建的 **StreamSocket** 一起使用，因为 **StreamSocket** 类没有实现作为服务器的 SSL/TLS 协商。
 
@@ -74,7 +72,7 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 > **注意** 你的代码决不应该隐式依赖于使用特定的保护级别或默认使用给定安全级别的假设。 安全状况会不断更改，而且为了避免使用带有已知缺陷的协议，协议和默认保护级别也将随着时间的推移而发生更改。 默认值可能会因单个计算机配置或已安装的软件和已应用的修补程序而异。 如果你的应用依赖于使用特定的安全级别，则必须明确指定该级别，然后进行检查以确保在已建立的连接上实际使用了该安全级别。
 
-### 使用 ConnectAsync
+### <a name="use-connectasync"></a>使用 ConnectAsync
 
 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 可用于建立与网络服务的初始连接，并随后立即协商对所有通信使用 SSL/TLS。 有两种 **ConnectAsync** 方法支持传递 *protectionLevel* 参数：
 
@@ -164,7 +162,7 @@ using Windows::Networking::Sockets;
     // Then close the clientSocket when done
 ```
 
-### 使用 UpgradeToSslAsync
+### <a name="use-upgradetosslasync"></a>使用 UpgradeToSslAsync
 
 当你的代码使用 [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) 时，它将首先在不加密的情况下建立与网络服务的连接。 应用可以发送或接收某些数据，然后升级连接，以对此后所有通信使用 SSL/TLS。
 
@@ -353,7 +351,7 @@ using Windows::Storage::Streams;
     });
 ```
 
-### 创建安全 WebSocket 连接
+### <a name="creating-secure-websocket-connections"></a>创建安全 WebSocket 连接
 
 与传统套接字连接相同，为 Windows 应用商店应用使用 Windows 8 中的 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 和 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 功能时，使用传输层安全性 (TLS)/安全套接字层 (SSL) 也可以加密 WebSocket 连接。 一般来说，你希望使用安全的 WebSocket 连接。 这会提高连接成功的可能性，因为许多代理会拒绝未加密的 WebSocket 连接。
 
@@ -363,11 +361,11 @@ using Windows::Storage::Streams;
 
 如果客户端发出的初始请求不包含此值，或提供了与服务器的预期不相符的值，则预期值会在发生 WebSocket 握手错误时 从服务器发送到客户端。
 
-## 身份验证
+## <a name="authentication"></a>身份验证
 
 如何在通过网络进行连接时提供身份验证凭据。
 
-### 通过 StreamSocket 类提供客户端证书
+### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
 
 [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 Windows 10 中，你可以在 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 对象上提供客户端证书（这必须在启动 TLS 握手之前进行设置）。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
 
@@ -380,7 +378,7 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-### 向 Web 服务提供身份验证凭据
+### <a name="providing-authentication-credentials-to-a-web-service"></a>向 Web 服务提供身份验证凭据
 
 使应用可与安全 Web 服务交互的每个网络 API 均提供其自有方法来初始化客户端，或者使用服务器和代理身份验证凭据来设置请求头。 每个方法均使用 [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) 对象进行设置，该对象指示用户名、密码和将这些凭据用于的资源。 下表提供这些 API 的映射：
 
@@ -403,7 +401,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 |  | [**AtomPubClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243428) |
 |  | [**AtomPubClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243423) |
  
-## 处理网络异常
+## <a name="handling-network-exceptions"></a>处理网络异常
 
 在大多数编程领域中，异常均表示由程序中的某些缺陷而导致的重大问题或失败。 在网络编程中，还存在额外的来源会导致异常，即网络本身，这是网络通信的特性。 网络通信本身是不可靠的，且易出现出乎意料的失败。 对于你的应用使用网络的每一种方式，你都必须保留一些状态信息，而且你的应用代码必须通过更新该状态信息和启动适合应用的逻辑来处理网络异常，从而重新建立或重试失败的通信。
 
@@ -416,7 +414,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 -   一些 API 提供了一种帮助程序方法，可将异常中的 **HRESULT** 值转换为枚举值。
 -   而另一些 API 提供一种方法来检索实际的 **HRESULT** 值。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [Windows 10 中的网络 API 改进](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
@@ -424,6 +422,6 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

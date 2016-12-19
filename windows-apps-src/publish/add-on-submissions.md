@@ -4,12 +4,12 @@ Description: "加载项通过 Windows 开发人员中心仪表板发布。"
 title: "加载项提交"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 translationtype: Human Translation
-ms.sourcegitcommit: b0d877e46ba6958bfc61dd87687c30e91b6cd937
-ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
+ms.sourcegitcommit: 0f2b48f646423f299999a61d78dd956a78a09a8e
+ms.openlocfilehash: 1e7c02621da528c4635ab47bd7c2a898f2441da1
 
 ---
 
-# 加载项提交
+# <a name="add-on-submissions"></a>加载项提交
 
 加载项（有时称为应用内产品）是应用的补充项，可供客户购买。 加载项可以是有趣的新附加功能、新的游戏级别或任何你希望用来维系用户的内容。 加载项不但是赚钱的绝佳方法，它们还有助于促进客户互动和参与。
 
@@ -17,15 +17,13 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 加载项提交过程的第一步是通过[定义其产品类型和产品 ID](set-your-add-on-product-id.md) 来在仪表板中创建加载项。 然后，你可以创建一个提交，以便你的加载项可以通过 Windows 应用商店购买。 你可以在[提交应用](app-submissions.md)的同时提交加载项，或者可以单独处理它。 并且你可以在应用在应用商店中上架后[更新](#updating-an-add-on-after-submission)加载项，而无需重新提交该应用。
 
-> 
-            **注意**
-            &nbsp;&nbsp;文档的此部分介绍如何在开发人员中心仪表板中提交加载项。 此外，你也可以使用 [Windows Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行加载项提交。
+> **注意**  文档的此部分介绍如何在开发人员中心仪表板中提交加载项。 此外，你也可以使用 [Windows Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动执行加载项提交。
 
-## 加载项提交清单
+## <a name="checklist-for-submitting-an-add-on"></a>加载项提交清单
 
 以下是你在创建加载项提交时提供的信息的列表。 下面标出了你需要提供的项目。 其中某些是选填的，或已提供你可以按需更改的默认值。
 
-### 创建新加载项页面
+### <a name="create-a-new-add-on-page"></a>创建新加载项页面
 | 字段名称                    | 注意                            |
 |-------------------------------|----------------------------------|
 | [**产品类型**](set-your-add-on-product-id.md#product-type)      | 必填。 如果为“持久”，则“产品生命周期”为必填项。 |  
@@ -33,7 +31,7 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 <span/>
 
-### 属性页面
+### <a name="properties-page"></a>属性页面
 | 字段名称                    | 注意                              |   
 |-------------------------------|------------------------------------|
 | [**产品生命周期**](enter-add-on-properties.md#product-lifetime)  | 在产品类型为“耐用品”时必填。 不适用于其他产品类型。 |
@@ -44,7 +42,7 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 <span/>
 
-### 定价和可用性页面
+### <a name="pricing-and-availability-page"></a>定价和可用性页面
 | 字段名称                    | 注意                                       |
 |-------------------------------|---------------------------------------------|
 | [**基价**](set-add-on-pricing-and-availability.md#base-price)                | 必需                                    |
@@ -55,8 +53,8 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 <span/>
 
-### 应用商店一览
-需要一个应用商店一览。 我们建议为应用支持的每种[语言](create-add-on-descriptions.md#languages)提供应用商店一览。
+### <a name="store-listings"></a>应用商店一览
+需要一个应用商店一览。 我们建议为应用支持的每种[语言](create-add-on-store-listings.md#languages)提供应用商店一览。
 
 | 字段名称                    | 注意                                       |
 |-------------------------------|---------------------------------------------|
@@ -68,16 +66,14 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 当你完成输入此信息时，请单击“提交到应用商店”。 在大多数情况下，认证过程需要大约一个小时。 然后，你的加载项将发布到应用商店并且可供客户购买。
 
+**注意** 加载项还必须在应用的代码中实现。 有关详细信息，请参阅[启用应用内产品购买](../monetize/enable-in-app-product-purchases.md)。
 
-            **注意** 加载项还必须在应用的代码中实现。 有关详细信息，请参阅[启用应用内产品购买](../monetize/enable-in-app-product-purchases.md)。
 
-
-## 在发布后更新加载项
+## <a name="updating-an-add-on-after-publication"></a>在发布后更新加载项
 
 你可以随时更改已发布的加载项。 加载项更改会独立于应用提交和发布，因此通常不需要更新整个应用即可对加载项进行更改，如更新其价格或说明。
 
-> 
-            **重要提示** 如果你的应用要提供给使用 Windows8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows8.x 的客户将无法看到新的加载项。
+> **重要提示** 如果你的应用要提供给使用 Windows 8.x 的客户，将需要创建并发布新的应用提交才能使这些客户看到加载项更新。 同样，如果你在应用发布后向面向 Windows 8.x 的应用添加新的加载项，你将需要更新应用的代码来引用这些加载项，然后才能重新提交应用。 否则，使用 Windows 8.x 的客户将无法看到新的加载项。
 
 若要提交更新，请转到仪表板中的加载项页面，然后单击“更新”。 这将使用之前提交中的信息作为起始点，为该加载项创建新的提交。 按需更改信息，然后单击“提交到应用商店”。
 
@@ -85,6 +81,6 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

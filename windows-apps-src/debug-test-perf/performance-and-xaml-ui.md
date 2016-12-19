@@ -4,11 +4,11 @@ ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: "性能"
 description: "用户希望他们的应用保持响应性、感觉自然，并且不会耗尽电池。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f4589b187d05ae122839fab74d8086779847b120
+ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
+ms.openlocfilehash: b9395e80bca7a46076e20e42fa7ceee5df7cc0d5
 
 ---
-# 性能
+# <a name="performance"></a>性能
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,6 +19,7 @@ ms.openlocfilehash: f4589b187d05ae122839fab74d8086779847b120
 | 主题 | 描述 |
 |-------|-------------|
 | [规划性能](planning-and-measuring-performance.md) | 用户希望他们的应用保持响应状态、使用感觉自然，并且不会耗尽电池。 从技术上讲，性能是非功能要求，但将性能视为一项功能将有助于你满足用户的期望。 指定目标与衡量是关键因素。 确定性能关键型方案是什么；定义良好的性能意味着什么。 然后及早衡量，并在项目的整个生命周期中频繁衡量，以确保达到你的目标。 |
+| [优化后台活动](optimize-background-activity.md) | 创建 UWP 应用，这些应用与系统一起以电池高效方式使用后台任务。 |
 | [ListView 和 GridView UI 优化](optimize-gridview-and-listview.md) | 通过 UI 虚拟化、元素减少和项目的进度更新来改进 [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 |
 | [ListView 和 GridView 数据虚拟化](listview-and-gridview-data-optimization.md) | 通过数据虚拟化改进 [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 |
 | [提高垃圾回收性能](improve-garbage-collection-performance.md) | 使用 C# 和 Visual Basic 编写的通用 Windows 平台 (UWP) 应用从 .NET 垃圾回收器获取自动内存管理。 本部分汇总了 UWP 应用中的 .NET 垃圾回收器的行为和性能最佳实践。 |
@@ -36,6 +37,6 @@ ms.openlocfilehash: f4589b187d05ae122839fab74d8086779847b120
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

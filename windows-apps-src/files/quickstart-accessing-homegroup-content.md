@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: "访问家庭组内容"
 description: "访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
 
 ---
-# 访问家庭组内容
+# <a name="accessing-homegroup-content"></a>访问家庭组内容
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,7 +19,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 访问存储在用户的“家庭组”文件夹中的内容，包括图片、音乐和视频。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
     你可以使用查询来枚举家庭组中的文件和文件夹。 若要了解有关文件和文件夹查询的信息，请参阅[枚举和查询文件和文件夹](quickstart-listing-files-and-folders.md)。
 
-## 在家庭组打开文件选取器
+## <a name="open-the-file-picker-at-the-homegroup"></a>在家庭组打开文件选取器
 
 按以下步骤打开文件选取器的一个实例，让用户从家庭组中选取文件和文件夹：
 
@@ -76,7 +76,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
     }   
     ```
 
-## 在家庭组中搜索文件
+## <a name="search-the-homegroup-for-files"></a>在家庭组中搜索文件
 
 此部分显示了如何找到与用户提供的查询词匹配的家庭组项目。
 
@@ -119,7 +119,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
     ```
 
 
-## 在家庭组中搜索某个特定用户的共享文件
+## <a name="search-the-homegroup-for-a-particular-users-shared-files"></a>在家庭组中搜索某个特定用户的共享文件
 
 此部分介绍如何查找由特定用户共享的家庭组文件。
 
@@ -164,7 +164,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
     }    
     ```
 
-## 从家庭组流式传输视频
+## <a name="stream-video-from-the-homegroup"></a>从家庭组流式传输视频
 
 请按以下步骤从家庭组流式传输视频内容：
 
@@ -211,6 +211,6 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

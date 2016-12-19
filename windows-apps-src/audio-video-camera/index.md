@@ -4,14 +4,14 @@ ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "本部分将提供有关创建可捕获、播放或编辑照片、视频或音频的通用 Windows 平台 (UWP) 应用的信息。"
 title: "音频、视频和相机"
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
+ms.sourcegitcommit: 77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0
+ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 ---
 
-# 音频、视频和相机
+# <a name="audio-video-and-camera"></a>音频、视频和相机
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分将提供有关创建可捕获、播放或编辑照片、视频或音频的通用 Windows 平台 (UWP) 应用的信息。
  
@@ -22,6 +22,7 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 | [检测图像或视频中的人脸](detect-and-track-faces-in-an-image.md) | 介绍如何使用 [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150) 在视频帧序列中随着时间的推移跟踪人脸。 |
 | [媒体合成和编辑](media-compositions-and-editing.md) | 介绍如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空间中的 API 来快速开发应用，从而使用户从音频和视频源文件创建媒体合成。 |
 | [自定义视频效果](custom-video-effects.md) | 介绍如何创建可实现 **IBasicVideoEffect** 接口的 Windows 运行时组件，以允许你为视频流创建自定义效果。 |
+| [自定义音频效果](custom-audio-effects.md) | 介绍如何创建可实现 **IBasicAudioEffect** 接口的 Windows 运行时组件，以允许为音频流创建自定义效果。 |
 | [创建、编辑和保存位图图像](imaging.md) | 介绍如何通过使用 [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) 对象表示位图图像来加载和保存图像文件。  |
 | [音频设备信息属性](audio-device-information-properties.md)  | 列出了与音频设备相关的设备信息属性。 |
 | [转换媒体文件代码](transcode-media-files.md) | 介绍如何使用 [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) API 将视频文件代码从一种格式转换为另一种格式。 |
@@ -33,7 +34,7 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 | [支持的编解码器](supported-codecs.md) | 列出 UWP 应用的音频、视频和图像编解码器以及格式支持。 |
 
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [开发 UWP 应用](https://developer.microsoft.com/en-us/windows/develop)
 
  
@@ -48,6 +49,6 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

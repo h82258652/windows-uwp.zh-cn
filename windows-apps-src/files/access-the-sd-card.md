@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: "访问 SD 卡"
 description: "你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制的低成本移动设备。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: a13f351af3cba8d3d9e645a6f6040dff6e81e1ff
 
 ---
-# 访问 SD 卡
+# <a name="access-the-sd-card"></a>访问 SD 卡
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -23,15 +23,15 @@ ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
 
 - [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
 
-## SD 卡上的可访问内容和不可访问内容
+## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>SD 卡上的可访问内容和不可访问内容
 
-### 你可以访问的内容
+### <a name="what-you-can-access"></a>你可以访问的内容
 
 - 你的应用仅可以读取和写入以下类型的文件，该文件类型是应用已注册可在应用部件清单文件中处理的类型。
 
 - 你的应用还可以创建和管理文件夹。
 
-### 你无法访问的内容
+### <a name="what-you-cant-access"></a>你无法访问的内容
 
 - 你的应用无法查看或访问系统文件夹及其包含的文件。
 
@@ -39,7 +39,7 @@ ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
 
 - 你的应用无法通过使用 [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) 查看或访问文档库。 但是，你可以通过遍历文件系统在 SD 卡上访问文档库。
 
-## 安全和隐私注意事项
+## <a name="security-and-privacy-considerations"></a>安全和隐私注意事项
 
 当应用将文件保存在 SD 卡上的全局位置中时，这些文件不会加密，因此通常可供其他应用访问。
 
@@ -49,7 +49,7 @@ ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
 
 但是，当安装在 SD 卡上的应用将文件保存在其 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 中时，这些文件将会加密，且不可供其他应用访问。
 
-## 访问 SD 卡上的文件的要求
+## <a name="requirements-for-accessing-files-on-the-sd-card"></a>访问 SD 卡上的文件的要求
 
 若要访问 SD 卡上的文件，通常你必须指定以下内容。
 
@@ -60,9 +60,9 @@ ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
 
 若要通过使用已知文件夹访问存储在媒体库（音乐、照片或视频）中的媒体文件，只需在应用清单文件中（**musicLibrary**、**picturesLibrary** 或 **videoLibrary**）指定关联功能。 无需指定 **removableStorage** 功能。 有关详细信息，请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。
 
-## 访问 SD 卡上的文件
+## <a name="accessing-files-on-the-sd-card"></a>访问 SD 卡上的文件
 
-### 为 SD 卡获取引用。
+### <a name="getting-a-reference-to-the-sd-card"></a>为 SD 卡获取引用。
 
 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 文件夹是适用于一组可移动设备（当前已连接到该设备）的逻辑根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果存在 SD 卡，**KnownFolders.RemovableDevices** 文件夹下的第一个（且唯一一个）**StorageFolder** 代表 SD 卡。
 
@@ -89,7 +89,7 @@ using Windows.Storage;
             }
 ```
 
-### 查询 SD 卡的内容
+### <a name="querying-the-contents-of-the-sd-card"></a>查询 SD 卡的内容
 
 SD 卡可以包含系统无法识别为已知文件夹且无法通过使用 [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 的位置查询的许多文件夹和文件。 若要查找文件，你的应用必须通过递归遍历文件系统来枚举该卡的内容。 使用 [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) 和 [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) 有效获取 SD 卡的内容。
 
@@ -103,7 +103,7 @@ SD 卡可以包含系统无法识别为已知文件夹且无法通过使用 [**K
 
 -   如果你尚未注册即处理正尝试访问的文件的文件扩展名，[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) 方法会失败。
 
-## 标识单个 SD 卡
+## <a name="identifying-the-individual-sd-card"></a>标识单个 SD 卡
 
 首先装载 SD 卡时，操作系统将为该卡生成一个唯一标识符。 它将此 ID 存储在该卡的根 WPSystem 文件夹的某个文件中。 应用可以使用此 ID 确定它是否可以识别该卡。 如果应用可以识别该卡，该应用将能够推迟之前完成的某些操作。 但是，由于该卡最后由应用访问，因此卡上的内容可能会发生变化。
 
@@ -148,6 +148,6 @@ using Windows.Storage;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

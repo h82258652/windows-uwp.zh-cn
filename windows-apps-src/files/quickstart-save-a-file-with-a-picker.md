@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: "使用选取器保存文件"
 description: "使用 FileSavePicker 让用户指定名称和他们想让应用保存文件的位置。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
 
 ---
 
-# 使用选取器保存文件
+# <a name="save-a-file-with-a-picker"></a>使用选取器保存文件
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -26,7 +26,7 @@ ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
 
  
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
@@ -37,7 +37,7 @@ ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
 
     请参阅[文件访问权限](file-access-permissions.md)。
 
-## FileSavePicker：分步
+## <a name="filesavepicker-step-by-step"></a>FileSavePicker：分步
 
 
 使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)，以便你的用户可以指定要保存的文件的名称、类型以及位置。 创建、自定义并显示文件选取器对象，然后通过返回的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 对象保存数据，该对象表示选取的文件。
@@ -114,6 +114,6 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

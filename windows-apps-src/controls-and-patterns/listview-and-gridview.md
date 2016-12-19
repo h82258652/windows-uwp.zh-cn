@@ -48,9 +48,9 @@ GridView 显示可在行和列中垂直滚动的项目集合。 数据水平堆�
 
 列表视图是一个 [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx)，因此可以包含任何类型的项目集合。 在能够在屏幕上显示任何内容前，它必须在自己的 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合中有项目。 若要填充视图，可以将项目直接添加到 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合，或者将 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 属性设置为数据源。 
 
-**重要提示**&nbsp;&nbsp;可以使用 Items 或 ItemsSource 填充列表，但无法同时使用这两者。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果你设置 ItemsSource 属性并使用代码向 Items 集合中添加项目，将引发异常。
+**重要提示**  可以使用 Items 或 ItemsSource 填充列表，但无法同时使用这两者。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果你设置 ItemsSource 属性并使用代码向 Items 集合中添加项目，将引发异常。
 
-> **注意**&nbsp;&nbsp;为方便起见，本文中的许多示例直接填充了 **Items** 集合。 但是，列表中的项目来自于动态源的情况更常见，例如书籍列表来自于在线数据库。 出于此目的，你使用 **ItemsSource** 属性。 
+> **注意**  为方便起见，本文中的许多示例直接填充了 **Items** 集合。 但是，列表中的项目来自于动态源的情况更常见，例如书籍列表来自于在线数据库。 出于此目的，你使用 **ItemsSource** 属性。 
 
 ### 将项添加到项集合
 
@@ -156,7 +156,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 在此示例中，数据项是简单的字符串。 使用 DataTemplate 将图像添加到字符串左侧，并用蓝色显示该字符串。  
 
-> **注意**&nbsp;&nbsp;当在 DataTemplate 中使用 [x:Bind 标记扩展](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，必须在 DataTemplate 上指定 DataType (`x:DataType`)。
+> **注意**  当在 DataTemplate 中使用 [x:Bind 标记扩展](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，必须在 DataTemplate 上指定 DataType (`x:DataType`)。
 
 **XAML**
 ```XAML
@@ -202,7 +202,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 你可以通过在项目面板上调整属性来修改项目布局，或者可以将默认面板替换为其他面板。
 
-> 注意&nbsp;&nbsp; 如果更改 ItemsPanel，注意不要禁用虚拟化。 **ItemsStackPanel** 和 **ItemsWrapGrid** 均支持虚拟化，所以可以安全使用它们。 如果你使用任何其他面板，可能会禁用虚拟化，并且降低列表视图的性能。 有关详细信息，请参阅[性能](https://msdn.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui)下的列表视图文章。 
+> 注意   如果更改 ItemsPanel，注意不要禁用虚拟化。 **ItemsStackPanel** 和 **ItemsWrapGrid** 均支持虚拟化，所以可以安全使用它们。 如果你使用任何其他面板，可能会禁用虚拟化，并且降低列表视图的性能。 有关详细信息，请参阅[性能](https://msdn.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui)下的列表视图文章。 
 
 此示例显示如何通过更改 **ItemsStackPanel** 的 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.orientation.aspx) 属性来使 **ListView** 在水平列表中设置项目容器的布局。
 因为默认情况下列表视图垂直滚动，所以你还需要在列表视图的内部 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) 上调整某些属性以使其可以水平滚动。
@@ -211,7 +211,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 - [ScrollViewer.VerticalScrollMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx) 设置为 **Disabled** 
 - [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) 设置为 **Hidden** 
 
-> **注意**&nbsp;&nbsp;显示这些示例时，列表视图宽度不受约束，因此不会显示水平滚动条。 如果你运行此代码，可以在 ListView 上设置 `Width="180"` 来使滚动条显示。
+> **注意**  显示这些示例时，列表视图宽度不受约束，因此不会显示水平滚动条。 如果你运行此代码，可以在 ListView 上设置 `Width="180"` 来使滚动条显示。
 
 **XAML**
 ```xaml
@@ -239,7 +239,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
  在下一个示例中，通过使用 **ItemsWrapGrid** 而非 **ItemsStackPanel**，**ListView** 在垂直换行列表中设置项目的布局。 
  
-> **注意**&nbsp;&nbsp;列表视图的高度必须受限，以强制控件使容器换行。
+> **注意**  列表视图的高度必须受限，以强制控件使容器换行。
 
 **XAML**
 ```xaml
@@ -273,7 +273,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 你可以选择多种方法来使用户与列表视图交互。 默认情况下，用户可选择一个项目。 你可以更改 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) 属性以启用多选或禁用选择。 你可以设置 [**IsItemClickEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) 属性，以便用户单击某个项目即可调用操作（例如按钮），而不是选择该项目。
 
-> **注意**&nbsp;&nbsp;ListView 和 GridView 均将 [**ListViewSelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewselectionmode.aspx) 枚举用于其 SelectionMode 属性。 默认情况下，IsItemClickEnabled 为 **False**，因此你需要仅将其设置为启用单击模式。
+> **注意**  ListView 和 GridView 均将 [**ListViewSelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewselectionmode.aspx) 枚举用于其 SelectionMode 属性。 默认情况下，IsItemClickEnabled 为 **False**，因此你需要仅将其设置为启用单击模式。
 
 此表显示用户可与列表视图交互的方式以及响应交互的方式。
 
@@ -285,7 +285,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 扩展选择 | SelectionMode = **Extended**、IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
 单击 | SelectionMode = **None**、IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | 不适用 
 
-> **注意**&nbsp;&nbsp;从 Windows 10 开始，你可以启用 IsItemClickEnabled 以引发 ItemClick 事件，同时 SelectionMode 也设置为 Single、Multiple 或 Extended。 如果你执行此操作，将先后引发 ItemClick 事件和 SelectionChanged 事件。 在某些情况下（例如在 ItemClick 事件处理程序中导航到其他页面），不会引发 SelectionChanged 事件，并且不会选择该项目。
+> **注意**  从 Windows 10 开始，你可以启用 IsItemClickEnabled 以引发 ItemClick 事件，同时 SelectionMode 也设置为 Single、Multiple 或 Extended。 如果你执行此操作，将先后引发 ItemClick 事件和 SelectionChanged 事件。 在某些情况下（例如在 ItemClick 事件处理程序中导航到其他页面），不会引发 SelectionChanged 事件，并且不会选择该项目。
 
 可以采用 XAML 或代码设置这些属性，如下所示。
 
@@ -456,7 +456,7 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 
 [**SelectAll**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectall.aspx)、[**SelectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectrange.aspx) 和 [**DeselectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.deselectrange.aspx) 方法提供比使用 SelectedItems 属性更高效的修改选择的方法。 这些方法使用项目索引范围进行选择或取消选择。 虚拟化的项目将保持虚拟化状态，因为仅使用了索引。 指定范围中的所有项目均已选定（或已取消选定），无论初始选择状态是什么。 SelectionChanged 事件在每次调用这些方法时仅发生一次。
 
-> **重要提示**&nbsp;&nbsp;仅当 SelectionMode 属性设置为 Multiple 或 Extended 时才应调用这些方法。 如果在 SelectionMode 是 Single 或 None 时调用 SelectRange，将引发异常。
+> **重要提示**  仅当 SelectionMode 属性设置为 Multiple 或 Extended 时才应调用这些方法。 如果在 SelectionMode 是 Single 或 None 时调用 SelectRange，将引发异常。
 
 当使用索引范围选择项目时，请使用 [**SelectedRanges**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectedranges.aspx) 属性获取列表中的所有选定范围。
 

@@ -19,7 +19,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 发布完应用后，你可以通过在仪表板中创建另一个提交来发布更新版本。 通过创建新提交，你可以做出并发布任何所需更改，无论你是要上载新程序包还是仅更改价格或类别等详细信息都是如此。 若要创建应用的新提交，单击在“应用概述”页面上显示的最新提交旁边的“更新”****。
 
-> **注意**&nbsp;&nbsp;文档的此部分介绍了如何在开发人员中心仪表板上创建应用提交。 此外，你也可以使用 [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动创建应用提交。
+> **注意**  文档的此部分介绍了如何在开发人员中心仪表板上创建应用提交。 此外，你也可以使用 [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) 自动创建应用提交。
 
 ## 应用提交清单
 
@@ -101,7 +101,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-**注意**&nbsp;&nbsp;有关直接向企业发布业务线 (LOB) 应用的信息，请参阅[向企业分配 LOB 应用](distribute-lob-apps-to-enterprises.md)。
+**注意**  有关直接向企业发布业务线 (LOB) 应用的信息，请参阅[向企业分配 LOB 应用](distribute-lob-apps-to-enterprises.md)。
 
 
 

@@ -13,7 +13,7 @@ ms.openlocfilehash: 3abef943530cc756de117edccc5ab16e5f178604
 
 Microsoft 支持的通用 Windows 平台 (UWP) 应用中以前的广告 SDK 版本，通过使用 **AdMediatorControl** 类来显示横幅广告，从而允许开发人员通过显示来自我们的合作伙伴网络（AOL 和 AppNexus）以及 AdDuplex 的横幅广告来优化其广告收益。 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 不再支持 **AdMediatorControl** 类。 如果现有应用使用的是之前 SDK 中的 **AdMediatorControl** 类，并且你希望将其迁移到使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 的 UWP 应用，请按照本文中的说明将代码更新为使用 **AdControl** 类而非 **AdMediatorControl** 类。 你可以选择使用加权或评级方法，将应用配置为使用 AdDuplex 进行广告中介配置。
 
->**注意**&nbsp;&nbsp;本文中的代码示例仅供演示。 你可能需要对代码示例进行调整，以便在你的应用中运行。
+>**注意**  本文中的代码示例仅供演示。 你可能需要对代码示例进行调整，以便在你的应用中运行。
 
 ## 先决条件
 
@@ -21,7 +21,7 @@ Microsoft 支持的通用 Windows 平台 (UWP) 应用中以前的广告 SDK 版�
 * 装有 Visual Studio 2015 和 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 的开发计算机。
 * 如果你想要使用 AdDuplex 进行广告中介配置，还必须在开发计算机上安装了 [AdDuplex Windows 10 SDK](https://visualstudiogallery.msdn.microsoft.com/6930860a-e64b-4b46-9d72-62d7fddda077)。
 
-  >**注意**&nbsp;&nbsp;作为从上述链接运行 AdDuplex SDK 安装程序的替代方法，你可以在 Visual Studio 2015 中为你的 UWP 应用项目安装 AdDuplex 库。 在 Visual Studio 2015 中打开 UWP 应用项目后，单击“项目”**** > “管理 NuGet 程序包”****、搜索名为“AdDuplexWin10”****的 NuGet 程序包，然后安装该程序包。
+  >**注意**  作为从上述链接运行 AdDuplex SDK 安装程序的替代方法，你可以在 Visual Studio 2015 中为你的 UWP 应用项目安装 AdDuplex 库。 在 Visual Studio 2015 中打开 UWP 应用项目后，单击“项目”**** > “管理 NuGet 程序包”****、搜索名为“AdDuplexWin10”****的 NuGet 程序包，然后安装该程序包。
 
 ## 步骤 1：检索你的应用程序 ID 和广告单元 ID
 
@@ -72,7 +72,7 @@ Microsoft 支持的通用 Windows 平台 (UWP) 应用中以前的广告 SDK 版�
 
 如果你仅将 Microsoft 付费广告用于广告中介配置，请按照以下步骤操作。
 
-  >**注意**&nbsp;&nbsp;这些步骤假设要在其上显示广告的应用页面包含名为“myAdGrid”****的空网格，例如 ```<Grid x:Name="myAdGrid"/>```。 在这些步骤中，将完全在代码（而非 XAML）中创建和配置广告控件。
+  >**注意**  这些步骤假设要在其上显示广告的应用页面包含名为“myAdGrid”****的空网格，例如 ```<Grid x:Name="myAdGrid"/>```。 在这些步骤中，将完全在代码（而非 XAML）中创建和配置广告控件。
 
 1. 在 Visual Studio 中，打开你的 UWP 应用项目。
 2.  在“解决方案资源管理器”****窗口中，右键单击“引用”****，然后选择“添加引用...”****。
@@ -140,7 +140,7 @@ Microsoft 支持的通用 Windows 平台 (UWP) 应用中以前的广告 SDK 版�
 
 如果你使用 Microsoft 自家广告或 AdDuplex 以及 Microsoft 付费广告，并且想要继续使用 AdDuplex 进行广告中介配置，请按照本部分中的步骤操作。 代码示例支持 AdDuplex 和 Microsoft 自家广告。 如果你使用 AdDuplex 而非 Microsoft 自家广告（反之亦然），请删除不适用于你的方案的代码。
 
-  >**注意**&nbsp;&nbsp;这些步骤假设要在其上显示广告的应用页面包含名为“myAdGrid”****的空网格，例如 ```<Grid x:Name="myAdGrid"/>```。 在这些步骤中，将完全在代码（而非 XAML）中创建和配置广告控件。
+  >**注意**  这些步骤假设要在其上显示广告的应用页面包含名为“myAdGrid”****的空网格，例如 ```<Grid x:Name="myAdGrid"/>```。 在这些步骤中，将完全在代码（而非 XAML）中创建和配置广告控件。
 
 1. 在 Visual Studio 中，打开你的 UWP 应用项目。
 2.  在“解决方案资源管理器”****窗口中，右键单击“引用”****，然后选择“添加引用...”****。

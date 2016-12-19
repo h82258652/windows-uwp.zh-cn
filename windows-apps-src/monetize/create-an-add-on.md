@@ -16,7 +16,7 @@ ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
 
 在 Windows 应用商店提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用创建加载项（也称为应用内产品或 IAP）。
 
->**注意**&nbsp;&nbsp;此方法无需任何提交即可创建加载项。 若要创建加载项提交，请参阅[管理加载项提交](manage-add-on-submissions.md)中的方法。
+>**注意**  此方法无需任何提交即可创建加载项。 若要创建加载项提交，请参阅[管理加载项提交](manage-add-on-submissions.md)中的方法。
 
 ## 先决条件
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
 * 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
->**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
 ## 请求
 

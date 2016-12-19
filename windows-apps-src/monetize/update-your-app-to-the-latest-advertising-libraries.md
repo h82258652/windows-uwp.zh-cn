@@ -24,7 +24,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 如果你遇到任何问题或需要帮助，请[联系支持人员](http://go.microsoft.com/fwlink/?LinkId=393643)。
 
 >**注意**
-            &nbsp;&nbsp;如果你之前已将应用更新为使用 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)（适用于 UWP 应用）或 [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk)（适用于 Windows8.1 和 Windows Phone 8.x 应用），则应用已使用最新的可用广告 SDK，并且你无需对应用进行任何进一步的更改。
+              如果你之前已将应用更新为使用 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)（适用于 UWP 应用）或 [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk)（适用于 Windows 8.1 和 Windows Phone 8.x 应用），则应用已使用最新的可用广告 SDK，并且你无需对应用进行任何进一步的更改。
 
 ## 先决条件
 
@@ -33,7 +33,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 * 应用的 .appx 或 .xap 包。
 
   >**注意**
-            &nbsp;&nbsp;如果你不再有应用的 .appx 或 .xap 包，但仍然有包含曾用于生成应用的 Visual Studio 和广告 SDK 版本的开发计算机，则可以在 Visual Studio 中重新生成 .appx 或 .xap 包。
+              如果你不再有应用的 .appx 或 .xap 包，但仍然有包含曾用于生成应用的 Visual Studio 和广告 SDK 版本的开发计算机，则可以在 Visual Studio 中重新生成 .appx 或 .xap 包。
 
 <span id="part-1" />
 ## 第 1 部分：确定是否需要更新应用
@@ -44,7 +44,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 如果应用使用 **AdControl** 显示横幅广告，请按照这些说明操作。
 
-**适用于 Windows10 的 UWP 应用**
+**适用于 Windows 10 的 UWP 应用**
 
 1. 创建应用的 .appx 包副本以便不干扰原始软件包包、重命名该副本使其具有 .zip 扩展名，然后提取文件内容。
 
@@ -56,7 +56,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 <span/>
 
-**Windows8.1 或 Windows Phone 8.x 应用**
+**Windows 8.1 或 Windows Phone 8.x 应用**
 
 1. 创建应用的 .appx 或 .xap 包副本以便不干扰原始软件包包、重命名该副本使其具有 .zip 扩展名，然后提取文件内容。
 
@@ -88,7 +88,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
     </thead>
     <tbody>
       <tr class="odd">
-        <td align="left"><p>Windows8.1 XAML</p></td>
+        <td align="left"><p>Windows 8.1 XAML</p></td>
         <td align="left"><p>UniversalXamlAdControl.Windows.dll</p></td>
         <td align="left"><p>8.5.1601.07018</p></td>
       </tr>
@@ -98,7 +98,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
         <td align="left"><p>8.5.1601.07018</p></td>
       </tr>
       <tr class="odd">
-        <td align="left"><p>Windows8.1 JavaScript/HTML<br/>Windows Phone 8.1 JavaScript/HTML</p></td>
+        <td align="left"><p>Windows 8.1 JavaScript/HTML<br/>Windows Phone 8.1 JavaScript/HTML</p></td>
         <td align="left"><p>UniversalSharedLibrary.Windows.dll</p></td>
         <td align="left"><p>8.5.1601.07018</p></td>
       </tr>
@@ -121,15 +121,15 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 <span/>
 
-**Windows8.0 应用**
+**Windows 8.0 应用**
 
-* 从 2017 年 1 月开始，不再向面向 Windows8.0 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows10 的 UWP 应用。 大多数 Windows8.0 应用流量现在在使用 Windows10 的设备上运行。
+* 从 2017 年 1 月开始，不再向面向 Windows 8.0 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows 10 的 UWP 应用。 大多数 Windows 8.0 应用流量现在在使用 Windows 10 的设备上运行。
 
 <span/>
 
 **Windows Phone 7.x 应用**
 
-* 从 2017 年 1 月开始，不再向面向 Windows Phone 7.x 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows Phone 8.1 应用或转换为面向 Windows10 的 UWP 应用。 大多数 Windows7.x 应用流量现在在使用 Windows Phone 8.1 或 Windows10 的设备上运行。
+* 从 2017 年 1 月开始，不再向面向 Windows Phone 7.x 的应用提供横幅广告。 为了避免丢失的印象，我们建议你将项目转换为面向 Windows Phone 8.1 应用或转换为面向 Windows 10 的 UWP 应用。 大多数 Windows 7.x 应用流量现在在使用 Windows Phone 8.1 或 Windows 10 的设备上运行。
 
 <span/>
 
@@ -137,13 +137,13 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 如果应用使用 **AdMediatorControl** 显示横幅广告，请按照以下说明确定是否需要更新应用。
 
-**适用于 Windows10 的 UWP 应用**
+**适用于 Windows 10 的 UWP 应用**
 
 * UWP 应用不再支持 **AdMediatorControl**。 必须按照以下部分中的说明迁移到使用 **AdControl**。 继续到[第 2 部分](update-your-app-to-the-latest-advertising-libraries.md#part-2)。
 
 <span/>
 
-**Windows8.1 或 Windows Phone 8.1 应用**
+**Windows 8.1 或 Windows Phone 8.1 应用**
 
 1. 创建应用的 .appx 或 .xap 包副本以便不干扰原始软件包包、重命名该副本使其具有 .zip 扩展名，然后提取文件内容。
 
@@ -162,10 +162,10 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 如果应用使用早期的 SDK 版本，请按照以下说明确保你的开发计算机上具有最新的 SDK。
 
-1. 确保开发计算机已安装 Visual Studio 2015（适用于 UWP、Windows8.1 或 Windows Phone 8.x 项目）或 Visual Studio 2013（适用于 Windows8.1 或 Windows Phone 8.x 项目）。
+1. 确保开发计算机已安装 Visual Studio 2015（适用于 UWP、Windows 8.1 或 Windows Phone 8.x 项目）或 Visual Studio 2013（适用于 Windows 8.1 或 Windows Phone 8.x 项目）。
 
   >**注意**
-            &nbsp;&nbsp;如果 Visual Studio 在开发计算机上处于打开状态，请在执行以下步骤前关闭它。
+              如果 Visual Studio 在开发计算机上处于打开状态，请在执行以下步骤前关闭它。
 
 1.  从开发计算机中卸载 Microsoft Advertising SDK 和广告中介 SDK 的所有以前版本。
 
@@ -178,14 +178,14 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
   ```
 
 3.  为应用安装最新的 SDK：
-  * 对于 Windows10 上的 UWP 应用，请安装 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)。
+  * 对于 Windows 10 上的 UWP 应用，请安装 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)。
   * 对于面向较早操作系统版本的应用，请安装 [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk)。
 
 ## 第 3 部分：更新项目
 
 按照以下说明更新项目。
 
-### 适用于 Windows10 的 UWP 项目
+### 适用于 Windows 10 的 UWP 项目
 
 <span/>
 
@@ -195,7 +195,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 <span/>
 
-### Windows8.1 或 Windows Phone 8.1（XAML 或 JavaScript/HTML）项目
+### Windows 8.1 或 Windows Phone 8.1（XAML 或 JavaScript/HTML）项目
 
 <span/>
 

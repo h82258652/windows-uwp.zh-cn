@@ -4,20 +4,18 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "在 Windows 应用商店提交 API 中使用这些方法，来管理已注册到 Windows 开发人员中心帐户的应用的加载项提交。"
 title: "使用 Windows 应用商店提交 API 管理加载项提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 4a1ea50d72e0f754658d8ee99755b873619e1969
-ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: a5e1f8940f53f228808e5a6540759199c4440645
 
 ---
 
-# 使用 Windows 应用商店提交 API 管理加载项提交
+# <a name="manage-add-on-submissions-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 管理加载项提交
 
 
 
 在 Windows 应用商店提交 API 中使用以下方法，来管理已注册到 Windows 开发人员中心帐户的应用的加载项（也称为应用内产品或 IAP）提交。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 在使用这些方法来创建或管理加载项的提交前，该加载项必须已存在于开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)，或者使用[管理加载项](manage-add-ons.md)中所述的 Windows 应用商店提交 API 方法，可以创建加载项。
-
->**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的加载项提交的定价数据模型。 实现此更改后，**定价**资源将不再受支持，并且你将暂时无法使用 Windows 应用商店提交 API 获取或修改加载项提交的定价和销售数据。 我们将在将来更新该 API，以引入以编程方式访问加载项提交的定价信息的新方法。 有关详细信息，请参阅[定价资源](#pricing-object)部分。
+>**注意**  这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。 在使用这些方法来创建或管理加载项的提交前，该加载项必须已存在于开发人员中心帐户中。 通过[使用开发人员中心仪表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)，或者使用[管理加载项](manage-add-ons.md)中所述的 Windows 应用商店提交 API 方法，可以创建加载项。
 
 | 方法        | URI    | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -29,7 +27,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 | DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}``` | 删除加载项提交。 有关详细信息，请参阅[删除加载项提交](delete-an-add-on-submission.md)。 |
 
 <span id="create-an-add-on-submission">
-## 创建加载项提交
+## <a name="create-an-add-on-submission"></a>创建加载项提交
 
 若要创建加载项的提交，请遵循此过程。
 
@@ -53,7 +51,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
   PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
   ```
 
-  >**注意**&nbsp;&nbsp;如果要为提交添加新的图标，请确保更新提交数据以便在 ZIP 存档中引用这些文件的名称和相对路径。
+  >**注意**  如果要为提交添加新的图标，请确保更新提交数据以便在 ZIP 存档中引用这些文件的名称和相对路径。
 
 4. 如果要为提交添加新的图标，请将 ZIP 存档上载到 SAS URI，该 URI 已在步骤 2 中调用的 POST 方法的响应正文中提供。 有关详细信息，请参阅[共享访问签名，第 2 部分：使用 Blob 存储创建和使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
@@ -83,12 +81,12 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 7. 在提交成功完成之后，提交会发送至应用商店以供引入。 可以通过使用前面的方法，或者通过访问开发人员中心仪表板，继续监视提交进度。
 
-## 资源
+## <a name="resources"></a>资源
 
 这些方法使用以下资源设置数据格式。
 
 <span id="add-on-submission-object" />
-### 加载项提交
+### <a name="add-on-submission"></a>加载项提交
 
 此资源表示加载项的提交。 以下示例演示了此资源的格式。
 
@@ -123,17 +121,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -185,7 +173,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 | friendlyName  | 字符串  |  用于显示的加载项友好名称。  |
 
 <span id="listing-object" />
-### 列表
+### <a name="listing"></a>列表
 
 此资源包含加载项的列表信息。 此资源具有以下值。
 
@@ -196,7 +184,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 |  title               |     字符串    |   加载项列表的标题。   |  
 
 <span id="icon-object" />
-### 图标
+### <a name="icon"></a>图标
 
 此资源包含加载项列表的图标数据。 此资源具有以下值。
 
@@ -206,32 +194,28 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 |  fileStatus               |   字符串      |  图标文件的状态。 这可以是以下值之一： <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />
-### 定价
+### <a name="pricing"></a>定价
 
-此资源包含加载项的定价信息。
+此资源包含加载项的定价信息。 此资源具有以下值。
 
->**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的加载项提交的定价数据模型。 实现此更改后，**定价**资源将不再受支持，并且你将暂时无法使用 Windows 应用商店提交 API 获取或修改加载项提交的定价和销售数据。 你将注意到以下行为更改：
-
-   > * 调用 [GET 方法以获取加载项提交](get-an-add-on-submission.md)后，**定价**资源将为空。 可继续使用开发人员中心仪表板获取加载项提交的定价数据。
-   > * 调用 [PUT 方法更新加载项提交](update-an-add-on-submission.md)时，将忽略**定价**资源中的信息。 可继续使用开发人员中心仪表板更改加载项提交的定价数据。
-
-> 将来，我们将更新 Windows 应用商店提交 API，以引入以编程方式获取和更新加载项提交的定价信息的新方法。
-
-此资源具有以下值。
-
-| 值           | 类型    | 描述                                                                                                                                                                                                                          |
+| 值           | 类型    | 描述               |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[加载项在特定市场中的自定义价格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。     |     
-|  sales               |   数组      |  包含加载项销售信息的对象数组。 有关详细信息，请参阅下面的[销售](#sale-object)部分。    |     
+|  sales               |   array      |  **已弃用**。 包含加载项销售信息的对象数组。 有关详细信息，请参阅下面的[销售](#sale-object)部分。    |     
 |  priceId               |   字符串      |  用于指定加载项[基价](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)的[价格段](#price-tiers)。    |
 
 
 <span id="sale-object" />
-### 销售
+### <a name="sale"></a>销售
 
 此资源包含加载项的销售信息。
 
->**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的加载项提交的定价数据模型。 实现此更改后，**销售**资源将不再受支持，并且你将暂时无法使用 Windows 应用商店提交 API 获取或修改加载项提交的销售数据。 我们将在将来更新该 API，以引入以编程方式访问加载项提交的销售信息的新方法。 有关详细信息，请参阅[定价资源](#pricing-object)部分。
+>**重要信息**   **销售**资源不再受支持，并且当前不能使用 Windows 应用商店提交 API 获取或修改加载项提交的销售数据：
+
+   > * 调用 [GET 方法以获取加载项提交](get-an-add-on-submission.md)后，*销售*值将为空。 你可以继续使用开发人员中心仪表板获取加载项提交的销售数据。
+   > * 调用 [PUT 方法以更新加载项提交](update-an-add-on-submission.md)时，将忽略*销售*值中的信息。 你可以继续使用开发人员中心仪表板更改加载项提交的销售数据。
+
+> 将来，我们将更新 Windows 应用商店提交 API，以引入以编程方式访问加载项提交的销售信息的新方法。
 
 此资源具有以下值。
 
@@ -246,7 +230,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 <span id="status-details-object" />
-### 状态详细信息
+### <a name="status-details"></a>状态详细信息
 
 此资源包含有关提交状态的附加详细信息。 此资源具有以下值。
 
@@ -258,7 +242,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 <span id="status-detail-object" />
-### 状态详细信息
+### <a name="status-detail"></a>状态详细信息
 
 此资源包含关于提交的任何相关错误或警告的附加详细信息。 此资源具有以下值。
 
@@ -269,7 +253,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 <span id="certification-report-object" />
-### 认证报告
+### <a name="certification-report"></a>认证报告
 
 此资源提供对提交的认证报告数据的访问权限。 此资源具有以下值。
 
@@ -280,13 +264,13 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 
-## 枚举
+## <a name="enums"></a>枚举
 
 这些方法使用以下枚举。
 
 
 <span id="price-tiers" />
-### 价格段
+### <a name="price-tiers"></a>价格段
 
 以下值表示加载项提交的可用价格段。
 
@@ -299,7 +283,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 <span id="submission-status-code" />
-### 提交状态代码
+### <a name="submission-status-code"></a>提交状态代码
 
 以下值表示提交的状态代码。
 
@@ -322,7 +306,7 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 <span/>
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Windows 应用商店提交 API 管理加载项](manage-add-ons.md)
@@ -330,6 +314,6 @@ ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

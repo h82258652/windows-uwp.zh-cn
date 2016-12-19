@@ -6,11 +6,11 @@ ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 38ee8ae177898e20d45545c1cfd51a0dd24f7858
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: a00796da398d6e0246caac43b18fb688a9e03fce
 
 ---
-# 创建自适应磁贴
+# <a name="create-adaptive-tiles"></a>创建自适应磁贴
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,27 @@ ms.openlocfilehash: 38ee8ae177898e20d45545c1cfd51a0dd24f7858
 
 （如果你愿意，你仍然可以在为 Windows 10 设计通知时使用 [Windows 8 磁贴模板目录](https://msdn.microsoft.com/library/windows/apps/hh761491)中的预设模板。）
 
-## 开始使用
 
+## <a name="getting-started"></a>入门
 
-**安装 NotificationsExtensions。** 如果你希望使用 C# 而不是 XML 来生成通知，请安装名为 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) 的 NuGet 程序包。 本文中提供的 C# 示例使用 NotificationsExtensions。
+**安装通知库。** 如果希望使用 C# 而不是 XML 来生成通知，请安装名为 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 程序包（搜索“notifications uwp”）。 本文中提供的 C# 示例使用 NuGet 程序包的版本 1.0.0。
 
 **安装通知可视化工具。** 此免费 UWP 应用通过在你编辑时提供磁贴的即时可视预览来帮助你设计自适应动态磁贴，类似于 Visual Studio 的 XAML 编辑器/设计视图。 你可以阅读[此博客文章](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx)获取详细信息，并且可以在[此处](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)下载通知可视化工具。
 
-## 用法指南
+
+## <a name="how-to-send-a-tile-notification"></a>如何发送磁贴通知
+
+请阅读我们的[发送本地磁贴通知的快速入门](tiles-and-notifications-create-adaptive-tiles.md)。 在此页面上的文档介绍使用自适应磁贴时所具有的所有视觉 UI 可能性。
+
+
+## <a name="usage-guidance"></a>用法指南
 
 
 自适应模板设计用于跨不同的外形规格和通知类型工作。 组和子组等元素将内容链接在一起，并且不会对其本身暗示特定的可视行为。 通知的最终外观应基于将显示它的特定设备，无论它是手机、平板电脑、台式机还是其他设备。
 
 提示是可选属性，可添加到元素以实现特定的可视行为。 提示可以特定于设备，也可以特定于通知。
 
-## 基本示例
+## <a name="a-basic-example"></a>基本示例
 
 
 此示例演示自适应磁贴模板可以生成的内容。
@@ -73,22 +79,22 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = "Jennifer Parker",
-                        Style = TileTextStyle.Subtitle
+                        HintStyle = AdaptiveTextStyle.Subtitle
                     },
   
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = "Photos from our trip",
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
   
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = "Check out these awesome photos I took while in New Zealand!",
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
@@ -103,7 +109,7 @@ TileContent content = new TileContent()
 
 ![快速示例磁贴](images/adaptive-tiles-quicksample.png)
 
-## 磁贴大小
+## <a name="tile-sizes"></a>磁贴大小
 
 
 每种磁贴大小的内容在 XML 负载内的单独 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素中单独指定。 通过将模板属性设置为以下值之一，选择目标大小：
@@ -150,7 +156,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Small" }
+                    new AdaptiveText() { Text = "Small" }
                 }
             }
         },
@@ -161,7 +167,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Medium" }
+                    new AdaptiveText() { Text = "Medium" }
                 }
             }
         },
@@ -172,7 +178,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Wide" }
+                    new AdaptiveText() { Text = "Wide" }
                 }
             }
         },
@@ -183,7 +189,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Large" }
+                    new AdaptiveText() { Text = "Large" }
                 }
             }
         }
@@ -195,7 +201,7 @@ TileContent content = new TileContent()
 
 ![自适应磁贴大小：小、中、宽和大](images/adaptive-tiles-sizes.png)
 
-## 品牌
+## <a name="branding"></a>品牌
 
 
 你可以控制动态磁贴底部的品牌（显示名称和角徽标），方法是使用通知负载上的品牌属性。 你可以选择显示“无”、仅“名称”、仅“徽标”，或使用“nameAndLogo”显示两者。
@@ -211,12 +217,6 @@ TileContent content = new TileContent()
 ```
 
 ```CSharp
-new TileVisual()
-{
-    Branding = TileBranding.Logo,
-    ...
-}
-
 new TileVisual()
 {
     Branding = TileBranding.Logo,
@@ -256,13 +256,13 @@ TileContent content = new TileContent()
     Visual = new TileVisual()
     {
         Branding = TileBranding.NameAndLogo,
- 
+
         TileMedium = new TileBinding()
         {
             Branding = TileBranding.Logo,
             ...
         },
- 
+
         // Inherits branding from Visual
         TileWide = new TileBinding()
         {
@@ -282,7 +282,7 @@ TileContent content = new TileContent()
 
  
 
-## 显示名称
+## <a name="display-name"></a>显示名称
 
 
 你可以通过输入你使用 **displayName** 属性选择的文本字符串来替代通知的显示名称。 和品牌一样，你可以在 [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上指定它，这会影响整个通知负载，或者可以在 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上指定它，这仅影响个别磁贴。
@@ -313,13 +313,13 @@ TileContent content = new TileContent()
     {
         Branding = TileBranding.NameAndLogo,
         DisplayName = "Wednesday 22",
- 
+
         TileMedium = new TileBinding()
         {
             DisplayName = "Wed. 22",
             ...
         },
- 
+
         // Inherits DisplayName from Visual
         TileWide = new TileBinding()
         {
@@ -333,31 +333,18 @@ TileContent content = new TileContent()
 
 ![自适应磁贴显示名称](images/adaptive-tiles-displayname.png)
 
-## 文本
+## <a name="text"></a>文本
 
 
 [&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素用于显示文本。 你可以使用提示来修改文本显示方式。
 
 ```XML
-<text>This is a line of text</text></code></pre></td>
-</tr>
-</tbody>
-</table>
+<text>This is a line of text</text>
 ```
 
 
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-new TileText()
+new AdaptiveText()
 {
     Text = "This is a line of text"
 };
@@ -367,34 +354,21 @@ new TileText()
 
 ![自适应磁贴文本](images/adaptive-tiles-text.png)
 
-## 文字环绕
+## <a name="text-wrapping"></a>文字环绕
 
 
 默认情况下，文本不会换行，并将在磁贴边缘之外继续。 使用 **hint-wrap** 属性在文本元素上设置文本换行。 你还可以通过使用 **hint-minLines** 和 **hint-maxLines**（两者都接受正整数）来控制最小和最大行数。
 
 ```XML
-<text hint-wrap="true">This is a line of wrapping text</text></code></pre></td>
-</tr>
-</tbody>
-</table>
+<text hint-wrap="true">This is a line of wrapping text</text>
 ```
 
 
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-new TileText()
+new AdaptiveText()
 {
     Text = "This is a line of wrapping text",
-    Wrap = true
+    HintWrap = true
 };
 ```
 
@@ -402,7 +376,7 @@ new TileText()
 
 ![带有文字环绕的自适应磁贴](images/adaptive-tiles-textwrapping.png)
 
-## 文本样式
+## <a name="text-styles"></a>文本样式
 
 
 样式控制文本元素的字体大小、颜色和粗细。 有多种可用样式，包括每个样式的将不透明度设置为 60% 的“微妙”变体，这通常会使文本带有淡灰色阴影。
@@ -413,16 +387,16 @@ new TileText()
 ```
 
 ```CSharp
-new TileText()
+new AdaptiveText()
 {
     Text = "Header content",
-    Style = TileTextStyle.Base
+    HintStyle = AdaptiveTextStyle.Base
 },
- 
-new TileText()
+
+new AdaptiveText()
 {
     Text = "Subheader content",
-    Style = TileTextStyle.CaptionSubtle
+    HintStyle = AdaptiveTextStyle.CaptionSubtle
 }
 ```
 
@@ -480,34 +454,21 @@ new TileText()
 
  
 
-## 文本对齐
+## <a name="text-alignment"></a>文本对齐
 
 
 文本可以在水平方向上左对齐、居中对齐或右对齐。 在从左到右的语言（如英语）中，文本默认为左对齐。 在从右到左的语言（如阿拉伯语）中，文本默认为右对齐。 你可以在元素上使用 **hint-align** 属性来手动设置对齐方式。
 
 ```XML
-<text hint-align="center">Hello</text></code></pre></td>
-</tr>
-</tbody>
-</table>
+<text hint-align="center">Hello</text>
 ```
 
 
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-new TileText()
+new AdaptiveText()
 {
     Text = "Hello",
-    Align = TileTextAlign.Center
+    HintAlign = AdaptiveTextAlign.Center
 };
 ```
 
@@ -515,7 +476,7 @@ new TileText()
 
 ![自适应磁贴文本对齐](images/adaptive-tiles-textalignment.png)
 
-## 组和子组
+## <a name="groups-and-subgroups"></a>组和子组
 
 
 组允许你在语义上声明组内的内容有关联，并且必须完整显示才能使内容有意义。 例如，你可能有两个文本元素（一个标题和一个副标题），如果仅显示标题，则该内容没有意义。 通过将这些元素分组在一个子组中，元素将全部显示（如果它们可以容纳）或完全不显示（因为它们无法容纳）。
@@ -527,7 +488,6 @@ new TileText()
  
 
 ```XML
-...
 <binding template="TileWide" branding="nameAndLogo">
   <group>
     <subgroup>
@@ -547,12 +507,9 @@ new TileText()
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileWide = new TileBinding()
 {
     Branding = TileBranding.NameAndLogo,
@@ -564,10 +521,10 @@ TileWide = new TileBinding()
                 from: "Jennifer Parker",
                 subject: "Photos from our trip",
                 body: "Check out these awesome photos I took while in New Zealand!"),
- 
+
             // For spacing
-            new TileText(),
- 
+            new AdaptiveText(),
+
             CreateGroup(
                 from: "Steve Bosniak",
                 subject: "Build 2015 Dinner",
@@ -575,36 +532,33 @@ TileWide = new TileBinding()
         }
     }
 }
- 
+
 ...
- 
- 
-private static TileGroup CreateGroup(string from, string subject, string body)
+
+private static AdaptiveGroup CreateGroup(string from, string subject, string body)
 {
-    return new TileGroup()
+    return new AdaptiveGroup()
     {
         Children =
         {
-            new TileSubgroup()
+            new AdaptiveSubgroup()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = from,
-                        Style = TileTextStyle.Subtitle
+                        HintStyle = AdaptiveTextStyle.Subtitle
                     },
- 
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = subject,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
- 
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = body,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
@@ -617,7 +571,7 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 
 ![自适应磁贴组和子组](images/adaptive-tiles-groups-subgroups.png)
 
-## 子组（列）
+## <a name="subgroups-columns"></a>子组（列）
 
 
 子组还允许你将数据划分为组内的语义式部分。 对于动态磁贴，这在视觉上转换为列。
@@ -732,7 +686,6 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 下面是一个天气磁贴的示例代码，演示你可以如何实现一个带有宽度相等的五个列的磁贴：
 
 ```XML
-...
 <binding template="TileWide" displayName="Seattle" branding="name">
   <group>
     <subgroup hint-weight="1">
@@ -767,11 +720,9 @@ private static TileGroup CreateGroup(string from, string subject, string body)
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileWide = new TileBinding()
 {
     DisplayName = "Seattle",
@@ -780,58 +731,50 @@ TileWide = new TileBinding()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     CreateSubgroup("Mon", "Mostly Cloudy.png", "63°", "42°"),
- 
                     CreateSubgroup("Tue", "Cloudy.png", "57°", "38°"),
- 
                     CreateSubgroup("Wed", "Sunny.png", "59°", "43°"),
- 
                     CreateSubgroup("Thu", "Sunny.png", "62°", "42°"),
- 
                     CreateSubgroup("Fri", "Sunny.png", "71°", "66°")
                 }
             }
         }
     }
 }
+
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
-        Weight = 1,
- 
+        HintWeight = 1,
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Weather/" + image),
-                RemoveMargin = true
+                Source = "Assets/Weather/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -842,7 +785,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![天气磁贴的示例](images/adaptive-tiles-weathertile.png)
 
-## 图像
+## <a name="images"></a>图像
 
 
 &lt;image&gt; 元素用于在磁贴通知上显示图像。 图像可以嵌入到磁贴内容中（默认）、作为内容背后的背景图像，或作为从通知顶部以动画形式进入的速览图像。
@@ -854,7 +797,6 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 在未指定任何额外行为的情况下，图像将均匀收缩或展开以填充可用的宽度。 以下示例显示一个使用两列和嵌入式图像的磁贴。 嵌入式图像可拉伸以填充列的宽度。
 
 ```XML
-...
 <binding template="TileMedium" displayName="Seattle" branding="name">
   <group>
     <subgroup>
@@ -871,11 +813,9 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileMedium = new TileBinding()
 {
     DisplayName = "Seattle",
@@ -884,12 +824,11 @@ TileMedium = new TileBinding()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     CreateSubgroup("Mon", "Mostly Cloudy.png", "63°", "42°"),
- 
                     CreateSubgroup("Tue", "Cloudy.png", "57°", "38°")
                 }
             }
@@ -897,37 +836,32 @@ TileMedium = new TileBinding()
     }
 }
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Weather/" + image),
-                RemoveMargin = true
+                Source = "Assets/Weather/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -940,47 +874,42 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 放置在 &lt;binding&gt; 根或第一个组中的图像还可拉伸以适应可用的高度。
 
-### 图像对齐
+### <a name="image-alignment"></a>图像对齐
 
 可以使用 **hint-align** 属性将图像设置为左对齐、居中对齐或右对齐。 这还会导致图像以其原始分辨率显示，而不是拉伸以填充宽度。
 
 ```XML
-...
 <binding template="TileLarge">
   <image src="Assets/fable.jpg" hint-align="center"/>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileLarge = new TileBinding()
 {
     Content = new TileBindingContentAdaptive()
     {
         Children =
         {
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/fable.jpg"),
-                Align = TileImageAlign.Center
+                Source = "Assets/fable.jpg",
+                HintAlign = AdaptiveImageAlign.Center
             }
         }
     }
 }
-...
 ```
 
 **结果：**
 
 ![图像对齐示例（左对齐、居中对齐、右对齐）](images/adaptive-tiles-imagealignment.png)
 
-### 图像边距
+### <a name="image-margins"></a>图像边距
 
 默认情况下，嵌入式图像在与图像上方或图像下方的任何内容之间都有 8 个像素的边距。 可以在图像上使用 **hint-removeMargin** 属性来删除此边距。 但是，图像始终与磁贴边缘保留 8 个像素的边距，并且子组（列）始终在列之间保留 8 个像素的填充。
 
 ```XML
-...
 <binding template="TileMedium" branding="none">
   <group>
     <subgroup>
@@ -997,12 +926,9 @@ TileLarge = new TileBinding()
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileMedium = new TileBinding()
 {
     Branding = TileBranding.None,
@@ -1010,53 +936,47 @@ TileMedium = new TileBinding()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     CreateSubgroup("Mon", "4.jpg", "63°", "42°"),
- 
                     CreateSubgroup("Tue", "3.jpg", "57°", "38°")
                 }
             }
         }
     }
 }
- 
+
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
-        Weight = 1,
- 
+        HintWeight = 1,
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Numbers/" + image),
-                RemoveMargin = true
+                Source = "Assets/Numbers/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -1065,12 +985,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![提示删除边距示例](images/adaptive-tiles-removemargin.png)
 
-### 图像裁剪
+### <a name="image-cropping"></a>图像裁剪
 
 可以使用 **hint-crop** 属性将图像裁剪为圆形，该属性当前仅支持值“none”（默认值）或“circle”。
 
 ```XML
-...
 <binding template="TileLarge" hint-textStacking="center">
   <group>
     <subgroup hint-weight="1"/>
@@ -1083,72 +1002,62 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
   <text hint-style="title" hint-align="center">Hi,</text>
   <text hint-style="subtitleSubtle" hint-align="center">MasterHip</text>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileLarge = new TileBinding()
 {
     Content = new TileBindingContentAdaptive()
     {
         TextStacking = TileTextStacking.Center,
- 
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
-                    new TileSubgroup() { Weight = 1 },
- 
-                    new TileSubgroup()
+                    new AdaptiveSubgroup() { HintWeight = 1 },
+                    new AdaptiveSubgroup()
                     {
-                        Weight = 2,
+                        HintWeight = 2,
                         Children =
                         {
-                            new TileImage()
+                            new AdaptiveImage()
                             {
-                                Source = new TileImageSource("Assets/Apps/Hipstame/hipster.jpg"),
-                                Crop = TileImageCrop.Circle
+                                Source = "Assets/Apps/Hipstame/hipster.jpg",
+                                HintCrop = AdaptiveImageCrop.Circle
                             }
                         }
                     },
- 
-                    new TileSubgroup() { Weight = 1 }
+                    new AdaptiveSubgroup() { HintWeight = 1 }
                 }
             },
- 
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "Hi,",
-                Style = TileTextStyle.Title,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.Title,
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "MasterHip",
-                Style = TileTextStyle.SubtitleSubtle,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.SubtitleSubtle,
+                HintAlign = AdaptiveTextAlign.Center
             }
         }
     }
 }
-...
 ```
 
 **结果：**
 
 ![图像裁剪示例](images/adaptive-tiles-imagecropping.png)
 
-### 背景图像
+### <a name="background-image"></a>背景图像
 
 若要设置背景图像，请将图像元素放置在 &lt;binding&gt; 的根中，并将放置属性设置为“background”。
 
 ```XML
-...
 <binding template="TileWide">
   <image src="Assets\Mostly Cloudy-Background.jpg" placement="background"/>
   <group>
@@ -1161,23 +1070,21 @@ TileLarge = new TileBinding()
     ...
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileWide = new TileBinding()
 {
     Content = new TileBindingContentAdaptive()
     {
         BackgroundImage = new TileBackgroundImage()
         {
-            Source = new TileImageSource("Assets/Mostly Cloudy-Background.jpg")
+            Source = "Assets/Mostly Cloudy-Background.jpg"
         },
- 
+
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
@@ -1188,40 +1095,36 @@ TileWide = new TileBinding()
         }
     }
 }
+
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
-        Weight = 1,
- 
+        HintWeight = 1,
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Weather/" + image),
-                RemoveMargin = true
+                Source = "Assets/Weather/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -1232,96 +1135,62 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![背景图像示例](images/adaptive-tiles-backgroundimage.png)
 
-此外，你还可以使用 **hint-overlay** 在背景图像上设置黑色覆盖，该属性接受从 0 到 100 的整数，其中 0 表示无覆盖，100 表示全黑覆盖。 默认值为 20。
-
-```XML
-...
-<binding template="TileWide" hint-overlay="60">
-  <image src="Assets\Mostly Cloudy-Background.jpg" placement="background"/>
-  ...
-</binding>
-...
-```
-
-```CSharp
-...
- 
-TileWide = new TileBinding()
-{
-    Content = new TileBindingContentAdaptive()
-    {
-        BackgroundImage = new TileBackgroundImage()
-        {
-            Source = new TileImageSource("Assets/Mostly Cloudy-Background.jpg"),
-            Overlay = 60
-        },
- 
-        ...
-    }
-}
- 
-...
-```
-
-**提示覆盖结果：**
-
-![图像提示覆盖的示例](images/adaptive-tiles-image-hintoverlay.png)
-
-### 速览图像
+### <a name="peek-image"></a>速览图像
 
 你可以指定从磁贴顶部“速览”的图像。 速览图像使用动画从磁贴顶部向下/向上滑动、速览到视图中，然后再向外滑动以在磁贴上显示主要内容。 若要设置速览图像，请将图像元素放置在 &lt;binding&gt; 的根中，并将放置属性设置为“peek”。
 
 ```XML
-...
 <binding template="TileMedium" branding="name">
   <image placement="peek" src="Assets/Apps/Hipstame/hipster.jpg"/>
   <text>New Message</text>
   <text hint-style="captionsubtle" hint-wrap="true">Hey, have you tried Windows 10 yet?</text>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileWide = new TileBinding()
 {
     Branding = TileBranding.Name,
- 
     Content = new TileBindingContentAdaptive()
     {
         PeekImage = new TilePeekImage()
         {
-            Source = new TileImageSource("Assets/Apps/Hipstame/hipster.jpg")
+            Source = "Assets/Apps/Hipstame/hipster.jpg"
         },
- 
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "New Message"
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "Hey, have you tried Windows 10 yet?",
-                Style = TileTextStyle.CaptionSubtle,
-                Wrap = true
+                HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                HintWrap = true
             }
         }
     }
 }
- 
-...
 ```
 
 ![速览图像的示例](images/adaptive-tiles-imagepeeking.png)
 
 **用于速览和背景图像的圆裁剪**
 
-将以下属性用于速览和背景图像，以执行圆裁剪：
+将提示裁剪属性用于速览和背景图像，以执行圆裁剪：
 
-hint-crop="circle"
+```XML
+<image placement="peek" hint-crop="circle" src="Assets/Apps/Hipstame/hipster.jpg"/>
+```
+
+```CSharp
+new TilePeekImage()
+{
+    HintCrop = TilePeekImageCrop.Circle,
+    Source = "Assets/Apps/Hipstame/hipster.jpg"
+}
+```
 
 结果如下所示：
 
@@ -1335,75 +1204,122 @@ hint-crop="circle"
 
 ![结合使用的速览和背景图像](images/peekandbackground.png)
 
+
+### <a name="peek-and-background-image-overlays"></a>速览和背景图像覆盖
+
+可以使用 **hint-overlay** 在背景和速览图像上设置黑色覆盖，该属性接受从 0 到 100 的整数，其中 0 表示无覆盖，100 表示全黑覆盖。 你可以使用覆盖来帮助确保磁贴上的文本是可读。
+
+**在背景图像上使用提示覆盖**
+
+背景图像将默认为 20%覆盖，只要在负载中具有一些文本元素（否则它将默认为 0% 覆盖）。
+
+```XML
+<binding template="TileWide">
+  <image placement="background" hint-overlay="60" src="Assets\Mostly Cloudy-Background.jpg"/>
+  ...
+</binding>
+```
+
+```CSharp
+TileWide = new TileBinding()
+{
+    Content = new TileBindingContentAdaptive()
+    {
+        BackgroundImage = new TileBackgroundImage()
+        {
+            Source = "Assets/Mostly Cloudy-Background.jpg",
+            HintOverlay = 60
+        },
+
+        ...
+    }
+}
+```
+
+**提示覆盖结果：**
+
+![图像提示覆盖的示例](images/adaptive-tiles-image-hintoverlay.png)
+
 **在速览图像上使用提示覆盖**
 
-你可以在速览图像上使用 **hint-overlay** 添加不透明度，并使磁贴的显示名称更清晰。 如果你在 &lt;binding&gt; 元素上指定 **hint-overlay**，覆盖将应用到背景和速览图像。
+在 Windows 10 版本 1511 中，我们也支持速览图像的覆盖，就像背景图像一样。 将速览图像元素上的提示覆盖指定为从 0 到 100 的整数。 速览图像的默认覆盖为 0（无覆盖）。
 
-还可以将 **hint-overlay** 应用到具有 placement=“peek”或 placement=“background”的 &lt;image&gt; 元素，以使其中每个图像具有离散不透明度级别。 如果未指定覆盖，则背景图像的不透明度默认为 20%，而速览图像的不透明度默认为 0%。
+```XML
+<binding template="TileMedium">
+  <image hint-overlay="20" src="Assets\Map.jpg" placement="peek"/>
+  ...
+</binding>
+```
 
-本示例以 20% 不透明度（左）和 0% 不透明度（右）显示背景图像：
+```CSharp
+TileMedium = new TileBinding()
+{
+    Content = new TileBindingContentAdaptive()
+    {
+        PeekImage = new TilePeekImage()
+        {
+            Source = "Assets/Map.jpg",
+            HintOverlay = 20
+        },
+        ...
+    }
+}
+```
+
+本示例以 20% 不透明度（左）和 0% 不透明度（右）显示速览图像：
 
 ![速览图像上的提示覆盖](images/hintoverlay.png)
 
-## 垂直对齐方式（文本堆叠）
+## <a name="vertical-alignment-text-stacking"></a>垂直对齐方式（文本堆叠）
 
 
 你可以控制磁贴上的内容的垂直对齐方式，方法是在 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素和 [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 元素上使用 **hint-textStacking** 属性。 默认情况下，所有内容都垂直向顶部对齐，但你还可以使内容向底部或中心对齐。
 
-### 绑定元素上的文本堆叠
+### <a name="text-stacking-on-binding-element"></a>绑定元素上的文本堆叠
 
 当在 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 级别上应用时，文本堆叠设置通知内容（作为一个整体）的垂直对齐方式，在品牌/锁屏提醒区域上方的可用垂直空间中对齐。
 
 ```XML
-...
 <binding template="TileMedium" hint-textStacking="center" branding="logo">
   <text hint-style="base" hint-align="center">Hi,</text>
   <text hint-style="captionSubtle" hint-align="center">MasterHip</text>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileMedium = new TileBinding()
 {
     Branding = TileBranding.Logo,
- 
     Content = new TileBindingContentAdaptive()
     {
         TextStacking = TileTextStacking.Center,
- 
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "Hi,",
-                Style = TileTextStyle.Base,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.Base,
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+
+            new AdaptiveText()
             {
                 Text = "MasterHip",
-                Style = TileTextStyle.CaptionSubtle,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                HintAlign = AdaptiveTextAlign.Center
             }
         }
     }
 }
- 
-...
 ```
 
 ![绑定元素上的文本堆叠](images/adaptive-tiles-textstack-bindingelement.png)
 
-### 子组元素上的文本堆叠
+### <a name="text-stacking-on-subgroup-element"></a>子组元素上的文本堆叠
 
 当在 [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 级别上应用时，文本堆叠设置子组（列）内容的垂直对齐方式，在整个组内的可用垂直空间中对齐。
 
 ```XML
-...
 <binding template="TileWide" branding="nameAndLogo">
   <group>
     <subgroup hint-weight="33">
@@ -1415,56 +1331,51 @@ TileMedium = new TileBinding()
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileWide = new TileBinding()
 {
     Branding = TileBranding.NameAndLogo,
- 
     Content = new TileBindingContentAdaptive()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     // Image column
-                    new TileSubgroup()
+                    new AdaptiveSubgroup()
                     {
-                        Weight = 33,
+                        HintWeight = 33,
                         Children =
                         {
-                            new TileImage()
+                            new AdaptiveImage()
                             {
-                                Source = new TileImageSource("Assets/Apps/Hipstame/hipster.jpg"),
-                                Crop = TileImageCrop.Circle
+                                Source = "Assets/Apps/Hipstame/hipster.jpg",
+                                HintCrop = AdaptiveImageCrop.Circle
                             }
                         }
                     },
- 
+
                     // Text column
-                    new TileSubgroup()
+                    new AdaptiveSubgroup()
                     {
                         // Vertical align its contents
                         TextStacking = TileTextStacking.Center,
- 
                         Children =
                         {
-                            new TileText()
+                            new AdaptiveText()
                             {
                                 Text = "Hi,",
-                                Style = TileTextStyle.Subtitle
+                                HintStyle = AdaptiveTextStyle.Subtitle
                             },
- 
-                            new TileText()
+
+                            new AdaptiveText()
                             {
                                 Text = "MasterHip",
-                                Style = TileTextStyle.BodySubtle
+                                HintStyle = AdaptiveTextStyle.BodySubtle
                             }
                         }
                     }
@@ -1473,15 +1384,14 @@ TileWide = new TileBinding()
         }
     }
 }
- 
-...
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [自适应磁贴架构](tiles-and-notifications-adaptive-tiles-schema.md)
-* [GitHub 上的 NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [快速入门：发送本地磁贴通知](tiles-and-notifications-create-adaptive-tiles.md)
+* [GitHub 上的通知库](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 * [特殊磁贴模板目录](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
@@ -1493,6 +1403,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,18 +1,18 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "使用选取器打开文件和文件夹"
 description: "通过让用户与选取器交互来访问文件和文件夹。 你可以使用 FileOpenPicker 和 FileSavePicker 类获取对文件的访问权限，并使用 FolderPicker 获取对文件夹的访问权限。"
 translationtype: Human Translation
-ms.sourcegitcommit: 232008b7f80aceab201d5bedd744eedfe995648e
-ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
 
 ---
 
-# 使用选取器打开文件和文件夹
+# <a name="open-files-and-folders-with-a-picker"></a>使用选取器打开文件和文件夹
 
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -27,7 +27,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
  
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
@@ -38,7 +38,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
     请参阅[文件访问权限](file-access-permissions.md)。
 
-## 文件选取器 UI
+## <a name="file-picker-ui"></a>文件选取器 UI
 
 
 文件选取器显示信息以引导用户并在打开或保存文件时提供一致性体验。
@@ -53,7 +53,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
 ![选取了两个要打开的文件的文件选取器。](images/picker-multifile-600px.png)
 
-## 选取器的工作原理
+## <a name="how-pickers-work"></a>选取器的工作原理
 
 
 通过选取器，你的应用可以在用户的系统上访问、浏览以及保存文件和文件夹。 你的应用会接收这些选取项作为 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 对象，然后你能在这些对象上进行操作。
@@ -64,7 +64,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
 ![显示将文件选取器用作两个应用之间的接口时一个应用获取文件以从另一个应用打开的过程的图表。](images/app-to-app-diagram-600px.png)
 
-## 选取单个文件：完成代码列表
+## <a name="pick-a-single-file-complete-code-listing"></a>选取单个文件：完成代码列表
 
 
 ```CSharp
@@ -88,7 +88,7 @@ else
 }
 ```
 
-## 选取单个文件：分步
+## <a name="pick-a-single-file-step-by-step"></a>选取单个文件：分步
 
 
 使用文件选取器需要创建和自定义文件选取器对象，然后显示文件选取器，以使用户能选取一个或多个项目。
@@ -153,7 +153,7 @@ var files = await picker.PickMultipleFilesAsync();
         }
 ```
 
-## 选取文件夹：完整代码列表
+## <a name="pick-a-folder-complete-code-listing"></a>选取文件夹：完整代码列表
 
 
 ```CSharp
@@ -185,6 +185,6 @@ else
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

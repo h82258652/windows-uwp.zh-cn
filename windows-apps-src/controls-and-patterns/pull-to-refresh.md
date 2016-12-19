@@ -33,7 +33,7 @@ RefreshableListView 提供“自动刷新”模式，用于确定请求刷新的
 - 关闭：仅在超出 `PullThreshold` 的同时释放列表才请求刷新。 当用户释放滚动条时，指示器会以动画方式退出视图。 如果它（在手机上）可用，将显示状态栏指示器。
 - 打开：在超出 `PullThreshold` 时立即请求刷新，无论是否已释放列表。 指示器仍保留在视图中，直到检索到新数据，之后以动画方式退出视图。 **Deferral** 用于在提取数据完成时通知应用。
 
-> **注意**&nbsp;&nbsp;示例中的代码也适用于 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)。 若要修改 GridView，请从 GridView（而非 ListView）派生自定义类，并修改默认 GridView 模板。
+> **注意**  示例中的代码也适用于 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)。 若要修改 GridView，请从 GridView（而非 ListView）派生自定义类，并修改默认 GridView 模板。
 
 ## 添加刷新指示器
 
@@ -47,7 +47,7 @@ RefreshableListView 提供“自动刷新”模式，用于确定请求刷新的
 
 在下拉刷新示例中，`RefreshableListView` 控件模板通过添加刷新指示器来修改标准 **ListView** 模板。 刷新指示器放置在 [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) 上的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) 中，它是显示列表项目的部件。
 
-> **注意**&nbsp;&nbsp;`DefaultRefreshIndicatorContent` 文本框提供仅在没有设置 `RefreshIndicatorContent` 属性时显示的文本回退指示器。
+> **注意**  `DefaultRefreshIndicatorContent` 文本框提供仅在没有设置 `RefreshIndicatorContent` 属性时显示的文本回退指示器。
 
 以下是在默认 ListView 模板中修改的控件模板的部件。
 

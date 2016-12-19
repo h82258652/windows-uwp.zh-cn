@@ -4,18 +4,18 @@ description: "本主题将介绍大部分 XAML 文件的根元素中存在的 XM
 title: "XAML 命名空间和命名空间映射"
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 translationtype: Human Translation
-ms.sourcegitcommit: 3ca9492b334bf4b3d4f0fcab8fca5625f4e23fa5
-ms.openlocfilehash: cca962e4d99599206b8a559c2595ea2b0d8a52c7
+ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
+ms.openlocfilehash: 626af2ba6e1b8616f8d23419d94e621f3ce7d043
 
 ---
 
-# XAML 命名空间和命名空间映射
+# <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空间和命名空间映射
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主题将介绍大部分 XAML 文件的根元素中存在的 XML/XAML 命名空间 (**xmlns**) 映射。 它还将介绍如何为自定义类型和程序集生成类似的映射。
 
-## XAML 命名空间如何与代码定义和类型库相关
+## <a name="how-xaml-namespaces-relate-to-code-definition-and-type-libraries"></a>XAML 命名空间如何与代码定义和类型库相关
 
 无论是其一般用途还是 Windows 运行时应用编程的应用上，XAML 都用于声明对象、这些对象的属性以及表示为层次结构的对象-属性关系。 你在 XAML 中声明的对象受其他编程技术和语言定义的类型库或其他表示支持。 这些库可能是：
 
@@ -28,11 +28,11 @@ ms.openlocfilehash: cca962e4d99599206b8a559c2595ea2b0d8a52c7
 
 XAML 处理器在创建运行时对象表示时，可查找与该 XAML 命名空间关联的支持程序集的类型和成员。 出于此原因，XAML 可用作一种形式化和交换对象构造定义行为的方式，并且 XAML 可用作 Windows 应用商店应用的 UI 定义技术。
 
-## 典型 XAML 标记中使用的 XAML 命名空间
+## <a name="xaml-namespaces-in-typical-xaml-markup-usage"></a>典型 XAML 标记中使用的 XAML 命名空间
 
 XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。 默认 XAML 命名空间定义了无需使用前缀来限定即可声明哪些元素。 例如，如果声明一个元素 `<Balloon />`，XAML 分析器期望一个 **Balloon** 元素存在并且在默认的 XAML 命名空间中是有效的。 相反，如果 **Balloon** 不在已定义的默认 XAML 命名空间中，就必须使用一个前缀限定该元素名称，例如 `<party:Balloon />`。 该前缀表明该元素存在于与默认命名空间不同的 XAML 命名空间中，必须将一个 XAML 命名空间映射到前缀 **party**，然后才能使用此元素。 XAML 命名空间适用于在其中声明它们的特定元素，也适用于该元素在 XAML 结构中包含的任何元素。 出于此原因，XAML 命名空间几乎总是在 XAML 文件的根元素上声明，以充分利用这种继承性。
 
-## 默认和 XAML 语言 XAML 命名空间声明
+## <a name="the-default-and-xaml-language-xaml-namespace-declarations"></a>默认和 XAML 语言 XAML 命名空间声明
 
 在大多数 XAML 文件的根元素中，有两个 **xmlns** 声明。 第一个声明将一个 XAML 命名空间映射为默认命名空间： `xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"`
 
@@ -46,11 +46,12 @@ XAML 文件几乎总是在其根元素中声明一个默认 XAML 命名空间。
 
 XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XAML 命名空间的 XAML 处理器实现进行访问。 项目模板、示例代码和语言特性文档遵循 XAML 语言 XAML 命名空间的“x:”映射约定。 XAML 语言命名空间定义多个常用的功能，甚至对于使用 C++、C# 或 Visual Basic 的基本 Windows 运行时应用，这些功能也是必要的。 例如，为了将任何代码隐藏通过分部类联接到 XAML 文件，必须将该类命名为相关 XAML 文件的根元素中的 [x:Class 属性](x-class-attribute.md)。 或者，任何在 XAML 页面中定义为 [ResourceDictionary 和 XAML 资源引用](https://msdn.microsoft.com/library/windows/apps/mt187273)中一个键资源的元素必须在相关的对象元素上设置 [x:Key 特性](x-key-attribute.md)。
 
-## 其他 XAML 命名空间
+<span id="other-XAML-namespaces"/>
+## <a name="other-xaml-namespaces"></a>其他 XAML 命名空间
 
 除了默认命名空间和 XAML 语言 XAML 命名空间“x:”，你也可能在 Microsoft Visual Studio 生成的应用的初始默认 XAML 中看到其他的已映射 XAML 命名空间。
 
-### **d: (`http://schemas.microsoft.com/expression/blend/2008`)**
+### **<a name="d-httpschemasmicrosoftcomexpressionblend2008"></a>d: (`http://schemas.microsoft.com/expression/blend/2008`)**
 
 “d:”XAML 命名空间旨在提供设计器支持，尤其是 Microsoft Visual Studio 的 XAML 设计界面中的设计器支持。 “d:”XAML 命名空间支持 XAML 元素上的设计器或设计时特性。 这些设计器特性只影响 XAML 行为的设计方面。 如果 Windows 运行时 XAML 分析器在一个应用运行时加载相同的 XAML，设计器特性会被忽略。 一般而言，设计器特性在任何 XAML 元素上是有效的，但在实际情况中，只有某些场景适合应用设计器特性。 具体来讲，许多设计器特性是为了在你开发使用数据绑定的 XAML 和代码时，提供一种与数据上下文和数据源交互的更好体验。
 
@@ -62,19 +63,19 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 -   **d:DesignSource 特性：**为 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 指定设计时数据源，并替代 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835)。
 -   **d:DesignInstance 和 d:DesignData 标记扩展：**这些标记扩展用于为 **d:DataContext** 或 **d:DesignSource** 提供设计时数据资源。 在这里，我们不会完全记录如何使用设计时数据源资源。 有关详细信息，请参阅[设计时特性](http://go.microsoft.com/fwlink/p/?LinkId=272504)。 有关一些使用示例，请参阅[设计面图以及用于原型制作的示例数据](https://msdn.microsoft.com/library/windows/apps/mt517866)。
 
-### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
+### **<a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
 “mc:”表示并支持读取 XAML 的标记兼容性模式。 通常，“d:”前缀与特性 **mc:Ignorable** 相关联。 此技术使运行时 XAML 分析器忽略“d:”中的设计特性。
 
-### **local:** 和 **common:**
+### <a name="local-and-common"></a>**local:** 和 **common:**
 
-“local:”是一个前缀，通常会在模板化 Windows 应用商店应用项目的 XAML 页面中为你映射它。 它映射为引用相同的命名空间，该命名空间旨在包含 [x:Class 特性](x-class-attribute.md)和所有 XAML 文件（包括 app.xaml）的代码。 只要你在此相同命名空间中定义你要在 XAML 中使用的任何自定义类，你就可以使用 **local:** 前缀在 XAML 中引用你的自定义类型。 来自模板化的 Windows 应用商店应用项目的相关前缀是 **common:**。 此前缀引用包含实用程序类（例如转换器和命令）的嵌套“Common”命名空间，你可以在“解决方案资源管理器”****视图的“Common”文件夹中找到定义。
+“local:”是一个前缀，通常会在模板化 Windows 应用商店应用项目的 XAML 页面中为你映射它。 它映射为引用相同的命名空间，该命名空间旨在包含 [x:Class 特性](x-class-attribute.md)和所有 XAML 文件（包括 app.xaml）的代码。 只要你在此相同命名空间中定义你要在 XAML 中使用的任何自定义类，你就可以使用 **local:** 前缀在 XAML 中引用你的自定义类型。 来自模板化的 Windows 应用商店应用项目的相关前缀是 **common:**。 此前缀引用包含实用程序类（例如转换器和命令）的嵌套“Common”命名空间，你可以在“解决方案资源管理器”视图的“Common”文件夹中找到定义。
 
-### **vsm:**
+### **<a name="vsm"></a>vsm:**
 
 请勿使用。 “vsm:”是有时在从其他 Microsoft 技术导入的较老 XAML 模板中会看到的一个前缀。 该命名空间最初解决了旧版命名空间工具问题。 你应该在用于 Windows 运行时的任何 XAML 中删除“vsm:”的 XAML 命名空间定义，更改 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007)、[**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 和相关对象的任何前缀的用法，从而使用默认的 XAML 命名空间。 有关 XAML 迁移的详细信息，请参阅[将 Silverlight 或 WPF XAML/代码迁移到 Windows 运行时应用](https://msdn.microsoft.com/library/windows/apps/br229571)。
 
-## 将自定义类型映射到 XAML 命名空间和前缀
+## <a name="mapping-custom-types-to-xaml-namespaces-and-prefixes"></a>将自定义类型映射到 XAML 命名空间和前缀
 
 你可以映射一个 XAML 命名空间，这样可使用 XAML 访问你自己的自定义类型。 换句话说，你正在映射一个代码命名空间，因为它存在于一个定义了自定义类型的代码表示中，为它分配一个 XAML 命名空间以及一个前缀供其使用。 针对 XAML 的自定义类型可在 Microsoft .NET 语言（C# 或 Microsoft Visual Basic）或 C++ 中定义。 映射通过定义一个 **xmlns** 前缀来执行。 例如，`xmlns:myTypes` 定义一个新 XAML 命名空间，通过在所有用法中添加令牌 `myTypes:` 作为前缀来访问这个命名空间。
 
@@ -84,7 +85,7 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 不需要映射同一页面范围中的分部类。 例如，不需要前缀即可引用你为处理来自页面的 XAML UI 定义的事件而定义的任何事件处理程序。 另外，Visual Studio 生成的使用 C++、C# 或 Visual Basic 的 Windows 运行时应用项目的许多起始 XAML 页面已映射“local:”前缀，它引用项目指定的默认命名空间和分部类定义所使用的命名空间。
 
-### CLR 语言规则
+### <a name="clr-language-rules"></a>CLR 语言规则
 
 如果使用 .NET 语言（C# 或 Microsoft Visual Basic）编写支持代码，你可能会在命名空间名称中使用一个点（“.”）的约定，以创建代码命名空间的概念性层次结构。 如果命名空间定义包含一个点，则这个点应该是你在“using:”令牌之后指定的值的一部分。
 
@@ -92,17 +93,17 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 当你定义代码以供使用 XAML 时，请勿使用嵌套类型（例如在某个类中嵌套枚举）。 无法评估嵌套类型。 XAML 分析器无法区分某个点是嵌套类型名称的一部分，而不是命名空间名称的一部分。
 
-## 自定义类型和程序集
+## <a name="custom-types-and-assemblies"></a>自定义类型和程序集
 
 定义 XAML 命名空间的支持类型的程序集名称不是在映射中指定的。 关于哪些程序集可用的逻辑在应用定义级别控制，包含在基本应用部署和安全原则中。 在项目设置中，将你希望作为 XAML 的一个代码定义源包含的任何程序集声明为一个独立程序集。 有关详细信息，请参阅[在 C# 和 Visual Basic 中创建 Windows 运行时组件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)。
 
 如果从主要应用的应用程序定义或页面定义中引用自定义类型，这些类型无需进一步的依赖程序集配置即可使用，但你仍然必须映射包含这些类型的代码命名空间。 一种常见的约定是映射任何给定 XAML 页面的默认代码命名空间的前缀“local”。 此约定常常包含在 XAML 项目的初始项目模板中。
 
-## 附加属性
+## <a name="attached-properties"></a>附加属性
 
 如果你引用附加属性，附加属性名称的所有者键入部分必须在默认 XAML 命名空间中，或者必须带有前缀。 很少会独立于属性元素向属性添加前缀，但这种情况有时是必需的，特别是对于自定义附加属性而言。 有关详细信息，请参阅[自定义附加属性](custom-attached-properties.md)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [XAML 概述](xaml-overview.md)
 * [XAML 语法指南](xaml-syntax-guide.md)
@@ -114,6 +115,6 @@ XAML 语言指定某些语言元素，其中每个元素应可通过适用于 XA
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

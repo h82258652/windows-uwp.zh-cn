@@ -60,7 +60,7 @@ birthDatePicker.Header = "Date of birth";
 
 ![日期选取器示例](images/date-picker-closed.png)
 
-> **注意**&nbsp;&nbsp;有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> **注意**  有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
 
 

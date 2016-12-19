@@ -4,12 +4,12 @@ description: "以声明性 XAML 标记的形式定义 UI 的做法非常好地�
 title: "将 Windows Phone Silverlight XAML 和 UI 移植到 UWP"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 344ea7a71fce744bcf90ac99ada9a6fe17568a9b
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: 3aa68943724c008e18df63d8b0ae20f448146303
 
 ---
 
-#  将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
+#  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -18,13 +18,13 @@ ms.openlocfilehash: 344ea7a71fce744bcf90ac99ada9a6fe17568a9b
 
 以声明性 XAML 标记的形式定义 UI 的做法非常好地将 Windows Phone Silverlight 转换为通用 Windows 平台 (UWP) 应用。 你将发现，更新了系统资源键引用、更改了某些元素类型名称并将“clr-namespace”更改为“using”后，标记的一大部分将可兼容。 表示层中的大部分强制性代码（操作 UI 元素的视图模型和代码）也将易于移植。
 
-## XAML 标记一览
+## <a name="a-first-look-at-the-xaml-markup"></a>XAML 标记一览
 
 上一主题向你介绍了如何将 XAML 和代码隐藏文件复制到新的 Windows 10 Visual Studio 项目中。 你可能注意到的最早出现的 Visual Studio XAML 设计器中突出显示的问题之一是，XAML 文件的根中的 `PhoneApplicationPage` 元素对通用 Windows 平台 (UWP) 项目无效。 在上一主题中，你保存了一个 Visual Studio 在创建 Windows 10 项目时生成的 XAML 文件的副本。 如果你打开该版本的 MainPage.xaml，你将看到根中的类型为 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)，此类型在 [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空间中。 因此，你可以将所有 `<phone:PhoneApplicationPage>` 元素更改为 `<Page>`（不要忘记属性元素语法），并且可以删除 `xmlns:phone` 声明。
 
 有关查找对应于 Windows Phone Silverlight 类型的 UWP 类型的较常规方法，可以参考[命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)。
 
-## XAML 命名空间前缀声明
+## <a name="xaml-namespace-prefix-declarations"></a>XAML 命名空间前缀声明
 
 
 如果你在视图中使用自定义类型的实例（可能是视图模型实例或值转换器），则 XAML 标记中将具有 XAML 命名空间前缀声明。 它们的语法在 Windows Phone Silverlight 和 UWP 之间有所不同。 下面提供了一些例子：
@@ -55,7 +55,7 @@ ms.openlocfilehash: 344ea7a71fce744bcf90ac99ada9a6fe17568a9b
     <x:Double x:Key="FontSizeLarge">40</x:Double>
 ```
 
-## 强制性代码
+## <a name="imperative-code"></a>强制性代码
 
 
 视图模型是引用 UI 类型的强制性代码所在的位置之一。 另一个位置是直接操作 UI 元素的任何代码隐藏文件。 例如，你可能发现一行代码（如以下代码）尚未编译：
@@ -75,21 +75,21 @@ ms.openlocfilehash: 344ea7a71fce744bcf90ac99ada9a6fe17568a9b
 
 并且，如果你希望转到项目构建阶段，可以注释或去掉任何非必要的代码。 然后一次一个问题进行迭代，并参考本部分中的以下主题（和上一个主题：[疑难解答](wpsl-to-uwp-troubleshooting.md)），直到消除所有构建和运行时问题并且完成移植。
 
-## 自适应/响应式 UI
+## <a name="adaptiveresponsive-ui"></a>自适应/响应式 UI
 
-由于你的 Windows 10 应用可以在种类可能很广泛的设备上运行（每种设备都具有其自己的屏幕大小和分辨率），你将不仅需要完成移植应用的最少步骤，并且将需要定制你的 UI 以使其在这些设备上具有最佳的外观。 你可以使用自适应视觉状态管理器功能来动态检测窗口大小并更改布局作为响应，还可以使用 Bookstore2 案例研究主题中的[自适应 UI](wpsl-to-uwp-case-study-bookstore2.md#adaptive-ui) 部分中所示的有关如何执行此操作的示例。
+由于你的 Windows 10 应用可以在种类可能很广泛的设备上运行（每种设备都具有其自己的屏幕大小和分辨率），你将不仅需要完成移植应用的最少步骤，并且将需要定制你的 UI 以使其在这些设备上具有最佳的外观。 你可以使用自适应视觉状态管理器功能来动态检测窗口大小并更改布局作为响应，还可以使用 Bookstore2 案例研究主题中的[自适应 UI](wpsl-to-uwp-case-study-bookstore2.md) 部分中所示的有关如何执行此操作的示例。
 
-## 警告和提醒
+## <a name="alarms-and-reminders"></a>警告和提醒
 
-应该移植使用 **Alarm** 或 **Reminder** 类的代码，以使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类创建和注册后台任务，并在相关的时间显示 Toast。 请参阅[后台处理](wpsl-to-uwp-business-and-data.md#background-processing)和 [Toast](#toasts)。
+应该移植使用 **Alarm** 或 **Reminder** 类的代码，以使用 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 类创建和注册后台任务，并在相关的时间显示 Toast。 请参阅[后台处理](wpsl-to-uwp-business-and-data.md)和 [Toast](#toasts)。
 
-## 动画
+## <a name="animation"></a>动画
 
 作为关键帧动画和 from/to 动画的首选替代方法，UWP 动画库对 UWP 应用可用。 为了运行流畅、外观美观以及使你的应用看起来像内置应用一样与 Windows 集成，这些动画已经过了设计和微调。 请参阅[快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)。
 
 如果你确实在 UWP 应用中使用关键帧动画或 from/to 动画，则可能希望了解新的平台所引入的独立动画和从属动画之间的区别。 请参阅[优化动画和媒体](https://msdn.microsoft.com/library/windows/apps/mt204774)。 在 UI 线程上运行的动画（如对布局属性进行动画处理的动画）被称为从属动画，在新的平台上运行时，它们将没有效果，除非你执行以下两项操作之一。 你可以将它们重定目标为对不同的属性进行动画处理（例如 [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980)），从而使它们独立。 或者可以在动画元素上设置 `EnableDependentAnimation="True"` 以确认你要运行无法保证流畅运行的动画的意图。 如果你使用 Blend 或 Visual Studio 创作新的动画，那么将在必要时为你设置该属性。
 
-## 后退按钮处理
+## <a name="back-button-handling"></a>后退按钮处理
 
 在 Windows 10 应用中，你可以使用单个方法处理后退按钮，它将适用于所有设备。 在移动设备上，该按钮作为设备上的电容性按钮或外壳中的按钮向你提供。 在桌面设备上，只要你的应用内可进行后退导航，你便可以向该应用的镶边添加一个按钮，它将显示在窗口化的应用的标题栏中或平板电脑模式下的任务栏中。 后退按钮事件是所有设备系列的通用概念，并且硬件或软件中实现的按钮会引发相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
 
@@ -141,7 +141,7 @@ ms.openlocfilehash: 344ea7a71fce744bcf90ac99ada9a6fe17568a9b
    Windows.UI.Xaml.Application.Current.Exit();
 ```
 
-## 绑定，并且使用 {x:Bind} 编译绑定
+## <a name="binding-and-compiled-bindings-with-xbind"></a>绑定，并且使用 {x:Bind} 编译绑定
 
 绑定的主题包括：
 
@@ -162,7 +162,7 @@ UWP 应用的绑定相关的功能当前具有以下限制：
 
 尽管相同的绑定功能仍然大部分受支持，但 Windows 10 提供性能更佳的全新绑定机制（称为编译绑定），它使用 {x:Bind} 标记扩展。 请参阅[数据绑定：通过对 XAML 数据绑定的新增功能提升应用性能](http://channel9.msdn.com/Events/Build/2015/3-635)和 [x:Bind 示例](http://go.microsoft.com/fwlink/p/?linkid=619989)。
 
-## 将图像绑定到视图模型
+## <a name="binding-an-image-to-a-view-model"></a>将图像绑定到视图模型
 
 你可以将 [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/br242760) 属性绑定到属于类型 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210107) 的视图模型的任何属性。 下面是 Windows Phone Silverlight 应用中此类属性的典型实现：
 
@@ -180,7 +180,7 @@ UWP 应用的绑定相关的功能当前具有以下限制：
 
 这样，视图模型的其余部分、图像路径属性中的路径值以及 XAML 标记中的绑定可以全部保持原样。
 
-## 控件和控件样式/模板
+## <a name="controls-and-control-stylestemplates"></a>控件和控件样式/模板
 
 Windows Phone Silverlight 应用使用在 **Microsoft.Phone.Controls** 命名空间和 **System.Windows.Controls** 命名空间中定义的控件。 XAML UWP 应用使用 [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 命名空间中定义的控件。 UWP 中的 XAML 控件的体系结构和设计几乎与 Windows Phone Silverlight 控件相同。 但是，进行了一些更改以改进可用的控件组并将它们与 Windows 应用统一。 以下是具体示例。
 
@@ -200,11 +200,11 @@ Windows Phone Silverlight 应用使用在 **Microsoft.Phone.Controls** 命名空
 
 有关 UWP 控件的详细信息，请参阅[按功能列出的控件](https://msdn.microsoft.com/library/windows/apps/mt185405)、[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)和[控件指南](https://msdn.microsoft.com/library/windows/apps/dn611856)。
 
-##  Windows 10 设计语言
+##  <a name="design-language-in-windows-10"></a>Windows 10 设计语言
 
 设计语言 Windows Phone Silverlight 应用和 Windows 10 应用之间有一些区别。 有关所有详细信息，请参阅[设计](http://dev.windows.com/design)。 不考虑设计语言更改，我们的设计原则始终保持一致：关注细节却又力求简洁（专注于内容而不是外观），显著减少视觉元素，始终忠实于数字领域；使用可视化层次结构（尤其是版式）；基于网格进行设计；通过流畅的动画带给你生动的体验。
 
-## 本地化和全球化
+## <a name="localization-and-globalization"></a>本地化和全球化
 
 对于本地化字符串，你可以在 UWP 应用项目中重复使用 Windows Phone Silverlight 项目中的 .resx 文件。 复制文件，将其添加到项目，并将其重命名为 Resources.resw，以便查找机制默认找到它。 将**“生成操作”**设置为**PRIResource**并将**“复制到输出目录”**设置为**“不要复制”**。 然后你可以通过在 XAML 元素上指定**“x:Uid”**属性来使用标记中的字符串。 请参阅[快速入门：使用字符串资源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
@@ -212,7 +212,7 @@ Windows Phone Silverlight 应用使用 **CultureInfo** 类帮助实现应用全�
 
 [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) 主题介绍了如何基于设备系列资源选择规格加载特定于设备系列的资源。
 
-## 媒体和图形
+## <a name="media-and-graphics"></a>媒体和图形
 
 当你阅读到有关 UWP 媒体和图形的内容时，请记住 Windows 设计准则鼓励尽量减少任何多余的内容，包括图形的复杂度和混乱度。 Windows 设计以整洁清晰的视觉效果、版式和动作为特征。 如果你的应用遵循相同的准则，那么它看起来将更像内置应用。
 
@@ -256,7 +256,7 @@ Windows Phone Silverlight 具有 **System.Windows.UIElement.OpacityMask** 属性
 
 请注意，你可以凭借 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 中的 Direct2D 和 XAML C++ UWP 应用[使用任意几何图形作为层中的蒙板](https://msdn.microsoft.com/library/windows/desktop/dd756654)。
 
-## 导航
+## <a name="navigation"></a>导航
 
 当你在 Windows Phone Silverlight 应用中导航到某个页面时，可使用统一资源标识符 (URI) 寻址方案：
 
@@ -292,17 +292,17 @@ URI 映射和片段导航是 URI 导航技术，因此它们不适用于 UWP 导
 
 有关详细信息，请参阅[导航](https://msdn.microsoft.com/library/windows/apps/mt187344)。
 
-## 资源键引用
+## <a name="resource-key-reference"></a>资源键引用
 
 已针对 Windows 10 发展了设计语言，因此某些系统样式已发生更改，并且已删除或重命名许多系统资源键。 Visual Studio 中的 XAML 标记编辑器突出显示对无法解析的资源键的引用。 例如，XAML 标记编辑器将使用红色波形曲线为对样式键 `PhoneTextNormalStyle` 的引用加下划线。 如果未更正该错误，则应用将在你尝试将其部署到模拟器或设备时立即终止。 因此，请务必留意 XAML 标记的正确性。 而且你将发现 Visual Studio 是捕获此类问题的绝佳工具。
 
 另请参阅下面的[文本](#text)。
 
-## 状态栏（系统托盘）
+## <a name="status-bar-system-tray"></a>状态栏（系统托盘）
 
 系统托盘(使用 `shell:SystemTray.IsVisible` 在 XAML 标记中进行设置）现在称为状态栏，并默认处于显示状态。 你可以在强制性代码中通过调用 [**Windows.UI.ViewManagement.StatusBar.ShowAsync**](https://msdn.microsoft.com/library/windows/apps/dn610343) 和 [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) 方法控制其可见性。
 
-## 文本
+## <a name="text"></a>文本
 
 文本（或版式）是 UWP 应用的重要方面，并且在移植时，你可能希望回顾你的视图的视觉设计，以便它们与新设计语言相协调。 使用这些图示查找可用的 UWP **TextBlock** 系统样式。 查找对应于你所使用的 Windows Phone Silverlight 样式的样式。 或者，你可以创建自己的通用样式并将 Windows Phone Silverlight 系统样式中的属性复制到这些样式中。
 
@@ -310,11 +310,11 @@ URI 映射和片段导航是 URI 导航技术，因此它们不适用于 UWP 导
 
 在 Windows Phone Silverlight 应用中，默认字体系列是 Segoe WP。 在 Windows 10 应用中，默认字体系列是 Segoe UI。 因此，你的应用中的字体指标可能看起来不同。 如果你希望重新生成 Windows Phone Silverlight 文本的外观，可以使用 [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) 和 [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362) 等属性设置你自己的指标。 有关详细信息，请参阅[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[设计 UWP 应用](http://dev.windows.com/design)。
 
-## 主题更改
+## <a name="theme-changes"></a>主题更改
 
 对于 Windows Phone Silverlight 应用，默认主题默认为深色。 对于 Windows 10 设备，默认主题已更改，但是你可以通过在 App.xaml 中声明所请求的主题来控制所使用的主题。 例如，若要在所有设备上都使用深色主题，请将 `RequestedTheme="Dark"` 添加到根 Application 元素。
 
-## 磁贴
+## <a name="tiles"></a>磁贴
 
 尽管有些差异，但适用于 UWP 应用的磁贴与适用于 Windows Phone Silverlight 的动态磁贴具有相似的行为。 例如，调用 **Microsoft.Phone.Shell.ShellTile.Create** 方法以创建辅助磁贴的代码应该移植为调用 [**SecondaryTile.RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/br230606)。 下面是一个对比示例，第一个是 Windows Phone Silverlight 版本：
 
@@ -349,13 +349,13 @@ URI 映射和片段导航是 URI 导航技术，因此它们不适用于 UWP 导
 
 有关磁贴、toast、锁屏提醒、横幅和通知的详细信息，请参阅[创建磁贴](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260)以及[使用磁贴、徽章和 Toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)。 有关用于 UWP 磁贴的视觉资源的大小的具体信息，请参阅[磁贴和 Toast 视觉资源](https://msdn.microsoft.com/library/windows/apps/hh781198)。
 
-## Toast
+## <a name="toasts"></a>Toast
 
 使用 **Microsoft.Phone.Shell.ShellToast** 类显示 Toast 的代码应该移植为使用 [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642)、[**ToastNotifier**](https://msdn.microsoft.com/library/windows/apps/br208653)、[**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) 和/或 [**ScheduledToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208607) 类。 请注意，在移动设备上，“Toast”的面向消费者的术语是“横幅”。
 
 请参阅[使用磁贴、锁屏提醒和 Toast 通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)。
 
-## 视图/有效像素、观看距离和比例系数
+## <a name="vieweffective-pixels-viewing-distance-and-scale-factors"></a>视图/有效像素、观看距离和比例系数
 
 Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大小和分辨率抽象表示 UI 元素的大小和布局的方法不同。 Windows Phone Silverlight 应用使用视图像素来执行此操作。 在 Windows 10 中，视图像素的概念已优化为有效像素的概念。 以下是该术语的解释、它的意义以及它所提供的额外价值。
 
@@ -377,7 +377,7 @@ Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大
 
 有关详细信息，请参阅[适用于 UWP 应用的响应式设计基础知识](https://msdn.microsoft.com/library/windows/apps/dn958435)。
 
-## 窗口大小
+## <a name="window-size"></a>窗口大小
 
 在 UWP 应用中，你可以使用命令式代码指定最小大小（宽度以及高度）。 默认的最小大小为 500x320 epx，这也是可接受的最小大小的最小值。 可接受的最小大小的最大值为 500x500epx。
 
@@ -388,13 +388,13 @@ Windows Phone Silverlight 应用和 Windows 10 应用从设备的实际物理大
 
 下一主题是[针对 I/O、设备和应用模型进行移植](wpsl-to-uwp-input-and-sensors.md)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

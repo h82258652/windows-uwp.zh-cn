@@ -39,7 +39,7 @@ ms.openlocfilehash: 8e253c93f932e04b825478cf0801e4c8c0d43b9d
 
 ![色彩操作中心的规范](images/action_center_redline_zoom.png) 颜色逻辑如何应用于设计规范的示例。
 
-**注意**&nbsp;&nbsp;在 XAML 中，主要主题色显示为名为 `SystemAccentColor` 的[主题资源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 这些色调可用作 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 和 `SystemAccentColorDark3`。 也可以通过 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 和 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 枚举，以编程方式获得。
+**注意**  在 XAML 中，主要主题色显示为名为 `SystemAccentColor` 的[主题资源](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)。 这些色调可用作 `SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2` 和 `SystemAccentColorDark3`。 也可以通过 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) 和 [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 枚举，以编程方式获得。
 
 ## 颜色主题
 

@@ -39,7 +39,7 @@ Microsoft Advertising 支持采用以下广告大小的横幅广告。
 <td align="left"><img src="images/13-f6f413da-ddde-4424-9364-41d8ba536d21.jpg" alt="AdSizesPhone320x50" /></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>480x80</p><p>**注意**&nbsp;&nbsp;仅 Windows Phone Silverlight 支持此大小。</p></td>
+<td align="left"><p>480x80</p><p>**注意**  仅 Windows Phone Silverlight 支持此大小。</p></td>
 <td align="left"><img src="images/13-0f11f562-0624-40d6-9720-400420f0a486.jpg" alt="AdSizesPhone480x80" /></td>
 </tr>
 <tr class="even">

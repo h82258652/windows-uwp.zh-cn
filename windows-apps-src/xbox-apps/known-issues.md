@@ -3,33 +3,33 @@ author: Mtoepke
 title: "Xbox One 开发人员计划上的 UWP 已知问题"
 description: 
 translationtype: Human Translation
-ms.sourcegitcommit: 5774ada049e5f300e9cb990f5a079c8c21796f8b
-ms.openlocfilehash: 5892e00f4da74af5aa4e24fdd12b0df0e8a4a7d9
+ms.sourcegitcommit: 20ac6fb738de1c8aaf10f46c359842f31714dbbf
+ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
 
 ---
 
-# Xbox 开发人员计划上的 UWP 已知问题
+# <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 开发人员计划上的 UWP 已知问题
 
 本主题介绍 Xbox One 开发人员计划上的 UWP 已知问题。 有关此计划的详细信息，请参阅 [Xbox 上的 UWP](index.md)。 
 
 \[如果你通过某个 API 参考主题中的链接转到此处，并且要查找通用设备系列 API 信息，请参阅 [Xbox 上尚不支持的 UWP 功能](http://go.microsoft.com/fwlink/?LinkID=760755)。\]
 
-下表重点介绍你可能在此版本中遇到的某些已知问题，但该列表并没有包括所有问题。 
+下表重点介绍可能遇到的某些已知问题，但该列表并没有包括所有问题。 
 
-**我们希望收到你的反馈**，因此请在[开发通用 Windows 平台应用](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)论坛上报告你发现的任何问题。 
+**我们希望收到你的反馈**，因此请在[开发通用 Windows 平台应用](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop)论坛上报告你发现的任何问题。 
 
 如果遇到问题，请阅读本主题中的信息、参阅[常见问题](frequently-asked-questions.md)以及使用论坛来寻求帮助。
 
 
 <!--## Developing games-->
  
-## 后台应用的内存限制已部分强制执行
+## <a name="memory-limits-for-background-apps-are-partially-enforced"></a>后台应用的内存限制已部分强制执行
  
 在后台运行的应用最大内存占用量是 128 兆字节。 在 Xbox One 上单前版本的 UWP 中，如果在应用在移至后台时超过此限制，应用将该暂停运行。 如果应用在后台中运行时超过此上限，则该限制当前不会强制执行，这意味着如果应用在后台运行时超过了 128 MB，它将仍能分配内容。
  
 对于此问题，目前尚没有解决方法。 在后台运行时，应用应相应控制其内存使用量，使之保持在 128 MB 上限之下。
  
-## 在“家长控制”处于打开状态的情况下，无法通过 VS 进行部署
+## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>在“家长控制”处于打开状态的情况下，无法通过 VS 进行部署
 
 如果主机在“设置”中打开了“家长控制”，则通过 VS 启动你的应用会失败。
 
@@ -42,9 +42,9 @@ ms.openlocfilehash: 5892e00f4da74af5aa4e24fdd12b0df0e8a4a7d9
 6. 关闭应用。
 7. 从 VS 中使用 F5 进行启动，然后应用将在没有任何提示的情况下启动。
 
-此时，权限是“粘连的”__，除非你注销用户，否则即使卸载并重新安装该应用也是如此。
+此时，权限是“粘连的”，除非你注销用户，否则即使卸载并重新安装该应用也是如此。
  
-有另外一种仅适用于子女帐户的免除类型。 子女帐户需要家长登录以授予权限，但当家长将选项选择为“始终”****时，他们就可以允许孩子启动该应用。 该免除存储在云中且持续有效，即使孩子注销并重新登录也是如此。   
+有另外一种仅适用于子女帐户的免除类型。 子女帐户需要家长登录以授予权限，但当家长将选项选择为“始终”时，他们就可以允许孩子启动该应用。 该免除存储在云中且持续有效，即使孩子注销并重新登录也是如此。   
 
 <!--### x86 vs. x64
 
@@ -67,7 +67,7 @@ The following game engines have been confirmed to work:
 There are likely others that are working too. We would love to get your feedback on what you find. 
 Please use the forum to report any issues you see.-->
 
-## DirectX 12 支持
+## <a name="directx-12-support"></a>DirectX 12 支持
 
 Xbox One 上的 UWP 支持 DirectX 11 功能级别 10。 DirectX 12 在此情况下不受支持。 
 
@@ -91,11 +91,11 @@ In this developer preview, inbound and outbound network access from the console 
 Developers can still use HTTP and WebSockets.
 --> 
 
-## 阻止 Xbox One 上的网络端口
+## <a name="blocked-networking-ports-on-xbox-one"></a>阻止 Xbox One 上的网络端口
 
 限制 Xbox One 设备上的通用 Windows 平台 (UWP) 应用绑定到 [49152, 65535] 范围中的端口。 尽管在运行时可能显示已成功绑定到这些端口，但网络流量在到达应用前已悄然断掉。 应用应在允许条件下绑定到端口 0，这支持系统选择本地端口。 如果需要使用特定端口，端口号必须在 [1025, 49151] 范围中，而且应该查看 IANA 注册表并避免与之相冲突。 有关详细信息，请参阅[服务名称和传输协议端口号注册表](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)。
 
-## UWP API 覆盖范围
+## <a name="uwp-api-coverage"></a>UWP API 覆盖范围
 
 并非所有 UWP API 在 Xbox 上都受支持。 对于我们已知不起作用的 API 列表，请参阅 [Xbox 上尚不支持的 UWP 功能](http://go.microsoft.com/fwlink/p/?LinkId=760755)。 如果你发现其他 API 的问题，请通过论坛报告它们。 
 
@@ -160,9 +160,9 @@ This will delete all of your games, apps, settings and content, deactivate Devel
 
 Sometimes this is resolved by sorting a column on the table.-->
 
-## 导航到 WDP 导致证书警告
+## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>导航到 WDP 导致证书警告
 
-你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 控制台签名的安全证书不被视为众所周知的受信任发布者。 若要访问 Windows Device Portal，请单击“继续浏览此网站”****。
+你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 控制台签名的安全证书不被视为众所周知的受信任发布者。 若要访问 Windows Device Portal，请单击“继续浏览此网站”。
 
 ![网站安全证书警告](images/security_cert_warning.jpg)
 
@@ -171,12 +171,12 @@ Sometimes this is resolved by sorting a column on the table.-->
 Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
 This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [常见问题](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

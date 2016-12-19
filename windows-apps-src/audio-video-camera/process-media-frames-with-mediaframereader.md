@@ -4,12 +4,12 @@ ms.assetid:
 description: "本文介绍如何将 MediaFrameReader 与 MediaCapture 结合使用，以获取一个或多个可用源提供的媒体帧，这些可用源包括彩色、深度、红外线相机，音频设备，甚至是自定义的帧源（例如生成骨架跟踪帧的帧源）。"
 title: "使用 MediaFrameReader 处理媒体帧"
 translationtype: Human Translation
-ms.sourcegitcommit: 21433f812915a2b4da6b4d68151bbc922a97a7a7
-ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
+ms.sourcegitcommit: 881f806a61d247c6c4f73aa770ba4c5dab91af00
+ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 ---
 
-# 使用 MediaFrameReader 处理媒体帧
+# <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理媒体帧
 
 本文介绍如何将 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 与 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 结合使用，以获取一个或多个可用源提供的媒体帧，这些可用源包括彩色、深度、红外线相机，音频设备，甚至是自定义的帧源（例如生成骨架跟踪帧的帧源）。 此功能旨在由执行实时处理媒体帧的应用使用，例如增强现实和感知深度的相机应用。
 
@@ -21,21 +21,21 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 > [!NOTE] 
 > 文中提供了一个通用 Windows 应用示例，介绍使用 **MediaFrameReader** 显示不同帧源（包括彩色、深度和红外相机）的帧。 有关详细信息，请参阅[相机帧示例](http://go.microsoft.com/fwlink/?LinkId=823230)。
 
-## 设置项目
+## <a name="setting-up-your-project"></a>设置项目
 对于使用 **MediaCapture** 的任何应用，在尝试访问任何相机设备前都必须声明应用使用 *webcam* 功能。 如果应用从音频设备捕获音频，还应声明 *microphone* 设备功能。 
 
 **将功能添加到应用清单**
 
-1.  在 Microsoft Visual Studio 的“解决方案资源管理器”****中，通过双击“package.appxmanifest”****项，打开应用程序清单的设计器。
-2.  选择“功能”****选项卡。
-3.  选中“摄像头”****框和“麦克风”****框。
-4.  若要访问图片库和视频库，请选中“图片库”****框和“视频库”****框。
+1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。
+2.  选择“功能”选项卡。
+3.  选中“摄像头”框和“麦克风”框。
+4.  若要访问图片库和视频库，请选中“图片库”框和“视频库”框。
 
 除了默认项目模板包含的这些 API，本文的示例代码还使用来自以下命名空间的 API。
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
-## 选择帧源和帧源组
+## <a name="select-frame-sources-and-frame-source-groups"></a>选择帧源和帧源组
 处理媒体帧的许多应用都需要同时从多个源获取帧，例如设备的彩色和深度相机。 [**MediaFrameSourceGroup**] (https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 对象表示一组可同时使用的媒体帧源。 调用静态方法 [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) 获取当前设备支持的所有帧源组列表。
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
@@ -60,7 +60,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[ColorInfraredDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetColorInfraredDepth)]
 
-## 初始化 MediaCapture 对象以使用所选帧源组
+## <a name="initialize-the-mediacapture-object-to-use-the-selected-frame-source-group"></a>初始化 MediaCapture 对象以使用所选帧源组
 下一步是初始化 **MediaCapture** 对象以使用在上一步中所选的帧源组。
 
 **MediaCapture** 对象通常在应用的多个位置中使用，因此应声明某个类成员变量以保留它。
@@ -78,14 +78,14 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[InitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## 为帧源设置首选格式
+## <a name="set-the-preferred-format-for-the-frame-source"></a>为帧源设置首选格式
 若要为帧源设置首选格式，需要获取表示源的 [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource) 对象。 通过访问已初始化的 **MediaCapture** 对象的 [**Frames**](https://msdn.microsoft.com/library/windows/apps/Windows.Phone.Media.Capture.CameraCaptureSequence.Frames) 字典，并指定希望使用的帧源的标识符，获取此对象。 这就是我们在选择帧源组时保存 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象的原因。
 
 [**MediaFrameSource.SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) 属性包含 [**MediaFrameFormat**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameFormat) 对象列表，此类对象用于描述帧源的受支持格式。 使用 **Where** Linq 扩展方法以根据所需属性选择某种格式。 在本例中，选择了宽度为 1080 像素并且可以提供 32 位 RGB 格式的帧格式。 **FirstOrDefault** 扩展方法选择列表中的第一个条目。 如果所选格式为 null，则请求的格式不受帧源支持。 如果该格式受支持，可以请求源通过调用 [**SetFormatAsync**](https://msdn.microsoft.com/library/windows/apps/) 来使用此格式。
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
-## 为帧源创建帧阅读器
+## <a name="create-a-frame-reader-for-the-frame-source"></a>为帧源创建帧阅读器
 若要为媒体帧源接收帧，请使用 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader)。
 
 [!code-cs[DeclareMediaFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaFrameReader)]
@@ -98,7 +98,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[CreateFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateFrameReader)]
 
-## 处理帧到达事件
+## <a name="handle-the-frame-arrived-event"></a>处理帧到达事件
 新帧可用时即引发 [**MediaFrameReader.FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) 事件。 可以选择处理到达的每个帧，或者仅在需要时使用它们。 因为帧阅读器在自己的线程上引发事件，所以可能需要实现某些同步逻辑，以确保你不会尝试从多个线程访问相同数据。 本节介绍如何在 XAML 页面中将图形颜色帧同步到图像控件。 这套方案解决需要在 UI 线程上执行 XAML 控件的所有更新的其他同步约束。
 
 在 XAML 中显示帧的第一步是创建 Image 控件。 
@@ -125,16 +125,20 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 最后，*_taskRunning* 变量重新设置为 false，以便下次调用处理程序时任务会重新运行。
 
+> [!NOTE] 
+> 如果访问 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.SoftwareBitmap) 或 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.Direct3DSurface) 对象（由 [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference) 的 [**VideoMediaFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.VideoMediaFrame) 属性提供），系统将创建对这些对象的强引用，这意味着，当在包含的 **MediaFrameReference** 上调用 [**Dispose**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.Close) 时，它们将不会释放。 必须直接为要立即释放的对象显式调用 **SoftwareBitmap** 或 **Direct3DSurface** 的 **Dispose** 方法。 否则，垃圾回收器将最终为这些对象释放内存，但无法知道这将何时出现，并且如果分配的位图或曲面的数量超过系统所允许的最大量，将停止新帧的流程。
+
+
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFrameArrived)]
 
-## 清理资源
+## <a name="cleanup-resources"></a>清理资源
 在读取帧完成后，通过调用 [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.StopAsync)、注销 **FrameArrived** 处理程序，并释放 **MediaCapture** 对象，确保停止媒体帧阅读器。
 
 [!code-cs[Cleanup](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCleanup)]
 
 有关在挂起应用程序时清理媒体捕获对象的详细信息，请参阅[**显示相机预览**](simple-camera-preview-access.md)。
 
-## FrameRenderer 帮助程序类
+## <a name="the-framerenderer-helper-class"></a>FrameRenderer 帮助程序类
 通用 Windows [相机帧示例](http://go.microsoft.com/fwlink/?LinkId=823230)提供在应用中轻松显示彩色、红外和深度源的帧的帮助程序类。 通常，对深度和红外数据的操作不止将其显示到屏幕，因此这个帮助程序类是显示帧阅读器功能和调试帧阅读器实现的有用工具。
 
 **FrameRenderer** 帮助程序类实现以下方法。
@@ -148,7 +152,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -163,6 +167,6 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

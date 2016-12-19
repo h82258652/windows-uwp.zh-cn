@@ -64,7 +64,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 ![作为文本元素的超链接示例](images/controls_hyperlink-element.png) 
 
-> **提示**&nbsp;&nbsp;当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
+> **提示**  当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
 
 ## 创建 HyperlinkButton
 
@@ -95,7 +95,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 若要使用超链接导航到 URI，请设置 NavigateUri 属性。 当用户单击或点击超链接时，指定的 URI 将在默认浏览器中打开。 默认浏览器将在独立于应用的进程中运行。
 
-> **注意**&nbsp;&nbsp;无需使用 http: 或 https: 方案。 你可以使用诸如 ms-appx:、ms-appdata: 或 ms-resources: 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 file: 方案。 有关详细信息，请参阅 [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
+> **注意**  无需使用 http: 或 https: 方案。 你可以使用诸如 ms-appx:、ms-appdata: 或 ms-resources: 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 file: 方案。 有关详细信息，请参阅 [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
 
 > 当用户单击超链接时，NavigateUri 属性的值传递到 URI 类型和方案的系统处理程序。 然后，系统启动针对为 NavigateUri 提供的 URI 的方案注册的应用。
 

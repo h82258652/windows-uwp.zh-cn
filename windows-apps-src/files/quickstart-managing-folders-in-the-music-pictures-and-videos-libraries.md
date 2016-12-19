@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "音乐、图片和视频库中的文件和文件夹"
 description: "将现有的音乐、图片和视频文件夹添加到相应的库。 你还可以从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。"
 translationtype: Human Translation
-ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
-ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
 
 ---
 
-# 音乐、图片和视频库中的文件和文件夹
+# <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音乐、图片和视频库中的文件和文件夹
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -19,7 +19,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 库是虚拟的文件夹集合，其中包括一个默认的已知文件夹，以及用户通过使用你的应用或任一内置应用添加到库的任何其他文件夹。 例如，图片库默认包含“图片”已知文件夹。 用户可以通过使用你的应用或内置的“照片”应用，将文件夹添加到图片库或从中删除它们。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
@@ -28,7 +28,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 -   **对位置的访问权限**
 
-    在 Visual Studio 中，在“清单设计器”中打开应用清单文件。 在“功能”****页上，选择你的应用管理的库。
+    在 Visual Studio 中，在“清单设计器”中打开应用清单文件。 在“功能”页上，选择你的应用管理的库。
 
     -   **音乐库**
     -   **图片库**
@@ -36,7 +36,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
     若要了解详细信息，请参阅[文件访问权限](file-access-permissions.md)。
 
-## 获取对库的引用
+## <a name="get-a-reference-to-a-library"></a>获取对库的引用
 
 
 **注意** 要记得声明相应的功能。
@@ -53,7 +53,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
         (Windows.Storage.KnownLibraryId.Pictures);
 ```
 
-## 获取库中的文件夹的列表
+## <a name="get-the-list-of-folders-in-a-library"></a>获取库中的文件夹的列表
 
 
 若要获取库中的文件夹的列表，请获取 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 属性的值。
@@ -66,7 +66,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
-## 获取默认保存新文件的库中的文件夹
+## <a name="get-the-folder-in-a-library-where-new-files-are-saved-by-default"></a>获取默认保存新文件的库中的文件夹
 
 
 若要获取默认保存新文件的库中的文件夹，请获取 [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728) 属性的值。
@@ -75,7 +75,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 ```
 
-## 将现有文件夹添加到库
+## <a name="add-an-existing-folder-to-a-library"></a>将现有文件夹添加到库
 
 
 若要向库中添加文件夹，请调用 [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726)。 以图片库为例，调用此方法会导致向用户显示一个带有**将此文件夹添加到“图片”**按钮的文件夹选取器。 如果用户选取了一个文件夹，则该文件夹仍将保留在其在磁盘上的原始位置并成为 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 属性中（和内置“照片”应用中）的项，但该文件夹不会作为“图片”文件夹的子文件夹而出现在文件资源管理器中。
@@ -85,7 +85,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync();
 ```
 
-## 从库中删除文件夹
+## <a name="remove-a-folder-from-a-library"></a>从库中删除文件夹
 
 
 若要从库中删除文件夹，请调用 [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) 方法并指定要删除的文件夹。 你可以使用 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) 和 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 控件（或类似控件）帮助用户选择要删除的文件夹。
@@ -99,7 +99,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ```
 
-## 获取对库中的文件夹列表的更改的通知
+## <a name="get-notified-of-changes-to-the-list-of-folders-in-a-library"></a>获取对库中的文件夹列表的更改的通知
 
 
 若要获取对库中的文件夹列表的更改的通知，请为库的 [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) 事件注册一个处理程序。
@@ -115,7 +115,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 }
 ```
 
-## 媒体库文件夹
+## <a name="media-library-folders"></a>媒体库文件夹
 
 
 设备为用户和应用提供了五个预定义位置，以便存储媒体文件。 内置应用可在这些位置中存储用户创建的媒体和下载的媒体。
@@ -134,7 +134,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 用户和应用还可以将媒体文件存储在 SD 卡上媒体库文件夹的外部。 若要在 SD 卡上可靠查找媒体文件，请扫描 SD 卡的内容，或者要求用户通过使用文件选取器查找该文件。 有关详细信息，请参阅[访问 SD 卡](access-the-sd-card.md)。
 
-## 查询媒体库
+## <a name="querying-the-media-libraries"></a>查询媒体库
 
 若要获取一组文件，请指定所需库和文件类型。
 
@@ -164,11 +164,13 @@ private async void getSongs()
 }
 ```
 
-### 查询结果包括内部存储和可移动存储
+### <a name="query-results-include-both-internal-and-removable-storage"></a>查询结果包括内部存储和可移动存储
 
 默认情况下，用户可以选择将文件存储在可选的 SD 卡上。 但是，应用可以停止允许将文件存储在 SD 卡上。 因此，媒体库可以在设备的内部存储和 SD 卡上进行拆分。
 
-你无需写入其他代码即可处理这种情况。 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空间中用于查询已知文件夹的方法以透明方式合并这两个位置中的查询结果。 你也无需在应用清单文件中指定 **removableStorage** 功能来获取这些合并的结果。
+你无需写入其他代码即可处理这种情况。 [
+              **Windows.Storage**
+            ](https://msdn.microsoft.com/library/windows/apps/br227346) 命名空间中用于查询已知文件夹的方法以透明方式合并这两个位置中的查询结果。 你也无需在应用清单文件中指定 **removableStorage** 功能来获取这些合并的结果。
 
 请考虑下图中显示的设备的存储状态：
 
@@ -177,7 +179,7 @@ private async void getSongs()
 如果通过调用 `await KnownFolders.PicturesLibrary.GetFilesAsync()` 查询图片库的内容，结果将同时包括 internalPic.jpg 和 SDPic.jpg。
 
 
-## 使用照片
+## <a name="working-with-photos"></a>使用照片
 
 
 在相机保存每个图片的低分辨率图像和高分辨率图像所在的设备上，深入查询仅返回低分辨率图像。
@@ -197,7 +199,7 @@ private async void getSongs()
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
-## 使用流方法向媒体库添加文件
+## <a name="using-stream-methods-to-add-a-file-to-a-media-library"></a>使用流方法向媒体库添加文件
 
 
 当你通过使用已知文件夹（如 **KnownFolders.PictureLibrary**）访问媒体库，并使用流方法向媒体库添加文件时，你必须确保关闭你的代码打开的所有流。 否则，这些用于按预期方式向媒体库添加文件的方法将失败，因为至少一个流仍具有该文件的句柄。
@@ -246,6 +248,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -88,7 +88,7 @@ checkBox1.Content = "I agree to the terms of service.";
 
 在本示例中，同意服务条款的复选框的 **IsChecked** 属性绑定到了“提交”按钮的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 属性。 “提交”按钮仅在服务条款得到同意时才启用。
 
-> 注意&nbsp;&nbsp;我们仅在此处显示相关代码。 有关数据绑定和值转换器的详细信息，请参阅[数据绑定概述](../data-binding/data-binding-quickstart.md)。
+> 注意  我们仅在此处显示相关代码。 有关数据绑定和值转换器的详细信息，请参阅[数据绑定概述](../data-binding/data-binding-quickstart.md)。
 
 ```xaml
 ...

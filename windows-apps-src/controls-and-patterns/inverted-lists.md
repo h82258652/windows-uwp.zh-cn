@@ -39,7 +39,7 @@ ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
 
 若要创建反转列表，请使用将 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) 作为其项目面板的列表视图。 在 ItemsStackPanel 上，将 [**ItemsUpdatingScrollMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) 设置为 [**KeepLastItemInView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx)。
 
-> **重要提示**&nbsp;&nbsp;**KeepLastItemInView** 枚举值从 Windows 10 版本 1607 开始可用。 当你的应用在较早版本的 Windows 10 上运行时，你无法使用此值。
+> **重要提示**  **KeepLastItemInView** 枚举值从 Windows 10 版本 1607 开始可用。 当你的应用在较早版本的 Windows 10 上运行时，你无法使用此值。
 
 此示例显示如何将列表视图的项对齐到底部，并指示当项发生更改时，最后一项应保留在视图中。
  

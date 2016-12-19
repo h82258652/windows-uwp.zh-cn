@@ -69,7 +69,7 @@ ms.openlocfilehash: b81ef40954860cb026038447158ba1a9edb07002
 
 树视图具有以下主类。 参考实现中定义并包含所有这些主类。
 
-> **注意**&nbsp;&nbsp;树视图实现为使用 C++ 编写的 [Windows 运行时组件](https://msdn.microsoft.com/windows/uwp/winrt-components/index)，因此使用任何语言的 UWP 应用都可以引用它。 在示例中，树视图代码位于 *cpp/Control* 文件夹中。 C# 没有对应的 *cs/Control* 文件夹。
+> **注意**  树视图实现为使用 C++ 编写的 [Windows 运行时组件](https://msdn.microsoft.com/windows/uwp/winrt-components/index)，因此使用任何语言的 UWP 应用都可以引用它。 在示例中，树视图代码位于 *cpp/Control* 文件夹中。 C# 没有对应的 *cs/Control* 文件夹。
 
 - `TreeNode` 类为树视图实现层次结构布局。 它还将要绑定到它的数据保留在项模板中。
 - `TreeView` 类实现 ItemClick、文件夹的展开/折叠以及拖动启动的事件。

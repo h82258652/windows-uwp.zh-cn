@@ -1,16 +1,16 @@
 ---
 author: TylerMSFT
-title: "连接的应用和设备（项目“Rome”）"
-description: "本节介绍如何使用 Project“Rome”发现连接的设备、在其他设备上启动应用，以及与远程设备上的应用通信。"
+title: Connected apps and devices (Project "Rome")
+description: "本节介绍如何使用远程系统平台发现远程设备、在远程设备上启动应用，以及与远程设备上的应用服务通信。"
 translationtype: Human Translation
-ms.sourcegitcommit: ff8e16d0e376d502157ae42b9cdae11875008554
-ms.openlocfilehash: 4f49acfd7efcb10d99f9d23884d20c0fc51e5a4a
+ms.sourcegitcommit: 871599217e6da0eb0febd140323e99db7d1258cb
+ms.openlocfilehash: 2dbce34aeaf4933eee22e1e8ef40c48e633f6f7e
 
 ---
 
-# 连接的应用和设备（项目“Rome”）
+# <a name="connected-apps-and-devices-project-rome"></a>连接的应用和设备（项目“Rome”）
 
-本节介绍如何使用 Project“Rome”跨设备和平台连接应用。 了解如何发现连接的设备、在其他设备上启动应用，以及与远程设备上的应用通信。
+本节介绍如何使用 Project“Rome”跨设备和平台连接应用。 了解如何发现远程设备、在远程设备上启动应用，以及与远程设备上的应用服务通信。
 
 大多数用户拥有多台设备，并且通常在一台设备上开始某项活动，而在其他设备上结束该活动。 为了满足此要求，应用需要横跨设备和平台。
 
@@ -22,14 +22,14 @@ Windows 10 版本 1607 中引入了[远程系统 API](https://msdn.microsoft.com
 
 请参阅[远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems )获取如何发现远程系统、在远程系统上启动应用，以及使用应用服务在运行在两个系统上的应用之间发送消息的示例。
 
-| 远程活动 | 说明                                                                                                                                                                |
-|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 主题 | 描述 |
+|-------|-------------|
 | [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |
 | [启动远程设备上的应用](launch-a-remote-app.md) | 了解如何启动远程设备上的应用。  |
 | [与远程应用服务通信](communicate-with-a-remote-app-service.md) | 了解如何与远程设备上的应用交互。 |
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

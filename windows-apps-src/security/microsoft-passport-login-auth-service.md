@@ -4,12 +4,12 @@ description: "这是有关如何在 Windows 10 UWP（通用 Windows 平台）应
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
+ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
+ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
 
 ---
 
-# 创建 Microsoft Passport 登录服务
+# <a name="create-a-microsoft-passport-login-service"></a>创建 Microsoft Passport 登录服务
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -21,7 +21,7 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 
 为了生成此项目，你需要具有 C# 和 XAML 方面的一些经验。 你还需要在 Windows 10 计算机上使用 Visual Studio 2015（社区版或更高版本）。
 
-## 练习 1：服务器端逻辑
+## <a name="exercise-1-server-side-logic"></a>练习 1：服务器端逻辑
 
 
 在本练习中，你将从第一个实验中生成的 Passport 应用程序开始操作，并创建一个本地 mock 服务器和数据库。 本动手实验设计用来教你如何将 Microsoft Passport 集成到现有系统中。 通过使用 mock 服务器和 mock 数据库，将消除大量不相关的设置。 在你自己的应用程序中，你需要将 mock 对象替换为真实的服务和数据库。
@@ -30,9 +30,9 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 -   首先实现 mock 服务器和 mock 数据库。 创建一个名为“AuthService”的新文件夹。 在“解决方案资源管理器”中，右键单击解决方案“PassportLogin (通用 Windows)”，然后依次选择“添加”&gt;“新文件夹”。
 -   针对要保存在 mock 数据库中的数据创建将用作模型的 UserAccount 和 PassportDevices 类。 UserAccount 类似于在传统身份验证服务器上实现的用户模型。 右键单击 AuthService 文件夹，并添加名为“UserAccount.cs”的新类。
 
-    ![](images/passport-auth-1.png)
+    ![passport 授权创建文件夹](images/passport-auth-1.png)
 
-    ![](images/passport-auth-2.png)
+    ![passport 授权创建类](images/passport-auth-2.png)
 
 -   更改类定义以使其成为公共类，然后添加以下公共属性。 你将需要以下引用。
 
@@ -538,7 +538,7 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
     }
     ```
 
-## 练习 2：客户端逻辑
+## <a name="exercise-2-client-side-logic"></a>练习 2：客户端逻辑
 
 
 在本练习中，你将更改来自第一个实验的客户端视图和帮助程序类，以便使用 AuthService 类。 在现实世界中，AuthService 即为身份验证服务器，并且你需要使用 Web API 发送数据并从服务器接收数据。 为方便起见，本动手实验中的客户端和服务器都是本地的。 目标是了解如何使用 Microsoft Passport API。
@@ -990,9 +990,9 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 
 -   生成并运行应用程序 (F5)。 使用凭据“sampleUsername”和“samplePassword”登录到示例用户帐户。 在欢迎屏幕上，你可能会注意到忽略设备按钮已显示，但未显示任何设备。 当你创建或迁移用户以便使用 Microsoft Passport 时，Passport 信息不会推送至 AuthService。
 
-    ![](images/passport-auth-3.png)
+    ![passport 登录屏幕](images/passport-auth-3.png)
 
-    ![](images/passport-auth-4.png)
+    ![passport 登录成功](images/passport-auth-4.png)
 
 -   若要将 Passport 信息传递到 AuthService，需要更新 MicrosoftPassportHelper.cs。 在 CreatePassportKeyAsync 方法中，不仅要在成功时返回 true，还需要调用尝试获取 KeyAttestation 的新方法。 尽管此动手实验不会在 AuthService 中记录此信息，但你将在客户端上了解获取此信息的方法。 更新 CreatePassportKeyAsync 方法。
 
@@ -1084,7 +1084,7 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 -   在 GetKeyAttestationAsync 方法中取消最后一行的注释，以便 Microsoft Passport 信息可以发送到 AuthService。
 -   像以前一样，生成和运行应用程序，并使用默认凭据登录。 现在，在欢迎屏幕上，你将看到显示设备 ID。 如果登录了也会在此处显示的另一台设备（如果你拥有云托管的身份验证服务）。 在本动手实验中，将显示实际设备 ID。 在实际实现中，你会想要显示用户可以理解并用于确定每台设备的友好名称。
 
-    ![](images/passport-auth-5.png)
+    ![passport 登录成功设备 ID](images/passport-auth-5.png)
 
 -   21. 若要完成本动手实验，在用户从用户选择页面进行选择并重新登录时，你需要用户的请求和质询。 AuthService 具有两种你为请求质询而创建的方法，其中一种方法使用签名的质询。 在 MicrosoftPassportHelper.cs 中，创建名为“RequestSignAsync”的新方法。此方法会从 AuthService 请求质询、在本地使用 Passport API 对该质询进行签名，并将已签名的质询发送到 AuthService。 在本动手实验中，AuthService 将接收已签名的质询并返回 true。 在实际实现中，你需要实现验证机制，以确定该质询是否已在正确的设备上由正确的用户进行签名。 将以下方法添加到 MicrosoftPassportHelper.cs
 
@@ -1175,12 +1175,12 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 
 我们为你保留了有关如何在服务和服务器端实现身份验证的详细信息作为练习。 预计你们中的大多数的现有系统都需要迁移才可以开始使用 Microsoft Passport，并且每个系统的详细信息都各不相同。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [Microsoft Passport 和 Windows Hello](microsoft-passport.md)
 * [Microsoft Passport 登录应用](microsoft-passport-login.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

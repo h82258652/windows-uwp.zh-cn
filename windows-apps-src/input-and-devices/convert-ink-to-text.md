@@ -5,14 +5,14 @@ title: "将 Windows 笔划墨迹视作文本"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
-keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
+keywords: "Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanvas, 手写识别"
 translationtype: Human Translation
-ms.sourcegitcommit: dfb790980a8016da0ed9a080d7cf56b5a8a784ff
-ms.openlocfilehash: 26dc8910c779dc46d19be75abd49c20b750a9843
+ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
+ms.openlocfilehash: c402843cce752a54d8ff7301d892ef8014350a07
 
 ---
 
-# 将 Windows 笔划墨迹视作文本
+# <a name="recognize-windows-ink-strokes-as-text"></a>将 Windows 笔划墨迹视作文本
 
 使用 Windows Ink 中的手写识别支持将笔划墨迹转换为文本。
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: 26dc8910c779dc46d19be75abd49c20b750a9843
 
 对于此处的所有示例，请添加墨迹功能所需的命名空间引用。 这包括“Windows.UI.Input.Inking”。
 
-## 基本手写识别
+## <a name="basic-handwriting-recognition"></a>基本手写识别
 
 
 我们在此处演示如何使用与默认安装语言包相关联的手写识别引擎来解释 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上的一组笔划。
@@ -203,7 +203,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## 国际识别
+## <a name="international-recognition"></a>国际识别
 
 
 Windows 支持的一个语言综合子集可用于手写识别。
@@ -213,15 +213,15 @@ Windows 支持的一个语言综合子集可用于手写识别。
 你的应用可以查询已安装的手写识别引擎的集合，并使用其中一个引擎或让用户选择其首选语言。
 
 **注意**  
-用户可以通过转到“设置”-&gt;“时间和语言”****来查看已安装语言的列表。 已安装的语言在“语言”****下列出。
+用户可以通过转到“设置”-&gt;“时间和语言”来查看已安装语言的列表。 已安装的语言在“语言”下列出。
 
 若要安装新语言包并为该语言启用手写识别：
 
-1.  转到“设置”&gt;“时间和语言”&gt;“区域和语言”****。
-2.  选择“添加语言”****。
-3.  从列表中选择某种语言，然后选择区域版本。 该语言现在在“区域和语言”****页面上列出。
-4.  单击该语言，然后选择“选项”****。
-5.  在“语言选项”****页面上，下载“手写识别引擎”****（也可以在此处下载完整的语言包、语音识别引擎和键盘布局）。
+1.  转到“设置”&gt;“时间和语言”&gt;“区域和语言”。
+2.  选择“添加语言”。
+3.  从列表中选择某种语言，然后选择区域版本。 该语言现在在“区域和语言”页面上列出。
+4.  单击该语言，然后选择“选项”。
+5.  在“语言选项”页面上，下载“手写识别引擎”（也可以在此处下载完整的语言包、语音识别引擎和键盘布局）。
 
  
 
@@ -448,7 +448,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## 动态手写识别
+## <a name="dynamic-handwriting-recognition"></a>动态手写识别
 
 
 前面的两个示例要求用户按下按钮来开始识别。 你的应用还可以执行动态识别，方法是使用与基本计时函数配对的笔划输入。
@@ -660,7 +660,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 * [笔和触笔交互](pen-and-stylus-interactions.md)
 
@@ -668,12 +668,14 @@ string str = "Recognition result\n";
 * [墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [简单墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [复杂墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Coloring Book 示例](https://aka.ms/cpubsample-coloringbook)
+* [系列说明示例](https://aka.ms/cpubsample-familynotessample)
+
+
  
 
- 
 
 
-
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

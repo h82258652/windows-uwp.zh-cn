@@ -128,7 +128,7 @@ protected override Size MeasureOverride(Size availableSize)
 
 当 *availableSize* 的高度组件未绑定时，可能使用此面板。 如果确实如此，则面板没有要划分的已知高度。 在此情况下，度量传递的逻辑会通知每个子元素它尚未具有绑定的高度。 它通过为 [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) 为无限的子元素将 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 传递到 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 调用来执行此操作。 这是合法的。 当调用 **Measure** 时，逻辑为将 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 设置为以下值中的最小值：传递到 **Measure** 的内容，或来自系数（例如明确设置的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)）的该元素的自然大小。
 
-**注意**&nbsp;&nbsp;[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 的内部逻辑还具有此行为：**StackPanel** 将一个无线维度值传递到子元素上的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952)，表示方向维度中的子元素上没有约束。 **StackPanel** 通常动态调整自身大小，以使在该维度中增长的堆栈容纳所有子元素。
+**注意**  [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 的内部逻辑还具有此行为：**StackPanel** 将一个无线维度值传递到子元素上的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952)，表示方向维度中的子元素上没有约束。 **StackPanel** 通常动态调整自身大小，以使在该维度中增长的堆栈容纳所有子元素。
 
 但是，面板本身无法从 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 返回带有无限值的 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)；这将在布局期间引发异常。 因此部分逻辑要找出任何子元素请求的最大高度，并将高度用作单元格高度，以防尚未从面板的自身大小约束中获得该高度的情况。 以下是在之前的代码中引用的帮助程序函数 `LimitUnboundedSize`，此函数随后获取该最大单元格高度，并使用它向面板提供一个用于返回的有限高度，以及确保在启动排列传递之前 `cellheight` 为有限值：
 
@@ -213,7 +213,7 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 你可能想知道为什么该面板不为 10 个项目选择 5x2，因为那将完美地容纳该项目数。 但是，在实际中，会将面板大小调整为很少有方向明显的纵横比的矩形。 最小二乘技术是一种影响大小逻辑的方式，以便良好适合典型布局形状，并且不鼓励单元格形状可获取奇数纵横比的大小调整。
 
-**注意**&nbsp;&nbsp;本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+**注意**  本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## 相关主题
 

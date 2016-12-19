@@ -1,21 +1,21 @@
 ---
 author: PatrickFarley
 title: "与远程应用服务通信"
-description: "与在远程设备上使用 Project“Rome”运行的应用服务交换消息。"
+description: Exchange messages with an app service running on a remote device using Project "Rome".
 translationtype: Human Translation
-ms.sourcegitcommit: c90304b7ca3f7185fca9146aa2303b09cba5ab9a
-ms.openlocfilehash: bff77a63d0f88907410c74d4dce19fb422c1bd3f
+ms.sourcegitcommit: 1e0b9d2b13cbfeff2ca7cb81a82a1fb2f5a1dd9b
+ms.openlocfilehash: c6a094c1939c3f34926f998a8206b0e2d7ea6aa0
 
 ---
 
-# 与远程应用服务通信
+# <a name="communicate-with-a-remote-app-service"></a>与远程应用服务通信
 
-除了在远程设备上使用 URI 启动应用，还可以在远程设备上运行*应用服务*并与之通信。 任何基于 Windows 的设备均可用作主设备和/或目标设备。 这可使你使用几乎无限种方法与已连接的设备交互，而无需在前台显示应用。
+除了在远程设备上使用 URI 启动应用，还可以在远程设备上运行*应用服务*并与之通信。 任何基于 Windows 的设备均可用作客户端或主设备。 这可使你使用几乎无限种方法与已连接的设备交互，而无需在前台显示应用。
 
-## 在目标设备上设置应用服务
-为了在远程设备上运行应用服务，必须已经在目标设备上安装了该应用服务的提供程序。 本指南将使用 [Windows 通用示例存储库](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)提供的随机数字生成器应用服务。 有关如何编写你自己的应用服务的说明，请参阅[创建和使用应用服务](how-to-create-and-consume-an-app-service.md)。
+## <a name="set-up-the-app-service-on-the-host-device"></a>在主设备上设置应用服务
+为了在远程设备上运行应用服务，必须已经在该设备上安装了该应用服务的提供程序。 本指南将使用 [Windows 通用示例存储库](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)提供的随机数字生成器应用服务。 有关如何编写你自己的应用服务的说明，请参阅[创建和使用应用服务](how-to-create-and-consume-an-app-service.md)。
 
-无论是使用已制定的应用服务还是编写自己的应用服务，你都将需要执行一些编辑操作，以使该服务与远程系统兼容。 在 Visual Studio 中，转到应用服务提供程序的项目，然后选择其 Package.appxmanifest 文件。 右键单击并选择“查看代码”****以查看文件的完整内容。 查找将项目定义为应用服务并为其父项目命名的“扩展”****元素。
+无论是使用已制定的应用服务还是编写自己的应用服务，你都将需要执行一些编辑操作，以使该服务与远程系统兼容。 在 Visual Studio 中，转到应用服务提供程序的项目，然后选择其 Package.appxmanifest 文件。 右键单击并选择“查看代码”以查看文件的完整内容。 查找将项目定义为应用服务并为其父项目命名的“扩展”元素。
 
 ``` xml
 ...
@@ -48,10 +48,10 @@ ms.openlocfilehash: bff77a63d0f88907410c74d4dce19fb422c1bd3f
 </Package>
 ```
 
-生成应用服务提供程序项目，并将其部署到目标设备。
+生成应用服务提供程序项目，并将其部署到主设备。
 
-## 从主设备定向应用服务
-从*其中*调用远程应用服务的设备需要具有远程系统功能的应用。 此功能可添加到在目标设备上提供应用服务的相同应用（在此情况下，需要在两台设备上安装相同应用），或者放置在完全不同的应用中。
+## <a name="target-the-app-service-from-the-client-device"></a>从客户端设备定向应用服务
+从其中调用远程应用服务的设备需要具有远程系统功能的应用。 此功能可添加到在主设备上提供应用服务的相同应用（在此情况下，需要在两台设备上安装相同应用），或者在完全不同的应用中实现。
 
 本节中的代码需要以下 **using** 语句以按原样运行：
 
@@ -71,24 +71,24 @@ ms.openlocfilehash: bff77a63d0f88907410c74d4dce19fb422c1bd3f
 
 此时，在远程计算机上，你应该拥有应用服务的开放连接。
 
-## 通过远程连接交换特定于服务的消息
+## <a name="exchange-service-specific-messages-over-the-remote-connection"></a>通过远程连接交换特定于服务的消息
 
 在此处，你可以 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) 对象的形式发送或接收通过该服务传递的消息（有关详细信息，请参阅[创建和使用应用服务](how-to-create-and-consume-an-app-service.md)）。 随机数字生成器服务采用将密钥 `"minvalue"` 和 `"maxvalue"` 用作输入的两个整数、随机选择这两个整数范围内的一个整数，并通过密钥 `"Result"` 将其返回到调用进程。
 
 [!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetSendMessage)]
 
-此时你已连接到目标远程设备上的应用服务、已在该设备上运行操作，并作为响应收到了主设备的数据。
+此时你已连接到目标主设备上的应用服务、已在该设备上运行操作，并作为响应收到了客户端设备的数据。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 [连接的应用和设备（项目“Rome”）概述](connected-apps-and-devices.md)  
 [启动远程应用](launch-a-remote-app.md)  
 [创建和使用应用服务](how-to-create-and-consume-an-app-service.md)  
 [远程系统 API 参考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems )演示了如何发现远程系统、在远程系统上启动应用，以及使用应用服务在两个系统上运行的应用之间发送消息。
+[远程系统示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

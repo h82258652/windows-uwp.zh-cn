@@ -4,19 +4,19 @@ ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Device Portal 核心 API 参考"
 description: "了解 Windows Device Portal 核心 REST API，可用于访问数据和以编程方式控制设备。"
 translationtype: Human Translation
-ms.sourcegitcommit: fae2c6b31c9c6c07026abc4718959b02a36e6600
-ms.openlocfilehash: 226ecaecd93e4996e438f56f780926ca63c184fd
+ms.sourcegitcommit: b4222774dc4b0f9cdcac871311f5ead69c1e70a9
+ms.openlocfilehash: 3bacb9ac42e157afaed5e9e0e6438654db03ff28
 
 ---
 
-# Device Portal 核心 API 参考
+# <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 参考
 
 Windows Device Portal 中的所有内容都基于 REST API 生成，该 API 可用于访问数据和以编程方式控制设备。
 
-## 应用部署
+## <a name="app-deployment"></a>应用部署
 
 ---
-### 安装应用
+### <a name="install-an-app"></a>安装应用
 
 **请求**
 
@@ -64,7 +64,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取应用安装状态
+### <a name="get-app-installation-status"></a>获取应用安装状态
 
 **请求**
 
@@ -107,7 +107,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 卸载应用
+### <a name="uninstall-an-app"></a>卸载应用
 
 **请求**
 
@@ -153,7 +153,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取已安装应用
+### <a name="get-installed-apps"></a>获取已安装应用
 
 **请求**
 
@@ -222,9 +222,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## 设备管理器
+## <a name="device-manager"></a>设备管理器
 ---
-### 获取计算机上已安装的设备
+### <a name="get-the-installed-devices-on-the-machine"></a>获取计算机上已安装的设备
 
 **请求**
 
@@ -281,9 +281,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## 转储集合
+## <a name="dump-collection"></a>转储集合
 ---
-### 获取应用的所有故障转储列表
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>获取应用的所有故障转储列表
 
 **请求**
 
@@ -322,12 +322,13 @@ HTTP 状态代码      | 说明
 <br />
 **可用设备系列**
 
+* Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
 * HoloLens
 * IoT
 
 ---
-### 获取应用的故障转储集合设置
+### <a name="get-the-crash-dump-collection-settings-for-an-app"></a>获取应用的故障转储集合设置
 
 **请求**
 
@@ -373,12 +374,13 @@ HTTP 状态代码      | 说明
 <br />
 **可用设备系列**
 
+* Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
 * HoloLens
 * IoT
 
 ---
-### 删除旁加载应用的故障转储
+### <a name="delete-a-crash-dump-for-a-sideloaded-app"></a>删除旁加载应用的故障转储
 
 **请求**
 
@@ -420,12 +422,13 @@ HTTP 状态代码      | 说明
 <br />
 **可用设备系列**
 
+* Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
 * HoloLens
 * IoT
 
 ---
-### 禁用旁加载应用的故障转储
+### <a name="disable-crash-dumps-for-a-sideloaded-app"></a>禁用旁加载应用的故障转储
 
 **请求**
 
@@ -466,12 +469,13 @@ HTTP 状态代码      | 说明
 <br />
 **可用设备系列**
 
+* Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
 * HoloLens
 * IoT
 
 ---
-### 下载旁加载应用的故障转储
+### <a name="download-the-crash-dump-for-a-sideloaded-app"></a>下载旁加载应用的故障转储
 
 **请求**
 
@@ -515,12 +519,13 @@ HTTP 状态代码      | 说明
 <br />
 **可用设备系列**
 
+* Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
 * HoloLens
 * IoT
 
 ---
-### 启用旁加载应用的故障转储
+### <a name="enable-crash-dumps-for-a-sideloaded-app"></a>启用旁加载应用的故障转储
 
 **请求**
 
@@ -559,12 +564,13 @@ HTTP 状态代码      | 说明
 <br />
 **可用设备系列**
 
+* Windows 移动版（在 Windows 预览体验计划计划中）
 * Windows 桌面版
 * HoloLens
 * IoT
 
 ---
-### 获取检测错误文件列表
+### <a name="get-the-list-of-bugcheck-files"></a>获取检测错误文件列表
 
 **请求**
 
@@ -589,12 +595,12 @@ GET | /api/debug/dump/kernel/dumplist
 
 **响应**
 
-该响应包括转储文件名称列表和这些文件的大小。 此列表将采用以下格式。 第二个 *FileName* 参数是文件的大小。 这是一个已知 bug。
+该响应包括转储文件名称列表和这些文件的大小。 此列表将采用以下格式。 
 ```
 {"DumpFiles": [
     {
         "FileName": string,
-        "FileName": string
+        "FileSize": int
     },...
 ]}
 ```
@@ -613,7 +619,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 下载检测错误转储文件
+### <a name="download-a-bugcheck-dump-file"></a>下载检测错误转储文件
 
 **请求**
 
@@ -660,7 +666,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取检测错误故障控制设置
+### <a name="get-the-bugcheck-crash-control-settings"></a>获取检测错误故障控制设置
 
 **请求**
 
@@ -688,12 +694,22 @@ GET | /api/debug/dump/kernel/crashcontrol
 该响应包括故障控制设置。 有关 CrashControl 的详细信息，请参阅 [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) 文章。 该响应的模板如下所示。
 ```
 {
-    "autoreboot": int,
-    "dumptype": int,
+    "autoreboot": bool (0 or 1),
+    "dumptype": int (0 to 4),
     "maxdumpcount": int,
-    "overwrite": int
+    "overwrite": bool (0 or 1)
 }
 ```
+
+**转储类型**
+
+0：已禁用
+
+1：完成内存转储（收集所有正在使用的内存）
+
+2：内核内存转储（忽略用户模式内存）
+
+3：有限的内核小型转储
 
 **状态代码**
 
@@ -711,7 +727,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取实时内核转储
+### <a name="get-a-live-kernel-dump"></a>获取实时内核转储
 
 **请求**
 
@@ -754,7 +770,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 从实时用户进程中获取转储
+### <a name="get-a-dump-from-a-live-user-process"></a>从实时用户进程中获取转储
 
 **请求**
 
@@ -801,7 +817,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 设置检测错误故障控制设置
+### <a name="set-the-bugcheck-crash-control-settings"></a>设置检测错误故障控制设置
 
 **请求**
 
@@ -849,9 +865,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## ETW
+## <a name="etw"></a>ETW
 ---
-### 通过 WebSocket 创建实时 ETW 会话
+### <a name="create-a-realtime-etw-session-over-a-websocket"></a>通过 WebSocket 创建实时 ETW 会话
 
 **请求**
 
@@ -895,13 +911,12 @@ HTTP 状态代码      | 说明
 * HoloLens
 * IoT
 
-### ETW WebSocket 命令
+### <a name="etw-websocket-commands"></a>ETW WebSocket 命令
 这些命令将从客户端发送到服务器。
 
 命令 | 描述
 :----- | :-----
-提供程序 *{guid}* 启用 *{level}* | 在指定的级别上启用由 *{guid}*（不带括号）标记的提供程序。 
-            *{level}* 是从 1（最少细节）到 5（详细）的 **int**。
+提供程序 *{guid}* 启用 *{level}* | 在指定的级别上启用由 *{guid}*（不带括号）标记的提供程序。 *{level}* 是从 1（最少细节）到 5（详细）的 **int**。
 提供程序 *{guid}* 禁用 | 禁用由 *{guid}* 标记（不带括号）的提供程序。
 
 此响应将从服务器发送到客户端。 此响应以文本形式发送，并且你通过解析 JSON 来获取以下格式。
@@ -946,7 +961,7 @@ HTTP 状态代码      | 说明
 ```
 
 ---
-### 枚举已注册的 ETW 提供程序
+### <a name="enumerate-the-registered-etw-providers"></a>枚举已注册的 ETW 提供程序
 
 **请求**
 
@@ -997,7 +1012,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 枚举由平台公开的自定义 ETW 提供程序。
+### <a name="enumerate-the-custom-etw-providers-exposed-by-the-platform"></a>枚举由平台公开的自定义 ETW 提供程序。
 
 **请求**
 
@@ -1045,9 +1060,9 @@ GET | /api/etw/customproviders
 * IoT
 
 ---
-## 操作系统信息
+## <a name="os-information"></a>操作系统信息
 ---
-### 获取计算机名称
+### <a name="get-the-machine-name"></a>获取计算机名称
 
 **请求**
 
@@ -1097,7 +1112,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取操作系统信息
+### <a name="get-the-operating-system-information"></a>获取操作系统信息
 
 **请求**
 
@@ -1153,7 +1168,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取设备系列 
+### <a name="get-the-device-family"></a>获取设备系列 
 
 **请求**
 
@@ -1207,7 +1222,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 设置计算机名称
+### <a name="set-the-machine-name"></a>设置计算机名称
 
 **请求**
 
@@ -1253,9 +1268,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## 性能数据
+## <a name="performance-data"></a>性能数据
 ---
-### 获取正在运行的进程列表
+### <a name="get-the-list-of-running-processes"></a>获取正在运行的进程列表
 
 **请求**
 
@@ -1316,7 +1331,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取系统性能统计信息
+### <a name="get-the-system-performance-statistics"></a>获取系统性能统计信息
 
 **请求**
 
@@ -1395,9 +1410,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## 电源
+## <a name="power"></a>电源
 ---
-### 获取当前的电池状态
+### <a name="get-the-current-battery-state"></a>获取当前的电池状态
 
 **请求**
 
@@ -1448,13 +1463,13 @@ HTTP 状态代码      | 说明
 <br />
 **可用设备系列**
 
+* Windows 移动版
 * Windows 桌面版
 * HoloLens
 * IoT
-* 移动设备
 
 ---
-### 获取活动的电源方案
+### <a name="get-the-active-power-scheme"></a>获取活动的电源方案
 
 **请求**
 
@@ -1500,7 +1515,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取电源方案的子值
+### <a name="get-the-sub-value-for-a-power-scheme"></a>获取电源方案的子值
 
 **请求**
 
@@ -1543,7 +1558,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取系统的电源状态
+### <a name="get-the-power-state-of-the-system"></a>获取系统的电源状态
 
 **请求**
 
@@ -1590,7 +1605,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 设置活动的电源方案
+### <a name="set-the-active-power-scheme"></a>设置活动的电源方案
 
 **请求**
 
@@ -1635,7 +1650,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 设置电源方案的子值
+### <a name="set-the-sub-value-for-a-power-scheme"></a>设置电源方案的子值
 
 **请求**
 
@@ -1679,7 +1694,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取睡眠分析报告
+### <a name="get-a-sleep-study-report"></a>获取睡眠分析报告
 
 **请求**
 
@@ -1722,7 +1737,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 枚举可用的睡眠分析报告
+### <a name="enumerate-the-available-sleep-study-reports"></a>枚举可用的睡眠分析报告
 
 **请求**
 
@@ -1773,7 +1788,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取睡眠分析转换
+### <a name="get-the-sleep-study-transform"></a>获取睡眠分析转换
 
 **请求**
 
@@ -1816,9 +1831,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## 远程控制
+## <a name="remote-control"></a>远程控制
 ---
-### 重新启动目标计算机
+### <a name="restart-the-target-computer"></a>重新启动目标计算机
 
 **请求**
 
@@ -1860,7 +1875,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 关闭目标计算机
+### <a name="shut-down-the-target-computer"></a>关闭目标计算机
 
 **请求**
 
@@ -1904,9 +1919,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## 任务管理器
+## <a name="task-manager"></a>任务管理器
 ---
-### 启动现代应用
+### <a name="start-a-modern-app"></a>启动现代应用
 
 **请求**
 
@@ -1955,7 +1970,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 停止现代应用
+### <a name="stop-a-modern-app"></a>停止现代应用
 
 **请求**
 
@@ -2004,9 +2019,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## 网络
+## <a name="networking"></a>网络
 ---
-### 获取当前的 IP 配置
+### <a name="get-the-current-ip-configuration"></a>获取当前的 IP 配置
 
 **请求**
 
@@ -2092,7 +2107,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 --
-### 枚举无线网络接口
+### <a name="enumerate-wireless-network-interfaces"></a>枚举无线网络接口
 
 **请求**
 
@@ -2154,7 +2169,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 枚举无线网络
+### <a name="enumerate-wireless-networks"></a>枚举无线网络
 
 **请求**
 
@@ -2224,7 +2239,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 建立和断开与 WLAN 网络的连接。
+### <a name="connect-and-disconnect-to-a-wi-fi-network"></a>建立和断开与 WLAN 网络的连接。
 
 **请求**
 
@@ -2274,7 +2289,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 删除 WLAN 配置文件
+### <a name="delete-a-wi-fi-profile"></a>删除 WLAN 配置文件
 
 **请求**
 
@@ -2321,9 +2336,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## Windows 错误报告 (WER)
+## <a name="windows-error-reporting-wer"></a>Windows 错误报告 (WER)
 ---
-### 下载 Windows 错误报告 (WER) 文件
+### <a name="download-a-windows-error-reporting-wer-file"></a>下载 Windows 错误报告 (WER) 文件
 
 **请求**
 
@@ -2374,7 +2389,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 枚举 Windows 错误报告 (WER) 报告中的文件
+### <a name="enumerate-files-in-a-windows-error-reporting-wer-report"></a>枚举 Windows 错误报告 (WER) 报告中的文件
 
 **请求**
 
@@ -2429,7 +2444,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 列出 Windows 错误报告 (WER) 报告
+### <a name="list-the-windows-error-reporting-wer-reports"></a>列出 Windows 错误报告 (WER) 报告
 
 **请求**
 
@@ -2487,9 +2502,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## Windows Performance Recorder (WPR) 
+## <a name="windows-performance-recorder-wpr"></a>Windows Performance Recorder (WPR) 
 ---
-### 使用自定义配置文件开始跟踪
+### <a name="start-tracing-with-a-custom-profile"></a>使用自定义配置文件开始跟踪
 
 **请求**
 
@@ -2541,7 +2556,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 开始启动性能跟踪会话
+### <a name="start-a-boot-performance-tracing-session"></a>开始启动性能跟踪会话
 
 **请求**
 
@@ -2597,7 +2612,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 停止启动性能跟踪会话
+### <a name="stop-a-boot-performance-tracing-session"></a>停止启动性能跟踪会话
 
 **请求**
 
@@ -2622,7 +2637,7 @@ GET | /api/wpr/boottrace
 
 **响应**
 
-- 返回跟踪 ETL 文件。
+-  无。  **注意：**这是一项运行时间较长的操作。  当 ETL 完成写入到磁盘时，它将返回。
 
 **状态代码**
 
@@ -2642,7 +2657,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 开始性能跟踪会话
+### <a name="start-a-performance-tracing-session"></a>开始性能跟踪会话
 
 **请求**
 
@@ -2698,7 +2713,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 停止性能跟踪会话
+### <a name="stop-a-performance-tracing-session"></a>停止性能跟踪会话
 
 **请求**
 
@@ -2723,8 +2738,7 @@ GET | /api/wpr/trace
 
 **响应**
 
-- 无。  
-            **注意：**这是一项运行时间较长的操作。  当 ETL 完成写入到磁盘时，它将返回。  
+- 无。  **注意：**这是一项运行时间较长的操作。  当 ETL 完成写入到磁盘时，它将返回。  
 
 **状态代码**
 
@@ -2744,7 +2758,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 检索跟踪会话的状态
+### <a name="retrieve-the-status-of-a-tracing-session"></a>检索跟踪会话的状态
 
 **请求**
 
@@ -2796,7 +2810,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 列出已完成的跟踪会话 (ETL)
+### <a name="list-completed-tracing-sessions-etls"></a>列出已完成的跟踪会话 (ETL)
 
 **请求**
 
@@ -2853,7 +2867,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 下载跟踪会话 (ETL)
+### <a name="download-a-tracing-session-etl"></a>下载跟踪会话 (ETL)
 
 **请求**
 
@@ -2902,7 +2916,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 删除跟踪会话 (ETL)
+### <a name="delete-a-tracing-session-etl"></a>删除跟踪会话 (ETL)
 
 **请求**
 
@@ -2951,9 +2965,9 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-## DNS-SD 标记 
+## <a name="dns-sd-tags"></a>DNS-SD 标记 
 ---
-### 查看标记
+### <a name="view-tags"></a>查看标记
 
 **请求**
 
@@ -2976,8 +2990,7 @@ GET | /api/dns-sd/tags
 
 - 无
 
-
-            **响应** 采用以下格式的当前应用的标记。 
+**响应** 采用以下格式的当前应用的标记。 
 ```
  {
     "tags": [
@@ -3007,7 +3020,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 删除标记
+### <a name="delete-tags"></a>删除标记
 
 **请求**
 
@@ -3052,7 +3065,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 删除标记
+### <a name="delete-tag"></a>删除标记
 
 **请求**
 
@@ -3098,7 +3111,7 @@ HTTP 状态代码      | 说明
 * IoT
  
 ---
-### 添加标记
+### <a name="add-a-tag"></a>添加标记
 
 **请求**
 
@@ -3144,10 +3157,10 @@ HTTP 状态代码      | 说明
 * HoloLens
 * IoT
 
-## 应用文件资源管理器
+## <a name="app-file-explorer"></a>应用文件资源管理器
 
 ---
-### 获取已知文件夹
+### <a name="get-known-folders"></a>获取已知文件夹
 
 **请求**
 
@@ -3170,8 +3183,7 @@ GET | /api/filesystem/apps/knownfolders
 
 - 无
 
-
-            **响应** 采用以下格式的可用文件夹。 
+**响应** 采用以下格式的可用文件夹。 
 ```
  {"KnownFolders": [
     "folder0",
@@ -3198,7 +3210,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 获取文件
+### <a name="get-files"></a>获取文件
 
 **请求**
 
@@ -3225,8 +3237,7 @@ path | （**可选**）上面指定的文件夹或程序包内的子目录。
 
 - 无
 
-
-            **响应** 采用以下格式的可用文件夹。 
+**响应** 采用以下格式的可用文件夹。 
 ```
 {"Items": [
     {
@@ -3259,7 +3270,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 下载文件
+### <a name="download-a-file"></a>下载文件
 
 **请求**
 
@@ -3307,7 +3318,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 重命名文件
+### <a name="rename-a-file"></a>重命名文件
 
 **请求**
 
@@ -3359,7 +3370,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 删除文件
+### <a name="delete-a-file"></a>删除文件
 
 **请求**
 
@@ -3409,7 +3420,7 @@ HTTP 状态代码      | 说明
 * IoT
 
 ---
-### 上载文件
+### <a name="upload-a-file"></a>上载文件
 
 **请求**
 
@@ -3456,7 +3467,6 @@ HTTP 状态代码      | 说明
 * IoT
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

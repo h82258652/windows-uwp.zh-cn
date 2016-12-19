@@ -4,12 +4,12 @@ description: "当应用不在前台时，它们使用后台任务和两个主机
 title: "后台网络通信"
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 translationtype: Human Translation
-ms.sourcegitcommit: eea01135c60df0323b73bf3fda8b44e6d02cd04b
-ms.openlocfilehash: bea161a9eeac012aa7b09547212f021f1289afa6
+ms.sourcegitcommit: a6d297ca8510267d21656bd2e22bb3958a4a4b52
+ms.openlocfilehash: ea979eceb20c13d4025ec94ec8ed05b484a7eb27
 
 ---
 
-# 后台网络通信
+# <a name="network-communications-in-the-background"></a>后台网络通信
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -20,13 +20,13 @@ ms.openlocfilehash: bea161a9eeac012aa7b09547212f021f1289afa6
 
 当应用不在前台时，它们使用后台任务和两个主机制来保持通信：套接字代理和控制通道触发器。 当使用套接字进行长期连接的应用离开前台时，它们可以将套接字的所有权委托给系统套接字代理。 在流量到达套接字上后，该代理会激活应用并将所有权传输回应用，并且应用会处理到达的流量。
 
-## 在后台任务中执行生存期较短的网络操作
+## <a name="performing-short-lived-network-operations-in-background-tasks"></a>在后台任务中执行生存期较短的网络操作
 
 SocketActivityTrigger 和 ControlChannelTrigger（将在本主题后面讨论）专用于维护生存期较长的网络连接的应用，这些连接即使在应用在后台运行时也会保留。 对于需要生存期较短的网络交互作为其后台任务逻辑一部分的应用（例如，发送一个 HTTP 请求），可能会直接调用到核心网络 API（[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)）。 但是，此类任务必须按特定方式进行配置，才能在所有情况下正常工作。 后台任务必须将 [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) 条件与其后台任务结合使用，或者在其后台任务注册上使用 [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx) 标志。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。
 
 如果你的后台任务未使用此处介绍的 [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) 或 [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx)，当处于连接待机模式时（例如，手机屏幕处于关闭状态时），后台任务将无法访问网络。
 
-## 套接字代理和 SocketActivityTrigger
+## <a name="socket-broker-and-the-socketactivitytrigger"></a>套接字代理和 SocketActivityTrigger
 
 如果应用使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 连接，尽管它不在前台，你应该使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和套接字代理收到流量到达你的应用的通知。
 
@@ -50,7 +50,7 @@ SocketActivityTrigger 和 ControlChannelTrigger（将在本主题后面讨论）
            // so that tcpip keeps required state for the socket to enable connected 
            // standby action. Background task Id is taken as a parameter to tie wake pattern 
            // to a specific background task.  
-           _tcpListener. EnableTransferOwnership(_task,SocketActivityConnectedStandbyAction.Wake); 
+           _tcpListener. EnableTransferOwnership(_task.TaskId,SocketActivityConnectedStandbyAction.Wake); 
            _tcpListener.ConnectionReceived += OnConnectionReceived; 
            await _tcpListener.BindServiceNameAsync("my-service-name"); 
 ```
@@ -150,13 +150,13 @@ case SocketActivityTriggerReason.SocketClosed:
 
 你可能会注意到示例在创建新的套接字或获取现有套接字后立刻调用 **TransferOwnership**，而不是如本主题所述使用 **OnSuspending** 事件处理程序执行此操作。 这是因为此示例主要用于演示 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)，并且不使用该套接字来获取其他任何活动（尽管它在运行中）。 你的应用可能变得更加复杂，并且应该使用 **OnSuspending** 来确定调用 **TransferOwnership** 的时间。
 
-## 控制通道触发器
+## <a name="control-channel-triggers"></a>控制通道触发器
 
 首先，请确保你使用的是正确的控制通道触发器 (CCT)。 如果你使用的是 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 连接，我们建议你使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。 你可以将 CCT 用于 **StreamSocket**，不过它们会使用更多资源，并且在连接待机模式下可能不起作用。
 
 如果你使用的是 WebSockets、[**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 或 **Windows.Web.Http.HttpClient**，则必须使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
 
-## ControlChannelTrigger 与 WebSockets
+## <a name="controlchanneltrigger-with-websockets"></a>ControlChannelTrigger 与 WebSockets
 
 将 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，需要应用某些特殊注意事项。 将 **MessageWebSocket** 或 **StreamWebSocket** 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 此外，这些注意事项影响在 **StreamWebSocket** 上接收数据包的请求的处理方式。 不影响在 **MessageWebSocket** 上接收数据包的请求。
 
@@ -425,7 +425,7 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 
 有关将 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用的详细信息，请参阅 [ControlChannelTrigger StreamWebSocket 示例](http://go.microsoft.com/fwlink/p/?linkid=251232)。
 
-## ControlChannelTrigger 与 HttpClient
+## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger 与 HttpClient
 
 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，需要应用某些特殊注意事项。 将 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 此外，这些注意事项影响在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 上接收数据包的请求的处理方式。
 
@@ -575,7 +575,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 
 有关结合使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的详细信息，请参阅 [ControlChannelTrigger HttpClient 示例](http://go.microsoft.com/fwlink/p/?linkid=258323)。
 
-## ControlChannelTrigger 与 IXMLHttpRequest2
+## <a name="controlchanneltrigger-with-ixmlhttprequest2"></a>ControlChannelTrigger 与 IXMLHttpRequest2
 
 将 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 与 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 结合使用时，需要应用某些特殊注意事项。 将 **IXMLHTTPRequest2** 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 使用 **ControlChannelTrigger** 不影响在 **IXMLHTTPRequest2** 上发送或接收 HTTP 请求的请求的处理方式。
 
@@ -590,6 +590,6 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

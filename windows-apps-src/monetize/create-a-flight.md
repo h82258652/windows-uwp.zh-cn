@@ -16,7 +16,7 @@ ms.openlocfilehash: 35823bd1fd0c059ebc9b2107c31400a7ad788a1e
 
 在 Windows 应用商店提交 API 中使用此方法，为注册到 Windows 开发人员中心帐户的应用创建一个软件包外部测试版。
 
->**注意**&nbsp;&nbsp;此方法无需任何提交即可创建软件包外部测试版。 若要创建软件包外部测试版的提交，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)中的方法。
+>**注意**  此方法无需任何提交即可创建软件包外部测试版。 若要创建软件包外部测试版的提交，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)中的方法。
 
 ## 先决条件
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 35823bd1fd0c059ebc9b2107c31400a7ad788a1e
 * 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
->**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
 ## 请求
 

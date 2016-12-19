@@ -4,11 +4,11 @@ ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: "动画概述"
 description: "使用 Windows 运行时动画库中的动画将 Windows 外观集成到你的应用中。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d622465ce3da70cdb8dbd064b68ea6983f9fe3f7
+ms.sourcegitcommit: 2a08d1def7c4d2fde0ae08eb26076526058e8aae
+ms.openlocfilehash: e3e21c55ea8ddeab0969e304080394b940da010d
 
 ---
-# 动画概述
+# <a name="animations-overview"></a>动画概述
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -31,7 +31,7 @@ Windows 10 版本 1607 引入了一个用于实现动画的新 [**ConnectedAnima
 
 此外，对于根据 ScrollViewer 的滚动位置设置项目动画等某些高级方案，开发人员可能希望使用可视化层互操作来实现自定义动画。 有关详细信息，请参阅[可视化层](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)。
 
-## 动画类型
+## <a name="types-of-animations"></a>动画类型
 
 Windows 运行时动画系统和动画库实现了更大的目标，即允许控件和 UI 的其他部分具备动画行为。 以下是几个不同类型的动画。
 
@@ -41,7 +41,7 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 -   *情节提要动画*可以随时间推移设置 Windows 运行时依赖属性的值的动画。 情节提要可以定义为可视化过渡的一部分，或者在运行时由应用程序触发。 有关详细信息，请参阅[情节提要动画](storyboarded-animations.md)。 有关依赖属性及其所处位置的详细信息，请参阅[依赖属性概述](https://msdn.microsoft.com/library/windows/apps/Mt185583)。
 -   通过新 [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) API 提供的*已连接动画*允许开发人员轻松创建以下效果：某一元素似乎在导航期间在视图之间进行动画处理。 从 Windows 10 版本 1607 开始，将提供此 API。 有关详细信息，请参阅 [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx)。
 
-## 库中提供的动画
+## <a name="animations-available-in-the-library"></a>库中提供的动画
 
 动画库提供以下动画。 单击动画的名称即可了解有关其主要使用方案、这些方案的定义方式的详细信息，还可以查看动画示例。
 
@@ -55,45 +55,48 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 -   [列表项更改](./animations-overview.md#list-item-changes)：从列表中添加或删除某个项目，或者重新排序项目。
 -   [拖放](./animations-overview.md#drag-drop)：在拖放操作期间提供视觉反馈。
 
-### 页面过渡
+### <a name="page-transition"></a>页面过渡
 
 使用页面过渡，在应用中设置导航动画。 由于几乎所有应用均会使用某种类型的导航，所以页面过渡动画是应用使用的最常见主题动画类型。 有关页面过渡 API 的详细信息，请参阅 [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)。
 
 
 
-### 内容过渡和进入过渡
+### <a name="content-transition-and-entrance-transition"></a>内容过渡和进入过渡
 
 使用内容过渡动画 ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103)) 可以将一条或一组内容移入或移出当前视图。 例如，内容过渡动画显示在首次加载页面时或者在更改页面某部分的内容时，不准备显示的内容。
 
 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 表示可以在首次加载页面或大部分 UI 时应用到内容的动作。 这样，首次出现的内容可以提供不同于对内容的更改的反馈。 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) 等同于具有默认参数的 [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)，但可在 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 外部使用。
  
  
-
-### 淡入/淡出和交叉进出
+<span id="fade-in-out-and-crossfade"/>
+### <a name="fade-inout-and-crossfade"></a>淡入/淡出和交叉进出
 
 使用淡入和淡出动画可以显示或隐藏过渡 UI 或控件。 在 XAML 中，这些动画将表示为 [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302)。 一个示例就是在可能会由于用户交互而显示新控件的应用栏中。 另一个示例涉及到临时滚动条或平移指示器，它们将在一段时间内未检测到任何用户输入时淡出。 在随着动态加载内容而从占位符项过渡到最终项时，应用还应使用淡入动画。
 
 使用交叉进出动画可以在某个项的状态发生改变时顺利进行过渡；例如，应用刷新视图的当前内容时。 XAML 动画库不提供专用交叉进出动画（不等效于 [**crossFade**](https://msdn.microsoft.com/library/windows/apps/BR212661)），但是你可以使用 [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 与重叠计时来获取相同的效果。
 
-### 指针向上/向下
+<span id="pointer-up-down"/>
+### <a name="pointer-updown"></a>指针向上/向下
 
 使用 [**PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969168) 和 [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969164) 动画可以为用户成功点击或单击磁贴提供反馈。 例如，当用户单击或点击磁贴时，播放指针向下动画。 释放单击或点击后，播放指针向上动画。
 
-### 重新定位
+### <a name="reposition"></a>重新定位
 
 使用重新定位动画（[**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) 或 [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)）可以将某个元素移动到新位置。 例如，在项目控件中移动标题将使用重新定位动画。
 
-### 显示/隐藏弹出元素
+<span id="show-hide-popup"/>
+### <a name="showhide-popup"></a>显示/隐藏弹出元素
 
 当你在当前视图顶部显示和隐藏 [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) 或类似的上下文 UI 时，请使用 [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) 和 [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391)。 [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) 是主题过渡，如果要轻型消除弹出元素，它是有用的反馈。
 
-### 显示/隐藏边缘 UI
+<span id="show-hide-edge-ui"/>
+### <a name="showhide-edge-ui"></a>显示/隐藏边缘 UI
 
 使用 [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) 动画可以将较小的基于边缘的 UI 滑入和滑出视图。 例如，在屏幕顶部或底部显示自定义应用栏或在屏幕顶部显示用于错误和警告的 UI 表面时使用这些动画。
 
 使用 [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969160) 动画可显示和隐藏窗格或面板。 此操作适用于基于边缘的较大 UI（例如自定义键盘或任务窗格）。
 
-### 列表项更改
+### <a name="list-item-changes"></a>列表项更改
 
 当你在现有列表中添加或删除某个项目时，将使用 [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) 动画添加动画的表现方式。 若要添加，过渡将首先重新定位列表中的现有项，以便为新项腾出空间，然后添加新项。 若要删除，过渡将从列表中删除项目，然后在移除删除的项目后，重新定位其余的列表项（如有必要）。
 
@@ -101,13 +104,14 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 
 请注意，这些动画包括在默认 [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 模板中，因此如果你已使用这些控件，则无需手动添加这些动画。
 
-### 拖放
+<span id="drag-drop"/>
+### <a name="dragdrop"></a>拖放
 
 使用拖动动画（[**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173)、[**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177)）和放置动画 ([**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185)) 可以在用户拖放一个项时提供视觉反馈。
 
 在激活时，动画将向用户显示该列表可以在放置的项目周围重新排列。 如果用户需要知道在当前位置放下该项目时会将该项目置于列表中的何处，则这样会很有帮助。 动画会提供视觉反馈，表明正在拖动的项目可以放到列表中的其他两个项目之间，以及这些项目将腾出空间。
 
-## 将动画与自定义控件结合使用
+## <a name="using-animations-with-custom-controls"></a>将动画与自定义控件结合使用
 
 下表概述了在创建这些 Windows 运行时控件的自定义版本时应当使用的动画建议：
 
@@ -124,7 +128,7 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 
  
 
-## 过渡动画示例
+## <a name="transition-animation-examples"></a>过渡动画示例
 
 理想情况下，你的应用使用动画来增强用户界面效果，或使它更具吸引力，而不会使用户觉得厌烦。 能够实现此目的的一种方式是为 UI 应用动画过渡，这样如果某些内容进入或离开了屏幕，或者发生了更改，动画可以提示用户注意所发生的更改。 例如，你的按钮可以快速淡入和淡出视图，而不仅仅是显示和消失。 我们创建了很多 API，可用于创建一致的建议或典型动画过渡。 此处的示例显示了如何为按钮应用动画，以使按钮轻快地滑入视图。
 
@@ -198,11 +202,9 @@ Windows 运行时动画系统和动画库实现了更大的目标，即允许控
 
 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 的多个子矩形以令人视觉愉悦的方式一个接一个过渡到视图中，而如果你将此动画分别应用到每个矩形，这些矩形将一次全部显示过渡到视图。
 
-以下是演示此动画的视频：
+下面是此动画的演示：
 
 ![显示过渡到视图中的子矩形的动画](./images/animation-child-rectangles.gif)
-
-<iframe src="https://videoplayercdn.osi.office.net/embed/bb48c68b-c15d-44e4-86e5-8a8065da7a2e?autoplay=true&mkt=en-us&csid=IA-en-us" width="640" height="360" allowFullScreen="true" frameBorder="0" scrolling="no" ></iframe>
 
 容器的子对象还可以在其中一个或多个子对象更改位置时重新流动。 在下面的示例中，我们将 [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) 应用到多个矩形的网格中。 如果你删除其中一个矩形，其他所有矩形将重新流动到新位置。
 
@@ -266,8 +268,6 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 }
 ```
 
-此视频演示了为要删除的矩形运行的动画：
-
 你可以将多个过渡动画应用到单个对象或对象容器。 例如，如果你想要矩形列表以动画方式进入视图，而且在更改位置时也采用动画方式，你可以按如下所示应用 [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) 和 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288)：
 
 ```xml
@@ -297,7 +297,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 
  
 
-## 主题动画示例
+## <a name="theme-animation-examples"></a>主题动画示例
 
 过渡动画的应用很简单。 但是你可能想要对动画效果的计时和顺序进行稍多的控制。 你可以使用主题动画来获得更多的控制，同时对动画的表现方式仍使用一致的主题。 而且，与自定义动画相比，主题动画需要的标记较少。 此处，我们使用 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 将一个矩形淡出视图。
 
@@ -366,7 +366,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
  
 
-## 创建你自己的动画
+## <a name="create-your-own-animations"></a>创建你自己的动画
 
 如果主题动画不能满足你的需求，你可以创建自己的动画。 你可以通过创建一个或多个对象属性值的动画来创建对象的动画。 例如，你可以创建矩形的宽度、[**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) 的角度或按钮的颜色值的动画。 我们将此类型的自定义动画称为情节提要动画，用于将其从 Windows 运行时提供为预配置动画类型的库动画中区分出来。 对于情节提要动画，你可以使用可更改特定类型的值的动画（例如 [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) 可创建 **Double** 动画），并将该动画放置在 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 中以对其进行控制。
 
@@ -384,6 +384,6 @@ XAML（可以在其中定义自定义情节提要动画）中应用 UI 定义的
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,12 +4,12 @@ title: "在 Direct3D 11 中处理设备删除方案"
 description: "本主题介绍了图形适配器被删除或重新初始化时，如何重新创建 Direct3D 和 DXGI 的设备界面链。"
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3cb625886add852d9faa36a0ad5bc611c1929077
+ms.sourcegitcommit: 5ed3815397b076ab3ee14fd3c22b235b46da5f09
+ms.openlocfilehash: b88d85c78ba5d08718b7e2c844f94beb71e5134a
 
 ---
 
-# <span id="dev_gaming.handling_device-lost_scenarios"></span>在 Direct3D 11 中处理设备删除方案
+# <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>在 Direct3D 11 中处理设备删除方案
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -25,9 +25,9 @@ ms.openlocfilehash: 3cb625886add852d9faa36a0ad5bc611c1929077
 
 出现此情况时，DXGI 将返回一个错误代码，该代码指示必须重新初始化 Direct3D 设备且必须重新创建设备资源。 此操作实例演示了 Direct3D 11 应用和游戏如何检测和响应以下情况：重置、删除或更改图形适配器。 随 Microsoft Visual Studio 2015 一起提供的 DirectX 11 应用（通用 Windows）模板提供了代码示例。
 
-# 说明
+# <a name="instructions"></a>说明
 
-### <span></span>步骤 1：
+### <a name="spanspanstep-1"></a><span></span>步骤 1：
 
 包含用于呈现循环中设备删除错误的检查。 通过调用 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)（或 [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 等）呈现帧。 然后，检查它是返回 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 还是 **DXGI\_ERROR\_DEVICE\_RESET**。
 
@@ -52,7 +52,7 @@ else
 }
 ```
 
-### 步骤 2：
+### <a name="step-2"></a>步骤 2：
 
 还包含用于在响应窗口大小更改时出现的设备删除错误的检查。 这是检查 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 或 **DXGI\_ERROR\_DEVICE\_RESET** 的好时机，原因如下：
 
@@ -87,9 +87,9 @@ else
 }
 ```
 
-### 步骤 3：
+### <a name="step-3"></a>步骤 3：
 
-当你的设备收到 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 错误时，它必须重新初始化 Direct3D 设备，并重新初始化任何依赖设备的资源。 释放对使用早期 Direct3D 设备创建的图形设备资源的任何引用；这些资源现在无效，在创建新交换链之前，必须释放对交换链的所有引用。
+当你的设备收到 [**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) 错误时，它必须重新初始化 Direct3D 设备，并重新创建任何依赖设备的资源。 释放对使用早期 Direct3D 设备创建的图形设备资源的任何引用；这些资源现在无效，在创建新交换链之前，必须释放对交换链的所有引用。
 
 HandleDeviceLost 方法释放交换链并通知应用组件释放设备资源：
 
@@ -130,10 +130,10 @@ if (m_deviceNotify != nullptr)
 
 当 HandleDeviceLost 方法退出时，控制将返回到呈现循环，该循环将继续绘制下一个帧。
 
-## 备注
+## <a name="remarks"></a>备注
 
 
-### 调查设备删除错误的原因
+### <a name="investigating-the-cause-of-device-removed-errors"></a>调查设备删除错误的原因
 
 如果重复出现带有 DXGI 设备删除错误的问题，这可能指示你的图像代码在绘制例程期间创建的条件无效。 它还可能指示硬件失败或图形驱动程序中的错误。 若要调查设备删除错误的原因，请调用 [**ID3D11Device::GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526)，然后再释放 Direct3D 设备。 此方法返回六个可能的 DXGI 错误代码之一，指示设备删除错误的原因：
 
@@ -159,7 +159,7 @@ if (m_deviceNotify != nullptr)
 
 有关更多详细信息，请参阅 [**GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) 和 [**DXGI\_ERROR**](https://msdn.microsoft.com/library/windows/desktop/bb509553)。
 
-### 测试设备删除处理
+### <a name="testing-device-removed-handling"></a>测试设备删除处理
 
 对于与 Visual Studio 图形诊断相关的 Direct3D 事件捕获和播放，Visual Studio 开发人员命令提示符支持命令行工具“dxcap”。 当你的应用正在运行时，你可以使用命令行选项“-forcetdr”，以便强制执行 GPU 超时检测和恢复事件，进而触发 DXGI\_ERROR\_DEVICE\_REMOVED 并允许你测试错误处理代码。
 
@@ -177,6 +177,6 @@ if (m_deviceNotify != nullptr)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -79,14 +79,14 @@ XAML 应尽可能地使用更有效的布局文本的代码路径。 此快速�
 - [**CharacterSpacing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx)：仅默认值 0 是快速路径。
 - [**TextTrimming**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx)：仅 **None**、**CharacterEllipsis** 和 **WordEllipsis** 值是快速路径。 **Clip** 值将禁用快速路径。
 
-> **注意**&nbsp;&nbsp;在 Windows 10 版本 1607 之前，其他属性也会影响快速路径。 如果应用在早期版本的 Windows 上运行，这些条件也会导致文本在慢速路径上呈现。 有关版本的详细信息，请参阅版本自适应代码。
+> **注意**  在 Windows 10 版本 1607 之前，其他属性也会影响快速路径。 如果应用在早期版本的 Windows 上运行，这些条件也会导致文本在慢速路径上呈现。 有关版本的详细信息，请参阅版本自适应代码。
 - [**Typography**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)：仅各个 Typography 属性的默认值是快速路径。
 - [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx)：如果 [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) 不为 0，**BaselineToBaseline** 或 **MaxHeight** 值将禁用快速路径。
 - [**IsTextSelectionEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx)：仅 **false** 是快速路径。 通过将此属性设置为 **true**，禁用快速路径。
 
 你可以在调试期间将 [DebugSettings.IsTextPerformanceVisualizationEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) 属性设置为 **true** 来确定文本是否正在使用快速路径呈现。 当此属性设置为 true 时，快速路径上的文本将显示为亮绿色。
 
->**提示**&nbsp;&nbsp;Build 2015- [XAML 性能：关于最大程度地提升使用 XAML 生成的通用 Windows 应用体验的技术](https://channel9.msdn.com/Events/Build/2015/3-698)中的此会议详细介绍了此功能。
+>**提示**  Build 2015- [XAML 性能：关于最大程度地提升使用 XAML 生成的通用 Windows 应用体验的技术](https://channel9.msdn.com/Events/Build/2015/3-698)中的此会议详细介绍了此功能。
 
 
 
@@ -118,13 +118,13 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ![在调试模式下呈现的文本](images/text-block-rendering-performance.png)
 
->**注意**&nbsp;&nbsp;不在快速路径上的文本颜色不会更改。 如果应用中有颜色指定为亮绿色的文本，则它在较慢的呈现路径上时仍然显示为亮绿色。 请注意，勿因为调试设置而将应用中设置为绿色的文本与在快速路径上设置为绿色的文本混淆。
+>**注意**  不在快速路径上的文本颜色不会更改。 如果应用中有颜色指定为亮绿色的文本，则它在较慢的呈现路径上时仍然显示为亮绿色。 请注意，勿因为调试设置而将应用中设置为绿色的文本与在快速路径上设置为绿色的文本混淆。
 
 ## 设置文本格式
 
 虽然 Text 属性存储纯文本，但你可以将各种格式设置选项应用到 TextBlock 控件以自定义文本在应用中的呈现方式。 你可以设置标准控件属性（如 FontFamily、FontSize、FontStyle、Foreground 和 CharacterSpacing）来更改文本外观。 你还可以使用内联文本元素和 Typography 附加属性来设置文本格式。 这些选项仅影响 TextBlock 在本地显示文本的方式，所以举例来说，如果你将文本复制并粘贴到 RTF 控件，则不会应用任何格式。
 
->**注意**&nbsp;&nbsp;请记住，如在上一节中所述，内联文本元素和非默认版式值不会呈现在快速路径上。
+>**注意**  请记住，如在上一节中所述，内联文本元素和非默认版式值不会呈现在快速路径上。
 
 
 ### 内联元素

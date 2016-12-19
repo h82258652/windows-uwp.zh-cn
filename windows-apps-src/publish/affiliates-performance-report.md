@@ -4,25 +4,25 @@ Description: "若要查看应用中关联广告的性能数据，可以在 Windo
 title: "关联性能报告"
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
 translationtype: Human Translation
-ms.sourcegitcommit: 577b238875b2d0edd47d9ad0e5e73ca79a6acf75
-ms.openlocfilehash: cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d
+ms.sourcegitcommit: 9646b9614bb2935db5880cad9bf1a58648330671
+ms.openlocfilehash: 76bb607fb0abf11c863be24489a4eea0747a4e40
 
 ---
 
-# 关联性能报告
+# <a name="affiliates-performance-report"></a>关联性能报告
 
 如果你已经[选择加入了 Microsoft 关联广告计划](about-affiliate-ads.md)，则可以在 Windows 开发人员中心仪表板的以下报告中查看显示在应用中的关联广告的性能数据：
 
--   [应用级别的关联性能报告](affiliates-performance-report.md#app-level-affiliates-performance-report)。 此报告在仪表板中提供当前所选应用中关联广告的性能数据。
--   [仪表板级别的关联性能报告](affiliates-performance-report.md#dashboard-level-affiliates-performance-report)。 此报告总结了已选择加入 Microsoft 关联广告计划的所有应用中的关联广告的性能数据。
+-   [应用级别的关联性能报告](#app-level-affiliate-ads-performance-report)。 此报告在仪表板中提供当前所选应用中关联广告的性能数据。
+-   [仪表板级别的关联性能报告](#dashboard-level-affiliate-ads-performance-report)。 此报告总结了已选择加入 Microsoft 关联广告计划的所有应用中的关联广告的性能数据。
 
-这些报告每天都会更新。 默认情况下，针对所有设备上最近 30 天的性能筛选报告。 若要更改这些筛选器，请单击“页面筛选器”****并选择不同的时间帧或单个设备类型。 请注意，所有数据均根据所使用的 UTC 而非特定时区进行聚合。
+这些报告每天都会更新。 默认情况下，针对所有设备上最近 30 天的性能筛选报告。 若要更改这些筛选器，请单击“页面筛选器”并选择不同的时间帧或单个设备类型。 请注意，所有数据均根据所使用的 UTC 而非特定时区进行聚合。
 
 以下部分提供有关这些报告的更多详细信息。
 
-## 应用级别的关联广告性能报告
+## <a name="app-level-affiliate-ads-performance-report"></a>应用级别的关联广告性能报告
 
-此报告在仪表板中以图形和表形式提供当前所选应用中关联广告的性能数据。 若要查看此报告，请选择仪表板中的一款应用，并在导航窗格中依次单击“分析”****&gt;“关联性能”****。
+此报告在仪表板中以图形和表形式提供当前所选应用中关联广告的性能数据。 若要查看此报告，请选择仪表板中的一款应用，并在导航窗格中依次单击“分析”&gt;“关联性能”。
 
 可通过以下跟踪你的应用中广告的七个性能指标获取数据：
 
@@ -36,11 +36,11 @@ ms.openlocfilehash: cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d
 
 > **注意** 用户在应用商店中购买某个产品后，需要等待 45 天，然后才能批准此次购买用于关联广告计划。 由于存在此等候期，给定日期内的**预计收入（已批准）**、**预计收入（待批准）**、**购买（已批准）**以及**购买（待批准）**可能会在批准或拒绝购买后发生更改。
 
-## 仪表板级别的关联广告性能报告
+## <a name="dashboard-level-affiliate-ads-performance-report"></a>仪表板级别的关联广告性能报告
 
-“仪表板概述”****页面上的“关联性能”****部分以图形和表形式总结了已选择加入 Microsoft 关联广告计划的所有应用的关联广告性能数据。 此报告显示与上面所述的应用级别关联性能报告相同的性能指标和筛选器。
+“仪表板概述”页面上的“关联性能”部分以图形和表形式总结了已选择加入 Microsoft 关联广告计划的所有应用的关联广告性能数据。 此报告显示与上面所述的应用级别关联性能报告相同的性能指标和筛选器。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [关于关联广告](about-affiliate-ads.md)
 * [利用广告来盈利](monetize-with-ads.md)
@@ -50,6 +50,6 @@ ms.openlocfilehash: cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

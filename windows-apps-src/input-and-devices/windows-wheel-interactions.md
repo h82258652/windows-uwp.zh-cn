@@ -5,17 +5,17 @@ title: "Surface Dial 交互"
 label: Surface Dial interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: e58306bb3b5ffc484575c874154875745a4aa917
-ms.openlocfilehash: d535af06ab720753980a1125df61323a96e2f406
+ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
+ms.openlocfilehash: 08ac5d58f2650306b162e4dec7f4e606543ca80f
 
 ---
 
-# Surface Dial 交互
+# <a name="surface-dial-interactions"></a>Surface Dial 交互
 
 ![适配 Surface Studio 的 Surface Dial 的图像](images/windows-wheel/dial-pen-studio-600px.png)  
 *适配 Surface Studio 和触控笔的 Surface Dial*（可通过 [Microsoft 官方商城](https://aka.ms/purchasesurfacedial)购买）。
 
-## 概述
+## <a name="overview"></a>概述
 
 Surface Dial 之类的 Windows Wheel 设备是一类全新的输入设备，使主机能为 Windows 和 Windows 应用提供引人入胜和独特的用户交互体验。 
 
@@ -44,7 +44,7 @@ Surface Dial 之类的 Windows Wheel 设备是一类全新的输入设备，使�
 | --- | --- | --- |
 | ![Surface Dial 离屏菜单](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Surface Dial 屏幕菜单](images/windows-wheel/surface-dial-menu-onscreen.png) |
 
-## 系统集成
+## <a name="system-integration"></a>系统集成
 
 Surface Dial 与 Windows 紧密集成，并且支持菜单上的一组内置工具：系统音量、滚动、放大/缩小和撤消/重做。
 
@@ -70,17 +70,17 @@ Surface Dial 与 Windows 紧密集成，并且支持菜单上的一组内置工�
 ![适配 Windows Ink 工具栏的标尺工具的 Surface Dial 菜单](images/windows-wheel/surface-dial-menu-inktoolbar-ruler.png)  
 *适配 Windows Ink 工具栏的标尺工具的 Surface Dial 菜单*
 
-## 用户自定义
+## <a name="user-customization"></a>用户自定义
 
 用户可以通过“Windows 设置”&gt;”设备”&gt;“Wheel”自定义其 Dial 体验的某些方面，其中包括默认工具、振动（或触觉反馈）和书写（或惯用）手。 
 
 自定义 Surface Dial 用户体验时，应始终确保特定功能或行为可用，并且受用户支持。
 
-## 自定义工具
+## <a name="custom-tools"></a>自定义工具
 
 下面我们介绍的 UX 和开发人员指南可用于自定义 Surface Dial 菜单上公开的工具。
 
-### UX 指南
+### <a name="ux-guidance"></a>UX 指南
 
 **确保工具对应于当前上下文**当你彻底了解了工具执行的具体操作和 Surface Dial 交互的工作原理后，可帮助用户快速上手，并使他们专注于自己的任务。
 
@@ -120,7 +120,7 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
   - “滚动”指示两个旋转方向的效果
   - “撤消”指定主要操作，但用户可以推断和轻松地发现“重做”（互补操作）
 
-### 开发人员指南
+### <a name="developer-guidance"></a>开发人员指南
 
 可以通过一组全面的 [Windows 运行时 API](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 自定义 Surface Dial 体验，来补充应用中的功能。 
 
@@ -266,7 +266,7 @@ public MainPage()
 }
 ```
 
-## 自定义交互
+## <a name="custom-interactions"></a>自定义交互
 
 如上所述，Surface Dial 支持与默认交互对应的三种手势（即长按、旋转、单击）。 
 
@@ -275,7 +275,7 @@ public MainPage()
 > [!NOTE]
 > 交互体验依赖于 Surface Dial 菜单的状态。 如果菜单处于活动状态，该菜单处理输入；否则，你的应用处理输入。
 
-### 长按
+### <a name="press-and-hold"></a>长按
 
 此手势会激活并显示 Surface Dial 菜单，没有与该手势相关联的任何应用功能。 
 
@@ -284,7 +284,7 @@ public MainPage()
 > [!NOTE]
 > Surface Dial 置于 Surface Studio 的屏幕上时，菜单居于 Surface Dial 屏幕位置的中心。
 
-### 旋转
+### <a name="rotate"></a>旋转
 
 Surface Dial 主要设计用于对涉及模拟值或控制的平滑、增量调整的交互支持旋转。
 
@@ -293,7 +293,7 @@ Surface Dial 主要设计用于对涉及模拟值或控制的平滑、增量调�
 > [!NOTE]
 > 用户可以在“Windows 设置”&gt;“设备”&gt;“Wheel”页中禁用触觉反馈。
 
-#### UX 指南
+#### <a name="ux-guidance"></a>UX 指南
 
 **具有连续或高旋转灵敏度的工具应禁用触觉反馈**
 
@@ -320,7 +320,7 @@ Surface Dial 无法检测到正在使用哪只手，但用户可以在“Windows
 | 垂直 | 基于 Surface Dial 左侧的上下映射 | 向下 | 向上 |
 | Z 轴 | 映射到向上/向右的放大（或靠近）<br/>映射到向下/向左的缩小（或远离） | 放大 | 缩小 |
 
-#### 开发人员指南
+#### <a name="developer-guidance"></a>开发人员指南
 
 用户旋转设备时，将基于相对于旋转方向的增量 ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees)) 触发 [**RadialController.RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged) 事件。 可以使用 [**RadialController.RotationResolutionInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationResolutionInDegrees) 属性设置数据的灵敏度（或分辨率）。
 
@@ -359,11 +359,11 @@ private void MyController_ButtonClicked(RadialController sender,
 }
 ```
 
-### 单击
+### <a name="click"></a>单击
 
 单击 Surface Dial 类似于单击鼠标左键（设备的旋转状态不影响该操作）。
 
-#### UX 指南
+#### <a name="ux-guidance"></a>UX 指南
 
 **如果用户不能轻松地从结果中恢复，请勿将操作或命令映射到该手势**
 
@@ -377,13 +377,11 @@ private void MyController_ButtonClicked(RadialController sender,
 
 对于模式工具，请将 Surface Dial 活动菜单项映射到目标工具或先前选定的菜单项。
 
-#### 开发人员指南
+#### <a name="developer-guidance"></a>开发人员指南
 
-单击 Surface Dial 时，会触发 [**RadialController.ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 事件。 [
-              **RadialControllerButtonClickedEventArgs**
-            ](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs) 包括 [**Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs.Contact) 属性，该属性包含 Surface Dial 与 Surface Studio 屏幕接触的位置和边界区域。 Surface Dial 未与屏幕保持接触，则该属性为 null。 
+单击 Surface Dial 时，会触发 [**RadialController.ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 事件。 [ **RadialControllerButtonClickedEventArgs** ](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs) 包括 [**Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs.Contact) 属性，该属性包含 Surface Dial 与 Surface Studio 屏幕接触的位置和边界区域。 Surface Dial 未与屏幕保持接触，则该属性为 null。 
 
-### 屏幕
+### <a name="on-screen"></a>屏幕
 
 如之前所述，Surface Dial 可以与 Surface Studio 配合使用，以在特殊屏幕模式中显示 Surface Dial 菜单。 
 
@@ -393,7 +391,7 @@ private void MyController_ButtonClicked(RadialController sender,
 - 基于 Surface Dial 的位置放大屏幕区域
 - 基于屏幕位置的独特游戏交互
 
-#### UX 指南
+#### <a name="ux-guidance"></a>UX 指南
 
 **屏幕上检测到 Surface Dial 时，应用应做出响应**
 
@@ -417,7 +415,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 基于 UI 上下文（如邻近的控件、画布或窗口）设置活动工具，可通过减少执行任务所需的步骤来改善用户体验。
 
-#### 开发人员指南
+#### <a name="developer-guidance"></a>开发人员指南
 
 当 Surface Dial 置于 Surface Studio 的数字化器图面上时，将触发 [**RadialController.ScreenContactStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ScreenContactStarted) 事件，并向你的应用提供接触信息 ([**RadialControllerScreenContactStartedEventArgs.Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs.Contact))。
 
@@ -632,18 +630,17 @@ private void ActivateGridAtLocation(Point Location)
 ![使用 Surface Dial 自定义工具激活的示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *使用 Surface Dial 自定义工具激活的示例应用 UI*
 
-## 小结
+## <a name="summary"></a>小结
 
 本主题概述了有关以下方面的 Surface Dial 输入设备与 UX 和开发人员指南：与 Surface Studio 配合使用时，如何针对离屏情形以及屏幕情形自定义用户体验。
 
-## 反馈
+## <a name="feedback"></a>反馈
 
 请将你的问题、建议和反馈发送到 [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com)。
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
-### API 参考
-
+### <a name="api-reference"></a>API 参考
 
 - [**RadialController** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
 - [**RadialControllerButtonClickedEventArgs** 类](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
@@ -658,13 +655,13 @@ private void ActivateGridAtLocation(Point Location)
 - [**RadialControllerMenuKnownIcon** 枚举](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuKnownIcon) 
 - [**RadialControllerSystemMenuItemKind** 枚举](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
-### 示例
+### <a name="samples"></a>示例
 
 [通用 Windows 平台示例（C# 和 C++）](https://go.microsoft.com/fwlink/?linkid=832713)
 
 [Windows 经典桌面示例](https://aka.ms/radialcontrollerclassicsample)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

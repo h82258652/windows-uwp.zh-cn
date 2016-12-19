@@ -4,37 +4,35 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "了解应用中广告的 UI 和用户体验指南。"
 title: "应用中广告的 UI 和用户体验指南"
 translationtype: Human Translation
-ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
-ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
+ms.sourcegitcommit: 148aca16104f599f3048f5965c4131a3f37799f8
+ms.openlocfilehash: 97feb4f79e0592a7b54a8263b15cd2b85dd3243d
 
 
 ---
 
-# 应用中广告的 UI 和用户体验指南
+# <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>应用中广告的 UI 和用户体验指南
 
 
-
-
-## 适用于 Windows 应用的常规 UI 资源
+## <a name="general-ui-resources-for-windows-apps"></a>适用于 Windows 应用的常规 UI 资源
 
 你可以在[设计和 UI](https://developer.microsoft.com/windows/design) 找到有关如何设计应用的外观的信息。
 
-## AdControl 最佳做法
+## <a name="adcontrol-best-practices"></a>AdControl 最佳做法
 
 * [AdControl 最佳做法：应做事项](#adcontrolbestpracticesdo10)
 * [AdControl 最佳做法：禁止事项](#adcontrolbestpracticesdont10)
 
 <span id="adcontrolbestpracticesdo10"/>
-### AdControl 最佳做法：应做事项
+### <a name="adcontrol-best-practices-do"></a>AdControl 最佳做法：应做事项
 
 * 将广告设计到体验中。 为你的设计人员提供示例广告，以设计广告的外观。 应用中两个精心设计的广告示例是广告即内容布局和拆分布局。
 
-  若要查看应用中广告大小的外观和运行状况的差异，可以利用我们适用于 Windows Phone、Windows8.1 和 Windows10 的测试模式广告单元。 在结束使用测试模式广告单元后，请记得[使用实际广告单元 ID 更新应用](set-up-ad-units-in-your-app.md)，然后再提交应用以供认证。
+  若要查看应用中广告大小的外观和运行状况的差异，可以利用我们适用于 Windows Phone、Windows 8.1 和 Windows 10 的测试模式广告单元。 在结束使用测试模式广告单元后，请记得[使用实际广告单元 ID 更新应用](set-up-ad-units-in-your-app.md)，然后再提交应用以供认证。
 
 * 针对广告不可用时进行设计。 可能会多次出现广告未发送到应用的情况。 设计页面的版式，以使其不管是否显示广告都看起来很精美。 有关详细信息，请参阅[错误处理](error-handling-with-advertising-libraries.md)。
 
 <span id="adcontrolbestpracticesdont10"/>
-### AdControl 最佳做法：禁止事项
+### <a name="adcontrol-best-practices-dont"></a>AdControl 最佳做法：禁止事项
 
 * 将广告放在开阔的使用空间。 广告空间不应置于你可以找到的第一块开阔的使用空间。 而应将广告融入应用的整体设计。
 
@@ -43,7 +41,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 * 使用户无法专注其核心任务。 主要关注点应该始终在应用上。 应合并广告空间，使其保持为次要关注点。
 
 <span id="interstitialbestpractices10"/>
-## 间隙最佳做法和策略
+## <a name="interstitial-best-practices-and-policies"></a>间隙最佳做法和策略
 
 * [间隙最佳做法：应做事项](#interstitialbestpracticesdo10)
 * [间隙最佳做法：避免事项](#interstitialbestpracticesavoid10)
@@ -54,7 +52,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 我们旨在帮助你实现优雅的设计。 由于你比其他任何人都更了解你的应用（涉及到策略除外），因此我们将其留给你来做最佳的最后决定。 最重要的是请务必记住你的应用评分与收益密切相关。
 
 <span id="interstitialbestpracticesdo10"/>
-### 间隙最佳做法：应做事项
+### <a name="interstitial-best-practices-do"></a>间隙最佳做法：应做事项
 
 * 将间隙广告安插在应用的自然流程中，如游戏关卡之间。
 
@@ -84,13 +82,14 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
     * 与横幅广告相比，视频广告实质上需要花费更长的时间来下载，尤其是在没有高速连接的市场中。
 
+<span/>
 
 * 注意用户的流量套餐。 例如，在接近或超出其流量上限的移动设备上投放视频广告前，不要向用户显示广告，或者向用户发出警告。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 类中的 API 可以提供帮助。
 
 * 在初始提交后持续改进你的应用。 查看广告报告并对设计进行更改以提高填充率和视频完成率。
 
 <span id="interstitialbestpracticesavoid10"/>
-### 间隙最佳做法：避免事项
+### <a name="interstitial-best-practices-avoid"></a>间隙最佳做法：避免事项
 
 * 过度间隙广告。 不要每超过约 5 分钟就强制间隙广告，除非用户除了玩游戏以外，明确对某个可选的切实好处感兴趣。
 
@@ -106,8 +105,9 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 * 在调用 [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 之前提取一个超过 5 分钟的视频广告。
 
-    * 良好的库存会最大限度地将预取的广告转换为可计费的广告展示。
+  * 良好的库存会最大限度地将预取的广告转换为可计费的广告展示。
 
+<span/>
 
 * 对广告投放出现故障（如没有可用的广告）的用户进行处罚。 例如，如果你显示“观看广告获取 *xxx*”的 UI 选项，那么在用户看完以后，你应当提供 *xxx*。 有两个选项可以考虑：
 
@@ -122,7 +122,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
     * 玩家的虚拟形象穿的自定义衬衫很精美，只要不提供伪装就行！
 
 <span id="interstitialbestpracticesnever10"/>
-### 间隙最佳做法：禁止事项（强制执行的策略）
+### <a name="interstitial-best-practices-never-policy-enforced"></a>间隙最佳做法：禁止事项（强制执行的策略）
 
 * 永远不要将所有 UI 元素都放在广告容器上。
 
@@ -130,9 +130,9 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 <span/>
 
-* 永远不要在用户使用应用时调用 **Show**。
+* 永远不要在用户使用应用时调用 [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx)。
 
-    * 由于 **InterstitialAd** 将创建全屏覆盖层，用户将发现这样会产生抖动。
+    * 由于 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 将创建全屏覆盖层，用户将发现这样会产生抖动。
 
     * 还可能会导致过大的点击率。
 
@@ -140,7 +140,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 * 永远不要在 [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) 事件的事件处理程序的上下文请求新广告。 这可能导致无限循环，并且可能导致广告服务的操作问题。
 
-* 永远不要在请求间隙广告后，忘记显示向应用提供的广告。 如果你请求某个广告，然后收到 [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件作为对你请求的响应，则你必须显示该广告。 如果你正在使用其他广告网络实现你自己的广告中介解决方案，请仅在对其他广告网络的请求不成功后为 **InterstitialAd** 控件请求广告。
+* 永远不要只是为了具有瀑布序列广告的备份广告而请求间隙广告。 如果请求间隙广告然后收到 [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件，应用中所示的下一个间隙广告必须是已准备好通过[显示](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx)方法显示的广告。
 
  
 
@@ -148,6 +148,6 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

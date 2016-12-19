@@ -6,18 +6,18 @@ ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a954404ccc2e986c1603402315c8497f802ad254
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: 20e73c2de82bcc76c94fff38163dddac7ef9d8a9
 
 ---
-# 通知可视化工具
+# <a name="notifications-visualizer"></a>通知可视化工具
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 通知可视化工具是[应用商店](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)中一款新的通用 Windows 平台 (UWP) 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。
 
-## 概述
+## <a name="overview"></a>概述
 
 
 通知可视化工具应用会在你进行编辑时提供磁贴的即时可视预览，类似于 Visual Studio 的 XAML 编辑器/设计视图。 该应用还会检查错误，从而确保你可以创建有效的磁贴负载。
@@ -34,7 +34,7 @@ ms.openlocfilehash: a954404ccc2e986c1603402315c8497f802ad254
 
  
 
-## 功能
+## <a name="features"></a>功能
 
 
 通知可视化工具附带许多示例负载，可展示自适应动态磁贴的功能，并且帮助你开始操作。 你可以对所有不同的文本选项、组/子组、背景图像进行试验，而且可以看到磁贴如何适应不同的设备和屏幕。 在进行更改之后，你可以将已更新的负载保存到文件以供将来使用。
@@ -49,24 +49,15 @@ ms.openlocfilehash: a954404ccc2e986c1603402315c8497f802ad254
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [在应用商店中获取通知可视化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
 * [创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)
 * [自适应磁贴模板：架构和文档](tiles-and-notifications-adaptive-tiles-schema.md)
 * [磁贴和 Toast（MSDN 博客）](http://blogs.msdn.com/b/tiles_and_toasts/)
-* [NotificationsExtensions 库（MSDN 博客）](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)
- 
-
- 
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

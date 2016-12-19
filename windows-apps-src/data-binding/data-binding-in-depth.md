@@ -4,11 +4,11 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "深入了解数据绑定"
 description: "数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。"
 translationtype: Human Translation
-ms.sourcegitcommit: ef5e2819a7fd18fb3ed3162fd8debe750f29c378
-ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
+ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
+ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
 
 ---
-# 深入了解数据绑定
+# <a name="data-binding-in-depth"></a>深入了解数据绑定
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,7 +19,8 @@ ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-> **注意**&nbsp;&nbsp;本数据详细介绍数据绑定功能。 有关简短、实用的简介，请参阅[数据绑定概述](data-binding-quickstart.md)。
+> **注意**
+              本数据详细介绍数据绑定功能。 有关简短、实用的简介，请参阅[数据绑定概述](data-binding-quickstart.md)。
 
 
 数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。 借助数据绑定，你可以将关注的数据从关注的 UI 中分离开来，从而可形成一个更简易的概念模型，并且使你的应用拥有更好的可读性、可测试性和可维护性。
@@ -43,7 +44,7 @@ ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
 -   下载 [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) 应用。
 -   下载 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 应用。
 
-## 每个绑定均由以下部分构成
+## <a name="every-binding-involves-these-pieces"></a>每个绑定均由以下部分构成
 
 -   *绑定源*。 这是用于绑定的数据源，它可以是任意类的实例，其中该类具有其值要显示在 UI 中的成员。
 -   *绑定目标*。 这是显示数据的 UI 中 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)。
@@ -51,7 +52,7 @@ ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
 
 在以下部分中，我们将进一步探讨绑定源、绑定目标和绑定对象。 我们将这些部分与关于将按钮内容绑定到名为 **NextButtonText** 的字符串属性（这属于名为 **HostViewModel** 的类）的示例链接在一起。
 
-### 绑定源
+### <a name="binding-source"></a>绑定源
 
 下面是一个非常基础的可用作绑定源的类实现。
 
@@ -145,7 +146,7 @@ public class HostViewModel : BindableBase
 
 你可以使用增量加载将列表控件绑定到任意的大型数据源，且仍获得高性能。 例如，你可以将列表控件绑定到必应图像查询结果，而无需一次性加载所有结果。 你只需立即加载部分结果，再根据需要加载其他结果。 为支持增量加载，你必须在支持集合更改通知的数据源上实现 [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)。 当数据绑定引擎请求更多数据时，你的数据源必须发出相应的请求、集成结果，然后发送相应的通知以更新 UI。
 
-### 绑定目标
+### <a name="binding-target"></a>绑定目标
 
 在下面的两个示例中，**Button.Content** 属性是绑定目标，并且其值已设置为用于声明绑定对象的标记扩展。 首先显示的是 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，然后是 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 在标记中声明绑定这一做法很常见（其既便捷、易读又很实用）。 不过，应避免标记和以命令性方式（编程方式）创建 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 类的实例（除非需要）。
 
@@ -158,7 +159,7 @@ public class HostViewModel : BindableBase
 <Button Content="{Binding ...}" ... />
 ```
 
-### 使用 {x:Bind} 声明的绑定对象
+### <a name="binding-object-declared-using-xbind"></a>使用 {x:Bind} 声明的绑定对象
 
 在创作 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 标记之前，需先执行一个步骤。 我们需要从表示标记页面的类公开绑定源类。 通过将相关属性（本例中为 **HostViewModel** 类型）添加到 **HostView** 页面类，来执行此操作。
 
@@ -188,7 +189,9 @@ namespace QuizGame.View
 
 注意，该值即是我们为 **Path** 指定的值。 此值在页面的上下文中自行解释，在本例中路径首先用于引用我们刚添加到 **HostView** 页面的 **ViewModel** 属性。 该属性将返回 **HostViewModel** 实例，这样我们便可以点入该对象以访问 **HostViewModel.NextButtonText** 属性。 并且，我们将指定 **Mode** 以替代一次性绑定默认值 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)。
 
-[**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) 属性支持各种用于绑定到嵌套属性、附加属性以及整数和字符串索引器的语法选项。 有关详细信息，请参阅 [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 绑定到字符串索引器会为你提供绑定到动态属性的效果，而无需实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。 有关其他设置，请参阅 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)。
+[
+              **Path**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) 属性支持各种用于绑定到嵌套属性、附加属性以及整数和字符串索引器的语法选项。 有关详细信息，请参阅 [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 绑定到字符串索引器会为你提供绑定到动态属性的效果，而无需实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。 有关其他设置，请参阅 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)。
 
 **注意** 当 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 失去焦点时，对 [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) 的更改将发送到双向绑定源，这并非发生在每次用户按键之后。
 
@@ -217,7 +220,7 @@ namespace QuizGame.View
 
 **{x:Bind}** 既不适用于后期绑定方案（例如导航 JSON 对象的字典结构），也不适用于鸭子类型，该类型是基于属性名称的词法匹配的一种较弱形式的类型（“如果它的走路方式、游泳方式和叫声像鸭子，那么它就是一只鸭子”）。 借助鸭子类型，与 Age 属性的绑定将会同样满足 Person 或 Wine 对象。 对于这些方案，请使用 **{Binding}**。
 
-### 使用 {Binding} 声明的绑定对象
+### <a name="binding-object-declared-using-binding"></a>使用 {Binding} 声明的绑定对象
 
 默认情况下，[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 假设你要绑定到标记页面的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)。 因此，我们将页面的 **DataContext** 设置为绑定源类（本例中为 **HostViewModel** 类型）的实例。 下面的示例展示了用于声明绑定对象的标记。 我们使用了与前面“绑定目标”部分中所使用的相同 **Button.Content** 绑定目标，并绑定到 **HostViewModel.NextButtonText** 属性。
 
@@ -250,16 +253,22 @@ UI 元素的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 
 **注意** 默认情况下，当 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 失去焦点时，[**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) 的更改将发送到双向绑定源。 若要在每次用户按键之后发送更改，则在标记的绑定对象上将 **UpdateSourceTrigger** 设置为 **PropertyChanged**。 当通过将 **UpdateSourceTrigger** 设置为 **Explicit** 将更改发送到绑定源时，也可完全控制这一情形。 然后，在文本框（通常为 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)）上处理事件，调用绑定目标上的 [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) 以获取 [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) 对象，最后调用 [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) 以编程方式更新数据源。
 
-[**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) 属性支持各种用于绑定到嵌套属性、附加属性以及整数和字符串索引器的语法选项。 有关详细信息，请参阅 [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 绑定到字符串索引器会为你提供绑定到动态属性的效果，而无需实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) 属性对于元素间的绑定非常有用。 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) 属性具有多种用途，其中之一是用作模板化 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391) 内绑定的更有效的替代方法。 有关其他设置，请参阅 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)和 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 类。
+[
+              **Path**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) 属性支持各种用于绑定到嵌套属性、附加属性以及整数和字符串索引器的语法选项。 有关详细信息，请参阅 [Property-path 语法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 绑定到字符串索引器会为你提供绑定到动态属性的效果，而无需实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。 [
+              **ElementName**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) 属性对于元素间的绑定非常有用。 [
+              **RelativeSource**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) 属性具有多种用途，其中之一是用作模板化 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391) 内绑定的更有效的替代方法。 有关其他设置，请参阅 [{Binding} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204782)和 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 类。
 
-## 如果绑定源和绑定目标不是同一类型，会怎样？
+## <a name="what-if-the-source-and-the-target-are-not-the-same-type"></a>如果绑定源和绑定目标不是同一类型，会怎样？
 
 如果你希望基于 Boolean 属性值控制 UI 元素的可见性，或者希望 UI 元素显示为某种颜色（这是数字值的范围或趋势函数），亦或是希望在需要字符串的 UI 元素属性中显示日期/时间值，则需要将值从一种类型转化为另一种类型。 存在这样的情形：其正确的解决方案是从绑定源类公开其他正确类型的属性，并在此处让转换逻辑保持封装和可测试。 但是，当你拥有大量源和目标属性或这两者的大型组合时，上述方案既不灵活也不可扩展。 在这种情况下，你有以下几个选项：
 
 * 如果使用 {x:Bind}，则你可以直接绑定到函数以执行该转换。
 * 或者可以指定一个值转换器，该转换器是一个旨在执行转换的对象。 
 
-## 值转换器
+## <a name="value-converters"></a>值转换器
 
 下面是适用于一次性或单向绑定的值转换器，可将 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 值转换为包含月份的字符串值。 该类实现 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903)。
 
@@ -369,11 +378,12 @@ End Class
 > [!NOTE]
 > 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-## {x:Bind} 中的函数绑定
+## <a name="function-binding-in-xbind"></a>{x:Bind} 中的函数绑定
 
 {x:Bind} 使绑定步骤中的最后一步可以是一个函数。 这可以用于执行转换，以及执行依赖多个属性的绑定。 请参阅 [**{x:Bind} 标记扩展**](https://msdn.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension)。
 
-## 带有 {x:Bind} 的资源字典
+<span id="resource-dictionaries-with-x-bind"/>
+## <a name="resource-dictionaries-with-xbind"></a>带有 {x:Bind} 的资源字典
 
 [{x:Bind} 标记扩展](https://msdn.microsoft.com/library/windows/apps/Mt204783)依赖于代码生成，因此它需要一个包含可调用 **InitializeComponent** 的构造函数的代码隐藏文件（以供初始化生成的代码）。 通过实例化资源字典的类型（以便调用 **InitializeComponent**）而不是引用其文件名，来重用它。 下面是针对你拥有一个现有资源字典并且想要在其中使用 {x:Bind} 这一情形的示例。
 
@@ -428,7 +438,7 @@ MainPage.xaml
 </Page>
 ```
 
-## 事件绑定和 ICommand
+## <a name="event-binding-and-icommand"></a>事件绑定和 ICommand
 
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 支持一种名为事件绑定的功能。 借助此功能，你可以使用绑定为事件指定处理程序（这是一种附加选项），但使用代码隐藏文件上的某一方法处理事件除外。 假设你的 **MainPage** 类上具有 **RootFrame** 属性。
 
@@ -453,7 +463,7 @@ MainPage.xaml
 事件绑定技术类似于实现和使用命令（一个命令返回一种属性，该属性将返回实现 [**ICommand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.icommand.aspx) 接口的对象）。 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 均适用于命令。 可使用 [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) 示例（位于“Common”文件夹中）中提供的 **DelegateCommand** 帮助程序类，这样便无需多次实现命令模式。
 
 
-## 绑定到文件夹或文件集合
+## <a name="binding-to-a-collection-of-folders-or-files"></a>绑定到文件夹或文件集合
 
 你可以使用 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空间中的 API 来检索文件夹和文件数据。 然而，各种 **GetFilesAsync**、**GetFoldersAsync** 和 **GetItemsAsync** 方法都不会返回适合绑定到列表控件的值。 必须绑定到 [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501) 类的 [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422)、[**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428)和 [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) 方法的返回值。 下面的代码示例来自 [StorageDataSource 和 GetVirtualizedFilesVector 示例](http://go.microsoft.com/fwlink/p/?linkid=228621)，它将显示典型的使用模式。 请谨记在应用包清单中声明 **picturesLibrary** 功能，并确认你的 Pictures 库文件夹中有图片。
 
@@ -486,7 +496,7 @@ MainPage.xaml
 
 还请注意，某个虚拟化矢量可能会在填充其值之前为某些项目返回 **null**。 例如，应该首先检查 **null**，然后才能使用绑定到虚拟化矢量的列表控件的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 值，或者改为使用 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/BR209768)。
 
-## 绑定到按键分组的数据
+## <a name="binding-to-data-grouped-by-a-key"></a>绑定到按键分组的数据
 
 若要获取项的扁平集合（例如，由 **BookSku** 类表示的书籍）并通过将某一常见属性（例如，**BookSku.AuthorName** 属性）用作某种键来对项进行分组，则将该结果称之为分组数据。 当对数据进行分组时，它将不再是简单集合。 分组数据是组对象的集合，其中每个组对象都具有 a) 一个键和 b) 一个其属性与该键匹配的项集合。 再以书籍为例，按作者名称对书籍进行分组的结果即为作者名称组的集合，其中每组都具有 a) 一个键（这是作者名称）和 b) 一个其 **AuthorName** 属性与组键匹配的 **BookSku** 集合。
 
@@ -494,7 +504,9 @@ MainPage.xaml
 
 若要激活 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 的分组功能，请将 [**IsSourceGrouped**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.issourcegrouped) 设置为 **true**。 是否还需要设置 [**ItemsPath**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.itemspath) 属性完全取决于你的组对象的创作方式。 组对象的创作方式有以下两种：“属于组”模式和“包含组”模式。 在“属于组”模式中，组对象派生自集合类型（例如，**List&lt;T&gt;**），因此事实上组对象本身就是项目组。 使用此模式，无需设置 **ItemsPath**。 在“包含组”模式中，组对象具有一个或多个集合类型属性（例如 **List&lt;T&gt;**），因此“包含组”的单个项目组采用单个属性的形式（而多个项目组则采用多个属性的形式）。 使用此模式，需要将 **ItemsPath** 设置为包含项目组的属性名。
 
-下面的示例阐述了“包含组”模式。 页面类有一个名为 [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的属性，该属性将返回我们的视图模型的实例。 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 绑定到视图模型的 **Authors** 属性（**Authors** 是组对象的集合），还指定了它是包含分组项目的 **Author.BookSkus** 属性。 最后，[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 绑定到 **CollectionViewSource** 且具有其已定义的组样式，这样它便可以采用分组形式呈现项目。
+下面的示例阐述了“包含组”模式。 页面类有一个名为 [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的属性，该属性将返回我们的视图模型的实例。 [
+              **CollectionViewSource**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209833) 绑定到视图模型的 **Authors** 属性（**Authors** 是组对象的集合），还指定了它是包含分组项目的 **Author.BookSkus** 属性。 最后，[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 绑定到 **CollectionViewSource** 且具有其已定义的组样式，这样它便可以采用分组形式呈现项目。
 
 ```csharp
     <Page.Resources>
@@ -569,21 +581,24 @@ MainPage.xaml
     </GridView>
 ```
 
-[**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/Hh702601) 控件是使用户查看和导航分组数据的绝佳方法。 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 示例应用演示了如何使用 **SemanticZoom**。 在该应用中，你可以查看按作者分组的书籍列表（放大视图），也可以缩小以查看作者的跳转列表（缩小视图）。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 实际上，放大视图和缩小视图是绑定到同一 **CollectionViewSource** 的 **ListView** 或 **GridView** 控件。
+[
+              **SemanticZoom**
+            ](https://msdn.microsoft.com/library/windows/apps/Hh702601) 控件是使用户查看和导航分组数据的绝佳方法。 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 示例应用演示了如何使用 **SemanticZoom**。 在该应用中，你可以查看按作者分组的书籍列表（放大视图），也可以缩小以查看作者的跳转列表（缩小视图）。 与在书籍列表中上下滚动相比，跳转列表提供了更快速的浏览方式。 实际上，放大视图和缩小视图是绑定到同一 **CollectionViewSource** 的 **ListView** 或 **GridView** 控件。
 
 ![SemanticZoom 图示](images/sezo.png)
 
 当绑定到分层数据（如类别中的子类别）时，你可以选择使用一系列的项目控件，在 UI 中显示分层级别。 所选项目控件决定后续项目控件的内容。 你可以使列表保持同步，方法是将各列表绑定到其各自的 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 并将 **CollectionViewSource** 实例一同绑定到一个链中。 这称为主视图/详细信息（或列表/详细信息）视图。 有关详细信息，请参阅[如何绑定到分层数据并创建主视图/详细信息视图](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md)。
 
-## 诊断并调试数据绑定问题
+<span id="debugging"/>
+## <a name="diagnosing-and-debugging-data-binding-problems"></a>诊断并调试数据绑定问题
 
 绑定标记包含属性名称（对于 C#，有时是字段和方法）。 因此，在重命名属性时，你还需要更改对其进行引用的任何绑定。 若忘记执行此操作，会导致出现一个典型的数据绑定 Bug，并且你的应用将不能编译或不能正常运行。
 
-由 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 创建的绑定对象在功能上大致等同。 但是，{x:Bind} 具有绑定源的类型信息，并且会在编译时生成源代码。 借助 {x:Bind}，可使用剩余代码检测同一类型的问题。 这包括编译时对绑定表达式的验证，以及通过在作为页面的部分类生成的源代码中设置断点来调试。 可以在 `obj` 文件夹的文件中找到这些类，如文件夹名为（适用于 C#）`<view name>.g.cs`。 如果你有绑定方面的问题，请打开 Microsoft Visual Studio 调试器中的**出现未处理的异常时中断**。 该调试器将在该点处中断执行，以便你可以调试哪里出现了问题。 对于绑定源节点图形的每个部分，{x:Bind} 生成的代码均遵循相同的模式，你可以使用“调用堆栈”****窗口中的信息来帮助确定导致该问题出现的调用顺序。
+由 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 创建的绑定对象在功能上大致等同。 但是，{x:Bind} 具有绑定源的类型信息，并且会在编译时生成源代码。 借助 {x:Bind}，可使用剩余代码检测同一类型的问题。 这包括编译时对绑定表达式的验证，以及通过在作为页面的部分类生成的源代码中设置断点来调试。 可以在 `obj` 文件夹的文件中找到这些类，如文件夹名为（适用于 C#）`<view name>.g.cs`。 如果你有绑定方面的问题，请打开 Microsoft Visual Studio 调试器中的**出现未处理的异常时中断**。 该调试器将在该点处中断执行，以便你可以调试哪里出现了问题。 对于绑定源节点图形的每个部分，{x:Bind} 生成的代码均遵循相同的模式，你可以使用“调用堆栈”窗口中的信息来帮助确定导致该问题出现的调用顺序。
 
-[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 不具有绑定源的类型信息。 但在通过附加的调试器运行你的应用时，Visual Studio 中的“输出”****窗口中将显示所有绑定错误。
+[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 不具有绑定源的类型信息。 但在通过附加的调试器运行你的应用时，Visual Studio 中的“输出”窗口中将显示所有绑定错误。
 
-## 使用代码创建绑定
+## <a name="creating-bindings-in-code"></a>使用代码创建绑定
 
 **注意** 由于不能使用代码创建 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 绑定，因此此部分仅适用于 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 不过，使用 [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 同样可以获得 {x:Bind} 的某些相同优势，这使你可以在任何依赖属性上注册更改通知。
 
@@ -627,7 +642,7 @@ Dim binding As New Binding() With {.Path = New PropertyPath("Brush1")}
 MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 ```
 
-## {x:Bind} 和 {Binding} 功能比较
+## <a name="xbind-and-binding-feature-comparison"></a>{x:Bind} 和 {Binding} 功能比较
 
 | 功能 | {x:Bind} | {Binding} | 注意 |
 |---------|----------|-----------|-------|
@@ -651,6 +666,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

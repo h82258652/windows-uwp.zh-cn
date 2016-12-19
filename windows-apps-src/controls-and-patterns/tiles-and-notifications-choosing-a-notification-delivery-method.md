@@ -6,18 +6,18 @@ ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a61c9ce609856ff3addba557558c6bffec504ed7
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: 71b1255c25adcb4a99d082ba5e83af60b316abe1
 
 ---
-# 选择通知传递方法
+# <a name="choose-a-notification-delivery-method"></a>选择通知传递方法
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项：本地、计划、定期和推送。 当用户未直接与你的应用交互时，磁贴或 Toast 通知可以将信息传达给用户。 应用特性和内容以及希望传递的信息可帮助你确定最适合你的方案的通知方法。
 
-## 通知传递方法概述
+## <a name="notification-delivery-methods-overview"></a>通知传递方法概述
 
 
 应用可使用 4 种机制传递通知：
@@ -89,7 +89,7 @@ ms.openlocfilehash: a61c9ce609856ff3addba557558c6bffec504ed7
 
  
 
-## 本地通知
+## <a name="local-notifications"></a>本地通知
 
 
 在应用正在运行时更新应用磁贴或锁屏提醒或者发出一个 Toast 通知，这是最简单的通知传递机制；它仅需要本地 API 调用。 每个应用都具有要显示在磁贴上的有用或有趣的信息，即使该内容仅在用户启动应用并与其交互后更改也是如此。 即使你还使用了其他三种通知机制中的一种，本地通知也是保持应用磁贴最新的好方法。 例如，照片应用磁贴可以显示来自最近添加的相册的照片。
@@ -99,28 +99,30 @@ ms.openlocfilehash: a61c9ce609856ff3addba557558c6bffec504ed7
 尽管这些 API 调用是本地的，但通知可引用 Web 图像。 如果 Web 图像不可供下载、已损坏或不符合图像规范，磁贴和 Toast 的反应会有所不同：
 
 -   磁贴：不会显示更新
--   Toast：显示通知，但带有占位符图像
+-   Toast：显示通知，但会丢弃图像
 
-虽然本地通知不会过期，但最佳做法是设置明确的过期时间。
+默认情况下，本地 toast 通知在三天后过期，而本地磁贴通知永远不会过期。 我们建议使用适合你的通知的明确过期时间（toast 的最长有效期为三天）替代这些默认值。 
 
 有关详细信息，请参阅以下主题：
 
 -   [发送本地磁贴通知](tiles-and-notifications-sending-a-local-tile-notification.md)
+-   [发送本地 toast 通知](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
 -   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## 计划通知
+## <a name="scheduled-notifications"></a>计划通知
 
 
 计划通知是本地通知的子集，可以指定应该更新磁贴或显示 Toast 通知的准确时间。 计划通知是已提前知道更新内容等情况的理想选择，例如会议邀请。 如果不能提前知道通知内容，应该使用推送或定期通知。
 
-默认情况下，计划通知在从推送时刻算起的三天后过期。 如果需要，你可以使用明确的过期时间替代此默认设置。
+请注意，定期更新不能用于锁屏通知；锁屏通知最好使用本地、定期或推送通知。
+
+默认情况下，计划通知在从推送时刻算起的三天后过期。 你可以按计划的磁贴通知替代此默认过期时间，但你不能按计划的 toast 替代过期时间。
 
 有关详细信息，请参阅以下主题：
 
--   [计划通知指南](https://msdn.microsoft.com/library/windows/apps/hh761464)
 -   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## 定期通知
+## <a name="periodic-notifications"></a>定期通知
 
 
 定期通知只需极少的云服务和客户端投资即可提供动态磁贴更新。 它们也是向大量访问群体分发相同内容的出色方法。 你的客户端代码指定 Windows 将轮询磁贴或锁屏提醒更新的云位置 URL，以及应该轮询该位置的频率。 在每个轮询间隔，Windows 访问该 URL 以下载指定的 XML 内容并在磁贴上显示它。
@@ -134,14 +136,14 @@ ms.openlocfilehash: a61c9ce609856ff3addba557558c6bffec504ed7
 -   [定期通知概述](tiles-and-notifications-periodic-notification-overview.md)
 -   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## 推送通知
+## <a name="push-notifications"></a>推送通知
 
 
 当与实时数据或用户个性化的数据通信时，推送通知是理想之选。 推送通知用于在无法预测的时间生成内容，例如爆炸性新闻、社交网络更新或即时消息。 推送通知也可用于数据具有时效性且不适合使用定期通知的情况，例如游戏期间的比赛计分。
 
 推送通知需要一个云服务，该服务将管理推送通知通道并选择何时以及向谁发送通知。
 
-默认情况下，推送通知在从 Windows 推送通知服务 (WNS) 收到推送通知那一刻算起的三天后过期。 如果需要，你可以使用明确的过期时间替代此默认设置。
+默认情况下，定期磁贴通知在从设备收到通知算起的三天后过期。 如果需要，你可以使用明确的过期时间（toast 的最长有效期为三天）替代此默认设置。
 
 有关详细信息，请参阅：
 
@@ -150,12 +152,12 @@ ms.openlocfilehash: a61c9ce609856ff3addba557558c6bffec504ed7
 -   [通用 Windows 平台 (UWP) 通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [发送本地磁贴通知](tiles-and-notifications-sending-a-local-tile-notification.md)
+* [发送本地 toast 通知](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
 * [推送通知指南](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [计划通知指南](https://msdn.microsoft.com/library/windows/apps/hh761464)
 * [Toast 通知指南](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [定期通知概述](tiles-and-notifications-periodic-notification-overview.md)
 * [Windows 推送通知服务 (WNS) 概述](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
@@ -170,6 +172,6 @@ ms.openlocfilehash: a61c9ce609856ff3addba557558c6bffec504ed7
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

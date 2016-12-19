@@ -1,21 +1,21 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "文件访问权限"
 description: "默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或通过声明功能访问其他位置。"
 translationtype: Human Translation
-ms.sourcegitcommit: ef8d0e7ad9063fa57a9db7c3cbdcb6846d3b1133
-ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: d6cb8bd32766157b1edf886621bdc605ca160db5
 
 ---
-# 文件访问权限
+# <a name="file-access-permissions"></a>文件访问权限
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或通过声明功能访问其他位置。
 
-## 所有应用均可访问的位置
+## <a name="the-locations-that-all-apps-can-access"></a>所有应用均可访问的位置
 
 在创建新的应用时，默认情况下你可以访问以下文件系统位置：
 
@@ -106,7 +106,7 @@ ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
 
      
 
-## Windows 应用商店应用可以访问的位置
+## <a name="locations-windows-store-apps-can-access"></a>Windows 应用商店应用可以访问的位置
 
 -   **用户的“下载”文件夹。** 默认情况下保存下载文件的文件夹。
 
@@ -146,7 +146,7 @@ ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
 
     如果在“下载”文件夹中创建文件或文件夹，我们建议将该项目添加到你的应用的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457)，这样你的应用以后可以随时访问该项目。
 
-## 访问其他位置
+## <a name="accessing-additional-locations"></a>访问其他位置
 
 除了默认位置以外，应用还可以通过在应用清单中声明功能（请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)）或者通过调用文件选取器让用户选取供应用访问的文件和文件夹（请参阅[使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)）来访问其他文件和文件夹。
 
@@ -165,6 +165,6 @@ ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

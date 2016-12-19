@@ -4,12 +4,12 @@ title: "向 Marble Maze 添加可视内容示例"
 description: "本文档介绍了 Marble Maze 游戏如何在通用 Windows 平台 (UWP) 应用环境中使用 Direct3D 和 Direct2D，以便你可了解相关模式并在处理自己的游戏内容时调整它们。"
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 70f35fe423b8ceb3e3e3e0c1c3c2563dc0d8cd61
+ms.sourcegitcommit: eb0115bf83627a9ba8209cce6bdd9edecc165ddf
+ms.openlocfilehash: 6b7880703d40d6ef5ed5f42f3e09bc5573170e1f
 
 ---
 
-# 向 Marble Maze 添加可视内容示例
+# <a name="adding-visual-content-to-the-marble-maze-sample"></a>向 Marble Maze 添加可视内容示例
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -43,7 +43,7 @@ ms.openlocfilehash: 70f35fe423b8ceb3e3e3e0c1c3c2563dc0d8cd61
 -   通常先绘制 3D 场景对象，然后绘制出现在场景前面的任何 2D 对象。
 -   将图形与垂直空白同步，以确保游戏不会花时间绘制从不会在显示器上实际显示的帧。
 
-## DirectX 图形入门
+## <a name="getting-started-with-directx-graphics"></a>DirectX 图形入门
 
 
 在计划 Marble Maze 通用 Windows 平台 (UWP) 游戏时，我们选择了 C++ 和 Direct3D 11.1，因为它们是创建需要最大限度控制渲染和高性能的 3D 游戏的最佳选择。 DirectX 11.1 支持从 DirectX 9 到 DirectX 11 的硬件，因此可帮助你更高效地获得更多客户，因为你无需为每个早期的 DirectX 版本重写代码。
@@ -57,11 +57,11 @@ Marble Maze 使用 Direct3D 11.1 渲染 3D 游戏资产，也就是弹珠和迷�
 -   [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) 介绍 DirectWrite，它支持高质量文本渲染。
 -   [Windows 图像处理组件](https://msdn.microsoft.com/library/windows/desktop/ee719902) 介绍 WIC，一个可扩展的平台，提供了低级别 API 来处理数字图像。
 
-### 功能级别
+### <a name="feature-levels"></a>功能级别
 
 Direct3D 11 引入了一种名为功能级别的范例。 功能级别是明确定义的 GPU 功能的集合。 使用功能级别，可让你的游戏能在较早版本的 Direct3D 硬件上运行。 Marble Maze 支持功能级别 9.1，因为它不需要来自更高级别的高级功能。 我们建议你尽可能支持大范围的硬件并扩展游戏内容，以便拥有高端或低端计算机的客户都拥有出色的体验。 有关功能级别的详细信息，请参阅[下层硬件上的 Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476872)。
 
-## 初始化 Direct3D 和 Direct2D
+## <a name="initializing-direct3d-and-direct2d"></a>初始化 Direct3D 和 Direct2D
 
 
 设备代表显示适配器。 在 UWP 应用中创建 Direct3D 和 Direct2D 设备，与在经典的 Windows 桌面应用中非常相似。 主要区别在于将 Direct3D 交换链连接到窗口化系统的方式。
@@ -85,7 +85,7 @@ void DeviceResources::DeviceResources(CoreWindow^ window, float dpi)
 
 **DeviceResources** 类将此功能分开，以便它可更轻松地响应环境变化。 例如，它在窗口大小更改时调用 **CreateWindowSizeDependentResources** 方法。
 
-###  初始化 Direct2D、DirectWrite 和 WIC 工厂
+###  <a name="initializing-the-direct2d-directwrite-and-wic-factories"></a>初始化 Direct2D、DirectWrite 和 WIC 工厂
 
 **DeviceResources::CreateDeviceIndependentResources** 方法为 Direct2D、DirectWrite 和 WIC 创建工厂。 在 DirectX 图形中，工厂是创建图形资源的起点。 Marble Maze 指定 **D2D1\_FACTORY\_TYPE\_SINGLE\_THREADED**，因为它在主线程上执行所有绘制工作。
 
@@ -129,9 +129,9 @@ void DeviceResources::CreateDeviceIndependentResources()
 }
 ```
 
-###  创建 Direct3D 和 Direct2D 设备
+###  <a name="creating-the-direct3d-and-direct2d-devices"></a>创建 Direct3D 和 Direct2D 设备
 
-**DeviceResources::CreateDeviceResources** 方法调用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 来创建代表 Direct3D 显示适配器的设备对象。 因为 Marble Maze 支持 9.1 和更高的功能级别，所以 **DeviceResources::CreateDeviceResources** 方法在 **\\** 值的数组中指定级别 9.1 到 11.1。 Direct3D 按顺序遍历该列表并为应用提供第一个可用的功能级别。 因此，**D3D\_FEATURE\_LEVEL** 数组条目按从高到低的顺序列出，以便应用将获得最高级的可用功能级别。 **DeviceResources::CreateDeviceResources** 方法通过查询从 **D3D11CreateDevice** 返回的 Direct3D 11 设备来获取 Direct3D 11.1 设备。
+**DeviceResources::CreateDeviceResources** 方法调用 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 来创建代表 Direct3D 显示适配器的设备对象。 因为 Marble Maze 支持 9.1 和更高的功能级别，所以 **DeviceResources::CreateDeviceResources** 方法在  值的数组中指定级别 9.1 到 11.1。 Direct3D 按顺序遍历该列表并为应用提供第一个可用的功能级别。 因此，**D3D\_FEATURE\_LEVEL** 数组条目按从高到低的顺序列出，以便应用将获得最高级的可用功能级别。 **DeviceResources::CreateDeviceResources** 方法通过查询从 **D3D11CreateDevice** 返回的 Direct3D 11 设备来获取 Direct3D 11.1 设备。
 
 ```cpp
 // This array defines the set of DirectX hardware feature levels this app will support. 
@@ -217,7 +217,7 @@ DX::ThrowIfFailed(
 
 有关 DXGI 及 Direct2D 与 Direct3D 之间互操作性的详细信息，请参阅 [DXGI 概述](https://msdn.microsoft.com/library/windows/desktop/bb205075)和 [Direct2D 和 Direct3D 互操作性概述](https://msdn.microsoft.com/library/windows/desktop/dd370966)。
 
-### 将 Direct3D 与视图关联
+### <a name="associating-direct3d-with-the-view"></a>将 Direct3D 与视图关联
 
 **DeviceResources::CreateWindowSizeDependentResources** 方法根据给定的窗口大小创建图形资源，例如交换链及 Direct3D 和 Direct2D 呈现目标。 DirectX UWP 应用与桌面应用的一个重要区别在于交换链与输出窗口的关联方式。 交换链负责显示缓冲区，设备在监视器上要渲染到该缓冲区。 文档“Marble Maze 应用程序结构”介绍了 UWP 应用的窗口化系统与桌面应用的区别。 因为 Windows 应用商店应用不使用 **HWND** 对象，所以 Marble Maze 必须使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 方法将设备输出关联到视图。 下面的示例展示了 **DeviceResources::CreateWindowSizeDependentResources** 方法创建交换链的部分。
 
@@ -251,14 +251,14 @@ DX::ThrowIfFailed(
 
  
 
-## 加载场景资源
+## <a name="loading-scene-resources"></a>加载场景资源
 
 
 Marble Maze 使用 **BasicLoader** 类（在 BasicLoader.h 中声明）加载纹理和着色器。 Marble Maze 使用 **SDKMesh** 类加载迷宫和弹珠的 3D 网格。
 
-若要确保应用能迅速响应，Marble Maze 以异步方式或在后台加载场景资源。 资产加载到后台后，游戏即可响应窗口事件。 这个过程将在本指南的[在后台加载游戏资产](marble-maze-application-structure.md#loading_game_assets)中详细介绍。
+若要确保应用能迅速响应，Marble Maze 以异步方式或在后台加载场景资源。 资产加载到后台后，游戏即可响应窗口事件。 这个过程将在本指南的[在后台加载游戏资产](marble-maze-application-structure.md#loading-game-assets-in-the-background)中详细介绍。
 
-###  加载 2D 覆盖图和用户界面
+###  <a name="loading-the-2-d-overlay-and-user-interface"></a>加载 2D 覆盖图和用户界面
 
 在 Marble Maze 中，覆盖图是显示在屏幕顶层的图像。 覆盖图始终显示在场景前面。 在 Marble Maze 中，覆盖包含 Windows 徽标和文本字符串“DirectX Marble Maze game sample”。 覆盖的管理由 **SampleOverlay** 类执行，该类在 SampleOverlay.h 中定义。 尽管我们使用覆盖作为 Direct3D 示例的一部分，但你可适应此代码以显示任何出现在场景前面的图像。
 
@@ -308,7 +308,7 @@ protected:
 
  
 
-###  加载着色器
+###  <a name="loading-shaders"></a>加载着色器
 
 Marble Maze 使用 **BasicLoader::LoadShader** 方法从文件加载着色器。
 
@@ -448,7 +448,7 @@ sPSInput main(sVSInput input)
 
 使用顶点和像素着色器呈现场景的过程将在本文后面的[呈现场景](#rendering_the_scene)一节介绍。
 
-### 创建常量缓冲区
+### <a name="creating-the-constant-buffer"></a>创建常量缓冲区
 
 Direct3D 缓冲区将一组对象分组到一起。 常量缓冲区是一种可用于将数据传递给着色器的缓冲区。 Marble Maze 使用常量缓冲区来保留活动的场景对象的模型（或世界）视图，以及投影指标。
 
@@ -508,7 +508,7 @@ cbuffer ConstantBuffer : register(b0)
 
 有关常量缓冲区的详细信息，请参阅 [Direct3D 11 中的缓冲区简介](https://msdn.microsoft.com/library/windows/desktop/ff476898)。 有关 register 关键字的详细信息，请参阅 [**register**](https://msdn.microsoft.com/library/windows/desktop/dd607359)。
 
-###  加载网格
+###  <a name="loading-meshes"></a>加载网格
 
 Marble Maze 使用 SDK-Mesh 作为运行时格式，因为此格式提供了一种加载示例应用的网格数据的基本方式。 对于生产用途，你应使用一种可满足游戏具体要求的网格格式。
 
@@ -541,7 +541,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-###  加载碰撞数据
+###  <a name="loading-collision-data"></a>加载碰撞数据
 
 尽管本节不会着重介绍 Marble Maze 如何实现弹珠与迷宫之间的力学模拟，但请注意，力学系统的网格几何图形在加载网格时已准备就绪。
 
@@ -578,14 +578,14 @@ m_physics.SetRadius(radius);
 
 加载碰撞数据的方式在很大程度上取决于你使用的运行时格式。 有关 Marble Maze 如何从 SDK-Mesh 文件加载碰撞几何图形的详细信息，请参阅源代码中的 **MarbleMaze::ExtractTrianglesFromMesh** 方法。
 
-## 更新游戏状态
+## <a name="updating-game-state"></a>更新游戏状态
 
 
 通过在渲染所有场景对象之前首先更新它们，Marble Maze 将游戏逻辑与渲染逻辑分开。
 
 文档“Marble Maze 应用结构”介绍了主要的游戏循环。 更新场景（这是游戏循环的一部分）在处理 Windows 事件和输入之后和渲呈现场景之前执行。 **MarbleMaze::Update** 方法处理 UI 和游戏的更新。
 
-### 更新用户界面
+### <a name="updating-the-user-interface"></a>更新用户界面
 
 **MarbleMaze::Update** 方法调用 **UserInterface::Update** 方法来更新 UI 的状态。
 
@@ -623,7 +623,7 @@ void StopwatchTimer::Update(float timeTotal, float timeDelta)
 }
 ```
 
-###  更新场景
+###  <a name="updating-the-scene"></a>更新场景
 
 **MarbleMaze::Update** 方法根据当前的状态机状态来更新游戏。 游戏处于活动状态时，Marble Maze 更新相机以跟踪弹珠、更新常量缓冲区的视图矩阵部分，以及更新力学模拟。
 
@@ -677,7 +677,7 @@ m_marbleConstantBufferData.view = view;
 
 有关 **MarbleMaze::Update** 方法如何读取用户输入和模拟弹珠移动的信息，请参阅[向 Marble Maze 添加输入和交互性示例](adding-input-and-interactivity-to-the-marble-maze-sample.md)。
 
-## 呈现场景
+## <a name="rendering-the-scene"></a>呈现场景
 
 
 渲染一个场景时，通常包含以下步骤。
@@ -691,7 +691,7 @@ m_marbleConstantBufferData.view = view;
 
 **MarbleMaze::Render** 方法绑定呈现目标和深度模具视图、清除这些视图、绘制场景，然后绘制覆盖。
 
-###  准备呈现目标
+###  <a name="preparing-the-render-targets"></a>准备呈现目标
 
 渲染场景之前，必须设置当前渲染目标的深度模具缓冲区。 如果你的场景无法保证在屏幕上的所有像素上绘制，应清除渲染和模具视图。 Marble Maze 清除每一帧上的呈现和模具视图，以确保没有来自前一帧的可视工件。
 
@@ -721,9 +721,13 @@ m_d3dContext->ClearDepthStencilView(
     );
 ```
 
-[**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 和 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 接口支持 Direct3D 10 和更高版本所提供的纹理视图机制。 有关纹理视图的详细信息，请参阅[纹理视图 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 [**OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 方法准备 Direct3D 管道的输出合并阶段。 有关输出合并阶段的详细信息，请参阅[输出合并阶段](https://msdn.microsoft.com/library/windows/desktop/bb205120)。
+[
+              **ID3D11RenderTargetView**
+            ](https://msdn.microsoft.com/library/windows/desktop/ff476582) 和 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 接口支持 Direct3D 10 和更高版本所提供的纹理视图机制。 有关纹理视图的详细信息，请参阅[纹理视图 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)。 [
+              **OMSetRenderTargets**
+            ](https://msdn.microsoft.com/library/windows/desktop/ff476464) 方法准备 Direct3D 管道的输出合并阶段。 有关输出合并阶段的详细信息，请参阅[输出合并阶段](https://msdn.microsoft.com/library/windows/desktop/bb205120)。
 
-### 准备顶点和像素着色器
+### <a name="preparing-the-vertex-and-pixel-shaders"></a>准备顶点和像素着色器
 
 渲染场景对象之前，执行以下步骤来准备用于绘制的顶点和像素着色器：
 
@@ -793,7 +797,7 @@ m_d3dContext->PSSetConstantBuffers(
 
 **MarbleMaze::Render** 方法执行类似的步骤来准备要呈现的弹珠。
 
-### 呈现迷宫和弹珠
+### <a name="rendering-the-maze-and-the-marble"></a>呈现迷宫和弹珠
 
 激活当前着色器后，即可绘制场景对象。 **MarbleMaze::Render** 方法调用 **SDKMesh::Render** 方法来呈现迷宫网格。
 
@@ -805,7 +809,7 @@ m_mazeMesh.Render(m_d3dContext.Get(), 0, INVALID_SAMPLER_SLOT, INVALID_SAMPLER_S
 
 如本文档前面所述，**SDKMesh** 类仅用于演示用途，我们不建议将它用于生产质量游戏中。 但是请注意，**SDKMesh::RenderMesh** 方法（由 **SDKMesh::Render** 调用）使用 [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) 方法来设置可定义网格的当前顶点和索引缓冲区，使用 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476410) 方法绘制缓冲区。 有关如何使用顶点和索引缓冲区的详细信息，请参阅 [Direct3D 11 中的缓冲区简介](https://msdn.microsoft.com/library/windows/desktop/ff476898)。
 
-### 绘制用户界面和覆盖
+### <a name="drawing-the-user-interface-and-overlay"></a>绘制用户界面和覆盖
 
 绘制 3D 场景对象后，Marble Maze 绘制出现在场景前面的 2D UI 元素。
 
@@ -841,7 +845,7 @@ void UserInterface::Render()
 
 **SampleOverlay::Render** 方法使用一种类似技术来绘制覆盖位图。
 
-###  呈现场景
+###  <a name="presenting-the-scene"></a>呈现场景
 
 绘制所有 2D 和 3D 场景对象后，Marble Maze 向监视器呈现已渲染的图像。 它将图形与垂直空白同步，确保游戏不会花时间绘制从不会在显示器上实际显示的帧。 Marble Maze 在呈现场景时还会处理设备更改。
 
@@ -866,9 +870,13 @@ HRESULT hr = m_swapChain->Present1(1, 0, &parameters);
 
 在此示例中，**m\_swapChain** 是一个 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) 对象。 此对象的初始化已在本文档的[初始化 Direct3D 和 Direct2D](#initializing) 一节中介绍。
 
-[**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 的第一个参数 *SyncInterval* 指定在呈现帧之前等待的垂直空白数量。 Marble Maze 指定 1，以便它等到下一个垂直空白。 垂直空白是一帧完成向监视器的绘制后与下一帧开始时之间的时间。
+[
+              **IDXGISwapChain1::Present**
+            ](https://msdn.microsoft.com/library/windows/desktop/hh446797) 的第一个参数 *SyncInterval* 指定在呈现帧之前等待的垂直空白数量。 Marble Maze 指定 1，以便它等到下一个垂直空白。 垂直空白是一帧完成向监视器的绘制后与下一帧开始时之间的时间。
 
-[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 方法返回一个错误代码，表明设备已删除或失败。 在此情况下，Marble Maze 重新初始化设备。
+[
+              **IDXGISwapChain1::Present1**
+            ](https://msdn.microsoft.com/library/windows/desktop/hh446797) 方法返回一个错误代码，表明设备已删除或失败。 在此情况下，Marble Maze 重新初始化设备。
 
 ```cpp
 // Reinitialize the renderer if the device was disconnected  
@@ -883,12 +891,12 @@ else
 }
 ```
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 查阅[向 Marble Maze 示例添加输入和交互性](adding-input-and-interactivity-to-the-marble-maze-sample.md)，了解在使用输入设备时要记住的一些重要实践。 此文档讨论了 Marble Maze 如何支持触摸、加速计、Xbox 360 控制器和鼠标输入。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [向 Marble Maze 添加输入和交互性示例](adding-input-and-interactivity-to-the-marble-maze-sample.md)
@@ -905,6 +913,6 @@ else
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

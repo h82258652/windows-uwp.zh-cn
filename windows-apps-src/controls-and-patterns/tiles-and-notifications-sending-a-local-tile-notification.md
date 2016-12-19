@@ -6,12 +6,12 @@ ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: a4f654b286db44d4054be296e76114024616f632
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: 8fc2fc007d14bd9c5d08ca4eb7e61a2dfdf04d3b
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# 发送本地磁贴通知
+# <a name="send-a-local-tile-notification"></a>发送本地磁贴通知
 
 
 
@@ -25,31 +25,31 @@ ms.openlocfilehash: a4f654b286db44d4054be296e76114024616f632
 
  
 
-## 安装 NuGet 程序包
+## <a name="install-the-nuget-package"></a>安装 NuGet 程序包
 
 
-我们建议安装 [NotificationsExtensions NuGet 程序包](https://www.nuget.org/packages/NotificationsExtensions.Win10/)，它可以通过生成带有对象而不是原始 XML 的磁贴负载来简化一些操作流程。
+我们建议安装[通知库 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，它可以通过生成带有对象而不是原始 XML 的磁贴负载来简化一些操作流程。
 
-本文中的内联代码示例适用于安装了 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet 程序包的 C#。 （如果你希望创建自己的 XML，你可以在本文末尾找到不包含 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) 的代码示例。）
+在本文中的内联代码示例适用于使用通知库的 C#。 （如果希望创建自己的 XML，可以在本文末尾找到不包含通知库的代码示例。）
 
-## 添加命名空间声明
+## <a name="add-namespace-declarations"></a>添加命名空间声明
 
 
-若要访问磁贴 API，请包含 [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) 命名空间。 我们还建议包含 **NotificationsExtensions.Tiles** 命名空间，以便你可以充分利用我们的磁贴帮助程序 API（必须安装 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet 程序包才能访问这些 API）。
+若要访问磁贴 API，请包含 [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) 命名空间。 我们还建议包含 **NotificationsExtensions.Tiles** 命名空间，以便你可以充分利用我们的磁贴帮助程序 API（必须安装[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet 程序包才能访问这些 API）。
 
-```
+```CSharp
 using Windows.UI.Notifications;
-using NotificationsExtensions.Tiles; // NotificationsExtensions.Win10
+using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ```
 
-## 创建通知内容
+## <a name="create-the-notification-content"></a>创建通知内容
 
 
 在 Windows 10 中，使用自适应磁贴模板定义磁贴负载，这允许你为通知创建自定义视觉布局。 （若要了解自适应磁贴的功能，请参阅[创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)和[自适应磁贴模板](tiles-and-notifications-adaptive-tiles-schema.md)文章。）
 
 此代码示例会为中等和加宽磁贴创建自适应磁贴内容。
 
-```
+```CSharp
 // In a real app, these would be initialized with actual data
 string from = "Jennifer Parker";
 string subject = "Photos from our trip";
@@ -67,48 +67,48 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = from
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = subject,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = body,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
         },
- 
+
         TileWide = new TileBinding()
         {
             Content = new TileBindingContentAdaptive()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = from,
-                        Style = TileTextStyle.Subtitle
+                        HintStyle = AdaptiveTextStyle.Subtitle
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = subject,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = body,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
@@ -121,33 +121,30 @@ TileContent content = new TileContent()
 
 ![中磁贴上的通知内容](images/sending-local-tile-02.png)
 
-## 创建通知
+## <a name="create-the-notification"></a>创建通知
 
 
-在拥有通知内容之后，你将需要创建一个新的 [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)。 **TileNotification** 构造函数会采用一个 Windows 运行时 [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) 对象，如果你使用的是 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)，则可以通过 **TileContent.GetXml** 方法获取该对象。
+在拥有通知内容之后，你将需要创建一个新的 [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)。 **TileNotification** 构造函数会采用一个 Windows 运行时 [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) 对象，如果你使用的是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，则可以通过 **TileContent.GetXml** 方法获取该对象。
 
 此代码示例会为新磁贴创建一个通知。
 
-```
+```CSharp
 // Create the tile notification
 var notification = new TileNotification(content.GetXml());
 ```
 
-## 设置通知的过期时间（可选）
+## <a name="set-an-expiration-time-for-the-notification-optional"></a>设置通知的过期时间（可选）
 
 
 默认情况下，本地磁贴和锁屏提醒通知不会过期，而推送通知、定期通知和计划通知会在三天之后过期。 因为磁贴内容的保留时间不应超过必要时间，因此最佳做法是设置对于你的应用合理的到期时间，对于本地磁贴和锁屏提醒通知尤其如此。
 
 此代码示例创建了会在十分钟后到期并从磁贴中删除的通知。
 
-```
-tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></pre></td>
-</tr>
-</tbody>
-</table>
+```CSharp
+tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 ```
 
-## 发送通知
+## <a name="send-the-notification"></a>发送通知
 
 
 尽管本地发送磁贴通知比较简单，但将通知发送到主要磁贴或辅助磁贴略有不同。
@@ -159,13 +156,8 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></
 此代码示例将通知发送到主要磁贴。
 
 
-```
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-// And send the notification
+```CSharp
+// Send the notification to the primary tile
 TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 ```
 
@@ -175,7 +167,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 
 此代码示例将通知发送到辅助磁贴。
 
-```
+```CSharp
 // If the secondary tile is pinned
 if (SecondaryTile.Exists("MySecondaryTile"))
 {
@@ -189,18 +181,15 @@ if (SecondaryTile.Exists("MySecondaryTile"))
 
 ![默认磁贴和带有通知的磁贴](images/sending-local-tile-01.png)
 
-## 清除磁贴上的通知（可选）
+## <a name="clear-notifications-on-the-tile-optional"></a>清除磁贴上的通知（可选）
 
 
 在大多数情况下，你应当在用户与该内容进行交互后清除通知。 例如，当用户启动你的应用时，你可能需要清除磁贴中的所有通知。 如果你的通知有时间限制，我们建议你对通知设置到期时间，而不是将其显式清除。
 
-此代码示例清除磁贴通知。
+此代码示例会为主要磁贴清除磁贴通知。 你可以通过为辅助磁贴创建磁贴更新程序来为辅助磁贴执行相同操作。
 
-```
-TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
-</tr>
-</tbody>
-</table>
+```CSharp
+TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 ```
 
 对于启用通知队列且在队列中有通知的磁贴，调用 Clear 方法可清空队列。 但是，你无法通过应用的服务器清除通知；只有本地应用代码才能清除通知。
@@ -209,7 +198,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
 
 ![带有通知的磁贴和清除后的磁贴](images/sending-local-tile-03.png)
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 **使用通知队列**
@@ -222,15 +211,10 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
 
 **XmlEncode 传送方法**
 
-如果你使用的不是 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)，此通知传送方法为备用方法。
+如果你使用的不是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，则此通知传送方法为备用方法。
 
 
-```
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
+```CSharp
 public string XmlEncode(string text)
 {
     StringBuilder builder = new StringBuilder();
@@ -243,21 +227,21 @@ public string XmlEncode(string text)
 }
 ```
 
-## 不包含 NotificationsExtensions 的代码示例
+## <a name="code-examples-without-notifications-library"></a>不包含通知库的代码示例
 
 
-如果你希望使用原始 XML，而不是 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet 程序包，请使用本文提供的前三个示例的备用代码示例。 其余的代码示例可以与 [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) 或原始 XML 结合使用。
+如果你希望使用原始 XML，而不是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet 程序包，请使用本文提供的前三个示例的备用代码示例。 其余的代码示例可以与[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)或原始 XML 结合使用。
 
 添加命名空间声明
 
-```
+```CSharp
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 ```
 
 创建通知内容
 
-```
+```CSharp
 // In a real app, these would be initialized with actual data
 string from = "Jennifer Parker";
 string subject = "Photos from our trip";
@@ -272,16 +256,16 @@ string content = $@"
 <tile>
     <visual>
  
-        <binding template=&#39;TileMedium&#39;>
+        <binding template='TileMedium'>
             <text>{from}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{subject}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{body}</text>
+            <text hint-style='captionSubtle'>{subject}</text>
+            <text hint-style='captionSubtle'>{body}</text>
         </binding>
  
-        <binding template=&#39;TileWide&#39;>
-            <text hint-style=&#39;subtitle&#39;>{from}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{subject}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{body}</text>
+        <binding template='TileWide'>
+            <text hint-style='subtitle'>{from}</text>
+            <text hint-style='captionSubtle'>{subject}</text>
+            <text hint-style='captionSubtle'>{body}</text>
         </binding>
  
     </visual>
@@ -290,7 +274,7 @@ string content = $@"
 
 创建通知
 
-```
+```CSharp
 // Load the string into an XmlDocument
 XmlDocument doc = new XmlDocument();
 doc.LoadXml(content);
@@ -299,13 +283,12 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)
 * [自适应磁贴模板：架构和文档](tiles-and-notifications-adaptive-tiles-schema.md)
-* [NotificationsExtensions.Win10（NuGet 程序包）](https://www.nuget.org/packages/NotificationsExtensions.Win10/)
-* [GitHub 上的 NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications 命名空间**](https://msdn.microsoft.com/library/windows/apps/br208661)
 * [如何使用通知队列 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
@@ -320,6 +303,6 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

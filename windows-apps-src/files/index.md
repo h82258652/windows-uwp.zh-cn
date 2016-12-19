@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "文件、文件夹和库"
 description: "了解有关应用设置的读取和写入、文件和文件夹选取器，以及诸如视频/音乐库的特殊“沙盒式”位置的信息。"
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
 
 ---
- # 文件、文件夹和库
+ # <a name="files-folders-and-libraries"></a>文件、文件夹和库
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
 | [访问 SD 卡](access-the-sd-card.md) | 你可以在可选 MicroSD 卡上存储和访问不重要的数据，尤其是内部存储具有限制的低成本移动设备。 |
 | [文件访问权限](file-access-permissions.md) | 默认情况下，应用可以访问特定文件系统位置。 应用也可以通过文件选取器或通过声明功能访问其他位置。 |
 
-## 相关示例
+## <a name="related-samples"></a>相关示例
 [文件夹枚举示例](http://go.microsoft.com/fwlink/p/?linkid=619993)
 
 [文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)
@@ -40,6 +40,6 @@ ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

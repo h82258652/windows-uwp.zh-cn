@@ -18,7 +18,7 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件来管理通用 Window
 
 在开始操作之前，你应当先熟悉 MediaPlayerElement 和 MediaTransportControls 类。 有关详细信息，请参阅 MediaPlayerElement 控件指南。
 
-> **提示**&nbsp;&nbsp;本主题中的示例基于[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)。 你可以下载该示例来查看和运行完整代码。
+> **提示**  本主题中的示例基于[媒体传输控件示例](http://go.microsoft.com/fwlink/p/?LinkId=620023)。 你可以下载该示例来查看和运行完整代码。
 
 <div class="important-apis" >
 <b>重要的 API</b><br/>
@@ -33,7 +33,7 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件来管理通用 Window
 
 
 
-> **注意**&nbsp;&nbsp;**MediaPlayerElement** 仅在 Windows 10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 本页面中的所有示例均同样适用于 **MediaElement**。
+> **注意**  **MediaPlayerElement** 仅在 Windows 10 版本 1607 及更高版本中可用。 如果要针对早期版本的 Windows 10 开发应用，你将需要改用 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 本页面中的所有示例均同样适用于 **MediaElement**。
 
 ## 你应在何时自定义模板？
 
@@ -45,11 +45,11 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件来管理通用 Window
 - 更改控件调整大小时命令退出的顺序。
 - 提供不在默认集中的命令按钮。
 
->**注意**&nbsp;&nbsp;如果屏幕上没有足够的控件，屏幕上可见的按钮将按照预定义的顺序退出内置的传输控件。 若要更改此顺序或将无法容纳的命令放入溢出菜单中，你将需要自定义控件。
+>**注意**  如果屏幕上没有足够的控件，屏幕上可见的按钮将按照预定义的顺序退出内置的传输控件。 若要更改此顺序或将无法容纳的命令放入溢出菜单中，你将需要自定义控件。
 
 你可以通过修改默认模板来自定义控件的外观。 若要修改控件的行为或添加新的命令，可以创建从 MediaTransportControls 派生的自定义控件。
 
->**提示**&nbsp;&nbsp;可自定义控件模板是 XAML 平台的一项强大功能，但你还应当考虑所产生的后果。 当你自定义模板时，它会成为你的应用的静态部分，因此它将不会接收到 Microsoft 对该模板进行的任何平台更新。 如果已由 Microsoft 进行模板更新，你应采用新模板并将其重新修改，以便获取已更新模板所带来的好处。
+>**提示**  可自定义控件模板是 XAML 平台的一项强大功能，但你还应当考虑所产生的后果。 当你自定义模板时，它会成为你的应用的静态部分，因此它将不会接收到 Microsoft 对该模板进行的任何平台更新。 如果已由 Microsoft 进行模板更新，你应采用新模板并将其重新修改，以便获取已更新模板所带来的好处。
 
 ## 模板结构
 
@@ -58,7 +58,7 @@ MediaPlayerElement 具有可自定义的 XAML 传输控件来管理通用 Window
 - 第二部分定义 MediaTransportControls 所使用的各个视觉状态。
 - 第三部分包含将各种 MediaTransportControls 元素保留在一起并定义组件布局方式的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)。
 
-> **注意**&nbsp;&nbsp;有关修改模板的详细信息，请参阅[控件模板]()。 可以在 IDE 中使用文本编辑器或类似编辑器打开 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 文件。 每个控件的默认样式和模板都在 **generic.xaml** 文件中定义。 你可以通过搜索“MediaTransportControls”找到 generic.xaml 中的 MediaTransportControls 模板。
+> **注意**  有关修改模板的详细信息，请参阅[控件模板]()。 可以在 IDE 中使用文本编辑器或类似编辑器打开 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 文件。 每个控件的默认样式和模板都在 **generic.xaml** 文件中定义。 你可以通过搜索“MediaTransportControls”找到 generic.xaml 中的 MediaTransportControls 模板。
 
 在以下部分中，你将了解如何自定义传输控件的几个主要元素：
 - [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)：允许用户在其媒体上进行推移，同时显示相关进度
@@ -184,7 +184,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 </CommandBar.SecondaryCommands>
 ```
 
-> **重要提示**&nbsp;&nbsp;必须仍然使按钮可见并启用它，才能在溢出菜单中使用它。 在此示例中，PlaybackRateButton 元素在溢出菜单中不可见，除非 IsPlaybackRateButtonVisible 属性是 true。 只有 IsPlaybackRateEnabled 属性是 true，才可启用它。 如上一节所示设置这些属性。
+> **重要提示**  必须仍然使按钮可见并启用它，才能在溢出菜单中使用它。 在此示例中，PlaybackRateButton 元素在溢出菜单中不可见，除非 IsPlaybackRateButtonVisible 属性是 true。 只有 IsPlaybackRateEnabled 属性是 true，才可启用它。 如上一节所示设置这些属性。
 
 ### 添加自定义按钮
 

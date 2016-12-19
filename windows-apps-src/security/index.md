@@ -4,23 +4,23 @@ description: "本部分包含有关为 Windows 10 生成安全的通用 Windows 
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a178f992ddd39b5609ce6d15b7e3560e157b9afb
-ms.openlocfilehash: 19f024bd3ad99b4ef9355cc3c9229b1b3ffc51e2
+ms.sourcegitcommit: 82f6e2decde2d332bd08b0b9798350b973860f21
+ms.openlocfilehash: b30492c3c74b19d5ce306829302be17ff303723f
 
 ---
 
-# 安全
+# <a name="security"></a>安全
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本部分包含有关为 Windows 10 生成安全的通用 Windows 平台 (UWP) 应用的文章。
 
-## 介绍 
+## <a name="introduction"></a>介绍 
 
-如果你不熟悉 Windows 或 UWP 开发，请从[安全 Windows 应用开发简介](web-authentication-broker.md)开始。 这一介绍性级别的文章提供了 Windows 10 中可用的应用和各种功能的安全注意事项的概述。
+如果你不熟悉 Windows 或 UWP 开发，请从[安全 Windows 应用开发简介](intro-to-secure-windows-app-development.md)开始。 这一介绍性级别的文章提供了 Windows 10 中可用的应用和各种功能的安全注意事项的概述。
 
-## 身份验证和用户身份
+## <a name="authentication-and-user-identity"></a>身份验证和用户身份
 
 [身份验证和用户身份部分](authentication-and-user-identity.md)包含与用户登录和身份相关的方案的操作实例。 应用提供了多个选项用于用户身份验证，范围从使用 [Web 身份验证代理](web-authentication-broker.md)的简单单一登录 (SSO) 到高度安全的双重身份验证。
 
@@ -39,7 +39,7 @@ ms.openlocfilehash: 19f024bd3ad99b4ef9355cc3c9229b1b3ffc51e2
 <tr><td>[Web 身份验证代理](web-authentication-broker.md)</td><td>本文介绍了如何将应用连接到使用身份验证协议（如 OpenID 或 OAuth）的在线标识提供程序（如 Facebook、Twitter、Flickr、Instagram 等）。 [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) 方法将请求发送给联机标识提供者，并取回描述应用访问的提供者资源的访问令牌。</td></tr>
 </table>
 
-## 加密 
+## <a name="cryptography"></a>加密 
 
 加密部分包含与加密相关的更复杂主题的信息。 
 
@@ -54,6 +54,6 @@ ms.openlocfilehash: 19f024bd3ad99b4ef9355cc3c9229b1b3ffc51e2
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

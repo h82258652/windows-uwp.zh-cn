@@ -4,22 +4,24 @@ Description: "使用桌面到 UWP 桥部署和调试从 Windows 桌面应用程�
 Search.Product: eADQiWindows 10XVcnh
 title: "调试使用桌面桥转换的应用"
 translationtype: Human Translation
-ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
-ms.openlocfilehash: 9dcc39c51e61b24c25bcbfa216c6e51b49bbfd3a
+ms.sourcegitcommit: dba00371b29b3179a6dc3bdd96a092437331e61a
+ms.openlocfilehash: 537ac8e83d5f54bf83ec0e05b71be354651000f2
 
 ---
 
-# 调试使用桌面桥转换的应用
+# <a name="debug-apps-converted-with-the-desktop-bridge"></a>调试使用桌面桥转换的应用
 
 本主题包含有助于你在使用桌面到 UWP 桥转换应用后成功调试应用的信息。 有几个用于调试已转换应用的选项。
 
-## 附加到进程
+## <a name="attach-to-process"></a>附加到进程
 
 当 Microsoft Visual Studio“以管理员身份”运行时，“开始调试”和“开始执行”命令将适用于转换应用的项目，但已启动的应用将以[中等完整性级别](https://msdn.microsoft.com/library/bb625963)运行（即，它不会具有提升的权限）。 若要向已启动的应用授予管理员权限，首先你需要通过快捷方式或磁贴启动“以管理员身份”。 应用运行后，从“以管理员身份”运行的 Microsoft Visual Studio 的实例调用__附加到进程__，然后从对话框中选择应用的进程。
 
-## F5 调试
+## <a name="f5-debug"></a>F5 调试
 
 Visual Studio 现在支持新的打包项目。 新项目可使你在将应用程序生成到从应用程序安装程序上的转换器创建的 Appx 包中时自动复制任何更新。 配置打包项目后，你现在还可以使用 F5 直接在 AppX 程序包中调试。 
+
+>注意：你还可以使用该选项来调试现有 Appx 程序包，方法是使用选项“调试”-&gt;“其他调试目标”-&gt;“调试安装的应用包”。
 
 下面介绍了如何开始使用： 
 
@@ -29,7 +31,7 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
 
 ![alt](images/desktop-to-uwp/debug-1.png)
 
-3. 安装并启动 [Visual Studio "15" Preview 2](https://www.visualstudio.com/downloads/visual-studio-next-downloads-vs.aspx)。 
+3. 安装并启动 [Visual Studio 2017 RC](https://www.visualstudio.com/downloads/#visual-studio-community-2017-rc)。 
 
 4. 从[Visual Studio 库](http://go.microsoft.com/fwlink/?LinkId=797871)中安装“桌面到 UWP 打包 VSIX 项目”。 
 
@@ -73,7 +75,7 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
     <?xml version="1.0" encoding=utf-8"?>
     <Project ToolsVersion=14.0" xmlns="http://scehmas.microsoft.com/developer/msbuild/2003">
         <PropertyGroup>
-            <MyProjectOutputPath>C:\{path}</MyProjectOutputPath>
+            <MyProjectOutputPath>{relativepath}</MyProjectOutputPath>
         </PropertyGroup>
         <ItemGroup>
             <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.exe">
@@ -94,7 +96,7 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
     <?xml version="1.0" encoding="utf-8"?>
     <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
         <PropertyGroup>
-            <MyProjectOutputPath>C:\Users\peterfar\Desktop\ProjectTracker\ProjectTracker\bin\DesktopUWP</MyProjectOutputPath>
+            <MyProjectOutputPath>..\ProjectTracker\bin\DesktopUWP</MyProjectOutputPath>
         </PropertyGroup>
     ```
 
@@ -158,13 +160,13 @@ Visual Studio 现在支持新的打包项目。 新项目可使你在将应用�
 
 4.  如果要面向你添加的 UWP API 进行生成，你现在可以将生成目标切换为 DesktopUWP。
 
-## PLMDebug 
+## <a name="plmdebug"></a>PLMDebug 
 
 如果要在应用运行时进行调试，Visual Studio F5 和“附加到进程”将很有用。 但是，在某些情况下，你可能希望更精细的控制调试过程，包括能够在应用启动前调试应用。 在这些更高级的方案中，使用 [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)。 此工具允许使用 Windows 调试程序调试转换的应用，并提供对应用生命周期（包括暂停、恢复和终止）的完全控制。 
 
 PLMDebug 包含在 Windows SDK 中。 有关详细信息，请参阅 [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)。 
 
-## 在完全信任的容器内运行另一个进程 
+## <a name="run-another-process-inside-the-full-trust-container"></a>在完全信任的容器内运行另一个进程 
 
 你可以在指定应用包的容器内调用自定义进程。 这对于测试方案（例如，如果你有自定义测试工具并想要测试应用的输出）很有用。 若要执行此操作，请使用 ```Invoke-CommandInDesktopPackage``` PowerShell cmdlet： 
 
@@ -175,6 +177,6 @@ Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

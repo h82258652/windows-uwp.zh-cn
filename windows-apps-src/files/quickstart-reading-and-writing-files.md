@@ -1,18 +1,18 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "创建、写入和读取文件"
 description: "使用 StorageFile 对象读取和写入文件。"
 translationtype: Human Translation
-ms.sourcegitcommit: 24f50f2c4ac7fcfe931759d42ba73e758d77f6e8
-ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
 
 ---
 
-# 创建、写入和读取文件
+# <a name="create-write-and-read-a-file"></a>创建、写入和读取文件
 
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -25,7 +25,7 @@ ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
 
 > **注意** 另请参阅[文件访问示例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
@@ -35,7 +35,7 @@ ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
 
     可以在[使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)中了解如何使用文件选取器获取文件。
 
-## 创建文件
+## <a name="creating-a-file"></a>创建文件
 
 这里介绍了如何在应用的本地文件夹中创建一个文件。 如果文件存在，我们将替换它。
 > [!div class="tabbedCodeSnippets"]
@@ -53,7 +53,7 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt", CreationCollisionOption.ReplaceExisting)
 ```
 
-## 写入文件
+## <a name="writing-to-a-file"></a>写入文件
 
 
 下面介绍了如何使用 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 类在磁盘上写入可写文件。 每种写入文件（除非你在创建后立即写入文件）的方法的常见第一步是使用 [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 获取文件。
@@ -153,7 +153,7 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
         Await outputStream.FlushAsync()
 ```
 
-## 从文件读取
+## <a name="reading-from-a-file"></a>从文件读取
 
 
 下面介绍了如何使用 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 类在磁盘上从文件进行读取。 每种从文件读取的方法的常见第一步是使用 [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 获取文件。
@@ -259,6 +259,6 @@ Dim dataReader As New DataReader(inputStream)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

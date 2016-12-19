@@ -1,14 +1,14 @@
 ---
-author: msatranjr
+author: laurenhughes
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: "使用 WinAppDeployCmd.exe 工具安装应用"
 description: "Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可用于将通用 Windows 平台 (UWP) 应用从 Windows 10 电脑部署到任意 Windows 10 设备。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7b04e2e9980da4bbdd6d9d10fc493eb05e21afc4
-ms.openlocfilehash: 87af49dc04a94bac8896b33a1d7e8b4993b0f2c3
+ms.sourcegitcommit: f467bd83c2f700d94a232c99a06f86f1f1b1a0ac
+ms.openlocfilehash: 37028e1e119f27a8c82bc024e52f939a89243244
 
 ---
-# 使用 WinAppDeployCmd.exe 工具安装应用
+# <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安装应用
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -20,7 +20,7 @@ Windows 应用程序部署 (WinAppDeployCmd.exe) 是一个命令行工具，可�
 
 **WinAppDeployCmd.exe** 工具位于你的 Windows 10 电脑上的以下位置：**C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe**（基于 SDK 的安装路径）。 首先，将你的 Windows 10 设备连接到同一子网，或通过 USB 连接直接将其连接到你的 Windows 10 计算机。 然后使用以下语法和本文后面的此命令的示例部署 UWP 应用：
 
-## WinAppDeployCmd 语法和选项
+## <a name="winappdeploycmd-syntax-and-options"></a>WinAppDeployCmd 语法和选项
 
 以下是适用于 **WinAppDeployCmd.exe** 的语法
 
@@ -99,7 +99,7 @@ WinAppDeployCmd command -option <argument> ...
 | &lt;remotedeploydir&gt;| 设备上相对于部署位置的目录                      |
 
  
-## WinAppDeployCmd.exe 示例
+## <a name="winappdeploycmdexe-examples"></a>WinAppDeployCmd.exe 示例
 
 以下是一些有关如何使用 **WinAppDeployCmd.exe** 语法在命令行进行部署的示例。
 
@@ -139,7 +139,7 @@ WinAppDeployCmd deployfiles -file "C:\apps\App1\AppxManifest.xml" -remotedeployd
 WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 ```
 
-## 使用 WinAppDeployCmd 设置 Xbox One 上的从电脑运行部署。
+## <a name="using-winappdeploycmd-to-set-up-run-from-pc-deployment-on-xbox-one"></a>使用 WinAppDeployCmd 设置 Xbox One 上的从电脑运行部署。
 
 从电脑运行使你无需复制二进制文件就可以将 UWP 应用程序部署到 Xbox One，而不是将这些二进制文件托管在 Xbox 所在同一网络的网络共享上。  为此，需要开发人员已解锁的 Xbox One 和 Xbox 可以访问的网络驱动器上的松散文件（即 UWP 应用程序）。
 
@@ -152,6 +152,6 @@ ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myA
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,12 +4,12 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "使用 Windows 应用商店分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。"
 title: "使用 Windows 应用商店服务访问分析数据"
 translationtype: Human Translation
-ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
-ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
+ms.sourcegitcommit: dcf4c263ff3fd8df846d1d5620ba31a9da7a5e6c
+ms.openlocfilehash: 5ae5dcbe6684aa34a1428760cd5c7e9b8f599ebf
 
 ---
 
-# 使用 Windows 应用商店服务访问分析数据
+# <a name="access-analytics-data-using-windows-store-services"></a>使用 Windows 应用商店服务访问分析数据
 
 使用 *Windows 应用商店分析 API*，为注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。 此 API 使你可以针对应用和加载项（也称为应用内产品或 IAP）购置、错误、应用评分和评价检索数据。 此 API 使用 Azure Active Directory (Azure AD) 验证来自应用或服务的调用。
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
 3.  [调用 Windows 应用商店分析 API](#call-the-windows-store-analytics-api)。
 
 <span id="prerequisites" />
-## 步骤 1：完成使用 Windows 应用商店分析 API 的先决条件
+## <a name="step-1-complete-prerequisites-for-using-the-windows-store-analytics-api"></a>步骤 1：完成使用 Windows 应用商店分析 API 的先决条件
 
 在开始编写调用 Windows 应用商店分析 API 的代码之前，确保已完成以下先决条件。
 
@@ -28,8 +28,7 @@ ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
 
 * 你必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索租户 ID 和应用程序的客户端 ID 并生成密钥。 Azure AD 应用程序是指你想要从中调用 Windows 应用商店分析 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
 
-  >**注意**
-            &nbsp;&nbsp;只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
+  >**注意**  只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
 若要将 Azure AD 应用程序与你的开发人员中心帐户相关联并检索所需值：
 
@@ -42,7 +41,7 @@ ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
 4. 单击“添加新密钥”。 在接下来的屏幕上，记下“密钥”值。 在离开此页面后，你将无法再访问该信息。 有关详细信息，请参阅[添加和管理 Azure AD 应用程序](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中有关管理密钥的信息。
 
 <span id="obtain-an-azure-ad-access-token" />
-## 步骤 2：获取 Azure AD 访问令牌
+## <a name="step-2-obtain-an-azure-ad-access-token"></a>步骤 2：获取 Azure AD 访问令牌
 
 在 Windows 应用商店分析 API 中调用任何方法之前，首先必须获取将传递给该 API 中每个方法的 **Authorization** 标头的 Azure AD 访问令牌。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以对它进行刷新，以便可以在之后调用该 API 时继续使用。
 
@@ -64,19 +63,21 @@ grant_type=client_credentials
 在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
 
 <span id="call-the-windows-store-analytics-api" />
-## 步骤 3：调用 Windows 应用商店分析 API
+## <a name="step-3-call-the-windows-store-analytics-api"></a>步骤 3：调用 Windows 应用商店分析 API
 
 获取 Azure AD 访问令牌后，可以随时调用 Windows 应用商店分析 API。 有关每个方法的语法信息，请参阅以下文章。 必须将访问令牌传递到每个方法的 **Authorization** 标头。
 
--   [获取应用购置](get-app-acquisitions.md)
--   [获取加载项购置](get-in-app-acquisitions.md)
--   [获取错误报告数据](get-error-reporting-data.md)
--   [获取应用评分](get-app-ratings.md)
--   [获取应用评价](get-app-reviews.md)
--   [获取广告性能数据](get-ad-performance-data.md)
--   [获取广告市场活动性能数据](get-ad-campaign-performance-data.md)
+* [获取应用购置](get-app-acquisitions.md)
+* [获取加载项购置](get-in-app-acquisitions.md)
+* [获取错误报告数据](get-error-reporting-data.md)
+* [获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)
+* [获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)
+* [获取应用评分](get-app-ratings.md)
+* [获取应用评价](get-app-reviews.md)
+* [获取广告性能数据](get-ad-performance-data.md)
+* [获取广告市场活动性能数据](get-ad-campaign-performance-data.md)
 
-## 代码示例
+## <a name="code-example"></a>代码示例
 
 
 以下代码示例演示了如何获取 Azure AD 访问令牌以及如何从 C# 控制台应用调用 Windows 应用商店分析 API。 若要使用此代码示例，请将 *tenantId*、*clientId*、*clientSecret* 和 *appID* 变量分配给你的方案的相应值。 此示例需要 Newtonsoft 中的 [Json.NET 程序包](http://www.newtonsoft.com/json)，以便反序列化 Windows 应用商店分析 API 返回的 JSON 数据。
@@ -205,7 +206,7 @@ namespace TestAnalyticsAPI
 }
 ```
 
-## 错误响应
+## <a name="error-responses"></a>错误响应
 
 
 Windows 应用商店分析 API 会在 JSON 对象中返回含有错误代码和消息的错误响应。 以下示例演示了由无效参数引起的错误响应。
@@ -229,11 +230,13 @@ Windows 应用商店分析 API 会在 JSON 对象中返回含有错误代码和�
 }
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [获取应用购置](get-app-acquisitions.md)
 * [获取加载项购置](get-in-app-acquisitions.md)
 * [获取错误报告数据](get-error-reporting-data.md)
+* [获取应用中的错误的详细信息](get-details-for-an-error-in-your-app.md)
+* [获取应用中的错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)
 * [获取应用评分](get-app-ratings.md)
 * [获取应用评价](get-app-reviews.md)
 * [获取广告性能数据](get-ad-performance-data.md)
@@ -242,6 +245,6 @@ Windows 应用商店分析 API 会在 JSON 对象中返回含有错误代码和�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,11 +4,11 @@ ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "合成效果"
 description: "效果 API 使开发人员可以自定义其 UI 的呈现方式。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7f8660eae59219f15a083b41c581e427c140d299
-ms.openlocfilehash: 23d28144de3d051b4b569cf633f9eee30c13368d
+ms.sourcegitcommit: 7330af081021788a17bf6ec320267b4ea2fc3115
+ms.openlocfilehash: 197a4b32afc82724803fb93949b288b38de52cc4
 
 ---
-# 合成效果
+# <a name="composition-effects"></a>合成效果
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -20,15 +20,15 @@ ms.openlocfilehash: 23d28144de3d051b4b569cf633f9eee30c13368d
 
 将会针对合成树视觉效果（其内容来自效果图的输出）使用效果画笔。 效果可以引用现有图面/纹理，但不可以引用其他合成树的输出。
 
-## 效果功能
+## <a name="effect-features"></a>效果功能
 
 -   [效果库](./composition-effects.md#effect-library)
 -   [链接效果](./composition-effects.md#chaining-effects)
 -   [动画支持](./composition-effects.md#animation-support)
--   [效果属性：常量与动画](./composition-effects.md#effect-properties-constant-vs-animated)
+-   [常量与动画效果属性](./composition-effects.md#constant-vs-animated-effect-properties)
 -   [具有独立属性的多个效果实例](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
-### 效果库
+### <a name="effect-library"></a>效果库
 
 目前，合成支持以下效果：
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: 23d28144de3d051b4b569cf633f9eee30c13368d
 
 有关更多详细信息，请参阅 Win2D 的 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空间。 合成中不受支持的效果会标注为 \[NoComposition\]。
 
-### 链接效果
+### <a name="chaining-effects"></a>链接效果
 
 可以链接效果，以便允许应用程序针对某张图像同时使用多个效果。 效果图支持可以引用一个和其他效果的多个效果。 当描述效果时，只需将效果作为输入添加到你的效果。
 
@@ -77,11 +77,11 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 
 上面示例说明了拥有两种输入的算术合成效果。 第二种输入具有附带 0.5 饱和度属性的效果。
 
-### 动画支持
+### <a name="animation-support"></a>动画支持
 
 效果属性支持动画，在效果编译期间，可以指定可进行动画处理并且可“烘焙”为常数的效果属性。 通过“effect name.property name”形式的字符串指定可进行动画处理的属性。 可以通过多个效果实例化独立地对这些属性进行动画处理。
 
-### 效果属性：常量与动画
+### <a name="constant-vs-animated-effect-properties"></a>常量与动画效果属性 
 
 在效果编译期间，可以将效果属性指定为动态或作为常量的“烘焙”属性。 动态属性通过“<effect name>.<property name>”形式的字符串指定。 动态属性可设置为特定值或可使用合成动画系统进行动画处理。
 
@@ -123,11 +123,11 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 对于使用关键帧进行动画处理的效果属性，请参阅[去饱和度 - 动画示例](http://go.microsoft.com/fwlink/?LinkId=785342)；若要使用效果和表达式，请参阅 [AlphaMask 示例](http://go.microsoft.com/fwlink/?LinkId=785343)。
 
-### 具有独立属性的多个效果实例
+### <a name="multiple-effect-instances-with-independent-properties"></a>具有独立属性的多个效果实例
 
 效果编译期间，通过指定应为动态的参数，就可以根据每个效果实例更改该参数。 这允许两个视觉效果使用同一效果，但以不同的效果属性进行呈现。 有关详细信息，请参阅 ColorSource 和 Blend [示例](http://go.microsoft.com/fwlink/?LinkId=785344)。
 
-## 合成效果入门
+## <a name="getting-started-with-composition-effects"></a>合成效果入门
 
 本快速入门教程向你介绍如何使用效果的一些基本功能。
 
@@ -136,13 +136,13 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 -   [安装 Win2D](./composition-effects.md#installing-win2d)
 -   [设置合成基本要素](./composition-effects.md#setting-your-composition-basics)
 -   [创建 CompositionSurface 画笔](./composition-effects.md#creating-a-compositionsurface-brush)
--   [创建、编译和应用效果](./composition-effects.md#creating,-compiling-and-applying-effects)
+-   [创建、编译和应用效果](./composition-effects.md#creating-compiling-and-applying-effects)
 
-### 安装 Visual Studio
+### <a name="installing-visual-studio"></a>安装 Visual Studio
 
 -   如果尚未安装受支持版本的 Visual Studio，请转到[此处](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)的 Visual Studio 下载页。
 
-### 创建新项目
+### <a name="creating-a-new-project"></a>创建新项目
 
 -   转到“文件”-&gt;“新建”-&gt;“项目”...
 -   选择“Visual C#”
@@ -150,7 +150,7 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 -   输入你选择的项目名称
 -   单击“确定”
 
-### 安装 Win2D
+### <a name="installing-win2d"></a>安装 Win2D
 
 Win2D 发布为 Nuget.org 程序包，并且只有安装它之后才可以使用效果。
 
@@ -164,7 +164,7 @@ Win2D 发布为 Nuget.org 程序包，并且只有安装它之后才可以使用
 在接下来的几个步骤中，我们将使用合成 API 来将饱和度效果应用到这张猫咪图像，这会删除所有饱和度。 在此模型中，创建该效果，然后将其应用到图像。
 
 ![源图像](images/composition-cat-source.png)
-### 设置合成基本要素
+### <a name="setting-your-composition-basics"></a>设置合成基本要素
 
 有关如何设置 Windows.UI.Composition 合成器、对 ContainerVisual 进行根处理和与核心窗口相关联的示例，请参阅我们在 GitHub 上的[合成可视化树示例](http://go.microsoft.com/fwlink/?LinkId=785345)。
 
@@ -177,14 +177,14 @@ _imageFactory = new CompositionImageFactory(_compositor)
 Desaturate();
 ```
 
-### 创建 CompositionSurface 画笔
+### <a name="creating-a-compositionsurface-brush"></a>创建 CompositionSurface 画笔
 
 ```cs
 CompositionSurfaceBrush surfaceBrush = _compositor.CreateSurfaceBrush();
 LoadImage(surfaceBrush); 
 ```
 
-### 创建、编译和应用效果
+### <a name="creating-compiling-and-applying-effects"></a>创建、编译和应用效果
 
 1.) 创建图形效果
 ```cs
@@ -227,7 +227,7 @@ brush.Surface = imageSource.Surface;
 6.) 运行你的应用：产生的效果应是一只去饱和的猫：
 
 ![去饱和图像](images/composition-cat-desaturated.png)
-## 详细信息
+## <a name="more-information"></a>详细信息
 
 -   [Microsoft – 合成 GitHub](https://github.com/Microsoft/composition)
 -   [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
@@ -248,6 +248,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

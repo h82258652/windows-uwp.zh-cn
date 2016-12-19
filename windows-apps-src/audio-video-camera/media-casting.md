@@ -4,19 +4,19 @@ ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: "本文向你演示了如何将媒体从通用 Windows 应用转换到远程设备。"
 title: "媒体转换"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
+ms.sourcegitcommit: ebcd2f2b28a7cd2a8a9dad16c30239b06e147ec3
+ms.openlocfilehash: fc69e3b5bb814752480fa0151c36ae0a8c783c4e
 
 ---
 
-# 媒体转换
+# <a name="media-casting"></a>媒体转换
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文向你演示了如何将媒体从通用 Windows 应用转换到远程设备。
+本文介绍如何从通用 Windows 应用将媒体转换到远程设备。
 
-## 通过 MediaElement 的内置媒体转换
+## <a name="built-in-media-casting-with-mediaplayerelement"></a>通过 MediaPlayerElement 的内置媒体转换
 
 从通用 Windows 应用转换媒体的最简单方法是使用 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) 控件的内置转换功能。
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 > [!NOTE] 
 > 从 Windows 10 版本 1607 开始，建议你使用 **MediaPlayer** 类播放媒体项。 **MediaPlayerElement** 是一种轻型 XAML 控件，用于在 XAML 页面中呈现 **MediaPlayer** 的内容。 为了实现向后兼容性，继续支持 **MediaElement** 控件。 有关使用 **MediaPlayer** 和 **MediaPlayerElement** 播放媒体内容的详细信息，请参阅[使用 MediaPlayer 播放音频和视频](play-audio-and-video-with-mediaplayer.md)。 有关使用 **MediaSource** 和相关 API 处理媒体内容的信息，请参阅[媒体项、播放列表和轨](media-playback-with-mediasource.md)。
 
-## 通过 CastingDevicePicker 的媒体转换
+## <a name="media-casting-with-the-castingdevicepicker"></a>通过 CastingDevicePicker 的媒体转换
 
 将媒体转换到设备的第二个方法是使用 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525)。 若要使用此类型，请在项目中包括 [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) 命名空间。
 
@@ -78,7 +78,7 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
-## 通过自定义设备选取器的媒体转换
+## <a name="media-casting-with-a-custom-device-picker"></a>通过自定义设备选取器的媒体转换
 
 下一节介绍了如何通过从你的代码枚举转换设备和启动连接，创建你自己的转换设备选取器 UI。
 
@@ -160,6 +160,6 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

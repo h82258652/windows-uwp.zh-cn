@@ -6,12 +6,12 @@ ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: fc01951adfb151f1c5952d9181492a1d1f88b0cc
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# 特殊磁贴模板
+# <a name="special-tile-templates"></a>特殊磁贴模板
 
 
 
@@ -19,14 +19,14 @@ ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
 
 特殊磁贴模板是独特的模板，可以具有动画效果或只允许你执行自适应磁贴不支持的操作。 每个特殊磁贴模板均专为 Windows 10 而生成，除了图标磁贴模板，它是针对 Windows 10 进行更新的经典特殊模板。 本文介绍了三种特殊磁贴模板：图标、照片和人脉。
 
-## 图标磁贴模板
+## <a name="iconic-tile-template"></a>图标磁贴模板
 
 
 图标模板（也称为“IconWithBadge”模板）允许你在磁贴中心显示较小的图像。 Windows 10 在手机和平板电脑/台式机上都支持该模板。
 
 ![小邮件磁贴和中邮件磁贴](images/iconic-template-mail-2sizes.png)
 
-### 如何创建图标磁贴
+### <a name="how-to-create-an-iconic-tile"></a>如何创建图标磁贴
 
 以下步骤介绍了要创建适用于 Windows 10 的图标磁贴所需的所有内容。 具体而言，你首先需要图标图像资源，然后使用图标模板向磁贴发送通知，最后发送锁屏提醒通知以提供要在磁贴上显示的数目。
 
@@ -77,10 +77,7 @@ ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
 下面是 XML 负载的示例代码：
 
 ```XML
-<badge value="2"/></code></pre></td>
-</tr>
-</tbody>
-</table>
+<badge value="2"/>
 ```
 
 磁贴的锁屏提醒将进行相应的更新。
@@ -91,16 +88,16 @@ ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
 
 ![与图标磁贴模板关联的 API 和负载](images/iconic-template-properties-info.png)
 
-## 照片磁贴模板
+## <a name="photos-tile-template"></a>照片磁贴模板
 
 
 照片磁贴模板允许你在动态磁贴上显示照片的幻灯片。 该模板受所有磁贴大小（包括小磁贴）的支持，并且对于每个磁贴大小的行为都相同。 下面的示例演示了使用照片模板的具有五个画面的中等磁贴。 该模板具有在选定的照片之间无限循环的缩放和交叉淡入淡出动画。
 
 ![使用照片磁贴模板的图像幻灯片放映](images/photo-tile-template-image01.jpg)
 
-### 如何使用照片模板
+### <a name="how-to-use-the-photos-template"></a>如何使用照片模板
 
-如果你已安装 [Windows 10 版本的 NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)，使用图片模板将非常简单。 尽管你可以使用原始的 XML，但我们强烈建议使用 NotificationExtensions，这样你便无需担心生成有效的 XML 或 XML 转义内容。
+如果你已安装[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，则使用照片模板将非常简单。 尽管你可以使用原始的 XML，但我们强烈建议使用该库，这样你便无需担心生成有效的 XML 或 XML 转义内容。
 
 Windows Phone 最多在幻灯片中显示 9 张照片；平板电脑、笔记本电脑和台式机最多显示 12 张。
 
@@ -108,16 +105,6 @@ Windows Phone 最多在幻灯片中显示 9 张照片；平板电脑、笔记本
 
 
 ```XML
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
 <!--
  
 To use the Photos template...
@@ -168,9 +155,9 @@ TileContent content = new TileContent()
             {
                 Images =
                 {
-                    new TileImageSource("Assets/1.jpg"),
-                    new TileImageSource("ms-appdata:///local/Images/2.jpg"),
-                    new TileImageSource("http://msn.com/images/3.jpg")
+                    new TileBasicImage() { Source = "Assets/1.jpg" },
+                    new TileBasicImage() { Source = "ms-appdata:///local/Images/2.jpg" },
+                    new TileBasicImage() { Source = "http://msn.com/images/3.jpg" }
  
                     // TODO: Can have 12 images total
                 }
@@ -182,7 +169,7 @@ TileContent content = new TileContent()
 };
 ```
 
-## “人脉”磁贴模板
+## <a name="people-tile-template"></a>“人脉”磁贴模板
 
 
 Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在磁贴上垂直或水平滚动的圆形图像。 这种磁贴模板自 Windows 10 版本 10572 起推出，任何人都可随意在其应用中使用该模板。
@@ -207,11 +194,11 @@ Windows 10 中的“人脉”应用使用的特殊磁贴模板显示一系列在
 
  
 
-如果你使用的是 [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)，若要使用“人脉”磁贴模板，只需为 *TileBinding* 内容创建新的 *TileBindingContentPeople* 对象即可。 *TileBindingContentPeople* 类具有一个 Images 属性，你可以在其中添加图像。
+如果你使用的是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，若要使用“人脉”磁贴模板，只需为 *TileBinding* 内容创建新的 *TileBindingContentPeople* 对象即可。 *TileBindingContentPeople* 类具有一个 Images 属性，你可以在其中添加图像。
 
 如果你使用的是原始 XML，请将 *hint-presentation* 设置为“people”并将图像添加为绑定元素的子元素。
 
-以下 C# 代码示例假定你使用的是 [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)。
+以下 C# 代码示例假定你使用的是[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)。
 
 ```CSharp
 TileContent content = new TileContent()
@@ -224,15 +211,15 @@ TileContent content = new TileContent()
             {
                 Images =
                 {
-                    new TileImageSource("Assets/ProfilePics/1.jpg"),
-                    new TileImageSource("Assets/ProfilePics/2.jpg"),
-                    new TileImageSource("Assets/ProfilePics/3.jpg"),
-                    new TileImageSource("Assets/ProfilePics/4.jpg"),
-                    new TileImageSource("Assets/ProfilePics/5.jpg"),
-                    new TileImageSource("Assets/ProfilePics/6.jpg"),
-                    new TileImageSource("Assets/ProfilePics/7.jpg"),
-                    new TileImageSource("Assets/ProfilePics/8.jpg"),
-                    new TileImageSource("Assets/ProfilePics/9.jpg")
+                    new TileBasicImage() { Source = "Assets/ProfilePics/1.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/2.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/3.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/4.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/5.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/6.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/7.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/8.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/9.jpg" }
                 }
             }
         }
@@ -244,16 +231,16 @@ TileContent content = new TileContent()
 <tile>
   <visual>
  
-    <binding template=&#39;TileMedium&#39; hint-presentation=&#39;people&#39;>
-      <image src=&#39;Assets/ProfilePics/1.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/2.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/3.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/4.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/5.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/6.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/7.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/8.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/9.jpg&#39;/>
+    <binding template="TileMedium" hint-presentation="people">
+      <image src="Assets/ProfilePics/1.jpg"/>
+      <image src="Assets/ProfilePics/2.jpg"/>
+      <image src="Assets/ProfilePics/3.jpg"/>
+      <image src="Assets/ProfilePics/4.jpg"/>
+      <image src="Assets/ProfilePics/5.jpg"/>
+      <image src="Assets/ProfilePics/6.jpg"/>
+      <image src="Assets/ProfilePics/7.jpg"/>
+      <image src="Assets/ProfilePics/8.jpg"/>
+      <image src="Assets/ProfilePics/9.jpg"/>
     </binding>
  
   </visual>
@@ -270,11 +257,11 @@ TileContent content = new TileContent()
 
 若要发送通知，请参阅[选择通知传递方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-people-tile-template)
-* [GitHub 上的 NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [磁贴、锁屏提醒和通知](tiles-badges-notifications.md)
 * [创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)
 * [自适应磁贴模板：架构和文档](tiles-and-notifications-adaptive-tiles-schema.md)
@@ -288,6 +275,6 @@ TileContent content = new TileContent()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

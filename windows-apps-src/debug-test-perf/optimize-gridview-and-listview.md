@@ -4,11 +4,11 @@ ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: "ListView 和 GridView UI 优化"
 description: "通过 UI 虚拟化、元素减少和项目的进度更新来改进 ListView 和 GridView 性能和启动时间。"
 translationtype: Human Translation
-ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
+ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
+ms.openlocfilehash: dca6c9c2cde4240da4b2eff4f4786ec5b81051c6
 
 ---
-# ListView 和 GridView UI 优化
+# <a name="listview-and-gridview-ui-optimization"></a>ListView 和 GridView UI 优化
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,7 +17,7 @@ ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
 
 通过 UI 虚拟化、元素减少和项目的进度更新来改进 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 性能和启动时间。 有关数据虚拟化技术，请参阅 [ListView 和 GridView 数据虚拟化](listview-and-gridview-data-optimization.md)。
 
-## 集锦性能的两个关键因素
+## <a name="two-key-factors-in-collection-performance"></a>集锦性能的两个关键因素
 
 操作集锦是一个常见方案。 照片查看器具有照片集锦，阅读器具有文章/书籍/故事的集锦，而购物应用具有产品集锦。 本主题介绍可以采取哪些措施来提高应用操作集锦的效率。
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
 
 对于平滑平移/滚动，UI 线程是否高效、智能地完成实例化、数据绑定和设置项目布局至关重要。
 
-## UI 虚拟化
+## <a name="ui-virtualization"></a>UI 虚拟化
 
 UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 UI 元素根据需求而创建。 对于绑定到 1000 个项目的集合的项目控件，同时为所有项目创建 UI 会造成资源浪费，因为它们不可能全部同时显示。 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)（及其他标准 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 派生的控件）可为你执行 UI 虚拟化。 当项目即将滚动到视图中时（只距离几页），框架将为这些项目生成 UI 并将其缓存。 如果这些项目不太可能再次显示，框架将回收内存。
 
@@ -33,7 +33,7 @@ UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 
 
 视口的概念对于 UI 虚拟化至关重要，因为该框架必须创建可能显示的元素。 通常，[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 的视口是逻辑控件的范围。 例如 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的视口是 **ListView** 元素的宽度和高度。 某些面板允许子元素使用无限的空间（例如 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) 和 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)），并自动调整行或列的大小。 将虚拟化的 **ItemsControl** 放置在类似的面板中后，它有足够的空间用于显示它的所有项目，此时虚拟化便失去意义。 还原虚拟化的方法是对 **ItemsControl** 设置宽度和高度。
 
-## 按项目减少元素
+## <a name="element-reduction-per-item"></a>按项目减少元素
 
 将用于呈现项目的 UI 元素数量保持在合理的最小值范围内。
 
@@ -64,7 +64,8 @@ UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 
 
 存在大约 25 个属性，自描述名称类似于 [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) 和 [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground.aspx)。 如果表示器类型已证实不足以为你的用例进行自定义，你可以改为编辑 `ListViewItemExpanded` 或 `GridViewItemExpanded` 控件模板的副本。 它们位于 `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml` 中。 请注意，使用这些模板意味着将要付出一些性能的代价来增加自定义项。
 
-## 渐进更新 ListView 和 GridView 项目
+<span id="update-items-incrementally"/>
+## <a name="update-listview-and-gridview-items-progressively"></a>渐进更新 ListView 和 GridView 项目
 
 如果要使用数据虚拟化，则可以保持 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 的较高响应速度，方法是配置控件以针对仍在加载的项目呈现临时 UI 元素。 在数据加载时，临时元素随后会逐步替换为实际 UI。
 
@@ -72,7 +73,7 @@ UI 虚拟化是你可以实现的最重要改进。 这意味着表示项目的 
 
 这些技术的示例常见于照片查看应用：即使并不加载和显示所有图像，用户仍可以平移/滚动并与集合交互。 或者，对于“电影”项，你可以在第一阶段显示标题，在第二阶段显示评级，在第三阶段显示海报的图像。 用户将尽早看到关于每个项目的最重要数据，这意味着他们可以立刻采取行动。 然后在时间允许的情况下填入次要信息。 下面是可以用于实现这些技术的平台功能。
 
-### 占位符
+### <a name="placeholders"></a>占位符
 
 默认情况下启用临时占位符视觉功能，它受 [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 属性控制。 在快速平移/滚动期间，此功能为用户提供还有更多项目需要完全显示的视觉提示，同时还可保持平滑度。 如果你使用以下技术之一，当你不希望使系统呈现占位符时，可以将 **ShowsScrollingPlaceholders** 设置为 false。
 
@@ -239,7 +240,7 @@ namespace LotsOfItems
 
 4.  如果立即运行应用并快速在网格视图中平移/滚动，你看到的行为与使用 **x:Phase** 时相同。
 
-## 带有异类集锦的容器循环
+## <a name="container-recycling-with-heterogeneous-collections"></a>带有异类集锦的容器循环
 
 在某些应用程序中，你需要为集锦中的不同类型的项目使用不同类型的 UI。 这可能造成虚拟化面板无法重复使用/循环使用用于显示项目的可视元素。 在平移期间为某个项目重新创建可视元素会撤销虚拟化所提供的许多性能优势。 但是，进行一些规划便可以允许虚拟化面板重复使用这些元素。 开发人员可以根据其方案选择一组选项：[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 事件或项目模板选择器。 **ChoosingItemContainer** 方法具有更好的性能。
 
@@ -320,6 +321,6 @@ private void lst-ChoosingItemContainer
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

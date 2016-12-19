@@ -4,23 +4,17 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: "在 Windows 应用商店提交 API 中使用这些方法，来管理已注册到 Windows 开发人员中心帐户的应用提交。"
 title: "使用 Windows 应用商店提交 API 管理应用提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 ---
 
-# 使用 Windows 应用商店提交 API 管理应用提交
+# <a name="manage-app-submissions-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 管理应用提交
 
 
 在 Windows 应用商店提交 API 中使用以下方法，来管理已注册到 Windows 开发人员中心帐户的应用提交。 有关 Windows 应用商店提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->
-            **注意**
-            &nbsp;&nbsp;这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
-
->
-            **重要提示**
-            &nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的应用提交的定价数据模型。 实现此更改后，**定价**资源将不再受支持，并且你将暂时无法使用 Windows 应用商店提交 API 获取或修改应用提交的试用期、定价和销售数据。 我们将在将来更新该 API，以引入以编程方式访问应用提交的定价信息的新方法。 有关详细信息，请参阅[定价资源](#pricing-object)部分。
+>**注意**  这些方法只能用于已授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
 
 | 方法        | URI    | 描述                                                                 |
@@ -37,18 +31,15 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 | POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout``` | 完成应用提交的逐步推出。 有关详细信息，请参阅[此文章](finalize-the-package-rollout-for-an-app-submission.md)。 |
 
 <span id="create-an-app-submission">
-## 创建应用提交
+## <a name="create-an-app-submission"></a>创建应用提交
 
 若要创建应用提交，请遵循此过程。
 
 1. 如果尚未开始操作，请先完成 Windows 应用商店提交 API 的所有[先决条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 
-  >
-            **注意**
-            &nbsp;&nbsp;确保应用至少已有一个已完成的提交并且已完成[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)信息。
+  >**注意**  确保应用至少已有一个已完成的提交并且已完成[年龄分级](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)信息。
 
-2. 
-            [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Windows 应用商店提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
+2. [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 在 Windows 应用商店提交 API 中，必须将此访问令牌传递给相关方法。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 
 3. 通过执行 Windows 应用商店提交 API 中的以下方法[创建应用提交](create-an-app-submission.md)。 此方法创建新的正在进行的提交，这是你上次发布的提交的副本。
 
@@ -66,9 +57,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}
   ```
 
-  >
-            **注意**
-            &nbsp;&nbsp;如果要为提交添加新软件包或图像，请确保更新提交数据在 ZIP 存档中以引用这些文件的名称和相对路径。
+  >**注意**  如果要为提交添加新软件包或图像，请确保更新提交数据在 ZIP 存档中以引用这些文件的名称和相对路径。
 
 4. 如果要为提交添加新的程序包或图像，请将 ZIP 存档上载到 SAS URI，该 URI 已在步骤 2 中调用的 POST 方法的响应正文中提供。 有关详细信息，请参阅[共享访问签名，第 2 部分：使用 Blob 存储创建和使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
 
@@ -99,16 +88,15 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 7. 在提交成功完成之后，提交会发送至应用商店以供引入。 可以通过使用前面的方法，或者通过访问开发人员中心仪表板，继续监视提交进度。
 
 <span id="manage-gradual-package-rollout">
-## 管理应用提交的逐步软件包推出
+## <a name="manage-a-gradual-package-rollout-for-an-app-submission"></a>管理应用提交的逐步软件包推出
 
-可在应用提交中逐步向 Windows10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定软件包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新放心。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关详细信息，包括有关如何在开发人员中心仪表板中启用和管理逐步软件包推出的说明，请参阅[本文章](../publish/gradual-package-rollout.md)。
+可在应用提交中逐步向 Windows 10 上一定比例的应用客户推出已更新的软件包。 这使你可以监视特定软件包的反馈和分析数据，从而确保在更广泛地推出更新前对此更新放心。 可更改已发布提交的推出百分比（或终止更新），而无需创建新提交。 有关详细信息，包括有关如何在开发人员中心仪表板中启用和管理逐步软件包推出的说明，请参阅[本文章](../publish/gradual-package-rollout.md)。
 
 还可使用 Windows 应用商店提交 API 中的以下方法以编程方式启用和管理应用提交的逐步软件包推出。
 
 * 若要启用应用提交的逐步软件包推出：
 
-  1. 
-            [创建应用提交](create-an-app-submission.md)或[获取应用提交](get-an-app-submission.md)。
+  1. [创建应用提交](create-an-app-submission.md)或[获取应用提交](get-an-app-submission.md)。
   2. 在响应数据中，找到 [packageRollout](#package-rollout-object) 资源、将“isPackageRollout”字段设置为 true，然后将“packageRolloutPercentage”字段设置为应获取已更新的软件包的应用客户百分比。
   3. 将已更新的应用提交数据传递到[更新应用提交](update-an-app-submission.md)方法。
 
@@ -144,12 +132,12 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout
   ```
 
-## 资源
+## <a name="resources"></a>资源
 
 这些方法使用以下资源设置数据格式。
 
 <span id="app-submission-object" />
-### 应用提交
+### <a name="app-submission"></a>应用提交
 
 此资源表示应用的提交。 以下示例演示了此资源的格式。
 
@@ -276,15 +264,14 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 | fileUploadUrl           |   字符串  | 用于为提交上载任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包或图像，请将包含这些程序包和图像的 ZIP 存档上载到此 URI。 有关详细信息，请参阅[创建应用提交](#create-an-app-submission)。       |    
 | applicationPackages           |   数组  | 包含提供提交中关于每个程序包详细信息的对象。 有关详细信息，请参阅下面的[应用软件包](#application-package-object)部分。 |    
 | packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置。 有关详细信息，请参阅下面的[软件包传递选项对象](#package-delivery-options-object)部分。  |
-| enterpriseLicensing           |  字符串  |  
-            [企业授权值](#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔型，指示是否允许应用面向指定的设备系列。     |    
+| enterpriseLicensing           |  字符串  |  [企业授权值](#enterprise-licensing)的其中一个值，它指示应用的企业授权行为。  |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布尔型   |  指示是否允许 Microsoft [将应用提供给未来 Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
+| allowTargetFutureDeviceFamilies           | 对象   |  键值对字典，其中每个键为 [Windows 10 设备系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每个值为布尔型，指示是否允许应用面向指定的设备系列。     |    
 | friendlyName           |   字符串  |  用于显示的应用友好名称。       |  
 
 
 <span id="listing-object" />
-### 列表
+### <a name="listing"></a>列表
 
 此资源包含应用的列表信息。 此资源具有以下值。
 
@@ -294,15 +281,14 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 |  platformOverrides               | 对象 |   键值对字典，其中每个键为字符串，用于标识要替代其列表信息的平台；而每个值为[基本列表](#base-listing-object)对象（仅将描述中的值包含在标题中），用于指定要为指定平台替代的列表信息。 键可以具有以下值： <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
 
 <span id="base-listing-object" />
-### 基本列表
+### <a name="base-listing"></a>基本列表
 
 此资源包含应用的基本列表信息。 此资源具有以下值。
 
 | 值           | 类型    | 描述       |
 |-----------------|---------|------|
 |  copyrightAndTrademarkInfo                |   字符串      |  可选的[版权和/或商标信息](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)。  |
-|  keywords                |  数组       |  
-            [关键字](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)数组，用于帮助应用出现在搜索结果中。    |
+|  keywords                |  数组       |  [关键字](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)数组，用于帮助应用出现在搜索结果中。    |
 |  licenseTerms                |    字符串     | 可选的应用[许可条款](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms)。     |
 |  privacyPolicy                |   字符串      |   应用的[隐私策略](https://msdn.microsoft.com/windows/uwp/publish/privacy-policy)的 URL。    |
 |  supportContact                |   字符串      |  应用的[支持人员联系信息](https://msdn.microsoft.com/windows/uwp/publish/support-contact-info)的 URL 或电子邮件地址。     |
@@ -316,7 +302,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 
 <span id="image-object" />
-### 图像
+### <a name="image"></a>图像
 
 此资源包含应用一览的图像和图标数据。 有关应用一览的图像和图标的详细信息，请参阅[应用屏幕截图和图像](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。 此资源具有以下值。
 
@@ -330,37 +316,29 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 
 <span id="pricing-object" />
-### 定价
+### <a name="pricing"></a>定价
 
-此资源包含应用的定价信息。
-
->
-            **重要提示**
-            &nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的应用提交的定价数据模型。 实现此更改后，**定价**资源将不再受支持，并且你将暂时无法使用 Windows 应用商店提交 API 获取或修改应用提交的试用期、定价和销售数据。 你将注意到以下行为更改：
-
-   > * 调用 [GET 方法以获取应用提交](get-an-app-submission.md)后，**定价**资源将为空。 可继续使用开发人员中心仪表板获取应用提交的定价数据。
-   > * 调用 [PUT 方法更新应用提交](update-an-app-submission.md)时，将忽略**定价**资源中的信息。 可继续使用开发人员中心仪表板更改应用提交的定价数据。
-
-> 将来，我们将更新 Windows 应用商店提交 API，以引入以编程方式获取和更新应用提交的定价信息的新方法。
-
-此资源具有以下值。
+此资源包含应用的定价信息。 此资源具有以下值。
 
 | 值           | 类型    | 描述                                                                                                                                                                                                                          |
 |-----------------|---------|------|
 |  trialPeriod               |    字符串     |  一个指定应用试用期的字符串。 这可以是以下值之一： <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[应用在特定市场中的自定义价格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。      |     
-|  sales               |   数组      |  包含应用销售信息的对象数组。 有关详细信息，请参阅下面的[销售](#sale-object)部分。    |     
+|  sales               |   array      |  **已弃用**。 包含应用销售信息的对象数组。 有关详细信息，请参阅下面的[销售](#sale-object)部分。    |     
 |  priceId               |   字符串      |  用于指定应用[基价](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)的[价格段](#price-tiers)。   |
 
 
 <span id="sale-object" />
-### 销售
+### <a name="sale"></a>销售
 
 此资源包含应用的销售信息。
 
->
-            **重要提示**
-            &nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的应用提交的定价数据模型。 实现此更改后，**销售**资源将不再受支持，并且你将暂时无法使用 Windows 应用商店提交 API 获取或修改应用提交的销售数据。 我们将在将来更新该 API，以引入以编程方式访问应用提交的销售信息的新方法。 有关详细信息，请参阅[定价资源](#pricing-object)部分。
+>**重要信息**   **销售**资源不再受支持，并且当前不能使用 Windows 应用商店提交 API 获取或修改应用提交的销售数据：
+
+   > * 调用 [GET 方法以获取应用提交](get-an-app-submission.md)后，*销售*值将为空。 可继续使用开发人员中心仪表板获取应用提交的销售数据。
+   > * 调用 [PUT 方法更新应用提交](update-an-app-submission.md)时，将忽略*销售*值中的信息。 你可以继续使用开发人员中心仪表板更改应用提交的销售数据。
+
+> 将来，我们将更新 Windows 应用商店提交 API，以引入以编程方式访问应用提交的销售信息的新方法。
 
 此资源具有以下值。
 
@@ -374,7 +352,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 
 <span id="status-details-object" />
-### 状态详细信息
+### <a name="status-details"></a>状态详细信息
 
 此资源包含有关提交状态的附加详细信息。 此资源具有以下值。
 
@@ -386,7 +364,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 
 <span id="status-detail-object" />
-### 状态详细信息
+### <a name="status-detail"></a>状态详细信息
 
 此资源包含关于提交的任何相关错误或警告的附加详细信息。 此资源具有以下值。
 
@@ -397,7 +375,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 
 <span id="application-package-object" />
-### 应用程序包
+### <a name="application-package"></a>应用程序包
 
 此资源包含有关提交的应用包的详细信息。 以下示例演示了此资源的格式。
 
@@ -430,9 +408,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 此资源具有以下值。  
 
->
-            **注意**
-            &nbsp;&nbsp;当调用[更新应用提交](update-an-app-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。
+>**注意**  当调用[更新应用提交](update-an-app-submission.md)方法时，请求正文中仅需要此对象的 *fileName*、*fileStatus*、*minimumDirectXVersion* 和 *minimumSystemRam* 值。 其他值由开发人员中心进行填充。
 
 | 值           | 类型    | 描述                   |
 |-----------------|---------|------|
@@ -443,14 +419,14 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 | architecture    |  字符串   |  程序包的体系结构（例如 ARM）。   |     
 | languages    | 数组    |  应用所支持的语言的语言代码数组。 有关详细信息，请参阅[支持的语言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
 | capabilities    |  数组   |  程序包所需的功能数组。 有关功能的详细信息，请参阅[应用功能声明](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。   |     
-| minimumDirectXVersion    |  字符串   |  应用包支持的最低 DirectX 版本。 这可以仅针对面向 Windows8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | 字符串    |  应用包所需的最小 RAM。 这可以仅针对面向 Windows8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>Memory2GB</li></ul>   |       
-| targetDeviceFamilies    | 数组    |  一个字符串数组，它表示程序包所面向的设备系列。 此值仅用于面向 Windows10 的程序包；对于面向早期版本的程序包，此值具有值 **None**。 Windows10 程序包当前支持以下设备系列字符串，其中 *{0}* 是 Windows10 版本字符串（例如 10.0.10240.0、10.0.10586.0 或 10.0.14393.0）： <ul><li>Windows.Universal 最低版本 *{0}*</li><li>Windows.Desktop 最低版本 *{0}*</li><li>Windows.Mobile 最低版本 *{0}*</li><li>Windows.Xbox 最低版本 *{0}*</li><li>Windows.Holographic 最低版本 *{0}*</li></ul>   |    
+| minimumDirectXVersion    |  字符串   |  应用包支持的最低 DirectX 版本。 这可以仅针对面向 Windows 8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | 字符串    |  应用包所需的最小 RAM。 这可以仅针对面向 Windows 8.x 的应用进行设置；对于面向其他版本的应用，它将忽略。 这可以是以下值之一： <ul><li>None</li><li>Memory2GB</li></ul>   |       
+| targetDeviceFamilies    | 数组    |  一个字符串数组，它表示程序包所面向的设备系列。 此值仅用于面向 Windows 10 的程序包；对于面向早期版本的程序包，此值具有值 **None**。 Windows 10 程序包当前支持以下设备系列字符串，其中 *{0}* 是 Windows 10 版本字符串（例如 10.0.10240.0、10.0.10586.0 或 10.0.14393.0）： <ul><li>Windows.Universal 最低版本 *{0}*</li><li>Windows.Desktop 最低版本 *{0}*</li><li>Windows.Mobile 最低版本 *{0}*</li><li>Windows.Xbox 最低版本 *{0}*</li><li>Windows.Holographic 最低版本 *{0}*</li></ul>   |    
 
 <span/>
 
 <span id="certification-report-object" />
-### 认证报告
+### <a name="certification-report"></a>认证报告
 
 此资源提供对提交的认证报告数据的访问权限。 此资源具有以下值。
 
@@ -461,7 +437,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 
 <span id="package-delivery-options-object" />
-### 软件包传递选项对象
+### <a name="package-delivery-options-object"></a>软件包传递选项对象
 
 此资源包含提交的逐步软件包推出和强制更新设置。 以下示例演示了此资源的格式。
 
@@ -489,7 +465,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 | mandatoryUpdateEffectiveDate    |  日期   |  此提交中的软件包变为强制的日期和时间，采用 ISO 8601 格式和 UTC 时区。   |        
 
 <span id="package-rollout-object" />
-### 软件包推出对象
+### <a name="package-rollout-object"></a>软件包推出对象
 
 此资源包含提交的逐步[软件包推出设置](#manage-gradual-package-rollout)。 此资源具有以下值。
 
@@ -502,13 +478,13 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 <span/>
 
-## Enums
+## <a name="enums"></a>Enums
 
 这些方法使用以下枚举。
 
 
 <span id="price-tiers" />
-### 价格段
+### <a name="price-tiers"></a>价格段
 
 以下值表示应用提交的可用价格段。
 
@@ -521,7 +497,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 
 <span id="enterprise-licensing" />
-### 企业授权值
+### <a name="enterprise-licensing-values"></a>企业授权值
 
 以下值表示应用的企业授权行为。 有关这些选项的详细信息，请参阅[组织许可选项](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing)。
 
@@ -533,7 +509,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 
 <span id="submission-status-code" />
-### 提交状态代码
+### <a name="submission-status-code"></a>提交状态代码
 
 以下值表示提交的状态代码。
 
@@ -556,7 +532,7 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 <span/>
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Windows 应用商店提交 API 获取应用数据](get-app-data.md)
@@ -564,6 +540,6 @@ ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -5,14 +5,14 @@ title: "存储和检索 Windows 笔划墨迹数据"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
-keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
+keywords: "Windows 墨迹, Windows 墨迹书写, DirectInk, InkPresenter, InkCanvas, ISF, 墨迹序列化格式"
 translationtype: Human Translation
-ms.sourcegitcommit: 75e93920422b5ad8ad0e9399bccc403ea69e7feb
-ms.openlocfilehash: 8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef
+ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
+ms.openlocfilehash: d4458b66f4f1917e99495353a088680b19cb94c9
 
 ---
 
-# 存储和检索 Windows 笔划墨迹数据
+# <a name="store-and-retrieve-windows-ink-stroke-data"></a>存储和检索 Windows 笔划墨迹数据
 
 
 支持 Windows 墨迹的 UWP 应用可以在笔划墨迹和墨迹序列化格式 (ISF) 文件之间进行序列化，也可以进行反序列化。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。
@@ -30,7 +30,7 @@ ms.openlocfilehash: 8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef
 
  
 
-## 将笔划墨迹保存到文件
+## <a name="save-ink-strokes-to-a-file"></a>将笔划墨迹保存到文件
 
 
 在此，我们展示如何保存在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件上绘制的笔划墨迹。
@@ -87,7 +87,7 @@ public MainPage()
     }
 ```
 
-3.  最终，我们将墨迹保存在“保存”****按钮的单击事件处理程序中。
+3.  最终，我们将墨迹保存在“保存”按钮的单击事件处理程序中。
 
     [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 允许用户选择保存墨迹数据的文件和位置。
 
@@ -160,7 +160,7 @@ public MainPage()
 > [!NOTE]  
 > GIF 是保存墨迹数据的唯一受支持的文件格式。 但是，[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) 方法（在下一部分中演示）不支持向后兼容的其他格式。
 
-## 从文件加载笔划墨迹
+## <a name="load-ink-strokes-from-a-file"></a>从文件加载笔划墨迹
 
 在此，我们展示如何从文件加载笔划墨迹，并在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控件上呈现它们。
 
@@ -216,7 +216,7 @@ public MainPage()
     }
 ```
 
-3.  最终，我们将墨迹加载到“加载”****按钮的单击事件处理程序中。
+3.  最终，我们将墨迹加载到“加载”按钮的单击事件处理程序中。
 
     [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 允许用户选择检索已保存墨迹数据的文件和位置。
 
@@ -270,14 +270,14 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 | Gif                       | 指定使用作为嵌入到文件中的元数据包含 ISF 的 GIF 文件持久保存的墨迹。 此格式能够在不支持墨迹的应用程序中查看墨迹，并且当返回支持墨迹的应用程序时保持全部墨迹保真度。 此格式适合传输 HTML 文件中的墨迹内容并使其可由墨迹和非墨迹应用程序使用。 |
 | Base64Gif                 | 指定使用 base64 编码的加强 GIF 持久保存墨迹。 当在 XML 或 HTML 文件中对墨迹直接进行编码，之后转换为图像时，提供此格式。 该格式的可能用法是采用生成的 XML 格式包含所有墨迹信息，并用于通过可扩展样式表语言转换 (XSLT) 生成 HTML。 
 
-## 使用剪贴板复制并粘贴墨迹笔划
+## <a name="copy-and-paste-ink-strokes-with-the-clipboard"></a>使用剪贴板复制并粘贴墨迹笔划
 
 
 在此，我们演示如何使用剪贴板在应用之间传输笔划墨迹。
 
 若要支持剪贴板功能，内置 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 剪切和复制命令需要一条或多条笔划墨迹已选定。
 
-在此示例中，我们会在使用笔桶按钮（或鼠标右键按钮）修改输入时启用笔划选择。 有关如何实现笔划选择的完整示例，请参阅[笔和触笔交互](pen-and-stylus-interactions.md)中的[传递输入以进行高级处理](pen-and-stylus-interactions.md#passthrough)。
+在此示例中，我们会在使用笔桶按钮（或鼠标右键按钮）修改输入时启用笔划选择。 有关如何实现笔划选择的完整示例，请参阅[笔和触笔交互](pen-and-stylus-interactions.md)中的传递输入以进行高级处理。
 
 1.  首先，我们设置 UI。
 
@@ -319,7 +319,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
     将 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))。 适用于按钮上的单击事件的侦听器以及适用于选择功能的指针和笔划事件也在此处声明。
 
-    有关如何实现笔划选择的完整示例，请参阅[笔和触笔交互](pen-and-stylus-interactions.md)中的[传递输入以进行高级处理](pen-and-stylus-interactions.md#passthrough)。
+    有关如何实现笔划选择的完整示例，请参阅[笔和触笔交互](pen-and-stylus-interactions.md)中的传递输入以进行高级处理。
 ```    CSharp
 public MainPage()
     {
@@ -365,7 +365,7 @@ public MainPage()
     }
 ```
 
-3.  最终，在添加笔划选择支持后，我们在“剪切”****、“复制”****和“粘贴”****按钮的单击事件处理程序中实现剪贴板功能。
+3.  最终，在添加笔划选择支持后，我们在“剪切”、“复制”和“粘贴”按钮的单击事件处理程序中实现剪贴板功能。
 
     对于剪切，我们首先在 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 上调用 [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232)。
 
@@ -428,7 +428,7 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 * [笔和触笔交互](pen-and-stylus-interactions.md)
 
@@ -436,16 +436,18 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 * [墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [简单墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [复杂墨迹示例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Coloring Book 示例](https://aka.ms/cpubsample-coloringbook)
+* [系列说明示例](https://aka.ms/cpubsample-familynotessample)
+
+
  
 
- 
 
 
 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

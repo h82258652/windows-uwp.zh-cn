@@ -4,21 +4,16 @@ ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "在 Windows 应用商店提交 API 中使用此方法，可获取现有加载项提交的数据。"
 title: "使用 Windows 应用商店提交 API 获取加载项提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 03942eb9015487cfd5690e4b1933e4febd705971
-ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: 887615bfc07549d82a295bae99dd31f722546341
 
 ---
 
-# 使用 Windows 应用商店提交 API 获取加载项提交
-
-
-
+# <a name="get-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 获取加载项提交
 
 在 Windows 应用商店提交 API 中使用此方法，可获取现有加载项（也称为应用内产品或 IAP）提交的数据。 有关通过使用 Windows 应用商店提交 API 创建加载项提交过程的详细信息，请参阅[管理加载项提交](manage-add-on-submissions.md)。
 
->**重要提示**&nbsp;&nbsp;在不久的将来，Microsoft 将更改 Windows 开发人员中心中的加载项提交的定价数据模型。 实现此更改后，此方法的响应数据中的**定价**资源将为空，并且你将暂时无法使用此方法获取加载项提交的定价和销售数据。 我们会在将来更新 Windows 应用商店提交 API，以引入以编程方式访问加载项提交的定价信息的新方法。 有关详细信息，请参阅[定价资源](manage-add-on-submissions.md#pricing-object)。
-
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -26,9 +21,9 @@ ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 * 使用你的开发人员中心帐户为应用创建加载项提交。 可以使用开发人员中心仪表板执行此操作，也可以通过以下方式执行此操作：使用[创建加载项提交](create-an-add-on-submission.md)方法。
 
->**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## 请求
+## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
@@ -39,7 +34,7 @@ ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 <span/>
  
 
-### 请求头
+### <a name="request-header"></a>请求头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -47,7 +42,7 @@ ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 
 <span/>
 
-### 请求参数
+### <a name="request-parameters"></a>请求参数
 
 | 名称        | 类型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -56,11 +51,11 @@ ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 请勿为此方法提供请求正文。
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 以下示例演示了如何获取加载项提交。
 
@@ -69,7 +64,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/su
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 以下示例演示了成功调用此方法的 JSON 响应正文。 响应正文包含指定提交的相关信息。 有关响应正文中这些值的更多详细信息，请参阅[加载项提交资源](manage-add-on-submissions.md#add-on-submission-object)。
 
@@ -104,17 +99,7 @@ Authorization: Bearer <your access token>
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -146,7 +131,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
@@ -158,7 +143,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [创建加载项提交](create-an-add-on-submission.md)
@@ -169,6 +154,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

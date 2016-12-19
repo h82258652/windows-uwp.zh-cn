@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "跟踪最近使用的文件和文件夹"
 description: "通过将用户经常访问的文件添加到你的应用的最近使用列表 (MRU) 中来跟踪这些文件。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
 
 ---
-# 跟踪最近使用的文件和文件夹
+# <a name="track-recently-used-files-and-folders"></a>跟踪最近使用的文件和文件夹
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
 
  
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
@@ -40,7 +40,7 @@ ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
 
     选取的文件通常是用户再三返回查看的文件。
 
- ## 向 MRU 中添加选取的文件
+ ## <a name="add-a-picked-file-to-the-mru"></a>向 MRU 中添加选取的文件
 
 -   用户选取的文件通常是他们重复返回的文件。 因此，当选取文件时，请考虑将选取的文件添加到你的应用的 MRU。 操作方法如下：
 
@@ -59,7 +59,7 @@ ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
 
      
 
-## 使用令牌从 MRU 检索项
+## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>使用令牌从 MRU 检索项
 
 使用最适合希望检索的项的检索方法。
 
@@ -87,11 +87,11 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 使用 [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) 可以迭代 MRU 中的条目。 这些条目是包含项的令牌和元数据的 [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) 结构。
 
-## 当 MRU 已满时从中删除项
+## <a name="removing-items-from-the-mru-when-its-full"></a>当 MRU 已满时从中删除项
 
 当达到 MRU 的 25 项这一限制并尝试添加新项时，会自动删除最早访问的项。 因此，添加新项之前无需删除任何项。
 
-## 未来访问列表
+## <a name="future-access-list"></a>未来访问列表
 
 除了 MRU，你的应用还具有一个未来访问列表。 通过选择文件和文件夹，你的用户向你的应用授予访问项的权限（若未授权可能无法访问）。 如果将这些项添加到你的未来访问列表，然后当你的应用需要以后重新访问这些项时将保留该权限。 你的应用的未来访问列表由 [**StorageItemAccessList**](https://msdn.microsoft.com/library/windows/apps/br207459) 类表示，你能从静态 [**StorageApplicationPermissions.FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 属性获取该类。
 
@@ -106,6 +106,6 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

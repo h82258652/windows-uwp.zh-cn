@@ -4,12 +4,12 @@ description: "本部分介绍了如何在通用 Windows 平台 (UWP) 应用之�
 title: "应用到应用的通信"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 94e1586a73743e8918ef160897b1b22c8c545ea0
-ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
+ms.sourcegitcommit: ea67ae5b568d1c51af3bb951fe3a68a8def8a556
+ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
 
 ---
 
-# 应用到应用的通信
+# <a name="app-to-app-communication"></a>应用到应用的通信
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
 
 除了“共享”合约外，应用还可以集成用于传输数据的传统技术，如拖放或复制和粘贴。 除了在 UWP 应用之间通信外，这些方法还支持在桌面应用程序之间共享。
 
-## 本部分内容
+## <a name="in-this-section"></a>本部分内容
 
 | 主题 | 说明 |
 |-------|-------------|
@@ -30,11 +30,11 @@ ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
 | [复制和粘贴](copy-and-paste.md) | 本文介绍如何支持在 UWP 应用中通过使用剪贴板进行复制和粘贴。 复制和粘贴是在应用之间或在应用内交换数据的传统方法，并且在一定程度上，几乎每个应用都可以支持剪贴板操作。 |
 | [拖放](drag-and-drop.md) | 本文说明如何将拖放操作添加到你的通用 UWP 应用中。 拖放是一种与内容（例如图像和文件）交互的经典且自然的方法。 实现后，拖放会在所有方向上无缝运行，包括应用到应用、应用到桌面和桌面到应用。 |
 
-## 另请参阅
-- [开发 UWP 应用](https://developer.microsoft.com/en-us/windows/develop)
+## <a name="see-also"></a>另请参阅
+- [开发 UWP 应用](https://developer.microsoft.com/windows/develop)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 
