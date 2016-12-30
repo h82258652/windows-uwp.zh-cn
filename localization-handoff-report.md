@@ -6,23 +6,23 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\tax-details-for-paid-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/56421bc1ce426310189ddcb1c9893437469c075a?path=windows-apps-src%2Fpublish%2Ftax-details-for-paid-apps.md&_a=contents) | HandedOffSuccess | [Details](#69ae8d29df626f6a1e2ce1bb4a8a09e99353a0ac5788)
+ [windows-apps-src\security\web-account-manager.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0aef3cc9a3312a647197d8b2a7b815ed42d54fa3?path=windows-apps-src%2Fsecurity%2Fweb-account-manager.md&_a=contents) | HandedOffSuccess | [Details](#10851432b6e28934ab60041d23a5cf319671f7045880)
 
 ## Item Details
-##### <a name='69ae8d29df626f6a1e2ce1bb4a8a09e99353a0ac5788'></a> Source: [windows-apps-src\publish\tax-details-for-paid-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/56421bc1ce426310189ddcb1c9893437469c075a?path=windows-apps-src%2Fpublish%2Ftax-details-for-paid-apps.md&_a=contents)
+##### <a name='10851432b6e28934ab60041d23a5cf319671f7045880'></a> Source: [windows-apps-src\security\web-account-manager.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0aef3cc9a3312a647197d8b2a7b815ed42d54fa3?path=windows-apps-src%2Fsecurity%2Fweb-account-manager.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/cf13fa73a66f7ccbbc83564cc01cc27568da5029?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Ftax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2016-12-30 00:01:43
+* Handoff File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d6fbafe3bdfa67835f2b1196f37bfddd48600fbe?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fweb-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2016-12-30 20:03:54
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\tax-details-for-paid-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fpublish%2Ftax-details-for-paid-apps.md&_a=contents)
-* Current Handback File: [tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Ftax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.zh-cn.xlf&_a=contents)
+* Current Target File: [windows-apps-src\security\web-account-manager.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fsecurity%2Fweb-account-manager.md&_a=contents)
+* Current Handback File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fweb-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-cn.xlf&_a=contents)
 * Current Handback Datetime: 2016-11-16 18:54:46
-* Bilingual File: [tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Ftax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.zh-cn.xlf&_a=contents)
+* Bilingual File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fweb-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-cn.xlf&_a=contents)
 * Bilingual Datetime: 2016-11-16 19:00:10
 * [Back to Top](#report-top)
 
