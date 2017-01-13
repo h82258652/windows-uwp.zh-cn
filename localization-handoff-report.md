@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\layout\grid-tutorial.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ebf62e4e70407d5d6f30d62bc025edb8de80ac7e?path=windows-apps-src%2Flayout%2Fgrid-tutorial.md&_a=contents) | HandedOffSuccess | [Details](#ace9487d5476ad502b7201eb0f78a9be1dab0ba94842)
+ [windows-apps-src\gaming\relative-mouse-movement.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3db52513cae874382472ef5f1133332bae4de0d0?path=windows-apps-src%2Fgaming%2Frelative-mouse-movement.md&_a=contents) | HandedOffSuccess | [Details](#6c4b6c20f0971737a578b42630e2a61bb2bda68d3582)
 
 ## Item Details
-##### <a name='ace9487d5476ad502b7201eb0f78a9be1dab0ba94842'></a> Source: [windows-apps-src\layout\grid-tutorial.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ebf62e4e70407d5d6f30d62bc025edb8de80ac7e?path=windows-apps-src%2Flayout%2Fgrid-tutorial.md&_a=contents)
+##### <a name='6c4b6c20f0971737a578b42630e2a61bb2bda68d3582'></a> Source: [windows-apps-src\gaming\relative-mouse-movement.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3db52513cae874382472ef5f1133332bae4de0d0?path=windows-apps-src%2Fgaming%2Frelative-mouse-movement.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [grid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/6729e8db9655d836d236813fd15848bede4a23ac?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fgrid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2017-01-13 00:11:15
+* Handoff File: [relative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/46673d239b2739c39df8c256c1b9a400ce16812e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Frelative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2017-01-13 02:07:43
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,11 +21,11 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\layout\grid-tutorial.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/971beb408b587f26eca90c2fbd4721d807157bb8?path=windows-apps-src%2Flayout%2Fgrid-tutorial.md&_a=contents)
-* Current Handback File: [grid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e16893ffa6f5f19133ae0155cf0ac891b012c6ce?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fgrid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf&_a=contents)
-* Current Handback Datetime: 2016-12-13 14:16:49
-* Bilingual File: [grid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e16893ffa6f5f19133ae0155cf0ac891b012c6ce?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fgrid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf&_a=contents)
-* Bilingual Datetime: 2016-12-13 14:24:00
+* Current Target File: [windows-apps-src\gaming\relative-mouse-movement.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fgaming%2Frelative-mouse-movement.md&_a=contents)
+* Current Handback File: [relative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Frelative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-16 18:54:46
+* Bilingual File: [relative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Frelative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-16 19:00:10
 * [Back to Top](#report-top)
 
 
