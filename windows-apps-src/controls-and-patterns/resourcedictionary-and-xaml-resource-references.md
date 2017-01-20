@@ -9,11 +9,11 @@ ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 352514139f6c9d096dc0b04de46231c8a5ed8034
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 7af5c6635ae659ce033f377a9eed4b819287b384
 
 ---
-# ResourceDictionary 和 XAML 资源引用
+# <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 和 XAML 资源引用
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 352514139f6c9d096dc0b04de46231c8a5ed8034
 
 我们假设你了解 XAML 标记并已阅读 [XAML 概述](https://msdn.microsoft.com/library/windows/apps/mt185595)。
 
-## 定义和使用 XAML 资源
+## <a name="define-and-use-xaml-resources"></a>定义和使用 XAML 资源
 
 XAML 资源是多次从标记中引用的对象。 资源在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定义，通常位于单独的文件中或位于标记页面的顶部，如下所示。
 
@@ -48,9 +48,9 @@ XAML 资源是多次从标记中引用的对象。 资源在 [**ResourceDictiona
 
 -   `<Page.Resources>…</Page.Resources>` - 定义资源字典。
 -   `<x:String>` - 定义带有键“greeting”的资源。
--   `{StaticResource greeting}` — 查找带有键“greeting”的资源，它已分配给 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 属性。
+-   `{StaticResource greeting}` — 查找带有键“greeting”的资源，它已分配给 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209676) 的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209652) 属性。
 
-> **注意**  不要将 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 相关的概念与“资源”****生成操作、资源 (.resw) 文件或在构建生成应用包的代码项目上下文中讨论的其他“资源”相混淆。
+> **注意**&nbsp;&nbsp; [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 相关的概念与“**资源**生成操作、资源 (.resw) 文件或在构建生成应用包的代码项目上下文中讨论的其他“资源”相混淆。
 
 资源不需要作为字符串；它们可以作为任何可共享的对象，例如样式、目标、画笔和颜色。 但是，控件、形状和其他 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 不可共享，因此不能将其声明为可重复使用的资源。 有关共享的详细信息，请参阅本主题后面的 [XAML 资源必须可共享](#xaml_resources_must_be_sharable)部分。
 
@@ -74,8 +74,8 @@ XAML 资源是多次从标记中引用的对象。 资源在 [**ResourceDictiona
 
 所有资源都需要有一个键。 通常，键是通过 `x:Key=”myString”` 定义的字符串。 但是，还有几种其他方法可指定键：
 
--   如果未指定 [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787)，则 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 和 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 需要 **TargetType**，并且将 **TargetType** 用作键。 在这种情况下，键是实际的 Type 对象，而非字符串。 （请参阅下方示例）
--   如果未指定 [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787)，具有 **TargetType** 的 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 资源会将 **TargetType** 用作键。 在这种情况下，键是实际的 Type 对象，而非字符串。
+-   如果未指定 [x:Key](https://msdn.microsoft.com/library/windows/apps/br208849)，则 [**Style**](https://msdn.microsoft.com/library/windows/apps/br209391) 和 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/mt204787) 需要 **TargetType**，并且将 **TargetType** 用作键。 在这种情况下，键是实际的 Type 对象，而非字符串。 （请参阅下方示例）
+-   如果未指定 [x:Key](https://msdn.microsoft.com/library/windows/apps/br242348)，具有 **TargetType** 的 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/mt204787) 资源会将 **TargetType** 用作键。 在这种情况下，键是实际的 Type 对象，而非字符串。
 -   [x:Name](https://msdn.microsoft.com/library/windows/apps/mt204788) 可以代替 [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) 使用。 但是，x:Name 还会为资源生成代码隐藏字段。 因此，x:Name 的效率低于 x:Key，因为该字段需要在页面加载时进行初始化。
 
 [StaticResource 标记扩展](../xaml-platform/staticresource-markup-extension.md)可以仅使用字符串名称（[x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) 或 [x:Name](https://msdn.microsoft.com/library/windows/apps/mt204788)）检索资源。 但是，XAML 框架在决定为尚未设置 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) 和 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) 属性的控件使用哪个样式和模板时，还将查找隐式样式资源（使用 **TargetType** 而非 x:Key 或 x:Name 的资源）。
@@ -100,11 +100,11 @@ XAML 资源是多次从标记中引用的对象。 资源在 [**ResourceDictiona
 
 有关隐式样式及其工作方式的详细信息，请参阅[设置控件样式](styling-controls.md)和[控件模板](control-templates.md)。
 
-## 查找代码中的资源
+## <a name="look-up-resources-in-code"></a>查找代码中的资源
 
 像任何其他字典一样，访问资源字典的成员。
 
-> **注意**  当你执行在代码中查找资源的操作时，仅找到 `Page.Resources` 字典中的资源。 与 [StaticResource 标记扩展](../xaml-platform/staticresource-markup-extension.md)不同，如果未在第一个字典中找到这些资源，该代码不会回退到 `Application.Resources` 字典。
+> **注意**&nbsp;&nbsp;当你执行在代码中查找资源的操作时，仅找到 `Page.Resources` 字典中的资源。 与 [StaticResource 标记扩展](../xaml-platform/staticresource-markup-extension.md)不同，如果未在第一个字典中找到这些资源，该代码不会回退到 `Application.Resources` 字典。
 
  
 
@@ -190,7 +190,7 @@ sealed partial class App : Application
 }
 ```
 
-## 每个 FrameworkElement 都可以具有 ResourceDictionary
+## <a name="every-frameworkelement-can-have-a-resourcedictionary"></a>每个 FrameworkElement 都可以具有 ResourceDictionary
 
 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 是控件所继承的基类，并且具有 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 属性。 因此你可以将本地资源字典添加到任何 **FrameworkElement**。
 
@@ -250,11 +250,11 @@ sealed partial class App : Application
     }
 ```
 
-## 合并的资源字典
+## <a name="merged-resource-dictionaries"></a>合并的资源字典
 
 *合并的资源字典*将一个资源字典合并到通常在其他文件中的另一个字典。
 
-> **使用技巧**  可以在 Microsoft Visual Studio 中创建资源字典文件，方法是在“项目”****菜单中依次使用“添加”&gt;“新建项目…”&gt;“资源字典”****选项。
+> **提示**&nbsp;&nbsp;可以在 Microsoft Visual Studio 中创建资源字典文件，方法是在**项目**菜单中依次使用**添加 &gt; 新建项目…&gt; 资源字典**选项。
 
 此时，可以在名为 Dictionary1.xaml 的单独 XAML 文件中定义资源字典。
 
@@ -299,7 +299,7 @@ sealed partial class App : Application
 
 在 `<ResourceDictionary.MergedDictionaries>…</ResourceDictionary.MergedDictionaries>` 后，你可以选择在主字典中放置其他资源。 你可以使用要合并到的字典中的资源，如同使用常规字典一样。 在上述示例中，`{StaticResource brush}` 在子级/合并字典 (Dictionary1.xaml) 中查找资源，而 `{StaticResource greeting}` 在主页字典中查找其资源。
 
-在资源查找序列中，仅在检查 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的所有其他键控资源后，才会检查 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 字典。 搜索该级别后，查找会深入到合并后的字典，且对 **MergedDictionaries** 中的每一项进行检查。 如果存在多个合并的字典，会按在 **MergedDictionaries** 属性中声明这些字典的顺序的相反顺序来检查它们。 在以下示例中，如果 Dictionary2.xaml 和 Dictionary1.xaml 声明同一个键，则首先使用来自 Dictionary2.xaml 中的键，因为它排在 **MergedDictionaries** 集的末尾。
+在资源查找序列中，仅在检查 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208801) 的所有其他键控资源后，才会检查 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208794) 字典。 搜索该级别后，查找会深入到合并后的字典，且对 **MergedDictionaries** 中的每一项进行检查。 如果存在多个合并的字典，会按在 **MergedDictionaries** 属性中声明这些字典的顺序的相反顺序来检查它们。 在以下示例中，如果 Dictionary2.xaml 和 Dictionary1.xaml 声明同一个键，则首先使用来自 Dictionary2.xaml 中的键，因为它排在 **MergedDictionaries** 集的末尾。
 
 ```XAML
 <Page
@@ -323,7 +323,7 @@ sealed partial class App : Application
 
 可以结合使用查找序列和跨合并字典范围不强制使用唯一键来创建 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 资源的回退值序列。 例如，你可能会使用与应用的状态数据和用户首选项数据同步的资源词典，为序列中最后合并的资源字典中的特殊画笔颜色存储用户首选项。 但是，如果尚不存在任何用户首选项，则可为初始 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 文件中的 **ResourceDictionary** 资源定义相同的键字符串，并可将其用作回退值。 请记住，始终会在检查合并字典之前检查你在主要资源字典中提供的任何值，所以如果希望使用回退技术，则不要在主要资源字典中定义该资源。
 
-## 主题资源和主题字典
+## <a name="theme-resources-and-theme-dictionaries"></a>主题资源和主题字典
 
 [ThemeResource](../xaml-platform/themeresource-markup-extension.md) 类似于 [StaticResource](../xaml-platform/staticresource-markup-extension.md)，但资源查找会在主题更改时进行重新评估。
 
@@ -335,7 +335,7 @@ sealed partial class App : Application
 
 主题字典是一种特殊类型的合并字典，用于保存各种资源，具体资源取决于用户当前在其设备上使用的主题。 例如，“浅色”主题可能使用白色画笔，而“深色”主题可能使用黑色画笔。 画笔会更改它所溶入的资源，但使用该画笔作为资源的控件的组成可能保持不变。 若要在个人模板或样式中重现主题切换行为而不将 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 用作属性以将项目合并到主词典中，请使用 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 属性。
 
-[**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内的每个 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素必须具有一个 [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) 值。 该值是一个字符串，它为相关主题命名，例如 “Default”、“Dark”、“Light”或“HighContrast”。 通常，`Dictionary1` 和 `Dictionary2` 将定义名称相同但值不同的资源。
+[**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208794) 内的每个 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208807) 元素必须具有一个 [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) 值。 该值是一个字符串，它为相关主题命名，例如 “Default”、“Dark”、“Light”或“HighContrast”。 通常，`Dictionary1` 和 `Dictionary2` 将定义名称相同但值不同的资源。
 
 在此处，将红色文本用于浅色主题，蓝色文本用于深色主题。
 
@@ -388,7 +388,7 @@ sealed partial class App : Application
 
 有关可用于应用的特定于主题的资源和系统资源的详细信息和列表，请参阅 [XAML 主题资源](xaml-theme-resources.md)。
 
-## 针对 XAML 资源引用的查找行为
+## <a name="lookup-behavior-for-xaml-resource-references"></a>针对 XAML 资源引用的查找行为
 
 *查找行为*是描述 XAML 资源系统如何尝试查找 XAML 资源的术语。 当键从应用的 XAML 的某处被引用为 XAML 资源引用时，即发生查找行为。 首先，资源系统具有可预测行为，它将为此类行为根据作用域检查是否存在资源。 如果在初始作用域中未找到资源，该作用域将展开。 将在应用或系统可能定义了 XAML 资源的位置和作用域上继续查找行为。 如果所有可能的资源查找尝试均失败，通常会导致错误。 通常可以在开发过程中消除这些错误。
 
@@ -396,7 +396,7 @@ sealed partial class App : Application
 
 查找序列随后检查应用的运行时对象树中的下一个父对象。 如果存在一个 [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 并且它持有一个 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)，将请求具有指定键字符串的字典项。 如果找到资源，查找序列就会停止，并将该对象提供到执行引用的位置。 否则，查找行为会向对象树根方向前进到下一个父级对象。 此搜索会继续递归前进，直至到达 XAML 的根元素，从而完成对所有可能直接资源位置的搜索。
 
-> **注意**  一种常见的做法是在页面的根级别定义所有直接资源，以利用该资源查找行为并将其用作 XAML 标记样式的一个惯例。
+> **注意**&nbsp;&nbsp;一种常见的做法是在页面的根级别定义所有直接资源，以利用该资源查找行为并将其用作 XAML 标记样式的一个惯例。
 
  
 
@@ -412,14 +412,14 @@ sealed partial class App : Application
 
 根据针对资源字典的分层查找行为，你可特意定义多个资源项，每个资源项使用相同的字符串值作为键，只要将每个资源定义在不同的级别上即可。 换言之，尽管键在任何给定的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中必须是唯一的，但该唯一性要求不会扩展到整个查找行为序列。 在查找过程中，只有成功检索到的首个此类对象会用于 XAML 资源引用，随即查找便会停止。 你可以利用此行为在应用 XAML 内的各个位置通过键请求相同的 XAML 资源，但会取回不同的资源，具体取决于进行 XAML 资源引用的范围以及特殊查找的行为方式。
 
-##  ResourceDictionary 中的前向引用
+##  <a name="forward-references-within-a-resourcedictionary"></a>ResourceDictionary 中的前向引用
 
 
 一个特定资源字典中的 XAML 资源引用必须引用定义了键的资源，并且从字典顺序来讲，该资源必须出现在资源引用之前。 XAML 资源引用无法解析前向引用。 出于此原因，如果你从另一个资源内使用 XAML 资源引用，则必须设计资源字典结构，以便使其他资源使用的资源在资源字典中首先定义。
 
 在应用级别定义的资源不能引用直接资源。 这相当于尝试前向引用，因为应用资源实际上最先被处理（在应用首次启动和加载任意导航页内容之前）。 但是，任何直接资源都可引用应用资源，这可以作为避免前向引用情形的一种有用技术。
 
-## XAML 资源必须可共享
+## <a name="xaml-resources-must-be-shareable"></a>XAML 资源必须可共享
 
 
 对于存在于 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的对象，该对象必须“可共享”**。
@@ -428,7 +428,7 @@ sealed partial class App : Application
 
 通常，[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 和 Windows 运行时 XAML 支持将下列对象用于共享：
 
--   样式和模板（从 [**FrameworkTemplate**](https://msdn.microsoft.com/library/windows/apps/br208753) 派生的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 和类）
+-   样式和模板（从 [**FrameworkTemplate**](https://msdn.microsoft.com/library/windows/apps/br208849) 派生的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208753) 和类）
 -   画笔和颜色（从 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 派生的类和 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 值）
 -   动画类型，包括 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)
 -   转换（从 [**GeneralTransform**](https://msdn.microsoft.com/library/windows/apps/br210034) 派生的类）
@@ -441,20 +441,20 @@ sealed partial class App : Application
 
 自定义类型必须包含默认构造函数，因为 XAML 分析程序须借助该构造函数对类进行实例化。 用作资源的自定义类型不能在其继承中包含 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 类，因为 **UIElement** 无法共享（而只能一直用于表示运行时应用的对象图中某一位置中存在的一个 UI 元素）。
 
-## UserControl 使用范围
+## <a name="usercontrol-usage-scope"></a>UserControl 使用范围
 
 
 对于资源查找行为，[**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) 元素有一个特殊情况，因为它有一个定义范围和使用范围的固有概念。 从其定义范围内进行 XAML 资源引用的 **UserControl** 必须能够支持在其自己的定义范围查找序列中查找该资源，也就是说，它不能访问应用资源。 在 **UserControl** 使用范围中，将资源引用视为在朝向其使用页面根方向的查询序列内（就像从加载的对象树中的一个对象执行的任何其他资源引用一样），并且可访问应用资源。
 
-## ResourceDictionary 和 XamlReader.Load
+## <a name="resourcedictionary-and-xamlreaderload"></a>ResourceDictionary 和 XamlReader.Load
 
 你可以将 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 用作根或用作 [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) 方法的 XAML 输入的一部分。 你还可以在该 XAML 中包含 XAML 资源引用（如果所有此类引用都完全自包含在为了加载而提交的 XAML 中）。 **XamlReader.Load** 在不了解任何其他 **ResourceDictionary** 对象（甚至不了解 [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)）的上下文中分析 XAML。 此外，请不要从 XAML 内部使用提交到 **XamlReader.Load** 的 `{ThemeResource}`。
 
-## 通过代码使用 ResourceDictionary
+## <a name="using-a-resourcedictionary-from-code"></a>通过代码使用 ResourceDictionary
 
 大部分情况下，[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 均在 XAML 中专门处理。 你要在 UI 定义文件中将内部的 **ResourceDictionary** 容器和资源声明为 XAML 文件或 XAML 节点集。 然后，使用 XAML 资源引用从 XAML 的其他部分请求这些资源。 不过，在某些特定情况下，你的应用可能需要使用在应用运行时执行的代码来调整 **ResourceDictionary** 的内容，或者至少需要查询 **ResourceDictionary** 的内容以查看是否已定义某个资源。 这些代码调用在 **ResourceDictionary** 实例上执行，所以必须首先通过获得 [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 来检索对象树中的即时 **ResourceDictionary**，或者检索 `Application.Current.Resources`。
 
-在 C\# 或 Microsoft Visual Basic 代码中，你可以使用索引器 ([**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134)) 引用给定 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的资源。 **ResourceDictionary** 是一个字符串键控字典，因此索引器使用字符串键，而不使用整数索引。 在 Visual C++ 组件扩展 (C++/CX) 代码中，请使用 [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800)。
+在 C\# 或 Microsoft Visual Basic 代码中，你可以使用索引器 ([**Item**](https://msdn.microsoft.com/library/windows/apps/br208794)) 引用给定 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/jj603134) 中的资源。 **ResourceDictionary** 是一个字符串键控字典，因此索引器使用字符串键，而不使用整数索引。 在 Visual C++ 组件扩展 (C++/CX) 代码中，请使用 [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800)。
 
 当使用代码检查或更改 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 时，API 的行为（如 [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800) 或 [**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134)）不会从直接资源遍历到应用资源；这是仅在加载 XAML 页面时发生的 XAML 分析程序行为。 在运行时，键作用域将自包含到此时所使用的 **ResourceDictionary** 实例中。 但是，该作用域不会扩展到 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 中。
 
@@ -462,35 +462,29 @@ sealed partial class App : Application
 
 合并的资源字典包含在主要资源字典的索引范围内，该字典在运行时引用合并字典。 换句话说，可以使用主要字典的 **Item** 或 [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800) 查找在合并字典中实际定义的任何对象。 在这种情况下，该查找行为类似于分析期间的 XAML 查找行为：如果合并字典中存在多个具有相同键的对象，将返回最后添加的字典中的对象。
 
-你可以通过调用 **Add**（C\# 或 Visual Basic）或 [**Insert**](https://msdn.microsoft.com/library/windows/apps/br208799) (C++/CX) 向现有的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 添加项。 你可以将这些项添加到直接资源或应用资源。 这些 API 调用中的每一个都需要一个键，这满足 **ResourceDictionary** 中的每个项都必须有一个键的要求。 但是，你在运行时添加到 **ResourceDictionary** 的项与 XAML 资源引用无关。 在加载应用后首次分析 XAML 时，将执行必要的 XAML 资源引用查找。 此时，在运行时添加到集合的资源不可用，而更改 **ResourceDictionary** 并不会使已从中检索到的资源失效，即使更改该资源的值也是如此。
+你可以通过调用 **Add**（C\# 或 Visual Basic）或 [**Insert**](https://msdn.microsoft.com/library/windows/apps/br208794) (C++/CX) 向现有的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208799) 添加项。 你可以将这些项添加到直接资源或应用资源。 这些 API 调用中的每一个都需要一个键，这满足 **ResourceDictionary** 中的每个项都必须有一个键的要求。 但是，你在运行时添加到 **ResourceDictionary** 的项与 XAML 资源引用无关。 在加载应用后首次分析 XAML 时，将执行必要的 XAML 资源引用查找。 此时，在运行时添加到集合的资源不可用，而更改 **ResourceDictionary** 并不会使已从中检索到的资源失效，即使更改该资源的值也是如此。
 
 你还可以在运行时从某个 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 删除项、复制部分或所有项，或执行其他操作。 **ResourceDictionary** 的成员列表指出了哪些 API 可用。 请注意，由于 **ResourceDictionary** 有一个投影的 API 可支持其基本集合接口，因此你的 API 选项会有所不同，具体取决于你使用的是 C\# 或 Visual Basic 还是 C++/CX。
 
-## ResourceDictionary 和本地化
+## <a name="resourcedictionary-and-localization"></a>ResourceDictionary 和本地化
 
 
 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 最初可能包含要本地化的字符串。 如果是这样，将这些字符串存储为项目资源，而不存储在 **ResourceDictionary** 中。 将字符串放在 XAML 外部，而为拥有元素提供一个 [x:Uid 指令](https://msdn.microsoft.com/library/windows/apps/mt204791)值。 然后，在资源文件中定义一个资源。 以 *XUIDValue*.*PropertyName* 的形式提供资源名称，并提供应该本地化的字符串的资源值。
 
-## 自定义资源查找
+## <a name="custom-resource-lookup"></a>自定义资源查找
 
 对于高级方案，你可以实现其行为不同于本主题中描述的 XAML 资源引用查找行为的类。 要达到此目的，你可实现类 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)，然后可以通过使用 [CustomResource 标记扩展](https://msdn.microsoft.com/library/windows/apps/mt185580)进行资源引用（而不是使用 [StaticResource](../xaml-platform/staticresource-markup-extension.md) 或 [ThemeResource](../xaml-platform/themeresource-markup-extension.md)）来实现该行为。 大部分应用的方案将不会需要此操作。 有关详细信息，请参阅 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)。
 
  
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
-[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
-
-[XAML 概述](https://msdn.microsoft.com/library/windows/apps/mt185595)
-
-[StaticResource 标记扩展](../xaml-platform/staticresource-markup-extension.md)
-
-[ThemeResource 标记扩展](../xaml-platform/themeresource-markup-extension.md)
-
-[XAML 主题资源](xaml-theme-resources.md)
-
-[设置控件的样式](styling-controls.md)
-
-[x:Key 特性](https://msdn.microsoft.com/library/windows/apps/mt204787)
+* [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
+* [XAML 概述](https://msdn.microsoft.com/library/windows/apps/mt185595)
+* [StaticResource 标记扩展](../xaml-platform/staticresource-markup-extension.md)
+* [ThemeResource 标记扩展](../xaml-platform/themeresource-markup-extension.md)
+* [XAML 主题资源](xaml-theme-resources.md)
+* [设置控件的样式](styling-controls.md)
+* [x:Key 特性](https://msdn.microsoft.com/library/windows/apps/mt204787)
 
  
 
@@ -501,6 +495,6 @@ XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

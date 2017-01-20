@@ -5,9 +5,15 @@ title: "语音交互"
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
+keywords: "语音，语音，语音识别，自然语言，听写，输入，用户交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 5b52f6a8e944e4166c2f4c7e16e4a83ddff23dac
-ms.openlocfilehash: 5efb2d1fc6a63e372e91cfdc8ae5e8117ff047d5
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 5080fe9496b7a13336b42a83fd569e44f43ba2db
 
 ---
 
@@ -211,7 +217,7 @@ TTS 从纯文本或 SSML 生成语音输出。
 
 ## <a name="other-articles-in-this-section"></a>本部分中的其他文章 
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | --- | --- |
 | [语音识别](speech-recognition.md) | 使用语音识别提供输入内容、指定操作或命令并完成任务。 |
 | [指定语音识别器语言](specify-the-speech-recognizer-language.md) | 了解如何选择要用于语音识别的安装语言。 |
@@ -237,6 +243,6 @@ TTS 从纯文本或 SSML 生成语音输出。
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

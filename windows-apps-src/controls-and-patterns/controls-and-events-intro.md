@@ -6,11 +6,11 @@ ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8a9a9009574b46ff3ae5b05569fb871a49e2f1ea
 
 ---
-# 控件和模式简介
+# <a name="intro-to-controls-and-patterns"></a>控件和模式简介
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
 - 设置控件的属性，如宽度、高度或前景色。 
 - 将代码添加到控件的事件处理程序，从而使其执行一些任务。 
 
-## 添加控件
+## <a name="add-a-control"></a>添加控件
 你可以通过多种方式将控件添加到应用：
  
 - 使用诸如 Blend for Visual Studio 或 Microsoft Visual Studio Extensible Application Markup Language (XAML) 设计器的设计工具。 
@@ -43,7 +43,7 @@ Visual Studio“工具箱”会显示可在应用中使用的许多控件。 要
 
 还可以将控件从“工具箱”拖动到 XAML 设计器。
 
-## 设置控件的名称 
+## <a name="set-the-name-of-a-control"></a>设置控件的名称 
 
 若要在代码中使用某个控件，你可以设置其 [x:Name](../xaml-platform/x-name-attribute.md) 属性并在代码中通过名称来引用该控件。 你可以在 Visual Studio“属性”窗口或 XAML 中设置名称。 下面是通过使用“属性”窗口顶部的“名称”文本框来设置当前选定控件名称的方法。 
 
@@ -60,7 +60,7 @@ Visual Studio“工具箱”会显示可在应用中使用的许多控件。 要
 <Button x:Name="Button1" Content="Button"/>
 ```
 
-## 设置控件属性 
+## <a name="set-the-control-properties"></a>设置控件属性 
 
 你使用属性来指定控件的外观、内容以及其他属性。 使用设计工具添加控件时，Visual Studio 可能会为你设置某些控制大小、位置和内容的属性。 通过选择和操纵“设计”视图中的控件，你可以更改某些属性，如 Width、Height 或 Margin。 下图显示了“设计”视图中提供的某些大小调整工具。 
 
@@ -98,7 +98,7 @@ Visual Studio“工具箱”会显示可在应用中使用的许多控件。 要
 Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
 ```
 
-## 创建事件处理程序 
+## <a name="create-an-event-handler"></a>创建事件处理程序 
 
 每个控件都包含事件，从而使你可以对用户的操作或应用中的其他更改做出响应。 例如，Button 控件包含用户单击 Button 时引发的 Click 事件。 你可以创建一个名为事件处理程序的方法来处理事件。 你可以在 XAML 中或在代码中，将控件的事件与“属性”窗口中的事件处理程序方法相关联。 有关事件的详细信息，请参阅[事件和路由事件概述](../xaml-platform/events-and-routed-events-overview.md)。
 
@@ -136,9 +136,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-
-
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 -   [按功能的控件索引](controls-by-function.md)
 -   [Windows.UI.Xaml.Controls 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
@@ -148,6 +146,6 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

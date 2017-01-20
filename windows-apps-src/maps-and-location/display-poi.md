@@ -4,12 +4,12 @@ title: "在地图上显示兴趣点 (POI)"
 description: "使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。"
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: aec420d6591546e63c6343d7151afe9e95d1afd8
+ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
+ms.openlocfilehash: 8afdb41d6790bb9647a6b89086c4b86872940c51
 
 ---
 
-# 在地图上显示目标点 (POI)
+# <a name="display-points-of-interest-poi-on-a-map"></a>在地图上显示目标点 (POI)
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,7 +23,7 @@ ms.openlocfilehash: aec420d6591546e63c6343d7151afe9e95d1afd8
 
 通过将 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)、[**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) 和 [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) 对象添加到地图控件的 [**MapElements**](https://msdn.microsoft.com/library/windows/apps/dn637033) 集合，在地图上显示图钉、图像和图形。 以编程方式使用数据绑定或添加项目；你无法以声明方式在 XAML 标记中绑定到你的 **MapElements** 集合。
 
-通过将 XAML 用户界面元素（例如，[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)、[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 或 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)）添加为 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008)，在地图上显示它们。 你也可以将它们添加到 [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094)，或将 **MapItemsControl** 绑定到项目集合。
+通过将 XAML 用户界面元素（例如，[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)、[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 或 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)）添加为 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637008) 的 [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637004)，在地图上显示它们。 你也可以将它们添加到 [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094)，或将 **MapItemsControl** 绑定到项目集合。
 
 总结：
 
@@ -34,7 +34,7 @@ ms.openlocfilehash: aec420d6591546e63c6343d7151afe9e95d1afd8
 
 如果你想要将大量元素放置在地图上，请考虑[在地图上覆盖平铺图像](overlay-tiled-images.md)。 若要在地图上显示道路，请参阅[显示路线和方向](routes-and-directions.md)。
 
-## 添加 MapIcon
+## <a name="add-a-mapicon"></a>添加 MapIcon
 
 
 通过使用 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 类在地图上显示图像（例如图钉）和可选文本。 可以接受默认图像或通过使用 [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) 属性提供自定义图像。 以下图像显示了未为 [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) 属性指定任何值、具有短标题、具有长标题和具有非常长的标题的 **MapIcon** 的默认图像。
@@ -83,10 +83,10 @@ ms.openlocfilehash: aec420d6591546e63c6343d7151afe9e95d1afd8
 
 -   [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) 属性支持的最大图像大小为 2048×2048 像素。
 -   默认情况下，不一定会显示地图图标的图像。 当它挡住地图上其他元素或标签时，它可能会隐藏。 若要保持可见，将地图图标的 [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) 属性设置为 [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314)。
--   [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 的可选 [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) 并不一定会显示。 如果你没有看到此文本，通过减少 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 属性的值来缩小显示。
+-   [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637088) 的可选 [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637077) 并不一定会显示。 如果你没有看到此文本，通过减少 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637068) 的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637004) 属性的值来缩小显示。
 -   当你显示指向地图上特定位置的 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 图像时（例如，图钉或箭头），考虑将 [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) 属性的值设置为图像上指针的大致位置。 如果你将 **NormalizedAnchorPoint** 的值保留为默认值 (0, 0)（表示图像的左上角），地图的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 中的更改可能会导致图像指向其他位置。
 
-## 添加 MapPolygon
+## <a name="add-a-mappolygon"></a>添加 MapPolygon
 
 
 通过使用 [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) 类在地图上显示多点形状。 以下 [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例将在地图上显示一个具有蓝色边框的红色框。
@@ -114,7 +114,7 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
 }
 ```
 
-## 添加 MapPolyline
+## <a name="add-a-mappolyline"></a>添加 MapPolyline
 
 
 通过使用 [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) 类在地图上显示线条。 以下 [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例将在地图上显示一条虚线。
@@ -137,7 +137,7 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
 }
 ```
 
-## 添加 XAML
+## <a name="add-xaml"></a>添加 XAML
 
 
 通过使用 XAML 在地图上显示自定义 UI 元素。 通过指定 XAML 的位置和标准化的定位点在地图上放置 XAML。
@@ -145,7 +145,7 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
 -   通过调用 [**SetLocation**](https://msdn.microsoft.com/library/windows/desktop/ms704369) 在地图上设置要放置 XAML 的位置。
 -   通过调用 [**SetNormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637050) 在 XAML 上设置对应于指定位置的相对位置。
 
-下面的示例显示了西雅图市的地图并添加了一个 XAML [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 控件，以指示 Space Needle 的位置。 地图还以该区域为中心并放大。 有关使用地图控件的常规信息，请参阅[以 2D、3D 和街景视图方式显示地图](display-maps.md)。
+下面的示例显示了西雅图市的地图并添加了一个 XAML [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 控件，以指示 Space Needle 的位置。 地图还以该区域为中心并放大。 有关使用地图控件的常规信息，请参阅 [以 2D、3D 和街景视图方式显示地图](display-maps.md)。
 
 ```csharp
 private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
@@ -176,7 +176,7 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 
 本示例在地图上显示蓝色边框。
 
-![](images/displaypoixaml.png)
+![xaml 的快照显示在地图上的兴趣点中](images/displaypoixaml.png)
 
 接下来的示例介绍如何使用数据绑定在页面的 XAML 标记中直接添加 XAML UI 元素。 与显示内容的其他 XAML 元素一样，[**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) 是 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 的默认内容属性并且无需在 XAML 标记中进行显式指定。
 
@@ -216,7 +216,7 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 </maps:MapControl>
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
 * [UWP 地图示例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
@@ -231,6 +231,6 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

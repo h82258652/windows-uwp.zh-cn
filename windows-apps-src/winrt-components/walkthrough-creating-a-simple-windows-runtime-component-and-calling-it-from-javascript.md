@@ -4,12 +4,12 @@ title: "创建简单的 Windows 运行时组件并通过 JavaScript 调用它"
 description: "本演练演示了如何将 .NET Framework 与 Visual Basic 或 C# 结合使用来创建自己的 Windows 运行时类型（打包在 Windows 运行时组件中），以及如何使用 JavaScript 调用针对 Windows 生成的通用 Windows 应用中的组件。"
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: ff9db6298fd6d0083ae6923f3666ce4315573058
+ms.sourcegitcommit: 56fbc32ee9b75688aa3dec498eb51e8bd533a4ee
+ms.openlocfilehash: 16502dbda2495333d512d9d7a3e0a7f8a8f98562
 
 ---
 
-# 演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
+# <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>演练：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
 
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -19,16 +19,16 @@ ms.openlocfilehash: ff9db6298fd6d0083ae6923f3666ce4315573058
 
 可以通过 Visual Studio 轻松地将使用 C# 或 Visual Basic 编写的 Windows 运行时组件添加到你的应用，并创建可以从 JavaScript 调用的 Windows 运行时类型。 在内部，Windows 运行时类型可以使用通用 Windows 应用中允许的任何 .NET Framework 功能。 （有关详细信息，请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[适用于 Windows 应用商店应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)。）在外部，类型成员仅可以为其参数公开 Windows 运行时类型并返回值。 在生成解决方案时，Visual Studio 将生成 .NET Framework Windows 运行时组件项目，然后执行创建 Windows 元数据 (.winmd) 文件的生成步骤。 这是你的 Windows 运行时组件，即 Visual Studio 在你的应用中包含的组件。
 
-> **注意** .NET Framework 自动将某些常用的 .NET Framework 类型（例如基元数据类型和集合类型）映射到其 Windows 运行时等效项。 这些 .NET Framework 类型可在 Windows 运行时组件的公共接口中使用，并且将组件作为相应的 Windows 运行时类型向用户显示。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)。
+> **注意**  .NET Framework 自动将某些常用的 .NET Framework 类型（例如基元数据类型和集合类型）映射到其 Windows 运行时等效项。 这些 .NET Framework 类型可在 Windows 运行时组件的公共接口中使用，并且将组件作为相应的 Windows 运行时类型向用户显示。 请参阅[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)。
 
 本演练演示以下任务。 完成第一部分（使用 JavaScript 设置 Windows 应用）后，可以按照任意顺序完成剩余部分。
 
-## 先决条件：
+## <a name="prerequisites"></a>先决条件：
 
 -   Windows 10
 -   Microsoft Visual Studio 2015 或 Microsoft Visual Studio Community 2015
 
-## 创建一个简单的 Windows 运行时类
+## <a name="creating-a-simple-windows-runtime-class"></a>创建一个简单的 Windows 运行时类
 
 
 本部分将创建为使用 JavaScript 的 Windows 生成的通用 Windows 应用，并添加 Visual Basic 或 C# Windows 运行时组件项目。 它演示了如何定义托管的 Windows 运行时类型、创建 JavaScript 中类型的实例并调用静态和实例成员。 特意将示例应用的视觉显示设置为单调效果，从而重点关注组件。 可以随意设置使其更加美观。
@@ -39,7 +39,7 @@ ms.openlocfilehash: ff9db6298fd6d0083ae6923f3666ce4315573058
 4.  将两个简单的成员添加到类：**static** 方法（在 Visual Basic 中为 **Shared** 方法）和实例属性：
 
     > [!div class="tabbedCodeSnippets"]
-    > ```cpp
+    > ```csharp
     > namespace SampleComponent
     > {
     >     public sealed class Example
@@ -66,7 +66,7 @@ ms.openlocfilehash: ff9db6298fd6d0083ae6923f3666ce4315573058
 5.  可选：若要为新添加的成员启用 IntelliSense，请在“解决方案资源管理器”中，打开 SampleComponent 项目的快捷菜单，然后选择“生成”****。
 6.  在“解决方案资源管理器”的 JavaScript 项目中，打开“引用”****的快捷菜单，然后选择“添加引用”****打开“引用管理器”****。 依次选择“项目”****和“解决方案”****。 选中 SampleComponent 项目的复选框，然后选择“确定”****来添加引用。
 
-## 通过 JavaScript 调用组件
+## <a name="call-the-component-from-javascript"></a>通过 JavaScript 调用组件
 
 
 若要通过 JavaScript 使用 Windows 运行时类型，请在由 Visual Studio 模板提供的 default.js 文件（位于项目的 js 文件夹中）的匿名函数中添加以下代码。 它应位于 app.oncheckpoint 事件处理程序之后、对 app.start 的调用之前。
@@ -96,12 +96,12 @@ function basics2() {
 
 类似地，.NET Framework 提供了支持以便在托管代码中自然地使用 Windows 运行时。 本文的后续部分，以及文章[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[适用于 Windows 应用商店应用和 Windows 运行时的 .NET Framework 支持](https://msdn.microsoft.com/library/hh694558.aspx)中均对此进行了讨论。
 
-## 创建简单的用户界面
+## <a name="create-a-simple-user-interface"></a>创建简单的用户界面
 
 
 在你的 JavaScript 项目中，打开默认 .html 文件然后更新正文，如以下代码所示。 此代码包含用于示例应用的完整控件集，并指定了单击事件的函数名称。
 
-> **注意** 当首次运行应用时，仅支持 Basics1 和 Basics2 按钮。
+> **注意**  当首次运行应用时，仅支持 Basics1 和 Basics2 按钮。
 
 ```html
 <body>
@@ -160,7 +160,7 @@ args.setPromise(WinJS.UI.processAll().then(function () {
 
 向 HTML 控件添加事件是比直接在 HTML 中添加单击事件处理程序更好的方式。 请参阅[创建“Hello World”应用 (JS)](https://msdn.microsoft.com/library/windows/apps/mt280216)。
 
-## 生成并运行应用
+## <a name="build-and-run-the-app"></a>生成并运行应用
 
 
 在生成之前，根据你的计算机将所有项目的目标平台按需更改为 ARM、x64 或 x86。
@@ -178,18 +178,18 @@ Visual Studio 首先编译类库，然后执行运行 [Winmdexp.exe（Windows �
 
 选择 Basics 2 按钮递增 SampleProperty 属性的值并在输出区域中显示新值。 字符串和数字等基元类型可用作参数类型和返回类型，并且可以在托管代码与 JavaScript 之间进行传递。 由于 JavaScript 中的数值以双精度浮点格式进行存储，它们可以转换为 .NET Framework 数值类型。
 
-> **注意** 默认情况下，你只能在 JavaScript 代码中设置断点。 若要调试 Visual Basic 或 C# 代码，请参阅“使用 C# 和 Visual Basic 创建 Windows 运行时组件”。
+> **注意**  默认情况下，你只能在 JavaScript 代码中设置断点。 若要调试 Visual Basic 或 C# 代码，请参阅“使用 C# 和 Visual Basic 创建 Windows 运行时组件”。
 
  
 
 若要停止调试并关闭应用，请从应用切换到 Visual Studio，然后选择 Shift+F5。
 
-## 从 JavaScript 和托管代码使用 Windows 运行时
+## <a name="using-the-windows-runtime-from-javascript-and-managed-code"></a>从 JavaScript 和托管代码使用 Windows 运行时
 
 
 可以从 JavaScript 或托管代码调用 Windows 运行时。 Windows 运行时对象可以在这两者之间来回传递，并且事件可以从任一端进行处理。 但是，在两种环境中使用 Windows 运行时类型的方式在一些细节方面略有不同，因为 JavaScript 和 .NET Framework 支持 Windows 运行时的方式不同。 下面的示例使用 [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx) 类演示了这些差异。 在本例中，你在托管代码中创建 PropertySet 集合的一个实例，并注册一个事件处理程序来跟踪集合中的更改。 然后添加获取集合的 JavaScript 代码、注册其自己的事件处理程序，然后使用集合。 最后，添加通过托管代码对集合进行更改的方法，并显示处理托管异常的 JavaScript。
 
-> **重要提示** 在本例中，事件在 UI 线程上触发。 如果从后台线程触发事件（例如在异步调用中），你需要进行一些额外工作才能使 JavaScript 处理事件。 有关详细信息，请参阅[引发 Windows 运行时组件中的事件](raising-events-in-windows-runtime-components.md)。
+> **重要提示**  在本例中，事件在 UI 线程上触发。 如果从后台线程触发事件（例如在异步调用中），你需要进行一些额外工作才能使 JavaScript 处理事件。 有关详细信息，请参阅[引发 Windows 运行时组件中的事件](raising-events-in-windows-runtime-components.md)。
 
  
 
@@ -370,11 +370,11 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 若要运行应用，请选择 F5 键。 依次选择“Runtime 1”****和“Runtime 2”****。 JavaScript 事件处理程序报告对集合进行的第一项更改。 但是第二项更改具有一个重复键。 .NET Framework 字典的用户期望 Add 方法引发异常，而该情况会如期发生。 JavaScript 处理 .NET Framework 异常。
 
-> **注意** 无法通过 JavaScript 代码显示异常的消息。 消息文本替换为堆栈跟踪。 有关详细信息，请参阅“使用 C# 和 Visual Basic 创建 Windows 运行时组件”的“引发异常”。
+> **注意**  无法通过 JavaScript 代码显示异常的消息。 消息文本替换为堆栈跟踪。 有关详细信息，请参阅“使用 C# 和 Visual Basic 创建 Windows 运行时组件”的“引发异常”。
 
 相比之下，当 JavaScript 调用带有重复键的 insert 方法时，项的值已发生更改。 这种行为的差异是由于 JavaScript 和 .NET Framework 支持 Windows 运行时的方式不同，如[使用 C# 和 Visual Basic 创建 Windows 运行时组件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中所述。
 
-## 从组件返回托管类型
+## <a name="returning-managed-types-from-your-component"></a>从组件返回托管类型
 
 
 如前所述，你可以在 JavaScript 代码与 C# 或 Visual Basic 代码之间来回传递本机 Windows 运行时类型。 大多数情况下，类型名称和成员名称在两种情况下均相同（除了成员名称在 JavaScript 中以小写字母开头以外）。 但是在前面的部分中，PropertySet 类似乎在托管代码中具有不同的成员。 （例如，在 JavaScript 中称为 insert 方法，而在 .NET Framework 代码中称为 Add 方法。）本部分将探索这些差异影响传递到 JavaScript 的 .NET Framework 类型的方式。
@@ -408,7 +408,7 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 请注意，字典必须作为由 [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) 实现且映射到 Windows 运行时接口的接口返回。 在此情况下，接口为 IDictionary&lt;int, string&gt;（在 Visual Basic 中为 IDictionary(Of Integer, String)）。 当 Windows 运行时类型 IMap&lt;int, string&gt; 传递到托管代码时，它显示为 IDictionary&lt;int, string&gt;，相反地当托管类型传递到 JavaScript 时也是如此。
 
-**重要提示** 当托管类型实现多个接口时，JavaScript 使用最先显示在列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
+**重要提示**  当托管类型实现多个接口时，JavaScript 使用最先显示在列表中的接口。 例如，如果你将 Dictionary&lt;int, string&gt; 返回到 JavaScript 代码，它会显示为 IDictionary&lt;int, string&gt;，无论你指定哪个接口作为返回类型都是如此。 这意味着，如果第一个接口不包括显示在后续接口上的成员，JavaScript 将看不到该成员。
 
  
 
@@ -467,7 +467,7 @@ returnsButton2.addEventListener("click", returns2, false);
 
 另一种意外的行为：如果你将未分配的 JavaScript 变量作为字符串参数传递，你得到的将是字符串“undefined”。 简而言之，请谨慎将 .NET Framework 集合类型传递给你的 JavaScript 代码。
 
-> **注意** 如果你要连接大量文本，可以通过将代码移动到 .NET Framework 方法并使用 StringBuilder 类来更为高效地实现此目的，如 showMap 函数所示。
+> **注意**  如果你要连接大量文本，可以通过将代码移动到 .NET Framework 方法并使用 StringBuilder 类来更为高效地实现此目的，如 showMap 函数所示。
 
 尽管无法从 Windows 运行时组件公开你自己的泛型类型，但你可以使用如下所示的代码返回 Windows 运行时类的 .NET Framework 泛型集合：
 
@@ -488,7 +488,7 @@ returnsButton2.addEventListener("click", returns2, false);
 
 List&lt;T&gt; 实现 IList&lt;T&gt;，这在 JavaScript 中显示为 Windows 运行时类型 IVector&lt;T&gt;。
 
-## 声明事件
+## <a name="declaring-events"></a>声明事件
 
 
 你可以使用标准 .NET Framework 事件模式或 Windows 运行时使用的其他模式声明事件。 .NET Framework 支持 System.EventHandler&lt;TEventArgs&gt; 委托与 Windows 运行时 EventHandler&lt;T&gt; 委托之间的等价性，因此使用 EventHandler&lt;TEventArgs&gt; 是实现标准 .NET Framework 模式的好方法。 若要查看此工作原理，请向 SampleComponent 项目添加以下两个类：
@@ -564,7 +564,7 @@ var events1Button = document.getElementById("events1Button");
 events1Button.addEventListener("click", events1, false);
 ```
 
-## 公开异步操作
+## <a name="exposing-asynchronous-operations"></a>公开异步操作
 
 
 .NET Framework 具有一组丰富的工具，用于基于 Task 和泛型 [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) 类进行异步处理和并行处理。 若要在 Windows 运行时组件中公开基于任务的异步处理，请使用 Windows 运行时接口 [IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/br205802.aspx) 和 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/br205807.aspx)。 （在 Windows 运行时中，操作会返回结果，但执行不会。）
@@ -669,7 +669,7 @@ GetPrimesInRangeAsync 是非常简单的质数查找程序，通过设计实现�
     -   [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) 对象提供用于处理返回结果、响应取消和处理进度报告的函数。
     -   AsyncInfo.Run 方法创建一个取消源和一个实现 IProgress&lt;T&gt; 接口的对象。 对于委托，它将同时传递取消源中的 [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) 令牌，以及 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 接口。
 
-        > **注意** 如果 Promise 对象未提供响应取消的函数，AsyncInfo.Run 仍会传递可取消的令牌，且取消仍可能会发生。 如果 Promise 对象未提供处理进度更新的函数，AsyncInfo.Run 仍提供实现 IProgress&lt;T&gt; 的对象，但将忽略报告。
+        > **注意**  如果 Promise 对象未提供响应取消的函数，AsyncInfo.Run 仍会传递可取消的令牌，且取消仍可能会发生。 如果 Promise 对象未提供处理进度更新的函数，AsyncInfo.Run 仍提供实现 IProgress&lt;T&gt; 的对象，但将忽略报告。
 
     -   委托使用 [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) 方法创建使用令牌和进度接口的启动任务。 启动任务的委托由计算所需结果的 lambda 函数提供。 稍后对此进行详细讨论。
     -   AsyncInfo.Run 方法创建实现 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) 接口的对象、将 Windows 运行时取消机制与令牌源连接，并将 Promise 对象的进度报告函数与 IProgress&lt;T&gt; 接口连接。
@@ -730,7 +730,7 @@ asyncCancel 函数只调用 WinJS.Promise 对象的取消方法。
 
 若要运行应用，请选择 F5 键。 若要启动异步操作，请选择“异步”****按钮。 下一步将发生什么情况取决于你的计算机速度有多快。 如果进度栏快速完成以至于你来不及看到此过程，请按十的一个或多个因数增加传递到 GetPrimesInRangeAsync 的起始数字大小。 你可以通过增加或减少要测试的数字计数，以微调操作的持续时间，但在起始数字的中间添加零将会产生更大的影响。 若要取消操作，请选择“取消异步”****按钮。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [适用于 Windows 应用商店应用的 .NET 概述](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [适用于 UWP 应用的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
@@ -738,6 +738,6 @@ asyncCancel 函数只调用 WinJS.Promise 对象的取消方法。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

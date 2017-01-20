@@ -6,11 +6,11 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f26b042bb7efb6599993b8fd7cee6ee35e1765fd
-ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 95ddb1ddd1dfd318a5c491504c95f7833f98115e
 
 ---
-# 单选按钮
+# <a name="radio-buttons"></a>单选按钮
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -23,20 +23,14 @@ ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227544"><strong>RadioButton 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked 事件</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked 属性</strong></a></li>
+<li>[**RadioButton 类**](https://msdn.microsoft.com/library/windows/apps/br227544)</li>
+<li>[**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
+<li>[**IsChecked 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用单选按钮可向用户显示两个相互排斥的选项，如下所示。
 
@@ -60,18 +54,18 @@ ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 
 如果可用选项基于应用的当前上下文或可以其他方式动态变化，请改用单选[列表框](lists.md)。
 
-## 示例
+## <a name="example"></a>示例
 Microsoft Edge 浏览器设置中的单选按钮。
 
 ![Microsoft Edge 浏览器设置中的单选按钮](images/control-examples/radio-buttons-edge.png)
 
-## 创建单选按钮
+## <a name="create-a-radio-button"></a>创建单选按钮
 
 单选按钮成组工作。 可通过以下两种方法组合单选按钮控件：
 - 将它们放在同一个父容器内。
 - 在每个单选按钮上将 [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 属性设置为相同的值。
 
-> **注意**  通过键盘访问时，一组单选按钮的行为类似于单个控件。 使用 Tab 键只能访问选定选项，但用户可以使用箭头键循环浏览该组。
+> **注意**&nbsp;&nbsp;通过键盘访问时，一组单选按钮的行为类似于单个控件。 使用 Tab 键只能访问选定选项，但用户可以使用箭头键循环浏览该组。
 
 在此示例中，单选按钮的第一组在相同的堆栈面板中进行隐式分组。 第二组分为两个堆栈面板，以便它们按照 GroupName 进行显式分组。
 
@@ -155,13 +149,13 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-在用户选定蓝色背景和绿色边框后，单选按钮组将如下所示。
+单选按钮组如下所示。
 
 ![两个组中的单选按钮](images/radio-button-groups.png)
 
 单选按钮有两个状态：*已选择*或*已清除*。 当选择单选按钮时，其 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 属性为 **true**。 当清除单选按钮时，其 **IsChecked** 属性为 **false**。 某个单选按钮可以通过单击同一组中的另外一个单选按钮进行清除，但再次单击该按钮时将无法将其清除。 但是，你可以通过将单选按钮的 IsChecked 属性设置为 **false** 以编程方式清除它。
 
-## 建议
+## <a name="recommendations"></a>建议
 
 -   请确保一组单选按钮的目的和当前状态十分明确。
 -   在用户点击单选按钮时，始终提供视觉反馈。
@@ -176,12 +170,12 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 -   不要在单选按钮组中放入 8 个以上的选项。 当你需要重新更多选项时，使用[下拉列表](lists.md)、[列表框](lists.md)或[列表视图](lists.md)。
 -   不要并排放置两个单选按钮组。 当两个两个单选按钮组并排放置时，很难确定哪些按钮属于哪个组。 请使用组标签分隔它们。
 
-## 其他使用指南
+## <a name="additional-usage-guidance"></a>其他使用指南
 
 下图展示定位单选按钮和为单选按钮选取位置的正确方法。
 
 ![一组单选按钮](images/radiobutton_layout1.png)
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 **对于设计人员**
 - [按钮指南](buttons.md)
@@ -198,6 +192,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

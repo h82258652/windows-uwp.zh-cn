@@ -9,13 +9,13 @@ ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 32b6685dfd04994d13dc8805c5205e87a20b10f1
-ms.openlocfilehash: 092b183ead828ae411ff64d37e581bbbb59a1f5b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 9ee42532cb7f13d611e2365d7c9cf8f0532dd1c5
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# <a name="xaml-theme-resources"></a>XAML 主题资源
 
-# XAML 主题资源
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪个系统主题处于活动状态。 XAML 框架支持三种主题：“浅色”、“深色”和“高对比度”。
 
@@ -23,7 +23,7 @@ XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪
 
 本主题假设你已阅读 [ResourceDictionary 和 XAML 资源引用](resourcedictionary-and-xaml-resource-references.md)。
 
-## 主题资源与静态资源有何不同
+## <a name="how-theme-resources-differ-from-static-resources"></a>主题资源与静态资源有何不同
 
 有两个 XAML 标记扩展，可从现有 XAML 资源字典引用 XAML 资源：[{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)和 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)。
 
@@ -31,14 +31,14 @@ XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪
 
 相比之下，仅在应用首次加载 XAML 时评估 [{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)。 它未更新。 这类似于在应用启动时使用实际运行时值在 XAML 中进行查找和替换。
 
-## 主题资源以及它们嵌入资源字典结构中的位置。
+## <a name="theme-resources-and-where-they-fit-in-the-resource-dictionary-structure"></a>主题资源以及它们嵌入资源字典结构中的位置。
 
 
 每个主题资源都是 XAML 文件 themeresources.xaml 的一部分。 出于设计目的，themeresources.xaml 在 Windows 软件开发工具包 (SDK) 安装中的 \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic 文件夹中提供。 themeresources.xaml 中的资源字典还在同一目录中的 generic.xaml 中重现。
 
-> **注意**  Windows 运行时不使用这些物理文件进行运行时查找。 这就是它们专门在 DesignTime 文件夹中，并且在默认情况下不复制到应用中的原因。 这些资源字典在内存中作为 Windows 运行时本身的一部分存在，并且你的应用的对主题资源（或系统资源）的 XAML 资源引用将在运行时在该处进行解析。
+> **注意**&nbsp;&nbsp;Windows 运行时不使用这些物理文件进行运行时查找。 这就是它们专门在 DesignTime 文件夹中，并且在默认情况下不复制到应用中的原因。 这些资源字典在内存中作为 Windows 运行时本身的一部分存在，并且你的应用的对主题资源（或系统资源）的 XAML 资源引用将在运行时在该处进行解析。
 
- ## 使用主题资源指南
+ ## <a name="guidelines-for-using-theme-resources"></a>使用主题资源指南
 
 当定义和使用你自己的自定义主题资源时，请遵循这些指南。
 
@@ -49,18 +49,18 @@ XAML 中的主题资源是一组可应用不同值的资源，具体取决于哪
 
 错误做法：
 
--   请勿在你的 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内的资源定义中使用 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)。 改用 [{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)。
+-   请勿在你的 [**ThemeDictionaries**](../xaml-platform/themeresource-markup-extension.md) 内的资源定义中使用 [{ThemeResource} 标记扩展](https://msdn.microsoft.com/library/windows/apps/br208807)。 改用 [{StaticResource} 标记扩展](../xaml-platform/staticresource-markup-extension.md)。
 
     例外：可以使用 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)，以引用对于 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 中的应用主题不可知的资源。 这些资源的示例是主题色资源（例如 `SystemAccentColor`）或通常带有“SystemColor”前缀的系统颜色资源（例如 `SystemColorButtonFaceColor`）。
 
-**警告** 如果你不遵循这些指南，你可能会看到与你的应用中的主题相关的意外行为。 有关详细信息，请参阅[主题资源疑难解答](#troubleshooting_theme_resources)部分。
+**警告**  如果你不遵循这些指南，你可能会看到与你的应用中的主题相关的意外行为。 有关详细信息，请参阅[主题资源疑难解答](#troubleshooting_theme_resources)部分。
  
 
-## XAML 颜色渐变和依赖于主题的画笔
+## <a name="the-xaml-color-ramp-and-theme-dependent-brushes"></a>XAML 颜色渐变和依赖于主题的画笔
 
 由“浅色”、“深色”和“高对比度”主题组合的颜色集构成了 XAML 中的 *Windows 颜色渐变*。 无论是想要修改系统主题，还是将系统主题应用到自己的 XAML 元素，了解如何构建颜色资源都非常重要。
 
-### 浅色和深色主题颜色
+### <a name="light-and-dark-theme-colors"></a>浅色和深色主题颜色
 
 XAML 框架提供了一个已命名的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 资源集，其中包含的值专为“浅色”和“深色”主题而定制。 用于引用这些内容的键遵循以下命名格式：`System[Simple Light/Dark Name]Color`。
 
@@ -94,7 +94,7 @@ XAML 框架提供了一个已命名的 [**Color**](https://msdn.microsoft.com/li
 | SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
 
 
-### Windows 系统高对比度颜色
+### <a name="windows-system-high-contrast-colors"></a>Windows 系统高对比度颜色
 
 除了 XAML 框架提供的资源集，还存在派生自 Windows 系统调色板的颜色值集。 这些颜色并不特定于 Windows 运行时或通用 Windows 平台(UWP) 应用。 然而，当使用“高度对比”主题运行系统（并且应用正在运行）时，许多 XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 资源都将使用这些颜色。 XAML 框架提供这些系统范围的颜色作为键控资源。 这些键遵循以下命名格式：`SystemColor[name]Color`。
 
@@ -118,15 +118,15 @@ XAML 框架提供了一个已命名的 [**Color**](https://msdn.microsoft.com/li
 
 有关支持高对比度主题的详细信息，请参阅[高对比度主题](https://msdn.microsoft.com/library/windows/apps/mt244346)。
 
-### 系统主题色
+### <a name="system-accent-color"></a>系统主题色
 
 除了系统高对比度主题颜色外，通过使用键 `SystemAccentColor`，系统主题色还会作为特定的颜色资源提供。 在运行时，该资源获取用户已在 Windows 个性化设置中指定为主题色的颜色。
 
-> **注意**  可以通过创建具有相同名称的资源来替代高对比度颜色和主题色的系统颜色资源，但最好遵循用户所选的颜色（尤其是对于高对比度设置）。
+> **注意**&nbsp;&nbsp;可以通过创建具有相同名称的资源来替代高对比度颜色和主题色的系统颜色资源，但最好遵循用户所选的颜色（尤其是对于高对比度设置）。
 
-### 依赖于主题的画笔
+### <a name="theme-dependent-brushes"></a>依赖于主题的画笔
 
-使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 资源的 [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackroundAltHighBrush`。
+使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242963) 资源的 [**Color**](https://msdn.microsoft.com/library/windows/apps/br242962) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackroundAltHighBrush`。
 
 让我们看一下如何在运行时确定此画笔的颜色值。 在“浅色”和“深色”资源字典中，定义此画笔，如下所示：
 
@@ -150,19 +150,19 @@ XAML 框架提供了一个已命名的 [**Color**](https://msdn.microsoft.com/li
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **注意**  并非 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 的每个组合都作为画笔资源提供。
+> **注意**&nbsp;&nbsp;并非 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 的每个组合都作为画笔资源提供。
 
-## XAML 类型渐变
+## <a name="the-xaml-type-ramp"></a>XAML 类型渐变
 
-themeresources.xaml 文件将定义若干个资源，这些资源定义可应用到 UI 中的文本容器（特别是 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 或 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)）的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)。 它们不是默认的隐式样式。 通过它们，你可以更轻松地创建匹配[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394)中记录的 *Windows 类型渐变*的 XAML UI 定义。
+themeresources.xaml 文件将定义若干个资源，这些资源定义可应用到 UI 中的文本容器（特别是 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br208849) 或 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)）的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br227565)。 它们不是默认的隐式样式。 通过它们，你可以更轻松地创建匹配[字体指南](https://msdn.microsoft.com/library/windows/apps/hh700394)中记录的 *Windows 类型渐变*的 XAML UI 定义。
 
-这些样式用于你要应用到整个文本容器的文本属性。 如果你仅想要将样式应用到该文本部分，请在容器中的文本元素上（例如 [**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) 中的 [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) 上或 [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347) 中的 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) 上）设置属性。
+这些样式用于你要应用到整个文本容器的文本属性。 如果你仅想要将样式应用到该文本部分，请在容器中的文本元素上（例如 [**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209959) 中的 [**Run**](https://msdn.microsoft.com/library/windows/apps/br209668) 上或 [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244503) 中的 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244347) 上）设置属性。
 
 当应用于 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 时，这些样式如下所示：
 
 ![文本块样式](images/text-block-type-ramp.png)
 
-### BaseTextBlockStyle
+### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
 **TargetType**：[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
@@ -184,7 +184,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-### HeaderTextBlockStyle
+### <a name="headertextblockstyle"></a>HeaderTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -199,7 +199,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-### SubheaderTextBlockStyle
+### <a name="subheadertextblockstyle"></a>SubheaderTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -214,7 +214,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-### TitleTextBlockStyle
+### <a name="titletextblockstyle"></a>TitleTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -229,7 +229,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-### SubtitleTextBlockStyle
+### <a name="subtitletextblockstyle"></a>SubtitleTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -244,7 +244,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-### BodyTextBlockStyle
+### <a name="bodytextblockstyle"></a>BodyTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -258,7 +258,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-### CaptionTextBlockStyle
+### <a name="captiontextblockstyle"></a>CaptionTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -272,7 +272,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-### BaseRichTextBlockStyle
+### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
 **TargetType**：[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
 
@@ -297,7 +297,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-### BodyRichTextBlockStyle
+### <a name="bodyrichtextblockstyle"></a>BodyRichTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -311,13 +311,13 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-> **注意**  [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 样式不具有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 包含的所有文本渐变样式，主要原因是适用于 **RichTextBlock** 的基于块的文档对象模型使在个别文本元素上设置属性更为简单。 同样，使用 XAML 内容属性设置 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于 **RichTextBlock**，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)）中，你可能在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
+> **注意**&nbsp;&nbsp;  [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 样式不具有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 包含的所有文本渐变样式，主要原因是适用于 **RichTextBlock** 的基于块的文档对象模型使在个别文本元素上设置属性更为简单。 同样，使用 XAML 内容属性设置 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于 **RichTextBlock**，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)）中，你可能在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
 
-## 其他命名样式
+## <a name="miscellaneous-named-styles"></a>其他命名样式
 
 还存在一组额外的键控 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定义，可供你向 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 应用不同于其默认隐式样式的样式。
 
-### TextBlockButtonStyle
+### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
 **TargetType**：[**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
 
@@ -336,7 +336,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ![按钮的样式看起来像文本](images/styles-textblock-button-style.png)
 
-### NavigationBackButtonNormalStyle
+### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
 **TargetType**：[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
@@ -353,7 +353,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 ![看起来像后退按钮样式的按钮](images/styles-back-button-normal.png)
 
-### NavigationBackButtonSmallStyle
+### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
 **TargetType**：[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
@@ -366,7 +366,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
         Click="Button_Click"/>
 ```
 
-## 主题资源疑难解答
+## <a name="troubleshooting-theme-resources"></a>主题资源疑难解答
 
 
 如果你不遵循[使用主题资源指南](#guidelines_for_using_theme_resources)，你可能会看到与你的应用中的主题相关的意外行为。主题
@@ -444,6 +444,6 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

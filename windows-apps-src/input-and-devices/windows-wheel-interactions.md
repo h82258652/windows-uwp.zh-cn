@@ -4,9 +4,15 @@ Description: "使用 Cortana 语音命令、语音识别和语音合成，将语
 title: "Surface Dial 交互"
 label: Surface Dial interactions
 template: detail.hbs
+keywords: "Surface Dial, Windows 滚轮, RadialController, 射线控制器, 用户交互, 输入"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
-ms.openlocfilehash: 08ac5d58f2650306b162e4dec7f4e606543ca80f
+ms.sourcegitcommit: eb86863d6ce2e545b3e534ef6cafb220904e3dc8
+ms.openlocfilehash: 96b9a2e213c36b8f92664185e9cdcaea6d457368
 
 ---
 
@@ -24,7 +30,7 @@ Surface Dial 之类的 Windows Wheel 设备是一类全新的输入设备，使�
 
 | 视频 |   |
 | --- | --- |
-| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe width="300" height="200" src="https://www.youtube.com/embed/2tajuOfs9p0" frameborder="0" allowfullscreen></iframe> |
+| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
 | *Surface Dial 应用合作伙伴* | *适用于开发人员的 Surface Dial* |
 
 借助基于*旋转*操作（或手势）的外形规格，Surface Dial 旨在成为对主设备输入进行补充的多模态辅助输入设备。 在大多数情况下，用户使用其惯用手执行某个任务（如使用笔进行墨迹书写）期间，该设备由其非惯用手操控。 它不是专为精确指针输入（如触摸、笔或鼠标）而设计。 
@@ -169,13 +175,13 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 
 2. 然后，我们在代码隐藏中将自定义工具添加到 Surface Dial 菜单，并声明 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 输入处理程序。 
 
-   我们通过调用 [**CreateForCurrentView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.CreateForCurrentView)，获取对 Surface Dial (myController) 的 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 对象的引用。
+   我们通过调用 [**CreateForCurrentView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)，获取对 Surface Dial (myController) 的 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.CreateForCurrentView) 对象的引用。
 
-   然后，我们通过调用 [**RadialControllerMenuItem.CreateFromIcon**](https://msdn.microsoft.com/library/windows/apps/mt759255) 创建 [**RadialControllerMenuItem**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) (myItem) 的实例。 
+   然后，我们通过调用 [**RadialControllerMenuItem.CreateFromIcon**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 创建 [**RadialControllerMenuItem**](https://msdn.microsoft.com/library/windows/apps/mt759255) (myItem) 的实例。 
 
    接下来，我们将该项附加到菜单项的集合。
 
-   我们为 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 对象声明输入事件处理程序（[**ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 和 [**RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged)）。
+   我们为 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 对象声明输入事件处理程序（[**ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged) 和 [**RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)）。
 
    最后，我们定义事件处理程序。
 
@@ -322,7 +328,7 @@ Surface Dial 无法检测到正在使用哪只手，但用户可以在“Windows
 
 #### <a name="developer-guidance"></a>开发人员指南
 
-用户旋转设备时，将基于相对于旋转方向的增量 ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees)) 触发 [**RadialController.RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged) 事件。 可以使用 [**RadialController.RotationResolutionInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationResolutionInDegrees) 属性设置数据的灵敏度（或分辨率）。
+用户旋转设备时，将基于相对于旋转方向的增量 ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged)) 触发 [**RadialController.RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees) 事件。 可以使用 [**RadialController.RotationResolutionInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationResolutionInDegrees) 属性设置数据的灵敏度（或分辨率）。
 
 > [!NOTE]
 > 默认情况下，仅当设备旋转至少 10 度时，才会向 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 对象传递旋转输入事件。 每个输入事件都会导致设备振动。
@@ -662,6 +668,6 @@ private void ActivateGridAtLocation(Point Location)
 [Windows 经典桌面示例](https://aka.ms/radialcontrollerclassicsample)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

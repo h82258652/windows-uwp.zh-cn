@@ -4,15 +4,15 @@ title: "监视后台任务进度和完成"
 description: "了解应用如何识别后台任务报告的进度和完成情况。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: c7b6062a624b194b2806788c5f498d87aaa209a2
 
 ---
 
-# 监视后台任务进度和完成情况
+# <a name="monitor-background-task-progress-and-completion"></a>监视后台任务进度和完成情况
 
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要的 API**
@@ -25,9 +25,9 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
 
  可以由应用代码监视后台任务进度和完成情况。 为此，应用订阅已向系统注册的后台任务事件。
 
--   本主题假定你拥有一个注册后台任务的应用。 若要快速生成后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+-   本主题假定你拥有一个注册后台任务的应用。 若要快速生成后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-a-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-## 创建一个事件处理程序以处理完成的后台任务
+## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>创建一个事件处理程序以处理完成的后台任务
 
 1.  创建一个事件处理程序函数以处理完成的后台任务。 该代码需遵循特定的足迹，即获取 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) 对象和 [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) 对象。
 
@@ -65,7 +65,7 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     };
     > ```
 
-## 创建一个事件处理程序函数以处理后台任务进度。
+## <a name="create-an-event-handler-function-to-handle-background-task-progress"></a>创建一个事件处理程序函数以处理后台任务进度。
 
 1.  创建一个事件处理程序函数以处理完成的后台任务。 该代码需遵循特定的足迹，即获取 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) 对象和 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 对象：
 
@@ -109,7 +109,7 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     };
     > ```
 
-## 使用新的和现有的后台任务注册事件处理程序函数
+## <a name="register-the-event-handler-functions-with-new-and-existing-background-tasks"></a>使用新的和现有的后台任务注册事件处理程序函数
 
 
 1.  当应用首次注册后台任务时，应用应该注册以在任务运行（同时应用仍然在前台处于活动状态）时接收它的进度和完成更新。
@@ -195,10 +195,10 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     }
     > ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
-* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [注册后台任务](register-a-background-task.md)
@@ -213,6 +213,6 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

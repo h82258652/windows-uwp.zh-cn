@@ -5,36 +5,43 @@ title: "语音识别"
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
+keywords: "语音，语音，语音识别，自然语言，听写，输入，用户交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
 
 ---
 
-# 语音识别
-
+# <a name="speech-recognition"></a>语音识别
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 使用语音识别提供输入内容、指定操作或命令并完成任务。
 
-**重要的 API**
-
--   [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
-
-
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)</li>
+</ul>
+</div>
 
 语音识别由以下部分构成：语音运行时、用于为运行时编程的识别 API、用于听写和 Web 搜索的现成语法，以及帮助用户发现和使用语音识别功能的默认系统 UI。
 
 
-## 设置音频源
+## <a name="set-up-the-audio-feed"></a>设置音频源
 
 
 确保你的设备具有麦克风或等效硬件。
 
-在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474)（**package.appxmanifest** 文件）中设置“麦克风”****设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
+在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211430)（**package.appxmanifest** 文件）中设置“麦克风”****设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211474)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
 
 请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
-## 识别语音输入
+## <a name="recognize-speech-input"></a>识别语音输入
 
 
 *约束*可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，它除了能提高语音识别准确度，还能为你的应用带来其他优势。
@@ -147,7 +154,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 自定义识别 UI
+## <a name="customize-the-recognition-ui"></a>自定义识别 UI
 
 
 当你的应用通过调用 [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 来尝试进行语音识别时，多个屏幕将按以下顺序显示。
@@ -204,7 +211,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 
 **开发人员**
@@ -223,6 +230,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

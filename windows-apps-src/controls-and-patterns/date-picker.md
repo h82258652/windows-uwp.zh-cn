@@ -7,11 +7,11 @@ isNew: true
 label: Date picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 2253172ff20ae46b0ada556551adfeac62136398
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 76d5cd756f462ebaad5a200cf4bcf7f4076e4652
 
 ---
-# 日期选取器
+# <a name="date-picker"></a>日期选取器
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,30 +20,25 @@ ms.openlocfilehash: 2253172ff20ae46b0ada556551adfeac62136398
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx"><strong>DatePicker 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx"><strong>Date 属性</strong></a></li>
+<li>[**DatePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
+<li>[**Date 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx) </li>
+
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 使用日期选取器以使用户选取日历上下文不重要的已知日期，例如生日。
 
 有关选择正确日期控件的详细信息，请参阅[日期和时间控件](date-and-time.md)文章。
 
-## 示例
+## <a name="examples"></a>示例
 
 入口点显示选定的日期，当用户选择该入口点时，会从中间垂直展开一个选取器图面以供用户进行选择。 日期选取器会覆盖其他 UI；它不会将其他 UI 推开。
 
 ![日期选取器展开示例](images/controls_datepicker_expand.png)
 
-## 创建日期选取器
+## <a name="create-a-date-picker"></a>创建日期选取器
 
 本示例演示如何创建附带标头的简单日期选取器。
 
@@ -60,11 +55,11 @@ birthDatePicker.Header = "Date of birth";
 
 ![日期选取器示例](images/date-picker-closed.png)
 
-> **注意**  有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> **注意**&nbsp;&nbsp;有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 - [日期和时间控件](date-and-time.md)
 - [日历日期选取器](calendar-date-picker.md)
@@ -73,6 +68,6 @@ birthDatePicker.Header = "Date of birth";
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

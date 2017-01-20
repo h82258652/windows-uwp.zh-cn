@@ -6,24 +6,28 @@ ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 925826f2702474a0003f2ca2dee6ff10992f5f25
 
 ---
 
-# 基于边缘的 UI 动画
+# <a name="edge-based-ui-animations"></a>基于边缘的 UI 动画
 
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
 基于边缘的动画显示或隐藏源自屏幕边缘的 UI。 显示和隐藏动画可以由用户或应用启动。 此 UI 可以覆盖应用，也可以作为主屏表面的一部分。 如果此 UI 是应用图面的一部分，那么应用的其余部分可能需要相应调整大小。
 
-**重要的 API**
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**EdgeUIThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh702324)</li>
+</ul>
+</div>
 
--   [**EdgeUIThemeTransition 类**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
-
-## 应做事项和禁止事项
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 
 -   使用边缘 UI 动画可显示或隐藏没有扩展到屏幕的自定义消息或错误栏。
@@ -38,10 +42,10 @@ ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
 
     ![显示何时使用边缘 UI 或面板动画，以及何时使用重新定位。](images/edgevsreposition.png)
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 
-**对于开发人员 (XAML)**
+**对于开发人员**
 * [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [创建基于边缘的 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
 * [快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
@@ -60,6 +64,6 @@ ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

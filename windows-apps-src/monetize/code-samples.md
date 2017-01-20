@@ -2,28 +2,28 @@
 author: mcleanbyron
 ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "获取演示如何使用 Microsoft Advertising 库中 AdControl 和 InterstitialAd 类的属性、方法和事件的其他示例。"
-title: "示例代码"
+title: "代码示例"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: a8f18048915927f9e93d4469e7288e5a06a69070
 
 ---
 
-# 代码示例
+# <a name="code-samples"></a>代码示例
 
 
 
 
-本部分针对目标用户提供的示例演示了如何使用 Microsoft Advertising 库中 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 类的属性、方法和事件，如何手动刷新广告以及如何处理事件。 有关演示如何向应用添加这些控件的介绍性演练，请参阅[开发人员演练](developer-walkthroughs.md)。
+本部分向目标用户提供了一些示例，演示了如何使用 Microsoft Advertising 库中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 和 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 类的属性、方法和事件，如何手动刷新广告以及如何处理事件。 有关演示如何向应用添加这些控件的介绍性演练，请参阅[开发人员演练](developer-walkthroughs.md)。
 
 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加横幅和视频间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](http://aka.ms/githubads)。
 
-## 本部分内容
+## <a name="in-this-section"></a>本部分内容
 
-|  主题    | 描述 |               
+|  主题    | 说明 |               
 |----------|-------|
-| [HTML 属性示例](html-properties-example.md)     | 显示 HTML 中完全属性化的 **AdControl**。        |
-| [XAML 属性示例](xaml-properties-example.md)     | 显示 XAML 中完全属性化的 **AdControl**。        |
+| [AdControl HTML 属性示例](html-properties-example.md)     | 显示 HTML 中完全属性化的 **AdControl**。        |
+| [AdControl XAML 属性示例](xaml-properties-example.md)     | 显示 XAML 中完全属性化的 **AdControl**。        |
 | [使用 JavaScript 创建 AdControl](create-an-adcontrol-in-javascript.md)     | 显示如何使用 JavaScript 创建 **AdControl**。        |
 | [JavaScript 中的 AdControl 事件](adcontrol-events-in-javascript.md)     | 显示如何处理 JavaScript 中的 **AdControl** 事件。       |
 | [C 中的 AdControl 事件#](adcontrol-events-in-c.md)     | 显示如何处理 C# 中的 **AdControl** 事件。       |
@@ -41,6 +41,6 @@ ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -5,19 +5,22 @@ title: "通用 Windows 平台 (UWP) 应用的内容设计基础知识"
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 7433fcabe455c0a0198cd23f883ed72b0b4558fc
 
 ---
 
-#  UWP 应用的内容设计基础知识
+#  <a name="content-design-basics-for-uwp-apps"></a>UWP 应用的内容设计基础知识
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 任何应用的主要用途都是提供对内容的访问权限：在照片编辑应用中，照片即是内容；在旅行应用中，地图和旅行目的地信息即是内容；等等。 导航元素提供对内容的访问权限；命令元素使用户能够与内容进行交互；内容元素显示实际内容。
 
 本文提供了适用于三种内容方案的内容设计建议。
 
-## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>针对正确的内容方案进行设计
+## <a name="design-for-the-right-content-scenario"></a>针对正确的内容方案进行设计
 
 
 存在三种主要的内容方案：
@@ -26,7 +29,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 -   **创建**：侧重于创建新内容的主要单向体验。 它可细分为从无到有创建内容，如拍摄照片或视频、使用绘图应用创建新图像或打开一个全新文档。
 -   **交互式**：包括使用、创建和修改内容的双向内容体验。
 
-## <span id="Consumption-focused_apps"></span><span id="consumption-focused_apps"></span><span id="CONSUMPTION-FOCUSED_APPS"></span>侧重于使用的应用
+## <a name="consumption-focused-apps"></a>侧重于使用的应用
 
 
 在侧重于使用的应用中，内容元素获得最高优先级，后跟所需的[导航元素](navigation-basics.md)，从而帮助用户查找他们所需的内容。 侧重于使用的应用示例包括电影播放器、阅读应用、音乐应用和照片查看器。
@@ -38,7 +41,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 -   请考虑创建专用[导航](navigation-basics.md)页面和内容查看页面，以便当用户找到他们要查找的内容时，可以在专用页面上不受干扰地查看内容。
 -   请考虑创建一个全屏视图选项，用于扩展内容以填充整个屏幕并隐藏其他所有 UI 元素。
 
-## <span id="Creation-focused_apps"></span><span id="creation-focused_apps"></span><span id="CREATION-FOCUSED_APPS"></span>侧重于创建的应用
+## <a name="creation-focused-apps"></a>侧重于创建的应用
 
 
 在侧重于创建的应用中，内容和[命令](commanding-basics.md)元素都是最重要的 UI 元素：命令元素使用户能够创建新的内容。 示例包括绘图应用、照片编辑应用、视频编辑应用和文字处理应用。
@@ -52,7 +55,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 -   尽量减少[导航](navigation-basics.md)元素的使用。
 -   [命令](commanding-basics.md)元素在侧重于创建的应用中尤为重要。 由于用户将会执行大量的命令，我们建议提供命令历史记录/撤消功能。
 
-## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>具有交互式内容的应用
+## <a name="apps-with-interactive-content"></a>具有交互式内容的应用
 
 
 在具有交互式内容的应用中，用户将创建、查看和编辑内容；许多应用都属于此类别。 这些类型的应用的示例包括：业务线应用、库存管理应用，以及使用户能够创建或修改食谱的烹饪应用。
@@ -68,7 +71,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 
 -   当导航、内容和命令元素都非常重要时，可能很难使这三种元素保持平衡。 如果可能，请考虑创建单独的屏幕，以用于浏览、创建和编辑内容，或提供模式切换。
 
-## <span id="Commonly_used_content_elements"></span><span id="commonly_used_content_elements"></span><span id="COMMONLY_USED_CONTENT_ELEMENTS"></span>常用的内容元素
+## <a name="commonly-used-content-elements"></a>常用的内容元素
 
 
 以下是常用于显示内容的一些 UI 元素。 （有关 UI 元素的完整列表，请参阅[控件和 UI 元素](https://msdn.microsoft.com/library/windows/apps/dn611856)。）
@@ -123,6 +126,6 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

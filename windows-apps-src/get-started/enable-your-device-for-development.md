@@ -3,10 +3,15 @@ author: GrantMeStrength
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: "启用设备进行开发"
 description: "配置 Windows 10 设备进行开发和调试。"
-keywords: "启用设备"
+keywords: "入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ed91f7585b63199ab9d591c712d4260a3b452b85
-ms.openlocfilehash: 416dce2f7cbe3bba9285f7e354868a2c00728802
+ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
+ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
@@ -213,6 +218,6 @@ ms.openlocfilehash: 416dce2f7cbe3bba9285f7e354868a2c00728802
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

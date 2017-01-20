@@ -6,11 +6,11 @@ ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: a8e8e42c87809eb08685fb137a242b1177b824b4
 
 ---
-# 可编辑对话框
+# <a name="rich-edit-box"></a>可编辑对话框
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,14 @@ ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>RichEditBox 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx"><strong>Document 属性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx"><strong>IsReadOnly 属性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx"><strong>IsSpellCheckEnabled 属性</strong></a></li>
+<li>[**RichEditBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
+<li>[**Document 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)</li>
+<li>[**IsReadOnly 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)</li>
+<li>[**IsSpellCheckEnabled 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用 **RichEditBox** 显示和编辑文本文件。 不要像使用其他标准文本输入框那样使用 RichEditBox 在应用中获取用户输入。 而应使用它来处理独立于应用的文本文件。 通常需要将输入到 RichEditBox 的文本保存为 .rtf 文件。
 -   如果多行文本框的主要用途是创建文档（如日志条目或电子邮件内容），则这些文档要求富文本使用 RTF 框。
@@ -43,13 +36,13 @@ ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
 
 有关选择正确文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
-## 示例
+## <a name="examples"></a>示例
 
 此富编辑框会在自身中打开富文本文档。 格式和文件按钮不属于富编辑框，但你至少应提供最小小限度的设置按钮样式集，并实现它们的操作。
 
 ![打开了文档的 RTF 框](images/rich-edit-box.png)
 
-## 创建富编辑框
+## <a name="create-a-rich-edit-box"></a>创建富编辑框
 
 默认情况下，RichEditBox 支持拼写检查。 若要禁用拼写检查器，请将 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) 属性设置为 **false**。 有关详细信息，请参阅[拼写检查器指南](spell-checking-and-prediction.md)文章。
 
@@ -194,13 +187,13 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 为文本控件选择正确的键盘
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>为文本控件选择正确的键盘
 
 若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。 默认键盘布局通常适用于处理富文本文档。
 
 有关如何使用输入范围的详细信息，请参阅[使用输入范围更改触摸键盘](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
-## 建议
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 -   创建 RTF 框时，提供样式设置按钮并实现它们的操作。
 -   使用与应用样式一致的字体。
@@ -210,24 +203,17 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 -   如果纯文本控件足够使用，不要使用 RTF 控件。
 
 
+## <a name="related-articles"></a>相关文章
 
-
-
-## 相关文章
-
-[文本控件](text-controls.md)
-
-**对于设计人员**
+* [文本控件](text-controls.md)
 - [拼写检查指南](spell-checking-and-prediction.md)
 - [添加搜索](search.md)
 - [文本输入指南](text-controls.md)
-
-**面向开发人员 (XAML)**
 - [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -5,11 +5,11 @@ title: "反转列表"
 label: Inverted lists
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
+ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
+ms.openlocfilehash: de90c49dfc961241c1da028c8f7278e370a810bd
 
 ---
-# 反转列表
+# <a name="inverted-lists"></a>反转列表
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -22,29 +22,24 @@ ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx"><strong>ItemsStackPanel 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx"><strong>ItemsUpdatingScrollMode 属性</strong></a></li>
+<li>[**ListView 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)</li>
+<li>[**ItemsStackPanel 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx)</li>
+<li>[**ItemsUpdatingScrollMode 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 创建反转列表
+## <a name="create-an-inverted-list"></a>创建反转列表
 
 若要创建反转列表，请使用将 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) 作为其项目面板的列表视图。 在 ItemsStackPanel 上，将 [**ItemsUpdatingScrollMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) 设置为 [**KeepLastItemInView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx)。
 
-> **重要提示**  **KeepLastItemInView** 枚举值从 Windows 10 版本 1607 开始可用。 当你的应用在较早版本的 Windows 10 上运行时，你无法使用此值。
+> [!IMPORTANT]
+> 从 Windows 10（版本 1607）开始可使用 **KeepLastItemInView** 枚举值。 当你的应用在较早版本的 Windows 10 上运行时，你无法使用此值。
 
 此示例显示如何将列表视图的项对齐到底部，并指示当项发生更改时，最后一项应保留在视图中。
  
  **XAML**
- ```xaml
+```xaml
 <ListView>
     <ListView.ItemsPanel>
         <ItemsPanelTemplate>
@@ -55,7 +50,7 @@ ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
 </ListView>
 ```
 
-## 建议
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 - 将来自发送方/接收方的消息在两边对齐，使用户可以清楚地了解对话流程。
 - 如果用户已经在对话末尾等待下一条消息，则以动画方式将现有消息移开，以显示最新消息。
@@ -63,6 +58,6 @@ ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

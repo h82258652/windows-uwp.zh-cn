@@ -6,24 +6,27 @@ ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e71b936be1649f8ede394b019369176c7e3ca631
 
 ---
 
-# 拖动动画
+# <a name="drag-animations"></a>拖动动画
 
 
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 当用户移动对象时，使用拖放动画，例如在列表中移动项目，或将项目放在其他列表顶部。
 
-**重要的 API**
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**DragItemThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br243174)</li>
+</ul>
+</div>
 
--   [**DragItemThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
-
-## 应做事项和禁止事项
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 
 **拖动开始动画**
@@ -52,9 +55,9 @@ ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
 -   如果没有首先使用在进入间拖动动画，则不要使用在离开间拖动动画。
 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
-**对于开发人员 (XAML)**
+**对于开发人员**
 * [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [创建拖放顺序动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
 * [快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
@@ -71,6 +74,6 @@ ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

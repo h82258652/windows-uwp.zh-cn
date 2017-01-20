@@ -6,11 +6,11 @@ ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: af8ee5679fe9bb152718b57bd198238bf9a3f6cd
 
 ---
-# 搜索和在页面中查找
+# <a name="search-and-find-in-page"></a>搜索和在页面中查找
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,20 +19,11 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn633874"><strong>AutoSuggestBox class (XAML)</strong></a></li>
+<li>[**AutoSuggestBox class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-
-## 搜索体验的要素
+## <a name="elements-of-the-search-experience"></a>搜索体验的要素
 
 
 **输入。**  文本是最常见的搜索输入模式，并且是本指南的重点。 其他常见的输入模式包括语音和相机，但这些输入模式通常要求能够与设备硬件相连接，并且在应用内可能需要其他控件或自定义 UI。
@@ -55,7 +46,7 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 结果集可以采用任何形式显示，只要能够最好地表达内容即可。 [列表视图](lists.md)提供相当大的灵活性，非常适合于大多数搜索。 网格视图适用于图像或其他媒体，而地图可用于表达空间分布。
 
-## 搜索范围
+## <a name="search-scopes"></a>搜索范围
 
 
 搜索是一种常见功能，用户会在外壳程序和很多应用内遇到搜索 UI。 虽然搜索入口点往往会以类似方式可视化，但它们可用于访问结果，包括大范围搜索结果（Web 或设备搜索）和小范围搜索结果（用户的联系人列表）。 搜索入口点应与要搜索的内容并置。
@@ -86,7 +77,7 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 通过有效表达搜索输入点的范围，你可以帮助确保你所执行的搜索功能能够满足用户期望并降低不良用户体验的可能性。
 
-## 实现
+## <a name="implementation"></a>实现
 
 
 对于大部分应用，最好是将文本输入区域作为搜索入口点，从而提供醒目的视觉印记。 此外，提示文本帮助有助于提高可发现性并表达搜索范围。 当搜索更常作为辅助操作时，或当空间受到限制时，搜索图标可以充当不带附属输入区域的入口点。 可视化为图标之后，请确保已为模式搜索框留出空间，如以下示例所示。
@@ -113,7 +104,7 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 零输入和查询规范化功能可选用于上下文/精确搜索，其中列表将通过用户输入进行实时筛选。 例外情况包括查询格式化建议可能可用的情况，例如收件箱筛选选项（收件人：&lt;输入字符串&gt;、发件人：&lt;输入字符串&gt;、主题：&lt;输入字符串&gt;等）。
 
-## 示例
+## <a name="example"></a>示例
 
 
 此部分中的示例演示置于上下文中的搜索。
@@ -141,15 +132,15 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 ![内联搜索示例](images/patterns-search-results-desktop.png)
 
 
-## 在页面中查找指南
+## <a name="guidelines-for-find-in-page"></a>在页面中查找指南
 
 
 “在页面中查找”可使用户能够找到当前文本正文中的匹配文本。 文档查看器、阅读器和浏览器是提供“在页面中查找”的最为典型的应用。
 
-## 建议
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 
--   在 具有“在页面中查找”功能的应用中放置命令栏，以使用户能搜索页面上的文本。 有关放置详细信息，请参阅“示例”部分。
+-   在具有“在页面中查找”功能的应用中放置命令栏，使用户能搜索页面上的文本。 有关放置详细信息，请参阅“示例”部分。
 
     -   提供“在页面中查找”的应用应该在命令栏中具有所有必要的控件。
     -   如果你的应用包含除“在页面中查找”之外的大量功能，你可以在顶层命令栏中提供一个“查找”****按钮，将此按钮作为到另一个命令栏（该命令栏包含所有“在页面中查找”控件）的入口。
@@ -172,7 +163,7 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 -   包含匹配计数器，以便向用户指示页面上的文本匹配数目。
 -   启用键盘快捷方式 (CTRL+F)。
 
-## 示例
+## <a name="examples"></a>示例
 
 
 提供访问在页面中查找功能的简便方法。 在此移动 UI 上的示例中，“在页面上查找”在可扩展菜单中位于两个“添加到...”命令之后：
@@ -206,16 +197,28 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 
 
-## **实施“在页面中查找”**
+## **<a name="implementing-find-in-page"></a>实施“在页面中查找”**
 
 -   文档查看器、阅读器和浏览器是提供“在页面中查找”的可能应用类型，并且支持用户拥有全屏查看/阅读体验。
 -   “在页面中查找”功能为辅助功能，应该位于命令栏中。
 
 有关向命令栏添加命令的详细信息，请参阅[命令栏](app-bars.md)。
 
+<div class="microsoft-internal-note">
+## 全球化和本地化清单
+
+<table>
+<tr>
+<th>垂直间距</th><td>为垂直间距使用非拉丁字符以确保非拉丁脚本能够正确显示，包括数字。</td>
+</tr>
+<tr>
+<th>双向注意事项</th><td>放大镜图标不应以 bidi 形式显示在镜像表中。</td>
+</tr>
+</table>
+</div>
 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 * [**自动建议框**](auto-suggest-box.md)
 
@@ -226,6 +229,6 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

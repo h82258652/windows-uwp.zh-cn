@@ -5,16 +5,21 @@ title: "访问键"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Access keys
 template: detail.hbs
-keywords: "访问键, 键盘, 辅助功能"
+keywords: "访问键, 键盘, 辅助功能, 用户交互, 输入"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2b6b1d7b1755aad4d75a29413d989c6e8112128a
-ms.openlocfilehash: dfe89e4d4fd089dde6b7b307325b8fe43de82c10
+ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
+ms.openlocfilehash: 34cce6acc786fe34b3d94faaec57011474e029ff
 
 ---
 
 # <a name="access-keys"></a>访问键
 
-使用鼠标有困难的用户（如行动有障碍的用户）通常依赖键盘在应用上导航并与应用交互。  XAML 框架使你可以实现通过 Tab 键导航和访问键来键盘访问 UI 元素。
+使用鼠标有困难的用户（如行动有障碍的用户），通常依赖键盘在应用中导航并与应用交互。  XAML 框架使你可以实现通过 Tab 键导航和访问键来键盘访问 UI 元素。
 
 - Tab 键导航是基本的键盘辅助功能提示（默认情况下已启用），允许用户使用键盘上的 Tab 键和箭头键在 UI 元素之间移动焦点。
 - 访问键是补充的辅助功能提示（在应用中实现），以实现使用键盘修饰符（Alt 键）和一个或多个字母数字键（通常为与命令关联的字母）的组合来快速访问应用命令。 常用访问键包括用于打开“文件”菜单的 _Alt+F_ 以及用于执行左对齐的 _Alt+AL_。  
@@ -58,7 +63,7 @@ _图 2：Microsoft Word 中“主页”选项卡作用域的访问键以及关�
     > [!NOTE]
     > 仅具有一个字符的访问键可以充分利用此用户交互。 针对具有多个字符的访问键，不支持 Alt+_访问键_组合。    
 - 当存在多个共享某些字符的多字符访问键时，如果用户按下共享的字符时，会筛选这些访问键。 例如，假定具有如下所示的三个访问键：_A1_、_A2_ 和 _C_。如果用户按下 _A_，将仅显示 _A1_ 和 _A2_ 访问键，隐藏 C 的可视化提示。
-- Esc 键会删除筛选的一个级别。 例如，如果存在访问键 _B_、_ABC_、_ACD_ 和 _ABD_，当用户按下 _A_ 时，将仅显示 _ABC_、_ACD_ 和 _ABD_。 如果用户接着按下 _B_，将仅显示 _ABC_ 和 _ABD_。 如果用户按 Esc，会删除筛选的一个级别，同时显示 _ABC_、_ACD_ 和 _ABD_ 访问键。 如果用户再次按 Esc，将删除筛选的另一个级别，同时启用所有访问键（即 _B_、_ABC_、_ACD_ 和 _ABD_）并显示其可视化提示。
+- Esc 键会删除筛选的一个级别。 例如，如果存在访问键 _B_、_ABC_、_ACD_ 和 _ABD_，当用户按下 _A_ 时，将仅显示 _ABC_、_ACD_ 和 _ABD_。 如果用户接着按下 _B_，将仅显示 _ABC_ 和 _ABD_。 如果用户按 Esc，会删除筛选的一个级别，同时显示 _ABC_、_ACD_ 和 _ABD_ 访问键。 如果用户再次按 Esc，将删除另一筛选级别，同时启用所有访问键（即 _B_、_ABC_、_ACD_ 和 _ABD_），并显示其可视化提示。
 - Esc 键会导航回前一个作用域。 访问键可以属于不同作用域，以使其更轻松地在具有许多命令的应用间导航。 访问键序列始终起始于主作用域。 除了指定特定 UI 元素为其作用域所有者的访问键之外，其他所有访问键都属于主作用域。 当用户调用为作用域所有者的元素的访问键时，XAML 框架会自动将该作用域移动给它，然后将它添加到内部的访问键导航堆栈。 Esc 键会反向移动访问键导航堆栈。
 - 有多种方法可消除访问键序列：
     - 用户可以按下 Alt 消除正在进行的访问键序列。 请记住，按下 Alt 也会启动访问键序列。
@@ -385,6 +390,6 @@ public sealed partial class ScopedAccessKeys : Page
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

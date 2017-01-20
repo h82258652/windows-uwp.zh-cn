@@ -3,8 +3,8 @@ author: QuinnRadich
 title: "选择 UWP 版本"
 description: "在 Microsoft Visual Studio 中编写 UWP 应用时，可以选择要面向的版本。 了解不同的 UWP 版本之间的区别，以及如何在新项目和现有项目中配置你的选择。"
 translationtype: Human Translation
-ms.sourcegitcommit: 006b5d01c2474591a81e4d7a83c5735dc0b3d9d8
-ms.openlocfilehash: 5d05c427ecc1ec57856b7c3909be50c3d87daa28
+ms.sourcegitcommit: 7e59551f528e23e497122f822fbfc09ec3086cdc
+ms.openlocfilehash: 58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e
 
 ---
 
@@ -12,9 +12,9 @@ ms.openlocfilehash: 5d05c427ecc1ec57856b7c3909be50c3d87daa28
 
 在 Microsoft Visual Studio 中编写 UWP 应用时，可以选择要面向的版本。 目前，仅支持以下三种版本。
 
-| 版本 | 描述 |
+| 版本 | 说明 |
 | --- | --- |
-| 版本 14393（周年版本） | 这是最新版本的 Windows 10，已于 2016 年 7 月发布。 此版本中的一些突出功能如下： </br> \* **Windows Ink：**新的 InkCanvas 和 InkToolbar 控件。 </br> \* **Cortana API：**使用新的 Cortana 操作将 Cortana 支持与应用的特殊功能集成。 </br> \* **Windows Hello：**Microsoft Edge 现在支持 Windows Hello，使 Web 开发人员能够访问生物识别身份验证。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/en-us/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-version-1607.md)上的详细信息页面。  |
+| 版本 14393（周年版本） | 这是最新版本的 Windows 10，已于 2016 年 7 月发布。 此版本中的一些突出功能如下： </br> \* **Windows Ink：**新的 InkCanvas 和 InkToolbar 控件。 </br> \* **Cortana API：**使用新的 Cortana 操作将 Cortana 支持与应用的特殊功能集成。 </br> \* **Windows Hello：**Microsoft Edge 现在支持 Windows Hello，使 Web 开发人员能够访问生物识别身份验证。 </br> 有关此版本的 Windows 中添加的这些功能以及许多其他功能的信息，请访问[开发人员中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或[面向开发人员的 Windows 10 中的新增功能](../whats-new/windows-10-version-1607.md)上的详细信息页面。  |
 | 版本 10586 | 此版本的 Windows 10 已于 2015 年 11 月发布。 突出功能包括引入了用于在 Microsoft Edge 中进行视频通信的 ORTC（对象实时通信）和用于支持应用使用 Windows Hello 人脸身份验证的提供者 API。 [有关此版本中引入的功能的详细信息。](../whats-new/windows-10-version-1511.md) |
 | 版本 10240 | 这是 Windows 10 的初始发行版本，已于 2015 年 7 月发布。 [有关此版本中引入的功能的详细信息。](../whats-new/windows-10-version-1507.md) |
 
@@ -22,7 +22,7 @@ ms.openlocfilehash: 5d05c427ecc1ec57856b7c3909be50c3d87daa28
 
 ## <a name="whats-different-in-each-uwp-version"></a>每个 UWP 版本中有何区别？
 
-Windows 10 的每个连续版本中都提供了适用于 UWP 的全新和更改的 API。 有关哪个版本中添加了哪些功能的特定信息，请参阅 [Windows 10 中面向开发人员的新增功能](../whats-new/windows-10-version-1607.md)。
+Windows 10 的每个连续版本中都提供了适用于 UWP 的全新和更改的 API。 有关哪个版本中添加了哪些功能的特定信息，请参阅 [Windows 10 中面向开发人员的新增功能](../whats-new/windows-10-version-1607.md)。
 
 有关枚举所有设备系列及其版本和所有 API 合约及其版本的参考主题，请参阅[设备系列](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx)和 [API 合约](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx)。
 

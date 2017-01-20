@@ -2,16 +2,16 @@
 author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: "本文介绍如何使用 IMediaEncodingProperties 界面设置相机预览流以及已捕获照片和视频的分辨率和帧速率。"
-title: "为 MediaCapture 设置媒体编码属性"
+title: "为 MediaCapture 设置格式、分辨率和帧速率"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
+ms.sourcegitcommit: 6c3ed4ab773fe821acaee7d5b8c70fdc8770de81
+ms.openlocfilehash: 828cbddd9568bd4e9d0a571880a867afff293e34
 
 ---
 
-# 为 MediaCapture 设置媒体编码属性
+# <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>为 MediaCapture 设置格式、分辨率和帧速率
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向你演示如何使用 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 界面设置相机预览流以及已捕获照片和视频的分辨率和帧速率。 还将演示如何确保预览流的纵横比与已捕获媒体的纵横比相匹配。
@@ -23,7 +23,7 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 > [!NOTE] 
 > 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
-## 媒体编码属性帮助程序类
+## <a name="a-media-encoding-properties-helper-class"></a>媒体编码属性帮助程序类
 
 创建包装 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 界面功能的简单帮助程序类使选择一组符合特定标准的编码属性变得更简单。 此帮助程序类因具有以下编码属性功能的行为而极为有用：
 
@@ -38,21 +38,21 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 [!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
 
-## 确定预览流和捕获流是否独立。
+## <a name="determine-if-the-preview-and-capture-streams-are-independent"></a>确定预览流和捕获流是否独立。
 
 在某些设备上，相同的硬件引脚可同时用于预览流和捕获流。 在这些设备上，设置某个流的编码属性也将设置其他流的编码属性。 在将不同的硬件引脚用于捕获和预览的设备上，可单独为每个流设置属性。 使用以下代码确定预览流和捕获流是否独立。 你应该根据此测试结果，将 UI 调整为独立启用或禁用流设置。
 
 [!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
 
-## 获取可用流属性列表
+## <a name="get-a-list-of-available-stream-properties"></a>获取可用流属性列表
 
-通过获取应用 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 对象的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825)，然后调用 [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) 并在 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 值的 **VideoPreview**、**VideoRecord** 或 **Photo** 的其中一项属性中传递，获取捕获设备的可用流属性列表。 在此示例中，Linq 语法用于为从 **GetAvailableMediaStreamProperties** 返回的每个 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 值创建 **StreamPropertiesHelper** 对象（在本文前文中定义）列表。 该示例首先使用 Linq 扩展方法先基于分辨率随后基于帧速率为返回的属性排序。
+通过获取应用 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br226825) 对象的 [**VideoDeviceController**](capture-photos-and-video-with-mediacapture.md)，然后调用 [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) 并在 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 值的 **VideoPreview**、**VideoRecord** 或 **Photo** 的其中一项属性中传递，获取捕获设备的可用流属性列表。 在此示例中，Linq 语法用于为从 **GetAvailableMediaStreamProperties** 返回的每个 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 值创建 **StreamPropertiesHelper** 对象（在本文前文中定义）列表。 该示例首先使用 Linq 扩展方法先基于分辨率随后基于帧速率为返回的属性排序。
 
 如果你的应用具有特定分辨率或帧速率要求，你可以按编程方式选择一组媒体编码属性。 典型的相机应用将公开 UI 中的可用属性列表，并允许用户选择所需设置。 在列表中为 **StreamPropertiesHelper** 对象列表中的每个项创建 **ComboBoxItem**。 内容设置为帮助程序类返回的友好名称，而标记设置为帮助程序类本身，以便可以在稍后用于检索相关联的编码属性。 然后将每个 **ComboBoxItem** 添加到传递到该方法中的 **ComboBox**。
 
 [!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
 
-## 设置所需的流属性
+## <a name="set-the-desired-stream-properties"></a>设置所需的流属性
 
 通过调用 [**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895)、传递指示是应设置照片属性、视频属性还是预览属性的 **MediaStreamType**，告知视频设备控制器使用所需的编码属性。 本示例在用户选择使用 **PopulateStreamPropertiesUI** 帮助程序方法填充的 **ComboBox** 对象之一中的项目时，设置所请求的编码属性。
 
@@ -62,7 +62,7 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 [!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
 
-## 匹配预览流和捕获流的纵横比
+## <a name="match-the-aspect-ratio-of-the-preview-and-capture-streams"></a>匹配预览流和捕获流的纵横比
 
 典型相机应用会为用户提供用于选择视频或照片捕获分辨率的 UI，但会以编程方式设置预览分辨率。 有以下几种不同的策略可用于选择最适合你的应用的预览流分辨率：
 
@@ -90,6 +90,6 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

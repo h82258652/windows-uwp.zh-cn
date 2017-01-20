@@ -5,27 +5,38 @@ title: "定义自定义识别约束"
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+keywords: "语音, 语音, 语音识别, 自然语言, 听写, 输入, 用户交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d
 
 ---
 
-# 定义自定义识别约束
+# <a name="define-custom-recognition-constraints"></a>定义自定义识别约束
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 了解如何为语音识别定义和使用自定义约束。
 
-**重要的 API**
-
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)</li>
+<li>[**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)</li>
+<li>[**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)</li>
+</ul>
+</div>
 
 
 语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用通用 Windows 应用的预定义听写语法。 请参阅[语音识别](speech-recognition.md)。
 
 
-## 添加约束
+## <a name="add-constraints"></a>添加约束
 
 
 使用 [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 属性向语音识别器添加约束。
@@ -41,9 +52,9 @@ ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
 -   单个主题的约束，也称预定义语法（听写或 Web 搜索）。 不允许使用其他约束。
 -   列表约束和/或语法文件约束的组合。
 
-**记住：**先调用 [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 方法编译约束，然后再开始识别过程。
+**记住**：先调用 [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 方法编译约束，然后再开始识别过程。
 
-## 指定 Web 搜索语法 (SpeechRecognitionTopicConstraint)
+## <a name="specify-a-web-search-grammar-speechrecognitiontopicconstraint"></a>指定 Web 搜索语法 (SpeechRecognitionTopicConstraint)
 
 
 必须将主题约束（听写或 Web 搜索语法）添加到语音识别器的约束集合。
@@ -80,7 +91,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 指定编程列表约束 (SpeechRecognitionListConstraint)
+## <a name="specify-a-programmatic-list-constraint-speechrecognitionlistconstraint"></a>指定编程列表约束 (SpeechRecognitionListConstraint)
 
 
 必须将列表约束添加到语音识别器的约束集合。
@@ -120,7 +131,7 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 指定 SRGS 语法约束 (SpeechRecognitionGrammarFileConstraint)
+## <a name="specify-an-srgs-grammar-constraint-speechrecognitiongrammarfileconstraint"></a>指定 SRGS 语法约束 (SpeechRecognitionGrammarFileConstraint)
 
 
 必须将 SRGS 语法文件添加到语音识别器的约束集合。
@@ -211,7 +222,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 </grammar>
 ```
 
-## 管理约束
+## <a name="manage-constraints"></a>管理约束
 
 
 在加载约束集合以供识别后，你的应用可以通过将约束的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 属性设置为 **true** 或 **false** 来管理启用哪些约束以供识别操作。 默认设置为 **true**。
@@ -224,7 +235,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 要提示用户可说的内容，你可以使用 [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) 和 [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) 属性，这些属性通过 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 属性的方法进行设置。 预先提示用户在识别操作期间可说的内容可以提高他们说出的短语匹配可用约束的几率。
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 
 * [语音交互](speech-interactions.md)
@@ -241,6 +252,6 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

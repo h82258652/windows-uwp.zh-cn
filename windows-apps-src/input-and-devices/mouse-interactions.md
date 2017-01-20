@@ -6,13 +6,13 @@ ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: ed0c8e86d38865fad8bb784550b9b4fc61a8b40a
 
 ---
 
-# 鼠标交互
-
+# <a name="mouse-interactions"></a>鼠标交互
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 针对触摸输入优化通用 Windows 平台 (UWP) 应用设计，并在默认情况下获得基本的鼠标支持。
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 
 本主题介绍鼠标交互的设计注意事项。
 
-## UWP 应用鼠标语言
+## <a name="the-uwp-app-mouse-language"></a>UWP 应用鼠标语言
 
 
 一组在整个系统中通用的简单鼠标交互功能。
@@ -41,7 +41,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -61,7 +61,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 <td align="left"><p>右键单击以选定和进行命令操作</p></td>
 <td align="left"><p>右键单击以使用全局命令显示导航栏（如果有的话）与应用栏。 右键单击某个元素可将其选定并显示带有所选元素的上下文命令的应用栏。</p>
 <div class="alert">
-<strong>注意</strong> 当选择或应用栏命令不适合 UI 行为时，右键单击可显示上下文菜单。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
+<strong>注意</strong>  如果选择或应用栏命令不是适合的 UI 行为，右键单击可显示上下文菜单。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
 </div>
 <div>
  
@@ -86,7 +86,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 </tbody>
 </table>
 
-## 鼠标事件
+## <a name="mouse-events"></a>鼠标事件
 
 通过处理用于触摸和笔输入的相同基本指针事件在应用中响应鼠标输入。
 
@@ -101,7 +101,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 
 - [输入：使用 GestureRecognizer 的笔势和操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## 视觉反馈指南
+## <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
 
 -   当（通过移动或悬停事件）检测到鼠标时，显示特定于鼠标的 UI 以指示元素显示的功能。 如果鼠标在一定的时间段内没有移动，或者如果用户启动了触摸交互，则让鼠标 UI 逐渐淡出。 这会使 UI 干净整洁。
@@ -114,7 +114,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 有关视觉反馈的更一般指南，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
 
-## 光标
+## <a name="cursors"></a>光标
 
 
 为鼠标指针提供了一组标准光标。 它们用来表示元素的主要操作。
@@ -129,7 +129,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 -   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png)， ![水平调整光标](images/cursor-horizontal.png)， ![对角调整光标（左下和右上）](images/cursor-diagonal2.png)， ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
 -   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 * [处理指针输入](handle-pointer-input.md)
 * [标识输入设备](identify-input-devices.md)
@@ -156,6 +156,6 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

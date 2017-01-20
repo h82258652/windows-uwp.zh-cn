@@ -6,16 +6,13 @@ ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1ed8bc2339b0616ea5e34b640bb572693d397cce
 
 
 ---
-# 工具提示
+# <a name="tooltips"></a>工具提示
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
-
 
 工具提示是链接到另一个控件或对象的简短描述。 工具提示可帮助用户了解未在 UI 中直接描述的不熟悉的对象。 它们会在用户将焦点移动到控件、长按控件或将鼠标指针停在控件上时自动显示。 几秒钟后或者当用户移动手指、指针或键盘/游戏板焦点时，工具提示将消失。
 
@@ -24,17 +21,12 @@ ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227608"><strong>ToolTip 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice"><strong>ToolTipService 类</strong></a></li>
+<li>[**ToolTip 类**](https://msdn.microsoft.com/library/windows/apps/br227608)</li>
+<li>[**ToolTipService 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 要求用户执行操作之前，使用工具提示显示有关控件的详细信息。 工具提示应尽量少用，仅应在用户为尝试完成某个任务而需要添加不同的值时才使用。 一个经验规则是，如果信息在同一体验的其他位置提供，则不需要工具提示。 一个有价值的工具提示可以澄清不明确的操作。
 
@@ -61,13 +53,13 @@ ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
 -   **用户是否会觉得提示令人厌烦或者让人分心？**
     如果是，请考虑使用其他解决方案（包括不执行任何操作）。 如果你的确使用了可能会让人分心的提示，请允许用户关闭它们。
 
-## 示例
+## <a name="example"></a>示例
 
 “必应地图”应用中的工具提示。
 
 ![“必应地图”应用中的工具提示](images/control-examples/tool-tip-maps.png)
 
-## 建议
+## <a name="recommendations"></a>建议
 
 -   慎用工具提示（或者完全不使用）。 工具提示可使用户中断。 工具提示的干扰性类似于弹出窗口，因此不要使用它们，除非它们可以显著增加价值。
 -   使工具提示文本保持简单。 工具提示最适用简短语句和语句片段。 较大的文本块可能会让人不知所措，并且工具提示可能会在用户阅读完之前就超时了。
@@ -78,12 +70,11 @@ ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
 -   不要将看上去像交互式控件的图像放在工具提示内部。
 
 相关主题
------------------------------------------------
 
 * [**ToolTip 类**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

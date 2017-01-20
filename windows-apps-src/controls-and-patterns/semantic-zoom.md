@@ -6,11 +6,11 @@ ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: b3ca48b678fb4e1ddb4b26ad7add723474527591
 
 ---
-# 语义式缩放
+# <a name="semantic-zoom"></a>语义式缩放
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -24,18 +24,11 @@ ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/hh702601"><strong>SemanticZoom 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx"><strong>ListView 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx"><strong>GridView 类</strong></a></li>
+<li>[**SemanticZoom 类**](https://msdn.microsoft.com/library/windows/apps/hh702601)</li>
+<li>[**ListView 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)</li>
+<li>[**GridView 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)</li>
 </ul>
-
 </div>
-</div>
-
-
-
-
-
 
 **功能**：
 
@@ -43,13 +36,13 @@ ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
 -   点击组标题可切换视图。 可以启用收缩作为一种在视图之间切换的方式。
 -   视图之间的活动标题切换。
 
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 在你需要显示大到无法在一个或两个页面上全部显示的分组数据集时，请使用 **SemanticZoom** 控件。
 
 不要将语义上的缩放与光学缩放混淆。 尽管它们的交互和基本行为（基于缩放比例显示更多或更少细节）一致，但是光学缩放是指调整内容区域或对象（如照片）的放大倍数。 有关执行光学缩放的控件的信息，请参阅 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) 控件。
 
-## 示例
+## <a name="examples"></a>示例
 
 **“照片”应用**
 
@@ -63,7 +56,7 @@ ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
 
 ![在联系人列表中使用的语义式缩放示例](images/semanticzoom-win10.png)
 
-## 创建语义式缩放
+## <a name="create-a-semantic-zoom"></a>创建语义式缩放
 
 **SemanticZoom** 控件没有任何其自己的可视表示形式。 它是一个主机控件，用于管理提供内容视图的另外 2 个控件，通常为 **ListView** 或 **GridView** 控件。  将视图控件设置为 SemanticZoom 的 [**ZoomedInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedinview.aspx) 和 [**ZoomedOutView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedoutview.aspx) 属性。
 
@@ -74,7 +67,7 @@ ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
 
 在使用语义式缩放前，应了解如何将列表视图用于分组数据。 有关详细信息，请参阅[列表视图和网格视图](listview-and-gridview.md)和[在列表中为项目分组]()。 
 
-> **注意**  若要定义 SemanticZoom 控件的放大视图和缩小视图，可以使用任意两个可实现 [**ISemanticZoomInformation**]() 接口的控件。 XAML 框架提供 3 个可实现此接口的控件：ListView、GridView 和 Hub。
+> **注意**&nbsp;&nbsp;若要定义 SemanticZoom 控件的放大视图和缩小视图，可以使用任意两个可实现 [**ISemanticZoomInformation**]() 接口的控件。 XAML 框架提供 3 个可实现此接口的控件：ListView、GridView 和 Hub。
  
  此 XAML 显示 SemanticZoom 控件的结构。 将其他控件分配到 ZoomedInView 和 ZoomedOutView 属性。
  
@@ -182,26 +175,27 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 }
 ```
 
-## 建议
+## <a name="recommendations"></a>建议
 
 -   在你的应用中使用语义式缩放时，请确保项目布局和平移方向不会根据缩放级别而更改。 布局和平移交互应该在各个缩放级别上保持一致且可预测。
 -   语义式缩放支持用户快速跳转到内容，因此请将缩小模式中的页面/屏幕数限制为三个。 过多的平移会减少语义式缩放的实用性。
 -   避免使用语义式缩放来更改内容的范围。 例如，相册不应在文件资源管理器中切换为文件夹视图。
 -   使用视图中必不可少的结构和语义。
 -   对分组集合中的项使用组名称。
--   对未分组但已排好序的集合使用分类次序（如按日期时间先后排序或名称列表字母排序）。
+-   对未分组但已排序的集合使用分类排序（例如，按日期时间先后排序或按名称列表字母排序）。
 
-## 相关文章
+
+## <a name="get-the-sample-code"></a>获取示例代码
+
+- [XAML UI 基本示例](http://go.microsoft.com/fwlink/p/?LinkId=619992)
+
+
+## <a name="related-articles"></a>相关文章
 
 - [导航设计基础知识](../layout/navigation-basics.md)
 - [列表视图和网格视图](listview-and-gridview.md)
 - [列表视图项模板](listview-item-templates.md)
 
-**示例**
-
-- [XAML UI 基本示例](http://go.microsoft.com/fwlink/p/?LinkId=619992)
-
- 
 
 
 
@@ -209,6 +203,6 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

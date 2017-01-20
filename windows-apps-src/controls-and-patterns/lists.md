@@ -6,11 +6,11 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
-ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 93f5d7fe5ec14a0d5ccb69e84e9419488192a5c4
 
 ---
-# 列表
+# <a name="lists"></a>列表
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -26,22 +26,17 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242878"><strong>ListView 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242705"><strong>GridView 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209348"><strong>ComboBox 类</strong></a></li>
+<li>[**ListView 类**](https://msdn.microsoft.com/library/windows/apps/br242878)</li>
+<li>[**GridView 类**](https://msdn.microsoft.com/library/windows/apps/br242705)</li>
+<li>[**ComboBox 类**](https://msdn.microsoft.com/library/windows/apps/br209348)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 列表视图
+## <a name="list-views"></a>列表视图
 
 借助列表视图，你可以对项目进行分类并为之分配组标头、拖放项目、规划内容以及重新对项目进行排序。
 
-### 这是正确的控件吗？
+### <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用列表视图可执行以下操作：
 
@@ -49,18 +44,18 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 -   导航单个或已分类的内容集合。
 -   在[大纲/细节模式](master-details.md)下创建大纲窗格。 大纲/细节模式常用于电子邮件应用中，其中一个窗格（大纲）具有一个包含可选项的列表，而另一个窗格（细节）具有一个包含选定项的详细视图。
 
-### 示例
+### <a name="examples"></a>示例
 
 下面是在手机上显示分组数据的简单列表视图。
 
 ![具有分组数据的列表视图](images/simple-list-view-phone.png)
 
-### 建议
+### <a name="recommendations"></a>建议
 
 -   列表内的项应具有相同的行为。
 -   如果你的列表划分为多个组，可以使用[语义式缩放](semantic-zoom.md)，使用户更轻松地浏览分组内容。
 
-### 列表视图文章
+### <a name="list-view-articles"></a>列表视图文章
 <table>
 <colgroup>
 <col width="50%" />
@@ -96,11 +91,11 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 </tbody>
 </table>
 
-## 网格视图
+## <a name="grid-views"></a>网格视图
 
 网格视图适用于排列和浏览基于图像的内容集合。 网格视图布局沿垂直方向滚动，而沿水平方向平移。 项的布局顺序为从左到右，其阅读顺序为从上到下。
 
-### 这是正确的控件吗？
+### <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用列表视图可执行以下操作：
 
@@ -108,7 +103,7 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 -   显示内容库。
 -   设置与[语义式缩放](semantic-zoom.md)相关联的两个内容视图的格式。
 
-### 示例
+### <a name="examples"></a>示例
 
 本示例显示了一个典型的网格视图布局，在该示例中用于浏览应用。 网格视图项目的元数据通常限制为几行文本和某一项目分级。
 
@@ -118,12 +113,12 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 
 ![内容库示例](images/controls_list_contentlibrary.png)
 
-### 建议
+### <a name="recommendations"></a>建议
 
 -   列表内的项应具有相同的行为。
 -   如果你的列表划分为多个组，可以使用[语义式缩放](semantic-zoom.md)，使用户更轻松地浏览分组内容。
 
-### 网格视图文章
+### <a name="grid-view-articles"></a>网格视图文章
 <table>
 <colgroup>
 <col width="50%" />
@@ -151,18 +146,18 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 </tbody>
 </table>
 
-## 下拉列表
+## <a name="drop-down-lists"></a>下拉列表
 
 下拉列表（也称为组合框）最初处于紧凑状态，可展开以显示可选择项的列表。 选定项始终可见，而不可见的项可在用户点击组合框时进入视图以将其展开。
 
-### 这是正确的控件吗？
+### <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 -   使用下拉列表可让用户从一组项中选择单个值，这些项可使用单行文本完全显示。
 -   使用列表视图或网格视图（而非组合框），显示包含多行文本或多张图像的项。
 -   当少于五项时，应考虑使用[单选按钮](radio-button.md)（当进行单项选择时）或[复选框](checkbox.md)（当进行多项选择时）。
 -   当选择项在应用流中不太重要时使用组合框。 如果在多数情况下为大部分用户推荐了默认选项，则通过使用列表视图显示所有项可能会导致用户过多地注意这些选项。 使用组合框可以节省空间并减少分心。
 
-### 示例
+### <a name="examples"></a>示例
 
 处于紧凑状态的组合框可以显示标题。
 
@@ -176,20 +171,20 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 
 ![下拉列表中的滚动栏示例](images/combo_box_scroll.png)
 
-### 建议
+### <a name="recommendations"></a>建议
 
 -   将组合框的文本内容限制为单行。
 -   以最合乎逻辑的顺序对组合框中的项进行排序。 将相关选项组合到一起并将最常见的选项置于顶部。 按字母顺序对名称进行排序、按数字顺序对数字进行排序，并按时间先后顺序对日期进行排序。
 
-### 文本搜索
+### <a name="text-search"></a>文本搜索
 
 组合框自动支持其集合内的搜索。 当焦点位于打开或关闭的组合框上时，如果用户在物理键盘上键入字符，与用户的字符串匹配的候选项将引入视图。 当在长列表中导航时，此功能尤其有用。 例如，当与包含状态列表的下拉列表交互时，用户可以按“w”键来将“Washington”引入视图，以供快速选择。 
 
-## 列表框
+## <a name="list-boxes"></a>列表框
 
 列表框允许用户从集合中选择单个项或多个项。 列表框类似于下拉列表，区别在于列表框始终处于打开状态，并且不存在紧凑式状态的列表框（不可进行展开）。 当没有空间来显示所有内容时，可滚动列表中的项。
 
-### 这是正确的控件吗？
+### <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 -   当列表中的项重要到需突出显示时，以及当没有足够的屏幕空间可用来显示整个列表时，列表框会很有用。
 -   列表框应将用户的注意力吸引到一项重要选择的全套备选项。 相比之下，下拉列表的设计初衷则是将用户的注意力吸引到某一选定项。
@@ -200,7 +195,7 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
     -   项为相邻的数字值。 如果是这种情况，应考虑使用[滑块](slider.md)。
     -   选择项在你的应用流中不太重要，或者说对于大部分情况下的大部分用户，建议使用默认选项。 改用下拉列表。
 
-### 建议
+### <a name="recommendations"></a>建议
 
 -   在列表框中，项数的理想范围为 3 到 9 个。
 -   当列表框中的项可以动态变化时，其效果颇佳。
@@ -211,7 +206,7 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 -   使用默认字体，除非你的品牌指南指示使用其他字体。
 -   不要使用列表框执行命令或者动态显示或隐藏其他控件。
 
-## 选择模式
+## <a name="selection-mode"></a>选择模式
 
 选择模式允许用户选择单个或多个项并对其执行操作。 可通过上下文菜单调用此模式，方法是在项上使用 CTRL+单击或 SHIFT+单击组合键，或者在库视图中的某一项上滚动选择目标。 当选择模式处于活动状态时，每个列表项旁都将显示复选框，而操作将显示在屏幕的顶部或底部。
 
@@ -233,7 +228,7 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 
 有关命令栏建议，请参阅[命令栏指南](app-bars.md)。
 
-## 全球化和本地化清单
+## <a name="globalization-and-localization-checklist"></a>全球化和本地化清单
 
 <table>
 <tr>
@@ -248,7 +243,7 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 </table>
 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 - [中心](hub.md)
 - [大纲/细节](master-details.md)
@@ -264,6 +259,6 @@ ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

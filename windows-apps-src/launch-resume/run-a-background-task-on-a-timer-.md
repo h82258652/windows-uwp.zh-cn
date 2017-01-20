@@ -4,14 +4,14 @@ title: "在计时器上运行后台任务"
 description: "了解如何计划一次性后台任务，或运行定期后台任务。"
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 488bbbf1dbe99d653dded0af78a8fd22c7429cde
 
 ---
 
-# 在计时器上运行后台任务
+# <a name="run-a-background-task-on-a-timer"></a>在计时器上运行后台任务
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -21,10 +21,10 @@ ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
 
 了解如何计划一次性后台任务，或运行定期后台任务。
 
--   此示例假定你的后台任务需要定期运行，或在特定时间运行以支持你的应用。 如果你已调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，后台任务将仅使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 运行。
--   本主题假定你已经创建了一个后台任务类。 若要快速生成后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+-   此示例假定你的后台任务需要定期运行，或在特定时间运行以支持你的应用。 如果你已调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/br224843)，后台任务将仅使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700485) 运行。
+-   本主题假定你已经创建了一个后台任务类。 若要快速生成后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-a-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-## 创建时间触发器
+## <a name="create-a-time-trigger"></a>创建时间触发器
 
 -   创建新的 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)。 第二个参数 *OneShot* 指定后台任务是仅运行一次还是保持周期性运行。 如果 *OneShot* 设置为 true，则第一个参数 (*FreshnessTime*) 会指定在计划后台任务之前需等待的分钟数。 如果 *OneShot* 设置为 false，*FreshnessTime* 会指定后台任务的运行频率。
 
@@ -34,7 +34,7 @@ ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
 
     -   如果 *FreshnessTime* 设置为 15 分钟并且 *OneShot* 为 false，则任务将计划从其注册之时起 15 至 30 分钟内每隔 15 分钟运行一次该任务。 如果设置为 n 分钟并且 *OneShot* 为 false，则任务将计划从其注册之时起 n 至 n + 15 分钟内每隔 n 分钟运行一次该任务。
 
-    **注意** 如果 *FreshnessTime* 设置为少于 15 分钟，则在尝试注册后台任务时将引发异常。
+    **注意**  如果 *FreshnessTime* 设置为少于 15 分钟，则在尝试注册后台任务时将引发异常。
  
 
     例如，该触发器将导致后台任务每小时运行一次：
@@ -47,7 +47,7 @@ ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
     > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
     > ```
 
-## （可选）添加条件
+## <a name="optional-add-a-condition"></a>（可选）添加条件
 
 -   如果需要，创建一个后台任务条件以控制任务何时运行。 防止后台任务在未满足条件之前运行的条件 - 有关详细信息，请参阅 [设置运行后台任务的条件](set-conditions-for-running-a-background-task.md)。
 
@@ -61,7 +61,7 @@ ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
     > SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
     > ```
 
-##  调用 RequestAccessAsync()
+##  <a name="call-requestaccessasync"></a>调用 RequestAccessAsync()
 
 -   在尝试注册 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 后台任务之前，调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)。
 
@@ -73,7 +73,7 @@ ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
     > BackgroundExecutionManager::RequestAccessAsync();
     > ```
 
-## 注册后台任务
+## <a name="register-the-background-task"></a>注册后台任务
 
 -   通过调用后台任务注册函数注册后台任务。 有关注册后台任务的详细信息，请参阅[注册后台任务](register-a-background-task.md)。
 
@@ -99,18 +99,16 @@ ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
     > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
 
-## 备注
+## <a name="remarks"></a>备注
 
-> 
-  **注意** 从 Windows10 开始，用户无须再将你的应用添加到锁屏界面，即可利用后台任务。 有关后台任务触发器类型的指南，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+> **注意** 从 Windows 10 开始，用户无须再将你的应用添加到锁屏界面，即可利用后台任务。 有关后台任务触发器类型的指南，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-> 
-  **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows10 开发人员。 如果你面向 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
-* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -125,6 +123,6 @@ ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

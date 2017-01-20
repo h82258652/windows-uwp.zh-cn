@@ -4,8 +4,8 @@ Description: "本文列出了在使用桌面到 UWP 桥转换应用前你需要�
 Search.Product: eADQiWindows 10XVcnh
 title: "为桌面到 UWP 桥准备应用"
 translationtype: Human Translation
-ms.sourcegitcommit: f7a8b8d586983f42fe108cd8935ef084eb108e35
-ms.openlocfilehash: 81a2485d5be22dd392c21aaff281c1c9263883a9
+ms.sourcegitcommit: d22d51d52c129534f8766ab76e043a12d140e8b7
+ms.openlocfilehash: a93d5ad1c1f429182c8df7d29df85dee70064e2f
 
 ---
 
@@ -66,7 +66,13 @@ ms.openlocfilehash: 81a2485d5be22dd392c21aaff281c1c9263883a9
 + __你的应用使用 Dev11 VCLibs 框架程序包__。 如果 VCLibs 11 库被定义为 AppX 程序包中的依赖项，则可以直接从 Windows 应用商店中安装。 若要执行此操作，请对应用包清单进行以下更改：在 `<Dependencies>` 节点下，添加：  
 `<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
 在从 Windows 应用商店安装期间，将在安装应用之前先安装 VCLibs 11 框架的适当版本（x86 或 x64）。  
-如果通过旁加载安装应用，将不安装这些依赖项。 若要在计算机上手动安装这些依赖项，必须下载并安装[桌面应用桥的 VC 11.0 框架包](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064)。 有关这些方案的详细信息，请参阅[在 Centennial 项目中使用 Visual C++ 运行时](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)。
+如果通过旁加载安装应用，将不安装这些依赖项。 若要在计算机上手动安装这些依赖项，必须下载并安装[桌面应用桥的 VC 11.0 框架包](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064)。 有关这些方案的详细信息，请参阅 [在 Centennial 项目中使用 Visual C++ 运行时](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)。
+
++ __你的应用创建跳转列表条目并调用 [ICustomDestinationList::SetAppID](https://msdn.microsoft.com/library/windows/desktop/dd378403(v=vs.85).aspx) 或 [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422(v=vs.85).aspx)__。 不要在代码中以编程方式设置你的 AppID。 否则，将会导致不显示你的跳转列表条目。 如果你的应用需要自定义 ID，请使用清单文件进行指定。 请参阅 [使用桌面桥手动将你的应用转换到 UWP](desktop-to-uwp-manual-conversion.md) 获取说明。 应用程序的 AppID 在 *YOUR_PRAID_HERE* 部分中指定。 
+
++ __你的应用添加跳转列表 shell 链接，该链接引用程序包中的可执行文件__。 你不能通过跳转列表直接启动程序包中的可执行文件（应用自身 .exe 的绝对路径除外）。 相反，改为注册应用执行别名（此别名允许通过关键字启动转换的应用，就像它在该路径上一样），并设置到别名的链接目标路径。 有关如何使用 appExecutionAlias 扩展的详细信息，请参阅 [桌面桥应用扩展](desktop-to-uwp-extensions.md)。 注意，如果要求跳转列表中的链接资源与原始 .exe 匹配，你将需要使用 [**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) 和 PKEY_Title 的显示名称设置图标等资源，就像设置其他自定义条目那样。 
+
++ __你的应用可添加跳转列表条目，该列表通过绝对路径引用应用程序包中的资源__。 应用的程序包更新时，应用的安装路径可能会更改，从而更改资源的位置（例如图标、文档、可执行文件等）。 如果跳转列表条目通过绝对路径引用此类资源，则应用应定期刷新其跳转列表（例如应用启动时）以确保正确解析路径。 或者，改用 UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) API，使你可以使用程序包相对的 ms-resource URI 方案（也与语言、DPI 和高对比度相关）来引用字符串和图像资源。 
 
 
 <!--HONumber=Dec16_HO1-->

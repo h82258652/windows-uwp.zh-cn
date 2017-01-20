@@ -1,42 +1,44 @@
 ---
 author: DelfCo
-Description: "使用 Windows.Globalization.DateTimeFormatting API 和自定义模式严格按照所需模式显示日期和时间。"
+Description: "结合使用 Windows.Globalization.DateTimeFormatting API 和自定义模式以严格按照所需模式显示日期和时间。"
 title: "使用模式设置日期和时间的格式"
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: f49af17ada36ceb2e5898d80047c2d616b1d0c6e
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 564062173544ab368d8dd7fc8fe2c35e9d518444
 
 ---
 
-# 使用模式设置日期和时间的格式
+# <a name="use-patterns-to-format-dates-and-times"></a>使用模式设置日期和时间的格式
 
-
-
-
-
-**重要的 API**
-
--   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)
--   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 结合使用 [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API 和自定义模式以严格按照所需模式显示日期和时间。
 
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>简介
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)</li>
+<li>[**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)</li>
+</ul>
+</div>
+
+
+## <a name="introduction"></a>简介
 
 
 [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) 为全球的语言和区域提供了各种正确设置日期和时间格式的方法。 你可以为年、月、日等使用标准格式，或使用标准字符串模板，例如“longdate”或“month day”。
 
 但当你希望更好地控制要显示的 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 字符串要素的顺序和格式时，你可以为字符串模板参数使用名为“模式”的特殊语法。 使用模式语法可以获得 **DateTime** 对象的个别要素（例如获取月名称或仅获取年值），以便在你选择的任何自定义格式中显示它们。 此外，模式也可以进行本地化以适应其他语言和区域。
 
-**注意** 这是格式模式的概述。 有关格式模板和格式模式的更完整讨论，请参阅 [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828) 类的“备注”部分。
+**注意**  这是格式模式的概述。 有关格式模板和格式模式的更完整讨论，请参阅 [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828) 类的“备注”部分。
 
  
 
-## <span id="What_you_need_to_know"></span><span id="what_you_need_to_know"></span><span id="WHAT_YOU_NEED_TO_KNOW"></span>你需要了解的内容
+## <a name="what-you-need-to-know"></a>你需要了解的内容
 
 
 需要指出的是在使用模式时，你生成的是一种自定义格式，而该格式不能保证满足各种区域性。 例如，看一下“month day”模板：
@@ -111,7 +113,7 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol is missing)
 -   不保证文化上的符合性。
 -   能够以任何顺序指定要素的任何组合。
 
-## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>任务
+## <a name="tasks"></a>任务
 
 
 假设你希望将当前月份和日期与当前时间以特定的格式一起显示。 例如，你希望“英语(美国)”用户看到如下内容：
@@ -177,7 +179,7 @@ var mydateplustimefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFor
 var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 ```
 
-## <span id="related_topics"></span>相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [设置日期和时间格式示例](http://go.microsoft.com/fwlink/p/?LinkId=231618)
@@ -192,6 +194,6 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

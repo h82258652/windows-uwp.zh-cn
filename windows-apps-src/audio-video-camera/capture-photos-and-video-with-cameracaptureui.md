@@ -4,21 +4,25 @@ ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: "本文介绍如何使用 CameraCaptureUI 类来使用内置于 Windows 的相机 UI 捕获照片或视频。"
 title: "使用 Windows 内置相机 UI 捕获照片和视频"
 translationtype: Human Translation
-ms.sourcegitcommit: b4bf4d74ae291186100a553a90fd93f890b8ece4
-ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
+ms.sourcegitcommit: 65508d32995f57672f94dffa4866a86d57903d00
+ms.openlocfilehash: 10ac3f53f0f8128985c39154f74a9348a40641b5
 
 ---
 
-# 使用 Windows 内置相机 UI 捕获照片和视频
+# <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 内置相机 UI 捕获照片和视频
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文将介绍如何使用 CameraCaptureUI 类来使用内置于 Windows 的相机 UI 捕获照片或视频。 此功能易于使用，并允许你的应用只需几行代码即可获取用户捕获的照片或视频。
 
-如果你希望提供你自己的相机 UI 或者你的方案需要对捕获操作进行更可靠的低级别控制，你应使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象并实现自己的捕获体验。 有关详细信息，请参阅[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
+如果你希望提供你自己的相机 UI 或者你的方案需要对捕获操作进行更可靠的低级别控制，你应使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 对象并实现自己的捕获体验。 有关详细信息，请参阅 [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
-## 使用 CameraCaptureUI 捕获照片
+> [!NOTE]
+> 如果使用 CameraCaptureUI，不应指定应用清单文件中的**网络摄像头**或**麦克风**功能。 如果指定了这些功能，应用将显示在设备的摄像头隐私设置中，但是即使用户拒绝摄像头访问应用，也不会阻止 CameraCaptureUI 捕获媒体。 这是因为 Windows 内置的摄像头应用是受信任的第一方应用，需要用户按下按钮来启动照片、音频和视频捕获。 如果在使用 CameraCaptureUI 时指定了网络摄像头或麦克风功能，提交至应用商店时可能无法通过 WACK（Windows 应用程序认证工具包）认证。
+> 如果使用 MediaCapture 以编程方式捕获音频、照片或视频，必须指定应用清单文件中的网络摄像头或麦克风功能。
+
+## <a name="capture-a-photo-with-cameracaptureui"></a>使用 CameraCaptureUI 捕获照片
 
 若要使用相机捕获 UI，请将 [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) 命名空间包含在你的项目中。 若要针对返回的图像文件执行文件操作，请包含 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346)。
 
@@ -59,7 +63,7 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
-## 使用 CameraCaptureUI 捕获视频
+## <a name="capture-a-video-with-cameracaptureui"></a>使用 CameraCaptureUI 捕获视频
 
 若要捕获视频，请创建新的 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 对象。 使用对象的 [**VideoSettings**](https://msdn.microsoft.com/library/windows/apps/br241059) 属性，你可以为返回的视频指定属性，例如视频的格式。
 
@@ -103,7 +107,7 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [相机](camera.md)
 * [使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -118,6 +122,6 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

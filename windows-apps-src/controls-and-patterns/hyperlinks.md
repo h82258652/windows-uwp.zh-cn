@@ -6,11 +6,11 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 4d474af6930354482f9f8b6e7754ddaf6fe65dac
 
 ---
-# 超链接
+# <a name="hyperlinks"></a>超链接
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,17 +21,13 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279356"><strong>Hyperlink 文本元素</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242739"><strong>HyperlinkButton 控件</strong></a></li>
+<li>[**Hyperlink 文本元素**](https://msdn.microsoft.com/library/windows/apps/dn279356)</li>
+<li>[**HyperlinkButton 控件**](https://msdn.microsoft.com/library/windows/apps/br242739)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 当你需要文本，并且该文本可在选中后做出响应并将用户导航至与所选文本有关的详细信息时，请使用超链接。
 
@@ -41,13 +37,13 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 -   将 **HyperlinkButton** 用于独立超链接。 HyperlinkButton 是一种专用按钮控件，可在需要使用按钮的任何位置使用。
 -   使用带有[图像](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx)的 **HyperlinkButton** 作为其内容，以创建可单击的图像。
 
-## 示例
+## <a name="examples"></a>示例
 
 计算器应用中的超链接。
 
 ![计算器应用中的超链接示例](images/control-examples/hyperlinks-calculator.png)
 
-## 创建 Hyperlink 文本元素
+## <a name="create-a-hyperlink-text-element"></a>创建 Hyperlink 文本元素
 
 此示例将演示如何在 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 内使用 Hyperlink 文本元素。
 
@@ -64,9 +60,9 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 ![作为文本元素的超链接示例](images/controls_hyperlink-element.png) 
 
-> **提示**  当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
+> **提示**&nbsp;&nbsp;当你在文本控件中使用超链接而其他文本元素采用 XAML 时，请将内容放置在 [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) 容器中，并将 `xml:space="preserve"` 属性应用到 Span 以在超链接和其他元素之间保留空白区域。
 
-## 创建 HyperlinkButton
+## <a name="create-a-hyperlinkbutton"></a>创建 HyperlinkButton
 
 下面介绍了如何使用带有文本和图像的 HyperlinkButton。
 
@@ -87,7 +83,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 ![作为按钮控件的超链接示例](images/controls_hyperlink-button-image.png)
 
-## 处理导航
+## <a name="handle-navigation"></a>处理导航
 
 对于这两种类型的超链接，你可以采用相同的方式处理导航；可设置 **NavigateUri** 属性，或处理 **Click** 事件。
 
@@ -95,7 +91,8 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 若要使用超链接导航到 URI，请设置 NavigateUri 属性。 当用户单击或点击超链接时，指定的 URI 将在默认浏览器中打开。 默认浏览器将在独立于应用的进程中运行。
 
-> **注意**  无需使用 http: 或 https: 方案。 你可以使用诸如 ms-appx:、ms-appdata: 或 ms-resources: 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 file: 方案。 有关详细信息，请参阅 [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
+> [!NOTE]
+> 无需使用 http: 或 https: 方案。 你可以使用诸如 ms-appx:、ms-appdata: 或 ms-resources: 等方案，前提是这些位置中存在适合在浏览器中加载的资源内容。 但是，明确禁止 file: 方案。 有关详细信息，请参阅 [URI 方案](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)。
 
 > 当用户单击超链接时，NavigateUri 属性的值传递到 URI 类型和方案的系统处理程序。 然后，系统启动针对为 NavigateUri 提供的 URI 的方案注册的应用。
 
@@ -110,7 +107,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 在 Click 事件处理程序内，你没有任何方法来阻止默认浏览器加载为 NavigateUri 指定的任何有效目标；当超链接已激活并且无法从 Click 事件处理程序内取消时，将自动（异步）发生该操作。 
 
-## 超链接下划线
+## <a name="hyperlink-underlines"></a>超链接下划线
 默认情况下，超链接带下划线。 此下划线很重要，因为它有助于满足辅助功能要求。 色盲用户使用下划线来区分超链接和其他文本。 如果你禁用下划线，应考虑添加某些其他类型的格式差异来将超链接与其他文本区分开来，如 FontWeight 或 FontStyle。
 
 **超链接文本元素**
@@ -127,7 +124,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 如果你需要一个显示为不带下划线的文本的按钮，请考虑使用标准按钮控件，并对其 Style 属性应用内置 `TextBlockButtonStyle` 系统资源。
 
-## Hyperlink 文本元素的说明
+## <a name="notes-for-hyperlink-text-element"></a>Hyperlink 文本元素的说明
 
 本部分仅适用于超链接文本元素，不适用于 HyperlinkButton 控件。
 
@@ -145,16 +142,14 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 超链接的默认颜色为系统的主题色。 你可以设置 [Foreground](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx) 属性来覆盖此颜色。
 
-## 建议
+## <a name="recommendations"></a>建议
 
 -   仅使用超链接进行导航；不要使用它们进行其他操作。
 -   将字形渐变中的正文样式用于基于文本的超链接。 阅读有关[**fonts and the Windows 10 type ramp**](fonts.md)的内容。
 -   使离散型超链接具有足够的间隔，以便用户可以区分它们，并且可以轻松地选择每个超链接。
 -   将工具提示添加到可指示用户将被定向到的位置的超链接中。 如果用户将被定向到外部站点，则将顶级域名包含在工具提示中，并将文本样式设置为辅助字体颜色。
 
-
-
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 - [文本控件](text-controls.md)
 - [工具提示指南](tooltips.md)
@@ -165,6 +160,6 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

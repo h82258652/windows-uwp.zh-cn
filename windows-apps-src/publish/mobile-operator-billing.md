@@ -4,8 +4,8 @@ Description: "Windows 应用商店为支持此功能的移动运营商提供移�
 title: "移动运营商结算"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: e829808a8e521f2308454e05e8911579b22be807
-ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
+ms.sourcegitcommit: 694c3223278c8666bfb47bf9898ac7c02ac981f4
+ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
 
 Windows 应用商店为支持此功能的移动运营商提供移动运营商结算作为付款方式。 如果客户的移动运营商支持此功能，客户可以使用其移动帐户进行应用商店购买。
 
-> **注意** 如果客户的移动运营商提供移动运营商结算，但是客户在其设备上没有此选项，请参阅以下[疑难解答步骤](http://go.microsoft.com/fwlink/p/?LinkId=523993)。
+> **注意**  如果客户的移动运营商提供移动运营商结算，但是客户在其设备上没有此选项，请参阅以下[疑难解答步骤](http://go.microsoft.com/fwlink/p/?LinkId=523993)。
 
 我们定期与移动运营商合作以扩展此付款方式的可用性。 如果建议我们应该支持下表中没有看到的移动运营商，请联系该移动运营商。
 
@@ -27,6 +27,7 @@ Windows 10 引入了对移动运营商计费的新实现方式。 此实现可�
 | 国家/地区  | 移动运营商 |
 |-----------------|------------------|
 | 芬兰         | DNA、Elisa       |
+| 法国          | Orange           |
 | 德国         | O2               |
 | 匈牙利         | Telenor          |
 | 意大利           | Wind             |
@@ -77,7 +78,7 @@ Windows 10 引入了对移动运营商计费的新实现方式。 此实现可�
 | 南非         | Vodacom                                                            |
 | 西班牙                | Movistar、Vodafone、Orange                                         |
 | 英国       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
-| 美国        | AT&amp;T、Sprint、T-Mobile、Verizon                                    |
+| 美国        | AT&T、T-Mobile、Verizon                                    |
 | 越南              | Viettel、Vietnamobile、Vinaphone、Mobifone                         |
 
  
@@ -94,6 +95,6 @@ Windows 10 引入了对移动运营商计费的新实现方式。 此实现可�
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

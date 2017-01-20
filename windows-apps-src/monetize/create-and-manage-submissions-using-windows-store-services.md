@@ -4,8 +4,8 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "使用 Windows 应用商店提交 API，以编程方式创建和管理已注册到 Windows 开发人员中心帐户的应用的提交。"
 title: "使用 Windows 应用商店服务创建和管理提交"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: 1172be1072f0c539828a08655236be467c6c9fba
+ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
+ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
 
 ---
 
@@ -55,8 +55,7 @@ ms.openlocfilehash: 1172be1072f0c539828a08655236be467c6c9fba
 
 在可以使用 Windows 应用商店提交 API 之前，必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索该应用程序的租户 ID 和客户端 ID，然后生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Windows 应用商店提交 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
 
->**注意**
-              只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
+>**注意**&nbsp;&nbsp;只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
 1.  在开发人员中心中，转到“帐户设置”、单击“管理用户”，然后将你的组织的开发人员中心帐户与你的组织的 Azure AD 目录相关联。 有关详细说明，请参阅[管理帐户用户](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
@@ -71,10 +70,10 @@ ms.openlocfilehash: 1172be1072f0c539828a08655236be467c6c9fba
 
 在 Windows 应用商店提交 API 中调用任何方法之前，首先必须获取将传递给该 API 中每个方法的 **Authorization** 标头的 Azure AD 访问令牌。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以对它进行刷新，以便可以在之后调用该 API 时继续使用。
 
-若要获取访问令牌，请按照[使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)中的说明将 HTTP POST 发送到以下 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
+若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
 
 ```
-POST https://login.microsoftonline.com/<your_tenant_id>/oauth2/token HTTP/1.1
+POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
 
@@ -84,26 +83,26 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-对于 *tenant\_id*、*client\_id* 和 *client\_secret* 参数，请为从上一部分的开发人员中心中检索得到的应用程序指定租户 ID、客户端 ID 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com``` URI。
+对于 POST URI 中的 *tenant\_id*、*client\_id* 和 *client\_secret* 参数，请为从上一部分的开发人员中心中检索到的应用程序指定租户 ID、客户端 ID 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
 在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
+
+对于演示如何使用 C#、Java 或 Python 代码获取访问令牌的示例，请参阅 Windows 应用商店提交 API [代码示例](#code-examples)。
 
 <span id="call-the-windows-store-submission-api">
 ## <a name="step-3-use-the-windows-store-submission-api"></a>步骤 3：使用 Windows 应用商店提交 API
 
 获取 Azure AD 访问令牌后，可以在 Windows 应用商店提交 API 中调用方法。 API 中包含的许多方法按照所适用的应用、加载项和软件包外部测试版方案进行分组。 若要创建或更新提交，通常在 Windows 应用商店提交 API 中按特定顺序调用多个方法。 有关每个方案和每个方法的语法的信息，请参阅下表中的文章。
 
->**注意**
-              获取访问令牌后，可以在 60 分钟的令牌有效期内，在 Windows 应用商店提交 API 中调用方法。
+>**注意**&nbsp;&nbsp;获取访问令牌后，在令牌到期前，你有 60 分钟时间可以调用 Windows 应用商店提交 API 中的方法。
 
-| 方案       | 描述                                                                 |
+| 方案       | 说明                                                                 |
 |---------------|----------------------------------------------------------------------|
 | 应用 |  检索已注册到 Windows 开发人员中心帐户的所有应用的数据，然后创建这些应用的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[获取应用数据](get-app-data.md)</li><li>[管理应用提交](manage-app-submissions.md)</li></ul> |
 | 加载项 | 获取、创建或删除应用的加载项，然后获取、创建或删除这些加载项的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[管理加载项](manage-add-ons.md)</li><li>[管理加载项提交](manage-add-on-submissions.md)</li></ul> |
 | 软件包外部测试版 | 获取、创建或删除应用的软件包外部测试版，然后获取、创建或删除这些软件包外部测试版的提交。 有关这些方法的详细信息，请参阅以下文章： <ul><li>[管理软件包外部测试版](manage-flights.md)</li><li>[管理软件包外部测试版提交](manage-flight-submissions.md)</li></ul> |
 
-<span />
-
+<span id="code-samples"/>
 ## <a name="code-examples"></a>代码示例
 
 下文中提供了详细的代码示例，演示如何以不同的多种编程语言使用 Windows 应用商店提交 API。
@@ -137,6 +136,6 @@ grant_type=client_credentials
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

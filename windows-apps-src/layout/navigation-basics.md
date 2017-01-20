@@ -1,17 +1,20 @@
 ---
 author: mijacobs
 Description: "通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。"
-title: "通用 Windows 平台 (UWP) 应用的导航设计基础知识"
+title: "UWP 应用（Windows 应用）的导航基础知识"
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
-ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
+ms.sourcegitcommit: d0c1858727d4a19e699d2ec9cf5d869460873524
+ms.openlocfilehash: 25a84e7a72fb87faea47845d7d32a5c3071a78a7
 
 ---
 
-#  UWP 应用的导航设计基础知识
+#  <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 通用 Windows 平台 (UWP) 应用中的导航基于一个导航结构、导航元素和系统级功能的灵活模型。 它们配合使用以提供在应用、页面和内容之间移动的各种直观用户体验。
 
@@ -31,12 +34,12 @@ ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 
     若要提供感觉直观的一致体验，请以可预测的方式响应系统级导航功能。
 
-## <span id="Build_the_right_navigation_structure"></span><span id="build_the_right_navigation_structure"></span><span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"></span>生成正确的导航结构
+## <a name="build-the-right-navigation-structure"></a>生成正确的导航结构
 
 
 让我们将应用视作多组页面的集合，其中每个页面包含一组唯一的内容和功能。 例如，照片应用可能具有一个用于拍摄照片的页面、一个用于图像编辑的页面以及另一个用于管理图像库的页面。 你将这些页面排列成组的方式定义了应用的导航结构。 排列一组页面有两种常见方法：
 
-<table>
+<table class="uwpd-noborder uwpd-top-aligned-table">
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -49,12 +52,12 @@ ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><img src="images/nav/nav-pages-hiearchy.png" alt="Pages arranged in a hierarchy" /></p></td>
-<td align="left"><p><img src="images/nav/nav-pages-peer.png" alt="Pages arranged as peers" /></p></td>
+<td style="text-align: center;"><p><img src="images/nav/nav-pages-hiearchy.png" alt="Pages arranged in a hierarchy" /></p></td>
+<td style="text-align: center;"><p><img src="images/nav/nav-pages-peer.png" alt="Pages arranged as peers" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>页面将组织为树状结构。 每个子页面只有一个父页面，但是一个父页面可以具有一个或多个子页面。 若要访问子页面，必须经过父页面。</p></td>
-<td align="left"><p>页面并行存在。 你可以按任意顺序从一个页面转到另一个页面。</p></td>
+<td style="vertical-align: top">页面将组织为树状结构。 每个子页面只有一个父页面，但是一个父页面可以具有一个或多个子页面。 若要访问子页面，必须经过父页面。 </td>
+<td style="vertical-align: top"> 页面并行存在。 你可以按任意顺序从一个页面转到另一个页面。 </td>
 </tr>
 </tbody>
 </table>
@@ -67,39 +70,36 @@ ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 
 那么，你何时应该将页面排列为层次结构，何时应该将它们作为对等方平行排列？ 要回答该问题，我们必须考虑组中的页面数量、是否应该以特定的顺序遍历页面以及页面之间的关系。 一般情况下，扁平的结构更易于理解并且导航更快速，但是有些情况适合使用深层的层次结构。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>在以下情况下我们建议使用层次关系：</p>
+
+
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">在以下情况下我们建议使用层次关系：
 <ul>
-<li><p>你预期用户以特定的顺序遍历页面。 按层次结构排列以强制执行该顺序。</p></li>
-<li><p>组中的一个页面和其他页面之间有明确的父子关系。</p></li>
-<li><p>如果组中的页面多于 7 个。</p>
+<li>你预期用户以特定的顺序遍历页面。 按层次结构排列以强制执行该顺序。</li>
+<li>组中的一个页面和其他页面之间有明确的父子关系。</li>
+<li>组中的页面多于 7 个。
 <p>当组中的页面多于 7 个时，用户可能难以区分页面或难以弄清他们当前在组中的位置。 如果你认为这对你的应用不构成问题，请继续将页面作为对等方平行排列。 否则，请考虑使用层次结构将页面分为两个或更多的组。 （中心控件可帮助你将页面按类别分组。）</p></li>
-</ul></td>
-<td align="left"><p>在以下情况下我们建议使用对等关系：</p>
+</ul>
+  </div>
+  <div class="side-by-side-content-right">在以下情况下我们建议使用对等关系：
 <ul>
 <li>可以按任意顺序查看页面。</li>
 <li>页面之间明显不同，并且不具有明显的父/子关系。</li>
 <li><p>组中的页面少于 8 个。</p>
 <p>当组中的页面多于 7 个时，用户可能难以区分页面或难以弄清他们当前在组中的位置。 如果你认为这对你的应用不构成问题，请继续将页面作为对等方平行排列。 否则，请考虑使用层次结构将页面分为两个或更多的组。 （中心控件可帮助你将页面按类别分组。）</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-
+</ul>
+  </div>
+</div>
+</div>
  
 
-## <span id="Use_the_right_navigation_elements"></span><span id="use_the_right_navigation_elements"></span><span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"></span>使用正确的导航元素
+## <a name="use-the-right-navigation-elements"></a>使用正确的导航元素
 
 
 导航元素可以提供两种服务：它们可以帮助用户访问所需的内容，而且某些元素还可让用户知道他们在应用内所处的位置。 但是，它们也会占用应用本来可用于内容或命令元素的空间，因此使用适合应用结构的导航元素非常重要。
 
-### <span id="Peer_navigation_elements"></span><span id="peer_navigation_elements"></span><span id="PEER_NAVIGATION_ELEMENTS"></span>对等导航元素
+### <a name="peer-to-peer-navigation-elements"></a>对等导航元素
 
 对等导航元素支持在同一个子树的相同级别中的页面之间导航。
 
@@ -108,21 +108,17 @@ ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 对于对等导航，我们建议使用选项卡或导航窗格。
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">导航元素</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[表和透视表](../controls-and-patterns/tabs-pivot.md)</p>
+<td style="vertical-align:top;">[表和透视表](../controls-and-patterns/tabs-pivot.md)
 <p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
-<td align="left">显示指向同级别页面的持久链接列表。
+<td style="vertical-align:top;">显示指向同级别页面的持久链接列表。
 <p>在以下情况下使用选项卡/透视表：</p>
 <ul>
 <li><p>存在 2 到 5 个页面。</p>
@@ -133,9 +129,9 @@ ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 <p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[导航窗格](../controls-and-patterns/nav-pane.md)</p>
+<td style="vertical-align:top;">[导航窗格](../controls-and-patterns/nav-pane.md)
 <p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
-<td align="left">显示指向顶级页面的链接列表。
+<td style="vertical-align:top;">显示指向顶级页面的链接列表。
 <p>在以下情况下使用导航窗格：</p>
 <ul>
 <li>你预期用户不会在页面之间频繁切换。</li>
@@ -159,26 +155,22 @@ ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 
 ![具有两个子树的应用](images/nav/nav-subtrees2.png)
 
-### <span id="Hierarchical_navigation_elements"></span><span id="hierarchical_navigation_elements"></span><span id="HIERARCHICAL_NAVIGATION_ELEMENTS"></span>分层导航元素
+### <a name="hierarchical-navigation-elements"></a>分层导航元素
 
 分层导航元素提供父页面及其子页面之间的导航。
 
 ![分层导航](images/nav/nav-verticalmovement.png)
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">导航元素</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[中心](../controls-and-patterns/hub.md)</p>
+<td style="vertical-align:top;">[中心](../controls-and-patterns/hub.md)
 <p><img src="images/higsecone-hub-thumb.png" alt="Hub" /></p></td>
 <td align="left">中心是特殊类型的导航控件，可提供其子页面的预览/摘要。 与导航窗格或选项卡不同，它通过嵌入页面本身的链接和章节标题来提供对这些子页面的导航。
 <p>在以下情况下使用中心：</p>
@@ -188,8 +180,9 @@ ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 <p>中心有助于发现与探索，这使它们非常适合媒体、新闻阅读器和购物应用。</p>
 <p></p></td>
 </tr>
+
 <tr class="even">
-<td align="left"><p>[大纲/细节](../controls-and-patterns/master-details.md)</p>
+<td style="vertical-align:top;">[大纲/细节](../controls-and-patterns/master-details.md)
 <p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
 <td align="left">显示项目摘要的列表（大纲视图）。 通过选择项目，可在细节部分中显示其相应的项目页面。
 <p>在以下情况下使用大纲/细节元素：</p>
@@ -206,53 +199,45 @@ ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 
  
 
-### <span id="Historical_navigation_elements"></span><span id="historical_navigation_elements"></span><span id="HISTORICAL_NAVIGATION_ELEMENTS"></span>历史导航元素
+### <a name="historical-navigation-elements"></a>历史导航元素
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">导航元素</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">返回</td>
-<td align="left"><p>让用户遍历应用内和应用之间（具体取决于设备）的导航历史记录。 有关详细信息，请参阅本文后面显示的[使你的应用与系统级导航功能良好协作](#backnavigation)部分。</p></td>
+<td style="vertical-align:top;">[返回](navigation-history-and-backwards-navigation.md)</td>
+<td style="vertical-align:top;">让用户遍历应用内和应用之间（具体取决于设备）的导航历史记录。 有关详细信息，请参阅[导航历史记录和向后导航文章](navigation-history-and-backwards-navigation.md)。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Content-embedded_navigation_elements"></span><span id="content-embedded_navigation_elements"></span><span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"></span>嵌入内容的导航元素
+### <a name="content-level-navigation-elements"></a>内容级别的导航元素
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">导航元素</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">超链接和按钮</td>
-<td align="left"><p>嵌入内容的导航元素显示在页面的内容中。 与应该在页面的组或子树中保持一致的其他导航元素不同，嵌入内容的导航元素在不同页面上是唯一的。</p></td>
+<td style="vertical-align:top;">超链接和按钮</td>
+<td style="vertical-align:top;">嵌入内容的导航元素显示在页面的内容中。 与应该在页面的组或子树中保持一致的其他导航元素不同，嵌入内容的导航元素在不同页面上是唯一的。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Combining_navigation_elements"></span><span id="combining_navigation_elements"></span><span id="COMBINING_NAVIGATION_ELEMENTS"></span>合并导航元素
+### <a name="combining-navigation-elements"></a>合并导航元素
 
 你可以通过合并导航元素来创建适合你的应用的导航体验。 例如，你的应用可使用导航窗格来提供对顶级页面的访问，而使用选项卡来提供对二级页面的访问。
 
@@ -265,6 +250,10 @@ ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+
+<!--HONumber=Dec16_HO3-->
 
 

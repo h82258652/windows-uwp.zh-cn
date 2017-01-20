@@ -6,12 +6,13 @@ ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: a433660665eeaa0caad3f380a587de89b8c74441
 
 ---
 
-# 多个输入
+# <a name="multiple-inputs"></a>多个输入
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 正如人们在彼此交流时会结合使用语音和手势，在与应用交互时也会用到多种类型和模式的输入。
 
@@ -24,12 +25,12 @@ ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
 -   所有输入方式都一直受支持吗？ 需使用某些控件？ 需在特定时间或环境下使用？
 -   是否有输入法优先？
 
-## 单一（或独占）模式交互
+## <a name="single-or-exclusive-mode-interactions"></a>单一（或独占）模式交互
 
 
 借助单一模式交互，可支持多种输入类型，但每次操作只能使用一种。 例如，将语音识别用于命令，而将手势用于导航；或者将触摸或手势用于文本输入，具体取决于邻近感应。
 
-## 多模式交互
+## <a name="multimodal-interactions"></a>多模式交互
 
 
 借助多模式交互，多个输入法将依次用于完成某一操作。
@@ -45,6 +46,6 @@ ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

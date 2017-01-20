@@ -5,22 +5,32 @@ title: "设置语音识别超时"
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
 template: detail.hbs
+keywords: "语音，语音，语音识别，自然语言，听写，输入，用户交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 0e5b60b2a59478899343ed4dee9d9c2039607491
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 770a34c7c190540456a2748290b0aa557fcc1800
 
 ---
 
-# 设置语音识别超时
+# <a name="set-speech-recognition-timeouts"></a>设置语音识别超时
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 设置语音识别器忽略静音或无法识别的声音（干扰）并继续侦听语音输入的时长。
 
-**重要的 API**
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**超时**](https://msdn.microsoft.com/library/windows/apps/dn653253)</li>
+<li>[**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)</li>
+</ul>
+</div>
 
--   [**超时**](https://msdn.microsoft.com/library/windows/apps/dn653253)
--   [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
-
-
-## 设置超时
+## <a name="set-a-timeout"></a>设置超时
 
 
 我们在此处指定各种 [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) 值：
@@ -40,7 +50,7 @@ recognizer.Timeouts.BabbleTimeout = TimeSpan.FromSeconds(4.0);
 recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 ```
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 
 * [语音交互](speech-interactions.md)
@@ -56,6 +66,6 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

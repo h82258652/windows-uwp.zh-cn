@@ -6,17 +6,17 @@ ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 70c06949ee9ac8f9a3f914fc4e020de0460124fa
 
 ---
-# 自适应磁贴模板：架构和指南
+# <a name="adaptive-tile-templates-schema-and-guidance"></a>自适应磁贴模板：架构和指南
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 以下是用于创建自适应磁贴的元素和属性。 有关说明和示例，请参阅[创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)。
 
-## 磁贴元素
+## <a name="tile-element"></a>磁贴元素
 
 
 ``` xml
@@ -28,7 +28,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </tile>
 ```
 
-## 可视元素
+## <a name="visual-element"></a>可视元素
 
 
 ``` xml
@@ -47,7 +47,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </visual>
 ```
 
-## 绑定元素
+## <a name="binding-element"></a>绑定元素
 
 
 ``` xml
@@ -72,7 +72,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </binding>
 ```
 
-## 图像元素
+## <a name="image-element"></a>图像元素
 
 
 ``` xml
@@ -86,7 +86,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## 文本元素
+## <a name="text-element"></a>文本元素
 
 
 ``` xml
@@ -105,7 +105,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 
 textStyle 值： caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
 
-## 组元素
+## <a name="group-element"></a>组元素
 
 
 ``` xml
@@ -117,7 +117,7 @@ textStyle 值： caption captionSubtle body bodySubtle base baseSubtle subtitle 
 </group>
 ```
 
-## 子组元素
+## <a name="subgroup-element"></a>子组元素
 
 
 ``` xml
@@ -133,7 +133,7 @@ textStyle 值： caption captionSubtle body bodySubtle base baseSubtle subtitle 
 </subgroup>
 ```
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 * [创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)
@@ -147,6 +147,6 @@ textStyle 值： caption captionSubtle body bodySubtle base baseSubtle subtitle 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

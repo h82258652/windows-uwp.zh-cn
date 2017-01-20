@@ -6,11 +6,11 @@ description: "拆分视图控件具有一个可展开/可折叠的窗格和一�
 label: Split view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 61ada7839f76df92041b606066f5cbd54448cd93
 
 ---
-# 拆分视图控件
+# <a name="split-view-control"></a>拆分视图控件
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,14 +19,13 @@ ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn864360"><strong>SplitView 类 (XAML)</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn919970"><strong>SplitView 对象 (HTML)</strong></a></li>
+<li>[**SplitView 类**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
 </ul>
-
-</div>
 </div>
 
+下面是使用 SplitView 显示其中心的 Microsoft Edge 应用的示例。
 
+![Microsoft Edge 拆分视图示例](images/split_view_Edge.png)
 
 
  拆分视图的内容区域始终可见。 窗格可以展开和折叠或停留在打开状态，而且可以从应用窗口的左侧或右侧显示其自身。 窗格中有四种模式：
@@ -47,23 +46,38 @@ ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
 
     在此模式下始终可以看见狭窄的部分窗格，宽度恰好足以显示图标。 默认关闭窗格宽度为 48px，可以使用 `CompactPaneLength` 进行修改。 如果打开窗格，将减少用于内容的空间，从而会将内容挤出去。
 
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 拆分视图控件可用于创建[导航窗格](nav-pane.md)。 若要生成此模式，需要添加一个展开/折叠按钮（“汉堡包”按钮）和一个表示导航项目的列表视图。
 
 拆分视图控件还可以用于创建任何“抽屉”体验，其中用户可以打开和关闭补充窗格。
 
-## 示例
+## <a name="create-a-split-view"></a>创建拆分视图
 
-处于其默认形式下的拆分视图控件是一个基本容器。 下面是使用 SplitView 显示其中心的 Microsoft Edge 应用的示例。
+下面是 SplitView 控件，有一个打开的窗格内联显示在“内容”旁边。
+```xaml
+<SplitView IsPaneOpen="True"
+           DisplayMode="Inline"
+           OpenPaneLength="296">
+    <SplitView.Pane>
+        <TextBlock Text="Pane"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+    </SplitView.Pane>
 
-![Microsoft Edge 拆分视图示例](images/split_view_Edge.png)
+    <Grid>
+        <TextBlock Text="Content"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+    </Grid>
+</SplitView>
+```
 
 
 
-## 相关主题
-
-
+## <a name="related-topics"></a>相关主题
 * [导航窗格模式](nav-pane.md)
 * [列表视图](lists.md)
  
@@ -72,6 +86,6 @@ ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

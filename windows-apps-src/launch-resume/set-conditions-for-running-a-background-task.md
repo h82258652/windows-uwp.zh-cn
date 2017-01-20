@@ -4,14 +4,14 @@ title: "设置后台任务的运行条件"
 description: "了解如何设置控制何时运行后台任务的条件。"
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
 
 ---
 
-# 设置后台任务的运行条件
+# <a name="set-conditions-for-running-a-background-task"></a>设置后台任务的运行条件
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -27,9 +27,9 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 
 还可以通过在同一 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 上多次调用 AddCondition 组合多个条件。 注意不要添加冲突条件，如 **UserPresent** 和 **UserNotPresent**。
 
-## 创建 SystemCondition 对象
+## <a name="create-a-systemcondition-object"></a>创建 SystemCondition 对象
 
-本主题假定你的后台任务已与你的应用关联，并且你的应用已包含用于创建名为 **taskBuilder** 的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象的代码  如果需要先创建一个后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)。
+本主题假定你的后台任务已与你的应用关联，并且你的应用已包含用于创建名为 **taskBuilder** 的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象的代码  如果需要先创建一个后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)或[创建和注册进程外后台任务](create-and-register-a-background-task.md)。
 
 本主题适用于在进程外运行的后台任务以及在前台应用所在的同一进程中运行的那些后台任务。
 
@@ -45,10 +45,10 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## 向你的后台任务中添加 SystemCondition 对象
+## <a name="add-the-systemcondition-object-to-your-background-task"></a>向你的后台任务中添加 SystemCondition 对象
 
 
-若要添加条件，请在 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象上调用 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) 方法，并向其传递 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 对象。
+若要添加条件，请在 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224769) 对象上调用 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224768) 方法，并向其传递 [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) 对象。
 
 下面的代码将使用 TaskBuilder 注册 InternetAvailable 后台任务条件：
 
@@ -60,7 +60,7 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 > taskBuilder->AddCondition(internetCondition);
 > ```
 
-## 注册后台任务
+## <a name="register-your-background-task"></a>注册后台任务
 
 
 现在，你便可以使用 [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法注册后台任务了，该任务在满足指定的条件之前不会启动。
@@ -75,20 +75,17 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 > BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > ```
 
-> 
-            **注意** 通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
+> **注意**  通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
 
 若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然后调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
-> 
-            **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
+> **注意**  后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
 
-## 在后台任务上放置多个条件
+## <a name="place-multiple-conditions-on-your-background-task"></a>在后台任务上放置多个条件
 
 若要添加多个条件，你的应用需要多次调用 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) 方法。 任务注册生效之前，必须进行这些调用。
 
-> 
-            **注意** 小心不要向后台任务中添加冲突的条件。
+>  **注意** 小心不要向后台任务中添加冲突的条件。
  
 
 以下代码段在创建和注册后台任务的上下文中显示多个条件：
@@ -153,20 +150,18 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 > BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ```
 
-## 备注
+## <a name="remarks"></a>备注
 
 
-> 
-            **注意** 为你的后台任务选择条件，以便它仅在需要时运行，不在不应该运行时运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+>  **注意** 为你的后台任务选择条件，以便它仅在需要时运行，不在不应该运行时运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
-> 
-            **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows10 开发人员。 如果你面向 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 ****
 
-* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
@@ -186,6 +181,6 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -6,22 +6,20 @@ ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8aa2c34969b87fbe440c578d93553dbdd6f3d8c4
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# 原始通知概述
-
-
-
+# <a name="raw-notification-overview"></a>原始通知概述
 
 
 原始通知是简短的一般用途的推送通知。 原始通知有严格的指令，不包含 UI 组件。 与其他推送通知一样，Windows 推送通知服务 (WNS) 功能提供从云服务到应用的原始通知。
 
 你可以将原始通知用于各种用途，其中包括触发应用以运行后台任务（如果用户已给予如此操作的应用权限）。 通过使用 WNS 与应用通信，可以避免创建持久的套接字连接、发送 HTTP GET 消息以及其他服务到应用连接的处理开销。
 
-**重要提示** 若要了解原始通知，最好熟悉 [Windows 推送通知服务 (WNS) 概述](tiles-and-notifications-windows-push-notification-services--wns--overview.md)中讨论的概念。
+> [!IMPORTANT]
+> 若要了解原始通知，最好熟悉一下 [Windows 推送通知服务 (WNS) 概述](tiles-and-notifications-windows-push-notification-services--wns--overview.md)中讨论的概念。
 
  
 
@@ -29,7 +27,7 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 以一个从原始通知获益的应用为例，让我们看一个理论上的文档协作应用。 请考虑两名用户正在同时编辑同一个文档。 托管共享文档的云服务可以使用原始通知在其他用户进行更改时通知每个用户。 原始通知没必要包含对文档的更改，但用信号通知每个用户的应用副本联系中心位置并同步可用的更改。 通过使用原始通知，应用及其云服务可以不必在文档打开期间一直保持持久连接。
 
-## 原始通知的工作原理
+## <a name="how-raw-notifications-work"></a>原始通知的工作原理
 
 
 所有原始通知都是推送通知。 因此，发送和接收推送通知所需的设置也适用于原始通知：
@@ -43,7 +41,7 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 要使原始通知呈现在客户端上只有三种可能的途径：通过通知传递事件将通知传递给正在运行的应用、发送给后台任务或丢弃。 因此，如果客户端脱机并且 WNS 尝试传递原始通知，则会丢弃通知。
 
-## 创建原始通知
+## <a name="creating-a-raw-notification"></a>创建原始通知
 
 
 发送原始通知与发送磁贴、Toast 或锁屏提醒推送通知类似，但有以下不同：
@@ -56,7 +54,7 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 有关发送推送通知的详细信息，请参阅[快速入门：发送推送通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)。
 
-## 接收原始通知
+## <a name="receiving-a-raw-notification"></a>接收原始通知
 
 
 有两种方法可通过应用接收原始通知：
@@ -69,7 +67,7 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 -   如果应用正在运行，则通知传递事件将优先于后台任务，并且应用将获得最先处理通知的机会。
 -   通知传递事件处理程序可以通过将事件的 [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) 属性设置为 **true** 来指定处理程序退出后不应将原始通知传递给它的后台任务。 如果 **Cancel** 属性设置为 **false** 或者未设置（默认值为 **false**），则原始通知将在通知传递事件处理程序完成其工作后触发后台任务。
 
-### 通知传递事件
+### <a name="notification-delivery-events"></a>通知传递事件
 
 你的应用可以使用通知传递事件 ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) 以在应用使用时接收原始通知。 当云服务发送原始通知时，正在运行的应用可以通过在通道 URI 上处理通知传递事件来接收该通知。
 
@@ -85,11 +83,12 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
     请注意，你不应依赖 [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) 来确定通知是否已成功传递到客户端。
 
-    有关详细信息，请参阅[推送通知服务请求和响应头](https://msdn.microsoft.com/library/windows/apps/hh465435)
+    有关详细信息，请参阅 [推送通知服务请求和响应头](https://msdn.microsoft.com/library/windows/apps/hh465435)
 
-### 原始通知触发的后台任务
+### <a name="background-tasks-triggered-by-raw-notifications"></a>原始通知触发的后台任务
 
-**重要提示** 在使用原始通知后台任务前，必须通过 [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 向应用授予后台访问权限。
+> [!IMPORTANT]
+> 使用原始通知后台任务之前，必须通过 [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 向应用授予后台访问权限。
 
  
 
@@ -108,13 +107,12 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 对于每个应用，一次只能运行一个后台任务。 如果为已在运行后台任务的应用触发后台任务，则必须先完成第一个后台任务，然后才能运行新的后台任务。
 
-## 其他资源
+## <a name="other-resources"></a>其他资源
 
 
 你可以通过下载适用于 Windows 8.1 的[原始通知示例](http://go.microsoft.com/fwlink/p/?linkid=241553)和适用于 Windows 8.1 的[推送和定期通知示例](http://go.microsoft.com/fwlink/p/?LinkId=231476)并在 Windows 10 应用中重复使用其源代码来了解详细信息。
 
-## 相关主题
-
+## <a name="related-topics"></a>相关主题
 
 * [原始通知指南](https://msdn.microsoft.com/library/windows/apps/hh761463)
 * [快速入门：创建并注册原始通知后台任务](https://msdn.microsoft.com/library/windows/apps/jj676800)
@@ -131,6 +129,6 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

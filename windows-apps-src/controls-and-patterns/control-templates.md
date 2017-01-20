@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "可通过在 XAML 框架中创建控件模板，自定义控件的可视结构和可视行为。"
+Description: "通过在 XAML 框架中创建控件模板，你可以自定义控件的可视结构和可视行为。"
 MS-HAID: dev\_ctrl\_layout\_txt.control\_templates
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,40 +9,34 @@ ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 4c6ee696dff8d8e0ddc3a9b62d0309e999762dc6
 
 ---
-# 控件模板
+# <a name="control-templates"></a>控件模板
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+通过在 XAML 框架中创建控件模板，你可以自定义控件的可视结构和可视行为。 控件有多个属性，如 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 以及 [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404)，可以设置这些属性以指定控件外观的多个方面。 但是可以通过设置这些属性所做的更改有限。 你可以通过使用 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 类创建模板来指定其他自定义。 我们在此处介绍如何创建 **ControlTemplate** 以自定义 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控件的外观。
 
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209391"><strong>ControlTemplate 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx"><strong>Control.Template 属性</strong></a></li>
+<li>[**ControlTemplate 类**](https://msdn.microsoft.com/library/windows/apps/br209391)</li>
+<li>[**Control.Template 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-可通过在 XAML 框架中创建控件模板，自定义控件的可视结构和可视行为。 控件有多个属性，如 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 以及 [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404)，可以设置这些属性以指定控件外观的多个方面。 但是可以通过设置这些属性所做的更改有限。 你可以通过使用 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 类创建模板来指定其他自定义。 我们在此处介绍如何创建 **ControlTemplate** 以自定义 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控件的外观。
-
-## 自定义控件模板示例
+## <a name="custom-control-template-example"></a>自定义控件模板示例
 
 
 在默认情况下，[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控件将其内容（字符串或 **CheckBox** 旁的对象）放在选择框的右侧，并使用复选标记来表示用户已选中 **CheckBox**。 这些特性表示 **CheckBox** 的可视结构和可视行为。
 
-下面是分别在 `Unchecked`、`Checked` 和 `Indeterminate` 状态下使用默认 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 的 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)。
+下面是分别在 `Unchecked`、`Checked` 和 `Indeterminate` 状态下使用默认 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209316) 的 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209391)。
 
 ![默认 CheckBox 模板](images/templates-checkbox-states-default.png)
 
-你可以通过为 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 创建 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 来更改这些特性。 例如，如果你想要让复选框的内容显示在选择框下方，并且你想要用 **X** 来表示用户已选中复选框。 你可以在 **CheckBox** 的 **ControlTemplate** 中指定这些特性。
+你可以通过为 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209391) 创建 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209316) 来更改这些特性。 例如，如果你想要让复选框的内容显示在选择框下方，并且你想要用 **X** 来表示用户已选中复选框。 你可以在 **CheckBox** 的 **ControlTemplate** 中指定这些特性。
 
 若要将自定义模板与控件一起使用，请将 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 分配给控件的 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 属性。 下面是使用称为 `CheckBoxTemplate1` 的 **ControlTemplate** 的 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)。 我们在下一节介绍 **ControlTemplate** 的 Extensible Application Markup Language (XAML)。
 
@@ -54,12 +48,12 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
 ![自定义 CheckBox 模板](images/templates-checkbox-states.png)
 
-## 指定控件的可视结构
+## <a name="specify-the-visual-structure-of-a-control"></a>指定控件的可视结构
 
 
 当你创建 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 时，结合 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 对象来生成一个单一的控件。 **ControlTemplate** 只能有一个 **FrameworkElement** 作为其根元素。 该根元素通常包含其他 **FrameworkElement** 对象。 这些对象的组合组成控件的可视结构。
 
-此 XAML 为 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 创建了 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)，可指定控件的内容显示在选择框的下方。 根元素为 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250)。 该示例指定 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 来创建 **X**，表示用户已选定 **CheckBox**，并用 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 表示不确定状态。 请注意，[**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 在 **Path** 和 **Ellipse** 上均设置为 0，因此在默认情况下，两者都不会显示。
+此 XAML 为 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209391) 创建了 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209316)，可指定控件的内容显示在选择框的下方。 根元素为 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250)。 该示例指定 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 来创建 **X**，表示用户已选定 **CheckBox**，并用 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 表示不确定状态。 请注意，[**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 在 **Path** 和 **Ellipse** 上均设置为 0，因此在默认情况下，两者都不会显示。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -95,7 +89,7 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 </ControlTemplate>
 ```
 
-## 指定控件的可视行为
+## <a name="specify-the-visual-behavior-of-a-control"></a>指定控件的可视行为
 
 
 可视行为指定控件在确定状态下的外观。 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控件具有 3 种复选状态：`Checked`、`Unchecked` 和 `Indeterminate`。 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) 属性的值确定 **CheckBox** 的状态，其状态确定框中显示的内容。
@@ -111,9 +105,9 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
  
 
-使用 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 对象可指定控件在某种状态下的外观。 **VisualState** 包含可更改 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 中元素外观的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053)。 当控件进入 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) 属性指定的状态时，将应用 **Setter** 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 中的属性更改。 当控件退出该状态时，这些更改将会删除。 你可以将 **VisualState** 对象添加到 [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 对象。 还可以将 **VisualStateGroup** 对象添加到 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加属性，这些对象在 **ControlTemplate** 的根 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 上设置。
+使用 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 对象可指定控件在某种状态下的外观。 **VisualState** 包含可更改 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br208817) 中元素外观的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br243053) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br209391)。 当控件进入 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) 属性指定的状态时，将应用 **Setter** 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 中的属性更改。 当控件退出该状态时，这些更改将会删除。 你可以将 **VisualState** 对象添加到 [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 对象。 还可以将 **VisualStateGroup** 对象添加到 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加属性，这些对象在 **ControlTemplate** 的根 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 上设置。
 
-以下 XAML 介绍在 `Checked`、`Unchecked` 和 `Indeterminate` 状态下的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 对象。 该示例在 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 上设置 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加属性，它是 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 的根元素。 `Checked` **VisualState** 指定名为 `CheckGlyph` 的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355)（已在前面的示例中介绍）的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 为 1。 `Indeterminate` **VisualState** 指定名为 `IndeterminateGlyph` 的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 的 **Opacity** 为 1。 `Unchecked` **VisualState** 没有 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)，因此 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 将返回到其默认外观。
+以下 XAML 介绍在 `Checked`、`Unchecked` 和 `Indeterminate` 状态下的 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 对象。 该示例在 [**Border**](https://msdn.microsoft.com/library/windows/apps/hh738505) 上设置 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/br209250) 附加属性，它是 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 的根元素。 `Checked` **VisualState** 指定名为 `CheckGlyph` 的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br208962)（已在前面的示例中介绍）的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br243355) 为 1。 `Indeterminate` **VisualState** 指定名为 `IndeterminateGlyph` 的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 的 **Opacity** 为 1。 `Unchecked` **VisualState** 没有 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)，因此 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 将返回到其默认外观。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -181,18 +175,18 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | 状态转换                     | 引发的结果                                                                                                                                                                                                                                                                                                                                   | 转换完成时的 CheckBox 外观 |
-| 从 `Unchecked` 到 `Checked`。       | 应用 `Checked` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，因此 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 为 1。                                                                                                                                                         | 显示 X。                                |
-| 从 `Checked` 到 `Indeterminate`。   | 应用 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，因此 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 为 1。 删除 `Checked` **VisualState** 的 **Setter** 值，因此 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) 为 0。 | 显示一个圆形。                            |
-| 从 `Indeterminate` 到 `Unchecked`。 | 删除 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值，因此 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 为 0。                                                                                                                                           | 不显示任何符号。                             |
+| 从 `Unchecked` 到 `Checked`。       | 应用 `Checked` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br209007) 值，因此 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 为 1。                                                                                                                                                         | 显示 X。                                |
+| 从 `Checked` 到 `Indeterminate`。   | 应用 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br209007) 值，因此 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 为 1。 删除 `Checked` **VisualState** 的 **Setter** 值，因此 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) 为 0。 | 显示一个圆形。                            |
+| 从 `Indeterminate` 到 `Unchecked`。 | 删除 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br209007) 值，因此 `IndeterminateGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) 为 0。                                                                                                                                           | 不显示任何符号。                             |
 
  
 有关如何创建控件的视觉状态（尤其是如何使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 类和动画类型）的详细信息，请参阅[视觉状态的情节提要动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)。
 
-## 使用工具轻松处理主题
+## <a name="use-tools-to-work-with-themes-easily"></a>使用工具轻松处理主题
 
 将主题应用到控件的一种快捷方式是，在 Microsoft Visual Studio XAML“文档大纲”****上右键单击控件，然后选择“编辑主题”****或“编辑样式”****（具体取决于你所右键单击的控件）。 然后，通过选择“应用资源”****来应用现有主题，或通过选择“创建空项”****来定义一个新主题。
 
-## 控件和辅助功能
+## <a name="controls-and-accessibility"></a>控件和辅助功能
 
 当为控件创建新模板时，除了可能会更改控件的行为和视觉外观外，还可能会更改控件自行代表辅助功能框架的方式。 通用 Windows 平台 (UWP) 支持 Microsoft UI 自动化框架用于辅助功能。 所有默认控件及其模板都支持适用于控件的用途和功能的常见 UI 自动化控件类型和模式。 这些控件类型和模式由 UI 自动化客户端（如辅助技术）进行解释，这样允许控件作为较大辅助应用 UI 的一部分进行访问。
 
@@ -200,28 +194,25 @@ ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
 
 创建全新的自定义控件时，有时还希望随之一起新建自动化对等。 有关详细信息，请参阅[自定义自动化对等](../accessibility/custom-automation-peers.md)。
 
-## 了解有关控件默认模板的详细信息
+## <a name="learn-more-about-a-controls-default-template"></a>了解有关控件默认模板的详细信息
 
 记录了 XAML 控件样式和模板的主题向你显示的起始 XAML 摘录与使用之前介绍的“编辑主题”****或“编辑样式”****技术时看到的相同。 每个主题都将列出视觉状态的名称、使用的主题资源，以及包含该模板的样式的完整 XAML。 如果你已开始修改模板并要查看原始模板的外观，或者想要验证你的新模板是否具有所有所需的命名视觉状态，这些主题将是非常有用的指南。
 
-## 控件模板中的主题资源
+## <a name="theme-resources-in-control-templates"></a>控件模板中的主题资源
 
 对于 XAML 模板中的某些属性，你可能已注意到使用 [{ThemeResource} 标记扩展](../xaml-platform/themeresource-markup-extension.md)的资源引用。 这是一种可使单个控件模板使用资源的技术，这些资源可能采用不同的值，具体取决于当前处于活动状态的主题。 这对于画笔和颜色尤其重要，因为主题的主要目的是使用户选择应用于整个系统的是深色主题、浅色主题，还是高对比度主题。 使用 XAML 资源系统的应用可以使用适合该主题的资源集，以便应用 UI 中的主题选择可以反映用户的整个系统的主题选择。
 
-**注意**  
-本文适用于编写 UWP 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+ ## <a name="get-the-sample-code"></a>获取示例代码
+* [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [自定义文本编辑控件示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
  
 
- 
-
- 
 
 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

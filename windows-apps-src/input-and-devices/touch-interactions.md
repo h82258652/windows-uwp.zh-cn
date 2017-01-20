@@ -1,29 +1,37 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: "创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行优化，但在不同的输入设备上功能一致。"
-title: "触控交互"
+title: "触摸交互"
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
+keywords: "键盘, 指针, 输入, 用户交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 526493614666424089199063013b5fc72d9bc5d8
-ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 26f80e2619ea7b80a49d54278507c83461fe2336
 
 ---
 
-# 触控交互
-
+# <a name="touch-interactions"></a>触摸交互
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 以“触摸将是用户的主要输入方法”为初衷设计应用。 如果你使用 UWP 控件，不要求额外编程，即可支持触摸板、鼠标和笔/触笔，因为 UWP 应用免费提供此类支持。
 
 但是请记住，针对触摸优化的 UI 并非总是优于传统 UI。 两者都具有特定于技术和应用的优缺点。 在转换到主要使用触摸的 UI 时，了解触摸（包括触摸板）、笔/触笔、鼠标和键盘输入之间的核心差别很重要。
 
-**重要的 API**
-
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
--   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
-
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+<li>[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+</ul>
+</div>
 
 
 许多设备具有多点触摸屏幕，它们支持使用一根或多根手指（或触摸接触）作为输入。 触摸接触以及其移动会被解释为触摸手势和操作，以支持各种用户交互。
@@ -52,7 +60,7 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
 为所有输入设备提供独特鲜明的交互体验将支持最广泛的功能和首选项、吸引尽可能最多的受众，并为你的应用吸引更多客户。
 
-## 对比触摸交互要求
+## <a name="compare-touch-interaction-requirements"></a>对比触摸交互要求
 
 下表显示了设计为触摸而优化的 UWP 应用时应该考虑的一些输入设备之间的不同。
 
@@ -80,14 +88,14 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
  
 
-## 用户触摸反馈
+## <a name="use-touch-feedback"></a>用户触摸反馈
 
 与应用交互期间适当的视觉反馈可帮助用户识别、了解以及适应应用和 Windows 8 解释其交互的方式。 视觉反馈可以指示成功交互、延迟系统状态、加强控制感觉、减少错误、帮助用户了解系统和输入设备并鼓励交互。
 
 当用户依赖触摸屏输入来进行要求基于位置的准确活动时，视觉反馈非常重要。 无论何时何地检测到触摸输入都显示反馈，以帮助用户了解应用及其控件定义的任何自定义定向规则。
 
 
-## 定向
+## <a name="targeting"></a>定向
 
 通过以下方式优化目标：
 
@@ -107,14 +115,14 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
     密集项目（如超链接）可以通过下压手指（无滑动），然后来回摇摆并停在项目上方来轻松改变目标。 由于存在封闭，当前项通过工具提示或状态栏来标识，并且释放触摸时会被激活。
 
-## 准确性
+## <a name="accuracy"></a>准确性
 
 使用以下方式设计草率交互：
 
 -   用户与内容交互时使用吸附点可以轻松在所需位置停止。
 -   使用方向“围栏”可帮助进行垂直或水平平移，甚至手出现轻微弧度的移动时都可以。 有关详细信息，请参阅[平移指南](guidelines-for-panning.md)。
 
-## 封闭
+## <a name="occlusion"></a>封闭
 
 通过以下方式避免出现手指和手封闭：
 
@@ -134,7 +142,7 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
     如果对精度有要求（例如文本选择），请提供偏移选择句柄以提高准确性。 有关详细信息，请参阅[选择文本和图像的指南（Windows 运行时应用）](guidelines-for-textselection.md)。
 
-## 定时
+## <a name="timing"></a>定时
 
 在直接操作时，避免定时模式更改。 直接操作模拟对象的直接、实时的物理处理。 对象随着手指移动作出响应。
 
@@ -153,14 +161,14 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 -   交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
 -   不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
 
-    **注意** 其中的一个例外是使用特定的定时交互来帮助了解和探究（如长按）。
+    **注意**  其中的一个例外是使用特定的定时交互来帮助了解和探究（例如，长按）。
 
      
 
 -   正确的描述以及视觉提示对高级交互的使用有巨大影响。
 
 
-## 应用视图
+## <a name="app-views"></a>应用视图
 
 
 通过应用视图的平移/滚动和缩放设置来调整用户交互体验。 应用视图指示用户访问和操作你的应用及其内容的方式。 视图还提供一些行为，如惯性、内容边界回弹和吸附点。
@@ -173,7 +181,7 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
 有关应用视图的详细信息，请参阅[控件、布局和文本](https://msdn.microsoft.com/library/windows/apps/mt228348)。
 
-## 自定义触摸交互
+## <a name="custom-touch-interactions"></a>自定义触摸交互
 
 
 如果你实现自己的交互支持，请记住，用户期望获得直观的体验，包括直接与应用中的 UI 元素交互。 我们建议你根据“平台控件库”创建自定义交互的模型，以使内容保持一致且易于发现。 这些库中的控件提供完整的用户交互体验，包括标准交互、动态显示的物理效果、视觉反馈和辅助功能。 仅当要求清楚、定义良好且基本交互不支持你的方案时才创建自定义交互。
@@ -194,7 +202,7 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
 下面是一组基本的受 UWP 支持的触摸手势。
 
-| 名称           | 类型                 | 描述                                                                            |
+| 名称           | 类型                 | 说明                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | 点击            | 静态手势       | 用一个手指触摸屏幕，然后抬起手指。                                            |
 | 长按 | 静态手势       | 用一个手指触摸屏幕并保持不动。                                      |
@@ -210,12 +218,12 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
 -->
 
-## 手势事件
+## <a name="gesture-events"></a>手势事件
 
 
 有关个别控件的详细信息，请参阅[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
-## 指针事件
+## <a name="pointer-events"></a>指针事件
 
 
 指针事件由各种活动输入源引发，包括触摸、触摸板、笔和鼠标（它们替代传统的鼠标事件）。
@@ -303,7 +311,7 @@ Public Sub New()
 End Sub
 ```
 
-最后，[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件处理程序增加 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)，同时 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件处理程序将 **Height** 和 **Width** 设置回其初始值。
+最后，[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件处理程序增加 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br208718) 的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208751) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br243371)，同时 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件处理程序将 **Height** 和 **Width** 设置回其初始值。
 
 ```ManagedCPlusPlus
 // Handler for pointer exited event.
@@ -424,7 +432,7 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## 操作事件
+## <a name="manipulation-events"></a>操作事件
 
 
 如果你需要在应用中支持多个手指交互或需要速度数据的交互，请使用操作事件。
@@ -453,7 +461,7 @@ End Sub
 
 接下来，引发一个或多个 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件。 例如，先触摸屏幕，然后在屏幕上拖动手指。 最后，在完成交互时引发 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件。
 
-**注意** 如果你没有触摸屏监视器，则可以使用鼠标和鼠标滚轮界面在模拟器中测试你的操作事件代码。
+**注意**  如果你没有触摸屏监视器，则可以使用鼠标和鼠标滚轮界面在模拟器中测试你的操作事件代码。
 
  
 
@@ -556,7 +564,7 @@ Public Sub New()
 End Sub
 ```
 
-最后，在 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件处理程序中，使用 [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) 属性上的 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) 更新 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 的位置。
+最后，在 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件处理程序中，使用 [**Delta**](https://msdn.microsoft.com/library/windows/apps/br243371) 属性上的 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) 更新 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/hh702058) 的位置。
 
 ```ManagedCPlusPlus
 // Handler for the ManipulationDelta event.
@@ -600,12 +608,12 @@ Private Sub testRectangle_ManipulationDelta(
 End Sub
 ```
 
-## 路由事件
+## <a name="routed-events"></a>路由事件
 
 
 此处提及的所有指针事件、手势事件和操作事件都将作为*路由事件*实现。 这意味着该事件可能由对象（而不是最初引起该事件的对象）处理。 对象树中的连续父对象（例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 元素的父容器或你的应用的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)）可以选择处理这些对象，即使原始元素未执行此操作也是如此。 相反，处理该事件的任何对象都可以标记处理的事件，以使其不再达到任何父元素。 有关路由事件概念以及它如何影响你为路由事件编写处理程序的方式的详细信息，请参阅[事件和路由事件概述](https://msdn.microsoft.com/library/windows/apps/hh758286)。
 
-## 应做事项和禁止事项
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 
 -   设计将触摸交互作为预期的主要输入方法的应用程序。
@@ -617,7 +625,7 @@ End Sub
 -   尽量不要使用用于区别操作的手指个数。
 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 * [处理指针输入](handle-pointer-input.md)
 * [标识输入设备](identify-input-devices.md)
@@ -645,6 +653,6 @@ End Sub
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

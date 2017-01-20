@@ -6,11 +6,11 @@ ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 465c75ccb2af9b162202a79025aa292fbd626a58
 
 ---
-# 适用于 UWP 应用的锁屏提醒通知
+# <a name="badge-notifications-for-uwp-apps"></a>适用于 UWP 应用的锁屏提醒通知
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,9 +21,11 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
 
 无论应用是否正在运行，通知锁屏提醒都显示在应用的任务栏图标上和它的开始磁贴的右下角。 锁屏提醒可在所有大小的磁贴上显示。  
 
-**注意**  你不能提供你自己的锁屏提醒图像；仅可以使用系统提供的锁屏提醒图像。
+> [!NOTE]
+> 你不能提供自己的锁屏提醒图像；仅可以使用系统提供的锁屏提醒图像。
 
-## 数字锁屏提醒
+
+## <a name="numeric-badges"></a>数字锁屏提醒
 
 <table>
     <tr>
@@ -43,7 +45,7 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
     </tr>    
 </table>
 
-## 字形锁屏提醒
+## <a name="glyph-badges"></a>字形锁屏提醒
 锁屏提醒可以显示一组不可扩展的状态字形之一，但不可显示数字。 
 
 <table>
@@ -119,11 +121,11 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
 </tr>
 </table>
 
-## 创建锁屏提醒
+## <a name="create-a-badge"></a>创建锁屏提醒
 
 这些示例显示如何创建锁屏提醒更新。
 
-### 创建数字锁屏提醒
+### <a name="create-a-numeric-badge"></a>创建数字锁屏提醒
 
 ````csharp
 private void setBadgeNumber(int num)
@@ -150,7 +152,7 @@ private void setBadgeNumber(int num)
 }
 ````
 
-### 创建字形锁屏提醒
+### <a name="create-a-glyph-badge"></a>创建字形锁屏提醒
 ````csharp
 private void updateBadgeGlyph()
 {
@@ -178,7 +180,7 @@ private void updateBadgeGlyph()
 }
 ````
 
-### 清除锁屏提醒
+### <a name="clear-a-badge"></a>清除锁屏提醒
 
 ````csharp
 private void clearBadge()
@@ -187,17 +189,17 @@ private void clearBadge()
 }
 ````
 
-## 获取示例
+## <a name="get-the-sample-code"></a>获取示例代码
 
 * [通知示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> 显示如何创建动态磁贴、发送锁屏提醒更新和显示 Toast 通知。 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 * [自适应和交互式 Toast 通知](tiles-and-notifications-adaptive-interactive-toasts.md)
 * [创建磁贴](tiles-and-notifications-creating-tiles.md)
 * [创建自适应磁贴](tiles-and-notifications-create-adaptive-tiles.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

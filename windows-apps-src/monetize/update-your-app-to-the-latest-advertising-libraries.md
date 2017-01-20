@@ -3,13 +3,13 @@ author: mcleanbyron
 description: "了解如何更新应用以使用最新的受支持 Microsoft 广告库，并确保应用继续收到横幅广告。"
 title: "将应用更新到最新的 Microsoft Advertising 库"
 translationtype: Human Translation
-ms.sourcegitcommit: 9bd83a41ea4ec4ec7a75ef89e9c92f73d86cc731
-ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
+ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
+ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
 
 
 ---
 
-# 将应用更新到最新的 Microsoft Advertising 库
+# <a name="update-your-app-to-the-latest-microsoft-advertising-libraries"></a>将应用更新到最新的 Microsoft Advertising 库
 
 从 2017 年 1 月开始，我们将不再向使用较早的 Microsoft 广告 SDK 版本的应用提供横幅广告。 如果你有使用 **AdControl** 或 **AdMediatorControl** 显示横幅广告的现有应用（已经在应用商店中或仍然在开发中），则可能需要将应用更新为使用最新的广告 SDK，以便使应用在 2017 年 1 月继续接收横幅广告。 按照本文中的说明确定应用是否受此更改影响，并了解如何在必要时更新应用。
 
@@ -23,24 +23,22 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 如果你遇到任何问题或需要帮助，请[联系支持人员](http://go.microsoft.com/fwlink/?LinkId=393643)。
 
->**注意**
-              如果你之前已将应用更新为使用 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)（适用于 UWP 应用）或 [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk)（适用于 Windows 8.1 和 Windows Phone 8.x 应用），则应用已使用最新的可用广告 SDK，并且你无需对应用进行任何进一步的更改。
+>**注意**&nbsp;&nbsp;如果你之前已将应用更新以便使用 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)（适用于 UWP 应用）或[适用于 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)（适用于 Windows 8.1 和 Windows Phone 8.x 应用），则应用已使用最新的可用广告 SDK，并且你无需对应用进行任何进一步的更改。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 * 使用 **AdControl** 或 **AdMediatorControl** 的应用的完整源代码和 Visual Studio 项目文件。
 
 * 应用的 .appx 或 .xap 包。
 
-  >**注意**
-              如果你不再有应用的 .appx 或 .xap 包，但仍然有包含曾用于生成应用的 Visual Studio 和广告 SDK 版本的开发计算机，则可以在 Visual Studio 中重新生成 .appx 或 .xap 包。
+  >**注意**&nbsp;&nbsp;如果你不再有应用的 .appx 或 .xap 包，但仍然有包含曾用于生成应用的 Visual Studio 和广告 SDK 版本的开发计算机，则可以在 Visual Studio 中重新生成 .appx 或 .xap 包。
 
 <span id="part-1" />
-## 第 1 部分：确定是否需要更新应用
+## <a name="part-1-determine-whether-you-need-to-update-your-app"></a>第 1 部分：确定是否需要更新应用
 
 按照以下部分中的说明确定是否需要更新应用。
 
-### 应用使用 AdControl
+### <a name="your-app-uses-adcontrol"></a>应用使用 AdControl
 
 如果应用使用 **AdControl** 显示横幅广告，请按照这些说明操作。
 
@@ -68,9 +66,11 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 2. 打开 Windows PowerShell、输入以下命令，然后将 ```-Path``` 参数分配到应用包的提取内容的完整路径。 此命令显示项目引用的所有广告库以及每个库的版本。
 
-    ```
-    get-childitem -Path "<path to your extracted package>" * -Recurse -include *advert*.dll,*admediator*.dll,*xamladcontrol*.dll,*universalsharedlibrary*.dll | where-object {$_.Name -notlike "*resources*" -and $_.Name -notlike "*design*" } | foreach-object { "{0}`t{1}" -f $_.FullName, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).FileVersion }
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ```syntax
+  get-childitem -Path "<path to your extracted package>" * -Recurse -include *advert*.dll,*admediator*.dll,*xamladcontrol*.dll,*universalsharedlibrary*.dll | where-object {$_.Name -notlike "*resources*" -and $_.Name -notlike "*design*" } | foreach-object { "{0}`t{1}" -f $_.FullName, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).FileVersion }
+  ```
+
 2. 在下表中找到适用于应用目标平台的文件，并将该文件的版本与表中列出的版本进行比较。
 
   <table>
@@ -133,7 +133,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 <span/>
 
-### 应用使用 AdMediatorControl
+### <a name="your-app-uses-admediatorcontrol"></a>应用使用 AdMediatorControl
 
 如果应用使用 **AdMediatorControl** 显示横幅广告，请按照以下说明确定是否需要更新应用。
 
@@ -149,29 +149,30 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 2. 打开 Windows PowerShell、输入以下命令，然后将 ```-Path``` 参数分配到应用包的提取内容的完整路径。 此命令显示项目引用的所有广告库以及每个库的版本。
 
-    ```
-    get-childitem -Path "<path to your extracted package>" * -Recurse -include *advert*.dll,*admediator*.dll,*xamladcontrol*.dll,*universalsharedlibrary*.dll | where-object {$_.Name -notlike "*resources*" -and $_.Name -notlike "*design*" } | foreach-object { "{0}`t{1}" -f $_.FullName, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).FileVersion }
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ```syntax
+  get-childitem -Path "<path to your extracted package>" * -Recurse -include *advert*.dll,*admediator*.dll,*xamladcontrol*.dll,*universalsharedlibrary*.dll | where-object {$_.Name -notlike "*resources*" -and $_.Name -notlike "*design*" } | foreach-object { "{0}`t{1}" -f $_.FullName, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).FileVersion }
+  ```
 
 2. 如果输出中列出的 Microsoft.AdMediator.\*.dll 文件的版本是版本 2.0.1603.18005 或更高版本，则无需对项目进行任何更改。
 
   如果这些文件具有更低的版本号，则必须按照下面部分中的说明更新项目。 继续到[第 2 部分](update-your-app-to-the-latest-advertising-libraries.md#part-2)。
 
 <span id="part-2" />
-## 第 2 部分：安装最新的 SDK
+## <a name="part-2-install-the-latest-sdk"></a>第 2 部分：安装最新的 SDK
 
 如果应用使用早期的 SDK 版本，请按照以下说明确保你的开发计算机上具有最新的 SDK。
 
 1. 确保开发计算机已安装 Visual Studio 2015（适用于 UWP、Windows 8.1 或 Windows Phone 8.x 项目）或 Visual Studio 2013（适用于 Windows 8.1 或 Windows Phone 8.x 项目）。
 
-  >**注意**
-              如果 Visual Studio 在开发计算机上处于打开状态，请在执行以下步骤前关闭它。
+  >**注意**&nbsp;&nbsp;如果 Visual Studio 在开发计算机上处于打开状态，请在执行以下步骤前关闭它。
 
 1.  从开发计算机中卸载 Microsoft Advertising SDK 和广告中介 SDK 的所有以前版本。
 
 2.  打开“命令提示符”窗口并运行这些命令以清除可能与 Visual Studio 一起安装（但可能未显示在计算机上的已安装程序列表中）的任何 SDK 版本：
 
-  ```
+  > [!div class="tabbedCodeSnippets"]
+  ```syntax
   MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
   MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
   MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -181,11 +182,11 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
   * 对于 Windows 10 上的 UWP 应用，请安装 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk)。
   * 对于面向较早操作系统版本的应用，请安装 [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk)。
 
-## 第 3 部分：更新项目
+## <a name="part-3-update-your-project"></a>第 3 部分：更新项目
 
 按照以下说明更新项目。
 
-### 适用于 Windows 10 的 UWP 项目
+### <a name="uwp-projects-for-windows-10"></a>适用于 Windows 10 的 UWP 项目
 
 <span/>
 
@@ -195,13 +196,13 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 <span/>
 
-### Windows 8.1 或 Windows Phone 8.1（XAML 或 JavaScript/HTML）项目
+### <a name="windows-81-or-windows-phone-81-xaml-or-javascripthtml-projects"></a>Windows 8.1 或 Windows Phone 8.1（XAML 或 JavaScript/HTML）项目
 
 <span/>
 
 1. 从项目中删除所有 Microsoft.Advertising.\* 和 Microsoft.AdMediator.\* 引用。 如果使用了通用项目模板，可能具有两个引用（分别用于 Windows 和 Windows Phone）。
 
-2. 如果应用使用 **AdMediatorControl**，请按照[添加和使用广告中介控件](https://msdn.microsoft.com/library/windows/apps/xaml/dn864355.aspx)中的说明添加回库引用。 如果应用使用 **AdControl**，请按照 [XAML 中的 AdControl](adcontrol-in-xaml-and--net.md) 或 [HTML 中的 AdControl](adcontrol-in-html-5-and-javascript.md) 添加回库引用。
+2. 如果应用使用 **AdMediatorControl**，请按照[添加和使用广告中介控件](https://msdn.microsoft.com/library/windows/apps/xaml/dn864355.aspx)中的说明重新添加库引用。 如果应用使用 **AdControl**，请按照 [XAML 中的 AdControl](adcontrol-in-xaml-and--net.md) 或 [HTML 中的 AdControl](adcontrol-in-html-5-and-javascript.md) 添加回库引用。
 
 <span/>
 
@@ -215,13 +216,13 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 <span/>
 
-### Windows Phone 8.x Silverlight 项目
+### <a name="windows-phone-8x-silverlight-projects"></a>Windows Phone 8.x Silverlight 项目
 
 <span/>
 
 1. 从项目中删除所有 Microsoft.Advertising.\* 和 Microsoft.AdMediator.\* 引用。
 
-2. 如果应用使用 **AdMediatorControl**，请按照[添加和使用广告中介控件](https://msdn.microsoft.com/library/windows/apps/xaml/dn864355.aspx)中的说明添加回库引用。 如果应用使用 **AdControl**，请按照 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md) 添加回库引用。
+2. 如果应用使用 **AdMediatorControl**，请按照[添加和使用广告中介控件](https://msdn.microsoft.com/library/windows/apps/xaml/dn864355.aspx)中的说明重新添加库引用。 如果应用使用 **AdControl**，请按照 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md) 添加回库引用。
 
 <span/>
 
@@ -233,7 +234,7 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 * 对于 Windows Phone 8.x Silverlight 应用，不支持在仿真程序上测试生产单位。 我们建议在设备上测试。
 
-## 第 4 部分：测试和重新发布应用
+## <a name="part-4-test-and-republish-your-app"></a>第 4 部分：测试和重新发布应用
 
 测试应用以确保它按预期显示横幅广告。
 
@@ -247,6 +248,6 @@ ms.openlocfilehash: 710a5f4a3ae566550939fe783af7e97d20dd1b28
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

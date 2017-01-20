@@ -5,11 +5,11 @@ title: "对话框和浮出控件"
 label: Dialogs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
-ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bc428b42324cd584dfaee1db3c9eb834d30cd69d
 
 ---
-# 对话框和浮出控件
+# <a name="dialogs-and-flyouts"></a>对话框和浮出控件
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -18,31 +18,11 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">ContentDialog 类</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Flyout 类</a></li>
+<li>[ContentDialog 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)</li>
+<li>[Flyout 类](https://msdn.microsoft.com/library/windows/apps/dn279496)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-<!--
-<table>
-<tr>
-<th>Dialogs</th><th>Flyouts</th>
-</tr>
-<tr>
-<td>![Example of a full-button dialog](images/controls_dialog_twobutton.png)</td>
-<td>![Example of a flyout](images/flyout-example.png)</td>
-</tr>
-<tr>
-<td>Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.  </td>
-<td>A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a hidden control, show more detail about an item, or ask the user to confirm an action. Flyouts can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
-</td>
-</tr>
-</table>
--->
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -64,7 +44,7 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 </div>
 </div>
 
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 * 使用对话框和浮出控件通知用户重要信息或在可以完成某个操作之前请求确认或其他信息。 
 * 不要使用浮出控件替代[工具提示](tooltips.md)或[上下文菜单](menus.md)。 使用工具提示显示在指定时间后隐藏的简短描述。 针对与 UI 元素相关的上下文操作（如复制和粘贴）使用上下文菜单。  
@@ -78,22 +58,9 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 
 
 
-## 浮出控件与对话框
+## <a name="dialogs-vs-flyouts"></a>浮出控件与对话框
 
 确定要使用对话框还是浮出控件后，你需要选择使用哪一个。 
-
-<!--
-Dialogs are modal, which means they block all interaction with the app until the user selects a dialog button. To visually reinforce their modal behavior, dialogs draw an overlay layer which partially obscures the temporarily unreachable app UI.
-
-A flyout is a light dismiss control, meaning that users can choose from a variety of actions to quickly dismiss it. These interactions are intended to be lightweight and non-blocking. Light dismiss actions include
-
-* Clicking or tap outside the transient UI
-* Pressing the Escape key
-* Pressing the Back button
-* Resizing the app window
-* Changing device orientation
-
--->
 
 鉴于对话框会阻止交互而浮出控件不会，因此对话框应专门用于你希望用户放下一切事务专注于特定的部分信息或回答问题的情况。 另一方面，当你希望将注意力吸引到某些内容，但如果用户想要忽略它也无妨时，可以使用浮出控件。 
 
@@ -128,10 +95,16 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 </div>
 </div>
 
+<div class="microsoft-internal-note">
+轻型消除控件会捕获瞬态 UI 内的键盘焦点和游戏板焦点，直到消除为止。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的可见性变暗。 可以使用新的 `LightDismissOverlayMode` 属性修改此行为。 默认情况下，瞬态 UI 将在 Xbox（而非其他设备系列）上绘制轻型消除覆盖，不过应用可以选择强制使覆盖始终**打开**或始终**关闭**。
 
+```xaml
+<MenuFlyout LightDismissOverlayMode=\"Off\">
+```
+</div>
 
-## 对话框
-### 一般指南
+## <a name="dialogs"></a>对话框
+### <a name="general-guidelines"></a>一般指南
 
 -   在对话框的第一行文本中清楚地标识问题或用户的目标。
 -   对话框标题是主要说明并且是可选的。
@@ -144,10 +117,17 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 -   必须至少显示一个对话框按钮。
     -   按钮是用户消除对话框的唯一机制。
     -   使用带有文本的按钮，该文本可标识对于主要说明或内容的响应。 例如，“你是否希望允许 AppName 访问你的位置”，后跟“允许”和“拒绝”按钮。 具体的响应可以使用户更快速的理解，以便进行高效的决策。
+    - 按以下顺序显示提交按钮： 
+        -   确定/[执行]/是
+        -   [不执行]/否
+        -   取消
+        
+        （其中，[执行]和[不执行]是对主要说明的具体响应。）
+   
 -   错误对话框在对话框中显示错误消息，以及任何相关的信息。 在错误对话框中使用的唯一按钮应为“关闭”或类似操作。
 -   不要为与页面上的特定位置具有上下文关系的错误（例如，密码字段等位置的验证错误）使用对话框，请使用应用的画布本身显示内联错误。
 
-### 确认对话框（确定/取消）
+### <a name="confirmation-dialogs-okcancel"></a>确认对话框（确定/取消）
 通过确认对话框，用户可以确认他们是否要执行操作。 他们可以确认操作，也可以选择取消。  
 典型的确认对话框有两个按钮：一个确认（“确定”）按钮和一个取消按钮。  
 
@@ -163,7 +143,7 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 > 某些平台将确认按钮放置在右侧，而不是左侧。 那么，为什么我们建议将它放在左侧呢？  如果你假设大多数用户惯用右手并且他们用右手拿着手机，按位于左侧的确认按钮实际上更为舒适，因为该按钮更有可能处于用户的拇指弧范围内。 位于屏幕右侧的按钮需要用户将拇指向内收缩到不太舒适的位置。
 
-### 创建对话框
+### <a name="create-a-dialog"></a>创建对话框
 若要创建对话框，你使用 [ContentDialog 类](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)。 你可以使用代码或标记创建对话框。 尽管使用 XAML 定义 UI 元素通常更容易，但对于简单对话框，实际上只使用代码更容易。 此示例创建一个对话框来通知用户没有 WiFi 连接，然后使用 [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) 方法显示它。
 
 ```csharp
@@ -206,10 +186,14 @@ private async void displayDeleteFileDialog()
 }
 ```
 
-## 浮出控件
-###  创建浮出控件
+## <a name="flyouts"></a>浮出控件
+###  <a name="create-a-flyout"></a>创建浮出控件
 
-浮出控件是可显示任意 UI 作为其内容的开放式容器。  
+浮出控件是可显示任意 UI 作为其内容的开放式容器。 
+
+<div class="microsoft-internal-note">
+其中包括浮出控件和上下文菜单（可以嵌套在其他浮出控件内）。
+</div>
 
 浮出控件附加到特定控件。 你可以使用 [Placement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) 属性指定浮出控件显示的位置：顶部、左侧、底部、右侧或完整。 如果你选择[完整放置模式](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx)，应用将拉伸浮出控件，并使其在应用窗口中居中。 当可见时，它们应固定到调用对象，并指定它们相对于对象的首选位置：顶部、左侧、底部或右侧。 浮出控件还有一种完整放置模式，该模式尝试拉伸浮出控件，并使其在应用窗口内居中。 某些控件（如 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)）提供可用于关联浮出控件的 [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) 属性。 
 
@@ -295,7 +279,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-### 设置浮出控件的样式
+### <a name="style-a-flyout"></a>设置浮出控件的样式
 若要设置浮出控件的样式，请修改其 [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx)。 此示例显示一个环绕文本段落，并使屏幕阅读器可以访问该文本块。
 
 ````xaml
@@ -313,11 +297,11 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 </Flyout>
 ````
 
-## 获取示例
+## <a name="get-the-samples"></a>获取示例
 *   [XAML UI 基础知识](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     以交互式格式查看所有 XAML 控件。
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 - [工具提示](tooltips.md)
 - [菜单和上下文菜单](menus.md)
 - [**Flyout 类**](https://msdn.microsoft.com/library/windows/apps/dn279496)
@@ -325,6 +309,6 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

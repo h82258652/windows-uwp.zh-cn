@@ -6,11 +6,11 @@ ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8be3dfed1e6fda1777905a73db4b0eae1e3368dd
 
 ---
-# 滑块
+# <a name="sliders"></a>滑块
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,20 +21,14 @@ ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx"><strong>Slider 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx"><strong>Value 属性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx"><strong>ValueChanged 事件</strong></a></li>
+<li>[**Slider 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)</li>
+<li>[**Value 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)</li>
+<li>[**ValueChanged 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 当你希望用户能够设置所定义的连续值（如音量或亮度）或一系列离散值（如屏幕分辨率设置）时，应使用滑块。
 
@@ -59,7 +53,7 @@ ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
 
 -   用户将获得即时反馈所带来的好处。
 
-## 示例
+## <a name="examples"></a>示例
 
 Windows Phone 上用于控制音量的滑块。
 
@@ -69,7 +63,7 @@ Windows 显示设置中用于更改文本大小的滑块。
 
 ![Windows 显示设置中用于更改文本大小的滑块](images/control-examples/slider-display-settings.png)
 
-## 创建滑块
+## <a name="create-a-slider"></a>创建滑块
 
 下面介绍了如何使用 XAML 创建滑块。
 
@@ -103,7 +97,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 }
 ```
 
-## 建议
+## <a name="recommendations"></a>建议
 
 -   调整控件大小，以便用户可以轻松设置所需的值。 对于具有离散值的设置，请确保用户可以使用鼠标轻松选择任何值。 确保滑块的终点始终位于视图边界内。
 -   在用户选择时或选择后，提供即时反馈（如果实际）。 例如，Windows 音量控件会蜂鸣以指示选定的音频音量。
@@ -114,9 +108,9 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   不要将滑块的滑动条大小更改为默认大小以外的大小。
 -   如果值范围较大，并且用户很可能选择该范围内几个代表值之一，请不要创建相邻滑块。 相反，请将这些值用作唯一允许的步骤。 例如，如果时间值最多为 1 个月，但用户仅需要从 1 分钟、1 小时、1 天或 1 个月中选取，则创建仅具有 4 个步骤点的滑块。
 
-## 其他使用指南
+## <a name="additional-usage-guidance"></a>其他使用指南
 
-### 选择适当的布局：水平或垂直
+### <a name="choosing-the-right-layout-horizontal-or-vertical"></a>选择适当的布局：水平或垂直
 
 你可以水平或垂直布置滑块。 使用这些指南可确定使用哪个布局。
 
@@ -125,7 +119,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   当在可以沿着一个方向（水平或垂直）移动的页面中使用滑块时，请针对滑块使用与移动方向不同的方向。 否则，用户在尝试平移页面时，可能会意外地轻扫滑块从而更改其值。
 -   如果仍然不确定使用哪个方向，请使用最适合你的页面布局的方向。
 
-### 范围方向
+### <a name="range-direction"></a>范围方向
 
 范围方向是指当你从滑块的当前值滑动到它的最大值时，滑块的移动方向。
 
@@ -133,7 +127,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   对于水平样式，如果是从左到右的页面布局，请将较小的值放在滑块的左侧；如果是从右到左的页面布局，请将较小的值放在滑块的右侧。
 -   上述指南的一个例外是，对于媒体定位栏：始终将较小的值放在滑块的左侧。
 
-### 步长和刻度线
+### <a name="steps-and-tick-marks"></a>步长和刻度线
 
 -   如果你不希望滑块允许使用最小值和最大值之间的任意值，请使用步骤点。例如，如果使用滑块指定要购买的电影票数，请不要允许浮点值。 为它提供一个步骤值 1。
 -   如果你指定步骤（也称为贴靠点），请确保最后一步与滑块的最大值对齐。
@@ -142,7 +136,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   当用户需要知道他们所选择的设置的确切值而不想与控件交互时，显示刻度线和值标签。 否则，他们可以使用值工具提示来查看确切值。
 -   当步骤点不明显时，始终显示刻度线。 例如，如果滑块的宽度为 200 像素，有 200 个贴靠点，则可以隐藏刻度线，因为用户不会注意到贴靠行为。 但是如果只有 10 个贴靠点，则显示刻度线。
 
-### 标签
+### <a name="labels"></a>标签
 
 -   **滑块标签**
 
@@ -168,7 +162,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
     -   相对于控件居中放置文本，并包括单位（例如像素）。
     -   由于滑块的 Thumb 控件在推动时被遮盖，请考虑以其他方式（采用标签或其他视觉对象）显示当前值。 用于设置文本大小的滑块可以在滑块旁边呈现一些正确大小的示例文本。
 
-### 外观和交互
+### <a name="appearance-and-interaction"></a>外观和交互
 
 滑块由一条轨迹和 Thumb 控件构成。 该轨迹是一个栏（它可以选择性地显示各种刻度线样式），它代表可以输入的值范围。 Thumb 控件是一个选择器，用户可通过点击轨迹或来回推动来决定它的位置。
 
@@ -176,15 +170,12 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 当你设计自定义滑块时，请考虑尽可能清楚地向用户提供所有需要的信息的方法。 如果用户需要通过了解单位来了解设置，请使用值标签；寻找使用图形创意地代表这些值的方法。 例如，控制音量的滑块可以在滑块最小值一端显示不带有音波的扬声器图形，并在最大值一端显示带有音波的扬声器图形。
 
-## 相关主题
-
-**对于设计人员**
-- [切换开关指南](toggles.md)
-**对于开发人员 (XAML)**
+## <a name="related-topics"></a>相关主题
+- [切换开关](toggles.md)
 - [**Slider 类**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

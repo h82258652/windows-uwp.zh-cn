@@ -3,12 +3,19 @@ description: "了解如何使你的应用针对全世界用户都具有包容性
 keywords: "uwp 应用辅助功能, 全球化, 设计包容应用, 辅助功能应用要求"
 title: "UWP 应用中的可用性 - Windows 应用开发"
 author: mijacobs
+label: Usability
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 589e3290a47a9245ddb5e43f64d13bae1244ac8b
-ms.openlocfilehash: d7246bc898e36155996941875b6c00da7891809d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 011d4e7dcebc20e0568fd5bdc4a207a66597f073
 
 ---
-# UWP 应用中的可用性
+# <a name="usability-for-uwp-apps"></a>UWP 应用中的可用性
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: d7246bc898e36155996941875b6c00da7891809d
 本部分中的设计和编码说明可以帮助你使你的 UWP 应用更具包容性，方法是添加辅助功能、支持全球化和本地化、允许用户自定义其体验，以及随时为用户提供帮助。
 
 
-## 辅助功能
+## <a name="accessiblity"></a>辅助功能
 
 辅助功能是指应用可供那些对使用常规用户界面存在限制（阻碍或阻止他们使用）的用户使用。 对于某些情况，辅助功能要求是由法律强制实施的。 但是，无论法律是否有规定，最好都解决辅助功能问题，以尽可能扩大应用的受众范围。
 
@@ -101,7 +108,7 @@ ms.openlocfilehash: d7246bc898e36155996941875b6c00da7891809d
 
 
 
-## 全球化和本地化
+## <a name="globalization-and-localization"></a>全球化和本地化
 
 Windows 的使用遍及世界各地，用户的文化背景、区域及语言也各不相同。 用户可以说任意一种语言，甚至是多种语言。 用户可能位于世界的任何地方，可能在任何地方说任何语言。 通过使用全球化和本地化对应用进行设计使其更具有适应性，可以拓展其潜在市场。
 
@@ -151,7 +158,7 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 </div>
 
 
-## 应用设置
+## <a name="app-settings"></a>应用设置
 
 借助应用设置，用户可以自定义你的应用，从而可以针对其个人需求和偏好来优化它。 通过提供适当的设置并妥善存储它们，可使用户体验更加出色。
 
@@ -166,7 +173,7 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 </div>
 </div>
 
-## 应用内帮助
+## <a name="in-app-help"></a>应用内帮助
 无论你设计的应用有多好，某些用户仍将需要一些额外帮助。
 
 <div class="side-by-side">
@@ -194,6 +201,6 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

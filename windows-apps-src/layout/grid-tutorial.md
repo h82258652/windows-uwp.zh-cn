@@ -1,6 +1,16 @@
+---
+author: mukin
+Description: "本教程式文章将向读者介绍创建基本应用程序用户界面的步骤。 文章将说明并演示网格和 StackPanel 的使用，这是两个最常见的 XAML 元素。"
+title: "通过使用网格和 StackPanel 创建一个简单的天气应用"
+translationtype: Human Translation
+ms.sourcegitcommit: c30aed9681d7c091e9831df3f53d8779dfacce38
+ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
+
+---
+
 # <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>通过使用网格和 StackPanel 创建一个简单的天气应用
 
-使用 XAML  并使用**网格**和 **StackPanel** 元素创建简单的天气应用的布局。 使用这些工具，可以很容易地在运行 Windows 10 的任何设备上使应用看起来很棒。 本教程需要 10-20 分钟。
+使用 XAML 并使用**网格**和 **StackPanel** 元素创建一个简单的天气应用的布局。 使用这些工具，你可以使出色的应用在运行 Windows 10 的任何设备上出色运行。 本教程需要 10-20 分钟。
 
 ## <a name="prerequisites"></a>先决条件
 - Windows 10 和 Microsoft Visual Studio 2015。 [单击此处了解如何设置 Visual Studio](../get-started/get-set-up.md)。
@@ -14,7 +24,7 @@
 5. 若要运行程序，请从菜单中依次选择“调试” > “开始调试”，或选择 F5。
 
 ## <a name="step-2-define-a-grid"></a>步骤 2：定义网格
-在 XAML 中，**网格**由一系列行和列组成。 通过指定**网格**内某个元素的行和列，你可以轻松地在用户界面内放置和间隔其他元素。 使用 **RowDefinition** 和 **ColumnDefinition** 元素定义行和列。
+在 XAML 中，**网格**由一系列行和列组成。 通过指定**网格**内某个元素的行和列，你可以在用户界面内放置和间隔其他元素。 使用 **RowDefinition** 和 **ColumnDefinition** 元素定义行和列。
 
 若要开始创建布局，通过使用**解决方案资源管理器**打开 **MainPage.xaml**，并将自动生成的**网格**元素替换为此代码。
 
@@ -33,7 +43,7 @@
 
 新**网格**将创建一个两行和两列的集合，它可定义应用界面的布局。 第一列的“宽度”为“3\ *”，第二列为“5\ *”，除以比率为 3:5 的两列之间的水平空间。 与此方式相同，两行的“高度”分别为“3\ *”和“\ *”，因此相对于第二行，**网格**为第一行分配三倍空间（“\ *”等同于“1 *”）。 即使在调整窗口大小或更改设备时，都会保留这些比率。
 
-若要了解有关调整行和列大小的其他方法，请参阅[使用 XAML 定义布局](https://msdn.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#layout-properties)。
+若要了解有关调整行和列大小的其他方法，请参阅[使用 XAML 定义布局](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties)。
 
 如果现在运行该应用程序，只会看到一个空白页面，因为任何**网格**区域都没有内容。 若要显示**网格**，让我们添加一些颜色。
 
@@ -53,7 +63,7 @@
 ![为网格着色](images/grid-weather-1.png)
 
 ## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>步骤 4：通过使用 StackPanel 元素组织内容
-**StackPanel** 是我们将用于创建天气应用的第二个 UI 元素。 **StackPanel** 是许多基本应用布局的基础部分，允许你轻松垂直或水平堆叠元素。
+**StackPanel** 是我们将用于创建天气应用的第二个 UI 元素。 **StackPanel** 是许多基本应用布局的基础部分，允许垂直或水平堆叠元素。
 
 在以下代码中，我们创建了两个 **StackPanel** 元素并使用三个 **Textblock** 填充每个元素。 将这些 **StackPanel** 元素添加到第 3 步中**边框**元素下面的**网格**中。 这会导致 **TextBlock** 元素呈现在我们之前创建的彩色**网格**顶部。
 
@@ -102,11 +112,12 @@
 如果愿意，请尝试使用上面的布局，并探索可能代表天气数据的不同方式。
 
 ## <a name="related-articles"></a>相关文章
-有关设计 UWP 应用布局的简介，请参阅 [UWP 应用设计简介](https://msdn.microsoft.com/en-us/windows/uwp/layout/design-and-ui-intro)
+有关设计 UWP 应用布局的简介，请参阅 [UWP 应用设计简介](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
-若要了解如何创建适应不同屏幕大小的响应性布局，请参阅[使用 XAML 定义页面布局](https://msdn.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml)
+若要了解如何创建适应不同屏幕大小的响应性布局，请参阅[使用 XAML 定义页面布局](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Jan17_HO1-->
 
 

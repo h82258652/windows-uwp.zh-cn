@@ -6,29 +6,35 @@ ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 5255da14ccdd0aed3852c41fa662de63a7160fba
-ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: eb524ae7369874e8a2f81cd4a8cbb112829387c8
 
 ---
 
-# 使用全球通用的格式
+# <a name="use-global-ready-formats"></a>使用全球通用的格式
 
-**重要的 API**
-
--   [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
--   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
--   [**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 通过适当设置日期、时间、数字、电话号码和货币的格式，开发全球通用的应用。 你可以在以后调整你的应用，以适应全球市场中更多的文化、区域和语言。
 
-## 简介
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)</li>
+<li>[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)</li>
+<li>[**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting)</li>
+</ul>
+</div>
 
-许多应用开发者在创建他们的应用时，自然只考虑了他们自己的语言和文化。 但当应用开始发展到其他市场时，使应用适应新语言和区域可能非常困难。 例如，日期、时间、数字、日历、货币、电话号码、度量单位和纸张大小的显示都会因文化或语言的不同而有所不同。
+
+## <a name="introduction"></a>简介
+
+许多应用开发人员在创建他们的应用时，自然而然地只考虑了自己的语言和文化。 但当应用开始发展到其他市场时，使应用适应新语言和区域可能非常困难。 例如，日期、时间、数字、日历、货币、电话号码、度量单位和纸张大小的显示都会因文化或语言的不同而有所不同。
 
 通过在开发应用时考虑一些事项，可以简化适应新市场的过程。
 
-## 设置相应的日期和时间格式
+## <a name="format-dates-and-times-appropriately"></a>设置相应的日期和时间格式
 
 有很多不同的正确显示日期和时间的方法。 不同区域和文化在以下方面的使用惯例不同：日期中的日和月顺序、时间中的小时和分钟的分隔，甚至用作分隔符的标点符号。 此外，可以采用各种长格式（“星期三，2012 年 3 月 28 日”）或短格式（“12/3/28”）显示日期，这些格式因文化而异。 当然，年份中的星期和月份的名称和缩写也因语言而异。
 
@@ -56,7 +62,7 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
                   "Short Time: " + stime;
 ```
 
-## 设置相应的数字和货币格式
+## <a name="format-numbers-and-currencies-appropriately"></a>设置相应的数字和货币格式
 
 不同的文化设置数字格式的方式也不相同。 格式差异可能包括显示多少小数位数、什么字符用作小数分隔符以及要使用什么货币符号。 使用 [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) 来显示小数、分数、千分比和货币。 多数情况下，你只是根据用户的当前首选项来显示数字或货币。 但是你也可以使用格式化程序显示某个特殊的区域或格式的货币。
 
@@ -94,13 +100,13 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
 ```
 
-## 使用与文化相对应的日历
+## <a name="use-a-culturally-appropriate-calendar"></a>使用与文化相对应的日历
 
 日历因区域和语言而异。 并非每一个区域都使用公历作为默认日历。 某些区域的用户可能选择其他日历，例如日本历或伊斯兰历。 日历上的日期和时间还对不同的时区和夏令时敏感。
 
 使用标准的[日期和时间选取器](https://msdn.microsoft.com/library/windows/apps/hh465466)控件可允许用户选择日期，从而确保使用首选的日历格式。 对于可能需要对日历日期直接操作的更加复杂的方案，Windows.Globalization 提供了一个 [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) 类，该类为给定的文化、区域和日历类型提供相应的日历表示。
 
-## 设置相应的电话号码
+## <a name="format-phone-numbers-appropriately"></a>设置相应的电话号码
 设置电话号码格式的方式因区域而异。 电话号码的数字位数、数字组合方式和某些部分的重要性因国家/地区而异。 从 Windows 10 版本 1607 开始，可以使用 [**PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting) 为当前区域设置相应的电话号码格式。
 
 [**PhoneNumberInfo**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.phonenumberformatting.phonenumberinfo.aspx) 可解析一串数字，并允许你确定这些数字在当前区域中是否是有效的电话号码、比较两组数字是否相等，并提取电话号码的不同功能部分，例如国家/地区代码或地理区域代码。
@@ -140,11 +146,11 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
     }
 ```    
 
-## 尊重用户的语言和文化首选项
+## <a name="respect-the-users-language-and-cultural-preferences"></a>尊重用户的语言和文化首选项
 
 对于基于用户的语言、区域或文化首选项提供不同功能的方案，Windows 为你提供了一种访问这些首选项的方法：通过 [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825)。 需要时，使用 **GlobalizationPreferences** 类获取用户当前地理区域、首选语言、首选货币等项目的值。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [针对全球市场进行规划](https://msdn.microsoft.com/library/windows/apps/hh465405)
 * [日期和时间控件指南](https://msdn.microsoft.com/library/windows/apps/hh465466)
@@ -163,6 +169,6 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
