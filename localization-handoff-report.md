@@ -1,19 +1,21 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\import-media-from-a-device.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/9f83e9ea32382e419e30f4cf139dae4f4d9efd8c?path=windows-apps-src%2Faudio-video-camera%2Fimport-media-from-a-device.md&_a=contents) | HandedOffSuccess | [Details](#38d04c40e0ae43f8202876b060db7a7d957f86ea706)
+ [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2261847c8cf9e64fbbad80565efbfd60c69480f1?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents) | HandedOffSuccess | [Details](#f1a1af29b22ffda281acfa0b57262313c8854f0f3063)
+ [windows-apps-src\get-started\whats-a-uwp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2261847c8cf9e64fbbad80565efbfd60c69480f1?path=windows-apps-src%2Fget-started%2Fwhats-a-uwp.md&_a=contents) | HandedOffSuccess | [Details](#399cb1a84a3fb56a0403fbfd7c1eaacbc67a8e843067)
+ [windows-apps-src\layout\grid-tutorial.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3b053923174df8c5f458bc0e4fe484a3d1a581aa?path=windows-apps-src%2Flayout%2Fgrid-tutorial.md&_a=contents) | HandedOffSuccess | [Details](#ddf9676fd817eb333a80110c8d2d7d87a93d6b2d3897)
 
 ## Item Details
-##### <a name='38d04c40e0ae43f8202876b060db7a7d957f86ea706'></a> Source: [windows-apps-src\audio-video-camera\import-media-from-a-device.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/9f83e9ea32382e419e30f4cf139dae4f4d9efd8c?path=windows-apps-src%2Faudio-video-camera%2Fimport-media-from-a-device.md&_a=contents)
+##### <a name='f1a1af29b22ffda281acfa0b57262313c8854f0f3063'></a> Source: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2261847c8cf9e64fbbad80565efbfd60c69480f1?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [import-media-from-a-device.5262f350ec683d930357dd7d6660122a0c9858d4.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ef5c58e511c791dc0cccedcb4df3b40011906939?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fimport-media-from-a-device.5262f350ec683d930357dd7d6660122a0c9858d4.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2017-01-20 20:36:12
+* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/8a35e78be356239dbaf449c09eecf6c01acca3cd?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2017-01-21 00:37:55
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,11 +23,49 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\audio-video-camera\import-media-from-a-device.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Faudio-video-camera%2Fimport-media-from-a-device.md&_a=contents)
-* Current Handback File: [import-media-from-a-device.5262f350ec683d930357dd7d6660122a0c9858d4.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fimport-media-from-a-device.5262f350ec683d930357dd7d6660122a0c9858d4.zh-cn.xlf&_a=contents)
+* Current Target File: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/7e6ee9be41337a906ea6b61916fefc99c9a3a35f?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
+* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/71e5031f81dd152d403e9338f03bdf13dc2ca224?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf&_a=contents)
+* Current Handback Datetime: 2017-01-20 14:41:54
+* Bilingual File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/71e5031f81dd152d403e9338f03bdf13dc2ca224?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf&_a=contents)
+* Bilingual Datetime: 2017-01-20 14:55:58
+* [Back to Top](#report-top)
+
+##### <a name='399cb1a84a3fb56a0403fbfd7c1eaacbc67a8e843067'></a> Source: [windows-apps-src\get-started\whats-a-uwp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2261847c8cf9e64fbbad80565efbfd60c69480f1?path=windows-apps-src%2Fget-started%2Fwhats-a-uwp.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/8a35e78be356239dbaf449c09eecf6c01acca3cd?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fwhats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2017-01-21 00:37:55
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\get-started\whats-a-uwp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fget-started%2Fwhats-a-uwp.md&_a=contents)
+* Current Handback File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fwhats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.zh-cn.xlf&_a=contents)
 * Current Handback Datetime: 2016-11-16 18:54:46
-* Bilingual File: [import-media-from-a-device.5262f350ec683d930357dd7d6660122a0c9858d4.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fimport-media-from-a-device.5262f350ec683d930357dd7d6660122a0c9858d4.zh-cn.xlf&_a=contents)
+* Bilingual File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fwhats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.zh-cn.xlf&_a=contents)
 * Bilingual Datetime: 2016-11-16 19:00:10
+* [Back to Top](#report-top)
+
+##### <a name='ddf9676fd817eb333a80110c8d2d7d87a93d6b2d3897'></a> Source: [windows-apps-src\layout\grid-tutorial.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3b053923174df8c5f458bc0e4fe484a3d1a581aa?path=windows-apps-src%2Flayout%2Fgrid-tutorial.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [grid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/8a35e78be356239dbaf449c09eecf6c01acca3cd?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fgrid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2017-01-21 00:37:55
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\layout\grid-tutorial.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/7e6ee9be41337a906ea6b61916fefc99c9a3a35f?path=windows-apps-src%2Flayout%2Fgrid-tutorial.md&_a=contents)
+* Current Handback File: [grid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/71e5031f81dd152d403e9338f03bdf13dc2ca224?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fgrid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf&_a=contents)
+* Current Handback Datetime: 2017-01-20 14:41:54
+* Bilingual File: [grid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/71e5031f81dd152d403e9338f03bdf13dc2ca224?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fgrid-tutorial.c455ef353353b6c53d98766b94441edb5d28f0c1.zh-cn.xlf&_a=contents)
+* Bilingual Datetime: 2017-01-20 14:55:58
 * [Back to Top](#report-top)
 
 
