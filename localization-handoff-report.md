@@ -1,20 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\gaming\relative-mouse-movement.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/bdbba02125231898ce73f0718c75e245e8af94cf?path=windows-apps-src%2Fgaming%2Frelative-mouse-movement.md&_a=contents) | HandedOffSuccess | [Details](#941855a9fb9bdcaf4cfaa78adf1a1045bdda93ce2637)
- [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/18267162baabe636d31d8db8ffb669c1afcb6594?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents) | HandedOffSuccess | [Details](#f39d46c146b2e2bb904935aa3f0854ed6934eb3d3063)
+ [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/757fd001c5da676cdb68762fa51a179f00f06feb?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents) | HandedOffSuccess | [Details](#c18643e3c79f69496450c1afd4220882849dcc044802)
 
 ## Item Details
-##### <a name='941855a9fb9bdcaf4cfaa78adf1a1045bdda93ce2637'></a> Source: [windows-apps-src\gaming\relative-mouse-movement.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/bdbba02125231898ce73f0718c75e245e8af94cf?path=windows-apps-src%2Fgaming%2Frelative-mouse-movement.md&_a=contents)
+##### <a name='c18643e3c79f69496450c1afd4220882849dcc044802'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/757fd001c5da676cdb68762fa51a179f00f06feb?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [relative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/86f99e7815aad0b929d18057a8d9d61a70bee16e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Frelative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2017-01-23 22:20:02
+* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/02d9780be199579e963414d9e18b0f64fe30d1df?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2017-01-24 02:21:41
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -22,29 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\gaming\relative-mouse-movement.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fgaming%2Frelative-mouse-movement.md&_a=contents)
-* Current Handback File: [relative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Frelative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf&_a=contents)
-* Current Handback Datetime: 2016-11-16 18:54:46
-* Bilingual File: [relative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Frelative-mouse-movement.1ac1e0aa375d7774c3f8418d1e45ac58055ad1f6.zh-cn.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-16 19:00:10
-* [Back to Top](#report-top)
-
-##### <a name='f39d46c146b2e2bb904935aa3f0854ed6934eb3d3063'></a> Source: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/18267162baabe636d31d8db8ffb669c1afcb6594?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/86f99e7815aad0b929d18057a8d9d61a70bee16e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2017-01-23 22:20:02
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/7e6ee9be41337a906ea6b61916fefc99c9a3a35f?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
-* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/71e5031f81dd152d403e9338f03bdf13dc2ca224?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf&_a=contents)
+* Current Target File: [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/7e6ee9be41337a906ea6b61916fefc99c9a3a35f?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents)
+* Current Handback File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/71e5031f81dd152d403e9338f03bdf13dc2ca224?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf&_a=contents)
 * Current Handback Datetime: 2017-01-20 14:41:54
-* Bilingual File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/71e5031f81dd152d403e9338f03bdf13dc2ca224?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.zh-cn.xlf&_a=contents)
+* Bilingual File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/71e5031f81dd152d403e9338f03bdf13dc2ca224?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-cn.xlf&_a=contents)
 * Bilingual Datetime: 2017-01-20 14:55:58
 * [Back to Top](#report-top)
 
