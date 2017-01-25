@@ -798,7 +798,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-cn\\master\\dff1e6df480a1ffc0e2441c78b942ccd0ee2126c.bdd02cffeda4ae39a26cbae2054047471e591885.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-cn\\master\\put-ui-strings-into-resources.89bd8b7b1f026196161eb9af87410dcedb962a0d.zh-cn.xlf",
-      "LocXliffCommit": "71e5031f81dd152d403e9338f03bdf13dc2ca224"
+      "LocXliffCommit": "6043721fc17bc3e217e638e46f97d339c1fa75be"
     },
     "windows-apps-src\\globalizing\\use-patterns-to-format-dates-and-times.md.15606b4067a349a33a99e05ff99968d6ac680178.HT": {
       "SourceFilename": "windows-apps-src\\globalizing\\use-patterns-to-format-dates-and-times.md",
@@ -848,7 +848,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-cn\\master\\f9c30e68d5cc94769c9304234db0276e34e1d945.ce0c2114ff98d92ab175cb73eeb34855d6a3ad89.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-cn\\master\\manage-language-and-region.80962d85510a5d98c6e516a03aa94d9e143eddce.zh-cn.xlf",
-      "LocXliffCommit": "71e5031f81dd152d403e9338f03bdf13dc2ca224"
+      "LocXliffCommit": "6043721fc17bc3e217e638e46f97d339c1fa75be"
     },
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md.1b300cec1cbf95b473c3716f6aa0260b98994140.HT": {
       "SourceFilename": "windows-apps-src\\app-settings\\guidelines-for-app-settings.md",
@@ -1698,7 +1698,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-cn\\master\\1226d097e911e79c800a16c33fcbb9bd524bd17a.ea91f0a8a6d9313c050337587a79bea62ca4df90.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-cn\\master\\keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.zh-cn.xlf",
-      "LocXliffCommit": "71e5031f81dd152d403e9338f03bdf13dc2ca224"
+      "LocXliffCommit": "6043721fc17bc3e217e638e46f97d339c1fa75be"
     },
     "windows-apps-src\\layout\\grid.md.b0e76dac8231ea0a6ba5ac16907e707970654735.HT": {
       "SourceFilename": "windows-apps-src\\layout\\grid.md",
@@ -2188,7 +2188,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-cn\\master\\d7c895b8df97e6f58b9c9f4d8a69206fae787d51.44082e1bbf09a921d6545c208190530d62ce51aa.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-cn\\master\\handle-pointer-input.6253e9939b047e57ab20edecf74a22b75318763c.zh-cn.xlf",
-      "LocXliffCommit": "71e5031f81dd152d403e9338f03bdf13dc2ca224"
+      "LocXliffCommit": "6043721fc17bc3e217e638e46f97d339c1fa75be"
     },
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md.c072193e88e3048bfbf66c104139adbdb2118790.HT": {
       "SourceFilename": "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md",
@@ -2258,7 +2258,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-cn\\master\\98922affa9b92512108c83a45759eea90489080c.ef8fd8700edbe202f9fe6392223ed36df406c50c.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-cn\\master\\speech-recognition.c48c23a10074e14d9b7d1ab428f0dabc28108330.zh-cn.xlf",
-      "LocXliffCommit": "71e5031f81dd152d403e9338f03bdf13dc2ca224"
+      "LocXliffCommit": "6043721fc17bc3e217e638e46f97d339c1fa75be"
     },
     "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md.504b18670169498053f466ccfe188c2c8132fda2.HT": {
       "SourceFilename": "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md",
@@ -2298,7 +2298,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-cn\\master\\248dc2bf8cec42d60fad155cfde0bdee9ec7c064.10bd56e97d8d0a36acf2dfff3acd1ee31d878428.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-cn\\master\\define-custom-recognition-constraints.4e9c196a5339b6bdbde8a328756708fd0abf80ab.zh-cn.xlf",
-      "LocXliffCommit": "71e5031f81dd152d403e9338f03bdf13dc2ca224"
+      "LocXliffCommit": "6043721fc17bc3e217e638e46f97d339c1fa75be"
     },
     "windows-apps-src\\input-and-devices\\designing-for-tv.md.11486c1dc2f50232b2faafb654760e4fc88d9418.HT": {
       "SourceFilename": "windows-apps-src\\input-and-devices\\designing-for-tv.md",
