@@ -37,7 +37,7 @@ ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
 
 确保你的设备具有麦克风或等效硬件。
 
-在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211430)（**package.appxmanifest** 文件）中设置“麦克风”****设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211474)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
+在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474)（**package.appxmanifest** 文件）中设置**麦克风******设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
 
 请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
@@ -62,11 +62,11 @@ ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
 
     可以使用这些预定义语法识别长达 10 秒的语音输入，并且不要求你进行任何创作。 然而，它们确实需要连接到网络。
 
-    若要使用 Web 服务约束，必须在“设置”****中启用语音输入和听写支持，方法是在“设置”-&gt;“隐私”-&gt;“语音、墨迹书写和键入”页面中打开“了解我”选项。
+    若要使用 Web 服务约束，必须在**设置**中启用语音输入和听写支持，方法是在“设置”-&gt;“隐私”-&gt;“语音、墨迹书写和键入”页面中打开“了解我”选项。
 
     下面我们将介绍如何测试是否已启用语音输入，如果未启用，则打开“设置”-&gt;“隐私”-&gt;“语音、墨迹书写和键入”页面。
 
-    首先，我们将全局变量 (HResultPrivacyStatementDeclined) 初始化为 0x80045509 的 HResult 值。 请参阅[采用 C\# 或 Visual Basic 的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
+    首先，我们将全局变量 (HResultPrivacyStatementDeclined) 初始化为 0x80045509 的 HResult 值。 请参阅 [采用 C\# 或 Visual Basic 的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -161,15 +161,15 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 如果你使用基于预定义语法的约束（听写或 Web 搜索）：
 
--   “侦听”****屏幕。
--   “思考”****屏幕。
--   “听到你说”****屏幕或错误屏幕。
+-   **侦听**屏幕。
+-   **思考**屏幕。
+-   **听到你说**屏幕或错误屏幕。
 
 如果你使用的约束基于字词或短语列表，或者基于 SRGS 语法文件：
 
--   “侦听”****屏幕。
--   “你说的是”****屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
--   “听到你说”****屏幕或错误屏幕。
+-   **侦听**屏幕。
+-   **你说的是**屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+-   **听到你说**屏幕或错误屏幕。
 
 下图演示了语音识别器在不同屏幕间的流程的示例，该识别器使用基于 SRGS 语法文件的约束。 在本例中，语音识别是成功的。
 
@@ -179,7 +179,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 ![基于 sgrs 语法文件的约束的最终识别屏幕](images/speech-listening-complete.png)
 
-“侦听”****屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 属性获取）自定义“侦听”****屏幕上的内容。
+**侦听**屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 属性获取）自定义**侦听**屏幕上的内容。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
