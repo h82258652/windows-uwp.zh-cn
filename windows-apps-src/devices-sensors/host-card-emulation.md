@@ -4,19 +4,19 @@ ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: "创建 NFC 智能卡应用"
 description: "Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 52a8be1df522c6b5512a7fe560d01e8d840194af
+ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
+ms.openlocfilehash: c5a7293874bd71b50aa31d6af9a687d289d07ce5
 
 ---
-# 创建 NFC 智能卡应用
+# <a name="create-an-nfc-smart-card-app"></a>创建 NFC 智能卡应用
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要提示** 本主题仅适用于 Windows 10 移动版。
 
 Windows Phone 8.1 支持的 NFC 卡仿真应用使用基于 SIM 卡的安全元素，但该模型需要安全付款应用与移动网络运营商 (MNO) 进行密切合作。 这限制了未与 MNO 密切合作的其他商户或开发人员提供的各种可能的支付解决方案。 在 Windows 10 移动版中，我们引入了称为主机卡仿真 (HCE) 的新的卡仿真技术。 HCE 技术使你的应用可以直接与 NFC 读卡器通信。 本主题演示了主机卡仿真 (HCE) 在 Windows 10 移动版设备上的工作原理以及如何开发 HCE 应用，以便你的客户无需与 MNO 协作即可通过他们的手机而非物理卡访问你的服务。
 
-## 开发 HCE 应用需要做哪些准备工作
+## <a name="what-you-need-to-develop-an-hce-app"></a>开发 HCE 应用需要做哪些准备工作
 
 
 若要开发适用于 Windows 10 移动版的基于 HCE 的卡仿真应用，你将需要准备开发环境。 通过安装 Microsoft Visual Studio 2015 即可完成准备工作，该开发环境包括 Windows 开发人员工具和附带 NFC 仿真支持的 Windows 10 移动版仿真器。 有关准备工作的详细信息，请参阅[准备工作](https://msdn.microsoft.com/library/windows/apps/Dn726766)
@@ -38,9 +38,9 @@ Windows 10 支持智能卡的仿真，这些智能卡基于 ISO-DEP (ISO-IEC 144
 
 在下图中显示了基于 HCE 和 SIM 卡的卡仿真支持的体系结构。 
 
-![](./images/nfc-architecture.png)
+![HCE 和 SIM 卡枚举的体系结构](./images/nfc-architecture.png)
 
-## 应用选择和 AID 路由
+## <a name="app-selection-and-aid-routing"></a>应用选择和 AID 路由
 
 若要开发 HCE 应用，你必须了解 Windows 10 移动版设备如何将 AID 路由到特定应用，因为用户可能会安装多个不同的 HCE 应用。 每个应用都可以注册多个基于 HCE 和 SIM 卡的卡。 只要用户在 NFC 设置菜单中选择“SIM 卡”选项作为其默认支付卡，基于 SIM 卡的传统 Windows Phone 8.1 应用便可以继续在 Windows 10 移动版上运行。 首次打开设备时，将默认设置该选项。
 
@@ -48,7 +48,7 @@ Windows 10 支持智能卡的仿真，这些智能卡基于 ISO-DEP (ISO-IEC 144
 
 HCE 应用必须使用它们可以处理的特定 AID 自行注册，以便它们可以接收 AID 的 APDU。 应用使用 AID 组来声明 AID。 从概念上来讲，AID 组等同于单个物理卡。 例如，一张信用卡已使用某个 AID 组进行声明，而第二张来自其他银行的信用卡使用不同的第二个 AID 组进行声明，尽管这两张信用卡可能具有相同的 AID。
 
-## 适用于付款 AID 组的冲突解决
+## <a name="conflict-resolution-for-payment-aid-groups"></a>适用于付款 AID 组的冲突解决
 
 在应用注册了物理卡（AID 组）后，它可以将 AID 组类别声明为“付款”或“其他”。 尽管在任何给定时间可能会注册多个付款 AID 组，但“点击以支付”一次只能启用这些付款 AID 组中的一个，这由用户选择。 存在此行为是因为用户希望有意识地控制选择要使用的单张支付卡、信用卡或借记卡，以便他们在点击其设备以连接到某一终端时，不会使用不想使用的其他卡进行支付。
 
@@ -56,11 +56,11 @@ HCE 应用必须使用它们可以处理的特定 AID 自行注册，以便它�
 
 注册为“付款”的所有 AID 组都将显示在 NFC 设置页面的卡列表中，用户可在其中选择其默认支付卡。 在选定了默认支付卡后，已注册此付款 AID 组的应用将成为默认付款应用。 默认付款应用可以启用或禁用任何其 AID 组，而无需与用户进行交互。 当用户拒绝默认付款应用的提示时，当前的默认付款应用（如果有）将继续保留为默认应用。 以下屏幕截图显示了 NFC 设置页面。
 
-![](./images/nfc-settings.png)
+![“NFC 设置”页的屏幕截图](./images/nfc-settings.png)
 
 使用上述屏幕截图示例，当用户将其默认支付卡更改为未由“HCE 应用程序 1”注册的其他卡时，系统将创建一个确认提示以要求用户确认。 但是，当用户将其默认支付卡更改为“HCE 应用程序 1”注册的其他卡时，系统不会为用户创建确认提示，因为“HCE 应用程序 1”已是默认付款应用。
 
-## 适用于非付款 AID 组的冲突解决
+## <a name="conflict-resolution-for-non-payment-aid-groups"></a>适用于非付款 AID 组的冲突解决
 
 归类为“其他”的非支付卡不会显示在 NFC 设置页面中。
 
@@ -80,7 +80,7 @@ Windows 10 移动版在 NFC 设置页面中提供了菜单选项“SIM 卡”，
 
 对于具有支持 SE 的 SIM 卡的设备，当该设备随 Windows 10 移动版首次启动时，ISO-DEP 路由将设置为“SIM 卡”。 当用户安装支持 HCE 的应用并且该应用支持任何 HCE AID 组注册时，ISO-DEP 路由将指向主机。 新的基于 SIM 卡的应用程序需要在 SIM 卡中注册 AID，以便特定的 AID 路由填充到控制器路由表中。
 
-## 创建基于 HCE 的应用
+## <a name="creating-an-hce-based-app"></a>创建基于 HCE 的应用
 
 HCE 应用有两个部分。
 
@@ -88,7 +88,7 @@ HCE 应用有两个部分。
 -   由系统触发的后台任务用于处理给定 AID 的 APDU。
 
 由于加载后台任务以响应 NFC 点击时的性能要求极其严格，我们建议整个后台任务采用 C++/CX 本机代码（包括任何需要依赖的依赖项、引用或库）进行实现，而不是采用 C# 或托管代码进行实现。 尽管 C# 和托管代码通常运行效果较好，但还存在诸如加载 .NET CLR 等开销，这些开销通过采用 C++/CX 进行编写即可避免。
-## 创建和注册后台任务
+## <a name="create-and-register-your-background-task"></a>创建和注册后台任务
 
 你需要在 HCE 应用中为处理和响应系统路由到它的 APDU 创建后台任务。 首次启动应用期间，前台会注册实现 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/BR224803) 接口的 HCE 后台任务，如以下代码所示。
 
@@ -102,14 +102,14 @@ bgTask = taskBuilder.Register();
 
 请注意，任务触发器将设置为 [**SmartCardTriggerType**](https://msdn.microsoft.com/library/windows/apps/Dn608017)。 **EmulatorHostApplicationActivated**。 这意味着只要操作系统接收到解析为你的应用的 SELECT AID 命令 APDU，就会启动你的后台任务。
 
-## 接收和响应 APDU
+## <a name="receive-and-respond-to-apdus"></a>接收和响应 APDU
 
 当存在面向你的应用的 APDU 时，系统将启动后台任务。 你的后台任务将收到通过 [**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) 对象的 [**CommandApdu**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) 属性传递的 APDU，并使用同一对象的 [**TryRespondAsync**](https://msdn.microsoft.com/library/windows/apps/mt634299.aspx) 方法响应 APDU。 为了提供性能，请考虑使你的后台任务保持轻量运行。 例如，立即响应 APDU 并在完成所有处理后退出后台任务。 由于 NFC 交易的性质，用户将其设备贴靠读卡器的时间通常很短。 后台任务将继续从该读卡器接收通信，直到连接被停用，在这种情况下，将收到 [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644) 对象。 连接可能会因以下原因而被停用，如 [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) 属性中所示。
 
 -   如果连接被停用时附带 **ConnectionLost** 值，这意味着用户已将其设备远离读卡器。 如果你的应用需要用户点击终端更长时间，你可以提示用户提供反馈。 应快速（通过完成延迟）终止你的后台任务，以确保当他们再次点击它时，不会延迟以等待上一后台任务退出。
 -   如果连接被停用时附带 **ConnectionRedirected**，这意味着终端已发送一个新的定向到其他 AID 的 SELECT AID 命令 APDU。 在此情况下，你的应用应立即退出后台任务（通过完成延迟）以允许运行其他后台任务。
 
-此外，后台任务应在 [**IBackgroundTaskInstance interface**](https://msdn.microsoft.com/library/windows/apps/BR224797) 上注册 [**Canceled event**](https://msdn.microsoft.com/library/windows/apps/BR224798) 并且还应快速退出后台任务（通过完成延迟），因为当后台任务完成此事件时，系统会触发它。 以下代码演示了 HCE 应用后台任务。
+此外，后台任务应在 [**IBackgroundTaskInstance interface**](https://msdn.microsoft.com/library/windows/apps/BR224798) 上注册 [**Canceled event**](https://msdn.microsoft.com/library/windows/apps/BR224797) 并且还应快速退出后台任务（通过完成延迟），因为当后台任务完成此事件时，系统会触发它。 以下代码演示了 HCE 应用后台任务。
 
 ```csharp
 void BgTask::Run(
@@ -202,7 +202,7 @@ void BgTask::HandleHceActivation()
  }
 }
 ```
-## 创建和注册 AID 组
+## <a name="create-and-register-aid-groups"></a>创建和注册 AID 组
 
 在首次启动你的应用程序期间，将在预配完卡后，通过系统创建和注册 AID 组。 系统将确定外部读卡器可与其进行通信的应用，并根据注册的 AID 和用户设置相应地路由 APDU。
 
@@ -251,7 +251,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 ```
 
-你可以通过使用 [**SmartCardAppletIdGroupRegistration**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration) 类的 [**RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) 方法来启用注册的卡（AID 组），如下所示。 由于一次只能在系统上启用一张支付卡，因此将付款 AID 组的 [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) 设置为 **Enabled** 等同于设置默认支付卡。 系统将提示用户是否允许设置此卡作为默认支付卡，而不考虑是否已经选择了默认支付卡。 如果你的应用已经是默认的付款应用程序并且仅在其自己的 AID 组之间进行更改，则此语句不为 true。 每个应用最多可以注册 10 个 AID 组。
+你可以通过使用 [**SmartCardAppletIdGroupRegistration**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) 类的 [**RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration) 方法来启用注册的卡（AID 组），如下所示。 由于一次只能在系统上启用一张支付卡，因此将付款 AID 组的 [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) 设置为 **Enabled** 等同于设置默认支付卡。 系统将提示用户是否允许设置此卡作为默认支付卡，而不考虑是否已经选择了默认支付卡。 如果你的应用已经是默认的付款应用程序并且仅在其自己的 AID 组之间进行更改，则此语句不为 true。 每个应用最多可以注册 10 个 AID 组。
 
 ```csharp
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.Enabled);
@@ -281,7 +281,7 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorAppletI
 bgTask = taskBuilder.Register();
 ```
 
-## 前台重写行为
+## <a name="foreground-override-behavior"></a>前台重写行为
 
 当你的应用在前台运行时，可以在不提示用户的情况下将任何 AID 组注册的 [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) 更改为 **ForegroundOverride**。 如果用户点击其设备以连接到终端，同时你的应用在前台运行，那么即使用户未选择任何支付卡作为其默认支付卡，该通信也会路由到你的应用。 当你将卡的激活策略更改为 **ForegroundOverride** 时，此更改仅临时有效，直至应用退出前台运行，并且它不会更改由用户设置的当前默认支付卡。 你可以按照以下方法从你的前台应用更改支付卡或非支付卡的 **ActivationPolicy**。 请注意，[**RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) 方法只能从前台应用调用，不能从后台任务调用。
 
@@ -304,7 +304,7 @@ reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
 ```
 
-## 检查 NFC 和 HCE 支持
+## <a name="check-for-nfc-and-hce-support"></a>检查 NFC 和 HCE 支持
 
 你的应用应先检查设备是否具有 NFC 硬件、支持卡仿真功能以及支持主机卡仿真，然后再向用户提供此类功能。
 
@@ -326,7 +326,7 @@ var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
 Smartcardemulator.IsHostCardEmulationSupported();
 ```
 
-## 锁定屏幕和屏幕关闭行为
+## <a name="lock-screen-and-screen-off-behavior"></a>锁定屏幕和屏幕关闭行为
 
 Windows 10 移动版具有设备级卡仿真设置，它们可以由移动运营商或设备制造商设置。 默认情况下，“点击以支付”切换处于禁用状态，并且“设备级的启用策略”设置为“始终”，除非 MO 或 OEM 重写这些值。
 
@@ -366,7 +366,7 @@ return "Card emulation always on";
         } 
 ```
 
-## 适用于基于 SIM 卡应用的 AID 注册和其他更新
+## <a name="aid-registration-and-other-updates-for-sim-based-apps"></a>适用于基于 SIM 卡应用的 AID 注册和其他更新
 
 使用 SIM 卡作为安全元素的卡仿真应用可以向 Windows 服务注册以声明 AID 在 SIM 卡上受支持。 此注册非常类似于基于 HCE 的应用注册。 唯一的区别是 [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/Dn894639)，它应设置为基于 SIM 卡应用的 UICC。 支付卡注册后，卡的显示名称还将填充在 NFC 设置菜单中。
 
@@ -386,6 +386,6 @@ Windows Phone 8.1 中的传统二进制短信拦截已删除并替换为 Windows
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

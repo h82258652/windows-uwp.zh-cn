@@ -3,8 +3,8 @@ author: msatranjr
 title: "蓝牙广告"
 description: "本部分包含有关如何通过 AdvertisementWatcher 和 AdvertisementPublisher API 的用户将蓝牙低功耗 (LE) 广告集成到通用 Windows 平台 (UWP) 应用的文章。"
 translationtype: Human Translation
-ms.sourcegitcommit: b1493d3d0d61a5fc45ab563b56bffa43650bbed9
-ms.openlocfilehash: feda9b20b4cbc265832bdb51f90546d9e1f668e8
+ms.sourcegitcommit: b454e08015ea9bd6240c836563b1fec78e38dc2c
+ms.openlocfilehash: e21567bf2ffa5b05861cf96099290e1bb66dbf03
 
 ---
 
@@ -39,7 +39,7 @@ Github 上的[蓝牙广告示例](http://go.microsoft.com/fwlink/p/?LinkId=61999
 
 蓝牙 LE 广告允许你的设备不断以信标方式发出特定负载，称为广告。 如果任何附近支持蓝牙 LE 的设备都设置为侦听此特定广告，则这些设备可以看到此广告。
 
-**注意** 出于用户隐私，广告的生命周期被绑定到应用的生命周期。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/index)。
+**注意** 出于用户隐私，广告的生命周期被绑定到应用的生命周期。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本发布
 
@@ -155,6 +155,6 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 判断纯距离的一个替代方法是定义“类别”。 无线电设备在非常接近时通常会报告 0 至 -50 DBm，在中等距离时报告 -50至 -90，在很远时报告低于 -90。 试用和错误最适合用来确定要用于应用的类别。
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

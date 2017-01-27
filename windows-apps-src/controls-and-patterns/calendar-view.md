@@ -6,39 +6,34 @@ ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 86062f744efa487cc70adb9648ff3f3584226000
 
 ---
-# 日历视图
+# <a name="calendar-view"></a>日历视图
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 日历视图让用户查看可按月份、年份或十年期浏览的日历，并与之交互。 用户可选择单个日期或一组日期。 它没有选取器图面，并且日历始终可见。 
 
+
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx"><strong>CalendarView 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx"><strong>SelectedDatesChanged 事件</strong></a></li>
+<li>[**CalendarView 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
+<li>[**SelectedDatesChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 使用日历视图，让用户从始终可见的日历中选取单个日期或一组日期。
 
 如果你需要让用户同时选择多个日期，则必须使用日历视图。 如果你需要让用户仅选取单个日期并且不需要日历始终可见，请考虑使用[日历日期选取器](calendar-date-picker.md)或[日期选取器](date-picker.md)控件。
 
 有关选择正确控件的详细信息，请参阅[日期和时间控件](date-and-time.md)文章。
 
-## 示例
+## <a name="examples"></a>示例
 
 日历视图由 3 种单独视图构成：月份视图、年份视图和十年期视图。 默认情况下，它先打开月份视图。 可通过设置 [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx) 属性来指定开始视图。
 
@@ -46,7 +41,7 @@ ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
 
 用户单击月份视图标题可打开年份视图，单击年份视图标题可打开十年期视图。 用户在十年期视图中选取某个年份可返回年份视图，在年份视图中选取某个月份可返回月份视图。 标题两侧的箭头可按月份、年份或十年期来回浏览。 
 
-## 创建日历视图
+## <a name="create-a-calendar-view"></a>创建日历视图
 
 本示例显示如何创建简单的日历视图。
 
@@ -58,7 +53,7 @@ ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
 
 ![日历视图示例](images/controls_calendar_monthview.png)
 
-### 选择日期
+### <a name="selecting-dates"></a>选择日期
 
 默认情况下，[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) 属性设置为 **Single**。 这让用户能够在日历中选取单个日期。 将 SelectionMode 设置为 **None** 以禁用日期选择。 
 
@@ -71,11 +66,12 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 用户可通过在日历网格中单击或点击已选择的日期来取消选择。
 
-可处理 [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) 事件，以在 [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) 集合更改时收到通知。
+你可以处理 [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) 事件，以在 [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) 集合发生变化时收到通知。
 
-> **注意**  有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> [!NOTE]
+> 有关日期值的重要信息，请参阅日期和时间控件一文中的 [Datetime 和日历值](date-and-time.md#datetime-and-calendar-values)。
 
-### 自定义日历视图的外观
+### <a name="customizing-the-calendar-views-appearance"></a>自定义日历视图的外观
 
 日历视图由在 ControlTemplate 中定义的 XAML 元素和直接由该控件呈现的视觉元素构成。 
 - 在控件模板中定义的 XAML 元素包括围绕控件的边框、标题、上一步和下一步按钮以及 DayOfWeek 元素。 你可以像任何 XAML 控件一样设置这些元素的样式并重新为它们制定模板。 
@@ -116,7 +112,7 @@ calendarView1.MinDate = new DateTime(2000, 1, 1);
 calendarView1.MaxDate = new DateTime(2099, 12, 31);
 ```
 
-### 更新日历日期项目
+### <a name="updating-calendar-day-items"></a>更新日历日期项目
 
 日历中的每一天均由 [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) 对象表示。 若要访问单独的日期项目并使用其属性和方法，请处理 [**CalendarViewDayItemChanging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) 事件并使用事件参数的项目属性来访问 CalendarViewDayItem。
 
@@ -128,7 +124,7 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 ![有密度条的日历天数](images/calendar-view-density-bars.png)
 
-### 分阶段呈现
+### <a name="phased-rendering"></a>分阶段呈现
 
 日历视图可包含大量的 CalendarViewDayItem 对象。 为保持 UI 响应并能够顺利浏览日历，日历视图支持分阶段呈现。 这允许你将日常项目处理分解为多个阶段。 如果某个日期在所有阶段完成前即已移出视图，则没有其他时间可用于尝试处理和呈现该项目。
 
@@ -198,7 +194,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 }
 ```
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 - [日期和时间控件](date-and-time.md)
 - [日历日期选取器](calendar-date-picker.md)
@@ -207,6 +203,6 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

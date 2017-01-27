@@ -6,27 +6,22 @@ ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 5255da14ccdd0aed3852c41fa662de63a7160fba
-ms.openlocfilehash: b45029156a28afdb37d7ac1402d1e6ae845b0e63
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 05208607b148a48e8a680691de90161feeea7700
 
 ---
 
-# 调整布局和字体并支持 RTL
-
-
-
-
+# <a name="adjust-layout-and-fonts-and-support-rtl"></a>调整布局和字体并支持 RTL
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 开发你的应用来支持多种语言的布局和字体，包括 RTL（从右到左）排列方向。
 
-## 布局指南
+## <a name="layout-guidelines"></a>布局指南
 
 
 一些语言（如德语和芬兰语）的文本所需的空间比其对应的英语文本所需的空间更多。 一些语言（如日语）的字体需要更高的高度。 还有一些语言（如阿拉伯语和希伯来语）要求文本布局和应用布局必须采用从右到左 (RTL) 的读取顺序。
 
 使用灵活的布局机制，而不要使用绝对定位、固定宽度或固定高度。 可以根据语言来调整特定 UI 元素（如果必要）。
-
-### XAML
 
 为元素指定 **Uid**：
 
@@ -48,36 +43,8 @@ XAML 布局控件（例如 [**Grid**](https://msdn.microsoft.com/library/windows
 
 确保你的应用的 **ResW** 文件具有 MainPage.FlowDirection 的资源，你可以为要本地化为该语言的每种语言设置该资源。
 
-### HTML
 
-对于使用 JavaScript 的 Windows 应用商店应用，请使用[级联样式表 (CSS)](https://msdn.microsoft.com/library/ms531209) 布局机制，例如 [-ms-grid](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#g_section) 和 [–ms-box](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#f_section)。 使用对称填充和边距，以便针对各种布局方向进行本地化。
-
-你的应用还可以使用 [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 伪类选择器来根据应用的语言调整 CSS 属性，例如特定元素的宽度。 为了实现这一点，应用托管进程将根元素的 **lang** 属性设置为应用语言。
-
-**CSS**
-```CSS
-.item:-ms-lang(de, fi) { width: 350px; }
-```
-
-使用 JavaScript 的 Windows 应用商店应用（可使用 ui-light.css 或 ui-dark.css 样式表）可以根据应用语言自动设置其正文布局方向。 以下 CSS 位于 ui-light 和 ui-dark.css 中，无需自行编写它。
-
-**CSS**
-```CSS
-body:-ms-lang(ar,he…) { direction: rtl;}
-```
-
-这意味着当系统使用从右到左的语言时，大多数应用布局都可正确设置。
-
-与 [WinJS.UI](https://msdn.microsoft.com/library/windows/apps/br229782) 控件类似，你的应用可以使用 [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 伪类选择器来调整物理 CSS 属性（如 **margin** 和 **padding**）。 你无需调整使用关键字（例如 **after** 和 **before**）的逻辑 CSS 属性。
-
-不要在 HTML 中使用 **align** 属性或特性。 应改用 **direction** 属性控制特定组件的对齐方式。
-
-使用 [**writing-mode**](https://msdn.microsoft.com/library/ms531187) 属性在 CSS 中支持垂直文本布局。
-
-## 镜像图像
-
-
-### XAML
+## <a name="mirroring-images"></a>镜像图像
 
 如果应用具有必须针对 RTL 进行镜像的图像（即可以翻转相同图像），则可以应用 [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) 属性：
 
@@ -89,28 +56,14 @@ body:-ms-lang(ar,he…) { direction: rtl;}
 <Image ... FlowDirection="RightToLeft" />
 ```
 
-### HTML
 
-如果应用具有必须针对 RTL 进行镜像的图像（即可以翻转相同图像），则可以使用 CSS 变换在呈现时对图像进行镜像，方法是将 .mirrorable 类添加到元素并添加以下 CSS 类：
+如果应用需要其他图像来正确翻转该图像，那么你可以将资源管理系统与 [layoutdir qualifier](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324) 结合使用。 当[应用程序语言](manage-language-and-region.md)设置为 RTL 语言时，系统会选择名为 file.layoutdir-rtl.png 的图像。 当图像的某一部分翻转而其他部分不翻转时，可能必须使用此方法。
 
-```CSS
-.mirrorable { transform: scaleX(-1); }
-```
+## <a name="fonts"></a>字体
 
-**对于 XAML 和 HTML：**如果应用需要其他图像来正确翻转该图像，则可以将资源管理系统与 [layoutdir 限定符](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)结合使用。 当[应用程序语言](manage-language-and-region.md)设置为 RTL 语言时，系统会选择名为 file.layoutdir-rtl.png 的图像。 当图像的某一部分翻转而其他部分不翻转时，可能必须使用此方法。
+使用 [**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) 以编程方式访问为特定语言建议的字体系列、大小、粗细和样式。 **LanguageFont** 对象提供了对各种类别内容的正确字体信息的访问，这些信息包括 UI 标头、通知、正文文本和用户可编辑的文档正文字体。
 
-## 字体
-
-
-**对于 XAML 和 HTML：**使用 [**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) 字体映射 API 以编程方式访问为特定语言建议的字体系列、大小、粗细和样式。 **LanguageFont** 对象提供了对各种类别内容的正确字体信息的访问，这些信息包括 UI 标头、通知、正文文本和用户可编辑的文档正文字体。
-
-### HTML
-
-使用 JavaScript 的 Windows 应用商店应用（可使用 ui-light.css 或 ui-dark.css 样式表）可以根据应用语言将其字体自动设置为最适合的字体。 应用托管进程将根元素的 **lang** 属性设置为应用语言。
-
-在单页上显示多种语言的应用应分别针对各语言部分设置 **lang** 属性。 [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 伪类选择器会为页面的每个部分选择正确的字体。
-
-## 处理从右往左 (RTL) 语言的最佳做法
+## <a name="best-practices-for-handling-right-to-left-rtl-languages"></a>处理从右往左 (RTL) 语言的最佳做法
 
 当为从右往左 (RTL) 语言本地化应用时，请使用 API 为 RootFrame 设置默认文本方向。 这将导致 RootFrame 包含的所有控件将相应地响应默认文本方向。  在支持多种语言时，请将 LayoutDirection 用于首选语言以设置 FlowDirection 属性。 包含在 Windows 中的大多数控件已使用 FlowDirection。 如果在实现自定义控件，这些控件应使用 FlowDirection 相应地更改 RTL 和 LTR 语言布局。
 
@@ -128,8 +81,9 @@ C#
        RootFrame.FlowDirection = FlowDirection.RightToLeft;
     }
 ```
+
 C++：
-```cpp
+```
     // Get preferred app language
     m_language = Windows::Globalization::ApplicationLanguages::Languages->GetAt(0);
      
@@ -139,7 +93,7 @@ C++：
 ```
 
 
-### RTL 常见问题 
+### <a name="rtl-faq"></a>RTL 常见问题 
 
 <dl>
   <dt> <p><b>问：</b><b>FlowDirection</b> 会根据当前语言选择自动设置吗？ 例如，如果我选择英语，它会从左往右显示，而在选择阿拉伯语时，它又会从右往左显示吗？</p></dt>
@@ -154,11 +108,11 @@ C++：
 </dl>
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 [FlowDirection](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.flowdirection.aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

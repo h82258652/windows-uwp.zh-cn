@@ -1,30 +1,38 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "本主题介绍用于选择和操作文本、图像和控件的新的 Windows UI，并提供在 Windows 应用商店应用中使用这些新的选择和操作机制时应该考虑的用户体验指南。"
+Description: "本主题介绍用于选择和操作文本、图像和控件的新 Windows UI，并提供在 Windows 应用商店应用中使用这些新的选择和操作机制时应考虑的用户体验指南。"
 title: "选择文本和图像"
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
+keywords: "键盘, 文本, 输入, 用户交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 45184c6ce84b9db215c576c5521e8ec1e834b162
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: bb3a231a842698c18fc496c87705d269dfbeaa58
 
 ---
 
-# 选择文本和图像
+# <a name="selecting-text-and-images"></a>选择文本和图像
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 本文介绍了选择和操作文本、图像和控件，并提供了将这些机制用于应用中时应考虑的用户体验指南。
 
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+</ul>
+</div>
+ 
 
 
-
-**重要的 API**
-
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
-
-
-## 应做事项和禁止事项
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 
 -   在实现自己的控制手柄 UI 时使用字体字形。 控制手柄是系统范围内提供的两个 Segoe UI 字体的组合。 使用字体资源可以简化不同的 dpi 下的呈现问题，而且适用于各种 UI 缩放平台。 在实现自己的控制手柄时，应当共享下面的 UI 特征：
@@ -40,7 +48,7 @@ ms.openlocfilehash: 45184c6ce84b9db215c576c5521e8ec1e834b162
 
 -   不允许选择控件、标签、图像、专有内容等 UI 元素。 通常，Windows 应用程序仅允许在特定控件内进行选择。 诸如按钮、标签和徽标之类的控件不能选择。 评估选择是否是你应用的一个问题，如果是，请标识应该禁止选择的 UI 区域。 
 
-## 其他使用指南
+## <a name="additional-usage-guidance"></a>其他使用指南
 
 
 文本选择和操作对触摸交互引入的用户体验问题有特别影响。 鼠标、笔/笔触以及键盘输入高度细化：鼠标单击或笔/笔触触点通常映射到单个像素，某个键已按下或未按下。 触控输入并未细化；将指尖的整个表面映射到屏幕上某个特定的 x-y 位置以精确放置文本插入点比较困难。
@@ -78,7 +86,7 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 ![在所选内容内或在控制手柄上点击（或长按）可调用上下文菜单。](images/textselection-show-context.png)
 
-**注意** 如果词汇拼写错误，则这些交互会稍有不同。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
+**注意**  如果词汇拼写错误，这些交互会稍有变化。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
 
  
 
@@ -104,7 +112,7 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 *具有修剪控制手柄的图像编辑器。*
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 
 
@@ -136,6 +144,6 @@ Windows 识别选择交互的两个可能状态，即可编辑状态和不可编
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,19 +1,19 @@
 ---
 title: "通过 Web 帐户管理器连接到标识提供者"
-description: "本文将介绍如何通过新的 Windows10 Web 帐户管理器 API，使用 AccountsSettingsPane 将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。"
+description: "本文将介绍如何通过新的 Windows 10 Web 帐户管理器 API，使用 AccountsSettingsPane 将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: e16977a9a11b292ea9624ff421aa964c11d615be
-ms.openlocfilehash: d234811b395790a35ad50dea9ef4cc56d60458e8
+ms.sourcegitcommit: 0aef3cc9a3312a647197d8b2a7b815ed42d54fa3
+ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
 
 ---
-# 通过 Web 帐户管理器连接到标识提供者
+# <a name="connect-to-identity-providers-with-web-account-manager"></a>通过 Web 帐户管理器连接到标识提供者
 
-本文将介绍如何通过新的 Windows10 Web 帐户管理器 API，显示 AccountsSettingsPane 并将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本操作（如获取配置文件数据或将文件上传到他们的 OneDrive）。 相关步骤类似于通过支持 Web 帐户管理器的任何标识提供者来获取用户权限和访问权限。
+本文将介绍如何通过新的 Windows 10 Web 帐户管理器 API，显示 AccountsSettingsPane 并将你的通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本操作（如获取配置文件数据或将文件上传到他们的 OneDrive）。 相关步骤类似于通过支持 Web 帐户管理器的任何标识提供者来获取用户权限和访问权限。
 
 > 注意：有关完整代码示例，请参阅 [GitHub 上的 WebAccountManagement 示例](http://go.microsoft.com/fwlink/p/?LinkId=620621)。
 
-## 准备工作
+## <a name="get-set-up"></a>准备工作
 
 首先，在 Visual Studio 中创建一个新的空白应用。 
 
@@ -51,7 +51,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
 ```
 
-## 显示 AccountSettingsPane
+## <a name="show-the-accountsettingspane"></a>显示 AccountSettingsPane
 
 系统提供了一个名为 AccountSettingsPane 的内置用户界面，用于管理标识提供者和 Web 帐户。 你可以按如下方式显示它：
 
@@ -68,7 +68,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 窗格为空的原因是系统只提供了一个 UI shell，这取决于开发人员是否使用标识提供者以编程方式填充窗格。 
 
-## 注册 AccountCommandsRequested
+## <a name="register-for-accountcommandsrequested"></a>注册 AccountCommandsRequested
 
 若要向窗格添加命令，请先注册 AccountCommandsRequested 事件处理程序。 当用户要求查看窗格时（例如，单击 XAML 按钮），此事件处理程序将告知系统来运行生成逻辑。 
 
@@ -90,7 +90,7 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
 
 用户不会与帐户非常频繁地交互，因而以此种方式注册和取消注册事件处理程序有助于防止内存泄漏。 这样，当用户需要自定义窗格的可能性比较大时（例如，当他们在“设置”或“登录”页面时），自定义窗格只会在内存中。 
 
-## 生成帐户设置窗格
+## <a name="build-the-account-settings-pane"></a>生成帐户设置窗格
 
 只要显示 AccountSettingsPane，就会调用 BuildPaneAsync 方法。 这是我们放置代码来自定义窗格中显示的命令的位置。 
 
@@ -148,7 +148,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 ![帐户设置窗格](images/tb-2.png)
 
-### 请求令牌
+### <a name="request-a-token"></a>请求令牌
 
 在使“Microsoft 帐户”选项一直显示在 AccountsSettingsPane 中后，我们需要处理在用户选择它时发生的情况。 我们注册了 GetMsaToken 方法，以便在用户选择使用其 Microsoft 帐户登录时触发，这样我们会在此时获得令牌。 
 
@@ -166,8 +166,8 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 有关需要指定哪些作用域才能获得用以与它们的服务结合使用的令牌，服务提供程序将提供相关文档。 
 
-* 有关 Office 365 和 Outlook.com 作用域，请参阅（使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证）[https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2]。 
-* 有关 OneDrive，请参阅（OneDrive 身份验证和登录）[https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes]。 
+* 有关 Office 365 和 Outlook.com 的范围，请参阅 [使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)。 
+* 有关 OneDrive，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 
@@ -183,7 +183,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 
 本文的剩余部分将继续介绍 MSA 方案，但 AAD 代码非常相似。 有关 AAD/Graph 的详细信息，包括 GitHub 上的完整示例，请参阅 [Microsoft Graph 文档](https://graph.microsoft.io/docs/platform/get-started)。
 
-## 使用令牌
+## <a name="use-the-token"></a>使用令牌
 
 RequestTokenAsync 方法会返回一个 WebTokenRequestResult 对象，它包含你请求的结果。 如果你的请求成功，它将包含一个令牌。  
 
@@ -234,7 +234,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 在提供程序之间，调用不同 REST API 的方式均不相同；有关如何使用令牌的信息，请参阅提供程序的 API 文档。 
 
-## 保存帐户状态
+## <a name="save-account-state"></a>保存帐户状态
 
 令牌可用于立即获取有关用户的信息，但它们通常具有不同的生命期，例如，MSA 令牌的有效期只有几个小时。 幸运的是，每当令牌过期时，你不需要重新显示 AccountsSettingsPane。 在用户对你的应用进行一次授权后，你可以存储用户的帐户信息，以供将来使用。 
 
@@ -304,7 +304,7 @@ private async Task<string> GetTokenSilentlyAsync()
 
 请注意，上述示例中仅介绍了基本的成功和失败情况。 你的应用还应当考虑特殊情况（例如，用户吊销你的应用的权限或者从 Windows 中删除他们的帐户），并进行合理处理。  
 
-## 注销帐户 
+## <a name="log-out-an-account"></a>注销帐户 
 
 如果你坚持使用 WebAccount，你可能需要向用户提供“注销”功能，以便他们可以切换帐户或只是取消其帐户与你的应用之间的关联。 若要执行此操作，首先要删除任何保存的帐户和提供程序信息。 然后，调用 WebAccount.SignOutAsync() 清除缓存，并使你的应用可能拥有的任何现有令牌失效。 
 
@@ -317,7 +317,7 @@ private async Task SignOutAccountAsync(WebAccount account)
 }
 ```
 
-## 添加不支持 WebAccountManager 的提供程序
+## <a name="add-providers-that-dont-support-webaccountmanager"></a>添加不支持 WebAccountManager 的提供程序
 
 如果你想要将身份验证从某个服务集成到你的应用中，但该服务不支持 WebAccountManager（例如 Google+ 或 Twitter），你仍可以将该提供程序手动添加到 AccountsSettingsPane。 若要执行此操作，请创建一个新的 WebAccountProvider 对象，并提供自己的名称和 .png 图标，然后将其添加到 WebAccountProviderCommands。 下面是一些存根代码： 
 
@@ -342,7 +342,7 @@ private async void GetTwitterTokenAsync(WebAccountProviderCommand command)
 
 请注意，这只会将图标添加到 AccountsSettingsPane 并在单击该图标时运行你指定的方法（在本例中为 GetTwitterTokenAsync）。 必须提供用于处理实际身份验证的代码。 有关详细信息，请参阅（Web 身份验证代理）[web-authentication-broker]，它提供了使用 REST 服务进行身份验证的帮助程序方法。 
 
-## 添加自定义标题
+## <a name="add-a-custom-header"></a>添加自定义标题
 
 你可以使用 HeaderText 属性自定义帐户设置窗格，如下所示： 
 
@@ -361,7 +361,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 标题文本不要过于冗长；保持简洁明了。 如果你的登录过程很复杂并且需要显示详细信息，请使用自定义链接将用户链接到单独的页面。 
 
-## 添加自定义链接
+## <a name="add-custom-links"></a>添加自定义链接
 
 你可以向 AccountsSettingsPane 添加自定义命令，它们会在受支持的 WebAccountProviders 下方显示为链接。 自定义命令非常适合与用户帐户相关的简单任务，如显示隐私策略或为遇到问题的用户启动支持页面。 
 
@@ -387,7 +387,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 理论上，你可以对任何内容使用设置命令。 但是，我们建议将它们的使用范围限制在直观的与帐户相关的情况，如上文所述。 
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 [Windows.Security.Authentication.Web.Core 命名空间](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.core.aspx)
 
@@ -401,6 +401,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO5-->
 
 

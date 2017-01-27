@@ -6,11 +6,11 @@ ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: d32c643db84eeb7c81304467a326566938e726c0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 0c565c036b8bcb7c26ad860231ee649b73c636c3
 
 ---
-# 日历日期选取器
+# <a name="calendar-date-picker"></a>日历日期选取器
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,33 +19,26 @@ ms.openlocfilehash: d32c643db84eeb7c81304467a326566938e726c0
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx"><strong>CalendarDatePicker 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx"><strong>Date 属性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx"><strong>DateChanged 事件</strong></a></li>
+<li>[**CalendarDatePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</li>
+<li>[**Date 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)</li>
+<li>[**DateChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 使用“日历日期选取器”****，让用户从上下文日历视图中选取某个日期。 将它用于选择约会或出发日期等事项。
 
 若要让用户选取日历上下文不重要的已知日期，例如生日，请考虑使用[**日期选取器**](date-picker.md)。
 
 有关选择正确控件的详细信息，请参阅[日期和时间控件](date-and-time.md)文章。
 
-## 示例
+## <a name="examples"></a>示例
 
 如果尚未设置日期，入口点将显示占位符文本；否则，它将显示选择的日期。 当用户选择该入口点时，日历视图将进行扩展以供用户选择日期。 日历视图将会覆盖其他 UI；它不会将其他 UI 推开。
 
 ![日历日期选取器示例](images/calendar-date-picker-2-views.png)
 
-## 创建日期选取器
+## <a name="create-a-date-picker"></a>创建日期选取器
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date"/>
@@ -64,7 +57,7 @@ arrivalCalendarDatePicker.Header = "Arrival date";
 
 但是，你无法更改内部 CalendarView 的 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) 以支持多项选择。 如果你需要让用户选取多个日期或需要日历始终可见，请考虑使用日历视图而非日历日期选取器。 有关如何修改日历屏幕的详细信息，请参阅[日历视图](calendar-view.md)文章。
 
-### 选择日期
+### <a name="selecting-dates"></a>选择日期
 
 使用 [**Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx) 属性获取或设置选定的日期。 默认情况下，Date 属性设置为 **null**。 当用户在日历视图中选择某个日期时，此属性即已更新。 用户可清除该日期，方法是在日历视图中单击选择的日期以取消选择。 
 
@@ -78,11 +71,12 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 - 如果 **Date** 小于 **MinDate**，则该值将设置为 **MinDate**。
 - 如果 **Date** 大于 **MaxDate**，则该值将设置为 **MaxDate**。
 
-可处理 [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) 事件，以在 Date 值更改时收到通知。
+你可以处理 [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) 事件，以在 Date 值发生变化时收到通知。
 
-> **注意**  有关日期值的重要信息，请参阅日期和时间控件文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> [!NOTE]
+有关日期值的重要信息，请参阅日期和时间控件一文中的 [Datetime 和日历值](date-and-time.md#datetime-and-calendar-values)。
 
-### 设置标题和占位符文本
+### <a name="setting-a-header-and-placeholder-text"></a>设置标题和占位符文本
 
 你可以将 [**Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx)（或标签）和 [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx)（或水位线）添加到日历日期选取器，以向用户指示其用途。 若要自定义标题外观，可设置 [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) 属性而非 Header。
 
@@ -93,8 +87,11 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
                     PlaceholderText="Choose your arrival date"/>
 ```
 
+## <a name="get-the-sample-code"></a>获取示例代码
+* [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## 相关文章
+
+## <a name="related-articles"></a>相关文章
 
 - [日期和时间控件](date-and-time.md)
 - [日历视图](calendar-view.md)
@@ -103,6 +100,6 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

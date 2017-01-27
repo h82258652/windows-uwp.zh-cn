@@ -6,35 +6,27 @@ ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 5752e1a7f7ac358043ec99c8db07cbfda9c4cd37
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 9fa226beed09e79ef3e5a294e36f615fa179c470
 
 ---
-# Web 视图
+# <a name="web-view"></a>Web 视图
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
-
 
 Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Edge 呈现引擎来呈现 Web 内容。 超链接也可以在 Web 视图控件中显示并正常工作。
 
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227702"><strong>WebView 类</strong></a></li>
+<li>[**WebView 类**](https://msdn.microsoft.com/library/windows/apps/br227702)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用 Web 视图控件从远程 Web 服务器、动态生成的代码或者应用程序包中的内容文件显示格式丰富的 HTML 内容。 丰富的内容还可以包含脚本代码，并在脚本和你的应用代码之间通信。
 
-## 创建 Web 视图
+## <a name="create-a-web-view"></a>创建 Web 视图
 
 **修改 Web 视图的外观**
 
@@ -54,7 +46,7 @@ Web 视图控件将一个视图嵌入你的应用中，以便使用 Microsoft Ed
 
 如 [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 类页上的“事件”表中所示，Web 视图不支持继承自 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) 的大部分用户输入事件，如 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx)、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx) 和 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx)。 你可以改为将 [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) 与 JavaScript **eval** 函数结合使用来使用 HTML 事件处理程序，并通过 HTML 事件处理程序中的 **window.external.notify** 以使用 [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) 通知应用程序。
 
-### 导航到内容
+### <a name="navigating-to-content"></a>导航到内容
 
 Web 视图提供多个 API 以进行基本导航：[**GoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx)、[**Refresh**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx)、[**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx) 和 [**CanGoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx)。 这些 API 可用于向你的应用添加典型的 Web 浏览功能。 
 
@@ -79,7 +71,7 @@ Web 视图提供多个 API 以进行基本导航：[**GoBack**](https://msdn.mic
 webView1.Navigate("http://www.contoso.com");
 ```
 
-若要使用 POST 请求和 HTTP 标头导航到 URI，请使用 [**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) 方法。 此方法仅支持针对 [**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) 属性值的 [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) 和 [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx)。 
+若要使用 POST 请求和 HTTP 标头导航到 URI，请使用 [**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) 方法。 此方法仅支持针对 [**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) 属性值的 [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) 和 [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx)。 
 
 若要加载应用的 [**LocalFolder**]() 或 [**TemporaryFolder**]() 数据存储中的未压缩和未加密内容，请将 **Navigate** 方法与使用 [ms-appdata scheme]() 的 **Uri** 结合使用。 Web 视图对此方案的支持要求你将子文件夹中的内容置于本地文件夹或临时文件夹下。 这样便可以导航到 URI，例如 ms-appdata:///local/*folder*/*file*.html 和 ms-appdata:///temp/*folder*/*file*.html。 （若要加载压缩或加密文件，请参阅 [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx)。） 
 
@@ -97,7 +89,7 @@ webView1.Navigate("ms-appx-web:///help/about.html");
 
 使用 [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) 方法，通过自定义解析程序加载本地内容。 这样既可以支持高级方案（如下载和捕获基于 Web 的内容供脱机使用），也可以支持从压缩文件中提取内容。
 
-### 响应导航事件
+### <a name="responding-to-navigation-events"></a>响应导航事件
 
 Web 视图控件提供的多个事件可用于响应导航和内容加载状态。 对于根 Web 视图内容，事件发生顺序如下所示：[**NavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx)、[**ContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx)、[**DOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx)、[**NavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
 
@@ -145,7 +137,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**NavigationCompleted** - 在 Web 视图已完成当前内容加载或者导航失败时发生。 若要确定导航是否已失败，请检查 [**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) 类的 [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) 和 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) 属性。 
+**NavigationCompleted** - 在 Web 视图已完成当前内容加载或者导航失败时发生。 若要确定导航是否已失败，请检查 [**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) 类的 [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) 和 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) 属性。 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -170,11 +162,11 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 - [**FrameDOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - 在 Web 视图中的框架已完成分析其当前 HTML 内容时发生。 
 - [**FrameNavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - 在 Web 视图中的框架已完成加载其内容时发生。 
 
-### 响应潜在问题
+### <a name="responding-to-potential-problems"></a>响应潜在问题
 
 你可以对内容可能出现的问题做出响应，例如脚本长时间运行、Web 视图不能加载内容和不安全内容的警告。 
 
-脚本运行期间，你的应用可能不做任何响应。 [**LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) 事件在 Web 视图执行 JavaScript 期间定期发生，从而提供中断该脚本运行的机会。 若要确定脚本已运行的时间，请检查 [**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx) 的 [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) 属性。 若要停止该脚本，请将事件参数 [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) 属性设置为 **true**。 除非在后续 Web 视图导航期间重新加载已停止执行的脚本，否则不会再次执行该脚本。 
+脚本运行期间，你的应用可能不做任何响应。 [**LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) 事件在 Web 视图执行 JavaScript 期间定期发生，从而提供中断该脚本运行的机会。 若要确定脚本已运行的时间，请检查 [**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) 的 [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx) 属性。 若要停止该脚本，请将事件参数 [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) 属性设置为 **true**。 除非在后续 Web 视图导航期间重新加载已停止执行的脚本，否则不会再次执行该脚本。 
 
 Web 视图控件无法承载任意文件类型。 当尝试加载 Web 视图无法承载的内容时，会发生 [**UnviewableContentIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx) 事件。 你可以处理此事件并通知用户，或者使用 [**Launcher**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx) 类将该文件重定向到外部浏览器或其他应用。
 
@@ -182,7 +174,7 @@ Web 视图控件无法承载任意文件类型。 当尝试加载 Web 视图无�
 
 当 Web 视图显示由 SmartScreen 筛选器报告为不安全内容的警告页时，会发生 [**UnsafeContentWarningDisplayingevent**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying.aspx) 事件。 如果用户选择继续导航，随后导航到该页面将不显示警告，也不会触发该事件。
 
-### 处理 Web 视图内容的特殊情况
+### <a name="handling-special-cases-for-web-view-content"></a>处理 Web 视图内容的特殊情况
 
 你可以使用 [**ContainsFullScreenElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx) 属性和 [**ContainsFullScreenElementChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx) 事件来检测、响应和支持 Web 内容中的全屏体验，例如全屏视频播放。 例如，你可能会使用 ContainsFullScreenElementChanged 事件来调整 Web 视图的大小以占据整个应用视图，或者（如以下示例所示）在需要全屏 Web 体验时，以全屏模式显示应用的窗口。
 
@@ -234,11 +226,11 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 }
 ```
 
-如果你的应用需要用户输入或其他异步操作来响应权限请求，则使用 [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) 的 [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) 方法创建一个可以稍后执行的 [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx)。 请参阅 [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx)。 
+如果你的应用需要用户输入或其他异步操作来响应权限请求，则使用 [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) 的 [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) 方法创建一个可以稍后执行的 [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx)。 请参阅 [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx)。 
 
 如果用户必须安全地注销 Web 视图中承载的网站，或在其他安全性非常重要的情况下，请调用静态方法 [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) 清除 Web 视图会话中本地缓存的内容。 这可以防止恶意用户访问敏感数据。 
 
-### 与 Web 视图内容交互
+### <a name="interacting-with-web-view-content"></a>与 Web 视图内容交互
 
 你可以与 Web 视图内容进行交互，方法为使用 [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) 方法调用脚本或将脚本注入 Web 视图内容，并使用 [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) 事件从 Web 视图内容取回信息。
 
@@ -268,7 +260,7 @@ Web 视图内容中的脚本可以使用带有字符串参数的 **window.extern
 
 若要在调用 window.external.notify 时，允许外部网页引发 **ScriptNotify** 事件，必须在应用清单的 **ApplicationContentUriRules** 部分包含该页面的 URI。 （你可以在 Microsoft Visual Studio 中的 Package.appxmanifest 设计器的“内容 URI”选项卡上执行此操作。）此列表中的 URI 必须使用 HTTPS，可以包含子域通配符（例如 `https://*.microsoft.com`），但不能包含域通配符（例如 `https://*.com` 和 `https://*.*`）。 该部件清单要求不适用于源自应用包的内容、使用 ms-local-stream:// URI 的内容或使用 [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) 加载的内容。 
 
-### 访问 Web 视图中的 Windows 运行时
+### <a name="accessing-the-windows-runtime-in-a-web-view"></a>访问 Web 视图中的 Windows 运行时
 
 你可以使用 [**AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) 方法将本机类的实例从 Windows 运行时组件注入 Web 视图的 JavaScript 上下文。 这支持对该 Web 视图内 JavaScript 内容中的对象的本机方法、属性和事件进行完全访问。 必须使用 [**AllowForWeb**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx) 属性修饰该类。 
 
@@ -302,25 +294,25 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
   </Applications>
 ```
 
-### 用于 Web 内容托管的选项
+### <a name="options-for-web-content-hosting"></a>用于 Web 内容托管的选项
 
 你可以使用 [**WebView.Settings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.settings.aspx) 属性（属于类型 [**WebViewSettings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewsettings.aspx)）对是否启用 JavaScript 和 IndexedDB 进行控制。 例如，当 Web 视图用于只显示静态内容时，你需要禁用 JavaScript 以获得最佳性能。
 
-### 捕获 Web 视图内容
+### <a name="capturing-web-view-content"></a>捕获 Web 视图内容
 
 若要允许与其他应用共享 Web 视图内容，请使用 [**CaptureSelectedContentToDataPackageAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx) 方法，该方法会将选定的内容作为 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx) 返回。 此方法是异步的，因此必须使用延迟来阻止 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx) 事件处理程序在异步调用完成之前返回。 
 
 若要获取 Web 视图当前内容的预览图像，请使用 [**CapturePreviewToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.capturepreviewtostreamasync.aspx) 方法。 此方法会创建当前内容的图像，并将其写入指定的流。 
 
-### 线程行为
+### <a name="threading-behavior"></a>线程行为
 
 默认情况下，Web 视图内容承载于属于桌面设备系列的设备的 UI 线程上，不会承载在所有其他设备的 UI 线程上。 你可以使用 [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) 静态属性来查询当前客户端的默认线程行为。 如有必要，可以使用 [**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) 构造函数替代此行为。 
 
-> **注意**  在移动设备的 UI 线程上托管内容时可能存在性能问题，因此在更改 DefaultExecutionMode 时，请确保在所有目标设备上进行测试。
+> **注意**&nbsp;&nbsp;在移动设备的 UI 线程上托管内容时可能存在性能问题，因此在更改 DefaultExecutionMode 时，请确保在所有目标设备上进行测试。
 
 在 UI 线程外托管内容的 Web 视图与需要手势才能从 Web 视图控件向上传播到父级的父控件不兼容，例如 [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx)、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) 和其他相关控件。 这些控件将不能接收在线程外的 Web 视图中发起的手势。 此外，并不直接支持打印线程外的 Web 内容，应改为使用 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) 填充打印元素。
 
-## 建议
+## <a name="recommendations"></a>建议
 
 
 -   确保针对设备正确地格式化加载的网站，并使用与应用的其他部分一致的颜色、版式和导航。
@@ -329,7 +321,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [**WebView 类**](https://msdn.microsoft.com/library/windows/apps/br227702)
  
@@ -342,6 +334,6 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

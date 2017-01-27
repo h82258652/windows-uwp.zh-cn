@@ -4,23 +4,20 @@ ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "在 Windows 应用商店提交 API 中使用此方法，可为注册到 Windows 开发人员中心帐户的应用创建一个新的软件包外部测试版提交。"
 title: "使用 Windows 应用商店提交 API 创建软件包外部测试版提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
-ms.openlocfilehash: 8689fa9d314d2ba1d31a16c47aa4c7168e44c69f
+ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
+ms.openlocfilehash: 2ca6824039077d5d3ceba2c643d52a62c77104e4
 
 ---
 
-# 使用 Windows 应用商店提交 API 创建软件包外部测试版提交
-
-
-
+# <a name="create-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 应用商店提交 API 创建软件包外部测试版提交
 
 在 Windows 应用商店提交 API 中使用此方法，为应用的软件包外部测试版创建新提交。 使用此方法成功创建新提交后，[更新提交](update-a-flight-submission.md)以对提交数据进行任何必要更改，然后[确认提交](commit-a-flight-submission.md)以供引入和发布。
 
 有关此方法如何适用通过使用 Windows 应用商店提交 API 创建软件包外部测试版提交过程的详细信息，请参阅[管理软件包外部测试版提交](manage-flight-submissions.md)。
 
->**注意**  此方法可为现有软件包外部测试版创建提交。 若要创建软件包外部测试版，请使用[创建软件包外部测试版](create-a-flight.md)方法。
+>**注意**&nbsp;&nbsp;此方法可为现有软件包外部测试版创建提交。 若要创建软件包外部测试版，请使用[创建软件包外部测试版](create-a-flight.md)方法。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 若要使用此方法，首先需要执行以下操作：
 
@@ -28,9 +25,9 @@ ms.openlocfilehash: 8689fa9d314d2ba1d31a16c47aa4c7168e44c69f
 * [获取 Azure AD 访问令牌](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)，以供在此方法的请求标头中使用。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以获取新的令牌。
 * 使用你的开发人员中心帐户为应用创建软件包外部测试版。 可以使用开发人员中心仪表板执行此操作，也可以通过以下方式执行此操作：使用[创建软件包外部测试版](create-a-flight.md)方法。
 
->**注意**  此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
+>**注意**&nbsp;&nbsp;此方法只可以用于授予使用 Windows 应用商店提交 API 权限的 Windows 开发人员中心帐户。 并非所有帐户都已启用此权限。
 
-## 请求
+## <a name="request"></a>请求
 
 此方法具有以下语法。 请参阅以下部分，获取标头和请求正文的使用示例和描述。
 
@@ -41,7 +38,7 @@ ms.openlocfilehash: 8689fa9d314d2ba1d31a16c47aa4c7168e44c69f
 <span/>
  
 
-### 请求标头
+### <a name="request-header"></a>请求标头
 
 | 标头        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -49,20 +46,20 @@ ms.openlocfilehash: 8689fa9d314d2ba1d31a16c47aa4c7168e44c69f
 
 <span/>
 
-### 请求参数
+### <a name="request-parameters"></a>请求参数
 
-| 名称        | 类型   | 描述                                                                 |
+| 名称        | 类型   | 说明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字符串 | 必需。 要创建软件包外部测试版提交的应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 | flightId | 字符串 | 必需。 要添加提交的软件包外部测试版的 ID。 可通过开发人员中心仪表板获取此 ID，它包含在[创建软件包外部测试版](create-a-flight.md)和[获取应用的软件包外部测试版](get-flights-for-an-app.md)请求的响应数据中。  |
 
 <span/>
 
-### 请求正文
+### <a name="request-body"></a>请求正文
 
 请勿为此方法提供请求正文。
 
-### 请求示例
+### <a name="request-example"></a>请求示例
 
 以下示例演示了如何为具有应用商店 ID 9WZDNCRD91MD 的应用创建全新的软件包外部测试版提交。
 
@@ -71,7 +68,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fl
 Authorization: Bearer <your access token>
 ```
 
-## 响应
+## <a name="response"></a>响应
 
 以下示例演示了成功调用此方法的 JSON 响应正文。 该响应正文包含新提交的相关信息。 有关响应正文中这些值的更多详细信息，请参阅[软件包外部测试版提交资源](manage-flight-submissions.md#flight-submission-object)。
 
@@ -114,18 +111,18 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 错误代码
+## <a name="error-codes"></a>错误代码
 
 如果无法成功完成请求，该响应中会包含以下 HTTP 错误代码之一。
 
-| 错误代码 |  描述   |
+| 错误代码 |  说明   |
 |--------|------------------|
 | 400  | 由于请求无效，无法创建软件包外部测试版提交。 |
 | 409  | 由于应用的当前状态，或者应用使用的开发人员中心仪表板功能[当前不受 Windows 应用商店提交 API 支持](create-and-manage-submissions-using-windows-store-services.md#not_supported)，无法创建软件包外部测试版提交。 |   
 
 <span/>
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [使用 Windows 应用商店服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [管理软件包外部测试版提交](manage-flight-submissions.md)
@@ -137,6 +134,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

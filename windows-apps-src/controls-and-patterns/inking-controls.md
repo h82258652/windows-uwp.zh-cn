@@ -5,11 +5,11 @@ title: "墨迹书写控件"
 label: Inking Controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2fe53747da7995b5442eda0a6c20b120b3b615e5
-ms.openlocfilehash: aacf45c90458d3ca1bd295f904e8f2393d27542d
+ms.sourcegitcommit: 8a040033f99d6e8cac04b44dcec58c6b306eda54
+ms.openlocfilehash: e2ffb7bfb7bb602fdc3462da84f60f4ae12d9da8
 
 ---
-# 墨迹书写控件
+# <a name="inking-controls"></a>墨迹书写控件
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -17,32 +17,31 @@ ms.openlocfilehash: aacf45c90458d3ca1bd295f904e8f2393d27542d
 
 InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默认设置）或擦除笔划。 此控件是一个透明的覆盖层，该覆盖层不包含任何用于更改默认笔划墨迹属性的内置 UI。
 
->**注意**  InkCanvas 可以配置为针对鼠标和触控输入支持类似功能。
+> [!NOTE]
+> InkCanvas 可以配置为针对鼠标和触控输入支持类似功能。
 
 由于 InkCanvas 控件不包括对更改默认笔划墨迹设置的支持，因此它可以与 InkToolbar 控件配对。 InkToolbar 包含一组可自定义和可扩展的按钮，用于在关联的 InkCanvas 中激活墨迹相关的功能。
 
 默认情况下，InkToolbar 包括用于绘制、擦除、突出显示和显示标尺的按钮。 根据功能，在浮出控件中提供其他设置和命令，如墨迹颜色、笔划粗细、擦除所有墨迹。
 
->**注意**  InkToolbar 支持笔和鼠标输入，并且可配置为识别触控输入。
+> [!NOTE]
+> InkToolbar 支持笔和鼠标输入，并且可配置为识别触控输入。
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300">
 
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx"><strong>InkCanvas 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx"><strong>InkToolbar 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx"><strong>InkPresenter 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br208524"><strong>Windows.UI.Input.Inking</strong></a></li>
+<li>[**InkCanvas 类**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)</li>
+<li>[**InkToolbar 类**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)</li>
+<li>[**InkPresenter 类**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)</li>
+<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
 </ul>
-
-</div>
 </div>
 
 
 
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 当你需要在应用中支持基本墨迹书写，而不向用户提供任何墨迹设置时，请使用 InkCanvas。
 
@@ -50,9 +49,10 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 
 将 InkCanvas 与 InkToolbar 配对以提供用于激活墨迹功能和设置基本墨迹属性（如笔划大小、颜色和笔尖形状）的 UI。
 
->**注意**  若要实现在 InkCanvas 上呈现的更广泛的笔划墨迹自定义，请使用基础 [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 对象。
+> [!NOTE] 
+> 若要在 InkCanvas 上对笔划墨迹呈现进行更广泛的自定义，请使用基础的 [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 对象。
 
-## 示例
+## <a name="examples"></a>示例
 
 **Microsoft Edge**
 
@@ -64,7 +64,7 @@ Edge 浏览器针对 **Web 笔记**使用 InkCanvas 和 InkToolbar。
 InkCanvas 和 InkToolbar 还用于 **Windows Ink 工作区**中的**草图板**和**屏幕草图**。  
 ![Windows Ink 工作区中的 InkToolbar](images/ink-tools-ink-workspace.png)
 
-## 创建 InkCanvas 和 InkToolbar
+## <a name="create-an-inkcanvas-and-inktoolbar"></a>创建 InkCanvas 和 InkToolbar
 
 将 InkCanvas 添加到应用只需一行标记：
 
@@ -72,7 +72,8 @@ InkCanvas 和 InkToolbar 还用于 **Windows Ink 工作区**中的**草图板**�
 <InkCanvas x:Name=“myInkCanvas”/>
 ```
 
->**注意**  有关使用 InkPresenter 的详细 InkCanvas 自定义，请参阅[“UWP 应用中的笔和触笔交互”](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)文章。
+> [!NOTE]
+> 有关使用 InkPresenter 进行的详细的 InkCanvas 自定义，请参阅[“UWP 应用中的笔和触笔交互”](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)。
 
 InkToolbar 控件必须与 InkCanvas 结合使用。 将 InkToolbar（以及所有内置工具）合并到应用需要一行额外的标记：
 
@@ -83,7 +84,7 @@ InkToolbar 控件必须与 InkCanvas 结合使用。 将 InkToolbar（以及所�
 这显示以下 InkToolbar：
 <img src="images/ink-tools-uninvoked-toolbar.png" width="250">
 
-### 内置的按钮
+### <a name="built-in-buttons"></a>内置的按钮
 
 InkToolbar 包含以下内置按钮：
 
@@ -106,15 +107,17 @@ InkToolbar 包含以下内置按钮：
 
 尽管这是默认配置，但对于为你的应用将哪些内置按钮包含在 InkToolbar 中，你具有完全的控制权。
 
-### 自定义按钮
+### <a name="custom-buttons"></a>自定义按钮
 
 InkToolbar 由两组不同的按钮类型组成：
 
 1. 一组“工具”按钮，包含内置绘制、擦除和突出显示按钮。 在此处添加自定义的笔和工具。
-> **注意**  功能选择相互排除。
+> [!NOTE]
+> 功能选择相互排斥。
 
 2. 一组“切换”按钮，包含内置标尺按钮。 在此处添加自定义切换。
-> **注意**  功能相互不排斥，并且可以与其他活动工具同时使用。
+> [!NOTE]
+> 功能相互不排斥，并且可以与其他活动工具同时使用。
 
 根据你的应用程序和所需的墨迹书写功能，你可以将以下任意按钮（绑定到你的自定义墨迹功能）添加到 InkToolbar：
 
@@ -122,11 +125,12 @@ InkToolbar 由两组不同的按钮类型组成：
 - 自定义工具：非笔工具，由主机应用定义。
 - 自定义切换：将应用定义的功能状态设置为开或关。 当打开时，功能将与活动工具结合使用。
 
-> **注意**  你无法更改内置按钮的显示顺序。 默认的显示顺序为：圆珠笔、铅笔、荧光笔、橡皮擦和标尺。 自定义笔附加到最后一个默认笔，自定义工具按钮添加到最后一个笔按钮和橡皮擦按钮之间，而自定义切换按钮添加到标尺按钮之后。 （自定义按钮按照指定它们的顺序添加。）
+> [!NOTE]
+> 你无法更改内置按钮的显示顺序。 默认的显示顺序为：圆珠笔、铅笔、荧光笔、橡皮擦和标尺。 自定义笔附加到最后一个默认笔，自定义工具按钮添加到最后一个笔按钮和橡皮擦按钮之间，而自定义切换按钮添加到标尺按钮之后。 （自定义按钮按照指定它们的顺序添加。）
 
 尽管 InkToolbar 可以是顶级项目，但它通常通过“墨迹书写”按钮或命令公开。 我们建议使用 Segoe MLD2 Assets 字体中的 EE56 字形作为顶级图标。
 
-## InkToolbar 交互
+## <a name="inktoolbar-interaction"></a>InkToolbar 交互
 
 所有内置的笔和工具按钮都包含一个浮出控件菜单，可以在该菜单中设置墨迹属性和笔尖形状与大小。 一种“扩展字形” ![InkToolbar 字形](images/ink-tools-glyph.png) 显示在按钮上，以指示存在浮出控件。
 
@@ -137,7 +141,7 @@ InkToolbar 由两组不同的按钮类型组成：
 
  有关自定义和可扩展性的信息，请查看 [SimpleInk 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)。
 
-## 注意事项
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 - InkCanvas 和通常的墨迹书写可通过主动笔获得最佳体验。 但是，如果应用需要，我们建议支持使用鼠标和触控（包括被动笔）输入的墨迹书写。
 - 将 InkToolbar 控件与 InkCanva 结合使用来提供基本墨迹书写功能和设置。 InkCanvas 和 InkToolbar 均可以采用编程方式自定义。
@@ -147,13 +151,13 @@ InkToolbar 由两组不同的按钮类型组成：
 - 如果使用多个 InkCanvas，我们建议使用单个 InkToolbar 控制跨画布的墨迹书写。
 - 为了实现最佳性能，我们建议更改默认的浮出控件，而不是为默认和自定义工具都创建一个自定义浮出控件。
 
-## 获取示例
+## <a name="get-the-sample-code"></a>获取示例代码
 
 [SimpleInk 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)演示关于 InkCanvas 和 InkToolbar 控件的自定义和扩展性功能的 8 个方案。 每个方案都提供了有关常见墨迹书写和控件实现的基本指南。
 
 有关更高级的墨迹书写示例，请参阅 [ComplexInk 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)。
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 - [UWP 应用中的笔和触笔交互](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
 - [识别笔划墨迹](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
@@ -161,6 +165,6 @@ InkToolbar 由两组不同的按钮类型组成：
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

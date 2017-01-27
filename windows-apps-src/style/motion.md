@@ -6,16 +6,18 @@ ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 53b6108a472e021caa0d11327c1457b3f6ca8aac
 
 ---
 
-# 适用于 UWP 应用的动作
+# <a name="motion-for-uwp-apps"></a>适用于 UWP 应用的动作
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 精心设计的有针对性的动画可以使应用变得更丰富，并且使体验感觉精良和完美。 帮助用户理解上下文环境变动，将体验与视觉转换紧密相连。
 
-## 动画的优势
+## <a name="benefits-of-animation"></a>动画的优势
 
 
 动画不仅仅是让物体移动。 动画是一种用于创建物理生态系统的工具，用户可在该系统内驻留并通过触摸进行操作。 体验的质量取决于应用对用户的响应程度以及 UI 传达了怎样的个性。
@@ -48,15 +50,13 @@ ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
 
     动画可用于让用户了解手机正在处理任务、没有冻结，并且它可以被动地显示用户可能感兴趣的新信息。
 
-## 本节内容
+<h2>本节内容</h2>
+
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th align="left">动画类型</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
-</thead>
-<tbody>
     <tr>
         <td>[添加和删除](motion-list.md)
         </td>
@@ -99,8 +99,6 @@ ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
         <td>将元素移动到新位置。
         </td>
     </tr>
-
-</tbody>
 </table>
 
  
@@ -111,6 +109,6 @@ ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

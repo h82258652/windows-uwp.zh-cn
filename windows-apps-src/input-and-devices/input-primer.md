@@ -6,13 +6,13 @@ ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 19e033455caf677c4e65ffb7bd7ce11a5a93b7a9
-ms.openlocfilehash: 5f6aee51984f86c67db9dc77eace614e385df088
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: b754e3f039e4dca0949bb31fe1da52f6a404dfb4
 
 ---
 
-# 交互入门
-
+# <a name="interaction-primer"></a>交互入门
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 ![Windows 输入类型](images/input-interactions/icons-inputdevices03.png)
 
@@ -22,29 +22,29 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 当与特定的外形规格配对时，自行熟悉每个输入设备类型及其行为、功能和限制。 这可以帮助你决定平台控件和提示是足够用于应用，还是要求你提供自定义的交互体验。
 
-## Surface Dial
+## <a name="surface-dial"></a>Surface Dial
 
-对于 Windows10 周年更新，我们引入了称为 Windows Wheel 的新输入设备类别。 Surface Dial 是此类设备中的第一项。 
+对于 Windows 10 周年更新，我们引入了称为 Windows Wheel 的新输入设备类别。 Surface Dial 是此类设备中的第一项。 
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   平板电脑
 -   电脑和笔记本电脑
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 借助基于旋转操作（或手势）的外形规格，Surface Dial 旨在成为对主设备输入进行补充或修改的多模态辅助输入设备。 在大多数情况下，用户使用其惯用手执行某个任务（如使用笔进行墨迹书写）期间，该设备由其非惯用手操控。
 
-### 详细信息
+### <a name="more-info"></a>详细信息
 
 [Surface Dial 设计指南](windows-wheel-interactions.md)
 
 
-## Cortana
+## <a name="cortana"></a>Cortana
 
-在 Windows10 中，你可以使用 **Cortana** 扩展性来处理用户的语音命令，并启动应用程序来执行单个操作。
+在 Windows 10 中，你可以使用 **Cortana** 扩展性来处理用户的语音命令，并启动应用程序来执行单个操作。
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
 -   平板电脑
@@ -56,18 +56,18 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 ![Cortana](images/input-interactions/icons-cortana01.png)
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 语音命令是在语音定义命令 (VCD) 文件中定义的单个发音，通过 **Cortana** 指向一个已安装的应用。 可在前台或后台启动该应用，具体取决于交互的级别和复杂程度。 例如，需要额外上下文或用户输入的语音命令最好在前台处理，而基本命令可以在后台处理。
 
 通过集成应用的基本功能，并为用户提供中心入口点以便在无需直接打开应用的情况下完成大多数任务，**Cortana** 成为了应用和用户之间的联络人。 在大多数情况下，这可以为用户节省大量时间和精力。 有关详细信息，请参阅 [Cortana 设计指南](https://msdn.microsoft.com/library/windows/apps/dn974233)。
 
-### 详细信息
+### <a name="more-info"></a>详细信息
 
 [Cortana 设计指南](https://msdn.microsoft.com/library/windows/apps/dn974233)
  
 
-## 语音
+## <a name="speech"></a>语音
 
 语音是用户用于与应用程序交互的一种高效自然方式。 这是一种与应用程序通信的简单且准确的方式，并且可使用户提高效率并在各种情况下获取信息。
 
@@ -75,7 +75,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 文本到语音转换（也称为 TTS 或语音合成）用于通知或指示用户。
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
 -   平板电脑
@@ -87,7 +87,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 ![语音](images/input-interactions/icons-speech01.png)
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 语音交互的模式有三种：
 
@@ -111,12 +111,12 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 听写通常在应用无需理解含义或意图的情况下使用。
 
-### 详细信息
+### <a name="more-info"></a>详细信息
 
 [语音设计指南](https://msdn.microsoft.com/library/windows/apps/dn596121)
  
 
-## 笔
+## <a name="pen"></a>笔
 
 笔（或触笔）可用作像素精确的定位设备（如鼠标），并且是用于数字墨迹输入的最佳设备。
 
@@ -126,7 +126,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 当我们在此谈到笔设备时，我们指的是可提供丰富输入数据且主要用于精确墨迹和定位交互的主动式笔设备。
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
 -   平板电脑
@@ -136,7 +136,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 ![笔](images/input-interactions/icons-pen01.png)
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 Windows 墨迹平台与笔设备相得益彰，提供了一种创建手写便笺、绘画和注释的自然方法。 该平台支持捕获通过数字化器输入的墨迹数据、生成墨迹数据、在输出设备上以墨迹笔划的形式呈现这些数据、管理墨迹数据以及执行手写识别。 除了在用户写字或绘图时捕获笔的空间运动，你的应用还可以收集信息（如压力、形状、颜色和不透明度），以便提供与使用钢笔、铅笔或画笔在纸张上绘图极其类似的用户体验。
 
@@ -144,16 +144,16 @@ Windows 墨迹平台与笔设备相得益彰，提供了一种创建手写便笺
 
 应该提供特定于笔的 UI 命令或提示来支持这些交互。 例如，使用“上一页”和“下一页”（或 + 和 -）按钮，使用户可以翻阅网页内容，或者旋转对象、调整对象大小和对对象进行缩放。
 
-### 详细信息
+### <a name="more-info"></a>详细信息
 
 [笔设计指南](https://msdn.microsoft.com/library/windows/apps/dn456352)
  
 
-## 触摸
+## <a name="touch"></a>触摸
 
 借助触摸，可以将一个或多个手指组成的肢体手势用作一种备用输入法（类似于鼠标或笔）来模拟 UI 元素的直接操作（如平移、旋转、调整大小或移动），也可以将其用作一种补充输入法来修改其他输入的各个方面（例如涂抹使用笔绘制的笔划墨迹）。 当用户在屏幕上与元素进行交互时，此类可触知体验可以为用户提供更自然的真实感觉。
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
 -   平板电脑
@@ -163,7 +163,7 @@ Windows 墨迹平台与笔设备相得益彰，提供了一种创建手写便笺
 
 ![触摸](images/input-interactions/icons-touch01.png)
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 触控输入的支持区别很大，具体取决于设备。
 
@@ -179,23 +179,23 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 -   对设备方向没有限制。
 -   用于所有交互，包括文本输入（触摸键盘）和墨迹书写（应用配置）。
 
-### 详细信息
+### <a name="more-info"></a>详细信息
 
 [触摸设计指南](https://msdn.microsoft.com/library/windows/apps/hh465370)
  
 
-## 触摸板
+## <a name="touchpad"></a>触摸板
 
 触摸板将间接的多点触摸输入和定位设备（如鼠标）的精确输入结合起来。 这种结合使触摸板既适用于触摸优化的 UI，也适用于效率应用的较小目标。
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   PC 和笔记本电脑
 -   IoT
 
 ![触摸板](images/input-interactions/icons-touchpad01.png)
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 触摸板通常支持一组触摸手势，提供类似于通过触摸直接操作对象和 UI 的支持。
 
@@ -203,18 +203,18 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 
 应该提供特定于鼠标的 UI 命令或提示来支持这些交互。 例如，使用“上一页”和“下一页”（或 + 和 -）按钮，使用户可以翻阅网页内容，或者旋转对象、调整对象大小和对对象进行缩放。
 
-### 详细信息
+### <a name="more-info"></a>详细信息
 
 [触摸板设计指南](https://msdn.microsoft.com/library/windows/apps/dn456353)
  
 
-## 键盘
+## <a name="keyboard"></a>键盘
 
 键盘是主要的文本输入设备。对于残障人士，或者认为键盘是与应用交互的最快和最有效方法的用户而言，键盘通常非常重要。
 
-通过兼容 Windows10 移动版设备新体验的[适用于手机的 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)，用户可以将手机连接鼠标和键盘来使手机像笔记本电脑一样工作。
+通过兼容 Windows 10 移动版设备新体验的[适用于手机的 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)，用户可以将手机连接鼠标和键盘来使手机像笔记本电脑一样工作。
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
 -   平板电脑
@@ -226,7 +226,7 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 
 ![键盘](images/input-interactions/icons-keyboard01.png)
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 用户可以通过硬件键盘，以及屏幕键盘 (OSK) 和触摸键盘这两个软件键盘与通用 Windows 应用交互。
 
@@ -243,16 +243,16 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 -   用于文本输入、导航、玩游戏以及辅助功能。
 -   始终可用，无论是主动式还是被动式。
 
-### 详细信息
+### <a name="more-info"></a>详细信息
 
 [键盘设计指南](https://msdn.microsoft.com/library/windows/apps/hh972345)
  
 
-## 鼠标
+## <a name="mouse"></a>鼠标
 
 鼠标最适合用于效率应用或用户交互需要将像素级精度用于定位和命令的高密度 UI。
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
 -   平板电脑
@@ -262,7 +262,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 ![鼠标](images/input-interactions/icons-mouse01.png)
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 可以结合使用各种键盘键（Ctrl 、Shift、Alt 等）来修改鼠标输入。 这些键可以与鼠标左键、鼠标右键、滚轮按钮和 X 按钮结合使用，以形成一个扩展的、针对鼠标而优化的命令集。 （某些 Microsoft 鼠标设备有两个其他按钮，称为 X 按钮，通常用于在 Web 浏览器中向前和向后导航。）
 
@@ -270,16 +270,16 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 应该提供特定于鼠标的 UI 命令或提示来支持这些交互。 例如，使用“上一页”和“下一页”（或 + 和 -）按钮，使用户可以翻阅网页内容，或者旋转对象、调整对象大小和对对象进行缩放。
 
-### 详细信息
+### <a name="more-info"></a>详细信息
 
 [鼠标设计指南](https://msdn.microsoft.com/library/windows/apps/dn456351)
  
 
-## 手势
+## <a name="gesture"></a>手势
 
 手势是在控制应用程序或与应用程序进行交互时，作为输入识别的任何形式的用户动作。 手势采用多种形式：从只使用一只手在屏幕上指定内容，到特定的习得型动作，到使用整个正文的长按拉伸的连续动作。 在设计自定义手势时请小心，因为其含义可能因地域和文化而异。
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   PC 和笔记本电脑
 -   IoT
@@ -288,7 +288,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 ![笔势](images/input-interactions/icons-gesture01.png)
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 静态手势事件在交互完成之后引发。
 
@@ -303,11 +303,11 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 由于 Windows 支持聚合的交互体验，我们还建议提供鼠标风格的 UI 命令或提示，而不只是依赖于对触摸输入的支持。 例如，使用“上一页”和“下一页”（或 + 和 -）按钮，使用户可以翻阅网页内容，或者旋转对象、调整对象大小和缩放对象。
 
 
-## 游戏板/控制器
+## <a name="gamepadcontroller"></a>游戏板/控制器
 
 游戏板/控制器是专门用来玩游戏的极其专业的设备。 但是，它也用于模拟基本键盘输入，并可提供非常类似于键盘的 UI 导航体验。
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   PC 和笔记本电脑
 -   IoT
@@ -315,16 +315,16 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 ![控制器](images/input-interactions/icons-controller01.png)
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 玩游戏和与专用控制台交互。
 
 
-## 多个输入
+## <a name="multiple-inputs"></a>多个输入
 
 通过尽可能适应更多的用户和设备，以及设计应用并使其可与尽可能多的输入类型（手势、语音、触摸、触摸板、鼠标和键盘）结合使用，可使灵活性、可用性和辅助功能最大化。
 
-### 设备支持
+### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
 -   平板电脑
@@ -336,7 +336,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 ![多个输入](images/input-interactions/icons-inputdevices03-vertical.png)
 
-### 典型用法
+### <a name="typical-usage"></a>典型用法
 
 正如人们在彼此交流时会结合使用语音和手势，在与应用交互时也会用到多种类型和模式的输入。 但是，这些组合交互需要尽可能直观和自然，因为它们也可能创造非常令人困惑的体验。
 
@@ -350,6 +350,6 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

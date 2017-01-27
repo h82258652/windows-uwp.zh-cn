@@ -5,11 +5,11 @@ title: "菜单和上下文菜单"
 label: Menus and context menus
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f6ce4bc08e3647cd26dc1537bba5499ddb646a49
+ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
+ms.openlocfilehash: badb03c97ae0f2350e5d7592f10168bb7d6e7d1a
 
 ---
-# 菜单和上下文菜单
+# <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,24 +20,20 @@ ms.openlocfilehash: f6ce4bc08e3647cd26dc1537bba5499ddb646a49
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn299030">MenuFlyout 类</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx">ContextFlyout 属性</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx">FlyoutBase.AttachedFlyout 属性</a></li>
+<li>[MenuFlyout 类](https://msdn.microsoft.com/library/windows/apps/dn299030)</li>
+<li>[ContextFlyout 属性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)</li>
+<li>[FlyoutBase.AttachedFlyout 属性](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 菜单和上下文菜单通过在用户不需要使用时对命令进行组织和隐藏，从而节省空间。 如果需要经常使用某一特定命令并希望有可用的空间，请考虑将该命令直接置于其自己的元素（而非菜单）中，以便用户无需遍历菜单即可访问它。 
 
 菜单和上下文菜单用于整理命令；若要显示任意内容（如通知）或请求确认，则使用[对话框或浮出控件](dialogs.md)。  
 
 
-## 菜单与上下文菜单
+## <a name="menus-vs-context-menus"></a>菜单与上下文菜单
 
 菜单和上下文菜单在外观和可以包含的内容方面完全相同。 事实上，你使用相同的控件 [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) 来创建它们。 唯一的区别是允许用户访问它的方式。 
 
@@ -76,7 +72,7 @@ ms.openlocfilehash: f6ce4bc08e3647cd26dc1537bba5499ddb646a49
 </div>
 </div>
 
-## 创建菜单或上下文菜单
+## <a name="create-a-menu-or-a-context-menu"></a>创建菜单或上下文菜单
 
 若要创建菜单或上下文菜单，请使用 [MenuFlyout 类](https://msdn.microsoft.com/library/windows/apps/dn299030)。 通过将 [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 和 [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) 对象添加到 MenuFlyout 来定义菜单的内容。 这些对象如下：
 * [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx) - 执行即时操作。
@@ -116,7 +112,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-下一个示例几乎完全相同，但该示例使用 [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 属性将其显示为菜单，而不是使用 [ContextFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 属性来显示 [MenuFlyout 类](https://msdn.microsoft.com/library/windows/apps/dn299030)作为上下文菜单。 
+下一个示例几乎相同，但是该示例使用 [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 属性将 [MenuFlyout 类](https://msdn.microsoft.com/library/windows/apps/dn299030)显示为菜单，而不是使用 [ContextFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 属性将其显示为上下文菜单。 
 
 ````xaml
 <Rectangle 
@@ -153,22 +149,23 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-> **注意**  轻型消除控件（如菜单、上下文菜单和其他浮出控件）会捕获瞬态 UI 内的键盘焦点和游戏板焦点，直到消除为止。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的可见性变暗。 可以使用新的 [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) 属性来修改此行为。 默认情况下，瞬态 UI 将在 Xbox（而非其他设备系列）上绘制轻型消除覆盖，不过应用可以选择强制使覆盖始终**打开**或始终**关闭**。
-> 
+
+> 轻型消除控件（如菜单、上下文菜单和其他浮出控件）会捕获瞬态 UI 内的键盘焦点和游戏板焦点，直到消除为止。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的可见性变暗。 可以使用新的 [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) 属性来修改此行为。 默认情况下，瞬态 UI 将在 Xbox（而非其他设备系列）上绘制轻型消除覆盖，不过应用可以选择强制使覆盖始终**打开**或始终**关闭**。
+
 > ```xaml
 > <MenuFlyout LightDismissOverlayMode="Off">
-```
+> ```
 
-## Get the samples
-*   [XAML UI basics](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
-    See all of the XAML controls in an interactive format.
+## <a name="get-the-sample-code"></a>获取示例代码
+*   [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    以交互式格式查看所有 XAML 控件。
 
-## Related articles
+## <a name="related-articles"></a>相关文章
 
-- [**MenuFlyout class**](https://msdn.microsoft.com/library/windows/apps/dn299030)
+- [**MenuFlyout 类**](https://msdn.microsoft.com/library/windows/apps/dn299030)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

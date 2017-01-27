@@ -4,14 +4,14 @@ title: "启动、恢复和后台任务"
 description: "本部分介绍在启动、暂停、恢复和终止通用 Windows 平台 (UWP) 应用时会发生什么情况。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 translationtype: Human Translation
-ms.sourcegitcommit: a21b2e9bb41e951660916bbbdb09b0bd3e5ecf2d
-ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
+ms.sourcegitcommit: 32737991b31eaceb33fc2ecb5152def167c36fdd
+ms.openlocfilehash: 6b350ef65f381d18585c8b080c6259f7607c7bf9
 
 ---
 
 # <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此部分包含有关以下内容的信息：
 
@@ -33,13 +33,14 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 | [处理应用激活](activate-an-app.md)     | 了解如何处理应用激活。                                                                             |
 | [处理应用暂停](suspend-an-app.md)         | 了解当系统暂停你的应用时如何保存重要的应用程序数据。                                 |
 | [处理应用恢复](resume-an-app.md)           | 了解当系统恢复你的应用时如何刷新显示的内容。                                        |
-| [在将应用移动到后台时释放内存](reduce-memory-usage.md)           | 了解如何降低应用处于后台状态时所使用的内存量，以防止该应用终止。                                        |
+| [在将应用移动到后台时释放内存](reduce-memory-usage.md) | 了解如何降低应用处于后台状态时所使用的内存量，以防止该应用终止。|
+| [在使用扩展执行实现最小化时保持运行](run-minimized-with-extended-execution.md) | 了解最小化时如何使用扩展执行让你的应用保持运行 |
 
 ## <a name="launch-apps"></a>启动应用
 
-[启动 URI 的应用](launch-app-with-uri.md)部分详细介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用。
+[启动具有 URI 的应用](launch-app-with-uri.md)部分详细介绍了如何使用统一资源标识符 (URI) 来从一个应用启动另一个应用。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [启动 URI 的默认应用](launch-default-app.md) | 了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。 |
 | [处理 URI 激活](handle-uri-activation.md) | 了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。 |
@@ -53,14 +54,14 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 
 [通过文件激活启动应用](launch-app-from-file.md)部分详细介绍如何将应用设置为在打开特定类型的文件时启动。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [启动文件的默认应用](launch-the-default-app-for-a-file.md) | 了解如何启动文件的默认应用。 |
 | [处理文件激活](handle-file-activation.md) | 了解如何注册你的应用以成为某个文件类型的默认处理程序。 |
 
 请参阅下面与启动应用相关的其他主题。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [保留的文件和 URI 方案名称](reserved-uri-scheme-names.md) | 本主题列出了不可用于应用的保留文件和 URI 方案名称。 |
 | [使用自动播放自动启动](auto-launching-with-autoplay.md) | 可以使用自动播放功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 |
@@ -78,7 +79,7 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 
 [后台任务](support-your-app-with-background-tasks.md)部分显示了如何使在后台运行的轻型代码响应触发器。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
 | [后台任务指南](guidelines-for-background-tasks.md)                                           | 确保你的应用符合运行后台任务的要求。                                                                                                                          |
@@ -101,7 +102,7 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 
 [连接的应用和设备（项目“Rome”）](connected-apps-and-devices.md)介绍如何使用远程系统平台发现远程设备、在远程设备上启动应用，以及与远程设备上的应用服务通信。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |
 | [启动远程设备上的应用](launch-a-remote-app.md) | 了解如何启动远程设备上的应用。  |
@@ -118,6 +119,6 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

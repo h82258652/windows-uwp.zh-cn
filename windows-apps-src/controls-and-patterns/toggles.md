@@ -6,11 +6,11 @@ ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 685ef17e17fb17fa620eea84335ce6688a5cfb3e
 
 ---
-# 切换开关
+# <a name="toggle-switches"></a>切换开关
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
@@ -19,18 +19,13 @@ ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx"><strong>ToggleSwitch 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx"><strong>IsOn 属性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx"><strong>Toggled 事件</strong></a></li>
+<li>[**ToggleSwitch 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)</li>
+<li>[**IsOn 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)</li>
+<li>[**Toggled 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用用户翻转切换开关后立即生效的二进制操作的切换开关。 例如，使用切换开关启用或禁用服务或硬件组件，例如 WiFi：
 
@@ -40,7 +35,7 @@ ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 
 在用户打开或关闭切换开关后，我们建议立即执行相应操作。
 
-### 在切换开关和复选框之间进行选择
+### <a name="choosing-between-toggle-switch-and-check-box"></a>在切换开关和复选框之间进行选择
 
 对于某些操作，既可使用切换开关也可使用复选框。 若要决定哪个控件效果更好，请按照以下提示操作：
 
@@ -58,7 +53,7 @@ ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 
     ![选中了多个项目的复选框](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
 
-## 示例
+## <a name="examples"></a>示例
 
 “新闻”应用常规设置中的切换开关。
 
@@ -68,7 +63,7 @@ Windows“开始”菜单设置中的切换开关。
 
 ![Windows“开始”菜单设置中的切换开关](images/control-examples/toggle-switch-start-settings.png)
 
-## 创建切换开关
+## <a name="create-a-toggle-switch"></a>创建切换开关
 
 下面介绍了如何创建简单的切换开关。 此 XAML 创建前面所示的 WLAN 切换开关。
 
@@ -85,7 +80,7 @@ wiFiToggle.Header = "WiFi";
 stackPanel1.Children.Add(wiFiToggle);
 ```
 
-### IsOn
+### <a name="ison"></a>IsOn
 
 该开关可以为开或关。 使用 [**IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) 属性确定该开关的状态。 当开关用于控制另一个二元属性的状态时，可以使用如下所示的绑定。
 
@@ -96,7 +91,7 @@ stackPanel1.Children.Add(wiFiToggle);
 </StackPanel>
 ```
 
-### Toggled
+### <a name="toggled"></a>Toggled
 
 在其他情况下，你可以处理 [**Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) 事件来响应状态的更改。
 
@@ -140,7 +135,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 }
 ```
 
-### 开/关标签
+### <a name="onoff-labels"></a>开/关标签
 
 默认情况下，切换开关包括文本“开”和“关”标签，这些标签将自动本地化。 可以通过设置 [**OnContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx) 和 [**OffContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx) 属性来替换这些标签。
 
@@ -154,24 +149,20 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 还可以通过设置 [**OnContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) 和 [**OffContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx) 属性来使用更复杂的内容。
 
-## 建议
+## <a name="recommendations"></a>建议
 
 -   如果有更明确的标签可用于设置，则替换“开”和“关”标签。 如果有短（3-4 个字符）标签表示更适合特定设置的二元对立，则使用这些标签。 例如，如果设置为“显示图像”，则可以使用“显示/隐藏”。 在本地化 UI 时使用更具体的标签可能有帮助。
 -   如果没有必要，则避免替换“开”和“关”标签；除非情况需要使用自定义的标签，否则继续使用默认标签。
--   标签长度不得大于 4 个字符。
+-   标签长度不得长于 4 个字符。
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
-[**ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/hh701411)
+- [**ToggleSwitch 类**](https://msdn.microsoft.com/library/windows/apps/hh701411)
 - [单选按钮](radio-button.md)
 - [切换开关](toggles.md)
 - [复选框](checkbox.md)
 
-**面向开发人员 (XAML)**
-- [**ToggleSwitch 类**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

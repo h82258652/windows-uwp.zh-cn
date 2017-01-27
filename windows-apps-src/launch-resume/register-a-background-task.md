@@ -4,8 +4,8 @@ title: "注册后台任务"
 description: "了解如何创建可以重复使用以安全注册大部分后台任务的函数。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: 2f46f5cd26656b2d6b7d14c0d85aa7a0a6950fb8
-ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: d65b8d3312e49469bd99d458b45bf5a46f345e6a
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 了解如何创建可以重复使用以安全注册大部分后台任务的函数。
 
-本主题适用于进程内后台任务和进程外后台任务。 本主题假定你已拥有需要注册的后台任务。 （有关如何编写后台任务的信息，请参阅[创建和注册进程外运行的后台任务](create-and-register-an-outofproc-background-task.md)或[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)）。
+本主题适用于进程内后台任务和进程外后台任务。 本主题假定你已拥有需要注册的后台任务。 （有关如何编写后台任务的信息，请参阅[创建和注册进程外运行的后台任务](create-and-register-a-background-task.md)或[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)）。
 
 本主题介绍了注册后台任务的实用工具函数。 此实用工具函数在注册任务前首先多次检查现有注册以避免多次注册产生的错误，并且该函数可以将系统条件应用于后台任务。 本操作实例包括此实用工具函数的正常运行的完整示例。
 
@@ -71,7 +71,7 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 你可以通过查询 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 属性并在结果上迭代来检查现有注册。 检查每个实例的名称 - 如果该名称与正注册的任务的名称匹配，则跳出循环并设置标志变量，以便你的代码可以在下一步中选择不同的路径。
 
-> **注意** 使用应用唯一的后台任务名称。 确保每个后台任务都具有唯一的名称。
+> **注意**  使用应用唯一的后台任务名称。 确保每个后台任务都具有唯一的名称。
 
 以下代码使用我们在上一步中创建的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 注册后台任务：
 
@@ -142,9 +142,9 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 检查在现有后台任务注册的列表中是否找到该任务。 如果有，则返回该任务的实例。
 
-否则，使用新 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象注册任务。 此代码应检查条件参数是否为空，如果不为空，则将条件添加到注册对象。 返回 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法返回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)。
+否则，使用新 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 对象注册任务。 此代码应检查条件参数是否为空，如果不为空，则将条件添加到注册对象。 返回 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224786) 方法返回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224772)。
 
-> **注意** 后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
+> **注意**  后台任务注册参数在注册时进行验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，它可能会崩溃。
 > **注意** 如果你要注册在应用所在的同一进程中运行的后台任务，请向 `taskEntryPoint` 参数发送 `String.Empty` 或 `null`。
 
 以下示例可能返回现有任务，也可能添加注册后台任务的代码（如果有，包含可选系统条件）：
@@ -371,13 +371,13 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 > }
 > ```
 
-> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你面向 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## <a name="related-topics"></a>相关主题
 
 ****
 
-* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
@@ -397,6 +397,6 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

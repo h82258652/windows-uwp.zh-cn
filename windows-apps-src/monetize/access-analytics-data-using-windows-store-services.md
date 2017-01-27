@@ -4,8 +4,8 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "使用 Windows 应用商店分析 API，针对已注册到你的或组织的 Windows 开发人员中心帐户的应用以编程方式检索分析数据。"
 title: "使用 Windows 应用商店服务访问分析数据"
 translationtype: Human Translation
-ms.sourcegitcommit: dcf4c263ff3fd8df846d1d5620ba31a9da7a5e6c
-ms.openlocfilehash: 5ae5dcbe6684aa34a1428760cd5c7e9b8f599ebf
+ms.sourcegitcommit: 1a2e856cddf9998eeb8b0132c2fb79f5188c218b
+ms.openlocfilehash: 596cc5054367acf0d3609a34b764bc7fcf33ea0b
 
 ---
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 5ae5dcbe6684aa34a1428760cd5c7e9b8f599ebf
 
 * 你必须将 Azure AD 应用程序与你的开发人员中心帐户相关联、检索租户 ID 和应用程序的客户端 ID 并生成密钥。 Azure AD 应用程序是指你想要从中调用 Windows 应用商店分析 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
 
-  >**注意**  只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
+  >**注意**&nbsp;&nbsp;只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
 若要将 Azure AD 应用程序与你的开发人员中心帐户相关联并检索所需值：
 
@@ -45,10 +45,10 @@ ms.openlocfilehash: 5ae5dcbe6684aa34a1428760cd5c7e9b8f599ebf
 
 在 Windows 应用商店分析 API 中调用任何方法之前，首先必须获取将传递给该 API 中每个方法的 **Authorization** 标头的 Azure AD 访问令牌。 获取访问令牌后，在它到期前，你有 60 分钟的使用时间。 该令牌到期后，可以对它进行刷新，以便可以在之后调用该 API 时继续使用。
 
-若要获取访问令牌，请按照[使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)中的说明将 HTTP POST 发送到以下 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
+若要获取访问令牌，请按照 [使用客户端凭据的服务到服务调用](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) 中的说明将 HTTP POST 发送到 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 终结点。 示例请求如下所示。
 
 ```
-POST https://login.microsoftonline.com/<your_tenant_id>/oauth2/token HTTP/1.1
+POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
 
@@ -58,7 +58,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-对于 *tenant\_id*、*client\_id* 和 *client\_secret* 参数，请为从上一部分的开发人员中心中检索得到的应用程序指定租户 ID、客户端 ID 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com``` URI。
+对于 POST URI 中的 *tenant\_id*、*client\_id* 和 *client\_secret* 参数，请为从上一部分的开发人员中心中检索到的应用程序指定租户 ID、客户端 ID 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
 在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
 
@@ -79,135 +79,12 @@ grant_type=client_credentials
 
 ## <a name="code-example"></a>代码示例
 
-
 以下代码示例演示了如何获取 Azure AD 访问令牌以及如何从 C# 控制台应用调用 Windows 应用商店分析 API。 若要使用此代码示例，请将 *tenantId*、*clientId*、*clientSecret* 和 *appID* 变量分配给你的方案的相应值。 此示例需要 Newtonsoft 中的 [Json.NET 程序包](http://www.newtonsoft.com/json)，以便反序列化 Windows 应用商店分析 API 返回的 JSON 数据。
 
-```CSharp
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestAnalyticsAPI
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string tenantId = "<your tenant ID>";
-            string clientId = "<your client ID>";
-            string clientSecret = "<your secret>";
-
-            string scope = "https://manage.devcenter.microsoft.com";
-
-            // Retrieve an Azure AD access token
-            string accessToken = GetClientCredentialAccessToken(
-                    tenantId,
-                    clientId,
-                    clientSecret,
-                    scope).Result;
-
-            // This is your app's Store ID. This ID is available on
-            // the App identity page of the Dev Center dashboard.
-            string appID = "<your app's Store ID>";
-
-            DateTime startDate = DateTime.Parse("08-01-2015");
-            DateTime endDate = DateTime.Parse("11-01-2015");
-            int pageSize = 1000;
-            int startPageIndex = 0;
-
-            // Call the Windows Store analytics API
-            CallAnalyticsAPI(accessToken, appID, startDate, endDate, pageSize, startPageIndex);
-
-            Console.Read();
-        }
-
-        private static void CallAnalyticsAPI(string accessToken, string appID, DateTime startDate, DateTime endDate, int top, int skip)
-        {
-            string requestURI;
-
-            // Get app acquisitions
-            requestURI = string.Format(
-                "https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
-                appID, startDate, endDate, top, skip);
-
-            //// Get add-on acquisitions
-            //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
-            //    appID, startDate, endDate, top, skip);
-
-            //// Get app failures
-            //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
-            //    appID, startDate, endDate, top, skip);
-
-            //// Get app ratings
-            //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId={0}&startDate={1}&endDate={2}top={3}&skip={4}",
-            //    appID, startDate, endDate, top, skip);
-
-            //// Get app reviews
-            //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
-            //    appID, startDate, endDate, top, skip);
-
-            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, requestURI);
-            requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
-            WebRequestHandler handler = new WebRequestHandler();
-            HttpClient httpClient = new HttpClient(handler);
-
-            HttpResponseMessage response = httpClient.SendAsync(requestMessage).Result;
-
-            Console.WriteLine(response);
-            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
-
-            response.Dispose();
-        }
-
-        public static async Task<string> GetClientCredentialAccessToken(string tenantId, string clientId, string clientSecret, string scope)
-        {
-            string tokenEndpointFormat = "https://login.microsoftonline.com/{0}/oauth2/token";
-            string tokenEndpoint = string.Format(tokenEndpointFormat, tenantId);
-
-            dynamic result;
-            using (HttpClient client = new HttpClient())
-            {
-                string tokenUrl = tokenEndpoint;
-                using (
-                    HttpRequestMessage request = new HttpRequestMessage(
-                        HttpMethod.Post,
-                        tokenUrl))
-                {
-                    string content =
-                        string.Format(
-                            "grant_type=client_credentials&client_id={0}&client_secret={1}&resource={2}",
-                            clientId,
-                            clientSecret,
-                            scope);
-
-                    request.Content = new StringContent(content, Encoding.UTF8, "application/x-www-form-urlencoded");
-
-                    using (HttpResponseMessage response = await client.SendAsync(request))
-                    {
-                        string responseContent = await response.Content.ReadAsStringAsync();
-                        result = JsonConvert.DeserializeObject(responseContent);
-                    }
-                }
-            }
-
-            return result.access_token;
-        }
-    }
-}
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
 
 ## <a name="error-responses"></a>错误响应
-
 
 Windows 应用商店分析 API 会在 JSON 对象中返回含有错误代码和消息的错误响应。 以下示例演示了由无效参数引起的错误响应。
 
@@ -245,6 +122,6 @@ Windows 应用商店分析 API 会在 JSON 对象中返回含有错误代码和�
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO4-->
 
 

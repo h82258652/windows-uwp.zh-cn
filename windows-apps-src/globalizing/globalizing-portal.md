@@ -7,15 +7,13 @@ ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: a34b682cc903555b9d6f64636c3d1cf7bee75b5d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 3149eb8275cc74c61ff0e35963f3fd1dbdc4e833
 
 ---
 
-# 全球化和本地化
-
-
-
+# <a name="globalization-and-localization"></a>全球化和本地化
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Windows 的使用遍及世界各地，用户的文化背景、区域及语言也各不相同。 用户可以说任意一种语言，甚至是多种语言。 用户可能位于世界的任何地方，可能在任何地方说任何语言。 通过使用*全球化*和*本地化*对应用进行设计使其更具有适应性，可以拓展其潜在市场。
 
@@ -36,7 +34,7 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 
 观看此视频以简要了解如何准备在全球发布的应用：[全球化和本地化简介](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)。
 
-## 文章
+## <a name="articles"></a>文章
 <table>
 <colgroup>
 <col width="50%" />
@@ -45,7 +43,7 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 <thead>
 <tr class="header">
 <th align="left">文章</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -63,7 +61,7 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 </tr>
 <tr class="odd">
 <td align="left"><p>[使用模式设置日期和时间的格式](use-patterns-to-format-dates-and-times.md)</p></td>
-<td align="left"><p>使用 [<strong>Windows.Globalization.DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API 和自定义模式严格按照所需模式显示日期和时间。</p></td>
+<td align="left"><p>结合使用 [<strong>Windows.Globalization.DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API 和自定义模式以严格按照所需模式显示日期和时间。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md)</p></td>
@@ -99,6 +97,6 @@ Windows 的使用遍及世界各地，用户的文化背景、区域及语言也
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

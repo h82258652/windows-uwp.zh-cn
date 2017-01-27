@@ -6,11 +6,11 @@ ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bb881fb0120401047c77a2d1e64a1e1555a9ced0
 
 ---
-# 日历、日期和时间控件
+# <a name="calendar-date-and-time-controls"></a>日历、日期和时间控件
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,15 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx"><strong>CalendarView 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx"><strong>CalendarDatePicker 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx"><strong>DatePicker 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx"><strong>TimePicker 类</strong></a></li>
+<li>[**CalendarView 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
+<li>[**CalendarDatePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</li>
+<li>[**DatePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
+<li>[**TimePicker 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 应使用哪个日期或时间控件？
+## <a name="which-date-or-time-control-should-you-use"></a>应使用哪个日期或时间控件？
 
 有四个日期和时间控件可供选择；要使用的控件取决于你的方案。 使用此信息来选取要在你的应用中使用的正确控件。
 
@@ -46,9 +40,9 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 <!-- This table seems redundant, not sure it's needed.-->
 
-### 日历视图
+### <a name="calendar-view"></a>日历视图
 
-**CalendarView** 让用户查看可按月份、年份或十年期浏览的日历，并与之交互。 用户可以选择一个日期或日期范围。 它没有选取器图面，并且日历始终可见。
+**CalendarView** 让用户查看可按月份、年份或十年期浏览的日历，并与之交互。 用户可选择单个日期或一组日期。 它没有选取器图面，并且日历始终可见。
 
 日历视图中包含 3 个单独的视图：月视图、年视图和十年视图。 默认情况下，它通过打开月视图启动，但你可以将其他视图指定为启动视图。
 
@@ -57,7 +51,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 - 如果需要允许用户选择多个日期，则必须使用 **CalendarView**。
 - 如果需要仅允许用户选取一个日期并且不需要日历始终可见，请考虑使用 **CalendarDatePicker** 或 **DatePicker** 控件。
 
-### 日历日期选取器
+### <a name="calendar-date-picker"></a>日历日期选取器
 
 **CalendarDatePicker** 是一个下拉式控件，该控件已针对从日历视图中选取某个日期进行了优化，尤其是能够显示诸如星期几或丰富的日历信息等上下文信息。 可以修改日历以提供其他上下文或限制可用日期。
 
@@ -67,7 +61,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 - 日历日期选取器可用于选择约会或出发日期等事项。 
 
-### 日期选取器
+### <a name="date-picker"></a>日期选取器
 
 **DatePicker** 控件提供了一种用于选择特定日期的标准化方法。 
 
@@ -77,7 +71,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 - 使用日期选取器以使用户选取日历上下文不重要的已知日期，例如生日。
 
-### 时间选取器
+### <a name="time-picker"></a>时间选取器
 
 **TimePicker** 用于为约会或出发时间等事项选择一个时间值。 它是由用户或使用代码设置的静态显示方式，但不会更新以显示当前时间。 
 
@@ -87,7 +81,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 - 使用时间选取器使用户可以选取单个时间值。
 
-## 创建一个日期或时间控件
+## <a name="create-a-date-or-time-control"></a>创建一个日期或时间控件
 
 有关特定于每个日期和时间控件的信息和示例，请参阅以下这些文章。
 
@@ -96,14 +90,14 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 - [**日期选取器**](date-picker.md)
 - [**时间选取器**](time-picker.md)
 
-### 全球化
+### <a name="globalization"></a>全球化
 
 XAML 日期控件支持 Windows 支持的各种日历系统。 这些日历均在 [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) 类中指定。 每个控件均使用与应用的默认语言对应的正确日历，还可以设置 **CalendarIdentifier** 属性以使用特定的日历系统。
 
 时间选取器控件支持在 [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) 类中指定的每个时钟系统。 若要使用 12 小时制时钟或 24 小时制时钟，可以设置 [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) 属性。 该属性的类型是字符串，但必须使用对应于 ClockIdentifiers 类的静态字符串属性的值。 如下所示：TwelveHour（字符串“12HourClock”）和TwentyFourHour（字符串“24HourClock”）。 “12HourClock”是默认值。
 
 
-### DateTime 和日历值
+### <a name="datetime-and-calendar-values"></a>DateTime 和日历值
 
 XAML 日期和时间控件中所使用的日期对象具有不同的表示形式，具体取决于你的编程语言。 
 - C# 和 Visual Basic 使用 [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 结构，它是 .NET 的一部分。 
@@ -113,12 +107,15 @@ XAML 日期和时间控件中所使用的日期对象具有不同的表示形式
 
 .NET 还支持名为 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 的类型，该类型可隐式转换为 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)。 因此，可能会看到要在 .NET 代码中用于设置实际上是 DateTimeOffset 的值的“DateTime”类型。 有关 DateTime 和 DateTimeOffset 之间的区别的详细信息，请参阅 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 类中的“备注”。
 
-> **注意**  获取日期对象的属性不可以设置为 XAML 属性字符串，因为 Windows 运行时 XAML 解析器不具有用于将字符串转换为日期（作为 DateTime/DateTimeOffset 对象）的转换逻辑。 通常使用代码设置这些值。 另一个可行的方法是定义可用作数据对象或在数据上下文中可用的日期，然后将该属性设置为引用 [\{Binding\} 标记扩展](../xaml-platform/binding-markup-extension.md)表达式的 XAML 属性，以便可以作为数据访问该日期。
+> **注意**&nbsp;&nbsp;获取日期对象的属性不可以设置为 XAML 属性字符串，因为 Windows 运行时 XAML 解析器不具有用于将字符串转换为日期（作为 DateTime/DateTimeOffset 对象）的转换逻辑。 通常使用代码设置这些值。 另一个可行的方法是定义可用作数据对象或在数据上下文中可用的日期，然后将该属性设置为引用 [\{Binding\} 标记扩展](../xaml-platform/binding-markup-extension.md)表达式的 XAML 属性，以便可以将该日期作为数据访问。
+
+## <a name="get-the-sample-code"></a>获取示例代码
+* [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
-**对于开发人员 (XAML)**
+**面向开发人员 (XAML)**
 - [**CalendarView 类**](https://msdn.microsoft.com/library/windows/apps/dn890052)
 - [**CalendarDatePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn950083)
 - [**DatePicker 类**](https://msdn.microsoft.com/library/windows/apps/dn298584)
@@ -126,6 +123,6 @@ XAML 日期和时间控件中所使用的日期对象具有不同的表示形式
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

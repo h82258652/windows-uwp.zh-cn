@@ -4,8 +4,8 @@ ms.assetid:
 description: "本文介绍如何将 MediaFrameReader 与 MediaCapture 结合使用，以获取一个或多个可用源提供的媒体帧，这些可用源包括彩色、深度、红外线相机，音频设备，甚至是自定义的帧源（例如生成骨架跟踪帧的帧源）。"
 title: "使用 MediaFrameReader 处理媒体帧"
 translationtype: Human Translation
-ms.sourcegitcommit: 881f806a61d247c6c4f73aa770ba4c5dab91af00
-ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
+ms.sourcegitcommit: e6ab1fc16f150de2fed3797d89375a52b3965182
+ms.openlocfilehash: 11e09d9b447e9daa0498377a67ef235bdab168dd
 
 ---
 
@@ -40,7 +40,7 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-还可以使用 [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) 和从 [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector) 返回的值创建 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)，以便在设备上的可用帧源组更改时（例如接入外部相机时）接收通知。 有关详细信息，请参阅[**枚举设备**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+还可以使用 [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) 和从 [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/br225427) 返回的值创建 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)，以便在设备上的可用帧源组更改时（例如接入外部相机时）接收通知。 有关详细信息，请参阅[**枚举设备**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 具有 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 对象集合，用于描述组内包括的帧源。 检索可在设备上使用的帧源组后，可以选择公开所关注帧源的组。
 
@@ -117,7 +117,7 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 **Image** 控件仅可以显示格式为 BRGA8 并且已经预乘或者没有 alpha 的图像。 如果到达的帧不是这种格式，则使用静态方法 [**Convert**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap.Covert) 将软件位图转换为正确的格式。
 
-接下来，使用 [**Interlocked.Exchange**](https://msdn.microsoft.com/en-us/library/bb337971) 方法来将到达位图的引用交换为后台缓冲区位图。 此方法在线程安全的原子操作中交换这些引用。 交换后，以前的后台缓冲区图像现在位于 *softwareBitmap* 变量中，释放该图像可以清理资源。
+接下来，使用 [**Interlocked.Exchange**](https://msdn.microsoft.com/library/bb337971) 方法来将到达位图的引用交换为后台缓冲区位图。 此方法在线程安全的原子操作中交换这些引用。 交换后，以前的后台缓冲区图像现在位于 *softwareBitmap* 变量中，释放该图像可以清理资源。
 
 接下来，使用与 **Image** 元素关联的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher) 通过调用 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 创建在 UI 线程上运行的任务。 由于异步任务将在任务中执行，因此传递到 **RunAsync** 的 lambda 表达式使用 *async* 关键字声明。
 
@@ -126,7 +126,7 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 最后，*_taskRunning* 变量重新设置为 false，以便下次调用处理程序时任务会重新运行。
 
 > [!NOTE] 
-> 如果访问 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.SoftwareBitmap) 或 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.Direct3DSurface) 对象（由 [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference) 的 [**VideoMediaFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.VideoMediaFrame) 属性提供），系统将创建对这些对象的强引用，这意味着，当在包含的 **MediaFrameReference** 上调用 [**Dispose**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.Close) 时，它们将不会释放。 必须直接为要立即释放的对象显式调用 **SoftwareBitmap** 或 **Direct3DSurface** 的 **Dispose** 方法。 否则，垃圾回收器将最终为这些对象释放内存，但无法知道这将何时出现，并且如果分配的位图或曲面的数量超过系统所允许的最大量，将停止新帧的流程。
+> 如果访问 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.SoftwareBitmap) 或 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.Direct3DSurface) 对象（由 [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.VideoMediaFrame) 的 [**VideoMediaFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference) 属性提供），系统将创建对这些对象的强引用，这意味着，当在包含的 **MediaFrameReference** 上调用 [**Dispose**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.Close) 时，它们将不会释放。 必须直接为要立即释放的对象显式调用 **SoftwareBitmap** 或 **Direct3DSurface** 的 **Dispose** 方法。 否则，垃圾回收器将最终为这些对象释放内存，但无法知道这将何时出现，并且如果分配的位图或曲面的数量超过系统所允许的最大量，将停止新帧的流程。
 
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFrameArrived)]
@@ -167,6 +167,6 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

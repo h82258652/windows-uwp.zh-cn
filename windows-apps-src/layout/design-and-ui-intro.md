@@ -1,19 +1,22 @@
 ---
 author: mijacobs
 Description: "此文章将从设计角度介绍通用 Windows 平台 (UWP) 的功能、优点和要求。 了解平台为你免费提供了哪些内容，以及可供你支配的工具。"
-title: "通用 Windows 平台 (UWP) 应用设计简介"
+title: "通用 Windows 平台 (UWP) 应用设计（Windows 应用）简介"
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 label: Intro to UWP app design
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 06925bc42aab6d2ca7bf97c48161cca5e1cf840b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e6169f033a224c6ad9c3ba47ef1fd0a80e137dff
 
 ---
 
-#  UWP 应用设计简介 
+#  <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介 
 
-通用 Windows 平台 (UWP) 应用可以在任何基于 Windows 的设备（从手机到平板电脑或 PC）上运行。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
+通用 Windows 平台 (UWP) 应用可以在任何基于 Windows 的设备（从手机到平板电脑或电脑）上运行。
 
 ![支持 Windows 的设备](images/1894834-hig-device-primer-01-500.png)
 
@@ -23,9 +26,9 @@ ms.openlocfilehash: 06925bc42aab6d2ca7bf97c48161cca5e1cf840b
 
 本文将介绍 UWP 应用的 UI 功能和优势，并为创建你的第一个 UWP 应用提供一些高级设计指南。 我们先看一下你将在创建 UWP 应用时获得的一些功能。 
 
-## UWP 应用功能
+## <a name="uwp-app-features"></a>UWP 应用功能
 
-### 有效像素和缩放
+### <a name="effective-pixels-and-scaling"></a>有效像素和缩放
 
 UWP 应用会自动调整控件、字体和其他 UI 元素的大小，以使它们在所有设备上清晰可见。
 
@@ -35,7 +38,7 @@ UWP 应用会自动调整控件、字体和其他 UI 元素的大小，以使它
 
 基于缩放系统的工作原理，在设计 UWP 应用时，要以*有效像素*而不是实际物理像素为单位进行设计。 那么，这如何影响你设计应用的方式呢？
 
--   在设计时，你可以忽略像素密度和实际屏幕分辨率。 转而针对同一大小级别的有效分辨率（以有效像素为单位的分辨率）进行设计（我们将在[本文后续部分](#sizeclasses)中定义大小级别）。
+-   在设计时，你可以忽略像素密度和实际屏幕分辨率。 而是针对同一大小级别的有效分辨率（以有效像素为单位的分辨率）进行设计（有关详细信息，请参阅 [屏幕大小和断点文章](screen-sizes-and-breakpoints-for-responsive-design.md)）。
 
 -   当系统缩放 UI 时，会按 4 的倍数进行缩放。 若要确保清晰的外观，请将你的设计贴靠到 4x4 像素网格：使 UI 元素的边距、大小和位置以及文本位置（而不是大小 - 文本可为任意大小）为 4 个有效像素的倍数。
 
@@ -47,14 +50,15 @@ UWP 应用会自动调整控件、字体和其他 UI 元素的大小，以使它
 
 ![没有与 4x4 像素网格对齐的设计元素](images/rsp-design/offthegridillustration.png)
 
-**提示** 在使用图像编辑程序创建屏幕原型时，将 DPI 设置为 72，并将图像尺寸设置为目标大小级别的有效分辨率。 （有关大小级别和有效分辨率的列表，请参阅本文的[针对特定大小级别的建议](#sizeclasses)部分。）
+> [!TIP]
+> 在使用图像编辑程序创建屏幕原型时，将 DPI 设置为 72，并将图像尺寸设置为目标大小级别的有效分辨率。 （有关大小级别和有效分辨率的列表，请参阅本文的[针对特定大小级别的建议](#sizeclasses)部分。）
 
 
-### 通用输入和智能交互
+### <a name="universal-input-and-smart-interactions"></a>通用输入和智能交互
 
 UWP 中的另一个内置功能是通过智能交互启用通用输入。 尽管可以针对特定输入模式和设备设计应用，但并不需要这样做。 这是因为默认情况下，通用 Windows 应用依赖于智能交互。 这意味着你可以围绕单击交互进行设计，而无需知道或定义该单击是来自实际的鼠标单击还是手指点按。
 
-### 通用控件和样式
+### <a name="universal-controls-and-styles"></a>通用控件和样式
 
 
 UWP 还提供了一些有用的构建基块，可使针对多个设备系列设计应用变得更简单。
@@ -85,7 +89,7 @@ UWP 还提供了一些有用的构建基块，可使针对多个设备系列设�
 
 既然我们已介绍了 UWP 应用的构建基块，接下来让我们看一下如何将它们组合在一起来创建 UI。 
     
-## 典型 UWP 应用的结构
+## <a name="the-anatomy-of-a-typical-uwp-app"></a>典型 UWP 应用的结构
 
 
 现代用户界面很复杂，它由文本、形状、颜色和动画组成，而它们归根结底由你在所用设备的屏幕中的各个像素组成。 在开始设计用户界面时，你可能面临众多选择。
@@ -94,7 +98,7 @@ UWP 还提供了一些有用的构建基块，可使针对多个设备系列设�
 
 
 
-<table>
+<table class="uwpd-noborder" >
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -122,7 +126,7 @@ UWP 还提供了一些有用的构建基块，可使针对多个设备系列设�
 
 在为你的应用决定正确的 UI 元素时，可能还要考虑将要运行应用的设备和屏幕大小。
 
-## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>针对特定设备和屏幕大小定制你的应用。
+## <a name="tailoring-your-app-for-specific-devices-and-screen-sizes"></a>针对特定设备和屏幕大小定制你的应用。
 
 
 UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所有支持 Windows 的设备上使用。 那么，为什么你还想要针对特定设备系列自定义应用 UI 呢？
@@ -146,12 +150,12 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 
     通用控件库适用于所有输入类型（触摸、触笔、键盘、鼠标），但你仍然可以通过重新排列 UI 元素来优化某些输入类型。 例如，如果将导航元素放置在屏幕底部，则手机用户将更容易访问它们，但大多数电脑用户希望在屏幕顶部看到导航元素。
 
-## <span id="Responsive_design_techniques"></span><span id="responsive_design_techniques"></span><span id="RESPONSIVE_DESIGN_TECHNIQUES"></span>响应式设计技术
+## <a name="responsive-design-techniques"></a>响应式设计技术
 
 
 在针对特定屏幕宽度优化应用 UI 时，假设你要创建一个响应式设计。 下面是可用于自定义应用 UI 的六个响应式设计技术。
 
-### <span id="Reposition"></span><span id="reposition"></span><span id="REPOSITION"></span>重新放置
+### <a name="reposition"></a>重新放置
 
 你可以修改应用 UI 元素的位置和放置方式，以充分利用每台设备。 在此示例中，手机或平板手机上的纵向视图需要一个滚动 UI，因为一次只显示一个完整的框架。 当将应用转换到屏幕上允许两个完整框架的设备时，无论是在纵向模式还是横向模式下，框架 B 都可以占用一个专用空间。 如果你要将网格用于定位，则可以继续使用重新定位 UI 元素时的同一网格。
 
@@ -161,13 +165,13 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 
 ![在较大的屏幕上重新定位内容的应用设计](images/rsp-design/rspd-reposition-type1.png)
 
-### <span id="Resize"></span><span id="resize"></span><span id="RESIZE"></span>调整大小
+### <a name="resize"></a>调整大小
 
 可以通过调整 UI 元素的边距和大小来优化框架大小。 如以下示例所示，这可能使你只需通过增加内容框架即可改善在较大屏幕上的阅读体验。
 
 ![调整设计元素大小](images/rsp-design/rspd-resize.png)
 
-### <span id="Reflow"></span><span id="reflow"></span><span id="REFLOW"></span>重新排列
+### <a name="reflow"></a>重新排列
 
 通过根据设备和方向更改 UI 元素的排列，你的应用可以以最佳方式呈现内容。 例如，在转到较大屏幕时，可能可以切换较大的容器、添加列，以及采用不同的方式生成列表项。
 
@@ -175,7 +179,7 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 
 ![重新排列设计元素](images/rsp-design/rspd-reflow.png)
 
-### <span id="_____________Reveal___________"></span><span id="_____________reveal___________"></span><span id="_____________REVEAL___________"></span> 显示
+###  <a name="reveal"></a>显示
 
 你可以基于屏幕空间显示 UI，或在设备支持附加功能、特定情况或首选屏幕方向时显示 UI。
 
@@ -191,13 +195,13 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 -   在任一应用中，都可以使各列分解并显示更多详细信息。
 -   在任一应用中，都可以获取垂直堆叠的内容并使之以水平方式布局。 当从手机或平板手机转至较大型设备时，堆叠的列表项可以更改为显示多行列表项和多列元数据。
 
-### <span id="Replace"></span><span id="replace"></span><span id="REPLACE"></span>替换
+### <a name="replace"></a>替换
 
 通过这种技术，你可以针对特定设备大小级别或方向来切换用户界面。 在此示例中，瞬态 UI（导航窗格及其精简版）适用于较小的设备，但在较大设备上，最好选择使用选项卡。
 
 ![替换设计元素](images/rsp-design/rspd-replace.png)
 
-### <span id="_____________Re-architect___________"></span><span id="_____________re-architect___________"></span><span id="_____________RE-ARCHITECT___________"></span> 重新构建
+###  <a name="re-architect"></a>重新构建
 
 可以折叠或拆分应用的体系结构，以更好地适应特定设备。 在此示例中，从左侧设备转到右侧设备将显示页面的接合。
 
@@ -208,7 +212,7 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 ![使用重新构建响应式设计技术的设计示例](images/rsp-design/rspd-rearchitect-type1.png)
 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 - [UWP 应用是什么？](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
 
@@ -220,6 +224,6 @@ UWP 应用使用有效像素保证你的设计元素清晰可见，并可在所�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -6,11 +6,11 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
+ms.sourcegitcommit: 98b3a9739b1906b7abb529cea1e7d433118cbcdd
+ms.openlocfilehash: ef57c6d1a00797e2a68291475b6a38778e5d73ad
 
 ---
-# 大纲/细节模式
+# <a name="masterdetails-pattern"></a>大纲/细节模式
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 ![大纲细节模式的示例](images/HIGSecOne_MasterDetail.png)
 
-## 这是正确的模式吗？
+## <a name="is-this-the-right-pattern"></a>这是正确的模式吗？
 
 如果你希望进行以下操作，则适用大纲/细节模式：
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 -   定位并设置大型内容集合的优先级。
 -   允许从列表中快速添加和删除项，同时在上下文之间来回工作。
 
-## 选择正确的样式
+## <a name="choose-the-right-style"></a>选择正确的样式
 
 在实现大纲/细节模式时，我们建议你根据可用屏幕空间量使用堆叠样式或并排样式。
 
@@ -36,7 +36,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 | 720 epx 或更宽       | 并排对齐      |
 
  
-## 堆叠样式
+## <a name="stacked-style"></a>堆叠样式
 
 在堆叠样式中，一次只有一个窗格可见：大纲窗格或细节窗格。
 
@@ -44,7 +44,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 用户从大纲窗格开始，然后通过在大纲列表中选择一个项来“深入”到细节窗格。 对用户来说，它表现为大纲和细节视图存在于两个单独的页面上。
 
-### 创建堆叠大纲/细节模式
+### <a name="create-a-stacked-masterdetails-pattern"></a>创建堆叠大纲/细节模式
 
 创建堆叠大纲/细节模式的一种方法是为大纲窗格和细节窗格使用单独的页面。 将提供大纲列表的列表视图放置在一个页面上，将细节窗格的内容元素放置在单独的页面上。
 
@@ -54,7 +54,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 对于细节窗格，使用意义最明确的内容元素。 如果你有大量的单独字段，请考虑使用网格布局将元素排列为一个表单。
 
-## 并排样式
+## <a name="side-by-side-style"></a>并排样式
 
 在并排样式中，大纲窗格和细节窗格同时可见。
 
@@ -62,13 +62,13 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 大纲模式中的列表具有一个选择可视，用于指示当前选定的项。 在大纲列表中选择一个新项将更新细节窗格。
 
-### 创建并排大纲/细节模式
+### <a name="create-a-side-by-side-masterdetails-pattern"></a>创建并排大纲/细节模式
 
 对于大纲窗格，[列表视图](lists.md)控件适用于显示可包含图像和文本的列表。
 
 对于细节窗格，使用意义最明确的内容元素。 如果你有大量的单独字段，请考虑使用网格布局将元素排列为一个表单。
 
-## 示例
+## <a name="examples"></a>示例
 
 此跟踪股票市场的应用的设计使用大纲/细节模式。 在此应用示例中，它将显示在手机上，大纲窗格/列表位于左侧，细节窗格位于右侧。
 
@@ -78,9 +78,11 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 ![使用大纲/细节模式的应用（桌面版）的示例](images/uap-finance-desktop700.png)
 
+有关显示大纲/细节模式的示例代码，请参阅
+- [ListView 和 GridView 示例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+- [RSS 阅读器示例](https://github.com/Microsoft/Windows-appsample-rssreader)
 
-
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 - [列表](lists.md)
 - [搜索](search.md)
@@ -89,6 +91,6 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

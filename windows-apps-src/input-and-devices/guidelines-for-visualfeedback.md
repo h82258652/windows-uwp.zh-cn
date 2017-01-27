@@ -5,34 +5,44 @@ title: "视觉反馈"
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
+keywords: "视觉反馈, 焦点反馈, 触摸反馈, 接触可视化, 输入, 交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: ab7a6cfabb98eaf841849f5045e7ebce1ec86d65
 
 ---
 
-# 视觉反馈指南
+# <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 当检测、解释和处理用户的交互时，可使用视觉反馈显示给用户。 视觉反馈可通过鼓励交互来帮助用户。 它将指示交互是否成功，以加强用户的控制感觉。 它还可以传送系统状态并减少错误。
 
-**重要的 API**
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+</ul>
+</div>
 
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
-
-## 建议
+## <a name="recommendations"></a>建议
 
 -   尝试尽可能不修改原始控件模板，以实现控件和应用程序的最佳性能。
 -   请勿使用可能会干扰应用使用的触摸视觉化。 有关详细信息，请参阅 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)。
 -   除非绝对有必要，否则不要显示反馈。 除非你要添加的值在其他任何地方都不可用，否则，请不要显示视觉反馈来保持 UI 干净整洁。
 -   尽量不要大幅自定义内置 Windows 手势的视觉反馈行为，因为这样会产生不一致的情况，并且会带来混淆的用户体验。
 
-## 其他使用指南
+## <a name="additional-usage-guidance"></a>其他使用指南
 
-对于要求准确性和精度的触摸交互来说，触摸可视化是非常重要的。 例如，你的应用应当清楚地指示点击位置，以便让用户知道他们是否错过了其目标、他们对其目标错过了多长时间、他们必须进行哪些调整。
+对于要求准确性和精度的触摸交互来说，触摸可视化是非常重要的。 例如，你的应用应清楚地指示点击位置，以便让用户知道他们是否错过了自己的目标、他们错过目标多长时间，以及他们必须进行哪些调整。
 
-使用可用的默认 XAML 平台控件可确保你的应用在所有设备上以及在所有输入情形下都可正常工作。 如果你的应用具有需要自定义反馈的自定义交互功能，你应该确保反馈合适、支持各种输入设备并且不会干扰用户执行其任务。 在视觉反馈可能与关键 UI 冲突或者甚至会遮盖关键 UI 的游戏或绘图应用中，这可能会是特殊问题。
+使用可用的默认 XAML 平台控件，可确保你的应用在所有设备上以及在所有输入情形下都可正常工作。 如果你的应用具有需要自定义反馈的自定义交互功能，你应该确保反馈合适、支持各种输入设备并且不会干扰用户执行其任务。 在视觉反馈可能与关键 UI 冲突或者甚至会遮盖关键 UI 的游戏或绘图应用中，这可能会是特殊问题。
 
 [!IMPORTANT] 我们不建议更改内置手势的交互行为。 
 
@@ -50,11 +60,11 @@ ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
 | --- | --- | --- | --- |
 | 触摸可视化 | 鼠标/触摸板可视化 | 笔可视化 | 键盘可视化 |
 
-## 高可见性焦点视觉
+## <a name="high-visibility-focus-visuals"></a>高可见性焦点视觉
 
 所有 Windows 应用都在应用程序内的可互动控件的周围明显定义了许多焦点视觉。 这些新的焦点视觉完全可以根据需要进行自定义以及禁用。
 
-## 颜色外观方案和自定义
+## <a name="color-branding--customizing"></a>颜色外观方案和自定义
 
 **边框属性**
 
@@ -100,7 +110,7 @@ ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
 <Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
 ```
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 **对于设计人员**
 * [平移指南](guidelines-for-panning.md)
@@ -129,6 +139,6 @@ ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "使用选取器打开文件和文件夹"
 description: "通过让用户与选取器交互来访问文件和文件夹。 你可以使用 FileOpenPicker 和 FileSavePicker 类获取对文件的访问权限，并使用 FolderPicker 获取对文件夹的访问权限。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
+ms.sourcegitcommit: 99a21818fc3b8552de18792f408da860bf6dea22
+ms.openlocfilehash: 08782286228fa25dc492b0e7ccc90958bdec5a7f
 
 ---
 
@@ -23,9 +23,7 @@ ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
 
 通过让用户与选取器交互来访问文件和文件夹。 你可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 类访问文件，并使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 访问文件夹。
 
-**注意** 有关完整示例，请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
-
- 
+**注意**  有关完整示例，请参阅[文件选取器示例](http://go.microsoft.com/fwlink/p/?linkid=619994)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -95,63 +93,63 @@ else
 
 1.  **创建和自定义 FileOpenPicker**
 
-```CSharp
-var picker = new Windows.Storage.Pickers.FileOpenPicker();
-    picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-    picker.SuggestedStartLocation =
-        Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
-    picker.FileTypeFilter.Add(".jpg");
-    picker.FileTypeFilter.Add(".jpeg");
-    picker.FileTypeFilter.Add(".png");
-```
+    ```CSharp
+    var picker = new Windows.Storage.Pickers.FileOpenPicker();
+        picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+        picker.SuggestedStartLocation =
+            Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+        picker.FileTypeFilter.Add(".jpg");
+        picker.FileTypeFilter.Add(".jpeg");
+        picker.FileTypeFilter.Add(".png");
+    ```
 
-在文件选取器对象上设置与你的用户和应用相关的属性。 有关帮助你确定如何自定义文件选取器的指南，请参阅[文件选取器指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465182)。
+    在文件选取器对象上设置与你的用户和应用相关的属性。 有关帮助你确定如何自定义文件选取器的指南，请参阅[文件选取器指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465182)。
 
-此示例在某个方便的位置创建一种丰富的图片视觉显示，用户可以通过设置以下三个属性从该位置选取：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 和 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
+    此示例在某个方便的位置创建一种丰富的图片视觉显示，用户可以通过设置以下三个属性从该位置选取：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 和 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
 
--   将 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 设置为 [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **Thumbnail** 枚举值可通过使用图片缩略图创建丰富的视觉显示，以显示文件选取器中的文件。 此操作用于选取可视文件（如图片或视频）。 否则，请使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 假定的电子邮件应用可在显示文件选取器之前设置适用于功能的 **ViewMode**，该应用具有**附加图片或视频**和**附加文档**功能。
+    -   将 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 设置为 [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **Thumbnail** 枚举值可通过使用图片缩略图创建丰富的视觉显示，以显示文件选取器中的文件。 此操作用于选取可视文件（如图片或视频）。 否则，请使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 假定的电子邮件应用可在显示文件选取器之前设置适用于功能的 **ViewMode**，该应用具有**附加图片或视频**和**附加文档**功能。
 
--   使用 [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 设置为图片可让用户在他们有可能找到图片的某个位置开始。 将 **SuggestedStartLocation** 设置为适用于要选取的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
+    -   使用 [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207854) 将 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207890) 设置为图片可让用户在他们有可能找到图片的某个位置开始。 将 **SuggestedStartLocation** 设置为适用于要选取的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
 
--   使用 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) 指定文件类型可保持用户专注于选取相关的文件。 若要将 **FileTypeFilter** 中以前的文件类型替换为新条目，请使用 [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) 而不是 [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834)。
+    -   使用 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) 指定文件类型可保持用户专注于选取相关的文件。 若要将 **FileTypeFilter** 中以前的文件类型替换为新条目，请使用 [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) 而不是 [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834)。
 
 2.  **显示 FileOpenPicker**
 
-    -   **选取单个文件**
+    - **选取单个文件**
 
-```CSharp
-Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-        if (file != null)
-        {
-            // Application now has read/write access to the picked file
-            this.textBlock.Text = "Picked photo: " + file.Name;
-        }
-        else
-        {
-            this.textBlock.Text = "Operation cancelled.";
-        }
-```
-
-    -   **选取多个文件**
-
-```CSharp
-var files = await picker.PickMultipleFilesAsync();
-        if (files.Count > 0)
-        {
-            StringBuilder output = new StringBuilder("Picked files:\n");
-
-            // Application now has read/write access to the picked file(s)
-            foreach (Windows.Storage.StorageFile file in files)
+    ```CSharp
+    Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null)
             {
-                output.Append(file.Name + "\n");
+                // Application now has read/write access to the picked file
+                this.textBlock.Text = "Picked photo: " + file.Name;
             }
-            this.textBlock.Text = output.ToString();
-        }
-        else
-        {
-            this.textBlock.Text = "Operation cancelled.";
-        }
-```
+            else
+            {
+                this.textBlock.Text = "Operation cancelled.";
+            }
+    ```
+
+    - **选取多个文件**  
+
+    ```CSharp
+    var files = await picker.PickMultipleFilesAsync();
+            if (files.Count > 0)
+            {
+                StringBuilder output = new StringBuilder("Picked files:\n");
+
+                // Application now has read/write access to the picked file(s)
+                foreach (Windows.Storage.StorageFile file in files)
+                {
+                    output.Append(file.Name + "\n");
+                }
+                this.textBlock.Text = output.ToString();
+            }
+            else
+            {
+                this.textBlock.Text = "Operation cancelled.";
+            }
+    ```
 
 ## <a name="pick-a-folder-complete-code-listing"></a>选取文件夹：完整代码列表
 
@@ -159,6 +157,7 @@ var files = await picker.PickMultipleFilesAsync();
 ```CSharp
 var folderPicker = new Windows.Storage.Pickers.FolderPicker();
 folderPicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.Desktop;
+folderPicker.FileTypeFilter.Add("*");
 
 Windows.Storage.StorageFolder folder = await folderPicker.PickSingleFolderAsync();
 if (folder != null)
@@ -177,14 +176,7 @@ else
 
 **提示** 不论何时，只要你的应用通过选取器访问文件或文件夹，就将它添加到应用的 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 或 [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 以便对进行跟踪。 你可以在[如何跟踪最近使用的文件和文件夹](how-to-track-recently-used-files-and-folders.md)中了解有关使用这些列表的详细信息。
 
- 
 
- 
-
- 
-
-
-
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

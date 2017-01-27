@@ -3,12 +3,12 @@ author: TylerMSFT
 title: "创建和注册进程内后台任务"
 description: "创建和注册在前台应用所在的同一进程中运行的进程内任务。"
 translationtype: Human Translation
-ms.sourcegitcommit: d64527e36d995187936d4a0dbb94d973976d40ea
-ms.openlocfilehash: f4bf682c27f856402ae8d1b5fd85bc998921efac
+ms.sourcegitcommit: b9acb35645ee4f069f2ddb999865c3fd087fb792
+ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
 
 ---
 
-# 创建和注册进程内后台任务
+# <a name="create-and-register-an-in-process-background-task"></a>创建和注册进程内后台任务
 
 **重要的 API**
 
@@ -22,13 +22,13 @@ ms.openlocfilehash: f4bf682c27f856402ae8d1b5fd85bc998921efac
 
 请注意，如果后台活动的运行时间超过执行时间限制，即使在应用的前台进程内运行，后台活动也会终止。 出于某些目的，复原将工作分离到可在单独进程中运行的后台任务仍然有用。 对于不需要与前台应用程序通信的工作，最好是使后台任务作为独立于前台应用程序的任务工作。
 
-## 基础
+## <a name="fundamentals"></a>基础
 
 进程内模型可通过应用在前台运行还是在后台运行的改进通知增强应用程序生命周期。 对于这些过渡，Application 对象提供了两个新事件：[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。 基于你的应用程序的可见性状态，这些事件适合应用程序生命周期。在[应用生命周期](app-lifecycle.md)中阅读有关这些事件的详细信息，以及它们如何影响应用程序生命周期。
 
 在较高级别上，处理 **EnteredBackground** 事件以运行将在应用在后台运行时执行的代码，处理 **LeavingBackground** 以了解应用何时移至前台。
 
-## 注册你的后台任务触发器
+## <a name="register-your-background-task-trigger"></a>注册你的后台任务触发器
 
 进程内后台活动的注册方式与进程外后台活动大致相同。 所有后台触发器均从使用 [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396) 注册开始。 借助生成器，可轻松通过在一个位置设置所有所需值来注册后台任务。
 
@@ -50,45 +50,45 @@ ms.openlocfilehash: f4bf682c27f856402ae8d1b5fd85bc998921efac
 
 注册触发器后，将基于在 [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx) 方法中设置的触发器类型引发它。 在上面的示例中，使用 [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx)，这将在注册之后的十五分钟引发。
 
-## 添加条件控制任务何时运行（可选）
+## <a name="add-a-condition-to-control-when-your-task-will-run-optional"></a>添加条件控制任务何时运行（可选）
 
 在触发器事件发生后，你可以添加条件控制任务何时运行。 例如，如果你不希望在用户存在前运行任务，请使用条件 **UserPresent**。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
-    The following sample code assigns a condition requiring the user to be present:
+以下示例代码指定需要用户存在的条件：
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    >     builder.AddCondition(new SystemCondition(SystemConditionType.UserPresent));
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> builder.AddCondition(new SystemCondition(SystemConditionType.UserPresent));
+> ```
 
-## 将你的后台活动代码放置在 OnBackgroundActivated() 中
+## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>将你的后台活动代码放置在 OnBackgroundActivated() 中
 
 将你的后台活动代码放置在 [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)** 中以在引发时响应后台触发器。**OnBackgroundActivated** 可以视为与 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) 一样。 该方法具有 [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) 参数，其中包含 Run 方法提供的所有内容。
 
-## 处理后台任务进度和完成
+## <a name="handle-background-task-progress-and-completion"></a>处理后台任务进度和完成
 
 可使用用于多进程后台任务的相同方式监视任务进度和完成（请参阅[监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)），但你可能会发现，通过使用变量跟踪你的应用中的进度或完成状态，可更轻松地跟踪它们。 这是在你的应用所在的同一进程中运行后台活动代码的优势之一。
 
-## 处理后台任务取消
+## <a name="handle-background-task-cancellation"></a>处理后台任务取消
 
 使用进程外后台任务所使用的相同方式取消进程内后台任务（请参阅[处理取消的后台任务](handle-a-cancelled-background-task.md)）。 请注意，必须在 **BackgroundActivated** 事件处理程序退出后再取消，否则整个进程都将终止。 如果你的前台应用在取消后台任务时意外关闭，请验证你的处理程序是否在取消之前就已退出。
 
-## 清单
+## <a name="the-manifest"></a>清单
 
 与进程外后台任务不同，不需要将后台任务信息添加到程序包清单，即可运行进程内后台任务。
 
-## 摘要和后续步骤
+## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
 你现在应该了解如何编写进程内后台任务的基础知识。
 
 有关 API 引用、后台任务概念指南以及编写使用后台任务的应用的更多详细说明，请参阅以下相关主题。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 **详细的后台任务说明主题**
 
 * [将进程外后台任务转换为进程内后台任务](convert-out-of-process-background-task.md)
-* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [在后台播放媒体](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
 * [注册后台任务](register-a-background-task.md)
@@ -110,6 +110,6 @@ ms.openlocfilehash: f4bf682c27f856402ae8d1b5fd85bc998921efac
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

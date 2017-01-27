@@ -4,12 +4,12 @@ ms.assetid:
 description: "本文列出 UWP 应用支持的 HTTP Live Streaming (HLS) 协议标记。"
 title: "HTTP Live Streaming (HLS) 标记支持"
 translationtype: Human Translation
-ms.sourcegitcommit: 3d61f5272e4d11acfb7e0a85436ca60ba458dcae
-ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
+ms.sourcegitcommit: 61feba54418ad7ba8f089737ebf52d12c466b7a7
+ms.openlocfilehash: 5575a56838eae98c0d79dff61e1afaa8cf87ee86
 
 ---
 
-# HTTP Live Streaming (HLS) 标记支持
+# <a name="http-live-streaming-hls-tag-support"></a>HTTP Live Streaming (HLS) 标记支持
 下表列出了 UWP 应用支持的 HLS 标记。
 
 > [!NOTE] 
@@ -68,11 +68,15 @@ ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 | 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|可选|不支持|不支持|不支持|
 | 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|可选|不支持|不支持|不支持|
 | 4.3.4.5.  EXT-X-SESSION-KEY |7|17|可选|不支持|不支持|不支持|
+|4.3.5.  媒体或主播放列表标记                  |             |                   |         |             |     |    |
+| 4.3.5.1.  EXT-X-INDEPENDENT-SEGMENTS |6|13|可选|不支持|支持|支持|
+| 4.3.5.2.  EXT-X-START  |6|12|可选|不支持|部分支持|部分支持|
+|&nbsp;&nbsp;&nbsp;  TIME-OFFSET|6|12|属性|不支持|支持|支持|
+|&nbsp;&nbsp;&nbsp;  精确|6|12|属性|不支持|默认“不”支持|默认“不”支持|
 
 
 
-
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [媒体播放](media-playback.md)
 * [自适应流式处理](adaptive-streaming.md)
@@ -86,6 +90,6 @@ ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

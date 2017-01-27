@@ -7,30 +7,30 @@ ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
 
 ---
 
-# 全球化和本地化的应做事项和禁止事项
+# <a name="globalization-and-localization-dos-and-donts"></a>全球化和本地化的应做事项和禁止事项
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
+在将你的应用全球化使其适用于更广泛的用户，以及将你的应用本地化使其适用于特定市场时，请遵循这些最佳做法。
+
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**全球化**](https://msdn.microsoft.com/library/windows/apps/br206813)</li>
+<li>[**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)</li>
+<li>[**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**资源**](https://msdn.microsoft.com/library/windows/apps/br206022)</li>
+<li>[**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)</li>
+</ul>
+</div>
 
 
 
-
-
-**重要的 API**
-
--   [**全球化**](https://msdn.microsoft.com/library/windows/apps/br206813)
--   [**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
--   [**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**资源**](https://msdn.microsoft.com/library/windows/apps/br206022)
--   [**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)
-
-在将你的应用全球化使其适用于更广泛的用户以及将你的应用本地化使其适用于特定市场时，请遵循这些最佳做法。
-
-
-
-## <span id="guidelines_for_internationalization"></span><span id="GUIDELINES_FOR_INTERNATIONALIZATION"></span>全球化
+## <a name="globalization"></a>全球化
 
 准备好你的应用，使其轻松适应不同的市场，方法包括：为你的 UI 选择在全球范围都适合的字词和图像、使用 [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) API 格式化应用数据，以及避免基于位置或语言的假设。
 
@@ -106,7 +106,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
  
 
-## <span id="guidelines_for_localization"></span><span id="GUIDELINES_FOR_LOCALIZATION"></span>本地化
+## <a name="localization"></a>本地化
 
 <table>
 <colgroup>
@@ -178,7 +178,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
  
 
-## <span id="related_topics"></span>相关文章
+## <a name="related-articles"></a>相关文章
 
 
 **示例**
@@ -193,6 +193,6 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

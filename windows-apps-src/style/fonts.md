@@ -6,34 +6,28 @@ ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 0b25dc91a5ec82a83ae24a41854e9eeab8990128
 
 ---
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# 适用于 UWP 应用的字体
+# <a name="fonts-for-uwp-apps"></a>适用于 UWP 应用的字体
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 本文列出了为 UWP 应用推荐的字体。 这些字体保证可用于支持 UWP 应用的所有 Windows 10 版本。
 
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209655"><strong>FontFamily 属性</strong></a></li>
+<li>[**FontFamily 属性**](https://msdn.microsoft.com/library/windows/apps/br209655)</li>
 </ul>
-
 </div>
-</div>
-
-
 
 [UWP 版式指南](typography.md)建议，应用应使用 Segoe UI 字体，虽然对大多数应用而言，Segoe UI 是一项不错的选择，但无需将此字体用于所有应用。 你可以将其他字体用于某些场景，例如阅读，或使用非英语语言显示文本的情况。 
-
-
-
  
-## Sans-serif 字体
+## <a name="sans-serif-fonts"></a>Sans-serif 字体
 
 Sans-serif 字体是用于标题和 UI 元素的不错选择。 
 
@@ -94,7 +88,7 @@ Sans-serif 字体是用于标题和 UI 元素的不错选择。
 </table>
 
 
-## Serif 字体
+## <a name="serif-fonts"></a>Serif 字体
 
 Serif 字体适合用于显示大量文本。 
 
@@ -133,7 +127,7 @@ Serif 字体适合用于显示大量文本。
 </tbody>
 </table>
 
-## 符号和图标
+## <a name="symbols-and-icons"></a>符号和图标
 
 
 <table>
@@ -165,7 +159,7 @@ Serif 字体适合用于显示大量文本。
 
 
 
-## 非拉丁语言字体
+## <a name="fonts-for-non-latin-languages"></a>非拉丁语言字体
 
 虽然其中很多字体提供拉丁字符，但还是要使用这些字体。
 
@@ -294,21 +288,17 @@ Serif 字体适合用于显示大量文本。
 </table>
 
 
-## 全球化/本地化字体
+## <a name="globalizinglocalizing-fonts"></a>全球化/本地化字体
 使用 [LanguageFont 字体映射 API](https://msdn.microsoft.com/library/windows/apps/br206864) 以编程方式访问为特定语言建议的字体系列、大小、粗细和样式。 LanguageFont 对象提供了对各种类别内容的正确字体信息的访问，这些信息包括 UI 标头、通知、正文文本和用户可编辑的文档正文字体。 有关详细信息，请参阅[调整布局和字体以支持全球化](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl)。
 
-<!--
-## Triggering a font download
-If you use a font that's not listed in this article, your app might trigger an automatic download of the font data from a Microsoft service. This can have performance and other impacts that may be a concern, particularly for mobile devices. In particular, note that this might consume some of a user's mobile data plan or result in mobile data usage costs. UWP apps that will available on mobile devices should never use fonts for UI content other than fonts in this list.
--->
 
-## 获取示例
+## <a name="get-the-samples"></a>获取示例
 
 * [下载字体示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlCloudFontIntegration)
 * [UI 入门示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [使用 DirectWrite 划分行距的示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DWriteLineSpacingModes) 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 * [调整布局和字体以支持全球化](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl)
 * [Segoe MDL2](segoe-ui-symbol-font.md)
@@ -325,6 +315,6 @@ If you use a font that's not listed in this article, your app might trigger an a
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

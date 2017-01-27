@@ -3,19 +3,26 @@ description: "获取有关向 UWP 应用添加控件 &amp; 模式的设计指南
 title: "UWP 控件和模式 - Windows 应用开发"
 author: mijacobs
 keywords: "UWP 控件, 用户界面, 应用控件"
+label: Controls & patterns
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e530c8fab64c160737ccc06faf676d1d113896c4
 
 ---
-# UWP 应用的控件和模式
+# <a name="controls-and-patterns-for-uwp-apps"></a>UWP 应用的控件和模式
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 在 UWP 应用开发中，<i>控件</i>是一种显示内容或支持交互的 UI 元素。 控件是用户界面的构建基块。 我们提供了超过 45 种控件供你使用，范围从简单按钮到网格视图之类的功能强大的数据控件。 <i>模式</i>是合并多个控件来创造新内容的一种方式。
 
 本部分中的文章提供了有关向 UWP 应用添加控件和模式的设计指南和编码说明。 
 
-## 简介
+## <a name="intro"></a>简介
 
 有关在 XAML 和 C# 中添加控件和设置其样式的常规说明和代码示例。
 
@@ -34,7 +41,7 @@ ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
 </div>
 </div>
 
-## 按字母顺序排序的索引 
+## <a name="alphabetical-index"></a>按字母顺序排序的索引 
 
 有关特定控件和模式的详细信息。
 
@@ -169,6 +176,6 @@ ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

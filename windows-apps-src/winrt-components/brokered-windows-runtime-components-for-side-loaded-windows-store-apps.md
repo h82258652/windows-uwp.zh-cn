@@ -3,16 +3,16 @@ author: msatranjr
 title: "Windows 运行时组件"
 description: "本文讨论 Windows 10 支持的面向企业的功能，此功能允许兼容触摸功能的 .NET 应用使用对主要关键业务操作负责的现有代码。"
 translationtype: Human Translation
-ms.sourcegitcommit: 700eeb0416ba73a761030e15df8c7c6d8d212785
-ms.openlocfilehash: f1d9c4f782ddd0933ee82d766bf9c70acde4dc19
+ms.sourcegitcommit: 019d3d256becb06ad88cc87962c86829fcfb80cf
+ms.openlocfilehash: 2ac22675f44fab8ff123c26151efc25aad01b3a0
 
 ---
 
-#适用于旁加载 Windows 应用商店应用的中转 Windows 运行时组件
+#<a name="brokered-windows-runtime-components-for-a-side-loaded-windows-store-app"></a>适用于旁加载 Windows 应用商店应用的中转 Windows 运行时组件
 
 本文讨论 Windows 10 支持的面向企业的功能，此功能允许兼容触摸功能的 .NET 应用使用对主要关键业务操作负责的现有代码。
 
-##介绍
+##<a name="introduction"></a>简介
 
 >**注意** 本文随附的示例代码可以[从此位置进行下载](http://go.microsoft.com/fwlink/p/?LinkID=393655)，用于生成中转 Windows 运行时组件的 Microsoft Visual Studio 模板可以在此处下载：[面向 Windows 10 通用 Windows 应用的 Visual Studio 2015 模板](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
@@ -25,7 +25,7 @@ Windows 包含的一项新功能称为*适用于旁加载应用程序的中转 W
 
 最后，鉴于 .NET 运行时和 C\# 语言在企业开发中的巨大渗透，开发此功能时强调同时针对 Windows 应用商店应用和桌面组件端使用 .NET。 尽管有其他语言和运行时可用于 Windows 应用商店应用，但附带的示例仅演示 C\#，并且仅限于 .NET 运行时。
 
-##应用程序组件
+##<a name="application-components"></a>应用程序组件
 
 >**注意** 此功能将专门用于 .NET。 客户端应用和桌面组件都必须使用 .NET 进行授权。
 
@@ -59,7 +59,7 @@ Windows 包含的一项新功能称为*适用于旁加载应用程序的中转 W
 
 服务器代码实现可在多个应用代理服务器实例之间共享，方法是将多个应用程序指向相同的服务器目录。 仍然会有应用代理服务器的多个实例，但它们将运行相同的代码。 单个应用程序中使用的所有实现组件应当存在于相同的路径中。
 
-##定义合约
+##<a name="defining-the-contract"></a>定义合约
 
 使用此功能创建应用程序的第一步，是创建旁加载应用程序和桌面组件之间的合约。 必须使用 Windows 运行时类型专门执行此操作。
 幸运的是，使用 C\# 类可以轻松地声明它们。 但是，在定义这些对话时，有一些重要的性能注意事项，将在后面的部分中进行介绍。
@@ -104,9 +104,9 @@ namespace Fabrikam
 
 在打开的文件中，搜索 <OutputType> 标记并将其值更改为“winmdobj”。
 
-**步骤 4：**创建生成规则，该规则可创建“引用”Windows 元数据文件（.winmd 文件）。 即，没有任何实现。
+**步骤 3：**创建生成规则，该规则可创建“引用”Windows 元数据文件（.winmd 文件）。 即，没有任何实现。
 
-**步骤 5：**创建可创建“实现”Windows 元数据文件的生成规则，即，具有相同的元数据信息，但还包括实现。
+**步骤 4：**创建可创建“实现”Windows 元数据文件的生成规则，即，具有相同的元数据信息，但还包括实现。
 
 按照以下脚本即可完成此操作。 在项目“属性”**** > “生成事件”****中，将这些脚本添加到生成后事件命令行。
 
@@ -136,7 +136,7 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 
 一旦创建了引用 **winmd**（在项目“目标”文件夹下的“引用”文件夹中），它将被手提（复制）到每个使用中的旁加载应用程序项目并被引用。 这将在下一部分中进一步描述。 体现在以上生成规则中的项目结构确保实现和引用 **winmd** 处于生成层次结构中明确隔离的目录中，以避免混淆。
 
-##旁加载应用程序的详细信息
+##<a name="side-loaded-applications-in-detail"></a>旁加载应用程序的详细信息
 如之前所述，旁加载应用程序的生成方式和任何其他 UWP 应用相同，但是有一个额外细节：要声明旁加载的应用程序清单中 RuntimeClass 的可用性。 这使应用程序只需编写新内容便可访问桌面组件中的功能。 <Extension> 部分中的新清单项描述了桌面组件中实现的 RuntimeClass 和关于它的位置的信息。 应用程序清单中的这些声明内容同样适用于面向 Windows 10 的应用。 例如：
 
 ```XML
@@ -160,7 +160,7 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 
 环境变量（尤其是 %ProgramFiles%）可以在 <ActivatableClassAttribute Value="path"> 中使用。如前所述，应用代理仅支持 32 位，因此，如果应用程序在 64 位 OS 上运行，%ProgramFiles% 将解析为 C:\\Program Files (x86)。
 
-##桌面 IPC 服务器详细信息
+##<a name="desktop-ipc-server-detail"></a>桌面 IPC 服务器详细信息
 
 前两个部分介绍了类的声明以及将引用 **winmd** 传输到旁加载应用程序项目的机制。 桌面组件中大部分剩余工作都涉及到实现。 由于桌面组件的全部意义在于能够调用桌面代码（通常用于重新利用现有代码资产），必须以特殊方式配置该项目。
 正常情况下，使用 .NET 的 Visual Studio 项目使用两个“配置文件”中的一个。
@@ -443,7 +443,7 @@ return Task<int>.Run(async () =>
 
 由于通常客户端和服务器将由相同的组织编写，可采用以下编程做法，即所有对服务器的调用将由旁加载应用程序中的后台线程进行。 可从后台线程进行从服务器收集一批或多批数据的直接调用。 当完全检索到结果时，应用程序进程中常驻内存的一批数据通常可直接从 UI 线程检索。 C\# 对象本身在后台线程和 UI 线程之间非常敏捷，因此对这种调用模式尤其有用。
 
-##创建和部署 Windows 运行时代理
+##<a name="creating-and-deploying-the-windows-runtime-proxy"></a>创建和部署 Windows 运行时代理
 
 由于 IPC 方法涉及到在两个进程之间封送 Windows 运行时接口，因此必须使用全局注册的 Windows 运行时代理和存根。
 
@@ -514,7 +514,7 @@ MyWinRTComponent.Proxies
 
 *icacls。 /T /grant \*S-1-15-2-1:RX*
 
-##模式和性能
+##<a name="patterns-and-performance"></a>模式和性能
 
 周密监视跨进程传输的性能非常重要。 跨进程调用的成本至少是进程内调用的两倍。 跨进程创建“闲聊”对话或执行大对象（例如位图图像）的重复传输可能导致意外且不良的应用程序性能。
 
@@ -546,7 +546,7 @@ struct PersonStruct
 另一项技术是变量加载测试。 这可以通过将性能测试挂钩放入将变量延迟加载引入服务器处理的应用程序来完成。 这可以模拟各种加载和应用程序对不同服务器性能的反应。
 此示例演示如何使用正确的异步技术将时间延迟放入代码中。 要注入的延迟的确切量和要放入人工加载中的随机化的范围，将根据应用程序设计和应用程序将在其中运行的预期环境而变化。
 
-##开发进程
+##<a name="development-process"></a>开发进程
 
 当你对服务器作出更改时，有必要确保之前运行的任何实例都不再继续运行。 COM 最终会清理该进程，但在按照削减计时器清理之前，该进程仍对迭代开发有效。 因此，终止以前运行的实例是开发期间的常用步骤。 这要求开发人员一直跟踪用于托管服务器的 dllhost 实例。
 
@@ -561,7 +561,7 @@ struct PersonStruct
 
 用于代理服务器的模块列表应该在其加载模块列表中列出 *clrhost.dll*。
 
-##资源
+##<a name="resources"></a>资源
 
 -   [适用于 Windows 10 和 VS 2015 的中转 WinRT 组件项目模板](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
@@ -579,6 +579,6 @@ struct PersonStruct
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

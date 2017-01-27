@@ -4,12 +4,12 @@ description: "使用综合订阅源检索或创建最新和最热门的 Web 内�
 title: "RSS/Atom 订阅源"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
+ms.sourcegitcommit: a30b58737befaae10a1dbb30416f338d8eb1cbb1
+ms.openlocfilehash: 623c11eba097a072b456738b84750eb4b2d888bb
 
 ---
 
-# RSS/Atom 订阅源
+# <a name="rssatom-feeds"></a>RSS/Atom 订阅源
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -21,11 +21,11 @@ ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
 
 使用综合订阅源检索或创建最新和最热门的 Web 内容，这些订阅源是使用 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的功能根据 RSS 和 Atom 标准生成的。
 
-## 什么是订阅源？
+## <a name="what-is-a-feed"></a>什么是订阅源？
 
 Web 订阅源是一个文档，其中包含任意数量的由文本、链接和图像所组成的单个条目。 对订阅源的更新是以新条目的形式来进行的，这些新条目用于在整个 Web 上推广最新的内容。 内容消费者可以使用订阅源阅读器应用汇总和监视来自任何数量的单个内容作者的订阅源，并快速而方便地获取对最新内容的访问。
 
-## 支持哪些订阅源格式标准？
+## <a name="which-feed-format-standards-are-supported"></a>支持哪些订阅源格式标准？
 
 通用 Windows 平台 (UWP) 支持从 RSS 0.91 到 RSS 2.0 的 RSS 格式标准的订阅源检索，也支持从 0.3 到 1.0 的 Atom 标准的订阅源检索。 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类可定义订阅源和能够表示 RSS 和 Atom 元素的订阅源项目。
 
@@ -33,7 +33,7 @@ Web 订阅源是一个文档，其中包含任意数量的由文本、链接和�
 
 请注意，对于综合内容的发布，根据 Atom 和 Atom Publication 标准，Atom 发布协议的 UWP 实现 ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) 仅支持订阅源内容操作。
 
-## 使用带有网络隔离功能的综合内容
+## <a name="using-syndicated-content-with-network-isolation"></a>使用带有网络隔离功能的综合内容
 
 UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的网络访问。 并非所有的应用都需要访问网络。 然而，对于那些需要访问网络的应用，UWP 通过选择适当的功能为这些应用提供不同级别的网络访问权限。
 
@@ -45,7 +45,7 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 
 有关网络隔离和网络功能的详细信息，请参阅[网络基础知识](networking-basics.md)主题中的“功能”部分。
 
-## 如何访问 Web 订阅源
+## <a name="how-to-access-a-web-feed"></a>如何访问 Web 订阅源
 
 此部分展示了如何在采用 C# 或 Javascript 编写的 UWP 应用中使用 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空间中的类检索和显示 Web 订阅源。
 
@@ -63,13 +63,10 @@ UWP 中的网络隔离功能使开发人员能够控制和限制 UWP 应用的�
 ```csharp
 Windows.Web.Syndication.SyndicationClient client = new Windows.Web.Syndication.SyndicationClient();
 Windows.Web.Syndication.SyndicationFeed feed;
-
 // The URI is validated by catching exceptions thrown by the Uri constructor.
 Uri uri = null;
-
 // Use your own uriString for the feed you are connecting to.
 string uriString = "";
-
 try
 {
     uri = new Uri(uriString);
@@ -82,9 +79,7 @@ catch (Exception ex)
 ```javascript
 var currentFeed = null;
 var currentItemIndex = 0;
-        
 var client = new Windows.Web.Syndication.SyndicationClient();
-
 // The URI is validated by catching exceptions thrown by the Uri constructor.
 var uri = null;
 try {
@@ -101,7 +96,7 @@ try {
 
 当你调用大部分异步网络方法时，必须编写代码以处理异常。 异常处理程序可以检索关于异常原因的更详细的信息，以便更好地了解此次失败，然后作出正确的决策。
 
-如果不能与 HTTP 服务器建立连接，或者 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) 对象没有指向有效的 AtomPub 或 RSS 订阅源，[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 方法会引发异常。 如果发生错误，Javascrip 示例代码将使用 **onError** 函数捕捉任何异常，并打印出关于异常的更详细的信息。
+如果不能与 HTTP 服务器建立连接，或者 [**Uri**](https://msdn.microsoft.com/library/windows/apps/br243460) 对象没有指向有效的 AtomPub 或 RSS 订阅源，[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br226017) 方法会引发异常。 如果发生错误，Javascrip 示例代码将使用 **onError** 函数捕捉任何异常，并打印出关于异常的更详细的信息。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -111,12 +106,9 @@ try
     // others will reject the request or return a different response if this header is missing.
     // Use the setRequestHeader() method to add custom headers.
     client.SetRequestHeader("User-Agent", "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
-
     feed = await client.RetrieveFeedAsync(uri);
-
     // Retrieve the title of the feed and store it in a string.
     string title = feed.Title.Text;
-
     // Iterate through each feed item.
     foreach (Windows.Web.Syndication.SyndicationItem item in feed.Items)
     {
@@ -131,7 +123,6 @@ catch (Exception ex)
 ```javascript
 function onError(err) {
     WinJS.log && WinJS.log(err, "sample", "error");
-
     // Match error number with a ErrorStatus value.
     // Use Windows.Web.WebErrorStatus.getStatus() to retrieve HTTP error status codes.
     var errorStatus = Windows.Web.Syndication.SyndicationError.getStatus(err.number);
@@ -139,31 +130,24 @@ function onError(err) {
         displayLog("An invalid XML exception was thrown. Please make sure to use a URI that points to a RSS or Atom feed.");
     }
 }
-
 // Retrieve and display feed at given feed address.
 function retreiveFeed(uri) {
-
     // Although most HTTP servers do not require User-Agent header, 
     // others will reject the request or return a different response if this header is missing.
     // Use the setRequestHeader() method to add custom headers.
     client.setRequestHeader("User-Agent", "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
-
     client.retrieveFeedAsync(uri).done(function (feed) {
         currentFeed = feed;
-
         WinJS.log && WinJS.log("Feed download complete.", "sample", "status");
-
         var title = "(no title)";
         if (currentFeed.title) {
             title = currentFeed.title.text;
         }
         document.getElementById("CurrentFeedTitle").innerText = title;
-
         currentItemIndex = 0;
         if (currentFeed.items.size > 0) {
             displayCurrentItem();
         }
-
         // List the items.
         displayLog("Items: " + currentFeed.items.size);
      }, onError);
@@ -180,32 +164,26 @@ private void displayCurrentItem(Windows.Web.Syndication.SyndicationItem item)
     string itemLink = item.Links == null ? "No link" : item.Links.FirstOrDefault().ToString();
     string itemContent = item.Content == null ? "No content" : item.Content.Text;
     //displayCurrentItem is continued below.
-
 ```
 ```javascript
 function displayCurrentItem() {
     var item = currentFeed.items[currentItemIndex];
-
     // Display item number.
     document.getElementById("Index").innerText = (currentItemIndex + 1) + " of " + currentFeed.items.size;
-
     // Display title.
     var title = "(no title)";
     if (item.title) {
         title = item.title.text;
     }
     document.getElementById("ItemTitle").innerText = title;
-
     // Display the main link.
     var link = "";
     if (item.links.size > 0) {
         link = item.links[0].uri.absoluteUri;
     }
-
     var link = document.getElementById("Link");
     link.innerText = link;
     link.href = link;
-
     // Display the body as HTML.
     var content = "(no content)";
     if (item.content) {
@@ -224,16 +202,13 @@ function displayCurrentItem() {
 ```csharp
     //displayCurrentItem continued.
     string extensions = "";
-
     foreach (Windows.Web.Syndication.SyndicationNode node in item.ElementExtensions)
     {
         string nodeName = node.NodeName;
         string nodeNamespace = node.NodeNamespace;
         string nodeValue = node.NodeValue;
-
         extensions += nodeName + "\n" + nodeNamespace + "\n" + nodeValue + "\n";
     }
-
     this.listView.Items.Add(itemTitle + "\n" + itemLink + "\n" + itemContent + "\n" + extensions);
 }
 ```
@@ -248,19 +223,16 @@ function displayCurrentItem() {
         };
         bindableNodes.push(bindableNode);
     }
-
     var dataList = new WinJS.Binding.List(bindableNodes);
     var listView = document.getElementById("extensionsListView").winControl;
     WinJS.UI.setOptions(listView, {
         itemDataSource: dataList.dataSource
-
     });
 }
 ```
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

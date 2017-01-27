@@ -5,36 +5,43 @@ title: "语音识别"
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
+keywords: "语音，语音，语音识别，自然语言，听写，输入，用户交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
 
 ---
 
-# 语音识别
-
+# <a name="speech-recognition"></a>语音识别
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 使用语音识别提供输入内容、指定操作或命令并完成任务。
 
-**重要的 API**
-
--   [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
-
-
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)</li>
+</ul>
+</div>
 
 语音识别由以下部分构成：语音运行时、用于为运行时编程的识别 API、用于听写和 Web 搜索的现成语法，以及帮助用户发现和使用语音识别功能的默认系统 UI。
 
 
-## 设置音频源
+## <a name="set-up-the-audio-feed"></a>设置音频源
 
 
 确保你的设备具有麦克风或等效硬件。
 
-在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474)（**package.appxmanifest** 文件）中设置“麦克风”****设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
+在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474)（**package.appxmanifest** 文件）中设置**麦克风******设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
 
 请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
-## 识别语音输入
+## <a name="recognize-speech-input"></a>识别语音输入
 
 
 *约束*可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，它除了能提高语音识别准确度，还能为你的应用带来其他优势。
@@ -55,11 +62,11 @@ ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
 
     可以使用这些预定义语法识别长达 10 秒的语音输入，并且不要求你进行任何创作。 然而，它们确实需要连接到网络。
 
-    若要使用 Web 服务约束，必须在“设置”****中启用语音输入和听写支持，方法是在“设置”-&gt;“隐私”-&gt;“语音、墨迹书写和键入”页面中打开“了解我”选项。
+    若要使用 Web 服务约束，必须在**设置**中启用语音输入和听写支持，方法是在“设置”-&gt;“隐私”-&gt;“语音、墨迹书写和键入”页面中打开“了解我”选项。
 
     下面我们将介绍如何测试是否已启用语音输入，如果未启用，则打开“设置”-&gt;“隐私”-&gt;“语音、墨迹书写和键入”页面。
 
-    首先，我们将全局变量 (HResultPrivacyStatementDeclined) 初始化为 0x80045509 的 HResult 值。 请参阅[采用 C\# 或 Visual Basic 的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
+    首先，我们将全局变量 (HResultPrivacyStatementDeclined) 初始化为 0x80045509 的 HResult 值。 请参阅 [采用 C\# 或 Visual Basic 的异常处理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -147,22 +154,22 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 自定义识别 UI
+## <a name="customize-the-recognition-ui"></a>自定义识别 UI
 
 
 当你的应用通过调用 [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 来尝试进行语音识别时，多个屏幕将按以下顺序显示。
 
 如果你使用基于预定义语法的约束（听写或 Web 搜索）：
 
--   “侦听”****屏幕。
--   “思考”****屏幕。
--   “听到你说”****屏幕或错误屏幕。
+-   **侦听**屏幕。
+-   **思考**屏幕。
+-   **听到你说**屏幕或错误屏幕。
 
 如果你使用的约束基于字词或短语列表，或者基于 SRGS 语法文件：
 
--   “侦听”****屏幕。
--   “你说的是”****屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
--   “听到你说”****屏幕或错误屏幕。
+-   **侦听**屏幕。
+-   **你说的是**屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+-   **听到你说**屏幕或错误屏幕。
 
 下图演示了语音识别器在不同屏幕间的流程的示例，该识别器使用基于 SRGS 语法文件的约束。 在本例中，语音识别是成功的。
 
@@ -172,7 +179,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 ![基于 sgrs 语法文件的约束的最终识别屏幕](images/speech-listening-complete.png)
 
-“侦听”****屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 属性获取）自定义“侦听”****屏幕上的内容。
+**侦听**屏幕可提供应用可识别的字词或短语的示例。 下面我们介绍如何使用 [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) 类的属性（通过调用 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 属性获取）自定义**侦听**屏幕上的内容。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -204,7 +211,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 
 **开发人员**
@@ -223,6 +230,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -6,16 +6,18 @@ ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: f8cb9c36b42936b8dfd24bbd5f88e2cf500e930f
 
 ---
 
-# 适用于 UWP 应用的图标
+# <a name="icons-for-uwp-apps"></a>适用于 UWP 应用的图标
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 良好的图标会与版式和设计语言的其余部分相协调。 它们不会混合隐喻，并且会尽快且尽量简单地仅交流所需内容。 
 
-## 线性缩放大小渐变 
+## <a name="linear-scaling-size-ramps"></a>线性缩放大小渐变 
 
 <table>
     <tr> 
@@ -32,7 +34,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
     </tr>
 </table>
 
-## 常见的形状
+## <a name="common-shapes"></a>常见的形状
 
 图标通常应无需太多填充即可最大化给定的空间。 这些形状提供起始点以调整基本形状的大小。 
 
@@ -40,7 +42,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 使用对应于图标方向的形状，并围绕这些基本参数进行撰写。 图标并不一定要填充或完全适合形状内部，并且可能根据需要进行调整以确保最佳平衡。 
 
-<table>
+<table class="uwpd-noborder">
     <tr>
         <td>圆形<td>
         <td>正方形</td>
@@ -63,7 +65,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 </table>
 
-## 角度
+## <a name="angles"></a>角度
 
 除了使用相同的网格和线条粗细外，图标也使用常见元素构建。 
 
@@ -98,7 +100,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
     </tr>
 </table>
 
-## 曲线
+## <a name="curves"></a>曲线
 
 曲线构建于整个圆的各个部分，并且在不需要贴靠到像素网格时不应扭曲。 
 
@@ -117,19 +119,19 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
     </tr>    
 </table>
 
-## 几何构造
+## <a name="geometric-construction"></a>几何构造
 
 我们建议在构建图标时仅使用纯几何形状。
 
 ![带有几何覆盖的吉他图标 ](images/icons-geometric-construction.png)
 
-## 填充的形状 
+## <a name="filled-shapes"></a>填充的形状 
 
 图标在需要时可以包含填充的形状，但它们在 32px × 32px 上不应超过 4px。 实心圆不应大于 6px × 6px。 
 
 ![5px × 8px 填充 ](images/icons-filled-shapes.png)
 
-## 锁屏提醒
+## <a name="badges"></a>锁屏提醒
 
 “锁屏提醒”是用于描述添加到不会与基本图标元素集成的图标的元素的通用术语。 这些通常会传达关于图标的其他信息，例如状态或操作。 其他常用术语包括：覆盖、批注或修饰符。 
 
@@ -151,7 +153,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 </table>
 <p></p>
 
-### 锁屏提醒颜色 
+### <a name="badge-color"></a>锁屏提醒颜色 
 
 颜色锁屏提醒应仅用于传达图标状态。 在状态锁屏提醒中使用的颜色会向用户传达特定的情感消息。 
 
@@ -163,20 +165,20 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 </table>
 <p></p>
 
-### 锁屏提醒位置
+### <a name="badge-position"></a>锁屏提醒位置
 
 任何状态或操作的默认位置都在右下方。 仅在设计不允许该位置时才使用其他位置。 
 
-### 锁屏提醒大小调整
+### <a name="badge-sizing"></a>锁屏提醒大小调整
 
 在 32 px × 32 px 网格上，锁屏提醒大小应设置为 10 - 18 px。 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 * [磁贴和图标资源指南](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

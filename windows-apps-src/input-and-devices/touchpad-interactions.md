@@ -5,13 +5,19 @@ title: "触摸板交互"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
+keywords: "触摸板, PTP, 触摸, 指针, 输入, 用户交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: dd91c8a6c58c25799a0c43b8632fade5309850cc
 
 ---
 
-# 触摸板设计指南
+# <a name="touchpad-design-guidelines"></a>触摸板设计指南
 
 
 设计你的应用，以便用户可以通过触摸板与其交互。 触摸板将间接式多点触控输入和定位设备（如鼠标）的精确输入结合起来。 这种结合使触摸板既适用于触摸优化的 UI，也适用于效率应用的较小目标。
@@ -42,7 +48,7 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 本主题中讨论的手势和指南可以帮助确保你的应用使用最少的代码无缝支持触摸板输入。
 
-## 触摸板语言
+## <a name="the-touchpad-language"></a>触摸板语言
 
 
 一组在整个系统中通用的简单触摸板交互功能。 针对触摸和鼠标输入优化应用，这种语言可以使用户快速熟悉应用，提升他们的信心，使其更容易了解和使用应用。
@@ -112,14 +118,14 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
  
 
-## 硬件
+## <a name="hardware"></a>硬件
 
 
 查询鼠标设备功能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) 以确定触摸板硬件可以直接访问你的应用 UI 的哪些方面。 我们建议提供适用于触摸和鼠标输入的 UI。
 
 有关查询设备功能的详细信息，请参阅[标识输入设备](identify-input-devices.md)。
 
-## 视觉反馈
+## <a name="visual-feedback"></a>视觉反馈
 
 
 -   当（通过移动或悬停事件）检测到触摸板光标时，显示特定于鼠标的 UI 以指示元素显示的功能。 如果触摸板光标在一定的时间段内没有移动，或者如果用户启动了触摸交互，则让触摸板 UI 逐渐淡出。 这会使 UI 干净整洁。
@@ -130,7 +136,7 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 有关视觉反馈的更常规的指南，请参阅[视觉反馈指南](https://msdn.microsoft.com/library/windows/apps/hh465342)。
 
-## 光标
+## <a name="cursors"></a>光标
 
 
 为触摸板指针提供了一组标准光标。 它们用来表示元素的主要操作。
@@ -145,7 +151,7 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 -   当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png)， ![水平调整光标](images/cursor-horizontal.png)， ![对角调整光标（左下和右上）](images/cursor-diagonal2.png)， ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
 -   当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 
 * [处理指针输入](handle-pointer-input.md)
@@ -167,6 +173,6 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

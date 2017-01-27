@@ -3,9 +3,14 @@ author: TylerMSFT
 title: "支持使用应用 URI 处理程序的 Web 到应用链接"
 description: "通过使用应用 URI 处理程序推动用户与应用的互动。"
 keywords: "深层链接 Windows"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3e57ca2cf0e7c788f5a8be12ebaf3e6b05a4fe51
-ms.openlocfilehash: e5c815ef0c776954e5b0d7f1cb9bd5e32e10356c
+ms.sourcegitcommit: ffa6ad17ee865dda5349565094c38e09dc42e0e3
+ms.openlocfilehash: 524a0897b6b8a8d17bb7493dc4d9e4357d8c1456
 
 ---
 
@@ -65,7 +70,7 @@ Windows 将建立与你的网站的 https 连接，并将在你的 Web 服务器
 
 | **通配符** | **说明**               |
 |--------------|-------------------------------|
-| *****       | 表示任何子字符串      |
+| **\***       | 表示任何子字符串      |
 | **?**        | 表示单个字符 |
 
 例如，给定上述示例中的 `"excludePaths" : [ "/news/*", "/blog/*" ]`，你的应用将支持以你的网站地址（例如 msn.com）开头的所有路径，**除了** `/news/` 和 `/blog/` 下的路径。 将支持 **msn.com/weather.html**，但不支持 ****msn.com/news/topnews.html****。
@@ -163,7 +168,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 验证你的应用是否已关闭。 按 **Windows 键 + R** 打开“运行”对话框，并在窗口中粘贴该链接。 应启动你的应用，而不是 Web 浏览器。
 
-此外，你可以通过使用 [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) API 从其他应用启动你的应用来测试它。 你也可以使用此 API 在手机上进行测试。
+此外，你可以通过使用 [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) API 从其他应用启动你的应用来测试它。 你也可以使用此 API 在手机上进行测试。
 
 如果你希望遵循协议激活逻辑，请在 **OnActivated** 事件处理程序中设置断点。
 
@@ -183,18 +188,18 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 - 带有 AppUriHandlers 的所有旁加载应用都将在安装时验证主机的链接。 不需要上载 JSON 文件即可测试该功能。
 
-- 只要你的应用是使用 [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) 启动的 UWP 应用或使用 [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx) 启动的 Windows 桌面应用，此功能就可行。 如果 URL 对应于注册的应用 URI 处理程序，则将启动应用，而不是浏览器。
+- 只要你的应用是使用 [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) 启动的 UWP 应用或使用 [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx) 启动的 Windows 桌面应用，此功能就可行。 如果 URL 对应于注册的应用 URI 处理程序，则将启动应用，而不是浏览器。
 
 ## <a name="see-also"></a>另请参阅
 
-[windows.protocol 注册](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
+[windows.protocol 注册](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 
-[处理 URI 激活](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
+[处理 URI 激活](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 
 [关联启动示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)说明如何使用 LaunchUriAsync() API。
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

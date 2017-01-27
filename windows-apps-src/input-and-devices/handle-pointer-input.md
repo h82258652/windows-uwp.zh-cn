@@ -5,39 +5,46 @@ title: "处理指针输入"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
+keywords: "笔、鼠标、触摸板、触摸、指针、输入、用户交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 2053062f6a5f850da8983bce2465cd10cdc01d56
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: ba4288d93924d3a32a0a659dea67af28fb607987
 
 ---
 
-# 处理指针输入
+# <a name="handle-pointer-input"></a>处理指针输入
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 在通用 Windows 平台 (UWP) 应用中接收、处理和管理来自指针设备的输入数据，例如触摸、鼠标、笔/触笔和触摸板。
 
-**重要的 API**
-
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
-
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+</ul>
+</div>
 
 **重要提示**  
 如果你实现自己的交互支持，请记住，用户期望获得直观的体验，包括直接与应用中的 UI 元素交互。 我们建议你在[控件列表](https://msdn.microsoft.com/library/windows/apps/mt185406)上生成你的自定义交互的模型以保持内容一致和易于发现。 平台控件提供完整的通用 Windows 平台 (UWP) 用户交互体验，包括标准交互、动态显示的物理效果、视觉反馈和辅助功能。 仅当要求清楚、定义良好且基本交互不支持你的方案时才创建自定义交互。
 
 
-## 指针
-
-
+## <a name="pointers"></a>指针
 许多交互体验涉及到用户通过使用输入设备（如触摸、鼠标、笔/触笔和触摸板）指向要与其进行交互的对象来标识该对象。 由于这些输入设备所提供的原始人体学接口设备 (HID) 数据包括许多常用属性，因此该信息升级为一个统一的输入堆栈，并公开为经过整合的、独立于设备的指针数据。 然后，你的 UWP 应用可以使用此数据，而无需担心所使用的输入设备。
 
 **注意** 如果你的应用需要，也可以从原始 HID 数据升级特定于设备的信息。
 
  
 
-输入堆栈上的每个输入点（或接触点）通过由各种指针事件提供的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 参数公开的 [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) 对象表示。 在多笔或多触摸输入的情况下，每个接触点都视为一个唯一的输入点。
+输入堆栈上的每个输入点（或接触点）通过由各种指针事件提供的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br227968) 参数公开的 [**Pointer**](https://msdn.microsoft.com/library/windows/apps/hh943076) 对象表示。 在多笔或多触摸输入的情况下，每个接触点都视为一个唯一的输入点。
 
-## 指针事件
+## <a name="pointer-events"></a>指针事件
 
 
 指针事件可公开诸如检测状态（在范围中或在接触点中）和设备类型之类的基本信息，以及诸如位置、压力和接触几何图形之类的扩展信息。 此外，还提供特定设备属性，例如用户按了哪一个鼠标按钮或是否正在使用笔尖橡皮擦。 如果你的应用需要在输入设备与其功能之间进行区分，请参阅[标识输入设备](identify-input-devices.md)。
@@ -82,7 +89,7 @@ UWP 应用可以侦听以下指针事件：
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>\[<strong>PointerEntered</strong>\](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
+<td align="left"><p>[<strong>PointerEntered</strong>](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
 <td align="left"><p>在指针进入元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触才能引发此事件，无论是从对元素直接触摸按下还是移动到该元素的绑定区域。</li>
@@ -127,12 +134,12 @@ UWP 应用可以侦听以下指针事件：
 
  
 
-## 示例
+## <a name="example"></a>示例
 
 
 以下是一些来自基本指针跟踪应用的代码示例，演示了如何侦听和处理指针事件并获取活动指针的各种属性。
 
-### 创建 UI
+### <a name="create-the-ui"></a>创建 UI
 
 对于此示例，我们使用一个矩形 (`targetContainer`) 作为指针输入的目标对象。 当指针状态更改时，目标的颜色也将更改。
 
@@ -195,11 +202,11 @@ UWP 应用可以侦听以下指针事件：
 </Page>
 ```
 
-### 侦听指针事件
+### <a name="listen-for-pointer-events"></a>侦听指针事件
 
 在大多数情况下，我们建议你通过事件处理程序的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 获取指针信息。
 
-如果事件参数不公开所需的指针详细信息，则可以获取对通过 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 和 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法公开的扩展 [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 信息的访问权限。
+如果事件参数不公开所需的指针详细信息，则可以获取对通过 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br242038) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 和 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法公开的扩展 [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/hh943076) 信息的访问权限。
 
 对于此示例，我们使用一个矩形 (`targetContainer`) 作为指针输入的目标对象。 当指针状态更改时，目标的颜色也将更改。
 
@@ -244,7 +251,7 @@ UWP 应用可以侦听以下指针事件：
 
 ```
 
-### 处理指针事件
+### <a name="handle-pointer-events"></a>处理指针事件
 
 接下来，我们使用 UI 反馈来演示基本的指针事件处理程序。
 
@@ -556,9 +563,9 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
-### 获取指针属性
+### <a name="get-pointer-properties"></a>获取指针属性
 
-如前面所述，你必须从通过 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 和 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法获取的 [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 对象获取最扩展的指针。
+如前面所述，你必须从通过 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br242038) 的 [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) 和 [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) 方法获取的 [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/hh943076) 对象获取最扩展的指针。
 
 -   首先，我们为每个指针创建一个新的 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)。
 
@@ -652,7 +659,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
              }
 ```
 
-### 完整示例
+### <a name="complete-example"></a>完整示例
 
 下面是此示例的 C\# 代码。 有关更复杂示例的链接，请参阅此页面底部的相关文章。
 
@@ -1080,7 +1087,7 @@ namespace PointerInput
 }
 ```
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 
 **示例**
@@ -1106,6 +1113,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

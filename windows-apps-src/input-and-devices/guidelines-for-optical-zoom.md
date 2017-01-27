@@ -6,20 +6,24 @@ ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
 
 ---
 
-# 视觉缩放和调整大小
+# <a name="optical-zoom-and-resizing"></a>视觉缩放和调整大小
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 本文介绍 Windows 缩放和调整大小元素，并提供在你的应用中使用这些交互机制时的用户体验指南。
 
-**重要的 API**
-
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
 使用视觉缩放，用户可以放大内容区域中内容的视图（在内容区域自身上执行），而使用调整大小，用户则可以更改一个或多个对象的相对大小，而不更改内容区域的视图（在内容区域中的对象上执行）。
 
@@ -40,7 +44,7 @@ ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
  
 
-## 应做事项和禁止事项
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 
 对支持调整大小或视觉缩放的应用使用以下指南：
@@ -69,7 +73,7 @@ ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
      
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 
 **示例**
@@ -97,6 +101,6 @@ ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

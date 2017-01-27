@@ -5,16 +5,17 @@ title: "活动画布布局模式"
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
 label: TBD
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: ef71196ba0aefd4428daae70c54bcc9cbeaa56a2
-ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: b38d7664a8a874743c5307e44e81104ce512454e
 
 ---
-# 活动画布布局模式
+# <a name="active-canvas-layout-pattern"></a>活动画布布局模式
 
 活动画布是带有内容区域和命令区域的模式。 它适用于单视图应用或模式体验，例如照片查看器/编辑器、文档查看器、地图、绘画或使用自由滚动视图的其他应用。 在操作执行方面，活动画布可以与命令栏或仅与按钮搭配使用，具体取决于用户所需的操作数和操作类型。
 
-## 示例
+## <a name="examples"></a>示例
 
 此照片编辑应用的设计主要包括一个活动画布模式，其左侧具有一个移动示例，其右侧具有一个桌面示例。 图像编辑图面是一块画布，底部的命令栏包含应用所需的所有上下文操作。
 
@@ -25,7 +26,7 @@ ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
 ![使用活动画布模式的地图应用示例](images/uap-subway-pc-phone-700.png)
 
 
-## 实现此模式
+## <a name="implementing-this-pattern"></a>实现此模式
 
 活动画布模式由一个内容区域和一个命令区域组成。
 
@@ -35,12 +36,12 @@ ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
 
 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 -   [**应用栏和命令栏**](../controls-and-patterns/app-bars.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

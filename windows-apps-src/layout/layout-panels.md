@@ -5,12 +5,15 @@ title: "通用 Windows 平台 (UWP) 应用的布局面板"
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 58187f34de283b407278a75f1b7b6de61908387f
+ms.sourcegitcommit: 98b3a9739b1906b7abb529cea1e7d433118cbcdd
+ms.openlocfilehash: b1c3d5ca03a99e2fff1c37cfddfb7a00db45d251
 
 ---
-# 布局面板
+# <a name="layout-panels"></a>布局面板
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 使用布局面板来为应用中的 UI 元素排列和分组。 内置 XAML 布局面板包括 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)、[**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) 和 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)。 在此处，我们介绍每个面板并显示如何使用它设置 XAML UI 元素的布局。
 
@@ -35,7 +38,7 @@ ms.openlocfilehash: 58187f34de283b407278a75f1b7b6de61908387f
 
 有关附加属性的详细信息，请参阅[附加属性概述](../xaml-platform/attached-properties-overview.md)。
 
-> **注意**  附加属性是一个 XAML 概念，需要特殊语法才能从代码中获取或设置。 若要在代码中使用附加属性，请参阅*附加属性概述*文章的*代码中的附加属性*部分。
+> **注意**&nbsp;&nbsp;附加属性是一个 XAML 概念，需要特殊语法才能从代码中获取或设置。 若要在代码中使用附加属性，请参阅*附加属性概述*文章的*代码中的附加属性*部分。
 
 **面板边框**
 
@@ -51,9 +54,9 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 ![带有边框的 Grid](images/layout-panel-grid-border.png)
 
-使用内置边框属性可以减少 XAML 元素计数，从而改进应用的 UI 性能。 有关布局面板和 UI 性能的详细信息，请参阅[优化你的 XAML 布局](https://msdn.microsoft.com/library/windows/apps/mt404609.aspx)。
+使用内置边框属性可以减少 XAML 元素计数，从而改进应用的 UI 性能。 有关布局面板和 UI 性能的详细信息，请参阅[优化你的 XAML 布局](https://msdn.microsoft.com/en-us/library/windows/apps/mt404609.aspx)。
 
-## RelativePanel
+## <a name="relativepanel"></a>RelativePanel
 
 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) 允许你设置 UI 元素的布局，方法是指定它们相对于其他元素的位置和相对于面板的位置。 默认情况下，将一个元素放置在面板的左上角。 你可以将 RelativePanel 与 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) 和 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) 一起使用，以针对不同的窗口大小重新排列 UI。
 
@@ -100,7 +103,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 - 绿色矩形给定 44 的显式高度。 它的左边与红色矩形对齐，它的右边与蓝色矩形对齐，这决定了它的宽度。
 - 黄色矩形未给定显式大小。 它的左边与蓝色矩形对齐。 它的右边和底边与面板的边缘对齐。 它的大小由这些对齐来决定，而且它将随着面板调整大小而调整大小。
 
-## StackPanel
+## <a name="stackpanel"></a>StackPanel
 
 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) 是简单的布局面板，它将其子元素排列成一条水平或垂直方向的直线。 如果你需要在页面 UI 中排列一个小的子部分，通常使用 StackPanel 控件。
 
@@ -124,7 +127,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 在 StackPanel 中，如果未明确设置子元素的大小，则该元素会拉伸以填满可用宽度（或如果 Orientation 为 **Horizontal**，则为高度）。 在本示例中，未设置矩形的宽度。 扩展矩形以填充 StackPanel 的整个宽度。
 
-## Grid
+## <a name="grid"></a>Grid
 
 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) 面板支持以多行或多列布局排列控件。 你可以通过使用 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowdefinitions.aspx) 和 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columndefinitions.aspx) 属性来指定 Grid 面板的行和列。 在 XAML 中，使用属性元素语法声明 Grid 元素内的行和列。 通过使用 **Auto** 缩放或比例缩放，你可以分配列或行中的空间。
 
@@ -132,7 +135,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 通过使用 [**Grid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowspan.aspx) 和 [**Grid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columnspan.aspx) 附加属性，你可使内容分散到多个行和列中。
 
-此 XAML 示例显示了如何创建包含三行和两列的 Grid。 第一行和第三行的高度刚好足够包含文本。 第二行的高度填满可用高度的剩余部分。 所有列的宽度使用平均划分的可用容器宽度。
+此 XAML 示例显示了如何创建包含两行和两列的网格。
 
 ```xaml
 <Grid>
@@ -154,14 +157,14 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 结果如下所示。
 
-![Grid](images/layout-panel-grid.png)
+![网格](images/layout-panel-grid.png)
 
 在此示例中，大小调整的工作方式如下所示： 
 - 第二行的显式高度为 44 个有效像素。 默认情况下，第一行的高度将填充所遗留的任何空间。
 - 第一列的宽度设置为 **Auto**，因此它是其子项所需的宽度。 在此情况下，它是 44 个有效像素的宽度，以适应红色矩形的宽度。
 - 对矩形没有其他大小约束，因此每一个都进行拉伸以填充它所在的网格单元格。
 
-## VariableSizedWrapGrid
+## <a name="variablesizedwrapgrid"></a>VariableSizedWrapGrid
 
 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) 提供一个网格样式的布局面板，其中元素以行或列排列，当达到 [**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) 值时会自动换行至新行或新列。 
 
@@ -193,7 +196,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 在此示例中，每列中的最大行数是 3。 第一列仅包含 2 个项目（红色和蓝色矩形），因为蓝色矩形跨 2 个行。 然后绿色矩形换行到下一列的顶部。
 
-## 画布
+## <a name="canvas"></a>画布
 
 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) 面板使用固定的坐标点定位其子元素。 通过在每个元素上设置 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) 附加属性，你可以在单独子元素上指定点。 在布局期间，父项 Canvas 对象从其子项中读取这些附加属性值，并在布局的 [Arrange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx) 传递期间使用这些值。
 
@@ -219,12 +222,12 @@ Canvas 不对其子素的大小进行任何调整。 每个元素都必须指定
 
 谨慎使用 Canvas 面板。 尽管在某些情况下，在 UI 中精确控制元素的位置很简单，但固定定位布局面板会导致你的 UI 区域不太适应整个应用窗口大小的更改。 应用窗口大小可能会随设备方向更改、拆分应用窗口、更改监视器和许多其他用户方案而进行调整。
 
-## ItemsControl 的面板
+## <a name="panels-for-itemscontrol"></a>ItemsControl 的面板
 
 存在多种只能用作 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) 来显示 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) 中的项的特殊用途面板。 它们是 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx)、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx)、[**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) 和 [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx)。 你无法将这些面板用于常规 UI 布局。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

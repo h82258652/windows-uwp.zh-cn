@@ -6,11 +6,11 @@ ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8ead56e84e21aaf5005530ed0509efa9440bce59
 
 ---
-# 滚动栏
+# <a name="scroll-bars"></a>滚动栏
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -22,29 +22,26 @@ ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 
 ![标准滚动栏和平移指示器控件的外观示例](images/SCROLLBAR.png)
 
+<div class="microsoft-internal-note">
+请参阅[设计仓库](http://designdepot/DesignDepot.FrontEnd/#/ML/Dashboard/1805)中的完整红线
+</div>
 
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209527"><strong>ScrollViewer 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx"><strong>ScrollBar 类</strong></a></li>
+<li>[**ScrollViewer 类**](https://msdn.microsoft.com/library/windows/apps/br209527)</li>
+<li>[**ScrollBar 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 示例
+## <a name="examples"></a>示例
 
 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) 能让内容按比其实际大小更小的区域显示。 当滚动查看器内容并非完全可见时，它会显示用户可以移动可见内容区域的滚动条。 包括滚动查看器所有内容在内的区域是*范围*。 内容的可见区域是*视口*。
 
 ![说明标准滚动栏控件的屏幕截图](images/ScrollBar_Standard.jpg)
 
-## 创建滚动查看器
+## <a name="create-a-scroll-viewer"></a>创建滚动查看器
 若要向页面添加垂直滚动，请将页面内容打包在滚动查看器中。
 
 ```xaml
@@ -72,7 +69,7 @@ ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 </ScrollViewer>
 ```
 
-## 控件模板中的 ScrollViewer
+## <a name="scrollviewer-in-a-control-template"></a>控件模板中的 ScrollViewer
 
 ScrollViewer 控件作为其他控件复合部分的形式存在是普遍情况。 仅在主机控件的布局空间限制为比扩展的内容大小更小的时候，ScrollViewer 部件和提供支持的 [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) 类才会显示视口和滚动条。 列表经常会发生此情况，因此 [**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) 模板始终会包括 ScrollViewer。 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 和 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 也在其模板中包括了 ScrollViewer。
 
@@ -105,10 +102,10 @@ ScrollViewer 定义以下 XAML 附加属性：
 <ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/>
 ```
 
-对于在 XAML 中 ScrollViewer 处于显式状态的情况，正如示例代码所示，你无需使用附加属性语法。 只需使用属性语法，例如 `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`。
+对于 XAML 中的 ScrollViewer 为显式的情况（正如示例代码所示），你无需使用附加属性语法。 只需使用属性语法，例如 `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`。
 
 
-## 建议
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 -   尽可能针对垂直滚动（而不是水平）进行设计。
 -   对于超出一条视口边界（垂直或水平）的内容区域使用单轴平移。 对于超出两条视口边界（垂直和水平）的内容区域使用双轴平移。
@@ -118,13 +115,13 @@ ScrollViewer 定义以下 XAML 附加属性：
 -   使用滚动查看器仅包含一个对象。 请注意，该唯一对象可能是版式面板，它反过来包含自身的任意数量的对象。
 -   不要将 [Pivot](tabs-pivot.md) 控件放置在滚动查看器内，避免与透视表的滚动逻辑发生冲突。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 **对于开发人员 (XAML)**
 * [**ScrollViewer 类**](https://msdn.microsoft.com/library/windows/apps/br209527)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

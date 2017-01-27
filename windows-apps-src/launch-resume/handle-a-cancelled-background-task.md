@@ -4,14 +4,14 @@ title: "处理取消的后台任务"
 description: "了解如何创建一个后台任务，该任务识别取消请求并停止工作，向使用永久性存储的应用报告取消。"
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: ba40aefe83a02d29150dd25e1303ec15bb032b8c
 
 ---
 
-# 处理取消的后台任务
+# <a name="handle-a-cancelled-background-task"></a>处理取消的后台任务
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要的 API**
 
@@ -21,11 +21,11 @@ ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 
 了解如何创建一个后台任务，该任务识别取消请求、停止工作，并向使用永久性存储的应用报告取消。
 
-本主题假定你已创建一个后台任务类，其中包含用作后台任务入口点的 Run 方法。 若要快速生成后台任务，请参阅[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)或[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
+本主题假定你已创建一个后台任务类，其中包含用作后台任务入口点的 Run 方法。 若要快速生成后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)或[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。 有关条件和触发器的更多深入信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
 本主题也适用于进程内后台任务。 但是，使用 OnBackgroundActivated() 替换 Run() 方法。 进程内后台任务不需要你使用永久性存储发送取消信号，因为你可以使用应用状态传达取消（如果后台任务与前台应用在同一进程中运行）。
 
-## 使用 OnCanceled 方法识别取消请求
+## <a name="use-the-oncanceled-method-to-recognize-cancellation-requests"></a>使用 OnCanceled 方法识别取消请求
 
 编写一个用于处理取消事件的方法。
 
@@ -96,7 +96,7 @@ ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## 通过退出后台任务处理取消
+## <a name="handle-cancellation-by-exiting-your-background-task"></a>通过退出后台任务处理取消
 
 当收到取消请求时，执行后台工作的方法需要通过识别 **\_cancelRequested** 何时设置为 **true** 停止工作并退出。 对于进程内后台任务，这意味着从 `OnBackgroundActivated()` 方法返回。 对于进程外后台任务，这意味着从 `Run()` 方法返回。
 
@@ -200,13 +200,13 @@ ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 >     }
 > ```
 
-## 备注
+## <a name="remarks"></a>备注
 
 你可以下载[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)以在方法上下文中查看这些代码示例。
 
 为了便于说明，示例代码只显示[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)的部分 Run 方法（以及回调计时器）。
 
-## Run 方法示例
+## <a name="run-method-example"></a>Run 方法示例
 
 下面显示了不同上下文的[后台任务示例](http://go.microsoft.com/fwlink/p/?LinkId=618666)中的完整 Run 方法和计时器回调代码：
 
@@ -327,13 +327,12 @@ ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 > }
 > ```
 
-> 
-  **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows10 开发人员。 如果你面向 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
-* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
@@ -348,6 +347,6 @@ ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

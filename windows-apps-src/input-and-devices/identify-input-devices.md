@@ -5,24 +5,33 @@ title: "标识输入设备"
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
+keywords: "设备、数字化器、输入、交互"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: df416821ad67a8eaf8a8a31879b6a1d39526df14
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 20230362a38d4541fbed25ac822c96032f7b6d8f
 
 ---
 
-# 标识输入设备
+# <a name="identify-input-devices"></a>标识输入设备
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
 
-**重要的 API**
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+</ul>
+</div>
 
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
-
-
-## 检索鼠标属性
+## <a name="retrieve-mouse-properties"></a>检索鼠标属性
 
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
@@ -45,7 +54,7 @@ private void GetMouseProperties()
 }
 ```
 
-## 检索键盘属性
+## <a name="retrieve-keyboard-properties"></a>检索键盘属性
 
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) 类，用于检索是否已连接键盘。 只需创建新的 **KeyboardCapabilities** 对象并获取 [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) 属性。
@@ -60,7 +69,7 @@ private void GetKeyboardProperties()
 }
 ```
 
-## 检索触摸属性
+## <a name="retrieve-touch-properties"></a>检索触摸属性
 
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) 类，用于检索是否已连接任何触摸数字化器。 只需创建新的 **TouchCapabilities** 对象并获取感兴趣的属性。
@@ -80,7 +89,7 @@ private void GetTouchProperties()
 }
 ```
 
-## 检索指针属性
+## <a name="retrieve-pointer-properties"></a>检索指针属性
 
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空间包含 [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
@@ -176,7 +185,7 @@ private void GetPointerDevices()
     }
 ```
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 
 **示例**
@@ -196,6 +205,6 @@ private void GetPointerDevices()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

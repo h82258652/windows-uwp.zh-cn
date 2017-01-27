@@ -3,18 +3,25 @@ description: "了解如何设计和编码在各种设备和屏幕大小上易于
 title: "UWP 应用布局设计 – Windows 应用开发"
 author: mijacobs
 keywords: "uwp 应用布局, 通用 windows 平台, 应用设计, 界面"
+label: Layout
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e643b7029d5bc417437f7a1b8586424ac4345c3b
 
 ---
-# 适用于 UWP 应用的布局
+# <a name="layout-for-uwp-apps"></a>适用于 UWP 应用的布局
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 应用结构、页面布局和导航是应用用户体验的基础。 本节中的文章将帮助你创建在各种设备和屏幕大小上易于导航且外观优美的 UWP 应用。
 
-## 简介
+## <a name="intro"></a>简介
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -28,7 +35,7 @@ ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
 </div>
 </div>
 
-## 应用布局和结构
+## <a name="app-layout-and-structure"></a>应用布局和结构
 查看这些有关构建应用和使用以下三种 UI 元素的建议：导航、命令和内容。
 
 <div class="side-by-side">
@@ -50,7 +57,7 @@ UWP 应用中的导航基于导航结构、导航元素和系统级功能的灵�
 </div>
 </div>
 
-## 页面布局 
+## <a name="page-layout"></a>页面布局 
 这些文章将帮助你创建在不同的屏幕大小、窗口大小、分辨率和方向上外观良好的灵活 UI。 
 
 
@@ -83,6 +90,6 @@ Windows 10 生态系统上的设备目标和屏幕大小的数量非常惊人，
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

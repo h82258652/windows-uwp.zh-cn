@@ -4,25 +4,25 @@ title: "后台任务指南"
 description: "确保你的应用满足运行后台任务的要求。"
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 translationtype: Human Translation
-ms.sourcegitcommit: 04cb13ce355b3983a55b7f7f253e6b22a7cebece
-ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
 
 ---
 
-# 后台任务指南
+# <a name="guidelines-for-background-tasks"></a>后台任务指南
 
-\[ 已针对 Windows10 上的 UWP 应用更新。 有关 Windows8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 确保你的应用满足运行后台任务的要求。
 
-## 后台任务指南
+## <a name="background-task-guidance"></a>后台任务指南
 
 在开发后台任务时以及发布应用之前，考虑以下指南。
 
-如果你使用后台任务在后台播放媒体，请参阅[在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)，了解有关 Windows10 版本 1607 中使此操作更加简单的改进信息。
+如果你使用后台任务在后台播放媒体，请参阅[在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)，了解有关 Windows 10 版本 1607 中使此操作更加简单的改进信息。
 
 
-  **进程内与进程外后台任务：**Windows10 版本 1607 引入了[进程内后台任务](create-and-register-an-inproc-background-task.md)，使你能够在与前台应用相同的进程中运行后台代码。 当决定执行进程内后台任务还是执行进程外后台任务时，请考虑以下因素：
+  **进程内与进程外后台任务：**Windows 10 版本 1607 引入了[进程内后台任务](create-and-register-an-inproc-background-task.md)，使你能够在与前台应用相同的进程中运行后台代码。 当决定执行进程内后台任务还是执行进程外后台任务时，请考虑以下因素：
 
 |注意事项 | 影响 |
 |--------------|--------|
@@ -35,11 +35,11 @@ ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
 
 **管理后台任务：**你的应用应该获取已注册后台任务的列表，注册进度和完成处理程序以及相应地处理这些事件。 你的后台任务类应该报告进度、取消以及完成。 有关详细信息，请参阅[处理取消的后台任务](handle-a-cancelled-background-task.md)和[监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)。
 
-**使用 [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499)：**如果后台任务类运行异步代码，则确保使用延迟。 否则，当使用 [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) 方法（或针对进程内后台任务使用 [OnBackgroundActivated](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 方法）时，你的后台任务可能会提前终止。 有关详细信息，请参阅[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)。
+**使用 [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499)：**如果后台任务类运行异步代码，则确保使用延迟。 否则，当使用 [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) 方法（或针对进程内后台任务使用 [OnBackgroundActivated](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 方法）时，你的后台任务可能会提前终止。 有关详细信息，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)。
 
 或者也可以请求一个延迟，并使用 **async/await** 来完成异步方法调用。 在 **await** 方法调用之后关闭延迟。
 
-**更新应用清单：**对于在进程外运行的后台任务，请在应用程序清单中声明每个后台任务及其使用的触发器类型。 否则，你的应用将不能在运行时注册后台任务。
+**更新应用清单**：对于在进程外运行的后台任务，请在应用程序清单中声明每个后台任务及其使用的触发器类型。 否则，你的应用将不能在运行时注册后台任务。
 
 在与前台应用相同的进程中运行的后台任务不需要在应用程序清单中声明自己。 有关在清单中声明在进程外运行的后台任务的详细信息，请参阅[在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)。
 
@@ -47,11 +47,10 @@ ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
 
 **请求执行后台任务：**
 
-> 
-  **重要提示** 从 Windows10 开始，应用不必满足置于锁屏界面上的先决条件也可以运行后台任务。
+> **重要提示**  从 Windows 10 开始，应用不必满足置于锁屏界面上的先决条件也可以运行后台任务。
 
 通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用必须在注册任何类型的后台任务之前调用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如果用户在设备设置中显式拒绝了应用的后台任务权限，此方法将返回 [**BackgroundAccessStatus.Denied**](https://msdn.microsoft.com/library/windows/apps/hh700439)。
-## 后台任务清单
+## <a name="background-task-checklist"></a>后台任务清单
 
 *既适用于进程内后台任务，也适用于进程外后台任务*
 
@@ -77,7 +76,7 @@ ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
 -   编写生存时间较短的后台任务。 后台任务限制为在 30 秒的时钟时间内使用。
 -   不要依赖后台任务中的用户交互。
 
-## Windows：支持锁屏界面的应用的后台任务清单
+## <a name="windows-background-task-checklist-for-lock-screen-capable-apps"></a>Windows：支持锁屏界面的应用的后台任务清单
 
 当开发可以使用锁屏的应用的后台任务时，请遵循此指南。 遵循[锁屏磁贴指南和清单](https://msdn.microsoft.com/library/windows/apps/hh465403)中的指南。
 
@@ -88,12 +87,12 @@ ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
 -   包括使用 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 注册并在应用清单中声明的后台任务。 确保入口点和触发器类型正确。 这是认证所需的内容，它使得用户能够将应用置于锁屏界面上。
 
 **注意**  
-本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows10 开发人员。 如果你要针对 Windows8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文适用于编写通用 Windows 平台 (UWP) 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
-* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
@@ -113,6 +112,6 @@ ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

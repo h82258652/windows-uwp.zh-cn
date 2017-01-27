@@ -6,22 +6,27 @@ ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: cbe1a4ca77f0d6e15b3d12b2b3a0f2f8363530ae
 
 ---
 
-# 淡化动画
+# <a name="fade-animations"></a>淡化动画
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
 
-**重要的 API**
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**FadeInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210298)</li>
+<li>[**FadeOutThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210302)</li>
+</ul>
+</div>
 
--   [**FadeInThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210298)
--   [**FadeOutThemeAnimation 类**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
-
-## 应做事项和禁止事项
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 
 -   当你的应用在不相关的元素或有大量文本的元素之间过渡时，先使用淡出，然后使用淡入。 这可让传出对象在传入对象显示之前完全消失。
@@ -29,9 +34,8 @@ ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
 -   避免使用淡化动画添加或删除列表中的项。 相反，请使用为该目的创建的列表动画。
 -   避免使用淡化动画更改整个页面内容。 相反，请使用为该目的创建的页面过渡动画。
 -   淡出是用于删除元素的不明显的方法。
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
-**对于开发人员 (XAML)**
 * [动画概述](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [创建淡化动画](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
 * [快速入门：使用库动画创建 UI 动画](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
@@ -48,6 +52,6 @@ ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

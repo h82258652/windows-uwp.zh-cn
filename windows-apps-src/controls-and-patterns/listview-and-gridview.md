@@ -5,11 +5,11 @@ title: "列表视图和网格视图"
 label: List view and grid view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 8f9d85f0cb15c9fe4ceec9c397e23a134a442d3f
-ms.openlocfilehash: 8a14fa69089f6d796a803c1c1ff9bb678af3c913
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 2887e2aed2c3b638343f2bd211c32f99b3c7da1a
 
 ---
-# ListView 和 GridView
+# <a name="listview-and-gridview"></a>ListView 和 GridView
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,19 +20,14 @@ ListView 和 GridView 都从 ListViewBase 类派生，因此它们的功能相�
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx"><strong>GridView 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>ItemsSource 属性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx"><strong>Items 属性</strong></a></li>
+<li>[**ListView 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)</li>
+<li>[**GridView 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)</li>
+<li>[**ItemsSource 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)</li>
+<li>[**Items 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 ListView 采用垂直堆叠的方式在单个列中显示数据。 该控件常用于显示按顺序排列的项目列表，如电子邮件列表或搜索结果列表。 
 
@@ -44,15 +39,15 @@ GridView 显示可在行和列中垂直滚动的项目集合。 数据水平堆�
 
 有关更详细的比较和使用哪个控件的指南，请参阅[列表](lists.md)。
 
-## 创建列表视图
+## <a name="create-a-list-view"></a>创建列表视图
 
 列表视图是一个 [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx)，因此可以包含任何类型的项目集合。 在能够在屏幕上显示任何内容前，它必须在自己的 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合中有项目。 若要填充视图，可以将项目直接添加到 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合，或者将 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 属性设置为数据源。 
 
-**重要提示**  可以使用 Items 或 ItemsSource 填充列表，但无法同时使用这两者。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果你设置 ItemsSource 属性并使用代码向 Items 集合中添加项目，将引发异常。
+**重要提示**&nbsp;&nbsp;可以使用 Items 或 ItemsSource 填充列表，但无法同时使用这两者。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果你设置 ItemsSource 属性并使用代码向 Items 集合中添加项目，将引发异常。
 
-> **注意**  为方便起见，本文中的许多示例直接填充了 **Items** 集合。 但是，列表中的项目来自于动态源的情况更常见，例如书籍列表来自于在线数据库。 出于此目的，你使用 **ItemsSource** 属性。 
+> **注意**&nbsp;&nbsp;为方便起见，本文中的许多示例直接填充了 **Items** 集合。 但是，列表中的项目来自于动态源的情况更常见，例如书籍列表来自于在线数据库。 出于此目的，你使用 **ItemsSource** 属性。 
 
-### 将项添加到项集合
+### <a name="add-items-to-the-items-collection"></a>将项添加到项集合
 
 可以通过使用 XAML 或代码向 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合添加项。 在以下情况下通常采用这种方式添加项：具有不更改且使用 XAML 轻松定义的少量项，或者在运行时采用代码生成项。 
 
@@ -89,7 +84,7 @@ ListView 如下所示。
 
 ![简单的列表视图](images/listview-simple.png)
 
-### 设置项目源
+### <a name="set-the-items-source"></a>设置项目源
 
 通常使用列表视图显示源（例如数据库或 Internet）中的数据。 若要填充数据源中的列表视图，请将其 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 属性设置为数据项集合。
 
@@ -148,7 +143,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 如果你需要在列表视图中显示分组数据，必须绑定到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx)。 CollectionViewSource 在 XAML 中充当集合类的代理角色，并启用分组支持。 有关详细信息，请参阅 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx)。
 
-## 数据模板
+## <a name="data-template"></a>数据模板
 
 项的模板定义数据可视化的方式。 在默认情况下，数据项以绑定到的数据对象的字符串表现形式显示在列表视图中。 通过将 [**DisplayMemberPath**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) 设置到特定的属性，你可以显示数据项的该属性的字符串表现形式。
 
@@ -156,7 +151,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 在此示例中，数据项是简单的字符串。 使用 DataTemplate 将图像添加到字符串左侧，并用蓝色显示该字符串。  
 
-> **注意**  当在 DataTemplate 中使用 [x:Bind 标记扩展](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，必须在 DataTemplate 上指定 DataType (`x:DataType`)。
+> **注意**&nbsp;&nbsp;当在 DataTemplate 中使用 [x:Bind 标记扩展](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，必须在 DataTemplate 上指定 DataType (`x:DataType`)。
 
 **XAML**
 ```XAML
@@ -189,7 +184,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 使用数据模板是定义列表视图外观的主要方法。 如果列表显示大量项目，它们也能对性能产生重大影响。 在本文中，我们为大多数示例使用简单的字符串数据，并且未指定数据模板。 有关如何在列表或网格中使用 DataTemplates 和项目容器定义项目外观的详细信息和示例，请参阅[列表视图项模板](listview-item-templates.md)。 
 
-## 更改项目的布局
+## <a name="change-the-layout-of-items"></a>更改项目的布局
 
 当你将项目添加到列表视图或网格视图时，控件会使每个项目在项目容器中自动换行，然后设置所有项目容器的布局。 这些项目容器的布局方式取决于控件的 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)。  
 - 默认情况下，**ListView** 使用 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx)，这可以生成垂直列表，如下所示。
@@ -202,7 +197,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 你可以通过在项目面板上调整属性来修改项目布局，或者可以将默认面板替换为其他面板。
 
-> 注意   如果更改 ItemsPanel，注意不要禁用虚拟化。 **ItemsStackPanel** 和 **ItemsWrapGrid** 均支持虚拟化，所以可以安全使用它们。 如果你使用任何其他面板，可能会禁用虚拟化，并且降低列表视图的性能。 有关详细信息，请参阅[性能](https://msdn.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui)下的列表视图文章。 
+> 注意&nbsp;&nbsp; 如果更改 ItemsPanel，注意不要禁用虚拟化。 **ItemsStackPanel** 和 **ItemsWrapGrid** 均支持虚拟化，所以可以安全使用它们。 如果你使用任何其他面板，可能会禁用虚拟化，并且降低列表视图的性能。 有关详细信息，请参阅[性能](https://msdn.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui)下的列表视图文章。 
 
 此示例显示如何通过更改 **ItemsStackPanel** 的 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.orientation.aspx) 属性来使 **ListView** 在水平列表中设置项目容器的布局。
 因为默认情况下列表视图垂直滚动，所以你还需要在列表视图的内部 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) 上调整某些属性以使其可以水平滚动。
@@ -211,7 +206,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 - [ScrollViewer.VerticalScrollMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx) 设置为 **Disabled** 
 - [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) 设置为 **Hidden** 
 
-> **注意**  显示这些示例时，列表视图宽度不受约束，因此不会显示水平滚动条。 如果你运行此代码，可以在 ListView 上设置 `Width="180"` 来使滚动条显示。
+> **注意**&nbsp;&nbsp;显示这些示例时，列表视图宽度不受约束，因此不会显示水平滚动条。 如果你运行此代码，可以在 ListView 上设置 `Width="180"` 来使滚动条显示。
 
 **XAML**
 ```xaml
@@ -239,7 +234,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
  在下一个示例中，通过使用 **ItemsWrapGrid** 而非 **ItemsStackPanel**，**ListView** 在垂直换行列表中设置项目的布局。 
  
-> **注意**  列表视图的高度必须受限，以强制控件使容器换行。
+> **注意**&nbsp;&nbsp;列表视图的高度必须受限，以强制控件使容器换行。
 
 **XAML**
 ```xaml
@@ -269,11 +264,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ![已分组的水平列表视图](images/listview-horizontal-groups.png)
 
-## 项目选择和交互
+## <a name="item-selection-and-interaction"></a>项目选择和交互
 
 你可以选择多种方法来使用户与列表视图交互。 默认情况下，用户可选择一个项目。 你可以更改 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) 属性以启用多选或禁用选择。 你可以设置 [**IsItemClickEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) 属性，以便用户单击某个项目即可调用操作（例如按钮），而不是选择该项目。
 
-> **注意**  ListView 和 GridView 均将 [**ListViewSelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewselectionmode.aspx) 枚举用于其 SelectionMode 属性。 默认情况下，IsItemClickEnabled 为 **False**，因此你需要仅将其设置为启用单击模式。
+> **注意**&nbsp;&nbsp;ListView 和 GridView 均将 [**ListViewSelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewselectionmode.aspx) 枚举用于其 SelectionMode 属性。 默认情况下，IsItemClickEnabled 为 **False**，因此你需要仅将其设置为启用单击模式。
 
 此表显示用户可与列表视图交互的方式以及响应交互的方式。
 
@@ -285,7 +280,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 扩展选择 | SelectionMode = **Extended**、IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
 单击 | SelectionMode = **None**、IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | 不适用 
 
-> **注意**  从 Windows 10 开始，你可以启用 IsItemClickEnabled 以引发 ItemClick 事件，同时 SelectionMode 也设置为 Single、Multiple 或 Extended。 如果你执行此操作，将先后引发 ItemClick 事件和 SelectionChanged 事件。 在某些情况下（例如在 ItemClick 事件处理程序中导航到其他页面），不会引发 SelectionChanged 事件，并且不会选择该项目。
+> **注意**&nbsp;&nbsp;从 Windows 10 开始，你可以启用 IsItemClickEnabled 以引发 ItemClick 事件，同时 SelectionMode 也设置为 Single、Multiple 或 Extended。 如果你执行此操作，将先后引发 ItemClick 事件和 SelectionChanged 事件。 在某些情况下（例如在 ItemClick 事件处理程序中导航到其他页面），不会引发 SelectionChanged 事件，并且不会选择该项目。
 
 可以采用 XAML 或代码设置这些属性，如下所示。
 
@@ -304,41 +299,41 @@ myGridView.SelectionMode = ListViewSelectionMode.None;
 myGridView.IsItemClickEnabled = true;
 ```
 
-### 只读
+### <a name="read-only"></a>只读
 
 你可以将 SelectionMode 属性设置为 **ListViewSelectionMode.None** 以禁用项目选择。 这会将控件置于只读模式下、使之用于显示数据，但不是为了与之交互。 控件本身不会被禁用，仅禁用项目选择。
 
-### 单选
+### <a name="single-selection"></a>单选
 
 下表介绍在 SelectionMode 设置为 **Single** 时，键盘、鼠标和触摸的交互情况。
 
 修改键 | 交互
 -------------|------------
-无 | <ul><li>用户可以使用空格键、鼠标单击或触摸点击来选择单个项。</li></ul>
-Ctrl | <ul><li>用户可以使用空格键、鼠标单击或触摸点击来取消选择单个项。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li></ul>
+无 | <li>用户可以使用空格键、鼠标单击或触摸点击来选择单个项。</li>
+Ctrl | <li>用户可以使用空格键、鼠标单击或触摸点击来取消选择单个项。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li>
 
 当 SelectionMode 设置为 **Single** 时，可以从 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx) 属性获取选定的数据项。 你可以使用 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx) 属性获取选定项目集合中的索引。 如果没有选择任何项目，则 SelectedItem 为 **null**，并且 SelectedIndex 为 -1。 
  
 如果你尝试设置像 **SelectedItem** 那样不在 **Items** 集合中的项目，则该操作将被忽略，并且 SelectedItem 为 **null**。 但是，如果你尝试在列表中将 **SelectedIndex** 设置为超出 **Items** 范围的索引，将会发生 **System.ArgumentException** 异常。 
 
-### 多选
+### <a name="multiple-selection"></a>多选
 
 下表介绍在 SelectionMode 设置为 **Multiple** 时，键盘、鼠标和触摸的交互情况。
 
 修改键 | 交互
 -------------|------------
-无 | <ul><li>用户可以使用空格键、鼠标单击或触摸点击来选择多个项目，以在聚焦项目上切换选择。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li></ul>
-Shift | <ul><li>用户可以通过先后单击或点击选择中的第一个和最后一个项目来选择多个连续项目。</li><li>通过使用箭头键，用户可以创建从在按下 Shift 时选择的项目开始的连续选择。</li></ul>
+无 | <li>用户可以使用空格键、鼠标单击或触摸点击来选择多个项目，以在聚焦项目上切换选择。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li>
+Shift | <li>用户可以通过先后单击或点击选择中的第一个和最后一个项目来选择多个连续项目。</li><li>通过使用箭头键，用户可以创建从在按下 Shift 时选择的项目开始的连续选择。</li>
 
-### 扩展选择
+### <a name="extended-selection"></a>扩展选择
 
 下表介绍在 SelectionMode 设置为 **Extended** 时，键盘、鼠标和触摸的交互情况。
 
 修改键 | 交互
 -------------|------------
-无 | <ul><li>该行为与 **Single** 选择相同。</li></ul>
-Ctrl | <ul><li>用户可以使用空格键、鼠标单击或触摸点击来选择多个项目，以在聚焦项目上切换选择。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li></ul>
-Shift | <ul><li>用户可以通过先后单击或点击选择中的第一个和最后一个项目来选择多个连续项目。</li><li>通过使用箭头键，用户可以创建从在按下 Shift 时选择的项目开始的连续选择。</li></ul>
+无 | <li>该行为与 **Single** 选择相同。</li>
+Ctrl | <li>用户可以使用空格键、鼠标单击或触摸点击来选择多个项目，以在聚焦项目上切换选择。</li><li>通过使用箭头键，用户可以独立于选择来移动焦点。</li>
+Shift | <li>用户可以通过先后单击或点击选择中的第一个和最后一个项目来选择多个连续项目。</li><li>通过使用箭头键，用户可以创建从在按下 Shift 时选择的项目开始的连续选择。</li>
 
 当 SelectionMode 设置为 **Multiple** 或 **Extended** 时，可以从 [**SelectedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx) 属性获取选定的数据项。 
 
@@ -346,7 +341,7 @@ Shift | <ul><li>用户可以通过先后单击或点击选择中的第一个和�
 
 在多选模式下，**SelectedItem** 包含第一个选择的项目，而 **Selectedindex** 包含第一个选择的项目的索引。 
 
-### 响应选择更改
+### <a name="respond-to-selection-changes"></a>响应选择更改
 
 若要响应列表视图中的选择更改，请处理 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) 事件。 在事件处理程序代码中，可以从 [**SelectionChangedEventArgs.AddedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.addeditems.aspx) 属性获取选择项列表。 你可以获取从 [**SelectionChangedEventArgs.RemovedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.removeditems.aspx) 属性取消选择的任何项目。 除非用户通过按住 Shift 键选择项目范围，否则 AddedItems 和 RemovedItems 集合将最多包含 1 个项目。
 
@@ -396,7 +391,7 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 }
 ```
 
-### 单击模式
+### <a name="click-mode"></a>单击模式
 
 你可以更改列表视图，从而使用户单击项目（如按钮），而不是选择项目。 例如，当用户点击列表或网格中的一个项目时，如果你的应用导航至一个新页面，这将会很有用。 若要启用此行为：
 - 将 **SelectionMode** 设置为 **None**。
@@ -450,19 +445,19 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 }
 ```
 
-### 以编程方式选择项目的范围
+### <a name="select-a-range-of-items-programmatically"></a>以编程方式选择项目的范围
 
 有时你需要以编程方式来操控列表视图的项目选择。 例如，你可能拥有“全选”****按钮来让用户选择列表中的所有项目。 在这种情况下，从 SelectedItems 集合逐个添加或删除项目通常效率不高。 每个项目更改都会导致发生 SelectionChanged 事件，并且当你直接处理项目而非索引值时，该项目会取消虚拟化。
 
 [**SelectAll**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectall.aspx)、[**SelectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectrange.aspx) 和 [**DeselectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.deselectrange.aspx) 方法提供比使用 SelectedItems 属性更高效的修改选择的方法。 这些方法使用项目索引范围进行选择或取消选择。 虚拟化的项目将保持虚拟化状态，因为仅使用了索引。 指定范围中的所有项目均已选定（或已取消选定），无论初始选择状态是什么。 SelectionChanged 事件在每次调用这些方法时仅发生一次。
 
-> **重要提示**  仅当 SelectionMode 属性设置为 Multiple 或 Extended 时才应调用这些方法。 如果在 SelectionMode 是 Single 或 None 时调用 SelectRange，将引发异常。
+> **重要提示**&nbsp;&nbsp;仅当 SelectionMode 属性设置为 Multiple 或 Extended 时才应调用这些方法。 如果在 SelectionMode 是 Single 或 None 时调用 SelectRange，将引发异常。
 
 当使用索引范围选择项目时，请使用 [**SelectedRanges**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectedranges.aspx) 属性获取列表中的所有选定范围。
 
 如果 ItemsSource 实现了 [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.iitemsrangeinfo.aspx)，并且你使用这些方法修改选择，则 **AddedItems** 和 **RemovedItems** 属性将不会在 SelectionChangedEventArgs 中进行设置。 设置这些属性需要对项目对象执行取消虚拟化操作。 改为使用 **SelectedRanges** 属性获取项目。
 
-通过调用 SelectAll 方法，可以选择集合中的所有项目。 但是没有相应的方法来取消选择所有项目。 你可以通过以下方法取消选择所有项目：调用 DeselectRange，并传递 [**FirstIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.firstindex.aspx) 值为 0 并且 [**Length**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.length.aspx) 值等于集合中项目数的 [**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.aspx)。 
+通过调用 SelectAll 方法，可以选择集合中的所有项目。 但是没有相应的方法来取消选择所有项目。 你可以通过以下方法取消选择所有项目：调用 DeselectRange，并传递 [**FirstIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.aspx) 值为 0 并且 [**Length**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.firstindex.aspx) 值等于集合中项目数的 [**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.length.aspx)。 
 
 **XAML**
 ```xaml
@@ -502,11 +497,11 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 有关如何更改选定项外观的信息，请参阅[列表视图项模板](listview-item-templates.md)。
 
-### 拖放
+### <a name="drag-and-drop"></a>拖放
 
 ListView 和 GridView 控件支持在其自身内部以及它们自身与其他 ListView 和 GridView 控件之间拖放项目。 有关实现拖放模式的详细信息，请参阅[拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)。 
 
-## 获取示例
+## <a name="get-the-sample-code"></a>获取示例代码 
 
 *   [XAML ListView 和 GridView 示例](http://go.microsoft.com/fwlink/p/?LinkId=619900)<br/>
     此示例介绍 ListView 和 Gridview 控件的用途。
@@ -514,7 +509,7 @@ ListView 和 GridView 控件支持在其自身内部以及它们自身与其他 
 *   [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     以交互式格式查看所有 XAML 控件。
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 - [列表](lists.md)
 - [列表视图项模板](listview-item-templates.md)
@@ -522,6 +517,6 @@ ListView 和 GridView 控件支持在其自身内部以及它们自身与其他 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -6,27 +6,29 @@ ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 2fe8814d98dd5ce4471530c7367b8ad266cc6b05
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 3217dd6bda6d9692ff450133af23002a7040347b
 
 ---
 
-# 旋转
+# <a name="rotation"></a>旋转
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 本文介绍用于旋转的新 Windows UI，并提供在 UWP 应用中使用这个新交互机制时应该考虑的用户体验指南。
 
-**重要的 API**
+<div class="important-apis" >
+<b>重要的 API</b><br/>
+<ul>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-
-## 应做事项和禁止事项
-
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 -   使用旋转可帮助用户直接旋转 UI 元素。
 
-## 其他使用指南
+## <a name="additional-usage-guidance"></a>其他使用指南
 
 
 **旋转概述**
@@ -72,7 +74,7 @@ Windows 8 支持三种类型的旋转：自由、受限以及组合。
 <thead>
 <tr class="header">
 <th align="left">类型</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -89,7 +91,7 @@ Windows 8 支持三种类型的旋转：自由、受限以及组合。
 <td align="left">组合旋转</td>
 <td align="left"><p>组合旋转支持包含区域（类似于[平移指南](guidelines-for-panning.md)中的围栏）的自由旋转，这些区域位于受限旋转强制的每个 90 度对齐点上。 如果用户在其中一个 90 度区域之外释放对象，则对象仍然在该位置；否则，对象会自动旋转到一个对齐点。</p>
 <div class="alert">
-<strong>注意</strong> 用户界面围栏是目标周围的某个区域限制向特定值或位置的移动，从而影响其选择的一项功能。
+<strong>注意</strong>  用户界面围栏是目标周围的某个区域限制向特定值或位置的移动，从而影响其选择的一项功能。
 </div>
 <div>
  
@@ -100,7 +102,7 @@ Windows 8 支持三种类型的旋转：自由、受限以及组合。
 
  
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 
 **示例**
@@ -128,6 +130,6 @@ Windows 8 支持三种类型的旋转：自由、受限以及组合。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

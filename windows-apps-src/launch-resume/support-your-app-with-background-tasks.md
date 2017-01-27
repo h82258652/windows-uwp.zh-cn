@@ -4,14 +4,14 @@ title: "使用后台任务支持应用"
 description: "此部分中的主题介绍了如何使在后台运行的轻型代码响应触发器。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 translationtype: Human Translation
-ms.sourcegitcommit: 7208ca16fe7eee2ec4039f3c4bc6305dceac96f3
-ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 
 ---
 
 # <a name="support-your-app-with-background-tasks"></a>使用后台任务支持应用
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此部分中的主题介绍了如何使在后台运行的轻型代码响应触发器。 你可以使用后台任务在应用暂停或未运行时提供功能。 也可以将后台任务用于实时通信应用，例如 VOIP、邮件和 IM。
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 若要快速开始使用进程内后台任务，请参阅[创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 
-若要快速开始使用进程外后台任务，请参阅[创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)。
+若要快速开始使用进程外后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)。
 
 > [!TIP]
 > 从 Windows 10 开始，无需将应用放置在锁屏界面上以充当为该应用注册后台任务的先决条件。
@@ -40,7 +40,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 应用可以通过使用 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 类注册后台任务来响应系统生成的事件。 应用可以使用以下任意系统事件触发器（在 [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 中定义）
 
-| 触发器名称                     | 描述                                                                                                    |
+| 触发器名称                     | 说明                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
 | **InternetAvailable**            | Internet 变为可用。                                                                                |
 | **NetworkStateChange**           | 网络更改，如开销或连接性发生更改。                                              |
@@ -54,7 +54,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 你可以控制后台任务何时运行，通过添加条件，甚至可以在任务触发后进行控制。 在触发后，后台任务将不再运行，直至所有条件均符合为止。 可以使用以下条件（由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 枚举表示）。
 
-| 条件名称           | 描述                       |
+| 条件名称           | 说明                       |
 |--------------------------|-----------------------------------|
 | **InternetAvailable**    | Internet 必须可用。   |
 | **InternetNotAvailable** | Internet 必须不可用。 |
@@ -74,7 +74,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 以下实时触发器可用于在后台运行轻型自定义代码：
 
-| 实时触发器  | 描述 |
+| 实时触发器  | 说明 |
 |--------------------|-------------|
 | **控制通道** | 后台任务通过使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 可以使连接保持活动状态，在控制通道上接收消息。 如果你的应用正在侦听套接字，可以使用套接字代理而不是 **ControlChannelTrigger**。 有关使用套接字代理的详细信息，请参阅 [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009)。 **ControlChannelTrigger** 在 Windows Phone 上不受支持。 |
 | **计时器** | 后台任务运行的频率可以为每 15 分钟一次，并且可以通过使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 将它们设置在特定时间运行。 有关详细信息，请参阅[通过计时器运行后台任务](run-a-background-task-on-a-timer-.md)。 |
@@ -90,7 +90,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 枚举表示以下系统事件触发器：
 
-| 触发器名称            | 描述                                                       |
+| 触发器名称            | 说明                                                       |
 |-------------------------|-------------------------------------------------------------------|
 | **UserPresent**         | 后台任务在用户出现后触发。   |
 | **UserAway**            | 后台任务在用户离开后触发。    |
@@ -100,7 +100,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
    
 以下系统事件触发器将指示用户何时将应用移到或移出锁屏界面。
 
-| 触发器名称                     | 描述                                  |
+| 触发器名称                     | 说明                                  |
 |----------------------------------|----------------------------------------------|
 | **LockScreenApplicationAdded**   | 向锁屏中添加应用磁贴。     |
 | **LockScreenApplicationRemoved** | 从锁屏中删除应用磁贴。 |
@@ -142,7 +142,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 > [!IMPORTANT]
 > **DeviceUseTrigger** 和 **DeviceServicingTrigger** 不能用于进程内后台任务。
 
-某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有的话）作为设备的特权应用。 有关详细信息，请参阅 [Windows 应用商店设备应用的设备同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
+某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅 [Windows 应用商店设备应用的设备同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
 
 ## <a name="managing-background-tasks"></a>管理后台任务
 
@@ -165,7 +165,7 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 * [在后台播放媒体](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 * [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
-* [创建和注册进程外后台任务](create-and-register-an-outofproc-background-task.md)
+* [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
 * [调试后台任务](debug-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
@@ -182,6 +182,6 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

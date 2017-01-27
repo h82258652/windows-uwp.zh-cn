@@ -4,15 +4,15 @@ title: "Marble Maze 应用程序结构"
 description: "DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。"
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 84dbe1730274bd39b1ba359c588bc68976a2d19e
+ms.sourcegitcommit: 931d790ea54ff9ff27202f6c92d415b17e2215ed
+ms.openlocfilehash: 696d4227bcd3ff4238d81e6f951a61e098fbc2f6
 
 ---
 
-# Marble Maze 应用程序结构
+# <a name="marble-maze-application-structure"></a>Marble Maze 应用程序结构
 
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构不同。 Windows 运行时提供了接口（如 [**Windows::UI::Core::ICoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208296)），以便你可以采用更现代、面向对象的方式开发 UWP 应用，而不是使用句柄类型（如 **HWND**）和函数（如 **CreateWindow**）。 文档的这一部分介绍了如何构造 Marble Maze 应用程序代码。
@@ -29,12 +29,12 @@ DirectX 通用 Windows 平台 (UWP) 应用与传统桌面应用程序的结构�
 -   使用事件处理程序响应窗口事件。 （这些事件取代了来自桌面 Windows 应用的窗口消息。）
 -   使用状态机来控制游戏逻辑的流向和顺序。
 
-##  文件整理
+##  <a name="file-organization"></a>文件整理
 
 
 Marble Maze 中的一些组件只需很少或无需修改即可在任何游戏中重用。 对于你自己的游戏，可以调整这些文件所提供的结构和观点。 下表简短描述了重要的源代码文件。
 
-| 文件                                      | 描述                                                                                                                                                                          |
+| 文件                                      | 说明                                                                                                                                                                          |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Audio.h、Audio.cpp                         | 定义 **Audio** 类，可管理音频资源。                                                                                                                          |
 | BasicLoader.h、BasicLoader.cpp             | 定义 **BasicLoader** 类，可提供实用程序方法来帮助加载纹理、网格和着色器。                                                                  |
@@ -60,7 +60,7 @@ Marble Maze 中的一些组件只需很少或无需修改即可在任何游戏�
 
  
 
-##  设计时资源格式与运行时资源格式
+##  <a name="design-time-versus-run-time-resource-formats"></a>设计时资源格式与运行时资源格式
 
 
 如果可能，使用运行时格式代替设计时格式，以更高效地加载游戏资源。
@@ -73,7 +73,7 @@ HLSL 着色器是使用不同设计时和运行时格式的一个资源示例。
 
 出于指令原因，Marble Maze 项目同时包含许多资源的设计时格式和运行时格式，但你在自己游戏的源项目中只需维护设计时格式，因为可在需要时将它们转换为运行时格式。 本文介绍如何将设计时格式转换为运行时格式。
 
-##  应用程序生命周期
+##  <a name="application-life-cycle"></a>应用程序生命周期
 
 
 Marble Maze 遵循典型的 UWP 应用的生命周期。 有关 UWP 应用的生命周期的详细信息， 请参阅[应用生命周期](https://msdn.microsoft.com/library/windows/apps/mt243287)。
@@ -82,7 +82,7 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
 
 初始化后，游戏通常会运行*游戏循环*。 在此循环中，游戏通常执行 4 个操作：处理 Windows 事件、收集输入、更新场景对象和渲染场景。 游戏更新场景时，它可将当前的输入状态应用到场景对象并模拟力学事件，例如对象碰撞。 游戏也可执行其他活动，例如播放声音效果或通过网络发送数据。 游戏渲染场景时，它捕获场景的当前状态并将它绘制到显示设备。 以下部分更加详细地介绍这些活动。
 
-##  添加到模板
+##  <a name="adding-to-the-template"></a>添加到模板
 
 
 *DirectX 11 应用（通用 Windows）*模板将创建一个可使用 Direct3D 呈现的核心窗口。 模板还包括 **DeviceResources** 类，用于创建在 UWP 应用中呈现 3D 内容所需的所有 Direct3D 设备资源。 **AppMain** 类将在每个帧上创建 **MarbleMaze** 类对象、开始加载资源、循环以更新计时器并调用 **MarbleMaze** 呈现方法。 用于此类的 **CreateWindowSizeDependentResources**、Update 和 Render 方法调用 **MarbleMaze** 类中的相应方法。 以下示例显示了 **AppMain** 构造函数创建 **MarbleMaze** 类对象的位置。 将设备资源类传递到该类，以便它可以使用 Direct3D 对象进行呈现。
@@ -96,7 +96,7 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
 
 当调用这些事件的处理程序时，它们会将输入传递到 **MarbleMaze** 类。
 
-## 在后台加载游戏资源
+## <a name="loading-game-assets-in-the-background"></a>在后台加载游戏资源
 
 
 若要确保游戏可在启动后的 5 秒内响应窗口事件，我们建议以异步方式或在后台加载游戏资源。 资源加载到后台后，游戏即可响应窗口事件。
@@ -121,11 +121,11 @@ UWP 游戏初始化时，它通常会初始化运行时组件（例如 Direct3D�
 
 有关 UWP 应用的异步编程的详细信息，请参阅[使用 C++ 进行异步编程](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
->> > **提示** 如果要编写 Windows 运行时 C++ 库（也就是 DLL）中包含的游戏代码，请考虑是否阅读[使用 C++ 为 Windows 应用商店应用创建异步操作](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx)以了解如何创建可供应用和其他库使用的异步操作。
+> **提示** 如果要编写 Windows 运行时 C++ 库（也就是 DLL）中包含的游戏代码，请考虑是否阅读[使用 C++ 为 Windows 应用商店应用创建异步操作](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx)以了解如何创建可供应用和其他库使用的异步操作。
 
  
 
-## 游戏循环
+## <a name="the-game-loop"></a>游戏循环
 
 
 **DirectPage::OnRendering** 方法运行主要游戏循环。 在每个帧上调用此方法。
@@ -150,7 +150,7 @@ void DirectXPage::OnRendering(Object^ sender, Object^ args)
 }
 ```
 
-## 状态机
+## <a name="the-state-machine"></a>状态机
 
 
 游戏通常包含一个*状态机*（也称为*有限状态机*或 FSM）来控制游戏逻辑的流和顺序。 状态机包含给定数量的状态，并且拥有在它们之间过渡的能力。 状态机通常从一个*初始*状态开始，过渡到一个或多个*中间*状态，最后可能在一个*终止*状态上结束。
@@ -197,12 +197,12 @@ case GameState::InGamePaused:
 
 游戏逻辑或呈现依赖于一个特定游戏状态时，我们会在本文档中着重指出。
 
-## 处理应用和窗口事件
+## <a name="handling-app-and-window-events"></a>处理应用和窗口事件
 
 
 Windows 运行时提供了一个面向对象的事件处理系统，以便你能更轻松地管理 Windows 消息。 要在应用中处理一个事件，必须提供一个事件处理程序或事件处理方法来响应该事件。 还必须向事件源注册该事件处理程序。 此过程常常称为事件连接。
 
-### 支持暂停、恢复和重新启动
+### <a name="supporting-suspend-resume-and-restart"></a>支持暂停、恢复和重新启动
 
 Marble Maze 在用户离开它或 Windows 进入电量不足状态时暂停。 在用户将游戏移动到前台或 Windows 从电量不足状态中恢复时恢复游戏。 一般而言，你无需关闭应用。 Windows 可在应用处于暂停状态和 Windows 需要该应用所使用的资源（例如内存）时终止它。 Windows 会在应用即将暂停或恢复时通知它，但在应用即将被终止时不会通知它。 因此，在 Windows 通知应用它即将暂停时，应用必须能够保存在应用重新启动时还原当前用户状态所需的任何数据。 如果应用拥有需要很长时间来保存的重要用户状态，你可能还需要定期保存状态，甚至在应用收到暂停通知之前也要定期保存。 Marble Maze 出于两种原因而响应暂停和恢复通知：
 
@@ -357,12 +357,12 @@ void MarbleMaze::LoadState()
 
 有关演示如何在本地应用程序数据存储中存储和检索设置和文件的更多示例，请参阅[快速入门：本地应用程序数据](https://msdn.microsoft.com/library/windows/apps/hh465118)。 有关应用程序数据的详细信息，请参阅[存储和检索设置以及其他应用数据](https://msdn.microsoft.com/library/windows/apps/mt299098)。
 
-##  后续步骤
+##  <a name="next-steps"></a>后续步骤
 
 
 阅读[向 Marble Maze 示例添加可视内容](adding-visual-content-to-the-marble-maze-sample.md)，了解在使用可视资源时要记住的一些重要实践。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [向 Marble Maze 添加可视内容示例](adding-visual-content-to-the-marble-maze-sample.md)
 * [Marble Maze 示例基础](marble-maze-sample-fundamentals.md)
@@ -378,6 +378,6 @@ void MarbleMaze::LoadState()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

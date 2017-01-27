@@ -6,11 +6,11 @@ ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 04f8e82f05c46d41657dae0b30e04f49341bb5db
 
 ---
-# 文本控件
+# <a name="text-controls"></a>文本控件
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,29 +19,23 @@ ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
 - 用于显示只读文本的控件是 [TextBlock](text-block.md) 和 [RichTextBlock](rich-text-block.md)。
 - 用于文本输入和编辑的控件是 [TextBox](text-box.md)、[AutoSuggestBox](auto-suggest-box.md)、[PasswordBox](password-box.md) 和 [RichEditBox](rich-edit-box.md)。
 
-
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx"><strong>AutoSuggestBox 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>PasswordBox 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>RichEditBox 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx"><strong>RichTextBlock 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx"><strong>TextBlock 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx"><strong>TextBox 类</strong></a></li>
+<li>[**AutoSuggestBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
+<li>[**PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
+<li>[**RichEditBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
+<li>[**RichTextBlock 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
+<li> [**TextBlock 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
+<li>[**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 你使用的文本控件取决于你的方案。 使用此信息选取要在应用中使用的正确文本控件。
 
-### 呈现只读文本
+### <a name="render-read-only-text"></a>呈现只读文本
 
 使用 **TextBlock** 显示应用中大部分只读文本。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。
 
@@ -53,7 +47,7 @@ TextBlock 相比 RichTextBlock 通常更易于使用，并且提供更好的文�
 
 RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) 属性，它通过 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素支持基于段落的文本。 它没有可以用来轻松访问应用中控件的文本内容的 **Text** 属性。  
 
-### 文本输入
+### <a name="text-input"></a>文本输入
 
 使用 **TextBox** 控件允许用户输入和编辑无格式文本（例如在表单中）。 你可以使用 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) 属性在 TextBox 中获取和设置文本。
 
@@ -80,7 +74,7 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
     -   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用[滑块](slider.md)（可能带有随附控件）。
     -   **输入的值是否很可能在观察结果后得到调整（例如，调节音量或屏幕亮度）？** 如果是，请使用[滑块](slider.md)。
 
-## 示例
+## <a name="examples"></a>示例
 
 文本框
 
@@ -94,7 +88,7 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 
 ![正在键入文本的密码框焦点状态](images/passwordbox-focus-typing.png)
 
-## 创建文本控件
+## <a name="create-a-text-control"></a>创建文本控件
 
 有关特定于每个文本控件的信息和示例，请参阅以下文章。
 
@@ -105,14 +99,14 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 -   [**TextBlock**](text-block.md)
 -   [**TextBox**](text-box.md)
 
-## 字体和样式指南
+## <a name="font-and-style-guidelines"></a>字体和样式指南
 有关字体指南，请参阅以下文章：
 
 - [**字体指南**](fonts.md)
 - [**Segoe MDL2 图标列表和指南**](segoe-ui-symbol-font.md)
 
 
-## 为文本控件选择正确的键盘
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>为文本控件选择正确的键盘
 
 **适用于：**TextBox、PasswordBox、RichEditBox
 
@@ -129,7 +123,7 @@ RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/win
 
 有关详细信息，请参阅[使用输入范围更改触摸键盘](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
-## 颜色字体
+## <a name="color-fonts"></a>颜色字体
 
 **适用于：**TextBlock、RichTextBlock、TextBox、RichEditBox
 
@@ -147,7 +141,7 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 有关详细信息，请参阅 [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) 属性。
 
-## 行和段落分隔符指南
+## <a name="guidelines-for-line-and-paragraph-separators"></a>行和段落分隔符指南
 
 **适用于：**TextBlock、RichTextBlock、multi-line TextBox、RichEditBox
 
@@ -159,7 +153,7 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 你的应用可以在文本段落之间插入段分隔符。 使用此分隔符，可以创建可在不同操作系统上使用不同行宽度设置格式的纯文本文件。 目标系统可忽略任何行分隔符，并且仅在段分隔符处分段。
 
-## 拼写检查指南
+## <a name="guidelines-for-spell-checking"></a>拼写检查指南
 
 **适用于：**TextBox、RichEditBox
 
@@ -185,7 +179,7 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 对于 TextBox 和 RichEditBox 控件，拼写检查在默认情况下处于打开状态。 你可以通过将 **IsSpellCheckEnabled** 属性设置为 **false** 来关闭它。
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 **面向设计人员**
 - [**字体指南**](fonts.md)
@@ -199,6 +193,6 @@ Windows 具有使字体为每个字形包含多个颜色层的功能。 例如�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

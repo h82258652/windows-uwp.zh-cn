@@ -4,8 +4,8 @@ description: "这是有关如何创建 Windows 10 UWP（通用 Windows 平台）
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
-ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
+ms.sourcegitcommit: 126811b615117c0204e3ac4326d810c986a51e55
+ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
 
 ---
 
@@ -624,7 +624,7 @@ ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
 
 -   生成并运行应用程序。 使用“sampleUsername”登录，然后单击“登录”。 输入你的 PIN，如果成功，你应导航到欢迎屏幕。 尝试单击“忘记用户”，并监视输出窗口以查看是否已删除该用户。 请注意，在用户删除后，你将仍位于欢迎页上。 你需要创建应用可以导航到的用户选择页。
 
-    !passport welcome screen](images/passport-login-9.png)
+    ![passport 欢迎屏幕](images/passport-login-9.png)
 
 -   在 Views 文件夹中，创建名为“UserSelection.xaml”的新空白页，然后添加以下 XAML 来定义用户界面。 此页面将包含一个用于在本地帐户列表中显示所有用户的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)，以及一个用于导航到登录页的 Button，从而让用户可以添加其他帐户。
 
@@ -973,6 +973,6 @@ ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
 * [Microsoft Passport 登录服务](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

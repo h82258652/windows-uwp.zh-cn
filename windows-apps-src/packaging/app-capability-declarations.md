@@ -4,11 +4,11 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: "应用功能声明"
 description: "功能必须在你的通用 Windows 平台 (UWP) 应用的程序包清单中声明，以便可用于访问某些 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。"
 translationtype: Human Translation
-ms.sourcegitcommit: a86efd3e50be6a5cbe0271c1024d3b405fc0d160
-ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
+ms.sourcegitcommit: ece16df809e7f030c3cbb7a6ab5e727ae77614e3
+ms.openlocfilehash: 5b1052c8b20908cef431a4d1d144d5e8fe1a0eac
 
 ---
-# 应用功能声明
+# <a name="app-capability-declarations"></a>应用功能声明
 
 \[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 
 -   仅适用于 Microsoft 及其合作伙伴的受限功能。
 
-## 常用功能
+## <a name="general-use-capabilities"></a>常用功能
 
 常用功能适用于最常见的应用场景。
 
@@ -55,7 +55,7 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 | **后台媒体播放** | **backgroundMediaPlayback** 功能更改了特定于媒体的 API（如 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) 和 [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiograph.aspx) 类）的行为，支持应用在后台时的媒体播放。 所有活动音频流将不再静音，在应用转换到后台时将继续发声。 此外，播放进行时，应用生存时间将自动延长。
 | **远程系统** | **remoteSystem** 功能使应用有权访问与用户的 Microsoft 帐户关联的设备列表。 对于执行在设备间持续的任何操作，需要访问设备列表。 若要访问以下命名空间和方法中的所有成员，此功能是必需的。<br /><br />Windows.System.RemoteSystems 命名空间<br />Windows.System.RemoteLauncher 命名空间<br />AppServiceConnection.OpenRemoteAsync 方法
 
-## 设备功能
+## <a name="device-capabilities"></a>设备功能
 
 设备功能允许你的应用访问外围设备和内部设备。 可在你的应用包清单中使用 **DeviceCapability** 元素指定设备功能。 此元素可能需要其他子元素，并且某些设备功能需要手动添加到该程序包清单。 有关详细信息，请参阅[如何在程序包清单中指定设备功能](https://msdn.microsoft.com/library/windows/apps/Dn263092)和 [**DeviceCapability Schema reference**](https://msdn.microsoft.com/library/windows/apps/BR211430)。
 
@@ -74,11 +74,11 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 | **光盘** | **optical** 设备功能允许应用访问光盘驱动器（如 CD、DVD 和蓝光光盘）上的功能。<br/>若要使用 [**Windows.Devices.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn263667) 命名空间中的某些 API，则需要此功能。 |
 | **运动活动** | **activity** 设备功能允许应用检测设备的当前运动。<br/>若要使用 [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 命名空间中的某些 API，则需要此功能。 |
 
-## 特殊和受限功能
+## <a name="special-and-restricted-capabilities"></a>特殊和受限功能
 
-在某些情况下，这些功能是必需的或适宜的，如在使用双因素身份验证开展银行业务时，用户提供带数字签名的智能卡确认其身份。 其他应用可能主要针对企业用户而设计，可能需要访问一些必需使用用户的域凭据才能访问的企业资源。
+在某些情况下，这些功能是必需的或适宜的，如在使用双因素身份验证开展银行业务时，用户提供带数字签名的智能卡确认其身份。 其他应用可能主要针对企业客户而设计，并可能需要访问一些必须使用用户的域凭据才能访问的企业资源。
 
-应用了特殊用途功能的应用需要使用公司帐户才能将这些功能提交到应用商店。 相反，受限功能不需要用于应用商店的特殊公司帐户，开发人员不可使用这些功能。 受限功能仅适用于 Microsoft 及其合作伙伴开发的应用。 有关公司帐户的详细信息，请参阅[帐户类型、位置和费用](https://msdn.microsoft.com/library/windows/apps/JJ863494)。
+声明了特殊用途功能的应用需要使用公司帐户才能将这些功能提交到应用商店。 相反，受限功能不需要使用特殊的公司帐户就能提交到应用商店。 开发人员可在其应用中使用受限功能，但这些功能需要提交到应用商店获得批准。 有关公司帐户的详细信息，请参阅 [帐户类型、位置和费用](https://msdn.microsoft.com/library/windows/apps/JJ863494)。 
 
 以不同于其他功能的方式在应用的程序包清单中声明所有受限功能时，这些功能必须包含 **rescap** 命名空间。 以下示例演示如何声明 **appCaptureSettings** 功能。
 
@@ -168,7 +168,7 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 **注意**  
 本文适用于编写 UWP 应用的 Windows 10 开发人员。 如果你要针对 Windows 8.x 或 Windows Phone 8.x 进行开发，请参阅[存档文档](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 相关主题
+## <a name="related-topics"></a>相关主题
 
 * [清单设计器](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)
 * [隐私感知应用指南](https://msdn.microsoft.com/library/windows/apps/Hh768223)
@@ -178,6 +178,6 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -6,11 +6,11 @@ ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 82c7e80afde143d7d12bbf4fe49aa2c52f244f6f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: a5a4c96723bd5c4cabdc7dd6dfc114b7af4d10f8
 
 ---
-# RTF 块
+# <a name="rich-text-block"></a>RTF 块
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,22 +19,14 @@ RTF 块提供了多种适用于高级文本布局的功能，你可以在需要�
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx"><strong>RichTextBlock 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx"><strong>RichTextBlockOverflow 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx"><strong>Paragraph 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx"><strong>Typography 类</strong></a></li>
+<li>[**RichTextBlock 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
+<li>[**RichTextBlockOverflow 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)</li>
+<li>[**Paragraph 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)</li>
+<li> [**Typography 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 如果你需要支持多段落、多列或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。
 
@@ -42,10 +34,7 @@ RTF 块提供了多种适用于高级文本布局的功能，你可以在需要�
 
 有关选择正确文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
-## 示例
-
-
-## 创建富文本块
+## <a name="create-a-rich-text-block"></a>创建富文本块
 
 RichTextBlock 的内容属性是 [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) 属性，它通过 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素支持基于段落的文本。 它没有可以用来轻松访问应用中控件的文本内容的 **Text** 属性。 但是，RichTextBlock 提供了多个 TextBlock 没有提供的独特功能。 
 
@@ -54,7 +43,7 @@ RichTextBlock 支持：
 - 内联 UI 元素。 使用 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 显示文本的内联 UI 元素，如图像。
 - 溢出容器。 使用 [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 元素创建多列文本布局。
 
-### Paragraphs
+### <a name="paragraphs"></a>Paragraphs
 
 使用 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素定义要在 RichTextBlock 控件中显示的文本块。 每个 RichTextBlock 应至少包括一个 Paragraph。 
 
@@ -68,7 +57,7 @@ RichTextBlock 支持：
 </RichTextBlock>
 ```
 
-### 内联 UI 元素
+### <a name="inline-ui-elements"></a>内联 UI 元素
 
 [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 类允许你将任何 UIElement 内联嵌入文本中。 常用方案是将 Image 内联置于文本中，但你也可以使用交互式元素，例如 Button 或 CheckBox。
 
@@ -88,7 +77,7 @@ RichTextBlock 支持：
 </RichTextBlock>
 ```
 
-## 溢出容器
+## <a name="overflow-containers"></a>溢出容器
 
 你可以将 RichTextBlock 与 [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 元素结合使用，以创建多列或其他高级页面布局。 RichTextBlockOverflow 元素的内容始终来自 RichTextBlock 元素。 链接 RichTextBlockOverflow 元素的方法是将其设置为 RichTextBlock 的 OverflowContentTarget 或另一个 RichTextBlockOverflow。
 
@@ -110,11 +99,11 @@ RichTextBlock 支持：
 </Grid>
 ```
 
-## 设置文本格式
+## <a name="formatting-text"></a>设置文本格式
 
 尽管 RichTextBlock 存储纯文本，但你可以应用各种格式选项自定义文本在应用中的呈现方式。 你可以设置标准控件属性（例如 FontFamily、FontSize、FontStyle、Foreground 和 CharacterSpacing）以更改文本外观。 你还可以使用内联文本元素和 Typography 附加属性设置文本格式。 这些选项仅影响 RichTextBlock 在本地显示文本的方式，因此如果你将文本复制并粘贴到富文本控件，将不会应用任何格式。
 
-### 内联元素
+### <a name="inline-elements"></a>内联元素
 
 [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) 命名空间提供可用于设置文本格式的各种内联文本元素，如 Bold、Italic、Run、Span 和 LineBreak。 将格式应用到文本的各个文本部分的典型方法是将文本放入 Run 或 Span 元素中，然后在该元素上设置属性。
 
@@ -127,7 +116,7 @@ RichTextBlock 支持：
 </Paragraph>
 ```
 
-### Typography
+### <a name="typography"></a>Typography
 
 [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) 类的附加属性提供针对 Microsoft OpenType 版式属性集的访问权限。 你可以在 RichTextBlock 或个别内联文本元素上设置这些附加属性，如下所示。
 
@@ -140,13 +129,13 @@ RichTextBlock 支持：
 </RichTextBlock>
 ```
 
-## 建议
+## <a name="recommendations"></a>建议
 
 请参阅版式和字体指南。
 
 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 [文本控件](text-controls.md)
 
@@ -165,6 +154,6 @@ RichTextBlock 支持：
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

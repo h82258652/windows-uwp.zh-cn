@@ -5,17 +5,23 @@ title: "Cortana 交互"
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
+keywords: "Cortana, Cortana 画布, Cortana 设计, 用户界面, 语音命令, VCD"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 75e93920422b5ad8ad0e9399bccc403ea69e7feb
-ms.openlocfilehash: 8e853962cdea36a6738c094851d461c700aafd73
+ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
+ms.openlocfilehash: 8dcf45951723c0bf2302b59ef475f3b0fa973d5e
 
 ---
 
-# UWP 应用中的 Cortana 交互
+# <a name="cortana-interactions-in-uwp-apps"></a>UWP 应用中的 Cortana 交互
 
 借助 Cortana 提供的可靠且完整的可扩展性框架，可以将你应用或服务中的功能迁移到 Cortana 体验中。
 
-## 我们已经进行了迁移
+## <a name="weve-moved"></a>我们已经进行了迁移
 
 现在可通过 [Cortana 开发人员中心](https://developer.microsoft.com/en-us/cortana)获取 Cortana 功能和服务的所有开发人员文档。
 
@@ -23,7 +29,7 @@ ms.openlocfilehash: 8e853962cdea36a6738c094851d461c700aafd73
 
 若要了解如何使用语音命令通过 UWP 应用中的功能扩展 Cortana，请参阅 [Cortana 语音命令](https://developer.microsoft.com/en-us/cortana)。 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 * [**VCD 元素和属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
@@ -43,6 +49,6 @@ ms.openlocfilehash: 8e853962cdea36a6738c094851d461c700aafd73
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

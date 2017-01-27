@@ -7,11 +7,11 @@ dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1addc6eee8ae4819fa388332998ac8a69e01cdf3
 
 ---
-# 密码框
+# <a name="password-box"></a>密码框
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -22,28 +22,21 @@ ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>PasswordBox 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx"><strong>Password 属性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx"><strong>PasswordChar 属性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx"><strong>PasswordRevealMode 属性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx"><strong>PasswordChanged 事件</strong></a></li>
+<li>[**PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
+<li>[**Password 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)</li>
+<li>[**PasswordChar 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)</li>
+<li>[**PasswordRevealMode 属性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)</li>
+<li>[**PasswordChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用 **PasswordBox** 控件收集密码或其他隐私数据，如身份证号。
 
 有关选择正确文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
-## 示例
+## <a name="examples"></a>示例
 
 密码框具有多种状态，包括以下明显的状态。
 
@@ -59,7 +52,7 @@ ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
 
 ![显示文本的密码框](images/passwordbox-text-reveal.png)
 
-## 创建密码框
+## <a name="create-a-password-box"></a>创建密码框
 
 使用 [Password](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx) 属性获取或设置 PasswordBox 的内容。 你可以在 [PasswordChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx) 事件的处理程序中执行此操作，以便在用户输入密码时执行验证。 或者，你可以使用其他事件（如按钮 [Click](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)），以在用户完成文本输入后执行验证。
 
@@ -91,7 +84,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ![带有验证消息的密码框](images/passwordbox-revealed-validation.png)
 
-### 密码字符
+### <a name="password-character"></a>密码字符
 
 通过设置 [PasswordChar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx) 属性，你可以更改用于屏蔽密码的字符。 此处使用星号替换默认项目符号。
 
@@ -103,7 +96,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ![带有自定义字符的密码框](images/passwordbox-custom-char.png)
 
-### 标头和占位符文本
+### <a name="headers-and-placeholder-text"></a>标头和占位符文本
 
 你可以使用 [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.header.aspx) 和 [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.placeholdertext.aspx) 属性为 PasswordBox 提供上下文。 这在你拥有多个框时（例如在更改密码的窗体上）非常有用。
 
@@ -113,25 +106,25 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ![带有提示文本的处于闲置状态的密码框](images/passwordbox-rest-hinttext.png)
 
-### 最大长度。
+### <a name="maximum-length"></a>最大长度。
 
 通过设置 [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.maxlength.aspx) 属性，指定用户可输入的最大字符数。 不存在指定最小长度的属性，但你可以在应用代码中检查密码长度并执行任何其他验证。
 
-## 密码显示模式
+## <a name="password-reveal-mode"></a>密码显示模式
 
 PasswordBox 具有内置按钮，用户按下该按钮可显示密码文本。 下面是用户操作的结果。 当用户释放该按钮时，密码会自动重新隐藏。
 
 ![显示文本的密码框](images/passwordbox-text-reveal.png)
 
-### 速览模式
+### <a name="peek-mode"></a>速览模式
 
 默认情况下，会显示密码显示按钮（或“速览”按钮）。 用户必须持续按住按钮来查看密码，以便保持较高级别的安全性。
 
 [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) 属性值不是确定用户能否看到密码显示按钮的唯一因素。 其他因素包括控件所示宽度是否大于最小值、PasswordBox 是否具有焦点以及文本输入字段是否至少包含一个字符。 密码显示按钮仅在 PasswordBox 首次接收焦点并且在用户输入一个字符后显示。 如果 PasswordBox 失去焦点后又重新获得焦点，除非已清除密码并从头开始输入字符，否则显示按钮将不会再次显示。
 
-> **注意**  在 Windows 10 之前，密码显示按钮在默认情况下不显示。 如果应用安全要求始终掩盖密码，请确保将 PasswordRevealMode 设置为 Hidden。
+> **注意**&nbsp;&nbsp;在 Windows 10 之前，密码显示按钮在默认情况下不显示。 如果应用安全要求始终掩盖密码，请确保将 PasswordRevealMode 设置为 Hidden。
 
-### 隐藏和可见模式
+### <a name="hidden-and-visible-modes"></a>隐藏和可见模式
 
 其他 [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordrevealmode.aspx) 枚举值（**Hidden** 和 **Visible**）会隐藏密码显示按钮，并允许你以编程方式管理是否掩盖密码。
 
@@ -169,13 +162,13 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 ![带有自定义显示按钮的密码框](images/passwordbox-custom-reveal.png)
 
-## 为文本控件选择正确的键盘
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>为文本控件选择正确的键盘
 
 若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。 PasswordBox 仅支持 **Password** 和 **NumericPin** 输入范围值。 将忽略任何其他值。
 
 有关如何使用输入范围的详细信息，请参阅[使用输入范围更改触摸键盘](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
-## 建议
+## <a name="recommendations"></a>建议
 
 -   如果密码框的用途不甚清楚，请使用标签或占位符文本。 无论文本输入框是否具有值，标签都可见。 占位符文本显示在文本输入框内，并在输入值后立即消失。
 -   针对可输入值的范围，为密码框提供适当的宽度。 单词长度因语言而异，因此如果希望应用世界通用，请将本地化考虑在内。
@@ -186,25 +179,19 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 [文本控件](text-controls.md)
 
-**对于设计人员**
 - [拼写检查指南](spell-checking-and-prediction.md)
 - [添加搜索](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文本输入指南](text-controls.md)
-
-**面向开发人员 (XAML)**
 - [**TextBox 类**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 类**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**对于开发人员（其他）**
-- [字符串长度属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [String.Length 属性](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

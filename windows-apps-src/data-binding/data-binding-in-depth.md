@@ -4,8 +4,8 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "深入了解数据绑定"
 description: "数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。"
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
+ms.sourcegitcommit: fa3a3cf6194f04a05301ae4dfb75a7a21ff22e73
+ms.openlocfilehash: fca2c9a795e38983f439d6df5c5a7394c29c1217
 
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
@@ -19,8 +19,7 @@ ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-> **注意**
-              本数据详细介绍数据绑定功能。 有关简短、实用的简介，请参阅[数据绑定概述](data-binding-quickstart.md)。
+> **注意**&nbsp;&nbsp;本主题详细介绍数据绑定功能。 有关简短、实用的简介，请参阅[数据绑定概述](data-binding-quickstart.md)。
 
 
 数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。 借助数据绑定，你可以将关注的数据从关注的 UI 中分离开来，从而可形成一个更简易的概念模型，并且使你的应用拥有更好的可读性、可测试性和可维护性。
@@ -47,7 +46,7 @@ ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
 ## <a name="every-binding-involves-these-pieces"></a>每个绑定均由以下部分构成
 
 -   *绑定源*。 这是用于绑定的数据源，它可以是任意类的实例，其中该类具有其值要显示在 UI 中的成员。
--   *绑定目标*。 这是显示数据的 UI 中 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)。
+-   *绑定目标*。 这是显示数据的 UI 中 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR242362) 的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR208706)。
 -   *绑定对象*。 这是用于将数据值从绑定源传递给绑定目标（或从绑定目标传递回绑定源）的组件。 绑定对象通过 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 或 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 标记扩展在 XAML 加载时进行创建。
 
 在以下部分中，我们将进一步探讨绑定源、绑定目标和绑定对象。 我们将这些部分与关于将按钮内容绑定到名为 **NextButtonText** 的字符串属性（这属于名为 **HostViewModel** 的类）的示例链接在一起。
@@ -365,7 +364,7 @@ End Class
   Text="{Binding Month, Converter={StaticResource Converter1}}"/>
 ```
 
-如果 [**Converter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converter) 参数是为绑定定义的，则绑定引擎会调用 [**Convert**](https://msdn.microsoft.com/library/windows/apps/hh701934) 和 [**ConvertBack**](https://msdn.microsoft.com/library/windows/apps/hh701938) 方法。 从绑定源传递数据时，绑定引擎会调用 **Convert** 并将返回的数据传递给绑定目标。 从（用于双向绑定）绑定目标传递数据时，绑定引擎会调用 **ConvertBack** 并将返回的数据传递给绑定源。
+如果 [**Converter**](https://msdn.microsoft.com/library/windows/apps/hh701934) 参数是为绑定定义的，则绑定引擎会调用 [**Convert**](https://msdn.microsoft.com/library/windows/apps/hh701938) 和 [**ConvertBack**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converter) 方法。 从绑定源传递数据时，绑定引擎会调用 **Convert** 并将返回的数据传递给绑定目标。 从（用于双向绑定）绑定目标传递数据时，绑定引擎会调用 **ConvertBack** 并将返回的数据传递给绑定源。
 
 转换器还有可选参数：[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage)（该参数允许指定在转换中使用的语言）和 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter)（该参数允许为转换逻辑传递一个参数）。 有关使用转换器参数的示例，请参阅 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903)。
 
@@ -376,11 +375,11 @@ End Class
 如果你将文本控件绑定到某个值（不是字符串），则数据绑定引擎会将该值转换为字符串。 如果该值是引用类型，数据绑定引擎将通过调用 [**ICustomPropertyProvider.GetStringRepresentation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.icustompropertyprovider.getstringrepresentation) 或 [**IStringable.ToString**](https://msdn.microsoft.com/library/Dn302136)（如果提供）来检索字符串值，否则将调用 [**Object.ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)。 但是请注意，绑定引擎将忽略隐藏基类实现的任何 **ToString** 实现。 子类实现应替代基类 **ToString** 方法。 同样，在本机语言中，也会显示所有托管对象以实现 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) 和 [**IStringable**](https://msdn.microsoft.com/library/Dn302135)。 但是，对 **GetStringRepresentation** 和 **IStringable.ToString** 的所有调用都路由到 **Object.ToString** 或该方法的替代，从不路由到隐藏基类实现的新 **ToString** 实现。
 
 > [!NOTE]
-> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 从 Windows 10 版本 1607 开始，XAML 框架向 Visibility 转换器提供内置布尔值。 转换器将 **true** 映射到 **Visible** 枚举值并将 **false** 映射到 **Collapsed**，以便你可以将 Visibility 属性绑定到布尔值，而无需创建转换器。 若要使用内置转换器，你的应用的最低目标 SDK 版本必须为 14393 或更高版本。 当你的应用面向较早版本的 Windows 10 时，你无法使用它。 有关目标版本的详细信息，请参阅[版本自适应代码](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 ## <a name="function-binding-in-xbind"></a>{x:Bind} 中的函数绑定
 
-{x:Bind} 使绑定步骤中的最后一步可以是一个函数。 这可以用于执行转换，以及执行依赖多个属性的绑定。 请参阅 [**{x:Bind} 标记扩展**](https://msdn.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension)。
+{x:Bind} 使绑定步骤中的最后一步可以是一个函数。 这可以用于执行转换，以及执行依赖多个属性的绑定。 请参阅 [**{x:Bind} 标记扩展**](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)。
 
 <span id="resource-dictionaries-with-x-bind"/>
 ## <a name="resource-dictionaries-with-xbind"></a>带有 {x:Bind} 的资源字典
@@ -465,7 +464,7 @@ MainPage.xaml
 
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>绑定到文件夹或文件集合
 
-你可以使用 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空间中的 API 来检索文件夹和文件数据。 然而，各种 **GetFilesAsync**、**GetFoldersAsync** 和 **GetItemsAsync** 方法都不会返回适合绑定到列表控件的值。 必须绑定到 [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501) 类的 [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422)、[**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428)和 [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) 方法的返回值。 下面的代码示例来自 [StorageDataSource 和 GetVirtualizedFilesVector 示例](http://go.microsoft.com/fwlink/p/?linkid=228621)，它将显示典型的使用模式。 请谨记在应用包清单中声明 **picturesLibrary** 功能，并确认你的 Pictures 库文件夹中有图片。
+你可以使用 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空间中的 API 来检索文件夹和文件数据。 然而，各种 **GetFilesAsync**、**GetFoldersAsync** 和 **GetItemsAsync** 方法都不会返回适合绑定到列表控件的值。 必须绑定到 [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/Hh701422) 类的 [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428)、[**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430)和 [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/BR207501) 方法的返回值。 下面的代码示例来自 [StorageDataSource 和 GetVirtualizedFilesVector 示例](http://go.microsoft.com/fwlink/p/?linkid=228621)，它将显示典型的使用模式。 请谨记在应用包清单中声明 **picturesLibrary** 功能，并确认你的 Pictures 库文件夹中有图片。
 
 ```csharp
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -500,7 +499,7 @@ MainPage.xaml
 
 若要获取项的扁平集合（例如，由 **BookSku** 类表示的书籍）并通过将某一常见属性（例如，**BookSku.AuthorName** 属性）用作某种键来对项进行分组，则将该结果称之为分组数据。 当对数据进行分组时，它将不再是简单集合。 分组数据是组对象的集合，其中每个组对象都具有 a) 一个键和 b) 一个其属性与该键匹配的项集合。 再以书籍为例，按作者名称对书籍进行分组的结果即为作者名称组的集合，其中每组都具有 a) 一个键（这是作者名称）和 b) 一个其 **AuthorName** 属性与组键匹配的 **BookSku** 集合。
 
-通常情况下，若要显示集合，可将项目控件（例如 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)）的 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) 直接绑定到返回集合的属性。 如果这是项的简单集合，则无需执行任何特殊操作。 但是，如果它是组对象的集合（像在绑定到分组数据时一样），则需要使用一个名为 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 的中间对象，该对象位于项目控件和绑定源之间。 先将 **CollectionViewSource** 绑定到返回分组数据的属性，然后将项目控件绑定到 **CollectionViewSource**。 **CollectionViewSource** 的额外增值功能可用于跟踪当前项，以便你可以通过将多个项目控件全都绑定到同一 **CollectionViewSource** 来使其保持同步。 也可以通过 [**CollectionViewSource.View**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.view) 属性返回的对象的 [**ICollectionView.CurrentItem**](https://msdn.microsoft.com/library/windows/apps/BR209857) 属性，以编程方式访问当前项。
+通常情况下，若要显示集合，可将项目控件（例如 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242828) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242878)）的 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242705) 直接绑定到返回集合的属性。 如果这是项的简单集合，则无需执行任何特殊操作。 但是，如果它是组对象的集合（像在绑定到分组数据时一样），则需要使用一个名为 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 的中间对象，该对象位于项目控件和绑定源之间。 先将 **CollectionViewSource** 绑定到返回分组数据的属性，然后将项目控件绑定到 **CollectionViewSource**。 **CollectionViewSource** 的额外增值功能可用于跟踪当前项，以便你可以通过将多个项目控件全都绑定到同一 **CollectionViewSource** 来使其保持同步。 也可以通过 [**CollectionViewSource.View**](https://msdn.microsoft.com/library/windows/apps/BR209857) 属性返回的对象的 [**ICollectionView.CurrentItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.view) 属性，以编程方式访问当前项。
 
 若要激活 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 的分组功能，请将 [**IsSourceGrouped**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.issourcegrouped) 设置为 **true**。 是否还需要设置 [**ItemsPath**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.itemspath) 属性完全取决于你的组对象的创作方式。 组对象的创作方式有以下两种：“属于组”模式和“包含组”模式。 在“属于组”模式中，组对象派生自集合类型（例如，**List&lt;T&gt;**），因此事实上组对象本身就是项目组。 使用此模式，无需设置 **ItemsPath**。 在“包含组”模式中，组对象具有一个或多个集合类型属性（例如 **List&lt;T&gt;**），因此“包含组”的单个项目组采用单个属性的形式（而多个项目组则采用多个属性的形式）。 使用此模式，需要将 **ItemsPath** 设置为包含项目组的属性名。
 
@@ -666,6 +665,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

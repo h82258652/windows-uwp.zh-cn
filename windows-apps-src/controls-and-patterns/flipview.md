@@ -6,11 +6,11 @@ ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
+ms.sourcegitcommit: 92c523c100a021808e01dffe4cd9b5c47c21b58a
+ms.openlocfilehash: 3ad89682248462efa5022467ceb330da03843de4
 
 ---
-# 翻转视图
+# <a name="flip-view"></a>翻转视图
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,25 +19,18 @@ ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx"><strong>FlipView 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>ItemsSource 属性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx"><strong>ItemTemplate 属性</strong></a></li>
+<li>[**FlipView 类**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)</li>
+<li> [**ItemsSource 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)</li>
+<li>[**ItemTemplate 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)</li>
+
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 翻转视图最适合浏览小到中型集合中的图像（最多 25 个项目左右）。 此类集合的示例包括产品详细信息页中的项目或相册中的照片。 虽然我们不建议将翻转视图用于大多数大型集合，但是该控件通用于查看相册中的个别图像。
 
-## 示例
+## <a name="examples"></a>示例
 
 水平浏览（从最左侧的项开始并向右翻转）是翻转视图的典型布局。 此布局非常适用于所有设备上的纵向或横向方向：
 
@@ -47,13 +40,13 @@ ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
 
 ![垂直翻转视图示例](images/controls_flipview_vertical.jpg)
 
-## 创建翻转视图
+## <a name="create-a-flip-view"></a>创建翻转视图
 
 FlipView 是一个 [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx)，因此可以包含任何类型的项目的集合。 若要填充视图，将项添加到 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合，或者将 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 属性设置为数据源。
 
 在默认情况下，数据项以绑定到的数据对象的字符串表现形式显示在翻转视图中。 若要具体地指定翻转视图中项的显示方式，请创建 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx) 以定义用于显示各个项目的控件布局。 该布局中的控件可绑定到数据对象的属性，或者具有定义的嵌入内容。 将 DataTemplate 分配给 FlipView 的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 属性。
 
-### 将项添加到项集合
+### <a name="add-items-to-the-items-collection"></a>将项添加到项集合
 
 可以通过使用 XAML 或代码向 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合添加项。 在以下情况下通常采用这种方式添加项：具有不更改且使用 XAML 轻松定义的少量项，或者在运行时采用代码生成项。 以下是一个翻转视图，内含以内联方式定义的项目。
 
@@ -80,7 +73,7 @@ stackPanel1.Children.Add(flipView1);
 
 使用 XAML 定义项时，这些项会自动添加到项集合。
 
-### 设置项目源
+### <a name="set-the-items-source"></a>设置项目源
 
 通常使用翻转视图显示源（例如数据库或 Internet）中的数据。 若要填充数据源中的翻转视图，请将其 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 属性设置为数据项集合。
 
@@ -118,9 +111,9 @@ stackPanel1.Children.Add(flipView1);
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**注意**  可以通过将项目添加到其 Items 集合或设置其 ItemsSource 属性来填充翻转视图，但不能同时使用这两种方式。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果 ItemsSource 属性已设置且使用代码向项集合中添加项，则会引发异常。
+>**注意**&nbsp;&nbsp;可以通过将项目添加到其 Items 集合或设置其 ItemsSource 属性来填充翻转视图，但不能同时使用这两种方式。 如果你设置 ItemsSource 属性并使用 XAML 添加项目，将忽略添加的项目。 如果 ItemsSource 属性已设置且使用代码向项集合中添加项，则会引发异常。
 
-### 指定项目的外观
+### <a name="specify-the-look-of-the-items"></a>指定项目的外观
 
 在默认情况下，数据项以绑定到的数据对象的字符串表现形式显示在翻转视图中。 你通常希望更丰富地呈现你的数据。 若要具体地指定翻转视图中项的显示方式，可以创建 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx)。 DataTemplate 中的 XAML 定义用于显示各项的控件的布局和外观。 该布局中的控件可绑定到数据对象的属性，或者具有定义的嵌入内容。 将 DataTemplate 分配给 FlipView 控件的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 属性。
 
@@ -149,7 +142,7 @@ stackPanel1.Children.Add(flipView1);
 
 翻转视图数据模板。
 
-### 设置翻转视图的方向
+### <a name="set-the-orientation-of-the-flip-view"></a>设置翻转视图的方向
 
 在默认情况下，翻转视图以水平反向翻转。 若要使其垂直翻转，请使用堆叠面板，以垂直方向作为翻转视图的 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)。
 
@@ -186,7 +179,7 @@ stackPanel1.Children.Add(flipView1);
 
 ![垂直翻转视图示例](images/controls_flipview_vertical.jpg)
 
-## 添加上下文指示器
+## <a name="adding-a-context-indicator"></a>添加上下文指示器
 
 翻转视图中的上下文指示器提供了有用的参考点。 标准上下文指示器中的点不交互。 如此示例中所示，最佳的放置位置通常居中和位于库的下方：
 
@@ -196,7 +189,9 @@ stackPanel1.Children.Add(flipView1);
 
 ![上下文指示器示例](images/controls_contextindicator.jpg)
 
-## 应做事项和禁止事项
+有关显示如何向 FlipView 添加上下文指示器的示例代码，请参阅 [XAML FlipView 示例](http://go.microsoft.com/fwlink/p/?LinkID=311760)。
+
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 -   翻转视图最适用于含有最多 25 个项目的集合。
 -   避免将翻转视图控件用于较大的集合，因为翻转浏览每个项目的重复性动作可能会很麻烦。 但相册是个例外，其中通常包含成百上千张图像。 在网格视图布局下选择一张照片后，相册几乎总是会切换到翻转视图。 对于其他较大集合，请考虑[列表视图或网格视图](lists.md)。
@@ -206,7 +201,7 @@ stackPanel1.Children.Add(flipView1);
     -   突出显示的点表示当前项。 通常突出显示的点是白色的，而其他点是灰色的。
     -   点数可能不同，但如果点数不够多，用户可能无法找到自己的位置，10 个点通常是显示的最大数目。
 
-## 全球化和本地化清单
+## <a name="globalization-and-localization-checklist"></a>全球化和本地化清单
 
 <table>
 <tr>
@@ -215,14 +210,17 @@ stackPanel1.Children.Add(flipView1);
 
 </table>
 
+## <a name="get-the-sample-code"></a>获取示例代码
+* [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## 相关文章
+
+## <a name="related-articles"></a>相关文章
 
 - [列表指南](lists.md)
 - [**FlipView 类**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

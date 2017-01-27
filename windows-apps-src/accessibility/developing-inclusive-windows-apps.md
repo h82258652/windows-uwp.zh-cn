@@ -6,12 +6,12 @@ title: "开发非独占 Windows 10 应用"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f68c2bdc92bfbdbc8328e4df161f7ecdfccf8e5
-ms.openlocfilehash: 19c90991ab86383fa259b05460cbd656d408e977
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 91f6a9d50b66064da7023599adbb058656fb1007
 
 ---
 
-# 开发非独占 Windows 应用  
+# <a name="developing-inclusive-windows-apps"></a>开发非独占 Windows 应用  
 
 本文讨论了如何开发辅助通用 Windows 平台 (UWP) 应用。 具体而言，它假定你了解如何为应用设计逻辑层次结构。 了解如何开发辅助 Windows 10 UWP 应用，该应用包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
 
@@ -23,12 +23,12 @@ ms.openlocfilehash: 19c90991ab86383fa259b05460cbd656d408e977
 2. 确保你的应用针对无法使用鼠标或触摸屏的用户支持[键盘导航](#keyboard-navigation)。
 3. 确保你的应用支持辅助[颜色和对比度](#color-and-contrast)设置。
 
-## 编程访问  
+## <a name="programmatic-access"></a>编程访问  
 在应用中创建辅助功能时，编程访问至关重要。 通过为应用中的内容和交互式 UI 元素设置辅助名称（必选）和描述（可选）来实现此操作。 这可确保将 UI 控件公开给屏幕阅读器（例如讲述人）或替代输出设备（如盲文屏幕）等辅助技术 (AT)。 如果没有编程访问，辅助技术的 API 将无法正确解释信息，从而导致用户无法充分使用产品，或者迫使辅助技术使用从未旨在用作辅助功能接口的未记录编程接口或技术。 当将 UI 控件公开给辅助技术时，辅助技术可以确定用户可以使用哪些操作和选项。  
 
 有关使应用 UI 元素可用于辅助技术 (AT) 的详细信息，请参阅[公开基本的辅助功能信息](basic-accessibility-information.md)。
 
-## 键盘导航  
+## <a name="keyboard-navigation"></a>键盘导航  
 对于失明或行动不便的用户，能够使用键盘导航 UI 极其重要。 但是，应仅向需要用户交互才能运作的 UI 控件提供键盘焦点。 不需要操作的组件（如静态图像）不需要键盘焦点。  
 
 请务必记住，和使用鼠标或触摸导航不同，键盘导航是线性的。 在考虑键盘导航时，请考虑你的用户将如何与你的产品交互以及逻辑导航是什么。 在西方文化中，人们以从左到右、从上到下的顺序阅读。 因此，常见做法是针对键盘导航遵循此模式。  
@@ -45,11 +45,11 @@ ms.openlocfilehash: 19c90991ab86383fa259b05460cbd656d408e977
 
 此外，[针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)电子书包含有关此主题的出色章节，标题为_设计逻辑层次结构_。
 
-## 颜色和对比度  
+## <a name="color-and-contrast"></a>颜色和对比度  
 Windows 中的内置辅助功能之一是高对比度模式，该模式可增强计算机屏幕上的文本和图像的颜色对比度。 对于某些人来说，增加颜色对比度可以降低眼睛疲劳并且更易于阅读。 当你在高对比度下验证 UI 时，你要检查是否已使用系统颜色（而不是硬编码颜色）为控件一致编码，以确保他们能够在屏幕上看到不使用高对比度的用户所看到的所有控件。  
 
 XAML
-```xml
+```xaml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
 有关使用系统颜色和资源的详细信息，请参阅 [XAML 主题资源](../controls-and-patterns/xaml-theme-resources.md)。
@@ -64,7 +64,7 @@ XAML
 
 **颜色组合** - 大约 7% 的男性（和小于 1 % 的女性）具有某种形式的色觉障碍。 色盲用户难以区分某些颜色，因此在应用程序中永远不单独使用颜色来传达状态或意义，这一点很重要。 对于装饰性图像（如图标或背景），应尽量选择能够使色盲用户识别图像的颜色组合。  
 
-## 辅助功能清单  
+## <a name="accessibility-checklist"></a>辅助功能清单  
 下面是简化版的辅助功能清单：
 
 1. 为应用中的内容和交互式 UI 元素设置辅助名称（必选）和描述（可选）。
@@ -76,7 +76,7 @@ XAML
 
 有关更多详细信息，请参阅完整的[辅助功能清单](accessibility-checklist.md)主题。
 
-## 相关主题  
+## <a name="related-topics"></a>相关主题  
 * [设计非独占软件](designing-inclusive-software.md)  
 * [非独占设计](http://design.microsoft.com/inclusive)
 * [要避免的辅助功能做法](practices-to-avoid.md)
@@ -86,6 +86,6 @@ XAML
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

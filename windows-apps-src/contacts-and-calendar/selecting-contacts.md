@@ -3,21 +3,26 @@ author: Xansky
 description: "Windows.ApplicationModel.Contacts 命名空间提供了多个用来选择联系人的选项。"
 title: "选择联系人"
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-keywords: "联系人, 选择特定的字段"
+keywords: "联系人，选择 选择单个联系人 选择多个联系人 联系人，选择多个 选择特定联系人数据 联系人，选择特定数据 联系人，选择特定字段"
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
+ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
+ms.openlocfilehash: 7181a51a91997124b2c5c8ba184261de63de9caf
 
 ---
 
-# 选择联系人
+# <a name="select-contacts"></a>选择联系人
 
-\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已针对 Windows 10 上的 UWP 应用更新。 有关 Windows 8.x 的文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空间提供了多个用来选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。
 
-## 设置联系人选取器
+## <a name="set-up-the-contact-picker"></a>设置联系人选取器
 
 创建一个 [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) 实例并将它分配给某个变量。
 
@@ -25,7 +30,7 @@ ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ```
 
-## 设置选择模式（可选）
+## <a name="set-the-selection-mode-optional"></a>设置选择模式（可选）
 
 默认情况下，联系人选取器检索用户选择的联系人的所有可用数据。 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 属性允许你将联系人选取器配置为仅检索你的应用所需的数据字段。 如果你只需要可用联系人数据的一个子集，那么更有效的方法是使用联系人选取器。
 
@@ -41,7 +46,7 @@ contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelection
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
 ```
 
-## 启动选取器
+## <a name="launch-the-picker"></a>启动选取器
 
 ```cs
 Contact contact = await contactPicker.PickContactAsync();
@@ -54,7 +59,7 @@ public IList<Contact> contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
-## 处理联系人
+## <a name="process-the-contacts"></a>处理联系人
 
 当选取器返回时，检查用户是否选择了任何联系人。 如果选择了联系人，则处理联系人信息。
 
@@ -83,7 +88,7 @@ if (contacts != null && contacts.Count > 0)
 }
 ```
 
-## 完整示例（一个联系人）
+## <a name="complete-example-single-contact"></a>完整示例（一个联系人）
 
 该示例使用联系人选取器检索一个联系人的姓名以及电子邮件地址、位置或电话号码。
 
@@ -163,7 +168,7 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 }
 ```
 
-## 完整示例（多个联系人）
+## <a name="complete-example-multiple-contacts"></a>完整示例（多个联系人）
 
 该示例使用联系人选取器检索多个联系人，然后将联系人添加到名为 `OutputContacts` 的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 控件中。
 
@@ -226,12 +231,12 @@ public class ContactItemAdapter
 }
 ```
 
-## 摘要和后续步骤
+## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
 现在，你基本了解了如何使用联系人选取器检索联系人信息。 从 GitHub 下载[通用 Windows 应用示例](http://go.microsoft.com/fwlink/p/?linkid=619979)来查看更多有关如何使用联系人和联系人选取器的示例。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -3,8 +3,8 @@ author: Mtoepke
 title: "Xbox One 开发人员计划上的 UWP 已知问题"
 description: 
 translationtype: Human Translation
-ms.sourcegitcommit: 20ac6fb738de1c8aaf10f46c359842f31714dbbf
-ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
+ms.sourcegitcommit: 3f0647bb76340ccbd538e9e4fefe173924d6baf4
+ms.openlocfilehash: 18c8d1fcd696f336601dc6c531424fe8bfb78304
 
 ---
 
@@ -22,12 +22,18 @@ ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
 
 
 <!--## Developing games-->
+
+## <a name="issue-when-leaving-dev-mode"></a>退出开发人员模式时出现问题
+有时，可能会发生你无法使开发人员模式退出使用 DevHome 或开发人员设置的情况。
+这有两个可能的解决方法： 
+1. 离开开发人员模式时取消选中标记为**删除旁加载的游戏和应用**的复选框
+2. 转到“我的游戏和应用”，并卸载安装在控制台中的开发人员应用。
  
-## <a name="memory-limits-for-background-apps-are-partially-enforced"></a>后台应用的内存限制已部分强制执行
+<!--## Memory limits for background apps are partially enforced
  
-在后台运行的应用最大内存占用量是 128 兆字节。 在 Xbox One 上单前版本的 UWP 中，如果在应用在移至后台时超过此限制，应用将该暂停运行。 如果应用在后台中运行时超过此上限，则该限制当前不会强制执行，这意味着如果应用在后台运行时超过了 128 MB，它将仍能分配内容。
+The maximum memory footprint for apps running in the background is 128 megabytes. In the current version of UWP on Xbox One, your app will be suspended if it is above this limit when it is moved to the background. This limit is not currently enforced if your app exceeds the limit while it is already running in the background—this means that if your app exceeds 128 MB while running in the background, it will still be able to allocate memory.
  
-对于此问题，目前尚没有解决方法。 在后台运行时，应用应相应控制其内存使用量，使之保持在 128 MB 上限之下。
+There is currently no workaround for this issue. Apps should govern their memory usage accordingly and continue to stay under the 128 MB limit while running in the background.-->
  
 ## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>在“家长控制”处于打开状态的情况下，无法通过 VS 进行部署
 
@@ -93,7 +99,7 @@ Developers can still use HTTP and WebSockets.
 
 ## <a name="blocked-networking-ports-on-xbox-one"></a>阻止 Xbox One 上的网络端口
 
-限制 Xbox One 设备上的通用 Windows 平台 (UWP) 应用绑定到 [49152, 65535] 范围中的端口。 尽管在运行时可能显示已成功绑定到这些端口，但网络流量在到达应用前已悄然断掉。 应用应在允许条件下绑定到端口 0，这支持系统选择本地端口。 如果需要使用特定端口，端口号必须在 [1025, 49151] 范围中，而且应该查看 IANA 注册表并避免与之相冲突。 有关详细信息，请参阅[服务名称和传输协议端口号注册表](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)。
+限制 Xbox One 设备上的通用 Windows 平台 (UWP) 应用绑定到 [57344, 65535] 范围中的端口，非独占。 尽管在运行时可能显示已成功绑定到这些端口，但网络流量在到达应用前已悄然断掉。 应用应在允许条件下绑定到端口 0，这支持系统选择本地端口。 如果需要使用特定端口，端口号必须在 [1025, 49151] 范围中，而且应该查看 IANA 注册表并避免与之相冲突。 有关详细信息，请参阅[服务名称和传输协议端口号注册表](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)。
 
 ## <a name="uwp-api-coverage"></a>UWP API 覆盖范围
 
@@ -177,6 +183,6 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

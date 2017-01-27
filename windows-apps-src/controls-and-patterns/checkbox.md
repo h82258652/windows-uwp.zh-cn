@@ -6,11 +6,11 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 874d1a7200359ecc46b26b306b208946c7a6f273
 
 ---
-# 复选框
+# <a name="check-boxes"></a>复选框
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,20 +21,14 @@ ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
 <div class="important-apis" >
 <b>重要的 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209316"><strong>CheckBox 类</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked 事件</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked 属性</strong></a> </li>
+<li>[**CheckBox 类**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
+<li>[**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
+<li>[**IsChecked 属性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 这是正确的控件吗？
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 将“单个复选框”****用于二元是/否选项，例如“记住我？” 登录方案或服务协议的条款选项。
 
@@ -54,7 +48,7 @@ ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
 
 “复选框”****和“单选按钮”****控件都能让用户选择选项列表中的内容。 复选框让用户选择选项组合。 相比之下，单选按钮允许用户在相互排斥的选项中选择单个选项。 当存在多个选项，但只能选择一个选项时，应使用单选按钮。
 
-## 示例
+## <a name="examples"></a>示例
 
 Microsoft Edge 浏览器对话框中的复选框。
 
@@ -64,7 +58,7 @@ Windows 闹钟和时钟应用中的复选框。
 
 ![Windows 闹钟和时钟应用中的复选框](images/control-examples/check-box-alarm.png)
 
-## 创建复选框
+## <a name="create-a-checkbox"></a>创建复选框
 
 若要为复选框分配标签，请设置 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 属性。 标签显示在复选框旁边。
 
@@ -82,13 +76,13 @@ CheckBox checkBox1 = new CheckBox();
 checkBox1.Content = "I agree to the terms of service.";
 ```
 
-### 绑定到 IsChecked
+### <a name="bind-to-ischecked"></a>绑定到 IsChecked
 
 使用 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 属性确定复选框是已选中还是已清除。 你可以将 IsChecked 属性的值绑定到其他二进制值。 但是，由于 IsChecked 是一个[可空](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx)布尔值，所以必须使用值转换器才能将它绑定到某个布尔值。
 
 在本示例中，同意服务条款的复选框的 **IsChecked** 属性绑定到了“提交”按钮的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 属性。 “提交”按钮仅在服务条款得到同意时才启用。
 
-> 注意  我们仅在此处显示相关代码。 有关数据绑定和值转换器的详细信息，请参阅[数据绑定概述](../data-binding/data-binding-quickstart.md)。
+> 注意&nbsp;&nbsp;我们仅在此处显示相关代码。 有关数据绑定和值转换器的详细信息，请参阅[数据绑定概述](../data-binding/data-binding-quickstart.md)。
 
 ```xaml
 ...
@@ -127,7 +121,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 }
 ```
 
-### 处理 Click 和 Checked 事件
+### <a name="handle-click-and-checked-events"></a>处理 Click 和 Checked 事件
 
 若要在复选框状态更改时执行某项操作，可以处理 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件或 [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) 和 [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) 事件。 
 
@@ -180,7 +174,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### 使用不确定状态
+### <a name="use-the-indeterminate-state"></a>使用不确定状态
 
 CheckBox 控件继承自 [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx)，可拥有三种状态： 
 
@@ -276,7 +270,7 @@ private void SetCheckedState()
 }
 ```
 
-## 应做事项和禁止事项
+## <a name="dos-and-donts"></a>应做事项和禁止事项
 
 -   验证复选框的目的和当前状态是否明确。
 -   将复选框文本内容限制为小于等于两行。
@@ -298,7 +292,7 @@ private void SetCheckedState()
     ![具有三个选项的单选按钮组：“不辣”、“辛辣”和“超辣”](images/spicyoptions.png)
 
 
-## 相关文章
+## <a name="related-articles"></a>相关文章
 
 -   [**CheckBox 类**](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [单选按钮](radio-button.md)
@@ -308,6 +302,6 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

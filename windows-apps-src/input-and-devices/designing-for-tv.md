@@ -6,9 +6,15 @@ ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
+keywords: "Xbox, TV, 10 英尺体验, 游戏板, 遥控器, 输入, 交互"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ee0a2f5a34cbbef198a9012d0425bb84e65f3b33
-ms.openlocfilehash: de76a3c6d4949b9203df79855e1748a81d76ca64
+ms.sourcegitcommit: 8a040033f99d6e8cac04b44dcec58c6b306eda54
+ms.openlocfilehash: a138e0ba73da792a63f1c22ee4342a8157f2a136
 
 ---
 
@@ -48,7 +54,7 @@ _**Microsoft 电影和电视中提供了屏幕截图中所示的所有电影。*
 
 现在你已了解了适用于 10 英尺体验的良好 UWP 应用设计的原则，请阅读以下关于优化应用和实现出色用户体验的特定方法的概述。
 
-| 功能        | 描述           |
+| 功能        | 说明           |
 | -------------------------------------------------------------- |--------------------------------|
 | [游戏板和遥控器](#gamepad-and-remote-control)      | 确保你的应用适用于游戏板和遥控器是针对 10 英尺体验进行优化中最重要的步骤。 可以进行多个特定于游戏板和遥控器的改进，以优化用户操作在某种程度上受限的设备上的用户交互体验。 |
 | [XY 焦点导航和交互](#xy-focus-navigation-and-interaction) | UWP 提供 **XY 焦点导航**，该导航允许用户在应用的 UI 中四处导航。 但是，这会限制用户只能向上、向下、向左和向右导航。 本部分概述了处理此情况的建议和其他注意事项。 |
@@ -167,7 +173,7 @@ Xbox One 上的 UWP 应用还支持按“菜单”按钮来打开上下文菜单
 | 向上/向下翻页  | 向上/向下翻页 | 左/右扳机键 | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 支持垂直滚动的视图
 | 向左/向右翻页 | 无 | 左/右缓冲键 | [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 支持水平滚动的视图
 | 放大/缩小        | Ctrl +/- | 左/右扳机键 | 无 | `ScrollViewer`支持放大和缩小的视图 |
-| 打开/关闭导航窗格 | 无 | 查看 | 无 | 导航窗格​​ |
+| 打开/关闭导航窗格 | 无 | 视图 | 无 | 导航窗格​​ |
 | [搜索](#search-experience) | 无 | Y 按钮 | 无 | 应用中主要搜索功能的快捷方式 |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>XY 焦点导航和交互
@@ -499,7 +505,7 @@ public App()
 
 ### <a name="light-dismiss-overlay"></a>轻型消除覆盖层
 
-为了将用户的注意力吸引到用户当前正在使用游戏控制器或遥控器操作的 UI 元素，当应用在 Xbox One 上运行时，UWP 自动添加“烟”层，该层覆盖弹出窗口 UI 之外的区域。 这无需任何额外工作，但却是在设计 UI 时需要牢记的内容。 可以设置任何 `FlyoutBase` 上的 `LightDismissOverlayMode` 属性以启用或禁用烟层；它默认为 `Auto`，这意味着它将在 Xbox 上处于启用状态，在别处处于禁用状态。 有关详细信息，请参阅[模式和轻型消除](../controls-and-patterns/dialogs-popups-menus.md#modal-vs-light-dismiss)。
+为了将用户的注意力吸引到用户当前正在使用游戏控制器或遥控器操作的 UI 元素，当应用在 Xbox One 上运行时，UWP 自动添加“烟”层，该层覆盖弹出窗口 UI 之外的区域。 这无需任何额外工作，但却是在设计 UI 时需要牢记的内容。 可以设置任何 `FlyoutBase` 上的 `LightDismissOverlayMode` 属性以启用或禁用烟层；它默认为 `Auto`，这意味着它将在 Xbox 上处于启用状态，在别处处于禁用状态。 有关详细信息，请参阅[模式和轻型消除](../controls-and-patterns/menus.md)。
 
 ## <a name="focus-engagement"></a>焦点占用
 
@@ -814,7 +820,7 @@ UWP 具有将焦点视觉对象保留在 [VisibleBounds](https://msdn.microsoft.
 ```
 
 > [!NOTE]
-> 此代码片段专门用于 `ListView`；对于 `GridView` 样式，请将 [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) 和 [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) 的 [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 属性设置为 `GridView`。
+> 此代码片段专门用于 `ListView`；对于 `GridView` 样式，请将 [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 和 [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) 的 [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) 属性设置为 `GridView`。
 
 ## <a name="colors"></a>颜色
 
@@ -985,7 +991,7 @@ if (IsTenFoot)
 
 导航窗格（也称为*汉堡菜单*）是 UWP 应用中常用的导航控件。 通常，该窗格内含多个从列表样式菜单中选择的选项，用于将用户转到其他页面。 此窗格通常一开始以折叠方式显示以节省空间，用户可以通过单击某个按钮来打开它。 
 
-用户很容易通过鼠标和触摸操作访问导航窗格，但游戏板/遥控器将使这些窗格不易访问，因为用户必须导航到某个按钮才能打开窗格。 因此，好的做法是让“视图”按钮打开导航窗格，以及允许用户通过一直向左导航页面来打开该窗格。 这样可以使用户轻松访问窗格内容。 有关导航窗格在不同的屏幕大小中的行为以及游戏板/遥控器导航的最佳做法的详细信息，请参阅[导航窗格](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)。
+用户很容易通过鼠标和触摸操作访问导航窗格，但游戏板/遥控器将使这些窗格不易访问，因为用户必须导航到某个按钮才能打开窗格。 因此，好的做法是让**视图**按钮打开导航窗格，以及允许用户通过一直向左导航页面来打开该窗格。 这样可以使用户轻松访问窗格内容。 有关导航窗格在不同的屏幕大小中的行为以及游戏板/遥控器导航的最佳做法的详细信息，请参阅[导航窗格](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)。
 
 ### <a name="commandbar-labels"></a>CommandBar 标签
 
@@ -1121,6 +1127,6 @@ bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
