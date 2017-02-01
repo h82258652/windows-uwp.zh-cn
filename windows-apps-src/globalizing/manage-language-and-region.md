@@ -6,7 +6,7 @@ ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 label: Manage language and region
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: f9c30e68d5cc94769c9304234db0276e34e1d945
 
 ---
@@ -49,7 +49,7 @@ Windows 用户可以采用完全不同于 Windows 的其他语言来运行应用
 
 用户语言首选项列表是按顺序排列的语言列表，按用户希望使用的语言顺序描述了用户的语言。
 
-用户在**设置** &gt; **时间和语言** &gt; **区域和语言**中设置该列表。 或者，他们可以使用**控制面板** &gt; **时钟、语言和区域**。
+用户在“设置”****&gt;“时间和语言”****&gt;“区域和语言”****中设置该列表。 或者，他们可以使用“控制面板”****&gt;“时钟、语言和区域”****。
 
 用户的语言首选项列表可以包含多种语言和区域性或其他形式的特定变体。 例如，用户可能更喜欢 fr-CA，但也可以理解 en-GB。
 
@@ -59,7 +59,7 @@ Windows 用户可以采用完全不同于 Windows 的其他语言来运行应用
 
 ### <a name="specify-the-default-language"></a>指定默认语言。
 
-在 Visual Studio 中打开 package.appxmanifest、转到**应用程序**选项卡，然后将默认语言设置为要用于创作你的应用程序的语言。
+在 Visual Studio 中打开 package.appxmanifest、转到“应用程序”****选项卡，然后将默认语言设置为要用于创作你的应用程序的语言。
 
 当应用不支持用户选择的任何语言时，应用使用默认语言。 Visual Studio 使用默认语言将元数据添加到采用该语言标记的资源中，以便在运行时选择适当的资源。
 
@@ -126,17 +126,17 @@ Windows 以一个标准的易于理解的方式排定语言匹配的优先顺序
 
 ### <a name="set-the-http-accept-language-header"></a>设置 HTTP 接受的语言标头。
 
-从 Windows 应用商店应用和桌面应用发出的典型 Web 请求和 XMLHttpRequest (XHR) 中的 HTTP 请求使用标准的 HTTP Accept-Language 标头。 默认情况下，HTTP 标头设置为在**设置** &gt;**时间和语言** &gt;**区域和语言**中指定的用户语言首选项（按用户的首选顺序排列）。 列表中的每种语言进一步扩展为包含中性语言和权重 (q)。 例如，fr-FR 和 en-US 的用户语言列表会产生 fr-FR、fr、en-US、en 的 HTTP Accept-Language 标头（“fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3”）。
+从 Windows 应用商店应用和桌面应用发出的典型 Web 请求和 XMLHttpRequest (XHR) 中的 HTTP 请求使用标准的 HTTP Accept-Language 标头。 默认情况下，HTTP 标头设置为在“设置”****&gt;“时间和语言”****&gt;“区域和语言”****中指定的用户语言首选项（按用户的首选顺序排列）。 列表中的每种语言进一步扩展为包含中性语言和权重 (q)。 例如，fr-FR 和 en-US 的用户语言列表会产生 fr-FR、fr、en-US、en 的 HTTP Accept-Language 标头（“fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3”）。
 
 ### <a name="use-the-apis-in-the-windowsglobalization-namespace"></a>使用 Windows.Globalization 命名空间中的 API。
 
-通常，[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 命名空间中的 API 元素使用应用程序语言列表确定语言。 如果没有任何一种语言有匹配的格式，则使用用户区域设置。 该区域设置即系统时钟所使用的区域设置。 **设置** &gt; **时间和语言** &gt; **区域和语言** &gt; **其他日期、时间和区域设置** &gt;**区域：更改日期、时间或数字格式**中提供了用户区域设置。 **Windows.Globalization** API 还接受替代来指定要使用的语言列表，而不使用应用程序语言列表。
+通常，[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 命名空间中的 API 元素使用应用程序语言列表确定语言。 如果没有任何一种语言有匹配的格式，则使用用户区域设置。 该区域设置即系统时钟所使用的区域设置。 “设置”****&gt;“时间和语言”****&gt;“区域和语言”****&gt;“其他日期、时间和区域设置”****&gt;“区域：更改日期、时间或数字格式”****中提供了用户区域设置。 **Windows.Globalization** API 还接受替代来指定要使用的语言列表，而不使用应用程序语言列表。
 
 [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 还具有作为帮助程序对象提供的 [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) 对象。 它帮助应用检查有关语言的详细信息，例如，语言的脚本、显示名称和本地名称。
 
 ### <a name="use-geographic-region-when-appropriate"></a>在适当的时候使用地理区域。
 
-你可以使用用户的主地理区域设置来选择要显示给用户的内容，而不是语言。 例如，资讯应用可能会默认显示来自用户主位置的内容，该位置在 Windows 安装时设置并在**区域: 更改日期、时间或数字格式**下的 Windows UI 中提供，如上一任务所述。 你可以使用 [**Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br241829)检索当前用户的主区域设置。
+你可以使用用户的主地理区域设置来选择要显示给用户的内容，而不是语言。 例如，资讯应用可能会默认显示来自用户主位置的内容，该位置在 Windows 安装时设置并在“区域: 更改日期、时间或数字格式”****下的 Windows UI 中提供，如上一任务所述。 你可以使用 [**Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br241829) 检索当前用户的主区域设置。
 
 [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 还具有作为帮助程序对象提供的 [**GeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br206795) 对象。 它帮助应用检查有关特定区域的详细信息，例如，其显示名称、本地名称以及使用的货币。
 

@@ -39,7 +39,7 @@ ms.openlocfilehash: de90c49dfc961241c1da028c8f7278e370a810bd
 此示例显示如何将列表视图的项对齐到底部，并指示当项发生更改时，最后一项应保留在视图中。
  
  **XAML**
-```xaml
+ ```xaml
 <ListView>
     <ListView.ItemsPanel>
         <ItemsPanelTemplate>

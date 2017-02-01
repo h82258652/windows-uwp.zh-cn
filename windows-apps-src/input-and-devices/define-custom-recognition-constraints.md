@@ -12,7 +12,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d
 
 ---
@@ -156,7 +156,7 @@ SRGS 提供一组完整的功能，可帮助你为应用构建复杂的语音交
 -   你可以将多个语法文件约束添加到约束集合。
 -   为符合 SRGS 规则的基于 XML 的语法文件使用 .grxml 文件扩展名。
 
-该示例使用在名为 srgs.grxml 的文件（稍后说明）中定义的 SRGS 语法。 在文件属性中，**数据包操作**设置为**内容**，**复制到输出目录**则设置为**始终复制**。
+该示例使用在名为 srgs.grxml 的文件（稍后说明）中定义的 SRGS 语法。 在文件属性中，“数据包操作”****设置为“内容”，“复制到输出目录”则设置为“始终复制”。************
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)

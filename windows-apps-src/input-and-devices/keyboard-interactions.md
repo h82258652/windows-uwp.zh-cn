@@ -53,7 +53,7 @@ ms.openlocfilehash: 1226d097e911e79c800a16c33fcbb9bd524bd17a
 
 ![通知中心中的触摸键盘图标](images/input-patterns/touch-keyboard-notificationcenter.png)
 
-**注意** 用户可能需要通过“设置”&gt;“系统”转到“平板电脑模式**屏幕并打开**将设备用作平板电脑时，这会使 Windows 更兼容触摸功能”，才能自动启用触摸键盘的外观。
+**注意** 用户可能需要通过“设置”&gt;“系统”转到“平板电脑模式”****屏幕并打开“将设备用作平板电脑时，这会使 Windows 更兼容触摸功能”，才能自动启用触摸键盘的外观。
 
  
 

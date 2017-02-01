@@ -1,22 +1,22 @@
 ---
 author: QuinnRadich
-Description: "设计说明性 UI，可向用户解释如何使用你的 Windows 应用。"
+Description: "设计说明性用户界面 (UI)，可向用户解释如何使用你的 Windows 应用商店应用。"
 title: "设计说明性 UI 指南"
 label: Instructional UI
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e
-ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 179f70a1c421d3d5a73813a9b9675353a8d5f8c2
 
 ---
 
-# 说明性 UI 指南
+# <a name="instructional-ui-guidelines"></a>说明性 UI 指南
 
-\[ 已针对 Windows 10 上的通用 Windows 平台 (UWP) 应用更新。 有关 Windows 8.x 文章，请参阅[存档](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-有时，向用户解释应用中他们不熟悉的功能（例如特定的触摸交互）会很有用。 在这些情况下，你需要通过 UI 向用户显示说明，以便他们可以发现并使用可能错过的功能。
 
-## <span id="when_to_use_instructional_ui"></span><span id="WHEN_TO_USE_INSTRUCTIONAL_UI"></span>何时使用说明性 UI
+在某些情况下，向用户解释应用中他们不熟悉的功能（例如特定的触摸交互）会很有用。 在这些情况下，你需要通过用户界面 (UI) 向用户显示说明，以便他们可以使用可能错过的这些功能。
+
+## <a name="when-to-use-instructional-ui"></a>何时使用说明性 UI
 
 说明性 UI 必须谨慎使用。 如果过度使用，它很容易被忽略或使用户感到厌烦，从而导致效率很低。
 
@@ -24,7 +24,7 @@ ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
 
 除非应用依赖触摸手势，否则说明性 UI 不应用于向用户解释应用的基本功能。
 
-## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>编写说明性 UI 的原则
+## <a name="principles-of-writing-instructional-ui"></a>编写说明性 UI 的原则
 
 好的说明性 UI 与用户息息相关，并对用户有教育意义，还能增强用户体验。 它应该：
 
@@ -36,7 +36,7 @@ ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
 
 -   **基本功能：**如果用户需要说明才能使用你的应用，请考虑将应用设计制作的更为直观。
 -   **明显的功能：**如果用户不用说明就能自行了解某项功能，则说明性 UI 会成为阻碍。
--   **复杂功能：**说明性 UI 需要简洁。 对复杂功能感兴趣的用户通常愿意寻找说明。
+-   **复杂的功能：**说明性 UI 需要保持简洁，并且对复杂功能感兴趣的用户通常愿意去查找说明，而无需向他们提供这些说明。
 
 避免由于说明性 UI 而给用户造成不便。 错误做法：
 
@@ -44,11 +44,11 @@ ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
 -   **强制用户参与：**用户应能够忽略说明性 UI 并仍能继续使用应用。
 -   **显示重复信息：**不要让说明性 UI 给用户造成困扰，即使在他们第一次忽略此 UI 时也是如此。 添加用于重新显示说明性 UI 的设置是更好的解决方案。
 
-## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>说明性 UI 的示例
+## <a name="examples-of-instructional-ui"></a>说明性 UI 的示例
 
-下面几个说明性 UI 的示例有助于你的用户：
+下面提供一些实例，其中的说明性 UI 可帮助你的用户了解：
 
--   **帮助用户发现触控交互。** 以下屏幕截图显示，说明性 UI 教玩家如何在 *Cut the Rope* 游戏中使用触控笔势。
+-   **帮助用户发现触控交互。** 以下屏幕截图显示，说明性 UI 教玩家如何在“Cut the Rope”游戏中使用触控笔势。
 
     ![显示说明性 UI 消息“Slide acress to cut the rope”的游戏屏幕截图](images/in-game-controls-3.png)
 
@@ -60,18 +60,18 @@ ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
 
     ![显示说明性 UI 消息的“Windows 邮件”应用的裁剪屏幕截图](images/instructional-ui-mail-inbox.png)
 
-    在用户单击该消息时，应用的“设置”****浮出控件会立即显示在屏幕的右侧，以便用户完成该任务。 下面的屏幕截图显示了用户选择说明性 UI 消息之前和之后的“邮件”应用。
+    在用户单击该消息时，应用的“设置”****浮出控件会立即显示在屏幕的右侧，以便用户完成该任务。 下面的屏幕截图显示了当用户单击说明性 UI 消息之前和之后的“邮件”应用。
 
     | 之前                                                               | 调整后的文本                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
     | ![“Windows 邮件”应用的屏幕截图](images/instructional-ui-mail.png) | ![带有扩展设置浮出控件的 Windows 邮件应用的屏幕截图](images/instructional-ui-mail-flyout.png) |
 
-## <span id="related_topics"></span>相关文章
+## <a name="related-articles"></a>相关文章
 
 * [应用帮助指南](guidelines-for-app-help.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

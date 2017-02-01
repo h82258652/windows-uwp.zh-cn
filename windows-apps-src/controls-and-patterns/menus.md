@@ -153,7 +153,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 > 轻型消除控件（如菜单、上下文菜单和其他浮出控件）会捕获瞬态 UI 内的键盘焦点和游戏板焦点，直到消除为止。 若要为此行为提供视觉提示，Xbox 上的轻型消除控件将绘制覆盖，以便使 UI 范围之外的可见性变暗。 可以使用新的 [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) 属性来修改此行为。 默认情况下，瞬态 UI 将在 Xbox（而非其他设备系列）上绘制轻型消除覆盖，不过应用可以选择强制使覆盖始终**打开**或始终**关闭**。
 
 > ```xaml
-> <MenuFlyout LightDismissOverlayMode="Off">
+> <MenuFlyout LightDismissOverlayMode=\"Off\">
 > ```
 
 ## <a name="get-the-sample-code"></a>获取示例代码
