@@ -1,20 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\get-set-up.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/bf4309210eb00dc53d6e63768fc0b75b1d561135?path=windows-apps-src%2Fget-started%2Fget-set-up.md&_a=contents) | HandedOffSuccess | [Details](#478827015227546e00acaa6f1f6e558ee7dd6b502671)
- [windows-apps-src\graphics\composition-native-interop.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3a929e044a6edaa4a6e2393c80d6de6d54875a9e?path=windows-apps-src%2Fgraphics%2Fcomposition-native-interop.md&_a=contents) | HandedOffSuccess | [Details](#8be1827350e8489106ff29bd2a1f310fd06dea383372)
+ [hub\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f889e3e051f3ce092524069e6a8588ddad632550?path=hub%2Findex.md&_a=contents) | HandedOffSuccess | [Details](#66c18f3bf0f33de02645b19f4a08534cae92690a7)
 
 ## Item Details
-##### <a name='478827015227546e00acaa6f1f6e558ee7dd6b502671'></a> Source: [windows-apps-src\get-started\get-set-up.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/bf4309210eb00dc53d6e63768fc0b75b1d561135?path=windows-apps-src%2Fget-started%2Fget-set-up.md&_a=contents)
+##### <a name='66c18f3bf0f33de02645b19f4a08534cae92690a7'></a> Source: [hub\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f889e3e051f3ce092524069e6a8588ddad632550?path=hub%2Findex.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ffd7f629dc654334917d0eac5f895b9afe80414e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fget-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2017-02-06 18:38:37
+* Handoff File: [index.4766fa26638f9b0551308e465fe8b8cfeda3c32c.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/779b4c83e3ab8c191299ae9167aab4a7ae7dfbad?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Findex.4766fa26638f9b0551308e465fe8b8cfeda3c32c.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2017-02-06 20:36:10
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -22,30 +21,6 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\get-started\get-set-up.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fget-started%2Fget-set-up.md&_a=contents)
-* Current Handback File: [get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fget-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-cn.xlf&_a=contents)
-* Current Handback Datetime: 2016-11-16 18:54:46
-* Bilingual File: [get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fget-set-up.89608c408c7faac67f7e4228f8651faa15edffae.zh-cn.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-16 19:00:10
-* [Back to Top](#report-top)
-
-##### <a name='8be1827350e8489106ff29bd2a1f310fd06dea383372'></a> Source: [windows-apps-src\graphics\composition-native-interop.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3a929e044a6edaa4a6e2393c80d6de6d54875a9e?path=windows-apps-src%2Fgraphics%2Fcomposition-native-interop.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [composition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ffd7f629dc654334917d0eac5f895b9afe80414e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fcomposition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2017-02-06 18:38:37
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\graphics\composition-native-interop.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/14c34764cf5110a1a408ec34f2b594100256e2ba?path=windows-apps-src%2Fgraphics%2Fcomposition-native-interop.md&_a=contents)
-* Current Handback File: [composition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fcomposition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.zh-cn.xlf&_a=contents)
-* Current Handback Datetime: 2016-11-16 18:54:46
-* Bilingual File: [composition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fc06fe2788b621ccb50cc92354d08469b17bfcdc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fcomposition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.zh-cn.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-16 19:00:10
 * [Back to Top](#report-top)
 
 
