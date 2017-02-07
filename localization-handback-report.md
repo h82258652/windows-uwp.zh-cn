@@ -1,33 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\handle-pointer-input.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc?path=windows-apps-src%2Finput-and-devices%2Fhandle-pointer-input.md&_a=contents) | HandedOffSuccess | [Details](#d93583c4d6eeaa8e81bda4672d38386f07e7dcc53441)
 
 ## Item Details
-##### <a name='d93583c4d6eeaa8e81bda4672d38386f07e7dcc53441'></a> Source: [windows-apps-src\input-and-devices\handle-pointer-input.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc?path=windows-apps-src%2Finput-and-devices%2Fhandle-pointer-input.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [handle-pointer-input.6253e9939b047e57ab20edecf74a22b75318763c.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d502f941d1139a37fb693857cc3d4d2798506162?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fhandle-pointer-input.6253e9939b047e57ab20edecf74a22b75318763c.zh-cn.xlf&_a=contents)
-* Handoff Datetime: 2017-02-07 00:48:17
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\input-and-devices\handle-pointer-input.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/15b215079560a67e8ad01469808ce75746850d1f?path=windows-apps-src%2Finput-and-devices%2Fhandle-pointer-input.md&_a=contents)
-* Current Handback File: [handle-pointer-input.6253e9939b047e57ab20edecf74a22b75318763c.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/ed208f885685cb6dfe0a41595e36346b14d7bf91?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fhandle-pointer-input.6253e9939b047e57ab20edecf74a22b75318763c.zh-cn.xlf&_a=contents)
-* Current Handback Datetime: 2017-02-07 16:34:26
-* Bilingual File: [handle-pointer-input.6253e9939b047e57ab20edecf74a22b75318763c.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4b9b575235ff7ba8df6493aef84f8af7ff4fd392?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Fhandle-pointer-input.6253e9939b047e57ab20edecf74a22b75318763c.zh-cn.xlf&_a=contents)
-* Bilingual Datetime: 2017-02-06 16:41:03
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
