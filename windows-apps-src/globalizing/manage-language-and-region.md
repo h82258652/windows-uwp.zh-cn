@@ -6,7 +6,7 @@ ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 label: Manage language and region
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: f9c30e68d5cc94769c9304234db0276e34e1d945
 
 ---

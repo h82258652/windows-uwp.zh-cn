@@ -12,7 +12,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: c832c3c3626ac5f75eaac4317b6779c410693742
 
 ---

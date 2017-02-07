@@ -12,7 +12,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
 
 ---
@@ -37,7 +37,7 @@ ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
 
 确保你的设备具有麦克风或等效硬件。
 
-在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474)（**package.appxmanifest** 文件）中设置**麦克风******设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
+在[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474)（**package.appxmanifest** 文件）中设置**麦克风**设备功能 ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) 以获取麦克风音频源的访问权限。 这允许应用从所连接的麦克风录制音频。
 
 请参阅[应用功能声明](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
