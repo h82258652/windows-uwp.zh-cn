@@ -2188,7 +2188,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-cn\\master\\d93583c4d6eeaa8e81bda4672d38386f07e7dcc5.44082e1bbf09a921d6545c208190530d62ce51aa.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-cn\\master\\handle-pointer-input.6253e9939b047e57ab20edecf74a22b75318763c.zh-cn.xlf",
-      "LocXliffCommit": "4b9b575235ff7ba8df6493aef84f8af7ff4fd392"
+      "LocXliffCommit": "ed208f885685cb6dfe0a41595e36346b14d7bf91"
     },
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md.c072193e88e3048bfbf66c104139adbdb2118790.HT": {
       "SourceFilename": "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md",
