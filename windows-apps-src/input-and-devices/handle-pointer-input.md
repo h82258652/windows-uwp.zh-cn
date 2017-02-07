@@ -89,7 +89,7 @@ UWP 应用可以侦听以下指针事件：
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>PointerEntered</strong>\](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
+<td align="left"><p>[<strong>PointerEntered</strong>](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
 <td align="left"><p>在指针进入元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触才能引发此事件，无论是从对元素直接触摸按下还是移动到该元素的绑定区域。</li>
