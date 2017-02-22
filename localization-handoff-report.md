@@ -1,11 +1,33 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1520636db8a39f4aee867db403a11a4244e63dc8?path=windows-apps-src%2Flaunch-resume%2Frun-a-background-task-on-a-timer-.md&_a=contents) | HandedOffSuccess | [Details](#6f834c91cd0c71f6d7687d9f69224ed747e45a6d3890)
 
 ## Item Details
+##### <a name='6f834c91cd0c71f6d7687d9f69224ed747e45a6d3890'></a> Source: [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1520636db8a39f4aee867db403a11a4244e63dc8?path=windows-apps-src%2Flaunch-resume%2Frun-a-background-task-on-a-timer-.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/75d9b30220f0cdb2ccbc4b8d1916f92f4b2ddb93?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Frun-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-cn.xlf&_a=contents)
+* Handoff Datetime: 2017-02-22 01:27:52
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-cn/commit/64a8133785410f3f1813452b268bdbfca323f862?path=windows-apps-src%2Flaunch-resume%2Frun-a-background-task-on-a-timer-.md&_a=contents)
+* Current Handback File: [run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/65f29d24f6b945238f1d2b7e8d5bf388d831624a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Frun-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-cn.xlf&_a=contents)
+* Current Handback Datetime: 2017-02-01 18:38:07
+* Bilingual File: [run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-cn.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/65f29d24f6b945238f1d2b7e8d5bf388d831624a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-cn%2Fmaster%2Frun-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-cn.xlf&_a=contents)
+* Bilingual Datetime: 2017-02-01 18:45:05
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
